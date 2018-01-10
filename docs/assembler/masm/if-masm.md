@@ -1,32 +1,31 @@
 ---
-title: "IF (MASM) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "if"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IF directive"
+title: "IF (MASM) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: if
+dev_langs: C++
+helpviewer_keywords: IF directive
 ms.assetid: 82e43712-4f0c-4bf6-90ce-0663e81af707
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 6889f70ce149a03adc47fba48e67dc0b9434473c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# IF (MASM)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-*expression1 が*  真 \(以外\) または *elseifstatements* *expression1* の場合は false *ifstatements* のアセンブリを許可します \(0\) と *expression2 は*  TRUE です。  
+# <a name="if-masm"></a>IF (MASM)
+アセンブリの*ifstatements*場合*expression1*が true (ゼロ以外) または*elseifstatements*場合*expression1*が false (0) と*expression2*は true です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -39,8 +38,8 @@ ifstatements
 ENDIF  
 ```  
   
-## 解説  
- 次のディレクティブは [ELSEIF](../../assembler/masm/elseif-masm.md) の代わりになる可能性があります : **ELSEIFBELSEIFDEFELSEIFDIFELSEIFDIFIELSEIFEELSEIFIDNELSEIFIDNIELSEIFNB** と **ELSEIFNDEF**。  必要に応じて前の式が FALSE の場合*elsestatements を*  構成します。  式がアセンブリ時に評価されることに注意してください。  
+## <a name="remarks"></a>コメント  
+ 次のディレクティブに置き換えられる可能性があります[ELSEIF](../../assembler/masm/elseif-masm.md): **ELSEIFB**、 **ELSEIFDEF**、 **ELSEIFDIF**、 **ELSEIFDIFI**、 **ELSEIFE**、 **ELSEIFIDN**、 **ELSEIFIDNI**、 **ELSEIFNB**、および**ELSEIFNDEF**. 必要に応じて、アセンブル*elsestatements*前の式が false の場合。 アセンブリの時に、式が評価されることに注意してください。  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

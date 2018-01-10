@@ -1,31 +1,31 @@
 ---
-title: "4.2 OMP_NUM_THREADS | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "4.2 OMP_NUM_THREADS |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 49dd55dd-25d5-4a5a-a998-cc7f47b2dae2
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 9c2b766d0e3be9b4f1d272a6e3fa205cfcb87039
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 4.2 OMP_NUM_THREADS
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**OMP\_NUM\_THREADS** の環境変数は実行時に使用してその番号が **omp\_set\_num\_threads** のライブラリ ルーチンのメソッドまたは  **並列**  のディレクティブの **num\_threads** の明示的な句によって明示的に変更されていない場合スレッドの既定値を設定します。  
+# <a name="42-ompnumthreads"></a>4.2 OMP_NUM_THREADS
+**OMP_NUM_THREADS**環境変数がその番号が明示的に呼び出すことによって変更されない限り、既定の実行中に、使用するスレッド数を設定、 **omp_set_num_threads**ライブラリ ルーチンまたは明示的な**num_threads**句、**並列**ディレクティブです。  
   
- **OMP\_NUM\_THREADS** の環境変数の値は正の整数である必要があります。  その効果がスレッド数の動的な変更が有効かどうかによって決まります。  スレッドの **OMP\_NUM\_THREADS** の環境変数と動的の間の相互作用に関する包括的な一連の規則ではページのセクション 2.3 8. を参照してください。  
+ 値、 **OMP_NUM_THREADS**環境変数は、正の整数を指定する必要があります。 その効果は、スレッドの数を動的に調整が有効になっているかどうかによって異なります。 間の相互作用についてのルールの包括的セット、 **OMP_NUM_THREADS**環境、スレッドの変数および動的な調整は、8 ページのセクションで 2.3 を参照してください。  
   
- 値が **OMP\_NUM\_THREADS** 環境変数に指定されていないか指定された値が正の整数でない場合または値がスレッドの最大数を超える場合はシステム サポート使用するスレッドの数は実装定義されます。  
+ 値が指定されていない場合、 **OMP_NUM_THREADS**環境変数、または指定された値が正の整数ではないか、システムができる値がスレッドの最大数よりも大きい場合のサポートを使用するスレッドの数実装定義されます。  
   
  例:  
   
@@ -33,10 +33,10 @@ manager: "ghogen"
 setenv OMP_NUM_THREADS 16  
 ```  
   
-## cref:  
+## <a name="cross-references"></a>クロス リファレンス  
   
--   **num\_threads** の句はページの 8. [セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) が表示されます。  
+-   **num_threads**句を参照してください[セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) 8 ページのです。  
   
--   **omp\_set\_num\_threads** の関数はページの 36 [セクション 3.1.1](../../parallel/openmp/3-1-1-omp-set-num-threads-function.md) が表示されます。  
+-   **omp_set_num_threads**関数を参照してください[セクション 3.1.1](../../parallel/openmp/3-1-1-omp-set-num-threads-function.md)ページ 36 にします。  
   
--   **omp\_set\_dynamic** の関数はページの 39 [セクション 3.1.7](../../parallel/openmp/3-1-7-omp-set-dynamic-function.md) が表示されます。
+-   **omp_set_dynamic**関数を参照してください[セクション 3.1.7](../../parallel/openmp/3-1-7-omp-set-dynamic-function.md)ページ 39 にします。

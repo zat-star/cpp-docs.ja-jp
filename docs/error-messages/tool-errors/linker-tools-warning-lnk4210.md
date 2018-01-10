@@ -15,11 +15,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 31d416638b00a5d517fe49526b49ef130a2e9d31
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e4e2d596527b60735b42fb4edfff6f36d0be808d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-warning-lnk4210"></a>リンカー ツールの警告 LNK4210  
   
@@ -45,5 +46,5 @@ ms.lasthandoff: 10/24/2017
   
 -   /ENTRY を使用して、プロジェクトをビルドし、/ENTRY が渡された場合、関数以外の`_DllMainCRTStartup`、関数を呼び出す必要があります`_CRT_INIT`CRT を初期化します。 DLL の/GS を使用して、静的初期化子が必要です、または MFC または ATL コードのコンテキストで呼び出される場合、この呼び出しを単独では十分なではありません。 参照してください[Dll および Visual C ランタイム ライブラリの動作](../../build/run-time-library-behavior.md)詳細についてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)

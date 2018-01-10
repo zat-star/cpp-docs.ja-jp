@@ -19,11 +19,12 @@ caps.latest.revision: "4"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6bace8e4fdefcc875994b8ff208012d3e117ae1f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 14f410214951b7dd1aeb662fd4669fb4b3b344f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="operator-high32"></a>HIGH32 演算子
 上位 32 ビットを返します*式*です。 MASM 式は、64 ビット値です。  
@@ -35,5 +36,5 @@ ms.lasthandoff: 10/24/2017
 HIGH32 expression  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [演算子リファレンス](../../assembler/masm/operators-reference.md)

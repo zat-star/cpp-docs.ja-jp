@@ -1,55 +1,56 @@
 ---
-title: "_AddressOfReturnAddress | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_AddressOfReturnAddress_cpp"
-  - "_AddressOfReturnAddress"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_AddressOfReturnAddress 組み込み"
-  - "AddressOfReturnAddress 組み込み"
+title: "_AddressOfReturnAddress |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _AddressOfReturnAddress_cpp
+- _AddressOfReturnAddress
+dev_langs: C++
+helpviewer_keywords:
+- _AddressOfReturnAddress intrinsic
+- AddressOfReturnAddress intrinsic
 ms.assetid: c7e10b8c-445e-4236-a602-e2d90200f70a
-caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 670a9f5786fbe8f8855e9b88e179d005ba8603de
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# _AddressOfReturnAddress
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="addressofreturnaddress"></a>_AddressOfReturnAddress
+**Microsoft 固有の仕様**  
   
- 現在の関数のリターン アドレスを保持するメモリ位置のアドレスを指定します。  このアドレスは他のメモリ位置 \(たとえば関数の引数\) へのアクセスに使用されない場合があります。  
+ 現在の関数の戻り値のアドレスを保持するメモリの場所のアドレスを提供します。 このアドレスを使用して、他のメモリ位置 (たとえば、関数の引数) にアクセスすることがありますいないされます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void * _AddressOfReturnAddress();  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`_AddressOfReturnAddress`|x86[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`_AddressOfReturnAddress`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- `_AddressOfReturnAddress` が [\/clr](../build/reference/clr-common-language-runtime-compilation.md) でコンパイルされたプログラムで使用する場合 `_AddressOfReturnAddress` の呼び出しを含む関数はネイティブ関数としてコンパイルされます。  `_AddressOfReturnAddress``_AddressOfReturnAddress` を含む関数にマネージ呼び出しとしてコンパイルされた関数が期待どおりに動作しない可能性がある場合。  
+## <a name="remarks"></a>コメント  
+ ときに`_AddressOfReturnAddress`でコンパイルされたプログラムで使用される[/clr](../build/reference/clr-common-language-runtime-compilation.md)、関数を含む、`_AddressOfReturnAddress`呼び出しは、ネイティブ関数としてコンパイルします。 含む関数への呼び出しとして関数をコンパイルするときに管理されている`_AddressOfReturnAddress`、`_AddressOfReturnAddress`期待どおりに動作しない可能性があります。  
   
- このルーチンは組み込みとしてのみ使用できます。  
+ このルーチンは、組み込みとしてのみ使用できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // compiler_intrinsics_AddressOfReturnAddress.cpp  
@@ -75,11 +76,14 @@ int main() {
 }  
 ```  
   
-  **0012FF78**  
-**00401058**  
-**00401058**   
-## 終了 Microsoft 固有の仕様→  
+```Output  
+0012FF78  
+00401058  
+00401058  
+```  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+**Microsoft 固有の仕様はここまで**  
+  
+## <a name="see-also"></a>参照  
+ [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
+ [キーワード](../cpp/keywords-cpp.md)

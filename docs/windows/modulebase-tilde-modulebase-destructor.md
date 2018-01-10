@@ -15,11 +15,14 @@ caps.latest.revision: "5"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 30a9e03ab437b9320c3c0c62af24977fc6016675
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 4f911ff79e853a14c4e15ea91118d59de7c34ac4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="modulebasemodulebase-destructor"></a>ModuleBase::~ModuleBase デストラクター
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -33,11 +36,11 @@ virtual ~ModuleBase();
 ## <a name="remarks"></a>コメント  
  ModuleBase クラスの現在のインスタンスの初期化を解除します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
  **Namespace:** Microsoft::WRL::Details  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ModuleBase クラス](../windows/modulebase-class.md)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

@@ -1,76 +1,77 @@
 ---
-title: "Explicit Overrides  (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "overriding, override [C++]"
+title: "明示的なオーバーライド (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords: overriding, override [C++]
 ms.assetid: 4ec3eaf5-163b-4df8-8f16-7a2ec04c3d0f
-caps.latest.revision: 21
-caps.handback.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "21"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 346dd73952934d514b2741c41d5a27816b7152ac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Explicit Overrides  (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、明示的に基本クラスまたはインターフェイスのメンバーをオーバーライドする方法について説明します。  名前付きな \(明示\) オーバーライドは別の名前を持つ派生のメソッドのメソッドをオーバーライドする場合にのみ使用してください。  
+# <a name="explicit-overrides--c-component-extensions"></a>明示的なオーバーライド (C++ Component Extensions)
+このトピックでは、基底クラスまたはインターフェイスのメンバーを明示的にオーバーライドする方法について説明します。 (明示的な) 名前付きオーバーライドを別の名前を持つ派生メソッドでメソッドをオーバーライドする場合にのみ使用する必要があります。  
   
-## すべてのランタイム  
+## <a name="all-runtimes"></a>すべてのランタイム  
  **構文**  
   
 ```  
   
-        overriding-function-declarator = type::function [,type::function] { overriding-function-definition }  
+      overriding-function-declarator = type::function [,type::function] { overriding-function-definition }  
 overriding-function-declarator = function { overriding-function-definition }  
 ```  
   
  **パラメーター**  
   
- *overriding\-function\-declarator*  
- オーバーライドする関数の戻り値の型、名前、引数リスト。オーバーライドする関数がオーバーライドされる関数と同じ名前を持つ必要がないことに注意してください。  
+ *オーバーライドする関数の宣言子*  
+ オーバーライド関数の戻り値の型、名、および引数リスト。  オーバーライドされる関数と同じ名前に設定をオーバーライドする関数がないことに注意してください。  
   
  *type*  
- オーバーライドする関数を含む基本型。  
+ 基本データ型をオーバーライドする関数が含まれています。  
   
  *function*  
- オーバーライドする一つ以上の関数名のコンマ区切りのリスト。  
+ オーバーライドする 1 つまたは複数の関数名のコンマ区切りの一覧。  
   
- *overriding\-function\-definition*  
- オーバーライドする関数を定義する関数本体のステートメント。  
+ *オーバーライドする関数定義*  
+ オーバーライド関数を定義する関数本体のステートメント。  
   
  **解説**  
   
- メソッド シグネチャのエイリアスを作成するか、または同じシグネチャをメソッドに異なる実装により使用の明示的なオーバーライドします。  
+ 明示的な使用には、メソッドのシグネチャのエイリアスを作成する、またはメソッド witht 同じシグネチャの別の実装を提供するがオーバーライドされます。  
   
- 継承された継承された型および型のメンバーの動作の変更については、[オーバーライド指定子](../windows/override-specifiers-cpp-component-extensions.md)を参照してください。  
+ 継承された型および継承された型のメンバーの動作を変更する方法については、次を参照してください。[オーバーライド指定子を](../windows/override-specifiers-cpp-component-extensions.md)です。  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
+## <a name="windows-runtime"></a>Windows ランタイム  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
  **解説**  
   
- **\/clr:oldSyntax**でコンパイルされたネイティブ コードまたはアンマネージ コードで明示的にオーバーライドの詳細については、「[明示的なオーバーライド](../cpp/explicit-overrides-cpp.md)」を参照してください。  
+ ネイティブ コードで明示的なに関する情報が上書きまたはコードでコンパイルされた**/clr:oldSyntax**を参照してください[明示的なオーバーライド](../cpp/explicit-overrides-cpp.md)です。  
   
-### 要件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-### 例  
+### <a name="examples"></a>使用例  
  **例**  
   
- 次のコード例は基本インターフェイスで、明示的なオーバーライドを使用して、メンバーの単純な暗黙のオーバーライドと実装を示します。  
+ 次のコード例は、基本インターフェイスでの単純な明示的なオーバーライドとメンバーの実装を示しています明示的なオーバーライドを使用していないを提供します。  
   
 ```  
 // explicit_override_1.cpp  
@@ -94,9 +95,13 @@ int main() {
   
  **出力**  
   
-  **X::f override of I1::f** **例**  
+```Output  
+X::f override of I1::f  
+```  
   
- 次のコード例は明示的なオーバーライド構文を使用して一般的なシグネチャを持つすべてのインターフェイス メンバーを実装する方法を示します。  
+ **例**  
+  
+ 次のコード例では、すべてのインターフェイス メンバー一般的なシグネチャを持つが明示的なオーバーライド構文を使用して実装する方法を示します。  
   
 ```  
   
@@ -126,10 +131,14 @@ int main() {
   
  **出力**  
   
-  **I1::f と I2::f の X::f のオーバーライド**  
- **I1::f と I2::f の X::f のオーバーライド** **例**  
+```Output  
+X::f override of I1::f and I2::f  
+X::f override of I1::f and I2::f  
+```  
   
- 次のコード例は関数のオーバーライドが実装している関数とは異なる名前がどのようになるかを示しています。  
+ **例**  
+  
+ 次のコード例では、関数のオーバーライドでは、実装する関数とは異なる名前を持つことができる方法を示します。  
   
 ```  
 // explicit_override_3.cpp  
@@ -153,9 +162,13 @@ int main() {
   
  **出力**  
   
-  **X::g** **例**  
+```Output  
+X::g  
+```  
   
- 次のコード例はタイプ セーフなコレクションを実装する明示的なインターフェイスの実装を示します。  
+ **例**  
+  
+ 次のコード例は、タイプ セーフのコレクションを実装する明示的なインターフェイス実装を示しています。  
   
 ```  
 // explicit_override_4.cpp  
@@ -180,5 +193,5 @@ public:
 };  
 ```  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

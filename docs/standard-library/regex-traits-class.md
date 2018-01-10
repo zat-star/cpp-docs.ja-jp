@@ -49,11 +49,12 @@ caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5ee2c2aa566e8426e56da490ae9a3a71348dfeee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5acde3fe50cb470be79018d4bee9bf75401fe72d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="regextraits-class"></a>regex_traits クラス
 照合する要素の特性を記述します。  
@@ -96,7 +97,7 @@ public:
   
  各 `regex_traits` オブジェクトは、そのオブジェクトの一部のメンバー関数が使用する `regex_traits::locale` 型のオブジェクトを保持します。 既定のロケールは、 `regex_traits::locale()`のコピーです。 メンバー関数 `imbue` は、ロケール オブジェクトを置き換えます。また、メンバー関数 `getloc` は、ロケール オブジェクトのコピーを返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<regex>  
   
  **名前空間:** std  
@@ -1546,7 +1547,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<regex>](../standard-library/regex.md)  
 [regex_constants クラス](../standard-library/regex-constants-class.md)  
 [regex_error クラス](../standard-library/regex-error-class.md)  

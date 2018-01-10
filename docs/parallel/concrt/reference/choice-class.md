@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -24,35 +23,19 @@ f1_keywords:
 - AGENTS/concurrency::choice::unlink_target
 - AGENTS/concurrency::choice::unlink_targets
 - AGENTS/concurrency::choice::value
-dev_langs:
-- C++
-helpviewer_keywords:
-- choice class
+dev_langs: C++
+helpviewer_keywords: choice class
 ms.assetid: 4157a539-d5c2-4161-b1ab-536ce2888397
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 13110f3a221be47716ca60618c59d2e4bdd6911e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: ec7383340e9502764514bb61ce8e10f6cb64c616
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="choice-class"></a>choice クラス
 `choice` メッセージング ブロックは、複数のソースと単一のターゲットを持つブロックであり、一連のソースとの制御フローの相互作用を表します。 choice ブロックは、複数のソースのいずれかがメッセージを生成するのを待ち、そのメッセージを生成したソースのインデックスを伝達します。  
@@ -68,7 +51,7 @@ class choice: public ISource<size_t>;
   
 #### <a name="parameters"></a>パラメーター  
  `T`  
- A `tuple`-ベースの入力ソースのペイロードを表す型。  
+ A `tuple`-した入力ソースのペイロードを表す型。  
   
 ## <a name="members"></a>メンバー  
   
@@ -76,50 +59,50 @@ class choice: public ISource<size_t>;
   
 |名前|説明|  
 |----------|-----------------|  
-|`type`|型の別名`T`します。|  
+|`type`|型の別名`T`です。|  
   
 ### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
 |----------|-----------------|  
 |[選択肢](#ctor)|オーバーロードされます。 `choice` メッセージング ブロックを構築します。|  
-|[~ choice デストラクター](#dtor)|破棄、`choice`メッセージング ブロックします。|  
+|[~ choice デストラクター](#dtor)|破棄、`choice`メッセージング ブロックです。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[そのまま使用します。](#accept)|これによって提供されたメッセージを受け入れ`choice`ブロック、呼び出し元に所有権を移譲します。|  
-|[acquire_ref](#acquire_ref)|この参照カウントを取得し`choice`メッセージング ブロックは、削除を禁止します。|  
-|[使用します。](#consume)|これによって以前に提供メッセージを使用して`choice`メッセージング ブロックし、所有権を呼び出し元に移動するターゲットが正常に予約されています。|  
-|[has_value](#has_value)|チェックするかどうかこの`choice`値を持つメッセージング ブロックがまだに初期化します。|  
-|[インデックス](#index)|インデックスを返す、`tuple`によって選択された要素を表す、`choice`メッセージング ブロックします。|  
-|[link_target](#link_target)|これにターゲット ブロックをリンク`choice`メッセージング ブロックします。|  
+|[そのまま使用します。](#accept)|これによって提供されたメッセージを受け入れる`choice`ブロック、呼び出し元に所有権を転送します。|  
+|[acquire_ref](#acquire_ref)|この参照カウントを獲得`choice`メッセージング ブロックを削除されないようにします。|  
+|[使用します。](#consume)|これによって以前に提供メッセージを使用して`choice`ブロックのメッセージングおよび呼び出し元に所有権を転送する、ターゲットが正常に予約されています。|  
+|[has_value](#has_value)|チェックするかどうかこの`choice`メッセージング ブロックはまだ初期化されて、値を使用します。|  
+|[インデックス](#index)|インデックスを返します、`tuple`によって選択された要素を表す、`choice`メッセージング ブロックです。|  
+|[link_target](#link_target)|これをターゲット ブロックをリンク`choice`メッセージング ブロックです。|  
 |[release](#release)|以前に成功したメッセージの予約を解放します。|  
-|[release_ref](#release_ref)|この参照カウントを解放`choice`メッセージング ブロックします。|  
-|[reserve](#reserve)|これによって以前に提供メッセージを予約`choice`メッセージング ブロックします。|  
-|[unlink_target](#unlink_target)|これから、ターゲット ブロックのリンクを解除`choice`メッセージング ブロックします。|  
-|[unlink_targets](#unlink_targets)|これからすべてのターゲットのリンクを解除`choice`メッセージング ブロックします。 (上書き[isource::unlink_targets](isource-class.md#unlink_targets))。|  
-|[value](#value)|によって選択されたインデックスを持つメッセージを取得、`choice`メッセージング ブロックします。|  
+|[release_ref](#release_ref)|この参照カウントを解放`choice`メッセージング ブロックです。|  
+|[reserve](#reserve)|これによって以前に提供メッセージを予約`choice`メッセージング ブロックです。|  
+|[unlink_target](#unlink_target)|ターゲット ブロックをこれからのリンクを解除`choice`メッセージング ブロックです。|  
+|[unlink_targets](#unlink_targets)|これからすべてのターゲットのリンクを解除`choice`メッセージング ブロックです。 (上書き[isource::unlink_targets](isource-class.md#unlink_targets))。|  
+|[value](#value)|によって選択されたインデックスを持つメッセージを取得、`choice`メッセージング ブロックです。|  
   
 ## <a name="remarks"></a>コメント  
- Choice ブロックでは受信メッセージの&1; つだけが使用します。  
+ Choice ブロックにより、受信メッセージの 1 つだけが使用されます。  
   
- 詳細については、次を参照してください。[非同期メッセージ ブロック](../../../parallel/concrt/asynchronous-message-blocks.md)します。  
+ 詳細については、次を参照してください。[非同期メッセージ ブロック](../../../parallel/concrt/asynchronous-message-blocks.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [ISource](isource-class.md)  
   
  `choice`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
   
 ##  <a name="accept"></a>そのまま使用します。 
 
- これによって提供されたメッセージを受け入れ`choice`ブロック、呼び出し元に所有権を移譲します。  
+ これによって提供されたメッセージを受け入れる`choice`ブロック、呼び出し元に所有権を転送します。  
   
 ```  
 virtual message<size_t>* accept(
@@ -129,17 +112,17 @@ virtual message<size_t>* accept(
   
 ### <a name="parameters"></a>パラメーター  
  `_MsgId`  
- `runtime_object_identity` 、提供されているの`message`オブジェクトです。  
+ `runtime_object_identity` 、提供されているの`message`オブジェクト。  
   
  `_PTarget`  
  呼び出しているターゲット ブロックへのポインター、`accept`メソッドです。  
   
 ### <a name="return-value"></a>戻り値  
- 所有権が呼び出し元は、メッセージへのポインター。  
+ 呼び出し元は、現在の所有権を持つメッセージへのポインター。  
   
 ##  <a name="acquire_ref"></a>acquire_ref 
 
- この参照カウントを取得し`choice`メッセージング ブロックは、削除を禁止します。  
+ この参照カウントを獲得`choice`メッセージング ブロックを削除されないようにします。  
   
 ```  
 virtual void acquire_ref(_Inout_ ITarget<size_t>* _PTarget);
@@ -147,7 +130,7 @@ virtual void acquire_ref(_Inout_ ITarget<size_t>* _PTarget);
   
 ### <a name="parameters"></a>パラメーター  
  `_PTarget`  
- このメソッドを呼び出して、ターゲット ブロックへのポインター。  
+ このメソッドを呼び出すターゲット ブロックへのポインター。  
   
 ### <a name="remarks"></a>コメント  
  このメソッドは、`ITarget`中にこのソースにリンクされているオブジェクト、`link_target`メソッドです。  
@@ -193,9 +176,9 @@ choice(
   
  移動の構築はロックの状況では行われません。ということは、移動時に処理中の軽量タスクがないことを確認するのはユーザーの責任です。 そうしないと、例外または不整合な状態で、多数の競合が発生します。  
   
-##  <a name="dtor"></a>~ の選択 
+##  <a name="dtor"></a>~ 選択肢 
 
- 破棄、`choice`メッセージング ブロックします。  
+ 破棄、`choice`メッセージング ブロックです。  
   
 ```  
 ~choice();
@@ -203,7 +186,7 @@ choice(
   
 ##  <a name="consume"></a>使用します。 
 
- これによって以前に提供メッセージを使用して`choice`メッセージング ブロックし、所有権を呼び出し元に移動するターゲットが正常に予約されています。  
+ これによって以前に提供メッセージを使用して`choice`ブロックのメッセージングおよび呼び出し元に所有権を転送する、ターゲットが正常に予約されています。  
   
 ```  
 virtual message<size_t>* consume(
@@ -213,20 +196,20 @@ virtual message<size_t>* consume(
   
 ### <a name="parameters"></a>パラメーター  
  `_MsgId`  
- `runtime_object_identity` 、予約済みの`message`オブジェクトです。  
+ `runtime_object_identity` 、予約済みの`message`オブジェクト。  
   
  `_PTarget`  
  呼び出しているターゲット ブロックへのポインター、`consume`メソッドです。  
   
 ### <a name="return-value"></a>戻り値  
- ポインター、`message`オブジェクトの呼び出し元が今すぐの所有権を持っています。  
+ ポインター、`message`呼び出し元がの所有権をオブジェクトします。  
   
 ### <a name="remarks"></a>コメント  
- `consume`メソッドは`accept`への呼び出しで前に必ず必要がありますが、`reserve`返さ`true`します。  
+ `consume`メソッドは`accept`への呼び出しでは前に必ず必要がありますが、`reserve`返さ`true`です。  
   
 ##  <a name="has_value"></a>has_value 
 
- チェックするかどうかこの`choice`値を持つメッセージング ブロックがまだに初期化します。  
+ チェックするかどうかこの`choice`メッセージング ブロックはまだ初期化されて、値を使用します。  
   
 ```  
 bool has_value() const;
@@ -239,7 +222,7 @@ bool has_value() const;
   
 ##  <a name="index"></a>インデックス 
 
- インデックスを返す、`tuple`によって選択された要素を表す、`choice`メッセージング ブロックします。  
+ インデックスを返します、`tuple`によって選択された要素を表す、`choice`メッセージング ブロックです。  
   
 ```  
 size_t index();
@@ -249,11 +232,11 @@ size_t index();
  メッセージのインデックス。  
   
 ### <a name="remarks"></a>コメント  
- 使用して、メッセージ ペイロードを抽出する、`get`メソッドです。  
+ 使用して、メッセージ ペイロードを抽出することができます、`get`メソッドです。  
   
 ##  <a name="link_target"></a>link_target 
 
- これにターゲット ブロックをリンク`choice`メッセージング ブロックします。  
+ これをターゲット ブロックをリンク`choice`メッセージング ブロックです。  
   
 ```  
 virtual void link_target(_Inout_ ITarget<size_t>* _PTarget);
@@ -261,7 +244,7 @@ virtual void link_target(_Inout_ ITarget<size_t>* _PTarget);
   
 ### <a name="parameters"></a>パラメーター  
  `_PTarget`  
- ポインター、`ITarget`リンク先のブロック`choice`メッセージング ブロックします。  
+ ポインター、`ITarget`ブロックをこのリンクを`choice`メッセージング ブロックです。  
   
 ##  <a name="release"></a>リリース 
 
@@ -282,7 +265,7 @@ virtual void release(
   
 ##  <a name="release_ref"></a>release_ref 
 
- この参照カウントを解放`choice`メッセージング ブロックします。  
+ この参照カウントを解放`choice`メッセージング ブロックです。  
   
 ```  
 virtual void release_ref(_Inout_ ITarget<size_t>* _PTarget);
@@ -290,14 +273,14 @@ virtual void release_ref(_Inout_ ITarget<size_t>* _PTarget);
   
 ### <a name="parameters"></a>パラメーター  
  `_PTarget`  
- このメソッドを呼び出して、ターゲット ブロックへのポインター。  
+ このメソッドを呼び出すターゲット ブロックへのポインター。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、`ITarget`このソースからリンクが解除されるオブジェクト。 ターゲット ブロック用に予約されたリソースを解放できるは、ソース ブロックです。  
+ このメソッドは、`ITarget`このソースからリンクが解除されるオブジェクト。 ソース ブロックがターゲット ブロック用に予約されたリソースを解放する許可されます。  
   
 ##  <a name="reserve"></a>予約 
 
- これによって以前に提供メッセージを予約`choice`メッセージング ブロックします。  
+ これによって以前に提供メッセージを予約`choice`メッセージング ブロックです。  
   
 ```  
 virtual bool reserve(
@@ -307,20 +290,20 @@ virtual bool reserve(
   
 ### <a name="parameters"></a>パラメーター  
  `_MsgId`  
- `runtime_object_identity`の`message`予約されているオブジェクトします。  
+ `runtime_object_identity`の`message`オブジェクトの中に予約されています。  
   
  `_PTarget`  
  呼び出しているターゲット ブロックへのポインター、`reserve`メソッドです。  
   
 ### <a name="return-value"></a>戻り値  
- `true`場合は、メッセージが正常に予約された、`false`それ以外の場合。 予約はエラーになるなど、さまざまな理由: メッセージが既にに予約されているまたはソースが、予約を拒否し、など、別のターゲットで受け入れられます。  
+ `true`場合は、メッセージが正常に予約された、`false`それ以外の場合。 予約は、さまざまな理由で失敗することが: メッセージが既に予約か、またはソースでした、予約を拒否するなど、別のターゲットで受け入れられます。  
   
 ### <a name="remarks"></a>コメント  
- 呼び出した後`reserve`、成功した場合、いずれかを呼び出す必要があります`consume`または`release`かかるまたはそれぞれのメッセージを所有しているを断念するためにします。  
+ 呼び出した後`reserve`、成功した場合、いずれかを呼び出す必要があります`consume`または`release`かかるまたは所有している、メッセージをそれぞれ付与するためにします。  
   
 ##  <a name="unlink_target"></a>unlink_target 
 
- これから、ターゲット ブロックのリンクを解除`choice`メッセージング ブロックします。  
+ ターゲット ブロックをこれからのリンクを解除`choice`メッセージング ブロックです。  
   
 ```  
 virtual void unlink_target(_Inout_ ITarget<size_t>* _PTarget);
@@ -328,22 +311,22 @@ virtual void unlink_target(_Inout_ ITarget<size_t>* _PTarget);
   
 ### <a name="parameters"></a>パラメーター  
  `_PTarget`  
- ポインター、`ITarget`このリンクを解除するブロック`choice`メッセージング ブロックします。  
+ ポインター、`ITarget`このリンクを解除するブロック`choice`メッセージング ブロックです。  
   
 ##  <a name="unlink_targets"></a>unlink_targets 
 
- これからすべてのターゲットのリンクを解除`choice`メッセージング ブロックします。  
+ これからすべてのターゲットのリンクを解除`choice`メッセージング ブロックです。  
   
 ```  
 virtual void unlink_targets();
 ```  
   
 ### <a name="remarks"></a>コメント  
- このメソッドがあるため、デストラクターから呼び出される必要はありません、内部のデストラクター`single_assignment`ブロックが正常に解除されます。  
+ このメソッドがあるため、デストラクターから呼び出される必要はありませんは、内部デストラクター`single_assignment`ブロックが正常に解除されます。  
   
 ##  <a name="value"></a>値 
 
- によって選択されたインデックスを持つメッセージを取得、`choice`メッセージング ブロックします。  
+ によって選択されたインデックスを持つメッセージを取得、`choice`メッセージング ブロックです。  
   
 ```  
 template <
@@ -354,16 +337,15 @@ _Payload_type const& value();
   
 ### <a name="parameters"></a>パラメーター  
  `_Payload_type`  
- メッセージ ペイロードの種類。  
+ メッセージ ペイロードの型。  
   
 ### <a name="return-value"></a>戻り値  
  メッセージのペイロード。  
   
 ### <a name="remarks"></a>コメント  
- `choice`メッセージング ブロックは、さまざまなペイロードの種類の入力を行うことができます、取得時に、ペイロードの種類を指定する必要があります。 結果に基づいて型を指定できます、`index`メソッドです。  
+ `choice`メッセージング ブロックは、さまざまなペイロードの種類の入力を行うことができます、取得時点で、ペイロードの種類を指定する必要があります。 結果に基づいて、種類を指定できます、`index`メソッドです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [クラスを結合します。](join-class.md)   
  [single_assignment クラス](single-assignment-class.md)
-

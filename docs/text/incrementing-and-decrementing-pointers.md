@@ -1,70 +1,71 @@
 ---
-title: "ポインターのインクリメントとデクリメント | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "デクリメント (ポインターを)"
-  - "インクリメント (ポインターを)"
-  - "MBCS [C++], ポインター"
-  - "ポインター [C++], マルチバイト文字"
+title: "インクリメントとデクリメント ポインター |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- incrementing pointers
+- MBCS [C++], pointers
+- pointers [C++], multibyte characters
+- decrementing pointers
 ms.assetid: 0872b4a0-e2bd-4004-8319-070efb76f2fd
-caps.latest.revision: 7
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: e9eccf65f091c8c5c273f6a65cb7e81b0d386afa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ポインターのインクリメントとデクリメント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のヒントを参考にしてください。  
+# <a name="incrementing-and-decrementing-pointers"></a>ポインターのインクリメントとデクリメント
+次のヒントを使用します。  
   
--   後続バイトではなく、常に先行バイトを指すようにします。  後続バイトへのポインターを持つことは危険です。  通常は、逆方向からではなく、順方向に文字列スキャンを行うようにします。  
+-   先行バイト、いない後続バイトをポイントします。 末尾バイトにポインターを持つ通常安全ではありません。 逆の順序ではなく、順方向に文字列をスキャンすることが通常できます。  
   
--   文字単位でポインター値を増減できる、インクリメント\/デクリメント関数とマクロが用意されています。  
+-   ポインターのインクリメントまたはデクリメント関数や文字単位を移動するマクロをもあります。  
   
     ```  
     sz1++;  
     ```  
   
-     上のコードは、次のようになります。  
+     ようになります。  
   
     ```  
     sz1 = _mbsinc( sz1 );  
     ```  
   
-     `_mbsinc` 関数と `_mbsdec` 関数は、文字のバイト サイズとは無関係に、あくまで "`character` 単位" で正しくポインターを増減させます。  
+     `_mbsinc`と`_mbsdec`関数正しくインクリメントし、後置デクリメントの`character`文字のサイズに関係なく、単位です。  
   
--   次に示すように、デクリメントには文字列の先頭へのポインターが必要になります。  
+-   デクリメント、次のように、文字列の先頭へのポインターが必要です。  
   
     ```  
     sz2--;  
     ```  
   
-     上のコードは、次のようになります。  
+     ようになります。  
   
     ```  
     sz2 = _mbsdec( sz2Head, sz2 );  
     ```  
   
-     または、次のように文字列の中の有効文字を先頭ポインターとすることができます。  
+     または、ヘッド ポインターが、文字列で、有効な文字になります。 ようにします。  
   
     ```  
     sz2Head < sz2  
     ```  
   
-     先行バイトへの有効なポインターが必要です。  
+     既知の有効な先行バイトを指すポインターが必要です。  
   
--   前の文字へのポインターを保持しておいた方が `_mbsdec` への呼び出しが速くなる場合があります。  
+-   高速の呼び出しの前の文字へのポインターを維持することができます`_mbsdec`です。  
   
-## 参照  
- [MBCS のプログラミングについて](../Topic/MBCS%20Programming%20Tips.md)   
+## <a name="see-also"></a>参照  
+ [MBCS のプログラミングについて](../text/mbcs-programming-tips.md)   
  [バイト インデックス](../text/byte-indices.md)

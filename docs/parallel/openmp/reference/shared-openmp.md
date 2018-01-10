@@ -15,11 +15,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 966584b3a294551560bb88430a2424f353a1e3b2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 26f8618a0340216215c3432576b6adbba3e70f80
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="shared-openmp"></a>shared (OpenMP)
 すべてのスレッド間で 1 つまたは複数の変数を共有する必要がありますを指定します。  
@@ -52,5 +53,5 @@ shared(var)
 ## <a name="example"></a>例  
  参照してください[プライベート](../../../parallel/openmp/reference/private-openmp.md)の使用例については`shared`します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [句](../../../parallel/openmp/reference/openmp-clauses.md)

@@ -1,31 +1,30 @@
 ---
-title: "NMAKE の致命的なエラー U1077 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "U1077"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "U1077"
+title: "NMAKE の致命的なエラー U1077 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: U1077
+dev_langs: C++
+helpviewer_keywords: U1077
 ms.assetid: 70d989f8-ef34-4ad7-8fe0-5b800556b2a1
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 268788774d191d99c08592fc2049fea1fae77718
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# NMAKE の致命的なエラー U1077
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'program' : リターン コード 'value'  
+# <a name="nmake-fatal-error-u1077"></a>NMAKE の致命的なエラー U1077
+'プログラム': 'value' のコードを返す  
   
- 指定されたコマンドあるいはプログラムは NMAKE から呼び出されましたが、失敗に終わり、終了コード 'value' が返されました。  
+ 指定したコマンドまたはプログラムが失敗し、指定した終了コードが返されました (nmake の) によって呼び出されます。  
   
- このエラーを発生させずに NMAKE セッションを続行させるには、\/I オプション、ドット ディレクティブ **.IGNORE**、またはダッシュ コマンド修飾子 \(**\-**\) を使用します。  NMAKE セッションの依存関係ツリー中のこのプログラムと関係ない部分の実行だけを続行させるには、\/K オプションを使用します。
+ このエラーを抑制して (nmake の) セッションを続行、/I オプションを使用する、**です。無視**ドット ディレクティブ、またはダッシュ (**-**) コマンド修飾子です。 依存関係ツリーの関連性のない部分 (nmake の) セッションを続行するには、/K オプションを使用します。

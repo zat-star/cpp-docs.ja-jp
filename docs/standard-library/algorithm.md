@@ -18,11 +18,12 @@ caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 65cb348e19031965d70175d73ed8df94692f9db6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3cd9ac613dd788b116e648e2b1fd612aa07abcab
+ms.sourcegitcommit: 669f45f11b98b71b8a0e6808c0fe0cdf17484089
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="ltalgorithmgt"></a>&lt;algorithm&gt;
 アルゴリズムを実行する C++ 標準ライブラリ コンテナーのテンプレート関数を定義します。  
@@ -44,7 +45,7 @@ ms.lasthandoff: 10/24/2017
   
 -   _copy サフィックスは、アルゴリズムが要素の値を操作するだけではなく、変更された値をターゲット範囲にコピーすることを示します。 `reverse` アルゴリズムは、範囲内の要素の順序を反転し、`reverse_copy` アルゴリズムは、さらに結果をターゲット範囲にコピーします。  
   
- C++ 標準ライブラリ アルゴリズムは、通常、その目的や要件に関する事項を示すグループに分類されます。 これには、要素の値を変更する変更アルゴリズムと、要素の値を変更しない非変更アルゴリズムが含まれます。 変換アルゴリズムは、要素の順序を変更しますが、要素の値は変更しません。 削除アルゴリズムは、範囲または範囲のコピーから要素を除去できます。 並べ替えアルゴリズムは、さまざまな方法で要素の順序を変更し、並べ替えられた範囲アルゴリズムは、要素が特定の方法で並べ替えられたアルゴリズムに対してのみ機能します。  
+ C++ 標準ライブラリ アルゴリズムは、通常、その目的や要件に関する事項を示すグループに分類されます。 これには、要素の値を変更する変更アルゴリズムと、要素の値を変更しない非変更アルゴリズムが含まれます。 変換アルゴリズムは、要素の順序を変更しますが、要素の値は変更しません。 削除アルゴリズムは、範囲または範囲のコピーから要素を除去できます。 並べ替えアルゴリズムのさまざまな方法で範囲の要素の順序を変更し、並べ替えられた範囲アルゴリズムは、特定の方法で並べ替えられた要素の範囲に対してのみ機能します。  
   
  数値処理のために提供される C++ 標準ライブラリ数値アルゴリズムには独自のヘッダー ファイル [\<numeric>](../standard-library/numeric.md) があり、関数オブジェクトとアダプターはヘッダー [\<functional>](../standard-library/functional.md) で定義されます。ブール値を返す関数オブジェクトは述語と呼ばれます。 既定の二項述語は比較 `operator<` です。 通常、順序を並べ替える要素は、小なり比較だけを実行できる必要があります。これにより、2 つの要素が指定されたときに、それらの要素が等しいか (どちらか一方が小さくはない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。  
   
@@ -138,7 +139,7 @@ ms.lasthandoff: 10/24/2017
 |[unique_copy](../standard-library/algorithm-functions.md#unique_copy)|互いに隣接する重複要素を除き、ソース範囲の要素をターゲット範囲にコピーします。|  
 |[upper_bound](../standard-library/algorithm-functions.md#upper_bound)|順序の基準が二項述語で指定できる場合に、順序付けられた範囲内で、指定した値を超える値を持つ最初の要素の位置を検索します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)

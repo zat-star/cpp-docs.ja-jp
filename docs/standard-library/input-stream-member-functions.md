@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f9fb195bfb5e6e35d035ba5a3660bb91644a04ab
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3aa6fc5331340c110f2325762bbe46409d53d1b5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="input-stream-member-functions"></a>入力ストリームのメンバー関数
 入力ストリームのメンバー関数は、ディスク入力に使用します。 次のようなメンバー関数があります。  
@@ -199,6 +200,6 @@ int main( )
 ##  <a name="vclrftheclosefunctionforinputstreamsanchor15"></a>入力ストリームの close 関数  
  **close** メンバー関数は、入力ファイル ストリームに関連付けられているディスク ファイルを閉じ、オペレーティング システム ファイル ハンドルを解放します。 [ifstream](../standard-library/basic-ifstream-class.md) デストラクターによってファイルが閉じられますが、同じストリーム オブジェクトの別のファイルを開く必要がある場合は **close** 関数を使用できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [入力ストリーム](../standard-library/input-streams.md)
 

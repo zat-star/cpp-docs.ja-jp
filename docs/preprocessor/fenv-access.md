@@ -1,43 +1,44 @@
 ---
-title: "fenv_access | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc-pragma.fenv_access"
-  - "fenv_access_CPP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "fenv_access プラグマ"
-  - "プラグマ, fenv_access"
+title: "fenv_access |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc-pragma.fenv_access
+- fenv_access_CPP
+dev_langs: C++
+helpviewer_keywords:
+- pragmas, fenv_access
+- fenv_access pragma
 ms.assetid: 2ccea292-0ae4-42ce-9c67-cc189299857b
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 623c9cb9af1d7df137aa7ee92071e34ad99a6331
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# fenv_access
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-フラグ テストとモード変更を変える可能性のある最適化を無効 \(ON\) または有効 \(OFF\) にします。  
+# <a name="fenvaccess"></a>fenv_access
+フラグ テストとモード変更を変える可能性のある最適化を無効 (ON) または有効 (OFF) にします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #pragma fenv_access [ON | OFF]  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  既定では、`fenv_access` は OFF です。  
   
- 浮動小数点の動作の詳細については、「[\/fp \(浮動小数点の動作の指定\)](../build/reference/fp-specify-floating-point-behavior.md)」を参照してください。  
+ 浮動小数点の動作の詳細については、次を参照してください。 [/fp (浮動小数点の動作を指定)](../build/reference/fp-specify-floating-point-behavior.md)です。  
   
  `fenv_access` の影響を受ける最適化の種類は次のとおりです。  
   
@@ -49,11 +50,11 @@ caps.handback.revision: 10
   
  その他の浮動小数点プラグマには以下があります。  
   
--   [float\_control](../Topic/float_control.md)  
+-   [float_control](../preprocessor/float-control.md)  
   
--   [fp\_contract](../preprocessor/fp-contract.md)  
+-   [fp_contract](../preprocessor/fp-contract.md)  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // pragma_directive_fenv_access_x86.cpp  
@@ -79,9 +80,12 @@ int main() {
 }  
 ```  
   
-  **out\=9.999999776482582e\-003**   
-## 使用例  
- 次のサンプルは、Itanium プロセッサ用の出力ファイルを作成するコンパイラ用です。  **\/fp:precise** は、中間結果を拡張精度で保持するため、FLT\_MAX \(3.402823466e\+38F\) よりも大きい値を計算でき、その結果として sum は、手動で計算した場合と同様に結果が 1.0 となります。  **\/fp:strict** は、ソース精度 \(float\) で中間結果を保持するため、最初の加算で無限大になり、式全体で無限大が維持されます。  
+```Output  
+out=9.999999776482582e-003  
+```  
+  
+## <a name="example"></a>例  
+ 次のサンプルは、Itanium プロセッサ用の出力ファイルを作成するコンパイラ用です。 **/fp: 正確な**手動で計算した場合と同様に、大きい値 FLT_MAX (3.402823466 e + 38 f) を計算するよりも、その結果として sum が 1.0 結果は、拡張精度内に中間結果を保持します。 **/fp: 厳密な**最初の加算生成無限大の場合は、式全体で保持するために中間は、ソース精度 (float) で結果を保持します。  
   
 ```  
 // pragma_directive_fenv_access_IPF.cpp  
@@ -104,8 +108,11 @@ int main() {
 }  
 ```  
   
-  **1.000000**   
-## 使用例  
+```Output  
+1.000000  
+```  
+  
+## <a name="example"></a>例  
  前の例の `#pragma fenv_access (on)` をコメント アウトすると、コンパイラがコンパイル時に評価し、その場合、制御モードが使用されないため、出力が異なることに注意してください。  
   
 ```  
@@ -129,6 +136,9 @@ int main() {
 }  
 ```  
   
-  **out\=1.000000000000000e\-002**   
-## 参照  
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+```Output  
+out=1.000000000000000e-002  
+```  
+  
+## <a name="see-also"></a>参照  
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

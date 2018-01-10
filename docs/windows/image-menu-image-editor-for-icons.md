@@ -15,11 +15,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 32b10c79d5ec2a8d25c0a942dd96a22b8e6a71e9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 49da8f90703190be068fe2d35a808b2cafed6f0c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="image-menu-image-editor-for-icons"></a>[イメージ] メニュー (アイコン用イメージ エディター)
 イメージ エディターがアクティブな場合にのみが表示されたら、[イメージ] メニューには、イメージを編集、カラー パレットを管理およびイメージ エディター ウィンドウのオプションを設定するコマンドがあります。 さらに、アイコンとカーソルを使用する場合は、デバイスのイメージを使用するためのコマンドを使用。  
@@ -75,10 +78,10 @@ ms.lasthandoff: 10/24/2017
  **ツール**  
  使用できるすべてのツールを含むサブメニューを起動、[イメージ エディター ツールバー](../windows/toolbar-image-editor-for-icons.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  なし  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセラレータ キー](../windows/accelerator-keys-image-editor-for-icons.md)   
  [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)
 

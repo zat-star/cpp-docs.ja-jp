@@ -15,11 +15,12 @@ caps.latest.revision: "26"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 580b7a2eb320542223b0c19d18a8401ad3778e40
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 55cac28633b87ab8c103904f70b0d88269ffe02f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcdragframeimpl-class"></a>CMFCDragFrameImpl クラス
 `CMFCDragFrameImpl`クラスは、ユーザーが標準ドッキング モードのペインをドラッグしたときに表示されるドラッグ四角形を描画します。  
@@ -39,7 +40,7 @@ class CMFCDragFrameImpl
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CMFCDragFrameImpl](../../mfc/reference/cmfcdragframeimpl-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdragframeimpl.h  
   
 ##  <a name="enddrawdragframe"></a>CMFCDragFrameImpl::EndDrawDragFrame  
@@ -117,7 +118,7 @@ void ResetState();
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CPane クラス](../../mfc/reference/cpane-class.md)

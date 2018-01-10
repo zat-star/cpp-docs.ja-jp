@@ -23,11 +23,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b1c629355db7f2e77ef0854a52c86848adb70c6f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2d575aaa01a3668925c6a81eda7d8d99cc591180
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="call-class"></a>call クラス
 `call` メッセージング ブロックは、複数のソースを持つ、順序付けられた `target_block` であり、メッセージを受け取ったときに指定された関数を呼び出します。  
@@ -75,7 +76,7 @@ class call : public target_block<multi_link_registry<ISource<T>>>;
   
  `call`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
@@ -213,6 +214,6 @@ virtual bool supports_anonymous_source();
 ### <a name="return-value"></a>戻り値  
  `true`ブロックは延期いないために、メッセージを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [transformer クラス](transformer-class.md)

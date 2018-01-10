@@ -12,14 +12,13 @@ f1_keywords:
 - string/std::u32string
 - string/std::wstring
 ms.assetid: fdca01e9-f2f1-4b59-abda-0093d760b3cc
-caps.latest.revision: 12
+caps.latest.revision: "12"
 manager: ghogen
-ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
 ms.openlocfilehash: 683d3f5848ab86a9a80c25a09ac110b2abb2f5e2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ltstringgt-typedefs"></a>&lt;string&gt; typedefs
 ||||  
@@ -94,9 +93,8 @@ basic_string<wchar_t> wstr(L"");
 > [!NOTE]
 >  `wchar_t` のサイズは実装で定義されます。 `wchar_t` を使用してコードを一定のサイズにする場合は、お使いのプラットフォームの実装を確認してください (たとえば、`sizeof(wchar_t)` を使用)。 幅をすべてのプラットフォームで同一にできる文字列の文字の型が必要な場合は、[string](../standard-library/string-typedefs.md#string)、[u16string](../standard-library/string-typedefs.md#u16string)、または [u32string](../standard-library/string-typedefs.md#u32string) を使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<string>](../standard-library/string.md)
-
 
 
 

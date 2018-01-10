@@ -1,32 +1,33 @@
 ---
-title: "SemaphoreTraits::Unlock メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "corewrappers/Microsoft::WRL::Wrappers::HandleTraits::SemaphoreTraits::Unlock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Unlock メソッド"
+title: "Semaphoretraits::unlock メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: corewrappers/Microsoft::WRL::Wrappers::HandleTraits::SemaphoreTraits::Unlock
+dev_langs: C++
+helpviewer_keywords: Unlock method
 ms.assetid: 4e0ea808-b70d-43f7-81ef-998c3b34e3a0
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 819f7d7e4e4d5b6182da6172bd91a1e799379b52
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# SemaphoreTraits::Unlock メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-共有リソースの解放を制御します。  
+# <a name="semaphoretraitsunlock-method"></a>SemaphoreTraits::Unlock メソッド
+共有リソースのリリースのコントロールです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 inline static void Unlock(  
@@ -34,17 +35,17 @@ inline static void Unlock(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `h`  
- セマフォ オブジェクトへのハンドル。  
+ セマフォ オブジェクトへのハンドルします。  
   
-## 解説  
- ロック解除操作が失敗した場合、Unlock\(\) は失敗の理由を示すエラーが発生します。  
+## <a name="remarks"></a>コメント  
+ ロック解除の操作が成功しなかった場合、Unlock() は、エラーの原因を示すエラーを出力します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
- **名前空間:** Microsoft::WRL::Wrappers::HandleTraits  
+ **Namespace:** Microsoft::WRL::Wrappers::HandleTraits  
   
-## 参照  
- [SemaphoreTraits 構造体](../Topic/SemaphoreTraits%20Structure.md)
+## <a name="see-also"></a>参照  
+ [SemaphoreTraits 構造体](../windows/semaphoretraits-structure.md)

@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 67848252bf875303c8120c9d4935e0135f705489
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0699e589340081d5dd13e8ab879094445005e327
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-library-conventions"></a>C++ ライブラリの規則
 C++ ライブラリは、標準 C ライブラリとほとんど同じ規則に従い、ここで説明するいくつかの追加事項があります。  
@@ -57,7 +58,7 @@ C++ ライブラリは、標準 C ライブラリとほとんど同じ規則に�
   
 -   置き換え可能な関数の既定バージョンを含む、ライブラリで提供されている関数は、*最も多い場合でで*、例外の指定に列記されている例外をスローする可能性があります。 ライブラリによって提供されるデストラクターは例外をスローしません。 `qsort` が例外をスローする比較関数を呼び出すときのように、標準 C ライブラリの関数は例外を伝播することがありますが、それ以外の場合は例外をスローしません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリの概要](../standard-library/cpp-standard-library-overview.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

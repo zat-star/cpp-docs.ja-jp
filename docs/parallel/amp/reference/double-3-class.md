@@ -83,11 +83,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 50f85b5582fbafa3d79a611f92009d9254b58101
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1779b92140fe9057a96ab8bd062b6540ed2d9c59
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="double3-class"></a>double_3 クラス
 3 個の倍精度浮動小数点数の short ベクターを表します。  
@@ -168,7 +169,7 @@ class double_3;
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#double_3__size)||  
   
@@ -210,7 +211,7 @@ class double_3;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `double_3`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
@@ -288,5 +289,5 @@ explicit inline double_3(
 static const int size = 3;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

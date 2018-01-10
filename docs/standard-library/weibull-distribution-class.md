@@ -37,11 +37,12 @@ caps.latest.revision: "15"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 319a00cfd69ef2e83da5744606b9c4c10d4f9942
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e08b64c18a44083f1af0fd899f71409c69473981
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="weibulldistribution-class"></a>weibull_distribution クラス
 ワイブル分布を生成します。  
@@ -89,7 +90,7 @@ class weibull_distribution
   
 プロパティ関数 `a()` と `b()` はそれぞれ、格納されている分布パラメーター *a* と *b* の値を返します。  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
 
 メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
   
@@ -97,9 +98,9 @@ class weibull_distribution
   
 `operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
   
-分布クラスとそのメンバーの詳細については、「[\<random>](../standard-library/random.md)」を参照してください。  
+分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-Weibull 分布の詳細については、Wolfram MathWorld の記事「[Weibull Distribution (Weibull 分布)](http://go.microsoft.com/fwlink/LinkId=401115)」を参照してください。  
+Weibull 分布の詳細については、Wolfram MathWorld の記事「[Weibull Distribution (Weibull 分布)](http://go.microsoft.com/fwlink/p/?linkid=401115)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -212,7 +213,7 @@ Distribution for 10 samples:
     10: 24.7220241239  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -269,7 +270,7 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
 
 

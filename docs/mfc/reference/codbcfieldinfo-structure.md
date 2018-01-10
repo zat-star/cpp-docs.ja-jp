@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: db9eaca0857d2caedb525dc56ad3d99aaf1d4559
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5b2b5d707b9915aa0d5e3fd1362746fe30a99a22
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="codbcfieldinfo-structure"></a>CODBCFieldInfo 構造体
 `CODBCFieldInfo`構造体には、ODBC データ ソース内のフィールドに関する情報が含まれています。  
@@ -58,10 +59,10 @@ struct CODBCFieldInfo
 ## <a name="remarks"></a>コメント  
  この情報を取得する[に](../../mfc/reference/crecordset-class.md#getodbcfieldinfo)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [に](../../mfc/reference/crecordset-class.md#getodbcfieldinfo)   
  [CRecordset::GetFieldValue](../../mfc/reference/crecordset-class.md#getfieldvalue)

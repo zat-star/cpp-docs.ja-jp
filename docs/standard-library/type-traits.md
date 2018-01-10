@@ -17,11 +17,12 @@ caps.latest.revision: "35"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: dff733e83e0917ee7f55a978886605146323f845
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7e0032070e20749a55a34218f7341914bc47501b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lttypetraitsgt"></a>&lt;type_traits&gt;
 型引数のプロパティに関する情報を提供する、または変換された型を生成する、コンパイル時定数を備えたテンプレートを定義します。  
@@ -208,7 +209,7 @@ using add_const_t = typename add_const<T>::type;
 |[result_of](../standard-library/result-of-class.md)|指定された引数型を受け取る呼び出し可能型の戻り値の型を決定します。|  
 |[underlying_type](../standard-library/underlying-type-class.md)|列挙型の基になる整数型を生成します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<functional>](../standard-library/functional.md)
 
 

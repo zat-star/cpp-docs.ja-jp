@@ -1,35 +1,35 @@
 ---
-title: "&lt;list&gt; (Visual C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "list"
-  - "<list>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "<list> C++ XML タグ"
-  - "list C++ XML タグ"
+title: "&lt;リスト&gt;(Visual C) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- list
+- <list>
+dev_langs: C++
+helpviewer_keywords:
+- list C++ XML tag
+- <list> C++ XML tag
 ms.assetid: c792a10b-0451-422c-9aa0-604116e69d64
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: e04fb5f7ff2ba22b53c0fe163455bfdb666f9b9f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# &lt;list&gt; (Visual C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\<listheader\> ブロックは、表または定義リストの見出し行の定義に使用します。  表を定義する場合は、見出しには用語のエントリだけを指定します。  
+# <a name="ltlistgt-visual-c"></a>&lt;リスト&gt;(Visual C)
+\< > ブロックを使用して、テーブルまたは定義の一覧の見出し行を定義します。 テーブルを定義するときにのみ、見出しの用語のエントリを指定する必要があります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 <list type="bullet" | "number" | "table">  
@@ -44,21 +44,21 @@ manager: "ghogen"
 </list>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `term`  
- 定義する用語。定義は、`description` に記述されます。  
+ 定義される用語であり、`description` で定義されます。  
   
  `description`  
- 箇条書きリストまたは番号付きリストの項目、あるいは `term` の定義のいずれか。  
+ 行頭文字または番号付きリストの項目、または `term` の定義です。  
   
-## 解説  
- リストの各項目は、\<item\> ブロックで指定します。  定義リストを作成するときは、`term` と `description` の両方を指定します。  ただし、表、箇条書きリスト、または番号付きリストに指定する必要があるのは、`description` のエントリだけです。  
+## <a name="remarks"></a>コメント  
+ リスト内の各項目は、\<item> ブロックで指定されます。 定義リストを作成する場合は、`term` と `description` の両方を指定する必要があります。 ただし、テーブル、箇条書きリスト、または番号付きリストの場合は、`description` のエントリを指定するだけで済みます。  
   
- リストや表には、必要な数だけ \<item\> ブロックを指定できます。  
+ リストまたはテーブルでは、必要な数の \<item> ブロックを使用できます。  
   
- コンパイル時に [\/doc](../build/reference/doc-process-documentation-comments-c-cpp.md) を指定してドキュメント コメントをファイルに出力します。  
+ コンパイル時に [/doc](../build/reference/doc-process-documentation-comments-c-cpp.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // xml_list_tag.cpp  
@@ -77,5 +77,5 @@ manager: "ghogen"
 class MyClass {};  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [XML に関するドキュメント](../ide/xml-documentation-visual-cpp.md)

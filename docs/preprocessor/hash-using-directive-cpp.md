@@ -1,73 +1,72 @@
 ---
-title: "#using ディレクティブ (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "friend_as_cpp"
-  - "#using"
-  - "friend_as"
-  - "#using_cpp"
-dev_langs: 
-  - "C++"
-  - "C"
-helpviewer_keywords: 
-  - "#using ディレクティブ"
-  - "LIBPATH 環境変数"
-  - "プリプロセッサ, ディレクティブ"
-  - "using ディレクティブ (#using)"
+title: "#<a name=\"using-directive-cclr--microsoft-docs\"></a>using ディレクティブ (C + + CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- friend_as_cpp
+- '#using'
+- friend_as
+- '#using_cpp'
+dev_langs: C++
+helpviewer_keywords:
+- using directive (#using)
+- '#using directive'
+- LIBPATH environment variable
+- preprocessor, directives
 ms.assetid: 870b15e5-f361-40a8-ba1c-c57d75c8809a
-caps.latest.revision: 17
-caps.handback.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "17"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: a8a73eb8e9b5c3f3ba67e4466a6e7138010fd430
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# #using ディレクティブ (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[\/clr](../build/reference/clr-common-language-runtime-compilation.md) でコンパイルされたプログラムにメタデータをインポートします。  
+# <a name="using-directive-cclr"></a>#using ディレクティブ (C + + CLR)
+コンパイルされたプログラムにメタデータをインポート[/clr](../build/reference/clr-common-language-runtime-compilation.md)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #using file [as_friend]  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `file`  
- MSIL .dll、.exe、.netmodule、または .obj。  次に例を示します。  
+ MSIL .dll、.exe、.netmodule、または .obj。たとえば、オブジェクトに適用された  
   
  `#using <MyComponent.dll>`  
   
- as\_friend  
- `file` のすべての型にアクセスできることを指定します。  詳細については、「[フレンド アセンブリ \(C\+\+\)](../dotnet/friend-assemblies-cpp.md)」を参照してください。  
+ as_friend  
+ `file` のすべての型にアクセスできることを指定します。  詳細については、次を参照してください。[フレンド アセンブリ (C++)](../dotnet/friend-assemblies-cpp.md)です。  
   
-## 解説  
- `file` は、マネージ データとマネージ構造のためにインポートする Microsoft Intermediate Language \(MSIL\) ファイルにすることができます。  .dll ファイルにアセンブリ マニフェストが含まれている場合、マニフェストで参照されているすべての .dll がインポートされ、ビルドしているアセンブリはメタデータ内の *file*  をアセンブリ参照としてリストにします。  
+## <a name="remarks"></a>コメント  
+ `file` は、マネージ データとマネージ構造のためにインポートする Microsoft Intermediate Language (MSIL) ファイルにすることができます。 .Dll ファイルには、アセンブリ マニフェストが含まれてし、マニフェストで参照されているすべての .dll ファイルがインポートされており、アセンブリを作成するには一覧表示場合*ファイル*アセンブリ参照としてメタデータにします。  
   
- `file` にアセンブリが含まれず \(`file` がモジュールであり\)、現在の \(アセンブリ\) アプリケーションのモジュールから型情報を取得する必要がない場合は、[\/ASSEMBLYMODULE](../build/reference/assemblymodule-add-a-msil-module-to-the-assembly.md) を使用して、モジュールがアセンブリの一部であることを示すこともできます。  その場合、アセンブリを参照するすべてのアプリケーションで、そのモジュール内の型を使用できます。  
+ 場合`file`アセンブリが含まれていない (場合`file`モジュール) だけモジュールが一部であることを示すオプションが、現在の (アセンブリ) アプリケーションで、モジュールから型情報を使用する予定がない場合は、アセンブリ;を使用して[/ASSEMBLYMODULE](../build/reference/assemblymodule-add-a-msil-module-to-the-assembly.md)です。 その場合、アセンブリを参照するすべてのアプリケーションで、そのモジュール内の型を使用できます。  
   
- `#using` を使用する代わりに、[\/FU](../build/reference/fu-name-forced-hash-using-file.md) コンパイラ オプションを使用することができます。  
+ 使用する代わりに`#using`は、 [/FU](../build/reference/fu-name-forced-hash-using-file.md)コンパイラ オプション。  
   
- `#using` に渡される .exe アセンブリは、**\/clr:safe** または **\/clr:pure** でコンパイルするか、他のいずれかの Visual Studio コンパイラ \(たとえば Visual Basic または Visual C\#\) でコンパイルする必要があります。  **\/clr** でコンパイルされた .exe アセンブリからメタデータをインポートしようとすると、ファイルの読み込み例外が発生します。  
+ 渡される .exe アセンブリ`#using`をコンパイルするか、.NET の Visual Studio コンパイラ (Visual Basic または Visual C# の場合、たとえば) のいずれかを使用します。  コンパイルされた .exe アセンブリからメタデータをインポートしようとしています。 **/clr**ファイルの読み込み例外が発生します。  
   
 > [!NOTE]
 >  `#using` で参照されるコンポーネントは、コンパイル時にインポートされる別バージョンのファイルで実行することもできるため、クライアント アプリケーションで予期しない結果になります。  
   
- モジュールではなくアセンブリ内の型をコンパイラで認識するには、型の解決を強制する必要があります。型の解決を実行するには、たとえば、型のインスタンスを定義します。  アセンブリの型名を解決する方法は他にもあります。たとえば、アセンブリの型を継承すると、コンパイラで型名が認識されます。  
+ モジュールではなくアセンブリ内の型をコンパイラで認識するには、型の解決を強制する必要があります。型の解決を実行するには、たとえば、型のインスタンスを定義します。 アセンブリの型名を解決する方法は他にもあります。たとえば、アセンブリの型を継承すると、コンパイラで型名が認識されます。  
   
- [\_\_declspec\(thread\)](../cpp/thread.md) を使用したソース コードでビルドしたメタデータをインポートする場合、スレッドのセマンティクスはメタデータでは保持されません。  たとえば、**\_\_declspec\(thread\)** で宣言され、.NET Framework 共通言語ランタイム用にビルドされるプログラムでコンパイルされ、`#using` によってインポートされる変数は、変数に対する **\_\_declspec\(thread\)** セマンティクスを持たなくなります。  
+ 使用するソース コードでビルドしたメタデータをインポートするときに[_declspec](../cpp/thread.md)メタデータでは、スレッドのセマンティクスは保持されません。 たとえば、変数を使用して宣言**_declspec**、.NET Framework 共通言語ランタイム用にビルドし、経由でインポートするプログラムでコンパイルされた`#using`がなくなる**_ _declspec (スレッド)**セマンティクス、変数にします。  
   
- `#using` によって参照されるファイル内のインポートされるすべての型 \(マネージとネイティブの両方\) を使用できますが、コンパイラはネイティブ型を定義ではなく宣言として扱います。  
+ `#using` によって参照されるファイル内のインポートされるすべての型 (マネージとネイティブの両方) を使用できますが、コンパイラはネイティブ型を定義ではなく宣言として扱います。  
   
- **\/clr** でコンパイルするときには、mscorlib.dll が自動的に参照されます。  
+ コンパイルすると、mscorlib.dll が自動的に参照**/clr**です。  
   
  LIBPATH 環境変数は、`#using` に渡されたファイル名をコンパイラが解決しようとするときに検索されるディレクトリを指定します。  
   
@@ -79,12 +78,12 @@ manager: "ghogen"
   
 -   .NET Framework のシステム ディレクトリ。  
   
--   [\/AI](../build/reference/ai-specify-metadata-directories.md) コンパイラ オプションで追加されたディレクトリ。  
+-   追加されたディレクトリ、 [/AI](../build/reference/ai-specify-metadata-directories.md)コンパイラ オプション。  
   
 -   LIBPATH 環境変数のディレクトリ。  
   
-## 使用例  
- アセンブリ \(C\) をビルドし、他のアセンブリ \(A\) を参照しているアセンブリ \(B\) を参照する場合、C で A のいずれかの型を明示的に使用するのでない限り、アセンブリ A を明示的に参照する必要はありません。  
+## <a name="example"></a>例  
+ アセンブリ (C) をビルドし、他のアセンブリ (A) を参照しているアセンブリ (B) を参照する場合、C で A のいずれかの型を明示的に使用するのでない限り、アセンブリ A を明示的に参照する必要はありません。  
   
 ```  
 // using_assembly_A.cpp  
@@ -92,7 +91,7 @@ manager: "ghogen"
 public ref class A {};  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // using_assembly_B.cpp  
@@ -106,8 +105,8 @@ public:
   
 ```  
   
-## 使用例  
- 次の例では、using\_assembly\_A.cpp で定義されている型をプログラムが使用しないため、using\_assembly\_A.dll を参照していないことによるコンパイラ エラーは発生しません。  
+## <a name="example"></a>例  
+ 次の例では、using_assembly_A.cpp で定義されている型をプログラムが使用しないため、using_assembly_A.dll を参照していないことによるコンパイラ エラーは発生しません。  
   
 ```  
 // using_assembly_C.cpp  
@@ -119,5 +118,5 @@ int main() {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [プリプロセッサ ディレクティブ](../preprocessor/preprocessor-directives.md)

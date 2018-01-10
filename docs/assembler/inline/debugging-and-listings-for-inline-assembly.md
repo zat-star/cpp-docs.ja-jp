@@ -1,42 +1,43 @@
 ---
-title: "インライン アセンブリのデバッグと一覧表示 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__asm キーワード [C++], デバッグ"
-  - "バグ, __asm ブロック"
-  - "デバッグ [C++], インライン アセンブラー コード"
-  - "インライン アセンブラー, デバッグ"
-  - "インライン アセンブラー, listings"
-  - "ソース レベル デバッガー"
+title: "デバッグとインライン アセンブリの一覧表示 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- source level debugger
+- __asm keyword [C++], debugging
+- inline assembly, listings
+- bugs, __asm blocks
+- debugging [C++], inline assembly code
+- inline assembly, debugging
 ms.assetid: 69266930-6f9a-433d-b704-f4f44e7b2583
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 5fea943c30d48ac122ae5d848306e4fe251f58da
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# インライン アセンブリのデバッグと一覧表示
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## Microsoft 固有の仕様 →  
- インライン アセンブラー コードを含むプログラムはソース レベルのデバッガーで [\/Zi](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md) オプションでコンパイル デバッグできます。  
+# <a name="debugging-and-listings-for-inline-assembly"></a>インライン アセンブリのデバッグと一覧表示
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ コンパイルする場合、ソース レベル デバッガーでインライン アセンブラー コードを含むプログラムをデバッグすることができます、 [/Zi](../../build/reference/z7-zi-zi-debug-information-format.md)オプション。  
   
- デバッガーではブレークポイントの C や C\+\+ およびアセンブリ言語の両方を設定できます。  混在アセンブリとソースのモードを有効にするとアセンブリ コードの提供元および逆アセンブルしたフォームの両方を表示できます。  
+ デバッガー内では、C または C++ とアセンブリ言語の両方の行にブレークポイントを設定できます。 混在アセンブリとソース モードを有効にする場合は、ソースとアセンブリ コードの逆アセンブルされたフォームの両方を表示できます。  
   
- 複数のアセンブリ命令を配置することに注意してください。1 行のソース言語のステートメントはデバッグに悪影響を及ぼすことがあります。  ソース行モードでは単一行を受け取らない同一の各ステートメントにブレークポイントを設定するためにデバッガーを使用できます。  同じ基本原則が `__asm` に一つの論理行に配置する C\+\+. マクロとして定義されたブロックを適用します。  
+ 複数のアセンブリ命令を配置することに注意してください。 またはソース言語ステートメントを 1 つの行がデバッグを妨害することができます。 ソース モードが同じ直線上の個々 のステートメントではありませんが、1 行にブレークポイントを設定するのに、デバッガーを使用することができます。 同じ原則に適用されます、`__asm`ブロックが 1 つの論理行に展開される C マクロとして定義されています。  
   
- [\/FAs](../../build/reference/fa-fa-listing-file.md) のコンパイラ オプションとソースの混在アセンブリ一覧を作成する場合リストはそれぞれのアセンブリ言語のソース行およびアセンブリの形式も含まれています。  マクロが一覧に配置されませんがコンパイル時に配置されます。  
+ 混在したソースとアセンブリのリストを作成するかどうか、 [/FAs](../../build/reference/fa-fa-listing-file.md)コンパイラ オプションには、一覧には、アセンブリ言語の各行のソースとアセンブリの両方のフォームが含まれています。 一覧で、マクロは展開されませんが、コンパイル時に、展開されます。  
   
- **終了 Microsoft 固有の仕様→**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_\_asm ブロックでのアセンブリ言語の使用](../../assembler/inline/using-assembly-language-in-asm-blocks.md)
+## <a name="see-also"></a>参照  
+ [__asm ブロックでのアセンブリ言語の使用](../../assembler/inline/using-assembly-language-in-asm-blocks.md)

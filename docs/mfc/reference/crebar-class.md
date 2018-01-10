@@ -23,11 +23,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b396ef048172c1cd8458346db2dc7b1dd5de9bfc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2cd32c4df0465426d99ca6246648520d160f382e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crebar-class"></a>CReBar クラス
 Rebar コントロールのレイアウト、永続性、および状態に関する情報を提供するコントロール バーです。  
@@ -72,7 +73,7 @@ class CReBar : public CControlBar
   
  `CReBar`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxext.h  
   
 ##  <a name="addbar"></a>CReBar::AddBar  
@@ -167,7 +168,7 @@ CReBarCtrl& GetReBarCtrl() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CReBarCtrl#2](../../mfc/reference/codesnippet/cpp/crebar-class_2.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル MFCIE](../../visual-cpp-samples.md)   
  [CControlBar クラス](../../mfc/reference/ccontrolbar-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)

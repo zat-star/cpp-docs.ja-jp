@@ -1,30 +1,32 @@
 ---
-title: "RuntimeClassBaseT 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::RuntimeClassBaseT"
-dev_langs: 
-  - "C++"
+title: "RuntimeClassBaseT 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::Details::RuntimeClassBaseT
+dev_langs: C++
 ms.assetid: a62775fb-3359-4f45-9ff1-c07fa8da464b
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 8798372b96074cb8424b4e747b188abcaf826849
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# RuntimeClassBaseT 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="runtimeclassbaset-structure"></a>RuntimeClassBaseT 構造体
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -33,23 +35,23 @@ template <
 friend struct Details::RuntimeClassBaseT;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `RuntimeClassTypeT`  
- [RuntimeClassType](../windows/runtimeclasstype-enumeration.md) の一つ以上の列挙子を指定するフラグのフィールド。  
+ 1 つ以上を指定するフラグのフィールド[RuntimeClassType](../windows/runtimeclasstype-enumeration.md)列挙子。  
   
-## 解説  
- `QueryInterface` のアクションおよびインターフェイス ID を取得するためのヘルパー メソッドが用意されています。  
+## <a name="remarks"></a>コメント  
+ 用にヘルパー メソッドを提供`QueryInterface`操作とインターフェイスの Id を取得します。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `RuntimeClassBaseT`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
- [Reference \(Windows Runtime Library\)](http://msdn.microsoft.com/ja-jp/00000000-0000-0000-0000-000000000000)   
+## <a name="see-also"></a>参照  
+ [参照 (Windows ランタイム ライブラリ)](http://msdn.microsoft.com/en-us/00000000-0000-0000-0000-000000000000)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

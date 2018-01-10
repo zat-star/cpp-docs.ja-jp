@@ -4,28 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- vc.wizards.classwizard
-dev_langs:
-- C++
+f1_keywords: vc.wizards.classwizard
+dev_langs: C++
 helpviewer_keywords:
 - wizards (MFC)
 - MFC Class Wizard
 ms.assetid: 8b0dd867-5d07-4214-99be-2a1c1995e6d9
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 66ef4c3595e25fecf4930cf62275847d8c264044
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 2d8a0e18da58829175a973bf31b2597240e23bd8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-class-wizard"></a>MFC クラス ウィザード
 プロジェクト内のクラスにメッセージおよびメッセージ ハンドラーを追加できます。 他のウィザードを起動したり、プロジェクトにクラスを追加したりすることもできます。  
@@ -103,6 +100,5 @@ ms.lasthandoff: 10/09/2017
   
  表示するには、定義内の項目をダブルクリックして、**メソッド** ボックスの一覧です。 または、内の項目を選択、**メソッド**を一覧表示し、**定義へ移動**ボタンをクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの追加](../../ide/adding-a-class-visual-cpp.md)
-

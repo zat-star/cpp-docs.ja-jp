@@ -21,11 +21,12 @@ caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a49953e328807b16579996e47ee3f69a32e67e2a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 63490ba1be2459aa31f461193c0f754ba9ec1e12
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="freelist-class"></a>freelist クラス
 メモリ ブロックのリストを管理します。  
@@ -61,7 +62,7 @@ class freelist
 |[pop](#pop)|フリー リストから最初のメモリ ブロックを削除します。|  
 |[push](#push)|メモリ ブロックをリストに追加します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
@@ -107,7 +108,7 @@ bool push(void* ptr);
 ### <a name="remarks"></a>コメント  
  最大クラスの `full` 関数が `false` を返す場合、このメンバー関数は、`ptr` が指すメモリ ブロックをリストの先頭に追加します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<allocators>](../standard-library/allocators-header.md)
 
 

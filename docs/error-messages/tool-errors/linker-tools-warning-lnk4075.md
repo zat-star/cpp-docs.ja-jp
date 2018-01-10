@@ -4,57 +4,39 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- LNK4075
-dev_langs:
-- C++
-helpviewer_keywords:
-- LNK4075
+f1_keywords: LNK4075
+dev_langs: C++
+helpviewer_keywords: LNK4075
 ms.assetid: f39ad3f9-c263-4cf0-9d70-259fc56ac96d
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9dee257bec0f09bd729bf10c4a1468ecb20dfa61
-ms.openlocfilehash: 84dea754a1d2268c92e703dd04b0169ccc258ab3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: e8c3330e637ae0e0dce5e875fcc349c6deefcf27
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-warning-lnk4075"></a>リンカー ツールの警告 LNK4075
-原因は、"option2"仕様「オプション&1;」を無視します。  
+により「・ オプション 2」仕様「オプション 1」を無視しています  
   
- 2 番目のオプションは、1 つ目をオーバーライドします。  
+ 2 番目のオプションは、1 つをオーバーライドします。  
   
  相互に排他的なリンカー オプションが指定されます。  リンカー オプションを確認します。  リンカーのオプションが指定されているプロジェクトをビルドしている方法によって異なります。  
   
--   開発環境を作成している場合は、プロジェクトでは、[リンカー] プロパティ ページで参照し、両方のリンカー オプションが指定されています。  参照してください[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)の詳細。  
+-   開発環境で作成する場合、[リンカー] プロパティ ページ、プロジェクトのファイルの場所し、リンカーの両方のオプションが指定されている場所を参照してください。  参照してください[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)詳細についてはします。  
   
--   コマンドラインでビルドする場合が指定されているリンカー オプションを検討します。  
+-   コマンドラインでビルドする場合があります指定されたリンカー オプションを調べます。  
   
--   ビルド スクリプトを構築する場合は、これらのリンカー オプションが指定されているスクリプトを参照します。  
+-   ビルド スクリプトでビルドする場合は、これらのリンカー オプションが指定されている、スクリプトで検索します。  
   
- 見つかった場合は、相互に排他的なリンカー オプションが指定されている、リンカー オプションのいずれかを削除します。  
+ 相互に排他的なリンカー オプションが指定されているが見つかったら、リンカー オプションのいずれかを削除します。  
   
- 具体例を示します。  
+ 具体的な例:  
   
--   コンパイルされたモジュールをリンクする場合は**/ZI**、/EDITANDCONTINUE ものではありません/EDITANDCONTINUE とを/OPT:REF や/OPT:ICF、/incremental:no と、コンパイルされたモジュールと呼ばれる内部リンカー オプションが含まれて、LNK4075 が表示されます。  参照してください[/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)の詳細。
+-   コンパイルされたモジュールをリンクする場合は**/ZI**、内部リンカー オプションを意味すると、/EDITANDCONTINUE ものではありません、/EDITANDCONTINUE と/opt:ref による、/OPT:ICF、または、/INCREMENTAL:NO でコンパイルされたモジュールが呼び出されると、ダイアログが表示されますLNK4075 を取得します。  参照してください[/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)詳細についてはします。

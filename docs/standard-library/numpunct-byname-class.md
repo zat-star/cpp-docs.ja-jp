@@ -15,11 +15,12 @@ caps.latest.revision: "24"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d73e5835d0b3b8e871afe4a9d61765c479d20adc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 84f71302d43a983772890611e55c56af9b21e922
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="numpunctbyname-class"></a>numpunct_byname クラス
 特定のロケールの `numpunct` ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。数値とブール式の書式設定および区切りを有効にします。  
@@ -47,12 +48,12 @@ protected:
 ## <a name="remarks"></a>コメント  
  その動作は [名前付きの](../standard-library/locale-class.md#name)ロケール `_Locname` で決まります。 コンストラクターは、[numpunct](../standard-library/numpunct-class.md#numpunct)\<CharType>( `_Refs`) を使用して、その基本オブジェクトを初期化します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7e31c979feb82fd72eb739e2bcfb2816159cfe88
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 67a9c77e6a8e5721bca6e3741b4b337cfdb42393
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-common-controls-in-a-dialog-box"></a>ダイアログ ボックスでのコモン コントロールの使い方
 Windows コモン コントロールで使用できます[ ダイアログ ボックス](../mfc/dialog-boxes.md)ビュー、レコード ビュー、およびダイアログ テンプレートに基づくその他のウィンドウを形成します。 軽微な変更を次の手順は形式も機能します。  
@@ -66,7 +67,7 @@ Windows コモン コントロールで使用できます[ ダイアログ ボ�
   
 -   [ダイアログ データ エクス (チェンジ DDX) の使用します。](../mfc/dialog-data-exchange-and-validation.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [作成方法とコントロールの使用](../mfc/making-and-using-controls.md)   
  [コントロール](../mfc/controls-mfc.md)
 

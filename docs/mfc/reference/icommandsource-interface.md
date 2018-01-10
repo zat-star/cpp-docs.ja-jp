@@ -27,11 +27,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6aea339b4ddb91336405d281d9b902a8f2a86c3c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: dc8ad34ccce059caca8e86a014622e29c14022ed
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="icommandsource-interface"></a>関数のインターフェイス
 ユーザー コントロールにコマンド ソース オブジェクトから送信されたコマンドを管理します。  
@@ -66,7 +67,7 @@ interface class ICommandSource
   
  Windows フォームを使用する方法については、次を参照してください。 [MFC における Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwinforms.h (アセンブリ atlmfc\lib\mfcmifc80.dll で定義)  
   
 ## <a name="addcommandhandler"></a>ICommandSource::AddCommandHandler
@@ -85,7 +86,7 @@ void AddCommandHandler(
 
 ### <a name="remarks"></a>コメント
 このメソッドは、コマンド ソース オブジェクトにコマンド ハンドラー cmdHandler を追加し、cmdID ハンドラーにマップします。
-参照してください[する方法: Windows フォーム コントロールへのコマンド ルーティングの追加](https://msdn.microsoft.com/library/y33d8624.aspx)AddCommandHandler を使用する方法の例についてはします。
+参照してください[する方法: Windows フォーム コントロールへのコマンド ルーティングの追加](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)AddCommandHandler を使用する方法の例についてはします。
 
 ## <a name="addcommandrangehandler"></a>ICommandSource::AddCommandRangeHandler
 
@@ -216,6 +217,6 @@ void SendCommand(unsigned int command);
 送信されるメッセージのコマンド ID。
 ### <a name="remarks"></a>コメント
 このメソッドは、コマンドで指定した ID に割り当てられたメッセージを同期的に送信します。 ウィンドウのメッセージ キューにメッセージを配置する CWnd::SendMessage を呼び出すし、そのウィンドウ プロシージャが返す前にメッセージを処理するまで待機します。
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: コマンドの追加にルーティングする Windows フォーム コントロール](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)   
  [ICommandTarget インターフェイス](../../mfc/reference/icommandtarget-interface.md)

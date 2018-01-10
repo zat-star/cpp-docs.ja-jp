@@ -109,11 +109,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4ec8e56f3a0be70807fe607bad652b359f08ec63
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 592493a9eb554f0bdeecd291fdbe3ceb54c599c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crebarctrl-class"></a>CReBarCtrl クラス
 Rebar コントロールの機能がカプセル化されています。Rebar コントロールは、子ウィンドウを含むコンテナーです。  
@@ -221,7 +222,7 @@ class CReBarCtrl : public CWnd
   
  `CReBarCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="begindrag"></a>CReBarCtrl::BeginDrag  
@@ -991,7 +992,7 @@ BOOL SizeToRect(CRect& rect);
 ### <a name="remarks"></a>コメント  
  このメンバー関数を使用している、`CRect`オブジェクトをパラメーターとしてではなく、`RECT`構造体。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
 

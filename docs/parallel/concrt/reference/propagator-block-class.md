@@ -30,11 +30,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 422d01cf138da0468a430e1a802369e8ecda093a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ff31849020c9daed7999ae1569e8c12249a4b834
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="propagatorblock-class"></a>propagator_block クラス
 `propagator_block` クラスは、ソースでもありターゲットでもあるメッセージ ブロックの抽象基底クラスです。 `source_block` クラスと `target_block` クラスの両方の機能が組み合わされています。  
@@ -107,7 +108,7 @@ class propagator_block : public source_block<_TargetLinkRegistry,
   
  `propagator_block`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
@@ -303,7 +304,7 @@ virtual void unlink_source(_Inout_ ISource<_Source_type>* _PSource);
 virtual void unlink_sources();
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [source_block クラス](source-block-class.md)   
  [ITarget クラス](itarget-class.md)

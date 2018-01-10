@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -50,7 +49,6 @@ f1_keywords:
 - AFXANIMATIONCONTROLLER/CAnimationController::ScheduleGroup
 - AFXANIMATIONCONTROLLER/CAnimationController::SetRelatedWnd
 - AFXANIMATIONCONTROLLER/CAnimationController::UpdateAnimationManager
-- AFXANIMATIONCONTROLLER/CAnimationController::CleanUpGroup
 - AFXANIMATIONCONTROLLER/CAnimationController::OnAfterSchedule
 - AFXANIMATIONCONTROLLER/CAnimationController::gkeyframeStoryboardStart
 - AFXANIMATIONCONTROLLER/CAnimationController::m_bIsValid
@@ -60,8 +58,7 @@ f1_keywords:
 - AFXANIMATIONCONTROLLER/CAnimationController::m_pRelatedWnd
 - AFXANIMATIONCONTROLLER/CAnimationController::m_pTransitionFactory
 - AFXANIMATIONCONTROLLER/CAnimationController::m_pTransitionLibrary
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - CAnimationController [MFC], CAnimationController
 - CAnimationController [MFC], AddAnimationObject
@@ -113,16 +110,16 @@ helpviewer_keywords:
 - CAnimationController [MFC], m_pTransitionFactory
 - CAnimationController [MFC], m_pTransitionLibrary
 ms.assetid: ed294c98-695e-40a6-b940-33ef1d40aa6b
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 79343615b633b583775a482f0a9d2155e79ede10
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 7f749a38e052edbed456503ef2ac320743e68186
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="canimationcontroller-class"></a>CAnimationController クラス
 アニメーションを作成および管理するための中心的なインターフェイスを提供する、アニメーション コントローラーを実装します。  
@@ -194,7 +191,7 @@ class CAnimationController : public CObject;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CAnimationController::gkeyframeStoryboardStart](#g_keyframestoryboardstart)|ストーリー ボードの開始を表すキーフレームです。|  
 |[CAnimationController::m_bIsValid](#m_bisvalid)|アニメーションのコント ローラーが有効かどうかどうかを指定します。 現在の OS では、Windows Animation API をサポートしていない場合、このメンバーは FALSE に設定します。|  
@@ -213,7 +210,7 @@ class CAnimationController : public CObject;
   
  `CAnimationController`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="_dtorcanimationcontroller"></a>CAnimationController:: ~ CAnimationController  
@@ -1002,6 +999,5 @@ virtual void UpdateAnimationManager();
 ### <a name="remarks"></a>コメント  
  呼び出すこのメソッドは、現在の時刻に、アニメーション マネージャーを進めます、必要に応じて、ストーリー ボードのステータスを変更して、アニメーション変数に適切な更新は、値を補間します。 内部的にこのメソッドは IUIAnimationTimer::GetTime(timeNow) と IUIAnimationManager::Update(timeNow) を呼び出します。 この動作をカスタマイズする派生クラスでこのメソッドをオーバーライドします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

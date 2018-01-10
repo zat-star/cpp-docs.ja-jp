@@ -23,11 +23,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 15037544b3344f5d43ebaa34fb35b431da581593
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 69fb88fc9c12994d413de2cbe2037cc4fc845760
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="cexception-class"></a>CException クラス
 MFC (Microsoft Foundation Class) ライブラリ内のすべての例外に関する基底クラスです。  
@@ -87,7 +88,7 @@ class AFX_NOVTABLE CException : public CObject
   
  `CException`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afx.h  
   
 ##  <a name="cexception"></a>CException::CException  
@@ -222,10 +223,10 @@ else
 }
 ```
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](cobject-class.md)   
  [階層図](../hierarchy-chart.md)   
  [例外の処理](exception-processing.md)   
- [方法: 独自のカスタム例外クラスを作成します。](http://go.microsoft.com/fwlink/linkid=128045)
+ [方法: 独自のカスタム例外クラスを作成します。](http://go.microsoft.com/fwlink/p/?linkid=128045)
 
 

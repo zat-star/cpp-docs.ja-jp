@@ -15,11 +15,14 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b2536d406293d84db2ce5d5bd3e0292e0e57920e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: d17e0dc79241fbd84e282b9cd8403259e34def0e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="module-class"></a>Module クラス
 関連するオブジェクトから成るコレクションを表します。  
@@ -48,7 +51,7 @@ class Module<OutOfProc> : public Module<InProc>;
   
 ### <a name="protected-classes"></a>プロテクト クラス  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[Module::GenericReleaseNotifier クラス](../windows/module-genericreleasenotifier-class.md)|現在のモジュールの最後のオブジェクトを解放すると、イベント ハンドラーを呼び出します。 イベント ハンドラーは、ラムダ、ファンクタ、または関数へのポインターによって指定されます。|  
 |[Module::MethodReleaseNotifier クラス](../windows/module-methodreleasenotifier-class.md)|現在のモジュールの最後のオブジェクトを解放すると、イベント ハンドラーを呼び出します。 イベント ハンドラーは、オブジェクトとそのメソッドへのポインターのメンバーによって指定されます。|  
@@ -93,7 +96,7 @@ class Module<OutOfProc> : public Module<InProc>;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[Module::objectCount_ データ メンバー](../windows/module-objectcount-data-member.md)|多くのクラスが作成されたの追跡、[ように](../windows/make-function.md)関数。|  
 |[Module::releaseNotifier_ データ メンバー](../windows/module-releasenotifier-data-member.md)|ReleaseNotifier オブジェクトへのポインターを保持します。|  
@@ -113,10 +116,10 @@ class Module<OutOfProc> : public Module<InProc>;
   
  `Module`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** module.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 30cd8e09a9569464fad2edd702320f830de9c861
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e61d0ca8ed269557efbd566da1aca160ef669e83
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ole-control-classes"></a>OLE コントロール クラス
 これらは、OLE コントロールを作成するときに使用する主なクラスです。 `COleControlModule` OLE コントロール モジュール内のクラスと同様に、 [CWinApp](../mfc/reference/cwinapp-class.md)アプリケーション内のクラスです。 各モジュールが 1 つまたは複数の OLE コントロールを実装します。これらのコントロールがによって表される`COleControl`オブジェクト。 これらのコントロールを使用して、コンテナーとの通信`CConnectionPoint`オブジェクト。  
@@ -72,6 +73,6 @@ ms.lasthandoff: 10/24/2017
  [COleSafeArray](../mfc/reference/colesafearray-class.md)  
  任意の型および次元の配列で動作します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

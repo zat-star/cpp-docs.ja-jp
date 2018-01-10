@@ -23,11 +23,14 @@ caps.latest.revision: "34"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a2f0f4100344fbb2990e9feeb2b455642852c320
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 343f2369260531e828ea8db27cee5e52ea18fd31
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="arrays-c-component-extensions"></a>配列 (C++ コンポーネント拡張)
 `Platform::Array<T>`型に C + + CX、または`array`c++ のキーワード + CLI は、指定した型と初期値の配列を宣言しています。  
@@ -81,10 +84,10 @@ ms.lasthandoff: 10/24/2017
   
  型がで参照カウントの配列であるかどうかをコンパイル時に検出できます`__is_ref_array(type)`です。 詳細については、次を参照してください。[型の特徴のコンパイラ サポート](../windows/compiler-support-for-type-traits-cpp-component-extensions.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  次の例では、100 個の要素のある 1 次元配列を作成します。  
   
 ```cpp  
@@ -150,10 +153,10 @@ int main() {
   
  コンパイル時に、型との共通言語ランタイム (CLR) 配列かどうかを検出できます`__is_ref_array(type)`です。 詳細については、次を参照してください。[型の特徴のコンパイラ サポート](../windows/compiler-support-for-type-traits-cpp-component-extensions.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/clr**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  次の例では、100 個の要素のある 1 次元配列と最初の次元の 3 つの要素、2 番目、5 の要素と 3 番目の 6 つの要素を持つ 3 次元の配列を作成します。  
   
 ```cpp  
@@ -171,5 +174,5 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

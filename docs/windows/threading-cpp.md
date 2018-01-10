@@ -1,33 +1,33 @@
 ---
-title: "threading (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.threading"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "threading attribute"
+title: "スレッド処理 (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.threading
+dev_langs: C++
+helpviewer_keywords: threading attribute
 ms.assetid: 9b558cd6-fbf0-4602-aed5-31c068550ce3
-caps.latest.revision: 10
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: e44fec96391fff6700ecf4a453d7455bd75e9df7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# threading (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-COM オブジェクトに対してスレッド モデルを指定します。  
+# <a name="threading-c"></a>threading (C++)
+COM オブジェクトのスレッド モデルを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -36,49 +36,48 @@ COM オブジェクトに対してスレッド モデルを指定します。
 ) ]  
 ```  
   
-#### パラメーター  
- ***モデル*** \(省略可能\)  
- 次のスレッド モデルの 1 つが :  
+#### <a name="parameters"></a>パラメーター  
+ ***モデル***(省略可能)  
+ 次のスレッド モデルのいずれか。  
   
--   アパートメント スレッド  **アパートメント**  \(\)  
+-   **アパートメント**(アパートメント スレッド)  
   
--   **依存**  \(ユーザー インターフェイスのない .NET Framework コンポーネント\)  
+-   **ニュートラル**(.NET Framework コンポーネントをユーザー インターフェイスなしの)  
   
--   **シングル**  \(単純なスレッド\)  
+-   **1 つ**(単純なスレッド)  
   
--   **フリー \(R\)** \(フリー スレッド\)  
+-   **空き**(スレッドを解放)。  
   
--   \( **両方**  とフリー スレッドのアパートメント内\)  
+-   **両方**(アパートメントおよびフリー スレッドの)  
   
- 既定値は  **アパートメント**  です。  
+ 既定値は**アパートメント**です。  
   
-## 解説  
- **スレッド**  C\+\+ 属性は生成された .idl ファイルには表示されませんがCOM オブジェクトの実装で使用されます。  
+## <a name="remarks"></a>コメント  
+ **スレッド**C++ 属性が生成された .idl ファイルに表示されないが、COM オブジェクトの実装で使用されます。  
   
- ATL プロジェクトでは[コクラス](../windows/coclass.md) の属性がまたはの場合 *モデル*  で指定されたスレッド処理モデルは  **コクラス**  の属性を挿入 [CComObjectRootEx](../atl/reference/ccomobjectrootex-class.md) クラスのテンプレート パラメーターとして渡されます。  
+ ATL プロジェクトの場合、[コクラス](../windows/coclass.md)attribute が存在するで指定されたスレッド モデル*モデル*をテンプレート パラメーターとして渡されます、 [CComObjectRootEx](../atl/reference/ccomobjectrootex-class.md)クラス、によって挿入された、**コクラス**属性。  
   
- [ソース](../windows/event-source.md) に **スレッド**  の属性のガードのアクセス。  
+ **スレッド**属性がへのアクセスを防ぐことも、 [event_source](../windows/event-source.md)です。  
   
-## 使用例  
- **スレッド**  の使用例については [Licensed](../windows/licensed.md) の例を参照してください。  
+## <a name="example"></a>例  
+ 参照してください、[ライセンス](../windows/licensed.md)のサンプルの使用例**スレッド**です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  `struct`|  
-|**複数回の適用**|Ｘ|  
-|**必要な属性**|**コクラス**|  
+|**対象**|**class**、 `struct`|  
+|**反復可能**|×|  
+|**必要な属性**|**coclass**|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [COM Attributes](../Topic/COM%20Attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [旧形式のコードのためのマルチスレッド サポート \(Visual C\+\+\)](../parallel/multithreading-support-for-older-code-visual-cpp.md)   
- [Neutral Apartments](http://msdn.microsoft.com/library/windows/desktop/ms681813)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [COM 属性](../windows/com-attributes.md)   
+ [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   
+ [古いコード (Visual C) のためのマルチ スレッド処理のサポート](../parallel/multithreading-support-for-older-code-visual-cpp.md)   
+ [ニュートラル アパートメント](http://msdn.microsoft.com/library/windows/desktop/ms681813)   

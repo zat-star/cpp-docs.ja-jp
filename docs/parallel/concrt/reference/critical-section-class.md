@@ -24,11 +24,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a5f7b9d6eeda8192fe05a73d25c04527bea2ee80
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5421cf47214d4ceeb7f8388835cb7a1cc57110ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="criticalsection-class"></a>critical_section クラス
 同時実行ランタイムを明示的に認識する再入不可能なミューテックスです。  
@@ -76,7 +77,7 @@ class critical_section;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `critical_section`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
@@ -188,6 +189,6 @@ bool try_lock_for(unsigned int _Timeout);
 void unlock();
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [reader_writer_lock クラス](reader-writer-lock-class.md)

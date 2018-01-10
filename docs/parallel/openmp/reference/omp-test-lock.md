@@ -15,11 +15,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 052b552cab9d8fb0ff6b969e85a7108ca232b572
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 03637ea17ee93d9e593d332dac61a29901359520
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="omptestlock"></a>omp_test_lock
 ロックを設定しようとしていますが、スレッドの実行をブロックしません。  
@@ -95,5 +96,5 @@ Thread 3 - acquired simple_lock
 Thread 3 - released simple_lock  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

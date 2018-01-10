@@ -15,11 +15,14 @@ caps.latest.revision: "5"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 59998367d71658a0561a4bda8d71bf6c4f61f313
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 0d6d3b774cb014b8257cf412bf2dec2827abeda2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="safedivide"></a>SafeDivide
 ゼロ除算を防止する方法の 2 つの数値を除算します。  
@@ -56,12 +59,12 @@ inline bool SafeDivide (
   
  テンプレート型 T および U の詳細については、次を参照してください。 [SafeInt 関数](../windows/safeint-functions.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** safeint.h  
   
  **Namespace:** Microsoft::Utilities  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SafeInt 関数](../windows/safeint-functions.md)   
  [SafeInt ライブラリ](../windows/safeint-library.md)   
  [SafeInt クラス](../windows/safeint-class.md)   

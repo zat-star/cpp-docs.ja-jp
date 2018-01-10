@@ -15,11 +15,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 846194b5c032ecea86e92078ae3b0bb3a8ed77b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 277123f28b9fb74676fcb7a657b6e6dbc294a4a5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="oleautomation"></a>oleautomation
 インターフェイスに Automation では互換性があることを示します。  
@@ -38,19 +41,19 @@ ms.lasthandoff: 10/24/2017
 ## <a name="example"></a>例  
  例を参照して[defaultvalue](../windows/defaultvalue.md)と[nonextensible](../windows/nonextensible.md)の使用例の**oleautomation**です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|`interface`|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|**dispinterface**|  
   
  属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDL 属性](../windows/idl-attributes.md)   
  [インターフェイス属性](../windows/interface-attributes.md)   

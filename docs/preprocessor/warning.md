@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b9b462698474d08eb18682a14e9269d83dcf541e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 275ca0a1101141ef1c0f4217597a644a6dbd8c46
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="warning-pragma"></a>warning プラグマ
 コンパイラの警告メッセージの動作の選択的な変更を有効にします。  
@@ -124,5 +125,5 @@ int main() {
   
  警告を参照してくださいコンパイラを抑制する状況を支援するオプションの詳細については[/FI](../build/reference/fi-name-forced-include-file.md)と[/w](../build/reference/compiler-option-warning-level.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
