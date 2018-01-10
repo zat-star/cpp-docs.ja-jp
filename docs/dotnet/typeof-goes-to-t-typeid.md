@@ -17,11 +17,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 90c75b67dc6496f51d335f83a49242b7f7ae0b29
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 09ec4aef4c8bc68f8a808193b30d86b8519ba881
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="typeof-goes-to-ttypeid"></a>typeof から T::typeid への移行
 `typeof` C++ に置き換わる可能性されてのマネージ拡張で使用する演算子、 `typeid` Visual C でキーワード。  
@@ -42,6 +45,6 @@ Array^ myIntArray =
    Array::CreateInstance( Int32::typeid, 5 );  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一般的な言語の変更 (C + + CLI)](../dotnet/general-language-changes-cpp-cli.md)   
  [typeid](../windows/typeid-cpp-component-extensions.md)

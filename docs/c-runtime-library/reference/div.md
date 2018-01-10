@@ -34,11 +34,12 @@ caps.latest.revision: "15"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f5e2a97661ad47ed0cf46e0feaa2ccba292f5043
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a942c3414fa7801912de59ec41fd6477d7c19f2f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="div"></a>div
 2 つの整数値の商と剰余を計算します。  
@@ -75,13 +76,13 @@ lldiv_t div(
   
  `long` 型または `long long` 型の引数を使用するオーバーロードは、C++ コードにのみ使用できます。 戻り値の型 [ldiv_t](../../c-runtime-library/standard-types.md) には、メンバー `long quot` と `long rem` が含まれ、戻り値の型 [lldiv_t](../../c-runtime-library/standard-types.md) には `div_t` のメンバーと同じ意味を持つメンバー `long long quot` と `long long rem` が含まれます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`div`|\<stdlib.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -121,7 +122,7 @@ x is 876, y is 13
 The quotient is 67, and the remainder is 5  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ldiv、lldiv](../../c-runtime-library/reference/ldiv-lldiv.md)   
  [imaxdiv](../../c-runtime-library/reference/imaxdiv.md)

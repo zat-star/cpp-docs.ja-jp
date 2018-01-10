@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -30,38 +29,23 @@ f1_keywords:
 - chgsign
 - _chgsignl
 - _chgsign
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _chgsignl function
 - _chgsignf function
 - chgsign function
 - _chgsign function
 ms.assetid: a6646f8e-213d-4564-8617-f43bc66f989f
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: c5bd51cbdd80e91c3ba51d80cb9bdd3fb361adde
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 6d21b7904bdd048a87f699a6999e79c407f15ec1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="chgsign-chgsignf-chgsignl"></a>_chgsign、_chgsignf、_chgsignl
 浮動小数点引数の符号を反転させます。  
@@ -87,16 +71,16 @@ long double _chgsignl(
 ## <a name="return-value"></a>戻り値  
  `_chgsign` 関数は、浮動小数点引数 `x` と等しく、符号を反転した値を返します。 エラーの戻り値はありません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_chgsign`|\<float.h>|  
 |`_chgsignf`, `_chgsignl`|\<math.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [fabs、fabsf、fabsl](../../c-runtime-library/reference/fabs-fabsf-fabsl.md)   
  [copysign、copysignf、copysignl、_copysign、_copysignf、_copysignl](../../c-runtime-library/reference/copysign-copysignf-copysignl-copysign-copysignf-copysignl.md)

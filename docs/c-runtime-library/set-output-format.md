@@ -32,11 +32,12 @@ caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 937a452b145fd3d30518f8c4b786ab79b46d5cea
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4a0ad6631d9171e8fcdc59e13e60eda2cc729c79
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setoutputformat"></a>_set_output_format
 書式付き I/O 関数で使用する出力形式をカスタマイズします。  
@@ -66,13 +67,13 @@ unsigned int _set_output_format(
   
  2 桁の指数部を有効にするには、次の例に示されているとおり、パラメーター `_TWO_DIGIT_EXPONENT`を指定してこの関数を呼び出します。 2 桁の指数部を無効にするには、引数 0 を指定してこの関数を呼び出します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_set_output_format`|\<stdio.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -124,6 +125,6 @@ int main()
  1.211E-005  2.306E-112  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [printf_s、_printf_s_l、wprintf_s、_wprintf_s_l](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)   
  [_get_output_format](../c-runtime-library/get-output-format.md)

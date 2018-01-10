@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- _aligned_malloc
+apiname: _aligned_malloc
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -26,22 +24,21 @@ apitype: DLLExport
 f1_keywords:
 - _aligned_malloc
 - alligned_malloc
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - aligned_malloc function
 - _aligned_malloc function
 ms.assetid: fb788d40-ee94-4039-aa4d-97d73dab1ca0
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: e7e16801bed2063d60e9151e2afc22a128aeed97
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: e81ecad3276abc34243f18a8df367d82122a1064
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="alignedmalloc"></a>_aligned_malloc
 指定された配置の境界にメモリを割り当てます。  
@@ -60,7 +57,7 @@ void * _aligned_malloc(
  要求されたメモリ割り当てのサイズ。  
   
  `alignment`  
- 配置の値。2 の累乗の整数である必要があります。  
+ アラインメント値。2 の整数乗である必要があります。  
   
 ## <a name="return-value"></a>戻り値  
  割り当てられたメモリ ブロックへのポインター。操作が失敗した場合は `NULL`。 ポインターは、`alignment` の倍数です。  
@@ -72,9 +69,9 @@ void * _aligned_malloc(
   
  この関数は、メモリ割り当てが失敗するか、要求されたサイズが `errno` より大きかった場合に、`ENOMEM` を `_HEAP_MAXREQ` に設定します。 `errno` に関する詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。 また、`_aligned_malloc` はそのパラメーターを検証します。 `alignment` が 2 の累乗でないか `size` が 0 の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数によって無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `NULL` を返し、`errno` を `EINVAL` に設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_aligned_malloc`|\<malloc.h>|  
   
@@ -160,5 +157,5 @@ This pointer, 3280891, is offset by 5 on alignment of 16
 This pointer, 3280891, is offset by 5 on alignment of 16  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データの整列](../../c-runtime-library/data-alignment.md)

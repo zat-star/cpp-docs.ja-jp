@@ -26,11 +26,12 @@ caps.latest.revision: "36"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 181cd7dd55a41d5452ae02f48db9012e02a41041
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 37e5b86dfdef9c49e0e59c28d36ba4622238eced
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="string-and-character-literals--c"></a>文字列リテラルと文字リテラル (C++)
 C++ はさまざまな文字列と文字型をサポートし、これらの型のリテラル値を表す方法を提供しています。 ソース コードでは、文字セットを使用して文字リテラルと文字列リテラルの内容を表現します。 ユニバーサル文字名とエスケープ文字を使用すると、基本ソース文字セットのみを使用してあらゆる文字列を表現できます。 未加工文字列リテラルを使用すると、エスケープ文字の使用を避けられるとともに、全種類の文字列リテラルを表すことができます。 余分な構築または変換手順を実行することなく、std::string リテラルを作成することもできます。  
@@ -111,7 +112,7 @@ int main()
 ###  <a name="bkmk_Escape"></a> エスケープ シーケンス  
  エスケープ シーケンスには、単純、8 進数、16 進数という 3 つの種類があります。 エスケープ シーケンスとして次のいずれかを使用できます。  
   
-|値|エスケープ シーケンス|値|エスケープ シーケンス|  
+|値|エスケープ シーケンス|[値]|エスケープ シーケンス|  
 |-----------|---------------------|-----------|---------------------|  
 |改行|\n|円記号|\\\|  
 |水平タブ|\t|疑問符|? または \\?|  
@@ -247,7 +248,7 @@ auto s4 = U"hello"; // const char32_t*
 ```  
   
 ### <a name="raw-string-literals-c11"></a>未加工の文字列リテラル (C++11)  
- 未加工文字列リテラルが null で終わる配列 — 任意の文字型など、二重引用符 (")、円記号を含む、任意のグラフィック文字を格納している (\\)、または改行文字。 未加工文字列リテラルは、文字クラスを使用する正規表現や、HTML 文字列、XML 文字列でよく使用されます。 例については、記事「 [C++11 に関する Bjarne Stroustrup の FAQ](http://go.microsoft.com/fwlink/?LinkId=401172)」をご覧ください。  
+ 未加工文字列リテラルが null で終わる配列 — 任意の文字型など、二重引用符 (")、円記号を含む、任意のグラフィック文字を格納している (\\)、または改行文字。 未加工文字列リテラルは、文字クラスを使用する正規表現や、HTML 文字列、XML 文字列でよく使用されます。 例については、次の記事を参照してください: [c++ 11 に関する Bjarne Stroustrup の FAQ](http://go.microsoft.com/fwlink/p/?linkid=401172)です。  
   
 ```cpp  
 // represents the string: An unescaped \ character  
@@ -398,7 +399,7 @@ const char16_t* s4 = u"😃 = \U0001F603 is :-D";
 const char32_t* s5 = U"😎 = \U0001F60E is B-)";  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Character Sets](../cpp/character-sets2.md)   
  [数値、ブール値、およびポインターのリテラル](../cpp/numeric-boolean-and-pointer-literals-cpp.md)   
  [ユーザー定義リテラル](../cpp/user-defined-literals-cpp.md)

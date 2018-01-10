@@ -25,11 +25,12 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0bd2eb90ad8498daa318ffecacd7b32f3f3d3eca
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 50387aa2512e38a4e9f13fdfb1b042c3df2de45c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="text-and-binary-mode-file-io"></a>テキスト モードとバイナリ モードのファイル入出力
 ファイル I/O 操作は、ファイルを開いたモードによって、2 つの変換モード、テキストまたはバイナリのいずれかで行われます。 通常、データ ファイルはテキスト モードで処理されます。 ファイル変換モードを制御するには、以下を行います。  
@@ -42,6 +43,6 @@ ms.lasthandoff: 10/24/2017
   
  [_open](../c-runtime-library/reference/open-wopen.md)、[fopen](../c-runtime-library/reference/fopen-wfopen.md)、[fopen_s](../c-runtime-library/reference/fopen-s-wfopen-s.md)、[freopen](../c-runtime-library/reference/freopen-wfreopen.md)、[freopen_s](../c-runtime-library/reference/freopen-s-wfreopen-s.md)、[_fsopen](../c-runtime-library/reference/fsopen-wfsopen.md)、または[_sopen_s](../c-runtime-library/reference/sopen-s-wsopen-s.md) などのファイルを開く関数を呼び出すときに、関数 [_set_fmode](../c-runtime-library/reference/set-fmode.md) に適切な引数を指定することで、`_fmode` の現在の既定の設定を上書きすることができます。 `stdin`、`stdout`、`stderr` ストリームは常に既定でテキスト モードで開きます。これらのファイルのいずれかを開くときに、この既定の設定を上書きすることもできます。 ファイルを開いた後、ファイル記述子を使用して変換モードを変更するには、[_setmode](../c-runtime-library/reference/setmode.md) を使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [入出力](../c-runtime-library/input-and-output.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

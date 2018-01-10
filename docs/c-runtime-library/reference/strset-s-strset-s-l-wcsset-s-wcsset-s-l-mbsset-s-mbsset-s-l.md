@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -44,8 +43,7 @@ f1_keywords:
 - _strset_s_l
 - _tcsset_s_l
 - _tcsset_s
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - mbsset_s_l function
 - wcsset_s function
@@ -66,30 +64,16 @@ helpviewer_keywords:
 - _tcsset_s function
 - mbsset_s function
 ms.assetid: dceb2909-6b41-4792-acb7-888e45bb8b35
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 4af054c5f91c30c254696c5349052961c4fe149b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 422d5c8b5e192824283e0d2e05c826f0a343d528
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strsets-strsetsl-wcssets-wcssetsl-mbssets-mbssetsl"></a>_strset_s、_wcsset_s、_wcsset_s_l、_mbsset_s、_mbsset_s_l
 文字列の文字をある文字に設定します。 これらのバージョンの [_strset、_strset_l、_wcsset、_wcsset_l、_mbsset、_mbsset_l](../../c-runtime-library/reference/strset-strset-l-wcsset-wcsset-l-mbsset-mbsset-l.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」にあるとおり、セキュリティが強化されています。  
@@ -151,12 +135,12 @@ errno_t _mbsset_s_l(
 ## <a name="return-value"></a>戻り値  
  正常に終了した場合は 0 を返し、それ以外の場合はエラー コードを返します。  
   
- これらの関数は、引数を検証します。 `str` が Null ポインターである場合、または `numberOfElements` 引数が 0 以下である場合、または渡されたブロックが null で終わっていない場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
+ これらの関数は、引数を検証します。 `str` が Null ポインターである場合、または `numberOfElements` 引数が 0 以下である場合、または渡されたブロックが null で終わっていない場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `EINVAL` を返し、 `errno` を `EINVAL`に設定します。  
   
 ## <a name="remarks"></a>コメント  
  `_strset_s` 関数は、終端の NULL 文字を除く `str` のすべての文字を (`c` に変換された) `char` に設定します。 `_wcsset_s` 関数と `_mbsset_s` 関数は、`_strset_s` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 引数と戻り値のデータ型がそれに応じて異なります。 それ以外では、これらの関数の動作は同じです。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
   
@@ -167,9 +151,9 @@ errno_t _mbsset_s_l(
 |`_tcsset_s`|`_strset_s`|`_mbsset_s`|`_wcsset_s`|  
 |`_tcsset_s_l`|`_strset_s_l`|`_mbsset_s_l`|`_wcsset_s_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strset_s`|\<string.h>|  
 |`_strset_s_l`|\<tchar.h>|  
@@ -177,7 +161,7 @@ errno_t _mbsset_s_l(
 |`_wcsset_s_l`|\<tchar.h>|  
 |`_mbsset_s`, `_mbsset_s_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -201,7 +185,7 @@ Before: Fill the string with something.
 After:  *******************************  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

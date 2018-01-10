@@ -15,11 +15,14 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 752aa0cdfb85868314bb93a1934fb17f1bd009fb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 77eb1c6f18d7e76d9483e9cff425dc60087ea393
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="less-stlclr"></a>less (STL/CLR)
 このテンプレート クラスは、ファンクタを記述、呼び出されると、true を返します、最初の引数が小さい場合にのみ 2 番目よりです。 使用する、引数の型の観点から、関数オブジェクトを指定します。  
@@ -120,10 +123,10 @@ int main()
 0 1  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/機能 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [greater_equal (STL/CLR)](../dotnet/greater-equal-stl-clr.md)

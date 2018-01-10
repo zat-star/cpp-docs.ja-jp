@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8cef973849a9af88cd952be69ce9d33e7a516d7a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c42befe57bdc7a01da31bd6c4e010458e1d3ba7e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-an-event-atl-tutorial-part-5"></a>イベントの追加 (ATL チュートリアル、パート 5)
 この手順では、追加、`ClickIn`と`ClickOut`ATL コントロールにイベント。 起動、`ClickIn`多角形および火災内でクリックすると、ユーザー イベント`ClickOut`の外側をクリックした場合。 イベントを追加するタスクは次のとおりです。  
@@ -78,7 +79,7 @@ ms.lasthandoff: 10/24/2017
   
 1.  プロジェクトをリビルドします。  
   
-     または  
+     - または -  
   
 2.  ソリューション エクスプ ローラーで Polygon.idl ファイルを右クリックし、をクリックして**コンパイル**ショートカット メニューの します。  
   
@@ -132,6 +133,6 @@ ms.lasthandoff: 10/24/2017
   
  [手順 4 に戻る](../atl/changing-the-drawing-code-atl-tutorial-part-4.md)&#124;です。[手順 6 に進む](../atl/adding-a-property-page-atl-tutorial-part-6.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル](../atl/active-template-library-atl-tutorial.md)
 

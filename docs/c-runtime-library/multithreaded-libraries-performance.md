@@ -18,11 +18,12 @@ caps.latest.revision: "4"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8eeadc61c41d37247b08bdc8e3806da6d6200e4a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 240b2baf8f3d59465b7b8313197086fec4c13285
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multithreaded-libraries-performance"></a>マルチスレッド ライブラリのパフォーマンス
 シングルスレッド CRT は使用できなくなりました。 このトピックでは、マルチスレッド ライブラリから最大のパフォーマンスを得る方法について説明します。  
@@ -42,5 +43,5 @@ ms.lasthandoff: 10/24/2017
   
 -   CRT ヒープ ハンドルの公開により、CRT ヒープ用の Windows Low Fragmentation Heap (LFH) を有効にして、高い拡張性が求められるシナリオでパフォーマンスを大幅に向上させることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

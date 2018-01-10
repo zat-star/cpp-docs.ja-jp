@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a30c8d2c26893ddf101d7084a91215c7ed55bf48
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4358dc54589971c559bec48adf77252d4f4cda28
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-an-atl-message-handler"></a>ATL メッセージ ハンドラーを追加します。
 コントロールにメッセージ ハンドラー (Windows メッセージを処理するメンバー関数) を追加するに最初にクラス ビューでコントロールを選択します。 開き、**プロパティ**ウィンドウで、**メッセージ**アイコン、および反対の必須のメッセージ ボックスで、ドロップダウン リストを制御 をクリックします。 これは、コントロールのヘッダー ファイルと、コントロールの .cpp ファイルで、ハンドラーのスケルトンの実装で、メッセージ ハンドラーの宣言を追加します。 メッセージ マップを追加し、ハンドラーのエントリを追加します。  
@@ -36,6 +37,6 @@ ms.lasthandoff: 10/24/2017
   
 -   新しいメッセージ マップ エントリは、メイン メッセージ マップに追加されます。 ウィザードでは、代替のメッセージ マップとの組み合わせは認識されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウの実装](../atl/implementing-a-window.md)
 

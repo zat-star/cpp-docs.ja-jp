@@ -54,11 +54,14 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cda2e1ccfa479eb2b71a4a21f49b67b127e9984c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 12645df8ba7bf53d562b91917e85797681120f86
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctableconstraints-ctableconstraintinfo"></a>CTableConstraints、CTableConstraintInfo
 Typedef クラスを呼び出す**CTableConstraints**そのパラメーター クラスを実装する**CTableConstraintInfo**です。  
@@ -81,10 +84,10 @@ Typedef クラスを呼び出す**CTableConstraints**そのパラメーター �
 |m_szType|CONSTRAINT_TYPE|  
 |m_bIsDeferrable|IS_DEFERRABLE|  
 |m_bInitiallyDeferred|INITIALLY_DEFERRED|  
-|m_szDescription|DESCRIPTION|  
+|m_szDescription|説明|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

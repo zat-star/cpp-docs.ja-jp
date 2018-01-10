@@ -15,11 +15,14 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 78ce8e988f6731040299333148679fe57634ec9c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 8ed032b448410fd6d0ee90ae659f02cde521ad4d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultisetequalrange-stlclr"></a>hash_multiset::equal_range (STL/CLR)
 指定したキーに一致する範囲を検索します。  
@@ -79,12 +82,12 @@ equal_range(L'x') empty = True
  b  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_multiset (STL/CLR)](../dotnet/hash-multiset-stl-clr.md)   
  [hash_multiset::count (STL/CLR)](../dotnet/hash-multiset-count-stl-clr.md)   
  [hash_multiset::find (STL/CLR)](../dotnet/hash-multiset-find-stl-clr.md)   

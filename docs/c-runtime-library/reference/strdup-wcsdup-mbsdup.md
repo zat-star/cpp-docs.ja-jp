@@ -53,11 +53,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6f4b65bb7c9bd0e309aa5b5c48b36c7a0b466d47
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: da8d1341e9ce46e2ab2040812622a78d3bd3830d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strdup-wcsdup-mbsdup"></a>_strdup、_wcsdup、_mbsdup
 文字列を複製します。  
@@ -89,7 +90,7 @@ unsigned char *_mbsdup(
 ## <a name="remarks"></a>コメント  
  `_strdup` 関数は、[malloc](../../c-runtime-library/reference/malloc.md) を呼び出して`strSource` のコピーにストレージ領域を割り当て、割り当てられた領域に `strSource` をコピーします。  
   
- `_wcsdup` 関数と `_mbsdup` 関数は、 `_strdup`関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsdup` 関数の引数と戻り値はワイド文字列で、 `_mbsdup` 関数の引数と戻り値はマルチバイト文字列です。 それ以外では、これらの関数の動作は同じです。  
+ `_wcsdup` 関数と `_mbsdup` 関数は、 `_strdup`関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsdup` 関数の引数と戻り値はワイド文字列で、`_mbsdup` 関数の引数と戻り値はマルチバイト文字列です。 それ以外では、これらの関数の動作は同じです。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -101,15 +102,15 @@ unsigned char *_mbsdup(
   
  `_DEBUG` と `_CRTDBG_MAP_ALLOC` が定義されている場合、デバッグのメモリ割り当てを考慮して、 `_strdup` と `_wcsdup` は `_strdup_dbg` と `_wcsdup_dbg` の呼び出しによって置き換えられます。 詳細については、「[_strdup_dbg、_wcsdup_dbg](../../c-runtime-library/reference/strdup-dbg-wcsdup-dbg.md)」をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strdup`|\<string.h>|  
 |`_wcsdup`|\<string.h> または \<wchar.h>|  
 |`_mbsdup`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -135,7 +136,7 @@ Original: This is the buffer text
 Copy:     This is the buffer text  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [memset、wmemset](../../c-runtime-library/reference/memset-wmemset.md)   
  [strcat、wcscat、_mbscat](../../c-runtime-library/reference/strcat-wcscat-mbscat.md)   

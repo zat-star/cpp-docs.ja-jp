@@ -24,11 +24,14 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bc5c5a46eabd6b308a8b91fba8f7844950d55985
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 70b4d7994bb2175d0d402fdd309a8258f7127dc7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crowsetmovetoratio"></a>CRowset::MoveToRatio
 行セット内の小数部の位置から始まる行がフェッチされます。  
@@ -66,8 +69,8 @@ ms.lasthandoff: 10/24/2017
   
  このメソッドには、省略可能なインターフェイスが必要とする`IRowsetScroll`、する可能性がありますすべてのプロバイダーでサポートされていない以外の場合は、そうでは、返されます**E_NOINTERFACE**です。 設定する必要もあります**DBPROP_IRowsetScroll**に`VARIANT_TRUE`呼び出す前に**開く**テーブルまたは行セットを含むコマンドをします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRowset クラス](../../data/oledb/crowset-class.md)

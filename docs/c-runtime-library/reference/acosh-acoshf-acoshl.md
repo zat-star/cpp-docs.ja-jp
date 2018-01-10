@@ -41,11 +41,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: adfdc0de08d0ce8b4103d7f8c063b61fc93b3c95
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 44872bc2ad2ef2be8e9a91403852574c9047a051
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="acosh-acoshf-acoshl"></a>acosh、acoshf、acoshl
 逆ハイパーボリック コサインを計算します。  
@@ -83,15 +84,15 @@ long double acoshl(
 |x < 1|none|none|  
   
 ## <a name="remarks"></a>コメント  
- C++ を使用する場合、`acosh` または `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`acosh` は常に `double` を受け取って返します。  
+ C++ を使用する場合、`acosh` または `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、 `acosh` は常に `double`を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
-|`acosh`、`acoshf`、`acoshl`|\<math.h>|\<cmath>|  
+|`acosh`、 `acoshf`、 `acoshl`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -121,7 +122,7 @@ cosh( 0.785398 ) = 1.324609
 acosh( 1.324609 ) = 0.785398  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [cos、cosf、cosl、cosh、coshf、coshl](../../c-runtime-library/reference/cos-cosf-cosl-cosh-coshf-coshl.md)   
  [sin、sinf、sinl、sinh、sinhf、sinhl](../../c-runtime-library/reference/sin-sinf-sinl-sinh-sinhf-sinhl.md)   

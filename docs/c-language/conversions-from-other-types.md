@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ed56c0c9ab3186200d3cbb47224dedc60adddb2f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8dbf2d3d269f5df3a028a5c416f8adca015be6dd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="conversions-from-other-types"></a>Conversions from Other Types (他の型からの変換)
 `enum` 値は、定義上、`int` 値であるため、`enum` 値との相互変換は `int` 型との相互変換と同じです。 Microsoft C コンパイラの場合、整数は **long** と同じです。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 10/24/2017
   
  `void` 型には定義上、値がありません。 したがって、他の型に変換できず、他の型を代入によって `void` に変換することはできません。 ただし、「[型キャスト変換](../c-language/type-cast-conversions.md)」で説明されているように、値を明示的に `void` 型にキャストすることができます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [代入の変換](../c-language/assignment-conversions.md)

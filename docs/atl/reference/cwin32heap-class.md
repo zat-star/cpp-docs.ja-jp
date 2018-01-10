@@ -26,11 +26,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 95498e3b945947e3cc2abc962e0ca2c2062aef83
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 67856242c63639101185eb6f6dcfd4902f0ef48c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cwin32heap-class"></a>CWin32Heap クラス
 このクラスは実装[IAtlMemMgr](../../atl/reference/iatlmemmgr-class.md) Win32 ヒープ割り当て関数を使用します。  
@@ -82,7 +83,7 @@ class CWin32Heap : public IAtlMemMgr
   
  `CWin32Heap`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlmem.h  
   
 ##  <a name="allocate"></a>Cwin32heap::allocate  
@@ -245,7 +246,7 @@ virtual __declspec(allocator) void* Reallocate(void* p, size_t nBytes) throw();
 ### <a name="remarks"></a>コメント  
  場合`p`NULL の場合は、メモリ ブロックがまだ割り当てられていないことと見なされますと[cwin32heap::allocate](#allocate)が呼び出されると、引数は`nBytes`します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [クラス](../../atl/reference/iatlmemmgr-class.md)   
  [CLocalHeap クラス](../../atl/reference/clocalheap-class.md)   

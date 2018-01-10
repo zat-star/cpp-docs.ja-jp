@@ -4,29 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - bool_cpp
 - __BOOL_DEFINED
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - bool keyword [C++]
 - __BOOL_DEFINED macro
 ms.assetid: 9abed3f2-d21c-4eb4-97c5-716342e613d8
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: f2437d831ae155f916b69cc6b35d3b586be9819e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 564d2f4849d1725d46d92562e2ce75b2ea2e2d44
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="bool-c"></a>bool (C++)
 このキーワードは組み込みの型です。 この型の変数に値を持つことができます[true](../cpp/true-cpp.md)と[false](../cpp/false-cpp.md)です。 条件式の型は `bool` であるため、その値は `bool` 型になります。 たとえば、`i!=0`ようになりました**true**または**false**の値に応じて`i`です。  
@@ -55,6 +53,6 @@ if (condexpr1) statement1;
   
  `bool` 型は整数の上位変換に使用されます。 型の右辺`bool`型の右辺値に変換できる`int`で**false**ゼロになると**true**は 1 です。 別個の型として、`bool` はオーバーロードの解決に使用されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  [基本型](../cpp/fundamental-types-cpp.md)

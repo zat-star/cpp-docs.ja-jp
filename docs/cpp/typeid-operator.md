@@ -4,25 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
-helpviewer_keywords:
-- typeid operator
+dev_langs: C++
+helpviewer_keywords: typeid operator
 ms.assetid: 8871cee6-d6b9-4301-a5cb-bf3dc9798d61
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 3b987f26e7908c85ca1630059eec434c009c3ef4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: b27f3bcb7358b3ea05907df1a4372c107538dfb4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="typeid-operator"></a>typeid 演算子
 ## <a name="syntax"></a>構文  
@@ -104,6 +101,6 @@ T max( T arg1, T arg2 ) {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム型情報](../cpp/run-time-type-information.md)   
  [キーワード](../cpp/keywords-cpp.md)

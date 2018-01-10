@@ -15,16 +15,17 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0839724e932912c35544463831e9bb540c9cd421
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8ce1a86614ac39535a284bd336da585465aa8990
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ml-nonfatal-error-a2054"></a>ML の致命的でないエラー A2054
 **エラーを強制します値を 0 に等しくない。**  
   
  条件付きエラー ディレクティブ[です。ERRNZ](../../assembler/masm/dot-errnz.md)このエラーを生成するために使用されました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

@@ -1,69 +1,70 @@
 ---
-title: "/volatile (volatile キーワードの解釈を) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/volatile:iso"
-  - "/volatile:ms"
-  - "/volatile"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/volatile コンパイラ オプション"
-  - "/volatile コンパイラ オプション [C++]"
-  - "volatile コンパイラ オプション"
-  - "-volatile コンパイラ オプション"
-  - "volatile コンパイラ オプション [C++]"
-  - "-volatile コンパイラ オプション [C++]"
+title: "-揮発性 (volatile キーワードの解釈) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /volatile:iso
+- /volatile:ms
+- /volatile
+dev_langs: C++
+helpviewer_keywords:
+- /volatile compiler option
+- /volatile compiler option [C++]
+- -volatile compiler option
+- volatile compiler option [C++]
+- volatile compiler option
+- -volatile compiler option [C++]
 ms.assetid: 9d08fcc6-5bda-44c8-8151-8d8d54f164b8
-caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: d0dab1d40efc0749478600e7330287926fa76152
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /volatile (volatile キーワードの解釈を)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[volatile](../../cpp/volatile-cpp.md) キーワードの解釈方法を指定します。  
+# <a name="volatile-volatile-keyword-interpretation"></a>/volatile (volatile キーワードの解釈を)
+指定する方法、[揮発性](../../cpp/volatile-cpp.md)キーワードの解釈します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /volatile:{iso|ms}  
 ```  
   
-## Arguments  
- **\/volatile:iso**  
- ISO 標準の C\+\+ 言語で定義されている、厳密な `volatile` のセマンティックスを選択します。  volatile アクセスでは取得と開放のセマンティックスは保証されていません。  コンパイラが ARM をターゲットとする場合は、これは `volatile` の既定の解釈です。  
+## <a name="arguments"></a>引数  
+ **/volatile:iso**  
+ ISO 標準の C++ 言語で定義されている、厳密な `volatile` のセマンティックスを選択します。 volatile アクセスでは取得と開放のセマンティックスは保証されていません。 コンパイラが ARM をターゲットとする場合は、これは `volatile` の既定の解釈です。  
   
- **\/volatile:ms**  
- Microsoft 拡張 `volatile` セマンティクスを選択すると、ISO 標準 C\+\+ 言語を超えることを保証するメモリ オーダリングが追加されます。  volatile アクセスでは取得と開放のセマンティックスは保証されます。  ただし、このオプションにより、コンパイラはハードウェアのメモリ バリアを強制的に生成します。これによって ARM および他のメモリ オーダリングの弱いアーキテクチャでは、著しいオーバーヘッドが追加される場合があります。  コンパイラが ARM 以外のプラットフォームをターゲットとする場合は、これは `volatile` の既定の解釈です。  
+ **/volatile:ms**  
+ Microsoft 拡張 `volatile` セマンティクスを選択すると、ISO 標準 C++ 言語を超えることを保証するメモリ オーダリングが追加されます。 volatile アクセスでは取得と開放のセマンティックスは保証されます。 ただし、このオプションにより、コンパイラはハードウェアのメモリ バリアを強制的に生成します。これによって ARM および他のメモリ オーダリングの弱いアーキテクチャでは、著しいオーバーヘッドが追加される場合があります。 コンパイラが ARM 以外のプラットフォームをターゲットとする場合は、これは `volatile` の既定の解釈です。  
   
-## 解説  
- スレッド間で共有されるメモリを扱うときには、**\/volatile:iso** を明示的な同期プリミティブおよびコンパイラ組み込みと共に使用することを強くお勧めします。  詳細については、「[volatile](../../cpp/volatile-cpp.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ 使用することを強くお勧め**/volatile:iso**および明示的な同期プリミティブとコンパイラ組み込み関数はスレッド間で共有されるメモリを扱うときにします。 詳細については、次を参照してください。[揮発性](../../cpp/volatile-cpp.md)です。  
   
- 既存のコードを移植するか、またはプロジェクトの途中でこのオプションを変更する場合、[C4746](../../error-messages/compiler-warnings/compiler-warning-c4746.md) の警告を有効にして、セマンティクスの違いによって影響を受けるコードの場所を識別することが役立つ場合があります。  
+ 既存のコードを移植プロジェクトの途中でこのオプションを変更するか、することが警告を有効にする[C4746](../../error-messages/compiler-warnings/compiler-warning-c4746.md)セマンティクスの違いによって影響を受けるコードの場所を識別します。  
   
  `#pragma` には、このオプションを制御するための相当するものはありません。  
   
-### \/volatile コンパイラ オプションを Visual Studio で設定するには  
+### <a name="to-set-the-volatile-compiler-option-in-visual-studio"></a>/volatile コンパイラ オプションを Visual Studio で設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  開く、**プロパティ ページ**プロジェクトのダイアログ ボックス。 詳細については、次を参照してください。[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーを選択します。  
+2.  選択、 **C/C++**フォルダーです。  
   
-3.  **\[コマンド ライン\]** プロパティ ページを選択します。  
+3.  選択、**コマンドライン**プロパティ ページ。  
   
-4.  **\[追加オプション\]** ボックスに、`/volatile:iso` か `/volatile:ms` を追加します。  
+4.  **追加オプション**ボックスで、追加`/volatile:iso`または`/volatile:ms`です。  
   
-## 参照  
- [volatile](../../cpp/volatile-cpp.md)   
+## <a name="see-also"></a>参照  
+ [揮発性](../../cpp/volatile-cpp.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

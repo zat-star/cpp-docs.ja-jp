@@ -4,35 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - thread_local_cpp
 - external_cpp
 - static_cpp
-dev_langs:
-- C++
-helpviewer_keywords:
-- storage classes [C++], basic concepts
+dev_langs: C++
+helpviewer_keywords: storage classes [C++], basic concepts
 ms.assetid: f10e1c56-6249-4eb6-b08f-09ab1eef1992
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: db5a6c23d11f8cdf144e42aee4880ee1ac26066a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: a6914ace20d299b526dc7c0d5b066948a2759287
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="storage-classes-c"></a>ストレージ クラス (C++)  
   
 A*ストレージ クラス*変数宣言は型指定子オブジェクトの有効期間、リンケージ、およびメモリの場所を制御する、C++ のコンテキストでします。 特定のオブジェクトはストレージ クラスを 1 つのみ持つことができます。 ブロック内で定義された変数は、`extern`、`static`、または `thread_local` 指定子によって指定されていない限り、自動ストレージを持ちます。 自動オブジェクトおよび変数にはリンケージがないため、ブロックの外側のコードには不可視です。  
   
-**注**  
+**ノート**  
   
 1.  [変更可能な](../cpp/mutable-data-members-cpp.md)キーワードと思われるストレージ クラス指定子。 ただし、クラス定義のメンバー一覧でのみ使用できます。  
   
@@ -221,14 +218,12 @@ void DoSomething()
 ```  
   
 注意点、`thread_local`指定子。  
+
+- すべての呼び出し元スレッドに Dll で動的に初期化されたスレッド ローカル変数が正しく初期化されていません可能性があります。 詳細については、次を参照してください。[スレッド](thread.md)です。
   
 -  `thread_local`指定子と組み合わせることがあります`static`または`extern`です。  
   
 -  適用できる`thread_local`のみにデータの宣言と定義されます。`thread_local`関数宣言または定義では使用できません。  
-  
--  使用`thread_local`に干渉する可能性があります[遅延読み込み](../build/reference/linker-support-for-delay-loaded-dlls.md)DLL のインポートします。 
-  
--  XP システムで`thread_local`DLL で使用する場合は正常に機能しない可能性があります`thread_local`経由でにデータとそれが動的に読み込まれる`LoadLibrary`です。  
   
 -  `thread_local` は、静的ストレージ存続期間のあるデータ項目にのみ指定できます。 これには、グローバルなデータ オブジェクトが含まれます (両方`static`と`extern`)、ローカルな静的オブジェクト、およびクラスの静的データ メンバーです。 任意のローカル変数が宣言されている`thread_local`が他のストレージ クラスが提供されていない場合、暗黙的に静的ではブロック スコープ、つまり、`thread_local`と等価`thread_local static`です。 
   
@@ -326,7 +321,6 @@ Destroying: Static I3
   
 - 最後に、`I3` などの静的ローカル変数は、プログラム実行中は値が保持されますが、プログラムが終了すると破棄されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
  [宣言と定義](../cpp/declarations-and-definitions-cpp.md)
-

@@ -16,11 +16,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7d062a17fd71d53451aa8de3aa7d498f8a5ec68a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 14bd61bc4f319a50abdbf76d7f6e60e511e57312
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="supporting-free-threading-in-your-provider"></a>プロバイダーでのフリー スレッドのサポート
 すべての OLE DB プロバイダー クラスはスレッド セーフである、およびレジストリ エントリはそれに従って設定されます。 高レベルのマルチ ユーザー環境でのパフォーマンスを提供するのに役立つフリー スレッドをサポートすることをお勧めします。 スレッド セーフである、プロバイダーに保つためには、コードが正常にブロックされていることを確認する必要があります。 書き込みまたはデータを格納するたびに、重要なセクションを使用してアクセスをブロックする必要があります。  
@@ -50,5 +53,5 @@ HRESULT MyObject::MyMethod(void)
   
  任意のメソッド オーバーライドすることも確認する必要があります (など`Execute`) スレッド セーフです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレートの操作](../../data/oledb/working-with-ole-db-provider-templates.md)

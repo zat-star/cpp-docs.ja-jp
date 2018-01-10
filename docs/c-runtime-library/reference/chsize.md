@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- _chsize
+apiname: _chsize
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,10 +21,8 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
 apitype: DLLExport
-f1_keywords:
-- _chsize
-dev_langs:
-- C++
+f1_keywords: _chsize
+dev_langs: C++
 helpviewer_keywords:
 - size
 - _chsize function
@@ -34,30 +30,16 @@ helpviewer_keywords:
 - files [C++], changing size
 - chsize function
 ms.assetid: b3e881c5-7b27-4837-a3d4-c51591ab10ff
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 2d75597dceaedb3e43be5a530be4a7decdd1defc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 9c48c9978650dc88ff2579a2838faf9bcb02cefa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="chsize"></a>_chsize
 ファイル サイズを変更します。 セキュリティが強化されたバージョンについては、「[_chsize_s](../../c-runtime-library/reference/chsize-s.md)」を参照してください。  
@@ -79,7 +61,7 @@ int _chsize(
  バイト単位のファイルの新しい長さ。  
   
 ## <a name="return-value"></a>戻り値  
- ファイル サイズが正常に変更された場合は、`_chsize` は値 0 を返します。 戻り値-1 はエラーを示します:`errno`に設定されている`EACCES`、指定したファイルが、アクセスに対してにロックされている場合`EBADF`、指定したファイルは読み取り専用または記述子が有効でない場合`ENOSPC`デバイスで、領域が残っていない場合または`EINVAL`場合`size`が 0 未満です。  
+ ファイル サイズが正常に変更された場合は、`_chsize` は値 0 を返します。 戻り値-1 はエラーを示します:`errno`に設定されている`EACCES`かどうか、指定したファイルがロックされている、アクセスに対してに`EBADF`、指定したファイルは読み取り専用または記述子が有効でない場合`ENOSPC`デバイス、またはに領域が残っていない場合`EINVAL`場合`size`が 0 未満です。  
   
  リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
@@ -88,9 +70,9 @@ int _chsize(
   
  この関数は、パラメーターを検証します。 `size` が 0 未満か `fd` が正しくないファイル記述子である場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_chsize`|\<io.h>|\<errno.h>|  
   
@@ -136,7 +118,7 @@ Size successfully changed
 File length after:  329678  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_close](../../c-runtime-library/reference/close.md)   
  [_sopen、_wsopen](../../c-runtime-library/reference/sopen-wsopen.md)   

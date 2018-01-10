@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c91c3834b5a4647f7c9cd41820dc04e5597277f0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: aada86ec63ccade17577f5410ced62cb4d5cf03f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="structure-declarations"></a>構造体宣言
 "構造体宣言" では、型に名前を付け、異なる型を持つことのできる変数値のシーケンス (構造体の "メンバー" または "フィールド" と呼びます) を指定します。 "タグ" と呼ばれる省略可能な識別子で構造体の型に名前を付けると、その後はタグを使用してその構造体型を参照できます。 構造体型の変数は、その型で定義されているシーケンス全体を保持します。 C の構造体は、他の言語で "レコード" と呼ばれる型に似ています。  
@@ -96,7 +97,7 @@ struct a var3;
 struct b var4;  
 ```  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  以下の各例は、構造体宣言を示しています。  
   
 ```  
@@ -187,7 +188,7 @@ p_s->b = 100;  /* A reference to a field in the s structure */
   
  構造体の参照については、「[Structure and Union Members (構造体と共用体のメンバー)](../c-language/structure-and-union-members.md)」を参照してください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言子と変数宣言](../c-language/declarators-and-variable-declarations.md)

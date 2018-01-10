@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1fda4b8a6c530d494640d486227d3bdda25ea728
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 51587ea864faa11372fc07fd4e1e0b1d7333aaaf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="implementation-defined-behavior"></a>実装定義の動作
 ANSI X3.159-1989 (*American National Standard for Information Systems* - *Programming Language* - *C*) には、移植性の問題に関するセクションがあります。 この ANSI セクションには、ANSI が特定の実装に対して開放している C 言語の領域が記載されています。 ここでは、C 言語のこれらの実装定義領域が Microsoft C でどのように処理されるかについて説明します。  
@@ -32,5 +33,5 @@ ANSI X3.159-1989 (*American National Standard for Information Systems* - *Progra
 > [!NOTE]
 >  このセクションでは、米国英語版の C コンパイラについてのみ説明します。 他の言語の Microsoft C の実装は多少異なる場合があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 言語リファレンス](../c-language/c-language-reference.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: df14f32b8b51d8b74b56a697f3928ff8da485a5a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6dee769d0a5bc2d0992dfb51de240bdd5e3d62d2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sequential-evaluation-operator"></a>順次評価演算子
 順次評価演算子は、"コンマ演算子" とも呼ばれ、2 つのオペランドを左から右へ順番に評価します。  
@@ -54,5 +55,5 @@ func_two( (x--, y + 2), z );
   
  `func_one` への関数呼び出しでは、`x`、`y + 2`、`z` の 3 つの引数がコンマで区切られて渡されます。 `func_two` の関数呼び出しでは、かっこにより、コンパイラは順次評価演算子として最初のコンマを解釈します。 この関数呼び出しは、`func_two` に 2 つの引数を渡します。 最初の引数は、順次評価演算 `(x--, y + 2)` の結果です。この演算は、式 `y + 2` の値と型を持ち、第 2 の引数は `z` です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンマ演算子: ,](../cpp/comma-operator.md)

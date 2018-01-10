@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ae753f1a483c05843797268641c4cc0c5d64c52a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 67d66667d169a95ae4d62ccadd2b56a136cd0a76
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="interpreting-more-complex-declarators"></a>より複雑な宣言子の解釈
 宣言子をかっこで囲んで、"複雑な宣言子" の特定の解釈を指定できます。 複雑な宣言子は、複数の配列、ポインター、または関数の修飾子で修飾される識別子です。 1 つの ID には、配列、ポインター、関数修飾子のさまざまな組み合わせを適用できます。 通常、`typedef` を使用して、宣言を簡素化できます。 「[typedef 宣言](../c-language/typedef-declarations.md)」を参照してください。  
@@ -59,7 +60,7 @@ ms.lasthandoff: 10/24/2017
   
 7.  `char` 値。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次の例は、その他の複雑な宣言を示し、かっこが宣言の意味にどのように影響を与える可能性があるかを示します。  
   
 ```  
@@ -134,5 +135,5 @@ union sign *(*var[5])[5]; /* Array of pointers to arrays
   
  この例は、かっこの配置によって宣言の意味がどのように変わるかを示しています。 この例では、`var` は、ポインターの要素を 5 つ含む配列です。それらのポインターはそれぞれ、要素として共有体へのポインターを 5 つ含む配列を指します。 `typedef` を使用して複雑な宣言を回避する方法の例については、「[typedef 宣言](../c-language/typedef-declarations.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言と型](../c-language/declarations-and-types.md)

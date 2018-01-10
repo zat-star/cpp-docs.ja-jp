@@ -1,36 +1,37 @@
 ---
-title: "推論規則の優先順位 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "推論規則 (NMAKE の)"
-  - "優先順位, 推論規則"
-  - "規則, 推論"
+title: "推論規則の優先順位 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- inference rules in NMAKE
+- rules, inference
+- precedence, inference rule
 ms.assetid: 69e3dc02-0815-4c3a-b02b-1cb85fceaf24
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: f7374da0541fc66464947af5a7b2ea7ea7b5c1d3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 推論規則の優先順位
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-推論規則が重複して定義されている場合、NMAKE は優先順位の最も高い定義を使用します。  推論規則の優先順位は次のとおりです。  
+# <a name="precedence-in-inference-rules"></a>推論規則の優先順位
+推論規則は重複定義されて、NMAKE は最も高い優先順位の定義を使用します。 次に、最上位から最下位までの優先順位の順序を示します。  
   
-1.  メイクファイルで定義されている推論規則。複数の定義では、後で定義されている方が優先されます。  
+1.  メイクファイルで定義された推論規則後続の定義では、優先順位があります。  
   
-2.  Tools.ini で定義されている推論規則。複数の定義では、後で定義されている方が優先されます。  
+2.  Tools.ini; で定義された推論規則後続の定義では、優先順位があります。  
   
-3.  定義済み推論規則。  
+3.  定義済みの推論規則。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [推論規則](../build/inference-rules.md)

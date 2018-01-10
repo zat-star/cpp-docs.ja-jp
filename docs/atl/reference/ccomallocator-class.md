@@ -20,11 +20,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b1ba2b12110e4c312b84b2a24831687e782cc339
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 370a52e87bcbb4849883ea03016cc462030ad028
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomallocator-class"></a>CComAllocator クラス
 このクラスは、COM メモリ ルーチンを使用しているメモリを管理するためのメソッドを提供します。  
@@ -48,7 +49,7 @@ class CComAllocator
 ## <a name="remarks"></a>コメント  
  このクラスによって使用[CComHeapPtr](../../atl/reference/ccomheapptr-class.md) COM メモリ割り当てルーチンを提供します。 対応するクラス[CCRTAllocator](../../atl/reference/ccrtallocator-class.md)、CRT ルーチンを使用する場合と同じ方法を提供します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="allocate"></a>CComAllocator::Allocate  
@@ -102,7 +103,7 @@ static void* Reallocate(void* p, size_t nBytes) throw();
 ### <a name="remarks"></a>コメント  
  割り当てられたメモリの量を変更します。 参照してください[CoTaskMemRealloc](http://msdn.microsoft.com/library/windows/desktop/ms687280)詳細についてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComHeapPtr クラス](../../atl/reference/ccomheapptr-class.md)   
  [CCRTAllocator クラス](../../atl/reference/ccrtallocator-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

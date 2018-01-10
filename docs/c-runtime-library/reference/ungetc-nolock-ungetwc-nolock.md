@@ -43,11 +43,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e751c0d787081933d4bcd2ad6de35e05f3f4d171
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 050e70744ca47b508c65905ecf95b17f42c38b8b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ungetcnolock-ungetwcnolock"></a>_ungetc_nolock、_ungetwc_nolock
 ストリームに文字をプッシュ バックします。  
@@ -87,16 +88,16 @@ wint_t _ungetwc_nolock(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_ungettc_nolock`|`_ungetc_nolock`|`_ungetc_nolock`|`_ungetwc_nolock`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ungetc_nolock`|\<stdio.h>|  
 |`_ungetwc_nolock`|\<stdio.h> または \<wchar.h>|  
   
  互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [getc、getwc](../../c-runtime-library/reference/getc-getwc.md)   
  [putc、putwc](../../c-runtime-library/reference/putc-putwc.md)

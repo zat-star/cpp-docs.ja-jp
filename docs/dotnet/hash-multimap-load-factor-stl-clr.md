@@ -1,41 +1,42 @@
 ---
-title: "hash_multimap::load_factor (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_multimap::load_factor"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "load_factor メンバー [STL/CLR]"
+title: "hash_multimap::load_factor (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_multimap::load_factor
+dev_langs: C++
+helpviewer_keywords: load_factor member [STL/CLR]
 ms.assetid: c4b34387-fe76-405d-bead-a092b4571631
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: cc6b5666da1095e5da68162709de245ef8ca9551
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_multimap::load_factor (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashmultimaploadfactor-stlclr"></a>hash_multimap::load_factor (STL/CLR)
 バケットごとの平均要素数をカウントします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 float load_factor();  
 ```  
   
-## 解説  
- このメンバー関数は `(float)`[hash\_multimap::size](../dotnet/hash-multimap-size-stl-clr.md)`() /`[hash\_multimap::bucket\_count](../dotnet/hash-multimap-bucket-count-stl-clr.md)`()`を返します。  平均バケットのサイズを決定するために使用します。  
+## <a name="remarks"></a>コメント  
+ メンバー関数を返します`(float)` [hash_multimap::size (STL/CLR)](../dotnet/hash-multimap-size-stl-clr.md) `() /` [hash_multimap::bucket_count (STL/CLR)](../dotnet/hash-multimap-bucket-count-stl-clr.md)`()`です。 使用するバケットの平均サイズを決定します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_multimap_load_factor.cpp   
@@ -81,22 +82,27 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**bucket\_count\(\) \= 16**  
-**load\_factor\(\) \= 0.1875**  
-**max\_load\_factor\(\) \= 4**  
-**bucket\_count\(\) \= 16**  
-**load\_factor\(\) \= 0.1875**  
-**max\_load\_factor\(\) \= 0.25**  
-**bucket\_count\(\) \= 128**  
-**load\_factor\(\) \= 0.0234375**  
-**max\_load\_factor\(\) \= 0.25**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_map\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+bucket_count() = 16  
+load_factor() = 0.1875  
+max_load_factor() = 4  
   
- **名前空間:** の cliext  
+bucket_count() = 16  
+load_factor() = 0.1875  
+max_load_factor() = 0.25  
   
-## 参照  
- [hash\_multimap](../dotnet/hash-multimap-stl-clr.md)   
- [hash\_multimap::bucket\_count](../dotnet/hash-multimap-bucket-count-stl-clr.md)   
- [hash\_multimap::max\_load\_factor](../Topic/hash_multimap::max_load_factor%20\(STL-CLR\).md)
+bucket_count() = 128  
+load_factor() = 0.0234375  
+max_load_factor() = 0.25  
+```  
+  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_map >  
+  
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
+ [hash_multimap::bucket_count (STL/CLR)](../dotnet/hash-multimap-bucket-count-stl-clr.md)   
+ [hash_multimap::max_load_factor (STL/CLR)](../dotnet/hash-multimap-max-load-factor-stl-clr.md)

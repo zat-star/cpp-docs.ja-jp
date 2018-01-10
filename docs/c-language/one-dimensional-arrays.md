@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ea3d4c2461579fcafc4f9ff7ba5071572229c640
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 033d772a40ddf55474ca845c9c5708423bcf5e90
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="one-dimensional-arrays"></a>1 次元配列
 角かっこ (**[ ]**) が続く後置式は、配列オブジェクトの要素の添字表現です。 添字式は、次のように表現されると、*postfix-expression* を超える *expression* 位置にあるアドレスにある値を表します。  
@@ -73,5 +74,5 @@ b[a]
   
  `line[0]` によって表されるアドレスからのオフセットが 0 であるため、添字式 `line` は、行の最初の要素の値を表します。 同様に、`line[5]` のような式は、行から 5 位置オフセットされた要素、つまり配列の 6 番目の要素を参照します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [添字演算子:](../cpp/subscript-operator.md)

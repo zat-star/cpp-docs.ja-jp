@@ -41,11 +41,12 @@ caps.latest.revision: "25"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4b317e80379137bd7ada957b6b89b1c8b82c115a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3f7a2d8baac49543f09d3d2fa35764ae127f5507
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strtimes-wstrtimes"></a>_strtime_s、_wstrtime_s
 現在の時刻をバッファーにコピーします。 これらは、「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」 (CRT のセキュリティ機能) の説明にあるとおり、セキュリティが強化されたバージョンの [_strtime、_wstrtime](../../c-runtime-library/reference/strtime-wstrtime.md) です。  
@@ -79,13 +80,13 @@ errno_t _wstrtime_s(
  バッファーのサイズ。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 を返します。  
+ 正常終了した場合は 0。  
   
  エラー状況が発生した場合は、「[パラメータの検証](../../c-runtime-library/parameter-validation.md)」に説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは ERRNO.H で定義されます。この関数によって生成される正確なエラーについては、下記の表をご覧ください。 エラー コードの詳細については、「[errno 定数](../../c-runtime-library/errno-constants.md)」をご覧ください。  
   
 ### <a name="error-conditions"></a>エラー条件  
   
-|`buffer`|`numberOfElements`|リターン|`buffer` の内容|  
+|`buffer`|`numberOfElements`|Return|`buffer` の内容|  
 |--------------|------------------------|------------|--------------------------|  
 |`NULL`|(任意)|`EINVAL`|変更されない|  
 |`NULL` ではない (有効なバッファーを指す)|0|`EINVAL`|変更されない|  
@@ -102,7 +103,7 @@ errno_t _wstrtime_s(
   
  ワイド文字を扱う場合は、`_wstrtime` ではなく `_strtime` を使用します。`_wstrtime` の場合、引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mapping"></a>汎用テキスト ルーチンのマップ  
   
@@ -110,14 +111,14 @@ errno_t _wstrtime_s(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tstrtime_s`|`_strtime_s`|`_strtime_s`|`_wstrtime_s`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strtime_s`|\<time.h>|  
 |`_wstrtime_s`|\<time.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -162,7 +163,7 @@ OS time:            14:37:49
 OS date:            04/25/03  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   
  [ctime_s、_ctime32_s、_ctime64_s、_wctime_s、_wctime32_s、_wctime64_s](../../c-runtime-library/reference/ctime-s-ctime32-s-ctime64-s-wctime-s-wctime32-s-wctime64-s.md)   

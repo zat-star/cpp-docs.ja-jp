@@ -41,11 +41,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1a1cc6a80609828d084b56ef4f981c9d03de8070
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c96e806615d165bcdc3b5a5b89e4b8a966d8b1e7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fullpath-wfullpath"></a>_fullpath、_wfullpath
 指定された相対パス名の絶対または完全パス名を作成します。  
@@ -107,14 +108,14 @@ wchar_t *_wfullpath(
   
  `absPath` バッファーが `NULL` である場合、`_fullpath` は [malloc](../../c-runtime-library/reference/malloc.md) を呼び出してバッファーを割り当て、`maxLength` 引数を無視します。 このバッファーを ([free](../../c-runtime-library/reference/free.md) を使用して) 適切に解放するのは、呼び出し元の責任です。 `relPath` 引数がディスク ドライブを指定する場合、このドライブの現在のディレクトリがパスと結合されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_fullpath`|\<stdlib.h>|  
 |`_wfullpath`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -151,7 +152,7 @@ Full path is: C:\test
 Full path is: C:\Documents and Settings\user\test  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_getcwd、_wgetcwd](../../c-runtime-library/reference/getcwd-wgetcwd.md)   
  [_getdcwd、_wgetdcwd](../../c-runtime-library/reference/getdcwd-wgetdcwd.md)   

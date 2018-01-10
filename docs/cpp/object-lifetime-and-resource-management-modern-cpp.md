@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0da7872ab6a93b737bf402ded085a4fb18551798
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4e2b48630fab9d27bf5db442617a5184bd26de5d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="object-lifetime-and-resource-management-modern-c"></a>オブジェクトの有効期間とリソースの管理 (Modern C++)
 管理対象の言語とは異なり、C++ はプログラムを実行すると自動的にいいえで長く-使用メモリ リソースを解放するガベージ コレクション (GC) がありません。 C++ では、リソース管理は、オブジェクトの有効期間に直接関連付けします。 このドキュメントでは、C++ では、オブジェクトの有効期間およびそれを管理する方法に影響する要因について説明します。  
@@ -90,7 +91,7 @@ void functionUsingWidget () {
   
  静的な有効期間を多用しない (グローバル静的、関数のローカルの静的) の問題が発生する可能性があるためです。 グローバル オブジェクトのコンス トラクターが例外をスローしたときの動作 通常、アプリはエラー デバッグが困難になることができるようにします。 コンストラクションの順序で静的な有効期間のオブジェクト、問題が発生し、同時実行セーフではありません。 オブジェクトの構築は、問題だけでなく、ポリモーフィズムが必要な場合に特にに、破棄の順序が、複雑になることができます。 でも、オブジェクトまたは変数がない場合ポリモーフィックな複雑な構築/破棄の順序はありません、スレッド セーフである同時実行の問題がまだあります。 マルチ スレッド アプリは、スレッド ローカル ストレージ、リソースのロック、およびその他の特別な対策をしなくても静的オブジェクト内のデータを安全に変更できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)

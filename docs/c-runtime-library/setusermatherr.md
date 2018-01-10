@@ -26,11 +26,12 @@ caps.latest.revision: "2"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fa4f5b7b60bf4ea6fea0d0d63d2ee911101174b5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: eefd80ae9eafd20615d90a259af247b4bcb7ce0a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setusermatherr"></a>__setusermatherr
 数値演算エラーを処理するために、[_matherr](../c-runtime-library/reference/matherr.md) ルーチンではなく、ユーザーが指定したルーチンを指定します。  
@@ -51,8 +52,8 @@ void __setusermatherr(
   
 ## <a name="remarks"></a>コメント  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |__setusermatherr|matherr.c|

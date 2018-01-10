@@ -31,11 +31,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0adde41ca70fa5fdc457772f6023b02f9550e2ca
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c585afee6bbea3d0cc48b696bc005b9a8d6c7992
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="path-field-limits"></a>パス フィールドの制限
 ## <a name="syntax"></a>構文  
@@ -58,5 +59,5 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  C ランタイムでは最大 32768 文字のパスの長さがサポートされますが、このように長いパスがサポートされるかどうかは、オペレーティング システム、特にファイル システム次第です。 FAT32 ファイル システムとの完全な下位互換性を維持するために、フィールドの合計は `_MAX_PATH` を超えないようにする必要があります。 [!INCLUDE[win2kfamily](../c-runtime-library/includes/win2kfamily_md.md)]、[!INCLUDE[WinXpFamily](../atl/reference/includes/winxpfamily_md.md)]、[!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)]、Windows Vista の NTFS ファイル システムでは、最大 32768 文字の長さのパスがサポートされますが、Unicode API を使用する場合に限ります。 長いパス名を使用する場合は、パスに \\\\?\ の文字のプレフィックスを付けて、C ランタイム関数の Unicode バージョンを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル定数](../c-runtime-library/global-constants.md)

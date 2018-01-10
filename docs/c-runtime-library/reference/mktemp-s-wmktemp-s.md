@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -28,8 +27,7 @@ f1_keywords:
 - mktemp_s
 - _mktemp_s
 - _wmktemp_s
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _tmktemp_s function
 - mktemp_s function
@@ -40,30 +38,16 @@ helpviewer_keywords:
 - wmktemp_s function
 - temporary files [C++]
 ms.assetid: 92a7e269-7f3d-4c71-bad6-14bc827a451d
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 6231031dd0bbc5b455e3555731f711ee7de971e7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 9515212418b4bd4e8d9957254b2fafaf451a3adc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mktemps-wmktemps"></a>_mktemp_s、_wmktemp_s
 一意のファイル名を作成します。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_mktemp、_wmktemp](../../c-runtime-library/reference/mktemp-wmktemp.md) です。  
@@ -146,16 +130,16 @@ fna12345
   
  `_mktemp_s` では、ベース値とテンプレート値の任意の組み合わせから最大 26 通りの一意のファイル名を作成できます。 そのため、FNZ12345 は、この例で使用されている `base` と `template` の値に対して `_mktemp_s` が作成できる最後の一意のファイル名です。  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_mktemp_s`|\<io.h>|  
 |`_wmktemp_s`|\<io.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -211,7 +195,7 @@ Unique filename is fnd03188
 Unique filename is fne03188  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
  [_getmbcp](../../c-runtime-library/reference/getmbcp.md)   

@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 08f597a160b3447743646c4cccfc2e05485a47b1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ae4610e7b26eecd6ef444f3c7c73e95af365ca71
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-create-and-use-uniqueptr-instances"></a>方法: unique_ptr インスタンスを作成して使用する
 A [unique_ptr](../standard-library/unique-ptr-class.md)がそのポインターを共有していません。 別コピーできない`unique_ptr`関数に値渡しまたは作成するコピーを必要とするすべての C++ 標準ライブラリ アルゴリズムで使用されます。 `unique_ptr` ができるのは移動だけです。 この場合、メモリ リソースの所有権は別の `unique_ptr` に移動し、元の `unique_ptr` はそれ以降、所有権を失います。 複数の所有者がオブジェクトを所有するとプログラム ロジックが複雑になるため、所有者を 1 人に制限することをお勧めします。 したがって、プレーンな C++ オブジェクトにスマート ポインターが必要なときに使用`unique_ptr`、構築する場合と、`unique_ptr`を使用して、 [make_unique](../standard-library/memory-functions.md#make_unique)ヘルパー関数。  
@@ -54,6 +55,6 @@ A [unique_ptr](../standard-library/unique-ptr-class.md)がそのポインター�
   
  例については、次を参照してください。 [make_unique](../standard-library/memory-functions.md#make_unique)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スマート ポインター](../cpp/smart-pointers-modern-cpp.md)   
  [make_unique](../standard-library/memory-functions.md#make_unique)

@@ -15,11 +15,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9f43e0b623213837531c5d8861d0b5a0502d2ba0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: dbf49de47fad28b01ce4dc9736d121ad7260e005
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="site-information-classes"></a>サイト情報クラス
 次のクラスは、サイトと通信するためにオブジェクトを許可します。  
@@ -28,6 +29,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [IOleObjectImpl](../atl/reference/ioleobjectimpl-class.md)を取得し、オブジェクトのサイトへのポインターを設定します。 コントロールに使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

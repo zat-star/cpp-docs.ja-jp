@@ -23,11 +23,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 37b08b5108d609deca2eed94a05d4eb01d09f10b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1fbb3d19101358012df795000907a0b3e8139601
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="main-program-startup"></a>main: プログラムの起動
 という名前の特殊な関数`main`すべての C および C++ プログラムの実行の開始ポイントです。 [!INCLUDE[TLA#tla_unicode](../atl-mfc-shared/reference/includes/tlasharptla_unicode_md.md)] プログラミング モデルに準拠するコードを書く場合は、`wmain` のワイド文字バージョンである `main` を使用できます。  
@@ -66,7 +67,7 @@ int wmain(int argc, wchar_t *argv[], wchar_t *envp[]);
 **Microsoft 固有の仕様はここまで**  
  `argc` と `argv` の型は、言語によって定義されています。 名前 `argc`、`argv`、および`envp` は従来のものですが、コンパイラにとって必須ではありません。 例および詳細については、次を参照してください。[引数定義](../cpp/argument-definitions.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  [Main に代わる wmain の使用](../cpp/using-wmain-instead-of-main.md)   
  [main 関数に関する制約](../cpp/main-function-restrictions.md)

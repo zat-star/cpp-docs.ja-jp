@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1751c19ba222bbdf9dfc30a290201289db1af850
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ca8507d8890b1f1865ccefd6ce56a1b6f069d0f8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="conversions-to-and-from-pointer-types"></a>Conversions to and from Pointer Types (ポインター型との間の変換)
 ある型の値へのポインターは、別の型へのポインターに変換できます。 ただし、結果は、各型のストレージのアラインメント要件とサイズの違いにより、未定義になることがあります。 オブジェクトへのポインターは、型のストレージ アラインメントの厳密さが同じか、それ以下のオブジェクトへのポインターに変更でき、変更なしで元に戻すことができます。  
@@ -45,5 +46,5 @@ ms.lasthandoff: 10/24/2017
   
  値 0 の整数定数式、または **void \*** 型にキャストされた整数定数式は、型キャスト、代入、または任意の型のポインターとの比較によって変換できます。 これによって、同じ型の別の null ポインターと等しい null ポインターが生成されます。しかし、この null ポインターは、関数またはオブジェクトへのポインターとは等しくありません。 定数 0 以外の整数はポインター型に変換することができますが、結果は移植できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [代入の変換](../c-language/assignment-conversions.md)

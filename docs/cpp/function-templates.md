@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4186329b164ab3fe6daba12ed3cbbd2008085fb9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 721e466e5d7e77592e66aa3ebacb3ad59eb89bb5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="function-templates"></a>関数テンプレート
 クラス テンプレートは、インスタンス化の際にクラスに渡される型引数に基づいた、関連性のある複数クラスによるファミリを定義します。 関数テンプレートは、クラス テンプレートに似ていますが、定義されるのは関数ファミリです。 関数テンプレートを使用すると、同じコードに基づいているものの、異なる型またはクラスを対象にする関数のセットを指定できます。 次の関数テンプレートは、2 つの項目を入れ替えます。  
@@ -66,7 +67,7 @@ int main(int j) {
   
  テンプレート引数を明示的に指定すると、通常の暗黙の型変換が実行されて、関数の引数が対応する関数テンプレート パラメーターの型に変換されます。 上記の例では、コンパイラの変換`char j`入力`int`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [テンプレート](../cpp/templates-cpp.md)   
  [関数テンプレートのインスタンス化](../cpp/function-template-instantiation.md)   
  [明示的なインスタンス化](../cpp/explicit-instantiation.md)   

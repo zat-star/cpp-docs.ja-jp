@@ -43,11 +43,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3e3545cfffa7fd1a25eee280850676565342e917
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b499786cbcb1516fb9746d69c7e124f14d00f011
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cimag-cimagf-cimagl"></a>cimag、cimagf、cimagl
 複素数の虚数部を取得します。  
@@ -82,15 +83,15 @@ long double cimagl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`_Fcomplex` または `_Lcomplex` の値を受け取って `float` または `long double` の値を返す `cimag` のオーバーロードを呼び出すことができます。 C プログラムでは、`cimag` は常に `_Dcomplex` 値を受け取って `double` 値を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|C ヘッダー|C++ ヘッダー|  
+|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
 |-------------|--------------|------------------|  
 |`cimag`、               `cimagf`、`cimagl`|\<complex.h>|\<ccomplex>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [norm、normf、norml](../../c-runtime-library/reference/norm-normf-norml1.md)   
  [creal、crealf、creall](../../c-runtime-library/reference/creal-crealf-creall.md)   

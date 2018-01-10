@@ -26,11 +26,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 499f7d7b1a286f85a13f2b2a8e87a3ee09f44086
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 04be31fa3209aace6fd5446532510e2a27e6bdce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cstring-operations-relating-to-c-style-strings"></a>C スタイルの文字列に関連する CString の操作方法
 A [CString](../atl-mfc-shared/using-cstring.md)オブジェクトには、文字列データが含まれています。 `CString`セットを継承、[メソッドと演算子](../atl-mfc-shared/reference/cstringt-class.md)クラス テンプレートで定義されている[CStringT](../atl-mfc-shared/reference/cstringt-class.md)文字列データを操作します。 (`CString`は、`typedef`を専門と`CStringT`文字データの種類を使用するを`CString`をサポートしています)。  
@@ -103,7 +104,7 @@ strcpy(myString, (LPCTSTR)aCString);
   
  ほとんどの関数の結果では、単に値で `CString` オブジェクトを返すことができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列 (ATL と MFC)](../atl-mfc-shared/strings-atl-mfc.md)   
  [CString 引数の渡し方](../atl-mfc-shared/cstring-argument-passing.md)
 

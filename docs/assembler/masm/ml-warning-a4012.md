@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b022fcfd49b8be54189e1cfb3b1257338b3409b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0648d2bac0d300fc8e2c696b54741a3d7293a4f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ml-warning-a4012"></a>ML の警告 A4012
 **クラス 'CODE' を指定せずセグメントの行番号情報**  
@@ -28,5 +29,5 @@ ms.lasthandoff: 10/24/2017
   
  CodeView は"CODE"で終わらないクラス名を持つセグメント内のコードでのモジュールを処理できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

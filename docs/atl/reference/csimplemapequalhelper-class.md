@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 42c6ef6562b737952782edfac41d3ba405a60ed1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ecc32dc8e6e9b249b0b8b334ec3d08bf26cbd1ed
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csimplemapequalhelper-class"></a>CSimpleMapEqualHelper クラス
 このクラスは、のヘルパー、 [CSimpleMap](../../atl/reference/csimplemap-class.md)クラスです。  
@@ -54,7 +55,7 @@ class CSimpleMapEqualHelper
 ## <a name="remarks"></a>コメント  
  この特徴 (traits) クラスを補足するため、`CSimpleMap`クラスです。 2 つを比較するためのメソッドを提供`CSimpleMap`要素 (具体的には、キーと値コンポーネント) の等価性のオブジェクトします。 既定では、キーと値が比較されます`operator==()`が必要な追加機能を提供するこのクラスをオーバーライドできますマップに、独自の等値演算子の複合データ型が含まれている場合。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsimpcoll.h  
   
 ##  <a name="isequalkey"></a>CSimpleMapEqualHelper::IsEqualKey  
@@ -91,6 +92,6 @@ static bool IsEqualValue(const TVal& v1, const TVal& v2);
 ### <a name="return-value"></a>戻り値  
  値が等しい場合は false それ以外の場合は true を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CSimpleMapEqualHelperFalse クラス](../../atl/reference/csimplemapequalhelperfalse-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

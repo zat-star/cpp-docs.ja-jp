@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 17eb3b81a662ea8d0d3a2b5871441e18840efc57
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 716e3ba5d48d39cd189da8d92cca694f09508e42
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ispecifypropertypagesimpl-class"></a>ISpecifyPropertyPagesImpl クラス
 このクラスは実装**IUnknown**の既定の実装を提供し、 [ISpecifyPropertyPages](http://msdn.microsoft.com/library/windows/desktop/ms695217)インターフェイスです。  
@@ -66,7 +67,7 @@ class ATL_NO_VTABLE ISpecifyPropertyPagesImpl
   
  `ISpecifyPropertyPagesImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="getpages"></a>ISpecifyPropertyPagesImpl::GetPages  
@@ -81,7 +82,7 @@ STDMETHOD(GetPages)(CAUUID* pPages);
   
  参照してください[ISpecifyPropertyPages::GetPages](http://msdn.microsoft.com/library/windows/desktop/ms687276) Windows SDK にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IPropertyPageImpl クラス](../../atl/reference/ipropertypageimpl-class.md)   
  [IPerPropertyBrowsingImpl クラス](../../atl/reference/iperpropertybrowsingimpl-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

@@ -15,11 +15,14 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a826f4dc891a24a6e0e45c1a03de3e1fd77cafd4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 320880a6a216cd3a494dcf28a25e9b733797846c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listrbegin-stlclr"></a>list::rbegin (STL/CLR)
 反転被制御シーケンスの先頭を指定します。  
@@ -75,12 +78,12 @@ int main()
  a y x  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::begin (STL/CLR)](../dotnet/list-begin-stl-clr.md)   
  [list::end (STL/CLR)](../dotnet/list-end-stl-clr.md)   

@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9d19426a34620cfdd14b426b94757715ca2d1cbd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f595099d2a71c948c769adf7f7eafcbc373f3146
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dependency-side-effects"></a>依存関係の副作用
 ターゲットが、異なる場所に 2 つの依存関係の線にコロン (:) で指定されている場合、および行の 1 つだけの後にコマンドが表示されない場合は、隣接するまたは結合まるで (nmake の) の依存関係は解釈します。 コマンドがありませんが、代わりにでは、依存関係の説明を 1 つのブロックに属するし、コマンドを実行するその他の依存関係と共に指定する依存関係の推論規則は呼び出されません。 たとえば、これは、ルールの設定。  
@@ -58,5 +59,5 @@ bounce.exe : up.obj
 # invokes an inference rule  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ターゲット](../build/targets.md)

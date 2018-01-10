@@ -24,11 +24,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b19503d60629011621ef320b46325e17a217804c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 98601b9d4293417d03dcdcc96b2ae0bb54defdc0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="raising-software-exceptions"></a>ソフトウェア例外の発生
 プログラム エラーの最も一般的な原因のいくつかは、システムによって例外としてフラグが設定されません。 たとえば、メモリ ブロックを割り当てるときにメモリが不足していると、ランタイム関数または API 関数で例外は発生しませんが、エラー コードが返されます。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 10/24/2017
   
  WINERROR.H ファイルは例外コードの形式を示します。 既存の例外コードと競合するコードを定義しないように、第 3 上位ビットを 1 に設定します。 4 つの最上位ビットは、次の表に示すように設定する必要があります。  
   
-|ビット|推奨バイナリ設定|説明|  
+|Bits|推奨バイナリ設定|説明|  
 |----------|--------------------------------|-----------------|  
 |31-30|11|これら 2 つのビットは、コードの基本的なステータスを示します (11 = エラー、00 = 成功、01 = 情報、10 = 警告)。|  
 |29|1|クライアント ビット。 ユーザー定義コードの場合は 1 に設定します。|  
@@ -80,6 +81,6 @@ __except (GetExceptionCode() == STATUS_INSUFFICIENT_MEM ||
         GetExceptionCode() == STATUS_FILE_BAD_FORMAT )  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外ハンドラーの記述](../cpp/writing-an-exception-handler.md)   
  [構造化例外処理 (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

@@ -1,70 +1,72 @@
 ---
-title: "CRowset::MoveToBookmark | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::CRowset::MoveToBookmark"
-  - "ATL::CRowset<TAccessor>::MoveToBookmark"
-  - "ATL.CRowset.MoveToBookmark"
-  - "ATL.CRowset<TAccessor>.MoveToBookmark"
-  - "MoveToBookmark"
-  - "CRowset::MoveToBookmark"
-  - "CRowset.MoveToBookmark"
-  - "CRowset<TAccessor>::MoveToBookmark"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MoveToBookmark メソッド"
+title: "Crowset::movetobookmark |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::CRowset::MoveToBookmark
+- ATL::CRowset<TAccessor>::MoveToBookmark
+- ATL.CRowset.MoveToBookmark
+- ATL.CRowset<TAccessor>.MoveToBookmark
+- MoveToBookmark
+- CRowset::MoveToBookmark
+- CRowset.MoveToBookmark
+- CRowset<TAccessor>::MoveToBookmark
+dev_langs: C++
+helpviewer_keywords: MoveToBookmark method
 ms.assetid: 90124723-8daf-4692-ae2f-0db26b5db920
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 08e570d6d2cbc8c5943ce0591c280b74be573e2a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CRowset::MoveToBookmark
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ブックマークに含めるか、ブックマークの指定されたオフセット \(`lSkip`\) で行を示す行フェッチします。  
+# <a name="crowsetmovetobookmark"></a>CRowset::MoveToBookmark
+ブックマークまたは指定されたオフセット位置の行でマークされた行がフェッチされます (`lSkip`) そのブックマークからです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      HRESULT MoveToBookmark(   
-   const CBookmarkBase& bookmark,   
-   LONG lSkip = 0    
+      HRESULT MoveToBookmark(   
+   const CBookmarkBase& bookmark,   
+   LONG lSkip = 0    
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `bookmark`  
- \[\]データをフェッチしたい位置を示す A のブックマークを設定します。  
+ [in]データをフェッチする位置を示すブックマーク。  
   
  `lSkip`  
- \[\]ブックマークから対象の行への行数。  `lSkip` がゼロの場合、フェッチされる最初の行は、ブックマークの設定された行です。  `lSkip` が 1 の場合、フェッチされる最初の行は、行の後で設定された行です。  `lSkip` が–1 の場合、フェッチされる最初の行は、行にブックマーク行です。  
+ [in]対象の行にブックマークからの行の数。 場合`lSkip`0 の場合は、フェッチされた最初の行は、ブックマークが付けられた行です。 場合`lSkip`1 の場合は、ブックマークが付けられた行の後ろには、行、最初の行をフェッチします。 場合`lSkip`-1 で、最初のフェッチされた行は、行のブックマークが付けられた行の前にします。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- このメソッドは、すべてのプロバイダーでサポートされない省略可能なインターフェイス `IRowsetLocate`が必要ですが、; この場合、メソッドの戻り **E\_NOINTERFACE**。  また `VARIANT_TRUE` に **DBPROP\_IRowsetLocate** と `VARIANT_TRUE` にテーブルの **開く** を呼び出す前に設定 **DBPROP\_CANFETCHBACKWARDS** を設定または命じなければ、行セットが含まれます。  
+## <a name="remarks"></a>コメント  
+ このメソッドには、省略可能なインターフェイスが必要とする`IRowsetLocate`、する可能性がありますすべてのプロバイダーでサポートされていない以外の場合は、そうでは、返されます**E_NOINTERFACE**です。 設定する必要もあります**DBPROP_IRowsetLocate**に`VARIANT_TRUE`設定と**DBPROP_CANFETCHBACKWARDS**に`VARIANT_TRUE`呼び出す前に**開く**テーブルまたはコマンド行セットを含むです。  
   
- 使用方法の詳細については、コンシューマーで、[ブックマークを使用する](../../data/oledb/using-bookmarks.md)ブックマークを参照します。  
+ コンシューマーでのブックマークの使用方法の詳細については、次を参照してください。[を使用してブックマーク](../../data/oledb/using-bookmarks.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CRowset クラス](../Topic/CRowset%20Class.md)   
- [CRowset::MoveNext](../../data/oledb/crowset-movenext.md)   
- [CRowset::MoveFirst](../../data/oledb/crowset-movefirst.md)   
- [IRowsetLocate::GetRowsAt](https://msdn.microsoft.com/en-us/library/ms723031.aspx)   
- [CRowset::MovePrev](../../data/oledb/crowset-moveprev.md)   
+## <a name="see-also"></a>参照  
+ [CRowset クラス](../../data/oledb/crowset-class.md)   
+ [Crowset::movenext](../../data/oledb/crowset-movenext.md)   
+ [Crowset::movefirst](../../data/oledb/crowset-movefirst.md)   
+ [Irowsetlocate::getrowsat](https://msdn.microsoft.com/en-us/library/ms723031.aspx)   
+ [Crowset::moveprev](../../data/oledb/crowset-moveprev.md)   
  [CRowset::MoveLast](../../data/oledb/crowset-movelast.md)

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -30,8 +29,7 @@ f1_keywords:
 - wrmdir
 - _rmdir
 - _wrmdir
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _rmdir function
 - directories [C++], deleting
@@ -42,30 +40,16 @@ helpviewer_keywords:
 - _wrmdir function
 - wrmdir function
 ms.assetid: 652c2a5a-b0ac-4493-864e-1edf484333c5
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 04b563468b9bc79ccd92d608dfeb4e7a3b85120a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: d926158275e56c6d845d73fe2d8b4092a84c096c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="rmdir-wrmdir"></a>_rmdir、_wrmdir
 ディレクトリを削除します。  
@@ -98,7 +82,7 @@ int _wrmdir(
  **EACCES**  
  プログラムに、ディレクトリに対して開いているハンドルがあります。  
   
- リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+ リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  `_rmdir` 関数は、`dirname` によって指定されたディレクトリを削除します。 ディレクトリは空である必要があり、現在の作業ディレクトリまたはルート ディレクトリではないことが必要です。  
@@ -111,14 +95,14 @@ int _wrmdir(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_trmdir`|`_rmdir`|`_rmdir`|`_wrmdir`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_rmdir`|\<direct.h>|  
 |`_wrmdir`|\<direct.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -126,7 +110,7 @@ int _wrmdir(
 ## <a name="example"></a>例  
  「[_mkdir](../../c-runtime-library/reference/mkdir-wmkdir.md)」の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)   
  [_chdir、_wchdir](../../c-runtime-library/reference/chdir-wchdir.md)   
  [_mkdir、_wmkdir](../../c-runtime-library/reference/mkdir-wmkdir.md)

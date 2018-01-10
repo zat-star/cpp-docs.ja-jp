@@ -4,76 +4,59 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - IAxWinAmbientDispatch
-- No header/ATL::IAxWinAmbientDispatch
-- No header/ATL::get_AllowContextMenu
-- No header/ATL::get_AllowShowUI
-- No header/ATL::get_AllowWindowlessActivation
-- No header/ATL::get_BackColor
-- No header/ATL::get_DisplayAsDefault
-- No header/ATL::get_DocHostDoubleClickFlags
-- No header/ATL::get_DocHostFlags
-- No header/ATL::get_Font
-- No header/ATL::get_ForeColor
-- No header/ATL::get_LocaleID
-- No header/ATL::get_MessageReflect
-- No header/ATL::get_OptionKeyPath
-- No header/ATL::get_ShowGrabHandles
-- No header/ATL::get_ShowHatching
-- No header/ATL::get_UserMode
-- No header/ATL::put_AllowContextMenu
-- No header/ATL::put_AllowShowUI
-- No header/ATL::put_AllowWindowlessActivation
-- No header/ATL::put_BackColor
-- No header/ATL::put_DisplayAsDefault
-- No header/ATL::put_DocHostDoubleClickFlags
-- No header/ATL::put_DocHostFlags
-- No header/ATL::put_Font
-- No header/ATL::put_ForeColor
-- No header/ATL::put_LocaleID
-- No header/ATL::put_MessageReflect
-- No header/ATL::put_OptionKeyPath
-- No header/ATL::put_UserMode
-dev_langs:
-- C++
-helpviewer_keywords:
-- IAxWinAmbientDispatch interface
+- ATLIFACE/ATL::IAxWinAmbientDispatch
+- ATLIFACE/ATL::get_AllowContextMenu
+- ATLIFACE/ATL::get_AllowShowUI
+- ATLIFACE/ATL::get_AllowWindowlessActivation
+- ATLIFACE/ATL::get_BackColor
+- ATLIFACE/ATL::get_DisplayAsDefault
+- ATLIFACE/ATL::get_DocHostDoubleClickFlags
+- ATLIFACE/ATL::get_DocHostFlags
+- ATLIFACE/ATL::get_Font
+- ATLIFACE/ATL::get_ForeColor
+- ATLIFACE/ATL::get_LocaleID
+- ATLIFACE/ATL::get_MessageReflect
+- ATLIFACE/ATL::get_OptionKeyPath
+- ATLIFACE/ATL::get_ShowGrabHandles
+- ATLIFACE/ATL::get_ShowHatching
+- ATLIFACE/ATL::get_UserMode
+- ATLIFACE/ATL::put_AllowContextMenu
+- ATLIFACE/ATL::put_AllowShowUI
+- ATLIFACE/ATL::put_AllowWindowlessActivation
+- ATLIFACE/ATL::put_BackColor
+- ATLIFACE/ATL::put_DisplayAsDefault
+- ATLIFACE/ATL::put_DocHostDoubleClickFlags
+- ATLIFACE/ATL::put_DocHostFlags
+- ATLIFACE/ATL::put_Font
+- ATLIFACE/ATL::put_ForeColor
+- ATLIFACE/ATL::put_LocaleID
+- ATLIFACE/ATL::put_MessageReflect
+- ATLIFACE/ATL::put_OptionKeyPath
+- ATLIFACE/ATL::put_UserMode
+dev_langs: C++
+helpviewer_keywords: IAxWinAmbientDispatch interface
 ms.assetid: 55ba6f7b-7a3c-4792-ae47-c8a84b683ca9
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 3dd34ffec68e4503aebe7b8d0e72ec1f711dca03
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: e9d53dc257920e40dbf6a2f360d1289676d121fd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iaxwinambientdispatch-interface"></a>IAxWinAmbientDispatch インターフェイス
 このインターフェイスは、ホストされるコントロールまたはコンテナーの特性を指定するためのメソッドを提供します。  
   
 > [!IMPORTANT]
->  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -89,9 +72,9 @@ interface IAxWinAmbientDispatch : IDispatch
 |-|-|  
 |[get_AllowContextMenu](#get_allowcontextmenu)|**ショートカット メニューの表示**プロパティは、ホストされるコントロールが、独自のコンテキスト メニューを表示できるかどうかを指定します。|  
 |[get_AllowShowUI](#get_allowshowui)|**AllowShowUI**プロパティは、ホストされるコントロールが、独自のユーザー インターフェイスを表示できるかどうかを指定します。|  
-|[get_AllowWindowlessActivation](#get_allowwindowlessactivation)|**AllowWindowlessActivation**プロパティは、コンテナーでウィンドウなしのアクティベーションを許可するかどうかを指定します。|  
+|[get_AllowWindowlessActivation](#get_allowwindowlessactivation)|**AllowWindowlessActivation**プロパティは、コンテナーがウィンドウなしのアクティベーションを許可するかどうかを指定します。|  
 |[get_BackColor](#get_backcolor)|`BackColor`プロパティは、コンテナーのアンビエント背景色を指定します。|  
-|[get_DisplayAsDefault](#get_displayasdefault)|**DisplayAsDefault**アンビエント プロパティを調べるかどうかは既定のコントロールに制御できるようにします。|  
+|[get_DisplayAsDefault](#get_displayasdefault)|**DisplayAsDefault**アンビエント プロパティを調べるかどうか、既定のコントロールを制御できるようにします。|  
 |[get_DocHostDoubleClickFlags](#get_dochostdoubleclickflags)|**DocHostDoubleClickFlags**プロパティは、処理を実行するダブルクリックに応答する操作を指定します。|  
 |[get_DocHostFlags](#get_dochostflags)|**DocHostFlags**プロパティが、そのホスト オブジェクトのユーザー インターフェイス機能を指定します。|  
 |[get_Font](#get_font)|**フォント**プロパティは、コンテナーのアンビエント フォントを指定します。|  
@@ -104,9 +87,9 @@ interface IAxWinAmbientDispatch : IDispatch
 |[get_UserMode](#get_usermode)|**UserMode**プロパティは、コンテナーのアンビエント ユーザー モードを指定します。|  
 |[put_AllowContextMenu](#put_allowcontextmenu)|**ショートカット メニューの表示**プロパティは、ホストされるコントロールが、独自のコンテキスト メニューを表示できるかどうかを指定します。|  
 |[put_AllowShowUI](#put_allowshowui)|**AllowShowUI**プロパティは、ホストされるコントロールが、独自のユーザー インターフェイスを表示できるかどうかを指定します。|  
-|[put_AllowWindowlessActivation](#put_allowwindowlessactivation)|**AllowWindowlessActivation**プロパティは、コンテナーでウィンドウなしのアクティベーションを許可するかどうかを指定します。|  
+|[put_AllowWindowlessActivation](#put_allowwindowlessactivation)|**AllowWindowlessActivation**プロパティは、コンテナーがウィンドウなしのアクティベーションを許可するかどうかを指定します。|  
 |[put_BackColor](#put_backcolor)|`BackColor`プロパティは、コンテナーのアンビエント背景色を指定します。|  
-|[put_DisplayAsDefault](#put_displayasdefault)|**DisplayAsDefault**アンビエント プロパティを調べるかどうかは既定のコントロールに制御できるようにします。|  
+|[put_DisplayAsDefault](#put_displayasdefault)|**DisplayAsDefault**アンビエント プロパティを調べるかどうか、既定のコントロールを制御できるようにします。|  
 |[put_DocHostDoubleClickFlags](#put_dochostdoubleclickflags)|**DocHostDoubleClickFlags**プロパティは、処理を実行するダブルクリックに応答する操作を指定します。|  
 |[put_DocHostFlags](#put_dochostflags)|**DocHostFlags**プロパティが、そのホスト オブジェクトのユーザー インターフェイス機能を指定します。|  
 |[put_Font](#put_font)|**フォント**プロパティは、コンテナーのアンビエント フォントを指定します。|  
@@ -125,7 +108,7 @@ interface IAxWinAmbientDispatch : IDispatch
   
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)詳細についてはします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  このインターフェイスの定義は、次の表に示すようにさまざまな形式で使用できます。  
   
 |定義の型|ファイル|  
@@ -169,7 +152,7 @@ STDMETHOD(get_AllowShowUI)(VARIANT_BOOL* pbAllowShowUI);
  ATL のホスト オブジェクトの実装を使用して**VARIANT_FALSE**としてこのプロパティの既定値です。  
   
 ##  <a name="get_allowwindowlessactivation"></a>IAxWinAmbientDispatch::get_AllowWindowlessActivation  
- **AllowWindowlessActivation**プロパティは、コンテナーでウィンドウなしのアクティベーションを許可するかどうかを指定します。  
+ **AllowWindowlessActivation**プロパティは、コンテナーがウィンドウなしのアクティベーションを許可するかどうかを指定します。  
   
 ```
 STDMETHOD(get_AllowWindowlessActivation)(VARIANT_BOOL* pbAllowWindowless);
@@ -203,7 +186,7 @@ STDMETHOD(get_BackColor)(OLE_COLOR* pclrBackground);
  ATL のホスト オブジェクトの実装を使用して**COLOR_BTNFACE**または**COLOR_WINDOW** (かどうかに応じて、ホスト ウィンドウの親ダイアログか) には、このプロパティの既定値として。  
   
 ##  <a name="get_displayasdefault"></a>IAxWinAmbientDispatch::get_DisplayAsDefault  
- **DisplayAsDefault**アンビエント プロパティを調べるかどうかは既定のコントロールに制御できるようにします。  
+ **DisplayAsDefault**アンビエント プロパティを調べるかどうか、既定のコントロールを制御できるようにします。  
   
 ```
 STDMETHOD(get_DisplayAsDefault)(VARIANT_BOOL* pbDisplayAsDefault);
@@ -304,7 +287,7 @@ STDMETHOD(get_LocaleID)(LCID* plcidLocaleID);
 ### <a name="remarks"></a>コメント  
  ATL のホスト オブジェクトの実装では、このプロパティの既定値として、ユーザーの既定のロケールを使用します。  
   
- このメソッドを使用してアンビエント LocalID を検出することができます、つまり、プログラムのロケール Id、コントロールが使用されています。 ロケール Id がわかれば、リソース ファイルまたはサテライト DLL から、エラー メッセージ テキストをロケール固有のキャプションを読み込むコードを呼び出すことができます。  
+ このメソッドを使用してアンビエント LocalID を検出することができます、つまり、プログラムのロケール Id、コントロールが使用されています。 ロケール Id がわかれば、リソース ファイルまたはサテライト DLL からなどを読み込むコードをロケール固有のキャプション、エラー メッセージ テキストを呼び出すことができます。  
   
 ##  <a name="get_messagereflect"></a>IAxWinAmbientDispatch::get_MessageReflect  
  **MessageReflect**アンビエント プロパティは、コンテナーがホストされるコントロールへのメッセージを反映するかどうかを指定します。  
@@ -423,7 +406,7 @@ STDMETHOD(put_AllowShowUI)(VARIANT_BOOL bAllowShowUI);
  ATL のホスト オブジェクトの実装を使用して**VARIANT_FALSE**としてこのプロパティの既定値です。  
   
 ##  <a name="put_allowwindowlessactivation"></a>IAxWinAmbientDispatch::put_AllowWindowlessActivation  
- **AllowWindowlessActivation**プロパティは、コンテナーでウィンドウなしのアクティベーションを許可するかどうかを指定します。  
+ **AllowWindowlessActivation**プロパティは、コンテナーがウィンドウなしのアクティベーションを許可するかどうかを指定します。  
   
 ```
 STDMETHOD(put_AllowWindowlessActivation)(VARIANT_BOOL bAllowWindowless);
@@ -457,7 +440,7 @@ STDMETHOD(put_BackColor)(OLE_COLOR clrBackground);
  ATL のホスト オブジェクトの実装を使用して**COLOR_BTNFACE**または**COLOR_WINDOW** (かどうかに応じて、ホスト ウィンドウの親ダイアログか) には、このプロパティの既定値として。  
   
 ##  <a name="put_displayasdefault"></a>IAxWinAmbientDispatch::put_DisplayAsDefault  
- **DisplayAsDefault**アンビエント プロパティを調べるかどうかは既定のコントロールに制御できるようにします。  
+ **DisplayAsDefault**アンビエント プロパティを調べるかどうか、既定のコントロールを制御できるようにします。  
   
 ```
 STDMETHOD(put_DisplayAsDefault)(VARIANT_BOOL bDisplayAsDefault);
@@ -606,12 +589,11 @@ STDMETHOD(put_UserMode)(VARIANT_BOOL bUserMode);
 ### <a name="remarks"></a>コメント  
  ATL のホスト オブジェクトの実装を使用して`VARIANT_TRUE`としてこのプロパティの既定値です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IAxWinAmbientDispatchEx インターフェイス](../../atl/reference/iaxwinambientdispatchex-interface.md)   
  [IAxWinHostWindow インターフェイス](../../atl/reference/iaxwinhostwindow-interface.md)   
  [CAxWindow::QueryHost](../../atl/reference/caxwindow-class.md#queryhost)   
  [AtlAxGetHost](composite-control-global-functions.md#atlaxgethost)
-
 
 
 

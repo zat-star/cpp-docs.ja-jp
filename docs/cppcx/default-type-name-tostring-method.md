@@ -14,11 +14,12 @@ caps.latest.revision: "4"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 8c95210d25008b70a190a793c4e8ff69bb309d9e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2a3e45985694bb74b21d25994a214d7914280e62
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="defaulttypenametostring-method"></a>default::(type_name)::ToString メソッド
 現在の型を表す文字列を返します。  
@@ -33,7 +34,7 @@ String^ ToString()
 ### <a name="return-value"></a>戻り値  
  現在のオブジェクトを表す文字列。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -42,5 +43,5 @@ String^ ToString()
   
  **ヘッダー:** vccorlib.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [default 名前空間](../cppcx/default-namespace.md)

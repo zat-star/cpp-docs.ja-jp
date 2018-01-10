@@ -61,11 +61,12 @@ caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cb2434cf25e6746637c13cdf8df7725555e839c9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 27c2d107da6c937705cacac770a50d912cadda84
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strncnt-wcsncnt-mbsnbcnt-mbsnbcntl-mbsnccnt-mbsnccntl"></a>_strncnt、_wcsncnt、_mbsnbcnt、_mbsnbcnt_l、_mbsnccnt、_mbsnccnt_l
 指定されたカウント内で文字数またはバイト数を返します。  
@@ -127,11 +128,11 @@ size_t _mbsnccnt_l(
   
  `str` が null ポインターであるか `count` が 0 の場合、これらの関数は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーを呼び出します。また、`errno` を `EINVAL` に設定し、0 を返します。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|ルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|ルーチンによって返される値|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
 |-------------|--------------------------------------|--------------------|-----------------------|  
 |`_tcsnbcnt`|`_strncnt`|`_mbsnbcnt`|`_wcsncnt`|  
 |`_tcsnccnt`|`_strncnt`|`_mbsnbcnt`|`n/a`|  
@@ -139,9 +140,9 @@ size_t _mbsnccnt_l(
 |`_wcsncnt`|`n/a`|`n/a`|`_mbsnccnt`|  
 |`n/a`|`n/a`|`_mbsnbcnt_l`|`_mbsnccnt_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_mbsnbcnt`|\<mbstring.h>|  
 |`_mbsnbcnt_l`|\<mbstring.h>|  
@@ -150,7 +151,7 @@ size_t _mbsnccnt_l(
 |`_strncnt`|\<tchar.h>|  
 |`_wcsncnt`|\<tchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -179,7 +180,7 @@ int main( void )
 The first 10 characters are single-byte.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

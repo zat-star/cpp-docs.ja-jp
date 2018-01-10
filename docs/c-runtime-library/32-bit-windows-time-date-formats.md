@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 23f56a9ef86a33b99f1014cb2cf18a92bdfbd753
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 20e812a1eca6e620e0c1847b6ea6a07b871a407d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="32-bit-windows-timedate-formats"></a>32 ビット Windows の時刻と日付の形式
 ファイルの時刻と日付は、ビット フィールドに符号なし整数を利用し、個別に保存されます。 ファイルの時刻と日付は次のようにパックされます。  
@@ -41,5 +42,5 @@ ms.lasthandoff: 10/24/2017
 |値範囲:|0-119|1-12|1-31|  
 ||(1980 に対して)|||  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル定数](../c-runtime-library/global-constants.md)

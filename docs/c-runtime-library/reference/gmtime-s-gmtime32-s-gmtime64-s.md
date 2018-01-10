@@ -46,11 +46,12 @@ caps.latest.revision: "29"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 199e4c459c97995701b5b7cc74f55f153703f925
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f0d0fc911c052e58b1f2aeb9b656f737746bd2de
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="gmtimes-gmtime32s-gmtime64s"></a>gmtime_s、_gmtime32_s、_gmtime64_s
 時刻の値を構造体に変換します。 これらは、「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」 (CRT のセキュリティ機能) で説明されているように、セキュリティが強化されたバージョンの [_gmtime32、_gmtime64](../../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md) です。  
@@ -80,11 +81,11 @@ errno_t _gmtime64_s(
  格納されている時刻へのポインター。 時刻は、世界協定時刻 (UTC: Coordinated Universal Time) の 1970 年 1 月 1 日の深夜 00:00:00 から経過した時間 (秒単位) を表します。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 を返します。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは Errno.h で定義されます。これらのエラーの一覧については、[errno](../../c-runtime-library/errno-constants.md) をご覧ください。  
+ 正常終了した場合は 0。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは Errno.h で定義されます。これらのエラーの一覧については、[errno](../../c-runtime-library/errno-constants.md) をご覧ください。  
   
 ### <a name="error-conditions"></a>エラー条件  
   
-|`_tm`|`time`|リターン|`_tm` の値|  
+|`_tm`|`time`|Return|`_tm` の値|  
 |-----------|------------|------------|--------------------|  
 |`NULL`|任意|`EINVAL`|変更されません。|  
 |`NULL` ではない (有効なメモリを指す)|`NULL`|`EINVAL`|すべてのフィールドが-1 に設定されます。|  
@@ -129,17 +130,17 @@ errno_t _gmtime64_s(
   
  `__time64_t` 構造体を使用する `_gmtime64_s` は、UTC の 3000 年 12 月 31 日の 23 時 59 分 59 秒までの日付を表すことができます。それに対して、`gmtime32_s` は、UTC の 2038 年 1 月 18 日の 23 時 59 分 59 秒までしか表すことができません。 これらの関数の日付範囲の下限は、どちらも 1970 年 1 月 1 日の午前 0 時です。  
   
- `gmtime_s` は `_gmtime64_s` を求めるインライン関数であり、`time_t` は `__time64_t` と等価です。 コンパイラが `time_t` を古い 32 ビットの `time_t` として解釈するよう強制する必要がある場合には、`_USE_32BIT_TIME_T` を定義します。 これにより、`gmtime_s` は `_gmtime32_s`にインライン化されます。 ただし、この方法は推奨されません。2038 年 1 月 18 日以降にアプリケーションがエラーになる可能性があり、また、64 ビット プラットフォームでは使用できないためです。  
+ `gmtime_s` は `_gmtime64_s` を求めるインライン関数であり、`time_t` は `__time64_t` と等価です。 コンパイラが `time_t` を古い 32 ビットの `time_t`として解釈するよう強制する必要がある場合には、 `_USE_32BIT_TIME_T`を定義します。 これにより、`gmtime_s` は `_gmtime32_s`にインライン化されます。 ただし、この方法は推奨されません。2038 年 1 月 18 日以降にアプリケーションがエラーになる可能性があり、また、64 ビット プラットフォームでは使用できないためです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`gmtime_s`|\<time.h>|  
 |`_gmtime32_s`|\<time.h>|  
 |`_gmtime64_s`|\<time.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -185,7 +186,7 @@ int main( void )
 Coordinated universal time is Fri Apr 25 20:12:33 2003  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   
  [ctime、_ctime32、_ctime64、_wctime、_wctime32、_wctime64](../../c-runtime-library/reference/ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)   

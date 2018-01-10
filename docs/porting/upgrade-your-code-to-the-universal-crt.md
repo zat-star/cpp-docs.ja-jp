@@ -11,11 +11,12 @@ caps.latest.revision: "1"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0f8742396a9ebe3780cb2c235238c9ce63986dc4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3e19f72dac00d18af62e91b1466bc40f2148518e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="upgrade-your-code-to-the-universal-crt"></a>Universal CRT へのコードのアップグレード
 
@@ -51,10 +52,10 @@ UCRT のアプリのローカルの展開がサポートされていますが、
 
 UCRT では、ISO C99 への準拠を改善し、コードの品質およびセキュリティの問題を解決するために、多くの関数が追加または更新されました。 このために、ライブラリの大幅な変更が必要な場合もありました。 古いバージョンの CRT を使用したときにコードが正常にコンパイルされても、UCRT を使用すると壊れる場合は、これらの更新や機能を活用するために、コードを変更する必要があります。 ユニバーサル CRT での CRT の重大な変更と更新の詳細については、Visual C++ の変更履歴の「[C Runtime Library (CRT)](visual-cpp-change-history-2003-2015.md#BK_CRT)」 (C ランタイム ライブラリ (CRT)) セクションを参照してください。 コードに必要な変更を識別するために使用できる影響を受けるヘッダーと関数の一覧が含まれています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [Visual C++ 移植とアップグレードのガイド](visual-cpp-porting-and-upgrading-guide.md)  
 [アップグレードに関する潜在的な問題 (Visual C++) の概要](overview-of-potential-upgrade-issues-visual-cpp.md)  
 [旧バージョンの Visual C++ からのプロジェクトのアップグレード](upgrading-projects-from-earlier-versions-of-visual-cpp.md)  
 [Visual C++ 2003 ～ 2015 の変更履歴](visual-cpp-change-history-2003-2015.md)  
-[Visual Studio 2017 での C++ 準拠の改善](../cpp-conformance-improvements-2017.md)  
+[Visual Studio 2017 の C++ 準拠の強化](../cpp-conformance-improvements-2017.md)  

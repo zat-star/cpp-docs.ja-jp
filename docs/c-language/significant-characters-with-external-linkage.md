@@ -13,16 +13,17 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f85349ef67e658ec71b064abf30ea46061dbc021
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c420cf5ca72b18aefb93fb03d82c35b38ec21d03
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="significant-characters-with-external-linkage"></a>外部リンケージを持つ有意文字
 **ANSI 3.1.2** 外部リンケージを持つ有意文字の数  
   
  Microsoft C でコンパイルされるプログラムでは、`extern` として宣言される識別子は、247 まで文字有効です。 /H (外部名の長さを制限します) オプションを使用して、この既定を、より小さい数に変更できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [extern を使用したリンケージの指定](../cpp/using-extern-to-specify-linkage.md)

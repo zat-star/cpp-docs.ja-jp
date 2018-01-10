@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9af9bbfc8af236113fbcbeac4981b8876cd45aa4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fe95c2b5d4dc16d40ca5c480fa04ed61d51fbc3d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-an-atl-com-10-component"></a>ATL COM + 1.0 コンポーネントを追加します。
 このウィザードでは、COM + 1.0 services、トランザクションを含むをサポートするプロジェクトにオブジェクトを追加します。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 10/24/2017
   
 3.  [クラスの追加](../../ide/add-class-dialog-box.md)ダイアログ ボックスの [テンプレート] ペインで、クリックして**ATL COM + 1.0 コンポーネント**、順にクリック**開く**を表示する、 [ATL COM + 1.0 コンポーネント ウィザード](../../atl/reference/atl-com-plus-1-0-component-wizard.md).  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
  [メソッドの追加](../../ide/adding-a-method-visual-cpp.md)
 

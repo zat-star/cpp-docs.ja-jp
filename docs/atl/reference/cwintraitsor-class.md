@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 14796948369b92c9137dc7e02a8399910d46997c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ac6cf07fcd6d3703ffb6b483ba19a2d12520cb0a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cwintraitsor-class"></a>CWinTraitsOR クラス
 このクラスは、window オブジェクトを作成するときに使用するスタイルを標準化するためのメソッドを提供します。  
@@ -65,7 +66,7 @@ class CWinTraitsOR
   
  既定の呼び出しでは、他のスタイルが指定されていない場合にのみ使用されるウィンドウ スタイルを指定する場合は、`CWindowImpl::Create`を使用して[CWinTraits](../../atl/reference/cwintraits-class.md)代わりにします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="getwndstyle"></a>CWinTraitsOR::GetWndStyle  
@@ -96,7 +97,7 @@ static DWORD GetWndExStyle(DWORD dwExStyle);
 ### <a name="return-value"></a>戻り値  
  渡される拡張スタイルの組み合わせ`dwExStyle`であり、既定で指定されたもの`t_dwExStyle`、論理 OR 演算子を使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [ウィンドウの特徴を理解する](../../atl/understanding-window-traits.md)
 

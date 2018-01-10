@@ -31,11 +31,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 504ab55aadc315dcf06c07a999f2a7d3dfca630b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 71dbbf3c56f81b4987fcadb3db98be8d82e70fb2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fsetpos"></a>fsetpos
 ストリームの位置インジケーターを設定します。  
@@ -59,22 +60,22 @@ int fsetpos(
 ## <a name="return-value"></a>戻り値  
  正常に終了した場合、`fsetpos` は 0 を返します。 失敗した場合、関数は 0 以外の値を返し、`errno` を以下のいずれかのマニフェスト定数 (ERRNO で定義されます) に設定します。`EBADF` の場合、ファイルがアクセスできないか、`stream` がポイントするオブジェクトが有効なファイル構造ではありません。または、`EINVAL` の場合、`stream` または `pos` の無効の値が渡されたことを意味します。 無効なパラメーターが渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、これらの関数は無効なパラメーター ハンドラーを呼び出します。  
   
- リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `fsetpos`関数のファイル位置インジケーターを設定する`stream`の値に`pos`を呼び出す前に取得される`fgetpos`に対して`stream`です。 関数は、ファイルの終端のインジケーターをクリアし、任意の効果を元に戻します[ungetc](../../c-runtime-library/reference/ungetc-ungetwc.md)で`stream`です。 `fsetpos` を呼び出した後で、`stream` 上の次の操作は、入力または出力になります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fsetpos`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[fgetpos](../../c-runtime-library/reference/fgetpos.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fgetpos](../../c-runtime-library/reference/fgetpos.md)

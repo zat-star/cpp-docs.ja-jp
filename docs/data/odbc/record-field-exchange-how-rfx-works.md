@@ -21,11 +21,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 08372f43e87ed17bd8d0c905d40a8d2c289df966
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 5eac97bb87103bd72dfd721515baf58324fc851f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="record-field-exchange-how-rfx-works"></a>レコード フィールド エクスチェンジ: RFX の動作のしくみ
 このトピックでは、RFX プロセスについて説明します。 これは、高度なトピック。  
@@ -123,7 +126,7 @@ ms.lasthandoff: 10/24/2017
 ### <a name="rfx-deleting-existing-records"></a>RFX: 既存のレコードを削除します。  
  レコードを削除するときに、すべてのフィールドに設定 RFX **NULL**なおに、レコードが削除されたことをオフに移動する必要があります。 その他の RFX シーケンス情報が不要です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード フィールド エクス (チェンジ RFX)](../../data/odbc/record-field-exchange-rfx.md)   
  [MFC ODBC コンシューマーします。](../../mfc/reference/adding-an-mfc-odbc-consumer.md)   
  [マクロ、グローバル関数、およびグローバル変数](../../mfc/reference/mfc-macros-and-globals.md)  

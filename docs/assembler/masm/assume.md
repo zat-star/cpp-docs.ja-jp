@@ -15,11 +15,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6046d19e628e75dee6e3f33b400c48dcbf317735
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bf3e2bc4a29f1f6f2919e19085f73cde566aa5d0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="assume"></a>ASSUME
 レジスタの値のエラー チェックを有効にします。  
@@ -36,5 +37,5 @@ ASSUME [[register:]] NOTHING [[, register:NOTHING]]...
 ## <a name="remarks"></a>コメント  
  後に、`ASSUME`が有効に、アセンブラーは、特定のレジスタの値への変更を監視します。 **エラー**レジスタが使用されている場合、エラーが発生します。 **何も**削除がエラー チェックを登録します。 さまざまな種類の 1 つのステートメントで前提条件を組み合わせることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

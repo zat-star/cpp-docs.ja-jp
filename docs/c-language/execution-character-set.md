@@ -17,14 +17,15 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fc380109f228077e9ee2a928202bf7514a7c2ebd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1ba264612923e101c63b5ec3503bbfbce426d8bb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="execution-character-set"></a>実行文字セット
 このコンテンツは、多くの場合、"実行文字セット" と呼ばれます。 実行文字セットは、C プログラムを作成する場合に使用するソース文字セットと必ずしも同じではありません。 実行文字セットは、ソース文字セットのすべての文字、null 文字、改行文字、バックスペース、水平タブ、垂直タブ、キャリッジ リターン、エスケープ シーケンスを含みます。 ソース文字セットと実行文字セットは、他の実装では異なることがあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 文字定数](../c-language/c-character-constants.md)

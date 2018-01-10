@@ -1,26 +1,27 @@
 ---
-title: "vararg | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "Varargs |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: aac0c54b-0a2d-4a22-b1de-ee41381a3eb1
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: f3d22a5c3f20480d1e904ec8e087114385ba7ee9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# vararg
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-vararg \(たとえば、省略記号 \(...\) の引数など\) を使用してパラメーターを渡す場合、基本的に、5 番目以降の引数があふれることを含めて、通常のパラメーター渡しの方法が適用されます。  受け取るアドレスを持つ引数をダンプするのは、呼び出し先の役割です。  浮動小数点値だけの場合、呼び出し先の整数レジスタに float 型の値を渡す必要があるときには、整数レジスタと浮動小数点レジスタの両方に float 型の値が含まれます。  
+# <a name="varargs"></a>vararg
+パラメーターが varargs (たとえば、省略記号引数) を使用して指定された場合、基本的には、通常のパラメーターを渡すでは以降の 5 番目の引数に書き込むときに含めが適用されます。 再度、アドレスを与えるダンプ引数に、呼び出し先の責任です。 浮動小数点値の場合にのみ、整数と浮動小数点レジスタの両方値が含まれます、float 場合に、呼び出し先は、整数レジスタに値が必要です。  
   
-## 参照  
- [呼び出し規約](../build/calling-convention.md)
+## <a name="see-also"></a>参照  
+ [呼び出し規則](../build/calling-convention.md)

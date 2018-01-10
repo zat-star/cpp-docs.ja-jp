@@ -29,11 +29,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ca857a5d304d137009161618bddeed49886233b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 584b83c4b3aa9ea5fd2f98fd59969ab46ce712ac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="simplifying-data-access-with-database-attributes"></a>データベース属性によるデータ アクセスの簡略化
 このトピックでは、データベース操作を簡素化するデータベースの属性の使用を示します。  
@@ -204,6 +207,6 @@ public:
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー属性します。](../../windows/ole-db-consumer-attributes.md)   
  [属性のチュートリアル](http://msdn.microsoft.com/en-us/73df1d5d-261a-4521-98fb-06dcbf5ec0d0)

@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9f9ff802a63aed2484407b7e5fe82848ecd69cea
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cf3a27dc61543482d1d6484d0edd4b5e1bb04373
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="octal-and-hexadecimal-character-specifications"></a>8 進文字と 16 進文字の仕様
 シーケンス **\\***ooo* は、3 桁の 8 進数コードで ASCII 文字セットの任意の数を指定できることを意味します。 8 進数の数値は、目的の文字またはワイド文字の値を指定します。  
@@ -46,5 +47,5 @@ ms.lasthandoff: 10/24/2017
 "\xab" "c" /* two characters */  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 文字定数](../c-language/c-character-constants.md)

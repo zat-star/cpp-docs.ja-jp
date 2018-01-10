@@ -43,11 +43,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 205381e315cf703a9fded4b24812a32c4aef4a9a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d95f92d15dcf4b8baf84b762b994bdb52930346d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="nearbyint-nearbyintf-nearbyintl"></a>nearbyint、nearbyintf、nearbyintl
 指定の浮動小数点値を整数に丸め、浮動小数点形式でその値を返します。  
@@ -84,10 +85,10 @@ long double nearbyintl(
 ## <a name="return-value"></a>戻り値  
  成功した場合は、fegetround で定義されている現在の丸め形式を使用して直近の整数に丸められた `x` を返します。 それ以外の場合は、関数から次の値のいずれかが返されます。  
   
-|問題点|リターン|  
+|懸案事項|Return|  
 |-----------|------------|  
-|`x` = ±INFINITY|±INFINITY、未変更|  
-|`x` = ±0|±0、未変更|  
+|`x`±INFINITY を =|±INFINITY、未変更の状態|  
+|`x` = ±0|±0、未変更の状態|  
 |`x` = NaN|NaN|  
   
  [_matherr](../../c-runtime-library/reference/matherr.md) を介してエラーは報告されません。特に、この関数ではいずれの FE_INEXACT 例外も報告されません。  
@@ -97,13 +98,13 @@ long double nearbyintl(
   
  浮動小数点の最大値は正確な整数であるため、この関数が単独でオーバーフローすることはありません。むしろ、使用する関数のバージョンによっては、出力で戻り値がオーバーフローすることがあります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
 |`nearbyint`、`nearbyintf`、`nearbyintl`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)

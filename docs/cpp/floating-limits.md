@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - ranges, floating-point constants
 - floating-point constants, limits
@@ -18,16 +16,16 @@ helpviewer_keywords:
 - floating-point numbers [C++]
 - floating limits
 ms.assetid: fc718652-1f4c-4ed8-af60-0e769637459c
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: a19ed24e7765c9b0042831fc2eda9df937be42b3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 449356b7bce3f17862919e90d7fc7e72b2d57df6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="floating-limits"></a>浮動小数点の制限
 **Microsoft 固有の仕様**  
@@ -36,7 +34,7 @@ ms.lasthandoff: 09/25/2017
   
 ### <a name="limits-on-floating-point-constants"></a>浮動小数点定数の制限  
   
-|定数|説明|値|  
+|定数|説明|[値]|  
 |--------------|-------------|-----------|  
 |FLT_DIG DBL_DIG LDBL_DIG|q 桁の浮動小数点数を、精度を失わずに丸めて浮動小数点表現にしたり、戻したりできる桁数 q。|6 15 15|  
 |FLT_EPSILON DBL_EPSILON LDBL_EPSILON|x + 1.0 が 1.0 に等しくならないような最小の正数 x。|1.192092896e-07F 2.2204460492503131e-016 2.2204460492503131e-016|  
@@ -57,5 +55,5 @@ ms.lasthandoff: 09/25/2017
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [整数の制限](../cpp/integer-limits.md)

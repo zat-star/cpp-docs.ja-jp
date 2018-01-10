@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6643df5e0d5b49155a07763cca68ffc66cb2d38d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a461f4ca384585008ccf47fa2bfda91d36e724ab
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="user-defined-literals--c"></a>ユーザー定義リテラル (C++)
 リテラルには、整数、文字、浮動小数点、文字列、ブール値、およびポインターの 5 つの主要なカテゴリがあります。  C++ 11 以降、これらのカテゴリに基づいて独自のリテラルを定義して、一般的な表現形式に構文のショートカットを提供したり、タイプ セーフを向上させたりすることができます。 たとえば、Distance クラスがあるとします。 キロメートルのリテラルとマイルのリテラルを定義して、auto d = 42.0_km or auto d = 42.0_mi と記述するだけで、ユーザーに測定単位を明示するよう求めることができます。 ユーザー定義リテラルには、パフォーマンス上の利点または欠点はありません。主に利便性やコンパイル時の型推論のためです。 標準ライブラリは、ユーザー定義リテラル std:string、:complex、および単位の時間と期間の操作で、 \<chrono > ヘッダー。  

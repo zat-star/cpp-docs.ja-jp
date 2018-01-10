@@ -14,11 +14,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6fc90c44fde4db119a8aa6dab097e9a7bd1c7f0f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fda95e4517d2717a89310a8e49a0c5b337feebcf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="understanding-window-traits"></a>ウィンドウの特徴を理解します。
 ウィンドウの特徴 (traits) クラスは、ATL ウィンドウ オブジェクトを作成するために使用するスタイルを標準化するための単純なメソッドを提供します。 ウィンドウの特徴は、別のテンプレート パラメーターとして受け入れられます[CWindowImpl](../atl/reference/cwindowimpl-class.md)および既定のクラス レベルのウィンドウ スタイルを指定するための手段として他の ATL ウィンドウ クラスです。  
@@ -42,6 +43,6 @@ ms.lasthandoff: 10/24/2017
   
  これらの各関数に渡されるスタイル値新しいスタイルの値を生成するために使用できる実行時。 場合は、ウィンドウの特徴 (traits) クラスは、ATL ウィンドウ クラスへのテンプレート引数として使用されている、これらの静的関数に渡されるスタイル値がスタイル引数として渡されたオブジェクトになります[作成](../atl/reference/cwindowimpl-class.md#create)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウ クラス](../atl/atl-window-classes.md)
 

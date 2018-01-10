@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ad2cf102902f62d03d4027c16b7d81b255b85875
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 438ab42a7f0f12379621a591f3b0b1eeb5930afd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="testing-the-read-only-provider"></a>読み取り専用プロバイダーのテスト
 プロバイダーをテストするには、コンシューマーが必要です。 コンシューマーはプロバイダーと一致させる場合に役立ちます。 OLE DB コンシューマー テンプレートは、OLE DB の thin ラッパーでプロバイダーの COM オブジェクトと一致します。 これらのプロバイダーのデバッグが容易には、ソースは、コンシューマー テンプレートに含まれる、ためです。 コンシューマー テンプレートは、コンシューマー アプリケーションを開発する非常に小さく、高速の方法ではもです。  
@@ -133,5 +136,5 @@ while (table.MoveNext() == S_OK)
   
  ビルドし、プログラムをテストできるようになりましたにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [単純な読み取り専用プロバイダーの機能の拡張](../../data/oledb/enhancing-the-simple-read-only-provider.md)

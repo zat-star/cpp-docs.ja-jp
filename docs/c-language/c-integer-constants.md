@@ -14,11 +14,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 20025ae47491084436864481357125e741ccc486
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8f851fe628b7ac69fe3d327c290881561219a011
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-integer-constants"></a>C 整数定数
 "整数定数" は、整数値を表す 10 進数 (基数 10)、8 進数 (基数 8)、または 16 進数 (基数 16) です。 変更できない整数値を表すには、整数定数を使用します。  
@@ -105,5 +106,5 @@ ms.lasthandoff: 10/24/2017
 0x7dB3 or 0X7DB3  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 定数](../c-language/c-constants.md)

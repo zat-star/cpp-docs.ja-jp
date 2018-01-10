@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9cde959d2a2b17bf346a23aca7a7724523b69b6f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a2f22f24206a125f9575529a203e5433f1b825a1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="functions-with-variable-argument-lists--c"></a>リストに可変個引数関数 (C++)
 最後のメンバーが省略記号 (...) である関数宣言は、可変数の引数を受け取ることができます。 このような場合、C++ は、明示的に宣言された引数に対してのみ型チェックを行います。 引数の数や型も変わるほどの汎用関数を作成する必要がある場合は、可変個引数リストを使用できます。 ファミリの関数は、可変個引数リストを使用する関数の例です。`printf`*引数宣言リスト*  

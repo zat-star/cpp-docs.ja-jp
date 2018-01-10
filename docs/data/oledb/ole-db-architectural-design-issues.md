@@ -14,11 +14,14 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 085c658fff3d387019c6e8574ebafcd347400823
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: b894ec1cbd227663d46e98e523ffe8c1c5d84475
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="ole-db-architectural-design-issues"></a>OLE DB アーキテクチャのデザインの問題
 OLE DB アプリケーションを開始する前に、次の問題を考慮してください。  
@@ -37,16 +40,16 @@ OLE DB アプリケーションを開始する前に、次の問題を考慮し�
  **(ADO、ODBC、または DAO) の別のデータ アクセス テクノロジを使用して古いコードはありますか。**  
  可能な (OLE DB コンポーネントと ADO コンポーネントを使用して、OLE db ODBC コードを移行する) などのテクノロジの組み合わせについて、すべての状況を説明することは、Visual C のドキュメントの範囲外です。 ただし、さまざまなシナリオをカバーする多数の記事は、次の Microsoft Web サイトで利用可能です。  
   
--   [Microsoft ヘルプおよびサポート](http://go.microsoft.com/fwlink/?linkid=148218)  
+-   [Microsoft ヘルプおよびサポート](http://go.microsoft.com/fwlink/p/?linkid=148218)  
   
--   [Microsoft データ アクセス技術情報の概要](http://go.microsoft.com/fwlink/?linkid=148217)  
+-   [Microsoft データ アクセス技術情報の概要](http://go.microsoft.com/fwlink/p/?linkid=148217)  
   
--   [Visual Studio ソリューション センター](http://go.microsoft.com/fwlink/?linkid=148215)  
+-   [Visual Studio ソリューション センター](http://go.microsoft.com/fwlink/p/?linkid=148215)  
   
 -   [Microsoft.com を検索します。](http://search.microsoft.com/)  
   
  検索を実行するときに、シナリオに最適なキーワードの組み合わせを入力してください。例: OLE DB プロバイダーで ADO オブジェクトを使用していた場合は、ブール型の検索を再試行してくださいで**ADO および OLE DB""**です。 ODBC に古い DAO コードを移行する場合は、「すべての単語」を選択し、文字列を指定します。**移行 DAO**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プログラミング](../../data/oledb/ole-db-programming.md)   
  [OLE DB プログラミングの概要](../../data/oledb/ole-db-programming-overview.md)

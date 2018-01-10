@@ -39,11 +39,14 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ff7b36a120e32aa473cf778d4359acaf556541cc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0741db31ba0b509a1ed2788bace5d99f8eed4faf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccheckconstraints-ccheckconstraintinfo"></a>CCheckConstraints、CCheckConstraintInfo
 Typedef クラスを呼び出す**CCheckConstraints**そのパラメーター クラスを実装する**CCheckConstraintInfo**です。  
@@ -61,10 +64,10 @@ Typedef クラスを呼び出す**CCheckConstraints**そのパラメーター �
 |m_szSchema|CONSTRAINT_SCHEMA|  
 |m_szName|CONSTRAINT_NAME|  
 |m_szCheckClause|CHECK_CLAUSE|  
-|m_szDescription|DESCRIPTION|  
+|m_szDescription|説明|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

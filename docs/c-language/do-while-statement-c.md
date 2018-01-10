@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 40f86574e849bae8c1defafcfeab46fced2d77b0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 26a7cef5e023c0fb0d5e24fe68fed6b33bc8ae75
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="do-while-statement-c"></a>do-while ステートメント (C)
 `do-while` ステートメントを使用して、指定した式が false になるまでステートメントまたは複合ステートメントを繰り返すことができます。  
@@ -52,5 +53,5 @@ do
   
  この `do-while` ステートメントでは、`y = f( x );` の初期値に関係なく、2 つのステートメント `x--;` および `x` が実行されます。 次に、`x > 0` が評価されます。 `x` が 0 より大きい場合、ステートメント本体が再度実行され、`x > 0` が再評価されます。 `x` が 0 より大きい間、ステートメント本体が繰り返し実行されます。 `do-while` ステートメントの実行は、`x` が 0 または負になると終了します。 ループの本体は、少なくとも 1 回は実行されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [do-while ステートメント (C++)](../cpp/do-while-statement-cpp.md)

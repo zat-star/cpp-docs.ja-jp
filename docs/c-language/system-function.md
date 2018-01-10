@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 965cca807ddbe9f0eb31144f75a7e3c6e4a80e77
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a3e2c41ec95b0e26276df4f9f42d2ac46de54975
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="system-function"></a>system 関数
 **ANSI 4.10.4.5** **system** 関数による文字列の実行の内容とモード  
@@ -29,5 +30,5 @@ ms.lasthandoff: 10/24/2017
   
  詳細については、「[system、_wsystem](../c-runtime-library/reference/system-wsystem.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ライブラリ関数](../c-language/library-functions.md)

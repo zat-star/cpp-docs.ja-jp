@@ -44,11 +44,12 @@ caps.latest.revision: "16"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ac8f0cd386d8fece71f47b5c3d2048bead7cca1b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: edcb3f8da6252705fe494acaa64c623b8a22ed3b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="outp-outpw-outpd"></a>_outp、_outpw、_outpd
 1 バイト (`_outp`)、1 ワード (`_outpw`)、または 1 ダブルワード (`_outpd`) のいずれかをポートに出力します。  
@@ -92,19 +93,19 @@ unsigned long dataword
   
  これらの関数は I/O ポートへ直接書き出すため、Windows NT、Windows 2000、Windows XP、および Windows Server 2003 のユーザー コードでは使用できません。 これらのオペレーティング システムでの I/O ポートの使用方法については、MSDN で「Serial Communications in Win32 (Win32 のシリアル通信)」を検索してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_outp`|\<conio.h>|  
 |`_outpw`|\<conio.h>|  
 |`_outpd`|\<conio.h>|  
   
- 互換性の詳細については、「[互換性](../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンソール入出力とポート入出力](../c-runtime-library/console-and-port-i-o.md)   
  [_inp、_inpw、_inpd](../c-runtime-library/inp-inpw-inpd.md)

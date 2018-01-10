@@ -1,79 +1,81 @@
 ---
-title: "CDynamicAccessor クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CDynamicAccessor"
-  - "ATL::CDynamicAccessor"
-  - "CDynamicAccessor"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CDynamicAccessor クラス"
+title: "CDynamicAccessor クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL.CDynamicAccessor
+- ATL::CDynamicAccessor
+- CDynamicAccessor
+dev_langs: C++
+helpviewer_keywords: CDynamicAccessor class
 ms.assetid: 374b13b7-1f09-457d-9e6b-df260ff4d178
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f88c3eff9c8160a0e322c93dacf6985dc7b8a20b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CDynamicAccessor クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データベース スキーマ \(データベースの基になる構造\) が不明な場合にデータ ソースにアクセスできます。  
+# <a name="cdynamicaccessor-class"></a>CDynamicAccessor クラス
+データベース スキーマ (データベースの基になる構造) の知識があるない場合にデータ ソースにアクセスできます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CDynamicAccessor : public CAccessorBase  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### メソッド  
+### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
 |[AddBindEntry](../../data/oledb/cdynamicaccessor-addbindentry.md)|既定のアクセサーをオーバーライドする場合は、出力列にバインド エントリを追加します。|  
-|[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)|`CDynamicAccessor` オブジェクトをインスタンス化し、初期化します。|  
-|[&#91;閉じる&#93;](../../data/oledb/cdynamicaccessor-close.md)|すべての列をバインドし、割り当てたメモリを解放し、そのクラスの [IAccessor](https://msdn.microsoft.com/en-us/library/ms719672.aspx) インターフェイス ポインターを解放します。|  
+|[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)|インスタンスを作成し、初期化、`CDynamicAccessor`オブジェクト。|  
+|[閉じる](../../data/oledb/cdynamicaccessor-close.md)|すべての列をバインド解除、割り当て済みのメモリを解放し、解放、 [IAccessor](https://msdn.microsoft.com/en-us/library/ms719672.aspx)クラスのインターフェイス ポインター。|  
 |[GetBookmark](../../data/oledb/cdynamicaccessor-getbookmark.md)|現在の行のブックマークを取得します。|  
-|[GetBlobHandling](../../data/oledb/cdynamicaccessor-getblobhandling.md)|現在の行の BLOB の処理値を取得します。|  
-|[GetBlobSizeLimit](../../data/oledb/cdynamicaccessor-getblobsizelimit.md)|最大バイト BLOB のサイズを取得します。|  
+|[GetBlobHandling](../../data/oledb/cdynamicaccessor-getblobhandling.md)|現在の行の値を処理する BLOB を取得します。|  
+|[GetBlobSizeLimit](../../data/oledb/cdynamicaccessor-getblobsizelimit.md)|BLOB の最大サイズ (バイト単位) を取得します。|  
 |[GetColumnCount](../../data/oledb/cdynamicaccessor-getcolumncount.md)|行セットの列の数を取得します。|  
 |[GetColumnFlags](../../data/oledb/cdynamicaccessor-getcolumnflags.md)|列の特性を取得します。|  
 |[GetColumnInfo](../../data/oledb/cdynamicaccessor-getcolumninfo.md)|列のメタデータを取得します。|  
-|[GetColumnName](../Topic/CDynamicAccessor::GetColumnName.md)|指定された列の名前を取得します。|  
-|[GetColumnType](../../data/oledb/cdynamicaccessor-getcolumntype.md)|指定した列のデータ型を取得します。|  
-|[GetLength](../../data/oledb/cdynamicaccessor-getlength.md)|バイト列の最大の長さを取得します。|  
-|[GetOrdinal](../../data/oledb/cdynamicaccessor-getordinal.md)|項目の名前を持つ列インデックスを取得します。|  
+|[GetColumnName](../../data/oledb/cdynamicaccessor-getcolumnname.md)|指定された列の名前を取得します。|  
+|[GetColumnType](../../data/oledb/cdynamicaccessor-getcolumntype.md)|指定された列のデータ型を取得します。|  
+|[GetLength](../../data/oledb/cdynamicaccessor-getlength.md)|できる最大バイト数の列の長さを取得します。|  
+|[GetOrdinal](../../data/oledb/cdynamicaccessor-getordinal.md)|列名を指定された列インデックスを取得します。|  
 |[GetStatus](../../data/oledb/cdynamicaccessor-getstatus.md)|指定された列の状態を取得します。|  
 |[GetValue](../../data/oledb/cdynamicaccessor-getvalue.md)|バッファーからデータを取得します。|  
-|[SetBlobHandling](../../data/oledb/cdynamicaccessor-setblobhandling.md)|現在の行の BLOB の処理値を設定します。|  
-|[SetBlobSizeLimit](../../data/oledb/cdynamicaccessor-setblobsizelimit.md)|最大バイト BLOB のサイズを設定します。|  
-|[SetLength](../../data/oledb/cdynamicaccessor-setlength.md)|バイト列の長さを設定します。|  
-|[SetStatus](../Topic/CDynamicAccessor::SetStatus.md)|指定された列の状態を設定します。|  
-|[SetValue](../../data/oledb/cdynamicaccessor-setvalue.md)|バッファーにデータを保存します。|  
+|[SetBlobHandling](../../data/oledb/cdynamicaccessor-setblobhandling.md)|BLOB の現在の行の値の処理を設定します。|  
+|[SetBlobSizeLimit](../../data/oledb/cdynamicaccessor-setblobsizelimit.md)|BLOB の最大サイズをバイト単位で設定します。|  
+|[SetLength](../../data/oledb/cdynamicaccessor-setlength.md)|列の長さをバイト単位で設定します。|  
+|[SetStatus](../../data/oledb/cdynamicaccessor-setstatus.md)|指定された列の状態を設定します。|  
+|[SetValue](../../data/oledb/cdynamicaccessor-setvalue.md)|バッファーにデータを格納します。|  
   
-## 解説  
- 項目の名前などの列情報、列数、データ型を取得するために `CDynamicAccessor` などのメソッドを使用します。  次実行時にアクセサーを動的に作成するときにもこの列情報を使用します。  
+## <a name="remarks"></a>コメント  
+ 使用して`CDynamicAccessor`列名、列数、データ型などの列情報を取得するメソッド。 この列の情報を使用するには、実行時に動的にアクセサーを作成します。  
   
- 列情報は、このクラスによって作成および管理されるバッファーに格納されます。  [GetValue](../../data/oledb/cdynamicaccessor-getvalue.md)を使用してバッファーからデータを取得します。  
+ 列情報が作成され、このクラスで管理されるバッファーに格納されます。 使用して、バッファーからデータを取得[GetValue](../../data/oledb/cdynamicaccessor-getvalue.md)です。  
   
- 動的なアクセサー クラスを説明と使用例については、[動的なアクセサーを使用して](../../data/oledb/using-dynamic-accessors.md)を参照してください。  
+ ディスカッションと動的なアクセサー クラスを使用しての例では、次を参照してください。[動的アクセサーの使用](../../data/oledb/using-dynamic-accessors.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー**: atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)   
- [CAccessor クラス](../Topic/CAccessor%20Class.md)   
+ [CAccessor クラス](../../data/oledb/caccessor-class.md)   
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)   
- [CManualAccessor クラス](../Topic/CManualAccessor%20Class.md)
+ [CManualAccessor クラス](../../data/oledb/cmanualaccessor-class.md)

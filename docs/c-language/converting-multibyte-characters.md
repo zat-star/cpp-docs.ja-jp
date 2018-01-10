@@ -14,16 +14,17 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8a7eccca8949a724538d9c92d790d2dced48e2e8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 051f419c37ef8a769f10b97620d2a0b1e0b475d7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="converting-multibyte-characters"></a>Converting Multibyte Characters (マルチバイト文字の変換)
 **ANSI 3.1.3.4** マルチバイト文字を、ワイド文字定数の対応するワイド文字 (コード) に変換するときに使用する現在のロケール  
   
  現在のロケールは、既定で "C" ロケールになります。 このロケールは [#pragma setlocale](../preprocessor/setlocale.md) で変更できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字](../c-language/characters.md)

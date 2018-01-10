@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -30,8 +29,7 @@ f1_keywords:
 - pow
 - _powl
 - powf
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - exponential calculations
 - powl function
@@ -42,30 +40,16 @@ helpviewer_keywords:
 - powf function
 - pow function
 ms.assetid: e75c33ed-2e59-48b1-be40-81da917324f1
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 4400582a792644b928c02db346bc7eae1087dc85
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 16a0d7beefff97eca04e5f94ab720cda4728935f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pow-powf-powl"></a>pow、powf、powl
 `x` の `y` 乗を計算します。  
@@ -132,9 +116,9 @@ long double powl(
   
  `pow(int, int)` オーバーロードは使用できなくなりました。 このオーバーロードを使用すると、コンパイラは C2668 を生じる場合があります。 この問題を回避するには、最初のパラメーターを `double`、`float`、または `long double` にキャストします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`pow`、`powf`、`powl`|\<math.h>|  
   
@@ -166,7 +150,7 @@ int main( void )
 2.0 to the power of 3.0 is 8.0  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [exp、expf、策の説明](../../c-runtime-library/reference/exp-expf.md)   
  [log、logf、log10、log10f](../../c-runtime-library/reference/log-logf-log10-log10f.md)   

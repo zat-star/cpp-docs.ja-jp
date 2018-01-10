@@ -15,11 +15,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f0367d92ecb592f0d974b8083362e2287eda97da
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 66037fdb217585096a5251039205eb3e0b208faa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="blobnamelength"></a>BLOB_NAME_LENGTH
 と共に使用`BEGIN_COLUMN_MAP`と`END_COLUMN_MAP`バイナリ ラージ オブジェクトをバインドする ([BLOB](https://msdn.microsoft.com/en-us/library/ms711511.aspx))。 ような[BLOB_NAME](../../data/oledb/blob-name.md)も、このマクロは、BLOB データの列のバイトの長さを取得する点を除いて、します。  
@@ -56,10 +59,10 @@ length )
  *length*  
  [out]BLOB 列の (実際) の長さ (バイト単位)。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md)   
  [END_COLUMN_MAP](../../data/oledb/end-column-map.md)   

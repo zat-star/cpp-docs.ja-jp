@@ -31,11 +31,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8f5f30cbf6598e4ac8d88652a6a842dcd6209273
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 891080cb7740285aba2ac7d9f2542b5604c210bc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="spawn-constants"></a>spawn 定数
 ## <a name="syntax"></a>構文  
@@ -54,6 +55,6 @@ ms.lasthandoff: 10/24/2017
 |`_P_NOWAIT`, `_P_NOWAITO`|新しいプロセスと同時に呼び出し元のプロセスを実行し続けます (非同期 `_spawn`)。|  
 |`_P_DETACH`|呼び出し元のプロセスの実行を継続します。新しいプロセスは、コンソールまたはキーボードへのアクセスなしでバックグラウンドで実行されます。 新しいプロセスに対する `_cwait` 呼び出しは失敗します。 これは、非同期の `_spawn` です。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_spawn関数、_wspawn 関数](../c-runtime-library/spawn-wspawn-functions.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)

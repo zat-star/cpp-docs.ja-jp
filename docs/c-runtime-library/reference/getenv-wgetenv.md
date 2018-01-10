@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -28,8 +27,7 @@ f1_keywords:
 - _wgetenv
 - getenv
 - _tgetenv
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - getenv function
 - tgetenv function
@@ -39,30 +37,16 @@ helpviewer_keywords:
 - _tgetenv function
 - _wgetenv function
 ms.assetid: 3b9cb9ab-a126-4e0e-a44f-6c5a7134daf4
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 2838a1c79ad97bfd665a367b2a597cb20ac70097
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: e0d010e7b04093446792eb122a67227880b7a395
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="getenv-wgetenv"></a>getenv、_wgetenv
 現在の環境から値を取得します。 これらの関数にはセキュリティが強化されたバージョンがあります。「[getenv_s、_wgetenv_s](../../c-runtime-library/reference/getenv-s-wgetenv-s.md)」をご覧ください。  
@@ -115,14 +99,14 @@ wchar_t *_wgetenv(
   
  `TZ` 環境変数の値を確認または変更するには、必要に応じて、`getenv`、`_putenv`、および `_tzset` を使用します。 `TZ` の詳細については、「[_tzset](../../c-runtime-library/reference/tzset.md)」および「[_daylight、timezone、および _tzname](../../c-runtime-library/daylight-dstbias-timezone-and-tzname.md)」をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`getenv`|\<stdlib.h>|  
 |`_wgetenv`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -166,7 +150,7 @@ Original LIB variable is: C:\progra~1\devstu~1\vc\lib
 New LIB variable is: c:\mylib;c:\yourlib  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [_putenv、_wputenv](../../c-runtime-library/reference/putenv-wputenv.md)   
  [環境定数](../../c-runtime-library/environmental-constants.md)

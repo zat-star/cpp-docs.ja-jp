@@ -22,11 +22,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 310ccd778a0d681afad40b7dd67067c9e9af875d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ef8836dec60eca6a7dac13af21c81adf72b5b319
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cprivateobjectsecuritydesc-class"></a>CPrivateObjectSecurityDesc クラス
 このクラスは、プライベート オブジェクト セキュリティ記述子オブジェクトを表します。  
@@ -71,7 +72,7 @@ class CPrivateObjectSecurityDesc : public CSecurityDesc
   
  `CPrivateObjectSecurityDesc`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="converttoautoinherit"></a>CPrivateObjectSecurityDesc::ConvertToAutoInherit  
@@ -257,7 +258,7 @@ bool Set(
 ### <a name="remarks"></a>コメント  
  2 番目のメソッド、または許可するオブジェクトのオブジェクトの種類の GUID を指定する Ace が継承する方法を制御するのみ以降 Windows 2000 を実行しているシステムで利用可能です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SECURITY_DESCRIPTOR](http://msdn.microsoft.com/library/windows/desktop/aa379561)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティのグローバル関数](../../atl/reference/security-global-functions.md)   

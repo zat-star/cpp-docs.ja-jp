@@ -15,11 +15,12 @@ caps.latest.revision: "4"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: f4030728c296a6dd234b6ad181d83ef072b06dd9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 264ffdad3d55ae9d2df44646240d42ac02d5fcb1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="end-function"></a>end 関数
 指定されたインターフェイス パラメーターによってアクセスされるコレクションの末尾を越えて指す反復子を返します。  
@@ -64,10 +65,10 @@ template <typename T>
   
  [によって返される](../cppcx/platform-collections-vectorviewiterator-class.md) Platform::Collections::VectorViewIterator `end` オブジェクトは、 `VectorProxy<T>`型の要素を格納するプロキシ反復子です。 ただし、プロキシ オブジェクトは、ユーザー コードにはほとんどは表示されません。 詳細については、「 [Collections (C++/CX) (コレクション (C++/CX))](../cppcx/collections-c-cx.md)」を参照してください。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Windows::Foundation::Collections  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [:Foundation Namespace](../cppcx/windows-foundation-collections-namespace-c-cx.md)

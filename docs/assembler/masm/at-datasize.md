@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cf68686031673d0164428fbc7c021a083a84c787
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: db43b21c010be00df8d32431c6681bdb5693d36c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="datasize"></a>@DataSize
 場合は 0**極小**、**小さな**、**中**、および**フラット**の場合は 1 をモデル化**COMPACT**と**大規模な**モデル、および 2 を**莫大**モデル (数値と等価なります)。  
@@ -32,5 +33,5 @@ ms.lasthandoff: 10/24/2017
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [シンボル リファレンス](../../assembler/masm/symbols-reference.md)

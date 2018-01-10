@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- mbrtowc
+apiname: mbrtowc
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,37 +21,20 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
 apitype: DLLExport
-f1_keywords:
-- mbrtowc
-dev_langs:
-- C++
-helpviewer_keywords:
-- mbrtowc function
+f1_keywords: mbrtowc
+dev_langs: C++
+helpviewer_keywords: mbrtowc function
 ms.assetid: a1e87fcc-6de0-4ca1-bf26-508d28490286
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 481d67e2b2ccbc768b9afdbb4ede620dc237be43
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 255416b3430b75972faee018a227cc73d4f1bac6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mbrtowc"></a>mbrtowc
 現在のロケールのマルチバイト文字を、それに対応するワイド文字に変換します。マルチバイト文字の途中から再開することが可能です。  
@@ -226,13 +207,13 @@ Multibyte String: AaBbCcÜïα∩≡xXyYzZ
 WC String: AaBbCcÜïα∩≡xXyYzZ  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`mbrtowc`|\<wchar.h>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)

@@ -1,91 +1,92 @@
 ---
-title: "IDispEventImpl のサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDispEventImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, IDispEventImpl サポート (COM オブジェクトの)"
-  - "BEGIN_SINK_MAP マクロ"
-  - "イベント シンク マップ, 宣言"
-  - "IDispEventImpl クラス, アドバイズとアドバイズ中止"
-  - "IDispEventImpl クラス, 宣言"
-  - "SINK_ENTRY マクロ"
-  - "タイプ ライブラリ, インポート"
+title: "IDispEventImpl をサポートする |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDispEventImpl
+dev_langs: C++
+helpviewer_keywords:
+- event sink maps, declaring
+- IDispEventImpl class, advising and unadvising
+- SINK_ENTRY macro
+- type libraries, importing
+- ATL, IDispEventImpl support in COM objects
+- BEGIN_SINK_MAP macro
+- IDispEventImpl class, declaring
 ms.assetid: b957f930-6a5b-4598-8e4d-8027759957e7
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 8bf10a68ae15743a637df2dee52bee83c3dfcbe0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# IDispEventImpl のサポート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-テンプレート クラス [IDispEventImpl](../atl/reference/idispeventimpl-class.md) が ATL クラスのコネクション ポイント シンクをサポートするために使用できます。  外部 COM オブジェクトから発生した接続ポイント シンクは、クラスのイベントを処理できます。  これらのコネクション ポイント シンクはイベント シンク マップと、クラスにマップされます。  
+# <a name="supporting-idispeventimpl"></a>IDispEventImpl をサポートします。
+このテンプレート クラスは[IDispEventImpl](../atl/reference/idispeventimpl-class.md) ATL クラス内での接続ポイント シンクのサポートを提供するために使用できます。 接続ポイント シンクは、外部の COM オブジェクトで発生したイベントを処理するクラスを使用します。 これらの接続ポイント シンクは、クラスによって提供される、イベント シンク マップにマップされます。  
   
- 正しくクラスのコネクション ポイント シンクを実行するには、以下の手順を実行する必要があります:  
+ クラスのコネクション ポイント シンクを正しく実装するのには、次の手順を実行する必要があります。  
   
--   各外部オブジェクトのタイプ ライブラリをインポート  
+-   各外部オブジェクトのタイプ ライブラリをインポートします。  
   
--   `IDispEventImpl` のインターフェイスを宣言します。  
+-   宣言、`IDispEventImpl`インターフェイス  
   
 -   イベント シンク マップを宣言します。  
   
--   unadvise コネクション ポイントするとアドバイス  
+-   通知の接続ポイントをアドバイズと  
   
- コネクション ポイント シンクすべて実行に関連する手順は、クラスのヘッダー ファイルだけです \(.h\) 変更します。  
+ コネクション ポイント シンクの実装に必要な手順はすべて、のみのヘッダー ファイル (.h) クラスを変更することによって実行されます。  
   
-## タイプ ライブラリのインポート  
- 、処理するイベント タイプ ライブラリをインポートする必要のある各外部オブジェクトに対して。  この手順では、処理できる定義し、使用する情報を提供するイベントをイベント シンク マップを宣言するとき。  [\#import](../Topic/%23import%20Directive%20\(C++\).md) ディレクティブが、を使用できます。  では、クラスのヘッダー ファイルにサポートする各ディスパッチ インターフェイスの `#import` の必要なディレクティブの行を追加します \(.h\)。  
+## <a name="importing-the-type-libraries"></a>タイプ ライブラリのインポート  
+ 各外部のオブジェクト イベントを処理するためには、タイプ ライブラリをインポートする必要があります。 この手順では、処理できるイベントを定義し、イベント シンク マップを宣言するときに使用される情報を提供します。 [#Import](../preprocessor/hash-import-directive-cpp.md)ディレクティブは、これを実現するために使用できます。 必要な追加`#import`ディレクティブの行をクラスのヘッダー ファイル (.h) をサポートする各ディスパッチ インターフェイスです。  
   
- 次の例は、外部 COM サーバー \(`MSCAL.Calendar.7`\) のタイプ ライブラリをインポート:  
+ 次の例は、外部の COM サーバーのタイプ ライブラリをインポート (`MSCAL.Calendar.7`)。  
   
- [!code-cpp[NVC_ATL_Windowing#141](../atl/codesnippet/CPP/supporting-idispeventimpl_1.h)]  
+ [!code-cpp[NVC_ATL_Windowing#141](../atl/codesnippet/cpp/supporting-idispeventimpl_1.h)]  
   
 > [!NOTE]
->  でサポートする各外部タイプ ライブラリの `#import` にステートメントが必要です。  
+>  個別のする必要があります`#import`をサポートする外部のタイプ ライブラリごとにステートメントです。  
   
-## IDispEventImpl インターフェイスの宣言  
- 各ディスパッチ インターフェイスのタイプ ライブラリをインポートするため、各外部ディスパッチ インターフェイスの `IDispEventImpl` の別のインターフェイスを宣言する必要があります。  各外部オブジェクトの `IDispEventImpl` のインターフェイス宣言を追加することで、クラスの宣言を変更します。  パラメーターの詳細については、[IDispEventImpl](../atl/reference/idispeventimpl-class.md)を参照してください。  
+## <a name="declaring-the-idispeventimpl-interfaces"></a>IDispEventImpl インターフェイスの宣言  
+ 別の宣言する必要がありますディスパッチ インターフェイスごとのタイプ ライブラリをインポートしたら、これで`IDispEventImpl`各外部ディスパッチ インターフェイス用のインターフェイスです。 クラスの宣言を追加することによって変更、`IDispEventImpl`インターフェイス外部オブジェクトごとに宣言します。 パラメーターの詳細については、次を参照してください。 [IDispEventImpl](../atl/reference/idispeventimpl-class.md)です。  
   
- 次のコードでは、2 とおりのコネクション ポイント シンク、`DCalendarEvents` インターフェイスに `CMyCompositCtrl2`、クラスで実装される COM オブジェクトを宣言します:  
+ 次のコードの 2 つのコネクション ポイント シンクの宣言、`DCalendarEvents`クラスによって実装された COM オブジェクトのインターフェイス、 `CMyCompositCtrl2`:  
   
- [!code-cpp[NVC_ATL_Windowing#142](../atl/codesnippet/CPP/supporting-idispeventimpl_2.h)]  
+ [!code-cpp[NVC_ATL_Windowing#142](../atl/codesnippet/cpp/supporting-idispeventimpl_2.h)]  
   
-## イベント シンク マップの宣言  
- 適切な関数が処理されるイベント通知のためのクラスは、正しいハンドラーに各イベントを転送する必要があります。  これは、イベント シンク マップの宣言により実行されます。  
+## <a name="declaring-an-event-sink-map"></a>イベント シンク マップを宣言します。  
+ イベント通知は、適切な関数で処理するためには、クラスは各イベントを適切なハンドラーをルーティングする必要があります。 これは、イベント シンク マップを宣言することによって実現されます。  
   
- ATL は、このマッピングを容易にするいくつかのマクロ、[BEGIN\_SINK\_MAP](../Topic/BEGIN_SINK_MAP.md)、[END\_SINK\_MAP](../Topic/END_SINK_MAP.md)と [SINK\_ENTRY\_EX](../Topic/SINK_ENTRY.md)を提供します。  標準形式は次のとおりです。:  
+ ATL には、いくつかのマクロ[BEGIN_SINK_MAP](reference/composite-control-macros.md#begin_sink_map)、 [END_SINK_MAP](reference/composite-control-macros.md#end_sink_map)、および[SINK_ENTRY_EX](reference/composite-control-macros.md#sink_entry_ex)、このマッピングを容易にします。 標準の形式は次のとおりです。  
   
  `BEGIN_SINK_MAP(comClass)`  
   
  `SINK_ENTRY_EX(id, iid, dispid, func)`  
   
- `.  .  .  //additional external event entries`  
+ `. . . //additional external event entries`  
   
  `END_SINK_MAP()`  
   
- 次の例では、2 人のイベント ハンドラーを持つイベント シンク マップを宣言します:  
+ 次の例では、次の 2 つのイベント ハンドラーでイベント シンク マップを宣言します。  
   
- [!code-cpp[NVC_ATL_Windowing#136](../atl/codesnippet/CPP/supporting-idispeventimpl_3.h)]  
+ [!code-cpp[NVC_ATL_Windowing#136](../atl/codesnippet/cpp/supporting-idispeventimpl_3.h)]  
   
- 実装はほぼ完了です。  最後に、外部インターフェイスの表示と unadvising の問題です。  
+ 実装がほぼ完了しました。 最後の手順では、通知との外部インターフェイスのアドバイズを中止を扱います。  
   
-## アドバイズと Unadvising IDispEventImpl のインターフェイス  
- 最後の手順は、必要なときに \(または\) unadvise すべてのコネクション ポイントに指示するメソッドを実装することです。  アドバイズするこれは、外部クライアントすると、オブジェクト間の通信の前にされていない場合に発生します。  、オブジェクトが表示されるようになる前に、オブジェクトによってサポートされる各外部ディスパッチ インターフェイスは、アウトゴーイング インターフェイスに問い合わせます。  接続が確立され、オブジェクトからのイベントを処理するためにアウトゴーイング インターフェイスへの参照が使用されます。  この手順は、「」と表示されます。  
+## <a name="advising-and-unadvising-the-idispeventimpl-interfaces"></a>通知とアドバイズ IDispEventImpl インターフェイス  
+ 最後の手順では、正しい時刻になります (アドバイズするか、) すべてのコネクション ポイント メソッドを実装します。 外部クライアントと、オブジェクト間の通信を行う前に、この通知を行う必要があります。 オブジェクトが表示される前に、オブジェクトでサポートされている各外部ディスパッチ インターフェイスが発信インターフェイスの照会されます。 接続が確立され、発信インターフェイスへの参照はオブジェクトからイベントを処理するために使用します。 この手順は「通知」と呼ばれます  
   
- 、オブジェクトが外部インターフェイスと終了すると、アウトゴーイング インターフェイスは、クラスによっても使用されていないことを把握する必要があります。  このプロセスは「」と呼ばれ unadvising。  
+ 外部インターフェイスで、オブジェクトが完了したら、発信インターフェイスはクラスでは使用されなく通知する必要があります。 このプロセスを「アドバイズ」と呼びます  
   
- COM オブジェクトの一意な性質については、この手順では、実装の間で、詳細実行、異なるため。  これらの詳細は、このトピックの範囲を超えるあり、アドレス。  
+ COM オブジェクトの一意な性質上、この手順は異なります詳細と実装間での実行にします。 これらの詳細は、このトピックの範囲を超えているし、は対応していません。  
   
-## 参照  
- [ATL COM オブジェクトの基本事項](../atl/fundamentals-of-atl-com-objects.md)
+## <a name="see-also"></a>参照  
+ [ATL COM オブジェクトの基礎](../atl/fundamentals-of-atl-com-objects.md)
+

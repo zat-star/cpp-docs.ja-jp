@@ -46,11 +46,12 @@ caps.latest.revision: "4"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b6f14e43556a9b066f9dc34520c327cff7fa1004
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 681f9d125a7f45dae2a8e604df655facdd246067
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="timespecget-timespec32get-timespec64get"></a>timespec_get、_timespec32_get、_timespec64_get
 指定された時間の基準に基づいて、最初の引数が指す間隔を現在のカレンダーの時間に設定します。  
@@ -92,15 +93,15 @@ int _timespec64_get(
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
-|`timespec_get`、`_timespec32_get`、`_timespec64_get`|C: \<time.h>、C++: \<ctime> または \<time.h>|  
+|`timespec_get`では、 `_timespec32_get`では、 `_timespec64_get`|C: \<time.h>、C++: \<ctime> または \<time.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
  [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   

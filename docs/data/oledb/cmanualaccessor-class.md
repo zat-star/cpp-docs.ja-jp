@@ -18,11 +18,14 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f368bbb2f56497ecb16dc2cbfd2f8cf7d214e5cc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f32046f36aefa2c19c8c364f7598a06b71d71bd4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmanualaccessor-class"></a>CManualAccessor クラス
 高度な用途用に設計されたアクセサーの種類を表します。  
@@ -47,10 +50,10 @@ class CManualAccessor : public CAccessorBase
 ## <a name="remarks"></a>コメント  
  使用して`CManualAccessor`実行時の関数の呼び出しによって出力される列のバインドと、パラメーターを指定できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DBViewer](../../visual-cpp-samples.md)   
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)   

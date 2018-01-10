@@ -20,11 +20,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e19b81818d564b3b6e3f7a1623482ef6458defd5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0ba3651360ce245efcd3251016d804433caea7c0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="icommandimplmbcancel"></a>ICommandImpl::m_bCancel
 コマンドが取り消されたかどうかを示します。  
@@ -40,9 +43,9 @@ unsigned m_bCancel:1;
 ## <a name="remarks"></a>コメント  
  この変数を取得することができます、 **Execute**コマンド クラスと適切なキャンセルのメソッドです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICommandImpl クラス](../../data/oledb/icommandimpl-class.md)   
  [ICommandImpl::m_bCancelWhenExecuting](../../data/oledb/icommandimpl-m-bcancelwhenexecuting.md)

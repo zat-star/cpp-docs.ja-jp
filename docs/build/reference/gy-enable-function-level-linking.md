@@ -24,14 +24,15 @@ caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e7d83e4409d9c46c926859f39029ea68f2411def
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ebe272b12a503a310319526f53f312a033a0ee26
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="gy-enable-function-level-linking"></a>/Gy (関数レベルのリンクの有効化)
-コンパイラでパッケージ化された関数 (Comdat) の形式で個々 の関数をパッケージにできます。  
+コンパイラが個々の関数をパッケージ関数 (COMDAT) の形式でパッケージ化できるようになります。  
   
 ## <a name="syntax"></a>構文  
   
@@ -65,6 +66,6 @@ ms.lasthandoff: 10/24/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.EnableFunctionLevelLinking%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

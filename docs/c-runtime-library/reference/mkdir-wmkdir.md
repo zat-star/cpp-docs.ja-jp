@@ -44,11 +44,12 @@ caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4883b0fa5744bc57e7c25afd99a767c3ecc271ac
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8dac3a0e796d24ed714cd1a15be34081476d77d8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mkdir-wmkdir"></a>_mkdir、_wmkdir
 新しいディレクトリを作成します。  
@@ -91,14 +92,14 @@ int _wmkdir(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tmkdir`|`_mkdir`|`_mkdir`|`_wmkdir`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_mkdir`|\<direct.h>|  
 |`_wmkdir`|\<direct.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -144,7 +145,7 @@ Directory '\testtmp' was successfully created
 Directory '\testtmp' was successfully removed  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)   
  [_chdir、_wchdir](../../c-runtime-library/reference/chdir-wchdir.md)   
  [_rmdir、_wrmdir](../../c-runtime-library/reference/rmdir-wrmdir.md)

@@ -1,54 +1,55 @@
 ---
-title: "MFC と動的にリンクされるレギュラー DLL のモジュール状態 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DLL [C++], モジュールの状態"
-  - "MFC DLL [C++], 標準 DLL"
-  - "モジュールの状態 [C++]"
-  - "モジュールの状態 [C++], 標準 DLL (動的にリンクされた)"
-  - "標準 DLL [C++], 動的リンク (MFC に)"
+title: "正規の MFC DLL のモジュールの状態は、MFC と動的にリンク |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- regular MFC DLLs [C++], dynamically linked to MFC
+- module states [C++]
+- MFC DLLs [C++], regular MFC DLLs
+- module states [C++], regular MFC DLLs dynamically linked to
+- DLLs [C++], module states
 ms.assetid: b4493e79-d25e-4b7f-a565-60de5b32c723
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 8b88f895255c698f04b6988e63b8b75372fa59b0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# MFC と動的にリンクされるレギュラー DLL のモジュール状態
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-MFC DLL とレギュラー DLL を動的にリンクする機能を使うと、複雑な設定を行うことができます。  たとえば、レギュラー DLL とそれを使用する実行可能ファイルは、MFC DLL および任意の拡張 DLL と動的にリンクできます。  
+# <a name="module-states-of-a-regular-mfc-dll-dynamically-linked-to-mfc"></a>正規の MFC DLL のモジュールの状態は、MFC と動的にリンク
+MFC DLL に標準 MFC DLL を動的にリンクする機能は、非常に複雑になっているいくつかの構成を許可します。 たとえば、標準 MFC DLL とそれを使用する実行可能ファイル両方動的にリンクできます MFC DLL にし、任意の MFC 拡張 Dll にします。  
   
- この設定では、現在の `CWinApp` オブジェクトへのポインターやハンドル マップなどの MFC グローバル データに関する問題が発生します。  
+ この構成が現在へのポインターなど、MFC のグローバル データに関して問題によって引き起こされる`CWinApp`オブジェクトおよびハンドル マップします。  
   
- MFC バージョン 4.0 以前では、このグローバル データは MFC DLL 内にあり、プロセス内の全モジュールで共有されていました。  Win32 DLL を使用する各プロセスはそれぞれ独自の DLL データのコピーを取得するため、このスキームによりプロセス単位のデータを簡単に追跡できました。  また、AFXDLL モデルでは、1 つのプロセス内に `CWinApp` オブジェクトやハンドル マップのセットが 1 つしか存在しないと想定されていたため、これらの項目を MFC DLL 自体の中で追跡できました。  
+ MFC version 4.0 では、前に、このグローバル データは、MFC DLL 内にありされ、プロセスのすべてのモジュールで共有されていました。 Win32 DLL を使用する各プロセスが独自の DLL のデータのコピーを取得するため、このスキームには、プロセスごとのデータを追跡する簡単な方法が用意されています。 また、AFXDLL モデルが疑われる場合があることが 1 つだけため`CWinApp`オブジェクトと 1 つだけの一連の処理、プロセス内の対応付け、MFC DLL 自体でこれらの項目を追跡する可能性があります。  
   
- しかし、MFC DLL とレギュラー DLL を動的にリンクする機能では、1 つのプロセス内に複数の `CWinApp` オブジェクトや複数のハンドル マップのセットが存在できるようになりました。  これらのうちどれを使用したらよいか、MFC はどのような方法で判断するのでしょうか。  
+ MFC DLL に MFC 標準 DLL を動的にリンクすること、これで 2 つ以上を設定することが`CWinApp`プロセス内のオブジェクト: およびハンドルのマップの 2 つ以上のセットもします。 方法は MFC の追跡を使用している必要がありますどれですか。  
   
- この問題は、グローバル状態情報のコピーを各モジュール \(アプリケーションまたはレギュラー DLL\) に設定することで解決できます。  このため、レギュラー DLL 内の **AfxGetApp** を呼び出すと、実行可能ファイルではなく DLL 内の `CWinApp` オブジェクトへのポインターが返されます。  このような各モジュールに設定された MFC のグローバル データのコピーをモジュール状態と言います。モジュール状態については、「[テクニカル ノート 58: MFC のモジュール状態の実装](../mfc/tn058-mfc-module-state-implementation.md)」を参照してください。  
+ ソリューションでは、このグローバル状態情報のコピーを各モジュール (アプリケーションまたはレギュラー MFC DLL) に、です。 したがってへの呼び出し**AfxGetApp**標準では、MFC の DLL はへのポインターを返します。、`CWinApp`実行可能ファイルのものではなく、DLL 内のオブジェクト。 MFC のグローバル データの場合は、このモジュールのコピーはモジュールの状態と呼ばれます、、「 [MFC テクニカル ノート 58](../mfc/tn058-mfc-module-state-implementation.md)です。  
   
- MFC のコモン ウィンドウ プロシージャは、正しいモジュール状態に自動的に切り替えます。このため、レギュラー DLL に実装されたメッセージ ハンドラー内のモジュール状態を気にする必要はありません。  しかし、実行可能ファイルからレギュラー DLL を呼び出す場合は、現在のモジュール状態をその DLL に対して明示的に設定する必要があります。  このためには、DLL のすべてのエクスポート関数で **AFX\_MANAGE\_STATE** マクロを使用します。  これは、DLL からエクスポートされる関数の先頭に次のコード行を追加して行います。  
+ 正規の MFC DLL に実装されているすべてのメッセージ ハンドラーで心配する必要はありません、MFC の一般的なウィンドウ プロシージャは自動的に適切なモジュールの状態に切り替わります。 実行可能ファイルを呼び出したときに、正規の MFC DLL は、DLL のいずれかに現在のモジュール状態を明示的に設定する必要があります。 これを行うを使用して、 **AFX_MANAGE_STATE**マクロですべての関数は DLL からエクスポートします。 これは、DLL からエクスポートされた関数の先頭に次のコード行を追加することによって行います。  
   
 ```  
 AFX_MANAGE_STATE(AfxGetStaticModuleState( ))  
 ```  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
--   [MFC モジュールの状態データの管理](../mfc/managing-the-state-data-of-mfc-modules.md)  
+-   [MFC モジュールの状態データを管理します。](../mfc/managing-the-state-data-of-mfc-modules.md)  
   
--   [MFC と動的にリンクされるレギュラー DLL](../Topic/Regular%20DLLs%20Dynamically%20Linked%20to%20MFC.md)  
+-   [MFC と動的にリンクされている標準の MFC Dll](../build/regular-dlls-dynamically-linked-to-mfc.md)  
   
--   [拡張 DLLs](../build/extension-dlls-overview.md)  
+-   [MFC 拡張 DLL](../build/extension-dlls-overview.md)  
   
-## 参照  
- [Visual C\+\+ の DLL](../build/dlls-in-visual-cpp.md)
+## <a name="see-also"></a>参照  
+ [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)

@@ -1,37 +1,36 @@
 ---
-title: "DW | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "DW"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DW directive"
+title: "DW |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: DW
+dev_langs: C++
+helpviewer_keywords: DW directive
 ms.assetid: 451d0e24-b65b-4cbb-b81d-ea27680feaf3
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: d177774b40b55157fca4e1d364efbdc8f4826ce2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# DW
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-各 `initializer` の領域の単語 \(2 バイト\) を割り当て必要に応じて初期化します。  型指定子がどこでも可能型であるため使用できます。  `DW` は [word](../../assembler/masm/word.md) のシノニムです。  
+# <a name="dw"></a>DW
+割り当て、必要に応じて各記憶域の単語 (2 バイト) を初期化`initializer`です。 型指定子として使用することも、型が有効な任意の場所。 `DW`シノニムは、 [WORD](../../assembler/masm/word.md)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 [[name]] DW initializer [[, initializer]]...  
 ```  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)   
- [SWORD](../Topic/SWORD.md)
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)   
+ [SWORD](../../assembler/masm/sword.md)

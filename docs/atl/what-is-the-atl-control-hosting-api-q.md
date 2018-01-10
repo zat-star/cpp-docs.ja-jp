@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4f04f5caa30ab860634f0f96ae18e9da03577ba2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3e985ffd3b514feec81f4fee540a95792eb3658e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="what-is-the-atl-control-hosting-api"></a>ATL コントロール ホスト API しますか?
 ATL のコントロール ホスト API は、ActiveX コントロール コンテナーとして機能する任意のウィンドウを許可する一連の関数。 これらの関数は静的または動的にソース コードとして使用されるので、プロジェクトにリンクを ATL90.dll によって公開されています。 コントロール ホスト関数は、次の表に表示されます。  
@@ -47,5 +48,5 @@ ATL のコントロール ホスト API は、ActiveX コントロール コン�
 > [!NOTE]
 >  コントロール ホスト API では、ActiveX コントロール コンテインメントの ATL のサポートの基礎を形成します。 ただしが通常利用または ATL のラッパー クラスを最大限に活用する場合に、これらの関数を直接呼び出す必要はほとんどありません。 詳細については、次を参照してください。[する ATL クラスを容易に ActiveX コントロール コンテインメント](which-atl-classes-facilitate-activex-control-containment-q.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コントロール コンテインメントよく寄せられる質問](which-atl-classes-facilitate-activex-control-containment-q.md)

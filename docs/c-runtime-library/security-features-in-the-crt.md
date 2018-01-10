@@ -35,11 +35,12 @@ caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6dd54fcfc9612b5c20288b78b60d84257ab8f2f9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ce5ff232a914b929153d8dc2ea6bb0951b4ff187
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="security-features-in-the-crt"></a>CRT のセキュリティ機能
 多くの古い CRT 関数には、セキュリティが強化された新しいバージョンがあります。 セキュリティで保護された関数が存在する場合、低いセキュリティ レベルの古いバージョンは使用されていないバージョンとしてマークされ、新しいバージョンには `_s` ("secure") のサフィックスが付いています。  
@@ -60,7 +61,7 @@ char szBuf[10];
 strcpy(szBuf, "test"); // warning: deprecated   
 ```  
   
- `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` を 1 として定義すると、`strcpy` の呼び出しが、バッファー オーバーランを防ぐ `strcpy_s` の呼び出しに変更され、警告は除去されます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` を 1 として定義すると、`strcpy` の呼び出しが、バッファー オーバーランを防ぐ `strcpy_s` の呼び出しに変更され、警告は除去されます。 詳細については、「 [Secure Template Overloads](../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
  セキュリティで保護されたテンプレート オーバーロードのない、使用されていない関数の場合、セキュリティで保護されたバージョンを使用するように手動でコードを更新することを強くお勧めします。  
   
@@ -93,7 +94,7 @@ strcpy(szBuf, "test"); // warning: deprecated
   
 -   `Format string syntax checking`。 無効な文字列が検出されます。たとえば、`printf` 書式指定文字列の不正な型フィールド文字を使用した場合です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [パラメーターの検証](../c-runtime-library/parameter-validation.md)   
  [セキュリティ保護されたテンプレート オーバーロード](../c-runtime-library/secure-template-overloads.md)   
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

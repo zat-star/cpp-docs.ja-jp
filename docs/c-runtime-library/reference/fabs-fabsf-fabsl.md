@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -32,8 +31,7 @@ f1_keywords:
 - "math\fabs"
 - "math\fabsf"
 - "math\fabsl"
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - absolute values
 - fabsf function
@@ -41,30 +39,16 @@ helpviewer_keywords:
 - fabs function
 - fabsl function
 ms.assetid: 23bca210-f408-4f5e-b46b-0ccaaec31e36
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 46bccd261b7727318d571ba7795bdcb1c53d6669
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: acf1c5f64251c97091cef00d4fa6345e1f46de53
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fabs-fabsf-fabsl"></a>fabs、fabsf、fabsl
 浮動小数点引数の絶対値を計算します。  
@@ -103,18 +87,18 @@ long double fabsl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、\<cmath> ヘッダーを指定した場合、`fabs` のオーバーロードを呼び出すことができます。 C プログラムでは、`fabs` は常に double を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須の C ヘッダー|必須の C++ ヘッダー|  
 |--------------|-----------------------|---------------------------|  
 |`fabs`、`fabsf`、`fabsl`|\<math.h>|\<cmath> または \<math.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  [abs](../../c-runtime-library/reference/abs-labs-llabs-abs64.md) 関数の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [abs、labs、llabs、_abs64](../../c-runtime-library/reference/abs-labs-llabs-abs64.md)   
  [_cabs](../../c-runtime-library/reference/cabs.md)   

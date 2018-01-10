@@ -32,11 +32,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a7f88876aed83dc9a2441142c8707b59387c0ac4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d68559e9248d7123d299f3bf5ee43a9fd05669dd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="math-constants"></a>数値演算定数
 ## <a name="syntax"></a>構文  
@@ -52,7 +53,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  指定された式の値として、次のシンボルが定義されています。  
   
-|シンボル|式|値|  
+|シンボル|正規表現|[値]|  
 |------------|----------------|-----------|  
 |M_E|e|2.71828182845904523536|  
 |M_LOG2E|log2(e)|1.44269504088896340736|  
@@ -72,5 +73,5 @@ ms.lasthandoff: 10/24/2017
   
  リリース モードでプロジェクトをビルドする場合は、ファイル ATLComTime.h に math.h が含まれます。 ATLComTime.h をインクルードしているプロジェクトで 1 つまたは複数の数値演算定数を使用する場合は、ATLComTime.h をインクルードする前に `_USE_MATH_DEFINES` を定義する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル定数](../c-runtime-library/global-constants.md)

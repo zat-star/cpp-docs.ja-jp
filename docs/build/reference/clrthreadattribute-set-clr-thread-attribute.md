@@ -1,75 +1,75 @@
 ---
-title: "/CLRTHREADATTRIBUTE (CLR スレッド属性の設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.CLRThreadAttribute"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/CLRTHREADATTRIBUTE リンカー オプション"
-  - "-CLRTHREADATTRIBUTE リンカー オプション"
+title: "-CLRTHREADATTRIBUTE (CLR スレッド属性を設定する) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: VC.Project.VCLinkerTool.CLRThreadAttribute
+dev_langs: C++
+helpviewer_keywords:
+- /CLRTHREADATTRIBUTE linker option
+- -CLRTHREADATTRIBUTE linker option
 ms.assetid: 4907e9ef-5031-446c-aecf-0a0b32fae1e8
-caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: f1aae2dadc2fa7a8c9dc67780bb88b4da60d256e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /CLRTHREADATTRIBUTE (CLR スレッド属性の設定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-CLR プログラムのエントリ ポイントにスレッド処理属性を明示的に指定します。  
+# <a name="clrthreadattribute-set-clr-thread-attribute"></a>/CLRTHREADATTRIBUTE (CLR スレッド属性の設定)
+CLR プログラムのエントリ ポイントにスレッド属性を明示的に指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /CLRTHREADATTRIBUTE:{STA|MTA|NONE}  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  MTA  
  MTAThreadAttribute 属性をプログラムのエントリ ポイントに適用します。  
   
- NONE  
- \/CLRTHREADATTRIBUTE を指定しないことと同じです。共通言語ランタイム \(CLR: Common Language Runtime\) が既定のスレッド処理属性を設定するようにします。  
+ [なし]  
+ /CLRTHREADATTRIBUTE を指定しないと同じです。  既定のスレッド属性を設定する共通言語ランタイム (CLR) を付与します。  
   
  STA  
  STAThreadAttribute 属性をプログラムのエントリ ポイントに適用します。  
   
-## 解説  
- スレッド属性はメイン スレッドのエントリ ポイントに影響を与えるものであるため、この属性の設定が有効なのは .exe をビルドするときだけです。  
+## <a name="remarks"></a>コメント  
+ スレッド属性設定のみです、.exe を構築するときに、メイン スレッドのエントリ ポイントに影響するため。  
   
- 既定のエントリ ポイント \(main または wmain など\) を使用する場合は、\/CLRTHREADATTRIBUTE を使用するか、または既定のエントリ関数にスレッド処理属性 \(STAThreadAttribute または MTAThreadAttribute\) を指定するかして、スレッド処理モデルを指定します。  
+ 使用する場合は、(main または wmain など) の既定のエントリ ポイントを指定、スレッディング モデルを使用/CLRTHREADATTRIBUTE または配置することによって、スレッド処理属性 (STAThreadAttribute または MTAThreadAttribute) に既定のエントリ関数。  
   
- 既定以外のエントリ ポイントを使用する場合は、\/CLRTHREADATTRIBUTE を使用するか、または既定以外のエントリ関数にスレッド処理属性を指定するかして、スレッド処理モデルを指定します。次に、[\/ENTRY](../../build/reference/entry-entry-point-symbol.md) を使用して、既定以外のエントリ ポイントを指定します。  
+ 既定以外のエントリ ポイントを使用する場合は、既定以外のエントリの関数に属性を既定以外のエントリ ポイントを指定し、/CLRTHREADATTRIBUTE を使用するか、スレッド処理を配置することによって、スレッディング モデルを指定[/ENTRY](../../build/reference/entry-entry-point-symbol.md).  
   
- ソース コードで指定されたスレッド処理モデルが \/CLRTHREADATTRIBUTE で指定されたスレッド処理モデルと一致しない場合、リンカーは \/CLRTHREADATTRIBUTE を無視し、ソース コードで指定されたスレッド処理モデルを適用します。  
+ ソース コードで指定されたスレッド モデルが/CLRTHREADATTRIBUTE で指定されたスレッド モデルと一致していない場合、リンカーは/CLRTHREADATTRIBUTE を無視して、ソース コードで指定されたスレッド モデルを適用します。  
   
- たとえば、シングルスレッドを使用する COM オブジェクトを CLR プログラムでホストする場合は、シングルスレッドを使用する必要があります。マルチスレッドを使用する CLR プログラムでは、シングルスレッドを使用する COM オブジェクトをホストできません。  
+ CLR プログラムは、シングル スレッドを使用する COM オブジェクトをホストしている場合はたとえば、シングル スレッドを使用するために必要になります。  マルチ スレッドを使用する CLR プログラム場合、シングル スレッドを使用する COM オブジェクトをホストできません。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[構成プロパティ\]** ノードを展開します。  
+2.  展開して、**構成プロパティ**ノード。  
   
-3.  **\[リンカー\]** ノードを展開します。  
+3.  展開して、**リンカー**ノード。  
   
-4.  **\[詳細\]** プロパティ ページをクリックします。  
+4.  選択、**詳細**プロパティ ページ。  
   
-5.  **\[CLR スレッド属性\]** プロパティを変更します。  
+5.  変更、 **CLR スレッド属性**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.CLRThreadAttribute%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

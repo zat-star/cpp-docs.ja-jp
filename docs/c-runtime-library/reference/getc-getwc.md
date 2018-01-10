@@ -43,11 +43,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 78a94d954631dfffbdcdc4bcad252599c673f44b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 12ddc1fa68f1b27fa96ffb81ef24004fd1fb0a19
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="getc-getwc"></a>getc、getwc
 ストリームから単一の文字を読み取ります。  
@@ -79,7 +80,7 @@ wint_t getwc(
   
  ルーチン固有の解説は、次のとおりです。  
   
-|ルーチン|コメント|  
+|ルーチンによって返される値|コメント|  
 |-------------|-------------|  
 |`getc`|`fgetc` と同じですが、関数およびマクロとして実装されます。|  
 |`getwc`|`getc` のワイド文字バージョン。 `stream` がテキスト モードまたはバイナリ モードで開かれるかどうかに従って、マルチバイト文字またはワイド文字を読み取ります。|  
@@ -90,14 +91,14 @@ wint_t getwc(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_gettc`|`getc`|`getc`|`getwc`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`getc`|\<stdio.h>|  
 |`getwc`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -149,7 +150,7 @@ Line two.
 Input was: Line one.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fgetc、fgetwc](../../c-runtime-library/reference/fgetc-fgetwc.md)   
  [_getch、_getwch](../../c-runtime-library/reference/getch-getwch.md)   

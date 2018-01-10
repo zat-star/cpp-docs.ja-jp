@@ -36,11 +36,12 @@ caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d0cb985b4e2ddeea853ccd40668a3e378834e68a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2d670ead8214f54323cf9f6b284eaaef9a582757
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fclose-fcloseall"></a>fclose、_fcloseall
 ストリームを閉じるか (`fclose`)、またはすべての開いているストリームを閉じます (`_fcloseall`)。  
@@ -62,9 +63,9 @@ int _fcloseall( void );
  ストリームが正常に閉じられた場合、`fclose` は 0 を返します。 `_fcloseall` は、閉じられたストリームの総数を返します。 どちらの関数もエラーを示す `EOF` を返します。  
   
 ## <a name="remarks"></a>コメント  
- `fclose` 関数は、`stream` を閉じます。 `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`fclose` は `errno` を `EINVAL` に設定し、`EOF` を返します。 この関数を呼び出す前に必ず、`stream` ポインターをチェックすることをお勧めします。  
+ `fclose` 関数は、`stream` を閉じます。 `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`fclose` は `errno` を `EINVAL` に設定し、`EOF` を返します。 この関数を呼び出す前に必ず、`stream` ポインターをチェックすることをお勧めします。  
   
- エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
  `_fcloseall` 関数は、`stdin`、`stdout`、および `stderr` (MS-DOS では、`_stdaux` と`_stdprn` も) を除くすべての開いているストリームを閉じます。 また、`tmpfile` によって作成された一時ファイルも閉じて削除します。 両方の関数では、終了する前に、ストリームに関連付けられているすべてのバッファーがフラッシュされます。 システムによって割り当てられたバッファーについては、ストリームを閉じる際に解放します。 `setbuf` と `setvbuf` を使用してユーザーが割り当てたバッファーは、自動的に解放されません。  
   
@@ -72,19 +73,19 @@ int _fcloseall( void );
   
  `fclose` と `_fcloseall` には、他のスレッドからの干渉に対処するコードが含まれています。 `_fclose_nolock` のロックしないバージョンについては、「`fclose`」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fclose`|\<stdio.h>|  
 |`_fcloseall`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[fopen](../../c-runtime-library/reference/fopen-wfopen.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [_close](../../c-runtime-library/reference/close.md)   
  [_fdopen、_wfdopen](../../c-runtime-library/reference/fdopen-wfdopen.md)   

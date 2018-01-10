@@ -14,16 +14,17 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 150178bebc87cc3a4902bc056c9427a5a62858c7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5a63d3c409e671cf5f8531d161c4a713a3aa4d82
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="truncation-of-floating-point-values"></a>浮動小数点値の切り捨て
 **ANSI 3.2.1.4** 浮動小数点数をより狭い浮動小数点数に変換するときの切り捨てまたは丸めの方向  
   
  アンダーフローが発生すると、浮動小数点変数の値はゼロに丸められます。 オーバーフローは、指定した最適化に応じて、実行時エラーが発生する場合も、予測不可能な値が生成される場合もあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点演算](../c-language/floating-point-math.md)

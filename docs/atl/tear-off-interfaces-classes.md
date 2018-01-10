@@ -1,35 +1,36 @@
 ---
-title: "ティアオフ インターフェイス クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.atl.interfaces.tear-off"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "インターフェイス, ティアオフ"
-  - "ティアオフ インターフェイス クラス"
+title: "ティアオフ インターフェイス クラス (ATL) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.atl.interfaces.tear-off
+dev_langs: C++
+helpviewer_keywords:
+- interfaces, tear-off
+- tear-off interfaces classes
 ms.assetid: 14e4ab01-9213-43e5-bef5-78af1e6206ff
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 5ea122780f3735980616c8ab6492c58dfb31a3d0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ティアオフ インターフェイス クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のクラスは、ティアオフ インターフェイスをサポートします:  
+# <a name="tear-off-interfaces-classes"></a>ティアオフ インターフェイス クラス
+次のクラスは、ティアオフ インターフェイスのサポートを提供します。  
   
--   ティアオフ インターフェイスの[CComTearOffObject](../atl/reference/ccomtearoffobject-class.md) の 実装 **IUnknown**。  
+-   [CComTearOffObject](../atl/reference/ccomtearoffobject-class.md) Implements **IUnknown**ティアオフ インターフェイスです。  
   
--   「キャッシュされた」ティアオフ インターフェイスの[CComCachedTearOffObject](../atl/reference/ccomcachedtearoffobject-class.md) の実装 **IUnknown**。  
+-   [ティアオフ](../atl/reference/ccomcachedtearoffobject-class.md)Implements **IUnknown** 「キャッシュされた」ティアオフ インターフェイスです。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
+

@@ -41,11 +41,12 @@ caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 135c082e4d972b18af057bf22a718ac9c4170718
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7e7ae79ed3505e4570b453e7fd56b68730010388
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltoa-ltow"></a>_ltoa、_ltow
 長整数型を文字列に変換します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_ltoa_s、_ltow_s](../../c-runtime-library/reference/ltoa-s-ltow-s.md)」を参照してください。  
@@ -96,7 +97,7 @@ wchar_t *_ltow(
 > [!IMPORTANT]
 >  バッファー オーバーランを回避するには、`str` のバッファーを、変換された数字、末尾の null 文字、および符号文字を保持できるよう十分に大きくします。  
   
- C++ では、これらの関数にテンプレートのオーバーロードがあります。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数にテンプレートのオーバーロードがあります。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -104,19 +105,19 @@ wchar_t *_ltow(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_ltot`|`_ltoa`|`_ltoa`|`_ltow`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ltoa`|\<stdlib.h>|  
 |`_ltow`|\<stdlib.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  [_itoa](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md) の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [_itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md)   
  [_ultoa、_ultow](../../c-runtime-library/reference/ultoa-ultow.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b043dab2232e9cdfb0eb9fa90a59dab267b4e1af
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 54819766da9ebd002fa4990ca0b9650626b89015
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="arguments"></a>引数
 関数呼び出しの引数は次の形式です。  
@@ -90,5 +91,5 @@ swap( &x, &y )
   
  コンパイラは、`swap` のプロトタイプに各パラメーターの引数型が含まれるため、`swap` の引数の型チェックを実行します。 プロトタイプと定義のかっこ内の識別子は、同じでも異なっていてもかまいません。 重要なのは、プロトタイプと定義の両方で引数の型がパラメーター リストの型と一致することです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数呼び出し](../c-language/function-calls.md)

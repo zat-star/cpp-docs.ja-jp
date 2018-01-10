@@ -24,11 +24,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3b1c0369acceb792af26b7e9c8e8fd49f82a4468
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: aa7813b694cfea614bc80946d91c8f1bd977e627
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iobjectsafetyimpl-class"></a>IObjectSafetyImpl クラス
 このクラスの既定の実装を提供する、`IObjectSafety`インターフェイスを取得し、オブジェクトの安全性レベルを設定するクライアントを許可します。  
@@ -81,7 +82,7 @@ class IObjectSafetyImpl
   
  `IObjectSafetyImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlctl.h  
   
 ##  <a name="getinterfacesafetyoptions"></a>IObjectSafetyImpl::GetInterfaceSafetyOptions  
@@ -127,6 +128,6 @@ HRESULT SetInterfaceSafetyOptions(
   
  参照してください[IObjectSafety::SetInterfaceSafetyOptions](https://msdn.microsoft.com/library/aa768225.aspx) Windows SDK にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IObjectSafety インターフェイス](https://msdn.microsoft.com/library/aa768224.aspx)   
  [クラスの概要](../../atl/atl-class-overview.md)

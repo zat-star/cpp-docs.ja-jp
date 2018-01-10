@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ab078acd8aaadef19659ad766233ea191b360e02
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8cbb9a4f8b92a1cd495e1312c1aa8a8f77cefcd3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pgomgr"></a>pgomgr
 .Pgd ファイルを 1 つまたは複数の .pgc ファイルからプロファイル データを追加します。  
@@ -77,5 +78,5 @@ pgomgr /merge:3 myapp1.pgc myapp.pgd
 pgomgr -merge myapp1.pgd  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ガイド付き最適化の手動プロファイル用ツール](../../build/reference/tools-for-manual-profile-guided-optimization.md)

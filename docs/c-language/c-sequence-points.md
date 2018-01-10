@@ -14,11 +14,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f86bd3feacbabdd11d6c8ec04b4aec96ec2f5e1a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5a9c874c0093b55c44f900e7eab06019d75cb930
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-sequence-points"></a>C シーケンス ポイント
 連続する "シーケンス ポイント" 間で、オブジェクトの値を一度だけ式によって変更できます。 C 言語では次のシーケンス ポイントが定義されます。  
@@ -45,5 +46,5 @@ ms.lasthandoff: 10/24/2017
   
 -   `return` ステートメント内の式。 式は完全に評価され、すべての副作用は呼び出し元の関数に制御が戻る前に完了します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [式の評価](../c-language/expression-evaluation-c.md)

@@ -36,11 +36,12 @@ caps.latest.revision: "24"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a86fd9be56b18c3ad51e3b24e965ae67b6b38fe4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: aacd7b82525ca1b74c3d7a7ab7f8e09497e491ec
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="configthreadlocale"></a>_configthreadlocale
 スレッドごとのロケール オプションを設定します。  
@@ -78,9 +79,9 @@ int _configthreadlocale(
   
  `type` が表にリストされている値のいずれでもない場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、-1 を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_configthreadlocale`|\<locale.h>|  
   
@@ -193,7 +194,7 @@ The thread locale is now set to German_Germany.1252.
 The time in German locale is: 'Mittwoch, 12. Mai 2004'  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [setlocale, _wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
  [_beginthread, _beginthreadex](../../c-runtime-library/reference/beginthread-beginthreadex.md)   
  [ロケール](../../c-runtime-library/locale.md)   

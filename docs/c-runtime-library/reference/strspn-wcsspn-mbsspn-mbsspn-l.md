@@ -51,11 +51,12 @@ caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: baecb787fa1d2afb84dd9f7b164cd2535bb2f2b0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a0c4f57aac2f0b673cac716e5bdd94bd66534f6b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strspn-wcsspn-mbsspn-mbsspnl"></a>strspn、wcsspn、_mbsspn、_mbsspn_l
 文字列の中で、文字セットに含まれない最初の文字へのインデックスを返します。  
@@ -103,7 +104,7 @@ size_t _mbsspn_l(
   
  `wcsspn` 関数と `_mbsspn` 関数は、`strspn` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `wcsspn` 関数の引数はワイド文字列で、`_mbsspn` 関数の引数はマルチバイト文字列です。 `_mbsspn` はそのパラメーターを検証します。 `str` または `strCharSet` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`_mbspn` は `errno` を `EINVAL` に設定し、0 を返します。 `strspn` および `wcsspn` は、パラメーターを検証しません。 それ以外では、これらの関数の動作は同じです。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -112,15 +113,15 @@ size_t _mbsspn_l(
 |`_tcsspn`|`strspn`|`_mbsspn`|`wcsspn`|  
 |**該当なし**|**該当なし**|`_mbsspn_l`|**該当なし**|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`strspn`|\<string.h>|  
 |`wcsspn`|\<string.h> または \<wchar.h>|  
 |`_mbsspn`, `_mbsspn_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -149,7 +150,7 @@ int main( void )
 The portion of 'cabbage' containing only a, b, or c is 5 bytes long  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

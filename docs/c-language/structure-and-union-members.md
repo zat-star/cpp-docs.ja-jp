@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a736a1e66fd857b7d959279a6b44a6d0f9ebd6f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2183aead53ee02f36bc982e4f33ad174346da5f2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="structure-and-union-members"></a>構造体と共用体のメンバー
 "メンバー選択式" は構造体と共用体のメンバーを参照します。 このような式には、選択したメンバーの値と型が割り当てられます。  
@@ -73,7 +74,7 @@ identifier
   
  *expression* はポインター値になります。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次に、この構造体宣言の例を示します。 これらの例で使用されている間接演算子 (**\***) については、「[間接演算子とアドレス演算子](../c-language/indirection-and-address-of-operators.md)」を参照してください。  
   
 ```  
@@ -105,5 +106,5 @@ list[8].b = 12;
   
  このステートメントは、構造体の配列から個々の構造体メンバーを選択する方法を示しています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メンバー アクセス演算子: . および ->](../cpp/member-access-operators-dot-and.md)

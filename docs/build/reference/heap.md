@@ -1,47 +1,46 @@
 ---
-title: "/HEAP | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/heap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ヒープ割り当て、設定 (ヒープ サイズを)"
-  - "HEAP editbin オプション"
-  - "-HEAP editbin オプション"
-  - "/HEAP editbin オプション"
+title: "-ヒープ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /heap
+dev_langs: C++
+helpviewer_keywords:
+- heap allocation, setting heap size
+- HEAP editbin option
+- -HEAP editbin option
+- /HEAP editbin option
 ms.assetid: 6ce759b5-75b7-44ff-a5fd-3a83a0ba9a48
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 3d21fe68d96274eaf42c2b7d58aa025c49f8a6d6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /HEAP
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ヒープ サイズをバイト単位で設定します。  このオプションは、実行可能ファイルにのみ適用されます。  
+# <a name="heap"></a>/HEAP
+ヒープのサイズをバイト単位で設定します。 このオプションは、実行可能ファイルにのみ適用されます。  
   
 ```  
   
 /HEAP:  
 reserve[,commit]  
-  
 ```  
   
-## 解説  
- `reserve` の引数には、仮想メモリ内の最初の合計ヒープ割り当てを指定します。  既定では、ヒープのサイズが 1 MB です。  [EDITBIN リファレンス](../Topic/EDITBIN%20Reference.md) は 4 バイトの倍数に指定された値を丸めます。  
+## <a name="remarks"></a>コメント  
+ `reserve`引数は、仮想メモリの合計の初期ヒープの割り当てを指定します。 既定では、ヒープ サイズは、1 MB です。 [EDITBIN リファレンス](../../build/reference/editbin-reference.md)指定された値を最も近い 4 バイトの倍数に丸められます。  
   
- 引数 `commit` \(省略可能\) は、オペレーティング システムによって解釈が異なります。  Windows オペレーティング システムでは、代入する物理メモリの最初の量、およびヒープに展開するか追加割り当てるメモリの量を指定します。  仮想メモリがコミットされると、ページング ファイル内にメモリ空間が予約されます。  `commit` より大きい値は、アプリケーションでさらにヒープ領域メモリ量が増えますとアプリケーションの起動時間が必要な場合、システムがメモリをより少なくなるに割り当てることができます。  `commit` 値は `reserve` 値以下である必要があります。  
+ 省略可能な`commit`引数は、オペレーティング システムによって解釈される可能性があります。 Windows オペレーティング システムで最初に割り当てるには、物理メモリの容量と、ヒープを展開しなければならない場合に割り当てるメモリの量を指定します。 仮想メモリがコミットされると、ページング ファイル内にメモリ空間が予約されます。 高い`commit`値により、システムは、アプリは複数のヒープ領域が必要ですがメモリ量とアプリのスタートアップ時間が増加しているときに多くの場合、メモリの少ない割り当てにします。 `commit`値には、以下にする必要があります、`reserve`値。  
   
- 小数点の `reserve` と `commit` 値または C 言語の 16 進数または 8 進表記指定します。  たとえば、1 MB の値は、04000000 として 1048576、または 16 進数 8 で 0x100000 として小数点で指定できます。  
+ 指定して、`reserve`と`commit`10 進数または 16 進数または 8 進数の C 言語表記の値。 たとえば、10 進数、1048576 または 16 進数、0x100000 または 04000000 8 進数では、1 MB の値を指定できます。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [EDITBIN オプション](../../build/reference/editbin-options.md)

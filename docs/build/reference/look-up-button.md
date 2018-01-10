@@ -14,14 +14,15 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b3fea3ed8707e78a5917c6707b14976dedba010f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e5277b4f18fb109960d3e45c00a995318ed8b623
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="look-up-button"></a>[検索] ボタン
 をクリックして**ルックアップ**入力システムまたはモジュールの値に対応するエラー メッセージを取得します。 (負の値の 10 進値を含む)、16 進数または 10 進数の形式で値を入力することができます。 示されているモジュール、**エラーを検索するその他のモジュール**もダイアログが検索されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [[値] エディット コントロール](../../build/reference/value-edit-control.md)

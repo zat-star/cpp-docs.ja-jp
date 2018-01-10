@@ -15,11 +15,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f11e9beee6df4bc4065051242d286fd2ab7dac09
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c17d9e731eaee9c6e1a1c584e61db6c9826cf8d3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="commandhandler"></a>CommandHandler
 `CommandHandler`3 番目のパラメーターで識別される関数は、`COMMAND_HANDLER`メッセージ マップ マクロです。  
@@ -56,7 +57,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  メッセージ マップでこのメッセージ ハンドラーを使用しての例は、次を参照してください。 [COMMAND_HANDLER](reference/message-map-macros-atl.md#command_handler)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウの実装](../atl/implementing-a-window.md)   
  [メッセージ マップ](../atl/message-maps-atl.md)   
  [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)

@@ -1,47 +1,48 @@
 ---
-title: "/Zc:inline (参照されない COMDAT の除去) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/Zc:inline"
-  - "VC.Project.VCCLCompilerTool.RemoveUnreferencedCodeData"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Zc コンパイラ オプション (C++)"
-  - "/Zc:inline"
-  - "Zc コンパイラ オプション (C++)"
-  - "-Zc コンパイラ オプション (C++)"
+title: "-Zc: インライン (参照されない COMDAT の除去) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /Zc:inline
+- VC.Project.VCCLCompilerTool.RemoveUnreferencedCodeData
+dev_langs: C++
+helpviewer_keywords:
+- -Zc compiler options (C++)
+- /Zc compiler options (C++)
+- Zc compiler options (C++)
+- /Zc:inline
 ms.assetid: a4c94224-1d73-4bea-a9d5-4fa73dc924df
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 1c8d14f6055c96f5c9feed16d2ad0b996f0d0b94
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /Zc:inline (参照されない COMDAT の除去)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-COMDAT であるか内部リンケージのみを持つ、参照されていない関数またはデータを削除します。  **\/Zc:inline** を指定すると、インライン データまたはインライン関数を使用する翻訳単位には、そのデータまたは関数の定義も含まれている必要があるということがコンパイラによって要求されます。  
+# <a name="zcinline-remove-unreferenced-comdat"></a>/Zc:inline (参照されない COMDAT の除去)
+COMDAT であるか内部リンケージのみを持つ、参照されていない関数またはデータを削除します。 ときに**/Zc:inline**を指定すると、コンパイラは、インライン データまたはインライン関数を使用する翻訳単位でのデータまたは関数の定義する必要がありますも含まれることが必要です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Zc:inline[-]  
 ```  
   
-## 解説  
- **\/Zc:inline** を指定すると、参照されていない COMDAT 関数またはデータ、または内部リンケージのみを持つ関数またはデータのシンボル情報は、コンパイラによって出力されません。  既定では、このオプションはオフ \(**\/Zc:inline\-**\) です。  この最適化によって、リリース ビルドにおいて、またはリンカー オプション [\/OPT:REF](../../build/reference/opt-optimizations.md) を指定したときに、リンカーによって実行される作業の一部が簡素化されます。  コンパイラによってこの最適化が実行されると、.obj ファイルのサイズを大幅に縮小し、リンカーの速度を向上させることができます。  このコンパイラ オプションは、最適化が無効な場合 \([\/Od](../../build/reference/od-disable-debug.md)\) または [\/GL \(プログラム全体の最適化\)](../../build/reference/gl-whole-program-optimization.md) が指定されている場合は有効になりません。  
+## <a name="remarks"></a>コメント  
+ ときに**/Zc:inline**を指定すると、コンパイラが参照されていない COMDAT 関数またはデータ、または関数または内部リンケージのみを持つデータのシンボル情報を生成しません。 既定では、このオプションはオフ (**/Zc:inline-**)。 この最適化はリリース ビルドでは、リンカーによって実行される作業の一部を簡略化またはリンカー オプション[/opt:ref による](../../build/reference/opt-optimizations.md)を指定します。 コンパイラによってこの最適化が実行されると、.obj ファイルのサイズを大幅に縮小し、リンカーの速度を向上させることができます。 このコンパイラ オプションが有効になっていません最適化が無効にした場合 ([/Od](../../build/reference/od-disable-debug.md)) 場合や[/GL (プログラム全体の最適化)](../../build/reference/gl-whole-program-optimization.md)が指定されています。  
   
- **\/Zc:inline** を指定すると、`inline` として宣言されたすべての関数は、使用される場合に同じ翻訳単位内に使用可能な定義が必要があるという C\+\+11 の要件がコンパイラによって適用されます。  このオプションを指定しない場合、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] では、定義を参照できなくても `inline` として宣言された関数を起動する非準拠コードが許可されます。  詳細については、C\+\+11 標準のセクション 3.2 およびセクション 7.1.2 を参照してください。  このコンパイラ オプションは、Visual Studio 2013 更新プログラム 2 で導入されました。  
+ 場合**/Zc:inline**が指定されている、コンパイラは、c++ 11 の要件のすべての関数が宣言されている`inline`使用される場合、同じ翻訳単位で使用可能な定義を持つ必要があります。 このオプションを指定しない場合、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] では、定義を参照できなくても `inline` として宣言された関数を起動する非準拠コードが許可されます。 詳細については、C++11 標準のセクション 3.2 およびセクション 7.1.2 を参照してください。 このコンパイラ オプションは、Visual Studio 2013 更新プログラム 2 で導入されました。  
   
- **\/Zc:inline** オプションを使用するには、非準拠コードを更新します。  この例では、既定の **\/Zc:inline\-** オプションを使用する場合、定義のないインライン関数宣言の非準拠の使用でもコンパイルおよびリンクされることを示します。  
+ 使用する、 **/Zc:inline**オプション、非対応のコードを更新します。 この例は、どのように定義のないインライン関数宣言の非準拠の使用でもコンパイルおよびリンク時に示しています。 既定値**/Zc:inline-**オプションを使用します。  
   
 ```cpp  
 // example.h  
@@ -83,9 +84,9 @@ void main() {
 }  
 ```  
   
- **\/Zc:inline** を有効にすると、同じコードで [LNK2019](../Topic/Linker%20Tools%20Error%20LNK2019.md) エラーが発生します。コンパイラによって、example.obj 内の `Example::inline_call` のインライン展開されていないコード本体が出力されないためです。  これにより、`main` 内のインライン展開されていない呼び出しは、定義されていない外部シンボルを参照します。  
+ ときに**/Zc:inline**が有効になって、同じコード、 [LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)エラー、コンパイラが、非インライン コードの本体を生成しませんので`Example::inline_call`example.obj 内です。これにより、`main` 内のインライン展開されていない呼び出しは、定義されていない外部シンボルを参照します。  
   
- このエラーを解決するには、`inline` キーワードを `Example::inline_call` の宣言から削除するか、`Example::inline_call` の定義をヘッダー ファイルに移動するか、`Example` の実装を main.cpp に移動します。  次の例では、定義をヘッダー ファイルに移動します。そこでは、ヘッダーを含む任意の呼び出し元から定義を参照できます。  
+ このエラーを解決するには、`inline` キーワードを `Example::inline_call` の宣言から削除するか、`Example::inline_call` の定義をヘッダー ファイルに移動するか、`Example` の実装を main.cpp に移動します。 次の例では、定義をヘッダー ファイルに移動します。そこでは、ヘッダーを含む任意の呼び出し元から定義を参照できます。  
   
 ```cpp  
 // example2.h  
@@ -125,17 +126,17 @@ void main() {
 }  
 ```  
   
- Visual C\+\+ の準拠に関する問題の詳細については、「[非標準動作](../Topic/Nonstandard%20Behavior.md)」を参照してください。  
+ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandard Behavior](../../cpp/nonstandard-behavior.md)」をご覧ください。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[プロジェクトのプロパティの操作](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーを選択します。  
+2.  選択、 **C/C++**フォルダーです。  
   
-3.  **\[コマンド ライン\]** プロパティ ページを選択します。  
+3.  選択、**コマンドライン**プロパティ ページ。  
   
-4.  `/Zc:inline` が含まれるように **\[追加オプション\]** プロパティを変更し、**\[OK\]** をクリックします。  
+4.  変更、**追加オプション**含めるプロパティを`/Zc:inline`を選択し**OK**です。  
   
-## 参照  
- [\/Zc \(準拠\)](../../build/reference/zc-conformance.md)
+## <a name="see-also"></a>参照  
+ [/Zc (準拠)](../../build/reference/zc-conformance.md)

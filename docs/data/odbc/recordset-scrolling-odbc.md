@@ -22,11 +22,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0bb5e426e17c0a91c53abf5393b3c98bef02da14
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 34dcfb9cb1d45710accba2ee6155e3c741b727be
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="recordset-scrolling-odbc"></a>レコードセット: スクロール (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
@@ -108,7 +111,7 @@ rsCustSet.MoveFirst( );
 > [!NOTE]
 >  MFC DAO クラスとは異なり、MFC ODBC クラスに渡さないように一連の**検索**条件を満たす次 (または前) のレコードを検索するために機能します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
  [CRecordset::CanScroll](../../mfc/reference/crecordset-class.md#canscroll)   
  [CRecordset::CheckRowsetError](../../mfc/reference/crecordset-class.md#checkrowseterror)   

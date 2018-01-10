@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4492afe125546a73cbd7dc0851fc3ad275cef763
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9faa0a2fdf552821b560c0de767da6639bce7fe9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-transfer-classes"></a>データ転送クラス
 次のクラスでは、データ転送のさまざまな種類をサポートします。  
@@ -31,6 +32,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [次](../atl/reference/cbindstatuscallback-class.md)オブジェクトとの間の非同期のデータ転送に関する情報を送受信するための非同期モニカーを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

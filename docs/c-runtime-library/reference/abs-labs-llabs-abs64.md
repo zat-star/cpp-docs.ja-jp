@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -36,8 +35,7 @@ f1_keywords:
 - llabs
 - math/llabs
 - cmath/abs
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - absolute values
 - abs function
@@ -45,30 +43,16 @@ helpviewer_keywords:
 - _abs64 function
 - calculating absolute values
 ms.assetid: 60f789d1-4a1e-49f5-9e4e-0bdb277ea26a
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 804ed3ac260097c4eb088058580bf801b3bee9f1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 64c09dc8c8ce1ce5493ac4b2515c6b0be2910627
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="abs-labs-llabs-abs64"></a>abs、labs、llabs、_abs64
 引数の絶対値を計算します。  
@@ -121,9 +105,9 @@ __int64 _abs64(
   
  **END Microsoft 固有の仕様**  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須の C ヘッダー|必須の C++ ヘッダー|  
+|ルーチンによって返される値|必須の C ヘッダー|必須の C++ ヘッダー|  
 |-------------|-----------------------|---------------------------|  
 |`abs`、`labs`、`llabs`|\<math.h> または \<stdlib.h>|\<cmath>、\<cstdlib>、\<stdlib.h>、または \<math.h>|  
 |`_abs64`|\<stdlib.h>|\<cstdlib> または \<stdlib.h>|  
@@ -187,7 +171,7 @@ Microsoft implementation-specific results:
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [_cabs](../../c-runtime-library/reference/cabs.md)   

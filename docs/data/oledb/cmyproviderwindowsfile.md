@@ -1,31 +1,33 @@
 ---
-title: "CMyProviderWindowsFile | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cmyproviderwindowsfile"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CMyProviderWindowsFile クラス"
-  - "OLE DB プロバイダー, ウィザードが生成したファイル"
+title: "CMyProviderWindowsFile |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: cmyproviderwindowsfile
+dev_langs: C++
+helpviewer_keywords:
+- CMyProviderWindowsFile class
+- OLE DB providers, wizard-generated files
 ms.assetid: 0e9e72ac-1e1e-445f-a7ac-690c20031f9d
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: fef6896df77ff3bcbf9251e2aabba0f810b7f4db
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CMyProviderWindowsFile
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ウィザードは、1 行のデータを格納するためにクラスを作成します。このクラスは `CMyProviderWindowsFile` と呼ばれます。  `CMyProviderWindowsFile` の次のコードはウィザードで生成されたコードであり、**WIN32\_FIND\_DATA** 構造体を使用してディレクトリ内のすべてのファイルを一覧表示します。  `CMyProviderWindowsFile` は、**WIN32\_FIND\_DATA** 構造体を継承します。  
+# <a name="cmyproviderwindowsfile"></a>CMyProviderWindowsFile
+ウィザードを 1 つの行のデータを格納するクラスを作成します。この場合、呼び出された`CMyProviderWindowsFile`です。 次のコードの`CMyProviderWindowsFile`生成ウィザードを使用して、ディレクトリ内のすべてのファイルを一覧表示、 **WIN32_FIND_DATA**構造体。 `CMyProviderWindowsFile`継承、 **WIN32_FIND_DATA**構造体。  
   
 ```  
 /////////////////////////////////////////////////////////////////////  
@@ -45,9 +47,9 @@ END_PROVIDER_COLUMN_MAP()
 };  
 ```  
   
- `CMyProviderWindowsFile` は、プロバイダーの行セット内の列を記述するマップも含むため、[ユーザー レコード クラス](../../data/oledb/user-record.md)と呼ばれます。  プロバイダーの列マップには、PROVIDER\_COLUMN\_ENTRY マクロによって定義された、行セット内の各フィールドに対する 1 つのエントリが含まれます。  マクロは、列名、序数、および構造体エントリへのオフセットを指定します。  上のコードのプロバイダー列エントリには、**WIN32\_FIND\_DATA** 構造体へのオフセットが含まれます。  コンシューマーが **IRowset::GetData** を呼び出すと、データが 1 つの連続バッファーに転送されます。  つまり、ポインター演算の代わりに、マップを使用してデータ メンバーを指定できます。  
+ `CMyProviderWindowsFile`呼び出された、[ユーザー レコード クラス](../../data/oledb/user-record.md)プロバイダーの行セットの列を記述するマップも含まれているためです。 プロバイダーの列マップには、PROVIDER_COLUMN_ENTRY マクロを使用して行セットのフィールドごとに 1 つのエントリが含まれています。 マクロは、列名、序数に基づく、および構造エントリへのオフセットを指定します。 上記のコードでプロバイダーの列のエントリにオフセットが含まれて、 **WIN32_FIND_DATA**構造体。 コンシューマーを呼び出すと**irowset::getdata**、1 つの連続するバッファーでデータを転送します。 を行うには、ポインターの算術演算を行うのではなく、マップにデータ メンバーを指定することができます。  
   
- `CMyProviderRowset` クラスには、`Execute` メソッドも含まれます。  `Execute` は、ネイティブなソースから実際にデータを読み込むメソッドです。  ウィザードで生成された `Execute` メソッドを次のコードに示します。  関数は、Win32 の **FindFirstFile** API と `FindNextFile` API を使用して、ディレクトリ内のファイルに関する情報を取得し、それらを `CMyProviderWindowsFile` クラスのインスタンスに配置します。  
+ `CMyProviderRowset`クラスも含まれています、`Execute`メソッドです。 `Execute`どのような実際にデータを読み取り、ネイティブのソースからです。 次のコードは、ウィザードで生成された`Execute`メソッドです。 関数は、Win32 を使用して**FindFirstFile**と`FindNextFile`ディレクトリ内のファイルに関する情報を取得しのインスタンスに配置するための Api、`CMyProviderWindowsFile`クラスです。  
   
 ```  
 /////////////////////////////////////////////////////////////////////  
@@ -80,9 +82,9 @@ HRESULT Execute(DBPARAMS * pParams, LONG* pcRowsAffected)
 }  
 ```  
   
- 検索するディレクトリは、`m_strCommandText` で表されます。これには、コマンド オブジェクト内の `ICommandText` インターフェイスで表されるテキストが含まれます。  ディレクトリが指定されていない場合は、現在のディレクトリが使用されます。  
+ 検索するディレクトリがによって表される`m_strCommandText`; によって表されるテキストを含むこの、`ICommandText`コマンド オブジェクトのインターフェイスです。 ディレクトリが指定されていない場合は、現在のディレクトリが使用されます。  
   
- メソッドは、各ファイルにつき 1 エントリを作成し \(1 行に対応\)、**m\_rgRowData** データ メンバーに配置します。  `CRowsetImpl` クラスは、**m\_rgRowData** データ メンバーを定義します。  この配列内のデータはテーブル全体を表し、テンプレート全体で使用されます。  
+ このメソッドは、(1 行に対応) の各ファイルの 1 つのエントリを作成しに格納、 **m_rgRowData**データ メンバーです。 `CRowsetImpl`クラスを定義、 **m_rgRowData**データ メンバーです。 この配列内のデータは、テーブル全体を表し、すべてのテンプレートで使用されます。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [プロバイダー ウィザードで生成されたファイル](../../data/oledb/provider-wizard-generated-files.md)

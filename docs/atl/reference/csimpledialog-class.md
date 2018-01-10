@@ -4,46 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CSimpleDialog
 - ATLWIN/ATL::CSimpleDialog
 - ATLWIN/ATL::CSimpleDialog::DoModal
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - CSimpleDialog class
 - CSimpleDialog class, modal dialog boxes in ATL
 - dialog boxes, modal
 - modal dialog boxes, ATL
 ms.assetid: 2ae65cc9-4f32-4168-aecd-200b4a480fdf
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 2448f2fcd0547e2344dde51392873e3276f2bd09
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 5e497d5f1646ab890b7dafa3e1fb7e1c711a8a09
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csimpledialog-class"></a>CSimpleDialog クラス
 このクラスは、基本のモーダル ダイアログ ボックスを実装します。  
@@ -83,7 +67,7 @@ class CSimpleDialog : public CDialogImplBase
   
  `CSimpleDialog`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="domodal"></a>CSimpleDialog::DoModal  
@@ -105,6 +89,5 @@ INT_PTR DoModal(HWND hWndParent = ::GetActiveWindow());
 ### <a name="remarks"></a>コメント  
  このメソッドは、ダイアログ ボックスがアクティブな間に、ユーザーとすべての対話を処理します。 モーダル ダイアログ ボックスは、します。ユーザーは、ダイアログ ボックスが閉じられるまで、他のウィンドウを操作できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)
-

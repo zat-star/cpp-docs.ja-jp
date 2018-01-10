@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ae268175c1f104f6f39f5ecbfd1f917ef415000e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6d4466d87e33068b10b3f620bfbe764e4aec76c7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ml-nonfatal-error-a2096"></a>ML の致命的でないエラー A2096
 **セグメント、グループ、またはセグメント レジスタが必要です。**  
@@ -32,5 +33,5 @@ ms.lasthandoff: 10/24/2017
   
 -   [想定](../../assembler/masm/assume.md)ディレクティブは、セグメント レジスタに有効なセグメントのアドレス、セグメント レジスタ、グループ、または特別なを指定しました**フラット**グループ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

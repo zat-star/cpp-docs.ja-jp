@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0ba0314abe9d70f25dc458abdbbf41f798fff263
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 715f337a4c94e65641660b4becbb33d6a151d9ca
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="limits-on-floating-point-constants"></a>浮動小数点定数の制限
 **Microsoft 固有の仕様**  
@@ -33,9 +34,9 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="limits-on-floating-point-constants"></a>浮動小数点定数の制限  
   
-|定数|説明|値|  
+|定数|説明|[値]|  
 |--------------|-------------|-----------|  
-|**FLT_DIG**<br />**DBL_DIG**<br />**LDBL_DIG**|*q* 桁の浮動小数点数を、有効桁数を失わずに丸めて浮動小数点表現にしたり、戻したりできる桁数 *q*。|6<br />15<br />15|  
+|**FLT_DIG**<br />**DBL_DIG**<br />**LDBL_DIG**|*q* 桁の浮動小数点数を、有効桁数を失わずに丸めて浮動小数点表現にしたり、戻したりできる桁数 *q*。|6<br />16<br />16|  
 |**FLT_EPSILON**<br />**DBL_EPSILON**<br />**LDBL_EPSILON**|*x* + 1.0 が 1.0 に等しくならないような最小の正数 *x*|1.192092896e-07F<br />2.2204460492503131e-016<br />2.2204460492503131e-016|  
 |**FLT_GUARD**||0|  
 |**FLT_MANT_DIG**<br />**DBL_MANT_DIG**<br />**LDBL_MANT_DIG**|浮動小数点の有効桁で **FLT_RADIX** により指定された基数の桁数。 基数は 2 です。したがって、これらの値はビットを指定します。|24<br />53<br />53|  
@@ -51,7 +52,7 @@ ms.lasthandoff: 10/24/2017
   
  上記の表の情報は、将来の実装では変わる可能性があることに注意してください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 浮動小数点定数](../c-language/c-floating-point-constants.md)

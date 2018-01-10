@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -36,8 +35,7 @@ f1_keywords:
 - vtprintf_p
 - _vtprintf_p
 - _vprintf_p
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _vtprintf_p_l function
 - _vtprintf_p function
@@ -53,30 +51,16 @@ helpviewer_keywords:
 - vwprintf_p_l function
 - formatted text [C++]
 ms.assetid: 3f99bde3-c891-493d-908f-30559c421058
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: bcf46edc032856c7fa6b74d928cd08c04dcfac26
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: a33f7c8f834e9e1e67a5322d15494423bf10190e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vprintfp-vprintfpl-vwprintfp-vwprintfpl"></a>_vprintf_p、_vprintf_p_l、_vwprintf_p、_vwprintf_p_l
 引数リストへのポインターを使用して、書式付き出力を書き込みます。その際、引数を使用する順序を指定できます。  
@@ -114,13 +98,13 @@ int _vwprintf_p_l(
  `locale`  
  使用するロケール。  
   
- 詳細については、[書式の指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関する記事をご覧ください。  
+ 詳細については、「 [printf 関数と wprintf 関数の書式指定フィールド](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」を参照してください。  
   
 ## <a name="return-value"></a>戻り値  
  `_vprintf_p` 関数と `_vwprintf_p` 関数は、書き込まれた文字数を返します。終端の null 文字は含まれません。出力エラーが発生した場合は、負の値を返します。  
   
 ## <a name="remarks"></a>コメント  
- これらの関数は、引数リストへのポインターを使用して、指定されたデータを書式化して `stdout` に書き込みます。 これらの関数は、引数を使用する順序を指定できることを除いて `vprintf_s` と `vwprintf_s` と同じです。 詳細については、「[printf_p の位置指定パラメーター](../../c-runtime-library/printf-p-positional-parameters.md)」を参照してください。  
+ これらの関数は、引数リストへのポインターを使用して、指定されたデータを書式化して `stdout` に書き込みます。 これらの関数は、引数を使用する順序を指定できることを除いて `vprintf_s` と `vwprintf_s` と同じです。 詳細については、「[printf_p の位置指定パラメーター](../../c-runtime-library/printf-p-positional-parameters.md)」をご覧ください。  
   
  `_vwprintf_p` は `_vprintf_p` のワイド文字バージョンであり、ストリームが ANSI モードで開いている場合、この 2 つの関数の動作は同じです。 `_vprintf_p` では、UNICODE ストリームへの出力はサポートされていません。  
   
@@ -138,9 +122,9 @@ int _vwprintf_p_l(
 |`_vtprintf_p`|`_vprintf_p`|`_vprintf_p`|`_vwprintf_p`|  
 |`_vtprintf_p_l`|`_vprintf_p_l`|`_vprintf_p_l`|`_vwprintf_p_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|省略可能なヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
 |-------------|---------------------|----------------------|  
 |`_vprintf_p`, `_vprintf_p_l`|\<stdio.h> および \<stdarg.h>|\<varargs.h>*|  
 |`_vwprintf_p`, `_vwprintf_p_l`|\<stdio.h> または \<wchar.h>、および \<stdarg.h>|\<varargs.h>*|  
@@ -149,7 +133,7 @@ int _vwprintf_p_l(
   
  コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)   
  [_fprintf_p、_fprintf_p_l、_fwprintf_p、_fwprintf_p_l](../../c-runtime-library/reference/fprintf-p-fprintf-p-l-fwprintf-p-fwprintf-p-l.md)   

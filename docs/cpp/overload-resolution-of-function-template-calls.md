@@ -4,25 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
-helpviewer_keywords:
-- function templates overload resolution
+dev_langs: C++
+helpviewer_keywords: function templates overload resolution
 ms.assetid: a2918748-2cbb-4fc6-a176-e256f120bee4
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: f460497071445cff87308fa9bf6e0d43c6f13a3e
-ms.openlocfilehash: f5c4a8e6392bc5b4338738b56099adac268e7af1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 64bc9371fcddad5f76f1474832a8d69188b60583
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="overload-resolution-of-function-template-calls"></a>関数テンプレート呼び出しのオーバーロード解決
 関数テンプレートは同じ名前の非テンプレート関数をオーバーロードできます。 このシナリオでは、一意の特殊化により関数テンプレートをインスタンス化するため、関数呼び出しは、最初にテンプレート引数の推論を使用して解決されます。 テンプレート引数の推論が失敗した場合、他の関数オーバーロードが呼び出しを解決すると見なされます。 これらのオーバーロード (候補の集合とも呼ばれます) には、非テンプレート関数、およびその他のインスタンス化された関数テンプレートが含まれています。 テンプレート引数の推論に成功すると、オーバーロード解決の規則に従って最適な一致項目を決定するために、生成された関数は他の関数と比較されます。 詳細については、次を参照してください。[関数のオーバー ロード](function-overloading.md)です。  
@@ -92,9 +89,8 @@ int main()
 void f(T1, T2)  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
  [名前解決](../cpp/templates-and-name-resolution.md)   
  [typename](../cpp/typename.md)   
  
-

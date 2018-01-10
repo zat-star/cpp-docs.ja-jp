@@ -18,11 +18,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b1c9965b221002a38428d3d813f4568e937cf52d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9b393bc72bbc6722d353295dc244f75f504b9730
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-run-time-library-reference"></a>C ランタイム ライブラリ リファレンス
 Microsoft ランタイム ライブラリでは、Microsoft Windows オペレーティング システムのプログラミングに使用できるルーチンを提供しています。 これらのルーチンにより、C および C++ 言語では提供されない共通プログラミング タスクの多くを自動化できます。  
@@ -67,5 +68,5 @@ Microsoft ランタイム ライブラリでは、Microsoft Windows オペレー
  [デバッグ](/visualstudio/debugger/debugging-in-visual-studio)  
  Visual Studio デバッガーを使用してアプリケーションやストアド プロシージャの論理エラーを修正する方法を説明するトピックへのリンクがあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ ライブラリ リファレンス](http://msdn.microsoft.com/en-us/fec23c40-10c0-4857-9cdc-33a3b99b30ae)

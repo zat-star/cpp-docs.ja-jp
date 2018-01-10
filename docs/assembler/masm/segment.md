@@ -1,32 +1,31 @@
 ---
-title: "SEGMENT | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "SEGMENT"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SEGMENT directive"
+title: "セグメント |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: SEGMENT
+dev_langs: C++
+helpviewer_keywords: SEGMENT directive
 ms.assetid: e6f68367-6714-4f06-a79c-edfa88014430
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: ce18933c27a62b1a89551320f75df7e25a67ef03
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# SEGMENT
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-セグメント属性を持つ  *という名前*  プログラムセグメントを定義します。  
+# <a name="segment"></a>SEGMENT
+呼ばれるプログラム セグメントを定義*名前*セグメント属性を持つ  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,42 +34,42 @@ statements
 name ENDS  
 ```  
   
-#### パラメーター  
- *配置します。*  
- セグメントの開始アドレスを選択できるメモリ アドレスの範囲。  配置の種類は次のいずれかです :  
+#### <a name="parameters"></a>パラメーター  
+ *align*  
+ メモリ アドレスの範囲のセグメントの開始アドレスを選択できます。 配置の種類は、次のいずれかを指定できます。  
   
-|型を配置します。|の開始アドレス|  
-|--------------|-------------|  
-|**BYTE**|次のバイトアドレス。|  
-|**WORD**|次に使用できるアドレス \(ワードあたり 2 バイト\)。|  
-|**DWORD**|次の二つのアドレス \(ダブル ワードあたり 4 バイト\)。|  
-|**パラグラフ**|次の段落のアドレス \(段落ごとに 16 バイト\)。|  
-|**PAGE**|次に使用できるページ アドレス \(ページごとに 256 バイト\)。|  
-|**整列** \(n\)|次の *N 番目*  バイトアドレス。  詳細については" 解説 " を参照してください。|  
+|アラインメントの種類|開始アドレス|  
+|----------------|----------------------|  
+|**BYTE**|[次へ] の使用可能なバイトのアドレス。|  
+|**WORD**|次に使用可能なワード アドレス (ワードあたり 2 バイト)。|  
+|**DWORD**|次に利用可能なダブルワード アドレス (ダブル ワードあたり 4 バイト)。|  
+|**PARA**|次に使用可能な段落アドレス (1 つの段落は 16 バイト)。|  
+|**PAGE**|次に利用できるページ アドレス (1 ページあたり 256 バイト)。|  
+|**整列**(*n*)|[次へ] 使用可能な *n*番目のバイトのアドレス。 詳細については「解説」セクションを参照してください。|  
   
- このパラメーターを指定しなかった場合 **パラグラフ**  が既定で使用されます。  
+ このパラメーターが指定されていない場合**PARA**は既定で使用します。  
   
- *結合*  
- **パブリック   スタック   共通   メモリ**  のの  *アドレス*  **プライベート**  
+ *combine*  
+ **パブリック**、**スタック**、**共通**、**メモリ**、**で***アドレス*、 **プライベート**  
   
- *使用*  
- **USE16 USE32  フラット**  
+ *使用します。*  
+ **USE16**、 **USE32**、**フラット**  
   
  `characteristics`  
- **情報   読み取り   書き込み   実行   共有  NOPAGE NOCACHE** と  **破棄**  
+ **INFO**、**読み取り**、**書き込み**、 **EXECUTE**、 **SHARED**、 **NOPAGE**、 **NOCACHE**、および**破棄**  
   
- これらはどちらの場合にのみサポートされ似た名前の COFF セクションの特性に対応します \(たとえば **共有**  は IMAGE\_SCN\_MEM\_SHARED に対応します。  設定を IMAGE\_SCN\_MEM\_READ フラグ参照してください。  旧式の読み取り専用フラグによりセクションでは IMG\_SCN\_MEM\_WRITE のフラグをクリアします。  どの `characteristics``characteristics` 設定されている場合既定の特性は使用されずプログラマ指定されたフラグだけ有効です。  
+ これらはサポートされて COFF のみおり、COFF セクション名の特性と同様に対応している (たとえば、 **SHARED** IMAGE_SCN_MEM_SHARED に対応しています)。 読み取りでは、IMAGE_SCN_MEM_READ フラグを設定します。 不使用の READONLY フラグには、IMG_SCN_MEM_WRITE フラグをクリアするセクションが原因です。 存在する場合`characteristics`が既定の特性は使用されず、プログラマが指定したフラグのみが有効に設定します。  
   
  `ALIAS(` `string` `)`  
- この文字列は二つの COFF オブジェクトのセクション名として使用されます。  個々の MASM セグメント名は同じ外部名の複数のセクションを作成します。  
+ この文字列は、生成された COFF オブジェクト内のセクション名として使用されます。  異なる MASM セグメント名では、同じ外部名を複数のセクションを作成します。  
   
- **\/omf** でサポートされていません。  
+ サポートされていません。 **/omf**です。  
   
  `class`  
- セグメントがどのように実行されたファイルにまとめられ並べ替え方法を指定します。  一般的な値は`'DATA'``'CODE'``'CONST'` と `'STACK'` あります。  
+ セグメントを結合し、アセンブルされたファイルの順序付けする方法を指定します。 一般的な値は、 `'DATA'`、 `'CODE'`、`'CONST'`と`'STACK'`  
   
-## 解説  
- `ALIGN(` `n` `)` `n` に 2 1 ~ 8192 の累乗でもそのまま ; **\/omf** でサポートされていません。  
+## <a name="remarks"></a>コメント  
+ `ALIGN(n)`、`n`任意の 1 から 8192 2 の累乗をする可能性があります。 でサポートされていません**/omf**です。  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

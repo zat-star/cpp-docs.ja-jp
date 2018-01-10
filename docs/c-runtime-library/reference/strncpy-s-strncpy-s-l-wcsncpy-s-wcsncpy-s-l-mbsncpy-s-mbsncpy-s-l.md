@@ -56,11 +56,12 @@ caps.latest.revision: "47"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7e1121604d602eec08e7173c790d0a42ac568774
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3d99dbf05d6ce70177b6ef3c5344e5f4059c0aac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strncpys-strncpysl-wcsncpys-wcsncpysl-mbsncpys-mbsncpysl"></a>strncpy_s、_strncpy_s_l、wcsncpy_s、_wcsncpy_s_l、_mbsncpy_s、_mbsncpy_s_l
 文字列の文字を他の文字列にコピーします。  これらの [strncpy、_strncpy_l、wcsncpy、_wcsncpy_l、_mbsncpy、_mbsncpy_l](../../c-runtime-library/reference/strncpy-strncpy-l-wcsncpy-wcsncpy-l-mbsncpy-mbsncpy-l.md) のバージョンは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」で説明されているように、セキュリティが強化されています。  
@@ -184,7 +185,7 @@ errno_t _mbsncpy_s_l(
   
  これには例外があります。 `count` が `_TRUNCATE` の場合は、`strSource` に収まるだけの `strDest` がコピーされます。この場合も、必ず追加される null 終端文字分の余裕は残されます。  
   
- 次に例を示します。  
+ たとえば、オブジェクトに適用された  
   
  `char dst[5];`  
   
@@ -206,9 +207,9 @@ errno_t _mbsncpy_s_l(
   
  `wcsncpy_s` 関数と `_mbsncpy_s` 関数は、`strncpy_s` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 引数と戻り値の`wcsncpy_s`と`mbsncpy_s`それに応じて異なります。 それ以外では、これらの関数の動作は同じです。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
  これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
   
@@ -222,15 +223,15 @@ errno_t _mbsncpy_s_l(
 > [!NOTE]
 >  _strncpy_s_l、`_wcsncpy_s_l`、および `_mbsncpy_s_l` はロケールに依存せず、`_tcsncpy_s_l` に対してのみ用意されている関数です。直接呼び出すためのものではありません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`strncpy_s`, `_strncpy_s_l`|\<string.h>|  
 |`wcsncpy_s`, `_wcsncpy_s_l`|\<string.h> または \<wchar.h>|  
 |`_mbsncpy_s`, `_mbsncpy_s_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -403,7 +404,7 @@ After strncpy_s (with null-termination):
    'mice'  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

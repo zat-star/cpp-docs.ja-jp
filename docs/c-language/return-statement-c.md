@@ -14,11 +14,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: daff74e0b25c43d89a2a45813e285a2222599a72
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2d5ec29b7348d858b502f292efd797020a17bfa0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="return-statement-c"></a>return ステートメント (C)
 `return` ステートメントは、関数の実行を終了し、コントロールを呼び出し元の関数に戻します。 呼び出し直後の位置から、呼び出し元の関数で実行が再開します。 `return` ステートメントは、呼び出し元の関数に値を返すこともできます。 詳細については、「[戻り値の型](../c-language/return-type.md)」をご覧ください。  
@@ -75,5 +76,5 @@ void draw( int i, long long ll )
 i = 2147483647, ll = 4611686014132420609  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ステートメント](../c-language/statements-c.md)

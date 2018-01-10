@@ -20,11 +20,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 39ec10e36d7c6b811e47a03f3d501d2bc494ff8f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4e1fd7779468088fbc90e64932048f46fb82a33c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="irowsetimplirowsetimpl"></a>IRowsetImpl::IRowsetImpl
 コンストラクターです。  
@@ -40,8 +43,8 @@ IRowsetImpl( );
 ## <a name="remarks"></a>コメント  
  通常、このメソッドを直接呼び出す必要はありません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IRowsetImpl クラス](../../data/oledb/irowsetimpl-class.md)

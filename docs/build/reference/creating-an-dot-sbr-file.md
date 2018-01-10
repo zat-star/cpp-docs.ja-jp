@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1fb3638f70d19d88228b8ff65eb78c479868f1b9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d87b71daaf5d7b37e67c2c0e56e844bd5251a490
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-an-sbr-file"></a>.sbr ファイルの作成
 BSCMAKE の入力ファイルは、.sbr ファイルです。 コンパイラでは、コンパイルされる各オブジェクト ファイル (.obj) の .sbr ファイルを作成します。 ビルドまたはブラウザー情報ファイルを更新すると、プロジェクトのすべての .sbr ファイルがディスクで使用できる場合があります。  
@@ -37,5 +38,5 @@ BSCMAKE の入力ファイルは、.sbr ファイルです。 コンパイラで
   
  ビルド プロセスは、.sbr ファイルをパック未参照の定義を削除する場合より効率的にできます。 コンパイラは、自動的に .sbr ファイルをパックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.bsc ファイルのビルド](../../build/reference/building-a-dot-bsc-file.md)

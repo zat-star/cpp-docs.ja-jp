@@ -1,49 +1,51 @@
 ---
-title: "ATL コネクション ポイント クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, コネクション ポイント"
-  - "CComDynamicUnkArray クラス, コネクション ポイント クラス"
-  - "CComUnkArray クラス, コネクション ポイント クラス"
-  - "CFirePropNotifyEvent クラス"
-  - "CFirePropNotifyEvent クラス, コネクション ポイント クラス"
-  - "コネクション ポイント [C++], ATL クラス"
+title: "ATL 接続ポイント クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- CFirePropNotifyEvent class, connection point classes
+- connection points [C++], ATL classes
+- ATL, connection points
+- CComDynamicUnkArray class, connection point classes
+- CFirePropNotifyEvent class
+- CComUnkArray class, connection point classes
 ms.assetid: 9582ba71-7ace-4df4-9c9b-1b0636953efc
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 9845fdffdd951809ee7127c5fec86097a6219354
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ATL コネクション ポイント クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="atl-connection-point-classes"></a>ATL 接続ポイント クラス
+ATL 接続ポイントをサポートするために、次のクラスを使用します。  
+  
+-   [IConnectionPointImpl](../atl/reference/iconnectionpointimpl-class.md)コネクション ポイントを実装します。 表す発信インターフェイスの IID は、テンプレート パラメーターとして渡されます。  
+  
+-   [入力したコネクション](../atl/reference/iconnectionpointcontainerimpl-class.md)接続ポイント コンテナーを実装およびの一覧を管理`IConnectionPointImpl`オブジェクト。  
+  
+-   [IPropertyNotifySinkCP](../atl/reference/ipropertynotifysinkcp-class.md)を表す接続ポイントを実装する、 [IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638)インターフェイスです。  
+  
+-   [CComDynamicUnkArray](../atl/reference/ccomdynamicunkarray-class.md)任意の数の接続ポイントとそのシンク間の接続を管理します。  
+  
+-   [CComUnkArray](../atl/reference/ccomunkarray-class.md)テンプレート パラメーターで指定された接続の定義済みの数を管理します。  
+  
+-   [CFirePropNotifyEvent](../atl/reference/cfirepropnotifyevent-class.md)オブジェクトのプロパティが変更されたかを変更するには、クライアントのシンクに通知します。  
+  
+-   [IDispEventImpl](../atl/reference/idispeventimpl-class.md) ATL COM オブジェクトのコネクション ポイントのサポートを提供します。 これらの接続ポイントは、COM オブジェクトによって提供されているイベント シンク マップにマップされます。  
+  
+-   [されます](../atl/reference/idispeventsimpleimpl-class.md)適切なハンドラー関数にイベントをルーティングするクラスでイベント シンク マップと連携します。  
+  
+## <a name="see-also"></a>参照  
+ [接続ポイント](../atl/atl-connection-points.md)
 
-ATL は、コネクション ポイントをサポートするために次のクラスを使用します:  
-  
--   [IConnectionPointImpl](../Topic/IConnectionPointImpl%20Class.md) は、コネクション ポイントを実装します。  表すアウトゴーイング インターフェイスの IID は、テンプレート パラメーターとして渡されます。  
-  
--   [IConnectionPointContainerImpl](../Topic/IConnectionPointContainerImpl%20Class.md) は、コネクション ポイント コンテナーを実装し、`IConnectionPointImpl` オブジェクトのリストを管理します。  
-  
--   [IPropertyNotifySinkCP](../atl/reference/ipropertynotifysinkcp-class.md) は [IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638) のインターフェイスを表すコネクション ポイントを実装します。  
-  
--   [CComDynamicUnkArray](../Topic/CComDynamicUnkArray%20Class.md) は、コネクション ポイント シンクとの間の接続の任意の数を管理します。  
-  
--   [CComUnkArray](../atl/reference/ccomunkarray-class.md) は、テンプレート パラメーターの指定に従って接続の定義済みの数を管理します。  
-  
--   [CFirePropNotifyEvent](../Topic/CFirePropNotifyEvent%20Class.md) は、オブジェクトのプロパティが変更された通知しますまたは変更することを通知するクライアント シンクが。  
-  
--   [IDispEventImpl](../atl/reference/idispeventimpl-class.md) は、ATL COM オブジェクトのコネクション ポイントをサポートします。  これらのコネクション ポイントは、の COM オブジェクトによって提供されるイベント シンク マップにマップされます。  
-  
--   適切なハンドラーにイベントをルーティング、クラスのイベント シンク マップとともに[IDispEventSimpleImpl](../atl/reference/idispeventsimpleimpl-class.md) の 処理は機能します。  
-  
-## 参照  
- [コネクション ポイント](../atl/atl-connection-points.md)

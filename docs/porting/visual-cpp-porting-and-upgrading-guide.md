@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 274154eb0688bc974a34b511d0aa39d08bb27b61
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ba7e3f139aa9956cd9d2587522dc2d0ac1f2ff7b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="visual-c-porting-and-upgrading-guide"></a>Visual C++  移植とアップグレードのガイド
 このトピックは、Visual C++ コードをアップグレードするためのガイドを提供します。 これには、新しいリリースのツールでコードを適切にコンパイルして実行し、新しい言語と Visual Studio の機能を利用する方法も含まれます。 このトピックには、最新のプラットフォームへのレガシー アプリケーションの移行に関する情報も含まれています。  
@@ -83,7 +84,7 @@ ms.lasthandoff: 10/24/2017
 |[旧バージョンの Visual C++ からのプロジェクトのアップグレード](upgrading-projects-from-earlier-versions-of-visual-cpp.md)|以前のバージョンの Visual C++ で作成されたプロジェクトを使用する方法について説明します。|  
 |[Visual Studio 2017 RC における Visual C++ の新機能](../what-s-new-for-visual-cpp-in-visual-studio.md)|Visual Studio 2015 から Visual Studio 2017 における IDE およびツールの変更|  
 |[Visual Studio 2017 の C++ 準拠の強化](../cpp-conformance-improvements-2017.md)|Visual Studio 2015 から Visual Studio 2017 における標準の準拠の強化|  
-|[Visual C++ 2003 ～ 2015 の変更履歴](visual-cpp-change-history-2003-2015.md)|コードの変更が必要となる可能性のある、Visual Studio 2003 から 2015 における Visual C++ ライブラリおよびビルド ツールのすべての変更の一覧。|  
+|[2003 から 2015 の Visual C++ の履歴の変更](visual-cpp-change-history-2003-2015.md)|コードの変更が必要となる可能性のある、Visual Studio 2003 から 2015 における Visual C++ ライブラリおよびビルド ツールのすべての変更の一覧。|  
 |[2003 ～ 2015 年の Visual C++ の新機能](visual-cpp-what-s-new-2003-through-2015.md)|Visual Studio 2003 から Visual Studio 2015 の Visual C++ の "新機能" に関するすべての情報。|  
 |[サード パーティ ライブラリの移植](porting-third-party-libraries.md)|**vcpkg** コマンド ライン ツールを使用して、古いオープンソース ライブラリを新しい Visual C++ ツールセットでコンパイルされたバージョンに移植する方法。|  
 |[移植およびアップグレード: 例とケース スタディ](porting-and-upgrading-examples-and-case-studies.md)|このセクションでは、いくつかのサンプルとアプリケーションを移植してアップグレードし、エクスペリエンスと結果について説明しました。 これらを読むと、移植およびプロセスのアップグレードに関係する含意がわかります。 プロセス全体を通して、アップグレードに関するヒントとテクニックについて説明し、特定のエラーを修正する方法を示します。|  
@@ -92,5 +93,5 @@ ms.lasthandoff: 10/24/2017
 |[UNIX から Win32 への移植](porting-from-unix-to-win32.md)|UNIX アプリケーションを Windows に移行するためのオプションについて説明します。|  
 |[C++/CLI 移行ガイド](../dotnet/cpp-cli-migration-primer.md)|C++ 構文が新しい構文を使用するように、マネージ拡張をアップグレードする方法を詳しく示します。 詳細については、「[Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)」を参照してください。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++](../visual-cpp-in-visual-studio.md)

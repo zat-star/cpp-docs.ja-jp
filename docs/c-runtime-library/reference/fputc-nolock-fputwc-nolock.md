@@ -44,11 +44,12 @@ caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 635000fb21aa215c6db1c56d49ee365457473a12
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6f3cad8af998292d6912a6d9d1fe00d06acfc3ce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fputcnolock-fputwcnolock"></a>_fputc_nolock、_fputwc_nolock
 スレッドをロックせずにストリームに文字を書き込みます。  
@@ -87,14 +88,14 @@ wint_t _fputwc_nolock(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_fputtc_nolock`|`_fputc_nolock`|`_fputc_nolock`|`_fputwc_nolock`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_fputc_nolock`|\<stdio.h>|  
 |`_fputwc_nolock`|\<stdio.h> または \<wchar.h>|  
   
- コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -121,7 +122,7 @@ int main( void )
 This is a test of _fputc_nolock!!  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fgetc、fgetwc](../../c-runtime-library/reference/fgetc-fgetwc.md)   
  [putc、putwc](../../c-runtime-library/reference/putc-putwc.md)

@@ -26,11 +26,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8b512bad001ed86ad0720002cd49c54b21b6e555
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cbe2879f031f261871676f9e11f0b6f2a0908a95
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ismbc-routines"></a>_ismbc 系ルーチン
 これらの各 **_ismbc** ルーチンは、特定の条件で特定のマルチバイト文字 `c` をテストします。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 10/24/2017
   
  出力値は、ロケールの `LC_CTYPE` カテゴリ設定に影響されます。詳細については、「[setlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 **_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。  
   
-|ルーチン|テスト条件|コード ページ 932 の例|  
+|ルーチンによって返される値|テスト条件|コード ページ 932 の例|  
 |-------------|--------------------|---------------------------|  
 |[_ismbcalnum、_ismbcalnum_l](../c-runtime-library/reference/ismbcalnum-functions.md)|英数字|`c` が ASCII の英字の 1 バイト表現である場合に限り、0 以外の値を返します。`_ismbcdigit` と `_ismbcalpha` の例を参照してください。|  
 |[_ismbcalpha、_ismbcalpha_\_](../c-runtime-library/reference/ismbcalnum-functions.md)|alphabetic|`c` が ASCII の英字 (`_ismbcupper` と `_ismbclower` の例を参照) またはカタカナ (0xA6<=`c`<=0xDF) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
@@ -65,7 +66,7 @@ ms.lasthandoff: 10/24/2017
   
  次のルーチンは、コード ページ 932 に固有です。  
   
-|ルーチン|テスト条件 (コード ページ 932 のみ)|  
+|ルーチンによって返される値|テスト条件 (コード ページ 932 のみ)|  
 |-------------|-------------------------------------------|  
 |[_ismbchira、_ismbchira_l](../c-runtime-library/reference/ismbchira-ismbchira-l-ismbckata-ismbckata-l.md)|2 バイトひらがな: 0x829F<=`c`<=0x82F1。|  
 |[_ismbckata、_ismbckata_l](../c-runtime-library/reference/ismbchira-ismbchira-l-ismbckata-ismbckata-l.md)|2 バイトカタカナ: 0x8340<=`c`<=0x8396。|  
@@ -77,7 +78,7 @@ ms.lasthandoff: 10/24/2017
   
  **コード ページ 932 固有情報終了**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../c-runtime-library/character-classification.md)   
  [is、isw 系ルーチン](../c-runtime-library/is-isw-routines.md)   
  [_ismbb 系ルーチン](../c-runtime-library/ismbb-routines.md)

@@ -1,28 +1,29 @@
 ---
-title: "setjmp/longjump | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "setjmp longjump |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: b0e21902-095d-4198-8f9a-b6326525721a
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 744b855d1b867507b54973f17e2a4f98b63e2b67
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# setjmp/longjump
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-setjmpex.h または setjmp.h をインクルードすると、[setjmp](../c-runtime-library/reference/setjmp.md) または [longjmp](../c-runtime-library/reference/longjmp.md) への呼び出しはすべて、デストラクターを呼び出してから最後に呼び出しを行うアンワインドになります。  これは、setjmp.h をインクルードしても句とデストラクターを呼び出さない x86 の場合と異なります。  
+# <a name="setjmplongjump"></a>setjmp/longjump
+Setjmpex.h または setjmp.h を含めると、すべての呼び出し[setjmp](../c-runtime-library/reference/setjmp.md)または[longjmp](../c-runtime-library/reference/longjmp.md)デストラクターを呼び出すし、最後に呼び出されをアンワインドが発生します。  これは、プロセスは、finally 句の setjmp.h とデストラクターを呼び出さない x86 とは異なります。  
   
- `setjmp` を呼び出すと、現在のスタック ポインター、不揮発性レジスタ、および MxCsr レジスタが保持されます。  `longjmp` を呼び出すと、直前の `setjmp` 呼び出しサイトに戻されます。また、スタック ポインター、不揮発性レジスタ、および MxCsr レジスタが、直前の `setjmp` 呼び出しによって保持された状態に戻されます。  
+ 呼び出し`setjmp`現在のスタック ポインター、非 volatile レジスタと MxCsr レジスタに保持されます。  呼び出す`longjmp`、一番最近に戻る`setjmp`呼び出しサイトのリセット、スタック ポインター、非 volatile レジスタと MxCsr レジスタ、状態に戻すように、最新では保持されます`setjmp`呼び出します。  
   
-## 参照  
- [呼び出し規約](../build/calling-convention.md)
+## <a name="see-also"></a>参照  
+ [呼び出し規則](../build/calling-convention.md)

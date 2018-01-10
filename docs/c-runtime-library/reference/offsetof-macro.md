@@ -29,11 +29,12 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 47243b64519540397573a47180dca5eed25f4c57
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d99947615f2f24116f3d9b64e94daba60c848ec4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="offsetof-macro"></a>offsetof マクロ
 親構造体の先頭からメンバーのオフセットを取得します。  
@@ -64,16 +65,16 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  `offsetof` は関数ではないため、C のプロトタイプを使用して記述することはできません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`offsetof`|\<stddef.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)

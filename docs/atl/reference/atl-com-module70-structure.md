@@ -20,11 +20,12 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a269820c5a0965553989bc57d7c239aa95e527ef
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f5d1e1d2716c5ab97c2b805a943ffe4587341dc4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atlcommodule70-structure"></a>_ATL_COM_MODULE70 構造体
 ATL で COM に関連するコードで使用されます。  
@@ -60,10 +61,10 @@ struct _ATL_COM_MODULE70 {
 ## <a name="remarks"></a>コメント  
  [_ATL_COM_MODULE](atl-typedefs.md#_atl_com_module)の typedef として定義された`_ATL_COM_MODULE70`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体](../../atl/reference/atl-structures.md)
 
 

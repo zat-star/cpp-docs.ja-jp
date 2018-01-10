@@ -39,11 +39,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e6d679d634d14f3a762a6ef3d32d2ca4c5d4b6f0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e783413e207ff63f2b93b31af53b0b0a44ff68f0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="isleadbyte-isleadbytel"></a>isleadbyte、_isleadbyte_l
 文字がマルチバイト文字の先行バイトかどうかを判定します。  
@@ -72,7 +73,7 @@ int _isleadbyte_l(
 ## <a name="remarks"></a>コメント  
  `isleadbyte` のマクロは、引数がマルチバイト文字の先行バイトの場合に 0 以外の値を返します。 `isleadbyte`-1 から任意の整数引数に対して意味のある結果が生成されます (`EOF`) に`UCHAR_MAX`(0 xff) まで、包括的です。  
   
- `isleadbyte` の予想される引数の型は `int`です。符号付き文字が渡されると、コンパイラはこれを符号拡張して整数に変換し、予期しない結果が生じる場合があります。  
+ `isleadbyte` の予想される引数の型は `int` です。符号付き文字が渡されると、コンパイラはこれを符号拡張して整数に変換し、予期しない結果が生じる場合があります。  
   
  この関数の `_l` サフィックスが付いたバージョンは、サフィックスが付いていないバージョンと同じですが、ロケールに依存する動作については、現在のロケールではなく渡されたロケールを使用する点が異なります。  
   
@@ -82,16 +83,16 @@ int _isleadbyte_l(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_istleadbyte`|常に false を返します|**_** `isleadbyte`|常に false を返します|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`isleadbyte`|\<ctype.h>|  
 |`_isleadbyte_l`|\<ctype.h>|  
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)

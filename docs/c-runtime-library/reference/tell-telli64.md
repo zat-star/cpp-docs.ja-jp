@@ -41,11 +41,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 57e628419bbf074418d053c755269618f480743e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c65ed3f0829370c0fe7a9f9e6a12a57688a5ca1b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tell-telli64"></a>_tell、_telli64
 ファイル ポインターの位置を取得します。  
@@ -75,9 +76,9 @@ __int64 _telli64(
 ## <a name="remarks"></a>コメント  
  `_tell` 関数は、`handle` 引数に関連付けられたファイル ポインター (存在する場合) の現在の位置を取得します。 位置は、ファイルの先頭からのバイト数で表されます。 `_telli64` 関数では、この値は 64 ビットの整数で表されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_tell`, `_telli64`|\<io.h>|  
   
@@ -129,7 +130,7 @@ Line two.
 Current file position is: 20  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
  [ftell、_ftelli64](../../c-runtime-library/reference/ftell-ftelli64.md)   
  [_lseek、_lseeki64](../../c-runtime-library/reference/lseek-lseeki64.md)

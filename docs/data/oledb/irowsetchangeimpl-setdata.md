@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d42f64575e515b67d296acbd21411bcd184d479c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: c515891f34b858bebb57716eba8299a8c1e64b15
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="irowsetchangeimplsetdata"></a>IRowsetChangeImpl::SetData
 1 つまたは複数の列のデータ値を設定します。  
@@ -43,8 +46,8 @@ ms.lasthandoff: 10/24/2017
 #### <a name="parameters"></a>パラメーター  
  参照してください[irowsetchange::setdata](https://msdn.microsoft.com/en-us/library/ms721232.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IRowsetChangeImpl クラス](../../data/oledb/irowsetchangeimpl-class.md)

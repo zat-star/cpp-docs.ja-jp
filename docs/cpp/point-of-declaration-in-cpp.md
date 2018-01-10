@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8a528bdeaa401aaab7d9287b0e9dd5aace2c93b1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 64c1fa1d6d8feb4b869957101bb4b37f125d0f8b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="point-of-declaration-in-c"></a>C++ での宣言の位置
 名前は宣言子の直後、ただし初期化子 (省略可能) よりも前の位置で宣言されるものと見なされます (宣言子の詳細については、次を参照してください[宣言と定義](declarations-and-definitions-cpp.md)。)。  
@@ -37,5 +38,5 @@ int main()
   
  宣言の位置があった場合*後*、初期化には、次に、ローカル`dVar`7.0 では、グローバル変数の値に初期化が`dVar`です。 しかし、実際にはそうでないため、`dVar` は未定義の値に初期化されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スコープ](../cpp/scope-visual-cpp.md)

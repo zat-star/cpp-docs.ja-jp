@@ -17,18 +17,19 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a711a8087fef7978eceaadece317d4aac95d6340
-ms.sourcegitcommit: 2a5d0e9e6829150cbc22c6de3395ec13008e3266
+ms.workload: cplusplus
+ms.openlocfilehash: 11b28793e5e659e3135061e3a6fd410d9b1c9f3c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-conversion"></a>データ変換
 これらのルーチンは、ある形式から別の形式にデータを変換します。 通常、これらのルーチンは、ユーザーが作成した変換より速く変換を実行します。 `to` プレフィックスで始まるルーチンは、それぞれ、関数およびマクロとして実装されます。 実装の使い分けについては、「[関数またはマクロの選択に関する推奨事項](../c-runtime-library/recommendations-for-choosing-between-functions-and-macros.md)」を参照してください。  
   
 ### <a name="data-conversion-routines"></a>データ変換ルーチン  
   
-|ルーチン|用途|  
+|ルーチンによって返される値|使用|  
 |-------------|---------|  
 |[abs](../c-runtime-library/reference/abs-labs-llabs-abs64.md)|整数の絶対値を求める|  
 |[atof、_atof_l、_wtof、_wtof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|文字列を `float` に変換する|  
@@ -69,5 +70,5 @@ ms.lasthandoff: 10/27/2017
 |[_atoi64、_atoi64_l、_wtoi64、_wtoi64_l](../c-runtime-library/reference/atoi64-atoi64-l-wtoi64-wtoi64-l.md)|ワイド文字列を `__int64` に変換する|  
 |[atol、_atol_l、_wtol、_wtol_l](../c-runtime-library/reference/atol-atol-l-wtol-wtol-l.md)|ワイド文字列を `long` に変換する|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

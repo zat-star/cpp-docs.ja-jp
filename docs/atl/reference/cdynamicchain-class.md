@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,37 +14,22 @@ f1_keywords:
 - ATLWIN/ATL::CDynamicChain::CallChain
 - ATLWIN/ATL::CDynamicChain::RemoveChainEntry
 - ATLWIN/ATL::CDynamicChain::SetChainEntry
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - message maps, chaining
 - chaining message maps
 - CDynamicChain class
 ms.assetid: f084b2be-0e77-4836-973d-ae278a1e9da8
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 54137760f2c1ee0f93fd8ad21238710f4b6a4a56
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: f57da02b764c1cbce6a97ecbea8aa84e4ffcce9e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdynamicchain-class"></a>CDynamicChain クラス
 このクラスは、メッセージ マップの動的な組み合わせをサポートするメソッドを提供します。  
@@ -89,17 +73,17 @@ class CDynamicChain
   
  たとえば、クラスを次のように定義します。  
   
- [!code-cpp[NVC_ATL_Windowing # 88](../../atl/codesnippet/cpp/cdynamicchain-class_1.h)]  
+ [!code-cpp[NVC_ATL_Windowing#88](../../atl/codesnippet/cpp/cdynamicchain-class_1.h)]  
   
  クライアントは、 `CMyWindow::SetChainEntry`:  
   
- [!code-cpp[NVC_ATL_Windowing # 89](../../atl/codesnippet/cpp/cdynamicchain-class_2.cpp)]  
+ [!code-cpp[NVC_ATL_Windowing#89](../../atl/codesnippet/cpp/cdynamicchain-class_2.cpp)]  
   
  ここで`chainedObj`から派生したクラスのインスタンスで、チェーンされたオブジェクトは、`CMessageMap`です。 ここで場合、`myCtl`によって処理されていないメッセージを受信`OnPaint`または`OnSetFocus`、ウィンドウ プロシージャにメッセージを送信する`chainedObj`の既定のメッセージ マップです。  
   
  メッセージ マップの組み合わせの詳細については、次を参照してください[メッセージ マップ](../../atl/message-maps-atl.md)"ATL ウィンドウ クラス"記事の内容。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="callchain"></a>CDynamicChain::CallChain  
@@ -199,7 +183,6 @@ BOOL SetChainEntry(
 ### <a name="remarks"></a>コメント  
  場合、`dwChainID`値は、コレクションに既に存在、その関連付けられたオブジェクトとメッセージ マップに置き換えられます`pObject`と`dwMsgMapID`、それぞれします。 それ以外の場合、新しいエントリが追加されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CWindowImpl クラス](../../atl/reference/cwindowimpl-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -31,38 +30,23 @@ f1_keywords:
 - math/_fpclass
 - float/_fpclass
 - math/_fpclassf
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - fpclass function
 - floating-point numbers, IEEE representation
 - _fpclass function
 - _fpclassf function
 ms.assetid: 2774872d-3543-446f-bc72-db85f8b95a6b
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 9f061841ea6f4050945caeb2cacb9acfdce77c44
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 92501f119d0f0222de0ffeca0611e5fd6c96b697
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fpclass-fpclassf"></a>_fpclass、_fpclassf
 引数の浮動小数点の分類を示す値を返します。  
@@ -86,7 +70,7 @@ int _fpclassf(
 ## <a name="return-value"></a>戻り値  
  `_fpclass` 関数と `_fpclassf` 関数は、引数 `x` の浮動小数点の分類を示す整数値を返します。 分類には、\<float.h> で定義された次のいずれかの値が含まれる場合があります。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |`_FPCLASS_SNAN`|シグナル型 NaN|  
 |`_FPCLASS_QNAN`|クワイエット型 NaN|  
@@ -102,7 +86,7 @@ int _fpclassf(
 ## <a name="remarks"></a>コメント  
  `_fpclass` 関数および `_fpclassf` 関数は、Microsoft 固有の関数です。 [fpclassify](../../c-runtime-library/reference/fpclassify.md) によく似ていますが、引数に関するより詳細な情報を返します。 `_fpclassf` 関数は、x64 プラットフォーム用にコンパイルするときにのみ使用できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
@@ -110,7 +94,7 @@ int _fpclassf(
   
  互換性と適合性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [isnan、_isnan、_isnanf](../../c-runtime-library/reference/isnan-isnan-isnanf.md)   
  [fpclassify](../../c-runtime-library/reference/fpclassify.md)

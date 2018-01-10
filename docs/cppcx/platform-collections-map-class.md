@@ -24,11 +24,12 @@ caps.latest.revision: "19"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 3cf7cec405170a1bb1ee02cfd076c78c43524c74
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a3893f7213bc2b154851a5d2481070d0d43724bc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformcollectionsmap-class"></a>Platform::Collections::Map クラス
 キー/値ペアのコレクションである *マップ*を表します。  
@@ -97,13 +98,13 @@ ref class Map sealed;
   
 |||  
 |-|-|  
-|名前|説明|  
+|name|説明|  
 |[Map::mapchanged](#mapchanged-event.md)`event`|マップが変更されたときに発生します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `Map`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Platform::Collections  
@@ -292,6 +293,6 @@ virtual property unsigned int Size;
   
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)   
  [C++ での Windows ランタイム コンポーネントを作成します。](/MicrosoftDocs/windows-uwp/blob/docs/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md)

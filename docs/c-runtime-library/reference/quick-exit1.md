@@ -34,11 +34,12 @@ caps.latest.revision: "3"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d2ae187d0132ca53b1ffba2b26ef18fa467b9072
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fb6a8bdea6cb37bd70d6aeda490e2470aa74e999
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="quickexit"></a>quick_exit
 通常のプログラムが終了するようにします。  
@@ -65,15 +66,15 @@ __declspec(noreturn) void quick_exit(
   
  登録された関数が呼び出された後、 `quick_exit` は、 `_Exit` 値を使用してコントロールをホスト環境に返すことにより、 `status` を呼び出します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`quick_exit`|\<process.h> または \<stdlib.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [abort](../../c-runtime-library/reference/abort.md)   
  [atexit](../../c-runtime-library/reference/atexit.md)   

@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- _aligned_offset_recalloc
+apiname: _aligned_offset_recalloc
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -26,37 +24,21 @@ apitype: DLLExport
 f1_keywords:
 - aligned_offset_recalloc
 - _aligned_offset_recalloc
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - aligned_offset_recalloc function
 - _aligned_offset_recalloc function
 ms.assetid: a258f54e-eeb4-4853-96fc-007d710f98e9
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: c2586cdd836795a31e457edcba42292a6901ec6f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 886b90cd6509978d5af48d7d6be4dc0aa6e02ae9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="alignedoffsetrecalloc"></a>_aligned_offset_recalloc
 [_aligned_malloc](../../c-runtime-library/reference/aligned-malloc.md) または [_aligned_offset_malloc](../../c-runtime-library/reference/aligned-offset-malloc.md) で割り当てられたメモリ ブロックのサイズを変更し、メモリを 0 に初期化します。  
@@ -84,7 +66,7 @@ void * _aligned_offset_recalloc(
  各要素の長さ (バイト単位)。  
   
  `alignment`  
- 配置の値。2 の累乗の整数である必要があります。  
+ アラインメント値。2 の整数乗である必要があります。  
   
  `offset`  
  アラインメントを強制するためのメモリ割り当てへのオフセット。  
@@ -101,13 +83,13 @@ void * _aligned_offset_recalloc(
   
  この関数は、メモリ割り当てが失敗するか、要求されたサイズ (`num` * `size`) が `_HEAP_MAXREQ` より大きかった場合に、`errno` を `ENOMEM` に設定します。 `errno` に関する詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。 また、`_aligned_offset_recalloc` はそのパラメーターを検証します。 `alignment` が 2 の累乗でないか、`offset` が要求されたサイズ以上かつ 0 以外である場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `NULL` を返し、`errno` を `EINVAL` に設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_aligned_offset_recalloc`|\<malloc.h>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データの整列](../../c-runtime-library/data-alignment.md)   
  [_recalloc](../../c-runtime-library/reference/recalloc.md)   
  [_aligned_recalloc](../../c-runtime-library/reference/aligned-recalloc.md)

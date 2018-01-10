@@ -36,11 +36,12 @@ caps.latest.revision: "28"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e5f1f82f5d7ae8899d1045280f24c7af405c64b6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a8c8f651e04a1d68cd27f8321d6a30250c0e6ce1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="controlfps"></a>_controlfp_s
 浮動小数点制御ワードの取得および設定を行います。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_control87、_controlfp、\__control87_2](../../c-runtime-library/reference/control87-controlfp-control87-2.md) です。  
@@ -124,13 +125,13 @@ _controlfp_s(&current_word, _DN_FLUSH, _MCW_DN);
 |`_MCW_RC` (丸め制御)|0x00000300|`_RC_CHOP`<br /><br /> `_RC_UP`<br /><br /> `_RC_DOWN`<br /><br /> `_RC_NEAR`|0x00000300<br /><br /> 0x00000200<br /><br /> 0x00000100<br /><br /> 0x00000000|  
 |`_MCW_PC` (精度制御)<br /><br /> (ARM プラットフォームまたは [!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] プラットフォームではサポートされていません。)|0x00030000|`_PC_24` (24 ビット)<br /><br /> `_PC_53` (53 ビット)<br /><br /> `_PC_64` (64 ビット)|0x00020000<br /><br /> 0x00010000<br /><br /> 0x00000000|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_controlfp_s`|\<float.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -183,7 +184,7 @@ Default:  0x9001f
 0.1 * 0.1 = 1.000000000000000e-002  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [_clear87、_clearfp](../../c-runtime-library/reference/clear87-clearfp.md)   
  [_status87、_statusfp、_statusfp2](../../c-runtime-library/reference/status87-statusfp-statusfp2.md)   

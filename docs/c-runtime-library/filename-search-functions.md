@@ -28,11 +28,12 @@ caps.latest.revision: "26"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ee67049241067285f564e59791f408347cc0c747
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 16aff4db1a04c31b3b45c9a61f74c44d6c9465f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="filename-search-functions"></a>ファイル名検索関数
 これらの関数は指定されたファイル名を検索し、検索を閉じます:  
@@ -162,5 +163,5 @@ RDO HID SYS ARC  FILE         DATE                           SIZE
  N   N   N   Y   test.c       Wed Feb 06 14:30:44 2002        312  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [システム コール](../c-runtime-library/system-calls.md)

@@ -1,32 +1,33 @@
 ---
-title: "inner_product (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::inner_product"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "inner_product 関数 [STL/CLR]"
+title: "inner_product (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::inner_product
+dev_langs: C++
+helpviewer_keywords: inner_product function [STL/CLR]
 ms.assetid: 97d7a507-7494-4216-aedf-0546ed0edb3f
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5d61de34fcb029000ac27efcf74bd1321d1b7e32
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# inner_product (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 種類の span 要素の積の合計を計算し、指定された初期値に追加したり、合計や製品の二項演算が他の指定二項演算が別の一般的な手順の結果を計算します。  
+# <a name="innerproduct-stlclr"></a>inner_product (STL/CLR)
+2 つの範囲の要素ごとの積の合計を計算し、それを指定された初期値に加算するか、または和や積の二項演算が指定された別の二項演算に置き換えられた汎用化されたプロシージャの結果を計算します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _InIt1, class _InIt2, class _Ty> inline  
@@ -38,13 +39,13 @@ template<class _InIt1, class _InIt2, class _Ty, class _Fn21,
         _Ty _Val, _Fn21 _Func1, _Fn22 _Func2);  
 ```  
   
-## 解説  
- この関数は、STL の数値関数 `inner_product`と同様に動作します。  詳細については、「[inner\_product](../Topic/inner_product.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリの数値関数と同じ`inner_product`です。 詳細については、次を参照してください。 [inner_product](../standard-library/numeric-functions.md#inner_product)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/桁数\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/numeric >  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [数値](../dotnet/numeric-stl-clr.md)
+## <a name="see-also"></a>参照  
+ [numeric (STL/CLR)](../dotnet/numeric-stl-clr.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 53b2457c87e587b4e1ef13e53bf2dfcdd4800d7f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6c574040d6004516682379a5e64b87c1b92388ec
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="special-characters-in-a-makefile"></a>メイクファイルの特殊文字
 NMAKE の特殊文字をリテラル文字としてを使用するのには、前にキャレット (^) を配置します。 NMAKE では、その他の文字の前にキャレットを無視します。 特殊文字は次のとおりです。  
@@ -37,5 +38,5 @@ NMAKE の特殊文字をリテラル文字としてを使用するのには、�
   
  コマンド内のリテラル文字として、ドル記号 ($) を使用するには、2 つのドル記号 ($) を指定します。 このメソッドは、他の状況でも使用できます、^ $ が有効です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メイクファイルの内容](../build/contents-of-a-makefile.md)

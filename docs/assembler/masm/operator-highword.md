@@ -1,39 +1,40 @@
 ---
-title: "operator HIGHWORD | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "HIGHWORD"
-  - "operator HIGHWORD"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator HIGHWORD"
-  - "HIGHWORD operator"
+title: "HIGHWORD 演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- HIGHWORD
+- operator HIGHWORD
+dev_langs: C++
+helpviewer_keywords:
+- operator HIGHWORD
+- HIGHWORD operator
 ms.assetid: 6a3e4d60-e7b6-4cab-b4d7-d4cb7fb307c9
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 2d36e4fed90435e6380022ab1d52850447e18817
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator HIGHWORD
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-*式*  の下位 32 ビットの上位 16 ビットを返します。  MASM 式は 64 ビット値です。  
+# <a name="operator-highword"></a>HIGHWORD 演算子
+下位 32 ビットの上位 16 ビットを返します*式*です。 MASM 式は、64 ビット値です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 HIGHWORD expression  
 ```  
   
-## 参照  
- [Operators Reference](../Topic/Operators%20Reference.md)
+## <a name="see-also"></a>参照  
+ [演算子リファレンス](../../assembler/masm/operators-reference.md)

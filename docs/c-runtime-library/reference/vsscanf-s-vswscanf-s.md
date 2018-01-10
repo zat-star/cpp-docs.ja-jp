@@ -32,11 +32,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d11fd489fc732428b257c50dd6a2792131d0396a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b041da3df2b745f1764440ed5afafa2cd7690b68
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vsscanfs-vswscanfs"></a>vsscanf_s、vswscanf_s
 文字列から書式付きデータを読み込みます。 これらのバージョンの [vsscanf、vswscanf](../../c-runtime-library/reference/vsscanf-vswscanf.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンです。  
@@ -71,7 +72,7 @@ int vswscanf_s(
   
  `buffer` または `format` が `NULL` ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、`errno` を `EINVAL` に設定します。  
   
- エラー コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `vsscanf_s` 関数は、`buffer` 引数リストで各引数によって指定された位置に `arglist` を読み込みます。 引数リストの引数は、`format` の型指定子に対応する型を持つ変数へのポインターを指定します。 セキュリティがそれほど高くない `vsscanf` とは異なり、型フィールド文字 `c`、`C`、`s`、`S`、または `[]` で囲まれた文字列コントロール セットを使用する場合、バッファー サイズのパラメーターが必要です。 バッファー サイズ (文字単位) は、バッファー サイズが必要な各バッファーの後に追加パラメーターとして指定する必要があります。  
@@ -93,14 +94,14 @@ int vswscanf_s(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_vstscanf_s`|`vsscanf_s`|`vsscanf_s`|`vswscanf_s`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`vsscanf_s`|\<stdio.h>|  
 |`vswscanf_s`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -154,7 +155,7 @@ Integer:  = 15
 Real:     = 15.000000  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [scanf、_scanf_l、wscanf、_wscanf_l](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
  [sscanf、_sscanf_l、swscanf、_swscanf_l](../../c-runtime-library/reference/sscanf-sscanf-l-swscanf-swscanf-l.md)   

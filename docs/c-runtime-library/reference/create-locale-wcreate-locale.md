@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -29,38 +28,23 @@ f1_keywords:
 - create_locale
 - _create_locale
 - __create_locale
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - locales, creating
 - _create_locale function
 - create_locale function
 - __create_locale function
 ms.assetid: ca362464-9f4a-4ec6-ab03-316c55c5be81
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
-ms.openlocfilehash: 5068d509e335fd99246d5dff5fd51f2b0b1493b6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/28/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 73e89121dda53300b276b76f49625ad274df4519
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="createlocale-wcreatelocale"></a>_create_locale、_wcreate_locale
 ロケール オブジェクトを作成します。  
@@ -123,14 +107,14 @@ _locale_t _wcreate_locale(
   
  この関数の以前の名前 `__create_locale` (先頭に 2 個のアンダースコア) は、使用されなくなりました。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_create_locale`|\<locale.h>|  
 |`_wcreate_locale`|\<locale.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -194,7 +178,7 @@ In de-CH locale, _strftime_l returns 'Samstag, 9. Februar 2002'
 In 'C' locale, _strftime_l returns 'Saturday, February 09, 2002'  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール名、言語、および国/地域識別文字列](../../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
  [言語識別文字列](../../c-runtime-library/language-strings.md)   
  [国/地域別文字列](../../c-runtime-library/country-region-strings.md)   

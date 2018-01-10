@@ -59,11 +59,12 @@ caps.latest.revision: "32"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: faa9a7eee796bddcdfe67e43ced5e2f10c566bd7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8c7277a52dfbc77bb41fe0603129813ee682b4bb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strlen-wcslen-mbslen-mbslenl-mbstrlen-mbstrlenl"></a>strlen、wcslen、_mbslen、_mbslen_l、_mbstrlen、_mbstrlen_l
 現在のロケールまたは指定されたロケールを使用し、文字列の長さを取得します。 これらの関数についてセキュリティ保護が強化されたバージョンを使用できます。「[strnlen、strnlen_s、wcsnlen、wcsnlen_s、_mbsnlen、_mbsnlen_l、_mbstrnlen、_mbstrnlen_l](../../c-runtime-library/reference/strnlen-strnlen-s.md)」をご覧ください  
@@ -121,18 +122,18 @@ size_t _mbstrlen_l(
   
  `_mbslen` と `_mbslen_l` は、マルチバイト文字列のマルチバイト文字数を返しますが、マルチバイト文字の有効性はテストしません。 `_mbstrlen` と `_mbstrlen_l` は、マルチバイト文字の有効性をテストし、マルチバイト文字のシーケンスを認識します。 `_mbstrlen` または `_mbstrlen_l` に渡された文字列に、該当するコード ページにおいて無効なマルチバイト文字が含まれる場合、これらの関数は -1 を返し、`errno` を `EILSEQ` に設定します。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`strlen`|\<string.h>|  
 |`wcslen`|\<string.h> または \<wchar.h>|  
 |`_mbslen`, `_mbslen_l`|\<mbstring.h>|  
 |`_mbstrlen`, `_mbstrlen_l`|\<stdlib.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -197,14 +198,14 @@ Length of 'ABCァD' : 5
 Bytes in 'ABCァD' : 6  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
  [strcat、wcscat、_mbscat](../../c-runtime-library/reference/strcat-wcscat-mbscat.md)   
  [strcmp、wcscmp、_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
+ [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
  [strcpy、wcscpy、_mbscpy](../../c-runtime-library/reference/strcpy-wcscpy-mbscpy.md)   
  [strrchr、wcsrchr、_mbsrchr、_mbsrchr_l](../../c-runtime-library/reference/strrchr-wcsrchr-mbsrchr-mbsrchr-l.md)   
  [_strset、_strset_l、_wcsset、_wcsset_l、_mbsset、_mbsset_l](../../c-runtime-library/reference/strset-strset-l-wcsset-wcsset-l-mbsset-mbsset-l.md)   

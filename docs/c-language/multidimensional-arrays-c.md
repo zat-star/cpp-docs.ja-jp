@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fbc5ca61d1a45521c67426144ad5991170849230
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7b3b067db3812fbe7e5db1d367635eedc5362527
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multidimensional-arrays-c"></a>多次元配列 (C)
 添字式には、次のように複数の添字がある場合があります。  
@@ -40,7 +41,7 @@ expression3
   
  複数の添字を持つ式は、"多次元配列" の要素を参照します。 多次元配列は、要素が配列である配列です。 たとえば、3 次元配列の最初の要素は 2 次元配列です。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  以下では、その後の各例で使用するために、`prop` という名前の配列を宣言しています。この配列には 3 つの要素があり、各要素は `int` 値の 4 × 6 配列になっています。  
   
 ```  
@@ -82,5 +83,5 @@ ipp = prop[2];
   
  同様に、2 番目のステートメント `prop[2]` の式 `ipp = prop[2];` の結果は、1 つの 2 次元配列のアドレスを指すポインター値です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [添字演算子:](../cpp/subscript-operator.md)

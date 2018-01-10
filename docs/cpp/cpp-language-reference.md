@@ -18,11 +18,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5421447cfbe1e1bd8f5d25d80c492d10b1469e0f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 852f4522ecf32643611f6bbd4d86028e883bb6eb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-language-reference"></a>C++ 言語リファレンス
 このリファレンスでは、Microsoft Visual C++ に実装されている C++ プログラミング言語について説明します。 組織がに基づいて*、注解 C++ リファレンス マニュアル*Margaret Ellis と Bjarne stroustrup 共著者や、ANSI/ISO C 国際規格 (ISO/IEC FDIS 14882)。 C++ 言語機能の Microsoft 固有実装が含まれます。  
@@ -118,5 +119,5 @@ ms.lasthandoff: 10/24/2017
  [Visual C++ ライブラリ](../standard-library/cpp-standard-library-reference.md)  
  Visual C++ のさまざまなライブラリの参照のスタート ページへのリンクの一覧。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 言語リファレンス](../c-language/c-language-reference.md)

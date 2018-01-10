@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 28fb749a705ed01b4c10d22cea0062c2f0d799c7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bf1dd68a3ca8e6735b07c5bd7247b457bd7d246d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="interfaces-atl"></a>インターフェイス (ATL)
 インターフェイスは、オブジェクトが外部への機能を公開する方法です。 COM では、インターフェイスは、(C++ vtable) のようなオブジェクトによって実装されている関数へのポインターのテーブルです。 テーブルは、インターフェイスを表し、指す関数は、そのインターフェイスのメソッド。 オブジェクトは、選択され、同数のインターフェイスを公開できます。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  標準の COM と OLE インターフェイスの Iid が定義されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [COM の概要](../atl/introduction-to-com.md)   
  [COM オブジェクトとインターフェイス](http://msdn.microsoft.com/library/windows/desktop/ms690343)
 
