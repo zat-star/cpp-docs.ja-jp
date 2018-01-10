@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 08165d5e6308697ec75a6d03751b26fb626dbb15
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2d9b7ce4895d51c50185c5262664dc478af62cfa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="declarators-and-variable-declarations"></a>宣言子と変数宣言
 このセクションの残りの部分では、次の一覧に示す変数型の宣言の形式とその意味について説明します。 特に、残りの各セクションでは、以下を宣言する方法について説明します。  
@@ -47,7 +48,7 @@ __declspec(thread) char *var;
   
  `char` は型指定子、`__declspec(thread)` と `*` は修飾子、`var` は識別子の名前です。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
  宣言子は、値の配列、値へのポインター、および指定された型の値を返す関数を宣言するために使用します。 宣言子は、このセクションで後述する配列およびポインターの宣言に記述されます。  
   
@@ -91,7 +92,7 @@ int *aptr[10] // Declares an array of 10 pointers
   
  Microsoft C コンパイラでは、数値型、構造体型、または共用体型を変更できる宣言子の数は制限されません。 数は、使用できるメモリ容量によってのみ制限されます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言と型](../c-language/declarations-and-types.md)

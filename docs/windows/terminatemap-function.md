@@ -15,11 +15,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: efe6b143c2fe9a48a008f9005244178b436d170e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 42f71f86dce35457d5efa81c28d2a58106ba5b81
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="terminatemap-function"></a>TerminateMap 関数
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -49,10 +52,10 @@ inline bool TerminateMap(
 ## <a name="remarks"></a>コメント  
  指定されたモジュールでクラス ファクトリを終了します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** module.h  
   
  **Namespace:** Microsoft::WRL::Details  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

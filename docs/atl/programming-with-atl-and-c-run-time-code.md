@@ -18,11 +18,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 38a3a64f4853948fcd9ebca1593254e803333a83
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0c14b52ef062b2a60815f47adfb2b8d39e6aa31f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="programming-with-atl-and-c-run-time-code"></a>ATL および C ランタイム コードによるプログラミング
 このセクションでは、静的または動的リンクと C ランタイム ライブラリ (CRT) を使用する利点について説明します。  
@@ -44,6 +45,6 @@ ms.lasthandoff: 10/24/2017
  [C ランタイム ライブラリ](../c-runtime-library/crt-library-features.md)  
  C ランタイム ライブラリを構成するさまざまな .lib ファイルについて説明し、関連するコンパイラ オプションとプリプロセッサ ディレクティブを一覧表示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../atl/active-template-library-atl-concepts.md)
 

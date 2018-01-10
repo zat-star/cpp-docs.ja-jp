@@ -25,11 +25,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 88af917cb86826cc4615948f7a5d2e53e888bad5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 261fb23c96bee0d646f64d587d9f7afecc59d4d2
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="crtlcmapstringw"></a>__crtLCMapStringW
 1 つの文字列を別の文字列にマップして、指定したロケールに依存する変換を実行します。 この関数を使用して入力文字列の並べ替えキーを生成することもできます。  
@@ -75,10 +76,10 @@ int __crtLCMapStringW(
  0 は失敗を示します。 拡張されたエラー情報を取得するには、 `GetLastError` 関数を呼び出します。  
   
 ## <a name="remarks"></a>コメント  
- `cchSrc` が 0 より大きく、 `lpSrcStr` が null で終わる文字列の場合、 `__crtLCMapStringW` は `cchSrc` を文字列の長さに設定します。 次に、 `__crtLCMapStringW` は、 `LCMapString` のワイド文字列 (Unicode) バージョンを指定されたパラメーターで呼び出します。 この関数のパラメーターと戻り値の詳細については、 `LCMapString` MSDN ライブラリ [の](http://go.microsoft.com/fwlink/?linkID=150542)関数のページを参照してください。  
+ `cchSrc` が 0 より大きく、 `lpSrcStr` が null で終わる文字列の場合、 `__crtLCMapStringW` は `cchSrc` を文字列の長さに設定します。 次に、 `__crtLCMapStringW` は、 `LCMapString` のワイド文字列 (Unicode) バージョンを指定されたパラメーターで呼び出します。 この関数のパラメーターと戻り値の詳細については、 `LCMapString` MSDN ライブラリ [の](http://go.microsoft.com/fwlink/p/?linkid=150542)関数のページを参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |__crtLCMapStringW|awint.h|

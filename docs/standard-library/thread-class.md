@@ -34,11 +34,12 @@ helpviewer_keywords:
 - std::thread [C++], joinable
 - std::thread [C++], native_handle
 - std::thread [C++], swap
-ms.openlocfilehash: 70f791044d7ebdcb97ee53d4c99bd1db4ed3561b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2e2d9d1bd19b34cd4b542d0325b06ad57e1a7c51
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="thread-class"></a>thread クラス
 アプリケーション内の実行スレッドを観察および管理するために使用するオブジェクトを定義します。  
@@ -86,7 +87,7 @@ class thread;
 |----------|-----------------|  
 |[thread::operator=](#op_eq)|スレッドを現在の `thread` オブジェクトと関連付けます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<スレッド >  
   
  **名前空間:** std  
@@ -230,7 +231,7 @@ thread(thread&& Other) noexcept;
   
  3 番目のコンストラクターは、`Other` に関連付けられているスレッドに関連付けられているオブジェクトを構築します。 `Other` は既定で構築される状態に設定されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<thread>](../standard-library/thread.md)
 

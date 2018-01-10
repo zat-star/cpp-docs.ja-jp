@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4c53a7446375aae8e6c049d28e9b3ecb767171bf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cb8245270ac9b6ec1068e026f285bfda8f25a923
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="object-safety-classes"></a>オブジェクトの安全性クラス
 次のクラスは、オブジェクトの安全性のサポートを提供します。  
@@ -31,6 +32,6 @@ ms.lasthandoff: 10/24/2017
 ## <a name="related-articles"></a>関連トピック  
  [ATL チュートリアル](../atl/active-template-library-atl-tutorial.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

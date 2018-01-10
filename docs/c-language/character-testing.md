@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 89f48346d9b96c7de20c11fd4cbcde106571ed57
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: aeea6573b49e3bb093c3eb343ac3c89c27f0466b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="character-testing"></a>文字テスト
 **ANSI 4.3.1** `isalnum`、`isalpha`、`iscntrl`、`islower`、`isprint`、`isupper` 関数がテストする文字セット  
@@ -33,5 +34,5 @@ ms.lasthandoff: 10/24/2017
 |`isprint`|文字 A - Z、a - z、0 - 9、句読点、スペース、ASCII 32 - 126|  
 |`isupper`|文字 A - Z、ASCII 65 - 90|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ライブラリ関数](../c-language/library-functions.md)

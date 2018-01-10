@@ -17,18 +17,19 @@ caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0bd0bdcdfd8f7f367c90787cb7ffdf5f888482dd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 468f63d8e98dd161baec0b0db33f5dab8e750695
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="security-enhanced-versions-of-crt-functions"></a>CRT 関数のセキュリティが強化されたバージョン
 セキュリティが強化されたバージョンのランタイム ライブラリ ルーチンを利用できます。 CRT のセキュリティ強化に関する詳細については、「[CRT のセキュリティ機能](../c-runtime-library/security-features-in-the-crt.md)」を参照してください。  
   
  **セキュリティで保護された関数**  
   
-|CRT 関数|セキュリティが強化された関数|用途|  
+|CRT 関数|セキュリティが強化された関数|使用|  
 |------------------|--------------------------------|---------|  
 |[_access、_waccess](../c-runtime-library/reference/access-waccess.md)|[_access_s、_waccess_s](../c-runtime-library/reference/access-s-waccess-s.md)|ファイル アクセス許可を決定します。|  
 |[_alloca](../c-runtime-library/reference/alloca.md)|[_malloca](../c-runtime-library/reference/malloca.md)|スタックにメモリを割り当てます。|  
@@ -110,5 +111,5 @@ ms.lasthandoff: 10/24/2017
 |[wcstombs、_wcstombs_l](../c-runtime-library/reference/wcstombs-wcstombs-l.md)|[wcstombs_s、_wcstombs_s_l](../c-runtime-library/reference/wcstombs-s-wcstombs-s-l.md)|ワイド文字のシーケンスを、対応するマルチバイト文字のシーケンスに変換します。|  
 |[wctomb、_wctomb_l](../c-runtime-library/reference/wctomb-wctomb-l.md)|[wctomb_s、_wctomb_s_l](../c-runtime-library/reference/wctomb-s-wctomb-s-l.md)|ワイド文字を対応するマルチバイト文字に変換します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

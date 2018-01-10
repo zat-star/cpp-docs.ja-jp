@@ -45,11 +45,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b32cf4e20be739f712cb9c0b0e0c8d3b0f0792ad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fd6373acbea0f265b40ff3bd1c25e1229014cafa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="getpurecallhandler-setpurecallhandler"></a>_get_purecall_handler、_set_purecall_handler
 純粋仮想関数呼び出しのエラー ハンドラーを取得または設定します。  
@@ -82,13 +83,13 @@ _purecall_handler __cdecl _set_purecall_handler(
   
  既定の動作を復元するには、`nullptr` 引数を使用して `_set_purecall_handler` を呼び出します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_get_purecall_handler`, `_set_purecall_handler`|\<cstdlib> または \<stdlib.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -139,6 +140,6 @@ int _tmain(int argc, _TCHAR* argv[])
 In _purecall_handler.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   
  [_purecall](../../c-runtime-library/reference/purecall.md)

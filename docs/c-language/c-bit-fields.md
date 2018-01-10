@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0ebc62a975e534d89fd99dbb05a65e8d6cb379bc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e1102c43677fd58a254f36c92698b9353c20fe32
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-bit-fields"></a>C ビット フィールド
 構造体または共用体のメンバーの宣言子に加えて、構造体の宣言子も "ビット フィールド" と呼ばれる指定のビット数になります。 その長さは、フィールド名の宣言子からコロンによって区切られます。 ビット フィールドは整数型として解釈されます。  
@@ -89,7 +90,7 @@ cccccccb bbbbaaaa
   
  8086 ファミリのプロセッサは整数値の下位バイトを上位バイトの前に格納するため、上記の整数 `0x01F2` は、後に `0xF2` が続く `0x01` として物理メモリに格納されます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体宣言](../c-language/structure-declarations.md)

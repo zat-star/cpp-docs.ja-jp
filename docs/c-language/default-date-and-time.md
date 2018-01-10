@@ -16,16 +16,17 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 87919dd34865d47172a5fc7625addce2d25aab85
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 65eba31cc8737c8df5cb0b48468e428dc7407b15
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="default-date-and-time"></a>既定の日付と時刻
 **ANSI 3.8.8** 翻訳の日時が使用できない場合の _DATE\_ と _TIME\_ の定義  
   
  オペレーティング システムが翻訳の日時を提供しないと、_DATE\_ および _TIME\_ の既定値は `May 03 1957` および `17:00:00"` になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プリプロセス ディレクティブ](../c-language/preprocessing-directives.md)

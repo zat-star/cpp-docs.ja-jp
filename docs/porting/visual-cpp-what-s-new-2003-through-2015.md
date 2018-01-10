@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 030a5e287d18884a2bbf49613a464c9d3c98f8d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 512665a243a0c24c143242084a51f6b3025c1a19
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="visual-c-what39s-new-2003-through-2015"></a>Visual C++ 2003 ～ 2015 の新機能
 
@@ -564,7 +565,7 @@ Visual C++ 2015 以降では、コンパイラの準拠に関する継続的な�
     }  
     ```  
   
-     または  
+     - または -  
   
     ```  
     class base;  // as above  

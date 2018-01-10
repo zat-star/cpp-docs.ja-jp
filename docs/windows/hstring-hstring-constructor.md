@@ -1,53 +1,54 @@
 ---
-title: "HString::HString コンストラクター | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "corewrappers/Microsoft::WRL::Wrappers::HString::HString"
-dev_langs: 
-  - "C++"
+title: "Hstring::hstring コンス トラクター |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: corewrappers/Microsoft::WRL::Wrappers::HString::HString
+dev_langs: C++
 ms.assetid: 6da12785-ed01-4720-a004-667db60298f1
-caps.latest.revision: 2
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: d13f532484cc071744b9b823546052d92c6f6b78
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# HString::HString コンストラクター
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hstringhstring-constructor"></a>HString::HString コンストラクター
 HString クラスの新しいインスタンスを初期化します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
-  
 HString(HSTRING hstr = nullptr) throw();  
 HString(HString&& other) throw();  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `hstr`  
- HSTRING のハンドル。  
+ HSTRING ハンドルの場合です。  
   
  `other`  
- HString の既存のオブジェクト。  
+ 既存の HString オブジェクト。  
   
-## 解説  
- 最初のコンストラクターは空である HString オブジェクトを初期化します。  
+## <a name="remarks"></a>コメント  
+ 最初のコンス トラクターは、空である新しい HString オブジェクトを初期化します。  
   
- 2 番目のコンストラクターは `other` 既存のパラメーターへの HString オブジェクトを初期化し、`other` パラメーターを破棄します。  
+ 2 番目のコンス トラクターは、既存の値に新しい HString オブジェクトを初期化します`other`パラメーターを破棄し、および、`other`パラメーター。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
- **名前空間:** Microsoft::WRL::Wrappers  
+ **Namespace:** Microsoft::WRL::Wrappers  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [HString クラス](../windows/hstring-class.md)

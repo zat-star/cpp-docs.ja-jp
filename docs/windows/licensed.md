@@ -15,11 +15,14 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 36d04d47f65e0a37bb5d4807480a4f898d42039a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 8d33e51cf938642f2ff54c48e1ecd22c3f48b71f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="licensed"></a>licensed
 適用すると、COM オブジェクトはライセンスされていることを示しますを使用してインスタンス化する必要があります**IClassFactory2**です。  
@@ -56,19 +59,19 @@ public:
 [module(name="MyLibrary", version="1.0", helpstring="My Library Block")];  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|**class**、 `struct`|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|**coclass**|  
 |**無効な属性**|なし|  
   
  詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDL 属性](../windows/idl-attributes.md)   
  [クラス属性](../windows/class-attributes.md)   

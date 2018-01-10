@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 02c1b7de9a8ed5f560a5999af453970785c487f5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a0899f5f617fd28d121b85183280bd28fe91ee46
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="code-pages"></a>コード ページ
 `code page` は文字セットです。数字、句読点、その他のグリフを入れることができます。 言語やロケールが異なると、コード ページも異なる場合があります。 たとえば、ANSI コード ページ 1252 は英語やほとんどのヨーロッパ言語で使われていますが、日本語の漢字には OEM コード ページ 932 が使われています。  
@@ -49,6 +50,6 @@ ms.lasthandoff: 10/24/2017
   
 -   "C" ロケールは、従来、C プログラムが実行されていたロケールに対応するよう、ANSI により定義されます。 "C" ロケールのコード ページ ("C" コード ページ) は ASCII 文字セットに対応します。 たとえば、"C" ロケールでは、`islower` は値 0x61 - 0x7A にのみ true を返します。 別のロケールの場合、`islower` は、そのロケールによる定義に基づき、値 0x61 - 0x7A とその他の値に true を返すことがあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [国際化](../c-runtime-library/internationalization.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

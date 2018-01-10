@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 798dc2ca8b6a04203232d9eee52b1f5be5eacdd5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 06e4b772288f2e7374bb10f1298da33fbc6dcac0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="introduction-to-visual-c-for-unix-users"></a>Visual C++ の紹介 (UNIX ユーザー向け)
 
@@ -72,6 +73,6 @@ Microsoft C および C++ コンパイラは、インライン コードを含�
 
 詳細については、「[UNIX から Win32 への移植](../porting/porting-from-unix-to-win32.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [C/C++ プログラムのビルド](../build/building-c-cpp-programs.md)

@@ -26,11 +26,12 @@ caps.latest.revision: "9"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 1115af5eb7726138a1954f832ec2761a47667e44
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8f1134d106949918c7e8984835b86bbc4c6062f8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="locales-and-code-pages"></a>ロケールとコード ページ
 ロケール ID は、特定の地域の規則や言語を反映します。 1 つの言語が複数の国や地域で使用されることもあります。たとえば、ポルトガル語は、ポルトガルだけでなくブラジルでも使用されています。 逆に、1 つの国や地域に複数の公用語が存在する場合もあります。 たとえば、カナダでは、公用語として英語とフランス語の 2 つの言語が使用されています。 そこでカナダには、カナダ英語とカナダ フランス語の 2 つの異なったロケールが存在します。 ロケールに依存するカテゴリとしては、日付の形式や通貨値の表示形式などがあります。  
@@ -51,6 +52,6 @@ ms.lasthandoff: 10/24/2017
   
  C のランタイム関数 `setlocale` は、現在のプログラムのロケール情報の一部または全部の設定、変更、および問い合わせが可能です。 [_Wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)ルーチンは、ワイド文字バージョンの`setlocale`; 引数と戻り値の`_wsetlocale`ワイド文字列です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Unicode と MBCS](../text/unicode-and-mbcs.md)   
  [文字セットにおける移植性の利点](../text/benefits-of-character-set-portability.md)

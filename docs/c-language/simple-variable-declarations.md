@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: dd5ab69e0e6621324f04008c34b2a52dcbd20787
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 18798941b227a5da4248b7b44179cb99e3c7d5d9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="simple-variable-declarations"></a>単純変数の宣言
 直接宣言の最も単純な形式である単純変数の宣言は、変数名と型を指定します。 また、変数のストレージ クラスとデータ型を指定します。  
@@ -63,5 +64,5 @@ unsigned long reply, flag; /* Declares two variables
   
  この例では、両方の変数 (`reply` と `flag`) は `unsigned long` 型を持ち、符号なし整数値を保持します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言子と変数宣言](../c-language/declarators-and-variable-declarations.md)

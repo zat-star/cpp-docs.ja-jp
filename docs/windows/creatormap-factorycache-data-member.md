@@ -15,11 +15,14 @@ caps.latest.revision: "5"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 27e00cbbd77468025d5861f1bb0e7ef2924d28ea
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 9db547a72f4ec4a95918cb78aa4ca80885c011b8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creatormapfactorycache-data-member"></a>CreatorMap::factoryCache データ メンバー
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -33,11 +36,11 @@ FactoryCache* factoryCache;
 ## <a name="remarks"></a>コメント  
  CreatorMap のファクトリ キャッシュへのポインターを格納します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** module.h  
   
  **Namespace:** Microsoft::WRL::Details  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CreatorMap 構造体](../windows/creatormap-structure.md)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

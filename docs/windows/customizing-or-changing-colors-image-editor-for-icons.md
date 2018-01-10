@@ -26,11 +26,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 822ce325d188eb371427e5245701a653cc159878
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 762c2a9d9814f9780aeae2d8d61d7006bdc9728c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="customizing-or-changing-colors-image-editor-for-icons"></a>色のカスタマイズまたは変更 (アイコン用イメージ エディター)
 イメージ エディターの[カラー パレット](../windows/colors-window-image-editor-for-icons.md)最初に標準の 16 色が表示されます。 表示された色以外にも、独自の色を作成できます。 して、[を保存し、カスタマイズした色パレットを読み込む](../windows/saving-and-loading-different-color-palettes-image-editor-for-icons.md)します。  
@@ -51,10 +54,10 @@ ms.lasthandoff: 10/24/2017
   
 
   
- 要件  
+ 必要条件  
   
  なし  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセラレータ キー](../windows/accelerator-keys-image-editor-for-icons.md)   
  [カラーを使用します。](../windows/working-with-color-image-editor-for-icons.md)

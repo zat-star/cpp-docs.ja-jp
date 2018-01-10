@@ -16,16 +16,17 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f02400a36edaafd0d09b678f01fdbf6d016c0a5d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ccc63221d58d330f2467875bdcde1812509858a0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="truncation-of-text-files"></a>テキスト ファイルの切り捨て
 **ANSI 4.9.3** テキスト ストリームに書き込むと関連付けられたファイルがそれ以降切り捨てられるかどうか  
   
  テキスト ストリームへの書き込みで、それ以降、ファイルが切り捨てられることはありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ライブラリ関数](../c-language/library-functions.md)

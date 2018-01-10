@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4974edd25d0fcdd8d990b60459517bb1148c74ae
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4a95596b2c9e7312d4581d1a4c641c2466420158
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="conversions-from-floating-point-types"></a>Conversions from Floating-Point Types (浮動小数点型からの変換)
 **double** か `long double` に変換された **float** 値、または `long double` に変換される **double** は、値が変更されません。 **float** 値に変換された **double** 値は、可能であれば正確に表されます。 値を正確に表すことができない場合、精度が失われる可能性があります。 結果が範囲外の場合、動作は未定義です。 浮動小数点型の範囲については、「[浮動小数点定数の制限](../c-language/limits-on-floating-point-constants.md)」を参照してください。  
@@ -31,13 +32,13 @@ ms.lasthandoff: 10/24/2017
   
  **double** または `long double` の浮動小数点数を小さい浮動小数点数に変換して、アンダーフローが発生すると、浮動小数点変数の値はゼロに向かって切り捨てられます。 オーバーフローは実行時エラーを発生させます。 Microsoft C コンパイラは `long double` を **double** 型にマップすることに注意してください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
  次の表は、浮動小数点型から変換をまとめたものです。  
   
 ### <a name="conversions-from-floating-point-types"></a>Conversions from Floating-Point Types (浮動小数点型からの変換)  
   
-|変換前|目的|メソッド|  
+|変換前|終了|メソッド|  
 |----------|--------|------------|  
 |**float**|`char`|**long** への変換、**long** から `char` への変換|  
 |**float**|**short**|**long** への変換、**long** から **short** への変換|  
@@ -62,5 +63,5 @@ ms.lasthandoff: 10/24/2017
   
  **float**、**double**、または `long double` 値から `unsigned long` への変換は、変換される値が **long** の正の最大値よりも大きい場合は正確ではありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [代入の変換](../c-language/assignment-conversions.md)

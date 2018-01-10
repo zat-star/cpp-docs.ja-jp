@@ -14,11 +14,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 25b2de4791a843f151dfb653af177b947fb2fde6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 00bf63625f11efb300fe0d614933a50bbb5a9318
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="memory-management-classes"></a>メモリ管理クラス
 これらのクラスは、ヒープのポインター、スマート ポインター、およびその他のメモリ割り当てルーチンをサポートします。  
@@ -65,6 +66,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [IAtlMemMgr](../atl/reference/iatlmemmgr-class.md)このクラスは、メモリ マネージャーへのインターフェイスを表します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

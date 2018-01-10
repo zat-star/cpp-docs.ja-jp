@@ -35,11 +35,12 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b245286294a74718b7527728d5d9e8dea9793234
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9fc9b3d85ffb2a268ab4e09b082d4678b4efedde
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="querynewhandler"></a>_query_new_handler
 現在の新しいハンドラー ルーチンのアドレスを返します。  
@@ -58,17 +59,17 @@ _PNH _query_new_handler(
 ## <a name="remarks"></a>コメント  
  C++ `_query_new_handler` 関数は、C++ [_set_new_handler](../../c-runtime-library/reference/set-new-handler.md) 関数によって設定された現在の例外処理関数のアドレスを返します。 `_set_new_handler` は、**new** 演算子がメモリの割り当てに失敗した場合に制御を獲得する例外処理関数を指定するために使用されます。 詳細については、C++ 言語リファレンスの「[new および delete 演算子](../../cpp/new-and-delete-operators.md)」の説明を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_query_new_handler`|\<new.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
  [free](../../c-runtime-library/reference/free.md)

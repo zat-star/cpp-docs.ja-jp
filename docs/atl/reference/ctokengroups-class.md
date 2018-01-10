@@ -26,11 +26,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a6c08f9105d51112f1261a79bd5b96341b5504f2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b6f0e8e2f63d5765e0e888c7a98cea77c862e241
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctokengroups-class"></a>CTokenGroups クラス
 このクラスは、用のラッパー、 **TOKEN_GROUPS**構造体。  
@@ -80,7 +81,7 @@ class CTokenGroups
   
  Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="add"></a>CTokenGroups::Add  
@@ -247,7 +248,7 @@ operator const TOKEN_GROUPS *() const throw(...);
 ### <a name="remarks"></a>コメント  
  ポインターに値をキャスト、 [TOKEN_GROUPS](http://msdn.microsoft.com/library/windows/desktop/aa379624)構造体。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [CSid クラス](../../atl/reference/csid-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   

@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 78cd6292c97f41cb7e862389113404346da80460
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 28712275312bf653e082a9f8e32424f26534fb93
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-type-specifiers"></a>C 型指定子
 宣言内の型指定子は、変数または関数宣言の型を定義します。  
@@ -90,9 +91,9 @@ pi = pu;  /* Now generates warning */
   
  ANSI 仕様に準拠するには、**void\*\*** は **int\*\*** として使用できません。 指定されていない型へのポインターとして使用できるのは、**void\*** だけです。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
  「[typedef 宣言](../c-language/typedef-declarations.md)」に説明されているように、`typedef` 宣言で追加の型指定子を作成できます。 各型のサイズについては、「[基本型の格納](../c-language/storage-of-basic-types.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言と型](../c-language/declarations-and-types.md)

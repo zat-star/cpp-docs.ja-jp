@@ -17,11 +17,14 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 417e1b99066a0e2af6b58fb684bf0912f7c420ad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 7b85b6b650fcff46371e86e61ab96e9d864c4c53
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="custom-color-selector-dialog-box-image-editor-for-icons"></a>[色の調整] ダイアログ ボックス (アイコン用イメージ エディター)
 このダイアログ ボックスでは、イメージを使用する色をカスタマイズすることができます。 詳細については、次を参照してください。[のカスタマイズまたは変更する色](../windows/customizing-or-changing-colors-image-editor-for-icons.md)です。  
@@ -53,10 +56,10 @@ ms.lasthandoff: 10/24/2017
  **青い**  
  定義した色の青の値を指定します。 値の範囲は 0 ~ 255 です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  なし  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [[イメージ] メニュー](../windows/image-menu-image-editor-for-icons.md)   
  [カスタマイズや色を変更します。](../windows/customizing-or-changing-colors-image-editor-for-icons.md)   
  [[色] ウィンドウ](../windows/colors-window-image-editor-for-icons.md)

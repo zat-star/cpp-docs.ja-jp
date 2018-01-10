@@ -1,48 +1,52 @@
 ---
-title: "Inserting a Space Between Buttons on a Toolbar | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Toolbar editor, spacing toolbar buttons"
-  - "toolbar buttons (in Toolbar editor), space between buttons"
+title: "ツールバーのボタンの間にスペースを挿入する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- Toolbar editor, spacing toolbar buttons
+- toolbar buttons (in Toolbar editor), space between buttons
 ms.assetid: 4925ea6b-5d3a-4949-a920-bf371a37e529
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: f290433989ed56912309f86ce715fb7f2ede7d51
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Inserting a Space Between Buttons on a Toolbar
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-通常、ボタンの間に空白を挿入するには、ツール バー上で一方のボタンをドラッグして他方のボタンから離します。  空白を削除するには、相互に近づけるようにドラッグします。  
+# <a name="inserting-a-space-between-buttons-on-a-toolbar"></a>ツール バーのボタン間の空白の挿入
+一般に、ボタンの間のスペースを挿入するには、単にドラッグ反対方向ツールバーのします。 スペースを削除するには、互いの方向にドラッグします。  
   
-### 後ろに空白がないボタンの前に空白を挿入するには  
+### <a name="to-insert-a-space-before-a-button-that-is-not-followed-by-a-space"></a>後にスペースがないボタンの前にスペースを挿入するには  
   
-1.  すぐ横にあるボタンと約半分だけ重なり合うように、ボタンを右または下にドラッグします。  
+1.  重なるまで、[次へ] ボタンの半分を下または右側にボタンをドラッグします。  
   
-### 後ろに空白があるボタンの前に空白を挿入し、後ろの空白を保持するには  
+### <a name="to-insert-a-space-before-a-button-which-is-followed-by-a-space-and-to-retain-that-trailing-space"></a>空白が続くボタンの前にスペースを挿入して、その末尾のスペースを保持するには  
   
-1.  ボタンの右端または下端がすぐ横にあるボタンに接するかまたは重なるように、ボタンをドラッグします。  
+1.  右端または下端は、[次へ] ボタンを変更することだけがまたは重なるようになるまで、ボタンをドラッグします。  
   
-### 後ろに空白があるボタンの前に空白を挿入し、後ろの空白をなくすには  
+### <a name="to-insert-a-space-before-a-button-that-is-followed-by-a-space-and-close-up-that-following-space"></a>空白が続くボタンの前にスペースを挿入して、その次の領域を閉じます  
   
-1.  すぐ横にあるボタンと約半分だけ重なり合うように、ボタンを右または下にドラッグします。  
+1.  重なるまで、[次へ] ボタンの半分を下または右側にボタンをドラッグします。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  MFC または ATL  
   
-## 参照  
- [Creating, Moving, and Editing Toolbar Buttons](../mfc/creating-moving-and-editing-toolbar-buttons.md)   
- [Toolbar Editor](../mfc/toolbar-editor.md)
+## <a name="see-also"></a>参照  
+ [作成、移動、およびツール バー ボタンの編集](../windows/creating-moving-and-editing-toolbar-buttons.md)   
+ [ツール バー エディター](../windows/toolbar-editor.md)
+

@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: afec3ea0d88ff7ede9c498a270e2806a4ceb79e8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2219ac079fecdb0f21215814885ee831d24f8f6e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-storage-classes"></a>C ストレージ クラス
 変数の "ストレージ クラス" は、項目が "グローバルな" 有効期間を持つか、"ローカルな" 有効期間を持つかを決定します。 C では、これら 2 つの有効期間を "static" および "automatic" と呼びます。 グローバル有効期間を持つ項目は、プログラムの実行全体に値があります。 すべての関数にはグローバル有効期間があります。  
@@ -63,5 +64,5 @@ ms.lasthandoff: 10/24/2017
   
  「[Storage-Class Specifiers for External-Level Declarations (外部レベル宣言のストレージ クラス指定子)](../c-language/storage-class-specifiers-for-external-level-declarations.md)」および「[Storage-Class Specifiers for Internal-Level Declarations (内部レベル宣言のストレージ クラス指定子)](../c-language/storage-class-specifiers-for-internal-level-declarations.md)」では、各種宣言の *storage-class-specifier* 終端要素について記載し、変数から *storage-class-specifier* が省略されている場合の既定の動作について説明しています。 「[Storage-Class Specifiers with Function Declarations (関数宣言を伴うストレージ クラス指定子)](../c-language/storage-class-specifiers-with-function-declarations.md)」では、関数と共に使用されるストレージ クラス指定子について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言と型](../c-language/declarations-and-types.md)

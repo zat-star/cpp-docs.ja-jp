@@ -29,11 +29,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 65c7b71030bff65a2806d20690554a9828871268
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7a6dbcd5b25fe1a8b1b21b2e2f6ac7a8cc99cc06
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="imaxdiv"></a>imaxdiv
 任意のサイズの 2 つの整数値の商および剰余を単一の操作として計算します。  
@@ -60,13 +61,13 @@ imaxdiv_t imaxdiv(
 ## <a name="remarks"></a>コメント  
  `imaxdiv` 関数は `numer` を `denom` で割り、商と剰余を計算します。 `imaxdiv_t` 構造体には、商 `intmax_t quot` と剰余 `intmax_t rem` が含まれます。 商の符号は、数学的な商の符号と同じです。 この絶対値が最も大きい整数であり、商の絶対値よりも小さくなります。 分母が 0 の場合、プログラムはエラー メッセージにより終了します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`imaxdiv`|\<inttypes.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -103,7 +104,7 @@ The call to imaxdiv(9460730470000000, 8766)
 results in a quotient of 1079252848505, and a remainder of 5170  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [div](../../c-runtime-library/reference/div.md)   
  [ldiv、lldiv](../../c-runtime-library/reference/ldiv-lldiv.md)

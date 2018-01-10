@@ -1,51 +1,52 @@
 ---
-title: "Windows Runtime and Managed Templates (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "templates, with CLR types"
+title: "Windows ランタイムおよびマネージ テンプレート (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords: templates, with CLR types
 ms.assetid: cf59d16b-5514-448b-9a95-e0b4fcb616a6
-caps.latest.revision: 14
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 81e803db04ebd9d3a851a04e8656131d85649751
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Windows Runtime and Managed Templates (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-テンプレートは Windows ランタイムまたは共通言語ランタイムの型のプロトタイプを定義できるようにし、異なるテンプレート型のパラメーターを使用して、その型のバリエーションがインスタンス化します。  
+# <a name="windows-runtime-and-managed-templates-c-component-extensions"></a>Windows ランタイムおよびマネージ テンプレート (C++ コンポーネント拡張)
+テンプレートは、使用すると、Windows ランタイムまたは共通言語ランタイムの型のプロトタイプを定義し、別のテンプレート型パラメーターを使用してその型のバリエーションをインスタンス化しできます。  
   
-## すべてのランタイム  
- 値または参照型からテンプレートを作成できます。値または参照型の作成についての詳細については、「[Classes and Structs](../windows/classes-and-structs-cpp-component-extensions.md)」を参照してください。  
+## <a name="all-runtimes"></a>すべてのランタイム  
+ 値または参照型からテンプレートを作成することができます。  値または参照型の作成の詳細については、次を参照してください。[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)です。  
   
- 標準 C\+\+ クラス テンプレートの詳細については、「[クラス テンプレート](../Topic/Class%20Templates.md)」を参照してください。  
+ 標準の C++ クラス テンプレートの詳細については、次を参照してください。[クラス テンプレート](../cpp/class-templates.md)です。  
   
-## Windows ランタイム  
- \(この言語機能には Windows ランタイムのみに適用される特記事項がありません。\)  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ (この言語機能には Windows ランタイムのみに適用される特記事項がありません。)  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-## 共通言語ランタイム  
- 次のコード例で指定されたマネージ型からクラス テンプレートの作成にはいくつかの制限があります。  
+## <a name="common-language-runtime"></a>共通言語ランタイム  
+ マネージ型は、次のコード例に示されている場合は、クラス テンプレートを作成するのには、制限があります。  
   
-### 要件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-### 例  
+### <a name="examples"></a>使用例  
  **例**  
   
- マネージ型のテンプレート パラメーターのジェネリック型をインスタンス化することはできますが、ジェネリック型のテンプレート パラメーターのマネージ テンプレートをインスタンス化することはできません。これにより、ジェネリック型を実行時に解決するためです。詳細については、「[Generics and Templates \(Visual C\+\+\)](../windows/generics-and-templates-visual-cpp.md)」を参照してください。  
+ マネージ型テンプレート パラメーターを持つジェネリック型のインスタンスを作成できますが、ジェネリック型テンプレート パラメーターを持つマネージ テンプレートをインスタンス化することはできません。  これは、ジェネリック型は実行時に解決されるためです。  詳細については、次を参照してください。[ジェネリックとテンプレート (Visual c)](../windows/generics-and-templates-visual-cpp.md)です。  
   
 ```cpp  
 // managed_templates.cpp  
@@ -69,7 +70,7 @@ ref class R {
   
  **例**  
   
- ジェネリック型またはジェネリック関数はマネージ テンプレートに入れ子にすることはできません。  
+ マネージ テンプレートでは、ジェネリック型または関数を入れ子にすることはできません。  
   
 ```cpp  
 // managed_templates_2.cpp  
@@ -82,7 +83,7 @@ template<class T> public ref class R {
   
  **例**  
   
- C\+\+\/CLI 言語構文を参照アセンブリで定義されたテンプレートにアクセスするリフレクションを使用できます。テンプレートがインスタンス化されなければ、メタデータに出力されません。テンプレートがインスタンス化されれば、参照先メンバー関数だけがメタデータに表示されます。  
+ C + を使用して参照されたアセンブリで定義されているテンプレートにアクセスすることはできませんまたは CLI 言語の構文は、リフレクションを使用できます。  テンプレートがインスタンス化されない場合、メタデータでない生成されます。  テンプレートがインスタンス化される場合は、参照されたメンバー関数のみがメタデータに表示されます。  
   
 ```cpp  
 // managed_templates_3.cpp  
@@ -114,7 +115,7 @@ int main() {
   
  **例**  
   
- クラス テンプレートの部分的な特化または明示的な特殊化クラスのマネージ修飾子を変更できます。  
+ 部分的特殊化またはクラス テンプレートの明示的な特殊化でクラスのマネージ修飾子を変更することができます。  
   
 ```cpp  
 // managed_templates_4.cpp  
@@ -142,5 +143,5 @@ class A <int> {};
   
 ```  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4faa6143342d8765fce460a653090152c0b10417
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9768baa53e39f1b3243aba24385d592010c3d81a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="return-type"></a>戻り値の型
 関数の戻り値の型は、関数によって返される値のサイズと型を規定し、次の構文の type-specifier に相当します。  
@@ -114,5 +115,5 @@ char *smallstr( char s1[], char s2[] )
   
  `int` の戻り値型を持つ関数は、呼び出し前に宣言する必要はありませんが、引数と戻り値の正しい型チェックができるように、プロトタイプをお勧めします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 関数の定義](../c-language/c-function-definitions.md)

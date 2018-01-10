@@ -1,34 +1,36 @@
 ---
-title: "GetActivationFactory 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "module/Microsoft::WRL::Details::GetActivationFactory"
-  - "client/ABI::Windows::Foundation::GetActivationFactory"
-  - "client/Windows::Foundation::GetActivationFactory"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetActivationFactory 関数"
+title: "GetActivationFactory 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- module/Microsoft::WRL::Details::GetActivationFactory
+- client/ABI::Windows::Foundation::GetActivationFactory
+- client/Windows::Foundation::GetActivationFactory
+dev_langs: C++
+helpviewer_keywords: GetActivationFactory function
 ms.assetid: 5736d285-6beb-42aa-8788-e261c0010afe
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 6419ef4d48c3f151f8acfb49d40e10853f5d17f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# GetActivationFactory 関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-テンプレート パラメーターで指定された型のアクティベーション ファクトリを取得します。  
+# <a name="getactivationfactory-function"></a>GetActivationFactory 関数
+テンプレート パラメーターによって指定された型の対応するアクティベーション ファクトリを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<  
@@ -40,23 +42,23 @@ inline HRESULT GetActivationFactory(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- アクティベーション ファクトリの型を指定するテンプレート パラメーター。  
+ アクティベーション ファクトリの種類を指定するテンプレート パラメーター。  
   
  `activatableClassId`  
- 生成アクティベーション ファクトリができるクラスの名前。  
+ アクティベーション ファクトリを作成できるクラスの名前。  
   
  `factory`  
- この操作が完了すると、型 `T`のアクティベーション ファクトリへの参照。  
+ この操作の完了時、アクティベーション ファクトリの種類への参照を`T`です。  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は、この操作が失敗した理由を示すエラー HRESULT。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は S_OK、それ以外の場合、この操作が失敗した理由を示す HRESULT エラーです。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
- **名前空間:** Windows::Foundation  
+ **Namespace:** windows::foundation  
   
-## 参照  
- [Windows::Foundation 名前空間](../Topic/Windows::Foundation%20Namespace.md)
+## <a name="see-also"></a>参照  
+ [Windows::Foundation 名前空間](../windows/windows-foundation-namespace.md)

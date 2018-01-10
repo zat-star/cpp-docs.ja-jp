@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f2b511a4b7cbaffb80d9f07a2491a38554682c29
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 680d3a97cec7971bf31605997e3ab2afdfae2cdf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lifetime-scope-visibility-and-linkage"></a>有効期間、スコープ、可視性、およびリンケージ
 C プログラムの動作を理解するには、変数と関数がプログラム内でどのように使用されるかを決定する規則を理解する必要があります。 そのためには、次の概念が不可欠です。  
@@ -28,5 +29,5 @@ C プログラムの動作を理解するには、変数と関数がプログラ
   
 -   [リンケージ](../c-language/linkage.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラムの構造](../c-language/program-structure.md)

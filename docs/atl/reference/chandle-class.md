@@ -22,11 +22,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ed254b49c61f873e1d85fd0600c371c03ac246a2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cd58ba8ce15bb26b4e5b768baedbf8ddfe829f2b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="chandle-class"></a>CHandle クラス
 このクラスは、作成およびオブジェクトのハンドルを使用するためのメソッドを提供します。  
@@ -73,7 +74,7 @@ class CHandle
 > [!NOTE]
 >  INVALID_HANDLE_VALUE を使用して他のユーザーに対し、いくつかの API 関数は、空または無効なハンドルとして NULL を使用します。 `CHandle`NULL では、のみの使用は、INVALID_HANDLE_VALUE を実際のハンドルとして扱われます。 INVALID_HANDLE_VALUE を返すことができる API を呼び出す場合は、呼び出す前にこの値をチェックする必要があります[CHandle::Attach](#attach)に渡すか、`CHandle`コンス トラクターを代わりに NULL を渡します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="attach"></a>CHandle::Attach  
@@ -173,5 +174,5 @@ operator HANDLE() const throw();
 ### <a name="remarks"></a>コメント  
  格納されている値を返します[CHandle::m_h](#m_h)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

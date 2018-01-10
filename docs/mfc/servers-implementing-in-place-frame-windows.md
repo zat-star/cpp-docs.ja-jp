@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1102d6459701314c5b0d5b3e96908052504262d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7e26cbb0099f897c65ab3e39338f3c36e77112e0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="servers-implementing-in-place-frame-windows"></a>サーバー : 埋め込み先フレーム ウィンドウの実装
 この記事では、サーバー アプリケーションを作成するアプリケーションのウィザードを使用しない場合、ビジュアル編集サーバー アプリケーションに埋め込み先フレーム ウィンドウを実装する必要な操作について説明します。 この記事で説明した手順に従うと、代わりに、アプリケーション ウィザードで生成されたアプリケーションまたは Visual C で提供されたサンプルのいずれかから既存の埋め込み先フレーム ウィンドウ クラスを使用する可能性があります。  
@@ -56,9 +57,9 @@ ms.lasthandoff: 10/24/2017
   
  ツールバーのビットマップの ID は、サーバー アプリケーションで定義されている他の埋め込みリソースと同じにする必要があります。 参照してください[メニューとリソース: サーバーの変更点](../mfc/menus-and-resources-server-additions.md)詳細についてはします。  
   
- 詳細については、次を参照してください[COleIPFrameWnd](../mfc/reference/coleipframewnd-class.md)、 [COleResizeBar](../mfc/reference/coleresizebar-class.md)、および[CDocTemplate::SetServerInfo](../mfc/reference/cdoctemplate-class.md#setserverinfo)で、*クラス ライブラリ リファレンス*。.  
+ 詳細については、次を参照してください[COleIPFrameWnd](../mfc/reference/coleipframewnd-class.md)、 [COleResizeBar](../mfc/reference/coleresizebar-class.md)、および[CDocTemplate::SetServerInfo](../mfc/reference/cdoctemplate-class.md#setserverinfo)で、*クラス ライブラリ リファレンス*.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サーバー](../mfc/servers.md)   
  [サーバー: サーバーの実装](../mfc/servers-implementing-a-server.md)   
  [サーバー: サーバー ドキュメントの実装](../mfc/servers-implementing-server-documents.md)   

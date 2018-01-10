@@ -15,11 +15,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d3d93dc4e80178b1bdd90a6fe86e4a6f051f77f4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5280f09e7d17036652acf6fc62d4d4f5ab31c758
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="interfaces-atl-control-wizard"></a>インターフェイス、ATL コントロール ウィザード
 ウィザードのこのページは、コントロールをサポートするインターフェイスを識別します。 既定では、サポートされているインターフェイスには、ほとんどのコンテナーで通常使用されるものです。  
@@ -40,6 +41,6 @@ ms.lasthandoff: 10/24/2017
 |**<**|現在選択されているインターフェイスの名前を削除、**サポートされている** ボックスの一覧です。|  
 |**<<**|削除のすべてのインターフェイス名で現在表示されている、**サポートされている** ボックスの一覧です。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL コントロール ウィザード](../../atl/reference/atl-control-wizard.md)
 

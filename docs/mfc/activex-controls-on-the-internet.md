@@ -20,11 +20,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e2b883e5f46e274c19b3e5c4ed3ae2698cef694e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8c02d807f6b77ca7aa35ffe91b929122a3743be6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="activex-controls-on-the-internet"></a>インターネット上の ActiveX コントロール
 ActiveX コントロールは、更新されたバージョンの OLE コントロールの仕様です。 コントロールは、さまざまなインターネット上の COM 対応の Web ブラウザーも含めて、別のコンテナーで使用できるプログラミング可能なソフトウェア コンポーネントを開発するための基本的なアーキテクチャです。 ActiveX コントロール インターネット制御とできます作業中の文書にその機能を追加したり、Web ページの一部にします。 Web ページ上のコントロールは、スクリプトを使用して相互に通信できます。  
@@ -207,7 +208,7 @@ ActiveX コントロールは、更新されたバージョンの OLE コント�
   
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC インターネット プログラミングの作業](../mfc/mfc-internet-programming-tasks.md)   
  [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)
 

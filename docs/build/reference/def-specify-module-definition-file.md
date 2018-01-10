@@ -1,63 +1,64 @@
 ---
-title: "/DEF (モジュール定義ファイルの指定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.ModuleDefinitionFile"
-  - "/def"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/DEF リンカー オプション"
-  - "DEF リンカー オプション"
-  - "-DEF リンカー オプション"
-  - "モジュール定義ファイル"
-  - "モジュール定義ファイル, 指定"
+title: "-DEF (モジュール定義ファイルの指定) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.ModuleDefinitionFile
+- /def
+dev_langs: C++
+helpviewer_keywords:
+- module definition files, specifying
+- DEF linker option
+- -DEF linker option
+- module definition files
+- /DEF linker option
 ms.assetid: 6497fa68-65f0-48ca-8f66-b87166fc631a
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 7c35e2c834edd4215c6b2bd671e4fc2ba79262aa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /DEF (モジュール定義ファイルの指定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="def-specify-module-definition-file"></a>/DEF (モジュール定義ファイルの指定)
 ```  
 /DEF:filename  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  それぞれの文字について以下に説明します。  
   
- *filename*  
- リンカーに渡すモジュール定義ファイル \(.def ファイル\) の名前。  
+ *ファイル名*  
+ モジュール定義ファイルをリンカーに渡される (.def) の名前。  
   
-## 解説  
- \/DEF オプションは、モジュール定義ファイル \(.def ファイル\) をリンカーに渡します。  .def ファイルは 1 つしか LINK に指定できません。  .def ファイルについては、「[モジュール定義 \(.def\) ファイル](../Topic/Module-Definition%20\(.Def\)%20Files.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ /DEF オプションは、モジュール定義ファイル (.def) をリンカーに渡します。 1 つだけの .def ファイルは、リンクを指定できます。 .Def ファイルに関する詳細については、「[モジュール定義ファイル](../../build/reference/module-definition-dot-def-files.md)です。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[入力\] プロパティ ページをクリックします。  
+3.  クリックして、**入力**プロパティ ページ。  
   
-4.  \[モジュール定義ファイル\] プロパティを変更します。  
+4.  変更、**モジュール定義ファイル**プロパティです。  
   
- 開発環境で .def ファイルを指定するには、ほかのファイルと一緒にプロジェクトに登録し、\/DEF オプションで指定します。  
+ 開発環境での .def ファイルを指定するにをその他のファイルと共にプロジェクトに追加し、/DEF オプションにファイルを指定します。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.ModuleDefinitionFile%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

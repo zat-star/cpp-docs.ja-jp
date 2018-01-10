@@ -97,11 +97,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 49faa73a334d2feed480499735220a1ae7f6d2c5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1702065a8157596d4366af31fed3f2a80d53149c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-type-constants"></a>データ型定数
 データ型定数は、整数データ型に許可される実装依存の値範囲です。 下の一覧の定数は整数データ型の範囲を与えるものであり、LIMITS.H で定義されています。  
@@ -109,7 +110,7 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  /J コンパイラ オプションは、既定値を `char` から `unsigned` に変更します。  
   
-|定数|値|説明|  
+|定数|[値]|説明|  
 |--------------|-----------|-------------|  
 |**SCHAR_MAX**|127|最大符号付き `char` 値|  
 |**SCHAR_MIN**|-128|最小符号付き `char` 値|  
@@ -133,9 +134,9 @@ ms.lasthandoff: 10/24/2017
   
  次の定数は **double** 型と **float** 型の範囲とその他の特徴を与え、FLOAT.H で定義されます。  
   
-|定数|値|説明|  
+|定数|[値]|説明|  
 |--------------|-----------|-----------------|  
-|**DBL_DIG**|15|有効桁数|  
+|**DBL_DIG**|16|有効桁数|  
 |**DBL_EPSILON**|2.2204460492503131e-016|1.0+**DBL_EPSILON** !=1.0 のように最小|  
 |**DBL_MANT_DIG**|53|仮数部のビット数|  
 |**DBL_MAX**|1.7976931348623158e+308|最大値|  
@@ -158,5 +159,5 @@ ms.lasthandoff: 10/24/2017
 |**FLT_RADIX**|2|指数の基数|  
 |**FLT_ROUNDS**|1|加算の丸め: 近接|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル定数](../c-runtime-library/global-constants.md)

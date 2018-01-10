@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5b1581fe5a952d1ea8e78f29e606af5ac148f3b7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6860198b9acce372b710e819a17f534e793f1ead
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-relational-and-equality-operators"></a>C 関係演算子と等値演算子
 二項関係演算子および二項等値演算子は、最初のオペランドと 2 番目のオペランドを比較して、指定された関係の有効性をテストします。 テストした関係が true の場合、その式の結果は 1 になり、false の場合は 0 になります。 結果の型は `int` です。  
@@ -71,7 +72,7 @@ ms.lasthandoff: 10/24/2017
   
 -   等値演算子は関係演算子と同じ規則に従いますが、追加のオプションがあります。ポインターは、値 0 の整数定数式、または `void` へのポインターと比較できます。 2 つのポインターが両方とも null ポインターの場合、それらは等しいと見なされます。 等値演算子はセグメントとオフセットの両方を比較します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次に関係演算子と等値演算子の例を示します。  
   
 ```  
@@ -104,6 +105,6 @@ enum color { red, white, green } col;
   
  これらのステートメントは、`col` タグを使用して `color` という列挙型変数を宣言します。 常に、この変数には整数値 0、1、または 2 が格納されます。これらの値は、`color` 列挙セットのいずれかの要素 (赤、白、緑) を表します。 **if** ステートメントが実行されるときに `col` に 0 が含まれていると、**if** に依存するすべてのステートメントが実行されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関係演算子: \<、>、\<=、および >=](../cpp/relational-operators-equal-and-equal.md)   
  [等値演算子: == および !=](../cpp/equality-operators-equal-equal-and-exclpt-equal.md)

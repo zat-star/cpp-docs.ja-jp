@@ -27,11 +27,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6f9dd09983a7b8cb781e26a6a3ed049d82d03632
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: dbb919cb2fe4d91f5665fbea3dcfd2140d178341
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="registry-and-typelib-global-functions"></a>レジストリとタイプ ライブラリに関するグローバル関数
 これらの関数は、読み込みと登録、タイプ ライブラリのサポートを提供します。  
@@ -60,7 +61,7 @@ ms.lasthandoff: 10/24/2017
 |[AtlGetPerUserRegistration](#atlgetperuserregistration)|アプリケーションがレジストリ アクセスをリダイレクトするかどうかを取得、 **HKEY_CURRENT_USER** ( **HKCU**) ノード。|  
 |[AtlSetPerUserRegistration](#atlsetperuserregistration)|アプリケーションがレジストリ アクセスをリダイレクトするかどうかを設定、 **HKEY_CURRENT_USER** ( **HKCU**) ノード。|  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h
 
 ## <a name="atlgetperuserregistration"></a>AtlGetPerUserRegistration
@@ -84,7 +85,7 @@ ATLINLINE ATLAPI AtlGetPerUserRegistration(bool* pEnabled);
   
  リダイレクトはグローバルではありません。 MFC と ATL のフレームワークは、このレジストリのリダイレクトの影響を受けます。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
 
  ## <a name="afxregcreatekey"></a>AfxRegCreateKey
@@ -112,7 +113,7 @@ LONG AFXAPI AfxRegCreateKey(HKEY hKey, LPCTSTR lpSubKey, PHKEY phkResult, CAtlTr
 ### <a name="return-value"></a>戻り値  
  関数が成功すると、戻り値は、error_success を返します。 関数が失敗した場合、戻り値は、Winerror.h で定義されている 0 以外のエラー コードです。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxpriv.h  
 
 ## <a name="afxregdeletekey"></a>AfxRegDeleteKey
@@ -137,7 +138,7 @@ LONG AFXAPI AfxRegDeleteKey(HKEY hKey, LPCTSTR lpSubKey, CAtlTransactionManager*
 ### <a name="return-value"></a>戻り値  
  関数が成功すると、戻り値は、error_success を返します。 関数が失敗した場合、戻り値は、Winerror.h で定義されている 0 以外のエラー コードです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxpriv.h  
 
 ## <a name="afxregisterpreviewhandler"></a>
@@ -159,7 +160,7 @@ BOOL AFXAPI AfxRegisterPreviewHandler(LPCTSTR lpszCLSID, LPCTSTR lpszShortTypeNa
  `lpszFilterExt`  
  このハンドラーに登録されているファイルの拡張子を指定します。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h   
 
 ##  <a name="atlregistertypelib"></a>AtlRegisterTypeLib  
@@ -182,7 +183,7 @@ ATLAPI AtlRegisterTypeLib(HINSTANCE hInstTypeLib, LPCOLESTR lpszIndex);
   
 ### <a name="remarks"></a>コメント  
  このヘルパー関数がによって使用されて[AtlComModuleUnregisterServer](server-registration-global-functions.md#atlcommoduleunregisterserver)と[CAtlComModule::RegisterTypeLib](../../atl/reference/catlcommodule-class.md#registertypelib)です。  
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h
 
  ## <a name="afxregopenkey"></a>AfxRegOpenKey
@@ -210,7 +211,7 @@ LONG AFXAPI AfxRegOpenKey(HKEY hKey, LPCTSTR lpSubKey, PHKEY phkResult, CAtlTran
 ### <a name="return-value"></a>戻り値  
  関数が成功すると、戻り値は、error_success を返します。 関数が失敗した場合、戻り値は、Winerror.h で定義されている 0 以外のエラー コードです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxpriv.h  
 
 ## <a name="afxregopenkeyex"></a>AfxRegOpenKeyEx
@@ -244,7 +245,7 @@ LONG AFXAPI AfxRegOpenKeyEx(HKEY hKey, LPCTSTR lpSubKey, DWORD ulOptions, REGSAM
 ### <a name="return-value"></a>戻り値  
  関数が成功すると、戻り値は、error_success を返します。 関数が失敗した場合、戻り値は、Winerror.h で定義されている 0 以外のエラー コードです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxpriv.h  
 
  ## <a name="afxunregisterpreviewhandler"></a>AfxUnregisterPreviewHandler
@@ -260,7 +261,7 @@ BOOL AFXAPI AfxUnRegisterPreviewHandler(LPCTSTR lpszCLSID);
  `lpszCLSID`  
  登録解除するハンドラーの CLSID を指定します。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
 
 ## <a name="atlsetperuserregistration"></a>AtlSetPerUserRegistration
@@ -283,7 +284,7 @@ ATLINLINE ATLAPI AtlSetPerUserRegistration(bool bEnable);
  レジストリのリダイレクトは、既定では無効です。 このオプションを有効にすると、レジストリへのアクセスにリダイレクト**する**です。  
   
  リダイレクトはグローバルではありません。 MFC と ATL のフレームワークは、このレジストリのリダイレクトの影響を受けます。  
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
 
 ##  <a name="atlunregistertypelib"></a>この代替  
@@ -308,7 +309,7 @@ ATLAPI AtlUnRegisterTypeLib(
   
 ### <a name="remarks"></a>コメント  
  このヘルパー関数がによって使用されて[CAtlComModule::UnRegisterTypeLib](../../atl/reference/catlcommodule-class.md#unregistertypelib)と[AtlComModuleUnregisterServer](#atlcommoduleunregisterserver)です。  
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h
 
 ##  <a name="atlloadtypelib"></a>AtlLoadTypeLib  
@@ -386,10 +387,10 @@ HRESULT RegistryDataExchange(
 |eWriteToReg|データをレジストリに書き込みます。|  
 |eDeleteFromReg|キーがレジストリから削除します。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](atl-functions.md)[レジストリ データ交換マクロ](registry-data-exchange-macros.md)
 
 

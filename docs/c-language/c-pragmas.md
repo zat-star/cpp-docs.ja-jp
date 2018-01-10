@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9a66102153400b62998207f5510b20f7d60e90ab
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 01fbd345daa6243a0385d556dd7cb6642a881de7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-pragmas"></a>C プラグマ
 **Microsoft 固有の仕様**  
@@ -35,7 +36,7 @@ ms.lasthandoff: 10/24/2017
   
  Microsoft C コンパイラのプラグマについては、『*プリプロセッサ リファレンス*』の「[プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)」をご覧ください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ソース ファイルとソース プログラム](../c-language/source-files-and-source-programs.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 15e1bc61e9b15293290098b9414642d8edf46707
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6c2ecc7c4a0308a1a7d182cc0bdaf04c2ed6b6e9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="conversions-from-unsigned-integral-types"></a>Conversions from Unsigned Integral Types (符号なし整数型からの変換)
 符号なし整数は、上位ビットを切り捨てることによって短い符号なしまたは符号付き整数に変換されます。または、ゼロ拡張によって長い符号なしまたは符号付き整数に変換されます (「[符号なし整数型からの変換](#_clang_table_4..3)」表をご覧ください)。  
@@ -46,7 +47,7 @@ printf_s( "%hd\n", j );   // Prints -3
   
 ### <a name="conversions-from-unsigned-integral-types"></a>Conversions from Unsigned Integral Types (符号なし整数型からの変換)  
   
-|変換前|目的|メソッド|  
+|From|終了|メソッド|  
 |----------|--------|------------|  
 |`unsigned char`|`char`|ビット パターンを維持、上位ビットが符号ビットになる。|  
 |`unsigned char`|**short**|ゼロ拡張。|  
@@ -77,7 +78,7 @@ printf_s( "%hd\n", j );   // Prints -3
   
  Microsoft の 32 ビット C コンパイラでは、`unsigned int` 型は `unsigned long` 型と等価です。 `unsigned int` 値の変換は、`unsigned long` の変換と同様に実行されます。 `unsigned long` 値から **float** への変換は、変換されている値が正の符号付き **long** の最大値より大きい場合は、正確ではありません。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [代入の変換](../c-language/assignment-conversions.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 987691d2eaf8ae2f6c8f724fb8bcf4f26ad68dcd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 835c396c36a23d05a1e3512fa7ad5e4c4e81c795
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="locale"></a>ロケール
 *ロケール*とは、プログラムをカスタマイズするために使用できる国または地域と言語を表します。 ロケールに依存するカテゴリとしては、日付や通貨の値の表示形式などがあります。 詳細については、「[ロケールのカテゴリ](../c-runtime-library/locale-categories.md)」を参照してください。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="locale-dependent-routines"></a>ロケールに依存するルーチン  
   
-|ルーチン|用途|`setlocale` カテゴリの設定の依存関係|  
+|ルーチンによって返される値|使用|`setlocale` カテゴリの設定の依存関係|  
 |-------------|---------|---------------------------------------------|  
 |[atof、_atof_l、_wtof、_wtof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|文字を浮動小数点型の値に変換|`LC_NUMERIC`|  
 |[atoi、_atoi_l、_wtoi、_wtoi_l](../c-runtime-library/reference/atoi-atoi-l-wtoi-wtoi-l.md)|文字を整数型の値に変換|`LC_NUMERIC`|  
@@ -77,6 +78,6 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  マルチバイトのルーチンの場合、マルチバイトのコード ページは [setlocale](../c-runtime-library/reference/setlocale-wsetlocale.md) で設定されたロケールと同じである必要があります。 `_MB_CP_LOCALE` 引数を指定した [_setmbcp](../c-runtime-library/reference/setmbcp.md) では、マルチバイトのコード ページを `setlocale` のコード ページと同じにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [国際化](../c-runtime-library/internationalization.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

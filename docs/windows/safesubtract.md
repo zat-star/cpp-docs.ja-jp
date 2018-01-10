@@ -15,11 +15,14 @@ caps.latest.revision: "5"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 98114ebc7baee41970177e9c390f65fa5521544a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 5b94d84e6a348b68258fc1b57c2e0ad9ad30e36d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="safesubtract"></a>SafeSubtract
 オーバーフローを防止する方法の 2 つの数値を減算します。  
@@ -56,12 +59,12 @@ inline bool SafeSubtract (
   
  テンプレート型 T および U の詳細については、次を参照してください。 [SafeInt 関数](../windows/safeint-functions.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** safeint.h  
   
  **Namespace:** Microsoft::Utilities  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SafeInt 関数](../windows/safeint-functions.md)   
  [SafeInt ライブラリ](../windows/safeint-library.md)   
  [SafeInt クラス](../windows/safeint-class.md)   

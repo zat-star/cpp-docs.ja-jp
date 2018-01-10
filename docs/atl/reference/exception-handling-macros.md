@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 906f6d499da04a6bee9da18dbbb6ad4b463c8fa6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 424a65c44d7bb22d1fef6e21e1892967ecd3e9b8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="exception-handling-macros"></a>例外処理マクロ
 これらのマクロは、例外処理のサポートを提供します。  
@@ -72,5 +73,5 @@ _ATLTRY
 ### <a name="remarks"></a>コメント  
  組み合わせて使用[_ATLCATCH](#_atlcatch)または[_ATLCATCHALL](#_atlcatchall)です。 C++ シンボルに解決される[再試行](../../cpp/try-throw-and-catch-statements-cpp.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [マクロ](../../atl/reference/atl-macros.md)
+## <a name="see-also"></a>参照  
+ [[マクロ]](../../atl/reference/atl-macros.md)

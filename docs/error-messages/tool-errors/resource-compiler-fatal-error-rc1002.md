@@ -1,35 +1,34 @@
 ---
-title: "リソース コンパイラの致命的なエラー RC1002 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "RC1002"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RC1002"
+title: "リソース コンパイラの致命的なエラー RC1002 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: RC1002
+dev_langs: C++
+helpviewer_keywords: RC1002
 ms.assetid: b43dfece-0dc3-4d0b-9d8f-509699b9ae80
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 5343f0b6c1309dd4229ed6b34e282d6bc1f3f703
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リソース コンパイラの致命的なエラー RC1002
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="resource-compiler-fatal-error-rc1002"></a>リソース コンパイラの致命的なエラー RC1002
 ヒープ スペースがありません。  
   
-### 次のような解決策を使用して問題を解決するには  
+### <a name="to-fix-by-using-the-following-possible-solutions"></a>以下の可能性がある解決策を使って修正するには  
   
-1.  Windows のスワップ ファイルの容量を増やします。  スワップ ファイルの容量を増やす方法の詳細については、Windows ヘルプの仮想メモリに関するトピックを参照してください。  
+1.  Windows のスワップ ファイルの領域を増やします。 詳細については、スワップ ファイルの容量を増やすと、Windows のヘルプ内の仮想メモリを参照してください。  
   
-2.  現在のファイルを複数のより小さいファイルに分割し、それぞれをコンパイルします。  
+2.  小さなファイルに現在のファイルに分割し、個別にコンパイルします。  
   
-3.  システムで実行されている、ほかのプログラムまたはドライバーを削除します。
+3.  その他のプログラムまたはシステムで実行されているドライバーを削除します。

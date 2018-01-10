@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -37,8 +36,7 @@ f1_keywords:
 - _wcsspnp
 - _strspnp
 - mbsspnp
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _strspnp function
 - _wcsspnp function
@@ -51,30 +49,16 @@ helpviewer_keywords:
 - _tcsspnp function
 - tcsspnp function
 ms.assetid: 1ce18100-2edd-4c3b-af8b-53f204d80233
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: f7bf32d7fa725e1f012b2a793a8091674e1c2e9f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 314adc5ad7011d715f0c49887761390994ebc45f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strspnp-wcsspnp-mbsspnp-mbsspnpl"></a>_strspnp、_wcsspnp、_mbsspnp、_mbsspnp_l
 指定した一方の文字列の文字のうち、もう一方の文字列にはない最初の文字へのポインターを返します。  
@@ -116,7 +100,7 @@ unsigned char *_mbsspnp_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_strspnp`、 `_wcsspnp`、および`_mbsspnp`最初の文字にポインターを返す`str`内の文字のセットに含まれない`charset`です。 これらの関数を返します`NULL`場合`str`から文字のみで成り立って`charset`です。 これらのルーチンでは、エラーを示す戻り値は予約されていません。  
+ `_strspnp`、 `_wcsspnp`、および`_mbsspnp`の最初の文字へのポインターを返す`str`内の文字のセットに含まれない`charset`です。 これらの関数を返します`NULL`場合`str`から文字のみで成り立って`charset`です。 これらのルーチンでは、エラーを示す戻り値は予約されていません。  
   
 ## <a name="remarks"></a>コメント  
  `_mbsspnp` 関数は、`str` の文字セットに属さない文字が `charset` で最初に出現する位置へのマルチバイト文字のポインターを返します。 `_mbsspnp` 関数は、現在使用中の[マルチバイト コード ページ](../../c-runtime-library/code-pages.md)に基づいて、マルチバイト文字列を認識します。 検索には、終端の NULL 文字は含まれません。  
@@ -131,17 +115,17 @@ unsigned char *_mbsspnp_l(
   
  `_strspnp` と `_wcsspnp` はそれぞれ、`_mbsspnp` の 1 バイト文字バージョンとワイド文字バージョンです。 それ以外の点では、`_strspnp` および `_wcsspnp` の動作は `_mbsspnp` と同じです。これらはこの割り当てにのみ使用し、その他の場合には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
   
- `_mbsspnp_l` は、代わりに渡されるロケール パラメーターを使用することを除いて同じものです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_mbsspnp_l` は、代わりに渡されるロケール パラメーターを使用することを除いて同じものです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_mbsspnp`|\<mbstring.h>|  
 |`_strspnp`|\<tchar.h>|  
 |`_wcsspnp`|\<tchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -165,7 +149,7 @@ int main( void ) {
 abbage  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

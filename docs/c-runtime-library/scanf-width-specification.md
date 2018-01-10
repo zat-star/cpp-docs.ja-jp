@@ -23,11 +23,12 @@ caps.latest.revision: "16"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d95e5dc4b137e050c65bc95b6b872ae1f5391baa
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ee2fa7f80f47e2d3379bc4e68aec4496e8f4f01a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="scanf-width-specification"></a>scanf 関数の文字幅指定
 この情報は、`scanf_s` など、安全なバージョンを含む `scanf` 関数ファミリの書式指定文字列の解釈に適用されます。 これらの関数は通常、入力ストリームが一連のトークンに分割されていることを前提とします。 トークンは空白 (スペース、タブ、または改行文字) で区切られるか、数値型の場合は数値テキストに変換できない最初の文字による、数値データ型の自然な終了で区切られます。 ただし、幅指定を使用すると、トークンの自然な終了の前に入力の解析が停止することがあります。  
@@ -103,7 +104,7 @@ wscanf_s(L"%hC", &x, 2);    // Read a single-byte character
   
  理由に関係なく、`scanf` 関数が入力フィールドの読み取りを停止すると、次の入力フィールドは、最初の未読文字から始まるとみなされます。 競合する文字がある場合は、それは未読とみなされ、次の入力フィールドの最初の文字、または入力ストリームのそのあとの読み取り操作の最初の文字になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [scanf、_scanf_l、wscanf、_wscanf_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
  [scanf_s、_scanf_s_l、wscanf_s、_wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)   
  [書式指定フィールド: scanf 関数と wscanf 関数](../c-runtime-library/format-specification-fields-scanf-and-wscanf-functions.md)   

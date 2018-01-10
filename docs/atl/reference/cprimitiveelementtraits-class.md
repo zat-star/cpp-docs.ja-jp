@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e9713ae95e5c47f67c09ecbfc571b118f6a9989f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 55255342f39ff80f5deb5378353529ef4d6934bb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cprimitiveelementtraits-class"></a>CPrimitiveElementTraits クラス
 このクラスは、既定のメソッドを提供し、プリミティブ データ型のコレクション クラスの関数で構成されます。  
@@ -64,7 +65,7 @@ class CPrimitiveElementTraits : public CDefaultElementTraits<T>
   
  `CPrimitiveElementTraits`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcoll.h  
   
 ##  <a name="inargtype"></a>CPrimitiveElementTraits::INARGTYPE  
@@ -81,6 +82,6 @@ typedef T INARGTYPE;
 typedef T& OUTARGTYPE;
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDefaultElementTraits クラス](../../atl/reference/cdefaultelementtraits-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

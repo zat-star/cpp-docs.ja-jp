@@ -47,11 +47,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 27f163b76d037ca91330890c7d38c37c182b6b1b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: acbf4753bb29b8f28cac9fe4fb6ceff72ceda8a7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csimplestringt-class"></a>CSimpleStringT クラス
 このクラスを表します、`CSimpleStringT`オブジェクト。  
@@ -131,7 +132,7 @@ class CSimpleStringT
 ### <a name="remarks"></a>コメント  
  `CSimpleStringT`Visual C でサポートされているさまざまな文字列クラスの基本クラスです。 基本的なバッファー操作、文字列オブジェクトのメモリ管理の最小限のサポートを提供します。 高度な文字列オブジェクトでは、次を参照してください。 [CStringT クラス](../../atl-mfc-shared/reference/cstringt-class.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsimpstr.h  
 
 
@@ -1050,6 +1051,6 @@ void UnlockBuffer() throw();
 ### <a name="remarks"></a>コメント  
  破棄するには、このメソッドを呼び出して、`CSimpleStringT`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)

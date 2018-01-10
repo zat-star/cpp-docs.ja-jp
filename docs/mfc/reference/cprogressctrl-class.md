@@ -53,11 +53,12 @@ caps.latest.revision: "25"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ff7011c9a12acf54fbc7de561409f5f0278d90c8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b7def2d1a6b421259a2b0d5e8229165ea0593874
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cprogressctrl-class"></a>CProgressCtrl クラス
 Windows コモン プログレス バー コントロールの機能が用意されています。  
@@ -114,7 +115,7 @@ class CProgressCtrl : public CWnd
   
  `CProgressCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="cprogressctrl"></a>CProgressCtrl::CProgressCtrl  
@@ -275,11 +276,11 @@ int GetState() const;
 ### <a name="return-value"></a>戻り値  
  これは、次の値のいずれか、現在の進行状況バー コントロールの状態。  
   
-|値|状態|  
+|[値]|状態|  
 |-----------|-----------|  
 |`PBST_NORMAL`|処理中|  
-|`PBST_ERROR`|エラー|  
-|`PBST_PAUSED`|Paused|  
+|`PBST_ERROR`|Error|  
+|`PBST_PAUSED`|一時停止|  
   
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [PBM_GETSTATE](http://msdn.microsoft.com/library/windows/desktop/bb760834) Windows SDK で説明するメッセージ。  
@@ -532,7 +533,7 @@ int StepIt();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CProgressCtrl#10](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_16.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CMNCTRL2](../../visual-cpp-samples.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)

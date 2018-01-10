@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b0c1deca52e74241b56c3c152e66a74d652b4829
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f710cc1695579bf1a6f873229c347966888bc745
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="expanding-wildcard-arguments"></a>ワイルドカード引数の展開
 **Microsoft 固有の仕様**  
@@ -37,8 +38,8 @@ ms.lasthandoff: 10/24/2017
   
  ワイルドカードはオペレーティング システム コマンドと同じように展開されます (ワイルドカードの使用経験がない場合は、オペレーティング システムのユーザー ガイドを参照)。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンク オプション](../c-runtime-library/link-options.md)   
  [main 関数とプログラム実行](../c-language/main-function-and-program-execution.md)

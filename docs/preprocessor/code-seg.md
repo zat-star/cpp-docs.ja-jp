@@ -1,68 +1,69 @@
 ---
-title: "code_seg | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "code_seg_CPP"
-  - "vc-pragma.code_seg"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "code_seg プラグマ"
-  - "プラグマ, code_seg"
+title: "code_seg |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- code_seg_CPP
+- vc-pragma.code_seg
+dev_langs: C++
+helpviewer_keywords:
+- pragmas, code_seg
+- code_seg pragma
 ms.assetid: bf4faac1-a511-46a6-8d9e-456851d97d56
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 35ead52e9e084eb1770e3532d15848e168d8af90
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# code_seg
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="codeseg"></a>code_seg
 関数が格納される .obj ファイル内のテキスト セグメントを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #pragma code_seg( [ [ { push | pop }, ] [ identifier, ] ] [ "segment-name" [, "segment-class" ] )  
 ```  
   
-## 解説  
- `code_seg` プラグマ ディレクティブは、インスタンス化されたテンプレート用に生成されたオブジェクト コードや、コンパイラによって暗黙的に生成されたコード \(特殊なメンバー関数など\) の格納場所を制御するものではありません。  代わりに、[\_\_declspec\(code\_seg\(...\)\)](../cpp/code-seg-declspec.md) 属性を使用することをお勧めします。すべてのオブジェクト コードの格納場所も、  コンパイラによって生成されたコードの格納場所も制御できるためです。  
+## <a name="remarks"></a>コメント  
+ `code_seg` プラグマ ディレクティブは、インスタンス化されたテンプレート用に生成されたオブジェクト コードや、コンパイラによって暗黙的に生成されたコード (特殊なメンバー関数など) の格納場所を制御するものではありません。 使用することをお勧め、 [__declspec(code_seg(...)](../cpp/code-seg-declspec.md)属性代わりに使用することにより、すべてのオブジェクト コードの配置を制御します。 コンパイラによって生成されたコードの格納場所も制御できるためです。  
   
- .obj ファイル内の*セグメント*は、メモリへの読み込み単位となる名前付きのデータ ブロックです。  *テキスト セグメント*は、実行可能なコードが格納されるセグメントです。  この記事では、*セグメント*と*セクション*という用語は同義です。  
+ A*セグメント*.obj ファイルは名前付きのユニットとしてメモリに読み込まれるデータのブロックです。 A*テキスト セグメント*セグメントでは、実行可能コードが含まれています。 この記事で、条項*セグメント*と*セクション*は同義です。  
   
- `code_seg` プラグマ ディレクティブは、翻訳単位の後続のすべてのオブジェクト コードを `segment-name` というテキスト セグメントに格納するように、コンパイラに指示します。  既定では、.obj ファイル内の関数に使用されるテキスト セグメントには .text という名前が付けられます。  
+ `code_seg` プラグマ ディレクティブは、翻訳単位の後続のすべてのオブジェクト コードを `segment-name` というテキスト セグメントに格納するように、コンパイラに指示します。 既定では、.obj ファイル内の関数に使用されるテキスト セグメントには .text という名前が付けられます。  
   
  `code_seg` プラグマ ディレクティブは、パラメーターが指定されない場合、後続のオブジェクト コードのテキスト セグメント名を .text にリセットします。  
   
- **Push** \(省略可能\)  
- レコードを内部コンパイラ スタックに格納します。  **push** には `identifier` と `segment-name` を指定できます。  
+ **プッシュ**(省略可能)  
+ レコードを内部コンパイラ スタックに格納します。 A**プッシュ**持つことができます、`identifier`と`segment-name`です。  
   
- **pop** \(省略可能\)  
+ **pop** (省略可能)  
  内部コンパイラ スタックの最上部からレコードを削除します。  
   
- `identifier` \(省略可能\)  
- **push** と共に使用した場合、内部コンパイラ スタックのレコードに名前を割り当てます。  **pop** と共に使用した場合、`identifier` が削除されるまでレコードを内部スタックからポップします。`identifier` が内部スタックにない場合は何もポップされません。  
+ `identifier` (省略可能)  
+ 使用すると**プッシュ**、内部コンパイラ スタックのレコードに名前が割り当てられます。 使用すると**pop**、レコードまで内部スタックからポップ`identifier`が削除された場合`identifier`がない内部スタックで、何もポップします。  
   
- `identifier` を使用して、複数のレコードを 1 つの **pop** コマンドでポップできます。  
+ `identifier`により、複数のレコードが 1 つだけでポップできます**pop**コマンド。  
   
- "`segment-name`" \(省略可能\)  
- 引数の名前。  **pop** と共に使用した場合、スタックがポップされ、`segment-name` がアクティブなテキスト セグメント名になります。  
+ "`segment-name`" (省略可能)  
+ 引数の名前。 使用すると**pop**、スタックがポップされますと`segment-name`アクティブなテキスト セグメント名になります。  
   
- "`segment-class`" \(省略可能\)  
- 無視されますが、C\+\+ 2.0 より前のバージョンとの互換性を保つために残されています。  
+ "`segment-class`" (省略可能)  
+ 無視されますが、C++ 2.0 より前のバージョンとの互換性を保つために残されています。  
   
- [DUMPBIN.EXE](../build/reference/dumpbin-command-line.md) アプリケーションを使用して .obj ファイルを表示できます。  サポートされている各ターゲット アーキテクチャの DUMPBIN のバージョンは [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] に付属しています。  
+ 使用することができます、 [DUMPBIN です。EXE](../build/reference/dumpbin-command-line.md) .obj ファイルを表示するアプリケーション。 サポートされている各ターゲット アーキテクチャの DUMPBIN のバージョンは [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] に付属しています。  
   
-## 使用例  
+## <a name="example"></a>例  
  この例では、`code_seg` プラグマ ディレクティブを使用して、オブジェクト コードの格納場所を制御する方法を示しています。  
   
 ```  
@@ -86,10 +87,10 @@ int main() {
 }  
 ```  
   
- セクションを作成する場合に使用しない名前のリストについては、「[\/SECTION](../build/reference/section-specify-section-attributes.md)」を参照してください。  
+ セクションを作成するのには使用できません名の一覧は、次を参照してください。 [/section](../build/reference/section-specify-section-attributes.md)です。  
   
- 初期化されたデータのセクション \([data\_seg](../preprocessor/data-seg.md)\)、初期化されていないデータのセクション \([bss\_seg](../preprocessor/bss-seg.md)\)、および const 変数のセクション \([const\_seg](../preprocessor/const-seg.md)\) を指定することもできます。  
+ 初期化されたデータのセクションを指定することもできます ([data_seg](../preprocessor/data-seg.md))、初期化されていないデータ ([bss_seg](../preprocessor/bss-seg.md))、および const 変数 ([const_seg](../preprocessor/const-seg.md))。  
   
-## 参照  
- [code\_seg \(\_\_declspec\)](../cpp/code-seg-declspec.md)   
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+## <a name="see-also"></a>参照  
+ [code_seg (_ _declspec)](../cpp/code-seg-declspec.md)   
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

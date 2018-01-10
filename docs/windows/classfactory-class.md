@@ -1,32 +1,33 @@
 ---
-title: "ClassFactory クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "module/Microsoft::WRL::ClassFactory"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ClassFactory クラス"
+title: "ClassFactory クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: module/Microsoft::WRL::ClassFactory
+dev_langs: C++
+helpviewer_keywords: ClassFactory class
 ms.assetid: f13e6bce-722b-4f18-b7cf-3ffa6345c1db
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 8c37c016809d31fcb072f23768e9f54313331016
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ClassFactory クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="classfactory-class"></a>ClassFactory クラス
 IClassFactory インターフェイスの基本機能を実装します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -44,41 +45,41 @@ class ClassFactory : public Details::RuntimeClass<
       false>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `I0`  
- zeroth インターフェイス。  
+ 0 番目のインターフェイスです。  
   
  `I1`  
- 最初のインターフェイス。  
+ 最初のインターフェイスです。  
   
  `I2`  
- 2 番目のインターフェイス。  
+ 2 番目のインターフェイスです。  
   
-## 解説  
- ユーザーが定義するファクトリの実装を提供するために `ClassFactory` を使用します。  
+## <a name="remarks"></a>コメント  
+ 利用`ClassFactory`工場出荷時のユーザー定義の実装を提供します。  
   
- 次のプログラミング パターンがクラス ファクトリで 3 つ以上のインターフェイスを指定するために [実装](../Topic/Implements%20Structure.md) 構造体を使用する方法を示します。  
+ 次のプログラミング パターンが使用する方法を示します、 [Implements](../windows/implements-structure.md)構造体をクラス ファクトリで複数の 3 つのインターフェイスを指定します。  
   
  `struct MyFactory : ClassFactory<Implements<I1, I2, I3>, I4, I5>`  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
-  
-|名前|説明|  
-|--------|--------|  
-|[ClassFactory::ClassFactory コンストラクター](../Topic/ClassFactory::ClassFactory%20Constructor.md)||  
-  
-### パブリック メソッド  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[ClassFactory::AddRef メソッド](../Topic/ClassFactory::AddRef%20Method.md)|ClassFactory の現在のオブジェクトの参照カウントをインクリメントします。|  
-|[ClassFactory::LockServer メソッド](../windows/classfactory-lockserver-method.md)|ClassFactory の現在のオブジェクトによって追跡された基になるオブジェクトの数をインクリメントするか、デクリメントします。|  
-|[ClassFactory::QueryInterface メソッド](../windows/classfactory-queryinterface-method.md)|パラメーターで指定したインターフェイスへのポインターを取得します。|  
-|[ClassFactory::Release メソッド](../windows/classfactory-release-method.md)|ClassFactory の現在のオブジェクトの参照カウントをデクリメントします。|  
+|----------|-----------------|  
+|[ClassFactory::ClassFactory コンストラクター](../windows/classfactory-classfactory-constructor.md)||  
   
-## 継承階層  
+### <a name="public-methods"></a>パブリック メソッド  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[ClassFactory::AddRef メソッド](../windows/classfactory-addref-method.md)|ClassFactory、現在の参照カウントをインクリメントします。|  
+|[ClassFactory::LockServer メソッド](../windows/classfactory-lockserver-method.md)|現在の ClassFactory オブジェクトによって追跡されているオブジェクトの基になる数ずつインクリメントまたはデクリメントします。|  
+|[ClassFactory::QueryInterface メソッド](../windows/classfactory-queryinterface-method.md)|パラメーターで指定されたインターフェイスへのポインターを取得します。|  
+|[ClassFactory::Release メソッド](../windows/classfactory-release-method.md)|現在の ClassFactory オブジェクト、参照カウントをデクリメントします。|  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `I0`  
   
  `ChainInterfaces`  
@@ -99,11 +100,11 @@ class ClassFactory : public Details::RuntimeClass<
   
  `ClassFactory`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** module.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
- [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)   
+## <a name="see-also"></a>参照  
+ [Microsoft::wrl Namespace](../windows/microsoft-wrl-namespace.md)   
  [RuntimeClassType 列挙型](../windows/runtimeclasstype-enumeration.md)

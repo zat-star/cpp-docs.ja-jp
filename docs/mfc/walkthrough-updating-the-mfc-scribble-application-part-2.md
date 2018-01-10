@@ -14,11 +14,12 @@ caps.latest.revision: "36"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c4213bcc0321749ddda1ee0b85f577b01044bfc6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 861e0b1f76fcd441ccf5da8f56d5c5dcb23a2b8d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-updating-the-mfc-scribble-application-part-2"></a>チュートリアル: MFC Scribble アプリケーションの更新 (パート 2)
 [第 1 部](../mfc/walkthrough-updating-the-mfc-scribble-application-part-1.md)このチュートリアルでは、クラシックに Office Fluent リボンを追加する方法を示しましたの Scribble アプリケーションです。 この部分では、リボン パネルやユーザーがメニューやコマンドの代わりに使用できるコントロールを追加する方法を示します。  
@@ -103,7 +104,7 @@ ms.lasthandoff: 10/24/2017
   
 #### <a name="to-add-a-pen-panel-and-combo-boxes-to-the-ribbon"></a>ペン パネルとコンボ ボックスをリボンに追加するには  
   
-1.  **ツールボックス**、ドラッグ、**パネル**を**ホーム**カテゴリ。 ドラッグし、 ** チェック ボックスを**と 2 つ**コンボ ボックス**パネルにします。  
+1.  **ツールボックス**、ドラッグ、**パネル**を**ホーム**カテゴリ。 ドラッグし、  **チェック ボックスを**と 2 つ**コンボ ボックス**パネルにします。  
   
 2.  そのプロパティを変更するパネルをクリックします。 変更**キャプション**に`Pen`です。  
   

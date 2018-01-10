@@ -32,11 +32,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fa6d2e05668eac7909cb7805c5843ee6584b941f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: de71b832af9e6ed2f734f193e49a7c240193edce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="rtcseterrorfunc"></a>_RTC_SetErrorFunc
 実行時エラー チェック (RTC) を報告するためのハンドラーとして関数を指定します。 この関数は使用されなくなりました。代わりに `_RTC_SetErrorFuncW` をご使用ください。  
@@ -60,9 +61,9 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  この関数は使用しないでください。代わりに `_RTC_SetErrorFuncW`をご使用ください。 これは下位互換性のためだけに残されています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_RTC_SetErrorFunc`|\<rtcapi.h>|  
   
@@ -71,6 +72,6 @@ ms.lasthandoff: 10/24/2017
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_CrtDbgReport、_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md)   
  [ランタイム エラー チェック](../../c-runtime-library/run-time-error-checking.md)

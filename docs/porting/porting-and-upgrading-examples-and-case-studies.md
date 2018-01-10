@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 554134b71c4dc45a828595c0c7dfb639940494df
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 212b51f417fc84b602e6231f2e769cb73c9a1460
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="porting-and-upgrading-examples-and-case-studies"></a>移植およびアップグレード: 例とケース スタディ
 移行に成功したストーリーを確認することにより、以前のバージョンの Visual C++ から現在のバージョンへの移行の期間に発生する可能性がある問題の種類を理解できます。  
@@ -31,5 +32,5 @@ ms.lasthandoff: 10/24/2017
   
 -   [Spy++](../porting/porting-guide-spy-increment.md) は、実行中のアプリケーションに含まれている UI 要素に関する情報を調査して提示するアプリケーションです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ 移植とアップグレードのガイド](../porting/visual-cpp-porting-and-upgrading-guide.md)

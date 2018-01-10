@@ -18,18 +18,19 @@ caps.latest.revision: "15"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 72772912097cf868538a496d3350d4708af5dc83
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f6a0c3fe1a85028f4b4220f8e2f111afa1012121
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="stream-io"></a>ストリーム入出力
 これらの関数は、1 文字から大きなデータ構造に至るまで、さまざまなサイズと形式のデータを処理します。 バッファリングも提供しており、パフォーマンスを向上させることができます。 ストリーム バッファーの既定のサイズは 4K です。 これらのルーチンは、ランタイム ライブラリ ルーチンによって作成されるバッファーにのみ影響し、オペレーティング システムによって作成されるバッファーには影響しません。  
   
 ### <a name="stream-io-routines"></a>ストリーム入出力ルーチン  
   
-|ルーチン|用途|  
+|ルーチンによって返される値|使用|  
 |-------------|---------|  
 |[clearerr](../c-runtime-library/reference/clearerr.md)、 [clearerr_s](../c-runtime-library/reference/clearerr-s.md)|ストリームのクリア エラー インジケーター|  
 |[fclose](../c-runtime-library/reference/fclose-fcloseall.md)|ストリームを閉じる|  
@@ -60,9 +61,9 @@ ms.lasthandoff: 10/24/2017
 |[getc、getwc](../c-runtime-library/reference/getc-getwc.md)|ストリームから文字を読み取る ( `fgetc` および `fgetwc`のマクロ バージョン)|  
 |[getchar、getwchar](../c-runtime-library/reference/getc-getwc.md)|`stdin` から文字を読み取る ( `fgetchar` および `fgetwchar`のマクロ バージョン)|  
 |[_getmaxstdio](../c-runtime-library/reference/getmaxstdio.md)|ストリーム入出力のレベルで許可されている、同時に開かれたファイルの数を返します。|  
-|[gets_s、_getws_s](../c-runtime-library/reference/gets-s-getws-s.md)|`stdin` から行を読み取る|  
+|[gets_s、_getws_s](../c-runtime-library/reference/gets-s-getws-s.md)|`stdin`|  
 |[_getw](../c-runtime-library/reference/getw.md)|ストリームからバイナリ `int` を読み取る|  
-|[printf、_printf_l、wprintf、_wprintf_l](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)、[printf_s、_printf_s_l、wprintf_s、_wprintf_s_l](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)|`stdout` に書式付きデータを書き込む|  
+|[printf、_printf_l、wprintf、_wprintf_l](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)、[printf_s、_printf_s_l、wprintf_s、_wprintf_s_l](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)|`stdout`|  
 |[putc、putwc](../c-runtime-library/reference/putc-putwc.md)|ストリームに文字を書き込む ( `fputc` および `fputwc`のマクロ バージョン)|  
 |[putchar、putwchar](../c-runtime-library/reference/putc-putwc.md)|`stdout` に文字を書き込む ( `fputchar` および `fputwchar`のマクロ バージョン)|  
 |[puts、_putws](../c-runtime-library/reference/puts-putws.md)|ストリームに行を書き込む|  
@@ -83,7 +84,7 @@ ms.lasthandoff: 10/24/2017
 |[ungetc、ungetwc](../c-runtime-library/reference/ungetc-ungetwc.md)|文字をストリームにプッシュし直す|  
 |[_vcprintf、_vcwprintf](../c-runtime-library/reference/vcprintf-vcprintf-l-vcwprintf-vcwprintf-l.md)、[_vcprintf_s、_vcprintf_s_l、_vcwprintf_s、_vcwprintf_s_l](../c-runtime-library/reference/vcprintf-s-vcprintf-s-l-vcwprintf-s-vcwprintf-s-l.md)|コンソールに書式付きデータを書き込む。|  
 |[vfprintf、vfwprintf](../c-runtime-library/reference/vfprintf-vfprintf-l-vfwprintf-vfwprintf-l.md)、[vfprintf_s、_vfprintf_s_l、vfwprintf_s、_vfwprintf_s_l](../c-runtime-library/reference/vfprintf-s-vfprintf-s-l-vfwprintf-s-vfwprintf-s-l.md)|ストリームに書式付きデータを書き込む|  
-|[vprintf、vwprintf](../c-runtime-library/reference/vprintf-vprintf-l-vwprintf-vwprintf-l.md)、[vprintf_s、_vprintf_s_l、vwprintf_s、_vwprintf_s_l](../c-runtime-library/reference/vprintf-s-vprintf-s-l-vwprintf-s-vwprintf-s-l.md)|`stdout` に書式付きデータを書き込む|  
+|[vprintf、vwprintf](../c-runtime-library/reference/vprintf-vprintf-l-vwprintf-vwprintf-l.md)、[vprintf_s、_vprintf_s_l、vwprintf_s、_vwprintf_s_l](../c-runtime-library/reference/vprintf-s-vprintf-s-l-vwprintf-s-vwprintf-s-l.md)|`stdout`|  
 |[_vsnprintf、_vsnwprintf](../c-runtime-library/reference/vsnprintf-vsnprintf-vsnprintf-l-vsnwprintf-vsnwprintf-l.md)、[vsnprintf_s、_vsnprintf_s、_vsnprintf_s_l、_vsnwprintf_s、_vsnwprintf_s_l](../c-runtime-library/reference/vsnprintf-s-vsnprintf-s-vsnprintf-s-l-vsnwprintf-s-vsnwprintf-s-l.md)|指定された長さの書式付きデータをバッファーに書き込む|  
 |[vsprintf、vswprintf](../c-runtime-library/reference/vsprintf-vsprintf-l-vswprintf-vswprintf-l-vswprintf-l.md)、[vsprintf_s、_vsprintf_s_l、vswprintf_s、_vswprintf_s_l](../c-runtime-library/reference/vsprintf-s-vsprintf-s-l-vswprintf-s-vswprintf-s-l.md)|バッファーに書式付きデータを書き込む|  
   
@@ -103,6 +104,6 @@ ms.lasthandoff: 10/24/2017
   
  出力の直後に入力を行うには、 `fflush` またはファイル ポジショニング関数 (`fseek`、 `fsetpos`、または `rewind`) の呼び出しを間に挟まなければなりません。 入力操作がファイルの末尾に達した場合、ファイル ポジショニング関数の呼び出しを間に挟まなくても、入力の直後に出力を行うことができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [入出力](../c-runtime-library/input-and-output.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

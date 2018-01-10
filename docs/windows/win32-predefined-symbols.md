@@ -1,51 +1,54 @@
 ---
-title: "Win32 Predefined Symbols | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Win32 [C++], predefined symbols"
-  - "symbols, Win32 predefined"
-  - "Windows API [C++], predefined symbols"
+title: "Win32 の定義済みシンボル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- Win32 [C++], predefined symbols
+- symbols, Win32 predefined
+- Windows API [C++], predefined symbols
 ms.assetid: 45c8e193-ee2a-4024-bfc2-34d1ec9c9239
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 865d61611546e2550aaa241220dc226cea9f9b81
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Win32 Predefined Symbols
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-以下に示すシンボルは Win32 ヘッダー ファイルに定義されており、標準の Windows アプリケーションの関数とアクションをサポートします。  これらのシンボルは主に共通の UI 要素で使用されます。  リソース エディターでコントロールを扱う場合は、これらのシンボルはコモン コントロールに関連付けられて、[&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)に表示されます。  たとえば、アプリケーション アイコンがツール バーに表示される場合、そのアイコンは \[プロパティ\] ウィンドウのシンボル IDI\_SMALL に関連付けられます。  
+# <a name="win32-predefined-symbols"></a>Win32 の定義済みシンボル
+Win32 ヘッダー ファイルでこれらのシンボルが定義されているし、標準の Windows アプリケーションの関数とアクションをサポートします。 これらのシンボルは、共通の UI 要素で主に使用されます。 リソース エディターでのコントロールを使用してこれらのシンボルに表示されます、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)コモン コントロールに関連付けられています。 たとえば、アプリケーションのアイコンがツールバーに表示する場合、アイコンは、[プロパティ] ウィンドウのシンボル IDI_SMALL に関連付けられてのようになります。  
   
 |||  
 |-|-|  
-|IDABORT|コントロール : ダイアログ ボックスの \[中止\] ボタン|  
-|IDC\_STATIC|コントロール : ダイアログ ボックスの静的テキスト|  
-|IDCANCEL|コントロール : ダイアログ ボックスの \[キャンセル\] ボタン|  
-|IDD\_ABOUTBOX|ダイアログ : \[バージョン情報\] ダイアログ ボックス|  
-|IDI\_PROJECTNAME|アイコン : 現在のプロジェクトのアイコン|  
-|IDI\_SMALL|アイコン : 現在のプロジェクトの小さいアイコン|  
-|IDIGNORE|コントロール : ダイアログ ボックスの \[無視\] ボタン|  
-|IDM\_ABOUT|メニュー項目 : \[ヘルプ\] メニューの \[バージョン情報\]|  
-|IDM\_EXIT|メニュー項目 : \[ファイル\] メニューの \[終了\]|  
-|IDNO|コントロール : ダイアログ ボックスの \[いいえ\] ボタン|  
-|IDOK|コントロール : ダイアログ ボックスの \[OK\] ボタン|  
-|IDRETRY|コントロール : ダイアログ ボックスの \[再試行\] ボタン|  
-|IDS\_APP\_TITLE|文字列 : 現在のアプリケーション名|  
-|IDYES|コントロール : ダイアログ ボックスの \[はい\] ボタン|  
+|IDABORT|コントロール: ダイアログ ボックスの 中止 ボタン|  
+|IDC_STATIC|ダイアログ ボックスで静的なテキストを制御します。|  
+|IDCANCEL|コントロール: ダイアログ ボックスの キャンセル ボタン|  
+|IDD_ABOUTBOX|ダイアログ ボックスの詳細 ダイアログ ボックス: 製品|  
+|IDI_PROJECTNAME|アイコン: 現在のプロジェクト アイコン|  
+|IDI_SMALL|アイコン: 現在のプロジェクトの小さいアイコン|  
+|IDIGNORE|ダイアログ ボックス [無視] ボタンに使用される制御。|  
+|IDM_ABOUT|: メニュー項目は、ヘルプで使用しています.に関しては。。。|  
+|IDM_EXIT|: メニュー項目は、ファイルを使用しています.終了しています.|  
+|IDNO|制御: ダイアログ ボックスがないボタン|  
+|IDOK|コントロール: ダイアログ ボックスの OK ボタン|  
+|IDRETRY|コントロール: ダイアログ ボックスの 再試行|  
+|IDS_APP_TITLE|現在のアプリケーション名を文字列:|  
+|IDYES|コントロール: ダイアログ ボックスの はい ボタンします。|  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  Win32  
   
-## 参照  
- [Predefined Symbol IDs](../windows/predefined-symbol-ids.md)   
- [Symbols: Resource Identifiers](../mfc/symbols-resource-identifiers.md)
+## <a name="see-also"></a>参照  
+ [定義済みシンボル Id](../windows/predefined-symbol-ids.md)   
+ [シンボル: リソース識別子](../windows/symbols-resource-identifiers.md)

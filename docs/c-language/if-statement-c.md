@@ -22,11 +22,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1f7d7e43ab50cc50321aea79aad200231f719c3d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cb0e4929b55d6cfc0ef01ee183b74b2439b85d10
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="if-statement-c"></a>if ステートメント (C)
 **if** ステートメントは、条件分岐を制御します。 **if** ステートメントの本体は、式の値が 0 でないの場合に実行されます。 **if** ステートメントの構文には 2 とおりの形式があります。  
@@ -79,5 +80,5 @@ else
   
  この例の内側の **if** ステートメントを囲んでいる中かっこにより、**else** 句は外側の **if** ステートメントの一部になります。 `i` が 0 以下の場合、`i` が `x` に割り当てられます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [if-else ステートメント (C++)](../cpp/if-else-statement-cpp.md)

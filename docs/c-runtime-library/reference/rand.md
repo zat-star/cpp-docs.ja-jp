@@ -1,15 +1,13 @@
 ---
 title: rand | Microsoft Docs
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 1/02/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- rand
+apiname: rand
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,10 +21,8 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
 apitype: DLLExport
-f1_keywords:
-- rand
-dev_langs:
-- C++
+f1_keywords: rand
+dev_langs: C++
 helpviewer_keywords:
 - generating pseudorandom numbers
 - random numbers, generating
@@ -34,126 +30,116 @@ helpviewer_keywords:
 - rand function
 - pseudorandom numbers
 - numbers, generating pseudorandom
-ms.assetid: 75d9df25-7aaf-4a88-b940-2775559634e8
-caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 9916935661c23b34f4f8f12f7e382c32ab3854b1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: aada39e6ea3de3cae65642d29fa1b5ce4bad098e
+ms.sourcegitcommit: a5d8f5b92cb5e984d5d6c9d67fe8a1241f3fe184
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="rand"></a>rand
-疑似乱数を生成します。 この関数のセキュリティが強化されたバージョンについては、「[rand_s](../../c-runtime-library/reference/rand-s.md)」をご覧ください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int rand( void );  
-```  
-  
-## <a name="return-value"></a>戻り値  
- `rand` は、上述のように疑似乱数を返します。 エラーの戻り値はありません。  
-  
-## <a name="remarks"></a>コメント  
- `rand` 関数は、0 から `RAND_MAX` (32767) までの範囲の整数の擬似乱数を返します。 `rand` を呼び出す前に、[srand](../../c-runtime-library/reference/srand.md) を使用して擬似乱数ジェネレーターにシードを設定してください。  
-  
-## <a name="requirements"></a>要件  
-  
-|ルーチン|必須ヘッダー|  
-|-------------|---------------------|  
-|`rand`|\<stdlib.h>|  
-  
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_rand.c  
-// This program seeds the random-number generator  
-// with the time, then exercises the rand function.  
-//  
-  
-#include <stdlib.h>  
-#include <stdio.h>  
-#include <time.h>  
-  
-void SimpleRandDemo( int n )  
-{  
-   // Print n random numbers.  
-   int i;  
-   for( i = 0; i < n; i++ )  
-      printf( "  %6d\n", rand() );  
-}  
-  
-void RangedRandDemo( int range_min, int range_max, int n )  
-{  
-   // Generate random numbers in the half-closed interval  
-   // [range_min, range_max). In other words,  
-   // range_min <= random number < range_max  
-   int i;  
-   for ( i = 0; i < n; i++ )  
-   {  
-      int u = (double)rand() / (RAND_MAX + 1) * (range_max - range_min)  
-            + range_min;  
-      printf( "  %6d\n", u);  
-   }  
-}  
-  
-int main( void )  
-{  
-   // Seed the random-number generator with the current time so that  
-   // the numbers will be different every time we run.  
-   srand( (unsigned)time( NULL ) );  
-  
-   SimpleRandDemo( 10 );  
-   printf("\n");  
-   RangedRandDemo( -100, 100, 10 );  
-}  
-```  
-  
-```Output  
-22036  
-18330  
-11651  
-27464  
-18093  
- 3284  
-11785  
-14686  
-11447  
-11285  
-  
-   74  
-   48  
-   27  
-   65  
-   96  
-   64  
-   -5  
-  -42  
-  -55  
-   66  
-```  
-  
-## <a name="see-also"></a>関連項目  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [srand](../../c-runtime-library/reference/srand.md)   
- [rand_s](../../c-runtime-library/reference/rand-s.md)
+
+よく知られていると完全に再現可能なアルゴリズムを使用して擬似乱数を生成します。 この関数のプログラムでより安全なバージョンは使用できません。参照してください[rand_s](../../c-runtime-library/reference/rand-s.md)です。 によって生成された番号`rand`暗号的に安全ではありません。 乱数生成のより安全な暗号を使用して`rand_s`で C++ 標準ライブラリで宣言された関数または[\<ランダム >](../../standard-library/random.md)です。
+
+## <a name="syntax"></a>構文
+
+```C
+int rand( void );
+```
+
+## <a name="return-value"></a>戻り値
+
+`rand` は、上述のように疑似乱数を返します。 エラーの戻り値はありません。
+
+## <a name="remarks"></a>コメント
+
+`rand` 関数は、0 から `RAND_MAX` (32767) までの範囲の整数の擬似乱数を返します。 `rand` を呼び出す前に、[srand](../../c-runtime-library/reference/srand.md) を使用して擬似乱数ジェネレーターにシードを設定してください。
+
+`rand`関数は、よく知られているシーケンスを生成し、暗号化機能として使用するためには不適切なです。 乱数生成のより安全な暗号を使用して`rand_s`で C++ 標準ライブラリで宣言された関数または[\<ランダム >](../../standard-library/random.md)です。 `rand()` の不具合やこれらの不具合に対する `<random>` の対応の詳細については、[このビデオ](http://go.microsoft.com/fwlink/?LinkId=397615)をご覧ください。
+
+## <a name="requirements"></a>必要条件
+
+|ルーチンによって返される値|必須ヘッダー|
+|-------------|---------------------|
+|`rand`|\<stdlib.h>|
+
+互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_rand.c
+// This program seeds the random-number generator
+// with the time, then exercises the rand function.
+//
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+void SimpleRandDemo( int n )
+{
+   // Print n random numbers.
+   int i;
+   for( i = 0; i < n; i++ )
+      printf( "  %6d\n", rand() );
+}
+
+void RangedRandDemo( int range_min, int range_max, int n )
+{
+   // Generate random numbers in the half-closed interval
+   // [range_min, range_max). In other words,
+   // range_min <= random number < range_max
+   int i;
+   for ( i = 0; i < n; i++ )
+   {
+      int u = (double)rand() / (RAND_MAX + 1) * (range_max - range_min)
+            + range_min;
+      printf( "  %6d\n", u);
+   }
+}
+
+int main( void )
+{
+   // Seed the random-number generator with the current time so that
+   // the numbers will be different every time we run.
+   srand( (unsigned)time( NULL ) );
+
+   SimpleRandDemo( 10 );
+   printf("\n");
+   RangedRandDemo( -100, 100, 10 );
+}
+```
+
+```Output
+22036
+18330
+11651
+27464
+18093
+ 3284
+11785
+14686
+11447
+11285
+
+   74
+   48
+   27
+   65
+   96
+   64
+   -5
+  -42
+  -55
+   66
+```
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)  
+[srand](../../c-runtime-library/reference/srand.md)  
+[rand_s](../../c-runtime-library/reference/rand-s.md)  

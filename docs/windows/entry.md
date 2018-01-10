@@ -1,32 +1,33 @@
 ---
-title: "entry | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.entry"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "entry attribute"
+title: "エントリ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.entry
+dev_langs: C++
+helpviewer_keywords: entry attribute
 ms.assetid: ba4843e3-d7ad-4b86-9a15-0b4192f0f698
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 9ffd90ccdcce39ab73f1c1b550b466541dacf8a1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# entry
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-DLL のエントリ ポイントを指定してモジュール内のエクスポート関数または定数を指定します。  
+# <a name="entry"></a>entry
+モジュールで、DLL 内のエントリ ポイントを識別することによって、エクスポートされた関数または定数を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,29 +36,28 @@ DLL のエントリ ポイントを指定してモジュール内のエクスポ
 ) ]  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `id`  
  エントリ ポイントの ID。  
   
-## 解説  
- **エントリ**  C\+\+ 属性に [エントリ](http://msdn.microsoft.com/library/windows/desktop/aa366815) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **エントリ**C++ 属性と同じ機能を持つ、[エントリ](http://msdn.microsoft.com/library/windows/desktop/aa366815)MIDL 属性。  
   
-## 使用例  
- **エントリ**  の例では[idl\_module](../windows/idl-module.md) の例を参照してください。  
+## <a name="example"></a>例  
+ 例を参照して[idl_module](../windows/idl-module.md)の使用例の**エントリ**です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|`idl_module` 属性|  
-|**複数回の適用**|Ｘ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   

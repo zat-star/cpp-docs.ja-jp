@@ -16,11 +16,12 @@ caps.latest.revision: "36"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b141efa2ffa7d382278365101fca25b66ea25614
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 628a1263a93c6dea642429480f4b77b8347016f3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="upgrading-projects-from-earlier-versions-of-visual-c"></a>旧バージョンの Visual C++ からのプロジェクトのアップグレード
 ほとんどの場合、旧バージョンの Visual Studio で作成されたプロジェクトを開くことができます。 ただし、こうしたプロジェクトは、開くときにアップグレードされます。 アップグレードされたプロジェクトを保存すると、旧バージョンの Visual Studio では開くことができなくなります。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 10/24/2017
   
  対象となる Windows のバージョンを更新する方法については、「[WINVER および _WIN32_WINNT の変更](../porting/modifying-winver-and-win32-winnt.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ビルド システムの変更点](../build/build-system-changes.md)  
  [Visual Studio 2017 での Visual C++ の新機能](../what-s-new-for-visual-cpp-in-visual-studio.md) [Visual C++ の変更履歴 (2003 ～ 2015 年)](../porting/visual-cpp-change-history-2003-2015.md)   
  [非標準動作](../cpp/nonstandard-behavior.md)

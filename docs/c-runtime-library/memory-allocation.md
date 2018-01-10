@@ -18,18 +18,19 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cdaf9fe5b2d41491683d34ea029a546433cd709d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e419cbd30b523121ae1902b49a25d60c0b9d21eb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="memory-allocation"></a>メモリ割り当て
 これらのルーチンを使用して、メモリを割り当て、解放、および再割り当てします。  
   
 ### <a name="memory-allocation-routines"></a>メモリ割り当てルーチン  
   
-|ルーチン|用途|  
+|ルーチンによって返される値|使用|  
 |-------------|---------|  
 |[_alloca](../c-runtime-library/reference/alloca.md)、[_malloca](../c-runtime-library/reference/malloca.md)|スタックからメモリを割り当てます。|  
 |[calloc](../c-runtime-library/reference/calloc.md)|配列の記憶域を割り当て、割り当てられたブロック内のすべてのバイトを 0 に初期化します。|  
@@ -60,5 +61,5 @@ ms.lasthandoff: 10/24/2017
 |[_set_new_handler](../c-runtime-library/reference/set-new-handler.md)|`new` 演算子が (メモリの割り当てに) 失敗したときにエラー処理機構を有効にし、C++ 標準ライブラリのコンパイルを有効にします|  
 |[_set_new_mode](../c-runtime-library/reference/set-new-mode.md)|`malloc` の新しいハンドラー モードを設定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

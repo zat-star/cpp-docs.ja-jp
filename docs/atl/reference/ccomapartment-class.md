@@ -27,11 +27,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0a7e7fce463e7aabe6b27cb9e5fb3dbb36fd8983
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a3fecd77e93c0c51a37d7363e6ec1472d157d6d1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomapartment-class"></a>CComApartment クラス
 このクラスは、アパートメント スレッド プールの EXE モジュールでの管理のサポートを提供します。  
@@ -73,7 +74,7 @@ class CComApartment
 ## <a name="remarks"></a>コメント  
  `CComApartment`によって使用される[は](../../atl/reference/ccomautothreadmodule-class.md)アパートメント スレッド プールの EXE モジュールを管理します。 `CComApartment`インクリメントおよびデクリメント、ロックのメソッドは、スレッドでカウントを提供します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="apartment"></a>CComApartment::Apartment  
@@ -160,5 +161,5 @@ LONG Unlock();
   
  スレッドのロック カウントは、統計目的のために使用されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

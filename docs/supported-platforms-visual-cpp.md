@@ -16,44 +16,31 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.openlocfilehash: 78fac089c9b21825bfb014fe6f26776bac58bd93
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4080fa1bac30ac88edca33f6de32b0a6490f4341
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="supported-platforms-visual-c"></a>サポートされるプラットフォーム (Visual C++)
 
 [!INCLUDE[vsprvs](assembler/masm/includes/vsprvs_md.md)] を使用してビルドしたアプリケーションは、次のようにさまざまなプラットフォームを対象にすることができます。  
   
-|オペレーティング システム|x86|x64|ARM|  
+|オペレーティング システム|x86|X64|ARM|  
 |----------------------|---------|---------|---------|  
 |Windows XP|X*|X*||  
 |[!INCLUDE[WinXPSvr](build/includes/winxpsvr_md.md)]|X*|X*||  
-|Windows Vista|X|X||  
-|Windows Server 2008|X|X||  
-|Windows 7|X|X||  
-|Windows Server 2012 R2|X|X||  
-|Windows 8|X|X|X|  
-|Windows 8.1|X|X|X|  
-|Windows 10|X|X|X|  
-|Android **|X|X|X|  
-|iOS **|X|X|X|  
-|Linux ***|X|X|X|  
+|Windows Vista|x|x||  
+|Windows Server 2008|x|x||  
+|Windows 7|x|x||  
+|Windows Server 2012 R2|x|x||  
+|Windows 8|x|x|x|  
+|Windows 8.1|x|x|x|  
+|Windows 10|x|x|x|  
+|Android **|x|x|x|  
+|iOS **|x|x|x|  
+|Linux ***|x|x|x|  
   
 \* Visual Studio 2017、Visual Studio 2015、Visual Studio 2013、Visual Studio 2012 Update 1 以降に含まれている Windows XP プラットフォーム ツールセットを使用して、Windows XP および [!INCLUDE[WinXPSvr](build/includes/winxpsvr_md.md)] プロジェクトを構築できます。 このプラットフォーム ツールセットを使用する方法については、「[Windows XP 用プログラムの構成](build/configuring-programs-for-windows-xp.md)」を参照してください。 プラットフォーム ツールセットの変更に関する詳細については、「[方法: ターゲット フレームワークおよびプラットフォームのツールセットを変更する](build/how-to-modify-the-target-framework-and-platform-toolset.md)」を参照してください。  
   
@@ -63,7 +50,7 @@ ms.lasthandoff: 10/24/2017
 
 ターゲット プラットフォームの構成を設定する方法については、「[方法 : Visual C++ プロジェクトを 64 ビット、x64 プラットフォーム用に設定する](build/how-to-configure-visual-cpp-projects-to-target-64-bit-platforms.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [さまざまな Visual Studio エディションの Visual C++ ツールおよび機能](ide/visual-cpp-tools-and-features-in-visual-studio-editions.md)   
 [はじめに](/visualstudio/ide/getting-started-with-visual-cpp-in-visual-studio)

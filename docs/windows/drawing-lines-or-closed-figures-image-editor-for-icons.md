@@ -1,69 +1,73 @@
 ---
-title: "Drawing Lines or Closed Figures (Image Editor for Icons) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "closed figures, drawing"
-  - "lines [C++], painting"
-  - "lines [C++], drawing"
-  - "Image editor [C++], drawing lines"
-  - "shapes, drawing"
+title: "線または閉じた図形 (アイコン用イメージ エディター) を描画 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- closed figures, drawing
+- lines [C++], painting
+- lines [C++], drawing
+- Image editor [C++], drawing lines
+- shapes, drawing
 ms.assetid: 7edd86db-77b1-451f-8001-bbfed9c6304f
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 1c2f5169c6340b756c31e1986e46b52f48b4edd5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Drawing Lines or Closed Figures (Image Editor for Icons)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-イメージ エディターで線と閉じた図形の描画に使用するツールの動作形式はすべて同じです。つまり、挿入する場所にカーソルを置き、別の場所までドラッグします。  線の場合は、この 2 つの点がエンド ポイントになります。  閉じた図形の場合は、この 2 つの点が図形の境界となる四角形の対角点になります。  
+# <a name="drawing-lines-or-closed-figures-image-editor-for-icons"></a>線または閉じた図形の描画 (アイコン用イメージ エディター)
+線を描画用イメージ エディターのツールし、閉じた図形のすべてが同じ方法で作業します。 1 つの時点でカーソルを配置し、別にドラッグします。 線、これらのポイントは、エンドポイントです。 閉じた図形は、これらのポイントは、図を囲む四角形の角を反対です。  
   
- 描画する線の太さは現在のブラシの選択内容によって決定され、枠付きの図形の幅は現在の幅の選択内容によって決定されます。  線とすべての図形は、枠付きであっても塗りつぶされていても、マウスの左ボタンをクリックすると現在の前景色、右ボタンをクリックすると現在の背景色で描画されます。  
+ 現在のブラシ選択によって決定幅を結ぶ線を描画し、枠付きの図形は、幅の現在の選択によって決まります幅に描画します。 行と、フレーム化し、データの格納、両方のすべての図形に描画されます現在色のマウスの左ボタンを押した場合、または現在の背景色でマウスの右ボタンを押した場合。  
   
-### 線を描画するには  
+### <a name="to-draw-a-line"></a>線を描画するには  
   
-1.  [&#91;イメージ エディター&#93; ツール バー](../mfc/toolbar-image-editor-for-icons.md) \(または \[イメージ\] メニューの \[ツール\] コマンド\) で、\[直線\] ツールをクリックします。  
+1.  [イメージ エディター ツールバー](../windows/toolbar-image-editor-for-icons.md) (または、**イメージ**] メニューの [**ツール**コマンド)、をクリックして、**行**ツールです。  
   
 2.  必要に応じて、色とブラシを選択します。  
   
-    -   [カラー パレット](../Topic/Colors%20Window%20\(Image%20Editor%20for%20Icons\).md)で、マウスの左ボタンをクリックして前景色を選択するか、またはマウスの右ボタンをクリックして背景色を選択します。  
+    -   [カラー パレット](../windows/colors-window-image-editor-for-icons.md)前景の色を選択するマウスの左ボタンまたは背景色を選択するマウスの右ボタンをクリックします。  
   
-    -   [オプション セレクター](../mfc/toolbar-image-editor-for-icons.md)で、使用するブラシの形をクリックします。  
+    -   [オプション セレクター](../windows/toolbar-image-editor-for-icons.md)、使用するブラシを表す図形をクリックします。  
   
-3.  線の始点にポインターを置きます。  
+3.  線の開始位置にポインターを置きます。  
   
-4.  線のエンド ポイントにドラッグします。  
+4.  線の終点をドラッグします。  
   
-### 閉じた図形を描画するには  
+### <a name="to-draw-a-closed-figure"></a>閉じた図を描画するには  
   
-1.  \[イメージ エディター\] ツール バー \(または \[イメージ\] メニューの \[ツール\] コマンド\) で、図形ツールのいずれかをクリックします。  
+1.  **イメージ エディター**ツールバー (または、**イメージ**] メニューの [**ツール**コマンド)、をクリックして、**図形**ツールです。  
   
-     図形ツールを使用すると、各ボタンに示されている図形を作成できます。  
+     **図形**ツールは、各ボタンに記載されている図形を作成します。  
   
 2.  必要に応じて、色と線の幅を選択します。  
   
-3.  図形を描画する四角形の 1 つの角にポインターを移動します。  
+3.  図を描画する四角形領域の 1 つのコーナーにポインターを移動します。  
   
-4.  対角にポインターをドラッグします。  
+4.  ポインターを斜めに反対側の隅にドラッグします。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  なし  
   
-## 参照  
- [Accelerator Keys](../mfc/accelerator-keys-image-editor-for-icons.md)   
- [Editing Graphical Resources](../mfc/editing-graphical-resources-image-editor-for-icons.md)   
- [Image Editor for Icons](../mfc/image-editor-for-icons.md)   
- [Working with Color](../mfc/working-with-color-image-editor-for-icons.md)
+## <a name="see-also"></a>参照  
+ [アクセラレータ キー](../windows/accelerator-keys-image-editor-for-icons.md)   
+ [グラフィカル リソースの編集](../windows/editing-graphical-resources-image-editor-for-icons.md)   
+ [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)   
+ [カラーを使用します。](../windows/working-with-color-image-editor-for-icons.md)
+

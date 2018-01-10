@@ -14,11 +14,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 01d200e716ce4291350584ac7e2f388cca30cedf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e96e9a692622d17c24d4d73b7249f70a1593bf61
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="parameter-validation"></a>パラメーターの検証
 ほとんどのセキュリティ強化 CRT 関数および多くの既存の関数は個々のパラメーターを検証します。 これには、NULL のポインターの確認、整数が有効範囲に入ることの確認、または列挙値が有効であるかどうかの確認が含まれる場合があります。 無効なパラメーターが見つかると、無効なパラメーター ハンドラーが実行されます。  
@@ -32,6 +33,6 @@ ms.lasthandoff: 10/24/2017
   
  関数 [_set_invalid_parameter_handler](../c-runtime-library/reference/set-invalid-parameter-handler-set-thread-local-invalid-parameter-handler.md) または [_set_thread_local_invalid_parameter_handler](../c-runtime-library/reference/set-invalid-parameter-handler-set-thread-local-invalid-parameter-handler.md) を使用して無効なパラメーター ハンドラーを独自の関数に設定すれば、この動作を変更できます。 指定した関数がアプリケーションを終了しない場合、無効なパラメーターを取得した関数に制御が返されます。 CRT では、通常、これらの関数は関数の実行を中断し、`errno` をエラー コードに設定し、エラー コードを返します。 多くの場合、`errno` 値と戻り値はどちらも `EINVAL` です。これは、無効なパラメーターを示します。 場合によっては、より具体的なエラー コードが返されます。たとえば、無効なファイル ポインターがパラメーターとして渡された場合の `EBADF` などです。 `errno` の詳細については、[errno、_doserrno、_sys_errlist, and _sys_nerr](../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRT のセキュリティ機能](../c-runtime-library/security-features-in-the-crt.md)   
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ffd33877602ebb666ffbd11ff76aa973927f307a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e6dd42eae54f61d03d4d490a17cf1282e2d2e51f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="porting-to-the-universal-windows-platform-c"></a>ユニバーサル Windows プラットフォームへの移植 (C++)
 このトピックでは、既存の C++ コードを Windows 10 アプリ プラットフォームであるユニバーサル Windows プラットフォームに移植する方法を説明します。 *ユニバーサル* という用語は、Windows 10 を実行するどのデバイスでもコードを実行できることを意味します。これには、デスクトップ、電話、タブレット、Windows 10 を実行する将来のデバイスが含まれます。 単一のプロジェクトを作成し、Windows 10 を実行している任意のデバイス上で適切に機能する単一の XAML ベースのユーザー インターフェイスも作成します。 XAML で動的なレイアウト機能を使用することで、アプリの UI をさまざまな表示サイズに適合させることができます。  
@@ -112,6 +113,6 @@ could not find assembly 'platform.winmd': please specify the assembly search pat
   
  Visual Studio を使用して、新しいユニバーサル Windows プラットフォームのプロジェクトを作成した場合は、このエラーは表示されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ 移植ガイド](../porting/porting-to-the-universal-windows-platform-cpp.md)   
  [ユニバーサル Windows プラットフォーム (UWP) 向けアプリの開発](/visualstudio/cross-platform/develop-apps-for-the-universal-windows-platform-uwp)

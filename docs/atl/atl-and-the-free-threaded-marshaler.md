@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ed5660be9a5559d5f51d0cdb0ec2e5bc185bd0b4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 02b8586d7df5a521b48bfce61a097ed6ca450196
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-and-the-free-threaded-marshaler"></a>ATL とフリー スレッド マーシャラー
 ATL シンプル オブジェクト ウィザードの [属性] ページでは、フリー スレッド マーシャラー (FTM) を集計するクラスを許可するオプションを提供します。  
@@ -34,7 +35,7 @@ ATL シンプル オブジェクト ウィザードの [属性] ページでは�
   
  このオプションを使用する場合、クラスは、データのスレッド セーフの責任を負う必要があります。 さらに、フリー スレッド マーシャラーを集約し、その他のオブジェクトから取得されたインターフェイス ポインターを使用する必要があるオブジェクトは、インターフェイスが正しくマーシャ リングすることを確認する追加の手順になりません。 通常は、グローバル インターフェイス テーブル (GIT) にインターフェイス ポインターを格納してを使用するたびに、GIT からポインターを取得します。 ATL クラスを提供する[CComGITPtr](../atl/reference/ccomgitptr-class.md) GIT で格納されているインターフェイス ポインターを使用するためです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../atl/active-template-library-atl-concepts.md)   
  [CoCreateFreeThreadedMarshaler](http://msdn.microsoft.com/library/windows/desktop/ms694500)   
  [IMarshal](http://msdn.microsoft.com/library/windows/desktop/dd542707)   

@@ -11,11 +11,12 @@ caps.latest.revision: "5"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 977c13eabe0f25081b1bfe6b25e615002f0e6987
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload: cplusplus
+ms.openlocfilehash: 1f1a727920ffe5e79bd62fd877e191dc6f6f3cc3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="overview-of-potential-upgrade-issues-visual-c"></a>アップグレード時の潜在的な問題の概要 (Visual C++)
 長年にわたり、Visual C++ コンパイラでは、C++ 言語自体、C++ 標準ライブラリ、C ランタイム (CRT)、およびその他のライブラリ (MFC や ATL など) における変更と併せて、多くの変更が行われてきました。 その結果、Visual C++ の以前のバージョンからアプリケーションをアップグレードした場合、以前は正常にコンパイルされていたコードにおいてコンパイラおよびリンカーに関するエラーや警告が発生する場合があります。 元のコード ベースが古いほど、このようなエラーが発生する可能性は高くなります。 この記事では、発生する可能性が高い問題を最も一般的な方法で分類して概説するとともに、詳細情報へのリンクも示します。  
@@ -165,5 +166,5 @@ dumpbin.exe /LINKERMEMBER somelibrary.lib
   
  詳細については、「[Porting from MBCS to Unicode](porting-guide-spy-increment.md#porting_to_unicode)」 (MBCS から Unicode に移植する) を参照してください。 MBCS と Unicode の一般的な情報については、「[Text and Strings in Visual C++](../text/text-and-strings-in-visual-cpp.md)」 (Visual C++ のテキストと文字列) と「[Internationalization](../c-runtime-library/internationalization.md)」 (国際化) を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [旧バージョンの Visual C++ からのプロジェクトのアップグレード](upgrading-projects-from-earlier-versions-of-visual-cpp.md) [Visual Studio 2017 での C++ 適合性強化](../cpp-conformance-improvements-2017.md)

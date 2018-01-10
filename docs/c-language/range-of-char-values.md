@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8bbb2bb1fc09994c977b0f3f2d3cdf8d927ce2a4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a5fdba1c603b453a3140675b4ab8783ac3332de6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="range-of-char-values"></a>Range of char Values (char 値の範囲)
 **ANSI 3.2.1.1** "プレーン" の **char** が、**signed char** または `unsigned char` と同じ値の範囲を持つかどうか  
@@ -26,5 +27,5 @@ ms.lasthandoff: 10/24/2017
   
  /J コンパイラ オプションは、既定値を **signed** から `unsigned` に変更します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字](../c-language/characters.md)

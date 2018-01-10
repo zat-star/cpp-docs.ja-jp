@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c6fd904db5d01bf1464da522d7209f8d15502556
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 64b191b97bcf4b5f1607cde56fac8fefd1505c7c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-use-parallel-containers-to-increase-efficiency"></a>方法: 並列コンテナーを使用して効率を向上させる
 ここでは、並列コンテナーを使用して、データの格納とアクセスを並行して効率的に行う方法について説明します。  
@@ -72,7 +73,7 @@ Prime factors of 1050985 are: 5 13 19 23 37.
   
  **cl.exe/EHsc carmichael-primes.cpp**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [並列コンテナーと並列オブジェクト](../../parallel/concrt/parallel-containers-and-objects.md)   
  [タスクの並列化](../../parallel/concrt/task-parallelism-concurrency-runtime.md)   
  [concurrent_vector クラス](../../parallel/concrt/reference/concurrent-vector-class.md)   

@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5848e4f200f528261a135e38e1898a256433871b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ad62906f5ee509bd6f99caca55b0df581e1f629b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="custom-manipulators-with-arguments"></a>引数を使用するカスタム マニピュレーター
 このセクションでは、1 つまたは複数の引数を使用する出力ストリーム マニピュレーターを作成する方法と非出力ストリームのマニピュレーターを使用する方法について説明します。  
@@ -31,6 +32,6 @@ ms.lasthandoff: 10/24/2017
   
  [1 つの引数を使用する他の出力ストリーム マニピュレーター](../standard-library/other-one-argument-output-stream-manipulators.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [iostream プログラミング](../standard-library/iostream-programming.md)
 

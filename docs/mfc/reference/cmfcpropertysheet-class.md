@@ -51,11 +51,12 @@ caps.latest.revision: "35"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b8b8624d65e6bee9aacb8ac1f8d7ec9537e5e9c6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e2684de5c72dcc755c2a75e2553eed509ce76533
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcpropertysheet-class"></a>CMFCPropertySheet クラス
 `CMFCPropertySheet` クラスは、各プロパティ ページがページ タブ、ツール バー ボタン、ツリー コントロールのノード、またはリスト項目で示されるプロパティ シートをサポートします。  
@@ -140,7 +141,7 @@ class CMFCPropertySheet : public CPropertySheet
   
  [CMFCPropertySheet](../../mfc/reference/cmfcpropertysheet-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxpropertysheet.h  
   
 ##  <a name="addpage"></a>:Addpage  
@@ -462,7 +463,7 @@ void SetLook(
   
  次の表に、列挙値で指定できる、`look`パラメーター。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |`CMFCPropertySheet::PropSheetLook_Tabs`|(既定値)各プロパティ ページのタブが表示されます。 タブは、プロパティ シートの上部に表示されるられ、1 つの行に収まらない他のタブがある場合に積み重ねられます。|  
 |`CMFCPropertySheet::PropSheetLook_OutlookBar`|プロパティ シートの左側にある、Microsoft Outlook バーのスタイルのナビゲーション ボタンの一覧を表示します。 リスト内の各ボタンは、プロパティ ページに対応します。 フレームワークでは、一覧の表示領域内に収まるより多くのボタンがある場合、スクロール バーの矢印が表示されます。|  
@@ -470,7 +471,7 @@ void SetLook(
 |`CMFCPropertySheet::PropSheetLook_OneNoteTabs`|各プロパティ ページの Microsoft OneNote スタイルでタブを表示します。 フレームワークは、プロパティ シートの上部にあるタブを表示し、スクロール矢印よりも多くのタブがある場合に収まる 1 つの行。|  
 |`CMFCPropertySheet::PropSheetLook_List`|プロパティ シートの左側にある一覧を表示します。 各リスト項目は、プロパティ ページに対応します。 フレームワークでは、一覧の表示領域内に収まるリスト項目がある場合、スクロール バーの矢印が表示されます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCPropertyPage クラス](../../mfc/reference/cmfcpropertypage-class.md)   

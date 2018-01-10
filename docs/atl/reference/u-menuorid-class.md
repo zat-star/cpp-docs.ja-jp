@@ -20,11 +20,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0ef6563166c658506a33ffa21da285207fbf5275
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7ddde6ff5d45c90e675bd2e44ac421e840d1357b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="umenuorid-class"></a>_U_MENUorID クラス
 このクラスのラッパーを提供する**CreateWindow**と**について**です。  
@@ -60,7 +61,7 @@ class _U_MENUorID
   
  2 つのコンス トラクター オーバー ロードがクラスで定義: 1 つを受け入れる、 **UINT**引数で、もう一方を受け入れる、`HMENU`引数。 **UINT**引数にキャスト、`HMENU`コンス トラクターと、クラスの 1 つのデータ メンバーに格納されている結果[m_hMenu](#_u_menuorid__m_hmenu)です。 引数、`HMENU`コンス トラクターは変換せずに直接格納します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="_u_menuorid__m_hmenu"></a>_U_MENUorID::m_hMenu  
@@ -88,5 +89,5 @@ _U_MENUorID(HMENU hMenu);
 ### <a name="remarks"></a>コメント  
  引数、`HMENU`コンス トラクターは変換せずに直接格納します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

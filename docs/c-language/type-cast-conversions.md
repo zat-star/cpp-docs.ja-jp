@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d3426d6ff06a5d07dd64889e6a5d89da543cfe68
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f402eb49e86c8d6d3ce6c332172375125f577a2b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="type-cast-conversions"></a>型キャスト変換
 型キャストを使用して、明示的に型を変換できます。  
@@ -60,9 +61,9 @@ ms.lasthandoff: 10/24/2017
   
  識別子のサイズが変更されない限り、型キャストを左辺値の式にできます。 左辺値式の詳細については、「[左辺値と右辺値の式](../c-language/l-value-and-r-value-expressions.md)」をご覧ください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
  キャストで式を型 `void` に変換できますが、その結果の式を使用できるのは、値が不要な場合のみです。 **void \*** に変換され、元の型に戻されたオブジェクト ポインターは、元の値に戻ります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型変換](../c-language/type-conversions-c.md)

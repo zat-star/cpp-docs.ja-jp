@@ -19,11 +19,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6a634d748a0960e0eda56f89bcca66463780f08f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4cf86c854345244eafff80392cdc575d026c61ab
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="time-management"></a>時間管理
 以下の関数を使用すると、現在の時刻を取得して、必要に応じて変換、調整、保存を行うことができます。 現在の時刻とはシステム時刻のことです。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="time-routines"></a>時間のルーチン  
   
-|関数|用途|  
+|関数|使用|  
 |--------------|---------|  
 |[asctime, _wasctime](../c-runtime-library/reference/asctime-wasctime.md), [asctime_s, _wasctime_s](../c-runtime-library/reference/asctime-s-wasctime-s.md)|時刻を `struct tm` 型から文字列に変換します。 これらの関数のうち、 `_s` サフィックスの付いているバージョンがより安全です。|  
 |[clock](../c-runtime-library/reference/clock.md)|プロセスの実際の経過時間を返します。|  
@@ -57,5 +58,5 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  Visual C++ 2005 より前のバージョンの Visual C++ と Microsoft C/C++ では、`time_t` は `long int` (32 ビット) であったため、2038 年 1 月 19 日 3 時 14 分 07 秒 (UTC) を超えた日付には使用できませんでした。 現在、`time_t` は既定で `__time64_t` と同じです。ただし、 `_USE_32BIT_TIME_T` を定義すると、 `time_t` は `__time32_t` and forces many time functions は call versions that take the 32-bit `time_t`を取得するバージョンを呼び出すために時刻の関数が多数必要になります。 詳細については、「[基本データ型](../c-runtime-library/standard-types.md)」のほか、それぞれの時刻関数に関するドキュメントのコメントを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

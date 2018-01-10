@@ -51,11 +51,12 @@ caps.latest.revision: "24"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ffc7f3e830d9caccf3428b2d9d3b70253d8d3b18
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0c5ec1881695c80c8f493ac2a2848d0349f430aa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="basicfilebuf-class"></a>basic_filebuf クラス
 文字の特徴がクラス `Tr` によって決まる型 `Elem` の要素と、外部ファイルに格納されている要素のシーケンスとの間でやり取りされる転送を制御するストリーム バッファーを記述します。  
@@ -233,7 +234,7 @@ Hex Dump of wwHello.txt - note that output is wchar_t chars:
 |[uflow](../standard-library/basic-streambuf-class.md#uflow)|入力ストリームから現在の要素を抽出するプロテクト仮想関数。|  
 |[underflow](#underflow)|入力ストリームから現在の要素を抽出するプロテクト仮想関数。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<fstream>  
   
  **名前空間:** std  
@@ -620,7 +621,7 @@ virtual int_type underflow();
   
 -   型の 1 つまたは複数の要素を読み取ることができる`char`フォームの連続した呼び出しとしてでは、 `fgetc`(**fp**)、それらの要素に変換し、 **ch**型の**Elem**を呼び出してファイル変換ファセット要素を使用して、 **fac.in**に応じて。 任意の読み取りまたは変換が失敗すると、関数は失敗します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<fstream>](../standard-library/fstream.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   

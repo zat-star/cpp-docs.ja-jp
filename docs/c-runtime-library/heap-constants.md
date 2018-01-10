@@ -34,11 +34,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b5b529519840df87d829c34cd8bddf123b96754e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e2e1a15b371aa4f2997d453e2543123b279ac0df
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="heap-constants"></a>ヒープ定数
 ## <a name="syntax"></a>構文  
@@ -61,7 +62,7 @@ ms.lasthandoff: 10/24/2017
 |`_HEAPEND`|ヒープの末尾に正常に到達しました (`_heapwalk` ルーチンのみ)。|  
 |`_HEAPOK`|ヒープに一貫性があります (`_heapset` ルーチンと `_heapchk` ルーチンのみ)。 これまでのところエラーはありません。**_HEAPINFO** 構造体に、次のエントリに関する情報が含まれています (`_heapwalk` ルーチンのみ)。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_heapchk](../c-runtime-library/reference/heapchk.md)   
  [_heapset](../c-runtime-library/heapset.md)   
  [_heapwalk](../c-runtime-library/reference/heapwalk.md)   

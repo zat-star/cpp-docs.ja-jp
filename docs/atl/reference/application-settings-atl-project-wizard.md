@@ -15,11 +15,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 312c2b879f19e670d9737bfa530e0cc2a35bfe58
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 12b7e383716d7cfa330bdfdebe21c33550669cc2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="application-settings-atl-project-wizard"></a>[アプリケーションの設定] (ATL プロジェクト ウィザード)
 使用して、**アプリケーション設定**ATL プロジェクト ウィザードのページを設計して新しい ATL プロジェクトに基本的な機能を追加します。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 10/24/2017
   
 -   **コンポーネント レジスタをサポートして**ATL プロジェクトに COM + 1.0 コンポーネントに対するサポートが含まれている場合は、このオプションを設定することができます。 コンポーネント レジスタは、COM + 1.0 オブジェクトをコンポーネントの一覧を取得、コンポーネントを登録またはコンポーネントの登録を解除して (個別にまたはすべてを一度に) を使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)   
  [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)   
  [ATL プロジェクトの既定の構成](../../atl/reference/default-atl-project-configurations.md)

@@ -14,16 +14,19 @@ caps.latest.revision: "5"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d54c131af740c9c2248c4d923176b0a5c55d9e33
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 63d6a4b526fc1f2aeb2a942e682a8c7cc6f9b58c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="accelerator-modifier-property"></a>アクセラレータの [修飾子] プロパティ
 アクセラレータ テーブルの [修飾子] プロパティに有効なエントリを次に示します。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**None**|ユーザーは、キー値のみを押します。 これが最も効果的の値と共に使用 ASCII/ANSI 001 026、を通じてとして解釈される ^ A ~ ^ Z (ctrl キーを押し、A ~ Z ctrl キーを押し)。|  
 |**Alt キー**|ユーザーは、キー値の前に ALT キーを押す必要があります。|  
@@ -34,9 +37,9 @@ ms.lasthandoff: 10/24/2017
 |**Alt + Shift**|ユーザーには、ALT キーとキー値の前に、SHIFT キーを押す必要があります。 ASCII 型では無効です。|  
 |**Ctrl + Alt + Shift**|ユーザーは、キー値の前に ctrl キーを押し、alt キーと shift キーを押す必要があります。 ASCII 型では無効です。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  Win32  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセラレータのプロパティの設定](../windows/setting-accelerator-properties.md)   
  [アクセラレータ エディター](../windows/accelerator-editor.md)

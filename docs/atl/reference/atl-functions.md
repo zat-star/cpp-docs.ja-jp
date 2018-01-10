@@ -16,11 +16,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c56703b02b4e2c325072c164e484fdc3d9f66f47
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 031d8896a99f9b02103216d0670d581c1ea4efaa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-functions"></a>ATL 関数
 
@@ -69,7 +70,7 @@ ms.lasthandoff: 10/24/2017
  [WinModule に関するグローバル関数](../../atl/reference/winmodule-global-functions.md)  
  サポートを提供`_AtlCreateWndData`操作を構成します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
     
  [ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)   
  [マクロ](../../atl/reference/atl-macros.md)   

@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - libraries [C++], C++ algorithm conventions
 - algorithms [C++], C++
@@ -17,30 +15,16 @@ helpviewer_keywords:
 - algorithm template function C++ library conventions
 - conventions [C++], C++ algorithm
 ms.assetid: dec9b373-7d5c-46cc-b7d2-21a938ecd0a6
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 5b5ffafb841fcb883dc66880933e8d123256e575
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 6608b7499c18f1b740875c403e9cb8d55736c30d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="algorithms"></a>アルゴリズム
 アルゴリズムは、C++ 標準ライブラリの基本的な部分です。 アルゴリズムは、コンテナー自体と共に機能するのではありません。反復子と共に機能します。 そのため、C++ 標準ライブラリ コンテナーのすべてではありませんが、そのほとんどで同じアルゴリズムを使用できます。 このセクションでは、C++ 標準ライブラリ アルゴリズムの規則と用語について説明します。  
@@ -48,9 +32,9 @@ ms.lasthandoff: 02/24/2017
 ## <a name="remarks"></a>コメント  
  アルゴリズム テンプレート関数の説明では、いくつかの簡略な語句を使用しています。  
   
--   "範囲 [*A*, *B*) 内" は、*A* から始まり *B* の直前までの&0; 個以上の離散値のシーケンスを意味します。範囲は、*B* が *A* から到達可能な場合にのみ有効です。*A* をオブジェクト *N* に格納 (*N* = *A*) し、オブジェクトを&0; 回以上インクリメント (++*N*) して、有限数のインクリメント (N == B*) の後で *B* と等しいかどうかを比較できます。*  
+-   "範囲 [*A*, *B*) 内" は、*A* から始まり *B* の直前までの 0 個以上の離散値のシーケンスを意味します。範囲は、*B* が *A* から到達可能な場合にのみ有効です。*A* をオブジェクト *N* に格納 (*N* = *A*) し、オブジェクトを 0 回以上インクリメント (++*N*) して、有限数のインクリメント (N == B*) の後で *B* と等しいかどうかを比較できます。*  
   
--   "各 *N* (範囲 [*A*, *B*) 内)" は、*N* が値 *A* で始まり、値 *B* と等しくなるまで&0; 回以上インクリメントされるという意味です。*N* == *B* の場合は、範囲外です。  
+-   "各 *N* (範囲 [*A*, *B*) 内)" は、*N* が値 *A* で始まり、値 *B* と等しくなるまで 0 回以上インクリメントされるという意味です。*N* == *B* の場合は、範囲外です。  
   
 -   "*X* のような範囲 [*A*, *B* の最小値 *N*)" という語句は、条件 *X* が満たされるまで、範囲 [*A*, *B*) 内の各 *N* に対して、条件 *X* が判断されるという意味です。  
   
@@ -76,8 +60,7 @@ ms.lasthandoff: 02/24/2017
   
  C++ 標準ライブラリ アルゴリズムは、[\<algorithm>](../standard-library/algorithm.md) および [\<numeric>](../standard-library/numeric.md) ヘッダー ファイルにあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 

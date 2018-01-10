@@ -20,11 +20,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 54e66e42753c41ea8a38b8ec3a4c399afb6c4688
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 326bd1c6c435dec97c309014dfc81ca444cc5eb6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="zo-enhance-optimized-debugging"></a>/Zo (最適化されたデバッグ機能の強化)
 非デバッグ ビルドで最適化されたコードに関する拡張デバッグ情報を生成します。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 10/24/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [/O オプション (コードの最適化)](../../build/reference/o-options-optimize-code.md)   
  [/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)   
  [エディット コンティニュ](/visualstudio/debugger/edit-and-continue)

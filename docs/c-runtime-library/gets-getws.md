@@ -38,11 +38,12 @@ caps.latest.revision: "32"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fc8a2277995cc9ddbb36cbceda68e0ba4a862b59
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6193445dace47b62cf8793d69ad45e0f73a2f10d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="gets-getws"></a>gets、_getws
 `stdin` ストリームから行を取得します。 これらの関数のセキュリティを強化したバージョンを使用できます。「 [gets_s, _getws_s](../c-runtime-library/reference/gets-s-getws-s.md)」を参照してください。  
@@ -77,7 +78,7 @@ wchar_t *_getws(
  入力文字列の格納場所。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合はその引数を返します。 エラーが発生した場合またはファイルの終端に達した場合は、 `NULL` ポインターを返します。 どちらが発生したかを確認するには、[ferror](../c-runtime-library/reference/ferror.md) または [feof](../c-runtime-library/reference/feof.md) を使用します。 `buffer` が `NULL` の場合は、「[Parameter Validation](../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように、これらの関数は無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `NULL` を返し、errno を `EINVAL` に設定します。  
+ 正常に終了した場合はその引数を返します。 エラーが発生した場合またはファイルの終端に達した場合は、 `NULL` ポインターを返します。 どちらが発生したかを確認するには、 [ferror](../c-runtime-library/reference/ferror.md) または [feof](../c-runtime-library/reference/feof.md) を使用します。 `buffer` が `NULL` の場合は、「[Parameter Validation](../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように、これらの関数は無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `NULL` を返し、errno を `EINVAL`に設定します。  
   
 ## <a name="remarks"></a>コメント  
  `gets` 関数は、`stdin` 標準入力ストリームから行を読み取り、`buffer` に格納します。 行は、最初の改行文字 ('\n') までのすべての文字 (改行文字を含む) で構成されます。 `gets` は、行を返す前に、改行文字を null 文字 ('\0') に置き換えます。 これとは対照的に、 `fgets` 関数は改行文字を保持します。 ワイド文字を扱う場合は、`_getws` ではなく `gets`を使用します。引数にはワイド文字列を指定します。また戻り値もワイド文字列です。  
@@ -93,14 +94,14 @@ wchar_t *_getws(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_getts`|`gets`|`gets`|`_getws`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`gets`|\<stdio.h>|  
 |`_getws`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -127,7 +128,7 @@ int main( void )
 Hello there!The line entered was: Hello there!  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../c-runtime-library/stream-i-o.md)   
  [fgets、fgetws](../c-runtime-library/reference/fgets-fgetws.md)   
  [fputs、fputws](../c-runtime-library/reference/fputs-fputws.md)   

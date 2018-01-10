@@ -13,16 +13,17 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0255b8fbb46a4a97a9736b7075a71cd8e2afb2d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: be0f6863ae1c0d7bd2c30868dbc994d1c0cc04a8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="significant-characters-without-external-linkage"></a>外部リンケージを持たない有意文字
 **ANSI 3.1.2** 外部リンケージを持たない有意文字の数  
   
  識別子は、247 文字まで有効です。 コンパイラは、識別子で使用できる文字数を制限することなく、単純に制限値を超えた文字を無視します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [extern を使用したリンケージの指定](../cpp/using-extern-to-specify-linkage.md)

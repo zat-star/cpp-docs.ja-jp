@@ -14,16 +14,17 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fa5c9749f7f9a781e978e49b59c1c8cc05bc7baf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3d683efaf8ab5827be821a693b2e7abf9b88b3a8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="time-zone"></a>タイム ゾーン
 **ANSI 4.12.1** ローカル タイム ゾーンと夏時間  
   
  ローカル タイム ゾーンは太平洋標準時です。 Microsoft C は夏時間をサポートします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ライブラリ関数](../c-language/library-functions.md)

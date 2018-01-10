@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: eea0ec7b9216f94d5a3ed017e94e90639aeb0ddd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fee6da358620281039a5dcb8fda521630f56fffc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="generic-text-mappings"></a>汎用テキスト マップ
 国際市場向けにコードの記述を簡略化するため、汎用テキスト マッピングは、次のものに関して TCHAR.H で定義されます。  
@@ -34,6 +35,6 @@ ms.lasthandoff: 10/24/2017
   
  詳細については、「[Using Generic-Text Mappings (汎用テキスト マッピングの使用)](../c-runtime-library/using-generic-text-mappings.md)」をご覧ください。 汎用テキスト マッピングは Microsoft 固有の拡張機能であり、ANSI とは互換性がありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ型のマップ](../c-runtime-library/data-type-mappings.md)   
  [汎用テキストのプログラム例](../c-runtime-library/a-sample-generic-text-program.md)

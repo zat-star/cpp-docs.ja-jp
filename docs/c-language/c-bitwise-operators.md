@@ -23,11 +23,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3be1384c12ece809bd8fc275625efd4acef5a407
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a55cbad7606eb5ce204e3363b1d292c787b59740
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-bitwise-operators"></a>C ビット処理演算子
 ビット処理演算子は、ビットごとの AND (**&**)、ビットごとの排他的 OR (**^**)、およびビットごとの包括的 OR (**&#124;**) 演算を行います。  
@@ -59,7 +60,7 @@ ms.lasthandoff: 10/24/2017
 |**^**|ビットごとの排他的 OR 演算子は、最初のオペランドの各ビットを 2 番目のオペランドの対応するビットと比較します。 一方のビットが 0 でもう一方のビットが 1 の場合、対応する結果のビットは 1 に設定されます。 それ以外の場合は、対応する結果ビットが 0 に設定されます。|  
 |**&#124;**|ビットごとの包括的 OR 演算子は、最初のオペランドの各ビットを 2 番目のオペランドの対応するビットと比較します。 どちらかのビットが 1 の場合、対応する結果のビットは 1 に設定されます。 それ以外の場合は、対応する結果ビットが 0 に設定されます。|  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  これらの宣言が、次の 3 つの例で使用されています。  
   
 ```  
@@ -93,9 +94,9 @@ n = i ^ j;
   
  ビットごとの AND の結果は 10 進数の 96 です。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ビットごとの AND 演算子: &](../cpp/bitwise-and-operator-amp.md)   
  [ビット処理排他的 OR 演算子: ^](../cpp/bitwise-exclusive-or-operator-hat.md)   
  [ビット処理包括的 OR 演算子: &#124;](../cpp/bitwise-inclusive-or-operator-pipe.md)

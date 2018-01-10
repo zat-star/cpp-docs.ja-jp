@@ -51,11 +51,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b0e257ac4a1998e75fc47e719df2163d49654c71
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c696603c7012a1ee95c118a12d45c2fc9132cfcd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ismbchira-ismbchiral-ismbckata-ismbckatal"></a>_ismbchira、_ismbchira_l、_ismbckata、_ismbckata_l
 **コード ページ 932 固有の関数**  
@@ -95,9 +96,9 @@ int _ismbckata_l(
 ## <a name="remarks"></a>コメント  
  これらの各関数は特定の条件で特定のマルチバイト文字をテストします。  
   
- これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-|ルーチン|テスト条件 (コード ページ 932 のみ)|  
+|ルーチンによって返される値|テスト条件 (コード ページ 932 のみ)|  
 |-------------|-------------------------------------------|  
 |`_ismbchira`|2 バイトひらがな: 0x829F<=`c`<=0x82F1。|  
 |`_ismbchira_l`|2 バイトひらがな: 0x829F<=`c`<=0x82F1。|  
@@ -106,18 +107,18 @@ int _ismbckata_l(
   
  **コード ページ 932 固有情報終了**  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbchira`|\<mbstring.h>|  
 |`_ismbchira_l`|\<mbstring.h>|  
 |`_ismbckata`|\<mbstring.h>|  
 |`_ismbckata_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../../c-runtime-library/character-classification.md)   
  [_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)   
  [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)   

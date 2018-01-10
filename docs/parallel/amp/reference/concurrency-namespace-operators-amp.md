@@ -6,19 +6,18 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: 
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 77f1ae17-1eb2-480d-8fe5-66d4c24bb91e
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 22ba62ab8b3b4f9d14953dbab3edd8228ea85193
-ms.openlocfilehash: 676f3e836082dc3286a45f8d59db83c969964058
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: cb0682a246cc2cd2acd8f22228fd25c99755f1cb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="concurrency-namespace-operators-amp"></a>Concurrency 名前空間演算子 (AMP)
 ||||  
@@ -45,10 +44,10 @@ bool operator== (
  タプルの引数のランク。  
   
  `_Lhs`  
- 比較するタプルの&1; つ。  
+ 比較するタプルの 1 つ。  
   
  `_Rhs`  
- 比較するタプルの&1; つ。  
+ 比較するタプルの 1 つ。  
   
 ### <a name="return-value"></a>戻り値  
  タプルが等しい場合は `true`。それ以外の場合は `false`。  
@@ -71,10 +70,10 @@ bool operator!= (
  タプルの引数のランク。  
   
  `_Lhs`  
- 比較するタプルの&1; つ。  
+ 比較するタプルの 1 つ。  
   
  `_Rhs`  
- 比較するタプルの&1; つ。  
+ 比較するタプルの 1 つ。  
   
 ### <a name="return-value"></a>戻り値  
  タプルが等しくない場合は `true`、それ以外の場合は `false`。  
@@ -116,10 +115,10 @@ class _Tuple_type> _Tuple_type<_Rank>   operator+(
  タプルの引数のランク。  
   
  `_Lhs`  
- 追加する引数の&1; つ。  
+ 追加する引数の 1 つ。  
   
  `_Rhs`  
- 追加する引数の&1; つ。  
+ 追加する引数の 1 つ。  
   
 ### <a name="return-value"></a>戻り値  
  指定された引数の要素ごとの合計。  
@@ -243,7 +242,7 @@ _Tuple_type<_Rank>   operator/(
   
 ##  <a name="operator_mod"></a>  operator%   
 
- 2 番目の指定された引数による&1; 番目の指定された引数の剰余を計算します。  
+ 2 番目の指定された引数による 1 番目の指定された引数の剰余を計算します。  
   
 ```  
 template <
@@ -275,8 +274,7 @@ _Tuple_type<_Rank>   operator%(
  それによって剰余が計算されるタプル。  
   
 ### <a name="return-value"></a>戻り値  
- 2 番目の指定された引数による&1; 番目の指定された引数の剰余という結果。  
+ 2 番目の指定された引数による 1 番目の指定された引数の剰余という結果。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace-cpp-amp.md)
-

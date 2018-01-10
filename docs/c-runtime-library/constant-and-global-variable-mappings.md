@@ -25,11 +25,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 55c388ddddb5fd774afb6c4e84d6a96a4c38bebe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bb767bb3dbfbde8d73ab81acc444a772a05e7880
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="constant-and-global-variable-mappings"></a>定数とグローバル変数のマップ
 ここで説明する汎用テキスト定数、グローバル変数、基本データ型のマッピングは TCHAR.H で定義されており、定数 `_UNICODE` または `_MBCS` がプログラムで定義されているかどうかに依存します。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 10/24/2017
 |`_tenviron`|`_environ`|`_environ`|`_wenviron`|  
 |`_tpgmptr`|`_pgmptr`|`_pgmptr`|`_wpgmptr`|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)   
  [データ型のマップ](../c-runtime-library/data-type-mappings.md)   
  [ルーチンのマップ](../c-runtime-library/routine-mappings.md)   

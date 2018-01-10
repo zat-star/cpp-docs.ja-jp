@@ -36,11 +36,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 670f8c109593148076c31bd4957f658607a5d5e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 55dc7b0c0c21c8ee149e4be8eb829de29d73aacd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="file-attribute-constants"></a>ファイル属性定数
 ## <a name="syntax"></a>構文  
@@ -75,6 +76,6 @@ ms.lasthandoff: 10/24/2017
   
  OR 演算子 (&#124;) を使用して、複数の定数を組み合わせることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル名検索関数](../c-runtime-library/filename-search-functions.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)
