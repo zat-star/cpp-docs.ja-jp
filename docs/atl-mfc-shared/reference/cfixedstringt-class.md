@@ -20,11 +20,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cdee6061b721ef92a56af8affa42582827e72c96
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3f66749272649fe230b31e770a175e0b94441b90
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cfixedstringt-class"></a>CFixedStringT クラス
 このクラスは、固定された文字バッファーを使用して、文字列オブジェクトを表します。  
@@ -77,7 +78,7 @@ class CFixedStringT : private CFixedStringMgr, public StringType
   
  `CFixedStringT`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** cstringt.h  
   
 ##  <a name="cfixedstringt"></a>CFixedStringT::CFixedStringT  
@@ -128,7 +129,7 @@ CFixedStringT<StringType, t_nChars>& operator=(const StringType& str);
 ### <a name="remarks"></a>コメント  
  注意すべき、代入演算子を使用すると、新しい記憶域は多くの場合、その結果を保持するために割り当てられているために、例外が発生するメモリ`CFixedStringT`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CStringT クラス](../../atl-mfc-shared/reference/cstringt-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)

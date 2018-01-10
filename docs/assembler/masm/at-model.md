@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d169c83878b19b7d5c011948705a5438b97787c5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a5c207a806b9f0fa194afb4deced9d791c25e587
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="model"></a>@Model
 場合は 1**極小**をモデル化の 2**小さな**をモデル化の 3 **COMPACT**をモデル化には 4**中**モデル、5 を**大**モデル、6**莫大**モデル、および 7 を**フラット**モデル (数値と等価なります)。  
@@ -32,5 +33,5 @@ ms.lasthandoff: 10/24/2017
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [シンボル リファレンス](../../assembler/masm/symbols-reference.md)

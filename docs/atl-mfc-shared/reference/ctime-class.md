@@ -36,11 +36,12 @@ caps.latest.revision: "30"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5b341ba3397841c21f7c2c71359b8cd5ccd3e8ae
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload: cplusplus
+ms.openlocfilehash: 82f3d4bf1d0c705d7712adb092a5f6d965099a26
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctime-class"></a>CTime クラス
 絶対時刻と日付を表します。  
@@ -108,7 +109,7 @@ class CTime
 > [!NOTE]
 >  `CTime`構造が MFC 8.0 に MFC 7.1 から変更します。 シリアル化する場合、`CTime`構造体を使用して、 `operator <<` MFC 8.0 またはそれ以降のバージョンでは、結果として得られるファイルは読み取れない MFC の以前のバージョン。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atltime.h  
   
 ##  <a name="ctime_comparison_operators"></a>CTime 比較演算子  
@@ -570,7 +571,7 @@ CArchive& Serialize64(CArchive& ar);
 ### <a name="return-value"></a>戻り値  
  更新された`CArchive`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   
  [_ftime_s、_ftime32_s、_ftime64_s](../../c-runtime-library/reference/ftime-s-ftime32-s-ftime64-s.md)   
  [gmtime_s、_gmtime32_s、_gmtime64_s](../../c-runtime-library/reference/gmtime-s-gmtime32-s-gmtime64-s.md)   

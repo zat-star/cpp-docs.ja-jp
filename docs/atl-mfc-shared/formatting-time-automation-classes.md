@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fb6063145996a64ec82c7b352278f4741e761838
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2000f3ec059c98150fbb82c71f0d810bdae53d06
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="formatting-time-automation-classes"></a>書式指定の時刻: オートメーション クラス
 #### <a name="to-format-a-time"></a>時刻の書式を設定するには  
@@ -40,6 +41,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [SYSTEMTIME の操作](../atl-mfc-shared/date-and-time-systemtime-support.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [日付と時刻: オートメーション サポート](../atl-mfc-shared/date-and-time-automation-support.md)
 

@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 84b9aa9ffb04b807cba07fdd3577622f62f6ab45
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c5ecb8526ec82e0f2d18c5306a94dd7f0160803b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="testing-the-modified-atl-dhtml-control"></a>変更した ATL DHTML コントロールのテスト
 今すぐ動作を確認する、新しいコントロールを試します。  
@@ -50,6 +51,6 @@ ms.lasthandoff: 10/24/2017
   
  さまざまな要素と ATL DHTML コントロールを構成するファイルの詳細については、次を参照してください。 [DHTML コントロール プロジェクトの要素の識別](../atl/identifying-the-elements-of-the-dhtml-control-project.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DHTML コントロールのサポート](../atl/atl-support-for-dhtml-controls.md)
 

@@ -4,46 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CComQIPtrElementTraits
 - ATLCOLL/ATL::CComQIPtrElementTraits
 - ATLCOLL/ATL::CComQIPtrElementTraits::INARGTYPE
-dev_langs:
-- C++
-helpviewer_keywords:
-- CComQIPtrElementTraits class
+dev_langs: C++
+helpviewer_keywords: CComQIPtrElementTraits class
 ms.assetid: 9df9250a-5413-4362-b133-332932a597c4
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: d6405cc3ec04988d0e0d7dd9a98f22c271b3608d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 30d4e73f3c1e4ad75b8b33442be4e64af1a11207
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomqiptrelementtraits-class"></a>CComQIPtrElementTraits クラス
-このクラスでは、メソッド、静的関数、および typedef 便利な COM インターフェイス ポインターのコレクションを作成するときに提供します。  
+このクラスは、COM インターフェイス ポインターのコレクションを作成するときに、メソッド、静的関数、および typedef 便利を提供します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -55,10 +38,10 @@ class CComQIPtrElementTraits :
   
 #### <a name="parameters"></a>パラメーター  
  `I`  
- 格納されるポインターの型を指定する COM インターフェイスです。  
+ 格納するポインターの種類を指定する COM インターフェイスです。  
   
  `piid`  
- IID へのポインター`I`します。  
+ IID へのポインター`I`です。  
   
 ## <a name="members"></a>メンバー  
   
@@ -69,9 +52,9 @@ class CComQIPtrElementTraits :
 |[CComQIPtrElementTraits::INARGTYPE](#inargtype)|コレクション クラスのオブジェクトに要素を追加するために使用するデータ型。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、メソッドを派生しのコレクション クラスを作成するときに便利な typedef を提供[CComQIPtr](../../atl/reference/ccomqiptr-class.md) COM インターフェイス ポインターのオブジェクト。 このクラスは、両方で使用されて、 [CInterfaceArray](../../atl/reference/cinterfacearray-class.md)と[CInterfaceList](../../atl/reference/cinterfacelist-class.md)クラスです。  
+ このクラスは、メソッドを派生しのコレクション クラスを作成するときに、便利 typedef を提供[CComQIPtr](../../atl/reference/ccomqiptr-class.md) COM インターフェイス ポインター オブジェクトです。 このクラスは、両方で使用される、 [CInterfaceArray](../../atl/reference/cinterfacearray-class.md)と[CInterfaceList](../../atl/reference/cinterfacelist-class.md)クラスです。  
   
- 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)します。  
+ 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CDefaultCompareTraits](../../atl/reference/cdefaultcomparetraits-class.md)  
@@ -84,7 +67,7 @@ class CComQIPtrElementTraits :
   
  `CComQIPtrElementTraits`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcoll.h  
   
 ##  <a name="inargtype"></a>CComQIPtrElementTraits::INARGTYPE  
@@ -94,7 +77,6 @@ class CComQIPtrElementTraits :
 typedef I* INARGTYPE;
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDefaultElementTraits クラス](../../atl/reference/cdefaultelementtraits-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

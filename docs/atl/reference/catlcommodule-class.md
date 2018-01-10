@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -16,35 +15,19 @@ f1_keywords:
 - ATLBASE/ATL::CAtlComModule::RegisterTypeLib
 - ATLBASE/ATL::CAtlComModule::UnregisterServer
 - ATLBASE/ATL::CAtlComModule::UnRegisterTypeLib
-dev_langs:
-- C++
-helpviewer_keywords:
-- CAtlComModule class
+dev_langs: C++
+helpviewer_keywords: CAtlComModule class
 ms.assetid: af5dd71a-a0d1-4a2e-9a24-154a03381c75
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 02381d00226f40c5c84b2d957dfee6881742febb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 83dfbb1792a569e359692ba55fb23a8ebb580c37
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlcommodule-class"></a>CAtlComModule クラス
 このクラスは、COM サーバー モジュールを実装します。  
@@ -83,7 +66,7 @@ class CAtlComModule : public _ATL_COM_MODULE
   
  `CAtlComModule`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="catlcommodule"></a>CAtlComModule::CAtlComModule  
@@ -184,7 +167,6 @@ HRESULT UnRegisterTypeLib();
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ATL_COM_MODULE](atl-typedefs.md#_atl_com_module)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

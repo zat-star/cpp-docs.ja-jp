@@ -22,11 +22,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bb74d68bb8974f820ac09a0c56930d835a3fe7f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 54f237a629c4af9ea7ae30aeca21c03786abcd97
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="implementing-ccomobject-ccomaggobject-and-ccompolyobject"></a>CComObject と実装すると、および CComPolyObject
 テンプレート クラス[CComObject](../atl/reference/ccomobject-class.md)、[すると](../atl/reference/ccomaggobject-class.md)、および[CComPolyObject](../atl/reference/ccompolyobject-class.md)継承チェーン内の最も派生クラスでは常にします。 すべてのメソッドは、処理する責任は**IUnknown**: `QueryInterface`、 `AddRef`、および**リリース**です。 さらに、`CComAggObject`と`CComPolyObject`(集約オブジェクトの使用) する場合、特別な参照カウントを提供および`QueryInterface`内部の不明なのために必要なセマンティクスです。  
@@ -44,7 +45,7 @@ ms.lasthandoff: 10/24/2017
   
  使用する利点`CComPolyObject`両方を避けることが`CComAggObject`と`CComObject`モジュールに、集計と非集計のケースに対処します。 1 つ`CComPolyObject`オブジェクトは両方のケースを処理します。 つまり、モジュールに vtable の 1 つだけのコピーと、関数のうちの 1 つのコピーが存在します。 Vtable が大きい場合は、モジュールのサイズを大幅に縮小このできます。 ただし、vtable が小さい場合を使用して`CComPolyObject`には、集計または非集約オブジェクトは、最適化されていないために、わずかに大きくモジュールのサイズになりますが`CComAggObject`と`CComObject`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL COM オブジェクトの基本事項](../atl/fundamentals-of-atl-com-objects.md)   
  [集計とクラス ファクトリに関するマクロ](../atl/reference/aggregation-and-class-factory-macros.md)
 

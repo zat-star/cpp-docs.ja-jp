@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 650dcd31e07ef1995f09b0521991d79726b22774
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1e708fea75c594c7bb9504515c80222ad901c335
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="message-maps-atl"></a>メッセージ マップ (ATL)
 メッセージ マップは、特定のメッセージ、コマンド、または通知ハンドラー関数を関連付けます。 ATL を使用して、[メッセージ マップ マクロ](../atl/reference/message-map-macros-atl.md)ウィンドウのメッセージ マップを指定することができます。 ウィンドウの手順で`CWindowImpl`、 `CDialogImpl`、および`CContainedWindowT`ウィンドウのメッセージのメッセージ マップにリダイレクトされます。  
@@ -37,6 +38,6 @@ ms.lasthandoff: 10/24/2017
 ## <a name="alternate-message-maps"></a>代替のメッセージ マップ  
  最後に、ATL はで宣言された、代替のメッセージ マップをサポートしている、 [ALT_MSG_MAP](reference/message-map-macros-atl.md#alt_msg_map)マクロです。 各代替のメッセージ マップに渡す一意の番号によって識別される`ALT_MSG_MAP`です。 代替のメッセージを使用してマップは、1 つのマップ内の複数のウィンドウのメッセージを処理することができます。 既定では、なお`CWindowImpl`代替メッセージ マップを使用しません。 このサポートを追加するには、上書き、`WindowProc`メソッドで、 `CWindowImpl`-派生クラスと呼び出し`ProcessWindowMessage`メッセージ マップの識別子を使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウの実装](../atl/implementing-a-window.md)
 

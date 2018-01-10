@@ -14,11 +14,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b86bd8874e054dc2d2865523e77436e1f8cf6f81
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8e2d0da431249ef886ceca1e2b7f6cbfc99418dd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="calling-c-code-from-dhtml"></a>DHTML から C++ コードを呼び出す
 DHTML コントロールは、テスト コンテナーまたは Internet Explorer などのコンテナーでホストすることができます。 参照してください[プロパティのテストおよびテスト コンテナーでイベント](../mfc/testing-properties-and-events-with-test-container.md)テスト コンテナーにアクセスする方法についてはします。  
@@ -47,6 +48,6 @@ DHTML コントロールは、テスト コンテナーまたは Internet Explor
   
  参照してください[ATL DHTML コントロールの変更](../atl/modifying-the-atl-dhtml-control.md)詳細については、独自のメソッドを提供します。 参照してください[DHTML コントロール プロジェクトの要素の識別](../atl/identifying-the-elements-of-the-dhtml-control-project.md)HTML ファイルの詳細についてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DHTML コントロールのサポート](../atl/atl-support-for-dhtml-controls.md)
 

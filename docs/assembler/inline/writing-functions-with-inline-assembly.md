@@ -1,32 +1,33 @@
 ---
-title: "インライン アセンブリでの関数の記述 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__asm キーワード [C++], 関数内"
-  - "アセンブラー [C++], 書き込み関数"
-  - "関数 [C++], インライン アセンブラー"
-  - "インライン アセンブラー [C++], 書き込み関数"
+title: "インライン アセンブリでの関数の記述 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- functions [C++], inline assembly
+- inline assembly [C++], writing functions
+- assembler [C++], writing functions
+- __asm keyword [C++], in functions
 ms.assetid: b5df8a04-fdc7-4622-8c9e-e4b618927497
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: f2fc9e6a1d2c94e74ef8aabf085af8fc4dc0bc28
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# インライン アセンブリでの関数の記述
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## Microsoft 固有の仕様 →  
- インライン アセンブラー コードの関数を作成する場合は引数を関数に渡しそこから値を返すことができます。  次の例ではまず別のアセンブラーで記述されインライン アセンブラーのように書き換える関数を比較します。  `power2` と呼ばれる関数は2 番目2 の累乗で最初のパラメーターを増やす 2 個のパラメーターを受け取ります。  別のアセンブラーで書き込まれました\) と関数は次のような可能性があります :  
+# <a name="writing-functions-with-inline-assembly"></a>インライン アセンブリでの関数の記述
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ インライン アセンブラー コードを持つ関数を記述する場合は、関数に引数を渡すし、これから値を返すには簡単です。 次の例では、別のアセンブラーの最初に書き込まれ、インライン アセンブラーの再作成し、関数を比較します。 呼び出される関数`power2`、最初のパラメーターを 2 番目のパラメーターの電源を 2 で乗算の 2 つのパラメーターを受け取ります。 別のアセンブラー用に記述された、関数は、ようになります。  
   
 ```  
 ; POWER.ASM  
@@ -50,10 +51,10 @@ _TEXT   ENDS
         END  
 ```  
   
- これはアセンブラーで作成したので関数のソース ファイルとアセンブリとリンクの手順が必要になります。  C および C\+\+ の関数の引数はスタックの場所を `power2` の関数のアクセスのスタックこのバージョンで引数が渡されます。  MASM \(メモ  **モデル**  のディレクティブと使用できるほかにもアセンブラーはスタックの引数とローカル スタック変数を名前でアクセスできます\)。  
+ 別のアセンブラーに書き込まれるために、関数には、別のソース ファイルおよびアセンブリとリンクの手順が必要です。 通常、C および C++ の関数の引数はスタックで渡されますのでこのバージョンの`power2`関数がスタック上の位置で引数にアクセスします。 (なお、**モデル**ディレクティブ、MASM およびその他のいくつかのアセンブラーで使用することもできますスタック引数とローカル スタック変数に名前でアクセスします)。  
   
-## 使用例  
- このプログラムはインライン アセンブラー コードの `power2` の関数を作成します :  
+## <a name="example"></a>例  
+ このプログラムに書き込みます、`power2`関数をインライン アセンブリ コード。  
   
 ```  
 // Power2_inline_asm.c  
@@ -81,11 +82,11 @@ int power2( int num, int power )
 }  
 ```  
   
- `power2` の関数のインライン バージョンは引数を名前であり同じソース ファイルでのプログラムが表示されます。  このバージョンにはいくつかのアセンブリ命令が必要です。  
+ インライン バージョンの`power2`関数名ではその引数を参照し、同じソース ファイル、プログラムの残りの部分に表示されます。 このバージョンでは、アセンブリ命令の数が少ないも必要です。  
   
- `power2` のインライン バージョンは. `return` のステートメントを実行しないので警告レベル 2 またはそれより上でコンパイルすると思われる警告が発生します。  関数は値を返しますがコンパイラは `return` のステートメントが存在しない場合を通知することはできません。  この警告の生成を無効にするに [\#pragma warning](../../preprocessor/warning.md) を使用できます。  
+ のインライン バージョン`power2`C を実行しない`return`ステートメントでは、その警告が発生、影響を与えません 2 以上の警告レベルでコンパイルする場合。 関数は、値を返すには、コンパイラがない場合、`return`ステートメントです。 使用することができます[#pragma 警告](../../preprocessor/warning.md)この警告の生成を無効にします。  
   
- **終了 Microsoft 固有の仕様→**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_\_asm ブロックでの C または C\+\+ の使用](../../assembler/inline/using-c-or-cpp-in-asm-blocks.md)
+## <a name="see-also"></a>参照  
+ [__asm ブロックでの C または C++ の使用](../../assembler/inline/using-c-or-cpp-in-asm-blocks.md)

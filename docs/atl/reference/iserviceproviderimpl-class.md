@@ -20,11 +20,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 39dbab33f631ab9e0dc2b605169e92b6d12d78a9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4946a88e6bf6767de0e3965670f94b91d1ddaf90
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iserviceproviderimpl-class"></a>IServiceProviderImpl クラス
 このクラスの既定の実装を提供する、`IServiceProvider`インターフェイスです。  
@@ -62,7 +63,7 @@ class ATL_NO_VTABLE IServiceProviderImpl : public IServiceProvider
   
  `IServiceProviderImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="queryservice"></a>IServiceProviderImpl::QueryService  
@@ -111,5 +112,5 @@ STDMETHOD(QueryService)(
   
  SID_SMyService SID_SYourService などの 2 つの異なるサービス両方を指定できます、同じインターフェイスの使用、インターフェイスの実装には、2 つのサービス間で共通の何もいる場合でも。 この動作を呼び出す`QueryService`よりも、別のオブジェクトを返すことができます (SID_SMyService、IID_IDispatch) `QueryService` (SID_SYourService、IID_IDispatch)。 オブジェクト id は、さまざまなサービス識別子を指定するときにないと見なされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

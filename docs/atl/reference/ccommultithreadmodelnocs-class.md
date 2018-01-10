@@ -25,11 +25,12 @@ caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f1f0b531942e281236c65ef9a2e1ad3d3f669bbe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cc32ab53469b1f125b56343806c7920461c64bf2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccommultithreadmodelnocs-class"></a>CComMultiThreadModelNoCS クラス
 `CComMultiThreadModelNoCS`クリティカル セクションをロックまたはロック解除機能せず、スレッド セーフであるメソッドを変数の値インクリメントおよびデクリメントするために提供します。  
@@ -67,7 +68,7 @@ class CComMultiThreadModelNoCS
   
  加え`ThreadModelNoCS`、`CComMultiThreadModelNoCS`定義`AutoCriticalSection`と`CriticalSection`です。 この後者の 2 つ`typedef`名前参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)、取得と解放する、クリティカル セクションに関連付けられている空のメソッドを提供します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="autocriticalsection"></a>CComMultiThreadModelNoCS::AutoCriticalSection  
@@ -175,5 +176,5 @@ typedef CComMultiThreadModelNoCS ThreadModelNoCS;
 ### <a name="example"></a>例  
  参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

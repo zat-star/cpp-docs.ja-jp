@@ -1,30 +1,31 @@
 ---
-title: "1 つのウィンドウで複数のコントロールをホストできますか? | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コントロール [ATL], ホスト (複数の)"
-  - "ウィンドウ [C++], ホスト (複数のコントロールを)"
+title: "1 つのウィンドウで 1 つ以上のコントロールをホストすることができますか。 | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- controls [ATL], hosting multiple
+- windows [C++], hosting multiple controls
 ms.assetid: 3a967a1a-7e7e-42e3-8eed-f7bde912363f
-caps.latest.revision: 10
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: be87c0bad9ab250593847cc24d16158030040054
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 1 つのウィンドウで複数のコントロールをホストできますか?
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-単一の ATL のホスト ウィンドウで複数のコントロールをホストできません。  各ホスト ウィンドウは、1 種類のコントロールを一度に一つだけ保持するように設計されています \(これは、リフレクション メッセージと、コントロールのアンビエント プロパティの処理の単純な機構ができます\)。  ただし、ユーザーが一つのウィンドウで複数のコントロールを確認することが必要な場合は、そのウィンドウの子として複数のホスト ウィンドウを作成する単純な問題です。  
+# <a name="can-i-host-more-than-one-control-in-a-single-window"></a>1 つのウィンドウで 1 つ以上のコントロールをホストすることができますか。
+単一の ATL ホスト ウィンドウに 2 つ以上のコントロールをホストすることはできません。 各ホスト ウィンドウは、(これにより、メッセージのリフレクションとコントロールごとのアンビエント プロパティを処理するための簡単なメカニズム) 時に正確に 1 つのコントロールを保持するために設計されています。 ただし、1 つのウィンドウで複数のコントロールを表示するユーザーに、必要な場合は、そのウィンドウの子として複数のホスト ウィンドウを作成するだけの簡単なです。  
   
-## 参照  
- [コントロール コンテインメント : Q & A 集](../atl/atl-control-containment-faq.md)
+## <a name="see-also"></a>参照  
+ [コントロール コンテインメントよく寄せられる質問](../atl/atl-control-containment-faq.md)
+

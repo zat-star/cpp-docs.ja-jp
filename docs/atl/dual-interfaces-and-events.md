@@ -1,34 +1,36 @@
 ---
-title: "デュアル インターフェイスとイベント | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "デュアル インターフェイス, イベント"
-  - "イベント [C++], デュアル インターフェイス"
+title: "デュアル インターフェイスとイベント |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- events [C++], dual interfaces
+- dual interfaces, events
 ms.assetid: bb382f7c-e885-4274-bf07-83f3602615d2
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 87774f0237eb42c4bd2f97185230b3c869688ca8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# デュアル インターフェイスとイベント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-double としてイベント インターフェイスをデザインすることは可能ですが、破棄しないいくつかの適切なデザイン理由があります。  基本的な理由は、イベントのソースが vtable または `Invoke`によってのみイベントを発生させることではありません。  イベント ソースを直接 vtable メソッド呼び出しとしてイベントを発生する場合、`IDispatch` のメソッドが使用されず、インターフェイスが、純粋 vtable インターフェイス必要があることを明示的です。  イベント ソースが `Invoke`の呼び出しとしてイベントを発生する場合、vtable メソッドが使用されず、ディスパッチ インターフェイスが必要であることを明示的です。  定義する場合は、イベントはために、倍になりますが、使用しないインターフェイスの一部を実装する必要があります。クライアントがインターフェイスです。  
+# <a name="dual-interfaces-and-events"></a>デュアル インターフェイスとイベント
+デュアルとしてイベント インターフェイスを設計することはできますは、さまざまなしないように適切な設計上の理由があります。 基本的な理由は、イベントのソースが、vtable を使用して、またはを使用してイベントを発生させるだけこと`Invoke`、両方は必要ありません。 イベント ソースが直接 vtable メソッドの呼び出しとしてイベントを発生させる場合、`IDispatch`メソッドは使用されず、インターフェイスが vtable の純粋なインターフェイスであった明確であるとします。 呼び出しと、イベント ソースがイベントを発生させるかどうか`Invoke`vtable メソッドは使用されず、およびが、インターフェイスがディスパッチ インターフェイスであったクリアします。 イベント インターフェイスをデュアル インターフェイスとして定義する場合は、使用されることはありませんインターフェイスの一部を実装するクライアントを必要とするします。  
   
 > [!NOTE]
->  この引数は、デュアル インターフェイスに、一般には適用されません。  実装の観点から、クライアントがアクセスできるインターフェイスを実装するが、便利な、完全サポートされる方法は、倍になります。  
+>  この引数は一般にデュアル インターフェイスには適用されません。 実装の観点からは、デュアルは、さまざまなクライアントにアクセス可能であるインターフェイスを実装するすばやく、便利で、かつ適切にサポートされている方法です。  
   
- デュアル インターフェイスのイベントを避けるそのほかの理由があります; Visual Basic が Internet Explorer でもサポートされていません。  
+ さらにデュアル イベント インターフェイスを使用しない理由があります。Visual Basic でもインターネット エクスプ ローラーをサポートしています。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [デュアル インターフェイスと ATL](../atl/dual-interfaces-and-atl.md)
+

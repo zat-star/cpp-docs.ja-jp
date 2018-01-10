@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5d969481874762c5eefeb805d954ffad6114033e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 542245186fea67a0945414de56ad31b3b975eae3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="controls-general-support-classes"></a>コントロール: 標準のサポート クラス
 次のクラスは、ATL コントロールを一般的なサポートを提供します。  
@@ -42,6 +43,6 @@ ms.lasthandoff: 10/24/2017
 ## <a name="related-articles"></a>関連トピック  
  [ATL チュートリアル](../atl/active-template-library-atl-tutorial.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

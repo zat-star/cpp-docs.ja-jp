@@ -23,11 +23,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ef8ca542ef9bda72bd89b633d42db727bce3e94a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 827ba99a141799af42fab65c36df1f22d212260a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomcriticalsection-class"></a>CComCriticalSection クラス
 このクラスは、取得し、クリティカル セクション オブジェクトの所有権を解放するためのメソッドを提供します。  
@@ -69,7 +70,7 @@ class CComCriticalSection
   
  参照してください[CComCritSecLock クラス](../../atl/reference/ccomcritseclock-class.md)呼び出しよりも、このクラスを使用するより安全な方法を`Lock`と`Unlock`直接です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcore.h  
   
 ##  <a name="ccomcriticalsection"></a>CComCriticalSection::CComCriticalSection  
@@ -138,7 +139,7 @@ HRESULT Unlock() throw();
 ### <a name="remarks"></a>コメント  
  所有権を取得するスレッドを呼び出す必要があります、[ロック](#lock)メソッドです。 各呼び出し`Lock`に対応する呼び出しが必要です`Unlock`クリティカル セクションの所有権を解放します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComFakeCriticalSection クラス](../../atl/reference/ccomfakecriticalsection-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [CComCritSecLock クラス](../../atl/reference/ccomcritseclock-class.md)

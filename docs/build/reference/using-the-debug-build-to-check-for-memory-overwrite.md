@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7b8fc223a1e4e1162ce99bb3275152c49828aa99
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f18a13992e41cd88bc8edec44f16b02da38ad10c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-the-debug-build-to-check-for-memory-overwrite"></a>デバッグ ビルドを使用したメモリ上書きのチェック
 デバッグ ビルドを使用して、メモリ上書きの確認するには、は、まずプロジェクトをデバッグを再構築する必要があります。 アプリケーションの先頭に移動し、`InitInstance`関数し、次の行を追加します。  
@@ -47,5 +48,5 @@ ASSERT(AfxCheckMemory());
   
  アプリケーションの性質、によってことがあります`afxMemDF`するテストも実行速度が遅すぎます。 `afxMemDF`変数`AfxCheckMemory`を新しい呼び出しごとに呼び出され、削除します。 その場合は、独自の呼び出しを散布図する必要があります`AfxCheckMemory`()、上記のようにしようとして、メモリを特定する方法を上書きします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リリース ビルドの問題の解決](../../build/reference/fixing-release-build-problems.md)

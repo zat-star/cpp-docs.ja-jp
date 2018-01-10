@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c3eb7009e8092184effad5e1874297c8c04b213e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5d4ee7899cda213bf8d8cfd529fd7609976e20d4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlservicemoduletstart-function"></a>CAtlServiceModuleT::Start 関数
 サービスが実行されると**_tWinMain**呼び出し**起動時**、さらに呼び出す`CAtlServiceModuleT::Start`です。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  エラー**余分**にサービス コントロールへの接続マネージャー (SCM) こと可能性があります、プログラムがサービスとして実行されていないこと。 この場合、呼び出しプログラム`CAtlServiceModuleT::Run`直接、プログラムがローカル サーバーとして実行できるようにします。 ローカル サーバーとして、プログラムの実行の詳細については、次を参照してください。[デバッグのヒント](../atl/debugging-tips.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サービス](../atl/atl-services.md)   
  [CAtlServiceModuleT::Start](../atl/reference/catlservicemodulet-class.md#start)
 

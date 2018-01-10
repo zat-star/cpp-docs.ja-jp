@@ -1,38 +1,36 @@
 ---
-title: "@InStr | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "@InStr"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "@InStr symbol"
+title: "@InStr|Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: '@InStr'
+dev_langs: C++
+helpviewer_keywords: '@InStr symbol'
 ms.assetid: 980d5b9f-2b88-4306-8955-df6cd2133e68
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 6ea488841290ff1e5eaa7279e209dff2928b82c4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# @InStr
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-*string1* が *string2* で最初に出現する位置を検索 *string1* 内の  *位置*  にそのマクロ関数。   *位置が*  表示されない場合は検索は *この*  の先頭から開始されます。  *string2 が*  ある場所の整数または 0 を返します。  
+# <a name="instr"></a>@InStr
+最初の出現箇所を検索するマクロ関数*string2*で*string1*で始まる、*位置*内*string1*です。 場合*位置*が表示されないの開始時に検索を開始*string1*です。 場合、位置を表す整数または 0 を返します*string2*が見つかりません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 @InStr( [[position]], string1, string2 )  
 ```  
   
-## 参照  
- [Symbols Reference](../../assembler/masm/symbols-reference.md)
+## <a name="see-also"></a>参照  
+ [シンボル リファレンス](../../assembler/masm/symbols-reference.md)

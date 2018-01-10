@@ -14,14 +14,15 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a6b98d3c03d319c2da397f969f8adf1ec858f72c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ef000f6611c9cb3794da8e46e6b905e57d5ecf92
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="executing-a-program-in-preprocessing"></a>プリプロセスでのプログラムの実行
 プリプロセス時にコマンドの終了コードを使用するには、角かっこ () 内の任意の引数を指定して、コマンドを指定します。 すべてのマクロは、コマンドを実行前に展開します。 (Nmake の) は、コマンドの仕様を前処理を制御する式の中で使用できるコマンドの終了コードに置き換えます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メイクファイル プリプロセスの式](../build/expressions-in-makefile-preprocessing.md)

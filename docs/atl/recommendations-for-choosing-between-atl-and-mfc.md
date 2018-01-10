@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d912c6cd997c23b9623d20a104327fb6e4701494
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 079784f1fed84ae073767a4a0b622d3fdbf7384b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="recommendations-for-choosing-between-atl-and-mfc"></a>ATL と MFC の選択に関する推奨事項
 コンポーネントおよびアプリケーションを開発するときに 2 つの方法を選択できます: ATL および MFC (Microsoft Foundation Class ライブラリ)。  
@@ -34,6 +35,6 @@ ms.lasthandoff: 10/24/2017
 ## <a name="using-atl-in-an-mfc-project"></a>MFC プロジェクトで ATL の使用  
  ウィザードを実行して、既存の MFC プロジェクトで ATL を使用するためのサポートを追加できます。 詳細については、「 [MFC プロジェクトへの ATL サポートの追加](../mfc/reference/adding-atl-support-to-your-mfc-project.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL の概要](../atl/introduction-to-atl.md)
 

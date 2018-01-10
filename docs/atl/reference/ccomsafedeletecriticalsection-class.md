@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -16,35 +15,19 @@ f1_keywords:
 - ATLCORE/ATL::CComSafeDeleteCriticalSection::Lock
 - ATLCORE/ATL::CComSafeDeleteCriticalSection::Term
 - ATLCORE/ATL::m_bInitialized
-dev_langs:
-- C++
-helpviewer_keywords:
-- CComSafeDeleteCriticalSection class
+dev_langs: C++
+helpviewer_keywords: CComSafeDeleteCriticalSection class
 ms.assetid: 4d2932c4-ba8f-48ec-8664-1db8bed01314
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
-ms.openlocfilehash: 511627de9d4f6411c508dd78a237cf546e2493de
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: df86d5219940ffc1dd3c34f47920675014eefd13
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomsafedeletecriticalsection-class"></a>CComSafeDeleteCriticalSection クラス
 このクラスは、取得し、クリティカル セクション オブジェクトの所有権を解放するためのメソッドを提供します。  
@@ -70,7 +53,7 @@ class CComSafeDeleteCriticalSection : public CComCriticalSection
 |----------|-----------------|  
 |[CComSafeDeleteCriticalSection::Init](#init)|作成し、クリティカル セクション オブジェクトを初期化します。|  
 |[CComSafeDeleteCriticalSection::Lock](#lock)|クリティカル セクション オブジェクトの所有権を取得します。|  
-|[CComSafeDeleteCriticalSection::Term](#term)|クリティカル セクション オブジェクトによって使用されているシステム リソースを解放します。|  
+|[CComSafeDeleteCriticalSection::Term](#term)|クリティカル セクション オブジェクトによって使用されるシステム リソースを解放します。|  
   
 ### <a name="data-members"></a>データ メンバー  
   
@@ -79,18 +62,18 @@ class CComSafeDeleteCriticalSection : public CComCriticalSection
 |[m_bInitialized](#m_binitialized)|フラグかどうか、内部**CRITICAL_SECTION**オブジェクトが初期化されています。|  
   
 ## <a name="remarks"></a>コメント  
- `CComSafeDeleteCriticalSection`クラスから派生[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)します。 ただし、`CComSafeDeleteCriticalSection`経由での安全性も強化メカニズムを提供[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)します。  
+ `CComSafeDeleteCriticalSection`クラスから派生[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)です。 ただし、`CComSafeDeleteCriticalSection`を超える追加の安全性のメカニズムを提供[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)です。  
   
- インスタンス`CComSafeDeleteCriticalSection`がスコープ外になるかが明示的にメモリから削除されると、基になるクリティカル セクション オブジェクトは自動的にクリーンアップ有効である場合。 さらに、 [CComSafeDeleteCriticalSection::Term](#term)基になるクリティカル セクション オブジェクトが割り当てられていないかが既にメモリから解放された場合、メソッドが正常に終了します。  
+ インスタンス`CComSafeDeleteCriticalSection`がスコープ外に出るか、明示的には、メモリから削除されると、基になるクリティカル セクション オブジェクトは自動的にクリーンアップ有効である場合。 さらに、 [CComSafeDeleteCriticalSection::Term](#term)基になるクリティカル セクション オブジェクトが割り当てられていないかが既にメモリから解放された場合、メソッドが正常に終了します。  
   
- 参照してください[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)詳細については、クリティカル セクションのヘルパー クラスです。  
+ 参照してください[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)詳細については、クリティカル セクションのヘルパー クラス。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)  
   
  `CComSafeDeleteCriticalSection`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcore.h  
   
 ##  <a name="ccomsafedeletecriticalsection"></a>CComSafeDeleteCriticalSection::CComSafeDeleteCriticalSection  
@@ -101,7 +84,7 @@ CComSafeDeleteCriticalSection();
 ```  
   
 ### <a name="remarks"></a>コメント  
- セット、 [m_bInitialized](#m_binitialized)データ メンバーを**false**します。  
+ セット、 [m_bInitialized](#m_binitialized)データ メンバーを**false**です。  
   
 ##  <a name="dtor"></a>CComSafeDeleteCriticalSection:: ~ CComSafeDeleteCriticalSection  
  デストラクターです。  
@@ -111,7 +94,7 @@ CComSafeDeleteCriticalSection();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 内部解放**CRITICAL_SECTION**メモリからオブジェクトの場合、 [m_bInitialized](#m_binitialized)データ メンバーに設定されている**true**します。  
+ 内部解放**CRITICAL_SECTION**メモリからオブジェクトの場合、 [m_bInitialized](#m_binitialized)データ メンバーに設定されている**true**です。  
   
 ##  <a name="init"></a>CComSafeDeleteCriticalSection::Init  
  基本クラス実装を呼び出して[Init](/visualstudio/debugger/init)設定と[m_bInitialized](#m_binitialized)に**true**正常終了した場合。  
@@ -121,10 +104,10 @@ HRESULT Init() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 結果を返す[CComCriticalSection::Init](../../atl/reference/ccomcriticalsection-class.md#init)します。  
+ 結果を返します[CComCriticalSection::Init](../../atl/reference/ccomcriticalsection-class.md#init)です。  
   
 ##  <a name="lock"></a>CComSafeDeleteCriticalSection::Lock  
-基本クラス実装を呼び出して[ロック](ccomcriticalsection-class.md#lock)します。  
+基本クラス実装を呼び出して[ロック](ccomcriticalsection-class.md#lock)です。  
 
   
 ```
@@ -132,12 +115,12 @@ HRESULT Lock();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 結果を返す[CComCriticalSection::Lock](../../atl/reference/ccomcriticalsection-class.md#lock)します。  
+ 結果を返します[CComCriticalSection::Lock](../../atl/reference/ccomcriticalsection-class.md#lock)です。  
   
 ### <a name="remarks"></a>コメント  
- この方法では、 [m_bInitialized](#m_binitialized)データ メンバーに設定されている**true**の入力時です。 この条件が満たされていない場合、デバッグ ビルドでアサーションが生成されます。  
+ この方法では、 [m_bInitialized](#m_binitialized)データ メンバーに設定されている**true**エントリ時にします。 この条件が満たされない場合、デバッグ ビルドでアサーションが生成されます。  
   
- 関数の動作の詳細についてを参照してください[CComCriticalSection::Lock](../../atl/reference/ccomcriticalsection-class.md#lock)します。  
+ 関数の動作の詳細についてを参照してください[CComCriticalSection::Lock](../../atl/reference/ccomcriticalsection-class.md#lock)です。  
   
 ##  <a name="m_binitialized"></a>CComSafeDeleteCriticalSection::m_bInitialized  
  フラグかどうか、内部**CRITICAL_SECTION**オブジェクトが初期化されています。  
@@ -147,7 +130,7 @@ bool m_bInitialized;
 ```  
   
 ### <a name="remarks"></a>コメント  
- **M_bInitialized**データ メンバーが、基になるの有効性を追跡するために使用される**CRITICAL_SECTION**オブジェクトに関連付けられている、 [CComSafeDeleteCriticalSection](../../atl/reference/ccomsafedeletecriticalsection-class.md)クラスです。 基になる**CRITICAL_SECTION**オブジェクトは、このフラグに設定されていない場合、メモリから解放するのには試行されません**true**します。  
+ **M_bInitialized**データ メンバーが、基になるの有効性を追跡するために使用される**CRITICAL_SECTION**オブジェクトに関連付けられている、 [CComSafeDeleteCriticalSection](../../atl/reference/ccomsafedeletecriticalsection-class.md)クラスです。 基になる**CRITICAL_SECTION**オブジェクトは、このフラグに設定されていない場合、メモリから解放するのには試行されません**true**です。  
   
 ##  <a name="term"></a>CComSafeDeleteCriticalSection::Term  
  基本クラス実装を呼び出して[CComCriticalSection::Term](../../atl/reference/ccomcriticalsection-class.md#term)場合は、内部**CRITICAL_SECTION**オブジェクトが無効です。  
@@ -157,12 +140,11 @@ HRESULT Term() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 結果を返す[CComCriticalSection::Term](../../atl/reference/ccomcriticalsection-class.md#term)、または**S_OK**場合[m_bInitialized](#m_binitialized)に設定されている**false**の入力時です。  
+ 結果を返します[CComCriticalSection::Term](../../atl/reference/ccomcriticalsection-class.md#term)、または**S_OK**場合[m_bInitialized](#m_binitialized)に設定された**false**エントリ時にします。  
   
 ### <a name="remarks"></a>コメント  
- 内部いてもこのメソッドを呼び出しても安全である**CRITICAL_SECTION**オブジェクトが無効です。 場合に、このクラスのデストラクターがこのメソッドを呼び出して、 [m_bInitialized](#m_binitialized)データ メンバーに設定されている**true**します。  
+ 内部いなくてもこのメソッドを呼び出すには安全では**CRITICAL_SECTION**オブジェクトが無効です。 場合、このクラスのデストラクターはこのメソッドを呼び出して、 [m_bInitialized](#m_binitialized)データ メンバーに設定されている**true**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComCriticalSection クラス](../../atl/reference/ccomcriticalsection-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-
