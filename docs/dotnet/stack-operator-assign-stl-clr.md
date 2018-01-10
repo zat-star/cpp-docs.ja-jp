@@ -1,46 +1,46 @@
 ---
-title: "stack::operator= (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stack::operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator= メンバー [STL/CLR]"
+title: "stack::operator = (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::stack::operator=
+dev_langs: C++
+helpviewer_keywords: operator= member [STL/CLR]
 ms.assetid: 6f23b5fc-667e-4c6c-b43a-88b30da2ecac
-caps.latest.revision: 14
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 58a73316bf6928ca690fdc01b5211fc55d8cca7d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# stack::operator= (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="stackoperator-stlclr"></a>stack::operator= (STL/CLR)
 被制御シーケンスを置き換えます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 stack <Value, Container>% operator=(stack <Value, Container>% right);  
 ```  
   
-#### パラメーター  
- \[right\]  
- コピーするコンテナーのアダプター。  
+#### <a name="parameters"></a>パラメーター  
+ 右  
+ コピーするコンテナーのアダプターです。  
   
-## 解説  
- このメンバー演算子は、オブジェクトに `right` を返します `*this`をコピーします。  これを使用して、被制御シーケンスを `right` の被制御シーケンスのコピーに置き換えることができます。  
+## <a name="remarks"></a>コメント  
+ メンバー演算子コピー`right`オブジェクトを返します`*this`です。 これを使用して、被制御シーケンスを `right` の被制御シーケンスのコピーと置き換えます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_stack_operator_as.cpp   
@@ -71,13 +71,16 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext とスタック\>  
+```Output  
+a b c  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/stack >  
   
-## 参照  
- [スタック](../dotnet/stack-stl-clr.md)   
- [stack::assign](../Topic/stack::assign%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [stack::assign (STL/CLR)](../dotnet/stack-assign-stl-clr.md)

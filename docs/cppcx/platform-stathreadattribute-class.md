@@ -20,11 +20,12 @@ caps.latest.revision: "3"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 54e4b7621879252b14fa0fe71c837439da147df5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b1c2b8c38d672b6bd3ecd0fcafb54a9b6e723202
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformstathreadattribute-class"></a>Platform::STAThreadAttribute クラス
 アプリケーションのスレッド モデルがシングル スレッド アパートメント (STA) であることを示します。  
@@ -46,7 +47,7 @@ public ref class STAThreadAttribute sealed : Attribute
 ### <a name="public-methods"></a>パブリック メソッド  
  STAThreadAttribute 属性が継承[platform::object クラス](../cppcx/platform-object-class.md)です。 また STAThreadAttribute は次のメンバーもオーバーロードしたり、含んだりします。  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[STAThreadAttribute::Equals](#equals)|指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。|  
 |[STAThreadAttribute::GetHashCode](#gethashcode)|このインスタンスのハッシュ コードを返します。|  
@@ -55,7 +56,7 @@ public ref class STAThreadAttribute sealed : Attribute
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `Platform`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Platform  
@@ -119,5 +120,5 @@ public:String^ ToString()
   
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "26"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 467888dc773a8d84e5a1b3fc1fd2c337b06654be
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f2d72ddda460a88830f7f7692f4c9707fa3101a7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="profile-guided-optimizations"></a>ガイド付き最適化のプロファイル
 ガイド付き最適化のプロファイルによって出力ファイルを最適化できます。この場合、オプティマイザーは .exe ファイルまたは .dll ファイルのテスト実行データを使用します。 このデータは、稼働環境でのプログラムの実行動作を示します。  
@@ -87,5 +88,5 @@ ms.lasthandoff: 10/24/2017
   
  [方法: 複数の PGO プロファイルを単一のプロファイルにマージする](../../build/reference/how-to-merge-multiple-pgo-profiles-into-a-single-profile.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C/C++ のビルド ツール](../../build/reference/c-cpp-build-tools.md)

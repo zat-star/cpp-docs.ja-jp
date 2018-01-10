@@ -1,33 +1,33 @@
 ---
-title: "operator&gt;= (map) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::map::operator>="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator>= メンバー [STL/CLR]"
+title: "演算子&gt;= (map) (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::map::operator>=
+dev_langs: C++
+helpviewer_keywords: operator>= member [STL/CLR]
 ms.assetid: 9f39fbd2-ead6-4451-ad4e-b9cb077fb442
-caps.latest.revision: 16
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: da4a79897724877c66718ad058763c5aa89de699
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator&gt;= (map) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-大きなリスト、または等価比較に使用します。  
+# <a name="operatorgt-map-stlclr"></a>演算子&gt;= (map) (STL/CLR)
+リストよりも大きいまたは等しい比較します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Key,  
@@ -36,17 +36,17 @@ template<typename Key,
         map<Key, Mapped>% right);  
 ```  
   
-#### パラメーター  
- \[left\]  
- 比較の左辺のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 左へ  
+ 比較する左のコンテナー。  
   
- \[right\]  
- 比較の右辺のコンテナー。  
+ 右  
+ 比較する右のコンテナー。  
   
-## 解説  
- 演算子関数の戻り値 `!(``left``<``right``)`。  2 個のマップが要素によって比較された要素の場合 `left` が `right` の前に順序付けされていないかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ 演算子関数を返します`!(left` `<` `right)`です。 テストするために使用するかどうか`left`する前に順序付けされていない`right`要素によって比較対象の要素が 2 つのマップの場合。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_map_operator_ge.cpp   
@@ -86,19 +86,22 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
- **1 \[\] \[b 2 \[\]d 4\]**  
-**\[\] \>b c \= b c \[\]当てはまります。**  
-**\[\] \>b c d \= b \[\] false です。**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+ [a 1] [b 2] [d 4]  
+[a b c] >= [a b c] is True  
+[a b c] >= [a b d] is False  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [マップ](../dotnet/map-stl-clr.md)   
- [operator\=\= \(map\)](../dotnet/operator-equality-map-stl-clr.md)   
- [operator\!\= \(map\)](../dotnet/operator-inequality-map-stl-clr.md)   
- [operator\< \(map\)](../Topic/operator%3C%20\(map\)%20\(STL-CLR\).md)   
- [operator\> \(map\)](../dotnet/operator-greater-than-map-stl-clr.md)   
- [operator\<\= \(map\)](../dotnet/operator-less-or-equal-map-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [演算子 = = (map) (STL/CLR)](../dotnet/operator-equality-map-stl-clr.md)   
+ [operator! = (map) (STL/CLR)](../dotnet/operator-inequality-map-stl-clr.md)   
+ [演算子\<(map) (STL/CLR)](../dotnet/operator-less-than-map-stl-clr.md)   
+ [operator > (map) (STL/CLR)](../dotnet/operator-greater-than-map-stl-clr.md)   
+ [operator<= (map) (STL/CLR)](../dotnet/operator-less-or-equal-map-stl-clr.md)

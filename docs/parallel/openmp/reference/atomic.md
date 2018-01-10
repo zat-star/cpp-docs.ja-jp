@@ -1,48 +1,47 @@
 ---
-title: "atomic | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "atomic"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "atomic OpenMP directive"
+title: "アトミック |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: atomic
+dev_langs: C++
+helpviewer_keywords: atomic OpenMP directive
 ms.assetid: 275e0338-cf2f-4525-97b5-696250000df7
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 1e3d190504a0e4caab864c637d7053836b01f88f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# atomic
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-とをアトミックに更新されるメモリ位置指定します。  
+# <a name="atomic"></a>アトミック
+指定するアトミックに更新されるメモリの場所。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #pragma omp atomic  
    expression  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `expression`  
- ステートメント複数の書き込みに対する保護する左辺値のメモリ位置。  使用できる式の形式に関する詳細についてはOpenMP の仕様を参照してください。  
+ 複数書き込みから保護するメモリ位置の値を含むステートメント。 有効な式のフォームの詳細については、OpenMP 仕様を参照してください。  
   
-## 解説  
- `atomic` のディレクティブはOpenMP 句をサポートしていません。  
+## <a name="remarks"></a>コメント  
+ `atomic`ディレクティブに OpenMP 句がサポートされていません。  
   
- 詳細については、「[2.6.4 atomic Construct](../../../parallel/openmp/2-6-4-atomic-construct.md)」を参照してください。  
+ 詳細については、次を参照してください。 [2.6.4 atomic 構築](../../../parallel/openmp/2-6-4-atomic-construct.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // omp_atomic.cpp  
@@ -63,6 +62,9 @@ int main() {
 }  
 ```  
   
-  **スレッドの数 : 10**    
-## 参照  
+```Output  
+Number of threads: 10  
+```  
+  
+## <a name="see-also"></a>参照  
  [OpenMP](../../../parallel/openmp/openmp-in-visual-cpp.md)

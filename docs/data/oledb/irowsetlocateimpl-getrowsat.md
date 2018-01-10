@@ -1,36 +1,38 @@
 ---
-title: "IRowsetLocateImpl::GetRowsAt | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "GetRowsAt"
-  - "IRowsetLocateImpl.GetRowsAt"
-  - "ATL::IRowsetLocateImpl::GetRowsAt"
-  - "IRowsetLocateImpl::GetRowsAt"
-  - "ATL.IRowsetLocateImpl.GetRowsAt"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetRowsAt メソッド"
+title: "Irowsetlocateimpl::getrowsat |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- GetRowsAt
+- IRowsetLocateImpl.GetRowsAt
+- ATL::IRowsetLocateImpl::GetRowsAt
+- IRowsetLocateImpl::GetRowsAt
+- ATL.IRowsetLocateImpl.GetRowsAt
+dev_langs: C++
+helpviewer_keywords: GetRowsAt method
 ms.assetid: 6aeb09dc-3aa8-4729-97a8-144dd27063f7
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: a757c6102851851ab4175f939a6f76d8136fa61c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# IRowsetLocateImpl::GetRowsAt
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-フェッチはブックマークからのオフセットで指定した行から開始を使用します。  
+# <a name="irowsetlocateimplgetrowsat"></a>IRowsetLocateImpl::GetRowsAt
+ブックマークからのオフセットによって指定された行で始まる行がフェッチされます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -46,17 +48,17 @@ caps.handback.revision: 8
 );  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [IRowsetLocate::GetRowsAt](https://msdn.microsoft.com/en-us/library/ms723031.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[irowsetlocate::getrowsat](https://msdn.microsoft.com/en-us/library/ms723031.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 解説  
- カーソル位置ではなくフェッチするには、[IRowset::GetRowsAt](https://msdn.microsoft.com/en-us/library/ms723031.aspx)を使用します。  
+## <a name="remarks"></a>コメント  
+ 代わりに、カーソル位置からフェッチを使用して[に](https://msdn.microsoft.com/en-us/library/ms723031.aspx)です。  
   
- `IRowsetLocateImpl::GetRowsAt` は カーソル位置は変更されません。  
+ `IRowsetLocateImpl::GetRowsAt`カーソル位置は変更されません。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [IRowsetLocateImpl クラス](../../data/oledb/irowsetlocateimpl-class.md)   
  [IRowsetLocateImpl::GetRowsByBookmark](../../data/oledb/irowsetlocateimpl-getrowsbybookmark.md)

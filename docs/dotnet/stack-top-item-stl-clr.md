@@ -1,41 +1,42 @@
 ---
-title: "stack::top_item (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stack::top_item"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "top_item メンバー [STL/CLR]"
+title: "stack::top_item (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::stack::top_item
+dev_langs: C++
+helpviewer_keywords: top_item member [STL/CLR]
 ms.assetid: 01571acf-4880-44c4-80c4-bd91408a032d
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7219ed890938493a9c470ce7c2218f8fb78cfc62
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# stack::top_item (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="stacktopitem-stlclr"></a>stack::top_item (STL/CLR)
 最後の要素にアクセスします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 property value_type top_item;  
 ```  
   
-## 解説  
- プロパティ アクセス空でない必要があります。被制御シーケンスの最後の要素。  これがわかっている場合に読み込むために使用します。または、最後の要素を作成することはありません。  
+## <a name="remarks"></a>コメント  
+ プロパティでは、空でない必要があります、被制御シーケンスの最後の要素にアクセスします。 これを使用するには存在することがわかっている場合に、最後の要素を読み書きします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_stack_top_item.cpp   
@@ -68,14 +69,17 @@ int main()
   
 ```  
   
-  **b c**  
-**top\_item \= c**  
- **b X**   
-## 必要条件  
- **ヘッダー:** \<cliext とスタック\>  
+```Output  
+ a b c  
+top_item = c  
+ a b x  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/stack >  
   
-## 参照  
- [スタック](../dotnet/stack-stl-clr.md)   
- [stack::top](../dotnet/stack-top-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [stack::top (STL/CLR)](../dotnet/stack-top-stl-clr.md)

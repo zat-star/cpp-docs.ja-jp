@@ -18,11 +18,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f8c7f1ca1823970dec3f9a8c1ceb0198bc8a71b2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 8a5d8777a1219e204e0db1a16858ef30009dc67d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csimplerow-class"></a>CSimpleRow クラス
 使用されている行ハンドルの既定の実装を提供、 [IRowsetImpl](../../data/oledb/irowsetimpl-class.md)クラスです。  
@@ -54,10 +57,10 @@ class CSimpleRow
 ## <a name="remarks"></a>コメント  
  行ハンドルは、結果の行の一意のタグで、論理的にします。 `IRowsetImpl`新たに作成`CSimpleRow`で要求されているすべての行の[irowsetimpl::getnextrows](../../data/oledb/irowsetimpl-getnextrows.md)です。 `CSimpleRow`既定のテンプレート引数にはも行ハンドルの独自の実装に置き換えることが`IRowsetImpl`です。 このクラスを交換する唯一の要件は、型の 1 つのパラメーターを受け取るコンス トラクターを指定の置換クラスこと**長い**です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   
  [IRowsetImpl クラス](../../data/oledb/irowsetimpl-class.md)

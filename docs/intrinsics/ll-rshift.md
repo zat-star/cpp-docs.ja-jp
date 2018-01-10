@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b247be12c40746cb8662093518be1eb8eeff2fa1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c0bb658051a4eab579e2c0d2fbb4d6bd525381b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="llrshift"></a>__ll_rshift
 **Microsoft 固有の仕様**  
@@ -49,7 +50,7 @@ __int64 __ll_rshift(
 ## <a name="return-value"></a>戻り値  
  マスクがずれる`nBit`ビットです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -97,7 +98,7 @@ fffffffffffffff0
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
  [_ _ll_lshift](../intrinsics/ll-lshift.md)   
  [__ull_rshift](../intrinsics/ull-rshift.md)

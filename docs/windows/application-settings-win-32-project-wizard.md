@@ -17,11 +17,14 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f18b0690b6205f8e7b0f07fdfa6f0b88c75a3a91
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 7f93e81d5d030112f436ad93a53c2a65854b38f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="application-settings-win-32-project-wizard"></a>[アプリケーションの設定] (Win32 アプリケーション ウィザード)
 ウィザードのこのページを使用して、Win32 プロジェクトのオプションを設定します。  
@@ -36,7 +39,7 @@ ms.lasthandoff: 10/24/2017
 |**DLL**|Win32 ダイナミック リンク ライブラリ (DLL: Dynamic-Link Library) が作成されます。 Win32 DLL とは C または C++ で記述されたバイナリ ファイルであり、MFC クラスではなく Win32 API を呼び出したり、複数のアプリケーションで同時に使用できる関数の共有ライブラリとして機能します。<br /><br /> DLL アプリケーションには MFC サポートや ATL サポートを追加できません。 DLL がシンボルをエクスポートするように指定できます。|  
 |**スタティック ライブラリ**|スタティック ライブラリが作成されます。 スタティック ライブラリとは、実行可能ファイルの作成時にプログラムにリンクされるオブジェクト、およびそのオブジェクトの関数とデータを含むファイルです。 スターター ファイルを作成する方法を説明し、[プロジェクト プロパティ](../ide/property-pages-visual-cpp.md)スタティック ライブラリ。 スタティック ライブラリ ファイルには以下の利点があります。<br /><br /> は、Win32 スタティック ライブラリで作業しているアプリケーションは MFC クラスではなく Win32 API に呼び出しを行う場合に便利です。<br />-リンク プロセスは、C または C++ では、Windows アプリケーションの残りの部分が書き込まれるかどうかは同じです。<br />スタティック ライブラリは、MFC ベースのプログラムまたは非 MFC プログラム-リンクできます。|  
   
- **追加のオプション**  
+ **追加オプション**  
  アプリケーションのサポートとオプションを定義します。定義内容はアプリケーションの種類によって異なります。  
   
 |オプション|説明|  
@@ -54,5 +57,5 @@ ms.lasthandoff: 10/24/2017
 |**ATL**|ATL (Active Template Library) のクラスのサポートがプロジェクトに組み込まれます。 このオプションを使用できるのは、Win32 コンソール アプリケーションだけです。<br /><br /> **注**は、このオプションは、ATL を使用して ATL オブジェクト ウィザードのコードを追加するためのサポートを示しません。 ATL オブジェクトを追加できるのは、ATL プロジェクト、または ATL サポートを含む MFC プロジェクトだけです。|  
 |**MFC**|MFC (Microsoft Foundation Class) ライブラリのサポートがプロジェクトに組み込まれます。 このオプションを使用できるのは、Win32 コンソール アプリケーションとスタティック ライブラリだけです。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Win32 アプリケーション ウィザード](../windows/win32-application-wizard.md)   

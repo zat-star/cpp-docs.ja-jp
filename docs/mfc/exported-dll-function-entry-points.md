@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8959c30a5c1b65687d51e127781b82cccf0cce5c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 28ded528d584e98b704b5f2d8e6e0a379a6a11a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="exported-dll-function-entry-points"></a>DLL のエクスポート関数のエントリ ポイント
 DLL のエクスポート関数を使用して、 [AFX_MANAGE_STATE](reference/extension-dll-macros.md#afx_manage_state) DLL モジュールから呼び出し元のアプリケーションの DLL に切り替える際に、適切なグローバル状態を維持するためにマクロです。  
@@ -40,6 +41,6 @@ DLL のエクスポート関数を使用して、 [AFX_MANAGE_STATE](reference/e
   
  `AFX_MANAGE_STATE`DLL 内の各関数に挿入する必要はありません。 たとえば、`InitInstance`せず、アプリケーションで MFC コードから呼び出すことが`AFX_MANAGE_STATE`MFC する前にモジュールの状態を自動的に移動するため`InitInstance`と後、再度スイッチ、`InitInstance`を返します。 すべてのメッセージ マップ ハンドラー同様です。 正規の MFC Dll には、実際には、すべてのメッセージをルーティングする前にモジュールの状態は自動的に切り替わりますマスターの特殊なウィンドウ プロシージャがあり。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC モジュールの状態データの管理](../mfc/managing-the-state-data-of-mfc-modules.md)
 

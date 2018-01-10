@@ -42,11 +42,12 @@ caps.latest.revision: "28"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 25def6932680b47e69fc9b16064f046319bb5023
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 03876821780ec2f4e2258b9553e936bfdda13c17
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sharedptr-class"></a>shared_ptr クラス
 参照カウント スマート ポインターを、動的に割り当てられたオブジェクトにラップします。  
@@ -161,7 +162,7 @@ shared_ptr<int> sp6(sp2);   // error, template parameter int and argument shared
 |[shared_ptr::operator=](#op_eq)|所有されたリソースを置き換えます。|  
 |[shared_ptr::operator-&gt;](#operator-_gt)|指定された値へのポインターを取得します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
@@ -174,7 +175,7 @@ typedef T element_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `T`のシノニムです。  
+ この型は、テンプレート パラメーター `T` のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -848,7 +849,7 @@ sp1.use_count() == 1
 sp1.use_count() == 2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [weak_ptr クラス](../standard-library/weak-ptr-class.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

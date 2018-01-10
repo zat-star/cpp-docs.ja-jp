@@ -27,11 +27,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e25d83c2ae91424e80b07282bc5967a34745f412
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d90c59e4f85c871c113e51063ef1d50997bb508b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coledispatchexception-class"></a>COleDispatchException クラス
 OLE オートメーションの主要部分である OLE `IDispatch` インターフェイス固有の例外を処理します。  
@@ -68,7 +69,7 @@ class COleDispatchException : public CException
   
  `COleDispatchException`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
   
 ##  <a name="m_dwhelpcontext"></a>COleDispatchException::m_dwHelpContext  
@@ -124,7 +125,7 @@ WORD m_wCode;
 ### <a name="remarks"></a>コメント  
  このメンバーは、関数に設定されます。 [AfxThrowOleDispatchException](exception-processing.md#afxthrowoledispatchexception)例外がスローされたときにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CALCDRIV](../../visual-cpp-samples.md)   
  [CException クラス](../../mfc/reference/cexception-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

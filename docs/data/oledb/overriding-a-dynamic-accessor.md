@@ -1,32 +1,35 @@
 ---
-title: "動的アクセサーのオーバーライド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アクセサー [C++], 動的"
-  - "動的アクセサー"
-  - "オーバーライド, 動的アクセサー"
+title: "動的アクセサーのオーバーライド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- accessors [C++], dynamic
+- dynamic accessors
+- overriding, dynamic accessors
 ms.assetid: cbefd156-6da5-490d-b795-c2d7d874f7ce
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e06e1d5b0a5aa34116456c342f9cec233edcb6a1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 動的アクセサーのオーバーライド
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-`CDynamicAccessor` などの動的アクセサーを使用すると、**Open** メソッドは、開かれている行セットの列情報に基づいてアクセサーを自動的に作成します。  動的アクセサーをオーバーライドして、列の連結方法を厳密に制御できます。  
+# <a name="overriding-a-dynamic-accessor"></a>動的アクセサーのオーバーライド
+など、動的なアクセサーを使用すると`CDynamicAccessor`のコマンドは、**開く**メソッドは、開かれた行セットの列情報を基に自動的には、アクセサーを作成します。 正確に列のバインド方法を制御する動的なアクセサーをオーバーライドできます。  
   
- 動的アクセサーをオーバーライドするには、`CCommand::Open` メソッドの最後のパラメーターとして **false** を渡します。  これにより、**Open** でアクセサーが自動的に作成されなくなります。  その後、バインドする列ごとに `GetColumnInfo` および `AddBindEntry` を呼び出します。  この方法を次のコードに示します。  
+ 動的アクセサーをオーバーライドする渡す**false**最後のパラメーターとして、`CCommand::Open`メソッドです。 これにより、**開く**を自動的にアクセサーを作成します。 呼び出してできます`GetColumnInfo`を呼び出すと`AddBindEntry`バインドする各列に対してです。 次のコードは、それを実行する方法を示しています。  
   
 ```  
 USES_CONVERSION;  
@@ -76,5 +79,5 @@ while (product.MoveNext() == S_OK)
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [アクセサーの使用](../../data/oledb/using-accessors.md)

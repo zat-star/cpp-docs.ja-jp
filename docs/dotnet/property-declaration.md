@@ -1,32 +1,35 @@
 ---
-title: "プロパティの宣言 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__property キーワード"
-  - "宣言 (プロパティの), C++"
-  - "property キーワード [C++]"
+title: "プロパティ宣言 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- __property keyword
+- declaring properties, C++
+- property keyword [C++]
 ms.assetid: de169378-a8b8-49f4-a586-76bffc9b5c9f
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c047e1efbe030591e26fb410c9b2df254734e08b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# プロパティの宣言
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-マネージ クラスでのプロパティの宣言方法は、[!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では C\+\+ マネージ拡張から変更されています。  
+# <a name="property-declaration"></a>プロパティの宣言
+マネージ クラスのプロパティを宣言するための方法は、Visual C を c++ マネージ拡張から変更されました。  
   
- マネージ拡張では、`set` または `get` の各プロパティ アクセサーは独立したメソッドとして指定されます。  各メソッドの宣言には、`__property` キーワードがプレフィックスとして付けられます。  メソッド名は `set_` または `get_` から始まり、その後に \(ユーザーが認識可能な\) プロパティの実際の名前が続きます。  したがって、`x` 座標を持つ `Vector` の `get` プロパティの名前は `get_x` となり、ユーザーは `x` と指定してこのプロパティを呼び出します。  こうしたメソッドの名前付け規則と独立した仕様は、実行時におけるプロパティの基本実装を反映しています。  たとえば、次のコードでは、複数の座標プロパティを持つ `Vector` クラスを定義しています。  
+ マネージ拡張でデザインする場合に、各`set`または`get`プロパティ アクセサーは独立した手段として指定します。 各メソッドの宣言が付いて、`__property`キーワード。 メソッド名がいずれかで始まる`set_`または`get_`(としてユーザーに表示) プロパティの実際の名前が続きます。 したがって、`Vector`を提供する、`x`調整`get`プロパティと名前を付けます`get_x`し、ユーザーは、としては起動`x`です。 この名前付け規則とメソッドの別の仕様は実際にはプロパティの基になるランタイムの実装を反映します。 たとえば、ここでは、`Vector`で一連の座標のプロパティ。  
   
 ```  
 public __gc __sealed class Vector {  
@@ -41,7 +44,7 @@ public:
 };  
 ```  
   
- このコードでは、プロパティ関連の機能が散開しており、関連する sets や gets をユーザーが構文的にまとめる必要があります。  何より、冗長でわかりにくいという欠点があります。  新しい構文では、より C\# に近い構文が採用されており、`property` キーワードの後にプロパティの型と純粋なプロパティ名が続きます。  `set` および `get` access メソッドは、プロパティ名の後のブロック内に置かれます。  ただし、C\# とは異なり、access メソッドのシグネチャを指定する必要があります。  たとえば、次の例は上記のコードを新しい構文に変換したものです。  
+ これは、プロパティに関連付けられている機能外へ広がるし、構文的に関連付けられている設定と取得を統一する必要があります。 さらに、詳細です。 C# の場合と同様により、新しい構文では、`property`キーワードの後に、プロパティと非装飾名の型。 `set`と`get`アクセス メソッドは、プロパティ名に続くブロック内に配置します。 異なり、C# の場合は、アクセス メソッドのシグネチャが指定されていることを注意してください。 たとえば、新しい構文に変換上記のコード例を次に示します。  
   
 ```  
 public ref class Vector sealed {   
@@ -58,7 +61,7 @@ public:
 };  
 ```  
   
- `public` `get`、`private`、または `protected` `set` など、プロパティのアクセス メソッドがアクセス レベルの違いを反映している場合は、アクセス ラベルを明示的に指定できます。  既定では、プロパティのアクセス レベルはクラス ブロックのアクセス レベルを反映します。  たとえば、上記の `Vector` の定義では、`get` メソッドおよび `set` メソッドの両者ともアクセス レベルは `public` になります。  `set` メソッドを `protected` または `private` に設定するには、上記の定義を次のように変更します。  
+ プロパティのアクセス方法がなど異なるアクセス レベルを反映するかどうか、`public get`と`private`または`protected set`、明示的なアクセス権ラベルを指定することができます。 既定では、プロパティのアクセス レベルには、外側のアクセス レベルが反映されます。 たとえば、上記の定義で`Vector`の両方を`get`と`set`メソッドは`public`します。 させる、`set`メソッド`protected`または`private`定義を次のように改訂は。  
   
 ```  
 public ref class Vector sealed {   
@@ -73,7 +76,7 @@ public:
          _x = newx;  
       }  
   
-   } // note: extent of private culminates here …  
+   } // note: extent of private culminates here  
   
 // note: dot is a public method of Vector  
 double dot( const Vector^ wv );  
@@ -82,17 +85,17 @@ double dot( const Vector^ wv );
 };  
 ```  
   
- プロパティ内のアクセス キーワードのスコープは、プロパティ ブロックの右中かっこ \(}\) まで、または別のアクセス キーワードが指定されている箇所までです。  有効範囲がプロパティの定義ブロックを超えることはありません。定義ブロック以外の箇所については、クラス ブロックのアクセス レベルが適用されます。  たとえば、上記の定義において、`Vector::dot()` はパブリック メソッドとなります。  
+ プロパティ内でアクセス キーワードのスコープは、プロパティの右中かっこまたは追加のアクセス キーワードが指定されるまで拡張します。 プロパティが定義されている外側外側のアクセス レベルは、プロパティの定義を超えるは拡張されません。 たとえば、上記の宣言で`Vector::dot()`パブリック メソッドします。  
   
- 3 つの `Vector` 座標について set\/get プロパティを記述する場合、次の 3 つの手順が必要となります。  
+ 3 つの設定/取得するプロパティの書き込み`Vector`座標 3 つの手順します。  
   
 1.  適切な型のプライベート状態のメンバーを宣言します。  
   
-2.  ユーザーがプロパティ値を取得しようとしている場合はその値を返します。  
+2.  ユーザーがその値を取得するときに、それを返します。  
   
-3.  新しい値を代入します。  
+3.  新しい値を割り当てます。  
   
- 新しい構文ではプロパティの省略構文を利用できます。上記の処理は自動的に実装されます。  
+ 新しい構文で、プロパティの省略構文では使用可能なこの使用状況パターンを自動化します。  
   
 ```  
 public ref class Vector sealed {   
@@ -104,8 +107,8 @@ public:
 };  
 ```  
   
- プロパティの省略構文には興味深い副作用があります。つまり、バックステージの静的メンバーがコンパイラによって生成される一方で、クラス内からそのメンバーにアクセスするには set\/get アクセサーを使用する以外に手段がないということです。  
+ プロパティの省略構文の重要な副作用は、backstage 状態のメンバーは、コンパイラによって生成、されていないことを除く設定/取得アクセサーでは、関連するクラス内でアクセス可能です。  
   
-## 参照  
- [クラスまたはインターフェイス内でのメンバー宣言 \(C\+\+\/CLI\)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
- [property](../windows/property-cpp-component-extensions.md)
+## <a name="see-also"></a>参照  
+ [クラスまたはインターフェイス内でメンバーの宣言 (C + + CLI)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
+ [プロパティ](../windows/property-cpp-component-extensions.md)

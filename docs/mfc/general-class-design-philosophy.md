@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7e4c5c15e7d18fb768b7b0fffa99140ae64075da
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c174b06b27e78ca61d2608b8e04205068ac436e9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="general-class-design-philosophy"></a>一般的なクラス デザインの考え方
 Microsoft Windows では、C++ 言語が普及よりかなり前に設計されています。 数千のアプリケーションでは、C 言語の Windows アプリケーション プログラミング インターフェイス (API) を使用するため、そのインターフェイスは、近い将来に保持されます。 手続き型の C 言語 API の上に、任意の C++ Windows インターフェイスを構築する必要がそのためです。 これは、C++ アプリケーションが C のアプリケーションと共存できることを保証します。  
@@ -55,6 +56,6 @@ Microsoft Windows では、C++ 言語が普及よりかなり前に設計され�
   
 -   [C 言語 API との関係](../mfc/relationship-to-the-c-language-api.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

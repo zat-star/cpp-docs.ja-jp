@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 34513ba6799b1f70d16867571d38185420fa3576
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e06dca827d6b5cb5d457a2eda6aa143bb5d0fe5e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lvalues-and-rvalues-visual-c"></a>Lvalue と Rvalue (Visual C)
 すべての C++ 式の型に属している、*値カテゴリ*です。 値のカテゴリは、コンパイラが作成、コピー、および式の評価中に一時オブジェクトを移動するときに従う必要があるルールの基礎です。 
@@ -76,7 +77,7 @@ int main()
   
  条項*左辺値*と*右辺値*はオブジェクト参照を参照するときに、よく使用します。 参照の詳細については、次を参照してください。[左辺値参照宣言子: &](../cpp/lvalue-reference-declarator-amp.md)と[右辺値参照宣言子: & (& a)](../cpp/rvalue-reference-declarator-amp-amp.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本的な概念](../cpp/basic-concepts-cpp.md)   
  [左辺値参照宣言子: &](../cpp/lvalue-reference-declarator-amp.md)   
  [右辺値参照宣言子: &&](../cpp/rvalue-reference-declarator-amp-amp.md)

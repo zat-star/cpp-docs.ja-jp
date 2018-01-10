@@ -1,66 +1,68 @@
 ---
-title: "CRowset::SetData | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CRowset<TAccessor>.SetData"
-  - "SetData"
-  - "ATL::CRowset::SetData"
-  - "CRowset<TAccessor>.SetData"
-  - "CRowset::SetData"
-  - "ATL.CRowset.SetData"
-  - "CRowset.SetData"
-  - "CRowset<TAccessor>::SetData"
-  - "ATL::CRowset<TAccessor>::SetData"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetData メソッド"
+title: "Crowset::setdata |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL.CRowset<TAccessor>.SetData
+- SetData
+- ATL::CRowset::SetData
+- CRowset<TAccessor>.SetData
+- CRowset::SetData
+- ATL.CRowset.SetData
+- CRowset.SetData
+- CRowset<TAccessor>::SetData
+- ATL::CRowset<TAccessor>::SetData
+dev_langs: C++
+helpviewer_keywords: SetData method
 ms.assetid: 68125142-8510-4132-9393-e39efd39c784
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0aafc521e130a7f737083390fe5f825c88aa5844
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CRowset::SetData
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-行の一つ以上の列にデータ値を設定します。  
+# <a name="crowsetsetdata"></a>CRowset::SetData
+行の 1 つまたは複数の列のデータ値を設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      HRESULT SetData( ) const throw( );   
+      HRESULT SetData( ) const throw( );   
 HRESULT SetData(  
    int nAccessor   
 ) const throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nAccessor`  
- \[\]データにアクセスするために使用するアクセサーの数。  
+ [in]データにアクセスするのに使用するアクセサーの数。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- 引数を取らない `SetData` のフォームでは、すべてのアクセサーは更新に使用されます。  通常、データ列の値を設定するに **SetData** And をその変更を送信するために [更新](../Topic/CRowset::Update.md) を呼び出します。  
+## <a name="remarks"></a>コメント  
+ `SetData`引数を指定せず、すべてのアクセサーを受け入れるフォームには更新に使用します。 通常**SetData**値を設定するデータ行の列を呼び出す[更新](../../data/oledb/crowset-update.md)それらの変更を送信します。  
   
- このメソッドは、すべてのプロバイダーでサポートされない省略可能なインターフェイス `IRowsetChange`が必要ですが、; この場合、メソッドの戻り **E\_NOINTERFACE**。  また `VARIANT_TRUE` にテーブルの **開く** を呼び出す前に **DBPROP\_IRowsetChange** を設定または命じなければ、行セットが含まれます。  
+ このメソッドには、省略可能なインターフェイスが必要とする`IRowsetChange`、する可能性がありますすべてのプロバイダーでサポートされていない以外の場合は、そうでは、返されます**E_NOINTERFACE**です。 設定する必要もあります**DBPROP_IRowsetChange**に`VARIANT_TRUE`呼び出す前に**開く**テーブルまたは行セットを含むコマンドをします。  
   
- 一連の操作は、一つ以上の列が書き込み可能でない場合に失敗する場合があります。  これを修正するにはカーソル マップを変更します。  
+ 設定操作は、1 つまたは複数の列が書き込み可能な場合に失敗する可能性があります。 これを修正するにはカーソル マップを変更します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CRowset クラス](../Topic/CRowset%20Class.md)   
- [CRowset::Update](../Topic/CRowset::Update.md)
+## <a name="see-also"></a>参照  
+ [CRowset クラス](../../data/oledb/crowset-class.md)   
+ [CRowset::Update](../../data/oledb/crowset-update.md)

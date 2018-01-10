@@ -4,28 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - grammar, expressions
 - expressions [C++], semantics
 - expression evaluation
 - expression evaluation, about expression evaluation
 ms.assetid: 4a792154-533b-48b9-8709-31bfc170f0a7
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 09b65ee050e856c4dcecba269c46a08c8d2d7fb5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: efdf3f67e488af0e7c20c882552b18c533a031b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="semantics-of-expressions"></a>式のセマンティクス
 式は、式の演算子の優先順位とグループ化に従って評価されます ([演算子の優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)で[構文規則](../cpp/lexical-conventions.md)式に演算子を示している、C++ の関係を示しています)。  
@@ -104,7 +102,7 @@ func( i, ++i );
   
 -   論理 AND 演算子 (&&) の左オペランド。 論理 AND 演算子の左オペランドは完全に評価され、すべての副作用は続行の前に完了します。 論理 AND 演算子の右オペランドが評価される保証はありません。  
   
--   論理 OR 演算子 (&#124; (&) #124;) の左オペランド。 論理 OR 演算子の左オペランドは完全に評価され、すべての副作用は続行の前に完了します。 論理 OR 演算子の右オペランドが評価される保証はありません。  
+-   論理 OR 演算子 (&#124; &#124;) の左オペランド。 論理 OR 演算子の左オペランドは完全に評価され、すべての副作用は続行の前に完了します。 論理 OR 演算子の右オペランドが評価される保証はありません。  
   
 -   コンマ演算子の左オペランド。 コンマ演算子の左オペランドは完全に評価され、すべての副作用は続行の前に完了します。 コンマ演算子のオペランドは両方とも、常に評価されます。  
   
@@ -124,5 +122,5 @@ func( i, ++i );
   
 -   return ステートメント内の式。 式は完全に評価され、すべての副作用は呼び出し元の関数に制御が戻る前に完了します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [式](../cpp/expressions-cpp.md)

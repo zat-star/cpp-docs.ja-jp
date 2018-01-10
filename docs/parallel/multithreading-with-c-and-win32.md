@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0e2ce9377d0ea4b2bd7b04255eb1c8099341af39
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 30c7833a4df80669b6223f1fe6b1ccceed0257cc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multithreading-with-c-and-win32"></a>C と Win32 を使用するマルチスレッド
 Microsoft Visual C は、Microsoft Windows でマルチ スレッド アプリケーションを作成するためのサポートを提供します。 Windows XP、Windows 2000、Windows NT、Windows Me、および Windows 98 です。 アプリケーションでキーボードとマウスの同時入力などの複数の処理を管理する場合は、複数のスレッド (マルチスレッド) の使用を検討してください。 たとえば、あるスレッドがマウス関連の処理をしている間に、別のスレッドでキーボード入力を処理できます。 さらに 3 番目のスレッドで、マウス スレッドとキーボード スレッドからのデータに基づいて表示画面を更新することもできます。 また別のスレッドで、同時にディスク ファイルにアクセスしたり、通信 (COM) ポートからデータを受信することもできます。  
@@ -54,5 +55,5 @@ Microsoft Visual C は、Microsoft Windows でマルチ スレッド アプリ�
   
 -   [スレッド ローカル ストレージ (TLS)](../parallel/thread-local-storage-tls.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [旧形式のコードのためのマルチスレッド サポート (Visual C++)](../parallel/multithreading-support-for-older-code-visual-cpp.md)

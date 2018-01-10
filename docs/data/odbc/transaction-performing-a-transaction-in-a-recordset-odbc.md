@@ -1,41 +1,43 @@
 ---
-title: "トランザクション: レコードセットからのトランザクション実行 (ODBC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "トランザクション, 更新 (レコードセットを)"
+title: "トランザクション: レコード セット (ODBC) からのトランザクションの実行 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: transactions, updating recordsets
 ms.assetid: cf1d6b48-7fb8-4903-84f7-a1822054534d
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: bd412549c86c3ca8ddc004016183b64248bdf292
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# トランザクション: レコードセットからのトランザクション実行 (ODBC)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、レコードセット内でトランザクションを実行する方法について説明します。  
+# <a name="transaction-performing-a-transaction-in-a-recordset-odbc"></a>トランザクション: レコードセットからのトランザクション実行 (ODBC)
+このトピックでは、レコード セットで、トランザクションを実行する方法について説明します。  
   
 > [!NOTE]
->  トランザクションは 1 レベルでしか利用できません。つまり、入れ子にすることはできません。  
+>  トランザクションの 1 つだけのレベルがサポートされています。トランザクションを入れ子にすることはできません。  
   
-#### レコードセット中でトランザクションを実行するには  
+#### <a name="to-perform-a-transaction-in-a-recordset"></a>レコード セットのトランザクションを実行するには  
   
-1.  `CDatabase` オブジェクトのメンバー関数 **BeginTrans** を呼び出します。  
+1.  呼び出す、`CDatabase`オブジェクトの**BeginTrans**メンバー関数。  
   
-2.  バルク行フェッチを実装していない場合は、同一のデータベースに結び付けられた 1 つ以上のレコードセットの中で、メンバー関数 **AddNew\/Update**、**Edit\/Update**、および **Delete** を必要な回数だけ呼び出してレコードを更新します。  詳細については、「[レコードセット : レコードの追加、更新、削除 \(ODBC\)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)」を参照してください。  バルク行フェッチを実装している場合は、データ ソースを更新するための関数を独自に記述する必要があります。  
+2.  バルク行フェッチを実装できませんが、場合、 **AddNew/更新**、**編集/更新**、および**削除**の同じ 1 つまたは複数のレコード セット オブジェクトのメンバー関数必要に応じて何度としてデータベースです。 詳細については、次を参照してください。[レコード セット: 追加、更新、およびレコードの削除 (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)です。 バルク行フェッチを実装している場合は、データ ソースを更新する、独自の関数を記述する必要があります。  
   
-3.  最後に `CDatabase` オブジェクトのメンバー関数 **CommitTrans** を呼び出します。  更新処理中にエラーが発生した場合、または変更をキャンセルする場合は、**Rollback** メンバー関数を呼び出します。  
+3.  最後を呼び出して、`CDatabase`オブジェクトの**CommitTrans**メンバー関数。 呼び出すか、更新プログラムのいずれかでエラーが発生した変更をキャンセルする場合、その**ロールバック**メンバー関数。  
   
- 次の例では、2 つのレコードセットを使って、1 人の学生の履修登録を登録データベースから削除します。つまり、学生が履修登録したすべてのクラスからこの学生の登録を削除します。  両方のレコードセットで **Delete** の呼び出しを連続して実行する必要があるので、トランザクションが必要です。  この例は、`CDatabase` 型のメンバー変数 `m_dbStudentReg` が存在し、既にデータ ソースに接続されており、レコードセット クラス `CEnrollmentSet` と `CStudentSet` が存在することを想定しています。  変数 `strStudentID` には、ユーザーが指定した値が格納されています。  
+ 次の例では、次の 2 つのレコード セットを使用して、受講者が登録されているすべてのクラスから受講者を削除する、学校の登録情報データベースからスチューデントの登録を削除します。 **削除**両方のレコード セットでの呼び出しが成功する必要があります、トランザクションが必要です。 例では、ことを想定の`m_dbStudentReg`、型のメンバー変数`CDatabase`データ ソースとレコード セット クラスに既に接続されている`CEnrollmentSet`と`CStudentSet`です。 `strStudentID`変数には、ユーザーから取得した値が含まれています。  
   
 ```  
 BOOL CEnrollDoc::RemoveStudent( CString strStudentID )  
@@ -88,10 +90,10 @@ BOOL CEnrollDoc::RemoveStudent( CString strStudentID )
 ```  
   
 > [!NOTE]
->  **CommitTrans** または **Rollback** を呼び出さずに **BeginTrans** を再度呼び出すと、エラーが発生します。  
+>  呼び出す**BeginTrans**呼び出さずにもう一度**CommitTrans**または**ロールバック**エラーが発生します。  
   
-## 参照  
- [トランザクション \(ODBC\)](../../data/odbc/transaction-odbc.md)   
- [トランザクション: トランザクションが更新処理に与える影響 \(ODBC\)](../../data/odbc/transaction-how-transactions-affect-updates-odbc.md)   
+## <a name="see-also"></a>参照  
+ [トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)   
+ [トランザクション: トランザクションに与える影響 (ODBC) の更新](../../data/odbc/transaction-how-transactions-affect-updates-odbc.md)   
  [CDatabase クラス](../../mfc/reference/cdatabase-class.md)   
- [CRecordset クラス](../Topic/CRecordset%20Class.md)
+ [CRecordset クラス](../../mfc/reference/crecordset-class.md)

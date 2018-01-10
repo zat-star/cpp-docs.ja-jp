@@ -1,7 +1,7 @@
 ---
 title: "コンパイラの警告 s C4200 C4399 Through |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 11/17/2017
 ms.reviewer: 
 ms.suite: 
 ms.technology: cpp-tools
@@ -45,22 +45,20 @@ caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d5bb235544989ebdd1aa6ebebb7d96ba0cd7391d
-ms.sourcegitcommit: 69632887f7a85f4841c49b4c1353d3144927a52c
+ms.workload: cplusplus
+ms.openlocfilehash: c0de6e5d163322cde058ef564b78fdfe1141ab28
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warnings-c4200-through-c4399"></a>コンパイラの警告 s C4200 C4399 Through
 
-ドキュメントのこの部分の記事には、Visual C コンパイラの警告のサブセットについてを説明します。 ここで、情報にアクセスすることができますか、**出力**ウィンドウ Visual Studio で、警告番号を選択して F1 キーを押します。
+ドキュメントのこのセクションの記事では、コンパイラによって生成される警告メッセージのサブセットについて説明します。
 
-> [!NOTE]
->  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]エラーまたは警告は、MSDN に記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio).
+[!INCLUDE[error-boilerplate](../../error-messages/includes/error-boilerplate.md)]
 
-MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。
-
-## <a name="in-this-section"></a>このセクションの内容
+## <a name="warning-messages"></a>警告メッセージ
 
 |警告|メッセージ|
 |-------------|-------------|

@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2190d7809791fbc66f6070eb3ae721ec1bc0a04f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cefabd21e04c4c3cc39934de111fe94151317ca5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>方法: Parallel.Invoke を使用して並列操作を実行する
 この例を使用する方法を示しています、 [concurrency::parallel_invoke](reference/concurrency-namespace-functions.md#parallel_invoke)共有データ ソースに対して複数の操作を実行するプログラムのパフォーマンスを向上するためのアルゴリズムです。 操作によってソースが変更されるわけではないため、簡単に並列実行できます。  
@@ -82,7 +83,7 @@ The following palindromes appear in the text:
   
  **cl.exe/EHsc/MD/DUNICODE 用並列 word mining.cpp**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [並列アルゴリズム](../../parallel/concrt/parallel-algorithms.md)   
  [parallel_invoke 関数](reference/concurrency-namespace-functions.md#parallel_invoke)
 

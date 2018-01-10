@@ -15,11 +15,12 @@ caps.latest.revision: "10"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 850156c2db7e57a357b1fa68337753ebd37db30d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d434d687eca53deb4cad41615fcfd676836dda5e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platform-namespace-ccx"></a>プラットフォーム名前空間 (C++/CX)
 Windows ランタイムと互換性のある組み込み型を格納します。  
@@ -83,7 +84,7 @@ using namespace Platform;
   
  Platform 名前空間は、次のインターフェイスを定義します。  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |[Platform::IBox インターフェイス](../cppcx/platform-ibox-interface.md)|パラメーターが Platform::Object^ として入力された関数に値型を渡すために使用します。|  
 |[Platform::IBoxArray インターフェイス](../cppcx/platform-iboxarray-interface.md)|パラメーターが Platform::Array として入力された関数に値型の配列を渡すために使用されるインターフェイス。|  
@@ -93,7 +94,7 @@ using namespace Platform;
   
  Platform 名前空間には、次の列挙体があります。  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |[Platform::CallbackContext 列挙型](../cppcx/platform-callbackcontext-enumeration.md)|デリゲート コンストラクターのパラメーターとして使用される列挙体。 コールバックを、元のスレッドにマーシャリングするか、呼び出し元のスレッドにマーシャリングするかを判定します。|  
 |[Platform::TypeCode 列挙型](../cppcx/platform-typecode-enumeration.md)|組み込み型を表す数値カテゴリを指定します。|  
@@ -110,7 +111,7 @@ using namespace Platform;
 |[Platform::SizeT 値クラス](../cppcx/platform-sizet-value-class.md)|オブジェクトのサイズを表すために使用される符号なしのデータ型。|  
 |[Platform::UIntPtr 値クラス](../cppcx/platform-uintptr-value-class.md)|サイズがプラットフォームに適した (32 ビットまたは 64 ビット) 符号なしポインター。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform::collections Namespace](../cppcx/platform-collections-namespace.md)   
  [Platform::Runtime::CompilerServices Namespace](../cppcx/platform-runtime-compilerservices-namespace.md)   
  [Platform::Runtime::InteropServices Namespace](../cppcx/platform-runtime-interopservices-namespace.md)   

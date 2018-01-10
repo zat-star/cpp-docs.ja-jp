@@ -28,11 +28,14 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b0514524c3f96791c05b3d3ae33b8196deb7e554
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: cf47597ac38ae2944fc41bd686552e5d15c96b39
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="accessors-and-rowsets"></a>アクセサーと行セット
 アクセサーと行を設定し、データの取得、OLE DB テンプレートを使用して、 [CAccessorRowset](../../data/oledb/caccessorrowset-class.md)クラスです。 このクラスは、さまざまな種類の複数のアクセサーを処理できます。  
@@ -59,11 +62,11 @@ ms.lasthandoff: 10/24/2017
   
 |アクセサーの種類|動的|パラメーターを処理します。|バッファー|複数のアクセサー|  
 |-------------------|-------------|--------------------|------------|------------------------|  
-|`CAccessor`|いいえ|はい|User|はい|  
-|`CDynamicAccessor`|はい|いいえ|OLE DB テンプレート|いいえ|  
-|`CDynamicParameterAccessor`|はい|はい|OLE DB テンプレート|いいえ|  
-|`CDynamicStringAccessor[A,W]`|はい|いいえ|OLE DB テンプレート|いいえ|  
-|`CManualAccessor`|はい|はい|User|はい|  
+|`CAccessor`|×|[はい]|ユーザー|[はい]|  
+|`CDynamicAccessor`|はい|×|OLE DB テンプレート|×|  
+|`CDynamicParameterAccessor`|はい|[はい]|OLE DB テンプレート|×|  
+|`CDynamicStringAccessor[A,W]`|はい|×|OLE DB テンプレート|×|  
+|`CManualAccessor`|はい|[はい]|ユーザー|[はい]|  
   
 ## <a name="rowset-types"></a>行セットの種類  
  OLE DB テンプレート (上記の図を参照してください) の行セットの 3 種類のサポート: 単一の行セット (によって実装される[CRowset](../../data/oledb/crowset-class.md))、行セットを一括 (によって実装される[CBulkRowset](../../data/oledb/cbulkrowset-class.md))、(実装行セットの配列とによって[CArrayRowset](../../data/oledb/carrayrowset-class.md))。 1 つの行の処理時に 1 つの行セットのフェッチ`MoveNext`と呼びます。 一括行セットは、複数の行ハンドルをフェッチできます。 配列行セットとは、配列の構文を使用してアクセスできる行セットです。  
@@ -75,5 +78,5 @@ ms.lasthandoff: 10/24/2017
   
  [スキーマ行セット](../../data/oledb/obtaining-metadata-with-schema-rowsets.md)データのデータにアクセスできませんを保存せずにメタデータと呼ばれる、データ ストアに関する情報にアクセスします。 スキーマ行セットが、データベースの構造がコンパイル時に不明を実行時に取得する必要がある状況に用いられます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)

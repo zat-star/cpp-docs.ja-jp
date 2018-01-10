@@ -76,11 +76,12 @@ caps.latest.revision: "24"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 632d0c29612d8209d162fcdf357aad3f149653f7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c926c23553545a76bc8e1d0a0427c20ea65f3156
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strnicmp-wcsnicmp-mbsnicmp-strnicmpl-wcsnicmpl-mbsnicmpl"></a>_strnicmp、_wcsnicmp、_mbsnicmp、_strnicmp_l、_wcsnicmp_l、_mbsnicmp_l
 大文字小文字に関係なく、2 つの文字列の指定された数の文字を比較します。  
@@ -152,9 +153,9 @@ int _mbsnicmp_l(
   
  ASCII 表の 91 から 96 の文字 ('['、'\\'、']'、'^'、'_'、および '\`') は、アルファベット文字より小さいものとして評価されます。 この順序付けは `stricmp` と同じです。  
   
- `_wcsnicmp` 関数と `_mbsnicmp` 関数は、`_strnicmp` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsnicmp` 関数の引数はワイド文字列で、`_mbsnicmp` 関数の引数はマルチバイト文字列です。 `_mbsnicmp` は現在のマルチバイト コード ページに基づいてマルチバイト文字のシーケンスを認識し、エラーが発生した場合は `_NLSCMPERROR` を返します 詳細については、「[コード ページ](../../c-runtime-library/code-pages.md)」を参照してください。 それ以外では、これらの関数の動作は同じです。 これらの関数はロケールの設定の影響を受けます。`_l` サフィックスが付いていないバージョンは、ロケールに依存する動作で現在のロケールを使用し、`_l` サフィックスが付いているバージョンは、渡される `locale` を代わりに使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_wcsnicmp` 関数と `_mbsnicmp` 関数は、`_strnicmp` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsnicmp` 関数の引数はワイド文字列で、`_mbsnicmp` 関数の引数はマルチバイト文字列です。 `_mbsnicmp` は現在のマルチバイト コード ページに基づいてマルチバイト文字のシーケンスを認識し、エラーが発生した場合は `_NLSCMPERROR` を返します 詳細については、「[コード ページ](../../c-runtime-library/code-pages.md)」を参照してください。 それ以外では、これらの関数の動作は同じです。 これらの関数はロケールの設定の影響を受けます。`_l` サフィックスが付いていないバージョンは、ロケールに依存する動作で現在のロケールを使用し、`_l` サフィックスが付いているバージョンは、渡される `locale` を代わりに使用します。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
- これらのすべての関数では、パラメーターの検証が行われます。 `string1` または `string2` が Null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、`errno` を `EINVAL` に設定します。  
+ これらのすべての関数では、パラメーターの検証が行われます。 `string1` または `string2` が null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、 `errno` を `EINVAL`に設定します。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -164,20 +165,20 @@ int _mbsnicmp_l(
 |`_tcsnicmp`|`_strnicmp`|`_mbsnbicmp`|`_wcsnicmp`|  
 |`_tcsncicmp_l`|`_strnicmp_l`|`_mbsnicmp_l`|`_wcsnicmp_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strnicmp`, `_strnicmp_l`|<string.h>|  
 |`_wcsnicmp`, `_wcsnicmp_l`|<string.h> または <wchar.h>|  
 |`_mbsnicmp`, `_mbsnicmp_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  [strncmp](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md) の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [strcat、wcscat、_mbscat](../../c-runtime-library/reference/strcat-wcscat-mbscat.md)   
  [strcmp、wcscmp、_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)   

@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 72480e658ccd6aec2bdba40df0fd8eaa92ccae12
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: aee7babf895b72a5ff4f5fb1485e4bb118e95889
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="undef-directive-cc"></a>#undef ディレクティブ (C/C++)
 `#define` で作成された名前を削除 (定義解除) します。  
@@ -61,5 +62,5 @@ identifier
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プリプロセッサ ディレクティブ](../preprocessor/preprocessor-directives.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: c161bf901b0e055885858d8570925f58e2eb971a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8666896b0e3414dca8f4cd1f8c4e2f34e9b98050
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformweakreference-class"></a>Platform::WeakReference クラス
 ref クラスのインスタンスへの弱い参照を表します。  
@@ -95,7 +96,7 @@ T^ Resolve() const
  WeakReference オブジェクトが以前関連付けられていた ref クラスへのハンドル、または nullptr。  
   
 ### <a name="example"></a>例  
- コード例の説明です。  
+ これはコード例の説明です。  
   
 ```  
   
@@ -132,5 +133,5 @@ WeakReference wr(mc);
 MyClass^ copy2 = wr.Resolve<MyClass>();    
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

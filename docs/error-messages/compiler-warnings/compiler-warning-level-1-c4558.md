@@ -1,34 +1,33 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4558 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4558"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4558"
+title: "コンパイラの警告 (レベル 1) C4558 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4558
+dev_langs: C++
+helpviewer_keywords: C4558
 ms.assetid: 52bb0324-7bec-468c-b35b-13a08d38e578
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: a9e207bb188bdfa31ef1625aa5e1b607823e755e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4558
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-オペランド 'value' の値が 'lowerbound upperbound\- ' の範囲を超えています。  
+# <a name="compiler-warning-level-1-c4558"></a>コンパイラの警告 (レベル 1) C4558
+'value' のオペランドの値が '下限の上限値' の範囲外  
   
- アセンブリ言語命令に渡された値が、パラメーターに指定された範囲を超えています。  値は切り捨てられます。  
+ アセンブリ言語命令に渡された値は、パラメーターに指定された範囲外です。 値は切り捨てられます。  
   
- 次の例では警告 C4558 が生成されます。  
+ 次の例では、C4558 が生成されます。  
   
 ```  
 // C4558.cpp  

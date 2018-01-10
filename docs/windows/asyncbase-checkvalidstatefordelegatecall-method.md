@@ -15,11 +15,14 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0bc2ea8acd3811eb75a602f9dca8b7edff8fa786
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 64c1a461712eb34fb8a113423c8ee18874aaf2d5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="asyncbasecheckvalidstatefordelegatecall-method"></a>AsyncBase::CheckValidStateForDelegateCall メソッド
 現在の非同期状態でデリゲート プロパティを変更できるかどうかをテストします。  
@@ -33,10 +36,10 @@ inline HRESULT CheckValidStateForDelegateCall();
 ## <a name="return-value"></a>戻り値  
  デリゲート プロパティを変更できる場合は S_OK、それ以外の場合、E_ILLEGAL_METHOD_CALL です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** async.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AsyncBase クラス](../windows/asyncbase-class.md)

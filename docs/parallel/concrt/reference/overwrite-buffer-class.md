@@ -30,11 +30,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2a9098f6f8f0374ad10396f30cf5aa636d9843d7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f41348b77d65f3ade8016c9e23a31555db2d3612
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="overwritebuffer-class"></a>overwrite_buffer クラス
 `overwrite_buffer` メッセージング ブロックは、一度に 1 つのメッセージを格納することができる、複数のターゲットと複数のソースを持つ順序付けられた `propagator_block` です。 新しいメッセージが与えられると、それまで格納されていたメッセージは上書きされます。  
@@ -97,7 +98,7 @@ class overwrite_buffer : public propagator_block<multi_link_registry<ITarget<T>>
   
  `overwrite_buffer`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
@@ -327,7 +328,7 @@ T value();
 ### <a name="remarks"></a>コメント  
  格納された値、`overwrite_buffer`このメソッドが戻る後すぐに変更する可能性があります。 このメソッドは、メッセージが現在格納されていない場合、メッセージが到着するまでに待機、`overwrite_buffer`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [unbounded_buffer クラス](unbounded-buffer-class.md)   
  [single_assignment クラス](single-assignment-class.md)

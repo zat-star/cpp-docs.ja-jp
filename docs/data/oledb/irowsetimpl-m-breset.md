@@ -20,11 +20,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4323d92398ea4d47410a2b5a3aad08972628634d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4cd9840b37157aed050bb71d48a275efd2849035
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="irowsetimplmbreset"></a>IRowsetImpl::m_bReset
 行セットのカーソル位置が定義されているかどうかを判断するために使用するビット フラグです。  
@@ -40,8 +43,8 @@ unsigned m_bReset:1;
 ## <a name="remarks"></a>コメント  
  コンシューマーを呼び出す場合[GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) 、負の値と`lOffset`または*cRows*と`m_bReset`が true の場合、`GetNextRows`行セットの末尾に移動します。 場合`m_bReset`が false の場合、コンシューマーが、OLE DB 仕様に準拠して、エラー コードを受信します。 `m_bReset`フラグを取得設定**true**行セットを初めて作成すると、コンシューマーが呼び出したとき[irowsetimpl::restartposition](../../data/oledb/irowsetimpl-restartposition.md)です。 セットが取得**false**を呼び出すと`GetNextRows`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IRowsetImpl クラス](../../data/oledb/irowsetimpl-class.md)

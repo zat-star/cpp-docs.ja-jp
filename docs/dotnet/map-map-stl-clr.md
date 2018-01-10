@@ -1,32 +1,33 @@
 ---
-title: "map::map (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::map::map"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "map メンバー [STL/CLR]"
+title: "map::map (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::map::map
+dev_langs: C++
+helpviewer_keywords: map member [STL/CLR]
 ms.assetid: c91f699a-4742-4859-b2b3-c2a01a750bea
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 320c3c4223996826fe1e7b3104540baddd82da5a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# map::map (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="mapmap-stlclr"></a>map::map (STL/CLR)
 コンテナー オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 map();  
@@ -43,79 +44,71 @@ map(System::Collections::Generic::IEnumerable<GValue>^ right,
     key_compare^ pred);  
 ```  
   
-#### パラメーター  
- 最初  
- 挿入する範囲の先頭。  
+#### <a name="parameters"></a>パラメーター  
+ 先頭  
+ 挿入する範囲の開始しています。  
   
  last  
- 挿入する範囲の最後。  
+ 挿入する範囲の終了。  
   
  pred  
- 被制御シーケンスの順序述語。  
+ 被制御シーケンスの述語を順序付けです。  
   
- \[right\]  
+ 右  
  挿入するオブジェクトまたは範囲。  
   
-## 解説  
- 次のコンストラクターを見てください。  
+## <a name="remarks"></a>コメント  
+ : コンス トラクター  
   
  `map();`  
   
- 既定の順序述語 `key_compare()`要素を持たない被制御シーケンスを、初期化します。  既定の順序述語の空の最初の被制御シーケンスを指定する場合に使用します。  
+ 既定の順序の述語を使用して要素を持たない、被制御シーケンスを初期化`key_compare()`です。 これを使用するには、既定の順序の述語を持つ、空の初期被制御シーケンスを指定します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `explicit map(key_compare^ pred);`  
   
- 命令述語 `pred`要素を持たない被制御シーケンスを、初期化します。  順序指定述語の空の最初の被制御シーケンスを指定する場合に使用します。  
+ 順序の指定の述語での要素を持たない被制御シーケンスを初期化します`pred`です。 これを使用して、順序指定された述語を持つ、空の初期被制御シーケンスを指定します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `map(map<Key, Mapped>% right);`  
   
- 既定の順序述語のシーケンス `[``right``.`[map::begin](../dotnet/map-begin-stl-clr.md)`(),``right``.`[map::end](../dotnet/map-end-stl-clr.md)`())`の被制御シーケンスを、初期化します。  マップ `right`オブジェクトによって制御されるシーケンスのコピーである既定命令述語の最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します [`right.begin()`、 `right.end()`)、既定の順序の述語とします。 マップ オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`既定の順序の述語とします。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `map(map<Key, Mapped>^ right);`  
   
- 既定の順序述語のシーケンス `[``right``->`[map::begin](../dotnet/map-begin-stl-clr.md)`(),``right``->`[map::end](../dotnet/map-end-stl-clr.md)`())`の被制御シーケンスを、初期化します。  マップ `right`オブジェクトによって制御されるシーケンスのコピーである既定命令述語の最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します [`right->begin()`、 `right->end()`)、既定の順序の述語とします。 マップ オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`既定の順序の述語とします。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
- `template<typename InIter>`  
+ `template<typename InIter> map(InIter first, InIter last);`  
   
- `map(InIter first, InIter last);`  
+ シーケンスに、被制御シーケンスを初期化します [`first`、 `last`)、既定の順序の述語とします。 使用する既定の順序の述語で被制御シーケンスの別のシーケンスのコピーを作成します。  
   
- 既定の順序述語のシーケンス `[``first``,``last``)`の被制御シーケンスを、初期化します。  既定の順序述語の別のシーケンスの被制御シーケンスのコピーを、作成するために使用します。  
+ : コンス トラクター  
   
- 次のコンストラクターを見てください。  
+ `template<typename InIter> map(InIter first, InIter last, key_compare^ pred);`  
   
- `template<typename InIter>`  
+ シーケンスに、被制御シーケンスを初期化します。 [`first`、 `last`)、順序の指定の述語に置き換えます`pred`です。 これを使用するには、被制御シーケンスの順序指定された述語を持つ、別のシーケンスのコピーを作成します。  
   
- `map(InIter first, InIter last,`  
-  
- `key_compare^ pred);`  
-  
- 述語 `pred`命令のシーケンス `[``first``,``last``)`の被制御シーケンスを、初期化します。  順序指定述語の別のシーケンスの被制御シーケンスのコピーを、作成するために使用します。  
-  
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `map(System::Collections::Generic::IEnumerable<Key>^ right);`  
   
- 既定の順序述語列挙子を `right`、指定したシーケンスの被制御シーケンスを初期化します。  既定の順序述語の列挙子は、作成している別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+ 列挙子によって指定されたシーケンスの被制御シーケンスを初期化します`right`既定の順序の述語とします。 これを使用するには、被制御シーケンスの既定の順序の述語と、列挙子によって記述された別のシーケンスのコピーを作成します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
- `map(System::Collections::Generic::IEnumerable<Key>^ right,`  
+ `map(System::Collections::Generic::IEnumerable<Key>^ right, key_compare^ pred);`  
   
- `key_compare^ pred);`  
+ 列挙子によって指定されたシーケンスの被制御シーケンスを初期化します`right`、順序の指定の述語と`pred`です。 これを使用するには、被制御シーケンスの順序指定された述語を持つ、列挙子によって記述された別のシーケンスのコピーを作成します。  
   
- 命令述語 `pred`列挙子を `right`、指定したシーケンスの被制御シーケンスを初期化します。  順序指定述語の列挙子は、作成している別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+## <a name="example"></a>例  
   
-## 使用例  
-  
-```  
+```cpp  
 // cliext_map_construct.cpp   
 // compile with: /clr   
 #include <cliext/map>   
@@ -189,22 +182,25 @@ int main()
   
 ```  
   
-  **size\(\) \= 0**  
- **1 \[\] \[b 2 \[\]c 3\]**  
-**size\(\) \= 0**  
- **\[\] \[b c 3 2 \[\]1 つ\]**  
- **1 \[\] \[b 2 \[\]c 3\]**  
- **\[\] \[b c 3 2 \[\]1 つ\]**  
- **1 \[\] \[b 2 \[\]c 3\]**  
- **\[\] \[b c 3 2 \[\]1 つ\]**  
- **\[\] \[b c 3 2 \[\]1 つ\]**  
- **1 \[\] \[b 2 \[\]c 3\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+size() = 0  
+ [a 1] [b 2] [c 3]  
+size() = 0  
+ [c 3] [b 2] [a 1]  
+ [a 1] [b 2] [c 3]  
+ [c 3] [b 2] [a 1]  
+ [a 1] [b 2] [c 3]  
+ [c 3] [b 2] [a 1]  
+ [c 3] [b 2] [a 1]  
+ [a 1] [b 2] [c 3]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [マップ](../dotnet/map-stl-clr.md)   
- [map::generic\_container](../Topic/map::generic_container%20\(STL-CLR\).md)   
- [map::operator\=](../dotnet/map-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [map::generic_container (STL/CLR)](../dotnet/map-generic-container-stl-clr.md)   
+ [map::operator= (STL/CLR)](../dotnet/map-operator-assign-stl-clr.md)

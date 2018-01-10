@@ -1,135 +1,135 @@
 ---
-title: "コードの作成とリファクタリング (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "(C++) コード記述とリファクタリング |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/27/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 56ffb9e9-514f-41f4-a3cf-fd9ce2daf3b6
-caps.latest.revision: 6
-caps.handback.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: b68d4190d8e3fc5040879eba4f8888467a07adf5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コードの作成とリファクタリング (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="writing-and-refactoring-code-c"></a>コードの作成とリファクタリング (C++)
 
-Visual C\+\+ コード エディターと IDE は多くのコーディングの補助機能を提供します。  いくつかは C\+\+ に固有で、いくつかは基本的にすべての Visual Studio の言語と同じです。  これらの機能を有効にして構成するオプションは、テキスト エディターの C\+\+ の詳細設定ダイアログにあります \(**\[ツール\] &#124; \[オプション\] &#124; \[テキスト エディター\]&#124; \[C\/C\+\+\] &#124; \[詳細設定\]** または"C\+\+ Advanced" を**クイック起動**に入力\)。  設定するオプションを選択した後は、ダイアログにフォーカスがあるときに **F1** キーを押すと、詳細なヘルプを表示できます。  コードの一般的な書式設定オプションについては、`Editor C++` を **\[QuickLaunch\]** に入力します。  
-  
-## 新しいコードの追加  
- プロジェクトを作成した後は、生成されたファイルのコーディングを開始できます。  新しいファイルを追加するには、ソリューション エクスプローラーでプロジェクト ノードを右クリックし、**\[追加 &#124; 新規作成\]** を選択します。  
-  
- インデント、中かっこの補完、色表示などの書式設定オプションを設定するには、`C++ Formatting` を **\[QuickLaunch\]** ウィンドウに入力します。  
-  
-### IntelliSense  
- IntelliSense は、メンバー、種類、および関数のオーバーロードについてのインラインの情報を提供する一連の機能の名前です。  入力すると表示されるメンバー リスト ボックスを次の図に示します。  Tab キーを押すと、コード ファイルに、選択した項目のテキストを入力することができます。  
-  
- ![C&#43;&#43; のメンバー リスト ドロップ ダウン](../ide/media/vs2015_cpp_statement_completion.png "vs2015\_cpp\_statement\_completion")  
-  
- 完全な情報は、「[Visual C\+\+ Intellisense](../Topic/Visual%20C++%20Intellisense.md)」を参照してください。  
-  
-### スニペットの挿入  
- スニペットは、定義済みのソース コードです。  単一のポイント、選択したテキストの上で右クリックすると、スニペットを挿入するか、選択したテキストをスニペットで囲みます。  次の図は、for ループで選択したステートメントを囲む 3 つの手順を示します。  最終的なイメージの黄色のハイライトは、Tab キーでアクセスできる編集可能なフィールドです。  詳細については、「[コード スニペット](../Topic/Code%20Snippets.md)」を参照してください。  
-  
- ![Visual C&#43;&#43; スニペット の挿入ドロップダウン](../ide/media/vs2015_cpp_surround_with.png "vs2015\_cpp\_surround\_with")  
-  
-### クラスの追加  
- クラス ウィザードを使用して、新しいクラスを **\[プロジェクト\]** メニューから追加します。  
-  
- ![Visual C&#43;&#43; での新しいクラスの追加](../Image/vs2015_cpp_add_class.png "vs2015\_cpp\_add\_class")  
-  
-### クラス ウィザード  
- クラス ウィザードを使用して、既存のクラスを変更または確認するか、新しいクラスを追加します。  詳細については、「[コード ウィザードを使用した機能の追加 \(C\+\+\)](../ide/adding-functionality-with-code-wizards-cpp.md)」を参照してください。  
-  
- ![Visual C&#43;&#43; のクラス ウィザード](../Image/vs2015_cpp_class_wizard.png "vs2015\_cpp\_class\_wizard")  
-  
-## リファクタリング  
- クイック操作のコンテキスト メニュー項目から、またはエディターの[電球](../Topic/Perform%20quick%20actions%20with%20light%20bulbs.md)をクリックすることで、リファクタリングが利用できます。  
-  
-### 名前の変更  
- 指定されたスコープで使用されている場所に関係なく、型や関数や変数の名前を変更します。  次の図では、派生クラスと基本クラスの両方で `Eat` メソッドの名前が `Devour` に変更されています。  
-  
- ![Visual C&#43;&#43; での &#91;名前の変更&#93; ダイアログ](../ide/media/vss2015_cpp_rename.png "vss2015\_cpp\_rename")  
-  
-### クイックアクション: 定義の場所の移動  
- 1 つまたは複数の関数定義をコード ファイルと同じ名前を持つヘッダー ファイルに移動します。  ファイルがまだ存在しない場合は新しいヘッダーが作成されます。  結果として得られる定義は、\[表示のみ\] ウィンドウにインラインで表示されます。  
-  
- ![Visual C&#43;&#43; での移動定義](../ide/media/vs2015_cpp_move_definition.png "vs2015\_cpp\_move\_definition")  
-  
-### クイック アクション: 宣言\/定義の作成  
- 選択したヘッダー宣言に対して、関連付けられたコード ファイルの 1 つ以上の定義を作成します。  
-  
- ![Visual C&#43;&#43; の定義の作成オプション](../ide/media/vs2015_cpp_create_declaration.png "vs2015\_cpp\_create\_declaration")  
-  
-### クイック アクション: クラスのすべての純粋仮想を実装  
- クラス内の継承されたすべての仮想関数に対して、空の実装のスタブをすばやく生成します。  特定の基底クラス内の仮想機能のみを実装するには、派生クラスの宣言内で基底クラスを強調表示します。  
-  
- ![Visual C&#43;&#43; の仮想メソッドの実装ウィンドウ](../ide/media/vs2015_cpp_implement_virtuals.png "vs2015\_cpp\_implement\_virtuals")  
-  
-### 未加工の文字列リテラルに変換  
- カーソルを文字列リテラルの上に置くと、**\[クイック アクション\] &#124; \[未加工文字列リテラルへの変換\]** を右クリックして選択し、通常の文字列を C\+\+ 11 の未加工文字列リテラルに変換できます。  
-  
- ![C&#43;&#43; の未加工リテラル文字列へのリファクタリング](../ide/media/vs2015_cpp_raw_string_literal.png "vs2015\_cpp\_raw\_string\_literal")  
-  
-### Extract 関数 \(Visual Studio の拡張機能\)  
- 抽出関数の機能を使用して \([Visual Studio ギャラリーの拡張機能](https://visualstudiogallery.msdn.microsoft.com/a081dc8c-c805-4589-9b8b-c2c309a05789) として提供\) 独自の関数にコードのセクションを移動し、コードをその関数の呼び出しで置き換えます。  
-  
- ![Visual C&#43;&#43; の &#91;関数の抽出&#93; ダイアログ](../Image/vs2015_cpp_extract_function.png "vs2015\_cpp\_extract\_function")  
-  
-## 移動して理解する  
-  
-### QuickInfo  
- 変数上にカーソルを置き、型情報を表示します。  QuickInfo  
-  
- ![Visual C&#43;&#43; の QuickInfo](../ide/media/vs2015_cpp_quickinfo.png "vs2015\_cpp\_quickInfo")  
-  
-### ドキュメントを開く \(ヘッダーに移動\)  
- `#include` ディレクティブでヘッダー名を右クリックして、ヘッダー ファイルを開きます。  
-  
- ![Visual C&#43;&#43; の &#91;ドキュメントを開く&#93; メニュー オプション](../ide/media/vs2015_cpp_open_document.png "vs2015\_cpp\_open\_document")  
-  
-### 定義をここに表示  
- 変数または関数宣言の上にカーソルを置き、右クリックして **\[ピークの定義\]** を選択し、その定義のインライン ビューを表示します。  詳細については、「[定義をここに表示 \(Alt\+F12\)](../Topic/How%20to:%20View%20and%20Edit%20Code%20by%20Using%20Peek%20Definition%20\(Alt+F12\).md)」を参照してください。  
-  
- ![Visual C&#43;&#43; の &#91;定義をここに表示&#93;](../ide/media/vs2015_cpp_peek_definition.png "vs2015\_cpp\_peek\_definition")  
-  
-### 定義に移動  
- 変数または関数宣言の上にカーソルを置き、右クリックして **\[定義へ移動\]** を選択し、オブジェクトが定義されているドキュメントを開きます。  
-  
-### 呼び出し階層の表示  
- 関数呼び出しを右クリックし、呼び出すすべての関数とそれが呼び出すすべての関数の再帰的な一覧を表示します。  一覧内の各関数は、同じ方法で展開できます。  詳細については、「[呼び出し階層](../Topic/Call%20Hierarchy.md)」を参照してください。  
-  
- ![Visual C&#43;&#43; の呼び出し階層](../Image/vs2015_cpp_call_hierarchy.png "vs2015\_cpp\_call\_hierarchy")  
-  
-### ヘッダーの切り替え\/コード ファイル  
- 右クリックし、\[ヘッダーの切り替え\/コード ファイル\] を選択して、ヘッダー ファイルとその関連付けられたコード ファイルを切り替えます。  
-  
-### アウトライン  
- ソース コード ファイルの任意の場所を右クリックし、**\[アウトライン\]** を選択して、定義やカスタムの領域を縮小または展開し、興味のある部分のみを簡単に参照できるようにします。  詳細については、「[アウトライン](../Topic/Outlining.md)」を参照してください。  
-  
- ![Visual C&#43;&#43; アウトライン](../ide/media/vs2015_cpp_outlining.png "vs2015\_cpp\_outlining")  
-  
-### スクロール バーのマップ モード  
- スクロール バーのマップ モードでは、実際には現在の場所を離れずに、迅速にスクロールしてコード ファイルを参照することができます。  または、コード マップ上の任意の場所をクリックして、その場所に直接移動します。  
-  
- ![Visual C&#43;&#43; のコード マップ](../ide/media/vs2015_cpp_code_map.png "vs2015\_cpp\_code\_map")  
-  
-### インクルード ファイルのグラフを生成  
- プロジェクト内のコード ファイルを右クリックし、**\[インクルード ファイルのグラフを生成\]** を選択して、他のファイルによって含まれているファイルのグラフを表示します。  
-  
- ![Visual C&#43;&#43; のインクルード ファイルのグラフ](../ide/media/vs2015_cpp_include_graph.png "vs2015\_cpp\_include\_graph")  
-  
-### F1 ヘルプ  
- 任意の型、キーワード、または関数の上または直後にカーソルを置き、F1 キーを押して、関連する MSDN リファレンスのトピックに直接移動します。  F1 は、エラー リストや多くのダイアログ ボックスの項目でも機能します。  
-  
-### クイック起動  
- Visual Studio の任意のウィンドウまたはツールを簡単に移動するには、UI の右上隅の \[クイック起動\] ウィンドウで、名前を入力します。  入力するにつれて、自動補完の一覧がフィルターされます。  
-  
- ![Visual Studio のクイック起動](../Image/vs2015_cpp_quick_launch.png "vs2015\_cpp\_quick\_launch")
+Visual C++ コード エディターと IDE は多くのコーディングの補助機能を提供します。 いくつかは C++ に固有で、いくつかは基本的にすべての Visual Studio の言語と同じです。 共有機能の詳細については、次を参照してください。[コード エディターとテキスト エディターでコードを記述](/visualstudio/ide/writing-code-in-the-code-and-text-editor)です。 有効にして、C++ 固有の機能を構成するためのオプションがある、[テキスト エディターの C++ の詳細設定](/visualstudio/ide/reference/options-text-editor-c-cpp-advanced)ダイアログ (**ツール &#124;です。オプション &#124;です。テキスト エディター &#124;です。C と C++ &#124;です。高度な**"C++ Advanced"を入力または**サイド**)。 設定するオプションを選択すると、詳細なヘルプを取得キーを押して**F1**ときに、ダイアログにフォーカスがします。 一般的なコードの書式オプション、入力`Editor C++`に**クイック起動**です。
+
+内にあることがあり、将来のバージョンの Visual Studio で含めることはできません、実験用の機能、[テキスト エディターの C++ 試験的](/visualstudio/ide/reference/options-text-editor-c-cpp-experimental)ダイアログ。 Visual Studio 2017 で有効にできます**予測 Intellisense**このダイアログ ボックスでします。
+
+## <a name="adding-new-code"></a>新しいコードの追加
+
+プロジェクトを作成した後は、生成されたファイルのコーディングを開始できます。 新しいファイルを追加するには、ソリューション エクスプ ローラーでプロジェクト ノードを右クリックして選択**追加 &#124;です。新しい**です。
+
+インデント、中かっこの補完、および色付けなどのオプションを書式設定を設定するには、次のように入力します。`C++ Formatting`に、**クイック起動**ウィンドウです。
+
+### <a name="intellisense"></a>IntelliSense
+
+IntelliSense は、メンバー、種類、および関数のオーバーロードについてのインラインの情報を提供する一連の機能の名前です。 入力すると表示されるメンバー リスト ボックスを次の図に示します。 Tab キーを押すと、コード ファイルに、選択した項目のテキストを入力することができます。
+
+![C &#43; #43 です。メンバー リスト ドロップダウン](../ide/media/vs2015_cpp_statement_completion.png "vs2015_cpp_statement_completion")
+
+詳細については、次を参照してください。 [Visual c Intellisense](/visualstudio/ide/visual-cpp-intellisense)です。
+
+### <a name="insert-snippets"></a>スニペットの挿入
+
+スニペットは、定義済みのソース コードです。 単一のポイント、選択したテキストの上で右クリックすると、スニペットを挿入するか、選択したテキストをスニペットで囲みます。 次の図は、for ループで選択したステートメントを囲む 3 つの手順を示します。 最終的なイメージの黄色のハイライトは、Tab キーでアクセスできる編集可能なフィールドです。 詳細については、「[Code Snippets](/visualstudio/ide/code-snippets)」を参照してください。
+
+![Visual C &#43; #43 です。挿入スニペットのドロップ &#45; ダウン](../ide/media/vs2015_cpp_surround_with.png "vs2015_cpp_surround_with")
+
+### <a name="add-class"></a>クラスの追加
+
+新しいクラスを追加、**プロジェクト**クラス ウィザードを使用してメニュー。
+
+![Visual C &#43; #43 に新しいクラスを追加します。] (../ide/media/vs2015_cpp_add_class.png "vs2015_cpp_add_class")
+
+### <a name="class-wizard"></a>クラス ウィザード
+
+クラス ウィザードを使用して、既存のクラスを変更または確認するか、新しいクラスを追加します。 詳細については、次を参照してください。[コード ウィザード (C++) と機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)です。
+
+![Visual C &#43; #43 です。クラス ウィザード](../ide/media/vs2015_cpp_class_wizard.png "vs2015_cpp_class_wizard")
+
+## <a name="refactoring"></a>リファクタリング
+
+リファクタリングが利用できるは、クイック アクション コンテキスト メニューで、[または] をクリックして、[電球](/visualstudio/ide/perform-quick-actions-with-light-bulbs)エディターでします。  いくつかも内にある、**編集 > リファクター**メニュー。  これには次の機能があります。
+
+* [名前の変更](refactoring/rename.md)
+* [Extract 関数](refactoring/extract-function.md)
+* [純粋仮想の実装](refactoring/implement-pure-virtuals.md)
+* [宣言/定義の作成](refactoring/create-declaration-definition.md)
+* [Move 関数の定義](refactoring/move-definition-location.md)
+* [未加工の文字列リテラルに変換](refactoring/convert-to-raw-string-literal.md)
+* [署名の変更](refactoring/change-signature.md)
+
+## <a name="navigate-and-understand"></a>移動して理解する
+
+Visual C では、他の言語と多くのコード ナビゲーション機能を共有します。 詳細については、次を参照してください。[コードの移動](/visualstudio/ide/navigating-code)と[コードの構造を表示する](/visualstudio/ide/viewing-the-structure-of-code)です。
+
+### <a name="quickinfo"></a>QuickInfo
+
+変数上にカーソルを置き、型情報を表示します。
+
+![Visual C&#43;&#43; のクイックヒント](../ide/media/vs2015_cpp_quickinfo.png "vs2015_cpp_quickInfo")
+
+### <a name="open-document-navigate-to-header"></a>ドキュメントを開く (ヘッダーに移動)
+
+`#include` ディレクティブでヘッダー名を右クリックして、ヘッダー ファイルを開きます。
+
+![Visual C &#43; #43 です。ドキュメントのメニュー オプションを開く](../ide/media/vs2015_cpp_open_document.png "vs2015_cpp_open_document")
+
+### <a name="peek-definition"></a>定義をここに表示
+
+変数または関数宣言し、右クリックし、ポインターを合わせる選択**ピークの定義**インライン ビューをその定義の表示にします。 詳細については、次を参照してください。[ピークの定義 (Alt + F12)](/visualstudio/ide/how-to-view-and-edit-code-by-using-peek-definition-alt-plus-f12)です。
+
+![Visual C &#43; #43 です。定義をここに表示](../ide/media/vs2015_cpp_peek_definition.png "vs2015_cpp_peek_definition")
+
+### <a name="go-to-definition"></a>[定義へ移動]
+
+変数または関数宣言、し、右クリックし、ポインターを合わせる選択**定義へ移動**を開くには、オブジェクトが定義されているドキュメントです。
+
+### <a name="view-call-hierarchy"></a>呼び出し階層の表示
+
+関数呼び出しを右クリックし、呼び出すすべての関数とそれが呼び出すすべての関数の再帰的な一覧を表示します。 一覧内の各関数は、同じ方法で展開できます。 詳細については、次を参照してください。[呼び出し階層](/visualstudio/ide/reference/call-hierarchy)です。
+
+![Visual C &#43; #43 です。呼び出し階層](../ide/media/vs2015_cpp_call_hierarchy.png "vs2015_cpp_call_hierarchy")
+
+### <a name="toggle-header--code-file"></a>ヘッダーの切り替え/コード ファイル
+
+右クリックし、**ヘッダーの切り替え/コード ファイル**ヘッダー ファイルとその関連付けられたコード ファイルを切り替えるにします。
+
+### <a name="outlining"></a>アウトライン
+
+ソース コード ファイル内の任意の場所を右クリックして選択**アウトライン**を折りたたむか、定義や簡単に興味のある部分のみを参照するカスタムの領域を展開します。 詳細については、「[アウトライン](/visualstudio/ide/outlining)」を参照してください。
+
+![Visual C &#43; #43 です。アウトライン表示](../ide/media/vs2015_cpp_outlining.png "vs2015_cpp_outlining")
+
+### <a name="scroll-bar-map-mode"></a>スクロール バーのマップ モード
+
+スクロール バーのマップ モードでは、実際には現在の場所を離れずに、迅速にスクロールしてコード ファイルを参照することができます。 または、コード マップ上の任意の場所をクリックして、その場所に直接移動します。
+
+![Visual C &#43; #43 のコード マップ] (../ide/media/vs2015_cpp_code_map.png "vs2015_cpp_code_map")
+
+### <a name="generate-graph-of-include-files"></a>インクルード ファイルのグラフを生成
+
+プロジェクトでコード ファイルを右クリックし、選択**インクルード ファイルのグラフを生成**他のファイルであるファイルが含まれているグラフを表示します。
+
+![Visual C &#43; #43 です。インクルード ファイルのグラフ](../ide/media/vs2015_cpp_include_graph.png "vs2015_cpp_include_graph")
+
+### <a name="f1-help"></a>F1 ヘルプ
+
+任意の型、キーワード、または関数の上または直後にカーソルを置き、F1 キーを押して、関連する MSDN リファレンスのトピックに直接移動します。 F1 は、エラー リストや多くのダイアログ ボックスの項目でも機能します。
+
+### <a name="quick-launch"></a>クイック起動
+
+Visual Studio の任意のウィンドウまたはツールを簡単に移動するには、UI の右上隅の [クイック起動] ウィンドウで、名前を入力します。 入力するにつれて、自動補完の一覧がフィルターされます。
+
+![Visual Studio のクイック起動](../ide/media/vs2015_cpp_quick_launch.png "vs2015_cpp_quick_launch")

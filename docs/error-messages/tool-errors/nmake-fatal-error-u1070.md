@@ -1,42 +1,41 @@
 ---
-title: "NMAKE の致命的なエラー U1070 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "U1070"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "U1070"
+title: "NMAKE の致命的なエラー U1070 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: U1070
+dev_langs: C++
+helpviewer_keywords: U1070
 ms.assetid: 8639fc39-b4b1-48f5-ac91-0e9fb61680fd
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 5adf5321c96341cfce633a2329a52360be8a45da
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# NMAKE の致命的なエラー U1070
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-マクロ定義に 'macroname' に循環定義があります。  
+# <a name="nmake-fatal-error-u1070"></a>NMAKE の致命的なエラー U1070
+マクロ定義 'macroname' に循環があります。  
   
- 指定されたマクロ定義には、定義にこのマクロが入ったマクロが含まれています。  循環マクロ定義は無効です。  
+ 指定されたマクロの定義には、定義に含まれるには、指定されたマクロが含まれているマクロが含まれています。 循環マクロ定義が無効です。  
   
-## 使用例  
- 次のようなマクロ定義があるとします。  
+## <a name="example"></a>例  
+ 次のマクロ定義  
   
 ```  
 ONE=$(TWO)  
 TWO=$(ONE)  
 ```  
   
- この定義では、次のようなエラーが発生します。  
+ 次のエラーが発生します。  
   
 ```  
 cycle in macro definition 'TWO'  

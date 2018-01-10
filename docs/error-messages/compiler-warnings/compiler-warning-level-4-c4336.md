@@ -1,34 +1,33 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4336 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4336"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4336"
+title: "コンパイラの警告 (レベル 4) C4336 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4336
+dev_langs: C++
+helpviewer_keywords: C4336
 ms.assetid: 93f199dd-d6dd-42c0-82d8-c12d101a7235
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 524d5d1aab2b63854ec334f6eb94a62e9fb127c7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4336
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-相互参照したタイプ ライブラリ 'type\_lib1' をインポートしてから、'type\_lib2' をインポートします。  
+# <a name="compiler-warning-level-4-c4336"></a>コンパイラの警告 (レベル 4) C4336
+クロスレファレンスしたタイプ ライブラリ 'type_lib1' を 'type_lib2' をインポートする前にインポートします。  
   
- タイプ ライブラリが [\#import](../Topic/%23import%20Directive%20\(C++\).md) ディレクティブで参照されました。  一方、タイプ ライブラリには、`#import` で参照されていない別のタイプ ライブラリへの参照が含まれていました。  この別の .tlb ファイルがコンパイラによって見つかりました。  
+ タイプ ライブラリが参照された、 [#import](../../preprocessor/hash-import-directive-cpp.md)ディレクティブです。 ただし、タイプ ライブラリがで参照されていない別のタイプ ライブラリへの参照を含まれている`#import`です。 コンパイラによってこの別の .tlb ファイルが見つかりました。  
   
- 次の 2 つのファイルから作成された \(midl.exe でコンパイルされた\) 2 つのタイプ ライブラリがディスクにあるとします。  
+ (Midl.exe でコンパイルされた) 次の 2 つのファイルから作成されたディスクに指定された 2 つのタイプ ライブラリ:  
   
 ```  
 // c4336a.idl  
@@ -43,7 +42,7 @@ library c4336aLib
 };  
 ```  
   
- 2 つ目のタイプ ライブラリは次のとおりです。  
+ 2 番目のタイプ ライブラリ:  
   
 ```  
 // c4336b.idl  
@@ -59,7 +58,7 @@ library C4336bLib
 };  
 ```  
   
- 次の例では警告 C4336 が生成されます。  
+ 次の例では、C4336 が生成されます。  
   
 ```  
 // C4336.cpp  

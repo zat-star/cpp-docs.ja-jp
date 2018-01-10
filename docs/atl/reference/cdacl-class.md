@@ -23,11 +23,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f45a4fc1d69cf0caefb08a7a408ecc836d092851
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f57fc1bdd641fbc8e770ddc9b37480530034ba1d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdacl-class"></a>CDacl クラス
 このクラスは、DACL (随意アクセス制御リスト) 構造体のラッパーです。  
@@ -80,7 +81,7 @@ class CDacl : public CAcl
   
  `CDacl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="addallowedace"></a>CDacl::AddAllowedAce  
@@ -247,7 +248,7 @@ void RemoveAllAces() throw();
 ### <a name="remarks"></a>コメント  
  削除ごと**ACE** (アクセス制御エントリ) の構造 (存在する場合) で、`CDacl`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [CAcl クラス](../../atl/reference/cacl-class.md)   
  [Acl](http://msdn.microsoft.com/library/windows/desktop/aa374872)   

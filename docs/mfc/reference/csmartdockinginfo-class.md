@@ -37,11 +37,12 @@ caps.latest.revision: "27"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 733ef0c228fd0dea068c22b555d090de33f59624
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2954e3fc6a0a8ee7265c5b2baa29d391aa52329c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csmartdockinginfo-class"></a>CSmartDockingInfo クラス
 スマート ドッキング マーカーの外観を定義します。  
@@ -68,7 +69,7 @@ class CSmartDockingInfo : public CObject
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CSmartDockingInfo::m_bUseThemeColorInShading](#m_busethemecolorinshading)|フレームワーク スマート ドッキング マーカーを表示するときに、現在のテーマの色を使用するかどうかを指定します。|  
 |[CSmartDockingInfo::m_clrBaseBackground](#m_clrbasebackground)|スマート ドッキング マーカーの基本の背景色を指定します。|  
@@ -108,7 +109,7 @@ class CSmartDockingInfo : public CObject
   
  [CSmartDockingInfo](../../mfc/reference/csmartdockinginfo-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxDockingManager.h  
   
 ##  <a name="copyto"></a>CSmartDockingInfo::CopyTo  
@@ -235,7 +236,7 @@ UINT m_uiMarkerLightBmpResID[AFX_SD_MARKERS_NUM];
   
  `params.m_uiMarkerLightBmpResID[4] = IDB_MARKER_CENTER_LIGHT;`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)

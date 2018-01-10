@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3833763394eda3ad64f1c72b80bee4d76785d5a7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 27b1c59c952b022c7382db7d6b2dcb660cca2e9a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="closing-files"></a>ファイルを閉じる
 通常どおり I/O 操作で、ファイルを終了すると、閉じてください。  
@@ -31,6 +32,6 @@ ms.lasthandoff: 10/24/2017
   
  割り当てた場合、 [CFile](../mfc/reference/cfile-class.md)フレーム上のオブジェクト (に示す例のように[ファイルを開く](../mfc/opening-files.md))、オブジェクトが自動的に終了して、スコープ外になったときに破棄されるあります。 削除することに注意してください、`CFile`オブジェクトには、ファイル システムで物理ファイルは削除されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル](../mfc/files-in-mfc.md)
 

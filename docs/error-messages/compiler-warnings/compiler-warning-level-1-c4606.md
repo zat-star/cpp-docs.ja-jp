@@ -1,35 +1,34 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4606 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4606"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4606"
+title: "コンパイラの警告 (レベル 1) C4606 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4606
+dev_langs: C++
+helpviewer_keywords: C4606
 ms.assetid: c1b45fb6-672b-42eb-9e1c-c67b3e4150d3
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 059d50ab268e3f8905e997b28216655af5e3ba1d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4606
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-\#pragma 警告 : 'warning\_number' は無視されました。コード分析の警告は警告レベルと関連付けられていません  
+# <a name="compiler-warning-level-1-c4606"></a>コンパイラの警告 (レベル 1) C4606
+\#pragma 警告: 'warning_number' が無視されます。コード分析の警告が警告レベルと関連付けられていません。  
   
- コード分析の警告の場合、[warning](../../preprocessor/warning.md) プラグマでサポートされているのは、`error`、`once`、および `default` だけです。  
+ コード分析の警告、のみの`error`、 `once`、および`default`でサポートされている、[警告](../../preprocessor/warning.md)プラグマ。  
   
-## 使用例  
- 次の例では C4606 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4606 を生成します。  
   
 ```  
 // C4606.cpp  

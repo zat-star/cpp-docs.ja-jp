@@ -1,32 +1,33 @@
 ---
-title: "random_shuffle (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::random_shuffle"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "random_shuffle 関数 [STL/CLR]"
+title: "random_shuffle (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::random_shuffle
+dev_langs: C++
+helpviewer_keywords: random_shuffle function [STL/CLR]
 ms.assetid: 0f9d93e2-f50f-40e6-bbe4-2ca3231a895e
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: ed0a6e63fa11a531f090e367e9ae8cd82242608b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# random_shuffle (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`N`の 1 種類の範囲の `N` 要素のシーケンスを再配置します。ランダムに選択可能な配置。  
+# <a name="randomshuffle-stlclr"></a>random_shuffle (STL/CLR)
+シーケンスを並べ替えます`N`のいずれかに範囲内の要素`N`! 個の可能な配置の 1 つに再配置します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _RanIt> inline  
@@ -35,13 +36,13 @@ template<class _RanIt, class _Fn1> inline
     void random_shuffle(_RanIt _First, _RanIt _Last, _Fn1% _Func);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `random_shuffle`も同じように動作します。  詳細については、「[random\_shuffle](../Topic/random_shuffle.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`random_shuffle`です。 詳細については、次を参照してください。 [random_shuffle](../standard-library/algorithm-functions.md#random_shuffle)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>参照  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

@@ -1,32 +1,33 @@
 ---
-title: "BEGIN_PROPERTY_SET_EX | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "BEGIN_PROPERTY_SET_EX"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "BEGIN_PROPERTY_SET_EX マクロ"
+title: "BEGIN_PROPERTY_SET_EX |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: BEGIN_PROPERTY_SET_EX
+dev_langs: C++
+helpviewer_keywords: BEGIN_PROPERTY_SET_EX macro
 ms.assetid: c95e7fab-edce-47b8-b282-200e53a2ea8a
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: ede0dac08233d82decb23064e47b61cbd9a05da1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# BEGIN_PROPERTY_SET_EX
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プロパティ セット マップにプロパティ セットの開始位置を示します。  
+# <a name="beginpropertysetex"></a>BEGIN_PROPERTY_SET_EX
+プロパティのセットのプロパティの先頭のマークは、マップを設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,20 +36,20 @@ guid
 , flags )  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `guid`  
- \[\]プロパティの GUID。  
+ [in]プロパティの GUID です。  
   
  `flags`  
- \[\]、公開したくないプロパティ セットの **UPROPSET\_HIDDEN** またはプロバイダーのスコープ外で定義されているプロパティを公開するプロバイダーの **UPROPSET\_PASSTHROUGH**。  
+ [in]**UPROPSET_HIDDEN**を公開したくない任意のプロパティ セットまたは**UPROPSET_PASSTHROUGH**プロバイダーのスコープ外で定義されたプロパティを公開するプロバイダー。  
   
-## 使用例  
- [BEGIN\_PROPSET\_MAP](../Topic/BEGIN_PROPSET_MAP.md)を参照してください。  
+## <a name="example"></a>例  
+ 「 [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md)」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート用マクロ](../../data/oledb/macros-for-ole-db-provider-templates.md)   
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   

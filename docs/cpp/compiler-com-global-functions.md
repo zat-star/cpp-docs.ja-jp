@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e2ff7d6090a8990610a4cfe73a0936fdf91dd96f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: be73622037c1c058edffa681ccd79322b8252633
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-com-global-functions"></a>コンパイラ COM のグローバル関数
 **Microsoft 固有の仕様**  
@@ -36,6 +37,6 @@ ms.lasthandoff: 10/24/2017
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ COM サポート クラス](../cpp/compiler-com-support-classes.md)   
  [コンパイラ COM サポート](../cpp/compiler-com-support.md)

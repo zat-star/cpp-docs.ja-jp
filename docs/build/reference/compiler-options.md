@@ -19,11 +19,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 490814f85199450d4261bf4071184b75b5ea10c2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c433abea04ff81c69fe1b73569ea7e043e6e81ac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-options"></a>コンパイラ オプション
 cl.exe は、Microsoft C および C++ コンパイラとリンカーを制御するツールです。 cl.exe は、Microsoft Visual Studio をサポートするオペレーティング システムでのみ実行できます。  
@@ -60,7 +61,7 @@ cl.exe は、Microsoft C および C++ コンパイラとリンカーを制御�
   
  [リンカー オプション](../../build/reference/linker-options.md)プログラムのビルド方法にも影響します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C/C++ ビルドのリファレンス](../../build/reference/c-cpp-building-reference.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [高速コンパイル](../../build/reference/fast-compilation.md)   

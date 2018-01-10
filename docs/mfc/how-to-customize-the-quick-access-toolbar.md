@@ -14,11 +14,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f26a6e7e39ddc2f7de1339283fe92e51ff9a808c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f67d46640a1a4fadc6750ca34b05910902679440
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-customize-the-quick-access-toolbar"></a>方法: クイック アクセス ツール バーをカスタマイズする
 クイック アクセス ツールバー (QAT) は、アプリケーション ボタンの横にある、またはカテゴリ タブの下に表示されるコマンドのセットを含むカスタマイズ可能なツールバーです。 次の図は、一般的なクイック アクセス ツールバーを示しています。  
@@ -58,6 +59,6 @@ ms.lasthandoff: 10/24/2017
   
 -   **Ribbon エディター ツールバー**をクリックして**Ribbon のテスト**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リボン デザイナー (MFC)](../mfc/ribbon-designer-mfc.md)
 

@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 32c3fc0c59f94ca35d80ebfd4f16330517399e72
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7d7300247c32c5f18190c6a5a1b6469e4c8173be
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformwriteonlyarray-class"></a>Platform::WriteOnlyArray クラス
 メソッドで設定する配列を呼び出し元から渡すときに入力パラメーターとして使用される 1 次元配列を表します。  
@@ -43,7 +44,7 @@ private ref class WriteOnlyArray<T, 1>
 ### <a name="public-methods"></a>パブリック メソッド  
  これらのメソッドのアクセシビリティは内部です。つまり、これらのメソッドには C++ アプリまたはコンポーネント内でのみアクセスできます。  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 
 |[Writeonlyarray::begin](#begin)|配列の最初の要素を指す反復子 |。  
@@ -57,7 +58,7 @@ private ref class WriteOnlyArray<T, 1>
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `WriteOnlyArray`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
  **メタデータ:** Platform.winmd  
@@ -190,6 +191,6 @@ T& set(
  HRESULT 値を解釈する方法の詳細については、次を参照してください。 [COM エラー コードの構造体](http://go.microsoft.com/fwlink/p/?LinkId=262045)です。  
   
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)   
  [C++ での Windows ランタイム コンポーネントを作成します。](/MicrosoftDocs/windows-uwp/blob/docs/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md)

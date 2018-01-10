@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 807fd762ab2780b70a395f62efbc72945228b1fa
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0278d59af9a62393f90a91655e3d7f0323e08118
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ln-create-msil-module"></a>/LN (MSIL モジュールの作成)
 アセンブリ マニフェストを出力ファイルに挿入できないことを指定します。  
@@ -55,6 +56,6 @@ ms.lasthandoff: 10/24/2017
   
 -   このコンパイラ オプションをプログラムで変更できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

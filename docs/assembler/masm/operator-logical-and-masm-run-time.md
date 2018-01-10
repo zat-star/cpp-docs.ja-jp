@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c5de705422bead217975fc0c7c9a1d95cba4e1ff
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8a354c682ce9fd3c461b088a8b8f02267989810c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="operator-ampamp-masm-run-time"></a>演算子&amp; &amp; (MASM ランタイム)
 論理**AND**です。 内でのみ使用[です。IF](../../assembler/masm/dot-if.md)、[です。中に](../../assembler/masm/dot-while.md)、または[です。繰り返し](../../assembler/masm/dot-repeat.md)をブロックし、アセンブリ時ではなく、実行時に評価されます。  
@@ -33,5 +34,5 @@ ms.lasthandoff: 10/24/2017
 expression1 && expression2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [演算子リファレンス](../../assembler/masm/operators-reference.md)

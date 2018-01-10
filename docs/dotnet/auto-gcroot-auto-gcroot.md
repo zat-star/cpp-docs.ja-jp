@@ -1,35 +1,37 @@
 ---
-title: "auto_gcroot::auto_gcroot | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr::auto_gcroot::auto_gcroot"
-  - "auto_gcroot::auto_gcroot"
-  - "auto_gcroot.auto_gcroot"
-  - "msclr.auto_gcroot.auto_gcroot"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "auto_gcroot::auto_gcroot"
+title: "auto_gcroot::auto_gcroot |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- msclr::auto_gcroot::auto_gcroot
+- auto_gcroot::auto_gcroot
+- auto_gcroot.auto_gcroot
+- msclr.auto_gcroot.auto_gcroot
+dev_langs: C++
+helpviewer_keywords: auto_gcroot::auto_gcroot
 ms.assetid: 27faa42a-64ea-4d31-836f-073a55145735
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 30503886c3a4af047226af88ee16e1132e9d0896
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# auto_gcroot::auto_gcroot
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`auto_gcroot` コンストラクターです。  
+# <a name="autogcrootautogcroot"></a>auto_gcroot::auto_gcroot
+`auto_gcroot`コンス トラクターです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 auto_gcroot(  
@@ -44,17 +46,17 @@ auto_gcroot(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_ptr`  
- 独自にオブジェクト。  
+ 所有するオブジェクト。  
   
  `_right`  
  既存の `auto_gcroot`。  
   
-## 解説  
- 既存の `auto_gcroot`から `auto_gcroot` を構築するときに、既存の `auto_gcroot` は新しい `auto_gcroot`へのオブジェクトの所有権を譲渡する前にオブジェクトを解放します。  
+## <a name="remarks"></a>コメント  
+ 構築するときに、 `auto_gcroot` 、既存の`auto_gcroot`、既存の`auto_gcroot`を新しいオブジェクトの所有権を転送する前にそのオブジェクトを解放`auto_gcroot`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_gcroot_auto_gcroot.cpp  
@@ -126,25 +128,28 @@ int main()
 }  
 ```  
   
-  **RefClassA のコンストラクター: アンマネージ**  
-**Hello アンマネージの A ~\!**  
-**RefClassA のデストラクター: アンマネージ**  
-**RefClassA のコンストラクター: 最初**  
-**Hello 最初に A ~\!**  
-**RefClassA のデストラクター: 最初**  
-**RefClassA のコンストラクター: 第 2**  
-**2 番目の B から Hello\!**  
-**2 番目の A から Hello\!**  
-**2 番目の A から Hello\!**  
-**RefClassA のデストラクター: 第 2**  
-**done**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_gcroot.h\>  
+```Output  
+in RefClassA constructor: unmanaged  
+Hello from unmanaged A!  
+in RefClassA destructor: unmanaged  
+in RefClassA constructor: first  
+Hello from first A!  
+in RefClassA destructor: first  
+in RefClassA constructor: second  
+Hello from second B!  
+Hello from second A!  
+Hello from second A!  
+in RefClassA destructor: second  
+done  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
-## 参照  
- [auto\_gcroot Members](../dotnet/auto-gcroot-members.md)   
- [auto\_gcroot::attach](../dotnet/auto-gcroot-attach.md)   
- [auto\_gcroot::operator\=](../dotnet/auto-gcroot-operator-assign.md)   
- [auto\_gcroot::~auto\_gcroot](../Topic/auto_gcroot::~auto_gcroot.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>参照  
+ [auto_gcroot メンバー](../dotnet/auto-gcroot-members.md)   
+ [auto_gcroot::attach](../dotnet/auto-gcroot-attach.md)   
+ [auto_gcroot::operator =](../dotnet/auto-gcroot-operator-assign.md)   
+ [auto_gcroot::~auto_gcroot](../dotnet/auto-gcroot-tilde-auto-gcroot.md)

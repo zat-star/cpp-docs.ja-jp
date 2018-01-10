@@ -1,66 +1,68 @@
 ---
-title: "/DRIVER (Windows NT カーネル モード ドライバー) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.driver"
-  - "/driver"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/DRIVER リンカー オプション"
-  - "DRIVER リンカー オプション"
-  - "-DRIVER リンカー オプション"
-  - "カーネル モード ドライバー"
+title: "ドライバー (Windows NT カーネル モード ドライバー) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.driver
+- /driver
+dev_langs: C++
+helpviewer_keywords:
+- kernel mode driver
+- -DRIVER linker option
+- DRIVER linker option
+- /DRIVER linker option
 ms.assetid: aeee8e28-5d97-40f5-ba16-9f370fe8a1b8
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 29234e3c0e368c7710f9071c753422bc4e6ef2b5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /DRIVER (Windows NT カーネル モード ドライバー)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="driver-windows-nt-kernel-mode-driver"></a>/DRIVER (Windows NT カーネル モード ドライバー)
 
-```  
-/DRIVER[:UPONLY | :WDM]  
-```  
-  
-## 解説  
- \/Driver リンカー オプションは、Windows NT カーネル モード ドライバーをビルドするときに使用します。  
-  
- **\/DRIVER:UPONLY** により、出力ヘッダーにユニプロセッサ \(UP\) ドライバーを指定する **IMAGE\_FILE\_UP\_SYSTEM\_ONLY** ビットが追加されます。  マルチプロセッサ \(MP\) システムでは、オペレーティング システムによって、UP ドライバーの読み込みが拒否されます。  
-  
- **\/DRIVER:WDM** により、オプションのヘッダーの DllCharacteristics フィールドに **IMAGE\_DLLCHARACTERISTICS\_WDM\_DRIVER** ビットが設定されます。  
-  
- **\/DRIVER** が指定されていない場合、リンカーはこれらのビットを設定しません。  
-  
- **\/DRIVER** が指定されている場合  
-  
--   \/FIXED:NO が有効です \([\/FIXED \(固定ベース アドレス\)](../../build/reference/fixed-fixed-base-address.md)\)。  
-  
--   出力ファイルの拡張子は .sys です。  **\/OUT** を使用して、既定のファイル名および拡張子 \([\/OUT \(出力ファイル名\)](../../build/reference/out-output-file-name.md)\) を変更します。  
-  
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
-  
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
-  
-2.  **\[リンカー\]** フォルダーをクリックします。  
-  
-3.  **\[システム\]** プロパティ ページをクリックします。  
-  
-4.  **\[ドライバー\]** プロパティを変更します。  
-  
-### このリンカーをコードから設定するには  
-  
-1.  「`P:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.driver`」を参照してください。  
-  
-## 参照  
- [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
- [リンカー オプション](../../build/reference/linker-options.md)
+>/DRIVER [: UPONLY |: WDM]
+
+## <a name="remarks"></a>コメント
+
+使用して、 **/DRIVER**リンカー オプションを Windows NT カーネル モード ドライバーをビルドします。
+
+**/DRIVER:UPONLY**リンカーに追加、 **IMAGE_FILE_UP_SYSTEM_ONLY**ユニプロセッサ (UP) ドライバーであることを指定する出力ヘッダーの特性にビットです。 オペレーティング システムがマルチプロセッサ (MP) システムで UP ドライバーの読み込みを拒否します。
+
+**/DRIVER:WDM**リンカー設定に、 **IMAGE_DLLCHARACTERISTICS_WDM_DRIVER**省略可能なヘッダーの DllCharacteristics フィールド内のビットです。
+
+場合**/DRIVER**が指定されていない、リンカーによってこれらのビットが設定されていません。
+
+場合**/DRIVER**を指定します。
+
+- **/FIXED:NO**が有効になっています。 詳細については、「[/FIXED (固定ベース アドレス)](../../build/reference/fixed-fixed-base-address.md)」を参照してください。
+
+- 出力ファイルの拡張子は、.sys に設定されます。 使用して**/out**拡張機能と既定のファイル名を変更します。 詳細については、「[/OUT (出力ファイル名)](../../build/reference/out-output-file-name.md)」を参照してください。
+
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには
+
+1. プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。
+
+1. クリックして、**リンカー**フォルダーです。
+
+1. クリックして、**システム**プロパティ ページ。
+
+1. 変更、**ドライバー**プロパティです。
+
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには
+
+- 参照してください[VCLinkerTool.driver プロパティ](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.vcprojectengine.vclinkertool.driver?view=visualstudiosdk-2017#Microsoft_VisualStudio_VCProjectEngine_VCLinkerTool_driver)です。
+
+## <a name="see-also"></a>参照
+
+[リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
+[リンカー オプション](../../build/reference/linker-options.md)

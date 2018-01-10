@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,41 +14,25 @@ f1_keywords:
 - ATLCTL/ATL::IOleControlImpl::GetControlInfo
 - ATLCTL/ATL::IOleControlImpl::OnAmbientPropertyChange
 - ATLCTL/ATL::IOleControlImpl::OnMnemonic
-dev_langs:
-- C++
-helpviewer_keywords:
-- IOleControlImpl class
+dev_langs: C++
+helpviewer_keywords: IOleControlImpl class
 ms.assetid: 5a4255ad-ede4-49ca-ba9a-07c2e919fa85
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 5e63849a504b931de30141dd91af557f16c67fd8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 23375f8f76e1a58bf29e3e3e269077fea4ae8d61
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iolecontrolimpl-class"></a>IOleControlImpl クラス
-このクラスの既定の実装を提供する、 **IOleControl**インターフェイスと実装**IUnknown**します。  
+このクラスの既定の実装を提供する、 **IOleControl**インターフェイスと実装**IUnknown**です。  
   
 > [!IMPORTANT]
->  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -60,7 +43,7 @@ class IOleControlImpl
   
 #### <a name="parameters"></a>パラメーター  
  `T`  
- 派生したクラスに、`IOleControlImpl`です。  
+ 派生したクラス、`IOleControlImpl`です。  
   
 ## <a name="members"></a>メンバー  
   
@@ -68,13 +51,13 @@ class IOleControlImpl
   
 |名前|説明|  
 |----------|-----------------|  
-|[IOleControlImpl::FreezeEvents](#freezeevents)|コンテナーを無視するか、コントロールからのイベントを受け入れるかどうかを示します。|  
-|[IOleControlImpl::GetControlInfo](#getcontrolinfo)|コントロールのキーボード動作に関する情報が表示されます。 ATL の実装を返します**E_NOTIMPL**します。|  
-|[IOleControlImpl::OnAmbientPropertyChange](#onambientpropertychange)|1 つ以上のコンテナーのアンビエント プロパティが変更されたことをコントロールに通知します。 ATL の実装を返します`S_OK`します。|  
-|[IOleControlImpl::OnMnemonic](#onmnemonic)|ユーザーが特定のキーを押したことをコントロールに通知します。 ATL の実装を返します**E_NOTIMPL**します。|  
+|[IOleControlImpl::FreezeEvents](#freezeevents)|コンテナーを無視するか、コントロールからのイベントを受け付けるかどうかを示します。|  
+|[IOleControlImpl::GetControlInfo](#getcontrolinfo)|コントロールのキーボードの動作に関する情報を入力します。 ATL の実装を返します**E_NOTIMPL**です。|  
+|[IOleControlImpl::OnAmbientPropertyChange](#onambientpropertychange)|1 つまたは複数のコンテナーのアンビエント プロパティが変更されたことをコントロールに通知します。 ATL の実装を返します`S_OK`です。|  
+|[IOleControlImpl::OnMnemonic](#onmnemonic)|ユーザーが指定されたキーストロークを押されたことをコントロールに通知します。 ATL の実装を返します**E_NOTIMPL**です。|  
   
 ## <a name="remarks"></a>コメント  
- クラス`IOleControlImpl`の既定の実装を提供、 [IOleControl](http://msdn.microsoft.com/library/windows/desktop/ms694320)インターフェイスと実装**IUnknown**ダンプ情報を送信することによってデバッグでデバイスをビルドします。  
+ クラス`IOleControlImpl`の既定の実装を提供、 [IOleControl](http://msdn.microsoft.com/library/windows/desktop/ms694320)インターフェイスと実装**IUnknown**ダンプ情報を送信することによってデバッグ デバイスを構築します。  
   
  **関連資料** [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)、 [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
   
@@ -83,36 +66,36 @@ class IOleControlImpl
   
  `IOleControlImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlctl.h  
   
 ##  <a name="freezeevents"></a>IOleControlImpl::FreezeEvents  
- ATL の実装で`FreezeEvents`コントロール クラスのインクリメント`m_nFreezeEvents`データ メンバー場合`bFreeze`は**TRUE**、およびデクリメント`m_nFreezeEvents`場合`bFreeze`は**FALSE**します。  
+ ATL の実装で`FreezeEvents`コントロール クラスのインクリメント`m_nFreezeEvents`データ メンバー場合`bFreeze`は**TRUE**、およびデクリメント`m_nFreezeEvents`場合`bFreeze`は**FALSE**.  
   
 ```
 HRESULT FreezeEvents(BOOL bFreeze);
 ```  
   
 ### <a name="remarks"></a>コメント  
- `FreezeEvents`戻ります`S_OK`します。  
+ `FreezeEvents`返します`S_OK`です。  
   
- 参照してください[IOleControl::FreezeEvents](http://msdn.microsoft.com/library/windows/desktop/ms678482)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[:freezeevents](http://msdn.microsoft.com/library/windows/desktop/ms678482) Windows SDK にします。  
   
 ##  <a name="getcontrolinfo"></a>IOleControlImpl::GetControlInfo  
- コントロールのキーボード動作に関する情報が表示されます。  
+ コントロールのキーボードの動作に関する情報を入力します。  
   
 ```
 HRESULT GetControlInfo(LPCONTROLINFO pCI);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IOleControl:GetControlInfo](http://msdn.microsoft.com/library/windows/desktop/ms693730)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IOleControl:GetControlInfo](http://msdn.microsoft.com/library/windows/desktop/ms693730) Windows SDK にします。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **E_NOTIMPL**します。  
+ 返します**E_NOTIMPL**です。  
   
 ##  <a name="onambientpropertychange"></a>IOleControlImpl::OnAmbientPropertyChange  
- 1 つ以上のコンテナーのアンビエント プロパティが変更されたことをコントロールに通知します。  
+ 1 つまたは複数のコンテナーのアンビエント プロパティが変更されたことをコントロールに通知します。  
   
 ```
 HRESULT OnAmbientPropertyChange(DISPID dispid);
@@ -122,23 +105,22 @@ HRESULT OnAmbientPropertyChange(DISPID dispid);
  `S_OK` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IOleControl::OnAmbientPropertyChange](http://msdn.microsoft.com/library/windows/desktop/ms690175)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IOleControl::OnAmbientPropertyChange](http://msdn.microsoft.com/library/windows/desktop/ms690175) Windows SDK にします。  
   
 ##  <a name="onmnemonic"></a>IOleControlImpl::OnMnemonic  
- ユーザーが特定のキーを押したことをコントロールに通知します。  
+ ユーザーが指定されたキーストロークを押されたことをコントロールに通知します。  
   
 ```
 HRESULT OnMnemonic(LPMSG pMsg);
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **E_NOTIMPL**します。  
+ 返します**E_NOTIMPL**です。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IOleControl::OnMnemonic](http://msdn.microsoft.com/library/windows/desktop/ms680699)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IOleControl::OnMnemonic](http://msdn.microsoft.com/library/windows/desktop/ms680699) Windows SDK にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IOleObjectImpl クラス](../../atl/reference/ioleobjectimpl-class.md)   
  [ActiveX コントロールのインターフェイス](http://msdn.microsoft.com/library/windows/desktop/ms692724)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

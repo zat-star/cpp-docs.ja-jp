@@ -1,5 +1,5 @@
 ---
-title: "電子メール。 OpenMP C と C++ の動作の実装で定義された |Microsoft ドキュメント"
+title: "E. OpenMP C と C++ の動作の実装で定義された |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,13 +13,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d54705947db5125bd9d30adb8a074a6ac354b94a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8fe890248ad2eb3bcee024bf12ccf4039484e7b2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="e-implementation-defined-behaviors-in-openmp-cc"></a>電子メール。 OpenMP C と C++ の実装で定義される動作
+# <a name="e-implementation-defined-behaviors-in-openmp-cc"></a>E. OpenMP C と C++ の実装で定義される動作
 この付録の内容は、"実装定義として"この API で記述されている動作をまとめたものです。  各動作は、メインの仕様では、その説明に相互参照です。  
   
 ## <a name="remarks"></a>コメント  

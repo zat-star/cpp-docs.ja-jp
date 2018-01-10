@@ -18,11 +18,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a11fe27fad42e7a27e55a8b4f494980aa9f708a6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 9d094b3545978aa042ba5a6d308a09369b238e4c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resource-pooling-in-your-ole-db-application"></a>OLE DB アプリケーションでのリソース プール
 アプリケーションでのプールを活用するには、OLE DB サービスが使用して、データ ソースを取得することによって呼び出されることを確認してください**IDataInitialize**または**IDBPromptInitialize**です。 直接使用する場合`CoCreateInstance`呼び出すには、プロバイダーの CLSID に基づく、プロバイダー、OLE DB サービスは呼び出されません。  
@@ -35,5 +38,5 @@ ms.lasthandoff: 10/24/2017
   
  最後に、ADO 自動的に利用するための OLE DB サービス、ADO を使用して接続を確立し、プールと参加リストが自動的に行われます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB リソース プールとサービス](../../data/oledb/ole-db-resource-pooling-and-services.md)

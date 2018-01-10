@@ -15,11 +15,14 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0b17d9f720d2fee92cfcf2aaf7b9f452cde32e3e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 25ee0e3ea826d77795bbdfafda780071d7a817a6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="handletdetach-method"></a>HandleT::Detach メソッド
 基になるハンドルから現在 HandleT オブジェクトの関連付けを解除します。  
@@ -36,10 +39,10 @@ typename HandleTraits::Type Detach();
 ## <a name="remarks"></a>コメント  
  この操作が完了すると、現在の HandleT に設定されている状態が無効です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [HandleT クラス](../windows/handlet-class.md)

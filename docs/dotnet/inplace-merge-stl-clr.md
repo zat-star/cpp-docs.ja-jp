@@ -15,11 +15,14 @@ caps.latest.revision: "4"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ad06f2b7917413617adef6a151e75fb848e8da3e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 6fbe1e70f17ac558da58b819c952e0f26026690c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="inplacemerge-stlclr"></a>inplace_merge (STL/CLR)
 2 つの連続する並べ替えられた範囲の要素を単一の並べ替えられた範囲として連結します。順序の基準は二項述語によって指定できます。  
@@ -37,10 +40,10 @@ template<class _BidIt, class _Pr> inline
 ## <a name="remarks"></a>コメント  
  この関数の動作は、C++ 標準ライブラリ関数と同じ`inplace_merge`詳細については、次を参照してください。 [inplace_merge](../standard-library/algorithm-functions.md#inplace_merge)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext アルゴリズム/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

@@ -210,11 +210,12 @@ helpviewer_keywords:
 - std::count_if [C++]
 - std::partition_copy [C++]
 - std::swap [C++]
-ms.openlocfilehash: 2b70ab848071bb1196ceb57f986a6e74fe43d2de
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4f19fcbd350ea13004df5298beb95f10661e1f61
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="ltalgorithmgt-functions"></a>&lt;algorithm&gt; 関数
 ||||  
@@ -231,7 +232,7 @@ ms.lasthandoff: 10/24/2017
 |[is_partitioned](#is_partitioned)|[is_permutation](#is_permutation)|[is_sorted](#is_sorted)|  
 |[is_sorted_until](#is_sorted_until)|[iter_swap](#iter_swap)|[lexicographical_compare](#lexicographical_compare)|  
 |[lower_bound](#lower_bound)|[make_heap](#make_heap)|[max](#max)|  
-|[max_element](#max_element)|[merge](#merge)|[min](#min)|  
+|[max_element](#max_element)|[merge](#merge)|[分](#min)|  
 |[min_element](#min_element)|[minmax](#minmax)|[minmax_element](#minmax_element)|  
 |[mismatch](#mismatch)|[move_backward](#move_backward)|[next_permutation](#next_permutation)|  
 |[none_of](#none_of)|[nth_element](#nth_element)|[partial_sort](#partial_sort)|  
@@ -5403,7 +5404,7 @@ int main( ) {
 ```  
   
 ##  <a name="random_shuffle"></a>  random_shuffle  
- Std::random_shuffle() 関数は推奨されず、置き換え[std::shuffle](../standard-library/algorithm-functions.md#shuffle)です。 コード例および詳細については、「 [\<ランダム >](../standard-library/random.md)と Stackoverflow の投稿[理由は:random_shuffle メソッドで使用されなくなった c++ 14?](http://go.microsoft.com/fwlink/?LinkId=397954)です。  
+ Std::random_shuffle() 関数は推奨されず、置き換え[std::shuffle](../standard-library/algorithm-functions.md#shuffle)です。 コード例および詳細については、「 [\<ランダム >](../standard-library/random.md)と Stackoverflow の投稿[理由は:random_shuffle メソッドで使用されなくなった c++ 14?](http://go.microsoft.com/fwlink/p/?linkid=397954)です。  
   
 ##  <a name="remove"></a>  remove  
  特定の範囲から指定された値を除去します。残りの要素の順序に影響を及ぼすことはなく、指定された値を含まない新しい範囲の末尾を返します。  
@@ -7397,8 +7398,7 @@ void shuffle(RandomAccessIterator first,
           `RandomAccessIterator` および `ValueSwappable` の要件を満たしている必要があります。  
   
  `last`  
- シャッフルされる範囲 (境界を含まない) の最後の要素に対する反復子。 
-          `RandomAccessIterator` および `ValueSwappable` の要件を満たしている必要があります。  
+ シャッフルされる範囲 (境界を含まない) の最後の要素に対する反復子。 `RandomAccessIterator` および `ValueSwappable` の要件を満たしている必要があります。  
   
  `gen`  
  
@@ -8462,5 +8462,5 @@ int main( )
 }  
   
 ```  
-## <a name="see-also"></a>関連項目   
+## <a name="see-also"></a>参照   
  [\<algorithm>](../standard-library/algorithm.md)

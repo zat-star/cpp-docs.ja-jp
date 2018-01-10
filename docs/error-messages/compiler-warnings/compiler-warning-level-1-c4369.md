@@ -1,35 +1,34 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4369 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4369"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4369"
+title: "コンパイラの警告 (レベル 1) C4369 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4369
+dev_langs: C++
+helpviewer_keywords: C4369
 ms.assetid: ade87e84-36be-4e00-be99-2930af848feb
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 3c0419908ed7d914196cd65d07a3fb43a16d75ea
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4369
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'列挙子' :  列挙値 '値' は '型' として表示できません。値は 'new\_value' です。  
+# <a name="compiler-warning-level-1-c4369"></a>コンパイラの警告 (レベル 1) C4369
+'列挙子': 列挙子の値 'value' を 'type' として表現できず、値は 'new_value'  
   
- 列挙子を計算すると、指定された基になる型の最大値よりも大きくなりました。これによってオーバーフローが発生したので、コンパイラが列挙子の値をその型で可能な最小値にラップしました。  
+ 列挙子を計算すると、指定した基になる型の最大値よりも大きい値を指定します。  これによって、オーバーフローが発生し、コンパイラが型の最小値を列挙子の値をラップします。  
   
-## 使用例  
- 次の例では C4369 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4369 を生成します。  
   
 ```  
 // C4369.cpp  

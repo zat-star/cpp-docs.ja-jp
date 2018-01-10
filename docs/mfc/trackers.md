@@ -22,11 +22,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a36a327bcf2a1beb46119c9b6c2947d95473cbaf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 29e4d3c556a5f7b6b3aed5daa0285ea6c2c15447
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="trackers"></a>トラッカー
 [CRectTracker](../mfc/reference/crecttracker-class.md)クラスには、四角形のアイテムをアプリケーションに、さまざまな表示スタイルを提供することにより、ユーザーのユーザー インターフェイスが用意されています。 これらのスタイルが実線、斜線、または破線の罫線; を含めるアイテムをカバーするハッチ パターン外部または枠線内にあることができるハンドルのサイズを変更します。 トラッカーは多くの場合で使用される OLE アイテムと共にから派生したオブジェクトは、`COleClientItem`です。 トラッカーの四角形は、アイテムの現在の状態の視覚的な手掛かりを付与します。  
@@ -35,6 +36,6 @@ ms.lasthandoff: 10/24/2017
   
  OLE アプリケーションでのトラッカーの実装の詳細については、次を参照してください[トラッカー: OLE アプリケーションでのトラッカーの実装。](../mfc/trackers-implementing-trackers-in-your-ole-application.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE](../mfc/ole-in-mfc.md)   
  [COleClientItem クラス](../mfc/reference/coleclientitem-class.md)

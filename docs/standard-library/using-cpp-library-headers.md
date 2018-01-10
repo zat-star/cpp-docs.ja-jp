@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - headers, naming in C++ include directive
 - standard header in C++
@@ -19,30 +17,16 @@ helpviewer_keywords:
 - library headers
 - C++ Standard Library, headers
 ms.assetid: a36e889e-1af2-4cd9-a211-bfc7a3fd8e85
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 69a20e17403e755031466f269b932a4b14aa523b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 8ed672aed333a23b1f7722c3990e024b21bcc56a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-c-library-headers"></a>C++ ライブラリ ヘッダーの使用
 標準ヘッダーの内容は、include ディレクティブで指定することによって含めます。  
@@ -61,7 +45,7 @@ ms.lasthandoff: 02/24/2017
   
  C++ ライブラリ ヘッダーのように、翻訳環境の中には、名前ごとに個別の `using` 宣言を使用して、`std` 名前空間で宣言された外部名もグローバル名前空間に含めるものがあります。 それ以外の場合、ヘッダーでは、現在の名前空間にライブラリ名を含めることは*ありません*。  
   
- C++ 標準によって、C 標準ヘッダーで名前空間 `std` のすべての外部名を宣言することが要求されるため、それぞれの名前に `using` 宣言を付けて、これらをグローバル名前空間に含めます。 ただし、翻訳環境によっては、C 標準ヘッダーに名前空間宣言が含まれず、グローバル名前空間で直接すべての名前を宣言する場合があります。 このため、次の&2; つの規則に従うことが、名前空間を処理する最もポータブルな方法となります。  
+ C++ 標準によって、C 標準ヘッダーで名前空間 `std` のすべての外部名を宣言することが要求されるため、それぞれの名前に `using` 宣言を付けて、これらをグローバル名前空間に含めます。 ただし、翻訳環境によっては、C 標準ヘッダーに名前空間宣言が含まれず、グローバル名前空間で直接すべての名前を宣言する場合があります。 このため、次の 2 つの規則に従うことが、名前空間を処理する最もポータブルな方法となります。  
   
 -   従来 \<stdlib.h> で宣言されていた外部名を、名前空間 `std` で確実に宣言するために、たとえば \<cstdlib> を含めます。 この名前が、グローバル名前空間でも宣言されている可能性があることを認識してください。  
   
@@ -79,8 +63,7 @@ using namespace std;
   
  他の方法で特に指定しない限り、プログラム内で、`std` 名前空間、および `std` 名前空間内に入れ子になった名前空間で名前を定義することはできません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリの概要](../standard-library/cpp-standard-library-overview.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 

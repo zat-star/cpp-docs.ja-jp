@@ -17,11 +17,14 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 757ab7a6d2c8b846a51da359c4b8dc5a72c6e9e8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: db6c31df932890799f68e2ae466b0a927f0f999f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="version-c"></a>version (C++)
 クラスの複数のバージョン間で特定のバージョンを識別します。  
@@ -45,19 +48,19 @@ ms.lasthandoff: 10/24/2017
 ## <a name="example"></a>例  
  参照してください、[バインド可能な](../windows/bindable.md)のサンプルの使用例**バージョン**します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|**class**、 `struct`|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|**coclass**|  
 |**無効な属性**|なし|  
   
  属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ属性](../windows/compiler-attributes.md)   
  [クラス属性](../windows/class-attributes.md)   

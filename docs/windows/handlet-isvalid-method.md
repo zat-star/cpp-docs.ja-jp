@@ -15,11 +15,14 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 76673c2b2c12c53bca1531384a1b0c3b007244a8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 666aa484273068cbc080c638520e473403ace727
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="handletisvalid-method"></a>HandleT::IsValid メソッド
 現在の HandleT オブジェクトがハンドルを表すかどうかを示します。  
@@ -33,10 +36,10 @@ bool IsValid() const;
 ## <a name="return-value"></a>戻り値  
  `true`HandleT、; ハンドルを表す場合それ以外の場合、`false`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [HandleT クラス](../windows/handlet-class.md)

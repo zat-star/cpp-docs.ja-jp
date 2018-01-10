@@ -22,11 +22,12 @@ caps.latest.revision: "1"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: baab49fb4eb49f872a8d285f1d8f08ccda569a6e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1343c037f87aee609de2b082cb87f7f1f2832221
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="zcsizeddealloc-enable-global-sized-deallocation-functions"></a>/Zc:sizedDealloc (有効にするグローバル サイズ割り当て解除関数)  
 `/Zc:sizedDealloc`コンパイラ オプションを優先的にグローバルで呼び出すコンパイラに指示`operator delete`または`operator delete[]`を型の 2 番目のパラメーターを持つ関数`size_t`オブジェクトのサイズが使用可能な場合です。 これらの関数は使用して、`size_t`デアロケーター パフォーマンスを最適化するパラメーターです。   
@@ -50,7 +51,7 @@ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandar
 3.  選択、**構成プロパティ**、 **C/C++**、**コマンドライン**プロパティ ページ。  
 4.  変更、**追加オプション**含めるプロパティを`/Zc:sizedDealloc`または`/Zc:sizedDealloc-`を選択し**OK**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [コンパイラ オプション](../../build/reference/compiler-options.md)  
 [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)  
 [/Zc (準拠)](../../build/reference/zc-conformance.md)  

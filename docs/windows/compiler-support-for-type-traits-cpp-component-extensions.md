@@ -1,94 +1,96 @@
 ---
-title: "型の特徴のコンパイラ サポート (C++ コンポーネント拡張) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__is_simple_value_class"
-  - "__has_trivial_destructor"
-  - "__has_assign"
-  - "__is_union"
-  - "__is_class"
-  - "__is_abstract"
-  - "__has_trivial_assign"
-  - "__has_virtual_destructor"
-  - "__is_ref_array"
-  - "__is_base_of"
-  - "__has_copy"
-  - "__is_polymorphic"
-  - "__has_nothrow_constructor"
-  - "__is_ref_class"
-  - "__is_delegate"
-  - "__is_convertible_to"
-  - "__is_value_class"
-  - "__is_interface_class"
-  - "__has_nothrow_copy"
-  - "__is_sealed"
-  - "__has_trivial_constructor"
-  - "__has_trivial_copy"
-  - "__is_enum"
-  - "__has_nothrow_assign"
-  - "__has_finalizer"
-  - "__is_empty"
-  - "__is_pod"
-  - "__has_user_destructor"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__is_class キーワード [C++]"
-  - "__is_pod キーワード [C++]"
-  - "__is_delegate キーワード [C++]"
-  - "__is_value_class キーワード [C++]"
-  - "__has_copy キーワード [C++]"
-  - "__has_nothrow_copy キーワード [C++]"
-  - "__is_interface_class キーワード [C++]"
-  - "__is_sealed キーワード [C++]"
-  - "__is_convertible_to キーワード [C++]"
-  - "__is_ref_class キーワード [C++]"
-  - "__has_trivial_copy キーワード [C++]"
-  - "__has_user_destructor キーワード [C++]"
-  - "__is_abstract キーワード [C++]"
-  - "__is_empty キーワード [C++]"
-  - "__has_trivial_assign キーワード [C++]"
-  - "__has_nothrow_constructor キーワード [C++]"
-  - "__is_ref_array キーワード [C++]"
-  - "__is_base_of キーワード [C++]"
-  - "__has_nothrow_assign キーワード [C++]"
-  - "__has_virtual_destructor キーワード [C++]"
-  - "__has_finalizer キーワード [C++]"
-  - "__is_union キーワード [C++]"
-  - "__has_assign キーワード [C++]"
-  - "__has_trivial_destructor キーワード [C++]"
-  - "__is_polymorphic キーワード [C++]"
-  - "__is_enum キーワード [C++]"
-  - "__is_simple_value_class キーワード [C++]"
-  - "__has_trivial_constructor キーワード [C++]"
+title: "(C++ コンポーネント拡張) の型の特徴のコンパイラ サポート |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __is_simple_value_class
+- __has_trivial_destructor
+- __has_assign
+- __is_union
+- __is_class
+- __is_abstract
+- __has_trivial_assign
+- __has_virtual_destructor
+- __is_ref_array
+- __is_base_of
+- __has_copy
+- __is_polymorphic
+- __has_nothrow_constructor
+- __is_ref_class
+- __is_delegate
+- __is_convertible_to
+- __is_value_class
+- __is_interface_class
+- __has_nothrow_copy
+- __is_sealed
+- __has_trivial_constructor
+- __has_trivial_copy
+- __is_enum
+- __has_nothrow_assign
+- __has_finalizer
+- __is_empty
+- __is_pod
+- __has_user_destructor
+dev_langs: C++
+helpviewer_keywords:
+- __is_class keyword [C++]
+- __is_pod keyword [C++]
+- __is_delegate keyword [C++]
+- __is_value_class keyword [C++]
+- __has_copy keyword [C++]
+- __has_nothrow_copy keyword [C++]
+- __is_interface_class keyword [C++]
+- __is_sealed keyword [C++]
+- __is_convertible_to keyword [C++]
+- __is_ref_class keyword [C++]
+- __has_trivial_copy keyword [C++]
+- __has_user_destructor keyword [C++]
+- __is_abstract keyword [C++]
+- __is_empty keyword [C++]
+- __has_trivial_assign keyword [C++]
+- __has_nothrow_constructor keyword [C++]
+- __is_ref_array keyword [C++]
+- __is_base_of keyword [C++]
+- __has_nothrow_assign keyword [C++]
+- __has_virtual_destructor keyword [C++]
+- __has_finalizer keyword [C++]
+- __is_union keyword [C++]
+- __has_assign keyword [C++]
+- __has_trivial_destructor keyword [C++]
+- __is_polymorphic keyword [C++]
+- __is_enum keyword [C++]
+- __is_simple_value_class keyword [C++]
+- __has_trivial_constructor keyword [C++]
 ms.assetid: cd440630-0394-48c0-a16b-1580b6ef5844
-caps.latest.revision: 27
-caps.handback.revision: 27
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "27"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: c069645e91d9d895309f00c5f39ddda950084e07
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 型の特徴のコンパイラ サポート (C++ コンポーネント拡張)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンパイラ サポート *特徴 (traits) を入力*, 、コンパイル時に型のさまざまな特性を指定します。  
+# <a name="compiler-support-for-type-traits-c-component-extensions"></a>型の特徴のコンパイラ サポート (C++ コンポーネント拡張)
+コンパイラ サポート*特徴 (traits) を入力*コンパイル時に、型のさまざまな特性をかを示すです。  
   
 ## <a name="all-runtimes"></a>すべてのランタイム  
- **「解説」**  
+ **解説**  
   
  型の特徴は、ライブラリを記述するプログラマにとって特に便利です。  
   
  次の一覧には、コンパイラによってサポートされている型の特徴が含まれています。 型の特徴の名前で指定された条件を満たさない場合、すべての型の特徴により `false` が返されます。  
   
- (次の一覧でのコード例はでのみ記述 [!INCLUDE[cppcli](../build/reference/includes/cppcli_md.md)]します。 ただし、対応する型の特徴は、特に明記されていない限り、[!INCLUDE[cppwrt](../build/reference/includes/cppwrt_md.md)] でもサポートされます。 "プラットフォーム型" という用語は、[!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] の型または共通言語ランタイムの型を示します。)  
+ (次の一覧でのコード例はで作成されたのみ C + + CLI です。 ただし、対応する型の特徴は、特に明記されていない限り、[!INCLUDE[cppwrt](../build/reference/includes/cppwrt_md.md)] でもサポートされます。 「プラットフォーム型」とは Windows ランタイム型または共通言語ランタイム型のいずれかです。)  
   
 -   `__has_assign(` `type` `)`  
   
@@ -124,7 +126,7 @@ manager: "ghogen"
   
 -   `__has_finalizer(` `type` `)`  
   
-     ([!INCLUDE[cppwrt](../build/reference/includes/cppwrt_md.md)] ではサポートされていません。)CLR 型にファイナライザーがある場合は true を返します。 参照してください [Visual C のデストラクターおよびファイナライザー](../misc/destructors-and-finalizers-in-visual-cpp.md) の詳細。  
+     ([!INCLUDE[cppwrt](../build/reference/includes/cppwrt_md.md)] ではサポートされていません。)CLR 型にファイナライザーがある場合は true を返します。 参照してください[する方法のデストラクターおよびファイナライザー: を定義およびクラスと構造体を使用 (C + + CLI)](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers)詳細についてはします。  
   
     ```  
   
@@ -302,9 +304,9 @@ manager: "ghogen"
   
 -   `__is_abstract(` `type` `)`  
   
-     型が抽象型である場合は true を返します。 ネイティブの抽象型の詳細については、次を参照してください。 [抽象](../windows/abstract-cpp-component-extensions.md)します。  
+     型が抽象型である場合は true を返します。 ネイティブ抽象型の詳細については、次を参照してください。[抽象](../windows/abstract-cpp-component-extensions.md)です。  
   
-     `__is_abstract` はプラットフォーム型でも機能します。 1 つ以上の抽象メンバーを持つ参照型と同様に、1 つ以上のメンバーを持つインターフェイスは抽象型です。 抽象プラットフォームの種類の詳細については、次を参照してください [抽象クラス。](../cpp/abstract-classes-cpp.md)  
+     `__is_abstract` はプラットフォーム型でも機能します。 1 つ以上の抽象メンバーを持つ参照型と同様に、1 つ以上のメンバーを持つインターフェイスは抽象型です。 プラットフォームの種類の詳細については、次を参照してください[抽象クラス。](../cpp/abstract-classes-cpp.md)  
   
     ```  
   
@@ -325,7 +327,7 @@ manager: "ghogen"
   
      最初の型が 2 番目の型の基本クラスの場合、または両方の型が同じ場合は true を返します。  
   
-     `__is_base_of` はプラットフォーム型でも機能します。 最初のタイプは true を返すなど、 [インターフェイス クラス](../windows/interface-class-cpp-component-extensions.md) し、2 番目の型がインターフェイスを実装します。  
+     `__is_base_of` はプラットフォーム型でも機能します。 最初の型が true を返すなど、[インターフェイス クラス](../windows/interface-class-cpp-component-extensions.md)し、2 番目の型がインターフェイスを実装します。  
   
     ```  
   
@@ -382,7 +384,7 @@ manager: "ghogen"
   
 -   `__is_delegate(` `type` `)`  
   
-     `type` がデリゲートである場合は true を返します。 詳細については、次を参照してください。 [デリゲート (C++ コンポーネント拡張)](../windows/delegate-cpp-component-extensions.md)します。  
+     `type` がデリゲートである場合は true を返します。 詳細については、次を参照してください。 [delegate (C++ コンポーネント拡張)](../windows/delegate-cpp-component-extensions.md)です。  
   
     ```  
   
@@ -437,7 +439,7 @@ manager: "ghogen"
   
 -   `__is_interface_class(` `type` `)`  
   
-     プラットフォーム インターフェイスが渡された場合に true を返します。 詳細については、次を参照してください。 [インターフェイス クラス](../windows/interface-class-cpp-component-extensions.md)します。  
+     プラットフォーム インターフェイスが渡された場合に true を返します。 詳細については、次を参照してください。[インターフェイス クラス](../windows/interface-class-cpp-component-extensions.md)です。  
   
     ```  
   
@@ -489,7 +491,7 @@ manager: "ghogen"
   
 -   `__is_ref_array(` `type` `)`  
   
-     プラットフォーム配列が渡された場合に true を返します。 詳細については、次を参照してください。 [配列](../windows/arrays-cpp-component-extensions.md)します。  
+     プラットフォーム配列が渡された場合に true を返します。 詳細については、次を参照してください。[配列](../windows/arrays-cpp-component-extensions.md)です。  
   
     ```  
   
@@ -503,7 +505,7 @@ manager: "ghogen"
   
 -   `__is_ref_class(` `type` `)`  
   
-     参照クラスが渡された場合に true を返します。 ユーザー定義の参照型の詳細については、次を参照してください。 [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)します。  
+     参照クラスが渡された場合に true を返します。 ユーザー定義の参照型の詳細については、次を参照してください。[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)です。  
   
     ```  
   
@@ -518,7 +520,7 @@ manager: "ghogen"
   
 -   `__is_sealed(` `type` `)`  
   
-     プラットフォームが渡された場合、またはネイティブ型が "sealed" に設定されている場合に true を返します。 詳細については、次を参照してください。 [シール](../windows/sealed-cpp-component-extensions.md)します。  
+     プラットフォームが渡された場合、またはネイティブ型が "sealed" に設定されている場合に true を返します。 詳細については、次を参照してください。[シール](../windows/sealed-cpp-component-extensions.md)です。  
   
     ```  
   
@@ -531,7 +533,7 @@ manager: "ghogen"
   
 -   `__is_simple_value_class(` `type` `)`  
   
-     ガベージ コレクション ヒープへの参照を含まない値の型が渡された場合に true を返します。 ユーザー定義の値型の詳細については、次を参照してください。 [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)します。  
+     ガベージ コレクション ヒープへの参照を含まない値の型が渡された場合に true を返します。 ユーザー定義の値型の詳細については、次を参照してください。[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)です。  
   
     ```  
   
@@ -570,7 +572,7 @@ manager: "ghogen"
   
 -   `__is_value_class(` `type` `)`  
   
-     値の型が渡された場合に true を返します。 ユーザー定義の値型の詳細については、次を参照してください。 [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)します。  
+     値の型が渡された場合に true を返します。 ユーザー定義の値型の詳細については、次を参照してください。[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)です。  
   
     ```  
   
@@ -582,26 +584,26 @@ manager: "ghogen"
   
     ```  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
- **「解説」**  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ **解説**  
   
-  `__has_finalizer(`*型*`)` このプラットフォームはファイナライザーをサポートしていないために、型の特徴がサポートされていません。  
+ `__has_finalizer(`*型*`)`このプラットフォームがファイナライザーをサポートしていないために、型の特徴がサポートされていません。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
- **「解説」**  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
+ **解説**  
   
  (この機能のプラットフォーム固有の解説はありません。)  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/clr**  
   
-### <a name="examples"></a>例  
- **使用例**  
+### <a name="examples"></a>使用例  
+ **例**  
   
- 次のコード例は、クラス テンプレートを使用して、コンパイラ型の特徴を公開する方法を示しています、 **/clr** コンパイルします。 詳細については、次を参照してください。 [Windows ランタイムおよびマネージ テンプレート](../windows/windows-runtime-and-managed-templates-cpp-component-extensions.md)します。  
+ 次のコード例は、クラス テンプレートを使用してのコンパイラ型の特徴を公開する方法を示しています、 **/clr**コンパイルします。 詳細については、次を参照してください。 [Windows ランタイムおよびマネージ テンプレート](../windows/windows-runtime-and-managed-templates-cpp-component-extensions.md)です。  
   
 ```  
 // compiler_type_traits.cpp  
@@ -629,5 +631,5 @@ int main () {
 R is a ref class  
 ```  
   
-## <a name="see-also"></a>「  
- [ランタイム プラットフォームのコンポーネントの拡張](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

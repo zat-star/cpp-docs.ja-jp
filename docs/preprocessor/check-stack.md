@@ -1,55 +1,56 @@
 ---
-title: "check_stack | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc-pragma.check_stack"
-  - "check_stack_CPP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "check_stack プラグマ"
-  - "プラグマ, check_stack"
-  - "プラグマ, check_stack 使用状況テーブル"
+title: "check_stack |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc-pragma.check_stack
+- check_stack_CPP
+dev_langs: C++
+helpviewer_keywords:
+- check_stack pragma
+- pragmas, check_stack
+- pragmas, check_stack usage table
 ms.assetid: f18e20cc-9abb-48b7-ad62-8d384875b996
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: e48952788e7bbef86ade1177ce243da503ec8b9b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# check_stack
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**off** \(または **–**\) が指定されている場合には、スタック プローブをオフにし、**on** \(または **\+**\) が指定されている場合には、スタック プローブをオンにするようにコンパイラに指示します。  
+# <a name="checkstack"></a>check_stack
+場合、スタック プローブをオフにするコンパイラに指示**オフ**(または **-** ) が指定されている場合、スタック プローブをオンにする、または**で**(または **+** ) を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
       #pragma check_stack([ {on | off}] )  
-#pragma check_stack{+ | –}  
+#pragma check_stack{+ | -}  
 ```  
   
-## 解説  
- 引数を指定しない場合、スタック プローブが既定に従って処理されます。  このプラグマは、プラグマの後で定義されている最初の関数に対して効果があります。  スタック プローブは、マクロの一部でも、インラインで生成される関数の一部でもありません。  
+## <a name="remarks"></a>コメント  
+ 引数を指定しない場合、スタック プローブが既定に従って処理されます。 このプラグマは、プラグマの後で定義されている最初の関数に対して効果があります。 スタック プローブは、マクロの一部でも、インラインで生成される関数の一部でもありません。  
   
- **check\_stack** プラグマの引数を指定しない場合、スタック チェックは、コマンド ラインで指定する動作に戻ります。  詳細については、「[コンパイラ リファレンス](../build/reference/compiler-options.md)」を参照してください。  **\#pragma check\_stack** と [\/Gs](../build/reference/gs-control-stack-checking-calls.md) オプションの相互作用を次の表に示します。  
+ 引数を指定しない場合、 **check_stack**プラグマによって、スタック チェックは、コマンドラインで指定する動作に戻ります。 詳細については、次を参照してください。[バージョン 4.1 コンパイラ リファレンス](../build/reference/compiler-options.md)です。 相互作用、 **#pragma check_stack**と[/Gs](../build/reference/gs-control-stack-checking-calls.md)オプションが次の表に示します。  
   
-### check\_stack プラグマの使用  
+### <a name="using-the-checkstack-pragma"></a>check_stack プラグマの使用  
   
-|構文|コンパイルで<br /><br /> \/Gs オプションを使用?|アクション|  
-|--------|-------------------------------|-----------|  
-|**\#pragma check\_stack\( \)** または<br /><br /> **\#pragma check\_stack**|○|後続の関数のスタック チェックをオフにします|  
-|**\#pragma check\_stack\( \)** または<br /><br /> **\#pragma check\_stack**|Ｘ|後続の関数のスタック チェックをオンにします|  
-|**\#pragma check\_stack\(on\)**<br /><br /> または **\#pragma check\_stack \+**|Yes または No|後続の関数のスタック チェックをオンにします|  
-|**\#pragma check\_stack\(off\)**<br /><br /> または **\#pragma check\_stack –**|Yes または No|後続の関数のスタック チェックをオフにします|  
+|構文|コンパイルで<br /><br /> /Gs オプションを使用?|アクション|  
+|------------|------------------------------------|------------|  
+|**#pragma check_stack ()**または<br /><br /> **#pragma check_stack**|[はい]|後続の関数のスタック チェックをオフにします|  
+|**#pragma check_stack ()**または<br /><br /> **#pragma check_stack**|×|後続の関数のスタック チェックをオンにします|  
+|**#pragma check_stack(on)**<br /><br /> または**#pragma check_stack +**|Yes または No|後続の関数のスタック チェックをオンにします|  
+|**#pragma check_stack(off)**<br /><br /> または**#pragma check_stack -**|Yes または No|後続の関数のスタック チェックをオフにします|  
   
-## 参照  
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+## <a name="see-also"></a>参照  
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

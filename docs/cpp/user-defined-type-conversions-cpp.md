@@ -4,14 +4,11 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords:
-- explicit_cpp
-dev_langs:
-- C++
+f1_keywords: explicit_cpp
+dev_langs: C++
 helpviewer_keywords:
 - constructors [C++], and constants
 - conversion functions [C++]
@@ -31,16 +28,16 @@ helpviewer_keywords:
 - conversions [C++], by constructors
 - data type conversion [C++], explicit
 ms.assetid: d40e4310-a190-4e95-a34c-22c5c20aa0b9
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 778c5a659755b5c79f79e9b846441c3e0665995e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 561730527a215d5314f7239affc764d9f5925f67
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="user-defined-type-conversions-c"></a>ユーザー定義型の変換 (C++)
 A*変換*値、別の種類のいくつかの型の新しい値を生成します。 *標準変換*、組み込み型できますを作成して、C++ 言語とサポートに組み込まれて*ユーザー定義の変換*から、またはユーザー定義型の間で変換を実行します。  
@@ -234,4 +231,3 @@ void display_balance(const Money balance)
   
  ここで、変換関数 `operator double` は明示的で、`double` 型への明示的なキャストが関数 `display_balance` に導入され、変換を実行します。 このキャストを省略すると、コンパイラは `<<` 型に対する適切なストリーム挿入演算子 `Money` を特定できず、エラーが発生します。  
   
-

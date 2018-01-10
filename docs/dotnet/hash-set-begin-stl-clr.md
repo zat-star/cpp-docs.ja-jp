@@ -1,41 +1,42 @@
 ---
-title: "hash_set::begin (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_set::begin"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "begin メンバー [STL/CLR]"
+title: "hash_set::begin (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_set::begin
+dev_langs: C++
+helpviewer_keywords: begin member [STL/CLR]
 ms.assetid: 1bd02b6b-0e24-4f42-ad13-fd7776f7f811
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: dcd2f8d4c414ea613d7728a32ce899cae78e7e51
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_set::begin (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashsetbegin-stlclr"></a>hash_set::begin (STL/CLR)
 被制御シーケンスの先頭を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 iterator begin();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスの最初の要素を指定するか、返します空のシーケンスの末尾を超えて双方向の反復子を返します。  これを使用して被制御シーケンスの現在の先頭 \(`current`\) を指定する反復子を取得しますが、このステータスは被制御シーケンスの長さが変わると変化することがあります。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数では、または空のシーケンスの最後を越えたところ、被制御シーケンスの最初の要素を指定する双方向反復子を返します。 指定する反復子を取得するために使用、`current`被制御シーケンスの長さが変更された場合は、被制御シーケンスが、そのステータスの先頭を変更できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_set_begin.cpp   
@@ -64,14 +65,17 @@ int main()
   
 ```  
   
-  **b c**  
-**\*begin\(\) \= a**  
-**\*\+\+begin\(\) \= b**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+ a b c  
+*begin() = a  
+*++begin() = b  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_set](../dotnet/hash-set-stl-clr.md)   
- [hash\_set::end](../dotnet/hash-set-end-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)   
+ [hash_set::end (STL/CLR)](../dotnet/hash-set-end-stl-clr.md)

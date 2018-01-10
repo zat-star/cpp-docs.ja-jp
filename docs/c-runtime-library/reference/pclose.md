@@ -34,11 +34,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 13609bbe4dae9b493b8467fd0ac9fe7d1437fa83
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b8edad860ffcfb03043f03299d0d722c1b435b6d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pclose"></a>_pclose
 新しいコマンド プロセッサを待機し、関連するパイプのストリームを閉じます。  
@@ -67,18 +68,18 @@ FILE *stream
 ## <a name="remarks"></a>コメント  
  `_pclose` 関数は、関連する `_popen` の呼び出しによって開始されたコマンド プロセッサ (Cmd.exe) のプロセス ID を検索し、新しいコマンド プロセッサの [_cwait](../../c-runtime-library/reference/cwait.md) の呼び出しを実行して関連するパイプのストリームを閉じます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_pclose`|\<stdio.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [_pipe](../../c-runtime-library/reference/pipe.md)   
  [_popen、_wpopen](../../c-runtime-library/reference/popen-wpopen.md)

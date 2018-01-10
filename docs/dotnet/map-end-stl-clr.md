@@ -1,41 +1,42 @@
 ---
-title: "map::end (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::map::end"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "end メンバー [STL/CLR]"
+title: "map::end (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::map::end
+dev_langs: C++
+helpviewer_keywords: end member [STL/CLR]
 ms.assetid: 547a34f0-af66-45be-9b55-1e60ab3a1d6e
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 12ab437f1916816255fa387328d0cbe834481bef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# map::end (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="mapend-stlclr"></a>map::end (STL/CLR)
 被制御シーケンスの末尾を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 iterator end();  
 ```  
   
-## 解説  
- このメンバー関数は、双方向の反復子は、被制御シーケンスの末尾を指し示す前方反復子を返します。  被制御シーケンスの末尾を指定する反復子を取得するために使用します。; 被制御シーケンスの長さを変更すると、状態の doesn のない変更。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスの最後の位置を指し示す双方向反復子を返します。 被制御シーケンスの末尾を指定する反復子を取得するのにために使用します。その状態は、被制御シーケンスの長さが変更された場合は変更されません。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_map_end.cpp   
@@ -69,11 +70,11 @@ int main()
   
 ```  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [マップ](../dotnet/map-stl-clr.md)   
- [map::begin](../dotnet/map-begin-stl-clr.md)
+## <a name="see-also"></a>参照  
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [map::begin (STL/CLR)](../dotnet/map-begin-stl-clr.md)

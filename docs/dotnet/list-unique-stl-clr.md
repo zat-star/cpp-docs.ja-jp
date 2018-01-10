@@ -1,32 +1,33 @@
 ---
-title: "list::unique (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::list::unique"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "unique メンバー [STL/CLR]"
+title: "list::unique (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::list::unique
+dev_langs: C++
+helpviewer_keywords: unique member [STL/CLR]
 ms.assetid: c3a29e4e-0ec1-4472-b050-7a9511037132
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 056f15dc0e7808a7f0ada7267a60e13d4c75d83b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# list::unique (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="listunique-stlclr"></a>list::unique (STL/CLR)
 指定されたテストに合格した隣接する要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void unique();  
@@ -34,16 +35,16 @@ template<typename Pred2>
     void unique(Pred2 pred);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  pred  
  要素のペアの比較子。  
   
-## 解説  
- 一つ目のメンバー関数は、被制御シーケンス \(消去\) の直前の要素に等しいするすべての要素を削除します。。要素が `X` 要素 `Y` と `X == Y`を指定し、メンバー関数は `Y`を削除します。  等号を比較する隣接する要素のすべてのサブシーケンスの 1 枚のコピーを除くすべてを削除するときに使用します。  、メンバー関数のリーフ固有の値を持つ要素を被制御シーケンスが [list::sort](../dotnet/list-sort-stl-clr.md)`()`を呼び出すなど、Orders されることに注意してください。\(したがって、名前\)。  
+## <a name="remarks"></a>コメント  
+ 最初のメンバー関数は、被制御シーケンス (消去) から削除を比較するすべての要素に一致する直前の要素--場合要素`X`要素の前に`Y`と`X == Y`、メンバー関数は削除`Y`です。 使用する、隣接する要素のすべてのサブシーケンスのすべてが 1 つのコピーを削除するのにその比較結果が同じです。 されている場合、被制御シーケンスが順序付けなどの呼び出しによって[list::sort (STL/CLR)](../dotnet/list-sort-stl-clr.md)`()`、メンバー関数は、一意の値を持つ要素のみのままにします。 (ターミナル メソッドという名前なのはそのためです)。  
   
- 2 つ目のメンバー関数は、まず 1 番目と同様に動作します。ただし、`pred``(X, Y)`要素 `X` 以降の各要素 `Y` を削除します。  述語関数を満たす利用するかを指定できる点を委任し、隣接する要素のすべてのサブシーケンスの 1 枚のコピーを除くすべてを削除するために。  、メンバー関数のリーフの他の要素に並べる等価がない要素のみ被制御シーケンスが `sort(``pred``)`を呼び出すなど、Orders されることに注意してください。  
+ 2 番目のメンバー関数と同様、最初の各要素を削除する点を除いて`Y`次の要素`X`を`pred(X, Y)`です。 述語関数または指定したデリゲートを満たす隣接する要素のすべてのサブシーケンスのすべてが 1 つのコピーを削除するのに使用するとします。 されている場合、被制御シーケンスが順序付けなどの呼び出しによって`sort(pred)`、メンバー関数と同じ順序付け、他の要素がない要素のみのままにします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_list_unique.cpp   
@@ -81,16 +82,19 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**  
- **a**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/リスト\>  
+```Output  
+a a b c  
+a b c  
+a a  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/一覧 >  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)   
- [list::remove](../dotnet/list-remove-stl-clr.md)   
- [list::remove\_if](../dotnet/list-remove-if-stl-clr.md)   
- [list::sort](../dotnet/list-sort-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [list::remove (STL/CLR)](../dotnet/list-remove-stl-clr.md)   
+ [list::remove_if (STL/CLR)](../dotnet/list-remove-if-stl-clr.md)   
+ [list::sort (STL/CLR)](../dotnet/list-sort-stl-clr.md)

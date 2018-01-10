@@ -1,41 +1,42 @@
 ---
-title: "stack::push (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stack::push"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "push メンバー [STL/CLR]"
+title: "stack::push (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::stack::push
+dev_langs: C++
+helpviewer_keywords: push member [STL/CLR]
 ms.assetid: 60e5b076-c80f-4af0-a018-62cda7e081db
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0ce5d9faba3e9dfd7e92cf603f9f6cb9b5f46486
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# stack::push (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="stackpush-stlclr"></a>stack::push (STL/CLR)
 新しい最後の要素を追加します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void push(value_type val);  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスの末尾に値 `val` 要素を挿入します。  スタックに別の要素を付けるために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、値を持つ要素を挿入します。`val`被制御シーケンスの最後にします。 使用する別の要素をスタックに追加します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_stack_push.cpp   
@@ -59,12 +60,15 @@ int main()
   
 ```  
   
-  **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext とスタック\>  
+```Output  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/stack >  
   
-## 参照  
- [スタック](../dotnet/stack-stl-clr.md)   
- [stack::pop](../Topic/stack::pop%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [stack::pop (STL/CLR)](../dotnet/stack-pop-stl-clr.md)

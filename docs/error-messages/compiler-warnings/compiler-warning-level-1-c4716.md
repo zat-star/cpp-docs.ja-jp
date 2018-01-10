@@ -1,40 +1,39 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4716 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4716"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4716"
+title: "コンパイラの警告 (レベル 1) C4716 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4716
+dev_langs: C++
+helpviewer_keywords: C4716
 ms.assetid: d95ecfe5-870f-461f-a746-7913af98414b
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: a1d9d1e91656e464a5af809f1559eddba5da3291
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4716
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'function' : 関数には戻り値が必要です。  
+# <a name="compiler-warning-level-1-c4716"></a>コンパイラの警告 (レベル 1) C4716
+'function': 値を返さなければいけません  
   
- 指定された関数は値を返しませんでした。  
+ 指定された関数は、値を返しませんでした。  
   
- 関数の戻り値の型が void の場合だけ、戻り値を伴わない return コマンドを使用できます。  
+ Void の戻り値の型にのみ機能は、戻り値なしの戻り値のコマンドを使用します。  
   
- この関数を呼び出すと、未定義の値が返されます。  
+ この関数が呼び出されると、未定義の値が返されます。  
   
- この警告は、自動的にエラーになります。  この動作を変更する場合は、[warning](../../preprocessor/warning.md) を使用します。  
+ この警告は、自動的にエラーになります。 この動作を変更する場合は、使用[#pragma 警告](../../preprocessor/warning.md)です。  
   
- 次の例では警告 C4716 が生成されます。  
+ 次の例では、C4716 が生成されます。  
   
 ```  
 // C4716.cpp  

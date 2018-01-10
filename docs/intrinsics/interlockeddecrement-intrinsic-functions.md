@@ -55,11 +55,12 @@ caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 53ff88665394e7333c2ced65117fbaacd17ba602
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8e1ade673c13ed69912ddadc5f6a4d75e7a8e0a9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="interlockeddecrement-intrinsic-functions"></a>_InterlockedDecrement の組み込み関数
 **Microsoft 固有の仕様**  
@@ -114,7 +115,7 @@ __int64 _InterlockedDecrement64_nf(
 ## <a name="return-value"></a>戻り値  
  戻り値は、デクリメントして生成された値です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -202,7 +203,7 @@ void __cdecl SimpleThread(void* pParam) {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [x86 コンパイラとの競合](../build/conflicts-with-the-x86-compiler.md)

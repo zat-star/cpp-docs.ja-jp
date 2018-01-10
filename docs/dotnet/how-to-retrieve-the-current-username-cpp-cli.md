@@ -17,11 +17,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c4738c829f346126dfed7990c50186a7c267df1a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f1532647327c039994a1d09ee8b7eacc2c341f88
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-retrieve-the-current-username-ccli"></a>方法: 現在のユーザー名を取得する (C++/CLI)
 次のコード例では、現在のユーザー名 (Windows にログオンしたユーザーの名前) の取得を示します。 格納されて、名前、<xref:System.Environment.UserName%2A>で定義されている文字列を<xref:System.Environment>名前空間。  
@@ -40,6 +43,6 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows の操作 (C + + CLI)](../dotnet/windows-operations-cpp-cli.md)   
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

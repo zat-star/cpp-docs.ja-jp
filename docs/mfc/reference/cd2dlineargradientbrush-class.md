@@ -41,11 +41,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5f763c2abb919e8f65c7c386ae40a52a54fe0fa0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 19c060c846d8dfd12a8b783f0b01153c9a424cfe
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2dlineargradientbrush-class"></a>CD2DLinearGradientBrush クラス
 ID2D1LinearGradientBrush のラッパーです。  
@@ -87,7 +88,7 @@ class CD2DLinearGradientBrush : public CD2DGradientBrush;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CD2DLinearGradientBrush::m_LinearGradientBrushProperties](#m_lineargradientbrushproperties)|開始およびグラデーションの終点。|  
 |[CD2DLinearGradientBrush::m_pLinearGradientBrush](#m_plineargradientbrush)|ID2D1LinearGradientBrush へのポインター。|  
@@ -103,7 +104,7 @@ class CD2DLinearGradientBrush : public CD2DGradientBrush;
   
  `CD2DLinearGradientBrush`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="_dtorcd2dlineargradientbrush"></a>CD2DLinearGradientBrush:: ~ CD2DLinearGradientBrush  
@@ -271,5 +272,5 @@ void SetStartPoint(CD2DPointF point);
  `point`  
  ブラシの座標空間内の線形グラデーションの起点の 2 次元座標  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

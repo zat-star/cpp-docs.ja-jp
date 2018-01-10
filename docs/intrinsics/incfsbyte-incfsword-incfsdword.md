@@ -1,41 +1,42 @@
 ---
-title: "__incfsbyte、__incfsword、__incfsdword | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__incfsword"
-  - "__incfsbyte_cpp"
-  - "__incfsbyte"
-  - "__incfsdword"
-  - "__incfsword_cpp"
-  - "__incfsdword_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__incfsword 組み込み"
-  - "__incfsdword 組み込み"
-  - "__incfsbyte 組み込み"
+title: "_ _incfsbyte、_ _incfsword、_ _incfsdword |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- __incfsword
+- __incfsbyte_cpp
+- __incfsbyte
+- __incfsdword
+- __incfsword_cpp
+- __incfsdword_cpp
+dev_langs: C++
+helpviewer_keywords:
+- __incfsword intrinsic
+- __incfsdword intrinsic
+- __incfsbyte intrinsic
 ms.assetid: 820457fb-e35e-42d3-bcb6-725da3281c64
-caps.latest.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 541d92916c6a093d6eb8a60c30f5355f74a3b3c4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# __incfsbyte、__incfsword、__incfsdword
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="incfsbyte-incfsword-incfsdword"></a>__incfsbyte、__incfsword、__incfsdword
+**Microsoft 固有の仕様**  
   
- `FS` セグメントの先頭を基準としたオフセットが指定したメモリ位置に値に 1 を加算します。  
+ 先頭の相対オフセットで指定されたメモリ位置に追加する値を 1 つ、`FS`セグメント。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void __incfsbyte(   
@@ -49,25 +50,25 @@ void __incfsdword(
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `Offset`  
- `FS` の先頭からのオフセット。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `Offset`  
+ 先頭からのオフセット`FS`です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
+|---------------|------------------|  
 |`__incfsbyte`|x86|  
 |`__incfsword`|x86|  
 |`__incfsdword`|x86|  
   
-## 解説  
- これらの組み込みはカーネル モードでのみ使用できルーチンは組み込みとしてのみ使用できます。  
+## <a name="remarks"></a>コメント  
+ これらの組み込みはカーネル モードで使用可能なのみと、ルーチンは、組み込みとしてのみです。  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_\_addfsbyte、\_\_addfsword、\_\_addfsdword](../intrinsics/addfsbyte-addfsword-addfsdword.md)   
- [\_\_readfsbyte、\_\_readfsdword、\_\_readfsqword、\_\_readfsword](../intrinsics/readfsbyte-readfsdword-readfsqword-readfsword.md)   
- [\_\_writefsbyte、\_\_writefsdword、\_\_writefsqword、\_\_writefsword](../intrinsics/writefsbyte-writefsdword-writefsqword-writefsword.md)   
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+## <a name="see-also"></a>参照  
+ [_ _addfsbyte、 \__addfsword、 \__addfsdword](../intrinsics/addfsbyte-addfsword-addfsdword.md)   
+ [_ _readfsbyte、 \__readfsdword、 \__readfsqword、 \__readfsword](../intrinsics/readfsbyte-readfsdword-readfsqword-readfsword.md)   
+ [_ _writefsbyte、 \__writefsdword、 \__writefsqword、 \__writefsword](../intrinsics/writefsbyte-writefsdword-writefsqword-writefsword.md)   
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

@@ -22,11 +22,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1489fa4ec75b94c9daad7216a28599c6ef67e5a5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5ebcd6e484385ada3cd3d5ccfe450e7e25f539eb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="managing-mdi-child-windows"></a>MDI 子ウィンドウの管理
 MDI メイン フレーム ウィンドウ (アプリケーションごとに 1 つ) と呼ばれる特殊な子ウィンドウが含まれて、 **MDICLIENT**ウィンドウです。 **MDICLIENT**ウィンドウがメイン フレーム ウィンドウのクライアント領域を管理し、それ自体の子ウィンドウを持つ: から派生して、ドキュメント ウィンドウ`CMDIChildWnd`します。 ドキュメント ウィンドウは、フレーム ウィンドウ自体 (MDI 子ウィンドウ) であるため、独自の子こともできます。 これらすべての場合は、親ウィンドウは、その子ウィンドウを管理し、いくつかのコマンドを転送します。  
@@ -44,6 +45,6 @@ MDI フレーム ウィンドウと子ウィンドウ
   
 -   [フレーム ウィンドウ スタイル](../mfc/frame-window-styles-cpp.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレーム ウィンドウの使用](../mfc/using-frame-windows.md)
 

@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b0a22b1918f255290ae6b47604aa57ef484a9527
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0af7fa5a0bc78043e0eac204255f30ab1b9672c5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlexception-class"></a>CAtlException クラス
 このクラスは、ATL の例外を定義します。  
@@ -59,7 +60,7 @@ class CAtlException
   
  一般が呼び出す`AtlThrow`を作成するのではなく、`CAtlException`オブジェクトに直接です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlexcept.h  
   
 ##  <a name="catlexception"></a>CAtlException::CAtlException  
@@ -91,6 +92,6 @@ HRESULT m_hr;
 ### <a name="remarks"></a>コメント  
  エラー状態を格納するデータ メンバーです。 HRESULT 値は、コンス トラクターによって設定[CAtlException::CAtlException](#catlexception)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AtlThrow](debugging-and-error-reporting-global-functions.md#atlthrow)   
  [クラスの概要](../../atl/atl-class-overview.md)

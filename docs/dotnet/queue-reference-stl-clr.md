@@ -1,41 +1,42 @@
 ---
-title: "queue::reference (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::queue::reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "reference メンバー [STL/CLR]"
+title: "queue::reference (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::queue::reference
+dev_langs: C++
+helpviewer_keywords: reference member [STL/CLR]
 ms.assetid: cca05237-5b95-4cca-ac21-b786aa8a3c96
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 31768af422052ca9d565a80620d8eb339904590a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# queue::reference (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="queuereference-stlclr"></a>queue::reference (STL/CLR)
 要素への参照の型です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef value_type% reference;  
 ```  
   
-## 解説  
- 型は要素への参照を表します。  
+## <a name="remarks"></a>コメント  
+ この型は、要素への参照を表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_queue_reference.cpp   
@@ -66,14 +67,17 @@ int main()
   
 ```  
   
-  **b c**  
- **b X**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+a b c  
+a b x  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [queue::const\_reference](../dotnet/queue-const-reference-stl-clr.md)   
- [queue::value\_type](../dotnet/queue-value-type-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [queue::const_reference (STL/CLR)](../dotnet/queue-const-reference-stl-clr.md)   
+ [queue::value_type (STL/CLR)](../dotnet/queue-value-type-stl-clr.md)

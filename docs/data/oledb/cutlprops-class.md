@@ -1,64 +1,65 @@
 ---
-title: "CUtlProps クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CUtlProps"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CUtlProps クラス"
+title: "CUtlProps クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: CUtlProps
+dev_langs: C++
+helpviewer_keywords: CUtlProps class
 ms.assetid: bb525178-765c-4e23-a110-c0fd70c05437
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 75e92f48729d0aae9f85cc7b7c5c97e4778f96a7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CUtlProps クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-さまざまな OLE DB インターフェイスのプロパティのプロパティを実装します \(たとえば、`IDBProperties`、`IDBProperties`と `IRowsetInfo`\)。  
+# <a name="cutlprops-class"></a>CUtlProps クラス
+プロパティの OLE DB インターフェイスのさまざまなプロパティを実装する (たとえば、 `IDBProperties`、 `IDBProperties`、および`IRowsetInfo`)。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template < class T >  
 class ATL_NO_VTABLE CUtlProps : public CUtlPropsBase  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- `BEGIN_PROPSET_MAP`を含むクラスです。  
+ クラスを含む、`BEGIN_PROPSET_MAP`です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### メソッド  
+### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
-|[GetPropValue](../Topic/CUtlProps::GetPropValue.md)|プロパティ セットからプロパティを取得します。|  
-|[IsValidValue](../../data/oledb/cutlprops-isvalidvalue.md)|プロパティを設定する前に値を検証するために使用します。|  
-|[OnInterfaceRequested](../../data/oledb/cutlprops-oninterfacerequested.md)|コンシューマーがオブジェクト作成インターフェイスのメソッドを呼び出すときに、省略可能なインターフェイスの要求。|  
-|[OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md)|ハンドルへのプロパティを設定するというプロパティを連結します。|  
+|[GetPropValue](../../data/oledb/cutlprops-getpropvalue.md)|プロパティのセットからプロパティを取得します。|  
+|[IsValidValue](../../data/oledb/cutlprops-isvalidvalue.md)|プロパティを設定する前に、値を検証するために使用します。|  
+|[OnInterfaceRequested](../../data/oledb/cutlprops-oninterfacerequested.md)|コンシューマーは、オブジェクト作成インターフェイスのメソッドを呼び出すときは、省略可能なインターフェイスの要求を処理します。|  
+|[OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md)|チェーンされたプロパティを処理するプロパティを設定した後に呼び出されます。|  
 |[SetPropValue](../../data/oledb/cutlprops-setpropvalue.md)|プロパティ セットのプロパティを設定します。|  
   
-## 解説  
- このクラスのほとんどは実装の詳細になります。  
+## <a name="remarks"></a>コメント  
+ このクラスのほとんどは、実装の詳細です。  
   
- `CUtlProps` は、プロパティを設定するためのメンバーが 2 つ内部的に含まれます: [GetPropValue](../Topic/CUtlProps::GetPropValue.md) と [SetPropValue](../../data/oledb/cutlprops-setpropvalue.md)。  
+ `CUtlProps`内部的にプロパティを設定するための 2 つのメンバーが含まれています: [GetPropValue](../../data/oledb/cutlprops-getpropvalue.md)と[SetPropValue](../../data/oledb/cutlprops-setpropvalue.md)です。  
   
- プロパティ セット マップに使用されるマクロの詳細については [BEGIN\_PROPSET\_MAP](../Topic/BEGIN_PROPSET_MAP.md) と [END\_PROPSET\_MAP](../../data/oledb/end-propset-map.md)を参照します。  
+ プロパティ セットのマップで使用されるマクロの詳細については、次を参照してください。 [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md)と[END_PROPSET_MAP](../../data/oledb/end-propset-map.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)

@@ -131,11 +131,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c6cfe4dc779fb4ad50f2171ef8811785f48275a9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: dad4a2bb3da49b0163367761aeefe85384ecdfb2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdocument-class"></a>CDocument クラス
 ユーザーが定義するドキュメント クラスの基本機能が用意されています。  
@@ -259,7 +260,7 @@ class CDocument : public CCmdTarget
   
  `CDocument`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="addview"></a>CDocument::AddView  
@@ -667,7 +668,7 @@ virtual void OnDocumentEvent(DocumentEvent deEvent);
   
  次の表に、可能な値`deEvent`しに対応するイベントです。  
   
-|値|対応するイベント|  
+|[値]|対応するイベント|  
 |-----------|-------------------------|  
 |`onAfterNewDocument`|新しいドキュメントが作成されました。|  
 |`onAfterOpenDocument`|新しいドキュメントが開かれました。|  
@@ -1115,7 +1116,7 @@ void UpdateAllViews(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#64](../../mfc/codesnippet/cpp/cdocument-class_9.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプルは](../../visual-cpp-samples.md)   
  [MFC サンプル SNAPVW](../../visual-cpp-samples.md)   
  [MFC サンプル NPP](../../visual-cpp-samples.md)   

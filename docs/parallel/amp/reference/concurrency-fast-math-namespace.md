@@ -4,39 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- amp_math/Concurrency::fast_math
-dev_langs:
-- C++
+f1_keywords: amp_math/Concurrency::fast_math
+dev_langs: C++
 ms.assetid: 54fed939-9902-49db-9f29-e98fd9821508
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: d8a94b0911b772f4972416722757bec24a4826ed
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 047eee60eb409e86d77faf6f637a88a56f271094
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="concurrencyfastmath-namespace"></a>Concurrency::fast_math 名前空間
 `fast_math` 名前空間の関数は精度が低く、単精度 (`float`) のみをサポートし、DirectX の組み込み関数を呼び出します。 各関数には、2 種類のバージョン (たとえば、`cos` と `cosf`) があります。 どちらのバージョンも `float` を受け取り、返しますが、それぞれの DirectX の同じ組み込み関数を呼び出します。  
@@ -119,11 +102,10 @@ namespace fast_math;
 |[trunc](concurrency-fast-math-namespace-functions.md#trunc)|引数を整数コンポーネントに切り捨てます。|  
 |[truncf](concurrency-fast-math-namespace-functions.md#truncf)|引数を整数コンポーネントに切り捨てます。|  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_math.h  
   
  **Namespace:** concurrency::fast_math  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
-

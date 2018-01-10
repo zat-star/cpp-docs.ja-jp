@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4de0ac69733bee42d4102edf345f69be2e5fea3f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 582afec1c2d6401aee107a2e20cc04ef943254ac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="openmp-clauses"></a>OpenMP 句
 OpenMP API で使用される句へのリンクを提供します。  
@@ -40,6 +41,6 @@ OpenMP API で使用される句へのリンクを提供します。
 |[schedule](../../../parallel/openmp/reference/schedule.md)|適用されます、[の](../../../parallel/openmp/reference/for-openmp.md)ディレクティブです。|  
 |[共有](../../../parallel/openmp/reference/shared-openmp.md)|すべてのスレッド間で 1 つまたは複数の変数を共有する必要がありますを指定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OpenMP](../../../parallel/openmp/openmp-in-visual-cpp.md)   
  [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7e4417fc2d4714a249b04bb0c1d04e5642495835
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8117d175d59859c97a360ca6a6d2af559b403e32
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dialog-boxes"></a>ダイアログ ボックス
 Windows アプリケーションの頻繁にユーザーとの通信ダイアログ ボックスを使用します。 クラス[CDialog](../mfc/reference/cdialog-class.md)  ダイアログ ボックスを管理するには、Visual C ダイアログ エディター簡単にダイアログ ボックスを設計およびそのダイアログ テンプレート リソースを作成して、コード ウィザードの初期化処理を簡略化のインターフェイスを提供し、検証コントロール ダイアログ ボックスでは、ユーザーが入力した値を収集しています。  
@@ -74,5 +75,5 @@ Windows アプリケーションの頻繁にユーザーとの通信ダイアロ
   
 -   [サンプル](../mfc/dialog-sample-list.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b3fa561d28ec402e631833310cdd76ecf41beef0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0359a6cbbb1f646432b03722cdf4ba3010cffa72
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="parameter-passing"></a>パラメーターの引き渡し
 最初の 4 つの整数引数は、レジスタに渡されます。 整数値は、RCX、RDX、R8、R9 で (左右からの順序) で渡されます。 引数 5 以上、スタックに渡されます。 すべての引数はレジスタ内で右揃えがします。 場合、呼び出し先は、レジスタの上位ビットを無視できますので、これを行う必要があり、レジスタの必要な部分のみアクセスできます。  
@@ -68,5 +69,5 @@ func4(__m64 a, _m128 b, struct c, float d);
 // a in RCX, ptr to b in RDX, ptr to c in R8, d in XMM3  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [呼び出し規則](../build/calling-convention.md)

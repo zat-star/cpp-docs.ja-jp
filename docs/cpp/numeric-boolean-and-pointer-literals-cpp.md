@@ -4,32 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - literals, C++
 - constants, literals
 - literals [C++]
 ms.assetid: 17c09fc3-3ad7-47e2-8b48-ba8ae994edc8
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 5c4a9a7aca2f11956e0ba47cced37a86733dcce8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 91f79a2703dee8a162b971a78eba7e13a9849b43
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="numeric-boolean-and-pointer-literals--c"></a>数値、ブール値、およびポインターのリテラル (C++)
 リテラルとは、値を直接に表すプログラム要素です。 ここでは、整数型、浮動小数点型、ブール値型、およびポインター型のリテラルについて説明します。 文字列リテラルおよび文字リテラルについては、次を参照してください。[文字列と文字リテラル (C++)](../cpp/string-and-character-literals-cpp.md)です。 これらのカテゴリのいずれかに基づく独自のリテラルを定義することもできます。詳細については、次を参照してください[ユーザー定義リテラル (C++)。](../cpp/user-defined-literals-cpp.md)  
   
- 」を参照してください。 リテラルは多様なコンテキストで使用できますが、最も一般的な用途は、名前付きの変数を初期化することと、関数に引数を渡すことです。  
+ である必要があります。 リテラルは多様なコンテキストで使用できますが、最も一般的な用途は、名前付きの変数を初期化することと、関数に引数を渡すことです。  
   
 ```  
 const int answer = 42; // integer literal  
@@ -116,7 +114,7 @@ long long i = 24'847'458'121
 void func( double );  
 ```  
   
- および  
+ と、呼び出し  
   
 ```  
 void func( long double );  
@@ -148,7 +146,7 @@ if (num < 100)
   
  前の例では、"MAXIMUM_ERROR_THRESHOLD"など、明確な意味を伝達する名前付き定数を使用する方がよい場合があります。 戻り値の "Success" がエンドユーザーに表示される場合は、ファイルの 1 つの場所に格納でき他の言語にローカライズできる名前付き文字列定数を使用する方がよい場合があります。 名前付き定数を使用すると、他のユーザーにとってもコードの意図が理解しやすくなります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構文規則](../cpp/lexical-conventions.md)   
  [C++ 文字列リテラル](../cpp/string-and-character-literals-cpp.md)   
  [C++ ユーザー定義リテラル](../cpp/user-defined-literals-cpp.md)

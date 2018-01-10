@@ -18,11 +18,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 76fc842626890f48b641a495567338404330d8d4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3112c092a4e1d6eb970fb50153c543baa98ee853
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dispatch-maps"></a>ディスパッチ マップ
 OLE オートメーションでは、メソッドを呼び出すと、アプリケーション間でプロパティにアクセスする方法を提供します。 これらの要求をディスパッチするためには、Microsoft Foundation Class ライブラリによって提供されるメカニズムは、「ディスパッチ マップ」オブジェクトの関数とプロパティ、およびプロパティ自体のデータ型の内部および外部の名前を指定します。関数の引数。  
@@ -59,7 +60,7 @@ DECLARE_DISPATCH_MAP()
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCAutomation#10](../../mfc/codesnippet/cpp/dispatch-maps_1.h)]  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
 
 ##  <a name="begin_dispatch_map"></a>BEGIN_DISPATCH_MAP  
@@ -79,7 +80,7 @@ BEGIN_DISPATCH_MAP(theClass, baseClass)
 ### <a name="remarks"></a>コメント  
  クラスのメンバー関数を定義する実装 (.cpp) ファイルでのディスパッチ マップを開始、`BEGIN_DISPATCH_MAP`マクロ、ディスパッチ関数とプロパティの各マクロ エントリの追加を行いでディスパッチ マップ、 `END_DISPATCH_MAP`マクロです。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
 
 ##  <a name="end_dispatch_map"></a>END_DISPATCH_MAP  
@@ -92,7 +93,7 @@ END_DISPATCH_MAP()
 ### <a name="remarks"></a>コメント  
  組み合わせて使用する必要があります`BEGIN_DISPATCH_MAP`です。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
 
 ##  <a name="disp_function"></a>DISP_FUNCTION  
@@ -142,7 +143,7 @@ DISP_FUNCTION(
 |**VT_VARIANT**|**バリアント**|  
 |**VT_UNKNOWN**|`LPUNKNOWN`|  
   
- `vtsParams`引数がスペースで区切られた一連の値から、 **vts _**定数。 1 つ以上のスペース (コンマではない) で区切られたこれらの値は、関数のパラメーター リストを指定します。 次に例を示します。 
+ `vtsParams`引数がスペースで区切られた一連の値から、 **vts _**定数。 1 つ以上のスペース (コンマではない) で区切られたこれらの値は、関数のパラメーター リストを指定します。 たとえば、オブジェクトに適用された 
   
  [!code-cpp[NVC_MFCAutomation#14](../../mfc/codesnippet/cpp/dispatch-maps_2.cpp)]  
   
@@ -178,7 +179,7 @@ DISP_FUNCTION(
 |**VTS_PUNKNOWN**|**LPUNKNOWN\***|  
 |**VTS_NONE**|パラメーターなし|  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h 
 
 ##  <a name="disp_property"></a>DISP_PROPERTY  
@@ -225,7 +226,7 @@ DISP_PROPERTY(
   
  外部のクライアントで、プロパティで指定されたメンバー変数の値が変更されたとき`memberName`変更; 変更の通知は示されません。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h 
 
 ##  <a name="disp_property_ex"></a>DISP_PROPERTY_EX  
@@ -261,7 +262,7 @@ DISP_PROPERTY_EX(
   
  `vtPropType`引数の型が**VARTYPE**です。 この引数に指定できる値はから取得、`VARENUM`列挙します。 これらの値の一覧は、「解説」を参照してください、`vtRetVal`パラメーター [DISP_FUNCTION](#disp_function)です。 なお`VT_EMPTY`に一覧されている、 `DISP_FUNCTION` remarks、プロパティのデータ型としては許可されていません。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h 
 
 ##  <a name="disp_property_notify"></a>DISP_PROPERTY_NOTIFY  
@@ -312,7 +313,7 @@ DISP_PROPERTY_NOTIFY(
 |**VT_VARIANT**|**バリアント**|  
 |**VT_UNKNOWN**|`LPUNKNOWN`|  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h 
 
 ##  <a name="disp_property_param"></a>DISP_PROPERTY_PARAM  
@@ -367,7 +368,7 @@ DISP_PROPERTY_PARAM(
   
  [!code-cpp[NVC_MFCActiveXControl#12](../../mfc/codesnippet/cpp/dispatch-maps_6.cpp)]  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h 
 
 ##  <a name="disp_defvalue"></a>DISP_DEFVALUE  
@@ -389,8 +390,8 @@ DISP_DEFVALUE(theClass, pszName)
   
  オブジェクトの「既定値」では、取得またはオブジェクトへの参照が、プロパティまたはメンバー関数を指定しない場合に設定されているプロパティです。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h 
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

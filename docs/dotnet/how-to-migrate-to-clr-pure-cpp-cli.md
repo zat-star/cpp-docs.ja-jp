@@ -17,11 +17,14 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ebff4ae1ac304ee0af073de49f4ee988922247d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: b8d49ee233167c02570408ba091c2a99b78487d5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-migrate-to-clrpure-ccli"></a>方法: /clr:pure に移行する (C++/CLI)
 純粋 MSIL を使用してに移行するときに発生する可能性がある問題について説明**/clr: 純粋な**(を参照してください[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)詳細については)。 このトピックでは、移行中のコードが現在を使用して混在のアセンブリとしてコンパイルを前提としています、 **/clr**オプション、純粋 MSIL にアンマネージ コードからの移行パスは、直接的ではありません。 アンマネージ コードは、次を参照してください。[する方法:/clr:pure に移行](../dotnet/how-to-migrate-to-clr.md)純粋 MSIL に移行する前にします。  
@@ -54,5 +57,5 @@ ms.lasthandoff: 10/24/2017
 ## <a name="linking-limitations"></a>リンクに関する制限事項  
  Visual C リンカーはしません混合、純粋なの OBJ ファイルにリンクするように、記憶域のスコープと呼び出し規約が異なる。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [純粋なコードと検証可能なコード (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)

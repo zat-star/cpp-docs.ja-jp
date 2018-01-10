@@ -91,11 +91,12 @@ caps.latest.revision: "35"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f27516bc2cd878bb0886133e7c27099c03ff5026
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6d496cf079cd56d8260c5fd8072809bc05559ef2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcbutton-class"></a>CMFCButton クラス
 `CMFCButton`クラスを追加する機能、 [CButton](../../mfc/reference/cbutton-class.md)ボタン テキストの配置、ボタンのテキストとイメージの組み合わせ、カーソル、カーソルを選択すると、ツール ヒントを指定するなどのクラスです。  
@@ -163,7 +164,7 @@ class CMFCButton : public CButton
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMFCButton::m_bDrawFocus](#m_bdrawfocus)|ボタンの周囲のフォーカスされた四角形を描画するかどうかを示します。|  
 |[CMFCButton::m_bHighlightChecked](#m_bhighlightchecked)|上にカーソルを置くと、BS_CHECKBOX スタイルのボタンを強調表示するかどうかを示します。|  
@@ -200,7 +201,7 @@ class CMFCButton : public CButton
   
  [CMFCButton](../../mfc/reference/cmfcbutton-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxbutton.h  
   
 ##  <a name="cleanup"></a>CMFCButton::CleanUp  
@@ -429,7 +430,7 @@ AlignStyle m_nAlignStyle;
 ### <a name="remarks"></a>コメント  
  次のいずれかを使用して`CMFCButton::AlignStyle`ボタンのテキストの配置を指定する列挙値。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |ALIGN_CENTER|(既定値)ボタンのテキスト、ボタンの中央に揃えて配置します。|  
 |ALIGN_LEFT|ボタンのテキスト、ボタンの左側に揃えて配置します。|  
@@ -447,7 +448,7 @@ FlatStyle  m_nFlatStyle;
 ### <a name="remarks"></a>コメント  
  次の表、`CMFCButton::m_nFlatStyle`ボタンの外観を指定する列挙値。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |BUTTONSTYLE_3D|(既定値)高、3 次元の辺に、ボタンが表示されます。 ボタンがクリックされたときに、深さのインデントに押すことをボタンが表示されます。|  
 |BUTTONSTYLE_FLAT|マウス一時停止しませんボタンの上とボタンが、2 次元を高さはありません。 ボタン上にマウスを置いた、低、3 次元の辺に、ボタンが表示されます。 ボタンがクリックされたときに、シャロー インデントに押すことをボタンが表示されます。|  
@@ -870,7 +871,7 @@ virtual CSize SizeToContent(BOOL bCalcOnly=FALSE);
 ### <a name="remarks"></a>コメント  
  既定では、このメソッドは、10 ピクセルの左右の余白と 5 ピクセルの上下の余白を含む新しいサイズを計算します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCLinkCtrl クラス](../../mfc/reference/cmfclinkctrl-class.md)   

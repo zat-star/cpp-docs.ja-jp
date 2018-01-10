@@ -1,41 +1,42 @@
 ---
-title: "hash_set::empty (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_set::empty"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "empty メンバー [STL/CLR]"
+title: "hash_set::empty (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_set::empty
+dev_langs: C++
+helpviewer_keywords: empty member [STL/CLR]
 ms.assetid: 7843eb9a-067b-4339-8637-5401b637c6d0
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 55a4e11157d6dab79a9d1feddd2d03deec32e281
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_set::empty (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashsetempty-stlclr"></a>hash_set::empty (STL/CLR)
 要素が存在しないかどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 bool empty();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスが空の場合に true を返します。  これは [hash\_set::size](../dotnet/hash-set-size-stl-clr.md)`() == 0`と同じです。  hash\_set が空であるかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスが空の場合に true を返します。 等価である[hash_set::size (STL/CLR)](../dotnet/hash-set-size-stl-clr.md)`() == 0`です。 これを使用するには、hash_set が空かどうかをテストします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_set_empty.cpp   
@@ -66,16 +67,19 @@ int main()
   
 ```  
   
-  **b c**  
-**size\(\) \= 3**  
-**empty\(\) \= false**  
-**size\(\) \= 0**  
-**empty\(\) \= true**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+ a b c  
+size() = 3  
+empty() = False  
+size() = 0  
+empty() = True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_set](../dotnet/hash-set-stl-clr.md)   
- [hash\_set::size](../dotnet/hash-set-size-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)   
+ [hash_set::size (STL/CLR)](../dotnet/hash-set-size-stl-clr.md)

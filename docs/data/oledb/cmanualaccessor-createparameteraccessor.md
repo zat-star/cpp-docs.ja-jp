@@ -1,66 +1,68 @@
 ---
-title: "CManualAccessor::CreateParameterAccessor | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::CManualAccessor::CreateParameterAccessor"
-  - "ATL.CManualAccessor.CreateParameterAccessor"
-  - "CManualAccessor.CreateParameterAccessor"
-  - "CreateParameterAccessor"
-  - "CManualAccessor::CreateParameterAccessor"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CreateParameterAccessor メソッド"
+title: "Cmanualaccessor::createparameteraccessor |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::CManualAccessor::CreateParameterAccessor
+- ATL.CManualAccessor.CreateParameterAccessor
+- CManualAccessor.CreateParameterAccessor
+- CreateParameterAccessor
+- CManualAccessor::CreateParameterAccessor
+dev_langs: C++
+helpviewer_keywords: CreateParameterAccessor method
 ms.assetid: d0a2095b-b37c-4472-accc-45ef365a18c8
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 8ef1fc30c9188395d90171a250b96d116c2913aa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CManualAccessor::CreateParameterAccessor
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-バインド パラメーターのメモリを構築し、初期化しますパラメーター データ メンバーを割り当てます。  
+# <a name="cmanualaccessorcreateparameteraccessor"></a>CManualAccessor::CreateParameterAccessor
+パラメーター バインド構造体のメモリを割り当て、パラメーターのデータ メンバーを初期化します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      HRESULT CreateParameterAccessor(   
-   int nBindEntries,   
-   void* pBuffer,   
-   DBLENGTH nBufferSize    
+      HRESULT CreateParameterAccessor(   
+   int nBindEntries,   
+   void* pBuffer,   
+   DBLENGTH nBufferSize    
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nBindEntries`  
- \[\]列数。  
+ [in]列の数。  
   
  `pBuffer`  
- \[\]入力列が格納されるバッファーへのポインター。  
+ [in]入力列の格納バッファーへのポインター。  
   
  `nBufferSize`  
- \[\]バッファーのサイズ \(バイト数\)  
+ [in]バッファーのバイト単位のサイズ。  
   
-## 戻り値  
- `HRESULT` 標準値のいずれか 1 つが。  
+## <a name="return-value"></a>戻り値  
+ 標準の`HRESULT`値。  
   
-## 解説  
- [AddParameterEntry](../Topic/CManualAccessor::AddParameterEntry.md)を呼び出す前にこの関数を呼び出す必要があります。  
+## <a name="remarks"></a>コメント  
+ この関数を呼び出す前に呼び出す必要があります[AddParameterEntry](../../data/oledb/cmanualaccessor-addparameterentry.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CManualAccessor クラス](../Topic/CManualAccessor%20Class.md)   
- [CManualAccessor::CreateAccessor](../Topic/CManualAccessor::CreateAccessor.md)   
- [CManualAccessor::AddParameterEntry](../Topic/CManualAccessor::AddParameterEntry.md)
+## <a name="see-also"></a>参照  
+ [CManualAccessor クラス](../../data/oledb/cmanualaccessor-class.md)   
+ [Cmanualaccessor::createaccessor](../../data/oledb/cmanualaccessor-createaccessor.md)   
+ [CManualAccessor::AddParameterEntry](../../data/oledb/cmanualaccessor-addparameterentry.md)

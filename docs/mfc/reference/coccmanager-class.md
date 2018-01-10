@@ -41,11 +41,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7d27b1d018b427360105f1e294f2d0385ce18f5f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ffa16b7a210bc53f178e3ec437aefb6cede766a6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coccmanager-class"></a>関数クラス
 `COleControlContainer` オブジェクトと `COleControlSite` オブジェクトによって実装されるさまざまなカスタム コントロール サイトを管理します。  
@@ -84,7 +85,7 @@ class COccManager : public CNoTrackObject
   
  `COccManager`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxocc.h  
   
 ##  <a name="createcontainer"></a>COccManager::CreateContainer  
@@ -366,7 +367,7 @@ virtual DLGTEMPLATE* SplitDialogTemplate(
   
  このプロセスをカスタマイズするには、この関数をオーバーライドします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [メンバー クラス](../../mfc/reference/colecontrolsite-class.md)   
  [COleControlContainer クラス](../../mfc/reference/colecontrolcontainer-class.md)

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -18,38 +17,22 @@ f1_keywords:
 - PPLTASKS/concurrency::task::scheduler
 - PPLTASKS/concurrency::task::then
 - PPLTASKS/concurrency::task::wait
-dev_langs:
-- C++
-helpviewer_keywords:
-- task class
+dev_langs: C++
+helpviewer_keywords: task class
 ms.assetid: cdc3a8c0-5cbe-45a0-b5d5-e9f81d94df1a
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: e6c568b0b6a5f07df51980e1e440f31482f45846
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 4ea618ca6a5784b44666c70d79bb10b2e9f6e394
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="task-class-concurrency-runtime"></a>task クラス (同時実行ランタイム)
-並列パターン ライブラリ (PPL) `task` クラス。 `task` オブジェクトは、非同期的に、他のタスクと同時に実行できる処理、および同時実行ランタイムの並列アルゴリズムによって生成される並列処理を表します。 正常に終了した場合は、型 `_ResultType` の結果が生成されます。 型 `task<void>` のタスクでは結果が作成されません。 タスクは、他のタスクと関係なく待機および取り消しできます。 継続を使用する他のタスクと共に構成することもできます ( `then`)、および結合 ( `when_all`) と選択の幅 ( `when_any`) パターンです。  
+並列パターン ライブラリ (PPL) `task` クラス。 `task` オブジェクトは、非同期的に、他のタスクと同時に実行できる処理、および同時実行ランタイムの並列アルゴリズムによって生成される並列処理を表します。 正常に終了した場合は、型 `_ResultType` の結果が生成されます。 型 `task<void>` のタスクでは結果が作成されません。 タスクは、他のタスクと関係なく待機および取り消しできます。 継続を使用して他のタスクと共に構成することもできます ( `then`)、および結合 ( `when_all`) と choice ( `when_any`) パターン。  
   
 ## <a name="syntax"></a>構文  
   
@@ -104,12 +87,12 @@ class task;
 |[operator==](#operator_eq_eq)|オーバーロードされます。 2 つの `task` オブジェクトが同じ内部タスクを表すかどうかを決定します。|  
   
 ## <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)します。  
+ 詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `task`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** ppltasks.h  
   
  **名前空間:** concurrency  
@@ -128,10 +111,10 @@ void get() const;
  タスクの結果。  
   
 ### <a name="remarks"></a>コメント  
- タスクが取り消された場合の呼び出し`get`をスロー、 [task_canceled](task-canceled-class.md)例外です。 タスクで別の例外が発生したり、継続元タスクからこのタスクに例外が反映された場合、`get` の呼び出しは、その例外をスローします。  
+ タスクが取り消された場合に呼び出し`get`がスローされます、 [task_canceled](task-canceled-class.md)例外。 タスクで別の例外が発生したり、継続元タスクからこのタスクに例外が反映された場合、`get` の呼び出しは、その例外をスローします。  
   
 > [!IMPORTANT]
->  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)]アプリを呼び出す必要はありません[concurrency::task::wait](#wait)または`get`(`wait`呼び出し`get`) STA で実行されるコードで それ以外の場合、ランタイム[concurrency::invalid_operation](invalid-operation-class.md)のため、これらのメソッドは、現在のスレッドをブロックし、アプリが反応しなくなる可能性があります。 ただし、結果は直ちに使用できるため、タスク ベースの継続で継続元タスクの結果を受け取るために `get` メソッドを呼び出すことができます。  
+>  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)]アプリ、呼び出すことはありません[concurrency::task::wait](#wait)または`get`(`wait`呼び出し`get`) STA で実行されるコードで それ以外の場合、ランタイム[concurrency::invalid_operation](invalid-operation-class.md)のため、これらのメソッドは、現在のスレッドをブロックし、アプリが応答しなくなる可能性があります。 ただし、結果は直ちに使用できるため、タスク ベースの継続で継続元タスクの結果を受け取るために `get` メソッドを呼び出すことができます。  
   
 ##  <a name="is_apartment_aware"></a>is_apartment_aware 
 
@@ -254,7 +237,7 @@ task(
  ソース `task` オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- `task` の既定のコンストラクターは、タスクをコンテナー内で使用できるようにすることのみを目的としています。 構築された既定のタスクは、有効なタスクを割り当てるまで使用できません。 などのメソッド`get`、`wait`または`then`をスロー、 [invalid_argument](../../../standard-library/invalid-argument-class.md)例外構築された既定のタスクで呼び出されるとします。  
+ `task` の既定のコンストラクターは、タスクをコンテナー内で使用できるようにすることのみを目的としています。 構築された既定のタスクは、有効なタスクを割り当てるまで使用できません。 などのメソッド`get`、`wait`または`then`がスローされます、 [invalid_argument](../../../standard-library/invalid-argument-class.md)例外構築された既定のタスクで呼び出されるとします。  
   
  `task_completion_event` から作成されたタスクは、タスクの完了イベントが設定されたときに完了します (その後で継続がスケジュールされます)。  
   
@@ -266,7 +249,7 @@ task(
   
  Windows::Foundation::IAsyncInfo インターフェイスまたはそのようなインターフェイスを返すラムダを使用するコンストラクターのオーバーロードは、Windows ストア アプリでのみ使用できます。  
   
- 詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)します。  
+ 詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。  
   
 ##  <a name="then"></a>そうしたら 
 
@@ -327,7 +310,7 @@ __declspec(
 ### <a name="remarks"></a>コメント  
  Windows::Foundation::IAsyncInfo インターフェイスを返すラムダまたはファンクタを使用する `then` のオーバーロードは、Windows ストア アプリでのみ使用できます。  
   
- タスクの継続を使用して、非同期操作を構成する方法の詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)します。  
+ 継続タスクを使用して、非同期操作を作成する方法の詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。  
   
 ##  <a name="wait"></a>待機 
 
@@ -343,8 +326,7 @@ task_status wait() const;
 ### <a name="remarks"></a>コメント  
   
 > [!IMPORTANT]
->  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] アプリケーションでは、STA で実行されるコードで `wait` を呼び出さないでください。 それ以外の場合、ランタイム[concurrency::invalid_operation](invalid-operation-class.md)のため、このメソッドは、現在のスレッドをブロックし、アプリが反応しなくなる可能性があります。 ただし、呼び出すことができます、 [concurrency::task_canceled](#get)タスク ベースの継続で継続元タスクの結果を受信するメソッドです。  
+>  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] アプリケーションでは、STA で実行されるコードで `wait` を呼び出さないでください。 それ以外の場合、ランタイム[concurrency::invalid_operation](invalid-operation-class.md)のため、このメソッドは、現在のスレッドをブロックし、アプリが応答しなくなる可能性があります。 ただし、呼び出すことができます、 [concurrency:](#get)タスク ベースの継続で継続元タスクの結果を受信するメソッド。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)
-

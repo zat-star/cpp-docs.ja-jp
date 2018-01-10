@@ -1,231 +1,231 @@
 ---
-title: "SafeInt クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SafeInt"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SafeInt クラス"
+title: "SafeInt クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: SafeInt
+dev_langs: C++
+helpviewer_keywords: SafeInt class
 ms.assetid: 27a8f087-2511-46f9-8d76-2aeb66ca272f
-caps.latest.revision: 16
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: ea076ea092257fd5bf6acd6d597f79ef42dd96f2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# SafeInt クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-整数プリミティブを拡張して、整数オーバーフローを防止すると共に、異なる型の整数を比較できるようにします。  
+# <a name="safeint-class"></a>SafeInt クラス
+整数オーバーフローを防ぐために役立つ整数プリミティブを拡張し、異なる型の整数を比較できます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename T, typename E = _SAFEINT_DEFAULT_ERROR_POLICY>  
 class SafeInt;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
 |テンプレート|説明|  
-|------------|--------|  
-|T|`SafeInt` によって置き換えられる整数パラメーターまたはブール値パラメーターの型。|  
+|--------------|-----------------|  
+|T|整数またはブール値パラメーターの型を`SafeInt`が置き換えられます。|  
 |E|エラー処理ポリシーを定義する列挙型。|  
-|U|2 番目のオペランドの整数パラメーターまたはブール値パラメーターの型。|  
+|U|整数または第 2 オペランドのブール値パラメーターの型。|  
   
 |パラメーター|説明|  
-|------------|--------|  
-|\[入力\] rhs|複数のスタンドアロン関数で演算子の右側の値を表す入力パラメーター。|  
-|\[入力\] i|複数のスタンドアロン関数で演算子の右側の値を表す入力パラメーター。|  
-|\[入力\] bits|複数のスタンドアロン関数で演算子の右側の値を表す入力パラメーター。|  
+|---------------|-----------------|  
+|[in] rhs|スタンドアロンの関数をいくつかの演算子の右側にある値を表す入力パラメーター。|  
+|[in] i|スタンドアロンの関数をいくつかの演算子の右側にある値を表す入力パラメーター。|  
+|[in] ビット|スタンドアロンの関数をいくつかの演算子の右側にある値を表す入力パラメーター。|  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[SafeInt::SafeInt](../windows/safeint-safeint.md)|既定のコンストラクターです。|  
+|----------|-----------------|  
+|[SafeInt::SafeInt](../windows/safeint-safeint.md)|既定のコンストラクター|  
   
-### 代入演算子  
+### <a name="assignment-operators"></a>代入演算子  
   
-|名前|構文|  
-|--------|--------|  
-|\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator= (const U& rhs)`|  
-|\=|`SafeInt<T,E>& operator= (const T& rhs) throw()`|  
-|\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator= (const SafeInt<U, E>& rhs)`|  
-|\=|`SafeInt<T,E>& operator= (const SafeInt<T,E>& rhs) throw()`|  
+|name|構文|  
+|----------|------------|  
+|=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator= (const U& rhs)`|  
+|=|`SafeInt<T,E>& operator= (const T& rhs) throw()`|  
+|=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator= (const SafeInt<U, E>& rhs)`|  
+|=|`SafeInt<T,E>& operator= (const SafeInt<T,E>& rhs) throw()`|  
   
-### キャスト演算子  
+### <a name="casting-operators"></a>キャスト演算子  
   
-|名前|構文|  
-|--------|--------|  
+|name|構文|  
+|----------|------------|  
 |bool|`operator bool() throw()`|  
 |char|`operator char() const`|  
 |signed char|`operator signed char() const`|  
 |unsigned char|`operator unsigned char() const`|  
-|\_\_int16|`operator __int16() const`|  
-|unsigned \_\_int16|`operator unsigned __int16() const`|  
-|\_\_int32|`operator __int32() const`|  
-|unsigned \_\_int32|`operator unsigned __int32() const`|  
+|__int16|`operator __int16() const`|  
+|unsigned __int16|`operator unsigned __int16() const`|  
+|__int32|`operator __int32() const`|  
+|unsigned __int32|`operator unsigned __int32() const`|  
 |long|`operator long() const`|  
 |unsigned long|`operator unsigned long() const`|  
-|\_\_int64|`operator __int64() const`|  
-|unsigned \_\_int64|`operator unsigned __int64() const`|  
-|wchar\_t|`operator wchar_t() const`|  
+|__int64|`operator __int64() const`|  
+|unsigned __int64|`operator unsigned __int64() const`|  
+|wchar_t|`operator wchar_t() const`|  
   
-### 比較演算子  
+### <a name="comparison-operators"></a>比較演算子  
   
-|名前|構文|  
-|--------|--------|  
-|\<|`template<typename U>`<br /><br /> `bool operator< (U rhs) const throw()`|  
-|\<|`bool operator< (SafeInt<T,E> rhs) const throw()`|  
-|\>\=|`template<typename U>`<br /><br /> `bool operator>= (U rhs) const throw()`|  
-|\>\=|`Bool operator>= (SafeInt<T,E> rhs) const throw()`|  
-|\>|`template<typename U>`<br /><br /> `bool operator> (U rhs) const throw()`|  
-|\>|`Bool operator> (SafeInt<T,E> rhs) const throw()`|  
-|\<\=|`template<typename U>`<br /><br /> `bool operator<= (U rhs) const throw()`|  
-|\<\=|`bool operator<= (SafeInt<T,E> rhs) const throw()`|  
-|\=\=|`template<typename U>`<br /><br /> `bool operator== (U rhs) const throw()`|  
-|\=\=|`bool operator== (bool rhs) const throw()`|  
-|\=\=|`bool operator== (SafeInt<T,E> rhs) const throw()`|  
-|\!\=|`template<typename U>`<br /><br /> `bool operator!= (U rhs) const throw()`|  
-|\!\=|`bool operator!= (bool b) const throw()`|  
-|\!\=|`bool operator!= (SafeInt<T,E> rhs) const throw()`|  
+|name|構文|  
+|----------|------------|  
+|<|`template<typename U>`<br /><br /> `bool operator< (U rhs) const throw()`|  
+|<|`bool operator< (SafeInt<T,E> rhs) const throw()`|  
+|>=|`template<typename U>`<br /><br /> `bool operator>= (U rhs) const throw()`|  
+|>=|`Bool operator>= (SafeInt<T,E> rhs) const throw()`|  
+|>|`template<typename U>`<br /><br /> `bool operator> (U rhs) const throw()`|  
+|>|`Bool operator> (SafeInt<T,E> rhs) const throw()`|  
+|<=|`template<typename U>`<br /><br /> `bool operator<= (U rhs) const throw()`|  
+|<=|`bool operator<= (SafeInt<T,E> rhs) const throw()`|  
+|==|`template<typename U>`<br /><br /> `bool operator== (U rhs) const throw()`|  
+|==|`bool operator== (bool rhs) const throw()`|  
+|==|`bool operator== (SafeInt<T,E> rhs) const throw()`|  
+|!=|`template<typename U>`<br /><br /> `bool operator!= (U rhs) const throw()`|  
+|!=|`bool operator!= (bool b) const throw()`|  
+|!=|`bool operator!= (SafeInt<T,E> rhs) const throw()`|  
   
-### 算術演算子  
+### <a name="arithmetic-operators"></a>算術演算子  
   
-|名前|構文|  
-|--------|--------|  
-|\+|`const SafeInt<T,E>& operator+ () const throw()`|  
-|\-|`SafeInt<T,E> operator- () const`|  
-|\+\+|`SafeInt<T,E>& operator++ ()`|  
-|\-\-|`SafeInt<T,E>& operator-- ()`|  
+|name|構文|  
+|----------|------------|  
+|+|`const SafeInt<T,E>& operator+ () const throw()`|  
+|-|`SafeInt<T,E> operator- () const`|  
+|++|`SafeInt<T,E>& operator++ ()`|  
+|--|`SafeInt<T,E>& operator-- ()`|  
 |%|`template<typename U>`<br /><br /> `SafeInt<T,E> operator% (U rhs) const`|  
 |%|`SafeInt<T,E> operator% (SafeInt<T,E> rhs) const`|  
-|%\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator%= (U rhs)`|  
-|%\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator%= (SafeInt<U, E> rhs)`|  
-|\*|`template<typename U>`<br /><br /> `SafeInt<T,E> operator* (U rhs) const`|  
-|\*|`SafeInt<T,E> operator* (SafeInt<T,E> rhs) const`|  
-|\*\=|`SafeInt<T,E>& operator*= (SafeInt<T,E> rhs)`|  
-|\*\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator*= (U rhs)`|  
-|\*\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator*= (SafeInt<U, E> rhs)`|  
-|\/|`template<typename U>`<br /><br /> `SafeInt<T,E> operator/ (U rhs) const`|  
-|\/|`SafeInt<T,E> operator/ (SafeInt<T,E> rhs ) const`|  
-|\/\=|`SafeInt<T,E>& operator/= (SafeInt<T,E> i)`|  
-|\/\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator/= (U i)`|  
-|\/\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator/= (SafeInt<U, E> i)`|  
-|\+|`SafeInt<T,E> operator+ (SafeInt<T,E> rhs) const`|  
-|\+|`template<typename U>`<br /><br /> `SafeInt<T,E> operator+ (U rhs) const`|  
-|\+\=|`SafeInt<T,E>& operator+= (SafeInt<T,E> rhs)`|  
-|\+\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator+= (U rhs)`|  
-|\+\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator+= (SafeInt<U, E> rhs)`|  
-|\-|`template<typename U>`<br /><br /> `SafeInt<T,E> operator- (U rhs) const`|  
-|\-|`SafeInt<T,E> operator- (SafeInt<T,E> rhs) const`|  
-|\-\=|`SafeInt<T,E>& operator-= (SafeInt<T,E> rhs)`|  
-|\-\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator-= (U rhs)`|  
-|\-\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator-= (SafeInt<U, E> rhs)`|  
+|%=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator%= (U rhs)`|  
+|%=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator%= (SafeInt<U, E> rhs)`|  
+|*|`template<typename U>`<br /><br /> `SafeInt<T,E> operator* (U rhs) const`|  
+|*|`SafeInt<T,E> operator* (SafeInt<T,E> rhs) const`|  
+|*=|`SafeInt<T,E>& operator*= (SafeInt<T,E> rhs)`|  
+|*=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator*= (U rhs)`|  
+|*=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator*= (SafeInt<U, E> rhs)`|  
+|/|`template<typename U>`<br /><br /> `SafeInt<T,E> operator/ (U rhs) const`|  
+|/|`SafeInt<T,E> operator/ (SafeInt<T,E> rhs ) const`|  
+|/=|`SafeInt<T,E>& operator/= (SafeInt<T,E> i)`|  
+|/=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator/= (U i)`|  
+|/=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator/= (SafeInt<U, E> i)`|  
+|+|`SafeInt<T,E> operator+ (SafeInt<T,E> rhs) const`|  
+|+|`template<typename U>`<br /><br /> `SafeInt<T,E> operator+ (U rhs) const`|  
+|+=|`SafeInt<T,E>& operator+= (SafeInt<T,E> rhs)`|  
+|+=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator+= (U rhs)`|  
+|+=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator+= (SafeInt<U, E> rhs)`|  
+|-|`template<typename U>`<br /><br /> `SafeInt<T,E> operator- (U rhs) const`|  
+|-|`SafeInt<T,E> operator- (SafeInt<T,E> rhs) const`|  
+|-=|`SafeInt<T,E>& operator-= (SafeInt<T,E> rhs)`|  
+|-=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator-= (U rhs)`|  
+|-=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator-= (SafeInt<U, E> rhs)`|  
   
-### 論理演算子  
+### <a name="logical-operators"></a>論理演算子  
   
-|名前|構文|  
-|--------|--------|  
-|\!|`bool operator !() const throw()`|  
+|name|構文|  
+|----------|------------|  
+|!|`bool operator !() const throw()`|  
 |~|`SafeInt<T,E> operator~ () const throw()`|  
-|\<\<|`template<typename U>`<br /><br /> `SafeInt<T,E> operator<< (U bits) const throw()`|  
-|\<\<|`template<typename U>`<br /><br /> `SafeInt<T,E> operator<< (SafeInt<U, E> bits) const throw()`|  
-|\<\<\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator<<= (U bits) throw()`|  
-|\<\<\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator<<= (SafeInt<U, E> bits) throw()`|  
-|\>\>|`template<typename U>`<br /><br /> `SafeInt<T,E> operator>> (U bits) const throw()`|  
-|\>\>|`template<typename U>`<br /><br /> `SafeInt<T,E> operator>> (SafeInt<U, E> bits) const throw()`|  
-|\>\>\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator>>= (U bits) throw()`|  
-|\>\>\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator>>= (SafeInt<U, E> bits) throw()`|  
+|<<|`template<typename U>`<br /><br /> `SafeInt<T,E> operator<< (U bits) const throw()`|  
+|<<|`template<typename U>`<br /><br /> `SafeInt<T,E> operator<< (SafeInt<U, E> bits) const throw()`|  
+|<<=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator<<= (U bits) throw()`|  
+|<<=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator<<= (SafeInt<U, E> bits) throw()`|  
+|>>|`template<typename U>`<br /><br /> `SafeInt<T,E> operator>> (U bits) const throw()`|  
+|>>|`template<typename U>`<br /><br /> `SafeInt<T,E> operator>> (SafeInt<U, E> bits) const throw()`|  
+|>>=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator>>= (U bits) throw()`|  
+|>>=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator>>= (SafeInt<U, E> bits) throw()`|  
 |&|`SafeInt<T,E> operator& (SafeInt<T,E> rhs) const throw()`|  
 |&|`template<typename U>`<br /><br /> `SafeInt<T,E> operator& (U rhs) const throw()`|  
-|&\=|`SafeInt<T,E>& operator&= (SafeInt<T,E> rhs) throw()`|  
-|&\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator&= (U rhs) throw()`|  
-|&\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator&= (SafeInt<U, E> rhs) throw()`|  
+|&=|`SafeInt<T,E>& operator&= (SafeInt<T,E> rhs) throw()`|  
+|&=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator&= (U rhs) throw()`|  
+|&=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator&= (SafeInt<U, E> rhs) throw()`|  
 |^|`SafeInt<T,E> operator^ (SafeInt<T,E> rhs) const throw()`|  
 |^|`template<typename U>`<br /><br /> `SafeInt<T,E> operator^ (U rhs) const throw()`|  
-|^\=|`SafeInt<T,E>& operator^= (SafeInt<T,E> rhs) throw()`|  
-|^\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator^= (U rhs) throw()`|  
-|^\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator^= (SafeInt<U, E> rhs) throw()`|  
+|^=|`SafeInt<T,E>& operator^= (SafeInt<T,E> rhs) throw()`|  
+|^=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator^= (U rhs) throw()`|  
+|^=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator^= (SafeInt<U, E> rhs) throw()`|  
 |&#124;|`SafeInt<T,E> operator&#124; (SafeInt<T,E> rhs) const throw()`|  
 |&#124;|`template<typename U>`<br /><br /> `SafeInt<T,E> operator&#124; (U rhs) const throw()`|  
-|&#124;\=|`SafeInt<T,E>& operator&#124;= (SafeInt<T,E> rhs) throw()`|  
-|&#124;\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (U rhs) throw()`|  
-|&#124;\=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (SafeInt<U, E> rhs) throw()`|  
+|&#124;=|`SafeInt<T,E>& operator&#124;= (SafeInt<T,E> rhs) throw()`|  
+|&#124;=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (U rhs) throw()`|  
+|&#124;=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (SafeInt<U, E> rhs) throw()`|  
   
-## 解説  
- `SafeInt` クラスを使用することで、数値演算での整数オーバーフローを防止できます。  たとえば、2 つの 8 ビット整数を加算するとします。一方の整数の値が 200、もう一方の整数の値が 100 です。  正しい数値演算は 200 \+ 100 \= 300 です。  ところが、8 ビット整数の制限により上位ビットが削除されるため、コンパイラが返す結果は 44 \(300 \- 2<sup>8</sup>\) になります。  この数式に依存する演算を使用した場合、常に予期しない動作が発生します。  
+## <a name="remarks"></a>コメント  
+ `SafeInt`クラスが算術演算で整数オーバーフローを防止します。 たとえば、2 つの 8 ビット整数を追加する: 200 の値を持つ 1 つともう 1 つが 100 の値。 適切な数学的な操作は、200 + 100 = 300 になります。 ただし、8 ビット整数の制限のため、上位ビットは失われ、コンパイラが 44 を返す (300 2<sup>8</sup>)、結果として。 この数式に依存しているすべての操作の予期しない動作が生成されます。  
   
- `SafeInt` クラスは、算術オーバーフローが発生するかどうか、またはコードで 0 除算が試行されるかどうかを検証します。  どちらの場合においても、このクラスは、エラー ハンドラーを呼び出し、問題が発生する可能性があることをプログラムに警告します。  
+ `SafeInt`クラスは、算術オーバーフローが発生するかどうか、またはコードが 0 で除算しようとしたかどうかをチェックします。 どちらの場合は、クラスは、プログラム、可能性のある問題を警告するエラー ハンドラーを呼び出します。  
   
- また、このクラスを使用することで、型の異なる 2 つの整数が `SafeInt` オブジェクトである限り、その 2 つの整数を比較することができます。  通常、比較を行う際には、最初に数値を同じ型に変換する必要があります。  多くの場合、ある数値を別の型の数値と比較する際、データの損失がないかどうかを確認する必要があります。  
+ このクラスではいる限り、2 つの異なる型の整数を比較することもできます`SafeInt`オブジェクト。 通常は、比較を実行するときに、同じ型にするのには数値を最初に変換する必要があります。 多くの場合、1 つの数値を別の型をキャストすると、データの損失がないことを確認するためのチェックが必要です。  
   
- このトピックの演算子の一覧に、`SafeInt` クラスでサポートされる数値演算子と比較演算子を示しています。  ほとんどの数値演算子は、`T` 型の `SafeInt` オブジェクトを返します。  
+ このトピックの内容の演算子の表でサポートされる数学と比較演算子を一覧表示、`SafeInt`クラスです。 最も算術演算子を返す、`SafeInt`型のオブジェクト`T`です。  
   
- `SafeInt` と整数型の比較演算は、どちらの方向にも実行することができます。  たとえば、`SafeInt<int>(x) < y` と `y > SafeInt<int>(x)` はどちらも有効であり、同じ結果が返されます。  
+ 比較演算、`SafeInt`整数型をどちらの方向で実行できます。 たとえば、両方とも`SafeInt<int>(x) < y`と`y > SafeInt<int>(x)`は有効では、同じ結果が返されます。  
   
- 2 つの異なる `SafeInt` 型を使用することは、ほとんどの二項演算子においてサポートされていません。  この例の 1 つとして、`&` 演算子があります。  `SafeInt<T, E> & int` はサポートされていますが、`SafeInt<T, E> & SafeInt<U, E>` はサポートされていません。  2 番目の例の場合、コンパイラが返されるパラメーターの型を判別できないためです。  この問題を解決する方法の 1 つとして、2 番目のパラメーターを基本型にキャストできます。  同じパラメーターを使用してこれを行うには、`SafeInt<T, E> & (U)SafeInt<U, E>` を使用します。  
+ バイナリ演算子の多くを使用して 2 つの異なるをサポートしていません`SafeInt`型です。 この 1 つの例は、`&`演算子。 `SafeInt<T, E> & int`サポートされているが、`SafeInt<T, E> & SafeInt<U, E>`はありません。 後者の例では、コンパイラは、返されるパラメーターの型を判別できません。 この問題を解決では、基本型に 2 番目のパラメーターをキャストします。 同じパラメーターを使用すると、これと`SafeInt<T, E> & (U)SafeInt<U, E>`です。  
   
 > [!NOTE]
->  ビットごとの演算を実行するには、2 つの異なるパラメーターのサイズが同じであることが必要です。  サイズが異なる場合、コンパイラは [ASSERT](../Topic/ASSERT%20\(MFC\).md) 例外をスローします。  この演算の結果は、正確性が保証されません。  この問題を解決するには、小さい方のパラメーターが大きい方のパラメーターと同じサイズになるまで、小さい方のパラメーターをキャストします。  
+>  ビットごとの演算、2 つの異なるパラメーターは同じサイズである必要があります。 サイズが異なる場合、コンパイラがスローされます、 [ASSERT](../mfc/reference/diagnostic-services.md#assert)例外。 この操作の結果は、正確性が保証できません。 この問題を解決するが大きい方のパラメーターと同じサイズになるまで、小さい方のパラメーターをキャストします。  
   
- シフト演算子の場合、テンプレートの型に存在するビットよりも多くのビットをシフトすると、ASSERT 例外がスローされます。  リリース モードでは、これによる影響はありません。  シフト演算子の場合、戻り値の型が元の型と同じであるため、2 種類の型の SafeInt パラメーターを組み合わせることができます。  演算子の右側の数値は、シフトするビット数を示すのみです。  
+ シフト演算子のテンプレートの型に存在するよりも多くのビットをシフト ASSERT 例外がスローされます。 これは、効果はありませんリリース モードでします。 SafeInt パラメーターの 2 つの型を混在させると、戻り値の型が元の型と同じであるために、シフト演算子可能性があります。 演算子の右側にある数では、シフトするビット数だけを示します。  
   
- SafeInt オブジェクトで論理比較を実行するとき、厳密に算術的な比較が実行されます。  たとえば、次の式について考えてみます。  
+ SafeInt オブジェクトでの論理比較を実行すると、比較は厳密に算術的です。 たとえば、これらの式があるとします。  
   
 -   `SafeInt<uint>((uint)~0) > -1`  
   
 -   `((uint)~0) > -1`  
   
- 1 番目のステートメントは `true` に解決されますが、2 番目のステートメントは `false` に解決されます。  0 のビットごとの否定は 0xFFFFFFFF です。  2 番目のステートメントでは、既定の比較演算子により 0xFFFFFFFF と 0xFFFFFFFF が比較され、この 2 つが等しいと判断されます。  `SafeInt` クラスの比較演算子によって、1 番目のパラメーターが符号なしであるのに対し、2 番目のパラメーターが負の値であることが判明します。  そのため、ビット表現が同一であっても、`SafeInt` の論理演算子によって、符号なし整数が \-1 より大きいことがわかります。  
+ 最初のステートメントに解決`true`、2 番目のステートメントに解決されますが、`false`です。 0 のビットごとの否定は、0 xffffffff です。 2 番目のステートメントでは、既定の比較演算子は、0 xffffffff を 0 xffffffff を比較し、両者が等しい場合と見なされます。 比較演算子、`SafeInt`クラスは、最初のパラメーターが符号なし 2 番目のパラメーターが負であることを認識します。 そのため、ビット表現は同じですもには、`SafeInt`論理演算子の符号なし整数が-1 より大きいことに気付きます。  
   
- `SafeInt` クラスを `?:` 三項演算子と同時に使用する際には注意が必要です。  次のコード行があるとします。  
+ 使用するときに、必ず、`SafeInt`クラスと共に、`?:`三項演算子です。 次のコード行を検討してください。  
   
 ```  
 Int x = flag ? SafeInt<unsigned int>(y) : -1;  
 ```  
   
- コンパイラはこのコード行を次のように変換します。  
+ コンパイラこれに変換します。  
   
 ```  
 Int x = flag ? SafeInt<unsigned int>(y) : SafeInt<unsigned int>(-1);  
 ```  
   
- `flag` が `false` の場合、コンパイラは `x` に値 \-1 を代入する代わりに例外をスローします。  このような動作を回避するための正しいコードは次のとおりです。  
+ 場合`flag`は`false`、コンパイラが-1 の値を割り当てる代わりに例外をスロー`x`です。 そのため、この問題を回避するには、使用する正しいコードは、次の行です。  
   
 ```  
 Int x = flag ? (int) SafeInt<unsigned int>(y) : -1;  
 ```  
   
- `T` と `U` には、ブール型、文字型、または整数型を割り当てることができます。  整数型は、signed 型であるか unsigned 型であるかを問わず、8 ～ 64 ビットまでの任意のサイズに設定できます。  
+ `T`および`U`ブール型、文字型または整数型に割り当てることができます。 型を符号付きまたは符号なし整数と 8 ビットから 64 ビットの任意のサイズ。  
   
 > [!NOTE]
->  `SafeInt` クラスでは任意の種類の整数を使用できますが、unsigned 型の方が効率的に実行できます。  
+>  ただし、`SafeInt`クラスを受け入れる任意の種類の整数、符号なしの型とより効率的に実行します。  
   
- `E` は、`SafeInt` で使用されるエラー処理機能です。  SafeInt ライブラリには 2 つのエラー処理機能が用意されています。  既定のポリシーは `SafeIntErrorPolicy_SafeIntException` であり、エラー発生時に [SafeIntException クラス](../windows/safeintexception-class.md)例外をスローします。  もう一方のポリシーは `SafeIntErrorPolicy_InvalidParameter` であり、エラー発生時にプログラムを停止します。  
+ `E`エラー処理機構を`SafeInt`を使用します。 SafeInt ライブラリに 2 つのエラー処理機構が提供されます。 既定のポリシーは`SafeIntErrorPolicy_SafeIntException`、どのがスローされます、 [SafeIntException クラス](../windows/safeintexception-class.md)例外エラーが発生します。 他のポリシーが`SafeIntErrorPolicy_InvalidParameter`エラーが発生した場合、プログラムは停止します。  
   
- エラー ポリシーをカスタマイズする方法は、2 つあります。  1 つは、`SafeInt` を作成する際に `E` パラメーターを設定する方法です。  この方法は、1 つの `SafeInt` のみに対してエラー処理ポリシーを変更する場合に使用します。  もう 1 つは、`SafeInt` ライブラリを含める前に、カスタマイズしたエラー処理クラスとして `_SAFEINT_DEFAULT_ERROR_POLICY` を定義する方法です。  この方法は、コード内のすべての `SafeInt` クラス インスタンスに対して既定のエラー処理ポリシーを変更する場合に使用します。  
+ エラーのポリシーをカスタマイズする 2 つのオプションがあります。 パラメーターを設定する 1 つ目は`E`を作成するとき、`SafeInt`です。 エラー処理のうちの 1 つのポリシーを変更するときにこのオプションを使用して`SafeInt`です。 その他のオプションは、定義する`_SAFEINT_DEFAULT_ERROR_POLICY`をインクルードする前に、カスタマイズされたエラー処理クラス、`SafeInt`ライブラリです。 既定のエラー処理のすべてのインスタンスのポリシーを変更するときにこのオプションを使用して、`SafeInt`コード内のクラスです。  
   
 > [!NOTE]
->  SafeInt ライブラリのエラーを処理するカスタマイズ クラスがエラー ハンドラーを呼び出したコードに制御を返さないようにしてください。  エラー ハンドラーが呼び出された後では、`SafeInt` 操作の結果は信頼できません。  
+>  SafeInt ライブラリからエラーを処理するカスタマイズされたクラスは、エラー ハンドラーを呼び出したコードに制御を返しません必要があります。 エラー ハンドラーが呼び出された後の結果、`SafeInt`操作は、信頼することはできません。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** safeint.h  
   
- **名前空間:** msl::utilities  
+ **Namespace:** msl::utilities  
   
-## 参照  
- [Miscellaneous Support Libraries Classes](http://msdn.microsoft.com/ja-jp/406fd46e-d53f-4096-ab40-36aa754c7a5c)   
+## <a name="see-also"></a>参照  
  [SafeInt ライブラリ](../windows/safeint-library.md)   
  [SafeIntException クラス](../windows/safeintexception-class.md)

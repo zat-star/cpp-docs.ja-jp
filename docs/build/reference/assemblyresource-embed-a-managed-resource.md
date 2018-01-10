@@ -22,11 +22,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6158a729bf0f5dfc4374e2f7fd2d5e18f73a34f6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ed8fd2b127a828eb8279671817cc4f099ae528c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="assemblyresource-embed-a-managed-resource"></a>/ASSEMBLYRESOURCE (マネージ リソースの埋め込み)
 ```  
@@ -38,7 +39,7 @@ ms.lasthandoff: 10/24/2017
  マネージ リソースをこのアセンブリに埋め込みます。  
   
  *name*  
- 省略可能です。 リソースの論理名リソースの読み込みに使用する名前。 既定値は、ファイルの名前です。  
+ 任意。 リソースの論理名リソースの読み込みに使用する名前。 既定値は、ファイルの名前です。  
   
  必要に応じて、ファイルが、アセンブリ マニフェストにプライベートでなければなりませんかどうかを指定することができます。 既定では、*名前*がアセンブリに公開します。  
   
@@ -79,6 +80,6 @@ ms.lasthandoff: 10/24/2017
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.EmbedManagedResourceFile%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

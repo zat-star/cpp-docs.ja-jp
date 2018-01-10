@@ -17,11 +17,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 17710654b0af2e03019a1e7b888d86e42c5e35c9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f66df471d66a82a565fc5c072757664567d1f25c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-use-regular-expressions-to-search-and-replace-ccli"></a>方法: 正規表現を使用して検索と置換を行う (C++/CLI)
 次のコード例を示す方法、正規表現クラス<xref:System.Text.RegularExpressions.Regex>検索と置換を実行するために使用できます。 これは、<xref:System.Text.RegularExpressions.Regex.Replace%2A>メソッドです。 使用されているバージョンは 2 つの文字列を入力として受け取ります: 変更するには、文字列と (もしあれば) セクションでは、代わりに挿入する文字列に指定されたパターンに一致する、<xref:System.Text.RegularExpressions.Regex>オブジェクト。  
@@ -54,6 +57,6 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework 正規表現](/dotnet/standard/base-types/regular-expressions)   
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

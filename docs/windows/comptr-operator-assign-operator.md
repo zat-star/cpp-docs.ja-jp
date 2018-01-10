@@ -15,11 +15,14 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 238c58e8fda169d86dc4be625ed16efa81c21fef
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 30f04bdfe7b508bf83e34992fefdcb10c58b4655
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comptroperator-operator"></a>ComPtr::operator= 演算子
 値を現在の ComPtr に割り当てます。  
@@ -84,10 +87,10 @@ WRL_NOTHROW ComPtr& operator=(
   
  7 番目のバージョンがコピー演算子を使用する移動セマンティクスです。型の ComPtr への右辺値参照`U`静的キャストし、現在の ComPtr に割り当てられています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ComPtr クラス](../windows/comptr-class.md)

@@ -35,11 +35,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: dc5626c78cdba95f1368d5bc53c275b56406f839
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f6a9e9fafc2bbee9959a939815a92c9bc63a650f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cconnectionpoint-class"></a>関数クラス
 他の OLE オブジェクトと通信するために使われる "コネクション ポイント" と呼ばれる特別な型のインターフェイスを定義します。  
@@ -105,7 +106,7 @@ class CConnectionPoint : public CCmdTarget
   
  `CConnectionPoint`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
   
 ##  <a name="cconnectionpoint"></a>CConnectionPoint::CConnectionPoint  
@@ -237,7 +238,7 @@ virtual HRESULT QuerySinkInterface(
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CCmdTarget クラス](../../mfc/reference/ccmdtarget-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
 

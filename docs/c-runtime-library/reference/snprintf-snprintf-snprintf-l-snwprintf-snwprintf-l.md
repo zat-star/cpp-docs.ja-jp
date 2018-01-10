@@ -1,73 +1,74 @@
 ---
 title: "snprintf、_snprintf、_snprintf_l、_snwprintf、_snwprintf_l | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_snwprintf"
-  - "_snprintf"
-  - "_snprintf_l"
-  - "_snwprintf_l"
-  - "snprintf"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_snprintf"
-  - "snprintf_l"
-  - "snwprintf_l"
-  - "sntprintf"
-  - "snprintf"
-  - "_sntprintf"
-  - "_sntprintf_l"
-  - "sntprintf_l"
-  - "snwprintf"
-  - "_snprintf_l"
-  - "_snwprintf"
-  - "_snwprintf_l"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "snwprintf_l 関数"
-  - "sntprintf_l 関数"
-  - "snprintf_l 関数"
-  - "_snwprintf_l 関数"
-  - "_sntprintf_l 関数"
-  - "_snwprintf 関数"
-  - "_snprintf 関数"
-  - "_sntprintf 関数"
-  - "_snprintf_l 関数"
-  - "snwprintf 関数"
-  - "snprintf 関数"
-  - "sntprintf 関数"
-  - "書式設定テキスト [C++]"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _snwprintf
+- _snprintf
+- _snprintf_l
+- _snwprintf_l
+- snprintf
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- _snprintf
+- snprintf_l
+- snwprintf_l
+- sntprintf
+- snprintf
+- _sntprintf
+- _sntprintf_l
+- sntprintf_l
+- snwprintf
+- _snprintf_l
+- _snwprintf
+- _snwprintf_l
+dev_langs: C++
+helpviewer_keywords:
+- snwprintf_l function
+- sntprintf_l function
+- snprintf_l function
+- _snwprintf_l function
+- _sntprintf_l function
+- _snwprintf function
+- _snprintf function
+- _sntprintf function
+- _snprintf_l function
+- snwprintf function
+- snprintf function
+- sntprintf function
+- formatted text [C++]
 ms.assetid: 5976c9c8-876e-4ac9-a515-39f3f7fd0925
-caps.latest.revision: 35
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 35
+caps.latest.revision: "35"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 0441f2debf2e030702727c92a6e27bea63cb0564
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# snprintf、_snprintf、_snprintf_l、_snwprintf、_snwprintf_l
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-文字列に書式付きデータを書き込みます。 これらの関数のセキュリティを強化したバージョンを使用できます。「[\_snprintf\_s、\_snprintf\_s\_l、\_snwprintf\_s、\_snwprintf\_s\_l](../../c-runtime-library/reference/snprintf-s-snprintf-s-l-snwprintf-s-snwprintf-s-l.md)」をご覧ください。  
+# <a name="snprintf-snprintf-snprintfl-snwprintf-snwprintfl"></a>snprintf、_snprintf、_snprintf_l、_snwprintf、_snwprintf_l
+文字列に書式付きデータを書き込みます。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_snprintf_s、_snprintf_s_l、_snwprintf_s、_snwprintf_s_l](../../c-runtime-library/reference/snprintf-s-snprintf-s-l-snwprintf-s-snwprintf-s-l.md)」をご覧ください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int snprintf(  
@@ -134,7 +135,7 @@ int _snwprintf_l(
 ); // C++ only  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `buffer`  
  出力の格納場所。  
   
@@ -150,56 +151,56 @@ int _snwprintf_l(
  `locale`  
  使用するロケール。  
   
- 詳細については、「[書式指定構文: printf 関数と wprintf 関数](../Topic/Format%20Specification%20Syntax:%20printf%20and%20wprintf%20Functions.md)」を参照してください。  
+ 詳細については、「[書式指定構文: printf 関数と wprintf 関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」をご覧ください。  
   
-## 戻り値  
- 以下の説明では、書式付きデータ文字列の長さ \(終端の null は含まない\) を `len` とします。`len` と `count` は、`snprintf` 関数と `_snprintf` 関数ではバイト単位、`_snwprintf` 関数ではワイド文字単位になります。  
+## <a name="return-value"></a>戻り値  
+ 以下の説明では、書式付きデータ文字列の長さ (終端の null は含まない) を `len` とします。 `len` と `count` は、 `snprintf` 関数と `_snprintf`関数ではバイト単位、 `_snwprintf`関数ではワイド文字単位になります。  
   
- すべての関数について、`len` \< `count` の場合、`len` の文字数が `buffer` に格納されて、終端の null が追加され、`len` が返されます。  
+ すべての関数について、 `len` < `count`の場合、 `len` の文字数が `buffer`に格納されて、終端の null が追加され、 `len` が返されます。  
   
- `snprintf` 関数は、`len` が `count` 以上の場合、null 終端記号を `buffer[count-1]` に配置することによって、出力を切り捨てます。 戻り値は `len` です。`count` のサイズが十分な場合に出力されたであろう文字数です。`snprintf` 関数は、エンコード エラーが発生すると負の値を返します。  
+ `snprintf` 関数は、 `len` が `count`以上の場合、null 終端記号を `buffer[count-1]`に配置することによって、出力を切り捨てます。 戻り値は `len`です。 `count` のサイズが十分な場合に出力されたであろう文字数です。 `snprintf` 関数は、エンコード エラーが発生すると負の値を返します。  
   
- `snprintf` を除くすべての関数について、`len` \= `count` の場合、`len` の文字数が `buffer` に格納されて、終端の null は追加されず、`len` が返されます。`len` \> `count` の場合、`count` の文字数が `buffer` に格納されて、終端の null は追加されずに、負の値が返されます。  
+ `snprintf` を除くすべての関数について、`len` = `count` の場合、`len` の文字数が `buffer` に格納されて、終端の null は追加されず、`len` が返されます。 `len` > `count` の場合、`count` の文字数が `buffer` に格納されて、終端の null は追加されずに、負の値が返されます。  
   
- `buffer` が null ポインターで `count` がゼロの場合、`len` は、出力の書式を指定するのに必要な文字数として返されます。終端の null は含まれません。 同じ `argument` パラメーターおよび `locale` パラメーターを指定して正常な呼び出しを行うには、少なくとも `len` \+ 1 文字を保持するバッファーを割り当てます。  
+ `buffer` が null ポインターで `count` がゼロの場合、 `len` は、出力の書式を指定するのに必要な文字数として返されます。終端の null は含まれません。 同じ `argument` パラメーターおよび `locale` パラメーターを指定して正常な呼び出しを行うには、少なくとも `len` + 1 文字を保持するバッファーを割り当てます。  
   
- `buffer` が null ポインターで `count` が 0 以外の場合、または `format` が null ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、正しくないパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は \-1 を返し、`errno` を `EINVAL` に設定します。  
+ `buffer` が Null ポインターで `count` が 0 以外の場合、または `format` が Null ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、正しくないパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、`errno` を `EINVAL` に設定します。  
   
- エラー コードの詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」をご覧ください。  
+ エラー コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
-## 解説  
- `snprintf` 関数と、関数の `_snprintf` ファミリは、`count` 以下の文字数を書式指定し、`buffer` に格納します。`snprintf` 関数は、常に終端の null 文字を格納し、必要に応じて出力を切り捨てます。 関数の `_snprintf` ファミリは、書式付き文字列の長さが確実に `count` 文字数未満の場合にのみ、終端の null 文字を追加します。 各 `argument` \(指定されている場合\) は、`format` 中の対応する書式指定に応じて変換され、格納されます。 format は通常の文字で構成し、その形式と機能は [printf](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) 関数の `format` と同じです。 重なり合う文字列間でコピーした場合の動作は未定義です。  
+## <a name="remarks"></a>コメント  
+ `snprintf` 関数と、関数の `_snprintf` ファミリは、 `count` 以下の文字数を書式指定し、 `buffer`に格納します。 `snprintf` 関数は、常に終端の null 文字を格納し、必要に応じて出力を切り捨てます。 関数の `_snprintf` ファミリは、書式付き文字列の長さが確実に `count` 文字数未満の場合にのみ、終端の null 文字を追加します。 各 `argument` (指定されている場合) は、 `format`中の対応する書式指定に応じて変換され、格納されます。 format は通常の文字で構成し、その形式と機能は `format` printf [関数の](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)と同じです。 重なり合う文字列間でコピーした場合の動作は未定義です。  
   
 > [!IMPORTANT]
->  `format` にユーザー定義の文字列を指定しないでください。`_snprintf` 関数では NULL で終わることが保証されないため \(特に戻り値が `count` の場合\)、これらの関数の後に、終端の null を追加するコードが続いていることを確認してください。 詳しくは、「[バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
+>  `format` にユーザー定義の文字列を指定しないでください。 `_snprintf` 関数では NULL で終わることが保証されないため (特に戻り値が `count`の場合)、これらの関数の後に、終端の null を追加するコードが続いていることを確認してください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
- Visual Studio 2015 および Windows 10 で UCRT と共に開始する場合、`snprintf` は `_snprintf` と同一ではなくなります。`snprintf` 関数の動作は、現在 C99 標準準拠です。  
+ Visual Studio 2015 および Windows 10 で UCRT と共に開始する場合、 `snprintf` は `_snprintf`と同一ではなくなります。 `snprintf` 関数の動作は、現在 C99 標準準拠です。  
   
- `_snwprintf` は `_snprintf` のワイド文字バージョンであり、`_snwprintf` のポインター引数はワイド文字列です。`_snwprintf` と `_snprintf` では、エンコーディング エラーの検出動作が異なる場合があります。`_snwprintf` と同様に、`swprintf` では出力が `FILE` 型の出力先ではなく文字列に書き込まれます。  
+ `_snwprintf` は `_snprintf`のワイド文字バージョンであり、 `_snwprintf` のポインター引数はワイド文字列です。 `_snwprintf` と `_snprintf` では、エンコーディング エラーの検出動作が異なる場合があります。 `_snwprintf`と同様に、 `swprintf`では出力が `FILE`型の出力先ではなく文字列に書き込まれます。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
- C\+\+ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、より安全な新しいバージョンを呼び出します。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../Topic/Secure%20Template%20Overloads.md)」を参照してください。  
+ C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、より安全な新しいバージョンを呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-### 汎用テキスト ルーチンのマップ  
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|Tchar.h のルーチン|\_UNICODE および \_MBCS が未定義の場合|\_MBCS が定義されている場合|\_UNICODE が定義されている場合|  
-|-------------------|----------------------------------|-----------------------|--------------------------|  
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_sntprintf`|`_snprintf`|`_snprintf`|`_snwprintf`|  
 |`_sntprintf_l`|`_snprintf_l`|`_snprintf_l`|`_snwprintf_l`|  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`snprintf`、`_snprintf`、 `_snprintf_l`|\<stdio.h\>|  
-|`_snwprintf`, `_snwprintf_l`|\<stdio.h\> または \<wchar.h\>|  
+|ルーチンによって返される値|必須ヘッダー|  
+|-------------|---------------------|  
+|`snprintf`, `_snprintf`,  `_snprintf_l`|\<stdio.h>|  
+|`_snwprintf`, `_snwprintf_l`|\<stdio.h> または \<wchar.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```c  
+```C  
 // crt_snprintf.c  
 // compile with: /W3  
 #include <stdio.h>  
@@ -301,14 +302,20 @@ int main(void)
 ```  
   
 ```Output  
-Output: String: computer Character: l Integer: 35 Real: 1.732053 character count = 69  
+Output:  
+   String: computer  
+   Character: l  
+   Integer: 35  
+   Real: 1.732053  
+  
+character count = 69  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [sprintf、\_sprintf\_l、swprintf、\_swprintf\_l、\_\_swprintf\_l](../../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)   
- [fprintf、\_fprintf\_l、fwprintf、\_fwprintf\_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
- [printf、\_printf\_l、wprintf、\_wprintf\_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   
- [scanf、\_scanf\_l、wscanf、\_wscanf\_l](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
- [sscanf、\_sscanf\_l、swscanf、\_swscanf\_l](../../c-runtime-library/reference/sscanf-sscanf-l-swscanf-swscanf-l.md)   
+ [sprintf、_sprintf_l、swprintf、_swprintf_l、\__swprintf_l](../../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)   
+ [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
+ [printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   
+ [scanf、_scanf_l、wscanf、_wscanf_l](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
+ [sscanf、_sscanf_l、swscanf、_swscanf_l](../../c-runtime-library/reference/sscanf-sscanf-l-swscanf-swscanf-l.md)   
  [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)

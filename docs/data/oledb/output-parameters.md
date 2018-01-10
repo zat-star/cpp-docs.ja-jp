@@ -19,11 +19,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3d1f1a4c84c4567b325bb19e3696170f7960b46b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 061766f73b554895f8d7ad8952dc6172fd381169
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="output-parameters"></a>出力パラメーター
 ストアド プロシージャの呼び出しは、SQL コマンドの呼び出しに似ています。 主な違いは、ストアド プロシージャが出力パラメーター (または「出力パラメーター」) を使用して、戻り値です。  
@@ -63,5 +66,5 @@ return 0
   
  @_rowcount行の数は、実際にテストのテーブルから返された出力パラメーターをレポートします。 ただし、このストアド プロシージャは、最大 50 個の行の数を制限します。 たとえば、テストで 100 行があった場合、行数は 50 になります (ため、このコードは、上位 50 行のみを取得します)。 発生した場合のみ 30 行の表に、行カウントが 30 になります。 呼び出す必要があります**閉じる**または**CloseAll**をその値をフェッチする前に、出力パラメーターを設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストアド プロシージャの使用](../../data/oledb/using-stored-procedures.md)

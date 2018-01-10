@@ -22,11 +22,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fdfbded65f8f5a728037793a8c4f870ffafc74b0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4b78c4c086b40f786d86411c99279245704a48a8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="application-design-choices"></a>アプリケーションのデザイン上の検討事項
 この記事では、インターネットのプログラミング時に考慮する設計上の問題について説明します。  
@@ -89,7 +90,7 @@ ms.lasthandoff: 10/24/2017
 |[Wininet の基礎](../mfc/win32-internet-extensions-wininet.md)|HTTP、FTP、および gopher インターネット プロトコル。 データは、同期または非同期で転送されることができ、システム全体のキャッシュに格納されます。|[CInternetSession](../mfc/reference/cinternetsession-class.md)、 [CFtpFileFind](../mfc/reference/cftpfilefind-class.md)、 [CGopherFileFind](../mfc/reference/cgopherfilefind-class.md)、し、さらに多くです。|  
 |[WinSock](../mfc/windows-sockets-in-mfc.md)|効率性を高めるおよび制御します。 ソケットおよび TCP/IP プロトコルを理解が必要です。|[CSocket](../mfc/reference/csocket-class.md)、 [CAsyncSocket](../mfc/reference/casyncsocket-class.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC インターネット プログラミングの作業](../mfc/mfc-internet-programming-tasks.md)   
  [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)   
  [Win32 インターネット拡張機能 (WinInet)](../mfc/win32-internet-extensions-wininet.md)   

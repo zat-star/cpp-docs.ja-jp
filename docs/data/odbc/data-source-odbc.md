@@ -19,11 +19,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e0236c8684c37b0378dd7ebead37d2c9c44cf1d6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e4276c997069e69d6e84dd4426af4b82c2a839b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-source-odbc"></a>データ ソース (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
@@ -38,5 +41,5 @@ ms.lasthandoff: 10/24/2017
   
 -   [データ ソース: データ ソースのスキーマの判定 (ODBC)](../../data/odbc/data-source-determining-the-schema-of-the-data-source-odbc.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ODBC (Open Database Connectivity)](../../data/odbc/open-database-connectivity-odbc.md)

@@ -18,11 +18,14 @@ caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e55cb83461ed1a0229babf98c384b74de357aeb8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d5b91a2556a93f3cd74a24ea57306d70f2cbdb41
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="queue-stlclr"></a>queue (STL/CLR)
 このテンプレート クラスでは、先入れ先出しのアクセス権を持つ要素の可変長シーケンスを制御するオブジェクトについて説明します。 コンテナー アダプターを使用する`queue`キューとしてを基になるコンテナーを管理します。  
@@ -42,7 +45,7 @@ template<typename Value,
 ```  
   
 #### <a name="parameters"></a>パラメーター  
- 値  
+ [値]  
  被制御シーケンス内の要素の型。  
   
  コンテナー  
@@ -91,7 +94,7 @@ template<typename Value,
   
 ## <a name="interfaces"></a>インターフェイス  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |<xref:System.ICloneable>|オブジェクトが重複してください。|  
 |I キュー\<値、コンテナー >|汎用的なコンテナーのアダプターを管理します。|  
@@ -99,12 +102,12 @@ template<typename Value,
 ## <a name="remarks"></a>コメント  
  オブジェクトは、割り当てし、型の基になるコンテナーを制御するシーケンスの記憶域を解放`Container`、格納する`Value`要素および要求時に増加します。 オブジェクトが最初の要素を押すだけへのアクセスを制限し、(FIFO キューまたはキューでは単とも呼ばれます) キューの最後の要素をポップ、先入れ先出しの実装します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/キュー >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   

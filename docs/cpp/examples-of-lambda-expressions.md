@@ -4,25 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
-helpviewer_keywords:
-- lambda expressions [C++], examples
+dev_langs: C++
+helpviewer_keywords: lambda expressions [C++], examples
 ms.assetid: 52506b15-0771-4190-a966-2f302049ca86
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 29a2c80bbd586ecf495269dad84f2b42440c41cc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 3177896b8cfdff78b0af2aeb40873f31099ce7d4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="examples-of-lambda-expressions"></a>ラムダ式の例
 この記事では、プログラムでラムダ式を使用する方法を示します。 ラムダ式の概要については、次を参照してください。[ラムダ式](../cpp/lambda-expressions-in-cpp.md)です。 ラムダ式の構造に関する詳細については、次を参照してください。[ラムダ式の構文](../cpp/lambda-expression-syntax.md)です。  
@@ -522,7 +519,7 @@ Hello!
   
  [[この記事の内容](#top)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ラムダ式](../cpp/lambda-expressions-in-cpp.md)   
  [ラムダ式の構文](../cpp/lambda-expression-syntax.md)   
  [自動](../cpp/auto-cpp.md)   

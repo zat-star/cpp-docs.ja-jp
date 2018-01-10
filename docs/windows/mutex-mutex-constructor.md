@@ -1,29 +1,30 @@
 ---
-title: "Mutex::Mutex コンストラクター | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "corewrappers/Microsoft::WRL::Wrappers::Mutex::Mutex"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Mutex、コンストラクター"
+title: "Mutex::mutex コンス トラクター |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: corewrappers/Microsoft::WRL::Wrappers::Mutex::Mutex
+dev_langs: C++
+helpviewer_keywords: Mutex, constructor
 ms.assetid: 504afcdc-775a-4c98-a06f-4fb4663eba3f
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: a07aeac0f8d139f71bdbe2473dc8eabf7e14ec2f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Mutex::Mutex コンストラクター
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="mutexmutex-constructor"></a>Mutex::Mutex コンストラクター
 Mutex クラスの新しいインスタンスを初期化します。  
   
 ## <a name="syntax"></a>構文  
@@ -40,15 +41,15 @@ Mutex(
   
 #### <a name="parameters"></a>パラメーター  
  `h`  
- ハンドル、または、ミュー テックス オブジェクトへのハンドルへの右辺値参照します。  
+ ハンドル、またはハンドル、ミュー テックス オブジェクトへの右辺値参照。  
   
 ## <a name="remarks"></a>コメント  
- 最初のコンス トラクターでは、指定したハンドル、ミュー テックス オブジェクトを初期化します。 2 番目のコンス トラクターでは、指定したハンドル、ミュー テックス オブジェクトを初期化し、現在ミュー テックス オブジェクトに、ミュー テックスの所有権を移動します。  
+ 最初のコンス トラクターは、指定されたハンドルからミュー テックス オブジェクトを初期化します。 2 番目のコンス トラクターは指定のハンドルからミュー テックス オブジェクトを初期化し、現在ミュー テックス オブジェクトにミュー テックスの所有権を移動します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
- **名前空間:** Microsoft::WRL::Wrappers
+ **Namespace:** Microsoft::WRL::Wrappers
  
- ## <a name="see-also"></a>関連項目
- [Mutex クラス](Mutex%20Class1.md)
+ ## <a name="see-also"></a>参照
+ [Mutex クラス](../windows/mutex-class1.md)

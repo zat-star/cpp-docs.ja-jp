@@ -16,14 +16,15 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 74b3ecb413a80fcf0f6de98ee16b75f2d032b123
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ec12e847eef72827e11700be322fd2a2ca309037
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="optimization-best-practices"></a>最適化の推奨事項
-このドキュメントでは、Visual C++ での最適化に関する推奨事項について説明します。 ここでは、次のトピックについて説明します。  
+このドキュメントでは、Visual C++ での最適化に関する推奨事項について説明します。 検討されているトピックは、次のとおりです。  
   
 -   コンパイラとリンカーのオプション  
   
@@ -86,7 +87,7 @@ ms.lasthandoff: 10/24/2017
   
  詳細については、次を参照してください。[制限](../../cpp/restrict.md)です。  
   
- また、`noalias` declspec も関数だけに適用され、その関数が準純粋関数であることを示します。 準純粋関数は、ローカル、引数、引数の第 1 レベルの間接指定だけを参照または変更する関数です。 この declspec はコンパイラでは前提とされます。準純粋関数がグローバル、またはポインター引数の第 2 レベルを間接参照する場合、コンパイラが生成するコードはアプリケーションを中断させる可能性があります。  
+ また、`noalias` declspec も関数だけに適用され、その関数が準純粋関数であることを示します。 準純粋関数は、ローカル、引数、引数の第 1 レベルの間接参照だけを参照または変更する関数です。 この declspec はコンパイラでは前提とされます。準純粋関数がグローバル、またはポインター引数の第 2 レベルを間接参照する場合、コンパイラが生成するコードはアプリケーションを中断させる可能性があります。  
   
  詳細については、「[noalias](../../cpp/noalias.md)」を参照してください。  
   
@@ -150,5 +151,5 @@ int myFunc() {...}
   
  最後に、例外をスローするのは、例外の場合だけにしてください。 通常の制御フローに例外を使用すると、パフォーマンスが低下します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コードの最適化](../../build/reference/optimizing-your-code.md)

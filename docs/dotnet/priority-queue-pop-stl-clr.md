@@ -1,41 +1,42 @@
 ---
-title: "priority_queue::pop (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::priority_queue::pop"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "pop メンバー [STL/CLR]"
+title: "priority_queue::pop (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::priority_queue::pop
+dev_langs: C++
+helpviewer_keywords: pop member [STL/CLR]
 ms.assetid: d363b3f1-247b-466a-a300-c5918b0dfd4e
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 6894a4acff991b069f7c5b587fd8a90c5a3a40ec
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# priority_queue::pop (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-最も proirity 要素を削除します。  
+# <a name="priorityqueuepop-stlclr"></a>priority_queue::pop (STL/CLR)
+Proirity 最上位要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void pop();  
 ```  
   
-## 解説  
- メンバー関数は空でない必要があります。被制御シーケンスの優先順位の要素を削除します。  戻るに 1 個の要素でキューを短くするために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、空でない必要があります、被制御シーケンスの最も高い優先度要素を削除します。 使用するバックに 1 つの要素によって、キューを短くします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_priority_queue_pop.cpp   
@@ -65,13 +66,16 @@ int main()
   
 ```  
   
-  **b c**  
- **a b**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+c a b  
+b a  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [priority\_queue::push](../dotnet/priority-queue-push-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [priority_queue::push (STL/CLR)](../dotnet/priority-queue-push-stl-clr.md)

@@ -1,117 +1,118 @@
 ---
-title: "/fp (浮動小数点の動作の指定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLCompilerTool.floatingPointModel"
-  - "VC.Project.VCCLWCECompilerTool.FloatingPointExceptions"
-  - "/fp"
-  - "VC.Project.VCCLWCECompilerTool.floatingPointModel"
-  - "VC.Project.VCCLCompilerTool.FloatingPointExceptions"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/fp コンパイラ オプション [C++]"
-  - "-fp コンパイラ オプション [C++]"
+title: "-fp (浮動小数点の動作の指定) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLCompilerTool.floatingPointModel
+- VC.Project.VCCLWCECompilerTool.FloatingPointExceptions
+- /fp
+- VC.Project.VCCLWCECompilerTool.floatingPointModel
+- VC.Project.VCCLCompilerTool.FloatingPointExceptions
+dev_langs: C++
+helpviewer_keywords:
+- -fp compiler option [C++]
+- /fp compiler option [C++]
 ms.assetid: 10469d6b-e68b-4268-8075-d073f4f5d57e
-caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 0f4a86c7bbbd38887944080a5a5c8124310fdd4a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /fp (浮動小数点の動作の指定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="fp-specify-floating-point-behavior"></a>/fp (浮動小数点の動作の指定)
 ソース コード ファイルの浮動小数点の動作を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /fp:[precise | except[-] | fast | strict ]  
 ```  
   
-## フラグ  
- **precise**  
+## <a name="flags"></a>フラグ  
+ **正確です**  
  これが既定値です。  
   
- 浮動小数点演算の精度に影響する最適化処理を無効にし、演算結果が一致するかどうかを判定する浮動小数点テストの一貫性を向上させます \(ANSI 基準に厳密に従うには、特定の精度を保持する必要があります\)。既定では、x86 アーキテクチャのコードでは、浮動小数点演算の中間結果は、コプロセッサの 80 ビット レジスタに保持されます。  これにより、プログラムの実行速度が向上し、プログラムのサイズも小さくなります。  ただし、浮動小数点演算では、80 ビット未満のメモリで表される浮動小数点データ型も使用されるため、処理内容の多い演算では、このように余分な精度ビット、つまり、80 ビットと実際の浮動小数点データ型のビット数との差があると、演算結果の一貫性が失われることがあります。  
+ 浮動小数点演算の精度に影響する最適化処理を無効にし、演算結果が一致するかどうかを判定する浮動小数点テストの一貫性を向上させます  (ANSI 基準に厳密に従うには、特定の精度を保持する必要があります)。既定では、x86 アーキテクチャのコードでは、浮動小数点演算の中間結果は、コプロセッサの 80 ビット レジスタに保持されます。 これにより、プログラムの実行速度が向上し、プログラムのサイズも小さくなります。 ただし、浮動小数点演算では、80 ビット未満のメモリで表される浮動小数点データ型も使用されるため、処理内容の多い演算では、このように余分な精度ビット、つまり、80 ビットと実際の浮動小数点データ型のビット数との差があると、演算結果の一貫性が失われることがあります。  
   
- x86 プロセッサの **\/fp:precise** では、パラメーターが関数に渡されるときに、コンパイラは `float` 型の変数を正しい有効桁数に丸め、割り当ておよびキャストが適切に行われるようにします。  この丸めにより、データが型の容量を大幅に上回らないようにします。  **\/fp:precise** でコンパイルされたプログラムは、**\/fp:precise** を使用せずにコンパイルされたプログラムよりも処理速度が遅く、サイズも大きくなります。  **\/fp:precise** は組み込みを無効にするため、代わりに標準のランタイム ライブラリ ルーチンが使用されます。  詳細については、「[\/Oi \(組み込み関数の生成\)](../Topic/-Oi%20\(Generate%20Intrinsic%20Functions\).md)」を参照してください。  
+ **/Fp: 正確な**x86 で型の変数で丸め処理を実行して、プロセッサ コンパイラ`float`の割り当ておよびキャスト関数にパラメーターが渡されたときに正しい有効桁数にします。 この丸めにより、データが型の容量を大幅に上回らないようにします。 コンパイルされたプログラム**/fp: 正確な**なしでコンパイルされる 1 つを超えると低速にすることができます**/fp: 正確な**します。 **/fp: 正確な**ルーチンが代わりに使用される標準ランタイム ライブラリは組み込みを無効にします。 詳細については、「[/Oi (組み込み関数の生成)](../../build/reference/oi-generate-intrinsic-functions.md)」を参照してください。  
   
- 次の浮動小数点の動作は **\/fp:precise** で有効にします。  
+ 次の浮動小数点の動作が有効な**/fp: 正確な**:  
   
 -   短縮操作、つまり、最後に 1 回だけ丸め処理を行う複合演算を使用して、複数の演算を置き換える操作。  
   
--   特殊な値 \(NaN、\+infinity、\-infinity、\+0、\-0\) に対して無効な式の最適化は使用できません。  最適化 x\-x \=\> 0、x\*0 \=\> 0、x\-0 \=\> x、x\+0 \=\> x、および 0\-x \=\> \-x は、さまざまな理由によりすべて無効です \(詳細については、IEEE 754 および C99 標準を参照してください\)。  
+-   特殊な値 (NaN、+infinity、-infinity、+0、-0) に対して無効な式の最適化は使用できません。 最適化の x、x > 0 = x * 0 > 0、x-0 を = = > x、x + 0 = > x、および 0 x = >-x はさまざまな理由で無効です。 (詳細については、IEEE 754 および C99 標準を参照してください)。  
   
--   コンパイラは、NaN が含まれている比較を適切に処理します。  たとえば、`x` が NaN の場合、x \!\= x は **true** になり、NaN が含まれている順序比較では例外が発生します。  
+-   コンパイラは、NaN が含まれている比較を適切に処理します。 たとえば、x! = x の結果に**true**場合`x`NaN は、順序付け比較を NaN に関連する例外が発生します。  
   
--   式の評価は C99 FLT\_EVAL\_METHOD\=2 に従いますが、1 つだけ例外があります。x86 プロセッサに対するプログラミングでは、FPU は 53 ビット精度に設定されるため、long double 精度と見なされます。  
+-   式の評価は C99 FLT_EVAL_METHOD=2 に従いますが、1 つだけ例外があります。x86 プロセッサに対するプログラミングでは、FPU は 53 ビット精度に設定されるため、long double 精度と見なされます。  
   
--   厳密な 1.0 での乗算では他の係数に変換されます。  たとえば、x\*y\*1.0 は x\*y になります。  同じように、x\*1.0\*y は x\*y になります。  
+-   厳密な 1.0 での乗算では他の係数に変換されます。 x * y\*1.0 が x に変換される\*y です。 同様に、x\*1.0\*y が x に変換される\*y です。  
   
--   厳密な 1.0 での除算では被除数が使用されます。  たとえば、x\*y\/1.0 は x\*y になります。  同じように、x\/1.0\*y は x\*y になります。  
+-   厳密な 1.0 での除算では被除数が使用されます。 x * x に変換する y/1.0\*y です。 同様に、x/1.0\*y が x に変換される\*y です。  
   
- [fenv\_access](../../preprocessor/fenv-access.md) がオンのときに **\/fp:precise** を使用すると、浮動小数点式のコンパイル時間の評価などの一部の最適化が無効になります。  たとえば、[\_control87、\_controlfp、\_\_control87\_2](../Topic/_control87,%20_controlfp,%20__control87_2.md) を使用して丸めモードを変更した場合、コンパイラは浮動小数点を計算しますが、指定した丸めモードは `fenv_access` がオンになるまでは無効です。  
+ 使用して**/fp: 正確な**とき[fenv_access](../../preprocessor/fenv-access.md)コンパイル時の浮動小数点式の評価などの最適化が無効にします。 たとえば、使用する[_control87、_controlfp、 \__control87_2](../../c-runtime-library/reference/control87-controlfp-control87-2.md)丸めモードと、コンパイラを変更するには、浮動小数点計算を行い、指定した、丸めモードが無効にしない限り、 `fenv_access`は ON です。  
   
- **\/fp:precise** は **\/Op** コンパイラ オプションを置き換えます。  
+ **/fp: 正確な**置き換えます、 **/Op**コンパイラ オプション。  
   
- **fast**  
- 浮動小数点演算を最適化するため規則を緩和することで、ほとんどの場合、最高速のコードを作成します。  これにより、コンパイラは速度のために精度と正確性を犠牲にして、浮動小数点コードを最適化できます。  **\/fp:fast** が指定されると、コンパイラは代入ステートメント、型キャスト、または関数呼び出しで正しく丸め処理を行わず、中間式を丸めない可能性があります。  そして、有限の精度の結果に対する影響を考慮せずに、たとえば、結合規則および分配規則に従って、演算の順序を変更するか、代数変換を実行する可能性があります。  また、C\+\+ の型の上位変換規則に従う代わりに、演算とオペランドを単精度に変更する場合があります。  浮動小数点固有の短縮形の最適化は常に有効になります \([fp\_contract](../../preprocessor/fp-contract.md) はオンです\)。  浮動小数点の例外および FPU 環境のアクセスは無効になります \(**\/fp:except\-** が暗黙的に指定され、[fenv\_access](../../preprocessor/fenv-access.md) はオフです\)。  
+ **高速**  
+ 浮動小数点演算を最適化するため規則を緩和することで、ほとんどの場合、最高速のコードを作成します。 これにより、コンパイラは速度のために精度と正確性を犠牲にして、浮動小数点コードを最適化できます。 ときに**/fp:fast**指定すると、コンパイラが代入ステートメントで正しく丸められない可能性があります、丸めない、または関数呼び出し、および中間式の丸め処理を行うことはできます。 そして、有限の精度の結果に対する影響を考慮せずに、たとえば、結合規則および分配規則に従って、演算の順序を変更するか、代数変換を実行する可能性があります。 また、C++ の型の上位変換規則に従う代わりに、演算とオペランドを単精度に変更する場合があります。 浮動小数点に固有の省略形の最適化が常に有効になっている ([fp_contract](../../preprocessor/fp-contract.md)は ON です)。 浮動小数点例外と FPU 環境のアクセスが無効になっています (**/fp: を除く-**は暗黙的に指定および[fenv_access](../../preprocessor/fenv-access.md)は OFF です。)。  
   
- **\/fp:fast** は、**\/fp:strict** または **\/fp:precise** と併用できません。  コマンド ラインに指定された最後のオプションが使用されます。  **\/fp:fast** と **\/fp:except** の両方を指定すると、コンパイラ エラーが発生します。  
+ **/fp:fast**では使用できません**/fp: 厳密な**または**/fp: 正確な**します。 コマンド ラインに指定された最後のオプションが使用されます。 両方を指定する**/fp:fast**と**/fp: 除く**コンパイラ エラーが発生します。  
   
- [\/Za、\/Ze \(言語拡張機能の無効化\)](../../build/reference/za-ze-disable-language-extensions.md) \(ANSI 互換性\) と **\/fp:fast** を指定すると、予期しない動作が発生することがあります。  たとえば、単精度の浮動小数点演算が単精度に丸められない場合があります。  
+ 指定する[/Za、/Ze (言語拡張を無効にする)](../../build/reference/za-ze-disable-language-extensions.md) (ANSI 互換性) と**/fp:fast**予期しない動作が発生する可能性があります。 たとえば、単精度の浮動小数点演算が単精度に丸められない場合があります。  
   
- **except\[\-\]**  
- 信頼性の高い浮動小数点例外モデル。  例外は発生直後にスローされます。  このオプションの既定値はオフです。  オプションにマイナス記号を付けると、オプションは明示的に無効になります。  
+ **[-] を除く**  
+ 信頼性の高い浮動小数点例外モデル。 例外は発生直後にスローされます。 このオプションの既定値はオフです。 オプションにマイナス記号を付けると、オプションは明示的に無効になります。  
   
- **strict**  
- 厳密な浮動小数点モデル。  **\/fp:strict** は [fp\_contract](../../preprocessor/fp-contract.md) を OFF にし、[fenv\_access](../../preprocessor/fenv-access.md) を ON にします。  **\/fp:except** は暗黙に指定され、**\/fp:except\-** を指定して明示的に無効にできます。  **\/fp:except\-** を使用する場合、**\/fp:strict** は厳密な浮動小数点のセマンティクスを適用しますが、例外イベントは無視します。  
+ **厳密です**  
+ 厳密な浮動小数点モデル。 **/fp: 厳密な**により[fp_contract](../../preprocessor/fp-contract.md)をオフにすると[fenv_access](../../preprocessor/fenv-access.md) ON であります。 **/fp: を除く**は暗黙的および明示的に指定することによって無効にすることができます**/fp: 除く-**です。 使用すると**/fp: を除く-**、 **/fp: 厳密な**で厳密な浮動小数点セマンティクスを適用せず例外イベントに関してです。  
   
-## 解説  
- 1 つのコンパイルで複数の **\/fp** オプションを指定できます。  
+## <a name="remarks"></a>コメント  
+ 複数**/fp**同じコンパイルでオプションを指定することができます。  
   
- 浮動小数点の動作を関数で制御するには、「[float\_control](../Topic/float_control.md) プラグマ」を参照してください。  これにより、**\/fp** コンパイラの設定がオーバーライドされます。  優れたエンジニアリング手法として、ローカル浮動小数点の動作を保存して、元に戻すことをお勧めします。  
+ 関数では、浮動小数点の動作を制御するを参照してください。、 [float_control](../../preprocessor/float-control.md)プラグマ。 これよりも優先、 **/fp**コンパイラ設定します。 優れたエンジニアリング手法として、ローカル浮動小数点の動作を保存して、元に戻すことをお勧めします。  
   
-```css  
+```cpp  
 #pragma float_control(precise, on, push)  
 // Code that uses /fp:precise mode  
 #pragma float_control(pop)  
 ```  
   
- 浮動小数点の最適化のほとんどは **\/fp:strict**、**\/fp:except**、およびそれに対応するプラグマに関連しており、`fp_contract` プラグマはマシンに依存しています。  **\/fp:strict** と **\/fp:except** は **\/clr** と互換性がありません。  
+ 関連するほとんどの浮動小数点の最適化**/fp: 厳密な**、 **/fp: を除く**(とその対応するプラグマ)、および`fp_contract`プラグマはマシンに依存します。 **/fp: 厳密な**と**/fp: を除く**と互換性がない**/clr**です。  
   
- **\/fp:precise** は、アプリケーションのほとんどの浮動小数点要件に対応します。  **\/fp:except** および **\/fp:strict** を使用できますが、パフォーマンスが低下する場合があります。  パフォーマンスが最も重要である場合は、**\/fp:fast** を使用することを検討してください。  
+ **/fp: 正確な**アプリケーションの浮動小数点要件のほとんどに対応する必要があります。 使用することができます**/fp: を除く**と**/fp: 厳密な**パフォーマンスが低下がある可能性がありますが、します。 パフォーマンスが最も重要な場合は、使用するかどうかを検討**/fp:fast**です。  
   
- **\/fp:strict**、**\/fp:fast**、および **\/fp:precise** は精密 \(正確\) なモードです。  一度に 1 つのモードだけを使用できます。  **\/fp:strict** と **\/fp:precise** の両方が指定されている場合、コンパイラは最後に処理した方を使用します。  **\/fp:strict** と **\/fp:fast** の両方を指定することはできません。  
+ **/fp: 厳密な**、 **/fp:fast**、および**/fp: 正確な**モードは精密 (正確)。 一度に 1 つのモードだけを使用できます。 両方**/fp: 厳密な**と**/fp: 正確な**指定すると、コンパイラが最後に処理する 1 つを使用します。 両方**/fp: 厳密な**と**/fp:fast**は指定できません。  
   
- 詳細については、「[Microsoft Visual C\+\+ Floating\-Point Optimization \(Microsoft Visual C\+\+ での浮動小数点の最適化\)](http://msdn.microsoft.com/library/aa289157.aspx)」を参照してください。  
+ 詳細については、次を参照してください。 [Visual C++ 浮動小数点の最適化の Microsoft](http://msdn.microsoft.com/library/aa289157.aspx)です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[構成プロパティ\]** ノードを展開します。  
+2.  展開して、**構成プロパティ**ノード。  
   
-3.  **\[C\/C\+\+\]** ノードを展開します。  
+3.  展開して、 **C/C++**ノード。  
   
-4.  **\[コード生成\]** プロパティ ページを選択します。  
+4.  選択、**コード生成**プロパティ ページ。  
   
-5.  **\[浮動小数点モデル\]** プロパティを変更します。  
+5.  変更、**浮動小数点モデル**プロパティです。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.floatingPointModel%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
- [Microsoft Visual C\+\+ Floating Point Optimization \(Microsoft Visual C\+\+ 浮動小数点の最適化\)](http://msdn.microsoft.com/library/aa289157.aspx)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
+ [Microsoft Visual C のポイントの最適化を浮動小数点](http://msdn.microsoft.com/library/aa289157.aspx)

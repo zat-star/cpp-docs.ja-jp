@@ -14,11 +14,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3feb2d9d72fbfcda7237ed0889158b1ee4f2a844
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: ed20c29d017527d5c2ce0b0c5ab8053fc75dc6ee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="purpose-of-attributes"></a>属性の目的
 属性は、言語の従来の構造を分断することがなく、方向は現在不可能で C++ を拡張します。 属性は、プロバイダーの言語機能を動的に拡張する (個別の Dll) を使用します。 属性の主な目的では、コンポーネントの開発者の生産性を高めるだけでなく、COM コンポーネントのオーサリングを簡略化します。 属性を適用するクラス、データ メンバー、またはメンバー関数など、ほぼすべての C++ コンストラクトにします。 この新しいテクノロジが提供する利点の強調表示を次に示します。  
@@ -44,5 +47,5 @@ class CMyReceiver
   
  設定することができます、 **CMyReceiver**メソッド`handler1`と`handler2`イベントを処理する (組み込み関数を使用して[_ _hook](../cpp/hook.md))を使用してを作成することができるイベントソースから[event_source](../windows/event-source.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../windows/attributed-programming-concepts.md)

@@ -42,11 +42,12 @@ caps.latest.revision: "4"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f0b2e084e27b951676fddfb20b53d5f74944089e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3ecf7f9bb38cdd844514001126a98bced67617e7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ilogb-ilogbf-ilogbl"></a>ilogb、ilogbf、ilogbl
 指定した値を、バイアスをかけない 2 進数の指数として表す整数を取得します。  
@@ -97,15 +98,15 @@ int ilogbl(
   
  この関数を呼び出すことは、これに相当する `logb` 関数を呼び出してから、戻り値を `int` へキャストすることに似ています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|C ヘッダー|C++ ヘッダー|  
+|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
 |-------------|--------------|------------------|  
 |`ilogb`、`ilogbf`、`ilogbl`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [frexp](../../c-runtime-library/reference/frexp.md)   
  [logb、logbf、logbl、_logb、_logbf](../../c-runtime-library/reference/logb-logbf-logbl-logb-logbf.md)

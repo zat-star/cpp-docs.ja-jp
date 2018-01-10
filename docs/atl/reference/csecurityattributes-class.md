@@ -19,11 +19,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8ed8a9336a60b3577f856f0bc2bd6baa358aec6d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 918f90c9f04736eb2328d989e21b7b9997edab86
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csecurityattributes-class"></a>CSecurityAttributes クラス
 このクラスは、セキュリティ属性の構造体の thin ラッパーです。  
@@ -61,7 +62,7 @@ class CSecurityAttributes : public SECURITY_ATTRIBUTES
   
  `CSecurityAttributes`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="csecurityattributes"></a>CSecurityAttributes::CSecurityAttributes  
@@ -96,7 +97,7 @@ void Set(const CSecurityDesc& rSecurityDescriptor, bool bInheritHandle = false) 
 ### <a name="remarks"></a>コメント  
  このメソッドは、コンス トラクターによって初期化に使用、`CSecurityAttributes`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [SECURITY_ATTRIBUTES](http://msdn.microsoft.com/library/windows/desktop/aa379560)   
  [セキュリティ記述子](http://msdn.microsoft.com/library/windows/desktop/aa379561)   

@@ -17,11 +17,14 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0f130c5d17a1a753d97cded0ab987305cc6a75c7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: df532b1ffdc8eba635af93f34e0d77fd3da0d115
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ole-db-programming"></a>OLE DB プログラミング
 Microsoft OLE DB は、レガシ テクノロジです。新しいアプリケーションのリンクの SQL サーバーの必要なデータ アクセス API です。 その他のすべての新しいアプリケーションでは、ODBC を使用する必要があります。 SQL Server の現在の OLE DB プロバイダーは、SQLNCLI11 です。DLL です。 プロバイダーは SQL Server 2016 でまだ出荷されています。 このドキュメントは、OLE DB を既に使用している既存のアプリケーションを維持している開発者向けです。
@@ -44,5 +47,5 @@ Microsoft OLE DB は、レガシ テクノロジです。新しいアプリケ�
 |ODBC の概念説明のトピック|[ODBC (Open Database Connectivity)](../../data/odbc/open-database-connectivity-odbc.md)|  
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ アクセス](../data-access-in-cpp.md)

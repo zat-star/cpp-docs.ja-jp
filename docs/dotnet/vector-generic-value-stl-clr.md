@@ -15,11 +15,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5678d9353b49dd9a85b51e44a338401a58a56371
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 09b20068b2c0900c3a75524a0fe118d05ee1c0ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vectorgenericvalue-stlclr"></a>vector::generic_value (STL/CLR)
 コンテナーのジェネリック インターフェイスを使用するための要素の型。  
@@ -76,12 +79,12 @@ a b c
 a a c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/vector >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
  [vector::generic_container (STL/CLR)](../dotnet/vector-generic-container-stl-clr.md)   
  [vector::generic_iterator (STL/CLR)](../dotnet/vector-generic-iterator-stl-clr.md)   

@@ -20,11 +20,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5483b6eff89b95a29d2f348347a02b7664e75e7b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0114d2ce60eba1d92b4cfd52d003532bd9ced097
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ca2wex-class"></a>CA2WEX クラス
 このクラスは、文字列変換マクロによって使用`CA2TEX`、 `CA2CTEX`、 `CT2WEX`、および`CT2CWEX`、および typedef **CA2W**です。  
@@ -93,7 +94,7 @@ class CA2WEX
 ## <a name="example"></a>例  
  参照してください[ATL および MFC 文字列変換マクロ](string-conversion-macros.md)をこれらの文字列変換マクロを使用する例についてはします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlconv.h  
   
 ##  <a name="ca2wex"></a>CA2WEX::CA2WEX  
@@ -148,7 +149,7 @@ operator LPWSTR() const throw();
 ### <a name="return-value"></a>戻り値  
  種類としてテキスト文字列を返す**LPWSTR です。**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CA2AEX クラス](../../atl/reference/ca2aex-class.md)   
  [CA2CAEX クラス](../../atl/reference/ca2caex-class.md)   
  [CW2AEX クラス](../../atl/reference/cw2aex-class.md)   

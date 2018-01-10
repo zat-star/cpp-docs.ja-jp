@@ -34,11 +34,12 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c74216b8b510b17327c22a087295725049c4f024
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 66c188c490861e0b632791755b2d9914a7919865
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="scopedallocatoradaptor-class"></a>scoped_allocator_adaptor クラス
 アロケーターの入れ子を表します。  
@@ -73,7 +74,7 @@ class scoped_allocator_adaptor;
   
 ### <a name="constructors"></a>コンストラクター  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[scoped_allocator_adaptor](#scoped_allocator_adaptor)|`scoped_allocator_adaptor` オブジェクトを構築します。|  
   
@@ -96,7 +97,7 @@ class scoped_allocator_adaptor;
   
 ### <a name="structs"></a>構造体  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[scoped_allocator_adaptor::rebind 構造体](#rebind_struct)|`scoped_allocator_adaptor\<Other, Inner...>` のシノニムとして `Outer::rebind\<Other>::other` 型を定義します。|  
   
@@ -113,7 +114,7 @@ class scoped_allocator_adaptor;
 |[outer_allocator](#outer_allocator)|`outer_allocator_type` 型の格納されているオブジェクトへの参照を取得します。|  
 |[select_on_container_copy_construction](#select_on_container_copy_construction)|対応するアロケーターごとに `select_on_container_copy_construction` を呼び出すことによって、格納されている各アロケーター オブジェクトが初期化された新しい `scoped_allocator_adaptor` オブジェクトを作成します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<scoped_allocator>  
   
  **名前空間:** std  
@@ -307,7 +308,7 @@ scoped_allocator_adaptor select_on_container_copy_construction();
 ### <a name="return-value"></a>戻り値  
  このメソッドは、実質的に `scoped_allocator_adaptor(Outer_traits::select_on_container_copy_construction(*this), inner_allocator().select_on_container_copy_construction())` を返します。 結果は、対応するアロケーター `al` に対して `al.select_on_container_copy_construction()` を呼び出すことによって、格納されている各アロケーター オブジェクトが初期化された新しい `scoped_allocator_adaptor` オブジェクトです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
 
 
