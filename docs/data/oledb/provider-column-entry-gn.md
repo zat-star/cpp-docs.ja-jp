@@ -1,32 +1,33 @@
 ---
-title: "PROVIDER_COLUMN_ENTRY_GN | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PROVIDER_COLUMN_ENTRY_GN"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PROVIDER_COLUMN_ENTRY_GN マクロ"
+title: "PROVIDER_COLUMN_ENTRY_GN |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: PROVIDER_COLUMN_ENTRY_GN
+dev_langs: C++
+helpviewer_keywords: PROVIDER_COLUMN_ENTRY_GN macro
 ms.assetid: be77ba85-634c-4e28-832f-d2fa40413254
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 8b9899efec9ef3a96ad5ab6377c2451cc8c722a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# PROVIDER_COLUMN_ENTRY_GN
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プロバイダーでサポートされる特定の列を表します。  
+# <a name="providercolumnentrygn"></a>PROVIDER_COLUMN_ENTRY_GN
+プロバイダーでサポートされている特定の列を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,38 +36,38 @@ name
 , ordinal, flags, colSize, dbtype, precision, scale, guid )  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *name*  
- \[\]項目の名前です。  
+ [in]列の名前。  
   
  `ordinal`  
- \[入力\] 列番号。  列がブックマーク列でない場合は、行数は 0 です。  
+ [in]列番号。 列は、ブックマーク列でない限り、列番号は 0 をできません。  
   
  `flags`  
- \[\]データを返すかを指定します。  [DBBINDING 構造体](https://msdn.microsoft.com/en-us/library/ms716845.aspx)の `dwFlags` の説明を参照してください。  
+ [in]データを返す方法を指定します。 参照してください、`dwFlags`説明[DBBINDING 構造体](https://msdn.microsoft.com/en-us/library/ms716845.aspx)です。  
   
  *colSize*  
- \[\]列のサイズ。  
+ [in]列のサイズ。  
   
  `dbtype`  
- \[\]値のデータ型を示します。  [DBBINDING 構造体](https://msdn.microsoft.com/en-us/library/ms716845.aspx)の **wType** の説明を参照してください。  
+ [in]値のデータ型を示します。 参照してください、 **wType**説明[DBBINDING 構造体](https://msdn.microsoft.com/en-us/library/ms716845.aspx)です。  
   
  *precision*  
- \[\] *dbType が*`DBTYPE_NUMERIC` または **DBTYPE\_DECIMAL**の精度がデータを取得するときに使用されます。  [DBBINDING 構造体](https://msdn.microsoft.com/en-us/library/ms716845.aspx)の **bPrecision** の説明を参照してください。  
+ [in]場合にデータを取得するときに使用する有効桁数を示す*dbType*は`DBTYPE_NUMERIC`または**DBTYPE_DECIMAL**です。 参照してください、 **bPrecision**説明[DBBINDING 構造体](https://msdn.microsoft.com/en-us/library/ms716845.aspx)です。  
   
  `scale`  
- \[\] dbType が `DBTYPE_NUMERIC` または **DBTYPE\_DECIMAL**のスケールを使用してデータを取得するためにいつ表示されます。  [DBBINDING 構造体](https://msdn.microsoft.com/en-us/library/ms716845.aspx)の **bScale** の説明を参照してください。  
+ [in]DbType がある場合は、データを取得するときに使用する小数点以下桁数を示す`DBTYPE_NUMERIC`または**DBTYPE_DECIMAL**です。 参照してください、 **bScale**説明[DBBINDING 構造体](https://msdn.microsoft.com/en-us/library/ms716845.aspx)です。  
   
  `guid`  
- スキーマ行セットの GUID。  スキーマ行セットおよび GUID の一覧の *OLE DB Programmer's Reference* の [IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx) を参照してください。  
+ スキーマ行セットの GUID。 参照してください[IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx)で、 *OLE DB プログラマーズ リファレンス*スキーマ行セットとその Guid の一覧についてはします。  
   
-## 解説  
- 割り当てサイズ、列のデータ型、精度、スケール、およびスキーマ行セット GUID を指定できます。  
+## <a name="remarks"></a>コメント  
+ 列のサイズ、データ型、有効桁数、小数点以下桁数、およびスキーマ行セット GUID を指定できます。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート用マクロ](../../data/oledb/macros-for-ole-db-provider-templates.md)   
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   

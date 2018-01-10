@@ -20,11 +20,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b66571e08b18f9bf42b35293bef0485f6a154bbf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: c1b45cc94236d02bd7b7e8174de9752192c7e3c5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="irowsetinfoimplgetproperties"></a>IRowsetInfoImpl::GetProperties
 プロパティの現在の設定を返します、 **DBPROPSET_ROWSET**グループ。  
@@ -44,10 +47,10 @@ ms.lasthandoff: 10/24/2017
 #### <a name="parameters"></a>パラメーター  
  参照してください[irowsetinfo:](https://msdn.microsoft.com/en-us/library/ms719611.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IRowsetInfoImpl クラス](../../data/oledb/irowsetinfoimpl-class.md)   
  [Irowsetinfoimpl::getreferencedrowset](../../data/oledb/irowsetinfoimpl-getreferencedrowset.md)   
  [IRowsetInfoImpl::GetSpecification](../../data/oledb/irowsetinfoimpl-getspecification.md)

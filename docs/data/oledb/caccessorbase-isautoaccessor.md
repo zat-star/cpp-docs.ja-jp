@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a08251ddf32f815390c28677f03536e1c2cec7d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 677eb2d2ca8d719598090e1753275e2429706b83
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="caccessorbaseisautoaccessor"></a>CAccessorBase::IsAutoAccessor
 移動操作中にデータが自動的に取得アクセサーの場合は true を返します。  
@@ -43,8 +46,8 @@ ms.lasthandoff: 10/24/2017
 ## <a name="return-value"></a>戻り値  
  返します**true**アクセサーが自動場合。 それ以外の場合は **false**を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CAccessorBase クラス](../../data/oledb/caccessorbase-class.md)

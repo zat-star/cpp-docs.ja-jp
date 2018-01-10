@@ -15,16 +15,17 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2ec7d8d15b8219071b593368ed539d92ff3c9032
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 69dfcfbe0c8c05d275a5f3a8f86c30b0e59bd3a5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="when-do-i-need-to-call-atlaxwininit"></a>ときになを呼び出す必要があるのですか。
 
-[な](reference/composite-control-global-functions.md#atlaxwininit)登録、 **"AtlAxWin80"**ウィンドウ (さらに、いくつかのカスタム ウィンドウ メッセージには) クラスのため、ホスト ウィンドウを作成しようとする前に、この関数を呼び出す必要があります。 ただし、常にする必要はありません Api (およびそれらを使用するクラス) をホストから明示的に、この関数の呼び出しを多くの場合、この関数を呼び出します。 この関数を複数回呼び出す害はありません。 。  
+[な](reference/composite-control-global-functions.md#atlaxwininit)登録、 **"AtlAxWin80"**ウィンドウ (さらに、いくつかのカスタム ウィンドウ メッセージには) クラスのため、ホスト ウィンドウを作成しようとする前に、この関数を呼び出す必要があります。 ただし、常にする必要はありません Api (およびそれらを使用するクラス) をホストから明示的に、この関数の呼び出しを多くの場合、この関数を呼び出します。 この関数を複数回呼び出す害はありません。 である必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  AtlAxWinTerm を呼び出す必要が場合     
  [コントロール コンテインメントよく寄せられる質問](../atl/atl-control-containment-faq.md)

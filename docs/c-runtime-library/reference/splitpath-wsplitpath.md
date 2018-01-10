@@ -44,11 +44,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6e1b8dd85a8ddbfbf64af000eee8cacca26bf1ce
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ad76dd59e0119e46030eb19223d678927b3fd077
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="splitpath-wsplitpath"></a>_splitpath、_wsplitpath
 パス名をコンポーネントに分割します。 これらの関数のセキュリティを強化したバージョンについては、「[_splitpath_s、_wsplitpath_s](../../c-runtime-library/reference/splitpath-s-wsplitpath-s.md)」をご覧ください。  
@@ -89,7 +90,7 @@ void _wsplitpath(
  先頭のピリオド (`.`) を含む、ファイル名の拡張子。 ファイル名の拡張子が不要な場合は、このパラメーターに `NULL` を渡します。  
   
 ## <a name="remarks"></a>コメント  
- `_splitpath` 関数は、パスを 4 つのコンポーネントに分割します。 `_splitpath` は、現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 `_wsplitpath` は `_splitpath` のワイド文字バージョンであり、`_wsplitpath` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
+ `_splitpath` 関数は、パスを 4 つのコンポーネントに分割します。 `_splitpath` は、マルチバイト文字列引数を自動的に適切に処理し、現在使用しているマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識します。 `_wsplitpath` は `_splitpath` のワイド文字バージョンであり、`_wsplitpath` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
   
  **セキュリティに関するメモ**これらの関数は、バッファー オーバーランの問題によって潜在的な脅威を引き起こすことがあります。 バッファー オーバーランは、システムを攻撃するときによく使用される方法であり、その結果、認められていない権限が昇格されます。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。 これらの関数のセキュリティを強化したバージョンについては、「[_splitpath_s、_wsplitpath_s](../../c-runtime-library/reference/splitpath-s-wsplitpath-s.md)」をご覧ください。  
   
@@ -105,7 +106,7 @@ void _wsplitpath(
   
  マニフェスト定数の値を次の表に示します。  
   
-|名前|値|  
+|name|[値]|  
 |----------|-----------|  
 |_MAX_DRIVE|3|  
 |_MAX_DIR|256|  
@@ -116,21 +117,21 @@ void _wsplitpath(
   
  `path` 以外の、必要としない任意のパラメーターについて、`NULL` を `_splitpath` に渡すことができます。  
   
- `path` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、関数から `EINVAL` が返されます。  
+ `path` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `EINVAL`が返されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_splitpath`|\<stdlib.h>|  
 |`_wsplitpath`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_makepath](../../c-runtime-library/reference/makepath-wmakepath.md)」の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_fullpath、_wfullpath](../../c-runtime-library/reference/fullpath-wfullpath.md)   
  [_getmbcp](../../c-runtime-library/reference/getmbcp.md)   

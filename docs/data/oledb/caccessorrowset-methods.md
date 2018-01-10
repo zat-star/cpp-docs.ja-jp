@@ -1,25 +1,27 @@
 ---
-title: "CAccessorRowset のメソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CAccessorRowset クラス, メソッド"
+title: "CAccessorRowset のメソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: CAccessorRowset class, methods
 ms.assetid: ab29d438-a382-4bd0-85fa-55182122ca00
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 884279fc2370272e99fddc039c7ef6f065375045
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CAccessorRowset のメソッド
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-`CAccessorRowset`のメソッドについては、[CAccessorRowset のメンバー](../../data/oledb/caccessorrowset-members.md)を参照してください。
+# <a name="caccessorrowset-methods"></a>CAccessorRowset のメソッド
+内のメソッドについて`CAccessorRowset`を参照してください[CAccessorRowset のメンバー](../../data/oledb/caccessorrowset-members.md)です。

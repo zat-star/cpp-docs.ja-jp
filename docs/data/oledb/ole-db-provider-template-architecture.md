@@ -1,60 +1,63 @@
 ---
-title: "OLE DB プロバイダー テンプレートのアーキテクチャ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アーキテクチャ [C++], OLE DB プロバイダー"
-  - "OLE DB [C++], オブジェクト モデル"
-  - "OLE DB プロバイダー テンプレート, オブジェクト モデル"
+title: "OLE DB プロバイダー テンプレートのアーキテクチャ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- OLE DB [C++], object model
+- architecture [C++], OLE DB Provider
+- OLE DB provider templates, object model
 ms.assetid: 639304a3-f9e0-44dc-8d0c-0ebd2455b363
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 8c1baa921f4a12aae40a01995cfd0b638cf614d8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# OLE DB プロバイダー テンプレートのアーキテクチャ
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## データ ソースとセッション  
- OLE DB プロバイダー アーキテクチャは、1 つのデータ ソース オブジェクトと 1 つ以上のセッションを含んでいます。  データ ソース オブジェクトは、すべてのプロバイダーがインスタンスとして起動する必要のある初期オブジェクトです。  コンシューマー アプリケーションは、データを必要とする場合にデータ ソース オブジェクトを再作成してプロバイダーを起動します。  データ ソース オブジェクトは、**IDBCreateSession** インターフェイスを使用して、コンシューマーがデータ ソース オブジェクトに接続するためのセッション オブジェクトを作成します。  データ ソース オブジェクトとセッション オブジェクトは、ODBC の **HENV** と **HDBC** にそれぞれ相当します。  
+# <a name="ole-db-provider-template-architecture"></a>OLE DB プロバイダー テンプレートのアーキテクチャ
+## <a name="data-sources-and-sessions"></a>データ ソースとセッション  
+ OLE DB プロバイダーのアーキテクチャには、データ ソース オブジェクトと 1 つまたは複数のセッションが含まれています。 データ ソース オブジェクトは、すべてのプロバイダーのインスタンスを作成する必要があります最初のオブジェクトです。 コンシューマー アプリケーション、データを必要とは併置プロバイダーを起動するデータ ソース オブジェクトを作成します。 データ ソース オブジェクトは、セッション オブジェクトを作成 (を使用して、 **IDBCreateSession**インターフェイス) を介して、コンシューマーのデータ ソース オブジェクトに接続します。 ODBC プログラマは、データ ソース オブジェクトと等価と考えることができます、 **HENV**と同等として、セッション オブジェクト、 **HDBC**です。  
   
- ![プロバイダー アーキテクチャ](../../data/oledb/media/vc4twb1.gif "vc4TWB1")  
+ ![プロバイダーのアーキテクチャ](../../data/oledb/media/vc4twb1.gif "vc4twb1")  
   
- OLE DB テンプレートは、OLE DB プロバイダー ウィザードによって作成されるソース ファイルを使用して、データ ソース オブジェクトを実装します。  セッションは、OLE DB の **TSession** に相当するオブジェクトです。  
+ OLE DB プロバイダー ウィザードによって作成されたソース ファイル、と共には、OLE DB テンプレートは、データ ソース オブジェクトを実装します。 OLE DB に対応するオブジェクトは、セッションは**TSession**です。  
   
-## 必須インターフェイスと省略可能なインターフェイス  
- OLE DB プロバイダー テンプレートは、すべての必須インターフェイスに対してあらかじめパッケージ化された実装を提供します。  いくつかの種類のオブジェクトに対して、必須インターフェイスおよび省略可能なインターフェイスが OLE DB により定義されています。  
+## <a name="mandatory-and-optional-interfaces"></a>必須およびオプションのインターフェイス  
+ OLE DB プロバイダー テンプレートを提供するすべての必要なインターフェイスの実装をパッケージ化されました。 必須およびオプションのインターフェイスは、OLE DB のいくつかの種類のオブジェクトによって定義されます。  
   
 -   [データ ソース](../../data/oledb/data-source-object-interfaces.md)  
   
--   [Session](../../data/oledb/session-object-interfaces.md)  
+-   [セッション](../../data/oledb/session-object-interfaces.md)  
   
--   [行セット](../Topic/Rowset%20Object%20Interfaces.md)  
+-   [行セット](../../data/oledb/rowset-object-interfaces.md)  
   
 -   [コマンド](../../data/oledb/command-object-interfaces.md)  
   
 -   [トランザクション](../../data/oledb/transaction-object-interfaces.md)  
   
- OLE DB プロバイダー テンプレートは、行オブジェクトとストレージ オブジェクトを実装しないことに注意してください。  
+ OLE DB プロバイダー テンプレートは、行と記憶域オブジェクトを実装しないことに注意してください。  
   
- 「[OLE DB Version 2.7](https://msdn.microsoft.com/en-us/library/ms722784.aspx)」に従って、上記オブジェクトの必須インターフェイスと省略可能なインターフェイスの一覧を次に示します。  
+ 次の表は、上記のオブジェクトの必須およびオプションのインターフェイスによると、 [OLE DB 2.6 SDK ドキュメント](https://msdn.microsoft.com/en-us/library/ms722784.aspx)です。  
   
-|コンポーネント|インターフェイス|コメント|  
-|-------------|--------------|----------|  
-|[データ ソース](../../data/oledb/data-source-object-interfaces.md) \([CDataSource](../Topic/CDataSource%20Class.md)\)|\[必須\] **IDBCreateSession**<br /><br /> \[必須\] **IDBInitialize**<br /><br /> \[必須\] `IDBProperties`<br /><br /> \[必須\] `IPersist`<br /><br /> \[省略可能\] **IConnectionPointContainer**<br /><br /> \[省略可能\] **IDBAsynchStatus**<br /><br /> \[省略可能\] **IDBDataSourceAdmin**<br /><br /> \[省略可能\] **IDBInfo**<br /><br /> \[省略可能\] `IPersistFile`<br /><br /> \[省略可能\] **ISupportErrorInfo**|コンシューマーからプロバイダーへの接続。  オブジェクトは、ユーザー ID、パスワード、データ ソース名などの接続のプロパティを指定するために使用されます。  オブジェクトは、データ ソースを管理 \(作成、更新、削除、テーブルなど\) するためにも使用できます。|  
-|[セッション](../../data/oledb/session-object-interfaces.md) \([CSession](../../data/oledb/cdataconnection-operator-csession-amp.md)\)|\[必須\] **IGetDataSource**<br /><br /> \[必須\] `IOpenRowset`<br /><br /> \[必須\] **ISessionProperties**<br /><br /> \[省略可能\] **IAlterIndex**<br /><br /> \[省略可能\] **IAlterTable**<br /><br /> \[省略可能\] **IBindResource**<br /><br /> \[省略可能\] **ICreateRow**<br /><br /> \[省略可能\] **IDBCreateCommand**<br /><br /> \[省略可能\] **IDBSchemaRowset**<br /><br /> \[省略可能\] **IIndexDefinition**<br /><br /> \[省略可能\] **ISupportErrorInfo**<br /><br /> \[省略可能\] **ITableCreation**<br /><br /> \[省略可能\] **ITableDefinition**<br /><br /> \[省略可能\] **ITableDefinitionWithConstraints**<br /><br /> \[省略可能\] **ITransaction**<br /><br /> \[省略可能\] **ITransactionJoin**<br /><br /> \[省略可能\] **ITransactionLocal**<br /><br /> \[省略可能\] **ITransactionObject**|セッション オブジェクトは、コンシューマーとプロバイダー間の 1 回のやり取りを表します。  これは、多くのセッションが同時にアクティブになる可能性があるという点で ODBC **HSTMT** に似ています。<br /><br /> セッション オブジェクトは、OLE DB 機能にアクセスするために最初に参照されるオブジェクトです。  コマンド、トランザクション、または行セット オブジェクトにアクセスするには、セッション オブジェクトを経由します。|  
-|[行セット](../Topic/Rowset%20Object%20Interfaces.md) \([CRowset](../Topic/CRowset%20Class.md)\)|\[必須\] `IAccessor`<br /><br /> \[必須\] `IColumnsInfo`<br /><br /> \[必須\] **IConvertType**<br /><br /> \[必須\] `IRowset`<br /><br /> \[必須\] `IRowsetInfo`<br /><br /> \[省略可能\] **IChapteredRowset**<br /><br /> \[省略可能\] **IColumnsInfo2**<br /><br /> \[省略可能\] **IColumnsRowset**<br /><br /> \[省略可能\] **IConnectionPointContainer**<br /><br /> \[省略可能\] **IDBAsynchStatus**<br /><br /> \[省略可能\] **IGetRow**<br /><br /> \[省略可能\] `IRowsetChange`<br /><br /> \[省略可能\] **IRowsetChapterMember**<br /><br /> \[省略可能\] **IRowsetCurrentIndex**<br /><br /> \[省略可能\] **IRowsetFind**<br /><br /> \[省略可能\] **IRowsetIdentity**<br /><br /> \[省略可能\] **IRowsetIndex**<br /><br /> \[省略可能\] `IRowsetLocate`<br /><br /> \[省略可能\] **IRowsetRefresh**<br /><br /> \[省略可能\] `IRowsetScroll`<br /><br /> \[省略可能\] `IRowsetUpdate`<br /><br /> \[省略可能\] **IRowsetView**<br /><br /> \[省略可能\] **ISupportErrorInfo**<br /><br /> \[省略可能\] **IRowsetBookmark**|行セット オブジェクトは、データ ソースのデータを表します。  オブジェクトは、そのデータの連結と、データに対する基本操作 \(更新、フェッチ、移動、その他\) を行います。  データを格納および操作するには、行セット オブジェクトが必要です。|  
-|[コマンド](../../data/oledb/command-object-interfaces.md) \([CCommand](http://msdn.microsoft.com/ja-jp/52bef5da-c1a0-4223-b4e6-9e464b6db409)\)|\[必須\] `IAccessor`<br /><br /> \[必須\] `IColumnsInfo`<br /><br /> \[必須\] `ICommand`<br /><br /> \[必須\] **ICommandProperties**<br /><br /> \[必須\] `ICommandText`<br /><br /> \[必須\] **IConvertType**<br /><br /> \[省略可能\] **IColumnsRowset**<br /><br /> \[省略可能\] **ICommandPersist**<br /><br /> \[省略可能\] **ICommandPrepare**<br /><br /> \[省略可能\] `ICommandWithParameters`<br /><br /> \[省略可能\] **ISupportErrorInfo**<br /><br /> \[省略可能\] **ICommandStream**|コマンド オブジェクトは、クエリなどのデータ操作を行います。  パラメーター化されたステートメントまたはパラメーター化されていないステートメントを処理できます。<br /><br /> コマンド オブジェクトは、パラメーターと出力列の連結の処理も行います。  連結は、行セット内の列をどのように取得するかに関する情報を含む構造体です。  これには、序数、データ型、長さ、ステータスなどの情報が含まれます。|  
-|[トランザクション](../../data/oledb/transaction-object-interfaces.md) \(省略可能\)|\[必須\] **IConnectionPointContainer**<br /><br /> \[必須\] **ITransaction**<br /><br /> \[省略可能\] **ISupportErrorInfo**|トランザクション オブジェクトは、データ ソースに対する分割不可能な作業単位を定義し、それらの作業単位が相互にどのように関連するかを指定します。  このオブジェクトは、OLE DB プロバイダー テンプレートによって直接にはサポートされません。つまり、独自のオブジェクトを作成する必要があります。|  
+|コンポーネント|Interface|コメント|  
+|---------------|---------------|-------------|  
+|[データ ソース](../../data/oledb/data-source-object-interfaces.md)([CDataSource](../../data/oledb/cdatasource-class.md))|[必須]**IDBCreateSession**<br /><br /> [必須]**IDBInitialize**<br /><br /> [必須]`IDBProperties`<br /><br /> [必須]`IPersist`<br /><br /> [オプション]**IConnectionPointContainer**<br /><br /> [オプション]**IDBAsynchStatus**<br /><br /> [オプション]**IDBDataSourceAdmin**<br /><br /> [オプション]**IDBInfo**<br /><br /> [オプション]`IPersistFile`<br /><br /> [オプション]**ISupportErrorInfo**|コンシューマーからプロバイダーへの接続。 オブジェクトはユーザー ID、パスワード、およびデータ ソース名などの接続のプロパティを指定するために使用します。 オブジェクトは、データ ソースの管理にも使用できます (作成、更新、削除、テーブル、およびなど)。|  
+|[セッション](../../data/oledb/session-object-interfaces.md)([CSession](../../data/oledb/cdataconnection-operator-csession-amp.md))|[必須]**IGetDataSource**<br /><br /> [必須]`IOpenRowset`<br /><br /> [必須]**ISessionProperties**<br /><br /> [オプション]**IAlterIndex**<br /><br /> [オプション]**IAlterTable**<br /><br /> [オプション]**IBindResource**<br /><br /> [オプション]**ICreateRow**<br /><br /> [オプション]**IDBCreateCommand**<br /><br /> [オプション]**IDBSchemaRowset**<br /><br /> [オプション]**IIndexDefinition**<br /><br /> [オプション]**ISupportErrorInfo**<br /><br /> [オプション]**ITableCreation**<br /><br /> [オプション]**ITableDefinition**<br /><br /> [オプション]**ITableDefinitionWithConstraints**<br /><br /> [オプション]**ITransaction**<br /><br /> [オプション]**ITransactionJoin**<br /><br /> [オプション]**ITransactionLocal**<br /><br /> [オプション]**ITransactionObject**|セッション オブジェクトは、コンシューマーとプロバイダー間の 1 つのメッセージ交換を表します。 ODBC に似た**HSTMT**がアクティブにできる同時セッションの数にします。<br /><br /> セッション オブジェクトは、OLE DB 機能を取得するプライマリ リンクです。 コマンド、トランザクション、または行セット オブジェクトを取得は、セッション オブジェクトを移動します。|  
+|[行セット](../../data/oledb/rowset-object-interfaces.md)([CRowset](../../data/oledb/crowset-class.md))|[必須]`IAccessor`<br /><br /> [必須]`IColumnsInfo`<br /><br /> [必須]**IConvertType**<br /><br /> [必須]`IRowset`<br /><br /> [必須]`IRowsetInfo`<br /><br /> [オプション]**IChapteredRowset**<br /><br /> [オプション]**IColumnsInfo2**<br /><br /> [オプション]**IColumnsRowset**<br /><br /> [オプション]**IConnectionPointContainer**<br /><br /> [オプション]**IDBAsynchStatus**<br /><br /> [オプション]**IGetRow**<br /><br /> [オプション]`IRowsetChange`<br /><br /> [オプション]**IRowsetChapterMember**<br /><br /> [オプション]**IRowsetCurrentIndex**<br /><br /> [オプション]**IRowsetFind**<br /><br /> [オプション]**IRowsetIdentity**<br /><br /> [オプション]**IRowsetIndex**<br /><br /> [オプション]`IRowsetLocate`<br /><br /> [オプション]**IRowsetRefresh**<br /><br /> [オプション]`IRowsetScroll`<br /><br /> [オプション]`IRowsetUpdate`<br /><br /> [オプション]**IRowsetView**<br /><br /> [オプション]**ISupportErrorInfo**<br /><br /> [オプション]**IRowsetBookmark**|行セット オブジェクトは、データ ソースからデータを表します。 オブジェクトは、そのデータと任意の基本的な操作 (更新、fetch、移動、および他のユーザー) のデータのバインドを担当します。 常に、行セット オブジェクトを格納およびデータの操作があります。|  
+|[コマンド](../../data/oledb/command-object-interfaces.md)([CCommand](http://msdn.microsoft.com/en-us/52bef5da-c1a0-4223-b4e6-9e464b6db409))|[必須]`IAccessor`<br /><br /> [必須]`IColumnsInfo`<br /><br /> [必須]`ICommand`<br /><br /> [必須]**ICommandProperties**<br /><br /> [必須]`ICommandText`<br /><br /> [必須]**IConvertType**<br /><br /> [オプション]**IColumnsRowset**<br /><br /> [オプション]**ICommandPersist**<br /><br /> [オプション]**ICommandPrepare**<br /><br /> [オプション]`ICommandWithParameters`<br /><br /> [オプション]**ISupportErrorInfo**<br /><br /> [オプション]**ICommandStream**|コマンド オブジェクトでは、クエリなどのデータの操作を処理します。 パラメーター化または非パラメーター化ステートメントに対応できます。<br /><br /> コマンド オブジェクトは、パラメーターと出力列のバインドを処理するもできます。 バインディングは、行セット内の列を取得する方法に関する情報を含む構造です。 序数、データ型、長さ、およびステータスなどの情報が含まれています。|  
+|[トランザクション](../../data/oledb/transaction-object-interfaces.md)(省略可能)|[必須]**IConnectionPointContainer**<br /><br /> [必須]**ITransaction**<br /><br /> [オプション]**ISupportErrorInfo**|トランザクション オブジェクトは、データ ソース内の作業のアトミック単位を定義し、それらの作業単位が相互に関連付ける方法を決定します。 OLE DB プロバイダー テンプレートはこのオブジェクトを直接サポートされません (つまり、作成する、独自のオブジェクト)。|  
   
  詳細については、次のトピックを参照してください。  
   
@@ -62,6 +65,6 @@ caps.handback.revision: 7
   
 -   [ユーザー レコード](../../data/oledb/user-record.md)  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
- [OLE DB Interfaces](https://msdn.microsoft.com/en-us/library/ms709709.aspx)
+ [OLE DB インターフェイス](https://msdn.microsoft.com/en-us/library/ms709709.aspx)

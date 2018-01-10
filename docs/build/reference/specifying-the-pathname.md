@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f03d3f2bb10fa6b12cb046fd77f45a2bc6153064
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2412ab15317604e1d6cccc5535226d429d8ba6b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="specifying-the-pathname"></a>パス名の指定
 出力ファイルの各オプションを受け入れる、 *pathname*引数で、場所と、出力ファイルの名前を指定できます。 引数には、ドライブ名、ディレクトリ、およびファイル名を含めることができます。 オプションと引数の間にスペースは使用できません。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 10/24/2017
 |デバイス名|説明|  
 |-----------------|----------------|  
 |AUX|補助デバイス|  
-|CON|Console|  
+|CON|コンソール|  
 |PRN|プリンター|  
 |NUL|Null デバイス (ファイルを生成しない)|  
   
@@ -44,7 +45,7 @@ ms.lasthandoff: 10/24/2017
 CL /FmPRN HELLO.CPP  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [出力ファイル (/F) オプション](../../build/reference/output-file-f-options.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

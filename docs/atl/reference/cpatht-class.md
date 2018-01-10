@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -53,35 +52,19 @@ f1_keywords:
 - ATLPATH/ATL::CPathT::StripToRoot
 - ATLPATH/ATL::CPathT::UnquoteSpaces
 - ATLPATH/ATL::CPathT::m_strPath
-dev_langs:
-- C++
-helpviewer_keywords:
-- CPathT class
+dev_langs: C++
+helpviewer_keywords: CPathT class
 ms.assetid: eba4137d-1fd2-4b44-a2e1-0944db64df3c
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 98b00e3f888d5f6bfb33f6ee24c4af2860bb470f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 781f2f6a3fba0e7ca4698809f196e623cfbb6bb8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cpatht-class"></a>CPathT クラス
 このクラスは、パスを表します。  
@@ -162,9 +145,9 @@ class CPathT
   
 |名前|説明|  
 |----------|-----------------|  
-|[CPathT::operator const 文字列型 >/documents/report1.rdl」の](#operator_const_stringtype_amp)|この演算子は、文字列として処理するオブジェクトを使用します。|  
+|[CPathT::operator const 文字列型 (& a)](#operator_const_stringtype_amp)|この演算子は、文字列として処理するオブジェクトを使用します。|  
 |[CPathT::operator CPathT::PCXSTR](#operator_cpatht__pcxstr)|この演算子は、文字列として処理するオブジェクトを使用します。|  
-|[CPathT::operator 文字列型 >/documents/report1.rdl」の](#operator_stringtype)|この演算子は、文字列として処理するオブジェクトを使用します。|  
+|[CPathT::operator 文字列型 (& a)](#operator_stringtype)|この演算子は、文字列として処理するオブジェクトを使用します。|  
 |[CPathT::operator + =](#operator_add_eq)|この演算子は、パスに、文字列を追加します。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
@@ -182,7 +165,7 @@ class CPathT
   
  `typedef CPathT< CStringW > CPathW;`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlpath.h  
   
 ##  <a name="addbackslash"></a>CPathT::AddBackslash  
@@ -800,6 +783,6 @@ typedef StringType::XCHAR XCHAR;
 ### <a name="remarks"></a>コメント  
  `StringType`テンプレート パラメーターには、`CPathT`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../atl/reference/atl-classes.md)   
  [CStringT クラス](../../atl-mfc-shared/reference/cstringt-class.md)

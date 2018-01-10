@@ -1,122 +1,124 @@
 ---
-title: "CDBPropSet::AddProperty | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDBPropSet::AddProperty"
-  - "CDBPropSet.AddProperty"
-  - "AddProperty"
-  - "ATL::CDBPropSet::AddProperty"
-  - "ATL.CDBPropSet.AddProperty"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AddProperty メソッド"
+title: "Cdbpropset::addproperty |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDBPropSet::AddProperty
+- CDBPropSet.AddProperty
+- AddProperty
+- ATL::CDBPropSet::AddProperty
+- ATL.CDBPropSet.AddProperty
+dev_langs: C++
+helpviewer_keywords: AddProperty method
 ms.assetid: dc9539d3-1ee4-40f3-9281-2068e6d65e93
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: fa9c2d979bc98ebac543f0b17c7afdce2ab5f59b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CDBPropSet::AddProperty
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プロパティ セットにプロパティを追加します。  
+# <a name="cdbpropsetaddproperty"></a>CDBPropSet::AddProperty
+プロパティ セットに、プロパティを追加します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      bool AddProperty(   
-   DWORD dwPropertyID,   
-   const VARIANT& var,   
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+      bool AddProperty(   
+   DWORD dwPropertyID,   
+   const VARIANT& var,   
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 ) throw( );  
 bool AddProperty(  
    DWORD dwPropertyID,  
    LPCSTR szValue,  
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 ) throw( );  
 bool AddProperty(  
    DWORD dwPropertyID,  
-   LPCWSTR szValue,   
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+   LPCWSTR szValue,   
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 ) throw( );  
 bool AddProperty(  
    DWORD dwPropertyID,  
    bool bValue,  
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 ) throw( );  
 bool AddProperty(  
    DWORD dwPropertyID,  
    BYTE bValue,  
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 );  
 bool AddProperty(  
    DWORD dwPropertyID,  
    short nValue,  
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 );  
 bool AddProperty(  
    DWORD dwPropertyID,  
    long nValue,  
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 );  
 bool AddProperty(  
    DWORD dwPropertyID,  
    float fltValue,  
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 );  
 bool AddProperty(  
    DWORD dwPropertyID,  
    double dblValue,  
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 ) throw( );  
 bool AddProperty(  
    DWORD dwPropertyID,  
    CY cyValue,  
-   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
+   DBPROPOPTIONS propoptions = DBPROPOPTIONS_REQUIRED    
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *dwPropertyID*  
- \[\]追加するプロパティの ID。  `DBPROP` 構造体の **dwPropertyID** を初期化するために使用されるプロパティ セットを追加しました。  
+ [in]追加するプロパティの ID。 初期化するために使用される、 **dwPropertyID**の`DBPROP`構造、プロパティ セットに追加します。  
   
  `var`  
- \[\] `DBPROP` 構造体のプロパティ値を初期化するために使用される A のバリアントがプロパティ セットを追加しました。  
+ [in]バリアント型のプロパティの値を初期化するために使用される、`DBPROP`構造、プロパティ セットに追加します。  
   
  `szValue`  
- \[\] `DBPROP` 構造体のプロパティ値を初期化するために使用される A の文字列がプロパティ セットを追加しました。  
+ [in]プロパティの値を初期化するために使用する文字列、`DBPROP`構造、プロパティ セットに追加します。  
   
  `bValue`  
- \[\] `DBPROP` 構造体のプロパティ値を初期化するために使用される A **BYTE** またはブール値は、プロパティ セットを追加しました。  
+ [in]A**バイト**またはのプロパティの値を初期化するために使用されるブール値、`DBPROP`構造、プロパティ セットに追加します。  
   
  `nValue`  
- \[\] `DBPROP` 構造体のプロパティ値を初期化するために使用された整数値がプロパティ セットを追加しました。  
+ [in]プロパティの値を初期化するために使用される整数値、`DBPROP`構造、プロパティ セットに追加します。  
   
  *fltValue*  
- \[\] `DBPROP` 構造体のプロパティ値を初期化するために使用される A の浮動小数点値のプロパティ セットに追加します。  
+ [in]浮動小数点値のプロパティの値を初期化するために使用される、`DBPROP`構造、プロパティ セットに追加します。  
   
  `dblValue`  
- \[\] `DBPROP` 構造体のプロパティ値を初期化するために使用される A の倍精度浮動小数点値のプロパティ セットに追加します。  
+ [in]倍精度浮動小数点値のプロパティの値を初期化するために使用される、`DBPROP`構造、プロパティ セットに追加します。  
   
  `cyValue`  
- \[\] `DBPROP` 構造体のプロパティ値を初期化するために使用される A CY の通貨値のプロパティ セットに追加します。  
+ [in]プロパティの値を初期化するために使用される CY 通貨値、`DBPROP`構造、プロパティ セットに追加します。  
   
-## 戻り値  
- プロパティが正常に追加された場合**true**。  それ以外の場合は **false** を返します。  
+## <a name="return-value"></a>戻り値  
+ **true**場合は、プロパティが正常に追加します。 それ以外の場合、 **false**です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CDBPropSet クラス](../Topic/CDBPropSet%20Class.md)   
- [DBPROP Structure](https://msdn.microsoft.com/en-us/library/ms717970.aspx)
+## <a name="see-also"></a>参照  
+ [CDBPropSet クラス](../../data/oledb/cdbpropset-class.md)   
+ [DBPROP 構造体](https://msdn.microsoft.com/en-us/library/ms717970.aspx)

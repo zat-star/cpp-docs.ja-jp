@@ -1,53 +1,54 @@
 ---
-title: "_set_invalid_parameter_handler _set_thread_local_invalid_parameter_handler | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_set_invalid_parameter_handler"
-  - "_set_thread_local_invalid_parameter_handler"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-runtime-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "set_invalid_parameter_handler"
-  - "_set_invalid_parameter_handler"
-  - "_set_thread_local_invalid_parameter_handler"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "無効なパラメーター ハンドラー"
-  - "set_invalid_parameter_handler 関数"
-  - "_set_invalid_parameter_handler 関数"
-  - "_set_thread_local_invalid_parameter_handler 関数"
+title: "_set_invalid_parameter_handler、_set_thread_local_invalid_parameter_handler | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _set_invalid_parameter_handler
+- _set_thread_local_invalid_parameter_handler
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-runtime-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- set_invalid_parameter_handler
+- _set_invalid_parameter_handler
+- _set_thread_local_invalid_parameter_handler
+dev_langs: C++
+helpviewer_keywords:
+- invalid parameter handler
+- set_invalid_parameter_handler function
+- _set_invalid_parameter_handler function
+- _set_thread_local_invalid_parameter_handler function
 ms.assetid: c0e67934-1a41-4016-ad8e-972828f3ac11
-caps.latest.revision: 27
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 27
+caps.latest.revision: "27"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 336a2f362ac9a67cb8bb176948fbb7b5c83329a8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# _set_invalid_parameter_handler _set_thread_local_invalid_parameter_handler
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="setinvalidparameterhandler-setthreadlocalinvalidparameterhandler"></a>_set_invalid_parameter_handler、_set_thread_local_invalid_parameter_handler
 CRT が無効な引数を検出したときに呼び出される関数を設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 _invalid_parameter_handler _set_invalid_parameter_handler(  
@@ -58,21 +59,21 @@ _invalid_parameter_handler _set_thread_local_invalid_parameter_handler(
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `pNew`  
- 新しいの無効なパラメーター ハンドラーを関数ポインター。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `pNew`  
+ 新しい無効なパラメーター ハンドラーへの関数ポインターです。  
   
-## 戻り値  
- 呼び出しの前に無効なパラメーター ハンドラーへのポインター。  
+## <a name="return-value"></a>戻り値  
+ 呼び出し前の無効なパラメーター ハンドラーへのポインターです。  
   
-## 解説  
- 多くの C ランタイム関数は、渡された引数の有効性を確認します。 無効な引数が渡される場合、関数を設定できます、 `errno` エラー番号または戻り値はエラー コード。 このような場合は、無効なパラメーター ハンドラーが呼び出されます。 C ランタイムでは、プログラムを終了して、ランタイム エラー メッセージが表示される既定のグローバルの無効なパラメーター ハンドラーを提供します。 使用することができます、 `_set_invalid_parameter_handler` グローバルの無効なパラメーター ハンドラーとして独自の関数を設定します。 C ランタイムには、スレッド ローカルの無効なパラメーター ハンドラーもサポートしています。 使用して、スレッドでスレッド ローカル パラメーター ハンドラーを設定かどうか `_set_thread_local_invalid_parameter_handler`, 、スレッドから呼び出された C ランタイム関数がグローバル ハンドラーではなくそのハンドラーを使用します。 1 つの機能は、無効な引数がグローバル ハンドラーとして一度に指定できます。 1 つの機能は、1 つのスレッド、スレッド ローカルの無効な引数ハンドラーとして指定できますが、別のスレッドが別のスレッド ローカル ハンドラーを持つことができます。 これにより、他のスレッドの動作に影響を与えずに、コードの 1 つの部分で使用するハンドラーを変更できます。  
+## <a name="remarks"></a>コメント  
+ 多くの C ランタイム関数では、渡された引数の有効性を確認しています。 無効な引数を渡された場合、関数では `errno` エラー番号を設定するか、エラー コードを返すことができます。 このような場合、無効なパラメーター ハンドラーも呼び出されます。 C ランタイムでは、プログラムを終了してランタイム エラー メッセージを表示する、既定のグローバルの無効なパラメーター ハンドラーを提供しています。 `_set_invalid_parameter_handler` を使用すると、独自の関数をグローバルの無効なパラメーター ハンドラーとして設定できます。 C ランタイムでは、スレッド ローカルの無効なパラメーター ハンドラーもサポートしています。 `_set_thread_local_invalid_parameter_handler` を使用してスレッド ローカル パラメーター ハンドラーをスレッド内で設定した場合、そのスレッドから呼び出された C ランタイム関数ではグローバル ハンドラーではなくそのハンドラーを使用します。 グローバルの無効な引数ハンドラーとしては、同時に 1 つの関数しか指定できません。 1 つのスレッド内では 1 つの関数しかスレッド ローカルの無効な引数ハンドラーとして指定できませんが、別のスレッドでは別のスレッド ローカルなハンドラーを持つことができます。 これにより、コードの一部で使用するハンドラーを、他のスレッドの動作に影響を与えずに変更できます。  
   
- ランタイムが無効なパラメーターの関数を呼び出すとは、通常回復不可能なエラーが発生したことを意味します。 指定した無効なパラメーター ハンドラー関数を中止し、データ保存してください。 エラーが回復可能であることを確認して main 関数に制御を返すことはできません。  
+ 通常、ランタイムが無効なパラメーター関数を呼び出したということは、回復不可能なエラーが発生したことを意味します。 提供する無効なパラメーター ハンドラー関数は、保存できるデータを保存してから中止処理をしなければなりません。 エラーが回復可能であるという確信を持てない限り、main 関数に制御を返すべきではありません。  
   
- 無効なパラメーター ハンドラー関数には、次のプロトタイプが必要です。  
+ 無効なパラメーター ハンドラー関数には以下のプロトタイプが必要です。  
   
-```c  
+```  
 void _invalid_parameter(  
    const wchar_t * expression,  
    const wchar_t * function,   
@@ -82,20 +83,20 @@ void _invalid_parameter(
 );  
 ```  
   
- `expression` 引数が、エラーが発生し、引数式のワイド文字列表現。`function` 引数は無効な引数を受け取った CRT 関数の名前。`file` 引数は、関数を含む CRT ソース ファイルの名前。`line` 引数は、そのファイル内の行番号。 最後の引数が予約されています。 すべてのパラメーター値を持つ `NULL` CRT ライブラリのデバッグ バージョンを使用しない場合。  
+ `expression` 引数は、エラーを発生させた引数式のワイド文字列表記です。 `function` 引数は、無効な引数を受け取った CRT 関数の名前です。 `file` 引数は、関数を含む CRT ソース ファイルの名前です。 `line` 引数は、そのファイル内での行番号です。 最後の引数は予約済みです。 CRT ライブラリのデバッグ バージョンが使用されている場合を除き、パラメーターはすべて `NULL` 値を持ちます。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_set_invalid_parameter_handler`, `_set_thread_local_invalid_parameter_handler`|C: \< stdlib.h \><br /><br /> C\+\+ の場合: \< cstdlib \> または \< stdlib.h \>|  
+|ルーチンによって返される値|必須ヘッダー|  
+|-------------|---------------------|  
+|`_set_invalid_parameter_handler`, `_set_thread_local_invalid_parameter_handler`|C: \<stdlib.h><br /><br /> C++: \<cstdlib> または \<stdlib.h>|  
   
- `_set_invalid_parameter_handler` と `_set_thread_local_invalid_parameter_handler` 関数は、Microsoft 固有の仕様です。 互換性の詳細を参照してください。 [互換性](../../c-runtime-library/compatibility.md)します。  
+ `_set_invalid_parameter_handler` および `_set_thread_local_invalid_parameter_handler` の各関数は、Microsoft 固有の関数です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 使用例  
- 次の例では、無効なパラメーター エラー ハンドラーが CRT ソースの無効なパラメーターおよびファイルと行を受け取った関数を印刷するために使用します。 したら CRT デバッグ ライブラリを使用すると、無効なパラメーター エラーも発生する、アサーションは、使用して、この例では無効 [\_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md)します。  
+## <a name="example"></a>例  
+ 次の例では、無効なパラメーターを受け取った関数および CRT ソースのファイル名と行番号を出力するために、無効なパラメーター エラー ハンドラーが使用されています。 デバッグ CRT ライブラリを使用した場合、無効なパラメーター エラーによってアサーションも発生しますが、この例では [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) を使用してアサーションが無効化されています。  
   
-```c  
+```C  
 // crt_set_invalid_parameter_handler.c  
 // compile with: /Zi /MTd  
 #include <stdio.h>  
@@ -133,10 +134,11 @@ int main( )
 ```  
   
 ```Output  
-無効なパラメーターが関数 common_vfprintf で検出されました。 ファイル: minkernel\crts\ucrt\src\appcrt\stdio\output.cpp 行: 32 式: 形式! nullptr を =  
+Invalid parameter detected in function common_vfprintf. File: minkernel\crts\ucrt\src\appcrt\stdio\output.cpp Line: 32  
+Expression: format != nullptr  
 ```  
   
-## 参照  
- [\_get\_invalid\_parameter\_handler \_get\_thread\_local\_invalid\_parameter\_handler](../../c-runtime-library/reference/get-invalid-parameter-handler-get-thread-local-invalid-parameter-handler.md)   
+## <a name="see-also"></a>参照  
+ [_get_invalid_parameter_handler、_get_thread_local_invalid_parameter_handler](../../c-runtime-library/reference/get-invalid-parameter-handler-get-thread-local-invalid-parameter-handler.md)   
  [CRT 関数のセキュリティが強化されたバージョン](../../c-runtime-library/security-enhanced-versions-of-crt-functions.md)   
- [errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)
+ [errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)

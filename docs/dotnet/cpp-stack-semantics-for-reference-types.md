@@ -14,11 +14,14 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 182478ffdd0175fc2b5f80b4a534b85bb97190a1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 8f4bf38fa6512b0dc86edad43c893d2dd09a97a4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-stack-semantics-for-reference-types"></a>参照型の C++ スタック セマンティクス
 Visual C 2005 では、前に、参照型のインスタンスのみ作成でしたを使用して、`new`ガベージにオブジェクトを作成してこの演算子は、ヒープを収集します。 ただし、スタックにネイティブ型のインスタンスの作成に使用する同じ構文を使用して、参照型のインスタンスを作成することができますようになりました。 そのため、使用する必要はありません[ref new、gcnew](../windows/ref-new-gcnew-cpp-component-extensions.md)は参照型のオブジェクトを作成します。 オブジェクトがスコープ外になる場合、コンパイラはこのオブジェクトのデストラクターを呼び出します。  
@@ -117,5 +120,5 @@ int main() {
 13  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)

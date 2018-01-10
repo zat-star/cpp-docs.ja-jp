@@ -1,48 +1,48 @@
 ---
-title: "feraiseexcept | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "cpp"
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "feraiseexcept"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "HeaderDef"
-f1_keywords: 
-  - "feraiseexcept"
-  - "fenv/feraiseexcept"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "feraiseexcept 関数"
+title: feraiseexcept | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname: feraiseexcept
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: HeaderDef
+f1_keywords:
+- feraiseexcept
+- fenv/feraiseexcept
+dev_langs: C++
+helpviewer_keywords: feraiseexcept function
 ms.assetid: 87e89151-83c2-4563-9a9a-45666245d437
-caps.latest.revision: 3
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 9ab77da8cee422bab618dc8737ad254b65301ffd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# feraiseexcept
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-指定された浮動小数点例外を生成します。  
+# <a name="feraiseexcept"></a>feraiseexcept
+指定した浮動小数点例外を発生させます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int feraiseexcept(  
@@ -50,42 +50,42 @@ int feraiseexcept(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `excepts`  
- 発生させる浮動小数点の例外です。  
+ 発生させる浮動小数点例外。  
   
-## 戻り値  
- 指定された例外をすべてが正常に発生した場合は、0 を返します。  
+## <a name="return-value"></a>戻り値  
+ 指定したすべての例外が正常に発生した場合は、0 を返します。  
   
-## 解説  
- `feraiseexcept` 関数で指定された浮動小数点例外を生成しようとしました。 `excepts`します。`feraiseexcept` 関数は、\< fenv.h \> で定義されているこれらの例外マクロをサポートしています。  
+## <a name="remarks"></a>コメント  
+ `feraiseexcept` 関数は、`excepts` で指定された浮動小数点例外を発生させようとします。   `feraiseexcept` 関数は、\<fenv.h> に定義されている次の例外処理マクロをサポートしています。  
   
-|例外マクロ|説明|  
-|-----------|--------|  
-|可能性|前の手順浮動小数点演算では特異性またはポール エラーが発生しました無限大の値が作成されました。|  
-|FE\_INEXACT|関数は、前の浮動小数点演算の格納された結果を丸める強制されました。|  
-|ある|前の浮動小数点演算には、ドメイン エラーが発生しました。|  
-|可能性|範囲エラーが発生しました。以前の浮動小数点演算の結果が長すぎて表示されます。|  
-|される|以前の浮動小数点演算の結果が小さすぎるため、完全な精度; で表現denormal 値が作成されました。|  
-|FE\_ALLEXCEPT|すべてのビットごとの OR は、浮動小数点例外をサポートします。|  
+|例外処理マクロ|説明|  
+|---------------------|-----------------|  
+|FE_DIVBYZERO|前の浮動小数点演算で特異点エラーまたは極エラーが発生しました。無限大の値が作成されました。|  
+|FE_INEXACT|前の浮動小数点演算の格納結果は強制的に丸められました。|  
+|FE_INVALID|前の浮動小数点演算でドメイン エラーが発生しました。|  
+|FE_OVERFLOW|範囲エラーが発生しました。前の浮動小数点演算結果は大きすぎて表現できませんでした。|  
+|FE_UNDERFLOW|前の浮動小数点演算結果は小さすぎて最大有効桁数で表現できませんでした。|  
+|FE_ALLEXCEPT|すべてのサポートされる浮動小数点例外のビット演算 OR。|  
   
- `excepts` 引数が 0 の場合あります。 またはサポートされている例外マクロの 2 つ以上の例外マクロの値、またはビットごとの 1 つです。 可能性またはされるを指定した例外マクロのいずれかの場合は、副次効果と FE\_INEXACT 例外を発生する可能性があります。  
+ `excepts` 引数は、0、例外処理マクロ値のいずれか、または複数のサポートされる例外処理マクロのビット演算 OR の場合があります。 指定した例外処理マクロのいずれかが FE_OVERFLOW または FE_UNDERFLOW の場合、副作用として FE_INEXACT 例外が発生する可能性があります。  
   
- この関数を使用するのには、浮動小数点の最適化を使用してアクセスを妨げる可能性のあるオフにする必要があります、 `#pragma fenv_access(on)` 呼び出しの前にディレクティブです。 詳細については、「[fenv\_access](../../preprocessor/fenv-access.md)」を参照してください。  
+ この関数を使用するには、呼び出しの前に `#pragma fenv_access(on)` ディレクティブを使用してアクセスを妨げる可能性のある浮動小数点の最適化をオフにする必要があります。 詳細については、「 [fenv_access](../../preprocessor/fenv-access.md)」を参照してください。  
   
- **Microsoft 固有の仕様:** で指定された例外 `excepts` ある、という順序で発生する可能性、可能性、される、FE\_INEXACT です。 ただし、FE\_INEXACT 生成されることが可能性またはされるが発生したときに指定されていない場合でも `excepts`します。**END Microsoft 固有の仕様**  
+ **Microsoft 固有:** `excepts` に指定した例外は、FE_INVALID、FE_DIVBYZERO、FE_OVERFLOW、FE_UNDERFLOW、FE_INEXACT の順に発生します。 ただし、`excepts` に指定されていない場合でも、FE_OVERFLOW または FE_UNDERFLOW が発生したときに FE_INEXACT を発生させることができます。 **END Microsoft 固有の仕様**  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-|関数|C ヘッダー|C\+\+ ヘッダー|  
-|--------|------------|----------------|  
-|`feraiseexcept`|\<fenv.h\>|\<cfenv\>|  
+|関数|C ヘッダー|C++ ヘッダー|  
+|--------------|--------------|------------------|  
+|`feraiseexcept`|\<fenv.h>|\<cfenv>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 参照  
- [関数リファレンス \(アルファベット順\)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
- [fesetexceptflag](../Topic/fesetexceptflag2.md)   
+## <a name="see-also"></a>参照  
+ [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
+ [fesetexceptflag](../../c-runtime-library/reference/fesetexceptflag2.md)   
  [feholdexcept](../../c-runtime-library/reference/feholdexcept2.md)   
- [fetestexcept](../Topic/fetestexcept1.md)   
- [feupdateenv](../Topic/feupdateenv.md)
+ [fetestexcept](../../c-runtime-library/reference/fetestexcept1.md)   
+ [feupdateenv](../../c-runtime-library/reference/feupdateenv.md)

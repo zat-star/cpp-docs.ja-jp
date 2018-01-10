@@ -45,11 +45,12 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8146d4ebe041fa3419aff3614edcd8fe9fa8b8d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d60347bc47c05a19cb1487e7a6738d328c78f846
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="log-logf-log10-log10f"></a>log、logf、log10、log10f
 対数を計算します。  
@@ -102,13 +103,13 @@ float log10f (
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、**log** および `log10` のオーバーロードを呼び出すことができます。 C プログラムでは、**log** および `log10` は、常に double を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |**log**、`logf`、`log10`、`log10f`|\<math.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -172,7 +173,7 @@ int main()
 Log base 2 of 65536.000000 is 16.000000  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [exp、expf、策の説明](../../c-runtime-library/reference/exp-expf.md)   
  [_matherr](../../c-runtime-library/reference/matherr.md)   

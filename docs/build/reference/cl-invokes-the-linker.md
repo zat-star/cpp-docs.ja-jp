@@ -1,69 +1,69 @@
 ---
-title: "リンカーを呼び出す CL | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "cl.exe コンパイラ [C++], コンパイル (リンクなし)"
-  - "cl.exe コンパイラ [C++], 制御 (リンカーを)"
-  - "コンパイル (ソース コードを) [C++], リンクを使用しない"
-  - "起動 (コンパイラからリンカーを)"
-  - "LINK ツール [C++], 起動 (CL コンパイラから)"
+title: "リンカーを呼び出す CL |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: cl
+dev_langs: C++
+helpviewer_keywords:
+- compiling source code [C++], without linking
+- invoking linker from the compiler
+- LINK tool [C++], invoking from CL compiler
+- cl.exe compiler [C++], compiling without linking
+- cl.exe compiler [C++], controlling linker
 ms.assetid: eae47ef7-09eb-40c9-b318-7c714cd452fc
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 32a3bdd1e227b894ca5a32ddfaa8c46a478a19f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカーを呼び出す CL
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-CL では、\/c オプションを指定しない限り、コンパイル後に自動的にリンカーを起動します。  このとき、コンパイルによって生成された .obj ファイルの名前と、コマンド ラインで指定されたファイルの名前が CL からリンカーに渡されます。  リンカーは、環境変数 LINK で指定されたオプションを使います。  リンカーのオプションは、CL のコマンド ラインで \/link オプションを使って指定することもできます。  \/link オプションの後ろに指定されたオプションは、環境変数 LINK で指定されたオプションよりも優先されます。  次のオプションを指定すると、リンクが行われません。  
+# <a name="cl-invokes-the-linker"></a>リンカーを呼び出す CL
+CL/c オプションを使用しない場合にコンパイルした後、リンカーによって自動的に起動します。 CL は、コンパイル時に作成された .obj ファイルの名前と、コマンドラインで指定したその他のファイルの名前をリンカーに渡します。 リンカーは、環境変数 LINK に示すオプションを使用します。 /Link オプションを使用すると、CL のコマンド ラインでリンカー オプションを指定します。 環境変数 LINK に/link オプションを次のオプションをオーバーライドします。 次の表に、オプションでは、リンクを抑制します。  
   
 |オプション|説明|  
-|-----------|--------|  
-|\/c|コンパイルだけを行い、リンクは行いません。|  
-|\/E、\/EP、\/P|プリプロセスだけを行い、コンパイルとリンクは行いません。|  
-|\/Zg|関数プロトタイプを生成します。|  
-|\/Zs|構文をチェックします。|  
+|------------|-----------------|  
+|/c|リンクせずにコンパイルします。|  
+|/E、/EP/P|コンパイルとリンクなしの前処理します。|  
+|/Zg|関数プロトタイプを生成します。|  
+|/Zs|構文を確認します。|  
   
- リンクの詳細については、「[リンカー オプション](../../build/reference/linker-options.md)」を参照してください。  
+ リンクの詳細については、次を参照してください。[リンカー オプション](../../build/reference/linker-options.md)です。  
   
-## 使用例  
- ここでは、MAIN.c、MOD1.c、および MOD2.c の 3 つの C ソース ファイルをコンパイルします。  各ファイルは、別のファイルで定義されている関数を呼び出します。  
+## <a name="example"></a>例  
+ 次の 3 つの C ソース ファイルをコンパイルすることを前提としています: MAIN.c、MOD1.c、および MOD2.c です。 各ファイルには、別のファイルで定義されている関数の呼び出しが含まれます。  
   
--   MAIN.c は、MOD1.c に定義されている関数 `func1` と MOD2.c に定義されている関数 `func2` を呼び出します。  
+-   MAIN.c 関数を呼び出す`func1`MOD1.c と関数で`func2`MOD2.c にします。  
   
--   MOD1.c は、標準ライブラリ関数 `printf_s` と `scanf_s` を呼び出します。  
+-   MOD1.c が標準ライブラリ関数を呼び出す`printf_s`と`scanf_s`です。  
   
--   MOD2.c は、ライブラリ MYGRAPH.lib に定義されているグラフィックス関数 `myline` と `mycircle` を呼び出します。  
+-   MOD2.c が名前付きグラフィックス関数を呼び出す`myline`と`mycircle`MYGRAPH.lib をという名前のライブラリで定義されています。  
   
- このプログラムをビルドするには、コマンド ラインで次のように指定してコンパイルします。  
+ このプログラムをビルドするには、次のコマンドラインでコンパイルします。  
   
 ```  
 CL MAIN.c MOD1.C MOD2.C MYGRAPH.lib  
 ```  
   
- CL では、まず C ソース ファイルをコンパイルし、オブジェクト ファイル MAIN.obj、MOD1.obj、および MOD2.obj を生成します。  各 .obj ファイルには、標準ライブラリの名前が埋め込まれます。  詳細については、「[\/MD、\/ML、\/MT、\/LD \(ランタイム ライブラリの使用\)](../../build/reference/md-mt-ld-use-run-time-library.md)」を参照してください。  
+ まず、CL は、C ソース ファイルをコンパイルし、MAIN.obj、MOD1.obj、および MOD2.obj オブジェクト ファイルを作成します。コンパイラは、標準ライブラリの名前を各 .obj ファイルに配置します。 詳細については、次を参照してください。[ランタイム ライブラリの使用](../../build/reference/md-mt-ld-use-run-time-library.md)です。  
   
- obj ファイルの名前は、ライブラリ名 MYGRAPH.lib と共に CL からリンカーに渡されます。  リンカーは、次のように外部参照を解決します。  
+ CL は、名前、MYGRAPH.lib と共に、.obj ファイルの名前をリンカーに渡します。 リンカーは、次のように、外部参照を解決します。  
   
-1.  MAIN.obj では、MOD1.obj 内の定義を使って `func1` への参照が解決され、MOD2.obj 内の定義を使って `func2` への参照が解決されます。  
+1.  MAIN.obj への参照で`func1`MOD1.obj; で、定義を使用して解決はへの参照を`func2`MOD2.obj の定義を使用して解決します。  
   
-2.  MOD1.obj では、標準ライブラリ内の定義を使って、`printf_s` と `scanf_s` への参照が解決されます。この標準ライブラリの名前は、CL によって MOD1.obj に埋め込まれています。  
+2.  MOD1.obj への参照で`printf_s`と`scanf_s`リンカーが検索するという名前のライブラリ MOD1.obj 内で定義を使用して解決されます。  
   
-3.  MOD2.obj では、MYGRAPH.lib 内の定義を使って、`myline` と `mycircle` への参照が解決されます。  
+3.  MOD2.obj への参照で`myline`と`mycircle`MYGRAPH.lib の定義を使用して解決されます。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

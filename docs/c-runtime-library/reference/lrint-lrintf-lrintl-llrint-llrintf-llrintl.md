@@ -55,11 +55,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c3e857150812578a71ff1fba6d0c1a7db830f4bc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2774b22f0b108349d90abc113430f1a573d2cbb3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lrint-lrintf-lrintl-llrint-llrintf-llrintl"></a>lrint、lrintf、lrintl、llrint、llrintf、llrintl
 現在の丸めモードと方向を使用して、指定された浮動小数点値を最も近い整数値に丸めます。  
@@ -116,7 +117,7 @@ long long int llrintl(
 ## <a name="return-value"></a>戻り値  
  正常に終了した場合、`x` を丸めた整数値を返します。  
   
-|問題点|リターン|  
+|懸案事項|リターン|  
 |-----------|------------|  
 |`x` は戻りの型の範囲外です。<br /><br /> `x` = ±∞<br /><br /> `x` = NaN|FE_INVALID が発生し 0 を返します。|  
   
@@ -127,13 +128,13 @@ long long int llrintl(
   
  **Microsoft 固有**: 結果が戻りの型の範囲外の場合、またはパラメーターが非数 (NaN) または無限値 (infinity) の場合、戻り値は実装で定義されます。 Microsoft コンパイラは0 の値を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
 |`lrint`,                `lrintf`, `lrintl`, `llrint`, `llrintf`, `llrintl`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)

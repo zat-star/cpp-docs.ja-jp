@@ -1,41 +1,42 @@
 ---
-title: "x64 呼び出し規約の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "概要の x64 呼び出し規約 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: a05db5eb-0844-4d9d-8b92-b1b2434be0ea
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 8ac42eb934692fb9eaecf345b75e7544e7078f07
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# x64 呼び出し規約の概要
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-x86 から [!INCLUDE[vcprx64](../Token/vcprx64_md.md)] への 2 つの重要な変更点は、64 ビット アドレッシング機能と 16 個の 64 ビット汎用レジスタのフラットなセットです。  拡張されたレジスタ セットの場合、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)] は [\_\_fastcall](../cpp/fastcall.md) 呼び出し規約および RISC ベースの例外処理モデルを使用します。  `__fastcall` モデルは最初の 4 つの引数のためのレジスタと、その他のパラメーターを渡すためのスタック フレームを使用します。  
+# <a name="overview-of-x64-calling-conventions"></a>x64 呼び出し規則の概要
+X86 の 2 つの重要な違いと[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]は 64 ビット アドレッシング機能と、一般的な用途のレジスタを 64 ビットの 16 のフラットなセット。 展開した特定の登録のセット、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]を使用して、 [_ _fastcall](../cpp/fastcall.md)呼び出し規約および RISC ベースの例外処理モデル。 `__fastcall`規則では、最初の 4 つの引数と、スタック フレームのレジスタを使用して、追加の引数を渡します。  
   
- 次のコンパイラ オプションを使用すると、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)] 対応アプリケーションを最適化できます。  
+ 次のコンパイラ オプションでは、アプリケーションを最適化できます[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]:。  
   
--   [\/favor \(アーキテクチャ固有の最適化\)](../build/reference/favor-optimize-for-architecture-specifics.md)  
+-   [/favor (アーキテクチャ固有の最適化)](../build/reference/favor-optimize-for-architecture-specifics.md)  
   
-## 呼び出し規約  
- [!INCLUDE[vcprx64](../Token/vcprx64_md.md)] ABI \(Application Binary Interface\) は 4 レジスタ fast\-call 呼び出し規約であり、これらのレジスタのスタック バッキングを使用します。  関数の引数と引数のレジスタは厳密に 1 対 1 で対応します。  8 バイト以内に収まらない引数、または 1、2、4、8 バイト以外の引数は、参照により渡される必要があります。  1 つの引数が複数のレジスタにわたって展開されることはありません。  x87 レジスタ スタックは使用されません。  使用することは可能ですが、関数呼び出しでは揮発性であると考える必要があります。  すべての浮動小数点演算は、16 個の XMM レジスタを使用して行われます。  引数は、RCX、RDX、R8、および R9 レジスタで渡されます。  引数が float\/double 型の場合は、XMM0L、XMM1L、XMM2L、および XMM3L で渡されます。  16 バイトの引数は参照により渡されます。  パラメーターの引き渡しについては、「[パラメーターの引き渡し](../build/parameter-passing.md)」で詳しく説明します。  これらのレジスタに加えて、RAX、R10、R11、XMM4、および XMM5 は揮発性です。  他のすべてのレジスタは不揮発性です。  レジスタの使用については、「[レジスタの使用](../build/register-usage.md)」および「[呼び出し元または呼び出し先保存済みレジスタ](../build/caller-callee-saved-registers.md)」で詳しく説明します。  
+## <a name="calling-convention"></a>呼び出し規則  
+ [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]アプリケーション バイナリ インターフェイス (ABI) は、既定では 4 つのレジスタ呼び出しの高速の呼び出し規約を使用します。 領域は、それらのレジスタを保存する呼び出し先のシャドウ ストアとして、呼び出し履歴上に割り当てられます。 関数の呼び出しに引数および引数に使用されるレジスタ間が、厳密な 1 対 1 の対応があります。 8 バイトに収まらないまたは 1、2、4、または 8 バイトではない任意の引数は、参照渡しで渡す必要があります。 1 つの引数を複数のレジスタに分散することはありません。 X87 レジスタ スタックは使用されません。 呼び出し先で使用できますが、考慮すべき揮発性関数呼び出しで。 すべての浮動小数点の操作が完了したら個の XMM レジスタを 16 を使用します。 整数の引数は、RCX、RDX、R8、R9 レジスタに渡されます。 浮動小数点引数は XMM0L、XMM1L、XMM2L、および XMM3L で渡されます。 16 バイトの引数は、参照によって渡されます。 パラメーターの引き渡しはで詳しく説明[パラメーターの引き渡し](../build/parameter-passing.md)です。 これらのレジスタに加えて RAX、R10、R11、XMM4、および XMM5 と見なされます揮発性。 その他のすべてのレジスタは、非揮発性です。 レジスタの使用状況の詳細については[Usage の登録](../build/register-usage.md)と[呼び出し元/呼び出し先保存登録](../build/caller-callee-saved-registers.md)です。  
   
- 呼び出し元は、パラメーターに必要な領域を呼び出し先に割り当てる責任があり、呼び出し先がそれだけのパラメーターを持たない場合でも、常に 4 つのレジスタ パラメーターに対して十分な領域を割り当てる必要があります。  これは、C のプロトタイプ宣言されていない関数、および vararg C\/C\+\+ 関数のサポートを簡略化します。  vararg 関数またはプロトタイプ宣言されていない関数の場合、浮動小数点値は対応する汎用レジスタで重複される必要があります。  最初の 4 つを超える任意のパラメーターは、呼び出しの前に、最初の 4 つのバッキング ストアの上に保存されます。  vararg 関数の詳細については、「[vararg](../build/varargs.md)」を参照してください。  プロトタイプ宣言されていない関数の詳細については、「[プロトタイプ宣言されていない関数](../build/unprototyped-functions.md)」を参照してください。  
+ 呼び出し元は、呼び出し先へのパラメーター領域を割り当てる必要があり、呼び出し先はそれほど多くのパラメーターを受け取らない場合でも常に、4 つの登録パラメーターを格納するための十分な領域を割り当てる必要があります。 これには、プロトタイプ宣言されていない C 言語の関数、および vararg C と C++ の関数のサポートが簡略化します。 任意の浮動小数点値をする必要があります vararg またはプロトタイプ宣言されていない関数では、対応する汎用レジスタ内で重複します。 最初の 4 つを超えるすべてのパラメーターは、呼び出しの前に、最初の 4 つのシャドウ ストア上のスタックに格納する必要があります。 Vararg 関数の詳細は含まれて[Varargs](../build/varargs.md)です。 プロトタイプ宣言されていない関数についての詳細については、[プロトタイプ宣言されていない関数](../build/unprototyped-functions.md)です。  
   
-## \[配置\]  
- ほとんどの構造体はそれらの自然な形式に配置されます。  主な例外はスタック ポインターと malloc メモリまたは alloca メモリです。これらは、パフォーマンスを支援するために 16 バイトに配置されます。  16 バイトを超える配置は手動で行う必要がありますが、16 バイトは XMM 演算の共通の配置サイズであるため、ほとんどのコードはこれで十分だといえます。  構造体のレイアウトおよび配置の詳細については、「[型とストレージ](../build/types-and-storage.md)」を参照してください。  スタック レイアウトの詳細については、「[スタックの使用](../build/stack-usage.md)」を参照してください。  
+## <a name="alignment"></a>アラインメント  
+ ほとんどの構造体は、自然な配置を配置します。 プライマリの例外は、スタック ポインターと`malloc`または`alloca`メモリで、パフォーマンスを支援するために、16 バイトに揃えられます。 16 バイトを超える配置を手動で行う必要がありますが、XMM 操作の一般的な配置のサイズを 16 バイトには、これは機能するほとんどのコードにします。 構造体レイアウトと位置合わせの詳細については、次を参照してください。[型とストレージ](../build/types-and-storage.md)です。 スタックのレイアウト方法については、次を参照してください。[スタックの使用](../build/stack-usage.md)です。  
   
-## アンワインド可能性  
- リーフ関数 \(関数を呼び出したり、任意のスタック領域に自身を割り当てたりしない関数\) 以外のすべての関数には、不揮発性レジスタを回復するために、それらを正しくアンワインドする方法をオペレーティング システムに対して記述したデータで注釈を付ける必要があります。このデータは xdata または ehdata と呼ばれ、pdata から指されます。  Prolog と epilog は、xdata で正しく記述されるように大幅に制限されます。  スタック ポインターは、リーフ関数を除いて、epilog または prolog の一部でない任意のコード領域で 16 バイトに配置される必要があります。  prolog および epilog 関数の正しい構造の詳細については、「[プロローグとエピローグ](../build/prolog-and-epilog.md)」を参照してください。  例外処理および例外処理\/アンワインディング pdata および xdata の詳細については、「[例外処理 \(x64\)](../build/exception-handling-x64.md)」を参照してください。  
+## <a name="unwindability"></a>Unwindability  
+ リーフ関数は、任意の非 volatile レジスタが変更されない関数です。 非リーフ関数は、関数を呼び出すか、ローカル変数の追加のスタック領域の割り当てによって、非揮発性 RSP をなど、変更可能性があります。 例外を処理するときに非 volatile レジスタを回復するために非リーフ関数は、正しく任意命令に関数をアンワインドする方法を説明する静的データと注釈する必要があります。 このデータは*pdata*、またはプロシージャのデータは、順番を指す*xdata*、例外データを処理します。 Xdata は、アンワインドの情報が含まれています、追加 pdata または例外ハンドラー関数を指すことができます。 プロローグとエピローグは、正しく xdata に記載されていることができるように非常に制限されます。 スタック ポインターは、16 バイトの任意のリーフ関数内を除き、プロローグまたはエピローグの一部でないコード領域に配置する必要があります。 リーフ関数は、pdata および xdata は必要ありませんので、戻り値をシミュレートするだけでアンワインドされます。 関数のプロローグとエピローグの適切な構造に関する詳細については、「[プロローグとエピローグ](../build/prolog-and-epilog.md)です。 例外処理、および pdata と xdata のアンワインドの処理と例外に関する詳細については、次を参照してください。[例外処理 (x64)](../build/exception-handling-x64.md)です。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [x64 ソフトウェア規約](../build/x64-software-conventions.md)

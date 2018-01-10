@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -30,8 +29,7 @@ f1_keywords:
 - taccess
 - waccess
 - _taccess
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - access function
 - _taccess function
@@ -40,30 +38,16 @@ helpviewer_keywords:
 - _waccess function
 - taccess function
 ms.assetid: ba34f745-85c3-49e5-a7d4-3590bd249dd3
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: d0968ec14a43cfbbf1169f34ac929435787bc349
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 5c4d8c6d8caae8b36f372ce75b4fc91638f9e78e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="access-waccess"></a>_access、_waccess
 ファイルが読み取り専用かどうかを判断します。 セキュリティを強化したバージョンを使用できます。「[_access_s、_waccess_s](../../c-runtime-library/reference/access-s-waccess-s.md)」をご覧ください。  
@@ -89,7 +73,7 @@ int _waccess(
  読み取り/書き込み属性。  
   
 ## <a name="return-value"></a>戻り値  
- ファイルに特定のモードが設定されている場合、各関数は 0 を返します。 名前付きのファイルが存在しないか、指定されたモードを持たない場合、関数は-1 を返しますこの場合、`errno`次の表に示すように設定します。  
+ ファイルに特定のモードが設定されている場合、各関数は 0 を返します。 名前付きのファイルが存在しないか、特定のモードがない場合、関数は-1 を返しますこの場合、`errno`次の表に示すように設定します。  
   
  `EACCES`  
  アクセス拒否: ファイルのアクセス許可の設定では、指定したアクセスは許可されません。  
@@ -100,7 +84,7 @@ int _waccess(
  `EINVAL`  
  無効なパラメーター。  
   
- リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  ファイルを使用すると、`_access` 関数は、指定したファイルまたはディレクトリが存在し、`mode` 値で指定されている属性があるかどうかを判断します。 ディレクトリを使用すると、`_access` は指定されたディレクトリが存在するかどうかだけを判断します。[!INCLUDE[Win2kFamily](../../c-runtime-library/includes/win2kfamily_md.md)] 以降のオペレーティング システムでは、すべてのディレクトリに読み取りおよび書き込みアクセスできます。  
@@ -124,9 +108,9 @@ int _waccess(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_taccess`|`_access`|`_access`|`_waccess`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|省略可能なヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
 |-------------|---------------------|----------------------|  
 |`_access`|\<io.h>|\<errno.h>|  
 |`_waccess`|\<wchar.h> または \<io.h>|\<errno.h>|  
@@ -164,7 +148,7 @@ File crt_ACCESS.C exists.
 File crt_ACCESS.C does not have write permission.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
  [_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32](../../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   

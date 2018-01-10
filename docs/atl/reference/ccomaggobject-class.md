@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -19,37 +18,22 @@ f1_keywords:
 - ATLCOM/ATL::CComAggObject::QueryInterface
 - ATLCOM/ATL::CComAggObject::Release
 - ATLCOM/ATL::CComAggObject::m_contained
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - aggregate objects [C++], in ATL
 - aggregation [C++], ATL objects
 - CComAggObject class
 ms.assetid: 7aa90d69-d399-477b-880d-e2cdf0ef7881
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 2f580a33b5b92f44e40a3da2e1f7111cbb8ede88
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: bd06518978b37705a98e4d8b7212b8dd03a2d7b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomaggobject-class"></a>クラス
 このクラスは、実装、 [IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)集約オブジェクトのインターフェイスです。 定義上、外部オブジェクトに集約オブジェクトが含まれています。 `CComAggObject`クラスがに似ていますが、 [CComObject クラス](../../atl/reference/ccomobject-class.md)は外部クライアントに直接アクセスできるインターフェイスを公開する点を除いて、します。  
@@ -80,7 +64,7 @@ class CComAggObject : public IUnknown,
 |名前|説明|  
 |----------|-----------------|  
 |[CComAggObject::AddRef](#addref)|集約オブジェクトの参照カウントをインクリメントします。|  
-|[CComAggObject::CreateInstance](#createinstance)|この静的関数では、新しいを作成することができます**すると** `contained` **>**のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。|  
+|[CComAggObject::CreateInstance](#createinstance)|この静的関数では、新しいを作成することができます**すると <** `contained`  **>** のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。|  
 |[CComAggObject::FinalConstruct](#finalconstruct)|最終初期化を実行`m_contained`です。|  
 |[CComAggObject::FinalRelease](#finalrelease)|最終的な破棄を実行`m_contained`です。|  
 |[CComAggObject::QueryInterface](#queryinterface)|要求されたインターフェイスへのポインターを取得します。|  
@@ -106,7 +90,7 @@ class CComAggObject : public IUnknown,
   
  `CComAggObject`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="addref"></a>CComAggObject::AddRef  
@@ -146,7 +130,7 @@ CComAggObject(void* pv);
  呼び出し、割り当てられているすべてのリソースを解放[FinalRelease](#finalrelease)、およびモジュールのロック カウントをデクリメントします。  
   
 ##  <a name="createinstance"></a>CComAggObject::CreateInstance  
- この静的関数では、新しいを作成することができます**すると**`contained` **>**のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。  
+ この静的関数では、新しいを作成することができます**すると <** `contained`  **>** のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。  
   
 ```
 static HRESULT WINAPI CreateInstance(
@@ -156,7 +140,7 @@ static HRESULT WINAPI CreateInstance(
   
 ### <a name="parameters"></a>パラメーター  
  `pp`  
- [out]ポインター、**すると\<***に含まれる* **>**ポインター。 場合`CreateInstance`は成功せず`pp`に設定されている**NULL**です。  
+ [out]ポインター、**すると\<***に含まれる*  **>** ポインター。 場合`CreateInstance`は成功せず`pp`に設定されている**NULL**です。  
   
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
@@ -232,11 +216,10 @@ STDMETHOD_(ULONG, Release)();
 ### <a name="return-value"></a>戻り値  
  デバッグ ビルドで、**リリース**診断に役に立たず、テスト可能な値を返します。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComObject クラス](../../atl/reference/ccomobject-class.md)   
  [CComPolyObject クラス](../../atl/reference/ccompolyobject-class.md)   
  [DECLARE_AGGREGATABLE](aggregation-and-class-factory-macros.md#declare_aggregatable)   
  [集約](aggregation-and-class-factory-macros.md#declare_only_aggregatable)   
  [DECLARE_NOT_AGGREGATABLE](aggregation-and-class-factory-macros.md#declare_not_aggregatable)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

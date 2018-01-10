@@ -1,36 +1,38 @@
 ---
-title: "CManualAccessor::AddBindEntry | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::CManualAccessor::AddBindEntry"
-  - "ATL.CManualAccessor.AddBindEntry"
-  - "CManualAccessor::AddBindEntry"
-  - "AddBindEntry"
-  - "CManualAccessor.AddBindEntry"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AddBindEntry メソッド"
+title: "Cmanualaccessor::addbindentry |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::CManualAccessor::AddBindEntry
+- ATL.CManualAccessor.AddBindEntry
+- CManualAccessor::AddBindEntry
+- AddBindEntry
+- CManualAccessor.AddBindEntry
+dev_langs: C++
+helpviewer_keywords: AddBindEntry method
 ms.assetid: 8556dda9-dda1-4f67-96bc-6031e6c6a271
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 14a2fbae8ee29728d145b3ff8d20a02b4000b5a2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CManualAccessor::AddBindEntry
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="cmanualaccessoraddbindentry"></a>CManualAccessor::AddBindEntry
 出力列にバインド エントリを追加します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -44,33 +46,33 @@ caps.handback.revision: 9
 ) throw ( );  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [DBBINDING](https://msdn.microsoft.com/en-us/library/ms716845.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[DBBINDING](https://msdn.microsoft.com/en-us/library/ms716845.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
  `nOrdinal`  
- \[\]列番号。  
+ [in]列の数です。  
   
  `wType`  
- \[\]データ型。  
+ [in]データ型です。  
   
  `nColumnSize`  
- \[\]バイト列のサイズ。  
+ [in]列のサイズ (バイト単位)。  
   
  `pData`  
- \[\]バッファーに格納された列のデータへのポインター。  
+ [in]バッファーに格納されている列のデータへのポインター。  
   
  `pLength`  
- \[\]フィールドの長さへのポインター \(必要な場合\)。  
+ [in]必要な場合は、フィールド長へのポインター。  
   
  `pStatus`  
- \[\]列のステータスにバインドされるする変数へのポインターに必要な場合。  
+ [in]必要な場合に、列の状態にバインドする変数へのポインター。  
   
-## 解説  
- この関数を使用するには、まず、[CreateAccessor](../Topic/CManualAccessor::CreateAccessor.md)です。  `CreateAccessor`で指定される列数よりも多くのエントリを追加することはできません。  
+## <a name="remarks"></a>コメント  
+ この関数を使用するには、まず[CreateAccessor](../../data/oledb/cmanualaccessor-createaccessor.md)です。 指定された列の数より多くのエントリを追加することはできません`CreateAccessor`です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CManualAccessor クラス](../Topic/CManualAccessor%20Class.md)   
- [DBViewer のサンプル](../../top/visual-cpp-samples.md)
+## <a name="see-also"></a>参照  
+ [CManualAccessor クラス](../../data/oledb/cmanualaccessor-class.md)   
+ [DBViewer サンプル](../../visual-cpp-samples.md)

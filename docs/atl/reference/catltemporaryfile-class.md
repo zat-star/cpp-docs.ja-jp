@@ -32,11 +32,12 @@ caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8404c8c638e31e8869b4ae6600e2fe0d209615ec
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5911de856d13d9d66e8c950d446083a36811f535
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catltemporaryfile-class"></a>CAtlTemporaryFile クラス
 このクラスは、作成および一時ファイルを使用するメソッドを提供します。  
@@ -87,7 +88,7 @@ class CAtlTemporaryFile
 ## <a name="remarks"></a>コメント  
  `CAtlTemporaryFile`作成し、一時ファイルを使用して簡単にできます。 ファイルは自動的にという名前を開く、閉じると、および削除します。 ファイルが閉じられた後、ファイルの内容が必要な場合は、指定した名前の新しいファイルに保存できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlfile.h  
   
 ## <a name="example"></a>例  
@@ -384,6 +385,6 @@ HRESULT Write(
 ### <a name="example"></a>例  
  例を参照して[CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [CAtlFile クラス](../../atl/reference/catlfile-class.md)

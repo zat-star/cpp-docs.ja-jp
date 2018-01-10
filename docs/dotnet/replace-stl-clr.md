@@ -15,11 +15,14 @@ caps.latest.revision: "4"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 11cbc9131003a0e993de7a326ed84db067edc9af
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: fe1f9cf94f39deb2a8db662a149a625b035b8567
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="replace-stlclr"></a>置換 (STL/CLR)
 範囲内の各要素が指定された値に一致するかどうかを調べ、一致する場合は置き換えます。  
@@ -35,10 +38,10 @@ template<class _FwdIt, class _Ty> inline
 ## <a name="remarks"></a>コメント  
  この関数の動作は、C++ 標準ライブラリ関数と同じ`replace`です。 詳細については、次を参照してください。[置換](../standard-library/algorithm-functions.md#replace)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext アルゴリズム/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

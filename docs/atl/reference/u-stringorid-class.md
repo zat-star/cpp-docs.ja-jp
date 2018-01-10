@@ -4,30 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - ATL._U_STRINGorID
 - ATL::_U_STRINGorID
 - _U_STRINGorID
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _U_STRINGorID class
 - U_STRINGorID class
 ms.assetid: 443cdc00-d265-4b27-8ef3-2feb95f3e5e3
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: ebc1b8f65f2a0841baf09b5c95528f571f97ce38
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: b02d539ae2a067c015988a847407bf631b6e8c1a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ustringorid-class"></a>_U_STRINGorID クラス
 この引数のアダプター クラスは、いずれかのリソース名を使用できます ( `LPCTSTR`s) またはリソース Id ( **UINT**s)、呼び出し元の ID を使用して文字列を変換を必要とせず、関数に渡される、 **されるときは**マクロです。  
@@ -60,7 +58,7 @@ class _U_STRINGorID
   
  2 つのコンス トラクター オーバー ロードがクラスで定義: 1 つを受け入れる、`LPCTSTR`引数で、もう一方を受け入れる、 **UINT**引数。 **UINT**引数を使用して Windows リソース管理機能と互換性のあるリソースの種類に変換、**されるときは**マクロとそのクラスの 1 つのデータ メンバーに格納されている結果[m_lpstr](#_u_stringorid__m_lpstr)です。 引数、`LPCTSTR`コンス トラクターは変換せずに直接格納します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="_u_stringorid__m_lpstr"></a>_U_STRINGorID::m_lpstr  
@@ -88,6 +86,5 @@ _U_STRINGorID(LPCTSTR lpString);
 ### <a name="remarks"></a>コメント  
  引数、`LPCTSTR`コンス トラクターは変換せずに直接格納します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)
-

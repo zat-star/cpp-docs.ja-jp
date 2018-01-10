@@ -19,11 +19,14 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5861a4931a1241a213157b94ca189c6b95f0fb6a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 1dcbb3b54cbde323cda0856ca68b2281d669cb7b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccli-migration-primer"></a>C++/CLI 移行ガイド
 これは、Visual c、c++ マネージ拡張から、Visual C プログラムを移行するためのガイドです。 チェックリスト概要構文の変更には、次を参照してください。 [C++ 構文のアップグレード チェックリストの (NOTINBUILD) マネージ拡張](http://msdn.microsoft.com/en-us/edbded88-7ef3-4757-bd9d-b8f48ac2aada)です。  
@@ -49,6 +52,6 @@ ms.lasthandoff: 10/24/2017
  [言語の変更の概要 (C++/CLI)](../dotnet/general-language-changes-cpp-cli.md)  
  キャスト表記のサポート、リテラル文字列の動作などのセマンティクスの変更、および ISO-C++ と C++/CLI とのセマンティクスの相違について詳しく紹介します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)   
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

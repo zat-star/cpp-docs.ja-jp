@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -38,35 +37,19 @@ f1_keywords:
 - ATLSECURITY/ATL::CSecurityDesc::SetOwner
 - ATLSECURITY/ATL::CSecurityDesc::SetSacl
 - ATLSECURITY/ATL::CSecurityDesc::ToString
-dev_langs:
-- C++
-helpviewer_keywords:
-- CSecurityDesc class
+dev_langs: C++
+helpviewer_keywords: CSecurityDesc class
 ms.assetid: 3767a327-378f-4690-ba40-4d9f6a1f5ee4
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 334081ba67c3b034c4b8170b095fcd77d712dda6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: b199565221173d7664600f2869e079c2f1c95aae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csecuritydesc-class"></a>CSecurityDesc クラス
 このクラスは、用のラッパー、 **SECURITY_DESCRIPTOR**構造体。  
@@ -105,7 +88,7 @@ class CSecurityDesc
 |[CSecurityDesc::IsDaclPresent](#isdaclpresent)|セキュリティ記述子に DACL があるかどうかを判断します。|  
 |[CSecurityDesc::IsDaclProtected](#isdaclprotected)|DACL が変更を防ぐために構成されているかどうかを判断します。|  
 |[CSecurityDesc::IsGroupDefaulted](#isgroupdefaulted)|セキュリティ記述子のグループ セキュリティ識別子 (SID) が既定で設定されたかどうかを判断します。|  
-|[CSecurityDesc::IsOwnerDefaulted](#isownerdefaulted)|セキュリティ記述子の所有者の SID は、既定で設定されたかどうかを判断します。|  
+|[CSecurityDesc::IsOwnerDefaulted](#isownerdefaulted)|既定でセキュリティ記述子の所有者の SID が設定されたかどうかを判断します。|  
 |[CSecurityDesc::IsSaclAutoInherited](#issaclautoinherited)|SACL が自動伝達をサポートするために構成されているかどうかを判断します。|  
 |[CSecurityDesc::IsSaclDefaulted](#issacldefaulted)|既定の SACL のセキュリティ記述子が構成されているかどうかを判断します。|  
 |[CSecurityDesc::IsSaclPresent](#issaclpresent)|セキュリティ記述子に SACL があるかどうかを判断します。|  
@@ -132,9 +115,9 @@ class CSecurityDesc
   
  アプリケーションは変更しないでください、 **SECURITY_DESCRIPTOR**構造を直接、代わりにする必要がありますメソッドを使用してクラス提供します。  
   
- Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="csecuritydesc"></a>CSecurityDesc::CSecurityDesc  
@@ -294,7 +277,7 @@ bool GetSacl(
  メソッドが成功した場合、false が失敗した場合に true を返します。  
   
 ##  <a name="isdaclautoinherited"></a>CSecurityDesc::IsDaclAutoInherited  
- 自動伝達をサポートする随意アクセス制御リスト (DACL) が構成されているかどうかを判断します。  
+ 随意アクセス制御リスト (DACL) が自動伝達をサポートするために構成されているかどうかを判断します。  
   
 ```
 bool IsDaclAutoInherited() const throw();
@@ -331,7 +314,7 @@ bool IsDaclPresent() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- セキュリティ記述子に含まれる場合、DACL の場合、false それ以外の場合は true を返します。  
+ セキュリティ記述子が含まれる場合、DACL の場合、false それ以外の場合は true を返します。  
   
 ### <a name="remarks"></a>コメント  
  このフラグが設定されていない場合、またはこのフラグが設定されていて、DACL が NULL 場合、セキュリティ記述子は、すべてのユーザーへのフル アクセスを許可します。  
@@ -348,7 +331,7 @@ bool IsDaclProtected() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- DACL を構成したセキュリティ記述子が継承可能なアクセス制御エントリ (Ace) で変更されないようにする場合は true を返します。 それ以外の場合は、false を返します。  
+ DACL をセキュリティ記述子が継承可能なアクセス制御エントリ (Ace) で変更されることを防ぐために構成されている場合に true を返します。 それ以外の場合は、false を返します。  
   
 ### <a name="remarks"></a>コメント  
  このフラグを設定するには、 [csecuritydesc::setdacl](#setdacl)メソッドです。  
@@ -515,7 +498,7 @@ bool SetControl(
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、使用可能な Windows 2000 でのみ、その後、なさ[SetSecurityDescriptorControl](http://msdn.microsoft.com/library/windows/desktop/aa379582\(v=vs.85\).aspx)です。  
+ このメソッドは、使用可能な Windows 2000 でのみ、その後が呼び出さ[SetSecurityDescriptorControl](http://msdn.microsoft.com/library/windows/desktop/aa379582\(v=vs.85\).aspx)です。  
   
 ##  <a name="setdacl"></a>Csecuritydesc::setdacl  
  随意アクセス制御リスト (DACL) で情報を設定します。 既に DACL が表示されているセキュリティ記述子に置き換えられます。  
@@ -544,7 +527,7 @@ inline void SetDacl(
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- 空と存在しない DACL の重要な違いは。 DACL が空の場合は、アクセス制御エントリが含まれていないと、アクセス権が明示的に付与されてです。 その結果、オブジェクトへのアクセスが暗黙的に拒否されます。 オブジェクトに DACL がない、その一方で、保護は、オブジェクトに割り当てられませんし、すべてのアクセス要求が許可されます。  
+ 空と存在しない DACL の重要な違いがあります。 DACL が空の場合は、アクセス制御エントリが含まれていないと、アクセス権が明示的に付与されてです。 その結果、オブジェクトへのアクセスが暗黙的に拒否されます。 オブジェクトに DACL がない、その一方で、保護は、オブジェクトに割り当てられませんし、すべてのアクセス要求が許可されます。  
   
 ##  <a name="setgroup"></a>Csecuritydesc::setgroup  
  既にあるすべてのプライマリ グループ情報を交換絶対形式のセキュリティ記述子のプライマリ グループの情報を設定します。  
@@ -575,7 +558,7 @@ bool SetOwner(const CSid& Sid, bool bDefaulted = false) throw(...);
  [CSid](../../atl/reference/csid-class.md)セキュリティ記述子の新しいプライマリ所有者のオブジェクト。 このパラメーターは NULL をすることはできません。  
   
  `bDefaulted`  
- 所有者の情報が既定のメカニズムから派生したかどうかを示します。 この値が true の場合は、既定の情報です。 メソッドで SE_OWNER_DEFAULTED フラグとしてこの値を格納する、 **SECURITY_DESCRIPTOR_CONTROL**構造体。 このパラメーターが 0 の場合は、SE_OWNER_DEFAULTED フラグがクリアされます。  
+ 所有者の情報が既定のメカニズムから派生したかどうかを示します。 この値が true の場合は、既定の情報です。 メソッドで SE_OWNER_DEFAULTED フラグとしてこの値を格納する、 **SECURITY_DESCRIPTOR_CONTROL**構造体。 このパラメーターが 0 の場合、SE_OWNER_DEFAULTED フラグがクリアされます。  
   
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
@@ -622,7 +605,7 @@ bool ToString(
   
  `si`パラメーターは、次の SECURITY_INFORMATION フラグを含めることができます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |OWNER_SECURITY_INFORMATION|所有者を含めます。|  
 |GROUP_SECURITY_INFORMATION|プライマリ グループを含めます。|  
@@ -635,9 +618,8 @@ bool ToString(
   
  このメソッドは使用可能な Windows 2000 以降が呼び出さ[れて](http://msdn.microsoft.com/library/windows/desktop/aa376401)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [SECURITY_DESCRIPTOR](http://msdn.microsoft.com/library/windows/desktop/aa379561)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティに関するグローバル関数](../../atl/reference/security-global-functions.md)
-

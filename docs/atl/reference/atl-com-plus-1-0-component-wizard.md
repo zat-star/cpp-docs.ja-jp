@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d7d596396ec46aa1f30be00743ab6fe95d49a865
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1c82cf91c61f047a80c513d1aead25fe73c77715
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-com-10-component-wizard"></a>ATL COM+ 1.0 コンポーネント ウィザード
 このウィザードを使用すると、オブジェクトを COM + 1.0 services、トランザクションを含むをサポートするプロジェクトに追加します。  
@@ -77,6 +78,6 @@ ms.lasthandoff: 10/24/2017
  **ProgID**  
  コンテナーは、オブジェクトの CLSID の代わりに使用できる名前を設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL COM + 1.0 コンポーネント](../../atl/reference/adding-an-atl-com-plus-1-0-component.md)
 

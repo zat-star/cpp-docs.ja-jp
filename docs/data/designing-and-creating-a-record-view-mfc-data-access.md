@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a164bd7d07fac68de5b2e8fb4b49fa4e399c7cb2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 19f4f248a7fdca0d89df9c8becad69876bf6ac7d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="designing-and-creating-a-record-view--mfc-data-access"></a>レコード ビューのデザインと作成 (MFC データ アクセス)
 使用してレコード ビュー クラスを作成することができます、 [MFC アプリケーション ウィザード](../mfc/reference/database-support-mfc-application-wizard.md)です。 アプリケーション ウィザードを使用すると、レコード ビュー クラスと、それに対応するダイアログ テンプレート リソース (コントロールは含まれません) が作成されます。 ダイアログ テンプレート リソースにコントロールを追加するには、Visual C++ ダイアログ エディターを使用する必要があります。 その一方で、使用する場合**クラスの追加**、最初にダイアログ テンプレート リソースを作成 ダイアログ ボックス エディターし、レコード ビュー クラスを作成する必要があります。  
@@ -50,7 +53,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [レコード ビュー: セカンド レコード セットから、リスト ボックスの入力](../data/filling-a-list-box-from-a-second-recordset-mfc-data-access.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード ビュー (MFC データ アクセス)](../data/record-views-mfc-data-access.md)   
  [レコード セット (ODBC)](../data/odbc/recordset-odbc.md)   
  [ODBC ドライバーの一覧](../data/odbc/odbc-driver-list.md)

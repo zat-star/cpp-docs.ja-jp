@@ -1,71 +1,73 @@
 ---
-title: "OLE DB プロバイダー テンプレート用マクロ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.templates.ole"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "マクロ, OLE DB プロバイダー テンプレート"
-  - "OLE DB プロバイダー テンプレートのマクロ"
-  - "OLE DB プロバイダー テンプレート, マクロ"
-  - "プロバイダー テンプレートのマクロ (OLE DB)"
+title: "OLE DB プロバイダー テンプレート用マクロ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.templates.ole
+dev_langs: C++
+helpviewer_keywords:
+- OLE DB provider templates, macros
+- macros, OLE DB Provider Templates
+- Provider Template macros (OLE DB)
+- OLE DB Provider Template macros
 ms.assetid: 909482c5-64ab-4e52-84a9-1c07091db183
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 2a61e8156b39b9f0afec477f541920570d4af823
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# OLE DB プロバイダー テンプレート用マクロ
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-OLE DB テンプレートのプロバイダーのマクロには、次の機能を提供し、T:  
+# <a name="macros-for-ole-db-provider-templates"></a>OLE DB プロバイダー テンプレート用マクロ
+OLE DB プロバイダー テンプレートのマクロは、次のカテゴリで機能を提供します。  
   
-### プロパティ セット マップ マクロ  
+### <a name="property-set-map-macros"></a>プロパティ セットのマップに関するマクロ  
   
 |||  
 |-|-|  
-|[BEGIN\_PROPERTY\_SET](../../data/oledb/begin-property-set.md)|プロパティ セットの開始位置を示します。|  
-|[BEGIN\_PROPERTY\_SET\_EX](../../data/oledb/begin-property-set-ex.md)|プロパティ セットの開始位置を示します。|  
-|[BEGIN\_PROPSET\_MAP](../Topic/BEGIN_PROPSET_MAP.md)|プロバイダーの範囲外の表示\/非表示を定義できるプロパティ セットの開始位置を示します。|  
-|[CHAIN\_PROPERTY\_SET](../Topic/CHAIN_PROPERTY_SET.md)|プロパティ グループをまとめてチェインします。|  
-|[END\_PROPERTY\_SET](../../data/oledb/end-property-set.md)|プロパティ セットの終了位置を示します。|  
-|[END\_PROPSET\_MAP](../../data/oledb/end-propset-map.md)|プロパティ セット マップの終了位置を示します。|  
-|[PROPERTY\_INFO\_ENTRY](../../data/oledb/property-info-entry.md)|既定値にプロパティ セットの特定のプロパティを設定します。|  
-|[PROPERTY\_INFO\_ENTRY\_EX](../../data/oledb/property-info-entry-ex.md)|指定する値が、プロパティ セットの特定のプロパティを設定します。  有効なフラグとオプションを設定できます。|  
-|[PROPERTY\_INFO\_ENTRY\_VALUE](../../data/oledb/property-info-entry-value.md)|指定する値が、プロパティ セットの特定のプロパティを設定します。|  
+|[BEGIN_PROPERTY_SET](../../data/oledb/begin-property-set.md)|プロパティ セットの先頭をマークします。|  
+|[BEGIN_PROPERTY_SET_EX](../../data/oledb/begin-property-set-ex.md)|プロパティ セットの先頭をマークします。|  
+|[BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md)|セットのプロパティの先頭をマークを非表示またはプロバイダーのスコープ外で定義できます。|  
+|[CHAIN_PROPERTY_SET](../../data/oledb/chain-property-set.md)|プロパティのグループを一緒にチェーンします。|  
+|[END_PROPERTY_SET](../../data/oledb/end-property-set.md)|プロパティ セットの末尾をマークします。|  
+|[END_PROPSET_MAP](../../data/oledb/end-propset-map.md)|プロパティ セットのマップの最後をマークします。|  
+|[PROPERTY_INFO_ENTRY](../../data/oledb/property-info-entry.md)|既定値に設定されたプロパティの特定のプロパティを設定します。|  
+|[PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md)|指定した値に設定されたプロパティの特定のプロパティを設定します。 フラグとオプションを設定することもできます。|  
+|[PROPERTY_INFO_ENTRY_VALUE](../../data/oledb/property-info-entry-value.md)|指定した値に設定されたプロパティの特定のプロパティを設定します。|  
   
-### 列マップ マクロ  
-  
-|||  
-|-|-|  
-|[BEGIN\_PROVIDER\_COLUMN\_MAP](../../data/oledb/begin-provider-column-map.md)|プロバイダーの列マップ エントリの開始位置を示します。|  
-|[END\_PROVIDER\_COLUMN\_MAP](../../data/oledb/end-provider-column-map.md)|プロバイダーの列マップ エントリの終了位置を示します。|  
-|[PROVIDER\_COLUMN\_ENTRY](../../data/oledb/provider-column-entry.md)|プロバイダーでサポートされる特定の列を表します。|  
-|[PROVIDER\_COLUMN\_ENTRY\_GN](../../data/oledb/provider-column-entry-gn.md)|プロバイダーでサポートされる特定の列を表します。  列のサイズ、データ型、精度、スケール、およびスキーマ行セット GUID を指定できます。|  
-|[PROVIDER\_COLUMN\_ENTRY\_FIXED](../Topic/PROVIDER_COLUMN_ENTRY_FIXED.md)|プロバイダーでサポートされる特定の列を表します。  列のデータ型を指定できます。|  
-|[PROVIDER\_COLUMN\_ENTRY\_LENGTH](../../data/oledb/provider-column-entry-length.md)|プロバイダーでサポートされる特定の列を表します。  列のサイズを指定できます。|  
-|[PROVIDER\_COLUMN\_ENTRY\_STR](../../data/oledb/provider-column-entry-str.md)|プロバイダーでサポートされる特定の列を表します。  これは列型が文字列であることを前提としています。|  
-|[PROVIDER\_COLUMN\_ENTRY\_TYPE\_LENGTH](../../data/oledb/provider-column-entry-type-length.md)|プロバイダーでサポートされる特定の列を表します。  PROVIDER\_COLUMN\_ENTRY\_LENGTH が、割り当てのように、列のデータ型やサイズを指定できます。|  
-|[PROVIDER\_COLUMN\_ENTRY\_WSTR](../../data/oledb/provider-column-entry-wstr.md)|プロバイダーでサポートされる特定の列を表します。  これは列型が Unicode 文字列であると想定されます。|  
-  
-### スキーマ行セットのマクロ  
+### <a name="column-map-macros"></a>列マップ マクロ  
   
 |||  
 |-|-|  
-|[BEGIN\_SCHEMA\_MAP](../../data/oledb/begin-schema-map.md)|スキーマ マップの開始位置を示します。|  
-|[SCHEMA\_ENTRY](../../data/oledb/schema-entry.md)|クラスと GUID を関連付けます。|  
-|[END\_SCHEMA\_MAP](../../data/oledb/end-schema-map.md)|スキーマ マップの終了位置を示します。|  
+|[BEGIN_PROVIDER_COLUMN_MAP](../../data/oledb/begin-provider-column-map.md)|プロバイダーの列マップ エントリの先頭をマークします。|  
+|[END_PROVIDER_COLUMN_MAP](../../data/oledb/end-provider-column-map.md)|プロバイダーの列マップ エントリの末尾をマークします。|  
+|[PROVIDER_COLUMN_ENTRY](../../data/oledb/provider-column-entry.md)|プロバイダーでサポートされている特定の列を表します。|  
+|[PROVIDER_COLUMN_ENTRY_GN](../../data/oledb/provider-column-entry-gn.md)|プロバイダーでサポートされている特定の列を表します。 列のサイズ、データ型、有効桁数、小数点以下桁数、およびスキーマ行セット GUID を指定することができます。|  
+|[PROVIDER_COLUMN_ENTRY_FIXED](../../data/oledb/provider-column-entry-fixed.md)|プロバイダーでサポートされている特定の列を表します。 列のデータ型を指定することができます。|  
+|[PROVIDER_COLUMN_ENTRY_LENGTH](../../data/oledb/provider-column-entry-length.md)|プロバイダーでサポートされている特定の列を表します。 列のサイズを指定することができます。|  
+|[PROVIDER_COLUMN_ENTRY_STR](../../data/oledb/provider-column-entry-str.md)|プロバイダーでサポートされている特定の列を表します。 列の型が文字列と見なします。|  
+|[PROVIDER_COLUMN_ENTRY_TYPE_LENGTH](../../data/oledb/provider-column-entry-type-length.md)|プロバイダーでサポートされている特定の列を表します。 PROVIDER_COLUMN_ENTRY_LENGTH、かつ、列のデータ型だけのサイズを指定することもできます。|  
+|[PROVIDER_COLUMN_ENTRY_WSTR](../../data/oledb/provider-column-entry-wstr.md)|プロバイダーでサポートされている特定の列を表します。 列のデータ型は Unicode 文字の文字列と見なします。|  
   
-## 参照  
+### <a name="schema-rowset-macros"></a>スキーマ行セットのマクロ  
+  
+|||  
+|-|-|  
+|[BEGIN_SCHEMA_MAP](../../data/oledb/begin-schema-map.md)|スキーマ マップの先頭をマークします。|  
+|[SCHEMA_ENTRY](../../data/oledb/schema-entry.md)|GUID をクラスに関連付けます。|  
+|[END_SCHEMA_MAP](../../data/oledb/end-schema-map.md)|スキーマ マップの最後をマークします。|  
+  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   
  [OLE DB プロバイダーの作成](../../data/oledb/creating-an-ole-db-provider.md)   

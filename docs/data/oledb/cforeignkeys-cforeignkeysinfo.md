@@ -65,11 +65,14 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 53082b43f529bebb8c2b3d6b9f96608aadf5a3f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 04023bbc7e8871b9b2c43b63171fd42ec90d1340
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cforeignkeys-cforeignkeysinfo"></a>CForeignKeys、CForeignKeysInfo
 Typedef クラスを呼び出す**CForeignKeys**そのパラメーター クラスを実装する**CForeignKeysInfo**です。  
@@ -99,8 +102,8 @@ Typedef クラスを呼び出す**CForeignKeys**そのパラメーター クラ�
 |m_szUpdateRule|句|  
 |m_szDeleteRule|DELETE_RULE|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

@@ -19,11 +19,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ee5e34ce0af330ec9a788ceda758a412e3d7ac2d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 59eb8aecbf2dd2138c8a0469d71364b55fd82774
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="transaction-how-transactions-affect-updates-odbc"></a>トランザクション: トランザクションが更新処理に与える影響 (ODBC)
 更新、[データソース](../../data/odbc/data-source-odbc.md)エディット バッファー (トランザクションの外部で使用される同じメソッド) を使用してトランザクション中には、管理します。 レコード セットのフィールド データ メンバーは総称して、レコード セットのバックアップを取得中に一時的に現在のレコードを格納しているエディット バッファーとして機能する`AddNew`または**編集**です。 中に、**削除**操作、現在のレコードはトランザクション内でバックアップされません。 エディット バッファーおよび更新プログラムが現在のレコードを格納する方法の詳細については、次を参照してください。[レコード セット: レコード更新のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-update-records-odbc.md)です。  
@@ -59,7 +62,7 @@ ms.lasthandoff: 10/24/2017
 |**編集**(せず**更新**)、し**ロールバック**|現在のレコードの編集前のバージョンは一時的に格納されます。 エディット バッファーの内容には、編集が行われています。|呼び出す**編集**もう一度をエディット バッファーにレコードの編集前のバージョンを復元します。|**更新**呼び出されませんでした、データ ソースに加えられた変更はありませんでした。|  
 |**削除**し**ロールバック**|現在のレコードの内容が削除されます。|呼び出す**Requery**をデータ ソースから現在のレコードの内容を復元します。|データ ソースからデータの削除が取り消されます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)   
  [トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)   
  [トランザクション: レコード セット (ODBC) からのトランザクションの実行](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)   

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -29,8 +28,7 @@ f1_keywords:
 - wsopen
 - _sopen
 - _tsopen
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - sopen function
 - sharing files
@@ -41,30 +39,16 @@ helpviewer_keywords:
 - files [C++], sharing
 - _wsopen function
 ms.assetid: a9d4cccf-06e9-414d-96fa-453fca88cc1f
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: aac10cebd0f967944403837283e9008b0b1047fc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: bce1d0aac8b6b4d835b956a9ac05eece4e2e6428
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sopen-wsopen"></a>_sopen、_wsopen
 共有用にファイルを開きます。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_sopen_s、_wsopen_s (_sopen_s、_wsopen_s)](../../c-runtime-library/reference/sopen-s-wsopen-s.md)」を参照してください。  
@@ -111,8 +95,7 @@ int _wsopen(
  `_O_CREAT` および `_O_EXCL` フラグが指定されましたが、`filename` が既に存在します。  
   
  `EINVAL`  
- 
-          `oflag` または `shflag` 引数が無効です。  
+ `oflag` または `shflag` 引数が無効です。  
   
  `EMFILE`  
  ファイル記述子をこれ以上使用できません。  
@@ -120,7 +103,7 @@ int _wsopen(
  `ENOENT`  
  ファイルまたはパスが見つかりません。  
   
- これらのリターン コードとその他のリターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  `_sopen` 関数は、`filename` で指定されたファイルを開き、`oflag` および `shflag` による定義に従って、共有読み取りまたは書き込み用にファイルを準備します。 `_wsopen` 関数は、`_sopen` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wsopen` は、ワイド文字列です。 それ以外では、`_wsopen` と `_sopen` の動作は同じです。  
@@ -144,17 +127,14 @@ int _wsopen(
           `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
   
  `_O_CREAT | _O_SHORT_LIVED`  
- ファイルを一時ファイルとして作成し、可能な場合は、ディスクにフラッシュしません。 
-          `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
+ ファイルを一時ファイルとして作成し、可能な場合は、ディスクにフラッシュしません。 `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
   
  `_O_CREAT | _O_TEMPORARY`  
- ファイルを一時ファイルとして作成します。最後のファイル記述子が閉じられると、ファイルは削除されます。 
-          `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
+ ファイルを一時ファイルとして作成します。最後のファイル記述子が閉じられると、ファイルは削除されます。 `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
   
  `_O_CREAT | _O_EXCL`  
  
-          `filename` で指定されたファイルが存在する場合、エラー値を返します。 
-          `_O_CREAT` と共に使用された場合にのみ適用されます。  
+          `filename` で指定されたファイルが存在する場合、エラー値を返します。 `_O_CREAT` と共に使用された場合にのみ適用されます。  
   
  `_O_NOINHERIT`  
  共有ファイル記述子の作成を禁止します。  
@@ -163,12 +143,10 @@ int _wsopen(
  主にディスクからのランダム アクセスを指定します。  
   
  `_O_RDONLY`  
- 読み取り専用でファイルを開きます。 
-          `_O_RDWR` または `_O_WRONLY` と共に指定することはできません。  
+ 読み取り専用でファイルを開きます。 `_O_RDWR` または `_O_WRONLY` と共に指定することはできません。  
   
  `_O_RDWR`  
- 読み取りと書き込みの両方用にファイルを開きます。 
-          `_O_RDONLY` または `_O_WRONLY` と共に指定することはできません。  
+ 読み取りと書き込みの両方用にファイルを開きます。 `_O_RDONLY` または `_O_WRONLY` と共に指定することはできません。  
   
  `_O_SEQUENTIAL`  
  主にディスクからの順次アクセスを指定します。  
@@ -232,19 +210,19 @@ int _wsopen(
   
  `_sopen` では、アクセス許可が設定される前に、現在のファイル アクセス許可マスクが `pmode` に適用されます。 (「[_umask](../../c-runtime-library/reference/umask.md)」を参照。)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_sopen`|\<io.h>|\<fcntl.h>、\<sys\types.h>、\<sys\stat.h>、\<share.h>|  
 |`_wsopen`|\<io.h> または \<wchar.h>|\<fcntl.h>、\<sys\types.h>、\<sys\stat.h>、\<share.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_locking](../../c-runtime-library/reference/locking.md)」の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
  [_close](../../c-runtime-library/reference/close.md)   
  [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   

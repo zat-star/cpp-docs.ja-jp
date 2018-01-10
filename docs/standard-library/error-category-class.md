@@ -27,11 +27,12 @@ caps.latest.revision: "15"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 40ca15541b9035a82869cdfed7f304eeaeeb2553
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 927711e5ad87be2a8c4683cb960cc02015de2316
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="errorcategory-class"></a>error_category クラス
 エラー コードのカテゴリを表すオブジェクトの抽象的な共通基底を表します。  
@@ -68,7 +69,7 @@ class error_category;
 |[operator!=](#op_neq)|`error_category` オブジェクト間の不等性をテストします。|  
 |[operator<](#op_lt)|[error_category](../standard-library/error-category-class.md) オブジェクトが比較のために渡される `error_category` オブジェクトより小さいかどうかをテストします。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<system_error>  
   
  **名前空間:** std  
@@ -184,7 +185,7 @@ bool operator!=(const error_category& right) const;
  `error_category` オブジェクトが、`right` に渡される `error_category` オブジェクトに等しくない場合は **true**。それ以外の場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー演算子は、`(!*this == right)` を返します。  
+ このメンバー演算子は、 `(!*this == right)`を返します。  
   
 ##  <a name="op_lt"></a>  error_category::operator&lt;  
  [error_category](../standard-library/error-category-class.md) オブジェクトが比較のために渡される `error_category` オブジェクトより小さいかどうかをテストします。  
@@ -203,7 +204,7 @@ bool operator<(const error_category& right) const;
  `error_category` オブジェクトが、比較対象として渡された `error_category` より小さい場合は **true**。それ以外の場合は **false**。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー演算子は、`this < &right` を返します。  
+ このメンバー演算子は、 `this < &right`を返します。  
   
 ##  <a name="value_type"></a>  error_category::value_type  
  格納されたエラー コード値を表す型。  
@@ -215,7 +216,7 @@ typedef int value_type;
 ### <a name="remarks"></a>コメント  
  この型定義は `int` のシノニムです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<system_error>](../standard-library/system-error.md)
 
 

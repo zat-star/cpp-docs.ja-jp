@@ -25,11 +25,12 @@ caps.latest.revision: "40"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 21ebf470372c24a4e1ab5922f1d98c1a434691a8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e5699830a090f42feb92b24ec43fbae36634c4df
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="gs-buffer-security-check"></a>/GS (バッファーのセキュリティ チェック)  
   
@@ -43,7 +44,7 @@ ms.lasthandoff: 10/24/2017
   
 ## <a name="remarks"></a>コメント  
   
-**/GS**は既定でオンです。 使用して、アプリケーションにセキュリティ リスクがない場合は、 **/GS-**です。 詳細については**/GS**を参照してください[コンパイラ セキュリティ チェックで深さ](http://go.microsoft.com/fwlink/?linkid=7260)です。 詳細については、バッファー オーバーランの検出を抑制する、次を参照してください。 [safebuffers](../../cpp/safebuffers.md)です。  
+**/GS**は既定でオンです。 使用して、アプリケーションにセキュリティ リスクがない場合は、 **/GS-**です。 詳細については**/GS**を参照してください[コンパイラ セキュリティ チェックで深さ](http://go.microsoft.com/fwlink/p/?linkid=7260)です。 詳細については、バッファー オーバーランの検出を抑制する、次を参照してください。 [safebuffers](../../cpp/safebuffers.md)です。  
   
 ## <a name="security-checks"></a>セキュリティ チェック  
   
@@ -165,7 +166,7 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 [コンパイラ オプション](../../build/reference/compiler-options.md)   
 [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

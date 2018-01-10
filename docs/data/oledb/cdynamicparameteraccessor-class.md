@@ -18,11 +18,14 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7e30e003a054c6806994780fd4bd7b5af24f946a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: b0c2590866db418f1652ebd1a46c0465ccb99086
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdynamicparameteraccessor-class"></a>CDynamicParameterAccessor クラス
 [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) と類似していますが、 [ICommandWithParameters](https://msdn.microsoft.com/en-us/library/ms712937.aspx) インターフェイスを呼び出すことで設定されるパラメーター情報を取得します。  
@@ -60,10 +63,10 @@ class CDynamicParameterAccessor : public CDynamicAccessor
   
  このクラスを使用して SQL Server のストアド プロシージャを実行し、出力パラメーター値を取得する方法の例については、サポート技術情報の記事 Q058860 の「HOWTO: Execute Stored Procedure using CDynamicParameterAccessor」を参照してください。 サポート技術情報の記事は、MSDN ライブラリの Visual Studio マニュアルまたは [http://support.microsoft.com/](http://support.microsoft.com)で参照できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー**: atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)   
  [CAccessor クラス](../../data/oledb/caccessor-class.md)   

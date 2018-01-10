@@ -17,11 +17,14 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a1c97db59b88672f390fc88b78f8d5f843ca7099
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 551ccfdf236eb5828b1d41ae8867acdb259b1d4f
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="testing-your-provider"></a>プロバイダーのテスト
 プロバイダーを解放する前に、示されている順序で次のテストを行う必要があります。 これらのテストでは、ほとんどの潜在的なユーザー用に正しくプロバイダー関数ことを確認します。  
@@ -30,7 +33,7 @@ ms.lasthandoff: 10/24/2017
   
 2.  ADO で記述されたコンシューマー アプリケーションを使用してプロバイダーをテストします。 ほとんどの開発者 (特に Microsoft Visual Basic および Microsoft c# 開発者) は、コンシューマー アプリケーションの ADO または ADO.NET を使用します。 テスト コンシューマーは、プロバイダーのすべての機能領域をカバーする必要があります。 ADO コンシューマー アプリケーションの例は、次を参照してください。 [ADO コードの例では、Microsoft Visual Basic](https://msdn.microsoft.com/en-us/library/ms807514.aspx)です。  
   
-3.  プロバイダーが OLE DB プロバイダーのレベル 0 の標準を満たしていることを確認するには、OLE DB 準拠合致テスト (ADO 準拠合致テストを含む) を実行します。 (レベル 0 の詳細については、「OLE DB レベル 0 準拠合致テスト」で検索[OLE DB プログラマ ガイド](http://go.microsoft.com/fwlink/?linkid=121548)です。 これらのテストと関連ドキュメント Data Access SDK の Visual C に含まれます。 これらのテストは、プロバイダーが他の統合されたときに実行されるようにも役立ちます[サービス プロバイダー](../../data/oledb/ole-db-resource-pooling-and-services.md)し、変更、またはプロパティを追加する場合は特に便利です。 準拠合致テストに関する詳細については、Visual Studio Cd のいずれかの上にある、Data Access SDK の Readme ファイルを参照してください。  
+3.  プロバイダーが OLE DB プロバイダーのレベル 0 の標準を満たしていることを確認するには、OLE DB 準拠合致テスト (ADO 準拠合致テストを含む) を実行します。 (レベル 0 の詳細については、「OLE DB レベル 0 準拠合致テスト」で検索[OLE DB プログラマ ガイド](http://go.microsoft.com/fwlink/p/?linkid=121548)です。 これらのテストと関連ドキュメント Data Access SDK の Visual C に含まれます。 これらのテストは、プロバイダーが他の統合されたときに実行されるようにも役立ちます[サービス プロバイダー](../../data/oledb/ole-db-resource-pooling-and-services.md)し、変更、またはプロパティを追加する場合は特に便利です。 準拠合致テストに関する詳細については、Visual Studio Cd のいずれかの上にある、Data Access SDK の Readme ファイルを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレートの操作](../../data/oledb/working-with-ole-db-provider-templates.md)

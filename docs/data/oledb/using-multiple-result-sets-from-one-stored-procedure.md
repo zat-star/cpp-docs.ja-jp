@@ -16,11 +16,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 787c2123981f894eb4b6ba088cfcef774b6ed6f8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: ec887f01e377ffa6295086bbeeb56dcd884d6276
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-multiple-result-sets-from-one-stored-procedure"></a>1 つのストアド プロシージャからの複数の結果セットの使用
 ほとんどのストアド プロシージャは、複数の結果セットを返します。 このようなストアド プロシージャが通常 1 つを含むまたは以上の select ステートメント。 コンシューマーは、すべての結果セットの処理を行うために考慮する必要があります。  
@@ -35,5 +38,5 @@ ms.lasthandoff: 10/24/2017
   
 4.  呼び出す`GetNextResult`上、`CCommand`クラスです。 別の結果行セットがある場合は`GetNextResult`S_OK を返しますと手動のアクセサーを使用している場合、列を再バインドする必要があります。 場合`GetNextResult`エラーを返しますがさらに結果は使用可能な設定されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストアド プロシージャの使用](../../data/oledb/using-stored-procedures.md)

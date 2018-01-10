@@ -19,11 +19,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7ab69a7dbba33e37d23a880a6a9b36f7ed37d7d2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 8f89c49035e2e48dde8d502b1d61fa33d198f69a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="changes-to-conversion-operators"></a>変換演算子に対する変更点
 変換演算子の構文は、Visual C を c++ マネージ拡張から変更されました。  
@@ -69,5 +72,5 @@ public:
   
  別の変更は、引数を 1 つのコンス トラクターとして宣言されているかのように処理する`explicit`です。 これは、その呼び出しをトリガーするために、明示的なキャストが必要であることを意味します。 ただし、明示的な変換演算子が定義されている場合と、単一の引数を持つコンス トラクター、されませんが呼び出されることに注意してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスまたはインターフェイス内でのメンバー宣言 (C++/CLI)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)

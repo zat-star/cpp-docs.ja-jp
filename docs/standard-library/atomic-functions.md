@@ -37,7 +37,7 @@ f1_keywords:
 - atomic/std::atomic_thread_fence
 - atomic/std::kill_dependency
 ms.assetid: 5c53b4f8-6ff5-47d7-beb2-2d6ee3c6ea89
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -71,12 +71,12 @@ helpviewer_keywords:
 - std::atomic_store_explicit [C++]
 - std::atomic_thread_fence [C++]
 - std::kill_dependency [C++]
+ms.workload: cplusplus
+ms.openlocfilehash: 232333280ae44838b0afd41bf0e00255d8a78dc7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 75dff27cd050ae1a218cb8d61abaffff05d38661
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltatomicgt-functions"></a>&lt;atomic&gt; 関数
 ||||  
@@ -884,9 +884,8 @@ Ty kill_dependency(Ty Arg) noexcept;
 ### <a name="return-value"></a>戻り値  
  戻り値は `Arg` です。 `Arg` の評価は関数呼び出しに依存関係を伝達しません。 可能な依存関係チェーンを分割することで、関数はより効率的なコードを生成することをコンパイラに許可できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<atomic>](../standard-library/atomic.md)
-
 
 
 

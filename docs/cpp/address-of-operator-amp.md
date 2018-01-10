@@ -4,29 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords:
-- '&'
-dev_langs:
-- C++
+f1_keywords: '&'
+dev_langs: C++
 helpviewer_keywords:
 - address-of operator (&)
 - '& operator'
 - '& operator [C++], address-of operator'
 ms.assetid: 2828221a-15f6-4acc-87fe-25e34feebb88
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 56e2606759cc381c1ae6f6f4f1f7cbc1d9d2d810
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 814b21839ac851e942aaee34ed28fd43facb418a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="address-of-operator-amp"></a>Address-of 演算子:&amp;
 ## <a name="syntax"></a>構文  
@@ -40,7 +37,7 @@ ms.lasthandoff: 09/25/2017
   
  アドレス演算子は、ファイル スコープ レベルで宣言された基本型、構造体型、クラス型、または共用体型を持つ変数、または添字配列参照だけに適用できます。 これらの式では、アドレス演算子を含まない定数式を、アドレス式に加算したりアドレス式から減算できます。  
   
- 関数または左辺値に適用されたときの式の結果は、オペランドの型から派生したポインター型 (右辺値) です。 たとえば、オペランドが `char` 型の場合、式の結果は `char` へのポインター型になります。 アドレスの演算子に適用される**const**または`volatile`オブジェクトの場合に評価**const** `type` ** \* **または`volatile` `type`** \***ここで、`type`元のオブジェクトの種類です。  
+ 関数または左辺値に適用されたときの式の結果は、オペランドの型から派生したポインター型 (右辺値) です。 たとえば、オペランドが `char` 型の場合、式の結果は `char` へのポインター型になります。 アドレスの演算子に適用される**const**または`volatile`オブジェクトの場合に評価**const** `type`  **\*** または`volatile` `type` **\***ここで、`type`元のオブジェクトの種類です。  
   
  アドレス演算子を適用すると、[修飾名](http://msdn.microsoft.com/en-us/3fefb16d-8120-4627-8b3f-3d90fbdcd1df)、結果は異なるかどうか、*修飾名*静的メンバーを指定します。 その場合、結果はメンバーの宣言で指定した型へのポインターです。 メンバーが静的でない場合、結果は、メンバーへのポインターは*名前*で示されたクラスの*修飾クラス名*です。 (を参照してください[一次式](../cpp/primary-expressions.md)について*修飾クラス名*)。次のコードは、メンバーが静的かどうかによって、どのように結果が違うかを示します。  
   
@@ -116,9 +113,8 @@ int main() {
 25  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [左辺値参照宣言子: &](../cpp/lvalue-reference-declarator-amp.md)   
  [間接演算子とアドレス演算子](../c-language/indirection-and-address-of-operators.md)
-

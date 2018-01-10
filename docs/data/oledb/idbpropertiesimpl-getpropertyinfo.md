@@ -1,63 +1,65 @@
 ---
-title: "IDBPropertiesImpl::GetPropertyInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDBPropertiesImpl::GetPropertyInfo"
-  - "IDBPropertiesImpl.GetPropertyInfo"
-  - "GetPropertyInfo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetPropertyInfo メソッド"
+title: "Idbpropertiesimpl::getpropertyinfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- IDBPropertiesImpl::GetPropertyInfo
+- IDBPropertiesImpl.GetPropertyInfo
+- GetPropertyInfo
+dev_langs: C++
+helpviewer_keywords: GetPropertyInfo method
 ms.assetid: 170e9640-5010-4e0d-8a54-f50b23af08ad
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 6b1eb8bc9a859c29a28291dd77e5664df2f185cf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# IDBPropertiesImpl::GetPropertyInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データ ソースによってサポートされるプロパティ情報を返します。  
+# <a name="idbpropertiesimplgetpropertyinfo"></a>IDBPropertiesImpl::GetPropertyInfo
+データ ソースによってサポートされるプロパティの情報を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      STDMETHOD(GetPropertyInfo)(   
-   ULONG cPropertySets,   
-   const DBPROPIDSET rgPropertySets[],   
-   ULONG * pcPropertyInfoSets,   
-   DBPROPINFOSET ** prgPropertyInfoSets,   
-   OLECHAR ** ppDescBuffer    
+      STDMETHOD(GetPropertyInfo)(   
+   ULONG cPropertySets,   
+   const DBPROPIDSET rgPropertySets[],   
+   ULONG * pcPropertyInfoSets,   
+   DBPROPINFOSET ** prgPropertyInfoSets,   
+   OLECHAR ** ppDescBuffer    
 );  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [IDBProperties::GetPropertyInfo](https://msdn.microsoft.com/en-us/library/ms718175.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[:getpropertyinfo](https://msdn.microsoft.com/en-us/library/ms718175.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
- 一部のパラメーターは **IDBProperties::GetPropertyInfo**で説明されている異なる名前で *OLE DB の Programmer's Reference* パラメーターに対応します:  
+ いくつかのパラメーターに対応*OLE DB プログラマーズ リファレンス*で説明される、別の名前のパラメーター **:getpropertyinfo**:  
   
-|OLE DB テンプレート パラメーター|*OLE DB の Programmer's Reference* パラメーター|  
-|--------------------------|----------------------------------------------|  
+|OLE DB テンプレート パラメーター|*OLE DB プログラマーズ リファレンス*パラメーター|  
+|--------------------------------|------------------------------------------------|  
 |`cPropertySets`|`cPropertyIDSets`|  
 |`rgPropertySets`|`rgPropertyIDSets`|  
   
-## 解説  
- [IDBInitializeImpl::m\_pCUtlPropInfo](../../data/oledb/idbinitializeimpl-m-pcutlpropinfo.md) をこの機能を実装するために使用します。  
+## <a name="remarks"></a>コメント  
+ 使用して[idbinitializeimpl::m_pcutlpropinfo](../../data/oledb/idbinitializeimpl-m-pcutlpropinfo.md)この機能を実装します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [IDBPropertiesImpl クラス](../../data/oledb/idbpropertiesimpl-class.md)   
- [IDBPropertiesImpl::GetProperties](../../data/oledb/idbpropertiesimpl-getproperties.md)   
+ [Idbpropertiesimpl::getproperties](../../data/oledb/idbpropertiesimpl-getproperties.md)   
  [IDBPropertiesImpl::SetProperties](../../data/oledb/idbpropertiesimpl-setproperties.md)

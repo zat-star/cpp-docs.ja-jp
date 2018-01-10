@@ -15,11 +15,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 860870628d8558ad252657c06d90f195fd707eb8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: c458eaf7c1e41ade5d29fa020bacfebb2b278e82
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cutlpropsoninterfacerequested"></a>CUtlProps::OnInterfaceRequested
 コンシューマー メソッドを呼び出すと、オブジェクトのいずれかで作成インターフェイスは、省略可能なインターフェイスの要求を処理します。  
@@ -56,8 +59,8 @@ ms.lasthandoff: 10/24/2017
   
  その他のインターフェイスを処理する場合は、関数を処理する、データ ソース、セッション、コマンド、または行セット クラスでは、この関数をオーバーライドします。 上書きは、プロパティを設定すると、連鎖プロパティも設定されることを確認するインターフェイスを通常の設定/取得するプロパティを通過する必要があります (を参照してください[OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md))。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CUtlProps クラス](../../data/oledb/cutlprops-class.md)

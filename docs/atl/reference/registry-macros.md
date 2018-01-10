@@ -4,71 +4,62 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs:
-- C++
-helpviewer_keywords:
-- registry, ATL macros
+f1_keywords:
+- atlcom/ATL::_ATL_STATIC_REGISTRY
+- atlcom/ATL::DECLARE_LIBID
+- atlcom/ATL::DECLARE_NO_REGISTRY
+- atlcom/ATL::DECLARE_REGISTRY
+- atlcom/ATL::DECLARE_REGISTRY_APPID_RESOURCEID
+- atlcom/ATL::DECLARE_REGISTRY_RESOURCE
+- atlcom/ATL::DECLARE_REGISTRY_RESOURCEID
+dev_langs: C++
+helpviewer_keywords: registry, ATL macros
 ms.assetid: 3ee041da-c63b-42a4-89cf-2a4b2a6f81ae
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 3a3abf5ad29b50c7f6708f02fd7c5aa193b3591c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: eada9ed75bd69122523350536d0757e98b31358d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="registry-macros"></a>レジストリ マクロ
-これらのマクロは、便利な型のライブラリとレジストリの機能を定義します。  
+これらのマクロでは、便利タイプ ライブラリとレジストリの機能を定義します。  
   
 |||  
 |-|-|  
-|[_ATL_STATIC_REGISTRY](#_atl_static_registry)|ATL. への依存関係を避けるために、オブジェクト内にあるオブジェクトの登録コードをすることを示しますDLL です。|  
-|[DECLARE_LIBID](#declare_libid)|ATL を取得するための手段を提供、 *libid*のタイプ ライブラリ。|  
-|[DECLARE_NO_REGISTRY](#declare_no_registry)|既定の ATL 登録を回避できます。|  
-|[DECLARE_REGISTRY](#declare_registry)|入力したか、システム レジストリの主要なオブジェクトのエントリを削除します。|  
-|[DECLARE_REGISTRY_APPID_RESOURCEID](#declare_registry_appid_resourceid)|自動的に登録するために必要な情報を示す、 *appid*します。|  
+|[_ATL_STATIC_REGISTRY](#_atl_static_registry)|ATL. への依存関係を避けるために、オブジェクト内にあるオブジェクトの登録のコードをすることを示しますDLL です。|  
+|[DECLARE_LIBID](#declare_libid)|ATL を取得する方法を提供、 *libid*のタイプ ライブラリ。|  
+|[DECLARE_NO_REGISTRY](#declare_no_registry)|既定の ATL の登録を回避できます。|  
+|[DECLARE_REGISTRY](#declare_registry)|入力またはシステム レジストリの主要なオブジェクトのエントリを削除します。|  
+|[DECLARE_REGISTRY_APPID_RESOURCEID](#declare_registry_appid_resourceid)|自動的に登録するために必要な情報を指定します、 *appid*です。|  
 |[に](#declare_registry_resource)|名前付きリソースを検索して、レジストリ スクリプトを実行します。|  
-|[代入](#declare_registry_resourceid)|ID 番号によって識別されるリソースを検索して、レジストリ スクリプトを実行します。|  
+|[代入](#declare_registry_resourceid)|ID 番号で識別されるリソースを検索して、レジストリ スクリプトを実行します。|  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
     
 ##  <a name="_atl_static_registry"></a>_ATL_STATIC_REGISTRY  
- ATL. への依存関係を避けるために、オブジェクト内にあるオブジェクトの登録コードをするかを示すシンボルDLL です。  
+ ATL. への依存関係を避けるために、オブジェクト内にあるオブジェクトの登録コードするかを示す記号DLL です。  
   
 ```
 #define _ATL_STATIC_REGISTRY
 ```  
   
 ### <a name="remarks"></a>コメント  
- 定義する際に**ATL_STATIC_REGISTRY**、次のコードを使用する必要があります。  
+ 定義するときに**ATL_STATIC_REGISTRY**、次のコードを使用する必要があります。  
   
- [!code-cpp[NVC_ATL_EventHandlingSample&#5;](../../atl/codesnippet/cpp/registry-macros_1.cpp)]  
+ [!code-cpp[NVC_ATL_EventHandlingSample#5](../../atl/codesnippet/cpp/registry-macros_1.cpp)]  
   
 ##  <a name="declare_libid"></a>DECLARE_LIBID  
- ATL を取得するための手段を提供、 *libid*のタイプ ライブラリ。  
+ ATL を取得する方法を提供、 *libid*のタイプ ライブラリ。  
   
 ```
 DECLARE_LIBID( libid )
@@ -79,20 +70,20 @@ DECLARE_LIBID( libid )
  タイプ ライブラリの GUID です。  
   
 ### <a name="remarks"></a>コメント  
- 使用`DECLARE_LIBID`で、 `CAtlModuleT`-クラスを派生します。  
+ 使用して`DECLARE_LIBID`で、 `CAtlModuleT`-クラスを派生します。  
   
 ### <a name="example"></a>例  
- ATL ウィザードで生成されたプロジェクトの属性なしこのマクロを使用するサンプルが含まれます。  
+ ウィザードで生成された ATL プロジェクトの属性なしでは、このマクロを使用するサンプルがあります。  
   
 ##  <a name="declare_no_registry"></a>DECLARE_NO_REGISTRY  
- 使用`DECLARE_NO_REGISTRY`をこのマクロが表示されるクラスの既定の ATL 登録を避けたい場合。  
+ 使用して`DECLARE_NO_REGISTRY`このマクロが表示されるクラスの既定 ATL 登録されないようにする場合。  
   
 ```
 DECLARE_NO_REGISTRY()
 ```  
   
 ##  <a name="declare_registry"></a>DECLARE_REGISTRY  
- システム レジストリに標準的なクラスの登録を入力またはシステム レジストリから削除されます。  
+ システム レジストリに標準的なクラスの登録を入力またはシステム レジストリから削除します。  
   
 ```
 DECLARE_REGISTRY(
@@ -105,27 +96,27 @@ DECLARE_REGISTRY(
   
 ### <a name="parameters"></a>パラメーター  
  `class`  
- [in]旧バージョンと互換性のために含まれています。  
+ [in]旧バージョンとの互換性のために含まれています。  
   
  `pid`  
- [in]`LPCTSTR`はバージョン固有のプログラムの識別子。  
+ [in]`LPCTSTR`されているバージョンに固有のプログラムの識別子。  
   
  *vpid*  
- [in]`LPCTSTR`はバージョンに依存しないプログラムの識別子。  
+ [in]`LPCTSTR`されているバージョンに依存しないプログラム id。  
   
  *nid*  
  [in]A **UINT**つまりプログラムの説明として使用するレジストリ内のリソース文字列のインデックス。  
   
  `flags`  
- [in]A`DWORD`プログラムを含むのスレッド、レジストリ内のモデルです。 次の値のいずれかを指定する必要があります: **THREADFLAGS_APARTMENT**、 **THREADFLAGS_BOTH**、または**AUTPRXFLAG**します。  
+ [in]A`DWORD`プログラムが含まれていると、レジストリ内のモデルのスレッドします。 次の値のいずれかを指定する必要があります: **THREADFLAGS_APARTMENT**、 **THREADFLAGS_BOTH**、または**AUTPRXFLAG**です。  
   
 ### <a name="remarks"></a>コメント  
- 標準の登録は、CLSID、プログラム ID、バージョンに依存しないプログラム ID、説明の文字列、およびスレッド モデルで構成されます。  
+ 標準の登録は、CLSID、プログラム ID、バージョンに依存しないプログラム ID、説明する文字列、およびスレッド モデルで構成されます。  
   
- ウィザードが自動的にレジストリのスクリプト ベースのサポートを実装して、追加オブジェクトを作成またはクラスの追加ウィザードを使用して制御するときに、[代入](#declare_registry_resourceid)ファイルにマクロです。 レジストリのスクリプトを使用したサポートしたくない場合は、使用してこのマクロを置き換える必要があります。`DECLARE_REGISTRY`します。 `DECLARE_REGISTRY`のみ、レジストリに上記で説明した&5; つの基本的なキーを挿入します。 その他のキーをレジストリに挿入するコードを手動で作成する必要があります。  
+ ウィザードが自動的にレジストリのスクリプト ベースのサポートを実装し、追加オブジェクトを作成またはクラスの追加ウィザードを使用して制御するときに、[代入](#declare_registry_resourceid)ファイルにマクロです。 スクリプト ベースのレジストリ サポートしたくない場合は、このマクロを置き換える必要があります。`DECLARE_REGISTRY`です。 `DECLARE_REGISTRY`のみ、レジストリに上で説明した 5 つの基本的なキーを挿入します。 手動でレジストリに他のキーを挿入するコードを記述する必要があります。  
   
 ##  <a name="declare_registry_appid_resourceid"></a>DECLARE_REGISTRY_APPID_RESOURCEID  
- 自動的に登録するために必要な情報を示す、 *appid*します。  
+ 自動的に登録するために必要な情報を指定します、 *appid*です。  
   
 ```
 DECLARE_REGISTRY_APPID_RESOURCEID(
@@ -135,19 +126,19 @@ DECLARE_REGISTRY_APPID_RESOURCEID(
   
 ### <a name="parameters"></a>パラメーター  
  *resid*  
- に関する情報を含む .rgs ファイルのリソース id、 *appid*します。  
+ に関する情報を含む .rgs ファイルのリソース id、 *appid*です。  
   
- *アプリケーション id*  
+ *appid*  
  GUID。  
   
 ### <a name="remarks"></a>コメント  
- 使用`DECLARE_REGISTRY_APPID_RESOURCEID`で、 `CAtlModuleT`-クラスを派生します。  
+ 使用して`DECLARE_REGISTRY_APPID_RESOURCEID`で、 `CAtlModuleT`-クラスを派生します。  
   
 ### <a name="example"></a>例  
- クラスの追加コード ウィザードを使用して ATL プロジェクトに追加されたクラスをこのマクロを使用するサンプルが含まれます。  
+ クラスの追加コード ウィザードを使用して ATL プロジェクトに追加するクラスをこのマクロを使用するサンプルが含まれます。  
   
 ##  <a name="declare_registry_resource"></a>に  
- レジストリ ファイルを含む名前付きリソースを取得し、システム レジストリにオブジェクトを入力するか、システム レジストリから削除するスクリプトを実行します。  
+ レジストリ ファイルを含む名前付きリソースを取得し、システム レジストリにオブジェクトを入力するか、それらをシステム レジストリから削除するスクリプトを実行します。  
   
 ```
 DECLARE_REGISTRY_RESOURCE( x )
@@ -158,19 +149,19 @@ DECLARE_REGISTRY_RESOURCE( x )
  [in]文字列リソースの識別子。  
   
 ### <a name="remarks"></a>コメント  
- ウィザードにより自動的にレジストリのスクリプト ベースのサポートを実装され追加オブジェクトを作成または ATL プロジェクト ウィザードを使用して制御するときに、[代入](#declare_registry_resourceid)に似ているマクロ`DECLARE_REGISTRY_RESOURCE`ファイルにします。  
+ オブジェクトを作成または ATL プロジェクト ウィザードを使用して制御するときにウィザードが自動的にレジストリのスクリプト ベースのサポートを実装し、追加、[代入](#declare_registry_resourceid)に似ていますが、マクロ`DECLARE_REGISTRY_RESOURCE`をファイル。  
   
- 最適化されたレジストリへのアクセスの ATL レジストリ コンポーネント (レジストラー) で静的にリンクすることができます。 レジストラー コードに静的にリンクするには、stdafx.h ファイルに次の行を追加します。  
+ 最適化されたレジストリへのアクセスの ATL レジストリ コンポーネント (レジストラー) と静的にリンクすることができます。 レジストラー コードに静的にリンクするには、stdafx.h ファイルに次の行を追加します。  
   
- [!code-cpp[NVC_ATL_COM&#56;](../../atl/codesnippet/cpp/registry-macros_2.h)]  
+ [!code-cpp[NVC_ATL_COM#56](../../atl/codesnippet/cpp/registry-macros_2.h)]  
   
- 実行時に置換値を置換する ATL をする場合は指定しないで、`DECLARE_REGISTRY_RESOURCE`または`DECLARE_REGISTRY_RESOURCEID`マクロです。 配列を作成する代わりに、**結果**実行時に、プレース ホルダーを置換対象の値と共に、構造、各エントリに変数のプレース ホルダーが含まれています。 まず[として](catlmodule-class.md#updateregistryfromresourced)または[方法については](catlmodule-class.md#updateregistryfromresources)配列を渡します。 これは、すべての置換値の追加、**結果**レジストラーの置換のマップの構造体。  
+ ATL 実行時に置換値を代わりに使用する場合を指定しない、`DECLARE_REGISTRY_RESOURCE`または`DECLARE_REGISTRY_RESOURCEID`マクロです。 配列を作成する代わりに、**結果**実行時に、プレース ホルダーを置換する値を持つ対応する構造体、各エントリに変数のプレース ホルダーが含まれています。 呼び出す[として](catlmodule-class.md#updateregistryfromresourced)または[方法については](catlmodule-class.md#updateregistryfromresources)配列を渡します。 すべての置換値の追加、**結果**レジストラーの置換マップする構造体。  
 
   
- 置き換え可能パラメーターとスクリプトの詳細については、記事を参照してください。 [ATL レジストリ コンポーネント (レジストラー)](../../atl/atl-registry-component-registrar.md)します。  
+ 置き換え可能パラメーターおよびスクリプトに関する詳細については、記事を参照してください。 [ATL レジストリ コンポーネント (レジストラー)](../../atl/atl-registry-component-registrar.md)です。  
   
 ##  <a name="declare_registry_resourceid"></a>代入  
- 同じ[に](#declare_registry_resource)ウィザードで生成されたを使用する点を除いて**UINT**文字列名ではなく、リソースを識別するためにします。  
+ 同じ[に](#declare_registry_resource)ウィザードで生成されたを使用する点を除いて**UINT**を文字列名ではなく、リソースを識別します。  
   
 ```
 DECLARE_REGISTRY_RESOURCEID( x )
@@ -178,20 +169,19 @@ DECLARE_REGISTRY_RESOURCEID( x )
   
 ### <a name="parameters"></a>パラメーター  
  *x*  
- [in]リソースのウィザードで生成された識別子です。  
+ [in]ウィザードで生成されたリソースの識別子。  
   
 ### <a name="remarks"></a>コメント  
- オブジェクトを作成または ATL プロジェクト ウィザードを使用して制御するときにれ、ウィザードが自動的にレジストリのスクリプトを使用したサポートの実装を追加、`DECLARE_REGISTRY_RESOURCEID`ファイルにマクロです。  
+ オブジェクトを作成または ATL プロジェクト ウィザードを使用して制御するときにウィザードが自動的にレジストリのスクリプト ベースのサポートを実装し、追加、`DECLARE_REGISTRY_RESOURCEID`ファイルにマクロです。  
   
- 最適化されたレジストリへのアクセスの ATL レジストリ コンポーネント (レジストラー) で静的にリンクすることができます。 レジストラー コードに静的にリンクするには、stdafx.h ファイルに次の行を追加します。  
+ 最適化されたレジストリへのアクセスの ATL レジストリ コンポーネント (レジストラー) と静的にリンクすることができます。 レジストラー コードに静的にリンクするには、stdafx.h ファイルに次の行を追加します。  
   
- [!code-cpp[NVC_ATL_COM&#56;](../../atl/codesnippet/cpp/registry-macros_2.h)]  
+ [!code-cpp[NVC_ATL_COM#56](../../atl/codesnippet/cpp/registry-macros_2.h)]  
   
- 実行時に置換値を置換する ATL をする場合は指定しないで、`DECLARE_REGISTRY_RESOURCE`または`DECLARE_REGISTRY_RESOURCEID`マクロです。 配列を作成する代わりに、**結果**実行時に、プレース ホルダーを置換対象の値と共に、構造、各エントリに変数のプレース ホルダーが含まれています。 まず[として](catlmodule-class.md#updateregistryfromresourced)または[方法については](catlmodule-class.md#updateregistryfromresources)配列を渡します。 これは、すべての置換値の追加、**結果**レジストラーの置換のマップの構造体。  
+ ATL 実行時に置換値を代わりに使用する場合を指定しない、`DECLARE_REGISTRY_RESOURCE`または`DECLARE_REGISTRY_RESOURCEID`マクロです。 配列を作成する代わりに、**結果**実行時に、プレース ホルダーを置換する値を持つ対応する構造体、各エントリに変数のプレース ホルダーが含まれています。 呼び出す[として](catlmodule-class.md#updateregistryfromresourced)または[方法については](catlmodule-class.md#updateregistryfromresources)配列を渡します。 すべての置換値の追加、**結果**レジストラーの置換マップする構造体。  
 
   
- 置き換え可能パラメーターとスクリプトの詳細については、記事を参照してください。 [ATL レジストリ コンポーネント (レジストラー)](../../atl/atl-registry-component-registrar.md)します。  
+ 置き換え可能パラメーターおよびスクリプトに関する詳細については、記事を参照してください。 [ATL レジストリ コンポーネント (レジストラー)](../../atl/atl-registry-component-registrar.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [マクロ](../../atl/reference/atl-macros.md)
-
+## <a name="see-also"></a>参照  
+ [[マクロ]](../../atl/reference/atl-macros.md)

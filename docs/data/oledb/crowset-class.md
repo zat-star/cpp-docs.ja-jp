@@ -20,11 +20,14 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f4e36523d2fffd4f90897daf2fd22c4dba66c8fd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 3b0d46ac3164f7f609e8a8a8099d500d04d91bf1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crowset-class"></a>CRowset クラス
 OLE DB 行セット オブジェクトおよび関連するいくつかをカプセル化インターフェイスし、行セットのデータの操作メソッドを提供します。  
@@ -57,7 +60,7 @@ class CRowset
 |[GetDataHere](../../data/oledb/crowset-getdatahere.md)|指定したバッファーからデータを取得します。|  
 |[GetOriginalData](../../data/oledb/crowset-getoriginaldata.md)|最近からフェッチまたは保留中の変更を無視して、データ ソースに送信されるデータを取得します。|  
 |[GetRowStatus](../../data/oledb/crowset-getrowstatus.md)|すべての行の状態を返します。|  
-|[挿入します。](../../data/oledb/crowset-insert.md)|作成して使用して新しい行を挿入[IRowsetChange:InsertRow](https://msdn.microsoft.com/en-us/library/ms716921.aspx)です。|  
+|[[挿入]](../../data/oledb/crowset-insert.md)|作成して使用して新しい行を挿入[IRowsetChange:InsertRow](https://msdn.microsoft.com/en-us/library/ms716921.aspx)です。|  
 |[IsSameRow](../../data/oledb/crowset-issamerow.md)|指定された行を現在の行とを比較します。|  
 |[MoveFirst](../../data/oledb/crowset-movefirst.md)|次のフェッチ位置の初期位置に移動します。|  
 |[MoveLast](../../data/oledb/crowset-movelast.md)|最後のレコードに移動します。|  
@@ -76,10 +79,10 @@ class CRowset
   
  このクラスがインスタンス化されるが、テンプレート パラメーターとしてではなく渡されたものではありません`CTable`または`CCommand`(`CRowset`既定値です)。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DBViewer サンプル](../../visual-cpp-samples.md)   
  [MultiRead サンプル](../../visual-cpp-samples.md)   
  [MultiRead 属性サンプル](../../visual-cpp-samples.md)   

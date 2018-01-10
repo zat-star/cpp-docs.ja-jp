@@ -1,35 +1,37 @@
 ---
-title: "CCommand::Open | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CCommand.Open"
-  - "ATL::CCommand::Open"
-  - "CCommand.Open"
-  - "CCommand::Open"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Open メソッド"
+title: "Ccommand::open |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL.CCommand.Open
+- ATL::CCommand::Open
+- CCommand.Open
+- CCommand::Open
+dev_langs: C++
+helpviewer_keywords: Open method
 ms.assetid: 4c9b8f31-faf3-452d-9a29-3d3e5f54d6f8
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: b6aa938d53cfdf11d5956a63d944dfb1bd6afea1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CCommand::Open
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コマンドを実行し、必要に応じてバインドします。  
+# <a name="ccommandopen"></a>CCommand::Open
+実行し、必要に応じて、コマンドをバインドします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -68,56 +70,56 @@ HRESULT Open(
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `session`  
- \[\]コマンドを実行するセッション。  
+ [in]コマンドを実行するセッションです。  
   
  `wszCommand`  
- \[\]実行するコマンド、Unicode 文字列として渡されます。  コマンドが [DEFINE\_COMMAND](../../data/oledb/define-command.md) マクロに渡された値から取得されれば `CAccessor`を使用すると **NULL** になることがあります。  詳細については、*OLE DB Programmer's Reference* の [ICommand::Execute](https://msdn.microsoft.com/en-us/library/ms718095.aspx) を参照してください。  
+ [in]コマンドを実行するには、Unicode 文字列として渡されます。 指定できます**NULL**を使用する場合`CAccessor`に渡される値から、コマンドが取得される場合、 [DEFINE_COMMAND](../../data/oledb/define-command.md)マクロです。 参照してください[icommand::execute](https://msdn.microsoft.com/en-us/library/ms718095.aspx)で、 *OLE DB プログラマーズ リファレンス*詳細についてはします。  
   
  `szCommand`  
- \[\] `wszCommand` が、このパラメーターと同様に ANSI のコマンド文字列が使用されます。  このメソッドの 4 番目のフォームは null 値を受け取ることができます。  詳細については、このトピックで後述する「解説」"を参照してください。  
+ [in]同じ`wszCommand`ことを除き、このパラメーターは、ANSI コマンド文字列を取得します。 このメソッドの 4 番目の形式は、NULL 値をとることができます。 詳細については、このトピックの後半の「解説」を参照してください。  
   
  *pPropSet*  
- \[\]設定するプロパティと値を含む [DBPROPSET](https://msdn.microsoft.com/en-us/library/ms714367.aspx) 構造体の配列へのポインター。  [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の *OLE DB Programmer's Reference* の [プロパティ セットとプロパティ グループ](https://msdn.microsoft.com/en-us/library/ms713696.aspx) を参照してください。  
+ [in]配列へのポインター [DBPROPSET](https://msdn.microsoft.com/en-us/library/ms714367.aspx)プロパティと設定する値を含む構造体。 参照してください[プロパティ セットとプロパティ グループ](https://msdn.microsoft.com/en-us/library/ms713696.aspx)で、 *OLE DB プログラマーズ リファレンス*Windows SDK にします。  
   
  `pRowsAffected`  
- \[\]そのコマンドの影響を受ける行の数を返すメモリへのポインター。  *\*pRowsAffected***NULL**は、行数が返されます。  それ以外の場合は **開く** は、次の基準に従って`pRowsAffected` を\*に設定する:  
+ [入力/出力]コマンドによって影響を受ける行の数が返されるメモリへのポインター。 場合 *\*pRowsAffected*は**NULL**行の数は返されません。 それ以外の場合、**開く**設定 *`pRowsAffected`次の条件に従って。  
   
 |If|Then|  
 |--------|----------|  
-|`pParams` の **cParamSets** 要素は 1 より大きい|\*`pRowsAffected` は実行で指定されたパラメーター設定の影響を受けるすべての合計数を表します。|  
-|影響を受ける行の数は使用できません|\*`pRowsAffected` は–1 に設定されます。|  
-|コマンドは、行を更新しませんが、削除したり、挿入されません|\*`pRowsAffected` は未定義です。|  
+|**CParamSets**要素の`pParams`が 1 より大きい|*`pRowsAffected`すべての実行で指定されたパラメーター セットによって影響を受ける行の合計数を表します。|  
+|影響を受けた行の数が使用可能です|*`pRowsAffected`-1 に設定されます。|  
+|コマンドが更新されない、削除、または行の挿入|*`pRowsAffected`定義されていません。|  
   
  `guidCommand`  
- \[\]プロバイダーのコマンド テキストの解析に使用する構文、一般的な規則を指定する入力 GUID。  詳細については、*OLE DB Programmer's Reference* の [ICommandText::GetCommandText](https://msdn.microsoft.com/en-us/library/ms709825.aspx) と [ICommandText::SetCommandText](https://msdn.microsoft.com/en-us/library/ms709757.aspx) を参照してください。  
+ [in]コマンド テキストを解析中に、構文と使用するプロバイダーの一般的な規則を指定する GUID です。 参照してください[ICommandText::GetCommandText](https://msdn.microsoft.com/en-us/library/ms709825.aspx)と[icommandtext::setcommandtext](https://msdn.microsoft.com/en-us/library/ms709757.aspx)で、 *OLE DB プログラマーズ リファレンス*詳細についてはします。  
   
  `bBind`  
- \[\]の実行後にコマンドを自動的にバインドするかどうかを指定します。  自動的にバインドされるコマンドの原因は既定 **true**です。  手動でバインドできるように **false** に設定 `bBind` はコマンドの自動バインディングを防ぎます。\(手動バインドは、OLAP のユーザーに注目です\)。  
+ [in]コマンドを実行中の後に自動的にバインドするかどうかを指定します。 既定値は**true**、それが原因で、コマンドを自動的に連結されます。 設定`bBind`に**false**手動でバインドできるように、コマンドの自動に連結します。 (手動バインディングは、OLAP のユーザーに特に関心があるは) です。  
   
  `ulPropSets`  
- \[\] *pPropSet の* 引数に渡される [DBPROPSET](https://msdn.microsoft.com/en-us/library/ms714367.aspx) 構造体の数。  
+ [in]数[DBPROPSET](https://msdn.microsoft.com/en-us/library/ms714367.aspx)に渡された構造体、 *pPropSet*引数。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- **開く** の最初の 3 種類のフォームがセッションを受け取り、コマンドを作成し、必要に応じてパラメーターをバインドするコマンドを実行します。  
+## <a name="remarks"></a>コメント  
+ 最初の 3 つ**開く**セッションをとり、コマンドを作成し、コマンド、必要に応じて、任意のパラメーターをバインドします。  
   
- **開く** の最初のフォームは Unicode のコマンド文字列を使用して、既定値はありません。  
+ 最初のフォーム**開く**Unicode コマンド文字列を受け取り、既定値はありません。  
   
- **開く** の 2 番目のフォームは ANSI コマンド文字列と既定値を返します \(ある ANSI アプリケーションを下位互換性に指定\)。  
+ 2 番目のフォーム**開く**は ANSI コマンド文字列および既定値はありません (既存の ANSI アプリケーションの旧バージョンと互換性のための指定) を取得します。  
   
- **開く** の 3 番目のフォームはコマンド文字列が null の既定値の型 `int` の場合は null、になるようにします。  これは `Open(session, NULL);` または `Open(session);` を呼び出す場合は、NULL が `int`型であるため、提供されます。  このバージョンが必要で、`int` パラメーターが NULL であることを表しています。  
+ 3 番目の形式の**開く**により、NULL の場合、型のためにコマンド文字列`int`で、既定値は NULL です。 呼び出すのために用意されて`Open(session, NULL);`または`Open(session);`型の NULL であるため`int`です。 このバージョンが必要です、アサートする、`int`パラメーターを NULL にします。  
   
- 既にコマンドを作成して、単一の [準備します。](../../data/oledb/ccommand-prepare.md) および複数の実行を実行する **開く** の 4 番目のフォームを使用します。  
+ 4 番目のフォームを使用して**開く**コマンドを作成しておくと、1 つを実行する[準備](../../data/oledb/ccommand-prepare.md)と複数回実行します。  
   
 > [!NOTE]
->  **開く** は **実行**を呼び出して、`GetNextResult`を呼び出します。  
+>  **開いている**呼び出し**Execute**、さらに呼び出す`GetNextResult`です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CCommand クラス](../../data/oledb/ccommand-class.md)

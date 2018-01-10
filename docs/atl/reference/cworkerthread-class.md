@@ -25,11 +25,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 586e75202bb2b16a0e612eea75d4e2ed6d1bd8d0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: be7a000e48cb044a67f7eee120206f46ecaef2ce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cworkerthread-class"></a>クラスの使用
 このクラスは、ワーカー スレッドを作成または既存のものを使用して化し、1 つまたは複数のカーネル オブジェクトのハンドルを待機がシグナルを受け取るハンドルのいずれかに指定されたクライアント関数を実行します。  
@@ -52,7 +53,7 @@ class CWorkerThread
   
 ### <a name="protected-structures"></a>保護された構造体  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |`WorkerClientEntry`||  
   
@@ -95,7 +96,7 @@ class CWorkerThread
   
 6.  スレッドを終了するには、呼び出す[CWorkerThread::Shutdown](#shutdown)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlutil.h  
   
 ##  <a name="addhandle"></a>CWorkerThread::AddHandle  
@@ -252,7 +253,7 @@ HRESULT Shutdown(DWORD dwWait = ATL_WORKER_THREAD_WAIT) throw();
   
  呼び出して**シャット ダウン**別にポインターを使用して初期化されるオブジェクトで`CWorkerThread`オブジェクトの影響は生じず、常に S_OK を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DefaultThreadTraits](atl-typedefs.md#defaultthreadtraits)   
  [クラス](../../atl/reference/atl-classes.md)   
  [マルチ スレッド: ワーカー スレッドの作成](../../parallel/multithreading-creating-worker-threads.md)   

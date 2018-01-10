@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 33804c3876d378fe8138795b78a26f36a52e3c96
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: dd2f0ff353e1243685c94da0c28f29e810b2a9ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="zcauto-deduce-variable-type"></a>/Zc:auto (変数の型の推測)
 **/Zc:auto [-]**コンパイラ オプションを使用する方法をコンパイラに指示、 [auto キーワード](../../cpp/auto-keyword.md)変数を宣言します。 既定のオプションを指定する場合**/Zc:auto**コンパイラには、その初期化式から宣言された変数の型があると推測します。 指定した場合**/Zc:auto-**コンパイラは自動ストレージ クラスに変数を割り当てます。  
@@ -51,6 +52,6 @@ ms.lasthandoff: 10/24/2017
   
 5.  追加**/Zc:auto**または**/Zc:auto-**を**追加オプション:**ウィンドウです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [/Zc (準拠)](../../build/reference/zc-conformance.md)   
  [auto キーワード](../../cpp/auto-keyword.md)

@@ -1,40 +1,42 @@
 ---
-title: "方法: リフレクションを使用してアセンブリ内のデータ型を列挙する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アセンブリ [C++]"
-  - "アセンブリ [C++], 列挙型"
-  - "データ型 [C++], 列挙"
-  - "パブリック メンバー [C++]"
-  - "パブリック型 [C++]"
-  - "リフレクション [C++], 外部アセンブリ"
+title: "方法: リフレクションを使用してデータの種類の列挙 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- assemblies [C++], enumerating data types in
+- public types [C++]
+- reflection [C++], external assemblies
+- assemblies [C++]
+- data types [C++], enumerating
+- public members [C++]
 ms.assetid: c3578e6d-bb99-4599-80e1-ab795305f878
-caps.latest.revision: 15
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 209124e6d4e8afa7930a4c74d2cce1acd7e279b5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: リフレクションを使用してアセンブリ内のデータ型を列挙する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のコードは、<xref:System.Reflection> を使用してパブリック型とメンバーを一覧表示します。  
+# <a name="how-to-enumerate-data-types-in-assemblies-using-reflection-ccli"></a>方法: リフレクションを使用してアセンブリ内のデータ型を列挙する (C++/CLI)
+次の例では、パブリック型とメンバーを使用しての列挙体<xref:System.Reflection>です。  
   
- このコードは、アセンブリ名が指定されると、ローカル ディレクトリ内または GAC 内のいずれかで、アセンブリを開き記述を取得します。  正常に処理が完了すると、各型が、そのパブリック メンバーと共に表示されます。  
+ ローカル ディレクトリまたは GAC にアセンブリの名前で指定された、次のコードは、アセンブリを開くし、説明の取得を試みます。 成功した場合は、種類ごとに、そのパブリック メンバーが表示されます。  
   
- ただし、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> では、ファイル拡張子を使用しないでください。  したがって、コマンド ライン引数に "mscorlib.dll" を使用するとエラーになります。一方、"mscorlib" のみを指定すると、.NET Framework の型が表示されます。  アセンブリ名を指定しないと、コードにより、現在のアセンブリ \(このコードにより生成された EXE\) 内の型が検出され、報告されます。  
+ なお<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName>ファイル拡張子が使用されていないことが必要です。 したがって、"mscorlib.dll"を使用して、コマンドライン引数は失敗、単なる"mscorlib"を使用すると、.NET Framework の型の表示中にします。 アセンブリ名が指定されていない場合、コードが検出され、現在のアセンブリ内の型 (このコードにより生成された EXE) を報告します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // self_reflection.cpp  
@@ -83,5 +85,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [リフレクション](../dotnet/reflection-cpp-cli.md)
+## <a name="see-also"></a>参照  
+ [リフレクションの問題 (C++/CLI)](../dotnet/reflection-cpp-cli.md)

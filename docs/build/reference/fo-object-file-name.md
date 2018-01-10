@@ -22,11 +22,12 @@ caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ba311166de220cc19403fd9d5eb10ae84bffb58e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: be821daae88e7cc2149debb49889b79bc1a59699
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fo-object-file-name"></a>/Fo (オブジェクト ファイルの名前の指定)
 既定値の代わりに使用する、オブジェクト (.obj) ファイルの名前またはディレクトリを指定します。  
@@ -61,7 +62,7 @@ ms.lasthandoff: 10/24/2017
 CL /FoB:\OBJECT\ THIS.C  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [出力ファイル (/F) オプション](../../build/reference/output-file-f-options.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   

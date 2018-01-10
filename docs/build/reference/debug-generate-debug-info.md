@@ -1,74 +1,84 @@
 ---
-title: "/DEBUG (デバッグ情報の生成) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.GenerateDebugInformation"
-  - "/debug"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".pdb ファイル, 生成 (デバッグ情報の)"
-  - "/DEBUG リンカー オプション"
-  - "DEBUG リンカー オプション"
-  - "-DEBUG リンカー オプション"
-  - "デバッグ [C++], デバッグ情報ファイル"
-  - "デバッグ [C++], リンカー オプション"
-  - "生成 (デバッグ情報の) リンカー オプション"
-  - "PDB ファイル"
-  - "pdb ファイル, 生成 (デバッグ情報の)"
-  - "プログラム データベース [C++]"
+title: "-デバッグ (デバッグ情報の生成) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.GenerateDebugInformation
+- /debug
+dev_langs: C++
+helpviewer_keywords:
+- DEBUG linker option
+- /DEBUG linker option
+- -DEBUG linker option
+- PDB files
+- debugging [C++], debug information files
+- generate debug info linker option
+- pdb files, generating debug info
+- .pdb files, generating debug info
+- debugging [C++], linker option
+- program databases [C++]
 ms.assetid: 1af389ae-3f8b-4d76-a087-1cdf861e9103
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 6f9f424a2e71a3094c9e633cbe5779ef5d75fbe9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /DEBUG (デバッグ情報の生成)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="debug-generate-debug-info"></a>/DEBUG (デバッグ情報の生成)
+```  
+/DEBUG[:{FASTLINK|FULL|NONE}]  
+```  
+  
+## <a name="remarks"></a>コメント  
 
-```  
-/DEBUG  
-```  
+**/Debug**オプションは、実行可能ファイルのデバッグ情報を作成します。    
   
-## 解説  
- \/DEBUG オプションは、.exe ファイルまたは DLL のデバッグ情報を作成します。  
+リンカーは、プログラム データベース (PDB) ファイルにデバッグ情報を渡します。 プログラムの後続のビルド中に pdb ファイルを更新します。  
   
- デバッグ情報は、プログラム データベース \(PDB ファイル\) に書き込まれます。  この PDB ファイルは、以降のビルドで更新されます。  
+実行可能ファイル (.exe ファイルまたは DLL) デバッグ用に作成には、対応する pdb ファイルのパスと名前が含まれています。 デバッガーは、埋め込みの名前を読み込んで、pdb ファイルを使用して、プログラムをデバッグするときにします。 リンカーは、プログラム データベースの名前に、プログラムおよび拡張子 .pdb のベース名を使用し、その作成元のパスを埋め込みます。 この既定をオーバーライドするには設定[/PDB](../../build/reference/pdb-use-program-database.md)し、別のファイル名を指定します。  
+
+**/DEBUG:FASTLINK**オプションは、実行可能ファイルをビルドするために使用する個々 のコンパイル製品のプライベート シンボル情報がします。 オブジェクト ファイルと完全なコピーを作成せずに実行可能ファイルをビルドするために使用するライブラリのデバッグ情報にインデックスを作成する限られた PDB を生成します。 このオプションは、2 ~ 4 倍ほど高速で、完全な PDB 生成をリンクしはローカルでのデバッグと、利用可能なビルドの製品がある場合に推奨します。 この制限付きの PDB は、必要なビルドの製品が実行可能ファイルが別のコンピューターに展開される場合など、使用できなくなったときにデバッグするため使用できません。 開発者コマンド プロンプトで、この制限付きの PDB から完全な PDB を生成するのに mspdbcmf.exe ツールを使用することができます。 Visual Studio には、プロジェクトまたはソリューションの完全な PDB を作成するのに、完全な PDB ファイルを生成するためのプロジェクトまたはビルド メニュー項目を使用します。  
   
- デバッグ用に生成された .exe ファイルや DLL ファイルには、対応する PDB ファイルの名前とパスが記述されています。  デバッガーでプログラムをデバッグするときにこの名前が読み取られ、その PDB ファイルが使われます。  プログラム データベースの名前として、プログラムのベース名と拡張子 .pdb が使用され、PDB ファイルを作成したパスも .exe ファイルと DLL ファイルに書き込まれます。  既定の名前をオーバーライドするには、[\/PDB](../../build/reference/pdb-use-program-database.md) を設定し、別のファイル名を指定します。  
+**/DEBUG:FULL**オプションが 1 つの PDB に個々 のコンパイル製品 (オブジェクト ファイルとライブラリ) からプライベート シンボル情報をすべてを移動して、リンクの最も時間のかかる含めることができます。 ただし、他のビルドの製品がない場合、実行可能ファイルが展開される場合など、実行可能ファイルをデバッグする、完全な PDB を使用できます。  
   
- [\/Zd \(行番号のみ\)](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md) または [\/Z7 \(C7 互換\)](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md) オプションを指定すると、.obj ファイルにデバッグ情報が保存されます。  [\/Zi \(プログラム データベースを使用\)](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md) コンパイラ オプションを指定すると、.obj ファイルのデバッグ情報が PDB ファイルに保存されます。  リンカーはオプジェクトの PDB ファイルを探すときに、まず .obj ファイルに書き込まれた絶対パスを検索し、そこで見つからない場合は .obj ファイルの置かれているディレクトリを検索します。  オブジェクトの PDB ファイルの名前やディレクトリをリンカーに指定することはできません。  
+**/Debug: NONE**オプションは、PDB を生成しません。  
   
- \/DEBUG を指定すると [\/INCREMENTAL](../../build/reference/incremental-link-incrementally.md) も指定されます。  
+指定すると**/debug** 、他のオプションとリンカーの既定値は**/DEBUG:FULL**コマンドラインとメイクファイル ビルド、リリース ビルドの Visual Studio IDE、およびデバッグとリリースの両方Visual Studio 2015 および以前のバージョンでビルドします。 Visual Studio 2017 以降は、IDE でビルド システム既定値は**/DEBUG:FASTLINK**を指定すると、 **/debug**オプション、デバッグ ビルドをします。 旧バージョンとの互換性を維持するためには、他の既定値が変更されていません。  
   
- \/DEBUG は [\/OPT](../../build/reference/opt-optimizations.md) オプションの既定値を REF から NOREF、および ICF から NOICF に変更します。このため、\/OPT:REF または \/OPT:ICF を明示的に指定する必要があります。  
+コンパイラの[C7 互換](../../build/reference/z7-zi-zi-debug-information-format.md)(/Z7) オプションは、コンパイラ、.obj ファイルにデバッグ情報のままにします。 使用することも、[プログラム データベース](../../build/reference/z7-zi-zi-debug-information-format.md)(/Zi) コンパイラ オプションを .obj ファイルの PDB 内でデバッグ情報を格納します。 .Obj ファイルで記述された絶対パスに最初、リンカーが検索、オブジェクトの PDB をし、.obj ファイルが使用されているディレクトリにします。 オブジェクトの PDB ファイル名またはディレクトリをリンカーを指定することはできません。  
   
- .PDB ファイルと .DBG ファイルの詳細については、サポート技術情報の「INFO: PDB and DBG Files \- What They Are and How They Work \(Q121366\)」を参照してください。  MSDN ライブラリのサポート技術情報の文書"、または"を参照してください。[http:\/\/support.microsoft.com](http://support.microsoft.com/)  
+[/INCREMENTAL](../../build/reference/incremental-link-incrementally.md) /DEBUG が指定されている場合は暗黙的に指定します。  
   
- デバッグ情報を格納する .exe や .dll を作成することはできません。  デバッグ情報は常に .pdb ファイルに格納されます。  
+/デバッグの既定値を変更する、 [/opt](../../build/reference/opt-optimizations.md) REF からをオプションを NOREF ICF から NOICF、するため、/opt:ref によるまたは/OPT:ICF を指定する必要があります明示的に元の既定値を設定する場合。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+.Exe または .dll デバッグ情報を含むを作成することはできません。 デバッグ情報は常に、.obj または .pdb ファイルに配置します。  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-3.  **デバッグ** プロパティ ページをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-4.  \[デバッグ情報の生成\] プロパティを変更します。  
+3.  クリックして、**デバッグ**プロパティ ページ。  
   
-### このリンカーをコードから設定するには  
+4.  変更、**デバッグ情報の生成**プロパティ PDB 生成を有効にします。 これにより、既定では、Visual Studio 2017/DEBUG:FASTLINK です。  
+  
+4.  変更、**完全プログラム データベース ファイルの生成**/DEBUG:FULL をインクリメンタル ビルドするたびに完全な PDB の生成を有効にするプロパティです。  
+  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.GenerateDebugInformation%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

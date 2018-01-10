@@ -1,45 +1,47 @@
 ---
-title: "CNoMultipleResults クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CNoMultipleResults"
-  - "ATL.CNoMultipleResults"
-  - "ATL::CNoMultipleResults"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CNoMultipleResults クラス"
+title: "CNoMultipleResults クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CNoMultipleResults
+- ATL.CNoMultipleResults
+- ATL::CNoMultipleResults
+dev_langs: C++
+helpviewer_keywords: CNoMultipleResults class
 ms.assetid: 343e77c4-b319-476e-b592-901ab9b2f34e
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: cbb5873ca504cac72489c612e9bb3b4177e2e96b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CNoMultipleResults クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-一つの結果セットを処理する最適化されたコマンドを作成するには、テンプレートの引数 \(*TMultiple*\) [CCommand](../../data/oledb/ccommand-class.md) に使用します。  
+# <a name="cnomultipleresults-class"></a>CNoMultipleResults クラス
+テンプレート引数として使用 (*TMultiple*) に[CCommand](../../data/oledb/ccommand-class.md)セットを 1 つの結果を処理する最適化されたコマンドを作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CNoMultipleResults  
 ```  
   
-## 解説  
- 複数の結果セットを処理するコマンドを表示するには、[CMultipleResults](../../data/oledb/cmultipleresults-class.md) を代わりに使用します。  
+## <a name="remarks"></a>コメント  
+ 複数の結果セットを処理するコマンドを実行する場合に、使用[CMultipleResults](../../data/oledb/cmultipleresults-class.md)代わりにします。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)

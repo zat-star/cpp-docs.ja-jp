@@ -34,11 +34,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2af66326d69aa5764922499bbd63a71cd0663216
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5c5186a3d373c541f120197a9ebf89f9e33aabd0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lockfile"></a>_lock_file
 `FILE` オブジェクトへ同時にアクセスするスレッド間の一貫性を保つために、`FILE` オブジェクトをロックします。  
@@ -58,13 +59,13 @@ void _lock_file(
 ## <a name="remarks"></a>コメント  
  `_lock_file` 関数は、`file`で指定した `FILE` オブジェクトをロックします。 `_lock_file`では、基になるファイルはロックされません。 ファイルのロックを解除するには、[_unlock_file](../../c-runtime-library/reference/unlock-file.md) を使用します。 `_lock_file` と `_unlock_file` の呼び出しは、スレッド内で一致する必要があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_lock_file`|\<stdio.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -141,7 +142,7 @@ tS
 eFciornsdt  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
  [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   

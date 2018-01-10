@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -31,21 +30,19 @@ f1_keywords:
 - ATLCOLL/ATL::CRBTree::RemoveAll
 - ATLCOLL/ATL::CRBTree::RemoveAt
 - ATLCOLL/ATL::CRBTree::SetValueAt
-dev_langs:
-- C++
-helpviewer_keywords:
-- CRBTree class
+dev_langs: C++
+helpviewer_keywords: CRBTree class
 ms.assetid: a1b1cb63-38e4-4fc2-bb28-f774d1721760
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 8f436a3661f027ba1026a60982cb18b48a2c48cc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 078224c555f2f1955083b51954d56b3e9cac8fd1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crbtree-class"></a>CRBTree クラス
 このクラスは、作成および赤、黒のツリーを利用するためのメソッドを提供します。  
@@ -124,7 +121,7 @@ class CRBTree
   
  さまざまなコレクション クラスとその機能とパフォーマンス特性の詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcoll.h  
   
 ##  <a name="cpair_class"></a>CRBTree::CPair クラス  
@@ -187,7 +184,7 @@ void GetAt(POSITION pos, KOUTARGTYPE key, VOUTARGTYPE value) const;
  `key`  
  キーを受け取る変数。  
   
- *value*  
+ *値*  
  値を受け取る変数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -273,7 +270,7 @@ void GetNextAssoc(
  `key`  
  ツリーのキーの種類を指定するテンプレート パラメーター。  
   
- *value*  
+ *値*  
  ツリーの値の型を指定するテンプレート パラメーター。  
   
 ### <a name="remarks"></a>コメント  
@@ -419,7 +416,7 @@ void SetValueAt(POSITION pos, VINARGTYPE value);
  `pos`  
  などのメソッドに以前の呼び出しによって返される位置カウンター [CRBTree::GetHeadPosition](#getheadposition)または[CRBTree::FindFirstKeyAfter](#findfirstkeyafter)です。  
   
- *value*  
+ *値*  
  追加する値、`CRBTree`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
@@ -439,6 +436,5 @@ typedef VTraits::INARGTYPE VINARGTYPE;
 typedef VTraits::OUTARGTYPE VOUTARGTYPE;
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)
-

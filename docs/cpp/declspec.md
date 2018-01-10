@@ -4,27 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords:
-- __declspec_cpp
-dev_langs:
-- C++
-helpviewer_keywords:
-- __declspec keyword [C++]
+f1_keywords: __declspec_cpp
+dev_langs: C++
+helpviewer_keywords: __declspec keyword [C++]
 ms.assetid: 832db681-e8e1-41ca-b78c-cd9d265cdb87
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: b29b6243611f1ca59a579869469c803d3735f9df
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 0351b5ba8469918dfe52462485ebf36255db56fd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="declspec"></a>__declspec
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -129,6 +125,6 @@ __declspec( thread ) int tls_i = 1;
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  [C 拡張ストレージ クラス属性](../c-language/c-extended-storage-class-attributes.md)

@@ -20,11 +20,12 @@ author: corob-msft
 ms.author: corob
 manager: ghogen
 helpviewer_keywords: std::chrono [C++], time_point
-ms.openlocfilehash: f669baf6bbe9fa83965c8a3d28d2356291b859f1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4b8f6880968b899bcf28b60fa69edf1e4250d4d5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="timepoint-class"></a>time_point クラス
 `time_point` では、時点を表す型について記述します。 これは、テンプレート引数 `Clock` によって表される新しいエポック以降の経過時間を格納する [duration](../standard-library/duration-class.md) 型のオブジェクトを保持します。  
@@ -69,7 +70,7 @@ class time_point;
 |[time_point::operator+=](#op_add_eq)|指定した値を格納された期間に加算します。|  
 |[time_point::operator-=](#operator-_eq)|指定した値を格納された期間から減算します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<chrono >  
   
  **名前空間:** std::chrono  
@@ -155,7 +156,7 @@ constexpr time_point(const time_point<clock, Duration2>& Tp);
 constexpr duration time_since_epoch() const;
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<chrono>](../standard-library/chrono.md)
 

@@ -4,42 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CComEnum
 - atlcom/ATL::CComEnum
-dev_langs:
-- C++
-helpviewer_keywords:
-- CComEnum class
+dev_langs: C++
+helpviewer_keywords: CComEnum class
 ms.assetid: bff7dd7b-eb6e-4d6e-96ed-2706e66c8b3b
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 72c172d7a619bb4fd1bd265e465653b691c0bc7b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 792c5ff95858936d38d9a87350dd3ca405c5ec66
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomenum-class"></a>上記のクラス
 このクラスは、配列に基づいた COM 列挙子オブジェクトを定義します。  
@@ -63,26 +46,26 @@ class ATL_NO_VTABLE CComEnum : public CComEnumImpl<Base, piid,
  列挙子インターフェイスのインターフェイス ID へのポインター。  
   
  `T`  
- 列挙子インターフェイスによって公開される項目の種類。  
+ 列挙子インターフェイスによって公開されている項目の種類。  
   
  `Copy`  
- 同種[コピー ポリシー クラス](../../atl/atl-copy-policy-classes.md)します。  
+ 同種[コピー ポリシー クラス](../../atl/atl-copy-policy-classes.md)です。  
   
  `ThreadModel`  
- クラスのスレッド処理モデル。 このパラメーターの既定値は、プロジェクトで使用されるグローバル オブジェクトのスレッド モデルです。  
+ クラスのスレッド モデルです。 このパラメーターの既定値は、プロジェクトで使用されるグローバル オブジェクト スレッド モデルです。  
   
 ## <a name="remarks"></a>コメント  
- `CComEnum`配列に基づいた COM 列挙子オブジェクトを定義します。 このクラスと似ています[CComEnumOnSTL](../../atl/reference/ccomenumonstl-class.md) C++ 標準ライブラリのコンテナーに基づく列挙子を実装します。 このクラスを使用するための一般的な手順は次のとおりです。 詳細については、次を参照してください。 [ATL のコレクションと列挙子](../../atl/atl-collections-and-enumerators.md)します。  
+ `CComEnum`配列に基づいた COM 列挙子オブジェクトを定義します。 このクラスと似ています[CComEnumOnSTL](../../atl/reference/ccomenumonstl-class.md) C++ 標準ライブラリのコンテナーに基づく列挙子を実装します。 このクラスを使用するための一般的な手順は次のとおりです。 詳細については、次を参照してください。 [ATL のコレクションと列挙子](../../atl/atl-collections-and-enumerators.md)です。  
   
 ## <a name="to-use-this-class"></a>このクラスを使用します。  
   
-- `typedef`このクラスの特殊化します。  
+- `typedef`このクラスの特殊化です。  
   
--   使用して、`typedef`の特殊化のテンプレート引数として`CComObject`します。  
+-   使用して、`typedef`の特殊化のテンプレート引数として`CComObject`です。  
   
--   インスタンスを作成、`CComObject`特殊化します。  
+-   インスタンスを作成、`CComObject`特殊化です。  
   
--   呼び出して、列挙子オブジェクトを初期化[保ちます](../../atl/reference/ccomenumimpl-class.md#init)します。  
+-   呼び出して列挙子オブジェクトを初期化する[保ちます](../../atl/reference/ccomenumimpl-class.md#init)です。  
   
 -   列挙子インターフェイスをクライアントに返します。  
   
@@ -97,23 +80,22 @@ class ATL_NO_VTABLE CComEnum : public CComEnumImpl<Base, piid,
   
  `CComEnum`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ## <a name="example"></a>例  
- 次に示すコードでは、作成と、列挙子オブジェクトの初期化の再利用可能な機能を提供します。  
+ 以下に示すコードでは、作成して、列挙子オブジェクトの初期化の再利用可能な機能を提供します。  
   
- [!code-cpp[NVC_ATL_COM&#32;](../../atl/codesnippet/cpp/ccomenum-class_1.h)]  
+ [!code-cpp[NVC_ATL_COM#32](../../atl/codesnippet/cpp/ccomenum-class_1.h)]  
   
  このテンプレート関数を実装するために使用できる、`_NewEnum`次に示すように、コレクション インターフェイスのプロパティ。  
   
- [!code-cpp[NVC_ATL_COM&#33;](../../atl/codesnippet/cpp/ccomenum-class_2.h)]  
+ [!code-cpp[NVC_ATL_COM#33](../../atl/codesnippet/cpp/ccomenum-class_2.h)]  
   
- このコードを作成、`typedef`の`CComEnum`のベクターを公開する**VARIANT**s ~、 **IEnumVariant**インターフェイスです。 **CVariantArrayCollection**クラスを特化するだけ**CreateEnumerator**この型と、必要な引数のパスの列挙子オブジェクトを使用します。  
+ このコードを作成、`typedef`の`CComEnum`のベクターを公開する**バリアント**を通じて s、 **IEnumVariant**インターフェイスです。 **CVariantArrayCollection**クラスを特化するだけ**CreateEnumerator**この型と、必要な引数のパスの列挙子オブジェクトを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [CComObjectThreadModel](atl-typedefs.md#ccomobjectthreadmodel)   
  [CComEnumImpl クラス](../../atl/reference/ccomenumimpl-class.md)   
  [CComObjectRootEx クラス](../../atl/reference/ccomobjectrootex-class.md)
-

@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 5f86d24c693cfcd5eecf8b37f0e4567c9c7af3a0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a68475447ed520298b0eab7949386c2e8d078ac6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="static-libraries-ccx"></a>スタティック ライブラリ (C++/CX)
 ユニバーサル Windows プラットフォーム アプリで使用されるスタティック ライブラリは、STL 型、およびユニバーサル Windows プラットフォーム アプリのプラットフォームから除外されていない Win32 Api への呼び出しを含む、ISO 標準の C++ コードを含めることができます。 スタティック ライブラリは、Windows ランタイム コンポーネントを処理し、特定の制限の Windows ランタイム コンポーネントを作成します。  
@@ -42,5 +43,5 @@ ms.lasthandoff: 10/24/2017
   
  スタティック ライブラリは、ライブラリ自体の外部で使用される Windows ランタイム コンポーネントを生成しない場合のみに安全に、警告を無視できます。 ライブラリが、自らが定義したコンポーネントを利用していない場合、パブリック メタデータに型情報が含まれている状況でも、リンカーは実装を最適化できます。 このことは、スタティック ライブラリ内のパブリック コンポーネントはコンパイルされるが、実行時にアクティブにならないことを意味します。 このため、ダイナミック リンク ライブラリ (DLL) で他のコンポーネントまたはアプリケーションで消費される Windows ランタイム コンポーネントを実装しなければなりません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スレッドとマーシャ リング](../cppcx/threading-and-marshaling-c-cx.md)

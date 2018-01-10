@@ -39,11 +39,12 @@ caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5207b7479876cc88941397906646fbd08fa02b6c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5f904d5f03d4c9e74123bc5be43f02178cb2e3d2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ismbbkana-ismbbkanal"></a>_ismbbkana、_ismbbkana_l
 カタカナ シンボルのテスト。コード ページ 932 固有のテストです。  
@@ -68,17 +69,17 @@ int _ismbbkana_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- 整数 `_ismbbkana` がカタカナ シンボルの場合、またはカタカナ シンボルではない場合に 0 の場合、`c` は 0 以外の値を返します。 `_ismbbkana` は、ロケールに依存する文字情報に現在のロケールを使用します。 `_ismbbkana_l` は、渡されたロケール オブジェクトを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ 整数 `_ismbbkana` がカタカナ シンボルの場合、またはカタカナ シンボルではない場合に 0 の場合、`c` は 0 以外の値を返します。 `_ismbbkana` は、ロケールに依存する文字情報に現在のロケールを使用します。 `_ismbbkana_l` は、渡されたロケール オブジェクトを使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbbkana`|\<mbctype.h>|  
 |`_ismbbkana_l`|\<mbctype.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
  [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)

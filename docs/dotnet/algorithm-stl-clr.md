@@ -18,11 +18,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a1f598b0aba0f5f697fc6603728e2735f0cd50f6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7dac0e574122342c96b28a2f5ccbeb1ea5088ae9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="algorithm-stlclr"></a>algorithm (STL/CLR)
 アルゴリズムを実行する STL/CLR コンテナーのテンプレート関数を定義します。  
@@ -78,7 +81,7 @@ ms.lasthandoff: 10/24/2017
 |[remove (STL/CLR)](../dotnet/remove-stl-clr.md)|特定の範囲から、残りの要素の順序の影響を及ぼすことがなく、指定した値を削除し、指定された値を含まない新しい範囲の末尾を返します。|  
 |[remove_copy (STL/CLR)](../dotnet/remove-copy-stl-clr.md)|残りの要素の順序の影響を及ぼすことがなく、指定された値の要素はコピーされないことを除き、要素をターゲット範囲に、ソース範囲からコピーします。|  
 |[remove_copy_if (STL/CLR)](../dotnet/remove-copy-if-stl-clr.md)|ソース範囲から述語を満たす、残りの要素の順序の影響を及ぼすことがなくものを除き、ターゲットの範囲に要素をコピーします。|  
-|[remove_if (STL/CLR)](../dotnet/remove-if-stl-clr.md)|残りの要素の順序の影響を及ぼすことがなく、指定された範囲から述語を満たす要素を削除します。 。|  
+|[remove_if (STL/CLR)](../dotnet/remove-if-stl-clr.md)|残りの要素の順序の影響を及ぼすことがなく、指定された範囲から述語を満たす要素を削除します。 である必要があります。|  
 |[replace (STL/CLR)](../dotnet/replace-stl-clr.md)|新しい値を持つ指定した値と一致する範囲内の要素を置き換えます。|  
 |[replace_copy (STL/CLR)](../dotnet/replace-copy-stl-clr.md)|ソース範囲から新しい値を持つ指定した値と一致する要素を置換、ターゲットの範囲に要素をコピーします。|  
 |[replace_copy_if (STL/CLR)](../dotnet/replace-copy-if-stl-clr.md)|ソース範囲内の各要素が指定された述語を満たすかどうかを調べ、満たす場合は置き換えて結果を新しいターゲット範囲にコピーします。|  
@@ -104,10 +107,10 @@ ms.lasthandoff: 10/24/2017
 |[unique_copy (STL/CLR)](../dotnet/unique-copy-stl-clr.md)|互いに隣接する重複要素を除き、ソース範囲の要素をターゲット範囲にコピーします。|  
 |[upper_bound (STL/CLR)](../dotnet/upper-bound-stl-clr.md)|順序の基準が二項述語で指定できる場合に、順序付けられた範囲内で、指定した値を超える値を持つ最初の要素の位置を検索します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext アルゴリズム/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [STL/CLR ライブラリ リファレンス](../dotnet/stl-clr-library-reference.md)

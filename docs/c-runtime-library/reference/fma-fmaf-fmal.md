@@ -43,11 +43,12 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ec77e462b357708153f26b5289f35c2ee7b7a104
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cd4178718380502e91bb7f019164f2398c93323c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fma-fmaf-fmal"></a>fma、fmaf、fmal
 2 つの値を乗算、3 番目の値を追加し、結果を丸めます。中間丸め処理による精度の低下はありません。  
@@ -102,10 +103,10 @@ long double fmal(
   
  それ以外の場合は、次の値のいずれかを返します。  
   
-|問題点|リターン|  
+|懸案事項|Return|  
 |-----------|------------|  
 |`x` = INFINITY、`y` = 0 または<br /><br /> `x` = 0、`y` = INFINITY|NaN|  
-|`x` または `y` = exact ± INFINITY、`z` = 逆の符号が付く INFINITY|NaN|  
+|`x`または`y`= 正確な ± の無限大、`z`逆の符号を持つ無限大を =|NaN|  
 |`x` または `y` = NaN|NaN|  
 |not (`x` = 0, `y`= indefinite) および `z` = NaN<br /><br /> not (`x`=indefinite, `y`=0) および `z` = NaN|NaN|  
 |オーバーフロー範囲エラー|±HUGE_VAL、±HUGE_VALF、または ±HUGE_VALL|  
@@ -118,15 +119,15 @@ long double fmal(
   
  この関数は、値を無限の精度とするかのように計算し、最終的な結果を丸めます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
 |`fma`、`fmaf`、`fmal`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [remainder、remainderf、remainderl](../../c-runtime-library/reference/remainder-remainderf-remainderl.md)   
  [remquo、remquof、remquol](../../c-runtime-library/reference/remquo-remquof-remquol.md)

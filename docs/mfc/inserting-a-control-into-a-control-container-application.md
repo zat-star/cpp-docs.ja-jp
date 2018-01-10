@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3cf288014f47ee1e497ca5a38a3c48368a3b1e6f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a1eaaf0426726f252fc4990f06faa73b0598cfbb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="activex-control-containers-inserting-a-control-into-a-control-container-application"></a>ActiveX コントロール コンテナー : コントロール コンテナー アプリケーションへのコントロールの追加
 ActiveX コントロールは、ActiveX コントロール コンテナー アプリケーションからアクセスすることができます、前に、アプリケーションを使用してコンテナーに ActiveX コントロールを追加する必要があります、 [ActiveX コントロールの挿入](../windows/insert-activex-control-dialog-box.md) ダイアログ ボックス。  
@@ -31,6 +32,6 @@ ActiveX コントロールは、ActiveX コントロール コンテナー ア�
   
  追加した後ラッパー クラスと呼ばれるメンバー変数、クラスが自動的に生成され、プロジェクトに追加します。 このクラスは、コントロール コンテナーと、埋め込まれたコントロール間のインターフェイスとして使用されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ActiveX コントロール コンテナー](../mfc/activex-control-containers.md)
 

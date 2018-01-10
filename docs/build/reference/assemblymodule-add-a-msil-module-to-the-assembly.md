@@ -1,89 +1,90 @@
 ---
-title: "/ASSEMBLYMODULE (MSIL モジュールのアセンブリへの追加) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/assemblymodule"
-  - "VC.Project.VCLinkerTool.AddModuleNamesToAssembly"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/ASSEMBLYMODULE リンカー オプション"
-  - "アセンブリ [C++]"
-  - "アセンブリ [C++], 追加 (モジュールを)"
-  - "ASSEMBLYMODULE リンカー オプション"
-  - "-ASSEMBLYMODULE リンカー オプション"
+title: "-ASSEMBLYMODULE (MSIL モジュールをアセンブリに追加) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /assemblymodule
+- VC.Project.VCLinkerTool.AddModuleNamesToAssembly
+dev_langs: C++
+helpviewer_keywords:
+- ASSEMBLYMODULE linker option
+- assemblies [C++], adding modules to
+- assemblies [C++]
+- /ASSEMBLYMODULE linker option
+- -ASSEMBLYMODULE linker option
 ms.assetid: 67357da8-e4b6-49fd-932c-329a5777f143
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: efe45bd6a3225f50e1f842c6d247aae9626302a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /ASSEMBLYMODULE (MSIL モジュールのアセンブリへの追加)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="assemblymodule-add-a-msil-module-to-the-assembly"></a>/ASSEMBLYMODULE (MSIL モジュールのアセンブリへの追加)
 ```  
 /ASSEMBLYMODULE:filename  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  それぞれの文字について以下に説明します。  
   
- *filename*  
- このアセンブリに含めるモジュール。  
+ *ファイル名*  
+ このアセンブリに追加するモジュールです。  
   
-## 解説  
- \/ASSEMBLYMODULE オプションを使用して、アセンブリにモジュール参照を追加できます。  モジュール参照を追加したアセンブリ プログラムでは、モジュールのタイプ情報を使用できません。  ただし、アセンブリを参照するすべてのプログラムで、モジュールのタイプ情報を使用できます。  
+## <a name="remarks"></a>コメント  
+ /ASSEMBLYMODULE オプションでは、モジュールの参照をアセンブリに追加することができます。 モジュールの型情報はモジュール参照を追加したアセンブリ プログラムを利用できません。 ただし、モジュール内の型情報は、アセンブリを参照するプログラムで使用可能になります。  
   
- [\#using](../../preprocessor/hash-using-directive-cpp.md) を使用すると、アセンブリにモジュール参照を追加し、モジュールのタイプ情報をアセンブリ プログラムで使用できます。  
+ 使用して[#using](../../preprocessor/hash-using-directive-cpp.md)アセンブリへのモジュール参照を追加およびモジュールの種類の情報をアセンブリのプログラムを利用できるようにします。  
   
- たとえば、次のような方法もあります。  
+ たとえば、次の場合を考えてください。  
   
-1.  [\/LN](../../build/reference/ln-create-msil-module.md) を指定してモジュールを作成します。  
+1.  持つモジュールを作成する[/LN](../../build/reference/ln-create-msil-module.md)です。  
   
-2.  別のプロジェクトで、\/ASSEMBLYMODULE を使用して現在のコンパイルにモジュールを含め、アセンブリを作成します。  このプロジェクトでは、`#using` によるモジュールの参照は行いません。  
+2.  別のプロジェクトにモジュールをアセンブリの作成は、現在のコンパイルに含める/ASSEMBLYMODULE を使用します。 このプロジェクトでは、モジュールでは参照されません`#using`です。  
   
-3.  これで、このアセンブリを参照するすべてのプロジェクトで、モジュールのタイプを使用できます。  
+3.  また、このアセンブリを参照する他のプロジェクトでは、モジュールから型を使用できますようになりました。  
   
- このほかにも、次のようなリンカー オプションがアセンブリの生成に影響します。  
+ アセンブリの生成に影響するその他のリンカー オプションは次のとおりです。  
   
--   [\/ASSEMBLYDEBUG \(DebuggableAttribute の追加\)](../Topic/-ASSEMBLYDEBUG%20\(Add%20DebuggableAttribute\).md)  
+-   [/ASSEMBLYDEBUG](../../build/reference/assemblydebug-add-debuggableattribute.md)  
   
--   [\/ASSEMBLYLINKRESOURCE](../../build/reference/assemblylinkresource-link-to-dotnet-framework-resource.md)  
+-   [/ASSEMBLYLINKRESOURCE](../../build/reference/assemblylinkresource-link-to-dotnet-framework-resource.md)  
   
--   [\/ASSEMBLYRESOURCE](../../build/reference/assemblyresource-embed-a-managed-resource.md)  
+-   [/ASSEMBLYRESOURCE](../../build/reference/assemblyresource-embed-a-managed-resource.md)  
   
--   [\/DELAYSIGN](../../build/reference/delaysign-partially-sign-an-assembly.md)  
+-   [/DELAYSIGN](../../build/reference/delaysign-partially-sign-an-assembly.md)  
   
--   [\/NOASSEMBLY](../../build/reference/noassembly-create-a-msil-module.md)  
+-   [/NOASSEMBLY](../../build/reference/noassembly-create-a-msil-module.md)  
   
--   [\/KEYFILE](../../build/reference/keyfile-specify-key-or-key-pair-to-sign-an-assembly.md)  
+-   [/KEYFILE](../../build/reference/keyfile-specify-key-or-key-pair-to-sign-an-assembly.md)  
   
--   [\/KEYCONTAINER](../../build/reference/keycontainer-specify-a-key-container-to-sign-an-assembly.md)  
+-   [/KEYCONTAINER](../../build/reference/keycontainer-specify-a-key-container-to-sign-an-assembly.md)  
   
- Visual C\+\+ リンカーは、入力、リンカーによって生成される出力ファイルはリンカーに渡された .netmodules のいずれかへの実行時に依存しないアセンブリまたは"であるため .netmodule ファイルをリンクできます。詳細については、「[リンカー入力としての .netmodule ファイル](../Topic/.netmodule%20Files%20as%20Linker%20Input.md)」を参照してください。  
+ Visual C リンカーは、入力として .netmodule ファイルを受け入れるし、アセンブリまたは .netmodule ない実行時の依存をリンカー入力した .netmodule のいずれかのリンカーによって生成される出力ファイルが表示されます。  詳細については、「 [リンカー入力としての .netmodule ファイル](../../build/reference/netmodule-files-as-linker-input.md)」を参照してください。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[入力\] プロパティ ページをクリックします。  
+3.  クリックして、**入力**プロパティ ページ。  
   
-4.  \[モジュールをアセンブリに追加\] プロパティを変更します。  
+4.  変更、**モジュールをアセンブリに追加**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AddModuleNamesToAssembly%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

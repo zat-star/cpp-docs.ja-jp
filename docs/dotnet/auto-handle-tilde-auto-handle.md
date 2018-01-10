@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 53f9f97044d2a8723723a586e48d252b1917ab02
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5d5d28e4b43328cc55d881be3f9b7cbb47a24a47
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="autohandleautohandle"></a>auto_handle::~auto_handle
 `auto_handle`デストラクターです。  
@@ -73,12 +76,12 @@ ClassA destructor
 done  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\auto_handle.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto_handle メンバー](../dotnet/auto-handle-members.md)   
  [auto_handle::release](../dotnet/auto-handle-release.md)   
  [auto_handle::auto_handle](../dotnet/auto-handle-auto-handle.md)

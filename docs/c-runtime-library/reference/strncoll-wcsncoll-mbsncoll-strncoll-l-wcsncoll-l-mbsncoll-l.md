@@ -71,11 +71,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 36c802c5406d4f142e4902ad75a7621f5a23ed70
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 51777605e24d9bb3ddf6fa7e6b9ad9c332165881
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strncoll-wcsncoll-mbsncoll-strncolll-wcsncolll-mbsncolll"></a>_strncoll、_wcsncoll、_mbsncoll、_strncoll_l、_wcsncoll_l、_mbsncoll_l
 ロケール固有の情報を使用して文字列を比較します。  
@@ -143,7 +144,7 @@ int _mbsncoll_l(
  これらの各関数は、`_NLSCMPERROR` を返します。 `_NLSCMPERROR` を使用するには、STRING.h または MBSTRING.h をインクルードします。 `_wcsncoll` は、`string1` か `string2` に照合シーケンスのドメイン外のワイド文字コードが含まれている場合に失敗します。 エラーが発生した場合、`_wcsncoll` は `errno` に `EINVAL` を設定することがあります。 `_wcsncoll` の呼び出し時にエラーを確認するには、`errno` を 0 に設定し、`_wcsncoll` を呼び出した後 `errno` をチェックします。  
   
 ## <a name="remarks"></a>コメント  
- これらの関数は現在使用中のコード ページに従って `string1` と `string2` の最初の `count` 文字を大文字と小文字を区別せずに比較します。 これらの関数は、コード ページの文字セット順序と辞書式文字順序との間に相違点あり、この違いが文字列比較に関係がある場合にのみ使用します。 文字セット順序は、ロケールに依存します。 これらの関数のうち、`_l` サフィックスが付いていないバージョンは現在のロケールを使用しますが、`_l` サフィックスが付いているバージョンは渡されたロケールを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数は現在使用中のコード ページに従って `string1` と `string2` の最初の `count` 文字を大文字と小文字を区別せずに比較します。 これらの関数は、コード ページの文字セット順序と辞書式文字順序との間に相違点あり、この違いが文字列比較に関係がある場合にのみ使用します。 文字セット順序は、ロケールに依存します。 これらの関数のうち、`_l` サフィックスが付いていないバージョンは現在のロケールを使用しますが、`_l` サフィックスが付いているバージョンは渡されたロケールを使用します。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  これらのすべての関数では、パラメーターの検証が行われます。 `string1` または `string2` が null ポインターの場合、または `count` が `INT_MAX` を超える場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、`errno` を `EINVAL` に設定します。  
   
@@ -154,9 +155,9 @@ int _mbsncoll_l(
 |`_tcsnccoll`|`_strncoll`|`_mbsncoll`|`_wcsncoll`|  
 |`_tcsncoll`|`_strncoll`|[_mbsnbcoll](../../c-runtime-library/reference/mbsnbcoll-mbsnbcoll-l-mbsnbicoll-mbsnbicoll-l.md)|`_wcsncoll`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strncoll`, `_strncoll_l`|\<string.h>|  
 |`_wcsncoll`, `_wcsncoll_l`|\<wchar.h> または \<string.h>|  
@@ -164,10 +165,10 @@ int _mbsncoll_l(
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール](../../c-runtime-library/locale.md)   
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
+ [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
  [localeconv](../../c-runtime-library/reference/localeconv.md)   
  [_mbsnbcoll、_mbsnbcoll_l、_mbsnbicoll、_mbsnbicoll_l](../../c-runtime-library/reference/mbsnbcoll-mbsnbcoll-l-mbsnbicoll-mbsnbicoll-l.md)   
  [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   

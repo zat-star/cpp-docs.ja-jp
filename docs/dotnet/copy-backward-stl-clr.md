@@ -1,32 +1,33 @@
 ---
-title: "copy_backward (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::copy_backward"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "copy_backward 関数 [STL/CLR]"
+title: "copy_backward (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::copy_backward
+dev_langs: C++
+helpviewer_keywords: copy_backward function [STL/CLR]
 ms.assetid: 649db3fd-5a79-44b6-bea9-ecbcbeba1f32
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 67a79618307890502937111e89f3a3368fa5163d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# copy_backward (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="copybackward-stlclr"></a>copy_backward (STL/CLR)
 要素のソース シーケンス全体を繰り返し、逆方向の新しい位置を割り当てて、ソース範囲内からターゲットの範囲に要素の値を割り当てます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _BidIt1, class _BidIt2> inline  
@@ -34,13 +35,13 @@ template<class _BidIt1, class _BidIt2> inline
         _BidIt2 _Dest);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `copy_backward`も同じように動作します。  詳細については、「[copy\_backward](../Topic/copy_backward.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`copy_backward`です。 詳細については、次を参照してください。 [copy_backward](../standard-library/algorithm-functions.md#copy_backward)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>参照  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

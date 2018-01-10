@@ -1,35 +1,37 @@
 ---
-title: "CTable::Open | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CTable.Open"
-  - "ATL::CTable::Open"
-  - "CTable::Open"
-  - "CTable.Open"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Open メソッド"
+title: "Ctable::open |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL.CTable.Open
+- ATL::CTable::Open
+- CTable::Open
+- CTable.Open
+dev_langs: C++
+helpviewer_keywords: Open method
 ms.assetid: 5d006d95-74d7-4e2b-b243-a33bc53b5455
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e664ddb310892004b95c81c8c7d93d8035b82cd3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CTable::Open
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="ctableopen"></a>CTable::Open
 テーブルを開きます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -53,33 +55,33 @@ HRESULT Open(
 ) throw ( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `session`  
- \[\]テーブルを開くセッション。  
+ [in]対象のテーブルが開いているセッションです。  
   
  *wszTableName*  
- \[\] Unicode 文字列として渡す開こうとするテーブルの名前。  
+ [in]開くには、テーブルの名前は、Unicode 文字列として渡されます。  
   
  *szTableName*  
- \[\] ANSI 文字列として渡す開こうとするテーブルの名前。  
+ [in]開くには、テーブルの名前は、ANSI 文字列として渡されます。  
   
  *dbid*  
- \[\]開こうとするテーブルの **DBID**。  
+ [in]**DBID**を開くには、テーブルのです。  
   
  *pPropSet*  
- \[\]設定するプロパティと値を含む [DBPROPSET](https://msdn.microsoft.com/en-us/library/ms714367.aspx) 構造体の配列へのポインター。  [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の *OLE DB Programmer's Reference* の [プロパティ セットとプロパティ グループ](https://msdn.microsoft.com/en-us/library/ms713696.aspx) を参照してください。  空白の既定値はプロパティが指定されていません。  
+ [in]配列へのポインター [DBPROPSET](https://msdn.microsoft.com/en-us/library/ms714367.aspx)プロパティと設定する値を含む構造体。 参照してください[プロパティ セットとプロパティ グループ](https://msdn.microsoft.com/en-us/library/ms713696.aspx)で、 *OLE DB プログラマーズ リファレンス*Windows SDK にします。 既定値は NULL には、プロパティは指定しません。  
   
  `ulPropSets`  
- \[\] *pPropSet の* 引数に渡される [DBPROPSET](https://msdn.microsoft.com/en-us/library/ms714367.aspx) 構造体の数。  
+ [in]数[DBPROPSET](https://msdn.microsoft.com/en-us/library/ms714367.aspx)に渡された構造体、 *pPropSet*引数。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- 詳細については、*OLE DB Programmer's Reference*の [IOpenRowset::OpenRowset](https://msdn.microsoft.com/en-us/library/ms716724.aspx) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 詳細については、次を参照してください。 [iopenrowset::openrowset](https://msdn.microsoft.com/en-us/library/ms716724.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CTable クラス](../../data/oledb/ctable-class.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "4"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: bf096ef9849856e9995ff634d7aca26cd7f3f8e9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3617f4e9209a9726fcf4801e803259ef921c7b60
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformstringreference-class"></a>Platform::StringReference クラス
 最小のコピー操作で `Platform::String^` 入力パラメーターから他のメソッドに文字列データを渡すために使用できる最適化の手法です。  
@@ -60,7 +61,7 @@ class StringReference
 |[StringReference::operator =](#operator-assign)|`StringReference` を新しい `StringReference` インスタンスに割り当てます。|  
 |[Stringreference::operator()](#operator-call)|`StringReference` を `Platform::String^`に変換します。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -201,5 +202,5 @@ StringReference(const ::default::char16* __strArg, size_t __lenArg)
 
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform::StringReference クラス](../cppcx/platform-stringreference-class.md)

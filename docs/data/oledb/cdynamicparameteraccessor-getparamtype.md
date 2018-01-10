@@ -1,37 +1,39 @@
 ---
-title: "CDynamicParameterAccessor:GetParamType | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDynamicParameterAccessor.GetParamType"
-  - "CDynamicParameterAccessor:GetParamType"
-  - "CDynamicParameterAccessor::GetParamType"
-  - "ATL.CDynamicParameterAccessor.GetParamType"
-  - "GetParamType"
-  - "ATL::CDynamicParameterAccessor::GetParamType"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetParamType メソッド"
+title: "Cdynamicparameteraccessor:getparamtype |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDynamicParameterAccessor.GetParamType
+- CDynamicParameterAccessor:GetParamType
+- CDynamicParameterAccessor::GetParamType
+- ATL.CDynamicParameterAccessor.GetParamType
+- GetParamType
+- ATL::CDynamicParameterAccessor::GetParamType
+dev_langs: C++
+helpviewer_keywords: GetParamType method
 ms.assetid: d9c46775-c2a6-4100-8b69-99f13c52958b
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: b573265c30c0d6ec45665109ff41042e9a2f24dd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CDynamicParameterAccessor:GetParamType
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-指定したパラメーターのデータ型を取得します。  
+# <a name="cdynamicparameteraccessorgetparamtype"></a>CDynamicParameterAccessor:GetParamType
+指定されたパラメーターのデータ型を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -41,18 +43,18 @@ caps.handback.revision: 8
 ) const throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nParam`  
- \[\]パラメーター数 \(1\) からのオフセット。  パラメーターは 0 戻り値のために予約されています。  パラメーターの数は、SQL またはストアド プロシージャ呼び出しの順序に基づいてパラメーターのインデックスです。  例については、" [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) を参照してください。  
+ [in]パラメーターの数 (1 からのオフセット)。 に対するパラメーター 0 は、戻り値に予約されています。 パラメーター数は、SQL またはストアド プロシージャの呼び出しでその順序に基づいて、パラメーターのインデックスです。 参照してください[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)例についてはします。  
   
  `pType`  
- \[\]を含む変数へのポインター。指定したパラメーターのデータ型。  
+ [out]指定されたパラメーターのデータ型を含む変数へのポインター。  
   
-## 戻り値  
- 成功の戻り **true** または失敗の **false**。  
+## <a name="return-value"></a>戻り値  
+ 返します**true**成功した場合または**false**エラー発生時にします。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)

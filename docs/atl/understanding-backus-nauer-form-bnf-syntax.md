@@ -16,11 +16,12 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6ff141818e05f9b5b36b6d0cfc5a58170fa97ab0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 01d364313420c0a950f8eba222e3ae020fbd86cf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="understanding-backus-nauer-form-bnf-syntax"></a>バッカスナウア Nauer Form (BNF) の構文の理解
 ATL レジストラーで使用されるスクリプトは、次の表に示すように表記を使用して BNF 構文を使用して、このトピックで説明します。  
@@ -36,7 +37,7 @@ ATL レジストラーで使用されるスクリプトは、次の表に示す�
   
  示されるように前の表に、レジストラー スクリプトは、文字列リテラルを使用します。 これらの値は、実際のテキストをスクリプト内で使用する必要があります。 次の表では、ATL レジストラー スクリプトで使用されるリテラル文字列について説明します。  
   
-|文字列リテラル|操作|  
+|文字列リテラル|アクション|  
 |--------------------|------------|  
 |**ForceRemove**|(存在する場合は、次のキーを完全に削除してから再作成します。|  
 |**NoRemove**|登録解除中に次のキーは削除されません。|  
@@ -106,6 +107,6 @@ val 'testhex' = d '&H55'
   
  指定したキー名`testhex`は、 **DWORD**値は 16 進 55 (10 進 85) に設定します。 注この形式に従って、 **& H**として表記、Visual Basic の仕様に記載します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レジストラー スクリプトの作成](../atl/creating-registrar-scripts.md)
 

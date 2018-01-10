@@ -29,11 +29,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 30c47c43c5929eb0c10c584e20e485b9bb724e94
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: dc86603127404fe26d6e826d2903733136411c92
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ismbbblank-ismbbblankl"></a>_ismbbblank、_ismbbblank_l
 指定されたマルチバイト文字が空白文字かどうかを判定します。  
@@ -61,17 +62,17 @@ int _ismbbblank_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_ismbbblank` は、`c` が空白 (0x20) 文字、水平タブ (0x09) 文字、またはテキスト行内の単語を分離するために使用されるロケール固有の文字で、その文字の `isspace` が true である文字を表す場合、0 以外の値を返します。それ以外の場合は 0 を返します。 `_ismbbblank` は、すべてのロケールに依存する動作に現在のロケールを使用します。 `_ismbbblank_l` は、代わりに渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `_ismbbblank` は、`c` が空白 (0x20) 文字、水平タブ (0x09) 文字、またはテキスト行内の単語を分離するために使用されるロケール固有の文字で、その文字の `isspace` が true である文字を表す場合、0 以外の値を返します。それ以外の場合は 0 を返します。 `_ismbbblank` は、すべてのロケールに依存する動作に現在のロケールを使用します。 `_ismbbblank_l` は、代わりに渡されるロケールを使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbbblank`|\<mbctype.h>|  
 |`_ismbbblank_l`|\<mbctype.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
  [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)

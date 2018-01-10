@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1a35e83f28a78acf199e74118cc1fef359666cf1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9053bc206a465eb32d8007fb8d58d13d45eb4a0b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pdbaltpath-use-alternate-pdb-path"></a>/PDBALTPATH (別の PDB パスを使用)
 ```  
@@ -32,7 +33,7 @@ ms.lasthandoff: 10/24/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- ここで、  
+ それぞれの文字について以下に説明します。  
   
  *pdb_file_name*  
  .pdb ファイルのパスとファイル名です。  
@@ -42,6 +43,6 @@ ms.lasthandoff: 10/24/2017
   
  値*pdb_file_name*は、任意の文字列、環境変数、または**% _PDB**です。 リンカーはなどを展開し、環境変数**%systemroot%**、その値にします。 リンカーは環境変数を定義**% _PDB**と**展開**です。 **% _PDB**パス情報がない実際の .pdb ファイルのファイル名と**展開**が生成された実行可能ファイルの拡張子。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DUMPBIN オプション](../../build/reference/dumpbin-options.md)   
  [/PDBPATH](../../build/reference/pdbpath.md)

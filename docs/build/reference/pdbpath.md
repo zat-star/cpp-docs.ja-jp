@@ -1,63 +1,63 @@
 ---
-title: "/PDBPATH | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/pdbpath"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".pdb ファイル, パス"
-  - "/PDBPATH dumpbin オプション"
-  - "PDB ファイル, パス"
-  - "PDBPATH dumpbin オプション"
-  - "-PDBPATH dumpbin オプション"
+title: "-PDBPATH |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /pdbpath
+dev_langs: C++
+helpviewer_keywords:
+- .pdb files, path
+- -PDBPATH dumpbin option
+- /PDBPATH dumpbin option
+- PDBPATH dumpbin option
+- PDB files, path
 ms.assetid: ccf67dcd-0b23-4250-ad47-06c48acbe82b
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 0ccbcedbf9cdd376fa7d9bced5c9d49542cee9f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /PDBPATH
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="pdbpath"></a>/PDBPATH
 ```  
 /PDBPATH[:VERBOSE] filename  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  それぞれの文字について以下に説明します。  
   
- *filename*  
- 一致する .pdb ファイルを検索する .dll ファイルまたは .exe ファイルの名前。  
+ *ファイル名*  
+ 対応する .pdb ファイルを検索する .dll または .exe ファイルの名前。  
   
- VERBOSE \(省略可能\)  
- .pdb ファイルの検索が行われた全ディレクトリをレポートします。  
+ VERBOSE (省略可能)  
+ .Pdb ファイルを検索しようとしてが行われる場所のすべてのディレクトリを報告します。  
   
-## 解説  
- \/PDBPATH を指定すると、デバッガーが .pdb ファイルを検索したときと同じパスでコンピューターの検索が行われて、*filename* で指定したファイルに対応する .pdb ファイルがある場合に報告されます。  
+## <a name="remarks"></a>コメント  
+ 同じパスをたどって、デバッガーが .pdb ファイルを検索してしまいますおよびレポートが存在する場合に指定されたファイルに対応する .pdb ファイルをコンピューターの検索が/PDBPATH *filename*です。  
   
- Visual Studio デバッガーを使っている場合は、デバッガーが、デバッグ中のファイルとは異なるバージョンの .pdb ファイルを使用しているために問題が発生する場合があります。  
+ Visual Studio デバッガーを使用する場合、デバッガーが .pdb ファイルを使用してデバッグしているファイルの別のバージョンのあるという事実のという問題が発生する可能性があります。  
   
- 次のパスについて .pdb ファイルの検索が行われます。  
+ /PDBPATH は次のパスに沿った .pdb ファイルを検索します。  
   
--   実行可能ファイルが存在している場所。  
+-   実行可能ファイルが存在する場所を確認してください。  
   
--   実行可能ファイルに書き込まれた PDB の場所。  通常は、イメージがリンクされた時点での場所です。  
+-   実行可能ファイルに書き込まれた PDB の場所を確認してください。 これは、イメージのリンク時に場所では通常です。  
   
--   Visual Studio IDE で設定されている検索パス。  
+-   Visual Studio IDE で構成されている検索パスを確認します。  
   
--   \_NT\_SYMBOL\_PATH 環境変数および \_NT\_ALT\_SYMBOL\_PATH 環境変数で定義されているパス。  
+-   _NT_SYMBOL_PATH および _NT_ALT_SYMBOL_PATH パスに沿った、環境変数を確認します。  
   
--   Windows ディレクトリ。  
+-   Windows ディレクトリで確認してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [DUMPBIN オプション](../../build/reference/dumpbin-options.md)   
- [\/PDBALTPATH \(別の PDB パスを使用\)](../../build/reference/pdbaltpath-use-alternate-pdb-path.md)
+ [/PDBALTPATH (別の PDB パスを使用)](../../build/reference/pdbaltpath-use-alternate-pdb-path.md)

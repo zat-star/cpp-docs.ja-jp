@@ -23,11 +23,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4561e055bd258ba2b276075ff337d62cf194813b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 40bd83b2e472ff1b1e5d277c27a801b0750fb160
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-objects-and-data-sources-manipulation"></a>データ オブジェクトとデータ ソース : 操作
 データ オブジェクトまたはデータ ソースを作成した後、多数の挿入や削除、データが、形式を列挙する、データなど、データの一般的な操作を実行できます。 この記事では、最も一般的な操作を完了するために必要な手法について説明します。 ここでは、次の内容について説明します。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 10/24/2017
   
 -   呼び出す`COleDataSource::CacheGlobalData`データを指定しているすべてのクリップボード形式の繰り返しです。 使用するには、クリップボードの形式を渡すデータを含むメモリへのハンドルし、必要に応じて、 **FORMATETC**データを記述する構造体。  
   
-     または  
+     - または -  
   
 -   直接作業する場合**STGMEDIUM**構造体を呼び出す`COleDataSource::CacheData`の代わりに`COleDataSource::CacheGlobalData`で上記のオプションです。  
   
@@ -54,7 +55,7 @@ ms.lasthandoff: 10/24/2017
   
 -   呼び出す`COleDataSource::DelayRenderData`データを指定しているすべてのクリップボード形式の繰り返しです。 クリップボードの形式を使用するを通過し、必要に応じて、 **FORMATETC**データを記述する構造体。 データが要求されると、フレームワークが呼び出す`COleDataSource::OnRenderData`、オーバーライドする必要があります。  
   
-     または  
+     - または -  
   
 -   使用する場合、 `CFile` 、データを提供するオブジェクトを呼び出す`COleDataSource::DelayRenderFileData`の代わりに`COleDataSource::DelayRenderData`前のオプションでします。 データが要求されると、フレームワークが呼び出す`COleDataSource::OnRenderFileData`、オーバーライドする必要があります。  
   
@@ -69,7 +70,7 @@ ms.lasthandoff: 10/24/2017
   
     -   データ オブジェクトの`IsDataAvailable`メンバー関数は 1 つだけを使用する必要があるか 2 つの書式を設定する必要があります。 このはクリップボード上のデータが、アプリケーションよりもはるかに多くの形式をサポートしている場合は時間を節約します。  
   
-         または  
+         - または -  
   
     -   データ オブジェクトの`BeginEnumFormats`クリップボードで使用できる形式の列挙を開始するメンバー関数。 呼び出す`GetNextFormat`クリップボードを返すまで、形式、アプリケーションをサポートしているか、形式がありません。  
   
@@ -96,7 +97,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [クリップボード](../mfc/clipboard.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ オブジェクトとデータ ソース (OLE)](../mfc/data-objects-and-data-sources-ole.md)   
  [COleDataObject クラス](../mfc/reference/coledataobject-class.md)   
  [COleDataSource クラス](../mfc/reference/coledatasource-class.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d1501506d4575c5f7fe1ff1dc7823cbd1545b974
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5553bd5e9999a4737dc258358402eb71269b9c40
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="importing-function-calls-using-declspecdllimport"></a>__declspec(dllimport) を使った関数呼び出しのインポート
 次のコード例は、使用する方法を示しています。 **_declspec(dllimport)** DLL から関数の呼び出しをアプリケーションにインポートします。 あると想定`func1`関数を含む .exe ファイルとは別の DLL に存在するは、**メイン**関数。  
@@ -81,5 +82,5 @@ call DWORD PTR __imp_func1
   
  その一方で、DLL 内部には、関数の呼び出しのたくない間接呼び出しを使用しています。 関数のアドレスを知っています。 時間と領域が必要なための読み込みし、間接的な呼び出しの前に関数のアドレスを格納する、直接の呼び出しは常により高速で小さいです。 使用する場合のみ**_declspec (dllimport)** DLL 自体の外部から DLL 関数を呼び出すとき。 使用しないでください**_declspec (dllimport)**関数を DLL 内部にその DLL のビルド時にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アプリケーションへのインポート](../build/importing-into-an-application.md)

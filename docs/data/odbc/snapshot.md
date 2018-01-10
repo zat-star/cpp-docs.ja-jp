@@ -22,11 +22,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b8671ce1eefd73b2b8af506b621258e81cbed9b8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: c31e08fdda3cef526f46946e45ef956f9ad1adaa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="snapshot"></a>スナップショット
 スナップショットは、スナップショットの作成時に存在していたデータの静的なビューを反映するレコード セットです。 スナップショットを開くすべてのレコードに移動すると、レコードのセットが含まれているし、呼び出すことにより、スナップショットを再構築するまでの値を変更しないで**Requery**です。  
@@ -53,5 +56,5 @@ ms.lasthandoff: 10/24/2017
   
  すべてのレコードのプロパティのスナップショット共有の詳細については、次を参照してください。[レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)です。 ODBC と ODBC カーソル ライブラリを含む、スナップショットの詳細については、次を参照してください。 [ODBC](../../data/odbc/odbc-basics.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ODBC (Open Database Connectivity)](../../data/odbc/open-database-connectivity-odbc.md)

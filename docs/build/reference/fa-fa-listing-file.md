@@ -27,11 +27,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 44d21eae211bd2d01e202a516ef487c8d0df3684
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e0cd569cf16e7b2a14faaa119eacaef0994d09dc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fa-fa-listing-file"></a>/FA、/Fa (リスティング ファイル)
 アセンブラー コードを含むリスティング ファイルを作成します。  
@@ -51,10 +52,10 @@ none
 アセンブラー言語のみが一覧に含まれています。  
   
 `c`  
-省略可能です。 一覧には、マシン語コードが含まれています。  
+任意。 一覧には、マシン語コードが含まれています。  
   
 `s`  
-省略可能です。 一覧には、ソース コードが含まれています。  
+任意。 一覧には、ソース コードが含まれています。  
   
 `u`省略可能です。 Utf-8 形式でリスティング ファイルをエンコードし、バイト オーダー マーカーが含まれています。 既定では、ファイルは ANSI としてエンコードされます。 使用して`u`任意のシステムに正しく表示されるリスト ファイルを作成するコンパイラへの入力としてのソース コード ファイルのかどうかは、Unicode を使用していますか。  
   
@@ -98,7 +99,7 @@ none
 CL /FAcs HELLO.CPP  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [出力ファイル (/F) オプション](../../build/reference/output-file-f-options.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   

@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fcc1a9d3ff1846960128e47a1d5d1acecf7711f7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 806a943ff9f5ebd0c6971340b66266aa7da9c0c3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="explicit-type-conversion-operator-"></a>明示的な型変換演算子: ()
 C++ では、関数呼び出しの構文に似た構文を使用して、明示的な型変換を実行できます。  
@@ -133,6 +134,6 @@ Point pt = Point( 3, 10 );
   
  キャスト内の型定義は無効です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [後置式](../cpp/postfix-expressions.md)   
  [C++ の組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)

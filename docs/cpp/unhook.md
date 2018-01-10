@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6a5f67b0bdc679c055545cea94e726bc99a66cb0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1513391aedf9a08cd1ece971d79fd5f6913d406d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unhook"></a>__unhook
 イベントからハンドラー メソッドの関連付けを解除します。  
@@ -81,7 +82,7 @@ long  __unhook(
  `receiver`(省略可能)  
  イベント レシーバー クラスのインスタンスへのポインター。 レシーバーを指定しない場合、既定値は `__unhook` が呼び出されるレシーバー クラスまたは構造体です。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  イベント レシーバー クラス外の main を含む、任意の関数スコープで使用できます。  
   
 ## <a name="remarks"></a>コメント  
@@ -107,7 +108,7 @@ long  __unhook(
 ## <a name="example"></a>例  
  参照してください[ネイティブ C++ でのイベント処理](../cpp/event-handling-in-native-cpp.md)と[COM でのイベント処理](../cpp/event-handling-in-com.md)サンプルについてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  [event_source](../windows/event-source.md)   
  [event_receiver](../windows/event-receiver.md)   

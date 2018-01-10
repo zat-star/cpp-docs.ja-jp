@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b6ba275b3a287130df111ba89ec2f4dd91170d17
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 12e81b26cd83214a5d62a42689bfc3a866ef1c10
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="release-builds"></a>リリース ビルド
 リリース ビルドでは、最適化を使用します。 最適化を使用して、リリース ビルドを作成するときに、コンパイラには、シンボリック デバッグ情報は生成されません。 トレースと ASSERT コードが生成されないことのファクトと共に、シンボリック デバッグ情報がない場合を呼び出すと、実行可能ファイルのサイズが少なくなり、高速化できるためことを意味します。  
@@ -42,6 +43,6 @@ ms.lasthandoff: 10/24/2017
   
     -   [メモリ上書きのチェック](../../build/reference/checking-for-memory-overwrites.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Studio での C++ プロジェクトのビルド](../../ide/building-cpp-projects-in-visual-studio.md)   
  [C/C++ ビルドのリファレンス](../../build/reference/c-cpp-building-reference.md)

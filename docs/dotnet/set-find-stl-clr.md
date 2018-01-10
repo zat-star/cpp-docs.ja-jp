@@ -15,11 +15,14 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3e38c5986abee9ed07331c41b4ea79bd0e909c49
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 82296d6da1a2b995026d75a2e2973335cd00ef5c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setfind-stlclr"></a>set::find (STL/CLR)
 指定したキーに一致する要素を検索します。  
@@ -78,12 +81,12 @@ find C = False
 ## <a name="description"></a>説明  
  なお`find`をいくつかの要素が見つかったは保証されません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
  [set::equal_range (STL/CLR)](../dotnet/set-equal-range-stl-clr.md)   
  [set::lower_bound (STL/CLR)](../dotnet/set-lower-bound-stl-clr.md)   

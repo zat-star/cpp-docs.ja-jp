@@ -1,38 +1,41 @@
 ---
-title: "動的アクセサーの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アクセサー [C++], 動的"
-  - "動的アクセサー"
+title: "動的アクセサーの使用 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- accessors [C++], dynamic
+- dynamic accessors
 ms.assetid: e5d5bfa6-2b1d-49d0-8ced-914666422431
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: b3d2e722ce96ff7a2f1add779377079a0eaecfc6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 動的アクセサーの使用
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-動的アクセサーを使用すると、データベース スキーマ \(基になる構造\) が不明な場合でもデータ ソースにアクセスできます。  OLE DB テンプレート ライブラリには、動的アクセサーの使用に役立つクラスがいくつか用意されています。  
+# <a name="using-dynamic-accessors"></a>動的アクセサーの使用
+動的アクセサーでは、データベース スキーマ (構造体の基になる) の知識があるない場合にデータ ソースへのアクセスを行うことができます。 OLE DB テンプレート ライブラリは、これを実現するためのいくつかのクラスを提供します。  
   
- [DynamicConsumer](http://msdn.microsoft.com/ja-jp/2ccc4c61-6749-4e83-aa81-00f8009c0dc3) のサンプルには、動的アクセサー クラスを使用して、列情報を取得し、アクセサーを動的に作成する方法が示されています。  
+ [DynamicConsumer](http://msdn.microsoft.com/en-us/2ccc4c61-6749-4e83-aa81-00f8009c0dc3)サンプルは、動的なアクセサー クラスを使用して列情報を取得し、動的にアクセサーを作成する方法を示しています。  
   
-## CDynamicAccessor の使い方  
- [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) を使用すると、データベース スキーマ \(データベースの基本的な構造\) を理解していない場合でも、データ ソースにアクセスできます。  `CDynamicAccessor` メソッドは、列名、列数、およびデータ型などの列情報を取得します。  この列の情報は、実行時にアクセサーを動的に作成するときに使用します。  列情報は、このクラスによって作成および管理されるバッファーに格納されます。  [GetValue](../../data/oledb/cdynamicaccessor-getvalue.md) メソッドを使用してバッファーからデータを取得します。  
+## <a name="using-cdynamicaccessor"></a>CDynamicAccessor を使用します。  
+ [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)データベース スキーマ (データベースの基になる構造) の知識があるない場合にデータ ソースにアクセスすることができます。 `CDynamicAccessor`メソッドは、列名、カウント、およびデータ型などの列情報を取得します。 実行時に動的にアクセサーを作成するのにには、この列の情報を使用します。 列情報が作成され、このクラスで管理されるバッファーに格納されます。 使用して、バッファーからデータを取得、 [GetValue](../../data/oledb/cdynamicaccessor-getvalue.md)メソッドです。  
   
-## 例  
+## <a name="example"></a>例  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // Using_Dynamic_Accessors.cpp  
@@ -98,14 +101,14 @@ int main( int argc, char* argv[] )
 }  
 ```  
   
-## CDynamicStringAccessor の使い方  
- [CDynamicStringAccessor](../../data/oledb/cdynamicstringaccessor-class.md) は、1 つの重要な点を除いて [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) と同様に動作します。  `CDynamicAccessor` はプロバイダーによって報告されたネイティブな形式でデータを要求しますが、`CDynamicStringAccessor` はアクセスされるすべてのデータをデータ ストアから文字列データとしてフェッチするようにプロバイダーに要求します。  これは、特にデータ ストアのコンテンツの表示または印刷などのように、データ ストアの値の計算を要求しない単純なタスクで役に立ちます。  
+## <a name="using-cdynamicstringaccessor"></a>CDynamicStringAccessor を使用します。  
+ [CDynamicStringAccessor](../../data/oledb/cdynamicstringaccessor-class.md)と同様に動作[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)、1 つの重要な点では可します。 中に`CDynamicAccessor`、プロバイダーによって報告されたネイティブ形式でデータを要求`CDynamicStringAccessor`要求プロバイダーが文字列データとしてデータ ストアからアクセスされるすべてのデータをフェッチします。 これは、表示またはデータ ストアの内容を印刷するなど、データ ストア内の値の計算を必要としない単純なタスクに特に便利です。  
   
- 列情報を取得するには `CDynamicStringAccessor` メソッドを使用します。  この列の情報は、実行時にアクセサーを動的に作成するときに使用します。  列情報は、このクラスによって作成および管理されるバッファーに格納されます。  バッファーからデータを取得するには、[CDynamicStringAccessor::GetString](../Topic/CDynamicStringAccessor::GetString.md) を使用します。また、データをバッファーに格納するには、[CDynamicStringAccessor::SetString](../../data/oledb/cdynamicstringaccessor-setstring.md) を使用します。  
+ 使用して`CDynamicStringAccessor`列情報を取得するメソッド。 実行時に動的にアクセサーを作成するのにには、この列の情報を使用します。 列の情報は、このクラスによって作成および管理のバッファーに格納されます。 使用して、バッファーからデータを取得[cdynamicstringaccessor::getstring](../../data/oledb/cdynamicstringaccessor-getstring.md)を使用して、バッファーに格納または[cdynamicstringaccessor::setstring](../../data/oledb/cdynamicstringaccessor-setstring.md)です。  
   
-## 例  
+## <a name="example"></a>例  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // Using_Dynamic_Accessors_b.cpp  
@@ -160,16 +163,16 @@ int main( int argc, char* argv[] )
 }  
 ```  
   
-## CDynamicParameterAccessor の使い方  
- [CDynamicParameterAccessor](../../data/oledb/cdynamicparameteraccessor-class.md) は [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) と同様ですが、`CDynamicParameterAccessor` は [ICommandWithParameters](https://msdn.microsoft.com/en-us/library/ms712937.aspx) インターフェイスを呼び出すことで設定されるパラメーター情報を取得する点が異なります。  コンシューマーがこのクラスを使用するには、プロバイダーで `ICommandWithParameters` がサポートされている必要があります。  
+## <a name="using-cdynamicparameteraccessor"></a>Using CDynamicParameterAccessor  
+ [CDynamicParameterAccessor](../../data/oledb/cdynamicparameteraccessor-class.md)に似ていますが[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)する点を除いて、`CDynamicParameterAccessor`を呼び出すことによって設定するパラメーター情報を取得する、 [ICommandWithParameters](https://msdn.microsoft.com/en-us/library/ms712937.aspx)インターフェイスです。 コンシューマーがこのクラスを使用するには、プロバイダーで `ICommandWithParameters` がサポートされている必要があります。  
   
- パラメーター情報は、このクラスによって作成および管理されるバッファーに格納されます。  パラメーター データは、[CDynamicParameterAccessor::GetParam](../Topic/CDynamicParameterAccessor::GetParam.md) と [CDynamicParameterAccessor::GetParamType](../../data/oledb/cdynamicparameteraccessor-getparamtype.md) を使用してバッファーから取得します。  
+ パラメーター情報は、このクラスによって作成および管理されるバッファーに格納されます。 使用してバッファーからパラメーター データを取得[cdynamicparameteraccessor::getparam](../../data/oledb/cdynamicparameteraccessor-getparam.md)と[Cdynamicparameteraccessor:getparamtype](../../data/oledb/cdynamicparameteraccessor-getparamtype.md)です。  
   
- このクラスを使用して SQL Server のストアド プロシージャを実行し、出力パラメーター値を取得する方法の例については、サポート技術情報の「HOWTO: Execute Stored Procedure Using CDynamicParmeterAccesor \(Q198519\)」を参照してください。サポート技術情報の文書は、MSDN ライブラリの Visual Studio のドキュメントで使用したり、です [http:\/\/support.microsoft.com](http://support.microsoft.com/)。  
+ このクラスを使用して SQL Server のストアド プロシージャを実行し、出力パラメーター値を取得する方法の例については、サポート技術情報の記事 Q058860 の「HOWTO: Execute Stored Procedure using CDynamicParameterAccessor」を参照してください。 サポート技術情報の記事は、MSDN ライブラリの Visual Studio のマニュアルまたはで入手[http://support.microsoft.com](http://support.microsoft.com/)です。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [アクセサーの使用](../../data/oledb/using-accessors.md)   
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)   
  [CDynamicStringAccessor クラス](../../data/oledb/cdynamicstringaccessor-class.md)   
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)   
- [DynamicConsumer Sample](http://msdn.microsoft.com/ja-jp/2ccc4c61-6749-4e83-aa81-00f8009c0dc3)
+ [DynamicConsumer サンプル](http://msdn.microsoft.com/en-us/2ccc4c61-6749-4e83-aa81-00f8009c0dc3)

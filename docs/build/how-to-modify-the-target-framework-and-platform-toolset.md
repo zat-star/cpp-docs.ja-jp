@@ -15,11 +15,12 @@ caps.latest.revision: "32"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7a9ab87cc24a106e70e9662f58e7c7266dd39d8f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7ed85e0f1e1ce94401c505281c0e693a4904f92d
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="how-to-modify-the-target-framework-and-platform-toolset"></a>方法: ターゲット フレームワークおよびプラットフォームのツールセットを変更する
 異なるバージョンの .NET Framework を対象とする別のプラットフォーム ツールセットを使用して、Visual C プロジェクト設定を変更することができます。 既定では、プロジェクト システムは、プロジェクトの作成に使用する Visual Studio のバージョンに対応する .NET Framework のバージョンおよびツールセットのバージョンを使用します。 プロジェクトのプロパティを変更することで、対象のプラットフォーム ツールセットを変更できます。 プロジェクト (.vcxproj) ファイルを変更すると、ターゲット フレームワークを変更できます。 それぞれの対象をコンパイルするために個別のコード ベースを保守する必要はありません。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  対象とするプラットフォーム ツールセットを変更するには、関連付けられたバージョンの Visual Studio または Windows プラットフォーム SDK がインストールされている必要があります。 たとえば、 **Windows7.1SDK** のプラットフォーム ツールセットを使って Itanium プラットフォームを対象とするには、 [Microsoft Windows SDK for Windows 7 と .NET Framework 4 SP1](http://www.microsoft.com/download/details.aspx?id=8279) がインストールされている必要があります。ただし、正しい Framework のバージョンとプラットフォーム ツールセットを対象としている場合には、開発作業を行うために Visual Studio の別の互換性のあるバージョンを使います。  
   
- カスタム プラットフォーム ツールセットを作成することで、さらにターゲット フレームワークを拡張できます。 詳細については、Visual C++ チーム ブログの [C++ Native Multi-Targeting (C++ ネイティブ マルチ ターゲット)](http://go.microsoft.com/fwlink/?LinkId=196619) をご覧ください。  
+ カスタム プラットフォーム ツールセットを作成することで、さらにターゲット フレームワークを拡張できます。 詳細については、次を参照してください。 [C++ ネイティブ マルチ ターゲット](http://go.microsoft.com/fwlink/p/?linkid=196619)Visual c ブログ。  
   
 ### <a name="to-change-the-target-framework"></a>ターゲット フレームワークを変更するには  
   
@@ -65,5 +66,5 @@ ms.lasthandoff: 10/24/2017
   
 5.  **[OK]** を選択します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MSBuild (Visual C++)](../build/msbuild-visual-cpp.md)

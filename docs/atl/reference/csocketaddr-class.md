@@ -23,11 +23,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5ed1224fd00d5decb8dc99910563b47e4ba60350
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cadd771e6c3a9e7addb6893b4427183cfff293c9
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="csocketaddr-class"></a>CSocketAddr クラス
 このクラスは、ホスト アドレス、IPv4 と IPV6 の両方の形式をサポートするホスト名を変換するためのメソッドを提供します。  
@@ -63,7 +64,7 @@ class CSocketAddr
   
  このクラスは、両方の IPv4 と Ipv6 ネットワーク アドレスをサポートします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsocket.h  
   
 ##  <a name="csocketaddr"></a>CSocketAddr::CSocketAddr  
@@ -207,7 +208,7 @@ addrinfo* const GetAddrInfoList() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 1 つまたは複数のリンク リストへのポインター`addrinfo`ホストの応答情報を含む構造体。 詳細については、`addrinfo`構造体、"addrinfo"記事を参照して、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/linkid=556)  
+ 1 つまたは複数のリンク リストへのポインター`addrinfo`ホストの応答情報を含む構造体。 詳細については、次を参照してください。 [addrinfo 構造](https://msdn.microsoft.com/library/windows/desktop/ms737530)です。
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 190a10d83ab4935f8c0f891bbd449b7eb9762b62
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 96bf13867299ee6cc1be83657f9862412fa5fa1b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-an-atl-project"></a>ATL プロジェクトの作成
 ATL プロジェクトを作成する最も簡単な方法は、の Win32 プロジェクト フォルダーにある、ATL プロジェクト ウィザードを使用して、**新しいプロジェクト ダイアログ ボックス**です。  
@@ -43,7 +44,7 @@ ATL プロジェクトを作成する最も簡単な方法は、の Win32 プロ
   
  作成されたファイルを表示するには、プロジェクトが作成されると、**ソリューション エクスプ ローラー**です。 ウィザードでプロジェクト用に作成されるファイルの詳細については、プロジェクトが生成する ReadMe.txt ファイルを参照してください。 ファイルの種類の詳細については、次を参照してください。 [Visual c プロジェクトに対して作成されるファイルの種類](../../ide/file-types-created-for-visual-cpp-projects.md)です。 新しい ATL プロジェクト、およびそれらを変更する方法の構成の詳細については、次を参照してください。 [ATL プロジェクトの既定の構成](../../atl/reference/default-atl-project-configurations.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)   
  [プロパティ ページ](../../ide/property-pages-visual-cpp.md)   
  [アプリケーションを展開します。](http://msdn.microsoft.com/en-us/4ff8881d-0daf-47e7-bfe7-774c625031b4)

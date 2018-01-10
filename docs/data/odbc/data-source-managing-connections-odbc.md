@@ -29,11 +29,14 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6a88aab7023791de7f01ea9c3b189528e845bd02
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 9b83093496d355fdba8b5d714875d08040ae28ac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-source-managing-connections-odbc"></a>データ ソース : 接続 (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
@@ -139,7 +142,7 @@ ms.lasthandoff: 10/24/2017
   
 2.  オブジェクトを破棄せずに呼び出すその`OpenEx`または**開く**メンバー関数は、もう一度です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ ソース (ODBC)](../../data/odbc/data-source-odbc.md)   
  [データ ソース: データ ソース (ODBC) のスキーマを決定します。](../../data/odbc/data-source-determining-the-schema-of-the-data-source-odbc.md)   
  [CRecordset クラス](../../mfc/reference/crecordset-class.md)

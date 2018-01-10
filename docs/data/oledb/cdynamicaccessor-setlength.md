@@ -19,11 +19,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 364c6d7bbf33abd0b9a4f2e09cb6760f9a21e4d3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: a01bd3f22e2a7bd14f2f83e1d7e4c28f3ff9601a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdynamicaccessorsetlength"></a>CDynamicAccessor::SetLength
 指定された列の長さを設定します。  
@@ -59,9 +62,9 @@ bool SetLength(
 ## <a name="return-value"></a>戻り値  
  返します**true**指定された列の長さは正常に設定されている場合。 この関数を返しますそれ以外の場合、 **false**です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)   
  [CDynamicAccessor::GetLength](../../data/oledb/cdynamicaccessor-getlength.md)

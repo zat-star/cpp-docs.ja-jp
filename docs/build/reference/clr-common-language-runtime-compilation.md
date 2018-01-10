@@ -24,11 +24,12 @@ caps.latest.revision: "72"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d6c6882732064b002f0c2d4eef03a0fee2f62287
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6a867203585a66bd07eb9f95e289557e82e0553a
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="clr-common-language-runtime-compilation"></a>/clr (共通言語ランタイムのコンパイル)
 アプリケーションおよびコンポーネントで、共通言語ランタイム (CLR) の機能を使用できるようにします。  
@@ -75,7 +76,7 @@ ms.lasthandoff: 10/24/2017
  Visual C++ 2005 より前のバージョンでは、 **/clr:noAssembly** には **/LD**が必要です。 現在は、**/LD** を指定すると **/LD**が暗黙的に指定されるようになっています。  
   
  **/clr:initialAppDomain**  
- [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] アプリケーションを CLR の Version 1 で実行できるようにします。 **initialAppDomain**を使用する場合は、Microsoft サポート Web サイトの [Visual C++ コンポーネントのマネージ拡張を使用する場合の AppDomainUnloaded 例外のバグ](http://go.microsoft.com/fwlink/?LinkID=169465) に関するページに記載されている問題が発生する可能性があります。  
+ [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] アプリケーションを CLR の Version 1 で実行できるようにします。 使用する場合**initialAppDomain**に記載されている問題の一部が表示する場合があります、[バグ: 使用する場合の AppDomainUnloaded 例外のマネージ拡張を Visual C コンポーネント](http://go.microsoft.com/fwlink/p/?linkid=169465)microsoftWeb サイトをサポートします。  
   
  CLR の Version 1 では ASP.NET をサポートしていないため、 **initialAppDomain** を使用してコンパイルされたアプリケーションは、ASP.NET を使用しているアプリケーションでは使用しないでください。  
   
@@ -161,6 +162,6 @@ class {} x;
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.CompileAsManaged%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

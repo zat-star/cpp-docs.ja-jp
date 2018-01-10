@@ -1,73 +1,75 @@
 ---
-title: "CArrayRowset クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CArrayRowset<TAccessor>"
-  - "ATL.CArrayRowset"
-  - "CArrayRowset"
-  - "ATL::CArrayRowset"
-  - "ATL::CArrayRowset<TAccessor>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CArrayRowset クラス"
+title: "CArrayRowset クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL.CArrayRowset<TAccessor>
+- ATL.CArrayRowset
+- CArrayRowset
+- ATL::CArrayRowset
+- ATL::CArrayRowset<TAccessor>
+dev_langs: C++
+helpviewer_keywords: CArrayRowset class
 ms.assetid: 511427e1-73ca-4fd8-9ba1-ae9463557cb6
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 541bf3ea26ae57d0fd61c2d561b4fc87bbcc2932
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CArrayRowset クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-配列の構文を使用して、行セットの要素にアクセスします。  
+# <a name="carrayrowset-class"></a>CArrayRowset クラス
+配列の構文を使用して行セットの要素をアクセスします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template < class TAccessor >  
 class CArrayRowset :   
-   public CVirtualBuffer <TAccessor>,   
+   public CVirtualBuffer <TAccessor>,   
    protected CBulkRowset <TAccessor>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `TAccessor`  
- これを使用して、行セットにするアクセサー クラスの型。  
+ アクセサー クラスを使用する、行セットの種類。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### メソッド  
+### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
 |[CArrayRowset](../../data/oledb/carrayrowset-carrayrowset.md)|コンストラクターです。|  
-|[&#91;スナップショット&#93;](../../data/oledb/carrayrowset-snapshot.md)|メモリに行全体の設定を読み込みます。|  
+|[スナップショット](../../data/oledb/carrayrowset-snapshot.md)|行セット全体をメモリに読み込みます。|  
   
-### 演算子  
-  
-|||  
-|-|-|  
-|[&#91;&#93;演算子&#93;](../Topic/CArrayRowset::operator.md)|行セットの要素にアクセスします。|  
-  
-### データ メンバー  
+### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[CArrayRowset::m\_nRowsRead](../../data/oledb/carrayrowset-m-nrowsread.md)|既に読み込んだ行数。|  
+|[演算子 & #91、&#93;](../../data/oledb/carrayrowset-operator.md)|行セットの要素にアクセスします。|  
   
-## 必要条件  
+### <a name="data-members"></a>データ メンバー  
+  
+|||  
+|-|-|  
+|[CArrayRowset::m_nRowsRead](../../data/oledb/carrayrowset-m-nrowsread.md)|既に読み取られた行の数。|  
+  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)   
- [CRowset クラス](../Topic/CRowset%20Class.md)
+ [CRowset クラス](../../data/oledb/crowset-class.md)

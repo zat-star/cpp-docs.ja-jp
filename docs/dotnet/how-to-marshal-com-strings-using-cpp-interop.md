@@ -1,42 +1,44 @@
 ---
-title: "方法: C++ Interop を使用して COM 文字列をマーシャリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++ 相互運用機能, 文字列"
-  - "COM [C++], マーシャリング (文字列の)"
-  - "データ マーシャリング [C++], 文字列"
-  - "相互運用 [C++], 文字列"
-  - "マーシャリング [C++], 文字列"
+title: "方法: C++ Interop を使用して COM 文字列をマーシャ リング |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- interop [C++], strings
+- marshaling [C++], strings
+- C++ Interop, strings
+- data marshaling [C++], strings
+- COM [C++], marshaling strings
 ms.assetid: 06590759-bf99-4e34-a3a9-4527ea592cc2
-caps.latest.revision: 15
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 45a79f3aa78d229c71aba5a1d1144d05afe7bbd7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: C++ Interop を使用して COM 文字列をマーシャリングする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、マネージ関数とアンマネージ関数の間で BSTR \(COM プログラミングで推奨される基本文字列形式\) を渡す方法を説明します。  その他の文字列型との相互運用については、次のトピックを参照してください。  
+# <a name="how-to-marshal-com-strings-using-c-interop"></a>方法: C++ Interop を使用して COM 文字列をマーシャリングする
+このトピックでは、(COM プログラミングで推奨される基本的な文字列形式) の BSTR をする方法を示しますをアンマネージ関数と、その逆に、管理対象から渡されます。 その他の文字列型との相互運用、次のトピックを参照してください。  
   
--   [方法: C\+\+ Interop を使用して Unicode 文字列をマーシャリングする](../dotnet/how-to-marshal-unicode-strings-using-cpp-interop.md)  
+-   [方法: C++ Interop を使用して Unicode 文字列をマーシャリングする](../dotnet/how-to-marshal-unicode-strings-using-cpp-interop.md)  
   
--   [方法: C\+\+ Interop を使用して ANSI 文字列をマーシャリングする](../Topic/How%20to:%20Marshal%20ANSI%20Strings%20Using%20C++%20Interop.md)  
+-   [方法: C++ Interop を使用して ANSI 文字列をマーシャリングする](../dotnet/how-to-marshal-ansi-strings-using-cpp-interop.md)  
   
- 次のコード例では、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md) の \#pragma ディレクティブを使用してマネージ関数とアンマネージ関数を同じファイル内で実装していますが、これらの関数は、別個のファイルに定義された場合も同じように相互運用できます。  アンマネージ関数のみを含むファイルは、[\/clr \(共通言語ランタイムのコンパイル\)](../build/reference/clr-common-language-runtime-compilation.md) でコンパイルする必要はありません。  
+ 次のコード例、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md)個別のファイルで定義されている場合、これらの関数が同様に、相互運用が、マネージ リソースと、同じファイル内の関数をアンマネージ #pragma ディレクティブを実装します。 アンマネージ関数のみを含むファイルを使用してコンパイルする必要はありません[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)です。  
   
-## 使用例  
- 次の例は、マネージ関数からアンマネージ関数に BSTR \(COM プログラミングで使用される文字列形式\) を渡す方法を示しています。  呼び出し元のマネージ関数は、<xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A> を使用して、.NET System.String のコンテンツの BSTR 表現のアドレスを取得します。  このポインターは、アンマネージ関数の実行中にガベージ コレクション サイクルでその物理アドレスが変更されないように、[pin\_ptr \(C\+\+\/CLI\)](../Topic/pin_ptr%20\(C++-CLI\).md) を使用して固定されます。  ガベージ コレクターは、[pin\_ptr \(C\+\+\/CLI\)](../Topic/pin_ptr%20\(C++-CLI\).md) が適用範囲の外になるまでメモリを移動できません。  
+## <a name="example"></a>例  
+ 次の例では、BSTR (COM プログラミングで使用される文字列形式) を渡す方法を示しています、アンマネージ関数をマネージからです。 呼び出し元関数の使用を管理する<xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A>.NET System.String の内容の BSTR 形式のアドレスを取得します。 使用してこのポインターがピン留め[pin_ptr (C + + CLI)](../windows/pin-ptr-cpp-cli.md)をアンマネージ関数の実行中に、その物理アドレスは、ガベージ コレクション サイクル中に変更されないことを確認します。 ガベージ コレクターが移動されるまでメモリを禁止、 [pin_ptr (C + + CLI)](../windows/pin-ptr-cpp-cli.md)がスコープ外になります。  
   
 ```  
 // MarshalBSTR1.cpp  
@@ -71,8 +73,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- 次の例は、アンマネージ関数からアンマネージ関数に BSTR を渡す方法を示しています。  受信側のマネージ関数は、その文字列を BSTR として使用したり、または他のマネージ関数と併用するために <xref:System.Runtime.InteropServices.Marshal.PtrToStringBSTR%2A> を使用して <xref:System.String> に変換したりできます。  BSTR を表すメモリはアンマネージ ヒープに割り当てられ、またアンマネージ ヒープ上にはガベージ コレクションが存在しないため、固定の必要はありません。  
+## <a name="example"></a>例  
+ 次の例では、BSTR を渡す方法を示しています、アンマネージ関数をアンマネージ関数から。 マネージ関数で文字列を BSTR として使用したりを使用して受信<xref:System.Runtime.InteropServices.Marshal.PtrToStringBSTR%2A>に変換するために、<xref:System.String>他で使用するマネージ関数です。 BSTR を表すメモリが割り当てられるので、アンマネージ ヒープのピン留めは必要ありません、アンマネージ ヒープのガベージ コレクションが存在しないためです。  
   
 ```  
 // MarshalBSTR2.cpp  
@@ -109,5 +111,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+## <a name="see-also"></a>参照  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

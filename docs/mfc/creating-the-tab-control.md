@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: db477a8966e7a7ec5368e5ed9e783b466acbf103
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 91349f46e577a2a433217f84d9e028139eb09c9d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-the-tab-control"></a>タブ コントロールの作成
 タブ コントロールの作成方法は、ダイアログ ボックスで、コントロールの使用か以外のウィンドウで作成するかによって異なります。  
@@ -67,7 +68,7 @@ ms.lasthandoff: 10/24/2017
   
  ボタンの間に表示される区切り記号が削除されます、`CTabCtrl`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CTabCtrl の使い方](../mfc/using-ctabctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

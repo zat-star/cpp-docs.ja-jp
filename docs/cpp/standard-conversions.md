@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 954ba431378317a3f9079677f49223a336af5d9e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 324fa54362098e2b7ffae6fdf368bf590846f9c1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="standard-conversions"></a>標準変換
 C++ 言語では、基本型間での変換が定義されています。 また、ポインター、参照、およびメンバーへのポインターの派生型についても変換が定義されています。 これらの変換を "標準変換" といいます  (種類、標準の型、および派生型に関する詳細については、次を参照してください[型](http://msdn.microsoft.com/en-us/6882ee83-ea32-4373-8d57-c3efbbc15af0)。)。  
@@ -204,15 +205,15 @@ int main() {
   
 |関数の型|派生|変換 (<br /><br /> B * A から\*法的しますか?|  
 |----------------------|----------------|-------------------------------------------|  
-|外部 (非クラス スコープ) 関数|プライベート|いいえ|  
-||プロテクト|いいえ|  
-||パブリック|はい|  
-|B のメンバー関数 (B のスコープ内)|プライベート|はい|  
-||プロテクト|はい|  
-||パブリック|はい|  
-|C のメンバー関数 (C のスコープ内)|プライベート|いいえ|  
-||プロテクト|はい|  
-||パブリック|はい|  
+|外部 (非クラス スコープ) 関数|Private|×|  
+||プロテクト|×|  
+||Public|[はい]|  
+|B のメンバー関数 (B のスコープ内)|Private|[はい]|  
+||プロテクト|[はい]|  
+||パブリック|[はい]|  
+|C のメンバー関数 (C のスコープ内)|プライベート|×|  
+||プロテクト|[はい]|  
+||パブリック|[はい]|  
   
  クラスへのポインターを基底クラスへのポインターに変換できる 2 番目のケースは、明示的な型変換を使用する場合です  (を参照してください[明示的な型変換を含む式](http://msdn.microsoft.com/en-us/060ad6b4-9592-4f3e-8509-a20ac84a85ae)明示的な型変換の詳細についてはします)。  
   
@@ -326,5 +327,5 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)

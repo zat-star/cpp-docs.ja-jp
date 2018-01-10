@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 helpviewer_keywords:
@@ -14,16 +13,16 @@ helpviewer_keywords:
 - universal character names
 - basic execution character set (C++)
 ms.assetid: 379a2af6-6422-425f-8352-ef0bca6c0d74
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 0ae13c64b6385fab6f41ba402737c7af3b24795a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: db505809c1fbc2c49e116b9c2f850f6e14dfbdf6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="character-sets"></a>文字セット
 C++ プログラムのテキストは、特定の文字エンコーディングを使用するソース ファイルに保存されます。 C++ 標準では、ソース ファイル用の基本ソース文字セットと、コンパイル済みファイル用の基本実行文字セットを規定しています。 Visual C++ では、ソース ファイルとコンパイル済みファイルに、ロケール固有の追加の文字セットを使用できます。  
@@ -46,7 +45,7 @@ C++ プログラムのテキストは、特定の文字エンコーディング�
   
  Visual C++ には、基本ソース文字セットのメンバーとして `$` 文字が含まれています。 さらに、Visual C++ では、ファイルのエンコーディングに基づいて、追加の文字セットをソース ファイルで使用できます。 既定では、Visual Studio は既定のコードページを使用して、ソース ファイルを保存します。 ロケール固有のコードページや Unicode コードページでソース コードを保存すると、Visual C++ では、そのコードページの任意の文字をソース ファイルで使用できるようになります。ただし、基本ソース文字セットで明示的に許可されていない制御コードは使用できません。 たとえば、日本語コードページを使用してファイルを保存すれば、コメントや識別子、文字列リテラルを日本語の文字で記述できます。 Visual C++ では、有効なマルチバイト文字または Unicode コード ポイントに変換できない文字シーケンスは使用できません。 コンパイラ オプションによっては、一部の文字が識別子に使用できなくなることがあります。 詳細については、「 [Identifiers](../cpp/identifiers-cpp.md)」を参照してください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
 ### <a name="universal-character-names"></a>ユニバーサル文字名  
  C++ プログラムでは、基本ソース文字セットで規定されている文字よりも多くの文字を使用できます。それらの文字は、 *ユニバーサル文字名*を使用して移植可能な方法で指定します。 ユニバーサル文字名は、Unicode コード ポイントを表す文字のシーケンスで構成されます。  これには 2 つの形式があります。 `\UNNNNNNNN` は、U+NNNNNNNN 形式の Unicode コード ポイントを表すために使用します。この NNNNNNNN は、8 桁の 16 進コード ポイント番号です。 4 桁の `\uNNNN` は、U+0000NNNN 形式の Unicode コード ポイントを表すために使用します。  
@@ -65,7 +64,7 @@ if (キ == 42) return true; // \u30AD and キ are the same to the compiler
   
  Windows クリップボードでの拡張文字の形式は、アプリケーションのロケール設定によって決まります。 こうした文字を別のアプリケーションから切り取って、コードに貼り付けると、予期しない文字のエンコーディングが発生することがあります。 これは、コードの外見には現れない解析エラーの発生につながります。 拡張文字を貼り付ける前に、ソース ファイルのエンコーディングを Unicode コードページに設定するようにしてください。 また、拡張文字の生成には、IME または文字コード表アプリを使用するようにしてください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
 ### <a name="basic-execution-character-set"></a>基本実行文字セット  
  *基本実行文字セット* および *基本実行ワイド文字セット* は、基本ソース文字セットに含まれるすべての文字と、アラート、バックスペース、復帰および Null 文字を表す制御文字で構成されます。   *実行文字セット* および *実行ワイド文字セット* は、基本セットのスーパセットです。 これらは、基本ソース文字セットには含まれていない、実装で定義されたソース文字を含んでいます。 実行文字セットには、ロケール固有の表現があります。

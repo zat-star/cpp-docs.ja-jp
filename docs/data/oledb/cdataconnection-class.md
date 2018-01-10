@@ -1,74 +1,76 @@
 ---
-title: "CDataConnection クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::CDataConnection"
-  - "ATL.CDataConnection"
-  - "CDataConnection"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CDataConnection クラス"
+title: "CDataConnection クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::CDataConnection
+- ATL.CDataConnection
+- CDataConnection
+dev_langs: C++
+helpviewer_keywords: CDataConnection class
 ms.assetid: 77432d85-4e20-49ec-a0b0-142137828471
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 65e147366ecb7120a9dd2a98cde0c812d02582da
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CDataConnection クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データ ソースの接続を管理します。  
+# <a name="cdataconnection-class"></a>CDataConnection クラス
+データ ソースとの接続を管理します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class CDataConnection  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### メソッド  
-  
-|||  
-|-|-|  
-|[CDataConnection](../../data/oledb/cdataconnection-cdataconnection.md)|コンストラクターです。  `CDataConnection` オブジェクトをインスタンス化し、初期化します。|  
-|[&#91;Copy&#93;](../../data/oledb/cdataconnection-copy.md)|既存のデータ接続のコピーを作成します。|  
-|[&#91;Open&#93;](../../data/oledb/cdataconnection-open.md)|初期化文字列を使用してデータ ソースへの接続を開きます。|  
-|[OpenNewSession](../../data/oledb/cdataconnection-opennewsession.md)|現在の接続の新しいセッションが開きます。|  
-  
-### 演算子  
+### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
-|[operator BOOL](../../data/oledb/cdataconnection-operator-bool.md)|現在のセッションが開いているかどうかを判定します。|  
-|[operator bool](../../data/oledb/cdataconnection-operator-bool-ole-db.md)|現在のセッションが開いているかどうかを判定します。|  
-|[CDataSource 演算子&](../../data/oledb/cdataconnection-operator-cdatasource-amp.md)|`CDataSource` に含まれるオブジェクトへの参照を返します。|  
-|[CDataSource\* 演算子](../Topic/CDataConnection::operator%20CDataSource*.md)|`CDataSource` に含まれるオブジェクトへのポインターを返します。|  
-|[CSession 演算子&](../../data/oledb/cdataconnection-operator-csession-amp.md)|`CSession` に含まれるオブジェクトへの参照を返します。|  
-|[CSession\* 演算子](../../data/oledb/cdataconnection-operator-csession-star.md)|`CSession` に含まれるオブジェクトへのポインターを返します。|  
+|[CDataConnection](../../data/oledb/cdataconnection-cdataconnection.md)|コンストラクターです。 インスタンスを作成し、初期化、`CDataConnection`オブジェクト。|  
+|[コピー](../../data/oledb/cdataconnection-copy.md)|既存のデータ接続のコピーを作成します。|  
+|[開く](../../data/oledb/cdataconnection-open.md)|初期化文字列を使用してデータ ソースへの接続を開きます。|  
+|[OpenNewSession](../../data/oledb/cdataconnection-opennewsession.md)|現在の接続で新しいセッションを開きます。|  
   
-## 解説  
- `CDataConnection` は 必要なオブジェクト \(データ ソースとセッション\)、それをする必要がある作業をカプセル化するので、クライアントを作成するための便利なクラスは、データ ソースに接続する場合  
+### <a name="operators"></a>演算子  
   
- `CDataConnection`なしで、`CDataSource` オブジェクトを作成し、[CSession](../../data/oledb/csession-class.md) オブジェクトのインスタンスを呼び出し、[CCommand](../../data/oledb/ccommand-class.md) オブジェクトを作成するに [開く](../../data/oledb/csession-open.md) のメソッドを作成するに [OpenFromInitializationString](../../data/oledb/cdatasource-openfrominitializationstring.md) のメソッドを、および呼び出し、**開く**\*にメソッドを呼び出す必要があります。  
+|||  
+|-|-|  
+|[BOOL 演算子](../../data/oledb/cdataconnection-operator-bool.md)|か、現在のセッションが開いているかどうかを判断します。|  
+|[operator bool](../../data/oledb/cdataconnection-operator-bool-ole-db.md)|か、現在のセッションが開いているかどうかを判断します。|  
+|[CDataSource 演算子 (& a)](../../data/oledb/cdataconnection-operator-cdatasource-amp.md)|格納されている参照を返します`CDataSource`オブジェクト。|  
+|[CDataSource * 演算子](../../data/oledb/cdataconnection-operator-cdatasource-star.md)|格納されているポインターを返します`CDataSource`オブジェクト。|  
+|[演算子 CSession &](../../data/oledb/cdataconnection-operator-csession-amp.md)|格納されている参照を返します`CSession`オブジェクト。|  
+|[演算子 CSession *](../../data/oledb/cdataconnection-operator-csession-star.md)|格納されているポインターを返します`CSession`オブジェクト。|  
   
- `CDataConnection`によって、接続オブジェクトを作成する必要があります。これに初期化文字列を渡しましたり、開くコマンドにより、その接続を使用します。  データベースへの接続を繰り返し使用することを計画している場合は、接続を開始することをお勧め `CDataConnection` であり、この方法が便利な方法を提供します。  
+## <a name="remarks"></a>コメント  
+ `CDataConnection`クラスは、必要なオブジェクト (データ ソースとセッション) とデータ ソースに接続する場合に行う必要がある作業の一部をカプセル化するためにクライアントを作成するには  
+  
+ せず`CDataConnection`、作成する必要が、`CDataSource`オブジェクトを呼び出すその[OpenFromInitializationString](../../data/oledb/cdatasource-openfrominitializationstring.md)メソッドのインスタンスを作成、 [CSession](../../data/oledb/csession-class.md)オブジェクトを呼び出してその[開いている](../../data/oledb/csession-open.md)メソッド、作成し、 [CCommand](../../data/oledb/ccommand-class.md)オブジェクトと呼び出しその**開く*** メソッドです。  
+  
+ `CDataConnection`、のみ、接続オブジェクトを作成し、初期化文字列を渡す、コマンドを開く、その接続を使用する必要があります。 接続を開き、維持することをお勧めは、データベースへの接続を繰り返し使用する場合と`CDataConnection`を行うには便利な方法を提供します。  
   
 > [!NOTE]
->  複数のセッションを処理する必要があるデータベース アプリケーションを作成する [OpenNewSession](../../data/oledb/cdataconnection-opennewsession.md)を使用する必要があります。  
+>  複数のセッションを処理する必要があるデータベース アプリケーションを作成する場合は、使用する必要があります[OpenNewSession](../../data/oledb/cdataconnection-opennewsession.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)

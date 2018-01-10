@@ -1,32 +1,33 @@
 ---
-title: "PROVIDER_COLUMN_ENTRY_LENGTH | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PROVIDER_COLUMN_ENTRY_LENGTH"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PROVIDER_COLUMN_ENTRY_LENGTH マクロ"
+title: "PROVIDER_COLUMN_ENTRY_LENGTH |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: PROVIDER_COLUMN_ENTRY_LENGTH
+dev_langs: C++
+helpviewer_keywords: PROVIDER_COLUMN_ENTRY_LENGTH macro
 ms.assetid: b4a67246-c049-4622-bb65-242cc8cae4be
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e7f0d4ed3eeff7d60aa91849d62446d17765ce52
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# PROVIDER_COLUMN_ENTRY_LENGTH
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プロバイダーでサポートされる特定の列を表します。  
+# <a name="providercolumnentrylength"></a>PROVIDER_COLUMN_ENTRY_LENGTH
+プロバイダーでサポートされている特定の列を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,29 +36,29 @@ name
 , ordinal, size, member )  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *name*  
- \[\]項目の名前です。  
+ [in]列の名前。  
   
  `ordinal`  
- \[入力\] 列番号。  列がブックマーク列でない場合は、行数は 0 です。  
+ [in]列番号。 列は、ブックマーク列でない限り、列番号は 0 をできません。  
   
  `size`  
- \[\]バイト列のサイズ。  
+ [in]列のサイズ (バイト単位)。  
   
  `member`  
- \[\]列のデータを格納する `dataClass` のメンバー変数。  
+ [in]内のメンバー変数`dataClass`列のデータを格納します。  
   
-## 解説  
- 割り当て列のサイズを指定します。  
+## <a name="remarks"></a>コメント  
+ 列のサイズを指定できます。  
   
-## 使用例  
- [BEGIN\_PROVIDER\_COLUMN\_MAP](../../data/oledb/begin-provider-column-map.md)を参照してください。  
+## <a name="example"></a>例  
+ 参照してください[BEGIN_PROVIDER_COLUMN_MAP](../../data/oledb/begin-provider-column-map.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート用マクロ](../../data/oledb/macros-for-ole-db-provider-templates.md)   
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   

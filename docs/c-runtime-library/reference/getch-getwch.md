@@ -40,11 +40,12 @@ caps.latest.revision: "26"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 41b9a1be2cffccadf824b2bcc24d8a2f008f23f6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: aee3ed86629689bc69b7f437d3e54339bf5a6710
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="getch-getwch"></a>_getch、_getwch
 エコーなしでコンソールから文字を取得します。  
@@ -73,14 +74,14 @@ wint_t _getwch( void );
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_gettch`|`_getch`|`_getch`|`_getwch`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_getch`|\<conio.h>|  
 |`_getwch`|\<conio.h> または \<wchar.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -118,7 +119,7 @@ abcdefy
 Type 'Y' when finished typing keys: Y  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   
  [_getche、_getwche](../../c-runtime-library/reference/getche-getwche.md)   
  [_cgets、_cgetws](../../c-runtime-library/cgets-cgetws.md)   

@@ -22,11 +22,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 90266f54dd6972e68abe770bad4ee323eebf46b7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 59d30e2afd07c21cb42dbc2b9109d7547d6c5b9f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="build-system-changes"></a>ビルド システムの変更点
 MSBuild システムを使用すると、Visual C プロジェクトをビルドします。 ただし、Visual Studio 2008 以前のリリースで、VCBuild システムが使用されます。 特定ファイルの種類と VCBuild に依存していたの概念は、存在しないかは現在のシステムで異なる方法で表されます。 このドキュメントでは、現在のビルド システムの違いについて説明します。  
@@ -73,5 +74,5 @@ Property=<value>;$(MyProperty)
   
  Visual C の以前のリリースによって作成される .vssettings ファイルから vc++ ディレクトリの設定を移行します。 開いている、**ツール**] メニューのをクリックして**インポートおよびエクスポート設定**[**選択された環境設定をインポート**、ウィザードの指示に従います。 時、または起動時 Visual Studio を初めて、上、 **既定の環境設定**ダイアログ ボックスで、**以前のバージョンから有効な設定を移行し、既定の設定だけでなく、それらを適用以下の選択**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MSBuild (Visual C++)](../build/msbuild-visual-cpp.md)

@@ -23,14 +23,15 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 043c3307ed2729740cf973119264eb21d62a7a2b
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload: cplusplus
+ms.openlocfilehash: 2205862a438099c08801556f511ebf3c5e93a277
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-activex-controls-advanced-topics"></a>MFC ActiveX コントロール : 高度なトピック
-この記事では、ActiveX コントロールの開発に関連する高度なトピックについて説明します。 以下に例を示します。  
+この記事では、ActiveX コントロールの開発に関連する高度なトピックについて説明します。 次の設定があります。  
   
 -   [ActiveX コントロールにおけるデータベース クラスの使用](#_core_using_database_classes_in_activex_controls)  
   
@@ -109,7 +110,7 @@ ms.lasthandoff: 10/31/2017
   
 ### <a name="activex-control-error-codes"></a>ActiveX コントロール エラー コード  
   
-|エラー|説明|  
+|Error|説明|  
 |-----------|-----------------|  
 |**CTL_E_ILLEGALFUNCTIONCALL**|無効な関数呼び出し|  
 |**CTL_E_OVERFLOW**|オーバーフロー|  
@@ -174,12 +175,12 @@ ms.lasthandoff: 10/31/2017
   
 -   追加のメンバー変数ウィザードを使用して選択**コントロール変数**し、コントロールの id。 メンバー変数の名前を入力し、コントロールのラッパー クラスを選択、**コントロール型**です。  
   
-     または  
+     - または -  
   
 -   ダイアログの項目として、ローカル変数とサブクラスを宣言します。 次のようなコードを挿入 (`CMyCtrl`ラッパー クラスは、`IDC_MYCTRL1`コントロールの id を指定)。  
   
      [!code-cpp[NVC_MFC_AxCont#19](../mfc/codesnippet/cpp/mfc-activex-controls-advanced-topics_6.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
 

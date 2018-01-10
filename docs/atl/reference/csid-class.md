@@ -31,11 +31,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f5f49805438e124a6407a5a4c8428851ebe241d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3915206f0b05e33d5e13e41871a597ea7278ee8f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csid-class"></a>CSid クラス
 このクラスは、用のラッパー、 `SID` (セキュリティ識別子) 構造体。  
@@ -106,7 +107,7 @@ class CSid
   
  Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="accountname"></a>CSid::AccountName  
@@ -498,7 +499,7 @@ SID_NAME_USE SidNameUse() const throw();
 ### <a name="return-value"></a>戻り値  
  状態を示す値を格納するデータ メンバーの値を返します、`CSid`オブジェクト。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |SidTypeUser|ユーザーを示す`SID`(セキュリティ識別子)。|  
 |SidTypeGroup|グループを示す`SID`です。|  
@@ -513,7 +514,7 @@ SID_NAME_USE SidNameUse() const throw();
 ### <a name="remarks"></a>コメント  
  呼び出す[CSid::LoadAccount](#loadaccount)を更新する、`CSid`呼び出す前にオブジェクト`SidNameUse`の状態に戻ります。 `SidNameUse`オブジェクトの状態は変更されません (を呼び出すことによって**LookupAccountName**または**LookupAccountSid**)、現在の状態のみが返されますが、します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティのグローバル関数](../../atl/reference/security-global-functions.md)   

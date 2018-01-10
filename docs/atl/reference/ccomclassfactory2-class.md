@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -16,35 +15,19 @@ f1_keywords:
 - ATLCOM/ATL::CComClassFactory2::GetLicInfo
 - ATLCOM/ATL::CComClassFactory2::LockServer
 - ATLCOM/ATL::CComClassFactory2::RequestLicKey
-dev_langs:
-- C++
-helpviewer_keywords:
-- CComClassFactory2 class
+dev_langs: C++
+helpviewer_keywords: CComClassFactory2 class
 ms.assetid: 19b66fd6-b9ed-47a0-822c-8132184f5a3e
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 61026044fb5a4da7bebfe8f369c68af4c37ebf44
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: b5b1626a9ce7ef729416f7e6e1a6d3c60836dbed
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomclassfactory2-class"></a>CComClassFactory2 クラス
 このクラスは、実装、 [IClassFactory2](http://msdn.microsoft.com/library/windows/desktop/ms692720)インターフェイスです。  
@@ -64,7 +47,7 @@ class CComClassFactory2 : public IClassFactory2,
   
 - **静的な BOOL VerifyLicenseKey (BSTR** `bstr` **) です。**  
   
-- **静的な BOOL GetLicenseKey (DWORD** `dwReserved` **、BSTR\*** `pBstr` **) です。**  
+- **静的な BOOL GetLicenseKey (DWORD** `dwReserved` **、BSTR\***  `pBstr` **) です。**  
   
 - **静的な BOOL IsLicenseValid ();**  
   
@@ -85,11 +68,11 @@ class CComClassFactory2 : public IClassFactory2,
   
  ATL オブジェクトから派生することで、クラス ファクトリを取得する通常[CComCoClass](../../atl/reference/ccomcoclass-class.md)です。 このクラスには、マクロが含まれています。 [DECLARE_CLASSFACTORY](aggregation-and-class-factory-macros.md#declare_classfactory)、宣言[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)既定のクラス ファクトリとして。 使用する`CComClassFactory2`を指定して、 [DECLARE_CLASSFACTORY2](aggregation-and-class-factory-macros.md#declare_classfactory2)オブジェクトのクラス定義でマクロです。 例:  
   
- [!code-cpp[NVC_ATL_COM 2](../../atl/codesnippet/cpp/ccomclassfactory2-class_1.h)]  
+ [!code-cpp[NVC_ATL_COM#2](../../atl/codesnippet/cpp/ccomclassfactory2-class_1.h)]  
   
  **CMyLicense**、テンプレート パラメーターを`CComClassFactory2`、静的関数を実装する必要があります`VerifyLicenseKey`、 `GetLicenseKey`、および`IsLicenseValid`です。 単純なライセンス クラスの例を次に示します。  
   
- [!code-cpp[NVC_ATL_COM 3](../../atl/codesnippet/cpp/ccomclassfactory2-class_2.h)]  
+ [!code-cpp[NVC_ATL_COM#3](../../atl/codesnippet/cpp/ccomclassfactory2-class_2.h)]  
   
  `CComClassFactory2`両方の派生**CComClassFactory2Base**と*ライセンス*です。 **CComClassFactory2Base**から派生、 **IClassFactory2**と**CComObjectRootEx\< CComGlobalsThreadModel >**です。  
   
@@ -104,7 +87,7 @@ class CComClassFactory2 : public IClassFactory2,
   
  `CComClassFactory2`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="createinstance"></a>CComClassFactory2::CreateInstance  
@@ -180,7 +163,7 @@ STDMETHOD(GetLicInfo)(LICINFO* pLicInfo);
  標準の `HRESULT` 値。  
   
 ### <a name="remarks"></a>コメント  
- `fRuntimeKeyAvail`この構造体のメンバーができるかどうか、ライセンス キーを指定するには、クラス ファクトリ オブジェクトをライセンス許諾されていないコンピューターで作成できることを示します。 *FLicVerified*メンバーでは、コンピューターのフル ライセンスが存在するかどうかを示します。  
+ `fRuntimeKeyAvail`この構造体のメンバーができるかどうか、ライセンス キーを指定するには、クラス ファクトリ オブジェクトをライセンス許諾されていないコンピューターで作成できることを示します。 *FLicVerified*メンバーは、コンピューターのフル ライセンスが存在するかどうかを示します。  
   
 ##  <a name="lockserver"></a>CComClassFactory2::LockServer  
  インクリメントおよびデクリメントはモジュールのロックを呼び出すことによってカウント**_Module::Lock**と**_Module::Unlock**、それぞれします。  
@@ -219,14 +202,13 @@ STDMETHOD(RequestLicKey)(DWORD dwReserved, BSTR* pbstrKey);
  標準の `HRESULT` 値。  
   
 ### <a name="remarks"></a>コメント  
- 呼び出し元のライセンス キーが必要[取得していない](#createinstancelic)ライセンス許諾されていないコンピューターでオブジェクトを作成します。 場合`fRuntimeKeyAvail`は**FALSE**オブジェクトは、正規ライセンス版のコンピューターでのみ作成できます。  
+ 呼び出し元のライセンス キーが必要[取得していない](#createinstancelic)ライセンス許諾されていないコンピューターでオブジェクトを作成します。 場合`fRuntimeKeyAvail`は**FALSE**オブジェクトが正規ライセンス版のコンピューターでのみ作成できます。  
   
  呼び出す[GetLicInfo](#getlicinfo)の値を取得する`fRuntimeKeyAvail`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComClassFactoryAutoThread クラス](../../atl/reference/ccomclassfactoryautothread-class.md)   
  [CComClassFactorySingleton クラス](../../atl/reference/ccomclassfactorysingleton-class.md)   
  [CComObjectRootEx クラス](../../atl/reference/ccomobjectrootex-class.md)   
  [CComGlobalsThreadModel](atl-typedefs.md#ccomglobalsthreadmodel)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

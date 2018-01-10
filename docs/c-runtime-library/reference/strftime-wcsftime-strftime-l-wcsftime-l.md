@@ -43,11 +43,12 @@ caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ec9c46f1a6d52a8769e5db454d44baf9ec9d8a8a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 785ad16e8f86f74252c4391044d2def96091fe61
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strftime-wcsftime-strftimel-wcsftimel"></a>strftime、wcsftime、_strftime_l、_wcsftime_l
 時刻の文字列の書式を指定します。  
@@ -120,7 +121,7 @@ size_t _wcsftime_l(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tcsftime`|`strftime`|`strftime`|`wcsftime`|  
   
- `format` 引数は 1 つ以上のコードで構成されます。`printf` と同じように、書式コードの前にはパーセント記号 (`%`) を指定します。 文字で始まらないが`%`をそのままコピーされる`strDest`です。 現在のロケールの `LC_TIME` カテゴリは、`strftime` の出力の書式に影響します。 (`LC_TIME` の詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。)`_l` サフィックスが付いていない関数では、現在設定されているロケールを使用します。 `_l` サフィックスが付いているこれらの関数の各バージョンは、現在設定されているロケールの代わりに、ロケールをパラメーターとして使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `format` 引数は 1 つ以上のコードで構成されます。`printf` と同じように、書式コードの前にはパーセント記号 (`%`) を指定します。 文字で始まらないが`%`をそのままコピーされる`strDest`です。 現在のロケールの `LC_TIME` カテゴリは、`strftime` の出力の書式に影響します。 (`LC_TIME` の詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。)`_l` サフィックスが付いていない関数では、現在設定されているロケールを使用します。 `_l` サフィックスが付いているこれらの関数の各バージョンは、現在設定されているロケールの代わりに、ロケールをパラメーターとして使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  `strftime` の書式コードを以下に示します。  
   
@@ -199,25 +200,25 @@ size_t _wcsftime_l(
 |`%#x`|現在のロケールに合った、長い日付の表記。 たとえば、"Tuesday, March 14, 1995" です。|  
 |`%#d, %#H, %#I, %#j, %#m, %#M, %#S, %#U, %#w, %#W, %#y, %#Y`|先頭にゼロがある場合は削除します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`strftime`|\<time.h>|  
 |`wcsftime`|\<time.h> または \<wchar.h>|  
 |`_strftime_l`|\<time.h>|  
 |`_wcsftime_l`|\<time.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  [time](../../c-runtime-library/reference/time-time32-time64.md) の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール](../../c-runtime-library/locale.md)   
  [時間管理](../../c-runtime-library/time-management.md)   
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [localeconv](../../c-runtime-library/reference/localeconv.md)   
  [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
+ [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
  [strxfrm、wcsxfrm、_strxfrm_l、_wcsxfrm_l](../../c-runtime-library/reference/strxfrm-wcsxfrm-strxfrm-l-wcsxfrm-l.md)

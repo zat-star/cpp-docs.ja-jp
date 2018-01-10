@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,35 +12,19 @@ f1_keywords:
 - ATLCONV/ATL::CW2CWEX
 - ATLCONV/ATL::CW2CWEX::CW2CWEX
 - ATLCONV/ATL::CW2CWEX::m_psz
-dev_langs:
-- C++
-helpviewer_keywords:
-- CW2CWEX class
+dev_langs: C++
+helpviewer_keywords: CW2CWEX class
 ms.assetid: d654b22b-05a6-410f-a0ec-9a2cbbb4cca7
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 5dca6b31cdd99582e727b634093c3548eef2ecc1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: a83f0fefed5e2393c303038346e3b84ec1a3d570
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cw2cwex-class"></a>CW2CWEX クラス
 このクラスは、文字列変換マクロによって使用`CW2CTEX`と`CT2CWEX`、および typedef`CW2W`です。  
@@ -101,7 +84,7 @@ class CW2CWEX
 ## <a name="example"></a>例  
  参照してください[ATL および MFC 文字列変換マクロ](string-conversion-macros.md)をこれらの文字列変換マクロを使用する例についてはします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlconv.h  
   
 ##  <a name="cw2cwex"></a>CW2CWEX::CW2CWEX  
@@ -149,11 +132,10 @@ operator LPCWSTR() const throw();
 ### <a name="return-value"></a>戻り値  
  種類としてテキスト文字列を返す**LPCWSTR です。**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CA2AEX クラス](../../atl/reference/ca2aex-class.md)   
  [CA2CAEX クラス](../../atl/reference/ca2caex-class.md)   
  [CA2WEX クラス](../../atl/reference/ca2wex-class.md)   
  [CW2AEX クラス](../../atl/reference/cw2aex-class.md)   
  [CW2WEX クラス](../../atl/reference/cw2wex-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

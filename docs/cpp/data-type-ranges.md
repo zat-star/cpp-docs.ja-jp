@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - float keyword [C++]
 - char keyword [C++]
@@ -44,16 +42,16 @@ helpviewer_keywords:
 - long int keyword [C++]
 - unsigned long int [C++]
 ms.assetid: 3691ceca-05fb-4b82-b1ae-5c4618cda91a
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 372d65a3d862fee4fddc2c9ba67c94341d1a6c87
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: af0601299046276c135571be2bac615df1571140
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-type-ranges"></a>データ型の範囲
 Visual C++ の 32 ビットおよび 64 ビット コンパイラは、この記事の次の表に示す型を認識します。  
@@ -101,7 +99,7 @@ Visual C++ の 32 ビットおよび 64 ビット コンパイラは、この記
 |long long|8|none (__int64 と同等ではない)|-9,223,372,036,854,775,808 から 9,223,372,036,854,775,807|  
 |unsigned long long|8|none (unsigned __int64 と同等ではない)|0 ～ 18,446,744,073,709,551,615|  
 |enum|可変|none| |  
-|フローティング|4|none|3.4E +/- 38 (7 桁)|  
+|float|4|none|3.4E +/- 38 (7 桁)|  
 |double|8|none|1.7E +/- 308 (15 桁)|  
 |long double|double と同じ|none|double と同じ|  
 |wchar_t|2|__wchar_t|0 ～ 65,535|  
@@ -118,6 +116,6 @@ Visual C++ の 32 ビットおよび 64 ビット コンパイラは、この記
   
  列挙型の範囲は、言語コンテキストと指定したコンパイラ フラグによって異なります。 詳細については、「 [C 列挙体の宣言](../c-language/c-enumeration-declarations.md) 」および「 [列挙型](../cpp/enumerations-cpp.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  [基本型](../cpp/fundamental-types-cpp.md)

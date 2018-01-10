@@ -1,39 +1,41 @@
 ---
-title: "CRowset::Delete | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::CRowset::Delete"
-  - "CRowset.Delete"
-  - "CRowset::Delete"
-  - "ATL.CRowset.Delete"
-  - "ATL::CRowset<TAccessor>::Delete"
-  - "CRowset<TAccessor>.Delete"
-  - "CRowset<TAccessor>::Delete"
-  - "ATL.CRowset<TAccessor>.Delete"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Delete メソッド"
+title: "Crowset::delete |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::CRowset::Delete
+- CRowset.Delete
+- CRowset::Delete
+- ATL.CRowset.Delete
+- ATL::CRowset<TAccessor>::Delete
+- CRowset<TAccessor>.Delete
+- CRowset<TAccessor>::Delete
+- ATL.CRowset<TAccessor>.Delete
+dev_langs: C++
+helpviewer_keywords: Delete method
 ms.assetid: 4feb4f7e-139f-489a-b7d5-ea6ec0058e0f
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 525e89bd49a7bf67ac20a2f580241e7ff982c71b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CRowset::Delete
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[IRowsetChange::DeleteRows](https://msdn.microsoft.com/en-us/library/ms724362.aspx) を行セットから現在の行を削除します。  
+# <a name="crowsetdelete"></a>CRowset::Delete
+呼び出し[irowsetchange::deleterows](https://msdn.microsoft.com/en-us/library/ms724362.aspx)を行セットから現在の行を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -41,11 +43,11 @@ HRESULT Delete( ) const throw( );
   
 ```  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CRowset クラス](../Topic/CRowset%20Class.md)
+## <a name="see-also"></a>参照  
+ [CRowset クラス](../../data/oledb/crowset-class.md)

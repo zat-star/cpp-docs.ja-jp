@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -29,8 +28,7 @@ f1_keywords:
 - _beginthread
 - beginthreadex
 - _beginthreadex
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _beginthread function
 - threading [C++], creating threads
@@ -38,30 +36,16 @@ helpviewer_keywords:
 - _beginthreadex function
 - beginthread function
 ms.assetid: 0df64740-a978-4358-a88f-fb0702720091
-caps.latest.revision: 36
+caps.latest.revision: "36"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 3c556e6460f1a39bab23f2612cbf820e284d7605
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 71d47e67d56da59093db99b5da28daa6f1c18db2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="beginthread-beginthreadex"></a>_beginthread、_beginthreadex
 スレッドを作成します。  
@@ -121,7 +105,7 @@ uintptr_t _beginthreadex( // MANAGED CODE
   
  `startaddress` が NULL の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。  
   
- これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
  `uintptr_t` の詳細については、「[基本データ型](../../c-runtime-library/standard-types.md)」を参照してください。  
   
@@ -147,7 +131,7 @@ uintptr_t _beginthreadex( // MANAGED CODE
  `_endthread` は、スレッド ハンドルを自動的に終了しますが、 `_endthreadex` は自動的に終了しません。 このため、 `_beginthread` および `_endthread`を使用するときには、Win32 [CloseHandle](http://msdn.microsoft.com/library/windows/desktop/ms724211.aspx) API を呼び出してスレッド ハンドルを明示的に終了しないでください。 この動作は、Win32 [ExitThread](http://msdn.microsoft.com/library/windows/desktop/ms682659.aspx) API とは異なります。  
   
 > [!NOTE]
->  Libcmt.lib にリンクされている実行可能ファイルでは、Win32 の `ExitThread` API を呼び出さないでください。呼び出すと、割り当てられたリソースをランタイム システムで再利用することができなくなります。 `_endthread` と `_endthreadex` は、割り当てられているスレッド リソースを解放し、 `ExitThread`を呼び出します。  
+>  Libcmt.lib にリンクされている実行可能ファイルでは、Win32 の `ExitThread` API を呼び出さないでください。呼び出すと、割り当てられたリソースをランタイム システムで再利用することができなくなります。 `_endthread` と `_endthreadex` は、割り当てられているスレッド リソースを解放し、`ExitThread` を呼び出します。  
   
  `_beginthread` または `_beginthreadex` が呼び出されると、オペレーティング システムがスタックの割り当てを処理します。したがって、スレッド スタックのアドレスをこれらの関数に渡す必要はありません。 また、引数 `stack_size` に 0 を指定すると、オペレーティング システムはメイン スレッドに対して指定したスタックと同じ値を使用します。  
   
@@ -157,14 +141,14 @@ uintptr_t _beginthreadex( // MANAGED CODE
   
  混合コードと純粋なコードでは、 `_beginthread` と `_beginthreadex` にはそれぞれ 2 つのオーバーロードがあります。1 つはネイティブの呼び出し規約関数ポインターを受け取り、もう 1 つは `__clrcall` 関数ポインターを受け取ります。 最初のオーバーロードは、アプリケーション ドメインセーフではなく、以降もそうなることはありません。 混合コードまたは純粋なコードを記述する場合、新しいスレッドがマネージ リソースにアクセスする前に確実に正しいアプリケーション ドメインに入るようにする必要があります。 そのためには、[call_in_appdomain 関数](../../dotnet/call-in-appdomain-function.md)などを使用します。 2 番目のオーバーロードはアプリケーション ドメイン セーフであり、新しく作成されたスレッドは、必ず `_beginthread` または `_beginthreadex`の呼び出し元のアプリケーション ドメインで終了します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_beginthread`|\<process.h>|  
 |`_beginthreadex`|\<process.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md) のマルチスレッド バージョンのみ。  
@@ -339,7 +323,7 @@ In second thread...
 Counter should be 1000000; it is-> 1000000  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [_endthread、_endthreadex](../../c-runtime-library/reference/endthread-endthreadex.md)   
  [abort](../../c-runtime-library/reference/abort.md)   

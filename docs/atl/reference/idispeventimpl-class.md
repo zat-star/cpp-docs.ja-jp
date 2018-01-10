@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,41 +16,25 @@ f1_keywords:
 - ATLCOM/ATL::IDispEventImpl::GetTypeInfo
 - ATLCOM/ATL::IDispEventImpl::GetTypeInfoCount
 - ATLCOM/ATL::IDispEventImpl::GetUserDefinedType
-dev_langs:
-- C++
-helpviewer_keywords:
-- IDispEventImpl class
+dev_langs: C++
+helpviewer_keywords: IDispEventImpl class
 ms.assetid: a64b5288-35cb-4638-aad6-2d15b1c7cf7b
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 07aa3e37dfb1a986f083d3efb007ea8f7c0c9243
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: f052ddf0194cf28a0845ae51b9503841ca880912
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="idispeventimpl-class"></a>IDispEventImpl クラス
 このクラスの実装を提供する、`IDispatch`メソッドです。  
   
 > [!IMPORTANT]
->  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -76,13 +59,13 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
  このクラスで実装するイベントのディスパッチ インターフェイスの IID へのポインター。 示されるタイプ ライブラリのこのインターフェイスを定義する必要があります`plibid`、 `wMajor`、および`wMinor`です。  
   
  `plibid`  
- ディスパッチ インターフェイスを定義するタイプ ライブラリへのポインターが指す`pdiid`です。 場合**>/documents/report1.rdl」の GUID_**イベントのソース オブジェクトから、タイプ ライブラリが読み込まれます。  
+ ディスパッチ インターフェイスを定義するタイプ ライブラリへのポインターが指す`pdiid`です。 場合**& GUID_**イベントのソース オブジェクトから、タイプ ライブラリが読み込まれます。  
   
  `wMajor`  
- タイプ ライブラリのメジャー バージョン。 既定値は 0 です。  
+ タイプ ライブラリのメジャー バージョンです。 既定値は 0 です。  
   
  `wMinor`  
- タイプ ライブラリのマイナー バージョン。 既定値は 0 です。  
+ タイプ ライブラリのマイナー バージョンです。 既定値は 0 です。  
   
  `tihclass`  
  型情報の管理に使用するクラス`T`です。 既定値は型のクラス`CComTypeInfoHolder`。 ただし、このテンプレート パラメーターを上書きするには、以外の値の型のクラスを提供して`CComTypeInfoHolder`です。  
@@ -117,7 +100,7 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
  `IDispEventImpl`適切なハンドラー関数にイベントをルーティングするクラスでイベント シンク マップと連携して動作します。 このクラスを使用します。  
   
 
- 追加、 [SINK_ENTRY](composite-control-macros.md#sink_entry)または[SINK_ENTRY_EX](composite-control-macros.md#sink_entry_ex)マクロを処理する各オブジェクト上の各イベントのイベント シンク マップします。 使用する場合`IDispEventImpl`複合コントロールの基底クラスとして呼び出すことができます[AtlAdviseSinkMap](connection-point-global-functions.md#atladvisesinkmap)を確立して、イベント シンク マップのすべてのエントリのイベント ソースとの接続を解除します。 その他の場合、またはより細かく制御には、呼び出す[DispEventAdvise](idispeventsimpleimpl-class.md#dispeventadvise)基本クラスとソース オブジェクトの間の接続を確立するためにします。 呼び出す[DispEventUnadvise](idispeventsimpleimpl-class.md#dispeventunadvise)への接続を切断します。  
+ 追加、 [SINK_ENTRY](composite-control-macros.md#sink_entry)または[SINK_ENTRY_EX](composite-control-macros.md#sink_entry_ex)マクロを処理する各オブジェクト上の各イベントのイベント シンク マップします。 使用する場合`IDispEventImpl`複合コントロールの基底クラスとして呼び出すことができます[AtlAdviseSinkMap](connection-point-global-functions.md#atladvisesinkmap)を確立し、イベント シンク マップのすべてのエントリのイベント ソースとの接続を解除します。 その他の場合、またはより細かく制御には、呼び出す[DispEventAdvise](idispeventsimpleimpl-class.md#dispeventadvise)基本クラスとソース オブジェクトの間の接続を確立するためにします。 呼び出す[DispEventUnadvise](idispeventsimpleimpl-class.md#dispeventunadvise)への接続を切断します。  
 
   
  派生する必要があります`IDispEventImpl`(に一意の値を使用して`nID`) の各オブジェクトのイベントを処理する必要があります。 によって、別のソース オブジェクトに対して通知し、1 つのソース オブジェクトに対してアドバイズ基底クラスを再利用できますが、一度に 1 つのオブジェクトを処理するソース オブジェクトの最大数が数によって制限される`IDispEventImpl`基本クラスです。  
@@ -125,7 +108,7 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
  `IDispEventImpl`同じ機能を提供します[されます](../../atl/reference/idispeventsimpleimpl-class.md)インターフェイスに関する型情報へのポインターとして指定されたことをことのではなく、タイプ ライブラリから取得を除き、 [_ATL_FUNC_INFO](../../atl/reference/atl-func-info-structure.md)構造体。 使用して`IDispEventSimpleImpl`ときに、イベント インターフェイスを記述するタイプ ライブラリがあるまたはしないタイプ ライブラリの使用に関連するオーバーヘッドを回避します。  
   
 > [!NOTE]
-> `IDispEventImpl`および`IDispEventSimpleImpl`の独自の実装を提供**iunknown::queryinterface**それぞれを有効にする`IDispEventImpl`と`IDispEventSimpleImpl`基底クラスのメンバーに直接アクセスする主な COM オブジェクトの状態のまま別の COM id として機能するクラス。  
+> `IDispEventImpl`および`IDispEventSimpleImpl`の独自の実装を提供**iunknown::queryinterface**それぞれを有効にする`IDispEventImpl`と`IDispEventSimpleImpl`基底クラスへの直接アクセスを許可する一方、個別の COM id として機能するクラスメインの COM オブジェクト内のメンバー。  
   
  ActiveX イベント シンクのみサポートしている戻り値の型 HRESULT または void、イベント ハンドラー メソッドからの CE ATL の実装その他の戻り値はサポートされていませんし、その動作は未定義です。  
   
@@ -140,7 +123,7 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
   
  `IDispEventImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="getfuncinfofromid"></a>IDispEventImpl::GetFuncInfoFromId  
@@ -171,7 +154,7 @@ HRESULT GetFuncInfoFromId(
  標準の `HRESULT` 値。  
   
 ##  <a name="getidsofnames"></a>IDispEventImpl::GetIDsOfNames  
- 対応する一連の整数 Dispid を後続の呼び出しで使用されることができますに 1 つのメンバーとオプションの引数名のセットをマップ[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d)です。  
+ 対応する一連の整数への後続の呼び出しで使用できる Dispid を 1 つのメンバーとオプションの引数名のセットをマップ[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d)です。  
   
 ```
 STDMETHOD(GetIDsOfNames)(
@@ -183,7 +166,7 @@ STDMETHOD(GetIDsOfNames)(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[::getidsofnames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[::getidsofnames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619) Windows SDK にします。  
   
 ##  <a name="gettypeinfo"></a>IDispEventImpl::GetTypeInfo  
  オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。  
@@ -205,7 +188,7 @@ STDMETHOD(GetTypeInfoCount)(UINT* pctinfo);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IDispatch::GetTypeInfoCount](http://msdn.microsoft.com/en-us/da876d53-cb8a-465c-a43e-c0eb272e2a12)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IDispatch::GetTypeInfoCount](http://msdn.microsoft.com/en-us/da876d53-cb8a-465c-a43e-c0eb272e2a12) Windows SDK にします。  
   
 ##  <a name="getuserdefinedtype"></a>IDispEventImpl::GetUserDefinedType  
  ユーザー定義型の基本の種類を取得します。  
@@ -246,7 +229,7 @@ typedef tihclass _tihclass;
 ### <a name="remarks"></a>コメント  
  クラスは、既定では、`CComTypeInfoHolder`です。 `CComTypeInfoHolder`クラスの型情報を管理します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ATL_FUNC_INFO 構造体](../../atl/reference/atl-func-info-structure.md)   
  [IDispatchImpl クラス](../../atl/reference/idispatchimpl-class.md)   
  [されますクラス](../../atl/reference/idispeventsimpleimpl-class.md)   

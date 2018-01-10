@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1298fe71b0fc71caa34f7b84d5bc33f1208b0e58
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: eae1f851df920633342ab44a29a4f800d6e7a4e5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="icommandpropertiesimplsetproperties"></a>ICommandPropertiesImpl::SetProperties
 コマンド オブジェクトのプロパティを設定します。  
@@ -40,9 +43,9 @@ ms.lasthandoff: 10/24/2017
 #### <a name="parameters"></a>パラメーター  
  参照してください[icommandproperties::setproperties](https://msdn.microsoft.com/en-us/library/ms711497.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICommandPropertiesImpl クラス](../../data/oledb/icommandpropertiesimpl-class.md)   
  [ICommandPropertiesImpl::GetProperties](../../data/oledb/icommandpropertiesimpl-getproperties.md)

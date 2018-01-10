@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -29,8 +28,7 @@ f1_keywords:
 - access_s
 - _waccess_s
 - _access_s
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - access_s function
 - taccess_s function
@@ -39,30 +37,16 @@ helpviewer_keywords:
 - _access_s function
 - _waccess_s function
 ms.assetid: fb3004fc-dcd3-4569-8b27-d817546e947e
-caps.latest.revision: 28
+caps.latest.revision: "28"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 051c2e6a6b0315e2ca4ab3192f28a370d969ec5b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: f562d62f3edb1f09fe6d7ebe7b509411ad2dc8c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="accesss-waccesss"></a>_access_s、_waccess_s
 ファイルの読み取り/書き込みアクセス許可を決定します。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_access, _waccess](../../c-runtime-library/reference/access-waccess.md) です。  
@@ -99,7 +83,7 @@ errno_t _waccess_s(
  `EINVAL`  
  無効なパラメーター。  
   
- 詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ 詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  ファイルを使用すると、`_access_s` 関数は、指定したファイルが存在し、`mode` 値で指定されているとおりにアクセスできるかどうかを判断します。 ディレクトリを使用すると、`_access_s` は指定されたディレクトリが存在するかどうかだけを判断します。 [!INCLUDE[Win2kFamily](../../c-runtime-library/includes/win2kfamily_md.md)] 以降のオペレーティング システムでは、すべてのディレクトリに読み取りおよび書き込みアクセスできます。  
@@ -123,9 +107,9 @@ errno_t _waccess_s(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_taccess_s`|`_access_s`|`_access_s`|`_waccess_s`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_access_s`|\<io.h>|\<errno.h>|  
 |`_waccess_s`|\<wchar.h> または \<io.h>|\<errno.h>|  
@@ -173,7 +157,7 @@ File crt_access_s.c exists.
 File crt_access_s.c does not have write permission.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_access、_waccess](../../c-runtime-library/reference/access-waccess.md)   
  [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   

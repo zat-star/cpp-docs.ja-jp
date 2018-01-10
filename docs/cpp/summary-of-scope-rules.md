@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2261f5c2b843f607f8f0906764aee833c6a100f4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c530a586ca2b8b70cfdc967c354738e93435f20c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="summary-of-scope-rules"></a>スコープ規則の概要
 名前の使用はスコープ内で明確である必要があります (オーバーロードが決定される段階まで)。 名前が関数を表している場合、関数はパラメーターの数と型に対し明確でなければなりません。 名前があいまいでない、残っている場合[メンバー アクセス](../cpp/member-access-control-cpp.md)規則が適用されます。  
@@ -76,5 +77,5 @@ ms.lasthandoff: 10/24/2017
   
  既定のパラメーターは、上記で説明したとおり、それらを既定とするパラメーターのスコープ内にあります。 ただし、ローカル変数や非静的クラス メンバーにはアクセスできません。 既定のパラメーターは、関数呼び出しの時点で評価されますが、関数宣言の元のスコープで評価されます。 したがって、メンバー関数の既定のパラメーターは、常にクラス スコープで評価されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [継承](../cpp/inheritance-cpp.md)
