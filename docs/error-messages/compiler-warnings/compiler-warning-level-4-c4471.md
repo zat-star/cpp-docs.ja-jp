@@ -4,41 +4,23 @@ ms.custom:
 ms.date: 04/24/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- C4471
-dev_langs:
-- C++
-helpviewer_keywords:
-- C4471
+f1_keywords: C4471
+dev_langs: C++
+helpviewer_keywords: C4471
 ms.assetid: ccfd8bd5-bc1b-4be7-a6ea-0e3a7add6607
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d7d097b399d3681ef523d8787ecc38af472840f6
-ms.openlocfilehash: fc0ddb07ec768804be61185211bbac0ee6fbf2b6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/28/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 5e7429a458c90c30fdf57b985cda88ca85c6d29c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4471"></a>コンパイラの警告 (レベル 4) C4471
 '*列挙*': 対象範囲外の列挙の事前宣言が基になる型 (int が想定されます) を持つ必要があります  
@@ -47,7 +29,7 @@ ms.lasthandoff: 04/28/2017
   
 この警告はオフです。 既定では、します。/Wall または/w を使用することができます*N*コマンド ラインで有効にするにまたは #pragma 4471[警告](../../preprocessor/warning.md)をソース ファイルにします。  
   
-場合によっては、この警告は偽です。 列挙の事前宣言は、定義の後に表示されたら、この警告が起動させることができます。 たとえば、このコードはありませんが、でも C4471 をしまう可能性があります。  
+場合によっては、この警告は偽です。 列挙の事前宣言は、定義の後に表示されたら、この警告が発生します。 たとえば、このコードはありませんが、でも C4471 をしまう可能性があります。  
   
 ```cpp  
 // C4471a.cpp
@@ -113,4 +95,3 @@ enum class Example { item = 0 };
 // ...
 ```  
   
-

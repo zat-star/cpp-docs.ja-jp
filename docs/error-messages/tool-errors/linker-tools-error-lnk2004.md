@@ -4,48 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- LNK2004
-dev_langs:
-- C++
-helpviewer_keywords:
-- LNK2004
+f1_keywords: LNK2004
+dev_langs: C++
+helpviewer_keywords: LNK2004
 ms.assetid: 07645371-e67b-4a2c-b0e0-dde24c94ef7e
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: f66c3eda90f3d0f9149d70418cb40f08b3b94df7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 3fdbd32bbc59d9c18df5544f07ec7e7097b9e02e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-error-lnk2004"></a>リンカ ツール エラー LNK2004
-gp 相対フィックスを '対象';短いセクション 'section' が長すぎるか範囲外です。  
+gp 相対 fixup オーバーフローを 'ターゲット';short セクション 'section' が大きすぎるか範囲外です。  
   
  セクションが大きすぎます。  
   
- このエラーを解決するには、#pragma セクション (".sectionname"を読み取り、書き込み、時間の長い) 経由で長いセクションでデータを明示的に設定しを使用していずれかの短いセクションのサイズを小さく`__declspec(allocate(".sectionname"))`にデータ定義と宣言します。  次に例を示します。  
+ このエラーを解決するか、#pragma セクション (".sectionname"を読み取り、書き込み、時間の長い) を使用して、長いセクションでデータを明示的に設定しを使用して、短い セクションのサイズを小さく`__declspec(allocate(".sectionname"))`でデータ定義と宣言します。  たとえば、オブジェクトに適用された  
   
 ```  
 #pragma section(".data$mylong", read, write, long)  
@@ -58,7 +40,7 @@ char    rg4[16] = { 1 };
 char    rg5[32] = { 1 };  
 ```  
   
- 8 バイトは、コンパイラは長い形式のデータ セクションに割り当てるよりも大きいデータのコレクションであるが、独自の構造体に論理的にグループ化されたデータを移動することもできます。  次に例を示します。  
+ 8 バイトであり、長い形式のデータ セクションで、コンパイラが割り当てられますよりも大きいデータのコレクションであるが、独自の構造体に論理的にグループ化されたデータを移動することもできます。  たとえば、オブジェクトに適用された  
   
 ```  
 // from this...  
@@ -77,4 +59,4 @@ struct X {
   
 ```  
   
- このエラーは致命的なエラーの後に`LNK1165`します。
+ このエラーの致命的なエラーが続く`LNK1165`です。

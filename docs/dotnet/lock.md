@@ -1,44 +1,46 @@
 ---
-title: "lock | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "lock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lock"
-  - "同期"
+title: "ロック |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: lock
+dev_langs: C++
+helpviewer_keywords:
+- lock
+- synchronization
 ms.assetid: 48c90da6-d6fb-4710-9c7c-2b9c9344bda1
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: ba5c49cd118107f2e97e0636f7148de38a6a3907
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# lock
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-オブジェクトへのアクセスの同期を自動化する `lock` クラスを定義します。  
+# <a name="lock"></a>lock
+定義、`lock`クラス オブジェクトへのアクセスの同期を自動化します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #include <msclr\lock.h>  
 ```  
   
-## 解説  
- このヘッダー ファイル:  
+## <a name="remarks"></a>コメント  
+ このヘッダー ファイル。  
   
  [lock クラス](../dotnet/lock-class.md)  
   
- [lock\_when Enum](../dotnet/lock-when-enum.md)  
+ [lock_when Enum](../dotnet/lock-when-enum.md)  
   
-## 参照  
- [C\+\+ のサポート ライブラリ](../dotnet/cpp-support-library.md)
+## <a name="see-also"></a>参照  
+ [C++ のサポート ライブラリ](../dotnet/cpp-support-library.md)

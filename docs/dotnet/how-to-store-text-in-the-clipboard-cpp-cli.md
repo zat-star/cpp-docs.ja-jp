@@ -1,32 +1,34 @@
 ---
-title: "方法: クリップボード内にテキストを格納する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クリップボードのトピック, 格納 (テキストを)"
-  - "テキスト, 格納 (クリップボードに)"
+title: "方法: クリップボードのテキストを格納 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- text, storing in Clipboard
+- Clipboard, storing text
 ms.assetid: 9996023f-b700-47ad-8ad9-1ba201eaa5a6
-caps.latest.revision: 12
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 05544d3ea65ee68fc6df8731e5de084be6d460ba
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: クリップボード内にテキストを格納する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-<xref:System.Windows.Forms> 名前空間で定義される <xref:System.Windows.Forms.Clipboard> オブジェクトを使用して、文字列を格納する方法を次のコード例に示します。  このオブジェクトには、<xref:System.Windows.Forms.Clipboard.SetDataObject%2A> と <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> の 2 つのメンバー関数が用意されています。  <xref:System.Object> から派生した任意のオブジェクトを <xref:System.Windows.Forms.Clipboard.SetDataObject%2A> に送信することで、クリップボードにデータが格納されます。  
+# <a name="how-to-store-text-in-the-clipboard-ccli"></a>方法: クリップボード内にテキストを格納する (C++/CLI)
+次のコード例では、<xref:System.Windows.Forms.Clipboard>で定義されているオブジェクト、<xref:System.Windows.Forms>文字列を格納する名前空間。 このオブジェクトは、次の 2 つのメンバー関数を提供します。<xref:System.Windows.Forms.Clipboard.SetDataObject%2A>と<xref:System.Windows.Forms.Clipboard.GetDataObject%2A>です。 派生した任意のオブジェクトを送信することによってデータがクリップボードに格納されている<xref:System.Object>に<xref:System.Windows.Forms.Clipboard.SetDataObject%2A>です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // store_clipboard.cpp  
@@ -53,7 +55,7 @@ using namespace System::Windows::Forms;
 }  
 ```  
   
-## 参照  
- [方法: クリップボードからテキストを取得する](../Topic/How%20to:%20Retrieve%20Text%20from%20the%20Clipboard%20\(C++-CLI\).md)   
- [Windows の操作](../dotnet/windows-operations-cpp-cli.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>参照  
+ [方法: クリップボードからテキストを取得 (C + + CLI)](../dotnet/how-to-retrieve-text-from-the-clipboard-cpp-cli.md)   
+ [Windows の操作 (C + + CLI)](../dotnet/windows-operations-cpp-cli.md)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

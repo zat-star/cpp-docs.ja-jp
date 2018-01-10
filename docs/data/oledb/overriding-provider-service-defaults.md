@@ -16,11 +16,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 479f3464db46fda4c566feeaeec2f7fe5384ee87
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 9185f1eb3640a4baeb8f7cc1d7b20169c980a8e1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="overriding-provider-service-defaults"></a>プロバイダー サービスの既定のオーバーライド
 プロバイダーのレジストリ値を**OLEDB_SERVICES**の既定値として返される、 [DBPROP_INIT_OLEDBSERVICES](https://msdn.microsoft.com/en-us/library/ms716898.aspx)データ ソース オブジェクトのプロパティを初期化します。  
@@ -37,7 +40,7 @@ ms.lasthandoff: 10/24/2017
   
  プロバイダーのレジストリ エントリが存在しない場合は、コンポーネント マネージャーは、プロバイダーのオブジェクトを集計されないと、サービスは起動しません、ユーザーによって明示的に要求された場合でもです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リソース プール](https://msdn.microsoft.com/en-us/library/ms713655.aspx)   
  [コンシューマーがリソース プールを使用する方法](https://msdn.microsoft.com/en-us/library/ms715907.aspx)   
  [プロバイダーのしくみ効果的では、リソース プール](https://msdn.microsoft.com/en-us/library/ms714906.aspx)   

@@ -1,34 +1,33 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4680 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4680"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4680"
+title: "コンパイラの警告 (レベル 4) C4680 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4680
+dev_langs: C++
+helpviewer_keywords: C4680
 ms.assetid: 6e043f4c-c601-4b77-8130-920cff1d912e
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: d460e705a928e01b8bb203e24ea4df21ae79e087
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4680
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'class' : コクラスは既定のインターフェイスを指定していません。  
+# <a name="compiler-warning-level-4-c4680"></a>コンパイラの警告 (レベル 4) C4680
+'class': コクラスは既定のインターフェイスを指定していません  
   
- [coclass](../../windows/coclass.md) 属性でマークされているクラスに、[default](../../windows/default-cpp.md) インターフェイスが指定されていません。  オブジェクトを使用可能にするには、インターフェイスを実装する必要があります。  
+ A[既定](../../windows/default-cpp.md)でマークされたクラスのインターフェイスが指定されませんでした、[コクラス](../../windows/coclass.md)属性。 オブジェクトを使用するためには、インターフェイスを実装してする必要があります。  
   
- 次の例では警告 C4680 が生成されます。  
+ 次の例では、C4680 が生成されます。  
   
 ```  
 // C4680.cpp  

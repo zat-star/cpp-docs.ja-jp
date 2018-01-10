@@ -1,67 +1,69 @@
 ---
-title: "CDBErrorInfo::GetErrorRecords | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDBErrorInfo.GetErrorRecords"
-  - "ATL.CDBErrorInfo.GetErrorRecords"
-  - "ATL::CDBErrorInfo::GetErrorRecords"
-  - "GetErrorRecords"
-  - "CDBErrorInfo::GetErrorRecords"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetErrorRecords メソッド"
+title: "Cdberrorinfo::geterrorrecords |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDBErrorInfo.GetErrorRecords
+- ATL.CDBErrorInfo.GetErrorRecords
+- ATL::CDBErrorInfo::GetErrorRecords
+- GetErrorRecords
+- CDBErrorInfo::GetErrorRecords
+dev_langs: C++
+helpviewer_keywords: GetErrorRecords method
 ms.assetid: 07746774-bcca-4833-8f55-a619e9777c17
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 560477035eee06e80b56b428e3c11d8c91f2b749
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CDBErrorInfo::GetErrorRecords
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-指定されたオブジェクトのエラー レコードを取得します。  
+# <a name="cdberrorinfogeterrorrecords"></a>CDBErrorInfo::GetErrorRecords
+指定したオブジェクトのエラー レコードを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      HRESULT GetErrorRecords(   
-   IUnknown* pUnk,   
-   const IID& iid,   
-   ULONG* pcRecords    
+      HRESULT GetErrorRecords(   
+   IUnknown* pUnk,   
+   const IID& iid,   
+   ULONG* pcRecords    
 ) throw( );  
-HRESULT GetErrorRecords(   
-   ULONG* pcRecords    
+HRESULT GetErrorRecords(   
+   ULONG* pcRecords    
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *pUnk*  
- \[\]エラー レコードを取得するオブジェクトにインターフェイスです。  
+ [in]エラー レコードを取得する対象のオブジェクトへのインターフェイスします。  
   
  `iid`  
- \[\]エラーに関連付けられたインターフェイスの IID。  
+ [in]エラーに関連付けられているインターフェイスの IID です。  
   
  *pcRecords*  
- \[\]エラー レコード \(インデックス番号が 1 から始まるな\) 数へのポインター。  
+ [out]エラー レコードの (1 から始まる) の数へのポインター。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- から、エラー情報を取得するインターフェイスの確認する場合は、関数の最初のフォームを使用します。  それ以外の場合は、2 番目のフォームを使用します。  
+## <a name="remarks"></a>コメント  
+ エラー情報を取得するには、どのインターフェイスを確認する場合は、関数の最初の形式を使用します。 それ以外の場合、2 番目の形式を使用します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CDBErrorInfo クラス](../../data/oledb/cdberrorinfo-class.md)

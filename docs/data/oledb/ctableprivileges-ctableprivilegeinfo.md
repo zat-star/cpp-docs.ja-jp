@@ -1,75 +1,78 @@
 ---
-title: "CTablePrivileges、CTablePrivilegeInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "m_szCatalog"
-  - "m_bIsGrantable"
-  - "IS_GRANTABLE"
-  - "m_szType"
-  - "m_szSchema"
-  - "m_szGrantor"
-  - "GRANTOR"
-  - "GRANTEE"
-  - "CTablePrivileges"
-  - "CTablePrivilegeInfo"
-  - "m_szName"
-  - "m_szGrantee"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTablePrivilegeInfo パラメーター クラス"
-  - "CTablePrivileges TYPEDEF クラス"
-  - "GRANTEE"
-  - "GRANTOR"
-  - "IS_GRANTABLE"
-  - "m_bIsGrantable"
-  - "m_szCatalog"
-  - "m_szGrantee"
-  - "m_szGrantor"
-  - "m_szName"
-  - "m_szSchema"
-  - "m_szType"
-  - "TABLE_CATALOG"
-  - "TABLE_NAME"
-  - "TABLE_SCHEMA"
+title: "CTablePrivileges、CTablePrivilegeInfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- m_szCatalog
+- m_bIsGrantable
+- IS_GRANTABLE
+- m_szType
+- m_szSchema
+- m_szGrantor
+- GRANTOR
+- GRANTEE
+- CTablePrivileges
+- CTablePrivilegeInfo
+- m_szName
+- m_szGrantee
+dev_langs: C++
+helpviewer_keywords:
+- GRANTOR
+- CTablePrivilegeInfo parameter class
+- m_szSchema
+- TABLE_CATALOG
+- m_szType
+- m_szCatalog
+- TABLE_NAME
+- IS_GRANTABLE
+- TABLE_SCHEMA
+- m_szName
+- m_szGrantee
+- CTablePrivileges typedef class
+- m_szGrantor
+- GRANTEE
+- m_bIsGrantable
 ms.assetid: ffcd6f73-022e-452a-8342-f2b9362d256b
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4af4debc152e2c1c84dcfd1fbd7f4950922fa7df
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CTablePrivileges、CTablePrivilegeInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-パラメーター **CTablePrivilegeInfo**クラスを実装するに **CTablePrivileges** typedef クラスを呼び出します。  
+# <a name="ctableprivileges-ctableprivilegeinfo"></a>CTablePrivileges、CTablePrivilegeInfo
+Typedef クラスを呼び出す**CTablePrivileges**そのパラメーター クラスを実装する**CTablePrivilegeInfo**です。  
   
-## 解説  
- typedef クラスの使用の詳細については、" [スキーマ行セット クラスと Typedef クラス](../Topic/Schema%20Rowset%20Classes%20and%20Typedef%20Classes.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)typedef クラスの使用に関する詳細についてはします。  
   
- カタログで定義されています。このクラスは、特定のユーザーがアクセスできるテーブルを識別します。  
+ このクラスは、特定のユーザーにアクセス可能である、カタログで定義されているテーブルを識別します。  
   
- 次の表は、クラスのデータ メンバーとそれらに該当する OLE DB の列の一覧です。  スキーマと列の詳細については、" *OLE DB Programmer's Reference* の [TABLE\_PRIVILEGES の行セット](https://msdn.microsoft.com/en-us/library/ms725428.aspx) を参照してください。  
+ 次の表には、クラスのデータ メンバーとその対応する OLE DB 列が一覧表示します。 参照してください[TABLE_PRIVILEGES 行セット](https://msdn.microsoft.com/en-us/library/ms725428.aspx)で、 *OLE DB プログラマーズ リファレンス*スキーマと列の詳細についてはします。  
   
-|データ メンバー|OLE DB の列|  
-|--------------|---------------|  
-|m\_szGrantor|GRANTOR|  
-|m\_szGrantee|GRANTEE|  
-|m\_szCatalog|TABLE\_CATALOG|  
-|m\_szSchema|TABLE\_SCHEMA|  
-|m\_szName|TABLE\_NAME|  
-|m\_szType|PRIVILEGE\_TYPE|  
-|m\_bIsGrantable|IS\_GRANTABLE|  
+|データ メンバー|OLE DB 列|  
+|------------------|--------------------|  
+|m_szGrantor|GRANTOR|  
+|m_szGrantee|GRANTEE|  
+|m_szCatalog|TABLE_CATALOG|  
+|m_szSchema|TABLE_SCHEMA|  
+|m_szName|TABLE_NAME|  
+|m_szType|PRIVILEGE_TYPE|  
+|m_bIsGrantable|IS_GRANTABLE|  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## 参照  
- [CRestrictions クラス](../Topic/CRestrictions%20Class.md)
+## <a name="see-also"></a>参照  
+ [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

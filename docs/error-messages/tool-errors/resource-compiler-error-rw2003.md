@@ -1,69 +1,68 @@
 ---
-title: "リソース コンパイラ エラー RW2003 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "RW2003"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RW2003"
+title: "リソース コンパイラ エラー RW2003 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: RW2003
+dev_langs: C++
+helpviewer_keywords: RW2003
 ms.assetid: 9dc0ba70-6776-4aef-b316-5f1711d8e42e
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 9f388ca21d95e7d675a6b9890a7368765b5c0d7e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リソース コンパイラ エラー RW2003
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-Generation Error  
+# <a name="resource-compiler-error-rw2003"></a>リソース コンパイラ エラー RW2003
+生成エラー  
   
-### 次のような原因をチェックして問題を解決するには  
+### <a name="to-fix-by-checking-the-following-possible-causes"></a>次のような原因をチェックして問題を解決するには  
   
-1.  **Error: Bitmap file resource\-file is not in 3.00 format**  
+1.  **エラー: ビットマップ リソース ファイル形式ではありません 3.00**  
   
-     Windows Version 2.x 形式のビットマップを Version 3.x のリソース ファイルで使用することはできません。  ビットマップを再描画するか、Version 3.x 形式に変換する必要があります。  
+     Windows バージョン 2.x 形式を使用するビットマップは、バージョン 3.x のリソース ファイルには使用できません。 ビットマップを再描画されるまたは 3.x 形式に変換する必要があります。  
   
-2.  **Error: Old DIB in resource\-name.  Pass it through SDKPAINT**  
+2.  **エラー: リソース名に古い DIB がします。Sdkpaint 渡す**  
   
-     指定したリソースのデバイスに依存しないビットマップ \(DIB\) には、Windows Version 3.0 形式との互換性がありません。  ビットマップを再描画するか、Version 3.x 形式に変換する必要があります。  
+     指定されたリソースにデバイス依存しないビットマップ (DIB) は、Windows 3.0 形式と互換性がありません。 ビットマップを再描画されるまたは 3.x 形式に変換する必要があります。  
   
-3.  **Error: Resource file resource\-name is not in 3.00 format**  
+3.  **エラー: リソース ファイルのリソース名は 3.00 形式で**  
   
-     指定したリソースのアイコンまたはカーソルは Windows の以前のバージョンの形式を使用しています。  アイコンまたはカーソルを再描画するか、Version 3.x 形式に変換する必要があります。  
+     アイコンまたはカーソルを指定されたリソースには、Windows の以前のバージョンから形式を使用します。 アイコンまたはカーソルを再描画されるか、3.x 形式に変換します。  
   
-4.  **Unknown DIB header format**  
+4.  **不明な DIB ヘッダーの形式**  
   
-     ビットマップのヘッダーが BITMAPCOREHEADER または BITMAPINFOHEADER 構造体ではありません。  
+     ビットマップ ヘッダーは、BITMAPCOREHEADER または BITMAPINFOHEADER 構造体ではありません。  
   
-5.  **Unable to initialize symbol information**  
+5.  **シンボル情報を初期化できません。**  
   
-     このエラーは Visual C\+\+ でだけ発生します。  開いているファイルの数が多すぎる可能性があります。また、Visual C\+\+ がスクリプトのシンボルをインポートするために必要なデータ ファイルを開くこと、またはそのようなデータ ファイルに書き込むことができない場合にも、このエラーが発生することがあります。  Visual C\+\+ は **TMP** 環境変数で指定されたフォルダーにファイルを作成します。環境変数を設定していない場合は、現在のフォルダーにファイルを作成します。  
+     このエラーは、Visual C でのみ発生します。 考えられる原因が開いているファイルが多すぎるかいる開くか、Visual C、スクリプト内のシンボルをインポートするのに必要なデータ ファイルに書き込むことはできません。 指定されたディレクトリでこれらのファイルを作成しようとしている visual C、 **TMP**環境変数または指定されていない場合は、現在のディレクトリ。  
   
-6.  **Unable to save symbol information**  
+6.  **シンボル情報を保存できません。**  
   
-     このエラーは Visual C\+\+ でだけ発生します。  開いているファイルの数が多すぎる可能性があります。また、Visual C\+\+ がスクリプトのシンボルをインポートするために必要なデータ ファイルを開くこと、またはそのようなデータ ファイルに書き込むことができない場合にも、このエラーが発生することがあります。  Visual C\+\+ は **TMP** 環境変数で指定されたフォルダーにあるファイルを使用します。環境変数を設定していない場合は、現在のフォルダーにあるファイルを使用します。  
+     このエラーは、Visual C でのみ発生します。 考えられる原因が開いているファイルが多すぎるかいる、スクリプト内のシンボルをインポートする Visual C に必要なデータ ファイルに書き込む閉じたりすることはできません。 指定されたディレクトリでこれらのファイルを使用しようとしている visual C、 **TMP**環境変数または指定されていない場合は、現在のディレクトリ。  
   
-7.  **Bitmap file resource file is not in 2.03 format**  
+7.  **ビットマップ リソース ファイルが 2.03 形式ではありません。**  
   
-     ビットマップに Version 2.03 より前の形式が使用されています。  このビットマップは、変換するか、Version 3.00 以降の形式で再描画する必要があります。  
+     ビットマップに、バージョン 2.03 より前の形式が使用されています。 ビットマップは、バージョン 3.00 以降の形式を使用して変換または再描画する必要があります。  
   
-8.  **Resource too large**  
+8.  **リソースが大きすぎます**  
   
-     Windows Version 3.1 では、リソースの大きさの制限は約 65000 バイトです。  この制限を越えると、Visual C\+\+ またはコマンド ラインのリソース コンパイラでコンパイルできません。  この制限は、カーソル、アイコン、ビットマップ、またはその他のファイル ベースのリソースには適用されません。  
+     Windows 3.1 用リソースが約 65000 バイトを超えることはできません。 場合、リソースは、しないことができますを Visual C またはコマンド ライン リソース コンパイラでコンパイルします。 この制限は、カーソル、アイコン、ビットマップ、またはその他のファイル ベースのリソースには適用されません。  
   
-9. **Resource file is not in 3.00 format**  
+9. **リソース ファイルは 3.00 形式ではありません。**  
   
-     カーソルまたはアイコンが Version 3.0 以前の形式を使用しています。  リソースを変換するか、Version 3.00 以降の形式で再描画する必要があります。  
+     カーソルまたはアイコンより前のバージョン 3.00 形式を使用します。 リソースは、変換または形式で再描画バージョン 3.00 以降にする必要があります。  
   
-10. **Unable to open temporary file**  
+10. **一時ファイルを開くことができません。**  
   
-     一時的なファイルを開くことができません。  考えられる原因は、フォルダーへの書き込み許可がないか、フォルダーが存在していないことです。  リソース コンパイラまたは Visual C\+\+ では、環境変数 **TMP** で設定されているフォルダーが使用されます。環境変数を設定していない場合は、現在のフォルダーが使用されます。
+     リソース コンパイラまたは Visual C++ は、一時ファイルを開くことができませんでした。 考えられる原因がディレクトリに対する書き込みアクセス許可があるいないか、ディレクトリが存在しないことです。 リソース コンパイラまたは Visual C++ が、 **TMP** 環境変数で指定されたディレクトリ、または指定されていない場合は現在のディレクトリでこれらのファイルを使用しようとしています。

@@ -4,27 +4,23 @@ ms.custom:
 ms.date: 03/28/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- C2440
-dev_langs:
-- C++
-helpviewer_keywords:
-- C2440
+f1_keywords: C2440
+dev_langs: C++
+helpviewer_keywords: C2440
 ms.assetid: 36e6676c-f04f-4715-8ba1-f096c4bf3b44
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 62a83da358738f7892fd5db06fbe775ff0b7d7da
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 23d6666e2b8e61a8761454729f4f7444a9800cbe
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2440"></a>コンパイラ エラー C2440
 '変換' : 'type1' から 'type2' に変換できません。  
@@ -87,11 +83,11 @@ Base * func(Derived * d) {
 ```  
   
 ## <a name="example"></a>例  
- 次の例の 15 行目と 16 行目の C2440 エラーには、"`Incompatible calling conventions for UDT return value` (UDT 戻り値の呼び出し規約に互換性がありません)" というメッセージが表示されます。 A *UDT*クラス、構造体、共用体などのユーザー定義の型です。 このような種類の非互換性エラーが発生するのは、事前宣言の戻り値の型で指定された UDT の呼び出し規約が UDT の実際の呼び出し規約と競合する場合や、関数ポインターが関連する場合です。  
+ 次の例の 15 行目と 16 行目の C2440 エラーには、"`Incompatible calling conventions for UDT return value` (UDT 戻り値の呼び出し規約に互換性がありません)" というメッセージが表示されます。 A *UDT*クラス、構造体、共用体などのユーザー定義の型です。 このような種類の非互換性エラーが発生するのは、事前宣言の戻り値の型で指定された UDT の呼び出し規則が UDT の実際の呼び出し規則と競合する場合や、関数ポインターが関連する場合です。  
   
- この例では、最初に、構造体およびその構造体を返す関数の事前宣言があります。コンパイラでは、この構造体で C++ 呼び出し規約が使用されると仮定します。 次に、構造体の定義があります。既定では、この定義は C 呼び出し規約を使用します。 コンパイラでは、構造体全体の読み込みが完了するまでは、その構造体の呼び出し規約がわからないため、`get_c2` の戻り値の型での構造体の呼び出し規約も C++ であると仮定します。  
+ この例では、最初に、構造体およびその構造体を返す関数の事前宣言があります。コンパイラでは、この構造体で C++ 呼び出し規則が使用されると仮定します。 次に、構造体の定義があります。既定では、この定義は C 呼び出し規則を使用します。 コンパイラでは、構造体全体の読み込みが完了するまでは、その構造体の呼び出し規約がわからないため、`get_c2` の戻り値の型での構造体の呼び出し規約も C++ であると仮定します。  
   
- 構造体の後には構造体を返す別の関数宣言が続きますが、この時点では、コンパイラは構造体の呼び出し規約が C++ であることを認識しています。 同様に、構造体を返す関数ポインターは構造体定義の後に定義されているため、コンパイラはその構造体で C++ 呼び出し規約が使用されることを認識します。  
+ 構造体の後には構造体を返す別の関数宣言が続きますが、この時点では、コンパイラは構造体の呼び出し規約が C++ であることを認識しています。 同様に、構造体を返す関数ポインターは構造体定義の後に定義されているため、コンパイラはその構造体で C++ 呼び出し規則が使用されることを認識します。  
   
  互換性のない 2 つの呼び出し規則が原因で発生する C2440 エラーを解決するには、UDT の定義の後にその UDT を返す関数を宣言します。  
   
@@ -298,4 +294,3 @@ int i = (const S)0; // error C2440
 ```
 
 エラーを解決するには、operator int() を定数として宣言します。
-

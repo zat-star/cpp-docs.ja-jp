@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 756e85d0fd3c00b65c3fee2f1f225327cf63a32a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: a5787e031ca2874e201a0e904fd69aad62f767bb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccommandreleasecommand"></a>CCommand::ReleaseCommand
 パラメーター アクセサーを解放し、コマンド自体を解放します。  
@@ -38,9 +41,9 @@ void CCommandBase::ReleaseCommand( ) throw( );
 ## <a name="remarks"></a>コメント  
  `ReleaseCommand`組み合わせて使用**閉じる**です。 参照してください[閉じる](../../data/oledb/ccommand-close.md)使用方法の詳細。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CCommand クラス](../../data/oledb/ccommand-class.md)   
  [CCommand::Close](../../data/oledb/ccommand-close.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d32c9e792971b20da99377ad36f3872f5824dcc7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c54b6e9716e7f0aee9a0b211148b76804d9520bf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sbcs-and-mbcs-data-types"></a>SBCS および MBCS データ型
 1 つのマルチバイト文字または 1 つのマルチバイト文字の 1 バイトを処理する Microsoft `MBCS` ランタイム ライブラリ ルーチンでは、`unsigned int` 引数が想定されます (0x00 <= 文字の値 <= 0xFFFF および 0x00 <= バイト値 <= 0xFF の場合)。 マルチバイトのバイトまたは文字列のコンテキスト内の文字を処理する `MBCS` ルーチンでは、マルチバイト文字列が `unsigned char` ポインターとして表示されることが想定されます。  
@@ -41,6 +42,6 @@ ms.lasthandoff: 10/24/2017
   
 3.  TCHAR.H の "タイプ セーフな" 静的リンク ライブラリ関数を使用します。 この場合は、コマンド ラインで定数 `_NO_INLINING` を定義します。 これは、一番時間がかかりますが、一番タイプ セーフな方法です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [国際化](../c-runtime-library/internationalization.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

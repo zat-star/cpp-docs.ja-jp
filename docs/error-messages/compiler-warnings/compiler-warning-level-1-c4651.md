@@ -1,33 +1,32 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4651 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4651"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4651"
+title: "コンパイラの警告 (レベル 1) C4651 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4651
+dev_langs: C++
+helpviewer_keywords: C4651
 ms.assetid: f1ea82aa-4dc1-4972-b55a-57fdb962f0dd
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: dce099d657341ebc957c95ab0cd14f508f9e36ee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4651
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'definition' がプリコンパイル済みヘッダーに定義されていますが、現在のコンパイル処理には定義されていません。  
+# <a name="compiler-warning-level-1-c4651"></a>コンパイラの警告 (レベル 1) C4651
+'定義' プリコンパイル済みヘッダーに定義されていますが、現在のコンパイルではありません。  
   
- 定義はプリコンパイル済みヘッダーが生成されたときに指定されましたが、このコンパイル処理には含まれていません。  
+ このコンパイルされていない場合、プリコンパイル済みヘッダーが生成されたが、定義が指定されました。  
   
- 定義はプリコンパイル済みヘッダーでは有効ですが、残りのコードでは無効です。  
+ プリコンパイル済みのヘッダー内ではなく、コードの残りの部分定義が有効になります。  
   
- プリコンパイル済みヘッダーが \/DSYMBOL を指定して作成されている場合、\/Yu コンパイル処理で \/DSYMBOL が指定されていないと、コンパイラはこの警告を生成します。\/Yu コマンド ラインに \/DSYMBOL を追加すると、この警告は解決します。
+ プリコンパイル済みヘッダーがで指定してビルドされていた場合、コンパイラで/Yu コンパイルが指定していない場合にこの警告が生成されます。  /Yu コマンドラインに指定してを追加するには、この警告が解決されます。

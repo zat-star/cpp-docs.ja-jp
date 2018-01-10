@@ -24,11 +24,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ad1cf9ea26db3d2bb111090520ccc2dc0930438c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 92ef64ebb9cd9891ad08ef2b2ad3e68b158be38c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crowsetaddrefrows"></a>CRowset::AddRefRows
 呼び出し[IRowset::AddRefRows](https://msdn.microsoft.com/en-us/library/ms719619.aspx) (を 1 つ)、参照カウントをインクリメントする現在の行ハンドルに関連付けられています。  
@@ -47,9 +50,9 @@ HRESULT AddRefRows( ) throw( );
 ## <a name="remarks"></a>コメント  
  このメソッドは、現在の行ハンドルの参照カウントをインクリメントします。 呼び出す[ReleaseRows](../../data/oledb/crowset-releaserows.md)カウントをデクリメントします。 Move メソッドによって返される行では、1 つの参照カウントがあります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRowset クラス](../../data/oledb/crowset-class.md)   
  [CRowset::ReleaseRows](../../data/oledb/crowset-releaserows.md)

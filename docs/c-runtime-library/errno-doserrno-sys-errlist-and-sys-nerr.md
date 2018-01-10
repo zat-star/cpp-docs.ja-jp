@@ -30,11 +30,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7ae382ff8f7a37754951327eafdad0cec2239faa
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 767b7623a231ad01b51bfc60212a23593544df8c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="errno-doserrno-syserrlist-and-sysnerr"></a>errno、_doserrno、_sys_errlist、および _sys_nerr
 プログラムの実行中に設定されるエラー コードと、エラー コードに相当する表示用の文字列を保持するグローバル マクロ。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 10/24/2017
   
  次の表のすべての `errno` 値が \<errno.h> の定義済み定数で、UNIX と互換性があります。 `ERANGE`、`EILSEQ`、および `EDOM` のみが、ISO C99 標準で指定されます。  
   
-|定数|システム エラー メッセージ|値|  
+|定数|システム エラー メッセージ|[値]|  
 |--------------|--------------------------|-----------|  
 |`EPERM`|操作は許可されていません|1|  
 |`ENOENT`|該当するファイルまたはディレクトリがありません|2|  
@@ -108,7 +109,7 @@ ms.lasthandoff: 10/24/2017
 |`EILSEQ`|無効なバイト シーケンスです|42|  
 |`STRUNCATE`|残りの文字列は切り詰められました|80|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |グローバル マクロ|必須ヘッダー|オプション ヘッダー|  
 |------------------|---------------------|---------------------|  
@@ -117,7 +118,7 @@ ms.lasthandoff: 10/24/2017
   
  `_doserrno`、`_sys_errlist`、および `_sys_nerr` マクロは Microsoft 拡張機能です。 互換性について詳しくは、「[互換性](../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル変数](../c-runtime-library/global-variables.md)   
  [errno 定数](../c-runtime-library/errno-constants.md)   
  [perror、_wperror](../c-runtime-library/reference/perror-wperror.md)   

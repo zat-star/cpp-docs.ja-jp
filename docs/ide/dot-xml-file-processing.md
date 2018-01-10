@@ -1,94 +1,96 @@
 ---
-title: ".Xml ファイルの処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "XML ドキュメント, XML ファイルの処理"
+title: ".Xml ファイルの処理 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: XML documentation, processing XML file
 ms.assetid: e70fdeae-80ac-4872-ab24-771c5635cfbf
-caps.latest.revision: 15
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 6b3340df4ef1d36994182e2315c8eb437e76fd4e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# .Xml ファイルの処理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンパイラは、ドキュメントを生成するためにタグ付けされたコードの構成体ごとに、ID 文字列を生成します。  詳細については、[推奨されるタグ ドキュメント コメント](../Topic/Recommended%20Tags%20for%20Documentation%20Comments%20\(Visual%20C++\).md)を参照してください。  ID 文字列によって、構成体は一意に識別されます。  .xml ファイルを処理するプログラムはドキュメントを適用するリフレクション項目または .NET Framework の対応するメタデータを識別するために、ID 文字列を使用できます。  
+# <a name="xml-file-processing"></a>.Xml ファイルの処理
+コンパイラは、ドキュメントを生成するためにタグ付けされたコードのコンストラクトごとに、ID 文字列を生成します。 詳細については、次を参照してください。[タグ ドキュメントのコメントをお勧め](../ide/recommended-tags-for-documentation-comments-visual-cpp.md)です。 ID 文字列によって、コンストラクトは一意に識別されます。 .Xml ファイルを処理するプログラムは、ドキュメントを適用するのに対象の .NET Framework メタデータやリフレクション項目を識別するのに ID 文字列を使用できます。  
   
- .xml ファイルは、コード、その階層ビューで要素ごとに生成された ID の一覧ではありません。  
+ .Xml ファイルは、コードの階層表現ではありませんが、各要素に対して生成された ID を持つ単純なリスト。  
   
  コンパイラは、次の規則に基づいて ID 文字列を生成します。  
   
--   生成される文字列に空白は含まれません。  
+-   文字列内の空白文字は配置されません。  
   
--   ID 文字列の最初の部分には、単一の文字とコロンで、識別されるメンバーの種類を示します。  使用されるメンバー型は次のとおりです。  
+-   ID 文字列の最初の部分では、その後にコロン、1 文字で識別されるメンバーの種類を識別します。 使用されるメンバー型は次のとおりです。  
   
     |文字|説明|  
-    |--------|--------|  
-    |N|namespace<br /><br /> 名前空間と名前空間への cref 参照ができるドキュメント コメントを追加できません。|  
-    |T|型 : class、interface、struct、enum、delegate|  
+    |---------------|-----------------|  
+    |N|namespace<br /><br /> 名前空間にドキュメント コメントを追加することはできません、cref 参照の名前空間にも有効であります。|  
+    |T|型: クラス、インターフェイス、構造体、列挙、デリゲート|  
     |D|typedef|  
-    |F|field|  
-    |P|プロパティ \(インデクサーまたはその他のインデックス付きプロパティを含む\)|  
-    |M|メソッド \(コンストラクター、演算子などの特殊なメソッドを含む\)|  
+    |F|フィールド|  
+    |P|プロパティ (インデクサーまたはその他のインデックス付きプロパティを含む)|  
+    |M|メソッド (コンストラクター、演算子などの特殊なメソッドを含む)|  
     |E|イベント|  
-    |\!|エラー文字列<br /><br /> エラーに続く文字列で、エラーの内容を示します。  Visual C\+\+ コンパイラは、解決できないリンクのエラー情報を生成します。|  
+    |!|エラー文字列<br /><br /> あとに続く文字列で、エラーの情報を示します。 Visual C コンパイラでは、解決できないリンクのエラー情報を生成します。|  
   
--   文字列の 2 番目の部分は、項目の完全限定名です。名前は、名前空間のルートから始まります。  項目の名前、項目が含まれている型または型、および名前空間は、ピリオドで区切られます。  名前自体にピリオドがある場合、名前のピリオドはハッシュ記号 \('\#'\) に置き換えられます。  項目の名前にはハッシュ記号がないことが前提です。  たとえば、`String` コンストラクターの完全修飾名は「System.String.\#ctor」です。  
+-   文字列の 2 番目の部分は、項目の完全修飾名で、名前空間のルートから始まります。 アイテム、その外側の型または型、および名前空間の名前は、ピリオドで区切られます。 項目の名前自体にピリオドがある場合、名前のピリオドはハッシュ記号 ('#') に置き換えられます。 項目の名前にはハッシュ記号がないことが前提です。 たとえば、完全修飾名の`String`コンス トラクターは"System.String.#ctor"になります。  
   
--   プロパティおよびメソッドについては、メソッドに引数がある場合は、引数のリストをかっこで囲み、メソッドに続けて指定します。  引数がない場合は、かっこはありません。  引数の区切り文字には、コンマを使用します。  各引数のエンコードは、次に示す .NET Framework のシグネチャでの引数のエンコーディング方法にそのまま従います。  
+-   プロパティおよびメソッドについては、メソッドに引数がある場合は、引数のリストをかっこで囲み、メソッドに続けて指定します。 引数がない場合は、かっこはありません。 引数はコンマで区切られます。 各引数のエンコードは、次に示す .NET Framework のシグネチャでの引数のエンコーディング方法にそのまま従います。  
   
-    -   基本型。  通常の型 \(ELEMENT\_TYPE\_CLASS または ELEMENT\_TYPE\_VALUETYPE\) は、型の完全限定名で表されます。  
+    -   基本データ型。 通常の型 (ELEMENT_TYPE_CLASS または ELEMENT_TYPE_VALUETYPE) は、型の完全修飾名で表されます。  
   
-    -   ELEMENT\_TYPE\_I4、ELEMENT\_TYPE\_OBJECT、ELEMENT\_TYPE\_STRING、ELEMENT\_TYPE\_TYPEDBYREF、  ELEMENT\_TYPE\_VOID などは、対応する完全な型、たとえば、**System.Int32** や **System.TypedReference**の完全修飾名で表されます。  
+    -   組み込みの型 (たとえば、ELEMENT_TYPE_I4、ELEMENT_TYPE_OBJECT、ELEMENT_TYPE_STRING、ELEMENT_TYPE_TYPEDBYREF や、 および ELEMENT_TYPE_VOID) など、対応する完全な型の完全修飾名として表される**System.Int32**または**System.TypedReference**です。  
   
-    -   ELEMENT\_TYPE\_PTR は、修飾される型に続けて '\*' と表されます。  
+    -   ELEMENT_TYPE_PTR は、修飾される型に続けて '*' と表されます。  
   
-    -   ELEMENT\_TYPE\_BYREF は、修飾される型に続けて '@' と表されます。  
+    -   ELEMENT_TYPE_BYREF は、修飾される型に続けて '@' と表されます。  
   
-    -   ELEMENT\_TYPE\_PINNED は、修飾される型に続けて '^' と表されます。  Visual C\+\+ コンパイラでは生成されません。  
+    -   ELEMENT_TYPE_PINNED は、修飾される型に続けて '^' と表されます。 これは Visual C++ コンパイラでは生成されません。  
   
-    -   ELEMENT\_TYPE\_CMOD\_REQ は、修飾される型に続けて "&#124;" と修飾子クラスの完全限定名で表されます。  Visual C\+\+ コンパイラでは生成されません。  
+    -   ELEMENT_TYPE_CMOD_REQ は、修飾される型に続けて "&#124;" と修飾子クラスの完全修飾名で表されます。 これは Visual C++ コンパイラでは生成されません。  
   
-    -   ELEMENT\_TYPE\_CMOD\_OPT は、修飾される型に続けて "\!" と修飾子クラスの完全修飾名で表されます。  
+    -   ELEMENT_TYPE_CMOD_OPT は、修飾される型に続けて "!" と修飾子クラスの完全修飾名で表されます。  
   
-    -   ELEMENT\_TYPE\_SZARRAY は、配列の要素型に続けて "\[\]" と表されます。  
+    -   ELEMENT_TYPE_SZARRAY は、配列の要素型に続けて "[]" と表されます。  
   
-    -   ELEMENT\_TYPE\_GENERICARRAY は、配列の要素型に続けて "\[?\]" と表されます。  Visual C\+\+ コンパイラでは生成されません。  
+    -   ELEMENT_TYPE_GENERICARRAY は、配列の要素型に続けて "[?]" と表されます。 これは Visual C++ コンパイラでは生成されません。  
   
-    -   ELEMENT\_TYPE\_ARRAY は、\[*lowerbound*:`size`,*lowerbound*:`size`\] の形式で表されます。ここで、コンマの個数はランク \-1 個であり、各次元の下限とサイズは明らかな場合は、10 進数で表されます。  下限またはサイズを、指定しない場合は省略します。  特定の次元で下限およびサイズが省略されている場合は、その次元の ':' も省略されます。  たとえば、ある 2 次元配列の下限が 1 で、サイズの指定がない場合は、\[1:,1:\] と表されます。  
+    -   ELEMENT_TYPE_ARRAY は、[*lowerbound*:`size`,*lowerbound*:`size`] の形式で表されます。ここで、コンマの個数はランク -1 個であり、各次元の下限とサイズは明らかな場合は、10 進数で表されます。 下限またはサイズの指定がない場合は省略されます。 特定の次元で下限およびサイズが省略されている場合は、':' も省略されます。 たとえば、ある 2 次元配列の下限が 1 で、サイズの指定がない場合は、[1:,1:] と表されます。  
   
-    -   ELEMENT\_TYPE\_FNPTR は、"\=FUNC:`type`\(*signature*\)" と表されます。ここで、`type` は戻り値の型であり、*signature* はメソッドの引数です。  引数がない場合は、かっこが省略されます。  Visual C\+\+ コンパイラでは生成されません。  
+    -   ELEMENT_TYPE_FNPTR は、"=FUNC:`type`(*signature*)" と表されます。ここで、`type` は戻り値の型であり、*signature* はメソッドの引数です。 引数がない場合、かっこは省略されます。 これは Visual C++ コンパイラでは生成されません。  
   
      次に示すシグネチャ コンポーネントは、オーバーロードされるメソッドの区別には使用されることがないため、表されません。  
   
-    -   呼び出し規約  
+    -   呼び出し規則  
   
     -   戻り値の型  
   
-    -   ELEMENT\_TYPE\_SENTINEL  
+    -   ELEMENT_TYPE_SENTINEL  
   
--   変換演算子の場合のみ、としてメソッドの戻り値は" ~ "としてエンコードされ、前にエンコードされた戻り値の型が表されます。  
+-   変換演算子の場合のみ、メソッドの戻り値としてエンコード、' ~' 後にエンコードされる前に、戻り値の型。  
   
--   ジェネリック型では、型の名前の後に、バック チック \(\`\)、ジェネリック型パラメーターの数を示す数値が順に続きます。  次に例を示します。  
+-   ジェネリック型では、型の名前の後に、バックチック、ジェネリック型パラメーターの数を示す数値が順に続きます。  たとえば、オブジェクトに適用された  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
-     `public class MyClass\<T, U>`で定義される型。  
+    ```  
+    <member name="T:MyClass`2">  
+    ```  
   
-     パラメーターとしてジェネリック型を受け取るメソッドでは、ジェネリック型パラメーターは、バック チック付きの数値 \(\`0、\`1 など\) として指定されます。  各数値は、型のジェネリック パラメーターに対する、インデックス番号が 0 から始まる配列表記を表しています。  
+     として定義されている型の`public class MyClass<T, U>`します。  
   
-## 使用例  
- 次の例は、クラス用およびそのメンバーの ID 文字列を生成する方法を示します。  
+     ジェネリック型パラメーターを受け取るメソッドでは、ジェネリック型パラメーターを指定して、バック ティックで始まる数値として (たとえば\`0、 \`1)。  各数値は、型のジェネリック パラメーターに対する、0 から始まる配列表記を表しています。  
+  
+## <a name="example"></a>例  
+ 次の例は、クラスの ID の文字列を表示して、そのメンバーが生成されます。  
   
 ```  
 // xml_id_strings.cpp  
@@ -184,5 +186,5 @@ namespace N {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [XML に関するドキュメント](../ide/xml-documentation-visual-cpp.md)

@@ -1,31 +1,30 @@
 ---
-title: "コンパイラの警告 (レベル 3) C4278 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4278"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4278"
+title: "コンパイラの警告 (レベル 3) C4278 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4278
+dev_langs: C++
+helpviewer_keywords: C4278
 ms.assetid: 4b6053fb-df62-4c04-b6c8-c011759557b8
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 249b13b70f3f10942852d7a9aa13dcf4f08e1f7f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 3) C4278
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'identifier': タイプ ライブラリ 'tlb' の識別子は既にマクロです。'rename' 修飾子を使用してください。  
+# <a name="compiler-warning-level-3-c4278"></a>コンパイラの警告 (レベル 3) C4278
+'identifier': タイプ ライブラリ 'tlb' の識別子は既にマクロです。'rename' 修飾子を使用します。  
   
- [\#import](../Topic/%23import%20Directive%20\(C++\).md) を使用すると、インポートする typelib 内の識別子は、識別子 ***identifier*** の宣言を試みます。  ただし、これは既に有効なシンボルです。  
+ 使用する場合[#import](../../preprocessor/hash-import-directive-cpp.md)、インポートするタイプ ライブラリ内の識別子は、識別子を宣言しようとします。***識別子***です。 ただし、これは有効なシンボルでは既にです。  
   
- `#import` **rename** 属性を使用して、タイプ ライブラリ内のシンボルにエイリアスを割り当ててください。
+ 使用して、 `#import` **の名前を変更**タイプ ライブラリ内の記号に別名を割り当てる属性です。

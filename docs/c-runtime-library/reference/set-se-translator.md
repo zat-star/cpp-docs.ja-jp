@@ -33,11 +33,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 82e9a4d904f28f528dbc9ed6871d9cd350d36014
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f7ce46b8db587337b7a9c98279efd4b89ffa8f9f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setsetranslator"></a>_set_se_translator
 Win32 例外 (C 構造化例外) を C++ 型指定例外として処理します。  
@@ -78,9 +79,9 @@ typedef void (*_se_translator_function)(unsigned int, struct _EXCEPTION_POINTERS
   
  `_set_se_translator` をマネージ コード (/clr でコンパイルされたコード) から使用する場合や、ネイティブ コードとマネージ コードが混在している状態で使用する場合、変換プログラムはネイティブ コードで生成される例外のみに影響することにご注意ください。 マネージ コードで生成されるマネージ例外 (`System::Exception` の発生時のものなど) はいずれも、変換関数経由ではルーティングされません。 Win32 関数 `RaiseException` を使用してマネージ コードで発生した例外や、ゼロ除算例外などのシステム例外が原因の例外は、変換プログラム経由でルーティングされます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_set_se_translator`|\<eh.h>|  
   
@@ -202,7 +203,7 @@ Translating the structured exception to a C++ exception.
 Caught CMyException.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理ルーチン](../../c-runtime-library/exception-handling-routines.md)   
  [set_terminate](../../c-runtime-library/reference/set-terminate-crt.md)   
  [set_unexpected](../../c-runtime-library/reference/set-unexpected-crt.md)   

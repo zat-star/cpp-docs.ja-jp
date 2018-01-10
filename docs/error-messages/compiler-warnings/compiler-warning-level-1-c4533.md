@@ -1,32 +1,31 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4533 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4533"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4533"
+title: "コンパイラの警告 (レベル 1) C4533 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4533
+dev_langs: C++
+helpviewer_keywords: C4533
 ms.assetid: 359fecda-d540-46e5-b214-dbabe9ef50d2
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: d2cf5a2c4cf663aab73279fc9ff0e0a9c878127b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4533
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'variable' の初期化が 'instruction' によって行われませんでした。  
+# <a name="compiler-warning-level-1-c4533"></a>コンパイラの警告 (レベル 1) C4533
+'variable' の初期化が '命令' でスキップされました  
   
- プログラム内の命令によって制御フローが変更され、変数を初期化する命令が実行されませんでした。  次の例では警告 C4533 が生成されます。  
+ プログラム内の命令、制御フローのような変更、変数を初期化する命令が実行されませんでした。 次の例では、C4533 が生成されます。  
   
 ```  
 // C4533.cpp  

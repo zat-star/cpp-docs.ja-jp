@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: feaa5b397989667da62bbf979603391c08eada2c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 312d0488afc73d38ebd1ceb8a3f4334468607ed9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="irowsetupdateimplisupdateallowed"></a>IRowsetUpdateImpl::IsUpdateAllowed
 セキュリティ、更新後に、整合性を確認するには、このメソッドをオーバーライドします。  
@@ -51,8 +54,8 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  更新プログラムを許可する必要があると判断した場合を返します`S_OK`以外を返しますそれ以外の場合**E_FAIL**です。 設定する必要がある更新を許可する場合、 **DBROWSTATUS**で[irowsetupdateimpl::update](../../data/oledb/irowsetupdateimpl-update.md)に適切な[状態の行](https://msdn.microsoft.com/en-us/library/ms722752.aspx)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IRowsetUpdateImpl クラス](../../data/oledb/irowsetupdateimpl-class.md)

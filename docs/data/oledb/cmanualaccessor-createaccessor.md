@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9bbd82a7ab2720d63ffa7860c26fc447b58e4f24
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f313e6d2b13a03a91295c75d52e4e77d5dfda22b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmanualaccessorcreateaccessor"></a>CManualAccessor::CreateAccessor
 列バインド構造体のメモリを割り当て、列のデータ メンバーを初期化します。  
@@ -56,9 +59,9 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  呼び出す前に、この関数を呼び出して、`CManualAccessor::AddBindEntry`関数。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CManualAccessor クラス](../../data/oledb/cmanualaccessor-class.md)   
  [DBViewer サンプル](../../visual-cpp-samples.md)
