@@ -4,14 +4,11 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- vc.mfc.macros
-dev_langs:
-- C++
+f1_keywords: vc.mfc.macros
+dev_langs: C++
 helpviewer_keywords:
 - MFC, global functions and variables
 - MFC, macros
@@ -22,16 +19,16 @@ helpviewer_keywords:
 - Afx naming convention
 - macros
 ms.assetid: add4e33f-0e62-4d27-be14-896cb8675d22
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: eeb53dea24ccd4d34ef90045e3254915135e70c2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 71011177634e92b22cce1bc88a2ee711ad9537ed
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-macros-and-globals"></a>MFC マクロとグローバル
 MFC (Microsoft Foundation Class) ライブラリは、(1) MFC クラス、(2) マクロおよびグローバル関数とグローバル変数の 2 つの主要な分野で構成されます。 クラスのメンバーではない関数や変数は、グローバル関数またはグローバル変数です。  
@@ -138,9 +135,8 @@ MFC (Microsoft Foundation Class) ライブラリは、(1) MFC クラス、(2) �
 > [!NOTE]
 >  グローバル関数の多くはプレフィックス "Afx" で始まります。ただし、ダイアログ データ エクスチェンジ (DDX) 関数や多くのデータベース関数など、一部に例外もあります。 すべてのグローバル変数はプリフィックス "afx" で始まります。 マクロは特定のプリフィックスでは始まりませんが、すべて大文字を使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../mfc/class-library-overview.md)
-
 
 
 

@@ -73,11 +73,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 089841b51421567f2faff9d06508feb20a57e15d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 96cc8325ce8084d62f05283b424ead222bc55dd8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdaoworkspace-class"></a>CDaoWorkspace クラス
 シングル ユーザーによる名前付きの、パスワードで保護されたデータベース セッションのログインからログオフまでを管理します。  
@@ -153,7 +154,7 @@ class CDaoWorkspace : public CObject
 ## <a name="security"></a>セキュリティ  
  MFC は、DAO では、セキュリティ制御に使用されるユーザーとグループのコレクションを実装しません。 DAO の側面を必要がある場合する必要がありますプログラムに自分で DAO インターフェイスを直接呼び出してです。 詳細については、次を参照してください。[テクニカル ノート 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md)です。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  クラスを使用して`CDaoWorkspace`に。  
   
 -   明示的に既定のワークスペースを開きます。  
@@ -190,7 +191,7 @@ class CDaoWorkspace : public CObject
   
  `CDaoWorkspace`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdao.h  
   
 ##  <a name="append"></a>CDaoWorkspace::Append  
@@ -815,7 +816,7 @@ static void PASCAL SetLoginTimeout(short nSeconds);
   
  関連情報については、DAO ヘルプの「LoginTimeout プロパティ」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CDaoDatabase クラス](../../mfc/reference/cdaodatabase-class.md)   

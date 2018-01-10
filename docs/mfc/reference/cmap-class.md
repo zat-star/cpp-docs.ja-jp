@@ -49,11 +49,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b745bb345377336377e46b9e49a45b340a2609b6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bd7c1b23e3c586bf89a86e17d85ee5b5050fbf37
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmap-class"></a>CMap クラス
 一意なキーを値に割り当てる辞書コレクション クラスです。  
@@ -81,7 +82,7 @@ template<class KEY, class ARG_KEY, class VALUE, class ARG_VALUE>class CMap : pub
   
 ### <a name="public-structures"></a>パブリック構造体  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMap::CPair](#cpair)|キーの値と、関連オブジェクトの値を含む入れ子になった構造体。|  
   
@@ -136,7 +137,7 @@ template<class KEY, class ARG_KEY, class VALUE, class ARG_VALUE>class CMap : pub
   
  `CMap`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxtempl.h  
   
 ##  <a name="cmap"></a>CMap::CMap  
@@ -213,7 +214,7 @@ void GetNextAssoc(
  `rNextPosition`  
  参照を指定します、**位置**によって以前返される値`GetNextAssoc`または`GetStartPosition`呼び出します。  
   
- *キー*  
+ *KEY*  
  マップのキーの種類を指定するテンプレート パラメーター。  
   
  `rKey`  
@@ -474,7 +475,7 @@ void SetAt(ARG_KEY key, ARG_VALUE newValue);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCCollections#62](../../mfc/codesnippet/cpp/cmap-class_7.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプルの収集](../../visual-cpp-samples.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)  

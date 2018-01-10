@@ -29,11 +29,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ba68e059224d2d15046730a9ee0058e3114d52ed
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 72bc1e833ddaa72979e25274b7328d8987f62763
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setjmp3"></a>_setjmp3
 内部 CRT 関数。 `setjmp` 関数の新しい実装。  
@@ -64,8 +65,8 @@ int _setjmp3(
 ## <a name="remarks"></a>コメント  
  この関数は C++ プログラムでは使用しないでください。 これは、C++ をサポートしない組み込み関数です。 `setjmp` の使用方法の詳細については、「[setjmp/longjmp の使用](../cpp/using-setjmp-longjmp.md)」をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [setjmp](../c-runtime-library/reference/setjmp.md)

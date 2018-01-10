@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4b5ce16963e027771bd82a8e2820e0b9ba319806
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e324976d0054cd1b32188b6ebe0f10ab4e1bdd69
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="integer-types"></a>整数型
 各整数定数には、その値と表現方法に基づいて型が割り当てられます。 整数定数を **long** 型にするには、その定数の末尾に文字 **l** または **L** を追加します。整数定数を `unsigned` 型にするには、その値に **u** または **U** を追加します。 小文字の **l** は数字の 1 と区別しにくいので、使用しないでください。 次に、**long** 整数定数の形式をいくつか示します。  
@@ -57,5 +58,5 @@ ms.lasthandoff: 10/24/2017
   
 -   **u** または **U**、および **l** または **L** サフィックスが指定された定数に割り当てられる型は、**符号なし long int** です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 整数定数](../c-language/c-integer-constants.md)

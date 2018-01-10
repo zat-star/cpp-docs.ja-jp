@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8b0435385455b759d16c3d78dfad36bab00f9de8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 19bb44653c03505d954318a01a6e34c1a297dba7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn043-rfx-routines"></a>テクニカル ノート 43: RFX ルーチン
 > [!NOTE]
@@ -167,7 +168,7 @@ RFX_Custom(pFX, "Col2",
   
  呼び出すことが重要`IsFieldType`RFX 関数と FALSE を返す場合にすぐに戻り値の開始時にします。 このメカニズムで実行されているパラメーターの操作を保持する**outputColumns**、およびその逆 (呼び出しのような**BindParam**上、 **outputColumn**)。 さらに、`IsFieldType`自動的には、追跡のカウント**outputColumns** (`m_nFields`) とパラメーター (`m_nParams`)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

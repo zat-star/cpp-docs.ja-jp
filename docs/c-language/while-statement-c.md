@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5f8157d4006d3f2a53e2f32a87d8923baf73628f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 69f4dfa2feb48bf0fb8ea6f8fca90107c788137e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="while-statement-c"></a>while ステートメント (C)
 `while` ステートメントを使用して、指定した式が false になるまでステートメントを繰り返すことができます。  
@@ -52,5 +53,5 @@ while ( i >= 0 )
   
  このコード例では、`string2` の文字を `string1` にコピーします。 `i` が 0 以上の場合、`string2[i]` が `string1[i]` に割り当てられ、`i` がデクリメントされます。 `i` が 0 に達するか、0 より小さくなると、`while` ステートメントの実行が終了します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [while ステートメント (C++)](../cpp/while-statement-cpp.md)

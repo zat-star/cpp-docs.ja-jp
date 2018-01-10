@@ -14,11 +14,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c5fa79de11c7c3a1526fc91361eecdc74f8bdcd7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0355b1c6a2731c9ca82e7ced37ad28f30a881eca
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="potential-errors-passing-crt-objects-across-dll-boundaries"></a>DLL の境界を越えて CRT オブジェクトを渡す場合に発生する可能性のあるエラー
 ファイル ハンドル、ロケール、環境変数などの C ランタイム (CRT) オブジェクトを DLL の境界を越えて渡す場合 (DLL の境界を越えた関数の呼び出し)、DLL またはその DLL を呼び出すファイルが異なる CRT ライブラリのコピーを使用していると、予想外の動作が発生する可能性があります。  
@@ -127,5 +128,5 @@ MYLIB has not been set.
 New MYLIB variable is: c:\mylib;c:\yourlib  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

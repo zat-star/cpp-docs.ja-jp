@@ -26,11 +26,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 85d2510658bdf534f25ccc3efc29c88da1c93eff
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 715221da8ea960f19e9c4ab0e386afc61c3439fc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="indirection-and-address-of-operators"></a>間接演算子とアドレス演算子
 間接演算子 (**\***) は、ポインターを介して値に間接的にアクセスします。 オペランドは、ポインター値である必要があります。 演算の結果は、オペランドによってアドレス指定される値です。つまり、オペランドがポイントするアドレスでの値です。 結果の型は、オペランドでアドレス指定する型です。  
@@ -53,7 +54,7 @@ ms.lasthandoff: 10/24/2017
   
  アドレス演算子は、ファイル スコープ レベルで宣言された基本型、構造体型、または共用体型を持つ変数、または添字配列参照だけに適用できます。 これらの式では、アドレス演算子を含まない定数式を、アドレス式に加算したりアドレス式から減算できます。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  以下に挙げる例では、次の宣言を使用します。  
   
 ```  
@@ -92,6 +93,6 @@ int  *pround  = &roundup;
   
  関数 `roundup` を宣言した後、`roundup` への 2 つのポインターを宣言して、初期化しています。 最初のポインター、`proundup` は、関数名のみを使用して初期化され、2 番目のポインター、`pround` は、初期化時にアドレス演算子が使用されています。 これらの初期化は同じ意味を持ちます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [間接演算子: *](../cpp/indirection-operator-star.md)   
  [address-of 演算子: &](../cpp/address-of-operator-amp.md)

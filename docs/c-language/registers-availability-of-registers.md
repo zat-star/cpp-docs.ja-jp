@@ -14,16 +14,17 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 147740635500536155b19179d1440b5740a723df
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 655051a2f8e0470f999d0793525bba30761663b1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="registers-availability-of-registers"></a>レジスタ: レジスタの可用性
 **ANSI 3.5.1** register ストレージ クラス指定子を使用してオブジェクトをレジスタに実際に配置できる範囲  
   
  コンパイラは、レジスタ変数に対するユーザーの要求を考慮しません。 代わりに、最適化時に独自の選択を行います。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [実装で定義された動作](../c-language/implementation-defined-behavior.md)

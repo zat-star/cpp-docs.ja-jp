@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9b9caa028d7f870ecdd6c67503c6bc9448cff1d3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 010f5fd443271bec1d28b6760f0c17f4e17d803b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lightweight-tasks"></a>軽量タスク
 このドキュメントでは、軽量タスク、同時実行ランタイムでの役割について説明します。 A*軽量タスク*から直接スケジュールするタスク、`concurrency::Scheduler`または`concurrency::ScheduleGroup`オブジェクト。 軽量タスクが Windows API に提供する関数に似た[CreateThread](http://msdn.microsoft.com/library/windows/desktop/ms682453)関数。 したがって、軽量タスクは、同時実行ランタイムのスケジュール機能を使用する既存のコードを改変する場合に役立ちます。 同時実行ランタイム自体では、軽量タスクを使用して、非同期エージェントをスケジュールし、非同期メッセージ ブロックの間でメッセージを送信します。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="example"></a>例  
  例については、軽量タスクを使用する既存のコードを改変する方法については、次を参照してください。[チュートリアル: 既存のコードを使用して軽量タスクを適応させる](../../parallel/concrt/walkthrough-adapting-existing-code-to-use-lightweight-tasks.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [タスク スケジューラ](../../parallel/concrt/task-scheduler-concurrency-runtime.md)   
  [チュートリアル: 既存のコードを改変して軽量タスクを使用する](../../parallel/concrt/walkthrough-adapting-existing-code-to-use-lightweight-tasks.md)
 

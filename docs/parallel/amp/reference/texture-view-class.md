@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -20,33 +19,18 @@ f1_keywords:
 - AMP_GRAPHICS/Concurrency::graphics::texture_view::sample
 - AMP_GRAPHICS/Concurrency::graphics::texture_view::set
 - AMP_GRAPHICS/Concurrency::graphics::texture_view::value_type
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 6ec2e289-1626-4727-9592-07981cf1d27d
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 4896b3ee55a5955c33e1c2652eb73851e4ec5a64
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 7ed3f9adb564676d54e06152bfd7d277c4a5d952
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="textureview-class"></a>texture_view クラス
 テクスチャへの読み取りアクセスおよび書き込みアクセスを提供します。 `texture_view` は、既定の 32 ビット bpse である `int`、`unsigned int`、または `float` の値型のテクスチャを読み取るためにのみ使用できます。 他のテクスチャ形式を読み取るには、`texture_view<const value_type, _Rank>` を使用します。  
@@ -121,7 +105,7 @@ class texture_view<const value_type, _Rank>
   
  `texture_view`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_graphics.h  
   
  **Namespace:** concurrency::graphics  
@@ -517,6 +501,5 @@ void set(
 typedef typename const value_type value_type;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

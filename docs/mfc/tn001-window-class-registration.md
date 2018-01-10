@@ -18,11 +18,12 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8278a1dd22a242834fd4559c580820ae6e69e21d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f4560905660ea80524c3e26bf14a803a2bc74344
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn001-window-class-registration"></a>テクニカル ノート 1: ウィンドウ クラスの登録
 このメモには、特別なを登録する MFC ルーチンがについて説明[WNDCLASS](http://msdn.microsoft.com/library/windows/desktop/ms633576)es Microsoft Windows で必要とします。 特定`WNDCLASS`MFC と Windows で使用される属性がについて説明します。  
@@ -78,7 +79,7 @@ ms.lasthandoff: 10/24/2017
  サブクラスまたはスーパークラス Windows 制御する場合 (たとえば、 [CButton](../mfc/reference/cbutton-class.md)) クラスを自動的に取得し、`WNDCLASS`そのコントロールの Windows 実装で提供される属性です。  
   
 ## <a name="the-afxregisterwndclass-function"></a>AfxRegisterWndClass 関数  
- MFC には、ウィンドウ クラスを登録するためのヘルパー関数が用意されています。 一連の属性 (ウィンドウ クラス スタイル、カーソル、背景のブラシ、およびアイコン) を指定するには、合成名が生成され、結果のウィンドウ クラスが登録されています。 次に例を示します。  
+ MFC には、ウィンドウ クラスを登録するためのヘルパー関数が用意されています。 一連の属性 (ウィンドウ クラス スタイル、カーソル、背景のブラシ、およびアイコン) を指定するには、合成名が生成され、結果のウィンドウ クラスが登録されています。 たとえば、オブジェクトに適用された  
   
 ```  
 const char* AfxRegisterWndClass(UINT nClassStyle,
@@ -108,7 +109,7 @@ pWnd->Create(strWndClass, ...);
   
  使用することが重要`AfxRegisterClass`(または`AfxRegisterWndClass`) で Win32 DLL にします。 Win32 は自動的に登録解除されないため、DLL が終了した場合に、明示的に登録を解除する必要があります、DLL によって登録されたクラスです。 使用して`AfxRegisterClass`の代わりに`RegisterClass`これは自動的に処理するためです。 `AfxRegisterClass`一意のクラスの一覧は、DLL に登録されているしは自動的に解除して、DLL が終了するときは保持します。 使用すると`RegisterClass`DLL で DLL が終了した場合には、すべてのクラスが登録されているないことを確認する必要があります (で、 [DllMain](http://msdn.microsoft.com/library/windows/desktop/ms682583)関数)。 そのためにはエラーが発生する可能性があります`RegisterClass`別のクライアント アプリケーションが DLL を使用しようとしたときに予期せず失敗します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

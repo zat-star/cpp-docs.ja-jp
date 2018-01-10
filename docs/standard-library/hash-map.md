@@ -17,11 +17,12 @@ caps.latest.revision: "27"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e69496f3383233c45ba994305342c3340459a287
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload: cplusplus
+ms.openlocfilehash: a996142e128f4113fb9d1057cd061155dae251f1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lthashmapgt"></a>&lt;hash_map&gt;
 > [!NOTE]
@@ -59,12 +60,12 @@ ms.lasthandoff: 10/31/2017
 |[hash_map クラス](hash-map-class.md)|一意の並べ替えキーとそれに関連付けられている値のペアを要素として持つコレクションのデータを格納したり、迅速に取得したりするために使用されます。|  
 |[hash_multimap クラス](hash-multimap-class.md)|必ずしも一意ではない並べ替えキーとそれに関連付けられている値のペアを要素として持つコレクションのデータを格納したり、迅速に取得したりするために使用されます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<hash_map>  
   
  **名前空間:** stdext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](cpp-standard-library-header-files.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](cpp-standard-library-reference.md)

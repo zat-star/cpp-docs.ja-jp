@@ -18,11 +18,12 @@ caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 60a2131b08b9f0ac119bdcd414f2d4d1761a9b6c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 961ede0b381555b3e41d0432f2aa4093ee496ac1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="floating-point-support"></a>浮動小数点サポート
 Microsoft C ランタイム ライブラリ (CRT) では、ISO C99 で必要とされる関数をすべて含む、多数の浮動小数点数値演算ライブラリ関数を提供しています。 これらの関数は、正確性とパフォーマンスのバランスをとるために実装されます。 正確に丸めた結果を生成するには非常にコストがかかる場合があるため、正確に丸めた結果の近似値を効率的に生成できるように当該関数が設計されました。 ほとんどのケースでは、生成される結果は正確に丸めた結果の +/- 1 ulp の誤差範囲内に収まります。ただし、不正確さがそれより大きくなる場合もあります。  
@@ -255,5 +256,5 @@ Microsoft C ランタイム ライブラリ (CRT) では、ISO C99 で必要と�
   
  [_y0、_y1、_yn](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

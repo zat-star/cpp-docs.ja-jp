@@ -231,11 +231,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8cf9d7244ce587881062fcd95ce1d3f3414e2ca8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 545cf67ff790edeb2303f95365c34ca71e4dc7f6
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="chtmleditctrlbase-class"></a>CHtmlEditCtrlBase クラス
 HTML 編集コンポーネントを表します。  
@@ -372,7 +373,7 @@ template <class T> class CHtmlEditCtrlBase
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CHtmlEditCtrlBase`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxhtml.h  
   
 ##  <a name="addtoglyphtable"></a>CHtmlEditCtrlBase::AddToGlyphTable  
@@ -1466,7 +1467,7 @@ long QueryStatus(long cmdID) const;
   
 ### <a name="parameters"></a>パラメーター  
  `cmdID`  
- コマンド ID。 コマンド識別子がから取得した、`CGID_MSHTML`コマンド グループ。 これらのコマンドは、Mshtmcid.h で定義されます。 オンラインにある一覧を検索することも[MSHTML コマンド識別子](http://go.microsoft.com/fwlink/linkid=149220)です。  
+ コマンド ID。 コマンド識別子がから取得した、`CGID_MSHTML`コマンド グループ。 これらのコマンドは、Mshtmcid.h で定義されます。 オンラインにある一覧を検索することも[MSHTML コマンド識別子](http://go.microsoft.com/fwlink/p/?linkid=149220)です。  
   
 ### <a name="return-value"></a>戻り値  
  返します、 [OLECMDF](http://msdn.microsoft.com/library/windows/desktop/ms695237)のステータスを表す`cmdID`、または 0 を返します。  
@@ -2171,7 +2172,7 @@ HRESULT UnorderList(LPCTSTR szId = NULL) const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [IDM UNORDERLIST コマンド ID](https://msdn.microsoft.com/library/aa769987.aspx) WebBrowser コントロールにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [HTMLEdit サンプル](../../visual-cpp-samples.md)
 

@@ -27,11 +27,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 224c30dfbc79ab91e60f7f55f4835d3f627c454c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e5f025d90d4ffac5f9dc293f621023591b5eb4f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strcoll-functions"></a>strcoll 系関数
 各 `strcoll` 関数と各 `wcscoll` 関数は、現在使用されているロケールのコード ページの `LC_COLLATE` カテゴリ設定に基づいて 2 つの文字列を比較します。 各 `_mbscoll` 関数は、現在使用されているマルチバイトのコード ページに基づいて、2 つの文字列を比較します。 文字列を比較する `coll` 関数は、現在のコード ページの文字セット順序と辞書式文字順序との間に相違点あり、この違いが比較に関係がある場合にのみ使用します。 対応する `cmp` 関数は、文字列が等しいかをテストする目的でのみ使用します。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 10/24/2017
   
  `coll` 関数が単に文字列の等価性をテストするのに対して、`cmp` 関数は比較のために文字列を辞書式に照合するため、`coll` 関数は `cmp` の対応するバージョンよりもかなり低速です。 したがって、`coll` 関数は、現在のコード ページの文字セット順序と辞書式文字順序との間に相違点あり、この違いが文字列比較に関係がある場合にのみ使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール](../c-runtime-library/locale.md)   
  [文字列操作](../c-runtime-library/string-manipulation-crt.md)   
  [localeconv](../c-runtime-library/reference/localeconv.md)   

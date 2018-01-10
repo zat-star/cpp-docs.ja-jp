@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f0ac465ec20d0893add63d8b5791b9445b17f8fb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: aa6285504a194d909dec7a446437ca9f584272a9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="overview-of-declarations"></a>宣言の概要
 "宣言" は、一連の識別子の解釈と属性を指定します。 識別子に指定されたオブジェクトまたは関数のためにストレージを予約する宣言は "定義" と呼ばれます。 C における変数、関数、および型の宣言では、次の構文に従います。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 10/24/2017
   
  宣言には *attribute-seq* に示されている省略可能な属性を 1 つ以上含めることができます。*seq* は、sequence (シーケンス) の省略形です。 これらの Microsoft 固有の属性は、さまざまな機能を実行します。詳細については、このブック全体で説明します。  
   
- 変数宣言の一般的な形式では、*type-specifier* は変数のデータ型を示します。 型が **const** または `volatile` で変更される場合、*type-specifier* は複合型にすることができます。 `declarator` は、配列型またはポインター型を宣言するために変更される可能性がある変数の名前を示します。 次に例を示します。  
+ 変数宣言の一般的な形式では、*type-specifier* は変数のデータ型を示します。 型が **const** または `volatile` で変更される場合、*type-specifier* は複合型にすることができます。 `declarator` は、配列型またはポインター型を宣言するために変更される可能性がある変数の名前を示します。 たとえば、オブジェクトに適用された  
   
 ```  
 int const *fp;  
@@ -77,7 +78,7 @@ int const *fp;
   
  *type-qualifier* 終端要素は、**const** と `volatile` の 2 つがあります。 これらの修飾子は、関連する型の追加のプロパティを指定します (その型のオブジェクトに左辺値を通じてアクセスする場合のみ)。 **const** および `volatile` の詳細については、「[型修飾子](../c-language/type-qualifiers.md)」を参照してください。 左辺値の定義については、「[左辺値と右辺値の式](../c-language/l-value-and-r-value-expressions.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 言語の構文概要](../c-language/c-language-syntax-summary.md)   
  [宣言と型](../c-language/declarations-and-types.md)   
  [宣言の概要](../c-language/summary-of-declarations.md)

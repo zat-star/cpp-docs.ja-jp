@@ -4,27 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- system_error/std::system_error
-dev_langs:
-- C++
-helpviewer_keywords:
-- system_error class
+f1_keywords: system_error/std::system_error
+dev_langs: C++
+helpviewer_keywords: system_error class
 ms.assetid: 2eeaacbb-8a4a-4ad7-943a-997901a77f32
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 3795f289a454503e80aa06d281543cd94aaa0a55
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 053dc577c884be5ef0878d0caf82107ecaf21239
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="systemerror-class"></a>system_error クラス
 低レベル システムエラーをレポートするためにスローされるすべての例外のための基底クラスを表します。  
@@ -58,12 +54,11 @@ const error_code& code() const throw();
   
  メンバー関数 `code` は、格納されている [error_code](../standard-library/error-code-class.md) オブジェクトを返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<system_error>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<system_error>](../standard-library/system-error.md)
-
 

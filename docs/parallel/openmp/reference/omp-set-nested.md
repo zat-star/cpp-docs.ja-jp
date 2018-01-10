@@ -1,32 +1,31 @@
 ---
-title: "omp_set_nested | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "omp_set_nested"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "omp_set_nested OpenMP function"
+title: "omp_set_nested |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: omp_set_nested
+dev_langs: C++
+helpviewer_keywords: omp_set_nested OpenMP function
 ms.assetid: fa1cb08c-7b8b-42c9-8654-2c33dcffb5b6
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: f08fec246b5df4b5a6dc965917e0a6438b58042f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# omp_set_nested
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-入れ子になった並列化を有効にします。  
+# <a name="ompsetnested"></a>omp_set_nested
+入れ子になった並列処理を有効にします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void omp_set_nested(  
@@ -34,24 +33,24 @@ void omp_set_nested(
 );  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
  `val`  
- 以外の場合の入れ子になった並列化。  インデックスが無効の入れ子になった並列化。  
+ ゼロ以外の場合は、入れ子になった並列処理を使用できます。 0 の場合、入れ子になった並列処理を無効にします。  
   
-## 解説  
- OMP の入れ子になった並列化は `omp_set_nested`または [OMP\_NESTED](../../../parallel/openmp/reference/omp-nested.md) の環境変数を設定して行うことができます。  
+## <a name="remarks"></a>コメント  
+ 入れ子になった OMP 並列処理をオンにすると`omp_set_nested`、かを設定して、 [OMP_NESTED](../../../parallel/openmp/reference/omp-nested.md)環境変数。  
   
- `omp_set_nested` の設定は `OMP_NESTED` 環境変数の設定をオーバーライドします。  
+ 設定`omp_set_nested`の設定を上書き、`OMP_NESTED`環境変数。  
   
- 有効にすると環境変数は並列領域を入れ子にするときにスレッドの数値を指数関数的に増加するため別の方法で操作上のプログラムを中断できます。  再帰が 6 OMP スレッドの数によってがタイムアウトたとえば関数は 4 にスレッド数がプロセッサ数を超えている場合に必要です。4,096 を設定します \(6\) スレッドのべき乗を 4 回は通常アプリケーションのパフォーマンス低下します。  ただし1 種類の例外はI\/O 主体のアプリケーションです。  
+ 有効にすると、環境変数は並列領域を入れ子にする場合に、スレッドの数が指数関数的に増加するために運用それ以外の場合、プログラムを分割できます。  たとえば、OMP スレッド数が 4 に設定を 6 回再帰的に検索が 4,096 (6 のべき乗に 4) を必要とする関数の一般的にスレッド、スレッドの数がプロセッサの数を超えた場合、アプリケーションのパフォーマンスが低下します。 1 つの例外は、I/O バインドのアプリケーションになります。  
   
- `omp_set_nested` の現在の設定を表示するに [omp\_get\_nested](../../../parallel/openmp/reference/omp-get-nested.md) を使用します。  
+ 使用して[omp_get_nested](../../../parallel/openmp/reference/omp-get-nested.md)の現在の設定を表示する`omp_set_nested`です。  
   
- 詳細については、「[3.1.9 omp\_set\_nested Function](../../../parallel/openmp/3-1-9-omp-set-nested-function.md)」を参照してください。  
+ 詳細については、次を参照してください。 [3.1.9 omp_set_nested 関数](../../../parallel/openmp/3-1-9-omp-set-nested-function.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // omp_set_nested.cpp  
@@ -72,7 +71,10 @@ int main( )
 }  
 ```  
   
-  **1**  
-**1**   
-## 参照  
- [Functions](../../../parallel/openmp/reference/openmp-functions.md)
+```Output  
+1  
+1  
+```  
+  
+## <a name="see-also"></a>参照  
+ [関数](../../../parallel/openmp/reference/openmp-functions.md)

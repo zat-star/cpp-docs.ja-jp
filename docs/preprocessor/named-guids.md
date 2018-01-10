@@ -1,42 +1,41 @@
 ---
-title: "named_guids | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "named_guids"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "named_guids 属性"
+title: "named_guids |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: named_guids
+dev_langs: C++
+helpviewer_keywords: named_guids attribute
 ms.assetid: b905e5e5-07fe-4874-8993-e05b9d639045
-caps.latest.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 13e784056314fbd16c24b1cfc5894434e7b84f5d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# named_guids
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**C\+\+ 固有の仕様**  
+# <a name="namedguids"></a>named_guids
+**C 固有の仕様**  
   
- **LIBID\_MyLib**、**CLSID\_MyCoClass**、**IID\_MyInterface**、および **DIID\_MyDispInterface** 形式に対して、旧スタイルの GUID 変数を定義し、初期化するようコンパイラに指示します。  
+ 定義し、旧スタイルの形式の GUID 変数を初期化するようにコンパイラに指示**LIBID_MyLib**、 **CLSID_MyCoClass**、 **IID_MyInterface**、および**DIID_MyDispInterface**です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 named_guids  
 ```  
   
-## 解説  
- **END C\+\+ 固有の仕様**  
+## <a name="remarks"></a>コメント  
+ **END C 固有の仕様**  
   
-## 参照  
- [\#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
- [\#import ディレクティブ](../Topic/%23import%20Directive%20\(C++\).md)
+## <a name="see-also"></a>参照  
+ [#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
+ [#import ディレクティブ](../preprocessor/hash-import-directive-cpp.md)

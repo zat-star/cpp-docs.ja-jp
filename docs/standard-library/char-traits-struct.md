@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -30,22 +29,21 @@ f1_keywords:
 - iosfwd/std::char_traits::not_eof
 - iosfwd/std::char_traits::to_char_type
 - iosfwd/std::char_traits::to_int_type
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - char_traits struct
 - char_traits class
 ms.assetid: 568e59f0-4521-4207-9223-9dcf6a16d620
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: b094e0cc34cc1a832e531cff9a5f3fa1366abcc1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: af8e9c141db96bd0ce5ddd1dbca922799212b401
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="chartraits-struct"></a>char_traits 構造体
 char_traits 構造体は文字に関連付けられた属性を記述します。  
@@ -94,7 +92,7 @@ struct char_traits;
 |[to_char_type](#to_char_type)|`int_type` の文字を `char_type` の対応する文字に変換し、その結果を返します。|  
 |[to_int_type](#to_int_type)|`char_type` の文字を `int_type` の対応する文字に変換し、その結果を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<string>  
   
  **名前空間:** std  
@@ -1169,7 +1167,6 @@ The recovered char_type of ch1 is equal to the original ch1.
 The recovered char_type of ch2 is equal to the original ch2.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 

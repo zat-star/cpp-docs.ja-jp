@@ -18,11 +18,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0681e993695dadfbbfe4ef369fda44b2b9eddc2c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c674cc127f08109ecf40d99d890b088d55e9c906
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcribboncustomizedialog-class"></a>CMFCRibbonCustomizeDialog クラス
 リボンが表示されます**カスタマイズ**ページ。  
@@ -68,7 +69,7 @@ class CMFCRibbonCustomizeDialog : public CMFCPropertySheet
   
  [CMFCRibbonCustomizeDialog](../../mfc/reference/cmfcribboncustomizedialog-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxribboncustomizedialog.h  
   
 ##  <a name="cmfcribboncustomizedialog"></a>CMFCRibbonCustomizeDialog::CMFCRibbonCustomizeDialog  
@@ -95,6 +96,6 @@ CMFCRibbonCustomizeDialog(
 ### <a name="remarks"></a>コメント  
  コンス トラクターをインスタンス化、 [CMFCRibbonCustomizePropertyPage クラス](../../mfc/reference/cmfcribboncustomizepropertypage-class.md)オブジェクトおよびプロパティ シート ページのコレクションに追加します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)

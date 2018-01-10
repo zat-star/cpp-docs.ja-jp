@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c97bf4f71bb215477c00295a11f659870c2535b5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a4385515becbb32b256b2bf6562af941371ef47e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="storage-class"></a>ストレージ クラス
 関数定義では、ストレージ クラス指定子により、関数に `extern` または **static** のストレージ クラスが指定されます。  
@@ -62,7 +63,7 @@ ms.lasthandoff: 10/24/2017
   
  /Ze コンパイラ オプションを使用してコンパイルすると、`extern` キーワードを使用してブロック内で宣言された関数はグローバルで可視になります。 /Za でコンパイルした場合は、これに該当しません。 ソース コードの移植性を考慮している場合は、この機能に依存しないでください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 関数の定義](../c-language/c-function-definitions.md)

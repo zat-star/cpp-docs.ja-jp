@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -20,9 +19,7 @@ f1_keywords:
 - random/std::poisson_distribution::param_type::mean
 - random/std::poisson_distribution::param_type::operator==
 - random/std::poisson_distribution::param_type::operator!=
-- random/std::poisson_distribution::param_type
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - std::poisson_distribution [C++]
 - std::poisson_distribution [C++], reset
@@ -33,16 +30,16 @@ helpviewer_keywords:
 - std::poisson_distribution [C++], param_type
 - std::poisson_distribution [C++], param_type
 ms.assetid: 09614281-349a-45f7-8e95-c0196be0a937
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: e9ebeb453aefee8310e45779f1fd60c7bd207771
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 1033cc69a3076762cb6ac1b5c50bf6fe7ca2df7b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="poissondistribution-class"></a>poisson_distribution クラス
 ポワソン分布を生成します。  
@@ -92,7 +89,7 @@ public:
   
 プロパティ関数 `mean()` は、格納されている分布パラメーター *mean* の値を返します。  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
 
 メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
   
@@ -102,7 +99,7 @@ public:
   
 分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-ポワソン分布の詳細については、Wolfram MathWorld の記事「[ポワソン分布](http://go.microsoft.com/fwlink/LinkId=401112)」をご覧ください。  
+ポワソン分布の詳細については、Wolfram MathWorld の記事「[ポワソン分布](http://go.microsoft.com/fwlink/p/?linkid=401112)」をご覧ください。  
   
 ## <a name="example"></a>例  
   
@@ -202,7 +199,7 @@ Distribution for 100 samples:
    17 :  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -251,7 +248,6 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
-
 

@@ -85,11 +85,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 07065470a7dda56650224bc794579a5038c9b643
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1dae44f60c61222659304bea4ee811999d50280b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cimagelist-class"></a>CImageList クラス
 Windows コモン イメージ リスト コントロールの機能が用意されています。  
@@ -169,7 +170,7 @@ class CImageList : public CObject
   
  `CImageList`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="add"></a>CImageList::Add  
@@ -286,7 +287,7 @@ BOOL Copy(
  `uFlags`  
  に対するコピー操作の種類を指定するビット フラグの値です。 このパラメーターには、次の値のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |`ILCF_MOVE`|ソース イメージは、移行先のイメージのインデックス位置にコピーされます。 この操作は、指定したイメージの複数のインスタンスになります。 `ILCF_MOVE` が既定値です。|  
 |`ILCF_SWAP`|送信元と送信先のイメージは、イメージ リスト内の位置を交換します。|  
@@ -347,7 +348,7 @@ BOOL Create(CImageList* pImageList);
  `nFlags`  
  作成するイメージ リストの種類を指定します。 このパラメーターは、次の値の組み合わせを指定できますのいずれかのみを含めることができますが、`ILC_COLOR`値。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |`ILC_COLOR`|他の場合は、既定の動作を使用して`ILC_COLOR`* フラグを指定します。 既定値は、通常、 `ILC_COLOR4`; が、古いディスプレイ ドライバーの既定値は`ILC_COLORDDB`します。|  
 |`ILC_COLOR4`|イメージ リストのビットマップとして 4 ビット (16 色) デバイスに依存しないビットマップ (DIB) セクションを使用します。|  
@@ -549,7 +550,7 @@ BOOL Draw(
  `nStyle`  
  描画スタイルを指定するフラグします。 これらの値の 1 つ以上を指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |`ILD_BLEND25`、 **ILD_FOCUS**|システムの強調表示色を 25% を混合して、イメージを描画します。 この値はイメージ リストには、マスクが含まれていない場合に影響しません。|  
 |`ILD_BLEND50`、 **ILD_SELECTED**、 **ILD_BLEND**|システムの強調表示色を 50% を混合して、イメージを描画します。 この値はイメージ リストには、マスクが含まれていない場合に影響しません。|  
@@ -662,7 +663,7 @@ BOOL DrawIndirect(
  *rgbBack*  
  既定では、画像の背景色`CLR_DEFAULT`です。 このパラメーターには、アプリケーション定義の RGB 値または値は次のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |`CLR_DEFAULT`|既定の背景色。 イメージがイメージ リストの背景色を使用して描画します。|  
 |`CLR_NONE`|背景色がありません。 イメージは透過的に描画されます。|  
@@ -670,7 +671,7 @@ BOOL DrawIndirect(
  *rgbFore*  
  既定では、前景色をイメージ`CLR_DEFAULT`です。 このパラメーターには、アプリケーション定義の RGB 値または値は次のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |`CLR_DEFAULT`|既定の前景の色。 イメージは、システムの強調表示色を使用して、前景色として描画されます。|  
 |`CLR_NONE`|ディザー カラーなし。 イメージは、コピー先デバイス コンテキストの色とブレンドされます。|  
@@ -1062,7 +1063,7 @@ BOOL Write(CArchive* pArchive);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CImageList#17](../../mfc/reference/codesnippet/cpp/cimagelist-class_23.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CListCtrl クラス](../../mfc/reference/clistctrl-class.md)   

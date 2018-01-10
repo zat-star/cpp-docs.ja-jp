@@ -30,11 +30,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ae3c6586153403e3c82078d4f7559ae89767f40a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a788285aed8e8b7483e13c954ee193aca69d1100
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-activex-controls-using-fonts"></a>MFC ActiveX コントロール: フォントの使用
 ActiveX コントロールには、テキストが表示されている場合は、フォントのプロパティを変更することによってテキストの外観を変更するコントロールのユーザーを許可できます。 フォントのプロパティは、フォント オブジェクトとして実装され、2 種類のいずれかになります。 株価またはカスタムです。 ストック フォント プロパティはあらかじめ実装されているフォント プロパティの追加ウィザードを使用して追加することができます。 カスタム フォントのプロパティがあらかじめ実装されていないと、コントロールの開発者は、プロパティの動作と使用状況を判断します。  
@@ -233,7 +234,7 @@ ActiveX コントロールには、テキストが表示されている場合は
   
  これらの変更が行われた後、プロジェクトにプロジェクトをリビルドし、インターフェイスをテストするテスト コンテナーを使用します。 Test Container にアクセスする方法について詳しくは、「 [テスト コンテナーでのプロパティとイベントのテスト](../mfc/testing-properties-and-events-with-test-container.md) 」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
  [MFC ActiveX コントロール: ActiveX コントロールにおけるピクチャの使用](../mfc/mfc-activex-controls-using-pictures-in-an-activex-control.md)   
  [MFC ActiveX コントロール: ストック プロパティ ページの使用](../mfc/mfc-activex-controls-using-stock-property-pages.md)

@@ -40,11 +40,12 @@ caps.latest.revision: "16"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 983efc1f3341ca334415e8cdd37f96f12fbb3e11
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 15fa7169f46e84cf60e1b869e5eb68a392b16a3a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="inp-inpw-inpd"></a>_inp、_inpw、_inpd
 ポートから 1 バイト (`_inp`)、1 ワード (`_inpw`)、または 1 ダブルワード (`_inpd`) のいずれかを読み込みます。  
@@ -81,19 +82,19 @@ unsigned long _inpd(
   
  これらの関数は I/O ポートから直接読み出すため、Windows NT、Windows 2000、Windows XP、および Windows Server 2003 のユーザー コードでは使用できない場合があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_inp`|\<conio.h>|  
 |`_inpw`|\<conio.h>|  
 |`_inpd`|\<conio.h>|  
   
- 互換性の詳細については、「[互換性](../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンソール入出力とポート入出力](../c-runtime-library/console-and-port-i-o.md)   
  [_outp、_outpw、_outpd](../c-runtime-library/outp-outpw-outpd.md)

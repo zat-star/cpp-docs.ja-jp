@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 834475840fbe20a0d6938c563f3541c294e09bee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5e86bedbf83cd417cfc41317e5887304cda7ee76
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-a-makefile-project"></a>メイクファイル プロジェクトの作成
 メイクファイルを使用してコマンド ラインからビルドしたプロジェクトは、Visual Studio 開発環境では認識されません。 開き、使用して、プロジェクトをビルドする[!INCLUDE[vsUltShort](../ide/includes/vsultshort_md.md)]、メイクファイル プロジェクト テンプレートを選択して、空のプロジェクトをまず作成 Visual Studio Professional、または Visual Studio Express for Windows Desktop、します。 作成した空のプロジェクトを使用して、目的のプロジェクトを Visual Studio 開発環境でビルドします。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 10/24/2017
   
  プロジェクトのプロパティは、プロパティ ページで表示および編集できます。 参照してください[Visual C プロジェクトのプロパティの設定](../ide/working-with-project-properties.md)については、プロパティ ページを表示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メイクファイル プロジェクト ウィザード](../ide/makefile-project-wizard.md)   
  [メイクファイルの特殊文字](../build/special-characters-in-a-makefile.md)   
  [メイクファイルの内容](../build/contents-of-a-makefile.md)

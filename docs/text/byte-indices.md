@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: ec28ce5e577fe4d1e766934095d22a7e64a6a3da
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 594acadeedad06e9720180c38bd0bcd657391879
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="byte-indices"></a>バイト インデックス
 次のヒントを使用します。  
@@ -43,6 +44,6 @@ ms.lasthandoff: 10/24/2017
   
      これは、正しくため先行バイトにインデックスを作成する、`character`です。 `_mbclen`関数 (1 つまたは 2 バイト) 文字のサイズが決まります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MBCS のプログラミングについて](../text/mbcs-programming-tips.md)   
  [文字列の最後の文字](../text/last-character-in-a-string.md)

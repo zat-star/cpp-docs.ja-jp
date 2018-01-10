@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f693c3ff8bc3e44d47f885b6fb4c0d09b36fdbde
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f1cbedf8782c9c5ccb25bda3f8b43df8a526f268
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="3-run-time-library-functions"></a>3.ランタイム ライブラリ関数
 このセクションでは、OpenMP C および C++ ランタイム ライブラリ関数について説明します。 ヘッダー  **\<omp.h >** 2 つの型が、制御およびクエリを並列実行環境とロック データへのアクセスを同期するために使用できる関数を使用できるいくつかの関数を宣言します。  

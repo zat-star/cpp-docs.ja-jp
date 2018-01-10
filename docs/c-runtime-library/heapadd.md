@@ -31,11 +31,12 @@ caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 85f13e082e25702967868d6889e575a6e261f6b2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9c046f9e26848edbbc609b9f3c729a0654fe3718
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="heapadd"></a>_heapadd
 ヒープにメモリを追加します。  
@@ -62,20 +63,20 @@ int _heapadd(
 ## <a name="return-value"></a>戻り値  
  成功すると、`_heapadd` は 0 を返します。それ以外の場合、この関数は -1 を返し、`errno` を `ENOSYS` に設定します。  
   
- このリターン コードとその他のリターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+ このリターン コードとその他のリターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  Visual C++ のバージョン 4.0 以降では、新しいデバッグ機能をサポートするために、基になるヒープ構造が C ランタイム ライブラリに移動しました。 その結果、 `_heapadd` は、Win32 API に基づいているすべてのプラットフォームでサポートされなくなりました。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_heapadd`|\<malloc.h>|\<errno.h>|  
   
- 互換性について詳しくは、「はじめに」の「[互換性](../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../c-runtime-library/memory-allocation.md)   
  [free](../c-runtime-library/reference/free.md)   
  [_heapchk](../c-runtime-library/reference/heapchk.md)   

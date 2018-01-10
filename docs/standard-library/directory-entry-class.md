@@ -45,11 +45,12 @@ helpviewer_keywords:
 - std::experimental::filesystem::directory_entry::operator&lt;=
 - std::experimental::filesystem::directory_entry::operator&gt;
 - std::experimental::filesystem::directory_entry::operator&gt;=
-ms.openlocfilehash: f79999e2913bb0058a62f112d4450e89daf456e6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9f052d7f9991c88389bc2cb0c221a3c01d2fc529
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="directoryentry-class"></a>directory_entry クラス
 `*X` によって返されるオブジェクトを表します。*X* は、[directory_iterator](../standard-library/directory-iterator-class.md) または [recursive_directory_iterator](../standard-library/recursive-directory-iterator-class.md) です。  
@@ -63,7 +64,7 @@ class directory_entry;
 ## <a name="remarks"></a>コメント  
  このクラスは、[path](../standard-library/path-class.md) 型のオブジェクトを格納します。 格納できる `path` は、[path クラス](../standard-library/path-class.md)のインスタンスまたは `path` の派生型のインスタンスです。 また、2 つの [file_type](../standard-library/filesystem-enumerations.md#file_type) 値も格納します。1 つは格納されたファイル名の状態に関する既知の情報を表し、もう 1 つはファイル名のシンボリック リンクの状態に関する既知の情報を表します。  
   
- 詳細およびコード例については、「[ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)」をご覧ください。  
+ 詳細およびコード例については、「[ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)」を参照してください。  
   
 ## <a name="assign"></a>assign  
   
@@ -194,12 +195,12 @@ file_status symlink_status(error_code& ec) const noexcept;
   
  メンバー関数ではどちらも、恐らく最初に mysymstat を次のように変更し、それからこれを返します。status_known(mysymstat) の場合は何もしません。 それ以外の場合、mysymstat = symlink_status(mypval) です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<実験/filesystem&gt;  
   
  **名前空間:** std::experimental::filesystem  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<ファイル システム&gt;](../standard-library/filesystem.md)
 

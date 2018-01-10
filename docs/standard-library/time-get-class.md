@@ -49,11 +49,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6178c35ff5d9ed0fbe53af7d488cc24cbcf81f2d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2bc6d855b1ff1776cdbb1777a4250317accac68a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="timeget-class"></a>time_get クラス
 このテンプレート クラスは、`CharType` 型のシーケンスから時刻値への変換を制御するためにロケール ファセットとして使用できるオブジェクトを表します。  
@@ -108,7 +109,7 @@ class time_get : public time_base;
 |[get_weekday](#get_weekday)|曜日の名前として文字列を解析します。|  
 |[get_year](#get_year)|年の名前として文字列を解析します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
@@ -996,7 +997,7 @@ explicit time_get(size_t refs = 0);
   
  コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)( `refs`) を使用して、その基本オブジェクトを初期化します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<locale>](../standard-library/locale.md)   
  [time_base クラス](../standard-library/time-base-class.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)

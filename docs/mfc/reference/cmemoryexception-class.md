@@ -18,11 +18,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 13130321dd26612b2bbd24457e02e09ce5fe1ec6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 18947e40aefd2820816abd419440ff929feca2a2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmemoryexception-class"></a>CMemoryException クラス
 メモリ不足例外条件を表します。  
@@ -55,7 +56,7 @@ class CMemoryException : public CSimpleException
   
  `CMemoryException`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afx.h  
   
 ##  <a name="cmemoryexception"></a>CMemoryException::CMemoryException  
@@ -68,7 +69,7 @@ CMemoryException();
 ### <a name="remarks"></a>コメント  
  このコンス トラクターを直接使用しないでくださいではなくグローバル関数を呼び出すことは[AfxThrowMemoryException](exception-processing.md#afxthrowmemoryexception)です。 このグローバル関数は、以前に割り当てられたメモリ内の例外オブジェクトを構築するので、メモリ不足の状況で成功ことができます。 例外の処理の詳細については、記事を参照してください。[例外](../exception-handling-in-mfc.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CException クラス](cexception-class.md)   
  [階層図](../hierarchy-chart.md)
 

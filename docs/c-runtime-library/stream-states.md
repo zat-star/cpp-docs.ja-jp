@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2e97f9a7f6d8953107e08b92189115213303e8ac
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0812d0728bfa17bcac80642f1d8545345a0263f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="stream-states"></a>ストリームの状態
 ストリームの有効な状態および状態遷移を、次の図に示します。  
@@ -49,5 +50,5 @@ ms.lasthandoff: 10/24/2017
   
  最後に、この状態の図は、位置操作が後に使用できる有効な関数呼び出しの数を減らすことはないことを示しています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイルとストリーム](../c-runtime-library/files-and-streams.md)

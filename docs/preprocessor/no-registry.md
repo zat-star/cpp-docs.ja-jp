@@ -15,11 +15,12 @@ caps.latest.revision: "5"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 347cdd89a8d8c3014a02708c91df3292275f4e3a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9d2b4b34a4ebf266f4ae8062bb2fff0f80060a22
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="noregistry"></a>no_registry
 `no_registry` は、`#import` でインポートされたタイプ ライブラリをレジストリで検索しないようコンパイラに指示します。  
@@ -44,6 +45,6 @@ ms.lasthandoff: 10/24/2017
   
  `no_registry`レジストリでファイルの古いバージョンを検索するコンパイラのリスクなし間の参照されるタイプ ライブラリをインポートする場合に便利です。  `no_registry`タイプ ライブラリが登録されていない場合に便利です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
  [#import ディレクティブ](../preprocessor/hash-import-directive-cpp.md)

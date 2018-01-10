@@ -15,11 +15,12 @@ caps.latest.revision: "5"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e5a87f7339481378c3a7fb6af7201dd13a3ede59
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9e58523995bfe3bb47d915e161a937149bcf4f78
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="writedr"></a>__writedr
 指定されたデバッグ登録するには、指定した値を書き込みます。  
@@ -41,7 +42,7 @@ void __writedr(unsigned DebugRegister, unsigned __int64 DebugValue);
 ## <a name="remarks"></a>コメント  
  これらの組み込みはカーネル モードでのみ使用し、ルーチンは組み込みとしてのみ使用できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -51,6 +52,6 @@ void __writedr(unsigned DebugRegister, unsigned __int64 DebugValue);
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
  [__readdr](../intrinsics/readdr.md)

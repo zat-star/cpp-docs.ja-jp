@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: aecb28648e32e099d2381fa49b1b7f5a42618543
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a567b33e55092e7e8e0361faa0ce54b2498827a2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mmcvtsi64xss"></a>_mm_cvtsi64x_ss
 **Microsoft 固有の仕様**  
@@ -47,11 +48,11 @@ __m128 _mm_cvtsi64x_ss(
 ## <a name="return-value"></a>戻り値  
  `__m128`構造体の最初の浮動小数点値は変換の結果。 その他の 3 つの値から変更されていないコピー`a`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
-|`_mm_cvtsi64x_ss`|x64|  
+|`_mm_cvtsi64x_ss`|X64|  
   
  **ヘッダー ファイル** \<intrin.h >  
   
@@ -94,6 +95,6 @@ int main()
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ _m128](../cpp/m128.md)   
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

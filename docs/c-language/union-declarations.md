@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 57e7db99e90e68e71dae4fc00f271b3831a5fc39
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4088aea4025e7c51aba75efe28978d05c0e48730
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="union-declarations"></a>共用体の宣言
 "共有体宣言" は、一連の変数の値、および共有体に名前を付けるタグ (オプション) を指定します。 変数の値は共用体の "メンバー" と呼ばれ、異なる型を指定できます。 共有体は他の言語における "バリアント レコード" に似ています。  
@@ -131,7 +132,7 @@ struct x
   
  共有体の参照については、「[構造体メンバーと共用体メンバー](../c-language/structure-and-union-members.md)」を参照してください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言子と変数宣言](../c-language/declarators-and-variable-declarations.md)

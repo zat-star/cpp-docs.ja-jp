@@ -1,57 +1,58 @@
 ---
-title: "region、endregion | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc-pragma.endregion"
-  - "endregion_CPP"
-  - "region_CPP"
-  - "vc-pragma.region"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "endregion プラグマ"
-  - "プラグマ, endregion"
-  - "プラグマ, 領域"
-  - "region プラグマ"
+title: "region、endregion |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc-pragma.endregion
+- endregion_CPP
+- region_CPP
+- vc-pragma.region
+dev_langs: C++
+helpviewer_keywords:
+- pragmas, region
+- pragmas, endregion
+- endregion pragma
+- region pragma
 ms.assetid: c697f807-622f-4796-851b-68a42bbecd84
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: ad2eb3d094447ae3ae35b0dbe9dc0fef2fe06710
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# region、endregion
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**\#pragma region** を使用してコードのブロックを指定します。このブロックは、Visual Studio コード エディターの[アウトライン](../Topic/Outlining.md)機能を使用して展開や折りたたみができます。  
+# <a name="region-endregion"></a>region、endregion
+**#pragma region** 、コードのブロックを展開したり折りたたんだりを使用する場合を指定することができます、[アウトライン機能](/visualstudio/ide/outlining)の Visual Studio コード エディター。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #pragma region name  
 #pragma endregion comment  
 ```  
   
-#### パラメーター  
- `comment` \(省略可能\)  
+#### <a name="parameters"></a>パラメーター  
+ `comment`(省略可能)  
  コード エディターに表示されるコメント。  
   
- *name* \(省略可能\)  
+ *名前*(省略可能)  
  領域の名前。  この名前はコード エディターに表示されます。  
   
-## 解説  
- **\#pragma endregion** は **\#pragma region** ブロックの末尾を示します。  
+## <a name="remarks"></a>コメント  
+ **#pragma endregion**の末尾を示す、 **#pragma region**ブロックします。  
   
- `#region` ブロックは **\#pragma endregion** で終了させる必要があります。  
+ A`#region`でブロックを終了する必要があります**#pragma endregion**です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // pragma_directives_region.cpp  
@@ -64,5 +65,5 @@ void Test3() {}
 int main() {}  
 ```  
   
-## 参照  
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+## <a name="see-also"></a>参照  
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 50adbc6faa802802c36e18c614992341def06331
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fcbed7cec501257f03ab13447d54e081c1d46c76
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="common-dialog-classes"></a>コモン ダイアログ クラス
 クラスに加えて[CDialog](../mfc/reference/cdialog-class.md)、MFC から派生したいくつかのクラスを提供`CDialog`をカプセル化する一般的に使用されるダイアログ ボックスに、次の表に示すようにします。 カプセル化されたダイアログ ボックスが「一般的なダイアログ ボックス」と呼ばれます、ライブラリの一部、Windows コモン ダイアログ (COMMDLG です。DLL) です。 ダイアログ テンプレート リソースと、これらのクラスのコードは、Windows 3.1 以降のバージョンの一部である共通のダイアログ ボックスに、Windows で説明します。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 10/24/2017
   
  その他の 3 つの MFC クラスでは、ダイアログのような特性があります。 クラスについて[CFormView](../mfc/reference/cformview-class.md)、 [CRecordView](../mfc/reference/crecordview-class.md)、および[CDaoRecordView](../mfc/reference/cdaorecordview-class.md)、クラスを参照してください、 *『 MFC リファレンス*です。 クラスについては[CDialogBar](../mfc/reference/cdialogbar-class.md)を参照してください[ダイアログ バー](../mfc/dialog-bars.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ダイアログ ボックス](../mfc/dialog-boxes.md)   
  [ダイアログ ボックスのライフ サイクル](../mfc/life-cycle-of-a-dialog-box.md)   
  [OLE のダイアログ ボックス](../mfc/dialog-boxes-in-ole.md)

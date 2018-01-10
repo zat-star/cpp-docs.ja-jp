@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c22164fdc2bd8236b6f4819609175c80bd472abf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cc923e8c638f51720aaffbb8c26aaa65bb230731
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="low-level-io"></a>下位入出力
 これらの関数は、ストリーム入出力の操作より低レベルの操作に対してオペレーティング システムを直接呼び出します。 低レベル入出力の呼び出しでは、データはバッファリングまたは書式設定されません。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="low-level-io-functions"></a>低レベル入出力関数  
   
-|関数|用途|  
+|関数|使用|  
 |--------------|---------|  
 |[_close](../c-runtime-library/reference/close.md)|ファイルを閉じる|  
 |[_commit](../c-runtime-library/reference/commit.md)|ファイルをディスクにフラッシュする|  
@@ -59,7 +60,7 @@ ms.lasthandoff: 10/24/2017
   
  `_dup` と `_dup2` は通常、事前定義済みのファイル記述子を別のファイルと関連付けるために使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [入出力](../c-runtime-library/input-and-output.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)   
  [システム コール](../c-runtime-library/system-calls.md)

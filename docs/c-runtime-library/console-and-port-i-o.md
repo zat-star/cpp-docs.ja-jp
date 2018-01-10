@@ -21,18 +21,19 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 44d262e27b47de0826024cb26e7f19280c6ed54e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a741008b894c5349bd198c2abfd13e11a158c4b0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="console-and-port-io"></a>コンソール入出力とポート入出力
 これらのルーチンは、コンソールまたは指定したポートで読み取りと書き込みを行います。 コンソール入出力は、ストリーム入出力や低レベルの入出力ライブラリ ルーチンとは互換性がありません。 入出力を実行する前にコンソールやポートを開くまたは閉じる必要はないため、このカテゴリには開くまたは閉じるルーチンはありません。 Windows オペレーティング システムでは、これらの関数からの出力は常にコンソールに送られ、リダイレクトできません。  
   
 ### <a name="console-and-port-io-routines"></a>コンソール入出力ルーチンとポート入出力ルーチン  
   
-|ルーチン|用途|  
+|ルーチンによって返される値|使用|  
 |-------------|---------|  
 |[_cgets、_cgetws](../c-runtime-library/cgets-cgetws.md)、[_cgets_s、_cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md)|コンソールから文字列を読み取る|  
 |[_cprintf、_cwprintf](../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)、[_cprintf_s、_cprintf_s_l、_cwprintf_s、_cwprintf_s_l](../c-runtime-library/reference/cprintf-s-cprintf-s-l-cwprintf-s-cwprintf-s-l.md)|コンソールに書式付きデータを書き込む|  
@@ -50,6 +51,6 @@ ms.lasthandoff: 10/24/2017
 |[_putch、_putwch](../c-runtime-library/reference/putch-putwch.md)|コンソールに文字を書き込む|  
 |[_ungetch、_ungetwch](../c-runtime-library/reference/ungetch-ungetwch-ungetch-nolock-ungetwch-nolock.md)|コンソールから読み取った最後の文字を "戻す" ことで次の読み取り文字にする|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [入出力](../c-runtime-library/input-and-output.md)   
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

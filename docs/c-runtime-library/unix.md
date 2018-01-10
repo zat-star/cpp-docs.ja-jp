@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8db5466439b72c4291383913451bcf5a0b415848
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3f5155791f4bf12f15fa0c2c53d27fbe515e5af3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unix"></a>UNIX
 プログラムを UNIX に移植する場合は、次のガイドラインに従ってください。  
@@ -37,5 +38,5 @@ ms.lasthandoff: 10/24/2017
     > [!NOTE]
     >  このバージョンの Visual C++ では、UNIX と互換性のある情報は、関数の説明から削除されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [互換性](../c-runtime-library/compatibility.md)

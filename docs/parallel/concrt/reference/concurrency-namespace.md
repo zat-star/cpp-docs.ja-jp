@@ -30,11 +30,12 @@ caps.latest.revision: "37"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ca728f3efa45c35306184e1aefa108c455470ab9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8662011107f9befef63ec247060a319172569300
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="concurrency-namespace"></a>concurrency 名前空間
 `Concurrency` 名前空間には、C++ 向けの並列プログラミング フレームワークである同時実行ランタイムにアクセスするためのクラスおよび関数が用意されています。 詳細については、「[同時実行ランタイム](../../../parallel/concrt/concurrency-runtime.md)」を参照してください。  
@@ -75,7 +76,7 @@ namespace concurrency;
 |[cancellation_token_registration クラス](cancellation-token-registration-class.md)|`cancellation_token_registration` クラスは、`cancellation_token` からのコールバック通知を表します。 `register` の `cancellation_token` メソッドを使用して取り消し発生の通知を受け取るとき、`cancellation_token_registration` オブジェクトはハンドルとしてコールバックに返されます。したがって、呼び出し元は `deregister` メソッドを使用して、特定のコールバックが以降行われないように要求できます。|  
 |[cancellation_token_source クラス](cancellation-token-source-class.md)|`cancellation_token_source` クラスは、取り消し可能な操作を取り消す機能を表します。|  
 |[choice クラス](choice-class.md)|`choice` メッセージング ブロックは、複数のソースと単一のターゲットを持つブロックであり、一連のソースとの制御フローの相互作用を表します。 choice ブロックは、複数のソースのいずれかがメッセージを生成するのを待ち、そのメッセージを生成したソースのインデックスを伝達します。|  
-|[combinable クラス](combinable-class.md)|`combinable<T>` オブジェクトは、スレッド プライベートなデータのコピーを提供し、並列アルゴリズムにおいてロック制御不要なスレッド ローカルのサブ計算を実行するために用意されています。 並列操作の最後に、スレッド プライベート サブ計算を最終結果に結合できます。 共有変数に多数の競合が発生する可能性がある場合、共有変数の代わりにこのクラスを使用することにより、パフォーマンスを改善できます。|  
+|[combinable クラス](combinable-class.md)|`combinable<T>` オブジェクトは、スレッド プライベートなデータのコピーを提供し、並列アルゴリズムにおいてロック制御不要なスレッド ローカルのサブ計算を実行するために用意されています。 並列操作の最後に、スレッド プライベート サブ計算を最終結果にマージできます。 共有変数に多数の競合が発生する可能性がある場合、共有変数の代わりにこのクラスを使用することにより、パフォーマンスを改善できます。|  
 |[concurrent_priority_queue クラス](concurrent-priority-queue-class.md)|`concurrent_priority_queue` クラスは、複数のスレッドが項目を同時にプッシュおよびポップできるようにするコンテナーです。 項目は優先順位の順にポップされます。この優先順位は、テンプレート引数として指定されたファンクタによって決まります。|  
 |[concurrent_queue クラス](concurrent-queue-class.md)|`concurrent_queue` クラスは、キューの要素に先入れ先出し方式でアクセスできるようにするシーケンス コンテナー クラスです。 これを使用すると、`push`、`try_pop` などの特定の同時実行セーフな操作を実行できます。|  
 |[concurrent_unordered_map クラス](concurrent-unordered-map-class.md)|`concurrent_unordered_map` クラスは、`std::pair<const K, _Element_type>` 型要素の可変長シーケンスを制御する同時実行セーフなコンテナーです。 このシーケンスは、同時実行セーフな追加、要素アクセス、反復子アクセス、反復子走査の各操作を実行できるように表されます。|  
@@ -159,7 +160,7 @@ namespace concurrency;
 |[ITopologyExecutionResource 構造体](itopologyexecutionresource-structure.md)|リソース マネージャーで定義される実行リソースへのインターフェイスです。|  
 |[ITopologyNode 構造体](itopologynode-structure.md)|リソース マネージャーで定義されるトポロジ ノードへのインターフェイスです。 ノードには 1 つ以上の実行リソースが含まれます。|  
 |[IUMSCompletionList 構造体](iumscompletionlist-structure.md)|UMS の完了リストを表します。 UMS スレッドがブロックされると、基になる仮想プロセッサ ルートでスケジュールする内容を決定するためにスケジューラで指定されているスケジュールのコンテキストがディスパッチされ、元のスレッドがブロックされます。 元のスレッドがブロックされない場合、オペレーション システムは、このインターフェイスからアクセスできる完了リストのキューにそれを配置します。 スケジューラは指定されたスケジュール コンテキスト、または作業を検索するその他の場所にある完了リストを照会できます。|  
-|[IUMSScheduler 構造体](iumsscheduler-structure.md)|同時実行ランタイムのリソース マネージャーによってユーザー モード スケジュール可能 (UMS) スレッドが渡される必要がある作業スケジューラの抽象化のインターフェイスです。 リソース マネージャーでは、このインターフェイスを使用して UMS スレッド スケジューラと通信します。 `IUMSScheduler` インターフェイスは `IScheduler` インターフェイスを継承します。|  
+|[IUMSScheduler 構造体](iumsscheduler-structure.md)|同時実行ランタイムのリソース マネージャーによってユーザー モード スケジュール可能 (UMS) スレッドが渡される必要がある作業スケジューラの抽象化のインターフェイスです。 リソース マネージャーでは、このインターフェイスを使用して UMS スレッド スケジューラと通信します。 `IUMSScheduler` インターフェイスは `IScheduler` のインターフェイスから継承されます。|  
 |[IUMSThreadProxy 構造体](iumsthreadproxy-structure.md)|実行スレッドの抽象化です。 ユーザー モード スケジュール可能 (UMS) スレッドをスケジューラに付与するには、スケジューラ ポリシー要素 `SchedulerKind` の値を `UmsThreadDefault` に設定し、さらに `IUMSScheduler` インターフェイスを実装する必要があります。 UMS スレッドは、Windows 7 以上のバージョンの 64 ビット オペレーティング システムでのみサポートされます。|  
 |[IUMSUnblockNotification 構造体](iumsunblocknotification-structure.md)|ブロックされ、スケジューラの指定されたスケジュール コンテキストに制御を戻すことをトリガーされたスレッド プロキシが、ブロック解除され、スケジュールできる状態であることを示す、リソース マネージャーからの通知を表します。 このインターフェイスは、`GetContext` メソッドから返される、スレッド プロキシの関連付けられた実行コンテキストが再スケジュールされると無効になります。|  
 |[IVirtualProcessorRoot 構造体](ivirtualprocessorroot-structure.md)|スレッド プロキシが実行できるハードウェア スレッドの抽象化です。|  
@@ -168,7 +169,7 @@ namespace concurrency;
   
 ### <a name="enumerations"></a>列挙  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[agent_status](concurrency-namespace-enums.md#agent_status)|`agent` の有効な状態。|  
 |[Agents_EventType](concurrency-namespace-enums.md#agents_eventtype)|エージェント ライブラリによって提供されるトレース機能を使用してトレースできるイベントの種類。|  
@@ -268,9 +269,9 @@ namespace concurrency;
 |[SchedulerEventGuid](concurrency-namespace-constants1.md#schedulereventguid)|同時実行ランタイムによって生成される ETW イベントのうち、スケジューラ アクティビティに直接関係する ETW イベントを表すカテゴリの GUID。|  
 |[VirtualProcessorEventGuid](concurrency-namespace-constants1.md#virtualprocessoreventguid)|同時実行ランタイムによって生成される ETW イベントのうち、仮想プロセッサに直接関係する ETW イベントを表すカテゴリの GUID。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h、concrt.h、concrtrm.h、concurrent_priority_queue.h、concurrent_queue.h、concurrent_unordered_map.h、concurrent_unordered_set.h、concurrent_vector.h、internal_concurrent_hash.h、internal_split_ordered_list.h、ppl.h、pplcancellation_token.h、pplconcrt.h、pplinterface.h、ppltasks.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [参照](reference-concurrency-runtime.md)
 

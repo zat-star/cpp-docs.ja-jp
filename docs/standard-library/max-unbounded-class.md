@@ -27,11 +27,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8518fbbb25eadb00a6cce68d687046ce8e344fed
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6a06cc5f05812d662dc22fa7609680e3b5a45c97
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="maxunbounded-class"></a>max_unbounded クラス
 [freelist](../standard-library/freelist-class.md) オブジェクトの最長値を制限しない[最大クラス](../standard-library/allocators-header.md) オブジェクトを記述します。  
@@ -52,7 +53,7 @@ class max_unbounded
 |[released](#released)|フリー リスト上のメモリ ブロックの数を減らします。|  
 |[saved](#saved)|フリー リスト上のメモリ ブロックの数を減らします。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
@@ -122,7 +123,7 @@ void saved();
 ### <a name="remarks"></a>コメント  
  このメンバー関数は何も処理を行いません。 `cache_freelist::deallocate` によって、フリー リストにメモリ ブロックが置かれるたびに、呼び出されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<allocators>](../standard-library/allocators-header.md)
 
 

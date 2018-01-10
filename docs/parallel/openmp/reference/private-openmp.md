@@ -1,57 +1,56 @@
 ---
-title: "private (OpenMP) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "private"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "private OpenMP clause"
+title: "プライベート (OpenMP) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: private
+dev_langs: C++
+helpviewer_keywords: private OpenMP clause
 ms.assetid: 772904a2-1345-4562-90e6-eb4dc85aea1a
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 6fe390b0b344fcc149654454294c919f29d9a507
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# private (OpenMP)
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-各スレッドは変数が個別のインスタンスが必要であることを指定します。  
+# <a name="private-openmp"></a>private (OpenMP)
+各スレッドは、変数の独自のインスタンスである必要がありますを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 private(var)  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
  `var`  
- 各スレッドのインスタンスを持つ変数。  
+ 各スレッドでインスタンスを持つ変数です。  
   
-## 解説  
- **プライベート**  は次のディレクティブに対象 :  
+## <a name="remarks"></a>コメント  
+ **プライベート**は、次のディレクティブに適用されます。  
   
--   [for](../Topic/for%20\(OpenMP\).md)  
+-   [for](../../../parallel/openmp/reference/for-openmp.md)  
   
 -   [parallel](../../../parallel/openmp/reference/parallel.md)  
   
--   [sections](../../../parallel/openmp/reference/sections-openmp.md)  
+-   [セクション](../../../parallel/openmp/reference/sections-openmp.md)  
   
--   [single](../Topic/single.md)  
+-   [single](../../../parallel/openmp/reference/single.md)  
   
- 詳細については、「[2.7.2.1 private](../../../parallel/openmp/2-7-2-1-private.md)」を参照してください。  
+ 詳細については、次を参照してください。 [2.7.2.1 プライベート](../../../parallel/openmp/2-7-2-1-private.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // openmp_private.c  
@@ -157,55 +156,77 @@ int main() {
 }  
 ```  
   
-  **これらは並列領域のエントリの前に変数です。  nThreadPrivate \= 4**  
- **nPrivate \= 4**  
- **nFirstPrivate \= 4**  
- **nLastPrivate \= 4**  
- **nShared \= 4**  
-**これらはスレッド 0 のループ 1 のエントリに変数です。  nThreadPrivate \= 4**  
- **nPrivate \= 1310720**  
- **nFirstPrivate \= 4**  
- **nLastPrivate \= 1245104**  
- **nShared \= 3**  
-**これらはスレッド 1. のループ 1 のエントリに変数です。  nThreadPrivate \= 4**  
- **nPrivate \= 4488**  
- **nFirstPrivate \= 4**  
- **nLastPrivate \= 19748**  
- **nShared \= 0**  
-**これらはスレッド 2. のループ 1 のエントリに変数です。  nThreadPrivate \= 4**  
- **nPrivate \= \-132514848**  
- **nFirstPrivate \= 4**  
- **nLastPrivate \= \-513199792**  
- **nShared \= 4**  
-**これらはスレッド 3. のループ 1 のエントリに変数です。  nThreadPrivate \= 4**  
- **nPrivate \= 1206**  
- **nFirstPrivate \= 4**  
- **nLastPrivate \= 1204**  
- **nShared \= 2**  
-**これらはスレッド 0 のループ 2 のエントリに変数です。  nThreadPrivate \= 0**  
- **nPrivate \= 0**  
- **nFirstPrivate \= 3**  
- **nLastPrivate \= 0**  
- **nShared \= 0**  
-**これらはスレッド 1. のループ 2 のエントリに変数です。  nThreadPrivate \= 1**  
- **nPrivate \= 1**  
- **nFirstPrivate \= 3**  
- **nLastPrivate \= 1**  
- **nShared \= 1**  
-**これらはスレッド 2. のループ 2 のエントリに変数です。  nThreadPrivate \= 2**  
- **nPrivate \= 2**  
- **nFirstPrivate \= 3**  
- **nLastPrivate \= 2**  
- **nShared \= 2**  
-**これらはスレッド 3. のループ 2 のエントリに変数です。  nThreadPrivate \= 3**  
- **nPrivate \= 3**  
- **nFirstPrivate \= 3**  
- **nLastPrivate \= 3**  
- **nShared \= 3**  
-**これらは並列領域から終了後に変数です。  nThreadPrivate \= 0 \(マスター スレッドで最後の値\)**   
- **nPrivate \= 4 \(入力前の並列領域の値\)**   
- **nFirstPrivate \= 4 \(入力前の並列領域の値\)**   
- **nLastPrivate \= 3 \(ループの最後の反復の値\)**   
- **nShared \= 1 \(遅延スレッドから割り当てられた値 1\)**    
-## 参照  
- [Clauses](../../../parallel/openmp/reference/openmp-clauses.md)
+```Output  
+These are the variables before entry into the parallel region.  
+nThreadPrivate = 4  
+      nPrivate = 4  
+ nFirstPrivate = 4  
+  nLastPrivate = 4  
+       nShared = 4  
+  
+These are the variables at entry of loop 1 of thread 0.  
+nThreadPrivate = 4  
+      nPrivate = 1310720  
+ nFirstPrivate = 4  
+  nLastPrivate = 1245104  
+       nShared = 3  
+  
+These are the variables at entry of loop 1 of thread 1.  
+nThreadPrivate = 4  
+      nPrivate = 4488  
+ nFirstPrivate = 4  
+  nLastPrivate = 19748  
+       nShared = 0  
+  
+These are the variables at entry of loop 1 of thread 2.  
+nThreadPrivate = 4  
+      nPrivate = -132514848  
+ nFirstPrivate = 4  
+  nLastPrivate = -513199792  
+       nShared = 4  
+  
+These are the variables at entry of loop 1 of thread 3.  
+nThreadPrivate = 4  
+      nPrivate = 1206  
+ nFirstPrivate = 4  
+  nLastPrivate = 1204  
+       nShared = 2  
+  
+These are the variables at entry of loop 2 of thread 0.  
+nThreadPrivate = 0  
+      nPrivate = 0  
+ nFirstPrivate = 3  
+  nLastPrivate = 0  
+       nShared = 0  
+  
+These are the variables at entry of loop 2 of thread 1.  
+nThreadPrivate = 1  
+      nPrivate = 1  
+ nFirstPrivate = 3  
+  nLastPrivate = 1  
+       nShared = 1  
+  
+These are the variables at entry of loop 2 of thread 2.  
+nThreadPrivate = 2  
+      nPrivate = 2  
+ nFirstPrivate = 3  
+  nLastPrivate = 2  
+       nShared = 2  
+  
+These are the variables at entry of loop 2 of thread 3.  
+nThreadPrivate = 3  
+      nPrivate = 3  
+ nFirstPrivate = 3  
+  nLastPrivate = 3  
+       nShared = 3  
+  
+These are the variables after exit from the parallel region.  
+nThreadPrivate = 0 (The last value in the master thread)  
+      nPrivate = 4 (The value prior to entering parallel region)  
+ nFirstPrivate = 4 (The value prior to entering parallel region)  
+  nLastPrivate = 3 (The value from the last iteration of the loop)  
+       nShared = 1 (The value assigned, from the delayed thread, 1)  
+```  
+  
+## <a name="see-also"></a>参照  
+ [句](../../../parallel/openmp/reference/openmp-clauses.md)

@@ -83,11 +83,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 73f8b08fce39103936215292c3368f0e77a76017
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4051b7f872803a8ef799178b7ad158e588da08bc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unorm3-class"></a>unorm_3 クラス
 3 個の符号なし正規数の short ベクターを表します。  
@@ -167,7 +168,7 @@ class unorm_3;
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#unorm_3__size)||  
   
@@ -209,7 +210,7 @@ class unorm_3;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `unorm_3`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
@@ -299,5 +300,5 @@ explicit inline unorm_3(
 static const int size = 3;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

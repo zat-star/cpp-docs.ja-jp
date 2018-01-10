@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3b73fd6d6dbebe764960a7a20c00ddb91aa0b24f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 84e1571f400297584e12a40dfd2bfcc3c0b525d2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="activex-control-containers-handling-events-from-an-activex-control"></a>ActiveX コントロール コンテナー : ActiveX コントロールで発生したイベントの処理
 この記事では、[プロパティ] ウィンドウを使用して ActiveX コントロール コンテナーで ActiveX コントロールのイベント ハンドラーをインストールするについて説明します。 (制御) から特定のイベントの通知を受信し、応答で何らかのアクションを実行するイベント ハンドラーが使用されます。 この通知は、イベントを「発生」と呼ばれます。  
@@ -72,6 +73,6 @@ ms.lasthandoff: 10/24/2017
   
 6.  クラス ビューの実装でイベント ハンドラーのコードに移動することから、新しいハンドラー関数をダブルクリックして (です。CPP) ファイルの`CContainerDlg`します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ActiveX コントロール コンテナー](../mfc/activex-control-containers.md)
 

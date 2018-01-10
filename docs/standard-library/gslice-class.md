@@ -23,11 +23,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6928fd3aa902b5ed0ab4e942950af76448e16e5e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 52170e08d3118b5eb0ef7bb1e34edbe29b3d38f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="gslice-class"></a>gslice クラス
 valarray の多次元のサブセットを定義するのに使用する、値を配列するための utility クラス。 valarray が配列内のすべての要素を持つ多次元行列と見なされる場合、スライスにより多次元配列からベクターが抽出されます。  
@@ -61,7 +62,7 @@ valarray の多次元のサブセットを定義するのに使用する、値�
 |[start](#start)|`valarray` の一般的なスライスの開始インデックスを検索します。|  
 |[stride](#stride)|`valarray` の一般的なスライスの要素間の距離を検索します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<valarray>  
   
  **名前空間:** std  
@@ -343,6 +344,6 @@ The strides of vaResult are:
  vaGSlice.stride ( ) = ( 7 4 ).  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

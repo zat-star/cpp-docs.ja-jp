@@ -4,51 +4,36 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- copy_options
-- filesystem::copy_options
 - filesystem/std::filesystem::copy_options
-- experimental::filesystem::copy_options
 - filesystem/std::experimental::filesystem::copy_options
-- directory_options
-- filesystem::directory_options
 - filesystem/std::filesystem::directory_options
-- experimental::filesystem::directory_options
 - filesystem/std::experimental::filesystem::directory_options
-- file_type
-- filesystem::file_type
 - filesystem/std::filesystem::file_type
-- experimental::filesystem::file_type
 - filesystem/std::experimental::filesystem::file_type
-- perms
-- filesystem::perms
 - filesystem/std::filesystem::perms
-- experimental::filesystem::perms
 - filesystem/std::experimental::filesystem::perms
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 0096c046-d101-464c-8259-b878a48280b0
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 23d69fc4ac64b4364c736ee6bb596d8dcfcce54a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: f0bb076a2cfd8a97c2a3cfc5dc8f33e5390c27a0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltfilesystemgt-enumerations"></a>&lt;filesystem&gt; 列挙体
 このトピックでは、filesystem ヘッダーの列挙体について説明します。
 
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<experimental/filesystem>  
-  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<experimental/filesystem>    
  **名前空間:** std::experimental::filesystem  
 
 ##  <a name="copy_options"></a>  copy_options
@@ -105,7 +90,7 @@ enum class directory_options {
 |`follow_directory_symlink`|ディレクトリへのシンボリック リンクを実際のディレクトリとして処理します。|  
   
 ##  <a name="file_type"></a>  file_type
-ファイルの種類の列挙型。 サポートされる値は、regular、directory、not_found、および unknown です。  
+ファイルの種類の列挙型。 サポートされる値は regular、directory、not_found、および unknown です。  
   
 ### <a name="syntax"></a>構文  
 ```cpp  
@@ -125,7 +110,7 @@ enum class file_type {
   
 ### <a name="values"></a>値  
   
-|名前|値|説明|  
+|名前|[値]|説明|  
 |----------|-----------|-----------------|  
 |`not_found`|-1|存在しないファイルを表します。|  
 |`none`|0|type 属性を持たないファイルを表します  (サポートされていません)。|  
@@ -169,8 +154,7 @@ enum class perms {// names for permissions
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<filesystem>](../standard-library/filesystem.md)
-
 

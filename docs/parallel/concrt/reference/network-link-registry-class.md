@@ -22,11 +22,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 348964eb2f9b17a00188dd3a2589ce0711767e64
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 116c36b5c0b990672a455e1419c92d60ec992845
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="networklinkregistry-class"></a>network_link_registry クラス
 `network_link_registry` 抽象基底クラスによって、ソース ブロックとターゲット ブロック間のリンクを管理します。  
@@ -69,7 +70,7 @@ class network_link_registry;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `network_link_registry`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
@@ -141,7 +142,7 @@ virtual bool remove(_EType _Link) = 0;
 ### <a name="return-value"></a>戻り値  
  `true`リンクが検出され、削除、`false`それ以外の場合。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [single_link_registry クラス](single-link-registry-class.md)   
  [multi_link_registry クラス](multi-link-registry-class.md)

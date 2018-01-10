@@ -25,11 +25,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9f8bf50dbae25390de01180f592959a7fb76a04b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b3c6f3c15b0ea398ec621ba5f6e34a9fb6e0aae8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ole-background-containers-and-servers"></a>OLE 概要 : コンテナーとサーバー
 コンテナー アプリケーションは、独自のドキュメントに埋め込みまたはリンクされた項目を組み込むことのできるアプリケーションです。 コンテナー アプリケーションで管理されているドキュメントを保存して OLE ドキュメント コンポーネントだけでなく、アプリケーション自体によって作成されたデータを表示できる必要があります。 コンテナー アプリケーションには、ユーザーが新しい項目を挿入または既存の項目を編集するには、必要な場合に、サーバー アプリケーションをアクティブ化することも必要があります。 コンテナー アプリケーションのユーザー インターフェイスの要件は、資料に記載されて[コンテナー: ユーザー インターフェイスの問題](../mfc/containers-user-interface-issues.md)です。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 10/24/2017
   
  この通信手段を使用して、サーバー アプリケーションの実装の詳細を知るコンテナーは必要ありません。 これにより、使用するサーバーの種類を定義することがなく、任意のサーバーで作成された項目をそのまま使用するためのコンテナーです。 結果として、コンテナー アプリケーションのユーザーには、将来のアプリケーションとデータ形式を活用がかかります。 これらの新しいアプリケーションが OLE コンポーネントの場合は、複合ドキュメントは、これらのアプリケーションによって作成された項目を組み込むためなります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE の背景知識](../mfc/ole-background.md)   
  [OLE の背景知識: MFC における実装](../mfc/ole-background-mfc-implementation.md)   
  [コンテナー](../mfc/containers.md)   

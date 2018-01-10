@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 101d6570f2e3c3e757f28ffb632633d6570dac06
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 11d41d62448d41d7a11ef747e65cc6ac47e4bd7f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="a9---using-single-directives"></a>A.9 single ディレクティブの使用
 次の例で、`single`ディレクティブ ([セクション 2.4.3](../../parallel/openmp/2-4-3-single-construct.md) [15] ページ)。 例では、1 つのスレッド (通常、最初のスレッドが発生した、`single`ディレクティブ)、進行状況メッセージを出力します。 ユーザー必要があります、どのスレッドは実行するようにどのような想定を行わない、`single`セクションです。 その他のすべてのスレッドはスキップされます、`single`セクションし、最後のバリアを停止、`single`を構築します。 その他のスレッドがスレッドを実行するために待機することがなく続行できないかどうか、 `single`  セクションで、`nowait`に句を指定することができます、`single`ディレクティブです。  

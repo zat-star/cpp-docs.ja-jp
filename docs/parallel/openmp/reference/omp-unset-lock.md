@@ -15,11 +15,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a9ace2f59a46750f99d9e302bae84b0dc660ecbc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5dae4888176807ba2d3a3356d71c55eb82f2a55c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ompunsetlock"></a>omp_unset_lock
 ロックを解放します。  
@@ -44,5 +45,5 @@ void omp_unset_lock(
 ## <a name="example"></a>例  
  参照してください[omp_init_lock 関数](../../../parallel/openmp/reference/omp-init-lock.md)の使用例については`omp_unset_lock`します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

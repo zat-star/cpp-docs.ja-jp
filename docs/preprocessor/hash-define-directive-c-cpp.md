@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6fc49278dbf143d7594f0a46eeb2fd5901a60830
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a42b1b823ac69ba9a92535076ba8ec45f6c9710d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="define-directive-cc"></a>#define ディレクティブ (C/C++)
 `#define`を作成、*マクロ*、識別子またはパラメーター化された識別子トークン文字列との関連付けであります。 マクロが定義されると、コンパイラはそれ以降にソース ファイル内に識別子が見つかるたびに、トークン文字列に置き換えることができます。  
@@ -121,5 +122,5 @@ var = 80 + 10 * 20;
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プリプロセッサ ディレクティブ](../preprocessor/preprocessor-directives.md)

@@ -14,11 +14,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7807d112b45b7316b630522ab7f896201d53ff2a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 535045d715651d6393227457068a86f240c27dce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="macros-and-functions-for-managing-dlls"></a>マクロと Dll を管理するための関数
 
@@ -52,7 +53,7 @@ class AFX_EXT_CLASS CMyClass : public CDocument
   
  詳細については、次を参照してください。[エクスポートとインポートを使用して AFX_EXT_CLASS](../../build/exporting-and-importing-using-afx-ext-class.md)です。  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  ヘッダー: **afxv_**dll.h  
    
 ## <a name="afx_manage_state"></a>AFX_MANAGE_STATE
@@ -78,10 +79,10 @@ AFX_MANAGE_STATE(AfxGetStaticModuleState( ));
  モジュールの状態と MFC の詳細についてを参照してください「の管理モジュールの状態データの MFC モジュール」[ドキュメントを新規に作成する、Windows、およびビュー](../creating-new-documents-windows-and-views.md)と[テクニカル ノート 58](../tn058-mfc-module-state-implementation.md)です。    
 > [!NOTE]
 >  MFC では、アセンブリのアクティベーション コンテキストを作成するときに使用して[AfxWinInit](#afxwininit)コンテキストを作成して`AFX_MANAGE_STATE`アクティブ化および非アクティブ化します。 なお`AFX_MANAGE_STATE`MFC コード ユーザー DLL によって選択されている適切なライセンス認証のコンテキストで実行を許可するために静的の MFC ライブラリと MFC Dll に対してを有効にします。 詳細については、次を参照してください。 [MFC モジュール状態でのアクティベーション コンテキスト サポート](../support-for-activation-contexts-in-the-mfc-module-state.md)です。     
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxstat_.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [AfxGetStaticModuleState](#afxgetstaticmodulestate)
 
 ## <a name="a-nameafxoleinitmodulea-afxoleinitmodule"></a><a name="afxoleinitmodule"><a/>AfxOleInitModule
@@ -97,10 +98,10 @@ void AFXAPI AfxOleInitModule( );
   
  OLE コントロールを構築してを使用している場合`COleControlModule`、呼び出す必要はありません**AfxOleInitModule**ため、`InitInstance`メンバー関数の`COleControlModule`呼び出し`AfxOleInitModule`です。  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー**: < afxdll_.h >  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [AfxMessageBox](cstring-formatting-and-message-box-display.md#afxmessagebox)
 
@@ -115,10 +116,10 @@ void AFXAPI AfxNetInitModule( );
 ### <a name="remarks"></a>コメント  
  MFC ソケットの DLL が MFC 拡張 DLL です。MFC 拡張 DLL にワイヤード (有線) を取得するため、 **CDynLinkLibrary**チェーンを作成する必要があります、 **CDynLinkLibrary**を利用することのすべてのモジュールのコンテキスト内のオブジェクト。 `AfxNetInitModule`作成、 **CDynLinkLibrary**にワイヤード (有線) を取得できるように、正規の MFC DLL のコンテキストでオブジェクト、 **CDynLinkLibrary**オブジェクトの標準の MFC DLL のチェーン。  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** < afxdll_.h >  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [AfxMessageBox](cstring-formatting-and-message-box-display.md#afxmessagebox)
 
@@ -140,10 +141,10 @@ BOOL AFXAPI AfxGetAmbientActCtx();
   
  モジュールのコンテキストは、通常モジュール リソースに埋め込まれて、自らのマニフェストから決定されます。  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcomctl32.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [AFX_MANAGE_STATE](#afx_manage_state)   
  [MFC モジュールの状態データを管理します。](../managing-the-state-data-of-mfc-modules.md)   
@@ -174,7 +175,7 @@ AFX_MANAGE_STATE(AfxGetStaticModuleState( ));
   
  モジュールの状態と MFC の詳細についてを参照してください「の管理モジュールの状態データの MFC モジュール」[ドキュメントを新規に作成する、Windows、およびビュー](../creating-new-documents-windows-and-views.md)と[テクニカル ノート 58](../tn058-mfc-module-state-implementation.md)です。  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxstat_.h  
    
 
@@ -222,10 +223,10 @@ DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 -   作成、 **CDynLinkLibrary**オブジェクトの DLL をエクスポートするかどうかは[CRuntimeClass 構造](cruntimeclass-structure.md)独自のカスタム リソースまたはオブジェクトします。    
  呼び出すことができます`AfxTermExtensionModule`各プロセスは、MFC 拡張 DLL からデタッチするときに、MFC 拡張 DLL をクリーンアップする (プロセスが終了すると、かの結果として、DLL がアンロードされたときに発生する、`AfxFreeLibrary`呼び出します)。     
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdll_.h     
 
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [AfxTermExtensionModule](#afxtermextensionmodule)
 
@@ -254,10 +255,10 @@ BOOL CMFCListViewApp::InitInstance()
    // Remainder of function definition omitted.
 ```
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcomctl32.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [AfxGetAmbientActCtx](#afxgetambientactctx)   
  [AFX_MANAGE_STATE](#afx_manage_state)   
@@ -316,10 +317,10 @@ DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
   
  MFC 拡張 Dll を呼び出す必要があります[AfxInitExtensionModule](#afxinitextensionmodule)でその`DllMain`です。 DLL エクスポートする場合[CRuntimeClass](cruntimeclass-structure.md)が独自のカスタム リソースまたはオブジェクトを作成する必要があります、 **CDynLinkLibrary**オブジェクトに`DllMain`です。  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdll_.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [AfxInitExtensionModule](#afxinitextensionmodule)
  

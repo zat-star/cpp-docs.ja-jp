@@ -15,11 +15,12 @@ caps.latest.revision: "5"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 86e1497bccadf9afd6d26ec3bf4ab8b83e2a2a21
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fc75f84ba3c47ae9406743cefb3506721f3d5f4b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="readeflags"></a>__readeflags
 プログラムのステータスとコントロール (空文) の登録を読み取ります。  
@@ -37,7 +38,7 @@ unsigned __int64 __readeflags(void);
 ## <a name="remarks"></a>コメント  
  これらのルーチンは組み込みとしてのみ使用できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -47,6 +48,6 @@ unsigned __int64 __readeflags(void);
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
  [__writeeflags](../intrinsics/writeeflags.md)

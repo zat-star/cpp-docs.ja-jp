@@ -27,11 +27,12 @@ caps.latest.revision: "16"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 792d2f658ed64b44254b5e93b9f2b2bde9eb0a1d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c94ed10a0b97820c5a787e4350d39dcf6286fee7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ostreambufiterator-class"></a>ostreambuf_iterator Class
 テンプレート クラス ostreambuf_iterator は、抽出**演算子 >>** を使用して連続する文字要素を出力ストリームに書き込む出力反復子オブジェクトを表します。 `ostreambuf_iterator` は、出力ストリームに挿入されるオブジェクトの型がジェネリック型ではなく文字である点が、[ostream_iterator クラス](../standard-library/ostream-iterator-class.md)のオブジェクトとは異なります。  
@@ -81,7 +82,7 @@ template <class CharType = char class Traits = char_traits <CharType>>
 |[operator++](#op_add_add)|操作が呼び出される前に示したものと同じオブジェクトに `ostreambuf_iterator` を返す、実質的な機能を持たないインクリメント演算子。|  
 |[operator=](#op_eq)|この演算子は、関連付けられているストリーム バッファーに文字を挿入します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iterator>  
   
  **名前空間:** std  
@@ -446,7 +447,7 @@ The characters written to the output stream
 *\  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<iterator>](../standard-library/iterator.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)

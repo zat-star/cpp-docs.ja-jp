@@ -53,11 +53,12 @@ caps.latest.revision: "31"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1502f2bc315df705f7a135305388277c6d44918e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2f9481583c56676d206225ad76f8131c2a79821f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcdropdowntoolbarbutton-class"></a>CMFCDropDownToolbarButton クラス
 ツール バー ボタンの一種で、クリックされたときは標準ボタンと同じように動作します。 ただし、ドロップダウン ツールバーを開きます ( [CMFCDropDownToolBar クラス](../../mfc/reference/cmfcdropdowntoolbar-class.md)ユーザーが押すし、ツール バー ボタンを押したままかどうか。  
@@ -103,7 +104,7 @@ class CMFCDropDownToolbarButton : public CMFCToolBarButton
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMFCDropDownToolbarButton::m_uiShowBarDelay](#m_uishowbardelay)|ユーザー必要がありますを押しながらマウスのボタン、ドロップダウン ツールバーが表示されるまで時間の長さを指定します。|  
   
@@ -121,7 +122,7 @@ class CMFCDropDownToolbarButton : public CMFCToolBarButton
   
  [CMFCDropDownToolbarButton](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdropdowntoolbar.h  
   
 ##  <a name="copyfrom"></a>CMFCDropDownToolbarButton::CopyFrom  
@@ -484,7 +485,7 @@ void SetDefaultCommand(UINT uiCmd);
 ### <a name="remarks"></a>コメント  
  このメソッドを呼び出して、ユーザーがボタンをクリックしたときに、フレームワークが実行される既定のコマンドを指定します。 指定されたコマンド ID を持つ項目`uiCmd`親ドロップダウン ツールバーにある必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCDropDownToolBar クラス](../../mfc/reference/cmfcdropdowntoolbar-class.md)   

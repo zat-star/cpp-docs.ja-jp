@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -14,33 +13,18 @@ f1_keywords:
 - AMP_GRAPHICS/Concurrency::graphics::writeonly_texture_view
 - AMP_GRAPHICS/Concurrency::graphics::writeonly_texture_view::set
 - AMP_GRAPHICS/Concurrency::graphics::rank Constant
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 8d117ad3-0a1c-41ae-b29c-7c95fdd4d04d
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 5a051b8db98e36ced89783bfa1de2ab5f514c6bc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 594a23113159c7d4afa9e3119952b001f8ee7ed4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="writeonlytextureview-class"></a>writeonly_texture_view クラス
 テクスチャへの書き込み専用アクセスを提供します。  
@@ -98,7 +82,7 @@ class writeonly_texture_view<value_type, _Rank> : public details::_Texture_base<
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[rank 定数](#rank)|`writeonly_texture_view` オブジェクトのランクを取得します。|  
   
@@ -107,7 +91,7 @@ class writeonly_texture_view<value_type, _Rank> : public details::_Texture_base<
   
  `writeonly_texture_view`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_graphics.h  
   
  **Namespace:** concurrency::graphics  
@@ -186,6 +170,5 @@ writeonly_texture_view(
  `_Src`  
  作成に使用されるテクスチャ、`writeonly_texture_view`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5bc3947dc31c1355a67864e509c28dc3569b488b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0cfa27e2d76e546748258a5f6c1af1df9ded28f3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="run-time-routines-by-category"></a>カテゴリ別ランタイム ルーチン
 このセクションでは、Microsoft ランタイム ライブラリ ルーチンの一覧をカテゴリ別に示して説明します。 参照しやすいように、一部のルーチンは複数のカテゴリに記載されています。 マルチバイト文字ルーチンとワイド文字ルーチンは、対応する 1 バイト文字ルーチンと共にグループ化されています (存在する場合)。  
@@ -44,5 +45,5 @@ ms.lasthandoff: 10/24/2017
 |[検索と並べ替え](../c-runtime-library/searching-and-sorting.md)|[文字列操作](../c-runtime-library/string-manipulation-crt.md)|  
 |[システム コール](../c-runtime-library/system-calls.md)|[時間管理](../c-runtime-library/time-management.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C ランタイム ライブラリ リファレンス](../c-runtime-library/c-run-time-library-reference.md)

@@ -40,11 +40,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 217290399a03174e599117077b27116a86808f7f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f52c6e5664292469ef33a88e9d5458c07ec69454
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-type-mappings"></a>データ型のマップ
 ここで説明するデータ型のマッピングは TCHAR.H で定義されており、定数 `_UNICODE` または `_MBCS` がプログラムで定義されているかどうかに依存します。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 10/24/2017
 |`_TXCHAR`|`char`|`unsigned char`|`wchar_t`|  
 |`_T` または `_TEXT`|影響なし (プリプロセッサによって削除される)|影響なし (プリプロセッサによって削除される)|`L` (後続の文字または文字列を対応する Unicode の文字または文字列に変換する)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)   
  [定数とグローバル変数のマップ](../c-runtime-library/constant-and-global-variable-mappings.md)   
  [ルーチンのマップ](../c-runtime-library/routine-mappings.md)   

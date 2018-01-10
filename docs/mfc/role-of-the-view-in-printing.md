@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2b75c64268d8181cd109aa1b985f2536a69574e7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 459037dd6239171ebe442c19947d23c8bbc34280
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="role-of-the-view-in-printing"></a>印刷でのビューの役割
 ビューは、関連付けられたドキュメントを印刷で 2 つの重要な役割も再生します。  
@@ -37,6 +38,6 @@ ms.lasthandoff: 10/24/2017
   
  印刷と印刷では、ビューの役割についての詳細については、次を参照してください。[印刷および印刷プレビュー](../mfc/printing-and-print-preview.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ビューの使い方](../mfc/using-views.md)
 

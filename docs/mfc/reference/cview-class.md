@@ -63,11 +63,12 @@ caps.latest.revision: "25"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d97c12b54e644298edb21706b4659ba84e43256e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 843417508fc43f99b0027873988746d03a7863cd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cview-class"></a>CView クラス
 ユーザーが定義するビュークラスの基本機能が用意されています。  
@@ -166,7 +167,7 @@ class AFX_NOVTABLE CView : public CWnd
   
  `CView`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="cview"></a>CView::CView  
@@ -797,7 +798,7 @@ virtual void OnUpdate(
   
  場合`lHint`は 0 と`pHint`は**NULL**ドキュメントが汎用的な更新の通知を送信します。 ビューは、汎用的な更新プログラムの通知を受信した場合、または、ヒントをデコードできない場合は、そのクライアント領域全体を無効にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプルは](../../visual-cpp-samples.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

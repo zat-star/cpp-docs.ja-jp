@@ -30,11 +30,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: dc49f795fb4c8f987271bd4f147a04e3ac873e33
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7a15b041f638312081417daae8c800647fbfb7d1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="context-class"></a>Context クラス
 実行コンテキストの抽象化を表します。  
@@ -81,7 +82,7 @@ class Context;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `Context`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
@@ -288,7 +289,7 @@ static void __cdecl YieldExecution();
   
  この関数で新しい[!INCLUDE[vs_dev14](../../../ide/includes/vs_dev14_md.md)]と同一で、 [Yield](#yield)機能しますが、Windows.h の Yield マクロと競合しません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [Scheduler クラス](scheduler-class.md)   
  [タスク スケジューラ](../../../parallel/concrt/task-scheduler-concurrency-runtime.md)

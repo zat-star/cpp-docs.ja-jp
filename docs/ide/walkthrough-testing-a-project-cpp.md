@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: be54f9b0d82b2c860c12dfcdeeb2c44c9c67547c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2ba928d4a81252b76856273160af63ed8707e7e5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-testing-a-project-c"></a>チュートリアル: プロジェクトのテスト (C++)
 デバッグ モードでプログラムを実行すると、ブレークポイントを使用してプログラムを停止し、変数およびオブジェクトの状態を調べることができます。  
@@ -67,6 +68,6 @@ ms.lasthandoff: 10/24/2017
 ## <a name="next-steps"></a>次の手順  
  **前:** [チュートリアル: プロジェクトの構築 (C++)](../ide/walkthrough-building-a-project-cpp.md) &#124;です。**次:**[チュートリアル: プロジェクトのデバッグ (C++)](../ide/walkthrough-debugging-a-project-cpp.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [C/C++ プログラムのビルド](../build/building-c-cpp-programs.md)

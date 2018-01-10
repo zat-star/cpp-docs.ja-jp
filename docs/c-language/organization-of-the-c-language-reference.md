@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1c6a5bc8df28b696e9f0fee15304667cf4f49227
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e452f198f99054a93ad27e243fa4ed43ba3f8b33
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="organization-of-the-c-language-reference"></a>『C 言語リファレンス』の構成
 -   [C の要素](../c-language/elements-of-c.md)  
@@ -36,5 +37,5 @@ ms.lasthandoff: 10/24/2017
   
 -   [実装で定義された動作](../c-language/implementation-defined-behavior.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 言語リファレンス](../c-language/c-language-reference.md)

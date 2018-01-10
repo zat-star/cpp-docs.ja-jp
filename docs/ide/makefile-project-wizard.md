@@ -1,38 +1,38 @@
 ---
-title: "メイクファイル アプリケーション ウィザード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.appwiz.makefile.overview"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "メイクファイル プロジェクト ウィザード [Visual Studio]"
-  - "メイクファイル プロジェクト, メイクファイル アプリケーション ウィザード"
+title: "メイクファイル プロジェクト ウィザード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.appwiz.makefile.overview
+dev_langs: C++
+helpviewer_keywords:
+- Makefile projects, Makefile Project Wizard
+- MakeFile Project Wizard [Visual Studio]
 ms.assetid: 38219802-320d-4c48-a118-4792de8f3b2d
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 33e9245654f0ec2e9af65258eb5be7b4230ad6fb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# メイクファイル アプリケーション ウィザード
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このウィザードでコマンド ラインを作成すると、コマンド ラインの内容をビルド エンジンで実行できます。  作成したプロジェクトの[プロパティ ページ](../ide/working-with-project-properties.md)で、プロジェクトのプロパティを表示および編集できます。  
+# <a name="makefile-project-wizard"></a>メイクファイル アプリケーション ウィザード
+このウィザードを使用するのコマンドラインを実行するのにビルド エンジンを作成できます。 プロジェクトを作成すると、表示して、プロジェクトのプロジェクトのプロパティを編集[プロパティ ページ](../ide/working-with-project-properties.md)です。  
   
-## 概要  
- ウィザードのこのページでは、作成するプロジェクトの現在のプロジェクト設定が示されます。  既定では、*ProjName*.exe のデバッグ構成とリリース構成の両方をビルドするように設定されています。  
+## <a name="overview"></a>概要  
+ このウィザード ページでは、作成しているプロジェクトの現在のプロジェクト設定について説明します。 既定では、プロジェクトがセットアップに両方のデバッグ ビルドし、リリース構成の*ProjName*.exe です。  
   
- これらの既定値を変更するには、ウィザードの左の列にある [&#91;アプリケーションの設定&#93;](../ide/application-settings-makefile-project-wizard.md) タブを使用します。  
+ これらの既定値を変更するには、クリックして、[アプリケーション設定](../ide/application-settings-makefile-project-wizard.md) タブで、ウィザードの左の列を必要な変更を行います。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [メイクファイル プロジェクトの作成](../ide/creating-a-makefile-project.md)   
  [NMAKE リファレンス](../build/nmake-reference.md)   
  [メイクファイルの特殊文字](../build/special-characters-in-a-makefile.md)   

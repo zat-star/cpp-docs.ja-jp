@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b30ecd8a8a508842d0edf9af8c4b3736728ca735
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e29ae754e7f5b078c23f0cdf27c0a280cd28b40a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="internet-url-parsing-globals-and-helpers"></a>インターネット URL 解析用グローバル関数とヘルパー
 クライアントはインターネット サーバーにクエリを送信するときは、クライアントに関する情報を抽出するのに URL 解析用グローバルのいずれかを使用できます。 ヘルパー関数では、その他のインターネット機能を提供します。
@@ -116,7 +117,7 @@ BOOL AFXAPI AfxParseURL(
 > [!NOTE]
 >  この関数を呼び出すには、プロジェクトは AFXINET を含める必要があります。H.  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxinet.h  
   
 ##  <a name="afxparseurlex"></a>AfxParseURLEx  
@@ -189,7 +190,7 @@ BOOL AFXAPI AfxParseURLEx(
  `dwFlags`  
  URL を解析する方法を制御するフラグ。 次の値の組み合わせが可能です。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |**ICU_DECODE**|%XX エスケープ シーケンスを文字に変換します。|  
 |**ICU_NO_ENCODE**|安全でない文字をエスケープ シーケンスに変換されません。|  
@@ -208,10 +209,10 @@ BOOL AFXAPI AfxParseURLEx(
 > [!NOTE]
 >  この関数を呼び出すには、プロジェクトは AFXINET を含める必要があります。H.  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxinet.h  
     
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
  
 ## <a name="afxgetinternethandletype"></a>AfxGetInternetHandleType
@@ -260,10 +261,10 @@ DWORD AFXAPI AfxGetInternetHandleType(  HINTERNET hQuery );
 > [!NOTE]
 >  この関数を呼び出すために、プロジェクトは AFXINET を含める必要があります。H.  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxinet.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [AfxParseURL](internet-url-parsing-globals.md#afxparseurl)
  
@@ -287,10 +288,10 @@ DWORD AFXAPI AfxGetInternetHandleType(  HINTERNET hQuery );
 > [!NOTE]
 >  この関数を呼び出すには、プロジェクトは AFXINET を含める必要があります。H.  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxinet.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [CInternetException クラス](cinternetexception-class.md)   
  [スローします。](#throw)

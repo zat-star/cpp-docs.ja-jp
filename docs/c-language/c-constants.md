@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f8d0a98776f502e4ffc5455f3b49de10e506892c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a9b15ccc789ad370addc21a3b3079d563f7bbb1c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-constants"></a>C 定数
 "定数" はプログラムで値として使用できる数、文字、または文字列です。 定数を使用して、変更できない浮動小数点、整数、列挙、または文字値を表します。  
@@ -37,5 +38,5 @@ ms.lasthandoff: 10/24/2017
   
  定数の特徴は、値と型を持つことです。 [浮動小数点](../c-language/c-floating-point-constants.md)、[整数](../c-language/c-integer-constants.md)、および[文字定数](../c-language/c-character-constants.md)について、次の 3 つのセクションで説明します。 列挙定数については、[列挙体の宣言](../c-language/c-enumeration-declarations.md)に関するページをご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C の要素](../c-language/elements-of-c.md)

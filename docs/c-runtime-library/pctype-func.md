@@ -25,11 +25,12 @@ caps.latest.revision: "2"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ae2c5f53c10083deb281a88a5f398712722700b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 239779bf4515615f25ff83be9221b1040d936a7f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pctypefunc"></a>__pctype_func
 文字分類情報の配列へのポインターを取得します。  
@@ -47,11 +48,11 @@ const unsigned short *__pctype_func(
 ## <a name="remarks"></a>コメント  
  文字分類テーブルに含まれる情報は内部専用であり、`char` 型の文字を分類する各種関数で使用されます。 詳細については、「[_pctype、_pwctype、_wctype、_mbctype、_mbcasemap](../c-runtime-library/pctype-pwctype-wctype-mbctype-mbcasemap.md)」の「`Remarks`」セクションをご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |__pctype_func|ctype.h|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_pctype、_pwctype、_wctype、_mbctype、_mbcasemap](../c-runtime-library/pctype-pwctype-wctype-mbctype-mbcasemap.md)

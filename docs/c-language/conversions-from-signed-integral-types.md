@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ccda8d6fa2573245f34a38f327395955bf92fdc2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8977c70fc2ebdc6e9fccf22e44a04afaceae1392
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="conversions-from-signed-integral-types"></a>Conversions from Signed Integral Types (符号付き整数型からの変換)
 符号付き整数が、それ以上のサイズの符号なし整数に変換される場合、符号付き整数の値が負でないときは、値は変更されません。 変換は、符号付き整数を符号拡張することによって行われます。 符号付き整数は、上位ビットを切り捨てることにより、短い符号付き整数に変換されます。 結果は、この例に示すように、符号なしの値として解釈されます。  
@@ -43,7 +44,7 @@ printf_s( "%hu\n", u );  // Prints 65533
   
 ### <a name="conversions-from-signed-integral-types"></a>Conversions from Signed Integral Types (符号付き整数型からの変換)  
   
-|変換前|目的|メソッド|  
+|From|終了|メソッド|  
 |----------|--------|------------|  
 |**char**1|**short**|符号拡張。|  
 |**char**|**long**|符号拡張。|  
@@ -76,7 +77,7 @@ printf_s( "%hu\n", u );  // Prints 65533
   
  Microsoft の 32 ビット C コンパイラでは、整数は **long** と等価です。 **int** 値の変換は、**long** の場合と同様に実行されます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [代入の変換](../c-language/assignment-conversions.md)

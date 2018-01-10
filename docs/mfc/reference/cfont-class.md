@@ -31,11 +31,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 65c1fd6d86c153881f8674732db2b61edcfab8cc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5431461c7c2cc33131f72f059edcfbd984eae5fb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cfont-class"></a>CFont クラス
 Windows のグラフィック デバイス インターフェイス (GDI) のフォントをカプセル化したもので、フォントを操作するメンバー関数を提供します。  
@@ -85,7 +86,7 @@ class CFont : public CGdiObject
   
  `CFont`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="cfont"></a>CFont::CFont  
@@ -327,7 +328,7 @@ operator HFONT() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#77](../../mfc/codesnippet/cpp/cfont-class_8.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル HIERSVR](../../visual-cpp-samples.md)   
  [CGdiObject クラス](../../mfc/reference/cgdiobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)

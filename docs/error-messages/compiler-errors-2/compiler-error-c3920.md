@@ -15,11 +15,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2e2bf82de4e32c2b0ae586c78c69ce474947c3ec
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b5eeee973258b6d59b7a034e2b71bc453ed7454f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3920"></a>コンパイラ エラー C3920
 ' operator ': 後置インクリメント/デクリメントの WinRT または CLR 演算子の後置形式は定義できません WinRT または CLR 演算子には、対応するプレフィックスを呼び出す WinRT または CLR 演算子 (op_Increment/op_Decrement) が、後置形式のセマンティクスで  

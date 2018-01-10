@@ -4,27 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- valarray/std::gslice_array
-dev_langs:
-- C++
-helpviewer_keywords:
-- gslice_array class
+f1_keywords: valarray/std::gslice_array
+dev_langs: C++
+helpviewer_keywords: gslice_array class
 ms.assetid: ad1b4514-b14a-4baf-a293-d5a8e8674c75
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 0c030885dd0ab6b9c102167e9702dce02589973b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 47dd54524e0a99cb2e725a10b1125c5a022a74d5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="gslicearray-class"></a>gslice_array クラス
 valarray の一般的なスライスで定義されるサブセット配列間の演算を実行して一般的なスライス オブジェクトをサポートする、内部の補助テンプレート クラス。  
@@ -115,12 +111,11 @@ const valarray<size_t> len(lv, 2), str(dv, 2);
 ## <a name="example"></a>例  
  slice_array の宣言方法や使用例については、[gslice::gslice](../standard-library/gslice-class.md#gslice) の例を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<valarray>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 

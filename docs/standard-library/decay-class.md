@@ -15,11 +15,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 74f89b08422563c9b215ece0e879de7d83e5597d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e83dff9251013e94700eba411e702ed6beb6f5bd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="decay-class"></a>decay クラス
 値で渡されように型を生成します。 型を非参照、非定数、非揮発性にします。または、関数からの型または配列型へのポインターを作成します。  
@@ -49,12 +50,12 @@ using decay_t = typename decay<T>::type;
   
 -   それ以外の場合、修飾型 `type` は `remove_cv<U>::type` になります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
 
 

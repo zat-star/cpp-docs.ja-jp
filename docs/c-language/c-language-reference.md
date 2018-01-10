@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cc0aefab82d9bcb5004cfad776a007977278b3d7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c5eb419c01cb3699ad90ab9fbf98a5f9ec282bb0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-language-reference"></a>C 言語リファレンス
 「*C 言語リファレンス*」では、Microsoft C に実装されている C プログラミング言語について説明しています。このリファレンスの構成は ANSI C 標準 (C89 とも呼ばれます) に基づいていますが、ANSI C 標準に対する Microsoft 拡張機能に関する補足事項が含まれます。  
@@ -38,5 +39,5 @@ C++ とプリプロセッサに関する追加リファレンス資料につい�
   
 コンパイラ オプションおよびリンカー オプションについては、「[C/C++ Building Reference](../build/reference/c-cpp-building-reference.md)」 (C/C++ ビルドのリファレンス) を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   

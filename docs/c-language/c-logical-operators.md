@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b97509fbbfdf0bb169af1dae61e07fa6f4ba31d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0308b4d3531c52b229771629e245af0b772ec5d9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-logical-operators"></a>C 論理演算子
 論理演算子は、論理 AND (**&&**) 演算と論理 OR ( `||` ) 演算を実行します。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 10/24/2017
   
  論理 AND 式と論理 OR 式のオペランドは左から右に評価されます。 1 つ目のオペランドの値で演算の結果を確認できる場合、2 つ目のオペランドは評価されません。 これは、"ショートサーキット評価" と呼ばれます。 1 つ目のオペランドの後にシーケンス ポイントがあります。 詳細については、「[シーケンス ポイント](../c-language/c-sequence-points.md)」を参照してください。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  論理演算子の例を次に示します。  
   
 ```  
@@ -72,6 +73,6 @@ printf( "%d" , (x == w || x == y || x == z) );
   
  この例では、`x` が `w`、`y`、または `z` と等しい場合、`printf` 関数の 2 番目の引数が true に評価され、値 1 が出力されます。 それ以外の場合は、false と評価され、値 0 が出力されます。 条件の 1 つが true と評価されると、直ちに評価が終了します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [論理 AND 演算子: &&](../cpp/logical-and-operator-amp-amp.md)   
  [論理 OR 演算子: &#124;&#124;](../cpp/logical-or-operator-pipe-pipe.md)

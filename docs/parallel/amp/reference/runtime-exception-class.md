@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -13,36 +12,19 @@ f1_keywords:
 - AMPRT/runtime_exception
 - AMPRT/Concurrency::runtime_exception
 - AMPRT/Concurrency::runtime_exception::get_error_code
-dev_langs:
-- C++
-helpviewer_keywords:
-- runtime_exception class
+dev_langs: C++
+helpviewer_keywords: runtime_exception class
 ms.assetid: 8fe3ce2c-3d4c-4b9c-95e8-e592f37adefd
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 399d2531c06285012df12d703b4cda6e18469c38
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 705949f118e85b6dfef2beeccb55fecd63a64882
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="runtimeexception-class"></a>runtime_exception クラス
 C++ Accelerated Massive Parallelism (AMP) ライブラリ内の例外の基本型。  
@@ -66,7 +48,7 @@ class runtime_exception : public std::exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[get_error_code](#runtime_exception__get_error_code)|例外が発生したエラー コードを返します。|  
+|[get_error_code](#runtime_exception__get_error_code)|例外の原因となったエラー コードを返します。|  
 
   
 ### <a name="public-operators"></a>パブリック演算子  
@@ -80,7 +62,7 @@ class runtime_exception : public std::exception;
   
  `runtime_exception`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amprt.h  
   
  **名前空間:** Concurrency  
@@ -125,7 +107,7 @@ virtual ~runtime_exception() throw();
 ```  
   
 ## <a name="runtime_exception__get_error_code"></a>get_error_code   
-例外が発生したエラー コードを返します。  
+例外の原因となったエラー コードを返します。  
   
 ### <a name="syntax"></a>構文  
   
@@ -154,6 +136,5 @@ runtime_exception & operator= (    const runtime_exception & _Other ) throw();
   
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
-

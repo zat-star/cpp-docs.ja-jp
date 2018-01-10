@@ -35,11 +35,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b2d30eb61603d791b49d6aaaca2b65176f5fa2d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 246c645dad5ed11fb5428e2f90ed9b9574696417
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coledocobjectitem-class"></a>関数クラス
 Active ドキュメント コンテインメントを実装します。  
@@ -97,7 +98,7 @@ class COleDocObjectItem : public COleClientItem
   
  `COleDocObjectItem`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxole.h  
   
 ##  <a name="coledocobjectitem"></a>COleDocObjectItem::COleDocObjectItem  
@@ -150,7 +151,7 @@ HRESULT ExecCommand(
 ### <a name="return-value"></a>戻り値  
  返します`S_OK`成功した場合返しますそれ以外の場合、次のエラー コードのいずれか。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**E_UNEXPECTED**|予期しないエラーが発生しました。|  
 |**E_FAIL**|エラーが発生しました。|  
@@ -283,7 +284,7 @@ virtual void Release(OLECLOSE dwCloseOption = OLECLOSE_NOSAVE);
 ### <a name="remarks"></a>コメント  
  クライアント アイテムは破棄されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル MFCBIND](../../visual-cpp-samples.md)   
  [COleClientItem クラス](../../mfc/reference/coleclientitem-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

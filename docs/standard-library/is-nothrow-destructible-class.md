@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 37f085f0a330af04c4167b381ea43608c693a02a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 892344e660788f1da01c46f1894c5c2dc8c80041
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="isnothrowdestructible-class"></a>is_nothrow_destructible クラス
 型が破棄可能で、デストラクタ―がスローしないとコンパイラに判明しているかどうかをテストします。  
@@ -40,12 +41,12 @@ struct is_nothrow_destructible;
 ## <a name="remarks"></a>コメント  
  型 `T` が破棄可能な型で、デストラクタ―がスローしないとコンパイラに判明している場合、型述語のインスタンスは true を保持します。 それ以外の場合、false を保持します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
 
 

@@ -37,11 +37,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c071ddafad89dc284aebea2dc49d74385feb91da
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a9acb5dccac11d132eae74eb89a4b2e4a6bf8fab
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mbcurmaxfunc-mbcurmaxlfunc-pmbcurmax-mbcurmax"></a>___mb_cur_max_func、___mb_cur_max_l_func、__p___mb_cur_max、__mb_cur_max
 内部 CRT 関数。 現在または指定されたロケールのマルチバイト文字の最大バイト数を取得します。  
@@ -69,11 +70,11 @@ int * __p___mb_cur_max(void);
   
  内部 CRT 関数は実装固有であり、各リリースでの変更の対象です。 コード内では使用しないことをお勧めします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`___mb_cur_max_func`、`___mb_cur_max_l_func`、`__p___mb_cur_max`|\<ctype.h>、\<stdlib.h>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MB_CUR_MAX](../c-runtime-library/mb-cur-max.md)

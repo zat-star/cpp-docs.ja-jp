@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - text output [C++]
 - text [C++], formatting
@@ -26,30 +24,16 @@ helpviewer_keywords:
 - programming [C++], iostream programming
 - text input [C++]
 ms.assetid: 1aa0a0be-4dd8-4dac-ac1f-d2afdaeab769
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 58f49647766d21369145474d908bd3c0436deae8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 4492f590c1be5604fcd630c41cdf79ce21e8b76f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iostream-programming"></a>iostream プログラミング
 このセクションでは、iostream クラスの[概要](../standard-library/what-a-stream-is.md)を示してから、[出力ストリーム](../standard-library/output-streams.md)、[入力ストリーム](../standard-library/input-streams.md)、[入出力ストリーム](../standard-library/input-output-streams.md)それぞれについて説明します。 セクションの最後に、高度な iostream プログラミングについて説明します。  
@@ -67,8 +51,7 @@ ms.lasthandoff: 02/24/2017
   
  [引数を使用するカスタム マニピュレーター](../standard-library/custom-manipulators-with-arguments.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)   
  [iostreams の規則](../standard-library/iostreams-conventions.md)
-
 

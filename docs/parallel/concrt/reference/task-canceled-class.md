@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8e2779354c164a05cfaa47d4d3a25815cc250955
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 03b3948036393c6cc14ac58df8f289430042204f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="taskcanceled-class"></a>task_canceled クラス
 このクラスは、現在のタスクを強制的に取り消すために PPL タスク レイヤーによってスローされる例外を表します。 によってもスローされます、`get()`メソッド[タスク](/visualstudio/extensibility/debugger/task-class-internal-members)、取り消されたタスクに対してです。  
@@ -46,7 +47,7 @@ class task_canceled : public std::exception;
   
  `task_canceled`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
@@ -65,5 +66,5 @@ task_canceled() throw();
  `_Message`  
  エラーの説明メッセージ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

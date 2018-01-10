@@ -39,11 +39,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2eb503747b9e3a8b8a630fccdbdd8b0da9428058
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 57b6903568f635ec2f92512c922fc7c8460e7d07
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="int2-class"></a>int_2 クラス
 2 個の整数の short ベクターを表します。  
@@ -107,7 +108,7 @@ class int_2;
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#int_2__size)||  
   
@@ -127,7 +128,7 @@ class int_2;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `int_2`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
@@ -201,5 +202,5 @@ explicit inline int_2(
 static const int size = 2;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

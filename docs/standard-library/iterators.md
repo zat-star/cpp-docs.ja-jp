@@ -4,47 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - iterator conventions
 - C++ Standard Library, iterator conventions
 ms.assetid: 2f746be7-b37d-4bfc-bf05-be4336ca982f
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: ffeaf473155d0a24bd0e1b14c4191d276bed5190
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: f03b62e045fe0130f981d55767c756df89bca9c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="iterators"></a>反復子
+# <a name="iterators"></a>Iterators
 反復子は、C++ 標準ライブラリ コンテナー内の要素を反復処理し、個々の要素へのアクセスを提供するオブジェクトです。 すべての C++ 標準ライブラリ コンテナーに反復子が用意されているため、アルゴリズムではその要素を格納するコンテナーの型を気にせずに標準的な方法で要素にアクセスできます。  
   
  メンバー関数、begin() や end() などのグローバル関数、前方または後方に移動するための ++ や -- といった演算子を使用することにより、反復子を明示的に使用することができます。 また、range-for ループ (一部の反復子の種類の場合) や添字演算子 [] を使用することにより、暗黙的に反復子を使用することもできます。  
   
- C++ 標準ライブラリでは、シーケンスまたは範囲の始まりが最初の要素になります。 シーケンスまたは範囲の終わりは、常に最後の要素の&1; つ後として定義されます。 グローバル関数の begin および end は、反復子を指定されたコンテナーに返します。 コンテナー内のすべての要素に対する通常の明示的な反復子のループは、次のようになります。  
+ C++ 標準ライブラリでは、シーケンスまたは範囲の始まりが最初の要素になります。 シーケンスまたは範囲の終わりは、常に最後の要素の 1 つ後として定義されます。 グローバル関数の begin および end は、反復子を指定されたコンテナーに返します。 コンテナー内のすべての要素に対する通常の明示的な反復子のループは、次のようになります。  
   
 ```  
  
@@ -70,7 +54,7 @@ for (auto num : vec)
   
  反復子には、5 つのカテゴリがあります。 これらのカテゴリを、機能が低い方から順に示します。  
   
-- **出力**。 出力反復子 `X` は、++ 演算子を使用してシーケンスを前方に反復処理できます。また、* 演算子を使用して要素を&1; 回だけ書き込むことができます。  
+- **出力**。 出力反復子 `X` は、++ 演算子を使用してシーケンスを前方に反復処理できます。また、* 演算子を使用して要素を 1 回だけ書き込むことができます。  
   
 - **入力**。 入力反復子 `X` は、++ 演算子を使用してシーケンスを前方に反復処理できます。また、* 演算子を使用して要素を任意の回数読み取ることができます。 ++ と != 演算子を使用することで、入力反復子を比較することができます。 入力反復子のコピーを増分すると、その他のコピーのいずれも、安全に比較、逆参照、または増分することができなくなります。  
   
@@ -82,7 +66,7 @@ for (auto num : vec)
   
  すべての反復子は、割り当てまたはコピーすることができます。 反復子は軽量のオブジェクトであると見なされ、多くの場合、参照ではなく値によって、渡され、返されます。 前述のすべての操作は、有効な反復子に対して実行したときに例外をスローできないことに注意してください。  
   
- 反復子のカテゴリの階層は、次の&3; つのシーケンスを表示することによって要約することができます。 シーケンスに対する書き込み専用アクセスの場合、次のいずれの反復子も使用できます。  
+ 反復子のカテゴリの階層は、次の 3 つのシーケンスを表示することによって要約することができます。 シーケンスに対する書き込み専用アクセスの場合、次のいずれの反復子も使用できます。  
   
 ```  
 output iterator  
@@ -121,10 +105,9 @@ forward iterator
 > [!NOTE]
 >  range-for ループを使用することにより、反復子の明示的な使用を避けることができます。 詳細については、「[ループ (Modern C++)](http://msdn.microsoft.com/en-us/b1b2779c-750e-4576-a514-a84178eae9da)」をご覧ください。  
   
- [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] では、コンテナーの境界を上書きしないようにするための、チェックを行う反復子とデバッグ反復子が提供されるようになりました。 詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」および「[デバッグ反復子のサポート](../standard-library/debug-iterator-support.md)」をご覧ください。  
+ Visual C には、コンテナーの境界を上書きしないことを確認するには、checked 反復子とデバッグ反復子が用意されています。 詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」および「[デバッグ反復子のサポート](../standard-library/debug-iterator-support.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 

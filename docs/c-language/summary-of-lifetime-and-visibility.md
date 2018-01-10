@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8e8c676a950979906bbc741679735ba452baec18
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1ee45ec7a2a842cc45c01c0e6f43ab49ba55aa3a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="summary-of-lifetime-and-visibility"></a>有効期間と可視性の概要
 次の表は、ほとんどの識別子について、有効期間と可視性をまとめたものです。 最初の 3 列は、有効期間および可視性を定義する属性を示します。 最初の 3 列によって指定された属性を持つ識別子には、4 番目および 5 番目の列に表示される有効期間および可視性があります。 ただし、表には、使用可能なすべてのケースは示されていません。 詳細については、[ストレージ クラス](../c-language/c-storage-classes.md)に関するページを参照してください。  
@@ -73,5 +74,5 @@ int main()  // main function defined at external level
 ### <a name="comments"></a>コメント  
  この例では、4 つの表示レベルとして、外部レベルと 3 つのブロック レベルがあります。 値は、各ステートメントに続くコメントに示すとおりに画面に出力されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [有効期間、スコープ、可視性、およびリンケージ](../c-language/lifetime-scope-visibility-and-linkage.md)

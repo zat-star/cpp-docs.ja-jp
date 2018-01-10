@@ -15,11 +15,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7c255203b0cb0515d3a46b42bf8813078fcca70c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ba99c19328b576900b1c269c24949baa832c8be7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="isassignable-class"></a>is_assignable クラス
 `From` 型の値を `To` 型に代入できるかどうかをテストします。  
@@ -41,12 +42,12 @@ struct is_assignable;
 ## <a name="remarks"></a>コメント  
  評価されていない式 `declval<To>() = declval<From>()` は整形式である必要があります。 `From` と `To` の両方とも完全な型、`void`、または不明なバインドの配列にする必要があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
 
 

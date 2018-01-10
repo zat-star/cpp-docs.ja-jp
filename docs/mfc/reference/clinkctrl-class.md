@@ -45,11 +45,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7d61e3f09b96c236277cdaf3c38008be2a661f40
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1e6834190d7693e60f80285b04a04c484313d3c2
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="clinkctrl-class"></a>CLinkCtrl クラス
 Windows コモン SysLink コントロールの機能が用意されています。  
@@ -102,7 +103,7 @@ class CLinkCtrl : public CWnd
   
  `CLinkCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="clinkctrl"></a>CLinkCtrl::CLinkCtrl  
@@ -132,7 +133,7 @@ virtual BOOL Create(DWORD dwStyle,
   
 ### <a name="parameters"></a>パラメーター  
  `lpszLinkMarkup`  
- マークされた項目を表示するテキストを含む 0 で終わる文字列へのポインター。 詳細については、」の「マークアップとリンクのアクセス」セクションを参照してください。 [SysLink コントロールの概要](http://msdn.microsoft.com/library/windows/desktop/bb760706)で、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/linkid=556)です。  
+ マークされた項目を表示するテキストを含む 0 で終わる文字列へのポインター。 詳細については、」の「マークアップとリンクのアクセス」セクションを参照してください。 [SysLink コントロールの概要](http://msdn.microsoft.com/library/windows/desktop/bb760706)です。  
   
  `dwStyle`  
  リンク コントロールのスタイルを指定します。 コントロールのスタイルの任意の組み合わせを適用します。 参照してください[コモン コントロール スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775498)で、`Windows SDK`詳細についてはします。  
@@ -186,7 +187,7 @@ virtual BOOL CreateEx(DWORD  dwExStyle,
   
 ### <a name="parameters"></a>パラメーター  
  `lpszLinkMarkup`  
- マークされた項目を表示するテキストを含む 0 で終わる文字列へのポインター。 詳細については、」の「マークアップとリンクのアクセス」セクションを参照してください。 [SysLink コントロールの概要](http://msdn.microsoft.com/library/windows/desktop/bb760706)で、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/linkid=556)です。  
+ マークされた項目を表示するテキストを含む 0 で終わる文字列へのポインター。 詳細については、」の「マークアップとリンクのアクセス」セクションを参照してください。 [SysLink コントロールの概要](http://msdn.microsoft.com/library/windows/desktop/bb760706)です。  
   
  `dwExStyle`  
  リンク コントロールの拡張スタイルを指定します。 拡張ウィンドウ スタイルの一覧は、次を参照してください。、`dwExStyle`パラメーターを[について](http://msdn.microsoft.com/library/windows/desktop/ms632680)Windows SDK に含まれています。  
@@ -467,6 +468,6 @@ BOOL SetItemUrl(
 ### <a name="remarks"></a>コメント  
  指定したリンク コントロールの項目で表される URL を設定します。 詳細については、Win32 メッセージを参照してください。 [LM_SETITEM](http://msdn.microsoft.com/library/windows/desktop/bb760724) Windows SDK に含まれています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)

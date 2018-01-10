@@ -1,66 +1,67 @@
 ---
-title: "const_seg | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc-pragma.const_seg"
-  - "const_seg_CPP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "const_seg プラグマ"
-  - "プラグマ, const_seg"
+title: "const_seg |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc-pragma.const_seg
+- const_seg_CPP
+dev_langs: C++
+helpviewer_keywords:
+- pragmas, const_seg
+- const_seg pragma
 ms.assetid: 1eb58ee2-fb0e-4a39-9621-699c8f5ef957
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 49d145bc80b524176b381b2b5938c9707e8c1b19
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# const_seg
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[const](../cpp/const-cpp.md) 変数が格納されている .obj ファイル内のセグメントを指定します。  
+# <a name="constseg"></a>const_seg
+セグメントを指定場所[const](../cpp/const-cpp.md)変数は、.obj ファイルに格納します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #pragma const_seg ( [ [ { push | pop}, ] [ identifier, ] ] [ "segment-name" [, "segment-class" ] )  
 ```  
   
-## 解説  
- このトピックでは、*セグメント*と*セクション*は同義の用語です。  
+## <a name="remarks"></a>コメント  
+ 用語の意味*セグメント*と*セクション*はこのトピックでは互換性があります。  
   
- OBJ ファイルは [dumpbin](../build/reference/dumpbin-command-line.md) アプリケーションで表示できます。  `const` 変数の .obj ファイルの既定セグメントは、.rdata です。  スカラーのような一部の `const` 変数は、コード ストリームに自動的にインライン展開されます。  インライン コードは、.rdata には現れません。  
+ OBJ ファイルと見なすことができます、 [dumpbin](../build/reference/dumpbin-command-line.md)アプリケーションです。 `const` 変数の .obj ファイルの既定セグメントは、.rdata です。 スカラーのような一部の `const` 変数は、コード ストリームに自動的にインライン展開されます。 インライン コードは、.rdata には現れません。  
   
  `const_seg` 内に動的な初期化を必要とするオブジェクトを定義すると、未定義の動作が発生します。  
   
  パラメーターなしの `#pragma const_seg` は、セグメントを .rdata にリセットします。  
   
- `push` \(省略可能\)  
- レコードを内部コンパイラ スタックに格納します。  `push` には `identifier` と `segment-name` を指定できます。  
+ `push` (省略可能)  
+ レコードを内部コンパイラ スタックに格納します。 `push` には `identifier` と `segment-name` を指定できます。  
   
- `pop` \(省略可能\)  
+ `pop` (省略可能)  
  内部コンパイラ スタックの最上部からレコードを削除します。  
   
- `identifier` \(省略可能\)  
- `push` と共に使用した場合、内部コンパイラ スタックのレコードに名前を割り当てます。  `pop` と共に使用した場合、`identifier` が削除されるまでレコードを内部スタックからポップします。`identifier` が内部スタックにない場合は何もポップされません。  
+ `identifier` (省略可能)  
+ `push` と共に使用した場合、内部コンパイラ スタックのレコードに名前を割り当てます。 `pop` と共に使用した場合、`identifier` が削除されるまでレコードを内部スタックからポップします。`identifier` が内部スタックにない場合は何もポップされません。  
   
  `identifier` を使用して、複数のレコードを 1 つの `pop` コマンドでポップできます。  
   
- "`segment-name`" \(省略可能\)  
- 引数の名前。  `pop` と共に使用した場合、スタックがポップされ、`segment-name` がアクティブなセグメント名になります。  
+ "`segment-name`" (省略可能)  
+ 引数の名前。 `pop` と共に使用した場合、スタックがポップされ、`segment-name` がアクティブなセグメント名になります。  
   
- "`segment-class`" \(省略可能\)  
- Version 2.0 未満の C\+\+ との互換性のために残されています。  これは無視されます。  
+ "`segment-class`" (省略可能)  
+ Version 2.0 未満の C++ との互換性のために残されています。 これは無視されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // pragma_directive_const_seg.cpp  
@@ -89,14 +90,17 @@ int main() {
 }  
 ```  
   
-  **test1**  
-**test2**  
-**test3**  
-**test4**   
-## コメント  
- セクションを作成する場合に使用しない名前のリストについては、「[\/SECTION](../build/reference/section-specify-section-attributes.md)」を参照してください。  
+```Output  
+test1  
+test2  
+test3  
+test4  
+```  
   
- 初期化されたデータのセクション \([data\_seg](../preprocessor/data-seg.md)\)、初期化されていないデータのセクション \([bss\_seg](../preprocessor/bss-seg.md)\)、および関数のセクション \([code\_seg](../preprocessor/code-seg.md)\) を指定することもできます。  
+## <a name="comments"></a>コメント  
+ 参照してください[/section](../build/reference/section-specify-section-attributes.md)セクションを作成するときに使用しない名前の一覧についてはします。  
   
-## 参照  
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+ 初期化されたデータのセクションを指定することもできます ([data_seg](../preprocessor/data-seg.md))、初期化されていないデータ ([bss_seg](../preprocessor/bss-seg.md))、および関数 ([code_seg](../preprocessor/code-seg.md))。  
+  
+## <a name="see-also"></a>参照  
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2ffbcf504b6b4a7af210b970bcc0f7d4f7e4876c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ea3b7e0348cb21aa4338293f7cc1119e380f92dc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-tree-controls"></a>ツリー コントロールの使い方
 ツリー コントロールの一般的な使用法 ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)) 次のパターンします。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 10/24/2017
   
 -   コントロールに完了したらが正常に破棄されることを確認します。 ツリー コントロール ダイアログ ボックスか場合は、ビュー、および`CTreeCtrl`オブジェクトは自動的に破棄されます。 かどうか、する必要はありません、両方のコントロールをことを確認して、`CTreeCtrl`オブジェクトが破棄されました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CTreeCtrl の使い方](../mfc/using-ctreectrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

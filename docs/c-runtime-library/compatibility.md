@@ -18,11 +18,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f6a524e552728df0cee3e320aa36bf92d687c539
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f14d330ada8f71cc3556b7151189968b43cff4ca
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compatibility"></a>互換性
 Universal C Run-Time Library (UCRT) は、C++ に適合するために必要な C 標準ライブラリの大部分をサポートしています。 C99 (ISO/IEC 9899:1999) ライブラリを実装しています (ただし、\<tgmath.h> で定義されている型がジェネリックのマクロと、\<complex.h> での厳密な型の互換性は除きます)。 また、UCRT は、POSIX.1 (ISO/IEC 9945-1:1996、POSIX システム アプリケーション プログラミング インターフェイス) の C ライブラリの大きなサブセットを実装していますが、すべての POSIX 標準に完全に適合しているわけではありません。  さらに、UCRT はいくつかの Microsoft 固有の関数とマクロを実装していますが、これらは標準には含まれていません。  

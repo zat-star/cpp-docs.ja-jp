@@ -1,38 +1,37 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4291 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4291"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4291"
+title: "コンパイラの警告 (レベル 1) C4291 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4291
+dev_langs: C++
+helpviewer_keywords: C4291
 ms.assetid: c2b95dea-38f2-4609-9104-707c30798da4
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 2a1c03e12805c35ce04322a7ffb4d48499a9a9f3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4291
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'宣言' : 初期化コードが例外をスローすると、'new' 演算子を使用しているとメモリを解放しません。  
+# <a name="compiler-warning-level-1-c4291"></a>コンパイラの警告 (レベル 1) C4291
+'declaration': 対応する delete 演算子が見つかりませんでした。初期化は、例外をスローすると、メモリは解放されません。  
   
- 仮引数付きの [new](../../cpp/new-operator-cpp.md) が使用されていますが、該当する仮引数付きの [delete](../../cpp/delete-operator-cpp.md) がありません。  
+ 仮[新しい](../../cpp/new-operator-cpp.md)は使用がない配置の[削除](../../cpp/delete-operator-cpp.md)です。  
   
- **new** 演算子でオブジェクトにメモリを割り当てると、そのオブジェクトのコンストラクターが呼び出されます。  コンストラクターが例外をスローした場合は、オブジェクトに割り当てられていたメモリを解放する必要があります。  **new** 演算子と一致する **operator delete** 関数がない場合、メモリの解放は行われません。  
+ 演算子を持つオブジェクトのメモリが割り当てられているときに**新しい**オブジェクトのコンス トラクターが呼び出されます。 コンス トラクターは、例外をスローする場合は、そのがオブジェクトに割り当てられたメモリの割り当てを解除する必要があります。 これは行えませんしない限り、演算子**削除**演算子に一致する関数が存在する**新しい**です。  
   
- 余分な引数を付けずに **new** 演算子を使用し、[\/GX](../Topic/-GX%20\(Enable%20Exception%20Handling\).md)、[\/EHs](../../build/reference/eh-exception-handling-model.md)、または \/EHa の各オプションでコンパイルして例外処理を有効にすると、コンストラクターが例外をスローしたときに **delete** 演算子を呼び出すコードが生成されます。  
+ 演算子を使用する場合**新しい**、余分な引数およびコンパイル無し[/GX](../../build/reference/gx-enable-exception-handling.md)、 [/EHs](../../build/reference/eh-exception-handling-model.md)、例外処理、コンパイラを有効にする/EHa オプションにするコードが生成または演算子を呼び出す**削除**場合は、コンス トラクターが例外をスローします。  
   
- 仮引数付きの **new** 演算子、つまり割り当てサイズ以外の引数を伴う形式の **new** 演算子を使用すると、コンストラクターが例外をスローしたときにも、**delete** 演算子を呼び出すコードは生成されます。ただし、これは、メモリを割り当てた仮引数付きの **new** 演算子と一致する仮引数付きの **delete** 演算子がある場合だけです。  たとえば、次のようになります。  
+ 配置形式を使用する場合、**新しい**演算子 (、フォームだけでなく、サイズ引数を指定して、割り当ての) と、オブジェクトのコンス トラクターは例外をスロー、コンパイラは演算子を呼び出すコードを生成しても**削除**; が、それがだけ行わ場合演算子の仮引数付き**削除**演算子の仮引数付きの一致が存在する**新しい**メモリを割り当てられています。 例:  
   
 ```  
 // C4291.cpp  
@@ -83,7 +82,7 @@ int main(void)
 }  
 ```  
   
- 上の例では、仮引数付きの **new** 演算子と一致する仮引数付きの **delete** 演算子が定義されていないため、警告 C4291 が生成されます。  この問題を解決するには、**main** の前に次のコードを挿入します。  オーバーロードされた **operator delete** 関数のパラメーターは、最初のパラメーターを除き、すべてオーバーロードされた **new** 演算子と一致することに注意してください。  
+ 上記の例では、ため C4291 の警告が生成されます演算子のない仮引数付き**削除**が定義されている演算子の配置形式に一致する**新しい**です。 問題を解決するには、上記の次のコードを挿入**メイン**です。 注意してすべてのオーバー ロードされた演算子**削除**と一致するオーバー ロードされた演算子の関数パラメーター**新しい**、最初のパラメーターを除く。  
   
 ```  
 void operator delete(void* pMem, char* pszFilename, int nLine)  

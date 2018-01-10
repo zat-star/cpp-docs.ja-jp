@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 14939c7c39d207e686bcccf786dcabf93e809059
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 08b69d4f3cf8f5065cbae2708dace20de3b1f63f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iteratordebuglevel"></a>_ITERATOR_DEBUG_LEVEL
 `_ITERATOR_DEBUG_LEVEL` マクロは、[チェックを行う反復子](../standard-library/checked-iterators.md)および[反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)が有効かどうかを制御します。 このマクロは、以前の `_SECURE_SCL` および `_HAS_ITERATOR_DEBUGGING` マクロを置き換え、組み合わせたものです。  
@@ -70,7 +71,7 @@ ms.lasthandoff: 10/24/2017
 // ...
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [チェックを行う反復子](../standard-library/checked-iterators.md)   
 [反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)   
 [安全なライブラリ: C++ 標準ライブラリ](../standard-library/safe-libraries-cpp-standard-library.md)

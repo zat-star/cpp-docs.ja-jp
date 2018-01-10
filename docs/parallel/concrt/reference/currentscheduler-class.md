@@ -27,11 +27,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ad1d49bb90a5f3c0732fd81851e34485e95f3ccb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 936904f19687463a9b5c51262c8e6f7a8b9fe5a7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="currentscheduler-class"></a>CurrentScheduler クラス
 呼び出し元コンテキストに関連付けられている現在のスケジューラの抽象化を表します。  
@@ -65,7 +66,7 @@ class CurrentScheduler;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CurrentScheduler`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
@@ -251,7 +252,7 @@ static void __cdecl ScheduleTask(
 ### <a name="remarks"></a>コメント  
  呼び出し元のコンテキストにスケジューラが現在関連付けられていない場合、このメソッドを呼び出すと、プロセスの既定のスケジューラが作成されるか、または呼び出し元コンテキストにアタッチされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [Scheduler クラス](scheduler-class.md)   
  [PolicyElementKey](concurrency-namespace-enums.md)   
