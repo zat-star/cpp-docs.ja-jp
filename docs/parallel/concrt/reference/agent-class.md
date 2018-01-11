@@ -27,11 +27,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f3bcd353def1f42269a851c39a1c96e451caa577
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cc83001328f346aa33d15b0ea6fcfb26eb444ec4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="agent-class"></a>agent クラス
 すべての独立エージェントの基底クラスとして使用されるクラスです。 他のエージェントに状態が表示されないようにしたり、メッセージ渡しでやり取りしたりする目的で使用されます。  
@@ -76,7 +77,7 @@ class agent;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `agent`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
@@ -272,5 +273,5 @@ static void __cdecl wait_for_one(
   
  場合、パラメーター`_Timeout`定数以外の値を持つ`COOPERATIVE_TIMEOUT_INFINITE`、例外[operation_timed_out](operation-timed-out-class.md)が、一定の時間では、エージェントがそのタスクを完了する前に有効期限が切れる場合にスローされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)
