@@ -15,11 +15,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ee54b10c4eddb272653615caa7ef7ba62f707622
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ce5221943ba1591a01ddebe2c261e4197fa18501
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="measureitemstruct-structure"></a>MEASUREITEMSTRUCT 構造体
 `MEASUREITEMSTRUCT`構造オーナー描画コントロールまたはメニュー項目のサイズのウィンドウに通知します。  
@@ -80,10 +81,10 @@ typedef struct tagMEASUREITEMSTRUCT {
   
  これにより、Windows がコントロールでのユーザー操作を正しく処理できます。 適切なメンバーに記入エラー、`MEASUREITEMSTRUCT`構造体には、コントロールの不適切な操作が発生します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** winuser.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CWnd::OnMeasureItem](../../mfc/reference/cwnd-class.md#onmeasureitem)
 

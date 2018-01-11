@@ -1,32 +1,33 @@
 ---
-title: "IsBaseOfStrict 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "internal/Microsoft::WRL::Details::IsBaseOfStrict"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IsBaseOfStrict 構造体"
+title: "IsBaseOfStrict 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: internal/Microsoft::WRL::Details::IsBaseOfStrict
+dev_langs: C++
+helpviewer_keywords: IsBaseOfStrict structure
 ms.assetid: 6fed7366-c8d4-4991-b4fb-43ed93f8e1bf
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 8a8e40bec0f4dedf02aab14b2c8072ccc3e60bbb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# IsBaseOfStrict 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="isbaseofstrict-structure"></a>IsBaseOfStrict 構造体
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -41,33 +42,33 @@ template <
 struct IsBaseOfStrict<Base, Base>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `Base`  
- 基本型。  
+ 基本データ型。  
   
  `Derived`  
- 派生型。  
+ 派生型です。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  一方の型がもう一方の型の基本クラスであるかどうかをテストします。  
   
- 最初のテンプレートは型が **true** または **false**を与えた可能性がある基本型から派生されるかどうかをテストします。  2 番目のテンプレートは型が **false**を常に同じ自体から派生されるかどうかをテストします。  
+ 最初のテンプレートは、型が生じる場合、基本型から派生したかどうかを検査**true**または**false**です。 2 番目のテンプレートは、型から派生して、それ自体が常に生成されるかどうかを検査**false**です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック定数  
+### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
-|--------|--------|  
-|[IsBaseOfStrict::value 定数](../Topic/IsBaseOfStrict::value%20Constant.md)|1 種類の型の基本クラスであるかどうかを示します。|  
+|name|説明|  
+|----------|-----------------|  
+|[IsBaseOfStrict::value 定数](../windows/isbaseofstrict-value-constant.md)|1 つの種類別のベースであるかどうかを示します。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `IsBaseOfStrict`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** internal.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

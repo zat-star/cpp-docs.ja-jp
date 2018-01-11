@@ -1,49 +1,48 @@
 ---
-title: "flush (OpenMP) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Flush"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "flush OpenMP directive"
+title: "フラッシュ (OpenMP) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: Flush
+dev_langs: C++
+helpviewer_keywords: flush OpenMP directive
 ms.assetid: 150ca46e-d4f7-4423-b0a4-838df40aeb67
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 72b69daf431ab9dfd2b5c2ed7cebdc8c5af75847
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# flush (OpenMP)
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-すべてのスレッドにすべての共有オブジェクトのメモリ内の同じビューを持つことを指定します。  
+# <a name="flush-openmp"></a>flush (OpenMP)
+すべてのスレッドがすべての共有オブジェクトのメモリについて同じビューを持つことを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #pragma omp flush [(var)]  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
- `var` \(省略可能\)  
- オブジェクトを表す変数のリスト \(コンマ区切り\) を同期する場合。  `var` が指定されていない場合メモリはすべてフラッシュされます。  
+ `var` (省略可能)  
+ 同期するオブジェクトを表す変数のコンマ区切り一覧。 場合`var`が指定されていない、すべてのメモリをフラッシュします。  
   
-## 解説  
- **フラッシュ**  のディレクティブはOpenMP 句をサポートしていません。  
+## <a name="remarks"></a>コメント  
+ **フラッシュ**ディレクティブに OpenMP 句がサポートされていません。  
   
- 詳細については、「[2.6.5 flush Directive](../Topic/2.6.5%20flush%20Directive.md)」を参照してください。  
+ 詳細については、次を参照してください。 [2.6.5 flush ディレクティブ](../../../parallel/openmp/2-6-5-flush-directive.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // omp_flush.cpp  
@@ -94,8 +93,11 @@ int main() {
 }  
 ```  
   
-  **スレッド 0: データを読み込みます。**  
-**スレッド 1: プロセス データ**  
-**データ \= 2**    
-## 参照  
- [Directives](../../../parallel/openmp/reference/openmp-directives.md)
+```Output  
+Thread 0: read data  
+Thread 1: process data  
+data = 2  
+```  
+  
+## <a name="see-also"></a>参照  
+ [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

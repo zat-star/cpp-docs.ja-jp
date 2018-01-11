@@ -1,45 +1,46 @@
 ---
-title: "queue::assign (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::queue::assign"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "assign メンバー [STL/CLR]"
+title: "queue::assign (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::queue::assign
+dev_langs: C++
+helpviewer_keywords: assign member [STL/CLR]
 ms.assetid: 5bec8a84-9561-43f7-ad7f-f845d0edef41
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: fb127496347e39e22b446c84583ad37b75cc025e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# queue::assign (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-すべての要素を置き換えます。  
+# <a name="queueassign-stlclr"></a>queue::assign (STL/CLR)
+すべての要素を置換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void assign(queue<Value, Container>% right);  
 ```  
   
-#### パラメーター  
- \[right\]  
- 挿入するコンテナーのアダプター。  
+#### <a name="parameters"></a>パラメーター  
+ 右  
+ コンテナーのアダプターを挿入します。  
   
-## 解説  
- このメンバー関数は、基になるコンテナーに `right``.get_container()` を割り当てます。  キューの内容を変更する場合に使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数を割り当てます`right.get_container()`を基になるコンテナーにします。 使用するキューの内容全体を変更します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_queue_assign.cpp   
@@ -70,13 +71,16 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+a b c  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [queue::operator\=](../dotnet/queue-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [queue::operator= (STL/CLR)](../dotnet/queue-operator-assign-stl-clr.md)

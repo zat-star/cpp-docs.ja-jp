@@ -1,75 +1,76 @@
 ---
-title: "Adding or Deleting a String | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.editors.string"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "strings [C++], adding to string tables"
-  - "string tables, deleting strings"
-  - "strings [C++], deleting in string tables"
-  - "string tables, adding strings"
+title: "追加または削除する文字列 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.editors.string
+dev_langs: C++
+helpviewer_keywords:
+- strings [C++], adding to string tables
+- string tables, deleting strings
+- strings [C++], deleting in string tables
+- string tables, adding strings
 ms.assetid: 077077b4-0f4b-4633-92d6-60b321164cab
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 0e485e1c689814e63c5a43edba2ded80967d576a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Adding or Deleting a String
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ストリング エディターを使用すると、ストリング テーブルに新規エントリをすばやく追加できます。  新規の文字列はテーブルの最後に配置され、その次の使用可能な識別子が与えられます。  必要に応じて ID、値、または Caption の各プロパティを [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)で編集できます。  
+# <a name="adding-or-deleting-a-string"></a>文字列の追加と削除
+文字列エディターを使用して、文字列テーブルに新しいエントリを迅速に挿入できます。 新しい文字列は、テーブルの最後に配置され、[次へ] の使用可能な識別子が指定されます。 ID、値、またはキャプション プロパティを編集することができますし、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)に応じて。  
   
- ストリング エディターでは、既に使われている ID の使用が回避されます。  既に使われている ID を選択した場合は、ストリング エディターによって通知され、IDS\_STRING58113 などの一意な汎用 ID が割り当てられます。  
+ ストリング エディターは、既に使用されている ID を使用しないことを確認します。 ID を既に使用中に選択文字列エディターは通知され、汎用的な一意の ID、IDS_STRING58113 を割り当てます。  
   
-### ストリング テーブルのエントリを追加するには  
+### <a name="to-add-a-string-table-entry"></a>ストリング テーブルのエントリを追加するには  
   
-1.  [リソース ビュー](../windows/resource-view-window.md)でアイコンをダブルクリックして、ストリング テーブルを開きます。  
+1.  アイコンをダブルクリックして、文字列テーブルを開きます[リソース ビュー](../windows/resource-view-window.md)です。  
   
     > [!NOTE]
-    >  プロジェクトに .rc ファイルがまだ含まれていない場合は、「[リソース スクリプト ファイルの新規作成](../windows/how-to-create-a-resource-script-file.md)」を参照してください。  
+    >  プロジェクトに .rc ファイルがまだ含まれていない場合は、「 [リソース スクリプト ファイルの新規作成](../windows/how-to-create-a-resource-script-file.md)」を参照してください。  
   
-2.  ストリング テーブルで右クリックし、ショートカット メニューの \[新しい文字列\] をクリックします。  
+2.  文字列テーブル内で右クリックし、**新しい文字列**ショートカット メニューからです。  
   
-3.  ストリング エディターで、\[ID\] ボックスの一覧の ID を選択するか、または ID を直接入力します。  
+3.  **文字列**エディター、select、 **ID** ID ドロップダウン リストまたは型 ID に直接配置からです。  
   
-4.  必要に応じて \[値\] を編集します。  
+4.  編集、**値**必要に応じて、します。  
   
-5.  \[Caption\] にエントリを入力します。  
+5.  エントリを入力、**キャプション**です。  
   
     > [!NOTE]
-    >  Windows ストリング テーブルでは、null 文字列は許可されません。  ストリング テーブルで null 文字列のエントリを作成すると、"このテーブル項目に文字列を入力してください。" というメッセージが表示されます。  
+    >  Null 文字列は、Windows の文字列テーブルでは許可されません。 「を入力してください、文字列のこのテーブルのエントリ」を選択するメッセージが表示されます、null 文字列は、文字列テーブルにエントリを作成する場合  
   
-### ストリング テーブルのエントリを削除するには  
+### <a name="to-delete-a-string-table-entry"></a>ストリング テーブルのエントリを削除するには  
   
-1.  削除するエントリを選択します。  
+1.  削除するエントリを選択します  
   
-2.  **\[編集\]** メニューの **\[削除\]** をクリックします。  
+2.  **編集** メニューのをクリックして**削除**です。  
   
- または  
+ \- または  
   
--   削除する文字列を右クリックし、ショートカット メニューの \[削除\] をクリックします。  
+-   削除する文字列を右クリックして**削除**ショートカット メニューからです。  
   
- または  
+ \- または  
   
--   **Del** キーを押します。  
+-   キーを押して、**削除**キー。  
   
- 共通言語ランタイムを対象とするマネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクト (共通言語ランタイムを対象とするもの) にリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* 」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、リソース文字列をプロパティに割り当てる方法については、「 [チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/en-us/9a96220d-a19b-4de0-9f48-01e5d82679e5) 」および「 [Walkthrough: Using Resources for Localization with ASP.NET](http://msdn.microsoft.com/Library/bb4e5b44-e2b0-48ab-bbe9-609fb33900b6)。  
   
- **要件**  
+ **必要条件**  
   
  Win32  
   
-## 参照  
- [String Editor](../mfc/string-editor.md)   
- [Strings \(ストリング\)](_win32_Strings)   
- [About Strings \(ストリングについて\)](_win32_About_Strings_cpp)
+## <a name="see-also"></a>参照  
+ [ストリング エディター](../windows/string-editor.md)   
+

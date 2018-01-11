@@ -4,47 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - C++ Standard Library, template class containers
 - containers, C++ Standard Library
 ms.assetid: 8e915ca1-19ba-4f0d-93c8-e2c3bfd638eb
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f293f074f2b8e2334dc70fbebba8e6f4c17efecc
-ms.openlocfilehash: dc71a6958a352ebf1c46406114c32d77b7fb8887
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 23979709bcc43074d6db2f042fdde850f6894e73
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-standard-library-containers"></a>C++ 標準ライブラリのコンテナー
 標準ライブラリには、関連するオブジェクトのコレクションを格納するさまざまなタイプ セーフ コンテナーが用意されています。 このコンテナーはクラス テンプレートです。コンテナーの変数を宣言する場合は、コンテナーが保持する要素の型を指定します。 コンテナーは、初期化子リストを使用して構築できます。 要素の追加と削除やその他の操作を実行するためのメンバー関数があります。  
   
  [反復子](../standard-library/iterators.md)を使用して、コンテナー内の要素を反復処理し、個々の要素にアクセスします。 反復子を明示的に使用するには、反復子のメンバー関数、演算子、およびグローバル関数を使用します。 また、range-for ループなどを使用して暗黙的に反復子を使用することもできます。 すべての C++ 標準ライブラリのコンテナーは共通のインターフェイスを持っていますが、各コンテナーには固有の特殊化された反復子が定義されます。  
   
- コンテナーは、シーケンス コンテナー、連想コンテナー、およびコンテナー アダプターの&3; 種類に分けることができます。  
+ コンテナーは、シーケンス コンテナー、連想コンテナー、およびコンテナー アダプターの 3 種類に分けることができます。  
   
 ##  <a name="sequence_containers"></a> シーケンス コンテナー  
  シーケンス コンテナーは、挿入された要素の、指定された順序を維持します。  
@@ -60,13 +44,13 @@ ms.lasthandoff: 02/24/2017
  `forward_list` コンテナーはシングルリンク リストであり、`list` の前方アクセス バージョンです。 詳細については、「[forward_list クラス](../standard-library/forward-list-class.md)」をご覧ください。  
   
 ## <a name="associative-containers"></a>連想コンテナー  
- 連想コンテナーでは、要素は事前に定義された順序で挿入されます (たとえば、昇順に並べ替えられて)。 順序なしの連想コンテナーも使用できます。 連想コンテナーは、マップとセットという&2; つのサブセットに分類できます。  
+ 連想コンテナーでは、要素は事前に定義された順序で挿入されます (たとえば、昇順に並べ替えられて)。 順序なしの連想コンテナーも使用できます。 連想コンテナーは、マップとセットという 2 つのサブセットに分類できます。  
   
  ディクショナリとも呼ばれる `map` は、キーと値のペアで構成されています。 キーはシーケンスを順序付けるために使用され、値はそのキーに関連付けられます。 たとえば、`map` には、テキスト内のすべての一意の単語を表すキーと、それに対応する、テキスト内で各単語が出現する回数を表す値が含まれる場合があります。 `map` の順序なしのバージョンは `unordered_map` です。 詳細については、「[map クラス](../standard-library/map-class.md)」および「[unordered_map クラス](../standard-library/unordered-map-class.md)」をご覧ください。  
   
  `set` は単に、一意の要素の昇順のコンテナーです。値がキーにもなっています。 `set` の順序なしのバージョンは `unordered_set` です。 詳細については、「[set クラス](../standard-library/set-class.md)」および「[unordered_set クラス](../standard-library/unordered-set-class.md)」をご覧ください。  
   
- `map` と `set` のどちらでも、キーまたは要素の&1; つのインスタンスだけをコンテナーに挿入できます。 要素の複数のインスタンスが必要な場合は、`multimap` または `multiset` を使用します。 順序なしのバージョンは `unordered_multimap` と `unordered_multiset` です。 詳細については、「[multimap クラス](../standard-library/multimap-class.md)」、「[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)」、「[multiset クラス](../standard-library/multiset-class.md)」、および「[unordered_multiset クラス](../standard-library/unordered-multiset-class.md)」をご覧ください。  
+ `map` と `set` のどちらでも、キーまたは要素の 1 つのインスタンスだけをコンテナーに挿入できます。 要素の複数のインスタンスが必要な場合は、`multimap` または `multiset` を使用します。 順序なしのバージョンは `unordered_multimap` と `unordered_multiset` です。 詳細については、「[multimap クラス](../standard-library/multimap-class.md)」、「[unordered_multimap クラス](../standard-library/unordered-multimap-class.md)」、「[multiset クラス](../standard-library/multiset-class.md)」、および「[unordered_multiset クラス](../standard-library/unordered-multiset-class.md)」をご覧ください。  
   
  順序ありのマップおよびセットは双方向反復子をサポートしており、順序なしのバージョンは前方反復子をサポートしています。 詳細については、「[反復子](../standard-library/iterators.md)」をご覧ください。  
   
@@ -79,7 +63,7 @@ ms.lasthandoff: 02/24/2017
 std::set<BigObject, std::less<>> myNewSet;  
 ```  
   
- 既定の比較子を使用すると、コンテナーは c++&11; 以前と同じように正確に動作します。  
+ 既定の比較子を使用すると、コンテナーは c++ 11 以前と同じように正確に動作します。  
   
  次の例では、`std::set` のユーザーが、各オブジェクトの `BigObject::id` メンバーと比較できる短い文字列を渡すだけでルックアップを実行できるようにするために `operator<` をオーバーロードする方法を示しています。  
   
@@ -176,21 +160,20 @@ int main()
  コンテナーに対する一部の操作では、パブリックな既定のコンストラクターとパブリックな等価演算子も必要となる場合があります。 たとえば、順序なしの連想コンテナーでは、等値とハッシュのサポートが必要です。  
   
 ## <a name="accessing-container-elements"></a>コンテナー要素へのアクセス  
- コンテナーの要素には、反復子を使用してアクセスします。 詳細については、「[反復子](../standard-library/iterators.md)」をご覧ください。  
+ コンテナーの要素には、反復子を使用してアクセスします。 詳細については、「 [反復子](../standard-library/iterators.md)」を参照してください。  
   
 > [!NOTE]
 >  また、C++ 標準ライブラリ コレクションに対する反復処理には[範囲ベースの for ループ](../cpp/range-based-for-statement-cpp.md)を使用できます。  
   
 ## <a name="comparing-containers"></a>コンテナーの比較  
- すべてのコンテナーは、同じ要素型を含み、型が同じである&2; つのコンテナーを比較するために、演算子 == をオーバーロードします。 == を使用すると、vector\<string> を別の vector\<string> と比較できますが、vector\<string> を list\<string> と比較することや、vector\<string> を vector\<char*> と比較することはできません。  C++98/03 では、[std::equal](http://msdn.microsoft.com/Library/56533afd-b696-40a0-8fa9-d366539e49ae) または [std::mismatch](http://msdn.microsoft.com/Library/a9fe78f3-9a86-44dc-9400-0c2ed1083323) を使用して、異なるコンテナー型や要素型を比較できます。 C++11 では、[std::is_permutation](http://msdn.microsoft.com/Library/3384e786-e210-4648-b2bc-3896b5e14f1f) も使用できます。 ただし、このようなケースでは常に、関数は、コンテナーが同じ長さであることを前提としています。 2 つ目の範囲が&1; つ目の範囲より短いと、未定義の動作が発生します。 また、2 番目の範囲が長い場合も、比較は&1; つ目の範囲の末尾を越えて続行されないため、不正確になる可能性があります。  
+ すべてのコンテナーは、同じ要素型を含み、型が同じである 2 つのコンテナーを比較するために、演算子 == をオーバーロードします。 == を使用すると、vector\<string> を別の vector\<string> と比較できますが、vector\<string> を list\<string> と比較することや、vector\<string> を vector\<char*> と比較することはできません。  C++98/03 では、[std::equal](algorithm-functions.md#equal) または [std::mismatch](algorithm-functions.md#mismatch) を使用して、異なるコンテナー型や要素型を比較できます。 C++11 では、[std::is_permutation](algorithm-functions.md#is_permutation) も使用できます。 ただし、このようなケースでは常に、関数は、コンテナーが同じ長さであることを前提としています。 2 つ目の範囲が 1 つ目の範囲より短いと、未定義の動作が発生します。 また、2 番目の範囲が長い場合も、比較は 1 つ目の範囲の末尾を越えて続行されないため、不正確になる可能性があります。  
   
-### <a name="comparing-dissimilar-containers-c14"></a>異なるコンテナーの比較 (C++&14;)  
- C++14 以降では、2 つの範囲全体を対象とする [std::equal](http://msdn.microsoft.com/Library/56533afd-b696-40a0-8fa9-d366539e49ae)、[std::mismatch](http://msdn.microsoft.com/Library/a9fe78f3-9a86-44dc-9400-0c2ed1083323)、[std::is_permutation](http://msdn.microsoft.com/Library/3384e786-e210-4648-b2bc-3896b5e14f1f) のいずれかの関数オーバーロードを使用して、異なるコンテナー型や要素型を比較できます。 これらのオーバーロードを使用すると、長さが異なるコンテナーを比較できます。 これらのオーバーロードは、ユーザー エラーの影響を受けにくく、長さが異なるコンテナーを比較しているときに一定の時間で false を返すように最適化されています。 そのため、(1) 使用しない明確な理由があるか (2) [std::list](../standard-library/list-class.md) コンテナーを使用している (2 つの範囲の最適化を行うメリットがありません) のでない限り、これらのオーバーロードを使用することをお勧めします。  
+### <a name="comparing-dissimilar-containers-c14"></a>異なるコンテナーの比較 (C++ 14)  
+ C++14 以降では、2 つの範囲全体を対象とする **std::equal**、**std::mismatch**、**std::is_permutation** のいずれかの関数オーバーロードを使用して、異なるコンテナー型や要素型を比較できます。 これらのオーバーロードを使用すると、長さが異なるコンテナーを比較できます。 これらのオーバーロードは、ユーザー エラーの影響を受けにくく、長さが異なるコンテナーを比較しているときに一定の時間で false を返すように最適化されています。 そのため、(1) 使用しない明確な理由があるか (2) [std::list](../standard-library/list-class.md) コンテナーを使用している (2 つの範囲の最適化を行うメリットがありません) のでない限り、これらのオーバーロードを使用することをお勧めします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンテナー](../cpp/containers-modern-cpp.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)   
  [\<sample container>](../standard-library/sample-container.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 

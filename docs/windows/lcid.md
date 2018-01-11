@@ -1,32 +1,33 @@
 ---
-title: "lcid | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.lcid"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LCID attribute"
+title: "lcid |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.lcid
+dev_langs: C++
+helpviewer_keywords: LCID attribute
 ms.assetid: 7f248c69-ee1c-42c3-9411-39cf27c9f43d
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 36ccb085c2f6128012d446f6be15dff94c718e35
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# lcid
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-関数にロケール ID を渡すことができます。  
+# <a name="lcid"></a>lcid
+ロケール識別子を関数に渡すことができます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,10 +35,10 @@ caps.handback.revision: 10
   
 ```  
   
-## 解説  
- **lcid** C\+\+ 属性は [lcid](http://msdn.microsoft.com/library/windows/desktop/aa367067) の MIDL の属性の機能を実装します。  ライブラリ ブロックのロケールを実行する場合は[モジュール](../windows/module-cpp.md) の属性に **lcid\=**`lcid` のパラメーターを使用します。  
+## <a name="remarks"></a>コメント  
+ **Lcid** C++ 属性の機能を実装する、 [lcid](http://msdn.microsoft.com/library/windows/desktop/aa367067) MIDL 属性。 ライブラリ ブロックのロケールを実装する場合は、使用、 **lcid =** `lcid`パラメーターを[モジュール](../windows/module-cpp.md)属性。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cpp_attr_ref_lcid.cpp  
@@ -52,20 +53,19 @@ __interface IStatic {
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|インターフェイスのパラメーター|  
-|**複数回の適用**|Ｘ|  
+|**対象**|インターフェイス パラメーター|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Parameter Attributes](../windows/parameter-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [パラメーター属性](../windows/parameter-attributes.md)   

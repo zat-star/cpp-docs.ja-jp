@@ -23,11 +23,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 57faa6f211d754e24f620236823405f82a53fbb0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f1833cbbbfb6706cffe73770bcd9b61ff755a645
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coleipframewnd-class"></a>COleIPFrameWnd クラス
 アプリケーションの埋め込み先編集ウィンドウの基底クラスです。  
@@ -69,7 +70,7 @@ class COleIPFrameWnd : public CFrameWnd
   
  `COleIPFrameWnd`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxole.h  
   
 ##  <a name="coleipframewnd"></a>COleIPFrameWnd::COleIPFrameWnd  
@@ -128,7 +129,7 @@ virtual void RepositionFrame(
 ### <a name="remarks"></a>コメント  
  コンテナー ウィンドウのコントロール バーのレイアウトが異なる非 OLE フレーム ウィンドウで実行します。 非 OLE フレーム ウィンドウ、コントロール バーやその他のオブジェクトへの呼び出しと同様に、特定のフレーム ウィンドウのサイズからの位置を計算する[表示](../../mfc/reference/cframewnd-class.md#recalclayout)です。 クライアント領域は、残りのコントロール バーおよびその他のオブジェクト用の領域を減算します。 A`COleIPFrameWnd`ウィンドウは、特定のクライアント領域に従ってツールバーを配置する一方で、します。 つまり、`CFrameWnd::RecalcLayout`一方で、外部"から"動作`COleIPFrameWnd::RepositionFrame`"から、inside out 』 です"。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル HIERSVR](../../visual-cpp-samples.md)   
  [CFrameWnd クラス](../../mfc/reference/cframewnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

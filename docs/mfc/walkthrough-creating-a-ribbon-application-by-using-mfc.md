@@ -16,11 +16,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c695f50760736b989b355cae7f7708f95dc431db
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bfad78b64f72b9ee9a896832e008039aa241e2ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-creating-a-ribbon-application-by-using-mfc"></a>チュートリアル: MFC によるリボン アプリケーションの作成
 このチュートリアルで使用する方法、 **MFC アプリケーション ウィザード**を既定では、リボンを持つアプリケーションを作成します。 追加することで、リボンを拡張することができます、**カスタム**を持つリボン カテゴリ、**お気に入り**リボン パネル、およびし、頻繁に使用するいくつかのパネルにコマンドを追加します。  
@@ -96,7 +97,7 @@ ms.lasthandoff: 10/24/2017
   
  エンド ツー エンドのサンプルについては、次を参照してください。[サンプル (MFC Feature Pack)](../visual-cpp-samples.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル](../mfc/walkthroughs-mfc.md)   
  [サンプル (MFC Feature Pack)](../visual-cpp-samples.md)
 

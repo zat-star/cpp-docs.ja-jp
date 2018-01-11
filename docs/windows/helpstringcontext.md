@@ -1,32 +1,33 @@
 ---
-title: "helpstringcontext | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.helpstringcontext"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "helpstringcontext attribute [C++]"
+title: "helpstringcontext |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.helpstringcontext
+dev_langs: C++
+helpviewer_keywords: helpstringcontext attribute [C++]
 ms.assetid: d4cd135e-d91c-4aa3-9353-8aeb096f52cf
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 3c5492d18085d78e20d6654898a6c66647e3bbe0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# helpstringcontext
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-.hlp または .chm ファイルでヘルプ トピックの ID を指定します。  
+# <a name="helpstringcontext"></a>helpstringcontext
+.Hlp または .chm ファイルには、ヘルプ トピックの ID を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,14 +36,14 @@ caps.handback.revision: 10
 ) ]  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `contextID`  
- ヘルプ ファイルの 32 ビット ヘルプ コンテキスト識別子。  
+ ヘルプ ファイルの 32 ビットのヘルプ コンテキスト id。  
   
-## 解説  
- **helpstringcontext** C\+\+ 属性に [helpstringcontext](http://msdn.microsoft.com/library/windows/desktop/aa366858) ODL 属性の機能は同じです。  
+## <a name="remarks"></a>コメント  
+ **Helpstringcontext** C++ 属性と同じ機能を持つ、 [helpstringcontext](http://msdn.microsoft.com/library/windows/desktop/aa366858) ODL 属性。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cpp_attr_ref_helpstringcontext.cpp  
@@ -61,23 +62,22 @@ __interface IMyI
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  `interface` のインターフェイス メソッド|  
-|**複数回の適用**|Ｘ|  
+|**対象**|**クラス**、 `interface`、インターフェイス メソッド|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Interface Attributes](../windows/interface-attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [Method Attributes](../windows/method-attributes.md)   
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [インターフェイス属性](../windows/interface-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   
+ [メソッドの属性](../windows/method-attributes.md)   
  [モジュール](../windows/module-cpp.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)

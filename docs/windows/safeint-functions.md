@@ -1,48 +1,50 @@
 ---
-title: "SafeInt 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "関数, SafeInt"
+title: "SafeInt 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords: functions, SafeInt
 ms.assetid: fdc208e5-5d8a-41a9-8271-567fd438958d
-caps.latest.revision: 13
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 6ae482b7f58d64a46b82b32c6c6d62d7f69f0dce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# SafeInt 関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-SafeInt ライブラリには、[SafeInt クラス](../windows/safeint-class.md)のインスタンスを作成せずに使用できるいくつかの関数が用意されています。  整数オーバーフローが発生しないように単一の数値演算を保護する場合に、これらの関数を使用します。  複数の数値演算を保護する場合は、`SafeInt` オブジェクトを作成する必要があります。  これらの関数を繰り返し使用するよりも、`SafeInt` オブジェクトを作成した方が効率的です。  
+# <a name="safeint-functions"></a>SafeInt 関数
+SafeInt ライブラリには、インスタンスを作成せずに使用できるいくつかの関数が用意されています、 [SafeInt クラス](../windows/safeint-class.md)です。 整数オーバーフローから単一の数値演算を保護する場合は、これらの関数を使用することができます。 作成する必要があります複数の数値演算を保護する場合は、`SafeInt`オブジェクト。 作成する方が効率的である`SafeInt`にこれらの関数を複数回使用よりもオブジェクトです。  
   
- これらの関数により、2 つの異なる型のパラメーターに対して、比較または数値演算の実行が可能です。事前に同じ型に変換する必要はありません。  
+ これらの関数を使用すると、比較または最初に、同じ型に変換することがなく 2 つの異なる型のパラメーターの算術演算を実行できます。  
   
- これらの関数にはそれぞれ、`T` と `U` という 2 種類のテンプレートの型があります。  これらの型は、ブール型、文字型、整数型のいずれかになります。  整数型は signed 型または unsigned 型となり、8 ～ 64 ビットの任意のサイズを使用できます。  
+ これらの関数の各テンプレートの 2 つの種類には:`T`と`U`です。 これらの型は、ブール値を文字、または整数型にします。 整数型の符号付きまたは符号なしでき、8 ビットから 64 ビットの任意のサイズ。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
   
 |関数|説明|  
-|--------|--------|  
-|[SafeAdd](../windows/safeadd.md)|オーバーフローを避けながら、2 つの数値を加算します。|  
-|[SafeCast](../windows/safecast.md)|パラメーターの型を別の型にキャストします。|  
-|[SafeDivide](../windows/safedivide.md)|ゼロ除算を避けながら、2 つの数値を除算します。|  
-|[SafeEquals](../windows/safeequals.md), [SafeGreaterThan](../windows/safegreaterthan.md), [SafeGreaterThanEquals](../windows/safegreaterthanequals.md), [SafeLessThan](../windows/safelessthan.md), [SafeLessThanEquals](../windows/safelessthanequals.md), [SafeNotEquals](../Topic/SafeNotEquals.md)|2 つの数値を比較します。  これらの関数を使用すると、型を変換せずに 2 つの異なる型の数値を比較できます。|  
+|--------------|-----------------|  
+|[SafeAdd](../windows/safeadd.md)|2 つの数値を追加し、オーバーフローが生じないようにします。|  
+|[SafeCast](../windows/safecast.md)|別の型パラメーターの型にキャストします。|  
+|[SafeDivide](../windows/safedivide.md)|2 つの数値を除算し、ゼロ除算から保護します。|  
+|[SafeEquals](../windows/safeequals.md)、 [SafeGreaterThan](../windows/safegreaterthan.md)、 [SafeGreaterThanEquals](../windows/safegreaterthanequals.md)、 [SafeLessThan](../windows/safelessthan.md)、 [SafeLessThanEquals](../windows/safelessthanequals.md)、[SafeNotEquals](../windows/safenotequals.md)|2 つの数値を比較します。 これらの関数を使用すると、その型を変更することがなく 2 つの異なる型の数値を比較できます。|  
 |[SafeModulus](../windows/safemodulus.md)|2 つの数値に対して剰余演算を実行します。|  
-|[SafeMultiply](../Topic/SafeMultiply.md)|オーバーフローが生じないように 2 つの数値を乗算します。|  
-|[SafeSubtract](../windows/safesubtract.md)|オーバーフローが生じないように 2 つの数値を減算します。|  
+|[SafeMultiply](../windows/safemultiply.md)|2 つの数値を乗算し、オーバーフローを保護できます。|  
+|[SafeSubtract](../windows/safesubtract.md)|2 つの数値を減算し、オーバーフローが生じないようにします。|  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
   
 |セクション|説明|  
-|-----------|--------|  
-|[SafeInt クラス](../windows/safeint-class.md)|`SafeInt` クラス。|  
-|[SafeIntException クラス](../windows/safeintexception-class.md)|SafeInt ライブラリに固有の例外クラス。|
+|-------------|-----------------|  
+|[SafeInt クラス](../windows/safeint-class.md)|`SafeInt` クラス|  
+|[SafeIntException クラス](../windows/safeintexception-class.md)|SafeInt ライブラリに固有の例外クラスです。|

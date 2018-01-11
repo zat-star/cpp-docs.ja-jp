@@ -14,11 +14,14 @@ caps.latest.revision: "2"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 026b036e3a4dad0fb88600cb64ac3da892eba2b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 3e2eba5756f2c18830c4c8fe7e16f2751ea61ac1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hstringmakereference-method"></a>HString::MakeReference メソッド
 指定した文字列パラメーターから HStringReference オブジェクトを作成します。  
@@ -49,10 +52,10 @@ template<unsigned int sizeDest>
 ## <a name="return-value"></a>戻り値  
  指定したのと同じ値を持つは HStringReference オブジェクト`str`パラメーター。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [HString クラス](../windows/hstring-class.md)

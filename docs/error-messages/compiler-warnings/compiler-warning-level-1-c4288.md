@@ -1,36 +1,35 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4288 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4288"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4288"
+title: "コンパイラの警告 (レベル 1) C4288 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4288
+dev_langs: C++
+helpviewer_keywords: C4288
 ms.assetid: 6aaeb139-90cd-457a-9d37-65687042736f
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: a10a7573df5986ed20475b34208a1e0f301d9bb9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4288
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-非標準の拡張が使用されています : 'var' : for ループで宣言したループ コントロール変数が for ループ スコープの外側で使用されています。外側のスコープの宣言と競合しています。  
+# <a name="compiler-warning-level-1-c4288"></a>コンパイラの警告 (レベル 1) C4288
+使用される標準の拡張機能: 'var': for ループで宣言したループ コントロール変数が for ループのスコープです外部で使用。外側のスコープ内の宣言と競合します。  
   
- [\/Ze](../../build/reference/za-ze-disable-language-extensions.md) および **\/Zc:forscope\-** でコンパイルするときに、**for** ループ内で宣言された変数が [for](../../cpp/for-statement-cpp.md) ループのスコープの後で使用されました。  Microsoft C\+\+ の拡張機能では、この変数をスコープ内に残すことができます。警告 C4288 は、変数の最初の宣言が使用されていないことを示します。  
+ コンパイルするときに[/Ze](../../build/reference/za-ze-disable-language-extensions.md)と**/Zc:forscope-**で宣言された変数、**の**ループが後に使用された、[の](../../cpp/for-statement-cpp.md)-ループにスコープします。 C++ 言語に対する Microsoft 拡張機能により、この変数のスコープ内に存続して、C4288 は、変数の最初の宣言を使用しないことを通知します。  
   
- \/Ze を使用して **for** ループ内での Microsoft 拡張機能を指定する方法については、「[\/Zc:forScope \(for ループのスコープの強制準拠\)](../../build/reference/zc-forscope-force-conformance-in-for-loop-scope.md)」を参照してください。  
+ 参照してください[/Zc:forScope](../../build/reference/zc-forscope-force-conformance-in-for-loop-scope.md)については、Microsoft の拡張機能を指定する方法について**の**/ze オプションでループします。  
   
- 次の例では警告 C4288 が生成されます。  
+ 次の例では、C4288 が生成されます。  
   
 ```  
 // C4288.cpp  

@@ -1,139 +1,138 @@
 ---
-title: "delegate (C++ コンポーネント拡張) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "delegate_cpp"
-  - "delegate"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "delegate キーワード [C++]"
+title: "delegate (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- delegate_cpp
+- delegate
+dev_langs: C++
+helpviewer_keywords: delegate keyword [C++]
 ms.assetid: 03caf23d-7873-4a23-9b34-becf42aaf429
-caps.latest.revision: 26
-caps.handback.revision: 24
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "26"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 30fd64fd37fb30c34b5d4f5901f16143fb1cd701
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# delegate (C++ コンポーネント拡張)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="delegate--c-component-extensions"></a>delegate (C++ コンポーネント拡張)
 関数ポインターを表す型を宣言します。  
   
-## すべてのランタイム  
- デリゲートは、[!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]と共通言語ランタイムの両方でサポートされます。  
+## <a name="all-runtimes"></a>すべてのランタイム  
+ Windows ランタイムと共通言語ランタイムは、デリゲートをサポートします。  
   
-### 解説  
- `delegate` は状況依存のキーワードです。  詳細については、「[状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)」を参照してください。  
+### <a name="remarks"></a>コメント  
+ `delegate` は状況依存のキーワードです。 詳細については、次を参照してください。[状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)です。  
   
- 型がデリゲートかどうかをコンパイル時に検出するには、`__is_delegate()` 型の特徴を使用します。  詳細については、「[Compiler Support for Type Traits](../windows/compiler-support-for-type-traits-cpp-component-extensions.md)」を参照してください。  
+ 型がある場合、デリゲート、コンパイル時に検出を使用して、`__is_delegate()`型の特徴です。 詳細については、次を参照してください。[型の特徴のコンパイラ サポート](../windows/compiler-support-for-type-traits-cpp-component-extensions.md)です。  
   
-## Windows ランタイム  
- C\+\+\/CX は、次の構文のデリゲートをサポートします。  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ C + + CX は、次の構文でデリゲートをサポートしています。  
   
-### 構文  
+### <a name="syntax"></a>構文  
   
 ```cpp  
+access  
+delegate  
+return-type  
+delegate-type-identifier  
+(  
+[ parameters ]  
+)  
   
-access delegate return-type delegate-type-identifier ([ parameters ])  
 ```  
   
-### パラメーター  
+### <a name="parameters"></a>パラメーター  
  *access*  
- \(省略可能\) デリゲートのアクセシビリティ。`public` \(既定値\) または `private` を使用できます。  関数のプロトタイプは、`const` または `volatile` のキーワードで修飾することができます。  
+ (省略可能)可能性があると、デリゲートのアクセシビリティ`public`(既定) または`private`です。 関数プロトタイプを修飾することができますも、`const`または`volatile`キーワード。  
   
- *return\-type*  
- 関数のプロトタイプの戻り値の型。  
+ *戻り値の型*  
+ 関数プロトタイプの戻り値の型。  
   
- *delegate\-type\-identifier*  
+ *デリゲート型識別子*  
  宣言されたデリゲート型の名前。  
   
- *parameters*  
- \(省略可能\) 関数プロトタイプの型と識別子。  
+ *パラメーター*  
+ (省略可能)型および関数のプロトタイプの識別子。  
   
-### 解説  
- デリゲートと同じプロトタイプでイベントを宣言するには、*delegate\-type\-identifier* を使用します。  詳細については、「[Delegates \(C\+\+\/CX\) \(デリゲート \(C\+\+\/CX\)\)](../Topic/Delegates%20\(C++-CX\).md)」を参照してください。  
+### <a name="remarks"></a>コメント  
+ 使用して、*デリゲート型識別子*デリゲートと同じプロトタイプを持つイベントを宣言します。 詳細については、次を参照してください。[デリゲート (C + + CX)](../cppcx/delegates-c-cx.md)です。  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-## 共通言語ランタイム  
- 共通言語ランタイムは、次の構文のデリゲートをサポートします。  
+## <a name="common-language-runtime"></a>共通言語ランタイム  
+ 共通言語ランタイムは、次の構文でデリゲートをサポートします。  
   
-### 構文  
+### <a name="syntax"></a>構文  
   
 ```cpp  
+access  
+delegate  
+function_declaration  
   
-access delegate function_declaration  
 ```  
   
-### パラメーター  
+### <a name="parameters"></a>パラメーター  
  *access*  
- \(省略可能\) アセンブリの外部のデリゲートのアクセシビリティとして、public または private を使用できます。既定は private です。クラス内で、デリゲートは任意のアクセシビリティを持つことができます。  
+ (省略可能)アセンブリの外部でデリゲートのアクセシビリティは、パブリックまたはプライベートにできます。  既定値はプライベートです。  デリゲートは、クラス内、任意のアクセシビリティを持つことができます。  
   
- *function\_declaration*  
- デリゲートにバインドできる関数のシグネチャ。  デリゲートの戻り値の型は、任意のマネージ型です。  相互運用性の理由により、デリゲートの戻り値の型を CLS 型とすることをお勧めします。  
+ *function_declaration*  
+ デリゲートにバインドできる関数のシグネチャ。 デリゲートの戻り値の型は、任意のマネージ型を指定できます。 相互運用性の理由から、CLS 型、デリゲートの戻り値の型であることをお勧めします。  
   
- 非バインドのデリゲートを定義するには、*function\_declaration* の最初のパラメーターでは、オブジェクトの `this` のポインターの型。  詳細については、「[バインドされていないデリゲート](../Topic/Unbound%20Delegates.md)」を参照してください。  
+ バインドされていないデリゲートの最初のパラメーターの定義に*function_declaration*の型にする必要があります、`this`オブジェクトへのポインター。 
   
-### 解説  
- デリゲートはマルチキャストです。"関数ポインター" は、マネージ クラス内の 1 つ以上のメソッドに関連付けることができます。  **delegate** キーワードは、特定のメソッド シグネチャを持つマルチキャスト デリゲート型を定義します。  
+### <a name="remarks"></a>コメント  
+ デリゲートはマルチキャスト:「関数ポインター」は、マネージ クラス内の 1 つまたは複数のメソッドにバインドすることができます。 **委任**キーワードは、特定のメソッド シグネチャを持つマルチキャスト デリゲート型を定義します。  
   
- また、デリゲートは、静的メソッドなどの値クラスのメソッドにもバインドできます。  
+ デリゲートは、静的メソッドなど、値クラスのメソッドにバインドすることもできます。  
   
- デリゲートには次の特徴があります。  
+ デリゲートには、次の特徴があります。  
   
--   **System::MulticastDelegate** から継承します。  
+-   継承**system::multicastdelegate**です。  
   
--   コンストラクターは、マネージ クラスまたは **NULL** へのポインター \(静的メソッドへのバインドの場合\) と指定した型の完全修飾メソッドの 2 つの引数を受け取ります。  
+-   2 つの引数を受け取るコンス トラクターがある: マネージ クラスへのポインターまたは**NULL** (静的メソッドへのバインド) の場合と、指定した型のメソッドの完全修飾します。  
   
 -   `Invoke` というメソッドを持ち、そのシグネチャはデリゲートの宣言されたシグネチャと一致します。  
   
- デリゲートが呼び出されると、関数がアタッチされた順に呼び出されます。  
+ デリゲートが呼び出されると、その関数は接続されている順序で呼び出されます。  
   
- デリゲートの戻り値は、最後にアタッチされたメンバー関数の戻り値です。  
+ デリゲートの戻り値は、その最後のアタッチされたメンバー関数の戻り値です。  
   
- デリゲートはオーバーロードできません。  
+ デリゲートは、オーバー ロードすることはできません。  
   
- デリゲートには、バインドされたデリゲートとバインドされていないデリゲートがあります。  
+ デリゲートは、バインドまたはバインドされていないことができます。  
   
- バインドされたデリゲートをインスタンス化する場合、最初の引数はオブジェクトの参照である必要があります。デリゲートのインスタンス化の 2 番目の引数は、マネージ クラス オブジェクトのメソッドのアドレスか、または値型のメソッドへのポインターである必要があります。デリゲートのインスタンス化の 2 番目の引数では、完全なクラス スコープ構文のメソッドを指定し、address\-of 演算子を適用する必要があります。  
+ バインドされたデリゲートをインスタンス化するとき、最初の引数はオブジェクト参照をでなければいけない。  デリゲートのインスタンス化の 2 番目の引数は、_、マネージ クラス オブジェクトまたはポインターのメソッドのアドレス値型のメソッドにします。   デリゲートのインスタンス化の 2 番目の引数は、完全クラス スコープ構文を使用して、メソッドの名前し、address-of 演算子を適用する必要があります。  
   
- バインドされていないデリゲートをインスタンス化する場合、最初の引数は、マネージ クラス オブジェクトのメソッドのアドレスか、または値型のメソッドへのポインターである必要があります。この引数では、完全なクラス スコープ構文のメソッドを指定し、address\-of 演算子を適用する必要があります。  
+ バインドされていないデリゲートをインスタンス化するとき、最初の引数は、マネージ クラス オブジェクトまたは値型のメソッドへのポインターのメソッドのアドレスをいずれかでなければいけない。   引数は、完全クラス スコープ構文を使用して、メソッドの名前、address-of 演算子を適用する必要があります。  
   
- 静的またはグローバル関数へのデリゲートを作成する場合に必要なパラメーターは、関数の 1 つだけです \(必要に応じて、関数のアドレスを指定します\)。  
+ 1 つだけのパラメーターは必須で、静的またはグローバル関数へのデリゲートを作成する場合: 関数 (必要に応じて、関数のアドレス)。  
   
- デリゲートの詳細については、以下のトピックを参照してください。  
+ デリゲートの詳細については、次を参照してください。  
   
--   [バインドされていないデリゲート](../Topic/Unbound%20Delegates.md)  
+-   [方法: デリゲートを定義および使用する (C++/CLI)](../dotnet/how-to-define-and-use-delegates-cpp-cli.md)  
   
--   [方法: デリゲートを定義および使用する](../Topic/How%20to:%20Define%20and%20Use%20Delegates%20\(C++-CLI\).md)  
+-   [汎用デリゲート (Visual C++)](../windows/generic-delegates-visual-cpp.md)  
   
--   [Delegate to a Member of a Value Class \(値クラスのメンバーへのデリゲート\)](../misc/how-to-associate-delegates-to-members-of-a-value-class.md)  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
--   [Delegate to an Unmanaged Function \(アンマネージ関数へのデリゲート\)](../misc/how-to-associate-delegates-to-unmanaged-functions.md)  
-  
--   [Composed Delegates \(構成されたデリゲート\)](../misc/how-to-compose-delegates.md)  
-  
--   [方法: 関数ポインターを要求するネイティブ関数にデリゲート^ を渡す](../misc/how-to-pass-a-delegate-hat-to-a-native-function-expecting-a-function-pointer.md)  
-  
--   [Generic Delegates \(Visual C\+\+\)](../Topic/Generic%20Delegates%20\(Visual%20C++\).md)  
-  
-### 要件  
- コンパイラ オプション: **\/clr**  
-  
-### 例  
+### <a name="examples"></a>使用例  
  **例**  
   
- デリゲートを宣言、初期化、および呼び出す方法を次の例に示します。  
+ 次の例では、宣言、初期化、およびデリゲートを呼び出す方法を示します。  
   
 ```cpp  
 // mcppv2_delegate.cpp  
@@ -194,10 +193,17 @@ int main () {
   
  **出力**  
   
-  **in func1 8**  
- **in func1 9**  
- **in func2 9**  
- **in func2 10**  
- **in static func3 11**   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+```Output  
+in func1 8  
+  
+in func1 9  
+  
+in func2 9  
+  
+in func2 10  
+  
+in static func3 11  
+```  
+  
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

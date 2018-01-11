@@ -15,11 +15,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 289a4928c9c46f6d758ddc2f30ed864488ab725e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9f6b10c681eb12d38d33c50fe9e652ffd095dd4c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="parallel"></a>parallel
 同時に複数のスレッドで実行されるコードである並列領域を定義します。  
@@ -90,5 +91,5 @@ Hello from thread 3
 ## <a name="comment"></a>コメント  
  出力の順序は、別のコンピューターで異なることに注意してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

@@ -15,11 +15,12 @@ caps.latest.revision: "58"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8e89416c18fce65f19ff63c73ef441ee0bdb6165
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5bef9205fd583dd66a0f3cfe791ff95a861435c0
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="ltrandomgt"></a>&lt;random&gt;
 乱数生成の機能を定義し、一様に分布した乱数を作成できるようにします。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 10/24/2017
   
 -   大部分のアプリケーションに対して最も役立つ組み合わせは、`mt19937` エンジンと `uniform_int_distribution` の組み合わせです (この記事の後の方にある[コード例](#code)に示されています)。  
   
- `<random>` ヘッダーには選択できるオプションが多数あり、これらはいずれも以前の C ランタイム関数 `rand()` より適しています。 `rand()` の不具合やこれらの不具合に対する `<random>` の対応の詳細については、[このビデオ](http://go.microsoft.com/fwlink/?LinkId=397615)をご覧ください。  
+ `<random>` ヘッダーには選択できるオプションが多数あり、これらはいずれも以前の C ランタイム関数 `rand()` より適しています。 `rand()` の不具合やこれらの不具合に対する `<random>` の対応の詳細については、[このビデオ](http://go.microsoft.com/fwlink/p/?linkid=397615)をご覧ください。  
   
 ##  <a name="code"></a> 例  
  次のコード例では、非確定的なシードを使用して作成されたジェネレーターを使用して 5 つの乱数を生成する方法を示します。  
@@ -446,15 +447,15 @@ Randomized array: Si C Sc H Na O S Cr K Li Al Ti Cl B Mn He Fe Ne Be Ar V P Ca N
   
 |URNG|Fast|暗号的に安全|シード設定可能|Deterministic|  
 |----------|-----------|---------------------|---------------|--------------------|  
-|`mt19937`|はい|いいえ|はい|はい<sup>*</sup>|  
-|`random_device`|いいえ|はい|いいえ|いいえ|  
+|`mt19937`|[はい]|いいえ|[はい]|はい<sup>*</sup>|  
+|`random_device`|×|はい|いいえ|×|  
   
  <sup>* 既知のシードが提供される場合。</sup>  
   
- ISO C++ 標準では `random_device` が暗号的に安全であることは要求されていませんが、Visual Studio では暗号的に安全であるように実装されています ("暗号的に安全" という用語は保証を示すものではありません。特定のランダム化アルゴリズムが提供する最小限のレベルのエントロピ (それによる予測可能性レベル) を意味しています。 詳細については、Wikipedia の記事「[Cryptographically secure pseudorandom number generator](http://go.microsoft.com/fwlink/LinkId=398017) (暗号論的擬似乱数生成器)」を参照してください)。ISO C++ 標準ではこのことを要求していないため、他のプラットフォームでは (暗号的に安全でない) 簡単な疑似乱数ジェネレーターとして `random_device` が実装され、別のジェネレーターのシード ソースとしてのみ適する場合もあります。 クロスプラットフォーム コードで `random_device` を使用する場合は、これらのプラットフォームのドキュメントを参照してください。  
+ ISO C++ 標準では `random_device` が暗号的に安全であることは要求されていませんが、Visual Studio では暗号的に安全であるように実装されています ("暗号的に安全" という用語は保証を示すものではありません。特定のランダム化アルゴリズムが提供する最小限のレベルのエントロピ (それによる予測可能性レベル) を意味しています。 詳細については、Wikipedia の記事「[Cryptographically secure pseudorandom number generator](http://go.microsoft.com/fwlink/p/?linkid=398017) (暗号論的擬似乱数生成器)」を参照してください)。ISO C++ 標準ではこのことを要求していないため、他のプラットフォームでは (暗号的に安全でない) 簡単な疑似乱数ジェネレーターとして `random_device` が実装され、別のジェネレーターのシード ソースとしてのみ適する場合もあります。 クロスプラットフォーム コードで `random_device` を使用する場合は、これらのプラットフォームのドキュメントを参照してください。  
   
  定義上、`random_device` の結果は再現可能でなく、また、副作用として、他の URNG よりも実行がかなり遅い場合があります。 暗号的に安全であることが要求されない大部分のアプリケーションでは `mt19937` または類似のエンジンを使用しますが、[コード例](#code)に示すように、`random_device` の呼び出しでシードを設定することもできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
 

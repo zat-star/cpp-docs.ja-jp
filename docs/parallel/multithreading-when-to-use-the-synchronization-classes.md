@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b72b3ffac2c4c295aa997e43e52b0bf5e67fe985
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 38437983552dfdf2cf6708ec5fd067e06387ea5c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multithreading-when-to-use-the-synchronization-classes"></a>マルチスレッド : 同期クラスの使い分け
 MFC で提供されるマルチ スレッドのクラスは 2 つのカテゴリに分類されます同期オブジェクト ([関数](../mfc/reference/csyncobject-class.md)、 [CSemaphore](../mfc/reference/csemaphore-class.md)、 [CMutex](../mfc/reference/cmutex-class.md)、 [ 。CCriticalSection](../mfc/reference/ccriticalsection-class.md)、および[CEvent](../mfc/reference/cevent-class.md)) と同期アクセス オブジェクト ([CMultiLock](../mfc/reference/cmultilock-class.md)と[CSingleLock](../mfc/reference/csinglelock-class.md))。  
@@ -61,5 +62,5 @@ MFC で提供されるマルチ スレッドのクラスは 2 つのカテゴリ
   
  同期クラスの使用方法については、次を参照してください。[マルチ スレッド: 同期クラスを使用する方法](../parallel/multithreading-how-to-use-the-synchronization-classes.md)です。 同期については、次を参照してください。[同期](http://msdn.microsoft.com/library/windows/desktop/ms686353)で、[!INCLUDE[winsdkshort](../atl-mfc-shared/reference/includes/winsdkshort_md.md)]です。 MFC でマルチ スレッド処理のサポートについては、次を参照してください。 [C++ と MFC を使用するマルチ スレッド](../parallel/multithreading-with-cpp-and-mfc.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ と MFC を使用するマルチスレッド](../parallel/multithreading-with-cpp-and-mfc.md)

@@ -1,32 +1,33 @@
 ---
-title: "RuntimeClassFlags 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::RuntimeClassFlags"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RuntimeClassFlags 構造体"
+title: "RuntimeClassFlags 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::RuntimeClassFlags
+dev_langs: C++
+helpviewer_keywords: RuntimeClassFlags structure
 ms.assetid: 7098d605-bd14-4d51-82f4-3def8296a938
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 85eb42c537845d86ce8cf3b1f20db7e9eeffe76f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# RuntimeClassFlags 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[RuntimeClass](../windows/runtimeclass-class.md)のインスタンスの型が含まれています。  
+# <a name="runtimeclassflags-structure"></a>RuntimeClassFlags 構造体
+インスタンスの型が含まれています、 [RuntimeClass](../windows/runtimeclass-class.md)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -35,25 +36,25 @@ template <
 struct RuntimeClassFlags;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `flags`  
- [RuntimeClassType 列挙型](../windows/runtimeclasstype-enumeration.md) 値。  
+ A [RuntimeClassType 列挙型](../windows/runtimeclasstype-enumeration.md)値。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック定数  
+### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
-|--------|--------|  
-|[RuntimeClassFlags::value 定数](../windows/runtimeclassflags-value-constant.md)|[RuntimeClassType 列挙型](../windows/runtimeclasstype-enumeration.md) 値を含みます。|  
+|name|説明|  
+|----------|-----------------|  
+|[RuntimeClassFlags::value 定数](../windows/runtimeclassflags-value-constant.md)|含まれています、 [RuntimeClassType 列挙型](../windows/runtimeclasstype-enumeration.md)値。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `RuntimeClassFlags`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

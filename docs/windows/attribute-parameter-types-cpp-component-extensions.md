@@ -1,29 +1,30 @@
 ---
-title: "Attribute Parameter Types  (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "custom attributes, parameter types"
+title: "属性パラメーター型 (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords: custom attributes, parameter types
 ms.assetid: d9f127a3-7f08-456f-acc6-256805632712
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 95e7ec4d1a4a6b473419c23b3565fcce9d5afed6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Attribute Parameter Types  (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-属性に渡される値は、コンパイル時にコンパイラが認識する必要があります。属性パラメーターは次のようになります。:  
+# <a name="attribute-parameter-types--c-component-extensions"></a>属性パラメーターの型 (C++ コンポーネント拡張)
+属性に渡される値は、コンパイル時にコンパイラに認識されている必要があります。  次の種類の属性のパラメーターになります。  
   
 -   `bool`  
   
@@ -49,9 +50,9 @@ manager: "ghogen"
   
 -   `enum`  
   
-## 例  
+## <a name="example"></a>例  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // attribute_parameter_types.cpp  
@@ -74,12 +75,12 @@ ref struct MyStruct {
 };  
 ```  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- 属性を指定するときは、すべての匿名のな \(位置\) 引数は、名前付き引数の前に記述する必要があります。  
+### <a name="description"></a>説明  
+ 属性を指定する場合は、すべての名前のない (位置指定) 引数に、名前付き引数が前に指定する必要があります。  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // extending_metadata_c.cpp  
@@ -107,12 +108,12 @@ ref class ClassC {};   // Positional argument
 ref class ClassD {};   // Positional and named  
 ```  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- 属性パラメーターは前の型の 1 次元配列です。  
+### <a name="description"></a>説明  
+ 前の型の 1 次元配列の属性のパラメーターを使用できます。  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // extending_metadata_d.cpp  
@@ -129,5 +130,5 @@ public ref struct ABC : public Attribute {
 ref struct AStruct{};  
 ```  
   
-## 参照  
- [User\-Defined Attributes](../windows/user-defined-attributes-cpp-component-extensions.md)
+## <a name="see-also"></a>参照  
+ [ユーザー定義の属性](../windows/user-defined-attributes-cpp-component-extensions.md)

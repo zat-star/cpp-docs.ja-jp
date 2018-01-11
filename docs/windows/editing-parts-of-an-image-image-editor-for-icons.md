@@ -1,87 +1,91 @@
 ---
-title: "Editing Parts of an Image (Image Editor for Icons) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Image editor [C++], editing images"
-  - "Clipboard [C++], pasting"
-  - "images [C++], editing"
-  - "images [C++], deleting selected parts"
-  - "images [C++], copying selected parts"
-  - "images [C++], moving selected parts"
-  - "images [C++], dragging and replicating selected parts"
-  - "images [C++], pasting into"
-  - "graphics [C++], editing"
+title: "編集 (アイコン用イメージ エディター) イメージの一部の |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- Image editor [C++], editing images
+- Clipboard [C++], pasting
+- images [C++], editing
+- images [C++], deleting selected parts
+- images [C++], copying selected parts
+- images [C++], moving selected parts
+- images [C++], dragging and replicating selected parts
+- images [C++], pasting into
+- graphics [C++], editing
 ms.assetid: ff4f5fef-71a4-4fd8-825e-049399fed391
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: acd4859bf7c80cf2bbe6cd2d86c39d0fc596351d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Editing Parts of an Image (Image Editor for Icons)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-イメージの[選択領域](../mfc/selecting-an-area-of-an-image-image-editor-for-icons.md)では、それがイメージの全体か一部かに関係なく、切り取り、消去、移動などの標準の編集操作を実行できます。  イメージ エディターではWindowsのクリップボードを使用するため、Windowsのイメージ エディターと他のアプリケーションの間でイメージを転送できます。  
+# <a name="editing-parts-of-an-image-image-editor-for-icons"></a>イメージの一部の編集 (アイコン用イメージ エディター)
+標準の編集操作を行うことができます: 切り取り、コピー、解除、および移動 — 上、[選択](../windows/selecting-an-area-of-an-image-image-editor-for-icons.md)選択範囲が画像全体またはその一部だけであるかどうか、します。 イメージ エディターは、Windows のクリップボードを使用しているために、イメージ エディターとその他の Windows アプリケーションの間でイメージを転送できます。  
   
- また、イメージ全体が含まれるかどうかに関係なく、選択領域のサイズを変更できます。  
+ さらに、画像全体または一部だけが含まれているかどうか、選択範囲のサイズを変更できます。  
   
-### 現在の選択領域を切り取ってクリップボードに移動するには  
+### <a name="to-cut-the-current-selection-and-move-it-to-the-clipboard"></a>現在の選択範囲を切り取って、クリップボードに移動するには  
   
-1.  \[編集\] メニューの \[切り取り\] をクリックします。  
+1.  をクリックして**切り取り**上、**編集**メニュー。  
   
-### 選択領域をコピーするには  
+### <a name="to-copy-the-selection"></a>選択範囲をコピーするには  
   
-1.  ポインターを選択領域内またはその境界上 \(サイズ変更ハンドルを除く\) に置きます。  
+1.  ポインターを選択範囲の境界線の内側または任意の場所にサイズ変更ハンドルを除くします。  
   
-2.  **Ctrl** キーを押しながら、選択領域を新しい位置にドラッグします。  元の選択領域は変更されません。  
+2.  押しながら、 **CTRL**キーの選択範囲を新しい場所にドラッグするとします。 元の選択範囲の領域は変更されません。  
   
-3.  選択領域を現在の位置にあるイメージにコピーするには、選択ポインターの外側をクリックします。  
+3.  現在の場所にイメージには、選択範囲をコピーするには、選択範囲のカーソルの外部をクリックします。  
   
-### クリップボードの内容をイメージに貼り付けるには  
+### <a name="to-paste-the-clipboard-contents-into-an-image"></a>イメージにクリップボードの内容を貼り付ける  
   
-1.  \[編集\] メニューの \[貼り付け\] をクリックします。  
+1.  **編集**] メニューの [選択**貼り付け**です。  
   
-     クリップボードの内容が選択境界線で囲まれて、ペインの左上隅に表示されます。  
+     選択範囲の境界線で囲まれた、クリップボードの内容は、ウィンドウの左上隅に表示されます。  
   
-2.  選択境界線の内側にポインターを置き、貼り付けるイメージをイメージ上の必要な位置にドラッグします。  
+2.  選択範囲の境界線内でポインターを配置し、目的の場所に、画像上にイメージをドラッグします。  
   
-3.  イメージを新しい位置に固定するには、選択境界線の外側をクリックします。  
+3.  新しい場所にイメージを固定するには、選択範囲の境界線外をクリックします。  
   
-### 現在の選択領域をクリップボードに移動せずに削除するには  
+### <a name="to-delete-the-current-selection-without-moving-it-to-the-clipboard"></a>クリップボードに移動せずに現在の選択範囲を削除するには  
   
-1.  \[編集\] メニューの \[削除\] をクリックします。  
+1.  **編集**] メニューの [選択**削除**です。  
   
-     元の選択領域が現在の背景色で塗りつぶされます。  
+     選択範囲の元の領域を現在の背景色で塗りつぶします。  
   
     > [!NOTE]
-    >  \[リソース ビュー\] ウィンドウ内でマウスの右ボタンをクリックすると、\[切り取り\]、\[コピー\]、\[貼り付け\]、\[削除\] の各コマンドにアクセスできます。  
+    >  切り取り、コピー、貼り付けにアクセスし、リソース ビュー ウィンドウで右クリックしてコマンドを削除できます。  
   
-### 選択領域を移動するには  
+### <a name="to-move-the-selection"></a>選択範囲を移動するには  
   
-1.  ポインターを選択領域内またはその境界上 \(サイズ変更ハンドルを除く\) に置きます。  
+1.  ポインターを選択範囲の境界線の内側または任意の場所にサイズ変更ハンドルを除くします。  
   
-2.  選択領域を新しい位置にドラッグします。  
+2.  新しい位置にドラッグします。  
   
-3.  イメージの選択領域を新しい位置に固定するには、選択境界線の外側をクリックします。  
+3.  新しい場所に画像の選択範囲を固定するには、選択境界線の外側をクリックします。  
   
- 選択領域を使用して描画する方法については、「[カスタム ブラシの作成](../Topic/Creating%20a%20Custom%20Brush%20\(Image%20Editor%20for%20Icons\).md)」を参照してください。  
+ 選択範囲を使用した描画の詳細については、次を参照してください。[カスタム ブラシの作成](../windows/creating-a-custom-brush-image-editor-for-icons.md)です。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  なし  
   
-## 参照  
- [Accelerator Keys](../mfc/accelerator-keys-image-editor-for-icons.md)   
- [Editing Graphical Resources](../mfc/editing-graphical-resources-image-editor-for-icons.md)   
- [Image Editor for Icons](../mfc/image-editor-for-icons.md)
+## <a name="see-also"></a>参照  
+ [アクセラレータ キー](../windows/accelerator-keys-image-editor-for-icons.md)   
+ [グラフィカル リソースの編集](../windows/editing-graphical-resources-image-editor-for-icons.md)   
+ [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)
+

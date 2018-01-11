@@ -17,11 +17,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: eada827f54bc04a22b5aa0b9fb61b3a786c0b25c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 1b3df26fc7612c236197903ecb9ce0e1d9de6b14
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="grid-settings-dialog-box-image-editor-for-icons"></a>[グリッドの設定] ダイアログ ボックス (アイコン用イメージ エディター)
 イメージのグリッドの設定を指定することができ、編集した画像の上のグリッド線を表示します。 行は、イメージを編集するために便利ですが、イメージ自体の一部としては保存されません。  
@@ -38,10 +41,10 @@ ms.lasthandoff: 10/24/2017
  **高さ**  
  各タイル ブロックの高さを指定します。 これは、機能は、一定の間隔で配置された複数のイメージを含むビットマップを描画するときに便利です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  なし  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イメージのサイズ変更](../windows/resizing-an-image-image-editor-for-icons.md)   
  [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)
 

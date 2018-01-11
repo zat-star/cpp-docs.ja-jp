@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0b7420e4fed7abccffaba8539499e56e6248be5e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7eba41005864e2389997a75855eaf955ad18b557
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dhtml-editing-command-maps"></a>DHTML 編集コマンド マップ
 DHTML 編集コマンドをマップに次のマクロを使用できる[CHtmlEditView](../../mfc/reference/chtmleditview-class.md)-クラスを派生します。 それらの使用例は、次を参照してください。 [HTMLEdit サンプル](../../visual-cpp-samples.md)です。  
@@ -53,7 +54,7 @@ DECLARE_DHTMLEDITING_CMDMAP(className)
 ### <a name="example"></a>例  
  参照してください[HTMLEdit サンプル](../../visual-cpp-samples.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxhtml.h  
   
 ##  <a name="begin_dhtmlediting_cmdmap"></a>BEGIN_DHTMLEDITING_CMDMAP  
@@ -72,7 +73,7 @@ BEGIN_DHTMLEDITING_CMDMAP(className)
   
  場所、`BEGIN_DHTMLEDITING_CMDMAP`クラスの実装 (.cpp) ファイル内のマクロが続く[DHTMLEDITING_CMD_ENTRY](#dhtmlediting_cmd_entry)にマップするクラスは、コマンドのマクロ (からの変更など、 **ID_EDIT_CUT** に**IDM_CUT**)。 使用して、 [END_DHTMLEDITING_CMDMAP](#end_dhtmlediting_cmdmap)マクロ イベント マップの終わりをマークします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxhtml.h  
   
 ##  <a name="end_dhtmlediting_cmdmap"></a>END_DHTMLEDITING_CMDMAP  
@@ -88,7 +89,7 @@ END_DHTMLEDITING_CMDMAP()
 ### <a name="example"></a>例  
  参照してください[HTMLEdit サンプル](../../visual-cpp-samples.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxhtml.h  
   
 ##  <a name="dhtmlediting_cmd_entry"></a>DHTMLEDITING_CMD_ENTRY  
@@ -108,7 +109,7 @@ DHTMLEDITING_CMD_ENTRY(cmdID,  dhtmlcmdID)
 ### <a name="example"></a>例  
  参照してください[HTMLEdit サンプル](../../visual-cpp-samples.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxhtml.h  
   
 ##  <a name="dhtmlediting_cmd_entry_func"></a>DHTMLEDITING_CMD_ENTRY_FUNC  
@@ -131,7 +132,7 @@ DHTMLEDITING_CMD_ENTRY_FUNC(cmdID, dhtmlcmdID,  member_func_name)
 ### <a name="example"></a>例  
  参照してください[HTMLEdit サンプル](../../visual-cpp-samples.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxhtml.h  
   
 ##  <a name="dhtmlediting_cmd_entry_type"></a>DHTMLEDITING_CMD_ENTRY_TYPE  
@@ -154,7 +155,7 @@ DHTMLEDITING_CMD_ENTRY_TYPE(cmdID  ,   dhtmlcmdID  ,    elemType)
 ### <a name="example"></a>例  
  参照してください[HTMLEdit サンプル](../../visual-cpp-samples.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxhtml.h  
   
 ##  <a name="dhtmlediting_cmd_entry_func_type"></a>DHTMLEDITING_CMD_ENTRY_FUNC_TYPE  
@@ -180,8 +181,8 @@ DHTMLEDITING_CMD_ENTRY_FUNC_TYPE(cmdID, dhtmlcmdID, member_func_name,  elemType)
 ### <a name="example"></a>例  
  参照してください[HTMLEdit サンプル](../../visual-cpp-samples.md)です。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxhtml.h  
     
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

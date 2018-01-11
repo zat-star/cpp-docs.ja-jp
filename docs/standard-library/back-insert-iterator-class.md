@@ -21,11 +21,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0b91bdde2774bc78d6399e7b84e58c01a80ed53d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bc2cde9149a1b1871a88c193ebd5730f76dc7224
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="backinsertiterator-class"></a>back_insert_iterator クラス
 出力反復子の要件を満たす反復子アダプターについて説明します。 シーケンスのバック エンドに要素を上書きではなく、挿入し、C++ のシーケンス コンテナーの反復子が提供する上書きセマンティクスとは異なるセマンティクスを提供します。 `back_insert_iterator` クラスはコンテナーの型でテンプレート化されます。  
@@ -65,7 +66,7 @@ class back_insert_iterator;
 |[operator++](#op_add_add)|値を格納できる次の位置に `back_insert_iterator` をインクリメントします。|  
 |[operator=](#op_eq)|後方挿入のための出力反復子式 * `i` = `x` を実装するために使用される代入演算子。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー**: \<iterator>  
   
  **名前空間:** std  
@@ -410,7 +411,7 @@ The vector vec is: ( 1 2 3 ).
 The last element in the vector vec is: 3.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<iterator>](../standard-library/iterator.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)

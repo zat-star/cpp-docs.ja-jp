@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d8481c0efb54a397db004f321fb48c217cba8ebc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d3fca67cb50cf91195d7edfb1e5e2fccfc9f8c5d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="14-compliance"></a>1.4 準拠
 OpenMP C と C++ API の実装は*OpenMP 準拠*かどうかを認識し、章 1、2、3、4、レイアウトとは、この仕様のすべての要素のセマンティクスを保持および付録 C A、B、D、E、および F情報は、目的でのみと仕様の一部ではないです。 API のサブセットのみを含む実装は、OpenMP 準拠ではありません。  

@@ -14,11 +14,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4221702df42bc82d1a0573f9a8b10252017b282a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 05acbc14af8daec265cf705ac4605e9606cb0696
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="path-class"></a>path クラス
 **path** クラスとは、string\_type 型のオブジェクトを格納するクラスであり、パス名としての使用に適したクラスです。ここでは、このオブジェクトに myname という名前を付けて説明を進めます。 string\_type は、basic\_string\<value_type> のシノニムです。この value\_type は、Windows では char のシノニムになり、Posix では wchar_t のシノニムになります。  
@@ -594,11 +595,11 @@ wstring wstring() const;
   
  mypath に格納されているシーケンスをホスト システムに適した wchar_t シーケンスのエンコーディングに変換してから、wstring 型のオブジェクトに格納して返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<filesystem >  
   
  **名前空間:** std::experimental::filesystem
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
 

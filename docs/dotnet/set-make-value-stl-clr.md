@@ -1,45 +1,46 @@
 ---
-title: "set::make_value (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::set::make_value"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "make_value メンバー [STL/CLR]"
+title: "set::make_value (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::set::make_value
+dev_langs: C++
+helpviewer_keywords: make_value member [STL/CLR]
 ms.assetid: 2f71515e-7de1-4139-a68e-72ff2a96aa4a
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 92f86df6e90ce8bfaabc5482b2f4801bf79f4b44
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# set::make_value (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="setmakevalue-stlclr"></a>set::make_value (STL/CLR)
 値オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 static value_type make_value(key_type key);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  key  
  使用するキー値。  
   
-## 解説  
- このメンバー関数は、キーが `key`である `value_type` オブジェクトを返します。  他のメンバー関数の使用に適したオブジェクトを構成するために使用します。  
+## <a name="remarks"></a>コメント  
+ メンバー関数を返します、`value_type`オブジェクト キーを持つ`key`します。 他のいくつかのメンバー関数で使用するために適切なオブジェクトの作成に使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_set_make_value.cpp   
@@ -63,13 +64,16 @@ int main()
   
 ```  
   
-  **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+```Output  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext と set >  
   
-## 参照  
- [設定](../dotnet/set-stl-clr.md)   
- [set::key\_type](../dotnet/set-key-type-stl-clr.md)   
- [set::value\_type](../dotnet/set-value-type-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
+ [set::key_type (STL/CLR)](../dotnet/set-key-type-stl-clr.md)   
+ [set::value_type (STL/CLR)](../dotnet/set-value-type-stl-clr.md)

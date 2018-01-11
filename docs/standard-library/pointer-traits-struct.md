@@ -25,11 +25,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6d40f9149a9a03e4de40713ba9c7c0ce65f0edad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b82970336c11e8060b01b9c78b48b21accdc67db
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pointertraits-struct"></a>pointer_traits 構造体
 `allocator_traits` テンプレート クラスのオブジェクトが、ポインター型 `Ptr` を持つアロケーターを記述するために必要とする情報を提供します。  
@@ -65,7 +66,7 @@ struct Ptr
   
 ### <a name="structs"></a>構造体  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |`pointer_traits::rebind`|基になるポインター型を指定された型に変換しようとします。|  
   
@@ -75,7 +76,7 @@ struct Ptr
 |----------|-----------------|  
 |[pointer_to](#pointer_to)|任意の参照をクラス `Ptr` のオブジェクトに変換します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
@@ -87,7 +88,7 @@ struct Ptr
 static pointer pointer_to(element_type& obj);
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<memory>](../standard-library/memory.md)   
  [allocator_traits クラス](../standard-library/allocator-traits-class.md)
 

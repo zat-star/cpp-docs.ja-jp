@@ -1,27 +1,27 @@
 ---
-title: "A.2   Specifying Conditional Compilation | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "条件付きコンパイルを指定する A.2 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: de4a21b9-f987-4738-9f13-c4795f6f2dff
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 93557eaae2c8661697f7bda383b50f2e1ba9e2cb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# A.2   Specifying Conditional Compilation
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-次の例ではOpenMP マクロ `_OPENMP` \(ページを使用して条件付きコンパイルを使用して 8\)[セクション 2.2](../../parallel/openmp/2-2-conditional-compilation.md) ついて説明します。  OpenMP コンパイルすると`_OPENMP` マクロが定義されます。  
+# <a name="a2---specifying-conditional-compilation"></a>A.2 条件付きコンパイルの指定
+次の例では、OpenMP マクロを使用して条件付きコンパイルの例を示します`_OPENMP`([Section 2.2](../../parallel/openmp/2-2-conditional-compilation.md) 8 ページの)。 OpenMP のコンパイルと、`_OPENMP`マクロが定義になります。  
   
 ```  
 # ifdef _OPENMP   
@@ -29,7 +29,7 @@ manager: "ghogen"
 # endif  
 ```  
   
- プリプロセッサ定義済みの演算子は複数のマクロが一つのディレクティブでテストします。  
+ 定義済みプリプロセッサ演算子は、1 つのディレクティブでテストする 1 つ以上のマクロを使用します。  
   
 ```  
 # if defined(_OPENMP) && defined(VERBOSE)  

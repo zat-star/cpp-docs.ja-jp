@@ -21,14 +21,17 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 843b7a6e10e7814f4f922297b94b3ffe523dc0ad
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e7d192387131ff0eaa04fc366254d7f78a73dd52
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="initialization-of-mixed-assemblies"></a>混在アセンブリの初期化
-Visual Studio 2005 より前の Dll がコンパイルされて、 **/clr**コンパイラ オプションが非確定的にデッドロック読み込まれるときです。 この問題には、混在 DLL の読み込みまたはローダー ロックの問題が呼び出されました。 混在モード DLL の読み込みプロセスで、このような確定的でない場合の問題はほとんどなくなりました。 ただし、ローダー ロックが (確定的に) 発生する可能性のあるシナリオはいくつか残っています。 この問題の詳細については、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/?linkid=556)の「混在モード DLL 読み込み時の問題」を参照してください。  
+Visual Studio 2005 より前の Dll がコンパイルされて、 **/clr**コンパイラ オプションが非確定的にデッドロック読み込まれるときです。 この問題には、混在 DLL の読み込みまたはローダー ロックの問題が呼び出されました。 混在モード DLL の読み込みプロセスで、このような確定的でない場合の問題はほとんどなくなりました。 ただし、ローダー ロックが (確定的に) 発生する可能性のあるシナリオはいくつか残っています。
   
  [DllMain](http://msdn.microsoft.com/library/windows/desktop/ms682583) 内のコードは、CLR にはアクセスできません。 つまり、 `DllMain` は、直接的にも間接的にもマネージ関数を呼び出すことができません。 `DllMain`ではマネージ コードを宣言または実装しないでください。また、 `DllMain`内では、ガベージ コレクションや自動ライブラリ読み込みは行われません。  
   
@@ -130,7 +133,7 @@ CObject* op = new CObject(arg1, arg2);
   
  ローダー ロックを扱うユーザーの負担を減らすため、マネージとネイティブの両方の実装が存在する場合、リンカーはネイティブの実装を選択するようになっています。  これにより、上記の問題は回避されます。  ただし、このリリースではコンパイラに未解決の問題が 2 つ残っているため、この規則には、次の 2 つの例外があります。  
   
--   グローバル静的関数ポインターを介したインライン関数呼び出しである場合。  仮想関数はグローバル関数ポインターを介して呼び出されるため、このシナリオには特に注意する必要があります。  次に例を示します。  
+-   グローバル静的関数ポインターを介したインライン関数呼び出しである場合。  仮想関数はグローバル関数ポインターを介して呼び出されるため、このシナリオには特に注意する必要があります。  たとえば、オブジェクトに適用された  
   
 ```  
 #include "definesmyObject.h"  
@@ -251,5 +254,5 @@ Module ctor initializing based on global instance of class.
 Test called so linker does not throw away unused object.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)

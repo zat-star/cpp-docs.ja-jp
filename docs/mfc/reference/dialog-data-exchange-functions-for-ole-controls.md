@@ -29,11 +29,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 719acc2706483a3fcfa5506da077cee9e5fc1a5b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ad97690ca948525e9a0920d087e4dfd617a11b4d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dialog-data-exchange-functions-for-ole-controls"></a>OLE コントロールのダイアログ データ エクスチェンジ (DDX) 関数
 このトピックでは、OLE コントロールのプロパティ ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのデータ メンバーの間でデータを交換するために使用 DDX_OC 関数が一覧表示します。  
@@ -76,13 +77,13 @@ void AFXAPI DDX_OCBool(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー :** afxdisp.h  
   
 ##  <a name="ddx_ocboolro"></a>DDX_OCBoolRO  
@@ -106,13 +107,13 @@ void AFXAPI DDX_OCBoolRO(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_occolor"></a>DDX_OCColor  
@@ -136,13 +137,13 @@ void AFXAPI DDX_OCColor(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_occolorro"></a>DDX_OCColorRO  
@@ -166,13 +167,13 @@ void AFXAPI DDX_OCColorRO(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_ocfloat"></a>DDX_OCFloat  
@@ -202,13 +203,13 @@ void AFXAPI DDX_OCFloat(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_ocfloatro"></a>DDX_OCFloatRO  
@@ -238,13 +239,13 @@ void AFXAPI DDX_OCFloatRO(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_ocint"></a>DDX_OCInt  
@@ -274,13 +275,13 @@ void AFXAPI DDX_OCInt(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_ocintro"></a>DDX_OCIntRO  
@@ -310,13 +311,13 @@ void AFXAPI DDX_OCIntRO(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_ocshort"></a>DDX_OCShort  
@@ -340,13 +341,13 @@ void AFXAPI DDX_OCShort(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_ocshortro"></a>DDX_OCShortRO  
@@ -370,13 +371,13 @@ void AFXAPI DDX_OCShortRO(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_octext"></a>DDX_OCText  
@@ -400,13 +401,13 @@ void AFXAPI DDX_OCText(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="ddx_octextro"></a>DDX_OCTextRO  
@@ -430,14 +431,14 @@ void AFXAPI DDX_OCTextRO(
  `dispid`  
  コントロールのプロパティのディスパッチ ID。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h
     
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

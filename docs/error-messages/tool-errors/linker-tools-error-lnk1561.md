@@ -4,50 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- LNK1561
-dev_langs:
-- C++
-helpviewer_keywords:
-- LNK1561
+f1_keywords: LNK1561
+dev_langs: C++
+helpviewer_keywords: LNK1561
 ms.assetid: cb0b709b-7c9c-4496-8a4e-9e1e4aefe447
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
-ms.openlocfilehash: f918c51e6f4539c020bc59ad28c867f8e2d1ae75
-ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 7cbd0ca9e932bdb2845ada2f47b569391e943cb9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-error-lnk1561"></a>リンカ ツール エラー LNK1561
-エントリー ポイントを定義しなければなりません。  
+エントリ ポイントを定義する必要があります。  
   
 リンカーが見つかりませんでした、*エントリ ポイント*、実行可能ファイルでの呼び出しに初期関数。 既定では、リンカー検索、`main`または`wmain`コンソール アプリの関数、`WinMain`または`wWinMain`for Windows アプリでは、関数または`DllMain`dll の初期化が必要です。 別の関数を使用して指定することができます、 [/ENTRY](../../build/reference/entry-entry-point-symbol.md)リンカー オプション。  
   
 このエラーは、いくつかの原因を持つことができます。  
 -   リンクするファイルの一覧で、エントリ ポイントを定義するファイルが含まれていない可能性があります。 エントリ ポイント関数を格納しているファイルがアプリにリンクされていることを確認します。  
--   間違った関数のシグネチャ; を使用して、エントリ ポイントを定義した可能性があります。たとえば、する可能性がありますがスペルが間違っているまたは正しくない場合に、関数名を使用または正しく指定されていない戻り値の型またはパラメーターの型。  
+-   間違った関数のシグネチャ; を使用して、エントリ ポイントを定義した可能性があります。たとえば、する可能性がありますがスペルが間違っているまたは関数名が大文字を使用または正しく指定されていない戻り値の型またはパラメーターの型。  
 -   指定していない、 [/DLL](../../build/reference/dll-build-a-dll.md) DLL のビルド オプションを選択します。  
 -   場合がありますが正しく指定されていないエントリ ポイント関数の名前を使用した場合、 [/ENTRY](../../build/reference/entry-entry-point-symbol.md)リンカー オプション。  
 -   使用している場合、 [LIB](../../build/reference/lib-reference.md) DLL をビルドするツール、.def ファイルを指定した可能性があります。 場合は、ビルドから、.def ファイルを削除します。    

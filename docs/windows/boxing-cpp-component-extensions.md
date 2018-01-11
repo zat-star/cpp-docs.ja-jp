@@ -1,50 +1,52 @@
 ---
-title: "Boxing  (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "boxing, Visual C++"
+title: "ボックス化 (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords: boxing, Visual C++
 ms.assetid: b5fd2c98-c578-4f83-8257-6dd663478665
-caps.latest.revision: 27
-caps.handback.revision: 25
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "27"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 15fa5471280935c54cdb936af378634e2b60cacd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Boxing  (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Visual C\+\+ コンパイラでは、*ボックス化*というプロセスで値型をオブジェクトに変換し、*ボックス化解除*というプロセスでオブジェクトを値型に変換します。  
+# <a name="boxing--c-component-extensions"></a>ボックス化 (C++ コンポーネント拡張)
+Visual C コンパイラが値型と呼ばれるプロセス内のオブジェクトに変換できます*ボックス化*、オブジェクトと呼ばれるプロセスにおける値の型を変換および*アンボックス*です。  
   
-## すべてのランタイム  
- \(この言語機能にはランタイムに適用される特記事項がありません。\)  
+## <a name="all-runtimes"></a>すべてのランタイム  
+ (この言語機能にはランタイムに適用される特記事項がありません。)  
   
-## Windows ランタイム  
- [!INCLUDE[cppwrt_short](../Token/cppwrt_short_md.md)] は、値型のボックス化と参照型のボックス化解除の短縮構文をサポートします。  値型は `Object` 型の変数に代入されるときにボックス化されます。  `Object` 変数は値型の変数に代入されるときに、かっこ内にボックス化解除する型が指定される場合、つまり、オブジェクト変数が値型にキャストされるときに、ボックス化解除されます。  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ C + + CX 値の型をボックス化とボックス化解除の参照型の略式の構文をサポートしています。 値型は `Object` 型の変数に代入されるときにボックス化されます。 `Object` 変数は値型の変数に代入されるときに、かっこ内にボックス化解除する型が指定される場合、つまり、オブジェクト変数が値型にキャストされるときに、ボックス化解除されます。  
   
 ```  
   
-Platform::Object^ object_variable  = value_variable;  
+  Platform::Object^  
+  object_variable  = value_variable;  
 value_variable = (value_type) object_variable;  
   
 ```  
   
-### 必要条件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-### 使用例  
- 次のコード例では、`DateTime` 値をボックス化およびボックス化解除します。  最初に、現在の日付と時刻を表す DateTime 値を取得し、それを DateTime 変数に代入します。  次に、DateTime を Object 変数に代入することでボックス化します。  最後に、ボックス化された値を別の DateTime 変数に代入することでボックス化解除します。  
+### <a name="examples"></a>使用例  
+ 次のコード例では、`DateTime` 値をボックス化およびボックス化解除します。 最初に、現在の日付と時刻を表す DateTime 値を取得し、それを DateTime 変数に代入します。 次に、DateTime を Object 変数に代入することでボックス化します。 最後に、ボックス化された値を別の DateTime 変数に代入することでボックス化解除します。  
   
- この例をテストするには、BlankApplication プロジェクトを作成し、BlankPage::OnNavigatedTo\(\) メソッドを置き換えた後、右かっこの位置と変数 str1 への代入の位置にブレークポイントを指定します。  実行位置が右かっこに到達したら、str1 を確認します。  
+ この例をテストするには、BlankApplication プロジェクトを作成し、BlankPage::OnNavigatedTo() メソッドを置き換えた後、右かっこの位置と変数 str1 への代入の位置にブレークポイントを指定します。 実行位置が右かっこに到達したら、str1 を確認します。  
   
 ```  
   
@@ -80,16 +82,16 @@ void BlankPage::OnNavigatedTo(NavigationEventArgs^ e)
   
 ```  
   
- 詳細については、「[ボックス化 \(C\+\+\/CX\)](http://msdn.microsoft.com/library/windows/apps/hh969554.aspx)」を参照してください。  
+ 詳細については、次を参照してください。[ボックス化 (C + + CX)](http://msdn.microsoft.com/library/windows/apps/hh969554.aspx)です。  
   
-## 共通言語ランタイム  
- Visual C\+\+ コンパイラでは、値型を <xref:System.Object> にボックス化できるようになりました。  これは、値型を <xref:System.Object> に変換するコンパイラで定義済みの変換により可能になりました。  
+## <a name="common-language-runtime"></a>共通言語ランタイム  
+ Visual C++ コンパイラでは、値型を <xref:System.Object> にボックス化できるようになりました。  これは、値型を <xref:System.Object> に変換するコンパイラで定義済みの変換により可能になりました。  
   
- ボックス化とボックス化解除を利用することで、値型をオブジェクトとして扱うことができます。  値型 \(構造体型や int などの組み込み型を含む\) を、<xref:System.Object> 型との間で相互に変換できます。  
+ ボックス化とボックス化解除を利用することで、値型をオブジェクトとして扱うことができます。 値型 (構造体型や int などの組み込み型を含む) を、<xref:System.Object> 型との間で相互に変換できます。  
   
  詳細については次を参照してください:  
   
--   [方法: 明示的にボックス化を要求する](../Topic/How%20to:%20Explicitly%20Request%20Boxing.md)  
+-   [方法: 明示的にボックス化を要求する](../dotnet/how-to-explicitly-request-boxing.md)  
   
 -   [方法: gcnew を使用して値型を作成し、暗黙的なボックス化を使用する](../dotnet/how-to-use-gcnew-to-create-value-types-and-use-implicit-boxing.md)  
   
@@ -97,10 +99,10 @@ void BlankPage::OnNavigatedTo(NavigationEventArgs^ e)
   
 -   [標準変換と暗黙のボックス化](../dotnet/standard-conversions-and-implicit-boxing.md)  
   
-### 必要条件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-### 使用例  
+### <a name="examples"></a>使用例  
  **例**  
   
  次の例では、暗黙的なボックス化の動作を示します。  
@@ -177,14 +179,25 @@ int main() {
   
  **出力**  
   
-  **1**  
- **xx \= 10**  
- **in A**  
- **Class V passed using implicit boxing**  
- **Class V passed with forced boxing**  
- **Interface function**  
- **in func1\(V2^\)**  
- **in func2\(System::ValueType^\)**  
- **in func2\(System::ValueType^\)**   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+```Output  
+1  
+  
+xx = 10  
+  
+in A  
+  
+Class V passed using implicit boxing  
+  
+Class V passed with forced boxing  
+  
+Interface function  
+  
+in func1(V2^)  
+  
+in func2(System::ValueType^)  
+  
+in func2(System::ValueType^)  
+```  
+  
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

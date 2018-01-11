@@ -23,11 +23,12 @@ caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4a5d494d28872bf5e59f0c436ceb037bd36a94c3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6338ed2bbaa7d16dc2723f4bdcaa93ea0a3f3e31
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="basicostringstream-class"></a>basic_ostringstream クラス
 要素とエンコードされたオブジェクトを [basic_stringbuf](../standard-library/basic-stringbuf-class.md)< **Elem**, **Tr**, `Alloc`> クラスのストリーム バッファーに挿入する操作を制御するオブジェクトを記述します。  
@@ -62,7 +63,7 @@ class basic_ostringstream : public basic_ostream<Elem, Tr>
   
 |||  
 |-|-|  
-|[allocator_type](#allocator_type)|この型は、テンプレート パラメーター `Alloc`のシノニムです。|  
+|[allocator_type](#allocator_type)|この型は、テンプレート パラメーター `Alloc` のシノニムです。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
@@ -71,13 +72,13 @@ class basic_ostringstream : public basic_ostream<Elem, Tr>
 |[rdbuf](#rdbuf)|型 `pointer` の格納されたストリーム バッファーのアドレスを [basic_stringbuf](../standard-library/basic-stringbuf-class.md)< `Elem`, `Tr`, `Alloc`> に返します。|  
 |[str](#str)|文字列バッファー内のテキストを設定または取得します。書き込み位置は変更しません。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<sstream>  
   
  **名前空間:** std  
   
 ##  <a name="allocator_type"></a>  basic_ostringstream::allocator_type  
- この型は、テンプレート パラメーター `Alloc`のシノニムです。  
+ この型は、テンプレート パラメーター `Alloc` のシノニムです。  
   
 ```  
 typedef Alloc allocator_type;  
@@ -144,7 +145,7 @@ void str(
 ### <a name="example"></a>例  
   **str** の使用例については、「[basic_stringbuf::str](../standard-library/basic-stringbuf-class.md#str)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   
  [iostreams の規則](../standard-library/iostreams-conventions.md)

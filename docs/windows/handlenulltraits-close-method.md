@@ -15,11 +15,14 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 45d92fd9d14fa65594db17ce881eb0821810b1dd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: dbe3f8ebe8c63eda026da92aec037037830a763d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="handlenulltraitsclose-method"></a>HANDLENullTraits::Close メソッド
 指定したハンドルを閉じます。  
@@ -39,10 +42,10 @@ inline static bool Close(
 ## <a name="return-value"></a>戻り値  
  **true**場合処理`h`正常です。 それ以外の場合、閉じられた**false**です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers::HandleTraits  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [HANDLENullTraits 構造体](../windows/handlenulltraits-structure.md)

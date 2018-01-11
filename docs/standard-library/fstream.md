@@ -15,11 +15,12 @@ caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: dc68979d4dc4b79a2b1e6e987f51bebc6d15aa3b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d41719c7ff7ce2d7a906395ed65b891e2583bac8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltfstreamgt"></a>&lt;fstream&gt;
 外部ファイルに格納されているシーケンスの iostream の操作をサポートする複数のクラスを定義します。  
@@ -53,7 +54,7 @@ ms.lasthandoff: 10/24/2017
 |[basic_ifstream](../standard-library/basic-ifstream-class.md)|このテンプレート クラスは、**Elem** 型の要素を含む [basic_filebuf](../standard-library/basic-filebuf-class.md)\<**Elem**, **Tr**> クラスのストリーム バッファーから要素とエンコードされたオブジェクトを抽出する処理を制御するオブジェクトを記述します。Elem 型の特性は **Tr** クラスによって決められます。|  
 |[basic_ofstream](../standard-library/basic-ofstream-class.md)|このテンプレート クラスは、**Elem** 型の要素を含む [basic_filebuf](../standard-library/basic-filebuf-class.md)\<**Elem**, **Tr**> クラスのストリーム バッファーに要素とエンコードされたオブジェクトを挿入する処理を制御するオブジェクトを記述します。Elem 型の特性は **Tr** クラスによって決められます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   

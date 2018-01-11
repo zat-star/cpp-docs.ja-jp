@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 53340a543e0f89a6a1078f7d9a8b291302ac973c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c913a5b1d5c6861fc6337f5a7343506420dd5c83
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hlsl-property-pages-advanced"></a>[詳細] ([HLSL] プロパティ ページ)
 HLSL コンパイラ (fxc.exe) の次のプロパティを構成するのには、使用、**詳細**プロパティ ページ。 アクセスする方法については、**詳細**HLSL フォルダー内のプロパティ ページを参照してください[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)です。  
@@ -32,7 +33,7 @@ HLSL コンパイラ (fxc.exe) の次のプロパティを構成するのには�
  **警告をエラーとして扱う**  
  **はい (/WX)**すべてのコンパイラ警告をエラーとして処理するそれ以外の場合、**いいえ**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [[HLSL] プロパティ ページ](../ide/hlsl-property-pages.md)   
  [[HLSL] プロパティ ページ: 全般](../ide/hlsl-property-pages-general.md)   
  [[HLSL] プロパティ ページ: 出力ファイル](../ide/hlsl-property-pages-output-files.md)

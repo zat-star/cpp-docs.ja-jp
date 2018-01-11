@@ -1,41 +1,42 @@
 ---
-title: "priority_queue::get_container (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::priority_queue::get_container"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "get_container メンバー [STL/CLR]"
+title: "priority_queue::get_container (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::priority_queue::get_container
+dev_langs: C++
+helpviewer_keywords: get_container member [STL/CLR]
 ms.assetid: bd3cc63b-776f-495c-bf81-a9e8ba189a56
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 60f2a5d1fa3a5e00d7b3aeb066672464381d45a6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# priority_queue::get_container (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="priorityqueuegetcontainer-stlclr"></a>priority_queue::get_container (STL/CLR)
 基になるコンテナーにアクセスします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 container_type get_container();  
 ```  
   
-## 解説  
- このメンバー関数は、基になるコンテナーを返します。  コンテナーのラッパーによる制限をバイパスする場合に使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、基になるコンテナーを返します。 使用するコンテナー ラッパーによって指定された制限をバイパスします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_priority_queue_get_container.cpp   
@@ -59,12 +60,15 @@ int main()
   
 ```  
   
-  **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+c a b  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [priority\_queue::container\_type](../Topic/priority_queue::container_type%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [priority_queue::container_type (STL/CLR)](../dotnet/priority-queue-container-type-stl-clr.md)

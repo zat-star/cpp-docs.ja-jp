@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 55b1445675762bb715e7b879e8336b7ccf73c7eb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e81be5ef0216f7d8a28ea7d5046c127f18670a6c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="windows"></a>Windows
 この一連のトピックでは、MFC フレームワーク ウィンドウ オブジェクトについて説明します。 クラスから派生してすべての MFC windows [CWnd](../mfc/reference/cwnd-class.md)(フレーム ウィンドウ、ビュー、ダイアログ ボックス コントロールなど)。  
@@ -112,7 +113,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [MFC で作成したウィンドウのスタイルを変更します。](../mfc/changing-the-styles-of-a-window-created-by-mfc.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)   
  [ダイアログ ボックス](../mfc/dialog-boxes.md)   
  [ツールバー](../mfc/toolbars.md)   

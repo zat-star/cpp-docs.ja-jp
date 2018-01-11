@@ -1,42 +1,43 @@
 ---
-title: "omp | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc-pragma.omp"
-  - "omp_CPP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "omp プラグマ"
-  - "プラグマ, omp"
+title: "omp |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc-pragma.omp
+- omp_CPP
+dev_langs: C++
+helpviewer_keywords:
+- pragmas, omp
+- omp pragma
 ms.assetid: 652414c5-78ed-4b7f-8283-1a9fe4c5e78d
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: a1cea639835d6d9b99d43b081954742640ecc66f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# omp
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="omp"></a>omp
 省略可能なディレクティブの句と共に、1 つ以上の OpenMP ディレクティブを受け取ります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 #pragma omp directive  
 ```  
   
-## 解説  
- 詳細については、「[OpenMP Directives \(OpenMP ディレクティブ\)](../parallel/openmp/reference/openmp-directives.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[OpenMP ディレクティブ](../parallel/openmp/reference/openmp-directives.md)詳細についてはします。  
   
-## 参照  
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+## <a name="see-also"></a>参照  
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

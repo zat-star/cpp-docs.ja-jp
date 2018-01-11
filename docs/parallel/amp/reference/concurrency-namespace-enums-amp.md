@@ -1,5 +1,5 @@
 ---
-title: "Concurrency 名前空間を持つ列挙型 (AMP) |Microsoft ドキュメント"
+title: "Concurrency 名前空間の列挙型 (AMP) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,20 +9,20 @@ ms.topic: article
 f1_keywords:
 - amp/Concurrency::access_type
 - amp/Concurrency::queuing_mode
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 4c87457e-184f-4992-81ab-ca75e7d524ab
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: b9555023e01cb765ca943fcaaf785cdc2b4e2d0d
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 8979ab026d5bf6aef9d0dd8677bf2ec47a8c6142
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="concurrency-namespace-enums-amp"></a>Concurrency 名前空間を持つ列挙型 (AMP)
+# <a name="concurrency-namespace-enums-amp"></a>Concurrency 名前空間の列挙型 (AMP)
 |||  
 |-|-|  
 |[access_type 列挙型](#access_type)|[queuing_mode 列挙型](#queuing_mode)|  
@@ -54,9 +54,8 @@ enum queuing_mode;
   
 |名前|説明|  
 |----------|-----------------|  
-|`queuing_mode_immediate`|などのことを指定するキュー モード コマンド[parallel_for_each 関数 (C++ AMP)](concurrency-namespace-functions-amp.md#parallel_for_each)、呼び出し元に戻るとすぐに対応するアクセラレータ デバイスに送信されます。|  
-|`queuing_mode_automatic`|対応するコマンド キューに入れられるコマンドを指定するキュー モード、 [accelerator_view](accelerator-view-class.md)オブジェクトです。 コマンドは、デバイスに送信されるときに[accelerator_view::flush](accelerator-view-class.md#flush)が呼び出されます。|   
+|`queuing_mode_immediate`|キュー モードを指定するコマンドなど、 [parallel_for_each 関数 (C++ AMP)](concurrency-namespace-functions-amp.md#parallel_for_each)、呼び出し元に返されるとすぐに、対応するアクセラレータ デバイスに送信されます。|  
+|`queuing_mode_automatic`|キュー モードに対応するコマンド キューに入れするコマンドを指定する、 [accelerator_view](accelerator-view-class.md)オブジェクト。 コマンドは、デバイスに送信されるときに[accelerator_view::flush](accelerator-view-class.md#flush)と呼びます。|   
   
-## <a name="see-also"></a>関連項目  
- [同時実行 Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
-
+## <a name="see-also"></a>参照  
+ [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

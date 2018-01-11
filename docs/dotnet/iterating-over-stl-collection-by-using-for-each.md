@@ -1,38 +1,40 @@
 ---
-title: "for each を使用した STL コレクションの反復処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DTL コレクション, 反復処理"
+title: "For each を使用して、C++ 標準ライブラリのコレクションを反復処理する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
+helpviewer_keywords: DTL collections, iterating over
 ms.assetid: 9358ca29-b982-4a19-bbfd-bef50fe66c9a
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 1a4ce2de13380895f1f313559abeb87e4cd65db2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# for each を使用した STL コレクションの反復処理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-標準 C\+\+ ライブラリ \(STL\) のコレクションを反復処理するために `for each` キーワードを使用できます。  
+# <a name="iterating-over-c-standard-library-collection-by-using-for-each"></a>For each を使用して、C++ 標準ライブラリのコレクションを反復処理します。
+`for each`キーワードは、C++ 標準ライブラリのコレクションを反復処理するために使用できます。  
   
-## すべてのプラットフォーム  
+## <a name="all-platforms"></a>すべてのプラットフォーム  
  **解説**  
   
- STL コレクションは、*コンテナー*です。  詳細については、「[STL コンテナー](../standard-library/stl-containers.md)」を参照してください。  
+ C++ 標準ライブラリ コレクションとも呼ばれます、*コンテナー*です。 詳細については、「[C++ Standard Library Containers (C++ 標準ライブラリ コンテナ―)](../standard-library/stl-containers.md)」をご覧ください。  
   
-## 例  
+## <a name="examples"></a>使用例  
  **例**  
   
- 次のコード例は [\< map \>](../Topic/%3Cmap%3E.md)を反復処理するために `for each` を使用します。  
+ 次のコード例では`for each`を繰り返し処理する、 [\<マップ >](../standard-library/map.md)です。  
   
 ```  
 // for_each_stl.cpp  
@@ -74,9 +76,13 @@ int main() {
   
  **出力**  
   
-  **30 日の月 \= 4** **例**  
+```Output  
+Months with 30 days = 4  
+```  
   
- 次のコード例は STL コンテナーと反復変数に const 参照 \(`const&`\) を使用します。  *T*`&`として宣言できる型の各コレクションの反復変数として参照 \(`&`\) を使用できます。  
+ **例**  
+  
+ 次のコード例は、const 参照を使用して (`const&`) の C++ 標準ライブラリのコンテナーの反復変数です。 参照を使用することができます (`&`) として宣言できる型の任意のコレクションの反復変数として、 *T*`&`です。  
   
 ```  
 // for_each_stl_2.cpp  
@@ -102,23 +108,26 @@ int main() {
   
  **出力**  
   
-  **out: 60**   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
+```Output  
+retval: 60  
+```  
+  
+## <a name="windows-runtime"></a>Windows ランタイム  
  **解説**  
   
- この機能のプラットフォーム固有の解説がありません。  
+ この機能のプラットフォーム固有の解説はありません。  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
  **解説**  
   
- この機能のプラットフォーム固有の解説がありません。  
+ この機能のプラットフォーム固有の解説はありません。  
   
-### 要件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-## 参照  
- [for each、in](../dotnet/for-each-in.md)   
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [ごとに、](../dotnet/for-each-in.md)   
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

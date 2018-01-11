@@ -15,11 +15,12 @@ caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f1fb3ef836361a4d98ac8c7ab764da5e3fd43c7a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 552e482933def86bfd9812a725ddc4553f4f8ce5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctypebyname-class"></a>ctype_byname クラス
 特定のロケールの ctype ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。文字を分類したり、大文字/小文字、ネイティブ、ロケールを指定して文字セットを変換したりできます。  
@@ -48,12 +49,12 @@ protected:
 ## <a name="remarks"></a>コメント  
  その動作は名前付きのロケール `_Locname` で決まります。 各コンストラクターは、[ctype](../standard-library/ctype-class.md)\<CharType>( `_Refs`) または基底クラス `ctype<char>` の同等物でその基底オブジェクトを初期化します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

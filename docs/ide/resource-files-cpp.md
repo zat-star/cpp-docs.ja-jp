@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c674bc7711de8a7991ad6906d62a768f9360e6b8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 097ae6d1486292d7dcc62dd4191e16f57e6f0a3c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resource-files-c"></a>リソース ファイル (C++)
 リソースは、ユーザーに情報を提供するインターフェイス要素を示します。 ビットマップ、アイコン、ツールバー、およびカーソルは、すべてのリソースです。 メニューから選択 ダイアログ ボックスでデータを入力するなどの操作を実行する一部のリソースを操作できます。  
@@ -39,5 +40,5 @@ ms.lasthandoff: 10/24/2017
 |Toolbar.bmp|*Projname*\res|リソース ファイル (Visual Studio)|アプリケーションまたはツール バーまたはパレット内のコントロールを表すビットマップ ファイルです。 このビットマップは、プロジェクトのリソース ファイルに含まれます。 初期のツールバーとステータス バーがで構築された、 **CMainFrame**クラスです。|  
 |ribbon.mfcribbon ms|*Projname*\res|リソース ファイル (Visual Studio)|リボンのボタン、コントロール、および属性を定義する XML コードを含むリソース ファイル。 詳細については、「 [Ribbon Designer (MFC)](../mfc/ribbon-designer-mfc.md)」を参照してください。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ プロジェクトに対して作成されるファイルの種類](../ide/file-types-created-for-visual-cpp-projects.md)

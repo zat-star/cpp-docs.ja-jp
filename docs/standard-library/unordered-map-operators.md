@@ -9,17 +9,15 @@ ms.topic: article
 f1_keywords:
 - unordered_map/std::operator!=
 - unordered_map/std::operator==
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 9d5add0b-84bd-4a79-bd82-3f58b55145ed
-caps.latest.revision: 7
+caps.latest.revision: "7"
 manager: ghogen
-ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
 ms.openlocfilehash: 9825a0073355700edbe1906e8b2cad4535085bf4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ltunorderedmapgt-operators"></a>&lt;unordered_map&gt; 演算子
 |||||  
@@ -272,9 +270,8 @@ int main( )
   
  `um2 == um3: false`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<unordered_map>](../standard-library/unordered-map.md)
-
 
 
 

@@ -29,11 +29,12 @@ helpviewer_keywords:
 - std::shared_future [C++], wait
 - std::shared_future [C++], wait_for
 - std::shared_future [C++], wait_until
-ms.openlocfilehash: 32523bd64ccb5583e789b812d41e58ba734d80f6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c6d7946de6440ad33c844e140ca7cbcc2199a0b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sharedfuture-class"></a>shared_future クラス
 *非同期のリターン オブジェクト*を記述します。 [future](../standard-library/future-class.md) オブジェクトとは異なり、*非同期プロバイダー*を任意の数の `shared_future` オブジェクトに関連付けることができます。  
@@ -74,7 +75,7 @@ class shared_future;
 |----------|-----------------|  
 |[shared_future::operator=](#op_eq)|新しい関連付けられた非同期状態を割り当てます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<将来 >  
   
  **名前空間:** std  
@@ -198,7 +199,7 @@ future_status wait_until(
 ### <a name="remarks"></a>コメント  
  関連付けられている非同期状態は、非同期プロバイダーが戻り値を格納した場合か例外を格納した場合のみ、準備完了になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<future>](../standard-library/future.md)
 

@@ -15,11 +15,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 85c792349b20441dfb9d08f863c39566134e72f0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 1e31881fbfc7f1da21fa7bad86fc138bc39cdf7e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="requestedit"></a>requestedit
 プロパティをサポートしていることを示します、 **OnRequestEdit**通知します。  
@@ -38,20 +41,20 @@ ms.lasthandoff: 10/24/2017
 ## <a name="example"></a>例  
  例を参照して[バインド可能な](../windows/bindable.md)の使用例の**requestedit**です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|インターフェイス メソッド|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
  属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDL 属性](../windows/idl-attributes.md)   
  [メソッドの属性](../windows/method-attributes.md)   
  [データ メンバー属性](../windows/data-member-attributes.md)   

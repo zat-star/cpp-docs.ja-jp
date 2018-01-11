@@ -15,11 +15,14 @@ caps.latest.revision: "4"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7996e368abff6d82c346ff58eb19d2d53ff208d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 37633be692ab2670d2bff359927711db7cd787c1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="minelement-stlclr"></a>min_element (STL/CLR)
 指定された範囲内の最小の要素の最初の出現箇所を検索します。順序の基準は二項述語によって指定できます。  
@@ -36,10 +39,10 @@ template<class _FwdIt, class _Pr> inline
 ## <a name="remarks"></a>コメント  
  この関数の動作は、C++ 標準ライブラリ関数と同じ`min_element`です。 詳細については、次を参照してください。 [min_element](../standard-library/algorithm-functions.md#min_element)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext アルゴリズム/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

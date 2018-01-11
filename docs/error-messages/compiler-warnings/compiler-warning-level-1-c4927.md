@@ -1,34 +1,33 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4927 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4927"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4927"
+title: "コンパイラの警告 (レベル 1) C4927 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4927
+dev_langs: C++
+helpviewer_keywords: C4927
 ms.assetid: 7009e740-a2ef-4130-96ba-482e092f717a
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 04710f4dc3c7ec011a97dd84e5616f8353b05385
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4927
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-変換が正しくありません。複数のユーザー定義の変換が暗黙的に適用されています。  
+# <a name="compiler-warning-level-1-c4927"></a>コンパイラの警告 (レベル 1) C4927
+変換が正しくありません。1 つ以上のユーザー定義の変換が暗黙的に適用されています  
   
- 複数のユーザー定義変換が単一の値に暗黙的に適用されます。コンパイラで明示的な変換は見つかりませんでしたが、変換は見つかり、その変換を使用しました。  
+ コンパイラは、1 つ以上のユーザー定義の変換は、単一の値に暗黙的に適用の明示的な変換が見つかりませんでしたが、変換は、その使用が見つかりました。  
   
- 次の例では警告 C4927 が生成されます。  
+ 次の例では、C4927 が生成されます。  
   
 ```  
 // C4927.cpp  

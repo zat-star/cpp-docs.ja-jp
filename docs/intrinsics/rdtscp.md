@@ -1,36 +1,36 @@
 ---
-title: "__rdtscp | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__rdtscp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "rdtscp 組み込み"
-  - "__rdtscp 組み込み"
-  - "rdtscp 命令"
+title: "_ _rdtscp |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: __rdtscp
+dev_langs: C++
+helpviewer_keywords:
+- rdtscp intrinsic
+- __rdtscp intrinsic
+- rdtscp instruction
 ms.assetid: f17d9a9c-88bb-44e0-b69d-d516bc1c93ee
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 972c789e17b2b42e0df7229b94b4f10aaa5ff470
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# __rdtscp
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="rdtscp"></a>__rdtscp
+**Microsoft 固有の仕様**  
   
- `rdtscp` 命令を生成してメモリに `TSC_AUX[31:0`\] 書き込み64 ビットのタイム スタンプ カウンター \(`TSC)` の結果を返します。  
+ 生成されます、`rdtscp`命令を書き込みます`TSC_AUX[31:0`] に、メモリ、および 64 ビットのタイム スタンプ カウンターを返します (`TSC)`結果。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 unsigned __int64 __rdtscp(  
@@ -38,32 +38,32 @@ unsigned __int64 __rdtscp(
 );  
 ```  
   
-#### パラメーター  
- \[出力\] `Aux`  
- マシン固有の登録 `TSC_AUX[31:0]` の内容を格納する場所へのポインター。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `Aux`  
+ コンピューター固有のレジスタの内容を格納する場所へのポインター`TSC_AUX[31:0]`です。  
   
-## 戻り値  
- 64 ビット符号なし整数がティック数。  
+## <a name="return-value"></a>戻り値  
+ 64 ビット符号なし整数のティック数です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__rdtscp`|AMD NPT ファミリ 0Fh 以降のバージョン|  
+|---------------|------------------|  
+|`__rdtscp`|AMD NPT ファミリ 0 fh またはそれ以降のバージョン|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- この組み込みでは `rdtscp` 命令を生成します。  この命令に対するハードウェア サポートを確認するには`InfoType=0x80000001` の `__cpuid` 組み込みを呼び出し`CPUInfo[3] (EDX)` のビット 27 をチェックします。  このビットは命令がサポートされている場合は 0 になりは 1。  `rdtscp` 命令をサポートするハードウェアのこの組み込みを使用するコードを実行すると結果は予測できません。  
+## <a name="remarks"></a>コメント  
+ この組み込みを生成、`rdtscp`命令します。 この命令のハードウェア サポートを確認するのには、呼び出し、`__cpuid`で組み込み`InfoType=0x80000001`のビット 27 をチェックし、`CPUInfo[3] (EDX)`です。 このビットは、それ以外の場合、命令がサポートされている場合は 1 と 0 です。  かどうかはコードを実行するを使用するこの組み込みをサポートしていないハードウェア、`rdtscp`命令、結果は予測できません。  
   
 > [!CAUTION]
->  `rdtsc` とは異なり`rdtscp` はシリアル化の命令。; いずれにしてもコンパイラはこの組み込みの周囲にコードを移動できます。  
+>  異なり`rdtsc`、`rdtscp`はシリアル化する命令です。 ただし、コンパイラがこれを回避コードを移動できます組み込みです。  
   
- ハードウェアのこのジェネレーションの TSC の値の解釈は [!INCLUDE[vcprx64](../Token/vcprx64_md.md)] の以前のバージョンの場合とは異なります。  詳細についてはハードウェアの手動を参照してください。  
+ この世代のハードウェアで TSC 値の解釈が異なる以前のバージョンの[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]します。  詳細についてはハードウェアのマニュアルを参照してください。  
   
- `TSC_AUX[31:0]` の値の意味はオペレーティング システムによって異なります。  
+ 値の意味`TSC_AUX[31:0]`オペレーティング システムによって異なります。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 #include <intrin.h>   
@@ -78,11 +78,14 @@ int main()
 }  
 ```  
   
-  **3363423610155519 匹のタイマー刻み**  
-**TSC\_AUX は 0。**   
-## 終了 Microsoft 固有の仕様→  
- アドバンストのマイクロアーキテクチャのデバイセズ Inc の著作の著作権2007 年\)   All rights reserved.  アドバンストのマイクロアーキテクチャのデバイセズのアクセス許可と再生されInc  
+```Output  
+3363423610155519 ticks  
+TSC_AUX was 0  
+```  
   
-## 参照  
- [\_\_rdtsc](../intrinsics/rdtsc.md)   
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+ 高度なマイクロ デバイス, Inc. によって copyright 2007All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
+  
+## <a name="see-also"></a>参照  
+ [_ _rdtsc](../intrinsics/rdtsc.md)   
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

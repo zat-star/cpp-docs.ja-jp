@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -15,36 +14,21 @@ f1_keywords:
 - filesystem/std::experimental::filesystem::filesystem_error
 - filesystem/std::experimental::filesystem::directory_iterator
 - <filesystem>
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 5005753b-46fa-43e1-8d4e-1b38617d3cfd
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 4cb454ca6ea92ede5c4cf83c1072e22e60577811
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 7c8e09c494ee23d227321a807c8c533d16f981a8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltfilesystemgt"></a>&lt;filesystem&gt;
-パス、ファイル、およびディレクトリに関する情報の操作や取得を行うクラスおよび関数にアクセスするには、ヘッダー \<filesystem> をインクルードします。  
+パス、ファイル、およびディレクトリに関する情報の操作や取得を行うクラスおよび関数にアクセスするには、ヘッダー &lt;filesystem> をインクルードします。  
   
 ## <a name="syntax"></a>構文  
   
@@ -55,7 +39,7 @@ using namespace std::experimental::filesystem::v1;
 ```  
   
 > [!IMPORTANT]
->  Visual Studio 2017 のリリース時点で、\<experimental/filesystem> ヘッダーはまだ C++ 標準ではありませんでした。 Visual C++ 2017 は、[ISO/IEC JTC 1/SC 22/WG 21 N4100](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4100.pdf) の標準の最終ドラフトを実装しています。  
+>  Visual Studio 2017 のリリース以降、 \<filesystem > ヘッダーが、まだ C++ 標準です。 Visual C++ 2017 は、[ISO/IEC JTC 1/SC 22/WG 21 N4100](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4100.pdf) の標準の最終ドラフトを実装しています。  
   
  このヘッダーは、ホスト オペレーティング システム (Microsoft Windows と Posix) の 2 つの広範なクラスのいずれかに対してファイル システムをサポートします。  
   
@@ -73,15 +57,15 @@ using namespace std::experimental::filesystem::v1;
   
 -   クラス パスのオブジェクトは、パス名をネイティブ形式で格納しますが、この格納形式といくつかの外部形式の間の簡単な変換をサポートします。  
   
-    -   オペレーティング システムで優先されるようにエンコードされた char の null 終端シーケンス。  
+-   オペレーティング システムで優先されるようにエンコードされた char の null 終端シーケンス。  
   
-    -   UTF-8 としてエンコードされた char の null 終端シーケンス。  
+-   UTF-8 としてエンコードされた char の null 終端シーケンス。  
   
-    -   オペレーティング システムで優先されるようにエンコードされた wchar_t の null 終端シーケンス。  
+-   オペレーティング システムで優先されるようにエンコードされた wchar_t の null 終端シーケンス。  
   
-    -   UTF-16 としてエンコードされた char16_t の null 終端シーケンス。  
+-   UTF-16 としてエンコードされた char16_t の null 終端シーケンス。  
   
-    -   UTF-32 としてエンコードされた char32_t の null 終端シーケンス。  
+-   UTF-32 としてエンコードされた char32_t の null 終端シーケンス。  
   
  必要に応じて、1 つまたは複数の `codecvt` ファセットを使用することによって、これらの表現の相互変換が実施されます。 特定のロケール オブジェクトが指定されなかった場合は、これらのファセットがグローバル ロケールから取得されます。  
   
@@ -128,7 +112,7 @@ using namespace std::experimental::filesystem::v1;
   
 ## <a name="structs"></a>構造体  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[space_info 構造体](../standard-library/space-info-structure.md)|ボリュームに関する情報を保持します。|  
   
@@ -138,18 +122,17 @@ using namespace std::experimental::filesystem::v1;
 ## <a name="operators"></a>演算子  
  [\<filesystem> 演算子](../standard-library/filesystem-operators.md)  
   
-## <a name="enumerations"></a>列挙体  
+## <a name="enumerations"></a>列挙  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
-|[copy_options](../standard-library/filesystem-enumerations.md#copy_options)|[copy_file](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) と共に使用され、コピー先ファイルが既に存在する場合の動作を決定する列挙体です。|  
+|[copy_options](../standard-library/filesystem-enumerations.md#copy_options)|[copy_file](http://msdn.microsoft.com/4af7a9b0-8861-45ed-b84e-0307f0669d60) と共に使用され、コピー先ファイルが既に存在する場合の動作を決定する列挙体です。|  
 |[directory_options](../standard-library/filesystem-enumerations.md#directory_options)|ディレクトリ反復子のオプションを指定する列挙体。|  
 |[file_type](../standard-library/filesystem-enumerations.md#file_type)|ファイルの種類の列挙型。|  
 |[perms](../standard-library/filesystem-enumerations.md#perms)|アクセス許可とアクセス許可に対するオプションを伝達するために使用されるビットマスク型|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
-
 
 
 

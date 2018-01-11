@@ -1,41 +1,42 @@
 ---
-title: "priority_queue::empty (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::priority_queue::empty"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "empty メンバー [STL/CLR]"
+title: "priority_queue::empty (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::priority_queue::empty
+dev_langs: C++
+helpviewer_keywords: empty member [STL/CLR]
 ms.assetid: bb2bc4cf-395f-4c4f-b432-550b85e1865d
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7bb5d02c3a6fb473cc94ad7c365e5a8157edcfb1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# priority_queue::empty (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="priorityqueueempty-stlclr"></a>priority_queue::empty (STL/CLR)
 要素が存在しないかどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 bool empty();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスが空の場合に true を返します。  これは [priority\_queue::size](../dotnet/priority-queue-size-stl-clr.md)`() == 0`と同じです。  priority\_queue が空であるかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスが空の場合に true を返します。 等価である[priority_queue::size (STL/CLR)](../dotnet/priority-queue-size-stl-clr.md)`() == 0`です。 Priority_queue が空かどうかをテストに使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_priority_queue_empty.cpp   
@@ -68,16 +69,19 @@ int main()
   
 ```  
   
-  **b c**  
-**size\(\) \= 3**  
-**empty\(\) \= false**  
-**size\(\) \= 0**  
-**empty\(\) \= true**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+ c a b  
+size() = 3  
+empty() = False  
+size() = 0  
+empty() = True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [priority\_queue::size](../dotnet/priority-queue-size-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [priority_queue::size (STL/CLR)](../dotnet/priority-queue-size-stl-clr.md)

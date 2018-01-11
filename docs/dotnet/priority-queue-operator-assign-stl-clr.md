@@ -1,46 +1,46 @@
 ---
-title: "priority_queue::operator= (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::priority_queue::operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator= メンバー [STL/CLR]"
+title: "priority_queue::operator = (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::priority_queue::operator=
+dev_langs: C++
+helpviewer_keywords: operator= member [STL/CLR]
 ms.assetid: 796b4ad2-3e40-49e8-8462-87460d086fe4
-caps.latest.revision: 16
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e97c065f42e6be5563d11bbc22af3715c173cef4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# priority_queue::operator= (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="priorityqueueoperator-stlclr"></a>priority_queue::operator= (STL/CLR)
 被制御シーケンスを置き換えます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 priority_queue <Value, Container>% operator=(priority_queue <Value, Container>% right);  
 ```  
   
-#### パラメーター  
- \[right\]  
- コピーするコンテナーのアダプター。  
+#### <a name="parameters"></a>パラメーター  
+ 右  
+ コピーするコンテナーのアダプターです。  
   
-## 解説  
- このメンバー演算子は、オブジェクトに `right` を返します `*this`をコピーします。  これを使用して、被制御シーケンスを `right` の被制御シーケンスのコピーに置き換えることができます。  
+## <a name="remarks"></a>コメント  
+ メンバー演算子コピー`right`オブジェクトを返します`*this`です。 これを使用して、被制御シーケンスを `right` の被制御シーケンスのコピーと置き換えます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_priority_queue_operator_as.cpp   
@@ -71,13 +71,16 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+c a b  
+c a b  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [priority\_queue::assign](../dotnet/priority-queue-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [priority_queue::assign (STL/CLR)](../dotnet/priority-queue-assign-stl-clr.md)

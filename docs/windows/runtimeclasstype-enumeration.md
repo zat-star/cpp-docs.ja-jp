@@ -1,54 +1,55 @@
 ---
-title: "RuntimeClassType 列挙型 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::RuntimeClassType"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RuntimeClassType 列挙型"
+title: "RuntimeClassType 列挙型 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::RuntimeClassType
+dev_langs: C++
+helpviewer_keywords: RuntimeClassType enumeration
 ms.assetid: d380712d-672e-4ea9-b7c5-cf9fa7dbb770
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 26016e8c95807af76484504c491ca1e6e08f8f96
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# RuntimeClassType 列挙型
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-サポートされている [RuntimeClass](../windows/runtimeclass-class.md) インスタンスの種類を指定します。  
+# <a name="runtimeclasstype-enumeration"></a>RuntimeClassType 列挙型
+型を指定[RuntimeClass](../windows/runtimeclass-class.md)サポートされているインスタンス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 enum RuntimeClassType;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### 値  
+### <a name="values"></a>値  
   
 |名前|説明|  
-|--------|--------|  
-|`ClassicCom`|標準的な COM ランタイム クラス。|  
-|`Delegate`|これは、**ClassicCom** に相当します。|  
-|`InhibitFtmBase`|`__WRL_CONFIGURATION_LEGACY__` を定義するが無効な `FtmBase` サポート。|  
-|`InhibitWeakReference`|無効の弱い参照サポート。|  
-|`WinRt`|[!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] クラス。|  
+|----------|-----------------|  
+|`ClassicCom`|クラシック COM ランタイム クラスです。|  
+|`Delegate`|等価**ClassicCom**です。|  
+|`InhibitFtmBase`|無効に`FtmBase`中にサポート`__WRL_CONFIGURATION_LEGACY__`が定義されていません。|  
+|`InhibitWeakReference`|弱い参照のサポートを無効にします。|  
+|`WinRt`|Windows ランタイム クラスです。|  
 |`WinRtClassicComMix`|`WinRt` と `ClassicCom` の組み合わせです。|  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

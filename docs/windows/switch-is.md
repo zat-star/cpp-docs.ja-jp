@@ -1,32 +1,33 @@
 ---
-title: "switch_is | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.switch_is"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "switch_is attribute"
+title: "switch_is |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.switch_is
+dev_langs: C++
+helpviewer_keywords: switch_is attribute
 ms.assetid: f1fffe5d-12d2-4e0f-8803-ccb715177d2d
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: fcf2345774b6df2453dcc4be3c0022e61792b716
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# switch_is
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-discriminant クラスを選択する共用体として機能する式または識別子を指定します。  
+# <a name="switchis"></a>switch_is
+式または共用体の判別共用体のメンバーが選択した役割を果たす識別子を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,27 +35,26 @@ discriminant クラスを選択する共用体として機能する式または�
   
 ```  
   
-## 解説  
- **switch\_is** C\+\+ 属性に [switch\_is](http://msdn.microsoft.com/library/windows/desktop/aa367275) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **Switch_is** C++ 属性と同じ機能を持つ、 [switch_is](http://msdn.microsoft.com/library/windows/desktop/aa367275) MIDL 属性。  
   
-## 使用例  
- **switch\_is** の使用例については [case](../windows/case-cpp.md) の例を参照してください。  
+## <a name="example"></a>例  
+ 参照してください、[ケース](../windows/case-cpp.md)のサンプルの使用例**switch_is**です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|`typedef`|  
-|**複数回の適用**|Ｘ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
- [switch\_type](../windows/switch-type.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
+ [switch_type](../windows/switch-type.md)   

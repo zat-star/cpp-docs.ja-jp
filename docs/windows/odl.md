@@ -1,32 +1,33 @@
 ---
-title: "odl | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.odl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "odl attribute"
+title: "odl |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.odl
+dev_langs: C++
+helpviewer_keywords: odl attribute
 ms.assetid: 75dcb314-b50f-4a63-9180-507ac1bc78f3
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: fb7525fb57a336defd6d2d50dae4bc0ee988c1ae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# odl
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-オブジェクト記述言語のインターフェイスとしてインターフェイスを \(ODL\) 識別します。  MIDL コンパイラが **odl** の属性は必要ではありません ; これは古い .odl ファイルとの互換性のためにのみ認識されます。  
+# <a name="odl"></a>odl
+オブジェクト記述言語 (ODL) インターフェイスとしてインターフェイスを識別します。 MIDL コンパイラは必要ありません、 **odl**属性です。 古い .odl ファイルとの互換性のみ認識されます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,10 +35,10 @@ caps.handback.revision: 9
   
 ```  
   
-## 解説  
- **odl** C\+\+ 属性に [odl](http://msdn.microsoft.com/library/windows/desktop/aa367126) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **Odl** C++ 属性と同じ機能を持つ、 [odl](http://msdn.microsoft.com/library/windows/desktop/aa367126) MIDL 属性。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cpp_attr_ref_odl.cpp  
@@ -59,20 +60,19 @@ public:
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|`interface`|  
-|**複数回の適用**|Ｘ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Interface Attributes](../windows/interface-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [インターフェイス属性](../windows/interface-attributes.md)   

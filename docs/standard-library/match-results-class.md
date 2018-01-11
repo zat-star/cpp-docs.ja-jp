@@ -15,11 +15,12 @@ caps.latest.revision: "16"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 484f7181bafc4103ef4f3dcfa4e88475a8798ada
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f0fa4ea48a9947492ee4ce53f33450d1944d6d3d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="matchresults-class"></a>match_results クラス
 サブマッチのシーケンスを保持します。  
@@ -64,7 +65,7 @@ class match_results {
 ```  
 #### <a name="parameters"></a>パラメーター  
  `BidIt`  
- サブマッチ用の反復子の型。  
+ サブマッチの反復子の型。  
   
  `Alloc`  
  ストレージを管理するためのアロケーターの型です。  
@@ -72,7 +73,7 @@ class match_results {
 ## <a name="remarks"></a>コメント  
  このテンプレート クラスは、正規表現の検索で生成された `sub_match<BidIt>` 型の要素の変更不可能なシーケンスを制御するオブジェクトを表します。 各要素は、それに対応するキャプチャ グループと一致したサブシーケンスを指します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<regex>  
   
  **名前空間:** std  
@@ -3224,7 +3225,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<regex>](../standard-library/regex.md)
 
 

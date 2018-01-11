@@ -127,11 +127,12 @@ caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8c642d592b464b1a6844a8fa2e5f28b2b41467a1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 75779c073e50b80df717497919e0319612b1edcf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="basicstring-class"></a>basic_string クラス
 `basic_string` テンプレート クラスのオブジェクトによって制御されるシーケンスは C++ の標準文字列クラスで、通常文字列と呼ばれますが、C++ 標準ライブラリ全体で使用される C スタイルの null で終わる文字列と混同しないようにしてください。 標準 C++ 文字列は、比較と連結演算子、反復子、C++ 標準ライブラリ アルゴリズム、クラスのアロケーターによって管理されるメモリのコピーおよび割り当てなど、通常の型として文字列の使用を有効にするコンテナーです。 標準 C++ 文字列を C スタイルの null で終わる文字列に変換する場合は、[basic_string::c_str](#c_str) メンバーを使用します。  
@@ -169,7 +170,7 @@ class basic_string;
 |[const_reference](#const_reference)|読み取りと `const` 操作の実行のために、文字列に格納された `const` 要素への参照を提供する型。|  
 |[const_reverse_iterator](#const_reverse_iterator)|文字列内の任意の `const` 要素を読み取ることができるランダム アクセス反復子を提供する型。|  
 |[difference_type](#difference_type)|同じ文字列内の要素を参照する 2 反復子の違いを提供する型。|  
-|[iterator](#iterator)|文字列内の任意の要素を読み取り、または変更できるランダム アクセス反復子を提供する型。|  
+|[Iterator](#iterator)|文字列内の任意の要素を読み取り、または変更できるランダム アクセス反復子を提供する型。|  
 |[npos](#npos)|"Not found"いずれかを示す-1 または「残りの文字をすべて」に初期化された符号なし整数値検索機能に失敗するとします。|  
 |[pointer](#pointer)|文字列または文字アレイ内の文字要素へのポインターを提供する型。|  
 |[reference](#reference)|文字列に格納されている要素への参照を提供する型。|  
@@ -237,7 +238,7 @@ class basic_string;
   
  被制御シーケンスの要素を指定する参照、ポインター、および反復子は、被制御シーケンスを変更する関数の呼び出しの後、または非 **const** メンバー関数への最初の呼び出しの後、無効になることがあります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<string>  
   
  **名前空間:** std  
@@ -1008,7 +1009,7 @@ const_iterator cbegin() const;
 ### <a name="remarks"></a>コメント  
  `cbegin` の戻り値で範囲内の要素を変更することはできません。  
   
- `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と `cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と`cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.begin();
@@ -1031,7 +1032,7 @@ const_iterator cend() const;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -4240,7 +4241,7 @@ typedef std::reverse_iterator<iterator> reverse_iterator;
  `reverse_iterator` 型は文字の値を変更するために使用でき、逆の順序で文字列を反復処理するために使用されます。  
   
 ### <a name="example"></a>例  
-  `reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#rbegin) の例を参照してください。  
+  `reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#rbegin) の例をご覧ください。  
   
 ##  <a name="rfind"></a>  basic_string::rfind  
  指定された文字シーケンスに一致する部分文字列の最初の出現を文字列で後方に検索します。  
@@ -4697,7 +4698,7 @@ The character ch1 is: G.
 The character ch2 is: H.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<string>](../standard-library/string.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

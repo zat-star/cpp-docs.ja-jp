@@ -1,41 +1,42 @@
 ---
-title: "priority_queue::top_item (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::priority_queue::top_item"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "top_item メンバー [STL/CLR]"
+title: "priority_queue::top_item (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::priority_queue::top_item
+dev_langs: C++
+helpviewer_keywords: top_item member [STL/CLR]
 ms.assetid: d497403b-6b1d-4c6e-a0f4-c744cc5fad75
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 9cc5dc2656a1083b4aaa2b6cadc731a6010968e7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# priority_queue::top_item (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-優先順位の要素にアクセスします。  
+# <a name="priorityqueuetopitem-stlclr"></a>priority_queue::top_item (STL/CLR)
+最も高い優先順位の要素にアクセスします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 property value_type back_item;  
 ```  
   
-## 解説  
- プロパティ アクセス空でない必要があります。被制御シーケンスの先頭 \(優先順位の\) 要素。  これがわかっている場合に読み込むために使用します。または、優先度の高い要素を作成することはありません。  
+## <a name="remarks"></a>コメント  
+ プロパティでは、空でない必要があります、被制御シーケンスのトップ (最高優先度) 要素にアクセスします。 これを使用するには存在することがわかっている場合に、最も高い優先度要素を読み書きします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_priority_queue_top_item.cpp   
@@ -68,14 +69,17 @@ int main()
   
 ```  
   
-  **b c**  
-**top\_item \= c**  
- **X b**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+ c a b  
+top_item = c  
+ x a b  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [priority\_queue::top](../Topic/priority_queue::top%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [priority_queue::top (STL/CLR)](../dotnet/priority-queue-top-stl-clr.md)

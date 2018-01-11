@@ -20,11 +20,14 @@ caps.latest.revision: "28"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c72149aa023723f4524ac22252f6778494341f44
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 7205718a3564a3929fe2a9f8b7d8049a320ae1cd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pinptr-ccli"></a>pin_ptr (C++/CLI)
 宣言、*固定ポインター*、共通言語ランタイムでのみ使用されます。  
@@ -94,10 +97,10 @@ ms.lasthandoff: 10/24/2017
   
  固定ポインターの詳細については、次を参照してください。[する方法: ピン ポインターと配列](../windows/how-to-pin-pointers-and-arrays.md)と[する方法: 固定ポインターの宣言と値型](../windows/how-to-declare-pinning-pointers-and-value-types.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/clr**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  **例**  
   
  次の例で`pin_ptr`配列の最初の要素の位置を制限します。  

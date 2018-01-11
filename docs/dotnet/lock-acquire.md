@@ -20,11 +20,14 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f1145c0ba2f5394fd7744fe91a1b949dca256c1a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 622d308b04edc1793da792c6f371753b80c37680
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lockacquire"></a>lock::acquire
 必要に応じて、指定された時間、またはすべてではなく、forever、ロックの取得を待機しているオブジェクトのロックを取得します。  
@@ -142,11 +145,11 @@ In thread 6, Counter = 10
 All threads completed.  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\lock.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [lock のメンバー](../dotnet/lock-members.md)   
  [lock::try_acquire](../dotnet/lock-try-acquire.md)

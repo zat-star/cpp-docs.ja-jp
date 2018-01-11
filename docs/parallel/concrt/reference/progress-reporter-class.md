@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a72250bcb35b625276d0b8692ce1ec9d13a20ade
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1dcdba2e5242dcd750eea42b61575ebea921d7b6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="progressreporter-class"></a>progress_reporter クラス
 progress reporter クラスは、特定の型の進行状況の通知をレポートできます。 各 progress_reporter オブジェクトが、特定の非同期アクションまたは操作にバインドされます。  
@@ -59,7 +60,7 @@ class progress_reporter;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `progress_reporter`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** ppltasks.h  
   
  **名前空間:** concurrency  
@@ -82,5 +83,5 @@ void report(const _ProgressType& val) const;
  `val`  
  進行状況を示す通知によって報告されるペイロード。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

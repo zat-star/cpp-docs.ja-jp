@@ -163,11 +163,12 @@ caps.latest.revision: "26"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 51ccc21b89b7330eca084dbd740a36ce5e031ff8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 03ef5135130590d142e9725e1d064b932cc7ff4d
+ms.sourcegitcommit: 2aeb507a426fc7881ea59115b1d5139c0a30ba91
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="cricheditctrl-class"></a>CRichEditCtrl クラス
 リッチ エディット コントロールの機能を提供します。  
@@ -290,7 +291,7 @@ class CRichEditCtrl : public CWnd
   
  `CRichEditCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="canpaste"></a>CRichEditCtrl::CanPaste  
@@ -815,7 +816,7 @@ UINT GetOptions() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 現在のオプション フラグの値の組み合わせ。 これらの値の一覧は、次を参照してください。、 *foptions の *内のパラメーター、 [EM_SETOPTIONS](http://msdn.microsoft.com/library/windows/desktop/bb774254)メッセージ、Windows SDK で説明します。  
+ 現在のオプション フラグの値の組み合わせ。 これらの値の一覧は、次を参照してください。、 *foptions の* 内のパラメーター、 [EM_SETOPTIONS](http://msdn.microsoft.com/library/windows/desktop/bb774254)メッセージ、Windows SDK で説明します。  
   
 ##  <a name="getparaformat"></a>CRichEditCtrl::GetParaFormat  
  現在の選択の属性を段落書式指定を取得します。  
@@ -1210,7 +1211,7 @@ int LineLength(int nLine = -1) const;
  長さを取得する行で、文字の文字インデックスを指定します。 このパラメーターが-1 の場合は、現在の行 (カーソルがある行) の長さは返されて、行内テキストが選択されている任意の長さは含まれません。 ときに`LineLength`が呼び出された単一行エディット コントロールでは、このパラメーターは無視されます。  
   
 ### <a name="return-value"></a>戻り値  
- ときに`LineLength`と呼ばれますが、複数行エディット コントロールでは、戻り値は、長 (バイト単位) で指定された行の`nLine`します。 ときに`LineLength`が呼び出された単一行エディット コントロールでは、戻り値は、長 (バイト単位) がエディット コントロール内のテキスト。  
+ ときに`LineLength`が呼び出された複数行エディット コントロールでは、戻り値の長さ (で`TCHAR`) で指定された行の`nLine`します。  行の最後にキャリッジ リターン文字は含まれません。 ときに`LineLength`が呼び出された単一行エディット コントロールでは、戻り値の長さ (で`TCHAR`) エディット コントロール内のテキスト。 NLine がコントロール内の文字数よりも大きい場合、戻り値は 0 です。
   
 ### <a name="remarks"></a>コメント  
  使用して、 [LineIndex](#lineindex)内で指定した行番号の文字インデックスを取得するメンバー関数`CRichEditCtrl`オブジェクト。  
@@ -1910,7 +1911,7 @@ BOOL Undo();
 ### <a name="example"></a>例  
   例を参照して[CanUndo](#canundo)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル ワードパッド](../../visual-cpp-samples.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

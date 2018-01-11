@@ -1,33 +1,35 @@
 ---
-title: "ActivateInstance 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "client/Windows::Foundation::ActivateInstance"
-  - "client/ABI::Windows::Foundation::ActivateInstance"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActivateInstance 関数"
+title: "ActivateInstance 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- client/Windows::Foundation::ActivateInstance
+- client/ABI::Windows::Foundation::ActivateInstance
+dev_langs: C++
+helpviewer_keywords: ActivateInstance function
 ms.assetid: 8cfd1dd9-5fda-4cc2-acf8-d40e783b3875
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 051eb51a4461d1b3f9ab180507022cdfa955f0ad
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ActivateInstance 関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-レジスタは、指定された ID クラスで定義されている特定の型のインスタンスを取得し、  
+# <a name="activateinstance-function"></a>ActivateInstance 関数
+登録し、指定したクラス ID で定義されている、指定した型のインスタンスを取得します  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<  
@@ -39,23 +41,23 @@ inline HRESULT ActivateInstance(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- アクティブにする型。  
+ アクティブ化する型。  
   
  `activatableClassId`  
- パラメーター `T`を定義するクラスの ID 名。  
+ パラメーターを定義するクラスの ID の名前`T`です。  
   
  `instance`  
- この操作が完了すると、`T`のインスタンスへの参照。  
+ この操作の完了時のインスタンスへの参照を`T`です。  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は、エラーの原因を示すエラー HRESULT。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は S_OK、それ以外の場合、エラーのエラーの原因を示す hresult 値。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
- **名前空間:** Windows::Foundation  
+ **Namespace:** windows::foundation  
   
-## 参照  
- [Windows::Foundation 名前空間](../Topic/Windows::Foundation%20Namespace.md)
+## <a name="see-also"></a>参照  
+ [Windows::Foundation 名前空間](../windows/windows-foundation-namespace.md)

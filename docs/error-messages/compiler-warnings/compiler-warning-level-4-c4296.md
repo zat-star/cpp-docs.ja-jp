@@ -1,36 +1,35 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4296 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4296"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4296"
+title: "コンパイラの警告 (レベル 4) C4296 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4296
+dev_langs: C++
+helpviewer_keywords: C4296
 ms.assetid: 9d99aafe-f6bd-4ee0-b8d0-98ce5712274d
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: af07562daebe4cd6cae0499efafcc9fa3f8b30ee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4296
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'operator' : 式は常に false です。  
+# <a name="compiler-warning-level-4-c4296"></a>コンパイラの警告 (レベル 4) C4296
+'operator': 式は常に false  
   
- ゼロとの比較演算に符号なしの変数が使用されました。  
+ 符号なしの変数は、0 との比較演算で使用されました。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[Compiler Warnings That Are Off by Default](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
- 次の例では警告 C4296 が生成されます。  
+ 次の例では、C4296 が生成されます。  
   
 ```  
 // C4296.cpp  

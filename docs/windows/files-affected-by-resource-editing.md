@@ -16,11 +16,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f40d515d62d02bdbf1231dad5396f323b802f2fd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 3b3a5f8c8351d7056409b0e6182862213c51381a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="files-affected-by-resource-editing"></a>リソース編集の影響を受けるファイル
 Visual Studio 環境では、次の表に示すファイルがリソース編集セッション中に使用されます。  
@@ -33,8 +36,8 @@ Visual Studio 環境では、次の表に示すファイルがリソース編集
   
 
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  Win32  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リソース ファイル](../windows/resource-files-visual-studio.md)

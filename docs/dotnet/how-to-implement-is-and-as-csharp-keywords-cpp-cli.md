@@ -1,34 +1,34 @@
 ---
-title: "方法: is キーワードと as C# キーワードを実装する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "as C# キーワード [C++]"
-  - "is C# キーワード [C++]"
+title: "方法: 実装は、キーワードと as c# キーワード (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- as C# keyword [C++]
+- is C# keyword [C++]
 ms.assetid: bc66c0d1-696b-480d-977c-5d9d1ad1ece6
-caps.latest.revision: 15
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d73cc06a79dd20743044803dd9c53b9e67e72995
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: is キーワードと as C# キーワードを実装する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、Visual C\+\+ で `is` キーワードと `as` C\# キーワードの機能を実装する方法について説明します。  
+# <a name="how-to-implement-is-and-as-c-keywords-ccli"></a>方法: is キーワードと as C# キーワードを実装する (C++/CLI)
+このトピックの機能を実装する方法を示しています、`is`と`as`Visual C では、c# のキーワードです。  
   
- 詳細については、「[is](../Topic/is%20\(C%23%20Reference\).md)」および「[as](../Topic/as%20\(C%23%20Reference\).md)」を参照してください。  
-  
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // CS_is_as.cpp  
@@ -61,6 +61,9 @@ int main() {
 }  
 ```  
   
-  **o は文字列です。**   
-## 参照  
- [他の .NET 言語との相互運用性](../dotnet/interoperability-with-other-dotnet-languages-cpp-cli.md)
+```Output  
+o is a string  
+```  
+  
+## <a name="see-also"></a>参照  
+ [他の .NET 言語との相互運用性 (C++/CLI)](../dotnet/interoperability-with-other-dotnet-languages-cpp-cli.md)

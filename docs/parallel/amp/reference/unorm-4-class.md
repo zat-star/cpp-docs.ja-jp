@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -274,33 +273,18 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::unorm_4::wyx
 - amp_short_vectors/Concurrency::graphics::unorm_4::rb
 - amp_short_vectors/Concurrency::graphics::unorm_4::get_wzyx
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: dd216a9d-95f7-4978-8e78-6cb9c781a7e9
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 20e8a0ca1291b36ee8b2b3b3aa836eae67fe33fd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 204e33b14c48dee7ad52af65fa55c650b74de5d3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unorm4-class"></a>unorm_4 クラス
 4 個の符号なし正規数の short ベクターを表します。  
@@ -475,13 +459,13 @@ class unorm_4;
 |unorm_4::operator * =||  
 |unorm_4::operator/=||  
 |unorm_4::operator++||  
-|unorm_4::operator + = 演算子||  
-|unorm_4: =||  
+|unorm_4::operator + =||  
+|unorm_4::operator = =||  
 |unorm_4::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#unorm_4__size)||  
   
@@ -621,7 +605,7 @@ class unorm_4;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `unorm_4`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
@@ -699,7 +683,7 @@ explicit inline unorm_4(
  1 の要素を初期化する値。  
   
  `_V2`  
- 2 の要素を初期化する値。  
+ 2 要素を初期化する値。  
   
  `_V3`  
  3 の要素を初期化する値。  
@@ -716,6 +700,5 @@ explicit inline unorm_4(
 static const int size = 4;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-
