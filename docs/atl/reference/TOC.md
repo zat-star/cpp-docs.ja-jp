@@ -243,7 +243,6 @@
 ## [Windows クラスに関するマクロ](window-class-macros.md)
 ## [Windows メッセージに関するマクロ](windows-messages-macros.md)
 # [ATL グローバル変数](atl-global-variables.md)
-## [_pAtlModule](patlmodule.md)
 # [ATL ウィザードとダイアログ ボックス](atl-wizards-and-dialog-boxes.md)
 ## [アプリケーションの設定、ATL プロジェクト ウィザード](application-settings-atl-project-wizard.md)
 ## [ATL Active Server Page コンポーネント ウィザード、ASP](asp-atl-active-server-page-component-wizard.md)
