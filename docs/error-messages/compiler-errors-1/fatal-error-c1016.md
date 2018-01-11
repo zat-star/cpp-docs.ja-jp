@@ -15,11 +15,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ef8e1547b636ec6722daca3f73639d8e1db42d5f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 265c4a0bfd331c5a28279351ccd1ad3adf881878
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fatal-error-c1016"></a>致命的なエラー C1016
 \#ifdef 予想識別子 #ifndef には、識別子が必要です。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 10/24/2017
 int main() {}  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C1016b.cpp  

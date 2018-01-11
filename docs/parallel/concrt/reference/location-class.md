@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -14,35 +13,19 @@ f1_keywords:
 - CONCRT/concurrency::location::location
 - CONCRT/concurrency::location::current
 - CONCRT/concurrency::location::from_numa_node
-dev_langs:
-- C++
-helpviewer_keywords:
-- location class
+dev_langs: C++
+helpviewer_keywords: location class
 ms.assetid: c3289f51-5bf1-4dff-a18d-d0dab8e5d9c7
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: a0b64804ebfea3ad2c172c509aeffd485f4fe30a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 26a45809ce41beb36a5f69d2ab219b85e3aafcdb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="location-class"></a>location クラス
 ハードウェアの物理位置の抽象化です。  
@@ -66,8 +49,8 @@ class location;
   
 |名前|説明|  
 |----------|-----------------|  
-|[現在の](#current)|返します。、`location`呼び出し元のスレッドを実行する最も特定の場所を表すオブジェクト。|  
-|[from_numa_node](#from_numa_node)|返します。、`location`を指定した NUMA ノードを表すオブジェクト。|  
+|[現在の](#current)|返します、`location`呼び出し元のスレッドを実行する最も固有の場所を表すオブジェクト。|  
+|[from_numa_node](#from_numa_node)|返します、`location`を指定した NUMA ノードを表すオブジェクト。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -80,7 +63,7 @@ class location;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `location`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
@@ -95,18 +78,18 @@ class location;
   
 ##  <a name="current"></a>現在の 
 
- 返します。、`location`呼び出し元のスレッドを実行する最も特定の場所を表すオブジェクト。  
+ 返します、`location`呼び出し元のスレッドを実行する最も固有の場所を表すオブジェクト。  
   
 ```
 static location __cdecl current();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- ほとんどの特定の場所を表す場所、呼び出し元のスレッドが実行しています。  
+ 最も固有の場所を表す場所、呼び出し元のスレッドが実行しています。  
   
 ##  <a name="from_numa_node"></a>from_numa_node 
 
- 返します。、`location`を指定した NUMA ノードを表すオブジェクト。  
+ 返します、`location`を指定した NUMA ノードを表すオブジェクト。  
   
 ```
 static location __cdecl from_numa_node(unsigned short _NumaNodeNumber);
@@ -114,7 +97,7 @@ static location __cdecl from_numa_node(unsigned short _NumaNodeNumber);
   
 ### <a name="parameters"></a>パラメーター  
  `_NumaNodeNumber`  
- 場所を構築する NUMA ノードの数。  
+ 場所を構築するために NUMA ノードの数。  
   
 ### <a name="return-value"></a>戻り値  
  指定された NUMA ノードを表す場所、`_NumaNodeNumber`パラメーター。  
@@ -186,8 +169,7 @@ bool operator== (const location& _Rhs) const;
  `_Rhs`  
   
 ### <a name="return-value"></a>戻り値  
- `true`2 つの場所は同じですが場合、および`false`それ以外の場合。  
+ `true`2 つの場所が一致する場合と`false`それ以外の場合。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)
-

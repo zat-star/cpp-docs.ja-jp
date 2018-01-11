@@ -1,41 +1,35 @@
 ---
-title: "リンカ ツール エラー LNK1211 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK1211"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK1211"
+title: "リンカ ツール エラー LNK1211 |Microsoft ドキュメント"
+ms.date: 12/05/2017
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: LNK1211
+dev_langs: C++
+helpviewer_keywords: LNK1211
 ms.assetid: 607400eb-4180-4892-817f-eedfa628af61
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 51150fb2a57f48f04cca97e5f16fe1a28ead2c50
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカ ツール エラー LNK1211
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="linker-tools-error-lnk1211"></a>リンカ ツール エラー LNK1211
 
-プリコンパイル済みの型情報が見つかりません。'filename' はリンクしていないか、上書きされています。  
-  
- [\/Yc](../../build/reference/yc-create-precompiled-header-file.md) オプションを指定してコンパイルされたオブジェクト ファイルが、LINK コマンドで指定されていないか、または上書きされています。  
-  
- プリコンパイル済みヘッダーを使用するデバッグ ライブラリを作成する場合、\/Yc と [\/Z7](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md) を指定すると、Visual C\+\+ は CodeView デバッグ情報を含むプリコンパイル済みオブジェクト ファイルを生成します。  このエラーは、ライブラリにプリコンパイル済みオブジェクト ファイルを格納して、そのライブラリを使って実行可能イメージをビルドするときに、参照先のオブジェクト ファイルにプリコンパイル済みオブジェクト ファイルで定義した関数の中間参照がないときのみ発生します。  
-  
- この問題を回避するには、次の 2 つの方法があります。  
-  
--   [\/Yd](../../build/reference/yd-place-debug-information-in-object-file.md) コンパイラ オプションを指定して、プリコンパイル済みヘッダーから各オブジェクト モジュールに CodeView 情報を追加します。  この方法は、通常、大型のオブジェクト モジュールが生成されてアプリケーションのリンク所要時間が長くなる可能性があるため、あまり望ましくありません。  
-  
--   [\/Yl](../../build/reference/yl-inject-pch-reference-for-debug-library.md) を指定して、関数定義を含まないプリコンパイル済みヘッダー ファイルを作成するときに、任意の文字列の名前を渡します。  これにより、コンパイラに対して、プリコンパイル済みオブジェクト ファイル内でシンボルを作成し、そのシンボルへの参照を関連付けられたプリコンパイル済みヘッダー ファイルを使用している各オブジェクト ファイルで出力するように指示します。  
-  
- **\/Yc** と **\/Yl** を指定してモジュールをコンパイルすると、コンパイラでは、`__@@_PchSym_@00@...@symbol_name` のようなシンボルが作成され、オブジェクト モジュールに格納されます。省略記号 \(...\) は、コンパイラにより生成される文字列を表します。  このプリコンパイル済みヘッダーを使用してコンパイルするソース ファイルは、指定したシンボルを参照します。このため、リンカーによりオブジェクト モジュールとライブラリからのデバッグ情報が組み込まれます。  
-  
- このエラーの詳細については、サポート技術情報の「PRB: Build Errors Using Precompiled Header in Debugging Lib \(Q102697\)」を参照してください。
+> プリコンパイル済みの型情報が見つかりませんでした。'*filename*' リンクしていないか、上書き
+
+*Filename*オブジェクト ファイルを使用してコンパイル[/Yc](../../build/reference/yc-create-precompiled-header-file.md)LINK コマンドで指定されていない、または上書きされました。
+
+プリコンパイル済みヘッダーを使用するデバッグ ライブラリを作成する場合を指定して**/Yc**と[/Z7](../../build/reference/z7-zi-zi-debug-information-format.md)、Visual C デバッグ情報を含むプリコンパイル済みのオブジェクト ファイルが生成されます。 ライブラリに、プリコンパイル済みのオブジェクト ファイルを格納する場合のみにエラーが発生する、ライブラリを使用して、実行可能イメージを構築、参照されているオブジェクト ファイルにはプリコンパイル済みのオブジェクト ファイルで定義された関数のいずれかに推移的な参照はありません。
+
+このような状況を回避する 2 つの方法はあります。
+
+- 指定して、 [/yd への取り込み](../../build/reference/yd-place-debug-information-in-object-file.md)コンパイラ オプションは、プリコンパイル済みヘッダーからデバッグ情報の各オブジェクト モジュールに追加します。 一般にアプリケーションをリンクするために必要な時間を向上できるラージ オブジェクト モジュールが生成されるので、このメソッドは小さいことをお勧めします。
+
+- 指定[/Yl](../../build/reference/yl-inject-pch-reference-for-debug-library.md)し、関数定義を含まないプリコンパイル済みヘッダー ファイルを作成するときに、任意の文字列の名前を渡します。 プリコンパイル済みのオブジェクト ファイルでシンボルを作成して、プリコンパイル済みのオブジェクト ファイルに関連付けられているプリコンパイル済みヘッダー ファイルを使用している各オブジェクト ファイルでそのシンボルへの参照を出力する、コンパイラに指示します。
+
+持つモジュールをコンパイルするときに**/Yc**と**/Yl**、シンボルを作成するようなコンパイラ`__@@_PchSym_@00@...@symbol_name`ここで、省略記号 (...) コンパイラによって生成された文字列を表しに格納、モジュールのオブジェクト。 このプリコンパイル済みヘッダーを使用してコンパイルする任意のソース ファイルは、リンカーはオブジェクト モジュールなどのライブラリからのデバッグ情報に、指定した記号を指します。

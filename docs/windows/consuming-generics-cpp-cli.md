@@ -1,43 +1,37 @@
 ---
-title: "Consuming Generics (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "generics [C++], consuming from .NET languages"
+title: "ジェネリックの使用 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords: generics [C++], consuming from .NET languages
 ms.assetid: e6330ef5-e907-432e-b527-7a22f5899639
-caps.latest.revision: 14
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 7f5a767995ce0484552d96429573e0b355820207
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Consuming Generics (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-1 種類の .NET 言語で記述されたジェネリックは、他の .NET 言語で使用されることがあります。  テンプレートとは異なり、コンパイル済みアセンブリのジェネリックは、一般に残ります。  したがって、1 が異なるアセンブリとジェネリック型が定義されているアセンブリとは異なる言語でジェネリック型をインスタンス化する場合があります。  
+# <a name="consuming-generics-ccli"></a>ジェネリックの使用 (C++/CLI)
+1 つの .NET 言語で作成されたジェネリックは、他の .NET 言語で使用することがあります。 テンプレートとは異なり、コンパイルされたアセンブリ内のジェネリック残ってジェネリックです。 したがって、別のアセンブリでは、ジェネリック型が定義されているアセンブリとは異なる言語であっても、ジェネリック型をインスタンス化いずれかの可能性があります。  
   
-## 解説  
- 詳細については、次のトピックを参照してください。  
+## <a name="example"></a>例  
   
--   [ジェネリックの概要](../Topic/Introduction%20to%20Generics%20\(C%23%20Programming%20Guide\).md)  
+### <a name="description"></a>説明  
+ この例では、c# で定義されたジェネリック クラスを使用します。  
   
--   [Visual Basic におけるジェネリック型](../Topic/Generic%20Types%20in%20Visual%20Basic%20\(Visual%20Basic\).md)  
-  
-## 例  
-  
-### 説明  
- この例では、C\# で定義されたジェネリック クラスを示しています。  
-  
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // consuming_generics_from_other_NET_languages.cs  
@@ -95,12 +89,12 @@ public class CircularList<ItemType> {
 }  
 ```  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- この例では、C\# で記述されたアセンブリを使用します。  
+### <a name="description"></a>説明  
+ この例では、c# で作成されたアセンブリを使用します。  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // consuming_generics_from_other_NET_languages_2.cpp  
@@ -121,7 +115,7 @@ int main() {
 }  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 90  
@@ -134,5 +128,5 @@ int main() {
 10  
 ```  
   
-## 参照  
- [Generics](../windows/generics-cpp-component-extensions.md)
+## <a name="see-also"></a>参照  
+ [ジェネリック](../windows/generics-cpp-component-extensions.md)

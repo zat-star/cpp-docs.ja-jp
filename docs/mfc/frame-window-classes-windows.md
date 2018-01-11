@@ -15,11 +15,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 50fcd1e22847030680c6e5b7f07711ef4ebb55dc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c2668a8334192d4de199f1c42a648b74add1ca5c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="frame-window-classes-windows"></a>フレーム ウィンドウ クラス (Windows)
 フレーム ウィンドウは、アプリケーションまたはアプリケーションの一部のフレーム ウィンドウです。 通常、フレーム ウィンドウには、ビュー、ツール バー、およびステータス バーなど、他のウィンドウが含まれます。 場合、`CMDIFrameWnd`を含めることは`CMDIChildWnd`オブジェクトを直接です。  
@@ -45,6 +46,6 @@ ms.lasthandoff: 10/24/2017
  [CMenu](../mfc/reference/cmenu-class.md)  
  カプセル化、`HMENU`アプリケーションのメニュー バーとポップアップ メニューへのハンドル。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

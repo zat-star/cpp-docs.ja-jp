@@ -15,11 +15,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f70ad153a0d74df9102f2e4e4ff048603378cb55
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3c0a5962909c15d881214969c177cad234b2950a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="generated-classes-mfc-application-wizard"></a>[生成されたクラス] (MFC アプリケーション ウィザード)
 このトピックでは、基本クラスと、プロジェクトで生成されるファイルの名前が一覧表示します。 既定では、名前は、プロジェクト名に基づいてで指定した、**新しいプロジェクト ダイアログ ボックス**です。 前述のように、これらの名前のほとんどを変更できます。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 10/24/2017
  **.cpp ファイル**  
  選択したクラスに関連付けられているソース コード ファイルの名前。 テキスト ボックスがアクティブである場合は、実装ファイルの名前を変更できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [高度な機能、MFC アプリケーション ウィザード](../../mfc/reference/advanced-features-mfc-application-wizard.md)   
  [Visual C++ プロジェクトに対して作成されるファイルの種類](../../ide/file-types-created-for-visual-cpp-projects.md)
 

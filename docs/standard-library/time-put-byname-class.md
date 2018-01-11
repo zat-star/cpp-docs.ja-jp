@@ -4,27 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- xloctime/std::time_put_byname
-dev_langs:
-- C++
-helpviewer_keywords:
-- time_put_byname class
+f1_keywords: xloctime/std::time_put_byname
+dev_langs: C++
+helpviewer_keywords: time_put_byname class
 ms.assetid: e08c2348-64d2-4ace-98b1-1496e14c7b1a
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: a03cfd4b8f8b1d199cd7a3f613bed8717c1910e4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: ba50414643d430798912e6a7a25d3fe9c49c1b9a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="timeputbyname-class"></a>time_put_byname クラス
 この派生テンプレート クラスは、型 `time_put`\< CharType, OutputIterator > のロケール ファセットとして使用できるオブジェクトを表します。  
@@ -60,14 +56,13 @@ protected:
 ## <a name="remarks"></a>コメント  
  その動作は [名前付きの](../standard-library/locale-class.md#name)ロケール `_Locname` で決まります。 各コンストラクターは、[time_put](../standard-library/time-put-class.md#time_put)\<CharType, OutputIterator>( `_Refs`) を使用して、その基本オブジェクトを初期化します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 
 
 

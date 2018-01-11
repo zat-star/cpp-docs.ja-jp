@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c0049a7d71c99e4073a6e045060f92aed6a41cc6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 335d3d5cc2efef9a0a3f3e2642988dc44c3aa067
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="removecv-class"></a>remove_cv クラス
 型から非 const/volatile 型を作成します。  
@@ -65,12 +66,12 @@ int main()
 remove_cv_t<const volatile int> == int  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)   
  [remove_const クラス](../standard-library/remove-const-class.md)   
  [remove_volatile クラス](../standard-library/remove-volatile-class.md)

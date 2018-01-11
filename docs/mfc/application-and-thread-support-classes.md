@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2859687c72a674f496e039a4f4b32795cfa4604d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e443c2393d9d3a8a0f61df6adddb2c83e7672723
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="application-and-thread-support-classes"></a>アプリケーションおよびスレッド サポート クラス
 各アプリケーションには、1 つのアプリケーション オブジェクトです。このオブジェクトは、実行中のプログラムの他のオブジェクトを調整しから派生した`CWinApp`です。  
@@ -76,6 +77,6 @@ ms.lasthandoff: 10/24/2017
  [関数](../mfc/reference/crecentfilelist-class.md)  
  最近使用した (MRU) ファイルの一覧を保持します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

@@ -18,11 +18,14 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1e653c477864f4e8676da8125ce9e75df37188e6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 4c9d28d64b450d14ba1579597f0276cfe3a0cf39
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-migrate-to-clrsafe-ccli"></a>方法: /clr:safe に移行する (C++/CLI)
 Visual C は検証可能なコンポーネントを使用して生成できます**/clr:safe**、各検証不能なコード構成体のエラーを生成するコンパイラを実行します。  
@@ -79,5 +82,5 @@ Visual C は検証可能なコンポーネントを使用して生成できま�
   
 -   [_ _try](../cpp/try-except-statement.md)と`__except`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [純粋なコードと検証可能なコード (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)

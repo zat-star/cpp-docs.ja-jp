@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1469209307f5bfc3016a7232095c36f47b38855b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9d117aa06f82da1024d11af38cc4277916c6bca2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-items-to-the-control"></a>コントロールへの項目の追加
 リスト コントロールに項目を追加する ([CListCtrl](../mfc/reference/clistctrl-class.md))、いくつかのバージョンの 1 つを呼び出して、 [InsertItem](../mfc/reference/clistctrl-class.md#insertitem)際にどのような情報に応じて、メンバー関数。 1 つのバージョンは、 [LV_ITEM](http://msdn.microsoft.com/library/windows/desktop/bb774760)を準備する構造。 `LV_ITEM`構造には、多数のメンバーが含まれていますが、リスト コントロール項目の属性をより細かく制御できます。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/24/2017
   
  詳細については、次を参照してください。[リスト ビューの項目の追加とサブ](http://msdn.microsoft.com/library/windows/desktop/bb774736)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CListCtrl の使い方](../mfc/using-clistctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

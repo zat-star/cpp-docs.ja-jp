@@ -1,51 +1,51 @@
 ---
-title: "&lt;code&gt; (Visual C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "code"
-  - "<code>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "<code> C++ XML タグ"
-  - "code C++ XML タグ"
+title: "&lt;コード&gt;(Visual C) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- code
+- <code>
+dev_langs: C++
+helpviewer_keywords:
+- <code> C++ XML tag
+- code C++ XML tag
 ms.assetid: 687db3f8-d435-4a90-b781-8da503fa39bc
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 863ad36def9b32269ff4b1a0c131f46e67189a45
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# &lt;code&gt; (Visual C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\<code\> のタグは、コードとして一つ以上の行を指定できます。  
+# <a name="ltcodegt-visual-c"></a>&lt;コード&gt;(Visual C)
+\<コード > タグは、コードとして 1 つまたは複数の行を指定する方法を使用します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 <code>content</code>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `content`  
- コードとして指定するテキスト。  
+ コードとしてマークするテキストです。  
   
-## 解説  
- 使用 [\<c\>](../Topic/%3Cc%3E%20\(Visual%20C++\).md) は、コードとしてテキストの部分を示すマークを付ける必要があります。  
+## <a name="remarks"></a>コメント  
+ 使用して[ \<c >](../ide/c-visual-cpp.md)を示すテキストの一部は、コードとしてマークする必要があります。  
   
- コンパイル時に [\/doc](../build/reference/doc-process-documentation-comments-c-cpp.md) を指定してドキュメント コメントをファイルに出力します。  
+ コンパイル時に [/doc](../build/reference/doc-process-documentation-comments-c-cpp.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
-## 使用例  
- \<code\> タグの使用例については、「[\<example\>](../ide/example-visual-cpp.md)」を参照してください。  
+## <a name="example"></a>例  
+ \<code> タグの使用例については、「[\<example](../ide/example-visual-cpp.md)」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [XML に関するドキュメント](../ide/xml-documentation-visual-cpp.md)

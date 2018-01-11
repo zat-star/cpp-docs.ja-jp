@@ -1,29 +1,28 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4541 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4541"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4541"
+title: "コンパイラの警告 (レベル 1) C4541 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4541
+dev_langs: C++
+helpviewer_keywords: C4541
 ms.assetid: b57b8f3e-117d-4fc2-bba6-faec17e5fa9d
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: e0f7f0bc93724161dd8ba6ba1c31fe504d3c72fb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4541
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'identifier' が \/GR\- を使用したポリモーフィック型 'type' で使用されています; 動作結果は保証されません。  
+# <a name="compiler-warning-level-1-c4541"></a>コンパイラの警告 (レベル 1) C4541
+' identifier' はポリモーフィックな型 'type' が/GR-; での使用予期しない動作が発生する可能性があります。  
   
- ランタイムの型情報を使用可能にせずに、ランタイムの型情報を必要とする機能の使用を試みました。  [\/GR](../Topic/-GR%20\(Enable%20Run-Time%20Type%20Information\).md) オプションで再コンパイルしてください。
+ 実行時型情報を有効にすることがなく実行時型情報が必要な機能を使用しようとするとします。 使用して再コンパイル[/GR](../../build/reference/gr-enable-run-time-type-information.md)です。

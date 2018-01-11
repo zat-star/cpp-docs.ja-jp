@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ff189a255fe9e3c54ac4c15fbea43dcf8d8a2b12
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 15aeb1af7f41cf2df8be3f69657ec6870c55ab34
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="exceptions-throwing-exceptions-from-your-own-functions"></a>例外処理 : 独自関数からの例外のスロー
 MFC またはその他のライブラリ内の関数によってスローされる例外をキャッチするだけの MFC 例外処理のパラダイムを使用して行うことができます。 ライブラリ コードによってスローされる例外をキャッチするだけでなく例外条件を発生する可能性がある関数を作成している場合に、独自のコードから例外をスローできます。  
@@ -49,6 +50,6 @@ MFC またはその他のライブラリ内の関数によってスローされ�
 > [!NOTE]
 >  MFC の例外の既定の処理がへのポインターにのみ適用されます`CException`オブジェクト (のおよびオブジェクト`CException`-派生クラス)。 上記の例では、MFC の例外処理機構をバイパスします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理](../mfc/exception-handling-in-mfc.md)
 

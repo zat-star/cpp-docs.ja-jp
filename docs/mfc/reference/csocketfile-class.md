@@ -18,11 +18,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b08bff6bd803d1552861adc52ee08152025f9240
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 48ab1428d2c02e51b02977c8457d28e20597cbb7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csocketfile-class"></a>CSocketFile クラス
 Windows ソケットを使ったネットワーク間でのデータの送受信に使われる `CFile` オブジェクトです。  
@@ -66,7 +67,7 @@ class CSocketFile : public CFile
   
  `CSocketFile`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxsock.h  
   
 ##  <a name="csocketfile"></a>CSocketFile::CSocketFile  
@@ -97,7 +98,7 @@ explicit CSocketFile(
   
  使用の詳細については`CSocketFile`、記事を参照して[Windows ソケット: アーカイブ付きソケットの使用](../../mfc/windows-sockets-using-sockets-with-archives.md)と[Windows ソケット: 例のソケットを使用してアーカイブ](../../mfc/windows-sockets-example-of-sockets-using-archives.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CFile クラス](../../mfc/reference/cfile-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CAsyncSocket クラス](../../mfc/reference/casyncsocket-class.md)   

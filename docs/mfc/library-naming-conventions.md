@@ -24,11 +24,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fd3a4464a7857a3fecac040be7b9d4f1161b4a37
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 14e217b3cfd9f3618046cf1a0ca825eb2e6492f2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="library-naming-conventions"></a>ライブラリの名前付け規則
 MFC のオブジェクト コード ライブラリは、次の名前付け規則を使用します。 ライブラリの名前、フォームがあります。  
@@ -61,6 +62,6 @@ MFC のオブジェクト コード ライブラリは、次の名前付け規�
   
  詳細については、次を参照してください。 [MFC Dll の名前付け規則](../build/naming-conventions-for-mfc-dlls.md)と[Unicode バージョンの MFC ライブラリ](../mfc/unicode-in-mfc.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ライブラリのバージョン](../mfc/mfc-library-versions.md)
 

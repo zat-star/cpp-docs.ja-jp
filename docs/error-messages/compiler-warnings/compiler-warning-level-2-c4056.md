@@ -1,36 +1,35 @@
 ---
-title: "コンパイラの警告 (レベル 2) C4056 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4056"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4056"
+title: "コンパイラの警告 (レベル 2) C4056 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4056
+dev_langs: C++
+helpviewer_keywords: C4056
 ms.assetid: a3c3a9b8-ec30-452d-96cb-3694adcce789
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 78b95111e69cdb8b27e65654fbf64756786d2097
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 2) C4056
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-浮動小数点数の定数演算でオーバーフローしました。  
+# <a name="compiler-warning-level-2-c4056"></a>コンパイラの警告 (レベル 2) C4056
+浮動小数点定数演算でオーバーフローしました。  
   
- 浮動小数点定数の演算で、最大値を超える結果が生成されました。  
+ 浮動小数点定数演算では、許容される最大値を超える結果が生成されます。  
   
- この警告は、定数演算時に実行されたコンパイラの最適化が原因で発生する場合があります。  この警告を無視するには、最適化 \([\/Od](../../build/reference/od-disable-debug.md)\) を無効にします。  
+ この警告は、定数演算中に実行されるコンパイラの最適化によって可能性があります。 場合はそれが停止してからの最適化をオフにするときに安全にこの警告は無視できます ([/Od](../../build/reference/od-disable-debug.md))。  
   
- 次の例では警告 C4056 が生成されます。  
+ 次の例では、C4056 が生成されます。  
   
 ```  
 // C4056.cpp  

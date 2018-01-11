@@ -17,11 +17,12 @@ caps.latest.revision: "5"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2ff3bfba5409715f2e5022e62dd74fa94360d10b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f4bc649f35eb2e3d3ce203529bf4010a3d4f53fe
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="vmxvmread"></a>__vmx_vmread
 **Microsoft 固有の仕様**  
@@ -46,16 +47,16 @@ unsigned char __vmx_vmread(
   
 ## <a name="return-value"></a>戻り値  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |0|操作が成功しました。|  
 |1|現在 VMCS の `VM-instruction error field` で有効な拡張状態が発生したため、操作は失敗しました。|  
 |2|有効な状態がないため操作は失敗しました。|  
   
 ## <a name="remarks"></a>コメント  
- `__vmx_vmread`関数と同じ、`VMREAD`マシン語命令します。 値、`Field`パラメーターは、Intel のドキュメントに記載されているエンコードのフィールドのインデックス。 詳細については、「Intel 仮想化技術仕様の「ia-32 Intel アーキテクチャ」、ドキュメントの検索に番号 C97063 002 を文書化、 [Intel Corporation](http://go.microsoft.com/fwlink/?LinkId=127)サイト、し、そのドキュメントの「付録 C を参照してください.  
+ `__vmx_vmread`関数と同じ、`VMREAD`マシン語命令します。 値、`Field`パラメーターは、Intel のドキュメントに記載されているエンコードのフィールドのインデックス。 詳細については、「Intel 仮想化技術仕様の「ia-32 Intel アーキテクチャ」、ドキュメントの検索に番号 C97063 002 を文書化、 [Intel Corporation](http://go.microsoft.com/fwlink/p/?linkid=127)サイト、し、そのドキュメントの「付録 C を参照してください.  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -65,6 +66,6 @@ unsigned char __vmx_vmread(
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
  [__vmx_vmwrite](../intrinsics/vmx-vmwrite.md)

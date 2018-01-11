@@ -24,11 +24,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bb9b4041f9c288b40a6efb1ef7978d323bad2fb4
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload: cplusplus
+ms.openlocfilehash: 8da778dbadf312a6fef18ec8fa0b62a1c7aa6030
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn055-migrating-mfc-odbc-database-class-applications-to-mfc-dao-classes"></a>テクニカル ノート 55: MFC ODBC データベース クラス アプリケーションの MFC DAO クラスへの移行
 > [!NOTE]
@@ -114,7 +115,7 @@ ms.lasthandoff: 10/31/2017
     > [!NOTE]
     >  DAO (`CDaoRecordset`) スナップショットは、ODBC の中に読み取り専用 (`CRecordset`) スナップショットが、ドライバーと ODBC カーソル ライブラリの使用によって更新可能な可能性があります。 カーソル ライブラリを使用している場合`CRecordset`スナップショットは更新可能です。 ODBC カーソル ライブラリが、デスクトップ ドライバー パック 3.0 から Microsoft ドライバーのいずれかを使用している場合、`CRecordset`スナップショットは読み取り専用です。 別のドライバーを使用している場合は、かどうかをドライバーのドキュメントを確認します。 スナップショット (**STATIC_CURSORS**) は読み取り専用です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

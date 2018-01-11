@@ -413,11 +413,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 11ece1ca08fc7f8b02c3f32284a986abc3e8e361
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9e8424638311cd6fdbe220bfd98bb27409ee670e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdc-class"></a>CDC クラス
 デバイス コンテキスト オブジェクトのクラスを定義します。  
@@ -683,7 +684,7 @@ class CDC : public CObject
   
  `CDC`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="abortdoc"></a>CDC::AbortDoc  
@@ -2934,7 +2935,7 @@ DWORD GetGlyphOutline(
  `nFormat`  
  情報を返す関数の形式を指定します。 次の値のいずれか、または 0 を指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |**GGO_BITMAP**|グリフのビットマップを返します。 ときに、関数からが指すバッファー`lpBuffer`ダブルワード境界に 1 ビット/ピクセルのビットマップが含まれています。|  
 |**GGO_NATIVE**|デバイス単位を使用して、ラスタライザーのネイティブ形式でデータ ポイント、曲線を返します。 すべての変換がで指定されたこの値を指定すると、`lpmat2`は無視されます。|  
@@ -5436,7 +5437,7 @@ DWORD SetLayout(DWORD dwLayout);
  `dwLayout`  
  デバイス コンテキストのレイアウトおよびビットマップは、フラグを制御します。 次の値の組み合わせとなります。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |まず|呼び出しのために、リフレクションを無効に[cdc::bitblt](#bitblt)と[CDC::StretchBlt](#stretchblt)です。|  
 |LAYOUT_RTL|右から左にある既定の水平レイアウトを設定します。|  
@@ -5702,7 +5703,7 @@ int SetStretchBltMode(int nStretchMode);
  *nStretchMode*  
  ストレッチ モードを指定します。 次の値のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**BLACKONWHITE**|排除し、既存のピクセルの色の値を使用して、論理 AND 演算を実行します。 モノクロ ビットマップは、このモードは、白いピクセルを犠牲にしてピクセルを黒を保持します。|  
 |**COLORONCOLOR**|ピクセルを削除します。 このモードでは、情報を保存しようとしないでピクセルの削除されたすべての行を削除します。|  
@@ -6360,7 +6361,7 @@ BOOL WidenPath();
 ### <a name="remarks"></a>コメント  
  この関数は現在のペンが幾何学的ペンの 2 つ目のバージョンで作成された場合にのみ成功`CreatePen`メンバー関数は、ペンが最初のバージョンで作成された場合または`CreatePen`デバイス単位、1 以上で、幅をします。 デバイス コンテキストでは、閉じているパスを含める必要があります。 任意のベジエ曲線のパスでは、直線のおおよその拡張の曲線のシーケンスに変換されます。 そのためのベジエ曲線が残っていない後のパスで`WidenPath`と呼びます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CPaintDC クラス](../../mfc/reference/cpaintdc-class.md)   

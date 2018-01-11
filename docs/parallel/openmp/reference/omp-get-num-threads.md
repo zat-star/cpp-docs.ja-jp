@@ -4,44 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- omp_get_num_threads
-dev_langs:
-- C++
-helpviewer_keywords:
-- omp_get_num_threads OpenMP function
+f1_keywords: omp_get_num_threads
+dev_langs: C++
+helpviewer_keywords: omp_get_num_threads OpenMP function
 ms.assetid: e7c3cea1-44ac-435d-866e-2b7bc477e807
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a6929611c9e097714e1e8cf16c199fd29cec65a2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: c3c7a8fcb18766346b454eb2e627f674078f92fd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ompgetnumthreads"></a>omp_get_num_threads
-並列領域でスレッドの数を返します。  
+並行領域内のスレッドの数を返します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -50,7 +32,7 @@ int omp_get_num_threads( );
 ```  
   
 ## <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [3.1.2 omp_get_num_threads 関数](../../../parallel/openmp/3-1-2-omp-get-num-threads-function.md)します。  
+ 詳細については、次を参照してください。 [3.1.2 omp_get_num_threads 関数](../../../parallel/openmp/3-1-2-omp-get-num-threads-function.md)です。  
   
 ## <a name="example"></a>例  
   
@@ -90,5 +72,5 @@ int main()
 1  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

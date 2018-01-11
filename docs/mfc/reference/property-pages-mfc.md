@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a7c97a18d9e70193b68c0d9056d583d8d2cc3733
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e53260457470ef75ac706779cea323aa5b73da2a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="property-pages-mfc"></a>プロパティ ページ (MFC)
 プロパティ ページでは、表示およびダイアログ データ エクス (チェンジ DDX) に基づくデータ マッピング メカニズムをサポートすることによって編集用のカスタマイズ可能なグラフィカル インターフェイスで特定の OLE コントロール プロパティの現在の値が表示されます。  
@@ -82,7 +83,7 @@ void AFXAPI DDP_CBIndex(
 ### <a name="remarks"></a>コメント  
  この関数は、対応する前に呼び出す必要があります`DDX_CBIndex`関数呼び出しです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="ddp_cbstring"></a>DDP_CBString  
@@ -112,7 +113,7 @@ void AFXAPI DDP_CBString(
 ### <a name="remarks"></a>コメント  
  この関数は、対応する前に呼び出す必要があります`DDX_CBString`関数呼び出しです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="ddp_cbstringexact"></a>DDP_CBStringExact  
@@ -142,7 +143,7 @@ void AFXAPI DDP_CBStringExact(
 ### <a name="remarks"></a>コメント  
  この関数は、対応する前に呼び出す必要があります`DDX_CBStringExact`関数呼び出しです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="ddp_check"></a>DDP_Check  
@@ -172,7 +173,7 @@ void AFXAPI DDP_Check(
 ### <a name="remarks"></a>コメント  
  この関数は、対応する前に呼び出す必要があります`DDX_Check`関数呼び出しです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="ddp_lbindex"></a>DDP_LBIndex  
@@ -202,7 +203,7 @@ void AFXAPI DDP_LBIndex(
 ### <a name="remarks"></a>コメント  
  この関数は、対応する前に呼び出す必要があります`DDX_LBIndex`関数呼び出しです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="ddp_lbstring"></a>DDP_LBString  
@@ -232,7 +233,7 @@ void AFXAPI DDP_LBString(
 ### <a name="remarks"></a>コメント  
  この関数は、対応する前に呼び出す必要があります`DDX_LBString`関数呼び出しです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="ddp_lbstringexact"></a>DDP_LBStringExact  
@@ -262,7 +263,7 @@ void AFXAPI DDP_LBStringExact(
 ### <a name="remarks"></a>コメント  
  この関数は、対応する前に呼び出す必要があります`DDX_LBStringExact`関数呼び出しです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="ddp_postprocessing"></a>DDP_PostProcessing  
@@ -281,7 +282,7 @@ void AFXAPI DDP_PostProcessing(CDataExchange * pDX);
   
  [!code-cpp[NVC_MFCAxCtl#15](../../mfc/reference/codesnippet/cpp/property-pages-mfc_1.cpp)]  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="ddp_radio"></a>DDP_Radio  
@@ -311,7 +312,7 @@ void AFXAPI DDP_Radio(
 ### <a name="remarks"></a>コメント  
  この関数は、対応する前に呼び出す必要があります`DDX_Radio`関数呼び出しです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="ddp_text"></a>DDP_Text  
@@ -383,7 +384,7 @@ void AFXAPI DDP_Text(
 ### <a name="remarks"></a>コメント  
  この関数は、対応する前に呼び出す必要があります`DDX_Text`関数呼び出しです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="begin_proppageids"></a>BEGIN_PROPPAGEIDS  
@@ -405,7 +406,7 @@ BEGIN_PROPPAGEIDS(class_name,  count)
   
  プロパティ ページの詳細については、記事を参照してください。 [ActiveX コントロール: プロパティ ページ](../../mfc/mfc-activex-controls-property-pages.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="end_proppageids"></a>END_PROPPAGEIDS  
@@ -419,7 +420,7 @@ END_PROPPAGEIDS(class_name)
  *それ以外*  
  プロパティ ページを所有するコントロール クラスの名前。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
   
 ##  <a name="proppageid"></a>PROPPAGEID  
@@ -436,8 +437,8 @@ PROPPAGEID(clsid)
 ### <a name="remarks"></a>コメント  
  すべて`PROPPAGEID`マクロは、間に配置する必要があります、`BEGIN_PROPPAGEIDS`と`END_PROPPAGEIDS`コントロールの実装ファイル内のマクロです。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxctl.h  
     
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

@@ -1,47 +1,46 @@
 ---
-title: "リンカー ツールの警告 LNK4248 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK4248"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK4248"
+title: "リンカー ツールの警告 LNK4248 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: LNK4248
+dev_langs: C++
+helpviewer_keywords: LNK4248
 ms.assetid: e40523ff-e3cb-4ba6-ab79-23f0f339f6cf
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 01053ddbbb0c7d234f6b465392f5bbe991ea329c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカー ツールの警告 LNK4248
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-未解決の typeref トークン \('トークン'\) \('型'\) です。イメージを実行できません。  
+# <a name="linker-tools-warning-lnk4248"></a>リンカー ツールの警告 LNK4248
+'type' の未解決の typeref トークン (トークン)イメージは動作しない可能性があります。  
   
- MSIL メタデータに型の定義がありません。  
+ MSIL のメタデータに型の定義がありません。  
   
- LNK4248 は、\(**\/clr** を指定してコンパイルされた\) MSIL モジュールに型の事前宣言しかない場合に、その型が MSIL モジュールで参照され、さらにその MSIL モジュールがその型の定義を持つネイティブ モジュールにリンクされると発生することがあります。  
+ LNK4248 は、MSIL モジュール内の型の事前宣言のみがある場合に発生することができます (でコンパイルされた**/clr**)、MSIL モジュールの種類を参照し、その MSIL モジュールの定義を保持しているネイティブ モジュールとリンクしています。型。  
   
- この場合、リンカーがネイティブな型定義を MSIL メタデータに提供することにより、正しい動作が実行されることがあります。  
+ このような状況では、リンカーはメタデータでは MSIL、ネイティブ型定義を提供し、これは、正しい動作を提供します。  
   
- ただし、事前の型宣言が CLR 型の場合は、リンカーのネイティブ型定義が正しくない可能性があります。  
+ ただし、事前の型宣言が、CLR 型の場合は、し、リンカーのネイティブな型定義できません。  
   
- 詳細については、「[\/clr \(共通言語ランタイムのコンパイル\)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+ 詳細については、「[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
   
-### このエラーを解決するには  
+### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  MSIL モジュールで型定義を提供します。  
+1.  MSIL モジュールの種類の定義を提供します。  
   
-## 使用例  
- 次の例では LNK4248 エラーが生成されます。  解決するには、構造体 A を定義します。  
+## <a name="example"></a>例  
+ 次の例では、LNK4248 が生成されます。 解決するのには struct A を定義します。  
   
 ```  
 // LNK4248.cpp  
@@ -55,8 +54,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- 次のサンプルでは、型の事前定義が行われています。  
+## <a name="example"></a>例  
+ 次の例では、型の転送の定義がします。  
   
 ```  
 // LNK4248_2.cpp  
@@ -71,8 +70,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- 次の例では LNK4248 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、LNK4248 が生成されます。  
   
 ```  
 // LNK4248_3.cpp  

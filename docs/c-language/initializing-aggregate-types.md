@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a50d9624c617904144ba9173a5e7fa0ce2064508
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8656d1c9f5f08e8736ee83705ea2daf9031c2446
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="initializing-aggregate-types"></a>集約型の初期化
 "集約" 型は、構造体、共用体、または配列型です。 集約型に集約型のメンバーが含まれる場合、初期化の規則が再帰的に適用されます。  
@@ -65,7 +66,7 @@ int x[ ] = { 0, 1, 2 }
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次の例では、配列の初期化子を示しています。  
   
 ```  
@@ -159,5 +160,5 @@ union
   
  共用体変数 `y` は、この例では初期化されます。 共用体の最初の要素は配列であるため、初期化子は初期化子の集約です。 初期化子リスト `{'1'}` は配列の最初の行に値を割り当てます。 リストには 1 種類の値のみが表示されるため、最初の列の要素は、文字 `1` に初期化され、行の残りの 2 つの要素は、既定で値 0 に初期化されます。 同様に、`x` の 2 番目の行の最初の要素は、文字 `4` に初期化され、行の残りの 2 つの要素は値 0 に初期化されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [初期化](../c-language/initialization.md)

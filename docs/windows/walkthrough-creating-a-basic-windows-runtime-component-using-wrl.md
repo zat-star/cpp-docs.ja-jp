@@ -13,11 +13,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0c57e6b8ffb501ea4c6b75429bab88bbe5dc93eb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 5859f3ebfcb55427e239a0018d539e2f4df13800
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-creating-a-basic-windows-runtime-component-using-wrl"></a>チュートリアル: WRL を使用した基本的な Windows ランタイム コンポーネントの作成
 このドキュメントでは、Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用して基本的な Windows ランタイム コンポーネントを作成する方法を示します。 コンポーネントは、2 つの数値を追加し、結果が素数である場合、イベントを発生させます。 このドキュメントでは、JavaScript を使用するユニバーサル Windows プラットフォーム アプリからコンポーネントを使用する方法も示します。  
@@ -115,7 +118,7 @@ ms.lasthandoff: 10/24/2017
   
 ## <a name="next-steps"></a>次の手順  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)   
  [クラス ライブラリ プロジェクト テンプレート](../windows/wrl-class-library-project-template.md)   
  [C/C++ コード分析ツール](/visualstudio/code-quality/code-analysis-for-c-cpp-overview)

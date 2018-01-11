@@ -171,18 +171,19 @@ caps.latest.revision: "27"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b80a4b8c947064886d6afa18e9c24d62195a049a
-ms.sourcegitcommit: c9108f0c45b7a634d4e6e5c2d2ec192d50ffdbab
+ms.workload: cplusplus
+ms.openlocfilehash: 4fd51f03d9a4134ee7193d5aede410bb541cd19f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="standard-types"></a>基本データ型
 Microsoft ランタイム ライブラリには、次の基本データ型および Typedefs が用意されています。  
   
 ### <a name="fixed-width-integral-types-stdinth"></a>固定長整数型 (stdint.h)  
   
-|名前|同等の組み込み型|  
+|name|同等の組み込み型|  
 |----------|-------------------------------|  
 |int8\_t, uint8\_t|signed char、unsigned char|  
 |int16\_t, uint16\_t|short、unsigned short|  
@@ -207,7 +208,7 @@ Microsoft ランタイム ライブラリには、次の基本データ型およ
 |`_CrtMemState` 構造体|C ランタイム デバッグ ヒープの現在の状態に関する情報を提供します。|CRTDBG.H|  
 |`_CRT_REPORT_HOOK`、<br /><br /> `_CRT_REPORT_HOOKW`、<br /><br /> `_CRT_REPORT_HOOKW_M`|[_CrtDbgReport](../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) で呼び出されるコールバック関数の型定義。<br /><br /> この関数のパラメーターは、レポートの種類、出力メッセージ、およびコールバック関数の戻り値です。|CRTDBG.H|  
 |`dev_t`、`_dev_t` の短整数または符号なし整数|デバイス ハンドルを表します。|SYS\TYPES.H|  
-|`_diskfree_t` 構造体|ディスク ドライブに関する情報を格納します。 [_getdiskfree](../c-runtime-library/reference/getdiskfree.md) で使用します**。**|DOS.H および DIRECT.H|  
+|`_diskfree_t` 構造体|ディスク ドライブに関する情報を格納します。 [_getdiskfree](../c-runtime-library/reference/getdiskfree.md)**** で使用します。|DOS.H および DIRECT.H|  
 |`div_t`、`ldiv_t`、および `lldiv_t` の各構造体|それぞれ [div](../c-runtime-library/reference/div.md)、[ldiv](../c-runtime-library/reference/ldiv-lldiv.md)、および [lldiv](../c-runtime-library/reference/ldiv-lldiv.md) によって返される値を格納します。|STDLIB.H|  
 |`errno_t` 整数|`errno` のエラー コードを処理する関数の戻り値の型またはパラメーターに使用されます。|STDDEF.H、<br /><br /> CRTDEFS.H|  
 |`_exception` 構造体|[_matherr](../c-runtime-library/reference/matherr.md) のエラー情報を格納します。|MATH.H|  
@@ -262,5 +263,5 @@ Microsoft ランタイム ライブラリには、次の基本データ型およ
 |`wctype_t` 整数|各言語の文字セットの文字をすべて表すことができます。|WCHAR.H、<br /><br /> CRTDEFS.H|  
 |`wint_t` 整数|任意のワイド文字またはワイド文字のファイル終端値を格納するデータ オブジェクト型。|WCHAR.H、<br /><br /> CRTDEFS.H|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C ランタイム ライブラリ リファレンス](../c-runtime-library/c-run-time-library-reference.md)

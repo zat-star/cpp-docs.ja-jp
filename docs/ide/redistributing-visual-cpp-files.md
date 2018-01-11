@@ -19,11 +19,12 @@ caps.latest.revision: "50"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9b2e0af195270b55f80f7eaba37f273765b3cf4b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 106123557c4efab5ccddf9f1292570d36b0f8313
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="redistributing-visual-c-files"></a>Visual C++ ファイルの再配布
 アプリケーションを配置する場合は、アプリケーションをサポートするために必要なすべてのファイルも配置する必要があります。 必要なファイルに Microsoft から提供されるファイルが含まれる場合、それを再配布する権限を持っているかどうか確認します。 Visual Studio のライセンス条項を確認するは Microsoft Visual Studio ダイアログ ボックス、IDE でのライセンス条項リンクをご覧くださいまたはダウンロード、[マイクロソフト ソフトウェア ライセンス条項](http://go.microsoft.com/fwlink/p/?LinkId=831114)ファイル。 特定のエディションの Visual Studio の Microsoft ソフトウェア ライセンス条項の「頒布可能コード」セクションで参照されている"REDIST list"を表示する次を参照してください。 [Microsoft Visual Studio 2017 および Microsoft Visual Studio 2017 用頒布可能コード(が含まれていますユーティリティおよび BuildServer ファイル) の SDK](http://go.microsoft.com/fwlink/p/?LinkId=823098)、Visual Studio 2015 では、次を参照してください。 または[Microsoft Visual Studio 2015 および Microsoft Visual Studio 2015 SDK 用頒布可能コード](http://go.microsoft.com/fwlink/p/?LinkId=523763)です。 再頒布可能ファイルの詳細については、次を参照してください。[再配布する Dll の決定](../ide/determining-which-dlls-to-redistribute.md)と[配置例については](../ide/deployment-examples.md)します。  

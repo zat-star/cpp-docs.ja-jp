@@ -1,37 +1,36 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4668 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4668"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4668"
+title: "コンパイラの警告 (レベル 4) C4668 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4668
+dev_langs: C++
+helpviewer_keywords: C4668
 ms.assetid: c6585460-bc4a-4a15-9242-4cbfce53c961
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: c8cd54cbc252bf86fdc974fd0e5a87e44d5c853e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4668
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="compiler-warning-level-4-c4668"></a>コンパイラの警告 (レベル 4) C4668
 'symbol' は、'directives' を '0' に置換するプリプロセッサ マクロとして定義されていません。  
   
- プリプロセッサ ディレクティブで、定義されていないシンボルが使用されています。  このシンボルは false として評価されます。  シンボルを定義するには、[\#define ディレクティブ](../../preprocessor/hash-define-directive-c-cpp.md)または [\/D](../../build/reference/d-preprocessor-definitions.md) コンパイラ オプションを使用できます。  
+ 定義されていないシンボルはプリプロセッサ ディレクティブと共に使用されました。 シンボルは、false に評価されます。 シンボルを定義する、いずれかを使用できる、 [#define ディレクティブ](../../preprocessor/hash-define-directive-c-cpp.md)または[/D](../../build/reference/d-preprocessor-definitions.md)コンパイラ オプション。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[Compiler Warnings That Are Off by Default](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
-## 使用例  
- 次の例では警告 C4668 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4668 が生成されます。  
   
 ```  
 // C4668.cpp  

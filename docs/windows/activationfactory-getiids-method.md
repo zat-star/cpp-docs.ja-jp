@@ -1,32 +1,33 @@
 ---
-title: "ActivationFactory::GetIids メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "module/Microsoft::WRL::ActivationFactory::GetIids"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetIids メソッド"
+title: "Activationfactory::getiids メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: module/Microsoft::WRL::ActivationFactory::GetIids
+dev_langs: C++
+helpviewer_keywords: GetIids method
 ms.assetid: 0983d709-d155-4d65-aae4-5b2c8bb0fede
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: da0ab5960b84b16f8eb05679e0afdb9a85a1955d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ActivationFactory::GetIids メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-実装されたインターフェイスの ID の配列を取得します。  
+# <a name="activationfactorygetiids-method"></a>ActivationFactory::GetIids メソッド
+実装されたインターフェイス Id の配列を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 STDMETHOD(  
@@ -34,20 +35,20 @@ STDMETHOD(
 )(_Out_ ULONG *iidCount, _Deref_out_ _Deref_post_cap_(*iidCount) IID **iids);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `iidCount`  
- この操作が完了すると、`iids` の配列の interace の ID の数。  
+ この操作の完了時、interace Id の数、`iids`配列。  
   
  `iids`  
- この操作が完了すると、実装されているインターフェイスの ID の配列。  
+ この操作が完了したらの配列には、インターフェイス Id が実装されています。  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は失敗を示す HRESULT を返します。  E\_OUTOFMEMORY は有効なエラー HRESULT です。  
+## <a name="return-value"></a>戻り値  
+ 成功した場合は S_OK、そうでない場合は失敗を示す HRESULT。 E_OUTOFMEMORY は、考えられるエラーの HRESULT です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** module.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [ActivationFactory クラス](../windows/activationfactory-class.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 45a69efa4e2b78009065c218924882af92d6bd1d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5f7a2b52c8a41a3689cc668846e038505425aab4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mminsertsi64-mminsertisi64"></a>_mm_insert_si64、_mm_inserti_si64
 **Microsoft 固有の仕様**  
@@ -62,7 +63,7 @@ __m128i _mm_inserti_si64(
 ## <a name="return-value"></a>戻り値  
  128 ビット フィールドの下位 64 ビットの元の下位 64 ビットを含む`Source1`、指定されたビット フィールドの下位ビットを置き換えて`Source2`です。 戻り値の上位 64 ビットは、定義されていません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -127,6 +128,6 @@ result3 = 0xfffffffff3210fff
 **Microsoft 固有の仕様はここまで**  
  高度なマイクロ デバイス, Inc. によって copyright 2007All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_mm_extract_si64、_mm_extracti_si64](../intrinsics/mm-extract-si64-mm-extracti-si64.md)   
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

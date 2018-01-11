@@ -66,11 +66,12 @@ caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 77d1703c1cf9cf5922ee6b3ab58cddca7bbef600
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 59fc9bb5118a7bcb75a25407799e7e3c194ecde9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="interlockedexchangeadd-intrinsic-functions"></a>_InterlockedExchangeAdd の組み込み関数
 **Microsoft 固有の仕様**  
@@ -173,7 +174,7 @@ __int64 _InterlockedExchangeAdd64_HLERelease(
 ## <a name="return-value"></a>戻り値  
  戻り値は `Addend` パラメーターが指す変数の初期値です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|ヘッダー|  
 |---------------|------------------|------------|  
@@ -197,7 +198,7 @@ __int64 _InterlockedExchangeAdd64_HLERelease(
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [x86 コンパイラとの競合](../build/conflicts-with-the-x86-compiler.md)

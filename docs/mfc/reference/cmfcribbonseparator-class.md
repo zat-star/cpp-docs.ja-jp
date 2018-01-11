@@ -33,11 +33,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 839eebb51b7cfe104d5f97dc60e7efca71d1fc40
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 36f05d89388d8722fab7853dc3c1e5bcb4d9a2f1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcribbonseparator-class"></a>CMFCRibbonSeparator クラス
 リボンの区分線を実装します。  
@@ -100,7 +101,7 @@ pMainPanel->Add(new CMFCRibbonSeparator(TRUE));
   
  [CMFCRibbonSeparator](../../mfc/reference/cmfcribbonseparator-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxbaseribbonelement.h  
   
 ##  <a name="addtolistbox"></a>CMFCRibbonSeparator::AddToListBox  
@@ -225,6 +226,6 @@ virtual void OnDrawOnList(
 |[入力] `bIsSelected`|無視されます。|  
 |[入力] `bHighlighted`|無視されます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)

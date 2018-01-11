@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8833ed077000c3ba41d1400241fa9b10c2f35e63
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b4ffc4f26ed365673cdfb525c2bf3653827cc4ba
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn014-custom-controls"></a>テクニカル ノート 14: カスタム コントロール
 ここでは、カスタムおよび自己描画コントロールの MFC サポートについて説明します。 動的なサブクラス化をについて説明し、関係について説明[CWnd](../mfc/reference/cwnd-class.md)オブジェクトおよび`HWND`s。  
@@ -135,7 +136,7 @@ ms.lasthandoff: 10/24/2017
   
  参照してください、 [CTRLTEST](../visual-cpp-samples.md)を使用する場合の例をいくつかの例を`SubclassWindow`と`SubclassDlgItem`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

@@ -15,11 +15,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6b5c64a8e624d48bf07348c591d42920911d711b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c055f5489c7b85f5f974256709451426b614db47
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="application-control"></a>アプリケーションの制御
 OLE には、アプリケーションとそれらのオブジェクトを十分に制御が必要です。 OLE システム Dll は、起動アプリケーションのリリースを自動的に、その運用環境と、オブジェクトの変更を調整し、できる必要があります。 このトピック内の関数は、それらの要件を満たしています。 に加えて、OLE システム Dll によって呼び出されるは、アプリケーションもによって、これらの関数を呼び出される場合がありますする必要があります。 
@@ -56,7 +57,7 @@ BOOL AFXAPI AfxOleCanExitApp();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCAutomation#2](../../mfc/codesnippet/cpp/application-control_1.cpp)]  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー**: afxdisp.h 
 
 ##  <a name="afxolegetmessagefilter"></a>AfxOleGetMessageFilter  
@@ -77,7 +78,7 @@ COleMessageFilter* AFXAPI AfxOleGetMessageFilter();
   
  [!code-cpp[NVC_MFCAutomation#4](../../mfc/codesnippet/cpp/application-control_3.cpp)]  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー**: afxwin.h 
 
 ##  <a name="afxolegetuserctrl"></a>AfxOleGetUserCtrl  
@@ -93,7 +94,7 @@ BOOL AFXAPI AfxOleGetUserCtrl();
 ### <a name="remarks"></a>コメント  
  ユーザーが明示的に開かれるか、新しいドキュメントを作成した場合、ユーザーは、アプリケーションのコントロールです。 ユーザーはコントロールにもが OLE システム Dll によって、アプリケーションが起動していない場合: つまり、ユーザーがシステムのシェルを使用してアプリケーションを起動した場合。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー**: afxdisp.h
 
 ##  <a name="afxolesetuserctrl"></a>AfxOleSetUserCtrl  
@@ -112,7 +113,7 @@ void AFXAPI AfxOleSetUserCtrl(BOOL bUserCtrl);
   
  アプリケーションの他の操作は、アプリケーションのコントロールにユーザーを配置する必要がある場合は、この関数を呼び出します。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー**: afxdisp.h
 
 ##  <a name="afxolelockapp"></a>AfxOleLockApp  
@@ -132,7 +133,7 @@ void AFXAPI AfxOleLockApp();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCAutomation#5](../../mfc/codesnippet/cpp/application-control_4.cpp)]  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー**: afxdisp.h
 
 ##  <a name="afxoleunlockapp"></a>Afxoleunlockapp を呼び出します  
@@ -150,7 +151,7 @@ void AFXAPI AfxOleUnlockApp();
 ### <a name="example"></a>例  
  例を参照して[AfxOleLockApp](#afxolelockapp)です。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー**: afxdisp.h  
 
  ## <a name="afxolelockcontrol"></a>AfxOleLockControl
@@ -183,10 +184,10 @@ BOOL AFXAPI AfxOleLockControl( LPCTSTR lpszProgID );
 AfxOleLockControl(_T("MSCAL.Calendar"));
 ```
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** < afxwin.h >  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [AfxOleUnlockControl](#afxoleunlockcontrol)
  
@@ -244,7 +245,7 @@ BOOL AFXAPI AfxOleRegisterServerClass(
   
  シンボルは、ように入力します。  
   
-|シンボル|値|  
+|シンボル|[値]|  
 |------------|-----------|  
 |%1|クラスの ID を文字列として書式設定|  
 |%2|クラス名|  
@@ -252,7 +253,7 @@ BOOL AFXAPI AfxOleRegisterServerClass(
 |%4|Short 型の名前|  
 |%5|Long 型の名前|  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー**: afxdisp.h
 
 ##  <a name="afxoleseteditmenu"></a>AfxOleSetEditMenu  
@@ -294,10 +295,10 @@ void AFXAPI AfxOleSetEditMenu(
   
  **#include \<afxolecl.rc >**  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー**: afxole.h 
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
 
 ## <a name="afxoleunlockcontrol"></a>AfxOleUnlockControl
@@ -329,10 +330,10 @@ AfxOleUnlockControl(_T("MSCAL.Calendar"));
 
 ```
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** < afxwin.h >  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)  
  [AfxOleLockControl](#afxolelockcontrol)
 

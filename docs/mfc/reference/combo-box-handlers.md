@@ -38,11 +38,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 70c4e1f8bc553d155aa21879f986c4361f15a2ae
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c6a61b1e3570f0e4cb5fea680eb1ff427676ddce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="combo-box-handlers"></a>コンボ ボックス ハンドラー
 関数プロトタイプに対応するマップ エントリを次に示します。  
@@ -61,6 +62,6 @@ ms.lasthandoff: 10/24/2017
 |ON_CBN_SELENDOK ( \<id >、 \<memberFxn >)|afx_msg void memberFxn ();|  
 |ON_CBN_SETFOCUS ( \<id >、 \<memberFxn >)|afx_msg void memberFxn ();|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)
 

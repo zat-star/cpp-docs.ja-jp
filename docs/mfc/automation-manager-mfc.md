@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: df073aa0e831d6809b3fcd02fb651574ab47c7e7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 338b619580ef7967d871ff3f960fc467555ab72a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="automation-manager-mfc"></a>オートメーション マネージャー (MFC)
 AUTMGR32 です。Exe ファイルは、リモート オートメーション オブジェクトを提供する目的では、各コンピューターの Windows システム ディレクトリにコピーする必要があります。 Windows 95 および Windows 98 では、このディレクトリは通常 C:\WINDOWS\SYSTEM です。 Windows NT と Windows 2000 では、これは通常 C:\WINNT\SYSTEM32 です。  
@@ -33,7 +34,7 @@ AUTMGR32 です。Exe ファイルは、リモート オートメーション �
   
  オートメーション マネージャーが実行されている場合は、簡潔なステータス情報が含まれるサーバー コンピューターで小さなウィンドウが表示されます。 非表示にする場合は、Q138067、Microsoft サポート技術情報の記事を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リモート オートメーション接続マネージャー](../mfc/remote-automation-connection-manager.md)   
  [リモート オートメーションのユーザー コンポーネント](../mfc/remote-automation-user-components.md)   
  [リモート オートメーションのインストール](../mfc/remote-automation-installation.md)

@@ -1,29 +1,28 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4513 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4513"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4513"
+title: "コンパイラの警告 (レベル 4) C4513 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4513
+dev_langs: C++
+helpviewer_keywords: C4513
 ms.assetid: 6877334a-f30a-4184-9483-dac3348737a4
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: c07828569b789c6035b5ea28d47d7fd026341026
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4513
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'class' : デストラクターを生成できません。  
+# <a name="compiler-warning-level-4-c4513"></a>コンパイラの警告 (レベル 4) C4513
+'class': デストラクターを生成できませんでした  
   
- このクラスに対する既定のデストラクターを生成できません。デストラクターは作成されませんでした。  デストラクターは、派生クラスからアクセスできない基本クラスにあります。  基本クラスに private のデストラクターがある場合は、このデストラクターを public または protected にしてください。
+ コンパイラは、指定したクラスの既定のデストラクターを生成できません。デストラクターは作成されませんでした。 デストラクターは基底クラスが派生クラスにアクセスできないことです。 基本クラスには private デストラクターがある場合は、public または protected ください。

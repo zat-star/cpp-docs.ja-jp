@@ -1,32 +1,33 @@
 ---
-title: "satype | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.satype"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "satype attribute"
+title: "satype |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.satype
+dev_langs: C++
+helpviewer_keywords: satype attribute
 ms.assetid: 1716590b-6bcb-4aba-b1bc-82f7335f02c3
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 9d4e083cfd0ee1a72992d3c400c4790f5cd50396
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# satype
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**SAFEARRAY** 構造体のデータ型を指定します。  
+# <a name="satype"></a>satype
+データ型を指定します、 **SAFEARRAY**構造体。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,28 +36,28 @@ caps.handback.revision: 13
 ) ]  
 ```  
   
-#### パラメーター  
- *データ型*  
- **SAFEARRAY** データ構造体のデータ型。インターフェイス メソッドにパラメーターとして渡されます。  
+#### <a name="parameters"></a>パラメーター  
+ *data_type*  
+ データ型、 **SAFEARRAY**インターフェイス メソッドにパラメーターとして渡されるデータ構造体。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|インターフェイス パラメーター、インターフェイス メソッド|  
-|**複数回の適用**|Ｘ|  
+|**対象**|インターフェイスのパラメーター、インターフェイス メソッド|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
-## 解説  
- C\+\+ 属性 **satype** では **SAFEARRAY** のデータ型を指定します。  
+## <a name="remarks"></a>コメント  
+ **Satype** C++ 属性のデータ型を指定、 **SAFEARRAY**です。  
   
 > [!NOTE]
->  間接参照のレベルは、.cpp ファイル内でどのように宣言されているかに基づいて、生成される .idl ファイル内の **SAFEARRAY** ポインターから削除されます。  
+>  レベルの間接参照が削除される、 **SAFEARRAY** .cpp ファイルで宣言されている方法から生成された .idl ファイル内のポインター。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cpp_attr_ref_satype.cpp  
@@ -69,9 +70,8 @@ __interface A {
 };  
 ```  
   
-## 参照  
- [Compiler Attributes](../windows/compiler-attributes.md)   
- [Parameter Attributes](../windows/parameter-attributes.md)   
- [Method Attributes](../windows/method-attributes.md)   
- [id](../windows/id.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [コンパイラ属性](../windows/compiler-attributes.md)   
+ [パラメーター属性](../windows/parameter-attributes.md)   
+ [メソッドの属性](../windows/method-attributes.md)   
+ [ID](../windows/id.md)   

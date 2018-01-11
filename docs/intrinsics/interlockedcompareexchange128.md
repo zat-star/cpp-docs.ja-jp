@@ -1,36 +1,37 @@
 ---
-title: "_InterlockedCompareExchange128 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_InterlockedCompareExchange128_cpp"
-  - "_InterlockedCompareExchange128"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "cmpxchg16b 命令"
-  - "_InterlockedCompareExchange128 組み込み"
+title: "_InterlockedCompareExchange128 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _InterlockedCompareExchange128_cpp
+- _InterlockedCompareExchange128
+dev_langs: C++
+helpviewer_keywords:
+- cmpxchg16b instruction
+- _InterlockedCompareExchange128 intrinsic
 ms.assetid: f05918fc-716a-4f6d-b746-1456d6b96c56
-caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 0cbf4e29e02670b4532a4be82864cf3cf040df73
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# _InterlockedCompareExchange128
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="interlockedcompareexchange128"></a>_InterlockedCompareExchange128
+**Microsoft 固有の仕様**  
   
- かみ合うビットを比較し交換実行します。  
+ 128 ビット インタロックされた比較と exchange を実行します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 unsigned char _InterlockedCompareExchange128(  
@@ -41,46 +42,46 @@ unsigned char _InterlockedCompareExchange128(
 );  
 ```  
   
-#### パラメーター  
- \[入力、出力\] `Destination`  
- ビット フィールドと見なされる 2 個の 64 ビット整数の配列であるターゲットへのポインター。  前のデータは一般保護違反を防ぐために配置されるバイトである必要があります。  
+#### <a name="parameters"></a>パラメーター  
+ [入力、出力] `Destination`  
+ 2 つの 64 ビット整数の配列は、移行先へのポインターは、128 ビット フィールドとしてと見なされます。 変換先のデータは、一般保護違反を回避する配置を 16 バイトにする必要があります。  
   
- \[入力\] `ExchangeHigh`  
- コピー先の高い部分を交換できる 64 ビット整数。  
+ [入力] `ExchangeHigh`  
+ 変換先の上位部分と交換されることがあります、64 ビット整数。  
   
- \[入力\] `ExchangeLow`  
- コピー先の下位部分を交換できる 64 ビット整数。  
+ [入力] `ExchangeLow`  
+ 変換先の下位部分と交換されることがあります、64 ビット整数。  
   
- \[入力、出力\] `ComparandResult`  
- ターゲットと比較する 2 個の 64 ビット整数の配列へのポインター \(ビットのフィールドと見なされる\)。  出力では配置先の元の値で上書きされます。  
+ [入力、出力] `ComparandResult`  
+ (128 ビット フィールドとしてと見なされます) 2 つの 64 ビット整数の配列へのポインターを宛先と比較します。  出力では、これが、移行先の元の値で上書きされます。  
   
-## 戻り値  
- ビットの値は比較先の元の値と等しい場合は 1。  `ExchangeHigh` と `ExchangeLow` はビットのターゲットをオーバーライドします。  
+## <a name="return-value"></a>戻り値  
+ 128 ビットの比較対照値が変換先の元の値に等しい場合は 1。 `ExchangeHigh`および`ExchangeLow`128 ビットの変換先を上書きします。  
   
- 比較先の値は元の値と等しくない場合は 0。  コピー先の値は変更されず比較は値がターゲットの値で上書きされます。  
+ 比較対照値が、移行先の元の値と等しくない場合は 0 を返します。 変換先の値は変更されず、比較対照値の値が変換先の値で上書きされます。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`_InterlockedCompareExchange128`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`_InterlockedCompareExchange128`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- この組み込みでは `cmpxchg16b` 命令 \(`lock` のプレフィックス\) ロックされているビットを実行する比較し交換します。生成されます。  AMD 64 ビット ハードウェアの以前のバージョンでこの命令がサポートされません。  `cmpxchg16b` 命令のハードウェア サポートを確認するには`InfoType=0x00000001 (standard function 1)` の `__cpuid` の組み込みを呼び出します。  命令がサポートされている場合 `CPUInfo[2]`\(ECX\) のビット 13 は 1 です。  
+## <a name="remarks"></a>コメント  
+ この組み込みを生成、`cmpxchg16b`命令 (で、`lock`プレフィックス) 128 ビットのロックされている比較と exchange を実行します。 AMD 64 ビットのハードウェアの初期のバージョンは、この命令をサポートしていません。 ハードウェアのサポートを確認する、`cmpxchg16b`命令を呼び出し、`__cpuid`で組み込み`InfoType=0x00000001 (standard function 1)`です。 ビットを 13`CPUInfo[2]`命令がサポートされている場合、(ECX) は 1 です。  
   
 > [!NOTE]
->  `ComparandResult` の値は常に上書きされます。  `lock` 命令とこの組み込みでは `ComparandResult` にすばやく `Destination` の初期値をコピーします。  したがって`ComparandResult` と `Destination`予期しない動作を回避するメモリ位置を分離するためによって指し示します。  
+>  値`ComparandResult`は常に上書きされます。 後に、`lock`命令では、この組み込みはすぐの初期値をコピー`Destination`に`ComparandResult`です。 このため、`ComparandResult`と`Destination`予期しない動作を回避する別個のメモリ位置を指す必要があります。  
   
- 低水準のスレッド同期用に `_InterlockedCompareExchange128` を使用できますが必要な同期関数 \(`_InterlockedCompareExchange` の他の組み込みなど\) を使用して 128 ビットに同期する必要はありません。  メモリのビットの値へのアトミック アクセスする場合は`_InterlockedCompareExchange128` を使用します。  
+ 使用できますが`_InterlockedCompareExchange128`、低レベルのスレッドの同期には小さな同期関数を使用する場合は、128 ビット以上を同期する必要はありません (など、他の`_InterlockedCompareExchange`組み込み) 代わりにします。 使用して`_InterlockedCompareExchange128`メモリ内の 128 ビット値をアトミックにアクセスする場合。  
   
- `cmpxchg16b` 命令をサポートするハードウェアのこの組み込みを使用するコードを実行すると結果は予測できません。  
+ かどうかはコードを実行するを使用するこの組み込みをサポートしていないハードウェア、`cmpxchg16b`命令、結果は予測できません。  
   
- このルーチンは組み込みとしてのみ使用できます。  
+ このルーチンは、組み込みとしてのみ使用できます。  
   
-## 使用例  
- この例では2 個の 64 ビット整数の配列の上位ワードを上位および下位のワードの合計に置き換え下位ワードをインクリメントする場合に `_InterlockedCompareExchange128` を使用します。  BigInt.Int の配列へのアクセスはアトミックこの例ではシングル スレッドは無視されやすくするためにロックは異なります。  
+## <a name="example"></a>例  
+ この例では`_InterlockedCompareExchange128`の高値と安値の単語の合計で 2 つの 64 ビット整数の配列の上位ワードを置き換えると、下位ワードをインクリメントします。 BigInt.Int 配列へのアクセスは、アトミックですが次の例は、1 つのスレッドを使用し、わかりやすくするためのロックは無視されます。  
   
 ```  
 // cmpxchg16b.c  
@@ -124,11 +125,14 @@ int main(void)
 }  
 ```  
   
-  **BigInt.Int \[1\] \= 34BigInt.Int \[0\] \= 12**    
-## 終了 Microsoft 固有の仕様→  
- アドバンストのマイクロアーキテクチャのデバイセズ Inc の著作の著作権2007 年\)   All rights reserved.  アドバンストのマイクロアーキテクチャのデバイセズのアクセス許可と再生されInc  
+```Output  
+BigInt.Int[1] = 34, BigInt.Int[0] = 12  
+```  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)   
- [\_InterlockedCompareExchange Intrinsic Functions](../intrinsics/interlockedcompareexchange-intrinsic-functions.md)   
- [x86 コンパイラとの競合](../Topic/Conflicts%20with%20the%20x86%20Compiler.md)
+**Microsoft 固有の仕様はここまで**  
+ 高度なマイクロ デバイス, Inc. によって copyright 2007All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
+  
+## <a name="see-also"></a>参照  
+ [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
+ [_InterlockedCompareExchange の組み込み関数](../intrinsics/interlockedcompareexchange-intrinsic-functions.md)   
+ [x86 コンパイラとの競合](../build/conflicts-with-the-x86-compiler.md)

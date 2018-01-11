@@ -1,32 +1,34 @@
 ---
-title: "方法: グローバル例外ハンドラーを定義およびインストールする | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ハンドラー, global"
+title: "方法: 定義およびグローバル例外ハンドラーをインストールする |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: handlers, global
 ms.assetid: dd88a812-3bc7-4ce8-8283-4b674c246534
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f1d9b1125fc54ecbd75fc49b36498a99f5e86f28
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: グローバル例外ハンドラーを定義およびインストールする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のコード例はハンドルされない例外キャプチャされたがどのようになるかを示します。  例のフォームが押されたときに null 参照を実行する例外をスローしますボタンが含まれています。  この機能は、一般的なコード エラーを表します。  発生した例外は、Main 関数によってインストールされるアプリケーション全体の例外ハンドラーによってキャッチされます。  
+# <a name="how-to-define-and-install-a-global-exception-handler"></a>方法: グローバル例外ハンドラーを定義およびインストールする
+次のコード例に示す方法未処理の例外をキャプチャできます。 フォーム例にはには、ボタンが含まれています。、、押されたときにスローされる例外を発生させる、null 参照を実行します。 この機能は、一般的なコードの失敗を表します。 主な機能がインストールされているアプリケーション全体の例外ハンドラー結果の例外をキャッチします。  
   
- これは <xref:System.Windows.Forms.Application.ThreadException> イベントにデリゲートをバインドすることによって実現されます。  この場合、後続の例外は `App::OnUnhandled` のメソッドに送信されます。  
+ これを実現するデリゲートをバインドすることによって、<xref:System.Windows.Forms.Application.ThreadException>イベント。 この場合、後続の例外に送信されます。、`App::OnUnhandled`メソッドです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // global_exception_handler.cpp  
@@ -80,5 +82,5 @@ int main()
 }  
 ```  
   
-## 参照  
- [Exception Handling](../windows/exception-handling-cpp-component-extensions.md)
+## <a name="see-also"></a>参照  
+ [例外処理](../windows/exception-handling-cpp-component-extensions.md)

@@ -1,62 +1,63 @@
 ---
-title: "配置方法の選択 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーションの配置 [C++], メソッド"
-  - "配置 (アプリケーションを) [C++], メソッド"
-  - "DLL [C++], 再配布"
-  - "動的リンク [C++]"
-  - "ライブラリ [C++], アプリケーションの配置の問題"
-  - "マニフェスト [C++]"
-  - "再配布 (DLL を)"
-  - "side-by-side アセンブリ [C++]"
-  - "静的なリンク [C++]"
+title: "配置方法の選択 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- redistributing DLLs
+- manifests [C++]
+- DLLs [C++], redistributing
+- side-by-side assemblies [C++]
+- dynamic linking [C++]
+- application deployment [C++], methods
+- deploying applications [C++], methods
+- static linking [C++]
+- libraries [C++], application deployment issues
 ms.assetid: fd8eb956-f4a0-4ffb-b401-328c73e66986
-caps.latest.revision: 35
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 35
+caps.latest.revision: "35"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 1c444b3319c60b80bdfdc14000a41d65869d0514
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/03/2018
 ---
-# 配置方法の選択
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] アプリケーションを単体で使用できない場合、また、コピー コマンドを使用して配置できない場合は、Windows インストーラーを使用して配置することをお勧めします。  Windows インストーラーでは、インストール、修復、およびアンインストールのほか、アプリケーション ファイル、依存関係、およびレジストリ エントリの分割不可能な更新もサポートされています。  
+# <a name="choosing-a-deployment-method"></a>配置方法の選択
+Visual C アプリケーションは自己完結型で、コピー コマンドを使用して展開することができます、しない限り、展開には、Windows インストーラーを使用することをお勧めします。 Windows インストーラーでは、インストール、修復、およびアンインストールのほか、アプリケーション ファイル、依存関係、およびレジストリ エントリの分割不可能な更新もサポートされています。  
   
 > [!NOTE]
->  [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] ネイティブ アプリケーションの [ClickOnce](../Topic/ClickOnce%20Security%20and%20Deployment.md) 配置は Visual Studio でも可能ですが、追加の手順が必要になります。  詳細については、「[Visual C\+\+ アプリケーションの ClickOnce 配置](../ide/clickonce-deployment-for-visual-cpp-applications.md)」を参照してください。  
+>  [ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) Visual C のネイティブ アプリケーションの展開は Visual Studio で、追加の手順が必要です。 詳細については、「 [ClickOnce Deployment for Visual C++ Applications](../ide/clickonce-deployment-for-visual-cpp-applications.md)」を参照してください。  
   
-## Visual C\+\+ ライブラリの共有 DLL  
- Visual Studio インストーラーでは、Visual C\+\+ ライブラリが %windir%\\system32\\ ディレクトリにインストールされるため、このライブラリに依存する Visual C\+\+ アプリケーションを開発する場合、そのアプリケーションは意図したとおりに実行されます。  ただし、Visual Studio がない可能性があるコンピューターにアプリケーションを配置する場合は、ライブラリがアプリケーションと共にそのコンピューターにインストールされているかどうかを確認することをお勧めします。  
+## <a name="visual-c-libraries-are-shared-dlls"></a>Visual C++ ライブラリの共有 DLL  
+ Visual Studio インストーラーでは、Visual C++ ライブラリが %windir%\system32\ ディレクトリにインストールされるため、このライブラリに依存する Visual C++ アプリケーションを開発する場合、そのアプリケーションは意図したとおりに実行されます。 ただし、Visual Studio がない可能性があるコンピューターにアプリケーションを配置する場合は、ライブラリがアプリケーションと共にそのコンピューターにインストールされているかどうかを確認することをお勧めします。  
   
-## Visual C\+\+ ライブラリの再配布  
- ご利用の配置に、再頒布用にライセンスされた任意のバージョンの Visual C\+\+ ライブラリを再頒布できます。  配置する方法は 3 つあります。  
+## <a name="redistributing-visual-c-libraries"></a>Visual C++ ライブラリの再配布  
+ ご利用の配置に、再頒布用にライセンスされた任意のバージョンの Visual C++ ライブラリを再頒布できます。 配置する方法は 3 つあります。  
   
--   再頒布可能パッケージを使用した集中配置。Visual C\+\+ ライブラリが共有 DLL として %windir%\\system32\\ にインストールされます \(このフォルダーにインストールするには管理者権限が必要です\)。アプリケーションをターゲット コンピューターにインストールする前に、再頒布可能パッケージを実行するスクリプトまたはセットアップ プログラムを作成できます。  再頒布可能パッケージは、x86 プラットフォーム、x64 プラットフォーム、および ARM プラットフォーム \(VCRedist\_x86.exe、VCRedist\_x64.exe、または VCRedist\_arm.exe\) で使用できます。  Visual Studio では、これらのパッケージは %ProgramFiles\(x86\)%\\Microsoft Visual Studio `version`\\VC\\Redist\\`locale ID`\\ に含まれています。  [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=132793)からダウンロードすることもできます \(ダウンロード センターで、アプリケーションに対応する "[!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] 再頒布可能パッケージ *Visual Studio version and update*" を検索します。  たとえば、Visual Studio 2012 更新プログラム 4 を使用してアプリケーションをビルドした場合は、"Visual C\+\+ 再頒布可能パッケージ 2012 更新プログラム 4" を検索します\)。再頒布パッケージを使用する方法については、「[チュートリアル: Visual C\+\+ 再頒布可能パッケージを使用した Visual C\+\+ アプリケーションの配置](../Topic/Walkthrough:%20Deploying%20a%20Visual%20C++%20Application%20By%20Using%20the%20Visual%20C++%20Redistributable%20Package.md)」を参照してください。  
+-   %Windir%\system32 に共有 Dll として Visual C ライブラリをインストールする再頒布可能パッケージを使用して一元的な展開\\です。 (このフォルダーにインストールするには管理者権限が必要です)。アプリケーションをターゲット コンピューターにインストールする前に、再頒布可能パッケージを実行するスクリプトまたはセットアップ プログラムを作成できます。 再頒布可能パッケージは、x86 プラットフォーム、x64 プラットフォーム、および ARM プラットフォーム (VCRedist_x86.exe、VCRedist_x64.exe、または VCRedist_arm.exe) で使用できます。 Visual Studio には、%programfiles (x86) %\Microsoft Visual Studio でのこれらのパッケージが含まれています`version`\VC\Redist\\`locale ID`\\です。 ダウンロードすることも、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/p/?linkid=132793)です。 (検索、ダウンロード センターで、"Visual C 再頒布可能パッケージ*Visual Studio のバージョンと更新*"アプリケーションに一致します。 たとえば、Visual Studio 2012 更新プログラム 4 を使用してアプリケーションをビルドした場合は、"Visual C++ 再頒布可能パッケージ 2012 更新プログラム 4" を検索します)。再頒布可能パッケージを使用する方法については、次を参照してください。[チュートリアル: Visual c 再頒布可能パッケージを、ビジュアル C++ を使ったアプリケーションを展開](../ide/deploying-visual-cpp-application-by-using-the-vcpp-redistributable-package.md)です。  
   
--   マージ モジュールを使用した集中配置。各マージ モジュールによって特定の Visual C\+\+ ライブラリが共有 DLL として %windir%\\system32\\ にインストールされます \(このフォルダーにインストールするには管理者権限が必要です\)。マージ モジュールは、アプリケーションの .msi インストーラー ファイルの一部になります。  Visual C\+\+ の再頒布可能なマージ モジュールは、Visual Studio の \\Program Files \(x86\)\\Common Files\\Merge Modules\\ に含まれています。  詳細については、「[マージ モジュールを使用した再配布](../ide/redistributing-components-by-using-merge-modules.md)」を参照してください。  
+-   %Windir%\system32 に共有 DLL として特定の Visual C ライブラリをインストールするの各マージ モジュールを使用した集中配置\\です。 (このフォルダーにインストールするには管理者権限が必要です)。マージ モジュールは、アプリケーションの .msi インストーラー ファイルの一部になります。 Visual C 再頒布可能マージ モジュールは、Visual Studio で、\Program Files (x86) \common モジュールに含まれて\\です。 詳細については、次を参照してください。[の再配布してモジュールを使用してマージ](../ide/redistributing-components-by-using-merge-modules.md)です。  
   
--   ローカル配置。Visual Studio インストール \(通常は \\Program Files \(x86\)\\Microsoft Visual Studio `version`\\VC\\Redist\\`platform`\\`library`\\\) から特定の Visual C\+\+ DLL をコピーし、インストール先のコンピューターで、アプリケーションの実行可能ファイルと同じフォルダーにインストールします。  この配置方法を使用すると、管理者権限を持たないユーザーによるインストール、またはネットワーク共有から実行できるアプリケーションに対するインストールが可能です。  
+-   ローカル配置、Visual Studio のインストールから特定の Visual C Dll をコピーする — 通常は \Program Files (x86) \Microsoft Visual Studio で`version`\VC\Redist\\`platform`\\`library`\—andアプリケーションの実行可能ファイルと同じフォルダー内のターゲット コンピューターにインストールします。 この配置方法を使用すると、管理者権限を持たないユーザーによるインストール、またはネットワーク共有から実行できるアプリケーションに対するインストールが可能です。  
   
- 再頒布可能なマージ モジュールが使用されている配置で、管理者権限を持たないユーザーがインストールを実行すると、[!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] DLL はインストールされず、アプリケーションは実行されません。  また、ユーザー単位でのインストールを許可するマージ モジュールでビルドされたアプリケーション インストーラーでは、システムのすべてのユーザーに影響を及ぼす共有の場所にライブラリがインストールされます。  ローカル配置を使用すると、必要な [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] DLL を特定のユーザーのアプリケーションのディレクトリに、他のユーザーに影響を与えることはなくインストールできます。管理者権限も不要ですが、  これによりサービス性に問題が発生する可能性があるため、[!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] の再頒布可能 DLL のローカル配置はお勧めしません。  
+ 再頒布可能マージ モジュールを使用する、展開し、管理者権限を持たないユーザーがインストールが実行される場合、は、Visual C Dll がインストールされていないと、アプリケーションは実行されません。 また、ユーザー単位でのインストールを許可するマージ モジュールでビルドされたアプリケーション インストーラーでは、システムのすべてのユーザーに影響を及ぼす共有の場所にライブラリがインストールされます。 ローカル配置を使用して、他のユーザーに影響するか、管理者権限を必要とすることがなく、特定のユーザーのアプリケーションのディレクトリに必要な Visual C Dll をインストールすることができます。 保守性の問題を作成できるこのため、Visual C 再頒布可能 Dll のローカル配置勧めしません。  
   
- Visual C\+\+ ライブラリの配置が不適切だと、そのライブラリに依存するアプリケーションの実行時に実行時エラーが発生する可能性があります。  オペレーティング システムがアプリケーションを読み込むときの検索順序については、「[LoadLibraryEx function \(LoadLibraryEx 関数\)](http://go.microsoft.com/fwlink/?LinkId=132792)」を参照してください。  
+ Visual C++ ライブラリの配置が不適切だと、そのライブラリに依存するアプリケーションの実行時に実行時エラーが発生する可能性があります。 説明する検索順序を使用して、オペレーティング システムには、アプリケーションが読み込まれると[LoadLibraryEx](http://go.microsoft.com/fwlink/p/?linkid=132792)  
   
-## 動的リンクを静的リンクに優先させる  
- [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] ライブラリを再配布する場合、静的リンクは使用しないことをお勧めします。  アプリケーションのパフォーマンスが静的リンクによって大きく向上することはほぼありませんが、サービスのコストは、ほとんどの場合、高くなります。  たとえば、セキュリティの強化によって更新されるライブラリに静的にリンクしているアプリケーションについて考えます。このアプリケーションは、再コンパイルして再配置しなければ、セキュリティ強化のメリットを得ることはできません。  代わりに、アプリケーションをライブラリに動的にリンクさせて、配置される場所でライブラリを更新できるようにすることをお勧めします。  
+## <a name="dynamic-linking-is-better-than-static-linking"></a>動的リンクを静的リンクに優先させる  
+ Visual C ライブラリを再配布する場合、静的リンクは避けることをお勧めします。 アプリケーションのパフォーマンスが静的リンクによって大きく向上することはほぼありませんが、サービスのコストは、ほとんどの場合、高くなります。 たとえば、セキュリティの強化によって更新されるライブラリに静的にリンクしているアプリケーションについて考えます。このアプリケーションは、再コンパイルして再配置しなければ、セキュリティ強化のメリットを得ることはできません。 代わりに、アプリケーションをライブラリに動的にリンクさせて、配置される場所でライブラリを更新できるようにすることをお勧めします。  
   
-## 参照  
- [デスクトップ アプリケーションの配置](../Topic/Deploying%20Native%20Desktop%20Applications%20\(Visual%20C++\).md)   
- [Not in Build: Choosing a Deployment Strategy](http://msdn.microsoft.com/ja-jp/ecd632d8-063c-4028-b785-81bba045107b)   
- [Windows Installer Deployment Overview](http://msdn.microsoft.com/ja-jp/3ce4610a-b54f-404e-b650-42f4a55dfc3b)   
- [ClickOnce のセキュリティと配置](../Topic/ClickOnce%20Security%20and%20Deployment.md)   
+## <a name="see-also"></a>参照  
+ [デスクトップ アプリケーションの配置](../ide/deploying-native-desktop-applications-visual-cpp.md)   
+ [ビルド内にありません: 配置ストラテジの選択](http://msdn.microsoft.com/en-us/ecd632d8-063c-4028-b785-81bba045107b)   
+ [Windows インストーラーの展開の概要](http://msdn.microsoft.com/en-us/3ce4610a-b54f-404e-b650-42f4a55dfc3b)   
+ [ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)   
  [配置例](../ide/deployment-examples.md)

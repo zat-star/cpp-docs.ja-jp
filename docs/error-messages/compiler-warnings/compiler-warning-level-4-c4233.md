@@ -1,37 +1,35 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4233 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4233"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4233"
+title: "コンパイラの警告 (レベル 4) C4233 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 10/25/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4233
+dev_langs: C++
+helpviewer_keywords: C4233
 ms.assetid: 9aa51fc6-8ef3-43b5-bafb-c9333cf60de3
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: ad27d2ec3d59df147d8bfc26372a2d25397e651f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4233
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="compiler-warning-level-4-c4233"></a>コンパイラの警告 (レベル 4) C4233
 
-非標準の拡張機能が使用されています : 'keyword' キーワードは C ではなく、C\+\+ でのみサポートされます。  
-  
- コードは C\+\+ ではなく C としてコンパイルされています。さらに、コードで C\+\+ でだけ有効なキーワードを使用しています。  ソース ファイルの拡張子が .c の場合や、コマンド ラインのオプションで [\/Tc](../../build/reference/tc-tp-tc-tp-specify-source-file-type.md) を使用した場合は、C としてコンパイルされます。  
-  
- この警告は、自動的にエラーになります。  この動作を変更する場合は、[warning](../../preprocessor/warning.md) を使用します。  たとえば、C4233 でレベル 4 の警告を発行させるには、  
-  
-```  
-#pragma warning(2:4233)  
-```  
-  
- をソース コード ファイルに追加します。
+> 使用される標準の拡張機能: '*キーワード*' キーワードは C++ では、C ではなくのみサポートされます
+
+コンパイラは C++ ではなく、C として、ソース コードをコンパイルし、キーワードは C++ でのみ有効です。 ソース ファイルの拡張子が .c またはを使用する場合、コンパイラが C として、ソース ファイルをコンパイル[/Tc](../../build/reference/tc-tp-tc-tp-specify-source-file-type.md)です。
+
+この警告は、自動的にエラーになります。 この動作を変更する場合は、使用[#pragma 警告](../../preprocessor/warning.md)です。 たとえば、C4233 に、レベル 4 の警告を発行するために、この行をソース コード ファイルに追加します。
+
+```cpp
+#pragma warning(4:4233)
+```

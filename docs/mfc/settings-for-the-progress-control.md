@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e6a00dcf03fed03d46fef8fb2f17f9e182e2d75d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1ad62f3a60c8fe4fcd7efdde7f69f5c5e9450d14
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="settings-for-the-progress-control"></a>プログレス コントロールの設定
 プログレス コントロールの基本設定 ([CProgressCtrl](../mfc/reference/cprogressctrl-class.md)) は、範囲と現在の位置。 範囲は、操作の全体の時間を表します。 現在の位置では、アプリケーションが加えた操作の完了に向けた進行状況を表します。 範囲または位置への変更が発生する進行状況コントロール自体を再描画をします。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/24/2017
   
  プログレス コントロールの現在の位置をステップを使用して[StepIt](../mfc/reference/cprogressctrl-class.md#stepit)です。 各手順の量を設定するには、使用[SetStep](../mfc/reference/cprogressctrl-class.md#setstep)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CProgressCtrl の使い方](../mfc/using-cprogressctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

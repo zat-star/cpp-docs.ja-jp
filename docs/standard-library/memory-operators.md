@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 95563f5eeb70d33e3ebba4de0aead276a2230669
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 957be55cd6f38f6ff1ea271b09dcdaa1a241c945
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltmemorygt-operators"></a>&lt;memory&gt; 演算子
 ||||  
@@ -240,7 +241,7 @@ sp0 == sp0 == true
 sp0 == sp1 == false  
 ```  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  1 つ目のオブジェクトが 2 つ目のオブジェクト以上であるかをテストします。  
   
 ```  
@@ -299,7 +300,7 @@ bool operator<(
  `Ty2`  
  右辺のポインターによって制御される型。  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  1 番目のオブジェクトが 2 番目のオブジェクト以下であるかどうかをテストします。  
   
 ```  
@@ -358,7 +359,7 @@ bool operator>(
  `Ty2`  
  右辺の共有ポインターによって制御される型。  
   
-##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
+##  <a name="op_lt_lt"></a>  演算子&lt;&lt;  
 共有ポインターをストリームに書き込みます。  
   
 ```  
@@ -409,6 +410,6 @@ int main()
 sp0 == 3f3040 (varies)  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<memory>](../standard-library/memory.md)
 

@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3fd0e0f0eeee0d0346a66b1a85ffdedad557d199
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bce83944ccfd1624bc15a6a42485782bea21fdc2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-cricheditctrl"></a>CRichEditCtrl の使い方
 リッチ エディット コントロールは、ユーザーを入力し、テキストを編集するウィンドウです。 テキストは、文字と段落の書式に割り当てることができるし、埋め込み OLE オブジェクトを含めることができます。 リッチ エディット コントロールは、MFC では、 [CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)クラスです。  
@@ -52,6 +53,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [リッチ エディット コントロールからの通知メッセージ](../mfc/notifications-from-a-rich-edit-control.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コントロール](../mfc/controls-mfc.md)
 

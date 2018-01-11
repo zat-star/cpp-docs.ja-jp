@@ -1,36 +1,35 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4733 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4733"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4733"
+title: "コンパイラの警告 (レベル 1) C4733 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4733
+dev_langs: C++
+helpviewer_keywords: C4733
 ms.assetid: 7ef4f577-772d-4b66-a7bf-8958a6b250bc
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 480092a003c90164157f29d2445029a31387a225
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4733
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-インライン asm は 'FS:0' に割り当てています : ハンドラーは安全なハンドラーとして登録されていません。  
+# <a name="compiler-warning-level-1-c4733"></a>コンパイラの警告 (レベル 1) C4733
+インライン asm は 'FS:0' に割り当てる: ハンドラーは安全なハンドラーとして登録されていません  
   
- 新規例外ハンドラーを追加するために FS:0 の値を変更する関数は、安全な例外では動作しないことがあります。このハンドラーを有効な例外ハンドラーとして登録できないためです。「[\/SAFESEH](../Topic/-SAFESEH%20\(Image%20has%20Safe%20Exception%20Handlers\).md)」を参照してください。  
+ 安全な例外では、ハンドラーが有効な例外ハンドラーとして登録されていないため、新しい例外ハンドラーを追加する FS:0 で値を変更する関数は機能しません (を参照してください[/SAFESEH](../../build/reference/safeseh-image-has-safe-exception-handlers.md))。  
   
- この警告を解決するには、FS:0 定義を削除するか、この警告をオフにし、[.SAFESEH](../Topic/.SAFESEH.md) を使用して安全な例外ハンドラーを指定します。  
+ この警告を解決するのには、fs:0、または警告これをオフにして使用[です。SAFESEH](../../assembler/masm/dot-safeseh.md)を安全な例外ハンドラーを指定します。  
   
- 次の例では警告 C4733 が生成されます。  
+ 次の例では、C4733 が生成されます。  
   
 ```  
 // C4733.cpp  

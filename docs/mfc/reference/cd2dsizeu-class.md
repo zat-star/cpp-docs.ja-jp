@@ -21,11 +21,12 @@ caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d6cf0870b993580295edfd050ae0ea25a2640174
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8bb2f18426394c63dc6ce45870d394ed536d6031
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2dsizeu-class"></a>CD2DSizeU クラス
 D2D1_SIZE_U のラッパーです。  
@@ -61,7 +62,7 @@ class CD2DSizeU : public D2D1_SIZE_U;
   
  [CD2DSizeU](../../mfc/reference/cd2dsizeu-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="cd2dsizeu"></a>CD2DSizeU::CD2DSizeU  
@@ -108,5 +109,5 @@ operator CSize();
 ### <a name="return-value"></a>戻り値  
  D2D サイズの現在の値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

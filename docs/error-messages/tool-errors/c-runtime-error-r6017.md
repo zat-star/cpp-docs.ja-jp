@@ -15,11 +15,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6a4e4b1be6bb6323702b72d99be88824d456243b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 57345feed2044683a1d5fd2a6ee7d14c412a827d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-runtime-error-r6017"></a>C ランタイム エラー R6017
 予期しないマルチ スレッドのロック エラーです。  
@@ -30,7 +31,7 @@ ms.lasthandoff: 10/24/2017
 >  このエラーを解決するには、次の手順を試してみます。  
 >   
 >  -   使用して、**アプリおよび機能**または**プログラムと機能**] ページで、**コントロール パネルの [**を修復またはプログラムを再インストールします。  
-> -   確認**Windows Update**で、**コントロール パネルの **ソフトウェアの更新。  
+> -   確認**Windows Update**で、**コントロール パネルの** ソフトウェアの更新。  
 > -   アプリの更新バージョンを確認します。 問題が解決しない場合は、アプリ ベンダーにお問い合わせください。  
   
  **プログラマのための情報**  

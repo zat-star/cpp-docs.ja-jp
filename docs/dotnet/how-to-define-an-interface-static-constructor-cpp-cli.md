@@ -1,35 +1,35 @@
 ---
-title: "方法: interface 静的コンストラクターを定義する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コンストラクター [C++]"
-  - "interface 静的コンストラクター"
-  - "静的コンストラクター, interface"
+title: "方法: インターフェイス静的コンス トラクターを定義 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- constructors [C++]
+- static constructors, interface
+- interface static constructor
 ms.assetid: 1f031cb2-e94f-43dc-819b-44cf2faaaa49
-caps.latest.revision: 10
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a8bdafde3fd6485b98ff960433218b49c0aa99eb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: interface 静的コンストラクターを定義する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-インターフェイスは、静的データ メンバーを初期化するために使用できる静的コンストラクターを持つことができます。静的コンストラクターは、静的なインターフェイス メンバーに最初にアクセスしたときに、一度に最大で呼び出され、前に呼び出されます。  
+# <a name="how-to-define-an-interface-static-constructor-ccli"></a>方法: インターフェイス静的コンストラクターを定義する (C++/CLI)
+インターフェイスは、静的データ メンバーの初期化に使用できる静的コンス トラクターを持つことができます。  静的コンス トラクターは、最大でも 1 回呼び出されが初めての静的なインターフェイス メンバーにアクセスする前に呼び出されます。  
   
- 静的コンストラクターの詳細については、「[方法: クラスまたは構造体の静的コンストラクターを定義する](../misc/how-to-define-static-constructors-in-a-class-or-struct.md)」を参照してください。  
-  
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // mcppv2_interface_class2.cpp  
@@ -59,9 +59,12 @@ int main() {
 }  
 ```  
   
-  **MyInterface の静的コンストラクター**  
-**99**  
-**99**  
-**99**   
-## 参照  
- [interface class](../windows/interface-class-cpp-component-extensions.md)
+```Output  
+in MyInterface static constructor  
+99  
+99  
+99  
+```  
+  
+## <a name="see-also"></a>参照  
+ [インターフェイス クラス](../windows/interface-class-cpp-component-extensions.md)

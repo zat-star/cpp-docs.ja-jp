@@ -1,32 +1,33 @@
 ---
-title: "ComPtr::CopyTo メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "client/Microsoft::WRL::ComPtr::CopyTo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CopyTo メソッド"
+title: "Comptr::copyto メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: client/Microsoft::WRL::ComPtr::CopyTo
+dev_langs: C++
+helpviewer_keywords: CopyTo method
 ms.assetid: 8801bc49-6db4-4393-a55f-a701ae3b8718
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 1f47df584fb456c721c92823a87ca525beb052d6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ComPtr::CopyTo メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-指定したポインターにこの ComPtr オブジェクトに関連付けられている現在のディレクトリまたは指定されたインターフェイスをコピーします。  
+# <a name="comptrcopyto-method"></a>ComPtr::CopyTo メソッド
+指すポインターを指定するには、この ComPtr に関連付けられている現在または指定されたインターフェイスをコピーします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 HRESULT CopyTo(  
@@ -46,30 +47,30 @@ HRESULT CopyTo(
 ) const;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `U`  
  型の名前。  
   
  `ptr`  
- この操作が完了すると、要求されたインターフェイスへのポインター。  
+ この操作の完了時、要求されたインターフェイスへのポインター。  
   
  `riid`  
- インターフェイス ID  
+ インターフェイス ID。  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は、QueryInterface の操作が失敗した理由を示す HRESULT。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は S_OK、それ以外の場合、暗黙の QueryInterface 操作が失敗した理由を示す HRESULT。  
   
-## 解説  
- インターフェイスへのポインターのコピーがこの ComPtr オブジェクトに関連付けられた最初の関数の戻り値。  この関数は、常に S\_OK を返します。  
+## <a name="remarks"></a>コメント  
+ 最初の関数は、この ComPtr に関連付けられたインターフェイスへのポインターのコピーを返します。 この関数は、常に S_OK を返します。  
   
- 2 番目の関数は `riid` パラメーターで指定されたインターフェイスのこの ComPtr オブジェクトに関連付けられたインターフェイスの QueryInterface を処理します。  
+ 2 番目の関数で指定されたインターフェイスのこの ComPtr に関連付けられているインターフェイスの QueryInterface 演算を実行する、`riid`パラメーター。  
   
- 3 番目の関数は `U` パラメーターの基のインターフェイスに対してこの ComPtr オブジェクトに関連付けられたインターフェイスの QueryInterface を処理します。  
+ 3 番目の関数のインターフェイスの基になるため、この ComPtr に関連付けられているインターフェイスの QueryInterface 演算を実行する、`U`パラメーター。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [ComPtr クラス](../windows/comptr-class.md)

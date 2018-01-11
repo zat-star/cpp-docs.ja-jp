@@ -1,8 +1,8 @@
 ---
-title: "手順 1 - C++ コンソール アプリケーション プロジェクトを作成 |Microsoft ドキュメント"
+title: "C++ コンソール アプリケーション プロジェクトを作成 |Microsoft ドキュメント"
 description: "Visual Studio の Visual C サポートをインストールします。"
 ms.custom: mvc
-ms.date: 10/17/2017
+ms.date: 12/12/2017
 ms.topic: get-started-article
 ms.technology: devlang-C++
 ms.devlang: C++
@@ -11,11 +11,12 @@ ms.assetid: 45138d70-719d-42dc-90d7-1d0ca31a2f54
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f75d8fc6ec744038d57bfb7576547c9be84b7551
-ms.sourcegitcommit: 69632887f7a85f4841c49b4c1353d3144927a52c
+ms.workload: cplusplus
+ms.openlocfilehash: e44d9c097461b118cae72b47dff2ab15757aed64
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="create-a-c-console-app-project"></a>C++ コンソール アプリケーション プロジェクトを作成します。
 
@@ -23,11 +24,11 @@ ms.lasthandoff: 11/11/2017
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-- インストールされているし、コンピューターで実行されている C++ ワークロードでデスクトップの開発に Visual Studio があります。 場合はそれがまだインストールされていないを参照してください。[ステップ 0 - Visual Studio での C++ のインストール サポート](../build/vscpp-step-0-installation.md)です。
+- インストールされているし、コンピューターで実行されている C++ ワークロードでデスクトップの開発に Visual Studio があります。 場合はそれがまだインストールされていないを参照してください。 [Visual Studio での C++ のインストール サポート](../build/vscpp-step-0-installation.md)です。
 
 ## <a name="create-your-app-project"></a>アプリ プロジェクトを作成します。
 
-Visual Studio を使用して*プロジェクト*、アプリのコードを整理して*ソリューション*プロジェクトを整理します。 プロジェクトでは、すべてのオプション、構成、および、アプリをビルドするための規則が含まれていて、プロジェクトのすべてのファイルと、外部のファイル間のリレーションシップを管理します。 アプリを作成するに最初を作成する新しいプロジェクトとソリューションです。
+Visual Studio では、"*プロジェクト*" を使用してアプリのコードを整理し、"*ソリューション*" を使用してプロジェクトを整理します。 プロジェクトでは、すべてのオプション、構成、および、アプリをビルドするための規則が含まれていて、プロジェクトのすべてのファイルと、外部のファイル間のリレーションシップを管理します。 アプリを作成するに最初を作成する新しいプロジェクトとソリューションです。
 
 1. Visual Studio で開く、**ファイル**メニューを選択し、**新規 > プロジェクト**を開くには、**新しいプロジェクト**ダイアログ。
 
@@ -92,7 +93,7 @@ Visual studio では、新しい、空のソース コード ファイルが作�
 ## <a name="next-steps"></a>次の手順
 
 > [!div class="nextstepaction"]
-> [手順 2: ビルドし、C++ プロジェクトを実行](vscpp-step-2-build.md)
+> [ビルドおよび実行する C++ プロジェクト](vscpp-step-2-build.md)
 
 ## <a name="troubleshooting-guide"></a>トラブルシューティング ガイド
 

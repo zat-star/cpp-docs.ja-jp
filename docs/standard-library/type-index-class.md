@@ -15,11 +15,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b4b55118f4138da60a0b4a197b6ecc3f818441a0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e27a626a7371c0358f05c49b33d0a9c1a019e72e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="typeindex-class"></a>type_index クラス
 `type_index` クラスは、[type_info クラス](../cpp/type-info-class.md)へのポインターをラップして、このクラスのオブジェクトでインデックスを作成しやすくします。  
@@ -44,7 +45,7 @@ class type_index { public: type_index(const type_info& tinfo); const char *name(
   
  `operator>=` は、`!(*this < right)` を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム型情報](../cpp/run-time-type-information.md)   
  [\<typeindex>](../standard-library/typeindex.md)
 

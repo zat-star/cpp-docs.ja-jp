@@ -1,33 +1,33 @@
 ---
-title: "includelib (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.includelib"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "includelib attribute"
+title: "includelib (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.includelib
+dev_langs: C++
+helpviewer_keywords: includelib attribute
 ms.assetid: cd90ea6e-5ae8-4f11-b8d1-662db95412b2
-caps.latest.revision: 10
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: df6c38889db24cc1b4f28ce0bfe4cf96eb6b03a2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# includelib (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-生成された .idl ファイルに含める .idl ファイルまたは .h ファイルを指定します。  
+# <a name="includelib-c"></a>includelib (C++)
+生成された .idl ファイルに含まれる、.idl ファイルまたは .h ファイルが発生します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -36,15 +36,15 @@ manager: "ghogen"
 ) ];  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *name.idl*  
- 生成された .idl ファイルの一部としてインクルードする .idl ファイルの名前。  
+ 生成された .idl ファイルの一部として含めるする .idl ファイルの名前。  
   
-## 解説  
- `includelib` C\+\+ 属性により `importlib` のステートメントの後に生成された .idl ファイルに含める.idl ファイルまたは .h ファイルが発生します。  
+## <a name="remarks"></a>コメント  
+ `includelib` C++ 属性によりが発生した後、生成された .idl ファイルに含まれる、.idl ファイルまたは .h ファイル、`importlib`ステートメントです。  
   
-## 使用例  
- 次のコードは.cpp ファイルに表示されます :  
+## <a name="example"></a>例  
+ .Cpp ファイルで次のコードが表示されます。  
   
 ```  
 // cpp_attr_ref_includelib.cpp  
@@ -53,24 +53,23 @@ manager: "ghogen"
 [includelib("includelib.idl")];  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|任意|  
-|**複数回の適用**|○|  
+|**対象**|任意の場所|  
+|**反復可能**|[はい]|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Stand\-Alone Attributes](../Topic/Stand-Alone%20Attributes.md)   
- [import](../windows/import.md)   
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [スタンドアロン属性](../windows/stand-alone-attributes.md)   
+ [インポート](../windows/import.md)   
  [importidl](../windows/importidl.md)   
- [include](../windows/include-cpp.md)   
+ [含まれます](../windows/include-cpp.md)   
  [importlib](../windows/importlib.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)

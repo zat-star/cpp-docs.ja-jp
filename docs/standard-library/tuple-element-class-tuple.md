@@ -15,11 +15,12 @@ caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4fc5269448ad61bc11409afbb2d6515c17a95864
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ee15ab3327ec879856a3e777fb906c01989d63c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tupleelement-class"></a>tuple_element クラス
 `tuple` 要素をラップします。 `array` 要素および `pair` 要素のラップの特殊化。  
@@ -62,11 +63,11 @@ template <class T1, class T2>
 ```  
   
 ### <a name="parameters"></a>パラメーター  
-*インデックス*  
+*Index*  
 指定した要素のインデックス。  
   
 *Tuple*  
-組の型。  
+タプルの型。  
   
 *Elem*  
 配列要素の型。  
@@ -176,9 +177,9 @@ int main() {
  0 1.333  
 ```  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<tuple>  
  **ヘッダー:** \<array> (配列の特殊化用) **ヘッダー:** \<utility> (ペアの特殊化用) **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [tuple ](../standard-library/tuple-class.md)

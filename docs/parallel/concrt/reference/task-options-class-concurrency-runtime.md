@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0bacd04cb1662e8fffecbb5b1b6c12b430c25b9b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 23fe15f95782fc2aead89614143786a845becd62
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="taskoptions-class-concurrency-runtime"></a>task_options クラス (同時実行ランタイム)
 タスクの作成に使用できるオプションを表します。  
@@ -52,7 +53,7 @@ class task_options;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `task_options`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** ppltasks.h  
   
  **名前空間:** concurrency  
@@ -159,5 +160,5 @@ task_options(
  `_Scheduler`  
  `_TaskOptions`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

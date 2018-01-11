@@ -25,11 +25,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 619ddd7805207f14bb44ed52d148f53e3aa79e57
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d926e538cf9f9f1cb4935a1d53ba6c1fd7f4696e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cbitmapbutton-class"></a>CBitmapButton クラス
 ラベルがテキストではなくビットマップ イメージのプッシュ ボタン コントロールを作成します。  
@@ -115,7 +116,7 @@ class CBitmapButton : public CButton
   
  `CBitmapButton`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxext.h  
   
 ##  <a name="autoload"></a>CBitmapButton::AutoLoad  
@@ -177,7 +178,7 @@ BOOL LoadBitmaps(
   
 ### <a name="parameters"></a>パラメーター  
  *lpszBitmapResource*  
- または「の状態を」ビットマップ ボタンの通常のビットマップの名前を表す null で終わる文字列へのポインター。 必須です。  
+ または「の状態を」ビットマップ ボタンの通常のビットマップの名前を表す null で終わる文字列へのポインター。 必須。  
   
  *lpszBitmapResourceSel*  
  「停止」状態またはビットマップ ボタンの選択のためのビットマップの名前を表す null で終わる文字列へのポインター。 あります**NULL**です。  
@@ -189,7 +190,7 @@ BOOL LoadBitmaps(
  ビットマップのビットマップ ボタンの名前を表す null で終わる文字列へのポインターには、状態が無効になります。 あります**NULL**です。  
   
  *nIDBitmapResource*  
- ビットマップ リソースのビットマップ ボタンの通常の状態「を」リソースの ID 番号を指定します。 必須です。  
+ ビットマップ リソースのビットマップ ボタンの通常の状態「を」リソースの ID 番号を指定します。 必須。  
   
  *nIDBitmapResourceSel*  
  ビットマップ ボタンの選択のため、または「停止」状態は、ビットマップ リソースのリソースの ID 番号を指定します。 0 にすることがあります。  
@@ -216,7 +217,7 @@ void SizeToContent();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCControlLadenDialog#59](../../mfc/codesnippet/cpp/cbitmapbutton-class_4.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CTRLTEST](../../visual-cpp-samples.md)   
  [CButton クラス](../../mfc/reference/cbutton-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)

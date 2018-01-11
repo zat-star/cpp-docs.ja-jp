@@ -1,34 +1,33 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4429 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4429"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4429"
+title: "コンパイラの警告 (レベル 4) C4429 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4429
+dev_langs: C++
+helpviewer_keywords: C4429
 ms.assetid: a3e4cf1f-a869-4e47-834a-850c21eb5297
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 58b2a23b8abb3ab385f8c8a285ad1178299fa52d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4429
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-不完全な、または正しい形式でないユニバーサル文字名です  
+# <a name="compiler-warning-level-4-c4429"></a>コンパイラの警告 (レベル 4) C4429
+考えられる不完全か、形式の正しくないユニバーサル文字名  
   
- コンパイラが、誤った形式のユニバーサル文字名の可能性がある文字シーケンスを検出しました。  ユニバーサル文字名は、`\u` に続く 4 桁の 16 進数、または `\U` に続く 8 桁の 16 進数です。  
+ 正しくない形式のユニバーサル文字名である可能性がありますを文字シーケンスが検出されました。 ユニバーサル文字名は`\u`後に 4 桁の 16 進数または`\U`8 桁の 16 進数字が続きます。  
   
- 次の例では警告 C4429 が生成されます。  
+ 次の例では、C4429 が生成されます。  
   
 ```  
 // C4429.cpp  

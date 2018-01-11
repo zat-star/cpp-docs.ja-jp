@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 58fbff4a5192d15a60cf3340ce762574947fb249
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 01766dd741ed87d9ac11b8858221a1bd09b0cf31
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dialog-data-validation"></a>ダイアログ データ検証
 例に示すように、DDV 関数を呼び出すことによりデータ交換だけでなく検証を指定できます[ダイアログ データ エクス チェンジ](../mfc/dialog-data-exchange.md)です。 `DDV_MaxChars`呼び出しの例では、テキスト ボックス コントロールに入力した文字列が 20 文字を超えていないことを検証します。 DDV 関数は、通常、ユーザーに警告、メッセージ ボックスで検証が失敗するし、データを再入力できるように、問題のあるコントロールにフォーカスを設定します。 特定のコントロールの DDV 関数は、同じコントロールに対して、DDX 関数の直後後に呼び出される必要があります。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 10/24/2017
   
  [変数の追加メンバー ウィザード](../ide/add-member-variable-wizard.md)をすべて、DDX の記述および DDV 呼び出しがデータ マップにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ダイアログ データ交換と検証](../mfc/dialog-data-exchange-and-validation.md)   
  [ダイアログ ボックスのライフ サイクル](../mfc/life-cycle-of-a-dialog-box.md)   
  [ダイアログ データ エクスチェンジ](../mfc/dialog-data-exchange.md)

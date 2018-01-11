@@ -22,11 +22,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 22b7a25d0695b7e12a4fbecbf47bbc7feb32148f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f93bcd69a6f0b05f9566fe3a2ffb6025729b63de
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="extent-class-c-amp"></a>extent クラス (C++ AMP)
 ベクターを表します*N*の境界を指定する整数値、 *N*-0 の原点が次元の空間です。 ベクターの値は最上位から最下位へ順に並べ替えられます。  
@@ -42,7 +43,7 @@ class extent;
  `_Rank`  
  `extent` オブジェクトのランク。  
 
- ## <a name="requirements"></a>要件  
+ ## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp.h  
   
  **名前空間:** Concurrency  
@@ -82,7 +83,7 @@ class extent;
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[rank 定数](#rank)|`extent` オブジェクトのランクを取得します。|  
   
@@ -372,5 +373,5 @@ tiled_extent<_Dim0, _Dim1, _Dim2> tile() const ;
 
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

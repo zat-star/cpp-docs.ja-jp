@@ -4,27 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- vc.appwiz.mfc.exe.database
-dev_langs:
-- C++
-helpviewer_keywords:
-- MFC Application Wizard, database support
+f1_keywords: vc.appwiz.mfc.exe.database
+dev_langs: C++
+helpviewer_keywords: MFC Application Wizard, database support
 ms.assetid: 9ddf4558-fd41-4ac7-8d9b-c93d9c68ab59
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 7b7c9aaa6389f5e86a51348a8b5423260c4c76e3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 875df8f8205d132cf6bcafe536c221876a5e3e51
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="database-support-mfc-application-wizard"></a>[データベース サポート] (MFC アプリケーション ウィザード)
 このページで、データベースのレベルを指定できるようにするオプションは、プロジェクトの (さらに、データ ソースを必要な場合) をサポートします。  
@@ -79,6 +75,5 @@ ms.lasthandoff: 10/09/2017
 |**ダイナセット**|レコード セットがダイナセットであることを指定します。 ダイナセットは、クエリ対象のデータベースのデータにインデックス付きビューを提供するクエリの結果です。 ダイナセットは、元のデータを整数のインデックスのみをキャッシュし、スナップショットに比べてパフォーマンスができるようにします。 各レコードに直接インデックス ポイントは、クエリの結果として検出され、レコードが削除されたかどうかを示します。 照会されたレコードに更新された情報へのアクセスもがあります。|  
 |スナップショット|レコード セットがスナップショットであることを指定します。 スナップショットはクエリの結果、1 つのポイントにおけるデータベースのビューに。 クエリの結果として検出されたすべてのレコードがキャッシュされるため、元のレコードへの変更が表示されません。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)
-

@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e755ae6b0d6170087af64f7561b310894f0768d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c0b97a249246a9f7f9d47880f75bdce2ca643ae3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="registration"></a>登録
 ユーザーがアプリケーションに OLE 項目を挿入しようとすると、OLE から選択するオブジェクトの種類の一覧が表示されます。 OLE は、すべてのサーバー アプリケーションによって提供される情報を含むシステムの登録情報データベースからこの一覧を取得します。 登録すると、サーバー自体、システムの登録データベース (レジストリ) にエントリを提供するオブジェクトの種類ごとの説明、ファイルの拡張機能、およびその他の情報をそれ自体にパス  
@@ -63,7 +64,7 @@ ms.lasthandoff: 10/24/2017
   
  定義上は常に、コンテナーによって起動されますミニサーバーを記述する場合。 まだ「/埋め込み」オプションを確認するためのコマンドラインを解析する必要があります。 コマンドラインでこのオプションがない場合は、ユーザーがスタンドアロン アプリケーションとしてミニサーバーを起動しようとしたことを意味します。 これが発生した場合、サーバー システムの登録データベースを登録およびミニサーバーはコンテナー アプリケーションからを起動するユーザーに通知するメッセージ ボックスを表示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE](../mfc/ole-in-mfc.md)   
  [サーバー](../mfc/servers.md)   
  [CWinApp::RunAutomated](../mfc/reference/cwinapp-class.md#runautomated)   

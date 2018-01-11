@@ -1,63 +1,66 @@
 ---
-title: "[カスタム ビルド ステップ] プロパティ ページ: 全般 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCustomBuildStep.AdditionalInputs"
-  - "VC.Project.VCCustomBuildStep.CustomBuildAfterTargets"
-  - "VC.Project.VCCustomBuildStep.CustomBuildBeforeTargets"
-  - "VC.Project.VCCustomBuildStep.Outputs"
-  - "VC.Project.VCCustomBuildStep.Message"
-  - "VC.Project.VCCustomBuildStep.Command"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プロジェクトのプロパティ、カスタム ビルド ステップ"
-  - "カスタム ビルド ステップ (汎用)"
+title: "カスタム ビルド ステップ プロパティ ページ: 全般 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCustomBuildStep.AdditionalInputs
+- VC.Project.VCCustomBuildStep.CustomBuildAfterTargets
+- VC.Project.VCCustomBuildStep.CustomBuildBeforeTargets
+- VC.Project.VCCustomBuildStep.Outputs
+- VC.Project.VCCustomBuildStep.Message
+- VC.Project.VCCustomBuildStep.Command
+dev_langs: C++
+helpviewer_keywords:
+- project properties, custom build step
+- custom build step (general)
 ms.assetid: bd319741-0491-46c4-a428-7c61b4b46a02
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 63e599a2a24716de2de3e23cb3a7c2342b036b81
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# [カスタム ビルド ステップ] プロパティ ページ: 全般
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="custom-build-step-property-page-general"></a>[カスタム ビルド ステップ] プロパティ ページ: 全般
 プロジェクトにおけるプロジェクト構成とターゲット プラットフォームの組み合わせごとに、プロジェクトをビルドするときに実行するカスタム ステップを指定できます。  
+
+このページの Linux バージョンを参照してください。[カスタム ビルド ステップのプロパティ (C++ の Linux)](../linux/prop-pages/custom-build-step-linux.md)です。
   
-## UIElement の一覧  
- **\[コマンド ライン\]**  
+## <a name="uielement-list"></a>UIElement の一覧  
+ **コマンドライン**  
  カスタム ビルド ステップによって実行されるコマンド。  
   
- **\[説明\]**  
+ **説明**  
  カスタム ビルド ステップを実行するときに表示されるメッセージ。  
   
- **\[出力\]**  
- カスタム ビルド ステップが生成する出力ファイル。  この設定は、インクリメンタル ビルドが正しく機能するために必要です。  
+ **出力**  
+ カスタム ビルド ステップが生成する出力ファイル。 この設定は、インクリメンタル ビルドが正しく機能するために必要です。  
   
- **\[追加の依存ファイル\]**  
+ **追加の依存関係**  
  カスタム ビルド ステップで使用する追加の入力ファイルの、セミコロンで区切られた一覧。  
   
- **\[以後に実行\] および \[以前に実行\]**  
- ビルド プロセスでカスタム ビルド ステップが実行されるタイミングを、表示されているターゲットを基準にして定義します。  最もよく表示されるターゲットは BuildGenerateSources、BuildCompile、および BuildLink です。これらはビルド プロセスの主なステップを表しています。  また、Midl、CLCompile、および Link もよく表示されるターゲットです。  
+ **後に実行し、前に実行**  
+ ビルド プロセスでカスタム ビルド ステップが実行されるタイミングを、表示されているターゲットを基準にして定義します。 最もよく表示されるターゲットは BuildGenerateSources、BuildCompile、および BuildLink です。これらはビルド プロセスの主なステップを表しています。 また、Midl、CLCompile、および Link もよく表示されるターゲットです。  
   
- \[出力をコンテンツとして扱う\]  
+ [出力をコンテンツとして扱う]  
  このオプションは、.appx パッケージにすべてのコンテンツ ファイルが含まれる Windows ストアまたは Windows Phone アプリに対してのみ意味を持ちます。  
   
-### カスタム ビルド ステップを指定するには  
+### <a name="to-specify-a-custom-build-step"></a>カスタム ビルド ステップを指定するには  
   
-1.  メニュー バーで **\[プロジェクト\]**、**\[プロパティ\]** の順に選択します。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  メニュー バーで、**[プロジェクト]**、**[プロパティ]** の順に選びます。 詳細については、次を参照してください。[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)です。  
   
-2.  **\[プロパティ ページ\]** ダイアログ ボックスで、**\[構成プロパティ\]**、**\[カスタム ビルド ステップ\]**、**\[全般\]** ページの順に移動します。  
+2.  **プロパティ ページ** ダイアログ ボックスに移動、**構成プロパティ**、**カスタム ビルド ステップ**、**全般**ページ。  
   
 3.  設定を変更します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [プロパティ ページ](../ide/property-pages-visual-cpp.md)

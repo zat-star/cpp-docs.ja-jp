@@ -1,5 +1,5 @@
 ---
-title: "Concurrency::fast_math 名前空間関数 |Microsoft ドキュメント"
+title: "Concurrency::fast_math 名前空間の関数 |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -50,18 +50,18 @@ f1_keywords:
 - amp_math/Concurrency::fast_math::tanf
 - amp_math/Concurrency::fast_math::tanhf
 - amp_math/Concurrency::fast_math::trunc
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: f5763d62-795b-4de6-a7a5-c7115f158708
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 2ca8b085c7dcc226a216032060e628c7c7ce0a4a
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 406f92d4a13502ed784936398070f1b4a7b4eb95
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="concurrencyfastmath-namespace-functions"></a>Concurrency::fast_math 名前空間の関数
 ||||  
@@ -379,7 +379,7 @@ inline float fabsf(float _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  引数の絶対値を返します。  
   
-##  <a name="floor"></a>フロア  
+##  <a name="floor"></a>floor  
  引数の切り捨てを計算します。  
   
 ```  
@@ -391,7 +391,7 @@ inline float floor(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の切り捨て値を返します  
+ 引数の切り捨てを返します  
   
 ##  <a name="floorf"></a>floorf  
  引数の切り捨てを計算します。  
@@ -405,7 +405,7 @@ inline float floorf(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の切り捨て値を返します  
+ 引数の切り捨てを返します  
   
 ##  <a name="fmax"></a>fmax  
  引数の最大数値を判断します。  
@@ -535,7 +535,7 @@ inline float frexp(
  浮動小数点値  
   
  `_Exp`  
- 浮動小数点値の _X の整数の指数を返します  
+ 浮動小数点値での _X の整数の指数を返します  
   
 ### <a name="return-value"></a>戻り値  
  仮数 _X を返します  
@@ -554,7 +554,7 @@ inline float frexpf(
  浮動小数点値  
   
  `_Exp`  
- 浮動小数点値の _X の整数の指数を返します  
+ 浮動小数点値での _X の整数の指数を返します  
   
 ### <a name="return-value"></a>戻り値  
  仮数 _X を返します  
@@ -571,7 +571,7 @@ inline int isfinite(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数は有限値を持つ場合にのみ、0 以外の値を返します  
+ 引数に有限値がある場合にのみ、0 以外の値を返します  
   
 ##  <a name="isinf"></a>isinf  
  引数が無限値であるかどうかを判断します。  
@@ -665,7 +665,7 @@ inline float log10(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の底&10; の対数を返します  
+ 引数の底 10 の対数を返します  
   
 ##  <a name="log10f"></a>log10f  
  10 を底とする引数の対数を計算します。  
@@ -679,7 +679,7 @@ inline float log10f(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の底&10; の対数を返します  
+ 引数の底 10 の対数を返します  
   
 ##  <a name="log2"></a>log2  
  2 を底とする引数の対数を計算します。  
@@ -693,7 +693,7 @@ inline float log2(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の基本&2; の対数を返します  
+ 引数の底 2 の対数を返します  
   
 ##  <a name="log2f"></a>log2f  
  2 を底とする引数の対数を計算します。  
@@ -707,7 +707,7 @@ inline float log2f(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の底&10; の対数を返します  
+ 引数の底 10 の対数を返します  
   
 ##  <a name="logf"></a>logf  
  e を底とする引数の対数を計算します。  
@@ -739,7 +739,7 @@ inline float modf(
  `_Ip`  
   
 ### <a name="return-value"></a>戻り値  
- _X の符号付き小数部を返します  
+ _X の符号付き小数部分を返します  
   
 ##  <a name="modff"></a>modff  
  _X を小数部と整数部に分割します。  
@@ -757,7 +757,7 @@ inline float modff(
  `_Ip`  
   
 ### <a name="return-value"></a>戻り値  
- _X の符号付き小数部を返します  
+ _X の符号付き小数部分を返します  
   
 ##  <a name="pow"></a>  pow  
  _X の _Y 乗を計算します。  
@@ -770,7 +770,7 @@ inline float pow(
   
 ### <a name="parameters"></a>パラメーター  
  `_X`  
- 基本浮動小数点の値  
+ 基本浮動小数点値  
   
  `_Y`  
  浮動小数点値、指数  
@@ -789,14 +789,14 @@ inline float powf(
   
 ### <a name="parameters"></a>パラメーター  
  `_X`  
- 基本浮動小数点の値  
+ 基本浮動小数点値  
   
  `_Y`  
  浮動小数点値、指数  
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="round"></a>ラウンド  
+##  <a name="round"></a>丸める  
  _X を最も近い整数値に丸めます。  
   
 ```  
@@ -864,7 +864,7 @@ inline int signbit(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- _X の符号が負の値場合にのみ、0 以外の値を返します  
+ _X の符号が負の場合にのみ、0 以外の値を返します  
   
 ##  <a name="signbitf"></a>signbitf  
  _X の符号が負の値であるかどうかを決定します。  
@@ -878,7 +878,7 @@ inline int signbitf(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- _X の符号が負の値場合にのみ、0 以外の値を返します  
+ _X の符号が負の場合にのみ、0 以外の値を返します  
   
 ##  <a name="sin"></a>  sin  
  引数の正弦値を計算します。  
@@ -1088,9 +1088,8 @@ inline float truncf(float _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  引数の整数部分を返します  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 **ヘッダー:** amp_math.h **Namespace:** concurrency::fast_math
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::fast_math 名前空間](concurrency-fast-math-namespace.md)
-

@@ -12,10 +12,9 @@ f1_keywords:
 - bitset/std::operator&lt;&lt;
 - bitset/std::operator^
 - bitset/std::operator|
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 84fe6a13-6f6e-4cdc-bf8f-6f65ab1134d4
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -23,12 +22,12 @@ helpviewer_keywords:
 - std::operator&amp; (bitset)
 - std::operator&gt;&gt; (bitset)
 - std::operator&lt;&lt; (bitset)
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 99e42dab27a7ee03c42e9b1b5a35e94cc7ed050b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: aca0affd587eb0d90b312e13687d138300f94570
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltbitsetgt-operators"></a>&lt;bitset&gt; 演算子
 ||||  
@@ -106,7 +105,7 @@ basic_ostream<CharType, Traits>& operator<<(
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は **operator<<** をオーバーロードし、最初に文字列に変換することなく、ビットセットを書き込みます。 このテンプレート関数は、実質的に次の内容を実行します。  
   
- **ostr** << _ *Right*. [to_string](https://msdn.microsoft.com/library/2f93c55z.aspx) < **CharType**, **Traits**, **allocator**\< **CharType**> > ( )  
+ **ostr** << _ *Right*. [to_string](bitset-class.md) < **CharType**, **Traits**, **allocator**\< **CharType**> > ( )  
   
 ### <a name="example"></a>例  
   
@@ -163,7 +162,7 @@ _Istr,
  このテンプレート関数は文字列 `_Istr` を返します。  
   
 ### <a name="remarks"></a>コメント  
- このテンプレート関数は **operator>>** をオーバーロードし、ビットセット _ *Right* に値ビットセット (`str`) を格納します。`str` は `_Istr` から抽出された型 [basic_string](https://msdn.microsoft.com/library/syxtdd4f.aspx) < **CharType**, **Traits**, **allocator**\< **CharType**> > **&** のオブジェクトです。  
+ このテンプレート関数は **operator>>** をオーバーロードし、ビットセット _ *Right* に値ビットセット (`str`) を格納します。`str` は `_Istr` から抽出された型 [basic_string](basic-string-class.md) < **CharType**, **Traits**, **allocator**\< **CharType**> > **&** のオブジェクトです。  
   
  このテンプレート関数は `_Istr` から要素を抽出し、次の状態になるまでそれをビットセットに挿入します。  
   
@@ -320,7 +319,6 @@ bitset 2: 0011
 bitset 3: 0111  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<bitset>](../standard-library/bitset.md)
-
 

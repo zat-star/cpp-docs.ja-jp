@@ -1,54 +1,52 @@
 ---
-title: "new (new slot in vtable)  (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "new keyword [C++]"
+title: "新しい (新しい vtable のスロット) (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords: new keyword [C++]
 ms.assetid: 1a9a5704-f02f-46ae-ad65-f0f2b6dbabc3
-caps.latest.revision: 20
-caps.handback.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "20"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: f208a62fd49e7aea67acf5b7e3e49d3571f8d910
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# new (new slot in vtable)  (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="new-new-slot-in-vtable--c-component-extensions"></a>new (vtable の新しいスロット) (C++ コンポーネント拡張)
 `new` キーワードは、仮想メンバーが vtable の新しいスロットを取得することを示します。  
   
-> [!NOTE]
->  `new` キーワードには、さまざまな用途や意味があります。  詳細については、[new](../misc/new.md) のトピックを参照してください。  
+## <a name="all-runtimes"></a>すべてのランタイム  
+ (この言語機能にはランタイムに適用される特記事項がありません。)  
   
-## すべてのランタイム  
- \(この言語機能にはランタイムに適用される特記事項がありません。\)  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ Windows ランタイムでサポートされていません。  
   
-## Windows ランタイム  
- [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]ではサポートされていません。  
-  
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
  **解説**  
   
- **\/clr** のコンパイルでは、`new` は、仮想メンバーが vtable の新しいスロットを取得することを示します。つまり、関数で基底クラスのメソッドをオーバーライドしません。  
+ **/Clr**コンパイル、`new`仮想メンバーが vtable の新しいスロットを取得する以外の場合は、関数が基底クラスのメソッドをオーバーライドしていないことを示します。  
   
- `new` を指定すると、関数の IL に newslot 修飾子が追加されます。newslot の詳細については、次のトピックを参照してください。  
+ `new` を指定すると、関数の IL に newslot 修飾子が追加されます。  newslot の詳細については、次のトピックを参照してください。  
   
--   [\<caps:sentence id\="tgt11" sentenceid\="e9bb59a12f97840a5c3173bb77c6b5b1" class\="tgtSentence"\>MethodInfo.GetBaseDefinition メソッド\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.getbasedefinition.aspx)  
+-   [MethodInfo.GetBaseDefinition メソッド](https://msdn.microsoft.com/en-us/library/system.reflection.methodinfo.getbasedefinition.aspx)  
   
--   [\<caps:sentence id\="tgt12" sentenceid\="f6ceddd85a425f38e7ed06e94a9808a9" class\="tgtSentence"\>MethodAttributes 列挙体\<\/caps:sentence\>](https://msdn.microsoft.com/en-us/library/system.reflection.methodattributes.aspx)  
+-   [MethodAttributes 列挙体](https://msdn.microsoft.com/en-us/library/system.reflection.methodattributes.aspx)  
   
-### 要件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-### 例  
+### <a name="examples"></a>使用例  
  **例**  
   
  `new` の効果の例を次に示します。  
@@ -102,11 +100,18 @@ int main() {
   
  **出力**  
   
-  **C::f\(\) called**  
- **D::f\(\) called**  
- **D::g\(\) called**  
- **D::g\(\) called**  
- **E::f\(\) called**   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)   
+```Output  
+C::f() called  
+  
+D::f() called  
+  
+D::g() called  
+  
+D::g() called  
+  
+E::f() called  
+```  
+  
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)   
  [オーバーライド指定子](../windows/override-specifiers-cpp-component-extensions.md)

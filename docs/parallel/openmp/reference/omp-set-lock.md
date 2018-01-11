@@ -1,32 +1,31 @@
 ---
-title: "omp_set_lock | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "omp_set_lock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "omp_set_lock OpenMP function"
+title: "omp_set_lock |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: omp_set_lock
+dev_langs: C++
+helpviewer_keywords: omp_set_lock OpenMP function
 ms.assetid: ded839cb-ca19-403f-8622-eb52ce512d31
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 97ea221d07de8accad22d9bab1fee2b73c6345a9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# omp_set_lock
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-ロックが使用可能になるまでスレッドの実行をブロックします。  
+# <a name="ompsetlock"></a>omp_set_lock
+ロックが利用可能になるまで、スレッドの実行をブロックします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void omp_set_lock(  
@@ -34,17 +33,17 @@ void omp_set_lock(
 );  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
  `lock`  
- [omp\_init\_lock](../../../parallel/openmp/reference/omp-init-lock.md) 型の変数を初期化 [omp\_lock\_t](../../../parallel/openmp/reference/omp-lock-t.md)。  
+ 型の変数[omp_lock_t](../../../parallel/openmp/reference/omp-lock-t.md)で初期化された[omp_init_lock 関数](../../../parallel/openmp/reference/omp-init-lock.md)です。  
   
-## 解説  
- 詳細については、「[3.2.3 omp\_set\_lock and omp\_set\_nest\_lock Functions](../Topic/3.2.3%20omp_set_lock%20and%20omp_set_nest_lock%20Functions.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ 詳細については、次を参照してください。 [3.2.3 omp_set_lock 関数と omp_set_nest_lock 関数](../../../parallel/openmp/3-2-3-omp-set-lock-and-omp-set-nest-lock-functions.md)です。  
   
-## 例  
- `omp_set_lock` 使用例については[omp\_init\_lock](../../../parallel/openmp/reference/omp-init-lock.md) を参照してください。  
+## <a name="examples"></a>使用例  
+ 参照してください[omp_init_lock 関数](../../../parallel/openmp/reference/omp-init-lock.md)の使用例については`omp_set_lock`します。  
   
-## 参照  
- [Functions](../../../parallel/openmp/reference/openmp-functions.md)
+## <a name="see-also"></a>参照  
+ [関数](../../../parallel/openmp/reference/openmp-functions.md)

@@ -1,35 +1,35 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4556 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "xml"
-  - "C4556"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4556"
+title: "コンパイラの警告 (レベル 1) C4556 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- xml
+- C4556
+dev_langs: C++
+helpviewer_keywords: C4556
 ms.assetid: e4c0e296-b747-4db1-9608-30b8b74feac2
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: a55e969849a3f13464e372c1dcfe0aa0956a564d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4556
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-組み込みイミディエイト引数 '値' は 'lowerbound \- upperbound' の範囲を超えています。  
+# <a name="compiler-warning-level-1-c4556"></a>コンパイラの警告 (レベル 1) C4556
+組み込みイミディ エイト引数 'value' の値が '下限の上限値' の範囲外  
   
- 組み込み関数はハードウェア命令と一致します。  ハードウェア命令には、定数のエンコードに使用される固定数のビットがあります。  ***value*** が範囲外の場合は、正常にエンコードされません。  余分なビットは切り捨てられます。  
+ 組み込み関数では、ハードウェア命令と一致します。 ハードウェアの命令には、固定数の定数をエンコードするビットがあります。 場合***値***が範囲外には正常にエンコードされません。 コンパイラは、余分なビットを切り捨てます。  
   
- 次の例では警告 C4556 が生成されます。  
+ 次の例では、C4556 が生成されます。  
   
 ```  
 // C4556.cpp  

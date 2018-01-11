@@ -14,11 +14,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 393e8aea159e83e43b83a9f06522466c60baba9b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: deb832e0baed30507ef3f9929fb5f12805b7a807
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-programs-that-use-remote-automation"></a>リモート オートメーションを使用するプログラムの作成
 すべてのオートメーション オブジェクトとすべてのオートメーション コント ローラーは、再コンパイルの必要性と再リンクの必要なく、ソース コードを変更せずにリモート オートメーションを使用できます。 ローカルでの動作をセットアップした後 (つまり、同じコンピューターに)、リモートで実行するために、いくつかの手順のみを通過する必要があります。  
@@ -53,7 +54,7 @@ ms.lasthandoff: 10/24/2017
   
  ラジオ ボタンのシングル クリックでは、RAC マネージャーもできるリモート オートメーションと分散 COM (DCOM をサポートするプラットフォーム上の DCOM) の間で切り替えることに注意してください。 DCOM を選択する場合は、さまざまな他の構成オプションを設定できます。 詳細については、DCOM のドキュメントを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リモート オートメーション](../mfc/remote-automation.md)   
  [AUTOCLIK と AUTODRIV を使用したリモート オートメーションの実行](../mfc/running-remote-automation-using-autoclik-and-autodriv.md)
 

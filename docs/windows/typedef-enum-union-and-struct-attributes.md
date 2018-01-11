@@ -1,118 +1,121 @@
 ---
-title: "Typedef, Enum, Union, and Struct Attributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "union attributes"
-  - "attributes [C++], reference topics"
-  - "struct attributes"
-  - "typedef attributes"
-  - "enum attributes"
+title: "Typedef、Enum、Union、および struct 型の属性 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords:
+- union attributes
+- attributes [C++], reference topics
+- struct attributes
+- typedef attributes
+- enum attributes
 ms.assetid: f8a4fe94-dc02-4aed-bc31-3e500d42f4c7
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 2087d4ff4e4905324f9bbdfaa954287f033feafe
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Typedef, Enum, Union, and Struct Attributes
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次の属性は [型定義](http://msdn.microsoft.com/ja-jp/cc96cf26-ba93-4179-951e-695d1f5fdcf1)[構造体](../cpp/struct-cpp.md) と [列挙](../cpp/enumerations-cpp.md) C\+\+ キーワードに適用されます。  
+# <a name="typedef-enum-union-and-struct-attributes"></a>Typedef、Enum、Union、および Struct 型の属性
+次の属性に適用、 [typedef](http://msdn.microsoft.com/en-us/cc96cf26-ba93-4179-951e-695d1f5fdcf1)、[構造体](../cpp/struct-cpp.md)、および[enum](../cpp/enumerations-cpp.md) C++ のキーワードです。  
   
-### typedef  
+### <a name="typedef"></a>Typedef  
   
-|属性|Description|  
-|--------|-----------------|  
-|[case](../windows/case-cpp.md)|**共用体**  で [switch\_type](../windows/switch-type.md) の属性を使用します。|  
-|[custom](../windows/custom-cpp.md)|独自の属性を定義できます。|  
-|[export](../windows/export.md)|データ構造を .idl ファイル内に配置します。|  
-|[first\_is](../windows/first-is.md)|送信される最初の要素のインデックスを指定します。|  
-|[helpcontext](../windows/helpcontext.md)|ヘルプ ファイルに要素に関するユーザーの情報を表示できるようにするためのコンテキスト ID を指定します。|  
-|[helpfile](../Topic/helpfile.md)|タイプ ライブラリのヘルプ ファイルの名前を設定します。|  
-|[helpstring](../windows/helpstring.md)|適用先の要素の記述に使用される文字列を指定します。|  
-|[library\_block](../windows/library-block.md)|.idl ファイルのライブラリ ブロック内の構造を配置します。|  
-|[ptr](../windows/ptr.md)|完全なポインターとしてポインターを指定します。|  
-|[public](../windows/public-cpp-attributes.md)|.idl ファイル内で参照されていない場合でも型定義をタイプ ライブラリに入ることを確認します。|  
-|[ref](../windows/ref-cpp.md)|参照のポインターを指定します。|  
-|[switch\_is](../windows/switch-is.md)|discriminant クラスを選択する共用体として機能する式または識別子を指定します。|  
-|[switch\_type](../windows/switch-type.md)|discriminant 共用体として使用されている変数の型を指定します。|  
-|[一意](../windows/unique-cpp.md)|一意のポインターを指定します。|  
-|[wire\_marshal](../windows/wire-marshal.md)|アプリケーション固有のデータ型の代わりに転送に使用されるデータ型を指定します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|[case](../windows/case-cpp.md)|使用される、 [switch_type](../windows/switch-type.md)属性、**共用体**です。|  
+|[カスタム](../windows/custom-cpp.md)|独自の属性を定義できます。|  
+|[export](../windows/export.md)|.Idl ファイルに配置するデータ構造が発生します。|  
+|[first_is](../windows/first-is.md)|転送する最初の配列要素のインデックスを指定します。|  
+|[helpcontext](../windows/helpcontext.md)|コンテキスト ID をユーザーに関する情報を表示、ヘルプ ファイル内のこの要素を指定します。|  
+|[helpfile](../windows/helpfile.md)|タイプ ライブラリのヘルプ ファイルの名前を設定します。|  
+|[helpstring](../windows/helpstring.md)|適用すると、要素の記述に使用される文字の文字列を指定します。|  
+|[library_block](../windows/library-block.md)|.Idl ファイルのライブラリ ブロックの内部構造を配置します。|  
+|[ptr](../windows/ptr.md)|すべてのポインターとしてのポインターを指定します。|  
+|[public](../windows/public-cpp-attributes.md)|.Idl ファイル内で参照されていない場合でも、typedef がタイプ ライブラリに送られることを確認します。|  
+|[ref](../windows/ref-cpp.md)|参照ポインターを識別します。|  
+|[switch_is](../windows/switch-is.md)|式または共用体の判別共用体のメンバーが選択した役割を果たす識別子を指定します。|  
+|[switch_type](../windows/switch-type.md)|共用体の判別変数として使用される変数の型を識別します。|  
+|[unique](../windows/unique-cpp.md)|一意のポインターを指定します。|  
+|[wire_marshal](../windows/wire-marshal.md)|送信アプリケーションに固有のデータ型の代わりに使用されるデータ型を指定します。|  
   
-### enum  
+### <a name="enum"></a>enum  
   
-|属性|Description|  
-|--------|-----------------|  
-|[custom](../windows/custom-cpp.md)|独自の属性を定義できます。|  
-|[export](../windows/export.md)|データ構造を .idl ファイル内に配置します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|[カスタム](../windows/custom-cpp.md)|独自の属性を定義できます。|  
+|[export](../windows/export.md)|.Idl ファイルに配置するデータ構造が発生します。|  
 |[uuid](../windows/uuid-cpp-attributes.md)|クラスまたはインターフェイスの一意の ID を指定します。|  
-|[v1\_enum](../windows/v1-enum.md)|指定した列挙体が16 ビットの既定値ではなく 32 ビット エンティティとして送信されることを指定します。|  
+|[v1_enum](../windows/v1-enum.md)|指定した列挙型は、既定の 16 ビットではなく、32 ビットのエンティティとして送信するように指示します。|  
   
-### union  
+### <a name="union"></a>union  
   
-|属性|Description|  
-|--------|-----------------|  
-|[custom](../windows/custom-cpp.md)|独自の属性を定義できます。|  
-|[export](../windows/export.md)|データ構造を .idl ファイル内に配置します。|  
-|[first\_is](../windows/first-is.md)|送信される最初の要素のインデックスを指定します。|  
-|[last\_is](../windows/last-is.md)|送信する最後の要素のインデックスを指定します。|  
-|[length\_is](../windows/length-is.md)|送信される配列要素の数を指定します。|  
-|[max\_is](../windows/max-is.md)|有効な配列インデックスの最大値を指定します。|  
-|[size\_is](../Topic/size_is.md)|付きサイズポインター サイズ設定されたポインター用に設定されたポインター サイズおよび単一または多次元配列に割り当てられているメモリのサイズを指定します。|  
-|[一意](../windows/unique-cpp.md)|一意のポインターを指定します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|[カスタム](../windows/custom-cpp.md)|独自の属性を定義できます。|  
+|[export](../windows/export.md)|.Idl ファイルに配置するデータ構造が発生します。|  
+|[first_is](../windows/first-is.md)|転送する最初の配列要素のインデックスを指定します。|  
+|[last_is](../windows/last-is.md)|転送する最後の配列要素のインデックスを指定します。|  
+|[length_is](../windows/length-is.md)|転送する配列要素の数を指定します。|  
+|[max_is](../windows/max-is.md)|有効な配列インデックスの最大値を指定します。|  
+|[size_is](../windows/size-is.md)|サイズのポインターに割り当てられた、サイズのポインター、および 1 次元または多次元配列へのポインターのサイズのメモリのサイズを指定します。|  
+|[unique](../windows/unique-cpp.md)|一意のポインターを指定します。|  
 |[uuid](../windows/uuid-cpp-attributes.md)|クラスまたはインターフェイスの一意の ID を指定します。|  
   
-### Nonencapsulated の共用体  
+### <a name="nonencapsulated-union"></a>カプセル化されていない共用体  
   
-|属性|Description|  
-|--------|-----------------|  
-|[ms\_union](../windows/ms-union.md)|nonencapsulated 共用体のネットワーク データ表現の配置を制御します。|  
-|[no\_injected\_text](../windows/no-injected-text.md)|コンパイラで属性を使用した結果としてコードを挿入できません。|  
+|属性|説明|  
+|---------------|-----------------|  
+|[ms_union](../windows/ms-union.md)|カプセル化されていない共用体のネットワーク データ表現のアラインメントを制御します。|  
+|[no_injected_text](../windows/no-injected-text.md)|コンパイラがコードの属性を使用した結果として挿入するを防ぎます。|  
   
-### struct  
+### <a name="struct"></a>struct  
   
-|属性|Description|  
-|--------|-----------------|  
-|[aggregatable](../Topic/aggregatable.md)|クラスが集約をサポートすることを示します。|  
-|[集約](../windows/aggregates.md)|コントロールが対象のクラスを集約することを示します。|  
-|[appobject](../Topic/appobject.md)|コクラスを完全な .exe アプリケーションに関連付けられている特定しコクラスの関数とプロパティがこのタイプ ライブラリでグローバルに使用できるオブジェクトとしてアプリケーションを示します。|  
-|[コクラス](../windows/coclass.md)|ActiveX コントロールを作成します。|  
-|[com\_interface\_entry](../Topic/com_interface_entry%20\(C++\).md)|COM インターフェイス マップにエントリを追加します。|  
-|[コントロール](../windows/control.md)|ユーザー定義型はコントロールであることを指定します。|  
-|[custom](../windows/custom-cpp.md)|独自の属性を定義できます。|  
-|[db\_column](../windows/db-column.md)|行セットに指定した列をバインドします。|  
-|[db\_command](../windows/db-command.md)|OLE DB のコマンドを作成します。|  
-|[db\_param](../windows/db-param.md)|指定したメンバー変数を入力または出力パラメーターに関連付け変数を区切ります。|  
-|[db\_source](../windows/db-source.md)|データ ソースへの接続を作成します。|  
-|[db\_table](../windows/db-table.md)|OLE DB テーブルを開きます。|  
+|属性|説明|  
+|---------------|-----------------|  
+|[aggregatable](../windows/aggregatable.md)|クラスが集計をサポートしていることを示します。|  
+|[aggregates](../windows/aggregates.md)|コントロールがターゲット クラスを集約することを示します。|  
+|[appobject](../windows/appobject.md)|完全 .exe アプリケーションに関連付けられ、関数と、コクラスのプロパティがグローバルに使用できることでこのタイプ ライブラリを示しますアプリケーション オブジェクトとしてコクラスを識別します。|  
+|[coclass](../windows/coclass.md)|ActiveX コントロールを作成します。|  
+|[com_interface_entry](../windows/com-interface-entry-cpp.md)|インターフェイスのエントリを COM マップに追加します。|  
+|[control](../windows/control.md)|ユーザー定義型がコントロールであることを指定します。|  
+|[カスタム](../windows/custom-cpp.md)|独自の属性を定義できます。|  
+|[db_column](../windows/db-column.md)|行セットに指定された列をバインドします。|  
+|[db_command](../windows/db-command.md)|OLE DB コマンドを作成します。|  
+|[db_param](../windows/db-param.md)|入力または出力パラメーターを持つ指定したメンバー変数を関連付けるし、変数を区切ります。|  
+|[db_source](../windows/db-source.md)|データ ソースへの接続を作成します。|  
+|[db_table](../windows/db-table.md)|OLE DB テーブルを開きます。|  
 |[default](../windows/default-cpp.md)|コクラス内で定義されるカスタムまたはディスパッチ インターフェイスが既定のプログラミング インターフェイスを表すことを示します。|  
-|[defaultvtable](../windows/defaultvtable.md)|コントロールの既定の vtable インターフェイスとインターフェイスを定義します。|  
-|[event\_receiver](../windows/event-receiver.md)|イベント レシーバーを作成します。|  
-|[ソース](../windows/event-source.md)|イベント ソースを作成します。|  
-|[export](../windows/export.md)|データ構造を .idl ファイル内に配置します。|  
-|[first\_is](../windows/first-is.md)|送信される最初の要素のインデックスを指定します。|  
-|[hidden](../Topic/hidden.md)|項目が存在してもユーザー指向ブラウザーに表示されないことを示します。|  
-|[implements\_category](../Topic/implements_category.md)|によってクラスのコンポーネント カテゴリを実行します。|  
-|[last\_is](../windows/last-is.md)|送信する最後の要素のインデックスを指定します。|  
-|[length\_is](../windows/length-is.md)|送信される配列要素の数を指定します。|  
-|[max\_is](../windows/max-is.md)|有効な配列インデックスの最大値を指定します。|  
-|[requires\_category](../windows/requires-category.md)|ターゲット クラスの必須コンポーネントのカテゴリを指定します。|  
-|[size\_is](../Topic/size_is.md)|付きサイズポインター サイズ設定されたポインター用に設定されたポインター サイズおよび単一または多次元配列に割り当てられているメモリのサイズを指定します。|  
-|[source](../Topic/source%20\(C++\).md)|クラスではコネクション ポイントに COM オブジェクトのソース インターフェイスを指定します。  プロパティまたはメソッドでメンバーがイベントのソースであるかバリアント オブジェクトを返すことを示します。|  
-|[スレッド](../windows/threading-cpp.md)|COM オブジェクトに対してスレッド モデルを指定します。|  
-|[一意](../windows/unique-cpp.md)|一意のポインターを指定します。|  
+|[defaultvtable](../windows/defaultvtable.md)|コントロールの既定の vtable インターフェイスとしてインターフェイスを定義します。|  
+|[event_receiver](../windows/event-receiver.md)|イベント レシーバーを作成します。|  
+|[event_source](../windows/event-source.md)|イベント ソースを作成します。|  
+|[export](../windows/export.md)|.Idl ファイルに配置するデータ構造が発生します。|  
+|[first_is](../windows/first-is.md)|転送する最初の配列要素のインデックスを指定します。|  
+|[hidden](../windows/hidden.md)|項目が存在しますが、ユーザー指向ブラウザーで表示する必要がありますされませんを示します。|  
+|[implements_category](../windows/implements-category.md)|クラスの実装済みのコンポーネントのカテゴリを指定します。|  
+|[last_is](../windows/last-is.md)|転送する最後の配列要素のインデックスを指定します。|  
+|[length_is](../windows/length-is.md)|転送する配列要素の数を指定します。|  
+|[max_is](../windows/max-is.md)|有効な配列インデックスの最大値を指定します。|  
+|[requires_category](../windows/requires-category.md)|ターゲット クラスの必須コンポーネントのカテゴリを指定します。|  
+|[size_is](../windows/size-is.md)|サイズのポインターに割り当てられた、サイズのポインター、および 1 次元または多次元配列へのポインターのサイズのメモリのサイズを指定します。|  
+|[ソース](../windows/source-cpp.md)|クラスでは、接続ポイント用の COM オブジェクトのソース インターフェイスを指定します。 プロパティまたはメソッドでは、メンバーがオブジェクトまたはイベントのソースであるバリアント型を返すことを示します。|  
+|[スレッド処理](../windows/threading-cpp.md)|COM オブジェクトのスレッド モデルを指定します。|  
+|[unique](../windows/unique-cpp.md)|一意のポインターを指定します。|  
 |[uuid](../windows/uuid-cpp-attributes.md)|クラスまたはインターフェイスの一意の ID を指定します。|  
-|[version](../windows/version-cpp.md)|クラスの複数のバージョンでの特定のバージョンを指定します。|  
-|[vi\_progid](../windows/vi-progid.md)|ProgID のバージョンに依存しない形式を指定します。|  
+|[version](../windows/version-cpp.md)|クラスの複数のバージョン間で特定のバージョンを識別します。|  
+|[vi_progid](../windows/vi-progid.md)|ProgID のバージョンに依存しない形式を指定します。|  
   
-## 参照  
- [Attributes by Usage](../windows/attributes-by-usage.md)
+## <a name="see-also"></a>参照  
+ [使用法別の属性](../windows/attributes-by-usage.md)

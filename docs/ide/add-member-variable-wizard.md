@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 28be63dffff7d89b4967363670263f78b98d398a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b909ec7ccd830e088df81ca0b2db8cda133c7a20
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="add-member-variable-wizard"></a>メンバー変数の追加ウィザード
 このウィザードは、ヘッダー ファイルに、メンバー変数宣言を追加し、オプションに応じて、.cpp ファイルにコードを追加します。 ウィザードを使用して、メンバー変数を追加した後は、開発環境でコードを編集することができます。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 10/24/2017
 |オプション|説明|  
 |------------|-----------------|  
 |**コントロール**|このオプションは、コントロール型の既定で設定されます。 (リスト ボックス、コンボ ボックス、または編集ボックスに実行する可能性があります)、コントロール自体の状態やではなく内容を管理するコントロールのです。|  
-|**値**|このオプションは、(エディット ボックスなどの値を格納したり、(チェック ボックスなど)、状態を反映できるコントロールの種類に対してのみとする利用可能な範囲、内容、または状態を管理することができます。 参照してください[ダイアログ ボックス コントロールおよび変数の型](../ide/dialog-box-controls-and-variable-types.md)詳細についてはします。|  
+|**[値]**|このオプションは、(エディット ボックスなどの値を格納したり、(チェック ボックスなど)、状態を反映できるコントロールの種類に対してのみとする利用可能な範囲、内容、または状態を管理することができます。 参照してください[ダイアログ ボックス コントロールおよび変数の型](../ide/dialog-box-controls-and-variable-types.md)詳細についてはします。|  
   
  **カテゴリ**  
  コントロールの種類またはコントロールの値に変数がに基づいて表示するかどうかを指定します。  
@@ -90,5 +91,5 @@ ms.lasthandoff: 10/24/2017
  **コメント**  
  メンバー変数のヘッダー ファイル内のコメントを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メンバー変数の追加](../ide/adding-a-member-variable-visual-cpp.md)

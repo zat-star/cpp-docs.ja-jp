@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 71d0060866b6a02de3c58ed40100dee59743749b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 387344160cf2009b19ad8de820eabc6063ae1f7c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="drag-and-drop-customizing"></a>ドラッグ アンド ドロップ: カスタマイズ
 ドラッグ アンド ドロップ機能の既定の実装は、ほとんどのアプリケーションです。 ただし、一部のアプリケーションでは、この標準動作を変更する必要があります。 この記事では、これらの既定値を変更するための手順について説明します。 さらに、ドロップ ソースとしての複合ドキュメントをサポートしていないアプリケーションを確立するためにこの手法を使用することができます。  
@@ -40,7 +41,7 @@ ms.lasthandoff: 10/24/2017
 |`GiveFeedback`|ドロップの結果に、カーソルの外観などの視覚的フィードバックします。|  
 |`QueryContinueDrag`|ドラッグ アンド ドロップ操作の終了。 この関数では、ドラッグ操作中に修飾子キーの状態を確認することができます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ドラッグ アンド ドロップ (OLE)](../mfc/drag-and-drop-ole.md)   
  [COleDropSource クラス](../mfc/reference/coledropsource-class.md)   
  [COleDataSource クラス](../mfc/reference/coledatasource-class.md)

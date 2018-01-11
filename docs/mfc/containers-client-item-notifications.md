@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 03b8833f5c5b05a737541f03b75b0986991debec
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 58f995893f580ef41c27653a30e94d1f106fceb1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="containers-client-item-notifications"></a>コンテナー : クライアント アイテムへの通知
 この記事では、オーバーライド可能なサーバー アプリケーションがクライアント アプリケーションのドキュメント内の項目を変更、MFC フレームワークによって呼び出される関数について説明します。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 10/24/2017
   
  OLE 項目の位置またはサイズ変更された場合、インプレース編集中に、アイテムの位置とクリッピング四角形のコンテナーの情報を更新する必要があり、サーバーは、その変更に関する情報を受け取る必要があります。 フレームワークによって`COleClientItem::OnChangeItemPosition`この目的のためです。 MFC アプリケーション ウィザードでは、基本クラスの関数を呼び出している上書きを提供します。 アプリケーション ウィザードで生成する関数を編集する必要があります、 `COleClientItem`-関数は、クライアント アイテム オブジェクトによって保持される情報を更新するようにクラスを派生します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンテナー](../mfc/containers.md)   
  [コンテナー: クライアント アイテムの状態](../mfc/containers-client-item-states.md)   
  [に](../mfc/reference/coleclientitem-class.md#onchangeitemposition)

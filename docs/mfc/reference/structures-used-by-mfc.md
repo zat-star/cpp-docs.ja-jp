@@ -4,28 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- vc.mfc.structures
-dev_langs:
-- C++
+f1_keywords: vc.mfc.structures
+dev_langs: C++
 helpviewer_keywords:
 - structures
 - structures, MFC
 ms.assetid: 2168fcc6-e800-4814-aabf-0bca86ff790d
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: cc1f64a7e088d274e8dde2e2616edab64de7f8db
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 7952b6a5cafa2abd24a7edaf6f7d27afdf068e24
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="structures-used-by-mfc"></a>MFC が使用する構造体
 次の表は、さまざまなメンバー関数から呼び出される構造体を一覧表示します。 個別の構造体の使用方法については、クラスおよび各構造体の「参照」に記載されているメンバー関数を参照してください。  
@@ -58,7 +55,6 @@ ms.lasthandoff: 10/09/2017
 |**EXTENSION_CONTROL_BLOCK 構造体**||  
 |[FILETIME 構造体](../../mfc/reference/filetime-structure.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体、スタイル、コールバック関数とメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)
-
 

@@ -117,11 +117,12 @@ caps.latest.revision: "29"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 508e62aa4a9bbe1767d8be446d75263f6322f239
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9185aee3b8a6750260549d5d180fa7e30e1fc321
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cpanecontainermanager-class"></a>CPaneContainerManager クラス
 `CPaneContainerManager`クラスは、記憶域と現在のドッキング レイアウトの表示を管理します。  
@@ -205,7 +206,7 @@ class CPaneContainerManager : public CObject
   
  [CPaneContainerManager](../../mfc/reference/cpanecontainermanager-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxpanecontainermanager.h  
   
 ##  <a name="addpane"></a>CPaneContainerManager::AddPane  
@@ -903,7 +904,7 @@ virtual void StoreRecentDockSiteInfo(CDockablePane* pBar);
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   

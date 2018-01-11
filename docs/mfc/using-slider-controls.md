@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e45ba5422f1d1c458cfeffe65b91122158bbbcff
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4fdab6a7fae25845da81ee7263e045e50951f557
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-slider-controls"></a>スライダー コントロールの使い方
 通常、スライダー コントロールの使い方は、次のパターンを次に示します。  
@@ -34,7 +35,7 @@ ms.lasthandoff: 10/24/2017
   
 -   コントロールに完了したらが正常に破棄されるかどうかを確認する必要があります。 スライダー コントロールがダイアログ ボックスでは、場合、および`CSliderCtrl`オブジェクトは自動的に破棄されます。 かどうか、する必要はありません、両方のコントロールをことを確認して、`CSliderCtrl`オブジェクトが破棄されました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CSliderCtrl の使い方](../mfc/using-csliderctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

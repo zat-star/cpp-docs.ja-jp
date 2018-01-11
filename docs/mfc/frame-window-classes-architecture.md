@@ -15,11 +15,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0b4a8076cbec9292718c9bc2413d690bacbc4a67
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f1caf8e4b93e18675b810ced962df6e8adcf521a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="frame-window-classes-architecture"></a>フレーム ウィンドウ クラス (アーキテクチャ)
 ドキュメント/ビュー アーキテクチャでは、フレーム ウィンドウは、ビュー ウィンドウを持つウィンドウです。 サポート コントロール バーが割り当てられています。  
@@ -40,6 +41,6 @@ ms.lasthandoff: 10/24/2017
  [COleIPFrameWnd](../mfc/reference/coleipframewnd-class.md)  
  サーバー ドキュメントを一括で編集するときに、ビューのフレーム ウィンドウを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

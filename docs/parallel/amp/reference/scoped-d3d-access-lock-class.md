@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d23a2513e1a952a6b37fb7dfdf3fd09d0ace0767
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 37dadc932701354de317d253a39bd2f2ee71a495
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="scopedd3daccesslock-class"></a>scoped_d3d_access_lock クラス
 accelerator_view オブジェクトに対する D3D アクセス ロックの RAII ラッパーです。  
@@ -50,7 +51,7 @@ class scoped_d3d_access_lock;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `scoped_d3d_access_lock`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amprt.h  
   
  **Namespace:** concurrency::direct3d  
@@ -116,5 +117,5 @@ scoped_d3d_access_lock& operator= (scoped_d3d_access_lock&& _Other);
 ### <a name="return-value"></a>戻り値  
  この `scoped_accelerator_view_lock` への参照。  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::direct3d 名前空間](concurrency-direct3d-namespace.md)
