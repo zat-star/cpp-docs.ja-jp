@@ -1,37 +1,38 @@
 ---
-title: "_mm_extract_si64、_mm_extracti_si64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_mm_extracti_si64"
-  - "_mm_extract_si64"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "extrq 命令"
-  - "_mm_extracti_si64 組み込み"
-  - "_mm_extract_si64 組み込み"
+title: "_mm_extract_si64、_mm_extracti_si64 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _mm_extracti_si64
+- _mm_extract_si64
+dev_langs: C++
+helpviewer_keywords:
+- extrq instruction
+- _mm_extracti_si64 intrinsic
+- _mm_extract_si64 intrinsic
 ms.assetid: 459fdd72-cc54-4ee5-bbd5-d2c6067a88e7
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: cc28de10a2a0d53ee87920d511ea894ad517a79a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# _mm_extract_si64、_mm_extracti_si64
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="mmextractsi64-mmextractisi64"></a>_mm_extract_si64、_mm_extracti_si64
+**Microsoft 固有の仕様**  
   
- 最初の引数の下位 64 ビットで指定のビットを抽出します `extrq` 命令を生成します。  
+ 生成、`extrq`最初の引数の下位 64 ビットから指定したビットを抽出する命令です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 __m128i _mm_extract_si64(  
@@ -45,41 +46,41 @@ __m128i _mm_extracti_si64(
 );  
 ```  
   
-#### パラメーター  
- \[入力\]`Source`  
- 下位 64 ビットの入力データのビット フィールドを指定します。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `Source`  
+ 入力データの下位 64 ビットでは、128 ビット フィールドです。  
   
- \[入力\] `Descriptor`  
- 抽出するためにビット フィールドを記述するビットのフィールド。  
+ [in]`Descriptor`  
+ 抽出するビット フィールドを説明する 128 ビット フィールドです。  
   
- \[入力\] `Length`  
- 抽出するにはフィールドのサイズを指定する整数。  
+ [in]`Length`  
+ 抽出するフィールドの長さを指定する整数。  
   
- \[入力\] `Index`  
- 抽出するにはフィールドのインデックスを指定する整数  
+ [in]`Index`  
+ 抽出するフィールドのインデックスを指定する整数  
   
-## 戻り値  
- 最下位のビットを抽出するフィールドを持つビットのフィールド。  
+## <a name="return-value"></a>戻り値  
+ その最下位のビット単位で抽出されたフィールドでは、128 ビット フィールドです。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
+|---------------|------------------|  
 |`_mm_extract_si64`|SSE4a|  
 |`_mm_extracti_si64`|SSE4a|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- この組み込みでは `Source` のビットを抽出 `extrq` 命令を生成します。この組み込みの 2 種類のバージョンがあります : `_mm_extracti_si64` は直接のバージョンであり`_mm_extract_si64` は直接のとおりです。  各バージョンがビット フィールドは最下位ビットの長さとインデックスによって定義された `Source` から抽出します。  長さとインデックスの値はmod 64 の一部であるため\-1 と 127 は 63 として解釈されます。  \(CSS\) とインデックス \(CSS\) フィールドの長さの合計が 64 の場合結果は未定義です。  64 としてフィールドの長さがゼロの値は解釈されます。  フィールドの長さとビット インデックスがどちらもゼロの場合`Source` 63:0 ビットを抽出します。  フィールドの長さがゼロの場合はビットのインデックスがゼロ以外の場合結果は未定義になります。  
+## <a name="remarks"></a>コメント  
+ この組み込みを生成、`extrq`からのビットを抽出する命令`Source`です。この 2 つのバージョンがある組み込み:`_mm_extracti_si64`即時のバージョンと`_mm_extract_si64`緊急であります。  各バージョンがから抽出`Source`その長さと、その最下位ビットのインデックスで定義されたビット フィールドです。 長さとインデックスの値は取得されます mod 64、-1 および 127 の両方が 63 として解釈されるためです。 (縮小) のインデックスと (縮小) フィールドの長さの合計を 64 を超える場合、結果は未定義です。 フィールド長に 0 の値は、64 として解釈されます。 場合、フィールドの長さとビットのインデックスの両方で 0 ビット 63:0`Source`抽出されます。 フィールドの長さが 0 ですが、ビットのインデックスは 0 以外、結果は未定義です。  
   
- \_mm\_extract\_si64 の呼び出しが 5:0 ビットで抽出するデータ フィールドおよび 13:8 ビット長で`Descriptor` インデックスが含まれています。  
+ _Mm_extract_si64 への呼び出しで、 `Descriptor` bits 13:8 および bits 5:0 で抽出するデータのフィールド長、インデックスが含まれています.  
   
- を呼び出すとコンパイラは整数定数にコンパイルできない引数との `_mm_extracti_si64` は値を `Descriptor`XMM レジスタ \(\) を空けないようにパックし`_mm_extract_si64` を呼び出すコードを生成します。  
+ 呼び出す場合`_mm_extracti_si64`コンパイラは、整数定数である判断できない引数を指定して、コンパイラは XMM レジスタにそれらの値をパックするコードを生成 (`Descriptor`) を呼び出す`_mm_extract_si64`です。  
   
- `extrq` の命令に対するハードウェア サポートを確認するには`InfoType=0x80000001` の `__cpuid` 組み込みを呼び出し`CPUInfo[2] (ECX)` のビット 6 をチェックします。  このビットは命令がサポートされている場合は 0 になりは 1。  `extrq` 命令をサポートしないこの基本的なハードウェアを使用するコードを実行すると結果は予測できません。  
+ ハードウェア サポートの決定を`extrq`命令、呼び出し、`__cpuid`で組み込み`InfoType=0x80000001`のビット 6 をチェックし、`CPUInfo[2] (ECX)`です。 このビットはある命令がサポートされている場合は 1 と 0 それ以外の場合。 サポートしていないこの固有のハードウェアを使用するコードを実行するかどうか、`extrq`命令、結果は予測できません。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // Compile this sample with: /EHsc  
@@ -108,12 +109,15 @@ main()
 }  
 ```  
   
-  **result1 \= 0x30eca86**  
-**result2 \= 0x30eca86**  
-**result3 \= 0x30eca86**   
-## 終了 Microsoft 固有の仕様→  
- アドバンストのマイクロアーキテクチャのデバイセズ Inc の著作の著作権2007 年\)   All rights reserved.  アドバンストのマイクロアーキテクチャのデバイセズのアクセス許可と再生されInc  
+```Output  
+result1 = 0x30eca86  
+result2 = 0x30eca86  
+result3 = 0x30eca86  
+```  
   
-## 参照  
- [\_mm\_insert\_si64、\_mm\_inserti\_si64](../Topic/_mm_insert_si64,%20_mm_inserti_si64.md)   
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+ 高度なマイクロ デバイス, Inc. によって copyright 2007All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
+  
+## <a name="see-also"></a>参照  
+ [_mm_insert_si64、_mm_inserti_si64](../intrinsics/mm-insert-si64-mm-inserti-si64.md)   
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

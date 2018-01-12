@@ -17,17 +17,18 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9fb3da38c9a17ae84c42d1a2337059a3932cbf04
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 622e6d04a567668ebfd2c737c5cdde1c2ea09b35
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="debugging-and-exception-classes"></a>デバッグおよび例外クラス
 これらのクラスは、動的メモリ割り当てをデバッグするため、ここで、例外がスローされます、関数をキャッチする関数から例外情報を渡すために、サポートを提供します。  
   
  クラスを使用して[CDumpContext](../mfc/reference/cdumpcontext-class.md)と[行い](../mfc/reference/cmemorystate-structure.md)」の説明に従って、デバッグを支援するために開発中に[MFC アプリケーションのデバッグ](/visualstudio/debugger/mfc-debugging-techniques)です。 使用して[CRuntimeClass](../mfc/reference/cruntimeclass-structure.md)資料」の説明に従って、実行時に、任意のオブジェクトのクラスを判別する[クラス情報にアクセスする](../mfc/accessing-run-time-class-information.md)です。 フレームワークを使用して`CRuntimeClass`特定クラスのオブジェクトを動的に作成します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

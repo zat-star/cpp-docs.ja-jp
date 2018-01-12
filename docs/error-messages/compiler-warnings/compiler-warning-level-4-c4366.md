@@ -1,39 +1,38 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4366 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4366"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4366"
+title: "コンパイラの警告 (レベル 4) C4366 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4366
+dev_langs: C++
+helpviewer_keywords: C4366
 ms.assetid: 65d2942f-3741-42f4-adf2-4920d5a055ca
-caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 221cc02e5a2592599bad0ee9a77de59b19dda6f5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4366
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'演算子' 単項演算子の結果は適切でない可能性があります  
+# <a name="compiler-warning-level-4-c4366"></a>コンパイラの警告 (レベル 4) C4366
+単項 'operator' 演算子の結果は固定でない可能性があります。  
   
- パッキングにより構造体メンバーが適切に配置されない場合は、そのメンバーのアドレスが配置ポインターに代入されるときに警告が出されます。  既定では、すべてのポインターが整列されています。  
+ 場合構造体のメンバーがこれまでできません固定梱包のため、コンパイラは警告ときに固定されたポインター、メンバーのアドレスが割り当てられています。 既定では、すべてのポインターを配置します。  
   
- C4366 を解決するには、構造体の配置を変更するか、[\_\_unaligned](../../cpp/unaligned.md) キーワードを指定してポインターを宣言します。  
+ C4366 を解決するには、構造体のアラインメントを変更するかでマウス ポインターを宣言、 [_ _unaligned](../../cpp/unaligned.md)キーワード。  
   
- 詳細については、\_\_unaligned および「[pack](../../preprocessor/pack.md)」を参照してください。  
+ 詳細については、_ _unaligned を参照してください。 および[パック](../../preprocessor/pack.md)です。  
   
-## 使用例  
- 次の例では C4366 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4366 を生成します。  
   
 ```  
 // C4366.cpp  

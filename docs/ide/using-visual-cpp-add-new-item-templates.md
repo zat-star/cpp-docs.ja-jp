@@ -18,11 +18,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1ebf163c721d8fd05c5481859cf0158ee22180e5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4c2326dc87c0490256972bfe23df5cc7ed13a787
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-visual-c-add-new-item-templates"></a>Visual C++ の新しい項目の追加テンプレートの使用方法
 使用して Visual C プロジェクトに共通している項目を簡単に追加することができます、**新しい項目の追加**コマンド。 使用する場合、**新しい項目の追加**コマンド、`Add New Item`項目テンプレートは、適切なファイルをプロジェクトに追加の一覧 ダイアログ ボックスが表示されます。  
@@ -63,5 +64,5 @@ ms.lasthandoff: 10/24/2017
 |XML スキーマ ファイル (.xsd)|XML ドキュメントのスキーマを定義するために使用するファイルを作成します。|  
 |XSLT ファイル (.xslt)|XML ドキュメントの変換に使用されるファイルを作成します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コード ウィザードによる機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)

@@ -1,87 +1,88 @@
 ---
-title: "__addgsbyte、__addgsword、__addgsdword、__addgsqword | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__addgsdword"
-  - "__addgsqword"
-  - "__addgsword_cpp"
-  - "__addgsword"
-  - "__addgsbyte_cpp"
-  - "__addgsqword_cpp"
-  - "__addgsbyte"
-  - "__addgsdword_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__addgsword 組み込み"
-  - "__addgsqword 組み込み"
-  - "__addgsdword 組み込み"
-  - "__addgsbyte 組み込み"
+title: "_ _addgsbyte、_ _addgsword、_ _addgsdword、_ _addgsqword |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- __addgsdword
+- __addgsqword
+- __addgsword_cpp
+- __addgsword
+- __addgsbyte_cpp
+- __addgsqword_cpp
+- __addgsbyte
+- __addgsdword_cpp
+dev_langs: C++
+helpviewer_keywords:
+- __addgsword intrinsic
+- __addgsqword intrinsic
+- __addgsdword intrinsic
+- __addgsbyte intrinsic
 ms.assetid: 4fa03e69-d849-49ed-ba37-1d3aa23c2a21
-caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 340b1464983d46ea13f423ec7cf596e7c973f3a2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# __addgsbyte、__addgsword、__addgsdword、__addgsqword
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="addgsbyte-addgsword-addgsdword-addgsqword"></a>__addgsbyte、__addgsword、__addgsdword、__addgsqword
+**Microsoft 固有の仕様**  
   
- `GS` セグメントの先頭を基準としたオフセットが指定したメモリ位置に値を追加します。  
+ 先頭の相対オフセットによって指定されたメモリ位置に値を追加、`GS`セグメント。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-void __addgsbyte(   
-   unsigned long Offset,   
-   unsigned char Data   
+void __addgsbyte(   
+   unsigned long Offset,   
+   unsigned char Data   
 );  
-void __addgsword(   
-   unsigned long Offset,   
-   unsigned short Data   
+void __addgsword(   
+   unsigned long Offset,   
+   unsigned short Data   
 );  
-void __addgsdword(   
-   unsigned long Offset,   
-   unsigned long Data   
+void __addgsdword(   
+   unsigned long Offset,   
+   unsigned long Data   
 );  
-void __addgsqword(   
-   unsigned long Offset,   
-   unsigned __int64 Data   
+void __addgsqword(   
+   unsigned long Offset,   
+   unsigned __int64 Data   
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `Offset`  
- `GS` の先頭からのオフセット。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `Offset`  
+ 先頭からのオフセット`GS`です。  
   
- \[入力\] `Data`  
+ [入力] `Data`  
  メモリ位置に追加する値。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__addgsbyte`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`__addgsword`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`__addgsdword`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`__addgsqword`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__addgsbyte`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__addgsword`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__addgsdword`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__addgsqword`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
-## 解説  
- これらの組み込みはカーネル モードでのみ使用できこれらのルーチンは組み込みとしてのみ使用できます。  
+## <a name="remarks"></a>コメント  
+ これらの組み込みはカーネル モードでのみ、使用できると、これらのルーチンは組み込みとしてのみです。  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_\_incgsbyte、\_\_incgsword、\_\_incgsdword、\_\_incgsqword](../intrinsics/incgsbyte-incgsword-incgsdword-incgsqword.md)   
- [\_\_readgsbyte、\_\_readgsdword、\_\_readgsqword、\_\_readgsword](../intrinsics/readgsbyte-readgsdword-readgsqword-readgsword.md)   
- [\_\_writegsbyte、\_\_writegsdword、\_\_writegsqword、\_\_writegsword](../intrinsics/writegsbyte-writegsdword-writegsqword-writegsword.md)   
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+## <a name="see-also"></a>参照  
+ [_ _incgsbyte、 \__incgsword、 \__incgsdword、 \__incgsqword](../intrinsics/incgsbyte-incgsword-incgsdword-incgsqword.md)   
+ [_ _readgsbyte、 \__readgsdword、 \__readgsqword、 \__readgsword](../intrinsics/readgsbyte-readgsdword-readgsqword-readgsword.md)   
+ [_ _writegsbyte、 \__writegsdword、 \__writegsqword、 \__writegsword](../intrinsics/writegsbyte-writegsdword-writegsqword-writegsword.md)   
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

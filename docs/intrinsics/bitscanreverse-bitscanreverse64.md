@@ -22,11 +22,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1547a5aa4ab4709c47305bd5097ba138171fd71c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 038c0e30078287f968cd744a9bfe53f65a70bb22
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="bitscanreverse-bitscanreverse64"></a>_BitScanReverse、_BitScanReverse64
 **Microsoft 固有の仕様**  
@@ -56,7 +57,7 @@ unsigned char _BitScanReverse64(
 ## <a name="return-value"></a>戻り値  
  `Index` が設定された場合は 0 以外、設定済みビットが見つからなかった場合は 0。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|Header|  
 |---------------|------------------|------------|  
@@ -109,5 +110,5 @@ Mask: 12 Index: 3
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

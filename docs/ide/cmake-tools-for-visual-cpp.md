@@ -13,11 +13,12 @@ ms.assetid: 444d50df-215e-4d31-933a-b41841f186f8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 770b7f70e52859b1489b984d8aef3c3876a9ca83
-ms.sourcegitcommit: 1b480aa74886930b3bd0435d71cfcc3ccda36424
+ms.workload: cplusplus
+ms.openlocfilehash: d38538ce929410782eee7a0a6540bb62a05b7669
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmake-projects-in-visual-c"></a>Visual C で CMake プロジェクト
 この記事では、CMake、複数のプラットフォームで実行されるビルド プロセスを定義するためのプラットフォーム間でオープン ソース ツールに慣れていることを前提としています。  
@@ -26,7 +27,7 @@ Visual Studio ユーザーが CMake を使用して、IDE が IntelliSense の�
 
 **Visual Studio 2017 バージョン 15.3**: 忍者と Visual Studio の両方のジェネレーターのサポートを提供します。
 
-**Visual Studio 2017 バージョン 15.4**: Linux 上の CMake のサポートを追加します。 詳細については、次を参照してください。 [Linux CMake プロジェクト構成](../linux/cmake-linux-project.md)です。
+**Visual Studio 2017 バージョン 15.4**: Linux 上の CMake のサポートを追加します。 詳細については、「[Configure a Linux CMake Project](../linux/cmake-linux-project.md)」 (Linux CMake プロジェクトを構成する) を参照してください。
 
 ## <a name="installing"></a>インストール
 CMake の visual C ツールは既定では C++ のワークロードでデスクトップ開発の一部としてインストールされます。

@@ -1,35 +1,34 @@
 ---
-title: "コンパイラの警告 (レベル 3) C4334 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4334"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4334"
+title: "コンパイラの警告 (レベル 3) C4334 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4334
+dev_langs: C++
+helpviewer_keywords: C4334
 ms.assetid: d845857f-bc95-4faf-a079-626a0cf935ba
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 7218caa399aec0bd1b9755fb6d0942991732121e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 3) C4334
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'演算子' : 32 ビット シフトの結果が暗黙的に 64 ビットに変換されました \(64 ビット シフトに意図的に変換しようとしましたか?\)  
+# <a name="compiler-warning-level-3-c4334"></a>コンパイラの警告 (レベル 3) C4334
+'operator': 64 ビットに 32 ビット シフトの結果が暗黙的に変換 (されました 64 ビット シフト目的としていますか?)  
   
- 32 ビット シフトの結果が 64 ビットに暗黙的に型変換されましたが、コンパイラはその 64 ビット シフトが意図されていたものかどうかを判断できません。この警告を解決するには、64 ビット シフトを使用するか、シフトの結果を 64 ビットに明示的にキャストします。  
+ 32 ビット シフトの結果は、64 ビットおよび 64 ビット シフトされたものである、コンパイラを疑いますに暗黙的に変換されました。  この警告を解決するには、64 ビット シフトを使用するか 64 ビットをシフトの結果を明示的にキャストします。  
   
-## 使用例  
- 次の例では C4334 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4334 を生成します。  
   
 ```  
 // C4334.cpp  

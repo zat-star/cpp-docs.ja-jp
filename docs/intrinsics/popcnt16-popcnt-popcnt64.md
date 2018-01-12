@@ -1,39 +1,40 @@
 ---
-title: "__popcnt16、__popcnt、__popcnt64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__popcnt64"
-  - "__popcnt"
-  - "__popcnt16"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "popcnt 命令"
-  - "__popcnt16"
-  - "__popcnt64"
-  - "__popcnt"
+title: "_ _popcnt16、_ _popcnt、_ _popcnt64 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- __popcnt64
+- __popcnt
+- __popcnt16
+dev_langs: C++
+helpviewer_keywords:
+- popcnt instruction
+- __popcnt16
+- __popcnt64
+- __popcnt
 ms.assetid: e525b236-adc8-42df-9b9b-8b7d8c245d3b
-caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 45e60a412dc24f685fd375ebc19c109b2bee0e2c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# __popcnt16、__popcnt、__popcnt64
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="popcnt16-popcnt-popcnt64"></a>__popcnt16、__popcnt、__popcnt64
+**Microsoft 固有の仕様**  
   
- 16 \- 32\-またはバイトの符号なし整数の 1 ビット数 \(数値\) を作成します。  
+ 1 つの数をカウント、16、32 ビットまたは 64 バイトの符号なし整数のビット (カタログ作成数)。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 unsigned short __popcnt16(  
@@ -47,29 +48,29 @@ unsigned __int64 __popcnt64(
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `value`  
- 16 ビットまたは 64 ビット符号なし整数は作成する数値が 32 ~。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `value`  
+ 16、32 ビットまたは 64 ビット符号なし整数のビットの数を選びました。  
   
-## 戻り値  
- `value` パラメーターの 1 ビット数。  
+## <a name="return-value"></a>戻り値  
+ 1 つのビット数、`value`パラメーター。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
+|---------------|------------------|  
 |`__popcnt16`|高度なビット操作|  
 |`__popcnt`|高度なビット操作|  
-|`__popcnt64`|64 ビット モードの高度なビット操作。|  
+|`__popcnt64`|64 ビット モードでの高度なビット操作します。|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- これらの組み込みは `popcnt` 命令を生成します。  `popcnt` 命令の戻り値は引数のサイズと同じになります。値。  32 ビット モードでは64 ビットの汎用レジスタしたがって64 ビット `popcnt` はありません。  
+## <a name="remarks"></a>コメント  
+ これらの組み込みの各を生成、`popcnt`命令します。  値のサイズを`popcnt`命令は、その引数のサイズと同じを返します。  32 ビット モードではありません。 64 ビットの汎用レジスタ、したがっていいえ 64 ビット`popcnt`です。  
   
- `popcnt` の命令に対するハードウェア サポートを確認するには`InfoType=0x00000001` の `__cpuid` 組み込みを呼び出し`CPUInfo[2] (ECX)` のビット 23 をチェックします。  このビットは命令がサポートされている場合は 0 になりは 1。  `popcnt` 命令をサポートするハードウェアのこの組み込みを使用するコードを実行すると結果は予測できません。  
+ ハードウェア サポートの決定に、`popcnt`命令を呼び出し、`__cpuid`で組み込み`InfoType=0x00000001`のビット 23 をチェックし、`CPUInfo[2] (ECX)`です。 このビットは、それ以外の場合、命令がサポートされている場合は 1 と 0 です。 かどうかはコードを実行するを使用するこの組み込みをサポートしていないハードウェア、`popcnt`命令、結果は予測できません。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 #include <iostream>   
@@ -96,15 +97,18 @@ int main()
   
 ```  
   
-  **\_\_popcnt16 \(0x0\) \= 0**  
- **\_\_popcnt16 \(0xff\) \= 8**  
- **\_\_popcnt16 \(0xffff\) \= 16**  
- **\_\_popcnt \(0x0\) \= 0**  
- **\_\_popcnt \(0xff\) \= 8**  
- **\_\_oopcnt \(0xffff\) \= 16**  
- **\_\_popcnt \(32\) \= 0xffffffff**   
-## Microsoft 固有の仕様→を終了  
- アドバンストのマイクロアーキテクチャのデバイセズ Inc の著作の著作権2007 年\)   All rights reserved.  アドバンストのマイクロアーキテクチャのデバイセズのアクセス許可と再生されInc  
+```Output  
+__popcnt16(0x0) = 0  
+__popcnt16(0xff) = 8  
+__popcnt16(0xffff) = 16  
+__popcnt(0x0) = 0  
+__popcnt(0xff) = 8  
+__oopcnt(0xffff) = 16  
+__popcnt(0xffffffff) = 32  
+```  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+ 高度なマイクロ デバイス, Inc. によって copyright 2007All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
+  
+## <a name="see-also"></a>参照  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

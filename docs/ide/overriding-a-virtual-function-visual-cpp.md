@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 85e79cc21d745ad7f57c4c47b784e58359da6ef4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 98e77579d511f4c78f0f7835c0b3c1dcea632734
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="overriding-a-virtual-function-visual-c"></a>仮想関数のオーバーライド (Visual C++)
 Visual Studio の基本クラスで定義されている仮想関数をオーバーライドできます[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)します。  
@@ -46,7 +47,7 @@ Visual Studio の基本クラスで定義されている仮想関数をオーバ
   
  上書きを削除するに、右側の列内のオーバーライド関数名をクリックし、選択\<削除 >*FuncName*です。 関数のコードをコメント アウトします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コード ウィザードによる機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)   
  [クラスの追加](../ide/adding-a-class-visual-cpp.md)   
  [メンバー関数の追加](../ide/adding-a-member-function-visual-cpp.md)   

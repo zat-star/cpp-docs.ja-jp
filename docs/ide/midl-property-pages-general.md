@@ -1,63 +1,63 @@
 ---
-title: "[全般] ([MIDL] プロパティ ページ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCMidlTool.PreprocessorDefinitions"
-  - "VC.Project.VCMidlTool.DefaultCharType"
-  - "VC.Project.VCMidlTool.WarnAsError"
-  - "VC.Project.VCMidlTool.AdditionalIncludeDirectories"
-  - "VC.Project.VCMidlTool.WarningLevel"
-  - "VC.Project.VCMidlTool.MkTypLibCompatible"
-  - "VC.Project.VCMidlTool.GenerateStublessProxies"
-  - "VC.Project.VCMidlTool.SuppressStartupBanner"
-  - "VC.Project.VCMidlTool.TargetEnvironment"
-  - "VC.Project.VCMidlTool.IgnoreStandardIncludePath"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MIDL、プロパティ ページ"
+title: "[Midl] プロパティ ページ: 全般 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCMidlTool.PreprocessorDefinitions
+- VC.Project.VCMidlTool.DefaultCharType
+- VC.Project.VCMidlTool.WarnAsError
+- VC.Project.VCMidlTool.AdditionalIncludeDirectories
+- VC.Project.VCMidlTool.WarningLevel
+- VC.Project.VCMidlTool.MkTypLibCompatible
+- VC.Project.VCMidlTool.GenerateStublessProxies
+- VC.Project.VCMidlTool.SuppressStartupBanner
+- VC.Project.VCMidlTool.TargetEnvironment
+- VC.Project.VCMidlTool.OVERWRITEStandardIncludePath
+dev_langs: C++
+helpviewer_keywords: MIDL, property pages
 ms.assetid: 0692484c-a7e6-4270-8df7-981589368399
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 58b88ec67a265cecac0f5ea2d9facd2170d5da01
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# [全般] ([MIDL] プロパティ ページ)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\[MIDL\] フォルダーの \[全般\] プロパティ ページでは、以下の MIDL コンパイラ オプションを指定します。  
+# <a name="midl-property-pages-general"></a>[全般] ([MIDL] プロパティ ページ)
+**全般**プロパティ ページで、 **MIDL**フォルダーは、次の MIDL コンパイラ オプションを指定します。  
   
--   プリプロセッサの定義 [\(\/D](http://msdn.microsoft.com/library/windows/desktop/aa367321)\)  
+-   プリプロセッサの定義[(/D](http://msdn.microsoft.com/library/windows/desktop/aa367321))  
   
--   追加のインクルード ディレクトリ \([\/I](http://msdn.microsoft.com/library/windows/desktop/aa367328)\)  
+-   追加のインクルード ディレクトリ ([/I](http://msdn.microsoft.com/library/windows/desktop/aa367328))  
   
--   標準インクルード パスの無視 \([\/no\_def\_idir](http://msdn.microsoft.com/library/windows/desktop/aa367347)\)  
+-   標準インクルード パスを無視する ([/no_def_idir](http://msdn.microsoft.com/library/windows/desktop/aa367347))  
   
--   MkTypLib 互換 \([\/mktyplib203](http://msdn.microsoft.com/library/windows/desktop/aa367332)\)  
+-   MkTypLib 互換 ([/mktyplib203](http://msdn.microsoft.com/library/windows/desktop/aa367332))  
   
--   警告レベル \([\/W](http://msdn.microsoft.com/library/windows/desktop/aa367383)\)  
+-   警告レベル ([/W](http://msdn.microsoft.com/library/windows/desktop/aa367383))  
   
--   エラーとして警告 \([\/WX](http://msdn.microsoft.com/library/windows/desktop/aa367387)\)  
+-   エラーとして警告 ([/WX](http://msdn.microsoft.com/library/windows/desktop/aa367387))  
   
--   著作権情報の非表示 \([\/nologo](http://msdn.microsoft.com/library/windows/desktop/aa367341)\)  
+-   著作権情報を抑制する ([/nologo](http://msdn.microsoft.com/library/windows/desktop/aa367341))  
   
--   MIDL の Char 型 \([\/char](http://msdn.microsoft.com/library/windows/desktop/aa367314)\)  
+-   MIDL Char 型 ([/char](http://msdn.microsoft.com/library/windows/desktop/aa367314))  
   
--   ターゲット環境 \([\/env](http://msdn.microsoft.com/library/windows/desktop/aa367323)\)  
+-   ターゲット環境 ([/env](http://msdn.microsoft.com/library/windows/desktop/aa367323))  
   
--   スタブレス プロキシの生成 \([\/Oicf](http://msdn.microsoft.com/library/windows/desktop/aa367352)\)  
+-   スタブレス プロキシ ([/Oicf](http://msdn.microsoft.com/library/windows/desktop/aa367352))  
   
- \[MIDL\] フォルダーの \[全般\] プロパティ ページを表示する方法については、「[方法 : &#91;プロパティ ページ&#93; でプロジェクトのプロパティを指定する](../Topic/How%20to:%20Specify%20Project%20Properties%20with%20Property%20Pages.md)」を参照してください。  
+ アクセスする方法については、**全般**プロパティ ページで、 **MIDL**フォルダーを参照してください[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)です。  
   
- C\+\+ プロジェクト用の MIDL オプションにプログラムでアクセスする方法については、<xref:Microsoft.VisualStudio.VCProjectEngine.VCMidlTool> オブジェクトに関する説明を参照してください。  
+ C++ プロジェクト用の MIDL オプションにアクセスする方法については、次を参照してください。<xref:Microsoft.VisualStudio.VCProjectEngine.VCMidlTool>オブジェクト。  
   
-## 参照  
- [\[MIDL\] プロパティ ページ](../Topic/MIDL%20Property%20Pages.md)
+## <a name="see-also"></a>参照  
+ [[MIDL] プロパティ ページ](../ide/midl-property-pages.md)

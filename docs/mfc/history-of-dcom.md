@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9e5607fd240c7a97691189b8a3afa5e7c0171e26
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6ef567c39c93c3d43fdfc0fa63886144b03cd474
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="history-of-dcom"></a>DCOM の歴史
 オートメーションは、1993 年前半で初めて導入されました、ときに、同じコンピューターで実行されるアプリケーション間でのみ使用されていることでした。 ただし、OLE とは、COM (コンポーネント オブジェクト モデル) の残りの部分として同じ基盤を共有しているので、常に意図されたことになった「リモート」リモート処理機能を含む COM 自体が更新されたとき。 純粋なローカル操作から分散操作への移行は、既存のコードをほとんどまたはまったく変更することも予定だった。  
@@ -37,5 +38,5 @@ ms.lasthandoff: 10/24/2017
   
  [どのようなリモート オートメーションを管轄します。](what-does-remote-automation-provide-q.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リモート オートメーション](../mfc/remote-automation.md)

@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f167001e8202b950e1e994e7a4ed53b40a50ded4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ba898d71895b74c43ad5de737355606a1d2b69ee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="readdr"></a>__readdr
 指定されたデバッグ レジスタの値を読み取ります。  
@@ -41,7 +42,7 @@ unsigned __int64 __readdr(unsigned int DebugRegister);
 ## <a name="remarks"></a>コメント  
  これらの組み込みはカーネル モードでのみ使用し、ルーチンは組み込みとしてのみ使用できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -51,6 +52,6 @@ unsigned __int64 __readdr(unsigned int DebugRegister);
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
  [__readeflags](../intrinsics/readeflags.md)

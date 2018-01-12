@@ -1,29 +1,28 @@
 ---
-title: "リソース コンパイラ エラー RC2169 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "RC2169"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RC2169"
+title: "リソース コンパイラ エラー RC2169 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: RC2169
+dev_langs: C++
+helpviewer_keywords: RC2169
 ms.assetid: 832c19ad-a2e2-4f50-b493-26b791877600
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 7f6f25b3dc193abb049819d7e99860d44c3d0a0a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リソース コンパイラ エラー RC2169
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-resource file filename is not in 2.03 format  
+# <a name="resource-compiler-error-rc2169"></a>リソース コンパイラ エラー RC2169
+リソース ファイルのファイル名が 2.03 形式ではありません。  
   
- このリソースには、Version 2.03 より前の形式が使われています。  このリソース ファイルは変換するか、Version 3.00 以降の形式を使って作り直す必要があります。
+ 指定されたリソースは、バージョン 2.03 より前形式を使用します。 リソース ファイルは、変換する必要があります。 またはバージョン 3.00 以降の形式を使用して再作成します。

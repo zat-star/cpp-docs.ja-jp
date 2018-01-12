@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b29c6ce5b71b103068f0fe34673dcdcfe6820856
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c520d365a259c36baab8edeb9049aab9ac89925a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="redistributing-visual-c-activex-controls"></a>Visual C++ ActiveX コントロールの再配布
 Visual C 6.0 では、再配布するアプリケーションで使用できる ActiveX コントロールが用意されています。 Visual C では、これらのコントロールは含まれていません。 Visual C 6.0 のライセンス契約、あたり Visual C で開発されたアプリケーションでこれらのコントロールを再配布することができます。  
@@ -50,5 +51,5 @@ Visual C 6.0 では、再配布するアプリケーションで使用できる 
   
  再頒布可能パッケージの一部の ActiveX コントロールでは、追加の依存関係があります。 上の各 .ocx ファイル Os\System フォルダーに、Visual C 6.0 製品 CD、.dep ファイルもあります。 再配布する .ocx ファイルごとに対応する .dep ファイル内の 1 つまたは複数の用途エントリを探します。 ファイルが表示されている場合は、ファイルが、ターゲット コンピューター上であることを確認する必要があります。 すべての Dll を登録する必要がある .ocx ファイルを直接サポートします。 (を成功させるのには、Regsvr32.exe を対象となるコンピューター含める必要がありますまずすべてのコントロールを静的に読み込む Dll です。)さらに、依存関係として記載されている DLL もある場合、.dep ファイル、Os\System CD のフォルダーに、Visual C 6.0、.dep のファイルを使用してエントリも調査する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ ファイルの再配布](../ide/redistributing-visual-cpp-files.md)

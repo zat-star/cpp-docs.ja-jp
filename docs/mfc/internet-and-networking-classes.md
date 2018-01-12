@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 40f3e02d1c1129f575a6bcbadc67955ab4eadaa4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f61559853e08400a235b10c8045b5cde85052545
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="internet-and-networking-classes"></a>インターネットおよびネットワーク クラス
 これらのクラスを使用すると、Windows ソケットまたは Win32 Internet (WinInet) を使用して別のコンピューター情報を交換できます。 Windows ソケットを操作するためのクラスのセットもします。  
@@ -32,6 +33,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [Win32 インターネット クラス](../mfc/win32-internet-classes.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

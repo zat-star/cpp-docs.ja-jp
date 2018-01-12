@@ -1,35 +1,34 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4709 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4709"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4709"
+title: "コンパイラの警告 (レベル 4) C4709 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4709
+dev_langs: C++
+helpviewer_keywords: C4709
 ms.assetid: 8abfdd45-8c70-4c27-b0fb-ca0c3f0fccf9
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: b60ee80f9b08914a7f8f2004bc4c6afecc80186a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4709
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コンマ演算子で分割された表現式が、配列のインデックスとして使われています。  
+# <a name="compiler-warning-level-4-c4709"></a>コンパイラの警告 (レベル 4) C4709
+配列インデックスの式内でコンマ演算子  
   
- 配列内のインデックスの式にコンマがあると、最後のコンマの後の値が使用されます。  
+ 配列インデックス式では、コンマが発生する場合、コンパイラは、最後のコンマの後に、値を使用します。  
   
-## 使用例  
- 次の例では警告 C4709 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4709 が生成されます。  
   
 ```  
 // C4709.cpp  

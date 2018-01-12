@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d086540d3b8f1475916bf5f8174f98de3c62c810
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fae3ec35259250f71ad672d9468b991033608ae4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-enable-intellisense-for-makefile-projects"></a>方法 : メイクファイル プロジェクトで IntelliSense を使用可能にする
 特定のプロジェクト設定、またはコンパイラ オプション、ときに、Visual C メイクファイル プロジェクトの場合は、IDE での操作に失敗する IntelliSense が正しく設定されていません。 メイクファイル プロジェクトを Visual Studio 開発環境で開いているときに IntelliSense が動作するように、Visual C メイクファイル プロジェクトを構成するのにこの手順を使用します。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 10/24/2017
   
  次回開くメイクファイル プロジェクト、Visual Studio 開発環境で、実行、**ソリューションのクリーン**コマンドし、**ソリューションのビルド**メイクファイル プロジェクトのコマンド。 IntelliSense は、IDE で正しく動作する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IntelliSense の使用](/visualstudio/ide/using-intellisense)   
  [NMAKE リファレンス](../build/nmake-reference.md)   
  [方法 : 既存のコードから C++ プロジェクトを作成する](../ide/how-to-create-a-cpp-project-from-existing-code.md)

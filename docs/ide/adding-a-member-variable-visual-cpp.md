@@ -1,68 +1,67 @@
 ---
-title: "メンバー変数の追加 (Visual C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.codewiz.classes.member.variable"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "メンバー変数"
-  - "メンバー変数, 追加"
+title: "メンバー変数 (Visual C) の追加 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.codewiz.classes.member.variable
+dev_langs: C++
+helpviewer_keywords:
+- member variables, adding
+- member variables
 ms.assetid: 437783bd-8eb4-4508-8b73-7380116e9d71
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 52d98e3eae6e468db7c2737efac8c2b7ab04abd5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# メンバー変数の追加 (Visual C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-クラス ビューでメンバー変数をクラスに追加できます。  メンバー変数は、[データ交換とデータ検証](../mfc/dialog-data-exchange-and-validation.md)用に指定することも、汎用目的で指定することもできます。  データ メンバー変数のウィザードは、関連する情報を読み込み、読み込んだ情報を使用してソース ファイルの適切な場所に要素を追加するようにデザインされています。  メンバー変数は、[リソース ビュー](../windows/resource-view-window.md)の[ダイアログ エディター](../mfc/dialog-editor.md)、または[クラス ビュー](http://msdn.microsoft.com/ja-jp/8d7430a9-3e33-454c-a9e1-a85e3d2db925)で追加できます。  
+# <a name="adding-a-member-variable--visual-c"></a>メンバー変数の追加 (Visual C++)
+クラス ビューを使用してクラスにメンバー変数を追加することができます。 メンバー変数には、いずれかを指定できる[データ交換とデータの検証](../mfc/dialog-data-exchange-and-validation.md)、汎用的な可能性があるか。 データ メンバー変数のウィザードは具体的には関連の情報を取得し、要素を挿入する適切な場所にあるソース ファイルで使用するよう設計されています。 メンバー変数を追加することができます、[ダイアログ エディター](../windows/dialog-editor.md)で[リソース ビュー](../windows/resource-view-window.md)、またはから[クラス ビュー](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925)です。  
   
 > [!NOTE]
->  ダイアログ ボックスを設計して実装する場合は、ダイアログ エディターを使用してダイアログ ボックス コントロールを追加してから、コントロールのメンバー変数を実装する方が効率的です。  
+>  デザインすると、ダイアログ ボックスを実装するには、した方が、ダイアログ ボックスを使用する方が効率的エディター ダイアログ ボックス コントロールを追加して、そのコントロールのメンバー変数を実装するためにします。  
   
-### メンバー変数の追加ウィザードを使用して、リソース ビューでダイアログ コントロールにメンバー変数を追加するには  
+### <a name="to-add-a-member-variable-for-a-dialog-control-in-resource-view-using-the-add-member-variable-wizard"></a>メンバー変数の追加ウィザードを使用してリソース ビューでダイアログ コントロールのメンバー変数を追加するには  
   
-1.  リソース ビューで、プロジェクト ノードと \[Dialog\] ノードを展開して、プロジェクトのダイアログ ボックスの一覧を表示します。  
+1.  リソース ビュー で、プロジェクト ノードと、プロジェクトのダイアログ ボックスの一覧を表示するダイアログのノードを展開します。  
   
-2.  メンバー変数を追加するダイアログ ボックスをダブルクリックし、ダイアログ エディターでそのダイアログ ボックスを開きます。  
+2.  ダイアログ エディターで開くメンバー変数を追加する ダイアログ ボックスをダブルクリックします。  
   
-3.  ダイアログ エディターに表示されたダイアログ ボックスで、メンバー変数を追加するコントロールを右クリックします。  
+3.  ダイアログ エディターでの表示 ダイアログ ボックスで、メンバー変数を追加するコントロールを右クリックします。  
   
-4.  ショートカット メニューの **\[変数の追加\]** をクリックし、[メンバー変数の追加ウィザード](../ide/add-member-variable-wizard.md)を表示します。  
+4.  ショートカット メニューをクリックして**変数の追加**を表示する、[変数の追加メンバー ウィザード](../ide/add-member-variable-wizard.md)です。  
   
     > [!NOTE]
-    >  \[コントロール ID\] には既に既定値が表示されています。  
+    >  既定値が既にで提供されている**コントロール ID**です。  
   
-5.  ウィザードの各ボックスに情報を入力します。  詳細については、「[ダイアログ ボックス コントロールおよび変数の型](../Topic/Dialog%20Box%20Controls%20and%20Variable%20Types.md)」を参照してください。  
+5.  ウィザードの各ボックスに情報を入力します。 参照してください[ダイアログ ボックス コントロールおよび変数の型](../ide/dialog-box-controls-and-variable-types.md)詳細についてはします。  
   
-6.  \[完了\] をクリックしてプロジェクトに定義および実装コードを追加し、ウィザードを閉じます。  
+6.  をクリックして**完了**をプロジェクトに定義と実装コードを追加し、ウィザードを閉じます。  
   
-### メンバー変数の追加ウィザードを使用して、クラス ビューでメンバー変数を追加するには  
+### <a name="to-add-a-member-variable-from-class-view-using-the-add-member-variable-wizard"></a>メンバー変数の追加ウィザードを使用して、クラス ビューから、メンバー変数を追加するには  
   
-1.  [クラス ビュー](http://msdn.microsoft.com/ja-jp/8d7430a9-3e33-454c-a9e1-a85e3d2db925)でプロジェクト ノードを展開して、プロジェクト内のクラスを表示します。  
+1.  [クラス ビュー](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925)クラスを表示する、プロジェクトのプロジェクト ノードを展開します。  
   
 2.  変数を追加するクラスを右クリックします。  
   
-3.  ショートカット メニューの \[追加\] をクリックし、**\[変数の追加\]** をクリックしてメンバー変数の追加ウィザードを表示します。  
+3.  ショートカット メニューをクリックして**追加**、順にクリック**変数の追加**メンバー変数の追加ウィザードを表示します。  
   
-4.  ウィザードの各ボックスに情報を入力します。  詳細については、「[メンバー変数の追加ウィザード](../ide/add-member-variable-wizard.md)」を参照してください。  
+4.  ウィザードの各ボックスに情報を入力します。 参照してください[変数の追加メンバー ウィザード](../ide/add-member-variable-wizard.md)詳細についてはします。  
   
-5.  \[完了\] をクリックしてプロジェクトに定義および実装コードを追加し、ウィザードを閉じます。  
+5.  をクリックして**完了**をプロジェクトに定義と実装コードを追加し、ウィザードを閉じます。  
   
-## 参照  
- [コード ウィザードを使用した機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)   
- [クラスの追加](../Topic/Adding%20a%20Class%20\(Visual%20C++\).md)   
+## <a name="see-also"></a>参照  
+ [コード ウィザードによる機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)   
+ [クラスの追加](../ide/adding-a-class-visual-cpp.md)   
  [メンバー関数の追加](../ide/adding-a-member-function-visual-cpp.md)   
  [MFC メッセージ ハンドラー](../mfc/reference/adding-an-mfc-message-handler.md)   
- [クラス各部へのジャンプ](../ide/navigating-the-class-structure-visual-cpp.md)
+ [クラス各部へ](../ide/navigating-the-class-structure-visual-cpp.md)

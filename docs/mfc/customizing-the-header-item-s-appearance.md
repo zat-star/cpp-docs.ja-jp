@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 494372aa3e6dcc418a6ffdacbb7b06635a010310
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: dacb5cc7aa1c6d7c74a07ee911c5887efe1d877b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="customizing-the-header-item39s-appearance"></a>ヘッダー項目 &#39; のカスタマイズの外観
 設定して、 *dwStyle*パラメーター最初をヘッダー コントロールを作成するとき ([CHeaderCtrl::Create](../mfc/reference/cheaderctrl-class.md#create)) 外観を定義することができます、およびヘッダーの動作の項目またはヘッダーの自体を制御します。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 10/24/2017
   
  これらのプロパティの詳細については、次を参照してください。[項目](http://msdn.microsoft.com/library/windows/desktop/bb775238)Windows SDK に含まれています。 ヘッダー コントロールに項目を追加する方法の詳細については、次を参照してください。[ヘッダー コントロールへの項目の追加](../mfc/adding-items-to-the-header-control.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CHeaderCtrl の使い方](../mfc/using-cheaderctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

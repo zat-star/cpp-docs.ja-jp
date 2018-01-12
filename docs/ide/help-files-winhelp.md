@@ -14,11 +14,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a5036aa329c0b4004bd7ada724c62e1a1669f050
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a5698f7001512c5a4f8c45b5c787f35c9ce0ca6c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="help-files-winhelp"></a>ヘルプ ファイル (WinHelp)
 選択して、アプリケーションにヘルプのサポートの WinHelp の種類を追加するときに、次のファイルが作成された、**状況依存のヘルプ** チェック ボックスをクリックして**WinHelp 形式**で[高度な機能](../mfc/reference/advanced-features-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。  
@@ -41,5 +42,5 @@ ms.lasthandoff: 10/24/2017
 |Makehelp.bat|*Projname*|ソース ファイル|プロジェクトがコンパイルされるときにヘルプ プロジェクトをビルドするシステムで使用します。|  
 |Bullet.bmp|*Projname*|リソース ファイル (Visual Studio)|箇条書きリストを表すために標準のヘルプ ファイルのトピックで使用します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ プロジェクトに対して作成されるファイルの種類](../ide/file-types-created-for-visual-cpp-projects.md)

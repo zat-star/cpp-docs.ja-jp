@@ -1,35 +1,34 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4486 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4486"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4486"
+title: "コンパイラの警告 (レベル 1) C4486 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4486
+dev_langs: C++
+helpviewer_keywords: C4486
 ms.assetid: 2c0c59e3-d025-4d97-8da2-fa27df1402fc
-caps.latest.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 086e74947753ddbb801a46c3d7918591cf83cee0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4486
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'関数' : ref クラスのプライベート仮想メソッドまたは値クラスは、'sealed' に設定されなければなりません  
+# <a name="compiler-warning-level-1-c4486"></a>コンパイラの警告 (レベル 1) C4486
+'function': ref クラスまたは値クラスのプライベート仮想メソッドは、'sealed' マークする必要があります  
   
- マネージ クラスまたは構造体のプライベート仮想メンバー関数はアクセスできないか、またはオーバーライドされたため、[sealed](../../windows/sealed-cpp-component-extensions.md) に設定する必要があります。  
+ マークする必要がありますので、マネージ クラスまたは構造体のプライベート仮想メンバー関数はアクセスできないか、またはオーバーライドして、[シール](../../windows/sealed-cpp-component-extensions.md)です。  
   
-## 使用例  
- 次の例では C4486 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4486 を生成します。  
   
 ```  
 // C4486.cpp  
@@ -41,8 +40,8 @@ private:
 };  
 ```  
   
-## 使用例  
- プライベート仮想関数 sealed の使い方の一例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、プライベート、シールされた仮想関数の用途の 1 つを示します。  
   
 ```  
 // C4486_b.cpp  

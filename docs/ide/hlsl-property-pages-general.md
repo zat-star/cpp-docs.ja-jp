@@ -1,70 +1,71 @@
 ---
-title: "[全般] ([HLSL] プロパティ ページ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.FXCompilerTool.ShaderModel"
-  - "VC.Project.FXCompilerTool.PreprocessorDefinitions"
-  - "VC.Project.FXCompilerTool.ShaderType"
-  - "VC.Project.FXCompilerTool.EnableDebuggingInformation"
-  - "VC.Project.FXCompilerTool.AdditionalIncludeDirectories"
-  - "VC.Project.FXCompilerTool.DisableOptimizations"
-  - "VC.Project.FXCompilerTool.EntryPointName"
-dev_langs: 
-  - "C++"
+title: "HLSL プロパティ ページ: 全般 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.FXCompilerTool.ShaderModel
+- VC.Project.FXCompilerTool.PreprocessorDefinitions
+- VC.Project.FXCompilerTool.ShaderType
+- VC.Project.FXCompilerTool.EnableDebuggingInformation
+- VC.Project.FXCompilerTool.AdditionalIncludeDirectories
+- VC.Project.FXCompilerTool.DisableOptimizations
+- VC.Project.FXCompilerTool.EntryPointName
+dev_langs: C++
 ms.assetid: 0e02f2a6-f123-43da-b04b-a0719a7c2b03
-caps.latest.revision: 8
-author: "BrianPeek"
-ms.author: "brpeek"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: be548966f6e75afde2c137c8beab38903844667c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# [全般] ([HLSL] プロパティ ページ)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-HLSL コンパイラ \(fxc.exe\) の次のプロパティを設定するには、**\[全般\]** のプロパティ ページを使用します。  HLSL フォルダーの **\[全般\]** のプロパティ ページを表示する方法については、[方法 : \[プロパティ ページ\] でプロジェクトのプロパティを指定する](../Topic/How%20to:%20Specify%20Project%20Properties%20with%20Property%20Pages.md)を参照してください。  
+# <a name="hlsl-property-pages-general"></a>[全般] ([HLSL] プロパティ ページ)
+HLSL コンパイラ (fxc.exe) の次のプロパティを構成するのには、使用、**全般**プロパティ ページ。 アクセスする方法については、**全般**HLSL フォルダー内のプロパティ ページを参照してください[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)です。  
   
-## UIElement の一覧  
- **追加のインクルード ディレクトリ\]**  
- インクルード パスに一つ以上のディレクトリを追加します。  ディレクトリを区切るには、セミコロンを使用します。  
+## <a name="uielement-list"></a>UIElement の一覧  
+ **追加のインクルード ディレクトリ**  
+ インクルード パスに 1 つまたは複数のディレクトリを追加します。 セミコロンを使用して、ディレクトリを区切ります。  
   
- このプロパティは **\/I\[path\]** のコマンド ライン引数に対応します。  
+ このプロパティに対応、 **/I [パス]**コマンドライン引数。  
   
- **Entrypoint の名前**  
- シェーダーのエントリ ポイントを指定します。  既定では、値は **\[メイン\]** です。  
+ **エントリ ポイント名**  
+ シェーダーのエントリ ポイントを指定します。 値は、既定では、**メイン**です。  
   
- このプロパティは **\/E\[name\]** のコマンド ライン引数に対応します。  
+ このプロパティに対応、 **/E [名前]**コマンドライン引数。  
   
- **無効の最適化**  
- 最適化を無効にする **\[はい \(\/Od\)\]** ; それ以外 **\[いいえ\]**。  既定では、値は **\[リリース\]** の構成の **\[デバッグ\]** 構成と **\[いいえ\]** の **\[はい \(\/Od\)\]** です。  
+ **最適化を無効にします。**  
+ **はい (/Od)**最適化を無効にするそれ以外の場合、**いいえ**です。 値は、既定では、**はい (/Od)**の**デバッグ**構成と**いいえ**の**リリース**構成します。  
   
- HLSL のコンパイラへの **\/Od** のコマンド ライン引数が暗黙的に **\/Gfp** のコマンド ライン引数を追加しますが、出力 **\/Od** と **\/Gfp** のコマンド ライン引数の両方を明示的に渡すことによって生成される出力と同じ場合とされない場合があります。  
+ **/Od** HLSL コンパイラのコマンドライン引数が暗黙的に適用されます、 **/gfp とは異なる**コマンドラインの引数が出力をどちらも渡すことによって生成される出力と同じできない可能性があります、 **/Od**と**/gfp とは異なる**コマンドライン引数に明示的にします。  
   
  **デバッグ情報を有効にします。**  
- デバッグ情報を有効にする **\[はい \(\/Zi\)\]** ; それ以外 **\[いいえ\]**。  既定では、値は **\[リリース\]** の構成の **\[デバッグ\]** 構成と **\[いいえ\]** の **\[はい \(\/Zi\)\]** です。  
+ **はい (/Zi)**情報のデバッグを有効にするそれ以外の場合、**いいえ**です。 値は、既定では、 **(/Zi) を [はい]**の**デバッグ**構成と**いいえ**の**リリース**構成します。  
   
- **\[シェーダーの種類\]**  
- シェーダーの種類を指定します。  異なる種類の図のパイプラインのシェーダーの実装の異なる部分。  特定の種類のシェーダーはシェーダー モデル 5.で—例、計算のシェーダーの \(… **\[シェーダー モデル\]** のプロパティで指定\) でのみ使用できる最新のシェーダー モデル導入されました。  
+ **シェーダーの種類**  
+ シェーダーの種類を指定します。 シェーダーのさまざまな種類では、グラフィックス パイプラインのさまざまな部分を実装します。 シェーダーの種類によっては、最新のシェーダー モデルでのみ使用できます (で指定されている、 **Shader Model**プロパティ) — たとえば、計算シェーダーが 5 のシェーダー モデルで導入されました。  
   
- このプロパティは HLSL コンパイラに **\/T \[type\]\_\[model\]** のコマンド ライン引数の **\[type\]** の部分に対応します。  **\[Shader Models\]** のプロパティは、引数の **\[model\]** の部分を指定します。  
+ このプロパティに対応、 **[種類]**の部分、 **/T [種類] _ [モデル]** HLSL コンパイラのコマンドライン引数。 **のシェーダー モデル**プロパティを指定します、 **[モデル]**引数の部分です。  
   
- **\[シェーダー モデル\]**  
- シェーダー モデルを指定します。  異なるシェーダー モデルによって異なる機能があります。  一般に、最新のシェーダー モデルを拡張された機能を提供しますが、最新のグラフィックス ハードウェアをシェーダー コードを実行するように要求されます。  \(**\[シェーダーの種類\]** のプロパティで指定\)、特定の種類のシェーダー シェーダー モデル 5.の例では、計算のシェーダー モデルの最新のシェーダーでのみ使用できる導入されました。  
+ **シェーダー モデル**  
+ シェーダー モデルを指定します。 別のシェーダー モデルでは、異なる機能があります。 一般より最新のシェーダー モデルは拡張機能を提供しますが、シェーダー コードを実行する最新のグラフィックス ハードウェアを必要とします。 シェーダーの特定の種類 (で指定されている、**シェーダー型**プロパティ) が最新のシェーダー モデルでのみ使用できます: たとえば、計算シェーダーが 5 のシェーダー モデルで導入されました。  
   
- このプロパティは HLSL コンパイラに **\/T \[type\]\_\[model\]** のコマンド ライン引数の **\[model\]** の部分に対応します。  **\[シェーダーの種類\]** のプロパティは、引数の **\[type\]** の部分を指定します。  
+ このプロパティに対応、 **[モデル]**の部分、 **/T [種類] _ [モデル]** HLSL コンパイラのコマンドライン引数。 **シェーダー型**プロパティを指定します、 **[種類]**引数の部分です。  
   
- **\[プリプロセッサの定義\]**  
- 一つ以上のプリプロセッサ シンボルの定義を HLSL のソース・コード ファイルに適用するようにします。  シンボルの定義を区切るには、セミコロンを使用します。  
+ **プリプロセッサの定義**  
+ HLSL のソース コード ファイルに適用する 1 つ以上のプリプロセッサ シンボル定義を追加します。 セミコロンを使用して、シンボル定義を区切ります。  
   
- このプロパティは HLSL コンパイラに **\/D \[definitions\]** のコマンド ライン引数に対応します。  
+ このプロパティに対応、 **/D [定義]** HLSL コンパイラのコマンドライン引数。  
   
-## 参照  
- [\[HLSL\] プロパティ ページ](../Topic/HLSL%20Property%20Pages.md)   
- [\[詳細\] \(\[HLSL\] プロパティ ページ\)](../Topic/HLSL%20Property%20Pages:%20Advanced.md)   
- [\[HLSL\] プロパティ ページ: 出力ファイル](../Topic/HLSL%20Property%20Pages:%20Output%20Files.md)
+## <a name="see-also"></a>参照  
+ [[HLSL] プロパティ ページ](../ide/hlsl-property-pages.md)   
+ [[HLSL] プロパティ ページ: 高度な](../ide/hlsl-property-pages-advanced.md)   
+ [[HLSL] プロパティ ページ: 出力ファイル](../ide/hlsl-property-pages-output-files.md)

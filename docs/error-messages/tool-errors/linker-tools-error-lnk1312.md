@@ -1,35 +1,34 @@
 ---
-title: "リンカ ツール エラー LNK1312 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK1312"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK1312"
+title: "リンカ ツール エラー LNK1312 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: LNK1312
+dev_langs: C++
+helpviewer_keywords: LNK1312
 ms.assetid: 48284abb-d849-43fc-ab53-45aded14fd8a
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 4d7f7b57512f58402403a50bf57176f975769573
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカ ツール エラー LNK1312
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ファイルが無効であるか､ または壊れています: アセンブリをインポートできません。  
+# <a name="linker-tools-error-lnk1312"></a>リンカ ツール エラー LNK1312
+ファイルが無効か破損しています: アセンブリをインポートできません。  
   
- アセンブリのビルド時に、**\/clr** でコンパイルされたモジュールまたはアセンブリ以外のファイルが **\/ASSEMBLYMODULE** リンカー オプションに渡されました。オブジェクト ファイルを **\/ASSEMBLYMODULE** に渡す場合は、オブジェクトを **\/ASSEMBLYMODULE** にではなく、リンカーに直接渡します。  
+ アセンブリ、モジュールまたはしてコンパイルされたアセンブリではないファイルを作成するときに**/clr**に渡された、 **/ASSEMBLYMODULE**リンカー オプション。  オブジェクト ファイルが渡された場合**/ASSEMBLYMODULE**、のみ、オブジェクトに直接渡す、リンカーの代わりを**/ASSEMBLYMODULE**です。  
   
-## 使用例  
- 次のサンプルでは .obj ファイルが作成されます。  
+## <a name="example"></a>例  
+ 次の例では、.obj ファイルを作成します。  
   
 ```  
 // LNK1312.cpp  
@@ -40,8 +39,8 @@ public:
 };  
 ```  
   
-## 使用例  
- 次の例では LNK1312 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、LNK1312 が生成されます。  
   
 ```  
 // LNK1312_b.cpp  

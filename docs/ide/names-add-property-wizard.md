@@ -14,11 +14,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 310ac33fa4e34e75273732f715472114bab9650f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9c1728dfda3ec29e8df2b7f5480e9bffb161da7f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="names-add-property-wizard"></a>[名前] (プロパティの追加ウィザード)
 このウィザードを使用すると、インターフェイスにプロパティを追加します。  
@@ -95,7 +96,7 @@ ms.lasthandoff: 10/24/2017
  **既定のプロパティ**  
  MFC のディスパッチ インターフェイスにのみ使用します。 インターフェイスの既定値としてこのプロパティを設定します。 インターフェイスは、1 つだけの既定のプロパティを持つことができます。インターフェイスに追加するその他のプロパティの既定のプロパティを指定するとこのボックスは使用されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロパティを追加します。](../ide/adding-a-property-visual-cpp.md)   
  [IDL 属性、プロパティの追加ウィザード](../ide/idl-attributes-add-property-wizard.md)   
  [インターフェイスを実装します。](../ide/implementing-an-interface-visual-cpp.md)

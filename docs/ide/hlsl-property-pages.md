@@ -1,44 +1,44 @@
 ---
-title: "[HLSL] プロパティ ページ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.FXCompilerTool.AdditionalOptionsPage"
-dev_langs: 
-  - "C++"
+title: "[HLSL] プロパティ ページ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: VC.Project.FXCompilerTool.AdditionalOptionsPage
+dev_langs: C++
 ms.assetid: 0c65f5ec-a2a5-4f5b-8d4c-fa57113a5a1d
-caps.latest.revision: 8
-author: "BrianPeek"
-ms.author: "brpeek"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 82fdaeb1da213a435718d074b33f385145c211d7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# [HLSL] プロパティ ページ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-個々の HLSL シェーダーのファイルをビルドまたは構成に HLSL コンパイラ \(fxc.exe\) のプロパティ ページを使用できます。  プロパティは 3 種類に分ける:  
+# <a name="hlsl-property-pages"></a>[HLSL] プロパティ ページ
+コンパイラ (fxc.exe) の HLSL プロパティ ページを使用して、ファイルがビルドされた個別の HLSL シェーダーを構成することができます。 プロパティは、3 つのカテゴリに分けられます。  
   
--   [\[全般\] \(\[HLSL\] プロパティ ページ\)](../Topic/HLSL%20Property%20Pages:%20General.md)  
+-   [[全般] ([HLSL] プロパティ ページ)](../ide/hlsl-property-pages-general.md)  
   
-     プロパティを HLSL のコンパイラで一般的なオプションを指定するために使用します。  
+     HLSL コンパイラのための一般的なオプションを指定するプロパティを提供します。  
   
--   [\[詳細\] \(\[HLSL\] プロパティ ページ\)](../Topic/HLSL%20Property%20Pages:%20Advanced.md)  
+-   [[詳細] ([HLSL] プロパティ ページ)](../ide/hlsl-property-pages-advanced.md)  
   
-     プロパティを HLSL コンパイラに追加のオプションを指定するために使用します。  
+     HLSL コンパイラ オプションを指定するプロパティを提供します。  
   
--   [\[HLSL\] プロパティ ページ: 出力ファイル](../Topic/HLSL%20Property%20Pages:%20Output%20Files.md)  
+-   [[HLSL] プロパティ ページ: 出力ファイル](../ide/hlsl-property-pages-output-files.md)  
   
-     プロパティを HLSL ファイルがコンパイラによってどのように出力するかを指定するために用意されています。  
+     ファイルの HLSL コンパイラによって出力される方法を指定するプロパティを提供します。  
   
- HLSL コンパイラに **\[コマンド ライン\]** のプロパティ ページの **\[追加のオプション\]** のプロパティを使用してコマンド ライン引数を指定します; これは HLSL のプロパティ ページの他のプロパティを使用して構成できない引数が含まれます。  HLSL コンパイラについては、" "を参照してください [and コンパイラ ツール](http://go.microsoft.com/fwlink/p/?LinkID=258285&clcid=0x409)  
+ 使用して、HLSL コンパイラに対するコマンドライン引数を指定することができます、**追加オプション**のプロパティ、**コマンド ライン**プロパティ ページを使用して構成することはできませんの引数が含まれます[HLSL] プロパティ ページのプロパティです。 HLSL コンパイラの概要については、次を参照してください[エフェクト コンパイラ ツール。](http://go.microsoft.com/fwlink/p/?LinkID=258285&clcid=0x409)  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [プロパティ ページ](../ide/property-pages-visual-cpp.md)   
- [\[コマンド ライン\] プロパティ ページ](../Topic/Command%20Line%20Property%20Pages.md)   
- [をコンパイル Shaders](http://go.microsoft.com/fwlink/p/?LinkID=258284&clcid=0x409)
+ [コマンド ライン プロパティ ページ](../ide/command-line-property-pages.md)   
+ [シェーダーをコンパイルします。](http://go.microsoft.com/fwlink/p/?LinkID=258284&clcid=0x409)

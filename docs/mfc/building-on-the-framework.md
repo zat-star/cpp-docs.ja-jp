@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 68ac5503f32d257d27ceb0f3f56fbf6305f42763
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 44101d4b0c9ab9bf5766514a75ef510bc5b8d7e7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="building-on-the-framework"></a>フレームワークを使ったアプリケーションの作成
 MFC フレームワークとアプリケーションの構成でロールは、アプリケーション固有のソース コードを指定して、どのようなメッセージと応答するコマンドを定義することで、コンポーネントを接続するにです。 クラス ライブラリで指定されているから、独自のアプリケーション固有のクラスを派生およびをオーバーライドし、基本クラスの動作を追加するには、C++ 言語と C++ の標準的な手法を使用します。  
@@ -39,6 +40,6 @@ MFC フレームワークとアプリケーションの構成でロールは、�
   
  ほとんどの場合、別のオプションの手順の一部が、MFC アプリケーションを作成するための手順のシーケンスとしてこれらのテーブルを追跡できます。 たとえば、ほとんどのアプリケーションは、使用できるいくつかの型からビュー クラスの 1 つの型を使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC の一般的なトピック](../mfc/general-mfc-topics.md)
 

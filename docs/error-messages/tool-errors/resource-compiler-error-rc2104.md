@@ -15,11 +15,12 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0eb2c3c7dfc8bf9a86ae8d91103fd89b30559574
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ce7fa189e03ec907c4b42f381096f095d5df734a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resource-compiler-error-rc2104"></a>リソース コンパイラ エラー RC2104
 未定義のキーワードまたはキー名: キー  
@@ -30,7 +31,7 @@ ms.lasthandoff: 10/24/2017
   
  問題を解決するには、定義済みのキーワードまたはキー名が含まれているヘッダー ファイルを探し、それがリソース ファイルに含まれていることと、キーワードまたはキー名のスペルが正しいことを確認する必要があります。 プロジェクトがプリコンパイル済みヘッダーを使用して作成され、かつ、その後、それを削除した場合は、現在もリソース ファイルに必要なすべてのヘッダーが含まれていることを確認します。  
   
- 定義のキーワードと、Visual Studio で、リソース ファイル内のキー名を確認するを開く、**リソース ビュー**ウィンドウ: メニュー バーで、次のように選択します**ビュー**、**リソース ビュー**: と。.rc ファイルのショートカット メニューを開き、**リソース シンボル**に定義されたシンボルの一覧を表示します。 ヘッダーを変更する、.rc ファイルのショートカット メニューを開き**インクルード**です。  
+ 定義のキーワードと、Visual Studio で、リソース ファイル内のキー名を確認するを開く、**リソース ビュー**ウィンドウ: メニュー バーで、次のように選択します**ビュー**、**リソース ビュー**: と.rc ファイルのショートカット メニューを開き、**リソース シンボル**に定義されたシンボルの一覧を表示します。 ヘッダーを変更する、.rc ファイルのショートカット メニューを開き**インクルード**です。  
   
  次のメッセージが発生した場合:  
   
