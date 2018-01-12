@@ -4,36 +4,34 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - delete_cpp
 - new
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - new keyword [C++], dynamic allocation of objects
 - nothrownew.obj
 - delete keyword [C++], syntax
 ms.assetid: fa721b9e-0374-4f04-bb87-032ea775bcc8
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 88f91e113ef47dc44ec0a300a99051cfaed3f08c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: a34d703783ce638991585b7e7a99b2015923182b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="new-and-delete-operators"></a>new および delete 演算子
 
 C++ を使用してオブジェクトの動的割り当てと解放がサポートしている、[新しい](../cpp/new-operator-cpp.md)と[削除](../cpp/delete-operator-cpp.md)演算子。 これらの演算子は、フリー ストアと呼ばれるプールからオブジェクトのメモリを割り当てます。 `new`演算子は特殊な関数を呼び出す[new 演算子](../cpp/new-operator-cpp.md)、および`delete`演算子は特殊な関数を呼び出す[delete 演算子](../cpp/delete-operator-cpp.md)です。  
   
- Visual C .NET 2002 では、 `new` C++ 標準ライブラリ内の関数では、メモリ割り当てが失敗した場合は、std::bad_alloc 例外をスローする、C++ 標準で指定された動作をサポートします。 かどうかか例外をスローしないバージョンの`new`プログラムを nothrownew.obj とリンクします。ただし、リンクする場合を nothrownew.obj と、既定値`operator new`C++ 標準ライブラリでは機能しなくなります。  
+ `new` C++ 標準ライブラリ内の関数は、メモリ割り当てが失敗した場合は、std::bad_alloc 例外をスローする、C++ 標準で指定された動作をサポートしています。 かどうかか例外をスローしないバージョンの`new`プログラムを nothrownew.obj とリンクします。ただし、リンクする場合を nothrownew.obj と、既定値`operator new`C++ 標準ライブラリでは機能しなくなります。  
   
  C ランタイム ライブラリおよび C++ 標準ライブラリを構成するライブラリ ファイルの一覧は、次を参照してください。 [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)します。  
   
@@ -155,7 +153,7 @@ void operator delete( void * );
 void operator delete( void *, size_t );  
 ```  
   
- 上記の 2 つの形式の 1 つのみは、特定のクラスの存在することができます。 最初の形式で、1 つの引数型の**void \* **、割り当てを解除するオブジェクトへのポインターが含まれています。 2 番目の形式: サイズ割り当て解除-最初の割り当てを解除するメモリ ブロックへのポインター、2 番目の割り当てを解除するバイト数の 2 つの引数を使用します。 両方のフォームの戻り値の型は`void`(**演算子 delete**値を返すことはできません)。  
+ 上記の 2 つの形式の 1 つのみは、特定のクラスの存在することができます。 最初の形式で、1 つの引数型の**void \*** 、割り当てを解除するオブジェクトへのポインターが含まれています。 2 番目の形式: サイズ割り当て解除-最初の割り当てを解除するメモリ ブロックへのポインター、2 番目の割り当てを解除するバイト数の 2 つの引数を使用します。 両方のフォームの戻り値の型は`void`(**演算子 delete**値を返すことはできません)。  
   
  2 番目の形式の目的は、高速化、削除するオブジェクトの適切なサイズのカテゴリの検索は、ほとんどの場合、割り当て自体の近くに格納され、キャッシュを使用しないで可能性があります。2 番目の形式は特に便利だときに、**演算子 delete**基底クラスから関数を使用して、派生クラスのオブジェクトを削除します。  
   
@@ -232,5 +230,4 @@ void f() {
    delete [] pX;  
 }  
 ```  
-
 

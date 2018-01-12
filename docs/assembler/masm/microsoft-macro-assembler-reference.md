@@ -18,11 +18,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: df9df0f039bb9fcf9b157c642025b3f140c26ccc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3ea2a2222df26c05bce7daf1852d68ba40329b92
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="microsoft-macro-assembler-reference"></a>Microsoft Macro Assembler リファレンス
 Microsoft マクロ アセンブラー (MASM) は、インライン アセンブリにいくつかの利点を提供します。 MASM には、ループ、算術演算子、およびテキスト文字列の処理などの機能を含む言語マクロにはが含まれています。 MASM も制御できます大きいハードウェア、386、および Pentium プロセッサの命令セットをサポートしているためです。 MASM を使用するもに時間とメモリのオーバーヘッドを軽減できます。  
@@ -53,7 +54,7 @@ Microsoft マクロ アセンブラー (MASM) は、インライン アセンブ
  [Visual C++](../../top/visual-cpp-in-visual-studio.md)  
  Visual Studio および Visual C のドキュメントのさまざまな領域へのリンクを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../../intrinsics/compiler-intrinsics.md)   
  [x86Intrinsics](../../intrinsics/x86-intrinsics-list.md)   
  [x64 (amd64) 組み込み](../../intrinsics/x64-amd64-intrinsics-list.md)

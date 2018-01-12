@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 905ef180c2212e2efd708bb795162627b60ced79
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3ce42aa031b91d5a4ec21ed14ac7cb47643e1325
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-command-line-syntax"></a>リンカー コマンド ラインの構文
 リンクを実行します。実行可能ファイルを次のコマンド構文を使用します。  
@@ -41,6 +42,6 @@ LINK arguments
   
  link.exe は、成功 (エラーなし)、0 を返します。  それ以外の場合、リンカーは、リンクを停止したエラー数を返します。  たとえば、リンカーは、LNK1104 を生成する場合、リンカーは 1104 を返します。  同様に、エラーが発生した、リンカーによって返される最小のエラー番号は、1000 です。  128 の戻り値は、オペレーティング システムまたは .config ファイルのいずれかの構成に問題を表しますlink.exe か c2.dll、ローダーが読み込まれませんでした。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

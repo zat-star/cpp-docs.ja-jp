@@ -23,11 +23,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 068d1e0e9061645729728c4d0a3c956e521948cc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8f4b888dde70708ee10b2d8000ff6380709dc870
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="zcrvaluecast-enforce-type-conversion-rules"></a>/Zc:rvalueCast (型変換規則の適用)
 ときに、 **/Zc:rvalueCast**オプションを指定すると、コンパイラは、c++ 11 標準に従いキャスト操作の結果として右辺値参照型を正しく識別します。 このオプションを指定しない場合、コンパイラの動作は Visual Studio 2012 での動作と同じです。 既定では、 **/Zc:rvalueCast**は無効になっています。 使用することをお勧め標準に準拠しキャストの使用でエラーを回避するのには、 **/Zc:rvalueCast**です。  
@@ -103,5 +104,5 @@ int main() {
   
 4.  変更、**追加オプション**含めるプロパティを**/Zc:rvalueCast**を選択し**OK**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [/Zc (準拠)](../../build/reference/zc-conformance.md)

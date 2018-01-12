@@ -43,11 +43,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 05367f833fcb10a994bc165ff7c2e0f31b8bdce0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: acba6047239ee9c63e05666a4bdc685cf40527c3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ismbblead-ismbbleadl"></a>_ismbblead、_ismbblead_l
 文字をテストして、その文字がマルチバイト文字の先行バイトかどうかを判定します。  
@@ -85,9 +86,9 @@ int _ismbblead_l(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_istlead`|常に false を返します|`_ismbblead`|常に false を返します|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_ismbblead`|\<mbctype.h> または \<mbstring.h>|\<ctype.h>、* \<limits.h>、\<stdlib.h>|  
 |`_ismbblead_l`|\<mbctype.h> または \<mbstring.h>|\<ctype.h>、* \<limits.h>、\<stdlib.h>|  
@@ -96,6 +97,6 @@ int _ismbblead_l(
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
  [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)

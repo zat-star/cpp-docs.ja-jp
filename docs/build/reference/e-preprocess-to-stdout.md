@@ -1,56 +1,56 @@
 ---
-title: "/E (プリプロセス出力の標準出力へのコピー) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/e"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/E コンパイラ オプション [C++]"
-  - "-E コンパイラ オプション [C++]"
-  - "プリプロセッサ出力"
-  - "プリプロセッサ出力, コピー (標準出力に)"
+title: "E (stdout に前処理) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /e
+dev_langs: C++
+helpviewer_keywords:
+- -E compiler option [C++]
+- /E compiler option [C++]
+- preprocessor output, copy to stdout
+- preprocessor output
 ms.assetid: ddbb1725-d950-4978-ab2f-30a5cd7b778c
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: ed083c960421ce17c0ce61036cd05191fc12c797
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /E (プリプロセス出力の標準出力へのコピー)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-C と C\+\+ のソース ファイルに対してプリプロセスが実行され、プリプロセスされたファイルが標準出力デバイスにコピーされます。  
+# <a name="e-preprocess-to-stdout"></a>/E (プリプロセス出力の標準出力へのコピー)
+C および C++ ソース ファイルを前処理され、前処理済みファイルを標準出力デバイスにコピーされます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /E  
 ```  
   
-## 解説  
- このプロセスでは、すべてのプリプロセッサ ディレクティブが実行され、マクロ拡張が実行されて、コメントが削除されます。  プリプロセスの出力のコメントを保持するには、[\/C \(プリプロセス時のコメントの保持\)](../../build/reference/c-preserve-comments-during-preprocessing.md) コンパイラ オプションも使用します。  
+## <a name="remarks"></a>コメント  
+ このプロセスですべてのプリプロセッサ ディレクティブが実行されます。、マクロの展開が実行されて、およびコメントが削除されます。 プリプロセス済みの出力内のコメントを保持するために使用して、 [(保持コメント中に前処理)/C](../../build/reference/c-preserve-comments-during-preprocessing.md)コンパイラ オプションもします。  
   
- **\/E** オプションを使用すると、出力される各インクルード ファイルの先頭と末尾に `#line` ディレクティブが挿入されます。また、条件付きコンパイルを指定するプリプロセッサ ディレクティブがある場合は、そのディレクティブで削除される行の前後にも挿入されます。  これらのディレクティブがあると、プリプロセス済みファイルの行番号が付け直されます。  その結果、処理の後半で生成されたエラーは、プリプロセス済みファイルの行番号ではなく、元のソース ファイルの行番号を参照します。  
+ **/E**追加`#line`ディレクティブを先頭と末尾各インクルード ファイルの条件付きコンパイル用のプリプロセッサ ディレクティブによって削除された行に出力します。 これらのディレクティブは、前処理済みファイルの行を再設定します。 その結果、処理の後のステージ中に生成されたエラーは、前処理済みファイル内の行ではなく、元のソース ファイルの行番号を参照してください。  
   
- **\/E** オプションを指定すると、コンパイルが行われません。  プリプロセス済みファイルをコンパイルに再送信する必要があります。  また **\/E** は、**\/FA**、**\/Fa**、および **\/Fm** の各オプションによる出力ファイルも出力しません。  詳細については、「[\/FA、\/Fa \(リスティング ファイル\)](../../build/reference/fa-fa-listing-file.md)」および「[\/Fm \(マップ ファイルの名前の指定\)](../Topic/-Fm%20\(Name%20Mapfile\).md)」を参照してください。  
+ **/E**オプションには、コンパイルが行われません。 コンパイルのプリプロセス済みのファイルを再送信する必要があります。 **/E**も抑制の出力ファイル、 **/FA**、 **/Fa**、および**/Fm**オプション。 詳細については、次を参照してください。 [/FA、/Fa (ファイルを一覧表示する)](../../build/reference/fa-fa-listing-file.md)と[/Fm (マップ ファイルの名前)](../../build/reference/fm-name-mapfile.md)です。  
   
- `#line` ディレクティブが挿入されないようにするには、[\/EP \(\#line ディレクティブを挿入しない stdout へのプリプロセス\)](../../build/reference/ep-preprocess-to-stdout-without-hash-line-directives.md) オプションを使用します。  
+ 非表示にする`#line`、ディレクティブを使用して、 [/EP (#line ディレクティブしない stdout へのプリプロセス)](../../build/reference/ep-preprocess-to-stdout-without-hash-line-directives.md)オプションを代わりにします。  
   
- プリプロセスの出力を `stdout` ではなく、任意のファイルに送るには、[\/P \(プリプロセス出力のファイルへの書き込み\)](../../build/reference/p-preprocess-to-a-file.md) オプションを使用します。  
+ プリプロセス済みの出力ではなくファイルを送信する`stdout`を使用して、 [/P (プリプロセス出力ファイルへの)](../../build/reference/p-preprocess-to-a-file.md)オプションを代わりにします。  
   
- `#line` ディレクティブを挿入せずにプリプロセスの出力を任意のファイルに送るには、**\/P** と **\/EP** を同時に使用します。  
+ 非表示にする`#line`ディレクティブと送信ファイルをプリプロセス済みの出力を使用して**/P**と**/EP**一緒にします。  
   
- **\/E** オプションでは、プリコンパイル済みヘッダーは使用できません。  
+ プリコンパイル済みヘッダーを使用することはできません、 **/E**オプション。  
   
- プリプロセスの出力を別のファイルに送る場合、トークンの後にスペースは挿入されません。  その結果、不正なプログラムまたは意図しない副作用が生じることがあります。  以下のプログラムは、正常にコンパイルされます。  
+ 別のファイルをプリプロセス時にスペースが出力されませんトークンの後に注意してください。 これで不正なプログラムまたはできなくなる可能性が意図しない副作用です。 次のプログラムが正常にコンパイルされます。  
   
 ```  
 #define m(x) x  
@@ -60,35 +60,35 @@ m(int)main( )
 }  
 ```  
   
- ただし、次のように指定すると、正しくコンパイルされません。  
+ ただし、使用してコンパイルする場合。  
   
 ```  
 cl -E test.cpp > test2.cpp  
 ```  
   
- test2.cpp の `int main` は、`intmain` になります。これは正しくありません。  
+ `int main`test2.cpp は正しくできません`intmain`です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  **\[追加のオプション\]** ボックスにコンパイラ オプションを入力します 。  
+4.  コンパイラ オプションを入力、**追加オプション**ボックス。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.GeneratePreprocessedFile%2A>」を参照してください。  
   
-## 使用例  
- 次のコマンド ラインは、`ADD.C` をプリプロセスし、コメントを保持し、`#line` ディレクティブを挿入し、結果を標準出力デバイスに表示します。  
+## <a name="example"></a>例  
+ 次のコマンドラインを前処理`ADD.C`、コメントを保持、追加`#line`ディレクティブは、標準出力デバイスに結果を表示します。  
   
 ```  
 CL /E /C ADD.C  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

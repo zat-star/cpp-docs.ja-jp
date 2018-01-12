@@ -1,38 +1,39 @@
 ---
-title: "インライン アセンブラーのラベルにジャンプ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__asm キーワード [C++], ラベル"
-  - "大文字と小文字の区別, インライン アセンブラー内のラベル"
-  - "インライン アセンブラー, ジャンプ (ラベルに)"
-  - "インライン アセンブラーのラベルにジャンプ"
-  - "ラベル, __asm ブロック内"
-  - "ラベル, インライン アセンブラー内"
+title: "インライン アセンブラーのラベルにジャンプ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- inline assembly, jumping to labels
+- labels, in inline assembly
+- __asm keyword [C++], labels
+- case sensitivity, labels in inline assembly
+- labels, in __asm blocks
+- jumping to labels in inline assembly
 ms.assetid: 36c18b97-8981-4631-9dfd-af6c14a04297
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 1170a12aefeb53083d5627b1b84639403ea17182
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# インライン アセンブラーのラベルにジャンプ
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## Microsoft 固有の仕様 →  
- 通常 15 ので C または C\+\+ のラベルと同様に`__asm` ブロックのラベルに定義されている関数のスコープがあります \(ブロックでのみ\)。  アセンブリ命令と `goto` のステートメントはラベル内か `__asm` ブロックの外部にジャンプできます。  
+# <a name="jumping-to-labels-in-inline-assembly"></a>インライン アセンブラーのラベルにジャンプ
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ などの通常 C または C++ ラベル、ラベル、`__asm`ブロックはそれが定義されている (ブロック) 内だけでなく、関数全体のスコープを持ちます。 アセンブリの両方の手順と`goto`ステートメントの内側または外側のラベルにジャンプできます、`__asm`ブロックします。  
   
- `__asm` ブロックで定義されたラベルは大文字と小文字の区別はありません ; `goto` ステートメントの両方とアセンブリ命令では大文字に関係なくそのラベルを表示できます。  C および C\+\+ のラベルは `goto` のステートメントで使用する場合にのみ大文字と小文字が区別されます。  アセンブリ命令は . ケースに関係なく C または C\+\+ のラベルにジャンプできます。  
+ 定義されたラベル`__asm`ブロックは、大文字小文字を区別なく; 両方`goto`ステートメントおよびアセンブリ命令がケースに関係なくそれらのラベルを参照できます。 C および C++ のラベルは、大文字小文字を区別して使用する場合にのみ`goto`ステートメントです。 アセンブリ命令は、ケースに関係なく、C または C++ のラベルにジャンプできます。  
   
- 次のコードはすべての置換を示します :  
+ 次のコードは、すべての順列を示しています。  
   
 ```  
 void func( void )  
@@ -62,7 +63,7 @@ int main()
 }  
 ```  
   
- `__asm` ブロックでラベルとして C ライブラリ関数の名前を使用しないでください。  たとえばラベルとして `exit` を使用するように次のよう誘惑されることがあります :  
+ 内のラベルとして C ライブラリの関数名を使用しない`__asm`ブロックします。 たとえば、する場合がありますを使用したい`exit`次のように、ラベルとして。  
   
 ```  
 ; BAD TECHNIQUE: using library function name as label  
@@ -74,9 +75,9 @@ exit:
    ; More __asm code follows  
 ```  
   
- **終了**  . 関数が C\+\+ ライブラリの名前であるためこのコードは希望する位置ではなく  **終了**  の関数にジャンプが発生することがあります。  
+ **終了**名前は、このコードは C のライブラリ関数へのジャンプを発生する可能性があります、**終了**関数の代わりに目的の場所をします。  
   
- MASM のプログラムと同様にドル記号 \(\)`$` カウンターは現在の場所として機能します。  ではアセンブルする手順のラベルです。  `__asm` ブロックでは主要な使用方法は条件付き飛越をに設定することです :  
+ MASM のプログラム]、[ドル記号と同様に (`$`) は、現在の場所カウンターとして機能します。 これは、構築された現在の命令のラベルです。 `__asm`ブロック、その主な用途は条件付き long ジャンプを確認します。  
   
 ```  
 jne $+5 ; next instruction is 5 bytes long  
@@ -88,7 +89,7 @@ jmp farlabel
 farlabel:  
 ```  
   
- **終了 Microsoft 固有の仕様→**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

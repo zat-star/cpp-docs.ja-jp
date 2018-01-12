@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 66c4b9b5e9ef5226e1d2bb0a5fbaee296817c22d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6721aa5860f23025b8b6c762cc7e5f4d6178228d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="auto-c"></a>自動 (C++)
 宣言された変数の型を、その初期化式から推測します。  
@@ -134,7 +135,7 @@ int main()
 |[C3538](../error-messages/compiler-errors-2/compiler-error-c3538.md)|`auto` キーワードで宣言されている宣言子リスト内のすべてのシンボルは、同じ型に解決する必要があります。 詳細については、次を参照してください。[宣言と定義](declarations-and-definitions-cpp.md)です。|  
 |[C3540](../error-messages/compiler-errors-2/compiler-error-c3540.md)、 [C3541](../error-messages/compiler-errors-2/compiler-error-c3541.md)|[Sizeof](../cpp/sizeof-operator.md)と[typeid](../windows/typeid-cpp-component-extensions.md)演算子で宣言されたシンボルに適用することはできません、`auto`キーワード。|  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  以下のコード片は、`auto` キーワードを使用するためのいくつかの方法を示しています。  
   
  次の宣言は同等です。 最初のステートメントでは、変数 `j` は `int` 型として宣言されます。 2 番目のステートメントでは、初期化式 (0) が整数であるため、変数 `k` は型 `int` であると推測されます。  
@@ -217,7 +218,7 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto キーワード](../cpp/auto-keyword.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [/Zc:auto (変数の型の推測)](../build/reference/zc-auto-deduce-variable-type.md)   

@@ -20,22 +20,25 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5731d4d187fa02b0b68c9e4b764bf9aeb1f653dc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: bcb0c6abf7eac09f3cb3ea260a3a5bbe76410847
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="transaction-object-interfaces"></a>トランザクション オブジェクト インターフェイス
 トランザクション オブジェクトは、データ ソース内の作業のアトミック単位を定義し、それらの作業単位が相互に関連付ける方法を決定します。 OLE DB プロバイダー テンプレートはこのオブジェクトを直接サポートされません (つまり、独自のオブジェクトを作成する必要があります)。  
   
  次の表は、トランザクション オブジェクトの OLE DB で定義されている必須およびオプションのインターフェイスを示します。  
   
-|インターフェイス|必須?|OLE DB テンプレートによって実装されるか。|  
+|Interface|必須?|OLE DB テンプレートによって実装されるか。|  
 |---------------|---------------|--------------------------------------|  
-|[IConnectionPointContainer](http://msdn.microsoft.com/library/windows/desktop/ms683857)|必須|いいえ|  
-|[ITransaction](https://msdn.microsoft.com/en-us/library/ms723053.aspx)|必須|いいえ|  
-|[ISupportErrorInfo](https://msdn.microsoft.com/en-us/library/ms715816.aspx)|Optional|いいえ|  
+|[IConnectionPointContainer](http://msdn.microsoft.com/library/windows/desktop/ms683857)|必須|×|  
+|[ITransaction](https://msdn.microsoft.com/en-us/library/ms723053.aspx)|必須|×|  
+|[ISupportErrorInfo](https://msdn.microsoft.com/en-us/library/ms715816.aspx)|Optional|×|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)

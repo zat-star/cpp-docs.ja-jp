@@ -18,11 +18,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f36633fb6b94e820ddb8884a387004889b33d9d6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 28fa385015d2cd5b3b854164f74995dd0648dfac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="integer-limits"></a>整数の制限
 **Microsoft 固有の仕様**  
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="limits-on-integer-constants"></a>整数定数の制限  
   
-|定数|説明|値|  
+|定数|説明|[値]|  
 |--------------|-------------|-----------|  
 |**CHAR_BIT**|ビット フィールドではない最小変数のビット数。|9|  
 |**SCHAR_MIN**|**signed char** 型変数の最小値。|-128|  
@@ -55,7 +56,7 @@ ms.lasthandoff: 10/24/2017
   
  値が最大の整数表現を超えると、Microsoft コンパイラでエラーが生成されます。  
   
-**END Microsoft 固有の仕様**  
+**Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点の制限](../cpp/floating-limits.md)

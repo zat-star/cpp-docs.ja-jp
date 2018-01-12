@@ -15,11 +15,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0217c62ff207ad706dbcb1cd172e878c2b96daee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 399f9fcea216adf5480bf38b8aba051c60eed496
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-support-in-atl-projects"></a>ATL プロジェクトで MFC サポート
 選択した場合**サポート MFC** ATL プロジェクト ウィザードで、プロジェクトが MFC アプリケーション オブジェクト (クラス) としてアプリケーションを宣言します。 プロジェクトが MFC ライブラリを初期化し、クラスをインスタンス化 (クラス*ProjName*) から派生する[CWinApp](../../mfc/reference/cwinapp-class.md)です。  
@@ -57,7 +58,7 @@ int CProjNameApp::ExitInstance()
   
  アプリケーションは、オブジェクト クラスを表示して、その`InitInstance`と`ExitInstance`クラス ビュー内の関数。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
  [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)   
  [ATL プロジェクトの既定の構成](../../atl/reference/default-atl-project-configurations.md)

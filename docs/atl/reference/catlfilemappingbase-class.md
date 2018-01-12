@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -20,35 +19,19 @@ f1_keywords:
 - ATLFILE/ATL::CAtlFileMappingBase::MapSharedMem
 - ATLFILE/ATL::CAtlFileMappingBase::OpenMapping
 - ATLFILE/ATL::CAtlFileMappingBase::Unmap
-dev_langs:
-- C++
-helpviewer_keywords:
-- CAtlFileMappingBase class
+dev_langs: C++
+helpviewer_keywords: CAtlFileMappingBase class
 ms.assetid: be555723-2790-4f57-a8fb-be4d68460775
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 439f123bc0addbbec2a26102d0197d0a1f14a8d5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 4b5e0dd90894e052d4b9bcff08e7e12234dde8f4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlfilemappingbase-class"></a>CAtlFileMappingBase クラス
 このクラスは、メモリ マップト ファイルを表します。  
@@ -76,12 +59,12 @@ class CAtlFileMappingBase
 |名前|説明|  
 |----------|-----------------|  
 |[CAtlFileMappingBase::CopyFrom](#copyfrom)|ファイル マッピング オブジェクトからコピーするには、このメソッドを呼び出します。|  
-|[CAtlFileMappingBase::GetData](#getdata)|ファイル マッピング オブジェクトからデータを取得するには、このメソッドを呼び出します。|  
+|[CAtlFileMappingBase::GetData](#getdata)|このメソッドを呼び出してファイル マップ オブジェクトからデータを取得します。|  
 |[CAtlFileMappingBase::GetHandle](#gethandle)|このメソッドを呼び出してファイル ハンドルを返します。|  
-|[CAtlFileMappingBase::GetMappingSize](#getmappingsize)|ファイル マッピング オブジェクトからマップのサイズを取得するには、このメソッドを呼び出します。|  
+|[CAtlFileMappingBase::GetMappingSize](#getmappingsize)|ファイル マッピング オブジェクトからマッピングのサイズを取得するには、このメソッドを呼び出します。|  
 |[CAtlFileMappingBase::MapFile](#mapfile)|ファイル マッピング オブジェクトを作成するには、このメソッドを呼び出します。|  
 |[CAtlFileMappingBase::MapSharedMem](#mapsharedmem)|すべてのプロセスへのフル アクセスを許可するファイル マッピング オブジェクトを作成するには、このメソッドを呼び出します。|  
-|[CAtlFileMappingBase::OpenMapping](#openmapping)|ファイル マッピング オブジェクトにハンドルを返すには、このメソッドを呼び出します。|  
+|[CAtlFileMappingBase::OpenMapping](#openmapping)|このメソッドを呼び出してファイル マッピング オブジェクトへのハンドルを返します。|  
 |[CAtlFileMappingBase::Unmap](#unmap)|ファイル マッピング オブジェクトをマップ解除するには、このメソッドを呼び出します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
@@ -91,11 +74,11 @@ class CAtlFileMappingBase
 |[CAtlFileMappingBase::operator =](#operator_eq)|現在のファイル マッピング オブジェクトを別のファイル マッピング オブジェクトに設定します。|  
   
 ## <a name="remarks"></a>コメント  
- ファイルのマッピングは、プロセスの仮想アドレス空間の一部で、ファイルの内容の関連付けです。 このクラスは、簡単にアクセスしてデータを共有するプログラムが使用できるファイル マッピング オブジェクトを作成するためのメソッドを提供します。  
+ ファイルのマッピングは、プロセスの仮想アドレス空間の一部にファイルの内容の関連付けです。 このクラスは、プログラムを簡単にアクセスしてデータを共有するファイル マッピング オブジェクトを作成するためのメソッドを提供します。  
   
- 詳細については、次を参照してください。[ファイル マッピング](http://msdn.microsoft.com/library/windows/desktop/aa366556)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 詳細については、次を参照してください。[ファイル マップ](http://msdn.microsoft.com/library/windows/desktop/aa366556)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlfile.h  
   
 ##  <a name="catlfilemappingbase"></a>CAtlFileMappingBase::CAtlFileMappingBase  
@@ -108,13 +91,13 @@ CAtlFileMappingBase() throw();
   
 ### <a name="parameters"></a>パラメーター  
  `orig`  
- 新しいオブジェクトを作成するコピー元のファイル マッピング オブジェクトです。  
+ 新しいオブジェクトを作成するコピー元のファイル マッピング オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
  必要に応じて、既存のオブジェクトを使用して、新しいファイル マッピング オブジェクトを作成します。 呼び出す必要が[CAtlFileMappingBase::MapFile](#mapfile)を開くか、特定のファイルのファイル マッピング オブジェクトを作成します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Utilities #&71;](../../atl/codesnippet/cpp/catlfilemappingbase-class_1.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#71](../../atl/codesnippet/cpp/catlfilemappingbase-class_1.cpp)]  
   
 ##  <a name="dtor"></a>CAtlFileMappingBase:: ~ CAtlFileMappingBase  
  デストラクターです。  
@@ -124,7 +107,7 @@ CAtlFileMappingBase() throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- クラスとの呼び出しによって割り当てられているリソースを解放、 [CAtlFileMappingBase::Unmap](#unmap)メソッドです。  
+ クラスおよび呼び出しによって割り当てられているリソースを解放、 [CAtlFileMappingBase::Unmap](#unmap)メソッドです。  
   
 ##  <a name="copyfrom"></a>CAtlFileMappingBase::CopyFrom  
  ファイル マッピング オブジェクトからコピーするには、このメソッドを呼び出します。  
@@ -135,13 +118,13 @@ HRESULT CopyFrom(CAtlFileMappingBase& orig) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `orig`  
- コピーする元のファイル マッピング オブジェクト。  
+ コピーを元のファイル マッピング オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。`S_OK`に成功した場合、またはエラー`HRESULT`失敗します。  
+ 返します`S_OK`成功した場合、またはエラー`HRESULT`エラー発生時にします。  
   
 ##  <a name="getdata"></a>CAtlFileMappingBase::GetData  
- ファイル マッピング オブジェクトからデータを取得するには、このメソッドを呼び出します。  
+ このメソッドを呼び出してファイル マップ オブジェクトからデータを取得します。  
   
 ```
 void* GetData() const throw();
@@ -151,7 +134,7 @@ void* GetData() const throw();
  データへのポインターを返します。  
   
 ##  <a name="gethandle"></a>CAtlFileMappingBase::GetHandle  
- ファイル マッピング オブジェクトにハンドルを返すには、このメソッドを呼び出します。  
+ このメソッドを呼び出してファイル マッピング オブジェクトへのハンドルを返します。  
   
 ```
 HANDLE GetHandle() throw ();
@@ -161,17 +144,17 @@ HANDLE GetHandle() throw ();
  ファイル マッピング オブジェクトへのハンドルを返します。  
   
 ##  <a name="getmappingsize"></a>CAtlFileMappingBase::GetMappingSize  
- ファイル マッピング オブジェクトからマップのサイズを取得するには、このメソッドを呼び出します。  
+ ファイル マッピング オブジェクトからマッピングのサイズを取得するには、このメソッドを呼び出します。  
   
 ```
 SIZE_T GetMappingSize() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- マップのサイズを返します。  
+ マッピングのサイズを返します。  
   
 ### <a name="example"></a>例  
- 例を参照してください[CAtlFileMappingBase::CAtlFileMappingBase](#catlfilemappingbase)します。  
+ 例を参照して[CAtlFileMappingBase::CAtlFileMappingBase](#catlfilemappingbase)です。  
   
 ##  <a name="mapfile"></a>CAtlFileMappingBase::MapFile  
  開くか、指定したファイルのファイル マッピング オブジェクトを作成するには、このメソッドを呼び出します。  
@@ -187,28 +170,28 @@ HRESULT MapFile(
   
 ### <a name="parameters"></a>パラメーター  
  `hFile`  
- マッピング オブジェクトを作成するためのファイルへのハンドルします。 `hFile`有効である必要があるあり、INVALID_HANDLE_VALUE に設定することはできません。  
+ マッピング オブジェクトの作成元のファイルへのハンドルします。 `hFile`有効にする必要があるあり、INVALID_HANDLE_VALUE に設定することはできません。  
   
  `nMappingSize`  
- マップのサイズ。 指定されたファイルの現在のサイズにファイル マッピング オブジェクトの最大サイズは 0 の場合、 *hFile します。*  
+ マッピングのサイズ。 識別されるファイルの現在のサイズをファイル マッピング オブジェクトの最大サイズは 0 の場合、 *hFile です。*  
   
  `nOffset`  
- ファイル オフセットは、マッピングの開始位置。 オフセットの値は、システムのメモリ割り当ての粒度の倍数である必要があります。  
+ マッピングの開始ファイルのオフセット。 オフセットの値は、システムのメモリ割り当ての粒度の倍数である必要があります。  
   
  `dwMappingProtection`  
- ファイルがマップされている場合は、ファイルのビューに必要な保護します。 参照してください`flProtect`で[CreateFileMapping](http://msdn.microsoft.com/library/windows/desktop/aa366537)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ ファイルがマップされている場合、ファイルのビューに必要な保護。 参照してください`flProtect`で[CreateFileMapping](http://msdn.microsoft.com/library/windows/desktop/aa366537) Windows SDK にします。  
   
  `dwViewDesiredAccess`  
- ファイルのビューと、ファイルによってマップされるページの保護へのアクセスの種類を指定します。 参照してください`dwDesiredAccess`で[MapViewOfFileEx](http://msdn.microsoft.com/library/windows/desktop/aa366763)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ ファイルのビューと、そのため、ファイルによってマップされるページの保護へのアクセスの種類を指定します。 参照してください`dwDesiredAccess`で[MapViewOfFileEx](http://msdn.microsoft.com/library/windows/desktop/aa366763) Windows SDK にします。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。`S_OK`に成功した場合、またはエラー`HRESULT`失敗します。  
+ 返します`S_OK`成功した場合、またはエラー`HRESULT`エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- ファイルのサイズがファイル マッピング オブジェクトのサイズを超えないファイル マッピング オブジェクトが作成されたら、場合は、一部のファイルの内容は使用できない場合を共有するためです。 詳細については、次を参照してください。 [CreateFileMapping](http://msdn.microsoft.com/library/windows/desktop/aa366537)と[MapViewOfFileEx](http://msdn.microsoft.com/library/windows/desktop/aa366763)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ ファイルのサイズが、ファイル マッピング オブジェクトのサイズを超えないファイル マッピング オブジェクトが作成された後場合は、すべてのファイルの内容を共有するために使用されます。 詳細については、次を参照してください。 [CreateFileMapping](http://msdn.microsoft.com/library/windows/desktop/aa366537)と[MapViewOfFileEx](http://msdn.microsoft.com/library/windows/desktop/aa366763) Windows SDK に含まれています。  
   
 ### <a name="example"></a>例  
- 例を参照してください[CAtlFileMappingBase::CAtlFileMappingBase](#catlfilemappingbase)します。  
+ 例を参照して[CAtlFileMappingBase::CAtlFileMappingBase](#catlfilemappingbase)です。  
   
 ##  <a name="mapsharedmem"></a>CAtlFileMappingBase::MapSharedMem  
  すべてのプロセスへのフル アクセスを許可するファイル マッピング オブジェクトを作成するには、このメソッドを呼び出します。  
@@ -225,25 +208,25 @@ HRESULT MapSharedMem(
   
 ### <a name="parameters"></a>パラメーター  
  `nMappingSize`  
- マップのサイズ。 識別されるファイル マッピング オブジェクトの現在のサイズにファイル マッピング オブジェクトの最大サイズは 0 の場合、`szName.`  
+ マッピングのサイズ。 によって識別されるファイル マッピング オブジェクトの現在のサイズをファイル マッピング オブジェクトの最大サイズは 0 の場合、`szName.`  
   
  `szName`  
- マップ オブジェクトの名前。  
+ マッピング オブジェクトの名前。  
   
  *pbAlreadyExisted*  
- 設定されている場合は TRUE、マップ オブジェクト既に BOOL 値へのポインターが存在しています。  
+ 設定されている場合は TRUE、マッピング オブジェクト既に BOOL 値へのポインターが存在しています。  
   
  `lpsa`  
- ポインター、 **SECURITY_ATTRIBUTES**返されたハンドルを子プロセスが継承できるかどうかを決定する構造体。 参照してください*lpAttributes*で[CreateFileMapping](http://msdn.microsoft.com/library/windows/desktop/aa366537)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ ポインター、 **SECURITY_ATTRIBUTES**返されたハンドルを子プロセスが継承できるかどうかを決定する構造体。 参照してください*lpAttributes*で[CreateFileMapping](http://msdn.microsoft.com/library/windows/desktop/aa366537) Windows SDK に含まれています。  
   
  `dwMappingProtection`  
- ファイルがマップされている場合は、ファイルの表示に必要な保護します。 参照してください`flProtect`で**CreateFileMapping**で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ ファイルがマップされている場合、ファイルの表示に必要な保護。 参照してください`flProtect`で**CreateFileMapping** Windows SDK にします。  
   
  `dwViewDesiredAccess`  
- ファイルのビューと、ファイルによってマップされるページの保護へのアクセスの種類を指定します。 参照してください`dwDesiredAccess`で[MapViewOfFileEx](http://msdn.microsoft.com/library/windows/desktop/aa366763)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ ファイルのビューと、そのため、ファイルによってマップされるページの保護へのアクセスの種類を指定します。 参照してください`dwDesiredAccess`で[MapViewOfFileEx](http://msdn.microsoft.com/library/windows/desktop/aa366763) Windows SDK にします。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。`S_OK`に成功した場合、またはエラー`HRESULT`失敗します。  
+ 返します`S_OK`成功した場合、またはエラー`HRESULT`エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
  **MapShareMem**によって作成された既存のファイル マッピング オブジェクトは、 [CreateFileMapping](http://msdn.microsoft.com/library/windows/desktop/aa366537)プロセス間で共有します。  
@@ -261,22 +244,22 @@ HRESULT OpenMapping(
   
 ### <a name="parameters"></a>パラメーター  
  `szName`  
- マップ オブジェクトの名前。 この名前のファイル マッピング オブジェクトへの開いているハンドルが存在し、マップ オブジェクトのセキュリティ記述子と競合していない場合、`dwViewDesiredAccess`パラメーター、オープン操作が成功します。  
+ マッピング オブジェクトの名前。 この名前のファイル マッピング オブジェクトの開いているハンドルがあるし、マッピング オブジェクトのセキュリティ記述子と競合していない場合、`dwViewDesiredAccess`パラメーター、オープン操作は成功します。  
   
  `nMappingSize`  
- マップのサイズ。 識別されるファイル マッピング オブジェクトの現在のサイズにファイル マッピング オブジェクトの最大サイズは 0 の場合、`szName.`  
+ マッピングのサイズ。 によって識別されるファイル マッピング オブジェクトの現在のサイズをファイル マッピング オブジェクトの最大サイズは 0 の場合、`szName.`  
   
  `nOffset`  
- ファイル オフセットは、マッピングの開始位置。 オフセットの値は、システムのメモリ割り当ての粒度の倍数である必要があります。  
+ マッピングの開始ファイルのオフセット。 オフセットの値は、システムのメモリ割り当ての粒度の倍数である必要があります。  
   
  `dwViewDesiredAccess`  
- ファイルのビューと、ファイルによってマップされるページの保護へのアクセスの種類を指定します。 参照してください`dwDesiredAccess`で[MapViewOfFileEx](http://msdn.microsoft.com/library/windows/desktop/aa366763)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ ファイルのビューと、そのため、ファイルによってマップされるページの保護へのアクセスの種類を指定します。 参照してください`dwDesiredAccess`で[MapViewOfFileEx](http://msdn.microsoft.com/library/windows/desktop/aa366763) Windows SDK にします。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。`S_OK`に成功した場合、またはエラー`HRESULT`失敗します。  
+ 返します`S_OK`成功した場合、またはエラー`HRESULT`エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- デバッグ ビルドでは、入力パラメーターが無効な場合に、アサーション エラーが発生します。  
+ デバッグ ビルドでは、入力パラメーターが有効でない場合、アサーション エラーが発生します。  
   
 ##  <a name="operator_eq"></a>CAtlFileMappingBase::operator =  
  現在のファイル マッピング オブジェクトを別のファイル マッピング オブジェクトに設定します。  
@@ -300,12 +283,11 @@ HRESULT Unmap() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 返します。`S_OK`に成功した場合、またはエラー`HRESULT`失敗します。  
+ 返します`S_OK`成功した場合、またはエラー`HRESULT`エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[UnmapViewOfFile](http://msdn.microsoft.com/library/windows/desktop/aa366882)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細です。  
+ 参照してください[UnmapViewOfFile](http://msdn.microsoft.com/library/windows/desktop/aa366882)詳細については、Windows SDK に含まれています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CAtlFileMapping クラス](../../atl/reference/catlfilemapping-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

@@ -14,11 +14,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: de8fdb6583f175505fc6a77070e30412aee38ae8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 11c058bacee52eb2b1df771a27d8695113f1c71d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="storing-strings-in-the-ole-db-provider"></a>OLE DB プロバイダーへの文字列の格納
 ATL OLE DB プロバイダー ウィザードと呼ばれる既定のユーザー レコードの作成 myproviderrs.h、`CWindowsFile`です。 変更するか、2 つの文字列を処理する`CWindowsFile`または次のコードに示すように、ユーザー レコードを追加します。  
@@ -54,5 +57,5 @@ END_PROVIDER_COLUMN_MAP()
   
  プロバイダーを正常にテストするときに、追加のインターフェイスを実装することでその機能を強化することができます。 例が示すように[単純な読み取り専用プロバイダーの向上](../../data/oledb/enhancing-the-simple-read-only-provider.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [単純な読み取り専用プロバイダーの実装](../../data/oledb/implementing-the-simple-read-only-provider.md)

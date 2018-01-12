@@ -18,11 +18,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6240b779977f99d362f7fd37ef5526ce08e89bd0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8b63e584b7c4620be0e77da034a2a419b80cf741
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomqiptr-class"></a>CComQIPtr クラス
 COM インターフェイス ポインターを管理するためのスマート ポインター クラスです。  
@@ -65,7 +66,7 @@ class CComQIPtr: public CComPtr<T>
   
  `CComQIPtr`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcomcli.h  
   
 ##  <a name="ccomqiptr"></a>CComQIPtr::CComQIPtr  
@@ -110,7 +111,7 @@ T* operator= (IUnknown* lp) throw();
 ### <a name="return-value"></a>戻り値  
  更新後にポインターを返します`CComQIPtr`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComPtr::CComPtr](../../atl/reference/ccomptr-class.md#ccomptr)   
  [CComQIPtr::CComQIPtr](#ccomqiptr)   
  [CComPtrBase クラス](../../atl/reference/ccomptrbase-class.md)   

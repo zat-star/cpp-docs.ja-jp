@@ -1,41 +1,42 @@
 ---
-title: "vector::difference_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector::difference_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "difference_type メンバー [STL/CLR]"
+title: "vector::difference_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::vector::difference_type
+dev_langs: C++
+helpviewer_keywords: difference_type member [STL/CLR]
 ms.assetid: 1e47c569-107b-4a44-adf4-b1473e1f8d4c
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 91b4c651bdb8e801b7e10a5aaafbfc0a5c9ce105
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# vector::difference_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 個の要素間の符号付きな間隔の種類。  
+# <a name="vectordifferencetype-stlclr"></a>vector::difference_type (STL/CLR)
+2 つの要素間の距離を符号付きの型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef int difference_type;  
 ```  
   
-## 解説  
- 型は符号付きな要素数を表します。  
+## <a name="remarks"></a>コメント  
+ この型は、符号付き要素の数を表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_vector_difference_type.cpp   
@@ -70,14 +71,17 @@ int main()
   
 ```  
   
-  **b c**  
-**end\(\)\- \(\) \= 3 を開始します。**  
-**begin\(\)\- end \(\) \= \-3**   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+```Output  
+ a b c  
+end()-begin() = 3  
+begin()-end() = -3  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/vector >  
   
-## 参照  
- [ベクター](../dotnet/vector-stl-clr.md)   
- [vector::size\_type](../dotnet/vector-size-type-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [vector::size_type (STL/CLR)](../dotnet/vector-size-type-stl-clr.md)

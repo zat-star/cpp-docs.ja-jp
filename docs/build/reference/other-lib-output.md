@@ -1,36 +1,35 @@
 ---
-title: "LIB のその他の出力 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Lib"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "出力ファイル, LIB"
+title: "他のライブラリ出力 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: Lib
+dev_langs: C++
+helpviewer_keywords: output files, LIB
 ms.assetid: 656864a6-0b7a-4633-8dc6-ee3b1766d836
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 48c41df17d118bca0a99cd16bc54d72169157dc5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# LIB のその他の出力
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-既定のモードでは、ビルドしたり変更したライブラリの情報は \/LIST オプションで出力できます。  この出力は、ファイルにリダイレクトできます。  
+# <a name="other-lib-output"></a>LIB のその他の出力
+既定のモードでは、結果として得られるライブラリに関する情報を表示するのに、/LIST オプションを使用できます。 この出力をファイルにリダイレクトすることができます。  
   
- \/NOLOGO オプションが指定されていない限り、著作権情報とバージョン情報が出力され、コマンド ファイルの内容がエコーされます。  
+ LIB は、著作権およびバージョンのメッセージが表示され、/NOLOGO オプションを使用しない場合は、コマンド ファイルをエコーします。  
   
- 「`lib`」とだけ入力すると、オプションの使い方についての簡単な説明が表示されます。  
+ 入力すると`lib`他の入力をなしの LIB がそのオプションを要約した法を表示します。  
   
- LIB は LNK*nnnn* 形式のエラー メッセージと警告メッセージを発行します。  LINK、DUMPBIN、EDITBIN の各ツールでも、同じエラー番号が使用されます。  出力ウィンドウのエラーを選択し、**F1** キーを押すと、ヘルプが表示されます。  
+ エラーおよび警告 LIB によって発行されたメッセージがあるフォーム LNK*nnnn*です。 リンク、DUMPBIN、EDITBIN ツールでは、このエラーの範囲も使用します。 ヘルプは、出力ウィンドウで、エラーを選択し、f1 キーを押します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [LIB の概要](../../build/reference/overview-of-lib.md)

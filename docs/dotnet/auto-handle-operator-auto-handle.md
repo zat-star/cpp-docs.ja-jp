@@ -1,46 +1,48 @@
 ---
-title: "auto_handle::operator auto_handle | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr.auto_handle.operator auto_handle"
-  - "operator auto_handle"
-  - "msclr::auto_handle::operator auto_handle"
-  - "auto_handle.operator auto_handle"
-  - "auto_handle::operator auto_handle"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "演算子 auto_handle"
+title: "auto_handle::operator auto_handle |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- msclr.auto_handle.operator auto_handle
+- operator auto_handle
+- msclr::auto_handle::operator auto_handle
+- auto_handle.operator auto_handle
+- auto_handle::operator auto_handle
+dev_langs: C++
+helpviewer_keywords: operator auto_handle
 ms.assetid: 2f8b35d1-2783-4d91-b6fb-eae551270fb8
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 70f0cf35b1284bfba67f68ee84fe2b5687a4e8c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# auto_handle::operator auto_handle
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`auto_handle` と互換性のある型間の演算子を型に選択します。  
+# <a name="autohandleoperator-autohandle"></a>auto_handle::operator auto_handle
+間に型キャスト演算子`auto_handle`と互換性のある型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename _other_type>  
 operator auto_handle<_other_type>();  
 ```  
   
-## 戻り値  
- `auto_handle<_other_type>`にキャストされる現在の `auto_handle`。  
+## <a name="return-value"></a>戻り値  
+ 現在`auto_handle`にキャスト`auto_handle<_other_type>`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_handle_op_auto_handle.cpp  
@@ -77,12 +79,15 @@ int main() {
 }  
 ```  
   
-  **Hello 最初 B から\!**  
-**Hello 最初に A ~\!**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_handle.h\>  
+```Output  
+Hello from first B!  
+Hello from first A!  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\auto_handle.h >  
   
-## 参照  
- [auto\_handle Members](../dotnet/auto-handle-members.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>参照  
+ [auto_handle のメンバー](../dotnet/auto-handle-members.md)

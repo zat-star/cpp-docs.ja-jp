@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 866a5183a50f13472167f912691804a995e90023
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 514b20847f588dab7a5c205be36c1fbd725df17d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="stack-allocation"></a>スタック割り当て
 関数のプロローグは、ローカル変数のスタック領域を割り当てるための保存済みレジスタ、スタック パラメーター、およびパラメーターを登録します。  
@@ -34,5 +35,5 @@ ms.lasthandoff: 10/24/2017
   
  関数 B が別の関数を呼び出すと、戻り値のアドレスが RCX の自宅の住所のすぐ下プッシュされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スタックの使用](../build/stack-usage.md)

@@ -1,34 +1,36 @@
 ---
-title: "IDBCreateSessionImpl クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDBCreateSessionImpl"
-  - "ATL.IDBCreateSessionImpl"
-  - "ATL::IDBCreateSessionImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDBCreateSessionImpl クラス"
+title: "IDBCreateSessionImpl クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- IDBCreateSessionImpl
+- ATL.IDBCreateSessionImpl
+- ATL::IDBCreateSessionImpl
+dev_langs: C++
+helpviewer_keywords: IDBCreateSessionImpl class
 ms.assetid: 48c02c5c-8362-45ac-af8e-bb119cf8c5c7
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f5f8cb4e35c14ddbb8a7f8df3fe3686025cf5eae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# IDBCreateSessionImpl クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[IDBCreateSession](https://msdn.microsoft.com/en-us/library/ms724076.aspx) インターフェイスの実装を提供します。  
+# <a name="idbcreatesessionimpl-class"></a>IDBCreateSessionImpl クラス
+実装を提供、 [IDBCreateSession](https://msdn.microsoft.com/en-us/library/ms724076.aspx)インターフェイスです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <class T, class SessionClass>  
@@ -36,27 +38,27 @@ class ATL_NO_VTABLE IDBCreateSessionImpl
    : public IDBCreateSession  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- クラス、からの派生  
+ 派生クラス。  
   
  `SessionClass`  
  セッション オブジェクト。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### インターフェイス メソッド  
+### <a name="interface-methods"></a>インターフェイス メソッド  
   
 |||  
 |-|-|  
-|[CreateSession](../../data/oledb/idbcreatesessionimpl-createsession.md)|データ ソース オブジェクトから新しいセッションが作成され、新規作成されたセッションの要求されたインターフェイスを返します。|  
+|[CreateSession](../../data/oledb/idbcreatesessionimpl-createsession.md)|データ ソース オブジェクトから、新しいセッションを作成し、新しく作成されたセッションで要求されたインターフェイスを返します。|  
   
-## 解説  
- データ ソース オブジェクトの必須インターフェイス。  
+## <a name="remarks"></a>コメント  
+ データ ソース オブジェクトに対する必須のインターフェイスです。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)

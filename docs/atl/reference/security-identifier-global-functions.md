@@ -48,11 +48,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0a8c0b901bf5be8bc89e9e77a0fa65d86bb29add
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6975b6b73c6d81fc9347a2395cd36747ce235b2a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="security-identifier-global-functions"></a>セキュリティ識別子のグローバル関数
 これらの関数は、オブジェクトに共通の既知の SID を返します。  
@@ -95,7 +96,7 @@ ms.lasthandoff: 10/24/2017
 |[Sids::Users](#users)|DOMAIN_ALIAS_RID_USERS SID を返します。|  
 |[Sids::World](#world)|SECURITY_WORLD_RID SID を返します。|  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
 
 ##  <a name="accountops"></a>Sids::AccountOps  
@@ -296,5 +297,5 @@ CSid Users() throw(...);
 CSid World() throw(...);
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../atl/reference/atl-functions.md)

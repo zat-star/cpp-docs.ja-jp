@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -28,8 +27,7 @@ f1_keywords:
 - _fgetts
 - fgetws
 - fgets
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _fgetts function
 - streams, getting strings from
@@ -38,30 +36,16 @@ helpviewer_keywords:
 - fgetws function
 - fgetts function
 ms.assetid: ad549bb5-df98-4ccd-a53f-95114e60c4fc
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 4012de79c3de0a27837813ddddf8b7e1aec4fac7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 70cccdc8dea6abb032fbf6170ca84ad866ddd491
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fgets-fgetws"></a>fgets、fgetws
 ストリームから文字列を取得します。  
@@ -94,7 +78,7 @@ wchar_t *fgetws(
 ## <a name="return-value"></a>戻り値  
  これらの各関数は、`str` を返します。 エラーまたはファイルの末尾条件を示す `NULL` が返されます。 `feof` または `ferror` を使用して、エラーが発生したかどうかを確認します。 `str` または `stream` が Null ポインターの場合、または `n` が 0 以下の場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。  
   
- エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `fgets` 関数は、入力 `stream` 引数から文字列を読み取り、`str` に格納します。 `fgets`現在のストリームの位置を最初の改行文字を含むからまたは読み取られた文字数と等しくなるまで、ストリームの末尾に文字を読み取り`n`- 1、どちらか早い方です。 `str` に格納される結果には、null 文字が付加されます。 改行文字を読み取ると、文字列に含まれます。  
@@ -109,14 +93,14 @@ wchar_t *fgetws(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_fgetts`|`fgets`|`fgets`|`fgetws`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fgets`|\<stdio.h>|  
 |`fgetws`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -157,7 +141,7 @@ Line two.
 Line one.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fputs、fputws](../../c-runtime-library/reference/fputs-fputws.md)   
  [gets、_getws](../../c-runtime-library/gets-getws.md)   

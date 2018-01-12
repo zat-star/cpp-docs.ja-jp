@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c48ee39a9053e098b67367d0c144fbf6e284b9d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 247be4e212efbe2b8061deed200a8350b87fc7a7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="nested-class-declarations"></a>入れ子にされたクラス宣言
 クラスのスコープ内で別のクラスを宣言できます。 このようなクラスを "入れ子のクラス" といいます。 入れ子のクラスには外側のクラスのスコープが適用され、そのスコープ内で使用できます。 すぐ外側のスコープ以外のスコープから入れ子のクラスを参照するには、完全修飾名を使用する必要があります。  
@@ -212,5 +213,5 @@ int GetExtendedErrorStatus( char *message )
   
  前のインターフェイスを使用すると、いくつかのクラスは、エラー メッセージのコピー先のメモリ位置を渡すことによって、この関数のサービスを使用できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスと構造体](../cpp/classes-and-structs-cpp.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b21557fce0735f23e89fe1594a7025170f5f7e7f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 80aca6af847a33fd7217d0ad710c928f6d2ca32e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="implementing-a-window-with-cwindowimpl"></a>CWindowImpl のウィンドウの実装
 ウィンドウを実装するのには、派生クラスを`CWindowImpl`です。 派生クラスでは、メッセージ マップとメッセージ ハンドラー関数を宣言します。 これで、3 つの方法で、クラスを使用することができます。  
@@ -69,6 +70,6 @@ ms.lasthandoff: 10/24/2017
   
  呼び出す代わりに**作成**、呼び出す`SubclassWindow`サブクラスにする既存のウィンドウに、ハンドルを渡すことです。 使用するウィンドウをサブクラスと`CWindowImpl::WindowProc`(または、このメソッドをオーバーライドする関数)、メッセージ マップへのメッセージを送信するためです。 オブジェクトからウィンドウをサブクラス化をデタッチするには、呼び出す`UnsubclassWindow`です。 ウィンドウの元のウィンドウ プロシージャは復元されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウの実装](../atl/implementing-a-window.md)
 

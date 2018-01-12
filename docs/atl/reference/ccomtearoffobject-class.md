@@ -26,11 +26,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c4f6782e2e873e844fa1d2eb7a9c1090d887dac9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 80be7d80af5a6c8fa2c47bc0e853020663f2ceae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomtearoffobject-class"></a>CComTearOffObject クラス
 このクラスは、ティアオフ インターフェイスを実装します。  
@@ -93,7 +94,7 @@ class CComTearOffObject : public Base
   
  `CComTearOffObject`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="addref"></a>CComTearOffObject::AddRef  
@@ -184,6 +185,6 @@ STDMETHOD_ULONG Release();
 ### <a name="return-value"></a>戻り値  
  非デバッグ ビルドでは、常に 0 を返します。 デバッグ ビルドで、診断に役に立たず、テスト可能な値を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ティアオフ クラス](../../atl/reference/ccomcachedtearoffobject-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

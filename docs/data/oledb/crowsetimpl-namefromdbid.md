@@ -1,33 +1,35 @@
 ---
-title: "CRowsetImpl::NameFromDBID | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CRowsetImpl.NameFromDBID"
-  - "CRowsetImpl::NameFromDBID"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "NameFromDBID メソッド"
+title: "Crowsetimpl::namefromdbid |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CRowsetImpl.NameFromDBID
+- CRowsetImpl::NameFromDBID
+dev_langs: C++
+helpviewer_keywords: NameFromDBID method
 ms.assetid: 6aa5b074-90c7-4434-adfd-c64c13e76c78
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: afe16dfefa719760c998c25cc107ba99caacff84
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CRowsetImpl::NameFromDBID
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-渡された `bstr` に **DBID** とコピーから文字列を格納します。  
+# <a name="crowsetimplnamefromdbid"></a>CRowsetImpl::NameFromDBID
+文字列を抽出、 **DBID**をコピーし、`bstr`で渡されます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -38,24 +40,24 @@ caps.handback.revision: 9
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *pDBID*  
- \[\]文字列を取得 **DBID** へのポインター。  
+ [in]ポインター、 **DBID**元となる文字列を抽出します。  
   
  `bstr`  
- \[\] **DBID** の文字列のコピーを配置 [CComBSTR](../../atl/reference/ccombstr-class.md) A の参照。  
+ [in]A [CComBSTR](../../atl/reference/ccombstr-class.md)のコピーを配置への参照、 **DBID**文字列。  
   
  `bIndex`  
- \[\] **true** インデックス **DBID**; **false** テーブル **DBID**。  
+ [in]**true**インデックスの場合**DBID**です。**false**テーブル**DBID**です。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  によって **DBID** がテーブルの場合、またはインデックスかどうか \(`bIndex`で表示される\)、メソッドは **DB\_E\_NOINDEX** または **DB\_E\_NOTABLE**を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。 かどうかに応じて、 **DBID**がテーブルまたはインデックス (で示される`bIndex`)、メソッドはどちらの戻り値**DB_E_NOINDEX**または**DB_E_NOTABLE**です。  
   
-## 解説  
- このメソッドは [ValidateCommandID](../../data/oledb/crowsetimpl-validatecommandid.md) と [GetCommandFromID](../../data/oledb/crowsetimpl-getcommandfromid.md)の `CRowsetImpl` の実装によって呼び出されます。  
+## <a name="remarks"></a>コメント  
+ このメソッドは、`CRowsetImpl`の実装[ValidateCommandID](../../data/oledb/crowsetimpl-validatecommandid.md)と[GetCommandFromID](../../data/oledb/crowsetimpl-getcommandfromid.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CRowsetImpl クラス](../../data/oledb/crowsetimpl-class.md)

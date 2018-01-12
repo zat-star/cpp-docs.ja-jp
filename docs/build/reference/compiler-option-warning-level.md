@@ -69,11 +69,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5504c3d726feda499fb4b63f68d7784291308694
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4f38328f94fd68b3b5402d08ddb6d2bd97e3de76
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="w-w0-w1-w2-w3-w4-w1-w2-w3-w4-wall-wd-we-wo-wv-wx-warning-level"></a>/w、/W0、/W1、/W2、/W3、/W4、/w1、/w2、/w3、/w4、/Wall、/wd、//wo、/Wv、/WX (警告レベル)
 コンパイラがコンパイルの警告がどのように生成するかを指定します。  
@@ -110,7 +111,7 @@ ms.lasthandoff: 10/24/2017
 |**/W0**<br /><br /> **/W1**<br /><br /> **/W2**<br /><br /> **/W3**<br /><br /> **/W4**|コンパイラによって生成される警告のレベルを指定します。 有効な警告レベルを 0 ~ 4 の範囲。<br /><br /> -   **/W0**すべての警告を抑制します。<br />-   **/W1**レベル 1 (重大) 警告が表示されます。 **/W1**既定の設定です。<br />-   **/W2**レベル 1 と、レベル 2 (重要) の警告が表示されます。<br />-   **/W3**レベル 1、レベル 2 とレベル 3 (実稼働品質) 警告が表示されます。<br />-   **/W4**レベルの既定でオフになっていない 4 の (情報) 警告すべてとレベル 1、レベル 2 とレベル 3 の警告が表示されます。 柔らかいのような警告を提供することのみこのオプションを使用することをお勧めします。 ただし、新しいプロジェクトの場合がありますを使用する最適な**/W4**これにより、最小限の可能な検索ハード コードの欠陥のようにすべてのコンパイルします。|  
 |**/Wall**|によって表示されるすべての警告が表示されます**/W4**およびその他のすべての警告を**/W4**は含まれません: 既定で無効になっている警告など。 詳細については、次を参照してください。[コンパイラの警告ことは、既定でオフ](../../preprocessor/compiler-warnings-that-are-off-by-default.md)です。|  
 |**/Wv**`:version`|新しいバージョンのコンパイラで導入された警告を抑制する`version`です。 コンパイラの古いバージョンを使用する場合、警告なしのコンパイル コードで新しい警告があるかを確認し、一時的に警告を抑制する、新しいビルド プロセスからそれらを修正するときに、このオプションを使用することができます。 省略可能なパラメーター`version`形式の`nn`[.`mm`[.`bbbbb`] 場所`nn`メジャー バージョン番号は、`mm`は省略可能なマイナー バージョン番号と`bbbbb`コンパイラの省略可能なビルド番号です。 たとえば、使用して`/Wv:17.00.00000`Visual C 2012 以降に導入された警告を抑制します。 既定では、 **/Wv**使用して、現在のコンパイラ バージョン番号と警告を抑制します。 コンパイラのバージョンによってに関する警告の抑制については、次を参照してください。[コンパイラのバージョンでのコンパイラ警告](../..//error-messages/compiler-warnings/compiler-warnings-by-compiler-version.md)です。|  
-|**/WX**|すべてのコンパイラ警告をエラーとして扱います。 新しいプロジェクトを使用する場合があります**/WX**すべてのコンパイルですべての警告を解決する最小限の可能な検索ハード コードの不具合を確認します。<br /><br /> リンカーにも、 **/WX**オプション。 詳細については、「[/WX (リンカー警告をエラーとして扱う)](../../build/reference/wx-treat-linker-warnings-as-errors.md)」を参照してください。|  
+|**/WX**|コンパイラ警告をすべてエラーとして扱います。 新しいプロジェクトを使用する場合があります**/WX**すべてのコンパイルですべての警告を解決する最小限の可能な検索ハード コードの不具合を確認します。<br /><br /> リンカーにも、 **/WX**オプション。 詳細については、「[/WX (リンカー警告をエラーとして扱う)](../../build/reference/wx-treat-linker-warnings-as-errors.md)」を参照してください。|  
 |**/w1**`n`<br /><br /> **/w2**`n`<br /><br /> **/w3**`n`<br /><br /> **/w4**`n`|警告レベルで指定された警告番号を設定`n`です。 これにより、特定の警告レベルが設定されている場合は、その警告のコンパイラの動作を変更できます。 その他の警告オプションと組み合わせてこれらのオプションを使用すると、既定の Visual Studio によって提供されるものではなく、警告などの独自のコーディング標準を適用します。<br /><br /> たとえば、`/w34326`レベル 1 ではなく、レベル 3 警告として生成される C4326 をによりします。 両方を使用してコンパイルする場合、`/w34326`オプションおよび`/W2`オプション、警告 C4326 は生成されません。|  
 |**/wd**`n`|指定されているコンパイラの警告を抑制`n`です。<br /><br /> たとえば、`/wd4326`コンパイラの警告 C4326 を抑制します。|  
 |**/we**`n`|指定されているコンパイラの警告扱います`n`エラーとして。<br /><br /> たとえば、`/we4326`警告番号をコンパイラによってエラーとして扱う C4326 をによりします。|  
@@ -140,6 +141,6 @@ ms.lasthandoff: 10/24/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.WarningLevel%2A>」、「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.WarnAsError%2A>」、「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.DisableSpecificWarnings%2A>」、および「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

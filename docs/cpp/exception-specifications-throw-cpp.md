@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - exceptions [C++], exception specifications
 - throwing exceptions [C++], throw keyword
@@ -17,16 +15,16 @@ helpviewer_keywords:
 - throw keyword [C++], throw() vs. throw(...)
 - throw keyword [C++], exception specifications
 ms.assetid: 4d3276df-6f31-4c7f-8cab-b9d2d003a629
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 6577cf489ee1c9d64689938bb8a12660cec96893
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 7559bdf725727b79f99ed3bfcd4d6b7301528110
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="exception-specifications-throw-noexcept-c"></a>例外の仕様 (スロー、noexcept) (C++)
 例外の指定は、関数によって伝達されることができます、例外の種類に関するプログラマの意図を示す C++ 言語の機能です。 関数がいるかを使用して、例外によって終了可能性がありますを指定することができます、*例外指定*です。 コンパイラは、この情報を使用して、関数への呼び出しを最適化するために、関数をエスケープする場合、予期しない例外は、プログラムを終了する. 例外の指定の 2 種類があります。 *Noexcept 仕様*は c++ 11 で新しく追加します。 これは、関数をエスケープする可能性がある例外のセットが空かどうかを指定します。 *動的例外指定*、または`throw(optional_type_list)`仕様、c++ 11 では使用されなくなりましたおよび Visual Studio によって部分的にサポートされます。 この例外の指定された関数の場合からどのような例外をスローできる概要情報を提供するように設計されていますが、実際には、見つかった問題があること。 ある程度役に立つことが 1 つの動的な例外の仕様は、無条件`throw()`仕様です。 たとえば、関数宣言します。  
@@ -67,9 +65,9 @@ Visual C を完全にサポートしますが、`noexcept`式では、これと�
   
 |関数|/EHsc|/EHs|/EHa|/EHac|  
 |--------------|------------|-----------|-----------|------------|  
-|例外を指定していない C++ 関数|はい|はい|はい|はい|  
-|C++ の関数を`noexcept`、 `noexcept(true)`、または`throw()`例外の指定|いいえ|いいえ|はい|はい|  
-|C++ の関数を`noexcept(false)`、 `throw(...)`、または`throw(type)`例外の指定|はい|はい|はい|はい|  
+|例外を指定していない C++ 関数|[はい]|はい|はい|[はい]|  
+|C++ の関数を`noexcept`、 `noexcept(true)`、または`throw()`例外の指定|×|Ｘ|はい|[はい]|  
+|C++ の関数を`noexcept(false)`、 `throw(...)`、または`throw(type)`例外の指定|[はい]|はい|はい|[はい]|  
   
 ## <a name="example"></a>例  
   
@@ -140,6 +138,6 @@ About to throw 1
 in handler  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [try、throw、catch ステートメント (C++)](../cpp/try-throw-and-catch-statements-cpp.md)   
  [C++ 例外処理](../cpp/cpp-exception-handling.md)

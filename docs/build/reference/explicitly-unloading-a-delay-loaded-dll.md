@@ -1,35 +1,36 @@
 ---
-title: "遅延読み込みした DLL の明示的なアンロード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/DELAY:UNLOAD リンカー オプション"
-  - "__FUnloadDelayLoadedDLL2"
-  - "DELAY:UNLOAD リンカー オプション"
-  - "遅延読み込み (DLL を), アンロード"
+title: "遅延読み込みした DLL の明示的なアンロード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- /DELAY:UNLOAD linker option
+- DELAY:UNLOAD linker option
+- __FUnloadDelayLoadedDLL2
+- delayed loading of DLLs, unloading
 ms.assetid: 1c4c5172-fd06-45d3-9e4f-f12343176b3c
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: b26a1a17952693be9db6a80649aad2c40227d53e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 遅延読み込みした DLL の明示的なアンロード
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[\/delay](../../build/reference/delay-delay-load-import-settings.md):unload リンカー オプションによって、遅延読み込みした DLL をアンロードできます。  既定では、\/delay:unload と **\_\_FUnloadDelayLoadedDLL2** をコードに使用して DLL がアンロードされると、遅延読み込みされたインポートがインポート アドレス テーブル \(IAT: Import Address Table\) に残ります。  しかし、リンカーのコマンド ラインで \/delay:unload を指定した場合は、ヘルパー関数によって DLL の明示的アンロードがサポートされます。IAT は元の内容にリセットされ、無効になったポインターが上書きされます。  IAT は、元の IAT のコピーがある場合に、そのアドレスが格納される [ImgDelayDescr](../../build/reference/calling-conventions-parameters-and-return-type.md) のフィールドです。  
+# <a name="explicitly-unloading-a-delay-loaded-dll"></a>遅延読み込みした DLL の明示的なアンロード
+[/Delay](../../build/reference/delay-delay-load-import-settings.md): アンロード リンカー オプションでは、遅延読み込みされた DLL をアンロードすることができます。 既定で、コードが DLL をアンロードするとき (/delay:unload を使用して**__FUnloadDelayLoadedDLL2**)、インポート アドレス テーブル (IAT) に、遅延読み込みしたインポートが残ります。 ただし、/delay:unload リンカー コマンドラインを使用する場合、ヘルパー関数がサポート、IAT をリセットする元の形式に、DLL の明示的なアンロード無効になったポインターが上書きされます。 IAT が内のフィールド、 [ImgDelayDescr](../../build/reference/calling-conventions-parameters-and-return-type.md) (ある場合) 元の IAT のコピーのアドレスを格納します。  
   
-## 例  
+## <a name="example"></a>例  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // link with /link /DELAYLOAD:MyDLL.dll /DELAY:UNLOAD  
@@ -56,14 +57,14 @@ int main()
 }  
 ```  
   
-### コメント  
- 遅延読み込みされた DLL のアンロードに関する重要事項  
+### <a name="comments"></a>コメント  
+ 遅延読み込みした DLL のアンロードに重要なメモ:  
   
--   **\_\_FUnloadDelayLoadedDLL2** 関数の実装は、\\VC7\\INCLUDE\\DELAYHLP.CPP ファイルにあります。  
+-   実装を見つけることができます、 **__FUnloadDelayLoadedDLL2**ファイル内の関数 \VC7\INCLUDE\DELAYHLP です。CPP です。  
   
--   **\_\_FUnloadDelayLoadedDLL2** 関数の名前パラメーターは、大文字と小文字の区別も含めて、インポート ライブラリの内容と完全に一致している必要があります。文字列もイメージのインポート テーブルの内容と同じになります。  インポート ライブラリの内容は、[DUMPBIN \/DEPENDENTS](../Topic/-DEPENDENTS.md) で表示できます。  文字列の大文字と小文字を区別しない場合は、CRT 文字列関数のいずれかを使用するように、または Windows API 呼び出しを使用するように、**\_\_FUnloadDelayLoadedDLL2** を更新します。  
+-   Name パラメーター、 **__FUnloadDelayLoadedDLL2**関数が正確に一致 (大文字) を含むどのようなインポート ライブラリが含まれています (つまり文字列は、イメージのインポート テーブルにも)。 インポート ライブラリの内容を表示する[DUMPBIN/DEPENDENTS](../../build/reference/dependents.md)です。 大文字と小文字の文字列の一致が必要な場合は、更新**__FUnloadDelayLoadedDLL2** CRT 文字列関数、または Windows API の呼び出しの 1 つを使用します。  
   
- 詳細については、「[遅延読み込みした DLL のアンロード](../../build/reference/unloading-a-delay-loaded-dll.md)」を参照してください。  
+ 参照してください[アンロード、「](../../build/reference/unloading-a-delay-loaded-dll.md)詳細についてはします。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカーによる DLL の遅延読み込み](../../build/reference/linker-support-for-delay-loaded-dlls.md)

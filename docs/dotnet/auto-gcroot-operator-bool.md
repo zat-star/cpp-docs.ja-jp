@@ -20,11 +20,14 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 375816231f10545411cfdc359df556163c2c6039
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c327f0ff6e1be74831bb3e0f319ebaf429e7ca70
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="autogcrootoperator-bool"></a>auto_gcroot::operator bool
 使用するための演算子`auto_gcroot`条件式でします。  
@@ -70,11 +73,11 @@ now s is valid
 now s is invalid  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto_gcroot メンバー](../dotnet/auto-gcroot-members.md)   
  [auto_gcroot::operator!](../dotnet/auto-gcroot-operator-logical-not.md)

@@ -16,14 +16,15 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8abb70e7405fc143e9b66c8fb170169e379d6e6b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c6097d3f4c83ab22d3f65f1e7465210e6d81b18f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="indirection-on-array-types"></a>配列型の間接参照
 間接演算子の使用 (**\***) で、  *n*の次元の配列型を生成、  *n* -1 次元配列。 場合 *n*  1 の場合は、スカラー (または配列の要素) が返されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [配列](../cpp/arrays-cpp.md)

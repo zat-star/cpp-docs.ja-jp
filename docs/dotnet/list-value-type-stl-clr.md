@@ -1,41 +1,42 @@
 ---
-title: "list::value_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::list::value_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "value_type メンバー [STL/CLR]"
+title: "list::value_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::list::value_type
+dev_langs: C++
+helpviewer_keywords: value_type member [STL/CLR]
 ms.assetid: 7013f92e-8ceb-4c99-bb44-6ba13b0d3ef3
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 657daeeefce02c312a1ed4811466fb9dddaa9a4d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# list::value_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="listvaluetype-stlclr"></a>list::value_type (STL/CLR)
 要素の型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef Value value_type;  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター `Value` のシノニムです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_list_value_type.cpp   
@@ -63,13 +64,16 @@ int main()
   
 ```  
   
-  **b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/リスト\>  
+```Output  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/一覧 >  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)   
- [list::const\_reference](../dotnet/list-const-reference-stl-clr.md)   
- [list::reference](../dotnet/list-reference-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [list::const_reference (STL/CLR)](../dotnet/list-const-reference-stl-clr.md)   
+ [list::reference (STL/CLR)](../dotnet/list-reference-stl-clr.md)

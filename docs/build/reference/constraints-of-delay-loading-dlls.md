@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1f952de894cad02638a7f304590562f1846bc003
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cd3f641a3ac03705ff7f3765d995d5c40bccda7d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="constraints-of-delay-loading-dlls"></a>DLL の遅延読み込みの制約
 インポートの遅延読み込みには制約があります。  
@@ -40,7 +41,7 @@ ms.lasthandoff: 10/24/2017
   
 -   カスタム呼び出し規約 (x86 アーキテクチャでの条件コードの使用など) はサポートされません。 また、浮動小数点レジスタはどのプラットフォームにも保存されません。 カスタム ヘルパー ルーチンまたはフック ルーチンが浮動小数点型を使用する場合、浮動小数点パラメーターのレジスタ呼び出し規約を持つコンピューターで浮動小数点状態を完全に保存およびリストアする必要があります。 ヘルプ関数内の数値データ プロセッサ (NDP) スタックで、浮動小数点パラメーターを取得する CRT 関数を呼び出す場合、CRT DLL の遅延呼び出しに注意します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカーによる Dll の遅延読み込み](../../build/reference/linker-support-for-delay-loaded-dlls.md)   
  [LoadLibrary 関数](http://msdn.microsoft.com/library/windows/desktop/ms684175.aspx)   
  [GetModuleHandle 関数](http://msdn.microsoft.com/library/windows/desktop/ms683199.aspx)   

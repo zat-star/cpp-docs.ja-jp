@@ -24,11 +24,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 54a1cebd11fbb1d7fffad69fadd5a588c0c1a04d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c001d0d1ca8e756b24d97051d100e7d71723569c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomgitptr-class"></a>CComGITPtr クラス
 このクラスは、インターフェイス ポインターを処理するためのメソッドと、グローバル インターフェイス テーブル (GIT) を提供します。  
@@ -82,7 +83,7 @@ class CComGITPtr
 > [!NOTE]
 >  グローバル インターフェイス テーブル機能では、Windows 95 DCOM バージョン 1.1 をし、その後、Windows 98、Windows NT 4.0 Service Pack 3 以降では、および Windows 2000 で利用できるのみです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="attach"></a>CComGITPtr::Attach  
@@ -251,7 +252,7 @@ HRESULT Revoke() throw();
 ### <a name="remarks"></a>コメント  
  GIT からのインターフェイスを削除します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フリー スレッド マーシャラー](../../atl/atl-and-the-free-threaded-marshaler.md)   
  [アパートメント間でインターフェイスへのアクセス](http://msdn.microsoft.com/library/windows/desktop/ms682353)   
  [グローバル インターフェイス テーブルを使用する場合](http://msdn.microsoft.com/library/windows/desktop/ms693729)   

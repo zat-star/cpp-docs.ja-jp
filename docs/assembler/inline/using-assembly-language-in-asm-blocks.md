@@ -1,57 +1,58 @@
 ---
-title: "__asm ブロックでのアセンブリ言語の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__asm キーワード [C++], アセンブリ言語"
-  - "アセンブリ言語 [C++]"
-  - "アセンブリ言語 [C++], 機能"
+title: "_ _Asm ブロック内のアセンブリ言語の使用 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- assembly language [C++], features
+- assembly language [C++]
+- __asm keyword [C++], assembly language in
 ms.assetid: ad699356-1d16-4984-871f-c5fd7797c1fb
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 07a7e50c040ec52fe79cba25ca4c1e29ac05bd8b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# __asm ブロックでのアセンブリ言語の使用
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## Microsoft 固有の仕様 →  
- インライン アセンブラー アセンブラーに他の多くのと同様です。  たとえばMASM にできる式を評価できます。  ここでは `__asm` ブロックにアセンブリ言語機能の使用方法について説明します。  
+# <a name="using-assembly-language-in-asm-blocks"></a>__asm ブロックでのアセンブリ言語の使用
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ インライン アセンブラーは、多くの他のアセンブラーと共通します。 たとえば、MASM の有効な任意の式を受け入れます。 このセクションでは、アセンブリ言語機能の使用をについて説明します`__asm`ブロックします。  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
--   [インライン アセンブリの命令セット](../Topic/Instruction%20Set%20for%20Inline%20Assembly.md)  
+-   [インライン アセンブリの命令セット](../../assembler/inline/instruction-set-for-inline-assembly.md)  
   
--   [インライン アセンブラー MASM 式](../Topic/MASM%20Expressions%20in%20Inline%20Assembly.md)  
+-   [インライン アセンブリでの MASM 式](../../assembler/inline/masm-expressions-in-inline-assembly.md)  
   
--   [インライン アセンブラー データのディレクティブと演算子](../Topic/Data%20Directives%20and%20Operators%20in%20Inline%20Assembly.md)  
+-   [インライン アセンブリでのデータ ディレクティブと演算子](../../assembler/inline/data-directives-and-operators-in-inline-assembly.md)  
   
--   [ディレクティブを配置する](../../assembler/inline/even-and-align-directives.md)  
+-   [EVEN および ALIGN ディレクティブ](../../assembler/inline/even-and-align-directives.md)  
   
--   [インライン アセンブラー MASM ディレクティブのマクロ](../../assembler/inline/masm-macro-directives-in-inline-assembly.md)  
+-   [インライン アセンブリでの MASM マクロ ディレクティブ](../../assembler/inline/masm-macro-directives-in-inline-assembly.md)  
   
--   [インライン アセンブリ参照を分割します。](../../assembler/inline/segment-references-in-inline-assembly.md)  
+-   [インライン アセンブラー内のセグメント参照](../../assembler/inline/segment-references-in-inline-assembly.md)  
   
--   [インライン アセンブリの型および変数のサイズ](../../assembler/inline/type-and-variable-sizes-in-inline-assembly.md)  
+-   [インライン アセンブリでの型と変数サイズ](../../assembler/inline/type-and-variable-sizes-in-inline-assembly.md)  
   
 -   [アセンブリ言語のコメント](../../assembler/inline/assembly-language-comments.md)  
   
--   [\_emit の擬似手順](../../assembler/inline/emit-pseudoinstruction.md)  
+-   [_Emit 疑似命令](../../assembler/inline/emit-pseudoinstruction.md)  
   
--   [インライン アセンブリのデバッグとリスト](../../assembler/inline/debugging-and-listings-for-inline-assembly.md)  
+-   [インライン アセンブリのデバッグと一覧表示](../../assembler/inline/debugging-and-listings-for-inline-assembly.md)  
   
--   [Intel の MMX 命令セット](../../assembler/inline/intel-s-mmx-instruction-set.md)  
+-   [Intel の MMX の命令セット](../../assembler/inline/intel-s-mmx-instruction-set.md)  
   
- **終了 Microsoft 固有の仕様→**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

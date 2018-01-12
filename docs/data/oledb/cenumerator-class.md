@@ -1,55 +1,56 @@
 ---
-title: "CEnumerator クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CEnumerator"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CEnumerator クラス"
+title: "CEnumerator クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: CEnumerator
+dev_langs: C++
+helpviewer_keywords: CEnumerator class
 ms.assetid: 25805f1b-26e3-402f-af83-1b5fe5ddebf7
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: a64ac02e7b16bfab70966ffaf2a1897ae955f8c7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CEnumerator クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-すべてのデータ ソースと列挙子を説明する行セットを返すように [ISourcesRowset](https://msdn.microsoft.com/en-us/library/ms715969.aspx) インターフェイスを公開する OLE DB 列挙子オブジェクトを使用します。  
+# <a name="cenumerator-class"></a>CEnumerator クラス
+公開する OLE DB 列挙子オブジェクトを使用して、 [ISourcesRowset](https://msdn.microsoft.com/en-us/library/ms715969.aspx)インターフェイスをすべてのデータ ソースと列挙子を記述する行セットを返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-class CEnumerator :   
+class CEnumerator :   
    public CAccessorRowset< CAccessor <CEnumeratorAccessor >>  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### メソッド  
+### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
-|[&#91;検索&#93;](../Topic/CEnumerator::Find.md)|指定した名前の 1 を検索します。使用できるプロバイダー \(データ ソース\) を検索します。|  
-|[GetMoniker](../../data/oledb/cenumerator-getmoniker.md)|現在のレコードの `IMoniker` インターフェイスを取得します。|  
-|[&#91;Open&#93;](../Topic/CEnumerator::Open.md)|列挙子を開きます。|  
+|[検索](../../data/oledb/cenumerator-find.md)|指定した名前のいずれかを探して使用可能なプロバイダー (データ ソース) で検索します。|  
+|[GetMoniker](../../data/oledb/cenumerator-getmoniker.md)|取得、`IMoniker`現在のレコードのインターフェイスです。|  
+|[開く](../../data/oledb/cenumerator-open.md)|列挙子を開きます。|  
   
-## 解説  
- このクラスから **ISourcesRowset** データを間接的に取得できます。  
+## <a name="remarks"></a>コメント  
+ 取得することができます、 **ISourcesRowset**このクラスから間接的にデータ。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:**atldbcli.h  
   
-## 参照  
- [DBViewer](../../top/visual-cpp-samples.md)   
+## <a name="see-also"></a>参照  
+ [DBViewer](../../visual-cpp-samples.md)   
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)

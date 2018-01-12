@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bbd0d6ce5d5edb4dfa7608f56a362fb9071b5b72
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bf4fd3ffaf2fc4a035fdecf679ab507ebb557f38
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="win32threadtraits-class"></a>Win32ThreadTraits クラス
 このクラスは、Windows のスレッドの作成機能を提供します。 スレッド CRT 関数を使用しない場合は、このクラスを使用します。  
@@ -58,7 +59,7 @@ class Win32ThreadTraits
   
  使用する場合は、スレッドは CRT 関数を使用して、 [CRTThreadTraits](../../atl/reference/crtthreadtraits-class.md)代わりにします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="createthread"></a>Win32ThreadTraits::CreateThread  
@@ -101,5 +102,5 @@ static HANDLE CreateThread(
   
  この関数が呼び出す`CreateThread`スレッドを作成します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

@@ -16,11 +16,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8bb95ab9a70fd0144256f85d3fae6ccc3c034c1c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f3bd5cedbf3c981964c9d03eb8a30fc5e1652081
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-write-data-to-the-windows-registry-ccli"></a>方法: Windows レジストリにデータを書き込む (C++/CLI)
 次のコード例では、<xref:Microsoft.Win32.Registry.CurrentUser>の書き込み可能インスタンスを作成するキー、<xref:Microsoft.Win32.RegistryKey>に対応するクラス、**ソフトウェア**キー。 その後、<xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A> メソッドを使用して、新しいキーを作成し、キーと値のペアを追加します。  
@@ -76,6 +79,6 @@ int main()
 ## <a name="remarks"></a>コメント  
  レジストリにアクセスする .NET Framework を使用して、<xref:Microsoft.Win32.Registry>と[RegistryKey](https://msdn.microsoft.com/en-us/library/microsoft.win32.registrykey.aspx)はどちらもクラスで定義、<xref:Microsoft.Win32>名前空間。 **レジストリ**クラスの静的インスタンスのコンテナーが、<xref:Microsoft.Win32.RegistryKey>クラスです。 各インスタンスは、ルート レジストリ ノードを表します。 インスタンスは、<xref:Microsoft.Win32.Registry.ClassesRoot>、<xref:Microsoft.Win32.Registry.CurrentConfig>、<xref:Microsoft.Win32.Registry.CurrentUser>、<xref:Microsoft.Win32.Registry.LocalMachine>、および <xref:Microsoft.Win32.Registry.Users> です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: Windows レジストリからデータを読み取る (C + + CLI)](../dotnet/how-to-read-data-from-the-windows-registry-cpp-cli.md)   
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

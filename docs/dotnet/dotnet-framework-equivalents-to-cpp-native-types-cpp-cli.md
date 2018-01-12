@@ -14,11 +14,14 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 97d12adb89baddfbfdc25e6b758a3f659e6973d4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f5362b2c3e20a34249b9410951722222b93dce0d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="net-framework-equivalents-to-c-native-types-ccli"></a>C++ ネイティブ型と等価な .NET Framework ネイティブ型 (C++/CLI)
 次の表は、定義済みの型のエイリアスは、組み込みの Visual C 型のキーワードで、**システム**名前空間。  
@@ -39,5 +42,5 @@ ms.lasthandoff: 10/24/2017
 |**unsigned short**|**System.UInt16**|  
 |**void**|**System.Void**|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ型 (C++/CLI)](../dotnet/managed-types-cpp-cli.md)

@@ -23,11 +23,12 @@ caps.latest.revision: "30"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f776cbaec0b890959db180a373d4cb4152ac5826
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7712bcf73881d02b5d28c8a7645609be1df5e489
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-enable-a-64-bit-x64-hosted-visual-c-toolset-on-the-command-line"></a>方法: 64 ビットを有効にする、x64 には、コマンドラインでの Visual C ツールセットがホストされています。
 
@@ -48,6 +49,6 @@ Visual Studio がインストールすると、64 ビット Windows オペレー
   
 ネイティブのまたはクロス コンパイラ ツール、vcvarsall.bat を実行して、コマンドラインでビルド構成を使用できますのいずれかのコマンド ファイルです。 このコマンド ファイルがパスを構成し、特定の環境変数は、既存のコマンド プロンプト ウィンドウでのアーキテクチャを構築します。 具体的な手順については、次を参照してください。 [Developer コマンド ファイルと場所](../build/building-on-the-command-line.md#developer_command_files)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
-[64 ビット、x64 用の Visual C の構成のターゲット](../build/configuring-programs-for-64-bit-visual-cpp.md)
+[64 ビット、x64 ターゲット用の Visual C の構成](../build/configuring-programs-for-64-bit-visual-cpp.md)

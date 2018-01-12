@@ -1,41 +1,39 @@
 ---
-title: "IFIDN] | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IFIDN[[I]]"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IFIDN[[I]] ディレクティブ"
+title: "IFIDN] |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IFIDN[[I]]
+dev_langs: C++
+helpviewer_keywords: IFIDN[[I]] directive
 ms.assetid: 957893b1-1a30-4ffd-96f2-6663604a5058
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 59d5ee5079ecf5034bc883f264728c9d3696d885
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# IFIDN]
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-テキストの項目が同じでアセンブリを使用します。  
+# <a name="ifidn"></a>IFIDN]
+テキスト アイテムが同一の場合は、アセンブリを行います。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 IFIDN[[I]] textitem1, textitem2  
 ```  
   
-## 解説  
- **i** が指定されている場合比較では大文字と小文字が区別されません。  完全な構文については [IF](../../assembler/masm/if-masm.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 場合**すれば**が指定すると、比較では大文字小文字を区別します。 参照してください[IF](../../assembler/masm/if-masm.md)の完全な構文です。  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

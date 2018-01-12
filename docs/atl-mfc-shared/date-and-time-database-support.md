@@ -1,39 +1,42 @@
 ---
-title: "日付と時刻 : データベース サポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COleDateTime クラス, データベース プログラミング"
-  - "COleDateTimeSpan クラス, データベース プログラミング"
-  - "データベース テーブル [C++], 日時データ"
-  - "データベース [C++], 日時データ"
-  - "日付 [C++], データベースのサポート"
-  - "テーブル [C++]"
-  - "テーブル [C++], 日時データ"
-  - "時刻 [C++], データベースのサポート"
+title: "日付と時刻: データベース サポート |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
+helpviewer_keywords:
+- tables [C++]
+- dates [C++], database support
+- COleDateTime class, database programming
+- time [C++], database support
+- database tables [C++], date/time data
+- tables [C++], date/time data
+- databases [C++], date/time data
+- COleDateTimeSpan class, database programming
 ms.assetid: 4a57a1bb-fad5-4b70-b32c-42ad75c710c8
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 83de3c9fc55b9eafb3863b70dfb1cd6fa6c23de7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 日付と時刻 : データベース サポート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-日付と時刻のデータを表すバージョン 4.0、MFC データベース プログラミングに使用 [COleDateTime](../atl-mfc-shared/reference/coledatetime-class.md) および現在のクラス [COleDateTimeSpan](../Topic/COleDateTimeSpan%20Class.md)。  オートメーションで使用するこれらのクラスは、[COleVariant](../mfc/reference/colevariant-class.md)クラスから派生します。  これらは [CTime](../Topic/CTime%20Class.md) と [CTimeSpan](../atl-mfc-shared/reference/ctimespan-class.md)がより管理の日付と時刻のデータのための優れたサポートされています。  
+# <a name="date-and-time-database-support"></a>日付と時刻: データベースのサポート
+MFC データベース プログラミングの使用のバージョン 4.0 の時点で、 [COleDateTime](../atl-mfc-shared/reference/coledatetime-class.md)と[メンバー](../atl-mfc-shared/reference/coledatetimespan-class.md)日付と時刻のデータを表すクラス。 Automation では、使用しても、これらのクラスがクラスから派生した[COleVariant](../mfc/reference/colevariant-class.md)です。 も、日付と時刻のデータを管理するための優れたサポートが提供される[CTime](../atl-mfc-shared/reference/ctime-class.md)と[CTimeSpan](../atl-mfc-shared/reference/ctimespan-class.md)です。  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>詳しくは次のトピックをクリックしてください。  
   
--   [日時のプログラミングのオートメーションのサポート](../Topic/Date%20and%20Time:%20Automation%20Support.md)  
+-   [日付と時刻のオートメーションのサポート](../atl-mfc-shared/date-and-time-automation-support.md)  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [日付と時刻](../atl-mfc-shared/date-and-time.md)
+
+

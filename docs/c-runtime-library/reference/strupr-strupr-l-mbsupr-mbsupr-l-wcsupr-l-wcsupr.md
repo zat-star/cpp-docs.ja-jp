@@ -71,11 +71,12 @@ caps.latest.revision: "26"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 88362cf0100a7b8d118f38632e9751afa79ae4e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f211a64dca335433c8da779f6d3674f47ba33ce9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strupr-struprl-mbsupr-mbsuprl-wcsuprl-wcsupr"></a>_strupr、_strupr_l、_mbsupr、_mbsupr_l、_wcsupr_l、_wcsupr
 文字列を大文字に変換します。 これらの関数にはセキュリティが強化されたバージョンがあります。「[_strupr_s、_strupr_s_l、_mbsupr_s、_mbsupr_s_l、_wcsupr_s、_wcsupr_s_l](../../c-runtime-library/reference/strupr-s-strupr-s-l-mbsupr-s-mbsupr-s-l-wcsupr-s-wcsupr-s-l.md)」をご覧ください。  
@@ -147,7 +148,7 @@ unsigned char *_mbsupr_l(
  変更された文字列へのポインターを返します。 同じ位置で変更が実行されるため、返されるポインターは入力引数として渡されるポインターと同じです。 エラーを示す戻り値は予約されていません。  
   
 ## <a name="remarks"></a>コメント  
- `_strupr` 関数は、`str` 内の小文字を同じ位置で大文字に変換します。 変換は、ロケールの `LC_CTYPE` カテゴリの設定により決定されます。 他の文字は影響を受けません。 `LC_CTYPE` の詳細については、[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md) に関する記事をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンは、現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、代わりに渡されたロケールを使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `_strupr` 関数は、`str` 内の小文字を同じ位置で大文字に変換します。 変換は、ロケールの `LC_CTYPE` カテゴリの設定により決定されます。 他の文字は影響を受けません。 `LC_CTYPE` の詳細については、[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md) に関する記事をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンは、現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、代わりに渡されたロケールを使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  `_wcsupr` 関数と `_mbsupr` 関数は、`_strupr` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsupr` 関数の引数と戻り値はワイド文字列で、`_mbsupr` 関数の引数と戻り値はマルチバイト文字列です。 それ以外では、これらの関数の動作は同じです。  
   
@@ -162,20 +163,20 @@ unsigned char *_mbsupr_l(
 |`_tcsupr`|`_strupr`|`_mbsupr`|`_wcsupr`|  
 |`_tcsupr_l`|`_strupr_l`|`_mbsupr_l`|`_wcsupr_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strupr`, `_strupr_l`|\<string.h>|  
 |`_wcsupr`, `_wcsupr_l`|\<string.h> または \<wchar.h>|  
 |`_mbsupr`, `_mbsupr_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  [_strlwr](../../c-runtime-library/reference/strlwr-wcslwr-mbslwr-strlwr-l-wcslwr-l-mbslwr-l.md) に関する記事の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール](../../c-runtime-library/locale.md)   
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [_strlwr、_wcslwr、_mbslwr、_strlwr_l、_wcslwr_l、_mbslwr_l](../../c-runtime-library/reference/strlwr-wcslwr-mbslwr-strlwr-l-wcslwr-l-mbslwr-l.md)

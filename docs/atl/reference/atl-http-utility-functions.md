@@ -10,11 +10,12 @@ ms.assetid: 4db57ef2-31fa-4696-bbeb-79a9035033ed
 caps.latest.revision: "4"
 author: mikeblome
 ms.author: mblome
-ms.openlocfilehash: 9cdb12373d93c17258fb615f667d7321e06f6728
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 51c76e48023363fc7737aa690351801eceb3abf6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-http-utility-functions"></a>ATL HTTP ユーティリティ関数
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/24/2017
 |[RGBToHtml](#rgbtohtml)|変換、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)値をそのカラー値に対応する HTML テキスト。|
 |[SystemTimeToHttpDate](#systemtimetohttpdate)|システム時刻を HTTP ヘッダーで使用できる形式の文字列に変換します。|
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlutil.h  
 
 ## <a name="atlcanonicalizeurl"></a>どうか
@@ -72,7 +73,7 @@ inline BOOL AtlCanonicalizeUrl(
 ### <a name="remarks"></a>コメント  
  現在のバージョンのように動作[InternetCanonicalizeUrl](http://msdn.microsoft.com/library/windows/desktop/aa384342) WinInet または Internet Explorer をインストールする必要はありません。  
   
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [InternetCanonicalizeUrl](http://msdn.microsoft.com/library/windows/desktop/aa384342)
 
  ## <a name="atlcombineurl"></a>AtlCombineUrl
@@ -256,7 +257,7 @@ inline void SystemTimeToHttpDate(
  *strTime*  
  RFC 2616 で定義された、HTTP 日付時刻を受け取る文字列変数への参照を ([http://www.ietf.org/rfc/rfc2616.txt](http://www.ietf.org/rfc/rfc2616.txt)) および RFC 1123 ([http://www.ietf.org/rfc/rfc1123.txt](http://www.ietf.org/rfc/rfc1123.txt))。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../../atl/active-template-library-atl-concepts.md)   
  [ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)   
 

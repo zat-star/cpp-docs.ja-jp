@@ -21,11 +21,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ed9c82d97a1d96777ae9b7e3c28b8ffa0de4507a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 768130d8ae72ea7788d3bf0ff0fcb5756558b437
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="receiving-notifications"></a>通知の受信
 OLE DB は、イベントが発生したときに通知を受信するためのインターフェイスを提供します。 については、 [OLE DB オブジェクト通知](https://msdn.microsoft.com/en-us/library/ms725406.aspx)で、 *OLE DB プログラマーズ リファレンス*です。 これらのイベントのセットアップでは、標準の COM 接続ポイント メカニズムを使用します。 たとえばが使用してイベントを取得する ATL オブジェクト`IRowsetNotify`を実装、`IRowsetNotify`インターフェイスを追加して`IRowsetNotify`クラスから派生した一覧、およびを通じて公開することを**COM_INTERFACE_ENTRY**マクロです。  
@@ -45,5 +48,5 @@ product.Open(session, _T("Products"), &propset);
 AtlAdvise(product.m_spRowset, GetUnknown(), IID_IRowsetNotify, &m_dwCookie);  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセサーの使用](../../data/oledb/using-accessors.md)

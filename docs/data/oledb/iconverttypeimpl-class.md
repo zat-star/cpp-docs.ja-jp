@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 293d5d02b9515db7356eb839ced8dc1d006daafb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: efd09f1cc89f640ad1886057de4df25e3ce67b5e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iconverttypeimpl-class"></a>IConvertTypeImpl クラス
 実装を提供、 [IConvertType](https://msdn.microsoft.com/en-us/library/ms715926.aspx)インターフェイスです。  
@@ -52,9 +55,9 @@ class ATL_NO_VTABLE IConvertTypeImpl
 ## <a name="remarks"></a>コメント  
  このインターフェイスは、コマンド、行セット、およびインデックス行セットでは必須です。 **IConvertTypeImpl** OLE DB で指定されている変換オブジェクトに委任することで、インターフェイスを実装します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "5"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 74afe390f91227a5ebad2246f9b2ad0f8c87a7de
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 421f8517b8a96c40bb44dd959eba90b1bf903113
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformiboxarray-interface"></a>Platform::IBoxArray インターフェイス
 `IBoxArray` はアプリケーション バイナリ インターフェイス (ABI) を越えて渡されるか、XAML コントロールなどの `Platform::Object^` 要素のコレクションに格納される値型の配列のラッパーです。  
@@ -67,5 +68,5 @@ property T Value {T get();}
  例については、次を参照してください。[ボックス化](../cppcx/boxing-c-cx.md)です。  
   
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Array と WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md)

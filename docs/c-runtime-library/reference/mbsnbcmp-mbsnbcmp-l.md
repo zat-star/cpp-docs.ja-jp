@@ -42,11 +42,12 @@ caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 15546fc6c5eda56da53fd39581e6d101d014fa51
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 614091f3e1a36bdc907bbdb1b299a53f4bb6d13c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mbsnbcmp-mbsnbcmpl"></a>_mbsnbcmp、_mbsnbcmp_l
 2 つのマルチバイト文字の文字列の先頭の `n` バイトを比較します。  
@@ -96,7 +97,7 @@ int _mbsnbcmp_l(
   
  `_mbsnbcmp` は `_mbsncmp` と類似していますが、`_mbsncmp` はバイトではなく文字で文字列を比較する点が異なります。  
   
- 出力値はロケールの `LC_CTYPE` カテゴリの設定に影響を受けます。この設定は、マルチバイト文字の先頭および末尾のバイトを指定します。 詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_mbsnbcmp` は、ロケールに依存するこの動作に現在のロケールを使用します。 `_mbsnbcmp_l` 関数は、代わりに `locale` パラメーターを使用することを除けば、同一です。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ 出力値はロケールの `LC_CTYPE` カテゴリの設定に影響を受けます。この設定は、マルチバイト文字の先頭および末尾のバイトを指定します。 詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_mbsnbcmp` は、ロケールに依存するこの動作に現在のロケールを使用します。 `_mbsnbcmp_l` 関数は、代わりに `locale` パラメーターを使用することを除けば、同一です。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  `string1` または `string2` のどちらかが null ポインターの場合、これらの関数は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、関数は `_NLSCMPERROR` を返し、`errno` が `EINVAL` に設定されます。  
   
@@ -107,14 +108,14 @@ int _mbsnbcmp_l(
 |`_tcsncmp`|[strncmp](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)|`_mbsnbcmp`|[wcsncmp](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)|  
 |`_tcsncmp_l`|[strncmp](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)|`_mbsnbcml`|[wcsncmp](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_mbsnbcmp`|\<mbstring.h>|  
 |`_mbsnbcmp_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -167,7 +168,7 @@ Function: _mbsnicmp _mbsnicmp (first 10 characters only)
 Result:   String 1 is equal to string 2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [_mbsnbcat、_mbsnbcat_l](../../c-runtime-library/reference/mbsnbcat-mbsnbcat-l.md)   
  [_mbsnbicmp、_mbsnbicmp_l](../../c-runtime-library/reference/mbsnbicmp-mbsnbicmp-l.md)   

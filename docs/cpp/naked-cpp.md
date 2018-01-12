@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 587c47370f0bdf80df78896ca5687c4d84f7a83a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: daa03ee746de422f96e8f39dc451a71da2e0259c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="naked-c"></a>naked (C++)
 **Microsoft 固有の仕様**  
@@ -43,7 +44,7 @@ __declspec(naked) declarator
   
  メンバーではないメソッドの定義以外のすべてに `naked` 属性が適用されている場合、コンパイラ エラーが発生します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次のコードは `naked` 属性の関数を定義します。  
   
 ```  
@@ -73,7 +74,7 @@ __declspec( naked ) int func();  // Error--naked attribute not
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ _declspec](../cpp/declspec.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [naked 関数呼び出し](../cpp/naked-function-calls.md)

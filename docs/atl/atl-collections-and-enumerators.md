@@ -18,11 +18,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4738e3f5256fe654dd64541dfd021ba2b4fce090
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 52b74f51733947ca46c0ddb1039f92ce7f69e670
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-collections-and-enumerators"></a>ATL のコレクションと列挙子
 A `collection` (生データやその他のオブジェクト) のデータ項目のグループにアクセスできるようにするインターフェイスを提供する COM オブジェクトです。 一定の基準に従ってと呼ばれますが、オブジェクトのグループへのアクセスを提供するインターフェイス、*コレクション インターフェイス*です。  
@@ -50,6 +51,6 @@ A `collection` (生データやその他のオブジェクト) のデータ項�
  [ATLCollections サンプル](../visual-cpp-samples.md)  
  使用方法を示すサンプル`ICollectionOnSTLImpl`と`CComEnumOnSTL`、およびカスタム コピー ポリシー クラスの実装です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../atl/active-template-library-atl-concepts.md)
 

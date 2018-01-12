@@ -33,11 +33,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 50d1c551f0ae51daafb3d83075091fa299db0fed
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 921687fbc5d8ab0b509e5a2e43c9c9ff4b18727a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="freea"></a>_freea
 メモリ ブロックを割り当て解除または解放します。  
@@ -66,22 +67,22 @@ void _freea(
   
  メモリ ブロックを解放すると、[_heapmin](../../c-runtime-library/reference/heapmin.md) が、未使用の領域を結合して、それらをオペレーティング システムに戻すことで、ヒープ上の空きメモリの量を最小限に抑えます。 オペレーティング システムにリリースされない解放されたメモリは、空きプールに復元され、再度割り当てに使用できます。  
   
- `_freea` に対する呼び出しは、`_malloca` に対するすべての呼び出しを伴う必要があります。 同じメモリ上で `_freea` を 2 回呼び出した場合もエラーになります。 特に、C ランタイム ライブラリのデバッグ バージョン (特に `_CRTDBG_MAP_ALLOC` を定義することで有効になった [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md) 機能) とアプリケーションがリンクされている場合、見つからないまたは重複した `_freea` の呼び出しを簡単に見つけることができます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」を参照してください。  
+ `_freea` に対する呼び出しは、`_malloca` に対するすべての呼び出しを伴う必要があります。 同じメモリ上で `_freea` を 2 回呼び出した場合もエラーになります。 特に、C ランタイム ライブラリのデバッグ バージョン (特に `_CRTDBG_MAP_ALLOC` を定義することで有効になった [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md) 機能) とアプリケーションがリンクされている場合、見つからないまたは重複した `_freea` の呼び出しを簡単に見つけることができます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。  
   
  `_freea` は `__declspec(noalias)` としてマークされます。これは、関数がグローバル変数を変更しないことを保証します。 詳細については、「[noalias](../../cpp/noalias.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_freea`|\<stdlib.h> と \<malloc.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_malloca](../../c-runtime-library/reference/malloca.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
  [_malloca](../../c-runtime-library/reference/malloca.md)   
  [calloc](../../c-runtime-library/reference/calloc.md)   

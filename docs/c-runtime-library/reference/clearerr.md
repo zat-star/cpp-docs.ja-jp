@@ -32,11 +32,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e1c9c815307c8a454456c76fee419f1c048fded1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 35fafbe762780ace0fbd255f905307f7793d4c04
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="clearerr"></a>clearerr
 ストリームのエラー インジケーターをリセットします。 この関数のセキュリティが強化されたバージョンについては、「[clearerr_s](../../c-runtime-library/reference/clearerr-s.md)」を参照してください。  
@@ -56,17 +57,17 @@ void clearerr(
 ## <a name="remarks"></a>コメント  
  `clearerr` 関数は、`stream` のエラー インジケーターとファイルの終わりインジケーターをリセットします。 エラー インジケーターは自動的にクリアされません。指定のストリームのエラー インジケーターを設定すると、そのストリームに対する操作は、`clearerr`、`fseek`、`fsetpos`、または `rewind` が呼び出されるまでエラー値を返し続けます。  
   
- `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、値を返します。 `errno` とエラー コードの詳細については、「[errno 定数](../../c-runtime-library/errno-constants.md)」を参照してください。  
+ `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、値を返します。 `errno` とエラー コードの詳細については、「[errno 定数](../../c-runtime-library/errno-constants.md)」を参照してください。  
   
  この関数のセキュリティが強化されたバージョンについては、「[clearerr_s](../../c-runtime-library/reference/clearerr-s.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`clearerr`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -115,7 +116,7 @@ Will input cause an error? n
 No read error  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [_eof](../../c-runtime-library/reference/eof.md)   

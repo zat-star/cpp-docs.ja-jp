@@ -18,11 +18,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d9158351892c8a8d097f0eccd498c05b2833d862
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: b3411463070055a8ba1d1f37085c45bd2ed42a28
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="working-with-ole-db-provider-templates"></a>OLE DB プロバイダー テンプレートの操作
 OLE DB プロバイダー テンプレートを使用する方法については、次のトピックを参照してください。  
@@ -43,6 +46,6 @@ OLE DB プロバイダー テンプレートを使用する方法については
   
 -   [プロバイダーでサポートされないデータの変換](../../data/oledb/converting-data-not-supported-by-the-provider.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート リファレンス](../../data/oledb/ole-db-provider-templates-reference.md)   
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)

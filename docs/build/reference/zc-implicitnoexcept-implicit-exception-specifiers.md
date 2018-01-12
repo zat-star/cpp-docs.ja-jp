@@ -1,49 +1,49 @@
 ---
-title: "/Zc:implicitNoexcept (暗黙の例外指定子) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/Zc:implicitNoexcept"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Zc:implicitNoexcept"
-  - "Zc:implicitNoexcept"
-  - "-Zc:implicitNoexcept"
+title: "-Zc: implicitNoexcept (暗黙的な例外指定子) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /Zc:implicitNoexcept
+dev_langs: C++
+helpviewer_keywords:
+- /Zc:implicitNoexcept
+- Zc:implicitNoexcept
+- -Zc:implicitNoexcept
 ms.assetid: 71807652-6f9d-436b-899e-f52daa6f500b
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 9af0a7a3a175699a4f4b738271fe0d4c5bbac4b2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /Zc:implicitNoexcept (暗黙の例外指定子)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**\/Zc:implicitNoexcept** オプションを指定すると、コンパイラは、コンパイラ定義の特別なメンバー関数およびユーザー定義のデストラクターとデアロケーターに暗黙的な [noexcept](../Topic/noexcept%20\(C++\).md) 例外指定子を追加します。  既定では、ISO C\+\+11 標準に準拠するように **\/Zc:implicitNoexcept** が有効になっています。  このオプションをオフにすると、ユーザー定義のデストラクターとデアロケーターおよびコンパイラ定義の特別なメンバー関数に対して暗黙的な `noexcept` が無効になります。  
+# <a name="zcimplicitnoexcept-implicit-exception-specifiers"></a>/Zc:implicitNoexcept (暗黙の例外指定子)
+ときに、 **/Zc:implicitNoexcept**オプションを指定すると、コンパイラは暗黙的な付加[noexcept](../../cpp/noexcept-cpp.md)コンパイラ定義の特別なメンバー関数をユーザー定義のデストラクターを例外指定子とデアロケーターです。 既定では、 **/Zc:implicitNoexcept** ISO C 11 標準に準拠するように有効にします。 このオプションをオフにすると、ユーザー定義のデストラクターとデアロケーターおよびコンパイラ定義の特別なメンバー関数に対して暗黙的な `noexcept` が無効になります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```vb  
+```cpp  
 /Zc:implicitNoexcept[-]  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
-## 解説  
- 既定では、**\/Zc:implicitNoexcept** を指定すると、コンパイラは ISO C\+\+11 標準のセクション 15.4 に従い、暗黙的に宣言または明示的に既定化されたそれぞれの特別なメンバー関数 \(既定のコントラクター、コピー コンストラクター、移動コンストラクター、デストラクター、コピー代入演算子、または移動代入演算子\)、およびユーザー定義のそれぞれのデストラクターまたはデアロケーター関数に `noexcept` 例外指定子を暗黙的に追加します。  ユーザー定義のデアロケーターには、暗黙的な `noexcept(true)` 例外指定子があります。  ユーザー定義のデストラクターでは、含まれているメンバー クラスまたは基底クラスに `noexcept(true)` ではないデストラクターがなければ、暗黙的な例外指定子は `noexcept(true)` です。  コンパイラにより生成された特別なメンバー関数では、この関数によって直接呼び出された任意の関数が実質的に `noexcept(false)` である場合、暗黙的な例外指定子は `noexcept(false)` です。  それ以外の場合、暗黙的な例外指定子は `noexcept(true)` です。  
+## <a name="remarks"></a>コメント  
+ 既定では、場合**/Zc:implicitNoexcept**指定すると、コンパイラは ISO C 11 標準のセクション 15.4 に続くし、暗黙的に追加、`noexcept`例外指定子をそれぞれが暗黙的に宣言または明示的に既定されました。特殊なメンバー関数 — 既定のコンス トラクター、コピー コンス トラクター、移動コンス トラクター、デストラクター、コピー代入演算子、または移動代入演算子、および各ユーザー定義のデストラクターまたはデアロケーター関数。 ユーザー定義のデアロケーターには、暗黙的な `noexcept(true)` 例外指定子があります。 ユーザー定義のデストラクターでは、含まれているメンバー クラスまたは基底クラスに `noexcept(true)` ではないデストラクターがなければ、暗黙的な例外指定子は `noexcept(true)` です。 コンパイラにより生成された特別なメンバー関数では、この関数によって直接呼び出された任意の関数が実質的に `noexcept(false)` である場合、暗黙的な例外指定子は `noexcept(false)` です。 それ以外の場合、暗黙的な例外指定子は `noexcept(true)` です。  
   
  コンパイラは、明示的な `noexcept` や `throw` 指定子または `__declspec(nothrow)` 属性を使用して宣言された関数に対して暗黙的な例外指定子を生成しません。  
   
- **\/Zc:implicitNoexcept\-** を指定することでオプションが無効になっている場合、コンパイラによって暗黙的な例外指定子は生成されません。  この動作は Visual Studio 2013 の場合と同じであり、例外指定子がないデストラクターとデアロケーターでは `throw` ステートメントを使用することができません。  既定の場合や **\/Zc:implicitNoexcept** を指定した場合、暗黙的な `noexcept(true)` 指定子を使用する関数で実行時に `throw` ステートメントが見つかったときは、`std::terminate` が即座に呼び出され、例外ハンドラーに対する通常のアンワインド動作は保証されません。  このような状況を識別するため、コンパイラは[コンパイラの警告 \(レベル 1\) C4297](../Topic/Compiler%20Warning%20\(level%201\)%20C4297.md) を生成します。  `throw` が意図的なものである場合は、**\/Zc:implicitNoexcept\-** を使用する代わりに明示的な `noexcept(false)` 指定子を使用するように関数宣言を変更することをお勧めします。  
+ 指定して、オプションが無効になっている場合**/zc: implicitnoexcept-**、コンパイラによって暗黙的な例外指定子は生成されません。 この動作は Visual Studio 2013 の場合と同じであり、例外指定子がないデストラクターとデアロケーターでは `throw` ステートメントを使用することができません。 既定とタイミング**/Zc:implicitNoexcept**を指定した場合、`throw`で暗黙的な関数の実行時にステートメントが検出された`noexcept(true)`指定子の直接の呼び出しになります`std::terminate`と例外ハンドラーに対する通常のアンワインド動作は保証されません。 このような状況を識別するには、コンパイラが生成されます[コンパイラの警告 (レベル 1) C4297](../../error-messages/compiler-warnings/compiler-warning-level-1-c4297.md)です。 場合、`throw`は、意図的なことをお勧めする明示的な関数の宣言を変更する`noexcept(false)`指定子を使用せずに**/zc: implicitnoexcept-**です。  
   
- このサンプルでは、**\/Zc:implicitNoexcept** オプションを設定したときまたは無効にしたときの、明示的な例外指定子を持たないユーザー定義のデストラクターの動作を示しています。  このオプションを設定したときの動作を示すには、`cl/EHsc/W4 implicitNoexcept.cpp` を使用してコンパイルします。  このオプションを無効にしたときの動作を示すには、`cl /EHsc /W4 /Zc:implicitNoexcept- implicitNoexcept.cpp` を使用してコンパイルします。  
+ この例では、明示的な例外指定子を持たないユーザー定義のデストラクターの動作時に、 **/Zc:implicitNoexcept**オプションを設定するか、または無効になっています。 動作を示すを設定するを使用してコンパイル`cl /EHsc /W4 implicitNoexcept.cpp`です。 表示するには無効にしたときの動作を使用してコンパイル`cl /EHsc /W4 /Zc:implicitNoexcept- implicitNoexcept.cpp`です。  
   
 ```  
 // implicitNoexcept.cpp  
@@ -120,28 +120,36 @@ int main()
   
 ```  
   
- 既定の設定 **\/Zc:implicitNoexcept** を使用してコンパイルした場合、このサンプルでは次の出力が生成されます。  
+ 既定の設定を使用して、コンパイル時に**/Zc:implicitNoexcept**サンプルには、次の出力が生成されます。  
   
-  **~B Exception caught**  
-**Unexpected throw caused std::terminate**  
-**Exit returning EXIT\_FAILURE** 設定 **\/Zc:implicitNoexcept\-** を使用してコンパイルした場合、このサンプルでは次の出力が生成されます。  
+```Output  
+~B Exception caught  
+Unexpected throw caused std::terminate  
+Exit returning EXIT_FAILURE  
+```  
   
-  **~B Exception caught**  
-**~D Exception caught**  
-**Exit returning EXIT\_SUCCESS** Visual C\+\+ の準拠の問題の詳細については、「[非標準動作](../Topic/Nonstandard%20Behavior.md)」を参照してください。  
+ 設定を使用して、コンパイル時に**/zc: implicitnoexcept-**サンプルには、次の出力が生成されます。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+```Output  
+~B Exception caught  
+~D Exception caught  
+Exit returning EXIT_SUCCESS  
+```  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[プロジェクトのプロパティの操作](../../ide/working-with-project-properties.md)」を参照してください。  
+ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandard Behavior](../../cpp/nonstandard-behavior.md)」をご覧ください。  
   
-2.  **\[C\/C\+\+\]** フォルダーを選択します。  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-3.  **\[コマンド ライン\]** プロパティ ページを選択します。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-4.  **\[追加オプション\]** プロパティを変更して **\/Zc:implicitNoexcept** または **\/Zc:implicitNoexcept\-** を含め、**\[OK\]** を選択します。  
+2.  選択、 **C/C++**フォルダーです。  
   
-## 参照  
- [\/Zc \(準拠\)](../../build/reference/zc-conformance.md)   
- [noexcept](../Topic/noexcept%20\(C++\).md)   
- [例外の仕様 \(スロー\)](../../cpp/exception-specifications-throw-cpp.md)   
- [terminate](../Topic/terminate%20\(%3Cexception%3E\).md)
+3.  選択、**コマンドライン**プロパティ ページ。  
+  
+4.  変更、**追加オプション**含めるプロパティを**/Zc:implicitNoexcept**または**/zc: implicitnoexcept-**を選択し**OK**です。  
+  
+## <a name="see-also"></a>参照  
+ [/Zc (準拠)](../../build/reference/zc-conformance.md)   
+ [noexcept](../../cpp/noexcept-cpp.md)   
+ [例外の仕様 (スロー)](../../cpp/exception-specifications-throw-cpp.md)   
+ [terminate](../../standard-library/exception-functions.md#terminate)

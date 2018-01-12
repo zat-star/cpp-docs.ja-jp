@@ -15,11 +15,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 03303ffefb02581dba38a66d92f3e14531b449f6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3a9ae3cd16b5b498f891b11159bb9e8659a9db04
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="word"></a>WORD
 割り当て、必要に応じて各記憶域の単語 (2 バイト) を初期化`initializer`です。 型指定子として使用することも、型が有効な任意の場所。  
@@ -30,7 +31,7 @@ ms.lasthandoff: 10/24/2017
 [[name]] WORD initializer [[, initializer]]...  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)   
  [SWORD](../../assembler/masm/sword.md)   
  [DW](../../assembler/masm/dw.md)

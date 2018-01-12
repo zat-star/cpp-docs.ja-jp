@@ -15,11 +15,14 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d671ae501663c4875d8b4ff8507cf8e8942b34ed
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 05dada3a53a5cd31997ff6ce21ec835d5b4e842b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setlowerbound-stlclr"></a>set::lower_bound (STL/CLR)
 指定したキーに一致する範囲の先頭を検出します。  
@@ -76,12 +79,12 @@ lower_bound(L'x')==end() = True
 *lower_bound(L'b') = b  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
  [set::count (STL/CLR)](../dotnet/set-count-stl-clr.md)   
  [set::equal_range (STL/CLR)](../dotnet/set-equal-range-stl-clr.md)   

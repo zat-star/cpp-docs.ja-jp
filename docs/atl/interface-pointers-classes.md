@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d2dfe77eefeec24a2be1ba6d0cceaa53218d72a0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b7c5231dcaf0e78637a0519beddc41a0ec19babe
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="interface-pointers-classes"></a>インターフェイス ポインター クラス
 次のクラスは、指定されたインターフェイス ポインターを管理します。  
@@ -37,6 +38,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [CComGITPtr](../atl/reference/ccomgitptr-class.md)インターフェイス ポインターと、グローバル インターフェイス テーブル (GIT) を処理するメソッドを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

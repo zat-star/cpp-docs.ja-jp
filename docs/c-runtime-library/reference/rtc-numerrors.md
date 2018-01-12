@@ -33,11 +33,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 62e734fb1165bf0d4e59f3d964a20056fa7065f6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b0d305575a2dca1df3084ab413b82d445260a6e1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="rtcnumerrors"></a>_RTC_NumErrors
 実行時エラー チェック (RTC) で検出できるエラーの合計数を返します。 この数値は **for** ループを制御するために使用し、ループ内では各値を [_RTC_GetErrDesc](../../c-runtime-library/reference/rtc-geterrdesc.md) に渡すことができます。  
@@ -53,9 +54,9 @@ int _RTC_NumErrors( void );
 ## <a name="return-value"></a>戻り値  
  Visual C++ の実行時エラー チェックで検出できるエラーの合計数を表す値を持つ整数。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_RTC_NumErrors`|\<rtcapi.h>|  
   
@@ -64,6 +65,6 @@ int _RTC_NumErrors( void );
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_RTC_GetErrDesc](../../c-runtime-library/reference/rtc-geterrdesc.md)   
  [ランタイム エラー チェック](../../c-runtime-library/run-time-error-checking.md)

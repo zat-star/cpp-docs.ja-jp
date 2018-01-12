@@ -1,39 +1,41 @@
 ---
-title: "IRowsetCreatorImpl::SetSite | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IRowsetCreatorImpl.SetSite"
-  - "IRowsetCreatorImpl<T>::SetSite"
-  - "IRowsetCreatorImpl::SetSite"
-  - "SetSite"
-  - "ATL.IRowsetCreatorImpl.SetSite"
-  - "ATL::IRowsetCreatorImpl<T>::SetSite"
-  - "ATL::IRowsetCreatorImpl::SetSite"
-  - "ATL.IRowsetCreatorImpl<T>.SetSite"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetSite メソッド"
+title: "Irowsetcreatorimpl::setsite |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- IRowsetCreatorImpl.SetSite
+- IRowsetCreatorImpl<T>::SetSite
+- IRowsetCreatorImpl::SetSite
+- SetSite
+- ATL.IRowsetCreatorImpl.SetSite
+- ATL::IRowsetCreatorImpl<T>::SetSite
+- ATL::IRowsetCreatorImpl::SetSite
+- ATL.IRowsetCreatorImpl<T>.SetSite
+dev_langs: C++
+helpviewer_keywords: SetSite method
 ms.assetid: e92e63d5-93e4-4ee0-9ef7-bb6583cc8091
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: ed3f5f0bce2408cd2a4439aac6728f0e00760b1b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# IRowsetCreatorImpl::SetSite
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-行セット オブジェクトを含むサイトを設定します。  詳細については、「[IObjectWithSite::SetSite](http://msdn.microsoft.com/library/windows/desktop/ms683869)」を参照してください。  
+# <a name="irowsetcreatorimplsetsite"></a>IRowsetCreatorImpl::SetSite
+行セット オブジェクトを含むサイトを設定します。 詳細については、次を参照してください。 [IObjectWithSite::SetSite](http://msdn.microsoft.com/library/windows/desktop/ms683869)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -42,18 +44,18 @@ caps.handback.revision: 8
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pCreator`  
- \[\]行セット オブジェクトを管理するサイトの **IUnknown** インターフェイス ポインターへのポインター。  
+ [in]ポインター、 **IUnknown**行セット オブジェクトを管理するサイトのインターフェイス ポインター。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- また、`IRowsetCreatorImpl::SetSite` は OLE DB の **DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS** のプロパティを有効にします。  
+## <a name="remarks"></a>コメント  
+ さらに、`IRowsetCreatorImpl::SetSite`により、OLE DB **DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS**プロパティです。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
- [IRowsetCreatorImpl クラス](../Topic/IRowsetCreatorImpl%20Class.md)
+## <a name="see-also"></a>参照  
+ [IRowsetCreatorImpl クラス](../../data/oledb/irowsetcreatorimpl-class.md)

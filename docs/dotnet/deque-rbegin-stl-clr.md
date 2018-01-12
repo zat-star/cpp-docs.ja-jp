@@ -15,11 +15,14 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7734f6382d9fa2fbc17282fe4fd11a5447125f65
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d111fc2739dba0b6a8531c6fe5a8b149b901f818
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dequerbegin-stlclr"></a>deque::rbegin (STL/CLR)
 反転被制御シーケンスの先頭を指定します。  
@@ -75,12 +78,12 @@ int main()
  a y x  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/deque >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
  [deque::begin (STL/CLR)](../dotnet/deque-begin-stl-clr.md)   
  [deque::end (STL/CLR)](../dotnet/deque-end-stl-clr.md)   

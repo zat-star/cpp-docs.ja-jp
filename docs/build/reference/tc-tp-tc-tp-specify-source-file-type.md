@@ -26,11 +26,12 @@ caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c3b7508bf3ff65e27cab3260577d2831de00eb2b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 69ccd08967d386780744fb85476033430127ba3a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tc-tp-tc-tp-specify-source-file-type"></a>/Tc、/Tp、/TC、/TP (ソース ファイル タイプの指定)
 **/Tc**オプションを指定する`filename`C ソース ファイルを .c という拡張子があるない場合でもはします。 **/Tp**オプションを指定する`filename`.cpp または .cxx 拡張子を持たない場合でも、C++ ソース ファイルがします。 オプションの間にスペースと`filename`は省略可能です。 各オプションを 1 つのファイルを指定します追加のファイルを指定するには、オプションを繰り返します。  
@@ -69,7 +70,7 @@ ms.lasthandoff: 10/24/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.CompileAs%2A>」を参照してください。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  CL の次のコマンドラインでは、MAIN.c、TEST.prg と COLLATE.prg があるすべての C ソース ファイルを指定します。 CL では、PRINT.prg は認識されません。  
   
 ```  
@@ -82,6 +83,6 @@ CL MAIN.C /TcTEST.PRG /TcCOLLATE.PRG PRINT.PRG
 CL TEST1.C TEST2.CXX TEST3.HUH TEST4.O /Tc TEST5.Z /TP  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

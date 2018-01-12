@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f81ffa2e6b8f1dc07e409b737f76cb8e6aca5258
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1c06ae1c043551bbb4ed6469ab3f87d1ed86fd92
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iteration-statements-c"></a>繰り返しステートメント (C++)
 繰り返しステートメントにより、ループ終了条件に応じて、ステートメント (または複合ステートメント) が複数回実行されます。 これらのステートメントが複合ステートメントの場合は、場合を除き、順序どおりに実行されますか、 [break](../cpp/break-statement-cpp.md)ステートメントまたは[続行](../cpp/continue-statement-cpp.md)ステートメントが見つかりました。  
@@ -31,12 +32,12 @@ ms.lasthandoff: 10/24/2017
   
 |ステートメント|評価のタイミング|初期化|インクリメント|  
 |---------------|------------------|--------------------|---------------|  
-|`while`|ループの先頭|いいえ|いいえ|  
-|**do**|ループの最後|いいえ|いいえ|  
-|**for**|ループの先頭|はい|はい|  
-|**範囲ベースの for**|ループの先頭|はい|はい|  
+|`while`|ループの先頭|×|×|  
+|**do**|ループの最後|×|×|  
+|**for**|ループの先頭|[はい]|[はい]|  
+|**範囲ベースの for**|ループの先頭|[はい]|[はい]|  
   
  繰り返しステートメントのステートメント部分は宣言にできません。 ただし、宣言を含む複合ステートメントにすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ ステートメントの概要](../cpp/overview-of-cpp-statements.md)

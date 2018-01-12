@@ -4,15 +4,13 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - .
 - ->
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - member access, expressions
 - operators [C++], member access
@@ -23,16 +21,16 @@ helpviewer_keywords:
 - . operator
 - member access
 ms.assetid: f8fc3df9-d728-40c5-b384-276927f5f1b3
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 7c4e69727c474cb89f931832da2dbde6e20c16b9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 4dc08bce80d27493a8a13ac24bce7011282d7cd3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="member-access-operators--and--gt"></a>メンバー アクセス演算子: です。 パラメーターと&gt;
 ## <a name="syntax"></a>構文  
@@ -43,13 +41,13 @@ postfix-expression -> name
 ```  
   
 ## <a name="remarks"></a>コメント  
- メンバー アクセス演算子**です。** および** -> **構造体、共用体、およびクラスのメンバーを参照するために使用します。 メンバー アクセス式は、選択したメンバーの値と型を持ちます。  
+ メンバー アクセス演算子**です。** および **->** 構造体、共用体、およびクラスのメンバーを参照するために使用します。 メンバー アクセス式は、選択したメンバーの値と型を持ちます。  
   
  メンバー アクセス式には、次の 2 つの形式があります。  
   
 1.  最初のフォームでは、*後置式*構造体、クラス、または共用体の型の値を表すと*名前*指定された構造体、共用体、またはクラスのメンバーに名前します。 操作の値は、の*名前*が左辺値の場合と*後置式*左辺値です。  
   
-2.  2 番目の形式で*後置式*構造体、共用体、またはクラスへのポインターを表すと*名前*指定された構造体、共用体、またはクラスのメンバーに名前します。 値が*名前*左辺値です。 ** -> **演算子には、ポインターが逆参照します。 そのため、式は、 *e* ** -> ** `member`と**(\****e***)**.`member` (場所*e*ポインターを表します) と同じ結果が生じる (する場合を除く演算子は、 ** -> **または** \* **はオーバー ロードされます)。  
+2.  2 番目の形式で*後置式*構造体、共用体、またはクラスへのポインターを表すと*名前*指定された構造体、共用体、またはクラスのメンバーに名前します。 値が*名前*左辺値です。  **->** 演算子には、ポインターが逆参照します。 そのため、式は、 *e*  **->**  `member`と**(\****e***)**.`member` (場所*e*ポインターを表します) と同じ結果が生じる (する場合を除く演算子は、  **->** または **\*** はオーバー ロードされます)。  
   
 ## <a name="example"></a>例  
  次の例に、メンバー アクセス演算子の両方の形式を示します。  
@@ -86,7 +84,7 @@ int main() {
 2/1/2000  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [後置式](../cpp/postfix-expressions.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [クラスと構造体](../cpp/classes-and-structs-cpp.md)   

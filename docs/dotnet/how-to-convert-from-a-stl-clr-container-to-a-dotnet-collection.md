@@ -16,11 +16,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 817f04af0f6d2c24296b5775a9863b8c34dccd30
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: aa58c8db46d1443ca5b39449222cc22e31eafb5c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-convert-from-a-stlclr-container-to-a-net-collection"></a>方法: STL/CLR コンテナーを .NET コレクションに変換する
 このトピックでは、同等の .NET のコレクションを STL/CLR コンテナーに変換する方法を示します。 例として、STL/CLR に変換する方法を示します[ベクター](../dotnet/vector-stl-clr.md) .net <xref:System.Collections.Generic.ICollection%601> 、STL/CLR を変換する方法および[マップ](../dotnet/map-stl-clr.md).net<xref:System.Collections.Generic.IDictionary%602>プロシージャはすべてのコレクションと似ていますが、およびコンテナーです。  
@@ -118,7 +121,7 @@ Key: 42.00 Value: 42
 Key: 74.00 Value: 74  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [STL/CLR ライブラリ リファレンス](../dotnet/stl-clr-library-reference.md)   
  [方法: STL/CLR コンテナーを .NET コレクションに変換](../dotnet/how-to-convert-from-a-dotnet-collection-to-a-stl-clr-container.md)   
  [range_adapter (STL/CLR)](../dotnet/range-adapter-stl-clr.md)

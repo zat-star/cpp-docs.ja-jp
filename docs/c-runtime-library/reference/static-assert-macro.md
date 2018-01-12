@@ -27,11 +27,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 686ac443eb32a9ca17e77baee95b50e06c6556b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ec3d90f9bfcf51b3a5f48baea1c6e3cf06e7d72f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="staticassert-macro"></a>_STATIC_ASSERT マクロ
 コンパイル時に式を評価し、結果が `FALSE` の場合にエラーを生成します。  
@@ -72,12 +73,12 @@ int main()
 }  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |マクロ|必須ヘッダー|  
 |-----------|---------------------|  
 |`_STATIC_ASSERT`|\<crtdbg.h>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [_ASSERT、_ASSERTE、_ASSERT_EXPR マクロ](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)

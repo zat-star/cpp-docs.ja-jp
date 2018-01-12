@@ -19,11 +19,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5f4204027d52a5dfd4d7968732fb4d08328f12ce
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 9f792e7a65a55cb63fb275d4d606a743e00a0e2d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="traversing-a-simple-rowset"></a>単純な行セットの走査
 次の例は、迅速かつ簡単なデータベース アクセス コマンドを使用しないことを示しています。 ATL プロジェクトでは、次のコンシューマー コードは、という名前のテーブルからレコードを取得*アーティスト*Microsoft access データベース ODBC 用の Microsoft OLE DB Provider を使用します。 このコードを作成、 [CTable](../../data/oledb/ctable-class.md)アクセサーを使用してテーブル オブジェクトは、ユーザー レコード クラスに基づく`CArtists`です。 接続を開き、接続でセッションを開くとし、セッションでテーブルを開きます。  
@@ -70,5 +73,5 @@ BEGIN_COLUMN_MAP(CArtists)
 END_COLUMN_MAP()  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレートの操作](../../data/oledb/working-with-ole-db-consumer-templates.md)

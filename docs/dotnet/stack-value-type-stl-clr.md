@@ -15,11 +15,14 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 24e3cc0d992f6c955f2fa4154591b8c679a376f5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 90bea3aa13d9a5521d2a40758a94c6a380f97289
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="stackvaluetype-stlclr"></a>stack::value_type (STL/CLR)
 要素の型。  
@@ -31,7 +34,7 @@ typedef Value value_type;
 ```  
   
 ## <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Value`のシノニムです。  
+ この型は、テンプレート パラメーター `Value` のシノニムです。  
   
 ## <a name="example"></a>例  
   
@@ -65,12 +68,12 @@ int main()
 c b a  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/stack >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
  [stack::const_reference (STL/CLR)](../dotnet/stack-const-reference-stl-clr.md)   
  [stack::reference (STL/CLR)](../dotnet/stack-reference-stl-clr.md)

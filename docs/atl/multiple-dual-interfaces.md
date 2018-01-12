@@ -1,47 +1,49 @@
 ---
-title: "複数のデュアル インターフェイス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COM_INTERFACE_ENTRY_IID マクロ"
-  - "COM_INTERFACE_ENTRY2 マクロ"
-  - "デュアル インターフェイス, 公開する (複数を)"
-  - "IDispatchImpl クラス, 複数のデュアル インターフェイス"
-  - "複数のデュアル インターフェイス"
-  - "複数のデュアル インターフェイス, 公開 (ATL で)"
+title: "複数のデュアル インターフェイス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- multiple dual interfaces
+- COM_INTERFACE_ENTRY2 macro
+- dual interfaces, exposing multiple
+- multiple dual interfaces, exposing with ATL
+- IDispatchImpl class, multiple dual interfaces
+- COM_INTERFACE_ENTRY_IID macro
 ms.assetid: 7fea86e6-247f-4063-be6e-85588a9e3719
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 6f5677392a090a9c894cf4f848d9f74a1504d69c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 複数のデュアル インターフェイス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-多重継承のデュアル インターフェイス \(つまり、vtable と遅延バインディングの柔軟性、スクリプト言語、または C\+\+ では、クラスを使用できるようになります\) の利点を結合する場合。  
+# <a name="multiple-dual-interfaces"></a>複数のデュアル インターフェイス
+デュアル インターフェイス (つまり、vtable と遅延バインディング、したがってクラスを使用できるようにスクリプト言語と C++ の両方の柔軟性を高めて) の利点を結合することも複数継承の方法を使用します。  
   
- 単一の COM オブジェクトの複数のデュアル インターフェイスを公開することもできますが、それは推奨されません。  複数のデュアル インターフェイスがある場合は、公開された `IDispatch` の 1 種類のインターフェイスだけ必要があります。  使用可能な方法は、このケースに該当するために関数または拡張されたコードの複雑度の損失などの低下を行います。  この方法を検討する開発者は、利点と欠点速度が重視する必要があります。  
+ 単一の COM オブジェクトに対して複数のデュアル インターフェイスを公開することはできますが、これは推奨されません。 複数のデュアル インターフェイスがある場合がある必要があります 1 つだけ`IDispatch`公開されるインターフェイス。 大文字と小文字であることを確認に使用できる手法は、関数または増加したコードの複雑さの損失などの低下を実行します。 このアプローチを検討している開発者は、長所と短所に慎重に比較検討する必要があります。  
   
-## 単一の IDispatch インターフェイスの公開  
- `IDispatchImpl`の複数の特化型から派生して単一のオブジェクトの複数のデュアル インターフェイスを公開することができます。  ただし、クライアントが `IDispatch` のインターフェイスに対して問い合わせることが許可されます [COM\_INTERFACE\_ENTRY2](../Topic/COM_INTERFACE_ENTRY2.md) の `IDispatch`かの実装として使用される基本クラスを指定するマクロ [COM\_INTERFACE\_ENTRY\_IID](../Topic/COM_INTERFACE_ENTRY_IID.md) \(または\) を使用する必要があります。  
+## <a name="exposing-a-single-idispatch-interface"></a>1 つの IDispatch インターフェイスを公開します。  
+ 2 つ以上の特殊な形式から派生することによって、単一のオブジェクトに対して複数のデュアル インターフェイスを公開することは`IDispatchImpl`します。 ただし、クエリを実行するクライアントを許可する場合、`IDispatch`インターフェイスを使用する必要が、 [COM_INTERFACE_ENTRY2](reference/com-interface-entry-macros.md#com_interface_entry2)マクロ (または[COM_INTERFACE_ENTRY_IID](reference/com-interface-entry-macros.md#com_interface_entry_iid))) を使用する基本クラスを指定します実装`IDispatch`です。  
   
- [!code-cpp[NVC_ATL_COM#23](../atl/codesnippet/CPP/multiple-dual-interfaces_1.h)]  
+ [!code-cpp[NVC_ATL_COM#23](../atl/codesnippet/cpp/multiple-dual-interfaces_1.h)]  
   
- `IDispatch` の 1 種類のインターフェイスだけ公開されるため、`IDispatch` のインターフェイスを通じてのみ、オブジェクトにアクセスできないクライアントは、そのほかのインターフェイス メソッドやプロパティにアクセスします。  
+ 1 つだけ`IDispatch`インターフェイスを公開すると、クライアントを通じて、オブジェクトにのみアクセスできる、`IDispatch`インターフェイスはメソッドまたはその他のインターフェイスでプロパティにアクセスできません。  
   
-## IDispatch の単一の実装への複数のデュアル インターフェイスの結合  
- ATL は `IDispatch`の単一の実装に複数のデュアル インターフェイスを結合するにはサポートされません。  ただし、手動で `QueryInterface` の機能を実行するには、新しいオブジェクトを作成するか、または `IDispatch` のインターフェイスを作成するには、入れ子になったオブジェクトの typeinfo ベースの実装を使用する `IDispatch` の別のインターフェイスの共用体を含むテンプレート クラスの作成など、インターフェイスを組み合わせることにはいくつかの既知の方法があります。  
+## <a name="combining-multiple-dual-interfaces-into-a-single-implementation-of-idispatch"></a>複数のデュアル インターフェイスを IDispatch の単一実装に結合  
+ ATL の単一実装に複数のデュアル インターフェイスを結合するためのサポートを行いません`IDispatch`です。 ただし、個々 の和集合を表すテンプレート クラスの作成などのインターフェイスを手動で結合するいくつかの既知のアプローチがある`IDispatch`インターフェイスを実行する新しいオブジェクトを作成する、`QueryInterface`関数、またはを使用して、typeinfo ベースの実装を作成する入れ子になったオブジェクトの`IDispatch`インターフェイスです。  
   
- これらの方法には、名前空間の衝突の問題を持ち、複雑さや保守性です。  複数のデュアル インターフェイスを作成することは推奨されません。  
+ これらのアプローチでは、潜在的な名前空間の競合だけでなくコードの複雑さと保守性に問題があります。 複数のデュアル インターフェイスを作成することは推奨されません。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [デュアル インターフェイスと ATL](../atl/dual-interfaces-and-atl.md)
+

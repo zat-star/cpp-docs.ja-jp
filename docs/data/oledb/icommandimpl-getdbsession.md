@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bb4a4f378d1446e722404a76a19d592a9eed0e20
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 6d848b9bc541c74d6820932335542707c12263e0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="icommandimplgetdbsession"></a>ICommandImpl::GetDBSession
 コマンドを作成したセッションにインターフェイス ポインターを返します。  
@@ -43,8 +46,8 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  セッションからのプロパティを取得するために便利です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICommandImpl クラス](../../data/oledb/icommandimpl-class.md)

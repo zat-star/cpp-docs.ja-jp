@@ -17,11 +17,14 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aad327c26c8684804c294fe5eb6b5bf41507f603
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 4d6a7806183766d96c0d106d9d9e890b046f4563
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-create-verifiable-c-projects-ccli"></a>方法: 確認可能な C++ プロジェクトを作成する (C++/CLI)
 Visual C アプリケーションのウィザードは、検証可能なプロジェクトを作成できませんが、検証可能であるにプロジェクトを変換することができます。 このトピックでは、プロジェクトのプロパティを設定し、検証可能なアプリケーションを生成するために、Visual C プロジェクトを変換するプロジェクトのソース ファイルを変更する方法について説明します。  
@@ -61,5 +64,5 @@ Visual C アプリケーションのウィザードは、検証可能なプロ�
   
 3.  **詳細設定**ページで、、**リンカー**ノード、入力`Main`として、**エントリ ポイント**プロパティの値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [純粋なコードと検証可能なコード (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)

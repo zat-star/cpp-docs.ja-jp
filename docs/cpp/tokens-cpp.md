@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 349cc44f35a98385cbd186c6991e5a6b39724014
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 852165a345b36c2ea07d18334b050d5fcb8f7bc7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tokens-c"></a>トークン (C++)
 トークンは、コンパイラにとって意味がある、C ++ プログラムの最小要素です。 C++ パーサーが認識するトークンの種類は、識別子、キーワード、リテラル、演算子、句読記号、およびその他の区切り記号です。 これらのトークンのストリームが、翻訳単位を構成します。  
@@ -59,5 +60,5 @@ a = (i++) + j
   
  パーサーは入力ストリームから最長のトークンを作成しようとするため、2 つ目の解釈が選択され、トークンは `i++`、 `+`、および `j`になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構文規則](../cpp/lexical-conventions.md)

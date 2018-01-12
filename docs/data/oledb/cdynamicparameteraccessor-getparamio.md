@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d09eee048e737b19b21f6d71518d2b70702df8a7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 340153a86584483f61ae4d6dd8a8becefbcd91d6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdynamicparameteraccessorgetparamio"></a>CDynamicParameterAccessor::GetParamIO
 指定されたパラメーターが入力または出力パラメーターであるかどうかを判断します。  
@@ -59,8 +62,8 @@ enum DBPARAMIOENUM {
 ## <a name="return-value"></a>戻り値  
  返します**true**成功した場合または**false**エラー発生時にします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)

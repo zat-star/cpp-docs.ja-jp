@@ -20,11 +20,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 72d41cfe3eae516b21a1d61c477a70e16a4d2451
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 1115fe4c18a001671f94f637c1f1b789c3a3534e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csimplerowaddrefrow"></a>CSimpleRow::AddRefRow
 既存の行ハンドルをスレッド セーフな方法で参照カウントを追加します。  
@@ -37,10 +40,10 @@ DWORD AddRefRow( );
   
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CSimpleRow クラス](../../data/oledb/csimplerow-class.md)   
  [Csimplerow::releaserow](../../data/oledb/csimplerow-releaserow.md)   
  [IRowsetImpl::AddRefRows](../../data/oledb/irowsetimpl-addrefrows.md)

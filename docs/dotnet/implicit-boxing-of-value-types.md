@@ -1,44 +1,47 @@
 ---
-title: "値型の暗黙のボックス化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__box キーワード"
-  - "ボックス化"
-  - "ボックス化, __box キーワード"
-  - "ボックス化, Visual C++"
-  - "値型, ボックス化された"
+title: "値の型の暗黙的なボックス化 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- boxing, Visual C++
+- __box keyword
+- boxing
+- boxing, __box keyword
+- value types, boxed
 ms.assetid: 9597c92f-a3fe-44af-ad80-f9d656847a35
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0c4725cdd7e8630131f77e02eedc2af14a469d20
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 値型の暗黙のボックス化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-値型のボックス化は、[!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では C\+\+ マネージ拡張から変更されています。  
+# <a name="implicit-boxing-of-value-types"></a>値型の暗黙のボックス化
+値型のボックス化は、Visual C を c++ マネージ拡張から変更されました。  
   
- 言語デザインにおいては、これまで機能に関して実地の経験ではなく哲学的な立場を優先していましたが、結果を見ると、それは誤りでした。  類推として、元の複数継承言語デザインでは、Stroustrup が仮想基本クラス サブオブジェクトは派生クラス コンストラクター内では初期化できないと決定しました。したがって、言語では、仮想基本クラスとして機能するクラスに既定コンストラクターを定義する必要がありました。  後続の仮想派生によって呼び出されるのは、その既定コンストラクターです。  
+ 言語設計では、代わりに、機能の実際の経験哲学的な位置が課されることを実際には、それは誤りでした。 比喩で元の複数の継承言語デザイン Stroustrup ことが決定したがって言語必要される仮想ベースとして機能している任意のクラスを派生クラスのコンス トラクター内で、仮想基底クラスの下位のオブジェクトを初期化できませんでした。クラスは、既定のコンス トラクターを定義する必要があります。 後続の仮想派生によって呼び出される既定のコンス トラクターです。  
   
- 仮想基本クラス階層の問題は、共有仮想サブオブジェクトの初期化に対する責任が、後続の派生と共に移行することです。  たとえば、初期化でバッファーの割り当てが必要となる基本クラスを定義すると、そのバッファーのユーザー定義のサイズが引数としてコンストラクターに渡されます。  次に、2 つの後続の仮想派生を提供し、それらを `inputb` および `outputb` と呼ぶ場合、それぞれが特定の値を基本クラス コンストラクターに提供します。  ここで、`inputb` と `outputb` の両方から `in_out` クラスを派生した場合、共有仮想基本クラス サブオブジェクトに対するこれらの値のいずれも評価できません。  
+ 仮想基本クラスの階層構造の問題は、後続の派生で共有仮想下位のオブジェクトの初期化の責任をシフトすることです。 などの基本クラスを定義した場合どの初期化には、ユーザーが指定したバッファーのサイズをバッファーの割り当てが必要です。 渡されますを引数としてコンス トラクターに。 後続の 2 つの仮想派生提供し場合、呼び出す`inputb`と`outputb`、基底クラス コンス トラクターに特定の値を紹介します。 ここで、私の派生、`in_out`両方からクラスを`inputb`と`outputb`、共有仮想基底クラスの下位のオブジェクトにそれらの値のいずれも十できるようにするを評価します。  
   
- そこで、元の言語デザインにおいて、Stroustrup は派生クラス コンストラクターのメンバー初期化リスト内で仮想基本クラスを明示的に初期化することを禁止しました。  これによって問題は解決しましたが、仮想基本クラスの初期化を指示できないようにすることが、実際には実行不可能と判明しました。  より柔軟な言語デザインを開発するように、Stroustrup を主に説得したのは、nihcl と呼ばれるフリーウェア バージョンの SmallTalk コレクション ライブラリを実装した National Institute of Health の Keith Gorlen でした。  
+ そのため、元の言語設計 Stroustrup には、メンバー初期化リスト内で、派生クラスのコンス トラクターの仮想基底クラスの明示的な初期化が許可されていません。 これには、問題が解決したら、中に実際には、仮想基底クラスの初期化を指示することができない証明実行不可能と判明します。 Nihcl と呼ばれる SmallTalk コレクションのライブラリのフリーウェア バージョンを実装した、ユーザー、National Institute の正常性、Keith Gorlen 程度のより柔軟な言語設計を考案する he ' d Stroustrup 原則音声をでした。  
   
- オブジェクト指向の階層デザインの原則に従えば、派生クラスはその直接の基本クラスの非プライベートな実装にのみ関係します。  仮想継承の柔軟な初期化デザインをサポートするには、Stroustrup はこの原則に違反する必要がありました。  すべての仮想サブオブジェクトの初期化の責任は、それが階層のどの深さで実行されるかにかかわりなく、階層の最派生クラスが持ちます。  たとえば、`inputb` と `outputb` は両方とも、それらの直接の仮想基本クラスの明示的な初期化の責任を負います。  `in_out` が `inputb` と `outputb` の両方から派生した場合、`in_out` はかつて削除された仮想基本クラスの初期化の責任を負い、`inputb` および `outputb` 内で明示的に行われた初期化は抑止されます。  
+ 階層的なデザインのオブジェクト指向の原則は、派生クラスはその直接の基本クラスの非プライベートな実装でのみ自体に関係を保持します。 仮想継承の柔軟な初期化のデザインをサポートするために、Stroustrup は、この原則に違反する必要があります。 階層の最派生クラスでは、発生した階層に詳細な方法に関係なくすべての仮想サブオブジェクト初期化の責任を引き継ぎます。 たとえば、`inputb`と`outputb`が両方とも、即時仮想基底クラスを明示的に初期化を担当します。 ときに`in_out`両方から派生した`inputb`と`outputb`、`in_out`になった 1 回のみの初期化が仮想基底クラスを削除し、内で明示的に初期化が行われます`inputb`と`outputb`は抑制されます。  
   
- これによって、言語開発者が要求する柔軟性は得られますが、その代償としてセマンティクスが複雑になります。  仮想基本クラスに状態を含まずにインターフェイスを指定できるようにすることで、この複雑さは取り除かれます。  これは C\+\+ で推奨されるデザイン イディオムです。  CLR プログラミングでは、インターフェイス型を持つポリシーに発展しています。  
+ これは、言語の開発者によってが複雑なセマンティクスを必要な柔軟性を提供します。 コンプリケーションのこの負担は取り除かれます仮想基本クラスには、状態を含まず、単にインターフェイスを指定することを許可できないようにする場合。 これは、C++ での推奨される設計手法です。 Clr プログラミング、インターフェイス型を持つポリシーにこれが発生します。  
   
- 単純なコード サンプルを次に示します。この場合、明示的なボックス化は不要です。  
+ ここでの単純なコード サンプルでは、ここでは、明示的なボックス化する必要はありません。  
   
 ```  
 // Managed Extensions for C++ requires explicit __box operation  
@@ -52,7 +55,7 @@ Console::WriteLine( "{0}\t{1}\t{2}", __box(0),
    __box(my1DIntArray->GetUpperBound(0)) );  
 ```  
   
- ご覧のように、多数のボックス化が行われます。  [!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では値型のボックス化は暗黙的に行われます。  
+ ご覧のように、多数のボックス化と詳細があります。 Visual C は、値の型のボックス化は暗黙的な。  
   
 ```  
 // new syntax makes boxing implicit  
@@ -64,6 +67,6 @@ Console::WriteLine( "{0}\t{1}\t{2}", 0,
    my1DIntArray->GetUpperBound( 0 ) );  
 ```  
   
-## 参照  
- [値型とその動作 \(C\+\+\/CLI\)](../dotnet/value-types-and-their-behaviors-cpp-cli.md)   
- [Boxing](../windows/boxing-cpp-component-extensions.md)
+## <a name="see-also"></a>参照  
+ [値の型とその動作 (C + + CLI)](../dotnet/value-types-and-their-behaviors-cpp-cli.md)   
+ [ボックス化](../windows/boxing-cpp-component-extensions.md)

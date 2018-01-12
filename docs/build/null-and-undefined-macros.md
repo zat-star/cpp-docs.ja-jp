@@ -1,32 +1,33 @@
 ---
-title: "Null マクロと未定義マクロ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "マクロ, null および未定義の"
-  - "NMAKE プログラム, null マクロ"
-  - "NMAKE プログラム, 未定義マクロ"
-  - "null マクロ (NMAKE の)"
-  - "未定義マクロと NMAKE"
+title: "Null と未定義マクロ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- NMAKE program, undefined macros
+- Null macros in NMAKE
+- macros, null and undefined
+- undefined macros and NMAKE
+- NMAKE program, null macros
 ms.assetid: 1db4611a-1755-4328-b00f-d35365af8b6c
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 9581b152057655c510f1cbcd4ab29ba8339070b8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Null マクロと未定義マクロ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-null マクロと未定義マクロは、両方とも null 文字列に展開されます。ただし、null 文字列として定義されているマクロは、プリプロセッサ式で定義されているものと判断されます。  マクロを null 文字列として定義するには、コマンド ラインまたはコマンド ファイルで等号 \(\=\) の後に空白またはタブ以外の文字を指定せず、null 文字列または定義を二重引用符 \(" "\) で囲みます。  マクロを未定義にするには、**\!UNDEF** を使用します。詳細については、「[メイクファイルのプリプロセス ディレクティブ](../build/makefile-preprocessing-directives.md)」を参照してください。  
+# <a name="null-and-undefined-macros"></a>Null マクロと未定義マクロ
+Null と未定義の両方のマクロが null の文字列への展開が、null 文字列として定義されているマクロは、プリプロセス式で定義されていると見なされます。 マクロを定義する、null 文字列として、指定文字を含まないがコマンドラインまたはコマンド ファイルに等号 (=) の後のスペースまたはタブを除くし、null 文字列または定義を二重引用符で囲みます ("") です。 マクロを未定義を使用して**!UNDEF です。** 詳細については、次を参照してください。[メイクファイルのプリプロセス ディレクティブ](../build/makefile-preprocessing-directives.md)です。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [NMAKE マクロの定義](../build/defining-an-nmake-macro.md)

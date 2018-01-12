@@ -15,11 +15,12 @@ caps.latest.revision: "3"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 0c217824496f0cf4e69c8fba89fd614a8049a8c0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 353649f63a8e5522329459b1c9f740450818a3af
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformtypecode-enumeration"></a>Platform::TypeCode 列挙型
 組み込み型を表す数値カテゴリを指定します。  
@@ -44,7 +45,7 @@ enum class TypeCode {};
 |Int32|default::int32 型。|  
 |Int64|default::int64 型。|  
 |Int8|default::int8 型。|  
-|オブジェクト|Platform::Object 型。|  
+|Object|Platform::Object 型。|  
 |Single|default::float32 型。|  
 |String|Platform::String 型。|  
 |UInt16|default::uint16 型。|  
@@ -52,7 +53,7 @@ enum class TypeCode {};
 |UInt64|default::uint64 型。|  
 |UInt8|default::uint8 型。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  

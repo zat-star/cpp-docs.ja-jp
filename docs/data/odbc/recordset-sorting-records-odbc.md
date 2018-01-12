@@ -17,11 +17,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6ca9e8547149ae36722c40e146392085e6ccf08e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 846b3cfd4d5abe6d0eb76cfb12840f094564c926
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="recordset-sorting-records-odbc"></a>レコードセット: レコードの並べ替え (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
@@ -68,7 +71,7 @@ rsStudent.Open( );
 > [!NOTE]
 >  独自の SQL 文字列を渡すことによって、レコード セットの既定の SQL 文字列を上書きする場合**開く**、カスタム文字列がある場合は、並べ替えを設定しないでください、 **ORDER BY**句。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
  [レコード セット: レコード セット (ODBC) のパラメーター化](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)   
  [レコードセット: レコードのフィルター処理 (ODBC)](../../data/odbc/recordset-filtering-records-odbc.md)

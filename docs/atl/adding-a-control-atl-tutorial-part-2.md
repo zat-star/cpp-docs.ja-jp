@@ -13,11 +13,12 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8802dc25400b96d70bfaec65cd88f68db7650023
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: aed69a5dd421e967e1da33bb3a2f2c41fa80698d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-a-control-atl-tutorial-part-2"></a>コントロールの追加 (ATL チュートリアル、パート 2)
 このステップでは、コントロールをプロジェクトに追加し、ビルドして、Web ページでテストします。  
@@ -111,6 +112,6 @@ ms.lasthandoff: 10/24/2017
   
  [手順 1 に戻る](../atl/creating-the-project-atl-tutorial-part-1.md)&#124;です。[ステップ 3 に進む](../atl/adding-a-property-to-the-control-atl-tutorial-part-3.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル](../atl/active-template-library-atl-tutorial.md)
 

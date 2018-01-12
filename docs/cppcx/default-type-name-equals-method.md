@@ -14,11 +14,12 @@ caps.latest.revision: "4"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 4986819ccd6c56548c4be0a2bdf529d3fb5b9f58
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bd5fcdbb71c1555d06e094f5e08f9da795f0d5a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="defaulttypenameequals-method"></a>default::(type_name)::Equals メソッド
 指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。  
@@ -39,7 +40,7 @@ bool Equals(
 ### <a name="return-value"></a>戻り値  
  オブジェクトが等しい場合は`true` 。それ以外の場合は `false`。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -48,5 +49,5 @@ bool Equals(
   
  **ヘッダー:** vccorlib.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [default 名前空間](../cppcx/default-namespace.md)

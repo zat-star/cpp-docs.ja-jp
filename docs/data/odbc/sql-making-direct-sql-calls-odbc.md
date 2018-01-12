@@ -19,11 +19,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cac2844c64bf2157a9984a29b8885434eb07b811
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4c5debd5017c2c9c9cad240f831fdf6e02be98ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sql-making-direct-sql-calls-odbc"></a>SQL: SQL の直接呼び出し (ODBC)
 このトピックでは、次の内容について説明します。  
@@ -43,5 +46,5 @@ ms.lasthandoff: 10/24/2017
 ##  <a name="_core_making_direct_sql_function_calls"></a>SQL 関数の呼び出しを直接  
  SQL 呼び出しを使用して、直接実行できる、 [CDatabase クラス](../../mfc/reference/cdatabase-class.md)オブジェクト。 SQL ステートメントの文字列を設定 (通常の`CString`) に渡すと、 [:executesql](../../mfc/reference/cdatabase-class.md#executesql)のメンバー関数、`CDatabase`オブジェクト。 通常のレコードを返す SQL ステートメントを送信する ODBC 関数呼び出しを使用する場合、レコードは無視されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQL](../../data/odbc/sql.md)

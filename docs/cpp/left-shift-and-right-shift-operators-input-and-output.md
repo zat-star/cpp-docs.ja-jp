@@ -24,11 +24,12 @@ caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ad2da0f4f8807bef5899a32eabda931092641260
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7dece9ac4045fa8b46e5edf8b266312242000229
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="left-shift-and-right-shift-operators-gtgt-and-ltlt"></a>左 shift キーおよび右シフト演算子 (&gt; &gt;と&lt; &lt;)
 ビット処理シフト演算子は右シフト演算子 (>>) のビットを移動する*shift 式*、右に、左シフト演算子 (<<) のビットを移動する*shift 式*左側にします。 <sup>1</sup>  
@@ -230,6 +231,6 @@ int main() {
   
  値**E1 >> E2**は**E1**右にシフトした**E2**ビット位置。 場合**E1**符号なしの型を持つ場合、または**E1**符号付きの型と、負でない値を持つ、結果の値の商の整数部分は、 **E1/2** <sup>**E2**</sup>です。 場合**E1**符号付きの型と負の値には、結果の値は実装定義します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [二項演算子を含む式](../cpp/expressions-with-binary-operators.md)   
  [C++ の組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)

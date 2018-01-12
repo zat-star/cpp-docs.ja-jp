@@ -1,79 +1,80 @@
 ---
-title: "/PDBSTRIPPED (プライベート シンボルの除去) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/pdbstripped"
-  - "VC.Project.VCLinkerTool.StripPrivateSymbols"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".pdb ファイル, 除去 (プライベート シンボルの)"
-  - "/PDBSTRIPPED リンカー オプション"
-  - "PDB ファイル, 除去 (プライベート シンボルの)"
-  - "PDBSTRIPPED リンカー オプション"
-  - "-PDBSTRIPPED リンカー オプション"
+title: "-PDBSTRIPPED (プライベート シンボルの除去) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /pdbstripped
+- VC.Project.VCLinkerTool.StripPrivateSymbols
+dev_langs: C++
+helpviewer_keywords:
+- /PDBSTRIPPED linker option
+- -PDBSTRIPPED linker option
+- .pdb files, stripping private symbols
+- PDB files, stripping private symbols
+- PDBSTRIPPED linker option
 ms.assetid: 9b9e0070-6a13-4142-8180-19c003fbbd55
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: ff124dec52a77ed5bf35d2454f95854ebea5eea0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /PDBSTRIPPED (プライベート シンボルの除去)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="pdbstripped-strip-private-symbols"></a>/PDBSTRIPPED (プライベート シンボルの除去)
 ```  
 /PDBSTRIPPED:pdb_file_name  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  それぞれの文字について以下に説明します。  
   
- *pdb\_file\_name*  
- リンカーによって作成されたストライプ化プログラム データベース \(PDB\) に対してユーザーが指定する名前。  
+ *pdb_file_name*  
+ 削除されたプログラム データベース (PDB)、リンカーによって作成されるユーザー指定の名前。  
   
-## 解説  
- PDB ファイルを生成するいずれかのコンパイラ オプションまたはリンカー オプション \([\/DEBUG](../../build/reference/debug-generate-debug-info.md)、[\/Z7](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md)、\/Zd、または \/Zi\) を使ってプログラム イメージをビルドするときに \/PDBSTRIPPED オプションを指定すると、2 番目のプログラム データベース \(PDB\) ファイルが作成されます。  2 番目の PDB ファイルでは、顧客に提供しないシンボルが省かれています。  2 番目の PDB ファイルの内容は、次のとおりです。  
+## <a name="remarks"></a>コメント  
+ コンパイラやリンカーのいずれかと、プログラム イメージの PDB ファイルを生成するオプションをビルドするときに/PDBSTRIPPED オプションが 2 番目のプログラム データベース (PDB) ファイルを作成 ([/debug](../../build/reference/debug-generate-debug-info.md)、 [/Z7](../../build/reference/z7-zi-zi-debug-information-format.md)/Zd、または/Zi)。 2 番目の PDB ファイルでは、顧客に提供しないシンボルが省かれています。 2 番目の PDB ファイルにはのみが含まれます。  
   
--   パブリック シンボル。  
+-   パブリック シンボル  
   
--   オブジェクト ファイルの一覧とそれらが関係する実行可能ファイル部分。  
+-   オブジェクト ファイルと対象となる実行可能ファイルの部分の一覧  
   
--   スタック内を移動するためのフレーム ポインター最適化 \(FPO: Frame Pointer Optimization\) のデバッグ レコード。  
+-   フレーム ポインター最適化 (FPO) デバッグ レコードのスタックを走査するために使用  
   
- シンボルなどが除去された PDB ファイルには、以下のものは含まれません。  
+ 削除された PDB ファイルは含まれません。  
   
--   型情報。  
+-   型情報  
   
--   行番号情報。  
+-   行番号情報  
   
--   関数、ローカル データ、静的データなどのオブジェクト ファイル単位の CodeView シンボル。  
+-   関数、ローカル変数、および静的なデータなどオブジェクトごとのファイルの CodeView シンボル  
   
- \/PDBSTRIPPED の指定時には、完全な PDB ファイルも生成されます。  
+ /PDBSTRIPPED を使用すると、完全な PDB ファイルが生成されます。  
   
- PDB ファイルを作成しない場合、\/PDBSTRIPPED は無視されます。  
+ PDB ファイルを作成しない場合は、/PDBSTRIPPED が無視されます。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[デバッグ\] プロパティ ページをクリックします。  
+3.  クリックして、**デバッグ**プロパティ ページ。  
   
-4.  \[プライベート シンボルの削除\] プロパティを変更します。  
+4.  変更、**プライベート シンボルの除去**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.StripPrivateSymbols%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

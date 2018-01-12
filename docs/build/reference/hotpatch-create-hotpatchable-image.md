@@ -1,65 +1,66 @@
 ---
-title: "/hotpatch (ホットパッチ可能なイメージの作成) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/hotpatch"
-  - "VC.Project.VCCLCompilerTool.CreateHotpatchableImage"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ホット パッチ"
-  - "-hotpatch コンパイラ オプション [C++]"
-  - "/hotpatch コンパイラ オプション [C++]"
-  - "ホット パッチ"
+title: "-hotpatch (ホットパッチ可能なイメージの作成) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /hotpatch
+- VC.Project.VCCLCompilerTool.CreateHotpatchableImage
+dev_langs: C++
+helpviewer_keywords:
+- hot patching
+- -hotpatch compiler option [C++]
+- /hotpatch compiler option [C++]
+- hotpatching
 ms.assetid: aad539b6-c053-4c78-8682-853d98327798
-caps.latest.revision: 18
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: ad7ab4e6450d33923b728f20c8a35185edd2b05e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /hotpatch (ホットパッチ可能なイメージの作成)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hotpatch-create-hotpatchable-image"></a>/hotpatch (ホットパッチ可能なイメージの作成)
 イメージをホットパッチできるようにします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /hotpatch  
 ```  
   
-## 解説  
- コンパイルで **\/hotpatch** を使用する場合、コンパイラは、各関数の最初の命令が、ホットパッチに必要な 2 バイト以上であることを確認します。  
+## <a name="remarks"></a>コメント  
+ ときに**/hotpatch**使用は、コンパイル時に、コンパイラは、確認の各関数の最初の命令がホットパッチに必要な 2 バイト以上であります。  
   
- イメージのホットパッチを可能にするための準備を完了するには、**\/hotpatch** を使用してコンパイルした後に、[\/FUNCTIONPADMIN \(ホットパッチ可能なイメージの作成\)](../../build/reference/functionpadmin-create-hotpatchable-image.md) を使用してリンクさせる必要があります。  イメージをコンパイルして単一の cl.exe 呼び出しにリンクすると、**\/hotpatch** は暗黙的に **\/functionpadmin** を指定します。  
+ 使用した後、イメージ ホットパッチ可能なを行うための準備を完了する**/hotpatch**使用する必要がありますをコンパイルする[/FUNCTIONPADMIN (ホットパッチ可能なイメージの作成)](../../build/reference/functionpadmin-create-hotpatchable-image.md)にリンクします。 コンパイルの cl.exe、1 つの呼び出しを使用してイメージをリンクすると**/hotpatch**意味**/functionpadmin**です。  
   
- ARM アーキテクチャでは命令は常に 2 バイト以上であるため、また、x64 コンパイルは常に **\/hotpatch** が指定されているように扱われるため、これらのターゲットのコンパイル時に **\/hotpatch** を指定する必要はありません。ただし、それらのホットパッチ可能なイメージを作成するために **\/functionpadmin** を使用してリンクさせる必要はあります。  **\/hotpatch** コンパイラ オプションは、x86 コンパイルのみに影響を与えます。  
+ 命令は 2 バイトでは常にあるため、ARM アーキテクチャでより大きいか、x64 コンパイルは常に扱われますかのよう**/hotpatch**が指定されている、指定する必要はありません**/hotpatch**ときにこれらのターゲットをコンパイルします。ただし、する必要がありますしてリンクを使用して**/functionpadmin**をそれらのホットパッチ可能なイメージを作成します。 **/Hotpatch**コンパイラ オプションのみに影響 x86 コンパイルします。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーを選択します。  
+2.  選択、 **C/C++**フォルダーです。  
   
-3.  **\[コマンド ライン\]** プロパティ ページを選択します。  
+3.  選択、**コマンドライン**プロパティ ページ。  
   
-4.  **\[追加オプション\]** ボックスにコンパイラ オプションを追加します。  
+4.  コンパイラ オプションを追加、**追加オプション**ボックス。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## ガイダンス  
- 更新管理の詳細については、「Security Guidance for Update Management \(更新管理のセキュリティ ガイダンス\)」\([http:\/\/www.microsoft.com\/technet\/security\/guidance\/PatchManagement.mspx](http://www.microsoft.com/technet/security/guidance/PatchManagement.mspx)\) を参照してください。  
+## <a name="guidance"></a>ガイダンス  
+ 更新管理の詳細についてを参照してください「管理用の更新されたセキュリティ ガイダンス」 [http://www.microsoft.com/technet/security/guidance/PatchManagement.mspx](http://www.microsoft.com/technet/security/guidance/PatchManagement.mspx)です。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

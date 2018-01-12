@@ -1,32 +1,31 @@
 ---
-title: "ML Nonfatal Error A2137 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "A2137"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "A2137"
+title: "ML の致命的でないエラー A2137 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: A2137
+dev_langs: C++
+helpviewer_keywords: A2137
 ms.assetid: 913172e3-866e-49c3-9502-e49d1f0df4b0
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 852a2a2e7f38d049f1a97f4d3db2e33c99e3a0f2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ML Nonfatal Error A2137
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**開始するための十分な引数**  
+# <a name="ml-nonfatal-error-a2137"></a>ML の致命的でないエラー A2137
+**呼び出しの引数が少なすぎます**  
   
- [呼び出し](../../assembler/masm/invoke.md) ディレクティブを使用して渡された引数の数が呼び出されるプロシージャにプロトタイプで指定された必要なパラメーターの数より少ない数です。  
+ 使用して渡される引数の数、 [INVOKE](../../assembler/masm/invoke.md)ディレクティブが必要なパラメーターが呼び出されるプロシージャのプロトタイプで指定された数より少ない。  
   
-## 参照  
- [ML Error Messages](../../assembler/masm/ml-error-messages.md)
+## <a name="see-also"></a>参照  
+ [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

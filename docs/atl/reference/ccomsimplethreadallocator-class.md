@@ -22,11 +22,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 150abb28f84d31e1ef6785f9109844529f10276d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 244443692478d0391c2079e55995c1fef1e1655e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomsimplethreadallocator-class"></a>CComSimpleThreadAllocator クラス
 このクラスは、クラスのスレッドの選択を管理`CComAutoThreadModule`です。  
@@ -48,7 +49,7 @@ class CComSimpleThreadAllocator
 ## <a name="remarks"></a>コメント  
  `CComSimpleThreadAllocator`スレッドの選択を管理する[は](../../atl/reference/ccomautothreadmodule-class.md)します。 `CComSimpleThreadAllocator::GetThread`各スレッドを単に循環参照し、シーケンスの次の 1 つを返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="getthread"></a>CComSimpleThreadAllocator::GetThread  
@@ -73,6 +74,6 @@ int GetThread(CComApartment* /* pApt */, int nThreads);
   
  `GetThread`によって呼び出される[CComAutoThreadModule::CreateInstance](../../atl/reference/ccomautothreadmodule-class.md#createinstance)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComApartment クラス](../../atl/reference/ccomapartment-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

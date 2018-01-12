@@ -1,41 +1,42 @@
 ---
-title: "推論による依存ファイルと推論規則 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "依存, 推論による"
-  - "推論による依存ファイル (NMAKE の)"
-  - "推論規則 (NMAKE の)"
-  - "規則, 推論による"
+title: "推論による依存ファイルとルール |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- rules, inferred
+- inferred dependents in NMAKE
+- inferred rules in NMAKE
+- dependents, inferred
 ms.assetid: 9381e74a-53d9-445c-836d-0ff7ef6112d9
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: fe7c49607f466d8fd1d333883414b24d7837432b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 推論による依存ファイルと推論規則
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-適切な推論規則が存在する場合、NMAKE は、ターゲットに対応する依存ファイルとして、推論による依存ファイルを想定します。  規則は、次の場合に適用されます。  
+# <a name="inferred-dependents-and-rules"></a>推論による依存ファイルと推論規則
+NMAKE では、適切な推論規則が存在する場合、ターゲット用の推論による依存ファイルが前提とします。 場合、ルールが適用されます。  
   
--   *toext* がターゲットの拡張子と一致する。  
+-   *toext*ターゲットの拡張子と一致します。  
   
--   現在のディレクトリまたは指定されたディレクトリに存在し、ターゲットと同じベース名を持つファイルの拡張子と *fromext* が一致する。  
+-   *fromext*現在または指定されたディレクトリに存在する、ファイルの拡張子を持つターゲットの基本名と一致します。  
   
--   *fromext* が [.SUFFIXES](../build/dot-directives.md) に存在し、一致規則のほかの *fromext* よりも **.SUFFIXES** 優先順位が高い。  
+-   *fromext*に[です。サフィックス](../build/dot-directives.md)以外の他の*fromext*照合ルールでは、高い**です。サフィックス**優先度。  
   
--   **.SUFFIXES** 優先順位で上回る明示的な依存ファイルが存在しない。  
+-   明示的な依存が高くない**です。サフィックス**優先度。  
   
- 推論による依存ファイルによって、予測不可能な副作用が発生することがあります。  ターゲットの記述ブロックにコマンドがある場合、NMAKE は規則のコマンドの代わりにそれらのコマンドを実行します。  
+ 推論による依存ファイルには、予期しない副作用が生じる可能性があります。 ターゲットの記述ブロックのコマンドが含まれている場合 (nmake の) は、ルールで、コマンドではなく、それらのコマンドを実行します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [推論規則](../build/inference-rules.md)

@@ -1,48 +1,48 @@
 ---
-title: "BSCMAKE コマンド ライン | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "BSCMAKE, コマンド ライン"
+title: "BSCMAKE コマンドライン |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: BSCMAKE, command line
 ms.assetid: 8006e8cf-8bfe-4c23-868a-b0a25e6bbf0f
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: c00a3842db37cc5027809f717ac47bd471dd073f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# BSCMAKE コマンド ライン
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-BSCMAKE を実行するには、次のコマンド ライン構文を使用します。  
+# <a name="bscmake-command-line"></a>BSCMAKE コマンド ライン
+BSCMAKE を実行するには、次のコマンドライン構文を使用します。  
   
 ```  
 BSCMAKE [options] sbrfiles  
 ```  
   
- オプションは、コマンド ラインの `options` フィールドだけで指定できます。  
+ オプションでのみ使用できます、`options`コマンド ラインでフィールドです。  
   
- *sbrfiles* フィールドでは、コンパイラまたはアセンブラーで作成された .sbr ファイルを指定します。  複数の .sbr ファイルの名前は、スペースまたはタブで区切ります。  拡張子は必ず指定します。既定の拡張子はありません。  ファイル名では、パスを指定できます。また、オペレーティング システムのワイルドカード \(\* および ?\) も使用できます。  
+ *Sbrfiles*フィールドは、コンパイラやアセンブラーによって作成された 1 つ以上の .sbr ファイルを指定します。 スペースまたはタブでは、.sbr ファイルの名前を区切ります。 拡張子を指定する必要があります。既定値はありません。 ファイル名は、パスを指定して、オペレーティング システムのワイルドカードを使用することができます (* と?) です。  
   
- インクリメンタル ビルドでは、最初のビルドには含まれていない新しい .sbr ファイルを指定できます。  ブラウザー情報ファイルですべての情報を維持するには、.bsc ファイルを作成するために使用したすべての .sbr ファイル \(切り捨てられたファイルを含む\) を指定する必要があります。  .sbr ファイルを省くと、そのファイルの情報がブラウザー情報ファイルから削除されます。  
+ インクリメンタル ビルドで、最初のビルドに含まれていない新しい .sbr ファイルを指定できます。 すべてのコントリビューションをブラウザー情報ファイルに保持する場合は、.bsc ファイルの作成に使用された元 (ファイルの切り捨てを含む) すべての .sbr ファイルを指定する必要があります。 .Sbr ファイルを省略すると、ブラウザー情報ファイルにそのファイルの金額が削除されます。  
   
- 完全ビルドの場合は、切り捨てられている .sbr ファイルを指定しないでください。  完全ビルドでは、指定されたすべての .sbr ファイルからの情報が必要です。  完全ビルドを実行する前には、プロジェクトを再コンパイルし、空のファイルで新しい .sbr ファイルを作成します。  
+ フル ビルドの切り捨てられた .sbr ファイルを指定しません。 フル ビルドには、すべての指定した .sbr ファイルからの協力が必要です。 フル ビルドを実行する前に、プロジェクトを再コンパイルし、空のファイルで新しい .sbr ファイルを作成します。  
   
- BSCMAKE を実行して 3 つの .sbr ファイルから MAIN.bsc というファイルをビルドする場合は、次のコマンドを実行します。  
+ 次のコマンドは、3 つの .sbr ファイルから MAIN.bsc という名前のファイルをビルドするを実行します。  
   
 ```  
 BSCMAKE main.sbr file1.sbr file2.sbr  
 ```  
   
- 関連情報については、「[BSCMAKE コマンド ファイル \(応答ファイル\)](../../build/reference/bscmake-command-file-response-file.md)」および「[BSCMAKE オプション](../Topic/BSCMAKE%20Options.md)」を参照してください。  
+ 関連情報については、次を参照してください。 [BSCMAKE コマンド ファイル](../../build/reference/bscmake-command-file-response-file.md)と[BSCMAKE オプション](../../build/reference/bscmake-options.md)です。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [BSCMAKE リファレンス](../../build/reference/bscmake-reference.md)

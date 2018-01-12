@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -30,8 +29,7 @@ f1_keywords:
 - _tfopen
 - corecrt_wstdio/_wfopen
 - stdio/fopen
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - opening files, for file I/O
 - wfopen function
@@ -41,30 +39,16 @@ helpviewer_keywords:
 - files [C++], opening
 - fopen function
 ms.assetid: e868993f-738c-4920-b5e4-d8f2f41f933d
-caps.latest.revision: 56
+caps.latest.revision: "56"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 7d432ab9e8bdb6f386eb6fe4fbb24d218d6a2071
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 01558dfa6b28f10746c1487384bad44768b5877e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fopen-wfopen"></a>fopen、_wfopen
 ファイルを開きます。 追加のパラメーター検証を実行してエラー コードを返す、セキュリティが強化されたバージョンの機能が使用できます。「[fopen_s、_wfopen_s](../../c-runtime-library/reference/fopen-s-wfopen-s.md)」をご覧ください。  
@@ -92,14 +76,14 @@ FILE *_wfopen(
 ## <a name="return-value"></a>戻り値  
  これらの各関数は、開いているファイルへのポインターを返します。 エラーが発生すると、NULL のポインター値を返します。 `filename` または `mode` が `NULL` または空の文字列の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `NULL` を返し、 `errno` を `EINVAL`に設定します。  
   
- 詳しくは、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+ 詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `fopen` 関数は、 `filename`で指定されたファイルを開きます。 既定では、幅の狭い `filename` 文字列は、ANSI コード ページ (CP_ACP) を使用して解釈されます。 Windows デスクトップ アプリケーションでは、 [SetFileApisToOEM](https://msdn.microsoft.com/library/windows/desktop/aa365534\(v=vs.85\).aspx) 関数を使用して、これを OEM コード ページ (CP_OEMCP) に変更できます。 [AreFileApisANSI](https://msdn.microsoft.com/library/windows/desktop/aa363781\(v=vs.85\).aspx) 関数を使用して、 `filename` が ANSI またはシステムの既定の OEM コード ページのいずれを使用して解釈されるかを決定できます。 `_wfopen` は `fopen`のワイド文字バージョンであり、 `_wfopen` の引数はワイド文字列です。 それ以外では、 `_wfopen` と `fopen` の動作は同じです。 単に `_wfopen` を使用する場合、ファイル ストリームで使用されるコード化文字セットには影響しません。  
   
  `fopen` は、実行時にファイル システムで有効なパスを受け取ります。 `fopen` は、コードを実行するシステムが実行時に共有ネットワーク ドライブまたは割り当てられたネットワーク ドライブにアクセスする限り、UNC パスおよび割り当てられたネットワーク ドライブを含むパスを受け取ります。 `fopen`のパスを構築する場合は、ドライブ、パス、またはネットワーク共有が実行時環境で使用できることを確認してください。 ディレクトリのパス区切り記号としてスラッシュ (/) または円記号 (\\) のどちらかを使用できます。  
   
- ファイルでその他の操作を実行する前には、必ず戻り値をチェックしてポインターが NULL かどうかを確認します。 エラーが発生した場合、 `errno` グローバル変数が設定され、特定のエラー情報を取得するために使用されることがあります。 詳しくは、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+ ファイルでその他の操作を実行する前には、必ず戻り値をチェックしてポインターが NULL かどうかを確認します。 エラーが発生した場合、 `errno` グローバル変数が設定され、特定のエラー情報を取得するために使用されることがあります。 詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="unicode-support"></a>Unicode のサポート  
  `fopen` は Unicode のファイル ストリームをサポートします。 Unicode ファイルを開くには、次のように、目的のエンコーディングを指定する `ccs` フラグを `fopen`に渡します。  
@@ -204,7 +188,7 @@ FILE *_wfopen(
 |mode 文字列の文字|`_open`/`_sopen` に相当する `oflag` 値|  
 |-------------------------------|----------------------------------------------------|  
 |`a`|`_O_WRONLY &#124; _O_APPEND` (通常は `_O_WRONLY &#124; _O_CREAT &#124; _O_APPEND`)|  
-|`a+`|`_O_RDWR &#124; _O_APPEND` (通常は `_O_RDWR &#124; _O_APPEND &#124; _O_CREAT`)|  
+|`a+`|`_O_RDWR &#124; _O_APPEND` (通常は `_O_RDWR &#124; _O_APPEND &#124; _O_CREAT` )|  
 |`r`|`_O_RDONLY`|  
 |`r+`|`_O_RDWR`|  
 |`w`|`_O_WRONLY` (通常は `_O_WRONLY &#124; _O_CREAT &#124; _O_TRUNC`)|  
@@ -223,14 +207,14 @@ FILE *_wfopen(
   
  `rb` モードを使用していて、コードを移植する必要がなく、大量のファイルを読み込む予定があり、ネットワーク パフォーマンスを気にする必要がない場合は、Win32 メモリ マップト ファイルもオプションとして検討できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fopen`|\<stdio.h>|  
 |`_wfopen`|\<stdio.h> または \<wchar.h>|  
   
- `_wfopen` は Microsoft 拡張機能です。 互換性について詳しくは、「 [Compatibility](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ `_wfopen` は Microsoft 拡張機能です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
  `c`、 `n`、 `t`、 `S`、 `R`、 `T`、および `D` `mode` オプションは、 `fopen` と `_fdopen` と should not be used where ANSI portability is desired.  
   
@@ -343,7 +327,7 @@ int main(int argc, char** argv)
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
  [fclose、_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   

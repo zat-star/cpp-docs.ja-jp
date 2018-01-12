@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1996ce93be7fc5f722936dee0f04923cafa5d767
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 02366a53f02142f66aa5dca493c5460c9f2d1d92
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="protected-c"></a>protected (C++)
 ## <a name="syntax"></a>構文  
@@ -49,7 +50,7 @@ protected base-class
   
  プロテクト メンバーとしても宣言されている**静的**は、派生クラスのフレンドまたはメンバー関数にアクセスします。 プロテクト メンバーとして宣言されていない**静的**は、友人とへのポインター、参照、または、派生クラスのオブジェクトからのみ派生クラスでメンバー関数にアクセスします。  
   
- 関連情報については、次を参照してください[フレンド](../cpp/friend-cpp.md)、[パブリック](../cpp/public-cpp.md)、[プライベート](../cpp/private-cpp.md)、とでメンバー アクセス テーブル[クラス メンバーへのアクセスの制御](member-access-control-cpp.md)。.  
+ 関連情報については、次を参照してください[フレンド](../cpp/friend-cpp.md)、[パブリック](../cpp/public-cpp.md)、[プライベート](../cpp/private-cpp.md)、とでメンバー アクセス テーブル[クラス メンバーへのアクセスの制御](member-access-control-cpp.md).  
   
 ## <a name="clr-specific"></a>/clr 固有  
  CLR 型では、C++ アクセス指定子のキーワード (**パブリック**、 `private`、および`protected`) 型とアセンブリに関連メソッドの可視性に影響を与えることができます。 詳細については、次を参照してください。[メンバー アクセス コントロール](member-access-control-cpp.md)です。  
@@ -93,6 +94,6 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス メンバーへのアクセスを制御します。](member-access-control-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)

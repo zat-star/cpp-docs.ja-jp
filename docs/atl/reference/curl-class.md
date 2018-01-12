@@ -45,11 +45,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7e05cb6ca1aa9ffd9a827fd9f907fdc39d5bde13
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: eb60fcef5fdfd30b4121f5c2277667829772dcd6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="curl-class"></a>CUrl クラス
 このクラスは、URL を表します。 既存の URL を解析するかどうか、他のユーザーとは無関係に、URL の各要素を操作することができます文字列または文字列を最初から作成します。  
@@ -137,7 +138,7 @@ class CUrl
   
  (たとえば) UrlPath フィールドを操作するには使用[GetUrlPath](#geturlpath)、 [GetUrlPathLength](#geturlpathlength)、および[SetUrlPath](#seturlpath)です。 使用する[CreateUrl](#createurl)を完全な URL 文字列を作成します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlutil.h  
   
 ##  <a name="canonicalize"></a>CUrl::Canonicalize  
@@ -529,5 +530,5 @@ inline BOOL SetUserName(LPCTSTR lpszUser) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますエラー発生時に false を指定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../atl/reference/atl-classes.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7695fa2691a50af3df4f5536d0214a5258828502
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 94bd726afcd4477432765b9b44bd18fcbb7bcd80
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="version"></a>/VERSION
 ```  
@@ -34,5 +35,5 @@ ms.lasthandoff: 10/24/2017
   
  整数部のバージョンの番号、小数点の左側の部分がによって表される`left`です。 バージョンの小数部によって表されるは数値を小数点の右側に部分`right`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [EDITBIN オプション](../../build/reference/editbin-options.md)

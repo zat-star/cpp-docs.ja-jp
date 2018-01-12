@@ -1,68 +1,69 @@
 ---
-title: "CFixedStringT : カスタム文字列マネージャーの例 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CFixedStringT クラス, 使用 (カスタム文字列マネージャーを)"
+title: "CFixedStringT: 例、カスタム文字列マネージャーの |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
+helpviewer_keywords: CFixedStringT class, using a custom string manager
 ms.assetid: 1cf11fd7-51b8-4b94-87af-02bc25f47dd6
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 7164d2313f5610d1d7e56f5449c81ea9e2282981
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CFixedStringT : カスタム文字列マネージャーの例
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ATL ライブラリは **CFixedStringMgr**というクラス [CFixedStringT](../atl-mfc-shared/reference/cfixedstringt-class.md)で使用するカスタム文字列マネージャーの 1 例を実行します。  `CFixedStringT` は [CStringT](../atl-mfc-shared/reference/cstringt-class.md) から文字列がである限り派生し、`CFixedStringT` のオブジェクトの一部として `CFixedStringT`の **t\_nChars** のテンプレート パラメーターで指定された長さ未満文字データ自体を割り当てる文字列を実装します。  この方法によって、文字列の長さが固定バッファーのサイズより大きく育たなければ、ヒープは必要ではありません。  文字列データを割り当てるには `CFixedStringT` がヒープを使用しないため、文字列マネージャーとして **CAtlStringMgr** を使用できません。  これは [IAtlStringMgr](../Topic/IAtlStringMgr%20Class.md) のインターフェイスを実装するカスタム文字列**CFixedStringMgr**マネージャーを使用します。  このインターフェイスは [カスタム文字列マネージャー \(高度なメソッド\) の実装](../Topic/Implementation%20of%20a%20Custom%20String%20Manager%20\(Advanced%20Method\).md)で説明します。  
+# <a name="cfixedstringt-example-of-a-custom-string-manager"></a>CFixedStringT: 例のカスタム文字列マネージャー
+クラスによって使用されるカスタム文字列マネージャーの一例を実装する、ATL ライブラリ[CFixedStringT](../atl-mfc-shared/reference/cfixedstringt-class.md)という**CFixedStringMgr**です。 `CFixedStringT`派生した[CStringT](../atl-mfc-shared/reference/cstringt-class.md)の一部としてその文字データを割り当てる文字列を実装して、`CFixedStringT`オブジェクト自体が、文字列で指定された長さよりも小さい場合に限り、 **t_nChars**テンプレート パラメーター`CFixedStringT`です。 この方法で、文字列必要はありませんヒープ、文字列の長さが固定バッファーのサイズを超えない限り、します。 `CFixedStringT`限りませんを使用して、文字列データを割り当てるヒープを使用できません**CAtlStringMgr**その文字列マネージャーとして。 カスタム文字列マネージャーを使用して (**CFixedStringMgr**)、実装、 [IAtlStringMgr](../atl-mfc-shared/reference/iatlstringmgr-class.md)インターフェイスです。 このインターフェイスは、後ほど[マネージャーの実装、カスタム文字列 (高度な方法)](../atl-mfc-shared/implementation-of-a-custom-string-manager-advanced-method.md)です。  
   
- **CFixedStringMgr** のコンストラクターは 3 個のパラメーターを受け取ります:  
+ コンス トラクター **CFixedStringMgr**は 3 つのパラメーターを受け取ります。  
   
--   使用する `CStringData` の固定構造体への**pData:** 指すポインター。  
+-   **pData:**固定へのポインター`CStringData`構造を使用します。  
   
--   **nChars:** `CStringData` の構造が保持できる最大文字数。  
+-   **文字数:**文字の最大数、`CStringData`構造体に格納できます。  
   
--   「バックアップ文字列マネージャーの `IAtlStringMgr` インターフェイスへの**pMgr:** 示すポインター」。  
+-   **pMgr:**へのポインター、 `IAtlStringMgr` 「バックアップ文字列マネージャー」のインターフェイス  
   
- コンストラクターは、それぞれのメンバー変数に `pData` と **pMgr** の値を格納します \(`m_pData` と **m\_pMgr**\)。  次に、バッファーの長さ、固定バッファーの最大サイズと等しい使用できる長さ、– 1、参照カウントがゼロに設定します。  参照の数値は、バッファーが **CFixedStringMgr** のこのインスタンスを文字列マネージャーとして使用するロックされることを示します。  
+ コンス トラクターの値を格納する`pData`と**pMgr**内の各メンバー変数 (`m_pData`と**m_pMgr**)。 値がゼロに固定バッファーと、参照カウントを-1 の最大サイズに等しい長さの使用可能なバッファーの長さを設定します。 参照カウントの値は、バッファーがロックされていることを示しますのこのインスタンスを使用して**CFixedStringMgr**文字列マネージャーとして。  
   
- ロックされたバッファーにとしてマークすることは `CStringT` の他のインスタンスが共有バッファーへの参照を保持することを防止できます。  `CStringT` の他のインスタンスがバッファーを共有するそのほかの文字列がまだバッファーを使用して、削除する `CFixedStringT` に含まれるバッファーに対してできます。  
+ その他のロックされているバッファーのマークを付けるように`CStringT`インスタンスを保持するバッファーへの参照を共有します。 他の`CStringT`インスタンスは、バッファーのバッファーに含まれる可能性があります共有が許可された`CFixedStringT`中に、その他の文字列バッファーを使用していて削除します。  
   
- **CFixedStringMgr** は `IAtlStringMgr` のインターフェイスの完全な実装です。  各メソッドの実装は別に説明します。  
+ **CFixedStringMgr**の完全な実装は、`IAtlStringMgr`インターフェイスです。 各メソッドの実装は、個別に説明しています。  
   
-## CFixedStringMgr::Allocate の実装  
- **CFixedStringMgr::Allocate** の実装では、最初に文字列の要求されたサイズが固定バッファーのサイズ以下であるかどうかを確認します \( `m_pData` のメンバーに格納されます\)。  固定バッファーのサイズが十分にある場合、はゼロ **CFixedStringMgr** の長さの固定バッファーをロックします。  文字列の長さが固定バッファーのサイズより大きく育たない限り、`CStringT` がバッファーを再割り当てする必要はありません。  
+## <a name="implementation-of-cfixedstringmgrallocate"></a>CFixedStringMgr::Allocate の実装  
+ 実装**CFixedStringMgr::Allocate**文字列の要求されたサイズが固定バッファーのサイズ以下かどうかを最初に確認し (に格納されている、`m_pData`メンバー)。 場合は、固定バッファーの大きさが、 **CFixedStringMgr**長さ 0 の固定バッファーをロックします。 文字列の長さが固定のバッファーのサイズを超えて大きくならない限り、`CStringT`バッファーの再割り当てする必要はありません。  
   
- 文字列の要求されたサイズがより大きい固定バッファー **CFixedStringMgr** はバックアップに要求を文字列マネージャーが転送されます。  バックアップ文字列マネージャーはヒープからバッファーを割り当てると推論されます。  ただし、このバッファー **CFixedStringMgr** を返す前にバッファーをロックし、ポインターと **CFixedStringMgr** のオブジェクトにバッファーの文字列マネージャーのポインターを置き換えます。  これはことを **CFixedStringMgr**に `CStringT` の際によってバッファーを再割り当てするか、解放しようとします。  
+ 文字列の要求されたサイズは固定バッファーより大きいかどうか**CFixedStringMgr**バックアップ文字列マネージャーに要求を転送します。 バックアップ文字列マネージャーは、ヒープからバッファーを割り当てと見なされます。 このバッファーを返す前に、ただし、 **CFixedStringMgr** 、バッファーをロックし、バッファーの文字列のマネージャーのポインターをへのポインターに置き換え、 **CFixedStringMgr**オブジェクト。 これにより、再割り当てしたりしてバッファーを解放しようとする`CStringT`呼び出せるは**CFixedStringMgr**です。  
   
-## CFixedStringMgr::ReAllocate の実装  
- **CFixedStringMgr::ReAllocate** の実装は **Allocate**の実装とよく似ています。  
+## <a name="implementation-of-cfixedstringmgrreallocate"></a>CFixedStringMgr::ReAllocate の実装  
+ 実装**CFixedStringMgr::ReAllocate**の実装に非常に似ています**Allocate**です。  
   
- バッファーが再割り当てされる固定バッファーであり、要求されたバッファー サイズが固定バッファーより小さい場合、代入は行われません。  ただし、バッファーが再割り当てされる固定バッファーでない場合、バックアップ マネージャーによって割り当てられたバッファーである必要があります。  この場合、バックアップ マネージャーがバッファーを再割り当てするために使用されます。  
+ 再割り当てされるバッファーは固定バッファーでは、要求されたバッファー サイズは固定バッファーよりも小さい場合は、割り当ては行われません。 ただし、再割り当てされるバッファーが固定バッファーでない場合、バックアップ マネージャーに割り当てられるバッファーをする必要があります。 ここではバックアップ マネージャーは、バッファーの再割り当てに使用されます。  
   
- バッファーが再割り当てされる固定バッファーで、新しいバッファー サイズが固定バッファー内に収まらない場合は **CFixedStringMgr** バックアップ マネージャーを使用して新しいバッファーを割り当てます。  固定バッファーの内容が新しいバッファーにコピーします。  
+ 再割り当てされるバッファーは固定バッファーと固定バッファーに収まるように、新しいバッファー サイズが大きすぎる場合**CFixedStringMgr**バックアップ マネージャーを使用して新しいバッファーを割り当てます。 固定バッファーの内容は新しいバッファーにコピーされます。  
   
-## CFixedStringMgr::Free の実装  
- **CFixedStringMgr::Free** の実装は **Allocate** と `ReAllocate`と同じパターンに従います。  解放バッファーが固定バッファーの場合、メソッドは長さによってロックされたバッファーに設定されます。  解放バッファーをバックアップ マネージャーと、**CFixedStringMgr** 割り当てられている場合は、それを解放するためにバックアップ マネージャーを使用します。  
+## <a name="implementation-of-cfixedstringmgrfree"></a>CFixedStringMgr::Free の実装  
+ 実装**CFixedStringMgr::Free**と同様のパターンに依存して**Allocate**と`ReAllocate`です。 固定バッファーが解放されるバッファーには、メソッドにより、長さ 0 のロックされているバッファーに設定します。 バックアップ マネージャーで解放されているバッファーが割り当てられた場合**CFixedStringMgr**バックアップ マネージャーを使用して、それを解放します。  
   
-## CFixedStringMgr::Clone の実装  
- の実装 **CFixedStringMgr::Clone** ポインター自体を **CFixedStringMgr** ではなくバックアップ マネージャーに常に返します。  これは **CFixedStringMgr** のすべてのインスタンスに `CStringT`の一つのインスタンスのみに関連付けることができないためです。  マネージャーを複製することをお `CStringT` の他のインスタンスがバックアップ マネージャーを派生させる必要があります。  これは、共有されるバックアップ マネージャーのサポートです。  
+## <a name="implementation-of-cfixedstringmgrclone"></a>CFixedStringMgr::Clone の実装  
+ 実装**CFixedStringMgr::Clone**常にバックアップ マネージャーへのポインターを返しますではなく、 **CFixedStringMgr**自体です。 これは、ためのすべてのインスタンス**CFixedStringMgr**の 1 つのインスタンスに関連付けできる`CStringT`です。 その他のインスタンスの`CStringT`マネージャーの複製を行おうとする必要がありますバックアップ マネージャーの代わりに表示します。 これは、バックアップ マネージャーは、共有されることをサポートしているためです。  
   
-## CFixedStringMgr::GetNilString の実装  
- **CFixedStringMgr::GetNilString** の実装は、固定バッファーを返します。  **CFixedStringMgr** と `CStringT`の一対一の対応するために、`CStringT` のインスタンスは、複数のバッファーを同時に使用できません。  したがって、未の文字列と実際の文字列バッファーは、同時に必要ではありません。  
+## <a name="implementation-of-cfixedstringmgrgetnilstring"></a>CFixedStringMgr::GetNilString の実装  
+ 実装**CFixedStringMgr::GetNilString**固定バッファーを返します。 1 対 1 対応のため**CFixedStringMgr**と`CStringT`の特定のインスタンス`CStringT`一度に 1 つ以上のバッファーを使用しません。 したがって、nil 文字列と実際の文字列バッファーことはありません、同時に必要です。  
   
- 固定バッファーが使用されていない場合は、**CFixedStringMgr** は長さで初期化されることを確認します。  これは、未の文字列として使用できます。  追加されたボーナスとして、固定バッファーの `nAllocLength` のメンバーは、固定バッファーの最大サイズで常にに設定されます。  これは `CStringT` が [IAtlStringMgr::Reallocate](../Topic/IAtlStringMgr::Reallocate.md)を呼び出したりしないで文字列を拡張できることを意味します、文字列の場合は。  
+ 固定バッファーが、使用されていないときに**CFixedStringMgr**長さが 0 でそれが初期化されていることを確認します。 これにより、nil の文字列として使用することができます。 追加の利点として、`nAllocLength`固定バッファーのメンバーは常に固定バッファー全体のサイズに設定します。 つまり、`CStringT`呼び出さずに文字列を拡大できる[IAtlStringMgr::Reallocate](../atl-mfc-shared/reference/iatlstringmgr-class.md#reallocate)nil の文字列の場合でも、します。  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** cstringt.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CStringT によるメモリ管理](../atl-mfc-shared/memory-management-with-cstringt.md)
+

@@ -1,34 +1,33 @@
 ---
-title: "ML Nonfatal Error A2047 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "A2047"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "A2047"
+title: "ML の致命的でないエラー A2047 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: A2047
+dev_langs: C++
+helpviewer_keywords: A2047
 ms.assetid: 7799f988-6c2e-4022-a447-c56b48473f0c
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 36b6fed096b6285b56864cc6ea61ff529b57e605
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ML Nonfatal Error A2047
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**空の文字列 \(空白\)**  
+# <a name="ml-nonfatal-error-a2047"></a>ML の致命的でないエラー A2047
+**空 (null) の文字列**  
   
- 文字列は引用符や区切り文字のペアで構成ありません。  
+ 文字列を行いました区切りと 1 組の引用符文字がありません。  
   
- 有効な文字列に 1\-255 の文字を含める必要があります。  
+ 有効にして、文字列の 1 ~ 255 文字以内でなければなりません。  
   
-## 参照  
- [ML Error Messages](../../assembler/masm/ml-error-messages.md)
+## <a name="see-also"></a>参照  
+ [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

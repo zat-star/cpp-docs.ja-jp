@@ -15,11 +15,12 @@ caps.latest.revision: "9"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 04514a4d4ddbba8b6c28e35e964deb153803580f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0c328ebbaa18ad318981a63c717cafd614bc1521
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformcollections-namespace"></a>Platform::Collections 名前空間
 Platform::Collection 名前空間には `Map`、 `MapView`、 `Vector`、および `VectorView` の各クラスが含まれています。 これらのクラスは、 [Windows::Foundation::Collections](http://go.microsoft.com/fwlink/p/?LinkId=262645) 名前空間に定義されている、対応するインターフェイスの具象実装です。 具体的なコレクション型は、(Javascript または C# で書かれたプログラムが C ++ コンポーネントを呼び出すなど) ABI を越えて移植することはできませんが、対応するインターフェイスの型に暗黙的に変換できます。 たとえば、コレクションを設定して返すパブリック メソッドを実装する場合は、 [Platform::Collections::Vector](../cppcx/platform-collections-vector-class.md) を使用して内部的にコレクションを実装し、 [Windows::Foundation::Collections::IVector](http://go.microsoft.com/fwlink/p/?LinkId=262410) を戻り値の型として使用します。 詳細については、次を参照してください。[コレクション](../cppcx/collections-c-cx.md)と[C++ での Windows ランタイム コンポーネントの作成](/MicrosoftDocs/windows-uwp/blob/docs/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md)です。  
@@ -41,7 +42,7 @@ using namespace Platform::Collection;
 ### <a name="members"></a>メンバー  
  この名前空間には、次のメンバーが含まれます。  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[Platform::Collections::BackInsertIterator クラス](../cppcx/platform-collections-backinsertiterator-class.md)|コレクションの末尾に要素を挿入する反復子を表します。|  
 |[Platform::Collections::InputIterator クラス](../cppcx/platform-collections-inputiterator-class.md)|コレクションの先頭に要素を挿入する反復子を表します。|  
@@ -55,12 +56,12 @@ using namespace Platform::Collection;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **メタデータ:** platform.winmd  
   
  **名前空間:** Platform::Collections  
   
  **コンパイラ オプション:** /ZW  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](../cppcx/platform-namespace-c-cx.md)

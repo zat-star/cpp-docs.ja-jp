@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -34,8 +33,7 @@ f1_keywords:
 - _mbscoll
 - _tcscoll
 - _ftcscoll
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - code pages, using for string comparisons
 - mbscoll function
@@ -52,31 +50,16 @@ helpviewer_keywords:
 - strcoll functions
 - strings [C++], comparing by code page
 ms.assetid: 900a7540-c7ec-4c2f-b292-7a85f63e3fe8
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 43953fbd9473f491d628fd7389c4b9a62294e2b6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 3e65837945b8c28ee0968dbeaded4fbdbf7e79c7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strcoll-wcscoll-mbscoll-strcolll-wcscolll-mbscolll"></a>strcoll、wcscoll、_mbscoll、_strcoll_l、_wcscoll_l、_mbscoll_l
 現在のロケールまたは指定された LC_COLLATE 変換状態カテゴリを使用して、文字列を比較します。  
@@ -137,9 +120,9 @@ int _mbscoll_l(
 ## <a name="remarks"></a>コメント  
  これらの各関数は、現在使用中のコード ページに基づき、大文字小文字を区別して `string1` および `string2` を比較します。 これらの関数は、現在のコード ページの文字セット順序と辞書式文字順序との間に相違点があり、この違いが文字列比較に関係がある場合にのみ使用します。  
   
- これらのすべての関数では、パラメーターの検証が行われます。 `string1` または `string2` が null ポインターの場合、または `count` が `INT_MAX` を超える場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、`errno` を `EINVAL` に設定します。  
+ これらのすべての関数では、パラメーターの検証が行われます。 `string1` または `string2` が null ポインターの場合、または `count` が `INT_MAX` を超える場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、 `errno` を `EINVAL`に設定します。  
   
- 各ロケールには文字を並べ替えるための異なる規則があるため、2 つの文字列の比較は、ロケールに依存する操作となります。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のスレッドのロケールを使用します。`_l` サフィックスが付いているバージョンは、現在のロケールの代わりに渡されたロケールをパラメーターとして使用する点を除いて、対応するサフィックスなしの関数と同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ 各ロケールには文字を並べ替えるための異なる規則があるため、2 つの文字列の比較は、ロケールに依存する操作となります。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のスレッドのロケールを使用します。`_l` サフィックスが付いているバージョンは、現在のロケールの代わりに渡されたロケールをパラメーターとして使用する点を除いて、対応するサフィックスなしの関数と同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -147,9 +130,9 @@ int _mbscoll_l(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tcscoll`|`strcoll`|`_mbscoll`|`wcscoll`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`strcoll`|\<string.h>|  
 |`wcscoll`|\<wchar.h>、\<string.h>|  
@@ -159,10 +142,10 @@ int _mbscoll_l(
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール](../../c-runtime-library/locale.md)   
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
+ [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
  [localeconv](../../c-runtime-library/reference/localeconv.md)   
  [_mbsnbcoll、_mbsnbcoll_l、_mbsnbicoll、_mbsnbicoll_l](../../c-runtime-library/reference/mbsnbcoll-mbsnbcoll-l-mbsnbicoll-mbsnbicoll-l.md)   
  [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   

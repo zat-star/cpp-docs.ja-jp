@@ -21,11 +21,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7c591efee96af92aea263dca9c9a95f96932087e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d6fbe71ff23db8dba431b9d46d71fc6c924fbc5e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crtthreadtraits-class"></a>CRTThreadTraits クラス
 このクラスは、CRT のスレッドの作成機能を提供します。 スレッドが CRT 関数を使用する場合は、このクラスを使用します。  
@@ -58,7 +59,7 @@ class CRTThreadTraits
   
  場合は、スレッドがありますを使用していない CRT 関数を使用して[Win32ThreadTraits](../../atl/reference/win32threadtraits-class.md)代わりにします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="createthread"></a>CRTThreadTraits::CreateThread  
@@ -101,5 +102,5 @@ static HANDLE CreateThread(
   
  この関数が呼び出す[_beginthreadex](../../c-runtime-library/reference/beginthread-beginthreadex.md)スレッドを作成します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

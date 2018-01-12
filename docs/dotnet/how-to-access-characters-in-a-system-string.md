@@ -1,37 +1,40 @@
 ---
-title: "方法: System::String の文字にアクセスする | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "文字 [C++], アクセス (System::String 内の)"
-  - "例 [C++], 文字列"
-  - "文字列 [C++], アクセス (文字に)"
+title: "方法: system::string の文字にアクセス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- characters [C++], accessing in System::String
+- examples [C++], strings
+- strings [C++], accessing characters
 ms.assetid: cfc89756-aef3-4988-907e-fb236dcb7087
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 888370cac57025418bc70b322703d8569a4be3d0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: System::String の文字にアクセスする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-<xref:System.String> オブジェクトの文字にアクセスすると、`wchar_t*` 文字列を受け取るアンマネージ関数を効率よく呼び出すことができます。  このメソッドは、<xref:System.String> オブジェクトの 1 文字目への内部ポインターを生成します。  このポインターを直接操作するか、固定して、通常の `wchar_t` 文字列を使用する関数に渡すことができます。  
+# <a name="how-to-access-characters-in-a-systemstring"></a>方法: System::String の文字にアクセスする
+文字にアクセスすることができます、<xref:System.String>アンマネージ呼び出しを高パフォーマンスのためのオブジェクトの関数を受け取る`wchar_t*`文字列。 メソッドの最初の文字への内部ポインターを生成する、<xref:System.String>オブジェクト。 このポインター直接操作またはピン留めして通常必要とする関数に渡される`wchar_t`文字列。  
   
-## 使用例  
- `PtrToStringChars` は <xref:System.Char> を返します。これは、`byref` とも呼ばれる内部ポインターです。  このため、ガベージ コレクションの対象になります。  ネイティブ関数に渡さない限り、このポインターを固定する必要はありません。  
+## <a name="example"></a>例  
+ `PtrToStringChars`返します、 <xref:System.Char>、内部ポインターである (とも呼ばれる、 `byref`)。 そのため、ガベージ コレクションの対象となります。 ネイティブ関数に渡すしようとしている場合を除き、このポインターをピン留めする必要はありません。  
   
- 次のコードがあるとします。`ppchar` は内部ポインターであるため、固定する必要はありません。ガベージ コレクターが指している文字列を移動した場合は、`ppchar` も更新されます。  [pin\_ptr \(C\+\+\/CLI\)](../Topic/pin_ptr%20\(C++-CLI\).md) を使用しない場合は、固定が原因でパフォーマンスが低下することなくコードを実行できます。  
+ 次のコードについて考えてみましょう。  ピン留めは必要ありませんので`ppchar`内部ポインターであり、ガベージ コレクターが指す文字列を移動した場合は更新も`ppchar`します。 なし、 [pin_ptr (C + + CLI)](../windows/pin-ptr-cpp-cli.md)されませんが、パフォーマンスが低下の原因となったをピン留めする、コードが動作します。  
   
- `ppchar` をネイティブ関数に渡す場合は、固定ポインターを使用する必要があります。ガベージ コレクターは、アンマネージ スタック フレーム上のポインターを更新できません。  
+ 渡す場合`ppchar`ネイティブ関数にする必要があります固定ポインター以外の場合は、ガベージ コレクターは、アンマネージのスタック フレーム上のポインターを更新できません。  
   
 ```  
 // PtrToStringChars.cpp  
@@ -49,9 +52,12 @@ int main() {
 }  
 ```  
   
-  **abcdefg**   
-## 使用例  
- 固定を必要とする例を次に示します。  
+```Output  
+abcdefg  
+```  
+  
+## <a name="example"></a>例  
+ この例は、ピン留めが必要な場所を示します。  
   
 ```  
 // PtrToStringChars_2.cpp  
@@ -74,9 +80,12 @@ int main() {
 }  
 ```  
   
- **7**   
-## 使用例  
- 内部ポインターには、ネイティブ C\+\+ ポインターのすべてのプロパティがあります。  たとえば、このポインターを使用すると、リンクされたデータ構造体を調べ、唯一のポインターで挿入と削除ができます。  
+```Output  
+7  
+```  
+  
+## <a name="example"></a>例  
+ 内部ポインターには、ネイティブ C++ ポインターのすべてのプロパティがあります。 たとえば、リンクされているデータ構造を紹介し、挿入と 1 つだけのポインターを使用して削除を使用することができます。  
   
 ```  
 // PtrToStringChars_3.cpp  
@@ -98,5 +107,5 @@ void deleteNode( ListNode ^ list, Int32 e ) {
 }  
 ```  
   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+## <a name="see-also"></a>参照  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

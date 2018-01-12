@@ -18,11 +18,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cef373c7ddafe17a7843f8559588d5f0da9ee270
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f7a38cd04ed64c20464ef0c5ba3782a9075c2e04
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="irowsetidentityimpl-class"></a>IRowsetIdentityImpl クラス
 OLE DB を実装する[IRowsetIdentity](https://msdn.microsoft.com/en-us/library/ms715913.aspx)インターフェイスで、行 id のテストできるようにします。  
@@ -50,9 +53,9 @@ class ATL_NO_VTABLE IRowsetIdentityImpl
 |-|-|  
 |[IsSameRow](../../data/oledb/irowsetidentityimpl-issamerow.md)|同じ行を参照しているかどうかを次の 2 つの行ハンドルを比較します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)

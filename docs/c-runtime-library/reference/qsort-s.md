@@ -33,11 +33,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 834441e90cb6656f308673e8475b1cc2e38fd3a4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 333473d0b0b7e50e2b0faebef02835dcaf577440
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="qsorts"></a>qsort_s
 クイック ソートを実行します。 「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [qsort](../../c-runtime-library/reference/qsort.md) です。  
@@ -100,13 +101,13 @@ compare( context, (void *) & elem1, (void *) & elem2 );
   
  `qsort_s` の動作は、`context` パラメーターを持ち `errno` を設定すること以外は `qsort` と同じです。 `context` パラメーターを渡すと、比較関数はオブジェクト ポインターを使用して、オブジェクト機能や、要素ポインターではアクセスできない他の情報にアクセスできます。 追加、`context`パラメーターにより、`qsort_s`ためにのより安全な`context`共有情報を使用できるようにする静的変数を使用して導入された再入バグを避けるために使用できる、`compare`関数。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`qsort_s`|\<stdlib.h > と \<search.h >|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
  **ライブラリ:** [CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
@@ -265,7 +266,7 @@ España Español espantado
 table tablet tableux  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)   
  [bsearch_s](../../c-runtime-library/reference/bsearch-s.md)   
  [_lsearch_s](../../c-runtime-library/reference/lsearch-s.md)   

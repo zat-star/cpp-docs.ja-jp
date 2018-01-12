@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7282ba7eb80fd30175751bb5234818a5e3cf1431
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6dcf3ffa0c3168c2f96a3ad9bed13ab1213f63da
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-functionality-to-the-composite-control"></a>複合コントロールへの機能の追加
 複合コントロールに必要なコントロールを挿入した後、次の手順には、新しい機能の追加が含まれます。 この新しい機能は、通常、2 つのカテゴリに分類されます。  
@@ -39,6 +40,6 @@ ms.lasthandoff: 10/24/2017
   
  複合コントロールの ActiveX コントロールの接続ポイントが自動的に接続されへの呼び出しを使用して切断[CComCompositeControl::AdviseSinkMap](../atl/reference/ccomcompositecontrol-class.md#advisesinkmap)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [複合コントロールの基本](../atl/atl-composite-control-fundamentals.md)
 

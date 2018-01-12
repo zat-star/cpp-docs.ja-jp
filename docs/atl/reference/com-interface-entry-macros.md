@@ -28,11 +28,12 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 281829593087a936f201000faaa42f698344d3b5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 76352cf2015661bc970b2987b9794f3bf023cc15
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cominterfaceentry-macros"></a>COM_INTERFACE_ENTRY マクロ  
  アクセスできるように、これらのマクロがその COM マップにオブジェクトのインターフェイスを入力`QueryInterface`です。 COM マップ エントリの順序は、対応する注文インターフェイスがチェックされます**IID**中に`QueryInterface`です。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 10/24/2017
 |[COM_INTERFACE_ENTRY_FUNC_BLIND](#com_interface_entry_func_blind)|同じ[COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func)への呼び出しで結果の任意の IID のクエリを実行することを除いて、`func`です。|  
 |[COM_INTERFACE_ENTRY_NOINTERFACE](#com_interface_entry_nointerface)|返します**E_NOINTERFACE**と COM マップ処理について、指定したインターフェイスが照会されたときに終了します。|  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 **ヘッダー:** atlcom.h
 
 ## <a name="com_interface_entry"></a>COM_INTERFACE_ENTRY
@@ -81,7 +82,7 @@ BEGIN_COM_MAP(CThisExample)
    COM_INTERFACE_ENTRY(ISupportErrorInfo)
 END_COM_MAP()
 ```
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 **ヘッダー:** atlcom.h
   
 ##  <a name="com_interface_entry2"></a>COM_INTERFACE_ENTRY2  

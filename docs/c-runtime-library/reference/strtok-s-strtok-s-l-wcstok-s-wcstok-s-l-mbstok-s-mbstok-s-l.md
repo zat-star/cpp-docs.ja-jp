@@ -58,11 +58,12 @@ caps.latest.revision: "28"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1fd0738d1a08eb0c2285f12314770ec1120e7d97
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e5d5b92497bedcfd766975e62c886dd64676fc71
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strtoks-strtoksl-wcstoks-wcstoksl-mbstoks-mbstoksl"></a>strtok_s、_strtok_s_l、wcstok_s、_wcstok_s_l、_mbstok_s、_mbstok_s_l
 
@@ -154,9 +155,9 @@ unsigned char* _mbstok_s(
 
 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 この関数のバージョン、`_l`サフィックスは、このロケールに依存する動作に現在のスレッド ロケールを使用します。 バージョンで、`_l`代わりに使用する点を除いて、サフィックスは同じ、*ロケール*パラメーター。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
-|ルーチン|必須ヘッダー|
+|ルーチンによって返される値|必須ヘッダー|
 |-------------|---------------------|
 |`strtok_s`|\<string.h>|
 |`_strtok_s_l`|\<string.h>|
@@ -238,7 +239,7 @@ Tokens:
  tokens  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [文字列操作](../../c-runtime-library/string-manipulation-crt.md)  
 [ロケール](../../c-runtime-library/locale.md)  

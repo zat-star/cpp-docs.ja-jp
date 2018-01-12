@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e5794cd9ec0eb5afc879507bcf8942d6481ebca4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a5fa20f0a2236d6458490784d2fa0f1b53b13241
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="functions-c"></a>関数 (C++)
 関数とは、何らかの操作を実行するコードのブロックです。 関数には、呼び出し元が関数に引数を渡すのに使用する入力パラメーターを必要に応じて定義できます。 関数は、必要に応じて値を出力として返すことができます。 関数は、一般的な操作を 1 つの再利用可能なブロックでカプセル化するのに役立ちます。関数には、その動作を明確に説明する名前を付けることが理想的です。 次の関数の呼び出し元から 2 つの整数を受け付けるその合計を返します。`a`と`b`は*パラメーター*型の`int`します。  
@@ -392,7 +393,7 @@ int (*myFunction(char* s))(int);
   
  この宣言は、上記の typedef を使用した宣言と同等です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数のオーバー ロード](../cpp/function-overloading.md)   
  [可変個引数リストを取る関数](../cpp/functions-with-variable-argument-lists-cpp.md)   
  [明示的に既定化および削除指定関数](../cpp/explicitly-defaulted-and-deleted-functions.md)   

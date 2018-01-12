@@ -1,85 +1,88 @@
 ---
-title: "CReferentialConstraints、CReferentialConstraintInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "m_szUniqueName"
-  - "m_szCatalog"
-  - "DELETE_RULE"
-  - "m_szUniqueCatalog"
-  - "CONSTRAINT_NAME"
-  - "CReferentialConstraintInfo"
-  - "MATCH_OPTION"
-  - "m_szSchema"
-  - "m_szDeleteRule"
-  - "m_szUpdateRule"
-  - "m_szUniqueSchema"
-  - "CReferentialConstraints"
-  - "m_szName"
-  - "CONSTRAINT_CATALOG"
-  - "m_szMatchOption"
-  - "CONSTRAINT_SCHEMA"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CONSTRAINT_CATALOG"
-  - "CONSTRAINT_NAME"
-  - "CONSTRAINT_SCHEMA"
-  - "CReferentialConstraintInfo パラメーター クラス"
-  - "CReferentialConstraints typedef クラス"
-  - "DELETE_RULE"
-  - "DESCRIPTION クラスのデータ メンバー"
-  - "m_szCatalog"
-  - "m_szDeleteRule"
-  - "m_szDescription"
-  - "m_szMatchOption"
-  - "m_szName"
-  - "m_szSchema"
-  - "m_szUniqueCatalog"
-  - "m_szUniqueName"
-  - "m_szUniqueSchema"
-  - "m_szUpdateRule"
-  - "MATCH_OPTION"
+title: "CReferentialConstraints、CReferentialConstraintInfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- m_szUniqueName
+- m_szCatalog
+- DELETE_RULE
+- m_szUniqueCatalog
+- CONSTRAINT_NAME
+- CReferentialConstraintInfo
+- MATCH_OPTION
+- m_szSchema
+- m_szDeleteRule
+- m_szUpdateRule
+- m_szUniqueSchema
+- CReferentialConstraints
+- m_szName
+- CONSTRAINT_CATALOG
+- m_szMatchOption
+- CONSTRAINT_SCHEMA
+dev_langs: C++
+helpviewer_keywords:
+- m_szUniqueSchema
+- DESCRIPTION class data member
+- m_szSchema
+- CONSTRAINT_CATALOG
+- CReferentialConstraints typedef class
+- m_szUniqueName
+- m_szCatalog
+- CONSTRAINT_NAME
+- m_szDeleteRule
+- DELETE_RULE
+- MATCH_OPTION
+- CONSTRAINT_SCHEMA
+- m_szName
+- m_szDescription
+- m_szMatchOption
+- m_szUniqueCatalog
+- m_szUpdateRule
+- CReferentialConstraintInfo parameter class
 ms.assetid: 5d485358-be29-41c2-b0ce-19e023598e73
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 525d75ad244cac267b0f8b51dccf18210b504f2e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CReferentialConstraints、CReferentialConstraintInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-パラメーター **CReferentialConstraintInfo**クラスを実装するに **CReferentialConstraints** typedef クラスを呼び出します。  
+# <a name="creferentialconstraints-creferentialconstraintinfo"></a>CReferentialConstraints、CReferentialConstraintInfo
+Typedef クラスを呼び出す**CReferentialConstraints**そのパラメーター クラスを実装する**CReferentialConstraintInfo**です。  
   
-## 解説  
- typedef クラスの使用の詳細については、" [スキーマ行セット クラスと Typedef クラス](../Topic/Schema%20Rowset%20Classes%20and%20Typedef%20Classes.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)typedef クラスの使用に関する詳細についてはします。  
   
- このクラスは、カタログに定義された特定のユーザーが所有する参照制約を識別します。  
+ このクラスは、参照に関する制約、カタログで定義されている特定のユーザーによって所有されているを識別します。  
   
- 次の表は、クラスのデータ メンバーとそれらに該当する OLE DB の列の一覧です。  スキーマと列の詳細については、" *OLE DB Programmer's Reference* の [REFERENTIAL\_CONSTRAINTS の行セット](https://msdn.microsoft.com/en-us/library/ms719737.aspx) を参照してください。  
+ 次の表には、クラスのデータ メンバーとその対応する OLE DB 列が一覧表示します。 参照してください[REFERENTIAL_CONSTRAINTS 行セット](https://msdn.microsoft.com/en-us/library/ms719737.aspx)で、 *OLE DB プログラマーズ リファレンス*スキーマと列の詳細についてはします。  
   
-|データ メンバー|OLE DB の列|  
-|--------------|---------------|  
-|m\_szCatalog|CONSTRAINT\_CATALOG|  
-|m\_szSchema|CONSTRAINT\_SCHEMA|  
-|m\_szName|CONSTRAINT\_NAME|  
-|m\_szUniqueCatalog|UNIQUE\_CONSTRAINT\_CATALOG|  
-|m\_szUniqueSchema|UNIQUE\_CONSTRAINT\_SCHEMA|  
-|m\_szUniqueName|UNIQUE\_CONSTRAINT\_NAME|  
-|m\_szMatchOption|MATCH\_OPTION|  
-|m\_szUpdateRule|UPDATE\_RULE|  
-|m\_szDeleteRule|DELETE\_RULE|  
-|m\_szDescription|DESCRIPTION|  
+|データ メンバー|OLE DB 列|  
+|------------------|--------------------|  
+|m_szCatalog|CONSTRAINT_CATALOG|  
+|m_szSchema|CONSTRAINT_SCHEMA|  
+|m_szName|CONSTRAINT_NAME|  
+|m_szUniqueCatalog|UNIQUE_CONSTRAINT_CATALOG|  
+|m_szUniqueSchema|UNIQUE_CONSTRAINT_SCHEMA|  
+|m_szUniqueName|UNIQUE_CONSTRAINT_NAME|  
+|m_szMatchOption|MATCH_OPTION|  
+|m_szUpdateRule|句|  
+|m_szDeleteRule|DELETE_RULE|  
+|m_szDescription|説明|  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## 参照  
- [CRestrictions クラス](../Topic/CRestrictions%20Class.md)
+## <a name="see-also"></a>参照  
+ [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

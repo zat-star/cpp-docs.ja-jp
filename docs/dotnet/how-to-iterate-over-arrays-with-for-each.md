@@ -1,31 +1,33 @@
 ---
-title: "方法: for each を使用して配列を反復処理する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [C++], 反復処理 (for each を使用して)"
+title: "方法: for each を持つ配列を反復 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
+helpviewer_keywords: arrays [C++], iterating with for each
 ms.assetid: ddc88ce2-69e1-44fc-af84-5b6f62fcb9e3
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 437e9134e489d9ca91f95979ad5165798d90cdef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: for each を使用して配列を反復処理する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、配列の [for each、in](../dotnet/for-each-in.md) キーワードを使用する方法を示します。  
+# <a name="how-to-iterate-over-arrays-with-for-each"></a>方法: for each を使用して配列を反復処理する
+このトピックの内容を使用する方法を示しています、[ごとで](../dotnet/for-each-in.md)さまざまな種類の配列ではキーワードです。  
   
-## 使用例  
- このサンプルでは、参照型の配列の `for each` を使用する方法を示します。複数の次元の配列の次元ではない、`for each` ループは配列に繰り返さないことに注意してください。  
+## <a name="example"></a>例  
+ このサンプルを使用する方法を示します`for each`参照型の配列にします。  なお、複数次元配列の任意の次元が 0 の場合、`for each`ループは、配列を反復処理されません。  
   
 ```  
 // for_each_arrays.cpp  
@@ -66,14 +68,18 @@ int main() {
 }  
 ```  
   
-  **MyClass に \= 0**  
-**MyClass に \= 1**  
-**MyClass2 の \= 0**  
-**MyClass2 の \= 1**  
-**MyClass2 の \= 2**  
-**MyClass2 の \= 3**   
-## 使用例  
- このサンプルでは <xref:System.Collections.ArrayList>を反復処理 <xref:System.Collections.IEnumerable>を実装する各を示します。  
+```Output  
+0 = in MyClass  
+1 = in MyClass  
+  
+0 = in MyClass2  
+1 = in MyClass2  
+2 = in MyClass2  
+3 = in MyClass2  
+```  
+  
+## <a name="example"></a>例  
+ この例は、各反復処理で、<xref:System.Collections.ArrayList>を実装する<xref:System.Collections.IEnumerable>です。  
   
 ```  
 // for_each_arrays_2.cpp  
@@ -95,8 +101,11 @@ int main() {
 }  
 ```  
   
-  **60**   
-## 使用例  
+```Output  
+60  
+```  
+  
+## <a name="example"></a>例  
  このサンプルでは、配列の配列を反復処理する方法を示します。  
   
 ```  
@@ -129,13 +138,17 @@ int main() {
 }  
 ```  
   
-  **IntArray \[\] 0 \= 10**  
-**IntArray \[\] 0 \= 10**  
-**IntArray \[\] 1 \= 11**  
-**IntArray \[\] 1 \= 11**  
-**10**  
-**10**  
-**11**  
-**11**   
-## 参照  
+```Output  
+IntArray[0] = 10  
+IntArray[0] = 10  
+IntArray[1] = 11  
+IntArray[1] = 11  
+  
+10  
+10  
+11  
+11  
+```  
+  
+## <a name="see-also"></a>参照  
  [for each、in](../dotnet/for-each-in.md)

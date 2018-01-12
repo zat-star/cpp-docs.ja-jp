@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -16,38 +15,22 @@ f1_keywords:
 - ATLCOM/ATL::CComObjectGlobal::QueryInterface
 - ATLCOM/ATL::CComObjectGlobal::Release
 - ATLCOM/ATL::CComObjectGlobal::m_hResFinalConstruct
-dev_langs:
-- C++
-helpviewer_keywords:
-- CComObjectGlobal class
+dev_langs: C++
+helpviewer_keywords: CComObjectGlobal class
 ms.assetid: 79bdee55-66e4-4536-b5b3-bdf09f78b9a6
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 8c371eee9de660a2bb08e67f35a5a6c81d32eee0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 8d5264a2ab8e1bbc4c3f4eac4d83d096d91e8846
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomobjectglobal-class"></a>CComObjectGlobal クラス
-このクラスは参照カウントを含むモジュールを管理、`Base`オブジェクトです。  
+このクラスを含むモジュールの参照カウントを管理する、`Base`オブジェクト。  
   
 ## <a name="syntax"></a>構文  
   
@@ -58,7 +41,7 @@ class CComObjectGlobal : public Base
   
 #### <a name="parameters"></a>パラメーター  
  `Base`  
- 派生したクラスに、 [CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)または[CComObjectRootEx](../../atl/reference/ccomobjectrootex-class.md)オブジェクトでサポートするその他のインターフェイスからも、です。  
+ 派生したクラス、 [CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)または[CComObjectRootEx](../../atl/reference/ccomobjectrootex-class.md)オブジェクトでサポートするその他のインターフェイスからも、します。  
   
 ## <a name="members"></a>メンバー  
   
@@ -73,18 +56,18 @@ class CComObjectGlobal : public Base
   
 |名前|説明|  
 |----------|-----------------|  
-|[CComObjectGlobal::AddRef](#addref)|グローバル カタログ サーバーを実装して`AddRef`します。|  
-|[CComObjectGlobal::QueryInterface](#queryinterface)|グローバル カタログ サーバーを実装して`QueryInterface`します。|  
-|[CComObjectGlobal::Release](#release)|グローバル カタログ サーバーを実装して**リリース**します。|  
+|[CComObjectGlobal::AddRef](#addref)|グローバル実装`AddRef`です。|  
+|[CComObjectGlobal::QueryInterface](#queryinterface)|グローバル実装`QueryInterface`です。|  
+|[CComObjectGlobal::Release](#release)|グローバル実装**リリース**です。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CComObjectGlobal::m_hResFinalConstruct](#m_hresfinalconstruct)|含む、 **HRESULT**の構築時に返される、`CComObjectGlobal`オブジェクトです。|  
+|[CComObjectGlobal::m_hResFinalConstruct](#m_hresfinalconstruct)|含まれています、 **HRESULT**の構築時に返される、`CComObjectGlobal`オブジェクト。|  
   
 ## <a name="remarks"></a>コメント  
- `CComObjectGlobal`含むモジュールの参照カウントを管理、`Base`オブジェクトです。 `CComObjectGlobal`モジュールが解放されない限り、オブジェクトが削除されないようにします。 オブジェクトは、全体のモジュールの参照カウントがゼロになったときにのみ削除されます。  
+ `CComObjectGlobal`含むモジュールの参照カウントを管理、`Base`オブジェクト。 `CComObjectGlobal`により、モジュールが解放されない限り、オブジェクトは削除されません。 オブジェクトは、全体のモジュールの参照カウントがゼロになったときにだけ削除されます。  
   
  たとえばを使用して`CComObjectGlobal`、クラス ファクトリは、すべてのクライアントで共有される共通のグローバル オブジェクトを保持できます。  
   
@@ -93,24 +76,24 @@ class CComObjectGlobal : public Base
   
  `CComObjectGlobal`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="addref"></a>CComObjectGlobal::AddRef  
- 1 には、オブジェクトの参照カウントをインクリメントします。  
+ 1 つずつ、オブジェクトの参照カウントをインクリメントします。  
   
 ```
 STDMETHOD_(ULONG, AddRef)();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 診断に役立ちますしテスト可能性のある値。  
+ 診断やテストに使用する値。  
   
 ### <a name="remarks"></a>コメント  
- 既定では、`AddRef`呼び出し**_Module::Lock**ここで、 **_Module**のグローバル インスタンスは、 [CComModule](../../atl/reference/ccommodule-class.md)またはその派生クラスです。  
+ 既定では、`AddRef`呼び出し**_Module::Lock**ここで、 **_Module**のグローバル インスタンスは、 [CComModule](../../atl/reference/ccommodule-class.md)またはその派生クラス。  
   
 ##  <a name="ccomobjectglobal"></a>CComObjectGlobal::CComObjectGlobal  
- コンストラクターです。 呼び出し`FinalConstruct`し、設定[m_hResFinalConstruct](#m_hresfinalconstruct)に、`HRESULT`によって返される`FinalConstruct`です。  
+ コンストラクターです。 呼び出し`FinalConstruct`し、設定[m_hResFinalConstruct](#m_hresfinalconstruct)を`HRESULT`によって返される`FinalConstruct`です。  
   
 ```
 CComObjectGlobal(void* = NULL));
@@ -127,10 +110,10 @@ CComObjectGlobal();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 割り当てられているすべてのリソースを解放[FinalRelease](ccomobjectrootex-class.md#finalrelease)します。  
+ 割り当てられているすべてのリソースを解放[FinalRelease](ccomobjectrootex-class.md#finalrelease)です。  
   
 ##  <a name="m_hresfinalconstruct"></a>CComObjectGlobal::m_hResFinalConstruct  
- 含む、`HRESULT`呼び出しから`FinalConstruct`の構築中に、`CComObjectGlobal`オブジェクトです。  
+ 含まれています、`HRESULT`呼び出し元から`FinalConstruct`の構築中に、`CComObjectGlobal`オブジェクト。  
   
 ```
 HRESULT m_hResFinalConstruct;
@@ -157,21 +140,20 @@ STDMETHOD(QueryInterface)(REFIID iid, void** ppvObject);
  `QueryInterface` が処理するのは、COM マップ テーブル内のインターフェイスのみです。  
   
 ##  <a name="release"></a>CComObjectGlobal::Release  
- 1 で、オブジェクトの参照カウントをデクリメントします。  
+ 1 つずつ、オブジェクトの参照カウントをデクリメントします。  
   
 ```
 STDMETHOD_(ULONG, Release)();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- デバッグ ビルドで、**リリース**診断に役立ちますやテストに値を返します。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
+ デバッグ ビルドで、**リリース**とテスト、診断に役立つ可能性のある値を返します。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 既定では、**リリース**呼び出し**_Module::Unlock**ここで、 **_Module**のグローバル インスタンスは、 [CComModule](../../atl/reference/ccommodule-class.md)またはその派生クラスです。  
+ 既定では、**リリース**呼び出し**_Module::Unlock**ここで、 **_Module**のグローバル インスタンスは、 [CComModule](../../atl/reference/ccommodule-class.md)またはその派生クラス。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComObjectStack クラス](../../atl/reference/ccomobjectstack-class.md)   
  [クラス](../../atl/reference/ccomaggobject-class.md)   
- [クラス](../../atl/reference/ccomobject-class.md)   
+ [CComObject クラス](../../atl/reference/ccomobject-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

@@ -1,39 +1,41 @@
 ---
-title: "CBulkRowset::MoveNext | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CBulkRowset<TAccessor>.MoveNext"
-  - "ATL::CBulkRowset::MoveNext"
-  - "CBulkRowset::MoveNext"
-  - "ATL.CBulkRowset.MoveNext"
-  - "CBulkRowset.MoveNext"
-  - "ATL::CBulkRowset<TAccessor>::MoveNext"
-  - "CBulkRowset<TAccessor>.MoveNext"
-  - "CBulkRowset<TAccessor>::MoveNext"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MoveNext メソッド"
+title: "Cbulkrowset::movenext |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL.CBulkRowset<TAccessor>.MoveNext
+- ATL::CBulkRowset::MoveNext
+- CBulkRowset::MoveNext
+- ATL.CBulkRowset.MoveNext
+- CBulkRowset.MoveNext
+- ATL::CBulkRowset<TAccessor>::MoveNext
+- CBulkRowset<TAccessor>.MoveNext
+- CBulkRowset<TAccessor>::MoveNext
+dev_langs: C++
+helpviewer_keywords: MoveNext method
 ms.assetid: 788f3344-cf60-4af1-8f5f-0098c8d1a3f0
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0388bfbb7b8a134f5813c74cebdaec3fcbffdfa2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CBulkRowset::MoveNext
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データの次の行を取得します。  
+# <a name="cbulkrowsetmovenext"></a>CBulkRowset::MoveNext
+次のデータ行を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -41,11 +43,11 @@ HRESULT MoveNext( ) throw( );
   
 ```  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  行セットの終わりに到達した場合、**DB\_S\_ENDOFROWSET**を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。 行セットの末尾に到達したときに返されます**DB_S_ENDOFROWSET**です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CBulkRowset クラス](../Topic/CBulkRowset%20Class.md)
+## <a name="see-also"></a>参照  
+ [CBulkRowset クラス](../../data/oledb/cbulkrowset-class.md)

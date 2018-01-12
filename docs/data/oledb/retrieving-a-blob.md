@@ -17,11 +17,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ac10d34fbb5e0cc6320d6c7f8ff1a52efc36f1b0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 36ffc4fca7859b49067517e1085e1d854f733e24
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="retrieving-a-blob"></a>BLOB の取得
 さまざまな方法でバイナリ ラージ オブジェクト (BLOB) を取得することができます。 使用することができます**DBTYPE_BYTES**バイトのシーケンスとして BLOB を取得またはのようなインターフェイスを使用する`ISequentialStream`です。 詳細については、次を参照してください。 [BLOB と OLE オブジェクト](https://msdn.microsoft.com/en-us/library/ms711511.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
@@ -57,6 +60,6 @@ while (categories.MoveNext() == S_OK)
   
  BLOB データを処理するマクロの詳細についてを参照してください「の列マップ マクロ」[用マクロおよびグローバル関数 OLE DB コンシューマー テンプレート](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセサーの使用](../../data/oledb/using-accessors.md)   
  [OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)

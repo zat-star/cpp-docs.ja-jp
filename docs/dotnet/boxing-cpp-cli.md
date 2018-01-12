@@ -13,14 +13,17 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a103f03b667122e16964c8cd0bb34774a6cc9cda
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e49c6f82099e6d7dbcfc47079d19228d7a91dc05
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="boxing-ccli"></a>ボックス化 (C++/CLI)
-値の型を型に変換するプロセスはボックス化が`object`または値の型によって実装されるインターフェイスの種類。 値型がボックス化、共通言語ランタイム (CLR) の値を折り返した、`System.Object`され、マネージ ヒープに格納します。 ボックス化解除すると、値型がオブジェクトから抽出されます。 ボックス化は暗黙的であり、ボックス化解除すると明示的になります。  
+値の型を型に変換するプロセスはボックス化が`object`または値の型によって実装されるインターフェイスの種類。 値型がボックス化、共通言語ランタイム (CLR) の値を折り返した、`System.Object`され、マネージ ヒープに格納します。 ボックス化解除すると、値型がオブジェクトから抽出されます。 ボックス化は暗黙的に行われ、ボックス化解除すると明示的になります。  
   
 ## <a name="related-articles"></a>関連トピック  
   

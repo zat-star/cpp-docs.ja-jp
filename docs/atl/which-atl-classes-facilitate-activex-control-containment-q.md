@@ -1,38 +1,39 @@
 ---
-title: "どの ATL クラスを使用すると ActiveX コントロール コンテインメントに役立ちますか? | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール コンテナー [C++], ATL コントロール ホスト"
-  - "ホスト (ATL を使ってコントロールを)"
+title: "ATL クラスは、ActiveX コントロール サポートを容易にしますか。 | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- hosting controls using ATL
+- ActiveX control containers [C++], ATL control hosting
 ms.assetid: 803a4605-7f4c-4139-8638-49d8783d31b0
-caps.latest.revision: 11
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 880c7bd52476614a4356690aff2fda286e9f3aef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# どの ATL クラスを使用すると ActiveX コントロール コンテインメントに役立ちますか?
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="which-atl-classes-facilitate-activex-control-containment"></a>ATL クラスは、ActiveX コントロール サポートを容易にしますか。
+ATL のコントロール ホスト コードでは、ATL クラスを使用する必要としません。単に作成することができます、 **"AtlAxWin80"**ウィンドウおよび必要に応じてコントロール ホスト API を使用 (詳細については、次を参照してください。 **、ATL コントロール ホスト API は、どのような**します。 ただし、次のクラス包含機能を使いやすきます。  
+  
+|クラス|説明|  
+|-----------|-----------------|  
+|[CAxWindow](../atl/reference/caxwindow-class.md)|ラップ、 **"AtlAxWin80"**ウィンドウで、ウィンドウの作成、コントロールの作成やウィンドウに表示するコントロールをアタッチして、そのホスト オブジェクトのインターフェイス ポインターを取得するためのメソッドを指定します。|  
+|[CAxWindow2T](../atl/reference/caxwindow2t-class.md)|ラップ、 **AtlAxWinLic80**ウィンドウで、ウィンドウの作成、コントロールを作成するやウィンドウで、ライセンスされたコントロールをアタッチすると、そのホスト オブジェクトのインターフェイス ポインターを取得する方法を提供します。|  
+|[CComCompositeControl](../atl/reference/ccomcompositecontrol-class.md)|ダイアログ リソースに基づく ActiveX コントロール クラスの基底クラスとして機能します。 このようなコントロールは、その他の ActiveX コントロールを含めることができます。|  
+|[CAxDialogImpl](../atl/reference/caxdialogimpl-class.md)|ダイアログ リソースに基づくダイアログ クラスの基底クラスとして機能します。 このようなダイアログ ボックスでは、ActiveX コントロールを含めることができます。|  
+|[CWindow](../atl/reference/cwindow-class.md)|メソッドを提供[GetDlgControl](../atl/reference/cwindow-class.md#getdlgcontrol)、そのホスト ウィンドウの ID を指定し、コントロールのインターフェイス ポインターが返されます。 さらに、Windows API ラッパーをによって公開されている`CWindow`ウィンドウの管理を一般に容易です。|  
+  
+## <a name="see-also"></a>参照  
+ [コントロール コンテインメントよく寄せられる質問](../atl/atl-control-containment-faq.md)
 
-ATL のコントロール ホスト コードは ATL クラスを使用する必要はありません; **"AtlAxWin80"** のウィンドウを作成し、コントロール ホスト API を必要に応じて使用できます。詳細については、[ATL のコントロール ホスト API は何ですか。](../atl/what-is-the-atl-control-hosting-api-q.md)を参照\)。  ただし、次のクラスは、コンテインメントの機能を使用しやすくなります。  
-  
-|Class|説明|  
-|-----------|--------|  
-|[CAxWindow](../atl/reference/caxwindow-class.md)|ウィンドウを作成し、コントロールを作成することやウィンドウにホスト オブジェクトでコントロールを結合し、のインターフェイス ポインターを取得するメソッドを提供する **"AtlAxWin80"** のウィンドウをラップします。|  
-|[CAxWindow2T](../Topic/CAxWindow2T%20Class.md)|ウィンドウを作成し、コントロールを作成することやウィンドウにホスト オブジェクト内のライセンス コントロールを結合し、のインターフェイス ポインターを取得するメソッドを提供する **"AtlAxWinLic80"** のウィンドウをラップします。|  
-|[CComCompositeControl](../atl/reference/ccomcompositecontrol-class.md)|ようにダイアログ リソースに基づいて ActiveX コントロール クラスの基本クラスとして機能します。  このようなコントロールは、他の ActiveX コントロールを含めることができます。|  
-|[CAxDialogImpl](../Topic/CAxDialogImpl%20Class.md)|ダイアログ リソースに基づいて、ダイアログ クラスの基本クラスとして機能します。  このようなダイアログは ActiveX コントロールを含めることができます。|  
-|[CWindow](../atl/reference/cwindow-class.md)|メソッドは、コントロールのインターフェイス ポインターを返すホスト ウィンドウの ID を持つ [GetDlgControl](../Topic/CWindow::GetDlgControl.md)提供します。  また、`CWindow` によって公開される Windows API ラッパーは一般的に、ウィンドウ管理が簡単になります。|  
-  
-## 参照  
- [コントロール コンテインメント : Q & A 集](../atl/atl-control-containment-faq.md)

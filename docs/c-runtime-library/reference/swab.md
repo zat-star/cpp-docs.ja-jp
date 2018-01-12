@@ -37,11 +37,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a3043abf425055d8cb21108a30db2e6382e19c1a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 42515208c2c94e28ee5d6a5fab586d4ab747cc6c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="swab"></a>_swab
 バイトを交換します。  
@@ -74,12 +75,12 @@ void _swab(
 ## <a name="remarks"></a>コメント  
  `n` が偶数の場合、`_swab` 関数は `src` から `n` バイトをコピーし、隣接するバイトの各ペアをスワップして、結果を `dest` に格納します。 `n` が奇数の場合、`_swab` 関数は `src` の最初の `n-1` バイトをコピーしてスワップします。最後のバイトはコピーされません。 `_swab` 関数は、通常、異なるバイト順を使用するコンピューターに転送するバイナリ データを準備するときに使用されます。  
   
-## <a name="requirements"></a>要件  
-|ルーチン|必須ヘッダー|  
+## <a name="requirements"></a>必要条件  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_swab`|C: \<stdlib.h> C++: \<cstdlib> または \<stdlib.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
 ```C 
@@ -107,5 +108,5 @@ After:  BADCFEHGJILKNMPORQTSVUXWZY
         ABCDEFGHIJKLMNOPQRSTUVWXYZ.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バッファー操作](../../c-runtime-library/buffer-manipulation.md)

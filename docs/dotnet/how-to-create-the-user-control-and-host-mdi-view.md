@@ -16,11 +16,14 @@ caps.latest.revision: "25"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 298a08689d6c4aa69d4a52af5fad965e3e353b5c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 8b9b3c8ff385aed22785386c035ed537d8d97e97
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-create-the-user-control-and-host-mdi-view"></a>方法: ユーザー コントロールを作成し、MDI ビューをホストする
 次の手順では、.NET Framework ユーザー コントロールを作成し、そのユーザー コントロールをコントロール クラス ライブラリ (特に Windows コントロール ライブラリ プロジェクト) に作成し、プロジェクトをアセンブリにコンパイルする方法について説明します。 コントロールから派生したクラスを使用する MFC アプリケーションから使用できます[CView クラス](../mfc/reference/cview-class.md)と[CWinFormsView クラス](../mfc/reference/cwinformsview-class.md)です。  
@@ -38,7 +41,7 @@ ms.lasthandoff: 10/24/2017
   
      **ファイル**メニューの **新規**、クリックして**プロジェクト**です。 **Visual C**フォルダーを選択**MFC アプリケーション**です。  
   
-     **名前**ボックスに、入力`MFC02`を変更して、**ソリューション**設定**ソリューションに追加**です。 **[OK]** をクリックします。  
+     **名前**ボックスに、入力`MFC02`を変更して、**ソリューション**設定**ソリューションに追加**です。 **[OK]**をクリックします。  
   
      **MFC アプリケーション ウィザード**すべての既定値をそのまま使用し、クリックして**完了**です。 これにより、マルチ ドキュメント インターフェイスを持つ MFC アプリケーションが作成されます。  
   
@@ -109,5 +112,5 @@ ms.lasthandoff: 10/24/2017
   
      **デバッグ** メニューのをクリックして**デバッグなしで開始**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ビューとしての Windows フォーム ユーザー コントロールのホスト](../dotnet/hosting-a-windows-forms-user-control-as-an-mfc-view.md)

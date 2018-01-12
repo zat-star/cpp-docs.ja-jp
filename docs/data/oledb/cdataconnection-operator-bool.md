@@ -21,11 +21,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d9a9cfd88e2c1ce141da2a4b345a926cdb412a2e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 342a8074f61a6f05505534ff497010b8a752293c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdataconnectionoperator-bool"></a>CDataConnection::operator BOOL
 か、現在のセッションが開いているかどうかを判断します。  
@@ -41,9 +44,9 @@ operator BOOL( ) throw( );
 ## <a name="remarks"></a>コメント  
  返します**BOOL** (MFC の typedef) 値です。 **TRUE**現在のセッションが開いていることを意味**FALSE**現在のセッションが閉じられたことを意味します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDataConnection クラス](../../data/oledb/cdataconnection-class.md)   
  [Cdataconnection::operator bool](../../data/oledb/cdataconnection-operator-bool-ole-db.md)

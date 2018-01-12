@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cf2dcd59800617639f986a8bb33d962d7819cdfe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6a9a37c640f0262e24a66e6880d469331826d559
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="processor-manufacturer-programming-manuals"></a>プロセッサの製造元のプログラミング マニュアル
 この記事では、製造、販売、されたりしない Microsoft によってサポートされているプロセッサについてのプログラミング情報を含む可能性のある web サイトへのリンクを提供します。 Microsoft が所有またはいない web サイト、またはそれらのコンテンツを制御します。  
@@ -33,5 +34,5 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  どちらも[!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)]。 また、Microsoft マクロ アセンブラーは、すべてのプロセッサをサポートします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft Macro Assembler リファレンス](../../assembler/masm/microsoft-macro-assembler-reference.md)

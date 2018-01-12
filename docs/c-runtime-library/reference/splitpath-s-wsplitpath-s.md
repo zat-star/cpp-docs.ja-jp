@@ -41,11 +41,12 @@ caps.latest.revision: "29"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b95813c79efc42ba9d0425ab453628f20d512e23
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6cfb2d72b728b64aeb00c3b8437f9c47e02fb813
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="splitpaths-wsplitpaths"></a>_splitpath_s、_wsplitpath_s
 パス名をコンポーネントに分割します。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_splitpath、_wsplitpath](../../c-runtime-library/reference/splitpath-wsplitpath.md) です。  
@@ -143,7 +144,7 @@ errno_t _wsplitpath_s(
  バッファーのいずれかが、結果を保持するには短すぎる場合、これらの関数はすべてのバッファーを空の文字列にクリアし、`errno` を `ERANGE` に設定して、`ERANGE` を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_splitpath_s` 関数は、パスを 4 つのコンポーネントに分割します。 `_splitpath_s` は、現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 `_wsplitpath_s` は `_splitpath_s` のワイド文字バージョンであり、`_wsplitpath_s` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです  
+ `_splitpath_s` 関数は、パスを 4 つのコンポーネントに分割します。 `_splitpath_s` は、マルチバイト文字列引数を自動的に適切に処理し、現在使用しているマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識します。 `_wsplitpath_s` は `_splitpath_s` のワイド文字バージョンであり、`_wsplitpath_s` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -155,7 +156,7 @@ errno_t _wsplitpath_s(
   
  マニフェスト定数の値を次の表に示します。  
   
-|名前|値|  
+|name|[値]|  
 |----------|-----------|  
 |_MAX_DRIVE|3|  
 |_MAX_DIR|256|  
@@ -164,23 +165,23 @@ errno_t _wsplitpath_s(
   
  完全なパスにコンポーネント (たとえばファイル名) が含まれていない場合、`_splitpath_s` は対応するバッファーに空の文字列を割り当てます。  
   
- C++ では、テンプレートのオーバーロードによってこれらの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、テンプレートのオーバーロードによってこれらの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
- これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
+ これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md).を使用します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_splitpath_s`|\<stdlib.h>|  
 |`_wsplitpath_s`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_makepath_s、_wmakepath_s](../../c-runtime-library/reference/makepath-s-wmakepath-s.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_splitpath、_wsplitpath](../../c-runtime-library/reference/splitpath-wsplitpath.md)   
  [_fullpath、_wfullpath](../../c-runtime-library/reference/fullpath-wfullpath.md)   

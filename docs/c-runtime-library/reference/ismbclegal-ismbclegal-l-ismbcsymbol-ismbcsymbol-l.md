@@ -53,11 +53,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 25dbe5ba2808e0050f494e05b0ae33c42ccc96e6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 057b6ee50934561662becbcf258910ee292664ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ismbclegal-ismbclegall-ismbcsymbol-ismbcsymboll"></a>_ismbclegal、_ismbclegal_l、_ismbcsymbol、_ismbcsymbol_l
 マルチバイト文字が有効な文字または記号かどうかをチェックします。  
@@ -97,9 +98,9 @@ int _ismbcsymbol_l(
 ## <a name="remarks"></a>コメント  
  これらの各関数は特定の条件で特定のマルチバイト文字をテストします。  
   
- これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-|ルーチン|テスト条件|コード ページ 932 の例|  
+|ルーチンによって返される値|テスト条件|コード ページ 932 の例|  
 |-------------|--------------------|---------------------------|  
 |`_ismbclegal`|有効なマルチバイト|`c` の最初のバイトが 0x81 - 0x9F または 0xE0 - 0xFC の範囲内にあり、2 番目のバイトが 0x40 - 0x7E または 0x80 - FC の範囲内にある場合にのみ、0 以外の値を返します。|  
 |`_ismbcsymbol`|マルチバイトの記号|0x8141<=`c`<=0x81AC の場合にのみ、0 以外の値を返します。|  
@@ -111,16 +112,16 @@ int _ismbcsymbol_l(
 |`_istlegal`|常に false を返します|`_ismbclegal`|常に false を返します。|  
 |`_istlegal_l`|常に false を返します|`_ismbclegal_l`|常に false を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbclegal,_ismbclegal_l`|\<mbstring.h>|  
 |`_ismbcsymbol,_ismbcsymbol_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../../c-runtime-library/character-classification.md)   
  [_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)   
  [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)   

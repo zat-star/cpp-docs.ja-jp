@@ -1,34 +1,37 @@
 ---
-title: "インターフェイス メンバーの明示的なオーバーライド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "明示的なオーバーライド (仮想関数の)"
-  - "関数 [C++], オーバーライド"
-  - "インターフェイス メンバー, 明示的なオーバーライド"
-  - "オーバーライド関数"
-  - "仮想関数, 明示的なオーバーライド"
+title: "インターフェイス メンバーの明示的なオーバーライド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- virtual functions, explicit overrides
+- overriding functions
+- interface members, explicit overrides
+- functions [C++], overriding
+- explicit override of virtual function
 ms.assetid: 46f1f536-bf43-4311-9a17-ff2282e528a9
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 85681b2e2aeeb6dbeb6ffdf511827fb1fc1cb029
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# インターフェイス メンバーの明示的なオーバーライド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-クラス内のインターフェイス メンバーの明示的なオーバーライドを宣言する構文が C\+\+ マネージ拡張から [!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] に変更されました。  
+# <a name="explicit-override-of-an-interface-member"></a>インターフェイス メンバーの明示的なオーバーライド
+クラス内で、インターフェイス メンバーの明示的なオーバーライドを宣言する構文は、Visual C を c++ マネージ拡張から変更されました。  
   
- インターフェイスを実装するインターフェイス メンバーのインスタンスをクラス内に 2 つ作成すると便利です。1 つのインスタンスは、クラス オブジェクトがインターフェイス ハンドル経由で操作される場合に使用されます。もう 1 つのインスタンスは、クラス オブジェクトがクラス インターフェイス経由で使用される場合に使用されます。  たとえば、次のようになります。  
+ 多くの場合、インターフェイス ハンドル クラス オブジェクトを操作するときに使用されるいずれかと、クラス インターフェイスを通してクラス オブジェクトを使用する場合に使用される 1 つのインターフェイスを実装するクラス内で、インターフェイス メンバーの 2 つのインスタンスを提供します。 例:  
   
 ```  
 public __gc class R : public ICloneable {  
@@ -40,9 +43,9 @@ public __gc class R : public ICloneable {
 };  
 ```  
   
- マネージ拡張では、これを実現するために、インターフェイス名で修飾されたメソッド名を持つインターフェイス メソッドを明示的に宣言します。  クラスに固有のインスタンスは修飾されません。  このようにすることで、この例では、`R` のインスタンス経由で `Clone` が明示的に呼び出されたときに、その戻り値をダウンキャストする必要がなくなります。  
+ マネージ拡張でこの作業を行う、インターフェイスの名前で修飾メソッドの名前を持つインターフェイス メソッドの明示的な宣言を提供することによりします。 クラスに固有のインスタンスは、修飾されていません。 戻り値をキャストする必要がある`Clone`のインスタンスを明示的に呼び出されたときに、この例では`R`します。  
   
- 新しい構文では、マネージ拡張の構文に代わって、一般的なオーバーライド機構が導入されています。  上記の例は次のように書き換えることができます。  
+ 新しい構文では一般的なオーバーライドする機構が導入されました、マネージ拡張構文を置換します。 この例では、次のように書き換えることができます。  
   
 ```  
 public ref class R : public ICloneable {  
@@ -55,8 +58,8 @@ public:
 };  
 ```  
   
- このように変更するには、明示的にオーバーライドされるインターフェイス メンバーにクラス内で一意の名前を指定する必要があります。  この例では、`InterfaceClone` という不適切な名前を指定しています。  動作はこれまでと同じで、名前を変更した `InterfaceClone,` が `ICloneable` インターフェイス経由で呼び出されます。一方、`R` 型のオブジェクト経由の呼び出しでは、2 つ目の `Clone` インスタンスが呼び出されます。  
+ このリビジョンは、明示的にオーバーライドされているインターフェイスのメンバーである必要があります、クラス内で一意の名前を指定します。 ここでは、私の不適切な名前を指定している`InterfaceClone`です。 動作がも同じ - これまで、`ICloneable`インターフェイスを呼び出す、名前を変更`InterfaceClone`、型のオブジェクトからの呼び出し中に`R`もう 1 つを呼び出す`Clone`インスタンス。  
   
-## 参照  
- [クラスまたはインターフェイス内でのメンバー宣言 \(C\+\+\/CLI\)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
- [Explicit Overrides](../windows/explicit-overrides-cpp-component-extensions.md)
+## <a name="see-also"></a>参照  
+ [クラスまたはインターフェイス内でメンバーの宣言 (C + + CLI)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
+ [明示的なオーバーライド](../windows/explicit-overrides-cpp-component-extensions.md)

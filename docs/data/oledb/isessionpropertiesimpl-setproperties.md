@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2833613789a67219eddaff57b7b6de54fce7f880
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 004123d2643c4fe360caa342fe184d24b138d411
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="isessionpropertiesimplsetproperties"></a>ISessionPropertiesImpl::SetProperties
 プロパティを設定、 **DBPROPSET_SESSION**プロパティ グループです。  
@@ -40,9 +43,9 @@ ms.lasthandoff: 10/24/2017
 #### <a name="parameters"></a>パラメーター  
  参照してください[ISessionProperties::SetProperties](https://msdn.microsoft.com/en-us/library/ms714405.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ISessionPropertiesImpl クラス](../../data/oledb/isessionpropertiesimpl-class.md)   
  [ISessionPropertiesImpl::GetProperties](../../data/oledb/isessionpropertiesimpl-getproperties.md)

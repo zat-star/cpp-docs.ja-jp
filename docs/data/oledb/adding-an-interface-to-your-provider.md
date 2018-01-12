@@ -14,11 +14,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a9a5a383e32a4fa5cb626dee499d5b2262abe37c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: cd67039848eedc0568e68e1e62f6192b822b9f3d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-an-interface-to-your-provider"></a>プロバイダーへのインターフェイスの追加
 (通常のデータ ソース、行セット、コマンド、またはセッション オブジェクトに OLE DB プロバイダー ウィザードによって作成された) インターフェイスを追加するオブジェクトを決定します。 オブジェクトのインターフェイスを追加する必要がありますが、プロバイダーは現在サポートしていない 1 つである可能性がします。 その場合は、ATL OLE DB プロバイダー ウィザード、オブジェクトを作成するを実行します。 クラス ビュー でプロジェクトを右クリックし、をクリックして**クラスの追加**から、**追加** メニューをクリックして**ATL OLE DB プロバイダー**です。 別のディレクトリにインターフェイスのコードを配置し、プロバイダー プロジェクトにファイルをコピーする可能性があります。  
@@ -49,5 +52,5 @@ BEGIN_COM_MAP(CAgentRowset)
 END_COM_MAP()  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレートの操作](../../data/oledb/working-with-ole-db-provider-templates.md)

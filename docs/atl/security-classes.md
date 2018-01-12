@@ -14,11 +14,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 98c325570428699640923711730df8172a43631d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 375f4604e1d6064ce64fc1c74113cfb8d4bddf22
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="security-classes"></a>セキュリティ クラス
 これらのクラスは、共通の Win32 セキュリティ クラスとオブジェクトのラッパーです。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [CTokenPrivileges](../atl/reference/ctokenprivileges-class.md)このクラスは、用のラッパー、 **TOKEN_PRIVILEGES**構造体。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)   
  [セキュリティに関するグローバル関数](../atl/reference/security-global-functions.md)
 

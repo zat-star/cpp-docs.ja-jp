@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -33,8 +32,7 @@ f1_keywords:
 - _wcstoumax_l
 - _tcstoumax_l
 - strtoumax
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _strtoumax_l function
 - conversion functions
@@ -42,30 +40,16 @@ helpviewer_keywords:
 - _wcstoumax_l function
 - strtoumax function
 ms.assetid: 566769f9-495b-4508-b9c6-02217a578897
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 3519fa6a5f1decc4bad385d4204188585afa1630
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 16ac81afeec1fece3f6a5039835b9f950a8b6768
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strtoumax-strtoumaxl-wcstoumax-wcstoumaxl"></a>strtoumax、_strtoumax_l、wcstoumax、_wcstoumax_l
 サポートされる最大の符号なし整数型の整数値に文字列を変換します。  
@@ -113,12 +97,12 @@ uintmax_t _wcstoumax_l(
 ## <a name="return-value"></a>戻り値  
  `strtoumax` はオーバーフローについての変換された値 (ある場合) または `UINTMAX_MAX` を返します。 変換を実行できない場合、`strtoumax` は 0 を返します。 `wcstoumax` 関数の戻り値は、`strtoumax` 関数の戻り値と同じです。 両方の関数とも、オーバーフローまたはアンダーフローが発生した場合、`errno` は `ERANGE` に設定されます。  
   
- リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  これらの関数は入力文字列 `nptr` を `uintmax_t` の整数値に変換します。  
   
- `strtoumax` 関数は、数値の一部として認識できない文字を最初に見つけた時点で、文字列 `nptr` の読み取りを終了します。 これは、終端の null 文字または、`base` 以上の最初の数字の場合があります。 ロケールの `LC_NUMERIC` カテゴリの設定によって、`nptr` の小数点文字が認識されます。 詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `strtoumax` と `wcstoumax` は現在のロケールを使用します。`_strtoumax_l` と `_wcstoumax_l` は渡されたロケールを代わりに使用するという点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `strtoumax` 関数は、数値の一部として認識できない文字を最初に見つけた時点で、文字列 `nptr` の読み取りを終了します。 これは、終端の null 文字または、`base` 以上の最初の数字の場合があります。 ロケールの `LC_NUMERIC` カテゴリの設定によって、`nptr` の小数点文字が認識されます。 詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `strtoumax` と `wcstoumax` は現在のロケールを使用します。`_strtoumax_l` と `_wcstoumax_l` は渡されたロケールを代わりに使用するという点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  `endptr` が `NULL` 以外の場合は、スキャンを停止させた文字へのポインターを `endptr` が指す位置に格納します。 変換できなかった場合 (有効な数字が見つからなかった場合、または無効な base を指定した場合) は、`nptr` の値を `endptr` が指す位置に格納します。  
   
@@ -137,21 +121,21 @@ uintmax_t _wcstoumax_l(
   
  `whitespace` はスペースやタブ文字で構成することができ、無視されます。`digits` は 1 つ以上の 10 進数です。`letters` は 1 つ以上の文字 ('a' ～ 'z' または 'A' ～ 'Z') です。 この形式に一致しない文字を見つけるとスキャンを停止します。 `base` が 2 ～ 36 の間の場合、数値の基数として使用されます。 `base` が 0 の場合、`nptr` が指す文字列の先頭の文字を使用して、基数を判断します。 最初の文字が '0' で、2 番目の文字が 'x' または 'X' 以外の場合、文字列は 8 進数と解釈されます。 最初の文字が '0' で、2 番目の文字が 'x' または 'X' である場合、文字列は 16 進数と解釈されます。 最初の文字が '1' ～ '9' の間の数値の場合、文字列は 10 進数と解釈されます。 'a' ～ 'z' (または 'A' ～ 'Z') の文字には、10 ～ 35 の値が割り当てられています。`base` よりも小さい値が割り当てられている文字のみ許可されます。 基数の範囲外にある文字を最初に見つけた時点で、スキャンは停止されます。 たとえば、`base` が 0 で、スキャンされた最初の文字が '0' の場合、8 進数と見なされ、'8' または '9' の文字が出現すると、スキャンは停止されます。 `strtoumax` により、正符号 (`+`) または負符号 (`-`) のプレフィックスを使用できます。先頭の負符号は、戻り値が変換された文字列の絶対値の 2 つの補数であることを示します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`strtoumax`|\<stdlib.h>|  
 |`wcstoumax`|\<stdlib.h> または \<wchar.h>|  
 |`_strtoumax_l`|\<stdlib.h>|  
 |`_wcstoumax_l`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  [strtod](../../c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l.md) の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [localeconv](../../c-runtime-library/reference/localeconv.md)   

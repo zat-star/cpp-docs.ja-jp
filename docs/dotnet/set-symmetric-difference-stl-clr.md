@@ -15,11 +15,14 @@ caps.latest.revision: "4"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9fbedeb8535b162848b5387c9064a12770fca48f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 9b34cc49c55dc8031b7df3b7facd7b0431fa7c0a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setsymmetricdifference-stlclr"></a>set_symmetric_difference (STL/CLR)
 並べ替えられたソース範囲の一方には属するが、両方には属さないすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。  
@@ -38,10 +41,10 @@ template<class _InIt1, class _InIt2, class _OutIt, class _Pr> inline
 ## <a name="remarks"></a>コメント  
  この関数の動作は、C++ 標準ライブラリ関数と同じ`set_symmetric_difference`です。 詳細については、次を参照してください。 [set_symmetric_difference](../standard-library/algorithm-functions.md#set_symmetric_difference)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext アルゴリズム/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

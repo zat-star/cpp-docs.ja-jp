@@ -1,34 +1,36 @@
 ---
-title: "CCommand クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::CCommand"
-  - "CCommand"
-  - "ATL.CCommand"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CCommand クラス"
+title: "CCommand クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::CCommand
+- CCommand
+- ATL.CCommand
+dev_langs: C++
+helpviewer_keywords: CCommand class
 ms.assetid: 0760bfc5-b9ee-4aee-8e54-31bd78714d3a
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 82fb0dc84253fc5984f2ac9e52b96a27fb47e770
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CCommand クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-メソッドをコマンドを設定し、実行できるようになります。  
+# <a name="ccommand-class"></a>CCommand クラス
+設定し、コマンドを実行するメソッドを提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -45,48 +47,48 @@ class CCommand :
    public TMultiple  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `TAccessor`  
- そのアクセサー クラスの型 \(`CDynamicParameterAccessor`、`CDynamicStringAccessor`、または `CEnumeratorAccessor`など\) を使用するコマンドがあります。  、クラスはサポート パラメーターまたは出力列に指定する既定 `CNoAccessor`です。  
+ アクセサー クラスの型 (など`CDynamicParameterAccessor`、 `CDynamicStringAccessor`、または`CEnumeratorAccessor`) を使用するコマンドを追加することです。 既定値は`CNoAccessor`がクラスいないパラメーターをサポートするか指定します列を出力します。  
   
  `TRowset`  
- その行セット クラスの種類 \(`CArrayRowset` または `CNoRowset`など\) を使用するコマンドがあります。  既定値は、`CRowset` です。  
+ 行セット クラスの型 (など`CArrayRowset`または`CNoRowset`) を使用するコマンドを追加することです。 既定値は、`CRowset` です。  
   
  `TMultiple`  
- 複数の結果を返すことができる OLE DB を指定します。[CMultipleResults](../../data/oledb/cmultipleresults-class.md)コマンドを使用するには、  それ以外の場合は [CNoMultipleResults](../../data/oledb/cnomultipleresults-class.md)を使用します。  詳細については、「[IMultipleResults](https://msdn.microsoft.com/en-us/library/ms721289.aspx)」を参照してください。  
+ 複数の結果を返すことができる OLE DB コマンドを使用して、指定[CMultipleResults](../../data/oledb/cmultipleresults-class.md)です。 それ以外の場合、使用[CNoMultipleResults](../../data/oledb/cnomultipleresults-class.md)です。 詳細については、「 [IMultipleResults](https://msdn.microsoft.com/en-us/library/ms721289.aspx)です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### メソッド  
-  
-|||  
-|-|-|  
-|[&#91;閉じる&#93;](../Topic/CCommand::Close.md)|現在のコマンドを閉じます。|  
-|[GetNextResult](../Topic/CCommand::GetNextResult.md)|複数の結果セットを使用すると、次の結果をフェッチします。|  
-|[&#91;Open&#93;](../../data/oledb/ccommand-open.md)|コマンドを実行し、必要に応じてバインドします。|  
-  
-### 継承されたメソッド  
+### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
-|[Create](../../data/oledb/ccommand-create.md)|指定したセッションの新しいコマンドを作成し、コマンド テキストを設定します。|  
-|[CreateCommand](../Topic/CCommand::CreateCommand.md)|新しいコマンドを作成します。|  
-|[GetParameterInfo](../Topic/CCommand::GetParameterInfo.md)|コマンド パラメーター、名前、およびデータ型のリストを取得します。|  
-|[準備します。](../../data/oledb/ccommand-prepare.md)|現在のコマンドを検証し、最適化します。|  
-|[ReleaseCommand](../Topic/CCommand::ReleaseCommand.md)|パラメーター アクセサーを必要に応じて解放し、コマンドを解放します。|  
-|[SetParameterInfo](../../data/oledb/ccommand-setparameterinfo.md)|各コマンド パラメーターのネイティブ型を指定します。|  
-|[Unprepare](../../data/oledb/ccommand-unprepare.md)|現在のコマンド実行の計画を破棄します。|  
+|[閉じる](../../data/oledb/ccommand-close.md)|現在のコマンドを閉じます。|  
+|[GetNextResult](../../data/oledb/ccommand-getnextresult.md)|セットを複数の結果を使用するときに、次の結果をフェッチします。|  
+|[開く](../../data/oledb/ccommand-open.md)|実行し、必要に応じて、コマンドをバインドします。|  
   
-## 解説  
- パラメーター ベースの操作、またはコマンドを実行するときに、このクラスを使用してください。  だけ単純な行セットを開く必要がある場合 [CTable](../../data/oledb/ctable-class.md) を代わりに使用します。  
+### <a name="inherited-methods"></a>継承されたメソッド  
   
- 使用するアクセサー クラスはバインディング パラメーターとデータのメソッドを決定します。  
+|||  
+|-|-|  
+|[作成します。](../../data/oledb/ccommand-create.md)|指定したセッションの新しいコマンドを作成し、コマンド テキストを設定します。|  
+|[CreateCommand](../../data/oledb/ccommand-createcommand.md)|新しいコマンドを作成します。|  
+|[GetParameterInfo](../../data/oledb/ccommand-getparameterinfo.md)|コマンドのパラメーター、その名前、およびそれらの種類の一覧を取得します。|  
+|[準備します。](../../data/oledb/ccommand-prepare.md)|検証し、現在のコマンドを最適化できます。|  
+|[ReleaseCommand](../../data/oledb/ccommand-releasecommand.md)|必要に応じて、パラメーター アクセサーを解放し、次のコマンドを解放します。|  
+|[SetParameterInfo](../../data/oledb/ccommand-setparameterinfo.md)|各コマンド パラメーターのネイティブな型を指定します。|  
+|[Unprepare](../../data/oledb/ccommand-unprepare.md)|現在のコマンドの実行プランを破棄します。|  
   
- そのプロバイダーがストアド プロシージャをサポートしていないため、Jet で OLE DB のプロバイダーでストアド プロシージャを使用できないことに注意してください。定数だけがクエリ文字列で使用されます。  
+## <a name="remarks"></a>コメント  
+ パラメーターに基づく操作を実行またはコマンドを実行する必要がある場合は、このクラスを使用します。 だけを開くには単純な行セットする必要がある場合を使用して[CTable](../../data/oledb/ctable-class.md)代わりにします。  
   
-## 必要条件  
+ 使用して、アクセサー クラスでは、パラメーターとデータを連結する方法を決定します。  
+  
+ 注ことことはできませんストアド プロシージャを使用する OLE DB Provider for Jet そのプロバイダーがサポートしていないためには、(定数だけをクエリ文字列で使用) の手順が格納されます。  
+  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)

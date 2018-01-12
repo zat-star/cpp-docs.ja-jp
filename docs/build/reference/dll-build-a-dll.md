@@ -1,68 +1,68 @@
 ---
-title: "/DLL (DLL のビルド) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/dll"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/DLL リンカー オプション [C++]"
-  - "-DLL リンカー オプション"
-  - "DLL リンカー オプション [C++]"
-  - "DLL [C++], ビルド"
-  - "エクスポート (DLL を) [C++], 指定 (エクスポートを)"
+title: "DLL (DLL のビルド) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /dll
+dev_langs: C++
+helpviewer_keywords:
+- -DLL linker option
+- /DLL linker option [C++]
+- exporting DLLs [C++], specifying exports
+- DLLs [C++], building
+- DLL linker option [C++]
 ms.assetid: c7685aec-31d0-490f-9503-fb5171a23609
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 28a501590e127e5f27a465366611b4dbf3be175c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /DLL (DLL のビルド)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="dll-build-a-dll"></a>/DLL (DLL のビルド)
 ```  
 /DLL  
 ```  
   
-## 解説  
- \/DLL オプションは、DLL ファイルを主な出力ファイルとしてビルドします。  通常、DLL ファイルには、ほかのプログラムから使用できるエクスポートが取り込まれています。  エクスポートを指定するには、次の 3 とおりの方法 \(推奨順\) があります。  
+## <a name="remarks"></a>コメント  
+ /DLL オプションは、メイン出力ファイルと DLL をビルドします。 通常、DLL には、別のプログラムで使用できるエクスポートが含まれます。 使用の推奨される順序で一覧表示、エクスポートを指定するための 3 つの方法はあります。  
   
-1.  ソース コードでキーワード [\_\_declspec\(dllexport\)](../../cpp/dllexport-dllimport.md) を使う。  
+1.  [方式](../../cpp/dllexport-dllimport.md)のソース コードで  
   
-2.  .def ファイルで [EXPORTS](../Topic/EXPORTS.md) ステートメントを使う。  
+2.  [エクスポート](../../build/reference/exports.md).def ファイル内のステートメント  
   
-3.  LINK コマンドで、[\/EXPORT](../../build/reference/export-exports-a-function.md) 指定を使う。  
+3.  [/Export](../../build/reference/export-exports-a-function.md) LINK コマンド内の指定  
   
- 1 つのプログラムで複数の方法を使用できます。  
+ プログラムでは、1 つ以上のメソッドを使用できます。  
   
- 別の方法としては、モジュール定義ステートメント **LIBRARY** を使って DLL をビルドできます。  \/BASE オプションと \/DLL オプションを併用すると、**LIBRARY** ステートメントと同じ結果になります。  
+ DLL をビルドする別の方法は、**ライブラリ**モジュール定義ステートメントです。 /BASE し、/DLL オプションは一緒に相当する、**ライブラリ**ステートメントです。  
   
- 開発環境では、このオプションを指定しないでください。このオプションはコマンド ライン専用です。  このオプションは、アプリケーション ウィザードを使って DLL プロジェクトを作成するときに設定します。  
+ 開発環境以外では、このオプションを指定しません。このオプションは、コマンドラインでのみ使用されます。 アプリケーション ウィザードを使用して、DLL プロジェクトを作成するときに、このオプションが設定されます。  
   
- .dll をビルドする前の予備ステップでインポート ライブラリを作成する場合は、.dll をビルドするときに、インポート ライブラリのビルド時に渡したものと同じオブジェクト ファイル セットを渡す必要があることに注意してください。  
+ .Dll を作成する前に、準備手順で、インポート ライブラリを作成する場合を渡す必要がある同じ一連のオブジェクト ファイル、.dll を構築するときにインポート ライブラリを構築するときに渡したものとに注意してください。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[構成プロパティ\] フォルダーをクリックします。  
+2.  クリックして、**構成プロパティ**フォルダーです。  
   
-3.  \[全般\] プロパティ ページをクリックします。  
+3.  クリックして、**全般**プロパティ ページ。  
   
-4.  \[構成の種類\] プロパティを変更します。  
+4.  変更、**構成の種類**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCPropertySheet.ConfigurationType%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

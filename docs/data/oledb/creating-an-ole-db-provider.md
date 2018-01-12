@@ -16,16 +16,19 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 07060be0c14adb4d509c23ab88914de4494e6862
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 97d5edb8e65729f8bee68043b316fa74f78fb0da
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-an-ole-db-provider"></a>OLE DB プロバイダーの作成
 ウィザードを使用して ATL COM プロジェクトとプロバイダーを作成し、OLE DB テンプレートを使用してファイルを変更するは、OLE DB プロバイダーを作成することをお勧めします。 プロバイダーをカスタマイズするには、不要なプロパティをコメントおよび省略可能なインターフェイスを追加できます。  
   
- 基本的な手順は次のとおりです。  
+ 基本的な手順を以下に示します。  
   
 1.  ATL プロジェクト ウィザードを使用して、基本的なプロジェクト ファイルと ATL OLE DB プロバイダー ウィザード、プロバイダーを作成するを作成する (選択**ATL OLE DB プロバイダー** Visual C フォルダーから**クラスの追加**)。  
   
@@ -42,6 +45,6 @@ ms.lasthandoff: 10/24/2017
     > [!NOTE]
     >  既定では、ウィザードは、OLE DB レベル 0 に準拠したコードを生成します。 レベル 0 の準拠は、アプリケーションが確実に、削除しないでウィザードで生成されたインターフェイスのいずれかのコードから。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CATDB](http://msdn.microsoft.com/en-us/003d516b-2bf6-444e-8be5-4ebaa0b66046)   
  [DBVIEWER](http://msdn.microsoft.com/en-us/07620f99-c347-4d09-9ebc-2459e8049832)

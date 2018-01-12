@@ -1,48 +1,51 @@
 ---
-title: "プロバイダーでの列の動的な連結 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "列 [C++], 動的な列バインディング"
-  - "動的な列バインディング"
-  - "プロバイダー [C++], 動的な列バインディング"
+title: "プロバイダーで列を動的に結びつける |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- columns [C++], dynamic column binding
+- dynamic column binding
+- providers [C++], dynamic column binding
 ms.assetid: 45e811e3-f5a7-4627-98cc-bf817c4e556e
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f95dde27d6958bd9f1ad40bc411c7c434634879b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# プロバイダーでの列の動的な連結
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-動的な列連結が本当に必要かどうかを確認します。  動的な列バインディングが必要な場合は以下のとおりです。  
+# <a name="dynamically-binding-columns-in-your-provider"></a>プロバイダーでの列の動的な連結
+動的な列バインディングが必要なことを確認してください。 必要があります。  
   
--   行セット列がコンパイル時に定義されていない。  
+-   行セットの列は、コンパイル時に定義されていません。  
   
--   列を追加する要素 \(ブックマークなど\) をサポートする。  
+-   列を追加するブックマークなどの要素をサポートします。  
   
-### 動的な列連結を実装するには  
+### <a name="to-implement-dynamic-column-binding"></a>動的な列バインディングを実装するには  
   
-1.  コードからすべての **PROVIDER\_COLUMN\_MAP** を削除します。  
+1.  すべて削除**PROVIDER_COLUMN_MAP**コードからの秒。  
   
-2.  ユーザー レコード \(構造体\) で次の宣言を追加します。  
+2.  ユーザー レコード (構造体) では、次の宣言を追加します。  
   
     ```  
     static ATLCOLUMNINFO* GetColumnInfo(void* pThis, ULONG* pcCols);  
     ```  
   
-3.  `GetColumnInfo` 関数を実装します。  この関数は、情報の格納方法を設定します。  この関数のプロパティなどの情報が必要な場合があります。  [COLUMN\_ENTRY](../../data/oledb/column-entry.md) マクロと同じようなマクロを作成して、独自の情報を追加できます。  
+3.  実装、`GetColumnInfo`関数。 この関数は、情報を格納する方法をレイアウトします。 プロパティまたはこの関数の他の情報を取得する必要があります。 ようなマクロを作成する場合があります、 [COLUMN_ENTRY](../../data/oledb/column-entry.md)マクロ、独自の情報を追加します。  
   
-     次のコードは `GetColumnInfo` 関数の例です。  
+     次の例は、`GetColumnInfo`関数。  
   
     ```  
     // Check the property flag for bookmarks, if it is set, set the zero  
@@ -95,5 +98,5 @@ caps.handback.revision: 7
     }  
     ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレートの操作](../../data/oledb/working-with-ole-db-provider-templates.md)

@@ -1,32 +1,33 @@
 ---
-title: "binary_delegate_noreturn (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::binary_delegate_noreturn"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "binary_delegate_noreturn 関数 [STL/CLR]"
+title: "binary_delegate_noreturn (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::binary_delegate_noreturn
+dev_langs: C++
+helpviewer_keywords: binary_delegate_noreturn function [STL/CLR]
 ms.assetid: 055c7e9d-e5c3-48fe-9327-3f6316e8a51e
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 4530b4710b7e4e9ea074c11f53f210ba6bf9dfbf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# binary_delegate_noreturn (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-genereic クラスは、2 引数のデリゲートを返します `void`説明します。  引数の観点からは、指定するデリゲートを使用します。  
+# <a name="binarydelegatenoreturn-stlclr"></a>binary_delegate_noreturn (STL/CLR)
+Genereic クラスの説明を返す 2 つの引数のデリゲート`void`です。 使用する引数の観点からデリゲートを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 generic<typename Arg1,  
@@ -34,31 +35,31 @@ generic<typename Arg1,
     delegate void binary_delegate(Arg1, Arg2);  
 ```  
   
-#### パラメーター  
- Arg1  
+#### <a name="parameters"></a>パラメーター  
+ arg1  
  最初の引数の型。  
   
- Arg2  
+ arg2  
  2 番目の引数の型。  
   
-## 解説  
- genereic デリゲートは、その 2 引数を関数の戻り `void`説明します。  
+## <a name="remarks"></a>コメント  
+ Genereic デリゲートの説明を返す 2 つの引数関数`void`です。  
   
- これで T: System.ComponentModel.IComponent  
+ 注意してください。  
   
  `binary_delegate_noreturn<int, int> Fun1;`  
   
  `binary_delegate_noreturn<int, int> Fun2;`  
   
- では、型 `Fun1` と `Fun2` はシノニムです:  
+ 種類`Fun1`と`Fun2`シノニムでは、中に。  
   
  `delegate void Fun1(int, int);`  
   
  `delegate void Fun2(int, int);`  
   
- これらは同じデータ型ではありません。  
+ 同じ型ではありません。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_binary_delegate_noreturn.cpp   
@@ -85,15 +86,18 @@ int main()
   
 ```  
   
-  **比較 \(a、a\) \= false**  
-**比較 \(a、b\) \= True を**  
-**比較 \(a、b\) \= false**   
-## 必要条件  
- **ヘッダー:** の \<cliext と機能\>  
+```Output  
+compare(a, a) = False  
+compare(a, b) = True  
+compare(b, a) = False  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/機能 >  
   
-## 参照  
- [binary\_delegate](../Topic/binary_delegate%20\(STL-CLR\).md)   
- [unary\_delegate](../dotnet/unary-delegate-stl-clr.md)   
- [unary\_delegate\_noreturn](../dotnet/unary-delegate-noreturn-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [binary_delegate (STL/CLR)](../dotnet/binary-delegate-stl-clr.md)   
+ [unary_delegate (STL/CLR)](../dotnet/unary-delegate-stl-clr.md)   
+ [unary_delegate_noreturn (STL/CLR)](../dotnet/unary-delegate-noreturn-stl-clr.md)

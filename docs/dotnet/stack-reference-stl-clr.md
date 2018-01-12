@@ -1,41 +1,42 @@
 ---
-title: "stack::reference (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stack::reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "reference メンバー [STL/CLR]"
+title: "stack::reference (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::stack::reference
+dev_langs: C++
+helpviewer_keywords: reference member [STL/CLR]
 ms.assetid: 05c8fb2c-215c-4b83-80f9-d4d354577c6a
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 543170c470b0cbaec10b16ecfc7fe4f2b289ee22
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# stack::reference (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="stackreference-stlclr"></a>stack::reference (STL/CLR)
 要素への参照の型です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef value_type% reference;  
 ```  
   
-## 解説  
- 型は要素への参照を表します。  
+## <a name="remarks"></a>コメント  
+ この型は、要素への参照を表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_stack_reference.cpp   
@@ -66,14 +67,17 @@ int main()
   
 ```  
   
-  **b c**  
- **b X**   
-## 必要条件  
- **ヘッダー:** \<cliext とスタック\>  
+```Output  
+a b c  
+a b x  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/stack >  
   
-## 参照  
- [スタック](../dotnet/stack-stl-clr.md)   
- [stack::const\_reference](../dotnet/stack-const-reference-stl-clr.md)   
- [stack::value\_type](../dotnet/stack-value-type-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [stack::const_reference (STL/CLR)](../dotnet/stack-const-reference-stl-clr.md)   
+ [stack::value_type (STL/CLR)](../dotnet/stack-value-type-stl-clr.md)

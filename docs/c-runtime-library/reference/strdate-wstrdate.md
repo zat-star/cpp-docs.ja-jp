@@ -44,11 +44,12 @@ caps.latest.revision: "26"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e398363fd12853b06644019201028067cf10f7dd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 54c7aa7fda123e811f23c2cc4b9e8d81f76966df
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strdate-wstrdate"></a>_strdate、_wstrdate
 現在のシステム日付をバッファーにコピーします。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_strdate_s、_wstrdate_s](../../c-runtime-library/reference/strdate-s-wstrdate-s.md)」をご覧ください。  
@@ -84,7 +85,7 @@ wchar_t *_wstrdate(
   
  `_strdate` 関数は、現在のシステム日付を `datestr` が指すバッファーに `mm`/`dd`/`yy` の書式設定でコピーします。`mm` は月を表す 2 桁、`dd` は日を表す 2 桁、`yy` は西暦年の下 2 桁です。 たとえば、文字列 `12/05/99` は、1999 年 12 月 5 日を表します。 バッファーは 9 バイト以上の長さである必要があります。  
   
- `datestr` が `NULL` ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、`errno` を `EINVAL` に設定します。  
+ `datestr` が `NULL` ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
   
  ワイド文字を扱う場合は、`_wstrdate` ではなく `_strdate` を使用します。`_wstrdate` の場合、引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
   
@@ -96,14 +97,14 @@ wchar_t *_wstrdate(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tstrdate`|`_strdate`|`_strdate`|`_wstrdate`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strdate`|\<time.h>|  
 |`_wstrdate`|\<time.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -131,7 +132,7 @@ int main()
 OS date: 04/25/03  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
  [ctime、_ctime32、_ctime64、_wctime、_wctime32、_wctime64](../../c-runtime-library/reference/ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)   

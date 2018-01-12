@@ -1,36 +1,38 @@
 ---
-title: "CDBErrorInfo::GetAllErrorInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CDBErrorInfo.GetAllErrorInfo"
-  - "CDBErrorInfo::GetAllErrorInfo"
-  - "ATL::CDBErrorInfo::GetAllErrorInfo"
-  - "GetAllErrorInfo"
-  - "CDBErrorInfo.GetAllErrorInfo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetAllErrorInfo メソッド"
+title: "Cdberrorinfo::getallerrorinfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL.CDBErrorInfo.GetAllErrorInfo
+- CDBErrorInfo::GetAllErrorInfo
+- ATL::CDBErrorInfo::GetAllErrorInfo
+- GetAllErrorInfo
+- CDBErrorInfo.GetAllErrorInfo
+dev_langs: C++
+helpviewer_keywords: GetAllErrorInfo method
 ms.assetid: 630049fa-d296-497a-bbf6-f5d3d71d271d
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 46e233800f814b39e4e14f0b357c381a3e71311e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CDBErrorInfo::GetAllErrorInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-エラー レコードに含まれるエラー情報のすべての型を返します。  
+# <a name="cdberrorinfogetallerrorinfo"></a>CDBErrorInfo::GetAllErrorInfo
+すべての種類のエラー レコードに含まれているエラー情報を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -45,40 +47,40 @@ caps.handback.revision: 10
 ) const throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *ulRecordNum*  
- \[\]エラー情報を返すレコードのインデックス番号が 0 から始まるの数。  
+ [in]エラー情報を取得するレコードの 0 から始まる番号。  
   
  `lcid`  
- \[\]返されるエラー情報のロケール ID。  
+ [in]返されるエラー情報のロケール ID。  
   
  `pbstrDescription`  
- \[\]ロケールがサポートされていない場合は、エラーまたは null のテキスト説明へのポインター。  「解説」を参照してください。  
+ [out]エラーまたはロケールはサポートされていない場合は NULL のテキストの説明へのポインター。 「解説」を参照してください。  
   
  `pbstrSource`  
- \[\]文字列へのポインター。エラーが発生したコンポーネントの名前。  
+ [out]エラーを生成したコンポーネントの名前を含む文字列へのポインター。  
   
  `pguid`  
- \[\]エラーを定義するインターフェイスの GUID へのポインター。  
+ [out]エラーを定義するインターフェイスの GUID へのポインター。  
   
  *pdwHelpContext*  
- \[\]エラーのヘルプ コンテキスト ID へのポインター。  
+ [out]エラーのヘルプ コンテキスト ID へのポインター。  
   
  *pbstrHelpFile*  
- \[\]文字列へのポインター。エラーを説明するヘルプ ファイルのパス。  
+ [out]エラーを説明するヘルプ ファイルへのパスを含む文字列へのポインター。  
   
-## 戻り値  
- 正常に終了した場合は `S_OK`。  他の戻り値の *OLE DB Programmer's Reference* の [IErrorRecords::GetErrorInfo](https://msdn.microsoft.com/en-us/library/ms711230.aspx) を参照してください。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は、`S_OK`。 参照してください[IErrorRecords::GetErrorInfo](https://msdn.microsoft.com/en-us/library/ms711230.aspx)で、 *OLE DB プログラマーズ リファレンス*の他の戻り値。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 解説  
- `pbstrDescription` の出力値を null に値を設定する IErrorInfo::GetDescription を呼び出してロケールがサポートされていない場合、または次の両方の条件が true の場合、内部的により、:  
+## <a name="remarks"></a>コメント  
+ 出力値`pbstrDescription`呼び出し ierrorinfo::getdescription、ロケールがサポートされていない場合、または、次の条件の両方に該当する場合、値を NULL に設定するによって内部的に取得されます。  
   
-1.  `lcid` の値は米国の英語ではありません。  
+1.  値`lcid`米国ではありません英語と  
   
-2.  `lcid` の値は GetUserDefaultLCID によって返される値と同等です。  
+2.  値`lcid`は GetUserDefaultLCID によって返される値と等しくないです。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CDBErrorInfo クラス](../../data/oledb/cdberrorinfo-class.md)

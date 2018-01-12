@@ -33,37 +33,22 @@ f1_keywords:
 - math/exp2f
 - exp2l
 - math/exp2l
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - exp2 function
 - exp2f function
 - exp2l function
 ms.assetid: 526e3e10-201a-4610-a886-533f44ece344
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 4c3e31359c096dddfc7d71dcd7887c405b9aa0af
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 2ceff966e289fd3118cdd515fb4fbc288080b0f3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="exp2-exp2f-exp2l"></a>exp2、exp2f、exp2l
 2 の指定した値を計算します。  
@@ -99,7 +84,7 @@ long double exp2l(
 ## <a name="return-value"></a>戻り値  
  成功した場合の 2 を底と指数を返します`x`、つまり、2<sup>x</sup>です。 それ以外の場合、次の値のいずれかを返します。  
   
-|懸案事項|リターン|  
+|懸案事項|Return|  
 |-----------|------------|  
 |`x` = ±0|1|  
 |`x` = -INFINITY|+0|  
@@ -113,15 +98,15 @@ long double exp2l(
 ## <a name="remarks"></a>コメント  
  C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます`exp2`を受け取り、返します**float**と**long double**型です。 C プログラムでは、`exp2`常に受け取りを返す、**二重**です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|C ヘッダー|C++ ヘッダー|  
+|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
 |-------------|--------------|------------------|  
 |`exp`、`expf`、`expl`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [exp、expf、策の説明](../../c-runtime-library/reference/exp-expf.md)   
  [log2、log2f、log2l](../../c-runtime-library/reference/log2-log2f-log2l.md)

@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 98f38436b7804faa67679bc1890c4338912b80c4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f686536568db56ee6469221588f74fad2c294da9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ml-nonfatal-error-a2019"></a>ML の致命的でないエラー A2019
 **オペランドは、レコードの種類またはフィールドをする必要があります。**  
@@ -28,5 +29,5 @@ ms.lasthandoff: 10/24/2017
   
  [幅](../../assembler/masm/operator-width.md)演算子は、フィールドまたはレコードの名前を表すオペランドを受け取る。 [マスク](../../assembler/masm/operator-mask.md)操作は、フィールドまたはレコードの種類の名前は、オペランドを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

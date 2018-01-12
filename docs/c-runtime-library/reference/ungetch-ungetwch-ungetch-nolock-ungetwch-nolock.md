@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -37,8 +36,7 @@ f1_keywords:
 - _ungettch_nolock
 - _ungettch
 - _ungetwch_nolock
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _ungetch function
 - ungetwch function
@@ -53,30 +51,16 @@ helpviewer_keywords:
 - ungetwch_nolock function
 - _ungetwch function
 ms.assetid: 70ae71c6-228c-4883-a57d-de6d5f873825
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 4c36da30cfc69140a47e779025acb579bb687df2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: f853b32f22da872c918fbc60137606b651390827
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ungetch-ungetwch-ungetchnolock-ungetwchnolock"></a>_ungetch、_ungetwch、_ungetch_nolock、_ungetwch_nolock
 コンソールから読み取った最後の文字をプッシュします。  
@@ -106,7 +90,7 @@ wint_t _ungetwch_nolock(
  プッシュする文字。  
   
 ## <a name="return-value"></a>戻り値  
- 成功した場合は、どちらの関数も文字 `c` を返します。 エラーがある場合`_ungetch`に値を返します`EOF`と`_ungetwch`返します`WEOF`です。  
+ 成功した場合は、どちらの関数も文字 `c` を返します。 エラーがある場合`_ungetch`の値を返します`EOF`と`_ungetwch`返します`WEOF`です。  
   
 ## <a name="remarks"></a>コメント  
  これらの関数は、文字をプッシュ`c`、コンソールに戻って原因`c`によって読み取られた次の文字である`_getch`または`_getche`(または`_getwch`または`_getwche`)。 次が読み取られる前に複数回呼び出されると、`_ungetch` および `_ungetwch` は失敗します。 `c` 引数は `EOF` (または `WEOF`) にはならない場合があります。  
@@ -120,14 +104,14 @@ wint_t _ungetwch_nolock(
 |`_ungettch`|`_ungetch`|`_ungetch`|`_ungetwch`|  
 |`_ungettch_nolock`|`_ungetch_nolock`|`_ungetch_nolock`|`_ungetwch_nolock`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ungetch`, `_ungetch_nolock`|\<conio.h>|  
 |`_ungetwch`, `_ungetwch_nolock`|\<conio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -171,7 +155,7 @@ int main( void )
 Whitetoken = White  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   
  [_cscanf、_cscanf_l、_cwscanf、_cwscanf_l](../../c-runtime-library/reference/cscanf-cscanf-l-cwscanf-cwscanf-l.md)   
  [_getch、_getwch](../../c-runtime-library/reference/getch-getwch.md)

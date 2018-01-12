@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e42bbe4f724f711f407072c12a61ae9abbaca07d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 043ad96ada12467ce9c2ff39c9e337e0da9d2391
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="masm-macros"></a>MASM マクロ
 使用を簡略化するために、[生の擬似演算](../build/raw-pseudo-operations.md)、一般的な手順のプロローグおよびエピローグの作成に使用できる ksamd64.inc で定義されているマクロのセットがあります。  
@@ -67,5 +68,5 @@ ret
 sample2 ENDP  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MASM のアンワインド ヘルパー](../build/unwind-helpers-for-masm.md)

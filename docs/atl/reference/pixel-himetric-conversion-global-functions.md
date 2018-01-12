@@ -1,46 +1,33 @@
 ---
-title: "ピクセル HIMETRIC グローバル関数を作成する |Microsoft ドキュメント"
+title: "ピクセル HIMETRIC 変換のグローバル関数 |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs:
-- C++
+f1_keywords:
+- atlwin/ATL::AtlHiMetricToPixel
+- atlwin/ATL::AtlPixelToHiMetric
+dev_langs: C++
 ms.assetid: ecb1b1b2-7e9d-4fbc-a855-16252d2d794c
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: efb7e7da896aea4e377225f4c1e2c9948e635705
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 9d670d667345c233fc499cda42194dfafa185dfe
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pixelhimetric-conversion-global-functions"></a>ピクセル/HIMETRIC 変換のグローバル関数
 これらの関数は、ピクセルと HIMETRIC 単位に変換するためのサポートを提供します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでは、次の表に示されている関数を使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  次の表に示す関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 |||  
 |-|-|  
@@ -65,9 +52,9 @@ extern void AtlHiMetricToPixel(
  [out]オブジェクトのサイズ (ピクセル単位) が返されるへのポインター。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_COM 番号&49;](../../atl/codesnippet/cpp/pixel-himetric-conversion-global-functions_1.cpp)]  
+ [!code-cpp[NVC_ATL_COM#49](../../atl/codesnippet/cpp/pixel-himetric-conversion-global-functions_1.cpp)]  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="atlpixeltohimetric"></a>AtlPixelToHiMetric  
@@ -84,14 +71,13 @@ extern void AtlPixelToHiMetric(
  [in]オブジェクトのサイズ (ピクセル単位) へのポインター。  
   
  `lpSizeInHiMetric`  
- [out]HIMETRIC 単位のオブジェクトのサイズが返されるへのポインター。  
+ [out]オブジェクトのサイズを HIMETRIC 単位が返されるへのポインター。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_COM&51;](../../atl/codesnippet/cpp/pixel-himetric-conversion-global-functions_2.cpp)]  
+ [!code-cpp[NVC_ATL_COM#51](../../atl/codesnippet/cpp/pixel-himetric-conversion-global-functions_2.cpp)]  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../atl/reference/atl-functions.md)
-

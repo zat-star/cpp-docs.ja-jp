@@ -34,11 +34,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 82041367fe6cf320138d52b905f1eff7d3d54d3b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5bebef156656ba3618c216ad8266e1baf5dd7f9b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resetstkoflw"></a>_resetstkoflw
 スタック オーバーフローから復元します。  
@@ -104,13 +105,13 @@ int _resetstkoflw ( void );
   
  構造化例外処理は検出されません、`STATUS_STACK_OVERFLOW`アプリケーションをコンパイルしたときに例外`/clr`(を参照してください[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md))。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_resetstkoflw`|\<malloc.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
  **ライブラリ:** [CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)のすべてのバージョンです。  
   
@@ -311,5 +312,5 @@ Stack overflow!
 Recovered from stack overflow and allocated 100,000 bytes using _alloca.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_alloca](../../c-runtime-library/reference/alloca.md)

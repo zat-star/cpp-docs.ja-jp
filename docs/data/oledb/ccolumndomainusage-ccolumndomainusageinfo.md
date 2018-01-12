@@ -53,11 +53,14 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e158e5ad1380ec36383fac7bca8329af192857aa
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: d6f60436d0ae412489862d07a79f4d42e6c568ba
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccolumndomainusage-ccolumndomainusageinfo"></a>CColumnDomainUsage、CColumnDomainUsageInfo
 Typedef クラスを呼び出す**CColumnDomainUsage**そのパラメーター クラスを実装する**CColumnDomainUsageInfo**です。  
@@ -81,8 +84,8 @@ Typedef クラスを呼び出す**CColumnDomainUsage**そのパラメーター �
 |m_guidColumn|COLUMN_GUID|  
 |m_nColumnPropID|COLUMN_PROPID|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

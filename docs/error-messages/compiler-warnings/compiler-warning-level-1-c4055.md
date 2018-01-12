@@ -1,5 +1,3 @@
----
----
 # <a name="compiler-warning-level-1-c4055"></a>コンパイラの警告 (レベル 1) C4055  
   
 'conversion' : 'type1' データ ポインターが 'type2' 関数ポインターへキャストされています  

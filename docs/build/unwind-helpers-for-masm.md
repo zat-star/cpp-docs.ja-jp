@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 83519f28361505b9c227c7db5522bfffcc5133a8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d7c80606f72e8c9ebfbd14290de1128a982433a5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unwind-helpers-for-masm"></a>MASM のアンワインド ヘルパー
 適切なアセンブリ ルーチンを記述するためには、並列実際のアセンブリ命令に適切な .pdata および .xdata を作成するために使用する擬似演算のセット。 あるも一連のマクロを提供するには、最もよく使用される擬似演算の使用が簡素化します。  
@@ -29,5 +30,5 @@ ms.lasthandoff: 10/24/2017
   
 -   [MASM マクロ](../build/masm-macros.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理 (x64)](../build/exception-handling-x64.md)

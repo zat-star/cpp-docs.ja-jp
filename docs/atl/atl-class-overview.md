@@ -1,59 +1,60 @@
 ---
-title: "ATL クラスの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.atl.classes"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, クラス参照"
-  - "クラス [C++], ATL"
+title: "ATL クラスの概要 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.atl.classes
+dev_langs: C++
+helpviewer_keywords:
+- classes [C++], ATL
+- ATL, class reference
 ms.assetid: c38ac93d-c3a2-4ce7-8153-f1d34c0f0fa6
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: fef95bb108f6d38f6196b324360b60635b1a9b64
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ATL クラスの概要
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Active Template Library \(ATL\) のクラスは次のような種類があります:  
+# <a name="atl-class-overview"></a>ATL クラスの概要
+クラス アクティブ テンプレート ライブラリ (ATL) では、次のように分類できます。  
   
 |||  
 |-|-|  
-|[クラス ファクトリ](../Topic/Class%20Factories%20Classes.md)|[メモリ管理](../atl/memory-management-classes.md)|  
+|[クラス ファクトリ](../atl/class-factories-classes.md)|[メモリ管理](../atl/memory-management-classes.md)|  
 |[クラス情報](../atl/class-information-classes.md)|[MMC スナップイン](../atl/mmc-snap-in-classes.md)|  
-|[Collection](../Topic/Collection%20Classes.md)|[オブジェクトの安全性](../atl/object-safety-classes.md)|  
-|[COM モジュール](../atl/com-modules-classes.md)|[永続化](../atl/persistence-classes.md)|  
+|[コレクション](../atl/collection-classes.md)|[オブジェクトの安全性](../atl/object-safety-classes.md)|  
+|[COM モジュール](../atl/com-modules-classes.md)|[永続性](../atl/persistence-classes.md)|  
 |[複合コントロール](../atl/composite-controls-classes.md)|[プロパティとプロパティ ページ](../atl/properties-and-property-pages-classes.md)|  
-|[コネクション ポイント](../atl/connection-points-classes.md)|[レジストリのサポート](../atl/registry-support-classes.md)|  
-|[コンテインメントを制御します。](../atl/control-containment-classes.md)|[実行中のオブジェクト](../atl/running-objects-classes.md)|  
-|[コントロール: 一般のサポート](../atl/controls-general-support-classes.md)|[セキュリティ](../Topic/Security%20Classes.md)|  
-|[データ転送](../atl/data-transfer-classes.md)|[サービス プロバイダーのサポート](../Topic/Service%20Provider%20Support%20Classes.md)|  
-|[データ型](../atl/data-types-classes.md)|[サイト情報](../atl/site-information-classes.md)|  
-|[デバッグと例外](../atl/debugging-and-exceptions-classes.md)|[文字列とテキスト](../Topic/String%20and%20Text%20Classes.md)|  
+|[接続ポイント](../atl/connection-points-classes.md)|[レジストリのサポート](../atl/registry-support-classes.md)|  
+|[コントロール コンテインメント](../atl/control-containment-classes.md)|[実行中のオブジェクト](../atl/running-objects-classes.md)|  
+|[コントロール: 一般的なサポート](../atl/controls-general-support-classes.md)|[セキュリティ](../atl/security-classes.md)|  
+|[データ転送](../atl/data-transfer-classes.md)|[サービス プロバイダーのサポート](../atl/service-provider-support-classes.md)|  
+|[データの種類](../atl/data-types-classes.md)|[サイトの情報](../atl/site-information-classes.md)|  
+|[デバッグと例外](../atl/debugging-and-exceptions-classes.md)|[文字列とテキスト](../atl/string-and-text-classes.md)|  
 |[デュアル インターフェイス](../atl/dual-interfaces-classes.md)|[ティアオフ インターフェイス](../atl/tear-off-interfaces-classes.md)|  
 |[列挙子とコレクション](../atl/enumerators-and-collections-classes.md)|[スレッド プール](../atl/thread-pooling-classes.md)|  
-|[エラー情報](../atl/error-information-classes.md)|[スレッド モデルとクリティカル セクション](../atl/threading-models-and-critical-sections-classes.md)|  
-|[ファイル処理](../atl/file-handling-classes.md)|[UI のサポート](../Topic/UI%20Support%20Classes.md)|  
+|[エラー情報](../atl/error-information-classes.md)|[スレッド モデルと重要なセクション](../atl/threading-models-and-critical-sections-classes.md)|  
+|[ファイル処理](../atl/file-handling-classes.md)|[UI のサポート](../atl/ui-support-classes.md)|  
 |[インターフェイス ポインター](../atl/interface-pointers-classes.md)|[Windows のサポート](../atl/windows-support-classes.md)|  
-|[IUnknown の実装](../Topic/IUnknown%20Implementation%20Classes.md)|[ユーティリティ](../atl/utility-classes.md)|  
+|[IUnknown の実装](../atl/iunknown-implementation-classes.md)|[ユーティリティ](../atl/utility-classes.md)|  
   
- ATL プロジェクトで使用できる追加のクラスに [共有クラス](../atl-mfc-shared/atl-mfc-shared-classes.md)を参照してください。  
+ ATL プロジェクトで使用できる他のクラスでは、次を参照してください。[共有クラス](../atl-mfc-shared/atl-mfc-shared-classes.md)です。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [クラス](../atl/reference/atl-classes.md)   
  [ATL COM デスクトップ コンポーネント](../atl/atl-com-desktop-components.md)   
  [関数](../atl/reference/atl-functions.md)   
- [グローバル変数](../Topic/ATL%20Global%20Variables.md)   
+ [グローバル変数](../atl/reference/atl-global-variables.md)   
  [マクロ](../atl/reference/atl-macros.md)   
  [構造体](../atl/reference/atl-structures.md)   
- [typedef](../atl/reference/atl-typedefs.md)
+ [Typedef](../atl/reference/atl-typedefs.md)
+

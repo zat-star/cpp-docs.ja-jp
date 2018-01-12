@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d9e62987a0007c01499cf4e4477d643fff9f65c3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 70c010cf3806581c6b77bb508f3adb68e3c230f0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resolving-ambiguous-declarations-c"></a>あいまいな宣言 (C++) の解決
 特定の型から別の型に明示的に変換するには、キャストを使用し、目的の型名を指定する必要があります。 一部の型キャストでは、構文にあいまいさが発生します。 次の関数形式の型キャストはあいまいです。  
@@ -42,5 +43,5 @@ char *aName = String( s );
   
  オブジェクト、およびユーザー定義型から変換の宣言では明らかに`String`入力**char \*** の初期化を行うために呼び出される`aName`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  

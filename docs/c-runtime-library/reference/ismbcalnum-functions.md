@@ -57,11 +57,12 @@ caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3ad428851bd89dd2e9efd49a900ccdc28066b246
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 40566a3f4f6855da3a7ee7d122357f392d234ff0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ismbcalnum-ismbcalnuml-ismbcalpha-ismbcalphal-ismbcdigit-ismbcdigitl"></a>_ismbcalnum、_ismbcalnum_l、_ismbcalpha、_ismbcalpha_l、_ismbcdigit、_ismbcdigit_l
 マルチバイト文字が英数字、英字、または数字であるかどうかをチェックします。  
@@ -114,25 +115,25 @@ int _ismbcdigit_l
 ## <a name="remarks"></a>コメント  
  これらの各ルーチンは特定の条件で特定のマルチバイト文字をテストします。  
   
- これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-|ルーチン|テスト条件|コード ページ 932 の例|  
+|ルーチンによって返される値|テスト条件|コード ページ 932 の例|  
 |-------------|--------------------|---------------------------|  
 |`_ismbcalnum,_ismbcalnum_l`|英数字|`c` が ASCII の英字の 1 バイト表現である場合に限り、0 以外の値を返します。`_ismbcdigit` と `_ismbcalpha` の例を参照してください。|  
 |`_ismbcalpha,_ismbcalpha_l`|alphabetic|`c` が ASCII の英字 (0x41<=`c`<=0x5A または 0x61<=`c`<=0x7A) またはカタカナ (0xA6<=`c`<=0xDF) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
 |`_ismbcdigit,_ismbcdigit`|数字|`c` が ASCII 数字 (0x30<=`c`<=0x39) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbcalnum,_ismbcalnum_l`|\<mbstring.h>|  
 |`_ismbcalpha,_ismbcalpha_l`|\<mbstring.h>|  
 |`_ismbcdigit,_ismbcdigit_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../../c-runtime-library/character-classification.md)   
  [_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)   
  [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)   

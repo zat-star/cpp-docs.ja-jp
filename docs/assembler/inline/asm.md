@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: df1beb4353a537d9e22147fd8dcb79810632c111
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 75a5d272e4ac26b87728506e45759733ffa26472
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="asm"></a>__asm
 **Microsoft 固有の仕様**  
@@ -94,6 +95,6 @@ __asm mov al, 2   __asm mov dx, 0xD007   __asm out dx, al
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../../cpp/keywords-cpp.md)   
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

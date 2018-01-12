@@ -17,11 +17,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 77007b3d3805bb2fa159680c88d8e41825336da2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 57854ec15d3104d80e8dbba68ebc33937222172f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="constructors-c"></a>コンストラクター (C++)
 コンストラクターは、そのクラスのインスタンスを初期化する一種のメンバー関数です。 コンストラクターにはクラスと同じ名前があり、戻り値はありません。 コンストラクターは任意の数のパラメーターを持つことができ、クラスは任意の数のオーバーロードされたコンストラクターを持つことができます。 コンストラクターには、"public"、"protected"、"private" の中から任意のアクセシビリティを設定できます。 コンストラクターを定義していない場合、パラメーターを受け取らない既定のコンストラクターがコンパイラによって生成されます。既定のコンストラクターを削除済みとして宣言することで、この動作をオーバーライドできます。  

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -84,35 +83,19 @@ f1_keywords:
 - ATLCTL/ATL::CComControlBase::m_spDataAdviseHolder
 - ATLCTL/ATL::CComControlBase::m_spInPlaceSite
 - ATLCTL/ATL::CComControlBase::m_spOleAdviseHolder
-dev_langs:
-- C++
-helpviewer_keywords:
-- CComControlBase class
+dev_langs: C++
+helpviewer_keywords: CComControlBase class
 ms.assetid: 3d1bf022-acf2-4092-8283-ff8cee6332f3
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 7ad253d42c916ec957ef1e6f5067027696103c79
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: d6109bfaf29ee26053bc1dcbb5af8f56a0612215
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomcontrolbase-class"></a>CComControlBase クラス
 このクラスは、作成して、ATL コントロールを管理するためのメソッドを提供します。  
@@ -146,7 +129,7 @@ class ATL_NO_VTABLE CComControlBase
 |名前|説明|  
 |----------|-----------------|  
 |[CComControlBase::ControlQueryInterface](#controlqueryinterface)|要求されたインターフェイスへのポインターを取得します。|  
-|[CComControlBase::DoesVerbActivate](#doesverbactivate)|確認、`iVerb`で使用されるパラメーター`IOleObjectImpl::DoVerb`コントロールのユーザー インターフェイスをアクティブにするか ( `iVerb` equals `OLEIVERB_UIACTIVATE`)、ユーザー コントロールをダブルクリックしたときに実行されるアクションを定義します (`iVerb`と等しい`OLEIVERB_PRIMARY`)、コントロールが表示されます (`iVerb`と等しい`OLEIVERB_SHOW`)、またはコントロールをアクティブ化 (`iVerb`と等しい**OLEIVERB_INPLACEACTIVATE**)。|  
+|[CComControlBase::DoesVerbActivate](#doesverbactivate)|確認、`iVerb`で使用されるパラメーター`IOleObjectImpl::DoVerb`コントロールのユーザー インターフェイスをアクティブにするか ( `iVerb` equals `OLEIVERB_UIACTIVATE`)、ユーザーがコントロールをダブルクリックしたときに実行されるアクションを定義します ( `iVerb` に等しい`OLEIVERB_PRIMARY`)、コントロールが表示されます ( `iVerb` equals `OLEIVERB_SHOW`)、またはコントロールをアクティブ化 ( `iVerb` equals **OLEIVERB_INPLACEACTIVATE**)。|  
 |[CComControlBase::DoesVerbUIActivate](#doesverbuiactivate)|確認、`iVerb`で使用されるパラメーター`IOleObjectImpl::DoVerb`コントロールのユーザー インターフェイスをアクティブ化してを返します**TRUE**です。|  
 |[CComControlBase::DoVerbProperties](#doverbproperties)|コントロールのプロパティ ページを表示します。|  
 |[CComControlBase::FireViewChange](#fireviewchange)|コントロールを再描画するコンテナーを確認するには、このメソッドを呼び出すか、コントロールのビューが変更された登録済みアドバイズ シンクに通知します。|  
@@ -155,7 +138,7 @@ class ATL_NO_VTABLE CComControlBase
 |[用意されています](#getambientbackcolor)|取得**DISPID_AMBIENT_BACKCOLOR**、コンテナーによって定義されている、すべてのコントロールのアンビエント背景色。|  
 |[CComControlBase::GetAmbientCharSet](#getambientcharset)|取得**DISPID_AMBIENT_CHARSET**、アンビエント文字セットのコンテナーで定義されているすべてのコントロールです。|  
 |[CComControlBase::GetAmbientCodePage](#getambientcodepage)|取得**ことにあります**、アンビエント文字セットのコンテナーで定義されているすべてのコントロールです。|  
-|[CComControlBase::GetAmbientDisplayAsDefault](#getambientdisplayasdefault)|取得**DISPID_AMBIENT_DISPLAYASDEFAULT**はフラグ**TRUE**かどうか、コンテナーには、このサイトを既定のボタンで、コントロールがマークされているし、そのため、ボタン コントロールが作成されます自体太いフレーム。|  
+|[CComControlBase::GetAmbientDisplayAsDefault](#getambientdisplayasdefault)|取得**DISPID_AMBIENT_DISPLAYASDEFAULT**、あるフラグ**TRUE**場合は、コンテナーが既定のボタンにするには、このサイト内のコントロールをマークし、したがってボタン コントロールが描画するのには、自ら、太くフレームです。|  
 |[CComControlBase::GetAmbientDisplayName](#getambientdisplayname)|取得**DISPID_AMBIENT_DISPLAYNAME**コンテナーがコントロールに指定した名前です。|  
 |[CComControlBase::GetAmbientFont](#getambientfont)|取得、コンテナーへのポインターのアンビエント`IFont`インターフェイスです。|  
 |[CComControlBase::GetAmbientFontDisp](#getambientfontdisp)|取得、コンテナーへのポインターのアンビエント**この**ディスパッチ インターフェイスです。|  
@@ -169,7 +152,7 @@ class ATL_NO_VTABLE CComControlBase
 |[CComControlBase::GetAmbientShowGrabHandles](#getambientshowgrabhandles)|取得**DISPID_AMBIENT_SHOWGRABHANDLES**コンテナーがアクティブなときにハンドルを表示するコントロールを許可するかどうかを示すフラグ。|  
 |[CComControlBase::GetAmbientShowHatching](#getambientshowhatching)|取得**DISPID_AMBIENT_SHOWHATCHING**コンテナーがときに表示される自体ハッチ パターンで UI がアクティブなコントロールを許可するかどうかを示すフラグ。|  
 |[CComControlBase::GetAmbientSupportsMnemonics](#getambientsupportsmnemonics)|取得**DISPID_AMBIENT_SUPPORTSMNEMONICS**コンテナーがキーボードのニーモニックをサポートしているかどうかを示しますフラグ。|  
-|[CComControlBase::GetAmbientTextAlign](#getambienttextalign)|取得**DISPID_AMBIENT_TEXTALIGN**コンテナーで優先されるテキストの配置: 一般的な配置 (数値、テキストを左) の場合は 0、1 を左揃え、中央揃えの 2 および右揃えの 3 です。|  
+|[CComControlBase::GetAmbientTextAlign](#getambienttextalign)|取得**DISPID_AMBIENT_TEXTALIGN**コンテナーで優先されるテキストの配置: 一般的な配置 (数値、テキストを左) の場合は 0、左揃えの場合は 1、2 を中央揃え、および右揃えの 3 です。|  
 |[CComControlBase::GetAmbientTopToBottom](#getambienttoptobottom)|取得**DISPID_AMBIENT_TOPTOBOTTOM**方向、コンテナーによってコンテンツが表示されます。|  
 |[CComControlBase::GetAmbientUIDead](#getambientuidead)|取得**DISPID_AMBIENT_UIDEAD**コンテナーに、コントロール ユーザー インターフェイスの動作に応答するかどうかを示すフラグ。|  
 |[CComControlBase::GetAmbientUserMode](#getambientusermode)|取得**DISPID_AMBIENT_USERMODE**、コンテナーが実行モードであるかどうかを示すフラグ ( **TRUE**) デザイン モードまたは ( **FALSE**)。|  
@@ -204,7 +187,7 @@ class ATL_NO_VTABLE CComControlBase
 |[各](#m_bnegotiatedwnd)|(ちらつきなしでウィンドウ コントロールなど)、OCX96 コントロールの機能のサポートのコンテナーとコントロールがネゴシエートされるかどうか、およびコントロールでのウィンドウまたはウィンドウなしがかどうかを示すフラグです。|  
 |[CComControlBase::m_bRecomposeOnResize](#m_brecomposeonresize)|コントロールがコンテナーには、コントロールの表示サイズが変更されたときに、プレゼンテーションを再構成することを示すフラグです。|  
 |[CComControlBase::m_bRequiresSave](#m_brequiressave)|最後に保存された後、コントロールが変更を示すフラグします。|  
-|[CComControlBase::m_bResizeNatural](#m_bresizenatural)|コントロールが自然なエクステント (スケールなし物理サイズ) のサイズを変更することを示すフラグ、コンテナーにコントロールの表示サイズが変更されたとき。|  
+|[CComControlBase::m_bResizeNatural](#m_bresizenatural)|コントロールが本来のエクステント (スケールなし物理サイズ) のサイズを変更することを示すフラグ、コンテナーにコントロールの表示サイズが変更されたとき。|  
 |[CComControlBase::m_bUIActive](#m_buiactive)|メニューやツールバーなどのコントロールのユーザー インターフェイスを示すフラグがアクティブです。|  
 |[CComControlBase::m_bUsingWindowRgn](#m_busingwindowrgn)|コントロールは、コンテナーが指定したウィンドウ領域の使用を示すフラグします。|  
 |[CComControlBase::m_bWasOnceWindowless](#m_bwasoncewindowless)|コントロール ウィンドウなし、されましたが、可能性がありますでなくてもかまいませんウィンドウなし今すぐを示すフラグします。|  
@@ -227,7 +210,7 @@ class ATL_NO_VTABLE CComControlBase
   
  コントロールの作成の詳細については、次を参照してください。、 [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)です。 ATL プロジェクト ウィザードの詳細については、記事を参照してください。 [ATL プロジェクトを作成する](../../atl/reference/creating-an-atl-project.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlctl.h  
   
 ##  <a name="appearancetype"></a>CComControlBase::AppearanceType  
@@ -283,10 +266,10 @@ virtual HRESULT ControlQueryInterface(const IID& iid,
  COM マップ テーブル内のインターフェイスを処理のみです。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_COM #15](../../atl/codesnippet/cpp/ccomcontrolbase-class_1.cpp)]  
+ [!code-cpp[NVC_ATL_COM#15](../../atl/codesnippet/cpp/ccomcontrolbase-class_1.cpp)]  
   
 ##  <a name="doesverbactivate"></a>CComControlBase::DoesVerbActivate  
- 確認、`iVerb`で使用されるパラメーター`IOleObjectImpl::DoVerb`コントロールのユーザー インターフェイスをアクティブにするか ( `iVerb` equals `OLEIVERB_UIACTIVATE`)、ユーザー コントロールをダブルクリックしたときに実行されるアクションを定義します (`iVerb`と等しい`OLEIVERB_PRIMARY`)、コントロールが表示されます (`iVerb`と等しい`OLEIVERB_SHOW`)、またはコントロールをアクティブ化 (`iVerb`と等しい**OLEIVERB_INPLACEACTIVATE**)。  
+ 確認、`iVerb`で使用されるパラメーター`IOleObjectImpl::DoVerb`コントロールのユーザー インターフェイスをアクティブにするか ( `iVerb` equals `OLEIVERB_UIACTIVATE`)、ユーザーがコントロールをダブルクリックしたときに実行されるアクションを定義します ( `iVerb` に等しい`OLEIVERB_PRIMARY`)、コントロールが表示されます ( `iVerb` equals `OLEIVERB_SHOW`)、またはコントロールをアクティブ化 ( `iVerb` equals **OLEIVERB_INPLACEACTIVATE**)。  
   
 ```
 BOOL DoesVerbActivate(LONG iVerb);
@@ -297,7 +280,7 @@ BOOL DoesVerbActivate(LONG iVerb);
  によって実行されるアクションを示す値`DoVerb`です。  
   
 ### <a name="return-value"></a>戻り値  
- 返します**TRUE**場合`iVerb`equals `OLEIVERB_UIACTIVATE`、 `OLEIVERB_PRIMARY`、 `OLEIVERB_SHOW`、または**OLEIVERB_INPLACEACTIVATE**、それ以外を返します**FALSE**です。  
+ 返します**TRUE**場合`iVerb`equals `OLEIVERB_UIACTIVATE`、 `OLEIVERB_PRIMARY`、 `OLEIVERB_SHOW`、または**OLEIVERB_INPLACEACTIVATE**、それ以外を返します**FALSE**.  
   
 ### <a name="remarks"></a>コメント  
  独自のライセンス認証の動詞を定義するには、このメソッドをオーバーライドすることができます。  
@@ -334,9 +317,9 @@ HRESULT DoVerbProperties(LPCRECT /* prcPosRect */, HWND hwndParent);
  標準の HRESULT 値のいずれか。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_COM #19](../../atl/codesnippet/cpp/ccomcontrolbase-class_2.cpp)]  
+ [!code-cpp[NVC_ATL_COM#19](../../atl/codesnippet/cpp/ccomcontrolbase-class_2.cpp)]  
   
- [!code-cpp[NVC_ATL_COM #20](../../atl/codesnippet/cpp/ccomcontrolbase-class_3.h)]  
+ [!code-cpp[NVC_ATL_COM#20](../../atl/codesnippet/cpp/ccomcontrolbase-class_3.h)]  
   
 ##  <a name="fireviewchange"></a>CComControlBase::FireViewChange  
  コントロールを再描画するコンテナーを確認するには、このメソッドを呼び出すか、コントロールのビューが変更された登録済みアドバイズ シンクに通知します。  
@@ -352,7 +335,7 @@ HRESULT FireViewChange();
  コントロールがアクティブな場合 (コントロール クラスのデータ メンバー [CComControlBase::m_bInPlaceActive](#m_binplaceactive)は**TRUE**)、コントロール全体を再描画するコンテナーに通知します。 コントロールがアクティブでない場合は、コントロールの登録に通知アドバイズ シンク (コントロール クラスのデータ メンバーを介して[アドバイズ](#m_spadvisesink)) コントロールのビューが変更されたことです。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_COM #21](../../atl/codesnippet/cpp/ccomcontrolbase-class_4.cpp)]  
+ [!code-cpp[NVC_ATL_COM#21](../../atl/codesnippet/cpp/ccomcontrolbase-class_4.cpp)]  
   
 ##  <a name="getambientappearance"></a>CComControlBase::GetAmbientAppearance  
  取得**を示す**、現在の外観をコントロールの設定: フラットと 3d 1 0 を指定します。  
@@ -369,7 +352,7 @@ HRESULT GetAmbientAppearance(short& nAppearance);
  標準の HRESULT 値のいずれか。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_COM #22](../../atl/codesnippet/cpp/ccomcontrolbase-class_5.h)]  
+ [!code-cpp[NVC_ATL_COM#22](../../atl/codesnippet/cpp/ccomcontrolbase-class_5.h)]  
   
 ##  <a name="getambientautoclip"></a>CComControlBase::GetAmbientAutoClip  
  取得**DISPID_AMBIENT_AUTOCLIP**コンテナーがコントロールの表示領域の自動クリップをサポートしているかどうかを示しますフラグ。  
@@ -428,7 +411,7 @@ HRESULT GetAmbientCodePage(ULONG& ulCodePage);
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ##  <a name="getambientdisplayasdefault"></a>CComControlBase::GetAmbientDisplayAsDefault  
- 取得**DISPID_AMBIENT_DISPLAYASDEFAULT**はフラグ**TRUE**かどうか、コンテナーには、このサイトを既定のボタンで、コントロールがマークされているし、そのため、ボタン コントロールが作成されます自体太いフレーム。  
+ 取得**DISPID_AMBIENT_DISPLAYASDEFAULT**、あるフラグ**TRUE**場合は、コンテナーが既定のボタンにするには、このサイト内のコントロールをマークし、したがってボタン コントロールが描画するのには、自ら、太くフレームです。  
   
 ```
 HRESULT GetAmbientDisplayAsDefault(BOOL& bDisplayAsDefault);
@@ -639,7 +622,7 @@ HRESULT GetAmbientSupportsMnemonics(BOOL& bSupportsMnemonics);
  標準の HRESULT 値のいずれか。  
   
 ##  <a name="getambienttextalign"></a>CComControlBase::GetAmbientTextAlign  
- 取得**DISPID_AMBIENT_TEXTALIGN**コンテナーで優先されるテキストの配置: 一般的な配置 (数値、テキストを左) の場合は 0、1 を左揃え、中央揃えの 2 および右揃えの 3 です。  
+ 取得**DISPID_AMBIENT_TEXTALIGN**コンテナーで優先されるテキストの配置: 一般的な配置 (数値、テキストを左) の場合は 0、左揃えの場合は 1、2 を中央揃え、および右揃えの 3 です。  
   
 ```
 HRESULT GetAmbientTextAlign(short& nTextAlign);
@@ -744,7 +727,7 @@ HRESULT InPlaceActivate(LONG iVerb, const RECT* prcPosRect = NULL);
 ### <a name="remarks"></a>コメント  
  アクティブ化する前にこのメソッドを確認コントロール クライアント サイト、チェック コントロールの量が表示されて、親ウィンドウのコントロールの位置を取得します。 コントロールをアクティブにした後、このメソッドはコントロールのユーザー インターフェイスをアクティブにし、コントロールを表示するコンテナーに通知。  
   
- このメソッドも取得、 `IOleInPlaceSite`、**処理**、または**IOleInPlaceSiteWindowless**コントロールのインターフェイス ポインターし、コントロール クラスのデータ メンバー内に格納[は](#m_spinplacesite)します。 コントロール クラスのデータ メンバー [CComControlBase::m_bInPlaceSiteEx](#m_binplacesiteex)、 [CComControlBase::m_bWndLess](#m_bwndless)、 [CComControlBase::m_bWasOnceWindowless](#m_bwasoncewindowless)、および[各](#m_bnegotiatedwnd)必要に応じて、true に設定されます。  
+ このメソッドも取得、 `IOleInPlaceSite`、**処理**、または**IOleInPlaceSiteWindowless**コントロールのインターフェイス ポインターコントロールクラスのデータメンバー内に格納および[は](#m_spinplacesite)します。 コントロール クラスのデータ メンバー [CComControlBase::m_bInPlaceSiteEx](#m_binplacesiteex)、 [CComControlBase::m_bWndLess](#m_bwndless)、 [CComControlBase::m_bWasOnceWindowless](#m_bwasoncewindowless)、および[各](#m_bnegotiatedwnd)必要に応じて、true に設定されます。  
   
 ##  <a name="internalgetsite"></a>CComControlBase::InternalGetSite  
  識別されたインターフェイスへのポインターのコントロール サイトを照会するには、このメソッドを呼び出します。  
@@ -779,7 +762,7 @@ unsigned m_bAutoSize:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
- 追加する場合、**自動サイズ** オプションを選択、[ストック プロパティ](../../atl/reference/stock-properties-atl-control-wizard.md)ATL コントロール ウィザード、ウィザードのタブに自動的にコントロール クラスのこのデータ メンバーを作成、配置を作成およびプロパティ、およびサポートするには get メソッド[IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638)にプロパティが変更されたときに、コンテナーを自動的に通知します。  
+ 追加する場合、**自動サイズ** オプションを選択、[ストック プロパティ](../../atl/reference/stock-properties-atl-control-wizard.md)ATL コントロール ウィザード、ウィザードのタブに自動的にコントロール クラスのこのデータ メンバーを作成、配置を作成およびプロパティのメソッドを取得、し、サポート[IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638)にプロパティが変更されたときに、コンテナーを自動的に通知します。  
   
 ##  <a name="m_bdrawfromnatural"></a>CComControlBase::m_bDrawFromNatural  
  示すフラグ`IDataObjectImpl::GetData`と`CComControlBase::GetZoomInfo`からコントロールのサイズを設定する必要があります`m_sizeNatural`からではなく`m_sizeExtent`です。  
@@ -877,7 +860,7 @@ unsigned m_bRequiresSave:1;
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
 ##  <a name="m_bresizenatural"></a>CComControlBase::m_bResizeNatural  
- コントロールが自然なエクステント (スケールなし物理サイズ) のサイズを変更することを示すフラグ、コンテナーにコントロールの表示サイズが変更されたとき。  
+ コントロールが本来のエクステント (スケールなし物理サイズ) のサイズを変更することを示すフラグ、コンテナーにコントロールの表示サイズが変更されたとき。  
   
 ```
 unsigned m_bResizeNatural:1;
@@ -1394,7 +1377,6 @@ void SetDirty(BOOL bDirty);
 ### <a name="remarks"></a>コメント  
  **Setdirty (true)**フラグを最後に保存してから、コントロールが変更されたことを呼び出す必要があります。 値`m_bRequiresSave`で取得[CComControlBase::GetDirty](#getdirty)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComControl クラス](../../atl/reference/ccomcontrol-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

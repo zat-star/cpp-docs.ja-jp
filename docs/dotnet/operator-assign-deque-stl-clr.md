@@ -1,46 +1,46 @@
 ---
-title: "operator= (deque) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::deque::operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator= メンバー [STL/CLR]"
+title: "演算子 = = (deque) (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::deque::operator=
+dev_langs: C++
+helpviewer_keywords: operator= member [STL/CLR]
 ms.assetid: 0851c6e2-29a2-45da-8c5a-e0b2f5357fb6
-caps.latest.revision: 16
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 86b4038011be918fe524536f83c96716a6656929
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator= (deque) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="operator-deque-stlclr"></a>operator= (deque) (STL/CLR)
 被制御シーケンスを置き換えます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 deque<Value>% operator=(deque<Value>% right);  
 ```  
   
-#### パラメーター  
- \[right\]  
+#### <a name="parameters"></a>パラメーター  
+ 右  
  コピーするコンテナー。  
   
-## 解説  
- このメンバー演算子は、オブジェクトに `right` を返します `*this`をコピーします。  これを使用して、被制御シーケンスを `right` の被制御シーケンスのコピーに置き換えることができます。  
+## <a name="remarks"></a>コメント  
+ メンバー演算子コピー`right`オブジェクトを返します`*this`です。 これを使用して、被制御シーケンスを `right` の被制御シーケンスのコピーと置き換えます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_deque_operator_as.cpp   
@@ -70,13 +70,16 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext\/deque\>  
+```Output  
+a b c  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/deque >  
   
-## 参照  
- [deque](../dotnet/deque-stl-clr.md)   
- [deque::assign](../dotnet/deque-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
+ [deque::assign (STL/CLR)](../dotnet/deque-assign-stl-clr.md)

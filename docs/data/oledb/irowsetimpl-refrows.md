@@ -1,36 +1,38 @@
 ---
-title: "IRowsetImpl::RefRows | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::IRowsetImpl::RefRows"
-  - "ATL.IRowsetImpl.RefRows"
-  - "IRowsetImpl.RefRows"
-  - "RefRows"
-  - "IRowsetImpl::RefRows"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RefRows メソッド"
+title: "Irowsetimpl::refrows |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::IRowsetImpl::RefRows
+- ATL.IRowsetImpl.RefRows
+- IRowsetImpl.RefRows
+- RefRows
+- IRowsetImpl::RefRows
+dev_langs: C++
+helpviewer_keywords: RefRows method
 ms.assetid: 1c048a2a-65dc-4bba-9c81-a23c0dc249c8
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: c1e39eb09ebfd3d93dd8302591db3406a8154449
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# IRowsetImpl::RefRows
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-インクリメントに [AddRefRows](../../data/oledb/irowsetimpl-addrefrows.md) と [ReleaseRows](../../data/oledb/irowsetimpl-releaserows.md) によって呼び出され、または既存の行ハンドルの参照カウントを解放します。  
+# <a name="irowsetimplrefrows"></a>IRowsetImpl::RefRows
+によって呼び出されます[AddRefRows](../../data/oledb/irowsetimpl-addrefrows.md)と[ReleaseRows](../../data/oledb/irowsetimpl-releaserows.md)をインクリメントするか、参照カウントを既存の行ハンドルを解放します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -43,15 +45,15 @@ caps.handback.revision: 8
 );  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [IRowset::AddRefRows](https://msdn.microsoft.com/en-us/library/ms719619.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[IRowset::AddRefRows](https://msdn.microsoft.com/en-us/library/ms719619.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
- [IRowsetImpl クラス](../Topic/IRowsetImpl%20Class.md)   
- [CSimpleRow クラス](../Topic/CSimpleRow%20Class.md)
+## <a name="see-also"></a>参照  
+ [IRowsetImpl クラス](../../data/oledb/irowsetimpl-class.md)   
+ [CSimpleRow クラス](../../data/oledb/csimplerow-class.md)

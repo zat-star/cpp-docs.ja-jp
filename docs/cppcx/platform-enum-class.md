@@ -15,11 +15,12 @@ caps.latest.revision: "5"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 1c05eed9e49a24ed17beeec8ffeb54ecdad5474a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bd092d58605bdc9980e90d9d769246278a1bd0ea
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformenum-class"></a>Platform::Enum クラス
 一連の名前付き定数を表す値クラス。  
@@ -36,7 +37,7 @@ public class Enum
 ### <a name="remarks"></a>コメント  
  列挙型を作成するには、 [パブリック列挙型クラス](../windows/enum-class-cpp-component-extensions.md) キーワードを使用します。 Platform::Enum 型は明示的に使用しないでください。 詳細については、「 [列挙体](../cppcx/enums-c-cx.md)で定義されているインターフェイスのプライベート C++ 固有の実装です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -45,5 +46,5 @@ public class Enum
   
  **メタデータ:** platform.winmd  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

@@ -43,11 +43,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2e98fb76faad72cedf48d8cc6baa7113870273d8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8494b4a379f0e484ed98f6240dd76ccd4ef15bbd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unlink-wunlink"></a>_unlink、_wunlink
 ファイルを削除します。  
@@ -81,14 +82,14 @@ int _wunlink(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tunlink`|`_unlink`|`_unlink`|`_wunlink`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_unlink`|\<io.h> および \<stdio.h>|  
 |`_wunlink`|\<io.h> または \<wchar.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="code-example"></a>コード例  
  このプログラムは、_unlink を使用して CRT_UNLINK.TXT を削除します。  
@@ -119,7 +120,7 @@ This file will be deleted.
 Deleted 'CRT_UNLINK.TXT'  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_close](../../c-runtime-library/reference/close.md)   
  [remove、_wremove](../../c-runtime-library/reference/remove-wremove.md)

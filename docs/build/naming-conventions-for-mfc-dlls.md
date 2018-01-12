@@ -1,55 +1,56 @@
 ---
-title: "MFC DLL の名前付け規則 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DLL [C++], ライブラリ名"
-  - "DLL [C++], 名前付け規則"
-  - "ライブラリ [C++], MFC DLL 名"
-  - "MFC DLL [C++], 名前付け規則"
-  - "MFC ライブラリ [C++], 名前付け規則"
-  - "名前付け規則 [C++], MFC DLL"
-  - "共有 DLL バージョン [C++]"
+title: "MFC Dll の名前付け規則 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- MFC libraries [C++], naming conventions
+- naming conventions [C++], MFC DLLs
+- MFC DLLs [C++], naming conventions
+- libraries [C++], MFC DLL names
+- shared DLL versions [C++]
+- DLLs [C++], naming conventions
+- DLLs [C++], library names
 ms.assetid: 0db9c3f3-87d3-40e8-8964-250f9d2a2209
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 4f7702e9babcc4769136d6deab63b627f8b09bd4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# MFC DLL の名前付け規則
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-MFC に含まれる DLL やライブラリの名前は、一定の規則に従って命名されます。  この規則に従うと、目的に応じて DLL やライブラリを簡単に使い分けることができます。  
+# <a name="naming-conventions-for-mfc-dlls"></a>MFC DLL の名前付け規則
+MFC に含まれるライブラリと Dll は、構造化された名前付け規則に従います。 これにより、DLL やライブラリを使用して、目的に応じてやすくします。  
   
- これらの DLL を使用するアプリケーションや拡張 DLL をビルドするためのインポート ライブラリの名前は、DLL と同じ基本名で、拡張子だけが .lib となります。  
+ アプリケーションまたはこれらの Dll を使用する MFC 拡張 Dll をビルドするためのインポート ライブラリは、DLL と同じ基本名はあるが .lib ファイル名拡張子です。  
   
-### 共有 DLL の名前付け規則  
+### <a name="shared-dll-naming-convention"></a>共有 DLL の名前付け規則  
   
-|\[DLL\]|説明|  
-|-------------|--------|  
+|[DLL]|説明|  
+|---------|-----------------|  
 |MFCx0.DLL|MFC DLL、ANSI リリース バージョン|  
-|MFCx0U.DLL|MFC DLL、Unicode リリース バージョン|  
-|MFCx0D.DLL|MFC DLL、ANSI デバッグ バージョン|  
-|MFCx0UD.DLL|MFC DLL、Unicode デバッグ バージョン|  
+|MFCx0U.DLL|MFC DLL、Unicode のリリース バージョン|  
+|MFCx0D.DLL|MFC DLL、ANSI のデバッグ バージョン|  
+|MFCx0UD.DLL|MFC DLL、Unicode のデバッグ バージョン|  
   
- 共有 DLL バージョンの MFC と動的にリンクするときは、アプリケーションと拡張 DLL のどちらからリンクする場合でも、製品には MFCx0.DLL を含める必要があります。  Unicode をサポートするアプリケーションの場合は、代わりに MFCx0U.DLL を含めます。  
+ アプリケーションや MFC 拡張 DLL からであるかどうか、MFC の共有 DLL バージョンを動的にリンクする場合、は、製品に MFCx0.DLL を含める必要があります。 アプリケーションで Unicode のサポートを必要とする場合は、代わりに MFCx0U.DLL を含めます。  
   
- MFC と DLL を静的にリンクする場合は、MFC のスタティック ライブラリのいずれかとリンクします。  これらのバージョンには、規則 \[N&#124;U\]AFXCW\[D\].LIB に従って名前が付けられます。  詳細については、「[ライブラリの名前付け規則](../Topic/Library%20Naming%20Conventions.md) \(MFC\)」の表「スタティック リンク ライブラリの名前付け規則」を参照してください。  
+ MFC に DLL を静的にリンクする場合は、MFC のスタティック ライブラリのいずれかでリンクする必要があります。 これらのバージョンは、規則に従って名前は [N &#124;です。U] AFXCW [D] です。LIB。 詳細については、テーブル「スタティック リンク ライブラリの名前付け規則」を参照してください[ライブラリの名前付け規則](../mfc/library-naming-conventions.md)(MFC).  
   
- アプリケーションと共に配布される Visual C\+\+ DLL リストについては、Visual Studio インストールに含まれる Redist.txt を参照してください。  
+ アプリケーションと共に配布可能な Visual C Dll の一覧は、Visual Studio のインストールで Redist.txt を参照してください。  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
--   [ライブラリの名前付け規則](../Topic/Library%20Naming%20Conventions.md)  
+-   [ライブラリの名前付け規則](../mfc/library-naming-conventions.md)  
   
-## 参照  
- [Visual C\+\+ の DLL](../build/dlls-in-visual-cpp.md)
+## <a name="see-also"></a>参照  
+ [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)

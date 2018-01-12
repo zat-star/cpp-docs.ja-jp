@@ -1,45 +1,46 @@
 ---
-title: "インライン アセンブラーの長所 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アセンブラー [C++], 利点"
-  - "インライン アセンブラー [C++], インライン アセンブラーの概要"
-  - "インライン アセンブラー [C++], 使用"
+title: "インライン アセンブラーの長所 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- assembler [C++], advantages
+- inline assembly [C++], about inline assembly
+- inline assembly [C++], using
 ms.assetid: 94364d97-faa7-4bdf-8473-570956986c51
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 60b8d458212cd2175f2460c1382ed7f8c2c269bb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# インライン アセンブラーの長所
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## Microsoft 固有の仕様 →  
- インライン アセンブラーが別のアセンブリとリンク ステップを必要としないため別のアセンブラー方が便利です。  インライン アセンブラー コードでスコープ内にあるためプログラムの C コードと統合する方が簡単な C の変数や関数名を使用できます。  アセンブリ コードではC または C\+\+ のステートメントで混合インラインであるためC または C\+\+ で使いにくくまたは不可能なタスクを実行できます。  
+# <a name="advantages-of-inline-assembly"></a>インライン アセンブラーの長所
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ インライン アセンブラーは別のアセンブリとリンクの手順を必要としないので、別のアセンブラーより便利です。 インライン アセンブラー コードでは、スコープ内にある C 変数や関数名を使用できるので、プログラムの C コードと簡単に統合できます。 アセンブリ コードが C または C++ ステートメントでインラインを混在させることができます、ために、煩雑であるか、または C または C++ で不可能であるタスクを実行できます。  
   
- インライン アセンブリの使用は次のとおりです。:  
+ インライン アセンブリの使用は、次のとおりです。  
   
--   アセンブリ言語の書き込み関数。  
+-   関数のアセンブリ言語で記述します。  
   
--   コードの速度クリティカル セクションの最適化スポット。  
+-   コードの速度クリティカル セクションをスポットを最適化します。  
   
--   デバイス ドライバーのハードウェアの直接アクセスを行います。  
+-   デバイス ドライバーのハードウェアに直接アクセスを確立しています。  
   
--   「生の」呼び出しの記述のプロローグとエピローグ コード。  
+-   「生」の呼び出しのためのプロローグおよびエピローグのコードを記述します。  
   
- インライン アセンブラーは特殊な目的のツールです。  別のコンピューターにアプリケーションを移植する場合は別のモジュールに固有のマシン コードを配置します。  インライン アセンブラーで MASM \(Microsoft Macro Assembler\) マクロおよびデータ ディレクティブのすべてをサポートしないため便利な場合がこのようなモジュールで MASM を使用すると役立つ場合があります。  
+ インライン アセンブラーは、特殊なツールです。 異なるコンピューターにアプリケーションを移植する場合は、異なるモジュールでコンピューター固有のコードを配置するあります可能性があります。 インライン アセンブラーは、すべての Microsoft マクロ アセンブラーの (MASM) をサポートしないため、マクロとデータのディレクティブする可能性があります方がより便利 MASM モジュールを使用するようにします。  
   
- **終了 Microsoft 固有の仕様→**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

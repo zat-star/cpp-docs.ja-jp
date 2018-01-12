@@ -12,11 +12,12 @@ caps.latest.revision: "17"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: aef6920b9133280a20cc41344fa707a2cb1cfe97
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: af74c81186591062214e2a8eb1695a2d177cfc04
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="events-ccx"></a>イベント (C++/CX)
 Windows ランタイム型を宣言できます (つまり、発行) イベント、および同じコンポーネント内または他のコンポーネントでのクライアント コードで呼び出されるメソッドを関連付けることによってそれらのイベントにサブスクライブできます*イベント ハンドラー*イベントにします。 複数のイベント ハンドラーを単一のイベントに関連付けることもできます。 発行オブジェクトがイベントを発生させた時点で、すべてのイベント ハンドラーが呼び出される結果になります。 この方法で、発行側がイベントを発生させたときに、サブスクライブ側クラスはあらゆる適切なカスタム アクションを実行できます。 各イベントには、そのイベントにサブスクライブしようとするすべてのイベント ハンドラーが所有している必要があるシグネチャを指定するデリゲート型があります。  
@@ -55,12 +56,12 @@ Windows ランタイム型を宣言できます (つまり、発行) イベン�
   
  [!code-cpp[cx_events#04](../cppcx/codesnippet/CPP/eventsupportinvs/eventclientclass.h#04)]  
   
-### <a name="remarks"></a>解説  
+### <a name="remarks"></a>コメント  
  複数のハンドラーが、同じイベントに関連付けられている場合があります。 イベント ソースは、同じスレッドからすべてのイベント ハンドラーを順番に呼び出します。 イベント ハンドラー メソッド内でイベント レシーバーがブロックする場合、このイベントに対する他のイベント ハンドラーの呼び出しからイベント ソースをブロックします。  
   
  イベント ソースがイベント レシーバーのイベント ハンドラーを呼び出す順序は保証されず、呼び出しごとに異なる可能性があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型システム](../cppcx/type-system-c-cx.md)   
  [デリゲート](../cppcx/delegates-c-cx.md)   
  [Visual C 言語リファレンス](../cppcx/visual-c-language-reference-c-cx.md)   

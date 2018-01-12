@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,21 +16,19 @@ f1_keywords:
 - ATLUTIL/ATL::CDebugReportHook::SetHook
 - ATLUTIL/ATL::CDebugReportHook::SetPipeName
 - ATLUTIL/ATL::CDebugReportHook::SetTimeout
-dev_langs:
-- C++
-helpviewer_keywords:
-- CDebugReportHook class
+dev_langs: C++
+helpviewer_keywords: CDebugReportHook class
 ms.assetid: 798076c3-6e63-4286-83b8-aa1bbcd0c20c
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: df098ee80bcd8fa81b5503cc21b08ded86945a72
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 72790fca5fbfb2856d4da780f276b9cfdc53a26a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdebugreporthook-class"></a>CDebugReportHook クラス
 このクラスを使用すると、名前付きパイプにデバッグ レポートを送信します。  
@@ -68,7 +65,7 @@ class CDebugReportHook
   
  スレッドの基になるセキュリティ コンテキストを使用してデバッグ レポートを送信することに注意してください。 ここで低い特権のユーザーの権限の借用が行われてなどの web アプリケーションでの状況でデバッグ レポートを表示するように、権限借用が一時的に無効にします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlutil.h  
   
 ##  <a name="cdebugreporthook"></a>CDebugReportHook::CDebugReportHook  
@@ -176,6 +173,5 @@ void SetTimeout(DWORD dwTimeout);
  `dwTimeout`  
  このクラスが使用可能になる名前付きパイプの待機するミリ秒単位の時間。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../atl/reference/atl-classes.md)
-

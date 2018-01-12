@@ -1,52 +1,40 @@
 ---
-title: "ウィンドウ クラスに関するマクロ |Microsoft ドキュメント"
+title: "ウィンドウ クラス マクロ |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs:
-- C++
+f1_keywords:
+- atlwin/ATL::DECLARE_WND_CLASS
+- atlwin/ATL::DECLARE_WND_SUPERCLASS
+- atlwin/ATL::DECLARE_WND_CLASS_EX
+dev_langs: C++
 ms.assetid: ce18681a-2bab-4453-9895-0f3ea47c2b24
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 8cdedc5cfac9d49df812ae6fcfcc548201b1edb5
-ms.openlocfilehash: f32926b6efd4ffb9c0541c0574a479c13dac01df
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: bba4b6743477ae3c3d345a20f1c2e672e73261e2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="window-class-macros"></a>ウィンドウ クラスに関するマクロ
+# <a name="window-class-macros"></a>ウィンドウ クラス マクロ
 これらのマクロは、ウィンドウ クラスのユーティリティを定義します。  
   
 |||  
 |-|-|  
 |[DECLARE_WND_CLASS](#declare_wnd_class)|新しいウィンドウ クラスの名前を指定できます。| 
-|[DECLARE_WND_CLASS2](#declare_wnd_class2)|(Visual Studio 2017)新しいウィンドウ クラスと新しいクラスが使用するウィンドウ プロシージャの外側のクラスの名前を指定できます。| 
+|[DECLARE_WND_CLASS2](#declare_wnd_class2)|(Visual Studio 2017)新しいウィンドウ クラスと外側のクラスの新しいクラスが使用するウィンドウ プロシージャの名前を指定できます。| 
 |[DECLARE_WND_SUPERCLASS](#declare_wnd_superclass)|新しいウィンドウ クラスの基になる既存のウィンドウ クラスの名前を指定できます。|  
 |[場合は](#declare_wnd_class_ex)|クラスのパラメーターを指定できます。|  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
    
 ##  <a name="declare_wnd_class"></a>DECLARE_WND_CLASS  
@@ -61,11 +49,11 @@ DECLARE_WND_CLASS( WndClassName )
  [in]新しいウィンドウ クラスの名前。 場合**NULL**、ATL ウィンドウ クラス名が生成されます。  
   
 ### <a name="remarks"></a>コメント  
- /Permissive-compiler オプションを使用している場合、DECLARE_WND_CLASS、コンパイラ エラーが発生します。DECLARE_WND_CLASS2 を使用してください。
+ /Permissive-compiler オプションを使用している場合、DECLARE_WND_CLASS と、コンパイラ エラーが発生します。DECLARE_WND_CLASS2 を使用してください。
  
- によって管理される情報を新しいウィンドウ クラスの名前を指定することにより、DECLARE_WND_CLASS [CWndClassInfo](cwndclassinfo-class.md)します。 `DECLARE_WND_CLASS`次の静的関数を実装することで、新しいウィンドウ クラスを定義します。  
+ によって管理される情報を含む新しいウィンドウ クラスの名前を指定することにより、DECLARE_WND_CLASS [CWndClassInfo](cwndclassinfo-class.md)です。 `DECLARE_WND_CLASS`次の静的関数を実装することで、新しいウィンドウ クラスを定義します。  
   
- [!code-cpp[NVC_ATL_Windowing&#127;](../../atl/codesnippet/cpp/window-class-macros_1.cpp)]  
+ [!code-cpp[NVC_ATL_Windowing#127](../../atl/codesnippet/cpp/window-class-macros_1.cpp)]  
   
  `DECLARE_WND_CLASS`新しいウィンドウの次のスタイルを指定します。  
   
@@ -75,15 +63,15 @@ DECLARE_WND_CLASS( WndClassName )
   
 -   CS_DBLCLKS  
   
- `DECLARE_WND_CLASS`また、既定のウィンドウの背景色を指定します。 使用して、[場合は](#declare_wnd_class_ex)マクロを独自のスタイルを提供し、背景色。  
+ `DECLARE_WND_CLASS`また、既定でウィンドウの背景色を指定します。 使用して、[場合は](#declare_wnd_class_ex)マクロを独自のスタイルを提供し、背景色。  
   
- [CWindowImpl](cwindowimpl-class.md)を使用して、`DECLARE_WND_CLASS`ウィンドウを作成するマクロが新しいウィンドウ クラスに基づいています。 この動作を上書きするには、使用、 [DECLARE_WND_SUPERCLASS](#declare_wnd_superclass)マクロ、または独自の実装を提供する、 [GetWndClassInfo](cwindowimpl-class.md#getwndclassinfo)関数です。  
+ [CWindowImpl](cwindowimpl-class.md)を使用して、`DECLARE_WND_CLASS`新しいウィンドウ クラスに基づいて、マクロをウィンドウを作成します。 この動作をオーバーライドするを使用して、 [DECLARE_WND_SUPERCLASS](#declare_wnd_superclass)マクロ、または独自の実装を提供、 [GetWndClassInfo](cwindowimpl-class.md#getwndclassinfo)関数。  
 
   
- 詳細については、ATL でのウィンドウを使用して、記事を参照してください。 [ATL ウィンドウ クラス](../../atl/atl-window-classes.md)します。  
+ 詳細については、ATL で windows を使用して、記事を参照してください。 [ATL ウィンドウ クラス](../../atl/atl-window-classes.md)です。  
 
 ##  <a name="declare_wnd_class2"></a>DECLARE_WND_CLASS2  
- (Visual Studio 2017)DECLARE_WND_CLASS には、/permissive-option でコンパイルすると、依存名エラーの発生を回避する追加のパラメーターと同じです。
+ (Visual Studio 2017)DECLARE_WND_CLASS には、/permissive-option でコンパイルすると、依存名のエラーを回避する余分なパラメーターを持つと同じです。
   
 ```
 DECLARE_WND_CLASS2( WndClassName, EnclosingClass )
@@ -94,11 +82,11 @@ DECLARE_WND_CLASS2( WndClassName, EnclosingClass )
  [in]新しいウィンドウ クラスの名前。 場合**NULL**、ATL ウィンドウ クラス名が生成されます。 
 
  `EnclosingClass`  
- [in]新しいウィンドウ クラスを囲むウィンドウ クラスの名前。 ことはできません**NULL**します。  
+ [in]新しいウィンドウ クラスの外側のウィンドウ クラスの名前。 ことはできません**NULL**です。  
   
 ### <a name="remarks"></a>コメント 
-/Permissive-option を使用している場合、DECLARE_WND_CLASS と、コンパイル エラーが依存している名前が含まれています。 DECLARE_WND_CLASS2 では、このマクロが使用され、下にある、/permissive-flag エラーは発生しませんクラスを明示的に名前を付ける必要があります。
-このマクロは、それ以外の場合と同じ[DECLARE_WND_CLASS](#declare_wnd_class)します。
+/Permissive-option を使用している場合、DECLARE_WND_CLASS と、コンパイル エラーが依存している名前が含まれています。 DECLARE_WND_CLASS2 では、このマクロで使用し、/permissive-flag 下のエラーは発生しませんクラスの名前を明示的にする必要があります。
+このマクロは、それ以外の場合と同じ[DECLARE_WND_CLASS](#declare_wnd_class)です。
    
 ##  <a name="declare_wnd_superclass"></a>DECLARE_WND_SUPERCLASS  
  クラスのパラメーターを指定できます。 ATL の ActiveX コントロールのコントロール クラスには、このマクロを配置します。  
@@ -109,7 +97,7 @@ DECLARE_WND_SUPERCLASS( WndClassName, OrigWndClassName )
   
 ### <a name="parameters"></a>パラメーター  
  `WndClassName`  
- [in]ウィンドウの名前のクラスがそのスーパークラス`OrigWndClassName`します。 場合**NULL**、ATL ウィンドウ クラス名が生成されます。  
+ [in]ウィンドウの名前のクラスはそのスーパークラス`OrigWndClassName`です。 場合**NULL**、ATL ウィンドウ クラス名が生成されます。  
   
  `OrigWndClassName`  
  [in]既存のウィンドウ クラスの名前。  
@@ -119,14 +107,14 @@ DECLARE_WND_SUPERCLASS( WndClassName, OrigWndClassName )
   
  `DECLARE_WND_SUPERCLASS`次の静的関数を実装します。  
   
- [!code-cpp[NVC_ATL_Windowing&#127;](../../atl/codesnippet/cpp/window-class-macros_1.cpp)]  
+ [!code-cpp[NVC_ATL_Windowing#127](../../atl/codesnippet/cpp/window-class-macros_1.cpp)]  
   
- 既定では、 [CWindowImpl](cwindowimpl-class.md)を使用して、 [DECLARE_WND_CLASS](#declare_wnd_class)ウィンドウを作成するマクロが新しいウィンドウ クラスに基づいています。 指定して、`DECLARE_WND_SUPERCLASS`マクロで、`CWindowImpl`の派生クラスでは、ウィンドウ クラスは、既存のクラスに基づきますが、ウィンドウ プロシージャを使用します。 この手法をスーパークラス化と呼びます。  
+ 既定では、 [CWindowImpl](cwindowimpl-class.md)を使用して、 [DECLARE_WND_CLASS](#declare_wnd_class)新しいウィンドウ クラスに基づいて、マクロをウィンドウを作成します。 指定して、`DECLARE_WND_SUPERCLASS`マクロで、 `CWindowImpl`-派生クラスでは、ウィンドウ クラス、既存のクラスに基づくされますが、ウィンドウ プロシージャを使用します。 この手法をスーパークラス化と呼びます。  
   
- 使用するだけでなく、`DECLARE_WND_CLASS`と`DECLARE_WND_SUPERCLASS`マクロをオーバーライドできます、 [GetWndClassInfo](cwindowimpl-class.md#getwndclassinfo)独自の実装を持つ関数です。  
+ 使用するだけでなく、`DECLARE_WND_CLASS`と`DECLARE_WND_SUPERCLASS`オーバーライドすることができます、マクロ、 [GetWndClassInfo](cwindowimpl-class.md#getwndclassinfo)独自の実装を持つ関数です。  
 
   
- 詳細については、ATL でのウィンドウを使用して、記事を参照してください。 [ATL ウィンドウ クラス](../../atl/atl-window-classes.md)します。  
+ 詳細については、ATL で windows を使用して、記事を参照してください。 [ATL ウィンドウ クラス](../../atl/atl-window-classes.md)です。  
   
 ##  <a name="declare_wnd_class_ex"></a>場合は  
  新しいウィンドウ クラスの基になる既存のウィンドウ クラスの名前を指定できます。 ATL の ActiveX コントロールのコントロール クラスには、このマクロを配置します。  
@@ -140,21 +128,20 @@ DECLARE_WND_CLASS_EX( WndClassName, style, bkgnd )
  [in]新しいウィンドウ クラスの名前。 場合**NULL**、ATL ウィンドウ クラス名が生成されます。  
   
  `style`  
- [in]ウィンドウのスタイル。  
+ [in]ウィンドウのスタイルです。  
   
  *背景*  
  [in]ウィンドウの背景色。  
   
 ### <a name="remarks"></a>コメント  
- このマクロでは、によって管理される情報を含む、新しいウィンドウ クラスのクラスのパラメーターを指定できます。 [CWndClassInfo](cwndclassinfo-class.md)します。 `DECLARE_WND_CLASS_EX`次の静的関数を実装することで、新しいウィンドウ クラスを定義します。  
+ このマクロでは、によって管理される情報を含む、新しいウィンドウ クラスのクラスのパラメーターを指定できます。 [CWndClassInfo](cwndclassinfo-class.md)です。 `DECLARE_WND_CLASS_EX`次の静的関数を実装することで、新しいウィンドウ クラスを定義します。  
   
- [!code-cpp[NVC_ATL_Windowing&#127;](../../atl/codesnippet/cpp/window-class-macros_1.cpp)]  
+ [!code-cpp[NVC_ATL_Windowing#127](../../atl/codesnippet/cpp/window-class-macros_1.cpp)]  
   
- 既定のスタイルと背景色を使用する場合を使用して、 [DECLARE_WND_CLASS](#declare_wnd_class)マクロです。 詳細については、ATL でのウィンドウを使用して、記事を参照してください。 [ATL ウィンドウ クラス](../../atl/atl-window-classes.md)します。  
+ 既定のスタイルと背景色を使用する場合を使用して、 [DECLARE_WND_CLASS](#declare_wnd_class)マクロです。 詳細については、ATL で windows を使用して、記事を参照してください。 [ATL ウィンドウ クラス](../../atl/atl-window-classes.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [マクロ](atl-macros.md)
-
+## <a name="see-also"></a>参照  
+ [[マクロ]](atl-macros.md)
 
 
 

@@ -1,32 +1,33 @@
 ---
-title: "vector::vector (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector::vector"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "vector メンバー [STL/CLR]"
+title: "vector::vector (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::vector::vector
+dev_langs: C++
+helpviewer_keywords: vector member [STL/CLR]
 ms.assetid: a0b5e807-1ef2-422b-b772-1f96cd62fb51
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a321e18c9fc921e1d88961b4f282c29917fa7962
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# vector::vector (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="vectorvector-stlclr"></a>vector::vector (STL/CLR)
 コンテナー オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 vector();  
@@ -39,68 +40,68 @@ template<typename InIt>
 vector(System::Collections::Generic::IEnumerable<Value>^ right);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  count  
  挿入する要素の数。  
   
- 最初  
- 挿入する範囲の先頭。  
+ 先頭  
+ 挿入する範囲の開始しています。  
   
  last  
- 挿入する範囲の最後。  
+ 挿入する範囲の終了。  
   
- \[right\]  
+ 右  
  挿入するオブジェクトまたは範囲。  
   
  val  
- 挿入する要素の値。  
+ 挿入する要素の値です。  
   
-## 解説  
- 次のコンストラクターを見てください。  
+## <a name="remarks"></a>コメント  
+ : コンス トラクター  
   
  `vector();`  
   
- 要素を持たない被制御シーケンスを初期化します。  空の最初の被制御シーケンスを指定する場合に使用します。  
+ 要素を持たない被制御シーケンスを初期化します。 空の初期被制御シーケンスの指定に使用するとします。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `vector(vector<Value>% right);`  
   
- 被制御シーケンスが `[``right``.`[vector::begin](../dotnet/vector-begin-stl-clr.md)`(),` `right``.`[vector::end](../dotnet/vector-end-stl-clr.md)`())` というシーケンスで初期化されます。  ベクター オブジェクト `right`によって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します。 [`right.begin()`、 `right.end()`)。 ベクター オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `vector(vector<Value>^ right);`  
   
- 被制御シーケンスが `[``right``->`[vector::begin](../dotnet/vector-begin-stl-clr.md)`(),` `right``->`[vector::end](../dotnet/vector-end-stl-clr.md)`())` というシーケンスで初期化されます。  ハンドルが `right`であるベクトル オブジェクトによって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します。 [`right->begin()`、 `right->end()`)。 ハンドルがベクター オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `explicit vector(size_type count);`  
   
- 値 `value_type()`で `count` 要素との被制御シーケンスを個別に初期化します。  既定値を持つ要素でコンテナーを塗りつぶすためにすべてを使用します。  
+ 被制御シーケンスを初期化します`count`値を持つ要素各`value_type()`です。 使用する要素をコンテナーを格納するのに既定値を持ちます。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `vector(size_type count, value_type val);`  
   
- 値 `val`で `count` 要素との被制御シーケンスを個別に初期化します。  同じ値を持つ要素でコンテナーを塗りつぶすためにすべてを使用します。  
+ 被制御シーケンスを初期化します`count`値を持つ要素各`val`です。 使用する要素をコンテナーを格納するのに、同じ値を持ちます。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `template<typename InIt>`  
   
  `vector(InIt first, InIt last);`  
   
- シーケンス `[``first``,``last``)`の被制御シーケンスを初期化します。  別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+ シーケンスに、被制御シーケンスを初期化します。 [`first`、 `last`)。 これを使用するには、被制御シーケンスの別のシーケンスのコピーを作成します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `vector(System::Collections::Generic::IEnumerable<Value>^ right);`  
   
- 列挙子が `right`指定したシーケンスの被制御シーケンスを初期化します。  列挙子によって指定された別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+ 列挙子によって指定されたシーケンスの被制御シーケンスを初期化します`right`です。 これを使用するには、被制御シーケンスの列挙子によって記述された別のシーケンスのコピーを作成します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_vector_construct.cpp   
@@ -156,20 +157,23 @@ int main()
   
 ```  
   
-  **size\(\) \= 0**  
- **0 0 0**  
- **X x x x x X**  
- **X x x x X**  
- **X x x x x X**  
- **X x x x x X**  
- **X x x x x X**   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+```Output  
+size() = 0  
+ 0 0 0  
+ x x x x x x  
+ x x x x x  
+ x x x x x x  
+ x x x x x x  
+ x x x x x x  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/vector >  
   
-## 参照  
- [ベクター](../dotnet/vector-stl-clr.md)   
- [vector::assign](../Topic/vector::assign%20\(STL-CLR\).md)   
- [vector::generic\_container](../dotnet/vector-generic-container-stl-clr.md)   
- [vector::operator\=](../dotnet/vector-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [vector::assign (STL/CLR)](../dotnet/vector-assign-stl-clr.md)   
+ [vector::generic_container (STL/CLR)](../dotnet/vector-generic-container-stl-clr.md)   
+ [vector::operator= (STL/CLR)](../dotnet/vector-operator-assign-stl-clr.md)

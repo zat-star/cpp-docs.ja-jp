@@ -15,11 +15,14 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 83041a535ae1b7e07fecf2dc20e053fa633783d2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 385ea09eb46a2253b859d7bbc46f9062b0430ec8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="priorityqueuecontainertype-stlclr"></a>priority_queue::container_type (STL/CLR)
 基になるコンテナーの型。  
@@ -31,7 +34,7 @@ typedef Container value_type;
 ```  
   
 ## <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Container`のシノニムです。  
+ この型は、テンプレート パラメーター `Container` のシノニムです。  
   
 ## <a name="example"></a>例  
   
@@ -62,11 +65,11 @@ int main()
 c a b  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/キュー >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
  [priority_queue::get_container (STL/CLR)](../dotnet/priority-queue-get-container-stl-clr.md)

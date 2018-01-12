@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cfa03139fb71caba092d3507d4b10080f210c00c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fdfb7544db946135fc1df10ea76e1e6df1cc8e57
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="substr"></a>@SubStr
 始まる部分文字列を返すマクロ関数*位置*です。  
@@ -31,5 +32,5 @@ ms.lasthandoff: 10/24/2017
 @SubStr( string, position [[, length]] )  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [シンボル リファレンス](../../assembler/masm/symbols-reference.md)

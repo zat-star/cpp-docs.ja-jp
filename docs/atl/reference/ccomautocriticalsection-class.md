@@ -4,43 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CComAutoCriticalSection
 - ATLCORE/ATL::CComAutoCriticalSection
 - ATLCORE/ATL::CComAutoCriticalSection::CComAutoCriticalSection
-dev_langs:
-- C++
-helpviewer_keywords:
-- CComAutoCriticalSection class
+dev_langs: C++
+helpviewer_keywords: CComAutoCriticalSection class
 ms.assetid: 491a9d90-3398-4f90-88f5-fd2172a46b30
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
-ms.openlocfilehash: 9f58a4cfd02af09a05b625a7e02b574b672adade
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: d12abfceeebeb1cac89b510c14d7a9211173406e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomautocriticalsection-class"></a>CComAutoCriticalSection クラス
 `CComAutoCriticalSection`取得し、クリティカル セクション オブジェクトの所有権を解放するためのメソッドを提供します。  
@@ -61,19 +44,19 @@ class CComAutoCriticalSection : public CComCriticalSection
 |[CComAutoCriticalSection:: ~ CComAutoCriticalSection](#dtor)|デストラクターです。|  
   
 ## <a name="remarks"></a>コメント  
- `CComAutoCriticalSection`クラスのような[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)、以外`CComAutoCriticalSection`コンス トラクターでクリティカル セクション オブジェクトを自動的に初期化します。  
+ `CComAutoCriticalSection`クラスに似ています[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)、除く`CComAutoCriticalSection`コンス トラクターでクリティカル セクション オブジェクトを自動的に初期化します。  
   
- 通常、使用して`CComAutoCriticalSection`を通じて、`typedef`名[AutoCriticalSection](ccommultithreadmodel-class.md#autocriticalsection)します。 この名前を参照して`CComAutoCriticalSection`と[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)が使用されています。  
+ 通常、使用して`CComAutoCriticalSection`を通じて、`typedef`名前[AutoCriticalSection](ccommultithreadmodel-class.md#autocriticalsection)です。 この名前を参照して`CComAutoCriticalSection`とき[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)が使用されています。  
 
   
- `Init`と`Term`からメソッド[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)このクラスを使用する場合は使用できません。  
+ `Init`と`Term`メソッドから[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)このクラスを使用する場合は使用できません。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)  
   
  `CComAutoCriticalSection`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcore.h  
   
 ##  <a name="ccomautocriticalsection"></a>CComAutoCriticalSection::CComAutoCriticalSection  
@@ -94,10 +77,9 @@ CComAutoCriticalSection();
 ```  
   
 ### <a name="remarks"></a>コメント  
- デストラクターの呼び出し[DeleteCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms682552)、クリティカル セクション オブジェクトによって使用されているすべてのシステム リソースを解放します。  
+ デストラクター [DeleteCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms682552)、クリティカル セクション オブジェクトによって使用されるすべてのシステム リソースを解放します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComFakeCriticalSection クラス](../../atl/reference/ccomfakecriticalsection-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [CComCriticalSection クラス](../../atl/reference/ccomcriticalsection-class.md)
-

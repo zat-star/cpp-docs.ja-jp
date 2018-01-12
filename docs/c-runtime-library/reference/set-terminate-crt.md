@@ -32,11 +32,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f2e2ac7ad7b103b5c1da790b61f560c758d9d124
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 099cb340f821f04c3a5f84ccef7e3e9649482cd6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setterminate-crt"></a>set_terminate (CRT)
 `terminate` によって呼び出される独自の終了ルーチンをインストールします。  
@@ -72,9 +73,9 @@ typedef void ( *terminate_function )( );
   
  動的にリンクされるすべての DLL または EXE ファイルに対して、`set_terminate` ハンドラーは単一です。自分で `set_terminate` を呼び出しても別のハンドラーに置き換えられます。あるいはハンドラーを別の DLL または EXE ファイルに自分で置き換えることもできます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`set_terminate`|\<eh.h>|  
   
@@ -83,7 +84,7 @@ typedef void ( *terminate_function )( );
 ## <a name="example"></a>例  
  [terminate](../../c-runtime-library/reference/terminate-crt.md) の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理ルーチン](../../c-runtime-library/exception-handling-routines.md)   
  [abort](../../c-runtime-library/reference/abort.md)   
  [_get_terminate](../../c-runtime-library/reference/get-terminate.md)   

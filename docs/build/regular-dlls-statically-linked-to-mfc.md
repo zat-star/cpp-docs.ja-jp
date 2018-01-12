@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: acf04ba49e8e99aa1f51e5181f063d8da86c40e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0fd5eee67b48fd4895cc73adfb72d34f0bd24d2c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="regular-mfc-dlls-statically-linked-to-mfc"></a>MFC と静的にリンクされている標準 MFC Dll
 MFC DLL が MFC と静的にリンク、通常は内部的には、MFC を使用する DLL と、MFC または非 MFC の実行可能ファイルによって、DLL からエクスポートされた関数を呼び出すことができます。 名前が示すようこの種の DLL は MFC のスタティック リンク ライブラリ バージョンを使用して構築します。 通常、関数は、通常、標準の C インターフェイスを使用して MFC DLL からエクスポートします。 作成、ビルド、および標準 MFC DLL を使用する方法の例は、サンプルを参照してください。[は](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/advanced/DllScreenCap)します。  
@@ -89,5 +90,5 @@ extern "C" __declspec(dllexport) MyExportedFunction( );
   
 -   [MFC 拡張 DLL](../build/extension-dlls-overview.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DLL の種類](../build/kinds-of-dlls.md)

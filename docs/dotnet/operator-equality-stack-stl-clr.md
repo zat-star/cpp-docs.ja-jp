@@ -1,33 +1,33 @@
 ---
-title: "operator== (stack) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stack::operator=="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator== メンバー [STL/CLR]"
+title: "演算子 = = (スタック) (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::stack::operator==
+dev_langs: C++
+helpviewer_keywords: operator== member [STL/CLR]
 ms.assetid: 862e7130-150a-44ea-9ec4-9f091ab7653d
-caps.latest.revision: 15
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f4a4f6fdda04f82b83a3b4f5e176d757dc154a56
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator== (stack) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-スタック等価比較に使用します。  
+# <a name="operator-stack-stlclr"></a>operator== (stack) (STL/CLR)
+スタックと同じ比較します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value,  
@@ -36,17 +36,17 @@ template<typename Value,
         stack<Value, Container>% right);  
 ```  
   
-#### パラメーター  
- \[left\]  
- 比較の左辺のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 左へ  
+ 比較する左のコンテナー。  
   
- \[right\]  
- 比較の右辺のコンテナー。  
+ 右  
+ 比較する右のコンテナー。  
   
-## 解説  
- 演算子関数は、`left` と `right` によって制御される同じ長さと、各位置 `i`の、`left``[i] ==``right``[i]`がある場合にのみ true を返します。  2 個のスタックが要素によって比較された要素の場合 `left` が `right` と同じ順序になっているかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ 演算子の関数が、シーケンスがによって制御される場合にのみ true を返します`left`と`right`同じ長さであると、各位置`i`、 `left[i] ==` `right[i]`です。 テストするために使用するかどうか`left`が同じ順序付け`right`要素によって比較対象の要素が 2 つのスタックの場合。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_stack_operator_eq.cpp   
@@ -86,19 +86,22 @@ int main()
   
 ```  
   
-  **b c**  
- **b d**  
-**\[\] b c \=\= b c \[\]当てはまります。**  
-**\[\] \=\= b c d b \[\] false です。**   
-## 必要条件  
- **ヘッダー:** \<cliext とスタック\>  
+```Output  
+ a b c  
+ a b d  
+[a b c] == [a b c] is True  
+[a b c] == [a b d] is False  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/stack >  
   
-## 参照  
- [スタック](../dotnet/stack-stl-clr.md)   
- [operator\!\= \(stack\)](../dotnet/operator-inequality-stack-stl-clr.md)   
- [operator\< \(stack\)](../dotnet/operator-less-than-stack-stl-clr.md)   
- [operator\>\= \(stack\)](../Topic/operator%3E=%20\(stack\)%20\(STL-CLR\).md)   
- [operator\> \(stack\)](../dotnet/operator-greater-than-stack-stl-clr.md)   
- [operator\<\= \(stack\)](../dotnet/operator-less-or-equal-stack-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [operator! = (スタック) (STL/CLR)](../dotnet/operator-inequality-stack-stl-clr.md)   
+ [演算子\<(スタック) (STL/CLR)](../dotnet/operator-less-than-stack-stl-clr.md)   
+ [operator > = (スタック) (STL/CLR)](../dotnet/operator-greater-or-equal-stack-stl-clr.md)   
+ [operator > (スタック) (STL/CLR)](../dotnet/operator-greater-than-stack-stl-clr.md)   
+ [operator<= (stack) (STL/CLR)](../dotnet/operator-less-or-equal-stack-stl-clr.md)

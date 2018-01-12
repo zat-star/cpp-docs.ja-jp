@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- towctrans
+apiname: towctrans
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,23 +21,20 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
 apitype: DLLExport
-f1_keywords:
-- towctrans
-dev_langs:
-- C++
-helpviewer_keywords:
-- towctrans function
+f1_keywords: towctrans
+dev_langs: C++
+helpviewer_keywords: towctrans function
 ms.assetid: 1ed1e70d-7b31-490f-a7d9-42564b5924ca
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 8b512cef90d41b2eae3370cf859ab36e1557fd0d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: fcd97b3af0bb7e469db18b1a7ff8290af5df1bc4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="towctrans"></a>towctrans
 文字を変換します。  
@@ -66,16 +61,16 @@ wint_t towctrans(
 ## <a name="remarks"></a>コメント  
  `category` の値は、事前に [wctrans](../../c-runtime-library/reference/wctrans.md) を正常に呼び出して返す必要があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`towctrans`|\<wctype.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  `towctrans` の使用例については「`wctrans`」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 013620a6353c281b2d60a8c4f847f57c60e5f10c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7375d4baf31c1564493fd29938ef2ac8ee034f3e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="determining-which-exporting-method-to-use"></a>エクスポート方式の使い分け
 2 つの方法のいずれかで関数をエクスポートすることができます: .def ファイルまたは`__declspec(dllexport)`キーワード。 DLL の向上方法を決定するために、これらの質問を考慮してください。  
@@ -67,5 +68,5 @@ ms.lasthandoff: 10/24/2017
   
 -   [装飾名](../build/reference/decorated-names.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DLL からのエクスポート](../build/exporting-from-a-dll.md)

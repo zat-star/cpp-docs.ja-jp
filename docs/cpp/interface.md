@@ -4,34 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords:
-- __interface_cpp
-dev_langs:
-- C++
-helpviewer_keywords:
-- __interface keyword [C++]
+f1_keywords: __interface_cpp
+dev_langs: C++
+helpviewer_keywords: __interface keyword [C++]
 ms.assetid: ca5d400b-d6d8-4ba2-89af-73f67e5ec056
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: e502574b9d55238d6f9aed33949e06db3ec6349d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 6fc53310c492c424c3d97aecec965ba03553dd8a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="interface"></a>__interface
 **Microsoft 固有の仕様**  
   
  Visual C++ インターフェイスは次のように定義できます。  
   
--   0 個以上の基本インターフェイスから継承できます。  
+-   0 個以上の基底インターフェイスから継承できます。  
   
 -   基底クラスから継承することはできません。  
   
@@ -156,6 +152,6 @@ bstr_data = Testing
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  [インターフェイス属性](../windows/interface-attributes.md)

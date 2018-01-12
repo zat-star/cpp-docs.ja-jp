@@ -19,11 +19,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8ef7e32f56fdff81c7a66a1dfcc6c613201e2f49
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0df51ea0086104a45385673b310b5717bfa1c9ea
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="passing-ole-db-conformance-tests"></a>OLE DB 準拠合致テスト
 プロバイダーを一貫したものにするには、Data Access SDK は、OLE DB 準拠合致テストのセットを提供します。 テストは、プロバイダーのすべての側面を確認し、妥当なという保証は正常に、プロバイダーの機能を提供します。 Microsoft Data Access SDK では、OLE DB 準拠合致テストを検索できます。 このセクションでは、準拠テストに合格する必要があることについて説明します。 OLE DB 準拠合致テストの実行方法の詳細については、SDK を参照してください。  
@@ -81,5 +84,5 @@ HRESULT ValidateCommandID(DBID* pTableID, DBID* pIndexID)
   
 -   フリー スレッドのプログラミング (つまり、書き込み時のロック) の規則に従って適切なプログラミングします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [高度なプロバイダー手法](../../data/oledb/advanced-provider-techniques.md)

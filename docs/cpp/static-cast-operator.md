@@ -15,11 +15,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d04c49076f5189e913c8755a5bce4d7e5c7daf11
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3913937d9099304c478404c4c55a09fa54392785
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="staticcast-operator"></a>static_cast 演算子
 変換、*式*の型に*タイプ id*は式内に存在する型にのみ基づいてです。  
@@ -111,6 +112,6 @@ void f() {
   
  再配置を行うガベージ コレクターの先頭で unchecked キャストを実行する危険性があるため、`static_cast` は、正しく機能することがわかっている場合にパフォーマンスが重要なコードでのみ使用する必要があります。 使用する場合は`static_cast`リリース モードでは、置換後[safe_cast](../windows/safe-cast-cpp-component-extensions.md)にデバッグ ビルドで成功を確認してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キャスト演算子](../cpp/casting-operators.md)   
  [キーワード](../cpp/keywords-cpp.md)

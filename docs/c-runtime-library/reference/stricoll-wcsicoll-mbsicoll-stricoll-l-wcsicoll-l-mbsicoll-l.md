@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -40,8 +39,7 @@ f1_keywords:
 - _tcsicoll
 - mbsicoll
 - stricoll_l
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - code pages, using for string comparisons
 - _ftcsicoll function
@@ -60,30 +58,16 @@ helpviewer_keywords:
 - strings [C++], comparing by code page
 - ftcsicoll function
 ms.assetid: 8ec93016-5a49-49d2-930f-721566661d82
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 4291a8027dd01c705642af0d3651cc2fbf1277cb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 88464cd717b11591b22f50d3df50f72ebb5fee02
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="stricoll-wcsicoll-mbsicoll-stricolll-wcsicolll-mbsicolll"></a>_stricoll、_wcsicoll、_mbsicoll、_stricoll_l、_wcsicoll_l、_mbsicoll_l
 ロケール固有の情報を使用して文字列を比較します。  
@@ -131,7 +115,7 @@ int _mbsicoll_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらの関数との関係を示す値を返します`string1`に`string2`、次のようにします。  
+ これらの関数の関係を示す値を返します`string1`に`string2`、次のようにします。  
   
 |戻り値|string1 と string2 との関係|  
 |------------------|----------------------------------------|  
@@ -145,9 +129,9 @@ int _mbsicoll_l(
 ## <a name="remarks"></a>コメント  
  これらの各関数は、現在使用中のコード ページに基づき、大文字小文字を区別せずに `string1` および `string2` を比較します。 これらの関数は、現在のコード ページの文字セット順序と辞書式文字順序との間に相違点があり、この違いが文字列比較に関係がある場合にのみ使用します。  
   
- `_stricmp` と `_stricoll` では、`_stricmp` による比較は `LC_CTYPE` の影響を受けるのに対し、`_stricoll` による比較は、ロケールの `LC_CTYPE` カテゴリと `LC_COLLATE` カテゴリに基づくという点が異なります。 `LC_COLLATE`カテゴリの詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」および「[ロケールのカテゴリ](../../c-runtime-library/locale-categories.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンは、現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、代わりに渡されたロケールを使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_stricmp` と `_stricoll` では、`_stricmp` による比較は `LC_CTYPE` の影響を受けるのに対し、`_stricoll` による比較は、ロケールの `LC_CTYPE` カテゴリと `LC_COLLATE` カテゴリに基づくという点が異なります。 `LC_COLLATE`カテゴリの詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」および「[ロケールのカテゴリ](../../c-runtime-library/locale-categories.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンは、現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、代わりに渡されたロケールを使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
- これらのすべての関数では、パラメーターの検証が行われます。 `string1` か `string2` が `NULL` ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、`errno` を `EINVAL` に設定します。  
+ これらのすべての関数では、パラメーターの検証が行われます。 `string1` か `string2` が `NULL` ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、 `errno` を `EINVAL`に設定します。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -155,9 +139,9 @@ int _mbsicoll_l(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tcsicoll`|`_stricoll`|`_mbsicoll`|`_wcsicoll`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_stricoll`, `_stricoll_l`|\<string.h>|  
 |`_wcsicoll`, `_wcsicoll_l`|\<wchar.h>, \<string.h>|  
@@ -165,10 +149,10 @@ int _mbsicoll_l(
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール](../../c-runtime-library/locale.md)   
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
+ [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
  [localeconv](../../c-runtime-library/reference/localeconv.md)   
  [_mbsnbcoll、_mbsnbcoll_l、_mbsnbicoll、_mbsnbicoll_l](../../c-runtime-library/reference/mbsnbcoll-mbsnbcoll-l-mbsnbicoll-mbsnbicoll-l.md)   
  [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   

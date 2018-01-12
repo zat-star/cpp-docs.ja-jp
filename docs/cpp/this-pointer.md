@@ -4,29 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords:
-- this_cpp
-dev_langs:
-- C++
+f1_keywords: this_cpp
+dev_langs: C++
 helpviewer_keywords:
 - nonstatic member functions [C++]
 - pointers, to class instance
 - this pointer
 ms.assetid: 92e3256a-4ad9-4d46-8be1-d77fad90791f
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 86ccf50a089b1497bdc166ee9367215dc59b3ca1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 814e7518c6ed7052abc93b9e4705be93172b1e7f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="this-pointer"></a>this ポインター
 **この**ポインターは、ポインターの非静的メンバー関数内でのみアクセス可能な**クラス**、 `struct`、または**共用体**型です。 これは、呼び出されるメンバー関数によって処理されるオブジェクトを指します。 静的メンバー関数はありません、**この**ポインター。  
@@ -182,7 +179,7 @@ int main()
   
  型**この**メンバー関数は、次の構文によって記述場所*cv 修飾子リスト*メンバー関数宣言子から決定でき、 **const**または**揮発性**(または両方) および*クラス型*クラスの名前を指定します。  
   
- *[cv 修飾子リスト] で、クラス型*** \* const この  **  
+ *[cv 修飾子リスト] で、クラス型* **\* const この**   
   
  つまり、**この**は常に const ポインターです。 再割り当てすることはできません。  **Const**または`volatile`メンバー関数の宣言で使用されている修飾子が指すクラス インスタンスに適用**この**その関数のスコープにします。  
   
@@ -202,6 +199,6 @@ int main()
 > [!NOTE]
 >  コンス トラクターとデストラクターとして宣言することはできません**const**または`volatile`です。 これらを指定できます、ただしで呼び出される**const**または`volatile`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  

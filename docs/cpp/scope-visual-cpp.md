@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: dcf85a2feff9aa16434f626804edefa4dbe4610e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 55baa4496522336a5a64ee81daa7a8ce484534c0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="scope-visual-c"></a>スコープ (Visual C++)
 C++ の名前は、プログラムの特定の領域でのみ使用できます。 この領域は名前の "スコープ" と呼ばれます。 スコープは、静的なオブジェクトを表さない名前の "有効期間" を決定します。 スコープも、クラス コンストラクターおよびデストラクターが呼び出されたとき、およびスコープに対してローカルな変数が初期化されたときに名前の可視性を決定します。 (詳細については、次を参照してください[コンス トラクター](../cpp/constructors-cpp.md)と[デストラクター](../cpp/destructors-cpp.md)。)。スコープは 5 種類あります。  
@@ -155,5 +156,5 @@ Block-scoped i has the value: 5
 File-scoped i has the value: 7  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本的な概念](../cpp/basic-concepts-cpp.md)

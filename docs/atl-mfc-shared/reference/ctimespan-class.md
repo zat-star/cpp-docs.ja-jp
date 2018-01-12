@@ -34,11 +34,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cedcddeefb62fc639ba674225a039cfa81a743ac
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload: cplusplus
+ms.openlocfilehash: cedf05bd8f5af198569891b4d6d59610d5098eb6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctimespan-class"></a>CTimeSpan クラス
 時間間隔の秒数として内部的に格納されている時間の量。  
@@ -93,7 +94,7 @@ class CTimeSpan
   
  使用する方法について`CTimeSpan`、記事を参照して[日付と時刻](../../atl-mfc-shared/date-and-time.md)、および[時間管理](../../c-runtime-library/time-management.md)で、*ランタイム ライブラリ リファレンス*です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atltime.h  
   
 ##  <a name="ctimespan_comparison_operators"></a>CTimeSpan 比較演算子  
@@ -365,7 +366,7 @@ CArchive& Serialize64(CArchive& ar);
 ### <a name="return-value"></a>戻り値  
  更新された`CArchive`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
  [_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   
  [gmtime、_gmtime32、_gmtime64](../../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md)   

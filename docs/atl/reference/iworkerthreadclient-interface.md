@@ -19,11 +19,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cc456cd9b210a4dba9046937a8099b2db6b97470
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 86b0578b3fbe16d21a12edf2ac5eb91528419e83
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iworkerthreadclient-interface"></a>IWorkerThreadClient インターフェイス
 `IWorkerThreadClient`クライアントによって実装されるインターフェイスは、[使用](../../atl/reference/cworkerthread-class.md)クラスです。  
@@ -49,7 +50,7 @@ __interface IWorkerThreadClient
 ## <a name="remarks"></a>コメント  
  シグナル状態になるハンドルへの応答でワーカー スレッドで実行する必要があるコードがある場合は、このインターフェイスを実装します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlutil.h  
   
 ##  <a name="closehandle"></a>IWorkerThreadClient::CloseHandle  
@@ -99,6 +100,6 @@ HRESULT Execute(DWORD_PTR dwParam, HANDLE hObject);
   
  [!code-cpp[NVC_ATL_Utilities#136](../../atl/codesnippet/cpp/iworkerthreadclient-interface_2.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../atl/reference/atl-classes.md)   
  [CWorkerThread クラス](../../atl/reference/cworkerthread-class.md)

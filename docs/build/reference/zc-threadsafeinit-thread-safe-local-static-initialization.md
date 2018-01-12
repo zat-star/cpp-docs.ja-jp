@@ -22,11 +22,12 @@ caps.latest.revision: "1"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3e1476369a798228361b89fdef12c94624ca4a70
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a03f3ea67c9ecabd6fa68d653a3e1812fb0266cc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="zcthreadsafeinit-thread-safe-local-static-initialization"></a>/Zc:threadSafeInit (スレッド セーフであるローカル静的な初期化)  
 `/Zc:threadSafeInit`コンパイラ オプション (関数スコープ) の静的ローカル変数を手動同期の必要性を排除すること、スレッド セーフな方法で初期化するためにコンパイラに指示します。 のみの初期化は、スレッド セーフです。 使用して複数のスレッドで静的ローカル変数を変更する必要があります引き続きする手動で同期します。 このオプションは、Visual Studio 2015 以降で使用できます。 既定では、Visual Studio は、このオプションを有効します。  
@@ -51,7 +52,7 @@ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandar
 3.  選択、**構成プロパティ**、 **C/C++**、**コマンドライン**プロパティ ページ。
 4.  変更、**追加オプション**含めるプロパティを`/Zc:threadSafeInit`または`/Zc:threadSafeInit-`を選択し**OK**です。
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [コンパイラ オプション](../../build/reference/compiler-options.md)  
 [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)  
 [/Zc (準拠)](../../build/reference/zc-conformance.md)  

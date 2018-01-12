@@ -28,11 +28,12 @@ caps.latest.revision: "7"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 744ec295f7bcb86e3228d8f3c62637ad17c53450
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2bf0a8e9c768425fc55b1c819b01d6c3cf4b88dd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platformstring-class"></a>Platform::String クラス
 テキストを表現するために使用される Unicode 文字のシーケンシャル コレクションを表します。 詳細と例については、次を参照してください。[文字列](../cppcx/strings-c-cx.md)です。  
@@ -47,7 +48,7 @@ public ref class String sealed : Object,
     IPrintable  
 ```  
   
-## <a name="iterators"></a>反復子  
+## <a name="iterators"></a>Iterators  
  String クラスのメンバーではない 2 つの反復子関数を `std::for_each` テンプレート関数で使用して、String オブジェクトの文字列を列挙できます。  
   
 |メンバー|説明|  
@@ -98,7 +99,7 @@ public ref class String sealed : Object,
 |[String::operator! = 演算子](#operator-inequality)|指定された 2 つの String オブジェクトの値が異なるかどうかを示します。|  
 |[String::operator < 演算子](#operator-less-than)|1 つの String オブジェクトの値が、2 番目の String オブジェクトの値より小さいかどうかを示します。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -144,7 +145,7 @@ int CompareOrdinal(
 ### <a name="return-value"></a>戻り値  
  2 つの比較対照値の構文上の関係を示す整数。 次の表は、可能性のある戻り値の一覧です。  
   
-|値|条件|  
+|[値]|条件|  
 |-----------|---------------|  
 |-1|`str1` は `str2` より小さい値です。|  
 |0|`str1` は `str2` と等価。|  
@@ -484,5 +485,5 @@ String^ String::ToString()
 ### <a name="return-value"></a>戻り値  
  値が現在の文字列と同じである文字列オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

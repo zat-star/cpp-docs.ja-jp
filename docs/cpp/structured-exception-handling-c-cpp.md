@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - termination handlers [C++], handling exceptions in C++
 - structured exception handling [C++]
@@ -18,21 +16,21 @@ helpviewer_keywords:
 - try-catch keyword [C++], termination handlers
 - C++ exception handling, exception handlers
 ms.assetid: dd3b647d-c269-43a8-aab9-ad1458712976
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 9098ac4914bdb9e054d4db27c0a5498c0f9d9ea8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 37d5a89ebf95d8852664dcd50e44e82009ebd95e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="structured-exception-handling-cc"></a>Structured Exception Handling (C/C++)
 Windows および Visual C++ は構造化例外処理 (SEH) をサポートしていますが、コードの移植性と柔軟性が高くなる ISO 標準の C++ 例外処理を使用することをお勧めします。 ただし、既存のコードや特定の種類のプログラムでは、SEH を使用する必要がある場合もあります。  
   
-## <a name="microsoft-specific"></a>Microsoft 固有の仕様 →  
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
   
 ## <a name="grammar"></a>文法  
  *try のステートメントを除く*:  
@@ -152,7 +150,7 @@ Executing SEH __except block
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理](../cpp/exception-handling-in-visual-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [\<exception>](../standard-library/exception.md)   

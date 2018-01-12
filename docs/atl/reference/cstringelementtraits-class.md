@@ -24,11 +24,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c45a2174650c7df3c3685472a36bdf306e8e7321
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 025c9aa66a8647fd5d8ca9803aedb50b27ed3be1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cstringelementtraits-class"></a>CStringElementTraits クラス
 このクラスに格納するコレクション クラスで使用する静的関数が用意されています`CString`オブジェクト。  
@@ -68,7 +69,7 @@ class CStringElementTraits
   
  詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** cstringt.h  
   
 ##  <a name="compareelements"></a>CStringElementTraits::CompareElements  
@@ -180,7 +181,7 @@ static void RelocateElements(
 ### <a name="remarks"></a>コメント  
  この静的関数を呼び出す[memmove](../../c-runtime-library/reference/memmove-wmemmove.md)、これは、ほとんどのデータ型。 オブジェクトの移動中に、独自のメンバーへのポインターが含まれている場合は、この静的関数をオーバーライドする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CElementTraitsBase クラス](../../atl/reference/celementtraitsbase-class.md)   
  [CStringElementTraitsI クラス](../../atl/reference/cstringelementtraitsi-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

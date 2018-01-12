@@ -17,30 +17,31 @@ caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6541dc5dc262f5d00325c594d64637b5e87a45d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3be1c8eea7b11f60e9ce9a7cbf5ebc0c2b99b698
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="predefined-rules"></a>定義済み規則
 組み込み推論規則では、NMAKE のコマンド マクロおよびオプション マクロが使用されます。  
   
-|ルール|コマンド|既定<br /><br /> アクション|Batch<br /><br /> ルール|nmake が実行されるプラットフォーム|  
+|ルール|コマンド|既定値<br /><br /> アクション|Batch<br /><br /> ルール|nmake が実行されるプラットフォーム|  
 |----------|-------------|------------------------|--------------------|----------------------------|  
-|.asm.exe|$(AS) $(AFLAGS) $<|ml $<|no|x86|  
+|.asm.exe|$(AS) $(AFLAGS) $<|ml $<|Ｘ|x86|  
 |.asm.obj|$(AS) $(AFLAGS) /c $<|ml /c $<|可|x86|  
 |.asm.exe|$(AS) $(AFLAGS) $<|ml64 $<|Ｘ|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
 |.asm.obj|$(AS) $(AFLAGS) /c $<|ml64 /c $<|可|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
-|.c.exe|$(CC) $(CFLAGS) $<|cl $<|no|all|  
-|.c.obj|$(CC) $(CFLAGS) /c $<|cl /c $<|可|all|  
-|.cc.exe|$(CC) $(CFLAGS) $<|cl $<|no|all|  
-|.cc.obj|$(CC) $(CFLAGS) /c $<|cl /c $<|可|all|  
-|.cpp.exe|$(CPP) $(CPPFLAGS) $<|cl $<|no|all|  
-|.cpp.obj|$(CPP) $(CPPFLAGS) /c $<|cl /c $<|可|all|  
-|.cxx.exe|$(CXX) $(CXXFLAGS) $<|cl $<|no|all|  
-|.cxx.obj|$(CXX) $(CXXFLAGS) /c $<|cl /c $<|可|all|  
-|.rc.res|$(RC) $(RFLAGS) /r $<|rc /r $<|no|すべて|  
+|.c.exe|$(CC) $(CFLAGS) $<|cl $<|no|すべて|  
+|.c.obj|$(CC) $(CFLAGS) /c $<|cl /c $<|可|すべて|  
+|.cc.exe|$(CC) $(CFLAGS) $<|cl $<|no|すべて|  
+|.cc.obj|$(CC) $(CFLAGS) /c $<|cl /c $<|可|すべて|  
+|.cpp.exe|$(CPP) $(CPPFLAGS) $<|cl $<|no|すべて|  
+|.cpp.obj|$(CPP) $(CPPFLAGS) /c $<|cl /c $<|可|すべて|  
+|.cxx.exe|$(CXX) $(CXXFLAGS) $<|cl $<|no|すべて|  
+|.cxx.obj|$(CXX) $(CXXFLAGS) /c $<|cl /c $<|可|すべて|  
+|.rc.res|$(RC) $(RFLAGS) /r $<|rc /r $<|Ｘ|すべて|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [推論規則](../build/inference-rules.md)

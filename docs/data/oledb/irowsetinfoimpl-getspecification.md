@@ -20,11 +20,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 012f845cd47bca6008cdc493651cf17bb1745466
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: c2c0fd40e5d46b67779da50983b8b8faad13a024
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="irowsetinfoimplgetspecification"></a>IRowsetInfoImpl::GetSpecification
 この行セットを作成するオブジェクト (コマンドまたはセッション) のインターフェイス ポインターを返します。  
@@ -45,10 +48,10 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  このメソッドを使用[IGetDataSourceImpl](../../data/oledb/igetdatasourceimpl-class.md)データ ソース オブジェクトからプロパティを取得します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IRowsetInfoImpl クラス](../../data/oledb/irowsetinfoimpl-class.md)   
  [Irowsetinfoimpl::getreferencedrowset](../../data/oledb/irowsetinfoimpl-getreferencedrowset.md)   
  [IRowsetInfoImpl::GetProperties](../../data/oledb/irowsetinfoimpl-getproperties.md)

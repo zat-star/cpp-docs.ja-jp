@@ -22,11 +22,12 @@ caps.latest.revision: "1"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c8334a446c995155fb0632ed135ca9578f6ff881
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0d3d352394b61f95e083a2e6e6f0d888fe210b37
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="zcreferencebinding-enforce-reference-binding-rules"></a>/Zc:referenceBinding (参照のバインディング規則の適用)
 ときに、 **/Zc:referenceBinding**オプションを指定すると、コンパイラでは、一時的にバインドする非定数の左辺値参照することはできません。  
@@ -74,7 +75,7 @@ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandar
   
 4.  変更、**追加オプション**含めるプロパティを**/Zc:referenceBinding**を選択し**OK**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [コンパイラ オプション](../../build/reference/compiler-options.md)   
 [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
 [/Zc (準拠)](../../build/reference/zc-conformance.md)

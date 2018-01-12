@@ -1,93 +1,96 @@
 ---
-title: "/Yc (プリコンパイル済みヘッダー ファイルの作成) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLCompilerTool.UsePrecompiledHeader"
-  - "/yc"
-  - "VC.Project.VCCLWCECompilerTool.PrecompiledHeaderThrough"
-  - "VC.Project.VCCLWCECompilerTool.UsePrecompiledHeader"
-  - "VC.Project.VCCLCompilerTool.PrecompiledHeaderThrough"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".pch ファイル, 作成"
-  - "/Yc コンパイラ オプション [C++]"
-  - "PCH ファイル, 作成"
-  - "プリコンパイル済みヘッダー ファイル, 作成"
-  - "Yc コンパイラ オプション [C++]"
-  - "-Yc コンパイラ オプション [C++]"
+title: "-Yc (プリコンパイル済みヘッダー ファイルの作成) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLCompilerTool.UsePrecompiledHeader
+- /yc
+- VC.Project.VCCLWCECompilerTool.PrecompiledHeaderThrough
+- VC.Project.VCCLWCECompilerTool.UsePrecompiledHeader
+- VC.Project.VCCLCompilerTool.PrecompiledHeaderThrough
+dev_langs: C++
+helpviewer_keywords:
+- precompiled header files, creating
+- PCH files, creating
+- .pch files, creating
+- -Yc compiler option [C++]
+- /Yc compiler option [C++]
+- Yc compiler option [C++]
 ms.assetid: 47c2e555-b4f5-46e6-906e-ab5cf21f0678
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 865b5e0fa7039a0b60f524c2f13a367569757d92
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /Yc (プリコンパイル済みヘッダー ファイルの作成)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ある時点でのコンパイルの状態を表すプリコンパイル済みヘッダー \(.pch\) ファイルを作成します。  
+# <a name="yc-create-precompiled-header-file"></a>/Yc (プリコンパイル済みヘッダー ファイルの作成)
+特定の時点でのコンパイルの状態を表すプリコンパイル済みヘッダー (.pch) ファイルを作成するようにコンパイラに指示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-/Yc[filename]  
-```  
+> __/Yc__
+> __/Yc__*ファイル名*  
   
-## Arguments  
- `filename`  
- ヘッダー \(.h\) ファイルを指定します。  この引数を使用すると、コンパイラは .h ファイルまでのすべてのコードをコンパイルします。  
   
-## 解説  
- 引数を使わずに **\/Yc** を指定すると、コンパイラはベース ソース ファイルの最後まで、またはベース ファイルで [hdrstop](../../preprocessor/hdrstop.md) が現れる位置までのすべてのコードをコンパイルします。  生成される .pch ファイルでは、**hdrstop** プラグマまたは **\/Fp** オプションを使って別のファイル名を指定しない限り、ベース ソース ファイルと同じ基本名が使用されます。  
+## <a name="arguments"></a>引数  
+*ファイル名*  
+ ヘッダー (.h) ファイルを指定します。 この引数を使用すると、コンパイラは、.h ファイルを含むすべてのコードをコンパイルします。  
   
- プリコンパイル済みコードは、**\/Yc** オプションで指定されたファイルの基本名に拡張子 .pch が付いた名前のファイルに保存されます。  [\/Fp \(.pch ファイルの名前の指定\)](../Topic/-Fp%20\(Name%20.Pch%20File\).md) オプションを使用して、プリコンパイル済みヘッダー ファイルの名前を指定することもできます。  
+## <a name="remarks"></a>コメント  
+ ときに**/Yc**なしで指定された引数またはベース ファイル内の点を基本ソース ファイルの最後までのすべてのコードをコンパイルしている、 [hdrstop](../../preprocessor/hdrstop.md)ディレクティブがします。 結果として得られる .pch ファイルは、同じ基本名と、基本ソース ファイルを使用して別のファイル名を指定していない限り、 **hdrstop**プラグマ、または**/Fp**オプション。  
   
- \/**\/Yc**`filename` を指定すると、後で **\/Yu** オプションで使用できるように、指定されたファイルまでのすべてのコードがコンパイルされます。  
+ プリコンパイルされたコードがで指定されたファイルのベース名から作成された名前のファイルに保存、 **/Yc**オプションと拡張子を .pch です。 使用することも、 [/Fp (名前です。Pch ファイル)](../../build/reference/fp-name-dot-pch-file.md)プリコンパイル済みヘッダー ファイルの名前を指定するにはオプションです。  
   
- **\/Yc** `filename` オプションと [\/Yu \(プリコンパイル済みヘッダー ファイルの使用\)](../../build/reference/yu-use-precompiled-header-file.md)`filename` オプションが 1 つのコマンド ラインに指定され、その両方が同じファイル名を参照または暗黙に指定する場合は、**\/Yc**`filename` が優先されます。  したがって、メイクファイルの作成が簡単になります。  
+ 使用する場合__/Yc__*filename*、以降での使用の指定したファイルを含むすべてのコードをコンパイルして、 [/Yu (プリコンパイル済みヘッダー ファイルの使用)](../../build/reference/yu-use-precompiled-header-file.md)オプション。  
   
- プリコンパイル済みヘッダーの詳細については、以下のトピックを参照してください。  
+ 場合オプション__/Yc__*filename*と__/Yu__*filename*同じコマンドラインで発生し、両方を参照しているか、同じファイル名を意味します。__/Yc__*filename*が優先されます。 この機能は、メイクファイルの記述を簡略化します。  
   
--   [\/Y \(プリコンパイル済みヘッダー\)](../../build/reference/y-precompiled-headers.md)  
+ プリコンパイル済みヘッダーの詳細についてを参照してください。  
+  
+-   [/Y (プリコンパイル済みヘッダー)](../../build/reference/y-precompiled-headers.md)  
   
 -   [プリコンパイル済みヘッダー ファイルの作成](../../build/reference/creating-precompiled-header-files.md)  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  .cpp ファイルを選択します。  .cpp ファイルは、プリコンパイル済みヘッダー情報を含む .h ファイルを \#include する必要があります。  プロジェクトの **\/Yc** 設定はファイル レベルでオーバーライドできます。  
+1.  .Cpp ファイルを選択します。 .Cpp ファイルである必要があります #include プリコンパイル済みヘッダーの情報を含む .h ファイルです。 プロジェクトの**/Yc**ファイル レベルで設定をオーバーライドできます。  
   
-2.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+2.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-3.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+3.  開く、**構成プロパティ**、 **C/C++**、**プリコンパイル済みヘッダー**プロパティ ページ。  
   
-4.  **\[プリコンパイル済みヘッダー\]** プロパティ ページをクリックします。  
+4.  変更、**プリコンパイル済みヘッダーの**プロパティです。  
   
-5.  **\[ファイルを使用して PCH を作成\/使用\]** プロパティまたは **\[プリコンパイル済みヘッダーの作成\/使用\]** プロパティを変更します。  
+5.  ファイル名を設定するには、変更、**プリコンパイル済みヘッダー ファイル**プロパティです。
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.PrecompiledHeaderThrough%2A>」および「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.UsePrecompiledHeader%2A>」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
  次のコードがあるとします。  
   
-```  
+```cpp  
+// prog.cpp
+// compile with: cl /c /Ycmyapp.h prog.cpp
 #include <afxwin.h>   // Include header for class library  
 #include "resource.h" // Include resource definitions  
 #include "myapp.h"    // Include information specific to this app  
-...  
+// ...  
 ```  
   
- コマンド `CL /YcMYAPP.H PROG.CPP` を使用してこのコードをコンパイルすると、AFXWIN.h、RESOURCE.h、および MYAPP.h までのコンパイル結果がプリコンパイル済みヘッダー ファイル MYAPP.pch に保存されます。  
+コマンドを使用してこのコードをコンパイルするときに`CL /YcMYAPP.H PROG.CPP`コンパイラは、AFXWIN.h、RESOURCE.h のすべての前処理を保存、およびプリコンパイル済みヘッダー ファイルで MYAPP.h というされます。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)[プリコンパイル済みヘッダー ファイルの作成](../../build/reference/creating-precompiled-header-files.md)

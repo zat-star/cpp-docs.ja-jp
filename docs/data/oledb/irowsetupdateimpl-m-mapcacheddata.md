@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6007498d85160124484860726d09523b9340bd14
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: c3b48a309d10d232eb311b66602e61ff727cdef7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="irowsetupdateimplmmapcacheddata"></a>IRowsetUpdateImpl::m_mapCachedData
 遅延された操作の元のデータを含むマップします。  
@@ -45,8 +48,8 @@ m_mapCachedData;
  `pData`  
  キャッシュされたデータへのポインター。 データは、型*ストレージ*(ユーザー レコード クラス)。 参照してください、*ストレージ*のテンプレート引数[IRowsetUpdateImpl クラス](../../data/oledb/irowsetupdateimpl-class.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IRowsetUpdateImpl クラス](../../data/oledb/irowsetupdateimpl-class.md)

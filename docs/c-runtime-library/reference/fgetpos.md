@@ -31,11 +31,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 913893c1e9aa1b67a88eeecf81a377debbb2be2a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 418de3c365c2c42c1cfc41d386a1a823d7e8cfad
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fgetpos"></a>fgetpos
 ストリームのファイル位置インジケーターを取得します。  
@@ -62,13 +63,13 @@ int fgetpos(
 ## <a name="remarks"></a>コメント  
  `fgetpos` 関数は、`stream` 引数のファイル位置インジケーターの現在の値を取得し、`pos` で示されるオブジェクトに格納します。 `fsetpos` 関数は、`pos` に格納されている情報を後で使用して、`fgetpos` が呼び出された時点の位置まで `stream` 引数のポインターをリセットします。 `pos` 値は内部形式で格納されます。`fgetpos` と `fsetpos` でのみ使用される値です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fgetpos`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -125,6 +126,6 @@ after fgetpos: gets a stream
 after fsetpos: gets a stream  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fsetpos](../../c-runtime-library/reference/fsetpos.md)

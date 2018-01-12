@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 79f360bffa4938098b4b37dd2260596c70669d12
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c03706be0b9853cbbdebe79b58e410f7237692ee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-function-name-without--produces-no-code"></a>"()" のない関数名とコードの生成
 かっこを使用せず、プログラムで宣言された関数名を使用する場合、コンパイラがコードを生成しません。 これは、コンパイラは関数のアドレスを計算するために、関数がパラメーターを受け取るかどうかに関係なく発生します。ただし、関数呼び出し演算子 (「)」が存在しないため、呼び出しは行われません。 この結果は、次のようには。  
@@ -47,5 +48,5 @@ void funcn() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コードの最適化](../../build/reference/optimizing-your-code.md)

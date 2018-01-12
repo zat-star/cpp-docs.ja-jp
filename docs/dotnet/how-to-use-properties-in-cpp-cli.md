@@ -1,35 +1,37 @@
 ---
-title: "方法: C++/CLI でプロパティを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プロパティ [C++], 単純な"
-  - "単純プロパティ"
+title: "方法: プロパティを使用して、C + + CLI |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 07/21/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- simple properties
+- properties [C++], simple
 ms.assetid: f5d82547-e214-4f05-9e1b-ddb6d0dc5e4c
-caps.latest.revision: 10
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 9f1a25d91939119ddda10480ed3bbd4691d06af9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: C++/CLI でプロパティを使用する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ここでは C\+\+\/CLI でプロパティを使用する方法を示します。  
+# <a name="how-to-use-properties-in-ccli"></a>方法: C++/CLI でプロパティを使用する
+この記事は、C + でのプロパティを使用する方法を示しています。 + CLI です。  
   
-## 基本的なプロパティ  
- これらの基本プロパティに対して、プロパティのデータ型が指定されている場合、コンパイラが自動的に提供されるため、プライベート データ メンバーを割り当て、取得する get および set アクセサー関数を明示的に定義する必要はありません。  このコードは、基本的なプロパティを持つ T:  
+## <a name="basic-properties"></a>基本的なプロパティ  
+ 基本的なプロパティ-だけを割り当てるし、プライベート データ メンバーを取得する — 明示的に get を定義およびプロパティのデータ型だけを指定した場合に、コンパイラが自動的に提供するために、アクセサー関数を設定する必要はありません。 このコードでは、基本的なプロパティを示しています。  
   
-```  
+```cpp  
 // SimpleProperties.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -46,13 +48,14 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **c サイズ\>\= 111**   
-## 静的プロパティ  
- このコード サンプルは静的プロパティを宣言して使用する方法を示します。静的プロパティは、クラスの静的メンバーだけにアクセスできます。  
-  
+```Output  
+c->Size = 111  
 ```  
+  
+## <a name="static-properties"></a>静的プロパティ  
+ このコード サンプルでは、宣言および静的プロパティを使用する方法を示します。  静的プロパティは、そのクラスの静的メンバーにのみアクセスできます。  
+  
+```cpp  
 // mcppv2_property_3.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -84,22 +87,21 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **96**  
-**47**   
-## インデックス付きプロパティ  
- インデックス付きプロパティは、添字演算子を使用してアクセスするデータ構造を公開します。  
-  
- 既定のインデックス付きプロパティを使用する場合は、クラス名の参照によってデータ構造体にアクセスできます。ユーザー定義のインデックス付きプロパティを使用すると、データ構造にアクセスするためのプロパティ名を指定する必要があります。  
-  
- `this` のポインターを使用して既定のインデクサーにアクセスする方法の詳細については、「[値型および参照型における this ポインターのセマンティクス](../misc/semantics-of-the-this-pointer-in-value-and-reference-types.md)」を参照してください。  
-  
- C\# で記述されたインデクサーを使用する方法の詳細については、「[方法: C\# インデクサーを使用する](../dotnet/how-to-consume-a-csharp-indexer-cpp-cli.md)」を参照してください。  
-  
- このコード サンプルが既定とユーザー定義のインデックス付きプロパティの使用例を:  
-  
+```Output  
+96  
+47  
 ```  
+  
+## <a name="indexed-properties"></a>インデックス付きプロパティ  
+ インデックス付きプロパティは、通常、添字演算子を使用してアクセスされるデータ構造を公開します。  
+  
+ 使用する場合、既定値のインデックス付きプロパティ、クラス名を参照するだけでデータ構造にアクセスすることができますがユーザー定義のインデックス付きプロパティを使用する場合は、データ構造体にアクセスするプロパティ名を指定する必要があります。  
+  
+ C# で記述されたインデクサーを使用する方法については、次を参照してください。[する方法: c# インデクサーを使用する (C + + CLI)](../dotnet/how-to-consume-a-csharp-indexer-cpp-cli.md)です。  
+  
+ このコード サンプルでは、既定値およびユーザー定義のインデックス付きプロパティを使用する方法を示します。  
+  
+```cpp  
 // mcppv2_property_2.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -155,12 +157,14 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **\[ 0 1 2 3 4 \]**  
-**\[ 0 2 4 6 8 \]** 次の例では `this` のポインターを使用して既定のインデクサーを呼び出す方法を示します。  
-  
+```Output  
+[ 0 1 2 3 4 ]  
+[ 0 2 4 6 8 ]  
 ```  
+  
+ 次のサンプルを使用して、既定のインデクサーを呼び出す方法を示しています、`this`ポインター。  
+  
+```cpp  
 // call_default_indexer_through_this_pointer.cpp  
 // compile with: /clr /c  
 value class Position {  
@@ -182,9 +186,9 @@ private:
 };  
 ```  
   
- このサンプルでは、既定のインデクサーを指定するために <xref:System.Reflection.DefaultMemberAttribute> を使用する方法について説明します。:  
+ このサンプルを使用する方法を示します<xref:System.Reflection.DefaultMemberAttribute>を既定のインデクサーを指定します。  
   
-```  
+```cpp  
 // specify_default_indexer.cpp  
 // compile with: /LD /clr  
 using namespace System;  
@@ -198,9 +202,9 @@ public ref struct Squares {
 };  
 ```  
   
- 前の例で作成した次の例は、メタデータを使用します。  
+ 次の例では、前の例で作成されるメタデータを消費します。  
   
-```  
+```cpp  
 // consume_default_indexer.cpp  
 // compile with: /clr  
 #using "specify_default_indexer.dll"  
@@ -210,13 +214,14 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
- **9**   
-## 仮想プロパティ  
- このコード サンプルでは、仮想プロパティの宣言と使用方法を説明します:  
-  
+```Output  
+9  
 ```  
+  
+## <a name="virtual-properties"></a>仮想プロパティ  
+ このコード サンプルでは、宣言および仮想プロパティを使用する方法を示します。  
+  
+```cpp  
 // mcppv2_property_4.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -255,16 +260,17 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **93**  
-**43**   
-## abstract、sealed プロパティ  
- 、Visual C\+\+ コンパイラ用の ECMA C\+\+\/CLI 仕様で有効に [abstract](../windows/abstract-cpp-component-extensions.md) と [sealed](../windows/sealed-cpp-component-extensions.md) キーワードが指定されていますが、単純なプロパティで、重要なプロパティのプロパティ宣言でそれらを指定できません。  
-  
- シールされているか、または抽象プロパティを宣言するには、重要なプロパティを定義し、get アクセサーと set アクセサーの関数で `abstract` または `sealed` キーワードを指定する必要があります。  
-  
+```Output  
+93  
+43  
 ```  
+  
+## <a name="abstract-and-sealed-properties"></a>Abstract および sealed プロパティ  
+ [抽象](../windows/abstract-cpp-component-extensions.md)と[シール](../windows/sealed-cpp-component-extensions.md)キーワードが有効で、ECMA C + と指定されて + CLI 仕様で、Visual C コンパイラでは指定できませんに単純なプロパティでもプロパティで非 trivial プロパティの宣言。  
+  
+ Sealed または抽象プロパティを宣言するには、非 trivial プロパティを定義し、指定する必要があります、`abstract`または`sealed`キーワード get と set アクセサー関数。  
+  
+```cpp  
 // properties_abstract_sealed.cpp  
 // compile with: /clr  
 ref struct A {  
@@ -320,14 +326,15 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **86**  
-**87**   
-## 多次元プロパティ  
- パラメーターの標準以外の数を受け取るプロパティのアクセサー メソッドを定義するには、多次元プロパティを使用できます。  
-  
+```Output  
+86  
+87  
 ```  
+  
+## <a name="multidimensional-properties"></a>多次元プロパティ  
+ 多次元プロパティを使用するには、非標準の数のパラメーターを受け取るプロパティ アクセサー メソッドを定義します。  
+  
+```cpp  
 // mcppv2_property_5.cpp  
 // compile with: /clr  
 ref class X {  
@@ -363,13 +370,14 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **1.1**   
-## プロパティ アクセサーのオーバーロード  
- 次の例は、インデックス付きプロパティをオーバーロードする方法を示します。  
-  
+```Output  
+1.1  
 ```  
+  
+## <a name="overloading-property-accessors"></a>プロパティ アクセサーをオーバー ロード  
+ 次の例では、インデックス付きプロパティをオーバー ロードする方法を示します。  
+  
+```cpp  
 // mcppv2_property_6.cpp  
 // compile with: /clr  
 ref class X {  
@@ -399,9 +407,10 @@ int main() {
 }  
 ```  
   
- **出力**  
+```Output  
+3.4  
+6.8  
+```  
   
-  **3.4**  
-**6.8**   
-## 参照  
- [property](../windows/property-cpp-component-extensions.md)
+## <a name="see-also"></a>参照  
+ [プロパティ](../windows/property-cpp-component-extensions.md)

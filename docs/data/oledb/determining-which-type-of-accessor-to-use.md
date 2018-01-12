@@ -16,11 +16,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6eebc119186a5a57fa1cf2c5e0c80479ef4cdcf3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: cb2e18c8b0c5ab110b9818e46e7fc68c08656274
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="determining-which-type-of-accessor-to-use"></a>使用するアクセサーの種類の決定
 コンパイル時または実行時に、行セットでのデータ型を指定できます。  
@@ -31,7 +34,7 @@ ms.lasthandoff: 10/24/2017
   
  次の表は、コンシューマー テンプレートで提供されるアクセサーの種類を一覧表示します。 各アクセサーでは、長所と短所がします。 1 つのアクセサーの種類、状況に応じてニーズに合う必要があります。  
   
-|アクセサー クラス|バインディング|パラメーター|コメント|  
+|アクセサー クラス|バインド|パラメーター|コメント|  
 |--------------------|-------------|---------------|-------------|  
 |`CAccessor`|ユーザー レコードを作成する`COLUMN_ENTRY`マクロです。 マクロは、そのレコード内のデータ メンバーをアクセサーにバインドします。 行セットの作成時に列をバインド解除できません。|使用して、はい、 **PARAM_MAP**マクロ エントリです。 バインドされると、パラメーターをバインド解除できません。|少量のコードのための最も高速なアクセサー。|  
 |`CDynamicAccessor`|自動。|いいえ。|行セット内のデータの種類がわからない場合に役立ちます。|  
@@ -40,5 +43,5 @@ ms.lasthandoff: 10/24/2017
 |`CManualAccessor`|使用して手動`AddBindEntry`です。|使用して手動で`AddParameterEntry`です。|非常に高速です。パラメーターと列が 1 回のみバインドされます。 使用するデータの種類を指定します。 (を参照してください[DBVIEWER](http://msdn.microsoft.com/en-us/07620f99-c347-4d09-9ebc-2459e8049832)例については、サンプルです)。以上のコードを必要と`CDynamicAccessor`または`CAccessor`です。 OLE DB を直接呼び出すようになります。|  
 |`CXMLAccessor`|自動。|いいえ。|文字列データとしてデータ ストアからアクセスされるデータを取得し、データの XML タグの付いたとして書式設定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセサーの使用](../../data/oledb/using-accessors.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2e3b0f986d4bc805a3cac1ec49193f3749f31af9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 028b31044d035def628785969a04c27af4699f65
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="genprofile-fastgenprofile-generate-profiling-instrumented-build"></a>/GENPROFILE、/FASTGENPROFILE (プロファイル インストルメント ビルドの生成)
 ガイド付き最適化のプロファイル (PGO) をサポートするために、リンカーによる .pgd ファイルの生成を指定します。  /GENPROFILE と /FASTGENPROFILE は、それぞれに異なる既定のパラメーターを使用します。 プロファイル中に精度を速度とメモリ使用量よりも優先する場合は、/GENPROFILE を使用します。 精度よりも少ないメモリ使用量と速度を優先する場合は、/FASTGENPROFILE を使用します。  
@@ -60,7 +61,7 @@ ms.lasthandoff: 10/24/2017
   
  /GENPROFILE または /FASTGENPROFILE を指定するときには、/LTCG も指定する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)   
  [/LTCG (リンク時コード生成)](../../build/reference/ltcg-link-time-code-generation.md)
