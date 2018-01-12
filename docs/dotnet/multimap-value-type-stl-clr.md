@@ -1,41 +1,42 @@
 ---
-title: "multimap::value_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multimap::value_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "value_type メンバー [STL/CLR]"
+title: "multimap::value_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::multimap::value_type
+dev_langs: C++
+helpviewer_keywords: value_type member [STL/CLR]
 ms.assetid: c10d75f9-2efe-41f7-babc-655c68c14a4f
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f9665173de6b985f48160622a591ff32a31bda28
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# multimap::value_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="multimapvaluetype-stlclr"></a>multimap::value_type (STL/CLR)
 要素の型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef generic_value value_type;  
 ```  
   
-## 解説  
- この型は、`generic_value` のシノニムです。  
+## <a name="remarks"></a>コメント  
+ この型は `generic_value` の同意語です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multimap_value_type.cpp   
@@ -62,14 +63,17 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+[a 1] [b 2] [c 3]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [multimap](../dotnet/multimap-stl-clr.md)   
- [multimap::const\_reference](../dotnet/multimap-const-reference-stl-clr.md)   
- [multimap::key\_type](../dotnet/multimap-key-type-stl-clr.md)   
- [multimap::reference](../dotnet/multimap-reference-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
+ [multimap::const_reference (STL/CLR)](../dotnet/multimap-const-reference-stl-clr.md)   
+ [multimap::key_type (STL/CLR)](../dotnet/multimap-key-type-stl-clr.md)   
+ [multimap::reference (STL/CLR)](../dotnet/multimap-reference-stl-clr.md)

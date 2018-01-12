@@ -1,35 +1,37 @@
 ---
-title: "変更の概略 (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "変更の概要 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: c0bbbd6b-c5c4-44cf-a6ca-c1010c377e9d
-caps.latest.revision: 14
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: fdc0015bda5f0a6678b1d274c79445aba4e4aab0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 変更の概略 (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、C\+\+ マネージ拡張から [!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] への移行に伴う、言語上の変更点をいくつか紹介します。  詳細については、各項目のリンクを参照してください。  
+# <a name="outline-of-changes-ccli"></a>変更の概略 (C++/CLI)
+このアウトライン例を示す変更のいくつかのマネージ拡張からの言語で Visual c の C++ の。 詳細については、各項目に付属しているリンクを辿ってください。  
   
-## キーワードの 2 つのアンダースコアの削除  
- すべてのキーワードの前に付いていた 2 つのアンダースコアは、1 つの例外を除き、削除されました。  つまり、`__value` は `value` 、`__interface` は `interface` のようになっています。  ユーザー コードでのキーワードと識別子の名前の衝突を回避するため、キーワードは基本的に状況依存として扱われます。  
+## <a name="no-double-underscore-keywords"></a>キーワードは二重アンダー スコア  
+ すべてのキーワードの前にある二重のアンダー スコアは削除されました、1 つの例外。 したがって、`__value`になります`value`と`__interface`なります`interface`のようにします。 キーワードとユーザー コード内で識別子名の競合を防ぐためには、キーワードは、主に扱われますとコンテキスト。  
   
- 詳細については、「[言語キーワード \(C\+\+\/CLI\)\]](../Topic/Language%20Keywords%20\(C++-CLI\).md)」を参照してください。  
+ 参照してください[言語のキーワード (C + + CLI)](../dotnet/language-keywords-cpp-cli.md)詳細についてはします。  
   
-## クラス宣言  
- マネージ拡張の構文  
+## <a name="class-declarations"></a>クラスの宣言  
+ マネージ拡張構文:  
   
 ```  
 __gc class Block {};                           // reference class  
@@ -39,7 +41,7 @@ __gc __abstract class Shape {};                // abstract class
 __gc __sealed class Shape2D : public Shape {}; // derived class  
 ```  
   
- 新しい構文  
+ 新しい構文:  
   
 ```  
 ref class Block {};                // reference class  
@@ -49,10 +51,10 @@ ref class Shape abstract {};       // abstract class
 ref class Shape2D sealed: Shape{}; // derived class  
 ```  
   
- 詳細については、「[マネージ型 \(C\+\+\/CL\)](../dotnet/managed-types-cpp-cl.md)」を参照してください。  
+ 参照してください[マネージ型 (C + + CL)](../dotnet/managed-types-cpp-cl.md)詳細についてはします。  
   
-## オブジェクト宣言  
- マネージ拡張の構文  
+## <a name="object-declaration"></a>オブジェクトの宣言  
+ マネージ拡張構文:  
   
 ```  
 public __gc class Form1 : public System::Windows::Forms::Form {  
@@ -64,7 +66,7 @@ private:
 };  
 ```  
   
- 新しい構文  
+ 新しい構文:  
   
 ```  
 public ref class Form1 : System::Windows::Forms::Form {  
@@ -75,10 +77,10 @@ public ref class Form1 : System::Windows::Forms::Form {
 };  
 ```  
   
- 詳細については、「[CLR 参照クラスのオブジェクトの宣言](../dotnet/declaration-of-a-clr-reference-class-object.md)」を参照してください。  
+ 参照してください[CLR 参照クラス オブジェクトの宣言](../dotnet/declaration-of-a-clr-reference-class-object.md)詳細についてはします。  
   
-### マネージ ヒープの割り当て  
- マネージ拡張の構文  
+### <a name="managed-heap-allocation"></a>マネージ ヒープの割り当て  
+ マネージ拡張構文:  
   
 ```  
 Button* button1 = new Button; // managed heap  
@@ -86,7 +88,7 @@ int *pi1 = new int;           // native heap
 Int32 *pi2 = new Int32;       // managed heap  
 ```  
   
- 新しい構文  
+ 新しい構文:  
   
 ```  
 Button^ button1 = gcnew Button;        // managed heap  
@@ -94,10 +96,10 @@ int * pi1 = new int;                   // native heap
 Int32^ pi2 = gcnew Int32;              // managed heap  
 ```  
   
- 詳細については、「[CLR 参照クラスのオブジェクトの宣言](../dotnet/declaration-of-a-clr-reference-class-object.md)」を参照してください。  
+ 参照してください[CLR 参照クラス オブジェクトの宣言](../dotnet/declaration-of-a-clr-reference-class-object.md)詳細についてはします。  
   
-### オブジェクトなしへの追跡参照  
- マネージ拡張の構文  
+### <a name="a-tracking-reference-to-no-object"></a>ないオブジェクトへの追跡参照  
+ マネージ拡張構文:  
   
 ```  
 // OK: we set obj to refer to no object  
@@ -107,7 +109,7 @@ Object * obj = 0;
 Object * obj2 = 1;  
 ```  
   
- 新しい構文  
+ 新しい構文:  
   
 ```  
 // Incorrect Translation  
@@ -123,45 +125,45 @@ Object ^ obj = nullptr;
 Object ^ obj2 = 1;  
 ```  
   
- 詳細については、「[CLR 参照クラスのオブジェクトの宣言](../dotnet/declaration-of-a-clr-reference-class-object.md)」を参照してください。  
+ 参照してください[CLR 参照クラス オブジェクトの宣言](../dotnet/declaration-of-a-clr-reference-class-object.md)詳細についてはします。  
   
-## 配列の宣言  
- CLR 配列はデザインし直されました。  stl `vector` テンプレートのように見えますが、基となる `System::Array` クラスに割り当てられているので、テンプレート実装ではありません。  
+## <a name="array-declaration"></a>配列の宣言  
+ CLR 配列が再設計されました。 Stl に似ています`vector`テンプレート コレクションが、基になるマップ`System::Array`クラス: つまりはテンプレートの実装です。  
   
- 詳細については、「[CLR 配列の宣言](../dotnet/declaration-of-a-clr-array.md)」を参照してください。  
+ 参照してください[CLR 配列の宣言](../dotnet/declaration-of-a-clr-array.md)詳細についてはします。  
   
-### パラメーターとしての配列  
- マネージ拡張の配列構文  
+### <a name="array-as-parameter"></a>パラメーターとして配列  
+ マネージ拡張配列の構文:  
   
 ```  
 void PrintValues( Object* myArr __gc[]);   
 void PrintValues( int myArr __gc[,,]);   
 ```  
   
- 新しい配列構文  
+ 新しい配列の構文:  
   
 ```  
 void PrintValues( array<Object^>^ myArr );  
 void PrintValues( array<int,3>^ myArr );  
 ```  
   
-### 戻り値の型としての配列  
- マネージ拡張の配列構文  
+### <a name="array-as-return-type"></a>戻り値の型として配列  
+ マネージ拡張配列の構文:  
   
 ```  
 Int32 f() [];   
 int GetArray() __gc[];  
 ```  
   
- 新しい配列構文  
+ 新しい配列の構文:  
   
 ```  
 array<Int32>^ f();  
 array<int>^ GetArray();  
 ```  
   
-### ローカル CLR 配列の略式の初期化  
- マネージ拡張の配列構文  
+### <a name="shorthand-initialization-of-local-clr-array"></a>ローカルの CLR 配列の略式の初期化  
+ マネージ拡張配列の構文:  
   
 ```  
 int GetArray() __gc[] {  
@@ -173,7 +175,7 @@ int GetArray() __gc[] {
 }  
 ```  
   
- 新しい配列構文  
+ 新しい配列の構文:  
   
 ```  
 array<int>^ GetArray() {  
@@ -184,22 +186,22 @@ array<int>^ GetArray() {
 }  
 ```  
   
-### 明示的な CLR 配列宣言  
- マネージ拡張の配列構文  
+### <a name="explicit-clr-array-declaration"></a>明示的な CLR 配列の宣言  
+ マネージ拡張配列の構文:  
   
 ```  
 Object* myArray[] = new Object*[2];  
 String* myMat[,] = new String*[4,4];  
 ```  
   
- 新しい配列構文  
+ 新しい配列の構文:  
   
 ```  
 array<Object^>^ myArray = gcnew array<Object^>(2);  
 array<String^,2>^ myMat = gcnew array<String^,2>(4,4);  
 ```  
   
- 新規導入 : gcnew の後の明示的な配列の初期化  
+ 初めて使用する言語: gcnew を明示的な配列の初期化  
   
 ```  
 // explicit initialization list follow gcnew   
@@ -208,8 +210,8 @@ array<Object^>^ myArray =
    gcnew array<Object^>(4){ 1, 1, 2, 3 };  
 ```  
   
-## スカラー プロパティ  
- マネージ拡張のプロパティ構文  
+## <a name="scalar-properties"></a>スカラー プロパティ  
+ マネージ拡張プロパティの構文:  
   
 ```  
 public __gc __sealed class Vector {  
@@ -221,7 +223,7 @@ public:
 };  
 ```  
   
- 新しいプロパティ構文  
+ 新しいプロパティの構文:  
   
 ```  
 public ref class Vector sealed {   
@@ -232,11 +234,11 @@ public:
    {  
       double get()             { return _x; }  
       void   set( double newx ){ _x = newx; }  
-   } // Note: no semi-colon …  
+   } // Note: no semi-colon  
 };  
 ```  
   
- 新規導入 : 単純なプロパティ  
+ 初めて使用する言語: 単純なプロパティ  
   
 ```  
 public ref class Vector sealed {   
@@ -247,10 +249,10 @@ public:
 };  
 ```  
   
- 詳細については、「[プロパティの宣言](../dotnet/property-declaration.md)」を参照してください。  
+ 参照してください[プロパティ宣言](../dotnet/property-declaration.md)詳細についてはします。  
   
-## インデックス付きプロパティ  
- マネージ拡張のインデックス付きプロパティ構文  
+## <a name="indexed-properties"></a>インデックス付きプロパティ  
+ マネージ拡張のインデックス付きプロパティの構文。  
   
 ```  
 public __gc class Matrix {  
@@ -262,7 +264,7 @@ public:
 };  
 ```  
   
- 新しいインデックス付きプロパティ構文  
+ 新しいインデックス付きプロパティの構文:  
   
 ```  
 public ref class Matrix {  
@@ -276,7 +278,7 @@ public:
 };  
 ```  
   
- 新規導入 : クラス レベルのインデックス付きプロパティ  
+ 初めて使用する言語: インデックス付きプロパティをクラス レベル  
   
 ```  
 public ref class Matrix {  
@@ -296,10 +298,10 @@ public:
 };  
 ```  
   
- 詳細については、「[プロパティ インデックスの宣言](../dotnet/property-index-declaration.md)」を参照してください。  
+ 参照してください[プロパティ インデックスの宣言](../dotnet/property-index-declaration.md)詳細についてはします。  
   
-## オーバーロードされた演算子  
- マネージ拡張の演算子オーバーロード構文  
+## <a name="overloaded-operators"></a>オーバーロードされた演算子  
+ マネージ拡張演算子のオーバー ロードの構文:  
   
 ```  
 public __gc __sealed class Vector {  
@@ -321,7 +323,7 @@ int main() {
 }  
 ```  
   
- 新しい演算子オーバーロード構文  
+ 新しい演算子のオーバー ロードの構文:  
   
 ```  
 public ref class Vector sealed {  
@@ -342,10 +344,10 @@ int main() {
 }  
 ```  
   
- 詳細については、「[オーバーロードされた演算子](../dotnet/overloaded-operators.md)」を参照してください。  
+ 参照してください[オーバー ロードされた演算子](../dotnet/overloaded-operators.md)詳細についてはします。  
   
-## 変換演算子  
- マネージ拡張の変換演算子構文  
+## <a name="conversion-operators"></a>変換演算子  
+ マネージ拡張変換演算子の構文:  
   
 ```  
 __gc struct MyDouble {  
@@ -355,7 +357,7 @@ __gc struct MyDouble {
 };  
 ```  
   
- 新しい変換演算子構文  
+ 新しい変換演算子の構文:  
   
 ```  
 ref struct MyDouble {  
@@ -366,10 +368,10 @@ public:
 };  
 ```  
   
- 詳細については、「[変換演算子に対する変更点](../dotnet/changes-to-conversion-operators.md)」を参照してください。  
+ 参照してください[変換演算子に変更](../dotnet/changes-to-conversion-operators.md)詳細についてはします。  
   
-## インターフェイス メンバーの明示的オーバーライド  
- マネージ拡張の明示的オーバーライド構文  
+## <a name="explicit-override-of-an-interface-member"></a>インターフェイス メンバーの明示的なオーバーライド  
+ マネージ拡張の明示的なオーバーライド構文  
   
 ```  
 public __gc class R : public ICloneable {  
@@ -381,7 +383,7 @@ public __gc class R : public ICloneable {
 };  
 ```  
   
- 新しい明示的オーバーライド構文  
+ 新しい明示的なオーバーライド構文:  
   
 ```  
 public ref class R : public ICloneable {  
@@ -393,10 +395,10 @@ public ref class R : public ICloneable {
 };  
 ```  
   
- 詳細については、「[インターフェイス メンバーの明示的なオーバーライド](../dotnet/explicit-override-of-an-interface-member.md)」を参照してください。  
+ 参照してください[インターフェイス メンバーの明示的なオーバーライド](../dotnet/explicit-override-of-an-interface-member.md)詳細についてはします。  
   
-## プライベート仮想関数  
- マネージ拡張のプライベート仮想関数構文  
+## <a name="private-virtual-functions"></a>プライベート仮想関数  
+ マネージ拡張プライベート仮想関数の構文:  
   
 ```  
 __gc class Base {  
@@ -412,7 +414,7 @@ public:
 };  
 ```  
   
- 新しいプライベート仮想関数構文  
+ 新しいプライベート仮想関数の構文  
   
 ```  
 ref class Base {  
@@ -428,10 +430,10 @@ public:
 };  
 ```  
   
- 詳細については、「[プライベート仮想関数](../Topic/Private%20Virtual%20Functions.md)」を参照してください。  
+ 参照してください[プライベート仮想関数](../dotnet/private-virtual-functions.md)詳細についてはします。  
   
-## CLR 列挙型  
- マネージ拡張の列挙型構文  
+## <a name="clr-enum-type"></a>CLR 列挙型  
+ マネージ拡張列挙型の構文:  
   
 ```  
 __value enum e1 { fail, pass };  
@@ -441,7 +443,7 @@ public __value enum e2 : unsigned short  {
 };    
 ```  
   
- 新しい列挙型構文  
+ 新しい列挙型の構文:  
   
 ```  
 enum class e1 { fail, pass };  
@@ -451,33 +453,33 @@ public enum class e2 : unsigned short {
 };  
 ```  
   
- このように構文が多少変わったこと以外に、CLR 列挙型の動作もいくつか変更されています。  
+ この小さな構文変更とは別には、CLR 列挙型の動作をさまざまな方法で変更されています。  
   
--   CLR 列挙型の事前の宣言はサポートされなくなりました。  
+-   CLR 列挙型の事前宣言がサポートされていません。  
   
--   組み込みの数値型と Object クラス階層構造の間でのオーバーロードの解決は、マネージ拡張と [!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では逆転しています。  その副次効果として、CLR 列挙型が暗黙のうちに数値型に変換されることはなくなりました。  
+-   組み込みの数値型とオブジェクトのクラス階層間でオーバー ロードの解決は、管理されている拡張機能と Visual C 間に戻されました。 副作用として、としては、CLR 列挙型は数値型に不要になった暗黙的に変換します。  
   
--   マネージ拡張の場合とは異なり、新しい構文では CLR 列挙型は独自のスコープを維持します。  これまで、列挙子は列挙型の保持しているスコープ内で参照可能でしたが、今度は列挙子は列挙型のスコープ内にカプセル化されています。  
+-   新しい構文では、CLR 列挙型は、マネージ拡張の場合はそれ自体のスコープを維持します。 以前は、列挙子でした; 列挙型のコンテナーのスコープ内に表示されます。ここで、列挙子は列挙型のスコープ内にカプセル化します。  
   
- 詳細については、「[CLR 列挙型](../dotnet/clr-enum-type.md)」を参照してください。  
+ 参照してください[CLR 列挙型](../dotnet/clr-enum-type.md)詳細についてはします。  
   
-## \_\_box キーワードの削除  
- マネージ拡張のボックス化構文  
+## <a name="removal-of-box-keyword"></a>_ _Box キーワードの削除  
+ マネージ拡張構文をボックス化します。  
   
 ```  
 Object *o = __box( 1024 ); // explicit boxing  
 ```  
   
- 新しいボックス化構文  
+ 新しいボックス化の構文:  
   
 ```  
 Object ^o = 1024; // implicit boxing  
 ```  
   
- 詳細については、「[追跡ハンドルからボックス化変換された値へ](../dotnet/a-tracking-handle-to-a-boxed-value.md)」を参照してください。  
+ 参照してください[のボックス化された値を識別するハンドルを追跡](../dotnet/a-tracking-handle-to-a-boxed-value.md)詳細についてはします。  
   
-## 固定ポインター  
- マネージ拡張の固定ポインター構文  
+## <a name="pinning-pointer"></a>固定ポインター  
+ マネージ拡張のポインターの構文を固定します。  
   
 ```  
 __gc struct H { int j; };  
@@ -488,7 +490,7 @@ int main() {
 };  
 ```  
   
- 新しい固定ポインター構文  
+ 新しい固定ポインターの構文:  
   
 ```  
 ref struct H { int j; };  
@@ -499,26 +501,27 @@ int main() {
 }  
 ```  
   
- 詳細については、「[値型セマンティクス](../Topic/Value%20Type%20Semantics.md)」を参照してください。  
+ 参照してください[値型セマンティクス](../dotnet/value-type-semantics.md)詳細についてはします。  
   
-## \_\_typeof キーワードの typeid への変更  
- マネージ拡張の typeof 構文  
+## <a name="typeof-keyword-becomes-typeid"></a>_ _typeof キーワード typeid になります  
+ マネージ拡張 typeof 構文:  
   
 ```  
 Array* myIntArray =   
    Array::CreateInstance( __typeof(Int32), 5 );  
 ```  
   
- 新しい typeid 構文  
+ 新しい typeid 構文:  
   
 ```  
 Array^ myIntArray =   
    Array::CreateInstance( Int32::typeid, 5 );  
 ```  
   
- 詳細については、「[typeof から T::typeid への移行](../dotnet/typeof-goes-to-t-typeid.md)」を参照してください。  
+ 参照してください[typeof が t::typeid へ移動](../dotnet/typeof-goes-to-t-typeid.md)詳細についてはします。  
   
-## 参照  
- [C\+\+\/CLI 移行ガイド](../dotnet/cpp-cli-migration-primer.md)   
- [\(NOTINBUILD\)Managed Extensions for C\+\+ Syntax Upgrade Checklist](http://msdn.microsoft.com/ja-jp/edbded88-7ef3-4757-bd9d-b8f48ac2aada)   
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [C + +/CLI 移行ガイド](../dotnet/cpp-cli-migration-primer.md)   
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)
+
+

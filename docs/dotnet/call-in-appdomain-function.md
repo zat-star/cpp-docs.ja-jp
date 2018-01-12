@@ -1,32 +1,33 @@
 ---
-title: "call_in_appdomain 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "call_in_appdomain"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "call_in_appdomain 関数"
+title: "call_in_appdomain 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: call_in_appdomain
+dev_langs: C++
+helpviewer_keywords: call_in_appdomain function
 ms.assetid: 9a1a5026-b76b-4cae-a3d4-29badeb9db9c
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 10fc96a2fee5195db97b9a3a8ac3341ea5c3a444
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# call_in_appdomain 関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-指定したアプリケーション ドメインの関数を実行します。  
+# <a name="callinappdomain-function"></a>call_in_appdomain 関数
+指定されたアプリケーション ドメインで関数を実行します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <typename ArgType1, ...typename ArgTypeN>  
@@ -47,26 +48,26 @@ RetType call_in_appdomain(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `appdomainId`  
- 関数を呼び出す appdomain。  
+ 関数を呼び出すアプリケーション ドメイン。  
   
  `voidFunc`  
- N パラメーター \(0 \<\= N \<\= 15\) を受け取る `void` 関数へのポインター。  
+ ポインター、 `void` N パラメータを取る関数 (0 < = N < = 15)。  
   
  `nonvoidFunc`  
- N パラメーター \(0 \<\= N \<\= 15\) を受け取る`void` の非関数へのポインター。  
+ 以外へのポインター`void` N パラメータを取る関数 (0 < = N < = 15)。  
   
  `arg1...argN`  
- 他の appdomain の `voidFunc` または `nonvoidFunc` に渡す\) の 15 のパラメーター。  
+ 渡される 15 個のパラメーターに 0`voidFunc`または`nonvoidFunc`他の appdomain にします。  
   
-## 戻り値  
- 指定したアプリケーション ドメインの `voidFunc` または `nonvoidFunc` を実行した結果。  
+## <a name="return-value"></a>戻り値  
+ 実行結果`voidFunc`または`nonvoidFunc`指定されたアプリケーション ドメインでします。  
   
-## 解説  
- `call_in_appdomain` に渡された関数の引数は CLR 型である必要があります。  
+## <a name="remarks"></a>コメント  
+ 関数の引数に渡されます`call_in_appdomain`CLR 型をすることはできません。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_call_in_appdomain.cpp  
@@ -112,7 +113,7 @@ int main()
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 default appdomain: msl_call_in_appdomain.exe  
@@ -121,7 +122,7 @@ default appdomain id = 1
 appDomain1 id = 2  
 ```  
   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\appdomain.h\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\appdomain.h >  
   
- **名前空間** の msclr
+ **Namespace** msclr

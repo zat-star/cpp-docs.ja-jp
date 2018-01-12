@@ -1,35 +1,37 @@
 ---
-title: "ネイティブ型に入れ子になっている値型のバージョンの問題 (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__nogc 型の宣言"
-  - "__value キーワード, 発行 (入れ子時に)"
+title: "ネイティブ型に入れ子になった値の型のバージョンの問題 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- __nogc type declarations
+- __value keyword, issues when nesting
 ms.assetid: 0a3b1a43-39c6-4b52-be2f-1074690188aa
-caps.latest.revision: 13
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 29a5eb3a085682f243f1497e56b12a0b7d760edb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ネイティブ型に入れ子になっている値型のバージョンの問題 (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-クライアント アセンブリをビルドするために使用される署名済みの \(厳密な名前\) アセンブリ コンポーネントを考えます。  このコンポーネントには、クライアントでネイティブ共用体、クラス、または配列のメンバーの型として使用される値型が含まれています。  将来のバージョンのコンポーネントで値型のサイズまたはレイアウトが変更された場合は、クライアントを再コンパイルする必要があります。  
+# <a name="version-issues-for-value-types-nested-in-native-types-ccli"></a>ネイティブ型に入れ子になっている値型のバージョンの問題 (C++/CLI)
+署名 (厳密な名前) アセンブリ コンポーネントがクライアント アセンブリをビルドするために使用を検討してください。 コンポーネントには、ネイティブの共用体、クラス、または配列のメンバーの種類として、クライアントで使用される値の型が含まれています。 コンポーネントの将来のバージョンでは、サイズまたは値型のレイアウトを変更する場合、クライアントを再コンパイルする必要があります。  
   
- [sn.exe](../Topic/Sn.exe%20\(Strong%20Name%20Tool\).md) \(`sn -k mykey.snk`\) でキーファイルを作成します。  
+ キー ファイルを作成する[sn.exe](/dotnet/framework/tools/sn-exe-strong-name-tool) (`sn -k mykey.snk`)。  
   
-## 使用例  
- コンポーネントの例を次に示します。  
+## <a name="example"></a>例  
+ 次の例は、コンポーネントです。  
   
 ```  
 // nested_value_types.cpp  
@@ -46,8 +48,8 @@ public value struct S {
 };  
 ```  
   
-## 使用例  
- クライアントの例を次に示します。  
+## <a name="example"></a>例  
+ このサンプルでは、クライアントです。  
   
 ```  
 // nested_value_types_2.cpp  
@@ -72,7 +74,7 @@ int main() {
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 S.i = 5  
@@ -81,8 +83,8 @@ S.i = 10
 S.i = 11  
 ```  
   
-### コメント  
- しかし、nested\_value\_types.cpp で `struct S` に別のメンバー \(たとえば `double d;`\) を追加し、クライアントを再コンパイルせずにコンポーネントを再コンパイルすると、\(<xref:System.IO.FileLoadException?displayProperty=fullName> 型の\) 処理できない例外が発生します。  
+### <a name="comments"></a>コメント  
+ ただし、する別のメンバーを追加する場合`struct S`nested_value_types.cpp で (たとえば、 `double d;`) クライアントを再コンパイルしなくても、コンポーネントを再コンパイルし、結果は、未処理の例外 (型の<xref:System.IO.FileLoadException?displayProperty=fullName>)。  
   
-## 参照  
- [マネージ型](../Topic/Managed%20Types%20\(C++-CLI\).md)
+## <a name="see-also"></a>参照  
+ [マネージ型 (C++/CLI)](../dotnet/managed-types-cpp-cli.md)

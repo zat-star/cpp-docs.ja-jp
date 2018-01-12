@@ -1,34 +1,36 @@
 ---
-title: "CRowsetImpl::GetCommandFromID | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CRowsetImpl::GetCommandFromID"
-  - "GetCommandFromID"
-  - "CRowsetImpl.GetCommandFromID"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetCommandFromID メソッド"
+title: "Crowsetimpl::getcommandfromid |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CRowsetImpl::GetCommandFromID
+- GetCommandFromID
+- CRowsetImpl.GetCommandFromID
+dev_langs: C++
+helpviewer_keywords: GetCommandFromID method
 ms.assetid: 9f39cb07-1c40-486f-ba5b-cb4a65fab8a7
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e75fbd00b6ee2e4a19cf0fe39d0bcda9f0314f8a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CRowsetImpl::GetCommandFromID
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-その場合は、いずれか一方または両方のパラメーターがデータ メンバー [m\_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md) と [m\_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)に文字列値をコピー文字列値に含まれている参照するかどうかを調べます。  
+# <a name="crowsetimplgetcommandfromid"></a>CRowsetImpl::GetCommandFromID
+いずれかまたは両方のパラメーターには、文字列値が含まれている場合を確認するためのチェックは、データ メンバーに文字列値をコピー [m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)と[その](../../data/oledb/crowsetimpl-m-strindextext.md)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -38,22 +40,22 @@ caps.handback.revision: 9
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pTableID`  
- \[\]テーブルを表す **DBID** ID へのポインター。  
+ [in]ポインター、 **DBID**テーブルの ID を表す  
   
  `pIndexID`  
- \[\]インデックスを表す **DBID** ID へのポインター。  
+ [in]ポインター、 **DBID**インデックスの ID を表す  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- このメソッドは `CRowsetImpl` で静的なアップキャストを通じてデータ メンバー [m\_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md) と [m\_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)を設定するために呼び出されます。  既定では、いずれか一方または両方のパラメーターが文字列値が含まれている場合は、メソッドを確認します。  これらの文字列値が含まれている場合、このメソッドのコピー データ メンバーに文字列値。  `CRowsetImpl`にこのシグネチャを持つメソッドを設定して\-派生クラスは、基本実装の代わりに、メソッドが呼び出されます。  
+## <a name="remarks"></a>コメント  
+ このメソッドは、静的キャスト`CRowsetImpl`データ メンバーを設定する[m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)と[その](../../data/oledb/crowsetimpl-m-strindextext.md)です。 既定では、このメソッドは、いずれかまたは両方のパラメーターに文字列値が含まれているかどうかを確認します。 文字列値を含まれている場合、このメソッドは、データ メンバーに文字列値をコピーします。 このシグネチャを持つメソッドを配置することによって、 `CRowsetImpl`-派生クラスでは、基底の実装ではなく、メソッドが呼び出されます。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CRowsetImpl クラス](../../data/oledb/crowsetimpl-class.md)   
  [CRowsetImpl::SetCommandText](../../data/oledb/crowsetimpl-setcommandtext.md)

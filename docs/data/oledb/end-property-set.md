@@ -1,32 +1,33 @@
 ---
-title: "END_PROPERTY_SET | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "END_PROPERTY_SET"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "END_PROPERTY_SET マクロ"
+title: "END_PROPERTY_SET |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: END_PROPERTY_SET
+dev_langs: C++
+helpviewer_keywords: END_PROPERTY_SET macro
 ms.assetid: c20a5c97-1d6e-41c5-be2f-244e008e87af
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 365889ce3ae5ef9cdffa8dc585974afca366b779
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# END_PROPERTY_SET
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プロパティ セットの終了位置を示します。  
+# <a name="endpropertyset"></a>END_PROPERTY_SET
+プロパティ セットの末尾をマークします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -36,17 +37,17 @@ guid
   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `guid`  
- \[\]プロパティの GUID。  
+ [in]プロパティの GUID です。  
   
-## 使用例  
- [BEGIN\_PROPSET\_MAP](../Topic/BEGIN_PROPSET_MAP.md)を参照してください。  
+## <a name="example"></a>例  
+ 「 [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md)」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート用マクロ](../../data/oledb/macros-for-ole-db-provider-templates.md)   
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   

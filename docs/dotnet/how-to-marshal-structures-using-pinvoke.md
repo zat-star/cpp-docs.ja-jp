@@ -18,11 +18,14 @@ caps.latest.revision: "30"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 52fa9aece3f31cf20029e58352d459f91bb56526
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5bfca720a97ac8462afa970e54f13e0bd74a7808
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-marshal-structures-using-pinvoke"></a>方法: PInvoke を使用して構造体をマーシャリングする
 このドキュメントには、C スタイルの文字列は、のインスタンスを提供するマネージ関数から呼び出すことがそのまま使用するネイティブ関数がについて説明します<xref:System.String>P/invoke を使用しています。 代わりに、C++ Interop 機能を使用することをお勧めします P/invoke P/invoke はほとんどのコンパイル時エラーを報告があるので、タイプ セーフではありませんしを実装する、アンマネージ API が DLL としてパッケージ化され、ソース コードが面倒になることができます。P/invoke は唯一のオプションを使用できる、です。 それ以外の場合、次のドキュメントを参照してください。  
@@ -140,5 +143,5 @@ int main() {
 [managed] x=50 y=50  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ での明示的な PInvoke (DllImport 属性) の使用方法](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)

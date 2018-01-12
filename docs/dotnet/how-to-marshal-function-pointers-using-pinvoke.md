@@ -1,48 +1,51 @@
 ---
-title: "方法: PInvoke を使用して関数ポインターをマーシャリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ マーシャリング [C++], コールバックとデリゲート"
-  - "相互運用 [C++], コールバックとデリゲート"
-  - "マーシャリング [C++], コールバックとデリゲート"
-  - "プラットフォーム呼び出し [C++], コールバックとデリゲート"
+title: "方法: PInvoke を使用して関数ポインターをマーシャ リング |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- data marshaling [C++], callbacks and delegates
+- interop [C++], callbacks and delegates
+- platform invoke [C++], callbacks and delegates
+- marshaling [C++], callbacks and delegates
 ms.assetid: dcf396fd-a91d-49c0-ab0b-1ea160668a89
-caps.latest.revision: 21
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: cf7f23ea9337b499d4ec80b19e3104074429cc71
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: PInvoke を使用して関数ポインターをマーシャリングする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、.NET Framework の P\/Invoke 機能を使用してアンマネージ関数と相互運用するときに、関数ポインターの代わりにマネージ デリゲートを使用する方法について説明します。  ただし、P\/Invoke は、ほとんどコンパイル時のエラーを報告せず、タイプセーフでもなく、また実装に時間がかかるため、可能な場合、Visual C\+\+ プログラマは P\/Invoke の代わりに C\+\+ Interop を使用することが推奨されています。  アンマネージ API が DLL としてパッケージ化されていて、そのソース コードが利用できない場合、P\/Invoke を使用する以外方法はありません。  それ以外の場合、次のトピックを参照してください。  
+# <a name="how-to-marshal-function-pointers-using-pinvoke"></a>方法: PInvoke を使用して関数ポインターをマーシャリングする
+このトピックには、マネージ デリゲートがについて説明しますと相互運用するアンマネージ関数を .NET Framework P/invoke 機能を使用するときに関数ポインターの代わりに使用できます。 ただし、Visual C (可能な場合)、代わりに、C++ Interop 機能を使用することをお勧め、ために、プログラマ P/invoke ほとんどのコンパイル時エラーを報告がタイプ セーフではありませんし、実装に時間がかかることができます。 アンマネージ API が DLL としてパッケージ化されたソース コードを使用できない場合は、P/invoke、唯一のオプションです。 それ以外の場合、次のトピックを参照してください。  
   
--   [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)  
+-   [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)  
   
--   [方法: C\+\+ Interop を使用してコールバックおよびデリゲートをマーシャリングする](../dotnet/how-to-marshal-callbacks-and-delegates-by-using-cpp-interop.md)  
+-   [方法: C++ Interop を使用してコールバックおよびデリゲートをマーシャリングする](../dotnet/how-to-marshal-callbacks-and-delegates-by-using-cpp-interop.md)  
   
- 関数ポインターを引数として受け取るアンマネージ API は、ネイティブ関数ポインターの代わりにマネージ デリゲートを使用してマネージ コードから呼び出すことができます。  コンパイラは、デリゲートを関数ポインターとしてアンマネージ関数に自動的にマーシャリングし、必要なマネージまたはアンマネージ遷移コードを挿入します。  
+ 引数は、ネイティブ関数ポインターの代わりにマネージ デリゲートを使用してマネージ コードから呼び出すことができます、関数ポインターを受け取るアンマネージ Api です。 コンパイラは自動的に関数ポインターとしてアンマネージ関数にデリゲートをマーシャ リングし、必要なマネージ/アンマネージ遷移コードを挿入します。  
   
-## 使用例  
- 次のコードは、アンマネージ モジュールとマネージ モジュールで構成されます。  アンマネージ モジュールは、関数ポインターを受け取る TakesCallback と呼ばれる関数を定義する DLL です。  このアドレスは、関数を実行するために使用されます。  
+## <a name="example"></a>例  
+ 次のコードはアンマネージとマネージ モジュールで構成されます。 アンマネージ モジュールは、関数ポインターを受け付ける TakesCallback に呼び出される関数を定義する DLL です。 このアドレスは、関数の実行に使用されます。  
   
- マネージ モジュールは、関数ポインターとしてネイティブ コードにマーシャリングされるデリゲートを定義し、<xref:System.Runtime.InteropServices.DllImportAttribute> 属性を使用して、ネイティブ TakesCallback 関数をマネージ コードに公開します。  main 関数では、デリゲートのインスタンスが作成され、TakesCallback 関数に渡されます。  プログラムの出力には、この関数がネイティブ TakesCallback 関数によって実行されたことが示されます。  
+ マネージ モジュールは、関数ポインターとしてネイティブ コードにマーシャ リングを使用してデリゲートを定義、<xref:System.Runtime.InteropServices.DllImportAttribute>マネージ コードにネイティブ TakesCallback 関数を公開する属性。 メインの関数では、デリゲートのインスタンスが作成され、TakesCallback 関数に渡されます。 プログラムの出力は、この関数がネイティブ TakesCallback 関数によって実行されることを示します。  
   
- マネージ関数は、ネイティブ関数の実行中に .NET Framework のガベージ コレクションがデリゲートを再配置することがないように、マネージ デリゲートに対するガベージ コレクションを抑制します。  
+ マネージ関数では、.NET Framework のガベージ コレクション ネイティブ関数の実行中に、デリゲートを再配置することを防ぐために、マネージ デリゲートのガベージ コレクションを抑制します。  
   
- \/clr を指定してマネージ モジュールをコンパイルします。\/clr:pure を使用してもかまいません。  
+ マネージ モジュールは、/clr は/clr でコンパイル: 純粋なが動作します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
-```  
+```cpp  
 // TraditionalDll5.cpp  
 // compile with: /LD /EHsc  
 #include <iostream>  
@@ -66,7 +69,7 @@ int TakesCallback(CALLBACK fp, int n) {
 }  
 ```  
   
-```  
+```cpp  
 // MarshalDelegate.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -94,7 +97,7 @@ int main() {
 }  
 ```  
   
- ただし、DLL のどの部分も、従来の \#include ディレクティブを使用してのマネージ コードへの公開はしていません。  実際には、DLL には実行時にしかアクセスしないため、<xref:System.Runtime.InteropServices.DllImportAttribute> を使ってインポートされた関数についての問題は、コンパイル時には検出されません。  
+ 従来を使用してマネージ コードに、DLL の一部は公開されていませんことに注意してください #include ディレクティブです。 実際には、DLL は実行時にのみでの機能に問題が取り込まれるように<xref:System.Runtime.InteropServices.DllImportAttribute>はコンパイル時に、検出されません。  
   
-## 参照  
- [C\+\+ での明示的な PInvoke \(DllImport 属性\) の使用方法 ](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)
+## <a name="see-also"></a>参照  
+ [C++ での明示的な PInvoke (DllImport 属性) の使用方法](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)

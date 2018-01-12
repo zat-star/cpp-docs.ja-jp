@@ -20,11 +20,14 @@ caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4cccb224553bc217bbbcd37030f03419f6f5d55e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 654fab0aa5a5bf96e145f37ae4855f556f79bebf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="accessing-xml-data"></a>XML データへのアクセス
 データ ソースから XML データを取得する 2 つの異なるメソッドがある: いずれかを使用して[CStreamRowset](../../data/oledb/cstreamrowset-class.md)およびその他の用途[CXMLAccessor](../../data/oledb/cxmlaccessor-class.md)です。  
@@ -44,7 +47,7 @@ ms.lasthandoff: 10/24/2017
 CCommand<CAccessor<CMyAccessor>, CStreamRowset> myCmd;  
 ```  
   
- または  
+ - または -  
   
 ```  
 CCommand<CNoAccessor, CStreamRowset> myCmd;  
@@ -92,5 +95,5 @@ while( SUCCEEDED(hr) && hr != DB_S_ENDOFROWSET )
   
  使用することができます[GetXMLColumnData](../../data/oledb/cxmlaccessor-getxmlcolumndata.md) XML 形式の文字列データとして列 (データ型) の情報を取得します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセサーの使用](../../data/oledb/using-accessors.md)

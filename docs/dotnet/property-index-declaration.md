@@ -1,33 +1,36 @@
 ---
-title: "プロパティ インデックスの宣言 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "既定のインデクサー"
-  - "既定値, インデクサー"
-  - "インデックス付きプロパティ, C++"
-  - "インデクサー"
+title: "プロパティ インデックスの宣言 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- indexers
+- default indexers
+- defaults, indexers
+- indexed properties, C++
 ms.assetid: d898fdbc-2106-4b6a-8c5c-9f511d80fc2f
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: fbd1158dce82b2cc2ae7d15e7b66d6b9058d8c85
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# プロパティ インデックスの宣言
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-インデックス付きプロパティの宣言の構文は、[!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では C\+\+ マネージ拡張から変更されています。  
+# <a name="property-index-declaration"></a>プロパティ インデックスの宣言
+インデックス付きプロパティを宣言する構文は、Visual C を c++ マネージ拡張から変更されました。  
   
- インデックス付きプロパティに対するマネージ拡張言語サポートには大きな欠点が 2 つあります。1 つは、クラス レベルの添字が使用できないため、すべてのインデックス付きプロパティに対して名前を設定する必要があることです。その結果、`Vector` または `Matrix` クラス オブジェクトに対して直接適用可能な、マネージされた添字演算子などを利用できなくなります。  もう 1 つの欠点は、重要性という点では劣りますが、プロパティとインデックス付きプロパティとを視覚的には判別が困難になることです。パラメーターの数から判別する以外に術がないからです。  最後に、インデックス付きプロパティにはインデックスで指定されていないプロパティと同様の問題があります。つまり、アクセサーが個々のメソッドと別々に定義されており、一体化されていないということです。たとえば、次のようになります。  
+ インデックス付きプロパティのマネージ拡張言語のサポートの 2 つの主な欠点は、クラス レベルの添字演算子; を提供することができません。つまり、すべてのインデックス付きプロパティは、名前を指定するために必要、したがって方法はありません、たとえば、直接に適用する管理対象の添字演算子を提供する、`Vector`または`Matrix`クラス オブジェクト。 重大な欠点を以下の 2 番目を視覚的に、インデックス付きプロパティからプロパティを識別するが困難であるパラメーターの数がだけが示されますです。 最後に、インデックス付きプロパティのプロパティのインデックス付きでないものと同じ問題 - アクセサーがない、アトミック単位として扱われますが、個々 のメソッドに分割します。  例:  
   
 ```  
 public __gc class Vector;  
@@ -43,7 +46,7 @@ public:
 };  
 ```  
   
- これを見てわかるように、インデクサーは、2 次元または 1 次元インデックスを示す追加パラメーターによって判別されるだけです。  新しい構文では、インデクサー名の後の角かっこ \(\[、\]\) によってインデクサーの判別が行われます。角かっこ内のパラメーターは、各インデックスの数と型を表しています。  
+ インデクサーが、2 つを指定するか、1 つの追加のパラメーターによってのみ区別がわかるようにここで、次元のインデックス。 新しい構文では、インデクサーは、角かっこ ([、]) 次のインデクサーの名前と各インデックスの種類と数を示すによって識別されます。  
   
 ```  
 public ref class Vector {};  
@@ -64,7 +67,7 @@ public:
 };  
 ```  
   
- 新しい構文を使用して、クラスのオブジェクトに直接適用可能なクラス レベルのインデクサーを指定するには、明示的な名前の代わりに `default` キーワードを再使用します。  たとえば、次のようになります。  
+ 新しい構文では、クラスのオブジェクトに直接適用できるクラス レベルのインデクサーを示すために、`default`キーワードは、明示的な名前の代わりに再利用します。 例:  
   
 ```  
 public ref class Matrix {  
@@ -74,10 +77,10 @@ private:
 public:  
    // ok: class level indexer now  
    //  
-   //     Matrix mat …  
+   //     Matrix mat;  
    //     mat[ 0, 0 ] = 1;   
    //  
-   // invokes the set accessor of the default indexer …  
+   // invokes the set accessor of the default indexer  
   
    property float default [int,int] {  
       float get( int r, int c );  
@@ -91,10 +94,10 @@ public:
 };  
 ```  
   
- 新しい構文では、既定のインデックス付きプロパティが指定されると、`get_Item` および `set_Item` という 2 つの名前が予約されます。  これは、既定のインデックス付きプロパティに対して生成される基本名が存在するためです。  
+ 新しい構文では、既定のインデックス付きプロパティが指定されて、次の 2 つの名前は予約されています:`get_Item`と`set_Item`です。 これらは、基になる名前、既定のインデックス付きプロパティに対して生成されるためです。  
   
- インデックスの場合は、プロパティとは異なり、単純な構文は使用できません。  
+ ない単純なインデックスの構文、単純なプロパティの構文に似ていますに注意してください。  
   
-## 参照  
- [クラスまたはインターフェイス内でのメンバー宣言 \(C\+\+\/CLI\)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
- [方法: インデックス付きプロパティを使用する](../misc/how-to-use-indexed-properties.md)
+## <a name="see-also"></a>参照  
+ [クラスまたはインターフェイス内でのメンバー宣言 (C++/CLI)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
+ 

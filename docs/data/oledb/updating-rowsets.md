@@ -18,11 +18,14 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4cbc1937617885e845163ed7dd307cc02b86a314
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 5d0d34b3dee1fb4983f60c7e437c14025b4e3022
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="updating-rowsets"></a>更新 (行セットを)
 データベースの基本の操作は、データ ストアの更新、つまりデータの書き込みです。 OLE DB の更新機構は単純です。コンシューマー アプリケーションは、バインドされたデータ メンバーの値を設定し、これらの値を行セットに書き込みます。その後、コンシューマーはプロバイダーにデータ ストアの更新を要求します。  
@@ -203,7 +206,7 @@ product.Update();                 // Update row 101 now
   
  変更を遅延させる主な理由は、変更を元に戻すことができるようにするためです。 [CRowset::Undo](../../data/oledb/crowset-undo.md) を呼び出すと、ローカル変更キャッシュの状態が、保留中の変更が作成される前のデータ ストアの状態にロールバックされます。 **Undo** は、ローカル キャッシュの状態を 1 ステップだけ (最後の変更の直前の状態に) ロールバックするのではないことにご注意ください。この処理を実行すると、その行のローカル キャッシュがクリアされます。 また、 **Undo** は現在の行のみに影響します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレートの使用](../../data/oledb/working-with-ole-db-consumer-templates.md)   
  [CRowset クラス](../../data/oledb/crowset-class.md)   
  [IRowsetChange](https://msdn.microsoft.com/en-us/library/ms715790.aspx)

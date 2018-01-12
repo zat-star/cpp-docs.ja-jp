@@ -4,51 +4,33 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- C4965
-dev_langs:
-- C++
-helpviewer_keywords:
-- C4965
+f1_keywords: C4965
+dev_langs: C++
+helpviewer_keywords: C4965
 ms.assetid: 47f3f6dc-459b-4a25-9947-f394c8966cb5
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 53ed24bf928a971d1a315af73fa01b786da8958e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 0f92cc2115bc35c669b4d45784e1e1d79875551e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4965"></a>コンパイラの警告 (レベル 1) C4965
-整数 0 の暗黙的なボックスです。nullptr または明示的なキャストを使用してください  
+整数 0 の暗黙的なボックスnullptr または明示的なキャストを使用します。  
   
- Visual C では、値型の暗黙のボックス化を備えています。 C++ マネージ拡張を使用すると、今すぐ null 割り当てを発生させた命令をボックス化された int に代入になります  
+ Visual C の機能値の型の暗黙的なボックス化します。 今すぐ c++ マネージ拡張を使用して null の代入を発生させた命令がボックス化された整数への代入  
   
- 詳細については、次を参照してください。[ボックス化](../../windows/boxing-cpp-component-extensions.md)します。  
+ 詳細については、次を参照してください。[ボックス化](../../windows/boxing-cpp-component-extensions.md)です。  
   
 ## <a name="example"></a>例  
- 次の例では、c4965 エラーを生成します。  
+ 次の例では、C4965 を生成します。  
   
 ```  
 // C4965.cpp  

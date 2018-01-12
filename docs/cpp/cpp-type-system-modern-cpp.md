@@ -13,11 +13,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 47d8fdec93c9d77e6648c5f648171a8ff349474d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3c4e86ffe91c2c0bf6a914e8f735b5faca6ae45f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-type-system-modern-c"></a>C++ 型システム (Modern C++)
 概念*型*は C++ では非常に重要です。 変数、関数の引数、関数の戻り値をコンパイルするには、それぞれに型が必要です。 さらに、すべての式 (リテラル値を含む) には、評価前にコンパイラーにより暗黙的に型が指定されます。 いくつかの種類の例`int`、整数値を格納する`double`浮動小数点値を格納する (とも呼ばれる*スカラー*データ型)、または標準ライブラリ クラス[:basic_string](../standard-library/basic-string-class.md)テキストを格納します。 `class` や `struct` を定義することで、独自の型を作成できます。 型は、変数 (または式の結果) に割り当てられるメモリの量、その変数に格納される値の種類、それらの値の解釈方法 (ビット パターンとして)、その型で実行可能な操作を指定します。 ここでは、C++ の型システムの主な機能の概要を示します。  
@@ -167,7 +168,7 @@ void someFunction() {
 ## <a name="windows-data-types"></a>Windows のデータ型  
  C および C++ 向けの従来の Win32 プログラミングでは、ほとんどの関数は Windows 固有の typedef マクロと #define マクロ (`windef.h` で定義) を使用して、パラメーターと戻り値の型を指定します。 これら Windows データ型はほとんどの場合のみ特別な名前 (別名) C と C++ の組み込み型を指定します。 これらの typedef とプリプロセッサの定義の一覧については、次を参照してください。 [Windows Data Types](http://msdn.microsoft.com/en-us/4553cafc-450e-4493-a4d4-cb6e2f274d46)です。 HRESULT や LCID など、typedef には便利で内容がわかりやすいものがあります。 INT など、他の typedef には特別な意味がなく、C++ の基本型のエイリアスにすぎません。 他の Windows のデータ型には、C プログラミングおよび 16 ビット プロセッサの時代から残っている名前がありますが、最新のハードウェアやオペレーティング システムでは目的も意味もありません。 として一覧に、Windows ランタイム ライブラリに関連付けられている特殊なデータ型もあります[Windows ランタイムの基本データ型](http://msdn.microsoft.com/en-us/b5735851-ec07-48c1-92b4-ca9f768096f6)です。 最新の C++ では、値の解釈方法について Windows の型が追加の意味を伝えるのでない限り、一般的なガイドラインとして C++ の基本型が推奨されます。  
   
-## <a name="more-information"></a>詳細情報  
+## <a name="more-information"></a>説明  
  C++ の型システムの詳細については、次のトピックを参照してください。  
   
 |||  
@@ -175,7 +176,7 @@ void someFunction() {
 |[値型](../cpp/value-types-modern-cpp.md)|説明*値の型*と使用に関連する問題です。|  
 |[型変換とタイプ セーフ](../cpp/type-conversions-and-type-safety-modern-cpp.md)|よくある型変換の問題について説明し、その回避方法を示します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)

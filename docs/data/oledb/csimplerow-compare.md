@@ -17,11 +17,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8e49dcc0356c563312c0d73041ab412716694c1a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 87ee21022aa379820ced0463892be12ee0676d88
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csimplerowcompare"></a>CSimpleRow::Compare
 同じ行インスタンスを参照しているかを参照してください。 2 つの行を比較します。  
@@ -42,10 +45,10 @@ ms.lasthandoff: 10/24/2017
 ## <a name="return-value"></a>戻り値  
  `HRESULT`値、通常`S_OK`を示す 2 つの行が同じ行インスタンスまたは**S_FALSE**、2 つの行を示すことが異なります。 参照してください[IRowsetIdentity::IsSameRow](https://msdn.microsoft.com/en-us/library/ms719629.aspx)で、 *OLE DB プログラマーズ リファレンス*の考えられる他の戻り値。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CSimpleRow クラス](../../data/oledb/csimplerow-class.md)   
  [Csimplerow::releaserow](../../data/oledb/csimplerow-releaserow.md)   
  [IRowsetImpl::RefRows](../../data/oledb/irowsetimpl-refrows.md)

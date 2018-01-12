@@ -18,11 +18,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9968981e8fd06a5c94383e1dee40c9b44169b4ee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a175705bd5d303187a11bf3e7779669a3a30e483
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-diagnose-and-fix-assembly-compatibility-problems-ccli"></a>方法: アセンブリの互換性の問題を診断し修復する (C++/CLI)
 このトピックでは、コンパイル時に参照されるアセンブリのバージョン、実行時に参照されるアセンブリのバージョンが一致しない場合の動作について説明しますと、問題を回避する方法です。  
@@ -99,6 +102,6 @@ int main() {
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [#using ディレクティブ](../preprocessor/hash-using-directive-cpp.md)   
  [マネージ型 (C++/CLI)](../dotnet/managed-types-cpp-cli.md)

@@ -15,11 +15,14 @@ caps.latest.revision: "5"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ca6ee4a44ea9e126be16b785b9ae52c7a852bc5e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a8c4ae8ee9fbcfddd6009d4e91134d59a9a02cc9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pair-stlclr"></a>pair (STL/CLR)
 このテンプレート クラスでは、値のペアをラップするオブジェクトについて説明します。  
@@ -63,10 +66,10 @@ template<typename Value1,
 ## <a name="remarks"></a>コメント  
  オブジェクトは、値のペアを格納します。 このテンプレート クラスを使用して、2 つの値を 1 つのオブジェクトに結合します。 なお`cliext::pair`(ここで説明) ストアのみマネージ型以外の型を使用してアンマネージのペアを格納する`std::pair`で宣言された`<utility>`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext ユーティリティ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [make_pair (STL/CLR)](../dotnet/make-pair-stl-clr.md)

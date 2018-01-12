@@ -1,60 +1,62 @@
 ---
-title: "CDynamicAccessor::GetColumnFlags | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDynamicAccessor.GetColumnFlags"
-  - "ATL::CDynamicAccessor::GetColumnFlags"
-  - "ATL.CDynamicAccessor.GetColumnFlags"
-  - "CDynamicAccessor::GetColumnFlags"
-  - "GetColumnFlags"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetColumnFlags メソッド"
+title: "Cdynamicaccessor::getcolumnflags |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDynamicAccessor.GetColumnFlags
+- ATL::CDynamicAccessor::GetColumnFlags
+- ATL.CDynamicAccessor.GetColumnFlags
+- CDynamicAccessor::GetColumnFlags
+- GetColumnFlags
+dev_langs: C++
+helpviewer_keywords: GetColumnFlags method
 ms.assetid: b2ba2f3a-2c61-4a49-abfb-75823908ccf4
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: da04aa98fabab36cc455dfdff2d90d8da59f6886
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CDynamicAccessor::GetColumnFlags
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="cdynamicaccessorgetcolumnflags"></a>CDynamicAccessor::GetColumnFlags
 列の特性を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      bool GetColumnFlags(   
-   DBORDINAL nColumn,   
-   DBCOLUMNFLAGS* pFlags    
+      bool GetColumnFlags(   
+   DBORDINAL nColumn,   
+   DBCOLUMNFLAGS* pFlags    
 ) const throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nColumn`  
- \[入力\] 列番号。  列番号は 1 から始まります。  0 番はブックマーク列です。  
+ [in]列番号。 列番号は、1 から始まります。 値 0 は、存在する場合に、ブックマーク列を参照します。  
   
  `pFlags`  
- \[\]列の特性を記述するビットマスクへのポインター。  *OLE DB Programmer's Reference*の [IColumnsInfo::GetColumnInfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx) 「DBCOLUMNFLAGS 列挙型」を参照してください。  
+ [out]列の特性を記述するビットマスクへのポインター。 「DBCOLUMNFLAGS Enumerated Type」を参照してください[icolumnsinfo::getcolumninfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 戻り値  
- 列の特性を正常に取得されれば **true** を返します。  それ以外の場合は **false** を返します。  
+## <a name="return-value"></a>戻り値  
+ 返します**true**列の特性が正常に取得された場合。 それ以外の場合は **false**を返します。  
   
-## 解説  
- 列番号は 1 からオフセットされます。  ゼロ列は特別な入れ物; これはブックマーク可能である場合です。  
+## <a name="remarks"></a>コメント  
+ 列の番号は、1 つから相殺されます。 列 0 は特殊なケースです。使用可能な場合は、ブックマークを勧めします。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)

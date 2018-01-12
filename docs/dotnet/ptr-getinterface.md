@@ -1,52 +1,54 @@
 ---
-title: "ptr::GetInterface | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ptr::GetInterface"
-  - "msclr::com::ptr::GetInterface"
-  - "GetInterface"
-  - "msclr.com.ptr.GetInterface"
-  - "ptr.GetInterface"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetInterface メソッド"
+title: "ptr::GetInterface |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ptr::GetInterface
+- msclr::com::ptr::GetInterface
+- GetInterface
+- msclr.com.ptr.GetInterface
+- ptr.GetInterface
+dev_langs: C++
+helpviewer_keywords: GetInterface method
 ms.assetid: d85553ec-fb88-4fd6-9df2-ddcaa8b2dc70
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 286a0dfa19d5d18d76dea1164d9d038667e1ef57
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ptr::GetInterface
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="ptrgetinterface"></a>ptr::GetInterface
 所有されている COM オブジェクトへのポインターを返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 _interface_type * GetInterface();  
 ```  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  所有されている COM オブジェクトへのポインター。  
   
-## 例外  
- 内部的には、`QueryInterface` は所有されている COM オブジェクト頼まれ、エラー `HRESULT`<xref:System.Runtime.InteropServices.Marshal.ThrowExceptionForHR%2A>で例外に変換されます。  
+## <a name="exceptions"></a>例外  
+ 内部的には、`QueryInterface`所有されている COM オブジェクトおよびすべてのエラーで呼び出される`HRESULT`で例外に変換<xref:System.Runtime.InteropServices.Marshal.ThrowExceptionForHR%2A>です。  
   
-## 解説  
- `com::ptr` は呼び出し元のための COM オブジェクトへの参照を追加し、COM オブジェクトのスレッド自身の参照を保持します。  呼び出し元は、最終的に返されたオブジェクトの参照を解放する必要があります。または、破棄されません。  
+## <a name="remarks"></a>コメント  
+ `com::ptr`呼び出し元の代わりに、COM オブジェクトへの参照を追加しても、COM オブジェクトで独自の参照を保持します。 呼び出し元は、返されるオブジェクトの参照を解放する必要があります最終的にまたはが破棄されることはありません。  
   
-## 使用例  
- この例では、プライベート メンバー `IXMLDOMDocument` オブジェクトをラップするために `com::ptr` を使用する CLR クラスを実装します。  COM オブジェクトへのポインターを返す `GetDocument` メンバー関数を使用 `GetInterface`。  
+## <a name="example"></a>例  
+ この例を使用して CLR クラスを実装して、`com::ptr`をそのプライベート メンバーをラップする`IXMLDOMDocument`オブジェクト。 `GetDocument`メンバー関数を使用して`GetInterface`COM オブジェクトへのポインターを返します。  
   
 ```  
 // comptr_getinterface.cpp  
@@ -162,12 +164,15 @@ int main() {
 }  
 ```  
   
-  **\<wordpersnickety\>\<または Word\>**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\com\\ptr.h\>  
+```Output  
+<word>persnickety</word>  
+```  
   
- **名前空間** msclr::com  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\com\ptr.h >  
   
-## 参照  
- [ptr Members](../dotnet/ptr-members.md)   
+ **Namespace** msclr::com  
+  
+## <a name="see-also"></a>参照  
+ [ptr メンバー](../dotnet/ptr-members.md)   
  [ptr::QueryInterface](../dotnet/ptr-queryinterface.md)

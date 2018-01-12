@@ -19,11 +19,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fc5e22350036b9f13ee8800cad8394133ba7abd1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 25d098ebb52809a36735f71eecedcc4c2a186225
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="performance-considerations-for-interop-c"></a>Interop (C++) のパフォーマンスに関する考慮事項
 このトピックでは、実行時のパフォーマンス上の相互運用機能の遷移をマネージ/アンマネージの影響を軽減するためのガイドラインを提供します。  
@@ -60,5 +63,5 @@ ms.lasthandoff: 10/24/2017
   
  C++ 相互運用機能の詳細については、次を参照してください。[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)

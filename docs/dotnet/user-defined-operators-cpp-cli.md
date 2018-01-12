@@ -14,11 +14,14 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 73a397664d5e5a9074731b6eac879fe965580f05
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: b02d6806abedb407d1c53ec8022e92983ce21d28
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="user-defined-operators-ccli"></a>ユーザー定義の演算子 (C++/CLI)
 マネージ型の場合、ユーザー定義の演算子は、静的メンバーまたはインスタンス メンバーまたはグローバル スコープで許可されます。 ただし、Visual C 以外の言語で記述されたクライアントにメタデータを通じてアクセスできるは静的演算子のみです。  
@@ -51,7 +54,7 @@ ms.lasthandoff: 10/24/2017
 |*|単項演算子および 2 項演算子|  
 |+|単項演算子および 2 項演算子|  
 |++|単項|  
-|、|2 項|  
+|,|2 項|  
 |-|単項演算子および 2 項演算子|  
 |--|単項|  
 |->|単項|  
@@ -65,8 +68,8 @@ ms.lasthandoff: 10/24/2017
 |>=|2 項|  
 |>>|2 項|  
 |^|2 項|  
-|false|単項|  
-|TRUE|単項|  
+|False|単項|  
+|true|単項|  
 |&#124;|2 項|  
 |&#124;&#124;|2 項|  
 |~|単項|  
@@ -170,5 +173,5 @@ int main() {
 30  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)
