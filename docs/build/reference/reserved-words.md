@@ -28,11 +28,12 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1a7040ac0093471be657c2ed7a064719abcd0230
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 35f9a3e907b72b4b8cf8e673e771832ba3fc0527
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="reserved-words"></a>予約語
 次の単語は、リンカーによって予約されています。 これらの名前を引数として使用できます[モジュール定義ステートメント](../../build/reference/module-definition-dot-def-files.md)名前が二重引用符で囲まれている場合にのみ ("") です。  
@@ -64,6 +65,6 @@ ms.lasthandoff: 10/24/2017
   
  2、リンカーは、この単語は無視されますが、警告は出力されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

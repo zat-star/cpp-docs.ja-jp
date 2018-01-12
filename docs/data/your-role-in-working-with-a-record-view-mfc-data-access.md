@@ -16,11 +16,14 @@ caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 81fdd3069f6e8deeca616c85542a76d89c20202d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 03d64715f3bdfb6028fdb039451d4b4b004a059e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="your-role-in-working-with-a-record-view--mfc-data-access"></a>レコード ビューを利用するために必要な作業 (MFC データ アクセス)
 次の表は、レコード ビューを使用するために通常必要となる作業と、フレームワークの役割を示しています。  
@@ -40,6 +43,6 @@ ms.lasthandoff: 10/24/2017
   
  フォーム ベースのプログラミングは、データベース操作の単なる 1 つの手法です。 その他のユーザー インターフェイスまたはユーザー インターフェイスのないを使用してアプリケーションについては、次を参照してください[MFC: ドキュメントとビューを用いたデータベース クラス](../data/mfc-using-database-classes-with-documents-and-views.md)と[MFC: 用いないデータベース クラスとビュー。](../data/mfc-using-database-classes-without-documents-and-views.md). データベース レコードを表示するための代替アプローチは、クラスを参照してください。 [CListView](../mfc/reference/clistview-class.md)と[CTreeView](../mfc/reference/ctreeview-class.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード ビュー (MFC データ アクセス)](../data/record-views-mfc-data-access.md)   
  [ODBC ドライバーの一覧](../data/odbc/odbc-driver-list.md)

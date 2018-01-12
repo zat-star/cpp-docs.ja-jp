@@ -11,11 +11,12 @@ ms.assetid: 8daaa060-7305-4035-99d2-8b460b4f4454
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6e765fedb127d07c08622b784018399f3bdfef45
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5280b4940c2a52fc6e72b397300040ca4c1ac92e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="change-signature"></a>シグネチャの変更
 **新機能:**関数のパラメーターを変更することができます。
@@ -63,7 +64,7 @@ ms.lasthandoff: 10/24/2017
    | 入力 | 説明
    | ----- | ---
    | **Type**               | パラメーターの型 (int、double、float などです)。
-   | **名前**               | パラメーターの名前
+   | **Name**               | パラメーターの名前
    | **省略可能なパラメーター** | 必要に応じて指定したパラメーターは、します。
    | **挿入された値**     | パラメーターが指定されていない関数への呼び出しに挿入された値 (に対してのみ有効です**追加**)
    | **既定値**      | 1 つは、呼び出し元が指定されていない場合、関数によって使用される値 (に対してのみ有効です**省略可能なパラメーター**)

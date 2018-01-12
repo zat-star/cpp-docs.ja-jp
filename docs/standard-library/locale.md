@@ -18,11 +18,12 @@ caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 87e478109df859fc6c95da70500ab84a1cba1b4c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b2b617870bdeec43dcdc9bf5d9031c0c4d78d0aa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltlocalegt"></a>&lt;locale&gt;
 文字分類と文字列の照合順序の国際化サポートを含む、数値、通貨、暦のデータの表示や書式設定に関するさまざまな文化的慣習をカプセル化および操作するために、C++ プログラムで使用できるテンプレート クラスおよび関数を定義します。  
@@ -88,7 +89,7 @@ ms.lasthandoff: 10/24/2017
 |[wbuffer_convert クラス](../standard-library/wbuffer-convert-class.md)|バイト ストリーム バッファーとの間の要素の転送を制御するストリーム バッファーを説明します。|  
 |[wstring_convert クラス](../standard-library/wstring-convert-class.md)|ワイド文字列とバイト文字列間の変換を実行するテンプレート クラス。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コード ページ](../c-runtime-library/code-pages.md)   
  [ロケール名、言語、および国/地域識別文字列](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)

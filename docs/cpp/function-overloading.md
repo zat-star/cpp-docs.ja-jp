@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2486357766d2dbd9f5d4250e2d0fb38e02ba51bc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 785692992863e5a1cf3800f536d3f8fe3790b4a0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="function-overloading"></a>関数のオーバーロード
 C++ では、同じスコープ内で同じ名前の複数の関数を指定できます。 これらは、オーバーロードされた関数と呼ばれます。これについては、オーバーロードに関するトピックで詳しく説明します。 オーバーロードされた関数により、プログラマは、引数の種類と数に応じて関数に異なるセマンティクスを指定できます。  
@@ -32,13 +33,13 @@ C++ では、同じスコープ内で同じ名前の複数の関数を指定で�
   
 |関数宣言要素|オーバーロードに使用されるかどうか|  
 |----------------------------------|---------------------------|  
-|関数の戻り値の型|いいえ|  
-|引数の数|はい|  
-|引数の型|はい|  
-|省略記号の有無|はい|  
-|`typedef` 名の使用|いいえ|  
-|未指定の配列の範囲|いいえ|  
-|**const**または`volatile`(下記参照)|はい|  
+|関数の戻り値の型|×|  
+|引数の数|[はい]|  
+|引数の型|[はい]|  
+|省略記号の有無|[はい]|  
+|`typedef` 名の使用|×|  
+|未指定の配列の範囲|×|  
+|**const**または`volatile`(下記参照)|[はい]|  
   
  関数は戻り値の型に基づいて識別できますが、同じ基準でオーバーロードすることはできません。  `Const`または`volatile`に適用するクラスで使用される場合をオーバー ロードに、基準としてのみ使用される、**この**関数の戻り値型ではなく、クラスへのポインター。  つまり、オーバー ロードは場合にのみ、 **const**または`volatile`キーワード宣言内の関数の引数リストに依存します。  
   
@@ -527,5 +528,5 @@ double Account::Deposit( double dAmount, char *szPassword )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数 (C++)](../cpp/functions-cpp.md)

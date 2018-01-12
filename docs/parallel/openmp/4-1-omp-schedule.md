@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 97ecedc5c2940173dd107ff3825f741ffa422889
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 330e5ea576e3cd779a7c17c21d00b6459f5e7043
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="41-ompschedule"></a>4.1 OMP_SCHEDULE
 **OMP_SCHEDULE**にのみ適用されます**の**と**の並列**をスケジュールの種類を持つディレクティブ**ランタイム**です。 このようなループのスケジュールの種類とチャンク サイズは、認識されているスケジュールの種類のいずれかをする、省略可能なこの環境変数を設定して実行時に設定できます*chunk_size*です。  
