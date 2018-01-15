@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -29,38 +28,23 @@ f1_keywords:
 - _ismbbkpunct_l
 - ismbbkpunct
 - _ismbbkpunct
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _ismbbkpunct_l function
 - ismbbkpunct_l function
 - ismbbkpunct function
 - _ismbbkpunct function
 ms.assetid: a04c59cd-5ca7-4296-bec0-2b0d7f04edd0
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: edfd9d72c2e83d83d8e31de967a9d0f183523906
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 981799a9ac33e77664abc75949bebc1843abf484
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ismbbkpunct-ismbbkpunctl"></a>_ismbbkpunct、_ismbbkpunct_l
 マルチバイト文字が区切り文字かどうかをチェックします。  
@@ -85,17 +69,17 @@ int _ismbbkpunct_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_ismbbkpunct` は、整数 `c` が非 ASCII の区切り記号の場合に 0 以外の値を返し、それ以外の場合は 0 を返します。 たとえば、コード ページ 932 でのみ `_ismbbkpunct` は、カタカナ区切り文字をテストします。 `_ismbbkpunct` は、ロケールに依存する任意の文字設定に現在のロケールを使用します。 `_ismbbkpunct_l` は、渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `_ismbbkpunct` は、整数 `c` が非 ASCII の区切り記号の場合に 0 以外の値を返し、それ以外の場合は 0 を返します。 たとえば、コード ページ 932 でのみ `_ismbbkpunct` は、カタカナ区切り文字をテストします。 `_ismbbkpunct` は、ロケールに依存する任意の文字設定に現在のロケールを使用します。 `_ismbbkpunct_l` は、渡されるロケールを使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbbkpunct`|\<mbctype.h>|  
 |`_ismbbkpunct_l`|\<mbctype.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
  [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)

@@ -43,11 +43,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 03eda993cbc087d5dc39f2c9d0f985ac5db48099
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 204e87183a8df076da8443ee4547825948fb5a2d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="futime-futime32-futime64"></a>_futime、_futime32、_futime64
 開いているファイルの変更時刻を設定します。  
@@ -84,7 +85,7 @@ int _futime64(
   
  `__utimbuf64` 構造体を使用する `_futime64` は、UTC の 3000 年 12 月 31 日 23時 59分: 59 秒までのファイル日付を読み取りおよび変更できますが、これに対して `_futime32` の呼び出しは、ファイルの日付が UTC の 2038 年 1 月 18 日 23 時 59分: 59 秒よりも後の場合は失敗します。 これらの関数の日付範囲の下限は、1970 年 1 月 1 日の午前 0 時です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|オプション ヘッダー|  
 |--------------|---------------------|---------------------|  
@@ -158,5 +159,5 @@ Volume in drive Z has no label.
 File time modified  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)

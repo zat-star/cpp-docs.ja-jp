@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -37,8 +36,7 @@ f1_keywords:
 - cprintf_l
 - _cprintf_l
 - _cwprintf_l
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _cprintf_l function
 - _cwprintf_l function
@@ -54,30 +52,16 @@ helpviewer_keywords:
 - cwprintf_l function
 - _cprintf function
 ms.assetid: 67ffefd4-45b3-4be0-9833-d8d26ac7c4e2
-caps.latest.revision: 34
+caps.latest.revision: "34"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: c96743fc777a53f2fe849d5f88f3fd7299054d02
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 984cb8fb3c034d19f4d171f756f2336773187976
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cprintf-cprintfl-cwprintf-cwprintfl"></a>_cprintf、_cprintf_l、_cwprintf、_cwprintf_l
 書式化してコンソールに出力します。 セキュリティが強化されたバージョンがあります。「[_cprintf_s、_cprintf_s_l、_cwprintf_s、_cwprintf_s_l](../../c-runtime-library/reference/cprintf-s-cprintf-s-l-cwprintf-s-cwprintf-s-l.md)」をご覧ください。  
@@ -118,7 +102,7 @@ int _cwprintf_l(
  出力された文字数。  
   
 ## <a name="remarks"></a>コメント  
- これらの関数は、文字を出力する `_putch` 関数 (`_putwch` の場合は `_cwprintf`) を使用し、一連の文字や値を書式化して直接コンソールに出力します。 各引数は`argument_list`(存在する場合) は変換され、対応する書式指定に従って`format`です。 `format`引数は、 [printf 関数と wprintf 関数の指定の構文を書式設定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。 異なり、 `fprintf`、 `printf`、および`sprintf`関数も`_cprintf`また`_cwprintf`ライン フィード文字をキャリッジ リターンとライン フィード (CR-LF) の組み合わせに変換出力時にします。  
+ これらの関数は、文字を出力する `_putch` 関数 (`_putwch` の場合は `_cwprintf`) を使用し、一連の文字や値を書式化して直接コンソールに出力します。 各引数は`argument_list`(存在する場合) は変換され、対応する書式指定に従って`format`です。 `format`引数は、 [printf 関数と wprintf 関数の指定の構文を書式設定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。 異なり、 `fprintf`、 `printf`、および`sprintf`関数も`_cprintf`も`_cwprintf`ライン フィード文字をキャリッジ リターンとライン フィード (CR-LF) の組み合わせに変換出力時にします。  
   
  重要な相違点は`_cwprintf`Windows で使用すると、Unicode 文字が表示されます。 `_cprintf` と異なり、`_cwprintf` はコンソールの現在のロケール設定を使用します。  
   
@@ -136,14 +120,14 @@ int _cwprintf_l(
 |`_tcprintf`|`_cprintf`|`_cprintf`|`_cwprintf`|  
 |`_tcprintf_l`|`_cprintf_l`|`_cprintf_l`|`_cwprintf_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_cprintf`、`_cprintf_l`|\<conio.h>|  
 |`_cwprintf`, `_cwprintf_l`|\<conio.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -173,7 +157,7 @@ int main( void )
 -16  001d  62511  A Test  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   
  [_cscanf、_cscanf_l、_cwscanf、_cwscanf_l](../../c-runtime-library/reference/cscanf-cscanf-l-cwscanf-cwscanf-l.md)   
  [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   

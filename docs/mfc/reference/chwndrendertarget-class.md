@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -21,8 +20,7 @@ f1_keywords:
 - AFXRENDERTARGET/CHwndRenderTarget::ReCreate
 - AFXRENDERTARGET/CHwndRenderTarget::Resize
 - AFXRENDERTARGET/CHwndRenderTarget::m_pHwndRenderTarget
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - CHwndRenderTarget [MFC], CHwndRenderTarget
 - CHwndRenderTarget [MFC], Attach
@@ -35,16 +33,16 @@ helpviewer_keywords:
 - CHwndRenderTarget [MFC], Resize
 - CHwndRenderTarget [MFC], m_pHwndRenderTarget
 ms.assetid: aa65b69f-7202-46ea-af81-ef325da0b840
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 3f11f7e329b623639fb1441e4d9e18720a6b6b94
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: a870794027d35ed317937dc2e97b51ddc92ecc27
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="chwndrendertarget-class"></a>CHwndRenderTarget クラス
 ID2D1HwndRenderTarget のラッパーです。  
@@ -84,7 +82,7 @@ class CHwndRenderTarget : public CRenderTarget;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CHwndRenderTarget::m_pHwndRenderTarget](#m_phwndrendertarget)|ID2D1HwndRenderTarget オブジェクトへのポインター。|  
   
@@ -95,7 +93,7 @@ class CHwndRenderTarget : public CRenderTarget;
   
  [CHwndRenderTarget](../../mfc/reference/chwndrendertarget-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="attach"></a>CHwndRenderTarget::Attach  
@@ -219,6 +217,5 @@ BOOL Resize(const CD2DSizeU& size);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

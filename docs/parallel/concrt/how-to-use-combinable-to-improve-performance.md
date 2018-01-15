@@ -16,11 +16,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7bd035b74988758142fe9d0fedc43946f35c2d58
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: dea28bd31812449e34bb481d316070f8f21aaede
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-use-combinable-to-improve-performance"></a>方法: combinable を使用してパフォーマンスを向上させる
 この例を使用する方法を示しています、 [concurrency::combinable](../../parallel/concrt/reference/combinable-class.md)クラス内の数値の合計を計算する、 [std::array](../../standard-library/array-class-stl.md)素数であるオブジェクト。 `combinable` クラスは、共有状態を解消することでパフォーマンスを向上します。  
@@ -70,7 +71,7 @@ parallel time: 1638 ms
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  例については、使用してマップ操作と縮小、同じ結果を生成するために、次を参照してください。[並列アルゴリズム](../../parallel/concrt/parallel-algorithms.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [並列コンテナーと並列オブジェクト](../../parallel/concrt/parallel-containers-and-objects.md)   
  [combinable クラス](../../parallel/concrt/reference/combinable-class.md)   
  [critical_section クラス](../../parallel/concrt/reference/critical-section-class.md)

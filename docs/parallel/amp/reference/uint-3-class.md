@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -78,33 +77,18 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::uint_3::yxz
 - amp_short_vectors/Concurrency::graphics::uint_3::set_xzy
 - amp_short_vectors/Concurrency::graphics::uint_3::operator-=
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 5e22c277-9d4f-4a3a-b38c-a83d5fcab33c
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 034478144d77abcc9dba8bf1a1909c4711f7119c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 2f5211440d0180b3ad05e8d172c4dea8c35b2844
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="uint3-class"></a>uint_3 クラス
 3 個の符号なし整数の short ベクターを表します。  
@@ -174,24 +158,24 @@ class uint_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|uint_3:--||  
+|uint_3::operator--||  
 |uint_3::operator % =||  
-|uint_3::operator = >/documents/report1.rdl」||  
+|uint_3::operator & =||  
 |uint_3::operator * =||  
 |uint_3::operator/=||  
 |uint_3::operator ^ =||  
-|uint_3::operator | =||  
+|uint_3::operator &#124; =||  
 |uint_3::operator ~||  
 |uint_3::operator++||  
-|uint_3::operator + = 演算子||  
-|uint_3:\<=||  
-|uint_3::operator =||  
+|uint_3::operator + =||  
+|uint_3::operator <\<=||  
+|uint_3::operator = =||  
 |uint_3::operator-=||  
 |uint_3::operator >> =||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#uint_3__size)||  
   
@@ -233,7 +217,7 @@ class uint_3;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `uint_3`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
@@ -297,7 +281,7 @@ explicit inline uint_3(
  1 の要素を初期化する値。  
   
  `_V2`  
- 2 の要素を初期化する値。  
+ 2 要素を初期化する値。  
   
  `_V`  
  初期化の値です。  
@@ -311,6 +295,5 @@ explicit inline uint_3(
 static const int size = 3;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

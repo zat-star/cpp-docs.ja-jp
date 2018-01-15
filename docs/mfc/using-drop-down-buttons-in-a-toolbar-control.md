@@ -22,11 +22,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 273c73ebfcda13217185b0f1f651229d299632c2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 01c09cb2bec4b466928557434767ce49948f46ae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-drop-down-buttons-in-a-toolbar-control"></a>ツール バー コントロールでのドロップダウン ボタンの使い方
 標準のプッシュ ボタンに加えてでは、ツールバーは、ドロップダウン ボタンもあります。 ドロップダウン ボタンは通常の下向きの矢印によって示されます。  
@@ -56,7 +57,7 @@ ms.lasthandoff: 10/24/2017
   
      [!code-cpp[NVC_MFCControlLadenDialog#39](../mfc/codesnippet/cpp/using-drop-down-buttons-in-a-toolbar-control_4.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CToolBarCtrl の使い方](../mfc/using-ctoolbarctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

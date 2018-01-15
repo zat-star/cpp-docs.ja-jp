@@ -1,28 +1,29 @@
 ---
-title: "ARM Assembler Command-Line Reference | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "ARM アセンブラーのコマンド ライン リファレンス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: f7b89478-1ab5-4995-8cde-a805f0462c45
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 5e7f69c2ac2dbd8a0079d9160100077ccd35513e
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/03/2018
 ---
-# ARM Assembler Command-Line Reference
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-この資料で、マイクロソフトの ARM アセンブラーのコマンドラインについての提供 *armasm*は、マイクロソフトの実装の一般的なオブジェクト ファイルの形式 \(COFF\) に ARMv7 サムのアセンブリ言語をコンパイルします。  リンカーは、COFF のコードでは、ARM アセンブラーまたはライブラリアンで作成されるオブジェクト ライブラリと、C のコンパイラによって生成されたオブジェクト コードをリンクできます。  
+# <a name="arm-assembler-command-line-reference"></a>ARM アセンブラーのコマンド ライン リファレンス
+この記事は、Microsoft ARM アセンブラーに関するコマンド ラインの情報を提供*armasm*、Microsoft による実装のオブジェクト ファイル形式 COFF (Common) に常に ARMv7 Thumb アセンブリ言語をコンパイルします。 リンカーは、COFF コードと ARM アセンブラーによって、またはオブジェクト ライブラリ、ライブラリアンによって作成されると共に、C コンパイラによって生成されるオブジェクト コードをリンクできます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 armasm [[options]] sourcefile objectfile  
@@ -32,65 +33,65 @@ armasm [[options]] sourcefile objectfile
 armasm [[options]] -o objectfile sourcefile  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `options`  
- \-エラー`filename`  
- エラー メッセージと警告メッセージにリダイレクト`filename`。  
+ -エラー`filename`  
+ エラーと警告メッセージをリダイレクト`filename`です。  
   
- ・ i`dir[;dir]`  
+ は`dir[;dir]`  
  インクルード検索パスに指定されたディレクトリを追加します。  
   
- \-事前定義`directive`  
- シンボルをあらかじめ定義するセット、SETL、またはセットのディレクティブを指定します。  例 : **armasm.exe \-predefine "COUNT SETA 150" source.asm**。  詳細についてを参照してください、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/?LinkId=246102)。  
+ -事前に定義`directive`  
+ 定義済みのシンボルを備える、SETL、セット、またはディレクティブを指定します。 例: **armasm.exe-「備える 150 のカウント」source.asm を事前に定義**です。詳細については、次を参照してください。、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/p/?linkid=246102)です。  
   
- nowarn\-  
+ -nowarn  
  すべての警告メッセージを無効にします。  
   
- \-を無視します。`warning`  
- 指定された警告を無効にします。  可能な値は、警告についての説明を参照してください。  
+ -無視します。`warning`  
+ 指定された警告を無効にします。 使用可能な値は、警告に関するセクションを参照してください。  
   
- \-ヘルプ  
- コマンドラインのヘルプ メッセージを印刷します。  
+ -ヘルプ  
+ コマンド ライン ヘルプ メッセージを印刷します。  
   
- ・ マシン`machine`  
- PE ヘッダーに設定するのには、コンピューターの種類を指定します。  値`machine`です。   
-**ARM**\-IMAGE\_FILE\_MACHINE\_ARMNT するには、コンピューターの種類を設定します。  これは、既定の設定です。   
-**THUMB**\-IMAGE\_FILE\_MACHINE\_THUMB するには、コンピューターの種類を設定します。  
+ -コンピューター`machine`  
+ PE ヘッダーに設定するコンピューターの種類を指定します。  指定できる値`machine`は。  
+**ARM**— IMAGE_FILE_MACHINE_ARMNT にコンピューターの種類を設定します。 既定値です。   
+**THUMB**— IMAGE_FILE_MACHINE_THUMB にコンピューターの種類を設定します。  
   
- \-oldit  
- ARMv7 スタイルを生成する IT ブロックします。  既定では、ARMv8 と互換性のある IT ブロック生成されます。  
+ -oldit  
+ 常に ARMv7 スタイルを生成する IT ブロックします。  既定では、ARMv8 と互換性のある IT ブロックが生成されます。  
   
- \-を介して`filename`  
- 追加のコマンドライン引数を読み取る`filename`。  
+ -経由で`filename`  
+ 追加のコマンドライン引数を読み取る`filename`です。  
   
- \-16  
- 16 ビット Thumb 命令をアセンブルするソース。  これは、既定の設定です。  
+ -16  
+ 16 ビット Thumb 命令としてソースを編成します。  既定値です。  
   
- \-32  
- 32 ビット ARM 命令をアセンブルするソース。  
+ -32  
+ 32 ビット ARM 命令としてソースを編成します。  
   
- ・ g  
+ -g  
  デバッグ情報を生成します。  
   
- \-errorReport。`option`  
- どのように内部のアセンブラー エラーを Microsoft に報告されるを指定します。  値`option`です。   
-**none**— レポートを送信しません。  
-**prompt**\-すぐにレポートを送信すると、ユーザー プロンプトを表示します。  
-**queue**\-次への管理ログオン時にレポートを送信するのには、ユーザー プロンプトを表示します。  これは、既定の設定です。   
-**send**\-自動的にレポートを送信します。  
+ -errorreport:`option`  
+ Microsoft にエラーがどのように内部アセンブラーを指定します。  指定できる値`option`は。   
+**none**— レポートを送信しません。   
+**プロンプト**— レポートをすぐに送信するように求めます。   
+**キュー**: 次の管理者ログオンでレポートを送信するように求めます。 既定値です。   
+**送信**— レポートを自動的に送信します。  
   
  `sourcefile`  
- ソース ファイルの名前。  
+ ソース ファイルの名前です。  
   
  `objectfile`  
- オブジェクト \(出力\) ファイルの名前。  
+ オブジェクト (出力) ファイルの名前。  
   
- 一般的なシナリオでは、armasm を使用する方法の例を次に示します。  まず、armasm を使用して、アセンブリ言語ソース \(.asm\) ファイルをオブジェクト \(.obj\) ファイルを作成します。  CL コマンドライン C コンパイラを使用して、ソース \(.c\) ファイルをコンパイルするしARMのオブジェクト ファイルをリンクするには、リンカー オプションも指定します。  
+ 次の例では、一般的なシナリオで armasm を使用する方法を示します。 まず、armasm を使用して、オブジェクト (.obj) ファイルへのアセンブリ言語のソース (.asm) ファイルをビルドします。 CL のコマンド ライン C コンパイラを使用して、ソース (.c) ファイルをコンパイルし、ARM オブジェクト ファイルをリンクするリンカー オプションも指定します。  
   
- **armasm myasmcode.asm \-o myasmcode.obj**  
+ **armasm myasmcode.asm-o myasmcode.obj**  
   
- **cl myccode.c \/link myasmcode.obj**  
+ **cl myccode.c/link myasmcode.obj**  
   
-## 参照  
- [ARM Assembler Diagnostic Messages](../../assembler/arm/arm-assembler-diagnostic-messages.md)   
- [ARM Assembler Directives](../../assembler/arm/arm-assembler-directives.md)
+## <a name="see-also"></a>参照  
+ [ARM アセンブラー診断メッセージ](../../assembler/arm/arm-assembler-diagnostic-messages.md)   
+ [ARM アセンブラー ディレクティブ](../../assembler/arm/arm-assembler-directives.md)

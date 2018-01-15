@@ -16,11 +16,12 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bed81cc8b212b6deef13cc0c6fed013b854fb4ea
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4590724bfc34d0ed9136e74e85b09db6a805c50c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comparing-synchronization-data-structures-to-the-windows-api"></a>同期データ構造と Windows API の比較
 ここでは、同時実行ランタイムが提供する同期データ構造と Windows API が提供する同期データ構造の動作を比較します。  
@@ -33,13 +34,13 @@ ms.lasthandoff: 10/24/2017
 ## <a name="readerwriterlock"></a>reader_writer_lock  
  [:Reader_writer_lock](../../parallel/concrt/reference/reader-writer-lock-class.md) Windows のスリム リーダー/ライター (SRW) ロックに似ています。 類似点と相違点を次の表に示します。  
   
-|特性|`reader_writer_lock`|SRW ロック|  
+|機能|`reader_writer_lock`|SRW ロック|  
 |-------------|--------------------------|--------------|  
-|再入不可能|はい|はい|  
-|リーダーをライターに昇格 (アップグレード サポート)|いいえ|いいえ|  
-|ライターをリーダーに降格 (ダウングレード サポート)|いいえ|いいえ|  
-|書き込み優先ロック|はい|いいえ|  
-|ライターへの FIFO アクセス|はい|いいえ|  
+|再入不可能|[はい]|[はい]|  
+|リーダーをライターに昇格 (アップグレード サポート)|×|×|  
+|ライターをリーダーに降格 (ダウングレード サポート)|×|×|  
+|書き込み優先ロック|[はい]|×|  
+|ライターへの FIFO アクセス|[はい]|×|  
   
  SRW ロックの詳細については、次を参照してください。[スリム リーダー/ライター (SRW) ロック](http://msdn.microsoft.com/library/windows/desktop/aa904937)プラットフォーム SDK に含まれています。  
   
@@ -88,5 +89,5 @@ Windows event:
   
  タスクの詳細については、次を参照してください。[タスクの並列化](../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同期データ構造](../../parallel/concrt/synchronization-data-structures.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: faac1a2a081a2ce0b02f2008bf3766537557df28
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5c0f009c26789fd771d55dab5fcfe5f342aa03b1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="openmp-libraries"></a>OpenMP ライブラリ
 Visual C の OpenMP ランタイム ライブラリを構成する .lib ファイルについて説明します。  
@@ -35,5 +36,5 @@ Visual C の OpenMP ランタイム ライブラリを構成する .lib ファ�
   
  OpenMP Dll は、Visual C 再頒布可能パッケージ ディレクトリにおよび、OpenMP を使用するアプリケーションを配布する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ライブラリ リファレンス](../../../parallel/openmp/reference/openmp-library-reference.md)

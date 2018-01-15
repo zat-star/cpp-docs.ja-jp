@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ec0dfb151660ffc0246428adb79ebf649975c90e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3ac69e7d0dbe1748a409b107579c747b7f9a4a7c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-image-lists-in-an-extended-combo-box-control"></a>拡張コンボ ボックス コントロールでのイメージ リストの使い方
 拡張コンボ ボックス コントロールの主な機能は、コンボ ボックス コントロール内の各項目にはイメージ リストのイメージを関連付ける機能です。 各項目は次の 3 つのさまざまなイメージを表示できません: 選択した状態、その選択解除状態、およびオーバーレイを表す 3 番目に 1 つのいずれか。  
@@ -44,7 +45,7 @@ ms.lasthandoff: 10/24/2017
   
  イメージ リストがコントロールに関連付けられると、各項目は、3 つの状態を使用するイメージを個別に指定できます。 詳細については、次を参照してください。[個々 の項目のイメージの設定](../mfc/setting-the-images-for-an-individual-item.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComboBoxEx の使い方](../mfc/using-ccomboboxex.md)   
  [コントロール](../mfc/controls-mfc.md)
 

@@ -103,11 +103,12 @@ caps.latest.revision: "31"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f41fc2d55cb5aeb2a8173e9912ddb7c67c582ab9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e6c752d1b9570ce11e232020393cc6d7982baa80
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfctoolbarmenubutton-class"></a>CMFCToolBarMenuButton クラス
 ポップアップ メニューを含むツール バー ボタンです。  
@@ -180,7 +181,7 @@ class CMFCToolBarMenuButton : public CMFCToolBarButton
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMFCToolBarMenuButton::m_bAlwaysCallOwnerDraw](#m_balwayscallownerdraw)|場合`TRUE`、フレームワークが常に呼び出します[CFrameWndEx::OnDrawMenuImage](../../mfc/reference/cframewndex-class.md#ondrawmenuimage)ボタンが描画されます。|  
   
@@ -201,7 +202,7 @@ class CMFCToolBarMenuButton : public CMFCToolBarButton
   
  [CMFCToolBarMenuButton](../../mfc/reference/cmfctoolbarmenubutton-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxtoolbarmenubutton.h  
   
 ##  <a name="cmfctoolbarmenubutton"></a>CMFCToolBarMenuButton::CMFCToolBarMenuButton  
@@ -824,7 +825,7 @@ virtual void SetTearOff(UINT uiBarID);
   
  呼び出す[CWinAppEx::EnableTearOffMenus](../../mfc/reference/cwinappex-class.md#enabletearoffmenus)ティアオフ メニュー機能をアプリケーションで有効にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCToolBarButton クラス](../../mfc/reference/cmfctoolbarbutton-class.md)   

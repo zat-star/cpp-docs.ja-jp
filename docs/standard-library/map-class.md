@@ -99,11 +99,12 @@ caps.latest.revision: "27"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ce9135d298a0b80cedae87f20d65f4e012502cae
-ms.sourcegitcommit: 0bbc9aac12c926b2b03726ae5b4a09d916e17d6b
+ms.workload: cplusplus
+ms.openlocfilehash: d83bebb0953ee3ed7acec9e0e732cef6e5b3816f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="map-class"></a>map クラス
 データ値と並べ替えキーのペアになっている要素が含まれているコレクションに対して、データの格納と取得を実行するために使用します。 キーの値は一意で、データを自動的に並べ替えるために使用されます。  
@@ -181,7 +182,7 @@ class map;
 |[const_reference](#const_reference)|map に格納された `const` 要素への参照の typedef (読み取りと `const` 操作を実行するため)。|  
 |[const_reverse_iterator](#const_reverse_iterator)|map 内の任意の `const` 要素を読み取ることができる双方向反復子を提供する型。|  
 |[difference_type](#difference_type)|反復子が指す要素の範囲内にある map の要素の数に対する符号付き整数の typedef。|  
-|[iterator](#iterator)|map 内の任意の要素の読み取りまたは変更ができる双方向反復子の typedef。|  
+|[Iterator](#iterator)|map 内の任意の要素の読み取りまたは変更ができる双方向反復子の typedef。|  
 |[key_compare](#key_compare)|2 つの並べ替えキーを比較して、map 内の 2 つの要素の相対順序を決定できる関数オブジェクトの typedef。|  
 |[key_type](#key_type)|map の各要素に格納されている並べ替えキーの typedef。|  
 |[mapped_type](#mapped_type)|map の各要素に格納されているデータの typedef。|  
@@ -229,7 +230,7 @@ class map;
 |[operator&#91;&#93;](#op_at)|map に、指定したキー値を持つ要素を挿入します。|  
 |[operator=](#op_eq)|別の map のコピーで map の要素を置き換えます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<map>  
   
  **名前空間:** std  
@@ -358,7 +359,7 @@ const_iterator cbegin() const;
 ### <a name="remarks"></a>コメント  
  `cbegin` の戻り値で範囲内の要素を変更することはできません。  
   
- `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 この例では、`Container` が `begin()` と `cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と`cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.begin();
@@ -381,7 +382,7 @@ const_iterator cend() const;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -529,7 +530,7 @@ typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
   
  `const_reverse_iterator`のオブジェクトである要素へのマップ ポイントによって定義された[value_type](#value_type)、つまり型の`pair<const Key, Type>`、最初のメンバーが、キーの要素には、およびメンバーは、要素によって保持されているマップのデータムが秒です。  
   
- map 内の要素を指す `const_reverse_iterator crIter` を逆参照するには、**->** 演算子を使用します。  
+ hash_map 内の要素を指す `const_reverse_iterator crIter` を逆参照するには、**->** 演算子を使用します。  
   
  要素のキーの値にアクセスする`crIter`  -> **最初**、これと同じ (\* `crIter`).**最初**です。  
   
@@ -2518,7 +2519,7 @@ value_compare value_comp() const;
 ### <a name="remarks"></a>コメント  
  map *m* について、2 つの要素 *e*1( *k*1, *d*1) および *e*2( *k*2, `d`2) が `value_type` 型のオブジェクトである場合 (ここで *k*1 および *k*2 は `key_type` 型のキーであり、`d`1 および `d`2 は `mapped_type` 型のデータである)、*m.*`value_comp`( *e*1, *e*2) は *m.*`key_comp`*(k*1, *k*2) と同等です。 格納されているオブジェクトは以下のメンバー関数を定義します。  
   
- **bool operator**( **value_type&**`left`, **value_type&**`right`);  
+ **bool 演算子**( **value_type &**`left`、 **value_type &**`right`) です。  
   
  これは、並べ替え順で `left` のキー値が `right` のキー値に先行しかつ等しくない場合に、**true** を返します。  
   
@@ -2629,7 +2630,7 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<map> Members](http://msdn.microsoft.com/en-us/7e8f0bc2-6034-40f6-9d14-76d4cef86308)   
  [コンテナー](../cpp/containers-modern-cpp.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   

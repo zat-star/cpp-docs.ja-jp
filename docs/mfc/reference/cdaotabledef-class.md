@@ -83,11 +83,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 51fad5e7890ce311e46c07c9505cb889bf252376
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7b140d61689672f9d27b8078ad7d2eab732c1582
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdaotabledef-class"></a>どちらのクラス
 ベース テーブル、またはアタッチ テーブルの格納された定義を表現します。  
@@ -192,7 +193,7 @@ class CDaoTableDef : public CObject
   
  `CDaoTableDef`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdao.h  
   
 ##  <a name="append"></a>CDaoTableDef::Append  
@@ -316,7 +317,7 @@ void CreateField(CDaoFieldInfo& fieldinfo);
 |**dbInteger**|2|int|  
 |**dbLong**|4|long|  
 |**dbCurrency**|8|通貨 ( [COleCurrency](../../mfc/reference/colecurrency-class.md))|  
-|**dbSingle**|4|フローティング|  
+|**dbSingle**|4|float|  
 |**dbDouble**|8|double|  
 |**dbDate**|8|日付/時刻 ( [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md))|  
 |**dbText**|1 - 255|テキスト ( [CString](../../atl-mfc-shared/reference/cstringt-class.md))|  
@@ -890,7 +891,7 @@ void SetValidationText(LPCTSTR lpszValidationText);
   
  関連情報については、「プロパティ」DAO ヘルプのトピックを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CDaoDatabase クラス](../../mfc/reference/cdaodatabase-class.md)   

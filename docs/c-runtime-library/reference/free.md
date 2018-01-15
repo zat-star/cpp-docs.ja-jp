@@ -31,11 +31,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 61d750fce6e31923636b4eb8c0181bf405b7be39
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1be3f7141a8483aa7b0d43195b08506691e34fe3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="free"></a>free
 メモリ ブロックを割り当て解除または解放します。  
@@ -59,24 +60,24 @@ void free(
   
  メモリ ブロックを解放すると、[_heapmin](../../c-runtime-library/reference/heapmin.md) が、未使用の領域を結合して、それらをオペレーティング システムに戻すことで、ヒープ上の空きメモリの量を最小限に抑えます。 オペレーティング システムにリリースされない解放されたメモリは、空きプールに復元され、再度割り当てに使用できます。  
   
- アプリケーションが C のランタイム ライブラリのデバッグ バージョンにリンクされている場合、`free` は [_free_dbg](../../c-runtime-library/reference/free-dbg.md) として解決されます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」を参照してください。  
+ アプリケーションが C のランタイム ライブラリのデバッグ バージョンにリンクされている場合、`free` は [_free_dbg](../../c-runtime-library/reference/free-dbg.md) として解決されます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。  
   
  `free` は `__declspec(noalias)` としてマークされます。これは、関数がグローバル変数を変更しないことを保証します。 詳細については、「[noalias](../../cpp/noalias.md)」を参照してください。  
   
  [_malloca](../../c-runtime-library/reference/malloca.md) を使用して割り当てられたメモリを解放するには、[_freea](../../c-runtime-library/reference/freea.md) を使用します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`free`|\<stdlib.h> と \<malloc.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[malloc](../../c-runtime-library/reference/malloc.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
  [_alloca](../../c-runtime-library/reference/alloca.md)   
  [calloc](../../c-runtime-library/reference/calloc.md)   

@@ -23,11 +23,12 @@ caps.latest.revision: "27"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 013b40d2d0ef33a440a451b52802e62c7d9a15b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 4d292a8f3f8fafc88b23d9375d1894e47e1c0a90
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cpanedialog-class"></a>CPaneDialog クラス
 `CPaneDialog`クラスは、モードレスでドッキング可能なダイアログ ボックスをサポートします。  
@@ -80,7 +81,7 @@ class CPaneDialog : public CDockablePane
   
  [CPaneDialog](../../mfc/reference/cpanedialog-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxpanedialog.h  
   
 ##  <a name="create"></a>CPaneDialog::Create  
@@ -199,7 +200,7 @@ virtual BOOL SetOccDialogInfo(_AFX_OCC_DIALOG_INFO* pOccDialogInfo);
 ### <a name="remarks"></a>コメント  
  このメソッドは、サポート、[関数](../../mfc/reference/coccmanager-class.md)OLE コントロールのサイトと ActiveX コントロールを管理するクラス。 _AFX_OCC_DIALOG_INFO 構造は、afxocc.h ヘッダー ファイルで定義されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)   

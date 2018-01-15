@@ -205,11 +205,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c78414e5262ef8157e5b0706835ab20d0490f4bf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a855100aaab28e5fead062d4a0941741742cf1a0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="chtmlview-class"></a>CHtmlView クラス
 MFC のドキュメント/ビュー アーキテクチャのコンテキストで WebBrowser コントロールの機能を提供します。  
@@ -365,7 +366,7 @@ class CHtmlView : public CFormView
   
  `CHtmlView`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxhtml.h  
   
 ##  <a name="create"></a>CHtmlView::Create  
@@ -1966,7 +1967,7 @@ void Stop();
 ### <a name="remarks"></a>コメント  
  Internet Explorer と WebBrowser に適用されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル MFCIE](../../visual-cpp-samples.md)   
  [CFormView クラス](../../mfc/reference/cformview-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

@@ -125,11 +125,12 @@ caps.latest.revision: "34"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ab6ca8710c2ee05f05157175eaafa5ae281470e7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b8c91cdd7b793195e0afb05acfe3fc33694fdb60
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcribbonpanel-class"></a>CMFCRibbonPanel クラス
 一連のリボン要素を含むパネルを実装します。 このパネルが描画されると、そのパネルに指定されたサイズに対して可能な限り多くの要素が表示されます。  
@@ -224,7 +225,7 @@ class CMFCRibbonPanel : public CObject
   
  [CMFCRibbonPanel](../../mfc/reference/cmfcribbonpanel-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxRibbonPanel.h  
   
 ##  <a name="add"></a>Cmfcribbonpanel::add  
@@ -1113,7 +1114,7 @@ CMFCRibbonBaseElement* GetFocused() const;
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   

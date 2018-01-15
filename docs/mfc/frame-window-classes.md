@@ -23,11 +23,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 60f3938042cd42c7b02c12eb4e6316a00783c280
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b5e67ef155c029285d0b306ca2d05179e993de78
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="frame-window-classes"></a>フレーム ウィンドウ クラス
 各アプリケーションには 1 つの「メイン フレーム ウィンドウ」、通常、アプリケーション名がある、キャプションのするデスクトップ ウィンドウです。 各ドキュメントが通常は 1 つは「ドキュメント フレーム ウィンドウです」 ドキュメント フレーム ウィンドウには、ドキュメントのデータを表示するには、少なくとも 1 つのビューが含まれています。  
@@ -46,6 +47,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [MFC で作成したウィンドウのスタイルを変更します。](../mfc/changing-the-styles-of-a-window-created-by-mfc.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレーム ウィンドウ](../mfc/frame-windows.md)
 

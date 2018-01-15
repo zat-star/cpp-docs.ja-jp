@@ -45,11 +45,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: bb903ad6ad61a7263559ad9dd3d47d85cb67e413
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d305dd1d33c04a87cc5f76965b0e422164298f5c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="getchnolock-getwchnolock"></a>_getch_nolock、_getwch_nolock
 エコーせず、さらにスレッドをロックしないで、コンソールから文字を取得します。  
@@ -76,14 +77,14 @@ wint_t _getwch_nolock( void );
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_gettch_nolock`|`_getch_nolock`|`_getch_nolock`|`_getwch_nolock`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_getch_nolock`|\<conio.h>|  
 |`_getwch_nolock`|\<conio.h> または \<wchar.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -121,7 +122,7 @@ abcdefy
 Type 'Y' when finished typing keys: Y  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   
  [_getche、_getwche](../../c-runtime-library/reference/getche-getwche.md)   
  [_cgets、_cgetws](../../c-runtime-library/cgets-cgetws.md)   

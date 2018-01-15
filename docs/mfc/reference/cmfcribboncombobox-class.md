@@ -51,11 +51,12 @@ caps.latest.revision: "35"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 921be1bdcebfabbcca8e07cefc2ee9a0b40f84f0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9f748630549c0a26a2818bc7c96e5162d7d36ed4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcribboncombobox-class"></a>CMFCRibbonComboBox クラス
 `CMFCRibbonComboBox`クラス リボン バー、リボン パネル、またはリボン ポップアップ メニューに追加できるコンボ ボックス コントロールを実装します。  
@@ -70,7 +71,7 @@ class CMFCRibbonComboBox : public CMFCRibbonEdit
   
 ### <a name="constructors"></a>コンストラクター  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMFCRibbonComboBox::CMFCRibbonComboBox](#cmfcribboncombobox)|CMFCRibbonComboBox オブジェクトを構築します。|  
   
@@ -114,7 +115,7 @@ class CMFCRibbonComboBox : public CMFCRibbonEdit
   
  [CMFCRibbonComboBox](../../mfc/reference/cmfcribboncombobox-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxribboncombobox.h  
   
 ##  <a name="additem"></a>CMFCRibbonComboBox::AddItem  
@@ -394,7 +395,7 @@ void SetDropDownHeight(int nHeight);
 ### <a name="remarks"></a>コメント  
  既定の高さは、150 ピクセルです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCRibbonEdit クラス](../../mfc/reference/cmfcribbonedit-class.md)

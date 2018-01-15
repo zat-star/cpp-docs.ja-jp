@@ -85,11 +85,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5eb955843d2390864a7fbc2c45025dca39ce498b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e6e92efe5b5a99042426dd2e6a7594f2de46f2ce
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="cbutton-class"></a>CButton クラス
 Windows のボタン コントロールの機能が用意されています。  
@@ -189,7 +190,7 @@ class CButton : public CWnd
   
  `CButton`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="cbutton"></a>CButton::CButton  
@@ -308,7 +309,7 @@ int GetCheck() const;
 ### <a name="return-value"></a>戻り値  
  ボタン コントロールからの戻り値が作成された、 **BS_AUTOCHECKBOX**、 **BS_AUTORADIOBUTTON**、 **BS_AUTO3STATE**、 **BS_CHECKBOX**、 **BS_RADIOBUTTON**、または**BS_3STATE**スタイルは、次の値のいずれか。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |**設定されています。**|ボタンの状態がオフになっています。|  
 |**BST_CHECKED**|ボタンの状態がチェックされます。|  
@@ -400,7 +401,7 @@ BOOL GetNote(
 ### <a name="return-value"></a>戻り値  
  最初のオーバー ロード、 [CString](../../atl-mfc-shared/using-cstring.md)を現在のコマンド リンク コントロールに関連付けられているメモのテキストを含むオブジェクト。  
   
- または  
+ - または -  
   
  2 番目のオーバー ロードで`true`このメソッドが成功した、それ以外の場合`false`です。  
   
@@ -527,7 +528,7 @@ UINT GetState() const;
 ### <a name="return-value"></a>戻り値  
  ボタン コントロールの現在の状態を示す値の組み合わせを含むビット フィールドです。 次の表は、使用可能な値を一覧表示します。  
   
-|ボタンの状態|値|説明|  
+|ボタンの状態|[値]|説明|  
 |------------------|-----------|-----------------|  
 |`BST_UNCHECKED`|0x0000|初期状態です。|  
 |`BST_CHECKED`|0x0001|ボタン コントロールがチェックされます。|  
@@ -630,7 +631,7 @@ void SetCheck(int nCheck);
  `nCheck`  
  チェックの状態を指定します。 このパラメーターには、次のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |**設定されています。**|ボタンの状態をオフに設定します。|  
 |**BST_CHECKED**|チェック ボタンの状態を設定します。|  
@@ -724,7 +725,7 @@ BOOL SetElevationRequired(BOOL fElevationRequired);
  `true`このメソッドが成功した場合それ以外の場合、`false`です。  
   
 ### <a name="remarks"></a>コメント  
- ボタンやコマンドのリンク コントロールは、アクションの実行に管理者特権でのセキュリティ アクセス許可を必要とする場合は、コントロールを設定`elevation required`状態です。 その後、Windows では、コントロールのユーザー アカウント制御 (UAC) の盾アイコンが表示されます。 詳細についてを参照してください「のユーザー アカウント制御」 [MSDN](http://go.microsoft.com/fwlink/linkid=18507)です。  
+ ボタンやコマンドのリンク コントロールは、アクションの実行に管理者特権でのセキュリティ アクセス許可を必要とする場合は、コントロールを設定`elevation required`状態です。 その後、Windows では、コントロールのユーザー アカウント制御 (UAC) の盾アイコンが表示されます。 詳細についてを参照してください「のユーザー アカウント制御」 [MSDN](http://go.microsoft.com/fwlink/p/?linkid=18507)です。  
   
  このメソッドは、送信、 [BCM_SETSHIELD](http://msdn.microsoft.com/library/windows/desktop/bb775979) Windows SDK で説明するメッセージ。  
   
@@ -987,7 +988,7 @@ BOOL SetTextMargin(RECT* pmargin);
 ### <a name="remarks"></a>コメント  
  このメンバー関数の機能をエミュレートする、 **BCM_SETTEXTMARGIN**メッセージ、」の説明に従って、[ボタン](http://msdn.microsoft.com/library/windows/desktop/bb775943)Windows SDK の「します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   

@@ -13,20 +13,21 @@ caps.latest.revision: "5"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1fee551d667b40b3fc36b3ca1f91e093148083a5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 44cd4e5c47618a12c5d4ad5edd3bd8bbf9105309
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="arm-assembler-directives"></a>ARM アセンブラー ディレクティブ
-ほとんどの場合、Microsoft ARM アセンブラー言語を使用して、ARM アセンブリの第 7 章に記載されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/?LinkId=246102)です。 ただし、一部のアセンブリ ディレクティブの Microsoft 実装は、ARM assembly ディレクティブによって異なります。 この記事では、相違点について説明します。  
+ほとんどの場合、Microsoft ARM アセンブラー言語を使用して、ARM アセンブリの第 7 章に記載されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/p/?linkid=246102)です。 ただし、一部のアセンブリ ディレクティブの Microsoft 実装は、ARM assembly ディレクティブによって異なります。 この記事では、相違点について説明します。  
   
 ## <a name="microsoft-implementations-of-arm-assembly-directives"></a>Microsoft の ARM Assembly ディレクティブの実装  
  領域  
  Microsoft ARM アセンブラーは、これらの領域の属性をサポートしています: 揃えるには、コード、CODEALIGN、データ、NOINIT、読み取り専用、読み取り/書き込み、つまみ、ARM です。  
   
- 親指と ARM 以外のすべての作業に記述されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/?LinkId=246102)です。  
+ 親指と ARM 以外のすべての作業に記述されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/p/?linkid=246102)です。  
   
  Microsoft ARM アセンブラーでは、THUMB は、コード セクションが Thumb コードが含まれ、コードのセクションでは既定値を示します。  ARM では、セクションが ARM コードが含まれていることを示します。  
   
@@ -109,6 +110,6 @@ IMPORT sym{, WEAK alias{, TYPE t}}
  THUMBX  
  Microsoft ARM アセンブラーが Thumb 2 ee 命令セットをサポートしていないためにサポートされていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ARM アセンブラーのコマンド ライン リファレンス](../../assembler/arm/arm-assembler-command-line-reference.md)   
  [ARM アセンブラー診断メッセージ](../../assembler/arm/arm-assembler-diagnostic-messages.md)

@@ -1,45 +1,44 @@
 ---
-title: "OMP_SCHEDULE | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "OMP_SCHEDULE"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OMP_SCHEDULE OpenMP environment variable"
+title: "OMP_SCHEDULE |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: OMP_SCHEDULE
+dev_langs: C++
+helpviewer_keywords: OMP_SCHEDULE OpenMP environment variable
 ms.assetid: 2295a801-e584-4d2f-826f-7ca4c88846a6
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 8aa1406b490128657da19f7c48c958d382850d96
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# OMP_SCHEDULE
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-`schedule(runtime)` が `for` または `parallel for` のディレクティブで指定されると [schedule](../../../parallel/openmp/reference/schedule.md) 句の動作を変更します。  
+# <a name="ompschedule"></a>OMP_SCHEDULE
+動作を変更して、[スケジュール](../../../parallel/openmp/reference/schedule.md)句と`schedule(runtime)`で指定された、`for`または`parallel for`ディレクティブです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 set OMP_SCHEDULE[=type[,size]]  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
- `size` \(省略可能\)  
- イテレーションのサイズを指定します。  `size` は正の整数である必要があります。  既定値は `type` が静的な場合を除き1 です。  `type` が `runtime` であると無効になります。  
+ `size` (省略可能)  
+ イテレーションのサイズを指定します。 `size`正の整数を指定する必要があります。 既定値は 1 の場合を除き、`type`は静的です。 有効でない場合に`type`は`runtime`します。  
   
  `type`  
- スケジュールの型 :  
+ スケジュールの種類。  
   
 -   `dynamic`  
   
@@ -49,23 +48,23 @@ set OMP_SCHEDULE[=type[,size]]
   
 -   `static`  
   
-## 解説  
- OpenMP 標準の Visual C\+\+ の実装の既定値は `OMP_SCHEDULE=static,0` です。  
+## <a name="remarks"></a>コメント  
+ OpenMP の標準の Visual C 実装では既定値は`OMP_SCHEDULE=static,0`します。  
   
- 詳細については、「[4.1 OMP\_SCHEDULE](../../../parallel/openmp/4-1-omp-schedule.md)」を参照してください。  
+ 詳細については、次を参照してください。 [4.1 OMP_SCHEDULE](../../../parallel/openmp/4-1-omp-schedule.md)です。  
   
-## 使用例  
- 次のコマンドは **OMP\_SCHEDULE** 環境変数を設定します :  
+## <a name="example"></a>例  
+ 次のコマンド セット、 **OMP_SCHEDULE**環境変数。  
   
 ```  
 set OMP_SCHEDULE="guided,2"  
 ```  
   
- 次のコマンドは **OMP\_SCHEDULE** 環境変数の現在の設定を示しています :  
+ 次のコマンドの現在の設定を表示する、 **OMP_SCHEDULE**環境変数。  
   
 ```  
 set OMP_SCHEDULE  
 ```  
   
-## 参照  
- [Environment Variables](../../../parallel/openmp/reference/openmp-environment-variables.md)
+## <a name="see-also"></a>参照  
+ [環境変数](../../../parallel/openmp/reference/openmp-environment-variables.md)

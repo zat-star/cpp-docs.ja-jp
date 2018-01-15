@@ -31,11 +31,12 @@ caps.latest.revision: "32"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 047032e65f0d1fa7847caae36e10fac4175b5db0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9a433d723e15d910674c129b1e62ca82c1de4bb0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cnetaddressctrl-class"></a>CNetAddressCtrl クラス
 `CNetAddressCtrl` クラスは、ネットワーク アドレス コントロールを表します。このコントロールを使用すると、IPv4 アドレス、IPv6 アドレス、および名前付き DNS アドレスの形式を入力して検証できます。  
@@ -95,7 +96,7 @@ class CNetAddressCtrl : public CEdit
   
  `CNetAddressCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
  このクラスではサポートされて[!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)]およびそれ以降。  
@@ -232,7 +233,7 @@ HRESULT SetAllowType(DWORD dwAddrMask);
   
  このメッセージを呼び出す、 [NetAddr_SetAllowType](http://msdn.microsoft.com/library/windows/desktop/bb774320)マクロで、Windows SDK に記載されています。 マクロの送信、`NCM_SETALLOWTYPE`メッセージ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CNetAddressCtrl クラス](../../mfc/reference/cnetaddressctrl-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CEdit クラス](../../mfc/reference/cedit-class.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 23d93972bf077febe8497ad539ccd62ea372a384
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6bda8be9d3cc939e95ccfe68397eef259dd3a2f4
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="c-amp-c-accelerated-massive-parallelism"></a>C++ AMP (C++ Accelerated Massive Parallelism)
 C++ AMP (C++ Accelerated Massive Parallelism) は、独立したグラフィックス カードの GPU (graphics processing unit) などの一般的なデータ並列ハードウェアを活用して、C++ コードの実行を高速化します。 C++ AMP のプログラミング モデルには、多次元配列、インデックス作成、メモリ転送、およびタイルのサポートが含まれています。 また、数学関数ライブラリも含まれています。 C++ AMP の言語拡張機能を使用して、データを CPU から GPU へ、また GPU から CPU へどのように移動するかを制御できます。  
@@ -46,9 +47,9 @@ C++ AMP (C++ Accelerated Massive Parallelism) は、独立したグラフィッ�
  [restrict (C++ AMP)](../../cpp/restrict-cpp-amp.md)  
   
 ## <a name="other-resources"></a>その他の参照情報  
- [ネイティブ コードのブログでの並列プログラミング](http://go.microsoft.com/fwlink/p/linkid=238472)  
+ [ネイティブ コードのブログでの並列プログラミング](http://go.microsoft.com/fwlink/p/?linkid=238472)  
   
- [C++ AMP サンプル プロジェクトのダウンロード](http://go.microsoft.com/fwlink/p/linkid=248508)  
+ [C++ AMP サンプル プロジェクトのダウンロード](http://go.microsoft.com/fwlink/p/?linkid=248508)  
   
- [同時実行ビジュアライザーで C++ AMP コードを分析します。](http://go.microsoft.com/fwlink/linkid=253987&clcid=0x409)
+ [同時実行ビジュアライザーで C++ AMP コードを分析します。](http://go.microsoft.com/fwlink/p/?linkid=253987&clcid=0x409)
 

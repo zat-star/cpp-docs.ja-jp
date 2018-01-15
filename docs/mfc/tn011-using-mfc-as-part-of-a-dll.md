@@ -20,11 +20,12 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 312451f40b19375dcef9d4a68b2d1bf3f3ae2562
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0d0ac05e314f3f8354ba289695afa672b1e28881
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn011-using-mfc-as-part-of-a-dll"></a>テクニカル ノート 11: DLL の構成要素としての MFC
 ここでは、標準 MFC Dll では、MFC ライブラリを Windows ダイナミック リンク ライブラリ (DLL) の一部として使用することについて説明します。 これは、Windows の Dll およびそれらをビルドする方法を理解するいると仮定します。 MFC 拡張 Dll の概要については、作成するために、MFC ライブラリの拡張機能を参照してください[MFC の DLL バージョン](../mfc/tn033-dll-version-of-mfc.md)します。  
@@ -114,7 +115,7 @@ BOOL PromptTraceFlags(TracerData FAR* lpData);
   
  API で使用される構造は、MFC クラスから派生していないと、API ヘッダーで定義されます。 これは、DLL とアプリケーション間のインターフェイスの複雑さを軽減し、DLL を C プログラムから使用できるようです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

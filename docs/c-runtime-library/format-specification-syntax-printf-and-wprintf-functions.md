@@ -20,11 +20,12 @@ caps.latest.revision: "15"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3e8c81bfa9f87d9612d989cef84ddf538ff28d98
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 437657857b87f2f7df140576d09467d6276549f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="format-specification-syntax-printf-and-wprintf-functions"></a>書式指定構文: printf 関数と wprintf 関数
 
@@ -83,13 +84,13 @@ ms.lasthandoff: 10/24/2017
 |**A**|浮動小数点数|[-]0X*h.hhhh*__P±__*dd* という形式の符号付きの 16 進数の倍精度浮動小数点値です。*h.hhhh* は仮数部の 16 進数の桁 (大文字の英字を使用)、*dd* は 1 桁以上の指数部です。 有効桁数は、小数点より後の桁数を指定します。|
 |**n**|整数へのポインター|現時点までにストリームまたはバッファーに正常に書き込まれた文字数。 この値は、引数として指定したアドレスにある整数に格納されます。 ポイントされる整数のサイズは、引数サイズ指定のプレフィックスで指定できます。 **n** 指定子は既定で無効になっています。詳細については、重要なセキュリティに関するメモをご覧ください。|
 |**p**|[ポインターの種類]|引数を 16 進数字のアドレスとして表示します。|
-|**s**|文字列型|`printf` 関数で使用する場合は 1 バイト文字またはマルチバイト文字の文字列を指定し、`wprintf` 関数で使用する場合はワイド文字の文字列を指定します。 文字は、最初の null 文字が現れるか、*precision* 値に達するまで表示されます。|
-|**S**|文字列型|`printf` 関数で使用する場合はワイド文字の文字列を指定し、`wprintf` 関数で使用する場合は 1 バイト文字またはマルチバイト文字の文字列を指定します。 文字は、最初の null 文字が現れるか、*precision* 値に達するまで表示されます。|
+|**s**|String|`printf` 関数で使用する場合は 1 バイト文字またはマルチバイト文字の文字列を指定し、`wprintf` 関数で使用する場合はワイド文字の文字列を指定します。 文字は、最初の null 文字が現れるか、*precision* 値に達するまで表示されます。|
+|**S**|String|`printf` 関数で使用する場合はワイド文字の文字列を指定し、`wprintf` 関数で使用する場合は 1 バイト文字またはマルチバイト文字の文字列を指定します。 文字は、最初の null 文字が現れるか、*precision* 値に達するまで表示されます。|
 |**Z**|`ANSI_STRING` または `UNICODE_STRING` 構造体|引数として [ANSI_STRING](http://msdn.microsoft.com/library/windows/hardware/ff540605.aspx) または [UNICODE_STRING](http://msdn.microsoft.com/library/windows/hardware/ff564879.aspx) 構造体のアドレスを渡すと、構造体の `Buffer` フィールドがポイントしているバッファーに含まれる文字列が表示されます。 *size* 修飾子のプレフィックスに **w** を使用して (たとえば `%wZ`)、`UNICODE_STRING` 引数を指定できます。 構造体の `Length` フィールドには、文字列の長さ (バイト単位) を設定する必要があります。 構造体の `MaximumLength` フィールドには、バッファーの長さ (バイト単位) を設定する必要があります。<br /><br /> 通常、type 文字 **Z** は、`dbgPrint` や `kdPrint` など、変換指定を使用するドライバー デバッグ関数でのみ使用します。|
 
 Visual Studio 2015 以降では、浮動小数点の変換指定子に対応する引数 (**a**、**A****e****E****f****F****g****G**) が無限、不定値、または NaN の場合、書式設定される出力は C99 標準に準拠します。 書式設定された出力を次の表に示します。
 
-|値|出力|
+|[値]|出力|
 |-----------|------------|
 |infinity|`inf`|
 |クワイエット型 NaN|`nan`|
@@ -100,7 +101,7 @@ Visual Studio 2015 以降では、浮動小数点の変換指定子に対応す�
 
 Visual Studio 2015 より前のバージョンでは、CRT で無限大、不定値、NaN の値の出力に対して、次のような非標準の別形式が使用されていました。
 
-|値|出力|
+|[値]|出力|
 |-----------|------------|
 |+ 無限大|`1.#INF` *ランダムな桁*|
 |- 無限大|`-1.#INF` *ランダムな桁*|
@@ -215,7 +216,7 @@ Visual C++ では、`long double` は別個の型ですが、これには `doubl
 > **Microsoft 固有の仕様**  
 > 引数サイズ修飾子 **I** (小文字の i)、**I32**、**I64**、および **w** は Microsoft の拡張機能で、ISO C とは互換性がありません。 プレフィックス **h** (`char` 型のデータと共に使用する場合)、および **l** (L の小文字) プレフィックス (`double` 型のデータと共に使用する場合) は Microsoft の拡張機能です。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [printf、_printf_l、wprintf、_wprintf_l](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)  
 [printf_s、_printf_s_l、wprintf_s、_wprintf_s_l](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)  

@@ -18,11 +18,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e7d8b351f7cc58d37d4da8bc273d8541aee54446
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0ac15c18ce3277e8268b6b4582de4046f5f74d64
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pointer-declarations"></a>ポインター宣言
 "ポインター宣言" はポインター変数に名前を付け、変数が指すオブジェクトの型を指定します。 ポインターとして宣言された変数は、メモリ アドレスを保持します。  
@@ -62,7 +63,7 @@ ms.lasthandoff: 10/24/2017
   
  構造体型、共用体型、または列挙型へのポインターは、構造体型、共用体型、または列挙型を定義する前に宣言できます。 ポインターの宣言には、次の例に示すように、構造体タグまたは共用体タグを使用します。 このような宣言ができるのは、コンパイラがポインター変数の領域を割り当てるのに、構造体や共用体のサイズが不要であるためです。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  ポインター宣言の例を次に示します。  
   
 ```  
@@ -127,5 +128,5 @@ struct id
   
  変数 *record* には *id* という構造体型があります。*pname* が、*name* という別の構造体型へのポインターとして宣言されていることに注意してください。 この宣言は、*name* 型を定義する前に指定できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言子と変数宣言](../c-language/declarators-and-variable-declarations.md)

@@ -34,11 +34,12 @@ caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 249fc38a36ee0f3a61b6347b48219154bada7d22
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ee0657393ec8322889b527c21a36c13b9e032325
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="securityinitcookie"></a>__security_init_cookie
 グローバル セキュリティ クッキーを初期化します。  
@@ -59,13 +60,13 @@ void __security_init_cookie(void);
 ## <a name="example"></a>例  
  「[C Runtime Error R6035](../../error-messages/tool-errors/c-runtime-error-r6035.md)」(C ランタイム エラー R6035) の例をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`__security_init_cookie`|\<process.h>|  
   
- `__security_init_cookie` は、標準の C ランタイム ライブラリの Microsoft 拡張機能です。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ `__security_init_cookie` は、標準の C ランタイム ライブラリの Microsoft 拡張機能です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
- [コンパイラ セキュリティの徹底調査](http://go.microsoft.com/fwlink/?linkid=7260)
+## <a name="see-also"></a>参照  
+ [コンパイラ セキュリティの徹底調査](http://go.microsoft.com/fwlink/p/?linkid=7260)

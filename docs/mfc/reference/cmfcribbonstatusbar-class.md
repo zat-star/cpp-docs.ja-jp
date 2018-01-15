@@ -61,11 +61,12 @@ caps.latest.revision: "37"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cd6322b372a9cfb6ef75875d183d1b3e0a3e79c2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 596d39f5d6338f7a16e7a6090fbc47f5ca799d6b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcribbonstatusbar-class"></a>CMFCRibbonStatusBar クラス
 `CMFCRibbonStatusBar`クラスがリボン要素を表示できるステータス バー コントロールを実装します。  
@@ -138,7 +139,7 @@ class CMFCRibbonStatusBar : public CMFCRibbonBar
   
  [CMFCRibbonStatusBar](../../mfc/reference/cmfcribbonstatusbar-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxribbonstatusbar.h  
   
 ##  <a name="adddynamicelement"></a>CMFCRibbonStatusBar::AddDynamicElement  
@@ -471,7 +472,7 @@ void SetInformation(LPCTSTR lpszInfo);
   
  LpszInfo が場合`NULL`、ステータス バーは通常モードに戻ります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCRibbonBar クラス](../../mfc/reference/cmfcribbonbar-class.md)   

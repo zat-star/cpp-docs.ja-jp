@@ -171,11 +171,12 @@ caps.latest.revision: "34"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b834b46a9a899b9b5ae7cce0d399593588ff2d0b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3aaf355d15679bdb30b7561fe28dd6f927688ede
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfctoolbarbutton-class"></a>CMFCToolBarButton クラス
 ツールバーのボタン機能を提供します。  
@@ -269,7 +270,7 @@ class CMFCToolBarButton : public CObject
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMFCToolBarButton::m_bImage](#m_bimage)|ボタンにイメージを表示するかどうかを指定します。|  
 |[CMFCToolBarButton::m_bText](#m_btext)|ボタンにテキスト ラベルを表示するかどうかを指定します。|  
@@ -304,7 +305,7 @@ class CMFCToolBarButton : public CObject
   
  [CMFCToolBarButton](../../mfc/reference/cmfctoolbarbutton-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxtoolbarbutton.h  
   
 ##  <a name="canbedropped"></a>CMFCToolBarButton::CanBeDropped  
@@ -1528,7 +1529,7 @@ void Show(BOOL bShow);
   
  このメソッドは、 [CMFCToolBarButton::OnShow](#onshow)メソッド ボタンの可視性の状態の更新後にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCToolBar クラス](../../mfc/reference/cmfctoolbar-class.md)   

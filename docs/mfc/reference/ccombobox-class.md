@@ -119,11 +119,12 @@ caps.latest.revision: "25"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6a8b9c9de69f9042f68cc04d435070ade9b24dd9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fffa5c09f1572200ca7850c8870b7daee9e3e75f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccombobox-class"></a>CComboBox クラス
 Windows のコンボ ボックスの機能が用意されています。  
@@ -265,7 +266,7 @@ class CComboBox : public CWnd
   
  `CComboBox`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="addstring"></a>Ccombobox::addstring  
@@ -330,7 +331,7 @@ virtual int CompareItem(LPCOMPAREITEMSTRUCT lpCompareItemStruct);
 ### <a name="return-value"></a>戻り値  
  説明されている 2 つの項目の相対位置を示す、`COMPAREITEMSTRUCT`構造体。 次の値のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |- 1|項目 1 は項目 2 の前に並べ替えます。|  
 |0|アイテム 1 と 2 のアイテムは、同じを並べ替えます。|  
@@ -618,7 +619,7 @@ BOOL GetCueBanner(
 ### <a name="return-value"></a>戻り値  
  最初のオーバー ロード、 [CString](../../atl-mfc-shared/using-cstring.md) ; 存在する場合は、キュー バナー テキストを格納しているオブジェクトそれ以外の場合、`CString`長さがゼロを持つオブジェクトです。  
   
- または  
+ - または -  
   
  2 番目のオーバー ロードで`true`このメソッドが成功した、それ以外の場合`false`です。  
   
@@ -1348,7 +1349,7 @@ void ShowDropDown(BOOL bShowIt = TRUE);
 ### <a name="example"></a>例  
   例を参照して[CComboBox::GetDroppedState](#getdroppedstate)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CTRLBARS](../../visual-cpp-samples.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

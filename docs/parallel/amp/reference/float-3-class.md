@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -78,35 +77,19 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::float_3::gbr
 - amp_short_vectors/Concurrency::graphics::float_3::operator*=
 - amp_short_vectors/Concurrency::graphics::float_3::get_xy
-dev_langs:
-- C++
-helpviewer_keywords:
-- amp_short_vectors/Concurrency::graphics::float_3
+dev_langs: C++
+helpviewer_keywords: amp_short_vectors/Concurrency::graphics::float_3
 ms.assetid: 209df7a5-08d7-48b4-8ba5-77603642cdd8
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 2cd5e44d60ce02a1acf781812a0cc72e1e7657cf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 28a26910aae471d237e0f4324f7f837eff0f6240
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="float3-class"></a>float_3 クラス
 3 個の浮動小数点数の short ベクターを表します。  
@@ -176,18 +159,18 @@ class float_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|float_3:-||  
+|float_3::operator-||  
 |float_3:--||  
 |float_3::operator * =||  
 |float_3::operator/=||  
 |float_3::operator++||  
-|float_3::operator + = 演算子||  
-|float_3::operator =||  
+|float_3::operator + =||  
+|float_3::operator = =||  
 |float_3::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#float_3__size)||  
   
@@ -229,7 +212,7 @@ class float_3;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `float_3`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
@@ -293,7 +276,7 @@ explicit inline float_3(
  1 の要素を初期化する値。  
   
  `_V2`  
- 2 の要素を初期化する値。  
+ 2 要素を初期化する値。  
   
  `_V`  
  初期化の値です。  
@@ -307,6 +290,5 @@ explicit inline float_3(
 static const int size = 3;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

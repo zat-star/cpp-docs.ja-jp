@@ -32,11 +32,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9d5cf5147f3225c9cd5c6f0c91d60bcaeb75b188
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8850bd13d8aa1ed0412ae93843784cb560be4a0b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="getw"></a>_getw
 ストリームから整数を取得します。  
@@ -54,18 +55,18 @@ int _getw(
  `FILE` 構造体へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- `_getw` は読み取られた整数値を返します。 戻り値 `EOF` は、エラーまたはファイルの終端を示します。 しかし、`EOF` の値は有効な整数値であるため、`feof` または `ferror` を使用してファイルの終端またはエラー条件を確認します。 `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、関数から `EOF` が返されます。  
+ `_getw` は読み取られた整数値を返します。 戻り値 `EOF` は、エラーまたはファイルの終端を示します。 しかし、`EOF` の値は有効な整数値であるため、`feof` または `ferror` を使用してファイルの終端またはエラー条件を確認します。 `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `EOF`が返されます。  
   
 ## <a name="remarks"></a>コメント  
  `_getw` 関数は`stream` に関連付けられているファイルから、`int` 型の次のバイナリ値を読み取って、次の未読文字を指すために、関連付けられたファイル ポインター (もしあれば) を増加させます。 `_getw` はストリーム内の項目の特殊な配置を想定しません。 `int` 型のサイズと、`int` 型内のバイトの並び順がシステム間で異なるため、`_getw` で移植の問題が発生することがあります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_getw`|\<stdio.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -115,6 +116,6 @@ Line two.
 First data word in file: 0x656e694c  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [_putw](../../c-runtime-library/reference/putw.md)

@@ -32,11 +32,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7745054066a928c414360a215605cf343971ddf4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0d17f49535078261669841ea502c6af821aa5e29
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="changing-the-styles-of-a-window-created-by-mfc"></a>MFC で作成したウィンドウのスタイル変更
 そのバージョンので、`WinMain`関数、MFC では、いくつかの標準のウィンドウ クラスを登録します。 通常、MFC を編集していないため`WinMain`、いる関数を使用する MFC の既定のウィンドウ スタイルを変更する機会はありません。 この記事では、既存のアプリケーションでこのような登録済みのウィンドウ クラスのスタイルを変更する方法について説明します。  
@@ -85,6 +86,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [ウィンドウ スタイル](http://msdn.microsoft.com/library/windows/desktop/ms632600)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレーム ウィンドウ スタイル](../mfc/frame-window-styles-cpp.md)
 

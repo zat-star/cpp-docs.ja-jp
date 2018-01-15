@@ -15,11 +15,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0ae9a4b8ab74ef4bf8b3a6445cf5d7faa8818c5a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7903e51a83533c8f2458c4400c64717021a1ccb8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compareitemstruct-structure"></a>COMPAREITEMSTRUCT 構造体
 `COMPAREITEMSTRUCT`構造が、識別子と、並べ替えられたオーナー描画リスト ボックスまたはコンボ ボックスの 2 つの項目のアプリケーションによって提供されるデータを提供します。  
@@ -63,10 +64,10 @@ typedef struct tagCOMPAREITEMSTRUCT {
 ## <a name="remarks"></a>コメント  
  ときに、アプリケーションがオーナー描画リスト ボックスに新しい項目を追加またはで作成されたコンボ ボックス、 **CBS_SORT**または**LBS_SORT**スタイル、Windows の送信、所有者、`WM_COMPAREITEM`メッセージ。 `lParam` 、メッセージのパラメーターにはへの long ポインターが含まれています、`COMPAREITEMSTRUCT`構造体。 メッセージを受信したときは、所有者は、2 つの項目を比較し、どの項目が、他のより前に来ることを示す値を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** winuser.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CWnd::OnCompareItem](../../mfc/reference/cwnd-class.md#oncompareitem)
 

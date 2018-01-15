@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -21,8 +20,7 @@ f1_keywords:
 - AFXANIMATIONCONTROLLER/CInterpolatorBase::SetCustomInterpolator
 - AFXANIMATIONCONTROLLER/CInterpolatorBase::SetDuration
 - AFXANIMATIONCONTROLLER/CInterpolatorBase::SetInitialValueAndVelocity
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - CInterpolatorBase [MFC], CInterpolatorBase
 - CInterpolatorBase [MFC], CreateInstance
@@ -35,16 +33,16 @@ helpviewer_keywords:
 - CInterpolatorBase [MFC], SetDuration
 - CInterpolatorBase [MFC], SetInitialValueAndVelocity
 ms.assetid: bbc3dce7-8398-47f9-b97e-e4fd2d737232
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 79cea720391127f52d441de8f02c53756790d4b2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 6bf2a6b11f64b5ec7e7f2e311c62e7f1ce9144d8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cinterpolatorbase-class"></a>CInterpolatorBase クラス
 アニメーション変数の新しい値を計算する必要があるときに、Animation API によって呼び出されるコールバックを実装します。  
@@ -87,7 +85,7 @@ class CInterpolatorBase : public CUIAnimationInterpolatorBase<CInterpolatorBase>
   
  `CInterpolatorBase`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="cinterpolatorbase"></a>CInterpolatorBase::CInterpolatorBase  
@@ -248,6 +246,5 @@ IFACEMETHOD(SetInitialValueAndVelocity)(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 CCustomInterpolator が設定されていない、またはカスタムの実装は SetInitialValueAndVelocity メソッドから FALSE を返す場合は E_FAIL を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

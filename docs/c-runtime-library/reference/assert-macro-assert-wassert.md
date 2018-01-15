@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -30,37 +29,22 @@ f1_keywords:
 - _assert
 - _wassert
 - assert/_wassert
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - aborting programs
 - assert function
 - assert macro
 ms.assetid: a9ca031a-648b-47a6-bdf1-65fc7399dd40
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 97bdb002953c07aba3bf7951a6f94a058c977f9d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 5a0fe8083cfc131f7e8b1f2133943a1c91f614a6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="assert-macro-assert-wassert"></a>assert マクロ、_assert、_wassert
 式を評価し、結果が `false`の場合、診断メッセージを出力し、プログラムを中止します。  
@@ -113,9 +97,9 @@ void _wassert(
   
  `assert` が定義されていない場合、 `NDEBUG` マクロは、C ランタイム ライブラリのリリース バージョンとデバッグ バージョンの両方で有効になります。 `NDEBUG` が定義されている場合、マクロは使用可能になりますが、その引数を評価せず、影響を与えません。 マクロが有効な場合、 `assert` マクロは実装のために `_wassert` を呼び出します。 その他のアサーション マクロの [_ASSERT](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)、[_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)、[_ASSERT_EXPR](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) も使用できますが、これらは、[_DEBUG](../../c-runtime-library/debug.md) マクロが定義されており、かつ C ランタイム ライブラリのデバッグ バージョンとリンクされたコードにある場合にのみ、渡される式を評価します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`assert`, `_wassert`|\<assert.h>|  
   
@@ -171,7 +155,7 @@ A problem caused the program to stop working correctly. Windows will close the p
   
  デバッガーがインストールされている場合は **[デバッグ]** ボタンを選択してデバッガーを開始するか、 **[プログラムの終了]** をクリックして終了します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [abort](../../c-runtime-library/reference/abort.md)   

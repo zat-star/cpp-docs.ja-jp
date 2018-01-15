@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -28,38 +27,23 @@ f1_keywords:
 - _wexeclp
 - wexeclp
 - _execlp
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - execlp function
 - _execlp function
 - _wexeclp function
 - wexeclp function
 ms.assetid: 7b179163-4bcd-4d6a-8baf-68f886791928
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 6404e1fca85b8de7835d4852960d56a7a170c627
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: e91bf18c9e6595d6122dc1add527e9a4e1193a53
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="execlp-wexeclp"></a>_execlp、_wexeclp
 新しい子プロセスを読み込んで実行します。  
@@ -111,21 +95,21 @@ intptr_t _wexeclp(
   
  `_execlp` 関数は、パラメーターを検証します。 `cmdname` または `arg0` が null ポインターであるか、空の文字列である場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。 新しいプロセスは開始されません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|オプション ヘッダー|  
 |--------------|---------------------|---------------------|  
 |`_execlp`|\<process.h>|\<errno.h>|  
 |`_wexeclp`|\<process.h> または \<wchar.h>|\<errno.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_exec 関数、_wexec 関数](../../c-runtime-library/exec-wexec-functions.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
- [_exec 関数、_wexec 関数](../../c-runtime-library/exec-wexec-functions.md)   
+ [_exec 系関数と _wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)   
  [abort](../../c-runtime-library/reference/abort.md)   
  [atexit](../../c-runtime-library/reference/atexit.md)   
  [exit、_Exit、_exit](../../c-runtime-library/reference/exit-exit-exit.md)   

@@ -39,11 +39,12 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bf5a4b554f3ee06c9f7aab60fe615ef9be0e544a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9dc216014fb88ac7995b9283ab59d0c011f3184f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2dtextlayout-class"></a>CD2DTextLayout クラス
 IDWriteTextLayout のラッパーです。  
@@ -85,7 +86,7 @@ class CD2DTextLayout : public CD2DResource;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CD2DTextLayout::m_pTextLayout](#m_ptextlayout)|IDWriteTextLayout へのポインター。|  
   
@@ -96,7 +97,7 @@ class CD2DTextLayout : public CD2DResource;
   
  [CD2DTextLayout](../../mfc/reference/cd2dtextlayout-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="_dtorcd2dtextlayout"></a>CD2DTextLayout:: ~ CD2DTextLayout  
@@ -274,5 +275,5 @@ BOOL SetLocaleName(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は TRUE を返します。 それ以外の場合は FALSE を返します  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

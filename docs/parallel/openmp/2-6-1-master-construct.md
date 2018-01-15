@@ -1,31 +1,30 @@
 ---
-title: "2.6.1 master Construct | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "2.6.1 master コンストラクト |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: c092064b-ea57-4d4e-9c99-a004d65656fe
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 2517e19b49f1314e7432bb265756193ea3bb8f91
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 2.6.1 master Construct
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**マスター**  のディレクティブはチームのマスター スレッドによって実行される構造化ブロックを指定する構造体を指定します。   **マスター**  のディレクティブの構文は次のとおりです :  
+# <a name="261-master-construct"></a>2.6.1 master コンストラクト
+**マスター**ディレクティブは、チームのマスター スレッドで実行される構造化ブロックを指定する構成を識別します。 構文、**マスター**ディレクティブは、次のようにします。  
   
 ```  
-#pragma omp master new-line  
-   structured-block  
+#pragma omp master new-linestructured-block  
 ```  
   
- チームの他のスレッドは構造化のブロックを実行しません。  エントリへまたはマスターの構造から終了に暗黙的なバリアはありません。
+ チームの他のスレッドでは、関連付けられている構造化ブロックは実行されません。 暗黙のバリアへのエントリまたは終了 master コンストラクトのいずれかではありません。

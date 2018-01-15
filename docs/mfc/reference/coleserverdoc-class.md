@@ -93,11 +93,12 @@ caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7363aca122d002a3ae77f071287942783ac7fbf2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 81b3b8d4c3f25e1c443d5fbcaeddb7b587216d69
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coleserverdoc-class"></a>COleServerDoc クラス
 OLE サーバー ドキュメントの基底クラスです。  
@@ -191,7 +192,7 @@ class AFX_NOVTABLE COleServerDoc : public COleLinkingDoc
   
  `COleServerDoc`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxole.h  
   
 ##  <a name="activatedocobject"></a>COleServerDoc::ActivateDocObject  
@@ -579,7 +580,7 @@ virtual HRESULT OnExecOleCmd(
 ### <a name="return-value"></a>戻り値  
  返します`S_OK`成功した場合は、次のエラー コードのいずれか。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**E_UNEXPECTED**|予期しないエラーが発生しました|  
 |**E_FAIL**|エラーが発生しました|  
@@ -838,7 +839,7 @@ void UpdateAllItems(
   
  この関数を呼び出して、`OnUpdate`項目、渡す送信以外のドキュメントのアイテムの各メンバー関数`pHint`、 `lHint`、および`nDrawAspect`です。 項目をドキュメントに加えられた変更に関する情報を渡すには、これらのパラメーターを使用します。 使用して情報をエンコードする`lHint`を定義することができます、 `CObject`-派生したクラスを変更についての情報を格納および使用して、そのクラスのオブジェクトを渡す`pHint`です。 上書き、`OnUpdate`でメンバー関数、 `COleServerItem`-その表現が変更されたかどうかに応じて、各項目の更新を最適化するためにクラスを派生します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル HIERSVR](../../visual-cpp-samples.md)   
  [直接クラス](../../mfc/reference/colelinkingdoc-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

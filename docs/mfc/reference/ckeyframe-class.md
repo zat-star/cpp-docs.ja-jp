@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -21,8 +20,7 @@ f1_keywords:
 - AFXANIMATIONCONTROLLER/CKeyFrame::m_offset
 - AFXANIMATIONCONTROLLER/CKeyFrame::m_pExistingKeyFrame
 - AFXANIMATIONCONTROLLER/CKeyFrame::m_pTransition
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - CKeyFrame [MFC], CKeyFrame
 - CKeyFrame [MFC], AddToStoryboard
@@ -35,16 +33,16 @@ helpviewer_keywords:
 - CKeyFrame [MFC], m_pExistingKeyFrame
 - CKeyFrame [MFC], m_pTransition
 ms.assetid: d050a562-20f6-4c65-8ce5-ccb3aef1a20e
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 03cfc0766dd15a2762612cf5f41e72ffb1c1885f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 67121027293171c9692362fd148a8598f649cfe2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ckeyframe-class"></a>CKeyFrame クラス
 アニメーションのキーフレームを表します。  
@@ -76,7 +74,7 @@ class CKeyFrame : public CBaseKeyFrame;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CKeyFrame::m_offset](#m_offset)|このキーフレーム m_pExistingKeyFrame に格納されているキーフレームからのオフセットを指定します。|  
 |[CKeyFrame::m_pExistingKeyFrame](#m_pexistingkeyframe)|既存の keframe へのポインターを格納します。 このキーフレームは、既存のキーフレームに m_offset とストーリー ボードに追加されます。|  
@@ -92,7 +90,7 @@ class CKeyFrame : public CBaseKeyFrame;
   
  [CKeyFrame](../../mfc/reference/ckeyframe-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="addtostoryboard"></a>CKeyFrame::AddToStoryboard  
@@ -246,6 +244,5 @@ CBaseKeyFrame* m_pExistingKeyFrame;
 CBaseTransition* m_pTransition;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

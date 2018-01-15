@@ -35,11 +35,12 @@ caps.latest.revision: "30"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5b0a00db89d930555b083d57a9d1ed54daf0564c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b0ada987b3226d901c3bf01236c2a593c2e36f51
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcmaskededit-class"></a>CMFCMaskedEdit クラス
 `CMFCMaskedEdit`クラスは、ユーザー入力をマスクを検証し、テンプレートに従って検証結果を表示するマスク エディット コントロールをサポートします。  
@@ -111,7 +112,7 @@ class CMFCMaskedEdit : public CEdit
   
  [CMFCMaskedEdit](../../mfc/reference/cmfcmaskededit-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxmaskededit.h  
   
 ##  <a name="disablemask"></a>CMFCMaskedEdit::DisableMask  
@@ -170,7 +171,7 @@ void EnableMask(
 |マスク文字|定義|  
 |--------------------|----------------|  
 |D|数字です。|  
-|日|数字またはスペース。|  
+|d|数字またはスペース。|  
 |+|プラス記号 ('+ ')、マイナス ('-')、または領域です。|  
 |C|アルファベット文字。|  
 |c|アルファベット文字またはスペース。|  
@@ -306,7 +307,7 @@ void SetWindowText(LPCTSTR lpszString);
   
  このメソッドを再定義[とき](../../mfc/reference/cwnd-class.md#setwindowtext)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CEdit クラス](../../mfc/reference/cedit-class.md)

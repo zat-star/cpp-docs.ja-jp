@@ -51,11 +51,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ced7bfbb2cedd8cad4353cdbb2d5627864de5ad7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3359b506217d2828207e06341fbf1fe53b3c0719
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdatetimectrl-class"></a>CDateTimeCtrl クラス
 日時指定コントロールの機能がカプセル化されています。  
@@ -111,7 +112,7 @@ class CDateTimeCtrl : public CWnd
   
  `CDateTimeCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdtctl.h  
   
 ##  <a name="cdatetimectrl"></a>CDateTimeCtrl::CDateTimeCtrl  
@@ -401,7 +402,7 @@ COLORREF SetMonthCalColor(
  `iColor`  
  `int`月間予定表コントロールの設定の領域を指定する値。 この値は、次のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |MCSC_BACKGROUND|か月間に表示される背景色を設定します。|  
 |MCSC_MONTHBK|1 か月内に表示される背景色を設定します。|  
@@ -531,7 +532,7 @@ BOOL SetTime(LPSYSTEMTIME pTimeNew = NULL);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CDateTimeCtrl#8](../../mfc/reference/codesnippet/cpp/cdatetimectrl-class_13.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CMNCTRL1](../../visual-cpp-samples.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

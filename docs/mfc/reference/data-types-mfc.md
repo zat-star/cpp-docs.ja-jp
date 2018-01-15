@@ -35,11 +35,12 @@ caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5ce4066da49c70cb604d613e10d3eba841c4b15e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0dd12aabee7e7284e2f3d12f81403b9b499e8e68
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-types-mfc"></a>データ型 (MFC)
 このトピックでは、Microsoft Foundation Class ライブラリで最もよく使用されるデータ型を示します。 データ型のほとんどは、他のユーザーは MFC 固有プラットフォーム ソフトウェア開発キット (SDK) のと同じです。  
@@ -52,6 +53,6 @@ ms.lasthandoff: 10/24/2017
   
 -   **LPCRECT**定数 (不変) を 32 ビット ポインター`RECT`構造体。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../mfc/class-library-overview.md)   
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

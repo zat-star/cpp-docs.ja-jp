@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -16,35 +15,19 @@ f1_keywords:
 - CONCRT/concurrency::event::wait
 - CONCRT/concurrency::event::wait_for_multiple
 - CONCRT/concurrency::event::timeout_infinite
-dev_langs:
-- C++
-helpviewer_keywords:
-- event class
+dev_langs: C++
+helpviewer_keywords: event class
 ms.assetid: fba35a53-6568-4bfa-9aaf-07c0928cf73d
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: f858bfad08ca8d62c42556c54b505908b7122569
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 550cbdda0468db969ffe3c7d3412789c1f0e5976
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="event-class"></a>event クラス
 同時実行ランタイムを明示的に認識する手動リセット イベントです。  
@@ -74,17 +57,17 @@ class event;
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[timeout_infinite](#timeout_infinite)|待機がタイムアウトしないことを示す値。|  
   
 ## <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。[同期データ構造](../../../parallel/concrt/synchronization-data-structures.md)します。  
+ 詳細については、次を参照してください。[同期データ構造](../../../parallel/concrt/synchronization-data-structures.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `event`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
@@ -147,7 +130,7 @@ size_t wait(unsigned int _Timeout = COOPERATIVE_TIMEOUT_INFINITE);
   
 ### <a name="parameters"></a>パラメーター  
  `_Timeout`  
- 待機がタイムアウトするまでのミリ秒数。 この値が `COOPERATIVE_TIMEOUT_INFINITE` である場合、タイムアウトが存在しないことを意味します。  
+ 待機がタイムアウトするまでのミリ秒数。この値が `COOPERATIVE_TIMEOUT_INFINITE` である場合、タイムアウトが存在しないことを意味します。  
   
 ### <a name="return-value"></a>戻り値  
  待機条件が満たされた場合は、値 `0` を返します。それ以外の場合は、イベントがシグナル状態になることなく待機がタイムアウトしたことを示す `COOPERATIVE_WAIT_TIMEOUT` 値を返します。  
@@ -175,10 +158,10 @@ static size_t __cdecl wait_for_multiple(
  配列内のイベントの数は、`_PPEvents` パラメーターで指定されます。  
   
  `_FWaitAll`  
- この値を `true` に設定した場合、`_PPEvents` パラメーターに指定された配列内のすべてのイベントがシグナル状態になって初めて待機条件が満たされたと判断されます。 この値を `false` に設定した場合、`_PPEvents` パラメーターに指定された配列内のイベントが&1; つでもシグナル状態になれば待機条件が満たされたと判断されます。  
+ この値を `true` に設定した場合、`_PPEvents` パラメーターに指定された配列内のすべてのイベントがシグナル状態になって初めて待機条件が満たされたと判断されます。 この値を `false` に設定した場合、`_PPEvents` パラメーターに指定された配列内のイベントが 1 つでもシグナル状態になれば待機条件が満たされたと判断されます。  
   
  `_Timeout`  
- 待機がタイムアウトするまでのミリ秒数。 この値が `COOPERATIVE_TIMEOUT_INFINITE` である場合、タイムアウトが存在しないことを意味します。  
+ 待機がタイムアウトするまでのミリ秒数。この値が `COOPERATIVE_TIMEOUT_INFINITE` である場合、タイムアウトが存在しないことを意味します。  
   
 ### <a name="return-value"></a>戻り値  
  待機条件が満たされた場合は、`_PPEvents` パラメーターに指定された配列内の、待機条件を満たしたインデックス。それ以外の場合は、条件が満たされることなく待機がタイムアウトしたことを示す `COOPERATIVE_WAIT_TIMEOUT` 値。  
@@ -189,6 +172,5 @@ static size_t __cdecl wait_for_multiple(
 > [!IMPORTANT]
 >  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] アプリケーションでは、この呼び出しが現在のスレッドをブロックし、アプリケーションが応答しなくなる場合があるため、ASTA スレッドで `wait_for_multiple` を呼び出さないでください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)
-

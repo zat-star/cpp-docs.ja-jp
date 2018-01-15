@@ -36,11 +36,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9fcbafbb98385878dbc84f300e8d2bf0dac581c7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 790d887009137ccc9115484b2ace57302c94d851
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="heapchk"></a>_heapchk
 ヒープに対して整合性チェックを実行します。  
@@ -74,9 +75,9 @@ int _heapchk( void );
 ## <a name="remarks"></a>コメント  
  `_heapchk` 関数を使用すると、ヒープの最小限の一貫性をチェックしてヒープ関連の問題をデバッグできます。 オペレーティング システムで `_heapchk` がサポートされていない場合 (Windows 98 など)、この関数は `_HEAPOK` を返し、`errno` を `ENOSYS` に設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_heapchk`|\<malloc.h>|\<errno.h>|  
   
@@ -125,7 +126,7 @@ int main( void )
 OK - heap is fine  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
  [_heapadd](../../c-runtime-library/heapadd.md)   
  [_heapmin](../../c-runtime-library/reference/heapmin.md)   

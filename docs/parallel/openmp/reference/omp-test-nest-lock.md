@@ -15,11 +15,12 @@ caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 938a79bc164a940050dea126dc513d2f61cb9feb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ecc5371dc522e288531292ef95d557220f2d5023
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="omptestnestlock"></a>omp_test_nest_lock
 入れ子にできるロックを設定しようとしていますが、スレッドの実行をブロックしません。  
@@ -113,5 +114,5 @@ Thread 2 - released nestable_lock
 Thread 2 - released nestable_lock  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

@@ -15,11 +15,14 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1d0f5655292b84c56521b639e8ccfd52a821b549
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 63902b5c911766163163ea3b2f8ee2d53ed77a8b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="handletget-method"></a>HandleT::Get メソッド
 基になるハンドルの値を取得します。  
@@ -33,10 +36,10 @@ typename HandleTraits::Type Get() const;
 ## <a name="return-value"></a>戻り値  
  ハンドル。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [HandleT クラス](../windows/handlet-class.md)

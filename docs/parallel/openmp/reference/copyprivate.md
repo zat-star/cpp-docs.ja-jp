@@ -4,44 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- copyprivate
-dev_langs:
-- C++
-helpviewer_keywords:
-- copyprivate OpenMP clause
+f1_keywords: copyprivate
+dev_langs: C++
+helpviewer_keywords: copyprivate OpenMP clause
 ms.assetid: 02c0209d-abe8-4797-8365-a82b53c3f15d
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 02cd38a814bcefe016763a70dd0e459e465914ce
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: ecbfa14b40a219d626293eff9fb602673bc194a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="copyprivate"></a>copyprivate
-すべてのスレッド間で&1; つまたは複数の変数を共有するように指定します。  
+すべてのスレッド間で 1 つまたは複数の変数を共有する必要がありますを指定します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -53,12 +35,12 @@ copyprivate(var)
  指定項目  
   
  `var`  
- 共有する&1; つまたは複数の変数。 複数の変数が指定されている場合は、変数名をコンマで区切ります。  
+ 共有する 1 つまたは複数の変数。 複数の変数が指定されている場合は、変数名をコンマで区切ります。  
   
 ## <a name="remarks"></a>コメント  
- `copyprivate`適用対象、[単一](../../../parallel/openmp/reference/single.md)ディレクティブです。  
+ `copyprivate`適用されます、[単一](../../../parallel/openmp/reference/single.md)ディレクティブです。  
   
- 詳細については、次を参照してください。 [2.7.2.8 copyprivate](../../../parallel/openmp/2-7-2-8-copyprivate.md)します。  
+ 詳細については、次を参照してください。 [2.7.2.8 copyprivate](../../../parallel/openmp/2-7-2-8-copyprivate.md)です。  
   
 ## <a name="example"></a>例  
   
@@ -126,5 +108,5 @@ Value = 1.008000, thread = 0
 Value = 1.008000, thread = 1  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [句](../../../parallel/openmp/reference/openmp-clauses.md)

@@ -143,11 +143,12 @@ caps.latest.revision: "34"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3072e4504fc70e75888607d4f263b39532f69b51
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cb32fc827c576830def3901389d400450b79f5ad
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdockablepane-class"></a>CDockablePane Class
 ドッキング サイトにドッキングできる、またはタブ付きペインに含めることができるペインを実装します。  
@@ -248,7 +249,7 @@ class CDockablePane : public CPane
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CDockablePane::m_bDisableAnimation](#m_bdisableanimation)|ドッキング可能なウィンドウの自動非表示のアニメーションが無効になっているかどうかを指定します。|  
 |[CDockablePane::m_bHideInAutoHideMode](#m_bhideinautohidemode)|ウィンドウが自動非表示モードの場合は、ウィンドウの動作を決定します。|  
@@ -314,7 +315,7 @@ class CDockablePane : public CPane
   
  [CDockablePane](../../mfc/reference/cdockablepane-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxDockablePane.h  
   
 ##  <a name="attachtotabwnd"></a>Cdockablepane::attachtotabwnd  
@@ -627,7 +628,7 @@ static CPaneDivider* __stdcall CreateDefaultPaneDivider(
 ### <a name="remarks"></a>コメント  
  `dwAlignment`値は次のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |`CBRS_ALIGN_TOP`|ウィンドウ フレーム ウィンドウのクライアント領域の上部にドッキングします。|  
 |`CBRS_ALIGN_BOTTOM`|ウィンドウ フレーム ウィンドウのクライアント領域の下部にドッキングします。|  
@@ -735,7 +736,7 @@ virtual BOOL DockPaneContainer(
 ### <a name="remarks"></a>コメント  
  `dwAlignment`値は次のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |`CBRS_ALIGN_TOP`|コンテナーは、ウィンドウの上部にドッキングされているされます。|  
 |`CBRS_ALIGN_BOTTOM`|コンテナーのウィンドウの下部にドッキングします。|  
@@ -1493,7 +1494,7 @@ virtual void UndockPane(BOOL bDelay = FALSE);
   
  フレームワークでは、破棄される前にも自動的にペインをドッキング解除します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CPane クラス](../../mfc/reference/cpane-class.md)

@@ -1,23 +1,22 @@
 ---
 title: "Visual C++ ツールセットで問題を報告する方法 | Microsoft Docs"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 1/03/2018
 ms.reviewer: 
 ms.suite: 
 ms.technology: cpp
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs: C++
-ms.assetid: ec24a49c-411d-47ce-aa4b-8398b6d3e8f6
-caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4a669b2935e4c21421d0c760e6de0c5c7340bed4
-ms.sourcegitcommit: 1b480aa74886930b3bd0435d71cfcc3ccda36424
+ms.workload: cplusplus
+ms.openlocfilehash: b1a5cdb873d536702ecf8536d9a9e7c0205cc923
+ms.sourcegitcommit: a5d8f5b92cb5e984d5d6c9d67fe8a1241f3fe184
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="how-to-report-a-problem-with-the-visual-c-toolset"></a>Visual C++ ツールセットで問題を報告する方法
 
@@ -29,9 +28,9 @@ Visual C++ のコンパイラ、リンカー、その他のツールを使って
 
 - [レポートを準備する方法](#prepare)、および優れたレポートの内容。
 
-- [レポートを送信する方法](#send)、およびそれぞれの違い。
-
 - [再現コードを生成する方法](#generate)、および再現コードのさまざまな種類。
+
+- [レポートを送信する方法](#send)、およびそれぞれの違い。
 
 レポートは、Microsoft にとっても他の開発者にとっても重要です。 Visual C++ の向上にご協力いただきありがとうございます。
 
@@ -47,7 +46,7 @@ Visual C++ のコンパイラ、リンカー、その他のツールを使って
 
 - 発生した問題の詳細な説明。
 
-- "再現コード" — 問題を再現するソース コード。
+- "再現コード": 問題を再現するソース コード。
 
 具体的に必要な情報およびそれが見つかる場所については以下で説明します。
 
@@ -94,7 +93,7 @@ cl : Command line error D8003 : missing source filename
 
 #### <a name="to-report-the-contents-of-the-command-line"></a>コマンド ラインの内容を報告するには
 
-1. **CL.command.1.tlog** ファイルを探して開きます。 既定では、このファイルは \\...\Visual Studio Version\Projects\SolutionName\ProjectName\Config\ProjectName.tlog\CL.command.1.tlog にあります。
+1. **CL.command.1.tlog** ファイルを探して開きます。 既定では、このファイルは \\...\Visual Studio *version*\Projects\\*SolutionName*\\*ProjectName*\Config\\*ProjectName*.tlog\CL.command.1.tlog にあります。
 
    このファイルで、ソース コード ファイルの名前と、コンパイルに使われたコマンド ライン引数を探します。これらは別々の行になっています。
 
@@ -221,43 +220,6 @@ CONTEXT:
 
 この種のクラッシュの場合は、リンク時のコード生成 (LTCG) を使っている場合は[リンク再現コード](#link-repros)を、使っていない場合は[前処理済み再現コード](#preprocessed-repros)を提供してください。 LTGC は、`/GL` コマンド ライン引数を cl.exe に指定することによって有効になります。
 
-## <a name="send"></a> レポートを送信する方法
-
-レポートを提出するには複数の方法があります。 Visual Studio に組み込まれている[問題報告ツール](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)を利用するか、電子メールでご連絡ください。 レポートに最適な選択肢は、発生した問題の種類、レポートを調査するエンジニアとの連絡方法、進捗状況を追跡するかどうか、コミュニティとレポートを共有するかどうかによって異なります。
-
-> [!NOTE]
-> レポートの送信方法に関係なく、Microsoft はお客様のプライバシーを尊重します。 お客様から送信していただいたデータの扱いについて詳しくは、「[Microsoft Visual Studio 製品ファミリのプライバシーに関する声明](https://www.visualstudio.com/dn948229)」をご覧ください。
-
-### <a name="send-an-email"></a>メールを送信する
-
-メールは、Visual C++ チームにレポートを直接送るもう 1 つの方法です。アドレスは [compilercrash@microsoft.com](mailto:compilercrash@microsoft.com) です。
-
-レポートをメールで送信する場合は、メール メッセージの本文として次のテンプレートを使用できます。 ソース コードなどの情報をメール本文に含めない場合は、忘れずにソース コード ファイルや他のファイルを添付してください。
-
-```Example
-To: compilercrash@microsoft.com
-Subject: Visual C++ Error Report
------
-
-Compiler version:
-
-CL.EXE command line:
-
-Problem description:
-
-Source code and repro steps:
-
-```
-
-### <a name="use-the-report-a-problem-tool"></a>問題の報告ツールを使う
-
-Visual Studio の問題の報告ツールを使うと、Visual Studio のユーザーはわずか数クリックでさまざまな問題を報告できます。 IDE を終了することなく、簡単なフォームを使って、発生している問題についての詳細な情報を指定し、レポートを送信できます。
-
-問題の報告ツールを使って問題を報告することは、このドキュメントで説明されているツールセットの問題の種類についてはあまり行われません。しかしながら、状況に適している場合はこのオプションを選ぶことができます。
-
-> [!TIP]
-> Visual Studio で発生する可能性がある、ツールセットに関係しない他の種類の問題 (たとえば、UI の問題、IDE の機能の不具合、一般的なクラッシュなど) の場合は、問題の報告ツールを使うのが特に適しています。このツールのスクリーンショット機能や、発生した問題をもたらした UI 操作を記録する機能が役に立ちます。 これらの他の種類のエラーの報告には、compilercrash@microsoft.com へのメール送信は使わないでください。
-
 ## <a name="generate"></a> 再現コードの生成
 
 再現コードは、報告する問題を実際に示す完全な自己完結型のコード例です。 再現コードはコード スニペットでは**ありません**。ビルドして実行する完全な例 (または、報告している問題によって生成されるエラー以外) でなければなりません。 標準ヘッダーの場合であっても、必要な #include ディレクティブをすべて含む必要があります。
@@ -330,3 +292,51 @@ Visual Studio の問題の報告ツールを使うと、Visual Studio のユー�
 1 つのソース ファイルまたは前処理済み再現コードに問題をまとめることができず、問題にリンク再現コードが必要ない場合は、IDE プロジェクトを調査できます。 プロジェクト内のコードは最小限であり、このドキュメントのすべてのガイダンスが同じように適用されます。
 
 最小限の IDE プロジェクトとして再現コードを作成し、ディレクトリ構造全体を .zip ファイルなどに圧縮してパッケージ化した後、レポートに添付します。
+
+## <a name="send"></a> レポートを送信する方法
+
+レポートを提出するには複数の方法があります。 Visual Studio に組み込まれている[問題の報告ツール](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)、または [Visual Studio Developer Community](https://developercommunity.visualstudio.com/) (Visual Studio 開発者コミュニティ) ページを使用できます。 電子メールでレポートを送信することもできますが、最初の 2 つの方法をお勧めします。 どれを選択するかは、レポートを調査するエンジニアとの連絡方法、および進捗状況を追跡するかどうか、コミュニティとレポートを共有するかどうかによって異なります。
+
+> [!NOTE]
+> レポートの送信方法に関係なく、Microsoft はお客様のプライバシーを尊重します。 お客様から送信していただいたデータの扱いについて詳しくは、「[Microsoft Visual Studio 製品ファミリのプライバシーに関する声明](https://www.visualstudio.com/dn948229)」をご覧ください。
+
+### <a name="use-the-report-a-problem-tool"></a>問題の報告ツールを使う
+
+Visual Studio の**問題の報告**ツールを使うと、Visual Studio のユーザーはわずか数クリックでさまざまな問題を報告できます。 IDE を終了することなく、簡単なフォームを使って、発生している問題についての詳細な情報を指定し、レポートを送信できます。
+
+**問題の報告**ツールを通して問題を報告する方法は、IDE からは簡単で便利です。 このツールには、**[サイド リンク バー]** 検索ボックスの横にある **[フィードバックの送信]** アイコンを選択することにより、タイトルバーからアクセスすることができます。あるいは、メニュー バーから、**[ヘルプ]** > **[フィードバックの送信]** > **[問題の報告]** の順に選択してアクセスすることもできます。
+
+問題を報告することにした場合は、まず、開発者コミュニティを調べて同様の問題が発生していないかを確認します。 以前に同様の問題が報告されている場合は、そのトピックに賛成票を投じ、具体例な説明を含めたコメントを追加します。 同様の問題が見つからない場合は、Visual Studio フィードバック ダイアログの下部にある **[新しい問題を報告する]** ボタンを選択して、問題を報告するための手順に従います。
+
+### <a name="use-the-visual-studio-developer-community-pages"></a>Visual Studio 開発者コミュニティ ページを使用する
+
+Visual Studio で問題を報告するためのもう 1 つの便利な方法として Visual Studio 開発者コミュニティ ページがあります。このページでは Visual Studio、C++ コンパイラ、ツール、ライブラリについて解決策を検索できます。 [Visual Studio に関する質問](https://developercommunity.visualstudio.com/spaces/8/index.html)ページは、IDE またはインストールに関する問題を報告する場所です。 C++ コンパイラ、リンカー、およびその他のツールやライブラリでの問題については、[C++ に関する質問](https://developercommunity.visualstudio.com/spaces/62/index.html)ページを使用してください。
+
+開発者コミュニティの各ページの上部付近にあるバナーは検索ボックスであり、自分が遭遇している問題と同様の内容を報告している投稿またはトピックを検索することができます。 遭遇している問題に関連する解決策またはその他の有用な情報が既存のトピックで報告されていることを確認できる場合があります。 他のユーザーが以前に同じ問題を報告している場合は、新たに問題レポートを作成するのではなく、そのトピックに対して賛成票を投じ、コメントを追加してください。
+
+以前に問題が報告されていない場合は、開発者コミュニティ ページの検索ボックスの横にある**[問題の報告]** ボタンを選択します。 Visual Studio アカウントへのサインイン、および開発者コミュニティ アプリがプロファイルにアクセスすることへの同意を求められる場合があります。 サインインすると、問題を報告できるページに直接移動します。 再現コードとコマンド ライン、スクリーン ショット、関連するディスカッションへのリンク、および関連性があり有用だと思われるその他の情報を含めることができます。
+
+### <a name="send-an-email"></a>メールを送信する
+
+メールは、Visual C++ チームにレポートを直接送るもう 1 つの方法です。 アドレスは [ compilercrash@microsoft.com](mailto:compilercrash@microsoft.com) です。電子メールによる方法は他の 2 つの方法を使用できない場合にのみ使用してください。メールの場合は、**問題の報告**ツールや Web ページを使用して開発者コミュニティに報告された問題ほど綿密に追跡されず、コメントおよび解決策が他の Visual Studio ユーザーに表示されないためです。
+
+レポートをメールで送信する場合は、メール メッセージの本文として次のテンプレートを使用できます。 ソース コードなどの情報をメール本文に含めない場合は、忘れずにソース コード ファイルや他のファイルを添付してください。
+
+```Example
+To: compilercrash@microsoft.com
+Subject: Visual C++ Error Report
+-----
+
+Compiler version:
+
+CL.EXE command line:
+
+Problem description:
+
+Source code and repro steps:
+
+```
+
+> [!TIP]
+> Visual Studio で発生する可能性がある、ツールセットに関係しない他の種類の問題 (たとえば、UI の問題、IDE の機能の不具合、一般的なクラッシュなど) の場合は、問題の報告ツールを使うのが特に適しています。このツールのスクリーンショット機能や、発生した問題をもたらした UI 操作を記録する機能が役に立ちます。 これらの他の種類のエラーの報告には、compilercrash@microsoft.com へのメール送信は使わないでください。
+

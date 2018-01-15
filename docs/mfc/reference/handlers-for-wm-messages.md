@@ -15,11 +15,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 107b354125ce15f0d0d6e76a9bbda03c58f20ec8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b36a8eaabec59b7e900cfffe03a1673e44198633
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="handlers-for-wm-messages"></a>WM_ で始まるメッセージのハンドラー
 次のトピックは、マップのエントリに対応します。  
@@ -35,6 +36,6 @@ ms.lasthandoff: 10/24/2017
 |[S](../../mfc/reference/wm-messages-s.md)|**ON_WM_SETCURSOR**を通じて**ON_WM_SYSKEYUP**|  
 |[T ~ Z](../../mfc/reference/wm-messages-t-z.md)|**ON_WM_TIMECHANGE**を通じて**ON_WM_WININICHANGE**|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)
 

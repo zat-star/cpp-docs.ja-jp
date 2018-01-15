@@ -22,11 +22,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 87ac2a36c83e6b05e671c0110b054325d53fc887
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d9d9b200db84ddbf25e514e1432fa0915d5ee383
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iumsthreadproxy-structure"></a>IUMSThreadProxy 構造体
 実行スレッドの抽象化です。 ユーザー モード スケジュール可能 (UMS) スレッドをスケジューラに付与するには、スケジューラ ポリシー要素 `SchedulerKind` の値を `UmsThreadDefault` に設定し、さらに `IUMSScheduler` インターフェイスを実装する必要があります。 UMS スレッドは、Windows 7 以上のバージョンの 64 ビット オペレーティング システムでのみサポートされます。  
@@ -54,7 +55,7 @@ struct IUMSThreadProxy : public IThreadProxy;
   
  `IUMSThreadProxy`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrtrm.h  
   
  **名前空間:** concurrency  
@@ -112,6 +113,6 @@ virtual CriticalRegionType GetCriticalRegionType() const = 0;
 ### <a name="return-value"></a>戻り値  
  内では、重要な領域、スレッド プロキシの種類です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [IUMSScheduler 構造体](iumsscheduler-structure.md)

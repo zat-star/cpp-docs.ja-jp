@@ -27,11 +27,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5532a5ea76bbdde619829548c01c2d057f3cbc28
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 3e41eefdf1c1be2d0e91061e0efce5f5408c1848
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-activex-controls-subclassing-a-windows-control"></a>MFC ActiveX コントロール : Windows コントロールのサブクラス化
 この記事では、ActiveX コントロールを作成する一般的な Windows コントロールのサブクラス化するプロセスについて説明します。 既存のウィンドウをサブクラス化コントロールは、ActiveX コントロールを開発する簡単な方法です。 新しいコントロールの描画とマウスのクリックに応答してなどのサブクラス化された Windows コントロールの機能があります。 MFC ActiveX コントロールをサンプル[ボタン](../visual-cpp-samples.md)サブクラス化して、Windows コントロールの例に示します。  
@@ -100,6 +101,6 @@ ms.lasthandoff: 10/24/2017
   
  方法の例では、メッセージの処理を反映を参照してください、MFC ActiveX コントロールのサンプル[ボタン](../visual-cpp-samples.md)です。 示しています、**例**検出ハンドラー、 **BN_CLICKED**通知コードおよび起動して応答します (送信) をクリックしてイベント。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
 

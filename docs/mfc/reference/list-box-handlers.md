@@ -26,11 +26,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2c8aafcabbf4e0049c2e1834803ecded88ccc53d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: afbfadae49fca6d5e53e24d212237cb172636f6c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="list-box-handlers"></a>リスト ボックス ハンドラー
 マップ エントリを次には、対応する関数のプロトタイプです。  
@@ -43,6 +44,6 @@ ms.lasthandoff: 10/24/2017
 |ON_LBN_SELCHANGE ( \<id >、 \<memberFxn >)|afx_msg void memberFxn ();|  
 |ON_LBN_SETFOCUS ( \<id >、 \<memberFxn >)|afx_msg void memberFxn ();|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)
 

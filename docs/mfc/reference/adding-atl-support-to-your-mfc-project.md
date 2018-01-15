@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bbf9a47761d016f3a9e935d70956d936d1cc180a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 92a4e9096cf72f6556c8ceb36e12cdff97139712
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-atl-support-to-your-mfc-project"></a>MFC プロジェクトへの ATL サポートの追加
 既に MFC ベースのアプリケーションを作成した場合、サポートを追加できますアクティブ テンプレート ライブラリ (ATL) を簡単に MFC プロジェクト ウィザードに ATL サポートを追加を実行しています。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 10/24/2017
   
  MFC プロジェクトのコード変更 ATL サポートを追加する方法の詳細については、次を参照してください[詳細の ATL サポートを追加、ATL ウィザードで。](../../mfc/reference/details-of-atl-support-added-by-the-atl-wizard.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
  [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)   
  [メンバー関数の追加](../../ide/adding-a-member-function-visual-cpp.md)   

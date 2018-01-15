@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a576ffdc7fcd637873045ee44e3a13a0a9647942
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d9f5e1c472cdbca177b91851f9b8104094c41047
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="defining-a-message-handler-for-a-reflected-message"></a>リフレクション メッセージ用のメッセージ ハンドラーの定義
 新しい MFC コントロール クラスを作成した後は、そのメッセージ ハンドラーを定義できます。 リフレクション メッセージ ハンドラーは、親でメッセージを受信する前に、独自のメッセージを処理するコントロール クラスを使用できます。 MFC を使用する[CWnd::SendMessage](../../mfc/reference/cwnd-class.md#sendmessage)コントロールから親ウィンドウにメッセージを送信する関数。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 10/24/2017
   
 9. を編集またはメッセージのハンドラーを削除するには、手順 4 ~ 7 を繰り返します。 編集または削除し、適切なタスクをクリックして、ハンドラーの名前を含むセルをクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数へのメッセージの割り当てください。](../../mfc/reference/mapping-messages-to-functions.md)   
  [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)   
  [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   

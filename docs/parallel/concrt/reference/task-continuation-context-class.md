@@ -22,11 +22,12 @@ caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 48ef4f4646aedf648e3bb9efb572c203d7047378
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c8178ca25aaf1abe9047317673a9f47354112407
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="taskcontinuationcontext-class"></a>task_continuation_context クラス
 `task_continuation_context` クラスを使用すると、継続する場所を指定できます。 このクラスは、Windows ストア アプリから使用する場合にのみ役に立ちます。 Windows ストア アプリを使用していない場合、タスク継続の実行コンテキストはランタイムによって決まり、構成できません。  
@@ -54,7 +55,7 @@ class task_continuation_context : public details::_ContextCallback;
   
  `task_continuation_context`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** ppltasks.h  
   
  **名前空間:** concurrency  
@@ -151,5 +152,5 @@ static task_continuation_context use_synchronous_execution();
  継続元タスクが既に完了して、継続が関連付けられている場合、継続は継続をアタッチするコンテキストで同期的に実行します。  
   
  
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

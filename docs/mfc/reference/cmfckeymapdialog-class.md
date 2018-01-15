@@ -37,11 +37,12 @@ caps.latest.revision: "26"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 27278d64ab1aef17149a3b4c166cff9c302e29ca
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1965e5dd2d522175b3709449df9a0b8575e20c59
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfckeymapdialog-class"></a>CMFCKeyMapDialog クラス
 `CMFCKeyMapDialog`クラスは、コマンドをキーボードのキーにマップされるコントロールをサポートします。  
@@ -97,7 +98,7 @@ class CMFCKeyMapDialog : public CDialogEx
   
  [CMFCKeyMapDialog](../../mfc/reference/cmfckeymapdialog-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxkeymapdialog.h  
   
 ##  <a name="cmfckeymapdialog"></a>CMFCKeyMapDialog::CMFCKeyMapDialog  
@@ -276,7 +277,7 @@ virtual void SetColumnsWidth();
 ### <a name="remarks"></a>コメント  
  このメソッドは、既定の幅のコントロールの列を内部リストに設定します。 最初に、ショートカット キー列の幅が計算されます。 残りの幅の 3 分の 1 つが、[コマンド] 列に割り当てられているし、[説明] 列に、残りの 3 分の 2 が割り当てられています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CKeyboardManager クラス](../../mfc/reference/ckeyboardmanager-class.md)

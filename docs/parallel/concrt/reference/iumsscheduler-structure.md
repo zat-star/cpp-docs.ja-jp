@@ -18,14 +18,15 @@ caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 82795e3494267f953875136bb29c701c93dbc934
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f45f8f2f152cdbfee1ee1ca3c3acfdb93a249d7a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iumsscheduler-structure"></a>IUMSScheduler 構造体
-同時実行ランタイムのリソース マネージャーによってユーザー モード スケジュール可能 (UMS) スレッドが渡される必要がある作業スケジューラの抽象化のインターフェイスです。 リソース マネージャーでは、このインターフェイスを使用して UMS スレッド スケジューラと通信します。 `IUMSScheduler` インターフェイスは `IScheduler` インターフェイスを継承します。  
+同時実行ランタイムのリソース マネージャーによってユーザー モード スケジュール可能 (UMS) スレッドが渡される必要がある作業スケジューラの抽象化のインターフェイスです。 リソース マネージャーでは、このインターフェイスを使用して UMS スレッド スケジューラと通信します。 `IUMSScheduler` インターフェイスは `IScheduler` のインターフェイスから継承されます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -53,7 +54,7 @@ struct IUMSScheduler : public IScheduler;
   
  `IUMSScheduler`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrtrm.h  
   
  **名前空間:** concurrency  
@@ -72,7 +73,7 @@ virtual void SetCompletionList(_Inout_ IUMSCompletionList* pCompletionList) = 0;
 ### <a name="remarks"></a>コメント  
  リソース マネージャーでは、スケジューラがリソースの最初の割り当てを要求された後に UMS スレッドが必要であるスケジューラでは、このメソッドを呼び出します。 スケジューラが使用できる、 `IUMSCompletionList` UMS スレッド プロキシがブロックされない場合を決定するインターフェイスです。 UMS スケジューラに割り当てられている仮想プロセッサ ルートで実行されているスレッド プロキシからこのインターフェイスにアクセスすることはのみです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [PolicyElementKey](concurrency-namespace-enums.md)   
  [IScheduler 構造体](ischeduler-structure.md)   

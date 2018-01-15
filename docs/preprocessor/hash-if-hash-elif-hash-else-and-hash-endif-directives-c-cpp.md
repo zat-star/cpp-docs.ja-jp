@@ -1,5 +1,5 @@
 ---
-title: "#<a name=\"if-elif-else-and-endif-directives-cc--microsoft-docs\"></a>場合、#elif、#else、および #endif ディレクティブ (C/C++) |Microsoft ドキュメント"
+title: "#場合、#elif、#else、および #endif ディレクティブ (C/C++) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -32,11 +32,12 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 01dc273b4c878db4ba48ce38bf69919eb2bfae3e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 8acd8444295175e6aa9fe329e7851456fcd5f7c4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="if-elif-else-and-endif-directives-cc"></a>#if、#elif、#else、および #endif ディレクティブ (C/C++)
 `#if` ディレクティブは、`#elif`、`#else`、および `#endif` ディレクティブと共にソース ファイルの各部分のコンパイルを制御します。 `#if` の後に記述した式がゼロ以外の値になる場合、`#if` ディレクティブの直後の一連の行が翻訳単位として保持されます。  
@@ -200,5 +201,5 @@ class Example
 #endif
 ```
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プリプロセッサ ディレクティブ](../preprocessor/preprocessor-directives.md)

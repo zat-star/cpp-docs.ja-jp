@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 95b531d12afc524e27bf36fc5a44d5f555fc9f91
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b651c734fbd7098705801aefcaa490293a4d661d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="command-ids"></a>コマンド ID
 コマンドが、コマンド ID だけで完全に説明されている (でエンコードされた、 **WM_COMMAND**メッセージ)。 この ID は、コマンドを生成するユーザー インターフェイス オブジェクトに割り当てられます。 通常、Id に割り当てられているユーザー インターフェイス オブジェクトの機能の名前です。  
@@ -29,6 +30,6 @@ ms.lasthandoff: 10/24/2017
   
  メニュー エディター、Visual C で独自のメニューを作成するときに、クラス ライブラリに従うことをお勧めの名前付け規則に示すように`ID_FILE_OPEN`です。 [標準コマンド](../mfc/standard-commands.md)クラス ライブラリで定義されている標準のコマンドについて説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ユーザー インターフェイス オブジェクトとコマンド ID](../mfc/user-interface-objects-and-command-ids.md)
 

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,37 +13,19 @@ f1_keywords:
 - AFXDB_/CLongBinary::CLongBinary
 - AFXDB_/CLongBinary::m_dwDataLength
 - AFXDB_/CLongBinary::m_hData
-dev_langs:
-- C++
-helpviewer_keywords:
-- BLOB (binary large object)
-- CLongBinary class
-- BLOB (binary large object), CLongBinary class
+dev_langs: C++
+helpviewer_keywords: CLongBinary class [MFC]
 ms.assetid: f4320059-aeb4-4ee5-bc2b-25f19d898ef5
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 4f06c6ef0b988a348f074d50ce7a33e8015a20fe
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 49661932192a32550d50edfbbc52d7967cb78dcd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="clongbinary-class"></a>CLongBinary クラス
 データベース上の大きなバイナリ データ オブジェクト (BLOB または "バイナリ ラージ オブジェクト" と呼びます) を使った作業を単純にします。  
@@ -76,7 +57,7 @@ class CLongBinary : public CObject
 > [!NOTE]
 >  一般に、お勧めここで使用する[CByteArray](../../mfc/reference/cbytearray-class.md)と組み合わせて、 [DFX_Binary](record-field-exchange-functions.md#dfx_binary)関数。 使用することもできます`CLongBinary`が、一般に`CByteArray`提供 win32 でより多くの機能が存在しないためサイズの制限が発生し、16 ビット`CByteArray`です。 このアドバイスは、データ アクセス オブジェクト (DAO) とオープン データベース コネクティビティ (ODBC) を使用したプログラミングに適用されます。  
   
- 使用する、`CLongBinary`オブジェクト、型のフィールド データ メンバーを宣言`CLongBinary`レコード セット クラスでします。 このメンバーは、レコード セット クラスの埋め込みメンバーになります、レコード セットを作成するときに構築されます。 後に、`CLongBinary`オブジェクトが構築された場合、レコード フィールド エクス (チェンジ RFX) メカニズムは、データ ソースの現在のレコードのフィールドからのデータ オブジェクトを読み込みますレコードが更新されたときに、レコードに格納します。 バイナリ ラージ オブジェクトのサイズが記憶域を割り当ててに対するクエリ、データ ソースに RFX (を使用して、`CLongBinary`オブジェクトの`m_hData`データ メンバー)、し、格納、`HGLOBAL`内のデータへのハンドル`m_hData`です。 RFX も内のデータ オブジェクトの実際のサイズを格納、`m_dwDataLength`データ メンバーです。 を介してそのオブジェクトでデータを操作`m_hData`、通常、Windows に格納されているデータを操作で使用する同じ手法を使用して`HGLOBAL`処理します。  
+ 使用する、`CLongBinary`オブジェクト、型のフィールド データ メンバーを宣言`CLongBinary`レコード セット クラスでします。 このメンバーは、レコード セット クラスの埋め込みメンバーになります、レコード セットを作成するときに構築されます。 後に、`CLongBinary`オブジェクトが構築された場合、レコード フィールド エクス (チェンジ RFX) メカニズムは、データ ソースの現在のレコードのフィールドからのデータ オブジェクトを読み込みますレコードが更新されたときに、レコードに格納します。 バイナリ ラージ オブジェクトのサイズが記憶域を割り当ててに対するクエリ、データ ソースに RFX (を使用して、`CLongBinary`オブジェクトの`m_hData`データ メンバー)、し、格納、`HGLOBAL`内のデータへのハンドル`m_hData`です。 RFX も内のデータ オブジェクトの実際のサイズを格納、`m_dwDataLength`データ メンバーです。 を介してそのオブジェクトでデータを操作`m_hData`、通常、Windows に格納されているデータを操作で使用する同じ手法を使用して`HGLOBAL`を処理します。  
   
  レコード セット、埋め込まれているを破棄する`CLongBinary`オブジェクトも破棄され、そのデストラクターの割り当てを解除、`HGLOBAL`データ ハンドル。  
   
@@ -87,7 +68,7 @@ class CLongBinary : public CObject
   
  `CLongBinary`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdb_.h  
   
 ##  <a name="clongbinary"></a>CLongBinary::CLongBinary  
@@ -114,8 +95,7 @@ SQLULEN m_dwDataLength;
 HGLOBAL m_hData;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CRecordset クラス](../../mfc/reference/crecordset-class.md)
-

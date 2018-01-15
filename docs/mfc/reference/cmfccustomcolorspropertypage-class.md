@@ -18,11 +18,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 633d8648cf204b726f46e753c67991b81df5b0cb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7dac4260c69e4d2bbf9c74965e73f6961dd6ad6b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfccustomcolorspropertypage-class"></a>CMFCCustomColorsPropertyPage クラス
 色のダイアログ ボックスで作成した色を選択できるプロパティ ページを表します。  
@@ -72,7 +73,7 @@ class CMFCCustomColorsPropertyPage : public CPropertyPage
   
  [CMFCCustomColorsPropertyPage](../../mfc/reference/cmfccustomcolorspropertypage-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcustomcolorspropertypage.h  
   
 ##  <a name="setup"></a>CMFCCustomColorsPropertyPage::Setup  
@@ -97,7 +98,7 @@ void Setup(
 ### <a name="remarks"></a>コメント  
  このメソッドは、現在の RGB と関連付けられている HLS (色合い、明度、および鮮やかさ) の色の値、プロパティ ページを更新します。 [CMFCColorDialog::SetPageTwo](../../mfc/reference/cmfccolordialog-class.md#setpagetwo)メソッドは、フレームワークは、色のダイアログ ボックスを初期化または、ユーザーがマウスの左ボタンを押したときにこのメソッドを呼び出します。 詳細については`CMFCColorDialog`を参照してください[CMFCColorDialog クラス](../../mfc/reference/cmfccolordialog-class.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCColorDialog クラス](../../mfc/reference/cmfccolordialog-class.md)   

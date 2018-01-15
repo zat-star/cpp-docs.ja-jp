@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4191adb10693ea224a89fb62c09a2299c3a6bee2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f8bd42a7da91f984c4cedc4deafc0ab9f4417495
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="scrolling-and-scaling-views"></a>ビューのスクロールと拡大/縮小
 MFC には、それらを表示するフレーム ウィンドウのサイズが自動的に拡大縮小されるまでスクロールし、表示するビューがサポートしています。 クラス`CScrollView`ビューの両方の種類をサポートしています。  
@@ -54,6 +55,6 @@ MFC には、それらを表示するフレーム ウィンドウのサイズが
 ##  <a name="_core_scaling_a_view"></a>ビューを拡大/縮小  
  使用することができます、ビュー、フレーム ウィンドウのサイズを自動的に調整する場合は、`CScrollView`スクロールの代わりに拡張するためです。 論理ビューに拡大または縮小、ウィンドウのクライアント領域を正確に適合します。 スケール調節されたビューには、スクロール バーはありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ビューの使い方](../mfc/using-views.md)
 

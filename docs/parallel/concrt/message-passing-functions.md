@@ -14,11 +14,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4139068c8871fe69f43168fe925011a48411a74b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f9c2daa3f34ba4e73b28e11241d0f64680851fcc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="message-passing-functions"></a>メッセージ パッシング関数
 非同期エージェント ライブラリは、コンポーネント間でメッセージを渡すことが許可される複数の機能を提供します。  
@@ -71,7 +72,7 @@ ms.lasthandoff: 10/24/2017
   
  [[トップ](#top)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [非同期エージェント ライブラリ](../../parallel/concrt/asynchronous-agents-library.md)   
  [非同期メッセージ ブロック](../../parallel/concrt/asynchronous-message-blocks.md)   
  [send 関数](reference/concurrency-namespace-functions.md#send)   

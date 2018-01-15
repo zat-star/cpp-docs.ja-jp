@@ -125,11 +125,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 46ca0fbb4b076fe8cf9dab4d986da487b16cc976
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a52a2add3306aaf684f9a48a06d1add229205233
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crendertarget-class"></a>CRenderTarget クラス
 ID2D1RenderTarget のラッパーです。  
@@ -217,7 +218,7 @@ class CRenderTarget : public CObject;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CRenderTarget::m_lstResources](#m_lstresources)|CD2DResource オブジェクトへのポインターのリスト。|  
 |[CRenderTarget::m_pRenderTarget](#m_prendertarget)|ID2D1RenderTarget オブジェクトへのポインター。|  
@@ -228,7 +229,7 @@ class CRenderTarget : public CObject;
   
  [CRenderTarget](../../mfc/reference/crendertarget-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="_dtorcrendertarget"></a>CRenderTarget:: ~ CRenderTarget  
@@ -1044,5 +1045,5 @@ BOOL VerifyResource(CD2DResource* pResource);
 ### <a name="return-value"></a>戻り値  
  有効である場合は、オブジェクトの場合は TRUEそれ以外の場合は FALSE。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

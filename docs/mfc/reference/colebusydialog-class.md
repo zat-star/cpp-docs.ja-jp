@@ -25,11 +25,12 @@ caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 968c8cefb9dd9be853ceeb8bd98d631e884ad1c9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0e57881dad305a5a0d5cec25ddcc93f82eca5f26
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="colebusydialog-class"></a>COleBusyDialog クラス
 OLE の [サーバーが応答しません] ダイアログ ボックスまたは [サーバーを使用できません] ダイアログ ボックスに使用されます。  
@@ -86,7 +87,7 @@ class COleBusyDialog : public COleDialog
   
  `COleBusyDialog`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxodlgs.h  
   
 ##  <a name="colebusydialog"></a>COleBusyDialog::COleBusyDialog  
@@ -186,7 +187,7 @@ OLEUIBUSY m_bz;
   
  詳細については、次を参照してください。、 [OLEUIBUSY](http://msdn.microsoft.com/library/windows/desktop/ms682493) Windows SDK 内の構造。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数クラス](../../mfc/reference/coledialog-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [COleDialog クラス](../../mfc/reference/coledialog-class.md)

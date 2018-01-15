@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -26,35 +25,19 @@ f1_keywords:
 - AMP/Concurrency::array::associated_accelerator_view
 - AMP/Concurrency::array::cpu_access_type
 - AMP/Concurrency::array::extent
-dev_langs:
-- C++
-helpviewer_keywords:
-- array class
+dev_langs: C++
+helpviewer_keywords: array class
 ms.assetid: 0832b6c1-40f0-421d-9104-6b1baa0c63a7
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 470918d62357a8dd463db35b4d929e7ec5c2f251
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 5b76fcb181d955fc051ade5183b67b9d55b823ab
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="array-class"></a>array クラス
 データをアクセラレータに移動するために使用するデータ コンテナーを表します。  
@@ -79,7 +62,7 @@ friend class array;
   
 |名前|説明|  
 |----------|-----------------|  
-|[配列のコンス トラクター](#ctor)|`array` クラスの新しいインスタンスを初期化します。|  
+|[配列コンス トラクター](#ctor)|`array` クラスの新しいインスタンスを初期化します。|  
 |[~ array デストラクター](#dtor)|`array` オブジェクトを破棄します。|  
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -87,26 +70,26 @@ friend class array;
 |----------|-----------------|  
 |[copy_to](#copy_to)|array の内容を別の array にコピーします。|  
 |[data](#data)|配列の生データへのポインターを返します。|  
-|[get_accelerator_view](#get_accelerator_view)|返します。、 [accelerator_view](accelerator-view-class.md)配列が割り当てられた場所を表すオブジェクト。 このプロパティは CPU 上でのみアクセスできます。|  
-|[get_associated_accelerator_view](#get_associated_accelerator_view)|2 番目の取得[accelerator_view](accelerator-view-class.md)をインスタンス化するステージング コンス トラクターが呼び出されたときに、パラメーターとして渡されるオブジェクト、`array`オブジェクトです。|  
-|[get_cpu_access_type](#get_cpu_access_type)|返します。、 [access_type](concurrency-namespace-enums-amp.md#access_type)の配列。 このメソッドは CPU 上でのみアクセスできます。|  
-|[get_extent](#get_extent)|返します。、[エクステント](extent-class.md)配列のオブジェクト。|  
-|[reinterpret_as](#reinterpret_as)|`array` オブジェクトのすべての要素を含む&1; 次元配列を返します。|  
+|[get_accelerator_view](#get_accelerator_view)|返します、 [accelerator_view](accelerator-view-class.md)配列が割り当てられた場所を表すオブジェクト。 このプロパティは CPU 上でのみアクセスできます。|  
+|[get_associated_accelerator_view](#get_associated_accelerator_view)|2 番目の取得[accelerator_view](accelerator-view-class.md)オブジェクトをインスタンス化するステージング コンス トラクターが呼び出されたときにパラメーターとして渡される、`array`オブジェクト。|  
+|[get_cpu_access_type](#get_cpu_access_type)|返します、 [access_type](concurrency-namespace-enums-amp.md#access_type)の配列。 このメソッドは CPU 上でのみアクセスできます。|  
+|[get_extent](#get_extent)|返します、[エクステント](extent-class.md)配列のオブジェクト。|  
+|[reinterpret_as](#reinterpret_as)|`array` オブジェクトのすべての要素を含む 1 次元配列を返します。|  
 |[section](#section)|指定された原点にある `array` オブジェクトのサブセクションを返し、これは必要に応じて範囲が指定されます。|  
-|[view_as](#view_as)|返します。、 [array_view](array-view-class.md)から作成されたオブジェクト、`array`オブジェクトです。|  
+|[view_as](#view_as)|返します、 [array_view](array-view-class.md)から構築されたオブジェクト、`array`オブジェクト。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[演算子の std::vector&lt;value_type&gt;](#operator_vec)|使用して`copy(*this, vector)`へ暗黙的に変換、配列、std::[ベクトル](../../../standard-library/vector-class.md)オブジェクトです。|  
+|[演算子 std::vector&lt;value_type&gt;](#operator_vec)|使用して`copy(*this, vector)`へ暗黙的に変換、配列、std::[ベクター](../../../standard-library/vector-class.md)オブジェクト。|  
 |[operator()](#operator_call)|パラメーターによって指定された要素の値を返します。|  
 |[演算子](#operator_at)|指定したインデックス位置にある要素を返します。|  
 |[operator=](#operator_eq)|指定された `array` オブジェクトの内容をこのオブジェクトにコピーします。|  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[rank 定数](#rank)|配列のランクを格納します。|  
   
@@ -115,14 +98,14 @@ friend class array;
 |名前|説明|  
 |----------|-----------------|  
 |[accelerator_view](#accelerator_view)|取得、 [accelerator_view](accelerator-view-class.md)配列が割り当てられた場所を表すオブジェクト。 このプロパティは CPU 上でのみアクセスできます。|  
-|[associated_accelerator_view](#associated_accelerator_view)|2 番目の取得[accelerator_view](accelerator-view-class.md)をインスタンス化するステージング コンス トラクターが呼び出されたときに、パラメーターとして渡されるオブジェクト、`array`オブジェクトです。|  
-|[cpu_access_type](#cpu_access_type)|取得、 [access_type](concurrency-namespace-enums-amp.md#access_type) CPU が配列の記憶域にアクセスする方法を表します。|  
+|[associated_accelerator_view](#associated_accelerator_view)|2 番目の取得[accelerator_view](accelerator-view-class.md)オブジェクトをインスタンス化するステージング コンス トラクターが呼び出されたときにパラメーターとして渡される、`array`オブジェクト。|  
+|[cpu_access_type](#cpu_access_type)|取得、 [access_type](concurrency-namespace-enums-amp.md#access_type) CPU が配列の記憶域にアクセスする方法を表すです。|  
 |[extent](#extent)|配列の図形を定義する範囲を取得します。|  
   
 ## <a name="remarks"></a>コメント  
- 種類`array<T,N>`、密で正規を表します (ギザギザにならず) *N*-アクセラレータや CPU などの特定の場所に配置されている次元の配列。 配列の要素のデータ型は `T` で、ターゲット アクセラレータと互換性のある型である必要があります。 ランクは `N` であり、配列のランクは静的に決定され、型の一部です。配列の範囲は、ランタイムによって決定され、`extent<N>` クラスを使用して表されます。  
+ 型`array<T,N>`高密度と通常を表します (ギザギザにならず) *N*-アクセラレータや CPU などの特定の場所にある次元の配列。 配列の要素のデータ型は `T` で、ターゲット アクセラレータと互換性のある型である必要があります。 ランクは `N` であり、配列のランクは静的に決定され、型の一部です。配列の範囲は、ランタイムによって決定され、`extent<N>` クラスを使用して表されます。  
   
- いくつかの機能は、ランク&1;、2、および&3; で `array` オブジェクトに特化していますが、配列はどの次元数も指定できます。 次元の引数を省略すると、既定値は 1 です。  
+ いくつかの機能は、ランク 1、2、および 3 で `array` オブジェクトに特化していますが、配列はどの次元数も指定できます。 次元の引数を省略すると、既定値は 1 です。  
   
  配列データはメモリ内に連続して配置されます。 最下位の次元で "1" 異なる要素はメモリでは隣接しています。  
   
@@ -139,7 +122,7 @@ friend class array;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `array`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp.h  
   
  **名前空間:** Concurrency  
@@ -162,7 +145,7 @@ __declspec(property(get= get_accelerator_view)) Concurrency::accelerator_view ac
   
 ##  <a name="ctor"></a>配列 
 
- 新しいインスタンスを初期化、 [array クラス](array-class.md)します。 `array<T,N>` の既定のコンストラクターがありません。 すべてのコンストラクターは CPU でのみ実行されます。 これらは、Direct3D ターゲットで実行することはできません。  
+ 新しいインスタンスを初期化、 [array クラス](array-class.md)です。 `array<T,N>` の既定のコンストラクターがありません。 すべてのコンストラクターは CPU でのみ実行されます。 これらは、Direct3D ターゲットで実行することはできません。  
   
 ```  
 explicit array(  
@@ -425,10 +408,10 @@ array(array&& _Other) restrict(cpu);
  配列の優先ターゲットの位置を指定する accelerator_view。  
   
  `_Av`  
- [Accelerator_view](accelerator-view-class.md)配列の位置を指定するオブジェクト。  
+ [Accelerator_view](accelerator-view-class.md)オブジェクトの配列の位置を指定します。  
   
  `_Cpu_access_type`  
- 必要な[access_type](concurrency-namespace-enums-amp.md#access_type) CPU 上の配列。 このパラメーターには、CPU の `access_type_auto` 決定をランタイムに任せる `access_type` の既定値があります。 配列の実際の CPU `access_type` は `get_cpu_access_type` メソッドを使用してクエリを実行できます。  
+ 必要な[access_type](concurrency-namespace-enums-amp.md#access_type)は CPU 上で、配列用です。 このパラメーターには、CPU の `access_type_auto` 決定をランタイムに任せる `access_type` の既定値があります。 配列の実際の CPU `access_type` は `get_cpu_access_type` メソッドを使用してクエリを実行できます。  
   
  `_Extent`  
  配列の各次元の範囲。  
@@ -465,7 +448,7 @@ array(array&& _Other) restrict(cpu);
   
 ##  <a name="associated_accelerator_view"></a>associated_accelerator_view 
 
- 2 番目の取得[accelerator_view](accelerator-view-class.md)をインスタンス化するステージング コンス トラクターが呼び出されたときに、パラメーターとして渡されるオブジェクト、`array`オブジェクトです。  
+ 2 番目の取得[accelerator_view](accelerator-view-class.md)オブジェクトをインスタンス化するステージング コンス トラクターが呼び出されたときにパラメーターとして渡される、`array`オブジェクト。  
   
 ```  
 __declspec(property(get= get_associated_accelerator_view)) Concurrency::accelerator_view associated_accelerator_view;  
@@ -473,7 +456,7 @@ __declspec(property(get= get_associated_accelerator_view)) Concurrency::accelera
   
 ##  <a name="copy_to"></a>copy_to 
 
- 内容をコピー、`array`間`array`します。  
+ 内容をコピー、`array`別`array`です。  
   
 ```  
 void copy_to(
@@ -518,7 +501,7 @@ __declspec(property(get= get_extent)) Concurrency::extent<_Rank> extent;
   
 ##  <a name="get_accelerator_view"></a>get_accelerator_view 
 
- 返します。、 [accelerator_view](accelerator-view-class.md) 、場所を表すオブジェクトを、`array`オブジェクトが割り当てられます。 このプロパティは CPU 上でのみアクセスできます。  
+ 返します、 [accelerator_view](accelerator-view-class.md) 、場所を表すオブジェクトを`array`オブジェクトが割り当てられます。 このプロパティは CPU 上でのみアクセスできます。  
   
 ```  
 Concurrency::accelerator_view get_accelerator_view() const;  
@@ -529,7 +512,7 @@ Concurrency::accelerator_view get_accelerator_view() const;
   
 ##  <a name="get_associated_accelerator_view"></a>get_associated_accelerator_view 
 
- 2 番目の取得[accelerator_view](accelerator-view-class.md)をインスタンス化するステージング コンス トラクターが呼び出されたときに、パラメーターとして渡されるオブジェクト、`array`オブジェクトです。  
+ 2 番目の取得[accelerator_view](accelerator-view-class.md)オブジェクトをインスタンス化するステージング コンス トラクターが呼び出されたときにパラメーターとして渡される、`array`オブジェクト。  
   
 ```  
 Concurrency::accelerator_view get_associated_accelerator_view() const ;  
@@ -550,7 +533,7 @@ access_type get_cpu_access_type() const restrict(cpu);
   
 ##  <a name="get_extent"></a>get_extent 
 
- 返します。、[エクステント](extent-class.md)のオブジェクト、`array`です。  
+ 返します、[エクステント](extent-class.md)のオブジェクト、`array`です。  
   
 ```  
 Concurrency::extent<_Rank> get_extent() const restrict(amp,cpu);
@@ -559,7 +542,7 @@ Concurrency::extent<_Rank> get_extent() const restrict(amp,cpu);
 ### <a name="return-value"></a>戻り値  
  `extent`のオブジェクト、`array`です。  
   
-##  <a name="operator_vec"></a>演算子の std::vector&lt;value_type&gt; 
+##  <a name="operator_vec"></a>演算子 std::vector&lt;value_type&gt; 
 
  使用して`copy(*this, vector)`std::vector オブジェクトに配列を暗黙的に変換します。  
   
@@ -642,7 +625,7 @@ typename details::_Projection_result_type<value_type,_Rank>::_Const_result_type 
   
 ##  <a name="operator_eq"></a>演算子 = 
 
- 指定した内容をコピー`array`オブジェクトです。  
+ 指定した内容をコピー`array`オブジェクト。  
   
 ```  
 array& operator= (const array& _Other) restrict(cpu);  
@@ -672,7 +655,7 @@ static const int rank = _Rank;
 ```  
 ## <a name="reinterpret_as"></a>reinterpret_as 
 
-必要に応じてソース配列とは異なる値型を持つ場合もあります&1; 次元 array_view を使用して配列を再解釈します。
+1 次元 array_view を必要に応じてソース配列とは異なる値型を持つ場合もありますを介して配列ビットとして再解釈します。
 
 ### <a name="syntax"></a>構文
 ``` 
@@ -687,11 +670,11 @@ array_view<const _Value_type2, 1> reinterpret_as() const restrict(amp,cpu);
 `_Value_type2`返されるデータのデータ型。
 
 ### <a name="return-value"></a>戻り値
-Array_view または T の要素型とランク N から 1 に削減する再解釈が発生する要素の型と、配列に基づいている const の array_view オブジェクトの場合。
+Array_view または T から ElementType および N から 1 に削減ランクを再解釈が発生する要素の型と、配列に基づいている const の array_view オブジェクトの場合。
 
 ### <a name="remarks"></a>コメント
 ソース配列とは異なる値型が通常含まれている、線形の、1 次元配列のように、多次元配列を表示すると都合のよい場合があります。 これを実現するには、このメソッドを使用できます。
-**注意**起こす可能性のある操作を別の値の型を使用して配列オブジェクトを再解釈ことができます。 この機能を慎重に使用することをお勧めします。 
+**注意**可能性のある安全でない操作は、別の値の型を使用して配列オブジェクトを変換」ダイアログします。 この機能を慎重に使用することをお勧めします。 
 
 次にコード例を示します。
 
@@ -808,7 +791,7 @@ array_view<const value_type,3> section(
   
 ##  <a name="view_as"></a>view_as 
 
- このとして配列を解釈する[array_view](array-view-class.md)異なるランクのです。  
+ この配列としてビットとして再解釈、 [array_view](array-view-class.md)異なるランクのです。  
   
 ```  
 template <int _New_rank>  
@@ -826,14 +809,13 @@ array_view<const value_type,_New_rank> view_as(
  パラメーターとして渡された `extent` オブジェクトのランク。  
   
  `_View_extent`  
- 使用して作成、新しいエクステント[array_view](array-view-class.md)オブジェクトです。  
+ 新しい構築するために使用されるエクステント[array_view](array-view-class.md)オブジェクト。  
   
  `value_type`  
- 元の両方の要素のデータ型`array`オブジェクトおよび返された`array_view`オブジェクトです。  
+ 元の両方の要素のデータ型`array`オブジェクトおよび返された`array_view`オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- [Array_view](array-view-class.md)作成されたオブジェクト。  
+ [Array_view](array-view-class.md)構築されたオブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
-

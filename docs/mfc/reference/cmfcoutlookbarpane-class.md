@@ -51,11 +51,12 @@ caps.latest.revision: "30"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 737cf083eeca60cd0d6ac95cccbe570c56968fd9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 59eb92e44a26577866a797243f3a32d53b854365
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcoutlookbarpane-class"></a>CMFCOutlookBarPane クラス
 [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
@@ -140,7 +141,7 @@ class CMFCOutlookBarPane : public CMFCToolBar
   
  [CMFCOutlookBarPane](../../mfc/reference/cmfcoutlookbarpane-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxoutlookbarpane.h  
   
 ##  <a name="addbutton"></a>CMFCOutlookBarPane::AddButton  
@@ -446,7 +447,7 @@ void SetTransparentColor(COLORREF color);
 ### <a name="remarks"></a>コメント  
  透明のイメージを表示するには、透明色が必要です。 出現するすべてのイメージでは、この色は、背景色で描画されます。  前景色および背景画像の描画はありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCToolBar クラス](../../mfc/reference/cmfctoolbar-class.md)   

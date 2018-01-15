@@ -1,0 +1,86 @@
+---
+title: "コントロール名、MFC ActiveX コントロール ウィザード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.appwiz.mfc.ctl.names
+dev_langs: C++
+helpviewer_keywords: MFC ActiveX Control Wizard, control names
+ms.assetid: 9b8b81d2-36df-48ed-b58a-a771a0e269ee
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 5f3444ec69ea96ee89ed7a0965f3575fc79e3b9c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
+---
+# <a name="control-names-mfc-activex-control-wizard"></a>[コントロール名] (MFC ActiveX コントロール ウィザード)
+コントロール クラスとプロパティ ページ クラス、型名の名前を指定し、コントロールの識別子を入力します。 例外を除いて**短い名前**、他のすべてのフィールドが個別に編集していないことができます。 テキストを変更する場合**短い名前**、このページの他のすべてのフィールドの名前に、変更が反映されます。 この名前付けの動作は、コントロールを開発する際に簡単に識別できるように、すべての名前に設計されています。  
+  
+ **短い名前**  
+ コントロールの省略名を指定します。 既定では、この名前は、プロジェクト名に基づいてで指定した、**新しいプロジェクト** ダイアログ ボックス。 指定した名前は、それらのフィールドを個別に変更していない限り、クラス名、型名および型識別子を決定します。  
+  
+ **コントロール クラス名**  
+ 既定では、コントロールのクラス名は、短い形式の名前に基づく`C`をプレフィックスとしてと`Ctrl`をサフィックスとして。 たとえば、コントロールの短い名前は`Price`、コントロールのクラス名は`CPriceCtrl`します。  
+  
+ **コントロールの .h ファイル**  
+ 既定では、ヘッダー ファイルの名前は、短い形式の名前に基づく`Ctrl`をサフィックスとして、`.h`ファイルの拡張子として。 たとえば、コントロールの短い名前は`Price`、ヘッダー ファイル名が`PriceCtrl.h`です。 このフィールドの名前は、コントロールのクラス名に一致する必要があります。  
+  
+ **コントロールの .cpp ファイル**  
+ 既定では、ヘッダー ファイルの名前は、短い形式の名前に基づく`Ctrl`をサフィックスとして、`.cpp`ファイルの拡張子として。 たとえば、コントロールの短い名前は`Price`、ヘッダー ファイル名が`PriceCtrl.cpp`です。 このフィールドの名前は、ヘッダー名と一致する必要があります。  
+  
+ **コントロールの種類名**  
+ 既定では、コントロールの種類の名前は、短い名に基づいて、続けて`Control`です。 たとえば、コントロールの短い名前は`Price`、コントロールのクラス型の名前が`Price Control`です。 このフィールドの値を変更する場合は、名前が、継承を示すを確認します。  
+  
+ **コントロールの種類 ID**  
+ コントロール クラスのコントロール型の ID を設定します。 コントロールは、プロジェクトに追加されたときにこの文字列をレジストリに書き込みます。 コンテナー アプリケーションでは、この文字列を使用して、コントロールのインスタンスを作成します。  
+  
+ 既定では、コントロールの種類 ID は、プロジェクト名に基づいてで示される、**新しいプロジェクト** ダイアログ ボックス、および短い名前。 この名前は、型名に一致する必要があります。  
+  
+ 既定では、コントロールの種類 ID は次のとおりです。  
+  
+ *ProjectName.ShortName*Ctrl.1  
+  
+ このダイアログ ボックスで短い名前を変更する場合、コントロール型の ID が表示されます。  
+  
+ *ProjectName.NewShortName*Ctrl.1  
+  
+ **プロパティ ページ クラス名**  
+ 既定では、プロパティ ページ クラスの名前は、短い形式の名前に基づく`C`をプレフィックスとしてと`PropPage`をサフィックスとして。 たとえば、コントロールの短い名前は`Price`、プロパティ ページ クラス名は`CPricePropPage`します。 この名前は、末尾コントロール クラス名と一致する必要があります`PropPage`です。  
+  
+ **PropPage .h ファイル**  
+ 既定では、プロパティ ページのヘッダー ファイルの名前は、短い名に基づいてでとして、`PropPage`をサフィックスとして、`.h`ファイルの拡張子として。 たとえば、コントロールの短い名前は`Price`、プロパティ ページのヘッダー ファイル名が`PricePropPage.h`です。 この名前は、クラス名に一致する必要があります。  
+  
+ **PropPage .cpp ファイル**  
+ 既定では、プロパティ ページの実装ファイルの名前は、短い名に基づいてでとして、`PropPage`をサフィックスとして、`.cpp`ファイルの拡張子として。 たとえば、コントロールの短い名前は`Price`、プロパティ ページのヘッダー ファイル名が`PricePropPage.cpp`です。 この名前は、ヘッダー ファイルの名前に一致する必要があります。  
+  
+ **プロパティ ページの種類名**  
+ 既定では、プロパティ ページの種類名は、短い名に基づいて、続けて`Property Page`です。 たとえば、コントロールの短い名前は`Price`、プロパティ ページの種類名は`Price Property Page`します。 このフィールドの値を変更する場合は、名前は、コントロール クラスを示しますを確認します。  
+  
+ **ページのタイプ ID**  
+ プロパティ ページ クラスの ID を設定します。 コントロールは、プロジェクトに適用されたときに、レジストリにこの文字列を書き込みます。 コンテナー アプリケーションでは、この文字列を使用して、コントロールのプロパティ ページのインスタンスを作成します。  
+  
+ 既定では、プロパティ ページの種類 ID は、プロジェクト名に基づいてで示される、**新しいプロジェクト** ダイアログ ボックス、および短い名前。 この名前は、型名に一致する必要があります。  
+  
+ 既定では、プロパティ ページの種類 ID は次のとおりです。  
+  
+ *ProjectName.ShortName*PropPage.1  
+  
+ このダイアログ ボックスで短い名前を変更する場合の種類のプロパティ ページ ID が表示されます。  
+  
+ *ProjectName.NewShortName*PropPage.1  
+  
+## <a name="see-also"></a>参照  
+ [MFC ActiveX コントロール ウィザード](../../mfc/reference/mfc-activex-control-wizard.md)   
+ [アプリケーションの設定、MFC ActiveX コントロール ウィザード](../../mfc/reference/application-settings-mfc-activex-control-wizard.md)   
+ [コントロールの設定、MFC ActiveX コントロール ウィザード](../../mfc/reference/control-settings-mfc-activex-control-wizard.md)   
+ [Visual C++ プロジェクトに対して作成されるファイルの種類](../../ide/file-types-created-for-visual-cpp-projects.md)
+

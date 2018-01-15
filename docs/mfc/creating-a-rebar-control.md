@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d0f1cc709bf09d03f211f3123bd47c82bb590348
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 263541d9dc462b067caf763fe969f3809f1daa7f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-a-rebar-control"></a>Rebar コントロールの作成
 [CReBarCtrl](../mfc/reference/crebarctrl-class.md)親オブジェクトを表示する前に、オブジェクトを作成する必要があります。 これには、描画上の問題の可能性が最小限に抑えます。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 10/24/2017
   
 6.  呼び出す[InsertBand](../mfc/reference/crebarctrl-class.md#insertband)を既存の子ウィンドウを挿入する (など`m_wndReToolBar`)、新しい rebar コントロールにします。 Rebar の既存のコントロールへバンドの挿入の詳細については、次を参照してください。 [Rebar コントロールとバンド](../mfc/rebar-controls-and-bands.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CReBarCtrl の使い方](../mfc/using-crebarctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

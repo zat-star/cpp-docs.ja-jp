@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 38f32a1a64c461daae0bd04fd7c79b399107cf9e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 96dfe1828ae3451411adf3ab57c1ec67db24c34e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dialog-boxes-in-ole"></a>OLE のダイアログ ボックス
 ユーザーは、OLE 対応アプリケーションを実行するときに、操作を実行するために、アプリケーションがユーザーからの情報をしなければならない場合があります。 MFC OLE クラスは、いくつかの必要な情報を収集するダイアログ ボックスを提供します。 このトピックでは、OLE のダイアログ ボックスで処理されるタスクと対応するダイアログ ボックスを表示するために必要なクラスを示します。 OLE ダイアログ ボックスとその動作をカスタマイズするために使用する構造体の詳細については、次を参照してください。 [『 MFC リファレンス](../mfc/mfc-desktop-applications.md)です。  
@@ -48,7 +49,7 @@ ms.lasthandoff: 10/24/2017
  *サーバーがビジー状態または応答していないサーバー*  
  ユーザーが項目をアクティブ化しようとして、サーバーが要求を処理、通常、サーバーが別のユーザーによって使用中か、またはタスクに現在できないときに、サーバーがビジー状態のダイアログ ボックスが表示されます。 サーバーがすべてのアクティブ化要求に応答しない場合は、サーバーが応答しません ダイアログ ボックスが表示されます。 使用してこれらのダイアログ ボックスが表示される`COleMessageFilter`OLE インターフェイスの実装に基づいて、 **IMessageFilter**ユーザーは、アクティブ化要求を再試行するかどうかを決定できます。 使用して、 [COleBusyDialog](../mfc/reference/colebusydialog-class.md)をこのダイアログ ボックスを表示するクラス。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ダイアログ ボックス](../mfc/dialog-boxes.md)   
  [ダイアログ ボックスのライフ サイクル](../mfc/life-cycle-of-a-dialog-box.md)   
  [OLE](../mfc/ole-in-mfc.md)

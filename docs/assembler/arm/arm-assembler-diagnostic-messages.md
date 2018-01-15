@@ -1,39 +1,40 @@
 ---
-title: "ARM Assembler Diagnostic Messages | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "ARM アセンブラー診断メッセージ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 52b38267-6023-4bdc-a0ef-863362f48eec
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: f49ce6bed9e77680017b0aa26b677fd18e3efc1a
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/03/2018
 ---
-# ARM Assembler Diagnostic Messages
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-マイクロソフトの ARM アセンブラー \(*armasm*\)、それらを検出すると診断の警告およびエラーを出力します。  この資料では、最もよく発生するメッセージについて説明します。  
+# <a name="arm-assembler-diagnostic-messages"></a>ARM アセンブラー診断メッセージ
+Microsoft ARM アセンブラー (*armasm*) ことを検出すると、診断に関する警告とエラーを出力します。 この記事では、一般的に発生メッセージについて説明します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 filename(lineno) : [error|warning] Anum: message  
 ```  
   
-## 診断メッセージ  
+## <a name="diagnostic-messages"></a>診断メッセージ  
   
-### \[エラー\]  
- A2193: この命令予測できない現象が生成されます。  
- ARM アーキテクチャは、この命令を実行したときの動作を保証できません。  この命令の明確な形式の詳細についてを参照してください、 [ARM アーキテクチャ マニュアル](http://go.microsoft.com/fwlink/?LinkId=246464)。  
+### <a name="errors"></a>エラー  
+ A2193: この命令で予期しない動作が生成されます。  
+ ARM アーキテクチャでは、この命令の実行時の動作を保証できません。  適切に定義されたフォームこの命令の詳細についてを参照してください、 [ARM アーキテクチャ リファレンス マニュアル](http://go.microsoft.com/fwlink/p/?linkid=246464)です。  
   
 ```  
   
@@ -41,10 +42,10 @@ ADD r0, r8, pc         ; A2193: this instruction generates unpredictable behavio
   
 ```  
   
- A2196: 16 ビットの命令をエンコードできません。  
- 指定された命令は 16 ビットの Thumb 命令としてエンコードできません。  32 ビットの命令を指定またはターゲット ラベルに範囲の 16 ビットの命令を表示するためのコードの配置を変更します。  
+ A2196: 命令は 16 ビットでエンコードすることはできません。  
+ 指定された命令は、16 ビット Thumb 命令としてエンコードすることはできません。  16 ビット命令の範囲を先のラベルをさせるためにコードを再配置または 32 ビット命令を指定します。  
   
- エンコードに対応させる、32 ビットの分岐であるにもかかわらず、アセンブラー分岐では、16 ビットをエンコードして、このエラーが発生する場合は、失敗しようとします。  この問題を解決するには使用して、 `.W` 32 ビットとして分岐を明示的に示すには、指定子。  
+ アセンブラーしようと 16 ビット ブランチをエンコードし、このエラーで失敗する場合でも、32 ビット分岐は encodable します。 この問題を解決するを使用して、`.W`指定子を 32 ビットと分岐を明示的にマークします。  
   
 ```  
   
@@ -57,8 +58,8 @@ label
   
 ```  
   
- A2202: サムの領域では使用できません事前 UAL 命令構文  
- スクロール ボックスのコードは、アセンブラー言語の統合 \(UAL\) 構文を使用する必要があります。  古い構文は受け付けられません  
+ A2202: Pre UAL 命令の構文が THUMB 領域では使用できません。  
+ Thumb コードでは、Unified アセンブラー言語 (UAL) 構文を使用する必要があります。  古い構文は受け付けられません。  
   
 ```  
   
@@ -67,8 +68,8 @@ ADDSEQ r0, r1         ; OK
   
 ```  
   
- A2513: 回転をもする必要があります。  
- ARM モードでは、定数を指定する、代替構文があります。  書き込みではなく`#<const>`、書き込むことができます`#<byte>,#<rot>`、値を回転させることによって得られる定数値を表す`<byte>`で`<rot>`。  この構文を使用するの値をする必要があります`<rot>`も。  
+ A2513: 回転は、偶数でなければなりません  
+ ARM モードでは、定数を指定するための代替構文があります。  作成する代わりに`#<const>`、記述することができます`#<byte>,#<rot>`、回転の値を取得する定数値を表す`<byte>`して`<rot>`です。  この構文を使用する場合は、値を行う必要があります`<rot>`もします。  
   
 ```  
   
@@ -77,8 +78,8 @@ MOV r0, #4, #1       ; A2513: Rotation must be even
   
 ```  
   
- A2557: のバックアップに書き込まれるバイトの数が正しくありません。  
- ネオンの構造をロードし、ストアの手順 \(`VLDn`、 `VSTn`\)、基本レジスタへの書き戻しを指定する、代替構文があります。  アドレスの後ろに感嘆符 \(\!\) を配置するのではなく、基本レジスタに追加するオフセットを示す即時の値を指定できます。  この構文を使用する場合は、ロードや、命令によって格納されたバイト数を指定してください。  
+ A2557: 正しくないバイト数への書き戻し  
+ NEON 構造をロードおよびストア用命令 (`VLDn`、 `VSTn`)、ベース レジスタへの書き戻しを指定するための代替構文があります。  アドレスの後に感嘆符 (!) を設定する代わりには基底レジスタに追加するオフセットを示すイミディ エイト値を指定できます。  この構文を使用する場合は、読み込まれたか、または命令によって格納されるバイトの正確な数を指定する必要があります。  
   
 ```  
   
@@ -88,11 +89,11 @@ VLD1.8 {d0-d3}, [r0], #100    ; A2557: Incorrect number of bytes to write back
   
 ```  
   
-### 警告  
- A4228: 領域の配置位置揃えの値を超えています。 保証の配置  
- 指定した配置、 `ALIGN`ディレクティブは、すぐ外側の配置よりも大きい`AREA`。  結果として、アセンブラーは保証できない、 `ALIGN`ディレクティブは無視されます。  
+### <a name="warnings"></a>警告  
+ A4228: アラインメント値を超える領域の配置です。アラインメントが保証されません。  
+ 指定されている配置、`ALIGN`ディレクティブは、包含のアラインメントより大きい`AREA`です。  その結果、アセンブラーは保証できませんを`ALIGN`ディレクティブが有効となります。  
   
- この問題を解決するには、上で指定できます、 `AREA`ディレクティブは、 `ALIGN`が配置を希望以上の属性。  
+ これを解決するで指定することができます、`AREA`ディレクティブ、`ALIGN`目的の配置を示す属性です。  
   
 ```  
   
@@ -104,8 +105,8 @@ ALIGN 8           ; OK
   
 ```  
   
- A4508: この回転の定数の使用は使用されなくなりました  
- ARM モードでは、定数を指定する、代替構文があります。  書き込みではなく`#<const>`、書き込むことができます`#<byte>,#<rot>`、値を回転させることによって得られる定数値を表す`<byte>`で`<rot>`。  一部のコンテキストでは、ARM回転定数の使用を廃止します。  このような場合は、基本を使用して`#<const>`の構文ではなく。  
+ A4508: この回転定数の使用は推奨されていません  
+ ARM モードでは、定数を指定するための代替構文があります。  作成する代わりに`#<const>`、記述することができます`#<byte>,#<rot>`、回転の値を取得する定数値を表す`<byte>`して`<rot>`です。  一部のコンテキストで ARM はこれらの回転定数の使用を推奨していません。 このような場合は、基本的なを使用して`#<const>`構文代わりにします。  
   
 ```  
   
@@ -114,10 +115,10 @@ ANDS r0, r0, #4, #2            ; A4508: Use of this rotated constant is deprecat
   
 ```  
   
- A4509: このフォームの条件付きの命令は。  
- この種の条件付きの命令によってARMv8 アーキテクチャで廃止されました。  条件分岐を使用すると、コードを変更することをお勧めします。  どの条件の命令がサポートされているを確認するを参照してください、 [ARM アーキテクチャ マニュアル](http://go.microsoft.com/fwlink/?LinkId=246464)。  
+ A4509: 条件付きの命令のこのフォームは推奨されていません  
+ この形式の条件付きの命令は ARMv8 アーキテクチャでは、ARM で廃止されました。 条件分岐を使用するコードを変更することをお勧めします。 どの条件付きの手順については引き続きサポートを表示するを参照してください、 [ARM アーキテクチャ リファレンス マニュアル](http://go.microsoft.com/fwlink/p/?linkid=246464)です。  
   
- この警告ではありませんが発生、  `- oldit` コマンド ライン スイッチを使用します。  
+ この警告がないときに出力、`-oldit`コマンド ライン スイッチを使用します。  
   
 ```  
   
@@ -125,6 +126,6 @@ ADDEQ r0, r1, r8              ; A4509: This form of conditional instruction is d
   
 ```  
   
-## 参照  
- [ARM Assembler Command\-Line Reference](../../assembler/arm/arm-assembler-command-line-reference.md)   
- [ARM Assembler Directives](../../assembler/arm/arm-assembler-directives.md)
+## <a name="see-also"></a>参照  
+ [ARM アセンブラーのコマンド ライン リファレンス](../../assembler/arm/arm-assembler-command-line-reference.md)   
+ [ARM アセンブラー ディレクティブ](../../assembler/arm/arm-assembler-directives.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 18db6e819d2fc51bb725a4f04ea7e2d38f3bd443
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6c9fab7af74dee482c5e8dffb327da9c037796fa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="automation-servers-object-lifetime-issues"></a>オートメーション サーバー : オブジェクトの生成と破棄
 オートメーション クライアントは、作成または OLE 項目をアクティブ化、ときに、サーバー、クライアントにポインターを渡しますそのオブジェクト。 クライアントが OLE 関数を呼び出すことによって、オブジェクトへの参照を確立[:addref](http://msdn.microsoft.com/library/windows/desktop/ms691379)です。 この参照が有効でクライアントの呼び出しまで[iunknown::release](http://msdn.microsoft.com/library/windows/desktop/ms682317)です。 (Microsoft Foundation Class ライブラリの OLE クラスで記述されたクライアント アプリケーションでは、これらの呼び出しをする必要がなくなります。 は、フレームワークです。)OLE システムと、サーバー自体は、オブジェクトへの参照を確立可能性があります。 オブジェクトへの外部参照が有効に残っている限り、サーバーはオブジェクトを破棄できません。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 10/24/2017
   
  Windows SDK を参照してください。`IUnknown::AddRef`と`IUnknown::Release`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [オートメーション サーバー](../mfc/automation-servers.md)   
  [AfxOleCanExitApp](../mfc/reference/application-control.md#afxolecanexitapp)
 

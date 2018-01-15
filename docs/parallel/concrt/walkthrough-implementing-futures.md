@@ -16,11 +16,12 @@ caps.latest.revision: "25"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 86d4eeaadd8c2afcd5b223e7431614436ab8a786
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 119969860f031acbc2f1764a34a456d2e8a16437
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-implementing-futures"></a>チュートリアル: フューチャの実装
 このトピックでは、アプリケーションにフューチャを実装する方法について説明します。 このトピックでは、同時実行ランタイムの既存の機能を組み合わせて、より効果的に使用する方法を示します。  
@@ -100,7 +101,7 @@ caught exception: error
   
  **cl.exe/EHsc futures.cpp**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行ランタイムのチュートリアル](../../parallel/concrt/concurrency-runtime-walkthroughs.md)   
  [例外処理](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)   
  [task_group クラス](reference/task-group-class.md)   

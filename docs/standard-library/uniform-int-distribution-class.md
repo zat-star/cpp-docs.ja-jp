@@ -37,11 +37,12 @@ caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 693e9a21687c56a060bf3b4224050162a6937f9c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 172686fbd7f6717bda8fe102745696031936dea1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="uniformintdistribution-class"></a>uniform_int_distribution クラス
 すべて含まれる出力の範囲内で、一様の (すべての値は同様の可能性があります) 整数の分布を生成します。  
@@ -90,7 +91,7 @@ public:
   
 プロパティ メンバー `a()` は、現在格納されている分布の最小限度値を返し、`b()` は、現在格納されている最大限度値を返します。 この分布クラスの場合、これらの最小値と最大値は、一般的なプロパティ関数 `min()` と `max()` で返される値と同じです。  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
 
 メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
   
@@ -178,7 +179,7 @@ Distribution for 200 samples:
    12 :::::::::::::::::
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -239,7 +240,7 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
 
 

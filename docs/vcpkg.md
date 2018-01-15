@@ -11,11 +11,12 @@ ms.assetid: f50d459a-e18f-4b4e-814b-913e444cedd6
 ms.topic: article
 dev_langs: C++
 manager: ghogen
-ms.openlocfilehash: de5825e64abac210561cb8cbe0dc3320a740cbee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0728827cb2cd604ec4e7ff1ef58b68ed8fb64532
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vcpkg-c-package-manager-for-windows"></a>vcpkg: Windows 用の C++ パッケージ マネージャー 
 vcpkg はコマンド ライン パッケージ マネージャーであり、Windows でのサードパーティ ライブラリの取得とインストール作業を大幅に簡素化できます。 プロジェクトでサードパーティ ライブラリを使用する場合は、vcpkg を使用して、それらをインストールすることをお勧めします。 vcpkg では、オープン ソース ライブラリと専用ライブラリの両方がサポートされています。 vcpkg パブリック カタログ内のすべてのライブラリは、Visual Studio 2015 および Visual Studio 2017 との互換性がテストされています。 2017 年 5 月の時点で、カタログには 238 個を超えるライブラリが存在しており、C++ コミュニティでは継続的にライブラリをさらに追加しています。
@@ -107,14 +108,16 @@ zlib:x86-windows        1.2.11   A compression library
 パブリック カタログは、最新バージョンのライブラリで最新の状態が保たれます。 古いローカル ライブラリを判別するには、`vcpkg update` を使用します。 ポート コレクションをパブリック カタログの最新バージョンに更新する準備ができたら、後は github リポジトリに対して git プル操作を実行するか、新しいクローンを作成して、古いものがまだ必要な場合はそれを保持するだけです。
 
 ### <a name="contribute-new-libraries"></a>新しいライブラリを投稿する
-プライベート ポート コレクションに好きなライブラリを含めることができます。 パブリック カタログ用の新しいライブラリを提案するには 
-
+プライベート ポート コレクションに好きなライブラリを含めることができます。 パブリック カタログ用の新しいライブラリを提案するには、[GitHub vcpkg の issue ページ](https://github.com/Microsoft/vcpkg/issues)で案件を開きます。
 
 ### <a name="remove-a-library"></a>ライブラリを削除する
 `vcpkg remove` を入力して、インストールされているライブラリを削除します。 他のライブラリがそれに依存している場合は、`--recurse` を指定してコマンドを再実行するよう求められます。実行すると、すべてのダウンストリーム ライブラリが削除されます。
 
 ### <a name="customize-vcpkg"></a>vcpkg をカスタマイズする
 好きなように vcpkg のクローンを変更することができます。 複数の vcpkg クローンを作成し、それぞれの portfile を変更して、特定のバージョンのライブラリを取得するか、コマンド ライン パラメーターを指定できます。 たとえば、企業では、開発者のあるグループが 1 つの依存関係セットを持つソフトウェアで作業し、別のグループが異なるセットを持つ場合があります。 vcpkg の 2 つのクローンをセットアップし、それぞれを変更して、必要に応じて、該当するバージョンのライブラリやコンパイル スイッチなどをダウンロードできます。 
+
+### <a name="uninstall-vcpkg"></a>vcpkg をアンインストールする
+ディレクトリを削除するだけです。 
 
 ## <a name="the-vcpkg-folder-hierarchy"></a>vcpkg のフォルダー階層
 vcpkg のすべての機能とデータは 1 つのディレクトリ階層にすべて含まれています。これを "インスタンス" といいます。 レジストリの設定や環境変数はありません。 コンピューターで vcpkg の任意の数のインスタンスを使用でき、相互に干渉することはありません。 

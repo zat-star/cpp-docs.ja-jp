@@ -1,35 +1,36 @@
 ---
-title: "OpenMP Environment Variables | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "OpenMP 環境変数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 2178ce2b-ffa1-45ec-a455-64437711d15d
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: e285ab34c7bf993b919a2c917f44828c21970f67
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# OpenMP Environment Variables
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-OpenMP API で使用される環境変数へのリンクを示します。  
+# <a name="openmp-environment-variables"></a>OpenMP の環境変数
+OpenMP API で使用される環境変数へのリンクを提供します。  
   
- OpenMP 標準の Visual C\+\+ の実装は次の環境変数が含まれています。  これらの環境変数がプログラムの起動時に読み込まれ値の変更時には無視されます \(たとえば[\_putenv、\_wputenv](../../../c-runtime-library/reference/putenv-wputenv.md) を使用します。  
+ OpenMP の標準の Visual C の実装には、次の環境変数が含まれています。 これらの環境変数がプログラムの起動時に読み取られ、実行時にその値への変更は無視されます (たとえばを使用して[_putenv、_wputenv](../../../c-runtime-library/reference/putenv-wputenv.md))。  
   
-|環境変数|Description|  
-|----------|-----------------|  
-|[OMP\_DYNAMIC](../../../parallel/openmp/reference/omp-dynamic.md)|OpenMP の実行時の並列領域のスレッド数を調整できるかどうかを指定します。|  
-|[OMP\_NESTED](../../../parallel/openmp/reference/omp-nested.md)|入れ子になった並列化が `omp_set_nested` を有効にするか無効か入れ子になった並列化が有効かどうかを指定します。|  
-|[OMP\_NUM\_THREADS](../Topic/OMP_NUM_THREADS.md)|[omp\_set\_num\_threads](../../../parallel/openmp/reference/omp-set-num-threads.md) または [num\_threads](../../../parallel/openmp/reference/num-threads.md) によってオーバーライドされない限り並列領域のスレッドの最大数を設定しません。|  
-|[OMP\_SCHEDULE](../../../parallel/openmp/reference/omp-schedule.md)|`schedule(runtime)` が `for` または `parallel for` のディレクティブで指定されると [schedule](../../../parallel/openmp/reference/schedule.md) 句の動作を変更します。|  
+|環境変数|説明|  
+|--------------------------|-----------------|  
+|[OMP_DYNAMIC](../../../parallel/openmp/reference/omp-dynamic.md)|OpenMP ランタイムが、並行領域内のスレッドの数を調整できるかどうかを指定します。|  
+|[OMP_NESTED](../../../parallel/openmp/reference/omp-nested.md)|入れ子になった並列処理が有効かどう、入れ子になった並列処理が有効か無効にしない限り、指定`omp_set_nested`です。|  
+|[OMP_NUM_THREADS](../../../parallel/openmp/reference/omp-num-threads.md)|オーバーライドされない限り、並行領域内のスレッドの最大数を設定[omp_set_num_threads](../../../parallel/openmp/reference/omp-set-num-threads.md)または[num_threads](../../../parallel/openmp/reference/num-threads.md)です。|  
+|[OMP_SCHEDULE](../../../parallel/openmp/reference/omp-schedule.md)|動作を変更して、[スケジュール](../../../parallel/openmp/reference/schedule.md)句と`schedule(runtime)`で指定された、`for`または`parallel for`ディレクティブです。|  
   
-## 参照  
- [Library Reference](../../../parallel/openmp/reference/openmp-library-reference.md)
+## <a name="see-also"></a>参照  
+ [ライブラリ リファレンス](../../../parallel/openmp/reference/openmp-library-reference.md)

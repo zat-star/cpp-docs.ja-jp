@@ -23,11 +23,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 26361befb1ca245a9efe8dd0db4ba4f30129bda6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: aeda566ebd10dbd8ee5e5cfdcb4328537b9ba0c7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="concurrency-namespace-functions-amp"></a>Concurrency 名前空間の関数 (AMP)
 ||||  
@@ -341,7 +342,7 @@ inline unsigned int atomic_fetch_xor(
  メモリの場所の元の値。  
   
 ##  <a name="copy"></a>  copy  
- C++ AMP オブジェクトをコピーします。 すべての同期データ転送の条件が満たされます。 アクセラレータでコードを実行しているときにデータをコピーすることはできません。 この関数の一般的な形式は `copy(src, dest)` です。  
+ C++ AMP オブジェクトをコピーします。 すべての同期データ転送の要件が満たされます。 アクセラレータでコードを実行しているときにデータをコピーすることはできません。 この関数の一般的な形式は `copy(src, dest)` です。  
   
 ```  
 template <typename value_type, int _Rank>  
@@ -675,5 +676,5 @@ inline void tile_static_memory_fence(const tile_barrier& _Barrier) restrict(amp)
  `_Barrier`  
  tile_barrier オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

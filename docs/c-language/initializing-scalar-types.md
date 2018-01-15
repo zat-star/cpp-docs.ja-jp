@@ -23,11 +23,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1a580a62c8ee8588386ceb92e10a8593881f6e28
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e3863ea5a6edfd0c7bc605231182a8d5dfc17b9d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="initializing-scalar-types"></a>スカラー型の初期化
 スカラー型を初期化すると、*assignment-expression* の値が変数に代入されます。 代入の変換規則が適用されます  (変換規則については、「[型変換](../c-language/type-conversions-c.md)」を参照)。  
@@ -68,7 +69,7 @@ ms.lasthandoff: 10/24/2017
   
 -   識別子の宣言にブロック スコープが存在し、識別子に外部リンケージがある場合、宣言に初期化を含めることはできません。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次の例では初期化を示します。  
   
 ```  
@@ -115,5 +116,5 @@ int function( void )
   
  グローバル変数 `GLOBAL` は外部レベルで宣言されるため、グローバル有効期間があります。 ローカル変数 `LOCAL` には **auto** ストレージ クラスがあり、このローカル変数を宣言する関数の実行中のみアドレスが存在します。 したがって、**static** ポインター変数 `lp` を `LOCAL` のアドレスで初期化することはできません。 `GLOBAL` のアドレスは常に同じであるため、**static** ポインター変数 `gp` をこのアドレスに初期化できます。 同様に、`*rp` がローカル変数であり、定数でない初期化子を指定できるため、`rp` は初期化できます。 ブロックが入力されるたびに `LOCAL` に新しいアドレスが割り当てられ、それが `rp` に割り当てられます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [初期化](../c-language/initialization.md)

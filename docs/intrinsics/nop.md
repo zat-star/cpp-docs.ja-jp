@@ -1,53 +1,53 @@
 ---
-title: "__nop | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__nop"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "nop 命令"
-  - "__nop 組み込み"
+title: "_ _nop |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: __nop
+dev_langs: C++
+helpviewer_keywords:
+- nop instruction
+- __nop intrinsic
 ms.assetid: 7a2a938b-87e0-476d-a348-03ea7635b6b9
-caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: eef05150aab36abc6f6be76785284d017cf204ac
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/03/2018
 ---
-# __nop
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="nop"></a>__nop
+**Microsoft 固有の仕様**  
   
- 操作を実行しないプラットフォーム固有のマシン語コードを生成します。  
+ 演算を実行しない、プラットフォーム固有のマシン語コードを生成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void __nop();  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__nop`|x86[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__nop`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 解説  
- `__nop` の関数は `NOP` のマシン語命令と同じです。  詳細については文書の検索「 Intel アーキテクチャのソフトウェア開発者の手動Volume 2: サイトの命令セットの参照です [Intel Corporation](http://go.microsoft.com/fwlink/?LinkId=127) 」。  
+## <a name="remarks"></a>コメント  
+ `__nop`関数と同じ、`NOP`マシン語命令します。 詳細については、検索、ドキュメントの"Intel アーキテクチャ ソフトウェア デベロッパーズ マニュアル、ボリューム 2: 命令セットの参照を"で、 [Intel Corporation](http://go.microsoft.com/fwlink/p/?linkid=127)サイトです。  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)   
- [\_\_noop](../intrinsics/noop.md)
+## <a name="see-also"></a>参照  
+ [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
+ [__noop](../intrinsics/noop.md)

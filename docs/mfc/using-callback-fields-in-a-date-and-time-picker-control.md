@@ -24,11 +24,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 04c76cee41a6cf79379b65a276f24d56f7090b98
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9e5526b0f8826a91eb0b1c5a6eae250abbb02fcf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-callback-fields-in-a-date-and-time-picker-control"></a>日時指定コントロールでのコールバック フィールドの使い方
 日付と時刻の選択フィールドを定義する標準書式文字、に加えてコールバック フィールドとして、カスタム書式指定文字列の特定の部分を指定することによって、出力をカスタマイズできます。 コールバック フィールドを宣言するには、1 つまたは複数の"X"文字 (ASCII コード 88) を書式指定文字列の本文に任意の場所含めます。 たとえば、次の文字列"' は現在: 'yy '/' MM '/' dd' (日 'X')'"により、年、月、日、および最後に、年の日付を続けてとして現在の値を表示する日付と時刻のピッカー コントロール。  
@@ -73,7 +74,7 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  ポインター、 **NMDATETIMEFORMAT**通知ハンドラーが適切な型への最初のパラメーターをキャストして構造が検出されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDateTimeCtrl の使い方](../mfc/using-cdatetimectrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

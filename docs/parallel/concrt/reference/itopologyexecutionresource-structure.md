@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9ffe0e2d8f4c26274a71082bec2cecaf19acb1af
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: caf2cc77cd31df611f71d07c5a0a49f600767f81
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="itopologyexecutionresource-structure"></a>ITopologyExecutionResource 構造体
 リソース マネージャーで定義される実行リソースへのインターフェイスです。  
@@ -49,7 +50,7 @@ struct ITopologyExecutionResource;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `ITopologyExecutionResource`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrtrm.h  
   
  **名前空間:** concurrency  
@@ -74,5 +75,5 @@ virtual ITopologyExecutionResource *GetNext() const = 0;
 ### <a name="return-value"></a>戻り値  
  列挙の順番に次の実行リソースへのインターフェイス。 この実行リソースが属しているノードの列挙の順番でない複数のノードがある場合、このメソッドは値を返しますが`NULL`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

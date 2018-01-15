@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 550fbc2e8058c5cca7dd21c23ae37c23efba014e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b848cf1a839940925222a50ce016ba91da4d371d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="exception-classes"></a>例外クラス
 クラス ライブラリには、クラスに基づく例外処理機構が用意されています`CException`です。 アプリケーション フレームワークでは、そのコードの例外独自のコードにも使用できます。 詳細については、記事を参照してください。[例外](../mfc/exception-handling-in-mfc.md)です。 独自の例外型を派生できます`CException`です。  
@@ -62,6 +63,6 @@ ms.lasthandoff: 10/24/2017
  [チェック](../mfc/reference/cuserexception-class.md)  
  ユーザーによる操作を停止するために使用する例外。 通常、ユーザーに通知されました、問題の前に、この例外がスローされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

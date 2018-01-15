@@ -16,11 +16,12 @@ caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0ca5172372a9a80c419e9be54b0378f1254f4e6a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: af30b38a89eb7e4b50c7d31be2d3ba6572843b1e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-specify-specific-scheduler-policies"></a>方法: 特定のスケジューラ ポリシーを指定する
 スケジューラでタスクを管理する場合、スケジューラ ポリシーを使用することで、スケジューラが使用する方法を制御できます。 このトピックでは、スケジューラ ポリシーを使用して、プログレス インジケーターをコンソールに出力するタスクのスレッドの優先度を高くする方法について説明します。  
@@ -56,7 +57,7 @@ Scheduler that has a custom policy:
   
  **cl.exe/EHsc scheduler-policy.cpp**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スケジューラ ポリシー](../../parallel/concrt/scheduler-policies.md)   
  [方法: スケジューラ インスタンスを管理](../../parallel/concrt/how-to-manage-a-scheduler-instance.md)   
  [方法: 特定のスケジューラ ポリシーを使用するエージェントを作成する](../../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md)

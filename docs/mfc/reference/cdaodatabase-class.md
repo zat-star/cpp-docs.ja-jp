@@ -69,11 +69,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c72946edb68212e09ab93e9d36d2dfa8afd5630e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 48646e0635098aceea957f93015a5de93515096d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdaodatabase-class"></a>CDaoDatabase クラス
 それを通じてデータを操作することのできるデータベースへの接続を表します。  
@@ -133,7 +134,7 @@ class CDaoDatabase : public CObject
 > [!NOTE]
 >  MFC DAO データベース クラスは、ODBC に基づいて MFC データベース クラスとは異なります。 DAO データベース クラスの名前では、"CDao"プレフィックスがあります。 クラス`CDaoDatabase`の ODBC クラスに似たインターフェイスを提供[CDatabase](../../mfc/reference/cdatabase-class.md)です。 その主な違いは`CDatabase`DBMS のオープン データベース コネクティビティ (ODBC) と ODBC ドライバーを介して、DBMS にアクセスします。 `CDaoDatabase`Microsoft Jet データベース エンジンに基づくデータ アクセス オブジェクト (DAO) を介してデータにアクセスします。 一般に、DAO に基づいて MFC クラスは ODBC; に基づいて MFC クラスよりもより高機能ですDAO ベースのクラスは、独自のデータベース エンジンを使用して、ODBC ドライバーを介してなどのデータにアクセスできます。 DAO ベースのクラスには、DAO を直接呼び出すことがなく、クラスを使用してテーブルの追加などのデータ定義言語 (DDL) 操作もサポートします。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  レコード セット オブジェクトを作成するときに、暗黙的に、データベース オブジェクトを作成できます。 明示的にデータベース オブジェクトを作成することもできます。 使用して明示的に既存のデータベースを使用する`CDaoDatabase`次のいずれかの操作します。  
   
 -   構築、`CDaoDatabase`オブジェクト、開いているにポインターを渡す[CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md)オブジェクト。  
@@ -163,7 +164,7 @@ class CDaoDatabase : public CObject
   
  `CDaoDatabase`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdao.h  
   
 ##  <a name="cantransact"></a>CDaoDatabase::CanTransact  
@@ -824,7 +825,7 @@ void SetQueryTimeout(short nSeconds);
   
  関連情報については、DAO ヘルプの「QueryTimeout プロパティ」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CDaoWorkspace クラス](../../mfc/reference/cdaoworkspace-class.md)   

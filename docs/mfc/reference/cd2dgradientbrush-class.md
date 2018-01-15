@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,8 +16,7 @@ f1_keywords:
 - AFXRENDERTARGET/CD2DGradientBrush::m_colorInterpolationGamma
 - AFXRENDERTARGET/CD2DGradientBrush::m_extendMode
 - AFXRENDERTARGET/CD2DGradientBrush::m_pGradientStops
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - CD2DGradientBrush [MFC], CD2DGradientBrush
 - CD2DGradientBrush [MFC], Destroy
@@ -27,16 +25,16 @@ helpviewer_keywords:
 - CD2DGradientBrush [MFC], m_extendMode
 - CD2DGradientBrush [MFC], m_pGradientStops
 ms.assetid: 5bf133e6-16b7-4e3a-845d-0ce63fafe5ec
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: c03d489b3059ddadf5783719f297371433a599e6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 0fdfbf838b8c0e294c8ddbd550a982c89b129df2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2dgradientbrush-class"></a>CD2DGradientBrush クラス
 CD2DLinearGradientBrush および CD2DRadialGradientBrush クラスの基底クラス。  
@@ -64,7 +62,7 @@ class CD2DGradientBrush : public CD2DBrush;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CD2DGradientBrush::m_arGradientStops](#m_argradientstops)|D2D1_GRADIENT_STOP 構造体の配列。|  
 |[CD2DGradientBrush::m_colorInterpolationGamma](#m_colorinterpolationgamma)|グラデーション境界間の補間を実行する色で領域です。|  
@@ -80,7 +78,7 @@ class CD2DGradientBrush : public CD2DBrush;
   
  `CD2DGradientBrush`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="_dtorcd2dgradientbrush"></a>CD2DGradientBrush:: ~ CD2DGradientBrush  
@@ -161,6 +159,5 @@ D2D1_EXTEND_MODE m_extendMode;
 ID2D1GradientStopCollection* m_pGradientStops;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

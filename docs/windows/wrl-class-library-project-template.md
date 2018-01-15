@@ -13,11 +13,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ea8f4609be920c03ff718ab79ba5a3693ec7d8e5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 13fc476f696bdd2cb17ed58c496c63747db90322
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="wrl-class-library-project-template"></a>WRL クラス ライブラリ プロジェクト テンプレート
 Visual Studio を使用して、Windows ランタイム C++ テンプレート ライブラリ (WRL) プロジェクトを作成する場合、WRL クラス ライブラリ プロジェクト テンプレートをダウンロードして大幅に、タスクを簡略化することができます。  
@@ -58,5 +61,5 @@ Visual Studio を使用して、Windows ランタイム C++ テンプレート �
   
 -   ライブラリを定義する module.cpp をという名前のファイルにエクスポート`DllMain`、 `DllCanUnloadNow`、 `DllGetActivationFactory`、および`DllGetClassObject`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)

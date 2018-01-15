@@ -35,11 +35,12 @@ caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a6c106173916cdf4e2995e7068a26debb1e4a6a7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fecdedc84f4fd93cbd9efe5e525c1771c5eb1c7e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coledroptarget-class"></a>関数クラス
 ウィンドウと OLE ライブラリの間の通信機構を提供します。  
@@ -85,7 +86,7 @@ class COleDropTarget : public CCmdTarget
   
  `COleDropTarget`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxole.h  
   
 ##  <a name="coledroptarget"></a>COleDropTarget::COleDropTarget  
@@ -358,7 +359,7 @@ virtual void Revoke();
   
  詳細については、次を参照してください。 [RevokeDragDrop](http://msdn.microsoft.com/library/windows/desktop/ms692643) Windows SDK に含まれています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル HIERSVR](../../visual-cpp-samples.md)   
  [MFC サンプル OCLIENT](../../visual-cpp-samples.md)   
  [CCmdTarget クラス](../../mfc/reference/ccmdtarget-class.md)   

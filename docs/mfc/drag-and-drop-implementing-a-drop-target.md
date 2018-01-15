@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f7ddda020ae290ea07c556d57dbba887bcec0083
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9fc73eb6627e63b8013180b7608633a9ee424c92
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="drag-and-drop-implementing-a-drop-target"></a>ドラッグ アンド ドロップ: ドロップ ターゲットの実装
 この記事では、ドロップ ターゲット アプリケーションを作成する方法について説明します。 ドロップ ソースを実装するよりも少し多い作業を受け取るドロップ ターゲットの実装が、それでも比較的簡単です。 これらの手法は、非 OLE アプリケーションにも適用されます。  
@@ -52,6 +53,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [OLE データ オブジェクトとデータ ソースを操作します。](../mfc/data-objects-and-data-sources-manipulation.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ドラッグ アンド ドロップ (OLE)](../mfc/drag-and-drop-ole.md)   
  [COleDropTarget クラス](../mfc/reference/coledroptarget-class.md)

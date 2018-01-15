@@ -16,11 +16,12 @@ caps.latest.revision: "32"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5bde60a4e0c8ec9c0f9091edd40397a371e0e66e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 9ca153ec9ca079bf13b1c1c1dcedd6e41497307f
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="redistributing-the-mfc-library"></a>MFC ライブラリの再配布
 アプリケーションを MFC ライブラリを動的にリンクする場合は、一致する MFC DLL を再配布する必要があります。 たとえば、MFC アプリが Visual Studio 2015 に同梱されている MFC のバージョンを使用して組み込まれている場合必要があります再配布する mfc140.dll または mfc140u.dll、ナロー文字または Unicode のサポート用にアプリをコンパイルするかどうかによって異なります。  
@@ -28,7 +29,7 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  Mfc140.dll ファイルは、Visual Studio 2015 RTM で再頒布可能ファイルのディレクトリから省略されました。 Windows \system32 と Windows\syswow64 ディレクトリに代わりに Visual Studio 2015 でインストールのバージョンを使用することができます。  
   
- すべての MFC Dll は、C ランタイム ライブラリ (CRT) の共有バージョンを使用するため、CRT を再配布する必要もあります。 Visual Studio 2015 に付属する MFC のバージョンでは、Windows 10 の一部として配布される、ユニバーサル CRT ライブラリを使用します。 以前のバージョンの Windows で Visual Studio 2015 を使用してビルドされた MFC アプリケーションを実行するには、ユニバーサル CRT を再配布する必要があります。 オペレーティング システム コンポーネントとして、またはローカル配置を使用して、ユニバーサル CRT を再配布する方法については、次を参照してください。 [Universal CRT を導入](http://go.microsoft.com/fwlink/?LinkId=617977)です。 一元的な展開でサポートされているバージョンの Windows のユニバーサル CRT をダウンロードするを参照してください。 [Windows 10 の Universal C Runtime](http://go.microsoft.com/fwlink/p/?LinkId=619489)です。 Windows SDK のローカル展開 ucrtbase.dll の再頒布可能パッケージ アーキテクチャ固有のバージョンはあります。 既定では、Visual Studio は、C:\Program Files (x86) \Windows Kits\10\Redist\ucrt\DLLs\ でこれらをアーキテクチャ固有のサブディレクトリにインストールします。  
+ すべての MFC Dll は、C ランタイム ライブラリ (CRT) の共有バージョンを使用するため、CRT を再配布する必要もあります。 Visual Studio 2015 に付属する MFC のバージョンでは、Windows 10 の一部として配布される、ユニバーサル CRT ライブラリを使用します。 以前のバージョンの Windows で Visual Studio 2015 を使用してビルドされた MFC アプリケーションを実行するには、ユニバーサル CRT を再配布する必要があります。 オペレーティング システム コンポーネントとして、またはローカル配置を使用して、ユニバーサル CRT を再配布する方法については、次を参照してください。 [Universal CRT を導入](http://go.microsoft.com/fwlink/p/?linkid=617977)です。 一元的な展開でサポートされているバージョンの Windows のユニバーサル CRT をダウンロードするを参照してください。 [Windows 10 の Universal C Runtime](http://go.microsoft.com/fwlink/p/?LinkId=619489)です。 Windows SDK のローカル展開 ucrtbase.dll の再頒布可能パッケージ アーキテクチャ固有のバージョンはあります。 既定では、Visual Studio は、C:\Program Files (x86) \Windows Kits\10\Redist\ucrt\DLLs\ でこれらをアーキテクチャ固有のサブディレクトリにインストールします。  
   
  アプリが以前のバージョンの MFC ライブラリを使用して組み込まれている場合は、再頒布可能ファイルのディレクトリから一致する CRT DLL を再配布する必要があります。 たとえば、MFC アプリケーションが Visual Studio 2013 (vc120) ツールセットを使用して組み込まれている場合、msvcr120.dll を再配布する必要があります。 一致する mfc の再配布する必要があるも`<version>`u.dll または mfc`<version>`.dll です。  
   
@@ -49,9 +50,9 @@ ms.lasthandoff: 10/24/2017
   
  再頒布可能 .msm ファイルには、ローカライズに使用される DLL が含まれます。 サポートされているそれぞれの言語に対して、1 つの DLL があります。 これらの DLL は、インストール プロセスによって、ターゲット コンピューターの %windir%\system32\ フォルダーにインストールされます。  
   
- MFC アプリケーションをローカライズする方法の詳細については、次を参照してください。 [TN057: MFC コンポーネントのローカライズ](../mfc/tn057-localization-of-mfc-components.md)、も[記事 208983: MFC LOC Dll を使用する方法](http://go.microsoft.com/fwlink/?LinkId=198025)、Microsoft サポート web サイトです。  
+ MFC アプリケーションをローカライズする方法の詳細については、次を参照してください。 [TN057: MFC コンポーネントのローカライズ](../mfc/tn057-localization-of-mfc-components.md)、も[記事 208983: MFC LOC Dll を使用する方法](http://go.microsoft.com/fwlink/p/?linkid=198025)、Microsoft サポート web サイトです。  
   
  MFC のローカライズ用 DLL を再配布するには、MFC DLL をアプリケーションのローカル フォルダーに配置します。 Visual C ライブラリを再配布する方法の詳細については、次を参照してください。 [Visual c ファイルの再配布](../ide/redistributing-visual-cpp-files.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ ファイルの再配布](../ide/redistributing-visual-cpp-files.md)

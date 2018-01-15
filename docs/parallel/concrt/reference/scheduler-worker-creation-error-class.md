@@ -4,43 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - scheduler_worker_creation_error
 - CONCRT/concurrency::scheduler_worker_creation_error
 - CONCRT/concurrency::scheduler_worker_creation_error::scheduler_worker_creation_error
-dev_langs:
-- C++
-helpviewer_keywords:
-- scheduler_worker_creation_error class
+dev_langs: C++
+helpviewer_keywords: scheduler_worker_creation_error class
 ms.assetid: 4aec1c3e-c32a-41b2-899d-2d898f23b3c7
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: aee9d72447aca692fa25d675bdc5f727fa5b5c15
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: 93652274432e5ae84bc7336f233f1cdfd278dc00
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="schedulerworkercreationerror-class"></a>scheduler_worker_creation_error クラス
 このクラスは、同時実行ランタイムでワーカー実行コンテキストを作成できないためにスローされる例外を表します。  
@@ -60,7 +43,7 @@ class scheduler_worker_creation_error : public scheduler_resource_allocation_err
 |[scheduler_worker_creation_error](#ctor)|オーバーロードされます。 `scheduler_worker_creation_error` オブジェクトを構築します。|  
   
 ## <a name="remarks"></a>コメント  
- 同時実行ランタイムの内部から実行コンテキストを作成するには、オペレーティング システムに呼び出しが失敗したときに、この例外はスロー通常。 実行コンテキストは、同時実行ランタイムでタスクを実行するスレッドです。 Win32 メソッドの呼び出しから返されるエラー コード`GetLastError`型の値に変換`HRESULT`と基本クラスのメソッドを使用して取得できる`get_error_code`です。  
+ 同時実行ランタイムの内部から実行コンテキストを作成するには、オペレーティング システムに呼び出しが失敗したときに、この例外はスロー通常。 実行コンテキストは、同時実行ランタイムでタスクを実行するスレッドです。 通常は Win32 メソッドへの呼び出しから返されるエラー コード`GetLastError`型の値に変換されます`HRESULT`と基本クラスのメソッドを使用して取得できる`get_error_code`です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `exception`  
@@ -69,7 +52,7 @@ class scheduler_worker_creation_error : public scheduler_resource_allocation_err
   
  `scheduler_worker_creation_error`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
@@ -92,8 +75,7 @@ explicit _CRTIMP scheduler_worker_creation_error(
  エラーの説明メッセージ。  
   
  `_Hresult`  
- `HRESULT`例外が発生したエラーの値。  
+ `HRESULT`例外の原因となったエラーの値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)
-

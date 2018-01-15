@@ -177,11 +177,12 @@ caps.latest.revision: "43"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 81a832d9473c9d5912e42dd4dc81db2d10bd4aea
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: c077f18fb9536e615685455e7bfc6fd896c0cc81
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cbasepane-class"></a>CBasePane クラス
 MFC のすべてのウィンドウの基底クラス。  
@@ -361,7 +362,7 @@ class CBasePane : public CWnd
   
  [CBasePane](../../mfc/reference/cbasepane-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxbasepane.h  
   
 ##  <a name="accnotifyobjectfocusevent"></a>CBasePane::AccNotifyObjectFocusEvent  
@@ -939,7 +940,7 @@ virtual DWORD GetCurrentAlignment() const;
 ### <a name="return-value"></a>戻り値  
  コントロール バーの現在の配置。 次の表は、使用可能な値を示しています。  
   
-|値|アラインメント|  
+|[値]|アラインメント|  
 |-----------|---------------|  
 |`CBRS_ALIGN_LEFT`|左揃え。|  
 |`CBRS_ALIGN_RIGHT`|右揃え。|  
@@ -1655,7 +1656,7 @@ virtual void SetPaneAlignment(DWORD dwAlignment);
   
  次の表は、可能な値を示しています`dwAlignment`:。  
   
-|値|アラインメント|  
+|[値]|アラインメント|  
 |-----------|---------------|  
 |`CBRS_ALIGN_LEFT`|左揃え。|  
 |`CBRS_ALIGN_RIGHT`|右揃え。|  
@@ -1780,7 +1781,7 @@ virtual void UndockPane(BOOL bDelay=FALSE);
   
  引き続きこのペインを使用する場合は、いずれかを呼び出す[cbasepane::dockpane](#dockpane)または[CBasePane::FloatPane](#floatpane)このメソッドを呼び出す前にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CPane](../../mfc/reference/cbasepane-class.md)   

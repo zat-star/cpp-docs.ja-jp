@@ -31,11 +31,12 @@ caps.latest.revision: "37"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 50ecdd614aaf3bd81817ff81a68818b6816c9a71
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7a2f53fa75d8637445e155043d6a40787402accb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcdropdowntoolbar-class"></a>CMFCDropDownToolBar クラス
 ユーザーがトップレベルのツール バー ボタンを押し続けたときに表示されるツール バーです。  
@@ -105,7 +106,7 @@ class CMFCDropDownToolBar : public CMFCToolBar
   
  [CMFCDropDownToolBar](../../mfc/reference/cmfcdropdowntoolbar-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdropdowntoolbar.h  
   
 ##  <a name="allowshowonpanemenu"></a>CMFCDropDownToolBar::AllowShowOnPaneMenu  
@@ -245,7 +246,7 @@ virtual void OnUpdateCmdUI(
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCToolBar クラス](../../mfc/reference/cmfctoolbar-class.md)   

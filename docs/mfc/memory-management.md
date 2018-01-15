@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b1350c4f41da4219ae2581f5e93cb95d03a65850
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1a9e31fc1136249f843aa5dc96a4caffcccc7a85
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="memory-management"></a>メモリ管理
 この記事のグループは、汎用サービスの Microsoft Foundation Class ライブラリ (MFC) メモリ管理に関連するを利用する方法を説明します。 メモリの割り当ては、次の 2 つの主なカテゴリに分類できます: フレーム割り当ておよびヒープ割り当てします。  
@@ -48,7 +49,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [サイズ変更可能なメモリ ブロック](../mfc/memory-management-resizable-memory-blocks.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../mfc/mfc-concepts.md)   
  [MFC の一般的なトピック](../mfc/general-mfc-topics.md)
 

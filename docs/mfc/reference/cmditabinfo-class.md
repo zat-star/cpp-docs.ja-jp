@@ -39,11 +39,12 @@ caps.latest.revision: "37"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4254f2b5c4b3c2000e0e466dd29d0ad9492acf6b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 2b670b26855f5edcfb955d3dd0f8150a999f3a8e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmditabinfo-class"></a>CMDITabInfo クラス
 `CMDITabInfo`クラスを使用するパラメーターを渡すを[cmdiframewndex::enablemditabbedgroups](../../mfc/reference/cmdiframewndex-class.md#enablemditabbedgroups)メソッドです。 MDI タブ付きグループの動作を制御するために、このクラスのメンバーを設定します。  
@@ -70,7 +71,7 @@ class CMDITabInfo
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMDITabInfo::m_bActiveTabCloseButton です。](#m_bactivetabclosebutton_)|指定するかどうか、**閉じる**ボタンがアクティブなタブのラベルに表示されます。|  
 |[CMDITabInfo::m_bAutoColor](#m_bautocolor)|MDI タブ カラーするかどうかを指定します。|  
@@ -95,7 +96,7 @@ class CMDITabInfo
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CMDITabInfo](../../mfc/reference/cmditabinfo-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxmdiclientareawnd.h  
   
 ##  <a name="m_bactivetabclosebutton_"></a>CMDITabInfo::m_bActiveTabCloseButton です。  
@@ -238,7 +239,7 @@ void Serialize(CArchive& ar);
  [入力] `ar`  
  A [CArchive クラス](../../mfc/reference/carchive-class.md)シリアル化するオブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CMDIFrameWndEx クラス](../../mfc/reference/cmdiframewndex-class.md)   
  [MDI タブ付きグループ](../../mfc/mdi-tabbed-groups.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

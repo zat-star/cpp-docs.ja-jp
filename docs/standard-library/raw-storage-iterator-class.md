@@ -4,31 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - memory/std::raw_storage_iterator
 - memory/std::raw_storage_iterator::element_type
 - memory/std::raw_storage_iterator::iter_type
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - std::raw_storage_iterator [C++]
 - std::raw_storage_iterator [C++], element_type
 - std::raw_storage_iterator [C++], iter_type
 ms.assetid: 6f033f15-f48e-452a-a326-647ea2cf346f
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: fd68bfc788231ddc954b1f6e8a70d63dbcf02592
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: c5fc38aac55311029ca6d1a0f0c1cd0a62f86bb2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="rawstorageiterator-class"></a>raw_storage_iterator クラス
 アルゴリズムの結果を初期化されていないメモリに格納するために用意されたアダプター クラスです。  
@@ -75,7 +73,7 @@ class raw_storage_iterator
 |[operator=](#op_eq)|生のストレージ反復子式 * `i` = `x` をメモリへの格納用に実装するために使用される代入演算子。|  
 |[operator++](#op_add_add)|生のストレージ反復子の前置インクリメント演算子と後置インクリメント演算子。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
@@ -377,9 +375,8 @@ array 3 = 4
 *\  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 
 
 

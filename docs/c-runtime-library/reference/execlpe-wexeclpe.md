@@ -39,11 +39,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 488db0ebbc44265c2be35dcdcb6995c05d7b8a10
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: fab541282e1fcb7d875cc6d9fc6454dc3e42d4e2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="execlpe-wexeclpe"></a>_execlpe、_wexeclpe
 新しい子プロセスを読み込んで実行します。  
@@ -100,21 +101,21 @@ intptr_t _wexeclpe(
   
  `_execlpe` 関数は、パラメーターを検証します。 `cmdname` または `arg0` のいずれかが null ポインターであるか、または空の文字列である場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。 新しいプロセスは開始されません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|オプション ヘッダー|  
 |--------------|---------------------|---------------------|  
 |`_execlpe`|\<process.h>|\<errno.h>|  
 |`_wexeclpe`|\<process.h> または \<wchar.h>|\<errno.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_exec 関数、_wexec 関数](../../c-runtime-library/exec-wexec-functions.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
- [_exec 関数、_wexec 関数](../../c-runtime-library/exec-wexec-functions.md)   
+ [_exec 系関数と _wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)   
  [abort](../../c-runtime-library/reference/abort.md)   
  [atexit](../../c-runtime-library/reference/atexit.md)   
  [exit、_Exit、_exit](../../c-runtime-library/reference/exit-exit-exit.md)   

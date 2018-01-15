@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -26,8 +25,7 @@ f1_keywords:
 - AFXADV/CJumpList::GetRemovedItems
 - AFXADV/CJumpList::InitializeList
 - AFXADV/CJumpList::SetAppID
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - CJumpList [MFC], CJumpList
 - CJumpList [MFC], AbortList
@@ -45,16 +43,16 @@ helpviewer_keywords:
 - CJumpList [MFC], InitializeList
 - CJumpList [MFC], SetAppID
 ms.assetid: d364d27e-f512-4b12-9872-c2a17c78ab1f
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 11b28199155c0ac3bd90cda8fb830ea6f8894dde
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 02e170248a2d33fda195daeb1094d70daee12fb0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cjumplist-class"></a>CJumpList クラス
 A`CJumpList`タスク バーのアイコンを右クリックしたときに表示されるショートカットの一覧を示します。  
@@ -74,7 +72,7 @@ class CJumpList;
 |[CJumpList::CJumpList](#cjumplist)|`CJumpList` オブジェクトを構築します。|  
 |[CJumpList:: ~ CJumpList](#cjumplist__~cjumplist)|`CJumpList` オブジェクトを破棄します。|  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CJumpList::AbortList](#abortlist)|コミットすることがなくリスト構築トランザクションを中止します。|  
 |[CJumpList::AddDestination](#adddestination)|オーバーロードされます。 変換先を一覧に追加します。|  
@@ -94,7 +92,7 @@ class CJumpList;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CJumpList](../../mfc/reference/cjumplist-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxadv.h  
   
 ##  <a name="_dtorcjumplist"></a>CJumpList:: ~ CJumpList  
@@ -336,6 +334,5 @@ void SetAppID(LPCTSTR strAppID);
  `strAppID`  
  アプリケーション ユーザー モデル ID を指定する文字列  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

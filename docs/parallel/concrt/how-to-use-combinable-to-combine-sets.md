@@ -1,47 +1,55 @@
 ---
-title: "方法: combinable を使用して集合を結合する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "combinable クラス、例"
-  - "結合 (combinable を使用してセットを) [同時実行ランタイム]"
+title: "方法: combinable セットの結合を使用して |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- combinable class, example
+- combining sets with combinable [Concurrency Runtime]
 ms.assetid: 66ffe8e3-6bbb-4e9f-b790-b612922a68a7
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 8bbd36e9536707bc639e8f80cc019b7fda18f793
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: combinable を使用して集合を結合する
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="how-to-use-combinable-to-combine-sets"></a>方法: combinable を使用して集合を結合する
+このトピックの内容を使用する方法を示しています、 [concurrency::combinable](../../parallel/concrt/reference/combinable-class.md)クラスに含まれる素数の集合を計算します。  
+  
+## <a name="example"></a>例  
+ 次の例では、素数の集合を 2 回計算します。 それぞれの計算の結果を格納する、 [std::bitset](../../standard-library/bitset-class.md)オブジェクト。 この例ではまず、集合を逐次的に計算した後で、並列処理によっても計算します。 また、それぞれの計算に要する時間もコンソールに出力します。  
+  
+ この例では、 [concurrency::parallel_for](reference/concurrency-namespace-functions.md#parallel_for)アルゴリズムと`combinable`スレッド ローカルのセットを生成するオブジェクト。 次を使用して、 [:combine_each](reference/combinable-class.md#combine_each)最終的なセットに、スレッド ローカルな集合を結合する方法です。  
 
-ここでは、[concurrency::combinable](../../parallel/concrt/reference/combinable-class.md) クラスを使用して素数の集合を計算する方法について説明します。  
   
-## 使用例  
- 次の例では、素数の集合を 2 回計算します。  それぞれの計算結果は、[std::bitset](../Topic/bitset%20Class.md) オブジェクトに格納されます。  この例ではまず、集合を逐次的に計算した後で、並列処理によっても計算します。  また、それぞれの計算に要する時間もコンソールに出力します。  
-  
- この例では、[concurrency::parallel\_for](../Topic/parallel_for%20Function.md) アルゴリズムおよび `combinable` オブジェクトを使用して、スレッド ローカルな集合を生成します。  次に、[concurrency::combinable::combine\_each](../Topic/combinable::combine_each%20Method.md) メソッドを使用して、スレッド ローカルな集合を結合し、最終的な集合として完成させます。  
-  
- [!code-cpp[concrt-parallel-combine-primes#1](../../parallel/concrt/codesnippet/CPP/how-to-use-combinable-to-combine-sets_1.cpp)]  
+ [!code-cpp[concrt-parallel-combine-primes#1](../../parallel/concrt/codesnippet/cpp/how-to-use-combinable-to-combine-sets_1.cpp)]  
   
  4 つのプロセッサを備えたコンピューターを使用したときのサンプル出力を次に示します。  
   
-  **逐次時: 312 ミリ秒**  
-**並列時: 78 ミリ秒**   
-## コードのコンパイル  
- コード例をコピーし、Visual Studio プロジェクトに貼り付けるか、`parallel-combine-primes.cpp` という名前のファイルに貼り付けてから、Visual Studio のコマンド プロンプト ウィンドウで次のコマンドを実行します。  
+```Output  
+serial time: 312 ms  
+ 
+parallel time: 78 ms  
+```  
   
- **cl.exe \/EHsc parallel\-combine\-primes.cpp**  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ コード例をコピーし、Visual Studio プロジェクトに貼り付けるかという名前のファイルに貼り付けます`parallel-combine-primes.cpp`Visual Studio コマンド プロンプト ウィンドウで、次のコマンドを実行します。  
   
-## 参照  
+ **cl.exe/EHsc 並列-結合-primes.cpp**  
+  
+## <a name="see-also"></a>参照  
  [並列コンテナーと並列オブジェクト](../../parallel/concrt/parallel-containers-and-objects.md)   
  [combinable クラス](../../parallel/concrt/reference/combinable-class.md)   
- [combinable::combine\_each メソッド](../Topic/combinable::combine_each%20Method.md)
+ [combinable::combine_each メソッド](reference/combinable-class.md#combine_each)
+
+

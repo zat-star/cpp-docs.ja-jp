@@ -15,11 +15,12 @@ caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ffa7b39962d78476e971750e92569eb14229606b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 25f78fb2e2c5700cbb1f7c8dcb093795ce001c13
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-use-the-message-map-cross-reference"></a>メッセージ マップ クロス リファレンスの使い方
 ラベル付きのエントリで\<memberFxn >、派生クラス用の独自のメンバー関数を記述[CWnd](../../mfc/reference/cwnd-class.md)クラスです。 関数の任意の名前を付けます。 などの他の関数`OnActivate`、クラスのメンバー関数は、`CWnd`です。 メッセージを通過するときに呼び出されると、 `DefWindowProc` Windows の機能です。 Windows の通知メッセージを処理するには、上書き、対応する`CWnd`派生クラスで関数。 関数は、基本クラスを基本クラスでオーバーライドされた関数を呼び出す必要があり、Windows がメッセージに応答します。  
@@ -34,6 +35,6 @@ ms.lasthandoff: 10/24/2017
 |"message"と"wNotifyCode"|Windows では、WINDOWS で定義されている Id がメッセージします。H.|  
 |nMessageVariable|戻り値を格納する変数の名前、**を通じて**Windows の機能です。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)
 

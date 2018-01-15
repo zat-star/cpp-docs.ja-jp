@@ -21,11 +21,12 @@ caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 70ed8ecc43f8467ca4e0bdc0856b32f3510d85a0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d7730fdd356b8145b771a85b8449974c2c8fa007
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csimpleexception-class"></a>CSimpleException クラス
 このクラスは、リソース クリティカルな MFC 例外の基底クラスです。  
@@ -72,7 +73,7 @@ class AFX_NOVTABLE CSimpleException : public CException
   
  `CSimpleException`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afx.h  
   
 ##  <a name="csimpleexception"></a>CSimpleException::CSimpleException  
@@ -116,7 +117,7 @@ virtual BOOL GetErrorMessage(
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [CException::GetErrorMessage](../../mfc/reference/cfileexception-class.md#geterrormessage)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [CException クラス](../../mfc/reference/cexception-class.md)   
  [例外処理](../../mfc/exception-handling-in-mfc.md)

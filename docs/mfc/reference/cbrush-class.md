@@ -35,11 +35,12 @@ caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c6c567c720f5dc1febe0626754721c7c6ec9af4a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f2c60be4501e14c1a3b55789905be1fb6e753731
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cbrush-class"></a>CBrush クラス
 Windows のグラフィック デバイス インターフェイス (GDI) のブラシをカプセル化します。  
@@ -91,7 +92,7 @@ class CBrush : public CGdiObject
   
  `CBrush`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="cbrush"></a>CBrush::CBrush  
@@ -392,7 +393,7 @@ operator HBRUSH() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#28](../../mfc/codesnippet/cpp/cbrush-class_8.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル PROPDLG](../../visual-cpp-samples.md)   
  [CGdiObject クラス](../../mfc/reference/cgdiobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

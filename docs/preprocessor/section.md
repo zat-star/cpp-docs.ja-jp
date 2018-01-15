@@ -1,48 +1,49 @@
 ---
-title: "セクション | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "section_CPP"
-  - "vc-pragma.section"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プラグマ, section"
-  - "section プラグマ"
+title: "セクション |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- section_CPP
+- vc-pragma.section
+dev_langs: C++
+helpviewer_keywords:
+- pragmas, section
+- section pragma
 ms.assetid: c67215e9-2c4a-4b0f-b691-2414d2e2d96f
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: fc6035caeb3b2fe466d18ea92300b3135a6189f0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# セクション
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="section"></a>section
 .obj ファイルにセクションを作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 #pragma section( "section-name" [, attributes] )  
 ```  
   
-## 解説  
- このトピックでは、*セグメント*と*セクション*は同義の用語です。  
+## <a name="remarks"></a>コメント  
+ 用語の意味*セグメント*と*セクション*はこのトピックでは互換性があります。  
   
- セクションを定義すると、そのセクションはそれ以降のコンパイルで有効になります。  ただし、[\_\_declspec\(allocate\)](../Topic/allocate.md) を使用する必要があります。これを使用しないと、定義したセクションに何も配置されません。  
+ セクションを定義すると、そのセクションはそれ以降のコンパイルで有効になります。 ただし、使用する必要があります[__declspec(allocate)](../cpp/allocate.md)またはセクションに何も配置されます。  
   
- *section\-name* は、セクションの名前となる必須パラメーターです。  標準セクション名と競合する名前は付けられません。  セクションを作成する場合に使用しない名前のリストについては、「[\/SECTION](../build/reference/section-specify-section-attributes.md)」を参照してください。  
+ *セクション名*セクションの名前となる必須パラメーターです。 標準セクション名と競合する名前は付けられません。 参照してください[/section](../build/reference/section-specify-section-attributes.md)セクションを作成するときに使用しない名前の一覧についてはします。  
   
- 省略可能なパラメーター `attributes` には、セクションに割り当てる 1 つ以上の属性をコンマで区切って指定します。  指定できる `attributes` は次のとおりです。  
+ 省略可能なパラメーター `attributes` には、セクションに割り当てる 1 つ以上の属性をコンマで区切って指定します。 指定できる `attributes` は次のとおりです。  
   
  **read**  
  データの読み取り操作を有効にします。  
@@ -50,10 +51,10 @@ caps.handback.revision: 8
  **write**  
  データの書き込み操作を有効にします。  
   
- **execute**  
+ **実行します。**  
  コードを実行できるようにします。  
   
- **shared**  
+ **共有**  
  イメージを読み込んだすべてのプロセス間でセクションを共有します。  
   
  **nopage**  
@@ -62,16 +63,16 @@ caps.handback.revision: 8
  **nocache**  
  セクションをキャッシュ不可にします。Win32 デバイス ドライバー用です。  
   
- **discard**  
+ **破棄**  
  セクションを破棄可能にします。Win32 デバイス ドライバー用です。  
   
  **remove**  
- セクションをメモリ非常駐として指定します。仮想デバイス ドライバー \(V*x*D\) のみ。  
+ セクションをメモリ非常駐; としてのマークを付けます仮想デバイス ドライバー (V*x*D) のみです。  
   
  属性を指定しない場合、セクションには読み取り属性と書き込み属性が設定されます。  
   
-## 使用例  
- 次の例では、最初の命令でセクションとその属性を指定しています。  `__declspec(allocate)` を使用して宣言していないので、整数 `j` は `mysec` に追加されません。`j` はデータ セクションに配置されます。  整数 `i` は、その `__declspec(allocate)` ストレージ クラス属性の結果として `mysec` に追加されます。  
+## <a name="example"></a>例  
+ 次の例では、最初の命令でセクションとその属性を指定しています。 `j` を使用して宣言していないので、整数 `mysec` は `__declspec(allocate)` に追加されません。`j` はデータ セクションに配置されます。 整数 `i` は、その `mysec` ストレージ クラス属性の結果として `__declspec(allocate)` に追加されます。  
   
 ```  
 // pragma_section.cpp  
@@ -84,5 +85,5 @@ int i = 0;
 int main(){}  
 ```  
   
-## 参照  
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+## <a name="see-also"></a>参照  
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
