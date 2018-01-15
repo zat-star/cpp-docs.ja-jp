@@ -1,56 +1,57 @@
 ---
-title: "aggregates | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.aggregates"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "aggregates 属性"
-  - "集約 [C++]"
-  - "集約オブジェクト [C++], aggregates 属性"
-  - "集約 [C++]"
+title: "集計 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.aggregates
+dev_langs: C++
+helpviewer_keywords:
+- aggregates attribute
+- aggregation [C++]
+- aggregate objects [C++], aggregates attribute
+- aggregates [C++]
 ms.assetid: 67a084c9-941f-474b-a029-9c93b38ebe9a
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: f3fc74f10e0b5900030d48b37d1918de8807d152
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# aggregates
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="aggregates"></a>aggregates
 オブジェクトが CLSID で指定されたオブジェクトを集約することを示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-[ aggregates(  
-clsid,  
-variable_name  
+      [ aggregates(  
+   clsid,  
+   variable_name  
 ) ]  
-  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `clsid`  
  集約可能オブジェクトの CLSID を指定します。  
   
  `variable_name`  
  挿入する変数の名前。 この変数には、集約対象オブジェクトの **IUnknown** を格納します。  
   
-## 解説  
- オブジェクトに適用すると、**aggregates** C\+\+ 属性は \(`clsid` によって指定された\) 集約対象オブジェクトのアウター ラッパーを実装します。  
+## <a name="remarks"></a>コメント  
+ オブジェクトに適用すると、 **aggregates** C++ 属性は ( `clsid`によって指定された) 集約対象オブジェクトのアウター ラッパーを実装します。  
   
- この属性を使用するには、[coclass](../windows/coclass.md)、[progid](../Topic/progid.md)、または [vi\_progid](../windows/vi-progid.md) 属性 \(または、これらのいずれかを意味する別の属性\) も同じ要素に適用する必要があります。 いずれか 1 つの属性を使用すると、他の 2 つも自動的に適用されます。 たとえば、**progid** を適用すると、**vi\_progid** と **coclass** も適用されます。  
+ この属性を使用するには、 [coclass](../windows/coclass.md)、 [progid](../windows/progid.md)、または [vi_progid](../windows/vi-progid.md) 属性 (または、これらのいずれかを意味する別の属性) も同じ要素に適用する必要があります。 いずれか 1 つの属性を使用すると、他の 2 つも自動的に適用されます。 たとえば、 **progid** を適用すると、 **vi_progid** と **coclass** も適用されます。  
   
  **ATL プロジェクト**  
   
@@ -60,9 +61,9 @@ variable_name
 COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND(_m_spAttrXXX, clsid)  
 ```  
   
- また、[DECLARE\_GET\_CONTROLLING\_UNKNOWN](../Topic/DECLARE_GET_CONTROLLING_UNKNOWN.md) マクロも追加されます。  
+ また、 [DECLARE_GET_CONTROLLING_UNKNOWN](../atl/reference/aggregation-and-class-factory-macros.md#declare_get_controlling_unknown) マクロも追加されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cpp_attr_ref_aggregates.cpp  
@@ -89,24 +90,24 @@ struct CObject : IObject
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**class**、`struct`|  
-|**反復可能**|はい|  
-|**必要な属性**|**coclass**、**progid**、**vi\_progid** のうち 1 つ以上。|  
+|**対象**|**class**、 `struct`|  
+|**反復可能**|[はい]|  
+|**必要な属性**|**coclass**、 **progid**、 **vi_progid**のうち 1 つ以上。|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [COM Attributes](../Topic/COM%20Attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
- [集約](http://msdn.microsoft.com/library/windows/desktop/ms686558)   
- [Aggregatable](http://msdn.microsoft.com/library/windows/desktop/aa366721)   
- [COM\_INTERFACE\_ENTRY\_AUTOAGGREGATE\_BLIND](../Topic/COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [COM 属性](../windows/com-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   
+ [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
+ [集計](http://msdn.microsoft.com/library/windows/desktop/ms686558)   
+ [集約可能](http://msdn.microsoft.com/library/windows/desktop/aa366721)   
+ [COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND](../atl/reference/com-interface-entry-macros.md#com_interface_entry_autoaggregate_blind)   
+ 

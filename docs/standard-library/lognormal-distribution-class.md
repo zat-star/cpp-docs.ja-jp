@@ -37,11 +37,12 @@ caps.latest.revision: "15"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 53bef5714a90958a36c74e6dea6656f02778e78e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 59d68823195d4fc975827b50225702819cd0f4e4
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="lognormaldistribution-class"></a>lognormal_distribution クラス
 対数正規分布を生成します。  
@@ -87,7 +88,7 @@ public:
   
 プロパティ関数 `m()` および `s()` は、格納されている分布パラメーター *m* および *s* に対してそれぞれの値を返します。  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
 
 メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
   
@@ -97,7 +98,7 @@ public:
   
 分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-LogNormal 分布の詳細については、Wolfram MathWorld の記事「[LogNormal Distribution](http://go.microsoft.com/fwlink/LinkId=400917)」をご覧ください。  
+LogNormal 分布の詳細については、Wolfram MathWorld の記事「[LogNormal Distribution](http://go.microsoft.com/fwlink/p/?linkid=400917)」をご覧ください。  
   
 ## <a name="example"></a>例  
   
@@ -183,7 +184,7 @@ Distribution for 10 samples:
     10: 5.4406507912  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -242,6 +243,6 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<random>](../standard-library/random.md)
 

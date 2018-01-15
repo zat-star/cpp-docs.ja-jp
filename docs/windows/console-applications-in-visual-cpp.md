@@ -13,11 +13,14 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2ea9a8e5be589b1249c295595932facab4153a16
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 2500f19d77339d5115f7d36c4b34b84e396a9284
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="console-applications-in-visual-c"></a>Visual C++ のコンソール アプリケーション
 コンソール アプリケーションは入力を受け入れ、出力をコンソールに送信します。これは、コマンド プロンプトとも呼ばれます。 コンソール アプリを作成すると、基本的な作業や非常に高度なタスクを実行できます。 コンソール アプリを、後で Windows デスクトップ アプリケーションまたはユニバーサル Windows プラットフォーム アプリに組み込む機能の概念実証の例として使用することもできます。 コンソール アプリは、パイプや他の RPC 機構を使用して他のデスクトップ アプリと通信できます。  

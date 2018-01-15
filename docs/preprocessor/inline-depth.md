@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7ec052eb387e2dd5ea169b45cdf98edb62f4c203
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f105512910658603139105ecf1cf1d5b7030ad00
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="inlinedepth"></a>inline_depth
 (呼び出し先で) `n` を超える深度になる場合に関数がインライン展開されないようにインライン ヒューリスティック検索の深さを指定します。  
@@ -51,6 +52,6 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  再帰関数は、最大深度である 16 回の呼び出しまでインラインで置き換えることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラグマ ディレクティブと _ _pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)   
  [inline_recursion](../preprocessor/inline-recursion.md)

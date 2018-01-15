@@ -91,11 +91,12 @@ caps.latest.revision: "25"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: eba062342aeb0ecc6e9818d7da9eead94b81a9af
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 36354e8b6e6e0c456334caed402a700129b32dae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="forwardlist-class"></a>forward_list クラス
 要素の可変長シーケンスを制御するオブジェクトを表します。 シーケンスはノードのシングル リンク リストとして格納され、各ノードには型 `Type` のメンバーが含まれます。  
@@ -140,7 +141,7 @@ class forward_list
 |[const_pointer](#const_pointer)|前方リスト内の `const` 要素へのポインターを提供する型。|  
 |[const_reference](#const_reference)|前方リスト内の要素への定数参照を提供する型。|  
 |[difference_type](#difference_type)|前方リストの要素の数を、反復子が指す要素の範囲に基づいて表すために使用できる符号付き整数型。|  
-|[iterator](#iterator)|前方リストの反復子を提供する型。|  
+|[Iterator](#iterator)|前方リストの反復子を提供する型。|  
 |[pointer](#pointer)|前方リスト内の要素へのポインターを提供する型。|  
 |[reference](#reference)|前方リスト内の要素への参照を提供する型。|  
 |[size_type](#size_type)|2 つの要素間の距離を表す、符号なしの型。|  
@@ -184,7 +185,7 @@ class forward_list
 |-|-|  
 |[operator=](#op_eq)|別の前方リストのコピーで前方リストの要素を置き換えます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<forward_list>  
   
  **名前空間:** std  
@@ -305,7 +306,7 @@ const_iterator cend() const;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -956,6 +957,6 @@ typedef typename Allocator::value_type value_type;
 ### <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター _ `Ty` のシノニムです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<forward_list>](../standard-library/forward-list.md)
 

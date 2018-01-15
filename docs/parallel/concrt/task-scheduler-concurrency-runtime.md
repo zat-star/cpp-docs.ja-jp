@@ -27,11 +27,12 @@ caps.latest.revision: "42"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 692f02f6ad2d7486c8460d3dae42500f165f60b6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: cf8577b9fcb5ac734ee9eb935688002dbfe162da
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="task-scheduler-concurrency-runtime"></a>タスク スケジューラ (同時実行ランタイム)
 ドキュメントのこの部分のトピックでは、同時実行ランタイムのタスク スケジューラの重要な機能について説明します。 タスク スケジューラは、同時実行ランタイムを使用する既存のコードのパフォーマンスを微調整するときに役立ちます。  

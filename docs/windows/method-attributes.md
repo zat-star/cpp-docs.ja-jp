@@ -1,65 +1,68 @@
 ---
-title: "Method Attributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "method attributes"
-  - "attributes [C++], reference topics"
+title: "メソッドの属性 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords:
+- method attributes
+- attributes [C++], reference topics
 ms.assetid: b2313352-480d-488b-8c35-6242ffd3a549
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: f2413543e7638f47db13799e0549a415ee92c1c2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Method Attributes
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次の属性はコクラス クラスまたはインターフェイスのメソッドに適用されます。  
+# <a name="method-attributes"></a>メソッド属性
+次の属性は、クラス、コクラス、またはインターフェイスのメソッドに適用されます。  
   
-|属性|Description|  
-|--------|-----------------|  
-|[bindable](../windows/bindable.md)|プロパティがデータ連結をサポートすることを示します。|  
-|[call\_as](../windows/call-as.md)|リモート関数にマップするリモート関数を有効にします。|  
-|[custom](../windows/custom-cpp.md)|独自の属性を定義できます。|  
-|[db\_column](../windows/db-column.md)|行セットに指定した列をバインドします。|  
-|[db\_command](../windows/db-command.md)|OLE DB のコマンドを作成します。|  
-|[db\_param](../windows/db-param.md)|指定したメンバー変数を入力または出力パラメーターに関連付け変数を区切ります。|  
-|[db\_source](../windows/db-source.md)|データ ソースへの接続を作成します。|  
-|[db\_table](../windows/db-table.md)|OLE DB テーブルを開きます。|  
-|[defaultbind](../windows/defaultbind.md)|最適なオブジェクトを表すを一つの連結できるプロパティを示します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|[bindable](../windows/bindable.md)|プロパティがデータ バインディングをサポートしていることを示します。|  
+|[call_as](../windows/call-as.md)|リモート関数にマップするリモート処理不可能関数を有効にします。|  
+|[カスタム](../windows/custom-cpp.md)|独自の属性を定義できます。|  
+|[db_column](../windows/db-column.md)|行セットに指定された列をバインドします。|  
+|[db_command](../windows/db-command.md)|OLE DB コマンドを作成します。|  
+|[db_param](../windows/db-param.md)|入力または出力パラメーターを持つ指定したメンバー変数を関連付けるし、変数を区切ります。|  
+|[db_source](../windows/db-source.md)|データ ソースへの接続を作成します。|  
+|[db_table](../windows/db-table.md)|OLE DB テーブルを開きます。|  
+|[defaultbind](../windows/defaultbind.md)|1 つのバインド可能なプロパティ オブジェクトを最も良く表すものを示します。|  
 |[defaultcollelem](../windows/defaultcollelem.md)|Visual Basic コードの最適化に使用されます。|  
-|[displaybind](../windows/displaybind.md)|バインドできるようにユーザーに表示するプロパティを示します。|  
-|[helpcontext](../windows/helpcontext.md)|ヘルプ ファイルに要素に関するユーザーの情報を表示できるようにするためのコンテキスト ID を指定します。|  
-|[helpfile](../Topic/helpfile.md)|タイプ ライブラリのヘルプ ファイルの名前を設定します。|  
-|[helpstring](../windows/helpstring.md)|適用先の要素の記述に使用される文字列を指定します。|  
-|[helpstringcontext](../windows/helpstringcontext.md)|.hlp または .chm ファイルでヘルプ トピックの ID を指定します。|  
-|[helpstringdll](../windows/helpstringdll.md)|DLL の名前を文書内の文字列の参照 \(ローカリゼーション\) を実行するように指定します。|  
-|[hidden](../Topic/hidden.md)|項目が存在してもユーザー指向ブラウザーに表示されないことを示します。|  
-|[id](../windows/id.md)|メンバー関数 \(インターフェイスのプロパティまたはメソッドまたはディスパッチ インターフェイス\) に DISPID を指定します。|  
-|[immediatebind](../windows/immediatebind.md)|データベースにデータ バインド オブジェクトのプロパティに対するすべての変更がすぐに通知されることを示します。|  
-|[&#91;in&#93;](../Topic/in%20\(C++\).md)|パラメーターが呼び出し元のプロシージャから呼び出し先のプロシージャに渡す必要があることを示します。|  
-|[local](../windows/local-cpp.md)|インターフェイスのヘッダーで使用するとヘッダーのジェネレーターとして MIDL コンパイラを使用できます。  個々の関数ではスタブが生成されないローカル プロシージャを指定します。|  
-|[nonbrowsable](../Topic/nonbrowsable.md)|インターフェイス メンバーをプロパティ ブラウザーに表示されないことを示します。|  
-|[propget](../windows/propget.md)|アクセサー関数を指定します。|  
-|[propput](../windows/propput.md)|プロパティ設定の関数を指定します。|  
-|[propputref](../windows/propputref.md)|値ではなく参照を使用するプロパティ設定の関数を指定します。|  
-|[ptr](../windows/ptr.md)|完全なポインターとしてポインターを指定します。|  
-|[範囲](../Topic/range%20\(C++\).md)|値が実行時に設定されたフィールドまたは引数に許可される値の範囲を指定します。|  
-|[requestedit](../windows/requestedit.md)|プロパティが **OnRequestEdit** 通知をサポートすることを示します。|  
-|[restricted](../windows/restricted.md)|モジュールインターフェイスまたはディスパッチ インターフェイスのメンバーを任意に呼び出すことができないことを指定します。|  
-|[satype](../windows/satype.md)|**SAFEARRAY** 構造体のデータ型を指定します。|  
-|[source](../Topic/source%20\(C++\).md)|クラスにコネクション ポイントにコントロールのソース インターフェイスを指定します。  プロパティまたはメソッドで **ソース**  の属性にはメンバーがイベントのソースであるかバリアント オブジェクトを返すことを示します。|  
-|[同期](../windows/synchronize.md)|ターゲット メソッドへのアクセスを同期します。|  
-|[vararg](../windows/vararg.md)|関数が引数の数が可変であることを指定します。|  
+|[displaybind](../windows/displaybind.md)|バインド可能なとしてユーザーに表示されるプロパティを示します。|  
+|[helpcontext](../windows/helpcontext.md)|コンテキスト ID をユーザーに関する情報を表示、ヘルプ ファイル内のこの要素を指定します。|  
+|[helpfile](../windows/helpfile.md)|タイプ ライブラリのヘルプ ファイルの名前を設定します。|  
+|[helpstring](../windows/helpstring.md)|適用すると、要素の記述に使用される文字の文字列を指定します。|  
+|[helpstringcontext](../windows/helpstringcontext.md)|.Hlp または .chm ファイルには、ヘルプ トピックの ID を指定します。|  
+|[helpstringdll](../windows/helpstringdll.md)|ドキュメントの文字列の検索 (ローカリゼーション) の実行に使用する DLL の名前を指定します。|  
+|[hidden](../windows/hidden.md)|項目が存在しますが、ユーザー指向ブラウザーで表示する必要がありますされませんを示します。|  
+|[ID](../windows/id.md)|メンバー関数 (プロパティまたはメソッド、インターフェイスまたはディスパッチ インターフェイス) の DISPID を指定します。|  
+|[immediatebind](../windows/immediatebind.md)|データ バインドされたオブジェクトのプロパティに対するすべての変更のデータベースに直ちに通知されることを示します。|  
+|[in](../windows/in-cpp.md)|パラメーターが呼び出し元のプロシージャから呼び出されたプロシージャに渡されることを示します。|  
+|[地元の](../windows/local-cpp.md)|インターフェイスのヘッダーで使用する場合は、ヘッダー ジェネレーターとして MIDL コンパイラを使用できます。 個々 の関数で使用する場合は、対象のスタブが生成されないローカル プロシージャを指定します。|  
+|[nonbrowsable](../windows/nonbrowsable.md)|インターフェイス メンバーをプロパティ ブラウザーで表示されないことを示します。|  
+|[propget](../windows/propget.md)|プロパティ アクセサー関数を指定します。|  
+|[propput](../windows/propput.md)|プロパティ設定関数を指定します。|  
+|[propputref](../windows/propputref.md)|値の代わりに参照を使用するプロパティ設定関数を指定します。|  
+|[ptr](../windows/ptr.md)|すべてのポインターとしてのポインターを指定します。|  
+|[範囲](../windows/range-cpp.md)|引数または値が設定される実行時にフィールドに使用できる値の範囲を指定します。|  
+|[requestedit](../windows/requestedit.md)|プロパティをサポートしていることを示します、 **OnRequestEdit**通知します。|  
+|[restricted](../windows/restricted.md)|モジュール、インターフェイス、またはディスパッチ インターフェイスのメンバーを任意に呼び出すことができませんを指定します。|  
+|[satype](../windows/satype.md)|データ型を指定します、 **SAFEARRAY**構造体。|  
+|[ソース](../windows/source-cpp.md)|クラスのコネクション ポイント用のコントロールのソース インターフェイスを指定します。 プロパティまたはメソッドで、**ソース**属性は、メンバーがオブジェクトまたはイベントのソースであるバリアント型を返すことを示します。|  
+|[synchronize](../windows/synchronize.md)|ターゲット メソッドへのアクセスを同期します。|  
+|[vararg](../windows/vararg.md)|関数が可変個の引数を実行するように指定します。|  
   
-## 参照  
- [Attributes by Usage](../windows/attributes-by-usage.md)
+## <a name="see-also"></a>参照  
+ [使用法別の属性](../windows/attributes-by-usage.md)

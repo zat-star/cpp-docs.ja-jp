@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -15,35 +14,24 @@ f1_keywords:
 - vector/std::vector::pointer
 - vector/std::vector::flip
 - vector/std::vector::swap
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
-- vector<bool> class
+- std::vector [C++], const_pointer
+- std::vector [C++], const_reference
+- std::vector [C++], pointer
+- std::vector [C++], flip
+- std::vector [C++], swap
 ms.assetid: 8028c8ed-ac9c-4f06-aba1-5de45c00aafb
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 535ce75fb600b919b5e255bc580a93e448e81d59
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: f8117c3ac56305637164886c6c27f7f20528d64a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vectorltboolgt-class"></a>vector&lt;bool&gt; クラス
 `vector<bool>` クラスは、`bool` 型の要素の [vector](../standard-library/vector-class.md) の部分的特殊化です。 このクラスには、特殊化によって使用される基になる型のアロケーターがあり、ビットごとに 1 つの `bool` 値を格納することによって領域を最適化します。  
@@ -85,7 +73,7 @@ class vector<bool, Allocator>
 |-|-|  
 |[vector\<bool> reference クラス](#reference_class)|`bool&` の動作をシミュレートするためのプロキシとして機能するクラスで、そのオブジェクトは `vector<bool>` オブジェクト内の要素 (単一ビット) への参照を提供できます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー**: \<vector>  
   
  **名前空間:** std  
@@ -170,7 +158,7 @@ vector&<bool&>::const_reference operator[](size_type Pos) const;
  `_ITERATOR_DEBUG_LEVEL` を設定してコンパイルした場合、ベクターの境界の外にある要素にアクセスしようとすると、実行時エラーが発生します。  詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」を参照してください。  
   
 ### <a name="example"></a>例  
-  このコード例は、`vector<bool>::operator[]` の正しい使用方法と、コメント アウトされた 2 つの一般的なコーディングの誤りを示しています。 `vector<bool>::reference` が返す `vector<bool>::operator[]` オブジェクトのアドレスを取得できないため、これらの誤りによってエラーが発生します。  
+  このコード例は、`vector<bool>::operator[]` の正しい使用方法と、コメント アウトされた 2 つの一般的なコーディングの誤りを示しています。`vector<bool>::reference` が返す `vector<bool>::operator[]` オブジェクトのアドレスを取得できないため、これらの誤りによってエラーが発生します。  
   
 ```cpp  
 // cl.exe /EHsc /nologo /W4 /MTd   
@@ -383,8 +371,7 @@ static void swap(
 ### <a name="remarks"></a>コメント  
  このオーバーロードは `vector<bool>` の特別なプロキシの要件をサポートします。 [vector](../standard-library/vector-class.md)::swap には、`vector<bool>::swap()` の単一引数のオーバーロードと同じ機能があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
-
 

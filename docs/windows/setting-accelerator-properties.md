@@ -19,11 +19,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d8a83b155b5e0a350d5c578a8dccfb9040cec3df
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 83eea84c89a9f9873b687333b7454d9f3c9c41b3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setting-accelerator-properties"></a>アクセラレータのプロパティの設定
 アクセラレータのプロパティを設定することができます、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)いつでもできます。 また、アクセラレータ エディターを使用して、アクセラレータ テーブルでアクセラレータのプロパティを変更することもできます。 プロパティ ウィンドウを使用しても、アクセラレータ エディターを使用しても、変更の結果は同じです。編集はすぐにアクセラレータ テーブルに反映されます。  
@@ -41,10 +44,10 @@ ms.lasthandoff: 10/31/2017
   
 
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  Win32  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [定義済みのアクセラレータ キー](../windows/predefined-accelerator-keys.md)   
  [リソース エディター](../windows/resource-editors.md)   
  [アクセラレータ エディター](../windows/accelerator-editor.md)

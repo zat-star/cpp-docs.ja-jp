@@ -20,11 +20,14 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fb068822956508b747b8c97d7cd46e5bc19e8e58
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: d0ec4825419c7a9d3c9bc35151b84c327a03325b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-controls-to-a-dialog-causes-the-dialog-to-no-longer-function"></a>コントロールを追加してもダイアログ ボックスに表示されない
 ダイアログ ボックスに、コモン コントロールまたはリッチ エディット コントロールを追加すると、これは表示されません ダイアログ ボックスをテストするとダイアログ ボックス自体は表示されません。  
@@ -63,10 +66,10 @@ ms.lasthandoff: 10/24/2017
 ## <a name="the-fix-for-richedit-controls"></a>リッチ エディット コントロールの修正方法  
  呼び出す必要があります**LoadLibrary**リッチ エディット コントロールのです。 詳細については、次を参照してください。 [MFC での RichEdit 1.0 コントロールの使用](../windows/using-the-richedit-1-0-control-with-mfc.md)、[リッチのエディット コントロールについて](http://msdn.microsoft.com/library/windows/desktop/bb787873)で、 [!INCLUDE[winsdkshort](../atl-mfc-shared/reference/includes/winsdkshort_md.md)]、および[リッチ エディット コントロールの概要](../mfc/overview-of-the-rich-edit-control.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  Win32  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ダイアログ エディターのトラブルシューティング](../windows/troubleshooting-the-dialog-editor.md)   
  [ダイアログ エディター](../windows/dialog-editor.md)
 

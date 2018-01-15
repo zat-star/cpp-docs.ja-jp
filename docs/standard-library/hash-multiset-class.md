@@ -97,11 +97,12 @@ caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 019a80bd6752ea1fa974e9f567cde953d8cb2370
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload: cplusplus
+ms.openlocfilehash: 132ea24bd65ae4bf79922c811c03ef9cc7c13c42
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultiset-class"></a>hash_multiset クラス
 > [!NOTE]
@@ -169,7 +170,7 @@ class hash_multiset
 |[const_reference](#const_reference)|読み取りと `const` 操作を実行するために、`hash_multiset` に格納された `const` 要素への参照を提供する型。|  
 |[const_reverse_iterator](#const_reverse_iterator)|`const` 内の任意の `hash_multiset` 要素を読み取ることができる双方向反復子を提供する型。|  
 |[difference_type](#difference_type)|同じ `hash_multiset` 内の要素をアドレス指定する 2 つの反復子の差を提供する符号付き整数型|  
-|[iterator](#iterator)|`hash_multiset` 内の任意の要素を読み取り、または変更できる双方向反復子を提供する型。|  
+|[Iterator](#iterator)|`hash_multiset` 内の任意の要素を読み取り、または変更できる双方向反復子を提供する型。|  
 |[key_compare](#key_compare)|2 つの並べ替えキーを比較して、`hash_multiset` 内の 2 つの要素の相対順序を決定できる関数オブジェクトを提供する型。|  
 |[key_type](#key_type)|並べ替えキーとしてキャパシティ内に `hash_set` の要素として格納されるオブジェクトを表す型。|  
 |[pointer](#pointer)|`hash_multiset` 内の要素へのポインターを提供する型。|  
@@ -215,7 +216,7 @@ class hash_multiset
 |-|-|  
 |[hash_multiset::operator=](#op_eq)|hash_multiset の要素を、別の hash_multiset のコピーで置き換えます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<hash_set>  
   
  **名前空間:** stdext  
@@ -1547,7 +1548,7 @@ key_compare key_comp() const;
   
  これは、並べ替え順で `_xVal` が `_yVal` に先行しかつ等しくない場合に **true** を返します。  
   
- [key_compare](#key_compare) および [value_compare](#value_compare) は両方ともテンプレート パラメーター **Traits** のシノニムです。 どちらも hash_multiset および hash_multiset クラスで使用でき、そこでは同一ですが、hash_map および hash_multimap クラスでは異なるものなので互換性を保つようになっています。  
+ [key_compare](#key_compare) および [value_compare](#value_compare) は、ともにテンプレート パラメーター **Traits** のシノニムです。 どちらも hash_multiset および hash_multiset クラスで使用でき、そこでは同一ですが、hash_map および hash_multimap クラスでは異なるものなので互換性を保つようになっています。  
   
    
   
@@ -1637,7 +1638,7 @@ typedef Key key_type;
 ### <a name="remarks"></a>コメント  
  **key_type** は、テンプレート パラメーター `Key` のシノニムです。  
   
- `key_type` および [value_type](../standard-library/hash-set-class.md#value_type) は両方ともテンプレート パラメーター **Key** のシノニムです。 どちらも set および multiset クラスで使用でき、そこでは同一ですが、map および multimap クラスでは異なるものなので互換性を保つようになっています。  
+ `key_type` および [value_type](../standard-library/hash-set-class.md#value_type) は両方ともテンプレート パラメーター **Key** のシノニムです。 これらの型は map クラスおよび multimap クラスでは異なるものになるため、互換性を保つためにこれらが同一のものである set クラスと multiset クラスでも使用できるようになっています。  
   
  `Key` の詳細については、[hash_multiset クラス](../standard-library/hash-multiset-class.md)のトピックのコメントに関するセクションをご覧ください。  
   
@@ -2307,7 +2308,7 @@ value_compare value_comp() const;
   
  これは、並べ替え順で `_xVal` が `_yVal` に先行しかつ等しくない場合に **true** を返します。  
   
- [key_compare](#key_compare) および [value_compare](#value_compare) は両方ともテンプレート パラメーター **Traits** のシノニムです。 どちらも hash_multiset および hash_multiset クラスで使用でき、そこでは同一ですが、hash_map および hash_multimap クラスでは異なるものなので互換性を保つようになっています。  
+ [key_compare](#key_compare) および [value_compare](#value_compare) は、ともにテンプレート パラメーター **Traits** のシノニムです。 どちらも hash_multiset および hash_multiset クラスで使用でき、そこでは同一ですが、hash_map および hash_multimap クラスでは異なるものなので互換性を保つようになっています。  
   
    
   
@@ -2439,7 +2440,7 @@ int main( )
 The hash_multiset has elements: 10 20.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

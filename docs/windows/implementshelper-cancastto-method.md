@@ -1,32 +1,33 @@
 ---
-title: "ImplementsHelper::CanCastTo メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::ImplementsHelper::CanCastTo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CanCastTo メソッド"
+title: "Implementshelper::cancastto メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::Details::ImplementsHelper::CanCastTo
+dev_langs: C++
+helpviewer_keywords: CanCastTo method
 ms.assetid: 9ae6fa17-d0b1-4e31-9ae5-da6ae4026e32
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: c52123710c73c9d78dad4f731736654ee2267d2b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ImplementsHelper::CanCastTo メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="implementshelpercancastto-method"></a>ImplementsHelper::CanCastTo メソッド
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -41,27 +42,27 @@ HRESULT CanCastTo(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `riid`  
- インターフェイス ID への参照。  
+ インターフェイス ID への参照  
   
  `ppv`  
- この操作が正常に終了した場合、インターフェイスへのポインターが `riid` または `iid`で指定します。  
+ インターフェイスへのポインターがで指定されたこの操作が成功した場合は、`riid`または`iid`です。  
   
  `iid`  
- インターフェイス ID への参照。  
+ インターフェイス ID への参照  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は、エラーを示す HRESULT を返します。  
+## <a name="return-value"></a>戻り値  
+ 成功した場合は S_OK、そうでない場合はエラーを示す HRESULT。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定されたインターフェイス ID へのポインターを取得します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [ImplementsHelper 構造体](../windows/implementshelper-structure.md)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

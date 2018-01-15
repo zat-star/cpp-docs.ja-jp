@@ -1,34 +1,35 @@
 ---
-title: "How to: Declare Interior Pointers with the const Keyword (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "pointers, interior"
+title: "方法: const キーワードを含む内部ポインターを宣言 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords: pointers, interior
 ms.assetid: 64e08b0e-9396-4046-ab51-8f6588f32330
-caps.latest.revision: 13
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: aadd1573a5110960ba74eabe4fc6c696fad887ca
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# How to: Declare Interior Pointers with the const Keyword (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次の例は、内部ポインターの宣言で `const` を使用する方法を示します。  
+# <a name="how-to-declare-interior-pointers-with-the-const-keyword-ccli"></a>方法: const キーワードを含む内部ポインターを宣言する (C++/CLI)
+次の例は、使用する方法を示しています。`const`内部ポインターの宣言でします。  
   
 > [!IMPORTANT]
->  この言語機能は **\/clr** コンパイラ オプションによって、**\/ZW** コンパイラ オプションによってサポートされます。  
+>  この言語機能をサポートに、 **/clr**コンパイラ オプションがなく、 **/ZW**コンパイラ オプション。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // interior_ptr_const.cpp  
@@ -87,5 +88,5 @@ int main() {
 };  
 ```  
   
-## 参照  
- [interior\_ptr \(C\+\+\/CLI\)](../windows/interior-ptr-cpp-cli.md)
+## <a name="see-also"></a>参照  
+ [interior_ptr (C++/CLI)](../windows/interior-ptr-cpp-cli.md)

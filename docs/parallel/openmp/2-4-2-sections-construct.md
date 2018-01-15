@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 22aa4cc1bde59234d70803c2e878d3fbf83f499e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 6e5b755e95e9bbbb78d6ab13cd09732f9c9aee3d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="242-sections-construct"></a>2.4.2 sections のコンストラクト
 **セクション**ディレクティブを識別、noniterative work-sharing コンス トラクターの構造体をチーム内のスレッドに分割するにはセットを指定します。 各セクションでは、チーム内のスレッドで 1 回実行されます。 構文、**セクション**ディレクティブは、次のようにします。  

@@ -15,11 +15,14 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bae7afd532f68f0cef4ca372ba79b51c87f447a4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: b35469375221b9e6f3e1ec464ae7f8e46a7451ec
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comptrinternalrelease-method"></a>ComPtr::InternalRelease メソッド
 この ComPtr に関連付けられたインターフェイスに対して COM 解放操作を実行します。  
@@ -33,10 +36,10 @@ void InternalRelease();
 ## <a name="remarks"></a>コメント  
  このメソッドは保護されています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ComPtr クラス](../windows/comptr-class.md)

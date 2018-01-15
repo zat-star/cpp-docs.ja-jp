@@ -4,42 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
 f1_keywords:
 - initializer_list/std::initializer_list::initializer_list
 - initializer_list/std::initializer_list::begin
 - initializer_list/std::initializer_list::end
 - initializer_list/std::initializer_list::size
+dev_langs: C++
 ms.assetid: 1f2c0ff4-5636-4f79-b008-e75426e3d2ab
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 542a13de6e8b97f736ea2cfcdf8956c2f261c1e4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+helpviewer_keywords:
+- std::initializer_list::initializer_list
+- std::initializer_list::begin
+- std::initializer_list::end
+- std::initializer_list::size
+ms.workload: cplusplus
+ms.openlocfilehash: df79acefbd5482238b2ce59885bdb06af128c9b3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="initializerlist-class"></a>initializer_list クラス
 すべてのメンバーが指定された型である要素の配列にアクセスできます。  
@@ -92,7 +81,7 @@ initializer_list<int> i1{ 1, 2, 3, 4 };
 |[end](#end)|`initializer_list` 内の最後の要素の 1 つ後ろへのポインターを返します。|  
 |[size](#size)|`initializer_list` 内の要素数を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<initializer_list>  
   
  **名前空間:** std  
@@ -212,7 +201,6 @@ constexpr size_t size() const noexcept;
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<forward_list>](../standard-library/forward-list.md)
-
 

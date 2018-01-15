@@ -66,11 +66,12 @@ caps.latest.revision: "24"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0558bd962d8f646cc599ba604dbe749f5a02138b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: e7068c2b94637a859c35c662350c27f157103e37
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="basicios-class"></a>basic_ios クラス
 このテンプレート クラスは、テンプレート パラメーターに依存する、入力ストリーム([basic_istream](../standard-library/basic-istream-class.md) テンプレート クラス) と出力ストリーム ([basic_ostream](../standard-library/basic-ostream-class.md) テンプレート クラス) の両方に共通のストレージとメンバー関数を表します。 (クラス [ios_base](../standard-library/ios-base-class.md) は、テンプレート パラメーターに依存しない、共通の要素を記述します。)クラス **basic_ios\<class Elem, class Traits>** のオブジェクトは、**Elem** 型の要素を含むストリームを制御するのに役立ちます。この型の特性は **Traits** クラスによって決まります。  
@@ -151,7 +152,7 @@ class basic_ios : public ios_base
 |[operator void *](#op_void_star)|ストリームが依然として良好かどうかを示します。|  
 |[operator!](#op_not)|ストリームが悪化していないかどうかを示します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<ios>  
   
  **名前空間:** std  
@@ -935,7 +936,7 @@ void swap(basic_ios&& right);
 ### <a name="remarks"></a>コメント  
  プロテクト メンバー関数は、格納されている `stream buffer pointer` を除き、`right` に格納されているすべての値を `*this` と交換します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   
  [iostreams の規則](../standard-library/iostreams-conventions.md)

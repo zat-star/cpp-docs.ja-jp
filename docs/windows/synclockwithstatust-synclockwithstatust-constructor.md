@@ -15,11 +15,14 @@ caps.latest.revision: "4"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 00602992585e496a41a4ecea6d85ed798adac640
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: dc5be4a37182cb23b47a2511d2e7d5eb0ffa558a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="synclockwithstatustsynclockwithstatust-constructor"></a>SyncLockWithStatusT::SyncLockWithStatusT コンストラクター
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -52,11 +55,11 @@ explicit SyncLockWithStatusT(
   
  最初のコンス トラクターの初期化パラメーターで指定された別の SyncLockWithStatusT から現在の SyncLockWithStatusT オブジェクト`other`、し、その他の SyncLockWithStatusT オブジェクトを無効にします。 2 番目のコンス トラクターは`protected`、無効な状態を現在の SyncLockWithStatusT オブジェクトを初期化します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers::Details  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SyncLockWithStatusT クラス](../windows/synclockwithstatust-class.md)   
  [SyncLockWithStatusT::GetStatus メソッド](../windows/synclockwithstatust-getstatus-method.md)

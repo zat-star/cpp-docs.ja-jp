@@ -1,32 +1,33 @@
 ---
-title: "MakeAllocator クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::MakeAllocator"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MakeAllocator クラス"
+title: "MakeAllocator クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::Details::MakeAllocator
+dev_langs: C++
+helpviewer_keywords: MakeAllocator class
 ms.assetid: a1114615-abd7-4a56-9bc3-750c118f0fa1
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 523bcdb17fc0a1b74fe615e5ff15a6fcef99cc32
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# MakeAllocator クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="makeallocator-class"></a>MakeAllocator クラス
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -47,43 +48,43 @@ template<
 class MakeAllocator<T, true>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
  型の名前。  
   
  `hasWeakReferenceSupport`  
- 弱い参照をサポートするオブジェクトにメモリを割り当てる`true` ; 弱い参照をサポートしないオブジェクトにメモリを割り当てる `false`。  
+ `true`弱い参照をサポートするオブジェクトのメモリを割り当てられません`false`弱参照でサポートされていないオブジェクトのメモリを割り当てられません。  
   
-## 解説  
- 弱い参照サポートの有無に関係なくアクティブ化可能クラスの、メモリを割り当てます。  
+## <a name="remarks"></a>コメント  
+ 弱い参照のサポートの有無のアクティブ化可能なクラスのメモリを割り当てます。  
   
- ユーザー定義のメモリ割り当てモデルを実装するに MakeAllocator クラスをオーバーライドします。  
+ ユーザー定義のメモリ割り当てのモデルを実装する MakeAllocator クラスをオーバーライドします。  
   
- オブジェクトが構築中にスローすれば MakeAllocator は、メモリ リークを防ぐために使用します。  
+ MakeAllocator は通常、構築時にオブジェクトをスローした場合は、メモリ リークを防ぐために使用されます。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |[MakeAllocator::MakeAllocator コンストラクター](../windows/makeallocator-makeallocator-constructor.md)|MakeAllocator クラスの新しいインスタンスを初期化します。|  
-|[MakeAllocator::~MakeAllocator デストラクター](../Topic/MakeAllocator::~MakeAllocator%20Destructor.md)|Deinitializes MakeAllocator クラスの現在のインスタンス。|  
+|[MakeAllocator::~MakeAllocator デストラクター](../windows/makeallocator-tilde-makeallocator-destructor.md)|MakeAllocator クラスの現在のインスタンスの初期化を解除します。|  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[MakeAllocator::Allocate メソッド](../Topic/MakeAllocator::Allocate%20Method.md)|メモリと関連 MakeAllocator を現在のオブジェクトに割り当てます。|  
-|[MakeAllocator::Detach メソッド](../windows/makeallocator-detach-method.md)|MakeAllocator の現在のオブジェクトの [割り当てます。](../Topic/MakeAllocator::Allocate%20Method.md) のメソッドによって割り当てられたメモリの関連付けを解除し。|  
+|----------|-----------------|  
+|[MakeAllocator::Allocate メソッド](../windows/makeallocator-allocate-method.md)|メモリが割り当てられ、現在 MakeAllocator オブジェクトに関連付けます。|  
+|[MakeAllocator::Detach メソッド](../windows/makeallocator-detach-method.md)|によって割り当てられたメモリの関連付けを解除、 [Allocate](../windows/makeallocator-allocate-method.md) MakeAllocator、現在のメソッドです。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `MakeAllocator`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

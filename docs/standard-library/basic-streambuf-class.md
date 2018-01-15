@@ -105,11 +105,12 @@ caps.latest.revision: "27"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0586de707bb015e21df5c7975b98be6966cd0262
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: bd79ff07ff5e70c3d2d95482c5676df72dd41612
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="basicstreambuf-class"></a>basic_streambuf クラス
 ストリームの特定の表現との相互間での要素の伝送を制御する、ストリーム バッファーを派生させるための抽象基底クラスについて説明します。  
@@ -231,7 +232,7 @@ class basic_streambuf;
 |-|-|  
 |[operator=](#op_eq)|別の `basic_streambuf` オブジェクトの値をこのオブジェクトに割り当てます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<streambuf>  
   
  **名前空間:** std  
@@ -1221,7 +1222,7 @@ virtual streamsize xsputn(const char_type* ptr, streamsize count);
 ### <a name="remarks"></a>コメント  
  プロテクト仮想メンバー関数は、[sputc](#sputc) を繰り返し呼び出すのと同じように、`ptr` で始まる配列から最大 `count` の要素を出力ストリームに挿入します。 出力ストリームへの文字の挿入は、すべての `count` 文字が書き込まれるか、`sputc( count)` の呼び出しが `traits::eof()` を返すと停止します。 実際に挿入された要素の数を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   
  [iostreams の規則](../standard-library/iostreams-conventions.md)

@@ -1,34 +1,36 @@
 ---
-title: "SafeInt::SafeInt | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SafeInt::SafeInt"
-  - "SafeInt"
-  - "SafeInt.SafeInt"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SafeInt クラス, コンストラクター"
+title: "Safeint::safeint |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- SafeInt::SafeInt
+- SafeInt
+- SafeInt.SafeInt
+dev_langs: C++
+helpviewer_keywords: SafeInt class, constructor
 ms.assetid: 39e6f632-a396-40e6-9ece-cc3d4c5a78ef
-caps.latest.revision: 7
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: a9820227384866cdb1a6470ebd9650187848334c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# SafeInt::SafeInt
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="safeintsafeint"></a>SafeInt::SafeInt
 `SafeInt` オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 SafeInt() throw  
@@ -52,34 +54,34 @@ SafeInt (
 )  
 ```  
   
-#### パラメーター  
- \[入力\] `i`  
- 新しい `SafeInt` オブジェクトの値。  この値は、T 型または U 型 \(コンストラクターに応じて決まります\) のパラメーターである必要があります。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `i`  
+ 新しい値`SafeInt`オブジェクト。 これは、コンス トラクターによって型 T、または U のパラメーターでなければなりません。  
   
- \[入力\] `b`  
- 新しい `SafeInt` オブジェクトのブール値。  
+ [入力] `b`  
+ 新しいブール値`SafeInt`オブジェクト。  
   
- \[入力\] `u`  
- U 型の `SafeInt`。  新しい `SafeInt` オブジェクトの値は `u` の値と同じですが、T 型になります。  
+ [入力] `u`  
+ A`SafeInt`は u 型です。新しい`SafeInt`オブジェクトと同じ値になります`u`T 型になりますが、  
   
  U  
- `SafeInt` に格納されるデータの型。  ブール型、文字型、整数型のいずれかになります。  整数型の場合、signed 型でも unsigned 型でも構わず、サイズは 8 ～ 64 ビットの範囲で選択できます。  
+ 格納されたデータの種類、`SafeInt`です。 ブール値を文字、または整数のいずれかの型を指定できます。 型の場合は、整数、符号付きしたりできる符号なし 8 と 64 ビットの間であるとします。  
   
-## 解説  
- テンプレートの種類である `T` と `E` の詳細については、「[SafeInt クラス](../windows/safeint-class.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ テンプレートの種類の詳細については`T`と`E`を参照してください[SafeInt クラス](../windows/safeint-class.md)です。  
   
- コンストラクターの入力パラメーターである `i` または `u` は、ブール型、文字列型、整数型のいずれかにする必要があります。  それ以外の型のパラメーターを使用した場合、`SafeInt` クラスにより [static\_assert](../cpp/static-assert.md) が呼び出され、入力パラメーターが無効であることが通知されます。  
+ 入力パラメーター、コンス トラクターを`i`または`u`、ブール値を文字、または整数型である必要があります。 パラメーターの別の型の場合は、`SafeInt`クラス[static_assert](../cpp/static-assert.md)を無効な入力パラメーターを示します。  
   
- `U` のテンプレート型を使用するコンストラクターでは、入力パラメーターが `T` によって指定された型に自動的に変換されます。  `SafeInt` クラスによるデータ変換では、データが失われません。  データを `T` 型に変換するときにデータの損失が避けられない場合は、エラー ハンドラー `E` に対して報告されます。  
+ テンプレートの種類を使用するコンス トラクター`U`で指定された型に、入力パラメーターを自動的に変換`T`です。 `SafeInt`クラスは、データを失うことがなくデータを変換します。 エラー ハンドラーに報告`E`、データ型に変換できない場合`T`データ損失なし。  
   
- ブール値パラメーターから `SafeInt` を作成した場合、すぐに値を初期化する必要があります。  `SafeInt<bool> sb;` というコードを使って `SafeInt` を作成することはできません。  このコードを使用した場合、コンパイル エラーが発生します。  
+ 作成する場合、`SafeInt`ブール型のパラメーターの値をすぐに初期化する必要があります。 構築することはできません、`SafeInt`コードを使用して`SafeInt<bool> sb;`です。 これにより、コンパイル エラーが生成されます。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** safeint.h  
   
- **名前空間:** msl::utilities  
+ **Namespace:** msl::utilities  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [SafeInt ライブラリ](../windows/safeint-library.md)   
  [SafeInt クラス](../windows/safeint-class.md)   
  [SafeIntException クラス](../windows/safeintexception-class.md)

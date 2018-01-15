@@ -14,11 +14,14 @@ caps.latest.revision: "5"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a61ed97ffd3caad6d254d3258711a7b45ad3c0dc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 7a9c9572ece0f60971449f2e1b519ec662f9867f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comptrrefoperator-operator"></a>ComPtrRef::operator!= 演算子
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -69,11 +72,11 @@ bool operator!=(
 ## <a name="remarks"></a>コメント  
  2 つの ComPtrRef オブジェクトが等しくないかどうかを示します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Details Namespace](../windows/microsoft-wrl-details-namespace.md)   
  [ComPtrRef クラス](../windows/comptrref-class.md)

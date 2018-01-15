@@ -1,44 +1,47 @@
 ---
-title: "ユニバーサル Windows アプリ (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "ユニバーサル Windows アプリ (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 357121cc-d390-4bae-b34a-39614861a9f4
-caps.latest.revision: 14
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: e9ad7a56663081941f3b3ca18193da55d5df2ab6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ユニバーサル Windows アプリ (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="universal-windows-apps-c"></a>ユニバーサル Windows アプリ (C++)
+ユニバーサル Windows プラットフォーム (UWP) アプリは、一連のさまざまなデバイス上のさまざまな画面サイズに合わせて調整されるコンテンツを中心とした、シンプルなユーザー インターフェイスを強調するデザインの原則を具体化します。 XAML マークアップで UI を作成し、ネイティブ C++ で分離コードを作成します。 さらに他の言語で記述された UWP アプリケーションで使用可能なコンポーネント (DLL) を作成できます。 UWP アプリの API サーフェスは、Windows ランタイムでは、さまざまなオペレーティング システムのサービスを提供するための十分に考慮されたライブラリです。  
 
-ユニバーサル Windows プラットフォーム \(UWP\) アプリは、さまざまなデバイス上のさまざまな画面サイズに合わせて自動的に調整されるコンテンツを中心とした、シンプルなユーザー インターフェイスを強調する、一連のデザイン原則を具体化します。 XAML マークアップで UI を作成し、ネイティブ C\+\+ で分離コードを作成します。 さらに他の言語で記述された UWP アプリケーションで使用可能なコンポーネント \(DLL\) を作成できます。 UWP アプリケーションの API サーフェスは [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] であり、これはさまざまなオペレーティング システム サービスを提供するための十分に考慮されたライブラリです。  
+> [!TIP]  
+> Windows 10 用 Windows ストアを介して展開用の既存のデスクトップ アプリケーションをパッケージ化するのに、デスクトップ アプリを実行するコンバーターを使用できます。 詳しくは、「[Using Visual C++ Runtime in Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)」(Centennial プロジェクトでの Visual C++ ランタイムの使用) および「[Bring your desktop app to the Universal Windows Platform (UWP) with the Desktop Bridge](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)」(Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 対応にする) をご覧ください。
   
-> [!NOTE]
->  C\+\+ の UWP アプリケーションの開発に関するドキュメントの多くは、[Windows デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=255563) の Web サイトにあります。 この記事のリンクの一部は、その Web サイトに移動します。  
   
-## C\+\+\/CX を使用する UWP アプリ  
+## <a name="uwp-apps-that-use-ccx"></a>C++/CX を使用する UWP アプリ  
   
 |||  
 |-|-|  
-|[Visual C\+\+ の言語リファレンス \(C\+\+\/CX\)](http://go.microsoft.com/fwlink/p/?LinkId=255561)|C\+\+ の [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] API の使用を簡単にし、また例外が原因のエラー処理を可能にする、拡張機能のセットについて説明します。|  
-|[アプリケーションとライブラリのビルド \(C\+\+\/CX\)](http://go.microsoft.com/fwlink/p/?LinkId=264858)|C \+\+\/CX アプリケーションまたはコンポーネントからアクセスできるスタティック ライブラリと DLL を作成する方法について説明します。|  
-|[チュートリアル: C\+\+ を使った初めての Windows ストア アプリの作成](http://go.microsoft.com/fwlink/p/?LinkId=255556)|C\+\+ での [!INCLUDE[win8_appname_long](../build/includes/win8_appname_long_md.md)] アプリケーションの開発における基本概念を説明するチュートリアルです。 \(Windows 10 での UWP 開発に関してはまだ更新されていません。\)|  
-|[C\+\+ を使った Windows ストア アプリのためのロードマップ](http://go.microsoft.com/fwlink/p/?LinkId=255553)|C\+\+ での [!INCLUDE[win8_appname_long](../build/includes/win8_appname_long_md.md)] アプリケーションおよびゲームの開発に関する記事へのリンクを提供します。|  
-|[C\+\+ で Windows ランタイム コンポーネントを作成する](http://go.microsoft.com/fwlink/p/?LinkId=255559)|他の [!INCLUDE[win8_appname_long](../build/includes/win8_appname_long_md.md)] アプリケーションおよびコンポーネントが使用できる DLL を作成する方法について説明します。|  
-|[ゲームの開発](http://go.microsoft.com/fwlink/p/?LinkId=255554)|DirectX および C\+\+ を使ってゲームを作成する方法について説明します。|  
+|[Visual C++ の言語リファレンス (C++/CX)](../cppcx/visual-c-language-reference-c-cx.md)|Windows ランタイム Api の C++ の消費量を簡略化し、例外に基づいているエラー処理を有効にする拡張機能のセットについて説明します。|  
+|[アプリケーションとライブラリのビルド (C++/CX)](../cppcx/building-apps-and-libraries-c-cx.md)|C ++/CX アプリケーションまたはコンポーネントからアクセスできるスタティック ライブラリと DLL を作成する方法について説明します。|  
+|[チュートリアル: C++ を使った初めての Windows ストア アプリの作成](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp)|C++ ユニバーサル Windows プラットフォーム アプリの開発の基本的な概念を説明するチュートリアルです。 (Windows 10 での UWP 開発に関してはまだ更新されていません。)|  
+|[C++ で Windows ランタイム コンポーネントを作成する](https://docs.microsoft.com/en-us/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)|その他のユニバーサル Windows プラットフォーム アプリおよびコンポーネントが使用できる Dll を作成する方法について説明します。|  
+|[ゲームの開発](https://docs.microsoft.com/en-us/windows/uwp/gaming/)|DirectX および C++ を使ってゲームを作成する方法について説明します。|  
   
-## [!INCLUDE[win8_appname_long](../build/includes/win8_appname_long_md.md)] \([!INCLUDE[cppwrl](../windows/includes/cppwrl_md.md)]\) を使用する [!INCLUDE[cppwrl_short](../windows/includes/cppwrl_short_md.md)] アプリ  
- [!INCLUDE[cppwrl_short](../windows/includes/cppwrl_short_md.md)] は下位レベルの COM インターフェイスを提供し、これによって ISO C\+\+ コードは例外制御不要の環境で [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] にアクセスできます。 ほとんどの場合、[!INCLUDE[cppwrl_short](../windows/includes/cppwrl_short_md.md)] アプリ開発には、[!INCLUDE[win8_appname_long](../build/includes/win8_appname_long_md.md)] ではなく C\+\+\/CX を使用することをお勧めします。[!INCLUDE[cppwrl_short](../windows/includes/cppwrl_short_md.md)] の詳細については、「[Windows ランタイム C\+\+ テンプレート ライブラリ \(WRL\)](../Topic/Windows%20Runtime%20C++%20Template%20Library%20\(WRL\).md)」を参照してください。  
+## <a name="universal-windows-platform-apps-that-use-the-windows-runtime-c-template-library-wrl"></a>Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用するユニバーサル Windows プラットフォーム アプリ 
+ Windows ランタイム C++ テンプレート ライブラリは、例外を必要としない環境での Windows ランタイムを ISO C のコードからアクセスできる低レベルの COM インターフェイスを提供します。 ほとんどの場合、使用をお勧めする C + + CX ユニバーサル Windows プラットフォーム アプリの開発用 Windows ランタイム C++ テンプレート ライブラリの代わりにします。 Windows ランタイム C++ テンプレート ライブラリの概要については、次を参照してください。 [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)です。  
   
-## 参照  
- [Visual C\+\+](../top/visual-cpp-in-visual-studio-2015.md)
+## <a name="see-also"></a>参照  
+ [Visual C++](../visual-cpp-in-visual-studio.md)
+

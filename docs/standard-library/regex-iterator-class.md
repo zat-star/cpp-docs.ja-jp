@@ -27,11 +27,12 @@ caps.latest.revision: "16"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ef28175227bc35641909af71268a86804218649e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 13744086b9e25c5f3be880885fae624822fd5f73
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="regexiterator-class"></a>regex_iterator クラス
 一致の反復子クラス。  
@@ -73,7 +74,7 @@ private:
   
 ### <a name="parameters"></a>パラメーター  
  `BidIt`  
- サブマッチ用の反復子の型。  
+ サブマッチの反復子の型。  
   
  `Elem`  
  一致させる要素の型。  
@@ -84,7 +85,7 @@ private:
 ## <a name="remarks"></a>コメント  
  このテンプレート クラスは、定数前方反復子オブジェクトを表します。 反復子範囲 `match_results<BidIt>` で定義された文字シーケンスに正規表現オブジェクト `*pregex` を繰り返し適用することによって、 `[begin, end)`型のオブジェクトを抽出します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  正規表現の例については、以下の例をご覧ください。  
   
 - [regex_match](../standard-library/regex-functions.md#regex_match)  
@@ -95,7 +96,7 @@ private:
   
 - [swap](../standard-library/regex-functions.md#swap)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<regex>  
   
  **名前空間:** std  
@@ -769,7 +770,7 @@ match == a
 match == a  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<regex>](../standard-library/regex.md)  
 [regex_constants クラス](../standard-library/regex-constants-class.md)  
 [regex_error クラス](../standard-library/regex-error-class.md)  

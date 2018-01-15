@@ -1,104 +1,104 @@
 ---
-title: "Generic Functions (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "functions [C++], generic"
-  - "generic methods"
-  - "generics [C++], functions"
-  - "methods [C++], generic"
-  - "generic functions"
+title: "ジェネリック関数 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords:
+- functions [C++], generic
+- generic methods
+- generics [C++], functions
+- methods [C++], generic
+- generic functions
 ms.assetid: 8e409364-58f9-4360-b486-e7d555e0c218
-caps.latest.revision: 21
-caps.handback.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "21"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 9ebafa409680609d6e097b803be2b539ccdc7601
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Generic Functions (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ジェネリック関数は型パラメーターとして宣言した関数です。  呼び出されたときに、実際の型パラメーターの代わりに使用されます。  
+# <a name="generic-functions-ccli"></a>ジェネリック関数 (C++/CLI)
+ジェネリック関数は、型パラメーターで宣言された関数です。 呼び出されると、実際の型が型パラメーターの代わりに使用されます。  
   
-## すべてのプラットフォーム  
+## <a name="all-platforms"></a>すべてのプラットフォーム  
  **解説**  
   
  この機能は、すべてのプラットフォームには適用されません。  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
+## <a name="windows-runtime"></a>Windows ランタイム  
  **解説**  
   
- この機能は [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]ではサポートされていません。  
+ この機能は、Windows ランタイムでサポートされていません。  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
- ジェネリック関数は型パラメーターとして宣言した関数です。  呼び出されたときに、実際の型パラメーターの代わりに使用されます。  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
+ ジェネリック関数は、型パラメーターで宣言された関数です。 呼び出されると、実際の型が型パラメーターの代わりに使用されます。  
   
  **構文**  
   
 ```  
 [attributes] [modifiers]  
-return-type identifier <type-parameter identifier(s)>  
+return-type identifier<type-parameter identifier(s)>  
 [type-parameter-constraints clauses]  
   
 ([formal-parameters])  
-{  
-   function-body  
-}  
+{function-body}  
 ```  
   
  **パラメーター**  
   
- *attributes* \(省略可能\)  
- 追加の宣言情報。  属性と属性クラスの詳細については、属性を参照します。  
+ *属性*(省略可能)  
+ 追加の宣言情報。 属性と属性クラスの詳細については、属性を参照してください。  
   
- *modifiers* \(省略可能な\)  
- atic stなどの関数の修飾子。`virtual` は仮想メソッドはジェネリックではない場合があるため、使用できません。  
+ *修飾子*(省略可能)  
+ 静的など、関数の修飾子です。  `virtual`仮想メソッドをジェネリックにすることはできないためには許可されません。  
   
- *return\-type*  
- メソッドによって返される型。  戻り値の型が void の場合、戻り値は必要ではありません。  
+ *戻り値の型*  
+ メソッドによって返される型。 戻り値の型が void の場合は、戻り値は必要ありません。  
   
  *identifier*  
  関数名。  
   
- *type\-parameter identifier\(s\)*  
- コンマで区切られた ID のリスト。  
+ *型パラメーターの識別子*  
+ 識別子のコンマ区切りの一覧です。  
   
- *formal\-parameters* \(省略可能\)  
- パラメーター リストを指定します。  
+ *正式なパラメーター* (省略可能)  
+ パラメーターの一覧です。  
   
- *type\-parameter\-constraints\-clauses*  
- これは、型引数として使用できる指定し [Constraints on Generic Type Parameters \(C\+\+\/CLI\)](../Topic/Constraints%20on%20Generic%20Type%20Parameters%20\(C++-CLI\).md)で指定された形式になります。型に制限を適用します。  
+ *型パラメーターの制約句*  
+ これは、型引数として使用できる型で制限を指定しの形式で指定された[ジェネリック型パラメーターの制約 (C + + CLI)](../windows/constraints-on-generic-type-parameters-cpp-cli.md)です。  
   
- *function\-body*  
- 型パラメーターの ID を示す、メソッドの本体。  
+ *関数本体*  
+ 型パラメーターの識別子を参照する、メソッドの本体。  
   
  **解説**  
   
- ジェネリック関数はジェネリック型パラメーターとして宣言した関数です。  そのクラスまたは構造体のメソッド、またはスタンドアロン関数である可能性があります。  暗黙的な単一のジェネリック宣言はジェネリック型パラメーターの実際の型の代替だけで異なるファミリの関数を宣言します。  
+ ジェネリック関数は、ジェネリック型パラメーターで宣言された関数です。 クラスまたは構造体、またはスタンドアロン関数内のメソッドがあります。 1 つのジェネリック宣言は、のみが異なるさまざまな実際の型のジェネリック型パラメーターの代替関数のファミリを暗黙的に宣言します。  
   
- [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)]で、クラスまたは構造体コンストラクターはジェネリック型パラメーターで宣言されていない可能性があります。  
+ Visual c では、ジェネリック型パラメーターを持つ、クラスまたは構造体のコンス トラクターを宣言されていません可能性があります。  
   
- このメソッドを呼び出すと、ジェネリック型パラメーターは実際の型に置き換えられます。  実際の型はテンプレート関数の呼び出しに似た構文を使用してかぎカッコに明示的に指定される場合があります。  型パラメーターなしであった場合、関数呼び出しに指定されたパラメーターの実際の型を推論しようとします。  目的の型の引数を使用したパラメーターから推測できない場合は、コンパイラがエラーを報告します。  
+ 呼び出されると、そのジェネリック型パラメーターと、実際の型が置き換えられます。 山かっことテンプレート関数の呼び出しに似た構文を使用するのには、実際の型を明示的に指定する可能性があります。 型パラメーターを指定しないで呼び出されると、コンパイラは関数呼び出しで指定されたパラメーターから実際の型を推測しようとします。 目的の型引数は、使用されるパラメーターから推測できない、コンパイラでエラーが報告されます。  
   
-### 要件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-### 例  
+### <a name="examples"></a>使用例  
  **例**  
   
- 次のコード サンプルはジェネリック関数を示します。  
+ 次のコード サンプルでは、ジェネリック関数を示します。  
   
 ```  
 // generics_generic_function_1.cpp  
@@ -133,7 +133,7 @@ int main() {
   
  **例**  
   
- ジェネリック関数はシグネチャまたはアリティ関数の型パラメーターの数に基づいてオーバーロードすることができます。  また、ジェネリック関数は同じ名前の非ジェネリック関数と関数がある型パラメーターで異なる限りオーバーロードすることができます。  たとえば、次の関数はオーバーロードすることがあります:  
+ ジェネリック関数は、署名またはアリティ、関数の型パラメーターの数に基づいてオーバー ロードすることができます。 また、ジェネリック関数はオーバー ロードできます、同じ名前の非ジェネリック関数と共にときは、型パラメーターの中に、関数がそれぞれ異なります。 たとえば、次の関数をオーバー ロードすることができます。  
   
 ```  
 // generics_generic_function_2.cpp  
@@ -151,7 +151,7 @@ ref struct MyClass {
   
  **例**  
   
- 次の例では、配列の最初の要素を検索するためにジェネリック関数を使用します。  基本クラス `MyBaseClass`から継承する場合は `MyClass`を宣言します。  `MyClass` は 別のジェネリック関数を呼び出すジェネリック関数、`MyFunction`の、基本クラス内の `MyBaseClassFunction`も含まれます。  **main**で、ジェネリック関数、`MyFunction`に異なる型の引数を使用して呼び出します。  
+ 次の例では、ジェネリック関数を使用して、配列内の最初の要素を検索します。 宣言して`MyClass`、基本クラスから継承される`MyBaseClass`です。 `MyClass`ジェネリック関数を含む`MyFunction`、別のジェネリック関数を呼び出している`MyBaseClassFunction`、基底クラス内で。 **メイン**、ジェネリック関数`MyFunction`、異なる型引数を使用して呼び出されました。  
   
 ```  
 // generics_generic_function_3.cpp  
@@ -189,8 +189,11 @@ int main() {
   
  **出力**  
   
-  **次の関数は、int を返しました: 2003 年**  
- **次の関数は、文字列が返されました: Hello ジェネリック関数\!**   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)   
- [Generics](../windows/generics-cpp-component-extensions.md)
+```Output  
+My function returned an int: 2003  
+My function returned a string: Hello generic functions!  
+```  
+  
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)   
+ [ジェネリック](../windows/generics-cpp-component-extensions.md)

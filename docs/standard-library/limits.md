@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: eace3f5dd5d0693f5cb42b32e4d2c8c52a5eddfe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 0e1745dcab769f5a5c81e089b4fba212ab4d6da0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltlimitsgt"></a>&lt;limits&gt;
 テンプレート クラス `numeric_limits`、および浮動小数点表現と丸め処理に関する 2 種類の列挙体を定義します。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  `numeric_limits` クラスの明示的な特殊化では、文字、整数、浮動小数点型などの基本的な型の多数のプロパティと、C++ 言語の規則で固定されていない、定義された実装である `bool` について記述します。 \<limits> に記述されたプロパティには、精度、表現の最小と最大サイズ、丸め処理、およびシグナリングに関するエラーが含まれます。  
   
-### <a name="enumerations"></a>列挙体  
+### <a name="enumerations"></a>列挙  
   
 |||  
 |-|-|  
@@ -49,7 +50,7 @@ ms.lasthandoff: 10/24/2017
 |-|-|  
 |[numeric_limits クラス](../standard-library/numeric-limits-class.md)|このテンプレート クラスでは、組み込みの数値型の算術プロパティについて記述します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

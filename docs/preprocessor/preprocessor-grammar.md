@@ -17,16 +17,17 @@ caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3c64c5a1855d80d5abc60d959bd68b33a380583b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 797d4bf4274a92ca4f265d01579698c0f9c6a4a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="preprocessor-grammar"></a>プリプロセッサの文法
-**#define***識別子**トークン文字列*オプトイン    
+**#define***識別子**トークン文字列*オプトイン  
   
- *#***定義***識別子*[**(** *識別子*opt**、** *.* **、** *識別子*opt **)**]*トークン文字列*オプトイン    
+ *#***定義***識別子*[**(** *識別子*opt**、** *.* **、** *識別子*opt **)**]*トークン文字列*オプトイン  
   
  **定義 (***識別子* **)**   
   
@@ -36,7 +37,7 @@ ms.lasthandoff: 10/24/2017
   
  `#include` **\<** *パス仕様***>**  
   
- **#line***桁シーケンス***"** *filename* **"**オプトイン      
+ **#line***桁シーケンス***"** *filename* **"**オプトイン  
   
  *#***undef***識別子*   
   
@@ -108,5 +109,5 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  次の非終端はでは展開、[構文規則](../cpp/lexical-conventions.md)のセクションで、 *C++ 言語リファレンス*: `constant`、 `constant` -*式*、*識別子*、*キーワード*、 `operator`、および`punctuator`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文法の概要 (C/C++)](../preprocessor/grammar-summary-c-cpp.md)

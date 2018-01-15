@@ -1,72 +1,71 @@
 ---
-title: "Visual C++ における MBCS のサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_mbcs"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アジアの言語 [C++]"
-  - "文字セット [C++], マルチバイト"
-  - "中国語の文字 [C++]"
-  - "コード エディター [C++], MBCS サポート"
-  - "デバッガー [C++], MBCS サポート"
-  - "2 バイト文字セット [C++]"
-  - "IME [C++]"
-  - "IME [C++], MBCS"
-  - "Input Method Editor [C++]"
-  - "Input Method Editor [C++], MBCS"
-  - "日本語の文字 [C++]"
-  - "漢字のサポート [C++]"
-  - "MBCS [C++], 有効化"
-  - "マルチバイト文字 [C++]"
-  - "NMAKE プログラム, MBCS サポート"
-  - "リソース エディター [C++], MBCS サポート"
-  - "ツール [C++], MBCS サポート"
+title: "Visual C における MBCS のサポート |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: _mbcs
+dev_langs: C++
+helpviewer_keywords:
+- tools [C++], MBCS support
+- Asian languages [C++]
+- Code Editor [C++], MBCS support
+- IME [C++]
+- Chinese characters [C++]
+- Input Method Editor [C++], MBCS
+- resource editors [C++], MBCS support
+- debugger [C++], MBCS support
+- character sets [C++], multibyte
+- Japanese characters [C++]
+- multibyte characters [C++]
+- Kanji character support [C++]
+- NMAKE program, MBCS support
+- double-byte character sets [C++]
+- IME [C++], MBCS
+- Input Method Editor [C++]
+- MBCS [C++], enabling
 ms.assetid: 6179f6b7-bc61-4a48-9267-fb7951223e38
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: bdc00509d8660d8111ff1b966b7a881a153cb6c3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Visual C++ における MBCS のサポート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-MBCS をサポートしている Windows 2000 オペレーティング システムまたは Windows XP オペレーティング システム上で Visual C\+\+ 開発システムを実行すると、メモリ ウィンドウを除いて、システム内の統合ソース コード エディター、デバッガー、コマンド ライン ツールなどのすべてが MBCS をサポートします。  
+# <a name="mbcs-support-in-visual-c"></a>Visual C++ における MBCS のサポート
+実行すると、mbcs バージョンの Windows 2000 または Windows XP オペレーティング システムで、Visual C 開発システムを (統合ソース コード エディター、デバッガー、およびコマンド ライン ツールを含む) が mbcs、[メモリ] ウィンドウを除く。  
   
- メモリ ウィンドウは、MBCS 文字として ANSI 文字または Unicode 文字として解釈できる場合でも、データのバイトを解釈されません。  ANSI 文字のサイズは常に 1 バイトで、Unicode 文字は 2 バイトです。  MBCS を使うと、文字が 1 である場合も、コード ページによって使用されているまたは 2 バイトと解釈が異なります。  このため、メモリ ウィンドウが確実に MBCS の文字を表示することは困難です。  メモリ ウィンドウは、文字の開始はどのバイトを特定することはできません。  開発者は、メモリ ウィンドウのバイト値を参照し、その値をテーブルで検索して文字表現を判断できます。  これは、開発者がソース コードに基づいて文字列の開始アドレスを理解しているためです。  
+ [メモリ] ウィンドウに ANSI または Unicode 文字として解釈できる場合でも、データのバイト数を MBCS 文字として解釈されません。 ANSI 文字は 1 バイトのサイズと、Unicode 文字は、サイズが 2 バイト。 Mbcs の場合、1 つまたは 2 バイトの列に使用できる文字とその解釈が使用されているコード ページに依存します。 このため、[メモリ] ウィンドウを確実に MBCS 文字を表示するは困難です。 [メモリ] ウィンドウでは、どのバイトが文字の開始を知ることはできません。 開発者では、[メモリ] ウィンドウで、バイト値を表示でき、文字表現を判断するテーブルで値を検索することができます。 これには、開発者は、ソース コードに基づく文字列の開始アドレスを認識しているためです。  
   
- Visual C\+\+ では、該当する部分で 2 バイト文字を入力できます。  つまり、ダイアログ ボックスではパス名およびファイル名に、Visual C\+\+ リソース エディターではテキスト入力に、2 バイト文字を使用できます。たとえば、ダイアログ エディターでは静的テキストとして、アイコン エディターでは静的テキストとして入力できます。  また、プリプロセッサも一部の 2 バイト ディレクティブを認識するようになります。たとえば、`#include` ステートメントのファイル名、**code\_seg** プラグマおよび **data\_seg** プラグマの as 引数などを認識します。  ソース コード エディターでは、コメントおよびリテラル文字列に 2 バイト文字を使用できますが、C\/C\+\+ 言語の要素 \(変数名など\) には使用できません。  
+ Visual C は、これを行うには適切である限り、2 バイト文字を受け入れます。 ダイアログ ボックスと、Visual C リソース エディター (たとえば、ダイアログ エディターで静的なテキスト) とアイコン エディターでの静的なテキスト エントリ内のエントリのテキストのパス名とファイル名が含まれます。 プリプロセッサはさらに、一部の 2 バイト ディレクティブを認識する — たとえば、ファイル名`#include`ステートメント、およびへの引数として、 **code_seg**と**data_seg**プラグマ。 ソース コード エディターでコメントや文字列リテラル内の 2 バイト文字が受け入れられたら、C と C++ 言語要素 (変数名など) にします。  
   
-##  <a name="_core_support_for_the_input_method_editor_.28.ime.29"></a> IME \(Input Method Editor\) のサポート  
- MBCS を使用する日本などの東アジア市場向けに記述されたアプリケーションでは、通常、Windows IME をサポートして、1 バイト文字と 2 バイト文字の両方を入力できるようにしています。  Visual C\+\+ の開発環境では、IME を全面的にサポートしています。  詳細については、「[IME サンプル : IME モードの制御方法と IME レベル 3 の実装方法](http://msdn.microsoft.com/ja-jp/87ebdf65-cef0-451d-a6fc-d5fb64178b14)」を参照してください。  
+##  <a name="_core_support_for_the_input_method_editor_.28.ime.29"></a>サポート用の入力方式エディター (IME)  
+ MBCS (たとえば、日本語) を使用して通常東アジアの市場向け両方の 1 つと 2 バイト文字を入力するための Windows IME のサポート用に記述されたアプリケーション。 Visual C 開発環境には、IME の完全なサポートが含まれています。 詳細については、次を参照してください。 [IME サンプル: コントロールの IME モードと IME レベル 3 の実装方法を示します](http://msdn.microsoft.com/en-us/87ebdf65-cef0-451d-a6fc-d5fb64178b14)です。  
   
- 日本語のキーボードは、漢字を直接サポートしていません。  日本語のアルファベット \(ローマ字、カタカナ、またはひらがな\) のいずれかで入力された音節文字列は、IME によって該当する漢字表記に変換されます。  あいまいなときは、いくつかの選択肢から選択できます。  目的の漢字を選択すると、IME は 2 つの `WM_CHAR` メッセージを制御アプリケーションに渡します。  
+ 日本語キーボードの漢字が直接サポートしていません。 IME では、その漢字表記、日本語のアルファベット (ローマ字やカタカナをひらがな) のいずれかで入力した、ルビの文字列に変換します。 あいまいさがある場合は、いくつかの選択肢からを選択することができます。 目的の漢字を選択すると、2 つを渡します IME`WM_CHAR`メッセージを制御するアプリケーション。  
   
- IME は Alt \+ \` キーでアクティブにします。アクティブになると、一連のボタン \(インジケーター\) と変換ウィンドウが表示されます。  アプリケーションでは、このウィンドウをテキスト挿入位置に移動します。  つまり、`WM_MOVE` メッセージと `WM_SIZE` メッセージの処理として、変換ウィンドウを新しい位置に再配置するか、ターゲット ウィンドウのサイズに合わせる必要があります。  
+ ALT + によってアクティブ化、IME\`キーの組み合わせ、一連のボタン (インジケーター) および変換ウィンドウとして表示されます。 アプリケーションでは、テキスト挿入ポイントでウィンドウを配置します。 アプリケーションで処理する必要があります`WM_MOVE`と`WM_SIZE`conversion ウィンドウの位置を変更して、新しい場所またはターゲット ウィンドウのサイズに準拠するメッセージ。  
   
- アプリケーションのユーザーが漢字入力できるようにするには、アプリケーションで Windows IME メッセージを処理する必要があります。  IME プログラミングの詳細については、「[Input Method Editor](https://msdn.microsoft.com/en-us/library/ms776145.aspx)」を参照してください。  
+ 漢字の文字を入力できるように、アプリケーションのユーザーにする場合は、アプリケーションは Windows IME メッセージを処理する必要があります。 IME プログラミングの詳細については、次を参照してください。[入力方式エディター](https://msdn.microsoft.com/en-us/library/ms776145.aspx)です。  
   
-## Visual C\+\+ デバッガー  
- Visual C\+\+ デバッガーでは、IME メッセージにブレークポイントを設定できます。  メモリ ウィンドウに 2 バイト文字を表示させることもできます。  
+## <a name="visual-c-debugger"></a>Visual C デバッガー  
+ Visual C デバッガーには、IME メッセージにブレークポイントを設定する機能が用意されています。 さらに、[メモリ] ウィンドウでは、2 バイト文字を表示できます。  
   
-## コマンド ライン ツール  
- Visual C\+\+ のコマンド ライン ツールには、コンパイラ、NMAKE、リソース コンパイラ \(RC.EXE\) などがありますが、すべて MBCS をサポートしています。  アプリケーションのリソースをコンパイルするときにリソース コンパイラの \/c オプションを使うと、既定のコード ページを変更できます。  
+## <a name="command-line-tools"></a>コマンド ライン ツール  
+ コンパイラ、(nmake の)、リソース コンパイラ (RC など、Visual C のコマンド ライン ツール。EXE)、MBCS が有効にします。 リソース コンパイラの/c オプションを使用すると、アプリケーションのリソースをコンパイルするときに、既定のコード ページを変更します。  
   
- ソース コードのコンパイル時に既定のロケールを変更するには、[\#pragma setlocale](../preprocessor/setlocale.md) を使います。  
+ ソース コードのコンパイル時に既定のロケールを変更するには、使用[#pragma setlocale、_wsetlocale](../preprocessor/setlocale.md)です。  
   
-## グラフィカル ツール  
- Spy\+\+ やリソース編集ツールなどの Visual C\+\+ Windows ベースのツールは、IME 文字列を全面的にサポートしています。  
+## <a name="graphical-tools"></a>グラフィカルなツール  
+ Visual C の Windows ベースのツール、spy++ と編集ツール、リソースなどは、IME の文字列を完全にサポートします。  
   
-## 参照  
- [マルチバイト文字セット \(MBCS\) のサポート](../text/support-for-multibyte-character-sets-mbcss.md)   
- [MBCS のプログラミングについて](../Topic/MBCS%20Programming%20Tips.md)
+## <a name="see-also"></a>参照  
+ [マルチバイト文字セット (Mbcs) のサポート](../text/support-for-multibyte-character-sets-mbcss.md)   
+ [MBCS のプログラミングについて](../text/mbcs-programming-tips.md)

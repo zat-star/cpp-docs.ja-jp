@@ -23,11 +23,12 @@ caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7b5fa9a3636b9aa83344b6ae433afefd2c959d31
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ef5ba7c445325131ad620efcbb6061a0fa49039a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="istreamiterator-class"></a>istream_iterator クラス
 入力反復子オブジェクトを表します。 このクラスは、入力ストリームから `Type` クラスのオブジェクトを抽出します。これには、格納している `basic_istream`< `CharType`, `Traits`> への `pointer` 型のオブジェクトを介してアクセスします。  
@@ -80,7 +81,7 @@ class istream_iterator
 |[operator->](#operator-_gt)|メンバーの値 (存在する場合) を返します。|  
 |[operator++](#op_add_add)|入力ストリームからインクリメントされたオブジェクトを抽出するか、オブジェクトをインクリメントする前にオブジェクトをコピーして、そのコピーを返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iterator>  
   
  **名前空間:** std  
@@ -374,7 +375,7 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [input_iterator_tag 構造体](../standard-library/input-iterator-tag-struct.md)   
  [iterator 構造体](../standard-library/iterator-struct.md)   
  [\<iterator>](../standard-library/iterator.md)   

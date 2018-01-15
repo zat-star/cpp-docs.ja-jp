@@ -19,11 +19,14 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 46c75b942209ed56d13fc9dcedf4f1e5bf2d2bc2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 835c6e8824c29b46fa32bf219518c6d1dc64fa39
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="inverting-the-colors-in-a-selection-image-editor-for-icons"></a>選択領域の色の反転 (アイコン用イメージ エディター)
 イメージ エディターを使用すると、イメージの選択部分の色を簡単に反転できます。これにより、反転色を使用したイメージの外観を確認できます。  
@@ -34,10 +37,10 @@ ms.lasthandoff: 10/24/2017
   
 
   
- 要件  
+ 必要条件  
   
  なし  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセラレータ キー](../windows/accelerator-keys-image-editor-for-icons.md)   
  [カラーを使用します。](../windows/working-with-color-image-editor-for-icons.md)

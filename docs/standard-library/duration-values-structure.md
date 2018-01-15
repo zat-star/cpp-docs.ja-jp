@@ -18,11 +18,12 @@ caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 52c88e0b536eba6265e2f968adef8096ea4ab17e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a0f06646975d694ab76477a64642c03c20769c54
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="durationvalues-structure"></a>duration_values 構造体
 [duration](../standard-library/duration-class.md) テンプレート パラメーター `Rep` に対して特定の値を提供します。  
@@ -44,7 +45,7 @@ struct duration_values;
 |[分](#min)|静的。 `Rep` 型の値の下限を指定します。|  
 |[0](#zero)|静的。 `Rep(0)` を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<chrono >  
   
  **名前空間:** std::chrono  
@@ -85,7 +86,7 @@ static constexpr Rep zero();
 ### <a name="remarks"></a>コメント  
  `Rep` がユーザー定義型の場合、戻り値は追加の無限を示す必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<chrono>](../standard-library/chrono.md)
 

@@ -85,11 +85,12 @@ caps.latest.revision: "35"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 031a26d0b7b461c64bd111d26811ccf4031694c5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 04dcf7628e45d4c43ffbd5bbcd85132092ca04a6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfccolorbar-class"></a>CMFCColorBar クラス
 `CMFCColorBar`クラスは、ドキュメントやアプリケーションで色を選択できるドッキング コントロール バーを表します。  
@@ -153,7 +154,7 @@ class CMFCColorBar : public CMFCPopupMenuBar
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |`m_bInternal`|マウス イベントを処理するかどうかを決定するブール値フィールド。 マウス イベントが処理されるときに、このフィールドは、通常、 `TRUE` 、カスタマイズ モードが`FALSE`です。|  
 |`m_bIsEnabled`|コントロールが有効になっているかどうかを示すブール値。|  
@@ -233,7 +234,7 @@ class CMFCColorBar : public CMFCPopupMenuBar
   
  [CMFCColorBar](../../mfc/reference/cmfccolorbar-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcolorbar.h  
   
 ##  <a name="adjustlocations"></a>CMFCColorBar::AdjustLocations  
@@ -864,6 +865,6 @@ virtual void ShowCommandMessageString(UINT uiCmdId);
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、`WM_SETMESSAGESTRING`メッセージ カラー バー コントロールの所有者にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)

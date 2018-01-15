@@ -1,32 +1,33 @@
 ---
-title: "defaultvtable | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.defaultvtable"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "defaultvtable attribute"
+title: "defaultvtable |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.defaultvtable
+dev_langs: C++
+helpviewer_keywords: defaultvtable attribute
 ms.assetid: 5b3ed483-f69e-44dd-80fc-952028eb9d73
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 90c3fb3d72d71f4d61aebcef657b71bfaff87efd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# defaultvtable
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-COM オブジェクトの既定の vtable インターフェイスとインターフェイスを定義します。  
+# <a name="defaultvtable"></a>defaultvtable
+COM オブジェクトの既定の vtable インターフェイスとしてインターフェイスを定義します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,15 +36,15 @@ COM オブジェクトの既定の vtable インターフェイスとインタ�
 ) ]  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `interface`  
- COM オブジェクトの vtable に既定値を指定するインターフェイス。  
+ COM オブジェクトの既定の vtable する指定されたインターフェイスです。  
   
-## 解説  
- **defaultvtable** C\+\+ 属性に [defaultvtable](http://msdn.microsoft.com/library/windows/desktop/aa366795) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **Defaultvtable** C++ 属性と同じ機能を持つ、 [defaultvtable](http://msdn.microsoft.com/library/windows/desktop/aa366795) MIDL 属性。  
   
-## 使用例  
- 次のコードは既定のインターフェイスを指定するために **defaultvtable** を使用するクラスの属性を示します :  
+## <a name="example"></a>例  
+ 次のコードが使用されるクラスに属性を示します**defaultvtable**を既定のインターフェイスを指定します。  
   
 ```  
 // cpp_attr_ref_defaultvtable.cpp  
@@ -71,20 +72,19 @@ uuid("00000000-0000-0000-0000-000000000004")]
 class CMyC3 : public IMyI3 {};  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  `struct`|  
-|**複数回の適用**|Ｘ|  
-|**必要な属性**|**コクラス**|  
+|**対象**|**class**、 `struct`|  
+|**反復可能**|×|  
+|**必要な属性**|**coclass**|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   

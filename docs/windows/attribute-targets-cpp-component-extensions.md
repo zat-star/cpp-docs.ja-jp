@@ -1,35 +1,36 @@
 ---
-title: "属性の対象 (C++ コンポーネント拡張) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ターゲットのカスタム属性"
+title: "属性の対象 (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords: custom attributes, targets
 ms.assetid: b4e6e224-da77-4520-b6e6-b96846e0ebc1
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: bdf54706673a3679582b93448f420d4a63680dee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 属性の対象 (C++ コンポーネント拡張)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-属性の使用量指定子を使用して、属性の対象を指定できます。  各属性を定義して、特定の言語要素に適用されます。 たとえば、クラスと構造体にのみ適用する属性を定義できます。  カスタム属性を使用できます、可能性のある構文要素を次に示します。 これらの値の組み合わせ (論理を使用して、または) 使用することがあります。  
+# <a name="attribute-targets-c-component-extensions"></a>属性の対象 (C++ コンポーネント拡張)
+属性の使用量指定子では、属性の対象を指定できます。  各属性を定義して、特定の言語要素に適用されます。 たとえば、クラスと構造体にのみ適用する属性を定義する場合があります。  カスタム属性を使用できます可能性のある構文要素を次に示します。 これらの値の組み合わせ (論理を使用してまたは) 使用することがあります。  
   
- 1 つまたは複数を渡すための属性のターゲットを指定する <xref:System.AttributeTargets> 列挙子を <xref:System.AttributeUsageAttribute> 属性を定義するときにします。  
+ 渡す 1 つまたは複数の属性のターゲットを指定する<xref:System.AttributeTargets>列挙子を<xref:System.AttributeUsageAttribute>属性を定義するときにします。  
   
- 有効な属性のターゲットの一覧を次に示します。  
+ 有効な属性ターゲットの一覧を次に示します。  
   
--   `All` (すべての構成要素に適用されます)  
+-   `All`(すべての構成要素に適用されます)  
   
     ```  
   
@@ -41,7 +42,7 @@ manager: "ghogen"
   
     ```  
   
--   `Assembly` (全体としてのアセンブリに適用されます)  
+-   `Assembly`(アセンブリ全体に適用されます)  
   
     ```  
   
@@ -53,7 +54,7 @@ manager: "ghogen"
   
     ```  
   
--   `Module` (全体としては、モジュールに適用)  
+-   `Module`(全体をモジュールに適用されます)  
   
     ```  
   
@@ -232,13 +233,13 @@ manager: "ghogen"
   
     ```  
   
- 通常、属性の直前に適用される言語要素です。 場合によっては、ただし、属性の位置が属性の対象を判断します。 次の例について考えます。  
+ 通常、属性の直前に、適用される言語要素です。 場合によっては、ただし、属性の位置はない属性の対象を決定するのに十分です。 次の例について考えます。  
   
 ```  
 [Attr] int MyFn(double x)...  
 ```  
   
- 構文上は、属性の目的は、メソッドまたはメソッドの戻り値に適用するかどうかに指示する方法はありません (この場合、既定値は、メソッド)。 このような場合、属性の使用量指定子を使用できます。 たとえば、戻り値を適用する属性をするためには、使用して、 `returnvalue` 指定子が次のようにします。  
+ 構文上は、属性がメソッドの戻り値またはメソッドに適用しようとしているかどうかを確認する方法はありません (この場合、既定値は、メソッド)。 このような場合、属性の使用量指定子を使用できます。 たとえば、属性の戻り値に適用するために、使用、`returnvalue`次のように、指定子。  
   
 ```  
 [returnvalue:Attr] int MyFn(double x)... // applies to return value  
@@ -246,7 +247,7 @@ manager: "ghogen"
   
  次の状況では、属性の使用量指定子が必要です。  
   
--   アセンブリまたはモジュール レベル属性を指定します。  
+-   アセンブリまたはモジュール レベルの属性を指定します。  
   
 -   属性がメソッドではなく、メソッドの戻り値に適用されることを指定します。  
   
@@ -275,13 +276,13 @@ manager: "ghogen"
     }  
     ```  
   
- 直後の属性にのみ適用される属性の使用量指定子それです  
+ 属性の使用量指定子は、その直後にある属性にのみ適用されます。それです  
   
 ```  
 [returnvalue:Attr1, Attr2]  
 ```  
   
- 異なります  
+ 異なる  
   
 ```  
 [returnvalue:Attr1, returnvalue:Attr2]  
@@ -311,5 +312,5 @@ ref class MyClass {};
 value struct MyStruct {};  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ユーザー定義の属性](../windows/user-defined-attributes-cpp-component-extensions.md)

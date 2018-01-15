@@ -15,11 +15,14 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: efa29bc2be74ae2388082b5c25e47dc6c90ae4d3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 8a135edefcfa0e62f1e5619a954eca5c3ed02463
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="criticalsectioncs-data-member"></a>CriticalSection::cs_ データ メンバー
 クリティカル セクションのデータ メンバーを宣言します。  
@@ -33,10 +36,10 @@ CRITICAL_SECTION cs_;
 ## <a name="remarks"></a>コメント  
  このデータ メンバーは保護されています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CriticalSection クラス](../windows/criticalsection-class.md)

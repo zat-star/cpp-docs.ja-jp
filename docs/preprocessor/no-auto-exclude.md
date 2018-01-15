@@ -15,11 +15,12 @@ caps.latest.revision: "5"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2b30760ba2021b13f84a0a56bde5ac41232fb443
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 981b67a27533f5015435965e831f7d2a86aa9948
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="noautoexclude"></a>no_auto_exclude
 **C 固有の仕様**  
@@ -37,6 +38,6 @@ no_auto_exclude
   
  **END C 固有の仕様**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
  [#import ディレクティブ](../preprocessor/hash-import-directive-cpp.md)

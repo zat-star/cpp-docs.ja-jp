@@ -1,7 +1,7 @@
 ---
 title: "MFC MBCS DLL アドオン |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 08/20/2017
+ms.date: 1/04/2018
 ms.reviewer: 
 ms.suite: 
 ms.technology: cpp-windows
@@ -11,28 +11,27 @@ dev_langs: C++
 helpviewer_keywords:
 - MBCS
 - MFC
-ms.assetid: bebec0ff-e019-42ca-b5df-8c218ac5b54a
-caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 176ed47b4d6a799cf53d2a1cea8cb232f1c2c4aa
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d6f134110ff95956cc37d6e038a680ff27cbc298
+ms.sourcegitcommit: 56f6fce7d80e4f61d45752f4c8512e4ef0453e58
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="mfc-mbcs-dll-add-on"></a>MFC MBCS DLL アドオン
- **［文字セット］** プロパティを **［マルチ バイト文字セットを使用する］** または **［設定なし］**に設定している、Visual Studio 2015 の MFC プロジェクトをビルドするには、マルチバイト DLL が必要になります。  
 
-**Visual Studio 2013**: で DLL をダウンロード[for Visual Studio 2013 のマルチバイト MFC ライブラリ](https://www.microsoft.com/en-us/download/details.aspx?id=40770)です。
+MFC のサポートとそのマルチバイト文字セット (MBCS) ライブラリは、2015、および 2017、Visual Studio 2013 での Visual Studio のインストール中に、追加の手順が必要です。
 
-**Visual Studio 2015**: DLL が Visual C セットアップ コンポーネントに含まれています。 Visual C++ と MFC は、Visual Studio セットアップではオプションのインストール構成です。 MFC が確実にインストールされるようにするには、セットアップで **［カスタム］** を選択して、 **［プログラミング言語］**で **［Visual C++］** と **［Microsoft Foundation Classes for C++］** が選択されていることを確認します。 既に Visual Studio がインストールされている場合は、MFC プロジェクトを作成しようとしたときに、Visual C++ や MFC のインストールを促すプロンプトが表示されます。  
-  
-**Visual Studio 2017**: に DLL がインストールされている、 **C++ を使用したデスクトップ開発**ワークロードを選択すると**MFC および ATL サポート**から、 **のオプションのコンポーネント**ウィンドウです。
+**Visual Studio 2013**: 既定では、Visual Studio 2013 でインストールされている MFC ライブラリのみ Unicode の開発をサポートします。 持つ Visual Studio 2013 で MFC プロジェクトをビルドするために、MBCS の Dll が必要があります、**文字セット**プロパティに設定**マルチ バイト文字セットを使用**または**未設定**です。 DLL をダウンロード[for Visual Studio 2013 のマルチバイト MFC ライブラリ](https://www.microsoft.com/en-us/download/details.aspx?id=40770)です。
 
-  
-## <a name="see-also"></a>参照  
- [MFC ライブラリのバージョン](../mfc/mfc-library-versions.md)
+**Visual Studio 2015**: 両方の Unicode と MBCS MFC Dll には、Visual C セットアップ コンポーネントに含まれるが、MFC は既定でインストールすることはできませんをサポートします。 Visual C++ と MFC は、Visual Studio セットアップではオプションのインストール構成です。 MFC が確実にインストールされるようにするには、セットアップで **［カスタム］** を選択して、 **［プログラミング言語］**で **［Visual C++］** と **［Microsoft Foundation Classes for C++］** が選択されていることを確認します。 既に Visual Studio がインストールされている場合は、MFC プロジェクトを作成しようとしたときに、Visual C++ や MFC のインストールを促すプロンプトが表示されます。
+
+**Visual Studio 2017**: と Unicode と MBCS MFC Dll がインストールされている、 **C++ を使用したデスクトップ開発**ワークロードを選択すると**MFC および ATL サポート**から、 **省略可能なコンポーネント**ウィンドウです。 インストーラーを起動するには、インストールにこれらのコンポーネントが含まれていない場合、**新しいプロジェクト**ダイアログを使用して、**開いている Visual Studio インストーラー**リンクします。
+
+## <a name="see-also"></a>関連項目
+
+[MFC ライブラリのバージョン](../mfc/mfc-library-versions.md)
 

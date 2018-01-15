@@ -18,11 +18,12 @@ caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: bd57cd0e0c66340eabd54c41c24d892fe9a23bec
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ef3d1fae353de8962684b080c223bd4a6a235acf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tuplesize-class"></a>tuple_size クラス
 `tuple` を含む要素の数を報告します。  
@@ -64,7 +65,7 @@ template <class Tuple>
   
 #### <a name="parameters"></a>パラメーター  
 *Tuple*  
-組の型。 
+タプルの型。 
   
 *Elem*  
 配列要素の型。 
@@ -117,14 +118,14 @@ int main()
  0 1.5 2 3.7  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<tuple>  
  **ヘッダー:** \<array> (配列の特殊化用)  
  **ヘッダー:** \<utility> (ペアの特殊化用)  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<tuple>](../standard-library/tuple.md)   
  [タプル](../standard-library/tuple-class.md)  
  [tuple_element クラス](../standard-library/tuple-element-class-tuple.md)

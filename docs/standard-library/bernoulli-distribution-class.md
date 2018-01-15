@@ -34,11 +34,12 @@ caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cd4d0e5e5fb88eae5ca0247f1672e816dc35c601
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 19212e7b594b21a08d6f1fb174a3385e9c46d159
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="bernoullidistribution-class"></a>bernoulli_distribution クラス
 ベルヌイ分布を生成します。  
@@ -95,9 +96,9 @@ public:
   
 `operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
   
-分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) を参照してください。  
+分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-ベルヌイ分布の離散確率関数の詳細については、Wolfram MathWorld の記事「[ベルヌイ分布](http://go.microsoft.com/fwlink/LinkId=398467)」を参照してください。  
+ベルヌイ分布の離散確率関数の詳細については、Wolfram MathWorld の記事「[ベルヌイ分布](http://go.microsoft.com/fwlink/p/?linkid=398467)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -159,7 +160,7 @@ false :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  true :::::::::::::::::::::::::::::::::::::::::
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **ヘッダー:** \<random>  
   
 **名前空間:** std  
@@ -204,7 +205,7 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
 
 

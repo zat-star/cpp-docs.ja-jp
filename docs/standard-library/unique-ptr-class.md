@@ -33,11 +33,12 @@ caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 148d4b734f0e2cb56e959f54b99fb89a5efa6669
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: ba6ac8e50764801052c051703a211c4605a33601
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="uniqueptr-class"></a>unique_ptr クラス
 所有されているオブジェクトまたは配列へのポインターを格納します。 このオブジェクトと配列は、この `unique_ptr` によってのみ所有されます。 このオブジェクトと配列は、`unique_ptr` が破棄されたときに破棄されます。  
@@ -162,7 +163,7 @@ public:
 |`operator*`|このメンバー関数は、`*stored_ptr` を返します。|  
 |[unique_ptr operator=](#unique_ptr_operator_eq)|現在の `unique_ptr` に `unique_ptr` (または `pointer-type`) の値を割り当てます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
@@ -373,7 +374,7 @@ unique_ptr(unique_ptr<Ty2, Del2>&& right);
 ### <a name="remarks"></a>コメント  
  このデストラクターは `get_deleter()(stored_ptr)` を呼び出します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<memory>](../standard-library/memory.md)
 
 

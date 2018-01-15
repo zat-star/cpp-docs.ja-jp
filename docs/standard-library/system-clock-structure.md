@@ -20,11 +20,12 @@ caps.latest.revision: "14"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a7e57faa98571c59515a9b669d0ce5d53459b103
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 603415b438578258e982f0934161d2de436e2a3f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="systemclock-structure"></a>system_clock 構造体
 システムのリアルタイム クロックに基づく*クロックの型*を表します。  
@@ -65,12 +66,12 @@ struct system_clock;
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[system_clock::is_monotonic 定数](#is_monotonic_constant)|クロック型が単調かどうかを指定します。|  
 |[system_clock::is_steady 定数](#is_steady_constant)|クロック型が一定かどうかを指定します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<chrono >  
   
  **名前空間:** std::chrono  
@@ -133,7 +134,7 @@ static time_t to_time_t(const time_point& Time) noexcept;
  `Time`  
  [time_point](../standard-library/time-point-class.md) オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<chrono>](../standard-library/chrono.md)   
  [steady_clock 構造体](../standard-library/steady-clock-struct.md)

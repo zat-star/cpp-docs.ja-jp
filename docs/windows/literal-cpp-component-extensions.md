@@ -17,11 +17,14 @@ caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d13c8b081f3bcc3efbf20be3c31e2601baa6ca02
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: f858e94bf916c2d441cee607739bb9e08da09b85
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="literal-c-component-extensions"></a>リテラル (C++ コンポーネント拡張)
 としてマークされている変数 (データ メンバー)`literal`で、 **/clr**コンパイルに等しいネイティブな`static const`変数。  
@@ -36,7 +39,7 @@ ms.lasthandoff: 10/24/2017
   
  (この言語機能には Windows ランタイムのみに適用される特記事項がありません。)  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
 ## <a name="common-language-runtime"></a>共通言語ランタイム  
@@ -121,8 +124,8 @@ class B {
 }  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/clr**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

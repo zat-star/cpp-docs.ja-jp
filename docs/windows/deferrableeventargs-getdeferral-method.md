@@ -13,14 +13,17 @@ caps.latest.revision: "3"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4d43aa6d82f44965e8defda2af3e6455e86cba38
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 2a49fba82867650a80f45de3c6301405f96b5c47
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="deferrableeventargsgetdeferral-method"></a>DeferrableEventArgs::GetDeferral メソッド
-参照を取得、[遅延](http://go.microsoft.com/fwlink/?LinkId=526520)遅延イベントを表すオブジェクト。  
+参照を取得、[遅延](http://go.microsoft.com/fwlink/p/?linkid=526520)遅延イベントを表すオブジェクト。  
   
 ## <a name="syntax"></a>構文  
   
@@ -30,7 +33,7 @@ HRESULT GetDeferral([out, retval] Windows::Foundation::IDeferral** result)
   
 #### <a name="parameters"></a>パラメーター  
  `result`  
- 参照するポインター、[遅延](http://go.microsoft.com/fwlink/?LinkId=526520)オブジェクト呼び出しが完了したとき。  
+ 参照するポインター、[遅延](http://go.microsoft.com/fwlink/p/?linkid=526520)オブジェクト呼び出しが完了したとき。  
   
 ## <a name="return-value"></a>戻り値  
  成功した場合は S_OK、そうでない場合はエラーを示す HRESULT。  
@@ -38,10 +41,10 @@ HRESULT GetDeferral([out, retval] Windows::Foundation::IDeferral** result)
 ## <a name="remarks"></a>コメント  
  コード例は、次を参照してください。 [DeferrableEventArgs クラス](../windows/deferrableeventargs-class.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** event.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DeferrableEventArgs クラス](../windows/deferrableeventargs-class.md)

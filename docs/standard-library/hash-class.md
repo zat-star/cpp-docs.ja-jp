@@ -34,11 +34,12 @@ caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3224ea06ecb74021d9e0971910a4ce974fa56b0a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 38d6cfc3864b76304f9146ebe864805a500aa519
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hash-class"></a>hash クラス
 値のハッシュ コードを計算します。  
@@ -79,12 +80,12 @@ int main()
 3  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **ヘッダー:** \<functional>  
   
 **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<unordered_map>](../standard-library/unordered-map.md)   
  [unordered_multimap クラス](../standard-library/unordered-multimap-class.md)   
  [unordered_multiset クラス](../standard-library/unordered-multiset-class.md)   

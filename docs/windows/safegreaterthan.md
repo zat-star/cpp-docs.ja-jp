@@ -1,32 +1,33 @@
 ---
-title: "SafeGreaterThan | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SafeGreaterThan"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SafeGreaterThan 関数"
+title: "SafeGreaterThan |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: SafeGreaterThan
+dev_langs: C++
+helpviewer_keywords: SafeGreaterThan function
 ms.assetid: 32cecac9-ba88-43eb-a7a4-30e390456739
-caps.latest.revision: 6
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 82f3d666e6e0c5a09f0968547b732b3735d23d2e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# SafeGreaterThan
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="safegreaterthan"></a>SafeGreaterThan
 2 つの数値を比較します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename T, typename U>  
@@ -36,32 +37,32 @@ inline bool SafeGreaterThan (
 ) throw ();  
 ```  
   
-#### パラメーター  
- \[入力\] `t`  
- 比較対象の最初の数値。  これは T 型である必要があります。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `t`  
+ 比較する最初の数。 T 型でなければなりません  
   
- \[入力\] `u`  
- 比較対象の 2 番目の数値。  これは U 型である必要があります。  
+ [入力] `u`  
+ 比較する 2 番目の数値。 U 型です。 これでなければなりません  
   
-## 戻り値  
- `t` が `u` より大きい場合は `true`。それ以外の場合は `false`。  
+## <a name="return-value"></a>戻り値  
+ `true`場合`t`がより大きい`u`それ以外の`false`します。  
   
-## 解説  
- `SafeGreaterThan` は通常の比較演算子を拡張したもので、これにより型の異なる 2 つの数値を比較することができます。  
+## <a name="remarks"></a>コメント  
+ `SafeGreaterThan`2 つの異なる型の数値を比較することにより、正規の比較演算子を拡張します。  
   
- このメソッドは [SafeInt ライブラリ](../windows/safeint-library.md)に含まれており、[SafeInt クラス](../windows/safeint-class.md)のインスタンスを作成せずに単一の比較演算を実行するために用意されています。  
+ このメソッドの一部である[SafeInt ライブラリ](../windows/safeint-library.md)とは、単一の比較操作のインスタンスを作成せず、 [SafeInt クラス](../windows/safeint-class.md)です。  
   
 > [!NOTE]
->  このメソッドは、単一の数値演算を保護する必要がある場合にのみ使用してください。  複数の演算を実行する場合は、スタンドアロンの関数を個別に呼び出すのではなく、`SafeInt` クラスを使用する必要があります。  
+>  このメソッドは、単一の数値演算を保護する必要がありますにのみ使用する必要があります。 使用する必要があります複数の操作がある場合、`SafeInt`個々 のスタンドアロン関数の呼び出しではなくクラスです。  
   
- テンプレートの種類である T と U の詳細については、「[SafeInt 関数](../windows/safeint-functions.md)」を参照してください。  
+ テンプレート型 T および U の詳細については、次を参照してください。 [SafeInt 関数](../windows/safeint-functions.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** safeint.h  
   
- **名前空間:** Microsoft::Utilities  
+ **Namespace:** Microsoft::Utilities  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [SafeInt 関数](../windows/safeint-functions.md)   
  [SafeInt ライブラリ](../windows/safeint-library.md)   
  [SafeInt クラス](../windows/safeint-class.md)   

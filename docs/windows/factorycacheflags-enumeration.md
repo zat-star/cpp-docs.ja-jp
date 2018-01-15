@@ -14,11 +14,14 @@ caps.latest.revision: "4"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bb4efeb716255ae67a01fca7cf04a54816e227d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 41b31ccede1cca717418c9f489ab7de67d313319
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="factorycacheflags-enumeration"></a>FactoryCacheFlags 列挙型
 ファクトリ オブジェクトをキャッシュするかどうかを判断します。  
@@ -38,10 +41,10 @@ enum FactoryCacheFlags;
 |`FactoryCacheEnabled`|関係なくファクトリがキャッシュされるように、`ModuleType`の作成に使用するテンプレート パラメーター、`Module`オブジェクト。|  
 |`FactoryCacheDisabled`|工場出荷時に関係なくキャッシュを無効にします`ModuleType`の作成に使用するテンプレート パラメーター、`Module`オブジェクト。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)
