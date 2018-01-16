@@ -143,11 +143,12 @@ caps.latest.revision: "47"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2dead08eaeb525e626e9c1f02af346b0c3998260
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 611f26b07bc8ebd14fc394437ddda07cb65ab4e1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cfiledialog-class"></a>CFileDialog クラス
 ファイルを開く操作または保存に使用される、コモン ダイアログ ボックスをカプセル化します。  
@@ -276,7 +277,7 @@ class CFileDialog : public CCommonDialog
   
  ユーザーが複数のファイルを選択できるように、設定、`OFN_ALLOWMULTISELECT`フラグを呼び出す前に`DoModal`です。 返される複数のファイル名の一覧に合わせて独自ファイル名のバッファーを指定してください。 これには、置換`m_ofn.lpstrFile`バッファーへのポインターが割り当てられていれば、構築した後、`CFileDialog`を呼び出す前に、`DoModal`です。  
   
- さらに、設定する必要があります`m_ofn.nMaxFile`が指すバッファー内の文字数を使用して、`m_ofn.lpstrFile`です。 選択するファイルの最大数を設定した場合`n`、必要なバッファー サイズは`n * (_MAX_PATH + 1) + 1`します。 バッファーに返される最初の項目は、ファイルが選択されたフォルダーへのパスです。 [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]のスタイル ダイアログ ボックスでは、ディレクトリとファイル名の文字列は、最後のファイル名の後に余分な null 文字で、null で終わる。 この形式は、スペースを含む長いファイル名を返すエクスプ ローラー スタイルのダイアログ ボックスを使用できます。 旧式のダイアログ ボックスのディレクトリとファイル名の文字列はスペースで区切らし、関数がスペースを含むファイル名の短いファイル名を使用します。  
+ さらに、設定する必要があります`m_ofn.nMaxFile`が指すバッファー内の文字数を使用して、`m_ofn.lpstrFile`です。 選択するファイルの最大数を設定した場合`n`、必要なバッファー サイズは`n * (_MAX_PATH + 1) + 1`します。 バッファーに返される最初の項目は、ファイルが選択されたフォルダーへのパスです。 [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]のスタイルダイアログ ボックスでは、ディレクトリとファイル名の文字列は、最後のファイル名の後に余分な null 文字で、null で終わる。 この形式は、スペースを含む長いファイル名を返すエクスプ ローラー スタイルのダイアログ ボックスを使用できます。 旧式のダイアログ ボックスのディレクトリとファイル名の文字列はスペースで区切らし、関数がスペースを含むファイル名の短いファイル名を使用します。  
   
  次の例では、バッファーを使用して取得し、複数のファイル名を一覧表示する方法を示します。  
   
@@ -305,7 +306,7 @@ class CFileDialog : public CCommonDialog
   
  `CFileDialog`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdlgs.h  
   
 ##  <a name="addcheckbutton"></a>CFileDialog::AddCheckButton  
@@ -1490,7 +1491,7 @@ void UpdateOFNFromShellDialog();
   
  [!code-cpp[NVC_MFC_CFileDialog#1](../../mfc/reference/codesnippet/cpp/cfiledialog-class_7.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CCommonDialog クラス](../../mfc/reference/ccommondialog-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
 

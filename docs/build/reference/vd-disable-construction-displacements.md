@@ -1,82 +1,82 @@
 ---
-title: "/vd (ディスプレイスメントの無効化) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/vd"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/vd0 コンパイラ オプション [C++]"
-  - "/vd1 コンパイラ オプション [C++]"
-  - "/vdn (ディスプレイスメントを無効化する) コンパイラ オプション"
-  - "コンストラクターの変位"
-  - "無効化 (ディスプレイスメントを) コンパイラ オプション"
-  - "displacements コンパイラ オプション"
-  - "vd0 コンパイラ オプション [C++]"
-  - "-vd0 コンパイラ オプション [C++]"
-  - "vd1 コンパイラ オプション [C++]"
-  - "-vd1 コンパイラ オプション [C++]"
-  - "vtordisp フィールド"
+title: "-仮想ディスク (ディスプレイスメントの無効化) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /vd
+dev_langs: C++
+helpviewer_keywords:
+- -vd0 compiler option [C++]
+- vd1 compiler option [C++]
+- /vdn (Disable Construction Displacement) compiler option
+- constructor displacements
+- vtordisp fields
+- /vd0 compiler option [C++]
+- -vd1 compiler option [C++]
+- /vd1 compiler option [C++]
+- displacements compiler option
+- vd0 compiler option [C++]
+- Disable Construction Displacements compiler option
 ms.assetid: 93258964-14d7-4b1c-9cbc-d6f4d74eab69
-caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: b945c4a3191554d5299522ff376772d6362a616c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /vd (ディスプレイスメントの無効化)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## 構文  
+# <a name="vd-disable-construction-displacements"></a>/vd (ディスプレイスメントの無効化)
+## <a name="syntax"></a>構文  
   
 ```  
 /vdn  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `0`  
- vtordisp コンストラクター\/デストラクター ディスプレイスメント メンバーを無効にします。  このオプションは、すべてのクラス コンストラクターとデストラクターが仮想的に仮想関数を呼び出すことが確実な場合にだけ、選択してください。  
+ Vtordisp コンストラクター/デストラクター ディスプレイスメント メンバーを抑制します。 すべてのクラスのコンス トラクターとデストラクターを呼び出す仮想ことがわかっている場合にのみ、このオプションが事実上機能を選択します。  
   
  `1`  
- 隠し vtordisp コンストラクター\/デストラクター ディスプレイスメント メンバーの作成を有効にします。  これは、既定の設定です。  
+ 隠し vtordisp コンストラクター/デストラクター ディスプレイスメント メンバーの作成を有効にします。 このオプションは、既定値です。  
   
  `2`  
- 構築中のオブジェクトで [dynamic\_cast 演算子](../../cpp/dynamic-cast-operator.md) を使用できます。  仮想基本クラスから派生クラスへの dynamic\_cast はその一例です。  
+ 使用できるように[dynamic_cast 演算子](../../cpp/dynamic-cast-operator.md)構築されるオブジェクト。 たとえば、仮想基底クラスから派生クラスへの dynamic_cast です。  
   
- **\/vd2** は、仮想関数を持つ仮想基本クラスがあるときに vtordisp フィールドを追加します。  **\/vd1** でも十分です。  **\/vd2** が必要となる最も一般的なケースは、仮想基本クラス内の唯一の仮想関数がデストラクターである場合です。  
+ **/vd2**仮想関数を使用して仮想ベースがある場合は、vtordisp フィールドを追加します。 **/vd1**すれば十分です。 最も一般的なケース**/vd2**が必要なは、仮想ベース内の唯一の仮想関数がデストラクターです。  
   
-## 解説  
- 次のオプションは、仮想基本クラスを使用する C\+\+ コードだけに適用されます。  
+## <a name="remarks"></a>コメント  
+ これらのオプションは、仮想基底を使用する C++ コードにのみ適用されます。  
   
- [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] では、仮想継承に対して C\+\+ ディスプレイスメントをサポートしています。  ディスプレイスメントを使用すると、仮想基本クラスで宣言され、派生クラスでオーバーライドされた仮想関数が、さらに派生したクラスの構築中にコンストラクターから呼び出されたときに発生する問題を解決できます。  
+ [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]仮想継承が使用されている状況で C++ ディスプレイスメントをサポートを実装します。 ディスプレイスメントは仮想関数の場合、仮想ベースで宣言され、派生クラスでオーバーライドされるときに作成の問題を解決、さらに派生クラスの構築中にコンス トラクターから呼び出されます。  
   
- この問題は、基本クラスとその派生クラスとの間で仮想基本クラスの位置が異なるために、不当な `this` ポインターが仮想関数に渡されることが原因です。  この問題を解決するために、各仮想基本クラスに対して vtordisp フィールドと呼ばれる単一のディスプレイスメントがサポートされています。  
+ 問題が仮想関数が渡されるが正しくない`this`ポインターその結果、仮想変位間の不一致の基底クラスとその派生クラスにします。 ソリューションでは、各仮想基本クラスの vtordisp フィールドと呼ばれる 1 つ構築変位の調整を提供します。  
   
- 既定では、コード内でユーザー定義のコンストラクターとデストラクターの両方が定義され、仮想基本クラスの仮想関数がオーバーライドされている場合は、必ず vtordisp フィールドが挿入されます。  
+ 既定では、コードがユーザー定義のコンス トラクターとデストラクターを定義し、仮想ベースの仮想関数がオーバーライドされるたびに、vtordisp フィールドが導入されました。  
   
- \/vd*n* オプションは、ソース ファイル全体に反映されます。  [vtordisp](../Topic/vtordisp.md) を使用すると、vtordisp フィールドをクラス単位で無効化したり、再度有効化したりできます。  
+ これらのオプションでは、ソース ファイル全体に影響します。 使用して[vtordisp](../../preprocessor/vtordisp.md)を抑制し、クラス単位で vtordisp フィールドを再度有効にします。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  **\[追加のオプション\]** ボックスにコンパイラ オプションを入力します。  
+4.  **[追加のオプション]** ボックスにコンパイラ オプションを入力します。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

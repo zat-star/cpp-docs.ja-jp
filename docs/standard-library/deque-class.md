@@ -99,11 +99,12 @@ caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 852a9d97fed21835c966b4f47af4fb24ad026546
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 58f66f264e5586b2cfbc0125329be4dec34298d9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="deque-class"></a>deque クラス
 特定の型の要素をベクターのような線形の配置に整列し、任意の要素への高速なランダム アクセス、およびコンテナーの後ろでの効率的な挿入と削除を行えるようにします。 ただし、ベクターとは異なり、`deque` クラスは、コンテナーの前での効率的な挿入と削除もサポートします。  
@@ -120,7 +121,7 @@ class deque
  deque に格納される要素のデータ型。  
   
  `Allocator`  
- メモリの deque の割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクトを表す型。 この引数は省略可能であり、既定値は **allocator\<Type>** です*。*  
+ メモリの deque の割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクトを表す型。 この引数は省略可能であり、既定値は **allocator\<Type>**です*。*  
   
 ## <a name="remarks"></a>コメント  
  一般的に、コンテナー型の選択は、アプリケーションにおいて必要な検索および挿入の種類に基づいている必要があります。 [ベクター](../standard-library/vector-class.md)は、任意の要素へのランダム アクセスが優先事項であり、要素の挿入または削除がシーケンスの最後にのみ必要な場合に、シーケンスを管理するための推奨されるコンテナーです。 リスト コンテナーでは、シーケンス内の任意の位置における (定数時間での) 効率的な挿入と削除が優先事項である場合に、より優れたパフォーマンスになります。 シーケンスの途中でこのような操作を行うには、シーケンス (線形時間) 内の要素数に比例した要素のコピーおよび割り当てが必要になります。  
@@ -155,7 +156,7 @@ class deque
 |[const_reference](#const_reference)|読み取りと他の操作の実行のために、`deque` 内の要素への参照を `const.` として提供する型。|  
 |[const_reverse_iterator](#const_reverse_iterator)|`deque` 内の要素にアクセスし、読み取ることができるランダム アクセス反復子を `const` として提供する型。 deque は逆に表示されます。 詳しくは、「[reverse_iterator クラス](../standard-library/reverse-iterator-class.md)」をご覧ください。|  
 |[difference_type](#difference_type)|同じ `deque` 内の要素を参照する 2 つのランダム アクセス反復子の違いを提供する型。|  
-|[iterator](#iterator)|`deque` 内の任意の要素を読み取り、または変更できるランダム アクセス反復子を提供する型。|  
+|[Iterator](#iterator)|`deque` 内の任意の要素を読み取り、または変更できるランダム アクセス反復子を提供する型。|  
 |[pointer](#pointer)|`deque` 内の要素へのポインターを提供する型。|  
 |[reference](#reference)|`deque` に格納されている要素への参照を提供する型。|  
 |[reverse_iterator](#reverse_iterator)|`deque` 内の要素を読み取り、または変更できるランダム アクセス反復子を提供する型。 deque は逆の順序で表示されます。|  
@@ -203,7 +204,7 @@ class deque
 |[operator&#91;&#93;](#op_at)|指定した位置における `deque` 要素への参照を返します。|  
 |[operator=](#op_eq)|別の `deque` のコピーで `deque` の要素を置き換えます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー**: \<deque>  
   
 ##  <a name="allocator_type"></a>  deque::allocator_type  
@@ -488,7 +489,7 @@ const_iterator cend() const;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -1539,7 +1540,7 @@ const_reference operator[](size_type pos) const;
 ### <a name="remarks"></a>コメント  
  `operator[]` の戻り値が `const_reference` に割り当てられている場合、deque オブジェクトを変更することはできません。 `operator[]` の戻り値が **reference** に割り当てられる場合、deque オブジェクトを変更できます。  
   
- 1 または 2 に定義された [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) を使ってコンパイルすると、deque の境界外の要素にアクセスしようとした場合にランタイム エラーが発生します。  詳しくは、「[チェックを行う反復子](../standard-library/checked-iterators.md)」をご覧ください。  
+ 1 または 2 に定義された [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) を使ってコンパイルすると、deque の境界外の要素にアクセスしようとした場合にランタイム エラーが発生します。  詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
   
@@ -1650,7 +1651,7 @@ typedef typename Allocator::pointer pointer;
 ```  
   
 ### <a name="remarks"></a>コメント  
- **pointer** 型を使って要素の値を変更できます。 deque の要素にアクセスするには、[iterator](#iterator) の方がより一般的に使われます。  
+ **pointer** 型を使って要素の値を変更することができます。 deque の要素にアクセスするには、[iterator](#iterator) の方がより一般的に使われます。  
   
 ##  <a name="pop_back"></a>  deque::pop_back  
  deque の末尾の要素を削除します。  
@@ -2265,7 +2266,7 @@ int main( )
 44  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

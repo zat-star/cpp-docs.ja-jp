@@ -33,11 +33,12 @@ caps.latest.revision: "26"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e395596ee8decde683c13c12a0c1f2bd33a8cc58
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: f50b74731089346a9675b5340ba0ea1a0b2879f4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmousemanager-class"></a>CMouseManager クラス
 により、ユーザーは、さまざまなコマンドを関連付ける特定[CView](../../mfc/reference/cview-class.md)オブジェクトのビューの内側をダブルクリックします。  
@@ -73,7 +74,7 @@ class CMouseManager : public CObject
   
  `CMouseManager`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxmousemanager.h  
   
 ##  <a name="addview"></a>CMouseManager::AddView  
@@ -244,7 +245,7 @@ void SetCommandForDblClk(
   
  場合`uiCmd`設定は 0 に、指定されたビューは、コマンドを使用して関連付けられなくです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CWinAppEx クラス](../../mfc/reference/cwinappex-class.md)   

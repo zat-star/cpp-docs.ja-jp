@@ -18,14 +18,15 @@ caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fcd376a5322c525c59b2423bd59507699f0a7c4c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 564ec6bf4fafe2116c41c0f817e2754e1de12abd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="interpretation-of-subscript-operator"></a>添字演算子の解釈
-その他の演算子、添字演算子のように (**[ ]**)、ユーザーによって再定義することができます。 添字演算子の既定の動作では、オーバーロードしない場合、次のメソッドを使用して配列名と添字を組み合わせます。  
+その他の演算子、添字演算子のように (**[]**)、ユーザーによって再定義することができます。 添字演算子の既定の動作では、オーバーロードしない場合、次のメソッドを使用して配列名と添字を組み合わせます。  
   
  \*((*配列名*) + (*添字*))  
   
@@ -35,7 +36,7 @@ ms.lasthandoff: 10/24/2017
   
  **((**   
  ***配列名*) + (**   
- ***添字*1***max*2  *\* max*3*.. .max に書き換え*n)  **+** *添字*2  *\* max*3*.. .max に書き換え*n)。 。 。 *+**添字*n))  
+ ***添字*1***max*2  *\* max*3*.. .max に書き換え*n)  **+** *添字*2  *\* max*3*.. .max に書き換え*n)。 である必要があります。 である必要があります。 *+**添字*n))  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [配列](../cpp/arrays-cpp.md)

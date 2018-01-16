@@ -1,59 +1,59 @@
 ---
-title: "/Zs (構文のみチェック) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/zs"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Zs コンパイラ オプション [C++]"
-  - "Syntax Check Only コンパイラ オプション"
-  - "Zs コンパイラ オプション"
-  - "-Zs コンパイラ オプション [C++]"
+title: "-Zs (構文チェックのみ) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /zs
+dev_langs: C++
+helpviewer_keywords:
+- -Zs compiler option [C++]
+- Syntax Check Only compiler option
+- Zs compiler option
+- /Zs compiler option [C++]
 ms.assetid: b4b41e6a-3f41-4d09-9cb6-fde5aa2cfecf
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 44029bfb9b5753161319e565d9d25b732c635dfa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /Zs (構文のみチェック)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コマンド ラインで指定したソース ファイルの構文だけをチェックします。  
+# <a name="zs-syntax-check-only"></a>/Zs (構文のみチェック)
+コマンドラインでソース ファイルの構文のみチェック コンパイラに指示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Zs  
 ```  
   
-## 解説  
- このオプションを使用した場合、出力ファイルは作成されず、エラー メッセージが標準出力に書き込まれます。  
+## <a name="remarks"></a>コメント  
+ このオプションを使用する場合の出力ファイルが作成されなければ、およびエラー メッセージを標準出力に書き込まれます。  
   
- **\/Zs** オプションを使うと、ソース ファイルのコンパイルとリンクを実行する前に、構文エラーをすぐに見つけて修正できます。  
+ **/Zs**オプションが発見し、コンパイルして、ソース ファイルをリンクする前に構文エラーを修正する簡単な方法を提供します。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  **\[追加のオプション\]** ボックスにコンパイラ オプションを入力します。  
+4.  **[追加のオプション]** ボックスにコンパイラ オプションを入力します。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

@@ -24,18 +24,18 @@ f1_keywords:
 - amp/Concurrency::direct3d::smoothstep
 - amp/Concurrency::direct3d::step
 - amp/Concurrency::direct3d::umin
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 28943b62-52c9-42dc-baf1-ca7b095c1a19
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: ad00006c9ab4f25887cf28ed5b977551c35bda9e
-ms.lasthandoff: 03/17/2017
-
+ms.workload: cplusplus
+ms.openlocfilehash: ff24f75c27ee60a085a8f87256a96b65a57e523c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="concurrencydirect3d-namespace-functions-amp"></a>Concurrency::direct3d 名前空間の関数 (AMP)
 ||||  
@@ -50,7 +50,7 @@ ms.lasthandoff: 03/17/2017
 |[飽和状態になります。](#saturate)|[サインイン](#sign)|[smoothstep](#smoothstep)|  
 |[手順](#step)|[umax](#umax)|[umin](#umin)|  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 **ヘッダー:** amp.h **Namespace:**同時実行
   
 ##  <a name="abs"></a>  abs  
@@ -68,7 +68,7 @@ inline int abs(int _X) restrict(amp);
  引数の絶対値を返します。  
   
 ##  <a name="clamp"></a>クランプ  
- 2 番目および&3; 番目に指定された引数によって定義される範囲に固定される&1; 番目に指定された引数の値を計算します。  
+ 2 番目および 3 番目に指定された引数によって定義される範囲に固定される 1 番目に指定された引数の値を計算します。  
   
 ```  
 inline float clamp(
@@ -108,7 +108,7 @@ inline unsigned int countbits(unsigned int _X) restrict(amp);
  符号なし整数値  
   
 ### <a name="return-value"></a>戻り値  
- _X 内で設定されているビットの数を返します  
+ _X で設定されているビットの数を返します  
 
 ## <a name="create_accelerator_view"></a>create_accelerator_view  
 作成、 [accelerator_view](accelerator-view-class.md) Direct3D デバイス インターフェイスへのポインターからのオブジェクト。  
@@ -292,7 +292,7 @@ bool __cdecl is_timeout_disabled(const accelerator_view& _Accelerator_view);
  指定された accelerator_view についてタイムアウトが無効であるかどうかを示すブール型のフラグ。  
   
 ##  <a name="mad"></a>mad  
- 1 番目と&2; 番目の指定された引数の積を計算し、3 番目の指定された引数を加算します。  
+ 1 番目と 2 番目の指定された引数の積を計算し、3 番目の指定された引数を加算します。  
   
 ```  
 inline float mad(
@@ -330,7 +330,7 @@ inline unsigned int mad(
  3 番目の指定された引数。  
   
 ### <a name="return-value"></a>戻り値  
- The result of `_X` * `_Y` + `_Z`.  
+ 結果`_X`  *  `_Y`  + `_Z`です。  
   
 ##  <a name="make_array"></a>make_array  
  Direct3D バッファーのインターフェイス ポインターから配列を作成します。  
@@ -366,7 +366,7 @@ array<value_type, _Rank> make_array(
  用意された Direct3D バッファーを使用して作成された配列。  
   
 ##  <a name="noise"></a>ノイズ  
- パーリン ノイズ アルゴリズムを使用するランダムな値が生成されます。  
+ パーリン ノイズ アルゴリズムを使用して、ランダムな値が生成されます。  
   
 ```  
 inline float noise(float _X) restrict(amp);
@@ -377,7 +377,7 @@ inline float noise(float _X) restrict(amp);
  パーリン ノイズを生成する浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- -1 ~ 1 の間の範囲内のパーリン ノイズ値を返します  
+ -1 ~ 1 の間の範囲内のパーリン ノイズの値を返します  
   
 ##  <a name="radians"></a>ラジアン  
  _X を角度からラジアンに変換します。  
@@ -422,7 +422,7 @@ inline unsigned int reversebits(unsigned int _X) restrict(amp);
  符号なし整数値  
   
 ### <a name="return-value"></a>戻り値  
- _X の逆にビットの順序で値を返します。  
+ _X の逆にビットの順序と値を返します。  
   
 ##  <a name="saturate"></a>飽和状態になります。  
  0 ～ 1 の範囲内で _X をクランプします。  
@@ -532,6 +532,5 @@ inline unsigned int umin(
 ### <a name="return-value"></a>戻り値  
  引数の最小数値を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::direct3d 名前空間](concurrency-direct3d-namespace.md)
-

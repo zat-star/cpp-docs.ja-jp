@@ -15,14 +15,15 @@ caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0dcf311843f212991f303b5cd9b74ea90e269c3c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: b279b78c309dd9fff87954d9b50b255b7f0d9f25
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="complexltdoublegt"></a>complex&lt;double&gt;
-順序付けされたオブジェクトのペア (いずれも **double** 型) を格納するオブジェクトについて説明します。最初のオブジェクトが複素数の実数部*、*2 番目のオブジェクトが虚数部を表します。  
+順序付けされたオブジェクトのペア (いずれも **double***,* 型) を格納するオブジェクトについて説明します。最初のオブジェクトが複素数の実数部、2 番目のオブジェクトが虚数部を表します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -114,12 +115,12 @@ Argument of c3 is recovered from c3 using:
 *\  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー**: \<complex>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [complex クラス](../standard-library/complex-class.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
