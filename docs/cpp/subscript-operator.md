@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e1b40b16c3ee349419259ae1e2240e28e3e7e911
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 1fbcb3657af276cdfc9aa05d461c090b76f6de0b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="subscript-operator"></a>添字演算子:
 ## <a name="syntax"></a>構文  
@@ -34,7 +35,7 @@ postfix-expression [ expression ]
 ```  
   
 ## <a name="remarks"></a>コメント  
- (どの基本式もかまいません)、添字演算子が続く後置式**[ ]**配列のインデックスを指定します。  
+ (どの基本式もかまいません)、添字演算子が続く後置式**[]**配列のインデックスを指定します。  
   
  マネージ配列については、次を参照してください。[配列](../windows/arrays-cpp-component-extensions.md)です。  
   
@@ -111,7 +112,7 @@ int main() {
   
  添字演算子は可換です。 そのため、式は、*配列*[*インデックス*] と*配列*[*配列*]、添字限り等価であることが保証されます演算子のオーバー ロードされていない (を参照してください[オーバー ロードされた演算子](../cpp/operator-overloading.md))。 最初の形式は、共通のコーディングの推奨事項ですが、どちらの方法でも動作します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [後置式](../cpp/postfix-expressions.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [配列](../cpp/arrays-cpp.md)   

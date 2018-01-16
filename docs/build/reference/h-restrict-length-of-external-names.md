@@ -1,67 +1,67 @@
 ---
-title: "/H (外部名の長さの制限) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/h"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/H コンパイラ オプション [C++]"
-  - "外部名"
-  - "H コンパイラ オプション [C++]"
-  - "-H コンパイラ オプション [C++]"
-  - "パブリック名の長さ"
+title: "-H (外部名の長さに制限) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /h
+dev_langs: C++
+helpviewer_keywords:
+- public name length
+- /H compiler option [C++]
+- H compiler option [C++]
+- external names
+- -H compiler option [C++]
 ms.assetid: de701dd3-ed04-4c88-8195-960d2520ec2e
-caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 4d5e862eb8e45d1f2558592c0bb54c1adb9305f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /H (外部名の長さの制限)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-外部名の長さを制限します。  
+# <a name="h-restrict-length-of-external-names"></a>/H (外部名の長さの制限)
+使用しないでください。 外部名の長さを制限します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Hnumber  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `number`  
- プログラムで許可された外部名の長さの最大値を指定します。  
+ プログラムで許可された外部名の最大長を指定します。  
   
-## 解説  
- 既定では、外部 \(パブリック\) 名の長さは 2,047 文字です。  これは C および C\+\+ のプログラムにも当てはまります。  **\/H** では、識別子の最大許容長を短くできますが、長くはできません。  **\/H** と `number` の間にはスペースを挿入してもかまいません。  
+## <a name="remarks"></a>コメント  
+ 既定は、外部 (パブリック) 名の長さは 2,047 文字です。 これは、C および C++ プログラムの場合は true です。 使用して**/H**のみ識別子の最大許容長を減らすことができます、長くはできません。 間にスペース**/H**と`number`は省略可能です。  
   
- プログラムに、`number` を超える文字数の外部名が含まれていると、超過分の文字は無視されます。  **\/H** を使わずにプログラムをコンパイルし、識別子が 2,047 文字を超えると、コンパイラは [致命的なエラー C1064](../Topic/Fatal%20Error%20C1064.md) を生成します。  
+ プログラムより長い外部の名前が含まれている場合`number`、余分な文字は無視されます。 せずにプログラムをコンパイルする場合**/H**識別子に複数の 2,047 文字が含まれている場合、コンパイラが生成および[致命的なエラー C1064](../../error-messages/compiler-errors-1/fatal-error-c1064.md)です。  
   
- コンパイラが名前の先頭に付加したアンダースコア \(\_\) やアット マーク \(@\) も文字として数えられます。  これらの文字は識別子の一部であり、意味のある位置に付加されます。  
+ 長さの制限には、コンパイラが作成した先頭のアンダー スコア (_) が含まれています。 または、アット マーク (@)。 これらの文字は、識別子の一部であるし、意味のある位置を取得します。  
   
--   名前の先頭にアンダースコアが付加されるのは、`__cdecl` 呼び出し規約 \(既定\) または `__stdcall` 呼び出し規約で名前を修飾した場合です。これに対し、名前の先頭にアット マークが付加されるのは、`__fastcall` 呼び出し規約で名前を修飾した場合です。  
+-   コンパイラは、名前に、先頭にアンダー スコア (_) を追加、 `__cdecl` (既定値) と`__stdcall`呼び出し規約、および、先頭がアット マーク (@) によって変更された名前に、`__fastcall`呼び出し規約です。  
   
--   `__fastcall` 呼び出し規約や `__stdcall` 呼び出し規約で修飾された名前には引数のサイズ情報が付加されます。C\+\+ の名前には型情報が付加されます。  
+-   コンパイラによって変更された名前を引数のサイズ情報を追加する、`__fastcall`と`__stdcall`呼び出し規約、および C++ の名前に型情報を追加します。  
   
- **\/H** は以下の場合に便利です。  
+ 検索することがあります**/H**に便利です。  
   
--   複数の言語を使用したプログラムや移植性の高いプログラムを作成するとき。  
+-   混合言語またはポータブル プログラムを作成する場合。  
   
--   外部識別子の長さを制限しているツールを使用するとき。  
+-   外部識別子の長さに制限を課すツールを使用する場合。  
   
--   デバッグ ビルドでシンボルに使用する領域を制限するとき。  
+-   デバッグ ビルドでシンボルを使用する領域の量を制限する場合。  
   
- 識別子の長さを制限しすぎた場合に、**\/H** の使用によって実際にどのようなエラーが発生するのかを次の例に示します。  
+ 次の例に示す方法を使用して**/H**識別子の長さが制限が多すぎる場合はエラーが発生する実際には。  
   
-```  
+```cpp  
 // compiler_option_H.cpp  
 // compile with: /H5  
 // processor: x86  
@@ -75,26 +75,26 @@ void func1(void) {}
 void func2(void) {}  
 ```  
   
- また、**\/H** オプションを使用するときは、コンパイラの定義済みの識別子にも注意してください。  識別子の最大長が小さすぎると、一部の定義済み識別子やライブラリ関数呼び出しを解決できなくなります。  たとえば、`printf` 関数を使用する場合は、コンパイル時に **\/H5** オプションが指定されていると、`printf` を参照するためにシンボル **\_prin** が作成されますが、これをライブラリで見つけることができなくなります。  
+ 使用する場合は注意する必要があります、 **/H**コンパイラの定義済みの識別子のためのオプションです。 識別子の最大長が小さすぎる場合、特定済みの識別子が未解決だけでなく特定のライブラリ関数の呼び出しになります。 たとえば場合、`printf`関数が使用されるとオプション**/H5**シンボル、コンパイル時に指定された**_prin**を参照するために作成されます`printf`、これが、見つかりませんライブラリにあります。  
   
- **\/H** を [\/GL \(プログラム全体の最適化\)](../../build/reference/gl-whole-program-optimization.md) と併用することはできません。  
+ 使用**/H**と互換性がありません[/GL (プログラム全体の最適化)](../../build/reference/gl-whole-program-optimization.md)です。  
   
- **\/H** は使用しないでください。最大長の上限が引き上げられたので、**\/H** は必要なくなりました。詳細については、「[Deprecated Compiler Options in Visual C\+\+ 2005](http://msdn.microsoft.com/ja-jp/aa59fce3-50b8-4f66-9aeb-ce09a7a84cce)」を参照してください。  
+ **/H**オプションが Visual Studio 2005 以降使用されなくなりました。 最大長の上限を増やすと**/H**は不要です。 非推奨のコンパイラ オプションの一覧は、次を参照してください。**廃止予定とコンパイラ オプションの削除**で[コンパイラ オプションの一覧をカテゴリ別](../../build/reference/compiler-options-listed-by-category.md)です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  \[追加のオプション\]ボックスにコンパイラ オプションを入力します。  
+4.  **[追加のオプション]** ボックスにコンパイラ オプションを入力します。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)
