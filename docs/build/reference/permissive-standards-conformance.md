@@ -18,11 +18,11 @@ author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 90ff6d2be6174f32d7d93252ebd8b693b422076d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: da744d2a037d865ddd0028e59ef3ba3c56d3bdd7
+ms.sourcegitcommit: ef2a263e193410782c6dfe47d00764263439537c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="permissive--standards-conformance"></a>寛容/-(標準準拠)
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 12/21/2017
 
 ## <a name="syntax"></a>構文
 
-> **寛容/-**
+> **/permissive-**
 
 ## <a name="remarks"></a>コメント
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 12/21/2017
 
 **寛容/-**オプション セットに、 [/Zc:strictStrings](../../build/reference/zc-conformance.md)と[/Zc:rvalueCast](../../build/reference/zc-conformance.md)オプション準拠の動作をします。 既定値は、非準拠の動作です。 特定に渡すことができます**/Zc**後オプション**寛容/-**この動作をオーバーライドするコマンド ラインでします。
 
-Visual Studio 2017 15.3 のバージョンのコンパイラ以降のバージョンで、**寛容/-**オプション セットに、 **/Zc:ternary**オプション。 コンパイラでは、2 段階名前検索の要件の詳細も実装します。 ときに、**寛容/-**オプションの設定と、コンパイラがテンプレートで使用される依存と非依存の名前を識別する、関数とクラス テンプレート定義を解析します。 このリリースでは、名前の依存関係分析だけが実行されます。
+Visual Studio 2017 15.3 のバージョンのコンパイラ以降のバージョンで、**寛容/-**オプション セットに、 [/Zc:ternary](../../build/reference/zc-ternary.md)オプション。 コンパイラでは、2 段階名前検索の要件の詳細も実装します。 ときに、**寛容/-**オプションの設定と、コンパイラがテンプレートで使用される依存と非依存の名前を識別する、関数とクラス テンプレート定義を解析します。 このリリースでは、名前の依存関係分析だけが実行されます。
 
 環境に固有の拡張機能と実装では、最大、標準のまま言語領域受けません**寛容/-**です。 たとえば、Microsoft 固有`__declspec`、呼び出し規約と構造化例外処理キーワード、およびコンパイラ固有プラグマ ディレクティブまたは属性に、コンパイラによってフラグがない**寛容/-**モード。
 

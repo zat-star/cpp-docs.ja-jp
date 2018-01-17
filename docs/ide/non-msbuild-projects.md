@@ -14,11 +14,11 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 72106bd363987d39fb11c9ec1a6d3fd0ceb5665d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 721dd39cf8cda6277eb129f259b7ede2d9f0da28
+ms.sourcegitcommit: ef2a263e193410782c6dfe47d00764263439537c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="open-folder-projects-in-visual-c"></a>Visual C でフォルダーのプロジェクトを開く
 Visual Studio 2017 を使用すると、ソース ファイルのフォルダーを開いてすぐに、参照、リファクタリング、デバッグ、IntelliSense のサポートとコーディングを開始し、「フォルダーを開く」機能が導入されています。 .Sln または .vcxproj ファイルが読み込まれていません。必要な場合、カスタム タスクをビルドし、単純な .json ファイルを起動してパラメーターを指定できます。 開いているフォルダーでの電源を Visual C サポートできますだけでなく、ファイルの厳密でないコレクションも事実上、ビルド システム、CMake、忍者、QMake (カタール プロジェクト) に対して、gyp、SCons、Gradle、Buck、make をなどです。 
@@ -71,20 +71,131 @@ IntelliSense および動作を部分的に参照を定義するアクティブ�
 |`forcedInclude`|コンパイル単位ごとに自動的に含まれるヘッダー (MSVC の/FI にマップまたは - clang を含む)|
 |`undefines`|未定義 (MSVC の/U にマッピング) にするマクロの一覧|
 |`intelliSenseMode`|使用する IntelliSense エンジン。 MSVC、gcc または Clang アーキテクチャの特定のバリエーションを指定できます。
-- msvc x86 (既定値)
-- msvc x64
-- msvc arm
-- x86 clang
-- x64 clang
+- msvc-x86 (default)
+- msvc-x64
+- msvc-arm
+- windows-clang-x86
+- windows-clang-x64
 - windows-clang-arm
-- Linux x64
-- Linux x86
-- Linux arm
+- Linux-x64
+- Linux-x86
+- Linux-arm
 - gccarm
 
-CppProperties.json サポートしている環境変数の展開には、パスおよびその他のプロパティ値が含まれます。 構文は`${env.FOODIR}`環境変数を展開する`%FOODIR%`です。
+#### <a name="environment-variables"></a>環境変数
+CppProperties.json サポート システム環境変数の展開には、パスとその他のプロパティ値が含まれます。 構文は`${env.FOODIR}`環境変数を展開する`%FOODIR%`です。 次のシステム定義の変数もサポートします。
 
-またこのファイル内で次の組み込みのマクロにアクセス権があります。
+|変数名|説明|  
+|-----------|-----------------|
+|vsdev|既定の Visual Studio 環境|
+|msvc_x86|X86 を使用して x86 用にコンパイル ツール|
+|msvc_arm|X86 を使用して arm コンパイル ツール|
+|msvc_arm64|X86 を使用して for ARM64 コンパイル ツール|
+|msvc_x86_x64|X86 を使用して AMD64 用にコンパイル ツール|
+|msvc_x64_x64|64 ビット ツールを使用して AMD64 のコンパイル|
+|msvc_arm_x64|64 ビット ツールを使用して ARM をコンパイルします。|
+|msvc_arm64_x64|64 ビット ツールを使用して for ARM64 コンパイル|
+
+Linux ワークロードがインストールされているときに、次の環境は Linux および WSL をリモートから指定できます。
+
+|変数名|説明|  
+|-----------|-----------------|
+|linux_x86|X86 を対象と Linux でのリモート|
+|linux_x64|X64 を対象と Linux でのリモート|
+|linux_arm|リモート ARM Linux を対象します。|
+
+カスタム環境変数を定義できます CppProperties.json にするか、グローバルまたは構成単位です。 次の例は、どのように既定およびカスタムの環境変数を宣言して使用できます。 グローバル**環境**プロパティという名前の変数を宣言して**INCLUDE**任意の構成で使用できます。
+
+```json
+{
+  // The "environments" property is an array of key value pairs of the form
+  // { "EnvVar1": "Value1", "EnvVar2": "Value2" }
+  "environments": [
+    {
+      "INCLUDE": "${workspaceRoot}\\src\\includes"
+    }
+  ],
+ 
+  "configurations": [
+    {
+      "inheritEnvironments": [
+        // Inherit the MSVC 32-bit environment and toolchain.
+        "msvc_x86"
+      ],
+      "name": "x86",
+      "includePath": [
+        // Use the include path defined above.
+        "${env.INCLUDE}"
+      ],
+      "defines": [ "WIN32", "_DEBUG", "UNICODE", "_UNICODE" ],
+      "intelliSenseMode": "msvc-x86"
+    },
+    {
+      "inheritEnvironments": [
+        // Inherit the MSVC 64-bit environment and toolchain.
+        "msvc_x64"
+      ],
+      "name": "x64",
+      "includePath": [
+        // Use the include path defined above.
+        "${env.INCLUDE}"
+      ],
+      "defines": [ "WIN32", "_DEBUG", "UNICODE", "_UNICODE" ],
+      "intelliSenseMode": "msvc-x64"
+    }
+  ]
+}
+```
+定義することも、**環境**構成では、その構成にのみ適用して、同じ名前のグローバル変数を上書きするように内部プロパティです。 次の例では、x64 の構成で定義するローカル**INCLUDE**グローバル値をオーバーライドする変数。
+
+```json
+{
+  "environments": [
+    {
+      "INCLUDE": "${workspaceRoot}\\src\\includes"
+    }
+  ],
+ 
+  "configurations": [
+    {
+      "inheritEnvironments": [
+        "msvc_x86"
+      ],
+      "name": "x86",
+      "includePath": [
+        // Use the include path defined in the global environments property.
+        "${env.INCLUDE}"
+      ],
+      "defines": [ "WIN32", "_DEBUG", "UNICODE", "_UNICODE" ],
+      "intelliSenseMode": "msvc-x86"
+    },
+    {
+      "environments": [
+        {
+          // Append 64-bit specific include path to env.INCLUDE.
+          "INCLUDE": "${env.INCLUDE};${workspaceRoot}\\src\\includes64"
+        }
+      ],
+ 
+      "inheritEnvironments": [
+        "msvc_x64"
+      ],
+      "name": "x64",
+      "includePath": [
+        // Use the include path defined in the local environments property.
+        "${env.INCLUDE}"
+      ],
+      "defines": [ "WIN32", "_DEBUG", "UNICODE", "_UNICODE" ],
+      "intelliSenseMode": "msvc-x64"
+    }
+  ]
+}
+```
+
+すべてのカスタムし、既定の環境変数も tasks.vs.json および launch.vs.json で使用できます。
+
+#### <a name="macros"></a>[マクロ]
+次の組み込みのマクロ CppProperties.json 内へのアクセスがあります。
 |||
 |-|-|
 |`${workspaceRoot}`| ワークスペースのフォルダーへの完全パス|
@@ -138,7 +249,7 @@ CppProperties.json で任意の数の構成を作成できます。 それぞれ
 
 ![フォルダーを開くタスクを構成します。](media/open-folder-config-tasks.png)
 
-これを作成 (またはが表示されます)、`tasks.vs.json`ファイル .vs フォルダーに Visual Studio がルート プロジェクト フォルダーに作成します。 このファイル内の任意のタスクを定義して、呼び出すことから、**ソリューション エクスプ ローラー**コンテキスト メニュー。 次の例では、1 つのタスクを定義する tasks.vs.json ファイルを示します。 `taskName`コンテキスト メニューに表示される名前を定義します。 `appliesTo`コマンドを実行できるファイルを定義します。 `command`プロパティは、コンソール (cmd.exe Windows 上) のパスを識別する文字列環境変数を参照します。 `args`プロパティが呼び出されるコマンドラインを指定します。 `${file}`マクロで選択したファイルを取得する**ソリューション エクスプ ローラー**です。 次の例では、現在選択されている .cpp ファイルのファイル名が表示されます。
+これを作成 (またはが表示されます)、`tasks.vs.json`ファイル .vs フォルダーに Visual Studio がルート プロジェクト フォルダーに作成します。 このファイル内の任意のタスクを定義して、呼び出すことから、**ソリューション エクスプ ローラー**コンテキスト メニュー。 次の例では、1 つのタスクを定義する tasks.vs.json ファイルを示します。 `taskName`コンテキスト メニューに表示される名前を定義します。 `appliesTo`コマンドを実行できるファイルを定義します。 `command`プロパティは、コンソール (cmd.exe Windows 上) のパスを識別する文字列環境変数を参照します。 CppProperties.json または CMakeSettings.json で宣言されている環境変数を参照することもできます。 `args`プロパティが呼び出されるコマンドラインを指定します。 `${file}`マクロで選択したファイルを取得する**ソリューション エクスプ ローラー**です。 次の例では、現在選択されている .cpp ファイルのファイル名が表示されます。
 
 ```json
 {
@@ -155,6 +266,8 @@ CppProperties.json で任意の数の構成を作成できます。 それぞれ
 }
 ```
 Tasks.vs.json を保存した後、フォルダー内の .cpp ファイルを右クリックし、選択**エコー filename**からコンテキスト メニューとは、出力ウィンドウに表示されるファイル名を参照してください。
+
+
 
 #### <a name="appliesto"></a>AppliesTo
 その名前を指定することで任意のファイルまたはフォルダーのタスクを作成することができます、`appliesTo`フィールド、たとえば`"appliesTo" : "hello.cpp"`します。 次のファイル マスクは、値として使用できます。

@@ -20,11 +20,11 @@ author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 86b12604a5348c3a1aabb33c7e13a4e7a3c57932
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ba64cf2e866579b3377e57445c98eb9a436a1edd
+ms.sourcegitcommit: ef2a263e193410782c6dfe47d00764263439537c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="zc-conformance"></a>/Zc (準拠)
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 12/21/2017
 
 ## <a name="syntax"></a>構文
 
-> /Zc:_オプション_{、_オプション_}
+> /Zc:_option_{,_option_}
 
 ## <a name="remarks"></a>コメント
 
@@ -43,19 +43,20 @@ Visual Studio には、C または C++ 規格と互換性がない拡張機能�
 |オプション|動作|
 |---|---|
 |[alignedNew\[-\]](zc-alignednew.md)|C++ 17 オーバーア ラインされている動的割り当てを有効にする (既定で有効にで c++ 17)。|
-|[自動\[-\]](zc-auto-deduce-variable-type.md)|新しい標準 C++ の解釈を強制`auto`(で既定で)。|
+|[auto\[-\]](zc-auto-deduce-variable-type.md)|新しい標準 C++ の解釈を強制`auto`(で既定で)。|
 |[externConstexpr\[-\]](zc-externconstexpr.md)|外部リンケージを有効にする`constexpr`変数 (既定でオフ)。|
 |[forScope\[-\]](zc-forscope-force-conformance-in-for-loop-scope.md)|標準 C++ を適用する`for`スコープの規則 (で既定で)。|
 |[implicitNoexcept\[-\]](zc-implicitnoexcept-implicit-exception-specifiers.md)|有効にする暗黙的な`noexcept`に必要な関数 (で既定で)。|
-|[インライン\[-\]](zc-inline-remove-unreferenced-comdat.md)|COMDAT はまたは内部リンケージのみを持つ場合に参照されない関数、またはデータを削除する (既定でオフ)。|
+|[inline\[-\]](zc-inline-remove-unreferenced-comdat.md)|COMDAT はまたは内部リンケージのみを持つ場合に参照されない関数、またはデータを削除する (既定でオフ)。|
 |[noexceptTypes\[-\]](zc-noexcepttypes.md)|C++ 17 noexcept ルールを適用する (で既定では c++ 17 またはそれ以降)。|
 |[referenceBinding\[-\]](zc-referencebinding-enforce-reference-binding-rules.md)|非定数の左辺値参照に、UDT の一時的なはバインドされません (既定でオフ)。|
 |[rvalueCast\[-\]](zc-rvaluecast-enforce-type-conversion-rules.md)|標準 C++ の明示的な型変換規則を強制する (既定でオフ)。|
 |[sizedDealloc\[-\]](zc-sizeddealloc-enable-global-sized-dealloc-functions.md)|C++ 14 グローバル サイズの割り当て解除機能を有効にする (で既定で)。|
 |[strictStrings\[-\]](zc-strictstrings-disable-string-literal-type-conversion.md)|文字列リテラルを無効にする`char*`または`wchar_t*`変換 (既定でオフ)。|
+|[ternary\[-\]](zc-ternary.md)|オペランドの型の条件演算子のルールを適用する (既定でオフ)。|
 |[threadSafeInit\[-\]](zc-threadsafeinit-thread-safe-local-static-initialization.md)|スレッド セーフであるローカルの静的な初期化を有効にする (で既定で)。|
 |[throwingNew\[-\]](zc-throwingnew-assume-operator-new-throws.md)|想定`operator new`でエラーがスローされます (既定でオフ)。|
-|[トライグラフ\[-\]](zc-trigraphs-trigraphs-substitution.md)|トライグラフ (廃止、オフ既定) を有効にします。|
+|[trigraphs\[-\]](zc-trigraphs-trigraphs-substitution.md)|トライグラフ (廃止、オフ既定) を有効にします。|
 |[wchar_t\[-\]](zc-wchar-t-wchar-t-is-native-type.md)|`wchar_t`ネイティブ型を typedef ではありません (で既定で)。|
 
 Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandard Behavior](../../cpp/nonstandard-behavior.md)」をご覧ください。
