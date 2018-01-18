@@ -142,6 +142,7 @@
 ##### [/Zc:rvalueCast (型変換規則の適用)](zc-rvaluecast-enforce-type-conversion-rules.md)
 ##### [/Zc: sizedDealloc (グローバル サイズ割り当て解除関数の有効化)](zc-sizeddealloc-enable-global-sized-dealloc-functions.md)
 ##### [/Zc:strictStrings (文字列リテラル型の変換の無効化)](zc-strictstrings-disable-string-literal-type-conversion.md)
+##### [/Zc:ternary (条件演算子ルールの強制)](zc-ternary.md)
 ##### [/Zc: threadSafeInit (スレッド セーフなローカルの静的な初期化)](zc-threadsafeinit-thread-safe-local-static-initialization.md)
 ##### [/Zc: throwingNew (演算子の新しいスローの仮定)](zc-throwingnew-assume-operator-new-throws.md)
 ##### [/Zc:trigraphs (トライグラフの置換)](zc-trigraphs-trigraphs-substitution.md)

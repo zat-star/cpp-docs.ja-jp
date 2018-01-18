@@ -18,21 +18,22 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 89801ec258ae387683c5bedf74ca447902f8c4d3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7ccf82e7bb04e893c767619fcba662aca9898e12
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="thread-pooling-classes"></a>スレッド プール クラス
 次のクラスは、スレッド プールをサポートします。  
   
--   [CComAutoThreadModule](../atl/reference/ccomautothreadmodule-class.md) EXE モジュール、複数のスレッド プールのアパートメントのサポートを実装します。  
+-   [CComAutoThreadModule](../atl/reference/ccomautothreadmodule-class.md) スレッドプールされた複数のアパートメントをサポートするEXEモジュールを実装します。  
   
 -   [CComApartment](../atl/reference/ccomapartment-class.md)アパートメント スレッド プールの EXE モジュールを管理します。  
   
 -   [CComSimpleThreadAllocator](../atl/reference/ccomsimplethreadallocator-class.md) EXE モジュールのスレッドの選択を管理します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

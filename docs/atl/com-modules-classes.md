@@ -15,11 +15,12 @@ caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cee2ebb756ecee09a78207319250832d4dfc14a9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: a0ed40f96d64ebda2f9fc04b64e64d1533fb13d0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="com-modules-classes"></a>COM モジュール クラス
 次のクラスは、COM モジュールをサポートを提供します。  
@@ -40,12 +41,12 @@ ms.lasthandoff: 10/24/2017
   
 -   [CComModule](../atl/reference/ccommodule-class.md)このクラスは、DLL または EXE モジュールを実装します。 ATL 7.0 で廃止されます。  
   
--   [CComAutoThreadModule](../atl/reference/ccomautothreadmodule-class.md)このクラスは、複数のスレッド プールのアパートメントに対応した、EXE モジュールを実装します。 ATL 7.0 で廃止されます。  
+-   [CComAutoThreadModule](../atl/reference/ccomautothreadmodule-class.md) このクラスは、スレッドプールされた複数のアパートメントをサポートするEXEモジュールを実装します。 ATL 7.0 で廃止されます。  
   
 ## <a name="related-articles"></a>関連トピック  
  [ATL モジュール クラス](../atl/atl-module-classes.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)   
  [モジュール クラス](../atl/atl-module-classes.md)
 

@@ -1,5 +1,5 @@
 ---
-title: "-GH (_pexit フック関数の有効化) |Microsoft ドキュメント"
+title: "-Y-(プリコンパイル済みヘッダー オプションの無視) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -7,44 +7,39 @@ ms.suite:
 ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: _pexit
+f1_keywords: /y-
 dev_langs: C++
 helpviewer_keywords:
-- /Gh compiler option [C++]
-- Gh compiler option [C++]
-- _pexit function
-- -Gh compiler option [C++]
-ms.assetid: 93181453-2676-42e5-bf63-3b19e07299b6
-caps.latest.revision: "11"
+- Y- compiler option [C++]
+- -Y- compiler option [C++]
+- /Y- compiler option [C++]
+ms.assetid: cfaecb36-58db-46b8-b04d-cca6072b1b7a
+caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 02cfdd783a698a3397e84fa62b7252399570dc84
+ms.openlocfilehash: 219f173e69741fbe1ce67ebd1725aadae04e326a
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
-# <a name="gh-enable-pexit-hook-function"></a>/GH (_pexit フック関数の有効化)
-呼び出し、`_pexit`関数すべてのメソッドまたは関数の末尾。  
+# <a name="y--ignore-precompiled-header-options"></a>/Y- (プリコンパイル済みヘッダー オプションの無視)
+他のすべての原因`/Y`コンパイラ オプションを無視する (および自体はオーバーライドできません)。  
   
 ## <a name="syntax"></a>構文  
   
 ```  
-/GH  
+/Y-  
 ```  
   
 ## <a name="remarks"></a>コメント  
- `_pexit`関数は、任意のライブラリの一部ではないの定義を指定するかどうかは`_pexit`します。  
+ プリコンパイル済みヘッダーの詳細についてを参照してください。  
   
- 明示的に呼び出す予定がない限り`_pexit`プロトタイプを提供する必要はありません。 関数は、する必要がありますとして記述があった次のプロトタイプでは、エントリのすべてのレジスタのコンテンツをプッシュおよび終了時に変更されていないコンテンツを表示する必要があります。  
+-   [/Y (プリコンパイル済みヘッダー)](../../build/reference/y-precompiled-headers.md)  
   
-```  
-void __declspec(naked) _cdecl _pexit( void );  
-```  
-  
- `_pexit`ような`_penter`; を参照してください[/Gh (有効にする _penter フック関数)](../../build/reference/gh-enable-penter-hook-function.md)を記述する方法の例については、`_pexit`関数。  
+-   [プリコンパイル済みヘッダー ファイルの作成](../../build/reference/creating-precompiled-header-files.md)  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   

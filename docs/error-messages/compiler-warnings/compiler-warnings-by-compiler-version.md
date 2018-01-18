@@ -16,11 +16,12 @@ caps.latest.revision: "0"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c0f4a4aedc85cade0d5b7b895e5998733460a7ee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 52513b156ee8c86d8358be84a27c28d15eb86641
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warnings-by-compiler-version"></a>コンパイラのバージョンによってコンパイラの警告  
   
@@ -184,7 +185,7 @@ C4388|'*トークン*': signed と unsigned の数値が一致しません
 C4423|'std::bad_alloc': クラスによってキャッチされます ('*型*') の行に*数*
 C4424|catch の '*型*'続く'*型*' 行に*数*; 予期しない 'std::bad_alloc' がスローされた場合の動作があります
 C4425|SAL 注釈を '...' に適用できません。
-C4464|相対インクルード パスを含む '.. '
+C4464|相対インクルード パスを含む '. '
 C4575|'_ _vectorcall' と互換性のない、'/clr' オプション: '_ _stdcall' に変換します。
 C4609|'*型*'既定のインターフェイスから派生した'*型*'type' に関する*型*' です。 別の既定のインターフェイスを使用して '*型*'、または基本/派生リレーションシップを中断します。
 C4754|における比較時の算術演算の変換規則*説明*(*数*) を 1 つの分岐が実行できないことを意味します。 キャスト '*型*'to'*型*' (または類似する型の*数*バイト)。
@@ -231,7 +232,7 @@ C4492|'*型*': 一致する基本 ref クラス メソッド'*型*'、'override'
 C4493|delete 式も何も起こりませんのデストラクターとして '*型*' は 'public' アクセシビリティがありません
 C4585|'*型*': WinRT 'public ref class' sealed にする必要がありますか、または、既存の派生には、クラスが封印されていません。
 C4586|'*型*': パブリック型は 'Windows' というトップレベルの名前空間で宣言することはできません
-C4695|#pragma execution_character_set: '*引数*' はサポートされている引数ではありません現在は 'utf-8' がサポートされています。。
+C4695|#pragma execution_character_set: '*引数*' はサポートされている引数ではありません現在は 'utf-8' がサポートされています。
 C4703|初期化されていない可能性があるローカル ポインター変数 '*名前*' を使用
 C4728|/Yl-オプション PCH 参照が必要なために、無視されました
 C4745|揮発性アクセス '*名前*' そのサイズにより適用することはできません
@@ -362,7 +363,7 @@ C4678|基本クラス*宣言*'がよりも小さい'*名前*'
 C4679|'*説明*': メンバーをインポートできませんでした
 C4687|'*型*': シールされた抽象クラスはインターフェイスを実装できません'*型*'
 C4688|'*名前*': 制約リストには、アセンブリ プライベート型が含まれています'*宣言*'。
-C4690|[emitidl (pop)]: ポップがプッシュ
+C4690|[ emitidl( pop ) ]: ポップがプッシュ
 C4691|'*型*': 参照型で参照されていない*モジュール*'*説明*'、代わりに使用される現在の翻訳単位で定義されている型
 C4692|'*名前*': 公開されたメンバーのシグネチャはアセンブリ プライベート ネイティブ型を含む'*宣言*'
 C4693|'*型*': シールされた抽象クラスのインスタンス メンバーを持つことはできません*名前*'
@@ -602,7 +603,7 @@ C4996|'*問題*':*の説明*
 C4997|'*型*': コクラスは COM インターフェイスまたは擬似インターフェイスを実装していません
 C4998|予測は失敗しました:*説明*(*数*)
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [/Wv コンパイラ オプション](../../build/reference/compiler-option-warning-level.md)  
 [既定で無効になっているコンパイラの警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md)  
 [warning](../../preprocessor/warning.md)  
