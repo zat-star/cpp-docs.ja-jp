@@ -14,11 +14,11 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: ffad61c015c38d808b35ebffd98f74733d0997de
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4fc8bbc3a983e6fa50e4ae5e8590e1f1de37f02f
+ms.sourcegitcommit: ff9bf140b6874bc08718674c07312ecb5f996463
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="containers-modern-c"></a>コンテナー (Modern C++)  
   
@@ -41,7 +41,7 @@ apple_color["Granny Smith"] = "Green";
   
 1.  [配列](../standard-library/array-class-stl.md)埋め込みは、クラス メンバーとしてなど、重要なときに入力します。  
   
-2.  順序なし [unordered_map] などの連想コンテナー ((../standard-library/unordered-map-class.md)。 これら下の要素ごとのオーバーヘッドありが一定時間の参照が可能正しく効率的に使用するは困難です。  
+2.  順序なし連想コンテナーはなど[unordered_map](../standard-library/unordered-map-class.md)です。 これら下の要素ごとのオーバーヘッドありが一定時間の参照が可能正しく効率的に使用するは困難です。  
   
 3.  並べ替えられた`vector`です。 詳細については、「[アルゴリズム](../cpp/algorithms-modern-cpp.md)」をご覧ください。  
   
