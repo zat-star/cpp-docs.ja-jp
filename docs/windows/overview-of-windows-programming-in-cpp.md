@@ -16,11 +16,11 @@ manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 9bf25d8f3653d2146774efd333daff74a5fb33e2
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: b2206151f68e02ebadbfab5785a7a1e90be67468
+ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="overview-of-windows-programming-in-c"></a>C++ でプログラミングする Windows の概要
 
@@ -40,7 +40,7 @@ Visual C++ で開発できる Windows アプリにはいくつかの大きなカ
 
 ##  <a name="BK_WindowsUniversal"></a> Windows Universal Apps
 
-Windows 10 では、デスクトップ上だけでなく、タブレットや携帯電話など、すべての Windows 10 デバイスでアプリを実行できます。 デスクトップでは、常に全画面表示で実行しなければならないわけではなく、デスクトップ ウィンドウとして実行することができます。 これらのアプリは Xbox でも動作し、将来のデバイスでも実行できます。  2 種類のアプリのプログラミング モデルは、Win32 デスクトップ アプリケーションとは異なります。 これらの Windows アプリケーションは Windows ランタイム上で動作します。このランタイムは、ユーザー インターフェイス要素、これらのアプリの重要なサービス、およびサポートされている多様なハードウェア デバイスへのインターフェイスを提供します。 これらのアプリはネイティブ コードにコンパイルされ、XAML ユーザー インターフェイスを持つか、DirectX を使用します。 その他の Windows アプリで使用できるネイティブ コードで、Windows ランタイム コンポーネントを記述することも、c#、Visual Basic、または JavaScript で記述されたアプリが含まれます。 詳細については、次を参照してください。 [C++ ユニバーサル Windows プラットフォーム アプリを作成](http://go.microsoft.com/fwlink/p/?linkid=534976)、[ゲームを初めて作成 UWP DirectX を使用する](http://go.microsoft.com/fwlink/p/?LinkId=244656)、および[C++ で作成する Windows ランタイム コンポーネント](http://go.microsoft.com/fwlink/p/?LinkId=244658)です。
+Windows 10 では、デスクトップ上だけでなく、タブレットや携帯電話など、すべての Windows 10 デバイスでアプリを実行できます。 デスクトップでは、常に全画面表示で実行しなければならないわけではなく、デスクトップ ウィンドウとして実行することができます。 これらのアプリは Xbox でも動作し、将来のデバイスでも実行できます。  2 種類のアプリのプログラミング モデルは、Win32 デスクトップ アプリケーションとは異なります。 これらの Windows アプリケーションは Windows ランタイム上で動作します。このランタイムは、ユーザー インターフェイス要素、これらのアプリの重要なサービス、およびサポートされている多様なハードウェア デバイスへのインターフェイスを提供します。 これらのアプリはネイティブ コードにコンパイルされ、XAML ユーザー インターフェイスを持つか、DirectX を使用します。 その他の Windows アプリで使用できるネイティブ コードで、Windows ランタイム コンポーネントを記述することも、c#、Visual Basic、または JavaScript で記述されたアプリが含まれます。 詳細については、次を参照してください。 [C++ UWP"Hello world"アプリを作成](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp)、 [DirectX で UWP の簡単なゲームを作成する](/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game)、および[C++ で作成する Windows ランタイム コンポーネント](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)です。
 
 > [!TIP]
 > Windows 10 用 Windows ストアを介して展開用の既存のデスクトップ アプリケーションをパッケージ化するのに、デスクトップ アプリを実行するコンバーターを使用できます。 詳しくは、「[Using Visual C++ Runtime in Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)」(Centennial プロジェクトでの Visual C++ ランタイムの使用) および「[Bring your desktop app to the Universal Windows Platform (UWP) with the Desktop Bridge](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)」(Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 対応にする) をご覧ください。

@@ -22,11 +22,11 @@ author: ghogen
 ms.author: ghogen
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 8ef351759814ee03b54160cac2340eafd304d5f3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 10619437ad7be96edb6ed2a0c4eb86c4f10580ca
+ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="platformcollectionsvectorview-class"></a>Platform::Collections::VectorView クラス
 インデックスによって個別にアクセスできるオブジェクトのシーケンシャル コレクションの読み取り専用ビューを表します。 コレクション内の各オブジェクトの型は、テンプレート パラメーターによって指定されます。  
@@ -54,17 +54,17 @@ template <typename T, typename E>
   
 |名前|説明|  
 |----------|-----------------|  
-|[Vectorview::vectorview](#ctor)|VectorView クラスの新しいインスタンスを初期化します。|  
+|[VectorView::VectorView](#ctor)|VectorView クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[Vectorview::first](#first)|VectorView 内の最初の要素を指定する反復子を返します。|  
-|[Vectorview::getat](#getat)|指定されたインデックスで示される現在の VectorView の要素を取得します。|  
-|[Vectorview::getmany](#getmany)|指定されたインデックスを開始位置として、現在の VectorView から項目のシーケンスを取得します。|  
-|[Vectorview::indexof](#indexof)|現在の VectorView 内で指定された項目を検索し、見つかった場合は項目のインデックスを返します。|  
-|[Vectorview::size](#size)|現在の VectorView オブジェクトの要素数を返します。|  
+|[VectorView::First](#first)|VectorView 内の最初の要素を指定する反復子を返します。|  
+|[VectorView::GetAt](#getat)|指定されたインデックスで示される現在の VectorView の要素を取得します。|  
+|[VectorView::GetMany](#getmany)|指定されたインデックスを開始位置として、現在の VectorView から項目のシーケンスを取得します。|  
+|[VectorView::IndexOf](#indexof)|現在の VectorView 内で指定された項目を検索し、見つかった場合は項目のインデックスを返します。|  
+|[VectorView::Size](#size)|現在の VectorView オブジェクトの要素数を返します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `VectorView`  
@@ -277,4 +277,4 @@ VectorView(
   
 ## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)   
- [C++ での Windows ランタイム コンポーネントを作成します。](/MicrosoftDocs/windows-uwp/blob/docs/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md)
+ [C++ での Windows ランタイム コンポーネントを作成します。](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)

@@ -1,7 +1,7 @@
 ---
 title: "Platform::collections Namespace |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 01/25/2017
+ms.date: 01/18/2018
 ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
@@ -16,52 +16,56 @@ author: ghogen
 ms.author: ghogen
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: a93282a233f98d7a384d1fdad2ba6ca862e9e3f2
-ms.sourcegitcommit: c2e990450ccd528d85b2783fbc63042612987cfd
+ms.openlocfilehash: a05f0367ce9d4f0a321ad98b20d5cc16cf665104
+ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="platformcollections-namespace"></a>Platform::Collections 名前空間
-Platform::collections 名前空間を含む、 `Map`、 `MapView`、 `Vector`、および`VectorView`クラスです。 これらのクラスは、 [Windows::Foundation::Collections](http://go.microsoft.com/fwlink/p/?LinkId=262645) 名前空間に定義されている、対応するインターフェイスの具象実装です。 具体的なコレクション型は、(Javascript または C# で書かれたプログラムが C ++ コンポーネントを呼び出すなど) ABI を越えて移植することはできませんが、対応するインターフェイスの型に暗黙的に変換できます。 たとえば、コレクションを設定して返すパブリック メソッドを実装する場合は、 [Platform::Collections::Vector](../cppcx/platform-collections-vector-class.md) を使用して内部的にコレクションを実装し、 [Windows::Foundation::Collections::IVector](http://go.microsoft.com/fwlink/p/?LinkId=262410) を戻り値の型として使用します。 詳細については、次を参照してください。[コレクション](../cppcx/collections-c-cx.md)と[C++ での Windows ランタイム コンポーネントの作成](/MicrosoftDocs/windows-uwp/blob/docs/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md)です。  
-  
- Platform::Collections::Vector は [std::vector](../standard-library/vector-class.md) から構築でき、 [Platform::Collections::Map](../cppcx/platform-collections-map-class.md) は [std::map](../standard-library/map-class.md)から構築できます。  
-  
- また、platform::collections 名前空間は挿入反復子および入力反復子のサポートを提供および`Vector`と`VectorView`反復子。  
-  
- 含める必要があります (`#include`)、platform::collections 名前空間の型の使用には、collection.h ヘッダー。  
-  
-## <a name="syntax"></a>構文  
-  
-```cpp  
-  
-#include <collection.h>  
-using namespace Platform::Collections;  
-```  
-  
-### <a name="members"></a>メンバー  
- この名前空間には、次のメンバーが含まれます。  
-  
-|name|説明|  
-|----------|-----------------|  
-|[Platform::Collections::BackInsertIterator クラス](../cppcx/platform-collections-backinsertiterator-class.md)|コレクションの末尾に要素を挿入する反復子を表します。|  
-|[Platform::Collections::InputIterator クラス](../cppcx/platform-collections-inputiterator-class.md)|コレクションの先頭に要素を挿入する反復子を表します。|  
-|[Platform::Collections::Map クラス](../cppcx/platform-collections-map-class.md)|キーによりアクセスされるキーと値のペアの変更可能なコレクションを表します。 [std::map](../standard-library/map-class.md)に似ています。|  
-|[Platform::Collections::MapView クラス](../cppcx/platform-collections-mapview-class.md)|キーによりアクセスされるキーと値のペアの読み取り専用のコレクションを表します。|  
-|[Platform::Collections::Vector Class](../cppcx/platform-collections-vector-class.md)|要素の変更可能なシーケンスを表します。 [std::vector](../standard-library/vector-class.md)に似ています。|  
-|[Platform::Collections::VectorIterator クラス](../cppcx/platform-collections-vectoriterator-class.md)|`Vector` コレクションを走査する反復子を表します。|  
-|[Platform::Collections::VectorView クラス](../cppcx/platform-collections-vectorview-class.md)|要素の読み取り専用のシーケンスを表します。|  
-|[Platform::Collections::VectorViewIterator クラス](../cppcx/platform-collections-vectorviewiterator-class.md)|`VectorView` コレクションを走査する反復子を表します。|  
-  
-## <a name="inheritance-hierarchy"></a>継承階層  
- [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)  
-  
-### <a name="requirements"></a>必要条件  
- **メタデータ:** platform.winmd  
-  
- **名前空間:** Platform::Collections  
-  
- **コンパイラ オプション:** /ZW  
-  
-## <a name="see-also"></a>参照  
- [プラットフォーム Namespace](../cppcx/platform-namespace-c-cx.md)
+
+Platform::collections 名前空間を含む、 `Map`、 `MapView`、 `Vector`、および`VectorView`クラスです。 これらのクラスは、 [Windows::Foundation::Collections](http://go.microsoft.com/fwlink/p/?LinkId=262645) 名前空間に定義されている、対応するインターフェイスの具象実装です。 具体的なコレクション型は、(Javascript または C# で書かれたプログラムが C ++ コンポーネントを呼び出すなど) ABI を越えて移植することはできませんが、対応するインターフェイスの型に暗黙的に変換できます。 たとえば、コレクションを設定して返すパブリック メソッドを実装する場合は、 [Platform::Collections::Vector](../cppcx/platform-collections-vector-class.md) を使用して内部的にコレクションを実装し、 [Windows::Foundation::Collections::IVector](http://go.microsoft.com/fwlink/p/?LinkId=262410) を戻り値の型として使用します。 詳細については、次を参照してください。[コレクション](../cppcx/collections-c-cx.md)と[C++ での Windows ランタイム コンポーネントの作成](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)です。
+
+Platform::Collections::Vector は [std::vector](../standard-library/vector-class.md) から構築でき、 [Platform::Collections::Map](../cppcx/platform-collections-map-class.md) は [std::map](../standard-library/map-class.md)から構築できます。
+
+また、platform::collections 名前空間は挿入反復子および入力反復子のサポートを提供および`Vector`と`VectorView`反復子。
+
+含める必要があります (`#include`)、platform::collections 名前空間の型の使用には、collection.h ヘッダー。
+
+## <a name="syntax"></a>構文
+
+```cpp
+#include <collection.h>
+using namespace Platform::Collections;
+```
+
+### <a name="members"></a>メンバー
+
+この名前空間には、次のメンバーが含まれます。
+
+|name|説明|
+|----------|-----------------|
+|[Platform::Collections::BackInsertIterator クラス](../cppcx/platform-collections-backinsertiterator-class.md)|コレクションの末尾に要素を挿入する反復子を表します。|
+|[Platform::Collections::InputIterator クラス](../cppcx/platform-collections-inputiterator-class.md)|コレクションの先頭に要素を挿入する反復子を表します。|
+|[Platform::Collections::Map クラス](../cppcx/platform-collections-map-class.md)|キーによりアクセスされるキーと値のペアの変更可能なコレクションを表します。 [std::map](../standard-library/map-class.md)に似ています。|
+|[Platform::Collections::MapView クラス](../cppcx/platform-collections-mapview-class.md)|キーによりアクセスされるキーと値のペアの読み取り専用のコレクションを表します。|
+|[Platform::Collections::Vector Class](../cppcx/platform-collections-vector-class.md)|要素の変更可能なシーケンスを表します。 [std::vector](../standard-library/vector-class.md)に似ています。|
+|[Platform::Collections::VectorIterator クラス](../cppcx/platform-collections-vectoriterator-class.md)|`Vector` コレクションを走査する反復子を表します。|
+|[Platform::Collections::VectorView クラス](../cppcx/platform-collections-vectorview-class.md)|要素の読み取り専用のシーケンスを表します。|
+|[Platform::Collections::VectorViewIterator クラス](../cppcx/platform-collections-vectorviewiterator-class.md)|`VectorView` コレクションを走査する反復子を表します。|
+
+## <a name="inheritance-hierarchy"></a>継承階層
+
+[Platform 名前空間](../cppcx/platform-namespace-c-cx.md)
+
+### <a name="requirements"></a>必要条件
+
+**メタデータ:** platform.winmd
+
+**名前空間:** Platform::Collections
+
+**コンパイラ オプション:** /ZW
+
+## <a name="see-also"></a>関連項目
+
+[プラットフォーム Namespace](../cppcx/platform-namespace-c-cx.md)  

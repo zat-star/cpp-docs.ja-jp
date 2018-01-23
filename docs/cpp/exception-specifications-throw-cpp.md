@@ -1,7 +1,7 @@
 ---
-title: "例外の仕様 (スロー) (C++) |Microsoft ドキュメント"
+title: "例外の仕様 (スロー、noexcept) (C++) |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 01/12/2018
+ms.date: 01/18/2018
 ms.reviewer: 
 ms.suite: 
 ms.technology: cpp-language
@@ -19,17 +19,17 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: c93fdaa75155e6f0117ef1c30d4e093d5ca0e576
-ms.sourcegitcommit: c2e990450ccd528d85b2783fbc63042612987cfd
+ms.openlocfilehash: bd96f666c4733f1c9b1aff65705840a46729194c
+ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="exception-specifications-throw-noexcept-c"></a>例外の仕様 (スロー、noexcept) (C++)
 
 例外の指定は、関数によって伝達されることができます、例外の種類に関するプログラマの意図を示す C++ 言語の機能です。 関数がいるかを使用して、例外によって終了可能性がありますを指定することができます、*例外指定*です。 コンパイラは、この情報を使用して、関数への呼び出しを最適化するために、関数をエスケープする場合、予期しない例外は、プログラムを終了する. 
 
-C++ 17 の前に、2 種類の例外の指定がありました。 *Noexcept 仕様*が c++ 11 の新機能です。 これは、関数をエスケープする可能性がある例外のセットが空かどうかを指定します。 *動的例外指定*、または`throw(optional_type_list)`仕様が c++ 11 で廃止されました、以外の c++ 17、削除された`throw()`、noexcept (true) のエイリアスであります。 この例外の指定された関数の場合からどのような例外をスローできる概要情報を提供するように設計されていますが、実際には、見つかった問題があること。 ある程度役に立つことが 1 つの動的な例外の仕様は、無条件`throw()`仕様です。 たとえば、関数宣言します。
+C++ 17 の前に、2 種類の例外の指定がありました。 *Noexcept 仕様*が c++ 11 の新機能です。 これは、関数をエスケープする可能性がある例外のセットが空かどうかを指定します。 *動的例外指定*、または`throw(optional_type_list)`仕様が c++ 11 で廃止されました、以外の c++ 17、削除された`throw()`のエイリアスである`noexcept(true)`です。 この例外の指定された関数の場合からどのような例外をスローできる概要情報を提供するように設計されていますが、実際には、見つかった問題があること。 ある程度役に立つことが 1 つの動的な例外の仕様は、無条件`throw()`仕様です。 たとえば、関数宣言します。
 
 ```cpp
 void MyFunction(int i) throw();

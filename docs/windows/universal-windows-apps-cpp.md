@@ -16,11 +16,11 @@ manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: e9ad7a56663081941f3b3ca18193da55d5df2ab6
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 55a6f21a8b4589b5288b8aff462dbb0234a10300
+ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="universal-windows-apps-c"></a>ユニバーサル Windows アプリ (C++)
 ユニバーサル Windows プラットフォーム (UWP) アプリは、一連のさまざまなデバイス上のさまざまな画面サイズに合わせて調整されるコンテンツを中心とした、シンプルなユーザー インターフェイスを強調するデザインの原則を具体化します。 XAML マークアップで UI を作成し、ネイティブ C++ で分離コードを作成します。 さらに他の言語で記述された UWP アプリケーションで使用可能なコンポーネント (DLL) を作成できます。 UWP アプリの API サーフェスは、Windows ランタイムでは、さまざまなオペレーティング システムのサービスを提供するための十分に考慮されたライブラリです。  
@@ -36,7 +36,7 @@ ms.lasthandoff: 12/21/2017
 |[Visual C++ の言語リファレンス (C++/CX)](../cppcx/visual-c-language-reference-c-cx.md)|Windows ランタイム Api の C++ の消費量を簡略化し、例外に基づいているエラー処理を有効にする拡張機能のセットについて説明します。|  
 |[アプリケーションとライブラリのビルド (C++/CX)](../cppcx/building-apps-and-libraries-c-cx.md)|C ++/CX アプリケーションまたはコンポーネントからアクセスできるスタティック ライブラリと DLL を作成する方法について説明します。|  
 |[チュートリアル: C++ を使った初めての Windows ストア アプリの作成](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp)|C++ ユニバーサル Windows プラットフォーム アプリの開発の基本的な概念を説明するチュートリアルです。 (Windows 10 での UWP 開発に関してはまだ更新されていません。)|  
-|[C++ で Windows ランタイム コンポーネントを作成する](https://docs.microsoft.com/en-us/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)|その他のユニバーサル Windows プラットフォーム アプリおよびコンポーネントが使用できる Dll を作成する方法について説明します。|  
+|[C++ での Windows ランタイム コンポーネントを作成します。](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)|その他のユニバーサル Windows プラットフォーム アプリおよびコンポーネントが使用できる Dll を作成する方法について説明します。|  
 |[ゲームの開発](https://docs.microsoft.com/en-us/windows/uwp/gaming/)|DirectX および C++ を使ってゲームを作成する方法について説明します。|  
   
 ## <a name="universal-windows-platform-apps-that-use-the-windows-runtime-c-template-library-wrl"></a>Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用するユニバーサル Windows プラットフォーム アプリ 

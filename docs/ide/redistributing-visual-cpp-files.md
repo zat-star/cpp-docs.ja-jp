@@ -20,13 +20,17 @@ author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 106123557c4efab5ccddf9f1292570d36b0f8313
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a89795e19df46b3701cf8dcc7a402540f693db94
+ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="redistributing-visual-c-files"></a>Visual C++ ファイルの再配布
+
+> [!NOTE]
+> ここで、いずれかの Visual C ランタイム ファイルのダウンロードを探しているためですか。 移動して、 [Microsoft](http://www.microsoft.com/) web サイトを入力および**Visual C Redistributable**検索ボックスにします。 ダウンロードして、コンピューター (たとえば、x64 64 ビット Windows を実行している場合) のアーキテクチャと、バージョンに必要な Visual C 再頒布可能パッケージをインストールします。   
+  
 アプリケーションを配置する場合は、アプリケーションをサポートするために必要なすべてのファイルも配置する必要があります。 必要なファイルに Microsoft から提供されるファイルが含まれる場合、それを再配布する権限を持っているかどうか確認します。 Visual Studio のライセンス条項を確認するは Microsoft Visual Studio ダイアログ ボックス、IDE でのライセンス条項リンクをご覧くださいまたはダウンロード、[マイクロソフト ソフトウェア ライセンス条項](http://go.microsoft.com/fwlink/p/?LinkId=831114)ファイル。 特定のエディションの Visual Studio の Microsoft ソフトウェア ライセンス条項の「頒布可能コード」セクションで参照されている"REDIST list"を表示する次を参照してください。 [Microsoft Visual Studio 2017 および Microsoft Visual Studio 2017 用頒布可能コード(が含まれていますユーティリティおよび BuildServer ファイル) の SDK](http://go.microsoft.com/fwlink/p/?LinkId=823098)、Visual Studio 2015 では、次を参照してください。 または[Microsoft Visual Studio 2015 および Microsoft Visual Studio 2015 SDK 用頒布可能コード](http://go.microsoft.com/fwlink/p/?LinkId=523763)です。 再頒布可能ファイルの詳細については、次を参照してください。[再配布する Dll の決定](../ide/determining-which-dlls-to-redistribute.md)と[配置例については](../ide/deployment-examples.md)します。  
   
  Visual C の再頒布可能ファイルを展開するには、Visual C 再頒布可能パッケージを使用することができます (VCRedist\_x86.exe、VCRedist\_x64.exe、または VCRedist\_arm.exe) Visual Studio に含まれています。 Visual Studio 2017 でこれらのファイルは含まれて Program Files [(x86)]\\Microsoft Visual Studio\\2017\\_エディション_\\VC\\Redist\\MSVC\\_lib バージョン_フォルダー場所_エディション_がインストールされている場合、Visual Studio のエディションと_lib バージョン_のバージョンは、再配布するライブラリ。 Visual Studio 2015 では、これらのファイル、Visual Studio インストール ディレクトリの下で見つかります Program Files [(x86)] \Microsoft Visual Studio*バージョン*\VC\redist\\*ロケール*\\. 別のオプションは、Visual Studio 2017 に Program Files [(x86)] で公開されている再頒布可能マージ モジュール (.msm ファイル) を使用する\\Microsoft Visual Studio\\2017\\_エディション_\\VC\\Redist\\MSVC\\_lib バージョン_\\MergeModules\\フォルダーです。 Visual Studio 2015 でこれらは含まれて Program Files [(x86)] \common モジュール\\です。 再頒布可能な Visual C Dll を直接インストールすることも、*アプリケーション ローカル フォルダー*、これは、アプリケーションの実行可能ファイルが含まれているフォルダーです。 サービス上の理由から、このインストール場所を使用することはお勧めしません。  
