@@ -44,7 +44,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  /FU スイッチは、1 つのファイル名を取得します。 複数のファイルを指定するには、1 つずつ/FU を使用します。  
   
- 使用している場合[!INCLUDE[cppcli](../../build/reference/includes/cppcli_md.md)]を使用するメタデータを参照していると、[フレンド アセンブリ](../../dotnet/friend-assemblies-cpp.md)機能を使うことはできません**/FU**です。 使用してコード内のメタデータを参照する必要があります`#using`— と共に、`[as friend]`属性。 フレンド アセンブリでサポートされていない[!INCLUDE[cppwrt](../../build/reference/includes/cppwrt_md.md)]([!INCLUDE[cppwrt_short](../../build/reference/includes/cppwrt_short_md.md)])。  
+ 使用している場合[!INCLUDE[cppcli](../../build/reference/includes/cppcli_md.md)]を使用するメタデータを参照していると、[フレンド アセンブリ](../../dotnet/friend-assemblies-cpp.md)機能を使うことはできません**/FU**です。 使用してコード内のメタデータを参照する必要があります`#using`— と共に、`[as friend]`属性。 フレンド アセンブリでサポートされていない[!INCLUDE[cppwrt](../../build/reference/includes/cppwrt_md.md)] ([!INCLUDE[cppwrt_short](../../build/reference/includes/cppwrt_short_md.md)])。  
   
  アセンブリまたは共通言語ランタイム (CLR) のモジュールを作成する方法については、次を参照してください。 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)です。 内でビルドする方法については[!INCLUDE[cppwrt_short](../../build/reference/includes/cppwrt_short_md.md)]を参照してください[アプリとライブラリのビルド](../../cppcx/building-apps-and-libraries-c-cx.md)です。  
   

@@ -24,7 +24,7 @@ ms.lasthandoff: 01/22/2018
 [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで C++ AMP (C++ Accelerated Massive Parallelism) を使用すると、GPU (グラフィックス処理装置) またはその他の計算アクセラレータで計算を実行できます。 ただし C++ AMP では、Windows ランタイムの型を直接操作するための API が提供されておらず、Windows ランタイムでは C++ AMP のラッパーが提供されません。 Windows ランタイムの型を (独自に作成したコードも含めて) コード内で使用するときは、C++ AMP と互換性のある型に変換する必要があります。  
   
 ## <a name="performance-considerations"></a>パフォーマンスに関する考慮事項  
- [!INCLUDE[cppwrt](../../build/reference/includes/cppwrt_md.md)] アプリの作成に [!INCLUDE[cppwrt_short](../../build/reference/includes/cppwrt_short_md.md)]([!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)]) を使用する場合、C++ AMP で使用するデータには、POD (plain old data) 型と共に連続した記憶域 (`std::vector` や C スタイルの配列など) を使用することをお勧めします。 マーシャリングの必要がないため、非 POD 型または Windows RT コンテナーを使用する場合より高いパフォーマンスの実現に役立ちます.  
+ [!INCLUDE[cppwrt](../../build/reference/includes/cppwrt_md.md)] アプリの作成に [!INCLUDE[cppwrt_short](../../build/reference/includes/cppwrt_short_md.md)] ([!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)]) を使用する場合、C++ AMP で使用するデータには、POD (plain old data) 型と共に連続した記憶域 (`std::vector` や C スタイルの配列など) を使用することをお勧めします。 マーシャリングの必要がないため、非 POD 型または Windows RT コンテナーを使用する場合より高いパフォーマンスの実現に役立ちます.  
   
  C ++ AMP カーネルで、この方法で格納されているデータにアクセスするには、`std::vector` または配列記憶域を `concurrency::array_view` でラップし、この配列ビューを `concurrency::parallel_for_each` ループで使用します。  
   

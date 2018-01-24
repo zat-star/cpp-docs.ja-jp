@@ -21,7 +21,7 @@ ms.lasthandoff: 12/21/2017
 ---
 # <a name="wrl-integration-ccx"></a>WRL 統合 (C++/CX)
 
-自由に混在させることによる WRL コード[!INCLUDE[cppwrl](includes/cppwrl-md.md)]([!INCLUDE[cppwrl_short](includes/cppwrl-short-md.md)]) コード。 同じ翻訳単位、WRL のオブジェクトへのハンドルで宣言されたオブジェクトを使用することができます (`^`) 表記と[!INCLUDE[cppwrl_short](includes/cppwrl-short-md.md)]スマート ポインター (`ComPtr<T>`) 表記します。 、、の戻り値が手動で処理する必要がありますと[!INCLUDE[cppwrl_short](includes/cppwrl-short-md.md)]HRESULT エラー コードと WRL 例外。
+自由に混在させることによる WRL コード[!INCLUDE[cppwrl](includes/cppwrl-md.md)] ([!INCLUDE[cppwrl_short](includes/cppwrl-short-md.md)]) コード。 同じ翻訳単位、WRL のオブジェクトへのハンドルで宣言されたオブジェクトを使用することができます (`^`) 表記と[!INCLUDE[cppwrl_short](includes/cppwrl-short-md.md)]スマート ポインター (`ComPtr<T>`) 表記します。 、、の戻り値が手動で処理する必要がありますと[!INCLUDE[cppwrl_short](includes/cppwrl-short-md.md)]HRESULT エラー コードと WRL 例外。
   
 ## <a name="includecppwrlshortincludescppwrl-short-mdmd-development"></a>[!INCLUDE[cppwrl_short](includes/cppwrl-short-md.md)] 開発
 
