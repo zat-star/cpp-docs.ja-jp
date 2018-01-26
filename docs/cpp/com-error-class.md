@@ -16,11 +16,11 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 47ee4686c5c0a239b868d6da9aaccc332def19dc
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 53defbe6c686630791317fa20aca48414144eb91
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="comerror-class"></a>_com_error クラス
 **Microsoft 固有の仕様**  
@@ -37,7 +37,7 @@ ms.lasthandoff: 12/21/2017
   
 |||  
 |-|-|  
-|[演算子 =](../cpp/com-error-operator-equal.md)|既存の `_com_error` オブジェクトを別のオブジェクトに割り当てます。|  
+|[operator =](../cpp/com-error-operator-equal.md)|既存の `_com_error` オブジェクトを別のオブジェクトに割り当てます。|  
   
 ### <a name="extractor-functions"></a>抽出関数  
   
@@ -53,7 +53,7 @@ ms.lasthandoff: 12/21/2017
 |-|-|  
 |[説明](../cpp/com-error-description.md)|`IErrorInfo::GetDescription` 関数を呼び出します。|  
 |[HelpContext](../cpp/com-error-helpcontext.md)|`IErrorInfo::GetHelpContext` 関数を呼び出します。|  
-|[ヘルプ ファイル](../cpp/com-error-helpfile.md)|`IErrorInfo::GetHelpFile` 関数を呼び出します。|  
+|[HelpFile](../cpp/com-error-helpfile.md)|`IErrorInfo::GetHelpFile` 関数を呼び出します。|  
 |[Source](../cpp/com-error-source.md)|`IErrorInfo::GetSource` 関数を呼び出します。|  
 |[GUID](../cpp/com-error-guid.md)|`IErrorInfo::GetGUID` 関数を呼び出します。|  
   
@@ -61,7 +61,7 @@ ms.lasthandoff: 12/21/2017
   
 |||  
 |-|-|  
-|[エラー メッセージ](../cpp/com-error-errormessage.md)|`_com_error` オブジェクトに格納された HRESULT の文字列メッセージを取得します。|  
+|[ErrorMessage](../cpp/com-error-errormessage.md)|`_com_error` オブジェクトに格納された HRESULT の文字列メッセージを取得します。|  
   
 ### <a name="exepinfowcode-to-hresult-mappers"></a>ExepInfo.wCode と HRESULT のマッパー  
   
@@ -73,7 +73,7 @@ ms.lasthandoff: 12/21/2017
 **Microsoft 固有の仕様はここまで**  
   
 ## <a name="requirements"></a>必要条件  
- **ヘッダー:** comdef.h  
+ **ヘッダー:** \<comdef.h >  
   
  `Lib:`comsuppw.lib または comsuppwd.lib (を参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)詳細)  
   

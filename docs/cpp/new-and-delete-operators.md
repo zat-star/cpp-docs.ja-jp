@@ -21,11 +21,11 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: a34d703783ce638991585b7e7a99b2015923182b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3af862988502ac0d1908c466aae5e62b753509c2
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="new-and-delete-operators"></a>new および delete 演算子
 
@@ -54,9 +54,9 @@ char *pch = new char[BUFFER_SIZE];
 |演算子|スコープ|  
 |--------------|-----------|  
 |**: 演算子の new**|Global|  
-|*クラス名* **:: 演算子の new**|クラス|  
+|*class-name* **::operator new**|クラス|  
   
- 1 番目の引数**new 演算子**型でなければなりません**size_t** (STDDEF で定義された型。H)、および戻り値の型は、常に**void \***です。  
+ 1 番目の引数**new 演算子**型でなければなりません**size_t** (で定義された型\<stddef.h >)、戻り値の型は常に**void \*** .  
   
  グローバル**new 演算子**関数が呼び出されます、**新しい**演算子を使用して、組み込み型のオブジェクトを割り当てる、含まれていないクラス型のオブジェクトのユーザー定義**演算子の new**関数、および任意の型の配列。 ときに、**新しい**演算子を使用して、クラス型のオブジェクトを割り当てる場所、 **new 演算子**定義されると、そのクラスの**new 演算子**と呼びます。  
   

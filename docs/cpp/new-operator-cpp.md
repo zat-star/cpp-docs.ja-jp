@@ -15,11 +15,11 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 98a6a535071246f75d877e7f63d3a0e9d86053be
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 68843f0619b5ebc057f83bdb4f49807a15fb86a1
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="new-operator-c"></a>new 演算子 (C++)
 オブジェクトまたはオブジェクトの配列にメモリを割り当てます*型名*フリー ストアから、オブジェクトを適切に型指定されたゼロ以外のポインターを返します。  
@@ -69,10 +69,10 @@ delete *p;
   
  次に示しますの文法要素**新しい**:  
   
- *配置*  
+ *placement*  
  オーバー ロードする場合は、追加の引数を渡す方法を提供**新しい**です。  
   
- *型名*  
+ *type-name*  
  割り当てる型を指定します。組み込みまたはユーザー定義の型を指定できます。 型の指定が複雑な場合には、かっこで囲むことでバインディング順を強制的に適用できます。  
   
  *initializer*  
@@ -238,7 +238,7 @@ int main()
  コンパイラが検出した場合、**新しい**型のオブジェクトを割り当てるオペレーター`type`への呼び出しを発行`type` **:: 演算子 new (sizeof (** `type` **))**またはユーザー定義されなかった場合`operator new`が定義されている**:: 演算子 new (sizeof (** `type` **))**です。 したがって、**新しい**演算子は、オブジェクトの正しいメモリの量を割り当てることができます。  
   
 > [!NOTE]
->  引数に`operator new`の種類は**size_t**です。 この型は、DIRECT.H、MALLOC.H、MEMORY.H、SEARCH.H、STDDEF.H、STDIO.H、STDLIB.H、STRING.H、および TIME.H で定義されます。  
+>  引数に`operator new`の種類は**size_t**です。 この型がで定義されている\<direct.h >、 \<malloc.h >、 \<memory.h >、 \<search.h >、 \<stddef.h >、 \<stdio.h >、 \<stdlib.h >、 \<string.h >、および\<time.h >。  
   
  文法のオプションで指定できる性*配置*(の文法を参照してください[new 演算子](../cpp/new-operator-cpp.md))。 *配置*パラメーターは、ユーザー定義の実装に対してのみ使用することができます`operator new`; に渡される追加の情報は、その`operator new`です。 式は、*配置*などフィールド`T *TObject = new ( 0x0040 ) T;`に変換されます`T *TObject = T::operator new( sizeof( T ), 0x0040 );`クラス T を持つメンバー演算子は、新しい、それ以外の場合に`T *TObject = ::operator new( sizeof( T ), 0x0040 );`です。  
   

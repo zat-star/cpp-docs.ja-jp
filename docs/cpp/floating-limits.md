@@ -11,7 +11,7 @@ dev_langs: C++
 helpviewer_keywords:
 - ranges, floating-point constants
 - floating-point constants, limits
-- FLOAT.H header file
+- float.h header file
 - limits, floating-point constants
 - floating-point numbers [C++]
 - floating limits
@@ -21,16 +21,16 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 449356b7bce3f17862919e90d7fc7e72b2d57df6
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6406d3d2d81fa3025a024606da68d61b5dcefdb7
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="floating-limits"></a>浮動小数点の制限
 **Microsoft 固有の仕様**  
   
- 次の表に、浮動小数点定数の値に関する制限を示します。 また、これらの制限は、標準ヘッダー ファイル FLOAT.H で定義されます。  
+ 次の表に、浮動小数点定数の値に関する制限を示します。 これらの制限は、標準ヘッダー ファイルで定義されても\<float.h >。  
   
 ### <a name="limits-on-floating-point-constants"></a>浮動小数点定数の制限  
   

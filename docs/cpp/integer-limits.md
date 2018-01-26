@@ -11,7 +11,7 @@ dev_langs: C++
 helpviewer_keywords:
 - integral limits
 - limits, integer
-- LIMITS.H header file
+- limits.h header file
 - integer limits
 ms.assetid: 6922bdbf-0f49-443b-bc03-ee182e4cbd57
 caps.latest.revision: "8"
@@ -19,16 +19,16 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 28fa385015d2cd5b3b854164f74995dd0648dfac
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a302a3b5b4542274f037d622c7be24f7c0dbb13a
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="integer-limits"></a>整数の制限
 **Microsoft 固有の仕様**  
   
- 次の表に、整数型の制限を示します。 これらの制限は、標準ヘッダー ファイル LIMITS.H にも定義されています。  
+ 次の表に、整数型の制限を示します。 これらの制限は、標準ヘッダー ファイルで定義されても\<limits.h >。  
   
 ### <a name="limits-on-integer-constants"></a>整数定数の制限  
   

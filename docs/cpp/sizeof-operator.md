@@ -16,11 +16,11 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 244af2a6afe87757c6a242c8a750f1bc3c99e557
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 072dbd8d41a867f7cd31316ef0bc1c20660952ef
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="sizeof-operator"></a>sizeof 演算子
 型 `char` のサイズに対するオペランドのサイズが出力されます。  
@@ -36,7 +36,7 @@ sizeof  ( type-name )
 ```  
   
 ## <a name="remarks"></a>コメント  
- `sizeof` 演算子の結果は、インクルード ファイル STDDEF.H で定義されている整数型、`size_t` です。 この演算子を使うと、コンピューターに依存するデータ サイズをプログラムで指定せずに済みます。  
+ 結果、`sizeof`演算子は型`size_t`、インクルード ファイルで定義されている整数型\<stddef.h >。 この演算子を使うと、コンピューターに依存するデータ サイズをプログラムで指定せずに済みます。  
   
  `sizeof` のオペランドには、次のいずれかを指定できます。  
   

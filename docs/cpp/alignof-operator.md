@@ -24,11 +24,11 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 50a8d6e524847d46d62b5f1da134332f35edcf92
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: faceca31928d9c49f3c1cf5b933a65767ece7453
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="alignof-operator"></a>__alignof 演算子
 C++11 では、指定した型の配置をバイト単位で返す `alignof` 演算子が導入されています。 移植性を最大にするため、Microsoft 固有の __alignof 演算子ではなく、alignof 演算子を使用してください。  
@@ -40,10 +40,7 @@ C++11 では、指定した型の配置をバイト単位で返す `alignof` 演
 ## <a name="syntax"></a>構文  
   
 ```  
-  
-      __alignof(   
-   type    
-)  
+  __alignof( type )
 ```  
   
 ## <a name="remarks"></a>コメント  
@@ -51,13 +48,13 @@ C++11 では、指定した型の配置をバイト単位で返す `alignof` 演
   
 |正規表現|[値]|  
 |----------------|-----------|  
-|**_ _alignof (char)**|1|  
-|**_ _alignof (短い形式)**|2|  
-|**_ _alignof (int)**|4|  
-|**_ _alignof ( \__int64)**|8|  
-|**_ _alignof (float)**|4|  
-|**_ _alignof (double)**|8|  
-|**_ _alignof (char\* )**|4|  
+|**__alignof( char )**|1|  
+|**__alignof( short )**|2|  
+|**__alignof( int )**|4|  
+|**__alignof( \__int64 )**|8|  
+|**__alignof( float )**|4|  
+|**__alignof( double )**|8|  
+|**__alignof( char\* )**|4|  
   
  `__alignof` 値は、基本型の `sizeof` 値と同じです。 ただし、次の例を検討します。  
   

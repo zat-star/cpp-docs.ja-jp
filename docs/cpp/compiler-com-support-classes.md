@@ -18,16 +18,16 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 9560b4b3a0623a0e712d5b54d2bbe5de7dbc17e0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 54377893135c2b933c25387bccbb750d2f3eb734
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="compiler-com-support-classes"></a>コンパイラ COM サポート クラス
 **Microsoft 固有の仕様**  
   
- 標準クラスは、COM 型の一部をサポートするために使用されます。 クラスは、comdef.h ファイル、およびタイプ ライブラリから生成されたヘッダー ファイルで定義されます。  
+ 標準クラスは、COM 型の一部をサポートするために使用されます。 クラスが定義されている\<comdef.h > と、タイプ ライブラリから生成されたヘッダー ファイルです。  
   
 |クラス|目的|  
 |-----------|-------------|  

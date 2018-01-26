@@ -1,5 +1,5 @@
 ---
-title: "ConvertStringToBSTR |Microsoft ドキュメント"
+title: ConvertStringToBSTR | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -16,11 +16,11 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: a4347fdcf25373e088a8d8bc54cc3219285aa347
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b396930f6a16c3773b917dc21b2c61525350f397
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="convertstringtobstr"></a>ConvertStringToBSTR
 **Microsoft 固有の仕様**  
@@ -69,7 +69,7 @@ BSTR text: Test
 **Microsoft 固有の仕様はここまで**  
   
 ## <a name="requirements"></a>必要条件  
- **ヘッダー:** comutil.h  
+ **ヘッダー:** \<comutil.h >  
   
  **Lib:** comsuppw.lib または comsuppwd.lib (を参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)詳細)  
   

@@ -37,11 +37,11 @@ author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload: cplusplus
-ms.openlocfilehash: 240b8ad1b0cfd9c8b85b58c8d2309fb97f961573
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 24be4e7fd6b4dc95d9964e69943a94ecad947a47
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="try-except-statement"></a>try-except ステートメント
 
@@ -50,11 +50,11 @@ ms.lasthandoff: 12/21/2017
 
 ## <a name="syntax"></a>構文  
   
-> **_ _try します。**   
+> **__try**   
 > {  
 >    保護されたコード  
 > }  
-> **_ _except** (*式*)  
+> **__except** ( *expression* )  
 > {  
 >    例外ハンドラーのコード  
 > }  
@@ -113,13 +113,13 @@ typedef struct _EXCEPTION_POINTERS {
 } EXCEPTION_POINTERS, *PEXCEPTION_POINTERS; 
 ```  
 
-ポインター型`PEXCEPTION_RECORD`と`PCONTEXT`WINNT にインクルード ファイルで定義されます。H、および`_EXCEPTION_RECORD`と`_CONTEXT`EXCPT にインクルード ファイルで定義されます。H
+ポインター型`PEXCEPTION_RECORD`と`PCONTEXT`インクルード ファイルで定義されて\<winnt.h >、および`_EXCEPTION_RECORD`と`_CONTEXT`インクルード ファイルで定義された\<excpt.h >
 
 使用することができます`GetExceptionCode`例外ハンドラー内で。 ただし、使用することができます`GetExceptionInformation`例外フィルター式内でのみです。 これが示す情報は、一般的にスタックにあり、制御が例外ハンドラーに移されると使用できなくなります。
 
 組み込み関数`AbnormalTermination`は終了ハンドラー内で使用できます。 場合は 0 を返しますの本文、 **、try-finally**ステートメントが順次終了しました。 その他の場合は、1 を返します。
 
-EXCPT.H は、組み込み関数の代替名を次のように定義しています。
+excpt.h は、これらの組み込みのいくつかの代替名を定義します。
 
 `GetExceptionCode`等価します。`_exception_code`
 
