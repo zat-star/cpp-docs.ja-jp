@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 1/02/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - unmanaged code, C++
 - development environment, Visual C++
@@ -17,12 +19,13 @@ helpviewer_keywords:
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: a4eccca9e7afd26684d5845d853b4be98001cf58
-ms.sourcegitcommit: a5d8f5b92cb5e984d5d6c9d67fe8a1241f3fe184
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6fecc7f821bec90321095130fb21147d7227685c
+ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="visual-c-in-visual-studio"></a>Visual Studio の Visual C++
 
@@ -32,7 +35,7 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
 
 このコンテンツは、プログラムを記述する C++ 開発者を対象としています。
 
-- プログラムを実行するために C++ 再頒布可能パッケージとランタイム コンポーネントを探している場合、 [Microsoft ダウンロード センター](http://www.microsoft.com/en-us/download/) にアクセスして検索ボックスに **Visual C++** と入力してください。
+- プログラムを実行するために特定の C++ 再頒布可能パッケージとランタイム コンポーネントをお探しの場合は、[Microsoft](http://www.microsoft.com/) の Web サイトにアクセスして、検索ボックスに「**Visual C++ Redistributable**」と入力してください。 お使いのコンピューターのアーキテクチャ用の再頒布可能パッケージ (たとえば、64 ビット Windows を実行している場合は x64) と、必要な Visual C++ のバージョンをダウンロードします。 
 
 - C++ プログラミングの概念については、そうした内容を記載した Web サイトが多数あるので、そのようなサイトを利用するか、C++ の考案者である Bjarne Stroustrup による「 [プログラミング -- C++ 利用の原理と実践 (第 2 版)](http://stroustrup.com/Programming/) 」を入手してください。 Visual C++ コンテンツは、C++ の基礎知識を前提として作成されています。
 
