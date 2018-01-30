@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CREATE_SUSPENDED
-dev_langs: C++
+f1_keywords:
+- CREATE_SUSPENDED
+dev_langs:
+- C++
 helpviewer_keywords:
 - premature thread termination
 - starting threads
@@ -19,16 +22,17 @@ helpviewer_keywords:
 - stopping threads
 - AfxEndThread method
 ms.assetid: 4c0a8c6d-c02f-456d-bd02-0a8c8d006ecb
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 8017d47f632374d8979d9a0850e1d1bfd8b9df07
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c287de62169ef5d205ac791071cee4b103f60abc
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="multithreading-terminating-threads"></a>マルチスレッド : スレッドの終了
 通常、スレッドは、次の 2 つの条件で終了します。1 つは制御関数が終了した場合、もう 1 つはスレッドを最後まで実行できなかった場合です。 ワード プロセッサでバックグラウンド印刷用のスレッドを使っている場合、印刷が正常に終了すると、制御関数が正常に終了します。 ただし、ユーザーが印刷をキャンセルするときは、バッググラウンド印刷用のスレッドを途中で終了する必要があります。 このトピックでは、この 2 つの終了処理を実現する方法と、スレッド終了時の終了コードを取得する方法について説明します。  
@@ -58,7 +62,7 @@ ms.lasthandoff: 12/21/2017
   
 -   設定、`m_bAutoDelete`データ メンバーを**FALSE**です。 これにより、`CWinThread` オブジェクトは、スレッドが終了した後も残ります。 次に、スレッドが終了した後で、`m_hThread` データ メンバーにアクセスできます。 ただし、この方法を使用すると、フレームワークでは `CWinThread` オブジェクトが自動的に削除されないため、このオブジェクトを直接破棄する必要があります。 この方法をお勧めします。  
   
--   スレッドへのハンドルを別に保存します。 スレッドが作成された後、コピー、`m_hThread`データ メンバー (を使用して**:::duplicatehandle**) 別の変数にし、その変数を使用してアクセスします。 この方法では、スレッドの終了時にオブジェクトが自動的に削除され、スレッドが終了した理由もわかります。 この場合、スレッドを終了しないと、ハンドルを複製できません。 これを行う最も安全な方法に渡す**CREATE_SUSPENDED**に[AfxBeginThread](../mfc/reference/application-information-and-management.md#afxbeginthread)、ハンドルを格納、およびを呼び出してスレッドを再開[ResumeThread](../topic/../mfc/reference/cwinthread-class.md#resumethread)です。  
+-   スレッドへのハンドルを別に保存します。 スレッドが作成された後、コピー、`m_hThread`データ メンバー (を使用して**:::duplicatehandle**) 別の変数にし、その変数を使用してアクセスします。 この方法では、スレッドの終了時にオブジェクトが自動的に削除され、スレッドが終了した理由もわかります。 この場合、スレッドを終了しないと、ハンドルを複製できません。 これを行う最も安全な方法に渡す**CREATE_SUSPENDED**に[AfxBeginThread](../mfc/reference/application-information-and-management.md#afxbeginthread)、ハンドルを格納、およびを呼び出してスレッドを再開[ResumeThread](../mfc/reference/cwinthread-class.md#resumethread)です。  
   
  この方法のどちらかを使うと、`CWinThread` オブジェクトの終了理由を判定できます。  
   

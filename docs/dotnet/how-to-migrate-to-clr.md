@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - upgrading Visual C++ applications, /clr compiler option
 - compiling native code [C++]
@@ -16,18 +18,18 @@ helpviewer_keywords:
 - migration [C++], /clr compiler option
 - /clr compiler option [C++], porting to
 ms.assetid: c9290b8b-436a-4510-8b56-eae51f4a9afc
-caps.latest.revision: "37"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - dotnet
-ms.openlocfilehash: f38450831ad85a09d3a43173f8febc7841f02c09
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: cd40443bc656b0e0ec02b1ec05b604a758628321
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="how-to-migrate-to-clr"></a>方法: /clr に移行する
 このトピックのネイティブ コードをコンパイルするときに発生する問題について説明**/clr** (を参照してください[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)詳細については)。 **/clr**により、Visual C モジュールを起動し、アンマネージ モジュールとの互換性を維持しながら、.NET アセンブリから呼び出すことです。 参照してください[混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)と[ネイティブ モードと .NET の相互運用性](../dotnet/native-and-dotnet-interoperability.md)でコンパイルした場合の利点について**/clr**です。  
@@ -147,7 +149,7 @@ COMObj2->Method(args);  // C++ equivalent
 ## <a name="using-new-visual-c-features"></a>Visual C++ の新機能の使用  
  アプリケーションのコンパイル、リンク、および実行した後でコンパイルされたあらゆるモジュールで .NET 機能の使用を開始できます**/clr**です。 詳細については、「[Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)」を参照してください。  
   
- C++ のマネージ拡張を使用していた場合は、新しい構文を使用してコードを変換できます。 構文上の相違の概要では、次を参照してください。、 [C++ 構文のアップグレード チェックリストの (NOTINBUILD) マネージ拡張](http://msdn.microsoft.com/en-us/edbded88-7ef3-4757-bd9d-b8f48ac2aada)です。 C++ マネージ拡張を変換する方法の詳細については、「 [C + +/CLI 移行ガイド](../dotnet/cpp-cli-migration-primer.md)です。  
+ C++ のマネージ拡張を使用していた場合は、新しい構文を使用してコードを変換できます。 C++ マネージ拡張を変換する方法の詳細については、「 [C + +/CLI 移行ガイド](../dotnet/cpp-cli-migration-primer.md)です。  
   
  Visual C++ での .NET プログラミングの詳細については、以下の項目を参照してください。  
   

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - libraries [C++], C++ algorithm conventions
 - algorithms [C++], C++
@@ -15,16 +17,17 @@ helpviewer_keywords:
 - algorithm template function C++ library conventions
 - conventions [C++], C++ algorithm
 ms.assetid: dec9b373-7d5c-46cc-b7d2-21a938ecd0a6
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 6608b7499c18f1b740875c403e9cb8d55736c30d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5bc9d57f93b5d3ee537330ab16c2c9a02b6beead
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="algorithms"></a>アルゴリズム
 アルゴリズムは、C++ 標準ライブラリの基本的な部分です。 アルゴリズムは、コンテナー自体と共に機能するのではありません。反復子と共に機能します。 そのため、C++ 標準ライブラリ コンテナーのすべてではありませんが、そのほとんどで同じアルゴリズムを使用できます。 このセクションでは、C++ 標準ライブラリ アルゴリズムの規則と用語について説明します。  
@@ -56,7 +59,7 @@ ms.lasthandoff: 12/21/2017
   
  範囲 [0, `Last` - `First`) 内の各 *N* および範囲 (N, `Last` - `First`) の各 *M* に対し、述語 !(\*(`First` + *M*) < \*(*First* + *N*)) が true の場合、範囲 [`First`, `Last`) 内で反復子によって指定された要素のシーケンスは、演算子 **<** で順序付けられたシーケンスです。 (要素が昇順で並べ替えられていることに注意してください)。述語関数 **operator<**、または、それに代わる関数では、どちらのオペランドも変更されません。 評価されるたびに、同じ `bool` の結果となります。また、いずれかのオペランドのコピーがオペランドに代入される場合、同じ結果となります。 さらに、比較するオペランドに対して厳密弱順序を適用する必要があります。  
   
- 範囲 [1, `Last` - `First`) の各 *N* に対し、述語 !(\*`First` < \*(`First` + *N*)) が true の場合、範囲 [`First`, `Last`) 内の反復子で指定された要素のシーケンスは、**operator<** によって順序付けられたヒープです。 (最初の要素が最大です)。その内部構造は、テンプレート関数 [make_heap](http://msdn.microsoft.com/Library/b09f795c-f368-4aa8-b57e-61ee6100ddc2)、[pop_heap]--brokenlink--(../Topic/not%20found:c10b0c65-410c-4c83-abf8-8b7f61bba8d0.md#pop_heap)、および [push_heap] - brokenlink--(../Topic/not%20found:c10b0c65-410c-4c83-abf8-8b7f61bba8d0.md#push_heap) にのみ別名で知られています。 順序付けられたシーケンスと同様、述語関数 **operator<**、または、それに変わる関数では、そのどちらのオペランドも変更できません。さらに、比較するオペランドに対して厳密弱順序を強制します。 評価されるたびに、同じ `bool` の結果となります。また、いずれかのオペランドのコピーがオペランドに代入される場合、同じ結果となります。  
+ 範囲 [1, `Last` - `First`) の各 *N* に対し、述語 !(\*`First` < \*(`First` + *N*)) が true の場合、範囲 [`First`, `Last`) 内の反復子で指定された要素のシーケンスは、**operator<** によって順序付けられたヒープです。 (最初の要素が最大です)。テンプレート関数にのみその内部構造が知られている[make_heap](../standard-library/algorithm-functions.md#make_heap)、 [pop_heap](../standard-library/algorithm-functions.md#pop_heap)、および[push_heap](../standard-library/algorithm-functions.md#push_heap)です。 順序付けられたシーケンスと同様、述語関数 **operator<**、または、それに変わる関数では、そのどちらのオペランドも変更できません。さらに、比較するオペランドに対して厳密弱順序を強制します。 評価されるたびに、同じ `bool` の結果となります。また、いずれかのオペランドのコピーがオペランドに代入される場合、同じ結果となります。  
   
  C++ 標準ライブラリ アルゴリズムは、[\<algorithm>](../standard-library/algorithm.md) および [\<numeric>](../standard-library/numeric.md) ヘッダー ファイルにあります。  
   

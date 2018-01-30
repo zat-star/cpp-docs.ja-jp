@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname: _get_pgmptr
+apiname:
+- _get_pgmptr
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,23 +26,25 @@ apitype: DLLExport
 f1_keywords:
 - get_pgmptr
 - _get_pgmptr
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - get_pgmptr function
 - _get_pgmptr function
 - pgmptr global variable
 - _pgmptr global variable
 ms.assetid: 29f16a9f-a685-4721-add3-7fad4f67eece
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 962d6198a9daeeca0a79a814da11d1d60438d18f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7dffbed5be8284949e7dbe20b35f64898ae98729
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="getpgmptr"></a>_get_pgmptr
 `_pgmptr` グローバル変数の現在の値を取得します。  
@@ -61,7 +65,7 @@ errno_t _get_pgmptr(
  正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。 `pValue` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_pgmptr`グローバル変数には、プロセスに関連付けられている実行可能ファイルへの完全パスが含まれています。 詳細については、「[_pgmptr、_wpgmptr](../../c-runtime-library/pgmptr-wpgmptr.md)」をご覧ください。  
+ のみを呼び出す`_get_pgmptr`などの場合は、プログラムでは、ナロー エントリ ポイントがある、`main()`または`WinMain()`です。 `_pgmptr`グローバル変数には、プロセスに関連付けられている実行可能ファイルへの完全パスが含まれています。 詳細については、「[_pgmptr、_wpgmptr](../../c-runtime-library/pgmptr-wpgmptr.md)」をご覧ください。  
   
 ## <a name="requirements"></a>必要条件  
   

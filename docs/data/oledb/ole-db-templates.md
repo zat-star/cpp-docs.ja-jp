@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.templates.ole
-dev_langs: C++
-helpviewer_keywords: OLE DB templates
+f1_keywords:
+- vc.templates.ole
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE DB templates
 ms.assetid: 73918f6f-1fd7-4fa2-a0ff-7f9d792fce7e
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: 40ada455ffa5318e280860504705e1f8fb5ea4b1
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3078fa97d298856e302b1f835fdbec2f3d489b63
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="ole-db-templates"></a>OLE DB テンプレート
 OLE DB テンプレートを使用する OLE DB データ アクセス容易にします。 Visual C では、多くの一般的に使用される OLE DB インターフェイスを実装するテンプレート クラスを提供します。 OLE DB クライアント (コンシューマー) アプリケーションを作成する Visual C のコンシューマー テンプレートとサーバー (プロバイダー) アプリケーションを記述するプロバイダー テンプレートを使用することができます。  
@@ -64,9 +68,6 @@ OLE DB テンプレートを使用する OLE DB データ アクセス容易に�
   
  [Active Template Library (ATL) の参照](../../atl/atl-com-desktop-components.md)  
  COM オブジェクトのプログラミングを簡単にする、ATL ライブラリ (テンプレート ベースの C++ クラスの集合) の一覧があります。  
-  
- [Visual C++ ライブラリ](http://msdn.microsoft.com/en-us/fec23c40-10c0-4857-9cdc-33a3b99b30ae)  
- Visual C++ に用意されているさまざまなライブラリへのリンクがあります。ATL、MFC、OLE DB の各テンプレート、C ランタイム ライブラリ、および C++ 標準ライブラリが含まれます。  
   
  [デバッグ](/visualstudio/debugger/debugging-in-visual-studio)  
  Visual Studio デバッガーを使用してアプリケーションやストアド プロシージャの論理エラーを修正する方法を説明するトピックへのリンクがあります。

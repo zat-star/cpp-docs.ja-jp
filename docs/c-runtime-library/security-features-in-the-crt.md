@@ -4,14 +4,16 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - _CRT_SECURE_NO_DEPRECATE
 - _CRT_NONSTDC_NO_WARNINGS
 - _CRT_SECURE_NO_WARNINGS
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - security deprecation warnings [C++]
 - CRT_NONSTDC_NO_DEPRECATE
@@ -31,16 +33,17 @@ helpviewer_keywords:
 - CRT, security enhancements
 - parameters [C++], validation
 ms.assetid: d9568b08-9514-49cd-b3dc-2454ded195a3
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: ce5ff232a914b929153d8dc2ea6bb0951b4ff187
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1d32a69e179acee501c17d96218cc4ef2e10f0c3
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="security-features-in-the-crt"></a>CRT のセキュリティ機能
 多くの古い CRT 関数には、セキュリティが強化された新しいバージョンがあります。 セキュリティで保護された関数が存在する場合、低いセキュリティ レベルの古いバージョンは使用されていないバージョンとしてマークされ、新しいバージョンには `_s` ("secure") のサフィックスが付いています。  
@@ -65,7 +68,7 @@ strcpy(szBuf, "test"); // warning: deprecated
   
  セキュリティで保護されたテンプレート オーバーロードのない、使用されていない関数の場合、セキュリティで保護されたバージョンを使用するように手動でコードを更新することを強くお勧めします。  
   
- セキュリティには関連しませんが、非推奨に関する警告が発生する別の要因として、POSIX 関数があります。 POSIX の関数名を標準に沿った名前に置き換えるか ([access](../c-runtime-library/reference/access-crt.md) を [_access](../c-runtime-library/reference/access-waccess.md) にするなど)、`_CRT_NONSTDC_NO_WARNINGS` を定義して、POSIX 関連の非推奨に関する警告を無効にします。 詳細については、「[Deprecated CRT Functions](http://msdn.microsoft.com/en-us/7e259932-c6c8-4c1a-9637-639e591681a5)」 (使用を推奨されない CRT 関数) を参照してください。  
+ セキュリティには関連しませんが、非推奨に関する警告が発生する別の要因として、POSIX 関数があります。 POSIX の関数名を標準に沿った名前に置き換えるか ([access](../c-runtime-library/reference/access-crt.md) を [_access](../c-runtime-library/reference/access-waccess.md) にするなど)、`_CRT_NONSTDC_NO_WARNINGS` を定義して、POSIX 関連の非推奨に関する警告を無効にします。 詳細については、「[互換性](compatibility.md)」をご覧ください。  
   
 ## <a name="additional-security-features"></a>その他のセキュリティ機能  
  一部のセキュリティ機能を次に示します。  

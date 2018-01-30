@@ -1,13 +1,15 @@
 ---
 title: "関数 (C++) |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 01/25/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - defaults, arguments
 - function definitions
@@ -15,16 +17,17 @@ helpviewer_keywords:
 - default arguments
 - declarators, functions
 ms.assetid: 33ba01d5-75b5-48d2-8eab-5483ac7d2274
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: a5fa20f0a2236d6458490784d2fa0f1b53b13241
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 88031e4f47bea363c441986c72d5f890c03447f7
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="functions-c"></a>関数 (C++)
 関数とは、何らかの操作を実行するコードのブロックです。 関数には、呼び出し元が関数に引数を渡すのに使用する入力パラメーターを必要に応じて定義できます。 関数は、必要に応じて値を出力として返すことができます。 関数は、一般的な操作を 1 つの再利用可能なブロックでカプセル化するのに役立ちます。関数には、その動作を明確に説明する名前を付けることが理想的です。 次の関数の呼び出し元から 2 つの整数を受け付けるその合計を返します。`a`と`b`は*パラメーター*型の`int`します。  
@@ -50,6 +53,8 @@ int main()
  関数の長さに事実上制限はありませんが、優れた設計では、適切に定義された 1 つのタスクを実行する関数を目標にします。 複雑なアルゴリズムは、可能な場合は常に、理解しやすい簡潔な関数に分割することをお勧めします。  
   
  クラス スコープで定義されている関数はメンバー関数と呼ばれます。 C++ では、他の言語とは異なり、名前空間スコープ (暗黙的なグローバル名前空間を含む) でも関数を定義できます。 このような関数が呼び出される*の free 関数*または*非メンバー関数*; 標準ライブラリで広く使用されています。  
+
+関数があります*オーバー ロードされた*、仮パラメーターの型や数が異なる場合、同じ名前を共有関数の異なるバージョンを意味する可能性があります。 詳細については、次を参照してください。[関数のオーバー ロード](../cpp/function-overloading.md)です。
   
 ## <a name="parts-of-a-function-declaration"></a>関数宣言部分  
  最小限の関数*宣言*戻り値の型、関数名、およびパラメーター リスト (空にすることがあります)、コンパイラに追加の指示を提供する省略可能なキーワードと共に構成されます。 次の例では、関数の宣言を示します。
@@ -127,7 +132,7 @@ int sum(int a, int b)
   
 7.  (メンバー関数のみ) メンバー関数に適用される `static` は、関数がクラスのどのオブジェクト インスタンスにも関連付けられていないことを意味します。  
   
-8.  (非静的メンバー関数のみ)Ref 修飾子をクリックし、関数のどのオーバー ロードをコンパイラに指定する暗黙的オブジェクト パラメーター (* この) は、左辺値参照と右辺値参照。  
+8.  (非静的メンバー関数のみ)Ref 修飾子をクリックし、関数のどのオーバー ロードをコンパイラに指定する暗黙的オブジェクト パラメーター (* この) は、左辺値参照と右辺値参照。 詳細については、次を参照してください。[関数のオーバー ロード](function-overloading.md#ref-qualifiers)です。 
   
  次の図では、関数定義の一部を示しています。 網かけされた部分は関数本体です。  
   
@@ -373,7 +378,7 @@ int main()
 }
 ```
 
-4. 戻り値自体を使用するだけでなくすることができます「値を返します」関数を変更または呼び出し元が提供するオブジェクトの値を初期化できるようにする、参照渡しを使用するパラメーターの任意の数を定義することで。 詳細については、次を参照してください。[参照型関数の引数](reference-type-function-arguments.md)です。
+4. 戻り値自体を使用するだけでなくすることができます「値を返します」関数を変更または呼び出し元が提供するオブジェクトの値を初期化できるようにする、参照渡しを使用するパラメーターの任意の数を定義することで。 詳細については、次を参照してください。[参照型関数の引数](reference-type-function-arguments.md)です。  
   
 ## <a name="function-pointers"></a>関数ポインター  
  C++ では、C 言語と同じ方法で、関数ポインターをサポートします。 ただし、通常、よりタイプ セーフな代替手段で関数オブジェクトが使用されます。  

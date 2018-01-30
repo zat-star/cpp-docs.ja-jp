@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - threading [C++]
 - multiple threads
@@ -17,16 +19,17 @@ helpviewer_keywords:
 - multiple concurrent threads
 - multithreading [C++]
 ms.assetid: 24425b1f-5031-4c6b-aac7-017115a40e7c
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 1037b8b81c9286ac1b1dd9303294b4300e7c9309
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6e082fd9c3f4c34c97f461a11dcec14d778affd8
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="multithreading-support-for-older-code-visual-c"></a>旧形式のコードのためのマルチスレッド サポート (Visual C++)
 Visual C++ では、並列に実行する複数のスレッドを同時に実行させることができます。 マルチスレッドを使うと、バックグラウンドのタスクを別に分けたり、複数の入力ストリームを同時に管理したり、ユーザー インターフェイスを管理したりできます。  
@@ -45,7 +48,7 @@ Visual C++ では、並列に実行する複数のスレッドを同時に実行
  [CWinThread](../mfc/reference/cwinthread-class.md)  
  アプリケーション内の実行中のスレッドを表します。  
   
- [関数](../mfc/reference/csyncobject-class.md)  
+ [CSyncObject](../mfc/reference/csyncobject-class.md)  
  Win32 の同期オブジェクトに共通の機能を提供する純粋仮想クラスについて説明します。  
   
  [CSemaphore](../mfc/reference/csemaphore-class.md)  
@@ -65,6 +68,3 @@ Visual C++ では、並列に実行する複数のスレッドを同時に実行
   
  [CSingleLock](../mfc/reference/csinglelock-class.md)  
  マルチスレッド プログラムで 1 つのリソースのアクセス制御に使うアクセス コントロール機構を表します。  
-  
- [(NOTINBUILD)Visual C のプログラミング手法](http://msdn.microsoft.com/en-us/0822f806-fa81-4b65-bf0f-1e2921f30c95)  
- Visual C++ ライブラリに関する概念を説明するトピックや、さまざまなコーディングの技術や技法について説明するトピックへのリンクがあります。

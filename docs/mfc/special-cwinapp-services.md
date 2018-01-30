@@ -4,13 +4,15 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - LoadStdProfileSettings
 - EnableShellOpen
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - files [MFC], most recently used
 - DragAcceptFiles method [MFC]
@@ -37,16 +39,17 @@ helpviewer_keywords:
 - MFC, file operations
 - registration [MFC], shell
 ms.assetid: 0480cd01-f629-4249-b221-93432d95b431
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: f8734bfd4e673e1298d6822bbd272e2d70ff7a81
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 28a12d9553e1519c158c0a0e9d2fcec6365b65fe
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="special-cwinapp-services"></a>CWinApp のその他のサービス
 メッセージ ループの実行をアプリケーションを初期化し、その後をクリーンアップする機会を提供することだけでなく[CWinApp](../mfc/reference/cwinapp-class.md)他のいくつかのサービスを提供します。  
@@ -60,9 +63,9 @@ ms.lasthandoff: 12/21/2017
   
  この自動登録のサポートで`CWinApp`アプリケーションを使用して .reg ファイルを出荷するまたは特殊なインストール作業を行う必要があります。  
   
- GDI + アプリケーションを初期化するかどうか ([GdiplusStartup]--brokenlink--を呼び出すことによって (_gdiplus_FUNC_GdiplusStartup_token_input_output_) で、 [InitInstance](../mfc/reference/cwinapp-class.md#initinstance)関数)、する必要があります。GDI + のバック グラウンド スレッドを抑制します。  
+ GDI + アプリケーションを初期化するかどうか (を呼び出して[GdiplusStartup](https://msdn.microsoft.com/library/ms534077)で、 [InitInstance](../mfc/reference/cwinapp-class.md#initinstance)関数)、GDI + のバック グラウンド スレッドを抑制する必要があります。  
   
- これを行うことができます、 **SuppressBackgroundThread**のメンバー、[GdiplusStartupInput]--brokenlink--(_gdiplus_STRUC_GdiplusStartupInput) 構造**TRUE**です。 スレッド、バック グラウンド GDI + を抑制する場合、 **NotificationHook**と**NotificationUnhook**呼び出し (を参照してください [GdiplusStartupOutput]--brokenlink--(_gdiplus_STRUC_GdiplusStartupOutput)) 必要があります入力して、アプリケーションのメッセージ ループを終了する直前に行われます。 そのためを呼び出すことをおすすめ**GdiplusStartup**フック通知関数は仮想関数のオーバーライドで、 [:run](../mfc/reference/cwinapp-class.md#run)次のように。  
+ これを行うことができます、 **SuppressBackgroundThread**のメンバー、 [GdiplusStartupInput](https://msdn.microsoft.com/library/ms534067)構造の**TRUE**です。 スレッド、バック グラウンド GDI + を抑制する場合、 **NotificationHook**と**NotificationUnhook**呼び出しが行われる直前に入力して、アプリケーションのメッセージ ループを終了します。 これらの呼び出しの詳細については、次を参照してください。 [GdiplusStartupOutput](https://msdn.microsoft.com/library/ms534068)です。 そのためを呼び出すことをおすすめ**GdiplusStartup**フック通知関数は仮想関数のオーバーライドで、 [:run](../mfc/reference/cwinapp-class.md#run)次のように。  
   
  [!code-cpp[NVC_MFCDocView#6](../mfc/codesnippet/cpp/special-cwinapp-services_1.cpp)]  
   
