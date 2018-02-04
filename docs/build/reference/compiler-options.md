@@ -1,68 +1,72 @@
 ---
 title: "コンパイラ オプション |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 01/29/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - cl.exe compiler
-- IPF Visual C++ compiler
-- Itanium Visual C++ compiler
+- x86 Visual C++ compiler
+- ARM Visual C++ compiler
 - compiler options, C++
 - x64 Visual C++ compiler
 ms.assetid: ed3376c8-bef4-4c9a-80e9-3b5da232644c
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: c433abea04ff81c69fe1b73569ea7e043e6e81ac
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4addd9f5dce819f554e6ab04707929a32f7b7d9d
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="compiler-options"></a>コンパイラ オプション
-cl.exe は、Microsoft C および C++ コンパイラとリンカーを制御するツールです。 cl.exe は、Microsoft Visual Studio をサポートするオペレーティング システムでのみ実行できます。  
-  
-> [!NOTE]
->  このツールは、[!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)] コマンド プロンプトからのみ開始できます。 システム コマンド プロンプトやエクスプローラーからは開始できません。  
-  
- コンパイラは、COFF (Common Object File Format) 形式のオブジェクト (.obj) ファイルを生成します。 リンカーは、実行可能 (.exe) ファイルまたはダイナミック リンク ライブラリ (DLL: Dynamic-Link Library) を生成します。  
-  
- すべてのコンパイラ オプションで、大文字小文字を区別します。  
-  
- 使用せずにコンパイルするリンク、 [/c](../../build/reference/c-compile-without-linking.md)です。  
-  
-## <a name="finding-an-option"></a>オプションの検索  
- 特定のコンパイラ オプションを見つけるには、次のいずれかの一覧を参照してください。  
-  
--   [アルファベット順のコンパイラ オプション](../../build/reference/compiler-options-listed-alphabetically.md)  
-  
--   [カテゴリ別のコンパイラ オプション](../../build/reference/compiler-options-listed-by-category.md)  
-  
-## <a name="specifying-options"></a>オプションの指定  
- 開発環境での設定方法は、コンパイラの各オプションのトピックで説明します。 開発環境以外からオプションを指定する方法の詳細については、下記を参照してください。  
-  
--   [コンパイラ コマンド ラインの構文](../../build/reference/compiler-command-line-syntax.md)  
-  
--   [CL コマンド ファイル](../../build/reference/cl-command-files.md)  
-  
--   [CL 環境変数](../../build/reference/cl-environment-variables.md)  
-  
-## <a name="related-build-tools"></a>関連ビルド ツール  
- 使用して[NMAKE](../../build/nmake-reference.md)出力ファイルをビルドします。  
-  
- 使用して[BSCMAKE](../../build/reference/bscmake-reference.md)クラス参照をサポートするためにします。  
-  
- [リンカー オプション](../../build/reference/linker-options.md)プログラムのビルド方法にも影響します。  
-  
-## <a name="see-also"></a>参照  
- [C/C++ ビルドのリファレンス](../../build/reference/c-cpp-building-reference.md)   
- [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
- [高速コンパイル](../../build/reference/fast-compilation.md)   
- [リンカーを呼び出す CL](../../build/reference/cl-invokes-the-linker.md)
+
+cl.exe は、Microsoft Visual C++ (MSVC) C と C++ コンパイラおよびリンカーを制御するツールです。 cl.exe は、Microsoft Visual Studio for Windows をサポートするオペレーティング システムでのみ実行できます。
+
+> [!NOTE]  
+> このツールは、Visual Studio 開発者コマンド プロンプトからのみ開始できます。 システム コマンド プロンプトやエクスプローラーからは開始できません。 詳細については、次を参照してください。[コマンドラインでビルドの c/c++ コード](../building-on-the-command-line.md)です。
+
+コンパイラは、COFF (Common Object File Format) 形式のオブジェクト (.obj) ファイルを生成します。 リンカーは、実行可能 (.exe) ファイルまたはダイナミック リンク ライブラリ (DLL: Dynamic-Link Library) を生成します。
+
+すべてのコンパイラ オプションで、大文字小文字を区別します。 いずれかにスラッシュを使用する場合があります (`/`) またはダッシュ (`-`) コンパイラ オプションを指定します。
+
+リンクなしでコンパイルを使用して、 [/c](../../build/reference/c-compile-without-linking.md)オプション。
+
+## <a name="find-a-compiler-option"></a>コンパイラ オプションを見つける
+
+特定のコンパイラ オプションを見つけるには、次のいずれかの一覧を参照してください。
+
+- [アルファベット順のコンパイラ オプション](../../build/reference/compiler-options-listed-alphabetically.md)
+
+- [カテゴリ別のコンパイラ オプション](../../build/reference/compiler-options-listed-by-category.md)
+
+## <a name="specify-compiler-options"></a>コンパイラ オプションを指定します
+
+開発環境での設定方法は、コンパイラの各オプションのトピックで説明します。 開発環境以外からオプションを指定する方法の詳細については、下記を参照してください。
+
+- [コンパイラ コマンド ラインの構文](../../build/reference/compiler-command-line-syntax.md)
+
+- [CL コマンド ファイル](../../build/reference/cl-command-files.md)
+
+- [CL 環境変数](../../build/reference/cl-environment-variables.md)
+
+## <a name="related-build-tools"></a>関連ビルド ツール
+
+[リンカー オプション](../../build/reference/linker-options.md)プログラムのビルド方法にも影響します。
+
+## <a name="see-also"></a>関連項目
+
+[C/C++ ビルドのリファレンス](../../build/reference/c-cpp-building-reference.md)  
+[コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)  
+[高速コンパイル](../../build/reference/fast-compilation.md)  
+[リンカーを呼び出す CL](../../build/reference/cl-invokes-the-linker.md)  

@@ -4,33 +4,37 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.codewiz.classes.adding
-dev_langs: C++
+f1_keywords:
+- vc.codewiz.classes.adding
+dev_langs:
+- C++
 helpviewer_keywords:
 - ATL projects, adding classes
 - classes [C++], creating
 - classes [C++], adding
 ms.assetid: c34b5f70-4e72-4faa-ba21-e2b05361c4d9
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: d767bd0afa85bc417cd33ce305ffe0061104bf64
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ac87368f2bd38c32425799103fa3999dd11b3298
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="adding-a-class-visual-c"></a>クラスの追加 (Visual C++)
 Visual C プロジェクトでクラスを追加する**ソリューション エクスプ ローラー**プロジェクトを右クリックしをクリックして**追加**、クリックして**クラス**です。 開き、[クラスの追加 ダイアログ ボックス](../ide/add-class-dialog-box.md) ダイアログ ボックス。  
   
- クラスを追加する場合は、MFC または ATL に既に存在するクラスとは異なる名前を指定する必要があります。 ライブラリに既に存在する名前を指定する場合、Visual C には、指定した名前が予約されていることを示すメッセージが表示されます。  
+ クラスを追加する場合は、MFC または ATL に既に存在するクラスとは異なる名前を指定する必要があります。 ライブラリに既に存在する名前を指定する場合、IDE は、エラー メッセージを示します。  
   
- プロジェクトの名前付け規則では、既存の名前を使用する必要がある場合だけ変更できます、名前の文字は 1 つ以上の大文字と小文字 Visual C は大文字小文字を区別するためです。 たとえば、クラスの名前を付けられませんが`CDocument`、」と入力`cdocument`です。  
+ プロジェクトの名前付け規則では、既存の名前を使用する必要がある場合だけ変更できます、名前の文字は 1 つ以上の大文字と小文字 C は大文字小文字を区別するためです。 たとえば、クラスの名前を付けられませんが`CDocument`、」と入力`cdocument`です。  
   
 ## <a name="what-kind-of-class-do-you-want-to-add"></a>追加するクラスの種類  
  **クラスの追加**ダイアログ ボックスで、展開すると、 **Visual C**インストールされたテンプレートのいくつかのグループが表示される左側のウィンドウ内のノードです。 グループを含める**CLR**、 **ATL**、 **MFC**、および**C++**です。 グループを選択すると、中央のペインでそのグループ内の使用可能なテンプレートの一覧が表示されます。 各テンプレートには、ファイルとクラスに必要なソース コードが含まれています。  
