@@ -531,7 +531,6 @@
 ##### [グラフィック オブジェクト](graphic-objects.md)
 ###### [1 段階でのオブジェクトの構築と 2 段階でのオブジェクトの構築](one-stage-and-two-stage-construction-of-objects.md)
 ###### [グラフィック オブジェクトをデバイス コンテキストに選択する](selecting-a-graphic-object-into-a-device-context.md)
-###### [以前のオペレーティング システムにおける CImage の制限](cimage-limitations-with-earlier-operating-systems.md)
 #### [フレーム ウィンドウ](frame-windows.md)
 ##### [フレーム ウィンドウ クラス](frame-window-classes.md)
 ###### [アプリケーション ウィザードで作成されるフレーム ウィンドウ クラス](frame-window-classes-created-by-the-application-wizard.md)
