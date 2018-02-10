@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: _mbcs
-dev_langs: C++
+f1_keywords:
+- _mbcs
+dev_langs:
+- C++
 helpviewer_keywords:
 - MBCS [C++], Unicode
 - MFC [C++], character sets
@@ -19,26 +22,24 @@ helpviewer_keywords:
 - multibyte characters [C++]
 - runtime [C++], language portability
 ms.assetid: 677baec6-71b4-4579-94df-64f18bc117c4
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 8e64edebc511445973a7fbb79f8fb8ccfd3f607b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9a841fc97715782c303065e37cbaeb8137cf0bc3
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="unicode-and-mbcs"></a>Unicode と MBCS
 MFC (Microsoft Foundation Class) ライブラリ、Visual C++ の C ランタイム ライブラリ、および Visual C++ 開発環境では、国際対応のプログラミングを支援できます。 次のようなサポート方法があります。  
   
--   Windows 2000 (かつての Windows NT) における Unicode 規格をサポートします。 Unicode は現在の標準です。できる限りこれを使用することをお勧めします。  
+-   Windows で Unicode 標準をサポートします。 Unicode は現在の標準です。できる限りこれを使用することをお勧めします。  
   
      Unicode は 16 ビットの文字セットで、すべての言語に対する十分な表現能力を持っています。 すべての ASCII 文字は、拡張文字として Unicode の中に含まれます。  
-  
-    > [!NOTE]
-    >  Unicode 規格では、Windows 95、Windows 98 または Windows Millennium Edition でサポートされていません。  
   
 -   すべてのプラットフォームにおけるマルチバイト文字セット (MBCS: Multibyte Character Set) の形式のサポート。マルチバイト文字セットは、2 バイト文字セット (DBCS: Double Byte Character Set) とも呼ばれています。  
   

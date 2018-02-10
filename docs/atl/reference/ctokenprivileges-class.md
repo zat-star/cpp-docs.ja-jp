@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -21,19 +22,22 @@ f1_keywords:
 - ATLSECURITY/ATL::CTokenPrivileges::GetNamesAndAttributes
 - ATLSECURITY/ATL::CTokenPrivileges::GetPTOKEN_PRIVILEGES
 - ATLSECURITY/ATL::CTokenPrivileges::LookupPrivilege
-dev_langs: C++
-helpviewer_keywords: CTokenPrivileges class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CTokenPrivileges class
 ms.assetid: 89590105-f001-4014-870d-142926091231
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 0dc0fb58d1b92fac1462b355b9afb353554f3f23
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e48ff04428d6cde6501c2782894c4132157a02b9
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="ctokenprivileges-class"></a>CTokenPrivileges クラス
 このクラスは、用のラッパー、 **TOKEN_PRIVILEGES**構造体。  
@@ -54,7 +58,7 @@ class CTokenPrivileges
 |名前|説明|  
 |----------|-----------------|  
 |[CTokenPrivileges::CTokenPrivileges](#ctokenprivileges)|コンストラクターです。|  
-|[CTokenPrivileges:: ~ CTokenPrivileges](#dtor)|デストラクターです。|  
+|[CTokenPrivileges::~CTokenPrivileges](#dtor)|デストラクターです。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -79,7 +83,7 @@ class CTokenPrivileges
 |[CTokenPrivileges::operator =](#operator_eq)|代入演算子。|  
   
 ## <a name="remarks"></a>コメント  
- [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)プロセスまたはスレッドのセキュリティ コンテキストを記述し、Windows NT または Windows 2000 のシステムにログオンしている各ユーザーに割り当てられているオブジェクトです。  
+ [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)プロセスまたはスレッドのセキュリティ コンテキストを記述し、Windows システムにログオンしている各ユーザーに割り当てられているオブジェクトです。  
   
  アクセス トークンを使用して、各ユーザーに与えられているさまざまなセキュリティ特権を記述します。 ローカル一意識別子と呼ばれる 64 ビットの数値の特権で構成されます ( [LUID](http://msdn.microsoft.com/library/windows/desktop/aa379261)) と記述子の文字列。  
   
@@ -90,7 +94,7 @@ class CTokenPrivileges
 ## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="add"></a>CTokenPrivileges::Add  
+##  <a name="add"></a>  CTokenPrivileges::Add  
  1 つまたは複数の権限を追加、`CTokenPrivileges`アクセス トークンのオブジェクト。  
   
 ```
@@ -111,7 +115,7 @@ void Add(const TOKEN_PRIVILEGES& rPrivileges) throw(...);
 ### <a name="return-value"></a>戻り値  
  このメソッドの最初のフォームは、特権が正常に追加された場合、false それ以外の場合は true を返します。  
   
-##  <a name="ctokenprivileges"></a>CTokenPrivileges::CTokenPrivileges  
+##  <a name="ctokenprivileges"></a>  CTokenPrivileges::CTokenPrivileges  
  コンストラクターです。  
   
 ```
@@ -140,7 +144,7 @@ virtual ~CTokenPrivileges() throw();
 ### <a name="remarks"></a>コメント  
  デストラクターは、割り当てられているすべてのリソースを解放します。  
   
-##  <a name="delete"></a>CTokenPrivileges::Delete  
+##  <a name="delete"></a>  CTokenPrivileges::Delete  
  権限を削除、`CTokenPrivileges`アクセス トークンのオブジェクト。  
   
 ```
@@ -155,9 +159,9 @@ bool Delete(LPCTSTR pszPrivilege) throw();
  正常に削除された場合は false がそれ以外の場合は、特権がある場合は、true を返します。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、Windows 2000 で制限付きトークンを作成するためのツールとして役立ちます。  
+ このメソッドは、制限付きトークンを作成するためのツールとして役立ちます。  
   
-##  <a name="deleteall"></a>CTokenPrivileges::DeleteAll  
+##  <a name="deleteall"></a>  CTokenPrivileges::DeleteAll  
  すべての特権を削除、`CTokenPrivileges`アクセス トークンのオブジェクト。  
   
 ```
@@ -167,7 +171,7 @@ void DeleteAll() throw();
 ### <a name="remarks"></a>コメント  
  含まれているすべての特権を削除、`CTokenPrivileges`アクセス トークンのオブジェクト。  
   
-##  <a name="getdisplaynames"></a>CTokenPrivileges::GetDisplayNames  
+##  <a name="getdisplaynames"></a>  CTokenPrivileges::GetDisplayNames  
  取得の表示名に含まれている特権、`CTokenPrivileges`アクセス トークンのオブジェクト。  
   
 ```
@@ -183,7 +187,7 @@ void GetDisplayNames(CNames* pDisplayNames) const throw(...);
   
  このメソッドは、表示可能な名前を取得しますたとえば、属性名が SE_REMOTE_SHUTDOWN_NAME の場合は、表示可能な名前は、"強制シャット ダウン、リモート システムからです。"。 システム名を取得するには使用[CTokenPrivileges::GetNamesAndAttributes](#getnamesandattributes)です。  
   
-##  <a name="getcount"></a>CTokenPrivileges::GetCount  
+##  <a name="getcount"></a>  CTokenPrivileges::GetCount  
  特権のエントリの数を返します、`CTokenPrivileges`オブジェクト。  
   
 ```
@@ -193,7 +197,7 @@ UINT GetCount() const throw();
 ### <a name="return-value"></a>戻り値  
  含まれる権限の数を返します、`CTokenPrivileges`オブジェクト。  
   
-##  <a name="getlength"></a>CTokenPrivileges::GetLength  
+##  <a name="getlength"></a>  CTokenPrivileges::GetLength  
  長さを返します、`CTokenPrivileges`オブジェクト。  
   
 ```
@@ -203,7 +207,7 @@ UINT GetLength() const throw();
 ### <a name="return-value"></a>戻り値  
  保持するために必要なバイト数を返します、 **TOKEN_PRIVILEGES**構造によって表されます、`CTokenPrivileges`を含むすべての権限エントリが含まれているオブジェクト。  
   
-##  <a name="getluidsandattributes"></a>CTokenPrivileges::GetLuidsAndAttributes  
+##  <a name="getluidsandattributes"></a>  CTokenPrivileges::GetLuidsAndAttributes  
  ローカル一意識 (別子 Luid) とから属性のフラグを取得、`CTokenPrivileges`オブジェクト。  
   
 ```
@@ -222,7 +226,7 @@ void GetLuidsAndAttributes(
 ### <a name="remarks"></a>コメント  
  このメソッドはすべてに含まれる権限の列挙は、`CTokenPrivileges`トークンのオブジェクトにアクセスし、それぞれの Luid および (必要に応じて) 属性フラグ配列オブジェクトに移動します。  
   
-##  <a name="getnamesandattributes"></a>CTokenPrivileges::GetNamesAndAttributes  
+##  <a name="getnamesandattributes"></a>  CTokenPrivileges::GetNamesAndAttributes  
  名前と属性のフラグを取得、`CTokenPrivileges`オブジェクト。  
   
 ```
@@ -243,7 +247,7 @@ void GetNamesAndAttributes(
   
  このメソッドは、表示可能な名前ではなく、属性名を取得しますたとえば、属性名が SE_REMOTE_SHUTDOWN_NAME の場合は、システム名には "を返します。"。 表示可能な名前を取得するメソッドを使用して[CTokenPrivileges::GetDisplayNames](#getdisplaynames)です。  
   
-##  <a name="getptoken_privileges"></a>CTokenPrivileges::GetPTOKEN_PRIVILEGES  
+##  <a name="getptoken_privileges"></a>  CTokenPrivileges::GetPTOKEN_PRIVILEGES  
  ポインターを返します、 **TOKEN_PRIVILEGES**構造体。  
   
 ```
@@ -253,7 +257,7 @@ const TOKEN_PRIVILEGES* GetPTOKEN_PRIVILEGES() const throw(...);
 ### <a name="return-value"></a>戻り値  
  ポインターを返します、 [TOKEN_PRIVILEGES](http://msdn.microsoft.com/library/windows/desktop/aa379630)構造体。  
   
-##  <a name="lookupprivilege"></a>CTokenPrivileges::LookupPrivilege  
+##  <a name="lookupprivilege"></a>  CTokenPrivileges::LookupPrivilege  
  指定した権限の名前に関連付けられている属性を取得します。  
   
 ```
@@ -272,7 +276,7 @@ bool LookupPrivilege(
 ### <a name="return-value"></a>戻り値  
  属性は正常に取得された場合は false をそれ以外の場合がある場合は true を返します。  
   
-##  <a name="operator_eq"></a>CTokenPrivileges::operator =  
+##  <a name="operator_eq"></a>  CTokenPrivileges::operator =  
  代入演算子。  
   
 ```

@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: _mbcs
-dev_langs: C++
+f1_keywords:
+- _mbcs
+dev_langs:
+- C++
 helpviewer_keywords:
 - tools [C++], MBCS support
 - Asian languages [C++]
@@ -28,19 +31,20 @@ helpviewer_keywords:
 - Input Method Editor [C++]
 - MBCS [C++], enabling
 ms.assetid: 6179f6b7-bc61-4a48-9267-fb7951223e38
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: bdc00509d8660d8111ff1b966b7a881a153cb6c3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 92d0b737c0cfb894f87da61519f30224f6a12fc1
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="mbcs-support-in-visual-c"></a>Visual C++ における MBCS のサポート
-実行すると、mbcs バージョンの Windows 2000 または Windows XP オペレーティング システムで、Visual C 開発システムを (統合ソース コード エディター、デバッガー、およびコマンド ライン ツールを含む) が mbcs、[メモリ] ウィンドウを除く。  
+実行すると、mbcs バージョンの Windows で、Visual C 開発システムの (統合ソース コード エディター、デバッガー、およびコマンド ライン ツールを含む) が mbcs、[メモリ] ウィンドウを除く。  
   
  [メモリ] ウィンドウに ANSI または Unicode 文字として解釈できる場合でも、データのバイト数を MBCS 文字として解釈されません。 ANSI 文字は 1 バイトのサイズと、Unicode 文字は、サイズが 2 バイト。 Mbcs の場合、1 つまたは 2 バイトの列に使用できる文字とその解釈が使用されているコード ページに依存します。 このため、[メモリ] ウィンドウを確実に MBCS 文字を表示するは困難です。 [メモリ] ウィンドウでは、どのバイトが文字の開始を知ることはできません。 開発者では、[メモリ] ウィンドウで、バイト値を表示でき、文字表現を判断するテーブルで値を検索することができます。 これには、開発者は、ソース コードに基づく文字列の開始アドレスを認識しているためです。  
   

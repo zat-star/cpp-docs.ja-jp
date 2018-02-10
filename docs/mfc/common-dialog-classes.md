@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - dialog classes [MFC]
 - dialog boxes [MFC], Windows common dialogs
@@ -18,16 +20,17 @@ helpviewer_keywords:
 - dialog classes [MFC], common
 - common dialog boxes [MFC]
 ms.assetid: 5c4f6443-896c-4b05-a7df-8169fdadc71d
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: fcbed7cec501257f03ab13447d54e081c1d46c76
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d76c387c9aa9f53f8503d3606b2b47cdb5c6be6d
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="common-dialog-classes"></a>コモン ダイアログ クラス
 クラスに加えて[CDialog](../mfc/reference/cdialog-class.md)、MFC から派生したいくつかのクラスを提供`CDialog`をカプセル化する一般的に使用されるダイアログ ボックスに、次の表に示すようにします。 カプセル化されたダイアログ ボックスが「一般的なダイアログ ボックス」と呼ばれます、ライブラリの一部、Windows コモン ダイアログ (COMMDLG です。DLL) です。 ダイアログ テンプレート リソースと、これらのクラスのコードは、Windows 3.1 以降のバージョンの一部である共通のダイアログ ボックスに、Windows で説明します。  
@@ -41,7 +44,7 @@ ms.lasthandoff: 12/21/2017
 |[CFindReplaceDialog](../mfc/reference/cfindreplacedialog-class.md)|ユーザーを指定して検索を開始するか、置換テキスト ファイルに操作できます。|  
 |[CFontDialog](../mfc/reference/cfontdialog-class.md)|ユーザーが、フォントを指定できます。|  
 |[CPrintDialog](../mfc/reference/cprintdialog-class.md)|ユーザーが印刷ジョブの情報を指定できます。|  
-|[メンバー](../mfc/reference/cprintdialogex-class.md)|Windows 2000 の印刷プロパティ シートです。|  
+|[CPrintDialogEx](../mfc/reference/cprintdialogex-class.md)|Windows 印刷 プロパティ シートです。|  
   
  コモン ダイアログ クラスの詳細については、内の個々 のクラス名を参照してください、 *『 MFC リファレンス*です。 MFC では、OLE の標準的なダイアログ クラスの数も提供します。 これらのクラスについては、基本クラスを参照してください。[関数](../mfc/reference/coledialog-class.md)で、 *『 MFC リファレンス*です。  
   

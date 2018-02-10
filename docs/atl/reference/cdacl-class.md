@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -16,19 +17,22 @@ f1_keywords:
 - ATLSECURITY/ATL::CDacl::GetAceCount
 - ATLSECURITY/ATL::CDacl::RemoveAce
 - ATLSECURITY/ATL::CDacl::RemoveAllAces
-dev_langs: C++
-helpviewer_keywords: CDacl class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CDacl class
 ms.assetid: 2dc76616-6362-4967-b6cf-e2d39ca37ddd
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: f57fc1bdd641fbc8e770ddc9b37480530034ba1d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5ac83d5c1f72bf1df20d41ec39b464ddb79e4f8e
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="cdacl-class"></a>CDacl クラス
 このクラスは、DACL (随意アクセス制御リスト) 構造体のラッパーです。  
@@ -84,7 +88,7 @@ class CDacl : public CAcl
 ## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="addallowedace"></a>CDacl::AddAllowedAce  
+##  <a name="addallowedace"></a>  CDacl::AddAllowedAce  
  許可される ACE (アクセス制御エントリ) を追加、`CDacl`オブジェクト。  
   
 ```
@@ -123,12 +127,9 @@ bool AddAllowedAce(
 ### <a name="remarks"></a>コメント  
  A`CDacl`オブジェクトには、ユーザーとグループ オブジェクトにアクセスできるユーザーを識別する 0 個以上の Ace (アクセス制御エントリ) が含まれています。 このメソッドへのアクセスを許可する ACE を追加、`CDacl`オブジェクト。  
   
-> [!NOTE]
->  2 番目の形式の`AddAllowedAce`は Windows 2000 で利用可能な以降のみです。  
-  
  参照してください[ACE_HEADER](http://msdn.microsoft.com/library/windows/desktop/aa374919)で設定できるさまざまなフラグの詳細については、`AceFlags`パラメーター。  
   
-##  <a name="adddeniedace"></a>CDacl::AddDeniedAce  
+##  <a name="adddeniedace"></a>  CDacl::AddDeniedAce  
  拒否された ACE (アクセス制御エントリ) に追加、`CDacl`オブジェクト。  
   
 ```
@@ -167,12 +168,9 @@ bool AddDeniedAce(
 ### <a name="remarks"></a>コメント  
  A`CDacl`オブジェクトには、ユーザーとグループ オブジェクトにアクセスできるユーザーを識別する 0 個以上の Ace (アクセス制御エントリ) が含まれています。 このメソッドへのアクセスを拒否する ACE を追加、`CDacl`オブジェクト。  
   
-> [!NOTE]
->  2 番目の形式の`AddDeniedAce`は Windows 2000 で利用可能な以降のみです。  
-  
  参照してください[ACE_HEADER](http://msdn.microsoft.com/library/windows/desktop/aa374919)で設定できるさまざまなフラグの詳細については、`AceFlags`パラメーター。  
   
-##  <a name="cdacl"></a>CDacl::CDacl  
+##  <a name="cdacl"></a>  CDacl::CDacl  
  コンストラクターです。  
   
 ```
@@ -187,7 +185,7 @@ CDacl () throw();
 ### <a name="remarks"></a>コメント  
  `CDacl`オブジェクトを必要に応じて作成する、既存を使用して**ACL**構造体。 だけを DACL (随意アクセス制御リスト) を確認することが重要と SACL ではありません (システム アクセス制御リスト) は、このパラメーターとして渡す必要があります。 デバッグ ビルドでは、SACL を渡すことにより、アサートされます。 リリース ビルドでは、SACL を渡すことにより (アクセス制御エントリ) の Ace は無視され、ACL でとエラーは発生しません。  
   
-##  <a name="dtor"></a>CDacl:: ~ CDacl  
+##  <a name="dtor"></a>  CDacl::~CDacl  
  デストラクターです。  
   
 ```
@@ -197,7 +195,7 @@ CDacl () throw();
 ### <a name="remarks"></a>コメント  
  デストラクターを使用して、オブジェクトのすべての Ace (アクセス制御エントリ) などで取得したリソースを解放[CDacl::RemoveAllAces](#removeallaces)です。  
   
-##  <a name="getacecount"></a>CDacl::GetAceCount  
+##  <a name="getacecount"></a>  CDacl::GetAceCount  
  Ace (アクセス制御エントリ) の数を返します、`CDacl`オブジェクト。  
   
 ```
@@ -207,7 +205,7 @@ UINT GetAceCount() const throw();
 ### <a name="return-value"></a>戻り値  
  含まれている Ace の数を返します、`CDacl`オブジェクト。  
   
-##  <a name="operator_eq"></a>CDacl::operator =  
+##  <a name="operator_eq"></a>  CDacl::operator =  
  代入演算子。  
   
 ```
@@ -224,7 +222,7 @@ CDacl& operator= (const ACL& rhs) throw(...);
 ### <a name="remarks"></a>コメント  
  この関数には、DACL (随意アクセス制御リスト) を渡すだけことを確認する必要があります。 SACL (システム アクセス制御リスト) を渡すこの関数によってアサート デバッグ ビルドでがエラーが発生なしリリース ビルドでします。  
   
-##  <a name="removeace"></a>CDacl::RemoveAce  
+##  <a name="removeace"></a>  CDacl::RemoveAce  
  特定の ACE (アクセス制御エントリ) を削除、`CDacl`オブジェクト。  
   
 ```
@@ -238,7 +236,7 @@ void RemoveAce(UINT nIndex) throw();
 ### <a name="remarks"></a>コメント  
  このメソッドはから派生[CAtlArray::RemoveAt](../../atl/reference/catlarray-class.md#removeat)です。  
   
-##  <a name="removeallaces"></a>CDacl::RemoveAllAces  
+##  <a name="removeallaces"></a>  CDacl::RemoveAllAces  
  含まれている Ace (アクセス制御エントリ) のすべてを削除、`CDacl`オブジェクト。  
   
 ```
@@ -251,7 +249,7 @@ void RemoveAllAces() throw();
 ## <a name="see-also"></a>参照  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [CAcl クラス](../../atl/reference/cacl-class.md)   
- [Acl](http://msdn.microsoft.com/library/windows/desktop/aa374872)   
+ [ACLs](http://msdn.microsoft.com/library/windows/desktop/aa374872)   
  [Ace](http://msdn.microsoft.com/library/windows/desktop/aa374868)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティに関するグローバル関数](../../atl/reference/security-global-functions.md)

@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.classes.dialog
-dev_langs: C++
+f1_keywords:
+- vc.classes.dialog
+dev_langs:
+- C++
 helpviewer_keywords:
 - property sheet classes
 - dialog box classes
@@ -16,16 +19,17 @@ helpviewer_keywords:
 - common dialog classes [MFC]
 - tab dialog boxes
 ms.assetid: db75da23-4eff-4c6c-beae-79cf046fbce9
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 3095dfbbfa33f4c3110afb96c741a508611521cd
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6d51529e5d04a8297c0d3824ab38c7d2045bc866
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="dialog-box-classes"></a>ダイアログ ボックス クラス
 クラス`CDialog`し、その派生クラスがダイアログ ボックスの機能をカプセル化します。 ダイアログ ボックスはウィンドウの特殊なので`CDialog`から派生した`CWnd`です。 ダイアログ クラスを派生`CDialog`またはいずれかの標準のダイアログ ボックスで、開くファイルを保存したり、印刷、フォントや色を選択するなどのコモン ダイアログ クラスの検索と置換操作を開始するを実行するさまざまな OLE に関連します。操作です。  
@@ -57,40 +61,40 @@ ms.lasthandoff: 12/21/2017
  [CPrintDialog](../mfc/reference/cprintdialog-class.md)  
  ファイルを印刷するためには、標準のダイアログ ボックスを提供します。  
   
- [メンバー](../mfc/reference/cprintdialogex-class.md)  
- Windows 2000 の印刷プロパティ シートを提供します。  
+ [CPrintDialogEx](../mfc/reference/cprintdialogex-class.md)  
+ Windows の 印刷のプロパティ シートを提供します。  
   
- [メンバー](../mfc/reference/cpagesetupdialog-class.md)  
+ [CPageSetupDialog](../mfc/reference/cpagesetupdialog-class.md)  
  設定と印刷の余白を変更の追加サポートと共に Windows に共通の [ページ設定] ダイアログ ボックスにより提供されるサービスをカプセル化します。  
   
 ## <a name="ole-common-dialogs"></a>OLE コモン ダイアログ  
  OLE は、Windows に共通のいくつかのダイアログ ボックスを追加します。 これらのクラスは、OLE コモン ダイアログ ボックスをカプセル化します。  
   
- [関数](../mfc/reference/coledialog-class.md)  
+ [COleDialog](../mfc/reference/coledialog-class.md)  
  OLE ダイアログ ボックスをすべての一般的な実装を含むため、フレームワークで使用します。 ユーザー インターフェイスのカテゴリ内のすべてのダイアログ ボックス クラスは、この基本クラスから派生します。 `COleDialog`直接使用することはできません。  
   
- [メンバー](../mfc/reference/coleinsertdialog-class.md)  
+ [COleInsertDialog](../mfc/reference/coleinsertdialog-class.md)  
  リンクまたは埋め込みアイテムの新しい OLE を挿入するは、オブジェクトの挿入 ダイアログ ボックスで、標準のユーザー インターフェイスを表示します。  
   
- [関数](../mfc/reference/colepastespecialdialog-class.md)  
+ [COlePasteSpecialDialog](../mfc/reference/colepastespecialdialog-class.md)  
  貼り付け ダイアログ ボックス、編集貼り付け コマンドを実装するための標準のユーザー インターフェイスを表示します。  
   
- [関数](../mfc/reference/colelinksdialog-class.md)  
+ [COleLinksDialog](../mfc/reference/colelinksdialog-class.md)  
  リンクの編集 ダイアログ ボックスで、リンクされた項目に関する情報を変更するための標準のユーザー インターフェイスを表示します。  
   
- [メンバー](../mfc/reference/colechangeicondialog-class.md)  
+ [COleChangeIconDialog](../mfc/reference/colechangeicondialog-class.md)  
  アイコンの変更 ダイアログ ボックスで、OLE に関連付けられているアイコンの埋め込みを変更、またはリンクされた項目のための標準のユーザー インターフェイスを表示します。  
   
- [メンバー](../mfc/reference/coleconvertdialog-class.md)  
+ [COleConvertDialog](../mfc/reference/coleconvertdialog-class.md)  
  OLE 項目を別の 1 つの型に変換する標準のユーザー インターフェイスである [変換] ダイアログ ボックスが表示されます。  
   
- [メンバー](../mfc/reference/colepropertiesdialog-class.md)  
+ [COlePropertiesDialog](../mfc/reference/colepropertiesdialog-class.md)  
  Windows コモン OLE プロジェクト プロパティ ダイアログ ボックスをカプセル化します。 共通の OLE プロパティ ダイアログ ボックスでは、表示し、Windows の標準に準拠した形式での OLE ドキュメント項目のプロパティを変更する簡単な方法を提供します。  
   
- [関数](../mfc/reference/coleupdatedialog-class.md)  
+ [COleUpdateDialog](../mfc/reference/coleupdatedialog-class.md)  
  更新プログラム ダイアログ ボックスで、ドキュメント内のすべてのリンクを更新するための標準のユーザー インターフェイスを表示します。 ダイアログ ボックスには、完了するまで更新手順は、どの程度近いかを示すために、進行状況インジケーターが含まれています。  
   
- [メンバー](../mfc/reference/colechangesourcedialog-class.md)  
+ [COleChangeSourceDialog](../mfc/reference/colechangesourcedialog-class.md)  
  ソースの変更 ダイアログ ボックスで、移行先やリンクのソースを変更する標準のユーザー インターフェイスを表示します。  
   
  [COleBusyDialog](../mfc/reference/colebusydialog-class.md)  
@@ -112,7 +116,7 @@ ms.lasthandoff: 12/21/2017
  [CDHtmlDialog](../mfc/reference/cdhtmldialog-class.md)  
  ダイアログではなく、HTML リソースによるユーザー インターフェイスを実装するダイアログ ボックスを作成するために使用します。  
   
- [関数](../mfc/reference/cmultipagedhtmldialog-class.md)  
+ [CMultiPageDHtmlDialog](../mfc/reference/cmultipagedhtmldialog-class.md)  
  複数の HTML ページを順番に表示し、各ページのイベントを処理します。  
   
 ## <a name="related-classes"></a>関連するクラス  

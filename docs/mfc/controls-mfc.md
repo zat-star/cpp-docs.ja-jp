@@ -4,25 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Windows common controls [MFC]
 - common controls [MFC]
 - controls [MFC]
 ms.assetid: b2842884-6435-4b8f-933b-21671bf8af95
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 3fd146ecd4a5c1b431ea63a98e770b0cb2e0917d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b18979ec502ea645cf8cdac39ca9ea75cb229e61
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="controls-mfc"></a>コントロール (MFC)
 コントロールは、データを入力または操作するときにユーザーが取り扱うオブジェクトです。 通常は、ダイアログ ボックスまたはツール バー上に表示されます。 ここでは、主な 3 種類のコントロールについて説明します。  
@@ -36,15 +39,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="windows-common-controls"></a>Windows コモン コントロール  
  Windows オペレーティング システムでは、多数の Windows コモン コントロールが提供されています。 これらのコントロール オブジェクトはコードから操作できます。また、Visual C++ ダイアログ エディターを使用して、コントロール オブジェクトをダイアログ ボックスに追加できます。 MFC (Microsoft Foundation Class) ライブラリでは、表「 [Windows コモン コントロールと MFC クラス](#_core_windows_common_controls_and_mfc_classes)」に記述されているように、各コントロールをカプセル化するためのクラスが提供されています。 (表内の一部の項目は、詳細を説明するトピックに関連付けられています)。 トピックに関連付けられていないコントロールについては、MFC クラスに関するドキュメントを参照してください。  
   
- [CWnd](../mfc/reference/cwnd-class.md) クラスは、コントロール クラスをすべて含む、すべてのウィンドウ クラスの基底クラスです。 Windows コモン コントロールは以下の環境でサポートされています。  
-  
--   Windows 95、Windows 98、および Windows 2000  
-  
--   Windows NT Version 3.51 以降  
-  
--   Win32s Version 1.3 (Visual C++ Version 4.2 以降では Win32s をサポートしていません)  
-  
- Windows の旧バージョンでも、古いコモン コントロール (チェック ボックス、コンボ ボックス、エディット ボックス、リスト ボックス、オプション ボタン、プッシュ ボタン、スクロール バー コントロール、スタティック コントロール) が使用できます。  
+ [CWnd](../mfc/reference/cwnd-class.md) クラスは、コントロール クラスをすべて含む、すべてのウィンドウ クラスの基底クラスです。 
   
 ## <a name="activex-controls"></a>ActiveX コントロール  
  ActiveX コントロールは、以前は OLE コントロールと呼ばれていたもので、Windows アプリケーション、または WWW (World Wide Web) の HTML ページで使用できます。 詳細については、「 [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)」を参照してください。  

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -27,7 +28,8 @@ f1_keywords:
 - AFXDLGS/CPrintDialog::PrintRange
 - AFXDLGS/CPrintDialog::PrintSelection
 - AFXDLGS/CPrintDialog::m_pd
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CPrintDialog [MFC], CPrintDialog
 - CPrintDialog [MFC], CreatePrinterDC
@@ -47,16 +49,17 @@ helpviewer_keywords:
 - CPrintDialog [MFC], PrintSelection
 - CPrintDialog [MFC], m_pd
 ms.assetid: 5bdb2424-adf8-433d-a97c-df11a83bc4e4
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 653cdc4580862288d98600603c1b45526ea38675
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d7834351533cac7f518f5ce5f5558a6be2da34be
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="cprintdialog-class"></a>CPrintDialog クラス
 Windows のコモン ダイアログ ボックスである [印刷] ダイアログで提供されるサービスをカプセル化したものです。  
@@ -105,7 +108,7 @@ class CPrintDialog : public CCommonDialog
  一般的な印刷ダイアログ ボックスでは、Windows の標準に準拠した形式で印刷および印刷のセットアップ ダイアログ ボックスを実装する簡単な方法を提供します。  
   
 > [!NOTE]
->  `CPrintDialogEx`クラスは、Windows 2000 の印刷プロパティ シートによって提供されるサービスをカプセル化します。 詳細については、次を参照してください。、[メンバー](../../mfc/reference/cprintdialogex-class.md)の概要です。  
+>  `CPrintDialogEx`クラスは、Windows の 印刷のプロパティ シートによって提供されるサービスをカプセル化します。 詳細については、次を参照してください。、[メンバー](../../mfc/reference/cprintdialogex-class.md)の概要です。  
   
  `CPrintDialog`機能がのによって取り替えられて[コモン](../../mfc/reference/cpagesetupdialog-class.md)、両方の印刷設定、およびページ設定のコモン ダイアログ ボックスを提供するようになっています。  
   
@@ -177,7 +180,7 @@ CPrintDialog(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#174](../../mfc/codesnippet/cpp/cprintdialog-class_1.cpp)]  
   
-##  <a name="createprinterdc"></a>CPrintDialog::CreatePrinterDC  
+##  <a name="createprinterdc"></a>  CPrintDialog::CreatePrinterDC  
  プリンター デバイス コンテキスト (DC) を作成、 [DEVMODE](http://msdn.microsoft.com/library/windows/desktop/dd183565)と[DEVNAMES](../../mfc/reference/devnames-structure.md)構造体。  
   
 ```  
@@ -215,7 +218,7 @@ virtual INT_PTR DoModal();
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::CreatePrinterDC](#createprinterdc)です。  
   
-##  <a name="getcopies"></a>CPrintDialog::GetCopies  
+##  <a name="getcopies"></a>  CPrintDialog::GetCopies  
  要求されたコピーの数を取得します。  
   
 ```  
@@ -231,7 +234,7 @@ int GetCopies() const;
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::PrintCollate](#printcollate)です。  
   
-##  <a name="getdefaults"></a>CPrintDialog::GetDefaults  
+##  <a name="getdefaults"></a>  CPrintDialog::GetDefaults  
  ダイアログ ボックスを表示せず、既定のプリンターの既定のデバイスを取得します。  
   
 ```  
@@ -253,7 +256,7 @@ BOOL GetDefaults();
   
  [!code-cpp[NVC_MFCDocView#107](../../mfc/codesnippet/cpp/cprintdialog-class_3.cpp)]  
   
-##  <a name="getdevicename"></a>CPrintDialog::GetDeviceName  
+##  <a name="getdevicename"></a>  CPrintDialog::GetDeviceName  
  現在選択されているプリンター デバイスの名前を取得します。  
   
 ```  
@@ -271,7 +274,7 @@ CString GetDeviceName() const;
   
  [!code-cpp[NVC_MFCDocView#108](../../mfc/codesnippet/cpp/cprintdialog-class_4.cpp)]  
   
-##  <a name="getdevmode"></a>CPrintDialog::GetDevMode  
+##  <a name="getdevmode"></a>  CPrintDialog::GetDevMode  
  取得、`DEVMODE`構造体。  
   
 ```  
@@ -287,7 +290,7 @@ LPDEVMODE GetDevMode() const;
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::PrintCollate](#printcollate)です。  
   
-##  <a name="getdrivername"></a>CPrintDialog::GetDriverName  
+##  <a name="getdrivername"></a>  CPrintDialog::GetDriverName  
  現在選択されているプリンタ ドライバの名前を取得します。  
   
 ```  
@@ -303,7 +306,7 @@ CString GetDriverName() const;
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::GetDeviceName](#getdevicename)です。  
   
-##  <a name="getfrompage"></a>CPrintDialog::GetFromPage  
+##  <a name="getfrompage"></a>  CPrintDialog::GetFromPage  
  印刷の範囲の開始ページを取得します。  
   
 ```  
@@ -319,7 +322,7 @@ int GetFromPage() const;
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::m_pd](#m_pd)です。  
   
-##  <a name="getportname"></a>CPrintDialog::GetPortName  
+##  <a name="getportname"></a>  CPrintDialog::GetPortName  
  現在選択されているプリンター ポートの名前を取得します。  
   
 ```  
@@ -335,7 +338,7 @@ CString GetPortName() const;
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::GetDeviceName](#getdevicename)です。  
   
-##  <a name="getprinterdc"></a>CPrintDialog::GetPrinterDC  
+##  <a name="getprinterdc"></a>  CPrintDialog::GetPrinterDC  
  プリンター デバイス コンテキストへのハンドルを取得します。  
   
 ```  
@@ -351,7 +354,7 @@ HDC GetPrinterDC() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#109](../../mfc/codesnippet/cpp/cprintdialog-class_5.cpp)]  
   
-##  <a name="gettopage"></a>CPrintDialog::GetToPage  
+##  <a name="gettopage"></a>  CPrintDialog::GetToPage  
  印刷範囲の終了ページを取得します。  
   
 ```  
@@ -367,7 +370,7 @@ int GetToPage() const;
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::m_pd](#m_pd)です。  
   
-##  <a name="m_pd"></a>CPrintDialog::m_pd  
+##  <a name="m_pd"></a>  CPrintDialog::m_pd  
  メンバーのダイアログ オブジェクトの特性を格納する構造体。  
   
 ```  
@@ -398,7 +401,7 @@ BOOL PrintAll() const;
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::m_pd](#m_pd)です。  
   
-##  <a name="printcollate"></a>CPrintDialog::PrintCollate  
+##  <a name="printcollate"></a>  CPrintDialog::PrintCollate  
  コピーが要求された部単位で印刷するかどうかを判断します。  
   
 ```  

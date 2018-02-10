@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - servers [MFC], initializing
 - initializing servers [MFC]
@@ -18,16 +20,17 @@ helpviewer_keywords:
 - servers [MFC], installing
 - OLE server applications [MFC], registering servers
 ms.assetid: 991d5684-72c1-4f9e-a09a-9184ed12bbb9
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: c0b97a249246a9f7f9d47880f75bdce2ca643ae3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 636a0c2ff254957724511a067fa64533cb4837aa
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="registration"></a>登録
 ユーザーがアプリケーションに OLE 項目を挿入しようとすると、OLE から選択するオブジェクトの種類の一覧が表示されます。 OLE は、すべてのサーバー アプリケーションによって提供される情報を含むシステムの登録情報データベースからこの一覧を取得します。 登録すると、サーバー自体、システムの登録データベース (レジストリ) にエントリを提供するオブジェクトの種類ごとの説明、ファイルの拡張機能、およびその他の情報をそれ自体にパス  
@@ -44,12 +47,12 @@ ms.lasthandoff: 12/21/2017
 > [!NOTE]
 >  アプリケーション ウィザードによって自動的に生成された MFC アプリケーションはスタンドアロン アプリケーションとして実行された場合、登録します。  
   
- インストール中にアプリケーションを登録する場合は、RegEdit.exe プログラムを使用します。 (Windows 95、Windows 98、および Windows ME、レジストリ エディターは、Windows ディレクトリ内です。 Windows NT と Windows 2000 では、「regedit」は、Windows System32 ディレクトリ内) です。アプリケーションで、セットアップ プログラムを追加する場合、セットアップ プログラムの実行がある"RegEdit/S *appname*.reg"です。 (/S フラグが静かな動作を示すは、そのコマンドが正常に完了を報告 ダイアログ ボックスに表示されません。)それ以外の場合、RegEdit を手動で実行するユーザーに指示します。  
+ インストール中にアプリケーションを登録する場合は、RegEdit.exe プログラムを使用します。 アプリケーションで、セットアップ プログラムを追加する場合、セットアップ プログラムの実行がある"RegEdit/S *appname*.reg"です。 (/S フラグが静かな動作を示すは、そのコマンドが正常に完了を報告 ダイアログ ボックスに表示されません。)それ以外の場合、RegEdit を手動で実行するユーザーに指示します。  
   
 > [!NOTE]
 >  アプリケーション ウィザードで作成した .reg ファイルには、実行可能ファイルの完全なパスは含まれません。 インストール プログラムは、またはインクルード インストール ディレクトリを PATH 環境変数を変更する実行可能ファイルの完全なパスを含める .reg ファイルを変更するか必要があります。  
   
- レジストリ エディターでは、登録情報データベースに .reg テキスト ファイルの内容をマージします。 データベースを確認するか、それを修復するには、レジストリ エディターを使用します。 OLE の基本エントリを削除しないように注意してください。 (Windows 95、Windows 98、および Windows ME、レジストリ エディターは RegEdit.exe です。 Windows NT と Windows 2000 では、これは RegEdit32.exe) です。  
+ レジストリ エディターでは、登録情報データベースに .reg テキスト ファイルの内容をマージします。 データベースを確認するか、それを修復するには、レジストリ エディターを使用します。 OLE の基本エントリを削除しないように注意してください。  
   
 ##  <a name="_core_server_initialization"></a>サーバーの初期化  
  アプリケーション ウィザードを使用して、サーバー アプリケーションを作成するときにウィザードが完了すべての初期化タスクを自動的にします。 このセクションでは、必要なこと、サーバー アプリケーションを手動で作成する場合について説明します。  

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,19 +16,22 @@ f1_keywords:
 - ATLSECURITY/ATL::CSacl::GetAceCount
 - ATLSECURITY/ATL::CSacl::RemoveAce
 - ATLSECURITY/ATL::CSacl::RemoveAllAces
-dev_langs: C++
-helpviewer_keywords: CSacl class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CSacl class
 ms.assetid: 8624889b-aebc-4183-9d29-a20f07837f05
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 104c189b1f368b42ef1d93496629b4e142e1c938
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f4308211dd22c39311b4d767c4c4487d9bf23971
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="csacl-class"></a>CSacl クラス
 このクラスは、SACL (システム アクセス制御リスト) 構造体のラッパーです。  
@@ -82,7 +86,7 @@ class CSacl : public CAcl
 ## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="addauditace"></a>CSacl::AddAuditAce  
+##  <a name="addauditace"></a>  CSacl::AddAuditAce  
  監査アクセス制御エントリ (ACE) を追加、`CSacl`オブジェクト。  
   
 ```
@@ -129,11 +133,11 @@ bool AddAuditAce(
  返します**true**に ACE が追加された場合、`CSacl`オブジェクト、 **false**エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- A`CSacl`オブジェクトには、セキュリティ イベント ログに監査レコードを生成するアクセス試行の種類を指定するアクセス制御エントリ (Ace) が含まれています。 このメソッドにそのような ACE を追加、`CSacl`オブジェクト。 2 番目の形式の`AddAuditAce`は Windows 2000 で利用可能な以降のみです。  
+ A`CSacl`オブジェクトには、セキュリティ イベント ログに監査レコードを生成するアクセス試行の種類を指定するアクセス制御エントリ (Ace) が含まれています。 このメソッドにそのような ACE を追加、`CSacl`オブジェクト。  
   
  参照してください[ACE_HEADER](http://msdn.microsoft.com/library/windows/desktop/aa374919)で設定できるさまざまなフラグの詳細については、`AceFlags`パラメーター。  
   
-##  <a name="csacl"></a>CSacl::CSacl  
+##  <a name="csacl"></a>  CSacl::CSacl  
  コンストラクターです。  
   
 ```
@@ -158,7 +162,7 @@ CSacl(const ACL& rhs) throw(...);
 ### <a name="remarks"></a>コメント  
  デストラクターは、すべてのアクセス制御エントリ (Ace) を含む、オブジェクトが取得した任意のリソースを解放します。  
   
-##  <a name="getacecount"></a>CSacl::GetAceCount  
+##  <a name="getacecount"></a>  CSacl::GetAceCount  
  アクセス制御エントリ (Ace) の数を返します、`CSacl`オブジェクト。  
   
 ```
@@ -168,7 +172,7 @@ UINT GetAceCount() const throw();
 ### <a name="return-value"></a>戻り値  
  含まれている Ace の数を返します、`CSacl`オブジェクト。  
   
-##  <a name="operator_eq"></a>CSacl::operator =  
+##  <a name="operator_eq"></a>  CSacl::operator =  
  代入演算子。  
   
 ```
@@ -182,7 +186,7 @@ CSacl& operator=(const ACL& rhs) throw(...);
 ### <a name="return-value"></a>戻り値  
  更新されたへの参照を返します`CSacl`オブジェクト。 いることを確認、 **ACL**パラメーターは実際には、システム アクセス制御リスト (SACL) および随意アクセス制御リスト (DACL) ではなくです。 アサーションが発生すると、デバッグ ビルドとリリース ビルドでは、 **ACL**パラメーターは無視されます。  
   
-##  <a name="removeace"></a>CSacl::RemoveAce  
+##  <a name="removeace"></a>  CSacl::RemoveAce  
  特定の ACE (アクセス制御エントリ) を削除、 **CSacl**オブジェクト。  
   
 ```
@@ -196,7 +200,7 @@ void RemoveAce(UINT nIndex) throw();
 ### <a name="remarks"></a>コメント  
  このメソッドはから派生[CAtlArray::RemoveAt](../../atl/reference/catlarray-class.md#removeat)です。  
   
-##  <a name="removeallaces"></a>CSacl::RemoveAllAces  
+##  <a name="removeallaces"></a>  CSacl::RemoveAllAces  
  格納されているアクセス制御エントリ (Ace) のすべてを削除、`CSacl`オブジェクト。  
   
 ```
@@ -208,7 +212,7 @@ void RemoveAllAces() throw();
   
 ## <a name="see-also"></a>参照  
  [CAcl クラス](../../atl/reference/cacl-class.md)   
- [Acl](http://msdn.microsoft.com/library/windows/desktop/aa374872)   
+ [ACLs](http://msdn.microsoft.com/library/windows/desktop/aa374872)   
  [Ace](http://msdn.microsoft.com/library/windows/desktop/aa374868)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティに関するグローバル関数](../../atl/reference/security-global-functions.md)

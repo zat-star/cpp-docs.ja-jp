@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -24,19 +25,22 @@ f1_keywords:
 - ATLSECURITY/ATL::CSid::LoadAccount
 - ATLSECURITY/ATL::CSid::Sid
 - ATLSECURITY/ATL::CSid::SidNameUse
-dev_langs: C++
-helpviewer_keywords: CSid class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CSid class
 ms.assetid: be58b7ca-5958-49c3-a833-ca341aaaf753
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 3915206f0b05e33d5e13e41871a597ea7278ee8f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 38c2cff0cb9bd99a70e142d16ee5e7d38e82d8d0
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="csid-class"></a>CSid クラス
 このクラスは、用のラッパー、 `SID` (セキュリティ識別子) 構造体。  
@@ -76,7 +80,7 @@ class CSid
 |[CSid::GetPSID](#getpsid)|ポインターを返します、`SID`構造体。|  
 |[CSid::GetPSID_IDENTIFIER_AUTHORITY](#getpsid_identifier_authority)|ポインターを返します、 **SID_IDENTIFIER_AUTHORITY**構造体。|  
 |[CSid::GetSubAuthority](#getsubauthority)|指定された副機関を返します、 **SID**構造体。|  
-|[から](#getsubauthoritycount)|副機関の数を返します。|  
+|[CSid::GetSubAuthorityCount](#getsubauthoritycount)|副機関の数を返します。|  
 |[CSid::IsValid](#isvalid)|テスト、`CSid`の有効性のオブジェクト。|  
 |[CSid::LoadAccount](#loadaccount)|更新プログラム、`CSid`指定して、アカウント名とドメイン、または既存のオブジェクト`SID`構造体。|  
 |[CSid::Sid](#sid)|ID 文字列を返します。|  
@@ -86,19 +90,19 @@ class CSid
   
 |||  
 |-|-|  
-|[演算子 =](#operator_eq)|代入演算子。|  
+|[operator =](#operator_eq)|代入演算子。|  
 |[演算子の const SID *](#operator_const_sid__star)|キャスト、`CSid`オブジェクトへのポインターを`SID`構造体。|  
   
 ### <a name="global-operators"></a>グローバル演算子  
   
 |||  
 |-|-|  
-|[演算子 = =](#operator_eq_eq)|2 つのセキュリティ記述子オブジェクトの等価性をテストします。|  
+|[operator ==](#operator_eq_eq)|2 つのセキュリティ記述子オブジェクトの等価性をテストします。|  
 |[operator! =](#operator_neq)|非等値を 2 つのセキュリティ記述子オブジェクトを調べます|  
 |[演算子\<](#operator_lt_)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
-|[演算子 >](#operator_gt_)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
+|[operator >](#operator_gt_)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
 |[演算子\<=](#operator_lt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
-|[operator > =](#operator_gt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
+|[operator >=](#operator_gt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
   
 ## <a name="remarks"></a>コメント  
  `SID`構造体は、可変長の構造体のユーザーまたはグループを一意に識別するために使用します。  
@@ -110,7 +114,7 @@ class CSid
 ## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="accountname"></a>CSid::AccountName  
+##  <a name="accountname"></a>  CSid::AccountName  
  関連付けられているアカウントの名前を返します、`CSid`オブジェクト。  
   
 ```
@@ -125,7 +129,7 @@ LPCTSTR AccountName() const throw(...);
   
  アカウント名がない場合、`SID`を取れる`AccountName`空の文字列を返します。 これは、ネットワークのタイムアウトが原因でこのメソッドが、名前を検索する場合に発生します。 対応するアカウント名のないログオンなどのセキュリティ識別子にも発生`SID`ログオン セッションを識別します。  
   
-##  <a name="csid"></a>CSid::CSid  
+##  <a name="csid"></a>  CSid::CSid  
  コンストラクターです。  
   
 ```
@@ -181,7 +185,7 @@ virtual ~CSid() throw();
 ### <a name="remarks"></a>コメント  
  デストラクターは、オブジェクトが取得したすべてのリソースを解放します。  
   
-##  <a name="csidarray"></a>CSid::CSidArray  
+##  <a name="csidarray"></a>  CSid::CSidArray  
  配列[CSid](../../atl/reference/csid-class.md)オブジェクト。  
   
 ```
@@ -191,7 +195,7 @@ typedef CAtlArray<CSid> CSidArray;
 ### <a name="remarks"></a>コメント  
  この typedef は、ACL (アクセス制御リスト) からのセキュリティ識別子を取得するために使用する配列の型を指定します。 参照してください[CAcl::GetAclEntries](../../atl/reference/cacl-class.md#getaclentries)です。  
   
-##  <a name="domain"></a>CSid::Domain  
+##  <a name="domain"></a>  CSid::Domain  
  関連付けられているドメインの名前を返します、`CSid`オブジェクト。  
   
 ```
@@ -206,7 +210,7 @@ LPCTSTR Domain() const throw(...);
   
  アカウント名がない場合、`SID`を取れる**ドメイン**空の文字列としてドメインを返します。 これは、ネットワークのタイムアウトが原因でこのメソッドが、名前を検索する場合に発生します。 対応するアカウント名のないログオンなどのセキュリティ識別子にも発生`SID`ログオン セッションを識別します。  
   
-##  <a name="equalprefix"></a>CSid::EqualPrefix  
+##  <a name="equalprefix"></a>  CSid::EqualPrefix  
  テスト`SID`等しいかどうか (セキュリティ識別子) のプレフィックス。  
   
 ```
@@ -224,7 +228,7 @@ bool EqualPrefix(const CSid& rhs) const throw();
 ### <a name="remarks"></a>コメント  
  参照してください[EqualPrefixSid](http://msdn.microsoft.com/library/windows/desktop/aa446621)詳細については、Windows SDK に含まれています。  
   
-##  <a name="getlength"></a>CSid::GetLength  
+##  <a name="getlength"></a>  CSid::GetLength  
  長さを返します、`CSid`オブジェクト。  
   
 ```
@@ -240,7 +244,7 @@ UINT GetLength() const throw();
 > [!NOTE]
 >  デバッグ ビルドの場合、関数のアサートが発生する、`CSid`オブジェクトが無効です。  
   
-##  <a name="getpsid"></a>CSid::GetPSID  
+##  <a name="getpsid"></a>  CSid::GetPSID  
  ポインターを返します、 `SID` (セキュリティ識別子) 構造体。  
   
 ```
@@ -250,7 +254,7 @@ const SID* GetPSID() const throw(...);
 ### <a name="return-value"></a>戻り値  
  アドレスを返します、`CSid`オブジェクトの基になる`SID`構造体。  
   
-##  <a name="getpsid_identifier_authority"></a>CSid::GetPSID_IDENTIFIER_AUTHORITY  
+##  <a name="getpsid_identifier_authority"></a>  CSid::GetPSID_IDENTIFIER_AUTHORITY  
  ポインターを返します、 **SID_IDENTIFIER_AUTHORITY**構造体。  
   
 ```
@@ -263,7 +267,7 @@ const SID_IDENTIFIER_AUTHORITY* GetPSID_IDENTIFIER_AUTHORITY() const throw();
 > [!NOTE]
 >  デバッグ ビルドの場合、関数のアサートが発生する、`CSid`オブジェクトが無効です。  
   
-##  <a name="getsubauthority"></a>CSid::GetSubAuthority  
+##  <a name="getsubauthority"></a>  CSid::GetSubAuthority  
  指定された副機関を返します、 `SID` (セキュリティ識別子) 構造体。  
   
 ```
@@ -283,7 +287,7 @@ DWORD GetSubAuthority(DWORD nSubAuthority) const throw();
 > [!NOTE]
 >  デバッグ ビルドの場合、関数のアサートが発生する、`CSid`オブジェクトが無効です。  
   
-##  <a name="getsubauthoritycount"></a>から  
+##  <a name="getsubauthoritycount"></a>  CSid::GetSubAuthorityCount  
  副機関の数を返します。  
   
 ```
@@ -298,7 +302,7 @@ UCHAR GetSubAuthorityCount() const throw();
 > [!NOTE]
 >  デバッグ ビルドの場合、関数のアサートが発生する、`CSid`オブジェクトが無効です。  
   
-##  <a name="isvalid"></a>CSid::IsValid  
+##  <a name="isvalid"></a>  CSid::IsValid  
  テスト、`CSid`の有効性のオブジェクト。  
   
 ```
@@ -311,7 +315,7 @@ bool IsValid() const throw();
 ### <a name="remarks"></a>コメント  
  `IsValid`メソッドは、検証、`CSid`リビジョン番号が、既知の範囲内であると副機関の数が最大値より小さいことを確認することによってオブジェクト。  
   
-##  <a name="loadaccount"></a>CSid::LoadAccount  
+##  <a name="loadaccount"></a>  CSid::LoadAccount  
  指定されたアカウント名とドメイン、または既存の SID (セキュリティ識別子) 構造体で、`CSid` オブジェクトを更新します。  
   
 ```
@@ -340,7 +344,7 @@ bool LoadAccount(
 ### <a name="remarks"></a>コメント  
  `LoadAccount` は、指定された名前でセキュリティ識別子の検索を試行します。 参照してください[LookupAccountSid](http://msdn.microsoft.com/library/windows/desktop/aa379166\(v=vs.85\).aspx)詳細についてはします。  
   
-##  <a name="operator_eq"></a>CSid::operator =  
+##  <a name="operator_eq"></a>  CSid::operator =  
  代入演算子。  
   
 ```
@@ -355,7 +359,7 @@ CSid& operator= (const SID& rhs) throw(...);
 ### <a name="return-value"></a>戻り値  
  更新されたへの参照を返します`CSid`オブジェクト。  
   
-##  <a name="operator_eq_eq"></a>CSid::operator = =  
+##  <a name="operator_eq_eq"></a>  CSid::operator ==  
  2 つのセキュリティ記述子オブジェクトの等価性をテストします。  
   
 ```
@@ -393,7 +397,7 @@ bool operator!=(
 ### <a name="return-value"></a>戻り値  
  **true**セキュリティ記述子等しくない場合、それ以外の場合**false**です。  
   
-##  <a name="operator_lt"></a>CSid::operator&lt;  
+##  <a name="operator_lt"></a>  CSid::operator &lt;  
  2 つのセキュリティ記述子オブジェクトの相対値を比較します。  
   
 ```
@@ -412,7 +416,7 @@ bool operator<(
 ### <a name="return-value"></a>戻り値  
  **true**場合`lhs`はより小さい`rhs`それ以外の場合、 **false**です。  
   
-##  <a name="operator_lt__eq"></a>CSid::operator&lt;=  
+##  <a name="operator_lt__eq"></a>  CSid::operator &lt;=  
  2 つのセキュリティ記述子オブジェクトの相対値を比較します。  
   
 ```
@@ -431,7 +435,7 @@ bool operator<=(
 ### <a name="return-value"></a>戻り値  
  **true**場合`lhs`と同じかそれよりも少ない`rhs`それ以外の場合、 **false**です。  
   
-##  <a name="operator_gt"></a>CSid::operator&gt;  
+##  <a name="operator_gt"></a>  CSid::operator &gt;  
  2 つのセキュリティ記述子オブジェクトの相対値を比較します。  
   
 ```
@@ -450,7 +454,7 @@ bool operator>(
 ### <a name="return-value"></a>戻り値  
  **true**場合`lhs`がより大きい`rhs`それ以外の場合、 **false**です。  
   
-##  <a name="operator_gt__eq"></a>CSid::operator&gt;=  
+##  <a name="operator_gt__eq"></a>  CSid::operator &gt;=  
  2 つのセキュリティ記述子オブジェクトの相対値を比較します。  
   
 ```
@@ -479,7 +483,7 @@ operator const SID *() const throw(...);
 ### <a name="remarks"></a>コメント  
  アドレスを返します、`SID`構造体。  
   
-##  <a name="sid"></a>CSid::Sid  
+##  <a name="sid"></a>  CSid::Sid  
  返します、`SID`を文字列として (セキュリティ識別子) 構造体。  
   
 ```
@@ -487,9 +491,9 @@ LPCTSTR Sid() const throw(...);
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 返します、`SID`表示、ストレージ、または送信に適した形式の文字列として構造体。 等価[ConvertSidToStringSid](http://msdn.microsoft.com/library/windows/desktop/aa376399)この関数では Windows 2000 で利用可能な以降のみですが、以前のオペレーティング システムがエミュレートされるようにします。  
+ 返します、`SID`表示、ストレージ、または送信に適した形式の文字列として構造体。 等価[ConvertSidToStringSid](http://msdn.microsoft.com/library/windows/desktop/aa376399)です。  
   
-##  <a name="sidnameuse"></a>CSid::SidNameUse  
+##  <a name="sidnameuse"></a>  CSid::SidNameUse  
  状態の説明を返します、`CSid`オブジェクト。  
   
 ```

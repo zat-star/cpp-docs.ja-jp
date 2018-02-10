@@ -4,27 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: _mbcs
-dev_langs: C++
+f1_keywords:
+- _mbcs
+dev_langs:
+- C++
 helpviewer_keywords:
 - MBCS [C++], dialog box fonts
 - MS Shell Dlg
 - MBCS [C++], programming
 - dialog boxes [C++], fonts
 ms.assetid: 7b541235-f3e5-4af0-b2c2-a0112cd5fbfb
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 8a09bfb9b30e279e8d0b7696055c1e54ac56bfae
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b379c163963a9ae0dd0c59c7d0fc809fee4f46d0
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="general-mbcs-programming-advice"></a>MBCS プログラミングにおける一般的なアドバイス
 次のヒントを使用します。  
@@ -39,7 +43,7 @@ ms.lasthandoff: 12/21/2017
   
 -   ダイアログ ボックスをデザインする場合に、約 30% を許可する MBCS 変換用の静的テキスト コントロールの末尾に余分なスペースです。  
   
--   必ず、アプリケーションのフォントを選択するときに一部のフォントはすべてのシステムで利用できないためです。 たとえば、日本語版の Windows 2000 は Helvetica フォントをサポートしていません。  
+-   必ず、アプリケーションのフォントを選択するときに一部のフォントはすべてのシステムで利用できないためです。  
   
 -   ダイアログ ボックスのフォントを選択するを使用して[MS Shell Dlg](http://msdn.microsoft.com/library/windows/desktop/dd374112) MS Sans Serif や「helvetica」代わりにします。 MS Shell Dlg は適切なフォントに、ダイアログ ボックスを作成する前に、システムによって置換されます。 MS Shell Dlg を使用して、このフォントに対処するオペレーティング システムで変更が自動的に使用できることをによりします。 (MFC 置換 MS Shell Dlg DEFAULT_GUI_FONT または Windows 95、Windows 98、および Windows NT 4 で、システム フォントでこれらのシステムは MS Shell Dlg が正しく処理されないためです。)  
   

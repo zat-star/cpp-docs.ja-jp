@@ -4,34 +4,33 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - GDI+, drawing shapes
 - drawing, shapes
 - shapes
 - shapes, drawing
 ms.assetid: ffad5ae7-6ef4-4550-8940-be3f209a101d
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - dotnet
-ms.openlocfilehash: 62579ca21ba4a4dcf89aea6ff717ce6c884073b3
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: c5fc48eefb44049e4cff010b16c9567e443ba5db
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="how-to-draw-shapes-with-the-net-framework"></a>方法: .NET Framework を使用して形状を描画する
 次のコード例では、<xref:System.Drawing.Graphics>を変更するクラス、<xref:System.Windows.Forms.Form.OnPaint%2A>へのポインターを取得するイベント ハンドラー、<xref:System.Drawing.Graphics>メイン フォームのオブジェクト。 このポインターを使用して、フォームの背景色を設定し、行と円弧を使用して、描画、<xref:System.Drawing.Graphics.DrawLine%2A?displayProperty=fullName>と<xref:System.Drawing.Graphics.DrawArc%2A>メソッドです。  
-  
-> [!NOTE]
->  GDI + は Windows XP に付属し、Windows NT 4.0 SP 6、Windows 2000、Windows 98、および Windows me の再頒布可能として使用できます。 最新再頒布可能パッケージをダウンロードするを参照してください。 [http://go.microsoft.com/fwlink/p/?linkid=11232](http://go.microsoft.com/fwlink/p/?linkid=11232)です。 
   
 ## <a name="example"></a>例  
   

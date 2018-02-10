@@ -1,13 +1,15 @@
 ---
 title: "C と Win32 を使用するマルチ スレッド |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 02/02/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Windows API [C++], multithreading
 - multithreading [C++], C and Win32
@@ -17,19 +19,20 @@ helpviewer_keywords:
 - Win32 [C++], multithreading
 - threading [C]
 ms.assetid: 67cdc99e-1ad9-452b-a042-ed246b70040e
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 30c7833a4df80669b6223f1fe6b1ccceed0257cc
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 16353937046384f9dc130048c510197697fb678f
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="multithreading-with-c-and-win32"></a>C と Win32 を使用するマルチスレッド
-Microsoft Visual C は、Microsoft Windows でマルチ スレッド アプリケーションを作成するためのサポートを提供します。 Windows XP、Windows 2000、Windows NT、Windows Me、および Windows 98 です。 アプリケーションでキーボードとマウスの同時入力などの複数の処理を管理する場合は、複数のスレッド (マルチスレッド) の使用を検討してください。 たとえば、あるスレッドがマウス関連の処理をしている間に、別のスレッドでキーボード入力を処理できます。 さらに 3 番目のスレッドで、マウス スレッドとキーボード スレッドからのデータに基づいて表示画面を更新することもできます。 また別のスレッドで、同時にディスク ファイルにアクセスしたり、通信 (COM) ポートからデータを受信することもできます。  
+Microsoft Visual C では、マルチ スレッド アプリケーションを作成するためのサポートを提供します。 複数のスレッドを使用して、アプリケーションが応答しなくなるユーザー インターフェイスを原因となる高価な操作を実行する必要がある場合を検討してください。  
   
  Visual C++ では、複数のスレッドを含むプログラムを作成する方法として、MFC (Microsoft Foundation Class) ライブラリを使用する方法と、C ランタイム ライブラリと Win32 API を使用する方法の 2 つがあります。 MFC でマルチ スレッド アプリケーションの作成方法の詳細については、次を参照してください[C++ と MFC を使用するマルチ スレッド](../parallel/multithreading-with-cpp-and-mfc.md)c でのマルチ スレッドに関する次のトピックを読む。  
   

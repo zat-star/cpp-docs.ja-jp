@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: vc.codewiz.class.atl.asp.options
-dev_langs: C++
-helpviewer_keywords: ATL Active Server Page Component Wizard, options
+f1_keywords:
+- vc.codewiz.class.atl.asp.options
+dev_langs:
+- C++
+helpviewer_keywords:
+- ATL Active Server Page Component Wizard, options
 ms.assetid: 54f34e26-53c7-4456-9675-cb86e356bde0
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 6564b340458ae7e9a8e137d2338ba68b3e729a0f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 199092acf4d26303a0d83d4885c3c7e3999bf0c4
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="options-atl-active-server-page-component-wizard"></a>オプション、ATL Active Server Page コンポーネント ウィザード
 効率の向上と、オブジェクトのエラーのサポートを設計するには、ATL Active Server Page コンポーネント ウィザードのこのページを使用します。  
@@ -38,7 +43,7 @@ ms.lasthandoff: 12/21/2017
 |**アパートメント**|アパートメント スレッド オブジェクトで使用するを指定します。 1 つのと同じスレッドのアパートメントです。 アパートメント スレッド コンポーネントの各オブジェクトには、オブジェクトの有効期間のスレッドのアパートメントが割り当てられますただし、複数のスレッドは、複数のオブジェクトで使用できます。 各アパートメントが特定のスレッドに関連付けられている、Windows メッセージ ポンプ (既定値) です。<br /><br /> 参照してください[シングル スレッド アパートメント](http://msdn.microsoft.com/library/windows/desktop/ms680112)詳細についてはします。|  
 |**両方とも**|あるオブジェクトで使用できるアパートメントかフリー スレッドでは、作成スレッドの種類に応じてを指定します。|  
 |**無料**|オブジェクトが空きスレッドを使用するを指定します。 フリー スレッドは、マルチ スレッド アパートメント モデルと同じです。 参照してください[マルチ スレッド アパートメント](http://msdn.microsoft.com/library/windows/desktop/ms693421)詳細についてはします。|  
-|**ニュートラル**(Windows 2000 のみ)|マルチ スレッド アパートメントのガイドラインに従うオブジェクトがどの種類のスレッドで実行することを指定します。|  
+|**Neutral**|マルチ スレッド アパートメントのガイドラインに従うオブジェクトがどの種類のスレッドで実行することを指定します。|  
   
  **集計**  
  オブジェクトを使用するかどうかを示す[集計](http://msdn.microsoft.com/library/windows/desktop/ms686558)です。 集約オブジェクトは、クライアントに公開するインターフェイスを選択して、集約オブジェクトには、それらが実装されている場合に、インターフェイスが公開します。 集約オブジェクトのクライアントは、集計のオブジェクトでのみ通信します。  

@@ -4,27 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - /openmp
 - VC.Project.VCCLCompilerTool.OpenMP
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - /openmp compiler option [C++]
 - -openmp compiler option [C++]
 ms.assetid: 9082b175-18d3-4378-86a7-c0eb95664e13
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: a8d3aaeb5d3e71dfced4bf78384a62898d99a5ee
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c8217a901f071f50dbd2d7dfcbffccf4014a9444
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="openmp-enable-openmp-20-support"></a>/openmp (OpenMP 2.0 サポートの有効化)
 コンパイラで処理する`#pragma` [omp](../../preprocessor/omp.md)です。  
@@ -37,8 +40,6 @@ ms.lasthandoff: 12/21/2017
   
 ## <a name="remarks"></a>コメント  
  `#pragma omp`使用して指定[ディレクティブ](../../parallel/openmp/reference/openmp-directives.md)と[句](../../parallel/openmp/reference/openmp-clauses.md)です。 場合**/openmp**が指定されていない、コンパイル時に、コンパイラは、OpenMP 句およびディレクティブは無視されます。 [OpenMP 関数](../../parallel/openmp/reference/openmp-functions.md)いなくても、コンパイラによって呼び出しが処理されます**/openmp**が指定されていません。  
-  
- コンパイルされたアプリケーション**/openmp**を使用して、[ライブラリ](../../parallel/openmp/reference/openmp-libraries.md)Windows 2000 またはそれ以降のオペレーティング システムでのみ実行できます。  
   
  コンパイルされたアプリケーション**/openmp**と**/clr** 1 つのアプリケーション ドメインのプロセスでのみ実行できます。 複数のアプリケーション ドメインはサポートされません。 つまり、モジュール コンス トラクター (.cctor) の実行時に検出プロセスのコンパイルでは**/openmp**場合は既定ではないランタイム、アプリケーションが読み込まれるとします。 詳細については、次を参照してください。 [appdomain](../../cpp/appdomain.md)、 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)、および[混在アセンブリの初期化](../../dotnet/initialization-of-mixed-assemblies.md)です。  
   

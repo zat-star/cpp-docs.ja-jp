@@ -4,14 +4,16 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - HRGN
 - HFONT
 - HBITMAP
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CRgn class [MFC], HRGN handle type
 - HPEN [MFC]
@@ -48,22 +50,23 @@ helpviewer_keywords:
 - painting and device context [MFC]
 - CPalette class [MFC], HPALETTE handle type
 ms.assetid: 41963b25-34b7-4343-8446-34ba516b83ca
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 0fabeeae17b5bc81fdf592ed452a088b75bae544
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6dfdba311ed13b1ffbd5e1f830d6fa87cfce915d
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="graphic-objects"></a>グラフィック オブジェクト
 Windows には、さまざまなデバイス コンテキストで使用する描画ツールが用意されています。 たとえば、線を描画するためのペン、内部を塗りつぶすためのブラシ、テキストを描画するためのフォントがあります。 MFC には、Windows の描画ツールと同等のグラフィック オブジェクト クラスが用意されています。 使用可能なクラスと、それに対応する Windows グラフィックス デバイス インターフェイス (GDI) ハンドル型を次の表に示します。  
   
 > [!NOTE]
->  GDI+ は Windows XP に含まれており、Windows NT 4.0 SP6、Windows 2000、Windows 98、および Windows Me の再頒布可能物として使用できます。 最新再頒布可能パッケージをダウンロードするを参照してください。 [http://www.microsoft.com/msdownload/platformsdk/sdkupdate/psdkredist.htm](http://www.microsoft.com/msdownload/platformsdk/sdkupdate/psdkredist.htm)です。 詳細については、GDI + SDK のドキュメントを参照してください: [http://msdn.microsoft.com/library/default.aspurl=/library/gdicpp/GDIPlus/GDIPlus.asp](http://msdn.microsoft.com/library/default.aspurl=/library/gdicpp/gdiplus/gdiplus.asp)です。  
+>  詳細については、GDI + SDK のドキュメントを参照してください: [http://msdn.microsoft.com/library/default.aspurl=/library/gdicpp/GDIPlus/GDIPlus.asp](http://msdn.microsoft.com/library/default.aspurl=/library/gdicpp/gdiplus/gdiplus.asp)です。  
   
  この記事では、これらのグラフィック オブジェクト クラスの使用方法について説明します。  
   
@@ -111,8 +114,6 @@ Windows には、さまざまなデバイス コンテキストで使用する�
 -   [グラフィック オブジェクトをデバイス コンテキストに選択する](../mfc/selecting-a-graphic-object-into-a-device-context.md)  
   
 -   [デバイス コンテキスト](../mfc/device-contexts.md)  
-  
--   [以前のオペレーティング システムにおける CImage の制限](../mfc/cimage-limitations-with-earlier-operating-systems.md)  
   
 ## <a name="see-also"></a>参照  
  [Window オブジェクト](../mfc/window-objects.md)

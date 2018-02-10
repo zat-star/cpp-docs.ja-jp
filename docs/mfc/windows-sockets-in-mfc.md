@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - WINSOCK.DLL
 - sockets [MFC], programming models
@@ -17,16 +19,17 @@ helpviewer_keywords:
 - WSOCK32.DLL
 - sockets [MFC], MFC
 ms.assetid: 1f3c476a-9c68-49fe-9a25-d22971a334d0
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: bdade770449b7ae5db9db9a170198b81cbeaf970
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 187a58e719ad320975deba7429d6ec04a70143ac
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="windows-sockets-in-mfc"></a>MFC における Windows ソケット
 > [!NOTE]
@@ -51,9 +54,6 @@ ms.lasthandoff: 12/21/2017
   
 ##  <a name="_core_mfc_socket_samples_and_windows_sockets_dlls"></a>Windows Sockets Dll  
  Microsoft Windows オペレーティング システムでは、Windows ソケットのダイナミック リンク ライブラリ (DLL) を指定します。 Visual C では、適切なヘッダー ファイルとライブラリと、Windows ソケット仕様を提供します。  
-  
-> [!NOTE]
->  Windows NT と Windows 2000 では、16 ビット アプリケーションの Windows ソケットのサポートは、WINSOCK に基づいています。DLL です。 32 ビット アプリケーションの場合、サポートが WSOCK32 です。DLL です。 提供されている Api は、32 ビット版が 32 ビットに拡大変換パラメーターを持つ点を除いて同じです。 Win32 では、スレッド セーフが提供されます。  
   
  Windows ソケットの詳細についてを参照してください。  
   

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 1/09/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - globalization [C++], character sets
 - portable data types [MFC]
@@ -19,12 +21,13 @@ helpviewer_keywords:
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 110d99cd6bf745f20db0a92a87189fb8add68e9b
-ms.sourcegitcommit: 56f6fce7d80e4f61d45752f4c8512e4ef0453e58
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fde7674d30d84385eb1f94f42056a82bfaac99fe
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="support-for-unicode"></a>Unicode のサポート
 
@@ -58,7 +61,7 @@ MFC フレームワークは Unicode に完全に対応しており、MFC では
 
 - [Unicode を使用して、国際化プログラムを作成するには](../text/unicode-programming-summary.md)
 
-- [Unicode、どの Unicode を使用して、プログラムより効率的に Windows 2000 でなどの利点を説明します](../text/benefits-of-character-set-portability.md)
+- [Unicode の利点を説明します](../text/benefits-of-character-set-portability.md)
 
 - [ワイド文字の引数をプログラムに渡すためにの wmain を使用します。](../text/support-for-using-wmain.md)
 
