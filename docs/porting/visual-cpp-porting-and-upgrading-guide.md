@@ -4,21 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: f5fbcc3d-aa72-41a6-ad9a-a706af2166fb
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: ba7e3f139aa9956cd9d2587522dc2d0ac1f2ff7b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d5751899dc064da4b17e240411878187a80acbdc
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="visual-c-porting-and-upgrading-guide"></a>Visual C++  移植とアップグレードのガイド
 このトピックは、Visual C++ コードをアップグレードするためのガイドを提供します。 これには、新しいリリースのツールでコードを適切にコンパイルして実行し、新しい言語と Visual Studio の機能を利用する方法も含まれます。 このトピックには、最新のプラットフォームへのレガシー アプリケーションの移行に関する情報も含まれています。  
@@ -79,10 +82,10 @@ ms.lasthandoff: 12/21/2017
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[旧バージョンの Visual C++ からのプロジェクトのアップグレード](upgrading-projects-from-earlier-versions-of-visual-cpp.md)|以前のバージョンの Visual C++ で作成されたプロジェクトを使用する方法について説明します。|  
-|[Visual Studio 2017 RC における Visual C++ の新機能](../what-s-new-for-visual-cpp-in-visual-studio.md)|Visual Studio 2015 から Visual Studio 2017 における IDE およびツールの変更|  
+|[Visual Studio 2017 RC での C++ コンパイラの新機能](../what-s-new-for-visual-cpp-in-visual-studio.md)|Visual Studio 2015 から Visual Studio 2017 における IDE およびツールの変更|  
 |[Visual Studio 2017 の C++ 準拠の強化](../cpp-conformance-improvements-2017.md)|Visual Studio 2015 から Visual Studio 2017 における標準の準拠の強化|  
 |[2003 から 2015 の Visual C++ の履歴の変更](visual-cpp-change-history-2003-2015.md)|コードの変更が必要となる可能性のある、Visual Studio 2003 から 2015 における Visual C++ ライブラリおよびビルド ツールのすべての変更の一覧。|  
 |[2003 ～ 2015 年の Visual C++ の新機能](visual-cpp-what-s-new-2003-through-2015.md)|Visual Studio 2003 から Visual Studio 2015 の Visual C++ の "新機能" に関するすべての情報。|  

@@ -7,16 +7,17 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: eaf34c1b-da98-4058-a059-a10db693a5ce
-caps.latest.revision: "1"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 3e19f72dac00d18af62e91b1466bc40f2148518e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e63945dc51fe55d81963790e7373a3d4dc9b0efe
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="upgrade-your-code-to-the-universal-crt"></a>Universal CRT へのコードのアップグレード
 
@@ -42,7 +43,7 @@ Visual C++ プロジェクトを更新するときに、プロジェクトの **
   
 ## <a name="deployment-and-redistribution-of-the-universal-crt"></a>ユニバーサル CRT の配置と再配布
   
-UCRT は現在、Microsoft Windows オペレーティング システムのコンポーネントなので、Windows 10 では、オペレーティング システムの一部として含まれており、Windows Vista から Windows 8.1 までの旧バージョンのオペレーティング システムでは、Windows Update を通して入手できます。 再頒布可能パッケージのバージョンは Windows XP で使用できます。 オペレーティング システムのコンポーネントであるため、UCRT の更新プログラムとサービスは、Visual Studio および Visual C コンパイラのバージョンとは無関係に、Windows Update によって管理されます。 UCRT は、Windows コンポーネントであり、セキュリティおよび更新の容易さ、小さいイメージ サイズなどの理由から、アプリ用の UCRT を集中配置することをお勧めします。  
+UCRT は現在、Microsoft Windows オペレーティング システムのコンポーネントなので、Windows 10 では、オペレーティング システムの一部として含まれており、Windows Vista から Windows 8.1 までの旧バージョンのオペレーティング システムでは、Windows Update を通して入手できます。 再頒布可能パッケージのバージョンは Windows XP で使用できます。 オペレーティング システムのコンポーネントであるため、UCRT の更新プログラムとサービスは、Visual Studio および Microsoft C++ コンパイラのバージョンとは無関係に、Windows Update によって管理されます。 UCRT は、Windows コンポーネントであり、セキュリティおよび更新の容易さ、小さいイメージ サイズなどの理由から、アプリ用の UCRT を集中配置することをお勧めします。  
   
 UCRT は、Visual Studio 2015 または Visual Studio 2017 でサポートされている Windows の任意のバージョンで使用できます。 Windows 10 以外のサポートされているバージョンの Windows では、vcredist パッケージを使用して再配布することができます。 vcredist パッケージは、UCRT コンポーネントを含み、既定で、それらのコンポーネントがインストールされていない Windows オペレーティング システムにそれらを自動的にインストールします。 詳細については、「[Visual C++ ファイルの再配布](../ide/redistributing-visual-cpp-files.md)」を参照してください。  
   

@@ -4,32 +4,36 @@ ms.custom:
 ms.date: 09/01/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: UNIX [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- UNIX [C++]
 ms.assetid: 36108b31-e7fa-49a8-a1f7-7077fcbec873
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 06e4b772288f2e7374bb10f1298da33fbc6dcac0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 258f08db457761a37822a872415633d6359b7b47
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="introduction-to-visual-c-for-unix-users"></a>Visual C++ の紹介 (UNIX ユーザー向け)
 
-このトピックでは、Visual C++ を初めて使用し、Visual C++ と Visual Studio 統合開発環境 (IDE) で生産性を向上したい UNIX ユーザー向けの情報を提供します。  
+このトピックでは、Visual Studio を初めて使用し、C++ と Visual Studio 統合開発環境 (IDE) で生産性を向上したい UNIX ユーザー向けの情報を提供します。
   
 ## <a name="getting-started-on-the-command-line"></a>コマンドラインに関する概要  
 
-UNIX のコマンドライン環境を使用する場合と同様の方法で、コマンドラインから Visual C++ を使用できます。 コマンド ラインの C と C++ コンパイラ (CL.EXE)、リンカー (LINK.EXE)、Microsoft バージョンの UNIX make ユーティリティである NMAKE.EXE を含むその他のツールを使用して、コマンド プロンプトからコンパイルします。  
+UNIX のコマンドライン環境を使用する場合と同様の方法で、コマンドラインから C++ コンパイラを使用できます。 コマンド ラインの C と C++ コンパイラ (CL.EXE)、リンカー (LINK.EXE)、Microsoft バージョンの UNIX make ユーティリティである NMAKE.EXE を含むその他のツールを使用して、コマンド プロンプトからコンパイルします。  
   
-UNIX では、コマンドは /usr/bin などの共通のフォルダーにインストールされます。 Visual C++ の場合、コマンドライン ツールは Visual Studio のインストール ディレクトリにインストールされます。VC\bin サブディレクトリとそのサブディレクトリです。 UNIX とは異なり、これらのツールは普通のコマンド プロンプト ウィンドウでは利用できません。 コマンドライン ツールを使用するには、開発者コマンド プロンプト ショートカットを使用するか、vcvarsall.bat など、開発者コマンド ファイルを実行してください。 これで、コマンド ラインから Visual C++ プログラムをコンパイルするために必要なパスとその他の環境変数が設定されます。 詳細については、「[コマンドラインでの C/C++ コードのビルド](../build/building-on-the-command-line.md)」および「[チュートリアル: コマンド ラインでのネイティブ C++ プログラムのコンパイル](../build/walkthrough-compiling-a-native-cpp-program-on-the-command-line.md)」を参照してください。  
+UNIX では、コマンドは /usr/bin などの共通のフォルダーにインストールされます。 Visual Studio の場合、コマンドライン ツールは Visual Studio のインストール ディレクトリにインストールされます。VC\bin サブディレクトリとそのサブディレクトリです。 UNIX とは異なり、これらのツールは普通のコマンド プロンプト ウィンドウでは利用できません。 コマンドライン ツールを使用するには、開発者コマンド プロンプト ショートカットを使用するか、vcvarsall.bat など、開発者コマンド ファイルを実行してください。 これで、コマンド ラインから C++ プログラムをコンパイルするために必要なパスとその他の環境変数が設定されます。 詳細については、「[コマンドラインでの C/C++ コードのビルド](../build/building-on-the-command-line.md)」および「[チュートリアル: コマンド ラインでのネイティブ C++ プログラムのコンパイル](../build/walkthrough-compiling-a-native-cpp-program-on-the-command-line.md)」を参照してください。  
   
 開発者コマンド プロンプト ショートカットを開くには、デスクトップの検索コントロールに「*developer command prompt*」と入力し、検索結果からお使いのバージョンの Visual Studio の**開発者コマンド プロンプト**を選びます。 特定のホストとターゲット アーキテクチャに事前構成した開発者コマンド プロンプトを選ぶには、**[スタート]** メニュー (デスクトップの隅にある Windows アイコン) を開き、お使いのバージョンの Visual Studio (**Visual Studio 2017** など) のフォルダーまでスクロールします。 フォルダーを開き、任意のホストとターゲット アーキテクチャのコマンド プロンプト ショートカットを選びます。
   
@@ -47,11 +51,11 @@ Visual Studio デバッガー、IntelliSense のコード参照とステート�
   
 ## <a name="importing-your-existing-code"></a>既存のコードをインポートする 
  
-Visual C++ を使用すれば、メイクファイルでコンパイルするように設定した (メイクファイルを使わないことも可能) 既存のコードをビルドし、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] プロジェクトに配置できます。 詳細については、「[方法 : 既存のコードから C++ プロジェクトを作成する](../ide/how-to-create-a-cpp-project-from-existing-code.md)」を参照してください。  
+C++ コンパイラを使用すれば、メイクファイルでコンパイルするように設定した (メイクファイルを使わないことも可能) 既存のコードをビルドし、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] プロジェクトに配置できます。 詳細については、「[方法 : 既存のコードから C++ プロジェクトを作成する](../ide/how-to-create-a-cpp-project-from-existing-code.md)」を参照してください。  
   
 ## <a name="creating-a-new-project"></a>新規プロジェクトの作成  
 
-開発環境では、新しいプロジェクトを作成できます。 Visual C++ はさまざまな共通プロジェクトの標準的なコードを提供する多数のテンプレートを提供します。 アプリケーション ウィザードを使用して、様々な種類のアプリケーション用のコードのアウトラインを持つプロジェクトを生成することができます。  
+開発環境では、新しいプロジェクトを作成できます。 Visual Studio はさまざまな共通プロジェクトの標準的なコードを提供する多数のテンプレートを提供します。 アプリケーション ウィザードを使用して、様々な種類のアプリケーション用のコードのアウトラインを持つプロジェクトを生成することができます。  
   
 まず、**コンソール アプリケーション (Win32) ウィザード**を使用して、空のプロジェクトを作成できます。 **[空のプロジェクト]** チェック ボックスをオンにします。 これで、新規および既存のファイルをプロジェクトに後で追加できます。  
   
@@ -59,9 +63,9 @@ Visual C++ を使用すれば、メイクファイルでコンパイルするよ
   
 ## <a name="microsoft-specific-modifiers"></a>Microsoft 固有の修飾子  
 
-Visual C++ には、Windows オペレーティング システムのプログラミングをサポートする目的で、標準 C++ プログラミング言語の拡張機能がいくつか含まれます。 これらの拡張機能は、ストレージ クラス属性、関数の呼び出し規約、ベース アドレス指定などを指定するために使用されます。 すべての Visual C++ の拡張機能の完全な一覧については、「[Microsoft 固有の修飾子](../cpp/microsoft-specific-modifiers.md)」を参照してください。  
+Microsoft Visual C++ コンパイラは、Windows オペレーティング システムのプログラミングをサポートする目的で、標準 C++ プログラミング言語にいくつかの拡張機能を実装します。 これらの拡張機能は、ストレージ クラス属性、関数の呼び出し規約、ベース アドレス指定などを指定するために使用されます。 サポートされているすべての C++ の拡張機能の完全な一覧については、「[Microsoft 固有の修飾子](../cpp/microsoft-specific-modifiers.md)」を参照してください。  
   
-**/Za** コンパイラ オプションを使用して、C++ へのすべての Microsoft 固有の拡張機能を無効にすることができます。 複数のプラットフォームで実行するコードを記述する場合、このオプションが推奨されます。 **/Za** コンパイラ オプションの詳細については、「[/Za、/Ze (言語拡張機能の無効化)](../build/reference/za-ze-disable-language-extensions.md)」を参照してください。 Visual C++ の準拠の詳細については、「[非標準動作](../cpp/nonstandard-behavior.md)」を参照してください。  
+**/Za** コンパイラ オプションを使用して、C++ へのすべての Microsoft 固有の拡張機能を無効にすることができます。 複数のプラットフォームで実行するコードを記述する場合、このオプションが推奨されます。 **/Za** コンパイラ オプションの詳細については、「[/Za、/Ze (言語拡張機能の無効化)](../build/reference/za-ze-disable-language-extensions.md)」を参照してください。 C++ コンパイラの準拠の詳細については、「[Visual C++ 言語への準拠](../visual-cpp-language-conformance.md)」および「[非標準動作](../cpp/nonstandard-behavior.md)」を参照してください。  
   
 ## <a name="precompiled-headers"></a>プリコンパイル済みヘッダー  
 

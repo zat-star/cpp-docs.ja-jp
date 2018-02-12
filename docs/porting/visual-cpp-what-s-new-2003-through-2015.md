@@ -9,18 +9,20 @@ ms.technology:
 - devlang-cpp
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: c4afde6f-3d75-40bf-986f-be57e3818e26
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 5c401aa7a063ab7e76353a5781f008243204bc35
-ms.sourcegitcommit: b5ff17bcd5e5e02bc21717859165a6b819a0ab84
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4e730d7d47a8742d3c4f1f7c4636aabd8785cc93
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="visual-c-what39s-new-2003-through-2015"></a>Visual C++ 2003 ～ 2015 の新機能
 
@@ -1485,7 +1487,7 @@ Visual Studio 2015 以降では、コンパイラの準拠に関する継続的�
 
 #### <a name="compiler"></a>コンパイラ
 
-Microsoft C++ コンパイラは、以下の ISO C++11 機能をサポートします。
+Microsoft Visual C++ コンパイラは、次の ISO C++11 機能をサポートします。
 
 - 関数テンプレートに関する既定のテンプレート引数。
 - コンストラクターのデリゲート
@@ -1502,8 +1504,8 @@ Microsoft C++ コンパイラは、以下の ISO C++11 機能をサポートし�
 - 複合リテラル。
 - 初期化子の指定。
 - コードによる宣言の混合。
-- 文字列リテラルから変更可能な値への変換は、新しいコンパイラ オプション /Zc:strictStrings を使用して無効にすることができます。 C++98 では、文字列リテラルから char\* (およびワイド文字列リテラル wchar_t\*) への変換は推奨されていません。 C++11 では、変換は完全に削除されました。 コンパイラを標準に厳密に準拠させることもできますが、そうではなく、変換を制御できるように /Zc:strictStrings のオプションが用意されています。 既定では、このオプションはオフです。 デバッグ モードでこのオプションを使用すると、STL はコンパイルされません。
-- rvalue/lvalue の参照キャスト。 C++11 では、右辺値参照を使用して、左辺値と右辺値を明確に区別できます。 以前は、Visual C++ コンパイラは、具体的なキャストのシナリオでこれを実現できませんでした。 新しいコンパイラ オプションである /Zc:rvalueCast が追加され、コンパイラが C++ Language Working Paper (C++ 言語報告書) (セクション 5.4 [expr.cast]/1 を参照) に準拠するようになりました。 このオプションを指定しない場合の既定の動作は、Visual Studio 2012 の動作と同じです。
+- 文字列リテラルから変更可能な値への変換は、新しいコンパイラ オプション **/Zc:strictStrings** を使用して無効にすることができます。 C++98 では、文字列リテラルから char\* (およびワイド文字列リテラル wchar_t\*) への変換は推奨されていません。 C++11 では、変換は完全に削除されました。 コンパイラを標準に厳密に準拠させることもできますが、そうせずに、変換を制御できるように **/Zc:strictStrings** のオプションが用意されています。 既定では、このオプションはオフです。 デバッグ モードでこのオプションを使用すると、STL はコンパイルされません。
+- rvalue/lvalue の参照キャスト。 C++11 では、右辺値参照を使用して、左辺値と右辺値を明確に区別できます。 以前は、コンパイラは、具体的なキャストのシナリオでこれを実現できませんでした。 新しいコンパイラ オプションである **/Zc:rvalueCast** が追加され、コンパイラが C++ Language Working Paper (C++ 言語報告書) (セクション 5.4 [expr.cast]/1 を参照) に準拠するようになりました。 このオプションを指定しない場合の既定の動作は、Visual Studio 2012 の動作と同じです。
   - 注: 既定化関数では、=default を使用したメンバー関数の移動コンストラクターと移動代入演算子の要求はサポートされていません。
 
 ### <a name="c99-libraries"></a>C99 ライブラリ
@@ -1551,7 +1553,7 @@ C++11 の明示的な変換演算子、初期化子リスト、スコープ指�
 - **よりリッチな例外情報。** C++/CX は新しい Windows エラー モデルをサポートし、アプリケーション バイナリ インターフェイス (ABI) を通じたリッチな例外情報の伝達とキャプチャを可能にします。その中には、呼び出し履歴とカスタム メッセージ文字列が含まれます。
 - **Object::ToString () は、仮想メソッドになりました。** ユーザー定義の Windows ランタイムの参照型の中で、ToString をオーバーライドできるようになりました。
 - **推奨されていない API のサポート。** Public Windows ランタイム API は、"使用を推奨されていない" というマークを付けられ、ビルドの警告として表示されるカスタム メッセージを付与され、移行のガイドラインが提供されるようになりました。
-- **デバッガーの強化。** ネイティブ/JavaScript の相互運用機能デバッグ、Windows ランタイムの例外診断、非同期コードのデバッグ (Windows ランタイムと PPL の両方) をサポートします。
+- **デバッガーの強化。** ネイティブ/JavaScript ネの相互運用機能デバッグ、Windows ランタイムの例外診断、非同期コードのデバッグ (Windows ランタイムと PPL の両方) をサポートします。
   - 注: ここで説明する C++ 固有の機能と拡張機能に加えて、Visual Studio 内の他の拡張機能も、より適切な Windows Store アプリの開発に役立ちます。
 
 ### <a name="diagnostics-enhancements"></a>診断の強化

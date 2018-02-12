@@ -12,15 +12,15 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 697b5dc087aa61280922d5574001838ea5ff1dcb
-ms.sourcegitcommit: ff9bf140b6874bc08718674c07312ecb5f996463
+ms.openlocfilehash: fd7ba80e60251c56fd28a1c380d395e686fc27a4
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-report-a-problem-with-the-visual-c-toolset"></a>Visual C++ ツールセットで問題を報告する方法
 
-Visual C++ のコンパイラ、リンカー、その他のツールとライブラリを使っていて問題が発生した場合は、Microsoft にお知らせください。
+Microsoft Visual C++ のコンパイラ、リンカー、その他のツールとライブラリを使っていて問題が発生した場合は、Microsoft にお知らせください。
 
 問題についてのご連絡に最適な方法は、発生した問題の説明、プログラムの作成方法の詳細、および Microsoft のコンピューターで問題を再現するために使うことができる*再現コード*、完全なテスト ケースを含む、レポートをお送りいただくことです。 この情報があると、短時間で、Microsoft のコードに問題が存在していて、報告者の環境だけの問題ではないことを確認すること、また、コンパイラの他のバージョンに影響があるかどうかを特定して、原因を診断することができます。
 

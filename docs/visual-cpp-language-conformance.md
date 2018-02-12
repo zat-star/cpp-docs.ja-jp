@@ -1,29 +1,32 @@
 ---
 title: "Visual C++ 言語への準拠 | Microsoft Docs"
 ms.date: 11/15/2017
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 475da6e9-0d78-4b4e-bd23-f41c406c4efe
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: fa79bfc63a3906b3f7eb698c3d44ee8136db2c14
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 49aabbcc746470815db40f15fa00774d5e05bfe5
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="visual-c-language-conformance"></a>Visual C++ 言語への準拠
 
-このトピックでは、Visual Studio 2017 およびそれ以前のバージョンにおいて、Visual C++ 向けのコンパイラ機能と標準ライブラリ機能が ISO C++03、C++11、C++14、C++17 とドラフト C++20 の言語標準にどの程度準拠しているかをまとめています。 コンパイラと標準ライブラリの各機能の名前には、機能を説明する ISO C++ 標準提案書のリンクが埋め込まれています (ただし、発行時点で提案書が利用できるものに限ります)。 "サポート状況" 列には、機能のサポートが初めて搭載された Visual Studio のバージョンが記載されています。
+このトピックでは、Visual Studio 2017 およびそれ以前のバージョンにおいて、C++ コンパイラ向けのコンパイラ機能と標準ライブラリ機能が ISO C++03、C++11、C++14、C++17 とドラフト C++20 の言語標準にどの程度準拠しているかをまとめています。 コンパイラと標準ライブラリの各機能の名前には、機能を説明する ISO C++ 標準提案書のリンクが埋め込まれています (ただし、発行時点で提案書が利用できるものに限ります)。 "サポート状況" 列には、機能のサポートが初めて搭載された Visual Studio のバージョンが記載されています。
 
-Visual Studio 2017 で加えられた準拠の強化とその他の変更点の詳細については、「[Visual Studio 2017 の C++ 準拠の強化](cpp-conformance-improvements-2017.md)」と「[Visual Studio 2017 の Visual C++ の新機能](what-s-new-for-visual-cpp-in-visual-studio.md)」をご覧ください。 以前のバージョンにおける準拠の変更点については、[Visual C++ の変更履歴](porting/visual-cpp-change-history-2003-2015.md)に関するページと「[Visual C++ 2003 ～ 2015 の新機能](porting/visual-cpp-what-s-new-2003-through-2015.md)」をご覧ください。 C++ チームからの最新情報は、[Visual C++ チーム ブログ](https://blogs.msdn.microsoft.com/vcblog/)でご覧いただけます。  
+Visual Studio 2017 で加えられた準拠の強化とその他の変更点の詳細については、「[Visual Studio 2017 の C++ 準拠の強化](cpp-conformance-improvements-2017.md)」と「[Visual Studio 2017 の Visual C++ の新機能](what-s-new-for-visual-cpp-in-visual-studio.md)」をご覧ください。 以前のバージョンにおける準拠の変更点については、[Visual C++ の変更履歴](porting/visual-cpp-change-history-2003-2015.md)に関するページと「[Visual C++ 2003 ～ 2015 の新機能](porting/visual-cpp-what-s-new-2003-through-2015.md)」をご覧ください。 C++ チームからの最新情報は、[Visual C++ チーム ブログ](https://blogs.msdn.microsoft.com/vcblog/)でご覧いただけます。
 
- > [!NOTE]
- > Visual Studio 2015 と Visual Studio 2017 では、バイナリに関して重大な変更はありません。
+> [!NOTE]
+> Visual Studio 2015 と Visual Studio 2017 では、バイナリに関して重大な変更はありません。
 
 ## <a name="compiler-features"></a>コンパイラ機能
 
