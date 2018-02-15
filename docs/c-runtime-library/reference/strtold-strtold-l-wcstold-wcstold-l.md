@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - wcstold
 - strtold
@@ -32,18 +33,20 @@ f1_keywords:
 - strtold
 - _strtold_l
 - wcstold
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 928c0c9a-bc49-445b-8822-100eb5954115
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 814145a5efade94da53830bf6448d7e5422027bc
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a0e21329d29bcf65362d837697f2adfe00e27ce3
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strtold-strtoldl-wcstold-wcstoldl"></a>strtold、_strtold_l、wcstold、_wcstold_l
 文字列を long double 精度浮動小数点値に変換します。  
@@ -82,7 +85,7 @@ long double wcstold_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `strtold`浮動小数点数としての値を返します、 `long double`、形式がオーバーフローを発生する場合を除く — +/-関数が返す場合は、`HUGE_VALL`です。 `HUGE_VALL` の符号は、表現できない値の符号と一致します。 変換を実行できない場合、またはアンダーフローが発生する場合、`strtold` 関数は 0 を返します。  
+ `strtold` 浮動小数点数としての値を返します、 `long double`、形式がオーバーフローを発生する場合を除く — +/-関数が返す場合は、`HUGE_VALL`です。 `HUGE_VALL` の符号は、表現できない値の符号と一致します。 変換を実行できない場合、またはアンダーフローが発生する場合、`strtold` 関数は 0 を返します。  
   
  `wcstold` 関数の戻り値は、`strtold` 関数の戻り値と同じです。 「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、両方の関数に対して、オーバーフローまたはアンダーフローが発生し、無効なパラメーター ハンドラーが呼び出された場合、`errno` は `ERANGE` に設定されます。  
   

@@ -6,24 +6,27 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::COMException
 - VCCORLIB/Platform::Exception::HResult
 - VCCORLIB/Platform::Exception::Message
-dev_langs: C++
-helpviewer_keywords: Platform::COMException Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::COMException Class
 ms.assetid: 44fda4e5-574f-4d12-ab5f-4ff3f277448d
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: de0f7546019096e5126938d47443f6584bf4edb2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d06133d89ff2d6a6c96fa0c139f255ce39d401b1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcomexception-class"></a>Platform::COMException クラス
 アプリケーションの実行中に発生する COM エラーを表します。 COMException は、一連の定義済みの標準例外の基底クラスです。  
@@ -55,8 +58,8 @@ public ref class COMException : Exception,    IException,    IPrintable,    IEqu
   
 |メンバー|説明|  
 |------------|-----------------|  
-|[Exception::hresult](#hresult)|例外に対応する HRESULT。|  
-|[Exception::message](#message)|例外を説明するメッセージ。|  
+|[Exception::HResult](#hresult)|例外に対応する HRESULT。|  
+|[Exception::Message](#message)|例外を説明するメッセージ。|  
   
 ## <a name="derived-exceptions"></a>派生例外  
  次の定義済みの例外は COMException から派生します。 これらは、その名前、コンストラクターの名前、および基になる HRESULT 値だけが COMException とは異なります。  
@@ -86,7 +89,7 @@ public ref class COMException : Exception,    IException,    IPrintable,    IEqu
   
  **メタデータ:** platform.winmd  
 
-## <a name="ctor"></a>Comexception::comexception コンス トラクター
+## <a name="ctor"></a> Comexception::comexception コンス トラクター
 COMException クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  
@@ -101,7 +104,7 @@ COMException( int hresult )
   
 
 
-## <a name="hresult"></a>Comexception::hresult プロパティ
+## <a name="hresult"></a> Comexception::hresult プロパティ
 例外に対応する HRESULT。  
   
 ### <a name="syntax"></a>構文  
@@ -116,7 +119,7 @@ public:property int HResult {    int get();}
 ### <a name="remarks"></a>コメント  
  HRESULT 値を解釈する方法の詳細については、次を参照してください。 [COM エラー コードの構造体](http://go.microsoft.com/fwlink/p/?LinkId=262045)です。  
 
-## <a name="message"></a>Comexception::message プロパティ
+## <a name="message"></a> Comexception::message プロパティ
 例外を説明するメッセージ。  
   
 ### <a name="syntax"></a>構文  

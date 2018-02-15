@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - AllowRemoteActivation [MFC]
 - Remote Automation [MFC], security
@@ -17,16 +19,17 @@ helpviewer_keywords:
 - object activation [MFC]
 - security [MFC], Remote Automation
 ms.assetid: 276b300d-c0b5-4bd8-8bf5-0270994b9cfa
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
+ms.workload:
+- cplusplus
 ms.openlocfilehash: e535fac6330d6268629e8e3681fec47c7b0d65d3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: fa7a6dccddce3747389c91277a53e296f905305c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="security-in-remote-automation"></a>リモート オートメーションにおけるセキュリティ
 リモート オートメーションは、サーバー アプリケーション ライター (またはの管理者ではなく、) を特定のオブジェクトをリモートから起動する可能性がある方法を指定できるように、セキュリティの基本的なレベルをサポートします。 特定のシステム上のすべてのオートメーション オブジェクトは、「リモートからアクティブ化が行われないよう」または「リモートからアクティブ化を許可する」ためグローバルに設定することがあります。 またより多くの場合はこのような機能を個々 のオブジェクトに指定できます。 リモート オートメーションの各オブジェクトのレジストリ設定、キーを使用して**AllowRemoteActivation**が特定のサーバーをリモートから起動する場合があるかどうかを決定します。 場合は、システム全体の設定は、このモードを使用して、し、レジストリ内の各オブジェクト割り当てることができます、このキーと 1 つずつの個々 の状態を"yes"または適切なとして"no"に設定することがあります。  

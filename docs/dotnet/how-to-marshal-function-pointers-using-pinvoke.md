@@ -4,28 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - data marshaling [C++], callbacks and delegates
 - interop [C++], callbacks and delegates
 - platform invoke [C++], callbacks and delegates
 - marshaling [C++], callbacks and delegates
 ms.assetid: dcf396fd-a91d-49c0-ab0b-1ea160668a89
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - dotnet
-ms.openlocfilehash: cf7f23ea9337b499d4ec80b19e3104074429cc71
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 38854e3debbaf34c9068ed9fbc22e34274512687
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="how-to-marshal-function-pointers-using-pinvoke"></a>方法: PInvoke を使用して関数ポインターをマーシャリングする
 このトピックには、マネージ デリゲートがについて説明しますと相互運用するアンマネージ関数を .NET Framework P/invoke 機能を使用するときに関数ポインターの代わりに使用できます。 ただし、Visual C (可能な場合)、代わりに、C++ Interop 機能を使用することをお勧め、ために、プログラマ P/invoke ほとんどのコンパイル時エラーを報告がタイプ セーフではありませんし、実装に時間がかかることができます。 アンマネージ API が DLL としてパッケージ化されたソース コードを使用できない場合は、P/invoke、唯一のオプションです。 それ以外の場合、次のトピックを参照してください。  
@@ -42,8 +44,6 @@ ms.lasthandoff: 12/21/2017
  マネージ モジュールは、関数ポインターとしてネイティブ コードにマーシャ リングを使用してデリゲートを定義、<xref:System.Runtime.InteropServices.DllImportAttribute>マネージ コードにネイティブ TakesCallback 関数を公開する属性。 メインの関数では、デリゲートのインスタンスが作成され、TakesCallback 関数に渡されます。 プログラムの出力は、この関数がネイティブ TakesCallback 関数によって実行されることを示します。  
   
  マネージ関数では、.NET Framework のガベージ コレクション ネイティブ関数の実行中に、デリゲートを再配置することを防ぐために、マネージ デリゲートのガベージ コレクションを抑制します。  
-  
- マネージ モジュールは、/clr は/clr でコンパイル: 純粋なが動作します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
 ```cpp  
 // TraditionalDll5.cpp  

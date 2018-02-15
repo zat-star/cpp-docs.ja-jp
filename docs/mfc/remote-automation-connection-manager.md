@@ -25,10 +25,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: ee78c1fb5c66974c946d0571db981d899f405fe3
-ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.sourcegitcommit: fa7a6dccddce3747389c91277a53e296f905305c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="remote-automation-connection-manager"></a>リモート オートメーション接続マネージャー
 クライアントとサーバー コンピューターの両方を構成するのには、レジストリ変更を行う必要があります。 これを行うことを手動ではなくリモート オートメーション接続 (RAC) Manager ツールを使用してはるかに簡単です。 このツールは RACMGR32 です。EXE、RACREG32 と共にします。DLL は、任意のディレクトリにコピーする必要があります。 パスに配置したり、実行を使用してタスク バーから実行できます。 または、ショートカットを作成したり、[スタート] メニューへの参照を配置できます。  

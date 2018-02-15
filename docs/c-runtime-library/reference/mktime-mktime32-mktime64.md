@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _mktime32
 - mktime
@@ -27,7 +28,8 @@ apitype: DLLExport
 f1_keywords:
 - mktime
 - _mktime64
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _mktime32 function
 - mktime function
@@ -38,16 +40,17 @@ helpviewer_keywords:
 - _mktime64 function
 - time, converting
 ms.assetid: 284ed5d4-7064-48a2-bd50-15effdae32cf
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 33ab39945526ac2f53eab653ec374856953fc27e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ee2673f98f219559fd42d192dd934c8fe3eaed8c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="mktime-mktime32-mktime64"></a>mktime、_mktime32、_mktime64
 現地時刻をカレンダーの値に変換します。  
@@ -73,7 +76,7 @@ __time64_t _mktime64(
 ## <a name="return-value"></a>戻り値  
  `_mktime32` は、指定されたカレンダー時間を [time_t](../../c-runtime-library/standard-types.md) 型の値としてエンコードして返します。 場合*timeptr*午前 0 時、1970 年 1 月 1 日より前に、の日付を参照して、カレンダー時間を表すことができない場合または`_mktime32`型にキャストする-1 を返します`time_t`です。 使用する場合`_mktime32`場合*timeptr* 23時 59分: 59 2038 年 1 月 18 日世界協定時刻 (UTC) の後の日付を参照型にキャスト-1 を返す`time_t`です。  
   
- `_mktime64`型にキャスト-1 が返されます`__time64_t`場合*timeptr* UTC 3000 年 12 月 31 日 23時 59分: 59 秒後の日付を参照します。  
+ `_mktime64` 型にキャスト-1 が返されます`__time64_t`場合*timeptr* UTC 3000 年 12 月 31 日 23時 59分: 59 秒後の日付を参照します。  
   
 ## <a name="remarks"></a>コメント  
  `mktime`、`_mktime32`、および `_mktime64` 関数は、*timeptr* によって示された指定の時間構造体 (不完全な場合もある) を変換し、正規化された値を持つ完全に定義された構造体にして、次にそれを `time_t` カレンダー時間値に変換します。 変換された時間のエンコーディングは、[time](../../c-runtime-library/reference/time-time32-time64.md) 関数によって返される値と同じエンコーディングになります。 *timeptr* 構造体の `tm_wday` および `tm_yday` コンポーネントの元の値は無視され、他のコンポーネントの元の値はそれぞれの通常の範囲に限定されません。  

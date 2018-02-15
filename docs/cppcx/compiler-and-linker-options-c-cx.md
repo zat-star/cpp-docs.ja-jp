@@ -6,18 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: ecfadce8-3a3f-40cc-bb01-b4731f8d2fcb
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 0dc7610b56d55fc5d42a0c4b73a5405be3d4dda9
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0d8da922fd9f04bf7418094293f43b3fc501aff6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="compiler-and-linker-options-ccx"></a>コンパイラとリンカーのオプション (C++/CX)
 環境変数、C + + CX コンパイラ オプションとリンカーのオプションは、Windows ランタイム アプリの構築をサポートします。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 12/21/2017
 |オプション|説明|  
 |------------|-----------------|  
 |/APPCONTAINER[:NO]|実行可能ファイルを、AppContainer (のみ) で実行可能としてマークを付けます。|  
-|/WINMD [: {いいえ &#124;のみ;}]|.winmd ファイルと関連するバイナリ ファイルを生成します。 このオプションは、生成する .winmd のリンカーに渡す必要があります。<br /><br /> **NO**—.winmd ファイルは生成しませんが、バイナリ ファイルを生成します。<br /><br /> **ONLY**—..winmd ファイルを生成しますが、バイナリ ファイルは生成しません。|  
+|/WINMD[:{NO&#124;ONLY}]|.winmd ファイルと関連するバイナリ ファイルを生成します。 このオプションは、生成する .winmd のリンカーに渡す必要があります。<br /><br /> **NO**—.winmd ファイルは生成しませんが、バイナリ ファイルを生成します。<br /><br /> **ONLY**—..winmd ファイルを生成しますが、バイナリ ファイルは生成しません。|  
 |/WINMDFILE:*filename*|生成する .winmd ファイルの名前。既定の .winmd ファイル名の代わりに使用されます。 コマンド ラインで複数のファイル名を指定すると、最後の名前が使用されます。|  
 |/WINMDDELAYSIGN[:NO]|部分的に .winmd ファイルに署名し、公開キーをバイナリに配置します。<br /><br /> **NO**—(既定) .winmd ファイルに署名しません。<br /><br /> /WINMDKEYFILE または /WINMDKEYCONTAINER も指定しないかぎり、/WINMDDELAYSIGN の影響はありません。|  
 |/WINMDKEYCONTAINER:*name*|アセンブリに署名するためのキー コンテナーを指定します。 *name* パラメーターは、メタデータ ファイルの署名に使用するキー コンテナーに対応します。|  

@@ -4,26 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: b915afce-553b-44a7-b8dc-0ab601758eb0
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: e742b5509fd9a7889321e5e8c576e4fa3c8401cd
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: 98b97098f397772026d0926c72ad83dadd5e59cb
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="windows-runtime-c-template-library-wrl"></a>Windows ランタイム C++ テンプレート ライブラリ (WRL)
-Windows ランタイム C++ テンプレート ライブラリ (WRL) は、作成および Windows ランタイム コンポーネントを使用する低レベルの方法を提供するテンプレート ライブラリです。  
+Windows ランタイム C++ テンプレート ライブラリ (WRL) は、Windows ランタイム コンポーネントを作成および使用するための低レベルの手段を提供するテンプレート ライブラリです。  
   
 ## <a name="benefits"></a>利点  
  Windows ランタイム C++ テンプレート ライブラリを使用するより簡単に実装し、コンポーネント オブジェクト モデル (COM) コンポーネントを使用できます。 これは、オブジェクトの有効期間を管理するための参照カウントや、操作が成功したか失敗したかを判断するための `HRESULT` 値のテストのような管理技法を提供します。 Windows ランタイム C++ テンプレート ライブラリを正常に使用するのには、これらの規則や技法に注意深く従う必要があります。  
@@ -45,7 +47,7 @@ Windows ランタイム C++ テンプレート ライブラリ (WRL) は、作�
  ここでは、Windows ランタイム C++ テンプレート ライブラリですぐに作業を取得するのに役立ついくつかのリソースです。  
   
  [Windows ランタイム ライブラリ (WRL)](http://channel9.msdn.com/Events/Windows-Camp/Developing-Windows-8-Metro-style-apps-in-Cpp/The-Windows-Runtime-Library-WRL-)  
- この Channel 9 ビデオの詳細について、Windows ランタイム C++ テンプレート ライブラリの利用方法を作成して、Windows ランタイム コンポーネントを使用する方法とユニバーサル Windows プラットフォーム アプリを記述します。  
+ この Channel 9 ビデオの詳細について、Windows ランタイム C++ テンプレート ライブラリの利用方法のユニバーサル Windows プラットフォーム (UWP) アプリと作成、および Windows ランタイム コンポーネントを使用する方法を記述します。  
   
  [方法: アクティブ化、および Windows ランタイム コンポーネント](../windows/how-to-activate-and-use-a-windows-runtime-component-using-wrl.md)  
  Windows ランタイム C++ テンプレート ライブラリを使用して、Windows ランタイムを初期化およびアクティブ化、および Windows ランタイム コンポーネントを使用する方法を示します。  
@@ -57,10 +59,10 @@ Windows ランタイム C++ テンプレート ライブラリ (WRL) は、作�
  Windows ランタイム C++ テンプレート ライブラリを使用してサブスクライブして、Windows ランタイム オブジェクトのイベントを処理する方法を示します。  
   
  [チュートリアル: 基本的な Windows ランタイム コンポーネントの作成](../windows/walkthrough-creating-a-basic-windows-runtime-component-using-wrl.md)  
- Windows ランタイム C++ テンプレート ライブラリを使用して、2 つの数値を加算する基本的な Windows ランタイム コンポーネントを作成する方法を示します。 イベントを発生させるし、JavaScript を使用するユニバーサル Windows プラットフォーム アプリからコンポーネントを使用する方法も示します。  
+ Windows ランタイム C++ テンプレート ライブラリを使用して、2 つの数値を加算する基本的な Windows ランタイム コンポーネントを作成する方法を示します。 イベントを発生させるし、JavaScript を使用する UWP アプリからコンポーネントを使用する方法も示します。  
   
- [チュートリアル: WRL および Media Foundation を使用した Windows ストア アプリの作成](../windows/walkthrough-creating-a-windows-store-app-using-wrl-and-media-foundation.md)  
- 使用するユニバーサル Windows プラットフォーム アプリを作成する方法を学習[Microsoft メディア ファンデーション](http://msdn.microsoft.com/library/windows/apps/ms694197)です。  
+ [チュートリアル: WRL および Media Foundation を使用して、UWP アプリの作成](../windows/walkthrough-creating-a-windows-store-app-using-wrl-and-media-foundation.md)  
+ 使用する UWP アプリを作成する方法を学習[Microsoft メディア ファンデーション](http://msdn.microsoft.com/library/windows/apps/ms694197)です。  
   
  [方法: 従来の COM コンポーネントを作成します。](../windows/how-to-create-a-classic-com-component-using-wrl.md)  
  Windows ランタイム C++ テンプレート ライブラリを使用して基本の COM コンポーネントを登録して、デスクトップ アプリから COM コンポーネントを使用する基本的な方法を作成する方法を示します。  
@@ -72,10 +74,10 @@ Windows ランタイム C++ テンプレート ライブラリ (WRL) は、作�
  .winmd メタデータから IDL ファイルを作成して、WRL からカスタム Windows ランタイム コンポーネントを使用する方法を示します。  
   
  [チュートリアル: タスクおよび XML HTTP 要求を使用した接続](../parallel/concrt/walkthrough-connecting-using-tasks-and-xml-http-requests.md)  
- 使用する方法を示します、 [IXMLHTTPRequest2](http://msdn.microsoft.com/en-us/bbc11c4a-aecf-4d6d-8275-3e852e309908)と[IXMLHTTPRequest2Callback](http://msdn.microsoft.com/en-us/aa4b3f4c-6e28-458b-be25-6cce8865fc71)ユニバーサル Windows プラットフォーム アプリでの web サービスに HTTP GET および POST 要求を送信するタスクとインターフェイスします。  
+ 使用する方法を示します、 [IXMLHTTPRequest2](http://msdn.microsoft.com/en-us/bbc11c4a-aecf-4d6d-8275-3e852e309908)と[IXMLHTTPRequest2Callback](http://msdn.microsoft.com/en-us/aa4b3f4c-6e28-458b-be25-6cce8865fc71) UWP アプリでの web サービスに HTTP GET および POST 要求を送信するタスクとインターフェイスします。  
   
  [Bing マップ トリップ オプティマイザーのサンプル](http://code.msdn.microsoft.com/Bing-Maps-trip-optimizer-c4e037f7)  
- 使用して、`HttpRequest`クラスで定義されている[チュートリアル: 接続を使用してタスクおよび XML HTTP 要求](../parallel/concrt/walkthrough-connecting-using-tasks-and-xml-http-requests.md)完全なユニバーサル Windows プラットフォーム アプリのコンテキストでします。  
+ 使用して、`HttpRequest`クラスで定義されている[チュートリアル: 接続を使用してタスクおよび XML HTTP 要求](../parallel/concrt/walkthrough-connecting-using-tasks-and-xml-http-requests.md)完全 UWP アプリのコンテキストでします。  
   
  [C++ のサンプルを Windows ランタイム DLL コンポーネントを作成します。](http://code.msdn.microsoft.com/windowsapps/Creating-a-Windows-Runtime-6c399797)  
  Windows ランタイム C++ テンプレート ライブラリを使用してインプロセス DLL コンポーネントを作成し、C + から使用する方法を示しています。 +/CX、JavaScript、および C# の場合。  
@@ -89,7 +91,7 @@ Windows ランタイム C++ テンプレート ライブラリ (WRL) は、作�
 ## <a name="windows-runtime-c-template-library-compared-to-atl"></a>Windows ランタイム C++ テンプレート ライブラリと ATL の比較  
  Windows ランタイム C++ テンプレート ライブラリでは、使用して、小規模で高速な COM オブジェクトを作成するためにアクティブ テンプレート ライブラリ (ATL) が似ています。 Windows ランタイム C++ テンプレート ライブラリと ATL もモジュール、インターフェイスの明示的な登録内のオブジェクトの定義などの概念を共有し、ファクトリを使用して、オブジェクトの作成を開きます。 ATL. に慣れている場合は、Windows ランタイム C++ テンプレート ライブラリを理解してあります可能性があります。  
   
- Windows ランタイム C++ テンプレート ライブラリは、ユニバーサル Windows プラットフォーム アプリに必要な COM 機能をサポートします。 したがって、以下のような COM 機能の直接サポートを省略した ATL とは異なっています。  
+ Windows ランタイム C++ テンプレート ライブラリは、UWP アプリに必要な COM 機能をサポートします。 したがって、以下のような COM 機能の直接サポートを省略した ATL とは異なっています。  
   
 -   集計  
   

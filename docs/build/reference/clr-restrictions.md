@@ -4,22 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: /clr compiler option [C++], restrictions
+dev_langs:
+- C++
+helpviewer_keywords:
+- /clr compiler option [C++], restrictions
 ms.assetid: 385f6462-2c68-46d6-810e-469553ead447
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: aa0bdc6a5a62b517c252a35d8f1193b34d6e0d32
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3552fda0ce6dc80c253809cfd464555d32604534
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="clr-restrictions"></a>/clr の制約
 使用は、次の制限に注意してください**/clr**:  
@@ -60,11 +64,7 @@ ms.lasthandoff: 12/21/2017
   
     -   **/ZI**  
   
--   組み合わせ、`_STATIC_CPPLIB`プリプロセッサ定義 (`/D_STATIC_CPPLIB`) および**/clr**または**/clr: 純粋な**コンパイラ オプションはサポートされていません。 これはそのため、定義は、静的なマルチ スレッド C++ 標準ライブラリ、サポートされていないとリンクするアプリケーションになるためです。 詳細については、次を参照してください。、 [/MD、/MT、/LD (ランタイム ライブラリの使用)](../../build/reference/md-mt-ld-use-run-time-library.md)トピックです。  
-  
--   [/J](../../build/reference/j-default-char-type-is-unsigned.md)でサポートされていない**/clr:safe**または**/clr: 純粋な**します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
-  
--   ATL および MFC ライブラリは純粋モード コンパイルでサポートされていません (**/clr: 純粋な**)。 使用することができます**/clr: 純粋な**C++ 標準ライブラリとも使用してコンパイルする場合、CRT **/MD**または**/MDd**です。  
+-   組み合わせ、`_STATIC_CPPLIB`プリプロセッサ定義 (`/D_STATIC_CPPLIB`) および**/clr**コンパイラ オプションはサポートされていません。 これはそのため、定義は、静的なマルチ スレッド C++ 標準ライブラリ、サポートされていないとリンクするアプリケーションになるためです。 詳細については、次を参照してください。、 [/MD、/MT、/LD (ランタイム ライブラリの使用)](../../build/reference/md-mt-ld-use-run-time-library.md)トピックです。  
   
 -   使用する場合**/Zi**で**/clr**パフォーマンスに影響があります。 詳細については、次を参照してください。 [/Zi](../../build/reference/z7-zi-zi-debug-information-format.md)です。  
   
@@ -75,7 +75,7 @@ ms.lasthandoff: 12/21/2017
     Console::WriteLine((__wchar_t)L' ')   // Will output a space.  
     ```  
   
--   [/GS](../../build/reference/gs-buffer-security-check.md)でコンパイルする場合は無視されます**/clr**関数は、下にある場合を除き、 `#pragma` [アンマネージ](../../preprocessor/managed-unmanaged.md)場合は、関数は、ネイティブにコンパイルする必要がありますの場合、コンパイラはまたは既定ではオフ C4793、警告を生成します。  
+-   [/GS](../../build/reference/gs-buffer-security-check.md)でコンパイルする場合は無視されます**/clr**関数は、下にある場合を除き、 `#pragma` [アンマネージ](../../preprocessor/managed-unmanaged.md)いる場合、コンパイラは生成場合は、関数は、ネイティブにコンパイルする必要があります、または警告 C4793 で、既定ではオフです。  
   
 -   参照してください[/ENTRY](../../build/reference/entry-entry-point-symbol.md)関数署名の要件に、マネージ アプリケーションです。  
   
@@ -84,8 +84,6 @@ ms.lasthandoff: 12/21/2017
 -   可変個の引数 (vararg) を受け取る関数は、ネイティブ関数として生成されます。 可変個引数の位置が、マネージ データ型は、ネイティブ型にマーシャ リングされます。 なお<xref:System.String?displayProperty=fullName>型が実際にはワイド文字列が、それらが 1 バイト文字の文字列をマーシャ リングします。 したがって、printf 関数指定子が %S (wchar_t *) の場合にマーシャ リング %s 文字列に代わりにします。  
   
 -   Va_arg マクロを使用する場合でコンパイルするときに予期しない結果を取得することがあります**/clr: 純粋な**します。  詳細については、次を参照してください。 [va_arg、va_copy、va_end、va_start](../../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)です。  
-  
--   アプリケーションは、型の引数を渡す場合[va_list](../../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)関数に可変個の引数をするように宣言してコンパイルされて、アプリケーション**/clr: 純粋な**、CLR は、スロー<xref:System.NotSupportedException>です。 場合**/clr**が使用する代わりに、影響を受ける関数がネイティブ コードにコンパイルされ、正常に実行します。 場合**/clr:safe**が使用される、診断エラーが生成されます。  
   
 -   呼び出す必要はありません、マネージ コード、パラメーター情報 (関数の引数) を取得するスタック ウォークを任意の関数からP/invoke レイヤーにより、その情報をスタックをさらに取得します。  たとえばとプロキシ/スタブをコンパイルできない**/clr**です。  
   
@@ -100,8 +98,6 @@ ms.lasthandoff: 12/21/2017
     -   その次の機能、`#pragma unmanaged`ディレクティブです。 (なお、逆`#pragma managed`もサポートされています)。  
   
     -   参照を含む関数配置の種類、つまり、型宣言を使用して`__declspec(align(...))`です。  
-  
--   使用することはできません、[コンパイラ COM サポート](../../cpp/compiler-com-support.md)クラス**/clr: 純粋な**または**/clr:safe**です。  
   
 ## <a name="see-also"></a>参照  
  [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)

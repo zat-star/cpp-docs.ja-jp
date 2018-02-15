@@ -4,28 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - interop [C++], strings
 - marshaling [C++], strings
 - data marshaling [C++], strings
 - platform invoke [C++], strings
 ms.assetid: bcc75733-7337-4d9b-b1e9-b95a98256088
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - dotnet
-ms.openlocfilehash: 86f51c31cb329b05f58452818b7a9292d7699273
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f1887a88bcfcdec9daf2661eca56a0adcf59ba08
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="how-to-marshal-strings-using-pinvoke"></a>方法: PInvoke を使用して文字列をマーシャリングする
 このトピックのネイティブ受け取る関数を C スタイルの文字列は、CLR の文字列を使用して呼び出すことができる .NET Framework プラットフォーム呼び出しのサポートを使用して system::string を入力します。 Visual の C++ プログラマは、ほとんどのコンパイル時エラーを報告がタイプ セーフではありませんし、実装に時間がかかることができます、P/invoke が用意されているため (可能な場合)、代わりに、C++ Interop 機能を使用することをお勧めします。 アンマネージ API が DLL としてパッケージ化、ソース コードを使用できない場合は、その P/invoke は唯一のオプションが、それ以外の場合を参照してください[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)です。  
@@ -36,8 +38,6 @@ ms.lasthandoff: 12/21/2017
   
 ## <a name="example"></a>例  
  次のコードは、アンマネージ コードとマネージ モジュールで構成されます。 アンマネージ モジュールは、char * の形式での C スタイルの ANSI 文字列を受け取る TakesAString に呼び出される関数を定義する DLL です。 マネージ モジュールは、コマンド ライン アプリケーション TakesAString 関数は、char の代わりにマネージ System.String を取るものと定義を\*です。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> TakesAString が呼び出されたときにマネージ文字列をマーシャ リングする方法を示すために属性を使用します。  
-  
- マネージ モジュールは、/clr は/clr でコンパイル: 純粋なが動作します。  
   
 ```  
 // TraditionalDll2.cpp  

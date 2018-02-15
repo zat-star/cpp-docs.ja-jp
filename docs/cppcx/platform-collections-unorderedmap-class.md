@@ -6,19 +6,21 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: collection/Platform::Collections::UnorderedMap
+ms.topic: reference
+f1_keywords:
+- collection/Platform::Collections::UnorderedMap
 ms.assetid: dc84f261-b13c-4c0a-9b57-30dcb9e3065e
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 8b2266e43f3168fca823147f4c2c7e2c33513343
-ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 248b25e61af0ce766c81d480d7ebf39618a8dfec
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcollectionsunorderedmap-class"></a>Platform::Collections::UnorderedMap クラス
 
@@ -102,7 +104,7 @@ ref class Map sealed;
 
 **名前空間:** Platform::Collections
 
-## <a name="clear"></a>Unorderedmap::clear メソッド
+## <a name="clear"></a>  Unorderedmap::clear メソッド
 
 現在の UnorderedMap オブジェクトから、すべてのキー/値ペアを削除します。
 
@@ -112,7 +114,7 @@ ref class Map sealed;
 virtual void Clear();
 ```
 
-## <a name="first"></a>Unorderedmap::first メソッド
+## <a name="first"></a>  Unorderedmap::first メソッド
 
 1 つを指定する反復子を返します[Windows::Foundation::Collections::IKeyValuePair\<K, V >](http://msdn.microsoft.com/library/windows/apps/br226031.aspx)順序なしのマップ内の要素。
 
@@ -132,7 +134,7 @@ virtual Windows::Foundation::Collections::IIterator<
 
 First() によって返される反復子を保持する便利な方法で宣言された変数に戻り値を割り当てるには、**自動**推論キーワードを入力します。 たとえば、`auto x = myUnorderedMap->First();` のようにします。
 
-## <a name="getview"></a>Unorderedmap::getview メソッド
+## <a name="getview"></a>  Unorderedmap::getview メソッド
 
 現在の UnorderedMap の読み取り専用ビューを返しますつまり、 [Platform::Collections::UnorderedMapView クラス](../cppcx/platform-collections-unorderedmapview-class.md)を実装する、 [Windows::Foundation::Collections::IMapView::IMapView](http://msdn.microsoft.com/library/windows/apps/br226037.aspx)インターフェイスです。
 
@@ -146,7 +148,7 @@ Windows::Foundation::Collections::IMapView<K, V>^ GetView();
 
 `UnorderedMapView` オブジェクト。
 
-## <a name="haskey"></a>Unorderedmap::haskey メソッド
+## <a name="haskey"></a>  Unorderedmap::haskey メソッド
 
 指定したキーが現在の UnorderedMap に格納されているかどうかを判定します。
 
@@ -190,9 +192,9 @@ virtual bool Insert(
 
 ### <a name="return-value"></a>戻り値
 
-`true`現在のマップ内の既存の要素のキーと一致するかどうかは*キー*し、その要素の値部分に設定されている*値*です。 `false`現在のマップ内の既存の要素が一致しない場合*キー*と*キー*と*値*パラメーターがキー/値ペアになっていて、現在の UnorderedMap に追加します。
+`true` 現在のマップ内の既存の要素のキーと一致するかどうかは*キー*し、その要素の値部分に設定されている*値*です。 `false` 現在のマップ内の既存の要素が一致しない場合*キー*と*キー*と*値*パラメーターがキー/値ペアになっていて、現在の UnorderedMap に追加します。
 
-## <a name="lookup"></a>Unorderedmap::lookup メソッド
+## <a name="lookup"></a>  Unorderedmap::lookup メソッド
 
 型 K の指定されたキーに関連付けられている型 V の値を取得します。
 
@@ -229,9 +231,9 @@ A [MapChangedEventHandler\<K, V >](http://msdn.microsoft.com/library/windows/app
 
 ## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数
 
-C# または Visual Basic プロジェクト IMap 使用する Windows ストア アプリ\<K, V > を IDictionary として\<K, V >。
+C# または Visual Basic プロジェクト IMap 使用する Windows ランタイム アプリ\<K, V > を IDictionary として\<K, V >。
 
-## <a name="remove"></a>Unorderedmap::remove メソッド
+## <a name="remove"></a>  Unorderedmap::remove メソッド
 
 指定したキー/値ペアを UnorderedMap オブジェクトから削除します。
 
@@ -247,7 +249,7 @@ virtual void Remove(
 *key*  
 キー/値ペアのキー部分。 型*キー* typename は*K*です。
 
-## <a name="size"></a>Unorderedmap::size メソッド
+## <a name="size"></a>  Unorderedmap::size メソッド
 
 数を返します[Windows::Foundation::Collections::IKeyValuePair\<K, V >](http://msdn.microsoft.com/library/windows/apps/br226031.aspx) UnorderedMap の要素。
 

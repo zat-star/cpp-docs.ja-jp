@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _strtof_l
 - wcstof
@@ -36,7 +37,8 @@ f1_keywords:
 - wcstof
 - corecrt_wstdlib/_wcstof_l
 - _wcstof_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _strtof_l function
 - _tcstof function
@@ -45,16 +47,17 @@ helpviewer_keywords:
 - _tcstof_l function
 - strtof function
 ms.assetid: 52221b46-876d-4fcc-afb1-97512c17a43b
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 0fdfe3a202d18aa1634a2ef692088264ff8fe188
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 35ee9dd81cb2509e161846870d23b7a995ac5807
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strtof-strtofl-wcstof-wcstofl"></a>strtof、_strtof_l、wcstof、_wcstof_l
 文字列を単精度浮動小数点値に変換します。  
@@ -93,7 +96,7 @@ float wcstof_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `strtof`形式が +/-場合、関数が返されます、オーバーフローを発生する場合を除き、浮動小数点数の値を返します`HUGE_VALF`です。 `HUGE_VALF` の符号は、表現できない値の符号と一致します。 変換を実行できない場合、またはアンダーフローが発生する場合、`strtof` 関数は 0 を返します。  
+ `strtof` 形式が +/-場合、関数が返されます、オーバーフローを発生する場合を除き、浮動小数点数の値を返します`HUGE_VALF`です。 `HUGE_VALF` の符号は、表現できない値の符号と一致します。 変換を実行できない場合、またはアンダーフローが発生する場合、`strtof` 関数は 0 を返します。  
   
  `wcstof` 関数の戻り値は、`strtof` 関数の戻り値と同じです。 「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、両方の関数に対して、オーバーフローまたはアンダーフローが発生し、無効なパラメーター ハンドラーが呼び出された場合、`errno` は `ERANGE` に設定されます。  
   

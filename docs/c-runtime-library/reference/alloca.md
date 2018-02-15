@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _alloca
+ms.topic: reference
+apiname:
+- _alloca
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,22 +25,24 @@ apitype: DLLExport
 f1_keywords:
 - _alloca
 - alloca
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - memory allocation, stack
 - alloca function
 - _alloca function
 ms.assetid: 74488eb1-b71f-4515-88e1-cdd03b6f8225
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: a48b0ab3e9717416736acf4187a27df2c737089b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 104c3df4e6f69d31c5090a87c8029351accd1e1e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="alloca"></a>_alloca
 スタックにメモリを割り当てます。 安全なバージョンがあるために、この関数は推奨されていません参照してください[_malloca](../../c-runtime-library/reference/malloca.md)です。  
@@ -61,7 +65,7 @@ void *_alloca(
  領域の割り当てができない場合、スタック オーバーフロー例外が生成されます。 スタック オーバーフロー例外は C++ 例外ではなく、構造化例外です。 C++ 例外処理を使用する代わりに、[構造化例外処理](../../cpp/structured-exception-handling-c-cpp.md) (SEH) を使用する必要があります。  
   
 ## <a name="remarks"></a>コメント  
- `_alloca`割り当てる`size`はプログラム スタックからのバイト数。 割り当てられた領域はときではなく、割り当てがスコープ外に渡すだけ)、呼び出し元の関数が終了したときに自動的に解放されます。 そのため、によって返されるポインター値を渡していない`_alloca`への引数として[空き](../../c-runtime-library/reference/free.md)です。  
+ `_alloca` 割り当てる`size`はプログラム スタックからのバイト数。 割り当てられた領域はときではなく、割り当てがスコープ外に渡すだけ)、呼び出し元の関数が終了したときに自動的に解放されます。 そのため、によって返されるポインター値を渡していない`_alloca`への引数として[空き](../../c-runtime-library/reference/free.md)です。  
   
  例外ハンドラー (EH) で `_alloca` を明示的に呼び出す場合は制限があります。 x86 クラスのプロセッサで動作する EH ルーチンは、自身のメモリ フレーム内で処理されるため、外側の関数のスタック ポインターが示す現在位置を基にしたメモリ領域ではタスクを実行しません。 最も一般的な実装には、Windows NT 構造化例外処理 (SEH) や C++ catch 句の式などがあります。 このため、次のようなシナリオで `_alloca` を明示的に呼び出すと、呼び出した EH ルーチンへ戻る時点でプログラム エラーとなります。  
   

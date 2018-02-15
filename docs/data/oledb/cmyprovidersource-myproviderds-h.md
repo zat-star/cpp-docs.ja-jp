@@ -4,34 +4,36 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - myproviderds.h
 - cmyprovidersource
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - OLE DB providers, wizard-generated files
 - CMyProviderSource class in MyProviderDS.H
 ms.assetid: c143d48e-59c8-4f67-9141-3aab51859b92
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: d59cdb44ca6832c255ce8d553159ad19580e6a30
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8704a4a0733ea8bf688378953af9ff01314271d1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="cmyprovidersource-myproviderdsh"></a>CMyProviderSource (MyProviderDS.H)
 プロバイダー クラスは、複数の継承を使用します。 次のコードは、データ ソース オブジェクトの継承チェーンを示しています。  
   
-```  
+```cpp
 /////////////////////////////////////////////////////////////////////////  
 // CMyProviderSource  
 class ATL_NO_VTABLE CMyProviderSource :   
@@ -44,7 +46,7 @@ class ATL_NO_VTABLE CMyProviderSource :
    public IInternalConnectionImpl<CMyProviderSource>  
 ```  
   
- すべての COM コンポーネントから派生して`CComObjectRootEx`と`CComCoClass`です。 `CComObjectRootEx`すべての実装を提供、 **IUnknown**インターフェイスです。 すべてのスレッド モデルを処理できます。 `CComCoClass`必要なすべてのエラー サポートを処理します。 詳細なエラー情報をクライアントに送信する場合は、Api のエラーの一部を使用で`CComCoClass`です。  
+ すべての COM コンポーネントから派生して`CComObjectRootEx`と`CComCoClass`です。 `CComObjectRootEx` すべての実装を提供、 **IUnknown**インターフェイスです。 すべてのスレッド モデルを処理できます。 `CComCoClass` 必要なすべてのエラー サポートを処理します。 詳細なエラー情報をクライアントに送信する場合は、Api のエラーの一部を使用で`CComCoClass`です。  
   
  データ ソース オブジェクトは、'Impl' クラスがいくつかからも継承します。 各クラスは、インターフェイスの実装を提供します。 データ ソース オブジェクトを実装して、 `IPersist`、 `IDBProperties`、 **IDBInitialize**、および**IDBCreateSession**インターフェイスです。 各インターフェイスには、データ ソース オブジェクトを実装する OLE DB が必要です。 サポートしたり、継承、またはそのいずれかのこれら 'Impl' クラスから継承せず、特定の機能をサポートしないことができます。 サポートする場合、 **IDBDataSourceAdmin**から継承するインターフェイスを**IDBDataSourceAdminImpl**のために必要な機能を実装するクラス。  
   

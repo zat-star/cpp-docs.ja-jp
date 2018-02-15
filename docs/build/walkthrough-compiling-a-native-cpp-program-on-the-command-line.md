@@ -4,29 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - native code [C++]
 - Visual C++, native code
 - compiling programs [C++]
 - command-line applications [C++], native
 ms.assetid: b200cfd1-0440-498f-90ee-7ecf92492dc0
-caps.latest.revision: "63"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 64bd526bfd72c16cc993d3992c179f107a35fbd8
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e0a14fdba2ece8d077a844685384483ce35146bd
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="walkthrough-compiling-a-native-c-program-on-the-command-line"></a>チュートリアル: コマンド ラインでのネイティブ C++ プログラムのコンパイル
-Visual C++ に含まれるコマンド ライン C++ コンパイラを使用して、基本的なコンソール アプリからユニバーサル Windows アプリ、Windows ストア アプリおよび .NET コンポーネントまで、あらゆるものを作成できます。  
+Visual C には、ユニバーサル Windows プラットフォーム アプリを基本的なコンソール アプリ、デスクトップ アプリ、デバイス ドライバー、および .NET コンポーネントからのすべての作成に使用できるコマンドライン C++ コンパイラが含まれています。  
   
  このチュートリアルでは、基本的な「こんにちは, World」を作成、エディター、テキストを使用して、C++ プログラムのスタイルし、コマンドラインでコンパイルします。 コマンドラインを使用する代わりに、Visual Studio IDE の再試行を確認したい場合[チュートリアル: プロジェクトとソリューション (C++)](../ide/walkthrough-working-with-projects-and-solutions-cpp.md)または[C++ デスクトップ開発用 Visual Studio IDE を使用して](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md)です。  
   

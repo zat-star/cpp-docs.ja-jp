@@ -4,28 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - data marshaling [C++], structures
 - platform invoke [C++], structures
 - interop [C++], structures
 - marshaling [C++], structures
 ms.assetid: 35997e6f-9251-4af3-8c6e-0712d64d6a5d
-caps.latest.revision: "30"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - dotnet
-ms.openlocfilehash: 5bfca720a97ac8462afa970e54f13e0bd74a7808
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 2ebda5f17b94fa28a5eb5222ccc991119ec4f81a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="how-to-marshal-structures-using-pinvoke"></a>方法: PInvoke を使用して構造体をマーシャリングする
 このドキュメントには、C スタイルの文字列は、のインスタンスを提供するマネージ関数から呼び出すことがそのまま使用するネイティブ関数がについて説明します<xref:System.String>P/invoke を使用しています。 代わりに、C++ Interop 機能を使用することをお勧めします P/invoke P/invoke はほとんどのコンパイル時エラーを報告があるので、タイプ セーフではありませんしを実装する、アンマネージ API が DLL としてパッケージ化され、ソース コードが面倒になることができます。P/invoke は唯一のオプションを使用できる、です。 それ以外の場合、次のドキュメントを参照してください。  
@@ -48,8 +50,6 @@ ms.lasthandoff: 12/21/2017
   
 ## <a name="example"></a>例  
  次のコードはアンマネージとマネージ モジュールで構成されます。 アンマネージ モジュールは、場所と場所の構造体の 2 つのインスタンスを受け入れる GetDistance をという名前の関数と呼ばれる構造を定義する DLL です。 2 番目のモジュールは、GetDistance 関数のインポートが MLocation 場所の構造体のマネージそれと同等の観点から定義する管理対象のコマンド ライン アプリケーションです。 実際にはこれらの同じ名前はおそらく; 構造の両方のバージョンを使用します。ただし、別の名前は、管理対象のバージョンの観点から DllImport プロトタイプが定義されていることを示すためにここで使用されます。  
-  
- マネージ モジュールは、/clr は/clr でコンパイル: 純粋なが動作します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
  従来を使用してマネージ コードに、DLL の一部は公開されていませんことに注意してください #include ディレクティブです。 実際には、DLL は実行時にのみ、アクセスため DllImport でインポートされた関数に関する問題はコンパイル時に検出されません。  
   

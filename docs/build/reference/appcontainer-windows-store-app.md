@@ -1,26 +1,29 @@
 ---
-title: "APPCONTAINER (Windows ストア アプリ) |Microsoft ドキュメント"
+title: "/APPCONTAINER (ストア アプリが UWP/microsoft) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 9a432db5-7640-460b-ab18-6f61fa7daf6f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 22ca7bec885f20518950626d33f7e3af553d0d52
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1cc6e1d4c6e18cd2118571e57f671f85a0a3fb55
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
-# <a name="appcontainer-windows-store-app"></a>/APPCONTAINER (Windows ストア アプリ)
+# <a name="appcontainer-microsoft-store-app"></a>/APPCONTAINER (Microsoft ストア アプリ)
 リンカーがアプリ コンテナーで実行される必要がある実行可能イメージを生成するかどうかを指定します。  
   
 ## <a name="syntax"></a>構文  
@@ -32,7 +35,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  既定では、/APPCONTAINER は無効になっています。  
   
- このオプションは、実行可能ファイルを変更し、appcontainer プロセス分離環境でアプリが実行される必要があるかどうかを示します。 appcontainer 環境で実行される必要があるアプリに対し、/APPCONTAINER を指定します ([!INCLUDE[win8_appstore_long](../../build/reference/includes/win8_appstore_long_md.md)] アプリなど)  (テンプレートから [!INCLUDE[win8_appstore_long](../../build/reference/includes/win8_appstore_long_md.md)] アプリを作成するときに、オプションは Visual Studio で自動的に設定されます)。デスクトップ アプリケーションでは、/APPCONTAINER:NO を指定するか、オプションを省略します。  
+ このオプションは、実行可能ファイルを変更し、appcontainer プロセス分離環境でアプリが実行される必要があるかどうかを示します。 Appcontainer 環境で実行する必要があるアプリの/APPCONTAINER を指定 — など、ユニバーサル Windows プラットフォーム (UWP) アプリまたは Windows Phone 8.x アプリ。 (オプションは設定に自動的に Visual Studio でテンプレートからユニバーサル Windows アプリを作成する場合)。デスクトップ アプリケーションでは、/APPCONTAINER:NO を指定するか、オプションを省略します。  
   
  /APPCONTAINER オプションは [!INCLUDE[win8](../../build/reference/includes/win8_md.md)] で導入されました。  
   

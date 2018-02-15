@@ -1,13 +1,15 @@
 ---
 title: signal | Microsoft Docs
 ms.custom: 
-ms.date: 1/02/2018
+ms.date: 02/12/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: signal
+ms.topic: reference
+apiname:
+- signal
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,18 +23,22 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: signal
-dev_langs: C++
-helpviewer_keywords: signal function
+f1_keywords:
+- signal
+dev_langs:
+- C++
+helpviewer_keywords:
+- signal function
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 337bc5e222ee7fcb313d0b7ea0722dbb5cacea75
-ms.sourcegitcommit: a5d8f5b92cb5e984d5d6c9d67fe8a1241f3fe184
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 23eae404bf5f8e2227d68189938defb2308f5e6b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="signal"></a>signal
 
@@ -44,9 +50,7 @@ ms.lasthandoff: 01/05/2018
 ## <a name="syntax"></a>構文
 
 ```C
-void (__cdecl *signal(
-   int sig,
-   void (__cdecl *func ) (int [, int ] )))(int);
+void __cdecl *signal(int sig, int (*func)(int, int));
 ```
 
 ### <a name="parameters"></a>パラメーター
@@ -54,11 +58,11 @@ _sig_
 シグナル値。
 
 _func_  
-実行する関数。 最初のパラメーターはシグナル値で、2 番目のパラメーターは、最初のパラメーターが SIGFPE のときに使用できるサブコードです。
+2 番目のパラメーターは、実行される関数へのポインターです。 最初のパラメーターはシグナル値で、2 番目のパラメーターは、最初のパラメーターが SIGFPE のときに使用できるサブコードです。
 
 ## <a name="return-value"></a>戻り値
 
-`signal`以前の値を返します_func_指定されたシグナルに関連付けられていること。 たとえば場合の前の値_func_が`SIG_IGN`、戻り値も`SIG_IGN`します。 戻り値 `SIG_ERR` はエラーを示します。その場合、`errno` は `EINVAL` に設定されます。
+`signal` 指定されたシグナルに関連付けられている func の前の値を返します。 たとえば場合の前の値_func_が`SIG_IGN`、戻り値も`SIG_IGN`します。 戻り値 `SIG_ERR` はエラーを示します。その場合、`errno` は `EINVAL` に設定されます。
 
 リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。
 

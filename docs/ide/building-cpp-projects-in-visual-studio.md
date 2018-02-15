@@ -4,25 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Visual C++ projects, building
 - projects [C++], building
 - builds [C++], about building in Visual Studio
 ms.assetid: 9e8bc1a2-bb17-4951-937a-c757ed88d2d1
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: cd4934f3075f963efe59e8d73d8c72347fd53912
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 074b43619d307d4d6ffeec1a057c9c27a4f9d05f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="building-c-projects-in-visual-studio"></a>Visual Studio での C++ プロジェクトのビルド
 Visual Studio 統合開発環境 (IDE) では、ソリューション全体または 1 つのプロジェクトのみをビルドする複数の方法があります。 また、ビルド設定を変更し、カスタム ビルド ステップを指定して、開発プロセスを効率的にすることもできます。  
@@ -88,4 +91,4 @@ Visual Studio 統合開発環境 (IDE) では、ソリューション全体ま�
   Visual Studio 以外のツールを使用して作成されたアプリケーションを移行する方法と、Visual Studio の以前のバージョンで作成された C++ アプリケーションをアップグレードする方法の詳細についてはします。  
   
 ## <a name="see-also"></a>参照  
- [C++ を使った Windows ストア アプリのロードマップ](http://msdn.microsoft.com/en-us/0b71e4a4-5d8a-4a20-b2ec-e40062675ec1)
+ [ユニバーサル Windows アプリ (C++)](../windows/universal-windows-apps-cpp.md)

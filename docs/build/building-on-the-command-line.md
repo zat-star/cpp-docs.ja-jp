@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - command-line builds [C++]
 - compiling source code [C++], command line
@@ -15,16 +17,17 @@ helpviewer_keywords:
 - command line [C++], building from
 - command line [C++], compilers
 ms.assetid: 7ca9daed-a003-4162-842d-908f79058365
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: c5780fb725ab9ccfbba189894c22c991c415f6c2
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9f613c20e0cab45a8eaa802c4c7ba0c6ac391357
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="build-cc-code-on-the-command-line"></a>コマンドラインで C/C++ コードをビルドします。
 
@@ -82,7 +85,7 @@ C++ のワークロードのいずれかを選択すると、 [!INCLUDE[vsprvs](
 >   
 > vcvarsall.bat ファイルは、バージョンによっても異なります。 Visual C の現在のバージョンが Visual C の以前のバージョンは、コンピューターにインストールされている場合は実行されません vcvarsall.bat または別のコマンド ファイルから別のバージョンの同じコマンド プロンプト ウィンドウ。  
  
-既存のコマンド ウィンドウで、特定のビルドのアーキテクチャを指定する最も簡単な方法では、vcvarsall.bat ファイルを使用します。 Vcvarsall.bat を使用してネイティブの 32 ビットまたは 64 ビット コンパイル用または x86、x64、または ARM プロセッサ; にクロス コンパイルのコマンドラインを構成する環境変数を設定することができます。Windows ストア、ユニバーサル Windows プラットフォーム、または Windows デスクトップ プラットフォームを対象とする使用するには、どの Windows SDK の指定プラットフォーム ツールセットのバージョンを指定します。 Vcvarsall.bat が x86 の現在の 32 ビット ネイティブ コンパイラを使用するための環境変数を構成する引数が指定されていない場合 Windows デスクトップのターゲットです。 ただし、ネイティブのまたはクロス コンパイラ ツールを構成するのには使用できます。 コンパイラ構成がインストールされていないまたはビルド コンピューターのアーキテクチャ上で利用できることを指定すると、エラー メッセージが表示されます。 次の表は、サポートするアーキテクチャの引数を示します。  
+既存のコマンド ウィンドウで、特定のビルドのアーキテクチャを指定する最も簡単な方法では、vcvarsall.bat ファイルを使用します。 Vcvarsall.bat を使用してネイティブの 32 ビットまたは 64 ビット コンパイル用または x86、x64、または ARM プロセッサ; にクロス コンパイルのコマンドラインを構成する環境変数を設定することができます。Microsoft Store、ユニバーサル Windows プラットフォーム、または Windows デスクトップ プラットフォームを対象とする使用するには、どの Windows SDK の指定プラットフォーム ツールセットのバージョンを指定します。 Vcvarsall.bat が x86 の現在の 32 ビット ネイティブ コンパイラを使用するための環境変数を構成する引数が指定されていない場合 Windows デスクトップのターゲットです。 ただし、ネイティブのまたはクロス コンパイラ ツールを構成するのには使用できます。 コンパイラ構成がインストールされていないまたはビルド コンピューターのアーキテクチャ上で利用できることを指定すると、エラー メッセージが表示されます。 次の表は、サポートするアーキテクチャの引数を示します。  
   
 |Vcvarsall.bat アーキテクチャ引数|コンパイラ|ホスト コンピューターのアーキテクチャ|ビルド出力のアーキテクチャ|  
 |----------------------------|--------------|----------------------------------|-------------------------------|  

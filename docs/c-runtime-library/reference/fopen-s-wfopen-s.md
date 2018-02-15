@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wfopen_s
 - fopen_s
@@ -27,7 +28,8 @@ f1_keywords:
 - fopen_s
 - _tfopen_s
 - _wfopen_s
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _wfopen_s function
 - opening files, for file I/O
@@ -40,16 +42,17 @@ helpviewer_keywords:
 - files [C++], opening
 - Unicode [C++], files
 ms.assetid: c534857e-39ee-4a3f-bd26-dfe551ac96c3
-caps.latest.revision: "41"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 3205577627967fa58c3fbc0d1318a48fc5525561
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 97221d04dcd93fbaa32a3562320d0c098fa001ae
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fopens-wfopens"></a>fopen_s、_wfopen_s
 ファイルを開きます。 これらのバージョンの [fopen, _wfopen](../../c-runtime-library/reference/fopen-wfopen.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンです。  
@@ -104,7 +107,7 @@ errno_t _wfopen_s(
 ## <a name="unicode-support"></a>Unicode のサポート  
  `fopen_s` は Unicode のファイル ストリームをサポートします。 新しいまたは既存の Unicode ファイルを開くには、次のように、目的のエンコーディングを指定する `ccs` フラグを `fopen_s` に渡します。  
   
- `fopen_s(&fp, "newfile.txt", "rw, ccs=`*エンコーディング*`");`  
+ `fopen_s(&fp, "newfile.txt", "rw, ccs=`*encoding*`");`  
   
  値を許可*エンコード*は`UNICODE`、 `UTF-8`、および`UTF-16LE`です。 ある値を指定しない場合の*エンコード*、 `fopen_s` ANSI エンコーディングを使用します。  
   

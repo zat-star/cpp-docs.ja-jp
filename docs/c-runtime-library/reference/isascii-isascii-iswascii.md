@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - iswascii
 - __isascii
@@ -32,7 +33,8 @@ f1_keywords:
 - ctype/isascii
 - ctype/__isascii
 - corecrt_wctype/iswascii
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __isascii function
 - _isascii function
@@ -41,16 +43,17 @@ helpviewer_keywords:
 - istascii function
 - iswascii function
 ms.assetid: ba4325ad-7cb3-4fb9-b096-58906d67971a
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 3858955a1409842d80439401d6c689c06f6c86f3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e76d91aef22c3a01d4ee9321baf1165f3ae97412
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="isascii-isascii-iswascii"></a>isascii、__isascii、iswascii
 
@@ -76,7 +79,7 @@ int iswascii(
 
 ## <a name="return-value"></a>戻り値
 
-これらのルーチンでは、`c` が ASCII 文字の特殊表現の場合は 0 以外の値を返します。 `__isascii`場合は 0 以外の値を返します`c`ASCII 文字 (0x00 の範囲内の 0x7F)。 `iswascii` は、`c` が ASCII 文字のワイド文字表現の場合は 0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。
+これらのルーチンでは、`c` が ASCII 文字の特殊表現の場合は 0 以外の値を返します。 `__isascii` 場合は 0 以外の値を返します`c`ASCII 文字 (0x00 の範囲内の 0x7F)。 `iswascii` は、`c` が ASCII 文字のワイド文字表現の場合は 0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。
 
 ## <a name="remarks"></a>コメント
 

@@ -4,25 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Remote Automation, DCOM
 - DCOM, about DCOM
 - DCOM
 ms.assetid: c21aa0ea-1396-4b52-b77f-88fb0fdd2a5c
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
+ms.workload:
+- cplusplus
 ms.openlocfilehash: 6ef567c39c93c3d43fdfc0fa63886144b03cd474
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: fa7a6dccddce3747389c91277a53e296f905305c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="history-of-dcom"></a>DCOM の歴史
 オートメーションは、1993 年前半で初めて導入されました、ときに、同じコンピューターで実行されるアプリケーション間でのみ使用されていることでした。 ただし、OLE とは、COM (コンポーネント オブジェクト モデル) の残りの部分として同じ基盤を共有しているので、常に意図されたことになった「リモート」リモート処理機能を含む COM 自体が更新されたとき。 純粋なローカル操作から分散操作への移行は、既存のコードをほとんどまたはまったく変更することも予定だった。  

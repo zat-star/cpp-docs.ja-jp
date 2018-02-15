@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - isupper
 - iswupper
@@ -29,7 +30,8 @@ f1_keywords:
 - isupper
 - _istupper
 - iswupper
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - istupper function
 - iswupper function
@@ -40,16 +42,17 @@ helpviewer_keywords:
 - _iswupper_l function
 - isupper function
 ms.assetid: da2bcc9f-241c-48c0-9a0e-ad273827e16a
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 242646319193e070e59256c71c53a25268e10e64
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 333e772c2716b87b43cb71ac1797e714af709b3e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="isupper-isupperl-iswupper-iswupperl"></a>isupper、_isupper_l、iswupper、_iswupper_l
 整数が大文字を表すかどうかを決定します。  
@@ -81,7 +84,7 @@ int _iwsupper_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらのルーチンでは、`c` が大文字の特殊表現の場合は 0 以外の値を返します。 `isupper`場合は 0 以外の値を返します`c`は、大文字 (A ~ Z)。 `iswupper` は、`c` が大文字に対応するワイド文字の場合、または `c` が実装定義のワイド文字セットの 1 文字で、かつ c に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが 0 である場合に、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらのルーチンでは、`c` が大文字の特殊表現の場合は 0 以外の値を返します。 `isupper` 場合は 0 以外の値を返します`c`は、大文字 (A ~ Z)。 `iswupper` は、`c` が大文字に対応するワイド文字の場合、または `c` が実装定義のワイド文字セットの 1 文字で、かつ c に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが 0 である場合に、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  これらの関数のうち `_l` サフィックスが付いているバージョンは、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用します。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   

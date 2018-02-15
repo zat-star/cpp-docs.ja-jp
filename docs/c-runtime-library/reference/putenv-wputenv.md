@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _putenv
 - _wputenv
@@ -29,7 +30,8 @@ f1_keywords:
 - _putenv
 - wputenv
 - tputenv
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _putenv function
 - environment variables, deleting
@@ -41,22 +43,23 @@ helpviewer_keywords:
 - _tputenv function
 - environment variables, modifying
 ms.assetid: 9ba9b7fd-276e-45df-8420-d70c4204b8bd
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 509766f9f324c1dd9488488861e7c64200d44837
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 12b1379ea70c841f1689a8b83fae7ca7f43f5789
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="putenv-wputenv"></a>_putenv、_wputenv
 環境変数を作成、変更、または削除します。 これらの関数にはセキュリティが強化されたバージョンがあります。「[_putenv_s、_wputenv_s](../../c-runtime-library/reference/putenv-s-wputenv-s.md)」をご覧ください。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -91,7 +94,7 @@ int _wputenv(
   
  環境のエントリを直接変更しないでください。代わりに、`_putenv`、または `_wputenv` を使用して変更します。 特に、`_environ[]` グローバル配列の要素を直接の解放すると、無効なメモリ アドレスを生成する可能性があります。  
   
- `getenv` と `_putenv` はグローバル変数 `_environ` を使用して環境のテーブルにアクセスします。`_wgetenv` と `_wputenv` は `_wenviron` を使用します。 `_putenv`および`_wputenv`の値を変更する可能性があります`_environ`と`_wenviron`、したがって無効化、`_envp`に渡す引数`main`と`_wenvp`に渡す引数`wmain`です。 つまり、環境情報へのアクセスに `_environ` または `_wenviron` を使用しても安全です。 `_putenv` および `_wputenv` とグローバル変数との関係の詳細については、「[_environ、_wenviron](../../c-runtime-library/environ-wenviron.md)」をご覧ください。  
+ `getenv` と `_putenv` はグローバル変数 `_environ` を使用して環境のテーブルにアクセスします。`_wgetenv` と `_wputenv` は `_wenviron` を使用します。 `_putenv` および`_wputenv`の値を変更する可能性があります`_environ`と`_wenviron`、したがって無効化、`_envp`に渡す引数`main`と`_wenvp`に渡す引数`wmain`です。 つまり、環境情報へのアクセスに `_environ` または `_wenviron` を使用しても安全です。 `_putenv` および `_wputenv` とグローバル変数との関係の詳細については、「[_environ、_wenviron](../../c-runtime-library/environ-wenviron.md)」をご覧ください。  
   
 > [!NOTE]
 >  `_putenv` 系関数と `_getenv` 系関数はスレッド セーフではありません。 `_getenv` が文字列を変更している間に `_putenv` が文字列ポインターを返すことがあり、これはランダム エラーの原因になります。 これらの関数の呼び出しが同期されていることを確認する必要があります。  

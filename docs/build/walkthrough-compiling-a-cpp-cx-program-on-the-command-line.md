@@ -4,29 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 626f5544-69ed-4736-83a9-f11389b371b2
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 677779aa8550869fe0859974b2aa4bbbb1c23d83
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 13e1b220123d3215e1c9150d00ee092ea4200ca8
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="walkthrough-compiling-a-ccx-program-on-the-command-line"></a>チュートリアル: コマンド ラインでの C++/CX プログラムのコンパイル
-Windows ランタイムをターゲットにする Visual C++ プログラムを作成して、コマンド ライン上に構築できます。 Visual C++ は Visual C++ コンポーネント拡張 (C++/CX) をサポートしており、Windows ランタイム プログラミング モデルをターゲットにするための追加のタイプとオペレーターがあります。 C++/CX を使って Windows Phone 8.1、Windows Store、および Windows デスクトップのアプリを作成できます。 詳細については、次を参照してください。 [A ツアーの c++ + CX](http://msdn.microsoft.com/magazine/dn166929.aspx)と[ランタイム プラットフォームのコンポーネント拡張](../windows/component-extensions-for-runtime-platforms.md)です。  
+Windows ランタイムをターゲットにする Visual C++ プログラムを作成して、コマンド ライン上に構築できます。 Visual C++ は Visual C++ コンポーネント拡張 (C++/CX) をサポートしており、Windows ランタイム プログラミング モデルをターゲットにするための追加のタイプとオペレーターがあります。 C + を使用する +/CX をユニバーサル Windows プラットフォーム (UWP)、Windows Phone 8.1、および Windows デスクトップ アプリをビルドします。 詳細については、次を参照してください。 [A ツアーの c++ + CX](http://msdn.microsoft.com/magazine/dn166929.aspx)と[ランタイム プラットフォームのコンポーネント拡張](../windows/component-extensions-for-runtime-platforms.md)です。  
   
  このチュートリアルでは、テキスト エディターを使って基本的な C++/CX プログラムを作成し、コマンド ラインでコンパイルします。 (表示されているプログラムをタイプするのではなく、自分の C++/CX プログラムを使用するか、別のヘルプ記事の C++/CX コード サンプルを使用できます。 この手法は UI 要素が含まれていない小さなモジュールをビルドおよびテストするのに便利です。)  
   
 > [!NOTE]
->  Visual Studio IDE を使って C++/CX プログラムをコンパイルすることもできます。 IDE には、コマンド ラインでは利用できない、デザイン、デバッグ、エミュレーション、および配置のサポートが含まれているため、Windows ストア アプリをビルドする場合は IDE を使用することをお勧めします。 詳細については、次を参照してください。[基本的な C++ ストア アプリを作成する](http://msdn.microsoft.com/library/windows/apps/dn263168)です。  
+>  Visual Studio IDE を使って C++/CX プログラムをコンパイルすることもできます。 IDE には、デザイン、デバッグ、エミュレーションでは、およびコマンド ラインでは利用できません配置のサポートが含まれているため、IDE を使用して、ユニバーサル Windows プラットフォーム (UWP) アプリをビルドすることをお勧めします。 詳細については、次を参照してください。 [C++ UWP アプリを作成](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp)です。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
  C++ 言語の基本を理解している必要があります。  

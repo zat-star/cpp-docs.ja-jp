@@ -6,21 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::Guid
-dev_langs: C++
-helpviewer_keywords: Platform::Guid Struct
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::Guid
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Guid Struct
 ms.assetid: 25c0bfb2-7f93-44d8-bdf4-ef4fbac3424a
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: e65f4d046f35656cb91374c085ef2a6e4a507302
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5323c934efb7d9416d1016f355390288885cb0c9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformguid-value-class"></a>Platform::Guid 値クラス
 [GUID](http://msdn.microsoft.com/library/windows/desktop/aa373931\(v=vs.85\).aspx) の種類を、Windows ランタイムの型システムで表します。  
@@ -54,7 +58,7 @@ public value struct Guid
  **メタデータ:** platform.winmd  
 
  
-## <a name="ctor"></a>Guid::guid コンス トラクター
+## <a name="ctor"></a> Guid::guid コンス トラクター
 Guid 構造体の新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  
@@ -124,7 +128,7 @@ Guid 構造体の新しいインスタンスを初期化します。
  GUID の残りの 8 バイト。  
   
 
-## <a name="operator-equality"></a>Guid::operator = = 演算子
+## <a name="operator-equality"></a> Guid::operator = = 演算子
 2 つの guid を比較します。  
   
 ### <a name="syntax"></a>構文  
@@ -136,7 +140,7 @@ Platform::Guid::operator==
 ### <a name="return-value"></a>戻り値  
  2 つの guid が等しい場合は true。
 
-## <a name="operator-inequality"></a>Guid::operator! = 演算子
+## <a name="operator-inequality"></a> Guid::operator! = 演算子
 2 つの guid を比較します。  
   
 ### <a name="syntax"></a>構文  
@@ -150,7 +154,7 @@ Platform::Guid::operator!=
 
 
 
-## <a name="operator-call"></a>Guid::operator() 演算子
+## <a name="operator-call"></a> Guid::operator() 演算子
 暗黙的に変換、 [GUID 構造体](http://msdn.microsoft.com/library/windows/desktop/aa373931\(v=vs.85\).aspx)platform::guid には GUID です。  
   
 ### <a name="syntax"></a>構文  

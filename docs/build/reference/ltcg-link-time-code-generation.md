@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -13,23 +14,25 @@ f1_keywords:
 - VC.Project.VCCLWCECompilerTool.WholeProgramOptimization
 - /ltcg
 - VC.Project.VCCLCompilerTool.WholeProgramOptimization
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - link-time code generation in C++ linker
 - /LTCG linker option
 - -LTCG linker option
 - LTCG linker option
 ms.assetid: 788c6f52-fdb8-40c2-90af-4026ea2cf2e2
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: a8f1abc58f0c36f37307e1d8053e4dd8a4cac06a
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 69e67755ce5015cdd63ad36625e71380a303d2d4
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ltcg-link-time-code-generation"></a>/LTCG (リンク時のコード生成)
 ```  
@@ -40,7 +43,7 @@ ms.lasthandoff: 12/21/2017
  :INCREMENTAL (省略可能)  
  プロジェクト全体ではなく、編集によって影響を受けるファイルのセット全体プログラム最適化またはリンク時コード生成 (LTCG) をリンカーがのみ適用されることを指定します。 既定では、このフラグは、/LTCG が指定され、プロジェクト全体がプログラム全体の最適化を使用してリンクされている場合に設定されません。  
   
- : NOSTATUS &#124;です。: 状態 (省略可能)  
+ :NOSTATUS &#124; :STATUS (optional)  
  リンカーが、リンクの何パーセントが完了を示す進行状況インジケーターを表示するかどうかを指定します。 既定では、この状態情報は表示されません。  
   
  : (省略可能) オフ  
@@ -54,7 +57,7 @@ ms.lasthandoff: 12/21/2017
  ::PGOPTIMIZE (省略可能)  
  このオプションは推奨されません。 代わりに、 **/LTCG**と**/USEPROFILE**最適化されたイメージを作成します。 詳細については、次を参照してください。[ガイド付き最適化のプロファイル](../../build/reference/profile-guided-optimizations.md)です。 このオプションの短い形式は/LTCG:PGO です。  
   
- ::PGUPDATE (省略可能)  
+ :PGUPDATE (optional)  
  このオプションは推奨されません。 代わりに、 **/LTCG**と**/USEPROFILE**最適化されたイメージを作成します。 詳細については、次を参照してください。[ガイド付き最適化のプロファイル](../../build/reference/profile-guided-optimizations.md)です。 このオプションの短い形式は/LTCG:PGU です。  
   
  /LTCG オプションは、コンパイラを呼び出すし、プログラム全体の最適化の実行をリンカーに指示します。 または、ガイド付きプロファイルの最適化を実行することもできます。 詳細については、次を参照してください。[ガイド付き最適化のプロファイル](../../build/reference/profile-guided-optimizations.md)です。  
@@ -134,11 +137,9 @@ ms.lasthandoff: 12/21/2017
 ## <a name="ltcg-and-msil-modules"></a>/LTCG モジュールと MSIL モジュール  
  [/GL](../../build/reference/gl-whole-program-optimization.md) と [/clr](../../build/reference/clr-common-language-runtime-compilation.md) を使用してコンパイルされたモジュールは、 **/LTCG** が指定されている場合にリンカーへの入力として使用できます。  
   
--   **/LTCG**ネイティブ オブジェクト ファイル、混合ネイティブ/マネージ オブジェクト ファイルを受け取ることができます (を使用してコンパイル**/clr**)、純粋オブジェクト ファイル (を使用してコンパイル**/clr: 純粋な**)、および安全なオブジェクト ファイル (使用してコンパイル**/clr:safe**)。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+-   **/LTCG**ネイティブ オブジェクト ファイルを受け入れることができるし、混合ネイティブ/マネージ オブジェクト ファイル (を使用してコンパイル**/clr**)。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
--   **/LTCG**を使用して作成できますが、安全な .netmodule を受け入れることができる**/clr:safe/LN** Visual C でと**/target:module** .NET Visual Studio コンパイラでします。 **/clr** または **/clr:pure** を使用して生成した .netmodule は、 **/LTCG**で受け入れることができません。  
-  
--   /LTCG:PGI は、 **/GL** や **/clr**を使用してコンパイルしたネイティブ モジュール、または純粋モジュール ( **/clr:pure**を使用して生成した) を受け付けません  
+-   /LTCG:PGI を使用してコンパイルしたネイティブ モジュールを受け入れません**/GL**と**/clr**  
   
 #### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   

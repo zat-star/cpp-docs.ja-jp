@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 12/12/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _fdopen
 - _wfdopen
@@ -28,7 +29,8 @@ f1_keywords:
 - _wfdopen
 - wfdopen
 - tfdopen
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - wfdopen function
 - _fdopen function
@@ -38,16 +40,17 @@ helpviewer_keywords:
 - _tfdopen function
 - streams, associating with files
 ms.assetid: 262757ff-1e09-4472-a5b6-4325fc28f971
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 7108fdedb2698e6065c22ebe6905d897ee389ece
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2474c25d30415d48252a2621ae5f7e69e5fed4d3
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fdopen-wfdopen"></a>_fdopen、_wfdopen
 
@@ -82,7 +85,7 @@ FILE *_wfdopen(
 
 ## <a name="remarks"></a>コメント
 
-`_fdopen`関数では関連付けますによって識別されるファイルの I/O ストリーム*fd*、できるので、低レベルの i/o バッファーおよびフォーマットが開かれているファイル。 `_wfdopen`ワイド文字バージョンは、 `_fdopen`;*モード*に渡す引数`_wfdopen`ワイド文字列です。 それ以外では、`_wfdopen` と `_fdopen` の動作は同じです。
+`_fdopen`関数では関連付けますによって識別されるファイルの I/O ストリーム*fd*、できるので、低レベルの i/o バッファーおよびフォーマットが開かれているファイル。 `_wfdopen` ワイド文字バージョンは、 `_fdopen`;*モード*に渡す引数`_wfdopen`ワイド文字列です。 それ以外では、`_wfdopen` と `_fdopen` の動作は同じです。
 
 ファイル記述子に渡された`_fdopen`が所有するによって、返された`FILE *`ストリーム。 場合`_fdopen`が成功すると、呼び出すことはありません[\_閉じる](../../c-runtime-library/reference/close.md)ファイル記述子。 呼び出す[fclose](../../c-runtime-library/reference/fclose-fcloseall.md)で返された`FILE *`もファイル記述子を閉じます。
 
@@ -134,7 +137,7 @@ FILE *_wfdopen(
 
 有効な文字、*モード*で使用される文字列`fopen`と`_fdopen`に対応している*oflag*で使用される引数[\_開く](../../c-runtime-library/reference/open-wopen.md)と[\_sopen](../../c-runtime-library/reference/sopen-wsopen.md)の次の表に示すようにします。
 
-|内の文字*モード*文字列|等価*oflag*値`_open`と`_sopen`|
+|内の文字*モード*文字列|等価*oflag*値`_open`と `_sopen`|
 |---------------------------------|---------------------------------------------------|
 |`a`|**\_O\_WRONLY &#124;です。\_O\_APPEND** (通常 **\_O\_WRONLY &#124;です。\_O\_CREAT &#124;です。\_O\_APPEND**)|
 |`a+`|**\_O\_RDWR &#124;です。\_O\_APPEND** (通常 **\_O\_RDWR &#124;です。\_O\_APPEND &#124;です。\_O\_CREAT** )|
@@ -142,8 +145,8 @@ FILE *_wfdopen(
 |`r+`|**\_O\_RDWR**|
 |`w`|**\_O\_WRONLY** (通常 **\_O\_WRONLY &#124;です。\_O\_CREAT &#124;です。\_O\_TRUNC**)|
 |`w+`|**\_O\_RDWR** (通常 **\_O\_RDWR &#124;です。\_O\_CREAT &#124;です。\_O\_TRUNC**)|
-|`b`|**\_O\_バイナリ**|
-|`t`|**\_O\_テキスト**|
+|`b`|**\_O\_BINARY**|
+|`t`|**\_O\_TEXT**|
 |`c`|なし|
 |`n`|なし|
 
@@ -209,8 +212,8 @@ Lines in file: 2
 ## <a name="see-also"></a>関連項目
 
 [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
-[\_dup、 \_dup2](../../c-runtime-library/reference/dup-dup2.md)   
+[\_dup, \_dup2](../../c-runtime-library/reference/dup-dup2.md)   
 [fclose、 \_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   
 [fopen、 \_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
-[freopen、 \_wfreopen](../../c-runtime-library/reference/freopen-wfreopen.md)   
+[freopen, \_wfreopen](../../c-runtime-library/reference/freopen-wfreopen.md)   
 [\_開くには、 \_wopen](../../c-runtime-library/reference/open-wopen.md)

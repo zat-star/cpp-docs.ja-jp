@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _mbsnbset
 - _mbsnbset_l
@@ -28,7 +29,8 @@ f1_keywords:
 - mbsnbset_l
 - _mbsnbset
 - _mbsnbset_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - tcsnset function
 - _tcsnset_l function
@@ -39,22 +41,23 @@ helpviewer_keywords:
 - tcsnset_l function
 - mbsnbset function
 ms.assetid: 8e46ef75-9a56-42d2-a522-a08450c67c19
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 9f868cdf5d0200df174c5df3629b5578dbf06d31
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c98745ae2d995dea5a65caab55cc7e45172a9f53
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="mbsnbset-mbsnbsetl"></a>_mbsnbset、_mbsnbset_l
 指定された文字にマルチバイト文字列の最初の `n` バイトを設定します。 これらの関数にはセキュリティを強化したバージョンがあります。「[_mbsnbset_s、_mbsnbset_s_l](../../c-runtime-library/reference/mbsnbset-s-mbsnbset-s-l.md)」を参照してください。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -89,9 +92,9 @@ unsigned char *_mbsnbset_l(
  `_mbsnbset` は変更された文字列へのポインターを返します。  
   
 ## <a name="remarks"></a>コメント  
- `_mbsnbset` 関数および `_mbsnbset_l` 関数は、最長で `count` の最初の `str` バイトを `c` に設定します。 `count` が `str` の長さを超えると、その `str` の長さが `count` の代わりに使用されます。 `c` がマルチバイト文字で、`count` で指定された最後のバイトに完全に設定できない場合は、最後のバイトは空白文字で埋められます。 `_mbsnbset`および`_mbsnbset_l`終端は配置されませんの末尾に null`str`です。  
+ `_mbsnbset` 関数および `_mbsnbset_l` 関数は、最長で `count` の最初の `str` バイトを `c` に設定します。 `count` が `str` の長さを超えると、その `str` の長さが `count` の代わりに使用されます。 `c` がマルチバイト文字で、`count` で指定された最後のバイトに完全に設定できない場合は、最後のバイトは空白文字で埋められます。 `_mbsnbset` および`_mbsnbset_l`終端は配置されませんの末尾に null`str`です。  
   
- `_mbsnbset`および`_mbsnbset_l`に似ていますが`_mbsnset`に設定する点を除いて、`count`バイトなく`count`の文字`c`です。  
+ `_mbsnbset` および`_mbsnbset_l`に似ていますが`_mbsnset`に設定する点を除いて、`count`バイトなく`count`の文字`c`です。  
   
  `str` が `NULL` の場合、または `count` が 0 の場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター例外を生成します。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。 また `c` が有効なマルチバイト文字でない場合、`errno` は `EINVAL` に設定され、代わりに空白が使用されます。  
   

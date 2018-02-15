@@ -6,23 +6,24 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: cbfc957d-6c60-48f4-97e3-1ed8526743b4
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 65d058780ee71731559733ac07eef3f614a47784
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 295b7810c562e141f1b2e22c993bcc7455c0f1d9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="crt-functions-not-supported-in-universal-windows-platform-apps"></a>ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数
-多くの C ランタイム (CRT) 関数はユニバーサル Windows プラットフォーム (UWP) アプリをビルドする時に使用できません。 場合によっては、回避策を利用できます:-たとえば、Windows ランタイムまたは Win32 Api を使用できます。 しかし、回避策が利用できない場合には、CRT 関数は禁止されています。CRT 関数に相当する機能やサポートする API を UWP アプリに使用できないためです。  
+多くの C ランタイム (CRT) 関数はユニバーサル Windows プラットフォーム (UWP) アプリをビルドする時に使用できません。 場合によっては、回避策を利用できます:-たとえば、Windows ランタイムまたは Win32 Api を使用できます。 しかし、回避策が利用できない場合には、CRT 関数は禁止されています。CRT 関数に相当する機能やサポートする API を UWP アプリに使用できないためです。 Windows ランタイムのサポートされている別の方法を探すを参照してください。 [UWP アプリでの Windows Api に代わる方法](/uwp/win32-and-com/alternatives-to-windows-apis-uwp)です。  
   
- 次の一覧には UWP アプリをビルドするときに使用できない CRT 関数と、その回避策があればそれを示しています。  
+次の一覧には UWP アプリをビルドするときに使用できない CRT 関数と、その回避策があればそれを示しています。  
   
 ## <a name="unsupported-crt-functions"></a>サポートされない CRT 関数  
   
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/21/2017
 |_environ _putenv _putenv_s _searchenv _searchenv_s _dupenv_s _wputenv _wputenv_s _wsearchenv getenv getenv_s putenv _wdupenv_s _wenviron _wgetenv _wgetenv_s _wsearchenv_s tzset|UWP アプリでは環境変数を使用できません。|回避策はありません。 タイム ゾーンを設定するには、_tzset を使用します。|  
 |_loaddll _getdllprocaddr _unloaddll|これらは以前のバージョンの CRT で廃止された関数です。 また、ユーザーは同じアプリケーション パッケージのものを除き、DLL を読み込むことができません。|パッケージ化された DLL を読み込んで使用するには、Win32 API `LoadPackagedLibrary`、 `GetProcAddress`、 `FreeLibrary` を使用します。|  
 |_wexecl _wexecle _wexeclp _wexeclpe _wexecv _wexecve _wexecvp _wexecvpe _execl _execle _execlp _execlpe _execv _execve _execvp _execvpe _spawnl _spawnle _spawnlp _spawnlpe _spawnv _spawnve _spawnvp _spawnvpe _wspawnl _wspawnle _wspawnlp _wspawnlpe _wspawnv _wspawnve _wspawnvp _wspawnvpe _wsystem execl execle execlp execlpe execv execve execvp execvpe spawnl spawnle spawnlp spawnlpe spawnv spawnve spawnvp spawnvpe system|この機能は、UWP アプリでは使用できません。 UWP アプリから別の UWP アプリまたはデスクトップ アプリを起動することはできません。|回避策はありません。|  
-|_heapwalk _heapadd _heapchk _heapset _heapused|ここに挙げた関数は通常、ヒープを使用するために使用します。 しかし、UWP アプリでは対応する Win32 API がサポートされていません。 アプリがプライベート ヒープを作成したり使用したりすることはありません。|回避策はありません。 ただし、 `_heapwalk` はデバッグを目的とする場合にのみ DEBUG CRT で使用できます。 Windows ストアにアップロードされるアプリでこれらを使用することはできません。|  
+|_heapwalk _heapadd _heapchk _heapset _heapused|ここに挙げた関数は通常、ヒープを使用するために使用します。 しかし、UWP アプリでは対応する Win32 API がサポートされていません。 アプリがプライベート ヒープを作成したり使用したりすることはありません。|回避策はありません。 ただし、 `_heapwalk` はデバッグを目的とする場合にのみ DEBUG CRT で使用できます。 Microsoft Store にアップロードされるアプリでは、これらを使用できません。|  
   
  次の関数は UWP アプリの CRT で使用できますが、対応する Win32 または Windows ランタイム Api を使用できない場合にのみ使用する必要があります: 大きなコード ベースを移植するときなど、  
   

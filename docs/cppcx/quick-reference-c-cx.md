@@ -6,23 +6,24 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: ba457195-26e5-43aa-b99d-24a871e550f4
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 0b34c0d36c33652ecbef3a1af745015d92fc05f3
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 29c34d20f7098e7d8e09e0a9a874e64aacc6a620
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="quick-reference-ccx"></a>クイック リファレンス (C++/CX)
-Windows ランタイムは、信頼できるオペレーティング システム環境のみで実行し、承認済みの関数、データ型、およびデバイスを使用、経由で配信される、ユニバーサル Windows プラットフォーム アプリをサポートしている、[!INCLUDE[win8_appstore_long](../cppcx/includes/win8-appstore-long-md.md)]です。 C + + CX Windows ランタイム アプリの作成を簡略化します。 この記事では、クイック リファレンスです。詳細なドキュメントは、次を参照してください。[型システム](../cppcx/type-system-c-cx.md)と[ランタイム プラットフォームのコンポーネント拡張](http://go.microsoft.com/fwlink/p/?linkid=228720)です。  
+Windows ランタイムでは、信頼できるオペレーティング システム環境のみで実行、承認済みの関数、データ型、およびデバイスを使用および Microsoft ストアで配布されているユニバーサル Windows プラットフォーム (UWP) アプリをサポートします。 C + + CX Windows ランタイム アプリの作成を簡略化します。 この記事では、クイック リファレンスです。詳細なドキュメントは、次を参照してください。[型システム](../cppcx/type-system-c-cx.md)と[ランタイム プラットフォームのコンポーネント拡張](http://go.microsoft.com/fwlink/p/?linkid=228720)です。  
   
- コマンドラインでビルドするときに使用して、 **/ZW**コンパイラ オプションで、ユニバーサル Windows プラットフォーム アプリまたは Windows ランタイム コンポーネントをビルドします。 Windows ランタイム メタデータ (.winmd) ファイルで定義されている Windows ランタイムの宣言にアクセスするには指定、`#using`ディレクティブまたは**/FU**コンパイラ オプション。 ユニバーサル Windows プラットフォーム アプリ用のプロジェクトを作成するときに、Visual Studio は既定ではこれらのオプションを設定し、すべての Windows ランタイム ライブラリへの参照を追加します。  
+ コマンドラインでビルドするときに使用して、 **/ZW**コンパイラ オプションで、UWP アプリ プロジェクトまたは Windows ランタイム コンポーネントをビルドします。 Windows ランタイム メタデータ (.winmd) ファイルで定義されている Windows ランタイムの宣言にアクセスするには指定、`#using`ディレクティブまたは**/FU**コンパイラ オプション。 UWP アプリ用のプロジェクトを作成するときに、Visual Studio は既定ではこれらのオプションを設定し、すべての Windows ランタイム ライブラリへの参照を追加します。  
   
 ## <a name="quick-reference"></a>クイック リファレンス  
   
@@ -50,7 +51,7 @@ Windows ランタイムは、信頼できるオペレーティング システ�
 |構造体宣言|`struct` *identifier* `{}`<br /><br /> (つまり、PODS (Plain Old Data Structure))|`value class` *identifier* `{}`<br /><br /> `value struct` *identifier* `{}`|既定のプライベート アクセシビリティを持つ POD 構造体を宣言します。<br /><br /> 値のクラスは Windows メタデータで表現できますが、標準の C++ クラスは Windows メタデータで表現できません。<br /><br /> 既定のパブリック アクセシビリティを持つ POD 構造体を宣言します。<br /><br /> 値の構造体は Windows メタデータで表現できますが、標準 C++ 構造体は Windows メタデータで表現できません。|  
 |インターフェイス宣言|純粋仮想関数のみを含む抽象クラス。|`interface class` *identifier* `{}`<br /><br /> `interface struct` *identifier* `{}`|既定のプライベート アクセシビリティを持つインターフェイスを宣言します。<br /><br /> 既定のパブリック アクセシビリティを持つインターフェイスを宣言します。|  
 |delegate|`std::function`|`public delegate` *return-type* *delegate-type-identifier* `(` *[ parameters ]* `);`|関数呼び出しのように呼び出すことができるオブジェクトを宣言します。|  
-|event|(該当なし)|`event` *delegate-type-identifier* *event-identifier* `;`<br /><br /> *delegate-type-identifier* *delegate-identifier* = `ref new`*delegate-type-identifier*`( this`*[, parameters]*`);`<br /><br /> *event-identifier* `+=` *delegate-identifier* `;`<br /><br /> - または -<br /><br /> `EventRegistrationToken` *token-identifier* = *obj*`.`*event-identifier*`+=`*delegate-identifier*`;`<br /><br /> - または -<br /><br /> `auto`*トークン識別子* = *obj*です。*イベント識別子*`::add(`*デリゲート識別子*`);`<br /><br /> *obj* `.` *event-identifier* `-=` *token-identifier* `;`<br /><br /> - または -<br /><br /> *obj* `.` *event-identifier* `::remove(` *token-identifier* `);`|イベント オブジェクトを宣言し、そこにイベントが発生したときに呼び出されるイベント ハンドラー (デリゲート) のコレクションを格納します。<br /><br /> イベント ハンドラーを作成します。<br /><br /> イベント ハンドラーを追加します。<br /><br /> イベント ハンドラーを追加すると、イベント トークン (*token-identifier*) が返されます。 明示的にイベント ハンドラーを削除することを意図している場合は、後で使用できるようにイベント トークンを保存する必要があります。<br /><br /> イベント ハンドラーを削除します。<br /><br /> イベント ハンドラーを削除するには、イベント ハンドラーが追加されたときに保存したイベント トークンを指定する必要があります。|  
+|event|(該当なし)|`event` *delegate-type-identifier* *event-identifier* `;`<br /><br /> *delegate-type-identifier* *delegate-identifier* = `ref new`*delegate-type-identifier*`( this`*[, parameters]*`);`<br /><br /> *event-identifier* `+=` *delegate-identifier* `;`<br /><br /> - または -<br /><br /> `EventRegistrationToken` *token-identifier* = *obj*`.`*event-identifier*`+=`*delegate-identifier*`;`<br /><br /> - または -<br /><br /> `auto` *token-identifier* = *obj*. *event-identifier*`::add(`*delegate-identifier*`);`<br /><br /> *obj* `.` *event-identifier* `-=` *token-identifier* `;`<br /><br /> - または -<br /><br /> *obj* `.` *event-identifier* `::remove(` *token-identifier* `);`|イベント オブジェクトを宣言し、そこにイベントが発生したときに呼び出されるイベント ハンドラー (デリゲート) のコレクションを格納します。<br /><br /> イベント ハンドラーを作成します。<br /><br /> イベント ハンドラーを追加します。<br /><br /> イベント ハンドラーを追加すると、イベント トークン (*token-identifier*) が返されます。 明示的にイベント ハンドラーを削除することを意図している場合は、後で使用できるようにイベント トークンを保存する必要があります。<br /><br /> イベント ハンドラーを削除します。<br /><br /> イベント ハンドラーを削除するには、イベント ハンドラーが追加されたときに保存したイベント トークンを指定する必要があります。|  
 |property|(該当なし)|`property` *T* *identifier*;<br /><br /> `property` *T* *identifier* `[` *インデックス* `];`<br /><br /> `property` *T* `default[` *インデックス* `];`|クラス メンバー関数またはオブジェクト メンバー関数が、データ メンバーまたはインデックス付きの配列要素へのアクセスで使用されたのと同じ構文を使用してアクセスされることを宣言します。<br /><br /> クラス オブジェクト メンバー関数またはオブジェクト メンバー関数のインデックス付きプロパティを宣言します。<br /><br /> オブジェクト メンバー関数のインデックス付きプロパティを宣言します。<br /><br /> クラス メンバー関数のインデックス付きプロパティを宣言します。|  
 |パラメーター化された型|テンプレート|`generic <typename` *T* `> interface class` *identifier* `{}`<br /><br /> `generic <typename` *T* `> delegate` *[return-type]* *delegate-identifier* `() {}`|パラメーター化されたインターフェイス クラスを宣言します。<br /><br /> パラメーター化されたデリゲートを宣言します。|  
 |null 許容値型|`boost::optional<T>`|[Platform::ibox \<T >](../cppcx/platform-ibox-interface.md)|スカラー型および値構造体の変数の値を `nullptr`にすることができます。|  

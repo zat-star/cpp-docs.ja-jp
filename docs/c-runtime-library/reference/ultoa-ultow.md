@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _ultoa
 - _ultow
@@ -29,7 +30,8 @@ f1_keywords:
 - _ultoa
 - _ultow
 - _ultot
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ultot function
 - converting integers
@@ -40,16 +42,17 @@ helpviewer_keywords:
 - _ultoa function
 - converting numbers, to strings
 ms.assetid: 7a472dc4-5652-4513-93c3-3358522c23be
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 5e555275f4516d92318ec5cfffbca3472c2a5cf8
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 94073b947848199bdc093f959ddceadcb1835f16
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ultoa-ultow"></a>_ultoa、_ultow
 符号なし長整数型を文字列に変換します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_ultoa_s、_ultow_s](../../c-runtime-library/reference/ultoa-s-ultow-s.md)」を参照してください。  
@@ -95,7 +98,7 @@ wchar_t *_ultow(
  これらの各関数は、`str` へのポインターを返します。 エラーの戻り値はありません。  
   
 ## <a name="remarks"></a>コメント  
- `_ultoa` 関数は、`value` を null で終わる文字列に変換し、結果 (最大 33 バイト) を `str` に格納します。 オーバーフロー チェックは行われません。 `radix`基本型を指定`value`です。`radix` 2 ~ 36 の範囲内である必要があります。 `_ultow` 関数は、`_ultoa` 関数のワイド文字バージョンです。  
+ `_ultoa` 関数は、`value` を null で終わる文字列に変換し、結果 (最大 33 バイト) を `str` に格納します。 オーバーフロー チェックは行われません。 `radix` 基本型を指定`value`です。`radix` 2 ~ 36 の範囲内である必要があります。 `_ultow` 関数は、`_ultoa` 関数のワイド文字バージョンです。  
   
 > [!IMPORTANT]
 >  バッファー オーバーランを回避するには、`str` のバッファーを、変換された数字および末尾の null 文字を保持できるよう十分に大きくします。  
