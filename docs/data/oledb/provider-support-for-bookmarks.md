@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - IRowsetLocate class, provider support for bookmarks
 - OLE DB provider templates, bookmarks
@@ -15,18 +17,18 @@ helpviewer_keywords:
 - IRowsetLocate class
 - OLE DB providers, bookmark support
 ms.assetid: 1b14ccff-4f76-462e-96ab-1aada815c377
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: cb3c0d60c4b339d7ed2ae8bc4eee503036ac9097
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 9e69f0cd9b77f4d492e5011a6c8e653515ea784e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="provider-support-for-bookmarks"></a>プロバイダーのブックマーク サポート
 このトピックの例では追加、`IRowsetLocate`へのインターフェイス、`CMyProviderRowset`クラスです。 ほとんどの場合では、既存の COM オブジェクトへのインターフェイスを追加することで起動します。 その後、コンシューマー テンプレートからの呼び出しを追加してテストすることができます。 この例をする方法。  
@@ -41,7 +43,7 @@ ms.lasthandoff: 12/21/2017
   
  追加する、`IRowsetLocate`インターフェイスは、ほとんどのインターフェイスとは少し異なります。 プロバイダー テンプレートを OLE DB を vtable を行うには、派生インターフェイスを処理するテンプレート パラメーターにあります。 次のコードは、新しい継承のリストを示しています。  
   
-```  
+```cpp
 ////////////////////////////////////////////////////////////////////////  
 // MyProviderRS.h  
   
@@ -49,18 +51,18 @@ ms.lasthandoff: 12/21/2017
 class CMyProviderRowset : public CRowsetImpl< CMyProviderRowset,   
       CTextData, CMyProviderCommand, CAtlArray<CTextData>,   
       CSimpleRow,   
-          IRowsetLocateImpl<CMyProviderRowset, IRowsetLocate> >  
+          IRowsetLocateImpl<CMyProviderRowset, IRowsetLocate>>  
 ```  
   
- 4 番目、5 番目と 6 番目のパラメーターがすべて追加します。 この例では、4 番目の既定の設定を使用して 5 番目のパラメーターを指定`IRowsetLocateImpl`6 番目のパラメーターとして。 `IRowsetLocateImpl`2 つのテンプレート パラメーターを受け取る、OLE DB テンプレート クラスは、: これらをフックするため、`IRowsetLocate`へのインターフェイス、`CMyProviderRowset`クラスです。 ほとんどのインターフェイスを追加するには、この手順をスキップし、[次へ] のいずれかに移動できます。 のみ、`IRowsetLocate`と`IRowsetScroll`インターフェイスは、この方法で処理する必要があります。  
+ 4 番目、5 番目と 6 番目のパラメーターがすべて追加します。 この例では、4 番目の既定の設定を使用して 5 番目のパラメーターを指定`IRowsetLocateImpl`6 番目のパラメーターとして。 `IRowsetLocateImpl` 2 つのテンプレート パラメーターを受け取る、OLE DB テンプレート クラスは、: これらをフックするため、`IRowsetLocate`へのインターフェイス、`CMyProviderRowset`クラスです。 ほとんどのインターフェイスを追加するには、この手順をスキップし、[次へ] のいずれかに移動できます。 のみ、`IRowsetLocate`と`IRowsetScroll`インターフェイスは、この方法で処理する必要があります。  
   
  確認する必要があります、`CMyProviderRowset`を呼び出す`QueryInterface`の`IRowsetLocate`インターフェイスです。 行を追加`COM_INTERFACE_ENTRY(IRowsetLocate)`にマップします。 に対するインターフェイス マップ`CMyProviderRowset`が、次のコードに示すように表示されます。  
   
-```  
+```cpp
 ////////////////////////////////////////////////////////////////////////  
 // MyProviderRS.h  
   
-typedef CRowsetImpl< CMyProviderRowset, CTextData, CMyProviderCommand, CAtlArray<CTextData>, CSimpleRow, IRowsetLocateImpl<CMyProviderRowset, IRowsetLocate> > _RowsetBaseClass;  
+typedef CRowsetImpl< CMyProviderRowset, CTextData, CMyProviderCommand, CAtlArray<CTextData>, CSimpleRow, IRowsetLocateImpl<CMyProviderRowset, IRowsetLocate>> _RowsetBaseClass;  
   
 BEGIN_COM_MAP(CMyProviderRowset)  
    COM_INTERFACE_ENTRY(IRowsetLocate)  
@@ -74,7 +76,7 @@ END_COM_MAP()
   
  処理するために、 **icolumnsinfo::getcolumnsinfo**呼び出し、削除、 **PROVIDER_COLUMN**内のマップ、`CTextData`クラスです。 関数を定義して PROVIDER_COLUMN_MAP マクロ`GetColumnInfo`です。 定義する必要が独自`GetColumnInfo`関数。 関数の宣言は、次のようになります。  
   
-```  
+```cpp
 ////////////////////////////////////////////////////////////////////////  
 // MyProviderRS.H  
   
@@ -92,7 +94,7 @@ class CTextData
   
  次に、実装、`GetColumnInfo`次ファイルで次のように機能します。  
   
-```  
+```cpp
 ////////////////////////////////////////////////////////////////////  
 // MyProviderRS.cpp  
   
@@ -161,13 +163,13 @@ ATLCOLUMNINFO* CAgentMan::GetColumnInfo(RUpdateRowset* pThis, ULONG* pcCols)
 }  
 ```  
   
- `GetColumnInfo`最初に確認するかどうかというプロパティを参照してください**DBPROP_IRowsetLocate**が設定されています。 OLE DB 行セット オブジェクトから省略可能なインターフェイスの各プロパティがあります。 コンシューマーは、これらの省略可能なインターフェイスのいずれかを使用する場合、true にプロパティを設定します。 プロバイダーは、このプロパティを確認し、それに基づく特殊なアクションを実行します。  
+ `GetColumnInfo` 最初に確認するかどうかというプロパティを参照してください**DBPROP_IRowsetLocate**が設定されています。 OLE DB 行セット オブジェクトから省略可能なインターフェイスの各プロパティがあります。 コンシューマーは、これらの省略可能なインターフェイスのいずれかを使用する場合、true にプロパティを設定します。 プロバイダーは、このプロパティを確認し、それに基づく特殊なアクションを実行します。  
   
  実装では、コマンド オブジェクトへのポインターを使用してプロパティを取得します。 `pThis`ポインターが行セットまたはコマンド クラスを表します。 これに渡す必要がここでテンプレートを使用するため、`void`ポインターまたはコードはコンパイルされません。  
   
  列情報を格納する静的な配列を指定します。 コンシューマーはブックマーク列をしない、配列内のエントリが無駄になります。 この配列を動的に割り当てることができますが、適切に破棄されることを確認する必要があります。 この例では、定義し、ADD_COLUMN_ENTRY と ADD_COLUMN_ENTRY_EX マクロを使用して配列に情報を挿入します。 次のコードに示すように、MyProviderRS.H ファイルにマクロを追加できます。  
   
-```  
+```cpp
 ////////////////////////////////////////////////////////////////////////  
 // MyProviderRS.h  
   
@@ -198,13 +200,13 @@ ATLCOLUMNINFO* CAgentMan::GetColumnInfo(RUpdateRowset* pThis, ULONG* pcCols)
   
  コンシューマーでコードをテストするに、いくつかの変更を加える必要があります、`OnRun`ハンドラー。 関数に対する最初の変更は、プロパティ、プロパティ セットを追加するコードを追加することです。 コード セット、 **DBPROP_IRowsetLocate**プロパティは、プロバイダーのブックマーク列を表示することをします。 `OnRun`ハンドラー コードは次のように記述する必要があります。  
   
-```  
+```cpp
 //////////////////////////////////////////////////////////////////////  
 // TestProv Consumer Application in TestProvDlg.cpp  
   
 void CTestProvDlg::OnRun()   
 {  
-   CCommand<CAccessor<CProvider> > table;  
+   CCommand<CAccessor<CProvider>> table;  
    CDataSource source;  
    CSession   session;  
   
@@ -229,7 +231,8 @@ void CTestProvDlg::OnRun()
       DBCOMPARE compare;  
       if (ulCount == 2)  
          tempBookmark = table.bookmark;  
-      HRESULT hr = table.Compare(table.dwBookmark, table.dwBookmark,  
+
+HRESULT hr = table.Compare(table.dwBookmark, table.dwBookmark,  
                  &compare);  
       if (FAILED(hr))  
          ATLTRACE(_T("Compare failed: 0x%X\n"), hr);  
@@ -251,7 +254,7 @@ void CTestProvDlg::OnRun()
   
  また、コンシューマーでユーザー レコードを更新する必要があります。 ブックマークおよび内のエントリを処理するクラスにエントリを追加、 **COLUMN_MAP**:  
   
-```  
+```cpp
 ///////////////////////////////////////////////////////////////////////  
 // TestProvDlg.cpp  
   

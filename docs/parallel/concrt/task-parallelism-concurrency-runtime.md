@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - structured task groups [Concurrency Runtime]
 - structured tasks [Concurrency Runtime]
@@ -15,16 +17,17 @@ helpviewer_keywords:
 - task parallelism
 - tasks [Concurrency Runtime]
 ms.assetid: 42f05ac3-2098-494a-ba84-737fcdcad077
-caps.latest.revision: "56"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: d2a177f30829719022afdedd810ecc265c94130d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3e4b96228ac867781b00be7ca92a9debcad3f9eb
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="task-parallelism-concurrency-runtime"></a>タスクの並列化 (同時実行ランタイム)
 同時実行ランタイムで、*タスク*を特定のジョブを実行し、その他のタスクと並列で通常実行される作業の単位です。 タスクに分解し、追加より細かい別のタスクに編成された、*タスク グループ*です。  
@@ -81,7 +84,7 @@ ms.lasthandoff: 12/21/2017
   
 - [信頼性の高いプログラミング](#robust)  
   
-##  <a name="lambdas"></a>ラムダ式の使用  
+##  <a name="lambdas">ラムダ式の使用</a>  
  ラムダ式は簡潔な構文であるため、タスクおよびタスク グループで実行される作業を定義する一般的な方法です。 使用のヒントを次に示します。  
   
 -   通常、タスクはバックグラウンド スレッドで実行されるため、ラムダ式の変数をキャプチャする場合にはオブジェクトの有効期間に注意してください。 変数を値でキャプチャすると、その変数のコピーがラムダの本体に作成されます。 参照によってキャプチャする場合には、コピーは作成されません。 したがって、参照によってキャプチャするすべての変数の有効期間が、それを使用するタスクのために十分であるように注意します。  
@@ -98,7 +101,7 @@ ms.lasthandoff: 12/21/2017
   
  ラムダ式について詳しくは、「[ラムダ式](../../cpp/lambda-expressions-in-cpp.md)」をご覧ください。  
   
-##  <a name="task-class"></a>Task クラス  
+##  <a name="task-class">Task クラス</a>  
  使用することができます、 [concurrency::task](../../parallel/concrt/reference/task-class.md)クラスに依存する操作のセットにタスクを構成します。 概念によってこのコンポジション モデルがサポートされている*継続*です。 ときに実行されるコードを継続できます、前または*継続元*タスクが完了します。 継続元タスクの結果は、1 つ以上の継続タスクへの入力として渡されます。 継続元タスクが完了すると、それを待っているすべての継続タスクが実行のためにスケジュールされます。 各継続タスクは継続元タスクの結果のコピーを受信します。 また、これらの継続タスクが、他の継続の継続元タスクである場合もあり、このようにしてタスクのチェーンが作成されます。 継続を使うと、特定の依存関係を持つ、任意の長さのタスクのチェーンを作成できます。 また、タスクは開始前または実行中に協調的に、取り消しに参加できます。 このキャンセル処理モデルの詳細については、次を参照してください。 [PPL における取り消し処理](cancellation-in-the-ppl.md)です。  
   
  `task` はテンプレート クラスです。 型パラメーター `T` は、タスクで生成される結果の型です。 タスクが値を返さない場合には、この型は `void` となります。 `T` は `const` 修飾子を使用できません。  
@@ -124,9 +127,9 @@ ms.lasthandoff: 12/21/2017
  使用する例については`task`、 [concurrency::task_completion_event](../../parallel/concrt/reference/task-completion-event-class.md)、キャンセルを参照してください[チュートリアル: 接続を使用してタスクおよび XML HTTP 要求](../../parallel/concrt/walkthrough-connecting-using-tasks-and-xml-http-requests.md)です。 (`task_completion_event` クラスについてはドキュメントの後の部分で説明されています。)  
   
 > [!TIP]
->  タスクに固有の詳細については、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)]アプリを参照してください[C++ で非同期プログラミング](http://msdn.microsoft.com/en-us/512700b7-7863-44cc-93a2-366938052f31)と[Windows ストア アプリ用 C++ で非同期操作の作成](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)です。  
+>  UWP アプリでのタスクに固有の詳細については、次を参照してください。 [C++ で非同期プログラミング](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)と[非同期操作の作成に C++ UWP アプリの](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)します。  
   
-##  <a name="continuations"></a>継続タスク  
+##  <a name="continuations">継続タスク</a>  
  非同期プログラミングでは、非同期操作で完了時に 2 番目の操作を呼び出してデータを渡すのが一般的です。 これまで、この処理はコールバック メソッドを使用して行っていました。 同時実行ランタイムと同じ機能が用意されて*継続タスク*です。 継続タスクを (だけ継続とも呼ばれます) と呼ばれる別のタスクによって呼び出される非同期タスクは、*継続元*継続元が完了したら、します。 継続を使用して、次の操作を行うことができます。  
   
 -   継続元のデータを継続に渡します。  
@@ -135,7 +138,7 @@ ms.lasthandoff: 12/21/2017
   
 -   継続が開始される前、または継続の実行中に、継続を取り消します。  
   
--   継続をスケジュールする方法についてのヒントを提供します。 (この方法は、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーションだけで使用できます。 詳細については、次を参照してください[Windows ストア アプリ用 C++ で非同期操作の作成](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)。)。  
+-   継続をスケジュールする方法についてのヒントを提供します。 (これはユニバーサル Windows プラットフォーム (UWP) アプリのみに適用されます。 詳細については、次を参照してください[非同期操作の作成に C++ UWP アプリの](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)。)。  
   
 -   同じ継続元から複数の継続を呼び出します。  
   
@@ -159,21 +162,21 @@ ms.lasthandoff: 12/21/2017
   
  [!code-cpp[concrt-continuation-chain#1](../../parallel/concrt/codesnippet/cpp/task-parallelism-concurrency-runtime_6.cpp)]  
   
- 継続は、別のタスクを返すこともできます。 取り消されない場合、このタスクは後続の継続の前に実行されます。 この手法と呼ばれる*非同期ラッピング解除*です。 非同期ラッピング解除は、追加の作業をバックグラウンドで実行するときに、現在のタスクが現在のスレッドをブロックしないようにする場合に役立ちます。 (これは、継続が UI スレッドで実行される [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーションで共通です。) 次の例は、3 つのタスクを示しています。 最初のタスクは、継続タスクの前に実行される、別のタスクを返します。  
+ 継続は、別のタスクを返すこともできます。 取り消されない場合、このタスクは後続の継続の前に実行されます。 この手法と呼ばれる*非同期ラッピング解除*です。 非同期ラッピング解除は、追加の作業をバックグラウンドで実行するときに、現在のタスクが現在のスレッドをブロックしないようにする場合に役立ちます。 (これは UWP アプリで共通の継続が UI スレッドで実行できます) です。 次の例は、3 つのタスクを示しています。 最初のタスクは、継続タスクの前に実行される、別のタスクを返します。  
   
  [!code-cpp[concrt-async-unwrapping#1](../../parallel/concrt/codesnippet/cpp/task-parallelism-concurrency-runtime_7.cpp)]  
   
 > [!IMPORTANT]
 >  タスクの継続が `N` 型の入れ子のタスクを返す場合、結果のタスクは `N` 型でなく `task<N>` 型となり、入れ子のタスクが完了すると終了します。 つまり、継続は入れ子のタスクのラッピング解除を行います。  
   
-##  <a name="value-versus-task"></a>値ベースの継続とタスク ベースの継続  
+##  <a name="value-versus-task">値ベースの継続とタスク ベースの継続</a>  
  `task` オブジェクトは戻り値の型が `T` であるため、その継続タスクに `T` または `task<T>` 型の値を指定できます。 型を受け取る継続`T`と呼ばれる、*値ベースの継続*です。 値ベースの継続は、継続元タスクがエラーなしに完了して取り消されない場合に、実行のためにスケジュールされます。 型を受け取る継続`task<T>`として認識されているが、パラメーター、*タスク ベースの継続*です。 タスク ベースの継続は、継続元タスクが取り消されたり、例外をスローした場合でも、継続元タスクが完了すると常に実行がスケジュールされます。 次に `task::get` を呼び出して、継続元タスクの結果を取得できます。 継続元タスクが取り消された場合`task::get`スロー [concurrency::task_canceled](../../parallel/concrt/reference/task-canceled-class.md)です。 継続元タスクが例外をスローすると、`task::get` は再度、例外をスローします。 タスク ベースの継続は、その継続元タスクが取り消された場合、取り消し済みとしてマークされません。  
   
-##  <a name="composing-tasks"></a>タスクを構成します。  
+##  <a name="composing-tasks">タスクを構成します。</a>  
  このセクションの内容について説明します、 [concurrency::when_all](reference/concurrency-namespace-functions.md#when_all)と[concurrency::when_any](reference/concurrency-namespace-functions.md#when_all)一般的なパターンを実装する複数のタスクを作成する関数、することができます。  
 
   
-###  <a name="when-all"></a>When_all 関数  
+###  <a name="when-all">When_all 関数</a>  
  `when_all` 関数は、一連のタスクの完了後に完了するタスクを生成します。 この関数を返します、std::[ベクター](../../standard-library/vector-class.md)セット内の各タスクの結果を格納しているオブジェクト。 次の基本的な例では、`when_all` を使用して、3 つの他のタスクの完了を表すタスクを作成します。  
   
  [!code-cpp[concrt-join-tasks#1](../../parallel/concrt/codesnippet/cpp/task-parallelism-concurrency-runtime_8.cpp)]  
@@ -197,7 +200,7 @@ ms.lasthandoff: 12/21/2017
   
  [!code-cpp[concrt-eh-when_all#1](../../parallel/concrt/codesnippet/cpp/task-parallelism-concurrency-runtime_10.cpp)]  
   
- C++ と XAML を使用し、ディスクに一連のファイルを書き込む [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーションを考えてみます。 次の例は、`when_all` と `observe_all_exceptions` を使用して、プログラムがすべての例外を確認する方法を示します。  
+ C++ と XAML を使用し、一連のファイルをディスクに書き込みますを UWP アプリを検討してください。 次の例は、`when_all` と `observe_all_exceptions` を使用して、プログラムがすべての例外を確認する方法を示します。  
   
  [!code-cpp[concrt-eh-when_all#2](../../parallel/concrt/codesnippet/cpp/task-parallelism-concurrency-runtime_11.cpp)]  
   
@@ -219,10 +222,10 @@ ms.lasthandoff: 12/21/2017
   
 > [!TIP]
 
-> `when_all` は、その結果、`task` を生成する、非ブロッキング関数です。 異なり[task::wait](reference/task-class.md#wait)、安全にこの関数を呼び出すことが、 [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] ASTA (アプリケーション STA) スレッド上のアプリです。  
+> `when_all` は、その結果、`task` を生成する、非ブロッキング関数です。 異なり[task::wait](reference/task-class.md#wait)ASTA (アプリケーション STA) スレッドで UWP アプリでこの関数の呼び出しも安全です。  
 
   
-###  <a name="when-any"></a>When_any 関数  
+###  <a name="when-any">When_any 関数</a>  
  `when_any` 関数は、一連のタスクの最初のタスクの完了後に完了するタスクを生成します。 この関数を返します、 [std::pair](../../standard-library/pair-structure.md)完了したタスクの結果と、セット内には、そのタスクのインデックスを含むオブジェクト。  
   
  `when_any` 関数は、特に次のシナリオに役立ちます。  
@@ -249,9 +252,9 @@ ms.lasthandoff: 12/21/2017
  `auto t = t1 || t2; // same as when_any`  
   
 > [!TIP]
->  `when_all` と同様に、`when_any` は非ブロッキングであり、ASTA スレッドの [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーションで呼び出しても安全です。  
+>  同様に`when_all`、`when_any`非ブロッキングであり、ASTA スレッドで UWP アプリでの呼び出しは安全です。  
   
-##  <a name="delayed-tasks"></a>遅延したタスク実行  
+##  <a name="delayed-tasks">遅延したタスク実行</a>  
  条件が満たされるまで、または外部イベントに応答してタスクを開始するまで、タスクの実行を遅延する必要がある場合があります。 たとえば、非同期プログラミングでは、I/O 完了のイベントに応答してタスクを開始する必要があります。  
   
  これを実現する 2 とおりの方法は、継続を使用するか、タスクを開始してタスクの処理関数の中でイベントを待つことです。 しかし、これらの方法の 1 つを使用できない場合もあります。 たとえば、継続を作成するためには、継続元タスクが必要です。 ただし、継続元タスクがない、作成、*タスクの完了イベント*後で使用可能になったらときに、継続元タスクには、その完了イベントをチェーンとします。 また、待機中のタスクはスレッドをブロックするため、タスクの完了イベントを使用して、非同期操作が完了したときに処理を行い、スレッドを解放することもできます。  
@@ -260,7 +263,7 @@ ms.lasthandoff: 12/21/2017
   
  使用する例については`task_completion_event`遅延後に完了するタスクを実装するのを参照してください。[する方法: タスクをその完了後に、遅延作成](../../parallel/concrt/how-to-create-a-task-that-completes-after-a-delay.md)です。  
   
-##  <a name="task-groups"></a>タスク グループ  
+##  <a name="task-groups">タスク グループ</a>  
  A*タスク グループ*タスクのコレクションを編成します。 タスク グループでは、ワーク スティーリング キューにタスクを置きます。 スケジューラはこのキューからタスクを削除し、使用できるコンピューティング リソースでそのタスクを実行します。 タスク グループにタスクを追加した場合、すべてのタスクが終了するまで待機することも、まだ開始されていないタスクを取り消すこともできます。  
   
  PPL は、使用、 [concurrency::task_group](reference/task-group-class.md)と[concurrency::structured_task_group](../../parallel/concrt/reference/structured-task-group-class.md)タスク グループを表すクラスと[concurrency::task_handle](../../parallel/concrt/reference/task-handle-class.md)クラスこれらのグループで実行されるタスクを表すです。 `task_handle` クラスは、処理を行うコードをカプセル化します。 `task` クラスと同様に、この処理関数には、ラムダ関数、関数ポインター、または関数オブジェクトを使用できます。 通常、`task_handle` オブジェクトを直接操作する必要はありません。 代わりに、タスク グループに処理関数を渡します。タスク グループによって `task_handle` オブジェクトが作成および管理されます。  
@@ -277,7 +280,7 @@ ms.lasthandoff: 12/21/2017
   
  また、ランタイムでは、例外処理モデルを使用することによって、タスクから例外をスローし、関連するタスク グループが終了するまで待機しているときにその例外を処理できます。 この例外処理モデルの詳細については、次を参照してください。[例外処理](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)です。  
   
-##  <a name="comparing-groups"></a>Task_group structured_task_group の違いを比較します。  
+##  <a name="comparing-groups">Task_group structured_task_group の違いを比較します。</a>  
  `task_group` クラスの代わりに `parallel_invoke` または `structured_task_group` を使用することが推奨されますが、可変個のタスクを実行する並列アルゴリズムやキャンセル処理のサポートが必要な並列アルゴリズムを記述する場合など、`structured_task_group` を使用した方がよい場合もあります。 ここでは、`task_group` クラスと `structured_task_group` クラスの違いについて説明します。  
   
  `task_group` クラスはスレッド セーフです。 したがって、複数のスレッドから `task_group` オブジェクトにタスクを追加したり、複数のスレッドから `task_group` オブジェクトに対して待機や取り消しの操作を行ったりしてもかまいません。 `structured_task_group` オブジェクトの構築と破棄は、同じ構文のスコープで行う必要があります。 また、`structured_task_group` オブジェクトに対する操作はすべて同じスレッドで行う必要があります。 このルールの例外は、 [concurrency::structured_task_group::cancel](reference/structured-task-group-class.md#cancel)と[:is_canceling](reference/structured-task-group-class.md#is_canceling)メソッドです。 子タスクでこれらのメソッドを呼び出すことで、任意のタイミングで親タスク グループを取り消したり、取り消し処理をチェックしたりできます。  
@@ -313,7 +316,7 @@ Message from task: 42
   
  使用する方法を示す完全な例については、`parallel_invoke`アルゴリズムを参照してください[する方法: parallel.invoke を使用して並列並べ替えルーチンを記述する](../../parallel/concrt/how-to-use-parallel-invoke-to-write-a-parallel-sort-routine.md)と[する方法: 並列操作を実行するするparallel.invokeを使用して](../../parallel/concrt/how-to-use-parallel-invoke-to-execute-parallel-operations.md). 使用する完全な例については、`task_group`を参照してください非同期フューチャを実装するクラス[チュートリアル: フューチャの実装](../../parallel/concrt/walkthrough-implementing-futures.md)です。  
   
-##  <a name="robust"></a>信頼性の高いプログラミング  
+##  <a name="robust">信頼性の高いプログラミング</a>  
  タスク、タスク グループ、および並列アルゴリズムを使用する場合は、キャンセル処理と例外処理の役割を十分に理解しておいてください。 たとえば、並列処理ツリーでタスクを取り消すと、子タスクも実行されなくなります。 そのため、アプリケーションで重要となる操作 (リソースの解放など) が子タスクのいずれかで実行されるような場合に問題となります。 また、子タスクが例外をスローすると、その例外がオブジェクトのデストラクターを介して反映され、アプリケーションで未定義の動作が発生する可能性があります。 これらのポイントを示す例を参照してください、[理解する方法のキャンセル機能と例外処理に影響を与えるオブジェクトが破棄ついて](../../parallel/concrt/best-practices-in-the-parallel-patterns-library.md#object-destruction)並列パターン ライブラリに関するベスト プラクティス」セクション。 取り消し処理および PPL での例外処理モデルに関する詳細については、次を参照してください。[キャンセル](../../parallel/concrt/cancellation-in-the-ppl.md)と[例外処理](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)です。  
   
 ## <a name="related-topics"></a>関連トピック  

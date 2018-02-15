@@ -6,7 +6,7 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - AGILE/Platform::Platform
 - AGILE/Platform::Platform::Agile::Agile
@@ -14,19 +14,22 @@ f1_keywords:
 - AGILE/Platform::Platform::Agile::GetAddressOf
 - AGILE/Platform::Platform::Agile::GetAddressOfForInOut
 - AGILE/Platform::Platform::Agile::Release
-dev_langs: C++
-helpviewer_keywords: Platform::Agile
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Agile
 ms.assetid: e34459a9-c429-4c79-97fd-030c43ca4155
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 71498f2a075bed78fab2bb073e5c93c62936c29d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2c670ffc10858e709129caf9fabf80b656cbdb18
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformagile-class"></a>Platform::Agile クラス
 アジャイル オブジェクトとして MashalingBehavior=Standard を含むオブジェクトを表します。これはランタイム スレッドの例外の頻度を大幅に減らします。 `Agile<T>` を使うと、非アジャイル オブジェクトによる同じスレッドや別のスレッドの呼び出しや、同じスレッドや別のスレッドによる非アジャイル オブジェクトの呼び出しができるようになります。 詳細については、次を参照してください。[スレッドとマーシャ リング](../cppcx/threading-and-marshaling-c-cx.md)です。  
@@ -53,7 +56,7 @@ class Agile;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Agile::agile](#ctor)|アジャイル クラスの新しいインスタンスを初期化します。|  
+|[Agile::Agile](#ctor)|アジャイル クラスの新しいインスタンスを初期化します。|  
 |[Agile::~Agile デストラクター](#dtor)|Agile クラスの現在のインスタンスを破棄します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
@@ -86,7 +89,7 @@ class Agile;
   
  **ヘッダー:** agile.h  
 
-## <a name="ctor"></a>Agile::agile コンス トラクター
+## <a name="ctor"></a>  Agile::agile コンス トラクター
 アジャイル クラスの新しいインスタンスを初期化します。  
   
 ## <a name="syntax"></a>構文  
@@ -113,7 +116,7 @@ Agile(Agile<T>&& object);
 ### <a name="remarks"></a>コメント  
  このコンストラクターの最初のバージョンは、既定のコンストラクターです。 2 番目のバージョンは、`object` パラメーターで指定されたオブジェクトから新しいアジャイル インスタンス クラスを初期化します。 3 番目のバージョンは、コピー コンストラクターです。 4 番目のバージョンは、移動コンストラクターです。 このコンストラクターは例外をスローできません。  
 
-## <a name="dtor"></a>Agile:: ~ Agile デストラクター
+## <a name="dtor"></a>  Agile:: ~ Agile デストラクター
 Agile クラスの現在のインスタンスを破棄します。  
   
 ## <a name="syntax"></a>構文  
@@ -126,7 +129,7 @@ Agile クラスの現在のインスタンスを破棄します。
 ### <a name="remarks"></a>コメント  
  このデストラクターは、現在の Agile オブジェクトによって表されるオブジェクトも解放します。  
   
-## <a name="get"></a>Agile::get メソッド
+## <a name="get"></a>   Agile::get メソッド
 現在の Agile オブジェクトによって表されるオブジェクトへのハンドルを返します。  
   
 ## <a name="syntax"></a>構文  
@@ -142,7 +145,7 @@ Agile クラスの現在のインスタンスを破棄します。
   
  戻り値の型は、実際には非公開の内部型です。 宣言された変数に割り当てるには、戻り値を保持する便利な手段、**自動**推論キーワードを入力します。 たとえば、`auto x = myAgileTvariable->Get();` のようにします。  
   
-## <a name="getaddressof"></a>Agile::getaddressof メソッド
+## <a name="getaddressof"></a>  Agile::getaddressof メソッド
 現在の Agile オブジェクトを再初期化し、 `T`型のオブジェクトへのハンドルのアドレスを返します。  
   
 ## <a name="syntax"></a>構文  
@@ -163,7 +166,7 @@ throw();
 ### <a name="remarks"></a>コメント  
  この操作は、型のオブジェクトの現在の表現を解放`T`以外の場合は、アジャイル オブジェクトのデータ メンバーを再初期化以外の場合は、現在のスレッド コンテキストを取得し、表すことができるオブジェクトへのハンドル変数のアドレスを返します、非アジャイル オブジェクトです。 Agile クラス インスタンス オブジェクトを表すためには、代入演算子を使用して ([agile::operator =](#operator-assign)) に、アジャイル クラスのインスタンスにオブジェクトを割り当てます。  
 
-## <a name="getaddressofforinout"></a>Agile::getaddressofforinout メソッド
+## <a name="getaddressofforinout"></a>  Agile::getaddressofforinout メソッド
 現在の Agile オブジェクトによって表されるオブジェクトへのハンドルのアドレスを返します。  
   
 ## <a name="syntax"></a>構文  
@@ -184,7 +187,7 @@ T^* GetAddressOfForInOut()  throw();
 ### <a name="remarks"></a>コメント  
  この操作は、現在のスレッドのコンテキストを取得し、基になるオブジェクトへのハンドルのアドレスを返します。  
 
-## <a name="release"></a>Agile::release メソッド
+## <a name="release"></a>  Agile::release メソッド
 現在の Agile オブジェクトの基になるオブジェクトとコンテキストを破棄します。  
   
 ## <a name="syntax"></a>構文  
@@ -198,7 +201,7 @@ void Release() throw();
 ### <a name="remarks"></a>コメント  
  現在の Agile オブジェクトの基になるオブジェクトとコンテキスト (存在する場合) が破棄され、Agile オブジェクトの値が null に設定されます。  
 
-## <a name="operator-arrow"></a>Agile::operator-&gt;演算子
+## <a name="operator-arrow"></a>  Agile::operator-&gt;演算子
 現在の Agile オブジェクトによって表されるオブジェクトへのハンドルを取得します。  
   
 ## <a name="syntax"></a>構文  
@@ -214,7 +217,7 @@ const throw();
   
  この演算子は、実際には、非公開の内部型を返します。 宣言された変数に割り当てるには、戻り値を保持する便利な手段、**自動**推論キーワードを入力します。  
 
-## <a name="operator-assign"></a>Agile::operator = 演算子
+## <a name="operator-assign"></a>  Agile::operator = 演算子
 指定されたオブジェクトを現在のアジャイル オブジェクトに割り当てます。  
   
 ## <a name="syntax"></a>構文  

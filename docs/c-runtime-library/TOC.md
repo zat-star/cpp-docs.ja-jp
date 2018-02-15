@@ -1,7 +1,7 @@
 # [C ランタイム ライブラリ リファレンス](c-run-time-library-reference.md)
 # [CRT ライブラリの機能](crt-library-features.md)
 ## [互換性](compatibility.md)
-### [Windows ストア アプリ、Windows ランタイム、および C ランタイム](windows-store-apps-the-windows-runtime-and-the-c-run-time.md)
+### [UWP アプリ、Windows ランタイム、および C ランタイム](windows-store-apps-the-windows-runtime-and-the-c-run-time.md)
 ### [ANSI C 準拠](ansi-c-compliance.md)
 ### [UNIX](unix.md)
 ### [Windows プラットフォーム (CRT)](windows-platforms-crt.md)

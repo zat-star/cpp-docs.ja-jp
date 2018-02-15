@@ -6,18 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: b67bee8a-b526-4872-969e-ef22724e88fe
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: f5c0db625db458bf4fb530ba4b07e742b1aad964
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1f7c34e5c48e264c1a3c9ab3bd8cba7c896e1962
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="type-system-ccx"></a>型システム (C++/CX)
 Windows ランタイムのアーキテクチャを使用するを使用することが C + + CX、Visual Basic、Visual c# および JavaScript アプリやコンポーネントを直接 Windows API にアクセスし、その他の Windows ランタイム アプリおよびコンポーネントと相互運用を書き込めません。 C++ で記述されているユニバーサル Windows プラットフォーム アプリは、CPU で直接実行するネイティブ コードにコンパイルされます。 C# または Visual Basic で記述されているユニバーサル Windows プラットフォーム アプリでは、Microsoft intermediate language (MSIL) にコンパイルされ、共通言語ランタイム (CLR) で実行します。 JavaScript で記述されているユニバーサル Windows プラットフォーム アプリは、実行時環境で実行します。 Windows ランタイムのオペレーティング システム コンポーネント自体では、C++ で記述され、ネイティブ コードとして実行することができます。 これらすべてのコンポーネントおよびユニバーサル Windows プラットフォーム アプリは、Windows ランタイム アプリケーション バイナリ インターフェイス (ABI) を通じて直接通信します。  

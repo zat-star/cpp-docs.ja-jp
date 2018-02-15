@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -27,7 +28,8 @@ f1_keywords:
 - VC.Project.VCConfiguration.AppSupport
 - VC.Project.VCConfiguration.ToolFiles
 - VC.Project.VCConfiguration.useOfATL
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Clean Build option
 - output files, setting directory
@@ -35,12 +37,13 @@ helpviewer_keywords:
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: bbe19414dbbe664f15ea2bbbc35a26827ac5b831
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 772192a4b367760e85bb1631f1ef7b50650af0c1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="general-property-page-project"></a>[全般] プロパティ ページ (プロジェクト)
 
@@ -66,7 +69,7 @@ Windows 7 または Windows Vista を対象とする値を使用**8.1**Windows S
 
 Windows XP および Windows 2003 Server のプロジェクトをビルドし、ライブラリの現在のバージョンを使用する Visual Studio に含まれる Windows XP プラットフォーム ツールセットをインストールすることができます。 詳細を取得して、このプラットフォーム ツールセットを使用する方法については、次を参照してください。 [Windows XP 用プログラムを構成する](../build/configuring-programs-for-windows-xp.md)です。 プラットフォーム ツールセットの変更に関する詳細については、「[方法: ターゲット フレームワークおよびプラットフォームのツールセットを変更する](../build/how-to-modify-the-target-framework-and-platform-toolset.md)」を参照してください。
 
-**ターゲット プラットフォームの最小値。バージョン**  
+**ターゲット プラットフォームの最小値。バージョン  
 プロジェクトを実行できるプラットフォームの最小バージョンを指定します。 このプロパティは、Windows ユニバーサル プロジェクトなどのプロジェクトの種類がサポートしている場合のみ表示されます。 アプリが最新の Windows SDK バージョンの機能を利用できるにもかかわらず、おそらく機能の一部が失われているためこれらの機能を使用せずに以前のバージョンで実行している場合、これら 2 つのプロパティの値は異なる可能性があります。 このような場合は、コードで実行時に実行しているプラットフォームのバージョンを確認する必要があります。古いバージョンのプラットフォームでは使用できない機能は使用しないでください。
 
 Visual C++ ではこのオプションを適用しないことに注意してください。 これは、C# や JavaScript など、他の言語との一貫性のため、およびプロジェクトを使用する他のユーザーのガイドとして含められています。  最小バージョンで使用できない機能を使用する場合、Visual C++ ではエラーは生成されません。
@@ -149,7 +152,7 @@ _UNICODE または _MBCS を設定する必要があるかどうかを定義し�
 指定します、 [/GL](../build/reference/gl-whole-program-optimization.md)コンパイラ オプションと[/LTCG](../build/reference/ltcg-link-time-code-generation.md)リンカー オプション。 既定では、これはデバッグ構成で無効になっているあり、製品の構成を有効になっています。
 
 **Windows ストア アプリのサポート**  
-このプロジェクトが Windows ストア アプリをサポートしているかどうかを指定します。 詳細については、次を参照してください。 [/ZW (Windows ランタイムのコンパイル)](../build/reference/zw-windows-runtime-compilation.md)、および Windows デベロッパー センターです。
+このプロジェクトが Windows ランタイム (ユニバーサル Windows プラットフォーム) アプリをサポートしているかどうかを指定します。 詳細については、次を参照してください。 [/ZW (Windows ランタイムのコンパイル)](../build/reference/zw-windows-runtime-compilation.md)、および Windows デベロッパー センターです。
 
 ## <a name="see-also"></a>関連項目
 

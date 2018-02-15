@@ -19,11 +19,11 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 01d4898b2d67de4b23d31227e572c0f270aa6f37
-ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
+ms.openlocfilehash: 0c0ae9514736b66be104198c95c3764772a87ef8
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ide-and-tools-for-visual-c-development"></a>IDE と Visual C++ 開発用ツール
 
@@ -115,7 +115,7 @@ Visual Studio には、ネイティブ C++ の単体テスト フレームワー
 
 ## <a name="deploy-completed-applications"></a>完成したアプリケーションを展開します。
 
-Windows ストアを通じて顧客向けに、UWP アプリを展開する、**プロジェクト** > **ストア**メニュー オプション。 CRT の配置は、水面下で自動的に処理されます。 詳細については、「 [アプリの販売](http://go.microsoft.com/fwlink/p/?LinkId=262280)」を参照してください。
+Microsoft ストアを通じて顧客向けに、UWP アプリを展開する、**プロジェクト** > **ストア**メニュー オプション。 CRT の配置は、水面下で自動的に処理されます。 詳細については、「 [アプリの販売](http://go.microsoft.com/fwlink/p/?LinkId=262280)」を参照してください。
 
 ネイティブ C++ デスクトップ アプリケーションを別のコンピューターに配置する場合、アプリケーション自体と、そのアプリケーションが依存するすべてのライブラリ ファイルをインストールする必要があります。 アプリケーションと共にユニバーサル C ランタイム (UCRT) を展開する次の 3 つの方法があります: 集中配置、ローカル配置、または静的にリンクします。 詳細については、次を参照してください。[デスクトップ アプリケーションの配置](../ide/deploying-native-desktop-applications-visual-cpp.md)です。
 

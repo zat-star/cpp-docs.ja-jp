@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - marshaling [C++], platform invoke
 - C++ Interop, platform invoke
@@ -15,25 +17,25 @@ helpviewer_keywords:
 - platform invoke [C++], marshaling in C++
 - data marshaling [C++], platform invoke
 ms.assetid: 18e5218c-6916-48a1-a127-f66e22ef15fc
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - dotnet
-ms.openlocfilehash: d05c88167629bcb6bf86dc600afde0ea3162064f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 15c6d458af041479d14f41088f0038c519c6aa89
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="using-explicit-pinvoke-in-c-dllimport-attribute"></a>C++ での明示的な PInvoke (DllImport 属性) の使用方法 
 .NET Framework では、明示的なプラットフォーム呼び出し (PInvoke) 機能に、マネージ アプリケーションが DLL 内部にパッケージ化されているアンマネージ関数を呼び出すことができるようにする `Dllimport` 属性を備えています。 明示的な PInvoke は、アンマネージ API が DLL としてパッケージ化され、ソース コードが利用できない場合に必要です。 たとえば、Win32 関数の呼び出しには、PInvoke が必要です。 それ以外の場合、暗黙的な P を使用して {Invoke; 参照してください[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)詳細についてはします。  
   
  PInvoke を機能させるには、<xref:System.Runtime.InteropServices.DllImportAttribute> を使用します。 この属性は、その最初の引数として DLL 名を使用し、使用する各 DLL エントリ ポイントの関数宣言の前に置かれます。 関数のシグネチャは、DLL によってエクスポートされた関数名に一致する必要があります (ただし、型変換によっては、マネージ型を使用して `DllImport` 宣言を定義することで、暗黙的に実行できるものもあります)。  
   
- その結果、これは、必要な遷移コード (または、サンク) と単純データ変換を含む各ネイティブ DLL 関数のマネージ エントリ ポイントになります。 その後、マネージ関数は、これらのエントリ ポイントを介して DLL を呼び出します。 PInvoke の結果が完全に管理され、明示的な PInvoke はサポートされても、モジュールに挿入コード**/clr**、 **/clr: 純粋な**、および**/clr:safe**コンパイルします。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。 詳細については、次を参照してください。[純粋なコードと検証可能なコード (C + + CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)です。  
+ その結果、これは、必要な遷移コード (または、サンク) と単純データ変換を含む各ネイティブ DLL 関数のマネージ エントリ ポイントになります。 その後、マネージ関数は、これらのエントリ ポイントを介して DLL を呼び出します。 PInvoke の結果として、モジュールに挿入されたコードは完全に管理します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   

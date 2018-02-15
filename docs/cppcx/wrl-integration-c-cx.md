@@ -6,18 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 3ad43894-c574-477c-ad3e-240301f381d4
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 859a25f4fc9698899f1139038e161d28da06220e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 234141df693f67b97bf2ec83bd9063f69addeb0f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="wrl-integration-ccx"></a>WRL 統合 (C++/CX)
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 12/21/2017
 
 次のコード スニペットでは、WRL を使用する方法を示しますと[!INCLUDE[cppwrl_short](includes/cppwrl-short-md.md)]を使用する[!INCLUDE[wrt](includes/wrt-md.md)]クラスし、メタデータ ファイルを調べます。
 
-例が内のコード スニペットから引用した、[構築 Windows ストア アプリのフォーラム](http://social.msdn.microsoft.com/Forums/winappswithnativecode/thread/211ef583-db11-4e55-926b-6d9ab53dbdb4)です。 このコード スニペットの作成者は、次の免責条項と条件を提示しています。
+この例は、構築 Microsoft ストア アプリのフォーラムでのコード スニペットから取得されます。 このコード スニペットの作成者は、次の免責条項と条件を提示しています。
 
 1. C++ には [!INCLUDE[wrt](includes/wrt-md.md)] 型に反映させる特定の API が用意されていませんが、型の Windows メタデータ ファイル (.winmd) は CLR メタデータ ファイルに完全に準拠しています。 Windows は、指定された型の .winmd ファイルを取得するために新しいメタデータ検出 API (RoGetMetaDataFile) を提供しています。 ただし、クラスをインスタンス化できないため、これらの API は C++ 開発者にはあまり役に立ちません。
 

@@ -6,23 +6,26 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::Type::GetTypeCode
 - VCCORLIB/Platform::Type::FullName
-dev_langs: C++
-helpviewer_keywords: Platform::Type Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Type Class
 ms.assetid: d6b03f1e-b240-49b9-a08e-53a460030475
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: c292426b9d04fd5b3d9785224f9b2d48f129f0db
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cabfa3d382d44448b2c06d0a16864a4fdd0e66bf
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformtype-class"></a>Platform::Type クラス
 型に関するランタイム情報 (文字列名と型コード) を含みます。 呼び出すことによって取得[object::gettype](../cppcx/platform-object-class.md#gettype)任意のオブジェクトでまたはを使用して、または、 [typeid](../windows/typeid-cpp-component-extensions.md)演算子はクラスまたは構造体の名前にします。  
@@ -50,7 +53,7 @@ public ref class Platform::Type :
   
 |||  
 |-|-|  
-|[Type::fullname](#fullname)|返します、 [platform::string Class](../cppcx/platform-string-class.md)^ 型の完全修飾名を表し、を使用している。 (ドット) を区切り記号としてできません:: (二重のコロン) — たとえば、`MyNamespace.MyClass`です。|  
+|[Type::FullName](#fullname)|返します、 [platform::string Class](../cppcx/platform-string-class.md)^ 型の完全修飾名を表し、を使用している。 (ドット) を区切り記号としてできません:: (二重のコロン) — たとえば、`MyNamespace.MyClass`です。|  
   
 ## <a name="conversion-operators"></a>変換演算子  
   
@@ -111,7 +114,7 @@ Platform::TypeCode GetTypeCode();
 ### <a name="remarks"></a>コメント  
  GetTypeCode() メンバー メソッドの相当するものは、`typeid`プロパティです。
 
-## <a name="tostring"></a>Type::ToString メソッド
+## <a name="tostring">Type::ToString メソッド</a>
 取得する型の名前。  
   
 ### <a name="syntax"></a>構文  

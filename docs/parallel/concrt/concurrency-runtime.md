@@ -4,25 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Concurrency Runtime, getting started
 - ConcRT (see Concurrency Runtime)
 - Concurrency Runtime
 ms.assetid: 874bc58f-8dce-483e-a3a1-4dcc9e52ed2c
-caps.latest.revision: "40"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: e3adff365269ad9dae2d6b850470a869250e3dd8
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3d7822c552345f9492dcca6822a133290c2a82be
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="concurrency-runtime"></a>同時実行ランタイム
 C++ の同時実行ランタイムにより、信頼性が高く、スケーラブルで、応答性の高い並行アプリケーションを作成できます。 このフレームワークでは抽象のレベルが引き上げられるので、同時実行に関連するインフラストラクチャの詳細を管理する必要はありません。 また、アプリケーションのサービスの品質への要求を満たすスケジューリング ポリシーを指定するためにも使用できます。 同時実行ランタイムを初めて使用する場合に役立つ情報が記載されている次の各ドキュメントを活用してください。  
@@ -67,13 +70,13 @@ C++ の同時実行ランタイムにより、信頼性が高く、スケーラ�
 |[PPL における取り消し処理](cancellation-in-the-ppl.md)|開始の方法やキャンセル要求への応答の方法など、PPL でのキャンセル処理の役割について説明します。|  
 |[方法: キャンセル処理を使用して並列ループを中断する](../../parallel/concrt/how-to-use-cancellation-to-break-from-a-parallel-loop.md)<br /><br /> [方法: 例外処理を使用して並列ループを中断する](../../parallel/concrt/how-to-use-exception-handling-to-break-from-a-parallel-loop.md)|データ並列処理を取り消すための 2 とおりの方法を示します。|  
   
-## <a name="windows-store-apps"></a>Windows ストア アプリ  
+## <a name="universal-windows-platform-apps"></a>ユニバーサル Windows プラットフォーム アプリ  
   
 |||  
 |-|-|  
-|[C++ における Windows ストア アプリ用の非同期操作の作成](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)|同時実行ランタイムを使用して [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーションの非同期操作を生成する場合に注意する重要な点について説明します。|  
-|[チュートリアル: タスクおよび XML HTTP 要求を使用した接続](../../parallel/concrt/walkthrough-connecting-using-tasks-and-xml-http-requests.md)|PPL タスクを `IXMLHTTPRequest2` および `IXMLHTTPRequest2Callback` インターフェイスとまとめて、HTTP GET および POST 要求を [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーションの Web サービスに送信する方法について説明します。|  
-|[Windows ストア アプリのサンプル](http://code.msdn.microsoft.com/windowsapps)|ダウンロード可能な [!INCLUDE[win8](../../build/reference/includes/win8_md.md)]のコード サンプルおよびデモ アプリケーションが含まれます。 C++ のサンプルでは、UX の応答性を保つためにバックグラウンドでデータを処理する PPL のタスクなど、同時実行ランタイムの機能を使用します。|  
+|[UWP アプリの C++ で非同期操作の作成](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)|同時実行ランタイムを使用して、UWP アプリでの非同期操作を生成するときに注意する重要な点について説明します。|  
+|[チュートリアル: タスクおよび XML HTTP 要求を使用した接続](../../parallel/concrt/walkthrough-connecting-using-tasks-and-xml-http-requests.md)|PPL タスクを結合する方法を示しています、`IXMLHTTPRequest2`と`IXMLHTTPRequest2Callback`インターフェイス UWP アプリでの web サービスに HTTP GET および POST 要求を送信します。|  
+|[Windows ランタイム アプリのサンプル](http://code.msdn.microsoft.com/windowsapps)|ダウンロード可能なコード サンプルおよびデモを含む Windows のアプリ 8.x です。 C++ のサンプルでは、UX の応答性を保つためにバックグラウンドでデータを処理する PPL のタスクなど、同時実行ランタイムの機能を使用します。|  
   
 ## <a name="dataflow-programming-in-the-asynchronous-agents-library"></a>非同期エージェント ライブラリでのデータ フロー プログラミング  
   
@@ -108,7 +111,7 @@ C++ の同時実行ランタイムにより、信頼性が高く、スケーラ�
   
 |||  
 |-|-|  
-|[Hilo での非同期プログラミング パターンとヒント (C++ と XAML を使った Windows ストア アプリ)](http://msdn.microsoft.com/library/windows/apps/jj160321.aspx)|C++ および XAML を使用した [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーションである Hilo で、同時実行ランタイムを使用して非同期操作を実行する方法について学習します。|  
+|[Hilo での非同期プログラミング パターンとヒント (C++ と XAML を使った Windows ストア アプリ)](http://msdn.microsoft.com/library/windows/apps/jj160321.aspx)|C++ と XAML を使った Windows ランタイム アプリである Hilo での非同期操作を実装する、同時実行ランタイムを使用して方法について説明します。|  
 |[同時実行ランタイムと Visual Studio 2010 での並列パターン ライブラリのサンプル コード](http://go.microsoft.com/fwlink/p/?linkid=183875)|同時実行ランタイムの例を示すサンプル アプリケーションおよびユーティリティを提供します。|  
 |[ネイティブ コードのブログでの並列プログラミング](http://go.microsoft.com/fwlink/p/?linkid=183873)|同時実行ランタイムでの並列プログラミングに関する詳細なブログ記事を別途紹介しています。|  
 |[C++ とネイティブ コードのフォーラムでの並列コンピューティング](http://go.microsoft.com/fwlink/p/?linkid=183874)|同時実行ランタイムに関するコミュニティ ディスカッションに参加できます。|  

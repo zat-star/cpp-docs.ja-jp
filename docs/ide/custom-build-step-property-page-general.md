@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -14,21 +15,23 @@ f1_keywords:
 - VC.Project.VCCustomBuildStep.Outputs
 - VC.Project.VCCustomBuildStep.Message
 - VC.Project.VCCustomBuildStep.Command
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - project properties, custom build step
 - custom build step (general)
 ms.assetid: bd319741-0491-46c4-a428-7c61b4b46a02
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 63e599a2a24716de2de3e23cb3a7c2342b036b81
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2e57d6cf00843cd6604ef269235602ea1b5b5e9b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="custom-build-step-property-page-general"></a>[カスタム ビルド ステップ] プロパティ ページ: 全般
 プロジェクトにおけるプロジェクト構成とターゲット プラットフォームの組み合わせごとに、プロジェクトをビルドするときに実行するカスタム ステップを指定できます。  
@@ -52,7 +55,7 @@ ms.lasthandoff: 12/21/2017
  ビルド プロセスでカスタム ビルド ステップが実行されるタイミングを、表示されているターゲットを基準にして定義します。 最もよく表示されるターゲットは BuildGenerateSources、BuildCompile、および BuildLink です。これらはビルド プロセスの主なステップを表しています。 また、Midl、CLCompile、および Link もよく表示されるターゲットです。  
   
  [出力をコンテンツとして扱う]  
- このオプションは、.appx パッケージにすべてのコンテンツ ファイルが含まれる Windows ストアまたは Windows Phone アプリに対してのみ意味を持ちます。  
+ このオプションでは、ユニバーサル Windows プラットフォーム アプリまたは Windows Phone アプリ、.appx パッケージ内のすべてのコンテンツ ファイルを含む無効だけです。  
   
 ### <a name="to-specify-a-custom-build-step"></a>カスタム ビルド ステップを指定するには  
   

@@ -27,11 +27,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4e4336f200f736ea7656af11c7c7c43ca32f27f9
-ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
+ms.openlocfilehash: 9b30bea93163549373759ea8980650717d49bbac
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="choosing-a-deployment-method"></a>配置方法の選択
 Visual C アプリケーションは自己完結型で、コピー コマンドを使用して展開することができます、しない限り、展開には、Windows インストーラーを使用することをお勧めします。 Windows インストーラーでは、インストール、修復、およびアンインストールのほか、アプリケーション ファイル、依存関係、およびレジストリ エントリの分割不可能な更新もサポートされています。  
@@ -45,7 +45,7 @@ Visual C アプリケーションは自己完結型で、コピー コマンド�
 ## <a name="redistributing-visual-c-libraries"></a>Visual C++ ライブラリの再配布  
  ご利用の配置に、再頒布用にライセンスされた任意のバージョンの Visual C++ ライブラリを再頒布できます。 配置する方法は 3 つあります。  
   
--   %Windir%\system32 に共有 Dll として Visual C ライブラリをインストールする再頒布可能パッケージを使用して一元的な展開\\です。 (このフォルダーにインストールするには管理者権限が必要です)。アプリケーションをターゲット コンピューターにインストールする前に、再頒布可能パッケージを実行するスクリプトまたはセットアップ プログラムを作成できます。 再頒布可能パッケージは、x86 プラットフォーム、x64 プラットフォーム、および ARM プラットフォーム (VCRedist_x86.exe、VCRedist_x64.exe、または VCRedist_arm.exe) で使用できます。 Visual Studio には、%programfiles (x86) %\Microsoft Visual Studio でのこれらのパッケージが含まれています`version`\VC\Redist\\`locale ID`\\です。 ダウンロードすることも、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/p/?linkid=132793)です。 (検索、ダウンロード センターで、"Visual C 再頒布可能パッケージ*Visual Studio のバージョンと更新*"アプリケーションに一致します。 たとえば、Visual Studio 2012 更新プログラム 4 を使用してアプリケーションをビルドした場合は、"Visual C++ 再頒布可能パッケージ 2012 更新プログラム 4" を検索します)。再頒布可能パッケージを使用する方法については、次を参照してください。[チュートリアル: Visual c 再頒布可能パッケージを、ビジュアル C++ を使ったアプリケーションを展開](../ide/deploying-visual-cpp-application-by-using-the-vcpp-redistributable-package.md)です。  
+-   %Windir%\system32 に共有 Dll として Visual C ライブラリをインストールする再頒布可能パッケージを使用して一元的な展開\\です。 (このフォルダーにインストールするには管理者権限が必要です)。アプリケーションをターゲット コンピューターにインストールする前に、再頒布可能パッケージを実行するスクリプトまたはセットアップ プログラムを作成できます。 再頒布可能パッケージは、x86 プラットフォーム、x64 プラットフォーム、および ARM プラットフォーム (VCRedist_x86.exe、VCRedist_x64.exe、または VCRedist_arm.exe) で使用できます。 Visual Studio には、%programfiles (x86) %\Microsoft Visual Studio でのこれらのパッケージが含まれています`version`\VC\Redist\\`locale ID`\\です。 ダウンロードすることも、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/p/?linkid=132793)です。 (ダウンロード センターで、検索ボックスを使用して、検索、"Visual C 再頒布可能パッケージ*Visual Studio のバージョンと更新*"アプリケーションに一致します。 たとえば、Visual Studio 2015 update 3 を使用するアプリケーションをビルドする場合、検索"Visual C 再頒布可能パッケージ 2015 update 3"です)。再頒布可能パッケージを使用する方法については、次を参照してください。[チュートリアル: Visual c 再頒布可能パッケージを、ビジュアル C++ を使ったアプリケーションを展開](../ide/deploying-visual-cpp-application-by-using-the-vcpp-redistributable-package.md)です。  
   
 -   %Windir%\system32 に共有 DLL として特定の Visual C ライブラリをインストールするの各マージ モジュールを使用した集中配置\\です。 (このフォルダーにインストールするには管理者権限が必要です)。マージ モジュールは、アプリケーションの .msi インストーラー ファイルの一部になります。 Visual C 再頒布可能マージ モジュールは、Visual Studio で、\Program Files (x86) \common モジュールに含まれて\\です。 詳細については、次を参照してください。[の再配布してモジュールを使用してマージ](../ide/redistributing-components-by-using-merge-modules.md)です。  
   

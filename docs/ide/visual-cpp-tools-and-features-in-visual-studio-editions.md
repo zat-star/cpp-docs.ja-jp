@@ -4,25 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - versions [C++]
 - Visual C++, versions
 - editions [C++]
 ms.assetid: 3d88607b-9cc4-490a-8d4c-31ee7610a26f
-caps.latest.revision: "51"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 48c1adadb674f8dac2c5e8d6422a6594cd4fa695
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2656b7e1901104b29300f5adb6647e7f3ac1db57
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="visual-c-tools-and-features-in-visual-studio-editions"></a>Visual C ツールおよび Visual Studio のエディションの機能
 Visual Studio で使用できる Visual C++ の機能を次の表に示します。 セル内の X は機能が使用できることを示し、空のセルは機能が使用できないことを示します。 かっこ内の説明は機能が制限付きで使用できることを示します。  
@@ -34,7 +37,7 @@ Visual Studio で使用できる Visual C++ の機能を次の表に示します
 |プラットフォーム|Visual Studio Express for Windows 10|Visual Studio Express for Windows Desktop|Visual Studio Community/Professional|Visual Studio Enterprise|  
 |Windows デスクトップ||x|X|x|  
 |ユニバーサル Windows プラットフォーム ((電話、タブレット、PC、Xbox、IoT、HoloLens))|x||X|x|  
-|Windows ストア 8.1|||x|x|  
+|Microsoft Store 8.1|||x|x|  
 |Windows Phone 8.0|||x|x|  
 |Android|||x|x|  
 |iOS|||x|x|  
@@ -66,10 +69,10 @@ Visual Studio で使用できる Visual C++ の機能を次の表に示します
 |--------------|---------------------------------------|-----------------------------------------------|---------------------------------------------|------------------------------|  
 |UWP、Windows 8.1、Windows Phone 8.0 向け XAML テンプレート|x||X|x|  
 |Direct3D アプリケーション|x||X|x|  
-|DLL (Windows ストア アプリ)|x||X|x|  
-|スタティック ライブラリ (Windows ストア アプリ)|x||X|x|  
+|DLL (ユニバーサル Windows)|x||X|x|  
+|スタティック ライブラリ (ユニバーサル Windows)|x||X|x|  
 |Windows ランタイム コンポーネント|x||X|x|  
-|単体テスト ライブラリ (Windows ストア アプリ)|x||X|x|  
+|単体テスト アプリ (ユニバーサル Windows)|x||X|x|  
 |ATL プロジェクト|||x|x|  
 |クラス ライブラリ (CLR)||x|X|x|  
 |CLR コンソール アプリケーション||x|X|x|  

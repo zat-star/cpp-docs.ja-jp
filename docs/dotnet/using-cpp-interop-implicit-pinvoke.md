@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - blittable types [C++]
 - platform invoke [C++], implicit
@@ -27,18 +29,18 @@ helpviewer_keywords:
 - C++ COM Interop
 - .NET [C++], porting C++ native to
 ms.assetid: 5f710bf1-88ae-4c4e-8326-b3f0b7c4c68a
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - dotnet
-ms.openlocfilehash: 3a5f6b6cd68906753bc4f9a5fbc1d9e00bad02f8
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 78d104a41f052f994a19ebe359c8d3e557274783
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="using-c-interop-implicit-pinvoke"></a>C++ Interop (暗黙の PInvoke) の使用
 その他の .NET 言語とは異なり、Visual C には相互運用性サポートと同じファイル内でも、同じアプリケーション内に存在するマネージ コードとアンマネージ コードを許可する (で、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md)プラグマ)。 これにより、Visual C++ 開発者は、他のアプリケーションの動作を妨げることなく、既存の Visual C++ アプリケーションに .NET 機能を統合できます。  
@@ -54,7 +56,7 @@ ms.lasthandoff: 12/21/2017
  明示的な PInvoke は、.NET Framework でサポートされており、ほとんどの .NET 言語で使用できます。 ただし、その名前からわかるように、C++ Interop は Visual C++ 固有の機能です。  
   
 ## <a name="c-interop"></a>C++ Interop  
- 明示的な PInvoke よりも C++ Interop を使用することをお勧めします。C++ Interop は、より優れたタイプセーフを提供し、通常、実装も容易で、アンマネージ API が変更された場合もより柔軟に対処できるからです。また、明示的な PInvoke では不可能なパフォーマンスの向上も実現できます。 ただし、C++ Interop は不可能でコンパイルするときに、アンマネージのソース コードが使用できない場合または**/clr:safe**です。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。 詳細については、次を参照してください。[純粋なコードと検証可能なコード (C + + CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)です。  
+ 明示的な PInvoke よりも C++ Interop を使用することをお勧めします。C++ Interop は、より優れたタイプセーフを提供し、通常、実装も容易で、アンマネージ API が変更された場合もより柔軟に対処できるからです。また、明示的な PInvoke では不可能なパフォーマンスの向上も実現できます。 ただし、C++ Interop はアンマネージのソース コードを使用できない場合に可能ではありません。  
   
 ## <a name="c-com-interop"></a>C++ COM Interop  
  Visual C++ がサポートしている相互運用機能は、COM コンポーネントとの相互運用性において、他の .NET 言語に比べ特に優れた効果を発揮します。 .NET Framework の制限にとらわれることがなく[Tlbimp.exe (タイプ ライブラリ インポーター)](/dotnet/framework/tools/tlbimp-exe-type-library-importer)などのデータ型およびすべての COM インターフェイスのすべてのメンバーの必須の公開の制限付きサポートは、C++ Interop により、COMサービスにアクセスするにはコンポーネントでは、別の相互運用機能アセンブリは必要ありません。 詳細については、次を参照してください。 [.NET を使用して COM](http://msdn.microsoft.com/en-us/03976661-6278-4227-a6c1-3b3315502c15)です。  

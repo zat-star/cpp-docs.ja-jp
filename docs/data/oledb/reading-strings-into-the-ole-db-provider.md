@@ -4,27 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: OLE DB providers, reading strings into
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE DB providers, reading strings into
 ms.assetid: 517f322c-f37e-4eed-bf5e-dd9a412c2f98
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: e798b3e85bbb5d6b362900c25d4c3414458ea63d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b57c9e9a71e8a0b603207a095e2bede333ed6ed6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="reading-strings-into-the-ole-db-provider"></a>OLE DB プロバイダーへの文字列の読み込み
-`RMyProviderRowset::Execute`関数は、ファイルを開き、文字列を読み取ります。 コンシューマーが、プロバイダーを呼び出すことによってファイルの名前を渡します[icommandtext::setcommandtext](https://msdn.microsoft.com/en-us/library/ms709757.aspx)です。 プロバイダーは、ファイル名を受け取るし、メンバー変数に格納`m_szCommandText`です。 `Execute`ファイル名を読み取って`m_szCommandText`です。 ファイル名が正しくないか、ファイルが使用できない場合`Execute`はエラーを返します。 ファイル、および呼び出しを開きます、それ以外の場合、`fgets`文字列を取得します。 各セットの文字列の読み取り、`Execute`ユーザー レコードのインスタンスを作成 (`CAgentMan`) と配列に配置します。  
+`RMyProviderRowset::Execute`関数は、ファイルを開き、文字列を読み取ります。 コンシューマーが、プロバイダーを呼び出すことによってファイルの名前を渡します[icommandtext::setcommandtext](https://msdn.microsoft.com/en-us/library/ms709757.aspx)です。 プロバイダーは、ファイル名を受け取るし、メンバー変数に格納`m_szCommandText`です。 `Execute` ファイル名を読み取って`m_szCommandText`です。 ファイル名が正しくないか、ファイルが使用できない場合`Execute`はエラーを返します。 ファイル、および呼び出しを開きます、それ以外の場合、`fgets`文字列を取得します。 各セットの文字列の読み取り、`Execute`ユーザー レコードのインスタンスを作成 (`CAgentMan`) と配列に配置します。  
   
  ファイルを開けない場合`Execute`返す必要があります**DB_E_NOTABLE**です。 返された場合**E_FAIL**プロバイダーが代わりに、多くのコンシューマーでは動作しませんし、OLE DB に合格しない[準拠合致テスト](../../data/oledb/testing-your-provider.md)です。  
   
@@ -35,7 +38,7 @@ ms.lasthandoff: 12/21/2017
   
 ### <a name="code"></a>コード  
   
-```  
+```cpp
 /////////////////////////////////////////////////////////////////////////  
 // MyProviderRS.h  
 class RMyProviderRowset : public CRowsetImpl< RMyProviderRowset, CAgentMan, CRMyProviderCommand>  

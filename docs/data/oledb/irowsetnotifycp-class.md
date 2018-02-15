@@ -4,42 +4,42 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: IRowsetNotifyCP
-dev_langs: C++
-helpviewer_keywords: IRowsetNotifyCP class
+f1_keywords:
+- IRowsetNotifyCP
+dev_langs:
+- C++
+helpviewer_keywords:
+- IRowsetNotifyCP class
 ms.assetid: ccef402b-94a0-4c2e-9a13-7e854ef82390
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: bae872c90a6df76e3efc1fce1aab6e77bc8fd313
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7d20a4eb011b67a743e91f1f8340c80ea146bb7c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="irowsetnotifycp-class"></a>IRowsetNotifyCP クラス
 プロバイダー サイト ポイントの接続インターフェイスを実装する[IRowsetNotify](https://msdn.microsoft.com/en-us/library/ms712959.aspx)です。  
   
-## <a name="syntax"></a>構文  
-  
-```  
-template <  
-   class T,   
-   class ReentrantEventSync = CComSharedMutex   
->  
+## <a name="syntax"></a>構文
+
+```cpp
+template <class T, class ReentrantEventSync = CComSharedMutex>  
 class IRowsetNotifyCP :   
    public IConnectionPointImpl<  
       T,   
       piid = &__uuidof(IRowsetNotify),   
-      CComDynamicUnkArray DynamicUnkArray  
-   >,  
+      CComDynamicUnkArray DynamicUnkArray>,  
    public ReentrantEventSync  
 ```  
   
@@ -67,7 +67,7 @@ class IRowsetNotifyCP :
 |[Fire_OnRowsetChange](../../data/oledb/irowsetnotifycp-fire-onrowsetchange.md)|行セット全体に影響する変更をコンシューマーに通知します。|  
   
 ## <a name="remarks"></a>コメント  
- `IRowsetNotifyCP`実装は、接続ポイントに対するリスナーに通知する関数をブロードキャスト**IID_IRowsetNotify**行セットの内容を変更します。  
+ `IRowsetNotifyCP` 実装は、接続ポイントに対するリスナーに通知する関数をブロードキャスト**IID_IRowsetNotify**行セットの内容を変更します。  
   
  実装し、登録する必要がありますもなお`IRowsetNotify`(とも呼ばれる、「シンク」) を使用して、コンシューマーで[IRowsetNotifyImpl](../../data/oledb/irowsetnotifyimpl-class.md)コンシューマーが通知を処理できるようにします。 参照してください[通知の受信](../../data/oledb/receiving-notifications.md)に関するコンシューマーのコネクション ポイントのインターフェイスを実装します。  
   

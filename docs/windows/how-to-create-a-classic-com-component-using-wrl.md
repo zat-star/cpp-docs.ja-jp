@@ -4,26 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 5efe7690-90d5-4c3c-9e53-11a14cefcb19
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 04b84a5deedc5ef112507f4e0f8ccb29af418c28
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4b665ae9ce10b4fbf5bd1baa7563e0f94b7fb991
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="how-to-create-a-classic-com-component-using-wrl"></a>方法: WRL を使用して従来の COM コンポーネントを作成する
-使用するのにさらにデスクトップ アプリで使用するための基本的な従来の COM コンポーネントを作成する Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用することができます[!INCLUDE[win8_appstore_long](../build/reference/includes/win8_appstore_long_md.md)]アプリ。 Windows ランタイム C++ テンプレート ライブラリの COM コンポーネントの作成、ATL よりも少ないコードを必要があります。 Windows ランタイム C++ テンプレート ライブラリをサポートする COM のサブセットについては、次を参照してください。 [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)です。  
+Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用すると、ユニバーサル Windows プラットフォーム (UWP) アプリを使用することだけでなく、デスクトップ アプリで使用するための基本的な従来の COM コンポーネントを作成します。 Windows ランタイム C++ テンプレート ライブラリの COM コンポーネントの作成、ATL よりも少ないコードを必要があります。 Windows ランタイム C++ テンプレート ライブラリをサポートする COM のサブセットについては、次を参照してください。 [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)です。  
   
  このドキュメントでは、Windows ランタイム C++ テンプレート ライブラリを使用して基本的な COM コンポーネントを作成する方法を示します。 ニーズに最適な配置メカニズムを使用できますが、このドキュメントでは、デスクトップ アプリから COM コンポーネントを登録して使用する基本的な方法についても説明します。  
   
@@ -39,7 +41,7 @@ ms.lasthandoff: 12/21/2017
   
      [!code-cpp[wrl-classic-com-component#1](../windows/codesnippet/CPP/how-to-create-a-classic-com-component-using-wrl_1.idl)]  
   
-5.  CalculatorComponent.cpp で、`CalculatorComponent` クラスを定義します。 `CalculatorComponent`クラスから継承[Microsoft::WRL::RuntimeClass](../windows/runtimeclass-class.md)です。 [Microsoft::WRL::RuntimeClassFlags\<ClassicCom >](../windows/runtimeclassflags-structure.md)クラスの派生元を示す[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509\(v=vs.85\).aspx)および not [IInspectable](http://msdn.microsoft.com/library/br205821\(v=vs.85\).aspx)です。 (`IInspectable`のみが使用できる[!INCLUDE[win8_appstore_short](../windows/includes/win8_appstore_short_md.md)]のアプリのコンポーネントです)。`CoCreatableClass`など関数と共に使用することができます、クラスのファクトリを作成[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615\(v=vs.85\).aspx)です。  
+5.  CalculatorComponent.cpp で、`CalculatorComponent` クラスを定義します。 `CalculatorComponent`クラスから継承[Microsoft::WRL::RuntimeClass](../windows/runtimeclass-class.md)です。 [Microsoft::WRL::RuntimeClassFlags\<ClassicCom>](../windows/runtimeclassflags-structure.md) specifies that the class derives from [IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509\(v=vs.85\).aspx) and not [IInspectable](http://msdn.microsoft.com/library/br205821\(v=vs.85\).aspx). (`IInspectable`は Windows ランタイム アプリのコンポーネントでのみ使用できます)。`CoCreatableClass`など関数と共に使用することができます、クラスのファクトリを作成[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615\(v=vs.85\).aspx)です。  
   
      [!code-cpp[wrl-classic-com-component#2](../windows/codesnippet/CPP/how-to-create-a-classic-com-component-using-wrl_2.cpp)]  
   

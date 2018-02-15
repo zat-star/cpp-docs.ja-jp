@@ -6,18 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 6cbdc1f1-e4d7-4707-a670-86365146432f
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: e36360279adf22857cfdb5b2f79ffdd7486ca008
-ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f7e54d98ac4e1398753746dcac074de53ee2e7a0
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="exceptions-ccx"></a>例外 (C++/CX)
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 01/22/2018
 
 C++ プログラムでスローおよびキャッチできます Windows ランタイム操作から派生した例外から派生した例外、 `std::exception`、またはユーザー定義型です。 など、例外をキャッチするコードが JavaScript で記述されたときに、アプリケーション バイナリ インターフェイス (ABI) の境界を越えることが場合にのみ、Windows ランタイムの例外をスローする必要があります。 非 Windows ランタイム C++ 例外には、ABI の境界に達すると、例外に変換されます、 `Platform::FailureException` E_FAIL HRESULT を表す例外。 ABI の詳細については、次を参照してください。 [C++ での Windows ランタイム コンポーネントの作成](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)です。
 
-1 つの HRESULT パラメーターを受け取るコンストラクター、または 1 つの HRESULT パラメーターと、処理を行う Windows ストア アプリに ABI を通じて渡すことができる 1 つの [Platform::String](platform-exception-class.md) ^ パラメーターを受け取るコンストラクターのいずれかを使用して、 [Platform::Exception](platform-string-class.md)を宣言することができます。 または、1 つの HRESULT パラメーター、または 1 つの HRESULT パラメーターと [パラメーターのいずれかを受け取る 2 つの](platform-exception-class.md#createexception) Exception::CreateException メソッド `Platform::String^` オーバーロードの 1 つを使用して、例外を宣言できます。
+宣言することができます、 [platform::exception](platform-exception-class.md) HRESULT パラメーター、または HRESULT パラメーターのいずれかを取得する 2 つのコンス トラクターのいずれかを使用して、 [platform::string](platform-string-class.md)^ パラメーター間で渡すことができますが、処理を行うすべての Windows ランタイム アプリに ABI。 または、1 つの HRESULT パラメーター、または 1 つの HRESULT パラメーターと [パラメーターのいずれかを受け取る 2 つの](platform-exception-class.md#createexception) Exception::CreateException メソッド `Platform::String^` オーバーロードの 1 つを使用して、例外を宣言できます。
 
 ## <a name="standard-exceptions"></a>標準の例外
 

@@ -4,26 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Concurrency Runtime, requirements
 - Concurrency Runtime, architecture
 - Concurrency Runtime, overview
 - Concurrency Runtime, lambda expressions
 ms.assetid: 56237d96-10b0-494a-9cb4-f5c5090436c5
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: ce1967b04770f53c2e1acbd49342f9080a7e3c12
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5c604ebc03204ca0dff24e2ceccdf6bb6dd543df
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="overview-of-the-concurrency-runtime"></a>同時実行ランタイムの概要
 このドキュメントでは、同時実行ランタイムの概要について説明します。 また、同時実行ランタイムの利点、使用する状況、コンポーネントどうしの対話方法、コンポーネントとオペレーティング システムやアプリケーションとの対話方法について説明します。  
@@ -42,7 +45,7 @@ ms.lasthandoff: 12/21/2017
   
 -   [Requirements](#requirements)  
   
-##  <a name="runtime"></a>同時実行ランタイムは、重要な理由  
+##  <a name="runtime">同時実行ランタイムは、重要な理由</a>  
  同時実行用のランタイムでは、同時に実行されるアプリケーションおよびアプリケーション コンポーネントに統一性と予測可能性が提供されます。 同時実行ランタイムの利点の 2 つの例としては*協調タスク スケジューリング*と*協調ブロッキング*です。  
   
  同時実行ランタイムで使用される協調タスク スケジューラには、ワーク スティーリング アルゴリズムが実装されており、作業がコンピューティング リソース間に効率的に分散されます。 たとえば、同じランタイムによって管理される 2 つのスレッドを持つアプリケーションがあるとします。 一方のスレッドがスケジュールされたタスクを完了したら、他方のスレッドから作業をオフロードできます。 このメカニズムにより、アプリケーションの全体的な作業負荷のバランスが保たれます。  
@@ -59,7 +62,7 @@ ms.lasthandoff: 12/21/2017
  ![同時実行ランタイム アーキテクチャ](../../parallel/concrt/media/concurrencyrun.png "concurrencyrun")  
   
 > [!IMPORTANT]
->  タスク スケジューラとリソース マネージャーのコンポーネントは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリから、または ppltasks.h の task クラスなどの型を使用している場合には使用できません。  
+>  タスク スケジューラおよびリソース マネージャーのコンポーネントは、ppltasks.h に含まれるタスクのクラスまたはその他の種類を使用する場合またはユニバーサル Windows プラットフォーム (UWP) アプリからご利用いただけません。  
   
  同時実行ランタイムは、高*コンポーザブル*、つまりより多くの既存の機能を組み合わせることができます。 同時実行ランタイムでは、下位のコンポーネントから、並列アルゴリズムなど多数の機能を構成します。  
   
@@ -95,7 +98,7 @@ ms.lasthandoff: 12/21/2017
   
  [[トップ](#top)]  
   
-##  <a name="lambda"></a>C++ ラムダ式  
+##  <a name="lambda">C++ ラムダ式</a>  
  同時実行ランタイムで定義されている型やアルゴリズムの多くは、C++ テンプレートとして実装されています。 こうした型やアルゴリズムの中には、処理を実行するためのルーチンをパラメーターとして受け取るものがあります。 このパラメーターには、ラムダ関数、関数オブジェクト、または関数ポインターを使用できます。 これらのエンティティとも呼びます*作業関数*または*処理ルーチン*です。  
   
  ラムダ式は、Visual C++ 言語の重要な新機能の 1 つです。ラムダ式を使用すると、並列処理用の処理関数を簡潔に定義できます。 関数オブジェクトおよび関数ポインターを使用すると、既存のコードで同時実行ランタイムを使用できます。 ただし、新しいコードを記述するときには、安全性や生産性の面で優れたラムダ式を使用することをお勧めします。  

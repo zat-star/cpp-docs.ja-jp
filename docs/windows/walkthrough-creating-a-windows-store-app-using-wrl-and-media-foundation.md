@@ -1,29 +1,31 @@
 ---
-title: "チュートリアル: WRL および Media Foundation を使用して Windows ストア アプリの作成 |Microsoft ドキュメント"
+title: "チュートリアル: WRL および Media Foundation を使用して、UWP アプリの作成 |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 0336c550-fbeb-4dc4-aa9b-660f9fc45382
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 25cc08c22ac0d33945a73744a0be6045971d9330
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a104cab9ec15872fe9e1b1c7a1eaf7ccd705f7d2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
-# <a name="walkthrough-creating-a-windows-store-app-using-wrl-and-media-foundation"></a>チュートリアル: WRL および Media Foundation を使用した Windows ストア アプリの作成
-Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用して、使用するユニバーサル Windows プラットフォーム アプリを作成する方法を学習[Microsoft メディア ファンデーション](http://msdn.microsoft.com/library/windows/apps/ms694197)です。  
+# <a name="walkthrough-creating-a-uwp-app-using-wrl-and-media-foundation"></a>チュートリアル: WRL および Media Foundation を使用して、UWP アプリの作成
+Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用して、使用するユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法を学習[Microsoft メディア ファンデーション](http://msdn.microsoft.com/library/windows/apps/ms694197)です。  
   
  この例では、Web カメラからキャプチャしたイメージにグレースケール効果を適用するカスタム メディア ファンデーション変換を作成します。 アプリでは、カスタム変換の定義のために C++ を使用し、キャプチャしたイメージを変換するコンポーネントを使用するために C# を使用しています。  
   
@@ -59,13 +61,13 @@ Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用�
   
 -   コンポーネント DLL を runtimeobject.lib にリンクします。 指定[/WINMD](../cppcx/compiler-and-linker-options-c-cx.md) Windows メタデータを生成するリンカー行にします。  
   
--   プロジェクト参照を使用して、WRL コンポーネントをユニバーサル Windows プラットフォーム アプリにアクセスできるようにします。  
+-   プロジェクト参照を使用して、WRL コンポーネントを UWP アプリにアクセスできるようにします。  
   
 ### <a name="to-use-the-wrl-to-create-the-media-foundation-grayscale-transform-component"></a>WRL メディア ファンデーションのグレースケールを作成する変換コンポーネントを使用するには  
   
 1.  Visual Studio で、作成、**空のソリューション**プロジェクト。 など、プロジェクトの名前`MediaCapture`です。  
   
-2.  追加、 **DLL (Windows ストア アプリ)**プロジェクトがソリューションにします。 など、プロジェクトの名前`GrayscaleTransform`です。  
+2.  追加、 **DLL (ユニバーサル Windows)**プロジェクトがソリューションにします。 など、プロジェクトの名前`GrayscaleTransform`です。  
   
 3.  追加、 **Midl ファイル (.idl)**ファイルをプロジェクト。 など、ファイルの名前`GrayscaleTransform.idl`です。  
   

@@ -6,23 +6,26 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Namespace not found::Platform
 - VCCORLIB/Namespace not found::Platform::Value
-dev_langs: C++
-helpviewer_keywords: Platform::IBoxArray
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::IBoxArray
 ms.assetid: 6cd82c9e-4230-4147-9edb-7a652875dbf1
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 421f8517b8a96c40bb44dd959eba90b1bf903113
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f52f8c95851ec80df41fe9f0838345cf46876227
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformiboxarray-interface"></a>Platform::IBoxArray インターフェイス
 `IBoxArray` はアプリケーション バイナリ インターフェイス (ABI) を越えて渡されるか、XAML コントロールなどの `Platform::Object^` 要素のコレクションに格納される値型の配列のラッパーです。  
@@ -39,7 +42,7 @@ interface class IBoxArray
  各配列要素のボックス化された値の型。  
   
 ### <a name="remarks"></a>コメント  
- `IBoxArray`C + + CX 名`Windows::Foundation::IReferenceArray`です。  
+ `IBoxArray` C + + CX 名`Windows::Foundation::IReferenceArray`です。  
   
 ### <a name="members"></a>メンバー  
  `IBoxArray` インターフェイスは `IValueType` インターフェイスを継承します。 `IBoxArray` にも、次に示すメンバーがあります。  
@@ -48,7 +51,7 @@ interface class IBoxArray
 |------------|-----------------|  
 |[値](#value)|以前にこの `IBoxArray` インスタンスに格納されていたことがあり、ボックス化が解除されている配列を返します。|  
 
-## <a name="value"></a>Iboxarray::value プロパティ
+## <a name="value"></a> Iboxarray::value プロパティ
 このオブジェクトに元から格納されていた値を返します。  
   
 ### <a name="syntax"></a>構文  

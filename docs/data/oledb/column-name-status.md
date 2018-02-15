@@ -1,42 +1,40 @@
 ---
-title: "COLUMN_NAME_STATUS |Microsoft ドキュメント"
+title: COLUMN_NAME_STATUS | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: COLUMN_NAME_STATUS
-dev_langs: C++
-helpviewer_keywords: COLUMN_NAME_STATUS macro
+f1_keywords:
+- COLUMN_NAME_STATUS
+dev_langs:
+- C++
+helpviewer_keywords:
+- COLUMN_NAME_STATUS macro
 ms.assetid: a6204755-6739-4116-b414-9b8fa7ab6549
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: c1e1a2b0b88b3e94d7815f93161165f4db4cf309
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3527b530218e1f5d41181d4e716f0dbb88125e6e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="columnnamestatus"></a>COLUMN_NAME_STATUS
 行セットの特定の列を行セットのバインドを表します。 ような[COLUMN_NAME](../../data/oledb/column-name.md)ただし、このマクロでは、列の状態も受け取ります。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-COLUMN_NAME_STATUS(  
-pszName  
-,   
-data  
-,   
-status )  
+```cpp
+COLUMN_NAME_STATUS(pszName, data, status )  
 ```  
   
 #### <a name="parameters"></a>パラメーター  

@@ -182,7 +182,7 @@
 ### [/ALIGN (セクションの配置)](align-section-alignment.md)
 ### [/ALLOWBIND (DLL をバインドしない)](allowbind-prevent-dll-binding.md)
 ### [/ALLOWISOLATION (マニフェスト検索)](allowisolation-manifest-lookup.md)
-### [/APPCONTAINER (Windows ストア アプリ)](appcontainer-windows-store-app.md)
+### [/APPCONTAINER (UWP/Microsoft Store アプリ)](appcontainer-windows-store-app.md)
 ### [/ASSEMBLYDEBUG (DebuggableAttribute の追加)](assemblydebug-add-debuggableattribute.md)
 ### [/ASSEMBLYLINKRESOURCE (.NET Framework リソースへのリンク)](assemblylinkresource-link-to-dotnet-framework-resource.md)
 ### [/ASSEMBLYMODULE (MSIL モジュールのアセンブリへの追加)](assemblymodule-add-a-msil-module-to-the-assembly.md)

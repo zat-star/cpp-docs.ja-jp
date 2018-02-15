@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - attribute-injected classes and methods
 - wizard-generated classes and methods
@@ -17,18 +19,18 @@ helpviewer_keywords:
 - consumer wizard-generated classes and methods
 - user record classes in OLE DB consumer
 ms.assetid: dba0538f-2afe-4354-8cbb-f202ea8ade5a
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: 8ebd53b8b39fb94e4275f5052a74f77bf71bd790
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ca753008e1a976daf2cda187c05607b718966c31
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="consumer-wizard-generated-classes"></a>コンシューマー ウィザードで生成されたクラス
 ATL OLE DB コンシューマー ウィザードを使用してコンシューマーを生成する場合、OLE DB テンプレートと OLE DB 属性のどちらかを使用するよう選択できます。 どちらの場合も、ウィザードによってコマンド クラスとユーザー レコード クラスが生成されます。 コマンド クラスには、ウィザードで指定したデータ ソースと行セットを開くためのコードが含まれています。 ユーザー レコード クラスには、選択したデータベース テーブルの列マップが含まれています。 ただし、生成されるコードはそれぞれ異なります。  
@@ -149,7 +151,7 @@ SELECT \
  最後に、ウィザードでは、次のようなコマンド クラス宣言が生成されます。  
   
 ```  
-class CProducts : public CCommand<CAccessor<CProductsAccessor> >  
+class CProducts : public CCommand<CAccessor<CProductsAccessor>>  
 ```  
   
 ## <a name="attribute-injected-user-record-classes"></a>属性が挿入されたユーザー レコード クラス  
@@ -182,7 +184,7 @@ public:
  挿入されたコマンド クラス宣言は次のようになります。  
   
 ```  
-class CProducts : public CCommand<CAccessor<_CProductsAccessor> >  
+class CProducts : public CCommand<CAccessor<_CProductsAccessor>>  
 ```  
   
  挿入されたコードのほとんどは、テンプレート バージョンと同じか類似するものです。 主な相違点は、「 [コンシューマー ウィザード生成メソッド](../../data/oledb/consumer-wizard-generated-methods.md)」で説明されている挿入されたメソッドの部分です。  

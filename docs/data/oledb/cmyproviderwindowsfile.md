@@ -4,32 +4,35 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: cmyproviderwindowsfile
-dev_langs: C++
+f1_keywords:
+- cmyproviderwindowsfile
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMyProviderWindowsFile class
 - OLE DB providers, wizard-generated files
 ms.assetid: 0e9e72ac-1e1e-445f-a7ac-690c20031f9d
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: fef6896df77ff3bcbf9251e2aabba0f810b7f4db
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e0ac247c418efa7800eeef469ecf54da75f5b15c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="cmyproviderwindowsfile"></a>CMyProviderWindowsFile
-ウィザードを 1 つの行のデータを格納するクラスを作成します。この場合、呼び出された`CMyProviderWindowsFile`です。 次のコードの`CMyProviderWindowsFile`生成ウィザードを使用して、ディレクトリ内のすべてのファイルを一覧表示、 **WIN32_FIND_DATA**構造体。 `CMyProviderWindowsFile`継承、 **WIN32_FIND_DATA**構造体。  
+ウィザードを 1 つの行のデータを格納するクラスを作成します。この場合、呼び出された`CMyProviderWindowsFile`です。 次のコードの`CMyProviderWindowsFile`生成ウィザードを使用して、ディレクトリ内のすべてのファイルを一覧表示、 **WIN32_FIND_DATA**構造体。 `CMyProviderWindowsFile` 継承、 **WIN32_FIND_DATA**構造体。  
   
-```  
+```cpp
 /////////////////////////////////////////////////////////////////////  
 // MyProviderRS.H  
   
@@ -47,11 +50,11 @@ END_PROVIDER_COLUMN_MAP()
 };  
 ```  
   
- `CMyProviderWindowsFile`呼び出された、[ユーザー レコード クラス](../../data/oledb/user-record.md)プロバイダーの行セットの列を記述するマップも含まれているためです。 プロバイダーの列マップには、PROVIDER_COLUMN_ENTRY マクロを使用して行セットのフィールドごとに 1 つのエントリが含まれています。 マクロは、列名、序数に基づく、および構造エントリへのオフセットを指定します。 上記のコードでプロバイダーの列のエントリにオフセットが含まれて、 **WIN32_FIND_DATA**構造体。 コンシューマーを呼び出すと**irowset::getdata**、1 つの連続するバッファーでデータを転送します。 を行うには、ポインターの算術演算を行うのではなく、マップにデータ メンバーを指定することができます。  
+ `CMyProviderWindowsFile` 呼び出された、[ユーザー レコード クラス](../../data/oledb/user-record.md)プロバイダーの行セットの列を記述するマップも含まれているためです。 プロバイダーの列マップには、PROVIDER_COLUMN_ENTRY マクロを使用して行セットのフィールドごとに 1 つのエントリが含まれています。 マクロは、列名、序数に基づく、および構造エントリへのオフセットを指定します。 上記のコードでプロバイダーの列のエントリにオフセットが含まれて、 **WIN32_FIND_DATA**構造体。 コンシューマーを呼び出すと**irowset::getdata**、1 つの連続するバッファーでデータを転送します。 を行うには、ポインターの算術演算を行うのではなく、マップにデータ メンバーを指定することができます。  
   
- `CMyProviderRowset`クラスも含まれています、`Execute`メソッドです。 `Execute`どのような実際にデータを読み取り、ネイティブのソースからです。 次のコードは、ウィザードで生成された`Execute`メソッドです。 関数は、Win32 を使用して**FindFirstFile**と`FindNextFile`ディレクトリ内のファイルに関する情報を取得しのインスタンスに配置するための Api、`CMyProviderWindowsFile`クラスです。  
+ `CMyProviderRowset`クラスも含まれています、`Execute`メソッドです。 `Execute` どのような実際にデータを読み取り、ネイティブのソースからです。 次のコードは、ウィザードで生成された`Execute`メソッドです。 関数は、Win32 を使用して**FindFirstFile**と`FindNextFile`ディレクトリ内のファイルに関する情報を取得しのインスタンスに配置するための Api、`CMyProviderWindowsFile`クラスです。  
   
-```  
+```cpp
 /////////////////////////////////////////////////////////////////////  
 // MyProviderRS.H  
   

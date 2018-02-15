@@ -287,7 +287,7 @@
 ### [方法: WRL を使用してイベントを処理する](how-to-handle-events-using-wrl.md)
 ### [WRL クラス ライブラリ プロジェクト テンプレート](wrl-class-library-project-template.md)
 ### [チュートリアル: WRL を使用した基本的な Windows ランタイム コンポーネントの作成](walkthrough-creating-a-basic-windows-runtime-component-using-wrl.md)
-### [チュートリアル: WRL および Media Foundation を使用した Windows ストア アプリの作成](walkthrough-creating-a-windows-store-app-using-wrl-and-media-foundation.md)
+### [チュートリアル: WRL および Media Foundation を使用した UWP アプリの作成](walkthrough-creating-a-windows-store-app-using-wrl-and-media-foundation.md)
 ### [方法: WRL を使用して従来の COM コンポーネントを作成する](how-to-create-a-classic-com-component-using-wrl.md)
 ### [方法: WRL コンポーネントを直接インスタンス化する](how-to-instantiate-wrl-components-directly.md)
 ### [方法: winmdidl.exe と midlrt.exe を使用して、Windows メタデータから .h ファイルを作成する](use-winmdidl-and-midlrt-to-create-h-files-from-windows-metadata.md)

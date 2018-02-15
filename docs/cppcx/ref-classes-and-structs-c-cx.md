@@ -6,18 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 3d736b82-0bf0-48cf-bac1-cc9d110b70d1
-caps.latest.revision: "42"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 405f1890dc99e5a20102b7602ac83534cb5ded8f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5d8b7717c98ebd4bab8c0d3d8c20a594a3f4d58e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ref-classes-and-structs-ccx"></a>Ref クラスと構造体 (C++/CX)
 C + + CX サポートがユーザー定義*ref クラス*と*ref 構造体*、およびユーザー定義*値クラス*と*構造体の値*です。 これらのデータ構造は、の主コンテナーする C + + CX は、Windows ランタイムの型システムをサポートしています。 その内容は、特定の規則に従ってメタデータに出力され、Windows ランタイム コンポーネントおよび C++ やその他の言語で記述されているユニバーサル Windows プラットフォーム アプリ間で渡されることができます。  
@@ -100,7 +101,7 @@ C + + CX サポートがユーザー定義*ref クラス*と*ref 構造体*、�
   
  デストラクターを既に実行しているクラスのメンバーにアクセスを試みたときの動作は不確定です。プログラムがクラッシュする可能性が高いと思われます。 public デストラクターがない型上で `delete t` を呼び出しても、何の効果もありません。 型の階層構造内から既知の `delete this` または `private` デストラクターを持つ型または基底クラス上で `protected private` を呼び出しても、何の効果もありません。  
   
- public デストラクターが宣言されると、コンパイラがコードを生成するので、ref クラスが `Platform::IDisposable` を実装し、デストラクターが `Dispose` メソッドを実装します。 `Platform::IDisposable`C + +/CX プロジェクションの`Windows::Foundation::IClosable`します。 これらのインターフェイスは、明示的に実装しないでください。  
+ public デストラクターが宣言されると、コンパイラがコードを生成するので、ref クラスが `Platform::IDisposable` を実装し、デストラクターが `Dispose` メソッドを実装します。 `Platform::IDisposable` C + +/CX プロジェクションの`Windows::Foundation::IClosable`します。 これらのインターフェイスは、明示的に実装しないでください。  
   
 ## <a name="inheritance"></a>継承  
  Platform::Object は、すべての ref クラスの汎用基底クラスです。 ref クラスは、いずれも Platform::Object に暗黙的に変換可能で、 [Object::ToString](../cppcx/platform-object-class.md#tostring)をオーバーライドできます。 ただし、Windows ランタイムの継承モデルではありません一般的な継承モデルです。C + + CX これは、ユーザー定義のパブリック ref クラスが基底クラスとして使用できないことを意味します。  

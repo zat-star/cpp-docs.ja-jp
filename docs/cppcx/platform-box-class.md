@@ -7,20 +7,23 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::Box
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::Box
+dev_langs:
+- C++
 ms.assetid: b3d7ea37-e98a-4fbc-80b0-ad35e50250c6
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: ac0940d9a7277b7b3f5b66e8d27750a593081471
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 813ba26333cb73212db966a0446d722eb4e0795d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformbox-class"></a>Platform::Box クラス
 `Windows::Foundation::DateTime` などの値型または `int` などのスカラー型を `Platform::Object` 型に格納できるようにします。 通常は、 `Box` を明示的に使用する必要はありません。これは、値型を `Object^`にキャストすると、ボックス化が暗黙的に発生するためです。  
@@ -44,7 +47,7 @@ ref class Box abstract;
 |[演算子ボックス&lt;T&gt;^](#box-t)|値クラス `T` から `Box<T>` へのボックス化変換を有効にします。|
 |[演算子ボックス&lt;揮発性 T&gt;^](#box-volatile-t)|`volatile` 値クラスの `T` または `enum` 型の `T` から `Box<T>` へのボックス化変換を有効にします。|
 |[Box::operator T](#t)|値クラス `T` または `enum` クラスの `T` から `Box<T>` へのボックス化変換を有効にします。| 
-## <a name="ctor"></a>Box::box コンス トラクター
+## <a name="ctor"></a> Box::box コンス トラクター
 作成、`Box`指定した型の値をカプセル化することができます | |[ 。Value プロパティ](#value)|カプセル化された値を返します、`Box`オブジェクトです |。  
 ### <a name="syntax"></a>構文  
   
@@ -57,7 +60,7 @@ Box(T valueArg);
  値の型をボックス化する — たとえば、 `int`、 `bool`、 `float64`、`DateTime`です。  
   
 
-## <a name="box-const-t"></a>Box::operator ボックス&lt;const T&gt;^ 演算子
+## <a name="box-const-t"></a> Box::operator ボックス&lt;const T&gt;^ 演算子
 `const` 値クラスの `T` または `enum` クラスの `T` から `Box<T>` へのボックス化変換を有効にします。  
   
 ### <a name="syntax"></a>構文  
@@ -73,7 +76,7 @@ operator Box<const T>^(const T valueType);
 ### <a name="return-value"></a>戻り値  
  A `Platform::Box<T>^` ref クラスでボックス化された元の値を表すインスタンス。  
   
-## <a name="box-const-volatile-t"></a>Box::operator ボックス&lt;const volatile T&gt;^ 演算子
+## <a name="box-const-volatile-t"></a> Box::operator ボックス&lt;const volatile T&gt;^ 演算子
 `const volatile` 値クラスの `T` または `enum` 型の `T` から `Box<T>` へのボックス化変換を有効にします。  
   
 ### <a name="syntax"></a>構文  
@@ -89,7 +92,7 @@ operator Box<const volatile T>^(const volatile T valueType);
 ### <a name="return-value"></a>戻り値  
  A `Platform::Box<T>^` ref クラスでボックス化された元の値を表すインスタンス。  
   
-## <a name="box-t"></a>Box::operator ボックス&lt;T&gt;^ 演算子
+## <a name="box-t"></a> Box::operator ボックス&lt;T&gt;^ 演算子
 値クラス `T` から `Box<T>` へのボックス化変換を有効にします。  
   
 ### <a name="syntax"></a>構文  
@@ -105,7 +108,7 @@ operator Box<const T>^(const T valueType);
 ### <a name="return-value"></a>戻り値  
  A `Platform::Box<T>^` ref クラスでボックス化された元の値を表すインスタンス。  
   
-## <a name="box-volatile-t"></a>Box::operator ボックス&lt;揮発性 T&gt;^ 演算子
+## <a name="box-volatile-t"></a> Box::operator ボックス&lt;揮発性 T&gt;^ 演算子
 `volatile` 値クラスの `T` または `enum` 型の `T` から `Box<T>` へのボックス化変換を有効にします。  
   
 ### <a name="syntax"></a>構文  
@@ -121,7 +124,7 @@ operator Box<volatile T>^(volatile T valueType);
 ### <a name="return-value"></a>戻り値  
  A `Platform::Box<T>^` ref クラスでボックス化された元の値を表すインスタンス。  
   
-## <a name="t"></a>Box::operator T 演算子
+## <a name="t"></a>  Box::operator T 演算子
 値クラス `T` または `enum` クラスの `T` から `Box<T>` へのボックス化変換を有効にします。  
   
 ### <a name="syntax"></a>構文  
@@ -138,7 +141,7 @@ operator Box<T>^(T valueType);
  A `Platform::Box<T>^` ref クラスでボックス化された元の値を表すインスタンス。  
   
 
-## <a name="value"></a>Box::value プロパティ
+## <a name="value"></a> Box::value プロパティ
 `Box` オブジェクトにカプセル化された値を返します。  
   
 ### <a name="syntax"></a>構文  

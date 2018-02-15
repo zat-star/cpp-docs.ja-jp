@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - data access [C++], XML data
 - XML [C++], accessing data
@@ -16,18 +18,18 @@ helpviewer_keywords:
 - rowsets [C++], retrieving XML data
 - CStreamRowset class, retrieving XML data
 ms.assetid: 6b693d55-a554-4846-8118-e8773b79b572
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: 654fab0aa5a5bf96e145f37ae4855f556f79bebf
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d9379abfd27f4dd8297864160f35367da0727935
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="accessing-xml-data"></a>XML データへのアクセス
 データ ソースから XML データを取得する 2 つの異なるメソッドがある: いずれかを使用して[CStreamRowset](../../data/oledb/cstreamrowset-class.md)およびその他の用途[CXMLAccessor](../../data/oledb/cxmlaccessor-class.md)です。  
@@ -53,7 +55,7 @@ CCommand<CAccessor<CMyAccessor>, CStreamRowset> myCmd;
 CCommand<CNoAccessor, CStreamRowset> myCmd;  
 ```  
   
- 通常どおり呼び出す`CCommand::Open`(指定すると、たとえば、`CRowset`として、`TRowset`クラス)、取得、`IRowset`ポインター。 `ICommand::Execute`返します、`IRowset`に格納されているポインター、`m_spRowset`のメンバー、`CRowset`オブジェクト。 などのメソッド`MoveFirst`、 `MoveNext`、および`GetData`ポインターを使用してデータを取得します。  
+ 通常どおり呼び出す`CCommand::Open`(指定すると、たとえば、`CRowset`として、`TRowset`クラス)、取得、`IRowset`ポインター。 `ICommand::Execute` 返します、`IRowset`に格納されているポインター、`m_spRowset`のメンバー、`CRowset`オブジェクト。 などのメソッド`MoveFirst`、 `MoveNext`、および`GetData`ポインターを使用してデータを取得します。  
   
  これに対し、呼び出す`CCommand::Open`(指定しますが、`CStreamRowset`として、`TRowset`クラス)、`ICommand::Execute`を返します、`ISequentialStream`に格納されているポインター、`m_spStream`データ メンバーの[CStreamRowset](../../data/oledb/cstreamrowset-class.md). 使用して、`Read`の XML 形式 (Unicode 文字列) のデータを取得します。 例:  
   
@@ -69,7 +71,7 @@ myCmd.m_spStream->Read()
 >  XML の使用をサポート`CStreamRowset`SQL Server 2000 でのみ動作し、(MDAC と共にインストールされた) SQL Server 2000 の OLE DB プロバイダーがある必要があります。  
   
 ## <a name="retrieving-xml-data-using-cxmlaccessor"></a>CXMLAccessor を使用して XML データを取得します。  
- [CXMLAccessor](../../data/oledb/cxmlaccessor-class.md)データ ストアのスキーマの知識があるない場合に文字列データとしてデータ ソースからデータにアクセスすることができます。 `CXMLAccessor`同様に動作`CDynamicStringAccessorW`前者 (タグあり) のデータを XML 形式として、データ ストアからアクセスされるすべてのデータを変換する点が異なります。 XML タグ名は、データ ストアの列名をできるだけ一致します。  
+ [CXMLAccessor](../../data/oledb/cxmlaccessor-class.md)データ ストアのスキーマの知識があるない場合に文字列データとしてデータ ソースからデータにアクセスすることができます。 `CXMLAccessor` 同様に動作`CDynamicStringAccessorW`前者 (タグあり) のデータを XML 形式として、データ ストアからアクセスされるすべてのデータを変換する点が異なります。 XML タグ名は、データ ストアの列名をできるだけ一致します。  
   
  使用して`CXMLAccessor`、他のアクセサー クラスと、同様にテンプレート パラメーターとして渡す`CCommand`または`CTable`:  
   
@@ -82,7 +84,8 @@ CTable<CXMLAccessor, CRowset> rs;
 ```  
 // Open data source, session, and rowset  
 hr = rs.MoveFirst();  
-while( SUCCEEDED(hr) && hr != DB_S_ENDOFROWSET )  
+
+while(SUCCEEDED(hr) && hr != DB_S_ENDOFROWSET )  
 {  
     CStringW strRowData;  
     myCmd.GetXMLRowData(strRowData);  

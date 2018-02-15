@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - OpenAll method
 - attribute-injected classes and methods
@@ -21,38 +23,39 @@ helpviewer_keywords:
 - OpenRowset method
 - GetRowsetProperties method
 ms.assetid: d80ee51c-8bb3-4dca-8760-5808e0fb47b4
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: 2578de53cfab40ee779f0d0444b227b214e3caa9
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1d41ae6c6ca32819faa498d5a9b37ce4b4008a05
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="consumer-wizard-generated-methods"></a>コンシューマー ウィザードで生成されたメソッド
 ATL OLE DB コンシューマー ウィザードおよび MFC アプリケーション ウィザード、うち注意すべき特定の関数を生成します。 一部のメソッドが実装される異なる方法で、属性付きプロジェクトで; いくつかの注意事項があるので注意してください。各ケースは、以下について説明します。 挿入されたコードを表示する方法については、「 [挿入されたコードのデバッグ](/visualstudio/debugger/how-to-debug-injected-code)」を参照してください。  
   
--   `OpenAll`行セットをデータ ソースを開き、ブックマークを有効に利用できる場合。  
+-   `OpenAll` 行セットをデータ ソースを開き、ブックマークを有効に利用できる場合。  
   
--   `CloseAll`開いているすべての行セットを閉じるし、すべてのコマンドの実行を解放します。  
+-   `CloseAll` 開いているすべての行セットを閉じるし、すべてのコマンドの実行を解放します。  
   
--   `OpenRowset`OpenAll を開くには、コンシューマーの行セットまたは行セットによって呼び出されます。  
+-   `OpenRowset` OpenAll を開くには、コンシューマーの行セットまたは行セットによって呼び出されます。  
   
--   `GetRowsetProperties`設定するプロパティを設定すると、行セットのプロパティへのポインターを取得します。  
+-   `GetRowsetProperties` 設定するプロパティを設定すると、行セットのプロパティへのポインターを取得します。  
   
--   `OpenDataSource`指定した初期化文字列を使用して、データ ソースを開き、**データ リンク プロパティ** ダイアログ ボックス。  
+-   `OpenDataSource` 指定した初期化文字列を使用して、データ ソースを開き、**データ リンク プロパティ** ダイアログ ボックス。  
   
--   `CloseDataSource`適切な方法でデータ ソースを閉じます。  
+-   `CloseDataSource` 適切な方法でデータ ソースを閉じます。  
   
 ## <a name="openall-and-closeall"></a>OpenAll と CloseAll  
   
 ```  
 HRESULT OpenAll();   
+
 void CloseAll();  
 ```  
   
@@ -101,7 +104,7 @@ HRESULT OpenRowset(DBPROPSET* pPropSet = NULL)
 HRESULT OpenRowset(const CSession& session, LPCWSTR szCommand = NULL);  
 ```  
   
- **OpenAll**コンシューマーの行セットまたは行セットを開くには、このメソッドを呼び出します。 通常、呼び出す必要はありません`OpenRowset`複数データ ソースとセッション/行セットを使用する場合を除き、します。 `OpenRowset`コマンドまたはテーブル クラスのヘッダー ファイルで宣言されます。  
+ **OpenAll**コンシューマーの行セットまたは行セットを開くには、このメソッドを呼び出します。 通常、呼び出す必要はありません`OpenRowset`複数データ ソースとセッション/行セットを使用する場合を除き、します。 `OpenRowset` コマンドまたはテーブル クラスのヘッダー ファイルで宣言されます。  
   
 ```  
 // OLE DB Template version:  
@@ -141,7 +144,7 @@ HRESULT OpenRowset(const CSession& session, LPCWSTR szCommand=NULL)
 void GetRowsetProperties(CDBPropSet* pPropSet);  
 ```  
   
- このメソッドは、行セットのプロパティ セットへのポインターを取得します。このポインターを使用して、DBPROP_IRowsetChange などのプロパティを設定することができます。 `GetRowsetProperties`以下を使用、ユーザー レコード クラスにします。 追加の行セット プロパティを設定するには、このコードを変更できます。  
+ このメソッドは、行セットのプロパティ セットへのポインターを取得します。このポインターを使用して、DBPROP_IRowsetChange などのプロパティを設定することができます。 `GetRowsetProperties` 以下を使用、ユーザー レコード クラスにします。 追加の行セット プロパティを設定するには、このコードを変更できます。  
   
 ```  
 void GetRowsetProperties(CDBPropSet* pPropSet)  
@@ -160,6 +163,7 @@ void GetRowsetProperties(CDBPropSet* pPropSet)
   
 ```  
 HRESULT OpenDataSource();   
+
 void CloseDataSource();  
 ```  
   

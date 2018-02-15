@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -12,62 +13,61 @@ f1_keywords:
 - ATL::CCommand::Open
 - CCommand.Open
 - CCommand::Open
-dev_langs: C++
-helpviewer_keywords: Open method
+dev_langs:
+- C++
+helpviewer_keywords:
+- Open method
 ms.assetid: 4c9b8f31-faf3-452d-9a29-3d3e5f54d6f8
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: b6aa938d53cfdf11d5956a63d944dfb1bd6afea1
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1a58dc67735a4f236c79ff6c777a4510dfdfcd12
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ccommandopen"></a>CCommand::Open
 実行し、必要に応じて、コマンドをバインドします。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      HRESULT Open(  
-   const CSession& session,  
+```cpp
+HRESULT Open(const CSession& session,  
    LPCWSTR wszCommand,  
    DBPROPSET *pPropSet = NULL,  
    DBROWCOUNT* pRowsAffected = NULL,  
    REFGUID guidCommand = DBGUID_DEFAULT,  
    bool bBind = true,  
-   ULONG ulPropSets = 0  
-) throw( );  
-HRESULT Open(  
-   const CSession& session,  
+   ULONG ulPropSets = 0) throw();  
+
+
+HRESULT Open(const CSession& session,  
    LPCSTR szCommand,  
    DBPROPSET *pPropSet = NULL,  
    DBROWCOUNT* pRowsAffected = NULL,  
    REFGUID guidCommand = DBGUID_DEFAULT,  
    bool bBind = true,  
-   ULONG ulPropSets = 0  
-) throw( );  
-HRESULT Open(  
-   const CSession& session,  
+   ULONG ulPropSets = 0) throw();  
+
+
+HRESULT Open(const CSession& session,  
    INT szCommand = NULL,  
    DBPROPSET *pPropSet = NULL,  
    DBROWCOUNT* pRowsAffected = NULL,  
    REFGUID guidCommand = DBGUID_DEFAULT,  
    bool bBind = true,  
-   ULONG ulPropSets = 0  
-) throw( );  
-HRESULT Open(  
-   DBPROPSET *pPropSet = NULL,  
+   ULONG ulPropSets = 0) throw();  
+
+
+HRESULT Open(DBPROPSET *pPropSet = NULL,  
    DBROWCOUNT* pRowsAffected = NULL,  
    bool bBind = true,  
-   ULONG ulPropSets = 0  
-) throw( );  
+   ULONG ulPropSets = 0) throw();  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -88,9 +88,9 @@ HRESULT Open(
   
 |If|Then|  
 |--------|----------|  
-|**CParamSets**要素の`pParams`が 1 より大きい|*`pRowsAffected`すべての実行で指定されたパラメーター セットによって影響を受ける行の合計数を表します。|  
-|影響を受けた行の数が使用可能です|*`pRowsAffected`-1 に設定されます。|  
-|コマンドが更新されない、削除、または行の挿入|*`pRowsAffected`定義されていません。|  
+|**CParamSets**要素の`pParams`が 1 より大きい|*`pRowsAffected` すべての実行で指定されたパラメーター セットによって影響を受ける行の合計数を表します。|  
+|影響を受けた行の数が使用可能です|*`pRowsAffected` -1 に設定されます。|  
+|コマンドが更新されない、削除、または行の挿入|*`pRowsAffected` 定義されていません。|  
   
  `guidCommand`  
  [in]コマンド テキストを解析中に、構文と使用するプロバイダーの一般的な規則を指定する GUID です。 参照してください[ICommandText::GetCommandText](https://msdn.microsoft.com/en-us/library/ms709825.aspx)と[icommandtext::setcommandtext](https://msdn.microsoft.com/en-us/library/ms709757.aspx)で、 *OLE DB プログラマーズ リファレンス*詳細についてはします。  

@@ -4,27 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - OLE DB providers, updatable
 - notifications, support in providers
 - OLE DB providers, creating
 ms.assetid: bdfd5c9f-1c6f-4098-822c-dd650e70ab82
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: a57a54ac330e191961715440d652b9f084006b29
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d65bce2b262b7582f9194eb8047d71ce06f3ca16
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="creating-an-updatable-provider"></a>更新可能なプロバイダーの作成
 Visual C には、更新可能なプロバイダーまたは更新できるプロバイダーがサポートしています (書き込む) データ ストアです。 このトピックでは、OLE DB テンプレートを使用して、更新可能なプロバイダーを作成する方法について説明します。  
@@ -36,7 +38,7 @@ Visual C には、更新可能なプロバイダーまたは更新できるプ�
 > [!NOTE]
 >  UpdatePV では、更新可能なプロバイダーの例を示します。 UpdatePV は、MyProv としては更新可能なサポートと同じです。  
   
-##  <a name="vchowmakingprovidersupdatable"></a>更新可能なプロバイダーを作成  
+##  <a name="vchowmakingprovidersupdatable"></a> 更新可能なプロバイダーを作成  
  更新可能なプロバイダーを行うには、データ ストアや、プロバイダーをそれらの操作を実行する方法を実行するプロバイダーを作成するどのような操作を把握できます。 具体的には、主要な問題は、データ ストアへの更新がすぐに実行されたり、遅延がかどうか (バッチ)、update コマンドが発行されるまでです。  
   
  継承するかどうかを決定する必要がありますまず`IRowsetChangeImpl`または`IRowsetUpdateImpl`行セット クラスです。 3 つのメソッドの機能の影響を実装するために選択次のうち、に応じて: `SetData`、 **InsertRows**、および`DeleteRows`です。  
@@ -72,14 +74,14 @@ Visual C には、更新可能なプロバイダーまたは更新できるプ�
     > [!NOTE]
     >  削除する必要があります、`IRowsetChangeImpl`継承チェーンからの行。 ディレクティブの前に説明したこの例外が 1 つのコードを含める必要があります`IRowsetChangeImpl`です。  
   
-2.  次のコードを COM マップに追加 (**BEGIN_COM_MAP.END_COM_MAP**)。  
+2.  次のコードを COM マップに追加 (**BEGIN_COM_MAP.END_COM_MAP**):  
   
     |実装する場合|COM マップに追加します。|  
     |----------------------|--------------------|  
     |`IRowsetChangeImpl`|`COM_INTERFACE_ENTRY(IRowsetChange)`|  
     |`IRowsetUpdateImpl`|`COM_INTERFACE_ENTRY(IRowsetChange)COM_INTERFACE_ENTRY(IRowsetUpdate)`|  
   
-3.  ように、次のコードをプロパティ セットのマップに追加 (**BEGIN_PROPSET_MAP.END_PROPSET_MAP**)。  
+3.  ように、次のコードをプロパティ セットのマップに追加 (**BEGIN_PROPSET_MAP.END_PROPSET_MAP**):  
   
     |実装する場合|プロパティ セットのマップに追加します。|  
     |----------------------|-----------------------------|  
@@ -129,15 +131,15 @@ Visual C には、更新可能なプロバイダーまたは更新できるプ�
   
     -   `DBPROP_IRowsetUpdate`。  
   
-    -   `DBPROP_OWNINSERT`: READ_ONLY と VARIANT_TRUE をある必要があります。  
+    -   `DBPROP_OWNINSERT`: Must be READ_ONLY AND VARIANT_TRUE.  
   
-    -   `DBPROP_OWNUPDATEDELETE`: READ_ONLY と VARIANT_TRUE をある必要があります。  
+    -   `DBPROP_OWNUPDATEDELETE`: Must be READ_ONLY AND VARIANT_TRUE.  
   
-    -   `DBPROP_OTHERINSERT`: READ_ONLY と VARIANT_TRUE をある必要があります。  
+    -   `DBPROP_OTHERINSERT`: Must be READ_ONLY AND VARIANT_TRUE.  
   
-    -   `DBPROP_OTHERUPDATEDELETE`: READ_ONLY と VARIANT_TRUE をある必要があります。  
+    -   `DBPROP_OTHERUPDATEDELETE`: Must be READ_ONLY AND VARIANT_TRUE.  
   
-    -   `DBPROP_REMOVEDELETED`: READ_ONLY と VARIANT_TRUE をある必要があります。  
+    -   `DBPROP_REMOVEDELETED`: Must be READ_ONLY AND VARIANT_TRUE.  
   
     -   `DBPROP_MAXPENDINGROWS`。  
   
@@ -146,7 +148,7 @@ Visual C には、更新可能なプロバイダーまたは更新できるプ�
   
      たとえば、プロパティの設定方法のプロパティ内のマップの設定を参照してください**CUpdateCommand**は) の「で[UpdatePV](http://msdn.microsoft.com/en-us/c8bed873-223c-4a7d-af55-f90138c6f38f)です。  
   
-##  <a name="vchowwritingtothedatasource"></a>データ ソースへの書き込み  
+##  <a name="vchowwritingtothedatasource"></a> データ ソースへの書き込み  
  データ ソースからの読み取りを呼び出して、 **Execute**関数。 データ ソースへの書き込みを呼び出して、`FlushData`関数。 (一般的な意味では、テーブルまたはインデックスをディスクに加えた変更を保存するための手段をフラッシュします)。  
   
 ```  
@@ -160,13 +162,13 @@ FlushData(HROW, HACCESSOR);
 ### <a name="when-to-flush"></a>フラッシュします。  
  プロバイダー テンプレート呼び出し`FlushData`データをデータ ストアに書き込まれる必要があるたびにです。 この通常 (必ずではありませんが)、次の関数を呼び出した結果として発生します。  
   
--   **Irowsetchange::deleterows**  
+-   **IRowsetChange::DeleteRows**  
   
--   **Irowsetchange::setdata**  
+-   **IRowsetChange::SetData**  
   
 -   **IRowsetChange::InsertRows** (かどうかがある行を挿入する新しいデータ)  
   
--   **Irowsetupdate::update**  
+-   **IRowsetUpdate::Update**  
   
 ### <a name="how-it-works"></a>しくみ  
  コンシューマーが、フラッシュが必要な呼び出し (など**更新**) この呼び出しは、プロバイダーは、常に、次の処理に渡されます。  
@@ -217,7 +219,7 @@ HRESULT FlushData(HROW, HACCESSOR)
   
  例を次にどのように`FlushData`で実装されて、`RUpdateRowset`クラス内で、 [UpdatePV](http://msdn.microsoft.com/en-us/c8bed873-223c-4a7d-af55-f90138c6f38f)サンプル (サンプル コードでを参照してください)。  
   
-```  
+```cpp
 ///////////////////////////////////////////////////////////////////////////  
 // class RUpdateRowset (in rowset.h)  
 ...  
@@ -316,7 +318,7 @@ HRESULT FlushData(HROW, HACCESSOR)
   
  例を次にどのように**CommonGetColInfo**関数を実装**CUpdateCommand** (UpProvRS.cpp を参照してください) UpdatePV にします。 列であるこの方法に注意してください**DBCOLUMNFLAGS_ISNULLABLE**列の null 値を許容します。  
   
-```  
+```cpp
 /////////////////////////////////////////////////////////////////////////////  
 // CUpdateCommand (in UpProvRS.cpp)  
   
@@ -412,7 +414,7 @@ virtual HRESULT SetDBStatus(DBSTATUS* pdbStatus, CSimpleRow* pRow,
 ```  
   
 ### <a name="column-flags"></a>列のフラグ  
- 内のメタデータを使用して設定する必要があります、列の既定値をサポートする場合、  **\<** *プロバイダー クラス***> SchemaRowset**クラスです。 設定*m_bColumnHasDefault* = `VARIANT_TRUE`です。  
+ 内のメタデータを使用して設定する必要があります、列の既定値をサポートする場合、  **\<***プロバイダー クラス***> SchemaRowset**クラスです。 設定*m_bColumnHasDefault* = `VARIANT_TRUE`です。  
   
  使用して指定されている列のフラグを設定する必要がある場合も、 **DBCOLUMNFLAGS**列挙型。 列のフラグでは、列の特性について説明します。  
   
@@ -428,6 +430,7 @@ trData[0].m_nNumericPrecision = 10;
 trData[0].m_ulColumnFlags = DBCOLUMNFLAGS_WRITE |  
                             DBCOLUMNFLAGS_ISFIXEDLENGTH;  
 lstrcpyW(trData[0].m_szColumnDefault, OLESTR("0"));  
+
 m_rgRowData.Add(trData[0]);  
 ```  
   

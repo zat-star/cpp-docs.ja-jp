@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/16/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -74,7 +75,8 @@ f1_keywords:
 - _WIN64
 - _WINRT_DLL
 - __func__
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - timestamps, preprocessor macro
 - cl.exe compiler, version number
@@ -149,16 +151,17 @@ helpviewer_keywords:
 - _WINRT_DLL macro
 - __func__ identifier
 ms.assetid: 1cc5f70a-a225-469c-aed0-fe766238e23f
-caps.latest.revision: "75"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 86905a879abe9b81302a8f196e200c1d0c227bb7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 53acac18902e261eede565987d6b9c053a8f1707
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="predefined-macros"></a>定義済みマクロ
 
@@ -194,7 +197,7 @@ Visual C には、ANSI/ISO C99 標準および ISO c++ 14 標準で指定され�
 
 - **&#95; &#95;です。STDC &#95;です。ホストされている (& m); #95 &#95;です。**実装がある場合は、1 として定義されている、*実装がホストされている*、全体の必要な標準ライブラリをサポートしています。 それ以外の場合は、0 として定義されます。
 
-- **&#95; &#95;です。STDCPP &#95;です。スレッド &#95; #95**プログラムは、実行の 1 つ以上のスレッドを持つことができる場合にのみ、1 として定義されており、C++ としてコンパイルします。 それ以外の場合、定義されていません。
+- **&#95;&#95;STDCPP&#95;THREADS&#95;&#95;** Defined as 1 if and only if a program can have more than one thread of execution, and compiled as C++. それ以外の場合、定義されていません。
 
 - **&#95; &#95;です。&#95; &#95;です。**前処理された翻訳単位の翻訳の時刻。 時間は、文字の文字列形式のリテラル*hh:mm:ss*、C ランタイム ライブラリによって返された時刻と同じ[asctime](../c-runtime-library/reference/asctime-wasctime.md)関数。 このマクロは、常に定義されます。
 
@@ -372,13 +375,13 @@ Microsoft Visual C には、これらの追加の定義済みマクロがサポ�
 
 - **&#95;です。MSC &#95;です。VER**コンパイラのバージョン番号のメジャーおよびマイナー番号要素をエンコードする整数リテラルとして定義します。 メジャー番号はピリオド区切りのバージョン番号の最初の要素およびマイナー番号が 2 番目の要素。 たとえば、Visual C コンパイラのバージョン番号が 17.00.51106.1 である場合、 **&#95;です。MSC &#95;です。VER**マクロは 1700 に評価します。 入力**cl/しますか?** コマンドライン コンパイラのバージョン番号を表示します。 このマクロは、常に定義されます。
 
-- **&#95;です。MSVC &#95;です。LANG**対象となる、コンパイラは C++ 言語標準を指定する整数リテラルとして定義します。 C++ としてコンパイルされると、マクロは、整数リテラル値の 201402 場合、 [/std:c + + 14](../build/reference/std-specify-language-standard-version.md)コンパイラ オプションを設定すると、または既定ではこれが場合に設定 201703、 [/std:c + + 17](../build/reference/std-specify-language-standard-version.md)コンパイラ オプションが設定されているしに設定されている、高い、指定されていないときの値、 [/std:c + + 最新](../build/reference/std-specify-language-standard-version.md)です。 それ以外の場合、マクロが定義されていません。 **&#95;です。MSVC &#95;です。LANG**マクロと[/std (指定言語標準のバージョン)](../build/reference/std-specify-language-standard-version.md)コンパイラ オプションで、Visual Studio 2015 Update 3 以降を使用できます。
+- **&#95;です。MSVC &#95;です。LANG**対象となる、コンパイラは C++ 言語標準を指定する整数リテラルとして定義します。 C++ としてコンパイルされると、マクロは、整数リテラル値の 201402 L 場合、 [/std:c + + 14](../build/reference/std-specify-language-standard-version.md)コンパイラ オプションを設定すると、または既定ではこれが場合に設定 201703 L、 [/std:c + + 17](../build/reference/std-specify-language-standard-version.md)コンパイラ オプションが設定されているしに設定されている、高い、指定されていないときの値、 [/std:c + + 最新](../build/reference/std-specify-language-standard-version.md)です。 それ以外の場合、マクロが定義されていません。 **&#95;です。MSVC &#95;です。LANG**マクロと[/std (指定言語標準のバージョン)](../build/reference/std-specify-language-standard-version.md)コンパイラ オプションで、Visual Studio 2015 Update 3 以降を使用できます。
 
-- **&#95; &#95;です。MSVC &#95;です。ランタイム &#95;です。チェック**する場合は、1 つは 1 として定義されているの[/RTC](../build/reference/rtc-run-time-error-checks.md)コンパイラ オプションを設定します。 それ以外の場合、定義されていません。
+- **&#95;&#95;MSVC&#95;RUNTIME&#95;CHECKS** Defined as 1 when one of the [/RTC](../build/reference/rtc-run-time-error-checks.md) compiler options is set. それ以外の場合、定義されていません。
 
 - **&#95; MT** 1 として定義されている[/MD または/MDd](../build/reference/md-mt-ld-use-run-time-library.md) (マルチ スレッド DLL) または[/MT または/MTd](../build/reference/md-mt-ld-use-run-time-library.md) (マルチ スレッド) を指定します。 それ以外の場合、定義されていません。
 
-- **&#95;です。ネイティブ &#95;です。WCHAR &#95;です。T &#95;です。 定義された**1 として定義されている、 [/Zc:wchar_t](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)コンパイラ オプションを設定します。 それ以外の場合、定義されていません。
+- **&#95;NATIVE&#95;WCHAR&#95;T&#95;DEFINED** Defined as 1 when the [/Zc:wchar_t](../build/reference/zc-wchar-t-wchar-t-is-native-type.md) compiler option is set. それ以外の場合、定義されていません。
 
 - **&#95; OPENMP**場合は、Visual C によって実装される OpenMP 仕様の日付を表す整数リテラルの 200203 として定義されている、 [/openmp (OpenMP 2.0 サポートの有効にする)](../build/reference/openmp-enable-openmp-2-0-support.md)コンパイラ オプションを設定します。 それ以外の場合、定義されていません。
 

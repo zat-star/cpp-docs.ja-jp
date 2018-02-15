@@ -6,21 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: COLLECTION/Platform::Collections::BackInsertIterator::BackInsertIterator
-dev_langs: C++
-helpviewer_keywords: BackInsertIterator Class
+ms.topic: reference
+f1_keywords:
+- COLLECTION/Platform::Collections::BackInsertIterator::BackInsertIterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- BackInsertIterator Class
 ms.assetid: aecee1ff-100d-4129-b84b-1966f0923dbf
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 057aebfcba1936bc2a59fbb8b9fb51bff3197b6f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 23c8b657a6cafb720cf0be07e2e67b5af0d7767d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcollectionsbackinsertiterator-class"></a>Platform::Collections::BackInsertIterator クラス
 要素を上書きするのではなく、シーケンシャル コレクションの末尾に要素を挿入する反復子を表します。  
@@ -46,7 +50,7 @@ public ::std::iterator<::std::output_iterator_tag, void, void, void, void>;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Backinsertiterator::backinsertiterator](#ctor)|BackInsertIterator クラスの新しいインスタンスを初期化します。|  
+|[BackInsertIterator::BackInsertIterator](#ctor)|BackInsertIterator クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -65,7 +69,7 @@ public ::std::iterator<::std::output_iterator_tag, void, void, void, void>;
  **名前空間:** Platform::Collections  
   
 ---
-## <a name="ctor"></a>Backinsertiterator::backinsertiterator コンス トラクター
+## <a name="ctor"></a>  Backinsertiterator::backinsertiterator コンス トラクター
 `BackInsertIterator` クラスの新しいインスタンスを初期化します。  
   
 ## <a name="syntax"></a>構文  
@@ -83,7 +87,7 @@ explicit BackInsertIterator(
 ### <a name="remarks"></a>コメント  
  `BackInsertIterator` は、`v` パラメーターで指定されたオブジェクトの最後の要素の後に要素を挿入します。  
  
-## <a name="operator-assign"></a>Backinsertiterator::operator = 演算子
+## <a name="operator-assign"></a>  Backinsertiterator::operator = 演算子
 指定されたオブジェクトを、現在のシーケンシャル コレクションの末尾に追加します。  
   
 ## <a name="syntax"></a>構文  
@@ -99,7 +103,7 @@ BackInsertIterator& operator=( const T& t);
 ### <a name="return-value"></a>戻り値  
  現在の BackInsertIterator への参照。  
 
-## <a name="operator-dereference"></a>Backinsertiterator::operator * 演算子
+## <a name="operator-dereference"></a>  Backinsertiterator::operator * 演算子
 現在の BackInsertIterator への参照を取得します。  
   
 ## <a name="syntax"></a>構文  
@@ -114,7 +118,7 @@ BackInsertIterator& operator*();
 ### <a name="remarks"></a>コメント  
  この演算子は、現在のコレクション内の要素ではなく、現在の BackInsertIterator への参照を返します。  
  
-## <a name="operator-increment"></a>Backinsertiterator::operator++ 演算子
+## <a name="operator-increment"></a>  Backinsertiterator::operator++ 演算子
 現在の BackInsertIterator への参照を返します。 反復子は変更されません。  
   
 ## <a name="syntax"></a>構文  

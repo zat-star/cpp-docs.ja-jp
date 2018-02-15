@@ -6,21 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::ArrayReference::ArrayReference
-dev_langs: C++
-helpviewer_keywords: Platform::ArrayReference Class
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::ArrayReference::ArrayReference
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::ArrayReference Class
 ms.assetid: 9ab3b15e-8a60-4600-8fcb-7d6c86284f4b
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 7d624422fd7dc1fcdb5e96f0995e8beef5fb8239
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0987511b6653bee85b6cc5c4c680331d12519450
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformarrayreference-class"></a>Platform::ArrayReference クラス
 `ArrayReference` は、C スタイル配列に入力データを格納するときに、入力パラメーターの [Platform::Array^](../cppcx/platform-array-class.md) と置き換えることができる最適化の種類です。  
@@ -37,7 +41,7 @@ class ArrayReference
   
 |名前|説明|  
 |----------|-----------------|  
-|[Arrayreference::arrayreference](#ctor)|`ArrayReference` クラスの新しいインスタンスを初期化します。|  
+|[ArrayReference::ArrayReference](#ctor)|`ArrayReference` クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -60,7 +64,7 @@ class ArrayReference
   
  **ヘッダー:** vccorlib.h  
   
-## <a name="ctor"></a>Arrayreference::arrayreference コンス トラクター
+## <a name="ctor"></a>  Arrayreference::arrayreference コンス トラクター
 新しいインスタンスを初期化、 [platform::arrayreference](../cppcx/platform-arrayreference-class.md)クラスです。  
   
 ### <a name="syntax"></a>構文  
@@ -85,7 +89,7 @@ ArrayReference(ArrayReference&& otherArg)
   
 
 
-## <a name="operator-assign"></a>Arrayreference::operator = 演算子
+## <a name="operator-assign"></a>  Arrayreference::operator = 演算子
 現在指定されたオブジェクトを割り当てます[platform::arrayreference](../cppcx/platform-arrayreference-class.md)移動セマンティクスを使用してオブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -108,7 +112,7 @@ ArrayReference& operator=(ArrayReference&& otherArg);
   
 
 
-## <a name="operator-call"></a>Arrayreference::operator() 演算子
+## <a name="operator-call"></a>  Arrayreference::operator() 演算子
 現在の変換[platform::arrayreference](../cppcx/platform-arrayreference-class.md)にオブジェクト、 [platform::array](../cppcx/platform-array-class.md)クラスです。  
   
 ### <a name="syntax"></a>構文  

@@ -4,23 +4,25 @@ ms.custom:
 ms.date: 11/27/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: efc691d7-21f3-47ae-ae56-cab999ccf59d
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: b2206151f68e02ebadbfab5785a7a1e90be67468
-ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
+ms.openlocfilehash: b204783e3b2c418e5e719ca5c6efcf9c2d31c6df
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="overview-of-windows-programming-in-c"></a>C++ でプログラミングする Windows の概要
 
@@ -28,7 +30,7 @@ Visual C++ を使用すると、Windows PC (x86、x64、または ARM)、Windows
 
 Visual C++ で開発できる Windows アプリにはいくつかの大きなカテゴリがあります。 これらのカテゴリのプログラミング モデルまたはアプリ モデルはさまざまです。つまり、プラットフォームへのアクセスやユーザー インターフェイスの提供のためにさまざまなライブラリや API を使用するということです。
 
-- [Windows ユニバーサル アプリ](#BK_WindowsUniversal)。 Windows アプリの 3 番目のカテゴリが Windows 8 で導入され、このカテゴリのアプリは Windows 10 でも引き続きサポートされます。 多くの場合、これらのアプリケーションは単に "Windows アプリ" と呼ばれ、さまざまなデバイスを対象とするデスクトップおよびモバイルのアプリがそれに含まれています。 これらのアプリは、C++/CX (C++ の方言であり、Windows ランタイム開発のサポートを含む) で作成することも、Windows ランタイム ライブラリ (WRL) を使用して 標準 C++ と COM で作成することもできます。 これらのアプリはもともと全画面表示で実行するよう設計されていましたが、Windows 10 のユーザーにはデスクトップ ウィンドウでこれを実行するオプションがあります。 これらのアプリはタッチ指向ですが、ユーザーがマウスを好む場合や、タッチ スクリーンが利用できない場合はマウスを簡単に使用できます。 これらのアプリは Windows ストアから配布され、"Windows ストア アプリ" と呼ばれています。
+- [Windows ユニバーサル アプリ](#BK_WindowsUniversal)。 Windows アプリの 3 番目のカテゴリが Windows 8 で導入され、このカテゴリのアプリは Windows 10 でも引き続きサポートされます。 多くの場合、これらのアプリケーションは単に "Windows アプリ" と呼ばれ、さまざまなデバイスを対象とするデスクトップおよびモバイルのアプリがそれに含まれています。 これらのアプリは、C++/CX (C++ の方言であり、Windows ランタイム開発のサポートを含む) で作成することも、Windows ランタイム ライブラリ (WRL) を使用して 標準 C++ と COM で作成することもできます。 これらのアプリはもともと全画面表示で実行するよう設計されていましたが、Windows 10 のユーザーにはデスクトップ ウィンドウでこれを実行するオプションがあります。 これらのアプリはタッチ指向ですが、ユーザーがマウスを好む場合や、タッチ スクリーンが利用できない場合はマウスを簡単に使用できます。 これらのアプリは、Microsoft ストア、アプリの"Store"が呼び出されることに至ったファクトから配布されます。
 
 - [デスクトップ、サーバー、およびクラウドのアプリケーションとゲーム](#BK_Native)。 このカテゴリには、Windows デスクトップ アプリケーションが含まれます。これらのアプリケーションは、Windows 8 以前に Win32 APIを使用していたため、Win32 アプリケーションとも呼ばれ、すべての Windows アプリケーションがこのカテゴリに含まれます。 このカテゴリのアプリケーションは、ユーザー インターフェイスに MFC を使用でき、Windows コンポーネント (通常は COM オブジェクト) との対話に ATL を使用できます。
 
@@ -43,7 +45,7 @@ Visual C++ で開発できる Windows アプリにはいくつかの大きなカ
 Windows 10 では、デスクトップ上だけでなく、タブレットや携帯電話など、すべての Windows 10 デバイスでアプリを実行できます。 デスクトップでは、常に全画面表示で実行しなければならないわけではなく、デスクトップ ウィンドウとして実行することができます。 これらのアプリは Xbox でも動作し、将来のデバイスでも実行できます。  2 種類のアプリのプログラミング モデルは、Win32 デスクトップ アプリケーションとは異なります。 これらの Windows アプリケーションは Windows ランタイム上で動作します。このランタイムは、ユーザー インターフェイス要素、これらのアプリの重要なサービス、およびサポートされている多様なハードウェア デバイスへのインターフェイスを提供します。 これらのアプリはネイティブ コードにコンパイルされ、XAML ユーザー インターフェイスを持つか、DirectX を使用します。 その他の Windows アプリで使用できるネイティブ コードで、Windows ランタイム コンポーネントを記述することも、c#、Visual Basic、または JavaScript で記述されたアプリが含まれます。 詳細については、次を参照してください。 [C++ UWP"Hello world"アプリを作成](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp)、 [DirectX で UWP の簡単なゲームを作成する](/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game)、および[C++ で作成する Windows ランタイム コンポーネント](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)です。
 
 > [!TIP]
-> Windows 10 用 Windows ストアを介して展開用の既存のデスクトップ アプリケーションをパッケージ化するのに、デスクトップ アプリを実行するコンバーターを使用できます。 詳しくは、「[Using Visual C++ Runtime in Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)」(Centennial プロジェクトでの Visual C++ ランタイムの使用) および「[Bring your desktop app to the Universal Windows Platform (UWP) with the Desktop Bridge](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)」(Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 対応にする) をご覧ください。
+> Windows 10 用 Microsoft ストアを介して展開用の既存のデスクトップ アプリケーションをパッケージ化するのに、デスクトップ アプリを実行するコンバーターを使用できます。 詳しくは、「[Using Visual C++ Runtime in Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)」(Centennial プロジェクトでの Visual C++ ランタイムの使用) および「[Bring your desktop app to the Universal Windows Platform (UWP) with the Desktop Bridge](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)」(Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 対応にする) をご覧ください。
 
 ユニバーサル Windows プラットフォームのサンプルの詳細については、「 [GitHub の Windows のユニバーサル サンプル](https://github.com/Microsoft/Windows-universal-samples)」を参照してください。
 

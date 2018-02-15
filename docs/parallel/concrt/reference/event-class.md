@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -15,19 +16,22 @@ f1_keywords:
 - CONCRT/concurrency::event::wait
 - CONCRT/concurrency::event::wait_for_multiple
 - CONCRT/concurrency::event::timeout_infinite
-dev_langs: C++
-helpviewer_keywords: event class
+dev_langs:
+- C++
+helpviewer_keywords:
+- event class
 ms.assetid: fba35a53-6568-4bfa-9aaf-07c0928cf73d
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 550cbdda0468db969ffe3c7d3412789c1f0e5976
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a8c14cce1f34e4957b8c22bdbb8eab82fb4c0c58
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="event-class"></a>event クラス
 同時実行ランタイムを明示的に認識する手動リセット イベントです。  
@@ -52,7 +56,7 @@ class event;
 |----------|-----------------|  
 |[reset](#reset)|イベントを非シグナル状態にリセットします。|  
 |[set](#set)|イベントを通知します。|  
-|[待機](#wait)|イベントがシグナル状態になるのを待機します。|  
+|[wait](#wait)|イベントがシグナル状態になるのを待機します。|  
 |[wait_for_multiple](#wait_for_multiple)|複数のイベントがシグナル状態になるのを待機します。|  
   
 ### <a name="public-constants"></a>パブリック定数  
@@ -72,7 +76,7 @@ class event;
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>イベント 
+##  <a name="ctor"></a> イベント 
 
  新しいイベントを構築します。  
   
@@ -82,7 +86,7 @@ _CRTIMP event();
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="dtor"></a>~ イベント 
+##  <a name="dtor"></a> ~ イベント 
 
  イベントを破棄します。  
   
@@ -93,7 +97,7 @@ _CRTIMP event();
 ### <a name="remarks"></a>コメント  
  デストラクターが実行されるとイベントで待機するスレッドがなくなると想定されます。 まだ待機しているスレッドと共にイベントが破棄されるようにすると、未定義の動作が発生します。  
   
-##  <a name="reset"></a>リセット 
+##  <a name="reset"></a> リセット 
 
  イベントを非シグナル状態にリセットします。  
   
@@ -101,7 +105,7 @@ _CRTIMP event();
 void reset();
 ```  
   
-##  <a name="set"></a>設定 
+##  <a name="set"></a> 設定 
 
  イベントを通知します。  
   
@@ -112,7 +116,7 @@ void set();
 ### <a name="remarks"></a>コメント  
  イベントを通知すると、イベントを待機している任意の数のコンテキストが実行できるようになります。  
   
-##  <a name="timeout_infinite"></a>timeout_infinite 
+##  <a name="timeout_infinite"></a> timeout_infinite 
 
  待機がタイムアウトしないことを示す値。  
   
@@ -120,7 +124,7 @@ void set();
 static const unsigned int timeout_infinite = COOPERATIVE_TIMEOUT_INFINITE;
 ```  
   
-##  <a name="wait"></a>待機 
+##  <a name="wait"></a> 待機 
 
  イベントがシグナル状態になるのを待機します。  
   
@@ -136,9 +140,9 @@ size_t wait(unsigned int _Timeout = COOPERATIVE_TIMEOUT_INFINITE);
  待機条件が満たされた場合は、値 `0` を返します。それ以外の場合は、イベントがシグナル状態になることなく待機がタイムアウトしたことを示す `COOPERATIVE_WAIT_TIMEOUT` 値を返します。  
   
 > [!IMPORTANT]
->  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] アプリケーションでは、この呼び出しが現在のスレッドをブロックし、アプリケーションが応答しなくなる場合があるため、ASTA スレッドで `wait` を呼び出さないでください。  
+>  ユニバーサル Windows プラットフォーム (UWP) アプリで呼び出すことはありません`wait`ASTA のスレッドのため、この呼び出しで、現在のスレッドをブロックすることができ、アプリが応答しなくなる可能性があります。  
   
-##  <a name="wait_for_multiple"></a>wait_for_multiple 
+##  <a name="wait_for_multiple"></a> wait_for_multiple 
 
  複数のイベントがシグナル状態になるのを待機します。  
   
@@ -170,7 +174,7 @@ static size_t __cdecl wait_for_multiple(
  `_FWaitAll` パラメーターの値を `true` に設定した場合は、すべてのイベントがシグナル状態になって初めて待機条件を満たしたことになります。その場合、この関数によって返されるインデックスには、`COOPERATIVE_WAIT_TIMEOUT` 値ではないという事実を除いて、特別な意味はありません。  
   
 > [!IMPORTANT]
->  [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] アプリケーションでは、この呼び出しが現在のスレッドをブロックし、アプリケーションが応答しなくなる場合があるため、ASTA スレッドで `wait_for_multiple` を呼び出さないでください。  
+>  ユニバーサル Windows プラットフォーム (UWP) アプリで呼び出すことはありません`wait_for_multiple`ASTA のスレッドのため、この呼び出しで、現在のスレッドをブロックすることができ、アプリが応答しなくなる可能性があります。  
   
 ## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -23,19 +24,22 @@ f1_keywords:
 - concurrent_unordered_set/concurrency
 - pplconcrt/concurrency
 - internal_concurrent_hash/concurrency
-dev_langs: C++
-helpviewer_keywords: Concurrency namespace
+dev_langs:
+- C++
+helpviewer_keywords:
+- Concurrency namespace
 ms.assetid: f1d33ca2-679b-4442-b140-22a9d9df61d1
-caps.latest.revision: "37"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 8662011107f9befef63ec247060a319172569300
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 86513e9196a3bdc8da2f414fcc792cbeb67b706d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="concurrency-namespace"></a>concurrency 名前空間
 `Concurrency` 名前空間には、C++ 向けの並列プログラミング フレームワークである同時実行ランタイムにアクセスするためのクラスおよび関数が用意されています。 詳細については、「[同時実行ランタイム](../../../parallel/concrt/concurrency-runtime.md)」を参照してください。  
@@ -137,7 +141,7 @@ namespace concurrency;
 |[task クラス (同時実行ランタイム)](task-class.md)|並列パターン ライブラリ (PPL) `task` クラス。 `task` オブジェクトは、非同期的に、他のタスクと同時に実行できる処理、および同時実行ランタイムの並列アルゴリズムによって生成される並列処理を表します。 正常に終了した場合は、型 `_ResultType` の結果が生成されます。 型 `task<void>` のタスクでは結果が作成されません。 タスクは、他のタスクと関係なく待機および取り消しできます。 また、continuations(`then`)、および join(`when_all`) パターンと choice(`when_any`) パターンを使用して、他のタスクと共に構成することもできます。|  
 |[task_canceled クラス](task-canceled-class.md)|このクラスは、現在のタスクを強制的に取り消すために PPL タスク レイヤーによってスローされる例外を表します。 によってもスローされます、`get()`メソッド[タスク](http://msdn.microsoft.com/en-us/5389e8a5-5038-40b6-844a-55e9b58ad35f)、取り消されたタスクに対してです。|  
 |[task_completion_event クラス](task-completion-event-class.md)|`task_completion_event` クラスを使用すると、条件が満たされるまで、または外部イベントに応答してタスクを開始するまで、タスクの実行を遅延できます。|  
-|[task_continuation_context クラス](task-continuation-context-class.md)|`task_continuation_context` クラスを使用すると、継続する場所を指定できます。 このクラスは、Windows ストア アプリから使用する場合にのみ役に立ちます。 Windows ストア アプリを使用していない場合、タスク継続の実行コンテキストはランタイムによって決まり、構成できません。|  
+|[task_continuation_context クラス](task-continuation-context-class.md)|`task_continuation_context` クラスを使用すると、継続する場所を指定できます。 UWP アプリからこのクラスを使用することだけです。 非 Windows ランタイム アプリでは、タスク継続の実行コンテキストは、ランタイムによって決定され、構成できません。|  
 |[task_group クラス](task-group-class.md)|`task_group` クラスは、待機または取り消しができる並列処理のコレクションを表します。|  
 |[task_handle クラス](task-handle-class.md)|`task_handle` クラスは個々の並列作業項目を表します。 このクラスは、1 つの処理を実行するために必要な命令およびデータをカプセル化します。|  
 |[task_options クラス (同時実行ランタイム)](task-options-class-concurrency-runtime.md)|タスクの作成に使用できるオプションを表します。|  
@@ -223,7 +227,7 @@ namespace concurrency;
 |[run_with_cancellation_token 関数](concurrency-namespace-functions.md#run_with_cancellation_token)|関数オブジェクトを、指定されたキャンセル トークンのコンテキストですばやく同期的に実行します。|  
 |[send 関数](concurrency-namespace-functions.md#send)|オーバーロードされます。 ターゲットがメッセージを受け入れるか拒否するまで待機する同期送信操作です。|  
 |[set_ambient_scheduler 関数 (同時実行ランタイム)](concurrency-namespace-functions.md#set_ambient_scheduler)||  
-|[set_task_execution_resources 関数](concurrency-namespace-functions.md#set_task_execution_resources)|オーバーロードされます。 同時実行ランタイムの内部ワーカー スレッドが使用する実行リソースを、指定された関係セットに制限します。<br /><br /> このメソッドの呼び出しは、リソース マネージャーの作成前、または 2 つのリソース マネージャーの有効期間の間のみ有効です。 これは、呼び出し時にリソース マネージャーが存在しない限り複数回呼び出すことができます。 関係の制限が設定されたら、次の有効な `set_task_execution_resources` メソッド呼び出しまで保持されます。<br /><br /> 指定された関係マスクは、プロセス関係マスクのサブセットである必要はありません。 プロセス関係は必要に応じて更新されます。|  
+|[set_task_execution_resources Function](concurrency-namespace-functions.md#set_task_execution_resources)|オーバーロードされます。 同時実行ランタイムの内部ワーカー スレッドが使用する実行リソースを、指定された関係セットに制限します。<br /><br /> このメソッドの呼び出しは、リソース マネージャーの作成前、または 2 つのリソース マネージャーの有効期間の間のみ有効です。 これは、呼び出し時にリソース マネージャーが存在しない限り複数回呼び出すことができます。 関係の制限が設定されたら、次の有効な `set_task_execution_resources` メソッド呼び出しまで保持されます。<br /><br /> 指定された関係マスクは、プロセス関係マスクのサブセットである必要はありません。 プロセス関係は必要に応じて更新されます。|  
 |[swap 関数](concurrency-namespace-functions.md#swap)|2 つの `concurrent_vector` オブジェクトの要素を交換します。|  
 |[task_from_exception 関数 (同時実行ランタイム)](concurrency-namespace-functions.md#task_from_exception)||  
 |[task_from_result 関数 (同時実行ランタイム)](concurrency-namespace-functions.md#task_from_result)||  

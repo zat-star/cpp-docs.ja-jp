@@ -4,34 +4,38 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: appdomain_cpp
-dev_langs: C++
+f1_keywords:
+- appdomain_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - appdomain __declspec keyword
 - __declspec keyword [C++], appdomain
 ms.assetid: 29d843cb-cb6b-4d1b-a48d-d928a877234d
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 677206e37cb4761112f66dc59dc44b2eccbabaf5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 36df0066d3e460efceb130d257a1b6f87231dd4a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="appdomain"></a>appdomain
 マネージ アプリケーションの各アプリケーション ドメインは特定のグローバル変数または静的メンバー変数の独自のコピーを持つ必要があることを指定します。 参照してください[アプリケーション ドメインと Visual C](../dotnet/application-domains-and-visual-cpp.md)詳細についてはします。  
   
  あらゆるアプリケーション ドメインに appdomain ごとの変数のコピーが存在します。 appdomain 変数のコンストラクターはアセンブリがアプリケーション ドメインに読み込まれるときに実行され、デストラクターはアプリケーション ドメインがアンロードされるときに実行されます。  
   
- 共通言語ランタイムのプロセス内ですべてのアプリケーション ドメインがグローバル変数を共有する場合は、`__declspec(process)` 修飾子を使用します。 `__declspec(process)`既定では有効では[/clr](../build/reference/clr-common-language-runtime-compilation.md)と`__declspec(appdomain)`が既定では有効で**/clr: 純粋な**します。 `__declspec(appdomain)`強制**/clr:safe**です。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+ 共通言語ランタイムのプロセス内ですべてのアプリケーション ドメインがグローバル変数を共有する場合は、`__declspec(process)` 修飾子を使用します。 `__declspec(process)` 既定では有効では[/clr](../build/reference/clr-common-language-runtime-compilation.md)です。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
- `__declspec(appdomain)`有効な場合のいずれか、 **/clr**コンパイラ オプションを使用します。 `__declspec(appdomain)` でマークできるのは、グローバル変数、静的メンバー変数、または静的ローカル変数だけです。 マネージ型の静的メンバーに `__declspec(appdomain)` を適用するとエラーになります。そのようなメンバーは常にこの動作をするためです。  
+ `__declspec(appdomain)` 有効な場合のいずれか、 **/clr**コンパイラ オプションを使用します。 `__declspec(appdomain)` でマークできるのは、グローバル変数、静的メンバー変数、または静的ローカル変数だけです。 マネージ型の静的メンバーに `__declspec(appdomain)` を適用するとエラーになります。そのようなメンバーは常にこの動作をするためです。  
   
  使用して`__declspec(appdomain)`使用と似ています[スレッド ローカル ストレージ (TLS)](../parallel/thread-local-storage-tls.md)です。 スレッドは、アプリケーション ドメインと同様に独自のストレージを持ちます。 `__declspec(appdomain)` を使用すると、このアプリケーションで作成された各アプリケーション ドメインで、グローバル変数が独自のストレージを持つことが保証されます。  
   
@@ -144,5 +148,5 @@ __declspec(process) CGlobal::~CGlobal destructor
 ```  
   
 ## <a name="see-also"></a>参照  
- [_ _declspec](../cpp/declspec.md)   
+ [__declspec](../cpp/declspec.md)   
  [キーワード](../cpp/keywords-cpp.md)

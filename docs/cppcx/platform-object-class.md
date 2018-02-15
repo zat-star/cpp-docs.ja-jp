@@ -6,7 +6,7 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::Object::Object
 - VCCORLIB/Platform::Object::Equals
@@ -14,22 +14,25 @@ f1_keywords:
 - VCCORLIB/Platform::Object::ReferenceEquals
 - VCCORLIB/Platform::ToString
 - VCCORLIB/Platform::GetType
-dev_langs: C++
-helpviewer_keywords: Object class
+dev_langs:
+- C++
+helpviewer_keywords:
+- Object class
 ms.assetid: 709e84a8-0bff-471b-bc14-63e424080b5a
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 2ee718205aa235ee2d93183f131f06ba9f01e40e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aa882c22aab21fe82abb2884305bc314997f36a4
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformobject-class"></a>Platform::Object クラス
-Windows ストア アプリ内で ref クラスと ref 構造体に対して共通の動作を提供します。 ref クラスと ref 構造体のインスタンスは、いずれも Platform::Object^ に暗黙的に変換可能で、仮想の ToString メソッドをオーバーライドできます。  
+Ref クラスと Windows ランタイム アプリで ref 構造体に対して共通の動作を提供します。 ref クラスと ref 構造体のインスタンスは、いずれも Platform::Object^ に暗黙的に変換可能で、仮想の ToString メソッドをオーバーライドできます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -43,15 +46,15 @@ public ref class Object : Object
   
 |名前|説明|  
 |----------|-----------------|  
-|[Object::object](#ctor)|Object クラスの新しいインスタンスを初期化します。|  
+|[Object::Object](#ctor)|Object クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[Object::equals](#equals)|指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。|  
-|[Object::gethashcode](#gethashcode)|このインスタンスのハッシュ コードを返します。|  
-|[Object::referenceequals](#referenceequals)|指定された Object インスタンスが同一のインスタンスかどうかを判断します。|  
+|[Object::Equals](#equals)|指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。|  
+|[Object::GetHashCode](#gethashcode)|このインスタンスのハッシュ コードを返します。|  
+|[Object::ReferenceEquals](#referenceequals)|指定された Object インスタンスが同一のインスタンスかどうかを判断します。|  
 |[ToString](#tostring)|現在のオブジェクトを表す文字列を返します。 オーバーライドできます。|  
 |[GetType](#gettype)|現在のインスタンスを記述する [Platform::Type](../cppcx/platform-type-class.md) を取得します。|  
   
@@ -66,7 +69,7 @@ public ref class Object : Object
  **名前空間:** Platform  
 
   
-## <a name="equals"></a>Object::equals メソッド
+## <a name="equals"></a> Object::equals メソッド
 指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。  
   
 ### <a name="syntax"></a>構文  
@@ -87,7 +90,7 @@ bool Equals(
   
 
 
-## <a name="gethashcode"></a>Object::gethashcode メソッド
+## <a name="gethashcode"></a>  Object::gethashcode メソッド
 COM オブジェクトの場合は、このインスタンスの `IUnknown`* ID 値を返します。COM オブジェクトでない場合は、計算済みハッシュ値を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -104,7 +107,7 @@ public:int GetHashCode()
   
 
 
-## <a name="gettype"></a>Object::gettype メソッド
+## <a name="gettype"></a>  Object::gettype メソッド
 返します、 [platform::type](../cppcx/platform-type-class.md)オブジェクトのランタイム型を記述するオブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -131,9 +134,9 @@ rootFrame->Navigate(TypeName(MainPage::typeid), e->Arguments);
 ## <a name="see-also"></a>参照  
  [Platform::type クラス](../cppcx/platform-type-class.md)   
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)   
- [型のシステム](../cppcx/type-system-c-cx.md
+ [Type System](../cppcx/type-system-c-cx.md
   
-## <a name="ctor"></a>Object::object コンス トラクター
+## <a name="ctor"></a>  Object::object コンス トラクター
 Object クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  
@@ -142,7 +145,7 @@ Object クラスの新しいインスタンスを初期化します。
 public:Object()  
 ```  
 
-## <a name="referenceequals"></a>Object::referenceequals メソッド
+## <a name="referenceequals"></a>  Object::referenceequals メソッド
 指定された Object インスタンスが同一のインスタンスかどうかを判断します。  
   
 ### <a name="syntax"></a>構文  
@@ -161,7 +164,7 @@ public:static bool ReferenceEquals(  Object^ obj1,   Object^ obj2)
 ### <a name="return-value"></a>戻り値  
  2 つのオブジェクトが同一である場合は `true`。それ以外の場合は `false`。  
  
-## <a name="tostring"></a>Object::tostring メソッド (C + + CX)
+## <a name="tostring"></a>  Object::tostring メソッド (C + + CX)
 現在のオブジェクトを表す文字列を返します。  
   
 ### <a name="syntax"></a>構文  

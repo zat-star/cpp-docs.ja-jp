@@ -6,7 +6,7 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - COLLECTION/Platform::Collections::VectorView::VectorView
 - COLLECTION/Platform::Collections::VectorView::First
@@ -14,19 +14,22 @@ f1_keywords:
 - COLLECTION/Platform::Collections::VectorView::GetMany
 - COLLECTION/Platform::Collections::VectorView::IndexOf
 - COLLECTION/Platform::Collections::VectorView::Size
-dev_langs: C++
-helpviewer_keywords: VectorView Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- VectorView Class
 ms.assetid: 05cd461d-dce7-49d3-b0e7-2e5c78ed8192
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 10619437ad7be96edb6ed2a0c4eb86c4f10580ca
-ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5f196a1f58e5c480ef09d13a72f1c8ac3a0a50db
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcollectionsvectorview-class"></a>Platform::Collections::VectorView クラス
 インデックスによって個別にアクセスできるオブジェクトのシーケンシャル コレクションの読み取り専用ビューを表します。 コレクション内の各オブジェクトの型は、テンプレート パラメーターによって指定されます。  
@@ -74,7 +77,7 @@ template <typename T, typename E>
   
  **名前空間:** Platform::Collections  
 
-## <a name="first"></a>Vectorview::first メソッド
+## <a name="first"></a>  Vectorview::first メソッド
 VectorView 内の最初の要素を指定する反復子を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -93,7 +96,7 @@ virtual Windows::Foundation::Collections::IIterator<T>^
   
 
 
-## <a name="getat"></a>Vectorview::getat メソッド
+## <a name="getat"></a>  Vectorview::getat メソッド
 指定されたインデックスで示される現在の VectorView の要素を取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -114,7 +117,7 @@ T GetAt(
   
 
 
-## <a name="getmany"></a>Vectorview::getmany メソッド
+## <a name="getmany"></a>  Vectorview::getmany メソッド
 指定されたインデックスを開始位置として、現在の VectorView から項目のシーケンスを取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -139,7 +142,7 @@ virtual unsigned int GetMany(
   
 
 
-## <a name="indexof"></a>Vectorview::indexof メソッド
+## <a name="indexof"></a>  Vectorview::indexof メソッド
 現在の VectorView 内で指定された項目を検索し、見つかった場合は項目のインデックスを返します。  
   
 ### <a name="syntax"></a>構文  
@@ -166,7 +169,7 @@ virtual bool IndexOf(
   
 
 
-## <a name="size"></a>Vectorview::size メソッド
+## <a name="size"></a>  Vectorview::size メソッド
 現在の VectorView オブジェクトの要素数を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -181,7 +184,7 @@ virtual property unsigned int Size;
   
 
 
-## <a name="ctor"></a>Vectorview::vectorview コンス トラクター
+## <a name="ctor"></a>  Vectorview::vectorview コンス トラクター
 VectorView クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  

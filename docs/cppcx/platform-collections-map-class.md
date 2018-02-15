@@ -6,7 +6,7 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - COLLECTION/Platform::Collections::Map::Map
 - COLLECTION/Platform::Collections::Map::Clear
@@ -17,19 +17,22 @@ f1_keywords:
 - COLLECTION/Platform::Collections::Map::Lookup
 - COLLECTION/Platform::Collections::Map::Remove
 - COLLECTION/Platform::Collections::Map::Size
-dev_langs: C++
-helpviewer_keywords: Map Class (C++/Cx)
+dev_langs:
+- C++
+helpviewer_keywords:
+- Map Class (C++/Cx)
 ms.assetid: 2b8cf968-1167-4898-a149-1195b32c1785
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: b58ba1d4407f719bc2f9f1e08715d7e53a11fb58
-ms.sourcegitcommit: 6f40bba1772a09ff0e3843d5f70b553e1a15ab50
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e54750d02386795e46675b31a06a082bd35402f1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcollectionsmap-class"></a>Platform::Collections::Map クラス
 
@@ -115,7 +118,7 @@ ref class Map sealed;
 
 **名前空間:** Platform::Collections
 
-## <a name="clear"></a>Map::clear メソッド
+## <a name="clear"></a>  Map::clear メソッド
 
 現在のマップ オブジェクトから、すべてのキー/値ペアを削除します。
 
@@ -125,7 +128,7 @@ ref class Map sealed;
 virtual void Clear();
 ```
 
-## <a name="first"></a>Map::first メソッド
+## <a name="first"></a>  Map::first メソッド
 
 マップ内の最初の要素を指定する反復子、またはマップが空の場合は `nullptr` を返します。
 
@@ -144,7 +147,7 @@ Windows::Foundation::Collections::IKeyValuePair<K, V>^>^ First();
 
 First() によって返される反復子を保持する便利な方法で宣言された変数に戻り値を割り当てるには、**自動**推論キーワードを入力します。 たとえば、`auto x = myMap->First();` のようにします。
 
-## <a name="getview"></a>Map::getview メソッド
+## <a name="getview"></a>  Map::getview メソッド
 
 現在のマップの読み取り専用ビューを返しますつまり、 [Platform::Collections::MapView クラス](../cppcx/platform-collections-mapview-class.md)を実装する、 [Windows::Foundation::Collections::IMapView\<K, V >](http://msdn.microsoft.com/library/windows/apps/br226037.aspx)インターフェイスです。
 
@@ -158,7 +161,7 @@ Windows::Foundation::Collections::IMapView<K, V>^ GetView();
 
 `MapView` オブジェクト。
 
-## <a name="haskey"></a>Map::haskey メソッド
+## <a name="haskey"></a>  Map::haskey メソッド
 
 指定したキーが現在のマップに格納されているかどうかを判定します。
 
@@ -177,7 +180,7 @@ Map 要素の検索に使用するキー。 型*キー* typename は*K*です。
 
 キーが見つかった場合は `true`。それ以外の場合は `false`。
 
-## <a name="insert"></a>Map::insert メソッド
+## <a name="insert"></a>  Map::insert メソッド
 
 指定したキー/値ペアを現在のマップ オブジェクトに追加します。
 
@@ -197,9 +200,9 @@ virtual bool Insert(K key, V value);
 
 ### <a name="return-value"></a>戻り値
 
-`true`現在のマップ内の既存の要素のキーと一致するかどうかは*キー*し、その要素の値部分に設定されている*値*です。 `false`現在のマップ内の既存の要素が一致しない場合*キー*と*キー*と*値*パラメーターがキー/値ペアになっていて、現在のマップに追加します。
+`true` 現在のマップ内の既存の要素のキーと一致するかどうかは*キー*し、その要素の値部分に設定されている*値*です。 `false` 現在のマップ内の既存の要素が一致しない場合*キー*と*キー*と*値*パラメーターがキー/値ペアになっていて、現在のマップに追加します。
 
-## <a name="lookup"></a>Map::lookup メソッド
+## <a name="lookup"></a>  Map::lookup メソッド
 
 キーがある場合は、型 K の指定されたキーに関連付けられている型 V の値を取得します。
 
@@ -222,7 +225,7 @@ V Lookup(K key);
 
 キーが存在しない場合、 [platform::outofboundsexception](../cppcx/platform-outofboundsexception-class.md)がスローされます。
 
-## <a name="ctor"></a>Map::map コンス トラクター
+## <a name="ctor"></a>  Map::map コンス トラクター
 
 マップ クラスの新しいインスタンスを初期化します。
 
@@ -256,7 +259,7 @@ Map(
 *last*  
 現在のマップを初期化するために使用される要素の範囲の後の最初の要素の入力反復子。
 
-## <a name="mapchanged"></a>Map::mapchanged イベント
+## <a name="mapchanged"></a>  Map::mapchanged イベント
 
 項目がマップに挿入されたときまたはマップから削除されたときに発生します。
 
@@ -272,9 +275,9 @@ A [MapChangedEventHandler\<K, V >](http://msdn.microsoft.com/library/windows/app
 
 ## <a name="net-framework-equivalent"></a>同等の .NET Framework 関数
 
-C# または Visual Basic を使用する Windows ストア アプリ プロジェクト IMap\<K, V > を IDictionary として\<K, V >。
+C# または Visual Basic を使用する Windows ランタイム アプリ プロジェクト IMap\<K, V > を IDictionary として\<K, V >。
 
-## <a name="remove"></a>Map::remove メソッド
+## <a name="remove"></a>  Map::remove メソッド
 
 指定したキー/値ペアを現在のマップ オブジェクトから削除します。
 
@@ -289,7 +292,7 @@ virtual void Remove(K key);
 *key*  
 キー/値ペアのキー部分。 型*キー* typename は*K*です。
 
-## <a name="size"></a>Map::size メソッド
+## <a name="size"></a>  Map::size メソッド
 
 数を返します[Windows::Foundation::Collections::IKeyValuePair\<K, V >](http://msdn.microsoft.com/library/windows/apps/br226031.aspx)マップ内の要素。
 

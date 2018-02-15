@@ -4,28 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - marshaling [C++], arrays
 - platform invoke [C++], arrays
 - interop [C++], arrays
 - data marshaling [C++], arrays
 ms.assetid: a1237797-a2da-4df4-984a-6333ed3af406
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - dotnet
-ms.openlocfilehash: 3694d6628005c49cc824e52d710e64e060822f96
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 50ff0e0a6e61b3c2c691296f92f6ad471a3007e9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="how-to-marshal-arrays-using-pinvoke"></a>方法: PInvoke を使用して配列をマーシャリングする
 このトピックの C スタイルの文字列は、CLR の文字列型を使用して呼び出すことができますを受け入れる関数をネイティブ<xref:System.String>.NET Framework プラットフォーム呼び出しのサポートを使用します。 Visual の C++ プログラマは、ほとんどのコンパイル時エラーを報告がタイプ セーフではありませんし、実装に時間がかかることができます、P/invoke が用意されているため (可能な場合)、代わりに、C++ Interop 機能を使用することをお勧めします。 アンマネージ API が DLL としてパッケージ化され、ソース コードを使用できない、P/invoke が唯一のオプション (それ以外の場合を参照してください[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md))。  
@@ -37,7 +39,7 @@ ms.lasthandoff: 12/21/2017
   
  次のコードはアンマネージとマネージ モジュールで構成されます。 アンマネージ モジュールは、整数の配列を受け取る関数を定義する DLL です。 2 番目のモジュールは、この関数のインポートは、マネージ配列の観点から定義および使用する管理対象のコマンド ライン アプリケーション、<xref:System.Runtime.InteropServices.MarshalAsAttribute>配列が呼び出されたときに、ネイティブ配列に変換することを指定する属性。  
   
- マネージ モジュールは、/clr は/clr でコンパイル: 純粋なが動作します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+ マネージ モジュールは、/clr と共にコンパイルします。  
   
 ```cpp  
 // TraditionalDll4.cpp  

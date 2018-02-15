@@ -6,18 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 31c8e08a-00ad-40f9-8f7e-124864aaad58
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: af74c81186591062214e2a8eb1695a2d177cfc04
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ef32e8310454005fa01a3e23dcd8739dcdbaa647
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="events-ccx"></a>イベント (C++/CX)
 Windows ランタイム型を宣言できます (つまり、発行) イベント、および同じコンポーネント内または他のコンポーネントでのクライアント コードで呼び出されるメソッドを関連付けることによってそれらのイベントにサブスクライブできます*イベント ハンドラー*イベントにします。 複数のイベント ハンドラーを単一のイベントに関連付けることもできます。 発行オブジェクトがイベントを発生させた時点で、すべてのイベント ハンドラーが呼び出される結果になります。 この方法で、発行側がイベントを発生させたときに、サブスクライブ側クラスはあらゆる適切なカスタム アクションを実行できます。 各イベントには、そのイベントにサブスクライブしようとするすべてのイベント ハンドラーが所有している必要があるシグネチャを指定するデリゲート型があります。  

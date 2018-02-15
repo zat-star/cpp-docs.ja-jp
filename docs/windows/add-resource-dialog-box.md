@@ -4,33 +4,36 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.editors.insertresource
-dev_langs: C++
+f1_keywords:
+- vc.editors.insertresource
+dev_langs:
+- C++
 helpviewer_keywords:
 - resources [Visual Studio], adding
 - Add Resource dialog box
 ms.assetid: e9fb6967-738f-47e8-ab58-728cf35b3af0
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: fde90f5d7c7822155e36b77c74cd80cdf56b10d2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: aab285109b34b1de2187e02956cfff2e5a0ba724
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="add-resource-dialog-box"></a>[リソースの追加] ダイアログ ボックス
 このダイアログ ボックスは、C++ Windows デスクトップ アプリケーション プロジェクトにリソースを追加するときに使用します。  
   
 > [!NOTE]
->  この情報は、Windows ストア アプリのリソースには適用されません。 詳細については、次を参照してください。[アプリ リソースの定義](http://msdn.microsoft.com/en-us/476ea844-632c-4467-9ce3-966be1350dd4)です。  
+>  この情報は、ユニバーサル Windows プラットフォーム アプリでのリソースには適用されません。 詳細については、次を参照してください。[アプリのリソースおよびリソース管理システム](/windows/uwp/app-resources/)です。  
   
  **リソースの種類**  
  作成するリソースの種類を指定します。  

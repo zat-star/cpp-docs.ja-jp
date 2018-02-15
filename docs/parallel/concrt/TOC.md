@@ -2,7 +2,7 @@
 # [同時実行ランタイムの概要](overview-of-the-concurrency-runtime.md)
 # [同時実行ランタイムでの例外処理](exception-handling-in-the-concurrency-runtime.md)
 # [並列診断ツール (同時実行ランタイム)](parallel-diagnostic-tools-concurrency-runtime.md)
-# [C++ における Windows ストア アプリ用の非同期操作の作成](creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)
+# [C++ における UWP アプリ用の非同期操作の作成](creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)
 # [同時実行ランタイムとその他の同時実行モデルの比較](comparing-the-concurrency-runtime-to-other-concurrency-models.md)
 ## [OpenMP から同時実行ランタイムへの移行](migrating-from-openmp-to-the-concurrency-runtime.md)
 ### [方法: OpenMP の parallel for ループを変換し、同時実行ランタイムを使用する](how-to-convert-an-openmp-parallel-for-loop-to-use-the-concurrency-runtime.md)

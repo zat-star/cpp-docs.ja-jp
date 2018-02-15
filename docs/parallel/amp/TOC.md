@@ -1,7 +1,7 @@
 # [C++ AMP (C++ Accelerated Massive Parallelism)](cpp-amp-cpp-accelerated-massive-parallelism.md)
 # [C++ AMP の概要](cpp-amp-overview.md)
 # [タイルの使用](using-tiles.md)
-# [Windows ストア アプリでの C++ AMP の使用](using-cpp-amp-in-windows-store-apps.md)
+# [UWP アプリでの C++ AMP の使用](using-cpp-amp-in-windows-store-apps.md)
 # [チュートリアル: 行列乗算](walkthrough-matrix-multiplication.md)
 # [チュートリアル: C++ AMP アプリケーションのデバッグ](walkthrough-debugging-a-cpp-amp-application.md)
 # [ラムダ、関数オブジェクト、および制限関数の使用](using-lambdas-function-objects-and-restricted-functions.md)
