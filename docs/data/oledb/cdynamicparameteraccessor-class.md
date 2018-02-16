@@ -1,7 +1,7 @@
 ---
 title: "CDynamicParameterAccessor クラス |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 02/14/2018
 ms.reviewer: 
 ms.suite: 
 ms.technology:
@@ -24,54 +24,58 @@ manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: 6c0bf234bd0f8a3de96c545e2bbdfe492822d627
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
-ms.translationtype: HT
+ms.openlocfilehash: 5eaea3f682fc31c825849ba4d3b5b48166f085ef
+ms.sourcegitcommit: 8ae12a602244a5853e941e5e8806e3545d876844
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="cdynamicparameteraccessor-class"></a>CDynamicParameterAccessor クラス
-[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) と類似していますが、 [ICommandWithParameters](https://msdn.microsoft.com/en-us/library/ms712937.aspx) インターフェイスを呼び出すことで設定されるパラメーター情報を取得します。  
-  
+
+ような[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)を呼び出すことによって設定するパラメーター情報を取得するが、 [ICommandWithParameters](/sql/relational-databases/native-client-ole-db-interfaces/icommandwithparameters)インターフェイスです。
+
 ## <a name="syntax"></a>構文
 
 ```cpp
-class CDynamicParameterAccessor : public CDynamicAccessor  
-```  
-  
-## <a name="members"></a>メンバー  
-  
-### <a name="methods"></a>メソッド  
-  
-|||  
-|-|-|  
-|[CDynamicParameterAccessor](../../data/oledb/cdynamicparameteraccessor-cdynamicparameteraccessor.md)|コンストラクターです。|  
-|[GetParam](../../data/oledb/cdynamicparameteraccessor-getparam.md)|バッファーからパラメーター データを取得します。|  
-|[GetParamCount](../../data/oledb/cdynamicparameteraccessor-getparamcount.md)|アクセサー内のパラメーターの数を取得します。|  
-|[GetParamIO](../../data/oledb/cdynamicparameteraccessor-getparamio.md)|指定されたパラメーターが入力または出力パラメーターであるかどうかを判断します。|  
-|[GetParamLength](../../data/oledb/cdynamicparameteraccessor-getparamlength.md)|バッファーに格納され、指定されたパラメーターの長さを取得します。|  
-|[GetParamName](../../data/oledb/cdynamicparameteraccessor-getparamname.md)|指定されたパラメーターの名前を取得します。|  
-|[GetParamStatus](../../data/oledb/cdynamicparameteraccessor-getparamstatus.md)|バッファーに格納され、指定されたパラメーターのステータスを取得します。|  
-|[GetParamString](../../data/oledb/cdynamicparameteraccessor-getparamstring.md)|バッファーに格納され、指定されたパラメーターの文字列データを取得します。|  
-|[GetParamType](../../data/oledb/cdynamicparameteraccessor-getparamtype.md)|指定されたパラメーターのデータ型を取得します。|  
-|[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)|パラメーター データを使用してバッファーを設定します。|  
-|[SetParamLength](../../data/oledb/cdynamicparameteraccessor-setparamlength.md)|バッファーに格納され、指定されたパラメーターの長さを設定します。|  
-|[SetParamStatus](../../data/oledb/cdynamicparameteraccessor-setparamstatus.md)|バッファーに格納され、指定されたパラメーターのステータスを設定します。|  
-|[SetParamString](../../data/oledb/cdynamicparameteraccessor-setparamstring.md)|バッファーに格納され、指定されたパラメーターの文字列データを設定します。|  
-  
-## <a name="remarks"></a>コメント  
- コンシューマーがこのクラスを使用するには、プロバイダーで `ICommandWithParameters` がサポートされている必要があります。  
-  
- パラメーター情報は、このクラスによって作成および管理されるバッファーに格納されます。 [GetParam](../../data/oledb/cdynamicparameteraccessor-getparam.md) と [GetParamType](../../data/oledb/cdynamicparameteraccessor-getparamtype.md)を使用してバッファーからパラメーター データを取得します。  
-  
- このクラスを使用して SQL Server のストアド プロシージャを実行し、出力パラメーター値を取得する方法の例については、サポート技術情報の記事 Q058860 の「HOWTO: Execute Stored Procedure using CDynamicParameterAccessor」を参照してください。 サポート技術情報の記事は、MSDN ライブラリの Visual Studio マニュアルまたは [http://support.microsoft.com/](http://support.microsoft.com)で参照できます。  
-  
-## <a name="requirements"></a>必要条件  
- **ヘッダー**: atldbcli.h  
-  
-## <a name="see-also"></a>参照  
- [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
- [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)   
- [CAccessor クラス](../../data/oledb/caccessor-class.md)   
- [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)   
- [CManualAccessor クラス](../../data/oledb/cmanualaccessor-class.md)
+class CDynamicParameterAccessor : public CDynamicAccessor
+```
+
+## <a name="members"></a>メンバー
+
+### <a name="methods"></a>メソッド
+
+|||
+|-|-|
+|[CDynamicParameterAccessor](../../data/oledb/cdynamicparameteraccessor-cdynamicparameteraccessor.md)|コンストラクターです。|
+|[GetParam](../../data/oledb/cdynamicparameteraccessor-getparam.md)|バッファーからパラメーター データを取得します。|
+|[GetParamCount](../../data/oledb/cdynamicparameteraccessor-getparamcount.md)|アクセサー内のパラメーターの数を取得します。|
+|[GetParamIO](../../data/oledb/cdynamicparameteraccessor-getparamio.md)|指定されたパラメーターが入力または出力パラメーターであるかどうかを判断します。|
+|[GetParamLength](../../data/oledb/cdynamicparameteraccessor-getparamlength.md)|バッファーに格納され、指定されたパラメーターの長さを取得します。|
+|[GetParamName](../../data/oledb/cdynamicparameteraccessor-getparamname.md)|指定されたパラメーターの名前を取得します。|
+|[GetParamStatus](../../data/oledb/cdynamicparameteraccessor-getparamstatus.md)|バッファーに格納され、指定されたパラメーターのステータスを取得します。|
+|[GetParamString](../../data/oledb/cdynamicparameteraccessor-getparamstring.md)|バッファーに格納され、指定されたパラメーターの文字列データを取得します。|
+|[GetParamType](../../data/oledb/cdynamicparameteraccessor-getparamtype.md)|指定されたパラメーターのデータ型を取得します。|
+|[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)|パラメーター データを使用してバッファーを設定します。|
+|[SetParamLength](../../data/oledb/cdynamicparameteraccessor-setparamlength.md)|バッファーに格納され、指定されたパラメーターの長さを設定します。|
+|[SetParamStatus](../../data/oledb/cdynamicparameteraccessor-setparamstatus.md)|バッファーに格納され、指定されたパラメーターのステータスを設定します。|
+|[SetParamString](../../data/oledb/cdynamicparameteraccessor-setparamstring.md)|バッファーに格納され、指定されたパラメーターの文字列データを設定します。|
+
+## <a name="remarks"></a>コメント
+
+コンシューマーがこのクラスを使用するには、プロバイダーで `ICommandWithParameters` がサポートされている必要があります。
+
+パラメーター情報は、このクラスによって作成および管理されるバッファーに格納されます。 [GetParam](../../data/oledb/cdynamicparameteraccessor-getparam.md) と [GetParamType](../../data/oledb/cdynamicparameteraccessor-getparamtype.md)を使用してバッファーからパラメーター データを取得します。
+
+このクラスを使用して、SQL Server のストアド プロシージャを実行し、出力パラメーターの値を取得する方法を示す例について、次を参照してください、 [DynamicConsumer](https://github.com/Microsoft/VCSamples/tree/master/VC2008Samples/ATL/OLEDB/Consumer/DynamicConsumer)のサンプル コードでは、 [Microsoft VCSamples](https://github.com/Microsoft/VCSamples) 。GitHub のリポジトリ。
+
+## <a name="requirements"></a>必要条件
+
+**ヘッダー**: atldbcli.h
+
+## <a name="see-also"></a>関連項目
+
+[OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)  
+[OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)  
+[CAccessor クラス](../../data/oledb/caccessor-class.md)  
+[CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)  
+[CManualAccessor クラス](../../data/oledb/cmanualaccessor-class.md)  
