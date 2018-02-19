@@ -17,18 +17,17 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 02ddf1d602fa88caa3ab069e6f2304ccb066621a
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 23e417d9ef316bf72c9606ce2525ff79587e7047
+ms.sourcegitcommit: ecf0177ae9d36b1f63c9673a9583e0359107a5cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="configuring-programs-for-windows-xp"></a>Windows XP 用プログラムの構成
 
 Visual Studio では、複数のプラットフォーム ツールセットをサポートするためには、オペレーティング システムと、既定のツールセットでサポートされていないランタイム ライブラリをターゲット設定できます。 たとえば、プラットフォーム ツールセットを切り替えることによって行うこともできます、c++ 11、c++ 14、および Visual Studio での Visual C コンパイラでサポートされている c++ 17 言語拡張機能をターゲットとするアプリを作成する[!INCLUDE[winxp](../build/includes/winxp_md.md)]と[!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)]です。 またバイナリ互換性のあるレガシ コードを維持するために以前のプラットフォーム ツールセットを使用し、引き続き Visual Studio IDE の最新の機能の利用できます。
 
 ## <a name="install-the-windows-xp-platform-toolset"></a>Windows XP プラットフォーム ツールセットをインストールします。
-
 プラットフォームのツールセットおよびターゲットにコンポーネントを取得する[!INCLUDE[winxp](../build/includes/winxp_md.md)]と[!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)]で Visual Studio 2017、Visual Studio インストーラーを実行します。 最初に Visual Studio をインストールするとき、または選択した**変更**、既存のインストールを変更することを確認、 **C++ を使用したデスクトップ開発**ワークロードが選択されています。 このワークロード用のオプション コンポーネントの一覧で選択**Windows XP support for C**を選択し**インストール**または**変更**です。
 
 ## <a name="windows-xp-targeting-experience"></a>Windows XP 対応のエクスペリエンス
@@ -65,7 +64,7 @@ Windows XP プラットフォーム ツールセット、C ランタイム ラ�
 
 - **C++ 言語の機能**
 
-   Visual Studio 2012 で実装されている C++ 言語機能だけが、v110 を使用するアプリケーションでサポートされている\_xp のプラットフォーム ツールセットです。 Visual Studio 2013 で実装されている C++ 言語機能だけが、v120 を使用するアプリケーションでサポートされている\_xp のプラットフォーム ツールセットです。 Visual Studio 2012 で実装されている C++ 言語機能だけが、v140 を使用するアプリケーションでサポートされている\_xp のプラットフォーム ツールセットです。 Visual Studio は、以前のプラットフォーム ツールセットを使用してビルドするときに、対応するコンパイラを使用します。 そのバージョンのコンパイラで実装されたその他の C++ 言語の機能を活用するために、最新の Windows XP プラットフォーム ツールセットを使用します。
+   Visual Studio 2012 で実装されている C++ 言語機能だけが、v110 を使用するアプリケーションでサポートされている\_xp のプラットフォーム ツールセットです。 Visual Studio 2013 で実装されている C++ 言語機能だけが、v120 を使用するアプリケーションでサポートされている\_xp のプラットフォーム ツールセットです。 Visual Studio 2015 で実装されている C++ 言語機能だけが、v140 を使用するアプリケーションでサポートされている\_xp のプラットフォーム ツールセットです。 Visual Studio は、以前のプラットフォーム ツールセットを使用してビルドするときに、対応するコンパイラを使用します。 そのバージョンのコンパイラで実装されたその他の C++ 言語の機能を活用するために、最新の Windows XP プラットフォーム ツールセットを使用します。
 
 - **リモート デバッグ**
 

@@ -15,15 +15,15 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4c447389de1accfe95674855645fe044e1d3df41
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 030b1da3688e2c0524256f5128d5bb15f69b5070
+ms.sourcegitcommit: ecf0177ae9d36b1f63c9673a9583e0359107a5cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="compiler-warnings-that-are-off-by-default"></a>既定で無効になっているコンパイラ警告
 
-コンパイラの一部の警告は既定でオフになっています。ほとんどのユーザーにはそれらの警告の表示が不要なためです。 ただし、次のいずれかのオプションを使用してこのような警告を有効にできます。
+コンパイラには、それらを表示するほとんどの開発者が必要ないため既定でオフになっている警告が含まれています。 ただし、次のいずれかのオプションを使用してこのような警告を有効にできます。
 
 **#pragma warning(default :** *warning_number* **)**  
 指定された警告 (*warning_number*) が既定のレベルで有効になっています。 警告に関するドキュメントには、既定のレベルの警告が記載されています。
