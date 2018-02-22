@@ -27,7 +27,7 @@ ms.lasthandoff: 02/14/2018
 ユニバーサル Windows プラットフォーム (UWP) アプリで C++ AMP (C++ Accelerated Massive Parallelism) を使用するには、GPU (グラフィックス処理装置) またはその他の計算アクセラレータで計算を実行します。 ただし C++ AMP では、Windows ランタイムの型を直接操作するための API が提供されておらず、Windows ランタイムでは C++ AMP のラッパーが提供されません。 Windows ランタイムの型を (独自に作成したコードも含めて) コード内で使用するときは、C++ AMP と互換性のある型に変換する必要があります。  
   
 ## <a name="performance-considerations"></a>パフォーマンスに関する考慮事項  
- 使用する場合[!INCLUDE[cppwrt](../../build/reference/includes/cppwrt_md.md)]([!INCLUDE[cppwrt_short](../../build/reference/includes/cppwrt_short_md.md)])、ユニバーサル Windows プラットフォーム (UWP) アプリを作成することをお勧めと共に連続した記憶域プレーン古いデータ (POD) 型を使用すること — たとえば、`std::vector`または C スタイル配列-使用されるデータのC++ AMP で。 マーシャリングの必要がないため、非 POD 型または Windows RT コンテナーを使用する場合より高いパフォーマンスの実現に役立ちます.  
+ 使用する場合[!INCLUDE[cppwrt](../../build/reference/includes/cppwrt_md.md)] ([!INCLUDE[cppwrt_short](../../build/reference/includes/cppwrt_short_md.md)])、ユニバーサル Windows プラットフォーム (UWP) アプリを作成することをお勧めと共に連続した記憶域プレーン古いデータ (POD) 型を使用すること — たとえば、`std::vector`または C スタイル配列-使用されるデータのC++ AMP で。 マーシャリングの必要がないため、非 POD 型または Windows RT コンテナーを使用する場合より高いパフォーマンスの実現に役立ちます.  
   
  C ++ AMP カーネルで、この方法で格納されているデータにアクセスするには、`std::vector` または配列記憶域を `concurrency::array_view` でラップし、この配列ビューを `concurrency::parallel_for_each` ループで使用します。  
   

@@ -33,7 +33,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 02/14/2018
 ---
 # <a name="zw-windows-runtime-compilation"></a>/ZW (Windows ランタイムのコンパイル)
-ソース コードをサポートするためにコンパイル[!INCLUDE[cppwrt](../../build/reference/includes/cppwrt_md.md)]([!INCLUDE[cppwrt_short](../../build/reference/includes/cppwrt_short_md.md)]) のユニバーサル Windows プラットフォーム (UWP) アプリを作成するためです。  
+ソース コードをサポートするためにコンパイル[!INCLUDE[cppwrt](../../build/reference/includes/cppwrt_md.md)] ([!INCLUDE[cppwrt_short](../../build/reference/includes/cppwrt_short_md.md)]) のユニバーサル Windows プラットフォーム (UWP) アプリを作成するためです。  
   
  使用すると**/ZW**をコンパイルするには、常に指定**/EHsc**もします。  
   
