@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -23,7 +24,8 @@ f1_keywords:
 - _getts
 - gets
 - _getws
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - getws function
 - getts function
@@ -34,16 +36,17 @@ helpviewer_keywords:
 - gets function
 - standard input, reading from
 ms.assetid: 1ec2dd4b-f801-48ea-97c2-892590f16024
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 6193445dace47b62cf8793d69ad45e0f73a2f10d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 01f26f8b9dbe75d37927c4d4f3055f04378ef4a1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="gets-getws"></a>gets、_getws
 `stdin` ストリームから行を取得します。 これらの関数のセキュリティを強化したバージョンを使用できます。「 [gets_s, _getws_s](../c-runtime-library/reference/gets-s-getws-s.md)」を参照してください。  
@@ -52,7 +55,7 @@ ms.lasthandoff: 12/21/2017
 >  これらは古い関数です。 Visual Studio 2015 以降、これらは CRT で使用できません。 これらの関数のセキュリティを強化したバージョン gets_s および _getws_s は、引き続き使用できます。 これらの代替関数の詳細については、「 [gets_s, _getws_s](../c-runtime-library/reference/gets-s-getws-s.md)」を参照してください。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   

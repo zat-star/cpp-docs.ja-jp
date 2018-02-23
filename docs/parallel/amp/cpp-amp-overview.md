@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - C++ Accelerated Massive Parallelism, requirements
 - C++ Accelerated Massive Parallelism, architecture
@@ -15,23 +17,24 @@ helpviewer_keywords:
 - C++ Accelerated Massive Parallelism, overview
 - C++ Accelerated Massive Parallelism
 ms.assetid: 9e593b06-6e3c-43e9-8bae-6d89efdd39fc
-caps.latest.revision: "60"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 96c794ee66f658ca211dfa5d95525e72daf296c8
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c0ee5b9c04794c531e2fa16cee72d6eee607dfbd
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="c-amp-overview"></a>C++ AMP の概要
 C++ Accelerated Massive Parallelism (C++ AMP) は、独立したグラフィックス カードの GPU (graphics processing unit) などのデータ並列ハードウェアを活用して、C++ コードの実行を高速化します。 C++ AMP を使用することによって、並列化と異種ハードウェアを使用して実行を高速化できるように、多次元データ アルゴリズムをコーディングすることができます。 C++ AMP のプログラミング モデルには、多次元配列、インデックス作成、メモリ転送、タイル、数学関数ライブラリが含まれています。 C++ AMP の言語拡張機能を使用して、データを CPU から GPU へ、また GPU から CPU へどのように移動するかを制御でき、パフォーマンスを向上させることができます。  
   
 ## <a name="system-requirements"></a>システム要件  
   
-- [!INCLUDE[win7](../../build/includes/win7_md.md)]、[!INCLUDE[win8](../../build/reference/includes/win8_md.md)]、[!INCLUDE[winsvr08_r2](../../parallel/amp/includes/winsvr08_r2_md.md)]、または [!INCLUDE[winserver8](../../build/reference/includes/winserver8_md.md)]  
+- [!INCLUDE[win7](../../build/includes/win7_md.md)]、 [!INCLUDE[win8](../../build/reference/includes/win8_md.md)]、 [!INCLUDE[winsvr08_r2](../../parallel/amp/includes/winsvr08_r2_md.md)]、または [!INCLUDE[winserver8](../../build/reference/includes/winserver8_md.md)]  
   
 -   DirectX 11 機能レベル 11.0 以降のハードウェア  
   
@@ -465,10 +468,10 @@ void MathExample() {
   
 - [Short ベクター ライブラリ](http://msdn.microsoft.com/en-us/4c4f5bed-c396-493b-a238-c347563f645f): 長さが 2、3、および 4 に基づくの short ベクター型のセットを定義`int`、 `uint`、 `float`、 `double`、 [norm](../../parallel/amp/reference/norm-class.md)、または[unorm](../../parallel/amp/reference/unorm-class.md).  
   
-## <a name="includewin8appnamelongbuildincludeswin8appnamelongmdmd-apps"></a>[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリ  
- 他の C++ ライブラリと同様に、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで C++ AMP を使用できます。 C++、C#、Visual Basic、または JavaScript を使用して作成されたアプリに C++ AMP コードを含める方法については、次の記事を参照してください。  
+## <a name="universal-windows-platform-uwp-apps"></a>ユニバーサル Windows プラットフォーム (UWP) アプリ  
+ その他の C++ ライブラリと同様に、UWP アプリで C++ AMP を使用することができます。 C++、C#、Visual Basic、または JavaScript を使用して作成されたアプリに C++ AMP コードを含める方法については、次の記事を参照してください。  
   
-- [Windows ストア アプリでの C++ AMP の使用](../../parallel/amp/using-cpp-amp-in-windows-store-apps.md)  
+- [UWP アプリでの C++ AMP の使用](../../parallel/amp/using-cpp-amp-in-windows-store-apps.md)  
   
 - [チュートリアル: C++ での基本的な Windows ランタイム コンポーネントの作成および JavaScript による呼び出し](http://go.microsoft.com/fwlink/p/?linkid=249077)  
   

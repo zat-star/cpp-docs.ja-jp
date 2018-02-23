@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -23,7 +24,8 @@ f1_keywords:
 - cgetws
 - _cgetws
 - _cgets
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _cgetws function
 - strings [C++], getting from console
@@ -32,16 +34,17 @@ helpviewer_keywords:
 - cgetws function
 - cgets function
 ms.assetid: 4d5e134a-58c3-4f62-befd-5d235b0212f4
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 9315791023b94fe7a2cdc97f1cec632c05ddbd2f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 81ce9e8144fc280cc8192696178648776c78f033
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="cgets-cgetws"></a>_cgets、_cgetws
 コンソールから文字列を取得します。 これらの関数のセキュリティを強化したバージョンを使用できます。「 [_cgets_s, _cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md)」を参照してください。  
@@ -50,7 +53,7 @@ ms.lasthandoff: 12/21/2017
 >  これらは古い関数です。 Visual Studio 2015 以降、これらは CRT で使用できません。 これらの関数のセキュリティを強化したバージョン _cgets_s および _cgetws_s は、引き続き使用できます。 これらの代替関数の詳細については、「 [_cgets_s, _cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md)」を参照してください。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   

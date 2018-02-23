@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,22 +14,24 @@ f1_keywords:
 - AFX/CException::CException
 - AFX/CException::Delete
 - AFX/CException::ReportError
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CException [MFC], CException
 - CException [MFC], Delete
 - CException [MFC], ReportError
 ms.assetid: cfacf14d-bfe4-4666-a5c7-38b800512920
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 69fb88fc9c12994d413de2cbe2037cc4fc845760
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 72272630dc475f2c40b8f249e969822a872015e0
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="cexception-class"></a>CException クラス
 MFC (Microsoft Foundation Class) ライブラリ内のすべての例外に関する基底クラスです。  
@@ -64,14 +67,14 @@ class AFX_NOVTABLE CException : public CObject
 |[CSimpleException](../../mfc/reference/csimpleexception-class.md)|リソース クリティカルな MFC 例外の基本クラス|  
 |[CInvalidArgException](../../mfc/reference/cinvalidargexception-class.md)|無効な引数の例外状態|  
 |[CMemoryException](../../mfc/reference/cmemoryexception-class.md)|メモリ不足の例外|  
-|[行わない](../../mfc/reference/cnotsupportedexception-class.md)|サポートされていない操作の要求|  
+|[CNotSupportedException](../../mfc/reference/cnotsupportedexception-class.md)|サポートされていない操作の要求|  
 |[CArchiveException](../../mfc/reference/carchiveexception-class.md)|アーカイブ固有の例外|  
 |[CFileException](../../mfc/reference/cfileexception-class.md)|特定のファイルの例外|  
-|[関数](../../mfc/reference/cresourceexception-class.md)|Windows リソース見つからないか、または不可能|  
+|[CResourceException](../../mfc/reference/cresourceexception-class.md)|Windows リソース見つからないか、または不可能|  
 |[COleException](../../mfc/reference/coleexception-class.md)|OLE 例外|  
 |[CDBException](../../mfc/reference/cdbexception-class.md)|データベースの例外 (つまり、Open Database Connectivity に基づいて MFC データベース クラス用により発生する例外条件)|  
 |[COleDispatchException](../../mfc/reference/coledispatchexception-class.md)|OLE ディスパッチ (オートメーション) 例外|  
-|[チェック](../../mfc/reference/cuserexception-class.md)|リソースが検出できなかったことを示す例外|  
+|[CUserException](../../mfc/reference/cuserexception-class.md)|リソースが検出できなかったことを示す例外|  
 |[CDaoException](../../mfc/reference/cdaoexception-class.md)|データ アクセス オブジェクト例外 (つまり、DAO クラスにより発生する例外条件)|  
 |[CInternetException](../../mfc/reference/cinternetexception-class.md)|インターネットの例外 (つまり、インターネット クラスが原因で起こる例外条件)。|  
   
@@ -91,7 +94,7 @@ class AFX_NOVTABLE CException : public CObject
 ## <a name="requirements"></a>必要条件  
  **ヘッダー:** afx.h  
   
-##  <a name="cexception"></a>CException::CException  
+##  <a name="cexception"></a>  CException::CException  
  このメンバー関数を作成、`CException`オブジェクト。  
   
 ```  
@@ -105,7 +108,7 @@ explicit CException(BOOL bAutoDelete);
 ### <a name="remarks"></a>コメント  
  このコンス トラクターを直接呼び出す必要は通常ありません。 例外をスローした関数がのインスタンスを作成する必要があります、 `CException`-クラスを派生し、そのコンス トラクター、または呼び出しが、MFC のいずれかを使用スローすることは、関数など[AfxThrowFileException](exception-processing.md#afxthrowfileexception)、定義済みの型をスローします。 このドキュメントは完全を期すのためだけに提供します。  
   
-##  <a name="delete"></a>CException::Delete  
+##  <a name="delete"></a>  CException::Delete  
  この関数は、かどうかを**CException** 、ヒープのオブジェクトが作成され、それを呼び出す場合は、**削除**演算子をオブジェクトにします。  
   
 ```  
@@ -169,7 +172,7 @@ if (pFile != NULL)
 }   
  ```
   
-##  <a name="reporterror"></a>CException::ReportError  
+##  <a name="reporterror"></a>  CException::ReportError  
  ユーザーにメッセージ ボックスにエラー テキストをレポートするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -180,7 +183,7 @@ virtual int ReportError(
   
 ### <a name="parameters"></a>パラメーター  
  `nType`  
- メッセージ ボックスのスタイルを指定します。 任意の組み合わせを適用、[メッセージ ボックス スタイル](message-box-styles.md)をボックスにします。 このパラメーターを指定しない場合、既定値は**MB_OK**です。  
+ メッセージ ボックスのスタイルを指定します。 任意の組み合わせを適用、[メッセージ ボックス スタイル](styles-used-by-mfc.md#message-box-styles)をボックスにします。 このパラメーターを指定しない場合、既定値は**MB_OK**です。  
   
  *nMessageID*  
  例外オブジェクトには、エラー メッセージがない場合に表示するメッセージのリソース ID (ストリング テーブル エントリ) を指定します。 0 の場合、メッセージ"エラー メッセージはありません"が表示されます。  

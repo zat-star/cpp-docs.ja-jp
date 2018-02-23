@@ -94,7 +94,6 @@ f1_keywords:
 - C5035
 - C5036
 - C5037
-- C5038
 - C5039
 - C5040
 - C5041
@@ -103,17 +102,16 @@ f1_keywords:
 - C5044
 dev_langs:
 - C++
-ms.assetid: c3182430-8b3b-4ab2-a532-5cd436707dc8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6f31846158e8e1899c600ae7bf765d6594a8abca
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 4ff52a747d15a3c223ef0510c9195b80c9f21647
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="compiler-warnings-c4800-through-c5999"></a>コンパイラの警告 C4800 C5999 経由
 
@@ -245,6 +243,7 @@ ms.lasthandoff: 02/14/2018
 |コンパイラの警告 C5035|機能の使用 '*機能*' 関数*関数*ゲスト コードとしてコンパイルされます|
 |コンパイラの警告 (レベル 1) C5036|/hybrid:x86arm64 でコンパイルすると、varargs 関数へのポインター変換 '*type1*'to'*type2*'|
 |コンパイラの警告 (エラー) C5037|'*メンバー関数*': クラス テンプレートのメンバーの行外定義は、既定の引数を持つことはできません|
+|[コンパイラの警告 C5038](c5038.md)|データ メンバー '*member1*'データ メンバーの後に初期化されます'*member2*'|
 |コンパイラの警告 C5039|'*関数*': - EHc に基づいて、extern C 関数に渡される可能性のある関数のスローに対するポインターまたは参照します。 未定義の動作は、この関数が例外をスローした場合に発生する可能性があります。|
 |コンパイラの警告 C5040|動的な例外指定は、有効な c++ 14 でのみ前です。noexcept(false) として扱う|
 |コンパイラの警告 C5041|'*定義*': constexpr 静的データ メンバーの不一致の定義は必要ありませんおよび c++ 17 で廃止されました|

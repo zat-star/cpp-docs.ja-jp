@@ -15,24 +15,29 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 030b1da3688e2c0524256f5128d5bb15f69b5070
-ms.sourcegitcommit: ecf0177ae9d36b1f63c9673a9583e0359107a5cb
-ms.translationtype: MT
+ms.openlocfilehash: ca1fdff6f5be88d7562f1735ea31323ca5a70360
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/21/2018
 ---
-# <a name="compiler-warnings-that-are-off-by-default"></a>既定で無効になっているコンパイラ警告
+# <a name="compiler-warnings-that-are-off-by-default"></a>既定で無効になっているコンパイラの警告
 
-コンパイラには、それらを表示するほとんどの開発者が必要ないため既定でオフになっている警告が含まれています。 ただし、次のいずれかのオプションを使用してこのような警告を有効にできます。
+コンパイラには、それらを表示するほとんどの開発者が必要ないために、既定では、オフになっている警告が含まれます。 場合によっては、以前のコードに共通の表現方法は、または言語への Microsoft 拡張機能の利用、デザインの選択肢を表現します。 それ以外の場合、これらは、領域をプログラマが多くの場合、予期しない、または未定義の動作が生じる可能性がありますの不適切な想定を行う場所を示します。 これらの警告のいくつかは、ライブラリのヘッダーでは、非常にノイズ可能性があります。
 
-**#pragma warning(default :** *warning_number* **)**  
-指定された警告 (*warning_number*) が既定のレベルで有効になっています。 警告に関するドキュメントには、既定のレベルの警告が記載されています。
+これらの警告を有効にするには、次のオプションのいずれかを使用します。
 
-**#pragma warning(** *warning_level* **:** *warning_number* **)**  
-指定された警告 (*warning_number*) が、指定されたレベルで有効な (*warning_level*)。
+- **#pragma warning(default :** *warning_number* **)**  
+   指定された警告 (*warning_number*) が既定のレベルで有効になっています。 警告に関するドキュメントには、既定のレベルの警告が記載されています。
 
-[/Wall](../build/reference/compiler-option-warning-level.md)  
-**/壁**既定で無効になっているすべての警告を有効にします。
+- **#pragma warning(** *warning_level* **:** *warning_number* **)**  
+   指定された警告 (*warning_number*) が、指定されたレベルで有効な (*warning_level*)。
+
+- [/Wall](../build/reference/compiler-option-warning-level.md)  
+   **/壁**既定で無効になっているすべての警告を有効にします。 使用して個々 の警告をオフにすることができます、このオプションを使用する場合、 [/wd](../build/reference/compiler-option-warning-level.md)オプション。
+
+- [/w*lnnnn*](../build/reference/compiler-option-warning-level.md)  
+   これにより、警告 *nnnn* レベルで*l*です。
 
 既定では、次の警告はオフになっています。
 
@@ -131,6 +136,7 @@ ms.lasthandoff: 02/19/2018
 |C5032 (レベル 4)|いない対応する #pragma warning (pop) と #pragma warning (push) が検出されました|
 |C5035|機能の使用 '*機能*' 関数*関数*ゲスト コードとしてコンパイルされます|
 |C5036 (レベル 1)|/hybrid:x86arm64 でコンパイルすると、varargs 関数へのポインター変換 '*type1*'to'*type2*'|
+|[C5038](../error-messages/compiler-warnings/c5038.md)|データ メンバー '*member1*'データ メンバーの後に初期化されます'*member2*'|
 
 しない限り、これらの警告は無効、[寛容/-](../build/reference/permissive-standards-conformance.md)コンパイラ オプションを設定します。
 

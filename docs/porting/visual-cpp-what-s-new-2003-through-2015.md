@@ -18,11 +18,11 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4e730d7d47a8742d3c4f1f7c4636aabd8785cc93
-ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
+ms.openlocfilehash: e0e5090bc914648e527f335b261ad7838ad3d0bc
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="visual-c-what39s-new-2003-through-2015"></a>Visual C++ 2003 ～ 2015 の新機能
 
@@ -1545,16 +1545,16 @@ C++11 の明示的な変換演算子、初期化子リスト、スコープ指�
 ### <a name="profile-guided-optimization-pgo-enhancements"></a>ガイド付き最適化のプロファイル (Profile Guided Optimization、PGO) が次のように強化されました
 
 - PGO を使用して最適化されたアプリケーションのワーキング セットの縮小を通じてパフォーマンスを向上させました。
-- Windows Store アプリ開発用の新しい PGO。
+- Windows ランタイム アプリ開発用の新しい PGO。
 
-### <a name="windows-store-app-development-support"></a>Windows Store アプリ開発のサポート
+### <a name="windows-runtime-app-development-support"></a>Windows ランタイム アプリ開発のサポート
 
-- **Value 構造体の中でのボックス化された値のサポート。** null にすることができるフィールドを使用して、値の型を定義できます。たとえば、int ではなく、IBox<int>^ です。つまり、これらのフィールドは値を持つことも、または nullptr に等しくすることもできます。
+- **Value 構造体の中でのボックス化された値のサポート。** null にすることができるフィールドを使用して、値の型を定義できます。たとえば、int ではなく、IBox\<int>^ です。つまり、これらのフィールドは値を持つことも、または nullptr に等しくすることもできます。
 - **よりリッチな例外情報。** C++/CX は新しい Windows エラー モデルをサポートし、アプリケーション バイナリ インターフェイス (ABI) を通じたリッチな例外情報の伝達とキャプチャを可能にします。その中には、呼び出し履歴とカスタム メッセージ文字列が含まれます。
 - **Object::ToString () は、仮想メソッドになりました。** ユーザー定義の Windows ランタイムの参照型の中で、ToString をオーバーライドできるようになりました。
 - **推奨されていない API のサポート。** Public Windows ランタイム API は、"使用を推奨されていない" というマークを付けられ、ビルドの警告として表示されるカスタム メッセージを付与され、移行のガイドラインが提供されるようになりました。
 - **デバッガーの強化。** ネイティブ/JavaScript ネの相互運用機能デバッグ、Windows ランタイムの例外診断、非同期コードのデバッグ (Windows ランタイムと PPL の両方) をサポートします。
-  - 注: ここで説明する C++ 固有の機能と拡張機能に加えて、Visual Studio 内の他の拡張機能も、より適切な Windows Store アプリの開発に役立ちます。
+  - 注: ここで説明する C++ 固有の機能と拡張機能に加えて、Visual Studio 内の他の拡張機能も、より適切な Windows ランタイム アプリの開発に役立ちます。
 
 ### <a name="diagnostics-enhancements"></a>診断の強化
 
@@ -1632,12 +1632,12 @@ func1(Hydrogen); // error C2065: 'Hydrogen' : undeclared identifier
 func1(Element::Helium); // OK
    ```
 
-### <a name="windows-store-app-development-support"></a>Windows Store アプリ開発のサポート
+### <a name="windows-runtime-app-development-support"></a>Windows ランタイム アプリ開発のサポート
 
-- **ネイティブな XAML ベースの UI モデル**。 Windows Store アプリでは、新しいネイティブな XAML ベースの UI モデルを使用できます。
-- **Visual C++ コンポーネントの拡張機能**。 これらの拡張機能は Windows Store アプリの必要な部分である Windows ランタイム オブジェクトの使用を簡略化します。 詳しくは、「C++ を使った Windows ランタイム アプリのためのロードマップ」および「Visual C++ の言語リファレンス (C++/CX)」をご覧ください
-- **DirectX ゲーム**。 Windows Store アプリに対する DirectX の新しいサポートを使って、魅力的なゲームを作成できます。
-- **XAML/DirectX の相互運用**。 XAML と DirectX の両方を使う Windows Store アプリの相互運用が効率よくなりました。
+- **ネイティブな XAML ベースの UI モデル**。 Windows ランタイム アプリでは、新しいネイティブな XAML ベースの UI モデルを使用できます。
+- **Visual C++ コンポーネントの拡張機能**。 これらの拡張機能は Windows ランタイム アプリの必要な部分である Windows ランタイム オブジェクトの使用を簡略化します。 詳しくは、「[Roadmap for Windows Runtime apps using C++](../windows/universal-windows-apps-cpp.md)」(C++ を使った Windows ランタイム アプリのためのロードマップ) および「[Visual C++ language reference (C++/CX)](../cppcx/visual-c-language-reference-c-cx.md)」(Visual C++ の言語リファレンス (C++/CX)) をご覧ください
+- **DirectX ゲーム**。 Windows ランタイム アプリに対する DirectX の新しいサポートを使って、魅力的なゲームを作成できます。
+- **XAML/DirectX の相互運用**。 XAML と DirectX の両方を使う Windows ランタイム アプリの相互運用が効率よくなりました。
 - **Windows ランタイム コンポーネント DLL の開発**。 コンポーネント DLL の開発により、Windows ランタイムの環境が拡張可能になります。
 
 ### <a name="compiler-and-linker"></a>コンパイラとリンカー
@@ -1941,7 +1941,7 @@ __sptr、__uptr
 - 64 ビットのネイティブ コンパイラとクロス コンパイラ。
 - /analyze (エンタープライズ コード分析) コンパイラ オプションが追加されました。
 - /bigobj コンパイラ オプションが追加されました。
-- /clr:pure、/clr:safe、/clr:oldSyntax が追加されました。
+- /clr:pure、/clr:safe、/clr:oldSyntax が追加されました。 (のちに、Visual Studio 2015 で非推奨になりました。)
 - 使われなくなったコンパイラ オプション: このリリースでは、多くのコンパイラ オプションが使われなくなりました。詳しくは、「Deprecated Compiler Options」(使われなくなったコンパイラ オプション) をご覧ください。
 - /clr コードのダブル サンキングが減りました。詳しくは、「ダブル サンキング (C++)」をご覧ください。
 - /EH (例外処理モデル) または /EHs は、スロー以外の手段で発生した例外のキャッチに使用できなくなりました。/EHa を使用してください。

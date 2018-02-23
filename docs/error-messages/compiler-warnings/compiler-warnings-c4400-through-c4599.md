@@ -1,7 +1,8 @@
 ---
 title: "コンパイラの警告 C4400 C4599 を通じて |Microsoft ドキュメント"
 ms.date: 11/17/2017
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.topic: error-reference
 f1_keywords:
 - C4413
@@ -36,6 +37,10 @@ f1_keywords:
 - C4459
 - C4464
 - C4472
+- C4474
+- C4475
+- C4476
+- C4478
 - C4480
 - C4482
 - C4483
@@ -43,6 +48,10 @@ f1_keywords:
 - C4492
 - C4493
 - C4494
+- C4495
+- C4496
+- C4497
+- C4498
 - C4499
 - C4509
 - C4519
@@ -98,6 +107,10 @@ helpviewer_keywords:
 - C4459
 - C4464
 - C4472
+- C4474
+- C4475
+- C4476
+- C4478
 - C4480
 - C4482
 - C4483
@@ -105,6 +118,10 @@ helpviewer_keywords:
 - C4492
 - C4493
 - C4494
+- C4495
+- C4496
+- C4497
+- C4498
 - C4499
 - C4509
 - C4519
@@ -127,17 +144,19 @@ helpviewer_keywords:
 - C4593
 - C4594
 - C4595
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: b07850a5-ae89-48ea-bf9a-f0e30939f9b9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 44b0c76c6aba144229923a969cf3da026de54201
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 750f0cdd1b22a1ed72d569a6bf85646ee34b2aea
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="compiler-warnings-c4400-through-c4599"></a>コンパイラの警告 C4400 C4599 経由
 
@@ -165,7 +184,7 @@ ms.lasthandoff: 12/21/2017
 |[コンパイラの警告 (レベル 2) C4412](../../error-messages/compiler-warnings/compiler-warning-level-2-c4412.md)|'*関数*': 関数のシグネチャには、型が含まれています'*型*';。C++ オブジェクトは、純粋なコードの間で受け渡すに安全でないと混合またはネイティブです。|
 |コンパイラの警告 C4413|'classname::member': 参照メンバーがコンス トラクターの終了後は維持されません一時的に初期化されます|
 |[コンパイラの警告 (レベル 3) C4414](../../error-messages/compiler-warnings/compiler-warning-level-3-c4414.md)|'*関数*': 関数へのジャンプを短いに近い値に変換|
-|コンパイラの警告 (レベル 1) C4415|重複する _ _declspec (code_seg ('*名前*'))|
+|コンパイラの警告 (レベル 1) C4415|duplicate __declspec(code_seg('*name*'))|
 |コンパイラの警告 (レベル 1) C4416|__declspec(code_seg(...) に空の文字列が含まれています無視されます。|
 |コンパイラの警告 (レベル 1) C4417|明示的なテンプレート インスタンス化が __declspec(code_seg(...) ことはできません無視されます。|
 |コンパイラの警告 (レベル 1) C4418|__declspec(code_seg(...) 列挙型では無視されます。|
@@ -182,8 +201,8 @@ ms.lasthandoff: 12/21/2017
 |[コンパイラの警告 (レベル 4) C4431](../../error-messages/compiler-warnings/compiler-warning-level-4-c4431.md)|型指定子がありません - int と仮定しました。 メモ: C は、現在 int を既定値としてサポートしていません|
 |[コンパイラの警告 (レベル 4) C4434](../../error-messages/compiler-warnings/compiler-warning-level-4-c4434.md)|静的コンス トラクターはプライベート アクセシビリティをいる必要があります。プライベート アクセスに変更します。|
 |[コンパイラの警告 (レベル 4) C4435](../../error-messages/compiler-warnings/compiler-warning-level-4-c4435.md)|'*derived_class*':/vd2 下のオブジェクトのレイアウトは仮想ベースにより変更されます'*base_class*'|
-|[コンパイラの警告 (レベル 1) C4436](../../error-messages/compiler-warnings/compiler-warning-level-1-c4436.md)|動的\_仮想ベースからキャスト '*base_class*'to'*derived_class*' コンス トラクターまたはデストラクターで部分的に構築されるオブジェクトを使用することができません|
-|[コンパイラの警告 (レベル 4) C4437](../../error-messages/compiler-warnings/compiler-warning-level-4-c4437.md)|動的\_仮想ベースからキャスト '*base_class*'to'*derived_class*' 一部のコンテキストで失敗する可能性があります|
+|[コンパイラの警告 (レベル 1) C4436](../../error-messages/compiler-warnings/compiler-warning-level-1-c4436.md)|dynamic\_cast from virtual base '*base_class*' to '*derived_class*' in constructor or destructor could fail with partially-constructed object|
+|[コンパイラの警告 (レベル 4) C4437](../../error-messages/compiler-warnings/compiler-warning-level-4-c4437.md)|dynamic\_cast from virtual base '*base_class*' to '*derived_class*' could fail in some contexts|
 |コンパイラの警告 C4438|'*関数*':/await で安全に呼び出すことはできません:/await:clrcompat モード。 場合 '*関数*' CLR への呼び出しを CLR ヘッドが破損する可能性があります|
 |[コンパイラの警告 (エラー) C4439](../../error-messages/compiler-warnings/compiler-warning-c4439.md)|'*関数*': シグネチャのマネージ型を伴う関数定義は _ _clrcall 呼び出し規約を持つ必要があります|
 |[コンパイラの警告 (レベル 1) C4440](../../error-messages/compiler-warnings/compiler-warning-level-1-c4440.md)|呼び出し規約の再から '*calling_convention1*'to'*calling_convenction2*' は無視されます|
@@ -214,7 +233,13 @@ ms.lasthandoff: 12/21/2017
 |[コンパイラの警告 (レベル 1) C4470](../../error-messages/compiler-warnings/compiler-warning-level-1-c4470.md)|浮動小数点の制御 pragmas は/clr で無視されました|
 |[コンパイラの警告 (レベル 4) C4471](compiler-warning-level-4-c4471.md)|'*列挙*': 対象範囲外の列挙の事前宣言が基になる型 (int が想定されます) を持つ必要があります|
 |コンパイラの警告 (レベル 1) C4472|'*識別子*' ネイティブ列挙型は、: 宣言アクセス指定子 (プライベート/パブリック) を追加、' WinRT &#124; 管理されている ' 列挙型|
-|コンパイラの警告 C4480|使用される標準の拡張機能: enum の基になる型を指定する '*列挙*'|
+|[コンパイラの警告 (レベル 1) C4473](c4473.md)|'*関数*': 書式指定文字列の渡された引数が少なすぎます|
+|コンパイラの警告 (レベル 3) C4474|'*関数*': 書式文字列として渡された引数が多すぎます|
+|コンパイラの警告 (レベル 3) C4475|'*関数*': 長さ修飾子'*修飾子*'の型フィールド文字を使用することはできません'*文字*' 書式指定子|
+|コンパイラの警告 (レベル 3) C4476|'*関数*': 不明な型フィールド文字'*文字*' 書式指定子|
+|[コンパイラの警告 (レベル 1) C4477](c4477.md)|'*関数*': 書式文字列'*文字列*'型の引数が必要です'*型*'、可変個引数が、*数*型を持つ '*型*'|
+|コンパイラの警告 (レベル 1) C4478|'*関数*': 位置指定引数と非位置指定のプレース ホルダーは、同じ書式指定文字列に混在させることはできません|
+|コンパイラの警告 (エラー) C4480|使用される標準の拡張機能: enum の基になる型を指定する '*列挙*'|
 |[コンパイラの警告 (レベル 4) C4481](../../error-messages/compiler-warnings/compiler-warning-level-4-c4481.md)|使用される標準の拡張機能: オーバーライド指定子 '*キーワード*'|
 |コンパイラの警告 C4482|使用される標準の拡張機能: enum '*列挙*' 修飾名に使用します。|
 |コンパイラの警告 (レベル 1、エラー) C4483|構文エラー: C++ のキーワードが必要です|
@@ -229,6 +254,10 @@ ms.lasthandoff: 12/21/2017
 |コンパイラの警告 (レベル 1、エラー) C4492|'*function1*': 一致する基本 ref クラス メソッド'*function2*'、'override' が設定されていませんが、|
 |コンパイラの警告 (レベル 3、エラー) C4493|delete 式も何も起こりませんのデストラクターとして '*型*' は 'public' アクセシビリティがありません|
 |コンパイラの警告 (レベル 1) C4494|'*関数*': ポインターまたは参照されませんが、関数型を返すために、__declspec(allocator) を無視しています|
+|コンパイラの警告 C4495|標準の拡張機能が使用される '_ _super': 明示的な基底クラス名で置き換えます|
+|コンパイラの警告 C4496|'for each' の標準の拡張機能の使用: ranged-for ステートメントに置き換えます|
+|コンパイラの警告 C4497|'sealed' を使用する標準の拡張機能: 'final' で置き換えます|
+|コンパイラの警告 C4498|使用される標準の拡張機能: '*拡張子*'|
 |コンパイラの警告 (レベル 4) C4499|"*関数*': 明示的な特殊化することはできません (無視) ストレージ クラス"|
 |[コンパイラの警告 (レベル 1) C4502](../../error-messages/compiler-warnings/compiler-warning-level-1-c4502.md)|'*リンケージ指定*' キーワード 'extern' の使用が必要であり、他のすべての指定子の前にする必要があります|
 |[コンパイラの警告 (レベル 1) C4503](../../error-messages/compiler-warnings/compiler-warning-level-1-c4503.md)|'*識別子*': 装飾名の長さを超えると、名前は切り詰められました|

@@ -2,7 +2,6 @@
 title: "スレッドとマーシャ リング (C + + CX) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 12/30/2016
-ms.prod: windows-client-threshold
 ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
@@ -21,11 +20,11 @@ ms.author: ghogen
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0d62da6fafccecc8099e3f9611946d1c89a40389
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 9b1544f18d0d5206e178cf42705d9567fad2423c
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="threading-and-marshaling-ccx"></a>スレッドとマーシャリング (C++/CX)
 ほとんどの場合に、標準の C++ オブジェクトと同様に、Windows ランタイム クラスのインスタンスを任意のスレッドからアクセスできます。 このようなクラスを "アジャイル" と呼びます。 ただし、Windows に付属する Windows ランタイム クラスの数が少ないが非アジャイルであり、必要があります使用する標準の C++ オブジェクトよりも COM オブジェクトと同様にします。 非アジャイル クラスを使用するために COM の専門家になる必要はありませんが、クラスのスレッド モデルとマーシャリング動作を考慮する必要があります。 この技術情報では、非アジャイル クラスのインスタンスを使用する必要があるまれなシナリオの背景について説明し、ガイダンスを示します。  

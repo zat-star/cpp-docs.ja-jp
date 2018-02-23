@@ -21,11 +21,11 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2a1cfde0baec56931f7b3a5603d8166df6067eb5
-ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
+ms.openlocfilehash: f6e62c477ee6332515ac32de6a9ada6f7c7a99d6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="visual-c-in-visual-studio"></a>Visual Studio の Visual C++
 
@@ -75,7 +75,7 @@ Visual Studio のサポート、バグの報告、提案に関する情報。
 ## <a name="writing-applications-in-c"></a>C++ でのアプリケーションの作成
 
 [ユニバーサル Windows アプリ](windows/universal-windows-apps-cpp.md)  
-Windows Developer Center 内にあるガイドとリファレンス コンテンツを探します。 Windows ストア アプリの開発の詳細については、「 [Visual Studio を使った Windows ストア アプリの開発](http://go.microsoft.com/fwlink/p/?LinkId=248364) 」および「 [C++ を使った Windows ストア アプリのためのロードマップ](http://go.microsoft.com/fwlink/p/?LinkId=244654)」を参照してください。
+Windows Developer Center 内にあるガイドとリファレンス コンテンツを探します。 UWP アプリの開発の詳細については、「[ユニバーサル Windows プラットフォームの紹介](/windows/uwp/get-started/universal-application-platform-guide)」と、[C++ を使用した最初の UWP アプリの作成](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp)に関するページを参照してください。
 
 [デスクトップ アプリケーション (C++)](windows/desktop-applications-visual-cpp.md)  
 メッセージ ループとコールバックのあるデスクトップ アプリケーションを作成する方法。
@@ -131,7 +131,7 @@ CPU で実行する非同期および並列アルゴリズム。
 GPU で実行する膨大な並列アルゴリズム。
 
 [Windows ランタイム C++ テンプレート ライブラリ (WRL)](http://msdn.microsoft.com/library/windows/apps/hh438466.aspx)  
-[!INCLUDE[win8_appname_long](build/includes/win8_appname_long_md.md)] のアプリケーションとコンポーネント。
+ユニバーサル Windows プラットフォーム (UWP) アプリとコンポーネント。
 
 [C++/CLI による .NET プログラミング](dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)  
 共通言語ランタイム (CLR) のプログラミング。

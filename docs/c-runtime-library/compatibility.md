@@ -23,11 +23,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b2c7d2882017a624bb00f5a32f5d6da69ff61057
-ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
+ms.openlocfilehash: bed3ebc3723bfe6af8e3d12fc3702ecb0dda7b4f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="compatibility"></a>互換性
 Universal C Run-Time Library (UCRT) は、C++ に適合するために必要な C 標準ライブラリの大部分をサポートしています。 C99 (ISO/IEC 9899:1999) ライブラリを実装しています (ただし、\<tgmath.h> で定義されている型がジェネリックのマクロと、\<complex.h> での厳密な型の互換性は除きます)。 また、UCRT は、POSIX.1 (ISO/IEC 9945-1:1996、POSIX システム アプリケーション プログラミング インターフェイス) の C ライブラリの大きなサブセットを実装していますが、すべての POSIX 標準に完全に適合しているわけではありません。  さらに、UCRT はいくつかの Microsoft 固有の関数とマクロを実装していますが、これらは標準には含まれていません。  
@@ -44,7 +44,7 @@ Universal C Run-Time Library (UCRT) は、C++ に適合するために必要な 
   
 |Title|説明|  
 |-----------|-----------------|  
-|[Windows ストア アプリ、Windows ランタイム、および C ランタイム](../c-runtime-library/windows-store-apps-the-windows-runtime-and-the-c-run-time.md)|UCRT ルーチンがユニバーサル Windows アプリまたは Windows ストア アプリと互換性がないケースについて説明します。|  
+|[UWP アプリ、Windows ランタイム、および C ランタイム](../c-runtime-library/windows-store-apps-the-windows-runtime-and-the-c-run-time.md)|UCRT ルーチンがユニバーサル Windows アプリまたは Microsoft ストア アプリと互換性がないケースについて説明します。|  
 |[ANSI C 準拠](../c-runtime-library/ansi-c-compliance.md)|UCRT における標準に適合した名前付けについて説明します。|  
 |[UNIX](../c-runtime-library/unix.md)|プログラムを UNIX に移植するためのガイドラインを提供します。|  
 |[Windows プラットフォーム (CRT)](../c-runtime-library/windows-platforms-crt.md)|CRT がサポートするオペレーティング システムの一覧を示します。|  

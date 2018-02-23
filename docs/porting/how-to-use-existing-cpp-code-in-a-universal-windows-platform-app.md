@@ -4,21 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 87e5818c-3081-42f3-a30d-3dca2cf0645c
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: c6d022edae8e63a5a6b8ec98ea67fceb4750b173
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 67bed0f5cc3ad07ae7b726b9e120aa56120186e6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="how-to-use-existing-c-code-in-a-universal-windows-platform-app"></a>方法: ユニバーサル Windows アプリで既存の C++ コードを使用する
 UWP 環境でデスクトップ プログラムを実行できるようにする最も簡単な方法は、おそらく、デスクトップ ブリッジ テクノロジを使うことです。 このテクノロジに含まれる Desktop App Converter は、既存のアプリケーションを UWP アプリとしてパッケージ化し、コードの変更は必要ありません。 詳しくは、「[Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 用に変換する](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)」をご覧ください。
@@ -27,9 +30,9 @@ UWP 環境でデスクトップ プログラムを実行できるようにする
   
  UWP アプリは保護された環境で実行されるため、プラットフォームのセキュリティを損なう可能性がある多くの Win32、COM、および CRT API の呼び出しは許可されていません。 /ZW オプションが使用されていると、コンパイラはこのような呼び出しを検出し、エラーを生成することができます。 アプリ認定キットをアプリケーションに対して使用して、禁止されている API を呼び出すコードを検出することができます。 「[Windows アプリ認定キットの使用](https://msdn.microsoft.com/library/windows/apps/hh694081.aspx)」をご覧ください。  
   
- ソース コードがライブラリに使用できるなら、禁止されている API 呼び出しを除去できる場合があります。 許可または禁止されている API の一覧を含む詳細については、「[Windows ランタイム アプリの Win32 API と COM API (システム)](https://msdn.microsoft.com/library/windows/apps/br205762.aspx)」および「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](https://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。 いくつかの代替手段が「[Windows ランタイム アプリでの Windows API の代替](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)」にあります。  
+ ソース コードがライブラリに使用できるなら、禁止されている API 呼び出しを除去できる場合があります。 許可または禁止されている API の一覧を含む詳細については、「[Windows ランタイム アプリの Win32 API と COM API (システム)](https://msdn.microsoft.com/library/windows/apps/br205762.aspx)」および「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」をご覧ください。 [UWP アプリでの Windows API の代替](/uwp/win32-and-com/alternatives-to-windows-apis-uwp)に関するページで、いくつかの代替を確認できます。  
   
- ユニバーサル Windows プロジェクトから従来のデスクトップ ライブラリへの参照を追加しようとすると、ライブラリに互換性がないことを示すエラー メッセージを受け取ります。 スタティック ライブラリの場合、従来の Win32 アプリケーションの場合と同様、ライブラリ (.lib ファイル) をリンカー入力に追加するだけでライブラリにリンクできます。 バイナリのみが使用可能なライブラリの場合は、これが唯一の選択肢です。 スタティック ライブラリはアプリの実行可能ファイルにリンクされますが、UWP アプリで使用する Win32 DLL は、プロジェクトに含め、"Content" としてマークすることによって、アプリにパッケージする必要があります。 ユニバーサル Windows プラットフォームのアプリで Win32 DLL を読み込むには、LoadLibrary や LoadLibraryEx ではなく、[LoadPackagedLibrary](https://msdn.microsoft.com/library/windows/desktop/hh447159.aspx) を呼び出す必要もあります。  
+ ユニバーサル Windows プロジェクトから従来のデスクトップ ライブラリへの参照を追加しようとすると、ライブラリに互換性がないことを示すエラー メッセージを受け取ります。 スタティック ライブラリの場合、従来の Win32 アプリケーションの場合と同様、ライブラリ (.lib ファイル) をリンカー入力に追加するだけでライブラリにリンクできます。 バイナリのみが使用可能なライブラリの場合は、これが唯一の選択肢です。 スタティック ライブラリはアプリの実行可能ファイルにリンクされますが、UWP アプリで使用する Win32 DLL は、プロジェクトに含め、"Content" としてマークすることによって、アプリにパッケージする必要があります。 UWP アプリで Win32 DLL を読み込むには、LoadLibrary や LoadLibraryEx ではなく、[LoadPackagedLibrary](https://msdn.microsoft.com/library/windows/desktop/hh447159.aspx) を呼び出す必要もあります。  
   
  DLL ライブラリかスタティック ライブラリのソース コードがある場合は、/ZW を使用して UWP プロジェクトとして再コンパイルできます。 こうするなら、ソリューション エクスプローラーを使用して参照を追加し、その参照を C++ UWP アプリで使用することができます。 DLL の場合は、エクスポート ライブラリでリンクさせます。  
   
@@ -37,11 +40,11 @@ UWP 環境でデスクトップ プログラムを実行できるようにする
   
  これまでの説明は、COM コンポーネントには当てはまりません。COM コンポーネントは、異なる仕方で扱う必要があります。 EXE または DLL で COM サーバーを使っている場合、[登録を必要としない COM コンポーネント](https://msdn.microsoft.com/library/dd408052.aspx)としてパッケージ化し、コンテンツ ファイルとしてプロジェクトに追加して、[CoCreateInstanceFromApp](https://msdn.microsoft.com/library/windows/apps/hh404137.aspx) を使ってインスタンス化するのであれば、COM サーバーをユニバーサル Windows プロジェクトで使うことができます。 「[Using Free-COM DLL in Windows Store C++ Project](http://blogs.msdn.com/b/win8devsupport/archive/2013/05/20/using-free-com-dll-in-windows-store-c-project.aspx)」(Windows ストア C++ プロジェクトでの Free-COM DLL の使用) をご覧ください。  
   
- ユニバーサル Windows プラットフォームに移植したい既存の COM ライブラリがある場合、[Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md) を使うことで、Windows ランタイム コンポーネントに変換できます。 WRL は ATL と OLE のすべての機能をサポートしているわけではありません。そのため、移植が可能かどうかは、コンポーネントに COM、ATL、および OLE のどの機能が必要で、使用する COM コードがそれにどの程度依存しているかによって決まります。  
+ UWP に移植したい既存の COM ライブラリがある場合、[Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md) を使うことで、Windows ランタイム コンポーネントに変換できます。 WRL は ATL と OLE のすべての機能をサポートしているわけではありません。そのため、移植が可能かどうかは、コンポーネントに COM、ATL、および OLE のどの機能が必要で、使用する COM コードがそれにどの程度依存しているかによって決まります。  
   
- ユニバーサル Windows プラットフォームのプロジェクトで既存の C++ コードを使える方法は、いろいろあります。 これらの方法の中には、コンポーネントの拡張子 (C++/CX) を有効にして (つまり、/ZW オプションを使用して) コードを再コンパイルすることが不要なものと必要なものがあります。したがって、コードを標準 C++ のまま保持する、または一部のコードのために従来の Win32 コンパイル環境を維持する必要がある場合は、適切なアーキテクチャを選択してそうすることができます。 たとえば、ユニバーサル Windows プラットフォームの UI と C#、Visual Basic、および JavaScript の呼び出し元に公開する必要がある型を含むコード全体は、Windows アプリ プロジェクトと Windows ランタイム コンポーネント プロジェクトに配置する必要があります。 C++ (C++/CX を含む) コードだけで使用する必要があるコードの場合は、/WX オプションを使用してコンパイルするプロジェクトまたは標準 C++ のプロジェクトに配置できます。 バイナリのみのコードは、スタティック ライブラリとしてリンクさせることにより使用できます。禁止されている API を使用しないのであれば、コンテンツとしてアプリと一緒にパッケージ化して DLL に読み込むこともできます。  
+ UWP のプロジェクトで既存の C++ コードを使える方法は、いろいろあります。 これらの方法の中には、コンポーネントの拡張子 (C++/CX) を有効にして (つまり、/ZW オプションを使用して) コードを再コンパイルすることが不要なものと必要なものがあります。したがって、コードを標準 C++ のまま保持する、または一部のコードのために従来の Win32 コンパイル環境を維持する必要がある場合は、適切なアーキテクチャを選択してそうすることができます。 たとえば、UWP の UI と C#、Visual Basic、および JavaScript の呼び出し元に公開する必要がある型を含むすべてのコードを、Windows アプリ プロジェクトと Windows ランタイム コンポーネント プロジェクトに配置する必要があります。 C++ (C++/CX を含む) コードだけで使用する必要があるコードの場合は、/WX オプションを使用してコンパイルするプロジェクトまたは標準 C++ のプロジェクトに配置できます。 バイナリのみのコードは、スタティック ライブラリとしてリンクさせることにより使用できます。禁止されている API を使用しないのであれば、コンテンツとしてアプリと一緒にパッケージ化して DLL に読み込むこともできます。  
   
- これらのうちのどの開発シナリオを選択する場合でも、従来のデスクトップ Win32 でもユニバーサル Windows プラットフォームでも条件に応じてコードをコンパイルできるように、コードで使用できるマクロ定義の数を意識してください。  
+ これらのうちのどの開発シナリオを選択する場合でも、従来のデスクトップ Win32 でも UWP でも条件に応じてコードをコンパイルできるように、コードで使用できるマクロ定義の数を意識してください。  
   
 ```cpp  
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)  
@@ -50,17 +53,17 @@ UWP 環境でデスクトップ プログラムを実行できるようにする
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)  
 ```  
   
- これらのステートメントは、それぞれ、Windows ストア アプリ、Windows Phone ストア アプリ、両方のアプリ、どちらでもないアプリ (クラシック Win32 デスクトップのみ) の順に適用されます。 これらのマクロは Windows SDK 8.1 以降でのみ使用可能です。それ以前のバージョンの Windows SDK を使用してコードをコンパイルする必要があるか、Windows 以外のプラットフォーム用にコンパイルする必要がある場合は、マクロが全く定義されないケースも考えられます。  
+ これらのステートメントは、それぞれ、UWP アプリ、Windows Phone ストア アプリ、両方のアプリ、どちらでもないアプリ (クラシック Win32 デスクトップのみ) の順に適用されます。 これらのマクロは Windows SDK 8.1 以降でのみ使用可能です。それ以前のバージョンの Windows SDK を使用してコードをコンパイルする必要があるか、Windows 以外のプラットフォーム用にコンパイルする必要がある場合は、マクロが全く定義されないケースも考えられます。  
   
  このトピックでは、次の手順を説明します。  
   
-1.  [ユニバーサル Windows プラットフォーム アプリで Win32 DLL を使用する](#BK_Win32DLL)  
+1.  [UWP アプリで Win32 の DLL を使用する](#BK_Win32DLL)  
   
 2.  [UWP アプリでネイティブ C++ スタティック ライブラリを使用する](#BK_StaticLib)  
   
 3.  [C++ ライブラリをWindows ランタイム コンポーネントに移植する](#BK_WinRTComponent)  
   
-##  <a name="BK_Win32DLL"></a> ユニバーサル Windows プラットフォーム アプリで Win32 DLL を使用する  
+##  <a name="BK_Win32DLL"></a> UWP アプリで Win32 の DLL を使用する  
  セキュリティと信頼性を向上させるため、ユニバーサル Windows アプリは制限付きランタイム環境で実行されます。したがって、従来の Windows デスクトップ アプリケーションの場合のようにネイティブ DLL を任意に使用することはできません。 DLL のソース コードがある場合、コードが UWP 上で実行されるように、コードを移植することができます。 まず、いくつかのプロジェクト設定とプロジェクト ファイル メタデータを変更し、プロジェクトを UWP プロジェクトとして識別させます。 /ZW オプションを使用してライブラリ コードをコンパイルする必要があります。これにより、C++/CX が使用可能になります。 特定の API 呼び出しは、環境と関連付けられているより厳密な制御のため、UWP アプリでは許可されていません。 「[Windows ランタイム アプリおよびユニバーサル Windows プラットフォーム (UWP) アプリの Win32 と COM](https://msdn.microsoft.com/library/windows/apps/br205757.aspx)」をご覧ください。  
   
  次の手順は、__declspec(dllexport) を使用して関数を公開するネイティブ DLL がある場合に適用されます。  

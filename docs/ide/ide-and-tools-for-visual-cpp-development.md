@@ -19,11 +19,11 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0c0ae9514736b66be104198c95c3764772a87ef8
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 4b6ff3f709e5db16f06569ab3406cfef44cabf11
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="ide-and-tools-for-visual-c-development"></a>IDE と Visual C++ 開発用ツール
 
@@ -131,4 +131,4 @@ C + の展開の詳細については +/CLI プログラムを参照してくだ
 |[C/C++ プログラムのビルド](../build/building-c-cpp-programs.md)|C++ プロジェクトの作成方法について説明します。|
 |[デスクトップ アプリケーションの配置](../ide/deploying-native-desktop-applications-visual-cpp.md)|C++ アプリケーションの配置の概要と、配置について詳しく説明する他の記事へのリンクが示されます。|
 |[Visual C++ 移植とアップグレードのガイド](../porting/visual-cpp-porting-and-upgrading-guide.md)|Visual Studio 以外のツールを使用して作成されたアプリケーションを移行する方法と、Visual Studio の以前のバージョンで作成された C++ アプリケーションをアップグレードする方法の詳細についてはします。|
-|[Visual C++](../top/visual-cpp-in-visual-studio.md)|Visual Studio での Visual C++ の主な機能について説明し、他の Visual C++ ドキュメントへのリンクを示します。|
+|[Visual C++](../visual-cpp-in-visual-studio.md)|Visual Studio での Visual C++ の主な機能について説明し、他の Visual C++ ドキュメントへのリンクを示します。|

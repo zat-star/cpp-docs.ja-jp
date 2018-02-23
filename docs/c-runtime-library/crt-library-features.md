@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.runtime
-dev_langs: C++
+f1_keywords:
+- c.runtime
+dev_langs:
+- C++
 helpviewer_keywords:
 - MSVCR71.dll
 - libraries [C++], multithreaded
@@ -24,22 +27,23 @@ helpviewer_keywords:
 - libraries [C++], run-time
 - linking [C++], libraries
 ms.assetid: a889fd39-807d-48f2-807f-81492612463f
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 50ca3fd6d60e7fecf84c81d14c859f5b2f51e120
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 104119afba696f51598af202c8eb7f1afe79aa93
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="crt-library-features"></a>CRT ライブラリの機能
 ここでは、C ランタイム ライブラリを構成するさまざまな .lib ファイル、および関連するコンパイラ オプションとプリプロセッサ ディレクティブについて説明します。  
   
 ## <a name="c-run-time-libraries-crt"></a>C ランタイム ライブラリ (CRT)  
- C ランタイム ライブラリ (CRT) は、ISO C99 標準ライブラリが組み込まれている C++ 標準ライブラリの一部です。 この CRT を実装する Visual C++ ライブラリは、ネイティブ コード開発と、ネイティブとマネージの混合コードと .NET 向けの純粋マネージ コードの両方の開発をサポートします。 CRT のすべてのバージョンがマルチスレッド開発をサポートします。 ほとんどのライブラリが、ライブラリを直接コードにリンクする静的リンクと、コードで共通 DLL ファイルを使用できるようにする動的リンクの両方をサポートします。  
+ C ランタイム ライブラリ (CRT) は、ISO C99 標準ライブラリが組み込まれている C++ 標準ライブラリの一部です。 この CRT を実装する Visual C++ ライブラリは、ネイティブ コードの開発と、ネイティブとマネージの混在コードの開発をサポートします。 CRT のすべてのバージョンがマルチスレッド開発をサポートします。 ほとんどのライブラリが、ライブラリを直接コードにリンクする静的リンクと、コードで共通 DLL ファイルを使用できるようにする動的リンクの両方をサポートします。  
   
  Visual Studio 2015 より、CRT が新しいバイナリにリファクタリングされました。 ユニバーサル CRT (UCRT) には、標準の C99 CRT ライブラリからエクスポートされた関数とグローバルが含まれています。 UCRT は Windows コンポーネントであり、Windows 10 の一部として出荷されます。 UCRT 用のスタティック ライブラリ、DLL インポート ライブラリ、およびヘッダー ファイルが Windows 10 SDK に含まれています。 Visual C++ をインストールすると、Visual Studio セットアップによって、UCRT を使用するために必要な Windows 10 SDK のサブセットがインストールされます。 UCRT は、Visual Studio 2015 以降のバージョンでサポートされている Windows の任意のバージョンで使用できます。 Windows 10 以外のサポートされているバージョンの Windows では、vcredist を使用して再配布することができます。 詳細については、「 [Redistributing Visual C++ Files](../ide/redistributing-visual-cpp-files.md)」を参照してください。  
   
@@ -86,9 +90,7 @@ ms.lasthandoff: 12/21/2017
   
  **/clr** コンパイラ スイッチを使用すると、コードはスタティック ライブラリ msvcmrt.lib とリンクされます。 このスタティック ライブラリは、マネージ コードとネイティブ CRT 間のプロキシを提供します。 **/MT** は、静的にリンクされる CRT ( **/MTd** オプションまたは **/clr**オプション) と一緒には使用できません。 代わりに、動的にリンクされるライブラリ (**/MD** または **/MDd**) を使用してください。  
   
- **/clr:pure** コンパイラ スイッチを使用すると、コードはスタティック ライブラリ msvcurt.lib とリンクされます。 **/clr**と同様、静的にリンクされるライブラリにはリンクできません。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 以降では使用されていません。  
-  
- **/clr** と共に CTR を使用する方法の詳細については、「[混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)」を参照してください。**/clr:pure** については、「[純粋で検証可能なコード (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)」を参照してください。  
+ **/clr** と共に CRT を使用する方法の詳細については、「[混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)」を参照してください。  
   
  アプリケーションのデバッグ バージョンをビルドするには、[_DEBUG](../c-runtime-library/debug.md) フラグが定義され、アプリケーションが上の表のいずれかのライブラリのデバッグ バージョンとリンクされている必要があります。 ライブラリ ファイルのデバッグ バージョンの使い方の詳細については、「 [CRT のデバッグ技術](/visualstudio/debugger/crt-debugging-techniques)」を参照してください。  
   
