@@ -96,7 +96,6 @@
 ### [インライン関数のインポートとエクスポート](importing-and-exporting-inline-functions.md)
 ## [Active テクノロジと DLL](active-technology-and-dlls.md)
 ## [DLL でのオートメーション](automation-in-a-dll.md)
-## [MFC DLL の名前付け規則](naming-conventions-for-mfc-dlls.md)
 ## [DLL 関数の Visual Basic アプリケーションからの呼び出し方](calling-dll-functions-from-visual-basic-applications.md)
 # [コンパイラの組み込みとアセンブリ言語](../intrinsics/TOC.md)
 # [コマンドラインでの C/C++ コードのビルド](building-on-the-command-line.md)
