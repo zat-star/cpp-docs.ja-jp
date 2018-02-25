@@ -4,26 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - AMP/index
 - AMP/Concurrency::index::index
 - AMP/Concurrency::index::rank
-dev_langs: C++
-helpviewer_keywords: index structure
+dev_langs:
+- C++
+helpviewer_keywords:
+- index structure
 ms.assetid: cbe79b08-0ba7-474c-9828-f1a71da39eb3
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 04a10524a46fe7351b881e436d7aaf422b2a9acb
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d227876285de1ea0784ac28b7a772ef35b6a9c49
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="index-class"></a>index クラス
 定義、 *N*-次元インデックス pographics cpp amp.md です。  
@@ -52,7 +56,7 @@ class index;
 |名前|説明|  
 |----------|-----------------|  
 |[operator--](#operator--)|`index` オブジェクトの各要素をデクリメントします。|  
-|[operator(mod) =](#operator_mod_eq)|その要素がある数で除算された場合、`index` オブジェクトの各要素の剰余を計算します。|  
+|[operator(mod)=](#operator_mod_eq)|その要素がある数で除算された場合、`index` オブジェクトの各要素の剰余を計算します。|  
 |[operator*=](#operator_star_eq)|`index` オブジェクトの各要素をある数で乗算します。|  
 |[operator/=](#operator_div_eq)|`index` オブジェクトの各要素をある数で除算します。|  
 |[index::operator\[\]](#operator_at)|指定したインデックス位置にある要素を返します。|  
@@ -80,7 +84,7 @@ class index;
  **名前空間:** Concurrency  
 
 
-## <a name="index_ctor"></a>インデックスのコンス トラクター
+## <a name="index_ctor">インデックスのコンス トラクター</a>
 Index クラスの新しいインスタンスを初期化します。
 
 ```  
@@ -125,7 +129,7 @@ _I2
 _Other  
 新しいインデックス オブジェクトの基になるインデックス オブジェクトです。  
 
-## <a name="operator--"></a>operator-
+## <a name="operator--"></a>  operator--
 デクリメント インデックス オブジェクトの各要素。  
 ```  
 index<_Rank>& operator--() restrict(amp,cpu);  
@@ -137,7 +141,7 @@ index operator--(
 ### <a name="return-values"></a>戻り値
 前置演算子のインデックス オブジェクト (* この)。 後置演算子は、新しいインデックス オブジェクトです。
 
-## <a name="operator_mod_eq"></a>operator(mod) =   
+## <a name="operator_mod_eq"></a>  operator(mod)=   
 その要素が指定された数で除算された場合は、インデックス オブジェクトの各要素の剰余 (余り) を計算します。
 
 ```  
@@ -149,7 +153,7 @@ index<_Rank>& operator%=(
 _Rhs 5/3 をで除算する数値。
 オブジェクトをインデックス値を返します。
 
-## <a name="operator_star_eq"></a>演算子 * =   
+## <a name="operator_star_eq"></a>  operator*=   
 指定したインデックス オブジェクト内の各要素を乗算します。
 ```
 index<_Rank>& operator*=(
@@ -160,7 +164,7 @@ index<_Rank>& operator*=(
 ### <a name="parameters"></a>パラメーター
 _Rhs 乗算する数値。
 
-## <a name="operator_div_eq"></a>operator/= 
+## <a name="operator_div_eq"></a>  operator/= 
 Index オブジェクト内の各要素を指定された数で除算します。
 
 ```
@@ -200,7 +204,7 @@ std::cout << idx[1] << "\n";
 std::cout << idx[2] << "\n";
 ```
 
-## <a name="operator_add_add"></a>+ + 演算子   
+## <a name="operator_add_add"></a>  operator++   
 インデックス オブジェクトの各要素をインクリメントします。
 ```  
 index<_Rank>& operator++() restrict(amp,cpu);
@@ -212,7 +216,7 @@ index<_Rank> operator++(
 ### <a name="return-value"></a>戻り値
 前置演算子のインデックス オブジェクト (* この)。 後置演算子は、新しいインデックス オブジェクトです。
 
-## <a name="operator_add_eq"></a>演算子 + =   
+## <a name="operator_add_eq"></a>  operator+=   
 インデックス オブジェクトの各要素に指定された数を追加します。
 ```  
 index<_Rank>& operator+=(
@@ -242,7 +246,7 @@ _Other からコピーするインデックス オブジェクトです。
 ### <a name="return-value"></a>戻り値
 このインデックス オブジェクトへの参照。
 
-## <a name="operator_-_eq"></a>-= 演算子
+## <a name="operator_-_eq"></a>  operator-=
 インデックス オブジェクトの各要素から指定した数値を減算します。
 ```  
 index<_Rank>& operator-=(
@@ -259,7 +263,7 @@ _Rhs 減算する数。
 ### <a name="return-value"></a>戻り値
 インデックス オブジェクトです。   
 
-## <a name="rank"></a>ランク  
+## <a name="rank"></a>  ランク  
   インデックス オブジェクトのランクを取得します。
 ```
 static const int rank = _Rank;

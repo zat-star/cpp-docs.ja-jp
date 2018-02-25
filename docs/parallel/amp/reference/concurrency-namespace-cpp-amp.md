@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: AMP/Concurrency
-dev_langs: C++
-helpviewer_keywords: Concurrency namespace
+ms.topic: reference
+f1_keywords:
+- AMP/Concurrency
+dev_langs:
+- C++
+helpviewer_keywords:
+- Concurrency namespace
 ms.assetid: b5aab265-3bac-42c5-8ead-f92ce05ef267
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 4c4dd1773e74334f342ebb7e3cd64b68e6bab2b0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1a9f82baade21cdbde41fc49fd0bfe6163c0f6af
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="concurrency-namespace-c-amp"></a>Concurrency 名前空間 (C++ AMP)
 データ並列ハードウェアでの C++ コードの実行を高速化するクラスと関数を提供します。 詳細については、次を参照してください[C++ AMP の概要。](../cpp-amp-overview.md)  
@@ -67,7 +72,7 @@ namespace Concurrency;
   
 |name|説明|  
 |----------|-----------------|  
-|[access_type 列挙型](concurrency-namespace-enums-amp.md#access_type)|データ アクセスの種類を指定します。|  
+|[access_type Enumeration](concurrency-namespace-enums-amp.md#access_type)|データ アクセスの種類を指定します。|  
 |[queuing_mode 列挙型](concurrency-namespace-enums-amp.md#queuing_mode)|アクセラレータでサポートされているキュー モードを指定します。|  
   
 ### <a name="operators"></a>演算子  

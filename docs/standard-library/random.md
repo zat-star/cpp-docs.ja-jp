@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 08/24/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: <random>
-dev_langs: C++
-helpviewer_keywords: random header
+ms.topic: reference
+f1_keywords:
+- <random>
+dev_langs:
+- C++
+helpviewer_keywords:
+- random header
 ms.assetid: 60afc25c-b162-4811-97c1-1b65398d4c57
-caps.latest.revision: "58"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 5bef9205fd583dd66a0f3cfe791ff95a861435c0
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.workload:
+- cplusplus
+ms.openlocfilehash: af48357ff276df90333d066cf6585a031b572914
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltrandomgt"></a>&lt;random&gt;
 乱数生成の機能を定義し、一様に分布した乱数を作成できるようにします。  
@@ -213,7 +218,7 @@ Randomized array: Si C Sc H Na O S Cr K Li Al Ti Cl B Mn He Fe Ne Be Ar V P Ca N
   
 ##  <a name="listing"></a> 分類別一覧  
   
-###  <a name="urngs"></a>Uniform Random Number Generator  
+###  <a name="urngs"></a> Uniform Random Number Generator  
  URNG は、次の特性においてよく説明されます。  
   
 1. **周期の長さ**: 生成された数のシーケンスを繰り返すために、どれだけの回数の反復処理を行うか。 長いほど良いです。  

@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - concrt/concurrency::AgentEventGuid
 - concrt/concurrency::COOPERATIVE_TIMEOUT_INFINITE
@@ -19,18 +19,20 @@ f1_keywords:
 - concrt/concurrency::ResourceManagerEventGuid
 - concrt/concurrency::ScheduleGroupEventGuid
 - concrt/concurrency::VirtualProcessorEventGuid
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 6f81fc4c-b10c-479e-8717-9c292360d5a0
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: ae7ceb640e7b92829e4134350a6e6c97747bfd77
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 83c9629feed07cee5bd13138f3def89251c081cb
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="concurrency-namespace-constants"></a>concurrency 名前空間定数
 ||||  
@@ -42,14 +44,14 @@ ms.lasthandoff: 12/21/2017
 |[PPLParallelForeachEventGuid](#pplparallelforeacheventguid)|[PPLParallelInvokeEventGuid](#pplparallelinvokeeventguid)|[ResourceManagerEventGuid](#resourcemanagereventguid)|  
 |[ScheduleGroupEventGuid](#schedulegroupeventguid)|[SchedulerEventGuid](#schedulereventguid)|[VirtualProcessorEventGuid](#virtualprocessoreventguid)|  
   
-##  <a name="agenteventguid"></a>AgentEventGuid  
+##  <a name="agenteventguid"></a>  AgentEventGuid  
  同時実行ランタイムのエージェント ライブラリによって生成される ETW イベントを表すカテゴリの GUID ({B9B5B78C-0713-4898-A21A-C67949DCED07})。  
   
 ```
 const __declspec(selectany) GUID AgentEventGuid = {0xb9b5b78c, 0x713, 0x4898, { 0xa2, 0x1a, 0xc6, 0x79, 0x49, 0xdc, 0xed, 0x7 } };
 ```  
   
-##  <a name="choreeventguid"></a>ChoreEventGuid  
+##  <a name="choreeventguid"></a>  ChoreEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、作業またはタスクに直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -60,7 +62,7 @@ const __declspec(selectany) GUID ChoreEventGuid =
 ### <a name="remarks"></a>コメント  
  現在、このカテゴリのイベントは、同時実行ランタイムでは起動しません。  
   
-##  <a name="concrt_providerguid"></a>ConcRT_ProviderGuid  
+##  <a name="concrt_providerguid"></a>  ConcRT_ProviderGuid  
  同時実行ランタイムの ETW プロバイダーの GUID。  
   
 ```
@@ -68,14 +70,14 @@ const __declspec(selectany) GUID ConcRT_ProviderGuid =
     { 0xF7B697A3, 0x4DB5, 0x4d3b, { 0xBE, 0x71, 0xC4, 0xD2, 0x84, 0xE6, 0x59, 0x2F } };
 ```  
   
-##  <a name="concrt_rm_version_1"></a>CONCRT_RM_VERSION_1  
+##  <a name="concrt_rm_version_1"></a>  CONCRT_RM_VERSION_1  
  Visual Studio 2010 で定義されているリソース マネージャー インターフェイスのサポートを示します。  
   
 ```
 const unsigned int CONCRT_RM_VERSION_1 = 0x00010000;
 ```  
   
-##  <a name="concrteventguid"></a>ConcRTEventGuid  
+##  <a name="concrteventguid"></a>  ConcRTEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、別のカテゴリで具体的に説明されていない ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -86,21 +88,21 @@ const __declspec(selectany) GUID ConcRTEventGuid =
 ### <a name="remarks"></a>コメント  
  現在、このカテゴリのイベントは、同時実行ランタイムでは起動しません。  
   
-##  <a name="cooperative_timeout_infinite"></a>COOPERATIVE_TIMEOUT_INFINITE  
+##  <a name="cooperative_timeout_infinite"></a>  COOPERATIVE_TIMEOUT_INFINITE  
  待機がタイムアウトしないことを示す値。  
   
 ```
 const unsigned int COOPERATIVE_TIMEOUT_INFINITE = (unsigned int)-1;
 ```  
   
-##  <a name="cooperative_wait_timeout"></a>COOPERATIVE_WAIT_TIMEOUT  
+##  <a name="cooperative_wait_timeout"></a>  COOPERATIVE_WAIT_TIMEOUT  
  待機がタイムアウトしたことを示す値。  
   
 ```
 const size_t COOPERATIVE_WAIT_TIMEOUT = SIZE_MAX;
 ```  
   
-##  <a name="contexteventguid"></a>ContextEventGuid  
+##  <a name="contexteventguid"></a>  ContextEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、コンテキストに直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -108,14 +110,14 @@ const __declspec(selectany) GUID ContextEventGuid =
     { 0x5727A00F, 0x50BE, 0x4519, { 0x82, 0x56, 0xF7, 0x69, 0x98, 0x71, 0xFE, 0xCB } };
 ```  
   
-##  <a name="inherit_thread_priority"></a>INHERIT_THREAD_PRIORITY  
+##  <a name="inherit_thread_priority"></a>  INHERIT_THREAD_PRIORITY  
  スケジューラのすべてのコンテキストのスレッド優先順位が、スケジューラを作成したスレッドの優先順位と同じになることを示す `ContextPriority` ポリシー キーの特別な値。  
   
 ```
 const unsigned int INHERIT_THREAD_PRIORITY = 0x0000F000;
 ```  
   
-##  <a name="lockeventguid"></a>LockEventGuid  
+##  <a name="lockeventguid"></a>  LockEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、ロックに直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -126,14 +128,14 @@ const __declspec(selectany) GUID LockEventGuid =
 ### <a name="remarks"></a>コメント  
  現在、このカテゴリのイベントは、同時実行ランタイムでは起動しません。  
   
-##  <a name="maxexecutionresources"></a>MaxExecutionResources  
+##  <a name="maxexecutionresources"></a>  MaxExecutionResources  
  `MinConcurrency` ポリシー キーおよび `MaxConcurrency` ポリシー キーの特殊な値。 他の制約が存在しない場合、既定でコンピューター上のハードウェア スレッドの数になります。  
   
 ```
 const unsigned int MaxExecutionResources = 0xFFFFFFFF;
 ```  
   
-##  <a name="pplparallelforeventguid"></a>PPLParallelForEventGuid  
+##  <a name="pplparallelforeventguid"></a>  PPLParallelForEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、`parallel_for` 関数の使用に直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -141,7 +143,7 @@ const __declspec(selectany) GUID PPLParallelForEventGuid =
     { 0x31c8da6b, 0x6165, 0x4042, { 0x8b, 0x92, 0x94, 0x9e, 0x31, 0x5f, 0x4d, 0x84 } };
 ```  
   
-##  <a name="pplparallelforeacheventguid"></a>PPLParallelForeachEventGuid  
+##  <a name="pplparallelforeacheventguid"></a>  PPLParallelForeachEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、`parallel_for_each` 関数の使用に直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -149,7 +151,7 @@ const __declspec(selectany) GUID PPLParallelForeachEventGuid =
     { 0x5cb7d785, 0x9d66, 0x465d, { 0xba, 0xe1, 0x46, 0x11, 0x6, 0x1b, 0x54, 0x34 } };
 ```  
   
-##  <a name="pplparallelinvokeeventguid"></a>PPLParallelInvokeEventGuid  
+##  <a name="pplparallelinvokeeventguid"></a>  PPLParallelInvokeEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、`parallel_invoke` 関数の使用に直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -157,7 +159,7 @@ const __declspec(selectany) GUID PPLParallelInvokeEventGuid =
     { 0xd1b5b133, 0xec3d, 0x49f4, { 0x98, 0xa3, 0x46, 0x4d, 0x1a, 0x9e, 0x46, 0x82 } };
 ```  
   
-##  <a name="resourcemanagereventguid"></a>ResourceManagerEventGuid  
+##  <a name="resourcemanagereventguid"></a>  ResourceManagerEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、リソース マネージャーに直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -168,7 +170,7 @@ const __declspec(selectany) GUID ResourceManagerEventGuid =
 ### <a name="remarks"></a>コメント  
  現在、このカテゴリのイベントは、同時実行ランタイムでは起動しません。  
   
-##  <a name="schedulegroupeventguid"></a>ScheduleGroupEventGuid  
+##  <a name="schedulegroupeventguid"></a>  ScheduleGroupEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、スケジュール グループに直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -179,7 +181,7 @@ const __declspec(selectany) GUID ScheduleGroupEventGuid =
 ### <a name="remarks"></a>コメント  
  現在、このカテゴリのイベントは、同時実行ランタイムでは起動しません。  
   
-##  <a name="schedulereventguid"></a>SchedulerEventGuid  
+##  <a name="schedulereventguid"></a>  SchedulerEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、スケジューラ アクティビティに直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```
@@ -187,7 +189,7 @@ const __declspec(selectany) GUID SchedulerEventGuid =
     { 0xE2091F8A, 0x1E0A, 0x4731, { 0x84, 0xA2, 0x0D, 0xD5, 0x7C, 0x8A, 0x52, 0x61 } };
 ```  
   
-##  <a name="virtualprocessoreventguid"></a>VirtualProcessorEventGuid  
+##  <a name="virtualprocessoreventguid"></a>  VirtualProcessorEventGuid  
  同時実行ランタイムによって生成される ETW イベントのうち、仮想プロセッサに直接関係する ETW イベントを表すカテゴリの GUID。  
   
 ```

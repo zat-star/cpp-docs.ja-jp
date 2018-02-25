@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - target_block
 - AGENTS/concurrency::target_block
@@ -28,19 +29,22 @@ f1_keywords:
 - AGENTS/concurrency::target_block::unlink_source
 - AGENTS/concurrency::target_block::unlink_sources
 - AGENTS/concurrency::target_block::wait_for_async_sends
-dev_langs: C++
-helpviewer_keywords: target_block class
+dev_langs:
+- C++
+helpviewer_keywords:
+- target_block class
 ms.assetid: 3ce181b4-b94a-4894-bf7b-64fc09821f9f
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 42bf40997bed7bcf7125397d4984b636f64f3a6c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2827e7bbb9a2c23804d90ccb729e990b84f3a442
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="targetblock-class"></a>target_block クラス
 `target_block` クラスは、基本的なリンク管理機能と、ターゲットのみのブロックのエラー チェック機能を実現する抽象基底クラスです。  
@@ -78,7 +82,7 @@ class target_block : public ITarget<typename _SourceLinkRegistry::type::source_t
   
 |名前|説明|  
 |----------|-----------------|  
-|[伝達](#propagate)|このターゲット ブロックにソース ブロックからメッセージを非同期的に渡します。|  
+|[propagate](#propagate)|このターゲット ブロックにソース ブロックからメッセージを非同期的に渡します。|  
 |[send](#send)|このターゲット ブロックにソース ブロックからメッセージを同期的に渡します。|  
   
 ### <a name="protected-methods"></a>プロテクト メソッド  
@@ -111,7 +115,7 @@ class target_block : public ITarget<typename _SourceLinkRegistry::type::source_t
   
  **名前空間:** concurrency  
   
-##  <a name="async_send"></a>async_send 
+##  <a name="async_send"></a> async_send 
 
  非同期処理のためのメッセージを送信します。  
   
@@ -123,7 +127,7 @@ void async_send(_Inout_opt_ message<_Source_type>* _PMessage);
  `_PMessage`  
  送信されるメッセージへのポインター。  
   
-##  <a name="decline_incoming_messages"></a>decline_incoming_messages 
+##  <a name="decline_incoming_messages"></a> decline_incoming_messages 
 
  ブロックに新しいメッセージを拒否することを示します。  
   
@@ -134,7 +138,7 @@ void decline_incoming_messages();
 ### <a name="remarks"></a>コメント  
  このメソッドは、デストラクターが破棄が進行中は、新しいメッセージが却下されたことを確認してください。  
   
-##  <a name="enable_batched_processing"></a>enable_batched_processing 
+##  <a name="enable_batched_processing"></a> enable_batched_processing 
 
  有効では、このブロックの処理をバッチ処理します。  
   
@@ -142,7 +146,7 @@ void decline_incoming_messages();
 void enable_batched_processing();
 ```  
   
-##  <a name="initialize_target"></a>initialize_target 
+##  <a name="initialize_target"></a> initialize_target 
 
  ベース オブジェクトを初期化します。 具体的には、`message_processor`オブジェクトを初期化する必要があります。  
   
@@ -159,7 +163,7 @@ void initialize_target(
  `_PScheduleGroup`  
  タスクのスケジューリングに使用するスケジュール グループ。  
   
-##  <a name="link_source"></a>link_source 
+##  <a name="link_source"></a> link_source 
 
  これを指定されたソース ブロックをリンク`target_block`オブジェクト。  
   
@@ -174,7 +178,7 @@ virtual void link_source(_Inout_ ISource<_Source_type>* _PSource);
 ### <a name="remarks"></a>コメント  
  この関数は、上で直接呼び出すことはできません、`target_block`オブジェクト。 使用してブロックを接続する必要があります、`link_target`メソッドを`ISource`呼び出しは、ブロック、`link_source`対応するターゲットのメソッドです。  
   
-##  <a name="process_input_messages"></a>process_input_messages 
+##  <a name="process_input_messages"></a> process_input_messages 
 
  入力として受信したメッセージを処理します。  
   
@@ -185,7 +189,7 @@ virtual void process_input_messages(_Inout_ message<_Source_type>* _PMessage);
 ### <a name="parameters"></a>パラメーター  
  `_PMessage`  
   
-##  <a name="process_message"></a>process_message 
+##  <a name="process_message"></a> process_message 
 
  派生クラスでオーバーライドされると、これによって承認されたメッセージを処理`target_block`オブジェクト。  
   
@@ -193,7 +197,7 @@ virtual void process_input_messages(_Inout_ message<_Source_type>* _PMessage);
 virtual void process_message(message<_Source_type> *);
 ```  
   
-##  <a name="propagate"></a>伝達 
+##  <a name="propagate"></a> 伝達 
 
  このターゲット ブロックにソース ブロックからメッセージを非同期的に渡します。  
   
@@ -216,7 +220,7 @@ virtual message_status propagate(
 ### <a name="remarks"></a>コメント  
  メソッドをスロー、 [invalid_argument](../../../standard-library/invalid-argument-class.md)いずれかの例外、`_PMessage`または`_PSource`パラメーターは`NULL`します。  
   
-##  <a name="propagate_message"></a>propagate_message 
+##  <a name="propagate_message"></a> propagate_message 
 
  派生クラスでオーバーライドされると、このメソッドは非同期的に渡しますからのメッセージ、`ISource`ブロックをこの`target_block`オブジェクト。 によって呼び出された、`propagate`メソッドは、ソース ブロックによって呼び出されるとします。  
   
@@ -236,7 +240,7 @@ virtual message_status propagate_message(
 ### <a name="return-value"></a>戻り値  
  A [message_status](concurrency-namespace-enums.md)のメッセージを行うには、対象の決定を示す値。  
   
-##  <a name="register_filter"></a>register_filter 
+##  <a name="register_filter"></a> register_filter 
 
  すべての受信メッセージで呼び出されるフィルター メソッドを登録します。  
   
@@ -248,7 +252,7 @@ void register_filter(filter_method const& _Filter);
  `_Filter`  
  フィルター メソッド。  
   
-##  <a name="remove_sources"></a>remove_sources 
+##  <a name="remove_sources"></a> remove_sources 
 
  未処理の非同期送信操作の完了を待機した後にすべてのソースのリンクを解除します。  
   
@@ -259,7 +263,7 @@ void remove_sources();
 ### <a name="remarks"></a>コメント  
  すべてのターゲット ブロックには、デストラクター内のソースを削除するには、このルーチンを呼び出す必要があります。  
   
-##  <a name="send"></a>送信 
+##  <a name="send"></a> 送信 
 
  このターゲット ブロックにソース ブロックからメッセージを同期的に渡します。  
   
@@ -286,7 +290,7 @@ virtual message_status send(
   
  ときに`send`を返します、メッセージが、既にされて受け入れられたら、し、ターゲット ブロックに転送、または、ターゲットが拒否されました。  
   
-##  <a name="send_message"></a>send_message 
+##  <a name="send_message"></a> send_message 
 
  派生クラスでオーバーライドされると、このメソッドは同期的に渡しますからのメッセージ、`ISource`ブロックをこの`target_block`オブジェクト。 によって呼び出された、`send`メソッドは、ソース ブロックによって呼び出されるとします。  
   
@@ -302,7 +306,7 @@ virtual message_status send_message(
 ### <a name="remarks"></a>コメント  
  既定では、このブロックを返します`declined`派生クラスでオーバーライドされない限り、します。  
   
-##  <a name="sync_send"></a>sync_send 
+##  <a name="sync_send"></a> sync_send 
 
  同期的に処理するためのメッセージを送信します。  
   
@@ -314,7 +318,7 @@ void sync_send(_Inout_opt_ message<_Source_type>* _PMessage);
  `_PMessage`  
  送信されるメッセージへのポインター。  
   
-##  <a name="ctor"></a>target_block 
+##  <a name="ctor"></a> target_block 
 
  `target_block` オブジェクトを構築します。  
   
@@ -322,7 +326,7 @@ void sync_send(_Inout_opt_ message<_Source_type>* _PMessage);
 target_block();
 ```  
   
-##  <a name="dtor"></a>~ target_block 
+##  <a name="dtor"></a> ~target_block 
 
  `target_block` オブジェクトを破棄します。  
   
@@ -330,7 +334,7 @@ target_block();
 virtual ~target_block();
 ```  
   
-##  <a name="unlink_source"></a>unlink_source 
+##  <a name="unlink_source"></a> unlink_source 
 
  これから指定されたソース ブロックのリンクを解除`target_block`オブジェクト。  
   
@@ -342,7 +346,7 @@ virtual void unlink_source(_Inout_ ISource<_Source_type>* _PSource);
  `_PSource`  
  ポインター、`ISource`リンクを解除するのには、ブロックします。  
   
-##  <a name="unlink_sources"></a>unlink_sources 
+##  <a name="unlink_sources"></a> unlink_sources 
 
  これからすべてのソース ブロックのリンクを解除`target_block`オブジェクト。  
   
@@ -350,7 +354,7 @@ virtual void unlink_source(_Inout_ ISource<_Source_type>* _PSource);
 virtual void unlink_sources();
 ```  
   
-##  <a name="wait_for_async_sends"></a>wait_for_async_sends 
+##  <a name="wait_for_async_sends"></a> wait_for_async_sends 
 
  非同期のすべての伝達が完了するまで待機します。  
   

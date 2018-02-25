@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::unorm_3::set_zy
 - amp_short_vectors/Concurrency::graphics::unorm_3::zxy
@@ -77,18 +78,20 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::unorm_3::set_y
 - amp_short_vectors/Concurrency::graphics::unorm_3::get_yz
 - amp_short_vectors/Concurrency::graphics::unorm_3::rbg
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: ea4e7a17-5256-464c-af28-8b01962564c0
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 4051b7f872803a8ef799178b7ad158e588da08bc
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6aeded2e1d503ae26091d53a0cd12e75648e4254
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="unorm3-class"></a>unorm_3 クラス
 3 個の符号なし正規数の short ベクターを表します。  
@@ -159,11 +162,11 @@ class unorm_3;
 |名前|説明|  
 |----------|-----------------|  
 |unorm_3::operator--||  
-|unorm_3::operator * =||  
+|unorm_3::operator*=||  
 |unorm_3::operator/=||  
 |unorm_3::operator++||  
-|unorm_3::operator + =||  
-|unorm_3::operator = =||  
+|unorm_3::operator+=||  
+|unorm_3::operator=||  
 |unorm_3::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
@@ -215,7 +218,7 @@ class unorm_3;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>unorm_3 
+##  <a name="ctor"></a> unorm_3 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -294,7 +297,7 @@ explicit inline unorm_3(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="unorm_3__size"></a>サイズ 
+##  <a name="unorm_3__size"></a> サイズ 
 
 ```  
 static const int size = 3;  

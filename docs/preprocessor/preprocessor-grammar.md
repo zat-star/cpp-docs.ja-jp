@@ -4,70 +4,73 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - preprocessor
 - grammar, preprocessor
 - preprocessor, grammar
 ms.assetid: 6cd33fad-0b08-4592-9be8-7359c43e24e9
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 797d4bf4274a92ca4f265d01579698c0f9c6a4a3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 02b3597b035e3ea4bfa1670aa405109f4c01a077
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="preprocessor-grammar"></a>プリプロセッサの文法
-**#define***識別子**トークン文字列*オプトイン  
+**#define**  *identifier* *token-string*opt  
   
- *#***定義***識別子*[**(** *識別子*opt**、** *.* **、** *識別子*opt **)**]*トークン文字列*オプトイン  
+ *#* **define**  *identifier*[**(** *identifier*opt**,** *...* **,** *identifier*opt **)**] *token-string*opt  
   
- **定義 (***識別子* **)**   
+ **defined(**  *identifier* **)**  
   
- **定義されている***識別子*   
+ **defined**  *identifier*  
   
- `#include`**"***パス spec***"**  
+ `#include` **"***path-spec***"**  
   
- `#include` **\<** *パス仕様***>**  
+ `#include` **\<***path-spec***>**  
   
- **#line***桁シーケンス***"** *filename* **"**オプトイン  
+ **#line**  *digit-sequence*  **"** *filename* **"**opt  
   
- *#***undef***識別子*   
+ *#* **undef**  *identifier*  
   
- **#error***トークン文字列*   
+ **#error**  *token-string*  
   
- **#pragma***トークン文字列*   
+ **#pragma**  *token-string*  
   
  *条件付き*:  
  *if 部分 elif パーツ*opt*else 部分*opt*endif 行*  
   
- *if 部分*:  
- *if linetext*  
+ *if-part* :  
+ *if-linetext*  
   
  *if 行*:  
- **#if***定数式*   
+ **#if**  *constant-expression*  
   
- **#ifdef***識別子*   
+ **#ifdef**  *identifier*  
   
- **#ifndef***識別子*   
+ **#ifndef**  *identifier*  
   
- *elif パーツ*:  
+ *elif-parts* :  
  *elif 行のテキスト*  
   
  *elif パーツ elif 行テキスト*  
   
  *elif 行*:  
- **#elif***定数式*   
+ **#elif**  *constant-expression*  
   
- *他の部分から成る*:  
- *else linetext*  
+ *else-part* :  
+ *else-linetext*  
   
  *else 行*:  
  `#else`  
@@ -75,7 +78,7 @@ ms.lasthandoff: 12/21/2017
  *endif 行*:  
  `#endif`  
   
- *桁シーケンス*:  
+ *digit-sequence* :  
  *digit*  
   
  *digit-sequence digit*  
@@ -83,7 +86,7 @@ ms.lasthandoff: 12/21/2017
  *桁*: のいずれか  
  **0 1 2 3 4 5 6 7 8 9**  
   
- *トークン文字列*:  
+ *token-string* :  
  トークンの文字列  
   
  *トークン*:  
@@ -100,7 +103,7 @@ ms.lasthandoff: 12/21/2017
  *filename* :  
  有効なオペレーティング システム ファイル名  
   
- *パス spec* :  
+ *path-spec* :  
  有効なファイル パス  
   
  *テキスト*:  

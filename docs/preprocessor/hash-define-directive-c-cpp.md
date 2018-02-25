@@ -1,14 +1,17 @@
 ---
-title: "#<a name=\"define-directive-cc--microsoft-docs\"></a>define ディレクティブ (C/C++) |Microsoft ドキュメント"
+title: "#define ディレクティブ (C/C++) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: '#define'
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- '#define'
+dev_langs:
+- C++
 helpviewer_keywords:
 - define directive (#define), syntax
 - preprocessor, directives
@@ -16,24 +19,25 @@ helpviewer_keywords:
 - '#define directive, syntax'
 - '#define directive'
 ms.assetid: 33cf25c6-b24e-40bf-ab30-9008f0391710
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: a42b1b823ac69ba9a92535076ba8ec45f6c9710d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8d06a24d969f0ae7545f1b9ec0401e098a2bcf54
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="define-directive-cc"></a>#define ディレクティブ (C/C++)
 `#define`を作成、*マクロ*、識別子またはパラメーター化された識別子トークン文字列との関連付けであります。 マクロが定義されると、コンパイラはそれ以降にソース ファイル内に識別子が見つかるたびに、トークン文字列に置き換えることができます。  
   
 ## <a name="syntax"></a>構文  
- `#define`*識別子**トークン文字列*オプトイン  
+ `#define` *identifier* *token-string*opt  
   
- `#define`*識別子* `(` *識別子*opt`,`*しています.* `,`*識別子*opt`)`*トークン文字列*オプトイン  
+ `#define` *identifier* `(` *identifier*opt`,`*...*`,`*identifier*opt`)`*token-string*opt  
   
 ## <a name="remarks"></a>コメント  
  `#define`の代わりにコンパイラがディレクティブ*トークン文字列*たびに*識別子*ソース ファイルにします。 *識別子*トークンを形成時にのみ置き換えられます。 つまり、*識別子*コメント、または長い識別子の一部として、文字列内に表示される場合は置き換えられません。 詳細については、次を参照してください。[トークン](../cpp/tokens-cpp.md)です。  
@@ -73,7 +77,7 @@ ms.lasthandoff: 12/21/2017
   
  Microsoft C/C++ では、新しい定義が元の定義と構文的に同一の場合、マクロを再定義できます。 つまり、2 つの定義に異なるパラメーター名を付けることができます。 この動作は、2 つの定義が語彙的に同一である必要がある [!INCLUDE[vcpransi](../atl-mfc-shared/reference/includes/vcpransi_md.md)] C とは異なります。  
   
- たとえば、次の 2 つのマクロは、パラメーター名を除いて同一です。 [!INCLUDE[vcpransi](../atl-mfc-shared/reference/includes/vcpransi_md.md)]C では、このような再定義することはできませんが、Microsoft C/C エラーなしでコンパイルします。  
+ たとえば、次の 2 つのマクロは、パラメーター名を除いて同一です。 [!INCLUDE[vcpransi](../atl-mfc-shared/reference/includes/vcpransi_md.md)] C では、このような再定義することはできませんが、Microsoft C/C エラーなしでコンパイルします。  
   
 ```  
 #define multiply( f1, f2 ) ( f1 * f2 )  

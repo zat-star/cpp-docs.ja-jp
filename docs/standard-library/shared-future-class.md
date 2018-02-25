@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - future/std::shared_future
 - future/std::shared_future::shared_future
@@ -15,9 +16,10 @@ f1_keywords:
 - future/std::shared_future::wait
 - future/std::shared_future::wait_for
 - future/std::shared_future::wait_until
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 454ebedd-f42b-405f-99a5-a25cc9ad7c90
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -29,12 +31,13 @@ helpviewer_keywords:
 - std::shared_future [C++], wait
 - std::shared_future [C++], wait_for
 - std::shared_future [C++], wait_until
-ms.workload: cplusplus
-ms.openlocfilehash: c6d7946de6440ad33c844e140ca7cbcc2199a0b7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1d008142b78bc7901ef67f66f4327ad9229688bf
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="sharedfuture-class"></a>shared_future クラス
 *非同期のリターン オブジェクト*を記述します。 [future](../standard-library/future-class.md) オブジェクトとは異なり、*非同期プロバイダー*を任意の数の `shared_future` オブジェクトに関連付けることができます。  
@@ -64,8 +67,8 @@ class shared_future;
 |名前|説明|  
 |----------|-----------------|  
 |[get](#get)|*関連付けられた非同期状態*に格納されている結果を取得します。|  
-|[有効です](#valid)|オブジェクトが空でないかどうかを指定します。|  
-|[待機](#wait)|関連付けられた非同期状態が準備できるまで、現在のスレッドをブロックします。|  
+|[valid](#valid)|オブジェクトが空でないかどうかを指定します。|  
+|[wait](#wait)|関連付けられた非同期状態が準備できるまで、現在のスレッドをブロックします。|  
 |[wait_for](#wait_for)|関連付けられた非同期状態が準備できるまで、または指定した時間が経過するまでブロックします。|  
 |[wait_until](#wait_until)|関連付けられた非同期状態が準備できるまで、または指定した時点までブロックします。|  
   
@@ -80,7 +83,7 @@ class shared_future;
   
  **名前空間:** std  
   
-##  <a name="get"></a>shared_future::get
+##  <a name="get"></a>  shared_future::get
  *関連付けられた非同期状態*に格納されている結果を取得します。  
   
 ```
@@ -141,7 +144,7 @@ shared_future(const shared_future& Right);
   
  4 つ目のコンストラクターは、`Right` と同じ関連付けられた非同期状態を持つ `shared_future` オブジェクトを構築します。  
   
-##  <a name="valid"></a>shared_future::valid
+##  <a name="valid"></a>  shared_future::valid
  オブジェクトが*関連付けられた非同期状態*であるかどうかを指定します。  
   
 ```
@@ -151,7 +154,7 @@ bool valid() noexcept;
 ### <a name="return-value"></a>戻り値  
  オブジェクトが関連付けられた非同期状態である場合は `true` を返します。それ以外の場合は `false` を返します。  
   
-##  <a name="wait"></a>shared_future::wait
+##  <a name="wait"></a>  shared_future::wait
  *関連付けられた非同期状態*が *ready* になるまで、現在のスレッドをブロックします。  
   
 ```
@@ -161,7 +164,7 @@ void wait() const;
 ### <a name="remarks"></a>コメント  
  関連付けられている非同期状態は、非同期プロバイダーが戻り値を格納した場合か例外を格納した場合のみ、準備完了になります。  
   
-##  <a name="wait_for"></a>shared_future::wait_for
+##  <a name="wait_for"></a>  shared_future::wait_for
  関連付けられた非同期状態が *ready* になるまで、または指定した時間が経過するまで、現在のスレッドをブロックします。  
   
 ```
@@ -180,7 +183,7 @@ future_status wait_for(
 ### <a name="remarks"></a>コメント  
  関連付けられている非同期状態は、非同期プロバイダーが戻り値を格納した場合か例外を格納した場合のみ *ready* になります。  
   
-##  <a name="wait_until"></a>shared_future::wait_until
+##  <a name="wait_until"></a>  shared_future::wait_until
  関連付けられた非同期状態が *ready* になるまで、または指定した時点後まで現在のスレッドをブロックします。  
   
 ```

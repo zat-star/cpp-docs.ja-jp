@@ -5,20 +5,23 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: ostream/std::operator&lt;&lt;
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- ostream/std::operator&lt;&lt;
+dev_langs:
+- C++
 ms.assetid: 9282a62e-a3d1-4371-a284-fbc9515bb9a2
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: f78befe92263dd6b4ef666c865ef9dd65c7103db
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 34691953d5d0482b291f7c9cfba9f5f28fb27ddd
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltostreamgt-operators"></a>&lt;ostream&gt; 演算子
 ||  
@@ -119,7 +122,7 @@ basic_ostream<Elem, _Tr>& operator<<(
     const Elem *str);
 ```  
   
- 長さ N = `str` で始まるシーケンスの `traits_type::`[length](../standard-library/char-traits-struct.md#length)(`str`) とし、シーケンスを挿入しています。 N < `_Ostr.`[width](../standard-library/ios-base-class.md#width) の場合は、関数はまた `_Ostr.width` - N 充填文字の繰り返しを挿入します。 繰り返し場合、シーケンスの前に (`_Ostr`です。 [フラグ](../standard-library/ios-base-class.md#flags) &  `adjustfield` ! =[左](../standard-library/ios-functions.md#left)です。 それ以外の場合、繰り返しはシーケンスに後続します。 `_Ostr` が返されます。  
+ 長さ N = `str` で始まるシーケンスの `traits_type::`[length](../standard-library/char-traits-struct.md#length)(`str`) とし、シーケンスを挿入しています。 N < `_Ostr.`[width](../standard-library/ios-base-class.md#width) の場合は、関数はまた `_Ostr.width` - N 充填文字の繰り返しを挿入します。 繰り返し場合、シーケンスの前に (`_Ostr`です。 [flags](../standard-library/ios-base-class.md#flags) & `adjustfield` != [left](../standard-library/ios-functions.md#left). それ以外の場合、繰り返しはシーケンスに後続します。 `_Ostr` が返されます。  
   
  下記のテンプレート関数は  
   

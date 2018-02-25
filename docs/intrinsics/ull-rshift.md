@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: __ull_rshift
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- __ull_rshift
+dev_langs:
+- C++
 helpviewer_keywords:
 - ull_rshift intrinsic
 - __ull_rshift intrinsic
 ms.assetid: b7ff5254-3540-4e6e-b57c-a6c4beb7dca2
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: c0951a930ad5baec5b293aee0fe8e70c0a38a12f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f0193bad5b9184e3168c618b9bc4e3afc5e27abc
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ullrshift"></a>__ull_rshift
 **Microsoft 固有の仕様**  
@@ -52,7 +56,7 @@ unsigned __int64 __ull_rshift(
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
-|`__ull_rshift`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__ull_rshift`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
  **ヘッダー ファイル** \<intrin.h >  
   
@@ -89,6 +93,6 @@ int main()
 **Microsoft 固有の仕様はここまで**  
   
 ## <a name="see-also"></a>参照  
- [_ _ll_lshift](../intrinsics/ll-lshift.md)   
- [_ _ll_rshift](../intrinsics/ll-rshift.md)   
+ [__ll_lshift](../intrinsics/ll-lshift.md)   
+ [__ll_rshift](../intrinsics/ll-rshift.md)   
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

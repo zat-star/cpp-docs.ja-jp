@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xlocmon/std::money_put
 - xlocmon/std::money_put::char_type
@@ -14,7 +15,8 @@ f1_keywords:
 - xlocmon/std::money_put::string_type
 - xlocmon/std::money_put::do_put
 - xlocmon/std::money_put::put
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::money_put [C++]
 - std::money_put [C++], char_type
@@ -23,16 +25,17 @@ helpviewer_keywords:
 - std::money_put [C++], do_put
 - std::money_put [C++], put
 ms.assetid: f439fd56-c9b1-414c-95e1-66c918c6eee6
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: bd47afe55f1e2625dfe216afd6ef98cbcba7b21f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 33554a3c3422a06693a7daee60c1ccaa47bd00c7
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="moneyput-class"></a>money_put クラス
 このテンプレート クラスは、通貨値から `CharType` 型のシーケンスへの変換を制御するためにロケール ファセットとして使用できるオブジェクトを表します。  
@@ -157,11 +160,11 @@ virtual iter_type do_put(
   
 - **要素**です。 [frac_digits](../standard-library/moneypunct-class.md#frac_digits)小数点の右側に大幅な小数点以下桁数の数を決定します。  
   
- 場合、記号の文字列 (**要素**です。 `negative_sign`または**要素**です。 `positive_sign`) に複数の要素、最初の要素のみがある場所に生成されると等しい要素**money_base::sign**形式パターンに表示されます (**要素**です。 `neg_format`または**要素**です。 `pos_format`) 残りの要素は、通貨出力フィールドの末尾に生成されます。  
+ 場合、記号の文字列 (**要素**です。 `negative_sign` または**要素**です。 `positive_sign`) に複数の要素、最初の要素のみがある場所に生成されると等しい要素**money_base::sign**形式パターンに表示されます (**要素**です。 `neg_format` または**要素**です。 `pos_format`) 残りの要素は、通貨出力フィールドの末尾に生成されます。  
   
- 場合**iosbase**です。 [フラグ](../standard-library/ios-base-class.md#flags) & [showbase](../standard-library/ios-functions.md#showbase) 0 以外の場合は、文字列**要素**です。 `curr_symbol`ここで生成される要素と等しい**money_base::symbol**形式パターンに表示されます。 それ以外の場合、通貨記号は生成されません。  
+ 場合**iosbase**です。 [フラグ](../standard-library/ios-base-class.md#flags) & [showbase](../standard-library/ios-functions.md#showbase) 0 以外の場合は、文字列**要素**です。 `curr_symbol` ここで生成される要素と等しい**money_base::symbol**形式パターンに表示されます。 それ以外の場合、通貨記号は生成されません。  
   
- グループ化の制約が課せられなかった場合**要素**です。 **グループ化**(先頭の要素値を持つ CHAR_MAX) のインスタンスがしない**要素**です。 `thousands_sep`通貨出力フィールドの値の部分で生成されます (ここで、要素と等しい**money_base::value**形式パターンに表示されます)。 場合**要素**です。 `frac_digits`インスタンスはされません**要素**です。 `decimal_point`10 進数字の後に生成されます。 それ以外の場合、結果として得られる通貨出力フィールド、注文低 -**要素**です。 `frac_digits`小数点の右側に 10 進数字。  
+ グループ化の制約が課せられなかった場合**要素**です。 **グループ化**(先頭の要素値を持つ CHAR_MAX) のインスタンスがしない**要素**です。 `thousands_sep` 通貨出力フィールドの値の部分で生成されます (ここで、要素と等しい**money_base::value**形式パターンに表示されます)。 場合**要素**です。 `frac_digits` インスタンスはされません**要素**です。 `decimal_point` 10 進数字の後に生成されます。 それ以外の場合、結果として得られる通貨出力フィールド、注文低 -**要素**です。 `frac_digits` 小数点の右側に 10 進数字。  
   
  パディングが発生する場合を除く、任意の数値出力フィールドと**iosbase**です。 **フラグ** & **iosbase**です。 [内部](../standard-library/ios-functions.md#internal)0 以外の任意の内部の余白は、ここで生成されると等しい要素**money_base::space**表示する場合は、形式パターンに表示されます。 それ以外の場合、内部の埋め込みは生成されたシーケンスの前に発生します。 埋め込み文字は **fill** です。  
   
@@ -198,7 +201,7 @@ explicit money_put(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: これらの値が定義されていません。  
   
  デストラクターが保護されているため、利用できる直接的な例はありません。  
   

@@ -4,24 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - input stream objects
 - input streams, member functions
 ms.assetid: b4b9465d-0da9-4ccf-859d-72a68418982e
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 3aa6fc5331340c110f2325762bbe46409d53d1b5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 96927d7e1a6718f4663ca42248140ac5a7d8fe50
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="input-stream-member-functions"></a>入力ストリームのメンバー関数
 入力ストリームのメンバー関数は、ディスク入力に使用します。 次のようなメンバー関数があります。  
@@ -52,7 +55,7 @@ if (ifile.fail())
 // The file does not exist ...  
 ```  
   
-##  <a name="vclrfthegetfunctionanchor12"></a>Get
+##  <a name="vclrfthegetfunctionanchor12">Get</a>
  書式設定されていない **get** メンバー関数は、**>>** 演算子のように機能しますが、例外が 2 つあります。 1 番目は、**get** 関数には余白が含まれますが、抽出では、**skipws** フラグが設定されている場合 (既定) に余白が除外される点です。 2 番目は、**get** 関数では、関連付けられた出力ストリーム (`cout` など) がフラッシュされる可能性が低い点です。  
   
  **get** 関数の一種は、バッファー アドレスと読み取る文字の最大数を指定します。 これは、次の例のように、特定の変数に送信される文字数を制限する場合に役立ちます。  
@@ -86,7 +89,7 @@ int main()
 1234  
 ```  
   
-##  <a name="vclrfthegetlinefunctionanchor13"></a>Getline
+##  <a name="vclrfthegetlinefunctionanchor13">Getline</a>
  **getline** メンバー関数は **get** 関数に似ています。 両方の関数で、入力の終端文字を指定する 3 番目の引数を使用できます。 既定値は改行文字です。 両方の関数は、必須の終端文字用に 1 つの文字を予約します。 ただし、**get** は終端文字をストリームに残し、**getline** は終端文字を削除します。  
   
  次の例では、入力ストリームの終端文字を指定します。  
@@ -112,7 +115,7 @@ int main( )
 test  
 ```  
   
-##  <a name="vclrfthereadfunctionanchor14"></a>読み取り
+##  <a name="vclrfthereadfunctionanchor14">読み取り</a>
  **read** メンバー関数は、メモリの指定した領域に対するファイルからのバイト数を読み取ります。 length 引数は、読み取られるバイト数を決定します。 この引数を含めないと、ファイルの物理的な末尾に達した場合、またはテキストモードのファイルでは埋め込まれた `EOF` 文字が読み取られた場合に、読み取りが停止します。  
   
  この例では、給与ファイルからのバイナリ レコードを構造体に読み取ります。  

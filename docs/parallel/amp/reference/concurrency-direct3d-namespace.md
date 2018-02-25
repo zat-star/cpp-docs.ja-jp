@@ -4,28 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp/Concurrency::direct3d
 - amprt/Concurrency::direct3d
 - amp_short_vectors/Concurrency::direct3d
 - amp_graphics/Concurrency::direct3d
 - amp_math/Concurrency::direct3d
-dev_langs: C++
-helpviewer_keywords: direct3d namespace
+dev_langs:
+- C++
+helpviewer_keywords:
+- direct3d namespace
 ms.assetid: 9566a2f1-4d5f-43e4-a3ac-676643d38420
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 46b4962e30a6990f6de2c67437fc2af3989c2407
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 607a3f25c2dfea5eee833f3608021547d8cd7c44
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="concurrencydirect3d-namespace"></a>Concurrency::direct3d 名前空間
 `direct3d` 名前空間は、D3D の相互運用性をサポートする関数を提供します。 これにより、AMP コードでの計算に D3D のリソースをシームレスに使用できるようになると共に、AMP で作成したリソースを D3D コードで使用することができ、冗長な中間コピーを作成する必要がありません。 C++ AMP を使用することによって、DirectX アプリケーションの計算中心のセクションの処理を加速し、AMP の計算から生成されるデータに対して D3D API を使用できます。  
@@ -55,7 +59,7 @@ namespace direct3d;
 |名前|説明|  
 |----------|-----------------|  
 |[abs](concurrency-direct3d-namespace-functions-amp.md#abs)|引数の絶対値を返します。|  
-|[クランプ](concurrency-direct3d-namespace-functions-amp.md#clamp)|オーバーロードされます。 _X を指定された _Min と _Max の範囲にクランプします。|  
+|[clamp](concurrency-direct3d-namespace-functions-amp.md#clamp)|オーバーロードされます。 _X を指定された _Min と _Max の範囲にクランプします。|  
 |[countbits](concurrency-direct3d-namespace-functions-amp.md#countbits)|_X 内で設定されているビットの数をカウントします。|  
 |[create_accelerator_view](concurrency-direct3d-namespace-functions-amp.md#create_accelerator_view)|作成、 [accelerator_view クラス](accelerator-view-class.md)Direct3D デバイス インターフェイスへのポインターから|  
 |[d3d_access_lock](concurrency-direct3d-namespace-functions-amp.md#d3d_access_lock)|accelerator_view と共有されるリソースに対して安全に D3D 演算を実行する目的で、accelerator_view のロックを取得します。|  
@@ -69,14 +73,14 @@ namespace direct3d;
 |[is_timeout_disabled](concurrency-direct3d-namespace-functions-amp.md#is_timeout_disabled)|指定された accelerator_view についてタイムアウトが無効であるかどうかを示すブール型のフラグを返します。|  
 |[mad](concurrency-direct3d-namespace-functions-amp.md#mad)|オーバーロードされます。 3 個の引数に対して乗算/加算算術演算 (_X * _Y + _Z) を実行します。|  
 |[make_array](concurrency-direct3d-namespace-functions-amp.md#make_array)|D3D バッファーのインターフェイス ポインターから配列を作成します。|  
-|[ノイズ](concurrency-direct3d-namespace-functions-amp.md#noise)|パーリン ノイズ アルゴリズムを使用して乱数値を生成します。|  
-|[ラジアン](concurrency-direct3d-namespace-functions-amp.md#radians)|_X を角度からラジアンに変換します。|  
+|[noise](concurrency-direct3d-namespace-functions-amp.md#noise)|パーリン ノイズ アルゴリズムを使用して乱数値を生成します。|  
+|[radians](concurrency-direct3d-namespace-functions-amp.md#radians)|_X を角度からラジアンに変換します。|  
 |[rcp](concurrency-direct3d-namespace-functions-amp.md#rcp)|引数の高速近似逆数を計算します。|  
 |[reversebits](concurrency-direct3d-namespace-functions-amp.md#reversebits)|_X 内のビットの順序を反転させます。|  
-|[飽和状態になります。](concurrency-direct3d-namespace-functions-amp.md#saturate)|0 ～ 1 の範囲内で _X をクランプします。|  
-|[サインイン](concurrency-direct3d-namespace-functions-amp.md#sign)|オーバーロードされます。 引数の正弦を返します。|  
+|[saturate](concurrency-direct3d-namespace-functions-amp.md#saturate)|0 ～ 1 の範囲内で _X をクランプします。|  
+|[sign](concurrency-direct3d-namespace-functions-amp.md#sign)|オーバーロードされます。 引数の正弦を返します。|  
 |[smoothstep](concurrency-direct3d-namespace-functions-amp.md#smoothstep)|_X が [_Min, _Max] の範囲内にある場合、0 ～ 1 の滑らかなエルミート補間を返します。|  
-|[手順](concurrency-direct3d-namespace-functions-amp.md#step)|2 つの値を比較し、どちらの値が大きいかに応じて 0 または 1 を返します。|  
+|[step](concurrency-direct3d-namespace-functions-amp.md#step)|2 つの値を比較し、どちらの値が大きいかに応じて 0 または 1 を返します。|  
 |[umax](concurrency-direct3d-namespace-functions-amp.md#umax)|2 つの符号なしの値を比較し、大きい方の値を返します。|  
 |[umin](concurrency-direct3d-namespace-functions-amp.md#umin)|2 つの符号なしの値を比較し、小さい方の値を返します。|  
 

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - mutex/std::mutex
 - mutex/std::mutex::mutex
@@ -14,9 +15,10 @@ f1_keywords:
 - mutex/std::mutex::native_handle
 - mutex/std::mutex::try_lock
 - mutex/std::mutex::unlock
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 7999d055-f74f-4303-810f-8d3c9cde2f69
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -27,12 +29,13 @@ helpviewer_keywords:
 - std::mutex [C++], native_handle
 - std::mutex [C++], try_lock
 - std::mutex [C++], unlock
-ms.workload: cplusplus
-ms.openlocfilehash: 1c1039ceae802984762dbb1aaf50c259bf8a2e95
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: acc1d6625bcf8d76f88e8571cba34ef974856177
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="mutex-class-c-standard-library"></a>mutex クラス (C++ 標準ライブラリ)
 *mutex 型*を表します。 この型のオブジェクトを使用して、プログラム内で相互排他を適用できます。  
@@ -66,7 +69,7 @@ class mutex;
   
  **名前空間:** std  
   
-##  <a name="lock"></a>mutex::lock
+##  <a name="lock"></a>  mutex::lock
  呼び出しスレッドが `mutex` の所有権を取得するまでそのスレッドをブロックします。  
   
 ```cpp  
@@ -93,7 +96,7 @@ constexpr mutex() noexcept;
 ### <a name="remarks"></a>コメント  
  デストラクターの実行時にオブジェクトがロックされる場合の動作は未定義です。  
   
-##  <a name="native_handle"></a>mutex::native_handle
+##  <a name="native_handle"></a>  mutex::native_handle
  ミューテックス ハンドルを表す実装固有の型を返します。 ミューテックス ハンドルは、実装固有の方法で使用できます。  
   
 ```
@@ -103,7 +106,7 @@ native_handle_type native_handle();
 ### <a name="return-value"></a>戻り値  
  `native_handle_type` は、`void *` としてキャストされる `Concurrency::critical_section *` と定義されます。  
   
-##  <a name="try_lock"></a>mutex::try_lock
+##  <a name="try_lock"></a>  mutex::try_lock
  ブロックせずに `mutex` の所有権を取得しようとします。  
   
 ```cpp  
@@ -116,7 +119,7 @@ bool try_lock();
 ### <a name="remarks"></a>コメント  
  呼び出しスレッドが既に `mutex` を所有している場合の動作は未定義です。  
   
-##  <a name="unlock"></a>mutex::unlock
+##  <a name="unlock"></a>  mutex::unlock
  `mutex` の所有権を解放します。  
   
 ```cpp  

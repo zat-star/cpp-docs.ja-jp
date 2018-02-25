@@ -4,29 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - vc-pragma.comment
 - comment_CPP
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - annotations [C++]
 - comments [C++], compiled files
 - pragmas, comment
 - comment pragma
 ms.assetid: 20f099ff-6303-49b3-9c03-a94b6aa69b85
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 4dc4c9036565c2571371c172f61de4948c188f83
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d1062923f50470a2238af21676c4137fac241905
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="comment-cc"></a>コメント (C/C++)
 オブジェクト ファイルまたは実行可能ファイル内にコメント レコードを配置します。  
@@ -41,7 +44,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  *コメント型*の 1 つ以下に示す定義済みの識別子は、コメント レコードの種類を指定します。 省略可能な `commentstring` は、いくつかのコメントの種類で追加情報を指定する文字列リテラルです。 `commentstring`は文字列リテラル、エスケープ文字、埋め込まれた引用符に関して、文字列リテラルのすべての規則に従います (**"**)、および連結します。  
   
- **コンパイラ**  
+ **compiler**  
  オブジェクト ファイル内にコンパイラの名前とバージョン番号を配置します。 このコメント レコードはリンカーには無視されます。 このレコードの種類で `commentstring` パラメーターを指定すると、コンパイラが警告を生成します。  
   
  **exestr**  
@@ -54,7 +57,7 @@ ms.lasthandoff: 12/21/2017
   
  既定のライブラリおよび追加されたライブラリの順序が重要な場合は、コンパイル、 [/Zl](../build/reference/zl-omit-default-library-name.md)スイッチにより、既定のライブラリ名はオブジェクト モジュールに配置されているからです。 2 つ目の comment プラグマを使用して、追加したライブラリの後に既定のライブラリの名前を挿入することができます。 これらのプラグマを使用して指定したライブラリは、ソース コードと同じ順序でオブジェクト モジュールに出現します。  
   
- **リンカー**  
+ **linker**  
  場所、[リンカー オプション](../build/reference/linker-options.md)オブジェクト ファイルにします。 このコメントの種類を使用して、コマンド ラインに渡す代わりにリンカー オプションを指定するか、開発環境でリンカー オプションを指定することができます。 たとえば、/include オプションを指定して、強制的にシンボルを追加できます。  
   
 ```  
@@ -65,9 +68,9 @@ ms.lasthandoff: 12/21/2017
   
 -   [/DEFAULTLIB](../build/reference/defaultlib-specify-default-library.md)  
   
--   [/エクスポート](../build/reference/export-exports-a-function.md)  
+-   [/EXPORT](../build/reference/export-exports-a-function.md)  
   
--   [/INCLUDE します。](../build/reference/include-force-symbol-references.md)  
+-   [/INCLUDE](../build/reference/include-force-symbol-references.md)  
   
 -   [/MANIFESTDEPENDENCY](../build/reference/manifestdependency-specify-manifest-dependencies.md)  
   
@@ -75,7 +78,7 @@ ms.lasthandoff: 12/21/2017
   
 -   [/SECTION](../build/reference/section-specify-section-attributes.md)  
   
- **ユーザー**  
+ **user**  
  オブジェクト ファイル内に一般的なコメントを配置します。 `commentstring` パラメーターで、コメントのテキストを指定します。 このコメント レコードはリンカーには無視されます。  
   
  次のプラグマを指定すると、リンカーはリンク中に EMAPI.LIB ライブラリを探します。 リンカーは、まず現在の作業ディレクトリ内を検索し、次に LIB 環境変数で指定されたパス内を検索します。  

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ISource
 - AGENTS/concurrency::ISource
@@ -19,19 +20,22 @@ f1_keywords:
 - AGENTS/concurrency::ISource::reserve
 - AGENTS/concurrency::ISource::unlink_target
 - AGENTS/concurrency::ISource::unlink_targets
-dev_langs: C++
-helpviewer_keywords: ISource class
+dev_langs:
+- C++
+helpviewer_keywords:
+- ISource class
 ms.assetid: c7b73463-42f6-4dcc-801a-81379b12d35a
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 6db1fe614de8a3f47bae989ccb26512c375cec50
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 147623329d71da704529c12e27ce3c768c1b8145
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="isource-class"></a>ISource クラス
 `ISource` クラスは、すべてのソース ブロック用のインターフェイスです。 ソース ブロックは、メッセージを `ITarget` ブロックに伝達します。  
@@ -65,9 +69,9 @@ class ISource;
   
 |名前|説明|  
 |----------|-----------------|  
-|[そのまま使用します。](#accept)|派生クラスでオーバーライドされると、これによって提供されたメッセージを受け入れる`ISource`ブロック、呼び出し元に所有権を転送します。|  
+|[accept](#accept)|派生クラスでオーバーライドされると、これによって提供されたメッセージを受け入れる`ISource`ブロック、呼び出し元に所有権を転送します。|  
 |[acquire_ref](#acquire_ref)|派生クラスでオーバーライドされると、この参照カウントを獲得`ISource`ブロックを削除されないようにします。|  
-|[使用します。](#consume)|派生クラスでオーバーライドされると、これによって以前に提供メッセージを使用して`ISource`をブロックし、呼び出し元に所有権を転送する、ターゲットが正常に予約されています。|  
+|[consume](#consume)|派生クラスでオーバーライドされると、これによって以前に提供メッセージを使用して`ISource`をブロックし、呼び出し元に所有権を転送する、ターゲットが正常に予約されています。|  
 |[link_target](#link_target)|派生クラスでオーバーライドされると、これをターゲット ブロックをリンク`ISource`ブロックします。|  
 |[release](#release)|派生クラスでオーバーライドされると、以前に成功したメッセージの予約を解放します。|  
 |[release_ref](#release_ref)|派生クラスでオーバーライドされると、この参照カウントを解放`ISource`ブロックします。|  
@@ -86,7 +90,7 @@ class ISource;
   
  **名前空間:** concurrency  
   
-##  <a name="accept"></a>そのまま使用します。 
+##  <a name="accept"></a> そのまま使用します。 
 
  派生クラスでオーバーライドされると、これによって提供されたメッセージを受け入れる`ISource`ブロック、呼び出し元に所有権を転送します。  
   
@@ -109,7 +113,7 @@ virtual message<T>* accept(
 ### <a name="remarks"></a>コメント  
  `accept`メソッドは、メッセージは、これによって提供されているときに、ターゲットによって呼び出されます。`ISource`ブロックします。 返されるメッセージ ポインターに渡されたものと異なる場合があります、`propagate`のメソッド、`ITarget`メッセージのコピーを作成する場合はこのソースをブロックします。  
   
-##  <a name="acquire_ref"></a>acquire_ref 
+##  <a name="acquire_ref"></a> acquire_ref 
 
  派生クラスでオーバーライドされると、この参照カウントを獲得`ISource`ブロックを削除されないようにします。  
   
@@ -124,7 +128,7 @@ virtual void acquire_ref(_Inout_ ITarget<T>* _PTarget) = 0;
 ### <a name="remarks"></a>コメント  
  このメソッドは、`ITarget`中にこのソースにリンクされているオブジェクト、`link_target`メソッドです。  
   
-##  <a name="consume"></a>使用します。 
+##  <a name="consume"></a> 使用します。 
 
  派生クラスでオーバーライドされると、これによって以前に提供メッセージを使用して`ISource`をブロックし、呼び出し元に所有権を転送する、ターゲットが正常に予約されています。  
   
@@ -147,7 +151,7 @@ virtual message<T>* consume(
 ### <a name="remarks"></a>コメント  
  `consume`メソッドは`accept`への呼び出しでは前に必ず必要がありますが、`reserve`返さ`true`です。  
   
-##  <a name="dtor"></a>~ ISource 
+##  <a name="dtor"></a> ~ ISource 
 
  `ISource` オブジェクトを破棄します。  
   
@@ -155,7 +159,7 @@ virtual message<T>* consume(
 virtual ~ISource();
 ```  
   
-##  <a name="link_target"></a>link_target 
+##  <a name="link_target"></a> link_target 
 
  派生クラスでオーバーライドされると、これをターゲット ブロックをリンク`ISource`ブロックします。  
   
@@ -167,7 +171,7 @@ virtual void link_target(_Inout_ ITarget<T>* _PTarget) = 0;
  `_PTarget`  
  これにリンクされているターゲット ブロックへのポインター`ISource`ブロックします。  
   
-##  <a name="release"></a>リリース 
+##  <a name="release"></a> リリース 
 
  派生クラスでオーバーライドされると、以前に成功したメッセージの予約を解放します。  
   
@@ -184,7 +188,7 @@ virtual void release(
  `_PTarget`  
  呼び出しているターゲット ブロックへのポインター、`release`メソッドです。  
   
-##  <a name="release_ref"></a>release_ref 
+##  <a name="release_ref"></a> release_ref 
 
  派生クラスでオーバーライドされると、この参照カウントを解放`ISource`ブロックします。  
   
@@ -199,7 +203,7 @@ virtual void release_ref(_Inout_ ITarget<T>* _PTarget) = 0;
 ### <a name="remarks"></a>コメント  
  このメソッドは、`ITarget`このソースからリンクが解除されるオブジェクト。 ソース ブロックがターゲット ブロック用に予約されたリソースを解放する許可されます。  
   
-##  <a name="reserve"></a>予約 
+##  <a name="reserve"></a> 予約 
 
  派生クラスでオーバーライドされると、これによって以前に提供メッセージを予約`ISource`ブロックします。  
   
@@ -217,12 +221,12 @@ virtual bool reserve(
  呼び出しているターゲット ブロックへのポインター、`reserve`メソッドです。  
   
 ### <a name="return-value"></a>戻り値  
- `true`場合は、メッセージが正常に予約された、`false`それ以外の場合。 予約は、さまざまな理由で失敗することが: メッセージが既に予約か、またはソースでした、予約を拒否するなど、別のターゲットで受け入れられます。  
+ `true` 場合は、メッセージが正常に予約された、`false`それ以外の場合。 予約は、さまざまな理由で失敗することが: メッセージが既に予約か、またはソースでした、予約を拒否するなど、別のターゲットで受け入れられます。  
   
 ### <a name="remarks"></a>コメント  
  呼び出した後`reserve`、成功した場合、いずれかを呼び出す必要があります`consume`または`release`かかるまたは所有している、メッセージをそれぞれ付与するためにします。  
   
-##  <a name="unlink_target"></a>unlink_target 
+##  <a name="unlink_target"></a> unlink_target 
 
  派生クラスでオーバーライドされると、ターゲット ブロックをこれからのリンクを解除`ISource`場合、ブロックをリンクできる以前が見つかりました。  
   
@@ -234,7 +238,7 @@ virtual void unlink_target(_Inout_ ITarget<T>* _PTarget) = 0;
  `_PTarget`  
  これからのリンクが解除されているターゲット ブロックへのポインター`ISource`ブロックします。  
   
-##  <a name="unlink_targets"></a>unlink_targets 
+##  <a name="unlink_targets"></a> unlink_targets 
 
  派生クラスでオーバーライドされると、これからすべてのターゲット ブロックのリンクを解除`ISource`ブロックします。  
   

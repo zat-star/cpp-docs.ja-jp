@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - IScheduler
 - CONCRTRM/concurrency::IScheduler
@@ -17,19 +18,22 @@ f1_keywords:
 - CONCRTRM/concurrency::IScheduler::IScheduler::NotifyResourcesExternallyIdle
 - CONCRTRM/concurrency::IScheduler::IScheduler::RemoveVirtualProcessors
 - CONCRTRM/concurrency::IScheduler::IScheduler::Statistics
-dev_langs: C++
-helpviewer_keywords: IScheduler structure
+dev_langs:
+- C++
+helpviewer_keywords:
+- IScheduler structure
 ms.assetid: 471de85a-2b1a-4b6d-ab81-2eff2737161e
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: c639bd760b837923f3011e9209d923fef31f8aee
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0a9a90a1d02090971ccb689204492b949f72323a
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ischeduler-structure"></a>IScheduler 構造体
 作業スケジューラの抽象化のインターフェイスです。 同時実行ランタイムのリソース マネージャーは、このインターフェイスを使用して作業スケジューラと通信します。  
@@ -46,13 +50,13 @@ struct IScheduler;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Ischeduler::addvirtualprocessors](#addvirtualprocessors)|使用のため、仮想プロセッサ ルートのセットをスケジューラに提供します。 各`IVirtualProcessorRoot`インターフェイスは、スケジューラの代わりの作業を実行できる 1 つのスレッドを実行する権限を表します。|  
-|[Ischeduler::getid](#getid)|スケジューラの一意の識別子を返します。|  
-|[Ischeduler::getpolicy](#getpolicy)|スケジューラのポリシーのコピーを返します。 スケジューラ ポリシーの詳細については、次を参照してください。 [SchedulerPolicy](schedulerpolicy-class.md)です。|  
-|[Ischeduler::notifyresourcesexternallybusy](#notifyresourcesexternallybusy)|この配列内の仮想プロセッサ ルートのセットによって表されるハードウェア スレッドをスケジューラに通知`ppVirtualProcessorRoots`他のスケジューラで使用されているようになりました。|  
-|[Ischeduler::notifyresourcesexternallyidle](#notifyresourcesexternallyidle)|この配列内の仮想プロセッサ ルートのセットによって表されるハードウェア スレッドをスケジューラに通知`ppVirtualProcessorRoots`他のスケジューラによって使用されていません。|  
-|[Ischeduler::removevirtualprocessors](#removevirtualprocessors)|このスケジューラに以前割り当てられた仮想プロセッサ ルートの削除を開始します。|  
-|[Ischeduler::statistics](#statistics)|タスクの到着から完了率、およびスケジューラのキューの長さの変更に関連する情報を提供します。|  
+|[IScheduler::AddVirtualProcessors](#addvirtualprocessors)|使用のため、仮想プロセッサ ルートのセットをスケジューラに提供します。 各`IVirtualProcessorRoot`インターフェイスは、スケジューラの代わりの作業を実行できる 1 つのスレッドを実行する権限を表します。|  
+|[IScheduler::GetId](#getid)|スケジューラの一意の識別子を返します。|  
+|[IScheduler::GetPolicy](#getpolicy)|スケジューラのポリシーのコピーを返します。 スケジューラ ポリシーの詳細については、次を参照してください。 [SchedulerPolicy](schedulerpolicy-class.md)です。|  
+|[IScheduler::NotifyResourcesExternallyBusy](#notifyresourcesexternallybusy)|この配列内の仮想プロセッサ ルートのセットによって表されるハードウェア スレッドをスケジューラに通知`ppVirtualProcessorRoots`他のスケジューラで使用されているようになりました。|  
+|[IScheduler::NotifyResourcesExternallyIdle](#notifyresourcesexternallyidle)|この配列内の仮想プロセッサ ルートのセットによって表されるハードウェア スレッドをスケジューラに通知`ppVirtualProcessorRoots`他のスケジューラによって使用されていません。|  
+|[IScheduler::RemoveVirtualProcessors](#removevirtualprocessors)|このスケジューラに以前割り当てられた仮想プロセッサ ルートの削除を開始します。|  
+|[IScheduler::Statistics](#statistics)|タスクの到着から完了率、およびスケジューラのキューの長さの変更に関連する情報を提供します。|  
   
 ## <a name="remarks"></a>コメント  
  リソース マネージャーとの通信を行うカスタム スケジューラを実装している場合は、実装を提供する必要があります、`IScheduler`インターフェイスです。 このインターフェイスは、双方向チャネル スケジューラおよびリソース マネージャー間の通信の一方の端です。 もう一方の end がによって表される、`IResourceManager`と`ISchedulerProxy`リソース マネージャーによって実装されるインターフェイス。  
@@ -65,7 +69,7 @@ struct IScheduler;
   
  **名前空間:** concurrency  
   
-##  <a name="addvirtualprocessors"></a>Ischeduler::addvirtualprocessors メソッド  
+##  <a name="addvirtualprocessors"></a>  Ischeduler::addvirtualprocessors メソッド  
  使用のため、仮想プロセッサ ルートのセットをスケジューラに提供します。 各`IVirtualProcessorRoot`インターフェイスは、スケジューラの代わりの作業を実行できる 1 つのスレッドを実行する権限を表します。  
   
 ```
@@ -84,7 +88,7 @@ virtual void AddVirtualProcessors(
 ### <a name="remarks"></a>コメント  
  リソース マネージャーを起動、`AddVirtualProcessor`スケジューラへの仮想プロセッサ ルートの初期セットを許可するメソッド。 スケジューラ間でリソースが再分配するときに、仮想プロセッサ ルートをスケジューラに追加するメソッドを呼び出すことも、します。  
   
-##  <a name="getid"></a>Ischeduler::getid メソッド  
+##  <a name="getid"></a>  Ischeduler::getid メソッド  
  スケジューラの一意の識別子を返します。  
   
 ```
@@ -99,7 +103,7 @@ virtual unsigned int GetId() const = 0;
   
  未定義の動作は、別のソースから取得した識別子の可能性があります。  
   
-##  <a name="getpolicy"></a>Ischeduler::getpolicy メソッド  
+##  <a name="getpolicy"></a>  Ischeduler::getpolicy メソッド  
  スケジューラのポリシーのコピーを返します。 スケジューラ ポリシーの詳細については、次を参照してください。 [SchedulerPolicy](schedulerpolicy-class.md)です。  
   
 ```
@@ -109,7 +113,7 @@ virtual SchedulerPolicy GetPolicy() const = 0;
 ### <a name="return-value"></a>戻り値  
  スケジューラのポリシーのコピー。  
   
-##  <a name="notifyresourcesexternallybusy"></a>Ischeduler::notifyresourcesexternallybusy メソッド  
+##  <a name="notifyresourcesexternallybusy"></a>  IScheduler::NotifyResourcesExternallyBusy Method  
  この配列内の仮想プロセッサ ルートのセットによって表されるハードウェア スレッドをスケジューラに通知`ppVirtualProcessorRoots`他のスケジューラで使用されているようになりました。  
   
 ```
@@ -134,7 +138,7 @@ virtual void NotifyResourcesExternallyBusy(
   
  通知用資格のあるスケジューラを取得初期通知のセットが作成されるときにだけに割り当てられているリソースが外部でビジー状態かアイドル状態かどうかを示すことです。  
   
-##  <a name="notifyresourcesexternallyidle"></a>Ischeduler::notifyresourcesexternallyidle メソッド  
+##  <a name="notifyresourcesexternallyidle"></a>  IScheduler::NotifyResourcesExternallyIdle Method  
  この配列内の仮想プロセッサ ルートのセットによって表されるハードウェア スレッドをスケジューラに通知`ppVirtualProcessorRoots`他のスケジューラによって使用されていません。  
   
 ```
@@ -159,7 +163,7 @@ virtual void NotifyResourcesExternallyIdle(
   
  通知用資格のあるスケジューラを取得初期通知のセットが作成されるときにだけに割り当てられているリソースが外部でビジー状態かアイドル状態かどうかを示すことです。  
   
-##  <a name="removevirtualprocessors"></a>Ischeduler::removevirtualprocessors メソッド  
+##  <a name="removevirtualprocessors"></a>  IScheduler::RemoveVirtualProcessors Method  
  このスケジューラに以前割り当てられた仮想プロセッサ ルートの削除を開始します。  
   
 ```
@@ -180,7 +184,7 @@ virtual void RemoveVirtualProcessors(
   
  パラメーター`ppVirtualProcessorRoots`インターフェイスの配列を指します。 削除する仮想プロセッサ ルートのセット間のルートがアクティブ化されていないを使用してすぐに返される、`Remove`メソッドです。 ルートがアクティブ化されたいずれかの処理を実行中または非アクティブ化されているし、は、到着する作業を待機していることを非同期に返される必要があります。 スケジューラは、仮想プロセッサ ルートをできるだけ早く削除する各接続試行を行う必要があります。 仮想プロセッサ ルートの削除が遅れると、スケジューラ内でオーバー サブスクリプションを意図的でない可能性があります。  
   
-##  <a name="statistics"></a>Ischeduler::statistics メソッド  
+##  <a name="statistics"></a>  Ischeduler::statistics メソッド  
  タスクの到着から完了率、およびスケジューラのキューの長さの変更に関連する情報を提供します。  
   
 ```

@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: __svm_vmsave
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- __svm_vmsave
+dev_langs:
+- C++
 helpviewer_keywords:
 - VMSAVE instruction
 - __svm_vmsave intrinsic
 ms.assetid: 617a60bd-8514-4ba1-8066-bcf4dd481030
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 5da09a52b2d3bab14ca56b32df15325c324dc5cc
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8aa5ebe1841522da8a5e2a62ae71ebb9d04b2865
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="svmvmsave"></a>__svm_vmsave
 **Microsoft 固有の仕様**  
@@ -50,7 +54,7 @@ void __svm_vmsave(
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
-|`__svm_vmsave`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__svm_vmsave`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
  **ヘッダー ファイル** \<intrin.h >  
   
@@ -58,5 +62,5 @@ void __svm_vmsave(
   
 ## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
- [_ _svm_vmrun](../intrinsics/svm-vmrun.md)   
+ [__svm_vmrun](../intrinsics/svm-vmrun.md)   
  [__svm_vmload](../intrinsics/svm-vmload.md)

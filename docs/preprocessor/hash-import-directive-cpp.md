@@ -1,14 +1,17 @@
 ---
-title: "#<a name=\"import-directive-c--microsoft-docs\"></a>インポート ディレクティブ (C++) |Microsoft ドキュメント"
+title: "#インポート ディレクティブ (C++) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: '#import'
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- '#import'
+dev_langs:
+- C++
 helpviewer_keywords:
 - .tlh files
 - '#import directive'
@@ -18,16 +21,17 @@ helpviewer_keywords:
 - preprocessor, directives
 - COM, type library header file
 ms.assetid: 787d1112-e543-40d7-ab15-a63d43f4030a
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 3d104f25dfc45a0d2b24650289b6ce49f8468c39
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cbf8a35022638884733f5151fffb2a3a0a2946c3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="import-directive-c"></a>#import ディレクティブ (C++)
 **C 固有の仕様**  
@@ -88,7 +92,7 @@ ms.lasthandoff: 12/21/2017
   
 ## <a name="remarks"></a>コメント  
   
-##  <a name="_predir_the_23import_directive_searchorderforfilename"></a>ファイル名の検索順序  
+##  <a name="_predir_the_23import_directive_searchorderforfilename"></a> ファイル名の検索順序  
  *filename*ディレクトリの仕様によっての前に、必要に応じて。 そのファイル名は既存のファイルの名前であることが必要です。 2 つの構文形式間の違いは、パスの指定が不完全であるときに、プリプロセッサがタイプ ライブラリ ファイルを検索する順序です。  
   
 |構文形式|アクション|  
@@ -96,7 +100,7 @@ ms.lasthandoff: 12/21/2017
 |引用符形式|`#import` ステートメントを含むファイルのディレクトリから最初にタイプ ライブラリ ファイルを探し、次に、そのファイルを含む (`#include`) すべてのファイルのディレクトリを探すようにプリプロセッサに指示します。 プリプロセッサは次のパスに従って検索します。|  
 |山かっこ形式|プリプロセッサに次のパスに従ってタイプ ライブラリ ファイルを検索するように指示します。<br /><br /> 1.**パス**環境変数パス リスト<br />2.**LIB**環境変数パス リスト<br />3./I によって指定されたパス (追加インクルード ディレクトリ) コンパイラ オプションは、コンパイラが別のタイプ ライブラリから参照されたタイプ ライブラリを検索ことを除けば、 [no_registry](../preprocessor/no-registry.md)属性。|  
   
-##  <a name="_predir_the_23import_directive_specifyingthelocalizationidandversionnumber"></a>ローカリゼーション ID とバージョン番号を指定します。  
+##  <a name="_predir_the_23import_directive_specifyingthelocalizationidandversionnumber"></a> ローカリゼーション ID とバージョン番号を指定します。  
  progid を指定するときに、progid のローカリゼーション ID とバージョン番号も指定できます。 例:  
   
 ```  
@@ -113,7 +117,7 @@ ms.lasthandoff: 12/21/2017
   
 -   バージョン番号を指定しない場合、最も新しいバージョンが使用されます。  
   
-##  <a name="_predir_the_23import_directive_header_files_created_by_import"></a>インポートによって作成されるヘッダー ファイル  
+##  <a name="_predir_the_23import_directive_header_files_created_by_import"></a> インポートによって作成されるヘッダー ファイル  
  `#import` は、C++ ソース コード内のタイプ ライブラリの内容を再生成する 2 つのヘッダー ファイルを作成します。 プライマリ ヘッダー ファイルは、Microsoft インターフェイス定義言語 (MIDL) コンパイラによって生成されるものと似ていますが、より多くのコードとデータがコンパイラによって生成されます。 [プライマリ ヘッダー ファイル](#_predir_the_primary_type_library_header_file)タイプ ライブラリと同じ基本名を持つ付加したものです。TLH 拡張機能です。 セカンダリ ヘッダー ファイルには、タイプ ライブラリと同じ基本名と .TLI 拡張子が付けられます。 このファイルは、コンパイラが生成したメンバー関数の実装を格納しており、プライマリ ヘッダー ファイルにインクルード (`#include`) されます。  
   
  Byref パラメーターを使用するディスパッチ インターフェイスのプロパティをインポートするには、#import は生成されません _ _declspec ([プロパティ](../cpp/property-cpp.md)) 関数のステートメント。  
@@ -128,7 +132,7 @@ ms.lasthandoff: 12/21/2017
   
  `#import` ディレクティブは簡易リビルド用にプリコンパイル済みヘッダー ファイル内に記述することもできます。 参照してください[プリコンパイル済みヘッダー ファイルの作成](../build/reference/creating-precompiled-header-files.md)詳細についてはします。  
   
-###  <a name="_predir_the_primary_type_library_header_file"></a>プライマリ タイプ ライブラリ ヘッダー ファイル  
+###  <a name="_predir_the_primary_type_library_header_file"></a> プライマリ タイプ ライブラリ ヘッダー ファイル  
  プライマリ タイプ ライブラリのヘッダー ファイルは、7 つのセクションで構成されます。  
   
 -   見出しの定型句: コメント、COMDEF.H の `#include` ステートメント (ヘッダーで使用される標準マクロを定義)、およびその他のセットアップ情報で構成されます。  
@@ -185,7 +189,7 @@ using namespace MyLib;
   
  詳細については、サポート技術情報の「#import Wrapper Methods May Cause Access Violation (Q242527)」または「Compiler Errors When You Use #import with XML (Q269194)」を参照してください。 MSDN ライブラリのメディア、またはには、サポート技術情報の記事を検索できます[Microsoft サポート](https://support.microsoft.com/)です。  
   
-##  <a name="_predir_the_23import_directive_import_attributes"></a>#import の属性  
+##  <a name="_predir_the_23import_directive_import_attributes"></a> #import の属性  
  `#import` には 1 つ以上の属性を含めることができます (省略可能)。 これらの属性は、コンパイラにタイプ ライブラリ ヘッダーの内容を変更するように指示します。 円記号 (**\\**) を 1 つの追加の行を含めるシンボルを使用することができます`#import`ステートメントです。 例:  
   
 ```  

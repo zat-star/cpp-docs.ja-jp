@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - future/std::future
 - future/std::future::future
@@ -16,9 +17,10 @@ f1_keywords:
 - future/std::future::wait
 - future/std::future::wait_for
 - future/std::future::wait_until
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 495e82c3-5341-4e37-87dd-b40107fbdfb6
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -31,12 +33,13 @@ helpviewer_keywords:
 - std::future [C++], wait
 - std::future [C++], wait_for
 - std::future [C++], wait_until
-ms.workload: cplusplus
-ms.openlocfilehash: 1de870da42504494e672cff4272fd230d1346114
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f54b265e98d8375b20ca5b7cf484290083d1d59c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="future-class"></a>future クラス
 *非同期のリターン オブジェクト*を記述します。  
@@ -64,9 +67,9 @@ class future;
 |名前|説明|  
 |----------|-----------------|  
 |[get](#get)|関連付けられた非同期状態に格納されている結果を取得します。|  
-|[共有](#share)|オブジェクトを `shared_future` に変換します。|  
-|[有効です](#valid)|オブジェクトが空でないかどうかを指定します。|  
-|[待機](#wait)|関連付けられた非同期状態が準備できるまで、現在のスレッドをブロックします。|  
+|[share](#share)|オブジェクトを `shared_future` に変換します。|  
+|[valid](#valid)|オブジェクトが空でないかどうかを指定します。|  
+|[wait](#wait)|関連付けられた非同期状態が準備できるまで、現在のスレッドをブロックします。|  
 |[wait_for](#wait_for)|関連付けられた非同期状態が準備できるまで、または指定した時間が経過するまでブロックします。|  
 |[wait_until](#wait_until)|関連付けられた非同期状態が準備できるまで、または指定した時点までブロックします。|  
   

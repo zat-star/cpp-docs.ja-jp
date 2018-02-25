@@ -4,16 +4,18 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xlocnum/std::num_get
 - locale/std::num_get::char_type
 - locale/std::num_get::iter_type
 - locale/std::num_get::do_get
 - locale/std::num_get::get
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::num_get [C++]
 - std::num_get [C++], char_type
@@ -21,16 +23,17 @@ helpviewer_keywords:
 - std::num_get [C++], do_get
 - std::num_get [C++], get
 ms.assetid: 9933735d-3918-4b17-abad-5fca2adc62d7
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 7437bfe26f95b57584f294a7280540014e4a1b85
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 205bd19d1c051f00a90b45d42997a5d8a1d5eb0f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="numget-class"></a>num_get クラス
 `CharType` 型のシーケンスから数値への変換を制御するためにロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。  
@@ -451,7 +454,7 @@ iter_type get(
   
 - **要素**です。 [thousands_sep](../standard-library/numpunct-class.md#thousands_sep)小数点の左側にある数字のグループを区切る順序を決定します。  
   
- インスタンスがない場合**要素**です。 `thousands_sep`グループ化の制約が課せられなかった、数字の入力フィールドで発生します。 によって、グループ化の制約が課されるそれ以外の場合、**要素**です。 **グループ化**は強制スキャン変換が行われる前に、区切り記号は削除されます。  
+ インスタンスがない場合**要素**です。 `thousands_sep` グループ化の制約が課せられなかった、数字の入力フィールドで発生します。 によって、グループ化の制約が課されるそれ以外の場合、**要素**です。 **グループ化**は強制スキャン変換が行われる前に、区切り記号は削除されます。  
   
  2 番目のプロテクト仮想メンバー関数:  
   
@@ -575,7 +578,7 @@ explicit num_get(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: これらの値が定義されていません。  
   
  デストラクターが保護されているため、利用できる直接的な例はありません。  
   

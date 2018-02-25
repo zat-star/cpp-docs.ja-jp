@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::double_3::get_xzy
 - amp_short_vectors/Concurrency::graphics::double_3
@@ -77,18 +78,20 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::double_3::get_yx
 - amp_short_vectors/Concurrency::graphics::double_3::rbg
 - amp_short_vectors/Concurrency::graphics::double_3::get_yxz
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: baeb3ff0-2862-4c81-857e-b1a4c085be25
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 1779b92140fe9057a96ab8bd062b6540ed2d9c59
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d13862855b0377efe481cde68c349f1ba3d11e45
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="double3-class"></a>double_3 クラス
 3 個の倍精度浮動小数点数の short ベクターを表します。  
@@ -111,7 +114,7 @@ class double_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|[double_3 コンス トラクター](#ctor)|オーバーロードされます。 既定のコンストラクター。すべての要素を 0 で初期化します。|  
+|[double_3 Constructor](#ctor)|オーバーロードされます。 既定のコンストラクター。すべての要素を 0 で初期化します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -159,12 +162,12 @@ class double_3;
 |名前|説明|  
 |----------|-----------------|  
 |double_3::operator-||  
-|double_3:--||  
-|double_3::operator * =||  
+|double_3::operator--||  
+|double_3::operator*=||  
 |double_3::operator/=||  
 |double_3::operator++||  
-|double_3::operator + =||  
-|double_3::operator = =||  
+|double_3::operator+=||  
+|double_3::operator=||  
 |double_3::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
@@ -216,7 +219,7 @@ class double_3;
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>double_3 
+##  <a name="ctor"></a> double_3 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -283,7 +286,7 @@ explicit inline double_3(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="double_3__size"></a>サイズ 
+##  <a name="double_3__size"></a> サイズ 
 
 ```  
 static const int size = 3;  

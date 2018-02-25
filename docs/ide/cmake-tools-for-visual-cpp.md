@@ -4,21 +4,25 @@ ms.custom:
 ms.date: 08/08/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: CMake in Visual C++
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMake in Visual C++
 ms.assetid: 444d50df-215e-4d31-933a-b41841f186f8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 33c768d419215d6bee6d5d8acff707ec129b7cd5
-ms.sourcegitcommit: ef2a263e193410782c6dfe47d00764263439537c
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8b9f00e511be43e5a6b77abae6394013e4e33a34
+ms.sourcegitcommit: 2cca90d965f76ebf1d741ab901693a15d5b8a4df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/24/2018
 ---
 # <a name="cmake-projects-in-visual-c"></a>Visual C で CMake プロジェクト
 
@@ -161,7 +165,7 @@ CMakeLists.txt ファイルを編集するでファイルを右クリックし�
 
    ![CMakeLists.txt ファイル エラー](media/cmake-cmakelists-error.png "CMakeLists.txt ファイル エラー")
 
-## <a name="cmake_settings"></a>CMake 設定とカスタム構成
+## <a name="cmake_settings"></a> CMake 設定とカスタム構成
 
 既定では、Visual Studio は、6 つの既定の CMake 構成 (「x86 デバッグ」、"x86 Release"、「x64 デバッグ」、「x64 リリース」、「Linux デバッグ」と「Linux リリース」) を提供します。 これらの構成では、特定のプロジェクトの CMake キャッシュを作成する CMake.exe を呼び出す方法を定義します。 これらの構成を変更または新規のカスタム構成を作成、 **CMake |CMake 設定を変更する**、設定を適用する CMakeLists.txt ファイルを選択します。 **CMake 設定の変更**コマンドは、ファイルのコンテキスト メニューで利用可能なも**ソリューション エクスプ ローラー**です。 このコマンドは、プロジェクト フォルダーに CMakeSettings.json ファイルを作成します。 このファイルを使用して、ファイルを再作成、CMake キャッシュ、たとえば後に、**クリーン**操作します。 
 
@@ -215,13 +219,13 @@ Visual Studio ジェネレーターを指定する、CMakeSettings.json メイ�
 CMakeSettings.json には、上記で説明したプロパティのいずれかでの使用の環境変数もサポートしています。 使用する構文は`${env.FOO}`を環境変数 %FOO% を展開します。
 このファイル内で組み込みマクロへのアクセスもがあります。
 
-- `${workspaceRoot}`– ワークスペース フォルダーの完全なパスを提供します。
-- `${workspaceHash}`– ハッシュのワークスペースの場所です。(たとえば、フォルダー パスで使用する場合)、現在のワークスペースの一意の識別子を作成するのに役立ちます
-- `${projectFile}`– ルート CMakeLists.txt ファイルの完全なパス
-- `${projectDir}`– ルート CMakeLists.txt ファイルのフォルダーの完全なパス
-- `${thisFile}`– CMakeSettings.json ファイルの完全なパス
-- `${name}`– 構成の名前
-- `${generator}`– この構成で使用される CMake ジェネレーターの名前
+- `${workspaceRoot}` – ワークスペース フォルダーの完全なパスを提供します。
+- `${workspaceHash}` – ハッシュのワークスペースの場所です。(たとえば、フォルダー パスで使用する場合)、現在のワークスペースの一意の識別子を作成するのに役立ちます
+- `${projectFile}` – ルート CMakeLists.txt ファイルの完全なパス
+- `${projectDir}` – ルート CMakeLists.txt ファイルのフォルダーの完全なパス
+- `${thisFile}` – CMakeSettings.json ファイルの完全なパス
+- `${name}` – 構成の名前
+- `${generator}` – この構成で使用される CMake ジェネレーターの名前
 
 ### <a name="ninja-command-line-arguments"></a>忍者コマンドライン引数
 
@@ -248,8 +252,7 @@ usage: ninja [options] [targets...]
 |   -w FLAG  | 警告 (-w リストを警告を使用する) を調整します。|
 
 ### <a name="inherited-environments-visual-studio-2017-version-155"></a>継承された環境 (Visual Studio 2017 年 1 バージョン 15.5)
-
-CmakeSettings.json は、継承された環境をサポートしています。 この機能を使用すると、(1) 既定の環境を継承し、(2) を実行するときに、CMake.exe に渡されるカスタムの環境変数を作成できます。
+CMakeSettings.json は、継承された環境をサポートしています。 この機能を使用すると、(1) 既定の環境を継承し、(2) を実行するときに、CMake.exe に渡されるカスタムの環境変数を作成できます。
 
 ```json
   "inheritEnvironments": [ "msvc_x64_x64" ]
@@ -271,7 +274,7 @@ CmakeSettings.json は、継承された環境をサポートしています。 
 |msvc_arm64_x64|64 ビット ツールを使用して for ARM64 コンパイル|
 
 ### <a name="custom-environment-variables"></a>カスタムの環境変数
-CmakeSettings.json でのカスタム環境変数を定義できますグローバルに構成ごと、または、**環境**プロパティです。 次の例では、1 つのグローバル変数**BuildDir**、これがデバッグ x86 と x64 デバッグの両方の構成に継承します。 各構成の値を指定する変数を使用して、 **buildRoot**プロパティを構成します。 各構成の使用方法にも注意してください、 **inheritEnvironments**プロパティをその構成にのみ適用される変数を指定します。
+CMakeSettings.json でのカスタム環境変数を定義できますグローバルに構成ごと、または、**環境**プロパティです。 次の例では、1 つのグローバル変数**BuildDir**、これがデバッグ x86 と x64 デバッグの両方の構成に継承します。 各構成の値を指定する変数を使用して、 **buildRoot**プロパティを構成します。 各構成の使用方法にも注意してください、 **inheritEnvironments**プロパティをその構成にのみ適用される変数を指定します。
 
 ```json
 {
@@ -290,8 +293,7 @@ CmakeSettings.json でのカスタム環境変数を定義できますグロー�
       "configurationType": "Debug",
       // Inherit the defaults for using the MSVC x86 compiler.
       "inheritEnvironments": [ "msvc_x86" ],
-      "buildRoot": "${env.BuildDir}\\${name}"
-    },
+      "buildRoot": "${env.BuildDir}\\${name}"    },
     {
       "name": "x64-Debug",
       "generator": "Ninja",
@@ -346,7 +348,7 @@ CmakeSettings.json でのカスタム環境変数を定義できますグロー�
 }
 ```
 
-## <a name="cmake-configure-step"></a>Cmake ステップを構成します。
+## <a name="cmake-configure-step"></a>CMake ステップを構成します。
 
 大幅な変更が加えられたときに、CMakeSettings.json または CMakeLists.txt ファイル、Visual Studio を自動的には、ステップを構成、CMake を再実行します。 構成手順は、エラーなく完了すると、収集される情報は C++ の IntelliSense および言語サービスとにも作成して操作をデバッグします。
 

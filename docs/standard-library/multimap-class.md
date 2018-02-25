@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - map/std::multimap
 - map/std::multimap::allocator_type
@@ -49,7 +50,8 @@ f1_keywords:
 - map/std::multimap::swap
 - map/std::multimap::upper_bound
 - map/std::multimap::value_comp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::multimap [C++]
 - std::multimap [C++], allocator_type
@@ -93,16 +95,17 @@ helpviewer_keywords:
 - std::multimap [C++], upper_bound
 - std::multimap [C++], value_comp
 ms.assetid: 8796ae05-37c4-475a-9e61-75fde9d4a463
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 18d648f632a28214779c9424971f65e535a5e210
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 554ea4bac3e374013a511b75f27158ad897195f7
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="multimap-class"></a>multimap クラス
 C++ 標準ライブラリの multimap クラスは、各要素がデータ値と並べ替えキーのペアであるコレクションのデータを格納および取得するために使用されます。 キーの値は一意である必要がなく、データを自動的に並べ替えるために使用されます。 multimap の要素の値 (関連するキー値ではありません) は、直接変更できます。 この場合、変更前の要素に関連付けられていたキー値を削除し、新しい要素に関連付けられる新しいキー値を挿入する必要があります。  
@@ -391,7 +394,7 @@ typedef implementation-defined const_iterator;
 ### <a name="remarks"></a>コメント  
  `const_iterator` 型で要素の値を変更することはできません。  
   
- multimap によって定義される `const_iterator` は、[value_type](#value_type) 型のオブジェクトを指します。これは `pair`*\<***const Key**, **Type***>* 型です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
+ `const_iterator`のオブジェクトへの multimap の点によって定義された[value_type](#value_type)、型のある`pair` * \< * **const キー**、**型 * * * >*です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
   
  逆参照する、 `const_iterator` `cIter` multimap の要素を指すを使用して、  **->** 演算子。  
   
@@ -471,7 +474,7 @@ typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 ### <a name="remarks"></a>コメント  
  `const_reverse_iterator` 型は要素の値を変更できず、逆の順序で multimap を反復処理するために使用します。  
   
- multimap によって定義される `const_reverse_iterator` は、[value_type](#value_type) 型のオブジェクトを指します。これは `pair`*\<***const Key**, **Type***>* 型です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
+ `const_reverse_iterator`のオブジェクトへの multimap の点によって定義された[value_type](#value_type)、型のある`pair` * \< * **const キー**、**型 * * * >*です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
   
  逆参照する、 `const_reverse_iterator` `crIter` multimap の要素を指すを使用して、  **->** 演算子。  
   
@@ -1298,7 +1301,7 @@ typedef implementation-defined iterator;
 ```  
   
 ### <a name="remarks"></a>コメント  
- multimap によって定義される **iterator** は、[value_type](#value_type) のオブジェクトを指します。これは `pair`*\<***const Key**, **Type***>* 型です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
+ **反復子**のオブジェクトへの multimap の点によって定義された[value_type](#value_type)、型のある`pair` * \< * **const キー**、**型 * * * >*です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
   
  multimap 内の要素を指す **反復子**`Iter`を逆参照するには、**->** 演算子を使用します。  
   
@@ -2017,7 +2020,7 @@ typedef std::reverse_iterator<iterator> reverse_iterator;
 ### <a name="remarks"></a>コメント  
  `reverse_iterator` 型は、逆の順序で multimap を反復処理するために使用します。  
   
- multimap によって定義される `reverse_iterator` は、[value_type](#value_type) のオブジェクトを指します。これは `pair`*\<***const Key**, **Type***>* 型です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
+ `reverse_iterator`のオブジェクトへの multimap の点によって定義された[value_type](#value_type)、型のある`pair` * \< * **const キー**、**型 * * * >*です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
   
  逆参照する、 `reverse_iterator` `rIter` multimap の要素を指すを使用して、-> 演算子。  
   

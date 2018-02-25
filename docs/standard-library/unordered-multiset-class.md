@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - unordered_set/std::unordered_multiset
 - unordered_set/std::unordered_multiset::allocator_type
@@ -53,7 +54,8 @@ f1_keywords:
 - unordered_set/std::unordered_multiset::unordered_multiset
 - unordered_set/std::unordered_multiset::operator=
 - unordered_set/std::unordered_multiset::hash_function
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::unordered_multiset
 - std::unordered_multiset::allocator_type
@@ -141,16 +143,17 @@ helpviewer_keywords:
 - std::unordered_multiset::size
 - std::unordered_multiset::swap
 ms.assetid: 70c8dfc5-492a-4af2-84f5-1aa9cb04b71c
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: a958bf441809da24b317b777fd2f79946f3dc727
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ca20b6f1e0c9fe44d234c7622d780e34142f6b6f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="unorderedmultiset-class"></a>unordered_multiset クラス
 このテンプレート クラスは、`const Key` 型要素の可変長シーケンスを制御するオブジェクトを表します。 このシーケンスは、ハッシュ関数によって、"バケット" と呼ばれる一列に並んだサブシーケンスに分割され、弱い順序付けがなされます。 各バケット内では、比較関数によって要素間の大小関係が決定されます。 各要素には、並べ替えキーと値という、2 つの側面があります。 このシーケンスは、すべてのバケットの長さがおおよそ等しければ、シーケンス内の要素数にかかわらず一定の演算回数 (定数時間) で、任意の要素を検索、挿入、削除できるような方法で表現されます。 最悪のケースは、すべての要素が 1 つのバケットに集められたときです。演算の回数は、シーケンス内の要素数に比例して増えることになります (線形時間)。 要素を挿入しても反復子の有効性は失われません。また、要素を削除した場合は、削除された要素を指す反復子だけが無効化されます。  
@@ -188,7 +191,7 @@ class unordered_multiset;
 |[difference_type](#difference_type)|2 つの要素間の距離を表す、符号付きの型です。|  
 |[hasher](#hasher)|ハッシュ関数の型です。|  
 |[Iterator](#iterator)|被制御シーケンスの反復子の型です。|  
-|[並べ替えます](#key_equal)|比較関数の型です。|  
+|[key_equal](#key_equal)|比較関数の型です。|  
 |[key_type](#key_type)|順序付けキーの型です。|  
 |[local_iterator](#local_iterator)|被制御シーケンスのバケット反復子の型です。|  
 |[pointer](#pointer)|要素へのポインターの型です。|  
@@ -200,7 +203,7 @@ class unordered_multiset;
 |-|-|  
 |メンバー関数|説明|  
 |[begin](#begin)|被制御シーケンスの先頭を指定します。|  
-|[バケット](#bucket)|キー値のバケット番号を取得します。|  
+|[bucket](#bucket)|キー値のバケット番号を取得します。|  
 |[bucket_count](#bucket_count)|バケット数を取得します。|  
 |[bucket_size](#bucket_size)|バケットのサイズを取得します。|  
 |[cbegin](#cbegin)|被制御シーケンスの先頭を指定します。|  

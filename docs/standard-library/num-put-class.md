@@ -4,16 +4,18 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xlocnum/std::num_put
 - locale/std::num_put::char_type
 - locale/std::num_put::iter_type
 - locale/std::num_put::do_put
 - locale/std::num_put::put
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::num_put [C++]
 - std::num_put [C++], char_type
@@ -21,16 +23,17 @@ helpviewer_keywords:
 - std::num_put [C++], do_put
 - std::num_put [C++], put
 ms.assetid: 36c5bffc-8283-4201-8ed4-78c4d81f8a17
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: f93a5536b73c5d62a95ff076e40304204071d83f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f25ebb3cc763947ca0ee88d95d0b7a1d284d157f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="numput-class"></a>num_put クラス
 数値から `CharType` 型のシーケンスへの変換を制御するためにロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。  
@@ -176,7 +179,7 @@ virtual iter_type do_put(
   
  場合**iosbase**です。 [幅](../standard-library/ios-base-class.md#width)は 0 以外、この値のフィールドの幅が先頭に付加します。 関数を呼び出すし**iosbase**です。 **幅**フィールドの幅を 0 にリセットするには、(0) です。  
   
- 場合にのみ、余白が発生する要素の最小数*N*出力フィールドを指定するために必要な未満**iosbase**です。 [幅](../standard-library/ios-base-class.md#width)です。 このような余白のシーケンスから成る*N* - **幅**のコピー **fill**です。 この場合、埋め込みは次のように発生します。  
+ 場合にのみ、余白が発生する要素の最小数*N*出力フィールドを指定するために必要な未満**iosbase**です。 [width](../standard-library/ios-base-class.md#width). このような余白のシーケンスから成る*N* - **幅**のコピー **fill**です。 この場合、埋め込みは次のように発生します。  
   
 -   場合**iosbase**です。 **フラグ** & `ios_base::adjustfield` == `ios_base::`[左](../standard-library/ios-functions.md#left)、フラグ **-** 前付けられます。 (埋め込みは、生成されたテキストの後に発生します。)  
   
@@ -196,7 +199,7 @@ virtual iter_type do_put(
   
 - **要素**です。 [thousands_sep](../standard-library/numpunct-class.md#thousands_sep)小数点の左側にある数字のグループを区切る順序を決定  
   
- グループ化の制約が課せられなかった場合**要素**です。 **グループ化**(先頭の要素値を持つ CHAR_MAX) のインスタンスがしない**要素**です。 `thousands_sep`出力フィールドで生成されます。 それ以外の場合、出力変換が発生した後に区切り記号が挿入されます。  
+ グループ化の制約が課せられなかった場合**要素**です。 **グループ化**(先頭の要素値を持つ CHAR_MAX) のインスタンスがしない**要素**です。 `thousands_sep` 出力フィールドで生成されます。 それ以外の場合、出力変換が発生した後に区切り記号が挿入されます。  
   
  2 番目のプロテクト仮想メンバー関数:  
   
@@ -222,7 +225,7 @@ virtual iter_type do_put(iter_type next,
   
 -   場合**iosbase**です。 **フラグ** & `ios_base::floatfield` == `ios_base::`[固定](../standard-library/ios-functions.md#fixed)、変換の仕様は**lf**です。  
   
--   場合**iosbase**です。 **フラグ** & **ios_base::floatfield** == `ios_base::`[科学](../standard-library/ios-functions.md#scientific)、変換の仕様は`le`します。 場合**iosbase**です。 **フラグ** & `ios_base::`[大文字](../standard-library/ios-functions.md#uppercase)がゼロ以外、 **e**に置き換えられます**E**です。  
+-   場合**iosbase**です。 **flags** & **ios_base::floatfield** == `ios_base::`[scientific](../standard-library/ios-functions.md#scientific), the conversion specification is `le`. 場合**iosbase**です。 **フラグ** & `ios_base::`[大文字](../standard-library/ios-functions.md#uppercase)がゼロ以外、 **e**に置き換えられます**E**です。  
   
 -   それ以外の場合、変換仕様は **lg** です。 場合**iosbase**です。 **フラグ** & **ios_base::uppercase**がゼロ以外、 **g**に置き換えられます**G**です。  
   
@@ -265,7 +268,7 @@ virtual iter_type do_put(iter_type next,
   
  この関数の動作は 1 番目と同じですが、`val` からブール値出力フィールドを生成している点が異なります。  
   
- ブール値出力フィールドは、次の 2 つの形式のいずれかになります。 場合**iosbase**です。 **フラグ** & `ios_base::`[boolalpha](../standard-library/ios-functions.md#boolalpha)は**false**、メンバー関数を返します`do_put`(_*次*、 \_ *Iosbase*、 \_ *塗りつぶし*、(**長い**) `val`)、通常 0 (の生成されたシーケンスが生成されます**false**) または 1 (の**true**)。 それ以外の場合、生成されたシーケンスであるか、**要素**です。 [falsename](../standard-library/numpunct-class.md#falsename) `)` (の**false**)、または**要素**です。 [truename](../standard-library/numpunct-class.md#truename) (の**true**)。  
+ ブール値出力フィールドは、次の 2 つの形式のいずれかになります。 場合**iosbase**です。 **フラグ** & `ios_base::`[boolalpha](../standard-library/ios-functions.md#boolalpha)は**false**、メンバー関数を返します`do_put`(_*次*、 \_*Iosbase*、 \_ *塗りつぶし*、(**長い**) `val`)、通常 0 の生成されたシーケンスが生成されます (の**false**) または 1 (の**true**)。 それ以外の場合、生成されたシーケンスであるか、**要素**です。 [falsename](../standard-library/numpunct-class.md#falsename) `)` (の**false**)、または**要素**です。 [truename](../standard-library/numpunct-class.md#truename) (の**true**)。  
   
  7 番目のプロテクト仮想メンバー関数:  
   
@@ -320,7 +323,7 @@ explicit num_put(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: これらの値が定義されていません。  
   
  デストラクターが保護されているため、利用できる直接的な例はありません。  
   

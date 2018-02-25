@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - IExecutionResource
 - CONCRTRM/concurrency::IExecutionResource
@@ -14,19 +15,22 @@ f1_keywords:
 - CONCRTRM/concurrency::IExecutionResource::IExecutionResource::GetExecutionResourceId
 - CONCRTRM/concurrency::IExecutionResource::IExecutionResource::GetNodeId
 - CONCRTRM/concurrency::IExecutionResource::IExecutionResource::Remove
-dev_langs: C++
-helpviewer_keywords: IExecutionResource structure
+dev_langs:
+- C++
+helpviewer_keywords:
+- IExecutionResource structure
 ms.assetid: 6b27042b-b98c-4f7f-b831-566950af84cd
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: cd22fdb38b1828e1fa86ca79b9967a546ccb9456
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eb4ad0b6f9038d78ae94b5ab1dcb148ebd628edc
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="iexecutionresource-structure"></a>IExecutionResource 構造体
 ハードウェア スレッドの抽象化です。  
@@ -43,10 +47,10 @@ struct IExecutionResource;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Iexecutionresource::currentsubscriptionlevel](#currentsubscriptionlevel)|ルートの数とこの実行リソースが表す基になるハードウェア スレッドに関連付けられている外部のスレッドをサブスクライブしているアクティブ化された仮想プロセッサの数を返します。|  
-|[Iexecutionresource::getexecutionresourceid](#getexecutionresourceid)|この実行リソースを表すハードウェア スレッドの一意の識別子を返します。|  
-|[Iexecutionresource::getnodeid](#getnodeid)|この実行リソースが属するプロセッサ ノードの一意の識別子を返します。|  
-|[Iexecutionresource::remove](#remove)|この実行リソースをリソース マネージャーを返します。|  
+|[IExecutionResource::CurrentSubscriptionLevel](#currentsubscriptionlevel)|ルートの数とこの実行リソースが表す基になるハードウェア スレッドに関連付けられている外部のスレッドをサブスクライブしているアクティブ化された仮想プロセッサの数を返します。|  
+|[IExecutionResource::GetExecutionResourceId](#getexecutionresourceid)|この実行リソースを表すハードウェア スレッドの一意の識別子を返します。|  
+|[IExecutionResource::GetNodeId](#getnodeid)|この実行リソースが属するプロセッサ ノードの一意の識別子を返します。|  
+|[IExecutionResource::Remove](#remove)|この実行リソースをリソース マネージャーを返します。|  
   
 ## <a name="remarks"></a>コメント  
  実行リソースはスタンドアロンでか仮想プロセッサ ルートに関連付けられています。 アプリケーションのスレッドが、スレッドのサブスクリプションを作成するときは、スタンドアロンの実行リソースが作成されます。 メソッド[ISchedulerProxy::SubscribeThread](ischedulerproxy-structure.md#subscribecurrentthread)と[ischedulerproxy::requestinitialvirtualprocessors](ischedulerproxy-structure.md#requestinitialvirtualprocessors)スレッドのサブスクリプションを作成して返す、`IExecutionResource`インターフェイスを表す、サブスクリプション。 スレッドのサブスクリプションを作成すると、特定のスレッドが作業に参加するリソース マネージャーに通知する方法は、スケジューラにリソース マネージャーを割り当てます仮想プロセッサ ルートと、スケジューラ キューに置かれたです。 リソース マネージャーは、できるハードウェア スレッドの規定量を超えるを避けるために情報を使用します。  
@@ -59,7 +63,7 @@ struct IExecutionResource;
   
  **名前空間:** concurrency  
   
-##  <a name="currentsubscriptionlevel"></a>Iexecutionresource::currentsubscriptionlevel メソッド  
+##  <a name="currentsubscriptionlevel"></a>  Iexecutionresource::currentsubscriptionlevel メソッド  
  ルートの数とこの実行リソースが表す基になるハードウェア スレッドに関連付けられている外部のスレッドをサブスクライブしているアクティブ化された仮想プロセッサの数を返します。  
   
 ```
@@ -78,7 +82,7 @@ virtual unsigned int CurrentSubscriptionLevel() const = 0;
   
  リソース マネージャーは、スケジューラ間でリソースを移動するかを判断するための方法の 1 つとして、サブスクリプション レベルの情報を使用します。  
   
-##  <a name="getexecutionresourceid"></a>Iexecutionresource::getexecutionresourceid メソッド  
+##  <a name="getexecutionresourceid"></a>  IExecutionResource::GetExecutionResourceId Method  
  この実行リソースを表すハードウェア スレッドの一意の識別子を返します。  
   
 ```
@@ -91,7 +95,7 @@ virtual unsigned int GetExecutionResourceId() const = 0;
 ### <a name="remarks"></a>コメント  
  各ハードウェア スレッドには、同時実行ランタイムによって一意の識別子が割り当てられます。 複数の実行リソースが関連付けられているハードウェアの場合、スレッドがすべて必要である同じ実行リソース識別子。  
   
-##  <a name="getnodeid"></a>Iexecutionresource::getnodeid メソッド  
+##  <a name="getnodeid"></a>  Iexecutionresource::getnodeid メソッド  
  この実行リソースが属するプロセッサ ノードの一意の識別子を返します。  
   
 ```
@@ -106,7 +110,7 @@ virtual unsigned int GetNodeId() const = 0;
   
  ノードの数は、関数から取得できる[GetProcessorNodeCount](concurrency-namespace-functions.md)です。  
   
-##  <a name="remove"></a>Iexecutionresource::remove メソッド  
+##  <a name="remove"></a>  Iexecutionresource::remove メソッド  
  この実行リソースをリソース マネージャーを返します。  
   
 ```
@@ -124,9 +128,9 @@ virtual void Remove(_Inout_ IScheduler* pScheduler) = 0;
   
  仮想プロセッサ ルートすぎる、返されるリソース マネージャーを呼び出すことによって、`Remove`メソッド、ため、インターフェイス`IVirtualProcessorRoot`から継承、`IExecutionResource`インターフェイスです。 呼び出しに応答するか、仮想プロセッサ ルートを返す必要があります、 [ischeduler::removevirtualprocessors](ischeduler-structure.md#removevirtualprocessors)メソッドから取得したオーバーサブスク ライブの仮想プロセッサ ルートが完了したときや、 [Ischedulerproxy::createoversubscriber](ischedulerproxy-structure.md#createoversubscriber)メソッドです。 仮想プロセッサ ルートについての制限がないスレッドを呼び出すことができます、`Remove`メソッドです。  
   
- `invalid_argument`スローされる場合、パラメーター`pScheduler`に設定されている`NULL`です。  
+ `invalid_argument` スローされる場合、パラメーター`pScheduler`に設定されている`NULL`です。  
   
- `invalid_operation`スローされる場合、パラメーター`pScheduler`現在のスレッドがスレッドのサブスクリプションを作成したスレッドと異なる場合は、スケジューラ、または、スタンドアロンの実行リソースでは、この実行リソースが作成されたことを異なる。  
+ `invalid_operation` スローされる場合、パラメーター`pScheduler`現在のスレッドがスレッドのサブスクリプションを作成したスレッドと異なる場合は、スケジューラ、または、スタンドアロンの実行リソースでは、この実行リソースが作成されたことを異なる。  
   
 ## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   

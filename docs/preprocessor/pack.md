@@ -4,27 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - pack_CPP
 - vc-pragma.pack
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - pragmas, pack
 - pack pragma
 ms.assetid: e4209cbb-5437-4b53-b3fe-ac264501d404
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: f4a6dc351d0184d43a1cf79f1cec9e9bae33aecf
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 15625977ab5dd0c20238f52e84f4ecea443d01ed
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="pack"></a>pack
 構造体メンバー、共用体メンバー、およびクラス メンバーのパッキング アラインメントを指定します。  
@@ -56,11 +59,11 @@ ms.lasthandoff: 12/21/2017
  `n` (省略可能)  
  パッキングに使用される値 (バイト単位) を指定します。 場合、コンパイラ オプション[/Zp](../build/reference/zp-struct-member-alignment.md)モジュールの既定値が設定されていない`n`は 8 です。 有効値は 1、2、4、8、および 16 です。 メンバーのアラインメントは、`n` の倍数またはメンバーのサイズの倍数の小さい方の境界上にあります。  
   
- `#pragma pack(pop, identifier, n)`定義されていません。  
+ `#pragma pack(pop, identifier, n)` 定義されていません。  
   
  アラインメントの変更方法の詳細については、次のトピックを参照してください。  
   
--   [_ _alignof](../cpp/alignof-operator.md)  
+-   [__alignof](../cpp/alignof-operator.md)  
   
 -   [align](../cpp/align-cpp.md)  
   

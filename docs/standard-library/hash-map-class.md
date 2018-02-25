@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - hash_map/stdext::hash_map
 - hash_map/stdext::hash_map::allocator_type
@@ -50,7 +51,8 @@ f1_keywords:
 - hash_map/stdext::hash_map::swap
 - hash_map/stdext::hash_map::upper_bound
 - hash_map/stdext::hash_map::value_comp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - stdext::hash_map
 - stdext::hash_map::allocator_type
@@ -95,16 +97,17 @@ helpviewer_keywords:
 - stdext::hash_map::upper_bound
 - stdext::hash_map::value_comp
 ms.assetid: 40879dfc-51ba-4a59-9f9e-26208de568a8
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 056d517779ca085152fea081271757329f7f3be8
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dc280212a4d37147c8af9cd2921e12516c529d13
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="hashmap-class"></a>hash_map クラス
 > [!NOTE]
@@ -518,7 +521,7 @@ typedef list<typename Traits::value_type, typename Traits::allocator_type>::cons
 ### <a name="remarks"></a>コメント  
  `const_iterator` 型で要素の値を変更することはできません。  
   
- hash_map によって定義される `const_iterator` は、[value_type](#value_type) のオブジェクトである要素を指します。これは `pair`*\<***const Key, Type***>* 型で、その最初のメンバーは要素へのキーであり、2 番目のメンバーは要素が保持するマップされたデータです。  
+ `const_iterator`要素のオブジェクトである hash_map 点によって定義された[value_type](#value_type)られている型の`pair`  *\< ***const キー、型***>* 、最初のメンバーが、キーの要素には、およびメンバーは、要素によって保持されているマップのデータムが秒です。  
   
  逆参照する、 `const_iterator` `cIter` hash_map 内の要素を指すを使用して、  **->** 演算子。  
   
@@ -2711,7 +2714,7 @@ typedef pair<const Key, Type> value_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- `value_type` は、`pair`**\<key_type, mapped_type>** ではなく `pair` *\<***const**[key_type](#key_type), [mapped_type](#mapped_type)*>* として宣言されます。非定数の反復子または参照を使うと、連想コンテナ―のキーが変更されない可能性があるためです。  
+ `value_type` 宣言する`pair`  *\< * **const**[key_type](#key_type)、 [mapped_type](#mapped_type)*> * および not`pair`  **\<key_type、mapped_type >**非定数反復子または参照を使用して連想コンテナーのキーを変更する可能性がありますいないためです。  
   
   
 ### <a name="example"></a>例  

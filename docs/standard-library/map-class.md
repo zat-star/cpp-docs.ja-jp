@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - map/std::map
 - map/std::map::allocator_type
@@ -50,7 +51,8 @@ f1_keywords:
 - map/std::map::swap
 - map/std::map::upper_bound
 - map/std::map::value_comp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::map [C++]
 - std::map [C++], allocator_type
@@ -95,16 +97,17 @@ helpviewer_keywords:
 - std::map [C++], upper_bound
 - std::map [C++], value_comp
 ms.assetid: 7876f4c9-ebb4-4878-af1e-09364c43af0a
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: d83bebb0953ee3ed7acec9e0e732cef6e5b3816f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: be1d2ddf9c80c2039608a3cf5f459284796b685d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="map-class"></a>map クラス
 データ値と並べ替えキーのペアになっている要素が含まれているコレクションに対して、データの格納と取得を実行するために使用します。 キーの値は一意で、データを自動的に並べ替えるために使用されます。  
@@ -1504,7 +1507,7 @@ typedef implementation-defined iterator;
 ```  
   
 ### <a name="remarks"></a>コメント  
- map によって定義される **iterator** は [value_type](#value_type) のオブジェクトである要素を指します。これは `pair`*\<***constKey**, **Type***>* 型で、その最初のメンバーは要素へのキーであり、2 番目のメンバーは要素が保持するマップされたデータです。  
+ **反復子**のオブジェクトである要素へのマップ ポイントによって定義された[value_type](#value_type)られている型の`pair` * \< * **constKey**、**型 * * * >*、最初のメンバーが、キーの要素には、およびメンバーは、要素によって保持されているマップのデータムが秒です。  
   
  map 内の要素を指す**反復子**`Iter`を逆参照するには、**->** 演算子を使用します。  
   
@@ -2310,7 +2313,7 @@ typedef std::reverse_iterator<iterator> reverse_iterator;
 ### <a name="remarks"></a>コメント  
  `reverse_iterator` 型は要素の値を変更できず、逆の順序で map を反復処理するために使用します。  
   
- map によって定義される `reverse_iterator` は、[value_type](#value_type) のオブジェクトである要素を指します。これは `pair`*\<***constKey**, **Type***>* 型で、その最初のメンバーは要素へのキーであり、2 番目のメンバーは要素が保持するマップされたデータです。  
+ `reverse_iterator`のオブジェクトである要素へのマップ ポイントによって定義された[value_type](#value_type)られている型の`pair` * \< * **constKey**、**型 * * * >*、最初のメンバーが、キーの要素には、およびメンバーは、要素によって保持されているマップのデータムが秒です。  
   
  逆参照する、 `reverse_iterator` `rIter` 、map 内の要素を指すを使用して、  **->** 演算子。  
   
@@ -2519,7 +2522,7 @@ value_compare value_comp() const;
 ### <a name="remarks"></a>コメント  
  map *m* について、2 つの要素 *e*1( *k*1, *d*1) および *e*2( *k*2, `d`2) が `value_type` 型のオブジェクトである場合 (ここで *k*1 および *k*2 は `key_type` 型のキーであり、`d`1 および `d`2 は `mapped_type` 型のデータである)、*m.*`value_comp`( *e*1, *e*2) は *m.*`key_comp`*(k*1, *k*2) と同等です。 格納されているオブジェクトは以下のメンバー関数を定義します。  
   
- **bool 演算子**( **value_type &**`left`、 **value_type &**`right`) です。  
+ **bool operator**( **value_type&**`left`, **value_type&**`right`);  
   
  これは、並べ替え順で `left` のキー値が `right` のキー値に先行しかつ等しくない場合に、**true** を返します。  
   
