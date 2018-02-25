@@ -4,26 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - task_handle
 - PPL/concurrency::task_handle
 - PPL/concurrency::task_handle::task_handle
-dev_langs: C++
-helpviewer_keywords: task_handle class
+dev_langs:
+- C++
+helpviewer_keywords:
+- task_handle class
 ms.assetid: 74a34b15-708b-4231-a509-947874292b13
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 38da8f97dfd689037f52f5e7c67bb51f4577a05a
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 42fcc201007a26a111f50036b273cab2850b28a3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="taskhandle-class"></a>task_handle クラス
 `task_handle` クラスは個々の並列作業項目を表します。 このクラスは、1 つの処理を実行するために必要な命令およびデータをカプセル化します。  
@@ -57,11 +61,11 @@ class task_handle : public ::Concurrency::details::_UnrealizedChore;
 |[operator()](#task_handle__operator_call)|タスク ハンドルの作業を実行するために、ランタイムが呼び出す関数呼び出し演算子です。|  
   
 ## <a name="remarks"></a>コメント  
- `task_handle`オブジェクトを組み合わせて使用することができます、`structured_task_group`またはより一般的な`task_group`作業を並列タスクを分解するためのオブジェクト。 詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。  
+ `task_handle` オブジェクトを組み合わせて使用することができます、`structured_task_group`またはより一般的な`task_group`作業を並列タスクを分解するためのオブジェクト。 詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。  
   
  なおの作成者は、`task_handle`オブジェクトが作成されたの有効期間の管理を担当`task_handle`同時実行ランタイムが必要なくなるまでのオブジェクトします。 通常、これは、`task_handle`オブジェクト必要がありますいないされるまで、消滅させるため、`wait`または`run_and_wait`のメソッド、`task_group`または`structured_task_group`これがキューに入れるが呼び出されました。  
   
- `task_handle`オブジェクトは通常、C++ ラムダと組み合わせて使用されます。 、ラムダ式の実際の型がわからないため、 [make_task](concurrency-namespace-functions.md#make_task)関数が通常作成に使用する`task_handle`オブジェクト。  
+ `task_handle` オブジェクトは通常、C++ ラムダと組み合わせて使用されます。 、ラムダ式の実際の型がわからないため、 [make_task](concurrency-namespace-functions.md#make_task)関数が通常作成に使用する`task_handle`オブジェクト。  
   
  ランタイムに渡す処理関数のコピーを作成する、`task_handle`オブジェクト。 したがって、関数で発生した状態の変更はオブジェクトを渡すこと、`task_handle`オブジェクトは、その関数のオブジェクトのコピーには表示されません。  
   
@@ -73,7 +77,7 @@ class task_handle : public ::Concurrency::details::_UnrealizedChore;
   
  **名前空間:** concurrency  
   
-##  <a name="task_handle__operator_call"></a>operator() 
+##  <a name="task_handle__operator_call"></a> operator() 
 
  タスク ハンドルの作業を実行するために、ランタイムが呼び出す関数呼び出し演算子です。  
   
@@ -83,7 +87,7 @@ void operator()() const;
  
 ```  
   
-##  <a name="task_handle__ctor"></a>task_handle 
+##  <a name="task_handle__ctor"></a> task_handle 
 
  新しい `task_handle` オブジェクトを構築します。 タスクの作業は、コンス トラクターにパラメーターとして指定された関数を呼び出すことによって実行されます。  
   
@@ -98,7 +102,7 @@ task_handle(const _Function& _Func);
 ### <a name="remarks"></a>コメント  
  ランタイムでは、コンス トラクターに渡す処理関数のコピーを作成します。 したがって、関数で発生した状態の変更はオブジェクトを渡すこと、`task_handle`オブジェクトは、その関数のオブジェクトのコピーには表示されません。  
   
-##  <a name="dtor"></a>~ task_handle 
+##  <a name="dtor"></a> ~task_handle 
 
  `task_handle` オブジェクトを破棄します。  
   

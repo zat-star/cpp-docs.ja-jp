@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - concurrent_queue
 - CONCURRENT_QUEUE/concurrency::concurrent_queue
@@ -19,19 +20,22 @@ f1_keywords:
 - CONCURRENT_QUEUE/concurrency::concurrent_queue::unsafe_begin
 - CONCURRENT_QUEUE/concurrency::concurrent_queue::unsafe_end
 - CONCURRENT_QUEUE/concurrency::concurrent_queue::unsafe_size
-dev_langs: C++
-helpviewer_keywords: concurrent_queue class
+dev_langs:
+- C++
+helpviewer_keywords:
+- concurrent_queue class
 ms.assetid: c2218996-d0ea-40e9-b002-e9a15b085f51
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 6e2e572574bfd8313106dbdda64b63077d5d2e7c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6b577b0f652070fa2a80d06e2f44ccad0a421af5
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="concurrentqueue-class"></a>concurrent_queue クラス
 `concurrent_queue` クラスは、キューの要素に先入れ先出し方式でアクセスできるようにするシーケンス コンテナー クラスです。 これを使用すると、`push`、`try_pop` などの特定の同時実行セーフな操作を実行できます。  
@@ -96,7 +100,7 @@ class concurrent_queue: public ::Concurrency::details::_Concurrent_queue_base_v4
   
  **名前空間:** concurrency  
   
-##  <a name="clear"></a>オフ 
+##  <a name="clear"></a> オフ 
 
  破棄、同時実行のキューをクリア現在キューに格納された要素。 このメソッドは同時実行セーフではありません。  
   
@@ -104,7 +108,7 @@ class concurrent_queue: public ::Concurrency::details::_Concurrent_queue_base_v4
 void clear();
 ```  
   
-##  <a name="ctor"></a>concurrent_queue 
+##  <a name="ctor"></a> concurrent_queue 
 
  同時実行のキューを作成します。  
   
@@ -152,7 +156,7 @@ concurrent_queue(_InputIterator _Begin,
   
  4 番目のコンス トラクターは、反復子の範囲で指定された値を指定する [ `_Begin`、 `_End`)。  
   
-##  <a name="dtor"></a>~ concurrent_queue 
+##  <a name="dtor"></a> ~concurrent_queue 
 
  同時実行のキューを破棄します。  
   
@@ -160,7 +164,7 @@ concurrent_queue(_InputIterator _Begin,
 ~concurrent_queue();
 ```  
   
-##  <a name="empty"></a>空 
+##  <a name="empty"></a> 空 
 
  現時点では同時実行のキューは空かどうかをこのメソッドが呼び出されます。 このメソッドは同時実行セーフです。  
   
@@ -169,12 +173,12 @@ bool empty() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `true`調査した時点で同時実行のキューが空場合、`false`それ以外の場合。  
+ `true` 調査した時点で同時実行のキューが空場合、`false`それ以外の場合。  
   
 ### <a name="remarks"></a>コメント  
  このメソッドは同時実行セーフでは、メソッドの呼び出しに関して`push`、 `try_pop`、および`empty`、返される値可能性がありますいない正しい時では、呼び出し元スレッドで検査されることです。  
   
-##  <a name="get_allocator"></a>get_allocator 
+##  <a name="get_allocator"></a> get_allocator 
 
  同時実行のキューを構築するために使用されるアロケーターのコピーを返します。 このメソッドは同時実行セーフです。  
   
@@ -185,7 +189,7 @@ allocator_type get_allocator() const;
 ### <a name="return-value"></a>戻り値  
  同時実行のキューを構築するために使用されるアロケーターのコピー。  
   
-##  <a name="push"></a>プッシュ 
+##  <a name="push"></a> プッシュ 
 
  同時実行のキューの末尾にある項目をエンキューします。 このメソッドは同時実行セーフです。  
   
@@ -200,9 +204,9 @@ void push(T&& _Src);
  キューに追加する項目。  
   
 ### <a name="remarks"></a>コメント  
- `push`同時実行セーフですが、メソッドの呼び出しに関して`push`、 `try_pop`、および`empty`です。  
+ `push` 同時実行セーフですが、メソッドの呼び出しに関して`push`、 `try_pop`、および`empty`です。  
   
-##  <a name="try_pop"></a>try_pop 
+##  <a name="try_pop"></a> try_pop 
 
  1 つが利用可能な場合は、キューから項目をデキューします。 このメソッドは同時実行セーフです。  
   
@@ -215,14 +219,14 @@ bool try_pop(T& _Dest);
  キューから取り出された項目を保存する場所への参照。  
   
 ### <a name="return-value"></a>戻り値  
- `true`項目が正常にキューから取り出された場合`false`それ以外の場合。  
+ `true` 項目が正常にキューから取り出された場合`false`それ以外の場合。  
   
 ### <a name="remarks"></a>コメント  
  項目が正常にキューから取り出された場合、パラメーター `_Dest` dequeued の値を受け取るキューに保持されている元の値は破棄され、この関数を返します`true`です。 かどうか、キューから削除するアイテムがなかった、この関数を返します`false`のブロックとの内容を行わない限り、`_Dest`パラメーターが定義されていません。  
   
- `try_pop`同時実行セーフですが、メソッドの呼び出しに関して`push`、 `try_pop`、および`empty`です。  
+ `try_pop` 同時実行セーフですが、メソッドの呼び出しに関して`push`、 `try_pop`、および`empty`です。  
   
-##  <a name="unsafe_begin"></a>unsafe_begin 
+##  <a name="unsafe_begin"></a> unsafe_begin 
 
  型の反復子を返します`iterator`または`const_iterator`同時実行のキューの先頭にします。 このメソッドは同時実行セーフではありません。  
   
@@ -238,7 +242,7 @@ const_iterator unsafe_begin() const;
 ### <a name="remarks"></a>コメント  
  反復子の`concurrent_queue`クラスは、主にするためのものをデバッグする場合は低速、およびイテレーションが他のキューの操作に対して同時実行セーフではありません。  
   
-##  <a name="unsafe_end"></a>unsafe_end 
+##  <a name="unsafe_end"></a> unsafe_end 
 
  型の反復子を返します`iterator`または`const_iterator`同時実行のキューの末尾にします。 このメソッドは同時実行セーフではありません。  
   
@@ -254,7 +258,7 @@ const_iterator unsafe_end() const;
 ### <a name="remarks"></a>コメント  
  反復子の`concurrent_queue`クラスは、主にするためのものをデバッグする場合は低速、およびイテレーションが他のキューの操作に対して同時実行セーフではありません。  
   
-##  <a name="unsafe_size"></a>unsafe_size 
+##  <a name="unsafe_size"></a> unsafe_size 
 
  キュー内の項目数を返します。 このメソッドは同時実行セーフではありません。  
   
@@ -266,7 +270,7 @@ size_type unsafe_size() const;
  同時実行のキューのサイズ。  
   
 ### <a name="remarks"></a>コメント  
- `unsafe_size`同時実行セーフではないと、メソッドを呼び出したのと同時に呼び出された場合、正しくない結果を生じることができます`push`、 `try_pop`、および`empty`です。  
+ `unsafe_size` 同時実行セーフではないと、メソッドを呼び出したのと同時に呼び出された場合、正しくない結果を生じることができます`push`、 `try_pop`、および`empty`です。  
   
 ## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

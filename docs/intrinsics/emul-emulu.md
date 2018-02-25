@@ -4,29 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - __emulu_cpp
 - __emul
 - __emul_cpp
 - __emulu
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __emul intrinsic
 - __emulu intrinsic
 ms.assetid: 79545236-cca2-40b8-a4e1-8abce9b26311
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 8592633b0b2356f5a3e9bbdefb509a8f1d1a878d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ba97b1160b9b0bff9e6014d73d1c79bf4627139c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="emul-emulu"></a>__emul、__emulu
 **Microsoft 固有の仕様**  
@@ -60,15 +63,15 @@ unsigned __int64 __emulu(
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
-|`__emul`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
-|`__emulu`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__emul`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__emulu`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
  **ヘッダー ファイル** \<intrin.h >  
   
 ## <a name="remarks"></a>コメント  
- `__emul`2 つの 32 ビット符号付きの値を受け取り、64 ビット符号付き整数値として、乗算の結果を返します。  
+ `__emul` 2 つの 32 ビット符号付きの値を受け取り、64 ビット符号付き整数値として、乗算の結果を返します。  
   
- `__emulu`2 つの 32 ビット符号なし整数値を受け取り、64 ビット符号なし整数値として、乗算の結果を返します。  
+ `__emulu` 2 つの 32 ビット符号なし整数値を受け取り、64 ビット符号なし整数値として、乗算の結果を返します。  
   
 ## <a name="example"></a>例  
   

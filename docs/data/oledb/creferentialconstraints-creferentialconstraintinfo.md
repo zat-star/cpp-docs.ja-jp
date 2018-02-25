@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - m_szUniqueName
 - m_szCatalog
@@ -24,7 +25,8 @@ f1_keywords:
 - CONSTRAINT_CATALOG
 - m_szMatchOption
 - CONSTRAINT_SCHEMA
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - m_szUniqueSchema
 - DESCRIPTION class data member
@@ -45,18 +47,18 @@ helpviewer_keywords:
 - m_szUpdateRule
 - CReferentialConstraintInfo parameter class
 ms.assetid: 5d485358-be29-41c2-b0ce-19e023598e73
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: 525d75ad244cac267b0f8b51dccf18210b504f2e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7f8e979a7ac57368ce796a833c7fa9f81d392340
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="creferentialconstraints-creferentialconstraintinfo"></a>CReferentialConstraints、CReferentialConstraintInfo
 Typedef クラスを呼び出す**CReferentialConstraints**そのパラメーター クラスを実装する**CReferentialConstraintInfo**です。  
@@ -77,7 +79,7 @@ Typedef クラスを呼び出す**CReferentialConstraints**そのパラメータ
 |m_szUniqueSchema|UNIQUE_CONSTRAINT_SCHEMA|  
 |m_szUniqueName|UNIQUE_CONSTRAINT_NAME|  
 |m_szMatchOption|MATCH_OPTION|  
-|m_szUpdateRule|句|  
+|m_szUpdateRule|UPDATE_RULE|  
 |m_szDeleteRule|DELETE_RULE|  
 |m_szDescription|説明|  
   

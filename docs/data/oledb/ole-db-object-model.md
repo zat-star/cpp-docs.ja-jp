@@ -4,26 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - rowsets, OLE DB object model
 - OLE DB, object model
 ms.assetid: 1a274a25-c310-4430-a1ec-bd2bd8120eff
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: 533142115a4811c0f03f585b995b83383a33d831
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 2cd8fb90b7418b45f6bc011e8d4d0db6e04c08df
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ole-db-object-model"></a>OLE DB オブジェクト モデル
 OLE DB オブジェクト モデルには、次のオブジェクトまたはコンポーネントが構成されています。 最初の 4 つのオブジェクトまたはコンポーネントの一覧 (データ ソース、セッション、コマンド、および行セット) を使用すると、データ ソースに接続し、それを表示できます。 アクセサーから始まる残りの部分は、データが表示されるときの操作に関連します。  
@@ -55,7 +57,7 @@ OLE DB オブジェクト モデルには、次のオブジェクトまたはコ
 ## <a name="accessors"></a>アクセサー  
  OLE DB だけでは、アクセサーの概念を使用します。 アクセサーは、コンシューマーにデータを格納する方法について説明します。 行セットのフィールド (列) と、コンシューマー内で宣言したデータ メンバーの間、一連バインド (列マップと呼ばれます) にはが含まれています。  
   
-##  <a name="vcconoledbcomponents_transactions"></a>トランザクション  
+##  <a name="vcconoledbcomponents_transactions"></a> トランザクション  
  トランザクション オブジェクトは、コミットまたは最も低いレベル以外に入れ子になったトランザクションを中止するときに使用されます。 トランザクションは、ACID テストによって定義された分割不可能な作業単位です。 ACID を意味します。  
   
 -   原子性: は、小さな作業単位に分割できません。  

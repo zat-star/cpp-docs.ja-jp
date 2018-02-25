@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - structured_task_group
 - PPL/concurrency::structured_task_group
@@ -16,19 +17,22 @@ f1_keywords:
 - PPL/concurrency::structured_task_group::run
 - PPL/concurrency::structured_task_group::run_and_wait
 - PPL/concurrency::structured_task_group::wait
-dev_langs: C++
-helpviewer_keywords: structured_task_group class
+dev_langs:
+- C++
+helpviewer_keywords:
+- structured_task_group class
 ms.assetid: 742afa8c-c7b6-482c-b0ba-04c809927b22
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: ae2e4648e94d05edc3ec787232bab7f1db8aea90
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1f8d2b9cdc71b6e8a7a0fe9e3bf3d3d3306af1da
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="structuredtaskgroup-class"></a>structured_task_group クラス
 `structured_task_group` クラスは、並列処理の高度に構造化されたコレクションを表します。 `structured_task_group` オブジェクトを使用して個々の並列タスクを `task_handle` のキューに配置し、それらのタスクが完了するまで待機するか、実行が完了する前にタスク グループを取り消すことができます。取り消すと、実行が開始されていないタスクはすべて中止されます。  
@@ -45,18 +49,18 @@ class structured_task_group;
   
 |名前|説明|  
 |----------|-----------------|  
-|[structured_task_group の違い](#ctor)|オーバーロードされます。 新しい `structured_task_group` オブジェクトを構築します。|  
+|[structured_task_group](#ctor)|オーバーロードされます。 新しい `structured_task_group` オブジェクトを構築します。|  
 |[~ structured_task_group デストラクター](#dtor)|`structured_task_group` オブジェクトを破棄します。 いずれかを呼び出さない期待した、`wait`または`run_and_wait`デストラクターの実行前にオブジェクトのメソッド、デストラクターが実行される場合を除きの結果としてスタック アンワインド例外のためです。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[キャンセル](#cancel)|このタスク グループをルートとする作業のサブツリーをキャンセルしようとしています。 最大限の努力をによりします。 タスク グループでスケジュールされているすべてのタスクが取り消さ推移的に可能な場合です。|  
+|[cancel](#cancel)|このタスク グループをルートとする作業のサブツリーをキャンセルしようとしています。 最大限の努力をによりします。 タスク グループでスケジュールされているすべてのタスクが取り消さ推移的に可能な場合です。|  
 |[is_canceling](#is_canceling)|かどうか、タスク グループは現在、取り消し中、呼び出し元に通知します。 これは必ずしもを`cancel`でメソッドが呼び出されました、`structured_task_group`オブジェクト (確かに戻るには、このメソッドを修飾などが`true`)。 大文字と小文字がある可能性がある、`structured_task_group`オブジェクトはインラインで実行し、さらに、タスク グループのツリーで、作業が取り消されました。 キャンセルがこれを経由して流れます前もってを判断できますランタイムこれらの場所などの場合`structured_task_group`オブジェクト、`true`も返されます。|  
 |[run](#run)|オーバーロードされます。 タスクがスケジュール、`structured_task_group`オブジェクト。 呼び出し元の有効期間を管理する、`task_handle`に渡されたオブジェクト、`_Task_handle`パラメーター。 パラメーターを受け取るバージョンで`_Placement`タスクがそのパラメーターで指定された場所で実行する方向にバイアスされます。|  
 |[run_and_wait](#run_and_wait)|オーバーロードされます。 呼び出し元のコンテキストでの支援を受けてインラインを実行するタスクをスケジュール、`structured_task_group`完全キャンセルのサポートのオブジェクト。 場合、`task_handle`オブジェクトがパラメーターとして渡される`run_and_wait`の有効期間を管理するため、呼び出し元が、`task_handle`オブジェクト。 関数が処理されるまでにし、待機、`structured_task_group`オブジェクトが完了したか取り消されました。|  
-|[待機](#wait)|すべての作業になるまで待機します`structured_task_group`が完了したかが取り消されます。|  
+|[wait](#wait)|すべての作業になるまで待機します`structured_task_group`が完了したかが取り消されます。|  
   
 ## <a name="remarks"></a>コメント  
  使用率の重大な制限の数が、`structured_task_group`オブジェクトのパフォーマンスを得るためには。  
@@ -79,7 +83,7 @@ class structured_task_group;
   
  **名前空間:** concurrency  
   
-##  <a name="cancel"></a>キャンセル 
+##  <a name="cancel"></a> キャンセル 
 
  このタスク グループをルートとする作業のサブツリーをキャンセルしようとしています。 最大限の努力をによりします。 タスク グループでスケジュールされているすべてのタスクが取り消さ推移的に可能な場合です。  
   
@@ -90,7 +94,7 @@ void cancel();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[キャンセル](../../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md#cancellation)です。  
   
-##  <a name="is_canceling"></a>is_canceling 
+##  <a name="is_canceling"></a> is_canceling 
 
  かどうか、タスク グループは現在、取り消し中、呼び出し元に通知します。 これは必ずしもを`cancel`でメソッドが呼び出されました、`structured_task_group`オブジェクト (確かに戻るには、このメソッドを修飾などが`true`)。 大文字と小文字がある可能性がある、`structured_task_group`オブジェクトはインラインで実行し、さらに、タスク グループのツリーで、作業が取り消されました。 キャンセルがこれを経由して流れます前もってを判断できますランタイムこれらの場所などの場合`structured_task_group`オブジェクト、`true`も返されます。  
   
@@ -104,7 +108,7 @@ bool is_canceling();
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[キャンセル](../../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md#cancellation)です。  
   
-##  <a name="run"></a>実行します。 
+##  <a name="run"></a> 実行します。 
 
  タスクがスケジュール、`structured_task_group`オブジェクト。 呼び出し元の有効期間を管理する、`task_handle`に渡されたオブジェクト、`_Task_handle`パラメーター。 パラメーターを受け取るバージョンで`_Placement`タスクがそのパラメーターで指定された場所で実行する方向にバイアスされます。  
   
@@ -136,7 +140,7 @@ void run(
   
  スロー、 [invalid_multiple_scheduling](invalid-multiple-scheduling-class.md)タスク処理する場合に例外によって指定された、`_Task_handle`パラメーターは既にによってタスク グループ オブジェクトにスケジュールされている、`run`メソッドが行われていない中間の呼び出しといずれか、`wait`または`run_and_wait`そのタスク グループのメソッドです。  
   
-##  <a name="run_and_wait"></a>run_and_wait 
+##  <a name="run_and_wait"></a> run_and_wait 
 
  呼び出し元のコンテキストでの支援を受けてインラインを実行するタスクをスケジュール、`structured_task_group`完全キャンセルのサポートのオブジェクト。 場合、`task_handle`オブジェクトがパラメーターとして渡される`run_and_wait`の有効期間を管理するため、呼び出し元が、`task_handle`オブジェクト。 関数が処理されるまでにし、待機、`structured_task_group`オブジェクトが完了したか取り消されました。  
   
@@ -170,7 +174,7 @@ task_group_status run_and_wait(const _Function& _Func);
   
  このいずれかのメソッドを呼び出すことを義務付けてがある場合に、例外的ではない実行のパス、または`wait`メソッドのデストラクターの前に、`structured_task_group`を実行します。  
   
-##  <a name="ctor"></a>structured_task_group の違い 
+##  <a name="ctor"></a> structured_task_group 
 
  新しい `structured_task_group` オブジェクトを構築します。  
   
@@ -187,7 +191,7 @@ structured_task_group(cancellation_token _CancellationToken);
 ### <a name="remarks"></a>コメント  
  キャンセル トークンを受け取るコンス トラクターを作成、`structured_task_group`をトークンに関連付けられているソースが取り消されたときに取り消されます。 別のトークンまたはトークンを設定せずに、親グループからの暗黙的な取り消しに参加している場合は、この構造化タスク グループを分離も、明示的なキャンセル トークンを提供します。  
   
-##  <a name="dtor"></a>~ structured_task_group の違い 
+##  <a name="dtor"></a> ~structured_task_group 
 
  `structured_task_group` オブジェクトを破棄します。 いずれかを呼び出さない期待した、`wait`または`run_and_wait`デストラクターの実行前にオブジェクトのメソッド、デストラクターが実行される場合を除きの結果としてスタック アンワインド例外のためです。  
   
@@ -198,7 +202,7 @@ structured_task_group(cancellation_token _CancellationToken);
 ### <a name="remarks"></a>コメント  
  通常の実行 (たとえば、いないスタック アンワインド例外のため) とも、結果として、デストラクターが実行する場合、`wait`も`run_and_wait`メソッドが呼び出されて、デストラクターがスローする可能性があります、 [missing_wait](missing-wait-class.md)例外。  
   
-##  <a name="wait"></a>待機 
+##  <a name="wait"></a> 待機 
 
  すべての作業になるまで待機します`structured_task_group`が完了したかが取り消されます。  
   

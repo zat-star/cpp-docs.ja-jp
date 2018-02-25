@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - accessors [C++]
 - OLE DB consumer templates, rowset support
@@ -24,37 +26,37 @@ helpviewer_keywords:
 - accessors [C++], rowsets
 - rowsets [C++], supported types
 ms.assetid: edc9c8b3-1a2d-4c2d-869f-7e058c631042
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: cf47597ac38ae2944fc41bd686552e5d15c96b39
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7273b4ece8e697eb323c5b6bb6355796aeb72d63
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="accessors-and-rowsets"></a>アクセサーと行セット
 アクセサーと行を設定し、データの取得、OLE DB テンプレートを使用して、 [CAccessorRowset](../../data/oledb/caccessorrowset-class.md)クラスです。 このクラスは、さまざまな種類の複数のアクセサーを処理できます。  
   
 ## <a name="accessor-types"></a>アクセサーの種類  
- 派生してすべてのアクセサー [CAccessorBase](../../data/oledb/caccessorbase-class.md)です。 `CAccessorBase`パラメーターと列のバインドの両方を提供します。  
+ 派生してすべてのアクセサー [CAccessorBase](../../data/oledb/caccessorbase-class.md)です。 `CAccessorBase` パラメーターと列のバインドの両方を提供します。  
   
  次の図は、アクセサーの種類を示します。  
   
  ![アクセサー タイプ](../../data/oledb/media/vcaccessortypes.gif "vcaccessortypes")  
 アクセサー クラス  
   
--   [CAccessor](../../data/oledb/caccessor-class.md)デザイン時にデータベースのソースの構造がわかっている場合にこのアクセサーを使用します。 `CAccessor`静的にバッファーを含むデータベース レコードをデータ ソースにバインドします。  
+-   [CAccessor](../../data/oledb/caccessor-class.md)デザイン時にデータベースのソースの構造がわかっている場合にこのアクセサーを使用します。 `CAccessor` 静的にバッファーを含むデータベース レコードをデータ ソースにバインドします。  
   
--   [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)このアクセサーはデザイン時に、データベースの構造を認識していない場合に使用します。 `CDynamicAccessor`呼び出し`IColumnsInfo::GetColumnInfo`データベース列の情報を取得します。 作成し、アクセサーと、バッファーを管理します。  
+-   [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)このアクセサーはデザイン時に、データベースの構造を認識していない場合に使用します。 `CDynamicAccessor` 呼び出し`IColumnsInfo::GetColumnInfo`データベース列の情報を取得します。 作成し、アクセサーと、バッファーを管理します。  
   
 -   [CDynamicParameterAccessor](../../data/oledb/cdynamicparameteraccessor-class.md)不明なコマンドの種類を処理するためこのアクセサーを使用します。 コマンドを準備するときに`CDynamicParameterAccessor`からパラメーター情報を取得することができます、`ICommandWithParameters`プロバイダーがサポートされている場合、インターフェイス`ICommandWithParameters`です。  
   
--   [CDynamicStringAccessor](../../data/oledb/cdynamicstringaccessor-class.md)、 [CDynamicStringAccessorA](../../data/oledb/cdynamicstringaccessora-class.md)、および[CDynamicStringAccessorW](../../data/oledb/cdynamicstringaccessorw-class.md)データベース スキーマの知識があるない場合に、これらのクラスを使用します。 `CDynamicStringAccessorA`ANSI 文字列としてデータを取得します`CDynamicStringAccessorW` Unicode 文字列としてデータを取得します。  
+-   [CDynamicStringAccessor](../../data/oledb/cdynamicstringaccessor-class.md)、 [CDynamicStringAccessorA](../../data/oledb/cdynamicstringaccessora-class.md)、および[CDynamicStringAccessorW](../../data/oledb/cdynamicstringaccessorw-class.md)データベース スキーマの知識があるない場合に、これらのクラスを使用します。 `CDynamicStringAccessorA` ANSI 文字列としてデータを取得します`CDynamicStringAccessorW` Unicode 文字列としてデータを取得します。  
   
 -   [CManualAccessor](../../data/oledb/cmanualaccessor-class.md)このクラスでは、プロバイダーは、型を変換できる場合どのようなデータ型を使用できます。 コマンドのパラメーターと結果の列の両方を処理します。  
   

@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - numeric/std::accumulate
 - numeric/std::adjacent_difference
@@ -13,7 +13,7 @@ f1_keywords:
 - numeric/std::iota
 - numeric/std::partial_sum
 ms.assetid: a4b0449a-c80c-4a1d-8d9f-d7fcd0058f8b
-caps.latest.revision: "13"
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::accumulate [C++]
@@ -21,11 +21,11 @@ helpviewer_keywords:
 - std::inner_product [C++]
 - std::iota [C++]
 - std::partial_sum [C++]
-ms.openlocfilehash: 9b1c992930fb6b35498f04357e783d01db3a229c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.openlocfilehash: b0437225718e402ac2c8b9a22af5b4825128cbd6
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltnumericgt-functions"></a>&lt;numeric&gt; 関数
 ||||  
@@ -313,13 +313,13 @@ Type inner_product(
 ### <a name="return-value"></a>戻り値  
  1 番目のメンバー関数は、要素ごとの積の合計を返し、それを指定された初期値に追加します。 したがって、*a*i と *b*i の値の範囲の場合、次を返します。  
   
- `val`+ ( *、*1 \* *b*1) + ( *、*2 \* *b*2) +… + ( *、* n  \* *b*n) 
+ `val` + ( *a*1 \* *b*1 ) + ( *a*2 \* *b*2 ) + ... + ( *a*n \* *b*n ) 
   
  繰り返しに置き換えることで`val`で`val`+ ( *、*すれば\* *b*しました)。  
   
  2 番目のメンバー関数は次を返します。  
   
- `val`*binary_op1* ( *、*1 *binary_op2* *b*1) *binary_op1* ( **2 *binary_op2* *b*2) *binary_op1*しています.*binary_op1* ( *、*n *binary_op2* *b*n)  
+ `val` *binary_op1* ( *a*1 *binary_op2* *b*1 ) *binary_op1* ( *a*2 *binary_op2* *b*2 ) *binary_op1* ... *binary_op1* ( *a*n *binary_op2* *b*n )  
   
  繰り返しに置き換えることで`val`で`val` *binary_op1* ( *、*すれば*binary_op2* *b*しました)。  
   
@@ -580,6 +580,6 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<numeric>](../standard-library/numeric.md)
 

@@ -1,31 +1,34 @@
 ---
-title: "init_seg |Microsoft ドキュメント"
+title: init_seg | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - vc-pragma.init_seg
 - init_seg_CPP
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - pragmas, init_seg
 - init_seg pragma
 - data segment initializing [C++]
 ms.assetid: 40a5898a-5c85-4aa9-8d73-3d967eb13610
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 69036ffba2143d166c9ac5c55a5b3ec9008b75bf
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a092ed554af1b078772d53fd0cc663e250a6ea3c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="initseg"></a>init_seg
 **C 固有の仕様**  
@@ -46,23 +49,23 @@ ms.lasthandoff: 12/21/2017
   
  オプション、 **init_seg**プラグマは。  
   
- **コンパイラ**  
+ **compiler**  
  Microsoft C ランタイム ライブラリの初期化のために予約されています。 このグループ内のオブジェクトが最初に構築されます。  
   
  **lib**  
  サード パーティの開発元のクラス ライブラリの初期化に使用できます。 としてマークされている後にこのグループ内のオブジェクトが構築される**コンパイラ**がその他の前にします。  
   
- **ユーザー**  
+ **user**  
  ユーザーが使用できます。 このグループ内のオブジェクトが最後に構築されます。  
   
- *セクション名*  
+ *section-name*  
  初期化セクションの明示的な指定を許可します。 ユーザー指定のオブジェクト*セクション名*は暗黙的に構築されていません。 ただし、そのアドレスを配置しているという名前のセクションで*セクション名*です。  
   
  指定したセクション名には、プラグマの後のそのモジュール内で宣言されたグローバル オブジェクトを構築するヘルパー関数へのポインターが格納されます。  
   
  セクションを作成するときに使用しない名前の一覧は、次を参照してください。 [/section](../build/reference/section-specify-section-attributes.md)です。  
   
- *func 名*  
+ *func-name*  
  プログラムの終了時に `atexit` の代わりに呼び出される関数を指定します。 このヘルパー関数を呼び出しても[atexit](../c-runtime-library/reference/atexit.md)グローバル オブジェクトのデストラクターへのポインター。 次の形式のプラグマで関数の識別子を指定した場合、  
   
 ```  

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -20,11 +20,11 @@ manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: 9c844ba0da7dfef9457b896bb3c7150671cecd43
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 12363baa4fed5326a4c5c8a84b80eef6e4158d40
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="issuing-a-parameterized-query"></a>パラメーター クエリの実行
 次の例では、Microsoft Access データベース内のテーブルから (つまり、30 より大きい) 時効フィールドを持つレコードを取得する単純なパラメーター化クエリを発行します。 パラメーターをサポートするためには、追加のマップが、ユーザー レコードに必要です。 次のコードでは、ATL プロジェクトでは、使用、`CCommand`クラスの代わりに、`CTable`前の例で使用されるクラス[単純な行セットの走査](../../data/oledb/traversing-a-simple-rowset.md)です。  

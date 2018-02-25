@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: vc.templates.ole
-dev_langs: C++
-helpviewer_keywords: OLE DB provider templates
+ms.topic: reference
+f1_keywords:
+- vc.templates.ole
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE DB provider templates
 ms.assetid: 518358f0-bab1-4de9-bce9-4062cc87c11f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: a68c3f0b161a21749ad49b1b89a1356b757d4b76
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 68c741f09772c881b42dc4e4cd17de31ed107f8c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ole-db-provider-templates-reference"></a>OLE DB プロバイダー テンプレート リファレンス
 クラスと OLE DB プロバイダー テンプレート用のインターフェイスは、次のカテゴリにグループ化できます。 参考資料に関する情報も含まれます、 [OLE DB プロバイダー テンプレート用マクロ](../../data/oledb/macros-for-ole-db-provider-templates.md)です。  
@@ -42,7 +46,7 @@ ms.lasthandoff: 12/21/2017
  多くの実装インターフェイスの多重継承を必要とせず、標準の OLE DB 行セットの実装を提供します。 唯一の方法を実装を提供する必要があります**Execute**です。  
   
  [CSimpleRow](../../data/oledb/csimplerow-class.md)  
- 使用されている行ハンドルの既定の実装を提供、`IRowsetImpl`クラスです。 行ハンドルは、結果の行の一意のタグで、論理的にします。 `IRowsetImpl`新たに作成`CSimpleRow`で要求されているすべての行の`IRowsetImpl::GetNextRows`します。  
+ 使用されている行ハンドルの既定の実装を提供、`IRowsetImpl`クラスです。 行ハンドルは、結果の行の一意のタグで、論理的にします。 `IRowsetImpl` 新たに作成`CSimpleRow`で要求されているすべての行の`IRowsetImpl::GetNextRows`します。  
   
  [IAccessorImpl](../../data/oledb/iaccessorimpl-class.md)  
  OLE DB プロバイダーを実装するを必要とする**HACCESSOR**、タグの配列には**DBBINDING**構造体。 提供**HACCESSOR**のアドレスは、s、 **BindType**構造体。 行セットおよびコマンドには必須です。  
@@ -63,7 +67,7 @@ ms.lasthandoff: 12/21/2017
  OLE DB を実装する[IRowsetChange](https://msdn.microsoft.com/en-us/library/ms715790.aspx)インターフェイスは、これにより、行を削除して、新しい行を挿入する既存の行の列の値を更新します。  
   
  [IRowsetCreatorImpl](../../data/oledb/irowsetcreatorimpl-class.md)  
- このクラスから継承[IObjectWithSite](http://msdn.microsoft.com/library/windows/desktop/ms693765)と上書き[IObjectWithSite::SetSite](http://msdn.microsoft.com/library/windows/desktop/ms683869)です。 `IRowsetCreatorImpl`同じ機能を実行`IObjectWithSite`OLE DB プロパティこともできますが、 **DBPROPCANSCROLLBACKWARDS**と**DBPROPCANFETCHBACKWARDS**です。  
+ このクラスから継承[IObjectWithSite](http://msdn.microsoft.com/library/windows/desktop/ms693765)と上書き[IObjectWithSite::SetSite](http://msdn.microsoft.com/library/windows/desktop/ms683869)です。 `IRowsetCreatorImpl` 同じ機能を実行`IObjectWithSite`OLE DB プロパティこともできますが、 **DBPROPCANSCROLLBACKWARDS**と**DBPROPCANFETCHBACKWARDS**です。  
   
  [IRowsetIdentityImpl](../../data/oledb/irowsetidentityimpl-class.md)  
  実装して、 **IRowsetIdentity**インターフェイスで、2 つの行のデータが同一かどうかを比較することができます。  
@@ -103,7 +107,7 @@ ms.lasthandoff: 12/21/2017
  作成し、コンシューマーとの接続を削除します。 データ ソース オブジェクトと列挙子の省略可能なインターフェイスの必須のインターフェイスです。  
   
  [IDBPropertiesImpl](../../data/oledb/idbpropertiesimpl-class.md)  
- `IDBProperties`データ ソース オブジェクトに必要なインターフェイスと列挙子のオプションのインターフェイスです。 ただし、列挙子を公開する場合**IDBInitialize**、公開している`IDBProperties`(データ ソースのプロパティ)。  
+ `IDBProperties` データ ソース オブジェクトに必要なインターフェイスと列挙子のオプションのインターフェイスです。 ただし、列挙子を公開する場合**IDBInitialize**、公開している`IDBProperties`(データ ソースのプロパティ)。  
   
  [IGetDataSourceImpl](../../data/oledb/igetdatasourceimpl-class.md)  
  データ ソース オブジェクトへのインターフェイス ポインターを取得します。 このセッションで必須のインターフェイスです。  

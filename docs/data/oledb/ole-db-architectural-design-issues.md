@@ -4,24 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
-helpviewer_keywords: OLE DB, application design considerations
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE DB, application design considerations
 ms.assetid: 8caa7d99-d2bb-42c9-8884-74f228bb6ecc
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: b894ec1cbd227663d46e98e523ffe8c1c5d84475
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: 2cfb6b8ff4941aff1271662c27dddd509b023c55
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ole-db-architectural-design-issues"></a>OLE DB アーキテクチャのデザインの問題
 OLE DB アプリケーションを開始する前に、次の問題を考慮してください。  
@@ -44,7 +47,7 @@ OLE DB アプリケーションを開始する前に、次の問題を考慮し�
   
 -   [Microsoft データ アクセス技術情報の概要](http://go.microsoft.com/fwlink/p/?linkid=148217)  
   
--   [Visual Studio ソリューション センター](http://go.microsoft.com/fwlink/p/?linkid=148215)  
+-   [Visual Studio Solution Center](http://go.microsoft.com/fwlink/p/?linkid=148215)  
   
 -   [Microsoft.com を検索します。](http://search.microsoft.com/)  
   

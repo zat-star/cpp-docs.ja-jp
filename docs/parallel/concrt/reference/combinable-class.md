@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - combinable
 - PPL/concurrency::combinable
@@ -15,19 +16,22 @@ f1_keywords:
 - PPL/concurrency::combinable::combine
 - PPL/concurrency::combinable::combine_each
 - PPL/concurrency::combinable::local
-dev_langs: C++
-helpviewer_keywords: combinable class
+dev_langs:
+- C++
+helpviewer_keywords:
+- combinable class
 ms.assetid: fe0bfbf6-6250-47da-b8d0-f75369f0b5be
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 698c59614894314e70019fe2b4621755b4cd3085
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a9bec5ce0e6679af71d8d3372fb939223691152a
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="combinable-class"></a>combinable クラス
 `combinable<T>` オブジェクトは、スレッド プライベートなデータのコピーを提供し、並列アルゴリズムにおいてロック制御不要なスレッド ローカルのサブ計算を実行するために用意されています。 並列操作の最後に、スレッド プライベート サブ計算を最終結果にマージできます。 共有変数に多数の競合が発生する可能性がある場合、共有変数の代わりにこのクラスを使用することにより、パフォーマンスを改善できます。  
@@ -59,7 +63,7 @@ class combinable;
 |[clear](#clear)|以前の使用法から中間の計算結果をクリアします。|  
 |[combine](#combine)|指定された結合ファンクターを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。|  
 |[combine_each](#combine_each)|スレッド ローカルのサブ計算ごとに 1 回、指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。 最終的な結果は、関数オブジェクトで累積されます。|  
-|[地元の](#local)|オーバーロードされます。 スレッド プライベート サブ計算への参照を返します。|  
+|[local](#local)|オーバーロードされます。 スレッド プライベート サブ計算への参照を返します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -78,7 +82,7 @@ class combinable;
   
  **名前空間:** concurrency  
   
-##  <a name="clear"></a>オフ 
+##  <a name="clear"></a> オフ 
 
  以前の使用法から中間の計算結果をクリアします。  
   
@@ -86,7 +90,7 @@ class combinable;
 void clear();
 ```  
   
-##  <a name="ctor"></a>combinable 
+##  <a name="ctor"></a> combinable 
 
  新しい `combinable` オブジェクトを構築します。  
   
@@ -116,7 +120,7 @@ combinable(const combinable& _Copy);
   
  3 番目のコンス トラクターは、コピー コンス トラクターです。  
   
-##  <a name="dtor"></a>~ combinable 
+##  <a name="dtor"></a> ~ combinable 
 
  `combinable` オブジェクトを破棄します。  
   
@@ -124,7 +128,7 @@ combinable(const combinable& _Copy);
 ~combinable();
 ```  
   
-##  <a name="combine"></a>結合 
+##  <a name="combine"></a> 結合 
 
  指定された結合ファンクターを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。  
   
@@ -143,7 +147,7 @@ T combine(_Function _FnCombine) const;
 ### <a name="return-value"></a>戻り値  
  すべてのスレッド プライベート サブ計算を結合した最終的な結果。  
   
-##  <a name="combine_each"></a>combine_each 
+##  <a name="combine_each"></a> combine_each 
 
  スレッド ローカルのサブ計算ごとに 1 回、指定された結合ファンクタを呼び出すことによって、スレッド ローカルのサブ計算のセットから最終的な値を計算します。 最終的な結果は、関数オブジェクトで累積されます。  
   
@@ -159,7 +163,7 @@ void combine_each(_Function _FnCombine) const;
  `_FnCombine`  
  このファンクターは、1 つのサブ計算を結合するために使用します。 シグニチャは`void (T)`または`void (const T&)`、結合規則および可換にする必要があります。  
   
-##  <a name="local"></a>地元の 
+##  <a name="local"></a> 地元の 
 
  スレッド プライベート サブ計算への参照を返します。  
   
@@ -176,7 +180,7 @@ T& local(bool& _Exists);
 ### <a name="return-value"></a>戻り値  
  スレッド プライベート サブ計算への参照。  
   
-##  <a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a> 演算子 = 
 
  割り当てます、`combinable`から別のオブジェクト`combinable`オブジェクト。  
   

@@ -4,26 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - service providers [OLE DB]
 - OLE DB services [OLE DB], overriding defaults
 ms.assetid: 08e366c0-74d8-463b-93a6-d58a8dc195f8
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - data-storage
-ms.openlocfilehash: 9185f1eb3640a4baeb8f7cc1d7b20169c980a8e1
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8788de8ad28dc3c746155f59dee3ba5bb763bcaa
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="overriding-provider-service-defaults"></a>プロバイダー サービスの既定のオーバーライド
 プロバイダーのレジストリ値を**OLEDB_SERVICES**の既定値として返される、 [DBPROP_INIT_OLEDBSERVICES](https://msdn.microsoft.com/en-us/library/ms716898.aspx)データ ソース オブジェクトのプロパティを初期化します。  
@@ -33,9 +35,9 @@ ms.lasthandoff: 12/21/2017
 |既定のサービスを有効になっています。|DBPROP_INIT_OLEDBSERVICES プロパティ値|接続文字列内の値します。|  
 |------------------------------|------------------------------------------------|--------------------------------|  
 |すべてのサービス (既定値)|**DBPROPVAL_OS_ENABLEALL**|"OLE DB サービス =-1 です"。|  
-|以外のすべてのプールと自動確保|**DBPROPVAL_OS_ENABLEALL (& A)**<br /><br /> **~ DBPROPVAL_OS_RESOURCEPOOLING (& A)**<br /><br /> **~ DBPROPVAL_OS_TXNENLISTMENT**|"OLE DB サービス =-4;"|  
+|以外のすべてのプールと自動確保|**DBPROPVAL_OS_ENABLEALL &**<br /><br /> **~DBPROPVAL_OS_RESOURCEPOOLING &**<br /><br /> **~DBPROPVAL_OS_TXNENLISTMENT**|"OLE DB サービス =-4;"|  
 |以外のすべてのクライアント カーソル|**DBPROPVAL_OS_ENABLEALL** &<br /><br /> ~**DBPROPVAL_OS_CLIENTCURSOR**|"OLE DB サービス =-5;"|  
-|プールが、自動確保、およびクライアント カーソルを除くすべて|**DBPROPVAL_OS_ENABLEALL (& A)**<br /><br /> **~ DBPROPVAL_OS_TXNENLISTMENT (& A)**<br /><br /> **~ DBPROPVAL_OS_CLIENTCURSOR**|"OLE DB サービス =-7;"|  
+|プールが、自動確保、およびクライアント カーソルを除くすべて|**DBPROPVAL_OS_ENABLEALL &**<br /><br /> **~DBPROPVAL_OS_TXNENLISTMENT &**<br /><br /> **~DBPROPVAL_OS_CLIENTCURSOR**|"OLE DB サービス =-7;"|  
 |サービスはありません。|~**DBPROPVAL_OS_ENABLEALL**|"OLE DB サービス = 0 になります"。|  
   
  プロバイダーのレジストリ エントリが存在しない場合は、コンポーネント マネージャーは、プロバイダーのオブジェクトを集計されないと、サービスは起動しません、ユーザーによって明示的に要求された場合でもです。  
