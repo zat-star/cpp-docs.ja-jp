@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC, OLE and
 - OLE items
@@ -17,16 +19,17 @@ helpviewer_keywords:
 - applications [OLE], about OLE
 - OLE component object model (COM)
 ms.assetid: 5193479d-1239-4697-aea4-e82f92c707ab
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 38b2f6c936ff314f56e4b1868837729ad00efce4
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d13baf7960b329e56cfce24011f4c15599cdda8b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ole-in-mfc"></a>MFC の OLE
 これらの記事では、MFC を使用して OLE プログラミングの基礎について説明します。 MFC には、OLE を使用するプログラムを作成する最も簡単な方法が用意されています。  
@@ -41,7 +44,7 @@ ms.lasthandoff: 12/21/2017
   
 -   MFC の状態データを管理するには、DLL 関数のエントリ ポイント、OLE と COM インターフェイス エントリ ポイント、およびウィンドウ プロシージャ エントリ ポイントを含むモジュールがエクスポートされます。  
   
- 使用することも[オートメーション](../mfc/automation.md)または[リモート オートメーション](../mfc/remote-automation.md)プログラムから別のプログラムを操作します。  
+ 使用することも[オートメーション](../mfc/automation.md)です。  
   
 > [!NOTE]
 >  用語 OLE 表します、リンクと埋め込みに関連付けられているなどテクノロジ OLE コンテナー、OLE サーバーを OLE アイテム、インプレース アクティブ化 (ビジュアル編集)、(トラッカーを)、ドラッグ アンド ドロップ、およびメニューのマージします。 という用語は、ActiveX コントロールなど、コンポーネント オブジェクト モデル (COM) と COM ベースのオブジェクトにアクティブなが適用されます。 OLE オートメーションは、オートメーションと呼ばれるようになりました。  

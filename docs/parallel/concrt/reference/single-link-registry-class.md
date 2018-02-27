@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - single_link_registry
 - AGENTS/concurrency::single_link_registry
@@ -16,19 +17,22 @@ f1_keywords:
 - AGENTS/concurrency::single_link_registry::contains
 - AGENTS/concurrency::single_link_registry::count
 - AGENTS/concurrency::single_link_registry::remove
-dev_langs: C++
-helpviewer_keywords: single_link_registry class
+dev_langs:
+- C++
+helpviewer_keywords:
+- single_link_registry class
 ms.assetid: 09540a4e-c34e-4ff9-af49-21b8612b6ab3
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 11e02e4adb2e2bdb79f275537047199f434a57c2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 74167dcc03754c7f25d83058ec814798d40931a2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="singlelinkregistry-class"></a>single_link_registry クラス
 `single_link_registry` オブジェクトは、単一のソース ブロックまたはターゲット ブロックのみを管理する `network_link_registry` です。  
@@ -59,7 +63,7 @@ class single_link_registry : public network_link_registry<_Block>;
 |----------|-----------------|  
 |[add](#add)|リンクを追加、`single_link_registry`オブジェクト。 (上書き[network_link_registry::add](network-link-registry-class.md#add))。|  
 |[begin](#begin)|最初の要素を指す反復子を返します、`single_link_registry`オブジェクト。 (上書き[network_link_registry::begin](network-link-registry-class.md#begin))。|  
-|[含まれています](#contains)|検索、`single_link_registry`の指定されたブロックのオブジェクト。 (上書き[network_link_registry::contains](network-link-registry-class.md#contains))。|  
+|[contains](#contains)|検索、`single_link_registry`の指定されたブロックのオブジェクト。 (上書き[network_link_registry::contains](network-link-registry-class.md#contains))。|  
 |[count](#count)|内の項目の数をカウント、`single_link_registry`オブジェクト。 (上書き[network_link_registry::count](network-link-registry-class.md#count))。|  
 |[remove](#remove)|リンクを削除、`single_link_registry`オブジェクト。 (上書き[network_link_registry::remove](network-link-registry-class.md#remove))。|  
   
@@ -73,7 +77,7 @@ class single_link_registry : public network_link_registry<_Block>;
   
  **名前空間:** concurrency  
   
-##  <a name="add"></a>追加 
+##  <a name="add"></a> 追加 
 
  リンクを追加、`single_link_registry`オブジェクト。  
   
@@ -88,7 +92,7 @@ virtual void add(_EType _Link);
 ### <a name="remarks"></a>コメント  
  メソッドをスロー、 [invalid_link_target](invalid-link-target-class.md)このレジストリ内のリンクが既に場合に例外です。  
   
-##  <a name="begin"></a>開始 
+##  <a name="begin"></a> 開始 
 
  最初の要素を指す反復子を返します、`single_link_registry`オブジェクト。  
   
@@ -102,7 +106,7 @@ virtual iterator begin();
 ### <a name="remarks"></a>コメント  
  最終の状態がによって示される、`NULL`リンクします。  
   
-##  <a name="contains"></a>含まれています 
+##  <a name="contains"></a> 含まれています 
 
  検索、`single_link_registry`の指定されたブロックのオブジェクト。  
   
@@ -115,9 +119,9 @@ virtual bool contains(_EType _Link);
  内で検索するのには、ブロックへのポインター、`single_link_registry`オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- `true`見つかった場合は、リンクされた、`false`それ以外の場合。  
+ `true` 見つかった場合は、リンクされた、`false`それ以外の場合。  
   
-##  <a name="count"></a>カウント 
+##  <a name="count"></a> カウント 
 
  内の項目の数をカウント、`single_link_registry`オブジェクト。  
   
@@ -128,7 +132,7 @@ virtual size_t count();
 ### <a name="return-value"></a>戻り値  
  内の項目数、`single_link_registry`オブジェクト。  
   
-##  <a name="remove"></a>削除します。 
+##  <a name="remove"></a> 削除します。 
 
  リンクを削除、`single_link_registry`オブジェクト。  
   
@@ -141,9 +145,9 @@ virtual bool remove(_EType _Link);
  削除する場合はブロックへのポインターが見つかりました。  
   
 ### <a name="return-value"></a>戻り値  
- `true`リンクが検出され、削除、`false`それ以外の場合。  
+ `true` リンクが検出され、削除、`false`それ以外の場合。  
   
-##  <a name="ctor"></a>single_link_registry 
+##  <a name="ctor"></a> single_link_registry 
 
  `single_link_registry` オブジェクトを構築します。  
   
@@ -151,7 +155,7 @@ virtual bool remove(_EType _Link);
 single_link_registry();
 ```  
   
-##  <a name="dtor"></a>~ single_link_registry 
+##  <a name="dtor"></a> ~single_link_registry 
 
  `single_link_registry` オブジェクトを破棄します。  
   

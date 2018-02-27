@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - reader_writer_lock
 - CONCRT/concurrency::reader_writer_lock
@@ -18,19 +19,22 @@ f1_keywords:
 - CONCRT/concurrency::reader_writer_lock::try_lock
 - CONCRT/concurrency::reader_writer_lock::try_lock_read
 - CONCRT/concurrency::reader_writer_lock::unlock
-dev_langs: C++
-helpviewer_keywords: reader_writer_lock class
+dev_langs:
+- C++
+helpviewer_keywords:
+- reader_writer_lock class
 ms.assetid: 91a59cd2-ca05-4b74-8398-d826d9f86736
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 49cc917ddcd4d7de274a8f6bb1f61c940493a365
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 75bea63c6e2f73ebd58434874758c4f20444958a
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="readerwriterlock-class"></a>reader_writer_lock クラス
 ローカルのみのスピンを行う、ライター優先キュー ベースのリーダー ライター ロックです。 ロックはライターに先入れ先出し (FIFO: First In First Out) アクセスを許可し、ライターに連続的な負荷がかかる状況ではリーダーが処理を実行できなくします。  
@@ -78,7 +82,7 @@ class reader_writer_lock;
   
  **名前空間:** concurrency  
   
-##  <a name="lock"></a>ロック 
+##  <a name="lock"></a> ロック 
 
  ライターとしてのリーダー ライター ロックを取得します。  
   
@@ -95,7 +99,7 @@ void lock();
   
  ロックが呼び出し元のコンテキストによって既に保持されている場合、 [improper_lock](improper-lock-class.md)例外がスローされます。  
   
-##  <a name="lock_read"></a>lock_read 
+##  <a name="lock_read"></a> lock_read 
 
  リーダーとしてのリーダー ライター ロックを取得します。 ライターがある場合は、アクティブなリーダーが終了するまで待機する必要があります。 リーダーは単に、ロックに関心を登録し、ライターによって解放されるを待機します。  
   
@@ -108,7 +112,7 @@ void lock_read();
   
  ライター ロックで待機している場合は、リーダーはすべてのライターを取得およびロックが解放されるまで待機します。 このロックはライターにバイアスは、ライターの負荷が継続的なリーダーの余裕ができすぎることができます。  
   
-##  <a name="ctor"></a>reader_writer_lock 
+##  <a name="ctor"></a> reader_writer_lock 
 
  新しい `reader_writer_lock` オブジェクトを構築します。  
   
@@ -116,7 +120,7 @@ void lock_read();
 reader_writer_lock();
 ```  
   
-##  <a name="dtor"></a>~ reader_writer_lock 
+##  <a name="dtor"></a> ~reader_writer_lock 
 
  `reader_writer_lock` オブジェクトを破棄します。  
   
@@ -127,13 +131,13 @@ reader_writer_lock();
 ### <a name="remarks"></a>コメント  
  デストラクターが実行されるときに、ロックが保持不要になったことが必要です。 未定義の動作で結果は保持もロックと消滅させるためにリーダー ライター ロックを許可します。  
   
-##  <a name="scoped_lock_class"></a>reader_writer_lock::scoped_lock クラス  
+##  <a name="scoped_lock_class"></a>  reader_writer_lock::scoped_lock クラス  
  取得に使用できる例外セーフ RAII ラッパー`reader_writer_lock`ライターとしてオブジェクトをロックします。  
   
 ```
 class scoped_lock;
 ``` 
-## <a name="scoped_lock_ctor"></a>scoped_lock::scoped_lock 
+## <a name="scoped_lock_ctor"></a> scoped_lock::scoped_lock 
 
 構築、`scoped_lock`オブジェクトを取得し、`reader_writer_lock`に渡されたオブジェクト、`_Reader_writer_lock`ライターとしてパラメーター。 ロックが別のスレッドによって保持されている場合、この呼び出しはブロックされます。  
   
@@ -146,7 +150,7 @@ explicit _CRTIMP scoped_lock(reader_writer_lock& _Reader_writer_lock);
  `_Reader_writer_lock`  
  `reader_writer_lock`ライターとして取得するオブジェクト。  
   
-## <a name="scoped_lock_dtor"></a>scoped_lock:: ~ scoped_lock 
+## <a name="scoped_lock_dtor"></a> scoped_lock:: ~ scoped_lock 
 
 破棄、`reader_writer_lock`オブジェクトし、そのコンス トラクターで指定されたロックを解放します。   
 
@@ -154,18 +158,18 @@ explicit _CRTIMP scoped_lock(reader_writer_lock& _Reader_writer_lock);
 ~scoped_lock();
 ```  
   
-##  <a name="scoped_lock_read_class"></a>reader_writer_lock::scoped_lock_read クラス  
+##  <a name="scoped_lock_read_class"></a>  reader_writer_lock::scoped_lock_read クラス  
  取得に使用できる例外セーフ RAII ラッパー`reader_writer_lock`リーダーとしてオブジェクトをロックします。  
   
 ```
 class scoped_lock_read;
 ```  
   
-##  <a name="try_lock"></a>try_lock 
+##  <a name="try_lock"></a> try_lock 
 
  ブロックすることがなく、ライターとしてのリーダー ライター ロックを取得しようとしています。  
 
-## <a name="scoped_lock_read_ctor"></a>scoped_lock_read::scoped_lock_read 
+## <a name="scoped_lock_read_ctor"></a> scoped_lock_read::scoped_lock_read 
 
 構築、`scoped_lock_read`オブジェクトを取得し、`reader_writer_lock`に渡されたオブジェクト、`_Reader_writer_lock`リーダーとしてパラメーター。 ライターとして別のスレッドによってロックが保持されているか、保留中のライターが、この呼び出しはブロックされます。  
   
@@ -177,14 +181,14 @@ explicit _CRTIMP scoped_lock_read(reader_writer_lock& _Reader_writer_lock);
  `_Reader_writer_lock`  
  `reader_writer_lock`リーダーとして取得するオブジェクト。  
   
-## <a name="a-namescopedlockreaddtor--readerwriterlockscopedlockreadscopedlockread-destructor"></a><a name="scoped_lock_read_dtor">reader_writer_lock::scoped_lock_read:: ~ scoped_lock_read デストラクター
+## <a name="a-namescopedlockreaddtor--readerwriterlockscopedlockreadscopedlockread-destructor"></a><a name="scoped_lock_read_dtor">  reader_writer_lock::scoped_lock_read::~scoped_lock_read Destructor
 破棄、`scoped_lock_read`オブジェクトし、そのコンス トラクターで指定されたロックを解放します。  
 
 ```
 ~scoped_lock_read();
 ```  
   
-## <a name="try_lock"></a>try_lock 
+## <a name="try_lock"></a> try_lock 
 
 ```
 bool try_lock();
@@ -193,7 +197,7 @@ bool try_lock();
 ### <a name="return-value"></a>戻り値  
  ロックが取得された場合、値`true`、それ以外の値`false`です。  
   
-##  <a name="try_lock_read"></a>try_lock_read 
+##  <a name="try_lock_read"></a> try_lock_read 
 
  ブロックすることがなくリーダーとしてのリーダー ライター ロックを取得しようとしています。  
   
@@ -204,7 +208,7 @@ bool try_lock_read();
 ### <a name="return-value"></a>戻り値  
  ロックが取得された場合、値`true`、それ以外の値`false`です。  
   
-##  <a name="unlock"></a>ロックを解除します。 
+##  <a name="unlock"></a> ロックを解除します。 
 
  リーダーまたはライターがロックされているユーザーに基づいてリーダー/ライター ロックを解除します。  
   

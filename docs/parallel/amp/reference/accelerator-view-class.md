@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - accelerator_view
 - AMPRT/accelerator_view
@@ -24,19 +25,22 @@ f1_keywords:
 - AMPRT/Concurrency::accelerator_view:is_debug
 - AMPRT/Concurrency::accelerator_view:queuing_mode
 - AMPRT/Concurrency::accelerator_view:version
-dev_langs: C++
-helpviewer_keywords: accelerator_view class
+dev_langs:
+- C++
+helpviewer_keywords:
+- accelerator_view class
 ms.assetid: 9f298c21-bf62-46e0-88b8-01c5c78ef144
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 9fd05acc351a23cc088c6491a76ecfb91583b16b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5160e0fa37ed8c1c40a3cdfd6ca63d3b76e2d980
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="acceleratorview-class"></a>accelerator_view クラス
 C ++. AMP のデータ並列アクセラレータでの仮想デバイスの抽象化を表します。  
@@ -67,7 +71,7 @@ class accelerator_view;
 |[get_is_debug](#get_is_debug)|`accelerator_view` オブジェクトに広範なエラー レポートに有効なデバッグ レイヤーがあるかどうかを示すブール値を返します。|  
 |[get_queuing_mode](#get_queuing_mode)|`accelerator_view` オブジェクトのキュー モードを返します。|  
 |[get_version](#get_version)|`accelerator_view` のバージョンを返します。|  
-|[待機](#wait)|終了する `accelerator_view` オブジェクトに送信されるすべてのコマンドを待機します。|  
+|[wait](#wait)|終了する `accelerator_view` オブジェクトに送信されるすべてのコマンドを待機します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -81,7 +85,7 @@ class accelerator_view;
   
 |名前|説明|  
 |----------|-----------------|  
-|[アクセラレータ](#accelerator)|`accelerator` オブジェクトの `accelerator_view` オブジェクトを取得します。|  
+|[accelerator](#accelerator)|`accelerator` オブジェクトの `accelerator_view` オブジェクトを取得します。|  
 |[is_auto_selection](#is_auto_selection)|ランタイムが適切なアクセラレータを選択して自動的にするかどうかを示すブール値を取得時に、`accelerator_view`にオブジェクトが渡される、 [parallel_for_each](concurrency-namespace-functions-amp.md#parallel_for_each)です。|  
 |[is_debug](#is_debug)|`accelerator_view` オブジェクトに広範なエラー レポートに有効なデバッグ レイヤーがあるかどうかを示すブール値を取得します。|  
 |[queuing_mode](#queuing_mode)|`accelerator_view` オブジェクトのキュー モードを取得します。|  
@@ -102,7 +106,7 @@ class accelerator_view;
   
  **名前空間:** Concurrency  
 
-## <a name="accelerator"></a>アクセラレータ 
+## <a name="accelerator"></a> アクセラレータ 
 
 Accelerator_view オブジェクトのアクセラレータのオブジェクトを取得します。  
   
@@ -112,7 +116,7 @@ Accelerator_view オブジェクトのアクセラレータのオブジェクト
 __declspec(property(get= get_accelerator)) Concurrency::accelerator accelerator;  
 ```  
   
-## <a name="ctor"></a>accelerator_view 
+## <a name="ctor"></a> accelerator_view 
 
 既存のコピーによって、accelerator_view クラスの新しいインスタンスを初期化します。`accelerator_view`オブジェクト。  
   
@@ -126,7 +130,7 @@ accelerator_view( const accelerator_view & _Other );
  `_Other`  
  コピーする `accelerator_view` オブジェクト。  
   
-## <a name="accelerator_view__create_marker"></a>create_marker 
+## <a name="accelerator_view__create_marker"></a> create_marker 
 
 これまでにこの `accelerator_view` オブジェクトに送信されたすべてのコマンドの完了を追跡するために予定を返します。  
   
@@ -139,7 +143,7 @@ concurrency::completion_future create_marker();
 ### <a name="return-value"></a>戻り値  
  これまでこの `accelerator_view` オブジェクトに送信されたすべてのコマンドの完了を追跡するための予定です。  
   
-## <a name="flush"></a>フラッシュ 
+## <a name="flush"></a> フラッシュ 
 
 実行のためにアクセラレータに accelerator_view オブジェクトにキューに保留中のすべてのコマンドを送信します。  
   
@@ -152,7 +156,7 @@ void flush();
 ### <a name="return-value"></a>戻り値  
  `void` を返します。  
 
-## <a name="accelerator_view__get_accelerator"></a>get_accelerator 
+## <a name="accelerator_view__get_accelerator"></a> get_accelerator 
 
 Accelerator_view オブジェクトのアクセラレータのオブジェクトを返します。
 ### <a name="syntax"></a>構文
@@ -162,7 +166,7 @@ accelerator get_accelerator() const;
 ### <a name="return-value"></a>戻り値
 Accelerator_view オブジェクトのアクセラレータのオブジェクト。
 
-## <a name="accelerator_view__get_is_auto_selection"></a>get_is_auto_selection 
+## <a name="accelerator_view__get_is_auto_selection"></a> get_is_auto_selection 
 
 かどうか、ランタイムは自動的に適切なアクセラレータ選択 accelerator_view に渡されるかを示すブール値を返します、 [parallel_for_each](concurrency-namespace-functions-amp.md#parallel_for_each)です。  
   
@@ -175,7 +179,7 @@ bool get_is_auto_selection() const;
 ### <a name="return-value"></a>戻り値  
  ランタイムが自動的に適切なアクセラレータを選択する場合は `true`、それ以外の場合は `false`。  
   
-## <a name="accelerator_view__get_is_debug"></a>get_is_debug 
+## <a name="accelerator_view__get_is_debug"></a> get_is_debug 
 
 Accelerator_view オブジェクトに広範なエラー レポートに有効なデバッグ レイヤーがあるかどうかを示すブール値を返します。  
   
@@ -188,7 +192,7 @@ bool get_is_debug() const;
 ### <a name="return-value"></a>戻り値  
  示すブール値かどうか、`accelerator_view`広範なエラー レポートに有効なデバッグ レイヤーが付きます。  
 
-## <a name="accelerator_view__get_queuing_mode"></a>get_queuing_mode 
+## <a name="accelerator_view__get_queuing_mode"></a> get_queuing_mode 
 
 Accelerator_view オブジェクトのキュー モードを返します。  
   
@@ -201,7 +205,7 @@ queuing_mode get_queuing_mode() const;
 ### <a name="return-value"></a>戻り値  
  キュー モード、`accelerator_view`オブジェクト。  
   
-## <a name="accelerator_view__get_version"></a>get_version 
+## <a name="accelerator_view__get_version"></a> get_version 
 
 Accelerator_view のバージョンを返します。  
   
@@ -214,7 +218,7 @@ unsigned int get_version() const;
 ### <a name="return-value"></a>戻り値  
  バージョン、`accelerator_view`です。  
   
-## <a name="accelerator_view__is_auto_selection"></a>is_auto_selection 
+## <a name="accelerator_view__is_auto_selection"></a> is_auto_selection 
 
 かどうか、ランタイムは自動的に適切なアクセラレータ選択 accelerator_view に渡されるかを示すブール値を取得、 [parallel_for_each](concurrency-namespace-functions-amp.md#parallel_for_each)です。  
   
@@ -224,7 +228,7 @@ unsigned int get_version() const;
 __declspec(property(get= get_is_auto_selection)) bool is_auto_selection;  
 ```  
   
-## <a name="accelerator_view__is_debug"></a>is_debug 
+## <a name="accelerator_view__is_debug"></a> is_debug 
 
 Accelerator_view オブジェクトに広範なエラー レポートに有効なデバッグ レイヤーがあるかどうかを示すブール値を取得します。  
   
@@ -234,7 +238,7 @@ Accelerator_view オブジェクトに広範なエラー レポートに有効�
 __declspec(property(get= get_is_debug)) bool is_debug;  
 ```  
   
-## <a name="accelerator_view__operator_neq"></a>operator! = 
+## <a name="accelerator_view__operator_neq"></a> operator!= 
 
 他の場合は、この accelerator_view オブジェクトを比較し、返します`false`これらが同一である場合を返しますそれ以外の場合、`true`です。  
   
@@ -251,7 +255,7 @@ bool operator!= (    const accelerator_view & _Other ) const;
 ### <a name="return-value"></a>戻り値  
  2 つのオブジェクトが同一である場合は `false`。それ以外の場合は `true`。  
   
-## <a name="accelerator_view__operator_eq"></a>演算子 = 
+## <a name="accelerator_view__operator_eq"></a> 演算子 = 
 
 この 1 つに指定された accelerator_view オブジェクトの内容をコピーします。  
   
@@ -268,7 +272,7 @@ accelerator_view & operator= (    const accelerator_view & _Other );
 ### <a name="return-value"></a>戻り値  
  変更されたへの参照を`accelerator_view`オブジェクト。  
   
-## <a name="accelerator_view__operator_eq_eq"></a>演算子 = = 
+## <a name="accelerator_view__operator_eq_eq"></a> 演算子 = = 
 
 他の場合は、この accelerator_view オブジェクトを比較し、返します`true`これらが同一である場合を返しますそれ以外の場合、`false`です。  
   
@@ -285,7 +289,7 @@ bool operator= = (    const accelerator_view & _Other ) const;
 ### <a name="return-value"></a>戻り値  
  2 つのオブジェクトが同一である場合は `true`。それ以外の場合は `false`。  
   
-## <a name="accelerator_view__queuing_mode"></a>queuing_mode 
+## <a name="accelerator_view__queuing_mode"></a> queuing_mode 
 
 Accelerator_view オブジェクトのキュー モードを取得します。  
   
@@ -295,7 +299,7 @@ Accelerator_view オブジェクトのキュー モードを取得します。
 __declspec(property(get= get_queuing_mode)) Concurrency::queuing_mode queuing_mode;  
 ```  
   
-## <a name="accelerator_view__version"></a>バージョン 
+## <a name="accelerator_view__version"></a> バージョン 
 
 Accelerator_view のバージョンを取得します。  
   
@@ -305,7 +309,7 @@ Accelerator_view のバージョンを取得します。
 __declspec(property(get= get_version)) unsigned int version;  
 ```  
   
-## <a name="accelerator_view__wait"></a>待機 
+## <a name="accelerator_view__wait"></a> 待機 
 
 Accelerator_view オブジェクトに送信されたすべてのコマンドを完了するまで待機します。  
   
@@ -321,7 +325,7 @@ void wait();
 #### <a name="remarks"></a>コメント  
  場合、 [queuing_mode](concurrency-namespace-enums-amp.md#queuing_mode)は`immediate`、ブロックすることがなく、このメソッドをすぐに返します。  
   
-##  <a name="dtor"></a>~ accelerator_view 
+##  <a name="dtor"></a> ~ accelerator_view 
 
  Accelerator_view オブジェクトを破棄します。  
   

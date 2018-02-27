@@ -4,40 +4,43 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
-- connecting to web services, Windows Store apps [C++]
+- connecting to web services, UWP apps [C++]
 - IXMLHTTPRequest2 and tasks, example
 - IXHR2 and tasks, example
 ms.assetid: e8e12d46-604c-42a7-abfd-b1d1bb2ed6b3
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 5fef2e682f8e2036eb2919c20879c60e879ec845
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e778c03368a634c349ec7c3ef241a29314cac4ea
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="walkthrough-connecting-using-tasks-and-xml-http-requests"></a>チュートリアル: タスクおよび XML HTTP 要求を使用した接続
-この例を使用する方法を示しています、 [IXMLHTTPRequest2](http://msdn.microsoft.com/en-us/bbc11c4a-aecf-4d6d-8275-3e852e309908)と[IXMLHTTPRequest2Callback](http://msdn.microsoft.com/en-us/aa4b3f4c-6e28-458b-be25-6cce8865fc71)インターフェイスで web サービスに HTTP GET および POST 要求を送信するタスクと、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)]アプリ。 タスクと `IXMLHTTPRequest2` を組み合わせることによって、他のタスクと共に構成するコードを記述できます。 たとえば、タスクのチェーンの一部としてダウンロード タスクを使用できます。 ダウンロード タスクは、処理が取り消された場合にも応答できます。  
+この例を使用する方法を示しています、 [IXMLHTTPRequest2](http://msdn.microsoft.com/en-us/bbc11c4a-aecf-4d6d-8275-3e852e309908)と[IXMLHTTPRequest2Callback](http://msdn.microsoft.com/en-us/aa4b3f4c-6e28-458b-be25-6cce8865fc71)インターフェイスを web サービスで、ユニバーサル Windows プラットフォーム (UWP に HTTP GET および POST 要求を送信するタスクと) アプリ。 タスクと `IXMLHTTPRequest2` を組み合わせることによって、他のタスクと共に構成するコードを記述できます。 たとえば、タスクのチェーンの一部としてダウンロード タスクを使用できます。 ダウンロード タスクは、処理が取り消された場合にも応答できます。  
   
 > [!TIP]
->  また、C++ REST SDK を使って、C++ による [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーション、またはデスクトップの C++ アプリから HTTP 要求を実行できます。 詳細については、次を参照してください。 [C++ REST SDK (コード名"Casablanca")](https://github.com/Microsoft/cpprestsdk)です。  
+>  また、C++ アプリを使用して、UWP アプリまたはデスクトップ C++ アプリからの HTTP 要求を実行するのに C++ REST SDK を使用することができます。 詳細については、次を参照してください。 [C++ REST SDK (コード名"Casablanca")](https://github.com/Microsoft/cpprestsdk)です。  
   
- タスクの詳細については、次を参照してください。[タスクの並列化](../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。 タスクを使用する方法についての詳細、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)]アプリを参照してください[C++ で非同期プログラミング](http://msdn.microsoft.com/en-us/512700b7-7863-44cc-93a2-366938052f31)と[Windows ストア アプリ用 C++ で非同期操作の作成](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)です。  
+ タスクの詳細については、次を参照してください。[タスクの並列化](../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。 UWP アプリでタスクを使用する方法の詳細については、次を参照してください。 [C++ で非同期プログラミング](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)と[非同期操作の作成に C++ UWP アプリの](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)します。  
   
- このドキュメントでは、最初に `HttpRequest` およびそのサポート クラスを作成する方法を示します。 次に、C++ および XAML を使用する [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーションからこのクラスを使用する方法を示します。  
+ このドキュメントでは、最初に `HttpRequest` およびそのサポート クラスを作成する方法を示します。 C++ と XAML を使用する UWP アプリからこのクラスを使用する方法を示します。  
   
  使用するより詳細な例については、`HttpReader`クラスは、このドキュメントで説明を参照してください[開発 Bing マップ トリップ オプティマイザーでは、JavaScript および C++ で Windows ストア アプリ](http://msdn.microsoft.com/library/974cf025-de1a-4299-b7dd-c6c7bf0e5d30)です。 使用する別の例の`IXMLHTTPRequest2`がされていませんタスクを使用して、参照してください[クイック スタート: XML HTTP 要求 (IXMLHTTPRequest2) を使用した接続](http://msdn.microsoft.com/en-us/cc7aed53-b2c5-4d83-b85d-cff2f5ba7b35)です。  
   
 > [!TIP]
->  `IXMLHTTPRequest2` および `IXMLHTTPRequest2Callback` は、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリケーションで使用することをお勧めするインターフェイスです。 また、この例をデスクトップ アプリケーションでの使用に適用することもできます。  
+>  `IXMLHTTPRequest2` および`IXMLHTTPRequest2Callback`は UWP アプリで使用することをお勧めするインターフェイスです。 また、この例をデスクトップ アプリケーションでの使用に適用することもできます。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
   
@@ -68,8 +71,8 @@ ms.lasthandoff: 12/21/2017
   
      [!code-cpp[concrt-using-ixhr2#3](../../parallel/concrt/codesnippet/cpp/walkthrough-connecting-using-tasks-and-xml-http-requests_3.cpp)]  
   
-## <a name="using-the-httprequest-class-in-a-includewin8appnamelongbuildincludeswin8appnamelongmdmd-app"></a>[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで HttpRequest クラスを使用する  
- このセクションでは、`HttpRequest` アプリケーションで [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] クラスを使用する方法を示します。 このアプリケーションは、URL リソースを定義する入力ボックス、GET と POST の操作を実行するボタン コマンド、現在の操作を取り消すボタン コマンドを提供します。  
+## <a name="using-the-httprequest-class-in-a-uwp-app"></a>UWP アプリで HttpRequest クラスを使用します。  
+ このセクションでは、使用する方法を示します、 `HttpRequest` UWP アプリでのクラスです。 このアプリケーションは、URL リソースを定義する入力ボックス、GET と POST の操作を実行するボタン コマンド、現在の操作を取り消すボタン コマンドを提供します。  
   
 #### <a name="to-use-the-httprequest-class"></a>HttpRequest クラスを使用するには  
   
@@ -112,7 +115,7 @@ ms.lasthandoff: 12/21/2017
   
  実行中のアプリケーションを次に示します。  
   
- ![実行中の Windows ストア アプリ](../../parallel/concrt/media/concrt_usingixhr2.png "concrt_usingixhr2")  
+ ![実行中の Windows ランタイム アプリ](../../parallel/concrt/media/concrt_usingixhr2.png "concrt_usingixhr2")  
   
 ## <a name="next-steps"></a>次の手順  
  [同時実行ランタイムのチュートリアル](../../parallel/concrt/concurrency-runtime-walkthroughs.md)  
@@ -120,8 +123,8 @@ ms.lasthandoff: 12/21/2017
 ## <a name="see-also"></a>参照  
  [タスクの並列化](../../parallel/concrt/task-parallelism-concurrency-runtime.md)   
  [PPL における取り消し処理](cancellation-in-the-ppl.md)   
- [C++ で非同期プログラミング](http://msdn.microsoft.com/en-us/512700b7-7863-44cc-93a2-366938052f31)   
- [Windows ストア アプリ用 C++ で非同期操作の作成](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)   
+ [C++ で非同期プログラミング](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)   
+ [UWP アプリの C++ で非同期操作の作成](../../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md)   
  [クイック スタート: XML HTTP 要求 (IXMLHTTPRequest2) を使用しての接続](http://msdn.microsoft.com/en-us/cc7aed53-b2c5-4d83-b85d-cff2f5ba7b35)   
  [task クラス (同時実行ランタイム)](../../parallel/concrt/reference/task-class.md)   
  [task_completion_event クラス](../../parallel/concrt/reference/task-completion-event-class.md)

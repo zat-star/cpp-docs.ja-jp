@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - concrt/concurrency::Alloc
 - concrt/concurrency::DisableTracing
@@ -37,18 +37,20 @@ f1_keywords:
 - concrt/concurrency::wait
 - ppltasks/concurrency::when_all
 - ppltasks/concurrency::when_any
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 520a6dff-9324-4df2-990d-302e3050af6a
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 6c40cd99c03d4e6e3adcef9d709ae85163804c94
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 66cf776e02d286b04c4fe9338d74d6a9db196a68
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="concurrency-namespace-functions"></a>concurrency 名前空間の関数
 ||||  
@@ -63,13 +65,13 @@ ms.lasthandoff: 12/21/2017
 |[make_greedy_join](#make_greedy_join)|[make_join](#make_join)|[make_task](#make_task)|  
 |[parallel_buffered_sort](#parallel_buffered_sort)|[parallel_for](#parallel_for)|[parallel_for_each](#parallel_for_each)|  
 |[parallel_invoke](#parallel_invoke)|[parallel_radixsort](#parallel_radixsort)|[parallel_reduce](#parallel_reduce)|  
-|[parallel_sort](#parallel_sort)|[parallel_transform](#parallel_transform)|[受信](#receive)|  
+|[parallel_sort](#parallel_sort)|[parallel_transform](#parallel_transform)|[receive](#receive)|  
 |[run_with_cancellation_token](#run_with_cancellation_token)|[send](#send)|[set_ambient_scheduler](#set_ambient_scheduler)|  
 |[set_task_execution_resources](#set_task_execution_resources)|[swap](#swap)|[task_from_exception](#task_from_exception)|  
-|[task_from_result](#task_from_result)|[try_receive](#try_receive)|[待機](#wait)|  
+|[task_from_result](#task_from_result)|[try_receive](#try_receive)|[wait](#wait)|  
 |[when_all](#when_all)|[when_any](#when_any)|  
   
-##  <a name="alloc"></a>アロケーション  
+##  <a name="alloc"></a>  アロケーション  
  同時実行ランタイムのキャッシュ サブアロケータから、指定したサイズのメモリ ブロックを割り当てます。  
   
 ```
@@ -86,7 +88,7 @@ void* __cdecl Alloc(size_t _NumBytes);
 ### <a name="remarks"></a>コメント  
  詳細については、アプリケーションのシナリオから利点を得キャッシュ サブアロケータを使用して、次を参照してください。[タスク スケジューラ](../../../parallel/concrt/task-scheduler-concurrency-runtime.md)です。  
   
-##  <a name="asend"></a>asend  
+##  <a name="asend"></a>  asend  
  ターゲット ブロックにデータを反映するタスクをスケジュールする非同期送信操作です。  
   
 ```
@@ -112,12 +114,12 @@ bool asend(
  送信されるデータへの参照。  
   
 ### <a name="return-value"></a>戻り値  
- `true`メソッドが返される前に、メッセージが受け入れられた場合`false`それ以外の場合。  
+ `true` メソッドが返される前に、メッセージが受け入れられた場合`false`それ以外の場合。  
   
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[メッセージを渡す関数](../../../parallel/concrt/message-passing-functions.md)です。  
   
-##  <a name="cancel_current_task"></a>cancel_current_task  
+##  <a name="cancel_current_task"></a>  cancel_current_task  
  現在実行中のタスクを取り消します。 この関数は、タスクの実行を中止して `canceled` 状態に遷移させるために、タスクの本体から呼び出すことができます。  
   
  `task` の本体以外では、この関数を呼び出すシナリオはサポートされません。 これを行うと、アプリケーションのクラッシュや停止など、定義されていない動作が発生します。  
@@ -126,7 +128,7 @@ bool asend(
 inline __declspec(noreturn) void __cdecl cancel_current_task();
 ```  
   
-##  <a name="clear"></a>オフ  
+##  <a name="clear"></a>  clear  
  破棄、同時実行のキューをクリア現在キューに格納された要素。 このメソッドは同時実行セーフではありません。  
   
 ```
@@ -138,7 +140,7 @@ void concurrent_queue<T, _Ax>::clear();
  `T`  
  `_Ax`  
   
-##  <a name="create_async"></a>create_async  
+##  <a name="create_async"></a>  create_async  
  ユーザーが指定したラムダまたは関数オブジェクトに基づいて Windows ランタイムの非同期構造を作成します。 `create_async` の戻り値の型は、`IAsyncAction^`、`IAsyncActionWithProgress<TProgress>^`、`IAsyncOperation<TResult>^`、`IAsyncOperationWithProgress<TResult, TProgress>^` のいずれかで、メソッドに渡されるラムダのシグネチャに基づいています。  
   
 ```
@@ -168,9 +170,9 @@ __declspec(noinline) auto create_async(const _Function& _Func)
   
  ラムダの本体がタスクを返す場合、ラムダはインラインで実行されます。また、ラムダが型 `cancellation_token` の引数を使用するように宣言すると、タスクの作成時にこのトークンを渡すことによって、ラムダ内で作成されるタスクの取り消しをトリガーできます。 また、トークンに対して `register_callback` メソッドを使用すると、生成される非同期操作や非同期アクションで `IAsyncInfo::Cancel` を呼び出すときに、ランタイムでコールバックを呼び出すこともできます。  
   
- この関数は、Windows ストア アプリでのみ使用できます。  
+ この関数は、Windows ランタイム アプリで利用できますのみです。  
   
-##  <a name="createresourcemanager"></a>CreateResourceManager  
+##  <a name="createresourcemanager"></a>  CreateResourceManager  
  同時実行ランタイムのリソース マネージャーのシングルトン インスタンスを表すインターフェイスを返します。 リソース マネージャーは、相互の連携を必要とするスケジューラにリソースを割り当てます。  
   
 ```
@@ -185,7 +187,7 @@ IResourceManager* __cdecl CreateResourceManager();
   
  [unsupported_os](unsupported-os-class.md)が、オペレーティング システムが同時実行ランタイムによってサポートされていない場合にスローされます。  
   
-##  <a name="create_task"></a>create_task  
+##  <a name="create_task"></a>  create_task  
  作成、PPL[タスク](http://msdn.microsoft.com/en-us/5389e8a5-5038-40b6-844a-55e9b58ad35f)オブジェクト。 `create_task` は、タスク コンストラクターを使用した任意の場所で使用できます。 タスクの作成中に `auto` キーワードが使用できるようになるため、これは参考用として用意されています。  
   
 ```
@@ -203,7 +205,7 @@ __declspec( noinline) task<_ReturnType> create_task(const task<_ReturnType>& _Ta
   
  `_ReturnType`  
  `_Param`  
- パラメーター。これに基づいてタスクが構築されます。 Windows ストア アプリでタスクを使用する場合、ラムダまたは関数オブジェクト、`task_completion_event` オブジェクト、別の `task` オブジェクト、または Windows::Foundation::IAsyncInfo インターフェイスを指定できます。  
+ パラメーター。これに基づいてタスクが構築されます。 ラムダまたは関数オブジェクトでは、可能性があります、`task_completion_event`オブジェクト、別`task`オブジェクト、または、UWP アプリでタスクを使用している場合::iasyncinfo インターフェイスをします。  
   
  `_TaskOptions`  
  `_Task`  
@@ -218,9 +220,9 @@ __declspec( noinline) task<_ReturnType> create_task(const task<_ReturnType>& _Ta
   
  返されたタスクの種類は、関数の最初のパラメーターから推測されます。 `_Param` が `task_completion_event<T>`、`task<T>`、または型 `T` か型 `task<T>` を返すファンクタの場合、作成されたタスクの型は `task<T>` です。  
   
- Windows ストア アプリの場合は`_Param`型:iasyncoperation\<T > ^ または::iasyncoperationwithprogress\<T, P > ^、または作成されたそれらの型のいずれかを返すファンクタ型であるタスク`task<T>`です。 場合`_Param`型 Windows::Foundation::IAsyncAction ^ または Windows::Foundation::IAsyncActionWithProgress\<P > ^、それらの型のいずれかを返すファンクタの場合、作成したタスクの型はまたは`task<void>`です。  
+ UWP アプリで場合`_Param`型:iasyncoperation\<T > ^ または::iasyncoperationwithprogress\<T, P > ^、またはそれらの型のいずれかを返すファンクタの場合、作成されたタスクになります型`task<T>`です。 場合`_Param`型 Windows::Foundation::IAsyncAction ^ または Windows::Foundation::IAsyncActionWithProgress\<P > ^、それらの型のいずれかを返すファンクタの場合、作成したタスクの型はまたは`task<void>`です。  
   
-##  <a name="disabletracing"></a>DisableTracing  
+##  <a name="disabletracing"></a>  DisableTracing  
  同時実行ランタイムでのトレースを無効にします。 この関数は、ETW トレースが既定で未登録であるため推奨されません。  
   
 ```
@@ -230,7 +232,7 @@ __declspec(deprecated("Concurrency::DisableTracing is a deprecated function.")) 
 ### <a name="return-value"></a>戻り値  
  トレースが正しく無効になっている場合`S_OK`が返されます。 トレースが開始されていませんが場合、`E_NOT_STARTED`が返されます  
   
-##  <a name="enabletracing"></a>EnableTracing  
+##  <a name="enabletracing"></a>  EnableTracing  
  同時実行ランタイムでトレースを有効にします。 この関数は、ETW トレースが既定でオンであるため推奨されません。  
   
 ```
@@ -240,7 +242,7 @@ __declspec(deprecated("Concurrency::EnableTracing is a deprecated function.")) _
 ### <a name="return-value"></a>戻り値  
  トレースが正常に開始された場合`S_OK`を返します。 それ以外の場合、`E_NOT_STARTED`が返されます。  
   
-##  <a name="free"></a>無料  
+##  <a name="free">無料</a>  
  以前に `Alloc` メソッドによって同時実行ランタイムのキャッシュ サブアロケータに割り当てられたメモリ ブロックを解放します。  
   
 ```
@@ -254,7 +256,7 @@ void __cdecl Free(_Pre_maybenull_ _Post_invalid_ void* _PAllocation);
 ### <a name="remarks"></a>コメント  
  詳細については、アプリケーションのシナリオから利点を得キャッシュ サブアロケータを使用して、次を参照してください。[タスク スケジューラ](../../../parallel/concrt/task-scheduler-concurrency-runtime.md)です。  
   
-##  <a name="get_ambient_scheduler"></a>get_ambient_scheduler  
+##  <a name="get_ambient_scheduler"></a>  get_ambient_scheduler  
   
 ```
 inline std::shared_ptr<::Concurrency::scheduler_interface> get_ambient_scheduler();
@@ -262,7 +264,7 @@ inline std::shared_ptr<::Concurrency::scheduler_interface> get_ambient_scheduler
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="getexecutioncontextid"></a>GetExecutionContextId  
+##  <a name="getexecutioncontextid"></a>  GetExecutionContextId  
  `IExecutionContext` インターフェイスを実装する実行コンテキストに割り当てることのできる一意識別子を返します。  
   
 ```
@@ -275,7 +277,7 @@ unsigned int __cdecl GetExecutionContextId();
 ### <a name="remarks"></a>コメント  
  渡す前に、実行コンテキストの識別子を取得するには、このメソッドを使用して、`IExecutionContext`リソース マネージャーによって提供されるメソッドのいずれかのパラメーターとしてインターフェイスです。  
   
-##  <a name="getosversion"></a>GetOSVersion  
+##  <a name="getosversion"></a>  GetOSVersion  
  オペレーティング システムのバージョンを返します。  
   
 ```
@@ -288,7 +290,7 @@ IResourceManager::OSVersion __cdecl GetOSVersion();
 ### <a name="remarks"></a>コメント  
  [unsupported_os](unsupported-os-class.md)が、オペレーティング システムが同時実行ランタイムによってサポートされていない場合にスローされます。  
   
-##  <a name="getprocessorcount"></a>GetProcessorCount  
+##  <a name="getprocessorcount"></a>  GetProcessorCount  
  基になるシステム上のハードウェア スレッドの数を返します。  
   
 ```
@@ -301,7 +303,7 @@ unsigned int __cdecl GetProcessorCount();
 ### <a name="remarks"></a>コメント  
  [unsupported_os](unsupported-os-class.md)が、オペレーティング システムが同時実行ランタイムによってサポートされていない場合にスローされます。  
   
-##  <a name="getprocessornodecount"></a>GetProcessorNodeCount  
+##  <a name="getprocessornodecount"></a>  GetProcessorNodeCount  
  基になるシステム上の NUMA ノードまたはプロセッサ パッケージの数を返します。  
   
 ```
@@ -316,7 +318,7 @@ unsigned int __cdecl GetProcessorNodeCount();
   
  [unsupported_os](unsupported-os-class.md)が、オペレーティング システムが同時実行ランタイムによってサポートされていない場合にスローされます。  
   
-##  <a name="getschedulerid"></a>GetSchedulerId  
+##  <a name="getschedulerid"></a>  GetSchedulerId  
  `IScheduler` インターフェイスを実装するスケジューラに割り当てることができる一意識別子を返します。  
   
 ```
@@ -329,7 +331,7 @@ unsigned int __cdecl GetSchedulerId();
 ### <a name="remarks"></a>コメント  
  このメソッドを使用してに渡す前に、スケジューラの識別子を取得する、`IScheduler`リソース マネージャーによって提供されるメソッドのいずれかのパラメーターとしてインターフェイスです。  
   
-##  <a name="internal_assign_iterators"></a>internal_assign_iterators  
+##  <a name="internal_assign_iterators"></a>  internal_assign_iterators  
   
 ```
 template<typename T, class _Ax>
@@ -346,7 +348,7 @@ void concurrent_vector<T, _Ax>::internal_assign_iterators(
  `first`  
  `last`  
   
-##  <a name="interruption_point"></a>interruption_point  
+##  <a name="interruption_point"></a>  interruption_point  
  取り消しの割り込みポイントを作成します。 この関数が呼び出されるコンテキストで取り消しが進行中の場合、現在実行中の並列処理を中止する内部例外がスローされます。 取り消しが進行中でない場合は、何も実行されません。  
   
 ```
@@ -356,7 +358,7 @@ inline void interruption_point();
 ### <a name="remarks"></a>コメント  
  によってスローされる内部のキャンセル例外をキャッチしなければなりません、`interruption_point()`関数。 例外をキャッチし、ランタイムによって処理され、キャッチが原因で、プログラムが異常に動作します。  
   
-##  <a name="is_current_task_group_canceling"></a>is_current_task_group_canceling  
+##  <a name="is_current_task_group_canceling"></a>  is_current_task_group_canceling  
  現在のコンテキストで現在インラインで実行されているタスク グループがアクティブなキャンセル処理中である (または間もなくキャンセル処理が開始される) かどうかを示す値を返します。 現在のコンテキストで現在インラインで実行されているタスク グループが存在しない場合は、`false` が返されます。  
   
 ```
@@ -364,12 +366,12 @@ bool __cdecl is_current_task_group_canceling();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `true`実行されているタスク グループをキャンセルすると場合、`false`それ以外の場合。  
+ `true` 実行されているタスク グループをキャンセルすると場合、`false`それ以外の場合。  
   
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[キャンセル](../../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md#cancellation)です。  
   
-##  <a name="make_choice"></a>make_choice  
+##  <a name="make_choice"></a>  make_choice  
  オプションの `choice` や `Scheduler`、および 2 つ以上の入力ソースから `ScheduleGroup` メッセージング ブロックを構築します。  
   
 ```
@@ -419,7 +421,7 @@ choice<std::tuple<T1, T2, Ts...>> make_choice(
 ### <a name="return-value"></a>戻り値  
  2 個またはそれ以上の入力ソースを持つ `choice` メッセージ ブロック。  
   
-##  <a name="make_greedy_join"></a>make_greedy_join  
+##  <a name="make_greedy_join"></a>  make_greedy_join  
  オプションの `greedy multitype_join` や `Scheduler`、および 2 つ以上の入力ソースから `ScheduleGroup` メッセージング ブロックを構築します。  
   
 ```
@@ -469,7 +471,7 @@ multitype_join<std::tuple<T1, T2, Ts...>, greedy> make_greedy_join(
 ### <a name="return-value"></a>戻り値  
  2 個またはそれ以上の入力ソースを持つ `greedy multitype_join` メッセージ ブロック。  
   
-##  <a name="make_join"></a>make_join  
+##  <a name="make_join"></a>  make_join  
  オプションの `non_greedy multitype_join` や `Scheduler`、および 2 つ以上の入力ソースから `ScheduleGroup` メッセージング ブロックを構築します。  
   
 ```
@@ -520,7 +522,7 @@ multitype_join<std::tuple<T1, T2, Ts...>> make_join(
 ### <a name="return-value"></a>戻り値  
  2 個またはそれ以上の入力ソースを持つ `non_greedy multitype_join` メッセージ ブロック。  
   
-##  <a name="make_task"></a>make_task  
+##  <a name="make_task"></a>  make_task  
  `task_handle` オブジェクトを作成するためのファクトリ メソッドです。  
   
 ```
@@ -541,7 +543,7 @@ task_handle<_Function> make_task(const _Function& _Func);
 ### <a name="remarks"></a>コメント  
  この関数は、作成する必要がある場合に便利です、`task_handle`ラムダ式でオブジェクトをラムダ ファンクタの実際の型を知らなくてもオブジェクトを作成することができます。  
   
-##  <a name="parallel_buffered_sort"></a>parallel_buffered_sort  
+##  <a name="parallel_buffered_sort"></a>  parallel_buffered_sort  
  指定された範囲の要素を、降順以外の順序、または二項述語で指定された順序の基準に従って、並列に配置します。 この関数は、比較ベースで不安定なインプレース並べ替えという点で `std::sort` と意味が同じです。ただし、`O(n)` 追加スペースが必要で、並べ替えている要素を既定で初期化する必要があります。  
   
 ```
@@ -625,7 +627,7 @@ inline void parallel_buffered_sort(
   
  アルゴリズムでは、入力の範囲を 2 つのチャンクに分割し、順次各チャンクを並列で実行するための 2 つのサブ チャンクに分割します。 省略可能な引数`_Chunk_size`サイズのチャンクを処理する必要がある、アルゴリズムに示すために使用できます <`_Chunk_size`逐次的にします。  
   
-##  <a name="parallel_for"></a>parallel_for  
+##  <a name="parallel_for"></a>  parallel_for  
  `parallel_for` は、一定の範囲のインデックスを反復処理し、各反復処理で、ユーザーが指定した関数を並列で実行します。  
   
 ```
@@ -701,7 +703,7 @@ void parallel_for(
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[並列アルゴリズム](../../../parallel/concrt/parallel-algorithms.md)です。  
   
-##  <a name="parallel_for_each"></a>parallel_for_each  
+##  <a name="parallel_for_each"></a>  parallel_for_each  
  `parallel_for_each` は、指定された関数を範囲内の各要素に並列で適用します。 意味的には `for_each` 名前空間の `std` 関数と同等ですが、要素に対する反復処理が並列で行われる点、および反復処理の順序が指定されていない点が異なります。 引数 `_Func` は、`operator()(T)` の形式の関数呼び出し演算子をサポートしている必要があります (`T` パラメーターは反復処理するコンテナーの項目の種類を示します)。  
   
 ```
@@ -746,7 +748,7 @@ void parallel_for_each(
   
  詳細については、次を参照してください。[並列アルゴリズム](../../../parallel/concrt/parallel-algorithms.md)です。  
   
-##  <a name="parallel_invoke"></a>parallel_invoke  
+##  <a name="parallel_invoke"></a>  parallel_invoke  
  パラメーターとして渡された関数オブジェクトを並列実行し、実行が完了するまでブロックします。 各関数オブジェクトは、ラムダ式、関数へのポインター、またはシグネチャ `void operator()()` を持つ関数呼び出し演算子をサポートするオブジェクトになります。  
   
 ```
@@ -942,7 +944,7 @@ void parallel_invoke(
   
  詳細については、次を参照してください。[並列アルゴリズム](../../../parallel/concrt/parallel-algorithms.md)です。  
   
-##  <a name="parallel_radixsort"></a>parallel_radixsort  
+##  <a name="parallel_radixsort"></a>  parallel_radixsort  
  基数並べ替えアルゴリズムを使用して、指定された範囲の要素を降順以外の順序で配置します。 これは安定した並べ替え関数で、符号なし整数 (キーなど) に分類されるように要素を投影する投射関数を必要とします。 並べ替えられる要素には既定の初期化が必要です。  
   
 ```
@@ -1022,7 +1024,7 @@ inline void parallel_radixsort(
   
  アルゴリズムでは、入力の範囲を 2 つのチャンクに分割し、順次各チャンクを並列で実行するための 2 つのサブ チャンクに分割します。 省略可能な引数`_Chunk_size`サイズのチャンクを処理する必要がある、アルゴリズムに示すために使用できます <`_Chunk_size`逐次的にします。  
   
-##  <a name="parallel_reduce"></a>parallel_reduce  
+##  <a name="parallel_reduce"></a>  parallel_reduce  
  連続する部分的な合計を計算することで、指定された範囲のすべての要素の合計を計算します。または、指定された二項演算を使用して取得した、合計以外の連続する部分的な結果を並列で計算します。 `parallel_reduce` は `std::accumulate` と意味が同じです。ただし、結合のための二項演算と、初期値ではなく ID 値が必要です。  
   
 ```
@@ -1091,7 +1093,7 @@ inline _Reduce_type parallel_reduce(
   
  3 番目のオーバー ロードでは、id 値の種類同じでなければなりません削減結果型が反復子の`value_type`両方に異なる可能性があります。 範囲の削減関数`_Range_fun`identity 値を持つ最初のフェーズでは、最初の値、および二項関数として使用`_Sym_reduce_fun`が 2 番目のフェーズで結果を sub に適用します。  
   
-##  <a name="parallel_sort"></a>parallel_sort  
+##  <a name="parallel_sort"></a>  parallel_sort  
  指定された範囲の要素を、降順以外の順序、または二項述語で指定された順序の基準に従って、並列に配置します。 この関数は、比較ベースで不安定なインプレース並べ替えという点で `std::sort` と意味が同じです。  
   
 ```
@@ -1134,7 +1136,7 @@ inline void parallel_sort(
   
  アルゴリズムでは、入力の範囲を 2 つのチャンクに分割し、順次各チャンクを並列で実行するための 2 つのサブ チャンクに分割します。 省略可能な引数`_Chunk_size`サイズのチャンクを処理する必要がある、アルゴリズムに示すために使用できます <`_Chunk_size`逐次的にします。  
   
-##  <a name="parallel_transform"></a>parallel_transform  
+##  <a name="parallel_transform"></a>  parallel_transform  
  指定された関数オブジェクトをソース範囲内の各要素、または 2 つのソース範囲内の要素のペアに適用し、関数オブジェクトの戻り値をコピー先の範囲に並列でコピーします。 この関数は、意味的には `std::transform` と同じです。  
   
 ```
@@ -1251,13 +1253,13 @@ _Output_iterator parallel_transform(
   
  反復子をサポートしていないランダム アクセスのみの[auto_partitioner](auto-partitioner-class.md)はサポートされています。  
   
- 引数を取るオーバー ロード`_Unary_op`入力範囲内の各要素に、単項ファンクタを適用することで、入力の範囲を出力範囲に変換します。 `_Unary_op`シグネチャを持つ関数呼び出し演算子をサポートする必要があります`operator()(T)`場所`T`が反復処理されている範囲の値の型。  
+ 引数を取るオーバー ロード`_Unary_op`入力範囲内の各要素に、単項ファンクタを適用することで、入力の範囲を出力範囲に変換します。 `_Unary_op` シグネチャを持つ関数呼び出し演算子をサポートする必要があります`operator()(T)`場所`T`が反復処理されている範囲の値の型。  
   
- 引数を取るオーバー ロード`_Binary_op`最初の入力の範囲と 2 番目の入力の範囲から 1 つの要素から 1 つの要素のバイナリ ファンクタを適用することによって、2 つの入力の範囲を出力範囲に変換します。 `_Binary_op`シグネチャを持つ関数呼び出し演算子をサポートする必要があります`operator()(T, U)`場所`T`、`U`は 2 つの入力反復子の値の型。  
+ 引数を取るオーバー ロード`_Binary_op`最初の入力の範囲と 2 番目の入力の範囲から 1 つの要素から 1 つの要素のバイナリ ファンクタを適用することによって、2 つの入力の範囲を出力範囲に変換します。 `_Binary_op` シグネチャを持つ関数呼び出し演算子をサポートする必要があります`operator()(T, U)`場所`T`、`U`は 2 つの入力反復子の値の型。  
   
  詳細については、次を参照してください。[並列アルゴリズム](../../../parallel/concrt/parallel-algorithms.md)です。  
   
-##  <a name="receive"></a>受信  
+##  <a name="receive"></a>  受信  
  receive の一般的な実装です。これにより、コンテキストで 1 つのソースからのデータを待機し、受け取った値をフィルター処理できます。  
   
 ```
@@ -1305,7 +1307,7 @@ T receive(
   
  詳細については、次を参照してください。[メッセージを渡す関数](../../../parallel/concrt/message-passing-functions.md)です。  
   
-##  <a name="run_with_cancellation_token"></a>run_with_cancellation_token  
+##  <a name="run_with_cancellation_token"></a>  run_with_cancellation_token  
  関数オブジェクトを、指定されたキャンセル トークンのコンテキストですばやく同期的に実行します。  
   
 ```
@@ -1328,7 +1330,7 @@ void run_with_cancellation_token(
 ### <a name="remarks"></a>コメント  
  関数オブジェクトでは、任意の中断ポイントはトリガーされたときに、`cancellation_token`は取り消されます。 明示的なトークン`_Ct`を切り分けることがこの`_Func`別のトークンまたはトークンを設定せずに、親がある場合、親キャンセルからします。  
   
-##  <a name="send"></a>送信  
+##  <a name="send"></a>  send  
  ターゲットがメッセージを受け入れるか拒否するまで待機する同期送信操作です。  
   
 ```
@@ -1350,12 +1352,12 @@ bool send(ITarget<T>& _Trg, const T& _Data);
  送信されるデータへの参照。  
   
 ### <a name="return-value"></a>戻り値  
- `true`メッセージが受け入れられた場合`false`それ以外の場合。  
+ `true` メッセージが受け入れられた場合`false`それ以外の場合。  
   
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[メッセージを渡す関数](../../../parallel/concrt/message-passing-functions.md)です。  
   
-##  <a name="set_ambient_scheduler"></a>set_ambient_scheduler  
+##  <a name="set_ambient_scheduler"></a>  set_ambient_scheduler  
   
 ```
 inline void set_ambient_scheduler(std::shared_ptr<::Concurrency::scheduler_interface> _Scheduler);
@@ -1364,7 +1366,7 @@ inline void set_ambient_scheduler(std::shared_ptr<::Concurrency::scheduler_inter
 ### <a name="parameters"></a>パラメーター  
  `_Scheduler`  
   
-##  <a name="set_task_execution_resources"></a>set_task_execution_resources  
+##  <a name="set_task_execution_resources"></a>  set_task_execution_resources  
  同時実行ランタイムの内部ワーカー スレッドが使用する実行リソースを、指定された関係セットに制限します。  
   
  このメソッドの呼び出しは、リソース マネージャーの作成前、または 2 つのリソース マネージャーの有効期間の間のみ有効です。 これは、呼び出し時にリソース マネージャーが存在しない限り複数回呼び出すことができます。 関係の制限が設定されたら、次の有効な `set_task_execution_resources` メソッド呼び出しまで保持されます。  
@@ -1421,11 +1423,11 @@ inline void swap(
  同時実行ベクターを交換する要素を提供する、または要素と交換される、同時実行ベクターのベクトル`_A`です。  
   
 ### <a name="remarks"></a>コメント  
- コンテナー クラスに特化したアルゴリズムは、テンプレート関数は`concurrent_vector`メンバー関数を実行する`_A`です。 [concurrent_vector::swap](concurrent-vector-class.md#swap)( `_B`)。 これらは、コンパイラによる関数テンプレートの部分的な順序付けのインスタンスです。 テンプレートと関数呼び出しの照合が一意にならないようにテンプレート関数がオーバーロードされた場合、コンパイラは、最も特化したバージョンのテンプレート関数を選択します。 テンプレート関数の一般的なバージョン`template <class T> void swap(T&, T&)`アルゴリズムでクラスでは、割り当て、低速な処理です。 各コンテナー内の特化バージョンのほうが、コンテナー クラスの内部表現で使用できるため大幅に高速になります。  
+ コンテナー クラスに特化したアルゴリズムは、テンプレート関数は`concurrent_vector`メンバー関数を実行する`_A`です。 [concurrent_vector::swap](concurrent-vector-class.md#swap)( `_B`). これらは、コンパイラによる関数テンプレートの部分的な順序付けのインスタンスです。 テンプレートと関数呼び出しの照合が一意にならないようにテンプレート関数がオーバーロードされた場合、コンパイラは、最も特化したバージョンのテンプレート関数を選択します。 テンプレート関数の一般的なバージョン`template <class T> void swap(T&, T&)`アルゴリズムでクラスでは、割り当て、低速な処理です。 各コンテナー内の特化バージョンのほうが、コンテナー クラスの内部表現で使用できるため大幅に高速になります。  
   
  このメソッドは同時実行セーフではありません。 他のスレッドが実行されるありません操作の同時実行ベクターをこのメソッドを呼び出すとを確認する必要があります。  
   
-##  <a name="task_from_exception"></a>task_from_exception  
+##  <a name="task_from_exception"></a>  task_from_exception  
   
 ```
 template<typename _TaskType, typename _ExType>
@@ -1442,7 +1444,7 @@ task<_TaskType> task_from_exception(
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="task_from_result"></a>task_from_result  
+##  <a name="task_from_result"></a>  task_from_result  
   
 ```
 template<typename T>
@@ -1463,7 +1465,7 @@ inline task<void> task_from_result(
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="trace_agents_register_name"></a>Trace_agents_register_name  
+##  <a name="trace_agents_register_name"></a>  Trace_agents_register_name  
  指定された名前を、ETW トレースのメッセージ ブロックまたはエージェントに関連付けます。  
   
 ```
@@ -1483,7 +1485,7 @@ void Trace_agents_register_name(
  `_Name`  
  指定されたオブジェクトの名前です。  
   
-##  <a name="try_receive"></a>try_receive  
+##  <a name="try_receive"></a>  try_receive  
  try-receive の一般的な実装です。これにより、コンテキストで 1 つのソースに対してのみデータの検索を実行し、受け取った値をフィルター処理できます。 データが準備されていない場合、メソッドは false を返します。  
   
 ``` 
@@ -1525,7 +1527,7 @@ bool try_receive(
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。[メッセージを渡す関数](../../../parallel/concrt/message-passing-functions.md)です。  
   
-##  <a name="wait"></a>待機  
+##  <a name="wait"></a>  wait  
  指定した時間だけ現在のコンテキストを停止します。  
   
 ```
@@ -1539,7 +1541,7 @@ void __cdecl wait(unsigned int _Milliseconds);
 ### <a name="remarks"></a>コメント  
  このメソッドは同時実行ランタイム スケジューラのコンテキストで呼び出されると、スケジューラは、基になるリソース上で実行する別のコンテキストを検索します。 スケジューラは本質的に協調的であるために、このコンテキストは、正確に指定されたミリ秒数の後に再開できません。 スケジューラが、スケジューラに協調的譲渡なしで実行するその他のタスクを実行している場合は、待機時間が確実なできません。  
   
-##  <a name="when_all"></a>when_all  
+##  <a name="when_all"></a>  when_all  
  引数として指定されたすべてのタスクが正常に完了したときに正常に完了するタスクを作成します。  
   
 ```
@@ -1568,13 +1570,13 @@ auto when_all(
  入力したすべてのタスクが正常に完了したときに正常に完了するタスク。 入力したタスクの種類が `T` である場合、この関数の出力は `task<std::vector<T>>` になります。 入力したタスクの種類が `void` である場合、出力のタスクも `task<void>` になります。  
   
 ### <a name="remarks"></a>コメント  
- `when_all` は、その結果、`task` を生成する、非ブロッキング関数です。 異なり[task::wait](task-class.md#wait)、安全にこの関数を呼び出すことが、 [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] ASTA (アプリケーション STA) スレッド上のアプリです。  
+ `when_all` は、その結果、`task` を生成する、非ブロッキング関数です。 異なり[task::wait](task-class.md#wait)ASTA (アプリケーション STA) スレッドで UWP アプリでこの関数の呼び出しも安全です。  
   
  かつの場合、タスクの 1 つが取り消されたり、例外をスロー、返されるタスクは早期に完了、取り消しの状態に、例外が発生したときは、する場合がスローされますを呼び出す場合は[task::get](task-class.md#get)または`task::wait`タスクにします。  
   
  詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。  
   
-##  <a name="when_any"></a>when_any  
+##  <a name="when_any"></a>  when_any  
  引数として指定されたいずれかのタスクが正常に完了したときに正常に完了するタスクを作成します。  
   
 ```
@@ -1617,7 +1619,7 @@ auto when_any(
  入力したタスクのいずれかが正常に完了したときに正常に完了するタスク。 入力したタスクの種類が `T` である場合、この関数の出力は `task<std::pair<T, size_t>>>` になります。ここでは、pair の最初の要素は完了したタスクの結果であり、2 番目の要素は完了したタスクのインデックスです。 入力したタスクの種類が `void` である場合、出力は `task<size_t>` になります。この場合、結果は完了したタスクのインデックスです。  
   
 ### <a name="remarks"></a>コメント  
- `when_any` は、その結果、`task` を生成する、非ブロッキング関数です。 異なり[task::wait](task-class.md#wait)、安全にこの関数を呼び出すことが、 [!INCLUDE[win8_appname_long](../../../build/includes/win8_appname_long_md.md)] ASTA (アプリケーション STA) スレッド上のアプリです。  
+ `when_any` は、その結果、`task` を生成する、非ブロッキング関数です。 異なり[task::wait](task-class.md#wait)ASTA (アプリケーション STA) スレッドで UWP アプリでこの関数の呼び出しも安全です。  
   
  詳細については、次を参照してください。[タスクの並列化](../../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。  
   

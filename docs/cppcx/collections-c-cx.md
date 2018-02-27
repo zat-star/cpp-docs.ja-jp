@@ -6,18 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 914da30b-aac5-4cd7-9da3-a5ac08cdd72c
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 5c97a264488e8b382091b24cdef8faae4c7bbfc0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3b4f98b17ceb7e7ccde15d2b7def17ee1e57b5ff
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="collections-ccx"></a>コレクション (C++/CX)
 C + +/CX プログラムすることができますの標準テンプレート ライブラリ (STL) コンテナー、またはその他のユーザー定義コレクション型を自由に使用します。 ただし、コレクションを渡す場合前後 Windows ランタイム アプリケーション バイナリ インターフェイス (ABI) を越えて — たとえば、XAML コントロールまたは JavaScript クライアントに-Windows ランタイムのコレクション型を使用する必要があります。  
@@ -64,7 +65,7 @@ C + +/CX プログラムすることができますの標準テンプレート �
    
   
 ## <a name="vectorproxy-elements"></a>VectorProxy 要素  
- [Platform::Collections::VectorIterator](../cppcx/platform-collections-vectoriterator-class.md)と[Platform::Collections::VectorViewIterator](../cppcx/platform-collections-vectorviewiterator-class.md)の使用を有効にする`range for`ループおよび並列アルゴリズムと同様に[std::sort](../standard-library/algorithm-functions.md#sort)で、[IVector\<T >](http://msdn.microsoft.com/en-us/library/windows/apps/br206631.aspx)コンテナーです。 ただし、C++ ポインターの逆参照を使って `IVector` 要素にアクセスすることはできません。これらの要素には、 [GetAt](http://msdn.microsoft.com/library/windows/apps/br206634.aspx) メソッドと [SetAt](http://msdn.microsoft.com/library/windows/apps/br206642.aspx) メソッドを使ってアクセスすることしかできません。 したがって、これらの反復子は、STL の要求に従って、 `Platform::Details::VectorProxy<T>` プロキシ クラスおよび `Platform::Details::ArrowProxy<T>` プロキシ クラスを使用して `*`、 `->`、 `[]` の各演算子を介した個々の要素へのアクセスを提供します。 厳密には、 `IVector<Person^> vec`が指定されている場合、 `*begin(vec)` の型は `VectorProxy<Person^>`になります。 ただし、プロキシ オブジェクトは、ほとんどの場合、コードに対して透過的です。 これらのプロキシ オブジェクトは反復子によって内部でのみ使用されるため文書化されませんが、その機構の動作がわかっていると便利です。  
+ [Platform::Collections::VectorIterator](../cppcx/platform-collections-vectoriterator-class.md)と[Platform::Collections::VectorViewIterator](../cppcx/platform-collections-vectorviewiterator-class.md)の使用を有効にする`range for`ループおよび並列アルゴリズムと同様に[std::sort](../standard-library/algorithm-functions.md#sort) と[IVector\<T >](http://msdn.microsoft.com/en-us/library/windows/apps/br206631.aspx)コンテナーです。 ただし、C++ ポインターの逆参照を使って `IVector` 要素にアクセスすることはできません。これらの要素には、 [GetAt](http://msdn.microsoft.com/library/windows/apps/br206634.aspx) メソッドと [SetAt](http://msdn.microsoft.com/library/windows/apps/br206642.aspx) メソッドを使ってアクセスすることしかできません。 したがって、これらの反復子は、STL の要求に従って、 `Platform::Details::VectorProxy<T>` プロキシ クラスおよび `Platform::Details::ArrowProxy<T>` プロキシ クラスを使用して `*`、 `->`、 `[]` の各演算子を介した個々の要素へのアクセスを提供します。 厳密には、 `IVector<Person^> vec`が指定されている場合、 `*begin(vec)` の型は `VectorProxy<Person^>`になります。 ただし、プロキシ オブジェクトは、ほとんどの場合、コードに対して透過的です。 これらのプロキシ オブジェクトは反復子によって内部でのみ使用されるため文書化されませんが、その機構の動作がわかっていると便利です。  
   
  `range for` コンテナーに対して `IVector` ループを使用する場合は、 `auto&&` を使用して反復子変数が `VectorProxy` 要素に正しくバインドされるようにします。 `auto` または `auto&`を使用すると、コンパイラ警告 C4239 が発生し、警告テキストに `VectoryProxy` が示されます。  
   
@@ -135,11 +136,11 @@ void FindButton(UIElementCollection^ col)
   
 |Iterators|関数|  
 |---------------|---------------|  
-|[Platform::Collections::VectorIterator\<T >](../cppcx/platform-collections-vectoriterator-class.md)<br /><br /> (内部に格納[:foundation:: IVector\<T >](http://msdn.microsoft.com/library/windows/apps/br206631.aspx)と int です)。|[開始](../cppcx/begin-function.md)/ [終了](../cppcx/end-function.md)([:foundation:: IVector\<T >](http://msdn.microsoft.com/library/windows/apps/br206631.aspx))|  
+|[Platform::Collections::VectorIterator\<T>](../cppcx/platform-collections-vectoriterator-class.md)<br /><br /> (内部に格納[:foundation:: IVector\<T >](http://msdn.microsoft.com/library/windows/apps/br206631.aspx)と int です)。|[begin](../cppcx/begin-function.md)/ [end](../cppcx/end-function.md)([Windows::Foundation::Collections:: IVector\<T>](http://msdn.microsoft.com/library/windows/apps/br206631.aspx))|  
 |[Platform::Collections::VectorViewIterator\<T >](../cppcx/platform-collections-vectorviewiterator-class.md)<br /><br /> (内部に格納[IVectorView\<T >](http://msdn.microsoft.com/library/windows/apps/br226058.aspx)^ と int です)。|[開始](../cppcx/begin-function.md)/ [終了](../cppcx/end-function.md)([IVectorView\<T >](http://msdn.microsoft.com/library/windows/apps/br226058.aspx)^)|  
-|[Platform::Collections::InputIterator\<T >](../cppcx/platform-collections-inputiterator-class.md)<br /><br /> (内部に格納[IIterator\<T >](http://msdn.microsoft.com/library/windows/apps/br226026.aspx)^ と t です)。|[開始](../cppcx/begin-function.md)/ [終了](../cppcx/end-function.md)([IIterable\<T >](http://msdn.microsoft.com/library/windows/apps/br226024.aspx))|  
-|[Platform::Collections::InputIterator < IKeyValuePair\<K, V > ^ >](../cppcx/platform-collections-inputiterator-class.md)<br /><br /> (内部に格納[IIterator\<T >](http://msdn.microsoft.com/library/windows/apps/br226026.aspx)^ と t です)。|[開始](../cppcx/begin-function.md)/ [終了](../cppcx/end-function.md)([IMap\<K, V >](http://msdn.microsoft.com/library/windows/apps/br226042.aspx)です。|  
-|[Platform::Collections::InputIterator < IKeyValuePair\<K, V > ^ >](../cppcx/platform-collections-inputiterator-class.md)<br /><br /> (内部に格納[IIterator\<T >](http://msdn.microsoft.com/library/windows/apps/br226026.aspx)^ と t です)。|[begin](../cppcx/begin-function.md)/ [end](../cppcx/end-function.md) ([Windows::Foundation::Collections::IMapView](http://msdn.microsoft.com/library/windows/apps/br226037.aspx))|  
+|[Platform::Collections::InputIterator\<T>](../cppcx/platform-collections-inputiterator-class.md)<br /><br /> (内部に格納[IIterator\<T >](http://msdn.microsoft.com/library/windows/apps/br226026.aspx)^ と t です)。|[開始](../cppcx/begin-function.md)/ [終了](../cppcx/end-function.md)([IIterable\<T >](http://msdn.microsoft.com/library/windows/apps/br226024.aspx))|  
+|[Platform::Collections::InputIterator<IKeyValuePair\<K, V>^>](../cppcx/platform-collections-inputiterator-class.md)<br /><br /> (内部に格納[IIterator\<T >](http://msdn.microsoft.com/library/windows/apps/br226026.aspx)^ と t です)。|[begin](../cppcx/begin-function.md)/ [end](../cppcx/end-function.md) ([IMap\<K,V>](http://msdn.microsoft.com/library/windows/apps/br226042.aspx).|  
+|[Platform::Collections::InputIterator<IKeyValuePair\<K, V>^>](../cppcx/platform-collections-inputiterator-class.md)<br /><br /> (内部に格納[IIterator\<T >](http://msdn.microsoft.com/library/windows/apps/br226026.aspx)^ と t です)。|[begin](../cppcx/begin-function.md)/ [end](../cppcx/end-function.md) ([Windows::Foundation::Collections::IMapView](http://msdn.microsoft.com/library/windows/apps/br226037.aspx))|  
   
 ### <a name="collection-change-events"></a>コレクション変更イベント  
  `Vector` と `Map` は、XAML コレクションでのデータ バインドをサポートしていますが、これは、コレクション オブジェクトが変更またはリセットされたとき、またはコレクションのいずれかの要素が挿入、削除、または変更されたときに発生するイベントを実装することで実現されています。 データ バインドをサポートする独自の型を作成できます。ただし、 `Map` と `Vector` から継承することはできません。これらの型はシールされているためです。  

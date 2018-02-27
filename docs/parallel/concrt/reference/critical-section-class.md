@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - critical_section
 - CONCRT/concurrency::critical_section
@@ -17,19 +18,22 @@ f1_keywords:
 - CONCRT/concurrency::critical_section::try_lock
 - CONCRT/concurrency::critical_section::try_lock_for
 - CONCRT/concurrency::critical_section::unlock
-dev_langs: C++
-helpviewer_keywords: critical_section class
+dev_langs:
+- C++
+helpviewer_keywords:
+- critical_section class
 ms.assetid: fa3c89d6-be5d-4d1b-bddb-8232814e6cf6
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 5421cf47214d4ceeb7f8388835cb7a1cc57110ef
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c2b5bd48039cdf2cc477035abd2904387e194ee2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="criticalsection-class"></a>critical_section クラス
 同時実行ランタイムを明示的に認識する再入不可能なミューテックスです。  
@@ -82,7 +86,7 @@ class critical_section;
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>critical_section 
+##  <a name="ctor"></a> critical_section 
 
  新しい重要なセクションを構築します。  
   
@@ -90,7 +94,7 @@ class critical_section;
 critical_section();
 ```  
   
-##  <a name="dtor"></a>~ critical_section 
+##  <a name="dtor"></a> ~critical_section 
 
  クリティカル セクションを破棄します。  
   
@@ -101,7 +105,7 @@ critical_section();
 ### <a name="remarks"></a>コメント  
  デストラクターが実行されるときに、ロックが保持不要になったことが必要です。 未定義の動作で結果は保持もロックと消滅させるために重要なセクションを許可します。  
   
-##  <a name="lock"></a>ロック 
+##  <a name="lock"></a> ロック 
 
  この重要なセクションを取得します。  
   
@@ -114,7 +118,7 @@ void lock();
   
  ロックが呼び出し元のコンテキストによって既に保持されている場合、 [improper_lock](improper-lock-class.md)例外がスローされます。  
   
-##  <a name="native_handle"></a>native_handle 
+##  <a name="native_handle"></a> native_handle 
 
  1 つが存在する場合は、プラットフォーム固有のネイティブ ハンドルを返します。  
   
@@ -128,14 +132,14 @@ native_handle_type native_handle();
 ### <a name="remarks"></a>コメント  
  A`critical_section`オブジェクトに関連付けられていない Windows オペレーティング システムのプラットフォームの特定ネイティブ ハンドルです。 このメソッドは、単にオブジェクト自体への参照を返します。  
   
-##  <a name="critical_section__scoped_lock_class"></a>critical_section::scoped_lock クラス  
+##  <a name="critical_section__scoped_lock_class"></a>  critical_section::scoped_lock クラス  
  例外セーフ RAII ラッパー、`critical_section`オブジェクト。  
   
 ```
 class scoped_lock;
 ```  
   
-##  <a name="critical_section__scoped_lock_ctor"></a>scoped_lock::scoped_lock 
+##  <a name="critical_section__scoped_lock_ctor"></a> scoped_lock::scoped_lock 
 
  構築、`scoped_lock`オブジェクトを取得し、`critical_section`に渡されたオブジェクト、`_Critical_section`パラメーター。 クリティカル セクションが別のスレッドによって保持されている場合、この呼び出しはブロックされます。  
   
@@ -147,7 +151,7 @@ explicit _CRTIMP scoped_lock(critical_section& _Critical_section);
  `_Critical_section`  
  ロックには、重要なセクションです。  
   
-##  <a name="critical_section__scoped_lock_dtor"></a>scoped_lock:: ~ scoped_lock 
+##  <a name="critical_section__scoped_lock_dtor"></a> scoped_lock:: ~ scoped_lock 
 
  破棄、`scoped_lock`オブジェクトし、そのコンス トラクターで重要なセクションを解放します。  
   
@@ -155,7 +159,7 @@ explicit _CRTIMP scoped_lock(critical_section& _Critical_section);
 ~scoped_lock();
 ```  
   
-##  <a name="try_lock"></a>try_lock 
+##  <a name="try_lock"></a> try_lock 
 
  ブロックすることがなく、ロックの取得を試みます。  
   
@@ -166,7 +170,7 @@ bool try_lock();
 ### <a name="return-value"></a>戻り値  
  ロックが取得された場合、値`true`、それ以外の値`false`です。  
   
-##  <a name="try_lock_for"></a>try_lock_for 
+##  <a name="try_lock_for"></a> try_lock_for 
 
  特定のミリ秒数をブロックすることがなく、ロックの取得を試みます。  
   
@@ -181,7 +185,7 @@ bool try_lock_for(unsigned int _Timeout);
 ### <a name="return-value"></a>戻り値  
  ロックが取得された場合、値`true`、それ以外の値`false`です。  
   
-##  <a name="unlock"></a>ロックを解除します。 
+##  <a name="unlock"></a> ロックを解除します。 
 
  クリティカル セクションのロックを解除します。  
   

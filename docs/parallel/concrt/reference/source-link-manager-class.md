@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - source_link_manager
 - AGENTS/concurrency::source_link_manager
@@ -20,19 +21,22 @@ f1_keywords:
 - AGENTS/concurrency::source_link_manager::release
 - AGENTS/concurrency::source_link_manager::remove
 - AGENTS/concurrency::source_link_manager::set_bound
-dev_langs: C++
-helpviewer_keywords: source_link_manager class
+dev_langs:
+- C++
+helpviewer_keywords:
+- source_link_manager class
 ms.assetid: 287487cf-e0fe-4c35-aa3c-24f081d1ddae
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 67cf15c6681c989a2da2b4e6824fec6012c517bf
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f6368511a7e824e6e1bb69542815fce1e864a964
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="sourcelinkmanager-class"></a>source_link_manager クラス
 `source_link_manager` オブジェクトは、`ISource` ブロックへのメッセージング ブロック ネットワーク リンクを管理します。  
@@ -72,7 +76,7 @@ class source_link_manager;
 |----------|-----------------|  
 |[add](#add)|ソースへのリンクを追加、`source_link_manager`オブジェクト。|  
 |[begin](#begin)|最初の要素を指す反復子を返します、`source_link_manager`オブジェクト。|  
-|[含まれています](#contains)|検索、`network_link_registry`この`source_link_manager`の指定されたブロックのオブジェクト。|  
+|[contains](#contains)|検索、`network_link_registry`この`source_link_manager`の指定されたブロックのオブジェクト。|  
 |[count](#count)|リンクされたブロックの数をカウント、`source_link_manager`オブジェクト。|  
 |[reference](#reference)|参照を取得し、`source_link_manager`オブジェクト。|  
 |[register_target_block](#register_target_block)|これを保持しているターゲット ブロックを登録`source_link_manager`オブジェクト。|  
@@ -91,7 +95,7 @@ class source_link_manager;
   
  **名前空間:** concurrency  
   
-##  <a name="add"></a>追加 
+##  <a name="add"></a> 追加 
 
  ソースへのリンクを追加、`source_link_manager`オブジェクト。  
   
@@ -103,7 +107,7 @@ void add(_EType _Link);
  `_Link`  
  追加されるブロックへのポインター。  
   
-##  <a name="begin"></a>開始 
+##  <a name="begin"></a> 開始 
 
  最初の要素を指す反復子を返します、`source_link_manager`オブジェクト。  
   
@@ -117,7 +121,7 @@ iterator begin();
 ### <a name="remarks"></a>コメント  
  によって、反復子の最終の状態が示される、`NULL`リンクします。  
   
-##  <a name="contains"></a>含まれています 
+##  <a name="contains"></a> 含まれています 
 
  検索、`network_link_registry`この`source_link_manager`の指定されたブロックのオブジェクト。  
   
@@ -130,9 +134,9 @@ bool contains(_EType _Link);
  内で検索するのには、ブロックへのポインター、`source_link_manager`オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- `true`指定されたブロックが見つかった場合は`false`それ以外の場合。  
+ `true` 指定されたブロックが見つかった場合は`false`それ以外の場合。  
   
-##  <a name="count"></a>カウント 
+##  <a name="count"></a> カウント 
 
  リンクされたブロックの数をカウント、`source_link_manager`オブジェクト。  
   
@@ -143,7 +147,7 @@ size_t count();
 ### <a name="return-value"></a>戻り値  
  リンクされたブロック数、`source_link_manager`オブジェクト。  
   
-##  <a name="reference"></a>参照 
+##  <a name="reference"></a> 参照 
 
  参照を取得し、`source_link_manager`オブジェクト。  
   
@@ -151,7 +155,7 @@ size_t count();
 void reference();
 ```  
   
-##  <a name="register_target_block"></a>register_target_block 
+##  <a name="register_target_block"></a> register_target_block 
 
  これを保持しているターゲット ブロックを登録`source_link_manager`オブジェクト。  
   
@@ -163,7 +167,7 @@ void register_target_block(_Inout_ ITarget<typename _Block::source_type>* _PTarg
  `_PTarget`  
  これを保持しているターゲット ブロック`source_link_manager`オブジェクト。  
   
-##  <a name="release"></a>リリース 
+##  <a name="release"></a> リリース 
 
  参照を解放、`source_link_manager`オブジェクト。  
   
@@ -171,7 +175,7 @@ void register_target_block(_Inout_ ITarget<typename _Block::source_type>* _PTarg
 void release();
 ```  
   
-##  <a name="remove"></a>削除します。 
+##  <a name="remove"></a> 削除します。 
 
  リンクを削除、`source_link_manager`オブジェクト。  
   
@@ -184,9 +188,9 @@ bool remove(_EType _Link);
  削除する場合はブロックへのポインターが見つかりました。  
   
 ### <a name="return-value"></a>戻り値  
- `true`リンクが検出され、削除、`false`それ以外の場合。  
+ `true` リンクが検出され、削除、`false`それ以外の場合。  
   
-##  <a name="set_bound"></a>set_bound 
+##  <a name="set_bound"></a> set_bound 
 
  これを追加できる送信元のリンクの最大数を設定`source_link_manager`オブジェクト。  
   
@@ -198,7 +202,7 @@ void set_bound(size_t _MaxLinks);
  `_MaxLinks`  
  リンクの最大数。  
   
-##  <a name="ctor"></a>source_link_manager 
+##  <a name="ctor"></a> source_link_manager 
 
  `source_link_manager` オブジェクトを構築します。  
   
@@ -206,7 +210,7 @@ void set_bound(size_t _MaxLinks);
 source_link_manager();
 ```  
   
-##  <a name="dtor"></a>~ source_link_manager 
+##  <a name="dtor"></a> ~source_link_manager 
 
  `source_link_manager` オブジェクトを破棄します。  
   

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - array
 - AMP/array
@@ -25,19 +26,22 @@ f1_keywords:
 - AMP/Concurrency::array::associated_accelerator_view
 - AMP/Concurrency::array::cpu_access_type
 - AMP/Concurrency::array::extent
-dev_langs: C++
-helpviewer_keywords: array class
+dev_langs:
+- C++
+helpviewer_keywords:
+- array class
 ms.assetid: 0832b6c1-40f0-421d-9104-6b1baa0c63a7
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 5b76fcb181d955fc051ade5183b67b9d55b823ab
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6a8b7fa960fab118f527d12553725af794db3f0d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="array-class"></a>array クラス
 データをアクセラレータに移動するために使用するデータ コンテナーを表します。  
@@ -82,9 +86,9 @@ friend class array;
   
 |名前|説明|  
 |----------|-----------------|  
-|[演算子 std::vector&lt;value_type&gt;](#operator_vec)|使用して`copy(*this, vector)`へ暗黙的に変換、配列、std::[ベクター](../../../standard-library/vector-class.md)オブジェクト。|  
+|[operator std::vector&lt;value_type&gt;](#operator_vec)|使用して`copy(*this, vector)`へ暗黙的に変換、配列、std::[ベクター](../../../standard-library/vector-class.md)オブジェクト。|  
 |[operator()](#operator_call)|パラメーターによって指定された要素の値を返します。|  
-|[演算子](#operator_at)|指定したインデックス位置にある要素を返します。|  
+|[operator[]](#operator_at)|指定したインデックス位置にある要素を返します。|  
 |[operator=](#operator_eq)|指定された `array` オブジェクトの内容をこのオブジェクトにコピーします。|  
   
 ### <a name="public-constants"></a>パブリック定数  
@@ -127,7 +131,7 @@ friend class array;
   
  **名前空間:** Concurrency  
   
-##  <a name="dtor"></a>~ 配列 
+##  <a name="dtor"></a> ~ 配列 
 
  `array` オブジェクトを破棄します。  
   
@@ -135,7 +139,7 @@ friend class array;
 ~array() restrict(cpu);
 ```  
   
-##  <a name="accelerator_view"></a>accelerator_view 
+##  <a name="accelerator_view"></a> accelerator_view 
 
  取得、 [accelerator_view](accelerator-view-class.md)配列が割り当てられた場所を表すオブジェクト。 このプロパティは CPU 上でのみアクセスできます。  
   
@@ -143,7 +147,7 @@ friend class array;
 __declspec(property(get= get_accelerator_view)) Concurrency::accelerator_view accelerator_view;  
 ```  
   
-##  <a name="ctor"></a>配列 
+##  <a name="ctor"></a> 配列 
 
  新しいインスタンスを初期化、 [array クラス](array-class.md)です。 `array<T,N>` の既定のコンストラクターがありません。 すべてのコンストラクターは CPU でのみ実行されます。 これらは、Direct3D ターゲットで実行することはできません。  
   
@@ -446,7 +450,7 @@ array(array&& _Other) restrict(cpu);
  `value_type`  
  コピーされた要素のデータ型。  
   
-##  <a name="associated_accelerator_view"></a>associated_accelerator_view 
+##  <a name="associated_accelerator_view"></a> associated_accelerator_view 
 
  2 番目の取得[accelerator_view](accelerator-view-class.md)オブジェクトをインスタンス化するステージング コンス トラクターが呼び出されたときにパラメーターとして渡される、`array`オブジェクト。  
   
@@ -454,7 +458,7 @@ array(array&& _Other) restrict(cpu);
 __declspec(property(get= get_associated_accelerator_view)) Concurrency::accelerator_view associated_accelerator_view;  
 ```  
   
-##  <a name="copy_to"></a>copy_to 
+##  <a name="copy_to"></a> copy_to 
 
  内容をコピー、`array`別`array`です。  
   
@@ -470,7 +474,7 @@ void copy_to(
  `_Dest`  
  [Array_view](array-view-class.md)コピー先のオブジェクト。  
   
-##  <a name="cpu_access_type"></a>cpu_access_type 
+##  <a name="cpu_access_type"></a> cpu_access_type 
 
  この配列に許可されている CPU access_type を取得します。  
   
@@ -478,7 +482,7 @@ void copy_to(
 __declspec(property(get= get_cpu_access_type)) access_type cpu_access_type;  
 ```  
   
-##  <a name="data"></a>データ 
+##  <a name="data"></a> データ 
 
  `array` の生データへのポインターを返します。  
   
@@ -491,7 +495,7 @@ const value_type* data() const restrict(amp, cpu);
 ### <a name="return-value"></a>戻り値  
  配列の生データへのポインター。  
   
-##  <a name="extent"></a>エクステント 
+##  <a name="extent"></a> エクステント 
 
  取得、[エクステント](extent-class.md)の形状を定義するオブジェクト、`array`です。  
   
@@ -499,7 +503,7 @@ const value_type* data() const restrict(amp, cpu);
 __declspec(property(get= get_extent)) Concurrency::extent<_Rank> extent;  
 ```  
   
-##  <a name="get_accelerator_view"></a>get_accelerator_view 
+##  <a name="get_accelerator_view"></a> get_accelerator_view 
 
  返します、 [accelerator_view](accelerator-view-class.md) 、場所を表すオブジェクトを`array`オブジェクトが割り当てられます。 このプロパティは CPU 上でのみアクセスできます。  
   
@@ -510,7 +514,7 @@ Concurrency::accelerator_view get_accelerator_view() const;
 ### <a name="return-value"></a>戻り値  
  `accelerator_view` 、場所を表すオブジェクトを`array`オブジェクトが割り当てられます。  
   
-##  <a name="get_associated_accelerator_view"></a>get_associated_accelerator_view 
+##  <a name="get_associated_accelerator_view"></a> get_associated_accelerator_view 
 
  2 番目の取得[accelerator_view](accelerator-view-class.md)オブジェクトをインスタンス化するステージング コンス トラクターが呼び出されたときにパラメーターとして渡される、`array`オブジェクト。  
   
@@ -521,7 +525,7 @@ Concurrency::accelerator_view get_associated_accelerator_view() const ;
 ### <a name="return-value"></a>戻り値  
  2 番目[accelerator_view](accelerator-view-class.md)ステージング コンス トラクターに渡されるオブジェクト。  
   
-##  <a name="get_cpu_access_type"></a>get_cpu_access_type 
+##  <a name="get_cpu_access_type"></a> get_cpu_access_type 
 
  この配列に対して許可される CPU access_type を返します。  
   
@@ -531,7 +535,7 @@ access_type get_cpu_access_type() const restrict(cpu);
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="get_extent"></a>get_extent 
+##  <a name="get_extent"></a> get_extent 
 
  返します、[エクステント](extent-class.md)のオブジェクト、`array`です。  
   
@@ -542,7 +546,7 @@ Concurrency::extent<_Rank> get_extent() const restrict(amp,cpu);
 ### <a name="return-value"></a>戻り値  
  `extent`のオブジェクト、`array`です。  
   
-##  <a name="operator_vec"></a>演算子 std::vector&lt;value_type&gt; 
+##  <a name="operator_vec"></a> operator std::vector&lt;value_type&gt; 
 
  使用して`copy(*this, vector)`std::vector オブジェクトに配列を暗黙的に変換します。  
   
@@ -557,7 +561,7 @@ operator std::vector<value_type>() const restrict(cpu);
 ### <a name="return-value"></a>戻り値  
  配列に含まれるデータのコピーを含む型 `vector<T>` のオブジェクト。  
   
-##  <a name="operator_call"></a>operator() 
+##  <a name="operator_call"></a> operator() 
 
  パラメーターによって指定された要素の値を返します。  
   
@@ -598,7 +602,7 @@ typename details::_Projection_result_type<value_type,_Rank>::_Const_result_type 
 ### <a name="return-value"></a>戻り値  
  パラメーターで指定される要素の値。  
   
-##  <a name="operator_at"></a>演算子 
+##  <a name="operator_at"></a> operator[] 
 
  指定したインデックス位置にある要素を返します。  
   
@@ -623,7 +627,7 @@ typename details::_Projection_result_type<value_type,_Rank>::_Const_result_type 
 ### <a name="return-value"></a>戻り値  
  指定したインデックス位置にある要素。  
   
-##  <a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a> 演算子 = 
 
  指定した内容をコピー`array`オブジェクト。  
   
@@ -646,14 +650,14 @@ array& operator= (
 ### <a name="return-value"></a>戻り値  
  この `array` オブジェクトへの参照。  
   
-##  <a name="rank"></a>ランク 
+##  <a name="rank"></a> ランク 
 
  ランクを格納、`array`です。  
   
 ```  
 static const int rank = _Rank;  
 ```  
-## <a name="reinterpret_as"></a>reinterpret_as 
+## <a name="reinterpret_as"></a> reinterpret_as 
 
 1 次元 array_view を必要に応じてソース配列とは異なる値型を持つ場合もありますを介して配列ビットとして再解釈します。
 
@@ -667,7 +671,7 @@ array_view<const _Value_type2, 1> reinterpret_as() const restrict(amp,cpu);
 ``` 
   
 ### <a name="parameters"></a>パラメーター  
-`_Value_type2`返されるデータのデータ型。
+`_Value_type2` 返されるデータのデータ型。
 
 ### <a name="return-value"></a>戻り値
 Array_view または T から ElementType および N から 1 に削減ランクを再解釈が発生する要素の型と、配列に基づいている const の array_view オブジェクトの場合。
@@ -687,7 +691,7 @@ array_view<float,1> v = a.reinterpret_as<float>();
 assert(v.extent == 3*a.extent);
 ```  
   
-##  <a name="section"></a>セクション 
+##  <a name="section"></a> セクション 
 
  指定された原点にある `array` オブジェクトのサブセクションを返し、これは必要に応じて範囲が指定されます。  
   
@@ -789,7 +793,7 @@ array_view<const value_type,3> section(
 ### <a name="return-value"></a>戻り値  
  指定された原点にある `array` オブジェクトのサブセクションを返し、これは必要に応じて範囲が指定されます。 `index` オブジェクトのみを指定すると、サブセクションには `index` オブジェクトの要素のインデックスより大きなインデックスを持つ関連するグリッドのすべての要素が含まれます。  
   
-##  <a name="view_as"></a>view_as 
+##  <a name="view_as"></a> view_as 
 
  この配列としてビットとして再解釈、 [array_view](array-view-class.md)異なるランクのです。  
   
