@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp/Concurrency::direct3d::abs
 - amp/Concurrency::direct3d::countbits
@@ -24,31 +24,33 @@ f1_keywords:
 - amp/Concurrency::direct3d::smoothstep
 - amp/Concurrency::direct3d::step
 - amp/Concurrency::direct3d::umin
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 28943b62-52c9-42dc-baf1-ca7b095c1a19
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: ff24f75c27ee60a085a8f87256a96b65a57e523c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b200ce8329c10fe2257ca3ce9ca8cb61125390fc
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="concurrencydirect3d-namespace-functions-amp"></a>Concurrency::direct3d 名前空間の関数 (AMP)
 ||||  
 |-|-|-|  
-|[abs](#abs)|[クランプ](#clamp)|[countbits](#countbits)|
+|[abs](#abs)|[clamp](#clamp)|[countbits](#countbits)|
 |[create_accelerator_view](#create_accelerator_view)|||
 |[d3d_access_lock](#d3d_access_lock)|[d3d_access_try_lock](#d3d_access_try_lock)|[d3d_access_unlock](#d3d_access_unlock)|  
 |[firstbithigh](#firstbithigh)|[firstbitlow](#firstbitlow)|[get_buffer](#get_buffer)|  
 |[imax](#imax)|[imin](#imin)|[is_timeout_disabled](#is_timeout_disabled)|  
-|[mad](#mad)|[make_array](#make_array)|[ノイズ](#noise)|  
-|[ラジアン](#radians)|[rcp](#rcp)|[reversebits](#reversebits)|  
-|[飽和状態になります。](#saturate)|[サインイン](#sign)|[smoothstep](#smoothstep)|  
-|[手順](#step)|[umax](#umax)|[umin](#umin)|  
+|[mad](#mad)|[make_array](#make_array)|[noise](#noise)|  
+|[radians](#radians)|[rcp](#rcp)|[reversebits](#reversebits)|  
+|[saturate](#saturate)|[sign](#sign)|[smoothstep](#smoothstep)|  
+|[step](#step)|[umax](#umax)|[umin](#umin)|  
 
 ## <a name="requirements"></a>必要条件
 **ヘッダー:** amp.h **Namespace:**同時実行
@@ -67,7 +69,7 @@ inline int abs(int _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  引数の絶対値を返します。  
   
-##  <a name="clamp"></a>クランプ  
+##  <a name="clamp"></a>  clamp  
  2 番目および 3 番目に指定された引数によって定義される範囲に固定される 1 番目に指定された引数の値を計算します。  
   
 ```  
@@ -96,7 +98,7 @@ inline int clamp(
 ### <a name="return-value"></a>戻り値  
  `_X` の固定された値。  
   
-##  <a name="countbits"></a>countbits  
+##  <a name="countbits"></a>  countbits  
  _X 内で設定されているビットの数をカウントします。  
   
 ```  
@@ -110,7 +112,7 @@ inline unsigned int countbits(unsigned int _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  _X で設定されているビットの数を返します  
 
-## <a name="create_accelerator_view"></a>create_accelerator_view  
+## <a name="create_accelerator_view"></a> create_accelerator_view  
 作成、 [accelerator_view](accelerator-view-class.md) Direct3D デバイス インターフェイスへのポインターからのオブジェクト。  
   
 ## <a name="syntax"></a>構文  
@@ -150,7 +152,7 @@ accelerator_view create_accelerator_view(
  C++ AMP ランタイムは、`D3D11_CREATE_DEVICE_DEBUG` フラグを使用すると D3D デバッグ レイヤーを使用してデバッグ モードで詳細なエラー情報を提供します。  
   
   
-##  <a name="d3d_access_lock"></a>d3d_access_lock  
+##  <a name="d3d_access_lock"></a>  d3d_access_lock  
  accelerator_view と共有されるリソースに対して安全に D3D 演算を実行する目的で、accelerator_view のロックを取得します。 accelerator_view および内部でこの accelerator_view に関連付けられているすべての C++ AMP リソースは、演算を実行するときにこのロックを取得し、別のスレッドが D3D アクセス ロックを保持している間はブロックします。 このロックは非再帰的です。既にロックを保持しているスレッドからこの関数を呼び出したときの動作は定義されていません。 D3D のアクセスのロックを保持しているスレッドから、accelerator_view または accelerator_view に関連付けられているデータ コンテナーに対して演算を実行したときの動作は定義されていません。 スコープ ベースの D3D アクセス ロックの RAII スタイル クラスである、scoped_d3d_access_lock も参照してください。  
   
 ```  
@@ -161,7 +163,7 @@ void __cdecl d3d_access_lock(accelerator_view& _Av);
  `_Av`  
  ロックする accelerator_view。  
   
-##  <a name="d3d_access_try_lock"></a>d3d_access_try_lock  
+##  <a name="d3d_access_try_lock"></a>  d3d_access_try_lock  
  ブロックせずに、accelerator_view に対する D3D アクセスのロックを取得します。  
   
 ```  
@@ -175,7 +177,7 @@ bool __cdecl d3d_access_try_lock(accelerator_view& _Av);
 ### <a name="return-value"></a>戻り値  
  ロックが取得された場合は true。現在、別のスレッドによって保持されている場合は false。  
   
-##  <a name="d3d_access_unlock"></a>d3d_access_unlock  
+##  <a name="d3d_access_unlock"></a>  d3d_access_unlock  
  指定された accelerator_view に対する D3D アクセスのロックを解除します。 呼び出し元スレッドが accelerator_view のロックを保持しない場合、結果は未定義になります。  
   
 ```  
@@ -186,7 +188,7 @@ void __cdecl d3d_access_unlock(accelerator_view& _Av);
  `_Av`  
  ロックが解放される accelerator_view。  
   
-##  <a name="firstbithigh"></a>firstbithigh  
+##  <a name="firstbithigh"></a>  firstbithigh  
  最上位ビットから最下位ビットに移動する、最初に設定されたビットの位置を取得します。  
   
 ```  
@@ -200,7 +202,7 @@ inline int firstbithigh(int _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  最初に設定されたビットの位置  
   
-##  <a name="firstbitlow"></a>firstbitlow  
+##  <a name="firstbitlow"></a>  firstbitlow  
  最下位ビットから上位ビットに向かって操作し、_X 内で最初に設定されたビットの位置を取得します。  
   
 ```  
@@ -214,7 +216,7 @@ inline int firstbitlow(int _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  最初に設定されたビットの位置を返します  
   
-##  <a name="get_buffer"></a>get_buffer  
+##  <a name="get_buffer"></a>  get_buffer  
  指定した配列を基にする Direct3D バッファー インターフェイスを取得します。  
   
 ```  
@@ -239,7 +241,7 @@ IUnknown *get_buffer(
 ### <a name="return-value"></a>戻り値  
  配列の基になる Direct3D バッファーに対応する IUnknown インターフェイス ポインター。  
   
-##  <a name="imax"></a>imax  
+##  <a name="imax"></a>  imax  
  引数の最大数値を判断します。  
   
 ```  
@@ -258,7 +260,7 @@ inline int imax(
 ### <a name="return-value"></a>戻り値  
  引数の最大数値を返します。  
   
-##  <a name="imin"></a>imin  
+##  <a name="imin"></a>  imin  
  引数の最小数値を判断します。  
   
 ```  
@@ -277,7 +279,7 @@ inline int imin(
 ### <a name="return-value"></a>戻り値  
  引数の最小数値を返します。  
   
-##  <a name="is_timeout_disabled"></a>is_timeout_disabled  
+##  <a name="is_timeout_disabled"></a>  is_timeout_disabled  
  指定された accelerator_view についてタイムアウトが無効であるかどうかを示すブール型のフラグを返します。 これは、Direct3D デバイス作成のための D3D11_CREATE_DEVICE_DISABLE_GPU_TIMEOUT フラグに対応します。  
   
 ```  
@@ -291,7 +293,7 @@ bool __cdecl is_timeout_disabled(const accelerator_view& _Accelerator_view);
 ### <a name="return-value"></a>戻り値  
  指定された accelerator_view についてタイムアウトが無効であるかどうかを示すブール型のフラグ。  
   
-##  <a name="mad"></a>mad  
+##  <a name="mad"></a>  mad  
  1 番目と 2 番目の指定された引数の積を計算し、3 番目の指定された引数を加算します。  
   
 ```  
@@ -332,7 +334,7 @@ inline unsigned int mad(
 ### <a name="return-value"></a>戻り値  
  結果`_X`  *  `_Y`  + `_Z`です。  
   
-##  <a name="make_array"></a>make_array  
+##  <a name="make_array"></a>  make_array  
  Direct3D バッファーのインターフェイス ポインターから配列を作成します。  
   
 ```  
@@ -365,7 +367,7 @@ array<value_type, _Rank> make_array(
 ### <a name="return-value"></a>戻り値  
  用意された Direct3D バッファーを使用して作成された配列。  
   
-##  <a name="noise"></a>ノイズ  
+##  <a name="noise"></a>  ノイズ  
  パーリン ノイズ アルゴリズムを使用して、ランダムな値が生成されます。  
   
 ```  
@@ -379,7 +381,7 @@ inline float noise(float _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  -1 ~ 1 の間の範囲内のパーリン ノイズの値を返します  
   
-##  <a name="radians"></a>ラジアン  
+##  <a name="radians"></a>  radians  
  _X を角度からラジアンに変換します。  
   
 ```  
@@ -393,7 +395,7 @@ inline float radians(float _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  _X を角度からラジアンに変換を返します  
   
-##  <a name="rcp"></a>rcp  
+##  <a name="rcp"></a>  rcp  
  高速近似計算を使用して指定された引数の逆数を計算します。  
   
 ```  
@@ -410,7 +412,7 @@ inline double rcp(double _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  指定された引数の逆数。  
   
-##  <a name="reversebits"></a>reversebits  
+##  <a name="reversebits"></a>  reversebits  
  _X 内のビットの順序を反転させます。  
   
 ```  
@@ -424,7 +426,7 @@ inline unsigned int reversebits(unsigned int _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  _X の逆にビットの順序と値を返します。  
   
-##  <a name="saturate"></a>飽和状態になります。  
+##  <a name="saturate"></a>  saturate  
  0 ～ 1 の範囲内で _X をクランプします。  
   
 ```  
@@ -438,7 +440,7 @@ inline float saturate(float _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  0 ~ 1 の範囲内で固定 _X を返します  
   
-##  <a name="sign"></a>サインイン  
+##  <a name="sign"></a>  sign  
  指定された引数の符号を確認します。  
   
 ```  
@@ -452,7 +454,7 @@ inline int sign(int _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  引数の符号。  
   
-##  <a name="smoothstep"></a>smoothstep  
+##  <a name="smoothstep"></a>  smoothstep  
  _X が [_Min, _Max] の範囲内にある場合、0 ～ 1 の滑らかなエルミート補間を返します。  
   
 ```  
@@ -475,7 +477,7 @@ inline float smoothstep(
 ### <a name="return-value"></a>戻り値  
  _X が _Min; より小さい場合は 0 を返します_X が _Max; より大きい場合は 1それ以外の場合、0 ~ 1 の場合、_X が [_Min, _Max] の範囲内の値  
   
-##  <a name="step"></a>手順  
+##  <a name="step"></a>  step  
  2 つの値を比較し、どちらの値が大きいかに応じて 0 または 1 を返します。  
   
 ```  
@@ -494,7 +496,7 @@ inline float step(
 ### <a name="return-value"></a>戻り値  
  _X の _Y; 以上場合 1 を返しますそれ以外の場合、0  
   
-##  <a name="umax"></a>umax  
+##  <a name="umax"></a>  umax  
  引数の最大数値を判断します。  
   
 ```  
@@ -513,7 +515,7 @@ inline unsigned int umax(
 ### <a name="return-value"></a>戻り値  
  引数の最大数値を返します。  
   
-##  <a name="umin"></a>umin  
+##  <a name="umin"></a>  umin  
  引数の最小数値を判断します。  
   
 ```  

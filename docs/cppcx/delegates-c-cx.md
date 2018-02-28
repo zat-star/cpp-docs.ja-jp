@@ -6,18 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 3175bf1c-86d8-4eda-8d8f-c5b6753d8e38
-caps.latest.revision: "30"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 3612421c9089fbb97c0bf256040c8082cad01afc
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aca49513c52c5eff9c10461281bb4235fa39349f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="delegates-ccx"></a>デリゲート (C++/CX)
 `delegate`関数オブジェクトには、標準 C++ の Windows ランタイムに相当する参照型を宣言するキーワードを使用します。 関数シグネチャに似たデリゲート宣言。これは、ラップされた関数が持つ必要のある、戻り値の型およびパラメーターの型を指定します。 これは、ユーザー定義のデリゲート宣言です。  

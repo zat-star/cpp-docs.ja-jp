@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xlocmon/std::money_get
 - xlocmon/std::money_get::char_type
@@ -14,7 +15,8 @@ f1_keywords:
 - xlocmon/std::money_get::string_type
 - xlocmon/std::money_get::do_get
 - xlocmon/std::money_get::get
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::money_get [C++]
 - std::money_get [C++], char_type
@@ -23,16 +25,17 @@ helpviewer_keywords:
 - std::money_get [C++], do_get
 - std::money_get [C++], get
 ms.assetid: 692d3374-3fe7-4b46-8aeb-f8d91ed66b2e
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 9c823f6ddc688a697d82835995b2fda86a2feb44
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c4566a9b640a73687b3bf48c1346af711d450b73
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="moneyget-class"></a>money_get クラス
 このテンプレート クラスは、`CharType` 型のシーケンスから通貨値への変換を制御するためにロケール ファセットとして使用できるオブジェクトを表します。  
@@ -154,13 +157,13 @@ virtual iter_type do_get(iter_type first,
   
 - **要素**です。 [frac_digits](../standard-library/moneypunct-class.md#frac_digits)小数点の右側に大幅な小数点以下桁数の数を決定します。 `frac_digits` によって要求される小数桁数を上回る桁数の値を解析する場合、`do_get` は最大で `frac_digits` 文字を処理した後、解析を停止します。  
   
- 場合、記号の文字列 (**要素**です。 `negative_sign`または**要素**です。 `positive_sign`) に複数の要素、最初の要素のみがある場所の照合要素と等しい**money_base::sign**形式パターンに表示されます (**要素**です。 `neg_format`) 残りの要素は、通貨入力フィールドの末尾で一致します。 いずれの文字列も通貨入力フィールド内の先頭の要素が次の要素と一致していない場合、符号文字列は空と見なされ、符号は正になります。  
+ 場合、記号の文字列 (**要素**です。 `negative_sign` または**要素**です。 `positive_sign`) に複数の要素、最初の要素のみがある場所の照合要素と等しい**money_base::sign**形式パターンに表示されます (**要素**です。 `neg_format`) 残りの要素は、通貨入力フィールドの末尾で一致します。 いずれの文字列も通貨入力フィールド内の先頭の要素が次の要素と一致していない場合、符号文字列は空と見なされ、符号は正になります。  
   
- 場合**iosbase**です。 [フラグ](../standard-library/ios-base-class.md#flags) & [showbase](../standard-library/ios-functions.md#showbase) 0 以外の場合は、文字列**要素**です。 `curr_symbol`where が一致する必要があります、要素と等しい**money_base::symbol**形式パターンに表示されます。 このようにしないと、書式パターンの末尾に **money_base::symbol** が出現する場合、および一致せずに残っている符号文字列の要素がない場合に、通貨記号は一致しません。 それ以外の場合は、必要に応じて通貨記号が一致します。  
+ 場合**iosbase**です。 [フラグ](../standard-library/ios-base-class.md#flags) & [showbase](../standard-library/ios-functions.md#showbase) 0 以外の場合は、文字列**要素**です。 `curr_symbol` where が一致する必要があります、要素と等しい**money_base::symbol**形式パターンに表示されます。 このようにしないと、書式パターンの末尾に **money_base::symbol** が出現する場合、および一致せずに残っている符号文字列の要素がない場合に、通貨記号は一致しません。 それ以外の場合は、必要に応じて通貨記号が一致します。  
   
- インスタンスがない場合**要素**です。 `thousands_sep`通貨入力フィールドの値の部分で発生する (ここで、要素と等しい**money_base::value**形式パターンに表示されます)、グループ化の制約が課せられなかった。 によって、グループ化の制約が課されるそれ以外の場合、**要素**です。 **グループ化**が適用されます。 結果の数字のシーケンスを表す整数低位注**要素**です。 `frac_digits`小数点以下桁数、小数点の右側と見なされます。  
+ インスタンスがない場合**要素**です。 `thousands_sep` 通貨入力フィールドの値の部分で発生する (ここで、要素と等しい**money_base::value**形式パターンに表示されます)、グループ化の制約が課せられなかった。 によって、グループ化の制約が課されるそれ以外の場合、**要素**です。 **グループ化**が適用されます。 結果の数字のシーケンスを表す整数低位注**要素**です。 `frac_digits` 小数点以下桁数、小数点の右側と見なされます。  
   
- 任意の余白は、書式パターンの末尾以外に出現する場合、**money_base::space** と等しい要素が書式パターンに出現しているときに一致します。 それ以外の場合、内部の余白は一致しません。 要素*ch*と見なされます空白[use_facet](../standard-library/locale-functions.md#use_facet) < [ctype](../standard-library/ctype-class.md) \< **CharType**>> (**iosbase**です。 [getloc](../standard-library/ios-base-class.md#getloc))。 [は](../standard-library/ctype-class.md#is)( **ctype_base::space**、 *ch*) は**true**です。  
+ 任意の余白は、書式パターンの末尾以外に出現する場合、**money_base::space** と等しい要素が書式パターンに出現しているときに一致します。 それ以外の場合、内部の余白は一致しません。 要素*ch*と見なされます空白[use_facet](../standard-library/locale-functions.md#use_facet) < [ctype](../standard-library/ctype-class.md) \< **CharType**>> (**iosbase**です。 [getloc](../standard-library/ios-base-class.md#getloc))。 [is](../standard-library/ctype-class.md#is)( **ctype_base::space**、 *ch*) は**true**です。  
   
 ### <a name="example"></a>例  
   [get](#get) の例 (`do_get` を呼び出す) を参照してください。  
@@ -286,11 +289,11 @@ explicit money_get(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: これらの値が定義されていません。  
   
  デストラクターが保護されているため、利用できる直接的な例はありません。  
   
- コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)( **_***Refs*) を使用して、その基本オブジェクトを初期化します。  
+ コンス トラクターは、ベース オブジェクトと**ロケール::**[ファセット](../standard-library/locale-class.md#facet_class)(**_ * * * Refs*)。  
   
 ##  <a name="string_type"></a>  money_get::string_type  
  **CharType** 型の文字を格納する文字列を表す型。  
