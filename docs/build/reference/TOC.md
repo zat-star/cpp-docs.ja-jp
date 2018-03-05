@@ -148,6 +148,7 @@
 ##### [/Zc: throwingNew (演算子の新しいスローの仮定)](zc-throwingnew-assume-operator-new-throws.md)
 ##### [/Zc:trigraphs (トライグラフの置換)](zc-trigraphs-trigraphs-substitution.md)
 ##### [/Zc:wchar_t (wchar_t をネイティブ型として認識)](zc-wchar-t-wchar-t-is-native-type.md)
+#### [/Zf (PDB 生成の高速化)](zf.md)
 #### [/Zg (関数プロトタイプの生成)](zg-generate-function-prototypes.md)
 #### [/Zl (既定のライブラリ名の省略)](zl-omit-default-library-name.md)
 #### [/Zm (プリコンパイル済みヘッダーのメモリ割り当て制限の指定)](zm-specify-precompiled-header-memory-allocation-limit.md)
