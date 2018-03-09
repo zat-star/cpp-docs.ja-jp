@@ -19,14 +19,14 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 74ee1bbcf1a39171b18c09274543c72e0b844748
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: db5e8551adff9752cbcaca3f4dc7d3c4a7fca908
+ms.sourcegitcommit: c770a343def04ae77522708387c3f7c470e49969
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="aggregates-and-unions"></a>集約と共用体
-配列、構造体、共用体などの他の種類には、確実に一貫した集約と共用体記憶域とデータ取得厳しいアラインメント要件があります。 配列、構造、および共用体の定義を次に示します。  
+配列、構造体、および共用体などの他の種類には、確実に一貫した集約と共用体記憶域とデータ取得厳しいアラインメント要件があります。 配列、構造、および共用体の定義を次に示します。  
   
  配列  
  連続するデータ オブジェクトの順序付きのグループが含まれています。 各オブジェクトには、要素は呼び出されます。 配列内のすべての要素は、同じサイズとデータ型を持ちます。  
@@ -44,17 +44,17 @@ ms.lasthandoff: 12/21/2017
 |スカラー型|C データ型|必要な配置|  
 |**INT8**|`char`|Byte|  
 |**UINT8**|`unsigned char`|Byte|  
-|**INT16 型**|**short**|Word|  
-|**UINT16 型**|**unsigned short**|Word|  
+|**INT16**|**short**|Word|  
+|**UINT16**|**unsigned short**|Word|  
 |**INT32**|**int、long**|ダブルワード|  
-|**UINT32**|**符号なし int、unsigned long**|ダブルワード|  
+|**UINT32**|**unsigned int, unsigned long**|ダブルワード|  
 |**INT64**|`__int64`|Quadword|  
 |**UINT64**|**unsigned __int64**|Quadword|  
 |**FP32 (1 つの有効桁数)**|**float**|ダブルワード|  
 |**FP64 (有効桁数を 2 つ)**|**double**|Quadword|  
-|**ポインター**|**\***|Quadword|  
-|`__m64`|**構造体 _ _m64**|Quadword|  
-|`__m128`|**_ _m128 の構造体**|Octaword|  
+|**POINTER**|**\***|Quadword|  
+|`__m64`|**struct __m64**|Quadword|  
+|`__m128`|**struct __m128**|Octaword|  
   
  次の集計の配置ルールが適用されます。  
   
