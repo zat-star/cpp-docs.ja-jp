@@ -510,7 +510,7 @@ virtual void OnDeactivate();
   
  元に戻す状態情報は無条件にこの時点でします。  
   
- 詳細については、記事を参照してください[アクティベーション](../../mfc/activation-cpp.md).。  
+ 詳細については、記事を参照してください[アクティベーション](../../mfc/activation-cpp.md)..  
   
 ##  <a name="ondeactivateui"></a>COleServerDoc::OnDeactivateUI  
  ユーザーには、インプレース アクティブになったアイテムが非アクティブ化時に呼び出されます。  
@@ -542,7 +542,7 @@ virtual void OnDocWindowActivate(BOOL bActivate);
 ### <a name="remarks"></a>コメント  
  既定の実装で、削除するかに応じて、フレーム レベルのユーザー インターフェイス要素を追加します。 アイテムを持つドキュメントがアクティブ化または非アクティブ化されたときに、追加のアクションを実行する場合は、この関数をオーバーライドします。  
   
- 詳細については、記事を参照してください[アクティベーション](../../mfc/activation-cpp.md).。  
+ 詳細については、記事を参照してください[アクティベーション](../../mfc/activation-cpp.md)..  
   
 ##  <a name="onexecolecmd"></a>COleServerDoc::OnExecOleCmd  
  フレームワークは、コマンドのヘルプを表示または指定されたコマンドを実行するには、この関数を呼び出します。  
@@ -619,7 +619,7 @@ virtual void OnFrameWindowActivate(BOOL bActivate);
 ### <a name="remarks"></a>コメント  
  既定の実装では、フレーム ウィンドウのヘルプ モードをキャンセルします。 フレーム ウィンドウがアクティブ化または非アクティブ化されたときに、特別な処理を実行する場合は、この関数をオーバーライドします。  
   
- 詳細については、記事を参照してください[アクティベーション](../../mfc/activation-cpp.md).。  
+ 詳細については、記事を参照してください[アクティベーション](../../mfc/activation-cpp.md)..  
   
 ##  <a name="ongetembeddeditem"></a>COleServerDoc::OnGetEmbeddedItem  
  コンテナー アプリケーションが作成または埋め込みアイテムを編集するサーバー アプリケーションを呼び出すときに、フレームワークによって呼び出されます。  

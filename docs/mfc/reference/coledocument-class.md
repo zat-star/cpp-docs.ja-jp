@@ -129,9 +129,9 @@ class COleDocument : public CDocument
   
  単純なコンテナー アプリケーションを作成している場合からドキュメント クラスを派生させる`COleDocument`です。 ドキュメントが含まれている埋め込みアイテムへのリンクをサポートするコンテナー アプリケーションを作成している場合からドキュメント クラスを派生させる[直接](../../mfc/reference/colelinkingdoc-class.md)です。 作成する場合、サーバー アプリケーションまたは組み合わせのコンテナー/サーバー、クラス、ドキュメントから[COleServerDoc](../../mfc/reference/coleserverdoc-class.md)です。 `COleLinkingDoc`および`COleServerDoc`から派生した`COleDocument`ので、これらのクラスは継承で使用できるすべてのサービス、`COleDocument`と**CDocument**です。  
   
- 使用する`COleDocument`クラスの派生、およびアプリケーションの非 OLE データだけでなく埋め込みまたはリンクされた項目を管理する機能を追加します。 定義した場合`CDocItem`-アプリケーションのネイティブ データを格納するクラスを派生によって定義された既定の実装を使用することができます`COleDocument`OLE と非 OLE データの両方を格納します。 OLE 項目から個別に非 OLE データを格納するための独自のデータ構造を設計することもできます。 詳細については、記事を参照してください[コンテナー: 複合ファイル](../../mfc/containers-compound-files.md).。  
+ 使用する`COleDocument`クラスの派生、およびアプリケーションの非 OLE データだけでなく埋め込みまたはリンクされた項目を管理する機能を追加します。 定義した場合`CDocItem`-アプリケーションのネイティブ データを格納するクラスを派生によって定義された既定の実装を使用することができます`COleDocument`OLE と非 OLE データの両方を格納します。 OLE 項目から個別に非 OLE データを格納するための独自のデータ構造を設計することもできます。 詳細については、記事を参照してください[コンテナー: 複合ファイル](../../mfc/containers-compound-files.md)..  
   
- **CDocument**メール サポート (MAPI) が存在する場合、メールを使用して、ドキュメントの送信をサポートします。 `COleDocument`更新が[OnFileSendMail](#onfilesendmail)複合ドキュメントを正しく処理します。 詳細については、記事を参照してください[MAPI](../../mfc/mapi.md)と[MFC での MAPI サポート](../../mfc/mapi-support-in-mfc.md).。  
+ **CDocument**メール サポート (MAPI) が存在する場合、メールを使用して、ドキュメントの送信をサポートします。 `COleDocument`更新が[OnFileSendMail](#onfilesendmail)複合ドキュメントを正しく処理します。 詳細については、記事を参照してください[MAPI](../../mfc/mapi.md)と[MFC での MAPI サポート](../../mfc/mapi-support-in-mfc.md)..  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CObject](../../mfc/reference/cobject-class.md)  
@@ -205,7 +205,7 @@ void EnableCompoundFile(BOOL bEnable = TRUE);
  複合ファイルのサポートを有効または無効になっているかどうかを指定します。  
   
 ### <a name="remarks"></a>コメント  
- これは構造化ストレージとも呼ばれます。 通常のコンス トラクターからこの関数を呼び出す、 `COleDocument`-クラスを派生します。 複合ドキュメントの詳細については、記事を参照してください[コンテナー: 複合ファイル](../../mfc/containers-compound-files.md).。  
+ これは構造化ストレージとも呼ばれます。 通常のコンス トラクターからこの関数を呼び出す、 `COleDocument`-クラスを派生します。 複合ドキュメントの詳細については、記事を参照してください[コンテナー: 複合ファイル](../../mfc/containers-compound-files.md)..  
   
  このメンバー関数を呼び出さない場合は、構造化されていない ("") フラットファイルの形式でドキュメントに格納されています。  
   
@@ -372,7 +372,7 @@ afx_msg void OnFileSendMail();
   
  実装とは異なり`OnFileSendMail`の**CDocument**、この関数は、複合ファイルを正しく処理されます。  
   
- 詳細については、次を参照してください、 [MAPI トピック](../../mfc/mapi.md)と[MFC での MAPI サポート](../../mfc/mapi-support-in-mfc.md)記事.。  
+ 詳細については、次を参照してください、 [MAPI トピック](../../mfc/mapi.md)と[MFC での MAPI サポート](../../mfc/mapi-support-in-mfc.md)記事..  
   
 ##  <a name="onshowviews"></a>COleDocument::OnShowViews  
  フレームワークは、状態の変更、ドキュメントの表示後にこの関数を呼び出します。  

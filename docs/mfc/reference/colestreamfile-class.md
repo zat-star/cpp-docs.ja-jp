@@ -74,7 +74,7 @@ class COleStreamFile : public CFile
   
  `COleStreamFile`同様にオブジェクトが操作される[CFile](../../mfc/reference/cfile-class.md)オブジェクト。  
   
- ストリームとストレージ操作の詳細については、記事を参照してください[コンテナー: 複合ファイル](../../mfc/containers-compound-files.md).。  
+ ストリームとストレージ操作の詳細については、記事を参照してください[コンテナー: 複合ファイル](../../mfc/containers-compound-files.md)..  
   
  詳細については、次を参照してください。 [IStream](http://msdn.microsoft.com/library/windows/desktop/aa380034)と[IStorage](http://msdn.microsoft.com/library/windows/desktop/aa380015) Windows SDK に含まれています。  
   
