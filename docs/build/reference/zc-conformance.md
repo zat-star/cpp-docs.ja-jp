@@ -1,12 +1,9 @@
 ---
-title: "-Zc (準拠) |Microsoft ドキュメント"
+title: "/Zc (準拠) |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 9/29/2017
-ms.reviewer: 
-ms.suite: 
+ms.date: 03/06/2018
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - /zc
@@ -18,17 +15,16 @@ helpviewer_keywords:
 - Conformance compiler options
 - Zc compiler options [C++]
 ms.assetid: db1cc175-6e93-4a2e-9396-c3725d2d8f71
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ba64cf2e866579b3377e57445c98eb9a436a1edd
-ms.sourcegitcommit: ef2a263e193410782c6dfe47d00764263439537c
+ms.openlocfilehash: dda62dc6644fd49cf9213b176a4efe563474f740
+ms.sourcegitcommit: eeb2b5ad8d3d22514a7b9bd7d756511b69ae0ccf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="zc-conformance"></a>/Zc (準拠)
 
@@ -36,11 +32,11 @@ ms.lasthandoff: 01/17/2018
 
 ## <a name="syntax"></a>構文
 
-> /Zc:_option_{,_option_}
+> **/Zc:**_option_{,_option_}
 
 ## <a name="remarks"></a>コメント
 
-Visual Studio には、C または C++ 規格と互換性がない拡張機能が実装されているが、ときに行うこともできます、`/Zc`準拠オプションまたは Microsoft 固有の標準準拠の動作を指定します。 いくつかのオプションでは、Microsoft 固有の動作は既存のコードを大規模な重大な変更を防ぐために、既定値です。 それ以外の場合に、既定値は、セキュリティ、パフォーマンス、または互換性の機能強化が重大な変更のコストを上回る場合、標準の動作ではします。 準拠の各オプションの既定の設定は、新しいバージョンの Visual Studio で変更できます。 準拠の各オプションの詳細については、特定のオプションのトピックを参照してください。
+Visual Studio には、C または C++ 規格と互換性がない拡張機能が実装されているが、ときに行うこともできます、`/Zc`準拠オプションまたは Microsoft 固有の標準準拠の動作を指定します。 いくつかのオプションでは、Microsoft 固有の動作は既存のコードを大規模な重大な変更を防ぐために、既定値です。 それ以外の場合に、既定値は、セキュリティ、パフォーマンス、または互換性の機能強化が重大な変更のコストを上回る場合、標準の動作ではします。 準拠の各オプションの既定の設定は、新しいバージョンの Visual Studio で変更できます。 準拠の各オプションの詳細については、特定のオプションのトピックを参照してください。 [寛容/-](permissive-standards-conformance.md)コンパイラ オプションは、の準拠設定に既定で設定されていない準拠オプションを暗黙的に設定します。
 
 これらは、`/Zc`コンパイラ オプション。
 
@@ -61,7 +57,8 @@ Visual Studio には、C または C++ 規格と互換性がない拡張機能�
 |[threadSafeInit\[-\]](zc-threadsafeinit-thread-safe-local-static-initialization.md)|スレッド セーフであるローカルの静的な初期化を有効にする (で既定で)。|
 |[throwingNew\[-\]](zc-throwingnew-assume-operator-new-throws.md)|想定`operator new`でエラーがスローされます (既定でオフ)。|
 |[trigraphs\[-\]](zc-trigraphs-trigraphs-substitution.md)|トライグラフ (廃止、オフ既定) を有効にします。|
-|[wchar_t\[-\]](zc-wchar-t-wchar-t-is-native-type.md)|`wchar_t`ネイティブ型を typedef ではありません (で既定で)。|
+|[twoPhase-](zc-twophase.md)|解析の動作 (既定では準拠している) 非準拠のテンプレートを使用します。|
+|[wchar_t\[-\]](zc-wchar-t-wchar-t-is-native-type.md)|`wchar_t` ネイティブ型を typedef ではありません (で既定で)。|
 
 Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandard Behavior](../../cpp/nonstandard-behavior.md)」をご覧ください。
 

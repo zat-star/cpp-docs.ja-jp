@@ -1,6 +1,6 @@
 ---
 title: "/Zc:ternary (演算子の条件付き規則の実施) |Microsoft ドキュメント"
-ms.date: 1/12/2018
+ms.date: 3/06/2018
 ms.technology:
 - cpp-tools
 ms.topic: article
@@ -15,11 +15,11 @@ helpviewer_keywords:
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c2c4f4e17d3cf72284ec68cf10e75824722d5440
-ms.sourcegitcommit: ef2a263e193410782c6dfe47d00764263439537c
+ms.openlocfilehash: 198da679e9d0d7bd58e034ca9c04c3102748af20
+ms.sourcegitcommit: eeb2b5ad8d3d22514a7b9bd7d756511b69ae0ccf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="zcternary-enforce-conditional-operator-rules"></a>/Zc:ternary (演算子の条件付き規則の適用)
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 01/17/2018
 
 Visual Studio 15.3 のバージョンでは C++ の標準的な条件 (三項) 演算子のコンパイラ サポート (**?:**) 動作します。 C++ 標準では、いずれかのオペランドは、cv 修飾子と同じ型のまたは 1 つだけのオペランドが同じ型と、他の cv 修飾子に明確に変換できるかに throw 式を指定する 1 つまたは両方のオペランドが必要です。 Visual Studio version 15.5 より前に、のバージョンでは、コンパイラは、標準であいまいと見なされる変換を許可します。 ときに、 **/Zc:ternary**オプションを指定すると、コンパイラは、標準に準拠しているし、は一致する型と、2 番目と 3 番目のオペランドの cv 認定の規則を満たしていないコードを拒否します。
 
-**/Zc:ternary**オプションは既定でオフになっています。 使用して**/Zc:ternary**準拠の動作を有効にまたは**/Zc:ternary-**以前非準拠コンパイラの動作を明示的に指定します。 [寛容/-](permissive-standards-conformance.md)オプションを有効に**/Zc:ternary**です。 
+**/Zc:ternary**オプションは既定でオフになっています。 使用して**/Zc:ternary**準拠の動作を有効にまたは**/Zc:ternary-**以前非準拠コンパイラの動作を明示的に指定します。 [寛容/-](permissive-standards-conformance.md)オプションは、このオプションを暗黙的にできますを使用してオーバーライドできます**/Zc:ternary-**です。
 
 ### <a name="examples"></a>使用例
 

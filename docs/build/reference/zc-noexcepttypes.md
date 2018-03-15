@@ -18,11 +18,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e1b0e209462295f907f5e518299d34fb18aade4d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: af455b9a781295f3e6f446b7dc5c3d253fe2f4c5
+ms.sourcegitcommit: eeb2b5ad8d3d22514a7b9bd7d756511b69ae0ccf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="zcnoexcepttypes-c17-noexcept-rules"></a>/Zc:noexceptTypes (c++ 17 noexcept ルール)
 
@@ -34,7 +34,7 @@ C++ 17 規格は、`throw()`のエイリアスとして`noexcept`、削除`throw
 
 ## <a name="remarks"></a>コメント
 
-ときに、 **/Zc:noexceptTypes**オプションを指定すると、コンパイラは、c++ 17 規格に準拠しているし、処理[throw()](../../cpp/exception-specifications-throw-cpp.md)のエイリアスとして[noexcept](../../cpp/noexcept-cpp.md)、削除`throw(<type list>)`と`throw(...)`、特定の種類を含めることができ`noexcept`です。 **/Zc:noexceptTypes**オプションは、のみ使用可能な場合に[/std:c + + 17](std-specify-language-standard-version.md)または[/std:latest](std-specify-language-standard-version.md)を有効にします。 **/Zc:noexceptTypes** ISO c++ 17 規格に準拠するように既定で有効にします。 指定して、このオプションをオフに**/Zc:noexceptTypes-** 、c++ 14 の動作に戻すには`noexcept`とき**/std::C:operator++ 17**または**/std::latest**が指定されています。
+ときに、 **/Zc:noexceptTypes**オプションを指定すると、コンパイラは、c++ 17 規格に準拠しているし、処理[throw()](../../cpp/exception-specifications-throw-cpp.md)のエイリアスとして[noexcept](../../cpp/noexcept-cpp.md)、削除`throw(<type list>)`と`throw(...)`、特定の種類を含めることができ`noexcept`です。 **/Zc:noexceptTypes**オプションは、のみ使用可能な場合に[/std:c + + 17](std-specify-language-standard-version.md)または[/std:latest](std-specify-language-standard-version.md)を有効にします。 **/Zc:noexceptTypes** ISO c++ 17 規格に準拠するように既定で有効にします。 [寛容/-](permissive-standards-conformance.md)オプションには影響しません**/Zc:noexceptTypes**です。 指定して、このオプションをオフに**/Zc:noexceptTypes-** 、c++ 14 の動作に戻すには`noexcept`とき**/std::C:operator++ 17**または**/std::latest**が指定されています。
 
 C++ コンパイラを診断する Visual Studio 2017 バージョン 15.5 以降、c++ 17 モードでの宣言で複数の一致しない例外の指定場合や、[寛容/-](permissive-standards-conformance.md)オプションを指定します。
 
@@ -84,7 +84,7 @@ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandar
 
 1. プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。
 
-1. 選択、**コマンドライン**プロパティ ページで、 **C/C++**フォルダーです。
+1. 選択、**構成プロパティ** > **C/C++** > **コマンドライン**プロパティ ページ。
 
 1. 変更、**追加オプション**含めるプロパティを**/Zc:noexceptTypes**または**/Zc:noexceptTypes-**を選択し**OK**です。
 
