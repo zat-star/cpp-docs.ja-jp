@@ -19,11 +19,11 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d527a4e0647fe0e8471e168841a93512f4d1a9e8
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f534432fbf7ff723cac1448bc3a26474f3b323bb
+ms.sourcegitcommit: c770a343def04ae77522708387c3f7c470e49969
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="c-binary-compatibility-between-visual-studio-2015-and-visual-studio-2017"></a>Visual Studio 2015 と Visual Studio 2017 の間の C++ バイナリ互換性
 
@@ -34,7 +34,8 @@ ms.lasthandoff: 12/21/2017
 
 1) スタティック ライブラリまたはオブジェクト ファイルが /GL コンパイラ スイッチでコンパイルされる場合。  
 
-2) アプリケーションのコンパイルに使用されたツールセットよりバージョン番号が古い再頒布可能ライブラリをアプリケーションが使用する場合。 言い換えれば、プラットフォーム ツールセット v141 でプログラムをコンパイルした場合、アプリケーションで使用するあらゆる再頒布可能ライブラリを v141 以上でコンパイルする必要があります。  
+2) アプリケーションのコンパイルとリンクで使用されたツールセットよりもバージョンが新しいツールセットで構築されたライブラリを使用する場合。 たとえば、ツールセット 19.12 でコンパイルしてリンクされたプログラムは、19.0 から 19.12 でコンパイルされたライブラリを使用することができます。 Visual Studio 2013 またはそれ以前で生成されたライブラリと 19.x のプログラムのリンクはサポートされていません。
+
 
 ## <a name="see-also"></a>参照  
 
