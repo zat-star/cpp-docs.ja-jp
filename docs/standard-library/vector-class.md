@@ -102,10 +102,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 15fca6437626b09ee2995f9afe268f44a5f4b34f
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="vector-class"></a>vector クラス
 C++ 標準ライブラリの vector クラスは、指定された型の要素を直線上に配置し、任意の要素に対する高速なランダム アクセスを可能にするシーケンス コンテナーのテンプレート クラスです。 これらは、ランダム アクセスのパフォーマンスを重視するシーケンスに適したコンテナーです。  
@@ -199,7 +199,7 @@ class vector
 |[operator&#91;&#93;](#op_at)|指定した位置における vector 要素への参照を返します。|  
 |[operator=](#op_eq)|ベクターの要素を、別のベクターのコピーで置き換えます。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<vector>  
   
  **名前空間:** std  
@@ -2132,7 +2132,7 @@ int main()
 v1 = 0 0 0v2 = 2 2 2 2 2v3 = 1 1 1v4 = 2 2 2 2 2v5 = 0 1 2 3 4v6 = 1 2v7 = 2 2 2 2 21 2 3 4  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

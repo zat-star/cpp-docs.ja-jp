@@ -22,10 +22,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 7b3b067db3812fbe7e5db1d367635eedc5362527
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: HT
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="multidimensional-arrays-c"></a>多次元配列 (C)
 添字式には、次のように複数の添字がある場合があります。  
@@ -40,7 +40,7 @@ expression3
 ]...  
 ```  
   
- 添字式は、左から右へ関連付けられます。 左端の添字式、*expression1***[***expression2***]** が最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***) は、最終的なポインター値が配列型のアドレスを指していない限り、最後の添字式が評価された後に適用されます (下の例を参照)。  
+ 添字式は、左から右へ関連付けられます。 左端の添字式 * expression1***[***expression2 ***]**、最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***) は、最終的なポインター値が配列型のアドレスを指していない限り、最後の添字式が評価された後に適用されます (下の例を参照)。  
   
  複数の添字を持つ式は、"多次元配列" の要素を参照します。 多次元配列は、要素が配列である配列です。 たとえば、3 次元配列の最初の要素は 2 次元配列です。  
   
@@ -86,5 +86,5 @@ ipp = prop[2];
   
  同様に、2 番目のステートメント `prop[2]` の式 `ipp = prop[2];` の結果は、1 つの 2 次元配列のアドレスを指すポインター値です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [添字演算子:](../cpp/subscript-operator.md)

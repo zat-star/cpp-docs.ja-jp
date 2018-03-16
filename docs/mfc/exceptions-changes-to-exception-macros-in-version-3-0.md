@@ -23,10 +23,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 073715c72dfad83490b377b5d55e1169297be1ef
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="exceptions-changes-to-exception-macros-in-version-30"></a>例外処理 : MFC 3.0 での変更点
 これは、高度なトピックです。  
@@ -39,7 +39,7 @@ ms.lasthandoff: 12/21/2017
   
 -   [例外の再スロー](#_core_re.2d.throwing_exceptions)  
   
-##  <a name="_core_exception_types_and_the_catch_macro"></a>例外の種類と、CATCH マクロ  
+##  <a name="_core_exception_types_and_the_catch_macro"></a> 例外の種類と、CATCH マクロ  
  MFC の以前のバージョンで、**キャッチ**マクロは、例外の種類を判断する MFC の実行時型情報を使用。 例外の型が決定されます、つまり、キャッチ側でします。 C++ の例外を除き、ただし、例外の型は常にスロー サイトでによって決まりますがスローされる例外オブジェクトの種類。 スローされたオブジェクトへのポインターの型がスローされたオブジェクトの種類を異なる位置、まれなケースで互換性が失われます。  
   
  次の例では、MFC バージョン 3.0 と以前のバージョンの間には、この違いの結果を示します。  
@@ -60,7 +60,7 @@ ms.lasthandoff: 12/21/2017
   
  この問題を回避するには、関数からスロー式を呼び出し元のコードに移動し、例外が生成された時点にコンパイラに認識されている実際の型の例外をスローします。  
   
-##  <a name="_core_re.2d.throwing_exceptions"></a>例外の再スロー  
+##  <a name="_core_re.2d.throwing_exceptions"></a> 例外の再スロー  
  Catch ブロックには、それをキャッチした例外ポインターをスローできません。  
   
  たとえば、このコードは以前のバージョンで有効ですがバージョン 3.0 から予期しない結果。  
@@ -71,6 +71,6 @@ ms.lasthandoff: 12/21/2017
   
  詳細については、次を参照してください。[例外: 例外のキャッチと削除](../mfc/exceptions-catching-and-deleting-exceptions.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [例外処理](../mfc/exception-handling-in-mfc.md)
 

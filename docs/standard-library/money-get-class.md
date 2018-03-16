@@ -32,10 +32,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: c4566a9b640a73687b3bf48c1346af711d450b73
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="moneyget-class"></a>money_get クラス
 このテンプレート クラスは、`CharType` 型のシーケンスから通貨値への変換を制御するためにロケール ファセットとして使用できるオブジェクトを表します。  
@@ -78,7 +78,7 @@ class money_get : public locale::facet;
 |[do_get](#do_get)|通貨値を表す文字シーケンスから数値を抽出するために呼び出される仮想関数。|  
 |[get](#get)|通貨値を表す文字シーケンスから数値を抽出します。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
@@ -305,7 +305,7 @@ typedef basic_string<CharType, Traits, Allocator> string_type;
 ### <a name="remarks"></a>コメント  
  この型は、特殊化したテンプレート クラス [basic_string](../standard-library/basic-string-class.md) を表します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [\<locale>](../standard-library/locale.md)   
  [facet クラス](../standard-library/locale-class.md#facet_class)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)

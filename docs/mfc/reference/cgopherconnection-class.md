@@ -30,10 +30,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: d669ebc954b73d848e22dc373704ab3434074274
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="cgopherconnection-class"></a>関数クラス
 gopher インターネット サーバーへの接続を管理します。  
@@ -75,14 +75,14 @@ class CGopherConnection : public CInternetConnection
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CObject](../../mfc/reference/cobject-class.md)  
   
- [関数](../../mfc/reference/cinternetconnection-class.md)  
+ [CInternetConnection](../../mfc/reference/cinternetconnection-class.md)  
   
  `CGopherConnection`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afxinet.h  
   
-##  <a name="cgopherconnection"></a>CGopherConnection::CGopherConnection  
+##  <a name="cgopherconnection"></a>  CGopherConnection::CGopherConnection  
  このメンバー関数は構築するために、`CGopherConnection`オブジェクト。  
   
 ```  
@@ -113,7 +113,7 @@ CGopherConnection(
  FTP サーバーの名前を含む文字列へのポインター。  
   
  `dwContext`  
- 操作のコンテキストの識別子。 `dwContext`によって返される操作のステータス情報を識別する[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)です。 既定値を 1 に設定します。ただし、操作の特定のコンテキスト ID を明示的に割り当てることができます。 オブジェクトとその動作はしたコンテキスト ID と関連付けられます  
+ 操作のコンテキストの識別子。 `dwContext` によって返される操作のステータス情報を識別する[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)です。 既定値を 1 に設定します。ただし、操作の特定のコンテキスト ID を明示的に割り当てることができます。 オブジェクトとその動作はしたコンテキスト ID と関連付けられます  
   
  `pstrUserName`  
  ログインするユーザーの名前を指定する null で終わる文字列へのポインター。 場合**NULL**、既定値は匿名です。  
@@ -123,7 +123,7 @@ CGopherConnection(
   
 |`pstrUserName`|`pstrPassword`|FTP サーバーに送信されるユーザー名|FTP サーバーに送信されたパスワード|  
 |--------------------|--------------------|---------------------------------|---------------------------------|  
-|**NULL**または""|**NULL**または""|「匿名」|ユーザーの電子メール名|  
+|**NULL**または""|**NULL**または""|"anonymous"|ユーザーの電子メール名|  
 |非- **NULL**文字列|**NULL**または""|`pstrUserName`|" "|  
 |**NULL**以外**NULL**文字列|**エラー**|**エラー**||  
 |非- **NULL**文字列|非- **NULL**文字列|`pstrUserName`|`pstrPassword`|  
@@ -134,7 +134,7 @@ CGopherConnection(
 ### <a name="remarks"></a>コメント  
  作成することはありません、`CGopherConnection`直接です。 代わりに、呼び出し[代わり](../../mfc/reference/cinternetsession-class.md#getgopherconnection)、作成する、`CGopherConnection`オブジェクトし、ポインターを返します。  
   
-##  <a name="createlocator"></a>CGopherConnection::CreateLocator  
+##  <a name="createlocator"></a>  CGopherConnection::CreateLocator  
  検索または gopher サーバー上のファイルを識別する gopher ロケーターを作成するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -159,7 +159,7 @@ static CGopherLocator CreateLocator(
  Gopher ドキュメントまたは取得するディレクトリの名前を含む文字列へのポインター。 場合、`pstrDisplayString`パラメーターは**NULL**、gopher サーバーの既定のディレクトリが返されます。  
   
  `pstrSelectorString`  
- 項目を取得するために、gopher サーバーに送信されるセレクター文字列へのポインター。 `pstrSelectorString`指定できます**NULL**です。  
+ 項目を取得するために、gopher サーバーに送信されるセレクター文字列へのポインター。 `pstrSelectorString` 指定できます**NULL**です。  
   
  *dwGopherType*  
  これを指定するかどうか`pstrSelectorString`ディレクトリやドキュメントを参照および要求が gopher か gopher + です。 構造体の属性を参照してください[GOPHER_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa384215) Windows SDK に含まれています。  
@@ -181,7 +181,7 @@ static CGopherLocator CreateLocator(
   
  Gopher サーバーから情報を取得するために、アプリケーションはまず gopher ロケーターを取得する必要があります。 アプリケーションは、不透明なトークンとしてロケーターを扱うし、必要があります (つまり、アプリケーションことができますロケーターを使用してが直接操作または比較)。 通常、アプリケーション、呼び出しのために、ロケーターを使用、 [CGopherFileFind::FindFile](../../mfc/reference/cgopherfilefind-class.md#findfile)特定の情報を取得します。  
   
-##  <a name="getattribute"></a>CGopherConnection::GetAttribute  
+##  <a name="getattribute"></a>  CGopherConnection::GetAttribute  
  Gopher サーバーからの項目に関する特定の属性情報を取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -203,7 +203,7 @@ BOOL GetAttribute(
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのに呼び出せる可能性があります。  
   
-##  <a name="openfile"></a>CGopherConnection::OpenFile  
+##  <a name="openfile"></a>  CGopherConnection::OpenFile  
  Gopher サーバー上のファイルを開くには、このメンバー関数を呼び出します。  
   
 ```  
@@ -233,7 +233,7 @@ CGopherFile* OpenFile(
 ### <a name="remarks"></a>コメント  
  `dwContext` の既定値をオーバーライドして、コンテキスト識別子を独自の値に設定します。 コンテキスト識別子にこの特定の操作に関連付けられて、`CGopherConnection`によって作成されたオブジェクトの[CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクト。 値が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)特定ために使用する操作の状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [関数クラス](../../mfc/reference/cinternetconnection-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CFtpConnection クラス](../../mfc/reference/cftpconnection-class.md)   

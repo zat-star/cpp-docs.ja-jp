@@ -56,10 +56,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 5c9891f67c376d13794778c82b167092237df3f7
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="basicfilebuf-class"></a>basic_filebuf クラス
 文字の特徴がクラス `Tr` によって決まる型 `Elem` の要素と、外部ファイルに格納されている要素のシーケンスとの間でやり取りされる転送を制御するストリーム バッファーを記述します。  
@@ -237,7 +237,7 @@ Hex Dump of wwHello.txt - note that output is wchar_t chars:
 |[uflow](../standard-library/basic-streambuf-class.md#uflow)|入力ストリームから現在の要素を抽出するプロテクト仮想関数。|  
 |[underflow](#underflow)|入力ストリームから現在の要素を抽出するプロテクト仮想関数。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<fstream>  
   
  **名前空間:** std  
@@ -624,7 +624,7 @@ virtual int_type underflow();
   
 -   型の 1 つまたは複数の要素を読み取ることができる`char`フォームの連続した呼び出しとしてでは、 `fgetc`(**fp**)、それらの要素に変換し、 **ch**型の**Elem**を呼び出してファイル変換ファセット要素を使用して、 **fac.in**に応じて。 任意の読み取りまたは変換が失敗すると、関数は失敗します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [\<fstream>](../standard-library/fstream.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   

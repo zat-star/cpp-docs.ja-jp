@@ -21,10 +21,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: aa6285504a194d909dec7a446437ca9f584272a9
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: HT
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="overview-of-declarations"></a>宣言の概要
 "宣言" は、一連の識別子の解釈と属性を指定します。 識別子に指定されたオブジェクトまたは関数のためにストレージを予約する宣言は "定義" と呼ばれます。 C における変数、関数、および型の宣言では、次の構文に従います。  
@@ -81,7 +81,7 @@ int const *fp;
   
  *type-qualifier* 終端要素は、**const** と `volatile` の 2 つがあります。 これらの修飾子は、関連する型の追加のプロパティを指定します (その型のオブジェクトに左辺値を通じてアクセスする場合のみ)。 **const** および `volatile` の詳細については、「[型修飾子](../c-language/type-qualifiers.md)」を参照してください。 左辺値の定義については、「[左辺値と右辺値の式](../c-language/l-value-and-r-value-expressions.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C 言語の構文概要](../c-language/c-language-syntax-summary.md)   
  [宣言と型](../c-language/declarations-and-types.md)   
  [宣言の概要](../c-language/summary-of-declarations.md)

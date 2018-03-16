@@ -27,10 +27,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 17fae0cbb16208d5c7e7346f354f3501e4803d96
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="ieee-floating-point-representation"></a>IEEE 浮動小数点表現
 Microsoft Visual C は、IEEE 数値標準に準拠したです。 実数の 3 種類の内部表現があります。 Real\*4 と real\*8 は、Visual C で使用されます。 Real\*4 は、word を使用して宣言されている**float**です。 Real\*8 は、word を使用して宣言されている**二重**です。 Windows 32 ビットのプログラミングでは、`long double`データ型にマップ**二重**です。 ただし、アセンブリ言語サポート、実数を使用した計算 * 10 個のデータ型。  
@@ -67,7 +67,7 @@ Microsoft Visual C は、IEEE 数値標準に準拠したです。 実数の 3 �
 |real * 8|`SXXX XXXX`|`XXXX MMMM`|`MMMM MMMM`|`MMMM MMMM`|...|`MMMM MMMM`|  
 |real * 10|`SXXX XXXX`|`XXXX XXXX`|`1MMM MMMM`|`MMMM MMMM`|...|`MMMM MMMM`|  
   
- `S`符号ビット、`X`の指数部のビットは、および`M`の仮数部のビットは、します。 最上位ビットが実際にいると見なすことに注意してください * 4 と real\*8 書式を設定しますが、実際のバイト 3 では、「1」として存在\*10 形式です。  
+ `S` 符号ビット、`X`の指数部のビットは、および`M`の仮数部のビットは、します。 最上位ビットが実際にいると見なすことに注意してください * 4 と real\*8 書式を設定しますが、実際のバイト 3 では、「1」として存在\*10 形式です。  
   
  バイナリのポイントを正しくシフトするには、最初指数しバイナリの位置を右に移動したりした適切な数のビットを左します。  
   
@@ -125,5 +125,5 @@ Microsoft Visual C は、IEEE 数値標準に準拠したです。 実数の 3 �
   
 -   `0  = 1.0 * 2**-128 = all zeros--a special case.`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [浮動小数点数の精度の低下](../../build/reference/why-floating-point-numbers-may-lose-precision.md)

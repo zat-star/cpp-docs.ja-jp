@@ -132,10 +132,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 895b0921785e29a49bd367c2676995ba9af8e309
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="basicstring-class"></a>basic_string クラス
 `basic_string` テンプレート クラスのオブジェクトによって制御されるシーケンスは C++ の標準文字列クラスで、通常文字列と呼ばれますが、C++ 標準ライブラリ全体で使用される C スタイルの null で終わる文字列と混同しないようにしてください。 標準 C++ 文字列は、比較と連結演算子、反復子、C++ 標準ライブラリ アルゴリズム、クラスのアロケーターによって管理されるメモリのコピーおよび割り当てなど、通常の型として文字列の使用を有効にするコンテナーです。 標準 C++ 文字列を C スタイルの null で終わる文字列に変換する場合は、[basic_string::c_str](#c_str) メンバーを使用します。  
@@ -241,7 +241,7 @@ class basic_string;
   
  被制御シーケンスの要素を指定する参照、ポインター、および反復子は、被制御シーケンスを変更する関数の呼び出しの後、または非 **const** メンバー関数への最初の呼び出しの後、無効になることがあります。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<string>  
   
  **名前空間:** std  
@@ -607,7 +607,7 @@ reference at(size_type _Off);
  パラメーターのインデックスで指定した位置の文字列の文字への参照。  
   
 ### <a name="remarks"></a>コメント  
- 文字列の最初の要素がゼロから始まるインデックスと、次の要素が連続した正の整数によってインデックスが作成できるように、文字列の長さの *n* が、  *n* th要素のインデックス番号を*n -* 1 です。  
+ 文字列の最初の要素がゼロから始まるインデックスと、次の要素が連続した正の整数によってインデックスが作成できるように、文字列の長さの*n*が、 *n*番目の要素のインデックス数を*n -* 1 です。  
   
  メンバー [operator&#91;&#93;](#op_at) は、メンバー関数 **at** より高速な文字列の要素への読み取り/書き込みアクセスを提供します。  
   
@@ -3432,7 +3432,7 @@ reference operator[](size_type _Off);
  パラメーターのインデックスで指定した位置の文字列の文字への参照。  
   
 ### <a name="remarks"></a>コメント  
- 文字列の最初の要素、ゼロから始まるインデックスがあり、次の要素が連続した正の整数によってインデックスが作成できるように、文字列の長さの *n* が、  *n* 番目の要素のインデックス番号を *n*  - 1。  
+ 文字列の最初の要素はゼロから始まるインデックスを持ち、次の要素は連続した正の整数によってインデックスが作成されます。これにより、長さ *n* の文字列が *n* - 1 の数でインデックスが作成された *n* 番目の要素を持つようになります。  
   
  `operator[]` はメンバー関数 [at](#at) より高速な文字列の要素への読み取り/書き込みアクセスを提供します。  
   
@@ -4701,7 +4701,7 @@ The character ch1 is: G.
 The character ch2 is: H.  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [\<string>](../standard-library/string.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

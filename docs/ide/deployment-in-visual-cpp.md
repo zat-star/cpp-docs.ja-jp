@@ -1,12 +1,9 @@
 ---
 title: "Visual C での展開 |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 9/21/2017
-ms.reviewer: 
-ms.suite: 
+ms.date: 03/13/2018
 ms.technology:
 - cpp-ide
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - C++
@@ -14,17 +11,16 @@ helpviewer_keywords:
 - deploying applications [C++]
 - application deployment [C++]
 ms.assetid: d4b4ffc0-d2bd-4e4a-84a6-62f1c26f6a09
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: eda9c4a1a173087688c1fd3182845d6517f27ba6
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 2356e98e911978dcaef9471f2b474c2a2377716d
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="deployment-in-visual-c"></a>Visual C++ での配置
 
@@ -50,6 +46,8 @@ Visual C ライブラリを一元的に展開するにはこれら 2 つのソ�
 
 ローカル配置では、ライブラリ ファイルは、実行可能ファイルと共にアプリケーション フォルダーにインストールされます。 異なるバージョンの Visual C 再頒布可能ライブラリは、各バージョンのファイル名には、そのバージョン番号が含まれているために、同じフォルダーにインストールできます。 たとえば、C ランタイム ライブラリの version 12 は msvcp120.dll、およびバージョン 14 が msvcp140.dll です。
 
+呼ばれる複数の追加 Dll ライブラリに分散させることがあります*ドット (.) ライブラリ*です。 たとえば、Visual Studio 2017 15.6 のバージョンでリリースされた、標準ライブラリの機能の一部に追加されました msvcp140_1.dll に preverve msvcp140.dll の ABI 互換性。 Visual Studio 2017 バージョン 15.6 (ツールセット 14.13)、または Visual Studio 2017 からそれ以降のツールセットを使用する場合は、メインのライブラリと同様にこれらのドット ライブラリをローカルに展開する必要があります。 これらの個別のドット ライブラリは、ABI が変更されたときに、基本ライブラリの次のメジャー バージョンにロールバックされます。
+
 Microsoft が自動的にできないため、更新プログラムをローカルには、Visual C ライブラリが展開されている、これらのライブラリのローカル配置はお勧めしません。 再頒布可能ライブラリのローカル配置を使用する場合は、ローカル配置されたライブラリを対象とした独自の自動更新方法を実装することをお勧めします。
 
 ## <a name="static-linking"></a>静的リンク
@@ -60,6 +58,6 @@ Microsoft が自動的にできないため、更新プログラムをローカ�
 
 Visual C ライブラリの読み込み順序は、システムによって異なります。 ローダーの問題を診断するには、depends.exe または where.exe を使用します。 詳細については、次を参照してください。[ダイナミック リンク ライブラリの検索順序 (Windows)](http://msdn.microsoft.com/library/windows/desktop/ms682586.aspx)です。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [デスクトップ アプリケーションの配置](../ide/deploying-native-desktop-applications-visual-cpp.md)

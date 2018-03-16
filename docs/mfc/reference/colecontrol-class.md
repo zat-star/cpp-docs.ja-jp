@@ -350,10 +350,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 895091131bf8a62a13527f717831a34764c931ff
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="colecontrol-class"></a>COleControl クラス
 OLE コントロールを開発するための強力な基底クラスです。  
@@ -396,7 +396,7 @@ class COleControl : public CWnd
 |[COleControl::ControlInfoChanged](#controlinfochanged)|コントロールによって処理されるニーモニックのセットが変更された後は、この関数を呼び出します。|  
 |[COleControl::DisplayError](#displayerror)|コントロールのユーザーへのストックのエラー イベントを表示します。|  
 |[COleControl::DoClick](#doclick)|ストックの実装`DoClick`メソッドです。|  
-|[使って](#dopropexchange)|プロパティをシリアル化、`COleControl`オブジェクト。|  
+|[COleControl::DoPropExchange](#dopropexchange)|プロパティをシリアル化、`COleControl`オブジェクト。|  
 |[COleControl::DoSuperclassPaint](#dosuperclasspaint)|Windows コントロールからサブクラス化されている OLE コントロールを再描画します。|  
 |[COleControl::EnableSimpleFrame](#enablesimpleframe)|コントロールのシンプルなフレームのサポートを有効にします。|  
 |[COleControl::ExchangeExtent](#exchangeextent)|コントロールの幅と高さをシリアル化します。|  
@@ -413,7 +413,7 @@ class COleControl : public CWnd
 |[COleControl::FireMouseMove](#firemousemove)|在庫を発生させる`MouseMove`イベント。|  
 |[COleControl::FireMouseUp](#firemouseup)|在庫を発生させる`MouseUp`イベント。|  
 |[COleControl::FireReadyStateChange](#firereadystatechange)|コントロールの準備完了状態が変更されたときにイベントを発生させます。|  
-|[アクティブ](#getactivationpolicy)|サポートするコントロールの既定のアクティブ化の動作を変更、`IPointerInactive`インターフェイスです。|  
+|[COleControl::GetActivationPolicy](#getactivationpolicy)|サポートするコントロールの既定のアクティブ化の動作を変更、`IPointerInactive`インターフェイスです。|  
 |[COleControl::GetAmbientProperty](#getambientproperty)|指定されたアンビエント プロパティの値を返します。|  
 |[COleControl::GetAppearance](#getappearance)|ストックの外観プロパティの値を返します。|  
 |[COleControl::GetBackColor](#getbackcolor)|ストックの BackColor プロパティの値を返します。|  
@@ -423,7 +423,7 @@ class COleControl : public CWnd
 |[COleControl::GetClientOffset](#getclientoffset)|コントロールの四角形領域の左上隅にあるとクライアント領域の左上隅の差を取得します。|  
 |[COleControl::GetClientRect](#getclientrect)|コントロールのクライアント領域のサイズを取得します。|  
 |[COleControl::GetClientSite](#getclientsite)|コンテナー内の現在のクライアント サイトへのポインターのオブジェクトを照会します。|  
-|[オン](#getcontrolflags)|コントロール フラグの設定を取得します。|  
+|[COleControl::GetControlFlags](#getcontrolflags)|コントロール フラグの設定を取得します。|  
 |[COleControl::GetControlSize](#getcontrolsize)|OLE コントロールのサイズと位置を返します。|  
 |[COleControl::GetDC](#getdc)|ウィンドウなしのコントロールをコンテナーからデバイス コンテキストを取得するための手段を提供します。|  
 |[COleControl::GetEnabled](#getenabled)|ストックの Enabled プロパティの値を返します。|  
@@ -443,7 +443,7 @@ class COleControl : public CWnd
 |[COleControl::InitializeIIDs](#initializeiids)|コントロールを使用しての Iid の基本クラスを通知します。|  
 |[COleControl::InternalGetFont](#internalgetfont)|返します、`CFontHolder`ストック フォント プロパティのオブジェクト。|  
 |[COleControl::InternalGetText](#internalgettext)|ストックのキャプションまたはテキストのプロパティを取得します。|  
-|[中](#internalsetreadystate)|コントロールの準備状態を設定し、準備完了状態変更イベントを発生させます。|  
+|[COleControl::InternalSetReadyState](#internalsetreadystate)|コントロールの準備状態を設定し、準備完了状態変更イベントを発生させます。|  
 |[COleControl::InvalidateControl](#invalidatecontrol)|表示されているコントロールを再描画するための領域を無効にします。|  
 |[COleControl::InvalidateRgn](#invalidatergn)|指定された領域内のコンテナーのウィンドウのクライアント領域を無効にします。 リージョンにウィンドウなしのコントロールを再描画するために使用します。|  
 |[COleControl::IsConvertingVBX](#isconvertingvbx)|OLE コントロールの特別な読み込みを許可します。|  
@@ -459,7 +459,7 @@ class COleControl : public CWnd
 |[COleControl::OnClick](#onclick)|ストック Click を発生させると呼ばれるイベント。|  
 |[COleControl::OnClose](#onclose)|コントロールに通知する`IOleControl::Close`が呼び出されています。|  
 |[COleControl::OnDoVerb](#ondoverb)|コントロール動詞が実行された後に呼び出されます。|  
-|[オーバライド](#ondraw)|コントロールが自動的に再描画するように要求するときに呼び出されます。|  
+|[COleControl::OnDraw](#ondraw)|コントロールが自動的に再描画するように要求するときに呼び出されます。|  
 |[COleControl::OnDrawMetafile](#ondrawmetafile)|メタファイル デバイス コンテキストを使用して自動的に再描画するコントロールが要求されたときに、コンテナーによって呼び出されます。|  
 |[COleControl::OnEdit](#onedit)|OLE コントロールの UI がアクティブ化するコンテナーによって呼び出されます。|  
 |[COleControl::OnEnabledChanged](#onenabledchanged)|ストックの Enabled プロパティが変更されたときに呼び出されます。|  
@@ -512,7 +512,7 @@ class COleControl : public CWnd
 |[COleControl::ResetVersion](#resetversion)|指定した値にバージョン番号を初期化します。|  
 |[COleControl::ScrollWindow](#scrollwindow)|ウィンドウなしのコントロールを表示、インプレース アクティブ イメージ内の領域をスクロールを許可します。|  
 |[COleControl::SelectFontObject](#selectfontobject)|デバイス コンテキストにカスタム フォント プロパティを選択します。|  
-|[それ](#selectstockfont)|デバイス コンテキストにストック フォント プロパティを選択します。|  
+|[COleControl::SelectStockFont](#selectstockfont)|デバイス コンテキストにストック フォント プロパティを選択します。|  
 |[COleControl::SerializeExtent](#serializeextent)|シリアル化またはコントロールの表示領域を初期化します。|  
 |[COleControl::SerializeStockProps](#serializestockprops)|シリアル化または初期化、`COleControl`ストック プロパティです。|  
 |[COleControl::SerializeVersion](#serializeversion)|シリアル化またはコントロールのバージョン情報を初期化します。|  
@@ -579,10 +579,10 @@ class COleControl : public CWnd
   
  `COleControl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afxctl.h  
   
-##  <a name="ambientbackcolor"></a>COleControl::AmbientBackColor  
+##  <a name="ambientbackcolor"></a>  COleControl::AmbientBackColor  
  アンビエントの色の BackColor プロパティの値を返します。  
   
 ```  
@@ -595,7 +595,7 @@ OLE_COLOR AmbientBackColor();
 ### <a name="remarks"></a>コメント  
  アンビエントの色の BackColor プロパティは、すべてのコントロールに使用可能なコンテナーによって定義されます。 このプロパティをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="ambientdisplayname"></a>COleControl::AmbientDisplayName  
+##  <a name="ambientdisplayname"></a>  COleControl::AmbientDisplayName  
  コンテナーがコントロールに割り当てられている名前は、ユーザーに表示されたエラー メッセージで使用できます。  
   
 ```  
@@ -608,7 +608,7 @@ CString AmbientDisplayName();
 ### <a name="remarks"></a>コメント  
  このプロパティをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="ambientfont"></a>COleControl::AmbientFont  
+##  <a name="ambientfont"></a>  COleControl::AmbientFont  
  アンビエント フォント プロパティの値を返します。  
   
 ```  
@@ -621,7 +621,7 @@ LPFONTDISP AmbientFont();
 ### <a name="remarks"></a>コメント  
  アンビエントのフォント プロパティは、コンテナーによって定義されたすべてのコントロールに使用できます。このプロパティをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="ambientforecolor"></a>COleControl::AmbientForeColor  
+##  <a name="ambientforecolor"></a>  COleControl::AmbientForeColor  
  アンビエント前景色プロパティの値を返します。  
   
 ```  
@@ -634,7 +634,7 @@ OLE_COLOR AmbientForeColor();
 ### <a name="remarks"></a>コメント  
  アンビエント前景色プロパティは、すべてのコントロールに使用可能なコンテナーによって定義されます。 このプロパティをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="ambientlocaleid"></a>COleControl::AmbientLocaleID  
+##  <a name="ambientlocaleid"></a>  COleControl::AmbientLocaleID  
  コンテナーのロケール ID を返します。  
   
 ```  
@@ -647,7 +647,7 @@ LCID AmbientLocaleID();
 ### <a name="remarks"></a>コメント  
  コントロールは、ロケール Id を使用して、特定のロケールの場合は、そのユーザー インターフェイスを調整します。 このプロパティをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="ambientappearance"></a>COleControl::AmbientAppearance  
+##  <a name="ambientappearance"></a>  COleControl::AmbientAppearance  
  コントロール オブジェクトの現在の表示設定を取得します。  
   
 ```  
@@ -664,7 +664,7 @@ short AmbientAppearance();
 ### <a name="remarks"></a>コメント  
  現在の値を取得するには、この関数を呼び出して、**を示す**コントロールのプロパティです。  
   
-##  <a name="ambientscaleunits"></a>COleControl::AmbientScaleUnits  
+##  <a name="ambientscaleunits"></a>  COleControl::AmbientScaleUnits  
  コンテナーで使用される単位の種類を返します。  
   
 ```  
@@ -677,7 +677,7 @@ CString AmbientScaleUnits();
 ### <a name="remarks"></a>コメント  
  位置または twips かセンチメートルなど、選択したユニット ラベルが付いたディメンションを表示するコンテナーのアンビエント ScaleUnits プロパティを使用できます。 このプロパティをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="ambientshowgrabhandles"></a>COleControl::AmbientShowGrabHandles  
+##  <a name="ambientshowgrabhandles"></a>  COleControl::AmbientShowGrabHandles  
  コンテナーがアクティブなときにハンドルを表示するコントロールを許可するかどうかを判断します。  
   
 ```  
@@ -690,7 +690,7 @@ BOOL AmbientShowGrabHandles();
 ### <a name="remarks"></a>コメント  
  このプロパティをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="ambientshowhatching"></a>COleControl::AmbientShowHatching  
+##  <a name="ambientshowhatching"></a>  COleControl::AmbientShowHatching  
  コンテナーがのハッチ自体を表示するコントロールを許可するかどうかを決定パターン UI がアクティブなです。  
   
 ```  
@@ -703,7 +703,7 @@ BOOL AmbientShowHatching();
 ### <a name="remarks"></a>コメント  
  このプロパティをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="ambienttextalign"></a>COleControl::AmbientTextAlign  
+##  <a name="ambienttextalign"></a>  COleControl::AmbientTextAlign  
  コントロールのコンテナーで優先されるアンビエント テキストの配置を決定します。  
   
 ```  
@@ -725,7 +725,7 @@ short AmbientTextAlign();
 ### <a name="remarks"></a>コメント  
  このプロパティは、埋め込まれたすべてのコントロールに使用可能なコンテナーによって定義されます。 このプロパティをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="ambientuidead"></a>COleControl::AmbientUIDead  
+##  <a name="ambientuidead"></a>  COleControl::AmbientUIDead  
  かどうか、コントロールがユーザー インターフェイスの動作に応答を決定します。  
   
 ```  
@@ -738,7 +738,7 @@ BOOL AmbientUIDead();
 ### <a name="remarks"></a>コメント  
  たとえば、コンテナーが設定**TRUE**デザイン モードでします。  
   
-##  <a name="ambientusermode"></a>COleControl::AmbientUserMode  
+##  <a name="ambientusermode"></a>  COleControl::AmbientUserMode  
  コンテナーがデザイン モードまたはユーザー モードであるかどうかを判断します。  
   
 ```  
@@ -751,7 +751,7 @@ BOOL AmbientUserMode();
 ### <a name="remarks"></a>コメント  
  たとえば、コンテナーが設定**FALSE**デザイン モードでします。  
   
-##  <a name="boundpropertychanged"></a>COleControl::BoundPropertyChanged  
+##  <a name="boundpropertychanged"></a>  COleControl::BoundPropertyChanged  
  バインドされたプロパティの値が変更されたことを通知します。  
   
 ```  
@@ -765,7 +765,7 @@ void BoundPropertyChanged(DISPID dispid);
 ### <a name="remarks"></a>コメント  
  これは、変更をいないプロパティを通じて行われた場合にも、プロパティの変更の値がメソッドを設定するたびに呼び出す必要があります。 メンバー変数にマップされているバインドされたプロパティの特に注意してください。 このようなメンバー変数が変更された、いつでも`BoundPropertyChanged`呼び出す必要があります。  
   
-##  <a name="boundpropertyrequestedit"></a>COleControl::BoundPropertyRequestEdit  
+##  <a name="boundpropertyrequestedit"></a>  COleControl::BoundPropertyRequestEdit  
  アクセス許可を要求、`IPropertyNotifySink`コントロールによって提供されるバインドされたプロパティ値を変更するインターフェイスです。  
   
 ```  
@@ -782,7 +782,7 @@ BOOL BoundPropertyRequestEdit(DISPID dispid);
 ### <a name="remarks"></a>コメント  
  アクセス許可が拒否された場合、コントロールには、プロパティの変更の値をこと必要がありますはできません。 これによりをするかどうか、プロパティ値を変更しようとするアクションを失敗すます。  
   
-##  <a name="clienttoparent"></a>COleControl::ClientToParent  
+##  <a name="clienttoparent"></a>  COleControl::ClientToParent  
  座標に変換`pPoint`親座標にします。  
   
 ```  
@@ -801,7 +801,7 @@ virtual void ClientToParent(
 ### <a name="remarks"></a>コメント  
  入力時に`pPoint`OLE コントロール (コントロールのクライアント領域の左上隅) のクライアント領域の原点に対する相対パスです。 出力に`pPoint`親 (コンテナーの左上隅) の原点に対する相対パスです。  
   
-##  <a name="clipcaretrect"></a>COleControl::ClipCaretRect  
+##  <a name="clipcaretrect"></a>  COleControl::ClipCaretRect  
  全体または部分的に重複する、不透明なオブジェクトによってカバーされている場合は、キャレット四角形を調整します。  
   
 ```  
@@ -822,7 +822,7 @@ BOOL ClipCaretRect(LPRECT lpRect);
   
  キャレットを作成するオブジェクトがカレットの四角形に送信する`ClipCaretRect`およびキャレットの調整済みの四角形を使用します。 かどうか、完全カレットが、このメソッドは**FALSE**キャレットが表示されないすべての例ではこのとします。  
   
-##  <a name="colecontrol"></a>COleControl::COleControl  
+##  <a name="colecontrol"></a>  COleControl::COleControl  
  `COleControl` オブジェクトを構築します。  
   
 ```  
@@ -832,7 +832,7 @@ COleControl();
 ### <a name="remarks"></a>コメント  
  この関数は通常は直接に呼び出されます。 代わりに OLE コントロールは通常、そのクラスのファクトリによって作成されます。  
   
-##  <a name="controlinfochanged"></a>COleControl::ControlInfoChanged  
+##  <a name="controlinfochanged"></a>  COleControl::ControlInfoChanged  
  コントロールでサポートされているニーモニックのセットが変更されたときに、この関数を呼び出します。  
   
 ```  
@@ -842,7 +842,7 @@ void ControlInfoChanged();
 ### <a name="remarks"></a>コメント  
  この通知を受け取ると、コントロールのコンテナー、新しいのセットを取得ニーモニックを呼び出すことによって[IOleControl::GetControlInfo](http://msdn.microsoft.com/library/windows/desktop/ms693730)です。 この通知に応答する、コンテナーが必要ないことに注意してください。  
   
-##  <a name="displayerror"></a>COleControl::DisplayError  
+##  <a name="displayerror"></a>  COleControl::DisplayError  
  (イベント ハンドラーは、エラーの表示を抑制が) しない限り、株価のエラー イベントが処理された後に、フレームワークによって呼び出されます。  
   
 ```  
@@ -875,7 +875,7 @@ virtual void DisplayError(
   
  エラーの表示方法をカスタマイズするには、この関数をオーバーライドします。  
   
-##  <a name="doclick"></a>COleControl::DoClick  
+##  <a name="doclick"></a>  COleControl::DoClick  
  マウスをシミュレート コントロールに対するアクションをクリックします。  
   
 ```  
@@ -887,7 +887,7 @@ void DoClick();
   
  この関数はサポート、 `COleControl` DoClick と呼ばれる、ストック メソッドとしての基本クラスです。 詳細については、記事を参照してください。 [ActiveX コントロール: メソッド](../../mfc/mfc-activex-controls-methods.md)です。  
   
-##  <a name="dopropexchange"></a>使って  
+##  <a name="dopropexchange"></a>  COleControl::DoPropExchange  
  読み込み中、または、ストリーム、またはプロパティのセットなどの永続的ストレージ表現からコントロールを格納するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -903,7 +903,7 @@ virtual void DoPropExchange(CPropExchange* pPX);
   
  OLE コントロール プロジェクトを作成するコントロールのウィザードを使用して、この関数のオーバーライドされたバージョンがシリアル化がサポートするストック プロパティ`COleControl`基底クラスの関数を呼び出して`COleControl::DoPropExchange`です。 OLE コントロールにユーザー定義のプロパティを追加すると、新しいプロパティをシリアル化するには、この関数を変更する必要があります。 シリアル化の詳細については、記事を参照してください。 [ActiveX コントロール: シリアル化する](../../mfc/mfc-activex-controls-serializing.md)です。  
   
-##  <a name="dosuperclasspaint"></a>COleControl::DoSuperclassPaint  
+##  <a name="dosuperclasspaint"></a>  COleControl::DoSuperclassPaint  
  Windows コントロールからサブクラス化されている OLE コントロールを再描画します。  
   
 ```  
@@ -924,7 +924,7 @@ void DoSuperclassPaint(
   
  この関数は、Windows コントロールのサブクラス化の詳細については、記事を参照してください。 [ActiveX コントロール: Windows コントロールのサブクラス化](../../mfc/mfc-activex-controls-subclassing-a-windows-control.md)です。  
   
-##  <a name="drawcontent"></a>COleControl::DrawContent  
+##  <a name="drawcontent"></a>  COleControl::DrawContent  
  コントロールの外観を更新する必要がある場合に、フレームワークによって呼び出されます。  
   
 ```  
@@ -943,7 +943,7 @@ void DrawContent(
 ### <a name="remarks"></a>コメント  
  この関数は、オーバーライド可能な`OnDraw`関数。  
   
-##  <a name="drawmetafile"></a>COleControl::DrawMetafile  
+##  <a name="drawmetafile"></a>  COleControl::DrawMetafile  
  メタファイル デバイス コンテキストを使用しているときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -959,7 +959,7 @@ void DrawMetafile(
  `rc`  
  四角形の領域に描画されます。  
   
-##  <a name="enablesimpleframe"></a>COleControl::EnableSimpleFrame  
+##  <a name="enablesimpleframe"></a>  COleControl::EnableSimpleFrame  
  OLE コントロールのシンプルなフレームの特性を有効にします。  
   
 ```  
@@ -969,7 +969,7 @@ void EnableSimpleFrame();
 ### <a name="remarks"></a>コメント  
  この特性は、他のコントロールのビジュアルのコンテインメントが真ではなく OLE 包含をサポートするためにコントロールをできるようにします。 例には、複数のコントロールの内部グループ ボックスがあります。 これらのコントロールが含まれている場合、OLE ではありませんが、同じグループ ボックスで、します。  
   
-##  <a name="exchangeextent"></a>COleControl::ExchangeExtent  
+##  <a name="exchangeextent"></a>  COleControl::ExchangeExtent  
  シリアル化またはコントロールの範囲の状態を初期化します (そのディメンションに**HIMETRIC**単位)。  
   
 ```  
@@ -986,7 +986,7 @@ BOOL ExchangeExtent(CPropExchange* pPX);
 ### <a name="remarks"></a>コメント  
  この関数は通常、既定の実装によって呼び出される`COleControl::DoPropExchange`です。  
   
-##  <a name="exchangestockprops"></a>COleControl::ExchangeStockProps  
+##  <a name="exchangestockprops"></a>  COleControl::ExchangeStockProps  
  シリアル化またはコントロールのストック プロパティの状態を初期化します。  
   
 ```  
@@ -1000,7 +1000,7 @@ void ExchangeStockProps(CPropExchange* pPX);
 ### <a name="remarks"></a>コメント  
  この関数は通常、既定の実装によって呼び出される`COleControl::DoPropExchange`です。  
   
-##  <a name="exchangeversion"></a>COleControl::ExchangeVersion  
+##  <a name="exchangeversion"></a>  COleControl::ExchangeVersion  
  シリアル化またはコントロールのバージョン情報の状態を初期化します。  
   
 ```  
@@ -1028,7 +1028,7 @@ BOOL ExchangeVersion(
   
  永続化とバージョン管理の詳細については、記事を参照してください。 [ActiveX コントロール: シリアル化する](../../mfc/mfc-activex-controls-serializing.md)です。  
   
-##  <a name="fireclick"></a>COleControl::FireClick  
+##  <a name="fireclick"></a>  COleControl::FireClick  
  アクティブなコントロールの上にマウスがクリックされたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1040,7 +1040,7 @@ void FireClick();
   
  クリック イベントが発生する自動発生させるには、コントロールのイベントのマップが必要 をクリック、株価イベントを定義します。  
   
-##  <a name="firedblclick"></a>COleControl::FireDblClick  
+##  <a name="firedblclick"></a>  COleControl::FireDblClick  
  アクティブなコントロール上にマウスがダブルクリックされたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1052,7 +1052,7 @@ void FireDblClick();
   
  DblClick イベントが発生する自動発生させるには、コントロールのイベント マップ ストックの DblClick イベントが定義されている必要があります。  
   
-##  <a name="fireerror"></a>COleControl::FireError  
+##  <a name="fireerror"></a>  COleControl::FireError  
  ストックのエラー イベントを発生させます。  
   
 ```  
@@ -1081,7 +1081,7 @@ void FireError(
   
  これを解決するには、手動で変更、`SCODE`コントロールのパラメーターです。ODL ファイルを**長い**です。 さらに、任意のカスタム イベント、メソッド、またはプロパティを使用する、`SCODE`パラメーターにも同じ問題が発生します。  
   
-##  <a name="fireevent"></a>COleControl::FireEvent  
+##  <a name="fireevent"></a>  COleControl::FireEvent  
  コントロールから省略可能な引数は、任意の数、ユーザー定義のイベントを発生させます。  
   
 ```  
@@ -1106,7 +1106,7 @@ void AFX_CDECL FireEvent(
 |シンボル|パラメーターの型|  
 |------------|--------------------|  
 |**VTS_COLOR**|**OLE_COLOR**|  
-|**VTS_FONT**|**この\***|  
+|**VTS_FONT**|**IFontDisp\***|  
 |**VTS_HANDLE**|`HWND`|  
 |**VTS_PICTURE**|**IPictureDisp\***|  
 |**VTS_OPTEXCLUSIVE**|**OLE_OPTEXCLUSIVE\***|  
@@ -1123,7 +1123,7 @@ void AFX_CDECL FireEvent(
 > [!NOTE]
 >  追加のバリアント定数が定義されて、すべてのバリアント型の例外を除いて**VTS_FONT**と**VTS_PICTURE**、variant データ定数へのポインターを提供します。 これらの定数の名前、**付け**`constantname`規則。 たとえば、 **VTS_PCOLOR**へのポインター、 **VTS_COLOR**定数。  
   
-##  <a name="firekeydown"></a>COleControl::FireKeyDown  
+##  <a name="firekeydown"></a>  COleControl::FireKeyDown  
  コントロールが UI がアクティブのときにキーが押されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1150,7 +1150,7 @@ void FireKeyDown(
   
  KeyDown イベントが発生する自動発生させるには、コントロールのイベント マップ ストック KeyDown イベントが定義されている必要があります。  
   
-##  <a name="firekeypress"></a>COleControl::FireKeyPress  
+##  <a name="firekeypress"></a>  COleControl::FireKeyPress  
  キーが押され、コンテナー内でカスタム コントロールの UI のアクティブなときにリリースされたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1168,7 +1168,7 @@ void FireKeyPress(USHORT* pnChar);
   
  KeyPress イベントが発生する自動発生させるには、コントロールのイベント マップ ストック KeyPress イベントが定義されている必要があります。  
   
-##  <a name="firekeyup"></a>COleControl::FireKeyUp  
+##  <a name="firekeyup"></a>  COleControl::FireKeyUp  
  コンテナー内でカスタム コントロールの UI のアクティブなときにキーが離されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1195,7 +1195,7 @@ void FireKeyUp(
   
  KeyUp イベントが発生する自動発生させるには、コントロールのイベント マップ ストック KeyUp イベントが定義されている必要があります。  
   
-##  <a name="firemousedown"></a>COleControl::FireMouseDown  
+##  <a name="firemousedown"></a>  COleControl::FireMouseDown  
  アクティブなカスタム コントロール上でマウス ボタンが押されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1236,7 +1236,7 @@ void FireMouseDown(
   
  MouseDown イベントが発生する自動発生させるには、コントロールのイベント マップ ストック MouseDown イベントが定義されている必要があります。  
   
-##  <a name="firemousemove"></a>COleControl::FireMouseMove  
+##  <a name="firemousemove"></a>  COleControl::FireMouseMove  
  アクティブなカスタム コントロール上でカーソルが移動したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1277,7 +1277,7 @@ void FireMouseMove(
   
  MouseMove イベントが発生する自動発生させるには、コントロールのイベント マップ ストック MouseMove イベントが定義されている必要があります。  
   
-##  <a name="firemouseup"></a>COleControl::FireMouseUp  
+##  <a name="firemouseup"></a>  COleControl::FireMouseUp  
  アクティブなカスタム コントロール上でマウス ボタンが離されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -1318,7 +1318,7 @@ void FireMouseUp(
   
  MouseUp イベントが発生する自動発生させるには、コントロールのイベント マップ ストックの MouseUp イベントが定義されている必要があります。  
   
-##  <a name="firereadystatechange"></a>COleControl::FireReadyStateChange  
+##  <a name="firereadystatechange"></a>  COleControl::FireReadyStateChange  
  コントロールの準備完了状態の現在の値を持つイベントを発生させます。  
   
 ```  
@@ -1347,7 +1347,7 @@ void FireReadyStateChange();
   
  [InternalSetReadyState](#internalsetreadystate)準備完了状態を指定すると、値に変更し、呼び出す`FireReadyStateChange`です。  
   
-##  <a name="getactivationpolicy"></a>アクティブ  
+##  <a name="getactivationpolicy"></a>  COleControl::GetActivationPolicy  
  サポートするコントロールの既定のアクティブ化の動作を変更、`IPointerInactive`インターフェイスです。  
   
 ```  
@@ -1389,7 +1389,7 @@ virtual DWORD GetActivationPolicy();
   
  [!code-cpp[NVC_MFCAxCtl#10](../../mfc/reference/codesnippet/cpp/colecontrol-class_2.cpp)]  
   
-##  <a name="getambientproperty"></a>COleControl::GetAmbientProperty  
+##  <a name="getambientproperty"></a>  COleControl::GetAmbientProperty  
  コンテナーのアンビエント プロパティの値を取得します。  
   
 ```  
@@ -1413,10 +1413,10 @@ BOOL GetAmbientProperty(
 |------------|--------------------|  
 |`VT_BOOL`|**BOOL\***|  
 |`VT_BSTR`|**CString\***|  
-|`VT_I2`|**短い\***|  
-|`VT_I4`|**長い\***|  
-|`VT_R4`|**浮動小数点数\***|  
-|`VT_R8`|**double 型\***|  
+|`VT_I2`|**short\***|  
+|`VT_I4`|**long\***|  
+|`VT_R4`|**float\***|  
+|`VT_R8`|**double\***|  
 |`VT_CY`|**CY\***|  
 |**VT_COLOR**|**OLE_COLOR\***|  
 |**VT_DISPATCH**|**LPDISPATCH\***|  
@@ -1430,7 +1430,7 @@ BOOL GetAmbientProperty(
   
  関数が既に提供されて共通のアンビエント プロパティのように注意してください[AmbientBackColor](#ambientbackcolor)と[AmbientFont](#ambientfont)です。  
   
-##  <a name="getappearance"></a>COleControl::GetAppearance  
+##  <a name="getappearance"></a>  COleControl::GetAppearance  
  コントロールの外観のストック プロパティの Get 関数を実装します。  
   
 ```  
@@ -1440,7 +1440,7 @@ short GetAppearance ();
 ### <a name="return-value"></a>戻り値  
  戻り値として現在の表示設定を指定する、**短い**( `VT_I2`) 成功した場合は、値します。 コントロールの外観が 3D である場合、コントロールの外観がフラットと 1 の場合、この値は 0 です。  
   
-##  <a name="getbackcolor"></a>COleControl::GetBackColor  
+##  <a name="getbackcolor"></a>  COleControl::GetBackColor  
  コントロールの背景色のストック プロパティの Get 関数を実装します。  
   
 ```  
@@ -1450,7 +1450,7 @@ OLE_COLOR GetBackColor();
 ### <a name="return-value"></a>戻り値  
  戻り値として現在の背景色を指定する、 **OLE_COLOR**成功した場合は、値します。 この値に変換できる、 **COLORREF**値への呼び出しと`TranslateColor`です。  
   
-##  <a name="getborderstyle"></a>COleControl::GetBorderStyle  
+##  <a name="getborderstyle"></a>  COleControl::GetBorderStyle  
  コントロールのストック BorderStyle プロパティの Get 関数を実装します。  
   
 ```  
@@ -1460,7 +1460,7 @@ short GetBorderStyle();
 ### <a name="return-value"></a>戻り値  
  コントロールに通常の境界線がある場合は 1コントロールに境界線があるない場合は 0 を返します。  
   
-##  <a name="getcapture"></a>COleControl::GetCapture  
+##  <a name="getcapture"></a>  COleControl::GetCapture  
  決定するかどうか、`COleControl`オブジェクトがマウス キャプチャを保持します。  
   
 ```  
@@ -1475,7 +1475,7 @@ CWnd* GetCapture();
 ### <a name="remarks"></a>コメント  
  アクティブなウィンドウなしのコントロールがマウスを受け取るときにキャプチャ[SetCapture](#setcapture)と呼びます。  
   
-##  <a name="getclassid"></a>COleControl::GetClassID  
+##  <a name="getclassid"></a>  COleControl::GetClassID  
  コントロールの OLE クラス ID を取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -1483,7 +1483,7 @@ virtual HRESULT GetClassID(LPCLSID pclsid) = 0;
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- *pclsid の値*  
+ *pclsid*  
  クラスの ID の場所へのポインター  
   
 ### <a name="return-value"></a>戻り値  
@@ -1492,7 +1492,7 @@ virtual HRESULT GetClassID(LPCLSID pclsid) = 0;
 ### <a name="remarks"></a>コメント  
  通常で実装、 [IMPLEMENT_OLECREATE_EX](class-factories-and-licensing.md#implement_olecreate_ex)です。  
   
-##  <a name="getclientoffset"></a>COleControl::GetClientOffset  
+##  <a name="getclientoffset"></a>  COleControl::GetClientOffset  
  コントロールの四角形領域の左上隅にあるとクライアント領域の左上隅の差を取得します。  
   
 ```  
@@ -1509,7 +1509,7 @@ virtual void GetClientOffset(long* pdxOffset, long* pdyOffset) const;
 ### <a name="remarks"></a>コメント  
  OLE コントロールには、コンテナー内の四角形の領域があります。 コントロールのクライアント領域は、境界線とスクロール バーを除くコントロール領域です。 オフセットを取得して`GetClientOffset`コントロールの四角形領域の左上隅にあるとクライアント領域の左上隅の違いです。 コントロールに標準の罫線およびスクロール バー以外のクライアントではない要素がある場合は、オフセットを指定するには、このメンバー関数をオーバーライドします。  
   
-##  <a name="getclientrect"></a>COleControl::GetClientRect  
+##  <a name="getclientrect"></a>  COleControl::GetClientRect  
  コントロールのクライアント領域のサイズを取得します。  
   
 ```  
@@ -1520,7 +1520,7 @@ virtual void GetClientRect(LPRECT lpRect) const;
  `lpRect`  
  ポインター、`RECT`ウィンドウなしのコントロールのクライアント領域の寸法を含む構造体です。 つまり、ウィンドウの縁、フレーム、スクロール バー、およびにマイナスのコントロールのサイズ。 `lpRect`パラメーターがコントロールのクライアントの四角形の位置のサイズを示します。  
   
-##  <a name="getclientsite"></a>COleControl::GetClientSite  
+##  <a name="getclientsite"></a>  COleControl::GetClientSite  
  コンテナー内の現在のクライアント サイトへのポインターのオブジェクトを照会します。  
   
 ```  
@@ -1533,7 +1533,7 @@ LPOLECLIENTSITE GetClientSite();
 ### <a name="remarks"></a>コメント  
  インスタンスを返されたポインターが指す`IOleClientSite`です。 `IOleClientSite`コンテナーによって実装されるインターフェイスは、そのコンテキストのオブジェクトの表示: ドキュメントでその記憶域、ユーザー インターフェイス、およびその他のリソースを取得、固定されています。  
   
-##  <a name="getcontrolflags"></a>オン  
+##  <a name="getcontrolflags"></a>  COleControl::GetControlFlags  
  コントロール フラグの設定を取得します。  
   
 ```  
@@ -1577,7 +1577,7 @@ enum ControlFlags {
   
  詳細については`GetControlFlags`OLE コントロールの他の最適化を参照してください、 [ActiveX コントロール: 最適化](../../mfc/mfc-activex-controls-optimization.md)です。  
   
-##  <a name="getcontrolsize"></a>COleControl::GetControlSize  
+##  <a name="getcontrolsize"></a>  COleControl::GetControlSize  
  OLE コントロール ウィンドウのサイズを取得します。  
   
 ```  
@@ -1596,7 +1596,7 @@ void GetControlSize(
 ### <a name="remarks"></a>コメント  
  コントロール ウィンドウのすべての座標は、コントロールの左上隅に対する相対パスに注意してください。  
   
-##  <a name="getdc"></a>COleControl::GetDC  
+##  <a name="getdc"></a>  COleControl::GetDC  
  コンテナーからウィンドウなしのオブジェクトの get スクリーン (または互換性のある) デバイス コンテキストを提供します。  
   
 ```  
@@ -1622,9 +1622,9 @@ CDC* GetDC(
  コンテナーのディスプレイ デバイス コンテキストへのポインター`CWnd`クライアント領域かどうか成功しなかった場合、戻り値は、 **NULL**です。 ディスプレイ デバイス コンテキストは、コンテナーのウィンドウのクライアント領域を描画する後続の GDI 関数で使用できます。  
   
 ### <a name="remarks"></a>コメント  
- [ReleaseDC](#releasedc)描画後に、コンテキストを解放するメンバー関数を呼び出す必要があります。 呼び出すときに`GetDC`オブジェクトが、独自のクライアント座標に描画する四角形を渡します。 `GetDC`これらをコンテナーのクライアント領域の座標に変換します。 オブジェクトが必要な描画する四角形で取得できるサイズが、独自のクライアント領域四角を超えるを要求しないでください[GetClientRect](#getclientrect)です。 これはオブジェクトが不注意に許可されていない場所を描画することを防ぎます。  
+ [ReleaseDC](#releasedc)描画後に、コンテキストを解放するメンバー関数を呼び出す必要があります。 呼び出すときに`GetDC`オブジェクトが、独自のクライアント座標に描画する四角形を渡します。 `GetDC` これらをコンテナーのクライアント領域の座標に変換します。 オブジェクトが必要な描画する四角形で取得できるサイズが、独自のクライアント領域四角を超えるを要求しないでください[GetClientRect](#getclientrect)です。 これはオブジェクトが不注意に許可されていない場所を描画することを防ぎます。  
   
-##  <a name="getenabled"></a>COleControl::GetEnabled  
+##  <a name="getenabled"></a>  COleControl::GetEnabled  
  コントロールのストック Enabled プロパティの Get 関数を実装します。  
   
 ```  
@@ -1634,7 +1634,7 @@ BOOL GetEnabled();
 ### <a name="return-value"></a>戻り値  
  コントロールが有効である場合は 0 以外。それ以外の場合 0 を返します。  
   
-##  <a name="getextendedcontrol"></a>COleControl::GetExtendedControl  
+##  <a name="getextendedcontrol"></a>  COleControl::GetExtendedControl  
  プロパティの拡張セットとコントロールを表すコンテナーで保持されているオブジェクトへのポインターを取得します。  
   
 ```  
@@ -1649,7 +1649,7 @@ LPDISPATCH GetExtendedControl();
 ### <a name="remarks"></a>コメント  
  この関数を呼び出す関数は、オブジェクトを終了すると、ポインターを解放する必要があります。 このオブジェクトをサポートするために、コンテナーが必要ないことに注意してください。  
   
-##  <a name="getfocus"></a>COleControl::GetFocus  
+##  <a name="getfocus"></a>  COleControl::GetFocus  
  指定するかどうか、`COleControl`オブジェクトにフォーカスします。  
   
 ```  
@@ -1664,7 +1664,7 @@ CWnd* GetFocus();
 ### <a name="remarks"></a>コメント  
  アクティブなウィンドウなしのコントロールがフォーカスを受け取るときに[SetFocus](#setfocus)と呼びます。  
   
-##  <a name="getfont"></a>COleControl::GetFont  
+##  <a name="getfont"></a>  COleControl::GetFont  
  ストック フォント プロパティの Get 関数を実装します。  
   
 ```  
@@ -1677,7 +1677,7 @@ LPFONTDISP GetFont();
 ### <a name="remarks"></a>コメント  
  呼び出し元が完了すると、オブジェクトを解放する必要がありますに注意してください。 コントロールの実装内で使用して`InternalGetFont`コントロールの株価のフォント オブジェクトにアクセスします。 コントロールでのフォントの使用に関する詳細については、記事を参照してください。 [ActiveX コントロール: ActiveX コントロールのフォントの使用](../../mfc/mfc-activex-controls-using-fonts.md)です。  
   
-##  <a name="getfonttextmetrics"></a>COleControl::GetFontTextMetrics  
+##  <a name="getfonttextmetrics"></a>  COleControl::GetFontTextMetrics  
  任意のテキストのメトリックを測定`CFontHolder`コントロールが所有するオブジェクト。  
   
 ```  
@@ -1694,11 +1694,11 @@ void GetFontTextMetrics(
  参照、 [CFontHolder](../../mfc/reference/cfontholder-class.md)オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- このようなフォントを選択することができます、 [COleControl::SelectFontObject](#selectfontobject)関数。 `GetFontTextMetrics`初期化は、`TEXTMETRIC`構造体を指す`lptm`に関する有効なメトリック情報を含む`fontHolder`のフォントが成功した場合、または成功しなかった場合、ゼロで構造を fill です。 代わりにこの関数を使用する必要があります[GetTextMetrics](http://msdn.microsoft.com/library/windows/desktop/dd144941)メタファイルに描画するときに必要な埋め込み OLE オブジェクトと同じように、コントロールがあるので、コントロールを描画します。  
+ このようなフォントを選択することができます、 [COleControl::SelectFontObject](#selectfontobject)関数。 `GetFontTextMetrics` 初期化は、`TEXTMETRIC`構造体を指す`lptm`に関する有効なメトリック情報を含む`fontHolder`のフォントが成功した場合、または成功しなかった場合、ゼロで構造を fill です。 代わりにこの関数を使用する必要があります[GetTextMetrics](http://msdn.microsoft.com/library/windows/desktop/dd144941)メタファイルに描画するときに必要な埋め込み OLE オブジェクトと同じように、コントロールがあるので、コントロールを描画します。  
   
  `TEXTMETRIC`構造体は、既定のフォントの更新時に、 [SelectFontObject](#selectfontobject)関数が呼び出されます。 呼び出す必要があります`GetFontTextMetrics`が有効では提供情報を確実にストック フォント プロパティを選択すると後にのみです。  
   
-##  <a name="getforecolor"></a>COleControl::GetForeColor  
+##  <a name="getforecolor"></a>  COleControl::GetForeColor  
  ストックの前景色プロパティの Get 関数を実装します。  
   
 ```  
@@ -1708,7 +1708,7 @@ OLE_COLOR GetForeColor();
 ### <a name="return-value"></a>戻り値  
  戻り値として現在前景色を指定する、 **OLE_COLOR**成功した場合は、値します。 この値に変換できる、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)値への呼び出しと`TranslateColor`です。  
   
-##  <a name="gethwnd"></a>COleControl::GetHwnd  
+##  <a name="gethwnd"></a>  COleControl::GetHwnd  
  HWnd のストック プロパティの Get 関数を実装します。  
   
 ```  
@@ -1718,7 +1718,7 @@ OLE_HANDLE GetHwnd();
 ### <a name="return-value"></a>戻り値  
  OLE コントロールのウィンドウのハンドルが存在する場合です。それ以外の場合**NULL**です。  
   
-##  <a name="getmessagestring"></a>COleControl::GetMessageString  
+##  <a name="getmessagestring"></a>  COleControl::GetMessageString  
  によって識別されるメニュー項目の目的を説明する短い文字列を取得するためにフレームワークによって呼び出されます`nID`です。  
   
 ```  
@@ -1737,7 +1737,7 @@ virtual void GetMessageString(
 ### <a name="remarks"></a>コメント  
  メニュー項目が強調表示された状態、ステータス バーに表示されるメッセージを取得するために使用できます。 既定の実装で識別される文字列リソースを読み込もうと`nID`です。  
   
-##  <a name="getnotsupported"></a>COleControl::GetNotSupported  
+##  <a name="getnotsupported"></a>  COleControl::GetNotSupported  
  ユーザーがコントロールのプロパティの値へのアクセスを防止します。  
   
 ```  
@@ -1747,7 +1747,7 @@ void GetNotSupported();
 ### <a name="remarks"></a>コメント  
  コントロールのユーザーによるプロパティの取得はサポートされていない任意のプロパティの Get 関数の代わりにこの関数を呼び出します。 1 つの例には、書き込み専用であるプロパティがあります。  
   
-##  <a name="getreadystate"></a>COleControl::GetReadyState  
+##  <a name="getreadystate"></a>  COleControl::GetReadyState  
  コントロールの準備状態を返します。  
   
 ```  
@@ -1775,7 +1775,7 @@ long GetReadyState();
 ### <a name="remarks"></a>コメント  
  ほとんどの単純なコントロールを区別する必要はありません**LOADED**と`INTERACTIVE`です。 ただし、データ パスのプロパティをサポートするコントロールは、少なくとも一部のデータを非同期的に受信するまで対話形式にする準備ができていない可能性があります。 コントロールは、できるだけ早く対話可能になる試みる必要があります。  
   
-##  <a name="getrectincontainer"></a>COleControl::GetRectInContainer  
+##  <a name="getrectincontainer"></a>  COleControl::GetRectInContainer  
  デバイス単位で表される、コンテナーを基準として、コントロールの四角形の座標を取得します。  
   
 ```  
@@ -1792,7 +1792,7 @@ BOOL GetRectInContainer(LPRECT lpRect);
 ### <a name="remarks"></a>コメント  
  四角形では、有効なは、コントロールが、インプレース アクティブである場合のみです。  
   
-##  <a name="getstocktextmetrics"></a>COleControl::GetStockTextMetrics  
+##  <a name="getstocktextmetrics"></a>  COleControl::GetStockTextMetrics  
  テキスト コントロールのストック フォント プロパティで選択できるメトリックの測定、 [SelectStockFont](#selectstockfont)関数。  
   
 ```  
@@ -1808,7 +1808,7 @@ void GetStockTextMetrics(LPTEXTMETRIC lptm);
   
  `TEXTMETRIC`構造体は、既定のフォントの更新時に、`SelectStockFont`関数が呼び出されます。 有効では提供情報を確実にストック フォントを選択すると後にのみ、この関数を呼び出す必要があります。  
   
-##  <a name="gettext"></a>COleControl::GetText  
+##  <a name="gettext"></a>  COleControl::GetText  
  ストックのテキストまたはキャプション プロパティの Get 関数を実装します。  
   
 ```  
@@ -1824,7 +1824,7 @@ BSTR GetText();
 ### <a name="remarks"></a>コメント  
  この関数の呼び出し元が呼び出す必要のある注`SysFreeString`文字列が返されるに無料リソース。 コントロールの実装内で使用して`InternalGetText`コントロールのテキストまたはキャプション ストック プロパティにアクセスします。  
   
-##  <a name="getwindowlessdroptarget"></a>COleControl::GetWindowlessDropTarget  
+##  <a name="getwindowlessdroptarget"></a>  COleControl::GetWindowlessDropTarget  
  オーバーライド`GetWindowlessDropTarget`ドラッグ アンド ドロップ操作を行う場合、OLE の対象となるウィンドウなしのコントロールです。  
   
 ```  
@@ -1835,11 +1835,11 @@ virtual IDropTarget* GetWindowlessDropTarget();
  オブジェクトへのポインター`IDropTarget`インターフェイスです。 ウィンドウなしのオブジェクトを登録できません、ウィンドウがないため、`IDropTarget`インターフェイスです。 ただし、ドラッグ アンド ドロップに参加するにウィンドウなしのオブジェクト インターフェイスを実装し、できますで返す`GetWindowlessDropTarget`です。  
   
 ### <a name="remarks"></a>コメント  
- 通常、このコントロールのウィンドウがドロップ先として登録する必要があります。 コンテナーがドロップ ターゲットとして独自のウィンドウを使用して、コントロールに、独自のウィンドウがあるないためです。 コントロールは、の実装を提供する必要があるだけ、`IDropTarget`インターフェイスをコンテナーは、適切なタイミングで呼び出しを委任できます。 例:  
+ 通常、このコントロールのウィンドウがドロップ先として登録する必要があります。 コンテナーがドロップ ターゲットとして独自のウィンドウを使用して、コントロールに、独自のウィンドウがあるないためです。 コントロールは、の実装を提供する必要があるだけ、`IDropTarget`インターフェイスをコンテナーは、適切なタイミングで呼び出しを委任できます。 例えば:  
   
  [!code-cpp[NVC_MFCAxCtl#2](../../mfc/reference/codesnippet/cpp/colecontrol-class_3.cpp)]  
   
-##  <a name="initializeiids"></a>COleControl::InitializeIIDs  
+##  <a name="initializeiids"></a>  COleControl::InitializeIIDs  
  コントロールを使用しての Iid の基本クラスを通知します。  
   
 ```  
@@ -1858,7 +1858,7 @@ void InitializeIIDs(
 ### <a name="remarks"></a>コメント  
  この関数は、インターフェイスの Id を使用するコントロールの基底クラスを通知するために、コントロールのコンス トラクターを呼び出します。  
   
-##  <a name="internalgetfont"></a>COleControl::InternalGetFont  
+##  <a name="internalgetfont"></a>  COleControl::InternalGetFont  
  コントロールのストック フォント プロパティにアクセスします。  
   
 ```  
@@ -1868,7 +1868,7 @@ CFontHolder& InternalGetFont();
 ### <a name="return-value"></a>戻り値  
  参照、 [CFontHolder](../../mfc/reference/cfontholder-class.md)ストックのフォント オブジェクトを含むオブジェクトです。  
   
-##  <a name="internalgettext"></a>COleControl::InternalGetText  
+##  <a name="internalgettext"></a>  COleControl::InternalGetText  
  コントロールのストック テキストまたはキャプション プロパティにアクセスします。  
   
 ```  
@@ -1878,7 +1878,7 @@ const CString& InternalGetText();
 ### <a name="return-value"></a>戻り値  
  コントロールのテキスト文字列への参照。  
   
-##  <a name="internalsetreadystate"></a>中  
+##  <a name="internalsetreadystate"></a>  COleControl::InternalSetReadyState  
  コントロールの準備状態を設定します。  
   
 ```  
@@ -1907,7 +1907,7 @@ void InternalSetReadyState(long lNewReadyState);
 ### <a name="remarks"></a>コメント  
  ほとんどの単純なコントロールを区別する必要はありません**LOADED**と`INTERACTIVE`です。 ただし、データ パスのプロパティをサポートするコントロールは、少なくとも一部のデータを非同期的に受信するまで対話形式にする準備ができていない可能性があります。 コントロールは、できるだけ早く対話可能になる試みる必要があります。  
   
-##  <a name="invalidatecontrol"></a>COleControl::InvalidateControl  
+##  <a name="invalidatecontrol"></a>  COleControl::InvalidateControl  
  自動的に再描画するコントロールを強制します。  
   
 ```  
@@ -1926,7 +1926,7 @@ void InvalidateControl(
 ### <a name="remarks"></a>コメント  
  場合`lpRect`が、 **NULL**値、コントロール全体が再描画されます。 場合`lpRect`は**NULL**、無効にするコントロールの四角形の部分を示します。 コントロールは、ウィンドウがないか、現在アクティブになっていない、四角形は無視され、かつ場合をクライアント サイトの呼び出しが行われた[IAdviseSink::OnViewChange](http://msdn.microsoft.com/library/windows/desktop/ms694337)メンバー関数。 代わりにこの関数を使用して`CWnd::InvalidateRect`または`InvalidateRect`です。  
   
-##  <a name="invalidatergn"></a>COleControl::InvalidateRgn  
+##  <a name="invalidatergn"></a>  COleControl::InvalidateRgn  
  指定された領域内のコンテナーのウィンドウのクライアント領域を無効にします。  
   
 ```  
@@ -1945,7 +1945,7 @@ void InvalidateRgn(CRgn* pRgn, BOOL bErase = TRUE);
   
  場合`bErase`は**TRUE**更新領域の任意の部分では、特定の部分ではなく、領域全体の背景を消去します。  
   
-##  <a name="isconvertingvbx"></a>COleControl::IsConvertingVBX  
+##  <a name="isconvertingvbx"></a>  COleControl::IsConvertingVBX  
  OLE コントロールの特別な読み込みを許可します。  
   
 ```  
@@ -1968,7 +1968,7 @@ BOOL IsConvertingVBX();
   
  コントロールの`DoPropExchange`関数の場合、この条件を確認して true の場合、(前の例では) などには、この変換に固有の読み込みのコードを実行します。 コントロールが変換されないとき場合、は、通常の負荷のコードを実行できます。 この機能にのみ適用 vbx から変換されているコントロール。  
   
-##  <a name="isinvokeallowed"></a>COleControl::IsInvokeAllowed  
+##  <a name="isinvokeallowed"></a>  COleControl::IsInvokeAllowed  
  オートメーション メソッドの呼び出しを有効にします。  
   
 ```  
@@ -1979,9 +1979,9 @@ BOOL IsInvokeAllowed(DISPID dispid);
  コントロールが初期化されている場合は 0 以外。それ以外の場合 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- フレームワークの実装の**idispatch::invoke**呼び出し**オーバーライド**場合は、特定の関数を決定する (で識別される`dispid`) 呼び出すことができます。 OLE コントロールの既定の動作は、オートメーション呼び出されるメソッドをコントロールが初期化されている場合にのみを許可するのにはただし、**オーバーライド**が仮想関数がオーバーライドするために必要な場合 (たとえば、コントロールは、オートメーション サーバーとして使用されている) 場合。 詳細については、サポート技術情報の記事 Q166472 を参照してください"HOWTO: オートメーション サーバーとして OLE コントロールを使用します。"。 サポート技術情報については、「 [http://support.microsoft.com](http://support.microsoft.com/)です。  
+ フレームワークの実装の**idispatch::invoke**呼び出し**オーバーライド**場合は、特定の関数を決定する (で識別される`dispid`) 呼び出すことができます。 OLE コントロールの既定の動作は、オートメーション呼び出されるメソッドをコントロールが初期化されている場合にのみを許可するのにはただし、**オーバーライド**が仮想関数がオーバーライドするために必要な場合 (たとえば、コントロールは、オートメーション サーバーとして使用されている) 場合。 詳細については、サポート技術情報の記事 Q166472 を参照してください"HOWTO: オートメーション サーバーとして OLE コントロールを使用します。"。 サポート技術情報については、「 [ http://support.microsoft.com](http://support.microsoft.com/)です。  
   
-##  <a name="ismodified"></a>COleControl::IsModified  
+##  <a name="ismodified"></a>  COleControl::IsModified  
  コントロールの状態が変更されたかどうかを判断します。  
   
 ```  
@@ -1994,7 +1994,7 @@ BOOL IsModified();
 ### <a name="remarks"></a>コメント  
  プロパティに値が変更されたときに、コントロールの状態が変更されます。  
   
-##  <a name="isoptimizeddraw"></a>COleControl::IsOptimizedDraw  
+##  <a name="isoptimizeddraw"></a>  COleControl::IsOptimizedDraw  
  コンテナーが、現在の描画操作の最適化された描画をサポートしているかどうかを判断します。  
   
 ```  
@@ -2007,7 +2007,7 @@ BOOL IsOptimizedDraw();
 ### <a name="remarks"></a>コメント  
  最適化された描画がサポートされている場合、コントロール必要がありますいないオブジェクトを選択古い (ペン、ブラシ、フォントなど) デバイス コンテキストに描画が終了したときにします。  
   
-##  <a name="issubclassedcontrol"></a>COleControl::IsSubclassedControl  
+##  <a name="issubclassedcontrol"></a>  COleControl::IsSubclassedControl  
  Windows コントロールのサブクラス化が制御するかどうかを決定するために、フレームワークによって呼び出されます。  
   
 ```  
@@ -2020,7 +2020,7 @@ virtual BOOL IsSubclassedControl();
 ### <a name="remarks"></a>コメント  
  この関数をオーバーライドし、返す必要があります**TRUE**場合は、OLE コントロールのサブクラスが Windows コントロール。  
   
-##  <a name="load"></a>COleControl::Load  
+##  <a name="load"></a>  COleControl::Load  
  非同期的に読み込まれた以前のデータをリセットし、コントロールの非同期プロパティの新しい読み込みを開始します。  
   
 ```  
@@ -2034,7 +2034,7 @@ void Load(LPCTSTR strNewPath, CDataPathProperty& prop);
  *prop*  
  A[関数](../../mfc/reference/cdatapathproperty-class.md)非同期コントロール プロパティを実装するオブジェクト。  
   
-##  <a name="lockinplaceactive"></a>COleControl::LockInPlaceActive  
+##  <a name="lockinplaceactive"></a>  COleControl::LockInPlaceActive  
  コンテナーが、コントロールを非アクティブ化するを防ぎます。  
   
 ```  
@@ -2051,7 +2051,7 @@ BOOL LockInPlaceActive(BOOL bLock);
 ### <a name="remarks"></a>コメント  
  終了時にコントロールのロック解除とコントロールのすべてのロックを組み合わせる必要があることに注意してください。 イベントを発生させるときに短時間など、コントロールをロックする必要がありますのみです。  
   
-##  <a name="onambientpropertychange"></a>COleControl::OnAmbientPropertyChange  
+##  <a name="onambientpropertychange"></a>  COleControl::OnAmbientPropertyChange  
  コンテナーのアンビエント プロパティに値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2062,7 +2062,7 @@ virtual void OnAmbientPropertyChange(DISPID dispid);
  *dispID*  
  変更されたアンビエント プロパティのディスパッチ ID または**DISPID_UNKNOWN**複数のプロパティが変更された場合。  
   
-##  <a name="onappearancechanged"></a>COleControl::OnAppearanceChanged  
+##  <a name="onappearancechanged"></a>  COleControl::OnAppearanceChanged  
  ストックの外観プロパティの値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2072,7 +2072,7 @@ virtual void OnAppearanceChanged ();
 ### <a name="remarks"></a>コメント  
  このプロパティが変更された後に通知を使用する場合は、この関数をオーバーライドします。 既定の実装`InvalidateControl`です。  
   
-##  <a name="onbackcolorchanged"></a>COleControl::OnBackColorChanged  
+##  <a name="onbackcolorchanged"></a>  COleControl::OnBackColorChanged  
  ストックの BackColor プロパティの値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2082,7 +2082,7 @@ virtual void OnBackColorChanged();
 ### <a name="remarks"></a>コメント  
  このプロパティが変更された後に通知を使用する場合は、この関数をオーバーライドします。 既定の実装`InvalidateControl`です。  
   
-##  <a name="onborderstylechanged"></a>COleControl::OnBorderStyleChanged  
+##  <a name="onborderstylechanged"></a>  COleControl::OnBorderStyleChanged  
  ストック BorderStyle プロパティの値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2094,7 +2094,7 @@ virtual void OnBorderStyleChanged();
   
  このプロパティが変更された後に通知を使用する場合は、この関数をオーバーライドします。  
   
-##  <a name="onclick"></a>COleControl::OnClick  
+##  <a name="onclick"></a>  COleControl::OnClick  
  マウス ボタンがクリックしてされたか DoClick ストック メソッドが呼び出されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2102,7 +2102,7 @@ virtual void OnClick(USHORT iButton);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- *名前*  
+ *iButton*  
  マウス ボタンのインデックス。 次の値のいずれかを持つことができます。  
   
 - **LEFT_BUTTON**マウスの左ボタンがクリックしてされました。  
@@ -2116,7 +2116,7 @@ virtual void OnClick(USHORT iButton);
   
  変更または既定の処理を拡張するには、このメンバー関数をオーバーライドします。  
   
-##  <a name="onclose"></a>COleControl::OnClose  
+##  <a name="onclose"></a>  COleControl::OnClose  
  コンテナーには、コントロールが呼び出されたときに、フレームワークによって呼び出されます**IOleControl::Close**関数。  
   
 ```  
@@ -2136,7 +2136,7 @@ virtual void OnClose(DWORD dwSaveOption);
 ### <a name="remarks"></a>コメント  
  既定では、`OnClose`が変更された場合は、コントロール オブジェクトを保存し、`dwSaveOption`か`OLECLOSE_SAVEIFDIRTY`または`OLECLOSE_PROMPTSAVE`です。  
   
-##  <a name="ondoverb"></a>COleControl::OnDoVerb  
+##  <a name="ondoverb"></a>  COleControl::OnDoVerb  
  コンテナーを呼び出すときに、フレームワークによって呼び出されます、 **IOleObject::DoVerb**メンバー関数。  
   
 ```  
@@ -2168,7 +2168,7 @@ virtual BOOL OnDoVerb(
   
  動詞の既定の処理を変更するには、この関数をオーバーライドします。  
   
-##  <a name="ondraw"></a>オーバライド  
+##  <a name="ondraw"></a>  COleControl::OnDraw  
  指定したデバイス コンテキストを使用して、指定された外接する四角形の OLE コントロールを描画するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -2189,9 +2189,9 @@ virtual void OnDraw(
  無効なコントロールの四角形の領域。  
   
 ### <a name="remarks"></a>コメント  
- `OnDraw`通常として画面デバイス コンテキストを渡すことの画面表示のために呼び出されます`pDC`です。 `rcBounds`パラメーターは、ターゲット デバイス コンテキスト (現在のマップ モード) の四角形を識別します。 `rcInvalid`パラメーターは実際の四角形が無効です。 場合によってはより小さな領域になります`rcBounds`です。  
+ `OnDraw` 通常として画面デバイス コンテキストを渡すことの画面表示のために呼び出されます`pDC`です。 `rcBounds`パラメーターは、ターゲット デバイス コンテキスト (現在のマップ モード) の四角形を識別します。 `rcInvalid`パラメーターは実際の四角形が無効です。 場合によってはより小さな領域になります`rcBounds`です。  
   
-##  <a name="ondrawmetafile"></a>COleControl::OnDrawMetafile  
+##  <a name="ondrawmetafile"></a>  COleControl::OnDrawMetafile  
  指定されたメタファイル デバイス コンテキストを使用して、指定された外接する四角形の OLE コントロールを描画するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -2210,7 +2210,7 @@ virtual void OnDrawMetafile(
 ### <a name="remarks"></a>コメント  
  既定の実装、 [OnDraw](#ondraw)関数。  
   
-##  <a name="onedit"></a>COleControl::OnEdit  
+##  <a name="onedit"></a>  COleControl::OnEdit  
  Ui をアクティブにするコントロールがされます。  
   
 ```  
@@ -2236,11 +2236,11 @@ virtual BOOL OnEdit(
 ### <a name="remarks"></a>コメント  
  これは、コントロールを呼び出すのと同じ効果`OLEIVERB_UIACTIVATE`動詞です。  
   
- この関数は通常のハンドラー関数として使用する`ON_OLEVERB`マップ エントリのメッセージします。 これにより、コントロールの"Object"メニュー"Edit"動詞を使用可能なにします。 例:  
+ この関数は通常のハンドラー関数として使用する`ON_OLEVERB`マップ エントリのメッセージします。 これにより、コントロールの"Object"メニュー"Edit"動詞を使用可能なにします。 例えば:  
   
  [!code-cpp[NVC_MFCAxCtl#5](../../mfc/reference/codesnippet/cpp/colecontrol-class_6.cpp)]  
   
-##  <a name="onenabledchanged"></a>COleControl::OnEnabledChanged  
+##  <a name="onenabledchanged"></a>  COleControl::OnEnabledChanged  
  ストックの Enabled プロパティの値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2250,7 +2250,7 @@ virtual void OnEnabledChanged();
 ### <a name="remarks"></a>コメント  
  このプロパティが変更された後に通知を使用する場合は、この関数をオーバーライドします。 既定の実装[InvalidateControl](#invalidatecontrol)です。  
   
-##  <a name="onenumverbs"></a>COleControl::OnEnumVerbs  
+##  <a name="onenumverbs"></a>  COleControl::OnEnumVerbs  
  コンテナーを呼び出すときに、フレームワークによって呼び出されます、 **IOleObject::EnumVerbs**メンバー関数。  
   
 ```  
@@ -2269,7 +2269,7 @@ virtual BOOL OnEnumVerbs(LPENUMOLEVERB* ppenumOleVerb);
   
  動詞の列挙の既定の方法を変更するには、この関数をオーバーライドします。  
   
-##  <a name="oneventadvise"></a>COleControl::OnEventAdvise  
+##  <a name="oneventadvise"></a>  COleControl::OnEventAdvise  
  イベント ハンドラーに接続されているまたは OLE コントロールから切断されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2280,7 +2280,7 @@ virtual void OnEventAdvise(BOOL bAdvise);
  `bAdvise`  
  **TRUE**イベント ハンドラーが、コントロールに接続されていることを示します。 **FALSE**コントロールからイベント ハンドラーが切断されていることを示します。  
   
-##  <a name="onfontchanged"></a>COleControl::OnFontChanged  
+##  <a name="onfontchanged"></a>  COleControl::OnFontChanged  
  ストック フォント プロパティ値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2295,7 +2295,7 @@ virtual void OnFontChanged();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCAxCtl#6](../../mfc/reference/codesnippet/cpp/colecontrol-class_7.cpp)]  
   
-##  <a name="onforecolorchanged"></a>COleControl::OnForeColorChanged  
+##  <a name="onforecolorchanged"></a>  COleControl::OnForeColorChanged  
  ストックの ForeColor プロパティの値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2307,7 +2307,7 @@ virtual void OnForeColorChanged();
   
  このプロパティが変更された後に通知を使用する場合は、この関数をオーバーライドします。  
   
-##  <a name="onfreezeevents"></a>COleControl::OnFreezeEvents  
+##  <a name="onfreezeevents"></a>  COleControl::OnFreezeEvents  
  コンテナーの呼び出し後に、フレームワークによって呼び出されます**:freezeevents**です。  
   
 ```  
@@ -2323,7 +2323,7 @@ virtual void OnFreezeEvents(BOOL bFreeze);
   
  イベント処理の凍結またはマスクされていないときにその他の動作を修正する場合は、この関数をオーバーライドします。  
   
-##  <a name="ongetcolorset"></a>COleControl::OnGetColorSet  
+##  <a name="ongetcolorset"></a>  COleControl::OnGetColorSet  
  コンテナーを呼び出すときに、フレームワークによって呼び出されます、 **IViewObject::GetColorSet**メンバー関数。  
   
 ```  
@@ -2351,7 +2351,7 @@ virtual BOOL OnGetColorSet(
   
  この要求の特別な処理を行うには、この関数をオーバーライドします。  
   
-##  <a name="ongetcontrolinfo"></a>COleControl::OnGetControlInfo  
+##  <a name="ongetcontrolinfo"></a>  COleControl::OnGetControlInfo  
  コントロールのコンテナーが、コントロールに関する情報を要求したときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2367,7 +2367,7 @@ virtual void OnGetControlInfo(LPCONTROLINFO pControlInfo);
   
  コントロールがニーモニック キーを処理する必要がある場合は、この関数をオーバーライドします。  
   
-##  <a name="ongetdisplaystring"></a>COleControl::OnGetDisplayString  
+##  <a name="ongetdisplaystring"></a>  COleControl::OnGetDisplayString  
  によって識別されたプロパティの現在の値を表す文字列を取得するためにフレームワークによって呼び出されます`dispid`です。  
   
 ```  
@@ -2389,7 +2389,7 @@ virtual BOOL OnGetDisplayString(
 ### <a name="remarks"></a>コメント  
  コントロール プロパティが含まれる値を文字列に直接変換できませんし、コンテナーが提供するプロパティ ブラウザーに表示されるプロパティの値にする場合は、この関数をオーバーライドします。  
   
-##  <a name="ongetinplacemenu"></a>COleControl::OnGetInPlaceMenu  
+##  <a name="ongetinplacemenu"></a>  COleControl::OnGetInPlaceMenu  
  コントロールが UI でアクティブ化するコンテナーの既存のメニューにマージするメニューを取得するときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2402,7 +2402,7 @@ virtual HMENU OnGetInPlaceMenu();
 ### <a name="remarks"></a>コメント  
  OLE リソースのマージに関する詳細については、記事を参照してください。[メニューとリソース (OLE)](../../mfc/menus-and-resources-ole.md)です。  
   
-##  <a name="ongetnaturalextent"></a>COleControl::OnGetNaturalExtent  
+##  <a name="ongetnaturalextent"></a>  COleControl::OnGetNaturalExtent  
  コンテナーの応答にフレームワークによって呼び出されます**IViewObjectEx::GetNaturalExtent**要求します。  
   
 ```  
@@ -2458,7 +2458,7 @@ virtual BOOL OnGetNaturalExtent(
 ### <a name="remarks"></a>コメント  
  提案されたサイズと拡張モードに最も近いオブジェクトの表示サイズを返す関数をオーバーライドします**DVEXTENTINFO**構造体。 既定の実装を返します**FALSE**とサイズに調整は行われません。  
   
-##  <a name="ongetpredefinedstrings"></a>COleControl::OnGetPredefinedStrings  
+##  <a name="ongetpredefinedstrings"></a>  COleControl::OnGetPredefinedStrings  
  プロパティの値を表す定義済みの文字列のセットを取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -2484,7 +2484,7 @@ virtual BOOL OnGetPredefinedStrings(
 ### <a name="remarks"></a>コメント  
  コントロールにプロパティの文字列で表すことが可能な値の設定がある場合は、この関数をオーバーライドします。 追加の各要素に対して`pStringArray`に対応する"cookie"要素を追加する必要があります*pCookieArray です。* フレームワークによってこれらのクッキー値を渡すことは後で、`COleControl::OnGetPredefinedValue`関数。  
   
-##  <a name="ongetpredefinedvalue"></a>COleControl::OnGetPredefinedValue  
+##  <a name="ongetpredefinedvalue"></a>  COleControl::OnGetPredefinedValue  
  以前のオーバーライドによって返される定義済みの文字列のいずれかに対応する値を取得するためにフレームワークによって呼び出されます`COleControl::OnGetPredefinedStrings`です。  
   
 ```  
@@ -2507,7 +2507,7 @@ virtual BOOL OnGetPredefinedValue(
 ### <a name="return-value"></a>戻り値  
  値が返された場合は 0 以外`lpvarOut`。 それ以外の場合に 0 です。  
   
-##  <a name="ongetviewextent"></a>COleControl::OnGetViewExtent  
+##  <a name="ongetviewextent"></a>  COleControl::OnGetViewExtent  
  コンテナーの応答にフレームワークによって呼び出されます[IViewObject2::GetExtent](http://msdn.microsoft.com/library/windows/desktop/ms684032)要求します。  
   
 ```  
@@ -2520,7 +2520,7 @@ virtual BOOL OnGetViewExtent(
   
 ### <a name="parameters"></a>パラメーター  
  *dwDrawAspect*  
- `DWORD`フォームまたは側面を記述する、オブジェクトの表示されます。 有効な値は、列挙から取得[型](http://msdn.microsoft.com/library/windows/desktop/ms690318)または**DVASPECT2**です。  
+ `DWORD` フォームまたは側面を記述する、オブジェクトの表示されます。 有効な値は、列挙から取得[型](http://msdn.microsoft.com/library/windows/desktop/ms690318)または**DVASPECT2**です。  
   
  *lindex*  
  関心のあるオブジェクトの部分。 有効では現在は-1 です。  
@@ -2537,7 +2537,7 @@ virtual BOOL OnGetViewExtent(
 ### <a name="remarks"></a>コメント  
  コントロールで 2 つのパスの描画を使用し、その不透明な直線および透明部分がさまざまな次元を持つ場合は、この関数をオーバーライドします。  
   
-##  <a name="ongetviewrect"></a>COleControl::OnGetViewRect  
+##  <a name="ongetviewrect"></a>  COleControl::OnGetViewRect  
  コンテナーの応答にフレームワークによって呼び出されます**IViewObjectEx::GetRect**要求します。  
   
 ```  
@@ -2546,9 +2546,9 @@ virtual BOOL OnGetViewRect(DWORD dwAspect, LPRECTL pRect);
   
 ### <a name="parameters"></a>パラメーター  
  `dwAspect`  
- `DWORD`フォームまたは側面を記述する、オブジェクトの表示されます。 有効な値は、列挙から取得[型](http://msdn.microsoft.com/library/windows/desktop/ms690318)または**DVASPECT2**:  
+ `DWORD` フォームまたは側面を記述する、オブジェクトの表示されます。 有効な値は、列挙から取得[型](http://msdn.microsoft.com/library/windows/desktop/ms690318)または**DVASPECT2**:  
   
-- `DVASPECT_CONTENT`オブジェクト全体の外接する四角形。 オブジェクトの原点にによって返されたエクステントと同じサイズの左上隅**GetViewExtent***です。*  
+- `DVASPECT_CONTENT` オブジェクト全体の外接する四角形。 オブジェクトの原点にによって返されたエクステントと同じサイズの左上隅 **GetViewExtent * * *。*  
   
 - **DVASPECT_OPAQUE**四角形の不透明な領域を持つオブジェクトは、その四角形を返します。 他のユーザーが失敗します。  
   
@@ -2563,7 +2563,7 @@ virtual BOOL OnGetViewRect(DWORD dwAspect, LPRECTL pRect);
 ### <a name="remarks"></a>コメント  
  オブジェクトのサイズは変換`OnGetViewRect`(既定では、画面の左上隅) 特定の位置以降にある四角形にします。 コントロールで 2 つのパスの描画を使用し、その不透明な直線および透明部分がさまざまな次元を持つ場合は、この関数をオーバーライドします。  
   
-##  <a name="ongetviewstatus"></a>COleControl::OnGetViewStatus  
+##  <a name="ongetviewstatus"></a>  COleControl::OnGetViewStatus  
  コンテナーの応答にフレームワークによって呼び出されます**IViewObjectEx::GetViewStatus**要求します。  
   
 ```  
@@ -2588,7 +2588,7 @@ virtual DWORD OnGetViewStatus();
 ### <a name="remarks"></a>コメント  
  コントロールは、2 つのパスの描画を使用している場合は、この関数をオーバーライドします。 既定の実装を返します**VIEWSTATUS_OPAQUE**です。  
   
-##  <a name="onhidetoolbars"></a>COleControl::OnHideToolBars  
+##  <a name="onhidetoolbars"></a>  COleControl::OnHideToolBars  
  コントロールが UI で非アクティブ化されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2598,7 +2598,7 @@ virtual void OnHideToolBars();
 ### <a name="remarks"></a>コメント  
  実装には、によって表示されるすべてのツールバーが非表示にする必要があります`OnShowToolbars`です。  
   
-##  <a name="oninactivemousemove"></a>COleControl::OnInactiveMouseMove  
+##  <a name="oninactivemousemove"></a>  COleControl::OnInactiveMouseMove  
  下の受信にマウス ポインターが非アクティブなオブジェクトのコンテナーによって呼び出される、`WM_MOUSEMOVE`メッセージ。  
   
 ```  
@@ -2625,7 +2625,7 @@ virtual void OnInactiveMouseMove(
 ### <a name="remarks"></a>コメント  
  ウィンドウのクライアント座標 (ピクセル単位) を使用する、マウスのカーソル位置を渡すことに注意してください。 これは、操作を行う同じ座標系でオブジェクトの外接する四角形も渡すことによってです。  
   
-##  <a name="oninactivesetcursor"></a>COleControl::OnInactiveSetCursor  
+##  <a name="oninactivesetcursor"></a>  COleControl::OnInactiveSetCursor  
  下の受信にマウス ポインターが非アクティブなオブジェクトのコンテナーによって呼び出される、`WM_SETCURSOR`メッセージ。  
   
 ```  
@@ -2659,7 +2659,7 @@ virtual BOOL OnInactiveSetCursor(
 ### <a name="remarks"></a>コメント  
  ウィンドウのクライアント座標 (ピクセル単位) を使用する、マウスのカーソル位置を渡すことに注意してください。 これは、操作を行う同じ座標系でオブジェクトの外接する四角形も渡すことによってです。  
   
-##  <a name="onkeydownevent"></a>COleControl::OnKeyDownEvent  
+##  <a name="onkeydownevent"></a>  COleControl::OnKeyDownEvent  
  ストック KeyDown イベントが処理された後に、フレームワークによって呼び出されます。  
   
 ```  
@@ -2684,7 +2684,7 @@ virtual void OnKeyDownEvent(
 ### <a name="remarks"></a>コメント  
  コントロールが、イベントが発生した後、キーの情報へのアクセスを必要とする場合は、この関数をオーバーライドします。  
   
-##  <a name="onkeypressevent"></a>COleControl::OnKeyPressEvent  
+##  <a name="onkeypressevent"></a>  COleControl::OnKeyPressEvent  
  ストックの KeyPress イベントが発生した後に、フレームワークによって呼び出されます。  
   
 ```  
@@ -2700,7 +2700,7 @@ virtual void OnKeyPressEvent(USHORT nChar);
   
  このイベントの発生後に通知が使用する場合は、この関数をオーバーライドします。  
   
-##  <a name="onkeyupevent"></a>COleControl::OnKeyUpEvent  
+##  <a name="onkeyupevent"></a>  COleControl::OnKeyUpEvent  
  ストック KeyDown イベントが処理された後に、フレームワークによって呼び出されます。  
   
 ```  
@@ -2725,7 +2725,7 @@ virtual void OnKeyUpEvent(
 ### <a name="remarks"></a>コメント  
  コントロールが、イベントが発生した後、キーの情報へのアクセスを必要とする場合は、この関数をオーバーライドします。  
   
-##  <a name="onmappropertytopage"></a>COleControl::OnMapPropertyToPage  
+##  <a name="onmappropertytopage"></a>  COleControl::OnMapPropertyToPage  
  指定したプロパティの編集を実装するプロパティ ページのクラス ID を取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -2751,7 +2751,7 @@ virtual BOOL OnMapPropertyToPage(
 ### <a name="remarks"></a>コメント  
  コンテナーのプロパティ ブラウザーからのコントロールのプロパティ ページを呼び出す方法を提供するには、この関数をオーバーライドします。  
   
-##  <a name="onmnemonic"></a>COleControl::OnMnemonic  
+##  <a name="onmnemonic"></a>  COleControl::OnMnemonic  
  コンテナーの OLE コントロールのニーモニック キーが押されたことが検出されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2762,7 +2762,7 @@ virtual void OnMnemonic(LPMSG pMsg);
  `pMsg`  
  ニーモニック キーの押下時に生成された Windows メッセージへのポインター。  
   
-##  <a name="onproperties"></a>COleControl::OnProperties  
+##  <a name="onproperties"></a>  COleControl::OnProperties  
  コントロールのプロパティの動詞がコンテナーによって呼び出されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2790,7 +2790,7 @@ virtual BOOL OnProperties(
   
  また、コントロールのプロパティ ページの表示が発生するのにこの関数を使用することができます。 呼び出しを行う、`OnProperties`のコントロールの親のハンドルを渡すこと、関数、`hWndParent`パラメーター。 この場合の値、`lpMsg`と`lpRect`パラメーターは無視されます。  
   
-##  <a name="onqueryhitpoint"></a>COleControl::OnQueryHitPoint  
+##  <a name="onqueryhitpoint"></a>  COleControl::OnQueryHitPoint  
  コンテナーの応答にフレームワークによって呼び出されます**IViewObjectEx::QueryHitPoint**要求します。  
   
 ```  
@@ -2830,9 +2830,9 @@ virtual BOOL OnQueryHitPoint(
  ヒット テストの結果が正常に返された場合は 0 以外。それ以外の場合 0 を返します。 ヒットは、OLE コントロールの表示領域の重複部分です。  
   
 ### <a name="remarks"></a>コメント  
- オブジェクトの表示の四角形に指定された点が重なっているかどうかをクエリ (ポイントをヒット)。 `QueryHitPoint`四角形以外のオブジェクトに対してヒット テストをオーバーライドできます。  
+ オブジェクトの表示の四角形に指定された点が重なっているかどうかをクエリ (ポイントをヒット)。 `QueryHitPoint` 四角形以外のオブジェクトに対してヒット テストをオーバーライドできます。  
   
-##  <a name="onqueryhitrect"></a>COleControl::OnQueryHitRect  
+##  <a name="onqueryhitrect"></a>  COleControl::OnQueryHitRect  
  コンテナーの応答にフレームワークによって呼び出されます**IViewObjectEx::QueryHitRect**要求します。  
   
 ```  
@@ -2868,9 +2868,9 @@ virtual BOOL OnQueryHitRect(
  ヒット テストの結果が正常に返された場合は 0 以外。それ以外の場合 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- オブジェクトの表示の四角形に (四角形をヒット) の指定した四角形の任意の時点が重なっているかどうかを照会します。 `QueryHitRect`四角形以外のオブジェクトに対してヒット テストをオーバーライドできます。  
+ オブジェクトの表示の四角形に (四角形をヒット) の指定した四角形の任意の時点が重なっているかどうかを照会します。 `QueryHitRect` 四角形以外のオブジェクトに対してヒット テストをオーバーライドできます。  
   
-##  <a name="onrenderdata"></a>COleControl::OnRenderData  
+##  <a name="onrenderdata"></a>  COleControl::OnRenderData  
  指定された形式でデータを取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -2898,7 +2898,7 @@ virtual BOOL OnRenderData(
   
  詳細については、次を参照してください。、 **FORMATETC**と**STGMEDIUM** Windows SDK 内の構造体。  
   
-##  <a name="onrenderfiledata"></a>COleControl::OnRenderFileData  
+##  <a name="onrenderfiledata"></a>  COleControl::OnRenderFileData  
  ストレージ メディア ファイルは、ときに、指定された形式でデータを取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -2924,7 +2924,7 @@ virtual BOOL OnRenderFileData(
   
  詳細については、次を参照してください。、 **FORMATETC** Windows SDK 内の構造。  
   
-##  <a name="onrenderglobaldata"></a>COleControl::OnRenderGlobalData  
+##  <a name="onrenderglobaldata"></a>  COleControl::OnRenderGlobalData  
  指定されたストレージ メディアが使用するグローバル メモリに指定された形式でデータを取得するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -2952,7 +2952,7 @@ virtual BOOL OnRenderGlobalData(
   
  詳細については、次を参照してください。、 **FORMATETC** Windows SDK 内の構造。  
   
-##  <a name="onresetstate"></a>COleControl::OnResetState  
+##  <a name="onresetstate"></a>  COleControl::OnResetState  
  コントロールのプロパティを既定値に設定する必要があるときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -2964,7 +2964,7 @@ virtual void OnResetState();
   
  コントロール ライターは、この OLE コントロールの初期化コードを挿入できるオーバーライド可能です。 この関数が呼び出されます[IPersistStream::Load](http://msdn.microsoft.com/library/windows/desktop/ms680568)または[機能として](http://msdn.microsoft.com/library/windows/desktop/ms680557)失敗した場合、または[IPersistStreamInit::InitNew](http://msdn.microsoft.com/library/windows/desktop/ms690234)または[すること。: れます](http://msdn.microsoft.com/library/windows/desktop/ms687194)が呼び出されると、いずれかの最初を呼び出さずに**IPersistStream::Load**または**機能として**です。  
   
-##  <a name="onsetclientsite"></a>COleControl::OnSetClientSite  
+##  <a name="onsetclientsite"></a>  COleControl::OnSetClientSite  
  コンテナーには、コントロールが呼び出されたときに、フレームワークによって呼び出されます**IOleControl::SetClientSite**関数。  
   
 ```  
@@ -2976,7 +2976,7 @@ virtual void OnSetClientSite();
   
  この通知の特別な処理を行うには、この関数をオーバーライドします。 具体的には、この関数のオーバーライドは基底クラスを呼び出す必要があります。  
   
-##  <a name="onsetdata"></a>COleControl::OnSetData  
+##  <a name="onsetdata"></a>  COleControl::OnSetData  
  データを指定して、コントロールのデータを交換するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -3006,7 +3006,7 @@ virtual BOOL OnSetData(
   
  詳細については、次を参照してください。、 **FORMATETC**と**STGMEDIUM** Windows SDK 内の構造体。  
   
-##  <a name="onsetextent"></a>COleControl::OnSetExtent  
+##  <a name="onsetextent"></a>  COleControl::OnSetExtent  
  コントロールの範囲への呼び出しの結果として、変更する必要がある場合に、フレームワークによって呼び出されます[IOleObject::SetExtent](http://msdn.microsoft.com/library/windows/desktop/ms694330)です。  
   
 ```  
@@ -3025,7 +3025,7 @@ virtual BOOL OnSetExtent(LPSIZEL lpSizeL);
   
  コントロールの既定のサイズ変更を変更するには、この関数をオーバーライドします。  
   
-##  <a name="onsetobjectrects"></a>COleControl::OnSetObjectRects  
+##  <a name="onsetobjectrects"></a>  COleControl::OnSetObjectRects  
  呼び出しを実装するためにフレームワークによって呼び出されます[IOleInPlaceObject::SetObjectRects](http://msdn.microsoft.com/library/windows/desktop/ms683767)です。  
   
 ```  
@@ -3049,7 +3049,7 @@ virtual BOOL OnSetObjectRects(
   
  この関数の既定の動作を変更するには、この関数をオーバーライドします。  
   
-##  <a name="onshowtoolbars"></a>COleControl::OnShowToolBars  
+##  <a name="onshowtoolbars"></a>  COleControl::OnShowToolBars  
  コントロールの UI がアクティブになったときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -3059,7 +3059,7 @@ virtual void OnShowToolBars();
 ### <a name="remarks"></a>コメント  
  既定の実装では、何も行われません。  
   
-##  <a name="ontextchanged"></a>COleControl::OnTextChanged  
+##  <a name="ontextchanged"></a>  COleControl::OnTextChanged  
  ストックのキャプションまたはテキストのプロパティ値が変更されたときに、フレームワークによって呼び出されます。  
   
 ```  
@@ -3071,7 +3071,7 @@ virtual void OnTextChanged();
   
  このプロパティが変更された後に通知を使用する場合は、この関数をオーバーライドします。  
   
-##  <a name="onwindowlessmessage"></a>COleControl::OnWindowlessMessage  
+##  <a name="onwindowlessmessage"></a>  COleControl::OnWindowlessMessage  
  コンテナーの応答にフレームワークによって呼び出されます**IOleInPlaceObjectWindowless::OnWindowMessage**要求します。  
   
 ```  
@@ -3099,11 +3099,11 @@ virtual BOOL OnWindowlessMessage(
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- ウィンドウなしのコントロールのウィンドウ メッセージを処理します。 `COleControl``OnWindowlessMessage`ウィンドウ メッセージをメッセージのマウスとキーボード メッセージ以外に使用する必要があります。 `COleControl`提供[SetCapture](#setcapture)と[SetFocus](#setfocus)ウィンドウなしの OLE オブジェクトのマウスのキャプチャ、キーボード フォーカスを取得するには、具体的にします。  
+ ウィンドウなしのコントロールのウィンドウ メッセージを処理します。 `COleControl``OnWindowlessMessage`ウィンドウ メッセージをメッセージのマウスとキーボード メッセージ以外に使用する必要があります。 `COleControl` 提供[SetCapture](#setcapture)と[SetFocus](#setfocus)ウィンドウなしの OLE オブジェクトのマウスのキャプチャ、キーボード フォーカスを取得するには、具体的にします。  
   
- ウィンドウなしのオブジェクトは、ウィンドウがあるないため、コンテナー メッセージをディスパッチできるようにするためのメカニズムが必要です。 ウィンドウなしの OLE オブジェクトを取得メッセージがコンテナーからを通じて、`OnWindowMessage`メソッドを`IOleInPlaceObjectWindowless`インターフェイス (の拡張機能[IOleInPlaceObject](http://msdn.microsoft.com/library/windows/desktop/ms692646)ウィンドウなしのサポート用)。 `OnWindowMessage`受け取らない、`HWND`パラメーター。  
+ ウィンドウなしのオブジェクトは、ウィンドウがあるないため、コンテナー メッセージをディスパッチできるようにするためのメカニズムが必要です。 ウィンドウなしの OLE オブジェクトを取得メッセージがコンテナーからを通じて、`OnWindowMessage`メソッドを`IOleInPlaceObjectWindowless`インターフェイス (の拡張機能[IOleInPlaceObject](http://msdn.microsoft.com/library/windows/desktop/ms692646)ウィンドウなしのサポート用)。 `OnWindowMessage` 受け取らない、`HWND`パラメーター。  
   
-##  <a name="parenttoclient"></a>COleControl::ParentToClient  
+##  <a name="parenttoclient"></a>  COleControl::ParentToClient  
  座標に変換`pPoint`クライアント座標にします。  
   
 ```  
@@ -3177,7 +3177,7 @@ virtual UINT ParentToClient(
 ### <a name="remarks"></a>コメント  
  入力時に`pPoint`親 (コンテナーの左上隅) の原点に対する相対パスです。 出力に`pPoint`OLE コントロール (コントロールのクライアント領域の左上隅) のクライアント領域の原点に対する相対パスです。  
   
-##  <a name="postmodaldialog"></a>COleControl::PostModalDialog  
+##  <a name="postmodaldialog"></a>  COleControl::PostModalDialog  
  モーダル ダイアログ ボックスが閉じられたことをコンテナーに通知します。  
   
 ```  
@@ -3191,7 +3191,7 @@ void PostModalDialog(HWND hWndParent = NULL);
 ### <a name="remarks"></a>コメント  
  モーダル ダイアログ ボックスが表示された後に、この関数を呼び出します。 コンテナーがによって無効になっている任意の最上位のウィンドウを有効にするように、この関数を呼び出す必要があります`PreModalDialog`です。 この関数への呼び出しと組み合わせる必要があります`PreModalDialog`です。  
   
-##  <a name="premodaldialog"></a>COleControl::PreModalDialog  
+##  <a name="premodaldialog"></a>  COleControl::PreModalDialog  
  モーダル ダイアログ ボックスが表示されることをコンテナーに通知します。  
   
 ```  
@@ -3205,7 +3205,7 @@ void PreModalDialog(HWND hWndParent = NULL);
 ### <a name="remarks"></a>コメント  
  モーダル ダイアログ ボックスを表示する前に、この関数を呼び出します。 コンテナーがすべてのトップレベル ウィンドウを無効にするように、この関数を呼び出す必要があります。 モーダル ダイアログ ボックスが表示された後、呼び出す必要があります`PostModalDialog`です。  
   
-##  <a name="recreatecontrolwindow"></a>COleControl::RecreateControlWindow  
+##  <a name="recreatecontrolwindow"></a>  COleControl::RecreateControlWindow  
  破棄し、コントロールのウィンドウを再作成します。  
   
 ```  
@@ -3215,7 +3215,7 @@ void RecreateControlWindow();
 ### <a name="remarks"></a>コメント  
  ウィンドウのスタイルを表すビットを変更する必要がある場合に必要な場合があります。  
   
-##  <a name="refresh"></a>COleControl::Refresh  
+##  <a name="refresh"></a>  COleControl::Refresh  
  強制的に OLE コントロールの再描画をします。  
   
 ```  
@@ -3225,7 +3225,7 @@ void Refresh();
 ### <a name="remarks"></a>コメント  
  この関数はサポート、`COleControl`更新と呼ばれる、ストック メソッドとしての基本クラスです。 これにより、OLE コントロールのユーザーが特定の時刻にコントロールを再描画します。 このメソッドの詳細については、記事を参照してください。 [ActiveX コントロール: メソッド](../../mfc/mfc-activex-controls-methods.md)です。  
   
-##  <a name="releasecapture"></a>COleControl::ReleaseCapture  
+##  <a name="releasecapture"></a>  COleControl::ReleaseCapture  
  マウスのキャプチャを解放します。  
   
 ```  
@@ -3238,7 +3238,7 @@ BOOL ReleaseCapture();
 ### <a name="remarks"></a>コメント  
  コントロールは、現在、マウス キャプチャを持つ、キャプチャは解放されます。 それ以外の場合、この関数には効果はありません。  
   
-##  <a name="releasedc"></a>COleControl::ReleaseDC  
+##  <a name="releasedc"></a>  COleControl::ReleaseDC  
  他のアプリケーションで使用するためのデバイス コンテキストを解放する、ウィンドウなしのコントロールのコンテナーのディスプレイ デバイス コンテキストを解放します。  
   
 ```  
@@ -3255,7 +3255,7 @@ int ReleaseDC(CDC* pDC);
 ### <a name="remarks"></a>コメント  
  アプリケーションを呼び出す必要があります`ReleaseDC`呼び出しごとに[GetDC](#getdc)です。  
   
-##  <a name="reparentcontrolwindow"></a>COleControl::ReparentControlWindow  
+##  <a name="reparentcontrolwindow"></a>  COleControl::ReparentControlWindow  
  コントロールの親を設定します。  
   
 ```  
@@ -3274,7 +3274,7 @@ virtual void ReparentControlWindow(
 ### <a name="remarks"></a>コメント  
  コントロール ウィンドウの親をリセットするには、この関数を呼び出します。  
   
-##  <a name="resetstockprops"></a>COleControl::ResetStockProps  
+##  <a name="resetstockprops"></a>  COleControl::ResetStockProps  
  状態を初期化、`COleControl`ストック プロパティが既定値にします。  
   
 ```  
@@ -3289,7 +3289,7 @@ void ResetStockProps();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCAxCtl#7](../../mfc/reference/codesnippet/cpp/colecontrol-class_8.cpp)]  
   
-##  <a name="resetversion"></a>COleControl::ResetVersion  
+##  <a name="resetversion"></a>  COleControl::ResetVersion  
  指定した値にバージョン番号を初期化します。  
   
 ```  
@@ -3303,7 +3303,7 @@ void ResetVersion(DWORD dwVersionDefault);
 ### <a name="remarks"></a>コメント  
  使用して、コントロールのバイナリの初期化のパフォーマンスを向上できる`ResetVersion`と`ResetStockProps`をオーバーライドする`COleControl::OnResetState`です。 例を参照してください[ResetStockProps](#resetstockprops)です。 初期化の最適化の詳細については、次を参照してください。 [ActiveX コントロール: 最適化](../../mfc/mfc-activex-controls-optimization.md)です。  
   
-##  <a name="scrollwindow"></a>COleControl::ScrollWindow  
+##  <a name="scrollwindow"></a>  COleControl::ScrollWindow  
  画面に、インプレース アクティブ イメージ内の領域をスクロールするウィンドウなしの OLE オブジェクトを許可します。  
   
 ```  
@@ -3327,7 +3327,7 @@ void ScrollWindow(
  `lpClipRect`  
  指す、`CRect`オブジェクトまたは`RECT`クリップする四角形を指定します。 四角形の内側 (ピクセル) をスクロールします。 四角形の外側のビットである場合でも、`lpRect`四角形。 場合`lpClipRect`は**NULL**、スクロール四角形の領域は実行されません。  
   
-##  <a name="selectfontobject"></a>COleControl::SelectFontObject  
+##  <a name="selectfontobject"></a>  COleControl::SelectFontObject  
  デバイス コンテキストにフォントを選択します。  
   
 ```  
@@ -3346,7 +3346,7 @@ CFont* SelectFontObject(
 ### <a name="return-value"></a>戻り値  
  以前に選択したフォントへのポインター。 呼び出し元が使用するすべての描画操作を完了すると*fontHolder、*へのパラメーターとして渡すことによって、以前に選択したフォントがもう一度選択する必要があります[cdc::selectobject](../../mfc/reference/cdc-class.md#selectobject)です。  
   
-##  <a name="selectstockfont"></a>それ  
+##  <a name="selectstockfont"></a>  COleControl::SelectStockFont  
  デバイス コンテキストにストック フォント プロパティを選択します。  
   
 ```  
@@ -3360,7 +3360,7 @@ CFont* SelectStockFont(CDC* pDC);
 ### <a name="return-value"></a>戻り値  
  以前に選択したへのポインター`CFont`オブジェクト。 使用する必要があります[cdc::selectobject](../../mfc/reference/cdc-class.md#selectobject)が完了したら、デバイス コンテキストに戻すこのフォントを選択します。  
   
-##  <a name="serializeextent"></a>COleControl::SerializeExtent  
+##  <a name="serializeextent"></a>  COleControl::SerializeExtent  
  シリアル化またはコントロールに割り当てられた表示領域の状態を初期化します。  
   
 ```  
@@ -3377,7 +3377,7 @@ void SerializeExtent(CArchive& ar);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCAxCtl#8](../../mfc/reference/codesnippet/cpp/colecontrol-class_9.cpp)]  
   
-##  <a name="serializestockprops"></a>COleControl::SerializeStockProps  
+##  <a name="serializestockprops"></a>  COleControl::SerializeStockProps  
  シリアル化またはの状態を初期化、`COleControl`ストック プロパティ: 外観、色の BackColor、BorderStyle、キャプション、Enabled、フォント、前景色、およびテキスト。  
   
 ```  
@@ -3393,7 +3393,7 @@ void SerializeStockProps(CArchive& ar);
   
  使用して、コントロールのバイナリの永続化のパフォーマンスを向上できる`SerializeStockProps`、 `SerializeExtent`、および`SerializeVersion`をオーバーライドする**COleControl::Serialize**です。 例についてにあるコードを参照してください。 [SerializeExtent](#serializeextent)です。 初期化の最適化の詳細については、次を参照してください。 [ActiveX コントロール: 最適化](../../mfc/mfc-activex-controls-optimization.md)です。  
   
-##  <a name="serializeversion"></a>COleControl::SerializeVersion  
+##  <a name="serializeversion"></a>  COleControl::SerializeVersion  
  シリアル化またはコントロールのバージョン情報の状態を初期化します。  
   
 ```  
@@ -3419,7 +3419,7 @@ DWORD SerializeVersion(
 ### <a name="remarks"></a>コメント  
  使用して、コントロールのバイナリの永続化のパフォーマンスを向上できる`SerializeVersion`、 `SerializeExtent`、および`SerializeStockProps`をオーバーライドする**COleControl::Serialize**です。 例についてにあるコードを参照してください。 [SerializeExtent](#serializeextent)です。 初期化の最適化の詳細については、次を参照してください。 [ActiveX コントロール: 最適化](../../mfc/mfc-activex-controls-optimization.md)です。  
   
-##  <a name="setappearance"></a>COleControl::SetAppearance  
+##  <a name="setappearance"></a>  COleControl::SetAppearance  
  コントロールの株価の外観プロパティの値を設定します。  
   
 ```  
@@ -3433,7 +3433,7 @@ void SetAppearance (short sAppearance);
 ### <a name="remarks"></a>コメント  
  ストック プロパティの詳細についてを参照してください。 [ActiveX コントロール: プロパティ](../../mfc/mfc-activex-controls-properties.md)です。  
   
-##  <a name="setbackcolor"></a>COleControl::SetBackColor  
+##  <a name="setbackcolor"></a>  COleControl::SetBackColor  
  コントロールの株価 BackColor プロパティの値を設定します。  
   
 ```  
@@ -3447,7 +3447,7 @@ void SetBackColor(OLE_COLOR dwBackColor);
 ### <a name="remarks"></a>コメント  
  このプロパティおよびその他の使用方法の詳細に関連するプロパティが、記事を参照してください[ActiveX コントロール: プロパティ](../../mfc/mfc-activex-controls-properties.md)です。  
   
-##  <a name="setborderstyle"></a>COleControl::SetBorderStyle  
+##  <a name="setborderstyle"></a>  COleControl::SetBorderStyle  
  コントロールの株価 BorderStyle プロパティの値を設定します。  
   
 ```  
@@ -3461,7 +3461,7 @@ void SetBorderStyle(short sBorderStyle);
 ### <a name="remarks"></a>コメント  
  コントロールのウィンドウが再作成する、および`OnBorderStyleChanged`と呼ばれます。  
   
-##  <a name="setcapture"></a>COleControl::SetCapture  
+##  <a name="setcapture"></a>  COleControl::SetCapture  
  コントロールの代理でマウスのキャプチャを所有しているを実行するコントロールのコンテナーのウィンドウをによりします。  
   
 ```  
@@ -3474,7 +3474,7 @@ CWnd* SetCapture();
 ### <a name="remarks"></a>コメント  
  コントロールがアクティブ化およびウィンドウなしの場合は、この関数は、コントロールの代理でマウスのキャプチャを所有しているを実行するコントロールのコンテナーのウィンドウをによりします。 それ以外の場合、この関数は、コントロール自体をマウスのキャプチャを所有している (と同じ`CWnd::SetCapture`)。  
   
-##  <a name="setcontrolsize"></a>COleControl::SetControlSize  
+##  <a name="setcontrolsize"></a>  COleControl::SetControlSize  
  OLE コントロール ウィンドウのサイズを設定し、コンテナー コントロール サイトが変更されていることを通知します。  
   
 ```  
@@ -3496,7 +3496,7 @@ BOOL SetControlSize(int cx, int cy);
   
  コントロール ウィンドウのすべての座標は、コントロールの左上隅に対する相対パスに注意してください。  
   
-##  <a name="setenabled"></a>COleControl::SetEnabled  
+##  <a name="setenabled"></a>  COleControl::SetEnabled  
  株価、コントロールの Enabled プロパティの値を設定します。  
   
 ```  
@@ -3510,7 +3510,7 @@ void SetEnabled(BOOL bEnabled);
 ### <a name="remarks"></a>コメント  
  このプロパティを設定したら**OnEnabledChange**と呼びます。  
   
-##  <a name="setfocus"></a>COleControl::SetFocus  
+##  <a name="setfocus"></a>  COleControl::SetFocus  
  コントロールの代理で入力フォーカスを所有しているを実行するコントロールのコンテナーのウィンドウをによりします。  
   
 ```  
@@ -3525,7 +3525,7 @@ CWnd* SetFocus();
   
  この関数により、コントロール自体を入力フォーカスを受け取るでコントロールがウィンドウなしでない場合 (同じ`CWnd::SetFocus`)。  
   
-##  <a name="setfont"></a>COleControl::SetFont  
+##  <a name="setfont"></a>  COleControl::SetFont  
  コントロールのストック フォント プロパティを設定します。  
   
 ```  
@@ -3536,7 +3536,7 @@ void SetFont(LPFONTDISP pFontDisp);
  *pFontDisp*  
  フォントのディスパッチ インターフェイスへのポインター。  
   
-##  <a name="setforecolor"></a>COleControl::SetForeColor  
+##  <a name="setforecolor"></a>  COleControl::SetForeColor  
  コントロールの株価 ForeColor プロパティの値を設定します。  
   
 ```  
@@ -3550,7 +3550,7 @@ void SetForeColor(OLE_COLOR dwForeColor);
 ### <a name="remarks"></a>コメント  
  このプロパティおよびその他の使用方法の詳細に関連するプロパティが、記事を参照してください[ActiveX コントロール: プロパティ](../../mfc/mfc-activex-controls-properties.md)です。  
   
-##  <a name="setinitialdataformats"></a>COleControl::SetInitialDataFormats  
+##  <a name="setinitialdataformats"></a>  COleControl::SetInitialDataFormats  
  コントロールによってサポートされるデータ形式のリストを初期化するためにフレームワークによって呼び出されます。  
   
 ```  
@@ -3560,7 +3560,7 @@ virtual void SetInitialDataFormats();
 ### <a name="remarks"></a>コメント  
  既定の実装は、次の 2 つの形式を指定します:`CF_METAFILEPICT`し、永続的なプロパティを設定します。  
   
-##  <a name="setinitialsize"></a>COleControl::SetInitialSize  
+##  <a name="setinitialsize"></a>  COleControl::SetInitialSize  
  コンテナーで最初に表示されるときの OLE コントロールのサイズを設定します。  
   
 ```  
@@ -3579,7 +3579,7 @@ void SetInitialSize(
 ### <a name="remarks"></a>コメント  
  コントロールの初期サイズを設定するコンス トラクターでは、この関数を呼び出します。 初期サイズは、デバイス単位、またはピクセル単位で計測されます。 この呼び出しは、コントロールのコンス トラクターで行うことをお勧めします。  
   
-##  <a name="setmodifiedflag"></a>COleControl::SetModifiedFlag  
+##  <a name="setmodifiedflag"></a>  COleControl::SetModifiedFlag  
  コントロールの変更の状態を変更します。  
   
 ```  
@@ -3593,7 +3593,7 @@ void SetModifiedFlag(BOOL bModified = TRUE);
 ### <a name="remarks"></a>コメント  
  コントロールの永続的な状態の影響を与える場合、変更が発生するたびに、この関数の呼び出しです。 たとえば、永続的なプロパティの値が変更された場合は、この関数を呼び出し、 `bModified` **TRUE**です。  
   
-##  <a name="setnotpermitted"></a>COleControl::SetNotPermitted  
+##  <a name="setnotpermitted"></a>  COleControl::SetNotPermitted  
  編集要求が失敗したことを示します。  
   
 ```  
@@ -3603,7 +3603,7 @@ void SetNotPermitted();
 ### <a name="remarks"></a>コメント  
  この関数を呼び出すときに`BoundPropertyRequestEdit`は失敗します。 この関数は型の例外をスロー **COleDispScodeException**設定操作が許可されていないことを示すためにします。  
   
-##  <a name="setnotsupported"></a>COleControl::SetNotSupported  
+##  <a name="setnotsupported"></a>  COleControl::SetNotSupported  
  ユーザーがコントロールのプロパティの値を変更しないようにします。  
   
 ```  
@@ -3613,7 +3613,7 @@ void SetNotSupported();
 ### <a name="remarks"></a>コメント  
  コントロールのユーザーがプロパティの値の変更はサポートされていない任意のプロパティの Set 関数の代わりにこの関数を呼び出します。 1 つの例には、プロパティは読み取り専用ですがあります。  
   
-##  <a name="setrectincontainer"></a>COleControl::SetRectInContainer  
+##  <a name="setrectincontainer"></a>  COleControl::SetRectInContainer  
  デバイス単位で表される、コンテナーを基準として、コントロールの四角形の座標を設定します。  
   
 ```  
@@ -3630,7 +3630,7 @@ BOOL SetRectInContainer(LPCRECT lpRect);
 ### <a name="remarks"></a>コメント  
  コントロールが開いている場合、サイズが変更されます。それ以外の場合、コンテナーの**OnPosRectChanged**関数が呼び出されます。  
   
-##  <a name="settext"></a>COleControl::SetText  
+##  <a name="settext"></a>  COleControl::SetText  
  コントロールのキャプションまたはテキスト ストック プロパティの値を設定します。  
   
 ```  
@@ -3644,7 +3644,7 @@ void SetText(LPCTSTR pszText);
 ### <a name="remarks"></a>コメント  
  ストックのキャプションとテキストのプロパティがどちらもマップされている同じ値に注意してください。 つまり、いずれかのプロパティに加えられた変更は、両方のプロパティに自動的に変更されます。 一般に、在庫キャプションまたはテキストのプロパティのいずれかが、コントロールをサポートします。  
   
-##  <a name="throwerror"></a>COleControl::ThrowError  
+##  <a name="throwerror"></a>  COleControl::ThrowError  
  コントロールでエラーの発生を通知します。  
   
 ```  
@@ -3676,7 +3676,7 @@ void ThrowError(
 ### <a name="remarks"></a>コメント  
  この関数のみから呼び出すことは Get または Set 関数内で OLE プロパティ、または OLE オートメーションのメソッドの実装です。 それ以外の場合に発生するエラーを通知する必要がある場合は、株価エラー イベントを発生させる必要があります。  
   
-##  <a name="transformcoords"></a>COleControl::TransformCoords  
+##  <a name="transformcoords"></a>  COleControl::TransformCoords  
  変換の間で値を調整する**HIMETRIC**ユニットと、コンテナーのネイティブな単位です。  
   
 ```  
@@ -3702,12 +3702,12 @@ void TransformCoords(
   
 - **XFORMCOORDS_HIMETRICTOCONTAINER**変換**HIMETRIC**ユニットまで、コンテナーの単位。  
   
-- **XFORMCOORDS_CONTAINERTOHIMETRIC**するコンテナーの単位変換**HIMETRIC**単位です。  
+- **XFORMCOORDS_CONTAINERTOHIMETRIC** Transform the container's units to **HIMETRIC** units.  
   
 ### <a name="remarks"></a>コメント  
  最初の 2 つのフラグ、 **XFORMCOORDS_POSITION**と**XFORMCOORDS_SIZE**座標が、位置またはサイズとして扱われるかどうか。 残りの 2 つのフラグは、変換の方向を示します。  
   
-##  <a name="translatecolor"></a>COleControl::TranslateColor  
+##  <a name="translatecolor"></a>  COleControl::TranslateColor  
  色の値を変換、 **OLE_COLOR**のデータ型、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)データ型。  
   
 ```  
@@ -3729,7 +3729,7 @@ COLORREF TranslateColor(
 ### <a name="remarks"></a>コメント  
  この関数は、株価前景色と背景色のプロパティを変換すると便利**COLORREF**によって使用される型[CDC](../../mfc/reference/cdc-class.md)メンバー関数。  
   
-##  <a name="willambientsbevalidduringload"></a>COleControl::WillAmbientsBeValidDuringLoad  
+##  <a name="willambientsbevalidduringload"></a>  COleControl::WillAmbientsBeValidDuringLoad  
  コントロールは、その後、永続的な状態から読み込まれるとき、ソース ファイルを既定値としてのアンビエント プロパティの値を使用するかどうかによって決まります。  
   
 ```  
@@ -3742,7 +3742,7 @@ BOOL WillAmbientsBeValidDuringLoad();
 ### <a name="remarks"></a>コメント  
  一部のコンテナーで、コントロールがないアンビエント プロパティへのアクセスのオーバーライドの最初の呼び出し中に`COleControl::DoPropExchange`です。 これは、ような場合は、コンテナーを呼び出す[IPersistStreamInit::Load](http://msdn.microsoft.com/library/windows/desktop/ms680730)または[機能として](http://msdn.microsoft.com/library/windows/desktop/ms680557)呼び出しの前に[IOleObject::SetClientSite](http://msdn.microsoft.com/library/windows/desktop/ms684013) (つまり、そうでない場合優先、 **OLEMISC_SETCLIENTSITEFIRST**ステータス ビット)。  
   
-##  <a name="windowproc"></a>COleControl::WindowProc  
+##  <a name="windowproc"></a>  COleControl::WindowProc  
  Windows 手順を説明する`COleControl`オブジェクト。  
   
 ```  
@@ -3768,7 +3768,7 @@ virtual LRESULT WindowProc(
 ### <a name="remarks"></a>コメント  
  コントロールのメッセージ マップを通じて特定のメッセージをディスパッチするためには、この関数を呼び出します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [MFC サンプル CIRC3](../../visual-cpp-samples.md)   
  [MFC サンプル TESTHELP](../../visual-cpp-samples.md)   
  [COlePropertyPage クラス](../../mfc/reference/colepropertypage-class.md)   

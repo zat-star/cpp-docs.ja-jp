@@ -214,10 +214,10 @@ helpviewer_keywords:
 ms.workload:
 - cplusplus
 ms.openlocfilehash: eb5b068f30703119d0771725a9cb9980a1ca65ea
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="ltalgorithmgt-functions"></a>&lt;algorithm&gt; 関数
 ||||  
@@ -4538,7 +4538,7 @@ After another next_permutation of vector v1,
 ```  
   
 ##  <a name="nth_element"></a>  nth_element  
- パーティションの範囲の要素を正しく検索、  *n*番目の要素範囲のシーケンスの前にすべての要素が、シーケンス内にあるすべての要素から、以下になるよう、大きいか等しいことを再構成します。  
+ 範囲内のシーケンスの *n* 番目の要素を正しく検索し、その要素の前にあるすべての要素がその要素以下、シーケンス内でその要素に続くすべての要素がその要素以上になるようにして、要素の範囲を分割します。  
   
 ```  
 template<class RandomAccessIterator>  
@@ -4565,7 +4565,7 @@ void nth_element( RandomAccessIterator first, RandomAccessIterator _Nth, RandomA
 ### <a name="remarks"></a>コメント  
  参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
   
- `nth_element`アルゴリズムとは限りませんのサブ範囲の要素か側の *n*番目の要素が並べ替えられます。 そのため、一定の選択した要素を下回る範囲内の要素を並べ替える `partial_sort` よりも保証は少なくなり、下の範囲の要素を並べ替えが不要な場合に `partial_sort` のより高速な代替として使用することができます。  
+ `nth_element` アルゴリズムは、*n* 番目の要素の両側のサブ範囲内の要素が並べ替えられることを保証していません。 そのため、一定の選択した要素を下回る範囲内の要素を並べ替える `partial_sort` よりも保証は少なくなり、下の範囲の要素を並べ替えが不要な場合に `partial_sort` のより高速な代替として使用することができます。  
   
  どちらの要素も他方より小さくない場合、要素は同等ですが、必ずしも等しいわけではありません。  
   
@@ -8464,5 +8464,5 @@ int main( )
 }  
   
 ```  
-## <a name="see-also"></a>参照   
+## <a name="see-also"></a>関連項目   
  [\<algorithm>](../standard-library/algorithm.md)

@@ -24,10 +24,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 7641a970c747576fa3cfd8cd1c00602edb3541e2
-ms.sourcegitcommit: 56f6fce7d80e4f61d45752f4c8512e4ef0453e58
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="mfc-library-versions"></a>MFC ライブラリのバージョン
 
@@ -116,8 +116,8 @@ MFC のスタティック ライブラリは、次の名前付け規則を使用
 |NAFXCWD.LIB|MFC スタティック リンク ライブラリのデバッグ バージョン|
 |UAFXCW.LIB|Unicode をサポート、リリース バージョンの MFC スタティック リンク ライブラリ|
 |UAFXCWD.LIB|Unicode をサポート、デバッグ バージョンの MFC スタティック リンク ライブラリ|
-|AFXNMCD です。LIB|MFC ダイアログ コントロール、リリース バージョンがない場合、MFC スタティック リンク ライブラリ|
-|AFXNMCDD です。LIB|MFC ダイアログ コントロール、デバッグ バージョンがない場合、MFC スタティック リンク ライブラリ|
+|AFXNMCD.LIB|MFC ダイアログ コントロール、リリース バージョンがない場合、MFC スタティック リンク ライブラリ|
+|AFXNMCDD.LIB|MFC ダイアログ コントロール、デバッグ バージョンがない場合、MFC スタティック リンク ライブラリ|
 
 同じ基本名と .pdb 拡張子を持つデバッガー ファイルも、スタティック ライブラリの各使用できます。
 
@@ -129,14 +129,14 @@ MFC Dll が*バージョン*バイナリの互換性を示す番号。 他のラ
 
 |[DLL]|説明|
 |---------|-----------------|
-|MFC*バージョン*します。DLL|MFC DLL、ANSI または MBCS リリース バージョン|
-|MFC*バージョン*U.DLL|MFC DLL、Unicode のリリース バージョン|
+|MFC*version*.DLL|MFC DLL、ANSI または MBCS リリース バージョン|
+|MFC*version*U.DLL|MFC DLL、Unicode のリリース バージョン|
 |MFC*バージョン*D.DLL|MFC DLL、ANSI または MBCS のデバッグ バージョン|
-|MFC*バージョン*UD です。DLL|MFC DLL、Unicode のデバッグ バージョン|
-|MFCM*バージョン*します。DLL|Windows フォーム コントロールと MFC DLL ANSI または MBCS リリース バージョン|
-|MFCM*バージョン*U.DLL|Unicode のリリース バージョンの Windows フォーム コントロールと MFC DLL|
-|MFCM*バージョン*D.DLL|Windows フォーム コントロールと MFC DLL ANSI または MBCS のデバッグ バージョン|
-|MFCM*バージョン*UD です。DLL|Unicode のデバッグ バージョンの Windows フォーム コントロールと MFC DLL|
+|MFC*version*UD.DLL|MFC DLL、Unicode のデバッグ バージョン|
+|MFCM*version*.DLL|Windows フォーム コントロールと MFC DLL ANSI または MBCS リリース バージョン|
+|MFCM*version*U.DLL|Unicode のリリース バージョンの Windows フォーム コントロールと MFC DLL|
+|MFCM*version*D.DLL|Windows フォーム コントロールと MFC DLL ANSI または MBCS のデバッグ バージョン|
+|MFCM*version*UD.DLL|Unicode のデバッグ バージョンの Windows フォーム コントロールと MFC DLL|
 
 アプリケーションまたは MFC の拡張これらの共有 Dll を使用する Dll をビルドするためのインポート ライブラリは、DLL と同じ基本名はあるが .lib ファイル名拡張子です。 のコードでに小規模のスタティック ライブラリを共有 Dll を使用して、リンクも必要がありますこのライブラリの名前は MFCS*バージョン*{U} {D} .lib です。
 

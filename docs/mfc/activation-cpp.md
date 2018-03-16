@@ -34,10 +34,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 70017721fb59fa0c6d18d568546d9618257328b5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="activation-c"></a>アクティベーション (C++)
 この記事では、OLE アイテムのビジュアル編集でのライセンス認証の役割について説明します。 ユーザーには、コンテナー ドキュメント内の OLE 項目が埋め込まれる後、は、使用する必要があります。 これを行うには、ユーザーがそのアイテムをアクティブ化すると、項目をダブルクリックします。 ライセンス認証のための最も頻繁にアクティビティを編集します。 OLE アイテム、編集、起動されたときに、項目を作成するサーバー アプリケーションに属しているを反映するように変更するのには、現在のフレーム ウィンドウ内のメニューとツールバーが。 この動作は、既知のインプレース アクティブ化は、コンテナー ドキュメントのウィンドウを離れることがなく複合ドキュメントに埋め込まれたアイテムを編集できます。  
@@ -55,7 +55,7 @@ ms.lasthandoff: 12/21/2017
   
  ユーザーをダブルクリックすると、その埋め込みアイテムの処理は、項目に対して定義されている動詞によって異なります。 詳細については、次を参照してください。[アクティベーション: 動詞](../mfc/activation-verbs.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [OLE](../mfc/ole-in-mfc.md)   
  [コンテナー](../mfc/containers.md)   
  [サーバー](../mfc/servers.md)

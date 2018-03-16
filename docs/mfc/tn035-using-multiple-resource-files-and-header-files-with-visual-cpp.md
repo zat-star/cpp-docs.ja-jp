@@ -23,10 +23,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: c8d641b94664292eac70e9eba40f994de26337e9
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="tn035-using-multiple-resource-files-and-header-files-with-visual-c"></a>テクニカル ノート 35: Visual C++ における複数のリソース ファイルとヘッダー ファイルの使用
 > [!NOTE]
@@ -124,7 +124,7 @@ RESOURCE.H     AFXRES.H
   
  AFXRES.H は、フレームワークによって使用され、特に AFXRES.RC 内で使用される、`ID_FILE_NEW` のような標準的なシンボルを定義します。 また、AFXRES.H 内の #include で指定されている WINRES.H には、WINDOWS.H のサブセットが含まれていて、これらは AFXRES.RC と同様、Visual C++ によって生成される .RC ファイルで必要とされるものです。 AFXRES.H 内で定義されたシンボルは、アプリケーションのリソース ファイル (MYAPP.RC) を編集するときに使用できます。 たとえば、`ID_FILE_NEW` は MYAPP.RC 内のメニュー リソースにある File New メニュー項目に関連して使用されます。 フレームワークで定義されたこれらのシンボルを変更または削除することはできません。  
   
-## <a name="_mfcnotes_tn035_including"></a>追加のヘッダー ファイルを含む  
+## <a name="_mfcnotes_tn035_including"></a> 追加のヘッダー ファイルを含む  
   
  AppWizard で作成したアプリケーションには、RESOURCE.H、および AFXRES.H という 2 つのヘッダー ファイルのみが含まれています。 RESOURCE.H のみがアプリケーション固有です。 次の状況では、追加の読み取り専用なヘッダー ファイルをインクルードする必要が生じることがあります。  
   
@@ -303,7 +303,7 @@ MYSTRS.H   / MYSHARED.H  \  MYMENUS.H
   
  Visual C++ は .RC ファイルを保存するときに必ず、.RC ファイルに//{{NO_DEPENDENCIES}} コメント行を追加します。 特定の状況では、RESOURCE.H に対するビルド依存関係を回避することが原因で、リンク時に検出されない実行時エラーが発生する可能性があります。 たとえば、再コンパイルされないリソースを .CPP ファイルが参照している状況で、シンボル ブラウザーを使用して、リソースのシンボルに対して割り当てられる数値を変更する場合は、そのリソースを正しく見つけることができず、アプリケーションの実行時にリソースが読み込まれません。 このような場合にする必要があります明示的に再コンパイルするいずれか。わかっている CPP ファイルは、リソースのシンボルの変更の影響を受けます。H または選択して**すべてリビルド**です。 頻繁に特定のリソース グループのシンボル値を変更する必要があれば、おそらくに表示されますの利便性と安全に、個別の読み取り専用ヘッダー ファイル、シンボルに上記のセクションで説明した[を含む追加のヘッダー ファイル](#_mfcnotes_tn035_including)です。  
   
-## <a name="_mfcnotes_tn035_set_includes"></a>Visual C を管理する方法はセットが含まれる情報 * *  
+## <a name="_mfcnotes_tn035_set_includes"></a> Visual C を管理する方法はセットが含まれる情報 * *  
   
  前述のように、[ファイル] メニューの [インクルード ファイルの設定] コマンドで 3 種類の情報を指定できます。  
   
@@ -391,7 +391,7 @@ BEGIN
 END  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

@@ -23,10 +23,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 2c87c279ae1f45899dfa4525c3bdc65bfa5acc2c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="indirection-operator-"></a>間接演算子: *
 ## <a name="syntax"></a>構文  
@@ -41,7 +41,7 @@ ms.lasthandoff: 12/21/2017
   
  オペランドが関数を指している場合、結果は関数指定子になります。 格納場所を指している場合、結果は格納場所を指定する左辺値になります。  
   
- 間接演算子は、ポインターへのポインターを逆参照するために累積的に使用される場合があります。 例:  
+ 間接演算子は、ポインターへのポインターを逆参照するために累積的に使用される場合があります。 例えば:  
   
 ```  
 // expre_Indirection_Operator.cpp  
@@ -73,7 +73,7 @@ int main() {
   
 -   ポインターが、実行プログラムで使用されていないアドレスを指定しています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [Address-of 演算子: (& a)](../cpp/address-of-operator-amp.md)   

@@ -20,10 +20,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: c432cde8a4c565e6195658ab27ce5f2cb1838f6a
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="recursivedirectoryiterator-class"></a>recursive_directory_iterator クラス
 ディレクトリ内のファイル名を走査する入力反復子を記述します。反復子は再帰的にサブディレクトリに下ることができます。 反復子 X の場合、式 *X の結果は、ファイル名とそのステータスに関する既知の情報をラップする directory_entry クラスのオブジェクトになります。  
@@ -181,12 +181,12 @@ recursive_directory_iterator& increment(error_code& ec) noexcept;
   
  この関数は、ネストされたシーケンス内の次のファイル名に進もうとします。 成功した場合は、myentry にそのファイル名を格納します。成功しなかった場合は、end-of-sequence 反復子を生成します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<filesystem >  
   
  **名前空間:** std::tr2::sys  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<filesystem>](../standard-library/filesystem.md)   
  [ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)

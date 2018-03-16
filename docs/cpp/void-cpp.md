@@ -24,10 +24,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: a800aca290a178e3b193c245df515385311b5593
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="void-c"></a>void (C++)
 関数の戻り値の型として `void` キーワードを使用した場合は、関数が値を戻さないことを示します。 関数のパラメーター リストで void を使用した場合は、関数がパラメーターを受け取らないことを示します。 ポインターの宣言で void を使用した場合は、ポインターが "汎用" であることを示します。  
@@ -52,6 +52,6 @@ int main() {
 }   
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キーワード](../cpp/keywords-cpp.md)   
- [基本型](../cpp/fundamental-types-cpp.md)
+ [基本的な型](../cpp/fundamental-types-cpp.md)

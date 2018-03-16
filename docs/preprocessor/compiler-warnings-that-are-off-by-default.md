@@ -15,11 +15,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 619e2c517305246937ed7428eadbcf40be31fe5b
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: 3ef690e42088294ac0cebfa2d153f56ccca2cb5c
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="compiler-warnings-that-are-off-by-default"></a>既定で無効になっているコンパイラの警告
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 02/23/2018
    **/壁**既定で無効になっているすべての警告を有効にします。 使用して個々 の警告をオフにすることができます、このオプションを使用する場合、 [/wd](../build/reference/compiler-option-warning-level.md)オプション。
 
 - [/w*lnnnn*](../build/reference/compiler-option-warning-level.md)  
-   これにより、警告 *nnnn* レベルで*l*です。
+   これにより、警告*nnnn*レベルで*l*です。
 
 既定では、次の警告はオフになっています。
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 02/23/2018
 |[C4435](../error-messages/compiler-warnings/compiler-warning-level-4-c4435.md) (レベル 4)|'*class1*':/vd2 下のオブジェクトのレイアウトは仮想ベースにより変更されます'*class2*'|
 |[C4437](../error-messages/compiler-warnings/compiler-warning-level-4-c4437.md) (レベル 4)|仮想基本から dynamic_cast '*class1*'to'*class2*' 一部のコンテキストで失敗する可能性があります|
 |C4444 (レベル 3)|トップ レベルの '__unaligned' がこのコンテキストで実装されていません。|
-|C4464 (レベル 4)|相対インクルード パスを含む '.. '|
+|[C4464](../error-messages/compiler-warnings/c4464.md) (レベル 4)|相対インクルード パスを含む '.. '|
 |C4472 (レベル 1)|'*識別子*' ネイティブ列挙型は、: マネージ列挙型を宣言するアクセス指定子 (プライベート/パブリック) の追加|
 |[C4514](../error-messages/compiler-warnings/compiler-warning-level-4-c4514.md) (レベル 4)|'*関数*': 参照されていないインライン関数は削除されました|
 |[C4536](../error-messages/compiler-warnings/compiler-warning-level-4-c4536.md) (レベル 4)|'type name': 型名のメタデータの限度を超えています '*制限*' 文字。|
@@ -103,7 +103,7 @@ ms.lasthandoff: 02/23/2018
 |[C4692](../error-messages/compiler-warnings/compiler-warning-level-1-c4692.md) (レベル 1)|'*関数*': 公開されたメンバーのシグネチャはアセンブリ プライベート ネイティブ型を含む'*native_type*'|
 |[C4710](../error-messages/compiler-warnings/compiler-warning-level-4-c4710.md) (レベル 4)|'*関数*': 関数のインライン関数ではありません|
 |[C4738](../error-messages/compiler-warnings/compiler-warning-level-3-c4738.md) (レベル 3)|メモリに 32 ビットの浮動結果を格納します。パフォーマンスが低下する可能性があります|
-|[C4746](../error-messages/compiler-warnings/compiler-warning-c4746.md)|揮発性アクセス '*式*' は/volatile:\<iso (& a) #124; ms > 設定; _iso_volatile_load/store 組み込み関数の使用を検討してください|
+|[C4746](../error-messages/compiler-warnings/compiler-warning-c4746.md)|揮発性アクセス '*式*' は/volatile:\<iso&#124;ms > 設定; _iso_volatile_load/store 組み込み関数の使用を検討してください|
 |C4749 (レベル 4)|条件付きでサポートされる: non standard レイアウトの種類に適用される offsetof '*型*'|
 |C4767 (レベル 4)|セクション名 '*シンボル*' が 8 文字より長いと、リンカーによって切り詰められます|
 |C4768 (レベル 3)|リンケージ指定する前に _ _declspec 属性は無視されます。|
@@ -160,6 +160,6 @@ ms.lasthandoff: 02/23/2018
 |-|-|
 |[C4431](../error-messages/compiler-warnings/compiler-warning-level-4-c4431.md) (レベル 4)|型指定子がありません - int と仮定しました。 メモ: C は、現在 int を既定値としてサポートしていません|
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [warning](../preprocessor/warning.md)

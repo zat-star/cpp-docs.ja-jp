@@ -25,10 +25,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 3af862988502ac0d1908c466aae5e62b753509c2
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="new-and-delete-operators"></a>new および delete 演算子
 
@@ -38,7 +38,7 @@ C++ を使用してオブジェクトの動的割り当てと解放がサポー�
   
  C ランタイム ライブラリおよび C++ 標準ライブラリを構成するライブラリ ファイルの一覧は、次を参照してください。 [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)します。  
   
-##  <a id="new_operator"></a> New 演算子  
+##  <a id="new_operator"> </a> New 演算子  
  次のようなステートメントがプログラムで検出された場合は、関数 `operator new` の呼び出しに変換されます。  
   
 ```cpp  
@@ -101,7 +101,7 @@ Blanks *SomeBlanks = new Blanks;
   
  Visual C 5.0 およびそれ以前、クラス型とすべての配列 (のいたかどうかに関係なく**クラス**型) を使用して割り当て、**新しい**演算子は常にグローバル使用**演算子の new**関数。  
   
- Visual C 5.0 以降では、コンパイラはメンバーの配列をサポート**新しい**と**削除**クラス宣言内の演算子。 例:  
+ Visual C 5.0 以降では、コンパイラはメンバーの配列をサポート**新しい**と**削除**クラス宣言内の演算子。 例えば:  
   
 ```cpp  
 // spec1_the_operator_new_function2.cpp  
@@ -144,7 +144,7 @@ int main() {
   
  失敗したメモリ割り当て要求を処理する別の方法がある: などの障害に対処するカスタム リカバリ ルーチンを記述し、呼び出すことによって、関数を登録、 [_set_new_handler](../c-runtime-library/reference/set-new-handler.md)ランタイム関数。  
   
-##  <a id="delete_operator"></a> Delete 演算子  
+##  <a id="delete_operator"> </a> Delete 演算子  
  動的に割り当てられたメモリを使用して、**新しい**演算子を使用して解放することができます、**削除**演算子。 Delete 演算子の呼び出し、**演算子 delete**関数で、使用可能なプールにメモリを解放します。 使用して、**削除**演算子もが、クラスのデストラクター (1 つである) 場合に呼び出されます。  
   
  グローバルとクラス スコープがある**演算子 delete**関数。 1 つだけ**演算子 delete**関数は、特定のクラスに対して定義できます以外の場合は、定義されている場合がグローバルを隠す**演算子 delete**関数。 グローバル**演算子 delete**関数が常に任意の型の配列に対して呼び出されます。  
@@ -215,7 +215,7 @@ int main( int argc, char *argv[] ) {
   
  上記のコードを "メモリ リーク" の検出に使うことができます。メモリ リークとは、フリー ストアに割り当てられ、解放されていないメモリを指します。 グローバルに、この検出を実行する**新しい**と**削除**演算子がメモリのカウントの割り当てと解放を再定義します。  
   
- Visual C 5.0 以降では、コンパイラはメンバーの配列をサポート**新しい**と**削除**クラス宣言内の演算子。 例:  
+ Visual C 5.0 以降では、コンパイラはメンバーの配列をサポート**新しい**と**削除**クラス宣言内の演算子。 例えば:  
   
 ```cpp  
 // spec1_the_operator_delete_function2.cpp  

@@ -23,10 +23,10 @@ ms.workload:
 - cplusplus
 - uwp
 ms.openlocfilehash: c2b88451bfad07c76b40f85b6512dc7f01147911
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="comptrrefoperator-interfacetype-operator"></a>ComPtrRef::operator InterfaceType** 演算子
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -40,11 +40,11 @@ operator InterfaceType**();
 ## <a name="remarks"></a>コメント  
  現在 ComPtrRef オブジェクトを削除ポインターを返しますのポインター-に-を - ComPtrRef オブジェクトによって表されるインターフェイスにします。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** client.h  
   
  **Namespace:** Microsoft::WRL::Details  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ComPtrRef クラス](../windows/comptrref-class.md)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

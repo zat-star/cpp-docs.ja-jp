@@ -22,10 +22,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 2d9b7ce4895d51c50185c5262664dc478af62cfa
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: HT
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="declarators-and-variable-declarations"></a>宣言子と変数宣言
 このセクションの残りの部分では、次の一覧に示す変数型の宣言の形式とその意味について説明します。 特に、残りの各セクションでは、以下を宣言する方法について説明します。  
@@ -97,5 +97,5 @@ int *aptr[10] // Declares an array of 10 pointers
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [宣言と型](../c-language/declarations-and-types.md)

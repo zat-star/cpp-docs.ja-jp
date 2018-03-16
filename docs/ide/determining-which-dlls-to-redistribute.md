@@ -1,7 +1,7 @@
 ---
 title: "再配布する Dll の決定 |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 09/21/2017
+ms.date: 03/13/2018
 ms.reviewer: 
 ms.suite: 
 ms.technology:
@@ -23,11 +23,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a3cc7b80e16abeecc756e7fa480c7bfe71682382
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: a6f942b01dd9379aea0c0ea2ab3751a6f140ef2a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="determining-which-dlls-to-redistribute"></a>再配布する DLL の決定
 
@@ -53,18 +53,18 @@ Visual Studio に含まれているすべてのファイルを再配布するこ
 
 |Visual C++ ライブラリ|説明|対象|
 |--------------------------|-----------------|----------------|
-|vcruntime*バージョン*.dll|ネイティブ コード用のランタイム ライブラリ。|標準 C および C++ 言語の起動と終了サービスを使用するアプリケーション。|
-|vccorlib*バージョン*.dll|マネージ コード用のランタイム ライブラリ。|C++ 言語サービスを使用するアプリケーションはマネージ コードです。|
-|msvcp*バージョン*.dll|ネイティブ コードの C++ 標準ライブラリです。|使用するアプリケーション、 [C++ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)です。|
-|concrt*バージョン*.dll|ネイティブ コードの同時実行ランタイム ライブラリです。|使用するアプリケーション、[同時実行ランタイム](../parallel/concrt/concurrency-runtime.md)です。|
-|mfc*バージョン*.dll|MFC (Microsoft Foundation Class) ライブラリ|使用するアプリケーション、 [MFC ライブラリ](../mfc/mfc-desktop-applications.md)です。|
-|mfc*バージョン**言語*.dll|Microsoft Foundation はクラス (MFC) ライブラリ リソースです。|特定の言語リソースを MFC を使用するアプリケーション。|
-|mfc*バージョン*u.dll|Unicode をサポートする MFC ライブラリ|使用するアプリケーション、 [MFC ライブラリ](../mfc/mfc-desktop-applications.md)Unicode のサポートを必要とします。|
+|vcruntime*version*.dll|ネイティブ コード用のランタイム ライブラリ。|標準 C および C++ 言語の起動と終了サービスを使用するアプリケーション。|
+|vccorlib*version*.dll|マネージ コード用のランタイム ライブラリ。|C++ 言語サービスを使用するアプリケーションはマネージ コードです。|
+|msvcp*バージョン*.dll および msvcp*バージョン*_*dotnumber*.dll|ネイティブ コードの C++ 標準ライブラリです。|使用するアプリケーション、 [C++ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)です。|
+|concrt*version*.dll|ネイティブ コードの同時実行ランタイム ライブラリです。|使用するアプリケーション、[同時実行ランタイム](../parallel/concrt/concurrency-runtime.md)です。|
+|mfc*version*.dll|MFC (Microsoft Foundation Class) ライブラリ|使用するアプリケーション、 [MFC ライブラリ](../mfc/mfc-desktop-applications.md)です。|
+|mfc*version* *language*.dll|Microsoft Foundation はクラス (MFC) ライブラリ リソースです。|特定の言語リソースを MFC を使用するアプリケーション。|
+|mfc*version*u.dll|Unicode をサポートする MFC ライブラリ|使用するアプリケーション、 [MFC ライブラリ](../mfc/mfc-desktop-applications.md)Unicode のサポートを必要とします。|
 |mfcmifc80.dll|MFC マネージ インターフェイス ライブラリ|使用するアプリケーション、 [MFC ライブラリ](../mfc/mfc-desktop-applications.md)で[Windows フォーム コントロール](/dotnet/framework/winforms/controls/index)です。|
-|mfcm*バージョン*.dll|MFC マネージ ライブラリ|使用するアプリケーション、 [MFC ライブラリ](../mfc/mfc-desktop-applications.md)で[Windows フォーム コントロール](/dotnet/framework/winforms/controls/index)です。|
-|mfcm*バージョン*u.dll|Unicode をサポートする MFC マネージ ライブラリ|使用するアプリケーション、 [MFC ライブラリ](../mfc/mfc-desktop-applications.md)で[Windows フォーム コントロール](/dotnet/framework/winforms/controls/index)Unicode のサポートを必要とします。|
-|vcamp*バージョン*.dll|ネイティブ コードの AMP ライブラリです。|使用するアプリケーション、 [C++ AMP ライブラリ](../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md)コード。|
-|vcomp*バージョン*.dll|ネイティブ コードの OpenMP ライブラリです。|使用するアプリケーション、 [C++ OpenMP ライブラリ](../parallel/openmp/openmp-in-visual-cpp.md)コード。|
+|mfcm*version*.dll|MFC マネージ ライブラリ|使用するアプリケーション、 [MFC ライブラリ](../mfc/mfc-desktop-applications.md)で[Windows フォーム コントロール](/dotnet/framework/winforms/controls/index)です。|
+|mfcm*version*u.dll|Unicode をサポートする MFC マネージ ライブラリ|使用するアプリケーション、 [MFC ライブラリ](../mfc/mfc-desktop-applications.md)で[Windows フォーム コントロール](/dotnet/framework/winforms/controls/index)Unicode のサポートを必要とします。|
+|vcamp*version*.dll|ネイティブ コードの AMP ライブラリです。|使用するアプリケーション、 [C++ AMP ライブラリ](../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md)コード。|
+|vcomp*version*.dll|ネイティブ コードの OpenMP ライブラリです。|使用するアプリケーション、 [C++ OpenMP ライブラリ](../parallel/openmp/openmp-in-visual-cpp.md)コード。|
 
 > [!NOTE]
 > Active Template Library を別の DLL として再配布する必要がなくなりました。 その機能はヘッダーとスタティック ライブラリに移動されました。
@@ -73,7 +73,7 @@ Visual Studio に含まれているすべてのファイルを再配布するこ
 
 システム Dll はオペレーティング システムの一部であるため、通常は再配布する必要はありません。 ただし、Microsoft オペレーティング システムの複数のバージョンでアプリケーションを実行する場合など、これが該当しない可能性もあります。 この場合、使用許諾契約書を必ずお読みください。 また、Windows Update や Service Pack を通じて、または Microsoft が提供する再頒布可能パッケージを使用して、システム DLL のアップグレードを試みてください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [配置方法の選択](../ide/choosing-a-deployment-method.md)
 

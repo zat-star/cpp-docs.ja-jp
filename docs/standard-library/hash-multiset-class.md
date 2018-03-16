@@ -102,10 +102,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 78fb4998754bc7a4b30a63de166973909d21b68f
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="hashmultiset-class"></a>hash_multiset クラス
 > [!NOTE]
@@ -219,7 +219,7 @@ class hash_multiset
 |-|-|  
 |[hash_multiset::operator=](#op_eq)|hash_multiset の要素を、別の hash_multiset のコピーで置き換えます。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<hash_set>  
   
  **名前空間:** stdext  
@@ -2443,7 +2443,7 @@ int main( )
 The hash_multiset has elements: 10 20.  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

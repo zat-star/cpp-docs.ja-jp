@@ -28,10 +28,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: a58adfefc5e2b3b5085a44c38dd392d3369421c8
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: HT
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="c-function-definitions"></a>C 関数定義
 関数定義は、関数の名前、受け取ることを想定するパラメーターの種類と数、および戻り値の型を指定します。 関数定義には、ローカル変数の宣言を持つ関数本体と、関数の処理を決定するステートメントも含まれます。  
@@ -115,5 +115,5 @@ ms.lasthandoff: 12/21/2017
   
  「[関数の属性](../c-language/function-attributes.md)」、「[ストレージ クラス](../c-language/storage-class.md)」、「[戻り値の型](../c-language/return-type.md)」、「[パラメーター](../c-language/parameters.md)」、および「[関数本体](../c-language/function-body.md)」の各セクションでは、関数定義のコンポーネントについて詳しく説明します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [関数](../c-language/functions-c.md)

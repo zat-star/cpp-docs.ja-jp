@@ -25,10 +25,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 959938be27e66a765ee0ae9e5aef9b3c1f1aed6f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="tn065-dual-interface-support-for-ole-automation-servers"></a>テクニカル ノート 65: OLE オートメーション サーバー用デュアル インターフェイス サポート
 > [!NOTE]
@@ -66,7 +66,7 @@ interface IDualAClick : IDispatch
  };  
 ```  
   
- インプレース インターフェイス ステートメントがある場合、開始メソッドとプロパティのエントリを追加します。 デュアル インターフェイスのメソッドとデュアル インターフェイスのプロパティのアクセサー関数を返すように、パラメーター リストのレイアウトを変更する必要があります、`HRESULT`属性を持つパラメーターとして、戻り値を渡すと`[retval,out]`です。 プロパティの場合が必要な読み書きの両方を追加する (`propget`) および書き込み (`propput`) 同じ id を持つ関数にアクセスします。例:  
+ インプレース インターフェイス ステートメントがある場合、開始メソッドとプロパティのエントリを追加します。 デュアル インターフェイスのメソッドとデュアル インターフェイスのプロパティのアクセサー関数を返すように、パラメーター リストのレイアウトを変更する必要があります、`HRESULT`属性を持つパラメーターとして、戻り値を渡すと`[retval,out]`です。 プロパティの場合が必要な読み書きの両方を追加する (`propget`) および書き込み (`propput`) 同じ id を持つ関数にアクセスします。例えば:  
   
 ```  
 [propput,
@@ -77,7 +77,7 @@ interface IDualAClick : IDispatch
     retval] BSTR* retval);
 ```  
   
- メソッドとプロパティを定義したら、コクラス ステートメントで、インターフェイス ステートメントへの参照を追加する必要があります。 例:  
+ メソッドとプロパティを定義したら、コクラス ステートメントで、インターフェイス ステートメントへの参照を追加する必要があります。 例えば:  
   
 ```  
 [ uuid(4B115281-32F0-11cf-AC85-444553540000) ]  
@@ -90,7 +90,7 @@ coclass Document
   
  ODL ファイルを更新するは、MFC のインターフェイス マップ機構を使用してオブジェクトのクラス デュアル インターフェイスの実装クラスを定義し、MFC に対応するエントリが作成`QueryInterface`メカニズムです。 内の 1 つのエントリを作成する必要があります、`INTERFACE_PART`ディスパッチ インターフェイスのエントリに加え、ODL のインターフェイス ステートメント内の各エントリをブロックします。 各 ODL エントリを**propput**属性には、という名前の関数が必要があります`put_propertyname`です。 各エントリを**propget**属性には、という名前の関数が必要があります`get_propertyname`です。  
   
- デュアル インターフェイスの実装クラスを定義するのには、追加、`DUAL_INTERFACE_PART`オブジェクト クラスの定義をブロックします。 例:  
+ デュアル インターフェイスの実装クラスを定義するのには、追加、`DUAL_INTERFACE_PART`オブジェクト クラスの定義をブロックします。 例えば:  
   
 ```  
 BEGIN_DUAL_INTERFACE_PART(DualAClick,
@@ -136,7 +136,7 @@ BEGIN_INTERFACE_MAP(CAutoClickDoc,
 END_INTERFACE_MAP()  
 ```  
   
- 次に、インターフェイスの実装を入力する必要があります。 ほとんどの場合、ことができますを既存の MFC を委任する`IDispatch`実装します。 例:  
+ 次に、インターフェイスの実装を入力する必要があります。 ほとんどの場合、ことができますを既存の MFC を委任する`IDispatch`実装します。 例えば:  
   
 ```  
 STDMETHODIMP_(ULONG) CAutoClickDoc::XDualAClick::AddRef()  
@@ -239,7 +239,7 @@ STDMETHODIMP CAutoClickDoc::XDualAClick::Invoke(
 }  
 ```  
   
- オブジェクトのメソッドとプロパティのアクセサー関数も実装する必要があります。 メソッドとプロパティ関数は、ClassWizard を使用して生成されたメソッドに一般的に委任できます。 ただし、変数に直接アクセスするプロパティを設定する場合は、変数に値を取得/格納するコードを記述する必要があります。 例:  
+ オブジェクトのメソッドとプロパティのアクセサー関数も実装する必要があります。 メソッドとプロパティ関数は、ClassWizard を使用して生成されたメソッドに一般的に委任できます。 ただし、変数に直接アクセスするプロパティを設定する場合は、変数に値を取得/格納するコードを記述する必要があります。 例えば:  
   
 ```  
 STDMETHODIMP CAutoClickDoc::XDualAClick::put_text(BSTR newText)  
@@ -262,7 +262,7 @@ STDMETHODIMP CAutoClickDoc::XDualAClick::get_text(BSTR* retval)
 ```  
   
 ## <a name="passing-dual-interface-pointers"></a>デュアル インターフェイス ポインターを渡す  
- 呼び出す必要がある場合に特に簡単です。 されていない、デュアル インターフェイス ポインターを渡す`CCmdTarget::FromIDispatch`です。 `FromIDispatch`MFC のでのみ機能`IDispatch`ポインター。 これを回避する方法の 1 つは、元のクエリに`IDispatch`ポインター セットは、MFC でし、必要な関数にそのポインターを渡します。 例:  
+ 呼び出す必要がある場合に特に簡単です。 されていない、デュアル インターフェイス ポインターを渡す`CCmdTarget::FromIDispatch`です。 `FromIDispatch` MFC のでのみ機能`IDispatch`ポインター。 これを回避する方法の 1 つは、元のクエリに`IDispatch`ポインター セットは、MFC でし、必要な関数にそのポインターを渡します。 例えば:  
   
 ```  
 STDMETHODIMP CAutoClickDoc::XDualAClick::put_Position(
@@ -280,7 +280,7 @@ return NOERROR;
 }  
 ```  
   
- デュアル インターフェイス メソッドを介して返さへのポインターを渡す前に、MFC から変換する必要があります`IDispatch`デュアル インターフェイス ポインターへのポインター。 例:  
+ デュアル インターフェイス メソッドを介して返さへのポインターを渡す前に、MFC から変換する必要があります`IDispatch`デュアル インターフェイス ポインターへのポインター。 例えば:  
   
 ```  
 STDMETHODIMP CAutoClickDoc::XDualAClick::get_Position(
@@ -305,8 +305,8 @@ lpDisp->QueryInterface(IID_IDualAutoClickPoint, (LPVOID*)retval);
   
 -   アプリケーションの`InitInstance`関数への呼び出しを探し、`COleObjectFactory::UpdateRegistryAll`です。 この呼び出しでは、次の呼び出しを追加して`AfxOleRegisterTypeLib`を指定して、 **LIBID**タイプ ライブラリの名前と共に、タイプ ライブラリに対応します。  
   
- '' */ことをお勧めはサーバー アプリケーションが起動すると、スタンドアロン/*//が破損した場合に、システム レジストリを更新します。  
-    m_server です。UpdateRegistry(OAT_DISPATCH_OBJECT) です。
+ ``` *// When a server application is launched stand-alone, it is a good idea *// to update the system registry in case it has been damaged.  
+    m_server.UpdateRegistry(OAT_DISPATCH_OBJECT);
 
  COleObjectFactory::UpdateRegistryAll() です。*//DUAL_SUPPORT_START */、タイプ ライブラリが登録されているか、デュアル インターフェイスは動作しないかどうかを確認します。  
 AfxOleRegisterTypeLib(AfxGetInstanceHandle()、LIBID_ACDual、_T("AutoClik.TLB")) です。*//DUAL_SUPPORT_END  
@@ -328,9 +328,9 @@ AfxOleRegisterTypeLib(AfxGetInstanceHandle()、LIBID_ACDual、_T("AutoClik.TLB")
  ```  
     initIIDs.c: デュアル インターフェイスの Iid を定義します。  
     プリコンパイル済みヘッダーとこれに構築する必要がありません。  
-      #<a name="include-ole2h"></a>< ole2.h > が含まれます  
-      #<a name="include-initguidh"></a>< initguid.h > が含まれます  
-      #<a name="include-acdualh"></a>"acdual.h"を含める  
+      #<a name="include-ole2h"></a>include <ole2.h>  
+      #<a name="include-initguidh"></a>include <initguid.h>  
+      #<a name="include-acdualh"></a>include "acdual.h"  
  ```  
   
 3.  On the **Build** menu, click **Settings**, and then select INITIIDS.CPP from the file list for each configuration.  
@@ -352,7 +352,7 @@ STDMETHODIMP CAutoClickDoc::XDualAClick::put_text(BSTR newText)
 {  
     METHOD_PROLOGUE (CAutoClickDoc、DualAClick)  
     TRY_DUAL(IID_IDualAClick) {*/MFC が自動的に変換する Unicode BSTR から/*//Ansi CString、必要に応じて.  
-    pThis m_str]-> [= 新しいテキストを入力します。  
+    pThis->m_str = newText;  
     NOERROR; を返す  
  }  
     発生時}  
@@ -390,26 +390,26 @@ STDMETHODIMP CAutoClickDoc::XDualAClick::put_text(BSTR newText)
 ```  
 STDMETHODIMP_(ULONG) CAutoClickDoc::XSupportErrorInfo::AddRef()   
 {  
-    METHOD_PROLOGUE (CAutoClickDoc、SupportErrorInfo)   
+    METHOD_PROLOGUE(CAutoClickDoc, SupportErrorInfo)   
     戻り値の pThis ExternalAddRef();]-> [します。
 
 }   
 STDMETHODIMP_(ULONG) CAutoClickDoc::XSupportErrorInfo::Release()   
 {   
-    METHOD_PROLOGUE (CAutoClickDoc、SupportErrorInfo)   
+    METHOD_PROLOGUE(CAutoClickDoc, SupportErrorInfo)   
     戻り値の pThis ExternalRelease();]-> [します。
 
 }   
 STDMETHODIMP CAutoClickDoc::XSupportErrorInfo::QueryInterface (REFIID iid、LPVOID * ppvObj)   
 {   
-    METHOD_PROLOGUE (CAutoClickDoc、SupportErrorInfo)   
+    METHOD_PROLOGUE(CAutoClickDoc, SupportErrorInfo)   
     戻り値の pThis は ExternalQueryInterface (& iid、ppvObj); -> します。
 
 }   
 STDMETHODIMP CAutoClickDoc::XSupportErrorInfo::InterfaceSupportsErrorInfo (REFIID iid)   
 {   
-    METHOD_PROLOGUE (CAutoClickDoc、SupportErrorInfo)   
-    返す (iid IID_IDualAClick を = =) S_OK: S_FALSE です。   
+    METHOD_PROLOGUE(CAutoClickDoc, SupportErrorInfo)   
+    return (iid == IID_IDualAClick) S_OK : S_FALSE;   
 }  
 ```  
   

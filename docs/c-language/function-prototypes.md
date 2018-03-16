@@ -24,10 +24,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: ea02b5b3bb1517623a0c3fc67a752d203f81c5a8
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: HT
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="function-prototypes"></a>関数プロトタイプ
 関数宣言を関数定義の前に挿入し、関数の名前、戻り値の型、ストレージ クラスとその他の属性を指定します。 プロトタイプにするには、関数宣言で、その関数の引数の型と識別子も指定する必要があります。  
@@ -102,5 +102,5 @@ void func1( struct S * );
   
  /Ze で、タグが依然としてグローバル スコープで入力されています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [関数](../c-language/functions-c.md)

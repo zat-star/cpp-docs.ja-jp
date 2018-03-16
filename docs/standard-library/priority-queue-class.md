@@ -36,10 +36,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 2d3c103673029f33d1d7eb36cce431c9b46d0270
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="priorityqueue-class"></a>priority_queue クラス
 基になるコンテナー型の先頭にあって常に最大になるか、または優先順位が最も高くなる要素へのアクセスを制限することにより、機能の制限を提供するテンプレート コンテナーのアダプター クラスです。 priority_queue に新しい要素を追加でき、priority_queue の最上位の要素を検査または削除できます。  
@@ -102,7 +102,7 @@ class priority_queue
 |[size](#size)|`priority_queue` 内の要素数を返します。|  
 |[top](#top)|`priority_queue` の最上位にある最大要素への const 参照を返します。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<queue>  
   
  **名前空間:** std  
@@ -559,7 +559,7 @@ The value_type is AnInt = 69
 The element at the top of the priority_queue is 69.  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

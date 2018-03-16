@@ -25,10 +25,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: f402eb49e86c8d6d3ce6c332172375125f577a2b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: HT
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="type-cast-conversions"></a>型キャスト変換
 型キャストを使用して、明示的に型を変換できます。  
@@ -68,5 +68,5 @@ ms.lasthandoff: 12/21/2017
   
  キャストで式を型 `void` に変換できますが、その結果の式を使用できるのは、値が不要な場合のみです。 **void \*** に変換され、元の型に戻されたオブジェクト ポインターは、元の値に戻ります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [型変換](../c-language/type-conversions-c.md)

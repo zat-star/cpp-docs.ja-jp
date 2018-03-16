@@ -30,10 +30,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 4dc08bce80d27493a8a13ac24bce7011282d7cd3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="member-access-operators--and--gt"></a>メンバー アクセス演算子: です。 パラメーターと&gt;
 ## <a name="syntax"></a>構文  
@@ -50,7 +50,7 @@ postfix-expression -> name
   
 1.  最初のフォームでは、*後置式*構造体、クラス、または共用体の型の値を表すと*名前*指定された構造体、共用体、またはクラスのメンバーに名前します。 操作の値は、の*名前*が左辺値の場合と*後置式*左辺値です。  
   
-2.  2 番目の形式で*後置式*構造体、共用体、またはクラスへのポインターを表すと*名前*指定された構造体、共用体、またはクラスのメンバーに名前します。 値が*名前*左辺値です。  **->** 演算子には、ポインターが逆参照します。 そのため、式は、 *e*  **->**  `member`と**(\****e***)**.`member` (場所*e*ポインターを表します) と同じ結果が生じる (する場合を除く演算子は、  **->** または **\*** はオーバー ロードされます)。  
+2.  2 番目の形式で*後置式*構造体、共用体、またはクラスへのポインターを表すと*名前*指定された構造体、共用体、またはクラスのメンバーに名前します。 値が*名前*左辺値です。  **->** 演算子には、ポインターが逆参照します。 そのため、式 * e * **->**  `member`と**(\****e***)**です。`member` (場所*e*ポインターを表します) と同じ結果が生じる (する場合を除く演算子は、  **->** または **\*** はオーバー ロードされます)。  
   
 ## <a name="example"></a>例  
  次の例に、メンバー アクセス演算子の両方の形式を示します。  
@@ -87,7 +87,7 @@ int main() {
 2/1/2000  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [後置式](../cpp/postfix-expressions.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [クラスと構造体](../cpp/classes-and-structs-cpp.md)   

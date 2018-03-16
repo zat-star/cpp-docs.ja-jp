@@ -23,10 +23,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: a0c85ecf0752ff34bf5b61e42309360f2bc4d448
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: HT
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="function-body"></a>関数本体
 "関数本体" は、関数が何を行うかを指定するステートメントを含む複合ステートメントです。  
@@ -44,5 +44,5 @@ ms.lasthandoff: 12/21/2017
   
  関数が値を返す場合は、式を含む `return` ステートメントを実行する必要があります。 関数の戻り値は、`return` ステートメントが実行されていない場合、または `return` ステートメントが式を含まない場合は未定義です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C 関数の定義](../c-language/c-function-definitions.md)

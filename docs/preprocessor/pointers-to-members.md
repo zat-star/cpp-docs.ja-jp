@@ -26,10 +26,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 4313aaa38d410b8e6f46594cd9ce11269b523073
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="pointerstomembers"></a>pointers_to_members
 **C 固有の仕様**  
@@ -73,5 +73,5 @@ ms.lasthandoff: 02/23/2018
   
 ## <a name="end-c-specific"></a>END C++ 固有の仕様  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

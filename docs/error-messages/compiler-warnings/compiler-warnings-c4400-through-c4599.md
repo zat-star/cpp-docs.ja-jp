@@ -35,7 +35,6 @@ f1_keywords:
 - C4457
 - C4458
 - C4459
-- C4464
 - C4472
 - C4474
 - C4475
@@ -105,7 +104,6 @@ helpviewer_keywords:
 - C4457
 - C4458
 - C4459
-- C4464
 - C4472
 - C4474
 - C4475
@@ -152,11 +150,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 750f0cdd1b22a1ed72d569a6bf85646ee34b2aea
-ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
+ms.openlocfilehash: 9843c3725022ff500d31b90677192c4178c42596
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="compiler-warnings-c4400-through-c4599"></a>コンパイラの警告 C4400 C4599 経由
 
@@ -177,7 +175,7 @@ ms.lasthandoff: 02/21/2018
 |[コンパイラの警告 (レベル 1) C4405](../../error-messages/compiler-warnings/compiler-warning-level-1-c4405.md)|'*識別子*': 識別子は予約語|
 |[コンパイラの警告 (レベル 1) C4406](../../error-messages/compiler-warnings/compiler-warning-level-1-c4406.md)|ディレクティブは無視のオペランド|
 |[コンパイラの警告 (レベル 1) C4407](../../error-messages/compiler-warnings/compiler-warning-level-1-c4407.md)|メンバーに対して異なるポインターの間でキャスト、コンパイラは正しくないコードを生成可能性があります。|
-|[コンパイラの警告 (レベル 4) C4408](../../error-messages/compiler-warnings/compiler-warning-level-4-c4408.md)|匿名構造体 &#124; 共用体データ メンバーの宣言がありません|
+|[コンパイラの警告 (レベル 4) C4408](../../error-messages/compiler-warnings/compiler-warning-level-4-c4408.md)|匿名 ' 構造体&#124;共用体 '、データ メンバーの宣言がありません|
 |[コンパイラの警告 (レベル 1) C4409](../../error-messages/compiler-warnings/compiler-warning-level-1-c4409.md)|無効な命令のサイズ|
 |[コンパイラの警告 (レベル 1) C4410](../../error-messages/compiler-warnings/compiler-warning-level-1-c4410.md)|オペランドの無効なサイズ|
 |[コンパイラの警告 (レベル 1) C4411](../../error-messages/compiler-warnings/compiler-warning-level-1-c4411.md)|'*識別子*': 置換レジスタ シンボル|
@@ -210,7 +208,7 @@ ms.lasthandoff: 02/21/2018
 |コンパイラの警告 (レベル 1) C4442|_ _annotation 引数に null 終端文字を埋め込みます。  値が切り捨てられます。|
 |コンパイラの警告 (レベル 1) C4443|プラグマ パラメーターに '0'、'1' または '2' にします。|
 |コンパイラの警告 (レベル 3) C4444|'*識別子*': このコンテキストにトップ レベル '_ _unaligned' が実装されていません|
-|[コンパイラの警告 (レベル 1) C4445](../../error-messages/compiler-warnings/compiler-warning-level-1-c4445.md)|'*関数*': で、' WinRT &#124; マネージ' 型の仮想メソッドをプライベートにすることはできません|
+|[コンパイラの警告 (レベル 1) C4445](../../error-messages/compiler-warnings/compiler-warning-level-1-c4445.md)|'*関数*': で、' WinRT&#124;マネージ' 型の仮想メソッドをプライベートにすることはできません|
 |コンパイラの警告 (レベル 1) C4446|'*型*': メンバーをマップすることはできません'*name1*' この型に型名と競合するためです。 メソッドは次の名前に変更されました '*name2*'|
 |コンパイラの警告 (レベル 1) C4447|'main' シグネチャが見つかりましたが、スレッド処理モデル。 使用を検討 ' int main (platform::array\<platform::string ^ > ^ args)' です。|
 |コンパイラの警告 C4448|'*型*1' がメタデータで指定された既定のインターフェイスです。 ピッキング: '*type2*'、実行時に失敗する可能性があります。|
@@ -225,14 +223,14 @@ ms.lasthandoff: 02/21/2018
 |[コンパイラの警告 (レベル 4) C4457](compiler-warning-level-4-c4457.md)|宣言 '*識別子*' 関数のパラメーターを非表示にします|
 |[コンパイラの警告 (レベル 4) C4458](compiler-warning-level-4-c4458.md)|宣言 '*識別子*'、クラス メンバーが非表示にします|
 |[コンパイラの警告 (レベル 4) C4459](compiler-warning-level-4-c4459.md)|宣言 '*識別子*' グローバル宣言を非表示になります|
-|[コンパイラの警告 (レベル 4) C4460](../../error-messages/compiler-warnings/compiler-warning-level-4-c4460.md)|'WinRT &#124; 管理されている' 演算子 '*演算子*' が、参照によって渡されるパラメーター。 'WinRT &#124; 管理' 演算子 '*演算子*'は C++ 演算子セマンティクスとは異なる'*cpp_operator*'、値渡しするつもりでしたか?|
+|[コンパイラの警告 (レベル 4) C4460](../../error-messages/compiler-warnings/compiler-warning-level-4-c4460.md)|'WinRT&#124;マネージ' operator '*演算子*' が、参照によって渡されるパラメーター。 'WinRT&#124;マネージ' 演算子 '*演算子*'は C++ 演算子セマンティクスとは異なる'*cpp_operator*'、値渡しするつもりでしたか?|
 |[コンパイラの警告 (レベル 1) C4461](../../error-messages/compiler-warnings/compiler-warning-level-1-c4461.md)|'*classname*': このクラスはファイナライザー '!*ファイナライザー*'が、デストラクター' ~*dtor*'|
 |[コンパイラの警告 (レベル 1、エラー) C4462](../../error-messages/compiler-warnings/compiler-warning-level-1-c4462.md)|'*型*': 型の GUID を決定することはできません。 プログラムは、実行時に失敗する可能性があります。|
 |[コンパイラの警告 (レベル 4) C4463](compiler-warning-level-4-c4463.md)|オーバーフローです。割り当てる '*値*'にビット フィールドの値を保持できるだけ'*min_value*'to'*max_value*'|
-|コンパイラの警告 (レベル 4) C4464|相対インクルード パスを含む '.. '|
+|[コンパイラの警告 (レベル 4) C4464](../../error-messages/compiler-warnings/c4464.md)|相対インクルード パスを含む '.. '|
 |[コンパイラの警告 (レベル 1) C4470](../../error-messages/compiler-warnings/compiler-warning-level-1-c4470.md)|浮動小数点の制御 pragmas は/clr で無視されました|
 |[コンパイラの警告 (レベル 4) C4471](compiler-warning-level-4-c4471.md)|'*列挙*': 対象範囲外の列挙の事前宣言が基になる型 (int が想定されます) を持つ必要があります|
-|コンパイラの警告 (レベル 1) C4472|'*識別子*' ネイティブ列挙型は、: 宣言アクセス指定子 (プライベート/パブリック) を追加、' WinRT &#124; 管理されている ' 列挙型|
+|コンパイラの警告 (レベル 1) C4472|'*識別子*' ネイティブ列挙型は、: 宣言アクセス指定子 (プライベート/パブリック) を追加、' WinRT&#124;マネージ ' 列挙型|
 |[コンパイラの警告 (レベル 1) C4473](c4473.md)|'*関数*': 書式指定文字列の渡された引数が少なすぎます|
 |コンパイラの警告 (レベル 3) C4474|'*関数*': 書式文字列として渡された引数が多すぎます|
 |コンパイラの警告 (レベル 3) C4475|'*関数*': 長さ修飾子'*修飾子*'の型フィールド文字を使用することはできません'*文字*' 書式指定子|

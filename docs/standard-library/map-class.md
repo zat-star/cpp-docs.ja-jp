@@ -104,10 +104,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: be1d2ddf9c80c2039608a3cf5f459284796b685d
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="map-class"></a>map クラス
 データ値と並べ替えキーのペアになっている要素が含まれているコレクションに対して、データの格納と取得を実行するために使用します。 キーの値は一意で、データを自動的に並べ替えるために使用されます。  
@@ -233,7 +233,7 @@ class map;
 |[operator&#91;&#93;](#op_at)|map に、指定したキー値を持つ要素を挿入します。|  
 |[operator=](#op_eq)|別の map のコピーで map の要素を置き換えます。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<map>  
   
  **名前空間:** std  
@@ -2633,7 +2633,7 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [\<map> Members](http://msdn.microsoft.com/en-us/7e8f0bc2-6034-40f6-9d14-76d4cef86308)   
  [コンテナー](../cpp/containers-modern-cpp.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   

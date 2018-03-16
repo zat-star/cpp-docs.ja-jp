@@ -24,10 +24,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 0980f048b9be411308b159dea0ceaa71f8eee563
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="active-documents-on-the-internet"></a>インターネット上の Active ドキュメント
 アクティブなドキュメントは、従来の埋め込みオブジェクトの拡張機能を提供します。 アクティブなドキュメントは、マルチページ可能性があり、全体のクライアント領域に表示されます。 従来のメニューのネゴシエーションを実行し、インプレースだけでなく、サーバー アプリケーションで開いているウィンドウで編集できます。 斜線の枠で囲まれた小さな四角形として表示する、代わりに、アクティブなドキュメントは、フル フレームと常に、インプレース アクティブです。  
@@ -59,7 +59,7 @@ ms.lasthandoff: 12/21/2017
 |-------------------------|---------------------------------|  
 |そのストレージ メカニズムとして複合ファイルを使用します。|`IPersistStorage`。|  
 |アクティブなドキュメント、ファイルから作成などの基本的な埋め込み機能をサポートしています。|`IPersistFile`、`IOleObject`、および `IDataObject`。|  
-|サポートする、インプレース アクティブ化します。|`IOleInPlaceObject`および`IOleInPlaceActiveObject`(コンテナーを使用して`IOleInPlaceSite`と**IOleInPlaceFrame**インターフェイス)。|  
+|サポートする、インプレース アクティブ化します。|`IOleInPlaceObject` および`IOleInPlaceActiveObject`(コンテナーを使用して`IOleInPlaceSite`と**IOleInPlaceFrame**インターフェイス)。|  
 |これらの新しいインターフェイスを伴う作業中の文書の拡張機能をサポートしています。 一部のインターフェイスはオプションです。|`IOleDocument`、`IOleDocumentView`、`IOleCommandTarget`、および `IPrint`。|  
   
  MFC には、アクティブなドキュメントへの既存の埋め込みサーバー サポートを拡張するためのサポートが用意されています。  
@@ -67,7 +67,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="add-active-document-support-to-a-new-application"></a>アクティブ ドキュメントのサポートを新しいアプリケーションに追加します。  
  アクティブなドキュメントをサポートする新しいアプリケーションを作成する: MFC アプリケーション ウィザードでの**複合ドキュメント サポート**ページで、「複合ドキュメント サポート」では次のように選択します**フル サーバー**または。**コンテナー/フル サーバー**、および「その他のオプションを選択」チェック ボックスをオン**Active ドキュメント サーバー**です。  
   
-##  <a name="_core_convert_an_existing_mfc_in.2d.process_server_to_an_activex_document_server"></a>Active ドキュメント サーバーへの既存の MFC インプロセス サーバーを変換します。  
+##  <a name="_core_convert_an_existing_mfc_in.2d.process_server_to_an_activex_document_server"></a> Active ドキュメント サーバーへの既存の MFC インプロセス サーバーを変換します。  
  場合は、アプリケーション バージョン 4.2 より前のバージョンの Visual C で作成された、インプロセス サーバーが既に次のクラスに変更することによりアクティブ ドキュメントのサポートを追加できます。  
   
 |クラス型|前の派生元|派生する変更|  
@@ -77,7 +77,7 @@ ms.lasthandoff: 12/21/2017
   
  また、レジストリで、情報を入力する方法を変更し、その他のいくつかの変更を加えます。 アプリケーション コンポーネントの COM サポートがあるない場合、は、アプリケーションのウィザードを実行し、既存のアプリケーションと COM コンポーネント固有のコードを統合することで、サーバーのサポートを追加できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [MFC インターネット プログラミングの作業](../mfc/mfc-internet-programming-tasks.md)   
  [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)
 

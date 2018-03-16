@@ -28,10 +28,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 27da00e09ca88cc06b8bafed8f8601dac756fd34
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="ccomobject-class"></a>CComObject クラス
 このクラスは実装**IUnknown**非集約オブジェクト。  
@@ -54,7 +54,7 @@ class CComObject : public Base
 |名前|説明|  
 |----------|-----------------|  
 |[CComObject::CComObject](#ccomobject)|コンストラクターです。|  
-|[CComObject:: ~ CComObject](#dtor)|デストラクターです。|  
+|[CComObject::~CComObject](#dtor)|デストラクターです。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -66,7 +66,7 @@ class CComObject : public Base
 |[CComObject::Release](#release)|オブジェクトの参照カウントをデクリメントします。|  
   
 ## <a name="remarks"></a>コメント  
- `CComObject`実装する[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)非集約オブジェクト。 ただし、呼び出し`QueryInterface`、 `AddRef`、および**リリース**に委任され`CComObjectRootEx`です。  
+ `CComObject` 実装する[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)非集約オブジェクト。 ただし、呼び出し`QueryInterface`、 `AddRef`、および**リリース**に委任され`CComObjectRootEx`です。  
   
  使用しての詳細については`CComObject`、記事を参照して[ATL COM オブジェクトの基本事項](../../atl/fundamentals-of-atl-com-objects.md)です。  
   
@@ -75,10 +75,10 @@ class CComObject : public Base
   
  `CComObject`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="addref"></a>CComObject::AddRef  
+##  <a name="addref"></a>  CComObject::AddRef  
  オブジェクトの参照カウントをインクリメントします。  
   
 ```
@@ -88,7 +88,7 @@ STDMETHOD_(ULONG, AddRef)();
 ### <a name="return-value"></a>戻り値  
  この関数は、オブジェクトの新しいインクリメント参照カウントを返します。 この値は、診断やテストに役立つである可能性があります。  
   
-##  <a name="ccomobject"></a>CComObject::CComObject  
+##  <a name="ccomobject"></a>  CComObject::CComObject  
  コンス トラクターは、モジュールのロック カウントをインクリメントします。  
   
 ```
@@ -97,14 +97,14 @@ CComObject(void* = NULL);
   
 ### <a name="parameters"></a>パラメーター  
  **void\***  
- [in]この名前のないパラメーターは使用されません。 その他を含む対称に存在する場合**ほか***XXX*`Object`*XXX*コンス トラクターです。  
+ [in]この名前のないパラメーターは使用されません。 その他を含む対称に存在する場合 **ほか * * * XXX*`Object`*XXX*コンス トラクターです。  
   
 ### <a name="remarks"></a>コメント  
  デストラクターをデクリメントことです。  
   
  場合、 `CComObject`-派生オブジェクトが正常に作成されたを使用して、**新しい**演算子、初期の参照カウントが 0 です。 参照カウントを適切な値 (1) に設定するには、呼び出しを行う、 [AddRef](#addref)関数。  
   
-##  <a name="dtor"></a>CComObject:: ~ CComObject  
+##  <a name="dtor"></a>  CComObject::~CComObject  
  デストラクターです。  
   
 ```
@@ -115,7 +115,7 @@ CComObject();
  呼び出し、割り当てられているすべてのリソースを解放[FinalRelease](ccomobjectrootex-class.md#finalrelease)、およびモジュールのロック カウントをデクリメントします。  
 
   
-##  <a name="createinstance"></a>CComObject::CreateInstance  
+##  <a name="createinstance"></a>  CComObject::CreateInstance  
  この静的関数では、新しいを作成することができます**CComObject <** `Base`  **>** のオーバーヘッドがなく、オブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。  
   
 ```
@@ -139,7 +139,7 @@ static HRESULT WINAPI CreateInstance(CComObject<Base>** pp);
   
  [!code-cpp[NVC_ATL_COM#39](../../atl/codesnippet/cpp/ccomobject-class_2.cpp)]  
   
-##  <a name="queryinterface"></a>CComObject::QueryInterface  
+##  <a name="queryinterface"></a>  CComObject::QueryInterface  
  要求されたインターフェイスへのポインターを取得します。  
   
 ```
@@ -161,7 +161,7 @@ HRESULT STDMETHODCALLTYPE QueryInterface(Q** pp);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="release"></a>CComObject::Release  
+##  <a name="release"></a>  CComObject::Release  
  オブジェクトの参照カウントをデクリメントします。  
   
 ```
@@ -171,7 +171,7 @@ STDMETHOD_(ULONG, Release)();
 ### <a name="return-value"></a>戻り値  
  この関数は、オブジェクトの新しいデクリメント参照カウントを返します。 デバッグ ビルドで、戻り値の値は、診断に役に立たず、テストを指定できます。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラス](../../atl/reference/ccomaggobject-class.md)   
  [CComPolyObject クラス](../../atl/reference/ccompolyobject-class.md)   
  [DECLARE_AGGREGATABLE](aggregation-and-class-factory-macros.md#declare_aggregatable)   

@@ -41,10 +41,10 @@ helpviewer_keywords:
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 27152fc2ebc7944e4b96dce75937ac3c3b04616d
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="directoryiterator-class"></a>directory_iterator クラス
 ディレクトリのファイル名を走査する入力反復子を表します。 反復子 X の場合、式 *X の結果は、ファイル名とそのステータスに関する既知の情報をラップする directory_entry クラスのオブジェクトになります。  
@@ -138,12 +138,12 @@ directory_iterator& operator++(int);
   
  1 つ目のメンバー関数は、increment() を呼び出してから、*this を返します。 2 つ目のメンバー関数は、オブジェクトのコピーを作成して、increment() を呼び出してから、そのコピーを返します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<experimental/filesystem>  
   
  **名前空間:** std::experimental::filesystem  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<filesystem>](../standard-library/filesystem.md)   
  [ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)

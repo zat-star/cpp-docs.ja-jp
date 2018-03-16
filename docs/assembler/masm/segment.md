@@ -22,10 +22,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 253c3b389bd0411e6b5096e914b6a844c8f40805
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="segment"></a>SEGMENT
 呼ばれるプログラム セグメントを定義*名前*セグメント属性を持つ  
@@ -50,7 +50,7 @@ name ENDS
 |**DWORD**|次に利用可能なダブルワード アドレス (ダブル ワードあたり 4 バイト)。|  
 |**PARA**|次に使用可能な段落アドレス (1 つの段落は 16 バイト)。|  
 |**PAGE**|次に利用できるページ アドレス (1 ページあたり 256 バイト)。|  
-|**ALIGN**(*n*)|[次へ] 使用可能な *n*番目のバイトのアドレス。 詳細については「解説」セクションを参照してください。|  
+|**ALIGN**(*n*)|[次へ] 使用可能な*n*番目のバイトのアドレス。 詳細については「解説」セクションを参照してください。|  
   
  このパラメーターが指定されていない場合**PARA**は既定で使用します。  
   
@@ -76,5 +76,5 @@ name ENDS
 ## <a name="remarks"></a>コメント  
  `ALIGN(n)`、`n`任意の 1 から 8192 2 の累乗をする可能性があります。 でサポートされていません**/omf**です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

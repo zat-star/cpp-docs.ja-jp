@@ -104,10 +104,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 88ce199617f0628ccb7e022581cd52d83d82e2ac
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="deque-class"></a>deque クラス
 特定の型の要素をベクターのような線形の配置に整列し、任意の要素への高速なランダム アクセス、およびコンテナーの後ろでの効率的な挿入と削除を行えるようにします。 ただし、ベクターとは異なり、`deque` クラスは、コンテナーの前での効率的な挿入と削除もサポートします。  
@@ -207,7 +207,7 @@ class deque
 |[operator&#91;&#93;](#op_at)|指定した位置における `deque` 要素への参照を返します。|  
 |[operator=](#op_eq)|別の `deque` のコピーで `deque` の要素を置き換えます。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー**: \<deque>  
   
 ##  <a name="allocator_type"></a>  deque::allocator_type  
@@ -2269,7 +2269,7 @@ int main( )
 44  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

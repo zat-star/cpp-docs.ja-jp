@@ -38,10 +38,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 02b44288d21ab2df68468b0e39cb1ee35b7b8810
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="handlers-for-message-map-ranges"></a>範囲内のメッセージのハンドラー
 この記事では、メッセージの範囲を (1 つのメッセージを 1 つだけの関数にマッピング) ではなく 1 つのメッセージ ハンドラー関数にマップする方法について説明します。  
@@ -66,7 +66,7 @@ ms.lasthandoff: 12/21/2017
   
 -   [コントロール Id の範囲の例](#_core_example_for_a_range_of_control_ids)  
   
-##  <a name="_core_writing_the_message.2d.map_entry"></a>メッセージ マップ エントリを書き込む  
+##  <a name="_core_writing_the_message.2d.map_entry"></a> メッセージ マップ エントリを書き込む  
  の。CPP ファイルに次の例で示すように、メッセージ マップ エントリを追加します。  
   
  [!code-cpp[NVC_MFCMessageHandling#6](../mfc/codesnippet/cpp/handlers-for-message-map-ranges_1.cpp)]  
@@ -95,7 +95,7 @@ ms.lasthandoff: 12/21/2017
   
      3 番目のマクロでは、 `ON_CONTROL_RANGE`、追加の最初のパラメーターを受け取る: コントロールの通知メッセージなど、 **EN_CHANGE**です。  
   
-##  <a name="_core_declaring_the_handler_function"></a>ハンドラー関数の宣言  
+##  <a name="_core_declaring_the_handler_function"></a> ハンドラー関数の宣言  
  ハンドラー関数の宣言を追加します。H ファイルです。 次のコードは、次に示すようにこれが検索する方法を示しています。  
   
  [!code-cpp[NVC_MFCMessageHandling#7](../mfc/codesnippet/cpp/handlers-for-message-map-ranges_2.h)]  
@@ -104,7 +104,7 @@ ms.lasthandoff: 12/21/2017
   
  更新ハンドラー関数のパラメーターの要件の詳細については、次を参照してください。[例の Id の範囲コマンド](#_core_example_for_a_range_of_command_ids)です。  
   
-##  <a name="_core_example_for_a_range_of_command_ids"></a>範囲のコマンド Id の例  
+##  <a name="_core_example_for_a_range_of_command_ids"></a> 範囲のコマンド Id の例  
  使用すると範囲が 1 つの例では、MFC のサンプルのズーム コマンドと同様のコマンドの処理、 [HIERSVR](../visual-cpp-samples.md)です。 このコマンドは、表示、25% と通常のサイズの 300% の間でスケールを拡大します。 HIERSVR のビュー クラスでは、次のようなメッセージ マップ エントリにズーム コマンドを処理するのに範囲を使用します。  
   
  [!code-cpp[NVC_MFCMessageHandling#8](../mfc/codesnippet/cpp/handlers-for-message-map-ranges_3.cpp)]  
@@ -127,7 +127,7 @@ ms.lasthandoff: 12/21/2017
   
  通常実行する 1 つのコマンドは、単一のパラメーターのハンドラー関数を更新する`pCmdUI`、型の**CCmdUI\***です。 ハンドラー関数とは異なりメッセージ マップの範囲の更新プログラム ハンドラー関数が不要で追加のパラメーター `nID`、型の**UINT**です。 ユーザーが実際に選択したコマンドを指定するため、コマンド ID がで見つかった、`CCmdUI`オブジェクト。  
   
-##  <a name="_core_example_for_a_range_of_control_ids"></a>範囲のコントロール Id の例  
+##  <a name="_core_example_for_a_range_of_control_ids"></a> 範囲のコントロール Id の例  
  もう 1 つの興味深い例では、コントロール Id の範囲に対するコントロール通知メッセージを 1 つのハンドラーにマップします。 たとえば、ユーザーが 10 個のボタンをクリックします。 10 のすべてのボタンを 1 つのハンドラーにマップするには、メッセージ マップ エントリは次のようになります。  
   
  [!code-cpp[NVC_MFCMessageHandling#10](../mfc/codesnippet/cpp/handlers-for-message-map-ranges_5.cpp)]  
@@ -154,5 +154,5 @@ ms.lasthandoff: 12/21/2017
   
  例に示すコードは標準的な: に渡された値に変換する、`int`内でメッセージの範囲とこれは大文字と小文字であることをアサートするとします。 ボタンのクリックしてによっていくつかの異なるアクションを利用すること。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メッセージ ハンドラー関数の宣言](../mfc/declaring-message-handler-functions.md)

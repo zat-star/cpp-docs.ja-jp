@@ -27,10 +27,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 2183aead53ee02f36bc982e4f33ad174346da5f2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: HT
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="structure-and-union-members"></a>構造体と共用体のメンバー
 "メンバー選択式" は構造体と共用体のメンバーを参照します。 このような式には、選択したメンバーの値と型が割り当てられます。  
@@ -109,5 +109,5 @@ list[8].b = 12;
   
  このステートメントは、構造体の配列から個々の構造体メンバーを選択する方法を示しています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メンバー アクセス演算子: . および ->](../cpp/member-access-operators-dot-and.md)

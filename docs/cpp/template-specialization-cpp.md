@@ -20,10 +20,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 572ef5ca7199fab5b9ffda686425cdd53547a60a
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="template-specialization-c"></a>テンプレートの特殊化 (C++)
 
@@ -84,7 +84,7 @@ PTS<int S::*>::IsPointer == 0 PTS<int S::*>::IsPointerToDataMember == 1
   
 ## <a name="example"></a>例
 
- 任意の型を受け取るテンプレート コレクション クラスがあるかどうかは**T**、任意のポインター型を受け取る部分的特殊化を作成する**T*** です。 次のコードは、コレクション クラス テンプレート `Bag` と、配列にコピーする前にコレクションがポインター型を逆参照するポインター型の部分的特殊化を示します。 次に、コレクションは、指されている値を格納します。 元のテンプレートでは、ポインター自体だけがコレクションに格納され、データは削除や変更の危険性がある状態のままにされます。 コレクションのこの特殊なポインター バージョンでは、`add` メソッドの null ポインターを確認するコードが追加されます。  
+ 任意の型を受け取るテンプレート コレクション クラスがあるかどうかは**T**、任意のポインター型を受け取る部分的特殊化を作成することができます * * T * * *。 次のコードは、コレクション クラス テンプレート `Bag` と、配列にコピーする前にコレクションがポインター型を逆参照するポインター型の部分的特殊化を示します。 次に、コレクションは、指されている値を格納します。 元のテンプレートでは、ポインター自体だけがコレクションに格納され、データは削除や変更の危険性がある状態のままにされます。 コレクションのこの特殊なポインター バージョンでは、`add` メソッドの null ポインターを確認するコードが追加されます。  
   
 ```cpp
 // partial_specialization_of_class_templates2.cpp  

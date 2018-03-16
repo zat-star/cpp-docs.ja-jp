@@ -20,10 +20,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: c96cd6ad904439f556f2baa51602353ea00c5ac7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="help-files-html-help"></a>ヘルプ ファイル (HTML ヘルプ)
 選択して、アプリケーションにヘルプのサポートの HTML ヘルプの種類を追加するときに、次のファイルが作成された、**状況依存のヘルプ** チェック ボックスをクリックして**HTML ヘルプ形式**で[高度な機能](../mfc/reference/advanced-features-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。  
@@ -32,11 +32,11 @@ ms.lasthandoff: 12/21/2017
 |---------------|------------------------|--------------------------------|-----------------|  
 |*Projname*.hhp|*Projname*\hlp|HTML ヘルプ ファイル|ヘルプ プロジェクト ファイル。 .Hxs ファイルにヘルプ ファイルまたは .chm ファイルをコンパイルに必要なデータが含まれています。|  
 |*Projname*.hhk|*Projname*\hlp|HTML ヘルプ ファイル|ヘルプ トピックのインデックスが含まれています。|  
-|*Projname*影響|*Projname*\hlp|HTML ヘルプ ファイル|ヘルプ プロジェクトの内容。|  
+|*Projname*.hhc|*Projname*\hlp|HTML ヘルプ ファイル|ヘルプ プロジェクトの内容。|  
 |Makehtmlhelp.bat|*Projname*|ソース ファイル|プロジェクトがコンパイルされるときにヘルプ プロジェクトをビルドするシステムで使用します。|  
 |Afxcore.htm|*Projname*\hlp|HTML ヘルプ トピック|MFC の標準のコマンドと画面オブジェクトの標準のヘルプ トピックが含まれています。 このファイルに独自のヘルプ トピックを追加します。|  
 |Afxprint.htm|*Projname*\hlp|HTML ヘルプ トピック|印刷コマンドのヘルプ トピックが含まれています。|  
-|*.jpg です。\*.gif|*Projname*\hlp\Images|リソース ファイル (Visual Studio)|生成されたヘルプ トピックについてはファイルのイメージが含まれます。|  
+|*.jpg; \*.gif|*Projname*\hlp\Images|リソース ファイル (Visual Studio)|生成されたヘルプ トピックについてはファイルのイメージが含まれます。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual C++ プロジェクトに対して作成されるファイルの種類](../ide/file-types-created-for-visual-cpp-projects.md)
