@@ -205,7 +205,7 @@ virtual BOOL FindFile(
   
 ### <a name="parameters"></a>パラメーター  
  `pstrName`  
- 検索するファイルの名前を含む文字列へのポインター。 渡す場合**NULL**の`pstrName`、 **FindFile**は、ワイルドカード (*.\*) 検索します。  
+ 検索するファイルの名前を含む文字列へのポインター。 渡す場合**NULL**の`pstrName`、 **FindFile**は、ワイルドカード (\*.\*) 検索します。  
   
  *dwUnused*  
  予約する**FindFile**派生クラス。 0 にする必要があります。  
