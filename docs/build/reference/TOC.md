@@ -147,6 +147,7 @@
 ##### [/Zc: threadSafeInit (スレッド セーフなローカルの静的な初期化)](zc-threadsafeinit-thread-safe-local-static-initialization.md)
 ##### [/Zc: throwingNew (演算子の新しいスローの仮定)](zc-throwingnew-assume-operator-new-throws.md)
 ##### [/Zc:trigraphs (トライグラフの置換)](zc-trigraphs-trigraphs-substitution.md)
+##### [/Zc:twoPhase- (2 フェーズの名前参照を無効にします)](zc-twophase.md)
 ##### [/Zc:wchar_t (wchar_t をネイティブ型として認識)](zc-wchar-t-wchar-t-is-native-type.md)
 #### [/Zf (PDB 生成の高速化)](zf.md)
 #### [/Zg (関数プロトタイプの生成)](zg-generate-function-prototypes.md)
