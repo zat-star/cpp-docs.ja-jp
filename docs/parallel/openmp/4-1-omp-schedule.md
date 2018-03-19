@@ -1,5 +1,5 @@
 ---
-title: "4.1 OMP_SCHEDULE |Microsoft ドキュメント"
+title: 4.1 OMP_SCHEDULE | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -18,10 +18,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 330e5ea576e3cd779a7c17c21d00b6459f5e7043
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="41-ompschedule"></a>4.1 OMP_SCHEDULE
 **OMP_SCHEDULE**にのみ適用されます**の**と**の並列**をスケジュールの種類を持つディレクティブ**ランタイム**です。 このようなループのスケジュールの種類とチャンク サイズは、認識されているスケジュールの種類のいずれかをする、省略可能なこの環境変数を設定して実行時に設定できます*chunk_size*です。  
@@ -37,6 +37,6 @@ setenv OMP_SCHEDULE "dynamic"
   
 ## <a name="cross-references"></a>クロス リファレンス  
   
--   ****ディレクティブを参照してください[セクション 2.4.1](../../parallel/openmp/2-4-1-for-construct.md) [11] ページ。  
+-   **デ**ィレクティブを参照してください[セクション 2.4.1](../../parallel/openmp/2-4-1-for-construct.md) [11] ページ。  
   
 -   **並列**ディレクティブを参照してください[セクション 2.5.1](../../parallel/openmp/2-5-1-parallel-for-construct.md) 16 ページです。

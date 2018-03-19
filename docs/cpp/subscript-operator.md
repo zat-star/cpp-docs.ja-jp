@@ -25,10 +25,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 1fbcb3657af276cdfc9aa05d461c090b76f6de0b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="subscript-operator"></a>添字演算子:
 ## <a name="syntax"></a>構文  
@@ -39,7 +39,7 @@ postfix-expression [ expression ]
 ```  
   
 ## <a name="remarks"></a>コメント  
- (どの基本式もかまいません)、添字演算子が続く後置式**[]**配列のインデックスを指定します。  
+ 添字演算子 **[ ]** が続く後置式 (基本式である場合もあります) は、配列インデックスを指定します。  
   
  マネージ配列については、次を参照してください。[配列](../windows/arrays-cpp-component-extensions.md)です。  
   
@@ -51,11 +51,11 @@ cout << nArray[2] << endl;            // prints "2"
 cout << 2[nArray] << endl;            // prints "2"  
 ```  
   
- 上の例では、式 `nArray[2]` は `2[nArray]` と同じです。 理由添字式の結果は*e1***[** *e2* **]**によって得られます。  
+ 上の例では、式 `nArray[2]` は `2[nArray]` と同じです。 理由添字式の結果は*e1 * * * [** *e2* **]**によって得られます。  
   
- **\*((** *e2* **)**  *+*  **(***e1***))**  
+ **\*( (** *e2* **)** *+* **(***e1***) )**  
   
- 式から得られるアドレスが*e2*アドレスからのバイト*e1*です。 配列内の次のオブジェクトを生成するアドレスのスケールではなく、 *e2*です。 例:  
+ 式から得られるアドレスが*e2*アドレスからのバイト*e1*です。 配列内の次のオブジェクトを生成するアドレスのスケールではなく、 *e2*です。 例えば:  
   
 ```  
 double aDbl[2];  
@@ -65,9 +65,9 @@ double aDbl[2];
   
  添字式には、次のように複数の添字がある場合があります。  
   
- *expression1* **[***expression2***] [***expression3***]**しています.  
+ *expression1* **[***expression2***] [***expression3***]**...  
   
- 添字式は、左から右へ関連付けられます。 左端の添字式、*expression1***[***expression2***]** が最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***)、最終的なポインター値が配列型のアドレスしない限り、最後の添字式が評価された後に適用します。  
+ 添字式は、左から右へ関連付けられます。 左端の添字式 * expression1***[***expression2 ***]**、最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***)、最終的なポインター値が配列型のアドレスしない限り、最後の添字式が評価された後に適用します。  
   
  複数の添字を持つ式は、多次元配列の要素を参照します。 多次元配列は、要素が配列である配列です。 たとえば、3 次元配列の最初の要素は 2 次元配列です。 次の例では、文字の単純な 2 次元配列を宣言して初期化しています。  
   
@@ -116,7 +116,7 @@ int main() {
   
  添字演算子は可換です。 そのため、式は、*配列*[*インデックス*] と*配列*[*配列*]、添字限り等価であることが保証されます演算子のオーバー ロードされていない (を参照してください[オーバー ロードされた演算子](../cpp/operator-overloading.md))。 最初の形式は、共通のコーディングの推奨事項ですが、どちらの方法でも動作します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [後置式](../cpp/postfix-expressions.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [配列](../cpp/arrays-cpp.md)   

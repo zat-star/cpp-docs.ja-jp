@@ -18,10 +18,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 476e4e23b22527accaa095d80b827c95aed58c15
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="24-work-sharing-constructs"></a>2.4 動作共有のコンストラクト
 Work-sharing コンス トラクターは、これを検出した、チームのメンバーのうち、関連するステートメントの実行を配布します。 動作共有ディレクティブでは、新しいスレッドが起動しないと、work-sharing コンス トラクターへのエントリに暗黙のバリアはありません。  
@@ -30,7 +30,7 @@ Work-sharing コンス トラクターは、これを検出した、チームの
   
  OpenMP には、次の work-sharing コンス トラクターを定義し、これらは後に続くセクションで説明。  
   
--   ****ディレクティブ  
+-   **デ**ィレクティブ  
   
 -   **セクションでは**ディレクティブ  
   
