@@ -20,11 +20,11 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 67d66667d169a95ae4d62ccadd2b56a136cd0a76
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 82779e423a1958c0392aebb55d29e41bdd132cc1
+ms.sourcegitcommit: 6576d4d8a768279b4d340d036581e0f8a2974ea7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="interpreting-more-complex-declarators"></a>より複雑な宣言子の解釈
 宣言子をかっこで囲んで、"複雑な宣言子" の特定の解釈を指定できます。 複雑な宣言子は、複数の配列、ポインター、または関数の修飾子で修飾される識別子です。 1 つの ID には、配列、ポインター、関数修飾子のさまざまな組み合わせを適用できます。 通常、`typedef` を使用して、宣言を簡素化できます。 「[typedef 宣言](../c-language/typedef-declarations.md)」を参照してください。  
@@ -47,7 +47,7 @@ ms.lasthandoff: 12/21/2017
      7   6  4 2 1   3    5  
     ```  
   
- この例では、手順に順番に番号が振られ、次のように解釈できます。  
+この例では、手順に順番に番号が振られ、次のように解釈できます。  
   
 1.  識別子 `var` を次として宣言します  
   
