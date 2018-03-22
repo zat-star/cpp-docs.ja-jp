@@ -19,16 +19,16 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dd1190d09ea75073eb199f766dd1fd87291975be
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 10d40cbac5e9320ee335fa4c8090aa11d5157ae3
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="pointer-subtraction"></a>ポインターの減算
 **ANSI 3.3.6, 4.1.1** 同じ配列の要素への 2 つのポインター間の差を保持するために必要な整数型、**ptrdiff_t**  
   
- **ptrdiff_t** は **signed int** です。  
+ `ptrdiff_t` は、32 ビット x86 プラットフォームでは `int` です。 64 ビット プラットフォームでは、`ptrdiff_t` typedef は `__int64` です。
   
 ## <a name="see-also"></a>参照  
  [配列とポインター](../c-language/arrays-and-pointers.md)
