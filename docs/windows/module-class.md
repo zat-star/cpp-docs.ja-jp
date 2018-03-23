@@ -1,12 +1,12 @@
 ---
-title: "モジュール クラス |Microsoft ドキュメント"
-ms.custom: 
+title: モジュール クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - module/Microsoft::WRL::Module
@@ -15,18 +15,18 @@ dev_langs:
 helpviewer_keywords:
 - Module class
 ms.assetid: dd67e3b8-c2e1-4f53-8c0f-565a140ba649
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: d17e0dc79241fbd84e282b9cd8403259e34def0e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d9911cdfc943243bd24d452139ef7452e693340f
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="module-class"></a>Module クラス
 関連するオブジェクトから成るコレクションを表します。  
@@ -35,9 +35,7 @@ ms.lasthandoff: 12/21/2017
   
 ```  
   
-template<  
-   ModuleType moduleType  
->  
+template<ModuleType moduleType>  
 class Module;  
   
 template<>  
@@ -55,7 +53,7 @@ class Module<OutOfProc> : public Module<InProc>;
   
 ### <a name="protected-classes"></a>プロテクト クラス  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |[Module::GenericReleaseNotifier クラス](../windows/module-genericreleasenotifier-class.md)|現在のモジュールの最後のオブジェクトを解放すると、イベント ハンドラーを呼び出します。 イベント ハンドラーは、ラムダ、ファンクタ、または関数へのポインターによって指定されます。|  
 |[Module::MethodReleaseNotifier クラス](../windows/module-methodreleasenotifier-class.md)|現在のモジュールの最後のオブジェクトを解放すると、イベント ハンドラーを呼び出します。 イベント ハンドラーは、オブジェクトとそのメソッドへのポインターのメンバーによって指定されます。|  
@@ -100,7 +98,7 @@ class Module<OutOfProc> : public Module<InProc>;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |[Module::objectCount_ データ メンバー](../windows/module-objectcount-data-member.md)|多くのクラスが作成されたの追跡、[ように](../windows/make-function.md)関数。|  
 |[Module::releaseNotifier_ データ メンバー](../windows/module-releasenotifier-data-member.md)|ReleaseNotifier オブジェクトへのポインターを保持します。|  
@@ -120,10 +118,10 @@ class Module<OutOfProc> : public Module<InProc>;
   
  `Module`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** module.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

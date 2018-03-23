@@ -1,12 +1,12 @@
 ---
-title: "Weakref::copyto メソッド |Microsoft ドキュメント"
-ms.custom: 
+title: Weakref::copyto メソッド |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - client/Microsoft::WRL::WeakRef::CopyTo
@@ -15,18 +15,18 @@ dev_langs:
 helpviewer_keywords:
 - CopyTo method
 ms.assetid: f83de6da-b3d4-41a6-9845-cd725ecf3b75
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 5b0114a9768fbea12a5b98f51911267cb24b0b43
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d83ff273d3f6e9748be722b47d08c459564aa911
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="weakrefcopyto-method"></a>WeakRef::CopyTo メソッド
 使用可能なインターフェイスへのポインターがあるなら、指定されたポインター変数にそれを割り当てます。  
@@ -39,9 +39,7 @@ HRESULT CopyTo(
    _Deref_out_ IInspectable** ptr  
 );  
   
-template<  
-   typename U  
->  
+template<typename U>  
 HRESULT CopyTo(  
    _Deref_out_ U** ptr  
 );  
@@ -69,10 +67,10 @@ HRESULT CopyTo(
   
  Windows 10 SDK 以降では、弱い参照を取得できなかった場合、このメソッドは WeakRef インスタンスを `nullptr` に設定しません。このため、WeakRef が `nullptr`かどうかを確認するエラー チェック コードは避けてください。 代わりに、確認`ptr`の`nullptr`します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WeakRef クラス](../windows/weakref-class.md)

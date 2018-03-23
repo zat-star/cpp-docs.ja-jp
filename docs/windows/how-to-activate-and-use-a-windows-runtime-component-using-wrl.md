@@ -1,34 +1,31 @@
 ---
-title: "方法: アクティブ化して、WRL を使用して、Windows ランタイム コンポーネントを使用して |Microsoft ドキュメント"
-ms.custom: 
+title: '方法: アクティブ化して、WRL を使用して、Windows ランタイム コンポーネントを使用して |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 dev_langs:
 - C++
 ms.assetid: 54828f02-6af3-45d1-b965-d0104442f8d5
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: dbdc9b583501bb0de08139acc78943c8c4d88a91
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 5c430ca0dd63c4cbe46986147617ccbd752597ab
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-activate-and-use-a-windows-runtime-component-using-wrl"></a>方法: WRL を使用して Windows ランタイム コンポーネントをアクティブ化し使用する
 このドキュメントでは、Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用して、Windows ランタイムを初期化する方法とアクティブ化して、Windows ランタイム コンポーネントを使用する方法を示します。  
-  
-> [!NOTE]
->  この例は、組み込みの Windows ランタイム コンポーネントをアクティブにします。 同様の方法でアクティブにできる、独自のコンポーネントを作成する方法については、次を参照してください。[チュートリアル: 基本的な Windows ランタイム コンポーネントを作成する](../windows/walkthrough-creating-a-basic-windows-runtime-component-using-wrl.md)です。  
   
  コンポーネントを使用するには、コンポーネントによって実装されている型へのインターフェイス ポインターを取得する必要があります。 Windows ランタイムの基になるテクノロジは、コンポーネント オブジェクト モデル (COM) であるため、型のインスタンスを維持するために COM 規則が行う必要があります。 たとえば、管理する必要があります、*参照カウント*型がメモリから削除されたときを指定します。  
   
@@ -92,5 +89,5 @@ ms.lasthandoff: 02/14/2018
   
  **cl.exe wrl 消費 component.cpp runtimeobject.lib**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)

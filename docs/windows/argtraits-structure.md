@@ -1,12 +1,12 @@
 ---
-title: "ArgTraits 構造体 |Microsoft ドキュメント"
-ms.custom: 
+title: ArgTraits 構造体 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - event/Microsoft::WRL::Details::ArgTraits
@@ -15,18 +15,18 @@ dev_langs:
 helpviewer_keywords:
 - ArgTraits structure
 ms.assetid: 58ae4115-c1bc-48c8-b01b-e60554841c30
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 64ec29d674f6213992fbb1424093931b20ed45b3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ad4541c158c8d02fe48158d8222ce7f3ff7ceba3
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="argtraits-structure"></a>ArgTraits 構造体
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -34,13 +34,9 @@ WRL インフラストラクチャをサポートし、コードから直接使�
 ## <a name="syntax"></a>構文  
   
 ```  
-template<  
-   typename TMemberFunction  
->  
+template<typename TMemberFunction>  
 struct ArgTraits;  
-template<  
-   typename TDelegateInterface  
->  
+template<typename TDelegateInterface>  
 struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(void)>;  
 template<  
    typename TDelegateInterface,  
@@ -180,17 +176,17 @@ struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2,
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |[ArgTraits::args 定数](../windows/argtraits-args-constant.md)|デリゲート インターフェイスの呼び出しメソッドのパラメーターの数の数を保持します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `ArgTraits`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** event.h  
   
  **Namespace:** Microsoft::WRL::Details  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

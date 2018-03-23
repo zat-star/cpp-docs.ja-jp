@@ -1,12 +1,12 @@
 ---
-title: "Comptr::comptr コンス トラクター |Microsoft ドキュメント"
-ms.custom: 
+title: Comptr::comptr コンス トラクター |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - client/Microsoft::WRL::ComPtr::ComPtr
@@ -15,18 +15,18 @@ dev_langs:
 helpviewer_keywords:
 - ComPtr, constructor
 ms.assetid: eaf70907-beac-458f-a503-2e5e27b0c196
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: f8f6234bf2dff0dab801c982a585dc30e338bb7d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 59a7e67eb27ef72a414e7e8129aa7bf781604426
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="comptrcomptr-constructor"></a>ComPtr::ComPtr コンストラクター
 ComPtr クラスの新しいインスタンスを初期化します。 オーバーロードは、既定、コピー、移動、および変換の各コンストラクターを提供します。  
@@ -38,18 +38,14 @@ WRL_NOTHROW ComPtr();
 WRL_NOTHROW ComPtr(  
    decltype(__nullptr)  
 );  
-template<  
-   class U  
->  
+template<class U>  
 WRL_NOTHROW ComPtr(  
    _In_opt_ U *other  
 );  
 WRL_NOTHROW ComPtr(  
    const ComPtr& other  
 );  
-template<  
-   class U  
->  
+template<class U>  
 WRL_NOTHROW ComPtr(  
    const ComPtr<U> &other,  
    typename ENABLE_IF<__is_convertible_to(U*,  
@@ -58,9 +54,7 @@ WRL_NOTHROW ComPtr(
 WRL_NOTHROW ComPtr(  
    _Inout_ ComPtr &&other  
 );  
-template<  
-   class U  
->  
+template<class U>  
 WRL_NOTHROW ComPtr(  
    _Inout_ ComPtr<U>&& other,  
    typename ENABLE_IF<__is_convertible_to(U*,  
@@ -86,10 +80,10 @@ WRL_NOTHROW ComPtr(
   
  6 番目と 7 番目のコンス トラクターは、移動コンス トラクターです。 7 番目のコンス トラクターは、現在の型に変換可能である場合、オブジェクトを移動します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ComPtr クラス](../windows/comptr-class.md)

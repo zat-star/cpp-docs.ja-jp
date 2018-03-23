@@ -1,12 +1,12 @@
 ---
-title: "pin_ptr (C + + CLI) |Microsoft ドキュメント"
-ms.custom: 
+title: pin_ptr (C + + CLI) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - pin_ptr_cpp
@@ -18,18 +18,18 @@ helpviewer_keywords:
 - pinning pointers
 - pin_ptr keyword [C++]
 ms.assetid: 6c2e6c73-4ec2-4dce-8e1f-ccf3a9f9d0aa
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 7205718a3564a3929fe2a9f8b7d8049a320ae1cd
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ce63996cc2d93f4890f54c5edda318fca55f98aa
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="pinptr-ccli"></a>pin_ptr (C++/CLI)
 宣言、*固定ポインター*、共通言語ランタイムでのみ使用されます。  
@@ -51,7 +51,7 @@ ms.lasthandoff: 12/21/2017
   
 ### <a name="parameters"></a>パラメーター  
  *cv_qualifier*  
- `const`または`volatile`修飾子です。 固定ポインターは、既定では、`volatile`です。 固定ポインターを宣言するエラーではなく、余分な`volatile`します。  
+ `const` または`volatile`修飾子です。 固定ポインターは、既定では、`volatile`です。 固定ポインターを宣言するエラーではなく、余分な`volatile`します。  
   
  *type*  
  `initializer` の型。  
@@ -93,13 +93,13 @@ ms.lasthandoff: 12/21/2017
   
 -   キャストの対象の型。  
   
- `pin_ptr``cli`名前空間。 詳細については、次を参照してください。[プラットフォーム、既定値、および cli 名前空間](../windows/platform-default-and-cli-namespaces-cpp-component-extensions.md)です。  
+ `pin_ptr` `cli`名前空間。 詳細については、次を参照してください。[プラットフォーム、既定値、および cli 名前空間](../windows/platform-default-and-cli-namespaces-cpp-component-extensions.md)です。  
   
  内部ポインターの詳細については、次を参照してください。 [interior_ptr (C + + CLI)](../windows/interior-ptr-cpp-cli.md)です。  
   
  固定ポインターの詳細については、次を参照してください。[する方法: ピン ポインターと配列](../windows/how-to-pin-pointers-and-arrays.md)と[する方法: 固定ポインターの宣言と値型](../windows/how-to-declare-pinning-pointers-and-value-types.md)です。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  コンパイラ オプション: **/clr**  
   
 ### <a name="examples"></a>使用例  
@@ -211,7 +211,7 @@ public:
   
 int main() {  
    ManagedType ^mt = gcnew ManagedType;  
-   pin_ptr< int > pt = &mt->i;  
+   pin_ptr<int> pt = &mt->i;  
    *pt = 8;  
    Console::WriteLine(mt->i);  
   

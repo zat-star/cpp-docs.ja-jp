@@ -1,12 +1,12 @@
 ---
-title: "MakeAllocator クラス |Microsoft ドキュメント"
-ms.custom: 
+title: MakeAllocator クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - implements/Microsoft::WRL::Details::MakeAllocator
@@ -15,18 +15,18 @@ dev_langs:
 helpviewer_keywords:
 - MakeAllocator class
 ms.assetid: a1114615-abd7-4a56-9bc3-750c118f0fa1
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 523bcdb17fc0a1b74fe615e5ff15a6fcef99cc32
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 33ba172099fd2554709cc539eeee8999c0e42cef
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="makeallocator-class"></a>MakeAllocator クラス
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -38,17 +38,13 @@ WRL インフラストラクチャをサポートし、コードから直接使�
 template<  
    typename T,  
    bool hasWeakReferenceSupport =   
-         !__is_base_of(RuntimeClassFlags<InhibitWeakReference>,   
-   T)> , T)> class MakeAllocator;  
+         !__is_base_of(RuntimeClassFlags<InhibitWeakReference>, T)>
+ class MakeAllocator;  
   
-template<  
-   typename T  
->  
+template<typename T>  
 class MakeAllocator<T, false>;  
   
-template<  
-   typename T  
->  
+template<typename T>  
 class MakeAllocator<T, true>;  
 ```  
   
@@ -57,7 +53,7 @@ class MakeAllocator<T, true>;
  型の名前。  
   
  `hasWeakReferenceSupport`  
- `true`弱い参照をサポートするオブジェクトのメモリを割り当てられません`false`弱参照でサポートされていないオブジェクトのメモリを割り当てられません。  
+ `true` 弱い参照をサポートするオブジェクトのメモリを割り当てられません`false`弱参照でサポートされていないオブジェクトのメモリを割り当てられません。  
   
 ## <a name="remarks"></a>コメント  
  弱い参照のサポートの有無のアクティブ化可能なクラスのメモリを割り当てます。  
@@ -85,10 +81,10 @@ class MakeAllocator<T, true>;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `MakeAllocator`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** implements.h  
   
  **Namespace:** Microsoft::WRL::Details  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

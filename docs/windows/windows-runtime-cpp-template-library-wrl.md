@@ -1,31 +1,36 @@
 ---
-title: "Windows ランタイム C++ テンプレート ライブラリ (WRL) |Microsoft ドキュメント"
-ms.custom: 
+title: Windows ランタイム C++ テンプレート ライブラリ (WRL) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 dev_langs:
 - C++
 ms.assetid: b915afce-553b-44a7-b8dc-0ab601758eb0
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 98b97098f397772026d0926c72ad83dadd5e59cb
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: d362fdde185f5d9345977ca58d7679a448976555
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="windows-runtime-c-template-library-wrl"></a>Windows ランタイム C++ テンプレート ライブラリ (WRL)
-Windows ランタイム C++ テンプレート ライブラリ (WRL) は、Windows ランタイム コンポーネントを作成および使用するための低レベルの手段を提供するテンプレート ライブラリです。  
+Windows ランタイム C++ テンプレート ライブラリ (WRL) は、Windows ランタイム コンポーネントを作成および使用するための低レベルの手段を提供するテンプレート ライブラリです。
+
+> [!NOTE]
+> WRL は今すぐに取って代わら C + + WinRT、標準 c++ 17 言語射影の Windows ランタイム Api。 C + + WinRT はバージョン 1803 以降から Windows 10 SDK で使用できます。 C + + WinRT がヘッダー ファイルの完全に実装され、最新の Windows API にファースト クラスのアクセスを提供するように設計します。
+
+> C + + WinRT、両方を使用してその標準に準拠した c++ 17 コンパイラを使用して Windows ランタイム Api を作成します。 C + + WinRT は通常パフォーマンスが向上し、Windows ランタイムの他の言語オプションよりも小さいバイナリを生成します。 C + をサポートするために引き続き +/CX および WRL、C + 新しいアプリケーションに使用することを強く勧めが + WinRT です。 詳細については、次を参照してください。 [C + + WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index)です。   
   
 ## <a name="benefits"></a>利点  
  Windows ランタイム C++ テンプレート ライブラリを使用するより簡単に実装し、コンポーネント オブジェクト モデル (COM) コンポーネントを使用できます。 これは、オブジェクトの有効期間を管理するための参照カウントや、操作が成功したか失敗したかを判断するための `HRESULT` 値のテストのような管理技法を提供します。 Windows ランタイム C++ テンプレート ライブラリを正常に使用するのには、これらの規則や技法に注意深く従う必要があります。  
@@ -58,10 +63,7 @@ Windows ランタイム C++ テンプレート ライブラリ (WRL) は、Windo
  [方法: イベントの処理](../windows/how-to-handle-events-using-wrl.md)  
  Windows ランタイム C++ テンプレート ライブラリを使用してサブスクライブして、Windows ランタイム オブジェクトのイベントを処理する方法を示します。  
   
- [チュートリアル: 基本的な Windows ランタイム コンポーネントの作成](../windows/walkthrough-creating-a-basic-windows-runtime-component-using-wrl.md)  
- Windows ランタイム C++ テンプレート ライブラリを使用して、2 つの数値を加算する基本的な Windows ランタイム コンポーネントを作成する方法を示します。 イベントを発生させるし、JavaScript を使用する UWP アプリからコンポーネントを使用する方法も示します。  
-  
- [チュートリアル: WRL および Media Foundation を使用して、UWP アプリの作成](../windows/walkthrough-creating-a-windows-store-app-using-wrl-and-media-foundation.md)  
+ [チュートリアル: WRL および Media Foundation を使用した UWP アプリの作成](../windows/walkthrough-creating-a-windows-store-app-using-wrl-and-media-foundation.md)  
  使用する UWP アプリを作成する方法を学習[Microsoft メディア ファンデーション](http://msdn.microsoft.com/library/windows/apps/ms694197)です。  
   
  [方法: 従来の COM コンポーネントを作成します。](../windows/how-to-create-a-classic-com-component-using-wrl.md)  
@@ -144,7 +146,6 @@ Windows ランタイム C++ テンプレート ライブラリ (WRL) は、Windo
   
 |||  
 |-|-|  
-|[クラス ライブラリ プロジェクト テンプレート](../windows/wrl-class-library-project-template.md)|WRL クラス ライブラリのプロジェクト テンプレートにアクセスする方法について説明します。 このテンプレートにより、Visual Studio を使用して、Windows ランタイム コンポーネントを作成するタスクを簡略化します。|  
 |[カテゴリ別の主要な Api](../windows/key-wrl-apis-by-category.md)|主要な Windows ランタイム C++ テンプレート ライブラリ型、関数、およびマクロが強調表示されます。|  
 |[参照](../windows/wrl-reference.md)|Windows ランタイム C++ テンプレート ライブラリに関するリファレンス情報が含まれています。|  
 |[クイック リファレンス (Windows ランタイムと Visual C)](http://go.microsoft.com/fwlink/p/?linkid=229180)|簡単な説明、C + + CX をサポートする機能、Windows ランタイム。|  

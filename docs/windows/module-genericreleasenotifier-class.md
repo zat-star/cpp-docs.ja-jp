@@ -1,12 +1,12 @@
 ---
-title: "Module::genericreleasenotifier クラス |Microsoft ドキュメント"
-ms.custom: 
+title: Module::genericreleasenotifier クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - module/Microsoft::WRL::Module::GenericReleaseNotifier
@@ -15,18 +15,18 @@ dev_langs:
 helpviewer_keywords:
 - GenericReleaseNotifier class
 ms.assetid: 244a8fbe-f89b-409b-aa65-db3e37f9b125
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: c87205d1d52c8273ac7eea55fcc5385810349f1f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f867b0cff559ead40be9b2e3ff0722fdb9943034
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="modulegenericreleasenotifier-class"></a>Module::GenericReleaseNotifier クラス
 現在のモジュールの最後のオブジェクトを解放すると、イベント ハンドラーを呼び出します。 イベント ハンドラーは、ラムダ、ファンクタ、または関数へのポインターによって指定されます。  
@@ -34,9 +34,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-template<  
-   typename T  
->  
+template<typename T>  
 class GenericReleaseNotifier : public ReleaseNotifier;  
 ```  
   
@@ -60,7 +58,7 @@ class GenericReleaseNotifier : public ReleaseNotifier;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |[Module::GenericReleaseNotifier::callback_ データ メンバー](../windows/module-genericreleasenotifier-callback-data-member.md)|ラムダ、ファンクタ、または現在の module::genericreleasenotifier オブジェクトに関連付けられている関数へのポインターのイベント ハンドラーが保持されます。|  
   
@@ -69,10 +67,10 @@ class GenericReleaseNotifier : public ReleaseNotifier;
   
  `GenericReleaseNotifier`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** module.h  
   
  **名前空間:** Microsoft::WRL
  
- ## <a name="see-also"></a>参照
+ ## <a name="see-also"></a>関連項目
  [Module クラス](../windows/module-class.md)

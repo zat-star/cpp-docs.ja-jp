@@ -1,12 +1,12 @@
 ---
-title: "SafeInt クラス |Microsoft ドキュメント"
-ms.custom: 
+title: SafeInt クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - SafeInt
@@ -15,18 +15,18 @@ dev_langs:
 helpviewer_keywords:
 - SafeInt class
 ms.assetid: 27a8f087-2511-46f9-8d76-2aeb66ca272f
-caps.latest.revision: 
+caps.latest.revision: ''
 author: ghogen
 ms.author: ghogen
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: ea076ea092257fd5bf6acd6d597f79ef42dd96f2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 61b9ee9ca030d8661ce9c4cabf03e59c55ac88b1
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="safeint-class"></a>SafeInt クラス
 整数オーバーフローを防ぐために役立つ整数プリミティブを拡張し、異なる型の整数を比較できます。  
@@ -62,7 +62,7 @@ class SafeInt;
   
 ### <a name="assignment-operators"></a>代入演算子  
   
-|name|構文|  
+|名前|構文|  
 |----------|------------|  
 |=|`template<typename U>`<br /><br /> `SafeInt<T,E>& operator= (const U& rhs)`|  
 |=|`SafeInt<T,E>& operator= (const T& rhs) throw()`|  
@@ -71,7 +71,7 @@ class SafeInt;
   
 ### <a name="casting-operators"></a>キャスト演算子  
   
-|name|構文|  
+|名前|構文|  
 |----------|------------|  
 |bool|`operator bool() throw()`|  
 |char|`operator char() const`|  
@@ -89,7 +89,7 @@ class SafeInt;
   
 ### <a name="comparison-operators"></a>比較演算子  
   
-|name|構文|  
+|名前|構文|  
 |----------|------------|  
 |<|`template<typename U>`<br /><br /> `bool operator< (U rhs) const throw()`|  
 |<|`bool operator< (SafeInt<T,E> rhs) const throw()`|  
@@ -108,7 +108,7 @@ class SafeInt;
   
 ### <a name="arithmetic-operators"></a>算術演算子  
   
-|name|構文|  
+|名前|構文|  
 |----------|------------|  
 |+|`const SafeInt<T,E>& operator+ () const throw()`|  
 |-|`SafeInt<T,E> operator- () const`|  
@@ -141,7 +141,7 @@ class SafeInt;
   
 ### <a name="logical-operators"></a>論理演算子  
   
-|name|構文|  
+|名前|構文|  
 |----------|------------|  
 |!|`bool operator !() const throw()`|  
 |~|`SafeInt<T,E> operator~ () const throw()`|  
@@ -178,9 +178,9 @@ class SafeInt;
   
  このトピックの内容の演算子の表でサポートされる数学と比較演算子を一覧表示、`SafeInt`クラスです。 最も算術演算子を返す、`SafeInt`型のオブジェクト`T`です。  
   
- 比較演算、`SafeInt`整数型をどちらの方向で実行できます。 たとえば、両方とも`SafeInt<int>(x) < y`と`y > SafeInt<int>(x)`は有効では、同じ結果が返されます。  
+ 比較演算、`SafeInt`整数型をどちらの方向で実行できます。 たとえば、両方とも`SafeInt<int>(x) < y`と`y> SafeInt<int>(x)`は有効では、同じ結果が返されます。  
   
- バイナリ演算子の多くを使用して 2 つの異なるをサポートしていません`SafeInt`型です。 この 1 つの例は、`&`演算子。 `SafeInt<T, E> & int`サポートされているが、`SafeInt<T, E> & SafeInt<U, E>`はありません。 後者の例では、コンパイラは、返されるパラメーターの型を判別できません。 この問題を解決では、基本型に 2 番目のパラメーターをキャストします。 同じパラメーターを使用すると、これと`SafeInt<T, E> & (U)SafeInt<U, E>`です。  
+ バイナリ演算子の多くを使用して 2 つの異なるをサポートしていません`SafeInt`型です。 この 1 つの例は、`&`演算子。 `SafeInt<T, E> & int` サポートされているが、`SafeInt<T, E> & SafeInt<U, E>`はありません。 後者の例では、コンパイラは、返されるパラメーターの型を判別できません。 この問題を解決では、基本型に 2 番目のパラメーターをキャストします。 同じパラメーターを使用すると、これと`SafeInt<T, E> & (U)SafeInt<U, E>`です。  
   
 > [!NOTE]
 >  ビットごとの演算、2 つの異なるパラメーターは同じサイズである必要があります。 サイズが異なる場合、コンパイラがスローされます、 [ASSERT](../mfc/reference/diagnostic-services.md#assert)例外。 この操作の結果は、正確性が保証できません。 この問題を解決するが大きい方のパラメーターと同じサイズになるまで、小さい方のパラメーターをキャストします。  
@@ -213,23 +213,23 @@ Int x = flag ? SafeInt<unsigned int>(y) : SafeInt<unsigned int>(-1);
 Int x = flag ? (int) SafeInt<unsigned int>(y) : -1;  
 ```  
   
- `T`および`U`ブール型、文字型または整数型に割り当てることができます。 型を符号付きまたは符号なし整数と 8 ビットから 64 ビットの任意のサイズ。  
+ `T` および`U`ブール型、文字型または整数型に割り当てることができます。 型を符号付きまたは符号なし整数と 8 ビットから 64 ビットの任意のサイズ。  
   
 > [!NOTE]
 >  ただし、`SafeInt`クラスを受け入れる任意の種類の整数、符号なしの型とより効率的に実行します。  
   
- `E`エラー処理機構を`SafeInt`を使用します。 SafeInt ライブラリに 2 つのエラー処理機構が提供されます。 既定のポリシーは`SafeIntErrorPolicy_SafeIntException`、どのがスローされます、 [SafeIntException クラス](../windows/safeintexception-class.md)例外エラーが発生します。 他のポリシーが`SafeIntErrorPolicy_InvalidParameter`エラーが発生した場合、プログラムは停止します。  
+ `E` エラー処理機構を`SafeInt`を使用します。 SafeInt ライブラリに 2 つのエラー処理機構が提供されます。 既定のポリシーは`SafeIntErrorPolicy_SafeIntException`、どのがスローされます、 [SafeIntException クラス](../windows/safeintexception-class.md)例外エラーが発生します。 他のポリシーが`SafeIntErrorPolicy_InvalidParameter`エラーが発生した場合、プログラムは停止します。  
   
  エラーのポリシーをカスタマイズする 2 つのオプションがあります。 パラメーターを設定する 1 つ目は`E`を作成するとき、`SafeInt`です。 エラー処理のうちの 1 つのポリシーを変更するときにこのオプションを使用して`SafeInt`です。 その他のオプションは、定義する`_SAFEINT_DEFAULT_ERROR_POLICY`をインクルードする前に、カスタマイズされたエラー処理クラス、`SafeInt`ライブラリです。 既定のエラー処理のすべてのインスタンスのポリシーを変更するときにこのオプションを使用して、`SafeInt`コード内のクラスです。  
   
 > [!NOTE]
 >  SafeInt ライブラリからエラーを処理するカスタマイズされたクラスは、エラー ハンドラーを呼び出したコードに制御を返しません必要があります。 エラー ハンドラーが呼び出された後の結果、`SafeInt`操作は、信頼することはできません。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** safeint.h  
   
  **Namespace:** msl::utilities  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SafeInt ライブラリ](../windows/safeint-library.md)   
  [SafeIntException クラス](../windows/safeintexception-class.md)
