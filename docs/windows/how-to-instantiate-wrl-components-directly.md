@@ -1,35 +1,35 @@
 ---
-title: "方法: WRL コンポーネントを直接インスタンス化 |Microsoft ドキュメント"
-ms.custom: 
+title: '方法: WRL コンポーネントを直接インスタンス化 |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 dev_langs:
 - C++
 ms.assetid: 1a9fa011-0cee-4abf-bf83-49adf53ff906
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: f2d307304c103b62ff5ba20e1af25797745bd035
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e8069ac8d079a879cb078d9e3e4b759b02817b5f
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-instantiate-wrl-components-directly"></a>方法: WRL コンポーネントを直接インスタンス化する
 Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用する方法について[Microsoft::WRL::Make](../windows/make-function.md)と[Microsoft::WRL::Details::MakeAndInitialize](../windows/makeandinitialize-function.md)関数モジュールからコンポーネントをインスタンス化します。これを定義します。  
   
  コンポーネントを直接インスタンス化することにより、クラス ファクトリやその他の機構が必要ない場合にオーバーヘッドを低減できます。 両方のユニバーサル Windows プラットフォーム アプリおよびデスクトップ アプリで直接、コンポーネントをインスタンス化することができます。  
   
- Windows ランタイム C++ テンプレート ライブラリを使用して基本 Windows ランタイム コンポーネントを作成し、外部のユニバーサル Windows プラットフォーム アプリからインスタンス化する方法については、次を参照してください。[チュートリアル: 基本的な Windows ランタイム コンポーネントを作成する](../windows/walkthrough-creating-a-basic-windows-runtime-component-using-wrl.md)です。 Windows ランタイム C++ テンプレート ライブラリを使用して、従来の COM コンポーネントを作成し、外部のデスクトップ アプリケーションからインスタンス化する方法については、次を参照してください。[する方法: 従来の COM コンポーネントを作成する](../windows/how-to-create-a-classic-com-component-using-wrl.md)です。  
+Windows ランタイム C++ テンプレート ライブラリを使用して、従来の COM コンポーネントを作成し、外部のデスクトップ アプリケーションからインスタンス化する方法については、次を参照してください。[する方法: 従来の COM コンポーネントを作成する](../windows/how-to-create-a-classic-com-component-using-wrl.md)です。  
   
  このドキュメントでは、2 つの例を示します。 最初の例では、`Make` 関数を使用してコンポーネントをインスタンス化します。 2 番目の例では、`MakeAndInitialize` 関数を使用して構築中に失敗する場合があるコンポーネントをインスタンス化します  (COM では通常、例外ではなく `HRESULT` の値を使用してエラーを示すため、COM 型は通常、コンストラクターからスローされません。 `MakeAndInitialize` を使用すると、コンポーネントで `RuntimeClassInitialize` メソッドを使用して構築引数を検証できます)。どちらの例も、基本的なロガー インターフェイスを定義し、コンソールにメッセージを記述するクラスを定義することでそのインターフェイスを実装します。  
   
@@ -58,7 +58,7 @@ Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用�
   
      [!code-cpp[wrl-logger-makeandinitialize#2](../windows/codesnippet/CPP/how-to-instantiate-wrl-components-directly_4.cpp)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)   
  [Microsoft::WRL::Make](../windows/make-function.md)   
  [Microsoft::WRL::Details::MakeAndInitialize](../windows/makeandinitialize-function.md)

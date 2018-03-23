@@ -1,11 +1,9 @@
 ---
-title: "-GENPROFILE、FASTGENPROFILE (プロファイル インストルメント ビルドの生成) |Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+title: /GENPROFILE、/FASTGENPROFILE (プロファイル インストルメント ビルドの生成) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 03/14/2018
+ms.technology:
+- cpp-tools
 ms.topic: article
 f1_keywords:
 - GENPROFILE
@@ -16,52 +14,70 @@ helpviewer_keywords:
 - GENPROFILE
 - FASTGENPROFILE
 ms.assetid: deff5ce7-46f5-448a-b9cd-a7a83a6864c6
-caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.workload: cplusplus
-ms.openlocfilehash: 028b31044d035def628785969a04c27af4699f65
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b6174c1fdd53ec14f0cb63292a9036caabc98a7d
+ms.sourcegitcommit: ee7d74683af7631441c8c7f65ef5ceceaee4a5ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="genprofile-fastgenprofile-generate-profiling-instrumented-build"></a>/GENPROFILE、/FASTGENPROFILE (プロファイル インストルメント ビルドの生成)
-ガイド付き最適化のプロファイル (PGO) をサポートするために、リンカーによる .pgd ファイルの生成を指定します。  /GENPROFILE と /FASTGENPROFILE は、それぞれに異なる既定のパラメーターを使用します。 プロファイル中に精度を速度とメモリ使用量よりも優先する場合は、/GENPROFILE を使用します。 精度よりも少ないメモリ使用量と速度を優先する場合は、/FASTGENPROFILE を使用します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-/{GENPROFILE|FASTGENPROFILE}[:{COUNTER32|COUNTER64|EXACT|MEMMAX=#|MEMMIN=#|NOEXACT|NOPATH|NOTRACKEH|PATH|PGD=filename|TRACKEH}]   
-```  
-  
-## <a name="remarks"></a>コメント  
- COUNTER32 &#124;です。COUNTER64  
- 32 ビットのプローブのカウンターを使用する場合は COUNTER32 を使用し、64 ビットのプローブのカウンターを使用する場合は COUNTER64 を使用します。 /GENPROFILE を指定する場合、既定値は COUNTER64 です。 /FASTGENPROFILE を指定する場合、既定値は COUNTER32 です。  
-  
- 正確な &#124;です。NOEXACT は、  
- プローブのスレッドセーフであるインターロックされたインクリメントを指定する場合は、EXACT を使用します。 NOEXACT は、プローブの保護されていないインクリメント操作を指定します。 既定では、NOEXACT です。  
-  
- MEMMAX=value、MEMMIN=value  
- MEMMAX と MEMMIN を使用して、メモリ内のトレーニング データの最大と最小の予約サイズを指定します。 値は、予約するメモリ量 (バイト単位) です。  既定では、これらの値は内部ヒューリスティックによって決定されます。  
-  
- パス &#124;です。場合は、NOPATH  
- 一意の関数パスごとに別の PGO カウンターのセットを指定する場合は、PATH を使用します。 関数ごとにカウンターのセットを 1 つだけ指定する場合は、NOPATH を使用します。   /GENPROFILE を指定する場合、既定値は PATH です。 /FASTGENPROFILE を指定する場合、既定値は NOPATH です。  
-  
- TRACKEH &#124;です。NOTRACKEH  
- トレーニング中に例外がスローされた場合に、追加のカウンターを使用して正確なカウントを保持するかどうかを指定します。 正確な数を保持するために追加のカウンターを指定する場合は、TRACKEH を使用します。 例外処理を使用していないコード、または、トレーニング シナリオで例外が発生しないコードの場合に 1 つのカウンターを指定する場合は、NOTRACKEH を使用します。  /GENPROFILE を指定する場合、既定値は TRACKEH です。 /FASTGENPROFILE を指定する場合、既定値は NOTRACKEH です。  
-  
- PGD = ファイル名  
- .pgd ファイルの基本ファイル名を指定します。 既定では、リンカーは、基本の実行可能イメージのファイル名に .pgd 拡張子を付けて使用します。  
-  
- /GENPROFILE と /FASTGENPROFILE のオプションは、ガイド付き最適化のプロファイル (PGO) のためのアプリケーション トレーニングをサポートするために必要なプロファイル インストルメンテーション ファイルを生成するようにリンカーに指示します。 アプリケーションのトレーニングによって生成されたプロファイル情報が、ビルド中に入力として使用され、対象のプログラム全体の最適化が実行されます。   アプリのトレーニング中とビルド中にパフォーマンスのためのさまざまなプロファイル機能を制御する追加のオプションを設定することができます。 /GENPROFILE で指定される既定のオプションを使用すると、特に大規模で複雑なマルチ スレッドのアプリの場合に、最も正確な結果が得られます。 /FASTGENPROFILE オプションでは、精度と引き換えに、トレーニング中のメモリの使用量を削減してパフォーマンスを向上させることができる、別の既定値が使用されます。  
-  
- /GENPROFILE または /FASTGENPROFILE を使用してビルドした後に、インストルメントされたアプリを実行すると、プロファイル情報がキャプチャされます。 /USEPROFILE オプションを指定すると、この情報がリンカーによって使用されます。 アプリをトレーニングする方法の詳細について、および収集したデータの詳細については、「ガイド付き最適化のプロファイル」を参照してください。  
-  
- /GENPROFILE または /FASTGENPROFILE を指定するときには、/LTCG も指定する必要があります。  
-  
-## <a name="see-also"></a>参照  
- [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
- [リンカー オプション](../../build/reference/linker-options.md)   
- [/LTCG (リンク時コード生成)](../../build/reference/ltcg-link-time-code-generation.md)
+
+ガイド付き最適化のプロファイル (PGO) をサポートするために、リンカーによる .pgd ファイルの生成を指定します。 **/GENPROFILE**と**/FASTGENPROFILE**異なる既定のパラメーターを使用します。 使用して**/GENPROFILE**速度とメモリ使用量をプロファイリング実行中に有効桁数を優先するようにします。 使用して**/FASTGENPROFILE**精度より小さいメモリ使用量と速度を優先するようにします。
+
+## <a name="syntax"></a>構文
+
+> **/GENPROFILE**[**:**{[**COUNTER32**|**COUNTER64**]|[**EXACT**|**NOEXACT**]|**MEMMAX=**_#_|**MEMMIN=**_#_|[**PATH**|**NOPATH** ]|[**TRACKEH** |**NOTRACKEH** ]|**PGD=**_filename_}]<br/>
+> **/FASTGENPROFILE**[**:**{[**COUNTER32**|**COUNTER64**]|[**EXACT**|**NOEXACT**]|**MEMMAX=**_#_|**MEMMIN=**_#_|[**PATH**|**NOPATH** ]|[**TRACKEH** |**NOTRACKEH** ]|**PGD=**_filename_}]
+
+### <a name="arguments"></a>引数
+
+次の引数のいずれかを指定するを**/GENPROFILE**または**/FASTGENPROFILE**です。 次に示す引数が、パイプで区切られた (**|**) 文字は相互に排他的です。 コンマを使用して (**、**) オプションを区切る文字です。
+
+**COUNTER32** &AMP;#124; **COUNTER64**<br/>
+使用して**COUNTER32** 32 ビットのプローブのカウンターの使用を指定して**COUNTER64**を 64 ビットのプローブのカウンターを指定します。 指定すると**/GENPROFILE**、既定値は**COUNTER64**です。 指定すると**/FASTGENPROFILE**、既定値は**COUNTER32**です。
+
+**EXACT** &#124; **NOEXACT**<br/>
+使用して**EXACT**プローブのスレッド セーフであるインタロックされた増分値を指定します。 **Noexact は、**プローブの保護されていないインクリメント操作を指定します。 既定値は**、NOEXACT**です。
+
+**MEMMAX**=*値*、 **MEMMIN**=*値*<br/>
+使用して**MEMMAX**と**MEMMIN**をメモリ内のトレーニング データの最大値と最小の予約サイズを指定します。 値は、予約するメモリ量 (バイト単位) です。 既定では、これらの値は内部ヒューリスティックによって決定されます。
+
+**PATH**  &#124; **NOPATH** <br/>
+使用して**パス**を別の関数に一意のパスごとの PGO カウンターのセットを指定します。 使用して**NOPATH**関数の各カウンターの 1 つだけのセットを指定します。 指定すると**/GENPROFILE**、既定値は**パス**です。 指定すると**/FASTGENPROFILE**、既定値は**NOPATH**です。
+
+**TRACKEH**  &#124; **NOTRACKEH** <br/>
+トレーニング中に例外がスローされた場合に、追加のカウンターを使用して正確なカウントを保持するかどうかを指定します。 使用して**TRACKEH**正確な数の追加のカウンターを指定します。 使用して**NOTRACKEH**例外を使用しないコードの 1 つのカウンターを指定するまたは処理が発生しない、トレーニング シナリオでの例外。  指定すると**/GENPROFILE**、既定値は**TRACKEH**です。 指定すると**/FASTGENPROFILE**、既定値は**NOTRACKEH**です。
+
+**PGD**=*filename*<br/>
+.pgd ファイルの基本ファイル名を指定します。 既定では、リンカーは、基本の実行可能イメージのファイル名に .pgd 拡張子を付けて使用します。
+
+## <a name="remarks"></a>コメント
+
+**/GENPROFILE**と**/FASTGENPROFILE**オプション プロファイル ガイド付き最適化の (PGO) のアプリケーション トレーニングをサポートするために必要なプロファイル インストルメンテーション ファイルを生成するようにリンカーに指示します。 これらのオプションは、Visual Studio 2015 の新機能です。 非推奨にこれらのオプションを必要に応じて**/LTCG:PGINSTRUMENT**、 **/PGD**と**/POGOSAFEMODE**オプションおよび**PogoSafeMode**、 **VCPROFILE_ALLOC_SCALE**と**VCPROFILE_PATH**環境変数。 アプリケーションのトレーニングによって生成されたプロファイル情報が、ビルド中に入力として使用され、対象のプログラム全体の最適化が実行されます。 アプリのトレーニング中とビルド中にパフォーマンスのためのさまざまなプロファイル機能を制御する追加のオプションを設定することができます。 既定のオプションで指定された**/GENPROFILE**特に大規模で複雑なマルチ スレッド アプリケーションの場合、最も正確な結果を提供します。 **/FASTGENPROFILE**オプションでは、別の既定値を低いメモリ使用量とトレーニングの精度を犠牲にして、パフォーマンスが高速にします。
+
+使用してビルドした後に、インストルメントされたアプリを実行するときに、プロファイル情報がキャプチャ**/GENPROFILE**の**/FASTGENPROFILE**です。 指定すると、この情報がキャプチャされた、 [/USEPROFILE](useprofile.md)リンカー オプションをプロファイリングを実行する手順し、最適化されたビルド手順について説明するために使用します。 アプリをトレーニングする方法の詳細と、収集したデータの詳細については、次を参照してください。[ガイド付き最適化のプロファイル](profile-guided-optimizations.md)です。
+
+指定する必要がありますも**/LTCG**を指定すると**/GENPROFILE**または**/FASTGENPROFILE**です。
+
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには
+
+1. プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。
+
+1. 選択、**構成プロパティ** > **リンカー** > **コマンドライン**プロパティ ページ。
+
+1. 入力、 **/GENPROFILE**または**/FASTGENPROFILE**オプションと引数を**追加オプション**ボックス。 選択**OK**して変更を保存します。
+
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには
+
+- 「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AdditionalOptions%2A>」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[リンカー オプションの設定](../../build/reference/setting-linker-options.md)<br/>
+[リンカー オプション](../../build/reference/linker-options.md)<br/>
+[/LTCG (リンク時のコード生成)](../../build/reference/ltcg-link-time-code-generation.md)<br/>

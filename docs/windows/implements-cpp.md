@@ -1,12 +1,12 @@
 ---
-title: "実装 (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 実装 (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - vc-attr.implements
@@ -15,18 +15,18 @@ dev_langs:
 helpviewer_keywords:
 - implements attribute
 ms.assetid: 9cf0858b-cb7d-4d3c-81a6-97d87ed00d25
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 0dbe7d829ae31f53a3dbc35df66bee2d50f14f19
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: bab33955ebeb1473839a1549ca1817f520e1a9fd
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="implements-c"></a>implements (C++)
 IDL coclass のメンバーであることを強制するディスパッチ インターフェイスを指定します。  
@@ -42,16 +42,16 @@ IDL coclass のメンバーであることを強制するディスパッチ イ�
 ```  
   
 #### <a name="parameters"></a>パラメーター  
- **インターフェイス**  
+ **interfaces**  
  コンマ区切りの IDL coclass のメンバーとなるインターフェイスのリスト。 1 つのインターフェイスを指定するための短縮形メソッドは**実装 (***interface_name***)**です。  
   
- **ディスパッチ インターフェイス**  
- コンマ区切りの IDL coclass のメンバーとなるディスパッチ インターフェイスのリスト。 1 つのディスパッチ インターフェイスを指定するための短縮形メソッドは**を実装する (ディスパッチ インターフェイス***場合***)**です。  
+ **dispinterfaces**  
+ コンマ区切りの IDL coclass のメンバーとなるディスパッチ インターフェイスのリスト。 1 つのディスパッチ インターフェイスを指定するための短縮形メソッドは**を実装する (ディスパッチ インターフェイス*** = 場合 ***)**です。  
   
 ## <a name="remarks"></a>コメント  
  既定では、のみである COM インターフェイス、コクラスの基本クラスは、IDL コクラスに追加されます。 **実装する**IDL coclass のメンバーにするには、他のインターフェイスを強制することができます。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
@@ -486,7 +486,7 @@ public:
       if (pDispParams == 0) {  
          return DISP_E_BADVARTYPE;  
       }  
-      if (pDispParams->cArgs > 0) {  
+      if (pDispParams->cArgs> 0) {  
          return DISP_E_BADPARAMCOUNT;  
       }  
       if (pVarResult != 0) {  
@@ -555,6 +555,6 @@ public:
 };  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ属性](../windows/compiler-attributes.md)   
  [クラス属性](../windows/class-attributes.md)   
