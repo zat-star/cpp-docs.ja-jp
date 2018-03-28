@@ -1,12 +1,12 @@
 ---
-title: "_ultoa、_ultow | Microsoft Docs"
-ms.custom: 
+title: _ultoa、_ultow | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _ultoa
@@ -42,17 +42,17 @@ helpviewer_keywords:
 - _ultoa function
 - converting numbers, to strings
 ms.assetid: 7a472dc4-5652-4513-93c3-3358522c23be
-caps.latest.revision: 
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 94073b947848199bdc093f959ddceadcb1835f16
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="ultoa-ultow"></a>_ultoa、_ultow
 符号なし長整数型を文字列に変換します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_ultoa_s、_ultow_s](../../c-runtime-library/reference/ultoa-s-ultow-s.md)」を参照してください。  
@@ -111,9 +111,9 @@ wchar_t *_ultow(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_ultot`|`_ultoa`|`_ultoa`|`_ultow`|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチンによって返される値|必須ヘッダー|  
+|ルーチン|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ultoa`|\<stdlib.h>|  
 |`_ultow`|\<stdlib.h> または \<wchar.h>|  
@@ -123,6 +123,6 @@ wchar_t *_ultow(
 ## <a name="example"></a>例  
  [_itoa](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md) の例を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [_itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md)
