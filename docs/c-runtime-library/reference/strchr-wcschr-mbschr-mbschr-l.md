@@ -1,12 +1,12 @@
 ---
-title: "strchr、wcschr、_mbschr、_mbschr_l | Microsoft Docs"
-ms.custom: 
+title: strchr、wcschr、_mbschr、_mbschr_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - strchr
@@ -26,6 +26,7 @@ apilocation:
 - ntdll.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- ntoskrnl.exe
 apitype: DLLExport
 f1_keywords:
 - _ftcschr
@@ -49,23 +50,23 @@ helpviewer_keywords:
 - tcschr function
 - mbschr_l function
 ms.assetid: 2639905d-e983-43b7-b885-abef32cfac43
-caps.latest.revision: 
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a1cea5b46c48f0660062736f4ffb8bd8999b8c70
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 6d9dc85eca176b47987b5b6d065a63f9798bc58e
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="strchr-wcschr-mbschr-mbschrl"></a>strchr、wcschr、_mbschr、_mbschr_l
 現在のロケールまたは指定された LC_CTYPE 変換状態カテゴリを使用し、文字列内の文字を探します。  
   
 > [!IMPORTANT]
->  `_mbschr` および `_mbschr_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
+>  `_mbschr` および `_mbschr_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -152,9 +153,9 @@ const unsigned char *_mbschr_l(
 |`_tcschr`|`strchr`|`_mbschr`|`wcschr`|  
 |**_n/a**|**n/a**|`_mbschr_l`|**該当なし**|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチンによって返される値|必須ヘッダー|  
+|ルーチン|必須ヘッダー|  
 |-------------|---------------------|  
 |`strchr`|\<string.h>|  
 |`wcschr`|\<string.h> または \<wchar.h>|  
@@ -219,7 +220,7 @@ Result:   first r found at position 12
 Result:   last r found at position 30  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

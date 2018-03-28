@@ -1,12 +1,12 @@
 ---
-title: "strcmp、wcscmp、_mbscmp | Microsoft Docs"
-ms.custom: 
+title: strcmp、wcscmp、_mbscmp | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - wcscmp
@@ -26,6 +26,7 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- ntoskrnl.exe
 apitype: DLLExport
 f1_keywords:
 - _mbscmp
@@ -47,23 +48,23 @@ helpviewer_keywords:
 - _ftcscmp function
 - ftcscmp function
 ms.assetid: 5d216b57-7a5c-4cb3-abf0-0f4facf4396d
-caps.latest.revision: 
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5ced77db630f0cffede96192dbb9fc69ec0061db
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: addc2c215d0c914e3caee3dba4d32f94ca91e62c
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="strcmp-wcscmp-mbscmp"></a>strcmp、wcscmp、_mbscmp
 文字列を比較します。  
   
 > [!IMPORTANT]
->  `_mbscmp` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
+>  `_mbscmp` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -115,9 +116,9 @@ int _mbscmp(
   
  `strcmp` 関数では、大文字と小文字が区別されます。 `_stricmp`、`_wcsicmp`、および `_mbsicmp` は、文字列を最初に小文字の形式に変換してから比較します。 ASCII の表の 'Z' と 'a' の間にある文字 ('['、'`\`'、']'、'`^`'、'`_`'、および '```') を含む 2 つの文字列は、大文字と小文字によって異なる方法で比較されます。 たとえば、`"ABCDE"` と `"ABCD^"` の 2 つの文字列を比較する場合、小文字で比較する場合 (`"abcde"` > `"abcd^"`) と、大文字で比較する場合 (`"ABCDE"` < `"ABCD^"`) で方法が異なります。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチンによって返される値|必須ヘッダー|  
+|ルーチン|必須ヘッダー|  
 |-------------|---------------------|  
 |`strcmp`|<string.h>|  
 |`wcscmp`|<string.h> または <wchar.h>|  
@@ -177,7 +178,7 @@ Compare strings:
    _stricmp:  String 1 is equal to string 2  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [memcmp、wmemcmp](../../c-runtime-library/reference/memcmp-wmemcmp.md)   
  [_memicmp、_memicmp_l](../../c-runtime-library/reference/memicmp-memicmp-l.md)   

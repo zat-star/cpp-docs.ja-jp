@@ -1,27 +1,27 @@
 ---
-title: "コントロール (ATL チュートリアル、パート 2) の追加 |Microsoft ドキュメント"
-ms.custom: 
+title: コントロール (ATL チュートリアル、パート 2) の追加 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: get-started-article
 dev_langs:
 - C++
 ms.assetid: c9575a75-1064-41f1-9697-7aada560c669
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: aed69a5dd421e967e1da33bb3a2f2c41fa80698d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6bedc0fbe4cd1e4a612bcb329071668e783b3de8
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="adding-a-control-atl-tutorial-part-2"></a>コントロールの追加 (ATL チュートリアル、パート 2)
 このステップでは、コントロールをプロジェクトに追加し、ビルドして、Web ページでテストします。  
@@ -32,13 +32,13 @@ ms.lasthandoff: 12/21/2017
   
 1.  クラス ビューで、Polygon プロジェクトを右クリックします。  
   
-2.  をポイント**追加**クリックしてショートカット メニューの **クラス**サブメニューにします。  
+2.  をポイント**追加**クリックしてショートカット メニューの **新しい項目の**サブメニューにします。  
   
-     **クラスの追加** ダイアログ ボックスが表示されます。 さまざまなオブジェクトのカテゴリが、左側にツリー構造で表示されます。  
+     **[新しい項目の追加]** ダイアログ ボックスが表示されます。 さまざまなオブジェクトのカテゴリが、左側にツリー構造で表示されます。  
   
 3.  クリックして、 **ATL**フォルダーです。  
   
-4.  、右側にあるテンプレートの一覧から選択**ATL コントロール**です。 **[追加]**をクリックします。 ATL コントロール ウィザードが開き、コントロールを構成できます。  
+4.  、右側にあるテンプレートの一覧から選択**ATL コントロール**です。 **[追加]** をクリックします。 ATL コントロール ウィザードが開き、コントロールを構成できます。  
   
 5.  型`PolyCtl`短い名前とその他のフィールドが自動的に完了したことに注意してください。 クリックしてしないでください**完了**変更を加える必要があるため、まだです。  
   
@@ -50,7 +50,7 @@ ms.lasthandoff: 12/21/2017
 |**クラス**|コントロールを実装するために作成された C++ クラス名。|  
 |**.h ファイル**|C++ クラスの定義を格納するために作成されたファイル。|  
 |**.cpp ファイル**|C++ クラスの実装を格納するために作成されたファイル。|  
-|**コクラス**|このコントロールのコンポーネント クラスの名前。|  
+|**CoClass**|このコントロールのコンポーネント クラスの名前。|  
 |**Interface**|コントロールがカスタム プロパティとメソッドを実装するインターフェイスの名前。|  
 |**Type**|コントロールの説明。|  
 |**ProgID**|コントロールの CLSID を検索するために使用できる、判読可能な名前。|  
@@ -113,8 +113,8 @@ ms.lasthandoff: 12/21/2017
   
  次は、カスタム プロパティをコントロールに追加します。  
   
- [手順 1 に戻る](../atl/creating-the-project-atl-tutorial-part-1.md)&#124;です。[ステップ 3 に進む](../atl/adding-a-property-to-the-control-atl-tutorial-part-3.md)  
+ [手順 1 に戻る](../atl/creating-the-project-atl-tutorial-part-1.md) &#124; [ステップ 3 に進む](../atl/adding-a-property-to-the-control-atl-tutorial-part-3.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアル](../atl/active-template-library-atl-tutorial.md)
 

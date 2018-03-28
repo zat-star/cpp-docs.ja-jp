@@ -1,12 +1,12 @@
 ---
-title: "snprintf、_snprintf、_snprintf_l、_snwprintf、_snwprintf_l | Microsoft Docs"
-ms.custom: 
+title: snprintf、_snprintf、_snprintf_l、_snwprintf、_snwprintf_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _snwprintf
@@ -25,6 +25,7 @@ apilocation:
 - msvcr120.dll
 - msvcr120_clr0400.dll
 - ucrtbase.dll
+- ntoskrnl.exe
 apitype: DLLExport
 f1_keywords:
 - _snprintf
@@ -56,17 +57,17 @@ helpviewer_keywords:
 - sntprintf function
 - formatted text [C++]
 ms.assetid: 5976c9c8-876e-4ac9-a515-39f3f7fd0925
-caps.latest.revision: 
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0d235f1034d8e916ddcd9e268e72aadacaf90911
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 92a4939c9fc71245528198c686ca9ed7024c858d
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="snprintf-snprintf-snprintfl-snwprintf-snwprintfl"></a>snprintf、_snprintf、_snprintf_l、_snwprintf、_snwprintf_l
 文字列に書式付きデータを書き込みます。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_snprintf_s、_snprintf_s_l、_snwprintf_s、_snwprintf_s_l](../../c-runtime-library/reference/snprintf-s-snprintf-s-l-snwprintf-s-snwprintf-s-l.md)」をご覧ください。  
@@ -167,7 +168,7 @@ int _snwprintf_l(
   
  `buffer` が null ポインターで `count` がゼロの場合、 `len` は、出力の書式を指定するのに必要な文字数として返されます。終端の null は含まれません。 同じ `argument` パラメーターおよび `locale` パラメーターを指定して正常な呼び出しを行うには、少なくとも `len` + 1 文字を保持するバッファーを割り当てます。  
   
- `buffer` が Null ポインターで `count` が 0 以外の場合、または `format` が Null ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、正しくないパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、`errno` を `EINVAL` に設定します。  
+ `buffer` が Null ポインターで `count` が 0 以外の場合、または `format` が Null ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、正しくないパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
   
  エラー コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
@@ -179,7 +180,7 @@ int _snwprintf_l(
   
  Visual Studio 2015 および Windows 10 で UCRT と共に開始する場合、 `snprintf` は `_snprintf`と同一ではなくなります。 `snprintf` 関数の動作は、現在 C99 標準準拠です。  
   
- `_snwprintf` は `_snprintf`のワイド文字バージョンであり、 `_snwprintf` のポインター引数はワイド文字列です。 `_snwprintf` と `_snprintf` では、エンコーディング エラーの検出動作が異なる場合があります。 `_snwprintf`と同様に、 `swprintf`では出力が `FILE`型の出力先ではなく文字列に書き込まれます。  
+ `_snwprintf` は `_snprintf` のワイド文字バージョンであり、`_snwprintf` のポインター引数はワイド文字列です。 `_snwprintf` と `_snprintf` では、エンコーディング エラーの検出動作が異なる場合があります。 `_snwprintf` と同様に、`swprintf` では出力が `FILE` 型の出力先ではなく文字列に書き込まれます。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
@@ -192,9 +193,9 @@ int _snwprintf_l(
 |`_sntprintf`|`_snprintf`|`_snprintf`|`_snwprintf`|  
 |`_sntprintf_l`|`_snprintf_l`|`_snprintf_l`|`_snwprintf_l`|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチンによって返される値|必須ヘッダー|  
+|ルーチン|必須ヘッダー|  
 |-------------|---------------------|  
 |`snprintf`, `_snprintf`,  `_snprintf_l`|\<stdio.h>|  
 |`_snwprintf`, `_snwprintf_l`|\<stdio.h> または \<wchar.h>|  
@@ -314,7 +315,7 @@ Output:
 character count = 69  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [sprintf、_sprintf_l、swprintf、_swprintf_l、\__swprintf_l](../../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)   
  [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   

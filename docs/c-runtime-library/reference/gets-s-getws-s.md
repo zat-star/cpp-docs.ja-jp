@@ -1,12 +1,12 @@
 ---
-title: "gets_s、_getws_s | Microsoft Docs"
-ms.custom: 
+title: gets_s、_getws_s | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _getws_s
@@ -40,17 +40,17 @@ helpviewer_keywords:
 - gets_s function
 - standard input, reading from
 ms.assetid: 5880c36f-122c-4061-a1a5-aeeced6fe58c
-caps.latest.revision: 
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a1cc1437d826584b89c7c4d9bb513f99af122ca0
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 1596c7598565fe098313ab0fc65a2a3f3982afd2
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="getss-getwss"></a>gets_s、_getws_s
 `stdin` ストリームから行を取得します。 これらの [gets および _getws](../../c-runtime-library/gets-getws.md) のバージョンは、「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」(CRT のセキュリティ機能) で説明されているように、セキュリティが強化されています。  
@@ -91,7 +91,7 @@ wchar_t *_getws_s(
   
  最初に読み取られた文字がファイルの終端の文字である場合、null 文字が `buffer` の先頭に格納され、`NULL` が返されます。  
   
- ワイド文字を扱う場合は、`_getws` ではなく `gets_s` を使用します。引数にはワイド文字列を指定します。また戻り値もワイド文字列です。  
+ ワイド文字を扱う場合は、`_getws_s` ではなく `gets_s` を使用します。引数にはワイド文字列を指定します。また戻り値もワイド文字列です。  
   
  `buffer` が `NULL` の場合、`sizeInCharacters` が 0 以下の場合、またはバッファーが小さすぎて入力行と終端の null を格納できない場合、これらの関数は「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `NULL` を返し、errno を `ERANGE` に設定します。  
   
@@ -101,14 +101,14 @@ wchar_t *_getws_s(
   
 |TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
 |---------------------|------------------------------------|--------------------|-----------------------|  
-|`_getts`|`gets_s`|`gets_s`|`_getws`|  
+|`_getts_s`|`gets_s`|`gets_s`|`_getws_s`|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチンによって返される値|必須ヘッダー|  
+|ルーチン|必須ヘッダー|  
 |-------------|---------------------|  
 |`gets_s`|\<stdio.h>|  
-|`_getws`|\<stdio.h> または \<wchar.h>|  
+|`_getws_s`|\<stdio.h> または \<wchar.h>|  
   
 コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル`stdin`、 `stdout`、および`stderr`、C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
   
@@ -134,7 +134,7 @@ int main( void )
 Hello there!The line entered was: Hello there!  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [gets、_getws](../../c-runtime-library/gets-getws.md)   
  [fgets、fgetws](../../c-runtime-library/reference/fgets-fgetws.md)   
