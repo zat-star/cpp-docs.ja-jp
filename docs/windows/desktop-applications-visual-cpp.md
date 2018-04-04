@@ -1,28 +1,28 @@
 ---
-title: "デスクトップ アプリケーション (Visual C) |Microsoft ドキュメント"
-ms.custom: 
+title: デスクトップ アプリケーション (Visual C) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - C++
 ms.assetid: a020b534-293c-44e2-aa48-516c43ddeb8f
-caps.latest.revision: 
+caps.latest.revision: 17
 author: ghogen
 ms.author: ghogen
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 7e2da53a234f63bfd4c8a7f84ec5c107426f0e7c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 61f52dead8ca7ecad52b1cef4f1d87ffc5830386
+ms.sourcegitcommit: 78e5e5cdbafd29e2a6ccf68d4cce215136952907
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="desktop-applications-visual-c"></a>デスクトップ アプリケーション (Visual C)
 A*デスクトップ アプリケーション*C++ では、Windows Api といずれかの実行ウィンドウまたはシステム コンソールの完全なセットにアクセスできる、ネイティブ アプリケーションです。 C++ ではデスクトップ アプリケーションは、(ただし、Windows XP が不要になった公式にサポートされていて、それ以降に導入された多くの Windows Api) から Windows 10 の Windows XP で実行できます。   デスクトップ アプリケーションとは異なります、ユニバーサル Windows プラットフォーム (UWP) アプリ、Windows 10 を実行している pc と XBox、Windows Phone、Surface Hub、およびその他のデバイスでも実行できます。 詳細についてはデスクトップとします。UWP アプリケーションを参照してください[、テクノロジの選択](https://msdn.microsoft.com/en-us/library/windows/desktop/dn614993\(v=vs.85\).aspx)です。  
@@ -41,7 +41,7 @@ A*デスクトップ アプリケーション*C++ では、Windows Api といず
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[コンソール アプリケーション](../windows/console-applications-in-visual-cpp.md)|コンソール アプリに関する情報が含まれています。 Win32 (または Win64) コンソール アプリケーションには、独自のウィンドウとメッセージ ループはありません。 コンソール ウィンドウで動作し、入出力はコマンド ラインを使用して扱われます。|  
 |[Windows デスクトップ アプリケーション](../windows/windows-desktop-applications-cpp.md)|コンソールではなく windows で実行するデスクトップ アプリケーションを作成する方法。|  
@@ -54,8 +54,8 @@ A*デスクトップ アプリケーション*C++ では、Windows Api といず
 |タイトル|説明|  
 |-----------|-----------------|  
 |[Windows 開発](http://go.microsoft.com/fwlink/p/?LinkId=262282)|Windows API と COM に関する情報が含まれています (一部の Windows API とサードパーティ製 DLL は、COM オブジェクトとして実装されています)。|  
-|[Hilo: Windows 7 対応 C++ アプリケーションの開発](http://go.microsoft.com/fwlink/p/?LinkId=262284)|手荷物の受け取り場所に基づくユーザー インターフェイスを作成するために、Windows Animation と Direct2D を使用するリッチ クライアントの Windows デスクトップ アプリケーションを作成する方法について説明します。  このチュートリアルが Windows 7 以降に更新されていないが、まだ throough に紹介 Win32 プログラミング。|  
+|[Hilo: Windows 7 対応 C++ アプリケーションの開発](http://go.microsoft.com/fwlink/p/?LinkId=262284)|手荷物の受け取り場所に基づくユーザー インターフェイスを作成するために、Windows Animation と Direct2D を使用するリッチ クライアントの Windows デスクトップ アプリケーションを作成する方法について説明します。  このチュートリアルが Windows 7 以降に更新されていないが、まだ Win32 プログラミングの詳細な概要を提供します。|  
 |[Visual C++](../visual-cpp-in-visual-studio.md)|Visual Studio での Visual C++ の主な機能について説明し、他の Visual C++ ドキュメントへのリンクを示します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual C++](../visual-cpp-in-visual-studio.md)
