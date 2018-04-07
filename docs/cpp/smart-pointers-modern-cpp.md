@@ -1,33 +1,33 @@
 ---
-title: "スマート ポインター (Modern C) |Microsoft ドキュメント"
-ms.custom: 
+title: スマート ポインター (Modern C) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - C++
 ms.assetid: 909ef870-904c-49b6-b8cd-e9d0b7dc9435
-caps.latest.revision: 
+caps.latest.revision: 26
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4e5883cc7f028c2d64c038a2cdbd9b8365b7e61d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c92a0a6030f8e46fb52beee0bf8fd661b47cdf95
+ms.sourcegitcommit: cff1a8a49f0cd50f315a250c5dd27e15c173845f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="smart-pointers-modern-c"></a>スマート ポインター (Modern C++)
 標準ライブラリに含まれる最新の C++ プログラミングで*スマート ポインター*メモリの解放は確実にプログラムを使用する、およびリソースのリークし例外セーフです。  
   
 ## <a name="uses-for-smart-pointers"></a>スマート ポインターの使用  
- スマート ポインターがで定義されている、`std`で名前空間、 [\<メモリ >](../standard-library/memory.md)ヘッダー ファイルです。 非常に重要には、 [RAII](../cpp/objects-own-resources-raii.md)または*リソースの取得は Initialialization*プログラミングの表現。 この表現方法の主な目的は、オブジェクトのすべてのリソースが 1 行のコードで作成されて準備が完了するように、リソースの取得がオブジェクトの初期化と同時に行われるようにすることです。 具体的には、RAII の主要な原則は、ヒープ割り当てリソース (動的に割り当てられたメモリやシステム オブジェクト ハンドルなど) の所有権を、リソースを削除または解放するコードと関連するクリーンアップ コードがデストラクターに含まれるスタック割り当てオブジェクトに付与するというものです。  
+ スマート ポインターがで定義されている、`std`で名前空間、 [\<メモリ >](../standard-library/memory.md)ヘッダー ファイルです。 非常に重要には、 [RAII](../cpp/objects-own-resources-raii.md)または*Resource Acquisition Is Initialization*プログラミングの表現。 この表現方法の主な目的は、オブジェクトのすべてのリソースが 1 行のコードで作成されて準備が完了するように、リソースの取得がオブジェクトの初期化と同時に行われるようにすることです。 具体的には、RAII の主要な原則は、ヒープ割り当てリソース (動的に割り当てられたメモリやシステム オブジェクト ハンドルなど) の所有権を、リソースを削除または解放するコードと関連するクリーンアップ コードがデストラクターに含まれるスタック割り当てオブジェクトに付与するというものです。  
   
  ほとんどの場合、生のポインターまたはリソース ハンドルを初期化して実際のリソースをポイントするとき、ポインターをすぐにスマート ポインターに渡します。 最新の C++ では、生のポインターは、パフォーマンスが重要な意味を持ち、所有権に関する混乱が発生する可能性がない限られたスコープ、ループ、またはヘルパー関数の小さなコード ブロックでのみ使用されます。  
   
@@ -77,7 +77,7 @@ ms.lasthandoff: 12/21/2017
  これらのスマート ポインターは、Plain Old C++ Object (POCO) にポインターをカプセル化する最初のオプションとして使用します。  
   
 -   `unique_ptr`   
-     基になるポインターの所有者は、厳密に 1 人許可されます。 `shared_ptr` が必要であることがわかっている場合を除き、POCO の既定のオプションとして使用します。 新しい所有者に移動できますが、コピーおよび共有することはできません。 廃止された `auto_ptr` を置き換えます。 `boost::scoped_ptr` に相当します。 `unique_ptr`小さく効率的です。サイズが 1 つのポインターと高速な挿入および C++ 標準ライブラリ コレクションから取得するために右辺値参照をサポートします。 ヘッダー ファイルは `<memory>` です。 詳細については、次を参照してください。[する方法: unique_ptr インスタンスを作成して](../cpp/how-to-create-and-use-unique-ptr-instances.md)と[unique_ptr クラス](../standard-library/unique-ptr-class.md)です。  
+     基になるポインターの所有者は、厳密に 1 人許可されます。 `shared_ptr` が必要であることがわかっている場合を除き、POCO の既定のオプションとして使用します。 新しい所有者に移動できますが、コピーおよび共有することはできません。 廃止された `auto_ptr` を置き換えます。 `boost::scoped_ptr` に相当します。 `unique_ptr` 小さく効率的です。サイズが 1 つのポインターと高速な挿入および C++ 標準ライブラリ コレクションから取得するために右辺値参照をサポートします。 ヘッダー ファイルは `<memory>` です。 詳細については、次を参照してください。[する方法: unique_ptr インスタンスを作成して](../cpp/how-to-create-and-use-unique-ptr-instances.md)と[unique_ptr クラス](../standard-library/unique-ptr-class.md)です。  
   
 -   `shared_ptr`   
      参照カウント スマート ポインターです。 複数の所有者に 1 個の生のポインターなどを割り当てる場合に使用します。たとえば、コンテナーからポインターのコピーを返し、元のポインターを維持する場合などです。 生のポインターは、`shared_ptr` のすべての所有者がスコープ外になるか、所有権を放棄するまで削除されません。 サイズはポインター 2 個です。1 個はオブジェクト用で、もう 1 個は参照カウントを含む共有コントロール ブロック用です。 ヘッダー ファイルは `<memory>` です。 詳細については、次を参照してください。[する方法: shared_ptr インスタンスを作成して](../cpp/how-to-create-and-use-shared-ptr-instances.md)と[shared_ptr クラス](../standard-library/shared-ptr-class.md)です。  
@@ -121,7 +121,7 @@ ms.lasthandoff: 12/21/2017
  [CAutoPtrList クラス](../atl/reference/cautoptrlist-class.md)  
  `CAutoPtr` ノードの一覧を操作するメソッドをカプセル化するクラスです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)   

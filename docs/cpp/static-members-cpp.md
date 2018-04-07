@@ -1,12 +1,12 @@
 ---
-title: "静的メンバー (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 静的メンバー (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -22,24 +22,24 @@ helpviewer_keywords:
 - instance constructors, shared members
 - class instances [C++], static members
 ms.assetid: 9cc8cf0f-d74c-46f2-8e83-42d4e42c8370
-caps.latest.revision: 
+caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0d19985271648e66aa86946c685608f805b1dfe1
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 420139a8e7eba02411ef0e1e3cf39cecc5b3e97a
+ms.sourcegitcommit: d9ee6f777974d031570f4260c9581ea2c81ad875
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="static-members-c"></a>静的メンバー (C++)
 クラスには、静的なメンバー データとメンバー関数を含めることができます。 データ メンバーとして宣言されて**静的**クラスのすべてのオブジェクトのデータの 1 つだけのコピーが保持されます。
   
  静的データ メンバーは、特定のクラス型のオブジェクトの一部ではありません。 その結果、静的データ メンバーの宣言は定義とは見なされません。 データ メンバーはクラス スコープで宣言されますが、定義はファイル スコープで行われます。 これらの静的メンバーは外部リンケージを持ちます。 次に例を示します。  
   
-```  
+```cpp  
 // static_data_members.cpp  
 class BufferedOutput  
 {  
@@ -72,13 +72,13 @@ int main()
   
  静的データ メンバーは、クラス型のオブジェクトを参照せずに参照できます。 `BufferedOutput` オブジェクトを使用して書き込まれたバイト数は、次のように取得できます。  
   
-```  
+```cpp  
 long nBytes = BufferedOutput::bytecount;  
 ```  
   
- 静的メンバーを存在させるために、クラス型のオブジェクトが存在する必要はありません。 静的メンバーは、メンバー選択を使用してアクセスすることもできます (**です。** および **->** ) 演算子。 例:  
+ 静的メンバーを存在させるために、クラス型のオブジェクトが存在する必要はありません。 静的メンバーは、メンバー選択を使用してアクセスすることもできます (**です。** および**->**) 演算子。 例えば:  
   
-```  
+```cpp  
 BufferedOutput Console;  
   
 long nBytes = Console.bytecount;  
@@ -90,5 +90,5 @@ long nBytes = Console.bytecount;
   
  静的メンバーの型は、クラス名で修飾されていません。 そのため、`BufferedOutput::bytecount` の型は `long` です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスと構造体](../cpp/classes-and-structs-cpp.md)
