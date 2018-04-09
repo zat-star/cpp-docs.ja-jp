@@ -1,40 +1,45 @@
 ---
-title: "C++ での Windows プログラミングの概要 |Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/27/2017
-ms.reviewer: 
-ms.suite: 
+title: C++ での Windows プログラミングの概要 |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 04/06/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - C++
 ms.assetid: efc691d7-21f3-47ae-ae56-cab999ccf59d
-caps.latest.revision: 
+caps.latest.revision: 22
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: b204783e3b2c418e5e719ca5c6efcf9c2d31c6df
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 0e00159c828a87eba58920f90b6cd73d1b216232
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="overview-of-windows-programming-in-c"></a>C++ でプログラミングする Windows の概要
 
-Visual C++ を使用すると、Windows PC (x86、x64、または ARM)、Windows サーバー、クラウド、または Xbox で実行される多様なプログラムを記述できます。 適切に記述された C++ プログラムは、高速で効率的であり、電力消費面の経済性に優れています。また、マルチコア デバイスおよびメニーコア デバイス、グラフィックス処理装置 (GPU) での一般コンピューティング、その他の最新ハードウェアの利点をフル活用することができます。
+Windows server で、クラウド内、または Xbox でさまざまな種類の (x 86、x64 または ARM)、Windows PC で実行されるプログラムを記述するのに Visual C を使用できます。 適切に記述された C++ プログラムは、これらの性質を持っています。
+- メモリの要件で効率的です
+- 電力消費量経済的です 
+- マルチコア デバイスおよびメニーコア デバイスのフル活用すること
+- グラフィックス処理装置 (GPU) での一般的なコンピューティング操作を実行できます。   
+- 他の最新のハードウェアで活用できます。
 
-Visual C++ で開発できる Windows アプリにはいくつかの大きなカテゴリがあります。 これらのカテゴリのプログラミング モデルまたはアプリ モデルはさまざまです。つまり、プラットフォームへのアクセスやユーザー インターフェイスの提供のためにさまざまなライブラリや API を使用するということです。
+Visual C++ で開発できる Windows アプリにはいくつかの大きなカテゴリがあります。 これらのカテゴリがあるさまざまなプログラミング モデル、またはアプリ モデルは、長年にわたってが導入されました。 各モデルは、プラットフォームへのアクセスを提供し、ウィンドウとダイアログ ボックスなどのユーザー インターフェイスを作成する別のライブラリと Api を使用します。 C++ 標準ライブラリに加え、サードパーティ製のライブラリは、UWP のいくつかの制限と、これらのカテゴリのいずれかで使用できます。
 
 - [Windows ユニバーサル アプリ](#BK_WindowsUniversal)。 Windows アプリの 3 番目のカテゴリが Windows 8 で導入され、このカテゴリのアプリは Windows 10 でも引き続きサポートされます。 多くの場合、これらのアプリケーションは単に "Windows アプリ" と呼ばれ、さまざまなデバイスを対象とするデスクトップおよびモバイルのアプリがそれに含まれています。 これらのアプリは、C++/CX (C++ の方言であり、Windows ランタイム開発のサポートを含む) で作成することも、Windows ランタイム ライブラリ (WRL) を使用して 標準 C++ と COM で作成することもできます。 これらのアプリはもともと全画面表示で実行するよう設計されていましたが、Windows 10 のユーザーにはデスクトップ ウィンドウでこれを実行するオプションがあります。 これらのアプリはタッチ指向ですが、ユーザーがマウスを好む場合や、タッチ スクリーンが利用できない場合はマウスを簡単に使用できます。 これらのアプリは、Microsoft ストア、アプリの"Store"が呼び出されることに至ったファクトから配布されます。
 
-- [デスクトップ、サーバー、およびクラウドのアプリケーションとゲーム](#BK_Native)。 このカテゴリには、Windows デスクトップ アプリケーションが含まれます。これらのアプリケーションは、Windows 8 以前に Win32 APIを使用していたため、Win32 アプリケーションとも呼ばれ、すべての Windows アプリケーションがこのカテゴリに含まれます。 このカテゴリのアプリケーションは、ユーザー インターフェイスに MFC を使用でき、Windows コンポーネント (通常は COM オブジェクト) との対話に ATL を使用できます。
+UWP アプリは、タブレットや携帯電話など、すべての Windows 10 デバイスおよびデスクトップを実行できます。 デスクトップでは、常に全画面表示で実行しなければならないわけではなく、デスクトップ ウィンドウとして実行することができます。 これらのアプリは Xbox でも動作し、将来のデバイスでも実行できます。  UWP アプリは、ユーザー インターフェイス要素、サービス、および Windows でサポートされているさまざまなハードウェア デバイスへのインターフェイスを提供する Windows ランタイムで実行します。  
 
-   標準の C++ で作成されたアプリケーション、コンポーネント、またはライブラリも、このカテゴリに該当します。
+C++ UWP アプリを記述することができます + CX、C の言語を使用することができます、 [C + + WinRT ライブラリ](https://moderncpp.com/)一部のシナリオです。 UWP アプリは、ネイティブ コードにコンパイルし、XAML ユーザー インターフェイスでは、または DirectX を使用します。 その他の言語で記述された UWP アプリを使用できるネイティブ コードで記述された Windows ランタイム コンポーネントです。 詳細については、次を参照してください。 [C++ ユニバーサル Windows プラットフォーム アプリを作成](http://go.microsoft.com/fwlink/?LinkID=534976)、[ゲームを初めて作成 UWP DirectX を使用する](http://go.microsoft.com/fwlink/p/?LinkId=244656)、および[C++ で作成する Windows ランタイム コンポーネント](http://go.microsoft.com/fwlink/p/?LinkId=244658)です。
 
    サーバーおよびクラウド プログラミングのコンテキストにおいて、コア コンポーネントのためや、計算コードのために C++ を使用することも、このカテゴリに含まれます。 場合によっては、サーバーやクラウド アプリケーションのコアとなるパフォーマンス重視のコードを C++ で記述し、パフォーマンスを最適化することもあります。 このようなコードをコンパイルして DLL にし、C# または Visual Basic から使用することができます。
 
@@ -51,33 +56,23 @@ Windows 10 では、デスクトップ上だけでなく、タブレットや携
 
 既存の Windows 8.1 プロジェクトおよび Windows 10 に移植する必要がある場合は、次を参照してください。[ユニバーサル Windows プラットフォームに移植](../porting/porting-to-the-universal-windows-platform-cpp.md)です。 参照してください、UWP アプリに統合する場合、およびコードを既存のクラシック Win32 デスクトップ ライブラリがあります[する方法: ユニバーサル Windows プラットフォーム アプリで既存の C++ コードを使用して](../porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app.md)です。
 
-C + を使用せず、ユニバーサル Windows アプリ、ゲーム、およびコンポーネントを記述することも + CX です。代わりに、Windows ランタイム C++ テンプレート ライブラリ (Windows ランタイム C++ テンプレート ライブラリ) を使用することができます。 詳細については、次を参照してください。 [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)です。
-
-[!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)]を使用して、Windows 10 のデスクトップとモバイル デバイスで動作するユニバーサル Windows アプリを開発することができます。 また、Windows 8.1 アプリと Windows Phone 8.1 アプリを [!INCLUDE[cpp_dev14_long](../porting/includes/cpp_dev14_long_md.md)]で作成することもできますが、それにはまず、同じコンピューターに Visual Studio 2013 をインストールし、 **Visual Studio 2013 (v120)** ツールセットを使用するようプロジェクトを構成する必要があります。 プロジェクトでこの設定を構成するには、プロジェクトのプロパティを開き、**[全般]** セクションで、**[プラットフォーム ツールセット]** を **[Visual Studio 2013 (v120)]** に設定します。
-
-Visual Studio のセットアップで、Phone 8.0 のツールをインストールする場合は、Windows Phone 8.0 を対象にすることもできます。
-
-Windows 10 で導入された API コントラクトと呼ばれる新しい概念は、特定のバージョンの Windows を対象とするという従来の慣習を置き換えます。 代わりに、アプリに必要な API コントラクトを選択すると、そのアプリはこれらのコントラクトをサポートするあらゆる Windows デバイスで動作するようになります。 API コントラクトはプラットフォームやデバイスのリソースへのアクセスを提供する安定した API のセットです。 API コントラクトは、プロジェクト システムに参照として含めることができます。 Visual Studio プロジェクトで特定の拡張機能 SDK への参照を追加する場合、Visual Studio は適切な API コントラクトを追加します。
+UWP の詳細については一般を参照してください[ユニバーサル Windows プラットフォーム (UWP) アプリとは?](/windows/uwp/get-started/whats-a-uwp)です。
 
 これらすべての概念の詳細については、次を参照してください。 [Windows ユニバーサル アプリ ガイド](http://go.microsoft.com/fwlink/p/?linkid=534605)です。
 
-##  <a name="BK_Native"></a> デスクトップ、サーバー、およびクラウドのアプリとゲーム
-
-クラウドでは、C++ で Azure ネイティブ コード アセンブリを作成し、C# で作成された Web ロールからこれらを呼び出すことができます。 詳細については、「 [Azure SDK](http://go.microsoft.com/fwlink/p/?LinkId=256416)」を参照してください。
+##  <a name="BK_Native"></a> デスクトップおよびサーバー アプリケーション
 
 デスクトップの Windows クライアント アプリケーションを記述するための基礎を習得するには、「 [Developing Windows Applications in C++](http://msdn.microsoft.com/vstudio//hh304489) 」 (C++ での Windows アプリケーションの開発) および「 [Windows C++ プログラミングの概要](http://msdn.microsoft.com/library/windows/desktop/ff381398\(v=vs.85\).aspx)」を参照してください。
 
-Windows 10 では、Visual C++ を使用して多様な種類のプログラムを作成できます。
+Windows 10 では、Visual C を使用して、さまざまな種類のデスクトップ プログラムを作成することができます。
 
 - コマンド ライン アプリとユーティリティ。 詳細については、次を参照してください。[コンソール アプリケーション](../windows/console-applications-in-visual-cpp.md)です。
 
-- PC または Xbox で実行される DirectX ゲーム。 詳細については、 [DirectX デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=256418)を参照してください。
-
 - 洗練されたグラフィカル ユーザー インターフェイスを持つコンシューマー向けアプリケーション。 詳細については、「 [Hilo: Windows 7 対応 C++ アプリケーションの開発](http://go.microsoft.com/fwlink/p/?LinkId=256417)」を参照してください。
 
-- .NET Framework で実行されるか、.NET Framework アプリとネイティブ コードで記述されたアプリまたはコンポーネントとの間のブリッジとなる、エンタープライズ アプリおよび基幹業務アプリ。 詳細については、次を参照してください。 [C + での .NET プログラミング +/CLI (Visual c)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)です。
+- Enterprise および基幹業務アプリを .NET Framework で実行します。 C# または Visual Basic では、ほとんどの .NET Framework アプリケーションが書き込まれます。 C + を使用する + CLI ネイティブの C++ ライブラリを使用する .NET コードを有効にする相互運用機能のレイヤーを作成します。 詳細については、次を参照してください。 [C + での .NET プログラミング +/CLI (Visual c)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)です。
 
-- ネイティブ コードで実行される SQL データベース クライアント。 詳細については、「 [SQL Server Native Client](http://go.microsoft.com/fwlink/p/?LinkId=256419)」を参照してください。
+- ネイティブ コードで実行される SQL データベース クライアント。 詳細については、次を参照してください。 [SQL Server Native Client](/sql/relational-databases/native-client/odbc/sql-server-native-client-odbc)です。
 
 - Microsoft Office アプリケーション用アドイン。 詳細については、「 [Outlook 2010 の C++ アドインをビルドする](http://go.microsoft.com/fwlink/p/?LinkId=256420)」を参照してください。
 
@@ -87,9 +82,17 @@ Windows 10 では、Visual C++ を使用して多様な種類のプログラム�
 
 Visual C++ を使用すると、高性能なカスタム機能をほぼ種類に関係なく Win32 DLL または COM DLL にパッケージ化できます。これらは、C++ アプリまたは C# や Visual Basic など他の言語で記述されたアプリで使用できます。 WIn32 DLL の詳細については、「 [DLLs in Visual C++](../build/dlls-in-visual-cpp.md)」を参照してください。 COM 開発に関する詳細については、次を参照してください。[コンポーネント オブジェクト モデル (COM)](https://msdn.microsoft.com/library/windows/desktop/ms680573)です。
 
-## <a name="sdks-and-header-files"></a>SDK とヘッダー ファイル
+## <a name="games"></a>ゲーム
 
-Visual C には、C ランタイム ライブラリ (CRT)、C++ 標準ライブラリでは、およびその他の Microsoft 固有のライブラリが含まれています。 これらのライブラリのヘッダー ファイルが格納されるインクルード フォルダーは、Visual Studio インストール ディレクトリの \VC\ フォルダーの下にある場合は、CRT、Windows SDK のインストール フォルダー、プログラム ファイルで Windows Kits\10 などにあるいずれかWindows 10 SDK のフォルダーです。  Microsoft ライブラリには、次のとおりです。
+DirectX ゲームは、PC または Xbox で実行できます。 詳細については、 [DirectX デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=256418)を参照してください。
+
+## <a name="sdks-libraries-and-header-files"></a>Sdk、ライブラリ、およびヘッダー ファイル
+
+Visual C には、C ランタイム ライブラリ (CRT)、C++ 標準ライブラリでは、およびその他の Microsoft 固有のライブラリが含まれています。 これらのライブラリのヘッダー ファイルが格納されるインクルード フォルダーは、Visual Studio インストール ディレクトリの \VC\ フォルダーの下にある場合は、CRT、Windows SDK のインストール フォルダー内のいずれかであります。   
+
+使用することができます、 [Vcpkg パッケージ マネージャー](../vcpkg.md) Windows 用に何百ものサード パーティ オープン ソース ライブラリをインストールします。
+
+Microsoft ライブラリには、次のとおりです。
 
 - Microsoft Foundation Classes (MFC): ボタン、リスト ボックス、ツリー ビュー、および他のコントロールを使用した豊富なユーザー インターフェイスを持つ従来の Windows プログラム (特にエンタープライズ アプリケーション) を作成するためのオブジェクト指向フレームワーク。 詳細については、「 [MFC Desktop Applications](../mfc/mfc-desktop-applications.md)」を参照してください。
 
@@ -99,7 +102,9 @@ Visual C には、C ランタイム ライブラリ (CRT)、C++ 標準ライブ�
 
 - 同時実行ランタイム: マルチコア デバイスおよびメニーコア デバイス用の並列プログラミングおよび非同期プログラミング作業を簡略化するために役立つライブラリ。 詳細については、「 [Concurrency Runtime](../parallel/concrt/concurrency-runtime.md)」を参照してください。
 
-Windows プログラミングの多くのシナリオでは、Windows SDK も必要になります。これには、Windows オペレーティング システム コンポーネントへのアクセスを可能にするためのヘッダー ファイルが含まれています。 既定では、Visual Studio は、ユニバーサル Windows アプリの開発できるようにする Windows SDK をインストールします。 Windows の 10 のユニバーサル Windows アプリを開発するには、Windows 10 バージョンの Windows SDK が必要です。 Windows 10 SDK については、次を参照してください。 [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)です。 (Windows の以前のバージョンの Windows Sdk の詳細については、次を参照してください。、 [Windows SDK アーカイブ](https://developer.microsoft.com/windows/downloads/sdk-archive))。
+Windows プログラミングの多くのシナリオでは、Windows SDK も必要になります。これには、Windows オペレーティング システム コンポーネントへのアクセスを可能にするためのヘッダー ファイルが含まれています。 既定では、Visual Studio は、ユニバーサル Windows アプリの開発できるように C++ デスクトップのワークロードのコンポーネントとして、Windows SDK をインストールします。 UWP アプリを開発するには、Windows 10 バージョンの Windows SDK 必要があります。 詳細については、次を参照してください。 [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)です。 (Windows の以前のバージョンの Windows Sdk の詳細については、次を参照してください。、 [Windows SDK アーカイブ](https://developer.microsoft.com/windows/downloads/sdk-archive))。 
+
+**プログラム Files (x86) \Windows Kits**がインストールされている Windows SDK のすべてのバージョンの既定の場所。
 
 Xbox や Azure など、他のプラットフォームには、インストールを要する独自の SDK があります。 詳細については、DirectX デベロッパー センターおよび Azure デベロッパー センターを参照してください。
 

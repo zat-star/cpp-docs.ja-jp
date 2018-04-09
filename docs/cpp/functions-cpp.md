@@ -23,11 +23,11 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1a78f3bf043c08586916a1776806b0a759beb827
-ms.sourcegitcommit: d9ee6f777974d031570f4260c9581ea2c81ad875
+ms.openlocfilehash: 46ed90500ce0b31ce3dbd2348bc8d871ba13911f
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="functions-c"></a>関数 (C++)
 
@@ -310,6 +310,35 @@ template<typename F, typename Tuple = tuple<T...>,
 }
 ```
 
+<<<<<<< HEAD
+4. 戻り値自体を使用するだけでなくすることができます「値を返します」関数を変更または呼び出し元が提供するオブジェクトの値を初期化できるようにする、参照渡しを使用するパラメーターの任意の数を定義することで。 詳細については、次を参照してください。[参照型関数の引数](reference-type-function-arguments.md)です。  
+  
+## <a name="function-pointers"></a>関数ポインター  
+ C++ では、C 言語と同じ方法で、関数ポインターをサポートします。 ただし、通常、よりタイプ セーフな代替手段で関数オブジェクトが使用されます。  
+  
+ 関数ポインター型を返す関数を宣言する場合は、`typedef` を使用して関数ポインター型のエイリアスを宣言することをお勧めします。  次に例を示します。  
+  
+```  
+typedef int (*fp)(int);  
+fp myFunction(char* s); // function returning function pointer  
+```  
+  
+ このように記述していない場合でも、識別子 (上の例では `fp`) を関数名と引数リストで置き換えることで、関数ポインターの宣言構文から関数宣言の正しい構文を次のように導き出すことはできます。  
+  
+```  
+int (*myFunction(char* s))(int);  
+```  
+  
+ この宣言は、上記の typedef を使用した宣言と同等です。  
+  
+## <a name="see-also"></a>関連項目  
+ [関数のオーバー ロード](../cpp/function-overloading.md)   
+ [可変個引数リストを取る関数](../cpp/functions-with-variable-argument-lists-cpp.md)   
+ [明示的に既定化および削除指定関数](../cpp/explicitly-defaulted-and-deleted-functions.md)   
+ [関数の引数依存の名前 (Koenig) 検索](../cpp/argument-dependent-name-koenig-lookup-on-functions.md)   
+ [既定の引数](../cpp/default-arguments.md)   
+ [インライン関数](../cpp/inline-functions-cpp.md)
+=======
 ## <a name="returning-multiple-values-from-a-function"></a>関数から複数の値を返す
 
 さまざまな方法で、関数から 1 つ以上の値を返します。
@@ -446,3 +475,4 @@ int (*myFunction(char* s))(int);
 - [関数の引数依存名の参照 (Koenig 参照)](../cpp/argument-dependent-name-koenig-lookup-on-functions.md)
 - [既定の引数](../cpp/default-arguments.md)
 - [インライン関数](../cpp/inline-functions-cpp.md)
+>>>>>>> master

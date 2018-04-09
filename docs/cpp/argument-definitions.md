@@ -1,12 +1,12 @@
 ---
-title: "引数の定義 |Microsoft ドキュメント"
-ms.custom: 
+title: 引数の定義 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -17,25 +17,25 @@ helpviewer_keywords:
 - argv argument
 - argc argument
 ms.assetid: 6148cbf3-ebe8-44f2-b277-de4b723991c7
-caps.latest.revision: 
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cd1bc4f017a90bf2f42972831eadc02e77868151
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d30dd0c58cd4967065ee3e3c3c4df9538ea194a0
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="argument-definitions"></a>引数定義
 次のプロトタイプで引数を指定します。  
   
 ```  
   
-int main( int  
-argc[ ,char*argv[] [,char*envp[] ] ] );intwmain(intargc[ ,wchar_t*argv[] [,wchar_t*envp[] ] ] );  
+int main( int argc, char* argv[], char* envp[]);
+int wmain( int argc, wchar_t* argv[], wchar_t* envp[]);  
 ```  
   
  これにより、簡単にコマンド ラインの引数を解析し、オプションで環境変数にもアクセスできます。 引数の定義は、次のとおりです。  
@@ -84,5 +84,5 @@ int main( int argc, char *argv[], char *envp[] ) {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [main: プログラムの起動](../cpp/main-program-startup.md)
