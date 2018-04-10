@@ -1,12 +1,12 @@
 ---
-title: "CStdioFile クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CStdioFile クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CStdioFile
@@ -27,17 +27,17 @@ helpviewer_keywords:
 - CStdioFile [MFC], WriteString
 - CStdioFile [MFC], m_pStream
 ms.assetid: 88c2274c-4f0e-4327-882a-557ba4b3ae15
-caps.latest.revision: 
+caps.latest.revision: 22
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 868442a2936781ed24588f47dcb591cadcc48f0d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="cstdiofile-class"></a>CStdioFile クラス
 ランタイム関数によって開かれると、C ランタイム ストリーム ファイルを表す[fopen](../../c-runtime-library/reference/fopen-wfopen.md)です。  
@@ -89,10 +89,10 @@ class CStdioFile : public CFile
   
  `CStdioFile`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
   
-##  <a name="cstdiofile"></a>CStdioFile::CStdioFile  
+##  <a name="cstdiofile"></a>  CStdioFile::CStdioFile  
  `CStdioFile` オブジェクトを構築して初期化します。  
   
 ```  
@@ -141,7 +141,7 @@ CStdioFile(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles#37](../../atl-mfc-shared/reference/codesnippet/cpp/cstdiofile-class_1.cpp)]  
   
-##  <a name="m_pstream"></a>CStdioFile::m_pStream  
+##  <a name="m_pstream"></a>  CStdioFile::m_pStream  
  `m_pStream`データ メンバーは、C ランタイム関数によって返されるように、開いているファイルへのポインターは`fopen`します。  
   
 ```  
@@ -151,7 +151,7 @@ FILE* m_pStream;
 ### <a name="remarks"></a>コメント  
  **NULL**ファイルが開かれていなかったまたはが閉じられました。  
   
-##  <a name="open"></a>CStdioFile::Open  
+##  <a name="open"></a>  CStdioFile::Open  
  オーバーロードされます。 開くが、既定で使用するために設計された`CStdioFile`コンス トラクターです。  
   
 ```  
@@ -173,7 +173,7 @@ virtual BOOL Open(
  目的のファイルのパスを表す文字列。 相対パスまたは絶対パスができます。  
   
  `nOpenFlags`  
- 共有とアクセス モードです。 ファイルを開くときに実行するアクションを指定します。 ビットごとの OR (&#124;) を使用してオプションを組み合わせることができます演算子。 1 つのアクセス許可と 1 つの共有のオプションが必要です。modeCreate と modeNoInherit モードはオプションです。  
+ 共有とアクセス モードです。 ファイルを開くときに実行するアクションを指定します。 ビットごとの OR を使用してオプションを組み合わせることができます (&#124;) 演算子。 1 つのアクセス許可と 1 つの共有のオプションが必要です。modeCreate と modeNoInherit モードはオプションです。  
   
  `pError`  
  失敗した操作のステータスを受信する既存のファイルの例外オブジェクトへのポインター。  
@@ -186,7 +186,7 @@ virtual BOOL Open(
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="readstring"></a>CStdioFile::ReadString  
+##  <a name="readstring"></a>  CStdioFile::ReadString  
  上限に達するまで、バッファーにテキスト データを読み取ります`nMax`に関連付けられているファイルから、-1 が文字、`CStdioFile`オブジェクト。  
   
 ```  
@@ -221,7 +221,7 @@ virtual BOOL ReadString(CString& rString);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles#38](../../atl-mfc-shared/reference/codesnippet/cpp/cstdiofile-class_2.cpp)]  
   
-##  <a name="seek"></a>CStdioFile::Seek  
+##  <a name="seek"></a>  CStdioFile::Seek  
  以前に開かれたファイルのポインターを移動します。  
   
 ```  
@@ -258,7 +258,7 @@ virtual ULONGLONG Seek(
   
  [!code-cpp[NVC_MFCFiles#39](../../atl-mfc-shared/reference/codesnippet/cpp/cstdiofile-class_3.cpp)]  
   
-##  <a name="writestring"></a>CStdioFile::WriteString  
+##  <a name="writestring"></a>  CStdioFile::WriteString  
  バッファーからデータに関連付けられているファイルに書き込みます、`CStdioFile`オブジェクト。  
   
 ```  
@@ -281,7 +281,7 @@ virtual void WriteString(LPCTSTR lpsz);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles#40](../../atl-mfc-shared/reference/codesnippet/cpp/cstdiofile-class_4.cpp)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CFile クラス](../../mfc/reference/cfile-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CFile クラス](../../mfc/reference/cfile-class.md)   

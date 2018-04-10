@@ -1,12 +1,12 @@
 ---
-title: "tile_barrier クラス |Microsoft ドキュメント"
-ms.custom: 
+title: tile_barrier クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - tile_barrier
@@ -21,17 +21,17 @@ dev_langs:
 helpviewer_keywords:
 - tile_barrier class
 ms.assetid: b4ccdccb-0032-4e11-b7bd-dc9d43445dee
-caps.latest.revision: 
+caps.latest.revision: 17
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: e7d868b4bd677d207590de6449e3d5643001e857
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="tilebarrier-class"></a>tile_barrier クラス
 `wait` メソッドを使用してスレッド グループ (タイル) で実行されているスレッドの実行を同期します。 ランタイムのみがこのクラスをインスタンス化できます。  
@@ -62,12 +62,12 @@ class tile_barrier;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `tile_barrier`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** amp.h  
   
  **名前空間:** Concurrency  
 
-## <a name="tile_barrier__ctor">tile_barrier コンス トラクター</a>  
+## <a name="tile_barrier__ctor"></a>  tile_barrier コンス トラクター  
  既存のものをコピーして、クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文 
@@ -118,5 +118,5 @@ void wait_with_global_memory_fence() const  restrict(amp);
 void wait_with_tile_static_memory_fence() const restrict(amp);  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

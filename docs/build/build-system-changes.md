@@ -28,15 +28,15 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 59d30e2afd07c21cb42dbc2b9109d7547d6c5b9f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="build-system-changes"></a>ビルド システムの変更点
 MSBuild システムを使用すると、Visual C プロジェクトをビルドします。 ただし、Visual Studio 2008 以前のリリースで、VCBuild システムが使用されます。 特定ファイルの種類と VCBuild に依存していたの概念は、存在しないかは現在のシステムで異なる方法で表されます。 このドキュメントでは、現在のビルド システムの違いについて説明します。  
   
-## <a name="vcproj-is-now-vcxproj"></a>.vcproj は .vcxproj はようになりました。  
+## <a name="vcproj-is-now-vcxproj"></a>.vcproj is now .vcxproj  
  プロジェクト ファイルは、不要になった .vcproj ファイル名拡張子を使用します。 Visual Studio には、以前のリリースの Visual C は、現在のシステムによって使用される形式にして作成されたプロジェクト ファイルに自動的に変換します。 プロジェクトを手動でアップグレードする方法の詳細については、次を参照してください。 [/Upgrade (devenv.exe)](/visualstudio/ide/reference/upgrade-devenv-exe)です。  
   
  現在のリリースでは、プロジェクト ファイルのファイル名拡張子は、.vcxproj がします。  
@@ -59,16 +59,16 @@ MSBuild システムを使用すると、Visual C プロジェクトをビルド
   
  現在のリリースでは、継承がリテラル値とプロパティのマクロの 1 つまたは複数の連結としてプロパティの値を指定することによってサポートされます。 **$ (Inherit)**と**$ (noinherit)**マクロはサポートされていません。  
   
- 次の例では、セミコロン区切りのリストは、[プロパティ] ページのプロパティに割り当てられます。 一覧から成るの連結、 *\<値 >*リテラルのパスと値の`MyProperty`マクロ表記を使用してアクセスされるプロパティ**$(** *MyProperty***)**です。  
+ 次の例では、セミコロン区切りのリストは、[プロパティ] ページのプロパティに割り当てられます。 一覧から成るの連結、 *\<値 >*リテラルのパスと値の`MyProperty`マクロ表記を使用してアクセスされるプロパティ**$(***MyProperty***)**.  
   
 ```  
 Property=<value>;$(MyProperty)  
 ```  
   
-## <a name="vcxprojuser-files"></a>。 vcxproj.user ファイル  
+## <a name="vcxprojuser-files"></a>.vcxproj.user Files  
  ユーザー ファイル (. vcxproj.user) の例、デバッグと配置の設定、ユーザー固有のプロパティを格納します。 Vcxproj.user ファイルは、特定のユーザーのすべてのプロジェクトに適用されます。  
   
-## <a name="vcxprojfilters-file"></a>。 vcxproj.filters ファイル  
+## <a name="vcxprojfilters-file"></a>.vcxproj.filters File  
  ときに**ソリューション エクスプ ローラー**フィルター ファイル、プロジェクトにファイルを追加するために使用 (. vcxproj.filters) 内の場所を定義、**ソリューション エクスプ ローラー**ツリー ビューでファイルを追加すると、そのファイル名拡張子に基づいて。  
   
 ## <a name="vc-directories-settings"></a>Vc++ ディレクトリの設定  
@@ -78,5 +78,5 @@ Property=<value>;$(MyProperty)
   
  Visual C の以前のリリースによって作成される .vssettings ファイルから vc++ ディレクトリの設定を移行します。 開いている、**ツール**] メニューのをクリックして**インポートおよびエクスポート設定**[**選択された環境設定をインポート**、ウィザードの指示に従います。 時、または起動時 Visual Studio を初めて、上、 **既定の環境設定**ダイアログ ボックスで、**以前のバージョンから有効な設定を移行し、既定の設定だけでなく、それらを適用以下の選択**です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [MSBuild (Visual C++)](../build/msbuild-visual-cpp.md)

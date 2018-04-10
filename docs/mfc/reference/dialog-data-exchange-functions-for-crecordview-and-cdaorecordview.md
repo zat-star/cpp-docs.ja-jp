@@ -1,12 +1,12 @@
 ---
-title: "CRecordView と CDaoRecordView のダイアログ データ交換関数 |Microsoft ドキュメント"
-ms.custom: 
+title: CRecordView と CDaoRecordView のダイアログ データ交換関数 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - AFXDAO/DDX_FieldCBIndex
@@ -29,17 +29,17 @@ helpviewer_keywords:
 - databases [MFC], dialog data exchange (DDX) support
 - DAO [MFC], dialog data exchange (DDX) support
 ms.assetid: 0d8cde38-3a2c-4100-9589-ac80a7b1ce91
-caps.latest.revision: 
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: f58b7ba7ae51c4db065cd7b30cc233128f7b7c68
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="dialog-data-exchange-functions-for-crecordview-and-cdaorecordview"></a>CRecordView と CDaoRecordView のダイアログ データ エクスチェンジ (DDX) 関数
 このトピックの間でデータの交換に使用するための DDX_Field 関数を一覧表示、 [CRecordset](../../mfc/reference/crecordset-class.md)と[CRecordView](../../mfc/reference/crecordview-class.md)フォームまたは[CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)と[CDaoRecordView](../../mfc/reference/cdaorecordview-class.md)フォーム。  
@@ -63,7 +63,7 @@ ms.lasthandoff: 12/21/2017
 |[DDX_FieldSlider](#ddx_fieldslider)|レコード ビュー内のスライダー コントロールのつまみの位置を同期し、`int`レコード セットのフィールド データ メンバーです。 |
 |[DDX_FieldText](#ddx_fieldtext)|オーバー ロードされたバージョンは、転送に使用できる`int`、 **UINT**、**長い**、 `DWORD`、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)、 **float**、**二重**、**短い**、 [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)、および[COleCurrency](../../mfc/reference/colecurrency-class.md)レコード セット フィールド データ メンバーと編集の間でデータボックスに、`CRecordView`または`CDaoRecordView`です。|  
   
-##  <a name="ddx_fieldcbindex"></a>DDX_FieldCBIndex  
+##  <a name="ddx_fieldcbindex"></a>  DDX_FieldCBIndex  
  `DDX_FieldCBIndex`関数は、レコード ビュー内のコンボ ボックス コントロールのリスト ボックス コントロールで選択した項目のインデックスを同期し、`int`レコード ビューに関連付けられているレコード セットのフィールド データ メンバーです。  
   
 ```  
@@ -87,7 +87,7 @@ void AFXAPI DDX_FieldCBIndex(
  `nIDC`  
  内のコントロールの ID、 [CRecordView](../../mfc/reference/crecordview-class.md)または[CDaoRecordView](../../mfc/reference/cdaorecordview-class.md)オブジェクト。  
   
- *インデックス*  
+ *index*  
  関連付けられているフィールドのデータ メンバーへの参照を`CRecordset`または`CDaoRecordset`オブジェクト。  
   
  `pRecordset`  
@@ -103,10 +103,10 @@ void AFXAPI DDX_FieldCBIndex(
 ### <a name="example"></a>例  
  参照してください[DDX_FieldText](#ddx_fieldtext)全般 DDX_Field 例についてはします。 この例はのようになります`DDX_FieldCBIndex`です。  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
 
-##  <a name="ddx_fieldcbstring"></a>DDX_FieldCBString  
+##  <a name="ddx_fieldcbstring"></a>  DDX_FieldCBString  
  `DDX_FieldCBString`関数の転送を管理[CString](../../atl-mfc-shared/reference/cstringt-class.md)レコード ビュー内のコンボ ボックス コントロールのエディット コントロールの間でデータと`CString`レコード ビューに関連付けられているレコード セットのフィールド データ メンバーです。  
   
 ```  
@@ -146,10 +146,10 @@ void AFXAPI DDX_FieldCBString(
 ### <a name="example"></a>例  
  参照してください[DDX_FieldText](#ddx_fieldtext)全般 DDX_Field 例についてはします。 この例への呼び出しが含まれています。`DDX_FieldCBString`です。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
   
-## <a name="ddx_fieldcbstringexact"></a>DDX_FieldCBStringExact  
+## <a name="ddx_fieldcbstringexact"></a>  DDX_FieldCBStringExact  
  `DDX_FieldCBStringExact`関数の転送を管理[CString](../../atl-mfc-shared/reference/cstringt-class.md)レコード ビュー内のコンボ ボックス コントロールのエディット コントロールの間でデータと`CString`レコード ビューに関連付けられているレコード セットのフィールド データ メンバーです。  
   
 ```  
@@ -189,10 +189,10 @@ void AFXAPI DDX_FieldCBStringExact(
 ### <a name="example"></a>例  
  参照してください[DDX_FieldText](#ddx_fieldtext)全般 DDX_Field 例についてはします。 呼び出す`DDX_FieldCBStringExact`になります。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
   
-##  <a name="ddx_fieldcheck"></a>DDX_FieldCheck  
+##  <a name="ddx_fieldcheck"></a>  DDX_FieldCheck  
  `DDX_FieldCheck`関数の転送を管理`int` ダイアログ ボックスでは、チェック ボックス コントロールの間でデータ ビュー、またはコントロール ビュー オブジェクトのフォームと`int` ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのデータ メンバーです。  
   
 ```  
@@ -227,10 +227,10 @@ void AFXAPI DDX_FieldCheck(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
   
-##  <a name="ddx_fieldlbindex"></a>DDX_FieldLBIndex  
+##  <a name="ddx_fieldlbindex"></a>  DDX_FieldLBIndex  
  `DDX_FieldLBIndex`関数は、レコード ビュー内のリスト ボックス コントロールで選択した項目のインデックスを同期し、`int`レコード ビューに関連付けられているレコード セットのフィールド データ メンバーです。  
   
 ```  
@@ -254,7 +254,7 @@ void AFXAPI DDX_FieldLBIndex(
  `nIDC`  
  内のコントロールの ID、 [CRecordView](../../mfc/reference/crecordview-class.md)または[CDaoRecordView](../../mfc/reference/cdaorecordview-class.md)オブジェクト。  
   
- *インデックス*  
+ *index*  
  関連付けられているフィールドのデータ メンバーへの参照を`CRecordset`または`CDaoRecordset`オブジェクト。  
   
  `pRecordset`  
@@ -270,10 +270,10 @@ void AFXAPI DDX_FieldLBIndex(
 ### <a name="example"></a>例  
  参照してください[DDX_FieldText](#ddx_fieldtext)全般 DDX_Field 例についてはします。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
   
-##  <a name="ddx_fieldlbstring"></a>DDX_FieldLBString  
+##  <a name="ddx_fieldlbstring"></a>  DDX_FieldLBString  
  `DDX_FieldLBString`レコード ビューにリスト ボックス コントロールの現在の選択範囲をコピー、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)レコード ビューに関連付けられているレコード セットのフィールド データ メンバーです。  
   
 ```  
@@ -313,10 +313,10 @@ void AFXAPI DDX_FieldLBString(
 ### <a name="example"></a>例  
  参照してください[DDX_FieldText](#ddx_fieldtext)全般 DDX_Field 例についてはします。 呼び出す`DDX_FieldLBString`になります。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
   
-##  <a name="ddx_fieldlbstringexact"></a>DDX_FieldLBStringExact  
+##  <a name="ddx_fieldlbstringexact"></a>  DDX_FieldLBStringExact  
  `DDX_FieldLBStringExact`関数では、リスト ボックス コントロールの現在の選択範囲をコピーするレコード ビュー内、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)レコード ビューに関連付けられているレコード セットのフィールド データ メンバーです。  
   
 ```  
@@ -356,10 +356,10 @@ void AFXAPI DDX_FieldLBStringExact(
 ### <a name="example"></a>例  
  参照してください[DDX_FieldText](#ddx_fieldtext)全般 DDX_Field 例についてはします。 呼び出す`DDX_FieldLBStringExact`になります。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
   
-##  <a name="ddx_fieldradio"></a>DDX_FieldRadio  
+##  <a name="ddx_fieldradio"></a>  DDX_FieldRadio  
  `DDX_FieldRadio`関数は、0 から始まる`int`レコード ビューのラジオ ボタンのグループ内の現在選択されているオプション ボタンを持つレコード ビューのレコード セットのメンバー変数。  
   
 ```  
@@ -399,10 +399,10 @@ void AFXAPI DDX_FieldRadio(
 ### <a name="example"></a>例  
  参照してください[DDX_FieldText](#ddx_fieldtext)全般 DDX_Field 例についてはします。 呼び出す`DDX_FieldRadio`になります。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
   
-##  <a name="ddx_fieldscroll"></a>DDX_FieldScroll  
+##  <a name="ddx_fieldscroll"></a>  DDX_FieldScroll  
  `DDX_FieldScroll`関数は、レコード ビュー内のスクロール バー コントロールのスクロール位置を同期し、`int`レコード ビュー (またはに関連付けられた整数変数にマップする) レコード セットのフィールド データ メンバーです。  
   
 ```  
@@ -423,7 +423,7 @@ void AFXAPI DDX_FieldScroll(
  `pDX`  
  ポインター、 [CDataExchange](../../mfc/reference/cdataexchange-class.md)オブジェクト。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
   
- *各\**  
+ *nIDC\**  
  最初の ID でグループ (スタイルを**WS_GROUP**) にある隣接するラジオ ボタン コントロールの[CRecordView](../../mfc/reference/crecordview-class.md)または[CDaoRecordView](../../mfc/reference/cdaorecordview-class.md)オブジェクト。  
   
  *値*  
@@ -442,10 +442,10 @@ void AFXAPI DDX_FieldScroll(
 ### <a name="example"></a>例  
  参照してください[DDX_FieldText](#ddx_fieldtext)全般 DDX_Field 例についてはします。 呼び出す`DDX_FieldScroll`になります。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
 
-  ## <a name="nameddxfieldslidera--ddxfieldslider"></a>名前 ="ddx_fieldslider"></a> DDX_FieldSlider
+  ## <a name="nameddxfieldslidera--ddxfieldslider"></a>name="ddx_fieldslider"></a>  DDX_FieldSlider
 `DDX_FieldSlider`関数は、レコード ビュー内のスライダー コントロールのつまみの位置を同期し、`int`レコード ビュー (またはに関連付けられた整数変数にマップする) レコード セットのフィールド データ メンバーです。  
    
 ### <a name="syntax"></a>構文  
@@ -478,7 +478,7 @@ void AFXAPI DDX_FieldSlider(
 ### <a name="remarks"></a>コメント  
  データをレコード セットから、スライダーを移動するときこの関数で指定された値をスライダーの位置を設定*値*です。 レコード セットからコントロールへの転送のレコード セットのフィールドが Null の場合は、スライダー コントロールの位置は 0 に設定します。 コントロールからレコード セットへの転送時にコントロールが空の場合、レコード セットのフィールドの値は 0 です。  
   
- `DDX_FieldSlider`スライダー コントロールの位置だけではなく、範囲を設定できると範囲の情報を交換しないしません。  
+ `DDX_FieldSlider` スライダー コントロールの位置だけではなく、範囲を設定できると範囲の情報を交換しないしません。  
   
  ODBC ベースのクラスを使用している場合は、関数の最初のオーバーライドを使用します。 2 番目の上書きを使用して、DAO ベースのクラスを使用します。  
   
@@ -487,13 +487,13 @@ void AFXAPI DDX_FieldSlider(
 ### <a name="example"></a>例  
  参照してください[DDX_FieldText](#ddx_fieldtext)全般 DDX_Field 例についてはします。 呼び出す`DDX_FieldSlider`になります。  
    
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** afxdao.h  
    
-### <a name="see-also"></a>参照  
+### <a name="see-also"></a>関連項目  
  [マクロとグローバル](mfc-macros-and-globals.md)   
   
-##  <a name="ddx_fieldtext"></a>DDX_FieldText  
+##  <a name="ddx_fieldtext"></a>  DDX_FieldText  
  `DDX_FieldText`関数の転送を管理`int`、**短い**、**長い**、 `DWORD`、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)、 **float**、**二重**、 **BOOL**、または**バイト**エディット ボックス コントロールとレコード セットのフィールド データ メンバーの間のデータ。  
   
 ```  
@@ -632,8 +632,8 @@ void AFXAPI DDX_FieldText(
  [!code-cpp[NVC_MFCDatabase#43](../../mfc/codesnippet/cpp/dialog-data-exchange-functions-for-crecordview-and-cdaorecordview_1.cpp)]  
 
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
   **ヘッダー** afxdao.h  
     
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

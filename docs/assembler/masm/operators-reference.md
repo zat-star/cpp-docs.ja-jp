@@ -1,12 +1,12 @@
 ---
-title: "MASM 演算子リファレンス |Microsoft ドキュメント"
-ms.custom: 
+title: MASM 演算子リファレンス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 dev_langs:
 - C++
@@ -14,17 +14,17 @@ helpviewer_keywords:
 - MASM (Microsoft Macro Assembler), operators reference
 - operators [MASM]
 ms.assetid: c069cab7-d6b0-4f82-a6ce-0ca3fc7e6428
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 67659cd17d95135e2697cd8707142ce1b5c94ef1
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="masm-operators-reference"></a>MASM 演算子リファレンス
 
@@ -99,6 +99,6 @@ ms.lasthandoff: 02/14/2018
 |[PTR](../../assembler/masm/operator-ptr.md)|[SHORT](../../assembler/masm/operator-short.md)|[サイズ](../../assembler/masm/operator-size.md)|  
 |[SIZEOF](../../assembler/masm/operator-sizeof.md)|[これ](../../assembler/masm/operator-this.md)|[TYPE](../../assembler/masm/operator-type.md)|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
 [Microsoft Macro Assembler リファレンス](../../assembler/masm/microsoft-macro-assembler-reference.md)

@@ -34,10 +34,10 @@ manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: b200ce8329c10fe2257ca3ce9ca8cb61125390fc
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="concurrencydirect3d-namespace-functions-amp"></a>Concurrency::direct3d 名前空間の関数 (AMP)
 ||||  
@@ -52,7 +52,7 @@ ms.lasthandoff: 02/23/2018
 |[saturate](#saturate)|[sign](#sign)|[smoothstep](#smoothstep)|  
 |[step](#step)|[umax](#umax)|[umin](#umin)|  
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 **ヘッダー:** amp.h **Namespace:**同時実行
   
 ##  <a name="abs"></a>  abs  
@@ -367,7 +367,7 @@ array<value_type, _Rank> make_array(
 ### <a name="return-value"></a>戻り値  
  用意された Direct3D バッファーを使用して作成された配列。  
   
-##  <a name="noise"></a>  ノイズ  
+##  <a name="noise"></a>  noise  
  パーリン ノイズ アルゴリズムを使用して、ランダムな値が生成されます。  
   
 ```  
@@ -534,5 +534,5 @@ inline unsigned int umin(
 ### <a name="return-value"></a>戻り値  
  引数の最小数値を返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Concurrency::direct3d 名前空間](concurrency-direct3d-namespace.md)

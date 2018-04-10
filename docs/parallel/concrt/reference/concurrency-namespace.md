@@ -1,12 +1,12 @@
 ---
-title: "同時実行 Namespace |Microsoft ドキュメント"
-ms.custom: 
+title: 同時実行 Namespace |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - concurrent_priority_queue/concurrency
@@ -29,17 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - Concurrency namespace
 ms.assetid: f1d33ca2-679b-4442-b140-22a9d9df61d1
-caps.latest.revision: 
+caps.latest.revision: 37
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 79a6334dae9835901198387d58316ef34e81ce50
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="concurrency-namespace"></a>concurrency 名前空間
 `Concurrency` 名前空間には、C++ 向けの並列プログラミング フレームワークである同時実行ランタイムにアクセスするためのクラスおよび関数が用意されています。 詳細については、「[同時実行ランタイム](../../../parallel/concrt/concurrency-runtime.md)」を参照してください。  
@@ -173,7 +173,7 @@ namespace concurrency;
   
 ### <a name="enumerations"></a>列挙  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |[agent_status](concurrency-namespace-enums.md#agent_status)|`agent` の有効な状態。|  
 |[Agents_EventType](concurrency-namespace-enums.md#agents_eventtype)|エージェント ライブラリによって提供されるトレース機能を使用してトレースできるイベントの種類。|  
@@ -227,7 +227,7 @@ namespace concurrency;
 |[run_with_cancellation_token 関数](concurrency-namespace-functions.md#run_with_cancellation_token)|関数オブジェクトを、指定されたキャンセル トークンのコンテキストですばやく同期的に実行します。|  
 |[send 関数](concurrency-namespace-functions.md#send)|オーバーロードされます。 ターゲットがメッセージを受け入れるか拒否するまで待機する同期送信操作です。|  
 |[set_ambient_scheduler 関数 (同時実行ランタイム)](concurrency-namespace-functions.md#set_ambient_scheduler)||  
-|[set_task_execution_resources Function](concurrency-namespace-functions.md#set_task_execution_resources)|オーバーロードされます。 同時実行ランタイムの内部ワーカー スレッドが使用する実行リソースを、指定された関係セットに制限します。<br /><br /> このメソッドの呼び出しは、リソース マネージャーの作成前、または 2 つのリソース マネージャーの有効期間の間のみ有効です。 これは、呼び出し時にリソース マネージャーが存在しない限り複数回呼び出すことができます。 関係の制限が設定されたら、次の有効な `set_task_execution_resources` メソッド呼び出しまで保持されます。<br /><br /> 指定された関係マスクは、プロセス関係マスクのサブセットである必要はありません。 プロセス関係は必要に応じて更新されます。|  
+|[set_task_execution_resources 関数](concurrency-namespace-functions.md#set_task_execution_resources)|オーバーロードされます。 同時実行ランタイムの内部ワーカー スレッドが使用する実行リソースを、指定された関係セットに制限します。<br /><br /> このメソッドの呼び出しは、リソース マネージャーの作成前、または 2 つのリソース マネージャーの有効期間の間のみ有効です。 これは、呼び出し時にリソース マネージャーが存在しない限り複数回呼び出すことができます。 関係の制限が設定されたら、次の有効な `set_task_execution_resources` メソッド呼び出しまで保持されます。<br /><br /> 指定された関係マスクは、プロセス関係マスクのサブセットである必要はありません。 プロセス関係は必要に応じて更新されます。|  
 |[swap 関数](concurrency-namespace-functions.md#swap)|2 つの `concurrent_vector` オブジェクトの要素を交換します。|  
 |[task_from_exception 関数 (同時実行ランタイム)](concurrency-namespace-functions.md#task_from_exception)||  
 |[task_from_result 関数 (同時実行ランタイム)](concurrency-namespace-functions.md#task_from_result)||  
@@ -273,9 +273,9 @@ namespace concurrency;
 |[SchedulerEventGuid](concurrency-namespace-constants1.md#schedulereventguid)|同時実行ランタイムによって生成される ETW イベントのうち、スケジューラ アクティビティに直接関係する ETW イベントを表すカテゴリの GUID。|  
 |[VirtualProcessorEventGuid](concurrency-namespace-constants1.md#virtualprocessoreventguid)|同時実行ランタイムによって生成される ETW イベントのうち、仮想プロセッサに直接関係する ETW イベントを表すカテゴリの GUID。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** agents.h、concrt.h、concrtrm.h、concurrent_priority_queue.h、concurrent_queue.h、concurrent_unordered_map.h、concurrent_unordered_set.h、concurrent_vector.h、internal_concurrent_hash.h、internal_split_ordered_list.h、ppl.h、pplcancellation_token.h、pplconcrt.h、pplinterface.h、ppltasks.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [参照](reference-concurrency-runtime.md)
 

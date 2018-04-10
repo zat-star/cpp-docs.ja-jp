@@ -1,12 +1,12 @@
 ---
-title: "completion_future クラス |Microsoft ドキュメント"
-ms.custom: 
+title: completion_future クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - completion_future
@@ -22,17 +22,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 1303c62e-546d-4b02-a578-251ed3fc0b6b
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 24f7012f7fdd9aaeb2443665187aba4eef483e0f
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="completionfuture-class"></a>completion_future クラス
 C ++. AMP の非同期操作に対応するフューチャを表します。  
@@ -74,7 +74,7 @@ class completion_future;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `completion_future`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** amprt.h  
   
  **名前空間:** concurrency  
@@ -102,13 +102,13 @@ completion_future(
   
 ### <a name="overloads-list"></a>オーバーロードの一覧  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |`completion_future();`|新しいインスタンスを初期化、`completion_future`クラス|  
 |`completion_future(const completion_future& _Other);`|新しいインスタンスを初期化、`completion_future`クラス コンス トラクターをコピーしています。|  
 |`completion_future(completion_future&& _Other);`|新しいインスタンスを初期化、`completion_future`コンス トラクターを移動することによってクラスです。|  
   
-## <a name="get"></a> 取得 
+## <a name="get"></a> get 
 
 関連する非同期操作が完了するまで待機します。 非同期操作中にいずれかが発生した場合は、ストアドの例外をスローします。  
   
@@ -131,7 +131,7 @@ operator std::shared_future<void>() const;
 ### <a name="return-value"></a>戻り値  
  `std::shared_future` オブジェクト。  
   
-## <a name="operator_eq"></a> 演算子 = 
+## <a name="operator_eq"></a> operator= 
 
 指定された `completion_future` オブジェクトの内容をこのオブジェクトにコピーします。  
   
@@ -151,7 +151,7 @@ completion_future&  operator= (completion_future&& _Other );
   
 ## <a name="overloads-list"></a>オーバーロードの一覧  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |`completion_future& operator=(const completion_future& _Other);`|指定した内容をコピー`completion_future`オブジェクトのディープ コピーを使用してこの 1 つにします。|  
 |`completion_future& operator=(completion_future&& _Other);`|指定した内容をコピー`completion_future`オブジェクトを移動代入を使用して、この 1 つにします。|  
@@ -288,5 +288,5 @@ std::future_status::future_status wait_until(
 ~completion_future();  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

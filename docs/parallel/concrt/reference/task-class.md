@@ -1,12 +1,12 @@
 ---
-title: "task クラス (同時実行ランタイム) |Microsoft ドキュメント"
-ms.custom: 
+title: task クラス (同時実行ランタイム) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - task
@@ -23,17 +23,17 @@ dev_langs:
 helpviewer_keywords:
 - task class
 ms.assetid: cdc3a8c0-5cbe-45a0-b5d5-e9f81d94df1a
-caps.latest.revision: 
+caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 80f56f02c8a26e87da3f402ecebf738304408eac
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="task-class-concurrency-runtime"></a>task クラス (同時実行ランタイム)
 並列パターン ライブラリ (PPL) `task` クラス。 `task` オブジェクトは、非同期的に、他のタスクと同時に実行できる処理、および同時実行ランタイムの並列アルゴリズムによって生成される並列処理を表します。 正常に終了した場合は、型 `_ResultType` の結果が生成されます。 型 `task<void>` のタスクでは結果が作成されません。 タスクは、他のタスクと関係なく待機および取り消しできます。 継続を使用して他のタスクと共に構成することもできます ( `then`)、および結合 ( `when_all`) と choice ( `when_any`) パターン。  
@@ -96,12 +96,12 @@ class task;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `task`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** ppltasks.h  
   
  **名前空間:** concurrency  
   
-##  <a name="get"></a> 取得 
+##  <a name="get"></a> get 
 
  このタスクによって生成された結果を返します。 タスクが終了状態にない場合、`get` への呼び出しは、そのタスクが完了するまで待機します。 このメソッドは、`result_type` が `void` に指定されたタスクで呼び出された場合は値を返しません。  
   
@@ -160,7 +160,7 @@ bool operator!= (const task<void>& _Rhs) const;
 ### <a name="return-value"></a>戻り値  
  オブジェクトが異なる基本タスクを参照する場合は `true` を返します。それ以外の場合は `false` を返します。  
   
-##  <a name="operator_eq"></a> 演算子 = 
+##  <a name="operator_eq"></a> operator= 
 
  ある `task` オブジェクトの内容を別のオブジェクトの内容で置き換えます。  
   
@@ -179,7 +179,7 @@ task& operator= (task&& _Other);
 ### <a name="remarks"></a>コメント  
  `task` がスマート ポインターのように動作すると、コピーの代入の後では、この `task` オブジェクトは `_Other` が実行する実際のタスクと同じタスクを表します。  
   
-##  <a name="operator_eq_eq"></a> 演算子 = = 
+##  <a name="operator_eq_eq"></a> operator== 
 
  2 つの `task` オブジェクトが同じ内部タスクを表すかどうかを決定します。  
   
@@ -332,5 +332,5 @@ task_status wait() const;
 > [!IMPORTANT]
 >  ユニバーサル Windows プラットフォーム (UWP) アプリで呼び出すことはありません`wait`STA で実行されるコードで それ以外の場合、ランタイム[concurrency::invalid_operation](invalid-operation-class.md)のため、このメソッドは、現在のスレッドをブロックし、アプリが応答しなくなる可能性があります。 ただし、呼び出すことができます、 [concurrency:](#get)タスク ベースの継続で継続元タスクの結果を受信するメソッド。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [concurrency 名前空間](concurrency-namespace.md)

@@ -1,27 +1,27 @@
 ---
-title: "2.3 parallel コンストラクト |Microsoft ドキュメント"
-ms.custom: 
+title: 2.3 parallel コンストラクト |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - C++
 ms.assetid: 190eacdf-2c16-4c06-8cb7-ac60eb211425
-caps.latest.revision: 
+caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 89167547085682a81cc1d281f4f32ab55022d27c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="23-parallel-construct"></a>2.3 parallel コンストラクト
 次のディレクティブでは、同時に複数のスレッドで実行されるプログラムの地域である並列領域を定義します。 これは、並列実行を開始する基本的なコンストラクトです。  
@@ -32,21 +32,21 @@ ms.lasthandoff: 12/21/2017
   
  *句*は、次のいずれか。  
   
- **場合 (** *スカラー式* **)**  
+ **if(** *scalar-expression* **)**  
   
- **プライベート (** *変数一覧* **)**  
+ **private(** *variable-list* **)**  
   
- **firstprivate (** *変数一覧* **)**  
+ **firstprivate(** *variable-list* **)**  
   
- **既定値 (共有 (& a) #124; なし)**  
+ **default(shared &#124; none)**  
   
- **共有 (** *変数一覧* **)**  
+ **shared(** *variable-list* **)**  
   
- **copyin (** *変数一覧* **)**  
+ **copyin(** *variable-list* **)**  
   
- **削減 (** *演算子* **:***変数一覧* **)**   
+ **reduction(** *operator* **:**  *variable-list* **)**  
   
- **num_threads (** *整数式* **)**  
+ **num_threads(** *integer-expression* **)**  
   
  スレッドには、parallel コンストラクトが検出されると、次のいずれかが true の場合、スレッドのチームが作成されます。  
   

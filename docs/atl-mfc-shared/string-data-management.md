@@ -1,29 +1,29 @@
 ---
-title: "データ管理の文字列 |Microsoft ドキュメント"
-ms.custom: 
+title: データ管理の文字列 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - Unicode, string objects
 ms.assetid: 0b53a542-eeb1-4108-9ada-6700645b6f8f
-caps.latest.revision: 
+caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: ad7a17b1b34375fcb45019bcaf8878757288a290
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="string-data-management"></a>文字列データ管理
 Visual C には、文字列データを管理するいくつかの方法が用意されています。  
@@ -34,7 +34,7 @@ Visual C には、文字列データを管理するいくつかの方法が用�
   
 -   Mfc の[CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)、柔軟で、サイズ変更可能な文字列オブジェクトを提供します。  
   
--   クラス[CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)と同じ機能を MFC に依存しない文字列オブジェクトを提供します。`CString`  
+-   クラス[CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)と同じ機能を MFC に依存しない文字列オブジェクトを提供します。 `CString`  
   
  ほぼすべてのプログラムは、文字列データを操作します。 MFC の`CString`クラスは、柔軟な文字列処理の最適なソリューションでは多くの場合。 Version 7.0 以降を`CString`MFC または MFC に依存しないプログラムで使用できます。 ランタイム ライブラリと`CString`Unicode や MBCS のプログラミングと同様に、マルチバイト (ワイド) 文字を含む文字列をサポートします。  
   
@@ -48,11 +48,11 @@ Visual C には、文字列データを管理するいくつかの方法が用�
   
  [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)クラスは、文字列操作のためのサポートを提供します。 置換し、通常、C ランタイム ライブラリ文字列パッケージによって提供される機能を拡張しています。 `CString`クラス メンバー関数と演算子の似た Basic では、簡略化された文字列処理を提供します。 このクラスもコンス トラクターと演算子の提供を構築する、割り当て、および比較する**Cstring**と標準 C++ 文字列データ型。 `CString`から派生していない`CObject`、使用することができます`CString`ほとんどの Microsoft Foundation Class ライブラリ (MFC) とは別にオブジェクト。  
   
- `CString`オブジェクトは、「値のセマンティクスです」に従う A`CString`オブジェクトを一意の値を表します。 考えること、`CString`文字列へのポインターとしてではなく、実際の文字列として。  
+ `CString` オブジェクトは、「値のセマンティクスです」に従う A`CString`オブジェクトを一意の値を表します。 考えること、`CString`文字列へのポインターとしてではなく、実際の文字列として。  
   
- A`CString`オブジェクトは、可変個の文字のシーケンスを表します。 `CString`オブジェクトは、文字の配列として考えることができます。  
+ A`CString`オブジェクトは、可変個の文字のシーケンスを表します。 `CString` オブジェクトは、文字の配列として考えることができます。  
   
-##  <a name="_core_unicode_and_mbcs_provide_portability"></a>Unicode と MBCS の移植性を提供します。  
+##  <a name="_core_unicode_and_mbcs_provide_portability"></a> Unicode と MBCS の移植性を提供します。  
  MFC バージョン 3.0 以降では、MFC では、インクルード`CString`Unicode とマルチバイト文字セット (MBCS) の両方に対して有効にします。 このサポートでは、Unicode または ANSI のいずれかの文字を構築することができるポータブル アプリケーションを作成するためのやすくなります。 この移植性の内の各文字を有効にする、`CString`オブジェクトの型が**TCHAR**、として定義されている`wchar_t`シンボルを定義する場合**_UNICODE**アプリケーションをビルドするときに、`char`しない場合。 A`wchar_t`文字が 16 ビット幅。 シンボルでビルドする場合に、MBCS が有効になっている**_MBCS**定義します。 MFC 自体がいずれかでビルドされた、 **_MBCS** (NAFX ライブラリ) のシンボルまたは**_UNICODE** (UAFX ライブラリ) のシンボルを定義します。  
   
 > [!NOTE]
@@ -70,7 +70,7 @@ Visual C には、文字列データを管理するいくつかの方法が用�
   
  A`CString`オブジェクトに格納できる最大**INT_MAX** (2,147, 483,647) 文字です。 **TCHAR**を取得または設定内の個々 の文字データ型が使用される、`CString`オブジェクト。 文字配列とは異なり、`CString`クラスには、組み込みのメモリ割り当てが可能です。 これにより、`CString`必要に応じて自動的に拡張するオブジェクト (つまり必要はありませんの増加について心配する、`CString`長い文字列に合わせてオブジェクト)。  
   
-##  <a name="_core_cstrings_and_const_char_pointers"></a>Cstring と const char ポインター  
+##  <a name="_core_cstrings_and_const_char_pointers"></a> Cstring と const char ポインター  
  A`CString`オブジェクトは、C スタイルのリテラル文字列のように機能できますも (、`PCXSTR`と同じである**const char\***  Unicode 下にない場合)。 [CSimpleStringT::operator PCXSTR](../atl-mfc-shared/reference/csimplestringt-class.md#operator_pcxstr)変換演算子を使うと`CString`自由に関数呼び出しで文字へのポインターの代わりに使用するオブジェクト。 **CString (LPCWSTR** `pszSrc` **)**コンス トラクターの代わりに使用する文字へのポインターを使用する`CString`オブジェクト。  
   
  行われませんフォールドに`CString`オブジェクト。 2 つの操作を行う場合`CString`オブジェクトを含む`Chicago`など、内の文字`Chicago`2 か所に格納されます。 (これではありません、MFC の将来のバージョンの場合は true。 それに依存しないようにするためです。)  
@@ -86,13 +86,13 @@ Visual C には、文字列データを管理するいくつかの方法が用�
   
  `CString`クラスとしては実装されません Microsoft Foundation Class ライブラリ コレクション クラス、ただし`CString`オブジェクトをコレクション内の要素として確実に格納することができます。  
   
-##  <a name="_core_cstring_reference_counting"></a>CString の参照カウント  
+##  <a name="_core_cstring_reference_counting"></a> CString の参照カウント  
  MFC バージョン 4.0 の時点でとき[CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)オブジェクトのコピーは、MFC は、データをコピーするのではなく、参照カウントをインクリメントします。 これにより、値を返す、パラメーターの引き渡し`CString`より効率的な値でオブジェクト。 これらの操作を呼び出せる、場合によっては複数回コピー コンス トラクターが発生します。 これらの一般的な操作には、そのオーバーヘッドが軽減されを使用して参照カウントをインクリメント`CString`もより魅力的なオプションです。  
   
  各コピーは破棄されると、元のオブジェクト内の参照カウントは減少します。 元の`CString`オブジェクトは、参照カウントがゼロになるまでは破棄されません。  
   
  使用することができます、`CString`メンバー関数[CSimpleStringT::LockBuffer](../atl-mfc-shared/reference/csimplestringt-class.md#lockbuffer)と[CSimpleStringT::UnlockBuffer](../atl-mfc-shared/reference/csimplestringt-class.md#unlockbuffer)参照カウントを有効または無効にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [MFC の一般的なトピック](../mfc/general-mfc-topics.md)
 

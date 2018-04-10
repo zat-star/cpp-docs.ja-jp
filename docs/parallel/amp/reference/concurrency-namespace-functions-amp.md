@@ -1,10 +1,10 @@
 ---
-title: "Concurrency 名前空間の関数 (AMP) |Microsoft ドキュメント"
-ms.custom: 
+title: Concurrency 名前空間の関数 (AMP) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - amp/Concurrency::all_memory_fence
@@ -20,17 +20,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 2bef0985-cb90-4ece-90b9-66529aec73c9
-caps.latest.revision: 
+caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 360c253860931f00e65575250d3944b05dc9c4a9
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="concurrency-namespace-functions-amp"></a>Concurrency 名前空間の関数 (AMP)
 ||||  
@@ -93,7 +93,7 @@ inline bool atomic_compare_exchange(
  操作が正常に終了した場合は `true`。それ以外の場合は `false`。  
   
 
-##  <a name="atomic_exchange">atomic_exchange 関数 (C++ AMP)</a>  
+##  <a name="atomic_exchange"></a>  atomic_exchange 関数 (C++ AMP)  
  分割不可能な操作として移行先の場所の値を設定します。  
   
 ```  
@@ -126,7 +126,7 @@ inline float atomic_exchange(
  移行先の場所の元の値。  
   
 
-##  <a name="atomic_fetch_add">atomic_fetch_add 関数 (C++ AMP)</a>  
+##  <a name="atomic_fetch_add"></a>  atomic_fetch_add 関数 (C++ AMP)  
  アトミックにメモリ位置の値に値を追加します。  
   
 ```  
@@ -152,7 +152,7 @@ inline unsigned int atomic_fetch_add(
 ### <a name="return-value"></a>戻り値  
  メモリの場所の元の値。  
   
-##  <a name="atomic_fetch_and">atomic_fetch_and 関数 (C++ AMP)</a>  
+##  <a name="atomic_fetch_and"></a>  atomic_fetch_and 関数 (C++ AMP)  
  アトミック値とメモリの場所の値のビットごとの AND 演算を実行します。  
   
 ```  
@@ -265,7 +265,7 @@ inline unsigned int atomic_fetch_min(
 ### <a name="return-value"></a>戻り値  
  指定した位置に格納される元の値。  
   
-##  <a name="atomic_fetch_or">atomic_fetch_or 関数 (C++ AMP)</a>  
+##  <a name="atomic_fetch_or"></a>  atomic_fetch_or 関数 (C++ AMP)  
  アトミック値とメモリの場所の値を持つビットごとの OR 演算を実行します。  
   
 ```  
@@ -291,7 +291,7 @@ inline unsigned int atomic_fetch_or(
 ### <a name="return-value"></a>戻り値  
  メモリの場所の元の値。  
   
-##  <a name="atomic_fetch_sub">atomic_fetch_sub 関数 (C++ AMP)</a>  
+##  <a name="atomic_fetch_sub"></a>  atomic_fetch_sub 関数 (C++ AMP)  
  メモリ位置からの値をアトミックに減算します。  
   
 ```  
@@ -317,7 +317,7 @@ inline unsigned int atomic_fetch_sub(
 ### <a name="return-value"></a>戻り値  
  メモリの場所の元の値。  
   
-##  <a name="atomic_fetch_xor">atomic_fetch_xor 関数 (C++ AMP)</a>  
+##  <a name="atomic_fetch_xor"></a>  atomic_fetch_xor 関数 (C++ AMP)  
  アトミックに peforms 値とメモリ位置のビットごとの XOR 演算です。  
   
 ```  
@@ -586,7 +586,7 @@ inline void global_memory_fence(const tile_barrier& _Barrier) restrict(amp);
  `_Barrier`  
  tile_barrier オブジェクト  
   
-##  <a name="parallel_for_each">parallel_for_each 関数 (C++ AMP)</a>  
+##  <a name="parallel_for_each"></a>  parallel_for_each 関数 (C++ AMP)  
  計算ドメインを越えて関数を実行します。 詳細については、次を参照してください。 [C++ AMP の概要](../../../parallel/amp/cpp-amp-overview.md)です。  
   
 ```  
@@ -678,5 +678,5 @@ inline void tile_static_memory_fence(const tile_barrier& _Barrier) restrict(amp)
  `_Barrier`  
  tile_barrier オブジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

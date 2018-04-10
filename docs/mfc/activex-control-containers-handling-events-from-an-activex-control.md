@@ -1,12 +1,12 @@
 ---
-title: "ActiveX コントロール コンテナー: ActiveX コントロールからイベントを処理する |Microsoft ドキュメント"
-ms.custom: 
+title: 'ActiveX コントロール コンテナー: ActiveX コントロールからイベントを処理する |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - C++
@@ -20,17 +20,17 @@ helpviewer_keywords:
 - events [MFC], ActiveX controls
 - BEGIN_EVENTSINK_MAP macro
 ms.assetid: f9c106db-052f-4e32-82ad-750646aa760b
-caps.latest.revision: 
+caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 84e1571f400297584e12a40dfd2bfcc3c0b525d2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="activex-control-containers-handling-events-from-an-activex-control"></a>ActiveX コントロール コンテナー : ActiveX コントロールで発生したイベントの処理
 この記事では、[プロパティ] ウィンドウを使用して ActiveX コントロール コンテナーで ActiveX コントロールのイベント ハンドラーをインストールするについて説明します。 (制御) から特定のイベントの通知を受信し、応答で何らかのアクションを実行するイベント ハンドラーが使用されます。 この通知は、イベントを「発生」と呼ばれます。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 12/21/2017
   
  イベント シンク マップの詳細については、次を参照してください。[イベント シンク マップ](../mfc/reference/event-sink-maps.md)で、*クラス ライブラリ リファレンス*です。  
   
-##  <a name="_core_event_handler_modifications_to_the_project"></a>プロジェクトにイベント ハンドラーの変更  
+##  <a name="_core_event_handler_modifications_to_the_project"></a> プロジェクトにイベント ハンドラーの変更  
  [プロパティ] ウィンドウを使用してイベント ハンドラーを追加するときに、イベント シンク マップが宣言され、プロジェクトで定義されています。 次のステートメントは、コントロールに追加されます。CPP ファイルにイベント ハンドラーを追加します。 このコードのダイアログ ボックス クラスのイベント シンク マップ (この場合、 `CContainerDlg`)。  
   
  [!code-cpp[NVC_MFC_AxCont#8](../mfc/codesnippet/cpp/activex-control-containers-handling-events-from-an-activex-control_1.cpp)]  
@@ -76,6 +76,6 @@ ms.lasthandoff: 12/21/2017
   
 6.  クラス ビューの実装でイベント ハンドラーのコードに移動することから、新しいハンドラー関数をダブルクリックして (です。CPP) ファイルの`CContainerDlg`します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ActiveX コントロール コンテナー](../mfc/activex-control-containers.md)
 

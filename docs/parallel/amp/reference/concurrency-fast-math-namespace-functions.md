@@ -1,10 +1,10 @@
 ---
-title: "Concurrency::fast_math 名前空間の関数 |Microsoft ドキュメント"
-ms.custom: 
+title: Concurrency::fast_math 名前空間の関数 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - amp_math/Concurrency::fast_math::acos
@@ -53,17 +53,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: f5763d62-795b-4de6-a7a5-c7115f158708
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 537e257ade021f8662d75b9316d60a16a4133831
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="concurrencyfastmath-namespace-functions"></a>Concurrency::fast_math 名前空間の関数
 ||||  
@@ -1090,8 +1090,8 @@ inline float truncf(float _X) restrict(amp);
 ### <a name="return-value"></a>戻り値  
  引数の整数部分を返します  
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 **ヘッダー:** amp_math.h **Namespace:** concurrency::fast_math
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Concurrency::fast_math 名前空間](concurrency-fast-math-namespace.md)
