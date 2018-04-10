@@ -1,7 +1,7 @@
 ---
-title: "-NATVIS (Natvis を pdb ファイルに追加) |Microsoft ドキュメント"
+title: -NATVIS (Natvis を pdb ファイルに追加) |Microsoft ドキュメント
 ms.date: 08/10/2017
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.technology:
 - cpp-tools
 ms.topic: article

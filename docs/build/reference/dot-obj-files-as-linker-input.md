@@ -1,12 +1,12 @@
 ---
-title: ".リンカー入力としての Obj ファイル |Microsoft ドキュメント"
-ms.custom: 
+title: .リンカー入力としての Obj ファイル |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 12/29/2017
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - C++
