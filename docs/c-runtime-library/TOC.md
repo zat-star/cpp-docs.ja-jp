@@ -29,6 +29,7 @@
 ## [バッファー操作](buffer-manipulation.md)
 ## [バイト分類](byte-classification.md)
 ## [文字分類](character-classification.md)
+## [複雑な計算のサポート](complex-math-support.md)
 ## [データの整列](data-alignment.md)
 ## [データ変換](data-conversion.md)
 ## [デバッグ ルーチン](debug-routines.md)
