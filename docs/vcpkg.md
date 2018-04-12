@@ -1,10 +1,10 @@
 ---
-title: "vcpkg-- Windows 用の C++ パッケージ マネージャー | Microsoft Docs"
-description: "vcpkg はコマンド ライン パッケージ マネージャーであり、Windows でのオープン ソースの C++ ライブラリの取得およびインストール作業を大幅に簡素化できます。"
+title: vcpkg-- Windows 用の C++ パッケージ マネージャー | Microsoft Docs
+description: vcpkg はコマンド ライン パッケージ マネージャーであり、Windows でのオープン ソースの C++ ライブラリの取得およびインストール作業を大幅に簡素化できます。
 keywords: vcpkg
 author: mikeblome
 ms.author: mblome
-ms.date: 02/01/2018
+ms.date: 04/06/2018
 ms.technology:
 - cpp-ide
 ms.tgt_pltfrm: windows
@@ -15,11 +15,11 @@ dev_langs:
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 07b7f4b3c5d77c7c31001a656667b7d2602a74b9
-ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
+ms.openlocfilehash: 54d1f0cf2a6971435858a1a64bf3e163631822b5
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="vcpkg-c-package-manager-for-windows"></a>vcpkg: Windows 用の C++ パッケージ マネージャー
 
@@ -39,7 +39,7 @@ vcpkg はコマンドライン パッケージ マネージャーであり、Win
 
 ## <a name="installation"></a>インストール
 
-GitHub (https://github.com/Microsoft/vcpkg) から vcpkg リポジトリを複製します。 任意のフォルダー場所にダウンロードすることができます。
+GitHub から vcpkg リポジトリを複製する: https://github.com/Microsoft/vcpkg 任意のフォルダー場所にダウンロードすることができます。
 
 ルート フォルダーのブートストラップ (**bootstrap-vcpkg.bat**) を実行します。
 
@@ -53,7 +53,7 @@ GitHub (https://github.com/Microsoft/vcpkg) から vcpkg リポジトリを複�
 
 ```cmd
 ace       6.4.3   The ADAPTIVE Communication Environment
-anax      2.1.0-1 An open source C++ entity system. <https://github...
+anax      2.1.0-1 An open source C++ entity system. \<https://github...
 antlr4    4.6-1   ANother Tool for Language Recognition
 apr       1.5.2   The Apache Portable Runtime (APR) is a C library ...
 asio      1.10.8  Asio is a cross-platform C++ library for network ...
@@ -86,7 +86,6 @@ Additional packages (*) will be installed to complete this operation.
 ```
 
 ## <a name="list-the-libraries-already-installed"></a>既にインストールされているライブラリをリストする
-
 いくつかのライブラリをインストールした後で、**vcpkg list** を使用して、その内容を確認できます。
 
 ```cmd
@@ -106,9 +105,7 @@ zlib:x86-windows        1.2.11   A compression library
 
 **vcpkg integrate install** を実行し、VC++ ディレクトリ パスを手動で編集しなくても、ユーザーごとにすべての vcpkg ヘッダー ファイルとバイナリを検索するように Visual Studio を構成します。 複数のクローンがある場合、このコマンドを実行するクローンが新しい既定の場所となります。
 
-これで、フォルダー/ヘッダーを入力するだけでヘッダーを #include でインクルードできるようになりました。オートコンプリートは便利な機能です。 ライブラリにリンクする場合や、プロジェクト参照を追加する場合は、追加の手順が必要になります。 次の図は、Visual Studio が azure-storage-cpp ヘッダーをどのように検索するかを示しています。 vcpkg は、ターゲット プラットフォームでパーティション分割される、\installed サブフォルダーにそのヘッダーを配置します。 以下の図は、ライブラリの `/was` サブフォルダーにあるインクルード ファイルのリストを示しています。
-
-これで、フォルダー/ヘッダーを入力するだけでヘッダーを #include でインクルードできるようになりました。オートコンプリートは便利な機能です。 ライブラリにリンクする場合や、プロジェクト参照を追加する場合は、追加の手順が必要になります。 次の図は、Visual Studio が azure-storage-cpp ヘッダーをどのように検索するかを示しています。 vcpkg は、ターゲット プラットフォームでパーティション分割される、\installed サブフォルダーにそのヘッダーを配置します。 以下の図は、ライブラリの \was サブフォルダーにあるインクルード ファイルのリストを示しています。
+これで、フォルダー/ヘッダーを入力するだけでヘッダーを #include でインクルードできるようになりました。オートコンプリートは便利な機能です。 ライブラリにリンクする場合や、プロジェクト参照を追加する場合は、追加の手順が必要になります。 次の図は、Visual Studio が azure-storage-cpp ヘッダーをどのように検索するかを示しています。 vcpkg は、ターゲット プラットフォームでパーティション分割される、**/installed** サブフォルダーにそのヘッダーを配置します。 以下の図は、ライブラリの **/was** サブフォルダーにあるインクルード ファイルのリストを示しています。
 
 ![vcpkg Intellisense 統合](media/vcpkg-intellisense.png "vcpkg と Intellisense")
 
@@ -144,6 +141,36 @@ zlib:x86-windows        1.2.11   A compression library
 
 ### <a name="upgrade-example"></a>アップグレードの例
 
+### <a name="per-project"></a>プロジェクトごと
+アクティブになっている vcpkg インスタンスのバージョンとは異なる特定のバージョンのライブラリを使用する必要がある場合は、次の手順に従います。
+
+1. vcpkg の新しいクローンを作成します。 
+1. ライブラリの portfile を変更して、必要なバージョンを取得します。
+1. **vcpkg install \<library>** を実行します。
+1. その後、**vcpkg integrate project** を使用して、プロジェクトごとにそのライブラリを参照する NuGet パッケージを作成できます。
+
+
+## <a name="export-compiled-binaries-and-headers"></a>コンパイル済みのバイナリとヘッダーをエクスポートする
+チームのすべてのメンバーにライブラリをダウンロードしてビルドするよう求めることは非効率な場合があります。 1 人のチーム メンバーがその作業を行ってから、**vcpkg export** を使用して、他のチーム メンバーと簡単に共有できる、バイナリとヘッダーの zip ファイルを作成できます。 
+
+## <a name="updateupgrade-installed-libraries"></a>インストールされているライブラリを更新/アップグレードする
+パブリック カタログは、最新バージョンのライブラリで最新の状態が保たれます。 古いローカル ライブラリを判別するには、**vcpkg update** を使用します。 ポート コレクションをパブリック カタログの最新バージョンに更新する準備ができたら、**vcpkg upgrade** コマンドを実行します。これによりインストールされているライブラリのうち、古くなったライブラリのすべてまたは一部が自動的にダウンロードされリビルドされます。
+
+既定では、**upgrade** コマンドは、古くなったライブラリをリストするだけで、アップグレードは行いません。 アップグレードを実行するには、**--no-dry-run** オプションを使用します。 
+
+```cmd
+  vcpkg upgrade --no-dry-run 
+```
+
+### <a name="upgrade-options"></a>アップグレード オプション
+
+- **--no-dry-run**  アップグレードを実行します。このオプションが指定されていない場合、コマンドは古くなったパッケージをリストするのみとなります。 
+- **--keep-going**  いずれかが失敗した場合でも、パッケージのインストールを続行します。 
+- **--triplet \<t>**  修飾されていないパッケージに既定のトリプレットを設定します。 
+- **--vcpkg-root \<path>**  現在のディレクトリまたはツール ディレクトリではなく、使用する vcpkg ディレクトリを指定します。 
+
+### <a name="upgrade-example"></a>アップグレードの例
+
 次の例では、指定したライブラリのみをアップグレードする方法を示します。 vcpgk は必要に応じて依存関係を自動的に取得します。
 
 ```cmd
@@ -160,27 +187,21 @@ If you are sure you want to rebuild the above packages, run this command with th
 ```
 
 ## <a name="contribute-new-libraries"></a>新しいライブラリを投稿する
-
 プライベート ポート コレクションに好きなライブラリを含めることができます。 パブリック カタログ用の新しいライブラリを提案するには、[GitHub vcpkg の issue ページ](https://github.com/Microsoft/vcpkg/issues)で案件を開きます。
 
 ## <a name="remove-a-library"></a>ライブラリを削除する
-
 インストールされているライブラリを削除するには、**vcpkg remove** と入力します。 他のライブラリがそれに依存している場合は、**--recurse** を指定してコマンドを再実行するよう求められます。実行すると、すべてのダウンストリーム ライブラリが削除されます。
 
 ## <a name="customize-vcpkg"></a>vcpkg をカスタマイズする
-
 好きなように vcpkg のクローンを変更することができます。 複数の vcpkg クローンを作成し、それぞれの portfile を変更して、特定のバージョンのライブラリを取得するか、コマンド ライン パラメーターを指定できます。 たとえば、企業では、開発者のあるグループが 1 つの依存関係セットを持つソフトウェアで作業し、別のグループが異なるセットを持つ場合があります。 vcpkg の 2 つのクローンをセットアップし、それぞれを変更して、必要に応じて、該当するバージョンのライブラリやコンパイル スイッチなどをダウンロードできます。 
 
 ## <a name="uninstall-vcpkg"></a>vcpkg をアンインストールする
-
 ディレクトリを削除するだけです。 
 
 ## <a name="send-feedback-about-vcpkg"></a>vcpkg のフィードバックを送信する
-
 機能に関するバグ レポートや提案事項など vcpkg のフィードバックを Microsoft に送信するには **--survey** コマンドを使用します。
 
 ## <a name="the-vcpkg-folder-hierarchy"></a>vcpkg のフォルダー階層
-
 vcpkg のすべての機能とデータは 1 つのディレクトリ階層内で自己完結しています。これを "インスタンス" といいます。 レジストリの設定や環境変数はありません。 コンピューターで vcpkg の任意の数のインスタンスを使用でき、相互に干渉することはありません。 
 
 vcpkg インスタンスの内容は次のとおりです。 
