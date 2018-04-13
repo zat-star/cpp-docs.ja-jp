@@ -86,7 +86,7 @@ struct { int a; int b; };
   
 ## <a name="initialize-the-security-cookie"></a>セキュリティ クッキーの初期化  
   
-**/GS**コンパイラ オプションは、cookie を使用する任意の関数の実行前にセキュリティ クッキーを初期化することが必要です。 セキュリティ クッキーは、EXE または DLL にエントリをすぐに初期化してください。 これは自動的に行われます既定 VCRuntime エントリ ポイントを使用する場合: mainCRTStartup、wmainCRTStartup、WinMainCRTStartup、wWinMainCRTStartup、または _DllMainCRTStartup です。 呼び出して、セキュリティ クッキーを手動で初期化する必要があります、別のエントリ ポイントを使用する場合[_ _security_init_cookie](../../c-runtime-library/reference/security-init-cookie.md)です。  
+**/GS**コンパイラ オプションは、cookie を使用する任意の関数の実行前にセキュリティ クッキーを初期化することが必要です。 セキュリティ クッキーは、EXE または DLL にエントリをすぐに初期化してください。 これは自動的に行われます既定 VCRuntime エントリ ポイントを使用する場合: mainCRTStartup、wmainCRTStartup、WinMainCRTStartup、wWinMainCRTStartup、または _DllMainCRTStartup です。 呼び出して、セキュリティ クッキーを手動で初期化する必要があります、別のエントリ ポイントを使用する場合 [__security_init_cookie](../../c-runtime-library/reference/security-init-cookie.md) です。  
   
 ## <a name="what-is-protected"></a>保護される対象  
   
