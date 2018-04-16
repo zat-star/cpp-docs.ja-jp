@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2438
 ms.assetid: 3a0ab3ba-d0e4-4d8f-971d-e503397cc827
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dda1d429c785a5def5c2e596085e700370f37c60
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 1771d3c6c241db6430eaa66fece5562a3bc1349a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2438"></a>コンパイラ エラー C2438
 'identifier': コンス トラクターを使用して静的クラスのデータを初期化できません  

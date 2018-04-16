@@ -16,16 +16,17 @@ dev_langs:
 helpviewer_keywords:
 - __thiscall keyword [C++]
 ms.assetid: a6a22dd2-0101-4885-b33b-22f6057965df
-caps.latest.revision: 14
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 41dd6d823d9889f5ce0216b27ad01a8d29bc57f6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a55f7d288758b345dfc4f182f2153e0d39a1b349
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="thiscall"></a>__thiscall
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -47,5 +48,5 @@ ms.lasthandoff: 09/25/2017
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [引数の渡し規則と名前付け規則](../cpp/argument-passing-and-naming-conventions.md)

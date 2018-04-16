@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - wmemset
 - memset
@@ -27,20 +28,23 @@ apitype: DLLExport
 f1_keywords:
 - memset
 - wmemset
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - wmemset function
 - memset function
 ms.assetid: e7ceb01b-df69-49c2-b294-a39358ad4699
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 28979295e2849afeb58a6b96ce73e086d0e82c88
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f960dc71198d35ad162c38e5bca85a7d38312a01
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="memset-wmemset"></a>memset、wmemset
 指定した文字にバッファーを設定します。  
@@ -79,14 +83,14 @@ wchar_t *wmemset(
   
  **セキュリティに関するメモ** 設定するバッファーに `count` 文字以上の空きがあることを確認してください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`memset`|\<memory.h> または \<string.h>|  
 |`wmemset`|\<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -147,7 +151,7 @@ Before: This is a test of the wmemset function
 After:  **** is a test of the wmemset function  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
  [_memccpy](../../c-runtime-library/reference/memccpy.md)   
  [memchr、wmemchr](../../c-runtime-library/reference/memchr-wmemchr.md)   

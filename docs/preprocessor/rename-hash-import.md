@@ -1,63 +1,65 @@
 ---
-title: "名前の変更 (#import) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Rename"
-dev_langs: 
-  - "C++"
-  - "C"
-helpviewer_keywords: 
-  - "属性の名前の変更..."
+title: "名前の変更 (#import) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- Rename
+dev_langs:
+- C++
+helpviewer_keywords:
+- rename attribute
 ms.assetid: 5c5c6153-1087-4b7b-87fb-fc59b90b9975
-caps.latest.revision: 4
-caps.handback.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6391f3d88a081da6e01b115389b1a9b986ae6c0f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# 名前の変更 (#import)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**C\+\+ 固有の仕様**  
+# <a name="rename-import"></a>名前の変更 (#import)
+**C 固有の仕様**  
   
  名前の衝突の問題を回避します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 rename("OldName","NewName")  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `OldName`  
  タイプ ライブラリ内の古い名前。  
   
  `NewName`  
  古い名前の代わりに使用する名前。  
   
-## 解説  
- この属性を指定すると、コンパイラは、結果のヘッダー ファイルで、タイプ ライブラリの *OldName* の出現箇所をすべてユーザーが指定した *NewName* に置き換えます。  
+## <a name="remarks"></a>コメント  
+ この属性が指定されている場合、コンパイラのすべての出現*OldName*を持つユーザーが指定したタイプ ライブラリで*NewName*結果のヘッダー ファイルにします。  
   
- この属性は、タイプ ライブラリ内の名前がシステム ヘッダー ファイル内のマクロ定義と一致する場合に使用できます。  この状況が解決されない場合は、[コンパイラ エラー C2059](../Topic/Compiler%20Error%20C2059.md) や [コンパイラ エラー C2061](../error-messages/compiler-errors-1/compiler-error-c2061.md) などのさまざまな構文エラーが発生します。  
+ この属性は、タイプ ライブラリ内の名前がシステム ヘッダー ファイル内のマクロ定義と一致する場合に使用できます。 このような状況が解決しないかどうかは、さまざまな構文エラーが生成されますなど[コンパイラ エラー C2059](../error-messages/compiler-errors-1/compiler-error-c2059.md)と[コンパイラ エラー C2061](../error-messages/compiler-errors-1/compiler-error-c2061.md)です。  
   
 > [!NOTE]
 >  置換は、結果のヘッダー ファイルで使用される名前ではなく、タイプ ライブラリで使用される名前に対して実行されます。  
   
- たとえば `MyParent` という名前のプロパティがタイプ ライブラリにあり、マクロ `GetMyParent` がヘッダー ファイルに定義され、`#import` の前で使用されているとします。  `GetMyParent` は、エラー処理の **get** プロパティのラッパー関数の既定の名前であるため、名前の競合が発生します。  問題を回避するには、`#import` ステートメント内で次の属性を使用します。  
+ たとえば `MyParent` という名前のプロパティがタイプ ライブラリにあり、マクロ `GetMyParent` がヘッダー ファイルに定義され、`#import` の前で使用されているとします。 `GetMyParent`エラー処理ラッパー関数の既定の名前は、**取得**プロパティの名前の競合が発生します。 問題を回避するには、`#import` ステートメント内で次の属性を使用します。  
   
 ```  
 rename("MyParent","MyParentX")  
 ```  
   
- これにより、タイプ ライブラリ内の `MyParent` の名前が変更されます。  `GetMyParent` ラッパーの名前を変更しようとすると、失敗します:  
+ これにより、タイプ ライブラリ内の `MyParent` の名前が変更されます。 `GetMyParent` ラッパーの名前を変更しようとすると、失敗します:  
   
 ```  
 rename("GetMyParent","GetMyParentX")  
@@ -65,8 +67,8 @@ rename("GetMyParent","GetMyParentX")
   
  これは、名前 `GetMyParent` が、結果のタイプ ライブラリ ヘッダー ファイルにのみ出現するためです。  
   
- **END C\+\+ 固有の仕様**  
+ **END C 固有の仕様**  
   
-## 参照  
- [\#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
- [\#import ディレクティブ](../Topic/%23import%20Directive%20\(C++\).md)
+## <a name="see-also"></a>参照  
+ [#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
+ [#import ディレクティブ](../preprocessor/hash-import-directive-cpp.md)

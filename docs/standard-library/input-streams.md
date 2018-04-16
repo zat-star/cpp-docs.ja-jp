@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,33 +16,20 @@ helpviewer_keywords:
 - input streams
 - input stream objects
 ms.assetid: f14d8954-8f8c-4c3c-8b99-14ddb3683f94
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 344c0c29531ee44445b89f14396593cdd48a25ad
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c7844ebbdc3614783a92283f573422834b1c2fce
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="input-streams"></a>入力ストリーム
-入力ストリーム オブジェクトは、バイトのソースです。 最も重要な&3; つの入力ストリーム クラスは、[istream](../standard-library/basic-istream-class.md)、[ifstream](../standard-library/basic-ifstream-class.md)、および [istringstream](../standard-library/basic-istringstream-class.md) です。  
+入力ストリーム オブジェクトは、バイトのソースです。 最も重要な 3 つの入力ストリーム クラスは、[istream](../standard-library/basic-istream-class.md)、[ifstream](../standard-library/basic-ifstream-class.md)、および [istringstream](../standard-library/basic-istringstream-class.md) です。  
   
  `istream` クラスは、順次テキスト モードの入力に対して最も効果的です。 バッファーされた操作またはバッファーされてない操作のクラス `istream` のオブジェクトを構成できます。 基本クラスのすべての機能 `ios` は、`istream` に含まれています。 `istream` クラスからオブジェクトを構築することはほとんどありません。 代わりに、実際には一般的にクラス [ostream](../standard-library/basic-ostream-class.md) のオブジェクトである定義済みの `cin` オブジェクトを使用します。 場合によっては、プログラムの起動後に `cin` を他のストリーム オブジェクトに割り当てることができます。  
   
@@ -63,6 +50,5 @@ ms.lasthandoff: 02/24/2017
   
  [独自クラスのための >> 演算子のオーバーロード](../standard-library/overloading-the-input-operator-for-your-own-classes.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [iostream プログラミング](../standard-library/iostream-programming.md)
-

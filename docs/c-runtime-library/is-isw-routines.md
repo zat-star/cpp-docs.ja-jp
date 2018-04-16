@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -18,20 +19,23 @@ apitype: DLLExport
 f1_keywords:
 - isw
 - is
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - is routines
 - isw routines
 ms.assetid: 1e171a57-2cde-41f6-a75f-a080fa3c12e5
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 72a9e61f7ddf4731dd8cd47af9f7fc8e0c007f47
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fa1cc76bf925a334b78e5f15565c089081cfe9d1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="is-isw-routines"></a>is、isw 系ルーチン
 |||  
@@ -344,7 +348,7 @@ int main( void )
 7f            AS  C                              .  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../c-runtime-library/character-classification.md)   
  [ロケール](../c-runtime-library/locale.md)   
  [setlocale、_wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)   

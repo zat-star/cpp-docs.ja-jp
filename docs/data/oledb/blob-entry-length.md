@@ -1,44 +1,40 @@
 ---
-title: "BLOB_ENTRY_LENGTH |Microsoft ドキュメント"
+title: BLOB_ENTRY_LENGTH | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: BLOB_ENTRY_LENGTH
-dev_langs: C++
-helpviewer_keywords: BLOB_ENTRY_LENGTH macro
+ms.topic: reference
+f1_keywords:
+- BLOB_ENTRY_LENGTH
+dev_langs:
+- C++
+helpviewer_keywords:
+- BLOB_ENTRY_LENGTH macro
 ms.assetid: 832d21ab-5fdd-49ad-af6e-4fca5722ec93
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0de1707ab616aca49061590bfb76bf74360019ba
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 1df279e98eee10f95a5d1910f446f5ae42f3eb4f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="blobentrylength"></a>BLOB_ENTRY_LENGTH
 と共に使用`BEGIN_COLUMN_MAP`と`END_COLUMN_MAP`バイナリ ラージ オブジェクトをバインドする ([BLOB](https://msdn.microsoft.com/en-us/library/ms711511.aspx))。 ような[BLOB_ENTRY](../../data/oledb/blob-entry.md)も、このマクロは、BLOB 列のバイト単位の長さを取得する点を除いて、します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-BLOB_ENTRY_LENGTH(  
-nOrdinal  
-,   
-IID  
-,   
-flags  
-,   
-data  
-,   
-length  
- )  
+```cpp
+BLOB_ENTRY_LENGTH(nOrdinal, IID, flags, data, length)  
   
 ```  
   
@@ -61,10 +57,10 @@ length
 ## <a name="example"></a>例  
  参照してください[BLOB を取得する方法ですか?](../../data/oledb/retrieving-a-blob.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md)   
  [END_COLUMN_MAP](../../data/oledb/end-column-map.md)   

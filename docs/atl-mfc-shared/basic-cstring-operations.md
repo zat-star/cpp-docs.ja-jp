@@ -1,111 +1,115 @@
 ---
-title: "CString の基本操作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "文字, アクセス (CStrings での)"
-  - "CString オブジェクト"
-  - "CString オブジェクト, 基本操作"
-  - "リテラル文字列, CString の操作"
-  - "文字列比較, CString の操作"
-  - "リテラル文字列, CString の操作"
+title: "CString の基本操作 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- CString objects, basic operations
+- string literals, CString operations
+- literal strings, CString operations
+- CString objects
+- string comparison, CString operations
+- characters, accessing in CStrings
 ms.assetid: 41db66b2-9427-4bb3-845a-9b6869159a6c
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 42353a9c59bead96da8eb3b114c8acb2361b53d0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CString の基本操作
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、次の基本的な [CString](../atl-mfc-shared/reference/cstringt-class.md) 操作について説明します。  
+# <a name="basic-cstring-operations"></a>CString の基本操作
+このトピックの次の基本的な[CString](../atl-mfc-shared/reference/cstringt-class.md)操作。  
   
--   [標準 C リテラル文字列からの CString オブジェクトの生成](#_core_creating_cstring_objects_from_standard_c_literal_strings)  
+- [標準の C リテラル文字列を CString オブジェクトの作成](#_core_creating_cstring_objects_from_standard_c_literal_strings)  
   
--   [CString 中の文字のアクセス](#_core_accessing_individual_characters_in_a_cstring)  
+- [CString の個々 の文字へのアクセス](#_core_accessing_individual_characters_in_a_cstring)  
   
--   [2 つの CString オブジェクトの結合](#_core_concatenating_two_cstring_objects)  
+- [連結する 2 つの CString オブジェクト](#_core_concatenating_two_cstring_objects)  
   
--   [CString オブジェクトの比較](#_core_comparing_cstring_objects)  
+- [CString オブジェクトの比較](#_core_comparing_cstring_objects)  
   
--   [CString オブジェクトの変換](#_core_converting_cstring_objects)  
+- [CString オブジェクトを変換します。](#_core_converting_cstring_objects)  
   
- `Class CString` は、クラス テンプレート [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md) に基づいています。  `CString` は、`CStringT` の `typedef` です。  正確には、`CString` は、クラス テンプレートを使用してクラスを定義する一般的な方法である `CStringT` の*明示的特殊化*の `typedef` です。  同様に定義されたクラスは、`CStringA` および `CStringW` です。  明示的特殊化の詳細については、「[クラス テンプレートのインスタンス化](../Topic/Class%20Template%20Instantiation.md)」を参照してください。  
+ `Class CString`クラス テンプレートに基づく[CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)です。 `CString``typedef`の`CStringT`します。 正確に`CString`は、`typedef`の*明示的な特殊化*の`CStringT`、クラス テンプレートを使用してクラスを定義する一般的な方法であります。 同様に定義されたクラスは、`CStringA`と`CStringW`です。  
   
- `CString`、`CStringA`、および `CStringW` は、atlstr.h で定義されます。  `CStringT` は、cstringt.h で定義されます。  
+ `CString`、 `CStringA`、および`CStringW`atlstr.h で定義されます。 `CStringT`cstringt.h で定義されます。  
   
- `CString`、`CStringA`、および  `CStringW` は、`CStringT` で定義されたメソッドおよび演算子のセットを取得して、サポート対象の文字列データで使用します。  メソッドの一部は、C ランタイム ライブラリの文字列操作機能と同等か、場合によっては拡張されたものです。  
+ `CString`、 `CStringA`、および`CStringW`メソッドおよびで定義された演算子のセットを取得各`CStringT`サポートされる文字列データで使用するためです。 C ランタイム ライブラリの文字列のサービスと重複して、場合によっては、メソッドの一部になります。  
   
- メモ: `CString` はネイティブ クラスです。  C\+\+\/CLI マネージ プロジェクト用の文字列クラスの場合は、`System.String` を使用します。  
+ 注:`CString`ネイティブ クラスです。 C++ で使用される文字列クラスの +/CLI を使用して、プロジェクトのマネージ`System.String`です。  
   
-##  <a name="_core_creating_cstring_objects_from_standard_c_literal_strings"></a> 標準 C リテラル文字列からの CString オブジェクトの生成  
- 1 つの `CString` オブジェクトを別のオブジェクトに代入できるのと同様に、C 形式のリテラル文字列を `CString` に代入できます。  
+##  <a name="_core_creating_cstring_objects_from_standard_c_literal_strings"></a>標準 C リテラル文字列を CString オブジェクトの作成  
+ C スタイルのリテラル文字列を割り当てることができます、`CString`だけ割り当てることができます、`CString`を別のオブジェクト。  
   
--   C リテラル文字列の値を `CString` オブジェクトに代入する場合。  
+-   C リテラル文字列の値を割り当てる、`CString`オブジェクト。  
   
-     [!code-cpp[NVC_ATLMFC_Utilities#183](../atl-mfc-shared/codesnippet/CPP/basic-cstring-operations_1.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#183](../atl-mfc-shared/codesnippet/cpp/basic-cstring-operations_1.cpp)]  
   
--   `CString` オブジェクトの値を他の `CString` オブジェクトに代入する場合。  
+-   いずれかの値を割り当てる`CString`別`CString`オブジェクト。  
   
-     [!code-cpp[NVC_ATLMFC_Utilities#184](../atl-mfc-shared/codesnippet/CPP/basic-cstring-operations_2.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#184](../atl-mfc-shared/codesnippet/cpp/basic-cstring-operations_2.cpp)]  
   
-     `CString` オブジェクトを別の `CString` オブジェクトに代入すると、オブジェクトの内容がコピーされます。  したがって、2 つの文字列が、その文字列を構成する実際の文字への参照を共有することはありません。  `CString` オブジェクトを値として使用する方法の詳細については、「[CString の評価](../atl-mfc-shared/cstring-semantics.md)」を参照してください。  
+     内容、`CString`とき 1 つにオブジェクトがコピーされる`CString`別にオブジェクトが割り当てられます。 そのため、2 つの文字列では、文字列を構成する実際の文字への参照は共有されません。 使用する方法の詳細についての`CString`値として、オブジェクトを参照してください[Cstring](../atl-mfc-shared/cstring-semantics.md)です。  
   
     > [!NOTE]
-    >  Unicode または ANSI 用にコンパイルできるアプリケーションを作成するには、\_T マクロを使用してリテラル文字列を記述します。  詳細については、「[Unicode とマルチバイト文字セット \(MBCS: Multibyte Character Set\) のサポート](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md)」を参照してください。  
+    >  Unicode または ANSI 用にコンパイルできるように、アプリケーションを作成するには、_T マクロを使用してリテラル文字列を記述します。 詳細については、次を参照してください。 [Unicode およびマルチバイト文字セット (MBCS) のサポート](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md)です。  
   
-##  <a name="_core_accessing_individual_characters_in_a_cstring"></a> CString 中の文字のアクセス  
- `CString` オブジェクト内の個々の文字には、`GetAt` メソッドおよび `SetAt` メソッドを使用してアクセスできます。  `GetAt` の代わりに配列要素、つまり添字演算子 \(\[ \]\) を使用して、個々の文字を取得することもできます。  この方法は、標準の C 形式文字列で、インデックスを使用して配列要素にアクセスする方法と似ています。`CString` 内の文字のインデックス値は、0 から始まります。  
+##  <a name="_core_accessing_individual_characters_in_a_cstring"></a>CString の個々 の文字へのアクセス  
+ 個々 の文字にアクセスすることができます、`CString`オブジェクトを使用して、`GetAt`と`SetAt`メソッドです。 代わりに、配列の要素、または添字演算子 () を使用することができますも`GetAt`を個々 の文字を取得します。 (配列の要素へのアクセスがインデックスで標準の C スタイル文字列と同様に似ています)値をインデックス`CString`文字は 0 から始まります。  
   
-##  <a name="_core_concatenating_two_cstring_objects"></a> 2 つの CString オブジェクトの結合  
- 2 つの `CString` オブジェクトを結合するには、結合演算子 \(\+ または \+\=\) を使用します。  
+##  <a name="_core_concatenating_two_cstring_objects"></a>連結する 2 つの CString オブジェクト  
+ 2 つを連結する`CString`オブジェクト、連結演算子を使用して (+ または + =)、次のようにします。  
   
- [!code-cpp[NVC_ATLMFC_Utilities#185](../atl-mfc-shared/codesnippet/CPP/basic-cstring-operations_3.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#185](../atl-mfc-shared/codesnippet/cpp/basic-cstring-operations_3.cpp)]  
   
- 結合演算子 \(\+ または \+\=\) の引数のうち少なくとも 1 つは `CString` オブジェクトにする必要がありますが、それ以外の引数には文字列定数 \(`"big"` など\) または `char` \(x など\) を使用できます。  
+ 連結演算子には、少なくとも 1 つの引数 (+ または + =) する必要があります、`CString`がオブジェクトには、文字列定数を使用できます (たとえば、 `"big"`) または`char`(たとえば、' x') に対するその他の引数。  
   
-##  <a name="_core_comparing_cstring_objects"></a> CString オブジェクトの比較  
- `Compare` メソッド、および  `CString` の \=\= 演算子は等価です。  `Compare`、`operator==`、および `CompareNoCase` は MBCS および Unicode に対応しています。また、`CompareNoCase` は大文字と小文字を区別しません。  `CString` の `Collate` メソッドはロケールを認識しますが、`Compare` よりも動作が遅い場合があります。  `Collate` は、固有の並べ替え順序をサポートする必要がある場合以外は使用しないでください。  
+##  <a name="_core_comparing_cstring_objects"></a>CString オブジェクトの比較  
+ `Compare`メソッドと演算子 = =`CString`は同等です。 `Compare`、 `operator==`、および`CompareNoCase`は MBCS および Unicode が対応しています。`CompareNoCase`も区別されません。 `Collate`メソッドの`CString`ロケールは、多くの場合よりも低速`Compare`です。 使用して`Collate`現在のロケールで指定されたルールのみをする必要がありますに従う並べ替え。  
   
- [CString](../atl-mfc-shared/reference/cstringt-class.md) の比較関数および相当する Unicode\/MBCS 互換の C ランタイム ライブラリ関数を次の表に示します。  
+ 次の表は、使用可能な[CString](../atl-mfc-shared/reference/cstringt-class.md)比較関数と C ランタイム ライブラリで同等の Unicode と MBCS ポータブル関数。  
   
-|CString の関数|MBCS ランタイム関数|Unicode 関数|  
-|-----------------|------------------|----------------|  
+|CString 関数|MBCS 関数|Unicode 関数|  
+|----------------------|-------------------|----------------------|  
 |`Compare`|`_mbscmp`|`wcscmp`|  
 |`CompareNoCase`|`_mbsicmp`|`_wcsicmp`|  
 |`Collate`|`_mbscoll`|`wcscoll`|  
   
- `CStringT` クラス テンプレートは、`CString` で使用できる関係演算子 \(\<、\<\=、\>\=、\>、\=\=、および \!\=\) を定義します。  次の例に示すように、これらの演算子を使用して、2 つの `CStrings` を比較できます。  
+ `CStringT`クラス テンプレート定義関係演算子 (<、 \<=、> =、>、= =、および! =) で使用するために使用可能な`CString`します。 2 つの比較できます`CStrings`の次の例に示すように、これらの演算子を使用しています。  
   
- [!code-cpp[NVC_ATLMFC_Utilities#186](../atl-mfc-shared/codesnippet/CPP/basic-cstring-operations_4.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#186](../atl-mfc-shared/codesnippet/cpp/basic-cstring-operations_4.cpp)]  
   
-##  <a name="_core_converting_cstring_objects"></a> CString オブジェクトの変換  
- CString オブジェクトを他の文字列型に変換する方法については、「[方法: さまざまな文字列型間で変換する](../Topic/How%20to:%20Convert%20Between%20Various%20String%20Types.md)」を参照してください。  
+##  <a name="_core_converting_cstring_objects"></a>CString オブジェクトを変換します。  
+ CString オブジェクトを他の文字列型に変換する方法については、次を参照してください。[する方法: さまざまな文字列型の間で変換](../text/how-to-convert-between-various-string-types.md)です。  
   
-## wcout として CString の使用  
- CString の `wcout` を使用するには、次の例に示すように、明示的に `const wchar_t*` にオブジェクトをキャストする必要があります:  
-  
-```  
-CString cs("meow");  
-  wcout << (const wchar_t*) cs << endl;  
+## <a name="using-cstring-with-wcout"></a>Wcout での CString の使用  
+ CString を使用する`wcout`するオブジェクトを明示的にキャストする必要があります、`const wchar_t*`次の例で示すように。  
   
 ```  
+CString cs("meow");
+
+    wcout <<(const wchar_t*) cs <<endl;  
+ 
+```  
   
- キャストを使用せずに、`cs` は `void*` と `wcout` は、オブジェクトのアドレスを印刷すると同時に処理されます。  この動作は C\+\+ 標準に準拠正しく、自身にあるテンプレート引数を差し引いたとオーバーロードの解決の間の滑らかな相互作用によって発生します。  
+ キャストなし`cs`として扱われる、`void*`と`wcout`オブジェクトのアドレスを印刷します。 この動作は微妙なテンプレート引数の推論し、オーバー ロードの解決は正しい自体にとのやり取りに準拠する、C++ 標準にで発生します。  
   
-## 参照  
- [文字列](../atl-mfc-shared/strings-atl-mfc.md)   
+## <a name="see-also"></a>参照  
+ [文字列 (ATL と MFC)](../atl-mfc-shared/strings-atl-mfc.md)   
  [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)   
- [クラス テンプレートのインスタンス化](../Topic/Class%20Template%20Instantiation.md)   
- [クラス テンプレートの明示的特殊化](../Topic/Explicit%20Specialization%20of%20Class%20Templates.md)   
- [クラス テンプレートの部分的特殊化](../cpp/template-specialization-cpp.md)   
- [方法: さまざまな文字列型間で変換する](../Topic/How%20to:%20Convert%20Between%20Various%20String%20Types.md)
+ [テンプレートの特殊化](../cpp/template-specialization-cpp.md)   
+ [方法: さまざまな文字列型間で変換する](../text/how-to-convert-between-various-string-types.md)
+

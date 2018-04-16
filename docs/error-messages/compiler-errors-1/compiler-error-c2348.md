@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2348
-dev_langs: C++
-helpviewer_keywords: C2348
+f1_keywords:
+- C2348
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2348
 ms.assetid: 4c4d701f-ccf1-46fe-9ddb-3f341684f269
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2be3e9c8d83443355c3090dd3083f800ae55d76d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1a9c2d6f00a99f3d56c998ac8c98e330099e4d4a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2348"></a>コンパイラ エラー C2348
 'type name': C スタイルの集合ではありません、埋め込み IDL 内でエクスポートできません。  

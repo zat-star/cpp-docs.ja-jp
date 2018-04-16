@@ -6,17 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 99fbbe28-c1cd-43af-9ead-60f90eba6e68
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: d21a887c29b792b2857d0ee546dbc9722b60a264
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b3a95af557dd416d99368dbd1ab51495e0bd1d85
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="enums-ccx"></a>列挙型 (C++/CX)
 C + + CX をサポートしている、`public enum class`キーワードは、標準の C++ に似ている`scoped  enum`です。 `public enum class` キーワードを使用して宣言された列挙子を使用する場合、列挙体識別子を使用して各列挙子値の範囲を指定する必要があります。  
@@ -34,7 +36,7 @@ C + + CX をサポートしている、`public enum class`キーワードは、�
   
  [!code-cpp[cx_enums#02](../cppcx/codesnippet/CPP/cpp/class1.h#02)]  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  次の例は、列挙型を宣言する方法を示します。  
   
  [!code-cpp[cx_enums#03](../cppcx/codesnippet/CPP/cpp/class1.h#03)]  
@@ -43,7 +45,7 @@ C + + CX をサポートしている、`public enum class`キーワードは、�
   
  [!code-cpp[cx_enums#04](../cppcx/codesnippet/CPP/cpp/class1.h#04)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型システム](../cppcx/type-system-c-cx.md)   
  [Visual C 言語リファレンス](../cppcx/visual-c-language-reference-c-cx.md)   
  [名前空間参照](../cppcx/namespaces-reference-c-cx.md)

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - ungetwc
 - ungetc
@@ -27,7 +28,8 @@ f1_keywords:
 - _ungettc
 - ungetwc
 - ungetc
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ungetwc function
 - ungettc function
@@ -35,15 +37,17 @@ helpviewer_keywords:
 - _ungettc function
 - ungetc function
 ms.assetid: e0754f3a-b4c6-408f-90c7-e6387b830d84
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ba352160afb6dc4a429721cd7af61204f5ef79e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d65453f1254e4c42658ef6f27d7c90d2ad0022b9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ungetc-ungetwc"></a>ungetc、ungetwc
 ストリームに文字をプッシュ バックします。  
@@ -92,14 +96,14 @@ wint_t ungetwc(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_ungettc`|`ungetc`|`ungetc`|`ungetwc`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`ungetc`|\<stdio.h>|  
 |`ungetwc`|\<stdio.h> または \<wchar.h>|  
   
- コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル`stdin`、 `stdout`、および`stderr`、C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
   
 ## <a name="example"></a>例  
   
@@ -135,7 +139,7 @@ int main( void )
 Next character in stream = 'a'  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [getc、getwc](../../c-runtime-library/reference/getc-getwc.md)   
  [putc、putwc](../../c-runtime-library/reference/putc-putwc.md)

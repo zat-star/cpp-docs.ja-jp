@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - iosfwd/std::char_traits<char>
 - char_traits<char >
@@ -16,16 +16,17 @@ dev_langs:
 helpviewer_keywords:
 - char_traits<char> class
 ms.assetid: abd9373a-77db-4031-bf4b-f8ac15087581
-caps.latest.revision: 19
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5d6ba6aff287787b898744a0dabb25be21e4e96e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: bf5e911de0033d92755e64f5a65c9e4fa707b195
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="chartraitsltchargt-struct"></a>char_traits&lt;char&gt; 構造体
 テンプレート構造体 **char_traits\<CharType>** を `char` 型の要素に特殊化した構造体。  
@@ -42,4 +43,3 @@ struct char_traits<char>;
   
 ## <a name="example"></a>例  
  テンプレート クラス [char_traits クラス](../standard-library/char-traits-struct.md)の typedef およびメンバー関数を参照してください
-

@@ -1,24 +1,29 @@
 ---
-title: "式の種類 |Microsoft ドキュメント"
-ms.custom: 
+title: 式の種類 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: 'index-page '
-dev_langs: C++
-helpviewer_keywords: expressions [C++], types
+dev_langs:
+- C++
+helpviewer_keywords:
+- expressions [C++], types
 ms.assetid: 1e7540b0-8fdb-49ab-b3e1-6ec439ff473a
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 81609cea709c221e0fb83c6e817a9915853bc7d8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 69ca4345d9cf4ed625533d799730808b18d297a8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="types-of-expressions"></a>式の型
 C++ の式は、複数のカテゴリに分けられます。  
@@ -43,5 +48,5 @@ C++ の式は、複数のカテゴリに分けられます。
   
 -   [実行時型情報](../cpp/run-time-type-information.md)です。 プログラムの実行中にオブジェクトの型を決定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [式](../cpp/expressions-cpp.md)

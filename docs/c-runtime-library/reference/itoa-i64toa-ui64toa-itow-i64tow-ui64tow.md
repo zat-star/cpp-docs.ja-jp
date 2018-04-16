@@ -1,13 +1,13 @@
 ---
-title: "_itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow | Microsoft Docs"
-ms.custom: 
+title: _itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.tgt_pltfrm: ''
+ms.topic: reference
 apiname:
 - _itow
 - _i64tow
@@ -63,30 +63,17 @@ helpviewer_keywords:
 - converting numbers, to strings
 - _itoa function
 ms.assetid: 46592a00-77bb-4e73-98c0-bf629d96cea6
-caps.latest.revision: 25
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 22226de878058c7c35307e47b76973eaaebcd552
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bdfe837630a4f8b36ca57970c6b23d832740f59d
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="itoa-i64toa-ui64toa-itow-i64tow-ui64tow"></a>_itoa、_i64toa、_ui64toa、_itow、_i64tow、_ui64tow
 整数を文字列に変換します。 これらの関数にはセキュリティが強化されたバージョンがあります。「[_itoa_s、_i64toa_s、_ui64toa_s、_itow_s、_i64tow_s、_ui64tow_s](../../c-runtime-library/reference/itoa-s-i64toa-s-ui64toa-s-itow-s-i64tow-s-ui64tow-s.md)」をご覧ください。  
@@ -181,7 +168,7 @@ wchar_t * _ui64tow(
 > [!IMPORTANT]
 >  バッファー オーバーランを回避するには、`str` のバッファーを、変換された数字、末尾の null 文字、および符号文字を保持できるよう十分に大きくします。  
   
- C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -202,7 +189,7 @@ wchar_t * _ui64tow(
 |`_i64tow`|\<stdlib.h>|  
 |`_ui64tow`|\<stdlib.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   

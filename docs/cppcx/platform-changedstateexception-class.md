@@ -6,22 +6,26 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::ChangedStateException
 - VCCORLIB/Platform::ChangedStateException::ChangedStateException
-dev_langs: C++
-helpviewer_keywords: Platform::ChangedStateException
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::ChangedStateException
 ms.assetid: f894beac-9e80-4fac-ac25-89f1dbc0a6a4
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: c567a49f3365f4c18c5acc174cdac09d0408f022
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0910500c24a4e7ca574ac2eebc6264148d14a410
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformchangedstateexception-class"></a>Platform::ChangedStateException クラス
 オブジェクトの内部状態が変化したときにスローされ、メソッドの結果を無効にします。  
@@ -37,7 +41,7 @@ public ref class ChangedStateException : COMException,    IException,    IPrinta
   
  詳細については、 [COMException](../cppcx/platform-comexception-class.md) クラスを参照してください。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -46,5 +50,5 @@ public ref class ChangedStateException : COMException,    IException,    IPrinta
   
  **メタデータ:** platform.winmd  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform::COMException クラス](../cppcx/platform-comexception-class.md)

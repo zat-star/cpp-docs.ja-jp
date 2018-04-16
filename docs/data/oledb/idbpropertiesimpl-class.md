@@ -1,63 +1,68 @@
 ---
-title: "IDBPropertiesImpl クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDBPropertiesImpl"
-  - "ATL.IDBPropertiesImpl"
-  - "ATL.IDBPropertiesImpl<T>"
-  - "ATL::IDBPropertiesImpl<T>"
-  - "ATL::IDBPropertiesImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDBPropertiesImpl クラス"
+title: "IDBPropertiesImpl クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- IDBPropertiesImpl
+- ATL.IDBPropertiesImpl
+- ATL.IDBPropertiesImpl<T>
+- ATL::IDBPropertiesImpl<T>
+- ATL::IDBPropertiesImpl
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDBPropertiesImpl class
 ms.assetid: a7f15a8b-95b2-4316-b944-d5d03f8d74ab
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e1b1486d5eff73b4f868f5990ceb628cfb7dd20a
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# IDBPropertiesImpl クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="idbpropertiesimpl-class"></a>IDBPropertiesImpl クラス
+実装を提供、`IDBProperties`インターフェイスです。  
+  
+## <a name="syntax"></a>構文
 
-`IDBProperties` インターフェイスの実装を提供します。  
-  
-## 構文  
-  
-```  
+```cpp
 template <class T>   
 class ATL_NO_VTABLE IDBPropertiesImpl   
    : public IDBProperties, public CUtlProps<T>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- クラス、`IDBPropertiesImpl`から派生します。  
+ 派生したクラス、`IDBPropertiesImpl`です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### インターフェイス メソッド  
+### <a name="interface-methods"></a>インターフェイス メソッド  
   
 |||  
 |-|-|  
-|[GetProperties](../../data/oledb/idbpropertiesimpl-getproperties.md)|初期化プロパティのグループのプロパティのデータ ソース オブジェクトまたは列挙子で設定されている値で現在設定されているデータ ソース、データ ソース情報と初期化プロパティのグループのプロパティの値を返します。|  
-|[GetPropertyInfo](../../data/oledb/idbpropertiesimpl-getpropertyinfo.md)|プロバイダーによってサポートされているすべてのプロパティに関する情報を返します。|  
-|[SetProperties](../../data/oledb/idbpropertiesimpl-setproperties.md)|データ ソースと初期化プロパティのグループのプロパティ、データ ソース オブジェクトに対して、または列挙子の初期化プロパティのグループを設定します。|  
+|[GetProperties](../../data/oledb/idbpropertiesimpl-getproperties.md)|データ ソース オブジェクトで現在設定されている初期化プロパティ グループ内のプロパティの値に設定されているデータ ソース、データ ソース情報、および初期化プロパティ グループのプロパティの値を返す、列挙子。|  
+|[GetPropertyInfo](../../data/oledb/idbpropertiesimpl-getpropertyinfo.md)|プロバイダーでサポートされているすべてのプロパティに関する情報を返します。|  
+|[SetProperties](../../data/oledb/idbpropertiesimpl-setproperties.md)|列挙子のデータ ソースと初期化プロパティ グループのデータ ソース オブジェクトまたは Initialization プロパティ グループのプロパティを設定します。|  
   
-## 解説  
- [IDBProperties](https://msdn.microsoft.com/en-us/library/ms719607.aspx) を列挙子データ ソース オブジェクトと省略可能なインターフェイスの必須インターフェイスです。  ただし、列挙子が [IDBInitialize](https://msdn.microsoft.com/en-us/library/ms713706.aspx)を公開する場合は、`IDBProperties`を公開する必要があります。  `IDBPropertiesImpl` は [BEGIN\_PROPSET\_MAP](../Topic/BEGIN_PROPSET_MAP.md)で定義された静的関数を使用して `IDBProperties` を実装します。  
+## <a name="remarks"></a>コメント  
+ [IDBProperties](https://msdn.microsoft.com/en-us/library/ms719607.aspx)はデータ ソース オブジェクトに必要なインターフェイスと列挙子のオプションのインターフェイスです。 ただし、列挙子を公開する場合[IDBInitialize](https://msdn.microsoft.com/en-us/library/ms713706.aspx)、公開している`IDBProperties`です。 `IDBPropertiesImpl` 実装する`IDBProperties`によって定義された静的関数を使用して[BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)

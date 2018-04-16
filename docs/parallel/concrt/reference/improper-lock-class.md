@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - improper_lock
 - CONCRT/concurrency::improper_lock
@@ -17,30 +17,17 @@ dev_langs:
 helpviewer_keywords:
 - improper_lock class
 ms.assetid: 8f494942-7748-4a2a-8de2-23414bfe6346
-caps.latest.revision: 19
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 336cd222ee70253954905b1ea01144160eeb2f06
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 37cf615460cda6d0f33f0431e258cac843f456c4
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="improperlock-class"></a>improper_lock クラス
 このクラスは、ロックが正しく取得されなかった場合にスローされる例外を表します。  
@@ -60,19 +47,19 @@ class improper_lock : public std::exception;
 |[improper_lock](#ctor)|オーバーロードされます。 `improper_lock exception` を構築します。|  
   
 ## <a name="remarks"></a>コメント  
- 通常、同じコンテキストで再帰的に再入不可能なロックの取得を試みときにこの例外がスローされます。  
+ 通常、同じコンテキストで再帰的に再入不可能なロックの取得を試みが行われたときにこの例外がスローされます。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `exception`  
   
  `improper_lock`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>improper_lock 
+##  <a name="ctor"></a> improper_lock 
 
  `improper_lock exception` を構築します。  
   
@@ -86,8 +73,7 @@ improper_lock() throw();
  `_Message`  
  エラーの説明メッセージ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [critical_section クラス](critical-section-class.md)   
  [reader_writer_lock クラス](reader-writer-lock-class.md)
-

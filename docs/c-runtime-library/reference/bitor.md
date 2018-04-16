@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - bitor function
 ms.assetid: 3c0a3711-9c74-41f2-b400-2f7797da30d1
-caps.latest.revision: 12
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6f02def9d8fba5f00bf87872bdab058ce0f10c32
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: 7f840179a2087138ce46c1ec2c9ba16acd20bc70
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="bitor"></a>bitor
 &#124; 演算子の代替手段。  
@@ -80,5 +81,5 @@ int main( )
 3  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iso646.h>

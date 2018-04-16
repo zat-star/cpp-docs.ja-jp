@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::vector::reserve
-dev_langs: C++
-helpviewer_keywords: reserve member [STL/CLR]
+f1_keywords:
+- cliext::vector::reserve
+dev_langs:
+- C++
+helpviewer_keywords:
+- reserve member [STL/CLR]
 ms.assetid: d1d5ede9-9628-4b55-95ec-f087a57205f2
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3e84ba7b9d59e1c15c2d01ecc7cc73eab9209c34
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 2c8c5ac474cc2b94baedab64854fec3ca3e0a78a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vectorreserve-stlclr"></a>vector::reserve (STL/CLR)
 コンテナーの容量の最小の増加のことを確認します。  
@@ -77,12 +84,12 @@ capacity() = 9, ok = True
 ## <a name="description"></a>説明  
  実際の容量がここに示した長いと、すべての値からによって異なることに注意してください`ok`テストは true を報告します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/vector >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
  [vector::capacity (STL/CLR)](../dotnet/vector-capacity-stl-clr.md)   
  [vector::resize (STL/CLR)](../dotnet/vector-resize-stl-clr.md)

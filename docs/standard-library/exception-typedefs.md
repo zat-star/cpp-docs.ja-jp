@@ -5,20 +5,19 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - exception/std::exception_ptr
 - exception/std::terminate_handler
 - exception/std::unexpected_handler
 ms.assetid: 2a338480-35e2-46f7-b223-52d4e84a5768
-caps.latest.revision: 7
+caps.latest.revision: 
 manager: ghogen
+ms.openlocfilehash: 24f4fc5d30a95d55b5a4241d9c70eca31255fc18
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: e674e7ca53338b379ea029f5d9ad802443ccbb30
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltexceptiongt-typedefs"></a>&lt;exception&gt; typedefs
 ||||  
@@ -70,9 +69,8 @@ typedef void (*unexpected_handler)();
 ### <a name="example"></a>例  
   `unexpected_handler` の使用例については、「[set_unexpected](../standard-library/exception-functions.md#set_unexpected)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<exception>](../standard-library/exception.md)
-
 
 
 

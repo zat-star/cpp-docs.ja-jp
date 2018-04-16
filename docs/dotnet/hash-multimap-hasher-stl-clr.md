@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_multimap::hasher
-dev_langs: C++
-helpviewer_keywords: hasher member [STL/CLR]
+f1_keywords:
+- cliext::hash_multimap::hasher
+dev_langs:
+- C++
+helpviewer_keywords:
+- hasher member [STL/CLR]
 ms.assetid: f92bf084-d9d0-4eca-b23c-c88e6568d267
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7bbcedc2ef0b58c806086061d47e78c5369ab9ca
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c04d5415db2da7f480f9dc4a1bb8411d2166cc5d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultimaphasher-stlclr"></a>hash_multimap::hasher (STL/CLR)
 キーのハッシュのデリゲート。  
@@ -59,11 +66,11 @@ hash(L'a') = 1616896120
 hash(L'b') = 570892832  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
  [hash_multimap::hash_delegate (STL/CLR)](../dotnet/hash-multimap-hash-delegate-stl-clr.md)

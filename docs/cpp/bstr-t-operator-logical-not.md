@@ -17,16 +17,17 @@ helpviewer_keywords:
 - operator!, bstr
 - operator !, bstr
 ms.assetid: 6e60b5a5-2d28-4eec-9e12-790da8f1fdd4
-caps.latest.revision: 6
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 06866cfca077c776b086e5cde9ccf1a0278eca25
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e969d2ef38ed9e3dbc989bb3117962abfd951821
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="bstrtoperator-"></a>_bstr_t::operator !
 **Microsoft 固有の仕様**  
@@ -46,5 +47,5 @@ bool operator!( ) const throw( );
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_bstr_t クラス](../cpp/bstr-t-class.md)

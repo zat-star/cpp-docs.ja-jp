@@ -6,22 +6,26 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::Type::GetTypeCode
 - VCCORLIB/Platform::Type::FullName
-dev_langs: C++
-helpviewer_keywords: Platform::Type Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Type Class
 ms.assetid: d6b03f1e-b240-49b9-a08e-53a460030475
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 260a7f5a8d5a100edd6995c381a79b5552c0744b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cabfa3d382d44448b2c06d0a16864a4fdd0e66bf
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformtype-class"></a>Platform::Type クラス
 型に関するランタイム情報 (文字列名と型コード) を含みます。 呼び出すことによって取得[object::gettype](../cppcx/platform-object-class.md#gettype)任意のオブジェクトでまたはを使用して、または、 [typeid](../windows/typeid-cpp-component-extensions.md)演算子はクラスまたは構造体の名前にします。  
@@ -49,7 +53,7 @@ public ref class Platform::Type :
   
 |||  
 |-|-|  
-|[Type::fullname](#fullname)|返します、 [platform::string Class](../cppcx/platform-string-class.md)^ 型の完全修飾名を表し、を使用している。 (ドット) を区切り記号としてできません:: (二重のコロン) — たとえば、`MyNamespace.MyClass`です。|  
+|[Type::FullName](#fullname)|返します、 [platform::string Class](../cppcx/platform-string-class.md)^ 型の完全修飾名を表し、を使用している。 (ドット) を区切り記号としてできません:: (二重のコロン) — たとえば、`MyNamespace.MyClass`です。|  
   
 ## <a name="conversion-operators"></a>変換演算子  
   
@@ -58,7 +62,7 @@ public ref class Platform::Type :
 |[Type^ 演算子](../cppcx/operator-subtracttype-hat.md)|`Windows::UI::Xaml::Interop::TypeName` から `Platform::Type`への変換を有効にします。|  
 |[Windows::UI::Xaml::Interop::TypeName 演算子](../cppcx/operator-subtractwindows-ui-xaml-interop-typename.md)|`Platform::Type` から `Windows::UI::Xaml::Interop::TypeName`への変換を有効にします。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -110,7 +114,7 @@ Platform::TypeCode GetTypeCode();
 ### <a name="remarks"></a>コメント  
  GetTypeCode() メンバー メソッドの相当するものは、`typeid`プロパティです。
 
-## <a name="tostring"></a>Type::ToString メソッド
+## <a name="tostring">Type::ToString メソッド</a>
 取得する型の名前。  
   
 ### <a name="syntax"></a>構文  
@@ -122,5 +126,5 @@ Platform::String^ ToString();
 ### <a name="return-value"></a>戻り値  
  そのメタデータで指定された型の名前です。    
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

@@ -13,16 +13,17 @@ dev_langs:
 helpviewer_keywords:
 - arrays [C++]
 ms.assetid: 7818a7fe-7e82-4881-a3d1-7d25162b7fc7
-caps.latest.revision: 10
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 31402e2f113deb89fce6d2d8b6c3633f06a944be
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d7cab4f8bcc4deb8353f4cef0828af829da008e1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-arrays-c"></a>配列の使用 (C++)
 配列添字演算子 (`[ ]`) を使用すると、配列の個々の要素にアクセスできます。 一次元配列が添字のない式で使用されている場合、配列名は配列の最初の要素へのポインターに評価されます。  
@@ -60,5 +61,5 @@ int main() {
   
  このコードでは、`multi` は `double` 型の 3 次元配列です。 `p2multi` ポインターは、サイズが 3 で型が `double` の配列を参照します。 この例では、配列が 1 つ、2 つ、および 3 つの添字と共に使用されています。 `cout` ステートメントのように、すべての添字を指定する方が一般的ですが、`cout` に続くステートメントのように、配列要素の特定のサブセットを選択した方が便利なこともあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [配列](../cpp/arrays-cpp.md)

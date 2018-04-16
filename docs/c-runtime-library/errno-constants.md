@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -26,7 +27,8 @@ f1_keywords:
 - EAGAIN
 - EEXIST
 - ECHILD
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ENOEXEC constant
 - EBADF constant
@@ -48,15 +50,17 @@ helpviewer_keywords:
 - EXDEV constant
 - EILSEQ constant
 ms.assetid: 47089258-d5a5-4cd8-b193-223894dea0cf
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fdfb4477b4de30221a0e89db02cd45178b70db0a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 98cc4c3afa245c55344454d4c96ea22d70905e0d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="errno-constants"></a>errno 定数
 ## <a name="syntax"></a>構文  
@@ -217,5 +221,5 @@ ms.lasthandoff: 10/24/2017
 #define EXDEV [cross device link]  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル定数](../c-runtime-library/global-constants.md)

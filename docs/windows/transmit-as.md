@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: vc-attr.transmit_as
-dev_langs: C++
-helpviewer_keywords: transmit_as attribute
+f1_keywords:
+- vc-attr.transmit_as
+dev_langs:
+- C++
+helpviewer_keywords:
+- transmit_as attribute
 ms.assetid: 53d0b8ab-5b06-423e-83eb-3d01a10424b2
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 74ad65479af91abfd75e1459163737a8a4183deb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 36541f7ebb417302023d214695d07f498808718a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="transmitas"></a>transmit_as
 転送された型を持つクライアントとサーバー アプリケーションは、次の操作、表示の種類を関連付けるようにコンパイラに指示します。  
@@ -71,20 +78,20 @@ struct _TREE_NODE_TYPE * right;
 [transmit_as(TREE_XMIT_TYPE)] typedef TREE_NODE_TYPE * TREE_TYPE;  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|`typedef`|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
  属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDL 属性](../windows/idl-attributes.md)   
  [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
  [export](../windows/export.md)   

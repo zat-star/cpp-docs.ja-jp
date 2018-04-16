@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - scheduler_ptr
 - PPLINTERFACE/concurrency::scheduler_ptr
@@ -17,30 +17,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: e88c84af-c306-476d-aef1-f42a0fa0a80f
-caps.latest.revision: 8
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 4bef1995724d078c9702669806ff61d5563ac465
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 257dcae6df4deb0a52f7dee4db98adba2b2b4f29
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="schedulerptr-structure"></a>scheduler_ptr 構造体
 スケジューラへのポインターを表します。 このクラスによって、shared_ptr を使用して共有有効期間を指定できるように、または、生ポインターを使用して参照できるようにします。  
@@ -80,7 +67,7 @@ struct scheduler_ptr;
   
  **名前空間:** concurrency  
   
-##  <a name="get"></a>scheduler_ptr::get メソッド  
+##  <a name="get"></a>  scheduler_ptr::get メソッド  
  スケジューラへの生のポインターを返します。  
   
 ```
@@ -89,17 +76,17 @@ scheduler_interface* get() const;
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="operator_bool"></a>scheduler_ptr::operator bool   
+##  <a name="operator_bool"></a>  scheduler_ptr::operator bool   
  スケジューラ ポインターが null 以外であるかどうかをテストします。  
   
-'' 演算子 bool() const です。
+```operator bool() const;
 ```  
   
 ##  <a name="operator_ptr"></a>  scheduler_ptr::operator-&gt;   
  Behave like a pointer  
   
 ```
-scheduler_interface * operator->() const です。
+scheduler_interface * 演算子 const です。
 ```  
   
 ### Return Value  
@@ -108,7 +95,7 @@ scheduler_interface * operator->() const です。
  Creates a scheduler pointer from shared_ptr to scheduler  
   
 ```
-明示的な scheduler_ptr(std::shared_ptr<scheduler_interface> scheduler);</scheduler_interface>
+explicit scheduler_ptr(std::shared_ptr<scheduler_interface> scheduler);
 
 明示的な scheduler_ptr (_In_opt_ scheduler_interface * pScheduler) です。
 ```  
@@ -119,4 +106,3 @@ scheduler_interface * operator->() const です。
   
 ## See Also  
  [concurrency Namespace](concurrency-namespace.md)
-

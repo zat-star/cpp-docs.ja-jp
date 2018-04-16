@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - hash_set/stdext::hash_multiset
 - hash_set/stdext::hash_multiset::allocator_type
@@ -49,7 +50,8 @@ f1_keywords:
 - hash_set/stdext::hash_multiset::swap
 - hash_set/stdext::hash_multiset::upper_bound
 - hash_set/stdext::hash_multiset::value_comp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - stdext::hash_multiset
 - stdext::hash_multiset::allocator_type
@@ -93,15 +95,17 @@ helpviewer_keywords:
 - stdext::hash_multiset::upper_bound
 - stdext::hash_multiset::value_comp
 ms.assetid: 0580397a-a76e-40ad-aea2-5c6f3a9d0a21
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 019a80bd6752ea1fa974e9f567cde953d8cb2370
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 78fb4998754bc7a4b30a63de166973909d21b68f
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="hashmultiset-class"></a>hash_multiset クラス
 > [!NOTE]
@@ -121,10 +125,10 @@ class hash_multiset
  hash_multiset に格納する要素のデータ型。  
   
  `Traits`  
- 2 つの関数オブジェクトを含む型。2 つの要素値を並べ替えキーとして比較してその相対順序を決定できるクラス比較である二項述語と、要素のキー値を **size_t** 型の符号なし整数にマップするハッシュ関数である単項述語です。 この引数は省略可能です。既定値は `hash_compare`*<Key,* **less***\<Key> >* です。  
+ 2 つの関数オブジェクトを含む型。2 つの要素値を並べ替えキーとして比較してその相対順序を決定できるクラス比較である二項述語と、要素のキー値を **size_t** 型の符号なし整数にマップするハッシュ関数である単項述語です。 この引数は省略可能で、および`hash_compare`*< キー、* **小***\<キー> >*既定値です。  
   
  `Allocator`  
- hash_multiset のメモリの割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクトを表す型。 この引数は省略可能であり、既定値は **allocator***\<Key>* です。  
+ hash_multiset のメモリの割り当てと解放に関する詳細をカプセル化する、格納されたアロケーター オブジェクトを表す型。 この引数は省略可能であり、既定値は **アロケーター***\<キー>。*  
   
 ## <a name="remarks"></a>コメント  
  hash_multiset は次のとおりです。  
@@ -145,7 +149,7 @@ class hash_multiset
   
  値とキーを関連付ける条件をアプリケーションが満たしている場合、hash_multiset は最適な連想コンテナーとなっている必要があります。 hash_multiset の要素は複数の場合があり、それ自体の並べ替えキーとして機能する場合があるため、キーは一意ではありません。 この種類の構造体のモデルは、単語が複数回出現する可能性がある単語の順序付きのリストです。 単語が複数回出現することが許可されていない場合は、hash_set が適切なコンテナー構造体です。 一意の定義が値として一意のキーワードのリストにアタッチされている場合は、hash_map がこのデータを格納するのに適切な構造体です。 定義が一意でない場合は、hash_multimap が最適なコンテナーです。  
   
- hash_multimap は、格納されているハッシュ特徴 (traits) オブジェクト ([value_compare 型](#value_compare)) を呼び出すことによって、制御するシーケンスを並べ替えます。 格納されているこのオブジェクトには、メンバー関数 [key_comp](#key_comp) を呼び出すことによってアクセスできます。 このような関数オブジェクトは、`hash_compare`*<Key,* **less***\<Key> >* クラスのオブジェクトと同様に動作する必要があります。 具体的には、**Key** 型のすべての *Key* の値に対して、**Trait**( *Key*) の呼び出しは **size_t** 型の値の分布になります。  
+ hash_multimap は、格納されているハッシュ特徴 (traits) オブジェクト ([value_compare 型](#value_compare)) を呼び出すことによって、制御するシーケンスを並べ替えます。 格納されているこのオブジェクトには、メンバー関数 [key_comp](#key_comp) を呼び出すことによってアクセスできます。 このような関数オブジェクトはクラスのオブジェクトと同様に動作する必要があります`hash_compare`*<キー、* **小***\<キー> >です。* 具体的には、**Key** 型のすべての *Key* の値に対して、**Trait**( *Key*) の呼び出しは **size_t** 型の値の分布になります。  
   
  通常、要素は、この順序を確立するために小なり比較だけを実行できる必要があります。これにより、2 つの要素が指定されたときに、それらの要素が等しいか (どちらか一方が小さくはない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 テクニカル ノートでは、比較関数は、数学上の標準的な意味で厳密弱順序を発生させる二項述語であると示されています。 二項述語 *f*( *x*, *y*) は、2 つの引数オブジェクト (x および y) と戻り値 (true または false) を持つ関数オブジェクトです。 hash_multiset に適用される順序付けは、二項述語が非再帰、反対称、推移的であり、等価性が推移的である (2 つのオブジェクト (x と y) が、*f*( *x*,*y*) と *f*( *y*, *x*) の両方が false の場合に等価になるように定義されている) 場合、厳密弱順序になります。 2 つのキーの等値に関する条件が等価性の条件よりも厳しく、優先される場合、順序付けは完全な順序付け (すべての要素が相互の値に基づいて並べ替えられる) となり、一致するそれぞれのキーを識別するのが難しくなります。  
   
@@ -169,7 +173,7 @@ class hash_multiset
 |[const_reference](#const_reference)|読み取りと `const` 操作を実行するために、`hash_multiset` に格納された `const` 要素への参照を提供する型。|  
 |[const_reverse_iterator](#const_reverse_iterator)|`const` 内の任意の `hash_multiset` 要素を読み取ることができる双方向反復子を提供する型。|  
 |[difference_type](#difference_type)|同じ `hash_multiset` 内の要素をアドレス指定する 2 つの反復子の差を提供する符号付き整数型|  
-|[iterator](#iterator)|`hash_multiset` 内の任意の要素を読み取り、または変更できる双方向反復子を提供する型。|  
+|[Iterator](#iterator)|`hash_multiset` 内の任意の要素を読み取り、または変更できる双方向反復子を提供する型。|  
 |[key_compare](#key_compare)|2 つの並べ替えキーを比較して、`hash_multiset` 内の 2 つの要素の相対順序を決定できる関数オブジェクトを提供する型。|  
 |[key_type](#key_type)|並べ替えキーとしてキャパシティ内に `hash_set` の要素として格納されるオブジェクトを表す型。|  
 |[pointer](#pointer)|`hash_multiset` 内の要素へのポインターを提供する型。|  
@@ -1547,7 +1551,7 @@ key_compare key_comp() const;
   
  これは、並べ替え順で `_xVal` が `_yVal` に先行しかつ等しくない場合に **true** を返します。  
   
- [key_compare](#key_compare) および [value_compare](#value_compare) は両方ともテンプレート パラメーター **Traits** のシノニムです。 どちらも hash_multiset および hash_multiset クラスで使用でき、そこでは同一ですが、hash_map および hash_multimap クラスでは異なるものなので互換性を保つようになっています。  
+ [key_compare](#key_compare) および [value_compare](#value_compare) は、ともにテンプレート パラメーター **Traits** のシノニムです。 どちらも hash_multiset および hash_multiset クラスで使用でき、そこでは同一ですが、hash_map および hash_multimap クラスでは異なるものなので互換性を保つようになっています。  
   
    
   
@@ -1637,7 +1641,7 @@ typedef Key key_type;
 ### <a name="remarks"></a>コメント  
  **key_type** は、テンプレート パラメーター `Key` のシノニムです。  
   
- `key_type` および [value_type](../standard-library/hash-set-class.md#value_type) は両方ともテンプレート パラメーター **Key** のシノニムです。 どちらも set および multiset クラスで使用でき、そこでは同一ですが、map および multimap クラスでは異なるものなので互換性を保つようになっています。  
+ `key_type` および [value_type](../standard-library/hash-set-class.md#value_type) は両方ともテンプレート パラメーター **Key** のシノニムです。 これらの型は map クラスおよび multimap クラスでは異なるものになるため、互換性を保つためにこれらが同一のものである set クラスと multiset クラスでも使用できるようになっています。  
   
  `Key` の詳細については、[hash_multiset クラス](../standard-library/hash-multiset-class.md)のトピックのコメントに関するセクションをご覧ください。  
   
@@ -2307,7 +2311,7 @@ value_compare value_comp() const;
   
  これは、並べ替え順で `_xVal` が `_yVal` に先行しかつ等しくない場合に **true** を返します。  
   
- [key_compare](#key_compare) および [value_compare](#value_compare) は両方ともテンプレート パラメーター **Traits** のシノニムです。 どちらも hash_multiset および hash_multiset クラスで使用でき、そこでは同一ですが、hash_map および hash_multimap クラスでは異なるものなので互換性を保つようになっています。  
+ [key_compare](#key_compare) および [value_compare](#value_compare) は、ともにテンプレート パラメーター **Traits** のシノニムです。 どちらも hash_multiset および hash_multiset クラスで使用でき、そこでは同一ですが、hash_map および hash_multimap クラスでは異なるものなので互換性を保つようになっています。  
   
    
   

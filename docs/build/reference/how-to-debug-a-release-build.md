@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - debugging [C++], release builds
 - release builds, debugging
 ms.assetid: d333e4d1-4e6c-4384-84a9-cb549702da25
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2719adff3099d4507b1e2f70348023f9d8ec92eb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 31113d9a5935536ac10b22c7b5f5af27b0d29970
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-debug-a-release-build"></a>方法 : リリース ビルドをデバッグする
 アプリケーションのリリース ビルドをデバッグすることができます。  
@@ -45,5 +49,5 @@ ms.lasthandoff: 10/24/2017
   
      詳細については、次を参照してください。[コードの最適化](../../build/reference/optimizing-your-code.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リリース ビルドの問題の解決](../../build/reference/fixing-release-build-problems.md)

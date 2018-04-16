@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _getc_nolock
 - _getwc_nolock
@@ -30,7 +31,8 @@ f1_keywords:
 - getwc_nolock
 - gettc_nolock
 - _getwc_nolock
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - characters, reading
 - _getc_nolock function
@@ -42,15 +44,17 @@ helpviewer_keywords:
 - gettc_nolock function
 - _gettc_nolock function
 ms.assetid: eb37b272-e177-41c9-b077-12ce7ffd3b88
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8a4c42f7cab773b91d2766bb6d52a66f044fde03
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 61a4353f45212c726c5dd92269ed0cc82950a125
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getcnolock-getwcnolock"></a>_getc_nolock、_getwc_nolock
 ストリームから文字を読み取ります。  
@@ -82,14 +86,14 @@ wint_t _getwc_nolock(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_gettc_nolock`|`getc_nolock`|`getc_nolock`|`getwc_nolock`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`getc_nolock`|\<stdio.h>|  
 |`getwc_nolock`|\<stdio.h> または \<wchar.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -140,7 +144,7 @@ Line the second.
 Input was: Line the first.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fgetc、fgetwc](../../c-runtime-library/reference/fgetc-fgetwc.md)   
  [_getch、_getwch](../../c-runtime-library/reference/getch-getwch.md)   

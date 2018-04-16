@@ -5,9 +5,9 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _mbstowcs_s_l
 - mbstowcs_s
@@ -34,31 +34,17 @@ helpviewer_keywords:
 - mbstowcs_s function
 - mbstowcs_s_l function
 ms.assetid: 2fbda953-6918-498f-b440-3e7b21ed65a4
-caps.latest.revision: 31
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 8858827e65ad342f2c48dba26b3be7f7f9dd2ca3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 28f038c1529c2f7fb7bbc28127ee5b528474e0f0
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="mbstowcss-mbstowcssl"></a>mbstowcs_s、_mbstowcs_s_l
 マルチバイト文字のシーケンスを、対応するワイド文字のシーケンスに変換します。 「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」 (CRT のセキュリティ機能) で説明されているように、セキュリティが強化されたバージョンの [mbstowcs、_mbstowcs_l](../../c-runtime-library/reference/mbstowcs-mbstowcs-l.md) です。  
@@ -142,29 +128,29 @@ errno_t _mbstowcs_s_l(
   
  `count` が特殊値 [_TRUNCATE](../../c-runtime-library/truncate.md) の場合、`mbstowcs_s` は null 終端文字 1 つ分を残して、変換先バッファーに収まる限りの文字列を変換します。  
   
- `mbstowcs_s` は、元の文字列を正常に変換すると、変換後の文字列のワイド文字と null 終端文字のサイズを `*``pReturnValue` に書き込みます (`pReturnValue` が `NULL`でない場合に限ります)。 これは、`wcstr` 引数が `NULL`である場合でも発生し、必要なバッファー サイズを決定する方法を提供します。 `wcstr` が `NULL` の場合は、`count` は無視され、`sizeInWords` は 0 でなければいけないことに注意してください。  
+ `mbstowcs_s` は、元の文字列を正常に変換すると、変換後の文字列のワイド文字と null 終端文字のサイズを `*pReturnValue` に書き込みます (`pReturnValue` が `NULL`でない場合に限ります)。 これは、`wcstr` 引数が `NULL`である場合でも発生し、必要なバッファー サイズを決定する方法を提供します。 `wcstr` が `NULL` の場合は、`count` は無視され、`sizeInWords` は 0 でなければいけないことに注意してください。  
   
- `mbstowcs_s` は、無効なマルチバイト文字が検出された場合、`*``pReturnValue` に 0 を入れ、変換先バッファーを空の文字列に設定し、`errno` を `EILSEQ` に設定して、`EILSEQ` を返します。  
+ `mbstowcs_s` は、無効なマルチバイト文字が検出された場合、`*pReturnValue` に 0 を入れ、変換先バッファーを空の文字列に設定し、`errno` を `EILSEQ` に設定して、`EILSEQ` を返します。  
   
  `mbstr` および `wcstr` が指すシーケンスが重なり合う場合、`mbstowcs_s` の動作は未定義です。  
   
 > [!IMPORTANT]
 >  `wcstr` と `mbstr` が重なり合わず、変換するマルチバイト文字の数が `count` に適切に反映されていることを確認します。  
   
- `mbstowcs_s` は、ロケールに依存するあらゆる動作に現在のロケールを使用します。`_mbstowcs_s_l` は、渡されたロケールを代わりに使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `mbstowcs_s` は、ロケールに依存するあらゆる動作に現在のロケールを使用します。`_mbstowcs_s_l` は、渡されたロケールを代わりに使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`mbstowcs_s`|\<stdlib.h>|  
 |`_mbstowcs_s_l`|\<stdlib.h>|  
   
  互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [MultiByteToWideChar](http://msdn.microsoft.com/library/windows/desktop/dd319072)   

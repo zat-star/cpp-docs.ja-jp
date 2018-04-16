@@ -6,21 +6,24 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::Metadata::RuntimeClassName
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::Metadata::RuntimeClassName
 helpviewer_keywords:
 - RuntimeClassName
 - Platform::Metadata::RuntimeClassName
 ms.assetid: fdef8f85-ab94-4edd-ba50-ee0da9358ff6
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 301e012c1d421348ea252019d892b2e526d6aefc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9addee7708fe1d0838168dd54f395459f9b71990
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformmetadataruntimeclassname"></a>Platform::Metadata::RuntimeClassName
 クラス定義に適用された場合、プライベート クラスが GetRuntimeClassName 関数から有効な名前を返すことを確認します。  
@@ -71,5 +74,5 @@ namespace Test
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform::Metadata 名前空間](../cppcx/platform-metadata-namespace.md)

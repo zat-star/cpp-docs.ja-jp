@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - context_unblock_unbalanced
 - CONCRT/concurrency::context_unblock_unbalanced
 - CONCRT/concurrency::context_unblock_unbalanced::context_unblock_unbalanced
-dev_langs: C++
-helpviewer_keywords: context_unblock_unbalanced class
+dev_langs:
+- C++
+helpviewer_keywords:
+- context_unblock_unbalanced class
 ms.assetid: a76066c8-19dd-44fa-959a-6941ec1b0d2d
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 45121b3dba14e5672333debf364f5aea2e3e3cd5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d5f99f46e37da6c7fe1ed12b9206925d30cfd656
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="contextunblockunbalanced-class"></a>context_unblock_unbalanced クラス
 このクラスは、`Block` オブジェクトの `Unblock` メソッドと `Context` メソッドの呼び出しが正しく対になっていない場合にスローされる例外を表します。  
@@ -49,12 +54,12 @@ class context_unblock_unbalanced : public std::exception;
   
  `context_unblock_unbalanced`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>context_unblock_unbalanced 
+##  <a name="ctor"></a> context_unblock_unbalanced 
 
  `context_unblock_unbalanced` オブジェクトを構築します。  
   
@@ -69,5 +74,5 @@ context_unblock_unbalanced() throw();
  `_Message`  
  エラーの説明メッセージ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

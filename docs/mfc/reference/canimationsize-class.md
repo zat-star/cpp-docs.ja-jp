@@ -35,16 +35,17 @@ helpviewer_keywords:
 - CAnimationSize [MFC], m_cxValue
 - CAnimationSize [MFC], m_cyValue
 ms.assetid: ea06d1b5-502c-44a3-82ca-8bd6ba6a9364
-caps.latest.revision: 17
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e2acbdad3ec5b08ef5d83b3a6cfdb2eadd3c0e17
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 418bba617261ee11322a3d5a83ba07b197c83427
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="canimationsize-class"></a>CAnimationSize クラス
 サイズをアニメーション化できるサイズ オブジェクトの機能を実装します。  
@@ -89,7 +90,7 @@ class CAnimationSize : public CAnimationBaseObject;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CAnimationSize::m_cxValue](#m_cxvalue)|アニメーションのサイズの幅を表すアニメーションをカプセル化された変数です。|  
 |[CAnimationSize::m_cyValue](#m_cyvalue)|アニメーションのサイズの高さを表すアニメーションをカプセル化された変数です。|  
@@ -104,7 +105,7 @@ class CAnimationSize : public CAnimationBaseObject;
   
  `CAnimationSize` 
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="addtransition"></a>CAnimationSize::AddTransition  
@@ -280,6 +281,5 @@ void SetDefaultValue(const CSize& szDefault);
 ### <a name="remarks"></a>コメント  
  既定値をアニメーション オブジェクトに設定するのにには、この関数を使用します。 このメソッドは、既定値をアニメーションのサイズの幅と高さに割り当てます。 それが作成された場合は、基になる COM オブジェクトも再作成します。 このアニメーション オブジェクト (ValueChanged または IntegerValueChanged) イベントをサブスクライブしている場合は、これらのイベントを再度有効にする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: e558f759-3017-48a7-95a9-b5b779d5e51d
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 79efd81177cc3235030600779e70c1e9a2043670
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5043e77826e2210f45b70d564313ae6fd976d93a
+ms.sourcegitcommit: 56f6fce7d80e4f61d45752f4c8512e4ef0453e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="porting-guide-spy"></a>移植のガイド: Spy++
 この移植のケース スタディは、一般的な移植プロジェクトのアイデア、発生する可能性がある問題の種類、および移植の問題に対応するための一般的なヒントとコツを理解できるように設計されています。 プロジェクトの移植に関するエクスペリエンスは、コードの仕様により大きく依存するため、移植をわかりやすく案内するためのものではありません。  
@@ -140,7 +144,7 @@ typedef std::basic_ostringstream<TCHAR> ostrstream;
   
 ```  
   
- 現在、プロジェクトは MBCS (マルチバイト文字セット) を使用してビルド中であり、char は適切な文字データ セットです。 ただし、コードを UTF-16 Unicode に簡単に更新できるようにするために、これを TCHAR に更新します。これにより、プロジェクト設定の **Character Set** プロパティが MBCS または Unicode に設定されているかどうかに応じて、char または wchar_t に解決されます。  
+ 現在、プロジェクトは MBCS (マルチバイト文字セット) を使ってビルド中であり、`char` は適切な文字データ セットです。 ただし、コードを UTF-16 Unicode に簡単に更新できるようにするために、これを `TCHAR` に更新します。これにより、プロジェクト設定の **Character Set** プロパティが MBCS または Unicode に設定されているかどうかに応じて、`char` または `wchar_t` に解決されます。  
   
  コードの他の部分を、いくつか更新する必要があります。  基本クラス ios を ios_base に置き換え、ostream を basic_ostream\<T> によって置き換えました。 2 つの typedef を追加し、このセクションをコンパイルします。  
   
@@ -513,8 +517,9 @@ warning C4211: nonstandard extension used: redefined extern to static
   
  変数が最初に `extern` と宣言され、後で `static` と宣言されたときに、問題が発生します。 これら 2 つのストレージ クラス指定子の意味は相互に排他的ですが、これは、Microsoft 拡張機能として許容されます。 コードを他のコンパイラに移植可能にしたい場合、または /Za (ANSI 互換性) を指定してコンパイルしたい場合は、宣言が一致するストレージ クラス指定子を持つように変更します。  
   
-##  <a name="porting_to_unicode"></a> 手順 11. MBCS から Unicode に移植する  
- Windows では、Unicode という場合は、通常 UTF-16 を意味することに注意してください。 Linux などの他のオペレーティング システムは UTF-8 を使用しますが、Windows では通常は使用しません。 MBCS コードを UTF-16 Unicode に実際に移植する手順を実行する前に、他の作業を実行するためや、都合のよいときに移植を延期するために、MBCS が非推奨であることを示す警告を一時的に削除します。 現在のコードは MBCS を使用しており、続行するには、MFC の MBCS バージョンをダウンロードする必要があります。  この大きいライブラリは、既定の Visual Studio のインストールから削除されたので、個別にダウンロードする必要があります。 「[MFC MBCS DLL アドオン](../mfc/mfc-mbcs-dll-add-on.md)」を参照してください。 これをダウンロードして Visual Studio を再起動すると、MFC の MBCS バージョンを使用してコンパイルしてリンクできますが、MBCS に関する警告を取り除くには、NO_WARN_MBCS_MFC_DEPRECATION を [プロジェクトのプロパティ] の [プリプロセッサ] セクションにある事前定義されたマクロの一覧に追加するか、stdafx.h ヘッダー ファイルやその他の一般的なヘッダー ファイルの先頭に追加する必要があります。  
+##  <a name="porting_to_unicode"></a> 手順 11. MBCS から Unicode に移植する
+
+ Windows では、Unicode という場合は、通常 UTF-16 を意味することに注意してください。 Linux などの他のオペレーティング システムは UTF-8 を使用しますが、Windows では通常は使用しません。 MFC の MBCS バージョンは、Visual Studio 2013 および 2015 では非推奨でしたが、Visual Studio 2017 においては非推奨ではなくなりました。 Visual Studio 2013 または 2015 を使っている場合、MBCS コードを UTF-16 Unicode に実際に移植する手順を実行する前に、他の作業を実行するためや、都合のよいときに移植を延期するために、MBCS が非推奨であることを示す警告を一時的に削除します。 現在のコードは MBCS を使用しており、続行するには、MFC の ANSI/MBCS バージョンをインストールする必要があります。 比較的大きい MFC ライブラリは Visual Studio の既定の **C++ によるデスクトップ開発**インストールの一部ではないので、インストーラーのオプション コンポーネントから選ぶ必要があります。 「[MFC MBCS DLL アドオン](../mfc/mfc-mbcs-dll-add-on.md)」を参照してください。 これをダウンロードして Visual Studio を再起動すると、MFC の MBCS バージョンを使用してコンパイルしてリンクできますが、Visual Studio 2013 または 2015 を使っている場合に MBCS に関する警告を取り除くには、**NO_WARN_MBCS_MFC_DEPRECATION** を [プロジェクトのプロパティ] の [プリプロセッサ] セクションにある事前定義されたマクロの一覧に追加するか、stdafx.h ヘッダー ファイルやその他の一般的なヘッダー ファイルの先頭に追加する必要があります。  
   
  ここで、いくつかのリンカー エラーが表示されます。  
   
@@ -530,7 +535,7 @@ msvcrtd.lib;msvcirtd.lib;kernel32.lib;user32.lib;gdi32.lib;advapi32.lib;Debug\Sp
   
  これで、実際に古いマルチバイト文字セット (MBCS) のコードを Unicode に更新できます。 これは Windows デスクトップ プラットフォームに密接に関連付けられている Windows アプリケーションであるため、Windows で使用される UTF-16 Unicode に移植します。 クロスプラット フォームのコードを作成しているか、別のプラットフォームに Windows アプリケーションを移植している場合は、他のオペレーティング システムで広く使用されている UTF-8 への移植を検討することができます。  
   
- UTF-16 Unicode への移植では、引き続き MBCS にコンパイルするオプションも必要かどうかを決定しなければなりません。  MBCS をサポートするためのオプションが必要な場合は、_MBCS または _UNICODE のどちらがコンパイル下で定義されるかに応じて、char または wchar_t のいずれかに解決される文字型として、TCHAR マクロを使用する必要があります。 wchar_t とそれに関連する API の代わりに、TCHAR と様々な API の TCHAR バージョンに切り替えることは、_MBCS マクロを _UNICODE の代わりに定義するだけで、MBCS バージョンのコードに戻せることを意味します。 TCHAR に加えて、幅広く使用される typedef、マクロ、関数など、様々なバージョンの TCHAR が存在します。 たとえば、LPCSTR の代わりに LPCTSTR を使用するなどです。 [プロジェクトのプロパティ] ダイアログの **[構成プロパティ]** の **[全般]** セクションで、**[文字セット]** プロパティを **[MBCS 文字セットを使用する]** から **[Unicode 文字セットを使用する]** に変更します。 この設定は、コンパイル時にどのマクロが事前に定義されるかに影響します。 UNICODE マクロと _UNICODE マクロの両方が存在します。 プロジェクト プロパティは一貫して両方に影響します。 MFC などの Visual C++ ヘッダーが _UNICODE を使用する場所で Windows ヘッダーは UNICODE を使用しますが、一方が定義されると、他方も常に定義されます。  
+ UTF-16 Unicode への移植では、引き続き MBCS にコンパイルするオプションも必要かどうかを決定しなければなりません。  MBCS をサポートするためのオプションが必要な場合は、_MBCS または _UNICODE のどちらがコンパイル下で定義されるかに応じて、`char` または `wchar_t` のいずれかに解決される文字型として、TCHAR マクロを使用する必要があります。 `wchar_t` とそれに関連する API の代わりに、TCHAR とさまざまな API の TCHAR バージョンに切り替えることは、_MBCS マクロを _UNICODE の代わりに定義するだけで、MBCS バージョンのコードに戻せることを意味します。 TCHAR に加えて、幅広く使用される typedef、マクロ、関数など、様々なバージョンの TCHAR が存在します。 たとえば、LPCSTR の代わりに LPCTSTR を使用するなどです。 [プロジェクトのプロパティ] ダイアログの **[構成プロパティ]** の **[全般]** セクションで、**[文字セット]** プロパティを **[MBCS 文字セットを使用する]** から **[Unicode 文字セットを使用する]** に変更します。 この設定は、コンパイル時にどのマクロが事前に定義されるかに影響します。 UNICODE マクロと _UNICODE マクロの両方が存在します。 プロジェクト プロパティは一貫して両方に影響します。 MFC などの Visual C++ ヘッダーが _UNICODE を使用する場所で Windows ヘッダーは UNICODE を使用しますが、一方が定義されると、他方も常に定義されます。  
   
  TCHAR を使用して MBCS から UTF-16 Unicode に移植するための適切なガイドについては、[こちら](http://msdn.microsoft.com/library/cc194801.aspx)をご利用ください。 私たちはこのルートを選択します。 最初に、**[文字セット]** プロパティを **[Unicode 文字セットを使用する]** に変更してプロジェクトをリビルドします。  
   
@@ -554,7 +559,7 @@ wsprintf(szTmp, "%d.%2.2d.%4.4d", rmj, rmm, rup);
 wsprintf(szTmp, _T("%d.%2.2d.%4.4d"), rmj, rmm, rup);  
 ```  
   
- _T マクロでは、MBCS または UNICODE の設定に応じて、char 文字列または wchar_t 文字列として文字列リテラルをコンパイルするという効果があります。 Visual Studio ですべての文字列を with _T に置き換えるには、最初に **[クイック置換]** (キーボード: Ctrl + F) ボックスまたは **[フォルダーを指定して置換]** (キーボード: Ctrl + Shift + H) を開いてから、**[正規表現の使用]** チェック ボックスを選択します。 `((\".*?\")|('.+?'))` を検索文字列として入力し、`_T($1)` を置換テキストとして入力します。 _T マクロが既に一部の文字列の周囲にある場合は、この手順でもう一度追加され、`#include` を使用しているときなど、_T が必要ないケースもあるため、**[すべて置換]** ではなく、**[次を置換]** を使用してください。  
+ _T マクロでは、MBCS または UNICODE の設定に応じて、`char` 文字列または `wchar_t` 文字列として文字列リテラルをコンパイルするという効果があります。 Visual Studio ですべての文字列を with _T に置き換えるには、最初に **[クイック置換]** (キーボード: Ctrl + F) ボックスまたは **[フォルダーを指定して置換]** (キーボード: Ctrl + Shift + H) を開いてから、**[正規表現の使用]** チェック ボックスを選択します。 `((\".*?\")|('.+?'))` を検索文字列として入力し、`_T($1)` を置換テキストとして入力します。 _T マクロが既に一部の文字列の周囲にある場合は、この手順でもう一度追加され、`#include` を使用しているときなど、_T が必要ないケースもあるため、**[すべて置換]** ではなく、**[次を置換]** を使用してください。  
   
  この特定の関数 [wsprintf](https://msdn.microsoft.com/library/windows/desktop/ms647550.aspx) は、実際に Windows のヘッダーで定義されていて、これに関するドキュメントでは、バッファー オーバーランの可能性があるため、使用しないことが推奨されています。 `szTmp` バッファーに対してサイズが指定されていないため、書き込まれるすべてのデータをバッファーが保持できるか関数でチェックする方法はありません。 Secure CRT への移植については、次のセクションを参照してください。次のセクションでは他の同様の問題も修正します。 最後に [_stprintf_s](../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md) に置換して終了します。  
   
@@ -572,7 +577,7 @@ _tcscpy(pParentNode->m_szText, strTitle);
   
 ```  
   
- _tcscpy 関数が使用されていて、これは文字列をコピーする TCHAR strcpy 関数ですが、割り当てられたバッファーは文字バッファーでした。 これを TCHAR に変更するのは簡単です。  
+ _tcscpy 関数が使用されていて、これは文字列をコピーする TCHAR strcpy 関数ですが、割り当てられたバッファーは `char` バッファーでした。 これを TCHAR に変更するのは簡単です。  
   
 ```cpp  
 pParentNode->m_szText = new TCHAR[strTitle.GetLength() + 1];  
@@ -580,7 +585,7 @@ _tcscpy(pParentNode->m_szText, strTitle);
   
 ```  
   
- 同様に、コンパイル エラーによって保証されたので、`LPSTR` (STRing へのLong ポインター) と `LPCSTR` (定数 STRing へのLong ポインター) を、それぞれ `LPTSTR` (TCHAR STRing へのLong ポインター) と `LPCTSTR` (定数 TCHAR STRing へのLong ポインター) に変更しました。 それぞれの状況を個別に調査する必要があるので、グローバル検索と置換を使用してこのような置換を行わないことを選択しました。 場合によっては、A サフィックスを持つ Windows 構造体を使用する特定の Windows メッセージを処理する場合など、char バージョンが必要になるときがあります。 Windows API では、サフィックス A は、ASCII または ANSI を意味し (MBCS にも適用されます)、サフィックス W は、ワイド文字または UTF-16 Unicode を意味します。 この名前付けパターンは、Windows のヘッダーで使用されますが、MBCS バージョンだけで既に定義されている関数の Unicode バージョンを追加する必要があるときに、Spy++ コードでも従います。  
+ 同様に、コンパイル エラーによって保証されたので、`LPSTR` (STRing へのLong ポインター) と `LPCSTR` (定数 STRing へのLong ポインター) を、それぞれ `LPTSTR` (TCHAR STRing へのLong ポインター) と `LPCTSTR` (定数 TCHAR STRing へのLong ポインター) に変更しました。 それぞれの状況を個別に調査する必要があるので、グローバル検索と置換を使用してこのような置換を行わないことを選択しました。 場合によっては、A サフィックスを持つ Windows 構造体を使用する特定の Windows メッセージを処理する場合など、`char` バージョンが必要になるときがあります。 Windows API では、サフィックス A は、ASCII または ANSI を意味し (MBCS にも適用されます)、サフィックス W は、ワイド文字または UTF-16 Unicode を意味します。 この名前付けパターンは、Windows のヘッダーで使用されますが、MBCS バージョンだけで既に定義されている関数の Unicode バージョンを追加する必要があるときに、Spy++ コードでも従います。  
   
  場合によっては、適切に解決されるバージョンを使用するよう型を置換しなければならないことがあります (WNDCLASSA の代わりに WNDCLASS を使用する場合など)。  
   
@@ -683,9 +688,9 @@ int CPerfTextDataBase::NumStrings(LPCTSTR mszStrings) const
   
 ```  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  元の Visual C++ 6.0 のコードから最新のコンパイラに Spy++ を移植するのに、コーディングが約 20 時間かかり、およそ 1 週間必要でした。 私たちは、Visual Studio 6.0 から Visual Studio 2015 まで、8 つの製品リリースを通じて直接アップグレードしました。 これは、現時点で、プロジェクトの大小にかかわらずすべてのアップグレードで推奨される方法です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [移植およびアップグレード: 例とケース スタディ](../porting/porting-and-upgrading-examples-and-case-studies.md)   
  [前のケース スタディ: COM Spy](../porting/porting-guide-com-spy.md)

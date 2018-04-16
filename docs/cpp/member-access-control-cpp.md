@@ -1,12 +1,12 @@
 ---
-title: "メンバー アクセス コントロール (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: メンバー アクセス コントロール (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -19,12 +19,13 @@ caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 4d209e8f5e00460f1183a154f90bbdafd459b755
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 88fe05ab0c0e6a1c433bf2b6007fb63c18fb5850
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="member-access-control-c"></a>メンバー アクセス コントロール (C++)
 分離するためのアクセス制御を有効にする、[パブリック](../cpp/public-cpp.md)からクラスのインターフェイス、[プライベート](../cpp/private-cpp.md)実装の詳細と[保護](../cpp/protected-cpp.md)に対してのみであるメンバーを使用して派生クラス。 アクセス指定子は、その後で宣言されたすべてのメンバーに対して当てはまり、これは、次のアクセス指定子が検出されるまで続きます。  
@@ -74,7 +75,7 @@ protected:      // Declare protected function for derived classes only.
   
 ### <a name="member-access-in-base-class"></a>基底クラスのメンバー アクセス  
   
-|private|protected|パブリック|  
+|private|protected|Public|  
 |-------------|---------------|------------|  
 |派生のアクセスに関係なく常にアクセスできない|プライベート派生を使用する場合は派生クラス内でプライベート|プライベート派生を使用する場合は派生クラス内でプライベート|  
 ||プロテクト派生を使用する場合は派生クラス内でプロテクト|プロテクト派生を使用する場合は派生クラス内でプロテクト|  
@@ -232,5 +233,5 @@ int main()
   
  図では、クラス `VBase` で宣言される名前は、必ずクラス `RightPath` 経由でアクセスされます。 `RightPath` が `VBase` をプライベート基底クラスとして宣言するのに対し、`LeftPath` は `VBase` をパブリック基底クラスとして宣言するため、右のパスの方がアクセスが簡単です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)

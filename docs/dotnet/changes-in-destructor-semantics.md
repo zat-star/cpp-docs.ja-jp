@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - finalizers [C++]
 - destructors, C++
 ms.assetid: f1869944-a407-452f-b99a-04d8c209f0dc
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a9b97bd94793887f6d443d18914c2155597bec5d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c85ac0b082e8ea1dfbff007a68061e6a286390cd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="changes-in-destructor-semantics"></a>デストラクターのセマンティクスの変更
 クラスのデストラクターのセマンティクスは大幅に変更マネージ拡張から C++ の Visual C にします。  
@@ -195,6 +200,6 @@ public:
   
  マネージ拡張からコードを移行するには、新しい構文に、この変換の実行を見逃す可能性がします。 アプリケーション依存関係のある何らかの方法で関連付けられている終了処理メソッドの実行時に、アプリケーションの動作はサイレント モードでからが異なる場合、意図したものとします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ型 (C + + CL)](../dotnet/managed-types-cpp-cl.md)   
  [デストラクターとファイナライザーを使用する方法: を定義およびクラスと構造体を使用 (C + + CLI)](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers)

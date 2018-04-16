@@ -1,13 +1,15 @@
 ---
-title: "using 宣言 |Microsoft ドキュメント"
-ms.custom: 
+title: using 宣言 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - using declaration
 - declaring namespaces, unqualified names in namespaces
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - using keyword [C++]
 - declarations [C++], namespaces
 ms.assetid: 4184e2b1-3adc-408e-b5f3-0b3f8b554723
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e289adeb6eaece5d97c08316f92d4e33190e6233
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c6bf39dfdb4f59bcf54ce1ddd5174f1e3a55e3a0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-declaration"></a>using 宣言
 あるスコープ内で名前の宣言を使用して、using 宣言が表示されます。  
@@ -330,6 +334,6 @@ public:
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [名前空間](../cpp/namespaces-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)

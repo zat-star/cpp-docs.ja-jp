@@ -1,25 +1,31 @@
 ---
-title: "COM モジュール クラス (ATL) |Microsoft ドキュメント"
-ms.custom: 
+title: COM モジュール クラス (ATL) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: vc.atl.COM
-dev_langs: C++
-helpviewer_keywords: COM modules classes
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- vc.atl.COM
+dev_langs:
+- C++
+helpviewer_keywords:
+- COM modules classes
 ms.assetid: 0a8a82dd-a153-47cd-9bbe-1a1ad5d1a6ff
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cee2ebb756ecee09a78207319250832d4dfc14a9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 68936ee5b916ac519f78761aa5d19fb1e39c6441
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="com-modules-classes"></a>COM モジュール クラス
 次のクラスは、COM モジュールをサポートを提供します。  
@@ -45,7 +51,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="related-articles"></a>関連トピック  
  [ATL モジュール クラス](../atl/atl-module-classes.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)   
  [モジュール クラス](../atl/atl-module-classes.md)
 

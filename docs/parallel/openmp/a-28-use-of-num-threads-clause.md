@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 26238da1-902c-49b4-9559-0fbc9eaf7f36
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: be3da02ea7938b96da16a763111139c4f69335ec
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 119ff2c78a90dc36baab38925b28ec6b2ff844dd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="a28---use-of-numthreads-clause"></a>A.28 num_threads 句の使用
 次の例で、`num_threads`句 ([セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) 8 ページの)。 並列領域は、最大 10 個のスレッドで実行されます。  

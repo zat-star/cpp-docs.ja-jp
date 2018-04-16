@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 04/27/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: property page XML files
+dev_langs:
+- C++
+helpviewer_keywords:
+- property page XML files
 ms.assetid: dd9d9734-4387-4098-8ba6-85b93507731d
-caps.latest.revision: "1"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9af178e96b3da8ea839633812128f64190f47d6a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b81e8965773c64144059fa433b54484c786159a5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="property-page-xml-rule-files"></a>プロパティ ページ XML ルール ファイル
 IDE でプロジェクト プロパティ ページには、VCTargets フォルダー内の XML ファイルで構成されます。 正確なパスは、Visual Studio のどのについて説明がインストールされ、製品の言語に依存します。 Visual Studio 2017 年 1 Enterprise Edition で英語で、パスは`%ProgramFiles%\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\1033`します。 XML ファイルは、ルール、カテゴリ、および個々 のプロパティ、データ型、既定値の名前、および表示するのにはどのようにについて説明します。 IDE でプロパティを設定すると、新しい値は、プロジェクト ファイルに格納されます。
@@ -104,7 +109,7 @@ IDE でプロジェクト プロパティ ページには、VCTargets フォル�
 
   f. **DisplayName:**ルール ノードのプロパティ ページの UI に表示される名前です。 この値はローカライズされます。 作成した DisplayName (名前や SwitchPrefix) などの属性としてではなく、ルールの子要素として内部のローカライズのためツールの要件です。 XAML の観点から、両方は等価です。 そのため、することができますだけに属性を整理したり、現状有姿のままにします。
 
-  g。 **データ ソース:**プロパティの値には元の場所からの読み取りと書き込み、およびそのグループ化 (下記参照)、プロジェクト システムに通知する非常に重要なプロパティです。 Cl.xml、これらの値は。
+  g. **データ ソース:**プロパティの値には元の場所からの読み取りと書き込み、およびそのグループ化 (下記参照)、プロジェクト システムに通知する非常に重要なプロパティです。 Cl.xml、これらの値は。
 
 ```xml  
        <DataSource Persistence="ProjectFile" ItemType="ClCompile" Label="" HasConfigurationCondition="true" />
@@ -137,9 +142,9 @@ IDE でプロジェクト プロパティ ページには、VCTargets フォル�
 
    個々 のプロパティは、その親のルールのデータ ソースを上書きできます。 その場合は、そのプロパティの値の場所はルールでは、その他のプロパティと異なるになります。
 
-   h します。 ここで示されていない、規則の説明、SupportsFileBatching などの他の属性があります。 ルールまたはその他の要素に適用される属性の完全なセットは、これらの型のドキュメントを参照することにより取得できます。 または、内の型のパブリック プロパティを調べることができます、`Microsoft.Build.Framework.XamlTypes`で名前空間、`Microsoft.Build.Framework .dll`アセンブリ。
+   h. ここで示されていない、規則の説明、SupportsFileBatching などの他の属性があります。 ルールまたはその他の要素に適用される属性の完全なセットは、これらの型のドキュメントを参照することにより取得できます。 または、内の型のパブリック プロパティを調べることができます、`Microsoft.Build.Framework.XamlTypes`で名前空間、`Microsoft.Build.Framework .dll`アセンブリ。
 
-   私。 **DisplayName**、**ページ テンプレート**、および**順序**これに格納されている UI 関連のプロパティはそれ以外の場合、UI に依存しないデータ モデル。 これらのプロパティはプロパティ ページを表示するために使用できる UI で使用される、ほぼ確実です。 **DisplayName**と**説明**xml ファイル内のほとんどすべての要素に組み込まれている 2 つのプロパティです。 これらはローカライズされている 2 つのプロパティおよび (それらの文字列のローカライズについては、以降の投稿)。
+   i. **DisplayName**、**ページ テンプレート**、および**順序**これに格納されている UI 関連のプロパティはそれ以外の場合、UI に依存しないデータ モデル。 これらのプロパティはプロパティ ページを表示するために使用できる UI で使用される、ほぼ確実です。 **DisplayName**と**説明**xml ファイル内のほとんどすべての要素に組み込まれている 2 つのプロパティです。 これらはローカライズされている 2 つのプロパティおよび (それらの文字列のローカライズについては、以降の投稿)。
 
 2.  **カテゴリ:**ルールは、複数のカテゴリを持つことができます。 Xml ファイルでカテゴリが表示される順序は、同じ順序で、カテゴリを表示するには、UI に提案です。 たとえば、UI に表示される、C/C++ ノードの下のカテゴリの order – [全般]、最適化、プリプロセッサをしています.  – でその cl.xml と同じです。 サンプル カテゴリは、次のようになります。
 

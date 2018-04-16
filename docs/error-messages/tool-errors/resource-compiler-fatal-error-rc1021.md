@@ -15,34 +15,21 @@ dev_langs:
 helpviewer_keywords:
 - RC1021
 ms.assetid: 9bc8858c-aa50-4b94-b60e-daf75ab45d77
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 37809b9043e3a71356bda8dfe6665c9523788bec
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a3f8e7b45b1c95568c80cb3e98554077b32acec7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resource-compiler-fatal-error-rc1021"></a>リソース コンパイラの致命的なエラー RC1021
 プリプロセッサ コマンド 'string' が無効です  
   
- 番号記号に続く文字 (**#**) な有効なプリプロセッサ ディレクティブではありません。  
+ 次の番号記号文字 (**#**) な有効なプリプロセッサ ディレクティブではありません。  
   
  シャープ記号は、識別子の最初の文字として使用できません。

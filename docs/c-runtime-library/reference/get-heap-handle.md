@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _get_heap_handle
 apilocation:
@@ -34,16 +34,17 @@ helpviewer_keywords:
 - _get_heap_handle function
 - get_heap_handle function
 ms.assetid: a4d05049-8528-494a-8281-a470d1e1115c
-caps.latest.revision: 16
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0608ef825032f636e09c42c5c522c5c600c649a6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 2e8c08ed0ccffb7196133de89d4b9588333e1bfa
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getheaphandle"></a>_get_heap_handle
 C ランタイム システムで使用されるヒープのハンドルを返します。  
@@ -60,13 +61,13 @@ intptr_t _get_heap_handle( void );
 ## <a name="remarks"></a>コメント  
  [HeapSetInformation](http://msdn.microsoft.com/library/windows/desktop/aa366705) を呼び出し、CRT ヒープの Low Fragmentation Heap を有効にする場合は、この関数を使用します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_get_heap_handle`|\<malloc.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="sample"></a>サンプル  
   
@@ -91,5 +92,5 @@ int main(void)
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)

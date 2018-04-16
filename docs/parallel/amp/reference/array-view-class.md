@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - array_view
 - AMP/array_view
@@ -29,18 +30,22 @@ f1_keywords:
 - AMP/Concurrency::array_view::extent
 - AMP/Concurrency::array_view::source_accelerator_view
 - AMP/Concurrency::array_view::value_type
-dev_langs: C++
-helpviewer_keywords: array_view class
+dev_langs:
+- C++
+helpviewer_keywords:
+- array_view class
 ms.assetid: 7e7ec9bc-05a2-4372-b05d-752b50006c5a
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d0378e35d182409cd4077b3f7c6fc270d116f18c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 54202618f578b9a5e6fd602924a37d7ea0825353
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="arrayview-class"></a>array_view クラス
 別のコンテナーに保持されるデータの N 次元のビューを表します。  
@@ -87,7 +92,7 @@ class array_view<const value_type, _Rank> : public _Array_view_base<_Rank, sizeo
 |[get_extent](#get_extent)|array_view オブジェクトの範囲オブジェクトを返します。|  
 |[get_ref](#get_ref)|インデックス付けされた要素への参照を返します。|  
 |[get_source_accelerator_view](#get_source_accelerator_view)|返します、 [accelerator_view](accelerator-view-class.md)場所のデータ ソース、`array_view`が配置されています。|  
-|[更新](#refresh)|バインドされたメモリが `array_view` インターフェイスの外部で変更されたことを `array_view` オブジェクトに通知します。 このメソッドの呼び出しによって、すべてのキャッシュされた情報が表示されます。|  
+|[refresh](#refresh)|バインドされたメモリが `array_view` インターフェイスの外部で変更されたことを `array_view` オブジェクトに通知します。 このメソッドの呼び出しによって、すべてのキャッシュされた情報が表示されます。|  
 |[reinterpret_as](#reinterpret_as)|`array_view` オブジェクトのすべての要素を含む 1 次元配列を返します。|  
 |[section](#section)|指定された原点に `array_view` オブジェクトのサブセクションを返し、これは必要に応じて範囲が指定されます。|  
 |[synchronize](#synchronize)|`array_view` オブジェクトへの変更をそのソース データに同期して戻します。|  
@@ -101,18 +106,18 @@ class array_view<const value_type, _Rank> : public _Array_view_base<_Rank, sizeo
 |名前|説明|  
 |----------|-----------------|  
 |[operator()](#operator_call)|パラメーターによって指定された要素の値を返します。|  
-|[演算子](#operator_at)|パラメーターで指定された要素を返します。|  
+|[operator[]](#operator_at)|パラメーターで指定された要素を返します。|  
 |[operator=](#operator_eq)|指定された `array_view` オブジェクトの内容をこのオブジェクトにコピーします。|  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[rank 定数](#rank)|`array_view` オブジェクトのランクを格納します。|  
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[extent](#extent)|`extent` オブジェクトの形状を定義する `array_view` オブジェクトを取得します。|  
 |[source_accelerator_view](#source_accelerator_view)|取得、 [accelerator_view](accelerator-view-class.md)場所のデータ ソース、`array_view`があります。|  
@@ -152,12 +157,12 @@ class array_view<const value_type, _Rank> : public _Array_view_base<_Rank, sizeo
   
  `array_view`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp.h  
   
  **名前空間:** Concurrency  
   
-##  <a name="dtor"></a>~ array_view 
+##  <a name="dtor"></a> ~array_view 
 
  `array_view` オブジェクトを破棄します。  
   
@@ -165,7 +170,7 @@ class array_view<const value_type, _Rank> : public _Array_view_base<_Rank, sizeo
 ~array_view()restrict(amp,cpu);
 ```  
   
-##  <a name="ctor"></a>array_view 
+##  <a name="ctor"></a> array_view 
 
  `array_view` クラスの新しいインスタンスを初期化します。  
   
@@ -385,7 +390,7 @@ array_view(
  `_Src`  
  新しい配列にコピーされるソース データへのポインター。  
   
-##  <a name="copy_to"></a>copy_to 
+##  <a name="copy_to"></a> copy_to 
 
  内容をコピー、`array_view`オブジェクトを呼び出すことによって指定されたコピー先のオブジェクトに`copy(*this, dest)`です。  
   
@@ -405,7 +410,7 @@ void copy_to(
  `_Dest`  
  コピー先のオブジェクト。  
   
-##  <a name="data"></a>データ 
+##  <a name="data"></a> データ 
 
  `array_view` の生データへのポインターを返します。  
   
@@ -421,7 +426,7 @@ const value_type* data() const restrict(amp,
 ### <a name="return-value"></a>戻り値  
  生データへのポインター、`array_view`です。  
   
-##  <a name="discard_data"></a>discard_data 
+##  <a name="discard_data"></a> discard_data 
 
  このビューの基となる現在のデータを破棄します。 これは、ビューの現在の内容をアクセスしているターゲット `accelerator_view` にコピーしないようにするために使用するランタイムの最適化のためのヒントで、既存の内容が必要ではない場合に使用することをお勧めします。 restrict(amp) コンテキストで使用される場合、このメソッドは実行されません。  
   
@@ -429,7 +434,7 @@ const value_type* data() const restrict(amp,
 void discard_data() const restrict(cpu);
 ```  
   
-##  <a name="extent"></a>エクステント 
+##  <a name="extent"></a> エクステント 
 
  `extent` オブジェクトの形状を定義する `array_view` オブジェクトを取得します。  
   
@@ -437,7 +442,7 @@ void discard_data() const restrict(cpu);
 __declspec(property(get= get_extent)) Concurrency::extent<_Rank> extent;  
 ```  
   
-##  <a name="get_extent"></a>get_extent 
+##  <a name="get_extent"></a> get_extent 
 
  返します、[エクステント](extent-class.md)のオブジェクト、`array_view`オブジェクト。  
   
@@ -448,7 +453,7 @@ Concurrency::extent<_Rank> get_extent() const restrict(cpu, amp);
 ### <a name="return-value"></a>戻り値  
  `extent`のオブジェクト、`array_view`オブジェクト  
   
-##  <a name="get_ref"></a>get_ref 
+##  <a name="get_ref"></a> get_ref 
 
  _Index によってインデックス付けされた要素への参照を取得します。 CPU の array_view にアクセスするための他のインデックス作成演算子とは異なり、このメソッドは CPU にこの array_view の内容を暗黙的に同期しません。 リモートの場所で array_view にアクセスしたり、この array_view を含むコピー操作を実行したりした後は、このメソッドを呼び出す前に array_view を CPU に明示的に同期する必要があります。 これができない場合は、未定義の動作が発生します。  
   
@@ -464,7 +469,7 @@ value_type& get_ref(
 ### <a name="return-value"></a>戻り値  
  _Index によってインデックス付けされた要素への参照  
   
-##  <a name="get_source_accelerator_view"></a>get_source_accelerator_view 
+##  <a name="get_source_accelerator_view"></a> get_source_accelerator_view 
 
  array_view のデータ ソースが存在する accelerator_view を返します。 array_view にデータ ソースがない場合、この API は runtime_exception をスローします  
   
@@ -476,7 +481,7 @@ accelerator_view get_source_accelerator_view() const;
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="operator_call"></a>operator() 
+##  <a name="operator_call"></a> operator() 
 
  パラメーターによって指定された要素の値を返します。  
   
@@ -523,7 +528,7 @@ typename details::_Projection_result_type<value_type,_Rank>::_Const_result_type 
 ### <a name="return-value"></a>戻り値  
  パラメーターによって指定された要素の値。  
   
-##  <a name="operator_at"></a>演算子 
+##  <a name="operator_at"></a> operator[] 
 
  パラメーターで指定された要素を返します。  
   
@@ -546,7 +551,7 @@ value_type& operator[] (
 ### <a name="return-value"></a>戻り値  
  インデックスでの要素の値、または最上位の次元に投影される `array_view`。  
   
-##  <a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a> 演算子 = 
 
  指定された `array_view` オブジェクトの内容をこのオブジェクトにコピーします。  
   
@@ -566,7 +571,7 @@ array_view& operator= (
 ### <a name="return-value"></a>戻り値  
  この `array_view` オブジェクトへの参照。  
   
-##  <a name="rank"></a>ランク 
+##  <a name="rank"></a> ランク 
 
  `array_view` オブジェクトのランクを格納します。  
   
@@ -574,14 +579,14 @@ array_view& operator= (
 static const int rank = _Rank;  
 ```  
   
-##  <a name="refresh"></a>更新 
+##  <a name="refresh"></a> 更新 
 
  バインドされたメモリが `array_view` インターフェイスの外部で変更されたことを `array_view` オブジェクトに通知します。 このメソッドの呼び出しによって、すべてのキャッシュされた情報が表示されます。  
   
 ```  
 void refresh() const restrict(cpu);
 ```  
-## <a name="reinterpret_as"></a>reinterpret_as 
+## <a name="reinterpret_as"></a> reinterpret_as 
 
 オプションとして、ソースの array_view とは異なる値型を持つ可能性のある、1 次元 array_view を使用して array_view を再解釈します。  
   
@@ -622,7 +627,7 @@ array_view<float,1> v = a.reinterpret_as<float>();
 assert(v.extent == 3*a.extent);  
 ```  
     
-##  <a name="section"></a>セクション 
+##  <a name="section"></a> セクション 
 
  指定された原点に `array_view` オブジェクトのサブセクションを返し、これは必要に応じて範囲が指定されます。  
   
@@ -698,7 +703,7 @@ array_view section(
 ### <a name="return-value"></a>戻り値  
  指定された原点にある `array_view` オブジェクトのサブセクションで、これは必要に応じて範囲が指定されます。 `index` のオブジェクトのみを指定すると、サブセクションには `index` オブジェクトの要素のインデックスより大きなインデックスを持つ関連する範囲のすべての要素が含まれます。  
   
-##  <a name="source_accelerator_view"></a>source_accelerator_view 
+##  <a name="source_accelerator_view"></a> source_accelerator_view 
 
  この array_view が関連付けられているソースの accelerator_view を取得します。  
   
@@ -706,7 +711,7 @@ array_view section(
 __declspec(property(get= get_source_accelerator_view)) accelerator_view source_accelerator_view;  
 ```  
   
-##  <a name="synchronize"></a>同期 
+##  <a name="synchronize"></a> 同期 
 
  `array_view` オブジェクトへの変更をそのソース データに同期して戻します。  
   
@@ -721,7 +726,7 @@ void synchronize() const restrict(cpu);
  `_Access_type`  
  目的の[access_type](concurrency-namespace-enums-amp.md#access_type)ターゲット上[accelerator_view](accelerator-view-class.md)です。 このパラメーターには `access_type_read` の既定値があります。  
   
-##  <a name="synchronize_async"></a>synchronize_async 
+##  <a name="synchronize_async"></a> synchronize_async 
 
  変更を非同期に同期、`array_view`戻るをそのソース データ オブジェクト。  
   
@@ -739,7 +744,7 @@ concurrency::completion_future synchronize_async() const restrict(cpu);
 ### <a name="return-value"></a>戻り値  
  操作の完了を待機する予定。  
   
-##  <a name="synchronize_to"></a>synchronize_to 
+##  <a name="synchronize_to"></a> synchronize_to 
 
  この array_view に行われた変更を指定された accelerator_view と同期します。  
   
@@ -760,7 +765,7 @@ void synchronize_to(
  `_Access_type`  
  ターゲットの accelerator_view の必要な access_type。 このパラメーターには access_type_read の既定値があります。  
   
-##  <a name="synchronize_to_async"></a>synchronize_to_async 
+##  <a name="synchronize_to_async"></a> synchronize_to_async 
 
  この array_view に行われた変更を指定された accelerator_view と非同期に同期します。  
   
@@ -784,7 +789,7 @@ concurrency::completion_future synchronize_to_async(
 ### <a name="return-value"></a>戻り値  
  操作の完了を待機する予定。  
   
-##  <a name="value_type"></a>value_type 
+##  <a name="value_type"></a> value_type 
 
  array_view の値型およびバインド配列。  
   
@@ -792,7 +797,7 @@ concurrency::completion_future synchronize_to_async(
 typedef typenamevalue_type value_type;  
 ```  
   
-##  <a name="view_as"></a>view_as 
+##  <a name="view_as"></a> view_as 
 
  異なるランクの `array_view` としてこの `array_view` を再解釈します。  
   
@@ -824,5 +829,5 @@ array_view<const value_type,_New_rank> view_as(
 ### <a name="return-value"></a>戻り値  
  `array_view`構築されたオブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

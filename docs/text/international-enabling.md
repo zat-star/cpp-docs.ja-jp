@@ -1,52 +1,56 @@
 ---
-title: "国際化対応について | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "グローバリゼーション [C++], 文字セット"
-  - "ローカリゼーション [C++], 文字セット"
-  - "MBCS [C++], 有効化"
-  - "文字列 [C++], 国際化対応の有効化"
-  - "Unicode [C++], 有効化"
+title: "国際化対応について |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- globalization [C++], character sets
+- strings [C++], international enabling
+- localization [C++], character sets
+- MBCS [C++], enabling
+- Unicode [C++], enabling
 ms.assetid: b077f4ca-5865-40ef-a46e-d9e4d686ef21
-caps.latest.revision: 7
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ce0210546dafd354d0d62225c97df8b36a8d84e0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 国際化対応について
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-従来の C や C\+\+ のコードのほとんどは、国際市場を考慮したアプリケーション開発を想定していないため、文字や文字列の操作で不具合が出ます。  MFC もランタイム ライブラリも Unicode または MBCS をサポートしていますが、まだ対応不十分です。  ここでは、Visual C\+\+ における "国際化対応" の内容を解説します。  
+# <a name="international-enabling"></a>国際化対応について
+従来のほとんどの C および C++ コードによって、国際対応のアプリケーションに対して適切に動作しない文字と文字列の操作に関する仮定を行います。 MFC とランタイム ライブラリの両方は、Unicode や MBCS をサポートしてが、まだ作業を行うには このセクションで Visual C の「国際化対応」の意味について説明します。  
   
--   Unicode と MBCS の機能はいずれも、MFC 関数のパラメーター リストと戻り値の型に移植性の高いデータ型を採用することで実現されています。  これらの型は、ビルドのときに定義するシンボル **\_UNICODE** または **\_MBCS** \(つまり DBCS\) に応じて定義されます。  このシンボルに対応するバージョンの MFC ライブラリが自動的にアプリケーションにリンクされます。  
+-   両方の Unicode と MBCS MFC 関数のパラメーター リストでの移植性のデータ型を使用して有効にし、型を返します。 これらの型が、ビルドがシンボルを定義するかどうかに応じて、適切な方法で条件付きで定義されている**_UNICODE**または記号**_MBCS** (つまり、DBCS)。 MFC ライブラリの別のバリエーションは、アプリケーションを使用して、ビルドの定義によってこれら 2 つの記号のうち自動的にリンクします。  
   
--   クラス ライブラリのコードでは、移植性のあるランタイム関数を使用するなどして、Unicode や MBCS が正常に機能することを保証しています。  
+-   クラス ライブラリのコードでは、ポータブルのランタイム関数とその他の手段を使用して Unicode や MBCS が正常に動作します。  
   
--   プログラミング レベルでは、次のような国際化のための作業が必要となります。  
+-   コードで特定の種類の国際化タスクを処理する必要がありますも。  
   
-    -   移植性のある同じランタイム関数を使用して、MFC がいずれの環境でも移植できるようにします。  
+    -   MFC のいずれの環境に移植性を高める同じポータブルのランタイム関数を使用します。  
   
-    -   **\_T** マクロを使い、リテラル文字列や文字がいずれの環境でも移植できるようにします。  詳細については、「[Tchar.h における汎用テキストのマッピング](../Topic/Generic-Text%20Mappings%20in%20Tchar.h.md)」を参照してください。  
+    -   リテラル文字列と文字いずれの環境では、移植性を高めるを使用して、 **_T**マクロです。 詳細については、次を参照してください。 [Tchar.h における汎用テキスト マッピング](../text/generic-text-mappings-in-tchar-h.md)です。  
   
-    -   MBCS に従って文字列を解析する場合は注意が必要です。  Unicode では特に注意する必要はありません。  詳細については、この章の「[MBCS のプログラミングについて](../Topic/MBCS%20Programming%20Tips.md)」を参照してください。  
+    -   Mbcs 文字列を解析するときに、予防策をとります。 Unicode では、これらの予防措置は必要ありません。 詳細については、次を参照してください。 [MBCS のプログラミングについて](../text/mbcs-programming-tips.md)です。  
   
-    -   アプリケーションで ANSI \(8 ビット\) と Unicode \(16 ビット\) の文字を混在させて使う場合には注意が必要です。  プログラムのある部分で ANSI 文字を使い、また別の部分で Unicode 文字を使うことはできますが、同じ文字列の中に混在させることはできません。  
+    -   注意して、アプリケーションで ANSI (8 ビット)、Unicode (16 ビット) 文字が混在する場合。 プログラムの一部の ANSI 文字と、他のユーザーに Unicode 文字を使用することは、同じ文字列内に混在させることはできません。  
   
-    -   アプリケーション内で文字列をハードコーディングしないでください。  文字列は、アプリケーションの .rc ファイルに追加して、STRINGTABLE リソースにします。  この結果、アプリケーションをローカライズするときに、ソース コードの変更や再コンパイルが不要になります。  STRINGTABLE リソースの詳細については、「[ストリング エディター](../mfc/string-editor.md)」を参照してください。  
+    -   アプリケーションで文字列をハードコーディングしないをしないでください。 代わりに、できるように STRINGTABLE リソースをアプリケーションの .rc ファイルに追加します。 アプリケーションは、ソース コードの変更や再コンパイルを必要とせず、ローカライズできます。 STRINGTABLE リソースに関する詳細については、次を参照してください。[ストリング エディター](../windows/string-editor.md)です。  
   
 > [!NOTE]
->  ヨーロッパの文字セットや MBCS 文字セットには、アクセント記号付き文字など、0x80 より大きな文字コードに対応する文字があります。  ほとんどのコードで符号付き文字を採用しているため、このような 0x80 より大きな文字は `int` 型整数に変換されると符号拡張されます。  符号拡張された文字は負となり、配列のインデックスに使用すると、配列の外側にインデックスを作成するため、問題が発生します。  日本語などの MBCS を使う言語も固有の問題を抱えています。  文字は 1 バイトまたは 2 バイトで構成される可能性があるため、常に両方のバイトを同時に操作する必要があります。  
+>  ヨーロッパと MBCS 文字セットでは、文字コードが 0x80 より大きい、アクセント付き文字など、一部の文字があります。 ほとんどのコードは、符号付き文字を使用しているためこれらの文字 0x80 よりも大きい値は符号拡張に変換される`int`です。 これは、配列の外側、符号拡張文字の文字列、負の場合、インデックスを作成するための配列のインデックスの問題です。 日本語などの MBCS を使用する言語も一意です。 文字は、1 つまたは 2 バイトで構成されている可能性があります、ため常に同時に両方のバイトを操作する必要があります。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Unicode と MBCS](../text/unicode-and-mbcs.md)   
  [国際化のアプローチ](../text/internationalization-strategies.md)

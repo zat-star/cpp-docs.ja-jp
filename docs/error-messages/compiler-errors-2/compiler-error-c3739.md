@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3739
-dev_langs: C++
-helpviewer_keywords: C3739
+f1_keywords:
+- C3739
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3739
 ms.assetid: acffe894-08b8-4bf2-9249-9501e6e2bad3
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b3fa62f908f152e127669d1cd935fafdb75d413f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 827bc06a3ec9b457eab258772e59688c632f9b4c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3739"></a>コンパイラ エラー C3739
 'class': event_receiver の 'layout_dependent' パラメーターが true の場合にのみ、構文がサポート  

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C1128
 ms.assetid: 6f9580fd-ecef-48be-9780-dcf666704279
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 22b53914fba8ab5d5c31d8f7ed0a2e3db52aad5d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 83ec855a3280b1169ce3537ecf85944939449316
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fatal-error-c1128"></a>致命的なエラー C1128
 セクションの数がオブジェクト ファイル形式の制限を超えています : /bigobj と共にコンパイルしてください  

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C1352
 ms.assetid: d044e8b0-b6ef-4d57-8eb5-6254071be707
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2f2a5c42eaa5afc609f1b8ee1c09875db8bff9c3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 71f2bf8ef42896447d48c9cb3581006c2e3d7620
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fatal-error-c1352"></a>致命的なエラー C1352
 関数 'function' (元モジュール 'file') の無効な、または壊れた MSIL です。  

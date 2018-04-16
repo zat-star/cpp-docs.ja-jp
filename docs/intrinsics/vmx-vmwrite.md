@@ -1,73 +1,77 @@
 ---
-title: "__vmx_vmwrite | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__vmx_vmwrite"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__vmx_vmwrite 組み込み"
-  - "VMWRITE 命令"
+title: "_ _vmx_vmwrite |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- __vmx_vmwrite
+dev_langs:
+- C++
+helpviewer_keywords:
+- __vmx_vmwrite intrinsic
+- VMWRITE instruction
 ms.assetid: 88139792-fd3f-4210-97ca-9d84f43a0252
-caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 08cd68256e1219df36ce6f9ea22165938fba44af
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# __vmx_vmwrite
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="vmxvmwrite"></a>__vmx_vmwrite
+**Microsoft 固有の仕様**  
   
- 現在の仮想マシンの制御構造で指定されたフィールドに指定された値を書き込みます \(VMCS\)。  
+ 現在の仮想マシン制御構造 (VMCS) で指定されたフィールドに指定した値を書き込みます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-unsigned char __vmx_vmwrite(   
+unsigned char __vmx_vmwrite(   
    size_t Field,  
    size_t FieldValue  
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
-|パラメーター|Description|  
-|------------|-----------------|  
-|\[入力\] `Field`|書き込む VMCS のフィールド。|  
-|\[入力\] `FieldValue`|VMCS のフィールドに書き込む値。|  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|[入力] `Field`|書き込む VMCS のフィールドです。|  
+|[入力] `FieldValue`|VMCS のフィールドに書き込む値。|  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  0  
  操作が成功しました。  
   
  1  
- 操作は現在 VMCS の `VM-instruction error field` に展開状態が利用可能に失敗しました。  
+ 現在 VMCS の `VM-instruction error field` で有効な拡張状態が発生したため、操作は失敗しました。  
   
  2  
- 操作は状態が利用可能なしに失敗しました。  
+ 有効な状態がないため操作は失敗しました。  
   
-## 解説  
- `__vmx_vmwrite` の関数は `VMWRITE` のマシン語命令と同じです。  `Field` のパラメーターの値はのドキュメントに記述されているエンコードしたフィールドのインデックスです。  詳細については文書の検索「 IA\-32 Intel アーキテクチャの Intel 仮想化テクノロジ固有のパブリック」" C97063\-002 番号はサイト [Intel Corporation](http://go.microsoft.com/fwlink/?LinkId=127) とそのドキュメントの付録 C を参照します。  
+## <a name="remarks"></a>コメント  
+ `__vmx_vmwrite`関数と同じ、`VMWRITE`マシン語命令します。 値、`Field`パラメーターは、Intel のドキュメントに記載されているエンコードのフィールドのインデックス。 詳細については、「Intel 仮想化技術仕様の「ia-32 Intel アーキテクチャ」、ドキュメントの検索に番号 C97063 002 を文書化、 [Intel Corporation](http://go.microsoft.com/fwlink/p/?linkid=127)サイトをその付録 C を参照してくださいドキュメントです。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__vmx_vmwrite`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__vmx_vmwrite`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)   
- [\_\_vmx\_vmread](../intrinsics/vmx-vmread.md)
+## <a name="see-also"></a>参照  
+ [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
+ [__vmx_vmread](../intrinsics/vmx-vmread.md)

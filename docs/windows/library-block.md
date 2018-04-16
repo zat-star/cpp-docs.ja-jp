@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: vc-attr.library_block
-dev_langs: C++
-helpviewer_keywords: library_block attribute
+f1_keywords:
+- vc-attr.library_block
+dev_langs:
+- C++
+helpviewer_keywords:
+- library_block attribute
 ms.assetid: ae7a7ebe-5e1a-4eda-a058-11bbd058ece8
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4e0255002a8235f4e8a36d4b43df520d6e26865b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: ab7c4c8c65d23dc252fb3ce228313fb36aa7e032
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="libraryblock"></a>library_block
 IDL ライブラリ ブロックの内部構造を配置します。  
@@ -49,19 +56,19 @@ __interface IMyInterface {
 };  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|任意の場所|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
  詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ属性](../windows/compiler-attributes.md)   
  [スタンドアロン属性](../windows/stand-alone-attributes.md)   

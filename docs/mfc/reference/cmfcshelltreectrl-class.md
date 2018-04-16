@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -21,7 +22,8 @@ f1_keywords:
 - AFXSHELLTREECTRL/CMFCShellTreeCtrl::SelectPath
 - AFXSHELLTREECTRL/CMFCShellTreeCtrl::SetFlags
 - AFXSHELLTREECTRL/CMFCShellTreeCtrl::SetRelatedList
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCShellTreeCtrl [MFC], EnableShellContextMenu
 - CMFCShellTreeCtrl [MFC], GetFlags
@@ -35,15 +37,17 @@ helpviewer_keywords:
 - CMFCShellTreeCtrl [MFC], SetFlags
 - CMFCShellTreeCtrl [MFC], SetRelatedList
 ms.assetid: 3d1da715-9554-4ed7-968c-055c48146267
-caps.latest.revision: "30"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aba82dd5e70f3202512b728df2dbcb6f45600c69
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 727b0032687ed22692f07f9b5e9e5fe8b2813071
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcshelltreectrl-class"></a>CMFCShellTreeCtrl クラス
 `CMFCShellTreeCtrl`クラスを拡張[CTreeCtrl クラス](../../mfc/reference/ctreectrl-class.md)シェル項目の階層を表示することによって機能します。  
@@ -87,7 +91,7 @@ class CMFCShellTreeCtrl : public CTreeCtrl
   
  `CMFCShellTreeCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxshelltreeCtrl.h  
   
 ## <a name="example"></a>例  
@@ -272,7 +276,7 @@ void SetRelatedList(CMFCShellListCtrl* pShellList);
   
  メソッドを使用して[CMFCShellTreeCtrl::GetRelatedList](#getrelatedlist)を取得する、`CMFCShellListCtrl`に関連付けられている、`CMFCShellTreeCtrl`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CTreeCtrl クラス](../../mfc/reference/ctreectrl-class.md)   

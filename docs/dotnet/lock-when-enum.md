@@ -4,25 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - msclr::lock_when
 - msclr.lock_when
 - lock_when
-dev_langs: C++
-helpviewer_keywords: lock_when enum
+dev_langs:
+- C++
+helpviewer_keywords:
+- lock_when enum
 ms.assetid: 6b87bbe9-63cd-450d-a02e-bb91ffd0dcea
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c13325f92f3b17f5881be1deffd9710108ecf4be
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: cf57b2ec972eee7ad207b72ba5851f575b8ef692
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lockwhen-enum"></a>lock_when Enum
 遅延のロックを指定します。  
@@ -127,10 +133,10 @@ In thread 6, Counter = 10
 All threads completed.  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\lock.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [lock](../dotnet/lock.md)

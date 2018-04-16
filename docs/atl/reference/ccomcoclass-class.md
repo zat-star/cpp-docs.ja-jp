@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,20 +15,23 @@ f1_keywords:
 - ATLCOM/ATL::CComCoClass::Error
 - ATLCOM/ATL::CComCoClass::GetObjectCLSID
 - ATLCOM/ATL::CComCoClass::GetObjectDescription
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CComCoClass class
 - aggregation [C++], aggregation models
 ms.assetid: 67cfefa4-8df9-47fa-ad58-2d1a1ae25762
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 966fe76858d24e47664667c043d88a953be91716
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 969370294ed3d5d2ca2fdff5f4a106b72ed77a17
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomcoclass-class"></a>CComCoClass クラス
 このクラスは、クラスのインスタンスを作成して、そのプロパティを取得するためのメソッドを提供します。  
@@ -70,7 +74,7 @@ class CComCoClass
   
  [!code-cpp[NVC_ATL_COM#2](../../atl/codesnippet/cpp/ccomcoclass-class_1.h)]  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="createinstance"></a>あって  
@@ -213,5 +217,5 @@ static LPCTSTR WINAPI GetObjectDescription();
   
  ATL プロジェクト ウィザードの詳細については、記事を参照してください。 [ATL プロジェクトを作成する](../../atl/reference/creating-an-atl-project.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

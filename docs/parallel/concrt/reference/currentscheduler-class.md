@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CurrentScheduler
 - CONCRT/concurrency::CurrentScheduler
@@ -20,18 +21,22 @@ f1_keywords:
 - CONCRT/concurrency::CurrentScheduler::IsAvailableLocation
 - CONCRT/concurrency::CurrentScheduler::RegisterShutdownEvent
 - CONCRT/concurrency::CurrentScheduler::ScheduleTask
-dev_langs: C++
-helpviewer_keywords: CurrentScheduler class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CurrentScheduler class
 ms.assetid: 31c20e0e-4cdf-49b4-8220-d726130aad2b
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ad1d49bb90a5f3c0732fd81851e34485e95f3ccb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d973b9ad7c5c7f81b5db85b3f8c5ccc49b5049b0
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="currentscheduler-class"></a>CurrentScheduler クラス
 呼び出し元コンテキストに関連付けられている現在のスケジューラの抽象化を表します。  
@@ -65,12 +70,12 @@ class CurrentScheduler;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CurrentScheduler`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-##  <a name="create"></a>作成します。 
+##  <a name="create">作成します。</a> 
 
  動作が説明されている、新しいスケジューラを作成、`_Policy`パラメーターを呼び出し元のコンテキストにアタッチします。 新しく作成されたスケジューラは、呼び出し元のコンテキストの現在のスケジューラになります。  
   
@@ -91,7 +96,7 @@ static void __cdecl Create(const SchedulerPolicy& _Policy);
   
  このメソッドを含む、例外のさまざまな[scheduler_resource_allocation_error](scheduler-resource-allocation-error-class.md)と[invalid_scheduler_policy_value](invalid-scheduler-policy-value-class.md)です。  
   
-##  <a name="createschedulegroup"></a>CreateScheduleGroup 
+##  <a name="createschedulegroup"></a> CreateScheduleGroup 
 
  呼び出し元のコンテキストに関連付けられているスケジューラ内で新しいスケジュール グループを作成します。 パラメーターを受け取るバージョンで`_Placement`により、そのパラメーターで指定された場所で実行する方向に偏ってするを新しく作成されたスケジュール グループ内のタスクです。  
   
@@ -115,7 +120,7 @@ static ScheduleGroup* __cdecl CreateScheduleGroup(location& _Placement);
   
  このスケジューラを明示的に作成した場合は、そこから現在のコンテキストをデタッチすることにより、スケジューラの参照を解放する前に、内のグループのスケジュールへのすべての参照を解放する必要がありますに注意してください。  
   
-##  <a name="detach"></a>デタッチ 
+##  <a name="detach"></a> デタッチ 
 
  呼び出し元のコンテキストから現在のスケジューラをデタッチし、いずれかが存在する場合は、現在のスケジューラとして以前接続されているスケジューラを復元します。 呼び出し元のコンテキストがいずれかを使用して、コンテキストにアタッチされている以前のスケジューラで管理し、このメソッドから制御が戻た後、`CurrentScheduler::Create`または`Scheduler::Attach`メソッドです。  
   
@@ -130,7 +135,7 @@ static void __cdecl Detach();
   
  コンテキストからこのメソッドを呼び出すには内部管理スケジューラ、またはメソッドを使用せずに添付されたコンテキストで、 [scheduler::attach](scheduler-class.md#attach)または[currentscheduler::create](#create)メソッドなります、 [improper_scheduler_detach](improper-scheduler-detach-class.md)例外がスローされます。  
   
-##  <a name="get"></a>取得 
+##  <a name="get"></a> 取得 
 
  現在のスケジューラとも呼ばれます、呼び出し元のコンテキストに関連付けられているスケジューラへのポインターを返します。  
   
@@ -144,7 +149,7 @@ static Scheduler* __cdecl Get();
 ### <a name="remarks"></a>コメント  
  呼び出し元のコンテキストにスケジューラが現在関連付けられていない場合、このメソッドを呼び出すと、プロセスの既定のスケジューラが作成されるか、または呼び出し元コンテキストにアタッチされます。 その他の参照が配置されていない、`Scheduler`このメソッドによって返されるオブジェクト。  
   
-##  <a name="getnumberofvirtualprocessors"></a>GetNumberOfVirtualProcessors 
+##  <a name="getnumberofvirtualprocessors"></a> GetNumberOfVirtualProcessors 
 
  呼び出し元のコンテキストに関連付けられているスケジューラの仮想プロセッサの現在の数を返します。  
   
@@ -160,7 +165,7 @@ static unsigned int __cdecl GetNumberOfVirtualProcessors();
   
  このメソッドからの戻り値は、呼び出し元のコンテキストに関連付けられているスケジューラの仮想プロセッサの数の瞬間的にサンプリングします。 この値は、返される、現在古いできます。  
   
-##  <a name="getpolicy"></a>GetPolicy 
+##  <a name="getpolicy"></a> GetPolicy 
 
  現在のスケジューラを使用して作成されたポリシーのコピーを返します。  
   
@@ -174,7 +179,7 @@ static SchedulerPolicy __cdecl GetPolicy();
 ### <a name="remarks"></a>コメント  
  呼び出し元のコンテキストにスケジューラが現在関連付けられていない場合、このメソッドを呼び出すと、プロセスの既定のスケジューラが作成されるか、または呼び出し元コンテキストにアタッチされます。  
   
-##  <a name="id"></a>Id 
+##  <a name="id"></a> Id 
 
  現在のスケジューラの一意の識別子を返します。  
   
@@ -188,7 +193,7 @@ static unsigned int __cdecl Id();
 ### <a name="remarks"></a>コメント  
  このメソッドは、呼び出し元のコンテキストが既にスケジューラに関連付けられていない場合スケジューラの添付ファイルには発生しません。  
   
-##  <a name="isavailablelocation"></a>IsAvailableLocation 
+##  <a name="isavailablelocation"></a> IsAvailableLocation 
 
  指定された場所が現在のスケジューラで使用できるかどうかを判断します。  
   
@@ -208,7 +213,7 @@ static bool __cdecl IsAvailableLocation(const location& _Placement);
   
  戻り値が指定された場所が使用できるかどうかの瞬間的にサンプリングに注意してください。 複数のスケジューラが存在する場合は、動的なリソース管理は追加または任意の時点でスケジューラからリソースを取り去ることがことができます。 この場合は、指定された場所は、可用性に変更できます。  
   
-##  <a name="registershutdownevent"></a>RegisterShutdownEvent 
+##  <a name="registershutdownevent"></a> RegisterShutdownEvent 
 
  Windows イベント ハンドルが渡された原因、`_ShutdownEvent`シグナル状態になる、現在のコンテキストに関連付けられているスケジューラがシャット ダウンし、それ自体を破棄するときのパラメーターです。 イベントがシグナル状態に、スケジューラにスケジュールされていたすべての作業が完了しました。 このメソッドでは、複数のシャット ダウン イベントを登録できます。  
   
@@ -223,7 +228,7 @@ static void __cdecl RegisterShutdownEvent(HANDLE _ShutdownEvent);
 ### <a name="remarks"></a>コメント  
  呼び出し元のコンテキストにアタッチされているスケジューラがない場合は、このメソッドを呼び出すが、 [scheduler_not_attached](scheduler-not-attached-class.md)例外がスローされます。  
   
-##  <a name="scheduletask"></a>ScheduleTask 
+##  <a name="scheduletask"></a> ScheduleTask 
 
  呼び出し元のコンテキストに関連付けられているスケジューラ内の軽量タスクをスケジュールします。 軽量タスクは、ランタイムによって決定スケジュール グループに配置されます。 パラメーターを受け取るバージョンで`_Placement`するが優先される指定した場所に実行するためにタスクをさせます。  
   
@@ -251,7 +256,7 @@ static void __cdecl ScheduleTask(
 ### <a name="remarks"></a>コメント  
  呼び出し元のコンテキストにスケジューラが現在関連付けられていない場合、このメソッドを呼び出すと、プロセスの既定のスケジューラが作成されるか、または呼び出し元コンテキストにアタッチされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [Scheduler クラス](scheduler-class.md)   
  [PolicyElementKey](concurrency-namespace-enums.md)   

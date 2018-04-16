@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4571
-dev_langs: C++
-helpviewer_keywords: C4571
+f1_keywords:
+- C4571
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4571
 ms.assetid: 07aa17bd-b15c-4266-824c-57cc445e8edd
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 293a3ffa2ddb14292b33ed222f18ca6f8dc6faec
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cab2068b6117f092dcc098591bb620156b2c0cf6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4571"></a>コンパイラの警告 (レベル 4) C4571
 Visual C 7.1; から変更情報: catch (...) セマンティクス構造化例外 (SEH) はキャッチされません。  

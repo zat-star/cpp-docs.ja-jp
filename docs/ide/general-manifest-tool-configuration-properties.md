@@ -1,11 +1,12 @@
 ---
-title: "マニフェスト ツール構成プロパティ (Visual C) |Microsoft ドキュメント"
-ms.custom: 
+title: マニフェスト ツール構成プロパティ (Visual C) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-ide
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-ide
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VC.Project.VCManifestTool.MergeRulesFile
@@ -14,17 +15,20 @@ f1_keywords:
 - VC.Project.VCManifestTool.UseFAT32Workaround
 - VC.Project.VCManifestTool.VerboseOutput
 - VC.Project.VCManifestTool.AssemblyIdentity
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: b99368a5-6819-482c-a06e-f2409290cfd1
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aba154afb6c3f30c305518702f42c618335f5b8e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0e5e56c823a7a30850e24e393a545f0df6a6637a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="general-manifest-tool-configuration-properties-ltprojectnamegt-property-pages-dialog-box"></a>一般に、マニフェスト ツール、構成プロパティ、 &lt;Projectname&gt;プロパティ ページ ダイアログ ボックス
 [全般] オプションを指定するこのダイアログ ボックスを使用して[Mt.exe](http://msdn.microsoft.com/library/aa375649)です。  
@@ -45,7 +49,7 @@ ms.lasthandoff: 10/24/2017
   
  `Microsoft.Windows.Common-Controls, processorArchitecture=x86, version=6.0.0.0, type=win32, publicKeyToken=6595b64144ccf1df`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ClickOnce アプリケーション マニフェスト](/visualstudio/deployment/clickonce-application-manifest)   
  [マニフェスト ツールのプロパティ ページ](../ide/manifest-tool-property-pages.md)   
  [プロジェクトのプロパティの操作](../ide/working-with-project-properties.md)   

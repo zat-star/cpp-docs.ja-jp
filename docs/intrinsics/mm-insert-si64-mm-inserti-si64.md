@@ -4,27 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - _mm_inserti_si64
 - _mm_insert_si64
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - insertq instruction
 - _mm_insert_si64 intrinsic
 - _mm_inserti_si64 intrinsic
 ms.assetid: 897a4b36-8b08-4b00-a18f-7850f5732d7d
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 45a69efa4e2b78009065c218924882af92d6bd1d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dc85f56660702afe1c05f3626b3b28b0b566dbd5
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="mminsertsi64-mminsertisi64"></a>_mm_insert_si64、_mm_inserti_si64
 **Microsoft 固有の仕様**  
@@ -50,19 +54,19 @@ __m128i _mm_inserti_si64(
  [入力] `Source1`  
  入力データの下位 64 ビット フィールドの挿入先では、128 ビット フィールドです。  
   
- [in]`Source2`  
+ [in]  `Source2`  
  その下位ビットに挿入するデータでは、128 ビット フィールドです。  `_mm_insert_si64`もフィールド記述子の上位ビットに含まれています。  
   
- [in]`Length`  
+ [in]  `Length`  
  整数の定数を挿入するフィールドの長さを指定します。  
   
- [in]`Index`  
+ [in]  `Index`  
  データを挿入するフィールドの最下位ビットのインデックスを指定する整数の定数です。  
   
 ## <a name="return-value"></a>戻り値  
  128 ビット フィールドの下位 64 ビットの元の下位 64 ビットを含む`Source1`、指定されたビット フィールドの下位ビットを置き換えて`Source2`です。 戻り値の上位 64 ビットは、定義されていません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -125,8 +129,8 @@ result3 = 0xfffffffff3210fff
 ```  
   
 **Microsoft 固有の仕様はここまで**  
- 高度なマイクロ デバイス, Inc. によって copyright 2007All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
+ Copyright 2007 by Advanced Micro Devices, Inc.All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_mm_extract_si64、_mm_extracti_si64](../intrinsics/mm-extract-si64-mm-extracti-si64.md)   
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,7 +18,8 @@ f1_keywords:
 - AFX/CObject::IsKindOf
 - AFX/CObject::IsSerializable
 - AFX/CObject::Serialize
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CObject [MFC], CObject
 - CObject [MFC], AssertValid
@@ -27,15 +29,17 @@ helpviewer_keywords:
 - CObject [MFC], IsSerializable
 - CObject [MFC], Serialize
 ms.assetid: 95e9acd3-d9eb-4ac0-b52b-ca4a501a7a3a
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 170a6db8bfbba83722f9649c52d7a7e3d65761ba
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c0384392d42196e4365c59670537819435ce1e45
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cobject-class"></a>CObject クラス
 MFC ライブラリの重要な基底クラスです。  
@@ -96,7 +100,7 @@ class AFX_NOVTABLE CObject
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CObject`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afx.h  
   
 ##  <a name="assertvalid"></a>Cobject::assertvalid  
@@ -349,7 +353,7 @@ virtual void Serialize(CArchive& ar);
   
  [!code-cpp[NVC_MFCCObjectSample#13](../../mfc/codesnippet/cpp/cobject-class_10.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)
 
 

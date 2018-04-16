@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - type_traits/std::is_nothrow_copy_constructible
 dev_langs:
@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - is_nothrow_copy_constructible
 ms.assetid: f13a0bea-63b1-492a-9a45-d445df35c282
-caps.latest.revision: 22
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 79a1745aeee861d898518540a43438f2304cbb35
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 0106b0cbb7c12a6282e50743ba239beb5bcb6e80
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="isnothrowcopyconstructible-class"></a>is_nothrow_copy_constructible クラス
 型に **nothrow** コピー コンストラクターが存在するかどうかをテストします。  
@@ -43,14 +44,13 @@ struct is_nothrow_copy_constructible;
 ## <a name="remarks"></a>コメント  
  型 `Ty` に nothrow コピー コンストラクターが存在する場合、型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
-
 
 
 

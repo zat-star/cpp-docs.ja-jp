@@ -1,11 +1,12 @@
 ---
-title: "CStrBufT クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CStrBufT クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CStrBufT
@@ -14,21 +15,24 @@ f1_keywords:
 - ATLSIMPSTR/ATL::CStrBufT::SetLength
 - ATLSIMPSTR/ATL::CStrBufT::AUTO_LENGTH
 - ATLSIMPSTR/ATL::CStrBufT::SET_LENGTH
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - strings [C++], custom memory management
 - CStrBufT class
 - shared classes, CStrBufT
 ms.assetid: 6b50fa8f-87e8-4ed4-a229-157ce128710f
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 198151cbc97625db6d14c4f98af06d6a7d48c0c7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8df7f6c1dbd9987a9f83ed5b33a4c97fd90fec7f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cstrbuft-class"></a>CStrBufT クラス
 このクラスは、自動リソース クリーンアップ`GetBuffer`と`ReleaseBuffer`、既存の呼び出し`CStringT`オブジェクト。  
@@ -81,7 +85,7 @@ class CStrBufT
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CStrBufT::AUTO_LENGTH](#auto_length)|自動的に解放時に文字列の長さを決定します。|  
 |[CStrBufT::SET_LENGTH](#set_length)|GetBuffer 時に、文字列オブジェクトの長さを設定します。|  
@@ -91,7 +95,7 @@ class CStrBufT
   
  ヘルパー クラスとして設計された`CStrBufT`について心配することがなく、文字列オブジェクトの文字バッファーを使用する開発者にとって便利な方法を呼び出すときに、または`ReleaseBuffer`です。 これは、ラッパー オブジェクトが例外または複数の既存コード パス以外の場合は必然的にスコープ外に出るため可能文字列リソースを解放するには、そのデストラクターが原因で。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsimpstr.h  
   
 ##  <a name="auto_length"></a>CStrBufT::AUTO_LENGTH  
@@ -210,7 +214,7 @@ typedef CSimpleStringT<TCharType> StringType;
 ### <a name="remarks"></a>コメント  
  **TCharType**クラス テンプレートの特定に使用される文字型です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)
 

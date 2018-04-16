@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -59,7 +60,8 @@ f1_keywords:
 - AFXTABCTRL/CMFCTabCtrl::StopResize
 - AFXTABCTRL/CMFCTabCtrl::SynchronizeScrollBar
 - AFXTABCTRL/CMFCTabCtrl::m_bEnableActivate
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCTabCtrl [MFC], ActivateMDITab
 - CMFCTabCtrl [MFC], AllowDestroyEmptyTabbedPane
@@ -111,15 +113,17 @@ helpviewer_keywords:
 - CMFCTabCtrl [MFC], SynchronizeScrollBar
 - CMFCTabCtrl [MFC], m_bEnableActivate
 ms.assetid: d441385d-2c72-4203-96fa-deae2273da35
-caps.latest.revision: "33"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6675a7b9130a87be9be36c158e5716cc1afe3d55
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1aa415846d8f504ef907bf4e9a041b86062853cd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfctabctrl-class"></a>CMFCTabCtrl Class
 `CMFCTabCtrl`クラス タブ コントロールの機能を提供します。 タブ コントロールは、上または下にフラットまたは 3D のタブを持つ、ドッキング可能なウィンドウを表示します。 タブにはテキストとイメージを表示でき、アクティブな状態のときに色を変更することもできます。  
@@ -202,7 +206,7 @@ class CMFCTabCtrl : public CMFCBaseTabCtrl
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMFCTabCtrl::m_bEnableActivate](#m_benableactivate)|アクティブなビューが新しいタブが挿入され、有効になっているときに、フォーカスを失うを防ぎます。|  
   
@@ -254,7 +258,7 @@ class CMFCTabCtrl : public CMFCBaseTabCtrl
  [!code-cpp[NVC_MFC_StateCollection#1](../../mfc/reference/codesnippet/cpp/cmfctabctrl-class_1.h)]  
 [!code-cpp[NVC_MFC_StateCollection#3](../../mfc/reference/codesnippet/cpp/cmfctabctrl-class_2.cpp)]  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxtabctrl.h  
   
 ##  <a name="activatemditab"></a>CMFCTabCtrl::ActivateMDITab  
@@ -758,7 +762,7 @@ BOOL ModifyTabStyle(Style style);
 ### <a name="remarks"></a>コメント  
  値、`style`パラメーターは、次のいずれかを指定できます`CMFCTabCtrl::Style`列挙体です。  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |STYLE_3D|角が丸い 3 次元の四角形のタブが表示されます。|  
 |STYLE_3D_ONENOTE|1 つの側が垂直および傾斜した一方の側を持ち、角が丸い 3d のタブが表示されます。|  
@@ -960,7 +964,7 @@ void SetResizeMode(ResizeMode resizeMode);
 ### <a name="remarks"></a>コメント  
  `resizeMode`パラメーターは、次のいずれかを指定できます`ResizeMode`列挙値。  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |RESIZE_NO|タブ コントロールのサイズを変更できません。|  
 |RESIZE_VERT|タブ コントロールは、いない水平、垂直方向にサイズ変更できます。|  
@@ -1008,7 +1012,7 @@ BOOL SynchronizeScrollBar(SCROLLINFO* pScrollInfo = NULL);
 ### <a name="remarks"></a>コメント  
  このメソッドでは、フラットなタブを表示するタブ コントロールのみに影響します。 スクロール バーは、すべてのタブを同時に影響します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)   

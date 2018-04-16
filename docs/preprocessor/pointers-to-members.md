@@ -4,28 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - pointers_to_members_CPP
 - vc-pragma.pointers_to_members
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - class members, pointers to
 - pragmas, pointers_to_members
 - members, pointers to
 - pointers_to_members pragma
 ms.assetid: 8325428c-c90a-4aed-9e82-cb1dda23f4ca
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4fc108f6f4755319d500227d9163dc090847e2ea
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4313aaa38d410b8e6f46594cd9ce11269b523073
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="pointerstomembers"></a>pointers_to_members
 **C 固有の仕様**  

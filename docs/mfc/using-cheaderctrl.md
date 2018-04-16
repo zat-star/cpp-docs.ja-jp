@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CHeaderCtrl
-dev_langs: C++
+f1_keywords:
+- CHeaderCtrl
+dev_langs:
+- C++
 helpviewer_keywords:
 - header controls [MFC], using
 - CHeaderCtrl class [MFC]
 ms.assetid: fb3e512b-9539-43c4-a7e7-3fafd6d0706e
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 316066f8476d413f9a92e11cc69f709080829f18
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 88b4da42944c3c42e48fae4c0cf503f7f6ace1a0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-cheaderctrl"></a>CHeaderCtrl の使い方
 クラスによって表される、ヘッダー コントロールを使用して[CHeaderCtrl](../mfc/reference/cheaderctrl-class.md)、単票形式の一覧については、列ヘッダーを表示します。 たとえば、ヘッダー コントロールは、スプレッドシートで列のコントロールを実装するために役立ちますになります。  
@@ -57,6 +62,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [ヘッダー コントロール通知の処理](../mfc/processing-header-control-notifications.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コントロール](../mfc/controls-mfc.md)
 

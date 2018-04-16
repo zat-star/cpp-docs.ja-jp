@@ -1,61 +1,66 @@
 ---
-title: "OLE DB テンプレート、属性、およびその他の実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB テンプレート"
-  - "OLE DB テンプレート, OLE DB テンプレートの概要"
-  - "OLE DB, 実装"
+title: "OLE DB テンプレート、属性、およびその他の実装 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE DB, implementations
+- OLE DB templates, about OLE DB templates
+- OLE DB templates
 ms.assetid: 0c780c1b-9bba-4788-8c33-8552d9f120ac
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: abdf0565db00b13c932366985c315c88d8d29f9e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# OLE DB テンプレート、属性、およびその他の実装
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## ATL OLE DB テンプレート  
- OLE DB テンプレートは ATL \(Active Template Library\) の一部です。一般に使用されている多くの OLE DB インターフェイスを実装するクラスを提供することで、パフォーマンスの高い OLE DB データベース テクノロジを使いやすくしています。  このテンプレート ライブラリには、OLE DB 初期アプリケーションの作成をサポートするウィザードが付属しています。  
+# <a name="ole-db-templates-attributes-and-other-implementations"></a>OLE DB テンプレート、属性、およびその他の実装
+## <a name="atl-ole-db-templates"></a>ATL OLE DB テンプレート  
+ OLE DB テンプレート、ATL (Active Template Library) の一部である、高性能な OLE DB データベース テクノロジを使いやすく多くの一般的に使用される OLE DB インターフェイスを実装するクラスを提供することによりします。 このテンプレートは、ライブラリは、OLE DB のスターター アプリケーションを作成するためのウィザードのサポートをします。  
   
- このテンプレート ライブラリは 2 つの部分から構成されます。  
+ このテンプレート ライブラリには、2 つの部分が含まれています。  
   
--   **OLE DB コンシューマー テンプレート** OLE DB クライアント \(コンシューマー\) アプリケーションの実装に使用します。  
+-   **OLE DB コンシューマー テンプレート**OLE DB クライアント (コンシューマー) アプリケーションを実装するために使用します。  
   
--   **OLE DB プロバイダー テンプレート** OLE DB サーバー \(プロバイダー\) アプリケーションの実装に使用します。  
+-   **OLE DB プロバイダー テンプレート**OLE DB サーバー (プロバイダー) アプリケーションを実装するために使用します。  
   
- OLE DB テンプレートを使用するには、C\+\+ テンプレート、COM、および OLE DB インターフェイスに関する知識が必要です。  OLE DB についてあまり知識がない場合は、「[OLE DB Programmer's Reference](https://msdn.microsoft.com/en-us/library/ms713643.aspx)」を参照してください。  
+ OLE DB テンプレートを使用するには、C++ テンプレート、COM、および OLE DB インターフェイスに関する知識が必要です。 OLE DB に慣れていない場合は、次を参照してください。 [OLE DB プログラマーズ リファレンス](https://msdn.microsoft.com/en-us/library/ms713643.aspx)です。  
   
- ほかにも、次の事項が役立ちます。  
+ 詳細については、次の操作を実行できます。  
   
--   [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)または [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)に関するトピックを参照します。  
+-   に関するトピックを参照して、 [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)または[OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)です。  
   
--   [OLE DB コンシューマー](../../data/oledb/creating-an-ole-db-consumer.md)または [OLE DB プロバイダー](../../data/oledb/creating-an-ole-db-provider.md)を作成します。  
+-   作成、 [OLE DB コンシューマー](../../data/oledb/creating-an-ole-db-consumer.md)または[OLE DB プロバイダー](../../data/oledb/creating-an-ole-db-provider.md)です。  
   
--   [OLE DB コンシューマー クラス](../../data/oledb/ole-db-consumer-templates-reference.md)または [OLE DB プロバイダー クラス](../../data/oledb/ole-db-provider-templates-reference.md)の一覧を参照します。  
+-   一覧を表示[OLE DB コンシューマー クラス](../../data/oledb/ole-db-consumer-templates-reference.md)または[OLE DB プロバイダー クラス](../../data/oledb/ole-db-provider-templates-reference.md)です。  
   
--   [OLE DB テンプレート サンプル](http://msdn.microsoft.com/ja-jp/08958863-0b5f-41ad-ae99-fca7440c553c)の一覧を参照します。  
+-   一覧を表示[OLE DB テンプレート サンプル](http://msdn.microsoft.com/en-us/08958863-0b5f-41ad-ae99-fca7440c553c)です。  
   
--   「[OLE DB Programmer's Reference](https://msdn.microsoft.com/en-us/library/ms713643.aspx)」\([!INCLUDE[winsdkshort](../../atl/reference/includes/winsdkshort_md.md)]\) を参照してください。  
+-   参照してください[OLE DB プログラマーズ リファレンス](https://msdn.microsoft.com/en-us/library/ms713643.aspx)(Windows SDK) にします。  
   
-## OLE DB 属性  
- [OLE DB コンシューマー属性](../../windows/ole-db-consumer-attributes.md)には、OLE DB コンシューマーを簡単に作成する方法が用意されています。  OLE DB 属性は、[OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-reference.md)に基づいてコードを挿入し、OLE DB コンシューマーとプロバイダーを作成します。  属性でサポートされていない機能を指定する場合は、コード内で OLE DB テンプレートを属性と組み合わせて使用できます。  
+## <a name="ole-db-attributes"></a>OLE DB 属性  
+ [OLE DB コンシューマー属性](../../windows/ole-db-consumer-attributes.md)OLE DB コンシューマーを作成する便利な手段を提供します。 OLE DB 属性に基づいたコードを挿入する、 [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-reference.md)して OLE DB コンシューマーとプロバイダーを作成します。 属性でサポートされていない機能を指定する必要がある場合は、コードで属性と組み合わせて OLE DB テンプレートを使用することができます。  
   
-## MFC OLE DB クラス  
- MFC ライブラリには、データベース レコードをコントロールに表示する [COleDBRecordView](../../mfc/reference/coledbrecordview-class.md) という 1 つのクラスが含まれています。  ビューは、`CRowset` オブジェクトに直接接続されるフォーム ビューであり、`CRowset` オブジェクトのフィールドをダイアログ テンプレートのコントロールに表示します。  最初、次、前、または最後のレコードに移動するための既定の実装と、ビューに現在表示されているレコードを更新するインターフェイスも用意されています。  詳細については、「`COleDBRecordView`」を参照してください。  
+## <a name="mfc-ole-db-classes"></a>MFC OLE DB クラス  
+ MFC ライブラリの 1 つのクラス ライブラリが[COleDBRecordView](../../mfc/reference/coledbrecordview-class.md)コントロールにデータベース レコードを表示します。 ビューに直接接続されているフォーム ビュー、`CRowset`オブジェクトし、のフィールドを表示、`CRowset`ダイアログ テンプレートのコントロール内のオブジェクト。 移動するための既定の実装も用意されて、最初に [次へ]、前、または最後のレコードと、ビューの現在のレコードを更新するためのインターフェイスです。 詳細については、「`COleDBRecordView`」を参照してください。  
   
-## OLE DB SDK インターフェイス  
- OLE DB テンプレートが OLE DB 機能をサポートしていない場合は、OLE DB インターフェイス自体を使用する必要があります。  詳細については、[!INCLUDE[winsdkshort](../../atl/reference/includes/winsdkshort_md.md)] の「[OLE DB Programmer's Reference](https://msdn.microsoft.com/en-us/library/ms713643.aspx)」を参照してください。  
+## <a name="ole-db-sdk-interfaces"></a>OLE DB SDK のインターフェイス  
+ ここで、OLE DB テンプレート機能をサポートしない OLE DB の場合には、OLE DB インターフェイスそのものを使用する必要があります。 詳細については、次を参照してください。 [OLE DB プログラマーズ リファレンス](https://msdn.microsoft.com/en-us/library/ms713643.aspx)Windows SDK に含まれています。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プログラミング](../../data/oledb/ole-db-programming.md)   
  [OLE DB プログラミングの概要](../../data/oledb/ole-db-programming-overview.md)

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - std::<=
 - std.operator<=
@@ -23,16 +23,17 @@ helpviewer_keywords:
 - <= operator, with specific objects
 - <= operator
 ms.assetid: 338577dd-dc88-4a2b-9e12-0379c54fc8a2
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 899c146a3858c6ffbbd3ecf05cf72ca8870223f0
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 43a0e51a226340965d24b0e2979c440b97b5fefe
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="operatorlt-ltsample-containergt"></a>operator&lt;= (&lt;sample container&gt;)
 > [!NOTE]
@@ -52,7 +53,6 @@ bool operator<=(
 ## <a name="return-value"></a>戻り値  
  `!(right < left)` を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<sample container>](../standard-library/sample-container.md)
-
 

@@ -1,29 +1,35 @@
 ---
-title: "auto_gcroot::attach |Microsoft ドキュメント"
-ms.custom: 
+title: auto_gcroot::attach |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - auto_gcroot.attach
 - auto_gcroot::attach
 - msclr::auto_gcroot::attach
 - msclr.auto_gcroot.attach
-dev_langs: C++
-helpviewer_keywords: auto_gcroot::attach
+dev_langs:
+- C++
+helpviewer_keywords:
+- auto_gcroot::attach
 ms.assetid: 996ede65-bcb5-41f2-bfbf-507f8a578241
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 776d504af3f2b657629604323670fd59d0bb18c7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c244e9fde20498c5d688dbebbc2c35294164cf11
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="autogcrootattach"></a>auto_gcroot::attach
 アタッチ`auto_gcroot`オブジェクトにします。  
@@ -118,12 +124,12 @@ Hello from fourth A!
 in ClassA destructor:fourth  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto_gcroot メンバー](../dotnet/auto-gcroot-members.md)   
  [auto_gcroot::operator =](../dotnet/auto-gcroot-operator-assign.md)   
  [auto_gcroot::release](../dotnet/auto-gcroot-release.md)

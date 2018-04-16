@@ -5,18 +5,17 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - chrono/std::operator modulo
 ms.assetid: c5a19267-4684-40c1-b7a9-cc1012b058f3
-caps.latest.revision: 8
+caps.latest.revision: 
 manager: ghogen
+ms.openlocfilehash: 27e47127369c78c331cc052d934f4d62d6d00707
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: bcd1813ec127b7b5243d61e015bb8bec444cf9cb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltchronogt-operators"></a>&lt;chrono&gt; 演算子
 ||||  
@@ -238,7 +237,7 @@ constexpr bool operator<(
   
  `true` が `Left` に先行する場合、2 番目の関数は `Right` を返します。 それ以外の場合、関数は `false` を返します。  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの値がもう一方の `duration` または `time_point` オブジェクトの値未満かどうかを判断します。  
   
 ```  
@@ -315,7 +314,7 @@ constexpr bool operator>(
 ### <a name="return-value"></a>戻り値  
  各関数から返される値は `Right < Left` です。  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  一方の [duration](../standard-library/duration-class.md) または [time_point](../standard-library/time-point-class.md) オブジェクトの値がもう一方の `duration` または `time_point` オブジェクトの値以上かどうかを判断します。  
   
 ```  
@@ -375,7 +374,6 @@ constexpr typename common_type<duration<Rep1, _Period1>, duration<Rep2, Period2>
   
  2 番目の関数は、`Left` を `Right` で除算した剰余を表す値を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<chrono>](../standard-library/chrono.md)
-
 

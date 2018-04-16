@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,20 +13,23 @@ f1_keywords:
 - AFXOLE/COleResizeBar
 - AFXOLE/COleResizeBar::COleResizeBar
 - AFXOLE/COleResizeBar::Create
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COleResizeBar [MFC], COleResizeBar
 - COleResizeBar [MFC], Create
 ms.assetid: 56a708d9-28c5-4eb0-9404-77b688d91c63
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3369ef30758b687c94c97e5fb0cf18bb7565ea83
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0cc0b9f85392a69191ee3c948985c61bd2d1f494
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coleresizebar-class"></a>COleResizeBar クラス
 OLE の埋め込み先アイテムのサイズ変更をサポートするコントロール バーの一種です。  
@@ -68,7 +72,7 @@ class COleResizeBar : public CControlBar
   
  `COleResizeBar`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxole.h  
   
 ##  <a name="coleresizebar"></a>COleResizeBar::COleResizeBar  
@@ -104,7 +108,7 @@ virtual BOOL Create(
 ### <a name="return-value"></a>戻り値  
  サイズ変更バーが作成された場合は 0 以外。それ以外の場合 0 を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル SUPERPAD](../../visual-cpp-samples.md)   
  [CControlBar クラス](../../mfc/reference/ccontrolbar-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

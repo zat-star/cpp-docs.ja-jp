@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - lengths, strings
 - string length, maximum
 - maximum string length
 - strings [C++], length
 ms.assetid: 99a80e4a-6212-47b7-a6bd-bdf99bd44928
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f3defc694e2ac3f859c160a2e34aecefd42627c4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fa558129368559f3edddf9037f7f504933eb2563
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="maximum-string-length"></a>最大文字列長
 **Microsoft 固有の仕様**  
@@ -33,7 +37,7 @@ ms.lasthandoff: 10/24/2017
   
  引用符で囲まれた個々の文字列が 2048 バイトを超えることはできませんが、文字列を連結することで、ほぼ 65535 バイトの文字列リテラルを作成できます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 文字列リテラル](../c-language/c-string-literals.md)

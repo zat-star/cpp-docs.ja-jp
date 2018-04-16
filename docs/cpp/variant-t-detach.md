@@ -4,27 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - _variant_t::Detach
 - _variant_t.Detach
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - VARIANT object [C++], detatch
 - Detach method [C++]
 - VARIANT object
 ms.assetid: c348ac08-62cf-4657-a16f-974a79c12158
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 014de597ffbc9a7004f821393902ffe05ac1f278
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 577b4874dd6d89c0c6c60b1a7981e74944e77ba8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="varianttdetach"></a>_variant_t::Detach
 **Microsoft 固有の仕様**  
@@ -47,5 +51,5 @@ VARIANT Detach( );
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_variant_t クラス](../cpp/variant-t-class.md)

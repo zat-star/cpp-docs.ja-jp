@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -52,7 +53,8 @@ f1_keywords:
 - AFXDOCKINGPANESROW/CDockingPanesRow::ShowDockSiteRow
 - AFXDOCKINGPANESROW/CDockingPanesRow::ShowPane
 - AFXDOCKINGPANESROW/CDockingPanesRow::UpdateVisibleState
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDockingPanesRow [MFC], AddPane
 - CDockingPanesRow [MFC], AddPaneFromRow
@@ -97,15 +99,17 @@ helpviewer_keywords:
 - CDockingPanesRow [MFC], ShowPane
 - CDockingPanesRow [MFC], UpdateVisibleState
 ms.assetid: e7a17832-0ebb-4bce-b799-cec9b60f76fe
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 173be0b50b0a69f10e48abac9b4018b809e96991
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eb8cb38c8ad5f744cab49c25d8de9c7cea58959a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdockingpanesrow-class"></a>CDockingPanesRow クラス
 ドッキング サイトの同じ水平または垂直の行 (列) に配置されるペインの一覧を管理します。  
@@ -186,7 +190,7 @@ class CDockingPanesRow : public CObject
   
  [CDockingPanesRow](../../mfc/reference/cdockingpanesrow-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxDockingPanesRow.h  
   
 ##  <a name="addpane"></a>CDockingPanesRow::AddPane  
@@ -780,7 +784,7 @@ virtual void UpdateVisibleState(BOOL bDelay);
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   

@@ -4,20 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 02173eae-731b-49bc-b412-f1f69388b99d
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 25ac6c80689e60a412f0e5b66ddbf3aa0d8ab271
-ms.sourcegitcommit: 1b480aa74886930b3bd0435d71cfcc3ccda36424
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 3b5ff1f5bd36c2cf834375ac0999db835b731284
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="how-to-complete-asynchronous-operations-using-wrl"></a>方法: WRL を使用して非同期操作を完了する
 このドキュメントは、Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用して、非同期操作を開始し、操作が完了した時点に作業を実行する方法を示しています。  
@@ -33,7 +38,7 @@ ms.lasthandoff: 11/15/2017
  以下の手順では、非同期タイマーを開始し、そのタイマーが期限切れになるのを待機します。 完全な例を次に示します。  
   
 > [!WARNING]
->  ユニバーサル Windows プラットフォーム アプリで Windows ランタイム C++ テンプレート ライブラリを使用すると、通常は、この例は、図のコンソール アプリを使用します。 などの関数`wprintf_s`ユニバーサル Windows プラットフォーム アプリからは使用できません。 型およびユニバーサル Windows プラットフォーム アプリで使用できる関数の詳細については、次を参照してください。 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)と[Win32 および COM の Windows ストア アプリ](http://msdn.microsoft.com/library/windows/apps/br205757.aspx)です。  
+>  ユニバーサル Windows プラットフォーム (UWP) アプリで Windows ランタイム C++ テンプレート ライブラリを使用すると、通常は、この例は、図のコンソール アプリを使用します。 などの関数`wprintf_s`UWP アプリからは使用できません。 UWP アプリで使用できる関数と型に関する詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)と[Win32 および COM を UWP アプリの](/uwp/win32-and-com/win32-and-com-for-uwp-apps)します。  
   
 1.  含まれます (`#include`) 必要な Windows ランタイム、Windows ランタイム C++ テンプレート ライブラリ、または C++ 標準ライブラリのヘッダー。  
   
@@ -125,5 +130,5 @@ ms.lasthandoff: 11/15/2017
   
  **cl.exe wrl 消費 asyncOp.cpp runtimeobject.lib**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)

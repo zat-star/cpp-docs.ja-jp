@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -12,22 +13,25 @@ f1_keywords:
 - _pgmptr
 - wpgmptr
 - _wpgmptr
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - wpgmptr function
 - _wpgmptr function
 - _pgmptr function
 - pgmptr function
 ms.assetid: 4d44b515-0eff-4136-8bc4-684195f218f5
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 21d3ad8d4cbd73c2a1ab99497db2f671196de523
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e8bf941f5e020a608817919b2819f2d6be023d89
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pgmptr-wpgmptr"></a>_pgmptr、_wpgmptr
 実行可能ファイルのパスです。 非推奨。[_get_pgmptr](../c-runtime-library/reference/get-pgmptr.md) と [_get_wpgmptr](../c-runtime-library/reference/get-wpgmptr.md) を使用してください。  
@@ -56,7 +60,7 @@ C> hello
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tpgmptr`|`_pgmptr`|`_pgmptr`|`_wpgmptr`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |変数|必須ヘッダー|  
 |--------------|---------------------|  
@@ -82,5 +86,5 @@ int main( void )
   
  `%Fs` を `%S`に、`main` を `wmain` に変更することで、`_wpgmptr` を使用できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル変数](../c-runtime-library/global-variables.md)

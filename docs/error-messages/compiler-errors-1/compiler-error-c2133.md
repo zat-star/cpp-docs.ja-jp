@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2133
 ms.assetid: 8942f9e8-9818-468f-97db-09dbd124fcae
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bcd8b35663ae10551f43a41bc4324c20407bfee4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: c04452ec947adefa6b30928dc75de4edffc361fc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2133"></a>コンパイラ エラー C2133
 'identifier': 不明なサイズ  
@@ -41,7 +42,7 @@ struct X {
 };  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C2133b.cpp  

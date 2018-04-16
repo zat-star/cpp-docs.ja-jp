@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -47,7 +48,8 @@ f1_keywords:
 - AFXMULTIPANEFRAMEWND/CMultiPaneFrameWnd::SetPreDockState
 - AFXMULTIPANEFRAMEWND/CMultiPaneFrameWnd::StoreRecentDockSiteInfo
 - AFXMULTIPANEFRAMEWND/CMultiPaneFrameWnd::StoreRecentTabRelatedInfo
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMultiPaneFrameWnd [MFC], AddPane
 - CMultiPaneFrameWnd [MFC], AddRecentPane
@@ -87,15 +89,17 @@ helpviewer_keywords:
 - CMultiPaneFrameWnd [MFC], StoreRecentDockSiteInfo
 - CMultiPaneFrameWnd [MFC], StoreRecentTabRelatedInfo
 ms.assetid: 989a548e-0d70-46b7-a513-8cf740e1be3e
-caps.latest.revision: "36"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4e1099d7d19ec27c55442ce6a0eff61486346466
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ed8ccb584b9bf750e1f17da9ce3e0bf71058abbc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmultipaneframewnd-class"></a>CMultiPaneFrameWnd クラス
 `CMultiPaneFrameWnd`クラスを拡張[CPaneFrameWnd クラス](../../mfc/reference/cpaneframewnd-class.md)です。 複数のペインをサポートします。 コントロール バーに埋め込まれたハンドルは 1 つではなく`CMultiPaneFrameWnd`が含まれています、 [CPaneContainerManager クラス](../../mfc/reference/cpanecontainermanager-class.md)いずれかをドッキングするのには、ユーザーを有効にするオブジェクト`CMultiPaneFrameWnd`別に、動的に複数の浮動小数点の作成、タブ付きwindows です。  
@@ -177,7 +181,7 @@ class CMultiPaneFrameWnd : public CPaneFrameWnd
   
  [CMultiPaneFrameWnd](../../mfc/reference/cmultipaneframewnd-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxMultiPaneFrameWnd.h  
   
 ##  <a name="addpane"></a>CMultiPaneFrameWnd::AddPane  
@@ -654,7 +658,7 @@ virtual void StoreRecentTabRelatedInfo(
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CPaneFrameWnd クラス](../../mfc/reference/cpaneframewnd-class.md)

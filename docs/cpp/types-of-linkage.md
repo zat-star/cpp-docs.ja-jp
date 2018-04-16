@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - no linkage
 - linkage [C++], none
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - internal linkage, types of linkage
 - external linkage, linkage types
 ms.assetid: 41326c7f-4602-4bad-a648-697604858ba0
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 154c6a1694055a65eed262055997ba88aa07b18c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f71fc6e0d0251db38cd1c3dc1032ba6c71ba3ba4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="types-of-linkage"></a>リンケージの種類
 オブジェクトと関数の名前が翻訳単位間でどのように共有されるかを、リンケージと呼びます。 これらの名前が持つ可能性のあるリンケージは、次のとおりです。  
@@ -51,5 +55,5 @@ ms.lasthandoff: 10/24/2017
   
 -   リンケージなし。この場合、各名前は一意のエンティティを参照します。 別のスコープの同じ名前が、同じオブジェクトを参照していないことがあります。 列挙はその一例です (ただし、リンケージを持たないオブジェクトへのポインターを渡すことができます。 これにより、他の翻訳単位内のオブジェクトにアクセスできます)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)

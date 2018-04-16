@@ -4,14 +4,16 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - __lzcnt64
 - __lzcnt16
 - __lzcnt
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __lzcnt intrinsic
 - lzcnt instruction
@@ -21,15 +23,17 @@ helpviewer_keywords:
 - lzcnt64 intrinsic
 - __lzcnt64 intrinsic
 ms.assetid: 412113e7-052e-46e5-8bfa-d5ad72abc10e
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 983d8ff684887ba670e81bf6561d2f47022ff744
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 85af6534ccf578bccabcd0f7b517234b2b560b6f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="lzcnt16-lzcnt-lzcnt64"></a>__lzcnt16、__lzcnt、__lzcnt64
 **Microsoft 固有の仕様**  
@@ -57,7 +61,7 @@ unsigned __int64 __lzcnt64(
 ## <a name="return-value"></a>戻り値  
  先行ゼロのビットの数、`value`パラメーター。 場合`value`0 の場合は、戻り値が入力オペランド (16、32、または 64) のサイズ。 場合、最もの上位ビット`value`は 1 つは、戻り値は 0 です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -115,5 +119,5 @@ __lzcnt(0xffffffff) = 0
 **Microsoft 固有の仕様はここまで**  
  このコンテンツの一部は、高度なマイクロ デバイス, Inc. によって Copyright 2007All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

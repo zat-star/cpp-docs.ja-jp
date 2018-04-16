@@ -1,55 +1,57 @@
 ---
-title: "CDynamicAccessor::SetBlobSizeLimit | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDynamicAccessor::SetBlobSizeLimit"
-  - "SetBlobSizeLimit"
-  - "CDynamicAccessor.SetBlobSizeLimit"
-  - "ATL.CDynamicAccessor.SetBlobSizeLimit"
-  - "ATL::CDynamicAccessor::SetBlobSizeLimit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetBlobSizeLimit メソッド"
+title: CDynamicAccessor::SetBlobSizeLimit | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CDynamicAccessor::SetBlobSizeLimit
+- SetBlobSizeLimit
+- CDynamicAccessor.SetBlobSizeLimit
+- ATL.CDynamicAccessor.SetBlobSizeLimit
+- ATL::CDynamicAccessor::SetBlobSizeLimit
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetBlobSizeLimit method
 ms.assetid: fb8cb85d-f841-408e-a344-37895b10993f
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: a2fac05c1380e2b612cb39994716387d99bef237
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CDynamicAccessor::SetBlobSizeLimit
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-最大バイト BLOB のサイズを設定します。  
+# <a name="cdynamicaccessorsetblobsizelimit"></a>CDynamicAccessor::SetBlobSizeLimit
+BLOB の最大サイズをバイト単位で設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```cpp
+      void SetBlobSizeLimit(DBLENGTH nBlobSize);  
 ```  
   
-      void SetBlobSizeLimit(  
-   DBLENGTH nBlobSize   
-);  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nBlobSize`  
- BLOB のサイズ制限を指定します。  
+ BLOB のサイズの上限を指定します。  
   
-## 解説  
- 最大バイト BLOB のサイズを設定して; この値は、列のデータが BLOB として扱われます。  一部のプロバイダーは列のきわめて大きなサイズを与えます \(2 GB など\)。  列のメモリを割り当てようとしてではなく、このサイズ \(通常は Blob としてその列をバインドするようにします。  当然ではすべてのメモリを割り当てる必要はありません。まだ切り捨ての重大なしのすべてのデータを読み取ることができます。  ただし、ネイティブ データ型の、列をバインドするために `CDynamicAccessor` を強制することが必要な場合もあります。  これを行うには、**開く**を呼び出す前に `SetBlobSizeLimit` を呼び出します。  
+## <a name="remarks"></a>コメント  
+ BLOB の最大サイズ (バイト単位) に設定します。この値より大きい列のデータは、BLOB として扱われます。 一部のプロバイダーは、(2 GB) などの列のサイズがかなり大きくを提供します。 列サイズのメモリを割り当てるしようとするではなく、通常しようとする Blob としてこれらの列をバインドします。 その方法ですべてのメモリを割り当てることがないが、まだ切り捨てを心配せず、すべてのデータを読み取ることができます。 ただし、場合がありますを強制する`CDynamicAccessor`ネイティブ データ型の大きな列をバインドします。 これを行うには、呼び出す`SetBlobSizeLimit`呼び出す前に**開く**です。  
   
- コンストラクター メソッド [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) は、8,000 バイトの既定値に最大 BLOB のサイズを設定します。  
+ コンス トラクター メソッド[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) BLOB の最大サイズを 8,000 バイトの既定値に設定します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)

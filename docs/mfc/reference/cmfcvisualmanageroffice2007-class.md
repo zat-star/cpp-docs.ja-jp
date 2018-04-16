@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -122,7 +123,8 @@ f1_keywords:
 - AFXVISUALMANAGEROFFICE2007/CMFCVisualManagerOffice2007::OnSetWindowRegion
 - AFXVISUALMANAGEROFFICE2007/CMFCVisualManagerOffice2007::OnUpdateSystemColors
 - AFXVISUALMANAGEROFFICE2007/CMFCVisualManagerOffice2007::SetResourceHandle
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCVisualManagerOffice2007 [MFC], AlwaysHighlight3DTabs
 - CMFCVisualManagerOffice2007 [MFC], CleanStyle
@@ -237,15 +239,17 @@ helpviewer_keywords:
 - CMFCVisualManagerOffice2007 [MFC], OnUpdateSystemColors
 - CMFCVisualManagerOffice2007 [MFC], SetResourceHandle
 ms.assetid: fb687c74-6d08-4c72-8acf-27f75dda6d6b
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 215536dbcdba2ee5ee70a312890ea197d62f105b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8b4661b1c70e033e081096f49e8b5edae7d4a255
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcvisualmanageroffice2007-class"></a>CMFCVisualManagerOffice2007 クラス
 `CMFCVisualManagerOffice2007`Microsoft Office 2007 の外観をアプリケーションに提供します。 
@@ -400,7 +404,7 @@ class CMFCVisualManagerOffice2007 : public CMFCVisualManagerOffice2003
   
  [CMFCVisualManagerOffice2007](../../mfc/reference/cmfcvisualmanageroffice2007-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxvisualmanageroffice2007.h  
   
 ##  <a name="alwayshighlight3dtabs"></a>CMFCVisualManagerOffice2007::AlwaysHighlight3DTabs  
@@ -2402,7 +2406,7 @@ static void __stdcall SetResourceHandle(HINSTANCE hinstRes);
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCVisualManager クラス](../../mfc/reference/cmfcvisualmanager-class.md)   

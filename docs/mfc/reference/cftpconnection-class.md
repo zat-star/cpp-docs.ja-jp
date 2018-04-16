@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -22,7 +23,8 @@ f1_keywords:
 - AFXINET/CFtpConnection::RemoveDirectory
 - AFXINET/CFtpConnection::Rename
 - AFXINET/CFtpConnection::SetCurrentDirectory
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CFtpConnection [MFC], CFtpConnection
 - CFtpConnection [MFC], Command
@@ -37,15 +39,17 @@ helpviewer_keywords:
 - CFtpConnection [MFC], Rename
 - CFtpConnection [MFC], SetCurrentDirectory
 ms.assetid: 5e3a0501-8893-49cf-a3d5-0628d8d6b936
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6a800ff5c8c071e966bbc1e5297fb706627c8d17
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a20ee1e3de4d5c9f61437c79bd2eda4240947947
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cftpconnection-class"></a>CFtpConnection クラス
 FTP サーバーへの接続、インターネットを管理し、そのサーバー上のディレクトリおよびファイルの直接の操作を実行できます。  
@@ -97,7 +101,7 @@ class CFtpConnection : public CInternetConnection
   
  `CFtpConnection`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxinet.h  
   
 ##  <a name="cftpconnection"></a>CFtpConnection::CFtpConnection  
@@ -494,7 +498,7 @@ BOOL SetCurrentDirectory(LPCTSTR pstrDirName);
   
  使用して[GetCurrentDirectory](#getcurrentdirectory)を FTP サーバーの現在の作業ディレクトリを決定します。 リモート システムに接続されていることをルート ディレクトリとは限りません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数クラス](../../mfc/reference/cinternetconnection-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [関数クラス](../../mfc/reference/cinternetconnection-class.md)   

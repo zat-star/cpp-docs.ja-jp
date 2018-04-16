@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ITarget
 - AGENTS/concurrency::ITarget
@@ -16,18 +17,22 @@ f1_keywords:
 - AGENTS/concurrency::ITarget::link_source
 - AGENTS/concurrency::ITarget::unlink_source
 - AGENTS/concurrency::ITarget::unlink_sources
-dev_langs: C++
-helpviewer_keywords: ITarget class
+dev_langs:
+- C++
+helpviewer_keywords:
+- ITarget class
 ms.assetid: 5678db25-112a-4f72-be13-42e16b67c48b
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8a40b73d752a40c94a8ea47acef40ea12f2e4504
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 04c0750c6a33756ca2fe207c4c4066a5b5b8da96
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="itarget-class"></a>ITarget クラス
 `ITarget` クラスは、すべてのターゲット ブロックのインターフェイスです。 ターゲット ブロックは、`ISource` ブロックから提供されたメッセージを処理します。  
@@ -62,7 +67,7 @@ class ITarget;
   
 |名前|説明|  
 |----------|-----------------|  
-|[伝達](#propagate)|派生クラスでオーバーライドされると、非同期的にメッセージ ソース ブロックからこのターゲット ブロックに渡します。|  
+|[propagate](#propagate)|派生クラスでオーバーライドされると、非同期的にメッセージ ソース ブロックからこのターゲット ブロックに渡します。|  
 |[send](#send)|派生クラスでオーバーライドされると、ターゲット ブロックにメッセージを同期的に渡します。|  
 |[supports_anonymous_source](#supports_anonymous_source)|派生クラスでオーバーライドされると、true またはメッセージ ブロックがそれにリンクされていないソースによって提供されるメッセージを受け付けるかどうかに応じて false を返します。 オーバーライドされたメソッドが返された場合`true`ターゲットは、提供されたメッセージを延期できないように後で、延期されたメッセージの消費量がそのソース リンク レジストリで特定するのには、ソースが必要です。|  
   
@@ -80,12 +85,12 @@ class ITarget;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `ITarget`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
   
-##  <a name="dtor"></a>~ ITarget 
+##  <a name="dtor"></a> ~ITarget 
 
  `ITarget` オブジェクトを破棄します。  
   
@@ -93,7 +98,7 @@ class ITarget;
 virtual ~ITarget();
 ```  
   
-##  <a name="link_source"></a>link_source 
+##  <a name="link_source"></a> link_source 
 
  派生クラスでオーバーライドされるは、これを指定されたソース ブロックをリンク`ITarget`ブロックします。  
   
@@ -108,7 +113,7 @@ virtual void link_source(_Inout_ ISource<T>* _PSource) = 0;
 ### <a name="remarks"></a>コメント  
  この関数は、上で直接呼び出すことはできません、`ITarget`ブロックします。 使用してブロックを接続する必要があります、`link_target`メソッドを`ISource`呼び出しは、ブロック、`link_source`対応するターゲットのメソッドです。  
   
-##  <a name="propagate"></a>伝達 
+##  <a name="propagate"></a> 伝達 
 
  派生クラスでオーバーライドされると、非同期的にメッセージ ソース ブロックからこのターゲット ブロックに渡します。  
   
@@ -131,7 +136,7 @@ virtual message_status propagate(
 ### <a name="remarks"></a>コメント  
  メソッドをスロー、 [invalid_argument](../../../standard-library/invalid-argument-class.md)いずれかの例外、`_PMessage`または`_PSource`パラメーターは`NULL`します。  
   
-##  <a name="send"></a>送信 
+##  <a name="send"></a> 送信 
 
  派生クラスでオーバーライドされると、ターゲット ブロックにメッセージを同期的に渡します。  
   
@@ -158,7 +163,7 @@ virtual message_status send(
   
  ときに`send`を返します、メッセージが、既にされて受け入れられたら、し、ターゲット ブロックに転送、または、ターゲットが拒否されました。  
   
-##  <a name="supports_anonymous_source"></a>supports_anonymous_source 
+##  <a name="supports_anonymous_source"></a> supports_anonymous_source 
 
  派生クラスでオーバーライドされると、true またはメッセージ ブロックがそれにリンクされていないソースによって提供されるメッセージを受け付けるかどうかに応じて false を返します。 オーバーライドされたメソッドが返された場合`true`ターゲットは、提供されたメッセージを延期できないように後で、延期されたメッセージの消費量がそのソース リンク レジストリで特定するのには、ソースが必要です。  
   
@@ -167,9 +172,9 @@ virtual bool supports_anonymous_source();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `true`ブロックにリンクされていないソースからのメッセージを受け入れることができる場合`false`それ以外の場合。  
+ `true` ブロックにリンクされていないソースからのメッセージを受け入れることができる場合`false`それ以外の場合。  
   
-##  <a name="unlink_source"></a>unlink_source 
+##  <a name="unlink_source"></a> unlink_source 
 
  派生クラスでオーバーライドされると、これから指定されたソース ブロックのリンクを解除`ITarget`ブロックします。  
   
@@ -184,7 +189,7 @@ virtual void unlink_source(_Inout_ ISource<T>* _PSource) = 0;
 ### <a name="remarks"></a>コメント  
  この関数は、上で直接呼び出すことはできません、`ITarget`ブロックします。 使用してブロックを切断する必要があります、`unlink_target`または`unlink_targets`メソッド`ISource`呼び出しは、ブロック、`unlink_source`対応するターゲットのメソッドです。  
   
-##  <a name="unlink_sources"></a>unlink_sources 
+##  <a name="unlink_sources"></a> unlink_sources 
 
  派生クラスでオーバーライドされると、これからすべてのソース ブロックのリンクを解除`ITarget`ブロックします。  
   
@@ -192,6 +197,6 @@ virtual void unlink_source(_Inout_ ISource<T>* _PSource) = 0;
 virtual void unlink_sources() = 0;
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [ISource クラス](isource-class.md)

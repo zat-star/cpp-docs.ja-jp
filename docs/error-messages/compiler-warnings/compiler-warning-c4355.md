@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4355
-dev_langs: C++
-helpviewer_keywords: C4355
+f1_keywords:
+- C4355
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4355
 ms.assetid: b819ecab-8a07-42d7-8fa4-1180d51626c0
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 061ad3df17cf9c86fbc5ac98048932aff8b0b25b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b7194431235e1bf375d4e6b99b66bf9a4b32e63a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-c4355"></a>コンパイラの警告 C4355
 'this' : ベース メンバー初期化リストで使用されました。  

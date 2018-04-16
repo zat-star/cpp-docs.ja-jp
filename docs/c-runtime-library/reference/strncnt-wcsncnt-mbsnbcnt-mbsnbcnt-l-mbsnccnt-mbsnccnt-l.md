@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _mbsnbcnt_l
 - _mbsnccnt
@@ -40,7 +41,8 @@ f1_keywords:
 - mbsnccnt
 - _strncnt
 - _wcsncnt
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _strncnt function
 - _mbsnbcnt function
@@ -57,21 +59,23 @@ helpviewer_keywords:
 - _mbsnccnt function
 - _wcsncnt function
 ms.assetid: 2a022e9e-a307-4acb-a66b-e56e5357f848
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cb2434cf25e6746637c13cdf8df7725555e839c9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bcc69e67058e782bd3ce43b835497dab756347a0
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strncnt-wcsncnt-mbsnbcnt-mbsnbcntl-mbsnccnt-mbsnccntl"></a>_strncnt、_wcsncnt、_mbsnbcnt、_mbsnbcnt_l、_mbsnccnt、_mbsnccnt_l
 指定されたカウント内で文字数またはバイト数を返します。  
   
 > [!IMPORTANT]
->  `_mbsnbcnt`、`_mbsnbcnt_l`、`_mbsnccnt`、および `_mbsnccnt_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbsnbcnt`、`_mbsnbcnt_l`、`_mbsnccnt`、および `_mbsnccnt_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -127,11 +131,11 @@ size_t _mbsnccnt_l(
   
  `str` が null ポインターであるか `count` が 0 の場合、これらの関数は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーを呼び出します。また、`errno` を `EINVAL` に設定し、0 を返します。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
-|ルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
+|ルーチンによって返される値|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
 |-------------|--------------------------------------|--------------------|-----------------------|  
 |`_tcsnbcnt`|`_strncnt`|`_mbsnbcnt`|`_wcsncnt`|  
 |`_tcsnccnt`|`_strncnt`|`_mbsnbcnt`|`n/a`|  
@@ -139,9 +143,9 @@ size_t _mbsnccnt_l(
 |`_wcsncnt`|`n/a`|`n/a`|`_mbsnccnt`|  
 |`n/a`|`n/a`|`_mbsnbcnt_l`|`_mbsnccnt_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_mbsnbcnt`|\<mbstring.h>|  
 |`_mbsnbcnt_l`|\<mbstring.h>|  
@@ -150,7 +154,7 @@ size_t _mbsnccnt_l(
 |`_strncnt`|\<tchar.h>|  
 |`_wcsncnt`|\<tchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -179,7 +183,7 @@ int main( void )
 The first 10 characters are single-byte.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

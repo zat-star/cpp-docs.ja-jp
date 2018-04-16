@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: vc-attr.first_is
-dev_langs: C++
-helpviewer_keywords: first_is attribute
+f1_keywords:
+- vc-attr.first_is
+dev_langs:
+- C++
+helpviewer_keywords:
+- first_is attribute
 ms.assetid: 89acbf56-3b38-4d44-83e8-1ce2f6f74ffd
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 478b4f501e16ab9fff2e66a4b36fac6e8d29ac70
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 13637f9381e233f5bcffe4dbacc9a86765b40b84
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="firstis"></a>first_is
 転送する最初の配列要素のインデックスを指定します。  
@@ -63,20 +70,20 @@ requestedit] HRESULT get_I([out, retval]long *i);
 };  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|フィールドに`struct`または**共用体**パラメーターをインターフェイスでは、インターフェイス メソッド|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
  詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDL 属性](../windows/idl-attributes.md)   
  [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
  [パラメーター属性](../windows/parameter-attributes.md)   

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -43,7 +44,8 @@ f1_keywords:
 - AFXCMN/CTabCtrl::SetMinTabWidth
 - AFXCMN/CTabCtrl::SetPadding
 - AFXCMN/CTabCtrl::SetToolTips
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CTabCtrl [MFC], CTabCtrl
 - CTabCtrl [MFC], AdjustRect
@@ -79,15 +81,17 @@ helpviewer_keywords:
 - CTabCtrl [MFC], SetPadding
 - CTabCtrl [MFC], SetToolTips
 ms.assetid: 42e4aff6-46ae-4b2c-beaa-d1dce8d82138
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e9720d407fb13b5a87335da08eb40c2886fdcdb3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ed981a2f7345a59f3df479bcd82b9326fd84de12
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctabctrl-class"></a>CTabCtrl クラス
 Windows のコモン タブ コントロールの機能が用意されています。  
@@ -159,7 +163,7 @@ class CTabCtrl : public CWnd
   
  `CTabCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="adjustrect"></a>CTabCtrl::AdjustRect  
@@ -471,7 +475,7 @@ DWORD GetItemState(
 ### <a name="return-value"></a>戻り値  
  参照、`DWORD`値の状態情報を受信します。 次のいずれかの値になります。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**TCIS_BUTTONPRESSED**|タブ コントロール項目が選択されます。|  
 |**TCIS_HIGHLIGHTED**|タブ コントロール項目が強調表示されているし、タブとテキストは現在強調表示色を使用して描画します。 強調表示色を使用する場合は true。 補間、ディザリングされた色ではないになります。|  
@@ -768,7 +772,7 @@ BOOL SetItemState(
  `dwState`  
  参照、`DWORD`状態情報を含む値です。 次のいずれかの値になります。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**TCIS_BUTTONPRESSED**|タブ コントロール項目が選択されます。|  
 |**TCIS_HIGHLIGHTED**|タブ コントロール項目が強調表示されているし、タブとテキストは現在強調表示色を使用して描画します。 強調表示色を使用する場合は true。 補間、ディザリングされた色ではないになります。|  
@@ -821,7 +825,7 @@ void SetToolTips(CToolTipCtrl* pWndTip);
 ### <a name="example"></a>例  
   例を参照して[CPropertySheet::GetTabControl](../../mfc/reference/cpropertysheet-class.md#gettabcontrol)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CHeaderCtrl クラス](../../mfc/reference/cheaderctrl-class.md)   

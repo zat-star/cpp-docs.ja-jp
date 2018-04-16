@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - strings [C++], formatting
 - data [C++], formatting
 - regular expressions [C++], validating data formatting
 ms.assetid: 225775c3-3efc-4734-bde2-1fdf73e3d397
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: db15abf9aca532b8c0fb712733c4e87350b58747
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 6e67b6de0b7769322d0b7f1176245c8f68634afb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-use-regular-expressions-to-validate-data-formatting-ccli"></a>方法: 正規表現を使用してデータ書式設定を検証する (C++/CLI)
 次のコード例では、文字列の書式設定を検証する正規表現の使用を示します。 次のコード例では、文字列は有効な電話番号を含める必要があります。 次のコード例では、文字列"\d{3}-\d{3}-\d{4}"を使用して、各フィールドが有効な電話番号を表すことを示します。 文字列に"d"は、数字を示し、"d"の後の引数が存在する必要がある数字の数を示します。 ここでは、数はダッシュで区切られているために必要です。  
@@ -65,6 +70,6 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework 正規表現](/dotnet/standard/base-types/regular-expressions)   
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

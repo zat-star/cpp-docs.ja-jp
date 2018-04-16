@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3207
 ms.assetid: 4a28b976-142a-4cff-aa2f-480b892c50ca
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 04aecf7f37d7e631a9dc07c7f029257c274f6538
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 7d0f50d73f32a388669ea49af737b69b57d6a64d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3207"></a>コンパイラ エラー C3207
 'function': 'arg' の無効なテンプレート引数です。クラス テンプレートが必要です  

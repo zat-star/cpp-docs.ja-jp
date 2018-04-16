@@ -18,16 +18,17 @@ helpviewer_keywords:
 - destructors, about destructors
 - destructors, C++
 ms.assetid: afa859b0-f3bc-4c4d-b250-c68b335b6004
-caps.latest.revision: 10
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 043143cc0a0a200f83642180b59b9576fefc4975
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 37aa5ab5cad2367bfc37e2e1b6fd886540eada8e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="destructors-c"></a>デストラクター (C++)
 デストラクターは、オブジェクトがスコープ外に出るかへの呼び出しによって明示的に破棄されるときに自動的に呼び出されるメンバー関数`delete`です。 デストラクターが、クラスと同じ名前の前にティルダ (`~`)。 たとえば、クラス `String` のデストラクターを宣言するには、`~String()` とします。 コンパイラが表示されます。 既定値を提供デストラクターを定義していない場合多くのクラスこれで十分です。 クラスは、解放する必要があるシステム リソースへのハンドルを格納する場合は、カスタムのデストラクターを定義するだけ済みます。 またはをポイントしているメモリを所有するポインター。
@@ -74,7 +75,7 @@ int main() {
   
  上の例では、デストラクター `String::~String` が `delete` 演算子を使用して、テキストの保存のために動的に割り当てられた領域を解放します。  
   
-## <a name="delcaring-destructors"></a>デストラクターの宣言  
+## <a name="declaring-destructors"></a>デストラクターの宣言  
  デストラクターはクラスと同じ名前の関数ですが、先頭にティルダ (`~`) が付きます。  
   
  デストラクターの宣言には以下の規則が適用されます 。  
@@ -232,4 +233,3 @@ ps->~String();     // Virtual call
 ```  
   
  先に示したデストラクターへの明示的な呼び出しの表記は、型がデストラクターを定義するかどうかにかかわらず使用できます。 これにより、デストラクターが型に対して定義されているかどうかを確認せずにこのような明示的な呼び出しを行うことができます。 何も定義されていないデストラクターへの明示的な呼び出しは無効です。  
-

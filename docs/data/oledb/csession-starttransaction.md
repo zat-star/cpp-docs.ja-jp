@@ -1,58 +1,60 @@
 ---
-title: "CSession::StartTransaction | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CSession::StartTransaction"
-  - "StartTransaction"
-  - "ATL.CSession.StartTransaction"
-  - "CSession.StartTransaction"
-  - "ATL::CSession::StartTransaction"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "StartTransaction メソッド"
+title: "Csession::starttransaction |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CSession::StartTransaction
+- StartTransaction
+- ATL.CSession.StartTransaction
+- CSession.StartTransaction
+- ATL::CSession::StartTransaction
+dev_langs:
+- C++
+helpviewer_keywords:
+- StartTransaction method
 ms.assetid: cd7bd2be-fad1-4e2b-932b-79d308efb8fb
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4d4dbf794be95346ce01293f5fad4367ab8aedf6
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CSession::StartTransaction
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-このセッションの新しいトランザクションを開始します。  
+# <a name="csessionstarttransaction"></a>CSession::StartTransaction
+このセッション用の新しいトランザクションを開始します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
-      HRESULT StartTransaction(  
-   ISOLEVEL isoLevel = ISOLATIONLEVEL_READCOMMITTED,  
+```cpp
+HRESULT StartTransaction(ISOLEVEL isoLevel = ISOLATIONLEVEL_READCOMMITTED,  
    ULONG isoFlags = 0,  
    ITransactionOptions* pOtherOptions = NULL,  
-   ULONG* pulTransactionLevel = NULL   
-) const throw( );  
+   ULONG* pulTransactionLevel = NULL) const throw();  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [ITransactionLocal::StartTransaction](https://msdn.microsoft.com/en-us/library/ms709786.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[itransactionlocal::starttransaction](https://msdn.microsoft.com/en-us/library/ms709786.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- 詳細については、*OLE DB Programmer's Reference*の [ITransactionLocal::StartTransaction](https://msdn.microsoft.com/en-us/library/ms709786.aspx) を参照します。  
+## <a name="remarks"></a>コメント  
+ 詳細については、次を参照してください。 [itransactionlocal::starttransaction](https://msdn.microsoft.com/en-us/library/ms709786.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CSession クラス](../../data/oledb/csession-class.md)

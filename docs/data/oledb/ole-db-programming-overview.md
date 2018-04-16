@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - Universal Data Access
 - OLE DB, about OLE DB
 ms.assetid: a5a69730-2793-4277-a67d-6f3c8edab6df
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1f3d97dda514b3cdb0773adb3d7830e611bca3d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 338f6f3d83e6df67e151e0fd85019fb14c8b4087
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ole-db-programming-overview"></a>OLE DB プログラミングの概要
 OLE DB は、高パフォーマンス、COM ベース データベース テクノロジです。 格納されている形式に関係なくデータにアクセスする一般的な方法を提供します。 一般的に、ビジネスの現場では、大量の情報が企業データベースの外部に格納されています。 このような情報は、ファイル システム (FAT や NTFS など)、インデックス付きのシーケンシャル ファイル、パーソナル データベース (Access など)、スプレッドシート (Excel など)、プロジェクト プランニング アプリケーション (Project など)、および電子メール (Outlook など) に含まれています。 OLE DB をデータ ストアがある OLE DB プロバイダーにある限り、同じ方法であらゆる種類のデータ ストアにアクセスできます。
@@ -33,7 +38,7 @@ OLE DB は、高パフォーマンス、COM ベース データベース テク�
  COM の仕様に基づき、OLE DB は、DBMS 機能の一貫性があり再利用できる部分を分解してカプセル化する、拡張可能で保守性の高いインターフェイスの集合を定義します。 これらのインターフェイスは、行コンテナー、クエリ プロセッサ、トランザクション コーディネーターなどの DBMS コンポーネントの境界を定義し、多様な情報源への統一されたトランザクション アクセスを可能にします。  
  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プログラミング](../../data/oledb/ole-db-programming.md)   
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   

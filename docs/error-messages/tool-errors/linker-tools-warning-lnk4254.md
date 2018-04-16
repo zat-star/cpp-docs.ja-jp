@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: LNK4254
-dev_langs: C++
-helpviewer_keywords: LNK4254
+f1_keywords:
+- LNK4254
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK4254
 ms.assetid: 6f41dfb3-ca21-40d3-bac7-b637e578efa4
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 47e8e020cdf8d888e77d212a25fa9344e744e895
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e17bcd03f92114c1b7cd21e63220cf6372c17bf2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-warning-lnk4254"></a>リンカー ツールの警告 LNK4254
 セクション '「section1」' (オフセット) が 'セクション 2' にマージ異なる属性を持つ (オフセット)  

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - allocators/stdext::sync_per_container
 - allocators/stdext::sync_per_container::equals
@@ -16,16 +16,17 @@ dev_langs:
 helpviewer_keywords:
 - sync_per_container class
 ms.assetid: 0b4b2904-b668-4d94-a422-d4f919cbffab
-caps.latest.revision: 21
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2c98e8f7524864e5249c08e2b6f3d4a38ea8e4be
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 8628d2866fa4a180975cde1f0ea161378afc6d50
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="syncpercontainer-class"></a>sync_per_container クラス
 アロケーター オブジェクトごとに個別のキャッシュ オブジェクトを提供する[同期フィルター](../standard-library/allocators-header.md)を記述します。  
@@ -50,7 +51,7 @@ class sync_per_container
 |-|-|  
 |[equals](#equals)|2 つのキャッシュが等しいかどうかを比較します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
@@ -74,9 +75,8 @@ bool equals(const sync_per_container<Cache>& Other) const;
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<allocators>](../standard-library/allocators-header.md)
-
 
 
 

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::vector::at
-dev_langs: C++
-helpviewer_keywords: at member [STL/CLR]
+f1_keywords:
+- cliext::vector::at
+dev_langs:
+- C++
+helpviewer_keywords:
+- at member [STL/CLR]
 ms.assetid: 9af9f829-48b8-4906-ba4a-b43454acb2c7
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 902652b8b74c11f79aad09079ea3ebb42d0d2ff0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7f8747242f757855b58a72a4604e84200df02a6c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vectorat-stlclr"></a>vector::at (STL/CLR)
 指定した位置にある要素にアクセスします。  
@@ -71,11 +78,11 @@ a b c
 a x c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/vector >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
  [vector::operator(STL/CLR)](../dotnet/vector-operator-stl-clr.md)

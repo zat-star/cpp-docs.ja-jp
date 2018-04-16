@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3274
 ms.assetid: 1f03f18e-b569-48eb-9249-11c70122a305
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b607445586b25b04e38c7a695cbdd78325398ba4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 6fc2149b3aac1e3575500ed4ac6c3c1b283f1db4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3274"></a>コンパイラ エラー C3274
 __finally/finally に対応する try がありません  

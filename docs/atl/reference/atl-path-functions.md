@@ -5,22 +5,61 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
-keywords:
-- "ATL を指定するパス"
+ms.topic: reference
+helpviewer_keywords:
+- ATL, path
+f1_keywords:
+- ATLPATH/ATL::ATLPath::AddBackslash
+- ATLPATH/ATL::ATLPath::AddExtension
+- ATLPATH/ATL::ATLPath::Append
+- ATLPATH/ATL::ATLPath::BuildRoot
+- ATLPATH/ATL::ATLPath::Canonicalize
+- ATLPATH/ATL::ATLPath::Combine
+- ATLPATH/ATL::ATLPath::CommonPrefix
+- ATLPATH/ATL::ATLPath::CompactPath
+- ATLPATH/ATL::ATLPath::CompactPathEx
+- ATLPATH/ATL::ATLPath::FileExists
+- ATLPATH/ATL::ATLPath::FindExtension
+- ATLPATH/ATL::ATLPath::FindFileName
+- ATLPATH/ATL::ATLPath::GetDriveNumber
+- ATLPATH/ATL::ATLPath::IsDirectory
+- ATLPATH/ATL::ATLPath::IsFileSpec
+- ATLPATH/ATL::ATLPath::IsPrefix
+- ATLPATH/ATL::ATLPath::IsRelative
+- ATLPATH/ATL::ATLPath::IsRoot
+- ATLPATH/ATL::ATLPath::IsSameRoot
+- ATLPATH/ATL::ATLPath::IsUNC
+- ATLPATH/ATL::ATLPath::IsUNCServer
+- ATLPATH/ATL::ATLPath::IsUNCServerShare
+- ATLPATH/ATL::ATLPath::MakePretty
+- ATLPATH/ATL::ATLPath::MatchSpec
+- ATLPATH/ATL::ATLPath::QuoteSpaces
+- ATLPATH/ATL::ATLPath::RelativePathTo
+- ATLPATH/ATL::ATLPath::RemoveArgs
+- ATLPATH/ATL::ATLPath::RemoveBackslash
+- ATLPATH/ATL::ATLPath::RemoveBlanks
+- ATLPATH/ATL::ATLPath::RemoveExtension
+- ATLPATH/ATL::ATLPath::RemoveFileSpec
+- ATLPATH/ATL::ATLPath::RenameExtension
+- ATLPATH/ATL::ATLPath::SkipRoot
+- ATLPATH/ATL::ATLPath::StripPath
+- ATLPATH/ATL::ATLPath::StripToRoot
+- ATLPATH/ATL::ATLPath::UnquoteSpaces
 ms.assetid: d1ec2b8d-7ec7-43ea-90dd-0a740d2a742b
-caps.latest.revision: 3
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 97d585eb8bbe59a8ccd92b866819fb869d35f64c
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9fa9795af90e28b2c021b179876a9f69609c7884
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="atl-path-functions"></a>ATL パス関数
 
-ATL の形式でパスを操作するため、ATLPath クラスには、 [CPathT](cpatht-class.md)します。 このコードは atlpath.h に記載されています。  
+ATL の形式でパスを操作するため、ATLPath クラスには、 [CPathT](cpatht-class.md)です。 このコードは、atlpath.h で確認できます。  
   
 ### <a name="related-classes"></a>関連するクラス  
   
@@ -28,61 +67,61 @@ ATL の形式でパスを操作するため、ATLPath クラスには、 [CPathT
 |-|-|  
 |[CPathT クラス](cpatht-class.md)|このクラスは、パスを表します。|  
 
-### <a name="related-typedefs"></a>関連する Typedef  
+### <a name="related-typedefs"></a>Typedef に関連します。  
   
 |||  
 |-|-|  
-|`CPath`|特殊化した[CPathT](cpatht-class.md)を使用して`CString`します。|  
-|`CPathA`|特殊化した[CPathT](cpatht-class.md)を使用して`CStringA`します。|  
-|`CPathW`|特殊化した[CPathT](cpatht-class.md)を使用して`CStringW`します。|  
+|`CPath`|特殊化した[CPathT](cpatht-class.md)を使用して`CString`です。|  
+|`CPathA`|特殊化した[CPathT](cpatht-class.md)を使用して`CStringA`です。|  
+|`CPathW`|特殊化した[CPathT](cpatht-class.md)を使用して`CStringW`です。|  
   
 ### <a name="functions"></a>関数  
   
 |||  
 |-|-|  
-|[ATLPath::AddBackslash](#addbackslash)|この関数は、用のオーバー ロードされたラッパー [PathAddBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773561)します。|  
-|[ATLPath::AddExtension](#addextension)|この関数は、用のオーバー ロードされたラッパー [PathAddExtension](http://msdn.microsoft.com/library/windows/desktop/bb773563)します。|  
-|[ATLPath::Append](#append)|この関数は、用のオーバー ロードされたラッパー [PathAppend](http://msdn.microsoft.com/library/windows/desktop/bb773565)します。|  
-|[ATLPath::BuildRoot](#buildroot)|この関数は、用のオーバー ロードされたラッパー [PathBuildRoot](http://msdn.microsoft.com/library/windows/desktop/bb773567)します。|  
-|[ATLPath::Canonicalize](#canonicalize)|この関数は、用のオーバー ロードされたラッパー [PathCanonicalize](http://msdn.microsoft.com/library/windows/desktop/bb773569)します。|  
-|[ATLPath::Combine](#combine)|この関数は、用のオーバー ロードされたラッパー [PathCombine](http://msdn.microsoft.com/library/windows/desktop/bb773571)します。|  
-|[ATLPath::CommonPrefix](#commonprefix)|この関数は、用のオーバー ロードされたラッパー [PathCommonPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773574)します。|  
-|[ATLPath::CompactPath](#compactpath)|この関数は、用のオーバー ロードされたラッパー [PathCompactPath](http://msdn.microsoft.com/library/windows/desktop/bb773575)します。|  
-|[ATLPath::CompactPathEx](#compactpathex)|この関数は、用のオーバー ロードされたラッパー [PathCompactPathEx](http://msdn.microsoft.com/library/windows/desktop/bb773578)します。|  
-|[ATLPath::FileExists](#fileexists)|この関数は、用のオーバー ロードされたラッパー [PathFileExists](http://msdn.microsoft.com/library/windows/desktop/bb773584)します。|  
-|[ATLPath::FindExtension](#findextension)|この関数は、用のオーバー ロードされたラッパー [PathFindExtension](http://msdn.microsoft.com/library/windows/desktop/bb773587)します。|  
-|[ATLPath::FindFileName](#findfilename)|この関数は、用のオーバー ロードされたラッパー [PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589)します。|  
-|[ATLPath::GetDriveNumber](#getdrivenumber)|この関数は、用のオーバー ロードされたラッパー [PathGetDriveNumber](http://msdn.microsoft.com/library/windows/desktop/bb773612)します。|  
-|[ATLPath::IsDirectory](#isdirectory)|この関数は、用のオーバー ロードされたラッパー [PathIsDirectory](http://msdn.microsoft.com/library/windows/desktop/bb773621)します。|  
-|[ATLPath::IsFileSpec](#isfilespec)|この関数は、用のオーバー ロードされたラッパー [PathIsFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773627)します。|  
-|[ATLPath::IsPrefix](#isprefix)|この関数は、用のオーバー ロードされたラッパー [PathIsPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773650)します。|  
-|[ATLPath::IsRelative](#isrelative)|この関数は、用のオーバー ロードされたラッパー [PathIsRelative](http://msdn.microsoft.com/library/windows/desktop/bb773660)します。|  
-|[ATLPath::IsRoot](#isroot)|この関数は、用のオーバー ロードされたラッパー [PathIsRoot](http://msdn.microsoft.com/library/windows/desktop/bb773674)します。|  
-|[ATLPath::IsSameRoot](#issameroot)|この関数は、用のオーバー ロードされたラッパー [PathIsSameRoot](http://msdn.microsoft.com/library/windows/desktop/bb773687)します。|  
-|[ATLPath::IsUNC](#isunc)|この関数は、用のオーバー ロードされたラッパー [PathIsUNC](http://msdn.microsoft.com/library/windows/desktop/bb773712)します。|  
-|[ATLPath::IsUNCServer](#isuncserver)|この関数は、用のオーバー ロードされたラッパー [PathIsUNCServer](http://msdn.microsoft.com/library/windows/desktop/bb773722)します。|  
-|[ATLPath::IsUNCServerShare](#isuncservershare)|この関数は、用のオーバー ロードされたラッパー [PathIsUNCServerShare](http://msdn.microsoft.com/library/windows/desktop/bb773723)します。|  
-|[ATLPath::MakePretty](#makepretty)|この関数は、用のオーバー ロードされたラッパー [PathMakePretty](http://msdn.microsoft.com/library/windows/desktop/bb773725)します。|  
-|[ATLPath::MatchSpec](#matchspec)|この関数は、用のオーバー ロードされたラッパー [PathMatchSpec](http://msdn.microsoft.com/library/windows/desktop/bb773727)します。|  
-|[ATLPath::QuoteSpaces](#quotespaces)|この関数は、用のオーバー ロードされたラッパー [PathQuoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773739)します。|  
-|[ATLPath::RelativePathTo](#relativepathto)|この関数は、用のオーバー ロードされたラッパー [PathRelativePathTo](http://msdn.microsoft.com/library/windows/desktop/bb773740)します。|  
-|[ATLPath::RemoveArgs](#removeargs)|この関数は、用のオーバー ロードされたラッパー [PathRemoveArgs](http://msdn.microsoft.com/library/windows/desktop/bb773742)します。|  
-|[ATLPath::RemoveBackslash](#removebackslash)|この関数は、用のオーバー ロードされたラッパー [PathRemoveBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773743)します。|  
-|[ATLPath::RemoveBlanks](#removeblanks)|この関数は、用のオーバー ロードされたラッパー [PathRemoveBlanks](http://msdn.microsoft.com/library/windows/desktop/bb773745)します。|  
-|[ATLPath::RemoveExtension](#removeextension)|この関数は、用のオーバー ロードされたラッパー [PathRemoveExtension](http://msdn.microsoft.com/library/windows/desktop/bb773746)します。|  
-|[ATLPath::RemoveFileSpec](#removefilespec)|この関数は、用のオーバー ロードされたラッパー [PathRemoveFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773748)します。|  
-|[ATLPath::RenameExtension](#renameextension)|この関数は、用のオーバー ロードされたラッパー [PathRenameExtension](http://msdn.microsoft.com/library/windows/desktop/bb773749)します。|  
-|[ATLPath::SkipRoot](#skiproot)|この関数は、用のオーバー ロードされたラッパー [PathSkipRoot](http://msdn.microsoft.com/library/windows/desktop/bb773754)します。|  
-|[ATLPath::StripPath](#strippath)|この関数は、用のオーバー ロードされたラッパー [PathStripPath](http://msdn.microsoft.com/library/windows/desktop/bb773756)します。|  
-|[ATLPath::StripToRoot](#striptoroot)|この関数は、用のオーバー ロードされたラッパー [PathStripToRoot](http://msdn.microsoft.com/library/windows/desktop/bb773757)します。|  
-|[ATLPath::UnquoteSpaces](#unquotespaces)|この関数は、用のオーバー ロードされたラッパー [PathUnquoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773763)します。|  
+|[ATLPath::AddBackslash](#addbackslash)|この関数は、用のオーバー ロードされたラッパー [PathAddBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773561)です。|  
+|[ATLPath::AddExtension](#addextension)|この関数は、用のオーバー ロードされたラッパー [PathAddExtension](http://msdn.microsoft.com/library/windows/desktop/bb773563)です。|  
+|[ATLPath::Append](#append)|この関数は、用のオーバー ロードされたラッパー [PathAppend](http://msdn.microsoft.com/library/windows/desktop/bb773565)です。|  
+|[ATLPath::BuildRoot](#buildroot)|この関数は、用のオーバー ロードされたラッパー [PathBuildRoot](http://msdn.microsoft.com/library/windows/desktop/bb773567)です。|  
+|[ATLPath::Canonicalize](#canonicalize)|この関数は、用のオーバー ロードされたラッパー [PathCanonicalize](http://msdn.microsoft.com/library/windows/desktop/bb773569)です。|  
+|[ATLPath::Combine](#combine)|この関数は、用のオーバー ロードされたラッパー [PathCombine](http://msdn.microsoft.com/library/windows/desktop/bb773571)です。|  
+|[ATLPath::CommonPrefix](#commonprefix)|この関数は、用のオーバー ロードされたラッパー [PathCommonPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773574)です。|  
+|[ATLPath::CompactPath](#compactpath)|この関数は、用のオーバー ロードされたラッパー [PathCompactPath](http://msdn.microsoft.com/library/windows/desktop/bb773575)です。|  
+|[ATLPath::CompactPathEx](#compactpathex)|この関数は、用のオーバー ロードされたラッパー [PathCompactPathEx](http://msdn.microsoft.com/library/windows/desktop/bb773578)です。|  
+|[ATLPath::FileExists](#fileexists)|この関数は、用のオーバー ロードされたラッパー [PathFileExists](http://msdn.microsoft.com/library/windows/desktop/bb773584)です。|  
+|[ATLPath::FindExtension](#findextension)|この関数は、用のオーバー ロードされたラッパー [PathFindExtension](http://msdn.microsoft.com/library/windows/desktop/bb773587)です。|  
+|[ATLPath::FindFileName](#findfilename)|この関数は、用のオーバー ロードされたラッパー [PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589)です。|  
+|[ATLPath::GetDriveNumber](#getdrivenumber)|この関数は、用のオーバー ロードされたラッパー [PathGetDriveNumber](http://msdn.microsoft.com/library/windows/desktop/bb773612)です。|  
+|[ATLPath::IsDirectory](#isdirectory)|この関数は、用のオーバー ロードされたラッパー [PathIsDirectory](http://msdn.microsoft.com/library/windows/desktop/bb773621)です。|  
+|[ATLPath::IsFileSpec](#isfilespec)|この関数は、用のオーバー ロードされたラッパー [PathIsFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773627)です。|  
+|[ATLPath::IsPrefix](#isprefix)|この関数は、用のオーバー ロードされたラッパー [PathIsPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773650)です。|  
+|[ATLPath::IsRelative](#isrelative)|この関数は、用のオーバー ロードされたラッパー [PathIsRelative](http://msdn.microsoft.com/library/windows/desktop/bb773660)です。|  
+|[ATLPath::IsRoot](#isroot)|この関数は、用のオーバー ロードされたラッパー [PathIsRoot](http://msdn.microsoft.com/library/windows/desktop/bb773674)です。|  
+|[ATLPath::IsSameRoot](#issameroot)|この関数は、用のオーバー ロードされたラッパー [PathIsSameRoot](http://msdn.microsoft.com/library/windows/desktop/bb773687)です。|  
+|[ATLPath::IsUNC](#isunc)|この関数は、用のオーバー ロードされたラッパー [PathIsUNC](http://msdn.microsoft.com/library/windows/desktop/bb773712)です。|  
+|[ATLPath::IsUNCServer](#isuncserver)|この関数は、用のオーバー ロードされたラッパー [PathIsUNCServer](http://msdn.microsoft.com/library/windows/desktop/bb773722)です。|  
+|[ATLPath::IsUNCServerShare](#isuncservershare)|この関数は、用のオーバー ロードされたラッパー [PathIsUNCServerShare](http://msdn.microsoft.com/library/windows/desktop/bb773723)です。|  
+|[ATLPath::MakePretty](#makepretty)|この関数は、用のオーバー ロードされたラッパー [PathMakePretty](http://msdn.microsoft.com/library/windows/desktop/bb773725)です。|  
+|[ATLPath::MatchSpec](#matchspec)|この関数は、用のオーバー ロードされたラッパー [PathMatchSpec](http://msdn.microsoft.com/library/windows/desktop/bb773727)です。|  
+|[ATLPath::QuoteSpaces](#quotespaces)|この関数は、用のオーバー ロードされたラッパー [PathQuoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773739)です。|  
+|[ATLPath::RelativePathTo](#relativepathto)|この関数は、用のオーバー ロードされたラッパー [PathRelativePathTo](http://msdn.microsoft.com/library/windows/desktop/bb773740)です。|  
+|[ATLPath::RemoveArgs](#removeargs)|この関数は、用のオーバー ロードされたラッパー [PathRemoveArgs](http://msdn.microsoft.com/library/windows/desktop/bb773742)です。|  
+|[ATLPath::RemoveBackslash](#removebackslash)|この関数は、用のオーバー ロードされたラッパー [PathRemoveBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773743)です。|  
+|[ATLPath::RemoveBlanks](#removeblanks)|この関数は、用のオーバー ロードされたラッパー [PathRemoveBlanks](http://msdn.microsoft.com/library/windows/desktop/bb773745)です。|  
+|[ATLPath::RemoveExtension](#removeextension)|この関数は、用のオーバー ロードされたラッパー [PathRemoveExtension](http://msdn.microsoft.com/library/windows/desktop/bb773746)です。|  
+|[ATLPath::RemoveFileSpec](#removefilespec)|この関数は、用のオーバー ロードされたラッパー [PathRemoveFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773748)です。|  
+|[ATLPath::RenameExtension](#renameextension)|この関数は、用のオーバー ロードされたラッパー [PathRenameExtension](http://msdn.microsoft.com/library/windows/desktop/bb773749)です。|  
+|[ATLPath::SkipRoot](#skiproot)|この関数は、用のオーバー ロードされたラッパー [PathSkipRoot](http://msdn.microsoft.com/library/windows/desktop/bb773754)です。|  
+|[ATLPath::StripPath](#strippath)|この関数は、用のオーバー ロードされたラッパー [PathStripPath](http://msdn.microsoft.com/library/windows/desktop/bb773756)です。|  
+|[ATLPath::StripToRoot](#striptoroot)|この関数は、用のオーバー ロードされたラッパー [PathStripToRoot](http://msdn.microsoft.com/library/windows/desktop/bb773757)です。|  
+|[ATLPath::UnquoteSpaces](#unquotespaces)|この関数は、用のオーバー ロードされたラッパー [PathUnquoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773763)です。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlpath.h  
 
-## <a name="a-nameaddbackslasha-atlpathaddbackslash"></a><a name="addbackslash"></a>ATLPath::AddBackSlash
+## <a name="addbackslash"></a> ATLPath::AddBackSlash
 
-この関数は、用のオーバー ロードされたラッパー [PathAddBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773561)します。  
+この関数は、用のオーバー ロードされたラッパー [PathAddBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773561)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -92,13 +131,13 @@ inline wchar_t* AddBackslash(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathAddBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773561)詳細です。  
+ 参照してください[PathAddBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773561)詳細についてはします。  
   
  
   
 
-## <a name="a-nameaddextensiona-atlpathaddextension"></a><a name="addextension"></a>ATLPath::AddExtension
- この関数は、用のオーバー ロードされたラッパー [PathAddExtension](http://msdn.microsoft.com/library/windows/desktop/bb773563)します。  
+## <a name="addextension"></a> ATLPath::AddExtension
+ この関数は、用のオーバー ロードされたラッパー [PathAddExtension](http://msdn.microsoft.com/library/windows/desktop/bb773563)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -108,10 +147,10 @@ inline BOOL AddExtension(wchar_t* pszPath, const wchar_t* pszExtension);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathAddExtension](http://msdn.microsoft.com/library/windows/desktop/bb773563)詳細です。 
+ 参照してください[PathAddExtension](http://msdn.microsoft.com/library/windows/desktop/bb773563)詳細についてはします。 
   
-## <a name="a-nameappenda-atlpathappend"></a><a name="append"></a>ATLPath::Append
- この関数は、用のオーバー ロードされたラッパー [PathAppend](http://msdn.microsoft.com/library/windows/desktop/bb773565)します。  
+## <a name="append"></a> ATLPath::Append
+ この関数は、用のオーバー ロードされたラッパー [PathAppend](http://msdn.microsoft.com/library/windows/desktop/bb773565)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -121,13 +160,13 @@ inline BOOL Append(wchar_t* pszPath, const wchar_t* pszMore);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathAppend](http://msdn.microsoft.com/library/windows/desktop/bb773565)詳細です。  
+ 参照してください[PathAppend](http://msdn.microsoft.com/library/windows/desktop/bb773565)詳細についてはします。  
   
  
   
 
-## <a name="a-namebuildroota-atlpathbuildroot"></a><a name="buildroot"></a>ATLPath::BuildRoot
- この関数は、用のオーバー ロードされたラッパー [PathBuildRoot](http://msdn.microsoft.com/library/windows/desktop/bb773567)します。  
+## <a name="buildroot"></a> ATLPath::BuildRoot
+ この関数は、用のオーバー ロードされたラッパー [PathBuildRoot](http://msdn.microsoft.com/library/windows/desktop/bb773567)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -137,13 +176,13 @@ inline wchar_t* BuildRoot(wchar_t* pszPath, int iDrive);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathBuildRoot](http://msdn.microsoft.com/library/windows/desktop/bb773567)詳細です。  
+ 参照してください[PathBuildRoot](http://msdn.microsoft.com/library/windows/desktop/bb773567)詳細についてはします。  
   
  
   
 
-## <a name="a-namecanonicalizea-atlpathcanonicalize"></a><a name="canonicalize"></a>ATLPath::Canonicalize
- この関数は、用のオーバー ロードされたラッパー [PathCanonicalize](http://msdn.microsoft.com/library/windows/desktop/bb773569)します。  
+## <a name="canonicalize"></a> ATLPath::Canonicalize
+ この関数は、用のオーバー ロードされたラッパー [PathCanonicalize](http://msdn.microsoft.com/library/windows/desktop/bb773569)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -153,13 +192,13 @@ inline BOOL Canonicalize(wchar_t* pszDest, const wchar_t* pszSrc);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathCanonicalize](http://msdn.microsoft.com/library/windows/desktop/bb773569)詳細です。  
+ 参照してください[PathCanonicalize](http://msdn.microsoft.com/library/windows/desktop/bb773569)詳細についてはします。  
   
  
   
 
-## <a name="a-namecombinea-atlpathcombine"></a><a name="combine"></a>ATLPath::Combine 
-この関数は、用のオーバー ロードされたラッパー [PathCombine](https://msdn.microsoft.com/en-us/library/windows/desktop/bb773571)します。  
+## <a name="combine"></a> ATLPath::Combine 
+この関数は、用のオーバー ロードされたラッパー [PathCombine](https://msdn.microsoft.com/en-us/library/windows/desktop/bb773571)です。  
 
 ### <a name="syntax"></a>構文  
 ```
@@ -178,8 +217,8 @@ inline wchar_t* Combine(
 詳細については、PathCombine を参照してください。
 
 
-## <a name="a-namecommonprefixa-atlpathcommonprefix"></a><a name="commonprefix"></a>ATLPath::CommonPrefix
- この関数は、用のオーバー ロードされたラッパー [PathCommonPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773574)します。  
+## <a name="commonprefix"></a> ATLPath::CommonPrefix
+ この関数は、用のオーバー ロードされたラッパー [PathCommonPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773574)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -196,13 +235,13 @@ inline int CommonPrefix(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathCommonPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773574)詳細です。  
+ 参照してください[PathCommonPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773574)詳細についてはします。  
   
  
   
 
-## <a name="a-namecompactpatha-atlpathcompactpath"></a><a name="compactpath"></a>ATLPath::CompactPath
- この関数は、用のオーバー ロードされたラッパー [PathCompactPath](http://msdn.microsoft.com/library/windows/desktop/bb773575)します。  
+## <a name="compactpath"></a> ATLPath::CompactPath
+ この関数は、用のオーバー ロードされたラッパー [PathCompactPath](http://msdn.microsoft.com/library/windows/desktop/bb773575)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -219,13 +258,13 @@ inline BOOL CompactPath(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathCompactPath](http://msdn.microsoft.com/library/windows/desktop/bb773575)詳細です。  
+ 参照してください[PathCompactPath](http://msdn.microsoft.com/library/windows/desktop/bb773575)詳細についてはします。  
   
  
   
 
-## <a name="a-namecompactpathexa-atlpathcompactpathex"></a><a name="compactpathex"></a>ATLPath::CompactPathEx
- この関数は、用のオーバー ロードされたラッパー [PathCompactPathEx](http://msdn.microsoft.com/library/windows/desktop/bb773578)します。  
+## <a name="compactpathex"></a> ATLPath::CompactPathEx
+ この関数は、用のオーバー ロードされたラッパー [PathCompactPathEx](http://msdn.microsoft.com/library/windows/desktop/bb773578)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -244,13 +283,13 @@ inline BOOL CompactPathEx(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathCompactPathEx](http://msdn.microsoft.com/library/windows/desktop/bb773578)詳細です。  
+ 参照してください[PathCompactPathEx](http://msdn.microsoft.com/library/windows/desktop/bb773578)詳細についてはします。  
   
  
   
 
-## <a name="a-namefileexistsa-atlpathfileexists"></a><a name="fileexists"></a>ATLPath::FileExists
- この関数は、用のオーバー ロードされたラッパー [PathFileExists](http://msdn.microsoft.com/library/windows/desktop/bb773584)します。  
+## <a name="fileexists"></a> ATLPath::FileExists
+ この関数は、用のオーバー ロードされたラッパー [PathFileExists](http://msdn.microsoft.com/library/windows/desktop/bb773584)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -260,13 +299,13 @@ inline BOOL FileExists(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathFileExists](http://msdn.microsoft.com/library/windows/desktop/bb773584)詳細です。  
+ 参照してください[PathFileExists](http://msdn.microsoft.com/library/windows/desktop/bb773584)詳細についてはします。  
   
  
   
 
-## <a name="a-namefindextensiona-atlpathfindextension"></a><a name="findextension"></a>ATLPath::FindExtension
- この関数は、用のオーバー ロードされたラッパー [PathFindExtension](http://msdn.microsoft.com/library/windows/desktop/bb773587)します。  
+## <a name="findextension"></a> ATLPath::FindExtension
+ この関数は、用のオーバー ロードされたラッパー [PathFindExtension](http://msdn.microsoft.com/library/windows/desktop/bb773587)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -276,13 +315,13 @@ inline wchar_t* FindExtension(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathFindExtension](http://msdn.microsoft.com/library/windows/desktop/bb773587)詳細です。  
+ 参照してください[PathFindExtension](http://msdn.microsoft.com/library/windows/desktop/bb773587)詳細についてはします。  
   
  
   
 
-## <a name="a-namefindfilenamea-atlpathfindfilename"></a><a name="findfilename"></a>ATLPath::FindFileName
- この関数は、用のオーバー ロードされたラッパー [PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589)します。  
+## <a name="findfilename"></a> ATLPath::FindFileName
+ この関数は、用のオーバー ロードされたラッパー [PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -292,13 +331,13 @@ inline wchar_t* FindFileName(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589)詳細です。  
+ 参照してください[PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589)詳細についてはします。  
   
  
   
 
-## <a name="a-namegetdrivenumbera-atlpathgetdrivenumber"></a><a name="getdrivenumber"></a>ATLPath::GetDriveNumber  
- この関数は、用のオーバー ロードされたラッパー [PathGetDriveNumber](http://msdn.microsoft.com/library/windows/desktop/bb773612)します。  
+## <a name="getdrivenumber"></a> ATLPath::GetDriveNumber  
+ この関数は、用のオーバー ロードされたラッパー [PathGetDriveNumber](http://msdn.microsoft.com/library/windows/desktop/bb773612)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -308,13 +347,13 @@ inline int GetDriveNumber(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathGetDriveNumber](http://msdn.microsoft.com/library/windows/desktop/bb773612)詳細です。  
+ 参照してください[PathGetDriveNumber](http://msdn.microsoft.com/library/windows/desktop/bb773612)詳細についてはします。  
   
  
 
 
-## <a name="a-nameisdirectorya--atlpathisdirectory"></a><a name="isdirectory"></a>ATLPath::IsDirectory 
-この関数は、用のオーバー ロードされたラッパー [PathIsDirectory](https://msdn.microsoft.com/en-us/library/windows/desktop/bb773621)します。
+## <a name="isdirectory"></a>  ATLPath::IsDirectory 
+この関数は、用のオーバー ロードされたラッパー [PathIsDirectory](https://msdn.microsoft.com/en-us/library/windows/desktop/bb773621)です。
 
 ```  
 inline BOOL IsDirectory(const char* pszPath);
@@ -323,8 +362,8 @@ inline BOOL IsDirectory(const wchar_t* pszPath);
 ### <a name="remarks"></a>コメント
 詳細については、PathIsDirectory を参照してください。  
 
-## <a name="a-nameisfilespeca-atlpathisfilespec"></a><a name="isfilespec"></a>ATLPath::IsFileSpec
- この関数は、用のオーバー ロードされたラッパー [PathIsFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773627)します。  
+## <a name="isfilespec"></a> ATLPath::IsFileSpec
+ この関数は、用のオーバー ロードされたラッパー [PathIsFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773627)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -334,13 +373,13 @@ inline BOOL IsFileSpec(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathIsFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773627)詳細です。  
+ 参照してください[PathIsFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773627)詳細についてはします。  
   
  
   
 
-## <a name="a-nameisprefixa-atlpathisprefix"></a><a name="isprefix"></a>ATLPath::IsPrefix
- この関数は、用のオーバー ロードされたラッパー [PathIsPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773650)します。  
+## <a name="isprefix"></a> ATLPath::IsPrefix
+ この関数は、用のオーバー ロードされたラッパー [PathIsPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773650)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -350,13 +389,13 @@ inline BOOL IsPrefix(const wchar_t* pszPrefix, const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathIsPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773650)詳細です。  
+ 参照してください[PathIsPrefix](http://msdn.microsoft.com/library/windows/desktop/bb773650)詳細についてはします。  
   
  
   
 
-## <a name="a-nameisrelativea-atlpathisrelative"></a><a name="isrelative"></a>ATLPath::IsRelative
- この関数は、用のオーバー ロードされたラッパー [PathIsRelative](http://msdn.microsoft.com/library/windows/desktop/bb773660)します。  
+## <a name="isrelative"></a> ATLPath::IsRelative
+ この関数は、用のオーバー ロードされたラッパー [PathIsRelative](http://msdn.microsoft.com/library/windows/desktop/bb773660)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -366,13 +405,13 @@ inline BOOL IsRelative(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathIsRelative](http://msdn.microsoft.com/library/windows/desktop/bb773660)詳細です。  
+ 参照してください[PathIsRelative](http://msdn.microsoft.com/library/windows/desktop/bb773660)詳細についてはします。  
   
  
   
 
-## <a name="a-nameisroota-atlpathisroot"></a><a name="isroot"></a>ATLPath::IsRoot
- この関数は、用のオーバー ロードされたラッパー [PathIsRoot](http://msdn.microsoft.com/library/windows/desktop/bb773674)します。  
+## <a name="isroot"></a> ATLPath::IsRoot
+ この関数は、用のオーバー ロードされたラッパー [PathIsRoot](http://msdn.microsoft.com/library/windows/desktop/bb773674)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -382,13 +421,13 @@ inline BOOL IsRoot(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathIsRoot](http://msdn.microsoft.com/library/windows/desktop/bb773674)詳細です。  
+ 参照してください[PathIsRoot](http://msdn.microsoft.com/library/windows/desktop/bb773674)詳細についてはします。  
   
  
   
 
-## <a name="a-nameissameroota-atlpathissameroot"></a><a name="issameroot"></a>ATLPath::IsSameRoot
- この関数は、用のオーバー ロードされたラッパー [PathIsSameRoot](http://msdn.microsoft.com/library/windows/desktop/bb773687)します。  
+## <a name="issameroot"></a> ATLPath::IsSameRoot
+ この関数は、用のオーバー ロードされたラッパー [PathIsSameRoot](http://msdn.microsoft.com/library/windows/desktop/bb773687)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -398,13 +437,13 @@ inline BOOL IsSameRoot(const wchar_t* pszPath1, const wchar_t* pszPath2);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathIsSameRoot](http://msdn.microsoft.com/library/windows/desktop/bb773687)詳細です。  
+ 参照してください[PathIsSameRoot](http://msdn.microsoft.com/library/windows/desktop/bb773687)詳細についてはします。  
   
  
   
 
-## <a name="a-nameisunca-atlpathisunc"></a><a name="isunc"></a>ATLPath::IsUNC
- この関数は、用のオーバー ロードされたラッパー [PathIsUNC](http://msdn.microsoft.com/library/windows/desktop/bb773712)します。  
+## <a name="isunc"></a> ATLPath::IsUNC
+ この関数は、用のオーバー ロードされたラッパー [PathIsUNC](http://msdn.microsoft.com/library/windows/desktop/bb773712)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -414,13 +453,13 @@ inline BOOL IsUNC(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathIsUNC](http://msdn.microsoft.com/library/windows/desktop/bb773712)詳細です。  
+ 参照してください[PathIsUNC](http://msdn.microsoft.com/library/windows/desktop/bb773712)詳細についてはします。  
   
  
   
 
-## <a name="a-nameisuncservera-atlpathisuncserver"></a><a name="isuncserver"></a>ATLPath::IsUNCServer
- この関数は、用のオーバー ロードされたラッパー [PathIsUNCServer](http://msdn.microsoft.com/library/windows/desktop/bb773722)します。  
+## <a name="isuncserver"></a> ATLPath::IsUNCServer
+ この関数は、用のオーバー ロードされたラッパー [PathIsUNCServer](http://msdn.microsoft.com/library/windows/desktop/bb773722)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -430,13 +469,13 @@ inline BOOL IsUNCServer(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathIsUNCServer](http://msdn.microsoft.com/library/windows/desktop/bb773722)詳細です。  
+ 参照してください[PathIsUNCServer](http://msdn.microsoft.com/library/windows/desktop/bb773722)詳細についてはします。  
   
  
   
 
-## <a name="a-nameisuncserversharea-atlpathisuncservershare"></a><a name="isuncservershare"></a>ATLPath::IsUNCServerShare
- この関数は、用のオーバー ロードされたラッパー [PathIsUNCServerShare](http://msdn.microsoft.com/library/windows/desktop/bb773723)します。  
+## <a name="isuncservershare"></a> ATLPath::IsUNCServerShare
+ この関数は、用のオーバー ロードされたラッパー [PathIsUNCServerShare](http://msdn.microsoft.com/library/windows/desktop/bb773723)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -446,13 +485,13 @@ inline BOOL IsUNCServerShare(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathIsUNCServerShare](http://msdn.microsoft.com/library/windows/desktop/bb773723)詳細です。  
+ 参照してください[PathIsUNCServerShare](http://msdn.microsoft.com/library/windows/desktop/bb773723)詳細についてはします。  
   
  
   
 
-## <a name="a-namemakeprettya-atlpathmakepretty"></a><a name="makepretty"></a>ATLPath::MakePretty
- この関数は、用のオーバー ロードされたラッパー [PathMakePretty](http://msdn.microsoft.com/library/windows/desktop/bb773725)します。  
+## <a name="makepretty"></a> ATLPath::MakePretty
+ この関数は、用のオーバー ロードされたラッパー [PathMakePretty](http://msdn.microsoft.com/library/windows/desktop/bb773725)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -462,13 +501,13 @@ inline BOOL MakePretty(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathMakePretty](http://msdn.microsoft.com/library/windows/desktop/bb773725)詳細です。  
+ 参照してください[PathMakePretty](http://msdn.microsoft.com/library/windows/desktop/bb773725)詳細についてはします。  
   
  
   
 
-## <a name="a-namematchspeca-atlpathmatchspec"></a><a name="matchspec"></a>ATLPath::MatchSpec  
- この関数は、用のオーバー ロードされたラッパー [PathMatchSpec](http://msdn.microsoft.com/library/windows/desktop/bb773727)します。  
+## <a name="matchspec"></a> ATLPath::MatchSpec  
+ この関数は、用のオーバー ロードされたラッパー [PathMatchSpec](http://msdn.microsoft.com/library/windows/desktop/bb773727)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -478,13 +517,13 @@ inline BOOL MatchSpec(const wchar_t* pszPath, const wchar_t* pszSpec);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathMatchSpec](http://msdn.microsoft.com/library/windows/desktop/bb773727)詳細です。  
+ 参照してください[PathMatchSpec](http://msdn.microsoft.com/library/windows/desktop/bb773727)詳細についてはします。  
   
  
   
 
-## <a name="a-namequotespacesa-atlpathquotespaces"></a><a name="quotespaces"></a>ATLPath::QuoteSpaces  
- この関数は、用のオーバー ロードされたラッパー [PathQuoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773739)します。  
+## <a name="quotespaces"></a> ATLPath::QuoteSpaces  
+ この関数は、用のオーバー ロードされたラッパー [PathQuoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773739)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -494,13 +533,13 @@ inline void QuoteSpaces(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathQuoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773739)詳細です。  
+ 参照してください[PathQuoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773739)詳細についてはします。  
   
  
   
 
-## <a name="a-namerelativepathtoa-atlpathrelativepathto"></a><a name="relativepathto"></a>ATLPath::RelativePathTo
- この関数は、用のオーバー ロードされたラッパー [PathRelativePathTo](http://msdn.microsoft.com/library/windows/desktop/bb773740)します。  
+## <a name="relativepathto"></a> ATLPath::RelativePathTo
+ この関数は、用のオーバー ロードされたラッパー [PathRelativePathTo](http://msdn.microsoft.com/library/windows/desktop/bb773740)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -521,13 +560,13 @@ inline BOOL RelativePathTo(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathRelativePathTo](http://msdn.microsoft.com/library/windows/desktop/bb773740)詳細です。  
+ 参照してください[PathRelativePathTo](http://msdn.microsoft.com/library/windows/desktop/bb773740)詳細についてはします。  
   
  
   
 
-## <a name="a-nameremoveargsa-atlpathremoveargs"></a><a name="removeargs"></a>ATLPath::RemoveArgs  
- この関数は、用のオーバー ロードされたラッパー [PathRemoveArgs](http://msdn.microsoft.com/library/windows/desktop/bb773742)します。  
+## <a name="removeargs"></a> ATLPath::RemoveArgs  
+ この関数は、用のオーバー ロードされたラッパー [PathRemoveArgs](http://msdn.microsoft.com/library/windows/desktop/bb773742)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -537,13 +576,13 @@ inline void RemoveArgs(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathRemoveArgs](http://msdn.microsoft.com/library/windows/desktop/bb773742)詳細です。  
+ 参照してください[PathRemoveArgs](http://msdn.microsoft.com/library/windows/desktop/bb773742)詳細についてはします。  
   
  
   
 
-## <a name="a-nameremovebackslasha-atlpathremovebackslash"></a><a name="removebackslash"></a>ATLPath::RemoveBackslash
- この関数は、用のオーバー ロードされたラッパー [PathRemoveBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773743)します。  
+## <a name="removebackslash"></a> ATLPath::RemoveBackslash
+ この関数は、用のオーバー ロードされたラッパー [PathRemoveBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773743)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -553,13 +592,13 @@ inline wchar_t* RemoveBackslash(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathRemoveBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773743)詳細です。  
+ 参照してください[PathRemoveBackslash](http://msdn.microsoft.com/library/windows/desktop/bb773743)詳細についてはします。  
   
  
   
 
-## <a name="a-nameremoveblanksa-atlpathremoveblanks"></a><a name="removeblanks"></a>ATLPath::RemoveBlanks
- この関数は、用のオーバー ロードされたラッパー [PathRemoveBlanks](http://msdn.microsoft.com/library/windows/desktop/bb773745)します。  
+## <a name="removeblanks"></a> ATLPath::RemoveBlanks
+ この関数は、用のオーバー ロードされたラッパー [PathRemoveBlanks](http://msdn.microsoft.com/library/windows/desktop/bb773745)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -569,13 +608,13 @@ inline void RemoveBlanks(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathRemoveBlanks](http://msdn.microsoft.com/library/windows/desktop/bb773745)詳細です。  
+ 参照してください[PathRemoveBlanks](http://msdn.microsoft.com/library/windows/desktop/bb773745)詳細についてはします。  
   
  
   
 
-## <a name="a-nameremoveextensiona-atlpathremoveextension"></a><a name="removeextension"></a>ATLPath::RemoveExtension
- この関数は、用のオーバー ロードされたラッパー [PathRemoveExtension](http://msdn.microsoft.com/library/windows/desktop/bb773746)します。  
+## <a name="removeextension"></a> ATLPath::RemoveExtension
+ この関数は、用のオーバー ロードされたラッパー [PathRemoveExtension](http://msdn.microsoft.com/library/windows/desktop/bb773746)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -585,13 +624,13 @@ inline void RemoveExtension(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathRemoveExtension](http://msdn.microsoft.com/library/windows/desktop/bb773746)詳細です。  
+ 参照してください[PathRemoveExtension](http://msdn.microsoft.com/library/windows/desktop/bb773746)詳細についてはします。  
   
  
   
 
-## <a name="a-nameremovefilespeca-atlpathremovefilespec"></a><a name="removefilespec"></a>ATLPath::RemoveFileSpec
- この関数は、用のオーバー ロードされたラッパー [PathRemoveFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773748)します。  
+## <a name="removefilespec"></a> ATLPath::RemoveFileSpec
+ この関数は、用のオーバー ロードされたラッパー [PathRemoveFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773748)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -601,13 +640,13 @@ inline BOOL RemoveFileSpec(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathRemoveFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773748)詳細です。  
+ 参照してください[PathRemoveFileSpec](http://msdn.microsoft.com/library/windows/desktop/bb773748)詳細についてはします。  
   
  
   
 
-## <a name="a-namerenameextensiona-atlpathrenameextension"></a><a name="renameextension"></a>ATLPath::RenameExtension
- この関数は、用のオーバー ロードされたラッパー [PathRenameExtension](http://msdn.microsoft.com/library/windows/desktop/bb773749)します。  
+## <a name="renameextension"></a> ATLPath::RenameExtension
+ この関数は、用のオーバー ロードされたラッパー [PathRenameExtension](http://msdn.microsoft.com/library/windows/desktop/bb773749)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -617,13 +656,13 @@ inline BOOL RenameExtension(wchar_t* pszPath, const wchar_t* pszExt);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathRenameExtension](http://msdn.microsoft.com/library/windows/desktop/bb773749)詳細です。  
+ 参照してください[PathRenameExtension](http://msdn.microsoft.com/library/windows/desktop/bb773749)詳細についてはします。  
   
  
   
 
-## <a name="a-nameskiproota-atlpathskiproot"></a><a name="skiproot"></a>ATLPath::SkipRoot
- この関数は、用のオーバー ロードされたラッパー [PathSkipRoot](http://msdn.microsoft.com/library/windows/desktop/bb773754)します。  
+## <a name="skiproot"></a> ATLPath::SkipRoot
+ この関数は、用のオーバー ロードされたラッパー [PathSkipRoot](http://msdn.microsoft.com/library/windows/desktop/bb773754)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -633,13 +672,13 @@ inline wchar_t* SkipRoot(const wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathSkipRoot](http://msdn.microsoft.com/library/windows/desktop/bb773754)詳細です。  
+ 参照してください[PathSkipRoot](http://msdn.microsoft.com/library/windows/desktop/bb773754)詳細についてはします。  
   
  
   
 
-## <a name="a-namestrippatha-atlpathstrippath"></a><a name="strippath"></a>ATLPath::StripPath
- この関数は、用のオーバー ロードされたラッパー [PathStripPath](http://msdn.microsoft.com/library/windows/desktop/bb773756)します。  
+## <a name="strippath"></a> ATLPath::StripPath
+ この関数は、用のオーバー ロードされたラッパー [PathStripPath](http://msdn.microsoft.com/library/windows/desktop/bb773756)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -649,14 +688,14 @@ inline void StripPath(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathStripPath](http://msdn.microsoft.com/library/windows/desktop/bb773756)詳細です。  
+ 参照してください[PathStripPath](http://msdn.microsoft.com/library/windows/desktop/bb773756)詳細についてはします。  
   
  
   
 
 
-## <a name="a-namestriptoroota-atlpathstriptoroot"></a><a name="striptoroot"></a>ATLPath::StripToRoot
- この関数は、用のオーバー ロードされたラッパー [PathStripToRoot](http://msdn.microsoft.com/library/windows/desktop/bb773757)します。  
+## <a name="striptoroot"></a> ATLPath::StripToRoot
+ この関数は、用のオーバー ロードされたラッパー [PathStripToRoot](http://msdn.microsoft.com/library/windows/desktop/bb773757)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -666,13 +705,13 @@ inline BOOL StripToRoot(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathStripToRoot](http://msdn.microsoft.com/library/windows/desktop/bb773757)詳細です。  
+ 参照してください[PathStripToRoot](http://msdn.microsoft.com/library/windows/desktop/bb773757)詳細についてはします。  
   
  
   
 
-## <a name="a-nameunquotespacesa-atlpathunquotespaces"></a><a name="unquotespaces"></a>ATLPath::UnquoteSpaces
- この関数は、用のオーバー ロードされたラッパー [PathUnquoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773763)します。  
+## <a name="unquotespaces"></a> ATLPath::UnquoteSpaces
+ この関数は、用のオーバー ロードされたラッパー [PathUnquoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773763)です。  
   
 ### <a name="syntax"></a>構文  
   
@@ -682,9 +721,8 @@ inline void UnquoteSpaces(wchar_t* pszPath);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[PathUnquoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773763)詳細です。  
+ 参照してください[PathUnquoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773763)詳細についてはします。  
   
  
   
  
-

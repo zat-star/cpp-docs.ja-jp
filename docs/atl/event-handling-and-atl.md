@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: event handling, about event handling
+dev_langs:
+- C++
+helpviewer_keywords:
+- event handling, about event handling
 ms.assetid: e4812b0d-6fdd-4e8c-bdb8-378a25c7bde2
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8a4095ae7cccf33110e4f530c533256aba009aa6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fbd1b955ae8ed3caf4f67dbcb9aa71419eb620c8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="event-handling-and-atl"></a>イベント処理と ATL
 このセクションでは、ATL を使用してイベントをシンクする方法を示しています。 COM イベント処理の基本原則と ATL で提供されるサポートを使用してイベントをシンクの仕様に対応します。  
@@ -45,6 +50,6 @@ ms.lasthandoff: 10/24/2017
  [ATL](../atl/active-template-library-atl-concepts.md)  
  Active Template Library を使用してプログラミングする方法に関する概念説明のトピックへのリンクを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../atl/active-template-library-atl-concepts.md)
 

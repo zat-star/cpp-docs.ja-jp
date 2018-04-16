@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: fgetpos
+ms.topic: reference
+apiname:
+- fgetpos
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,21 +23,25 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: fgetpos
-dev_langs: C++
+f1_keywords:
+- fgetpos
+dev_langs:
+- C++
 helpviewer_keywords:
 - fgetpos function
 - streams, file position indicator
 ms.assetid: bfa05c38-1135-418c-bda1-d41be51acb62
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 913893c1e9aa1b67a88eeecf81a377debbb2be2a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3740fdc7924e12fc9eeb2de4ab108ad376c764da
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fgetpos"></a>fgetpos
 ストリームのファイル位置インジケーターを取得します。  
@@ -62,13 +68,13 @@ int fgetpos(
 ## <a name="remarks"></a>コメント  
  `fgetpos` 関数は、`stream` 引数のファイル位置インジケーターの現在の値を取得し、`pos` で示されるオブジェクトに格納します。 `fsetpos` 関数は、`pos` に格納されている情報を後で使用して、`fgetpos` が呼び出された時点の位置まで `stream` 引数のポインターをリセットします。 `pos` 値は内部形式で格納されます。`fgetpos` と `fsetpos` でのみ使用される値です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fgetpos`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -125,6 +131,6 @@ after fgetpos: gets a stream
 after fsetpos: gets a stream  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fsetpos](../../c-runtime-library/reference/fsetpos.md)

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - unlink
 apilocation:
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - unlink function
 ms.assetid: 2cd82055-5770-48be-88ee-4b2c70541c46
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: edbc70c0ca1037a24ba397dfa342283ea981ac13
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 4059d43516dc498c18fdeb6e6cf5a77b7adb7fdc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="unlink"></a>unlink
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ 準拠の [_unlink](../../c-runtime-library/reference/unlink-wunlink.md) を使用してください。

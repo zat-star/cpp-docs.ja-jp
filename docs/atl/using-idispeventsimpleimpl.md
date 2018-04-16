@@ -1,25 +1,31 @@
 ---
-title: "されます (ATL) を使用して |Microsoft ドキュメント"
-ms.custom: 
+title: されます (ATL) を使用して |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: IDispEventSimpleImpl
-dev_langs: C++
-helpviewer_keywords: IDispEventSimpleImpl class, using
+f1_keywords:
+- IDispEventSimpleImpl
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDispEventSimpleImpl class, using
 ms.assetid: 8640ad1a-4bd0-40a5-b5e4-7322685d7aab
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1118a119039d5bd3c58619fc957008b365c72d07
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ed21c862d61686e86efd684a6e88795e4b7bbe51
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-idispeventsimpleimpl"></a>IDispEventSimpleImpl を使用します。
 使用する場合`IDispEventSimpleImpl`イベントを処理する必要があります。  
@@ -83,7 +89,7 @@ ms.lasthandoff: 10/24/2017
   
  [!code-cpp[NVC_ATL_EventHandlingSample#4](../atl/codesnippet/cpp/using-idispeventsimpleimpl_3.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イベント処理](../atl/event-handling-and-atl.md)   
  [コード](../visual-cpp-samples.md)
 

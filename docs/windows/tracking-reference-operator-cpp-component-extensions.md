@@ -1,27 +1,33 @@
 ---
-title: "演算子の追跡参照 (C++ コンポーネント拡張) |Microsoft ドキュメント"
-ms.custom: 
+title: 演算子の追跡参照 (C++ コンポーネント拡張) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-f1_keywords: '%'
-dev_langs: C++
+f1_keywords:
+- '%'
+dev_langs:
+- C++
 helpviewer_keywords:
 - tracking references
 - '% tracking reference [C++]'
 ms.assetid: 142a7269-ab69-4b54-a6d7-833bef06228f
-caps.latest.revision: "31"
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 733c99dc4895907ba943f32dc7048ce6cfc01528
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 0cbf1483c66bd8472149539af84b83755cae43cf
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="tracking-reference-operator-c-component-extensions"></a>参照演算子の追跡 (C++ コンポーネント拡張)
 A*追跡参照*(`%`) 通常の C++ 参照のように動作 (`&`) オブジェクトの参照カウントがインクリメントされますが、オブジェクトが追跡参照に割り当てられている場合、します。  
@@ -82,7 +88,7 @@ ref class Foo sealed {};
   
 -   [方法: C++/CLI で追跡参照を使用する](../dotnet/how-to-use-tracking-references-in-cpp-cli.md)
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  **例**  
   
  次の C++/CLI の例では、ネイティブ型およびマネージ型で追跡参照を使用する方法を示します。  
@@ -134,7 +140,7 @@ int main() {
 using namespace System;  
   
 int main() {  
-   array<int> ^ a = ref new array< Int32 >(5);  
+   array<int> ^ a = ref new array<Int32>(5);  
    a[0] = 21;  
    Console::WriteLine(a[0]);  
    array<int> ^% arr = a;  

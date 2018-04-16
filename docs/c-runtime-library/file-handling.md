@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.files
-dev_langs: C++
+f1_keywords:
+- c.files
+dev_langs:
+- C++
 helpviewer_keywords:
 - files [C++], handling
 - files [C++], opening
 - files [C++], manipulating
 ms.assetid: 48119e2e-e94f-4602-b08b-b72440f731d8
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2e35d3f9a248d280f4ba617da89eb3993414a525
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 129267c69a2cf4830587f8ebc7c445a01591235b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="file-handling"></a>ファイル処理
 ファイル処理ルーチンは、ファイルの作成、削除、操作、およびファイル アクセス許可の設定、チェックに使用します。  
@@ -33,7 +38,7 @@ ms.lasthandoff: 10/24/2017
   
  ファイル記述子で指定されたファイルを操作するには、次のルーチンを使います。  
   
-|ルーチン|上限のファイル数を変更するには、|  
+|ルーチンによって返される値|上限のファイル数を変更するには、|  
 |-------------|---------|  
 |[_chsize](../c-runtime-library/reference/chsize.md)、[_chsize_s](../c-runtime-library/reference/chsize-s.md)|ファイル サイズを変更します。|  
 |[_filelength、_filelengthi64](../c-runtime-library/reference/filelength-filelengthi64.md)|ファイル長を取得します。|  
@@ -48,7 +53,7 @@ ms.lasthandoff: 10/24/2017
   
  パスまたはファイル名で指定されたファイルを操作するには、次のルーチンを使います。  
   
-|ルーチン|上限のファイル数を変更するには、|  
+|ルーチンによって返される値|使用|  
 |-------------|---------|  
 |[_access, _waccess](../c-runtime-library/reference/access-waccess.md), [_access_s, _waccess_s](../c-runtime-library/reference/access-s-waccess-s.md)|ファイルのアクセス許可の設定をチェックします。|  
 |[_chmod、_wchmod](../c-runtime-library/reference/chmod-wchmod.md)|ファイルのアクセス許可の設定を変更します。|  
@@ -66,7 +71,7 @@ ms.lasthandoff: 10/24/2017
   
  これらのルーチンは、ファイルを開きます。  
   
-|ルーチン|上限のファイル数を変更するには、|  
+|ルーチンによって返される値|使用|  
 |-------------|---------|  
 |[fopen, _wfopen](../c-runtime-library/reference/fopen-wfopen.md), [fopen_s, _wfopen_s](../c-runtime-library/reference/fopen-s-wfopen-s.md)|ファイルを開き、開いているファイルへのポインターを返します。|  
 |[_fsopen、_wfsopen](../c-runtime-library/reference/fsopen-wfsopen.md)|ファイル共有でストリームを開き、開いているファイルへのポインターを返します。|  
@@ -77,7 +82,7 @@ ms.lasthandoff: 10/24/2017
   
  次のルーチンを使うと、`FILE` 構造体、ファイル記述子、および Win32 ファイル ハンドル間でファイルの表示を変更できます。  
   
-|ルーチン|用途|  
+|ルーチンによって返される値|使用|  
 |-------------|---------|  
 |[_fdopen、wfdopen](../c-runtime-library/reference/fdopen-wfdopen.md)|ストリームを前回下位入出力で開いたファイルに関連付け、オープン ストリームへのポインターを返します。|  
 |[_fileno](../c-runtime-library/reference/fileno.md)|ストリームに関連付けられているファイル記述子を取得します。|  
@@ -92,7 +97,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [CreateNamedPipe](http://msdn.microsoft.com/library/windows/desktop/aa365150.aspx)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)   
  [ディレクトリ制御](../c-runtime-library/directory-control.md)   
  [システム コール](../c-runtime-library/system-calls.md)

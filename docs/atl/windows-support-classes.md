@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: vc.atl.windows
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- vc.atl.windows
+dev_langs:
+- C++
 helpviewer_keywords:
 - ATL, windows
 - windows [C++], ATL
 ms.assetid: 750b14d5-d787-4d2b-9728-ac199ccad489
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 96ca4417cea6b4bdd1107d3f5d7b4ea9d85269e9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b64654f0f483ec401b379ec4c512489ce8cac823
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="windows-support-classes"></a>Windows のサポート クラス
 次のクラスは、windows をサポートを提供します。  
@@ -59,7 +64,7 @@ ms.lasthandoff: 10/24/2017
   
  [ATL チュートリアル](../atl/active-template-library-atl-tutorial.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)   
  [メッセージ マップ マクロ](../atl/reference/message-map-macros-atl.md)   
  [Windows クラスに関するマクロ](../atl/reference/window-class-macros.md)

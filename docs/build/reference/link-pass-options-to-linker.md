@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: /link
-dev_langs: C++
+f1_keywords:
+- /link
+dev_langs:
+- C++
 helpviewer_keywords:
 - /link compiler option [C++]
 - pass options to linker
@@ -17,15 +20,17 @@ helpviewer_keywords:
 - -link compiler option [C++]
 - cl.exe compiler [C++], passing options to linker
 ms.assetid: 16902a94-c094-4328-841f-3ac94ca04848
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2e2a193ff5f1e76d4e7ceb160325c1e748634c3a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d6732f5a2b144172939e23af4addb37b7605de11
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="link-pass-options-to-linker"></a>/link (リンカーにオプションを渡す)
 1 つまたは複数のリンカー オプションをリンカーに渡します。  
@@ -57,6 +62,6 @@ ms.lasthandoff: 10/24/2017
   
 -   このコンパイラ オプションをプログラムで変更できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

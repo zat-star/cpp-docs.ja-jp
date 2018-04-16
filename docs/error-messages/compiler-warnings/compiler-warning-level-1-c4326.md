@@ -15,35 +15,22 @@ dev_langs:
 helpviewer_keywords:
 - C4326
 ms.assetid: d44d2c4e-9456-42d3-b35b-4ba4b2d42ec7
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 08919a46a9f48ef42849351f19099c339b15ed90
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: faf38d27c0a8d38e008cb94d65fc8745995dd947
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4326"></a>コンパイラの警告 (レベル 1) C4326
-'function' の戻り値の型が 'type2' ではなく ' type1' にする必要があります。  
+'function' の戻り値の型が 'type2' ではなく ' type1' をする必要があります。  
   
- 関数が以外の型を返した***type1***します。 たとえばを使用して[/Za](../../build/reference/za-ze-disable-language-extensions.md)、main は返されませんでした、`int`です。  
+ 関数が以外の型を返しました***type1***です。 たとえばを使用して[/Za](../../build/reference/za-ze-disable-language-extensions.md)、main が返されませんでした、`int`です。  
   
  次の例では、C4326 が生成されます。  
   

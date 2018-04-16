@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::unorm_3::set_zy
 - amp_short_vectors/Concurrency::graphics::unorm_3::zxy
@@ -77,17 +78,20 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::unorm_3::set_y
 - amp_short_vectors/Concurrency::graphics::unorm_3::get_yz
 - amp_short_vectors/Concurrency::graphics::unorm_3::rbg
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: ea4e7a17-5256-464c-af28-8b01962564c0
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 73f8b08fce39103936215292c3368f0e77a76017
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6aeded2e1d503ae26091d53a0cd12e75648e4254
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="unorm3-class"></a>unorm_3 クラス
 3 個の符号なし正規数の short ベクターを表します。  
@@ -158,16 +162,16 @@ class unorm_3;
 |名前|説明|  
 |----------|-----------------|  
 |unorm_3::operator--||  
-|unorm_3::operator * =||  
+|unorm_3::operator*=||  
 |unorm_3::operator/=||  
 |unorm_3::operator++||  
-|unorm_3::operator + =||  
-|unorm_3::operator = =||  
+|unorm_3::operator+=||  
+|unorm_3::operator=||  
 |unorm_3::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#unorm_3__size)||  
   
@@ -209,12 +213,12 @@ class unorm_3;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `unorm_3`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>unorm_3 
+##  <a name="ctor"></a> unorm_3 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -293,11 +297,11 @@ explicit inline unorm_3(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="unorm_3__size"></a>サイズ 
+##  <a name="unorm_3__size"></a> サイズ 
 
 ```  
 static const int size = 3;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

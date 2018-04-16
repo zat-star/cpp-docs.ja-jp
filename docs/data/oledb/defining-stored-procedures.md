@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - stored procedures, syntax
 - OLE DB, stored procedures
 - stored procedures, defining
 - stored procedures, OLE DB
 ms.assetid: 54949b81-3275-4dd9-96e4-3eda1ed755f2
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4faa20642cbd2ddbacc8be1c4dcd56afb8797460
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 3262396bcaafd1522278d0ac53be5d715966b9d2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="defining-stored-procedures"></a>ストアド プロシージャの定義
 ストアド プロシージャを呼び出す前にする必要があります最初にそれを定義してを使用して、 [DEFINE_COMMAND](../../data/oledb/define-command.md)マクロです。 コマンドを定義するときに、パラメーター マーカーとして疑問符 (?) でパラメーターを表します。  
@@ -54,16 +59,17 @@ DEFINE_COMMAND(CMySProcAccessor, _T("{CALL dbo.dt_adduserobject (?,?) }")
  次に、コマンド クラスを宣言します。  
   
 ```  
-class CMySProc : public CCommand<CAccessor<CMySProcAccessor> >  
+class CMySProc : public CCommand<CAccessor<CMySProcAccessor>>  
 ```  
   
  最後に、ストアド プロシージャを呼び出して`OpenRowset`次のようにします。  
   
 ```  
 CSession m_session;  
+
 HRESULT OpenRowset()  
 {  
-   return CCommand<CAccessor<CMySProcAccessor> >::Open(m_session);  
+   return CCommand<CAccessor<CMySProcAccessor>>::Open(m_session);  
 }  
 ```  
   
@@ -73,5 +79,5 @@ HRESULT OpenRowset()
 db_command("{ ? = CALL dbo.dt_adduserobject }")  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストアド プロシージャの使用](../../data/oledb/using-stored-procedures.md)

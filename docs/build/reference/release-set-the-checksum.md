@@ -1,58 +1,62 @@
 ---
-title: "/RELEASE (チェックサムの設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/release"
-  - "VC.Project.VCLinkerTool.SetChecksum"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/RELEASE リンカー オプション"
-  - "チェックサムの設定"
-  - "RELEASE リンカー オプション"
-  - "-RELEASE リンカー オプション"
+title: "-リリース (チェックサムの設定) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /release
+- VC.Project.VCLinkerTool.SetChecksum
+dev_langs:
+- C++
+helpviewer_keywords:
+- -RELEASE linker option
+- /RELEASE linker option
+- checksum setting
+- RELEASE linker option
 ms.assetid: 93bcadf4-29ac-4824-914b-6997e3751d22
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b961c55f04b4f830de30c3d886d9aaee9ef71ea2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /RELEASE (チェックサムの設定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="release-set-the-checksum"></a>/RELEASE (チェックサムの設定)
 ```  
 /RELEASE  
 ```  
   
-## 解説  
- \/RELEASE オプションは、.exe ファイルのヘッダーにチェックサムを設定します。  
+## <a name="remarks"></a>コメント  
+ /RELEASE オプションは、.exe ファイルのヘッダーにチェックサムを設定します。  
   
- オペレーティング システムでは、デバイス ドライバーに対してチェックサムを必要とします。  リリースするデバイス ドライバーには、将来のオペレーティング システムとの互換性を保つためにチェックサムを設定してください。  
+ オペレーティング システムでは、デバイス ドライバーのチェックサムが必要です。 将来のオペレーティング システムとの互換性を確保する、デバイス ドライバーのリリース バージョンのチェックサムを設定します。  
   
- [\/SUBSYSTEM:NATIVE](../../build/reference/subsystem-specify-subsystem.md) オプションを指定すると、既定では、\/RELEASE オプションが設定されます。  
+ /RELEASE オプションは既定で設定時に、[中に/subsystem:native が](../../build/reference/subsystem-specify-subsystem.md)オプションを指定します。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[詳細\] プロパティ ページをクリックします。  
+3.  クリックして、**詳細**プロパティ ページ。  
   
-4.  \[チェックサムの設定\] プロパティを変更します。  
+4.  変更、**チェックサムの設定**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.SetChecksum%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

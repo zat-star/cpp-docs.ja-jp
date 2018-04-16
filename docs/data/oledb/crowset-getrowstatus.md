@@ -1,61 +1,63 @@
 ---
-title: "CRowset::GetRowStatus | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CRowset.GetRowStatus"
-  - "ATL.CRowset<TAccessor>.GetRowStatus"
-  - "ATL::CRowset<TAccessor>::GetRowStatus"
-  - "CRowset::GetRowStatus"
-  - "ATL::CRowset::GetRowStatus"
-  - "CRowset<TAccessor>::GetRowStatus"
-  - "ATL.CRowset.GetRowStatus"
-  - "CRowset<TAccessor>.GetRowStatus"
-  - "GetRowStatus"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetRowStatus メソッド"
+title: "Crowset::getrowstatus |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CRowset.GetRowStatus
+- ATL.CRowset<TAccessor>.GetRowStatus
+- ATL::CRowset<TAccessor>::GetRowStatus
+- CRowset::GetRowStatus
+- ATL::CRowset::GetRowStatus
+- CRowset<TAccessor>::GetRowStatus
+- ATL.CRowset.GetRowStatus
+- CRowset<TAccessor>.GetRowStatus
+- GetRowStatus
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetRowStatus method
 ms.assetid: 7a29a235-cb7e-40c1-92ce-5441751febee
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0dd42846eb6ee46ea38c808c7542af8fd9990201
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CRowset::GetRowStatus
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="crowsetgetrowstatus"></a>CRowset::GetRowStatus
 すべての行の状態を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```cpp
+HRESULT GetRowStatus(DBPENDINGSTATUS* pStatus) const throw();  
 ```  
   
-      HRESULT GetRowStatus(   
-   DBPENDINGSTATUS* pStatus    
-) const throw( );  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pStatus`  
- \[\] `GetRowStatus` がステータス値を返す場所へのポインター。  OLE DB Programmer's Reference の DBPENDINGSTATUS を参照してください。  
+ [out]場所へのポインターを`GetRowStatus`ステータス値を返します。 OLE DB プログラマーズ リファレンス DBPENDINGSTATUS を参照してください。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- このメソッドは、すべてのプロバイダーでサポートされない省略可能なインターフェイス `IRowsetUpdate`が必要ですが、; この場合、メソッドの戻り **E\_NOINTERFACE**。  また `VARIANT_TRUE` にテーブルの **開く** を呼び出す前に **DBPROP\_IRowsetUpdate** を設定または命じなければ、行セットが含まれます。  
+## <a name="remarks"></a>コメント  
+ このメソッドには、省略可能なインターフェイスが必要とする`IRowsetUpdate`、する可能性がありますすべてのプロバイダーでサポートされていない以外の場合は、そうでは、返されます**E_NOINTERFACE**です。 設定する必要もあります**DBPROP_IRowsetUpdate**に`VARIANT_TRUE`呼び出す前に**開く**テーブルまたは行セットを含むコマンドをします。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CRowset クラス](../Topic/CRowset%20Class.md)   
+## <a name="see-also"></a>参照  
+ [CRowset クラス](../../data/oledb/crowset-class.md)   
  [IRowsetUpdate::GetRowStatus](https://msdn.microsoft.com/en-us/library/ms724377.aspx)

@@ -1,25 +1,31 @@
 ---
-title: "_ _super |Microsoft ドキュメント"
-ms.custom: 
+title: _ _super |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-f1_keywords: __super_cpp
-dev_langs: C++
-helpviewer_keywords: __super keyword [C++]
+f1_keywords:
+- __super_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- __super keyword [C++]
 ms.assetid: f0957c31-9256-405b-b402-cad182404b5f
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6dd4e24b36811a96e0d09ae58e7573d57065e2fc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 93585337ae34e7c95d1c11b0a970afc8b36987bb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="super"></a>__super
 **Microsoft 固有の仕様**  
@@ -70,5 +76,5 @@ struct D : B1, B2 {
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -27,7 +28,8 @@ f1_keywords:
 - AFXCOLORPICKERCTRL/CMFCColorPickerCtrl::SetSaturation
 - AFXCOLORPICKERCTRL/CMFCColorPickerCtrl::SetType
 - AFXCOLORPICKERCTRL/CMFCColorPickerCtrl::DrawCursor
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCColorPickerCtrl [MFC], CMFCColorPickerCtrl
 - CMFCColorPickerCtrl [MFC], GetColor
@@ -47,15 +49,17 @@ helpviewer_keywords:
 - CMFCColorPickerCtrl [MFC], SetType
 - CMFCColorPickerCtrl [MFC], DrawCursor
 ms.assetid: b9bbd03c-beb0-4b55-9765-9985fd05e5dc
-caps.latest.revision: "33"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 66e0155adec5b00bbb5e5f090c3944899c5e92d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 11c015df63d3032a8616f7f19614376aa966d89b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfccolorpickerctrl-class"></a>CMFCColorPickerCtrl クラス
 `CMFCColorPickerCtrl`クラスは、色の選択に使用されるコントロールの機能を提供します。  
@@ -134,7 +138,7 @@ class CMFCColorPickerCtrl : public CButton
   
  [CMFCColorPickerCtrl](../../mfc/reference/cmfccolorpickerctrl-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcolorpickerctrl.h  
   
 ##  <a name="cmfccolorpickerctrl"></a>CMFCColorPickerCtrl::CMFCColorPickerCtrl  
@@ -412,7 +416,7 @@ void SetType(COLORTYPE colorType);
 ### <a name="remarks"></a>コメント  
  カラー ピッカー コントロールの種類を指定するには、Windows のコントロールが作成される前に、このメソッドを呼び出します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCColorDialog クラス](../../mfc/reference/cmfccolordialog-class.md)

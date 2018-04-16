@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - identifiers, C
 - naming identifiers
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - identifiers, case sensitivity
 - symbols, case sensitivity
 ms.assetid: d02edbbc-85a0-4118-997b-84ee6b972eb6
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ab60d1275925504a746f8b6d01003129fd688673
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dfe8ab231d6bf4051cc730ff1beb23f93a8f301d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-identifiers"></a>C 識別子
 "識別子" または "シンボル" は、プログラム内の変数、型、関数、およびラベルに対して指定する名前です。 識別子名は、どのキーワードともスペル (大文字小文字の区別を含む) が異なっている必要があります。 キーワード (C または Microsoft) は識別子として使用できません。これらは特別な用途のために予約されています。 識別子を作成するには、変数、型、または関数を定義する際に指定します。 この例では、`result` は整数変数の識別子で、`main` と `printf` は関数の識別子名です。  
@@ -67,7 +71,7 @@ int main()
   
  ANSI では、外部識別子の名前は 6 文字、内部 (関数内部) 識別子の名前は 31 文字と規定されていますが、Microsoft C コンパイラでは、内部または外部の識別子名で 247 文字を使用できます。 ANSI 互換に関して問題がない場合は、/H (外部名の長さを制限する) オプションを使用して、この既定値を大きい数値または小さい数値に変更できます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
  C コンパイラでは、大文字と子文字は別の文字と見なされます。 このように "大文字と小文字が区別" されるので、同じスペルであっても大文字と小文字を変えることで、異なる識別子を作成できます。 たとえば、次の識別子はそれぞれ一意です。  
   
@@ -82,7 +86,7 @@ aDD
   
  識別子に対して、2 個のアンダースコアまたは大文字に続くアンダースコアで始まる名前を選択しないでください。 ANSI C 規格では、これらの文字の組み合わせで始まる識別子名はコンパイラ用に予約されています。 ファイル レベルのスコープを持つ識別子には、先頭の 2 文字にアンダースコアと小文字を使用する名前を付けることもできません。 これらの文字で始まる識別子名も予約されています。 規則では、Microsoft は、マクロ名を開始するには 1 つのアンダースコアおよび大文字を使用し、Microsoft 仕様のキーワード名には二重アンダースコアを使用します。 名前の競合を回避するには、1 つまたは 2 つのアンダースコアで始まらない識別子名、またはアンダースコアで始まり大文字が続く名前を常に選択します。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
  次は、ANSI または Microsoft の命名制限に準拠する有効な識別子の例です。  
   
@@ -103,9 +107,9 @@ LastNum
   
  "ソース文字セット" は、ソース ファイルに表示できる有効な文字のセットです。 Microsoft C では、ソース セットは標準 ASCII 文字セットです。 ソース文字セットおよび実行文字セットには、エスケープ シーケンスとして使用される ASCII 文字が含まれます。 実行文字セットについては、[文字定数](../c-language/c-character-constants.md)に関するページをご覧ください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
  識別子には "スコープ" と "リンケージ" があります。スコープはプログラムが認識される範囲です。リンケージは、別のスコープ内の同じ名前が同じ識別子を参照するかどうかを決定します。 これらのトピックについては、「[有効期間、スコープ、可視性、およびリンケージ](../c-language/lifetime-scope-visibility-and-linkage.md)」で説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C の要素](../c-language/elements-of-c.md)

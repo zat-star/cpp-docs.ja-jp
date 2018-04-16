@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wfreopen_s
 - freopen_s
@@ -27,7 +28,8 @@ f1_keywords:
 - freopen_s
 - _tfreopen_s
 - _wfreopen_s
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _tfreopen_s function
 - _wfreopen_s function
@@ -36,15 +38,17 @@ helpviewer_keywords:
 - wfreopen_s function
 - freopen_s function
 ms.assetid: ad25a4da-6ad4-476b-a86d-660b221ca84d
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6141ed6252bfd196c15cc2e7be4361a840c722d6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a62165fee7ed54a7eeadf5f381945936bb441908
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="freopens-wfreopens"></a>freopen_s、_wfreopen_s
 ファイル ポインターを再度割り当てます。 これらのバージョンの [freopen、_wfreopen](../../c-runtime-library/reference/freopen-wfreopen.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンです。  
@@ -131,14 +135,14 @@ errno_t _wfreopen(
   
  テキスト モードと binary モードの詳細については、「[テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`freopen_s`|\<stdio.h>|  
 |`_wfreopen_s`|\<stdio.h> または \<wchar.h>|  
   
- コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル —`stdin`、 `stdout`、および`stderr`— C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -175,11 +179,11 @@ successfully reassigned
 This will go to the file 'freopen.out'  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [freopen、_wfreopen](../../c-runtime-library/reference/freopen-wfreopen.md)   
  [fclose、_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   
- [_fdopen、wfdopen](../../c-runtime-library/reference/fdopen-wfdopen.md)   
+ [_fdopen、_wfdopen](../../c-runtime-library/reference/fdopen-wfdopen.md)   
  [_fileno](../../c-runtime-library/reference/fileno.md)   
  [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
  [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   

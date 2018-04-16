@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
-helpviewer_keywords: new keyword [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- new keyword [C++]
 ms.assetid: 69fee812-1c28-4882-8fda-d1ad17860004
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 05b83a284dcf599890985f1f01d8327ac5ef75e4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 68843f0619b5ebc057f83bdb4f49807a15fb86a1
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="new-operator-c"></a>new 演算子 (C++)
 オブジェクトまたはオブジェクトの配列にメモリを割り当てます*型名*フリー ストアから、オブジェクトを適切に型指定されたゼロ以外のポインターを返します。  
@@ -68,10 +73,10 @@ delete *p;
   
  次に示しますの文法要素**新しい**:  
   
- *配置*  
+ *placement*  
  オーバー ロードする場合は、追加の引数を渡す方法を提供**新しい**です。  
   
- *型名*  
+ *type-name*  
  割り当てる型を指定します。組み込みまたはユーザー定義の型を指定できます。 型の指定が複雑な場合には、かっこで囲むことでバインディング順を強制的に適用できます。  
   
  *initializer*  
@@ -237,7 +242,7 @@ int main()
  コンパイラが検出した場合、**新しい**型のオブジェクトを割り当てるオペレーター`type`への呼び出しを発行`type` **:: 演算子 new (sizeof (** `type` **))**またはユーザー定義されなかった場合`operator new`が定義されている**:: 演算子 new (sizeof (** `type` **))**です。 したがって、**新しい**演算子は、オブジェクトの正しいメモリの量を割り当てることができます。  
   
 > [!NOTE]
->  引数に`operator new`の種類は**size_t**です。 この型は、DIRECT.H、MALLOC.H、MEMORY.H、SEARCH.H、STDDEF.H、STDIO.H、STDLIB.H、STRING.H、および TIME.H で定義されます。  
+>  引数に`operator new`の種類は**size_t**です。 この型がで定義されている\<direct.h >、 \<malloc.h >、 \<memory.h >、 \<search.h >、 \<stddef.h >、 \<stdio.h >、 \<stdlib.h >、 \<string.h >、および\<time.h >。  
   
  文法のオプションで指定できる性*配置*(の文法を参照してください[new 演算子](../cpp/new-operator-cpp.md))。 *配置*パラメーターは、ユーザー定義の実装に対してのみ使用することができます`operator new`; に渡される追加の情報は、その`operator new`です。 式は、*配置*などフィールド`T *TObject = new ( 0x0040 ) T;`に変換されます`T *TObject = T::operator new( sizeof( T ), 0x0040 );`クラス T を持つメンバー演算子は、新しい、それ以外の場合に`T *TObject = ::operator new( sizeof( T ), 0x0040 );`です。  
   
@@ -254,7 +259,7 @@ T *TObject =::new TObject;
   
  スコープ解決演算子 (`::`)、グローバルの使用を強制**新しい**演算子。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [新しい演算子と delete 演算子](../cpp/new-and-delete-operators.md)

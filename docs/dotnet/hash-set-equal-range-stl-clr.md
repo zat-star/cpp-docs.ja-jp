@@ -1,45 +1,50 @@
 ---
-title: "hash_set::equal_range (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_set::equal_range"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "equal_range メンバー [STL/CLR]"
+title: "hash_set::equal_range (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::hash_set::equal_range
+dev_langs:
+- C++
+helpviewer_keywords:
+- equal_range member [STL/CLR]
 ms.assetid: 502af4c5-f71e-44cf-a180-21e9da4b50ff
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5ece51c952cacb629a2d0ce2fdecc104a54c7cf6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_set::equal_range (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashsetequalrange-stlclr"></a>hash_set::equal_range (STL/CLR)
 指定したキーに一致する範囲を検索します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 cliext::pair<iterator, iterator> equal_range(key_type key);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  key  
- 検索するキー値。  
+ 検索対象のキー値。  
   
-## 解説  
- このメンバー関数は、反復子 `cliext::pair<iterator, iterator>(`[hash\_set::lower\_bound](../dotnet/hash-set-lower-bound-stl-clr.md)`(``key``),`[hash\_set::upper\_bound](../dotnet/hash-set-upper-bound-stl-clr.md)`(``key``))`のペアを返します。  指定したキーに一致する、被制御シーケンス内の要素の範囲を現在特定するときに使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数が組の反復子を返します`cliext::pair<iterator, iterator>(` [hash_set::lower_bound (STL/CLR)](../dotnet/hash-set-lower-bound-stl-clr.md) `(key),` [hash_set::upper_bound (STL/CLR)](../dotnet/hash-set-upper-bound-stl-clr.md)`(key))`です。 使用する指定したキーと一致する、被制御シーケンスの現在の要素の範囲が決まります。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_set_equal_range.cpp   
@@ -75,17 +80,20 @@ int main()
   
 ```  
   
-  **b c**  
-**equal\_range \(L'x\) は空けましたり \= True を**  
- **b**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+ a b c  
+equal_range(L'x') empty = True  
+ b  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_set](../dotnet/hash-set-stl-clr.md)   
- [hash\_set::count](../dotnet/hash-set-count-stl-clr.md)   
- [hash\_set::find](../Topic/hash_set::find%20\(STL-CLR\).md)   
- [hash\_set::lower\_bound](../dotnet/hash-set-lower-bound-stl-clr.md)   
- [hash\_set::upper\_bound](../dotnet/hash-set-upper-bound-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)   
+ [hash_set::count (STL/CLR)](../dotnet/hash-set-count-stl-clr.md)   
+ [hash_set::find (STL/CLR)](../dotnet/hash-set-find-stl-clr.md)   
+ [hash_set::lower_bound (STL/CLR)](../dotnet/hash-set-lower-bound-stl-clr.md)   
+ [hash_set::upper_bound (STL/CLR)](../dotnet/hash-set-upper-bound-stl-clr.md)

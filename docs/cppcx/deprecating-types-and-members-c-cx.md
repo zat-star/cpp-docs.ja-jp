@@ -2,22 +2,23 @@
 title: "型およびメンバーの非推奨化 (C + + CX) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 12/30/2016
-ms.prod: windows-client-threshold
 ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: b20b01c1-a439-4ff0-8cf3-d7280c492813
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 0fbed1c29feccc6a999545daab6be8bd9ccfc7f9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1cc0ef30006afb9fcad65bc64e3f12fe9586d920
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="deprecating-types-and-members-ccx"></a>型およびメンバーの非推奨化 (C++/CX)
 C + + CX、プロデューサーおよびコンシューマーを使用して用の Windows ランタイム型とメンバーの非推奨、[推奨されなくなった](http://msdn.microsoft.com/en-us/8b02ad36-3b5f-4361-888b-e6a99040e57c)属性はサポートされています。 この属性が適用された API を利用すると、その API は推奨されておらず、代替 API の使用を推奨する警告メッセージがコンパイル時に表示されます。 独自のパブリック型およびメソッドでこの属性を適用し、独自のカスタム メッセージを提供することもできます。  
@@ -55,13 +56,13 @@ public:
 |enum|  
 |struct|  
 |メソッド|  
-|クラス|  
+|class|  
 |interface|  
 |property|  
 |構造体のフィールド|  
 |パラメーター化されたコンストラクター|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型システム](../cppcx/type-system-c-cx.md)   
  [Visual C 言語リファレンス](../cppcx/visual-c-language-reference-c-cx.md)   
  [名前空間参照](../cppcx/namespaces-reference-c-cx.md)

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3279
 ms.assetid: 639afc20-984c-4a95-be35-8bf9409f02d5
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4535edc3ccca0c5abd972e31ee7284fad7384c31
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 16bb13d226b6d4d5d5846f8302070bf0c9579cfb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3279"></a>コンパイラ エラー C3279
 cli 名前空間で宣言されたクラス テンプレートの明示的なインスタンス生成と同様に、部分的または明示的な特殊化は許可されていません  

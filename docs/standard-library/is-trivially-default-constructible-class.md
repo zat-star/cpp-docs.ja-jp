@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - type_traits/std::is_trivially_default_constructible
 dev_langs:
@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - is_trivially_default_constructible
 ms.assetid: 653ecd73-909f-4dd8-b95a-d1164d1c2da4
-caps.latest.revision: 17
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dd0b63b1f088eadf2ba2a253083d0f2878c2b751
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 9ad38fb23b5ac205a283969ea50041c1bfba2806
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="istriviallydefaultconstructible-class"></a>is_trivially_default_constructible クラス
 型に自明な既定コンストラクターが存在するかどうかをテストします。  
@@ -57,14 +58,13 @@ struct is_trivially_default_constructible;
   
 -   クラスの型配列のすべての非静的データ メンバーのクラスに自明なコンストラクターがある  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
-
 
 
 

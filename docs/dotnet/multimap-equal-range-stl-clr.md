@@ -1,45 +1,50 @@
 ---
-title: "multimap::equal_range (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multimap::equal_range"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "equal_range メンバー [STL/CLR]"
+title: multimap::equal_range (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::multimap::equal_range
+dev_langs:
+- C++
+helpviewer_keywords:
+- equal_range member [STL/CLR]
 ms.assetid: f1008d89-7442-429b-9eca-4ef7ee704766
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 64d190bf5cef7168c8b7b96197380789d1011023
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# multimap::equal_range (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="multimapequalrange-stlclr"></a>multimap::equal_range (STL/CLR)
 指定したキーに一致する範囲を検索します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 pair_iter_iter equal_range(key_type _Keyval);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_Keyval`  
- 検索するキー値。  
+ 検索対象のキー値。  
   
-## 解説  
- 反復子 `-`[multimap::lower\_bound](../dotnet/multimap-lower-bound-stl-clr.md)`(``_Keyval``),`[multimap::upper\_bound](../dotnet/multimap-upper-bound-stl-clr.md)`(``_Keyval``)`メソッドのペアを返します。  指定したキーに一致する、被制御シーケンス内の要素の範囲を現在特定するときに使用します。  
+## <a name="remarks"></a>コメント  
+ メソッドは、反復子のペアを返します`-` [multimap::lower_bound (STL/CLR)](../dotnet/multimap-lower-bound-stl-clr.md) `(_Keyval),` [multimap::upper_bound (STL/CLR)](../dotnet/multimap-upper-bound-stl-clr.md)`(_Keyval)`です。 使用する指定したキーと一致する、被制御シーケンスの現在の要素の範囲が決まります。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multimap_equal_range.cpp   
@@ -76,17 +81,20 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**equal\_range \(L'x\) は空けましたり \= True を**  
- **\[b 2\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+equal_range(L'x') empty = True  
+ [b 2]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [multimap](../dotnet/multimap-stl-clr.md)   
- [multimap::count](../dotnet/multimap-count-stl-clr.md)   
- [multimap::find](../dotnet/multimap-find-stl-clr.md)   
- [multimap::lower\_bound](../dotnet/multimap-lower-bound-stl-clr.md)   
- [multimap::upper\_bound](../dotnet/multimap-upper-bound-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
+ [multimap::count (STL/CLR)](../dotnet/multimap-count-stl-clr.md)   
+ [multimap::find (STL/CLR)](../dotnet/multimap-find-stl-clr.md)   
+ [multimap::lower_bound (STL/CLR)](../dotnet/multimap-lower-bound-stl-clr.md)   
+ [multimap::upper_bound (STL/CLR)](../dotnet/multimap-upper-bound-stl-clr.md)

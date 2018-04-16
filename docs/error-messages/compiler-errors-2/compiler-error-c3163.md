@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3163
 ms.assetid: 17dcafa3-f416-4e04-a232-f9569218ba75
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4d3cbb5c5c3e8391b3a549fc0c34661dc86b492c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 95fb254036d2883b6efe6b81bda54864d533c2a8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3163"></a>コンパイラ エラー C3163
 'construct': 属性を前の宣言と整合性がありません  
@@ -49,5 +50,5 @@ using namespace System;
 // [CLSCompliant(true)] void f() {}  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SAL 注釈](../../c-runtime-library/sal-annotations.md)

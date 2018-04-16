@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,7 +16,8 @@ f1_keywords:
 - AFXANIMATIONCONTROLLER/CDiscreteTransition::m_dblFinalValue
 - AFXANIMATIONCONTROLLER/CDiscreteTransition::m_delay
 - AFXANIMATIONCONTROLLER/CDiscreteTransition::m_hold
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDiscreteTransition [MFC], CDiscreteTransition
 - CDiscreteTransition [MFC], Create
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - CDiscreteTransition [MFC], m_delay
 - CDiscreteTransition [MFC], m_hold
 ms.assetid: b4d84fb3-ccaa-451c-a69b-6b50dcb9b9c8
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1fe05349a009997444389d605c5e243e9c1d8bc8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bd4b1b7c868c13176d2cd99204b0bae1e2b9992d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdiscretetransition-class"></a>CDiscreteTransition クラス
 不連続遷移をカプセル化します。  
@@ -74,7 +78,7 @@ class CDiscreteTransition : public CBaseTransition;
   
  [CDiscreteTransition](../../mfc/reference/cdiscretetransition-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="cdiscretetransition"></a>CDiscreteTransition::CDiscreteTransition  
@@ -134,5 +138,5 @@ UI_ANIMATION_SECONDS m_delay;
 UI_ANIMATION_SECONDS m_hold;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

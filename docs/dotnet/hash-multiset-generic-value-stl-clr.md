@@ -1,41 +1,46 @@
 ---
-title: "hash_multiset::generic_value (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_multiset::generic_value"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "generic_value メンバー [STL/CLR]"
+title: hash_multiset::generic_value (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::hash_multiset::generic_value
+dev_langs:
+- C++
+helpviewer_keywords:
+- generic_value member [STL/CLR]
 ms.assetid: 0be03b86-3e1c-42d2-b96f-a6080c7c4050
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d0415838b28fb7a7137099c5e20e3d169b9535e8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_multiset::generic_value (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンテナーのジェネリック インターフェイスで使用する要素の型。  
+# <a name="hashmultisetgenericvalue-stlclr"></a>hash_multiset::generic_value (STL/CLR)
+コンテナーのジェネリック インターフェイスを使用するための要素の型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef GValue generic_value;  
 ```  
   
-## 解説  
- この型は、テンプレートのコンテナー クラスのジェネリック インターフェイスで使用するために格納された要素の値を記述する型 `GValue` オブジェクトを表します。  
+## <a name="remarks"></a>コメント  
+ この型は、型のオブジェクトを表します。`GValue`ストアド要素の値をこのテンプレートのコンテナー クラスのジェネリック インターフェイスを使用することについて説明します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_multiset_generic_value.cpp   
@@ -70,16 +75,19 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**  
- **a**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+a b c  
+a b c  
+a  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_multiset](../dotnet/hash-multiset-stl-clr.md)   
- [hash\_multiset::generic\_container](../dotnet/hash-multiset-generic-container-stl-clr.md)   
- [hash\_multiset::generic\_iterator](../dotnet/hash-multiset-generic-iterator-stl-clr.md)   
- [hash\_multiset::generic\_reverse\_iterator](../dotnet/hash-multiset-generic-reverse-iterator-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_multiset (STL/CLR)](../dotnet/hash-multiset-stl-clr.md)   
+ [hash_multiset::generic_container (STL/CLR)](../dotnet/hash-multiset-generic-container-stl-clr.md)   
+ [hash_multiset::generic_iterator (STL/CLR)](../dotnet/hash-multiset-generic-iterator-stl-clr.md)   
+ [hash_multiset::generic_reverse_iterator (STL/CLR)](../dotnet/hash-multiset-generic-reverse-iterator-stl-clr.md)

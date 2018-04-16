@@ -1,39 +1,43 @@
 ---
-title: "Web クライアント アプリケーションの再頒布 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーションの配置 [C++], Web アプリケーション"
-  - "配置 (アプリケーションを) [C++], Web アプリケーション"
-  - "インターネット アプリケーション [C++], 再配布"
-  - "Web アプリケーション [C++], 再配布"
+title: "Web クライアント アプリケーションの再頒布 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Web applications [C++], redistributing
+- deploying applications [C++], Web applications
+- Internet applications [C++], redistributing
+- application deployment [C++], Web applications
 ms.assetid: fe05988b-dee8-4a46-b381-016b5103a6bf
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e764e42cb558d2e13e0609cb139e9538a72d09ed
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Web クライアント アプリケーションの再頒布
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-アプリケーションで WebBrowser コントロールを実装した MFC クラス \(`CHtmlView` や `CHtmlEditView` など\) を使用する場合は、少なくとも、ターゲット コンピューターに Microsoft Internet Explorer 4.0 以降の最小インストールが必要です。  
+# <a name="redistributing-web-client-applications"></a>Web クライアント アプリケーションの再頒布
+アプリケーションで WebBrowser コントロールを実装する MFC クラスを使用するかどうか (たとえば、`CHtmlView`または`CHtmlEditView`)、Microsoft Internet Explorer 4.0 またはそれ以降はターゲット コンピューターには最低限インストールには、少なくともする必要があります。  
   
- Internet Explorer の最新バージョンをインストールすると、ターゲット コンピューターに最新のコモン コントロール ファイルを確保できます。  
+ Internet Explorer の最新バージョンのインストールもにより、ターゲット コンピューターは最新の共通のコントロール ファイル。  
   
- Internet Explorer の必要最小限のコンポーネントのインストールについては、次のサポート技術情報の文書を参照してください。  
+ 最小限の Internet Explorer コンポーネントのインストールについては、次のサポート技術情報の記事で使用可能なです。  
   
--   「HOWTO: Create a Single EXE Install of Internet Explorer \(Q185375\)」\([http:\/\/support.microsoft.com\/?scid\=kb;en\-us;185375](http://support.microsoft.com/?scid=kb;en-us;185375)\)  
+-   Q185375、HOWTO: 作成、Internet Explorer の 1 つの exe ファイルのインストール ([http://support.microsoft.com/support/kb/articles/q185/3/75.asp](http://support.microsoft.com/support/kb/articles/q185/3/75.asp))  
   
- サポート技術情報の文書は、MSDN ライブラリまたは [http:\/\/support.microsoft.com\/?ln\=ja&x\=4&y\=8](http://support.microsoft.com/?ln=ja&x=4&y=8) で参照できます。  
+ MSDN ライブラリまたはでは、サポート技術情報の記事を検索できます[http://support.microsoft.com](http://support.microsoft.com)です。  
   
-## 参照  
- [デスクトップ アプリケーションの配置](../Topic/Deploying%20Native%20Desktop%20Applications%20\(Visual%20C++\).md)
+## <a name="see-also"></a>参照  
+ [デスクトップ アプリケーションの配置](../ide/deploying-native-desktop-applications-visual-cpp.md)

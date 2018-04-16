@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -18,7 +19,8 @@ f1_keywords:
 - AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::SetOffsetRight
 - AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::UnSetAutoHideMode
 - AFXAUTOHIDEDOCKSITE/CAutoHideDockSite::m_nExtraSpace
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CAutoHideDockSite [MFC], CanAcceptPane
 - CAutoHideDockSite [MFC], DockPane
@@ -29,15 +31,17 @@ helpviewer_keywords:
 - CAutoHideDockSite [MFC], UnSetAutoHideMode
 - CAutoHideDockSite [MFC], m_nExtraSpace
 ms.assetid: 2a0f6bec-c369-4ab7-977d-564e7946ebad
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6378b7a170db4c37d38007236188428de904845d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e8cc4e9158ae9ff2ef6fd4d48483aa5a75dd9617
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cautohidedocksite-class"></a>CAutoHideDockSite クラス
 `CAutoHideDockSite`拡張、 [CDockSite クラス](../../mfc/reference/cdocksite-class.md)自動非表示のドッキング ペインを実装します。  
@@ -76,7 +80,7 @@ class CAutoHideDockSite : public CDockSite
   
 |||  
 |-|-|  
-|名前|説明|  
+|name|説明|  
 |[CAutoHideDockSite::m_nExtraSpace](#m_nextraspace)|ツールバーとドッキング バーの端の間の空白のサイズを定義します。 この領域は、左のエッジか、ドッキング領域の配置に応じて、上端から測定されます。|  
   
 ## <a name="remarks"></a>コメント  
@@ -100,7 +104,7 @@ class CAutoHideDockSite : public CDockSite
   
  [!code-cpp[NVC_MFC_RibbonApp#29](../../mfc/reference/codesnippet/cpp/cautohidedocksite-class_1.cpp)]  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxautohidedocksite.h  
   
 ##  <a name="canacceptpane"></a>CAutoHideDockSite::CanAcceptPane  
@@ -236,7 +240,7 @@ void UnSetAutoHideMode(CMFCAutoHideBar* pAutoHideToolbar);
 ### <a name="remarks"></a>コメント  
  このメソッドを含む行を検索`pAutoHideToolbar`です。 呼び出す`CMFCAutoHideBar.UnSetAutoHideMode`すべてに対して、`CMFCAutoHideBar`その行にオブジェクト。 場合`pAutoHideToolbar`が見つからないか、 `NULL`、このメソッドを呼び出します`CMFCAutoHideBar.UnSetAutoHideMode`すべて、`CMFCAutoHideBar`でオブジェクトを`CAutoHideDockSite`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CDockSite クラス](../../mfc/reference/cdocksite-class.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::multiset::end
-dev_langs: C++
-helpviewer_keywords: end member [STL/CLR]
+f1_keywords:
+- cliext::multiset::end
+dev_langs:
+- C++
+helpviewer_keywords:
+- end member [STL/CLR]
 ms.assetid: 225f8b74-f9b9-47ea-9603-43ac7c9a9734
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 92a7604c30070cc7b2023a73ecc4285a8d5152d6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 1c1ef21d52990a639ed8000674aa12d64dbbbf76
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multisetend-stlclr"></a>multiset::end (STL/CLR)
 被制御シーケンスの末尾を指定します。  
@@ -69,11 +76,11 @@ int main()
 *--end() = c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マルチセット (STL/CLR)](../dotnet/multiset-stl-clr.md)   
  [multiset::begin (STL/CLR)](../dotnet/multiset-begin-stl-clr.md)

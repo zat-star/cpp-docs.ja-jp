@@ -1,48 +1,52 @@
 ---
-title: "C-Style Casts with /clr (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C-style casts and /clr"
+title: "Clr を使用して C スタイルのキャスト (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- C-style casts and /clr
 ms.assetid: d2a4401a-156a-4da9-8d12-923743e26913
-caps.latest.revision: 13
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: e529a40f8eb876791f49559d3970696fdece489d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# C-Style Casts with /clr (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のトピックでは、共通言語ランタイムにのみ適用されます。  
+# <a name="c-style-casts-with-clr-ccli"></a>C スタイル キャストと /clr (C++/CLI)
+次のトピックは、共通言語ランタイムのみに適用されます。  
   
- CLR を使用すると、コンパイラは次の順序で、次に示すキャストの 1 つがに C スタイルのキャストをマップしようと入力します:  
+ CLR 型に使用する場合、コンパイラは C スタイルのキャストの次の順序で、以下のいずれかにキャストをマップしようとします。  
   
-1.  const\_cast  
+1.  const_cast  
   
-2.  safe\_cast  
+2.  safe_cast  
   
-3.  const\_cast safe\_cast と  
+3.  safe_cast plus const_cast  
   
-4.  static\_cast  
+4.  static_cast  
   
-5.  const\_cast と static\_cast  
+5.  static_cast plus const_cast  
   
- キャストの None 上のリストは、式、および対象の種類は CLR 参照型である場合、C スタイルは、ランタイム チェック \(castclass MSIL 命令\) にマップをキャストしました。  それ以外の場合は".のスタイルのキャストは無効問題、コンパイラ エラーになります。  
+ 上記のキャストのいずれもが、有効な場合、および式の型とターゲットの型が CLR 参照型である場合は、C スタイル キャストは実行時チェック (castclass MSIL 命令) にマップされます。 それ以外の場合、C スタイル キャストは無効とみなされ、コンパイラ エラーが発生します。  
   
-## 解説  
- C.のスタイルのキャストはお勧めしません。  [\/clr \(共通言語ランタイムのコンパイル\)](../build/reference/clr-common-language-runtime-compilation.md)でコンパイルする場合は、[safe\_cast](../windows/safe-cast-cpp-component-extensions.md)を使用します。  
+## <a name="remarks"></a>コメント  
+ C スタイル キャストは推奨されません。 コンパイルするときに[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)を使用して[safe_cast](../windows/safe-cast-cpp-component-extensions.md)です。  
   
- 次の例は、.に `const_cast`にマップするスタイルのキャストを示します。  
+ 次のサンプルは、C スタイルのキャストにマップされる、`const_cast`です。  
   
 ```  
 // cstyle_casts_1.cpp  
@@ -56,7 +60,7 @@ int main() {
 }  
 ```  
   
- 次の例は、.に `safe_cast`にマップするスタイルのキャストを示します。  
+ 次のサンプルは、C スタイルのキャストにマップされる、`safe_cast`です。  
   
 ```  
 // cstyle_casts_2.cpp  
@@ -68,7 +72,7 @@ int main() {
 }  
 ```  
   
- 次の例は、.に `const_cast`と `safe_cast` にマップするスタイルのキャストを示します。  
+ 次のサンプルは、C スタイルのキャストにマップされる、 `safe_cast` plus`const_cast`です。  
   
 ```  
 // cstyle_casts_3.cpp  
@@ -89,7 +93,7 @@ int main() {
 }  
 ```  
   
- 次の例は、.に `static_cast`にマップするスタイルのキャストを示します。  
+ 次のサンプルは、C スタイルのキャストにマップされる、`static_cast`です。  
   
 ```  
 // cstyle_casts_4.cpp  
@@ -110,7 +114,7 @@ int main() {
 }  
 ```  
   
- 次の例は、.に `const_cast`と `static_cast` にマップするスタイルのキャストを示します。  
+ 次のサンプルは、C スタイルのキャストにマップされる、 `static_cast` plus`const_cast`です。  
   
 ```  
 // cstyle_casts_5.cpp  
@@ -131,7 +135,7 @@ int main() {
 }  
 ```  
   
- 次の例は、.にランタイム チェックにマップするスタイルのキャストを示します。  
+ 次の例を C スタイル キャストは実行時チェックにマップされるを示しています。  
   
 ```  
 // cstyle_casts_6.cpp  
@@ -152,7 +156,7 @@ int main() {
 }  
 ```  
   
- 次の例は、コンパイラがエラーを生成します。無効な C スタイルのキャストを示します。  
+ 次の例では、無効な C スタイルのキャスト、これにより、コンパイラはエラーを発行します。  
   
 ```  
 // cstyle_casts_7.cpp  
@@ -164,8 +168,8 @@ int main() {
 }  
 ```  
   
-## 要件  
- コンパイラ オプション: **\/clr**  
+## <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

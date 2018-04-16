@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::bernoulli_distribution
 - random/std::bernoulli_distribution::reset
@@ -19,7 +20,8 @@ f1_keywords:
 - random/std::bernoulli_distribution::param_type::p
 - random/std::bernoulli_distribution::param_type::operator==
 - random/std::bernoulli_distribution::param_type::operator!=
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::bernoulli_distribution [C++]
 - std::bernoulli_distribution [C++], reset
@@ -30,15 +32,17 @@ helpviewer_keywords:
 - std::bernoulli_distribution [C++], param_type
 - std::bernoulli_distribution [C++], param_type
 ms.assetid: 586bcde1-95ca-411a-bf17-4aaf19482f34
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cd4d0e5e5fb88eae5ca0247f1672e816dc35c601
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e00574b13b09393f663eac31f9a3379e8897b775
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="bernoullidistribution-class"></a>bernoulli_distribution クラス
 ベルヌイ分布を生成します。  
@@ -95,9 +99,9 @@ public:
   
 `operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
   
-分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) を参照してください。  
+分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-ベルヌイ分布の離散確率関数の詳細については、Wolfram MathWorld の記事「[ベルヌイ分布](http://go.microsoft.com/fwlink/LinkId=398467)」を参照してください。  
+ベルヌイ分布の離散確率関数の詳細については、Wolfram MathWorld の記事「[ベルヌイ分布](http://go.microsoft.com/fwlink/p/?linkid=398467)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -159,7 +163,7 @@ false :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  true :::::::::::::::::::::::::::::::::::::::::
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **ヘッダー:** \<random>  
   
 **名前空間:** std  
@@ -204,7 +208,7 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
 
 

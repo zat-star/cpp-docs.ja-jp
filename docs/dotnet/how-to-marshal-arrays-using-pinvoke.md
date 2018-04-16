@@ -1,42 +1,47 @@
 ---
-title: "方法: PInvoke を使用して配列をマーシャリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ マーシャリング [C++], 配列"
-  - "相互運用 [C++], 配列"
-  - "マーシャリング [C++], 配列"
-  - "プラットフォーム呼び出し [C++], 配列"
+title: "方法: PInvoke を使用して配列をマーシャ リング |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs:
+- C++
+helpviewer_keywords:
+- marshaling [C++], arrays
+- platform invoke [C++], arrays
+- interop [C++], arrays
+- data marshaling [C++], arrays
 ms.assetid: a1237797-a2da-4df4-984a-6333ed3af406
-caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 20
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 50ff0e0a6e61b3c2c691296f92f6ad471a3007e9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# 方法: PInvoke を使用して配列をマーシャリングする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、.NET Framework のプラットフォーム呼び出しサポートを使用して、CLR 文字列型 <xref:System.String> を使って C スタイルの文字列を受け入れるネイティブ関数を呼び出す方法について説明します。  P\/Invoke は、ほとんどコンパイル時のエラーを報告せず、タイプセーフでもなく、また実装に時間がかかるため、可能な場合、Visual C\+\+ プログラマは P\/Invoke の代わりに C\+\+ Interop を使用することが推奨されています。  アンマネージ API が DLL としてパッケージ化されていて、そのソース コードが利用できない場合、P\/Invoke を使用する以外方法はありません \(それ以外の場合は、「[C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)」を参照してください\)。  
+# <a name="how-to-marshal-arrays-using-pinvoke"></a>方法: PInvoke を使用して配列をマーシャリングする
+このトピックの C スタイルの文字列は、CLR の文字列型を使用して呼び出すことができますを受け入れる関数をネイティブ<xref:System.String>.NET Framework プラットフォーム呼び出しのサポートを使用します。 Visual の C++ プログラマは、ほとんどのコンパイル時エラーを報告がタイプ セーフではありませんし、実装に時間がかかることができます、P/invoke が用意されているため (可能な場合)、代わりに、C++ Interop 機能を使用することをお勧めします。 アンマネージ API が DLL としてパッケージ化され、ソース コードを使用できない、P/invoke が唯一のオプション (それ以外の場合を参照してください[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md))。  
   
-## 使用例  
- ネイティブ配列とマネージ配列はメモリ上で別々にレイアウトされているため、マネージ境界またはアンマネージ境界を超えてこれらの配列を正しく渡すには、変換、つまりマーシャリングが必要です。  このトピックでは、単純な \(blitable\) 項目の配列をマネージ コードからネイティブ関数に渡す方法について説明します。  
+## <a name="example"></a>例  
+ ネイティブおよびマネージ配列にはメモリに異なるレイアウト、ためには、変換、またはマーシャ リングが必要がありますマネージ/アンマネージの境界上で正常に転送します。 このトピックでは、マネージ コードから単純な (blitable) 項目の配列をネイティブ関数に渡される方法を示します。  
   
- 一般的なマネージ データまたはアンマネージ データのマーシャリングと同様、<xref:System.Runtime.InteropServices.DllImportAttribute> 属性を使用して、使用するネイティブ関数ごとにマネージ エントリ ポイントを作成します。  配列を引数として使用する関数では、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性も使用して、データのマーシャリング方法をコンパイラに指定する必要があります。  次の例では、<xref:System.Runtime.InteropServices.UnmanagedType> 列挙型を使用して、マネージ配列を C スタイル配列としてマーシャリングしています。  
+ マネージ/アンマネージ データが一般に、マーシャ リングの場合は true、<xref:System.Runtime.InteropServices.DllImportAttribute>属性が使用されるネイティブ関数の各マネージ エントリ ポイントを作成するために使用します。 引数としての配列を受け取る関数の場合、<xref:System.Runtime.InteropServices.MarshalAsAttribute>属性は、データをマーシャ リングする方法をコンパイラに指定にも使用する必要があります。 次の例で、<xref:System.Runtime.InteropServices.UnmanagedType>を C スタイル配列として、マネージ配列をマーシャ リングするかを示す列挙を使用します。  
   
- 次のコードは、アンマネージ モジュールとマネージ モジュールで構成されます。  アンマネージ モジュールは、整数の配列を受け取る関数を定義する DLL です。  2 つ目のモジュールは、この関数をインポートするマネージ コマンド ライン アプリケーションですが、このモジュールは、マネージ配列についてこの関数を定義します。さらに、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用して、呼び出されたときに配列をネイティブ配列に変換することを指定します。  
+ 次のコードはアンマネージとマネージ モジュールで構成されます。 アンマネージ モジュールは、整数の配列を受け取る関数を定義する DLL です。 2 番目のモジュールは、この関数のインポートは、マネージ配列の観点から定義および使用する管理対象のコマンド ライン アプリケーション、<xref:System.Runtime.InteropServices.MarshalAsAttribute>配列が呼び出されたときに、ネイティブ配列に変換することを指定する属性。  
   
- \/clr を指定してマネージ モジュールをコンパイルします。\/clr:pure を使用してもかまいません。  
+ マネージ モジュールは、/clr と共にコンパイルします。  
   
-```  
+```cpp  
 // TraditionalDll4.cpp  
 // compile with: /LD /EHsc  
 #include <iostream>  
@@ -59,7 +64,7 @@ void TakesAnArray(int len, int a[]) {
 }  
 ```  
   
-```  
+```cpp  
 // MarshalBlitArray.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -84,7 +89,7 @@ int main() {
 }  
 ```  
   
- ただし、DLL のどの部分も、従来の \#include ディレクティブを使用してのマネージ コードへの公開は実行しません。  実際には、DLL には実行時にしかアクセスしないため、<xref:System.Runtime.InteropServices.DllImportAttribute> を使ってインポートされた関数についての問題は、コンパイル時には検出されません。  
+ 従来のマネージ コードに、DLL の一部は公開されていませんことに注意してください #include ディレクティブです。 実際には、DLL が実行時にのみアクセスされるための機能に問題と共にインポート<xref:System.Runtime.InteropServices.DllImportAttribute>はコンパイル時に、検出されません。  
   
-## 参照  
- [C\+\+ での明示的な PInvoke \(DllImport 属性\) の使用方法 ](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)
+## <a name="see-also"></a>参照  
+ [C++ での明示的な PInvoke (DllImport 属性) の使用方法](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)

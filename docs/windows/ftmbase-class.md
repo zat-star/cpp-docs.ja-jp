@@ -1,76 +1,81 @@
 ---
-title: "FtmBase クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ftm/Microsoft::WRL::FtmBase"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "FtmBase クラス"
+title: FtmBase クラス |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- ftm/Microsoft::WRL::FtmBase
+dev_langs:
+- C++
+helpviewer_keywords:
+- FtmBase class
 ms.assetid: 275f3b71-2975-4f92-89e7-d351e96496df
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: ''
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 9499a5a30f99e639137532aad1763b434a196809
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/22/2018
 ---
-# FtmBase クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="ftmbase-class"></a>FtmBase クラス
 フリー スレッド マーシャラー オブジェクトを表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 class FtmBase : public Microsoft::WRL::Implements<  
-   Microsoft::WRL::RuntimeClassFlags< WinRtClassicComMix >,   
-   Microsoft::WRL::CloakedIid< IMarshal > >;  
+   Microsoft::WRL::RuntimeClassFlags<WinRtClassicComMix>,   
+   Microsoft::WRL::CloakedIid<IMarshal> >;  
 ```  
   
-## 解説  
- 詳細については、MSDN ライブラリの「COM 「IMarshal」を」COM インターフェイス ポインターのサブトピックを参照して」トピックを参照します。  
+## <a name="remarks"></a>コメント  
+ 詳細については、MSDN ライブラリの「COM リファレンス」トピックの"COM インターフェイス"サブトピック「"IMarshal"トピックを参照してください。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |[FtmBase::FtmBase コンストラクター](../windows/ftmbase-ftmbase-constructor.md)|FtmBase クラスの新しいインスタンスを初期化します。|  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[FtmBase::CreateGlobalInterfaceTable メソッド](../windows/ftmbase-createglobalinterfacetable-method.md)|グローバル インターフェイス テーブル \(GIT\) を作成します。|  
-|[FtmBase::DisconnectObject メソッド](../windows/ftmbase-disconnectobject-method.md)|強制的にオブジェクトに対する外部接続を解放します。  オブジェクトのサーバーがシャットダウンする前にこのオブジェクトのメソッドの実装を呼び出します。|  
-|[FtmBase::GetMarshalSizeMax メソッド](../windows/ftmbase-getmarshalsizemax-method.md)|指定されたオブジェクトの指定されたインターフェイス ポインターをマーシャリングするために必要なバイト数の上限を取得します。|  
-|[FtmBase::GetUnmarshalClass メソッド](../windows/ftmbase-getunmarshalclass-method.md)|対応するプロキシのコードを含む DLL を検索するときに COM を使用する CLSID を取得します。  COM は、プロキシの初期化されていないインスタンスを作成するには、この DLL を読み込みます。|  
-|[FtmBase::MarshalInterface メソッド](../Topic/FtmBase::MarshalInterface%20Method.md)|ストリームにクライアント プロセスのプロキシ オブジェクトを初期化するために必要なデータを書き込みます。|  
-|[FtmBase::ReleaseMarshalData メソッド](../Topic/FtmBase::ReleaseMarshalData%20Method.md)|マーシャリングされたデータ パケットを破棄します。|  
-|[FtmBase::UnmarshalInterface メソッド](../windows/ftmbase-unmarshalinterface-method.md)|新しく作成されたプロキシを初期化し、そのプロキシへのインターフェイス ポインターを返します。|  
+|----------|-----------------|  
+|[FtmBase::CreateGlobalInterfaceTable メソッド](../windows/ftmbase-createglobalinterfacetable-method.md)|グローバル インターフェイス テーブル (GIT) を作成します。|  
+|[FtmBase::DisconnectObject メソッド](../windows/ftmbase-disconnectobject-method.md)|オブジェクトへのすべての外部接続を強制的に解放します。 オブジェクトのサーバーでは、シャット ダウンする前にこのメソッドのオブジェクトの実装を呼び出します。|  
+|[FtmBase::GetMarshalSizeMax メソッド](../windows/ftmbase-getmarshalsizemax-method.md)|指定したオブジェクトの指定されたインターフェイス ポインターをマーシャ リングするために必要なバイト数の上限値を取得します。|  
+|[FtmBase::GetUnmarshalClass メソッド](../windows/ftmbase-getunmarshalclass-method.md)|COM を使用して、対応するプロキシ コードを含む DLL を検索する CLSID を取得します。 COM は、プロキシの初期化されていないインスタンスを作成するには、この DLL を読み込みます。|  
+|[FtmBase::MarshalInterface メソッド](../windows/ftmbase-marshalinterface-method.md)|一部のクライアント プロセスで、プロキシ オブジェクトを初期化するために必要なデータをストリームに書き込みます。|  
+|[FtmBase::ReleaseMarshalData メソッド](../windows/ftmbase-releasemarshaldata-method.md)|マーシャ リング データ パケットを破棄します。|  
+|[FtmBase::UnmarshalInterface メソッド](../windows/ftmbase-unmarshalinterface-method.md)|新しく作成されたプロキシを初期化し、そのプロキシにインターフェイス ポインターを返します。|  
   
-### パブリック データ メンバー  
+### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
-|--------|--------|  
-|[FtmBase::marshaller\_ データ メンバー](../windows/ftmbase-marshaller-data-member.md)|フリー スレッド マーシャラーへの参照が保持されます。|  
+|----------|-----------------|  
+|[FtmBase::marshaller_ データ メンバー](../windows/ftmbase-marshaller-data-member.md)|フリー スレッド マーシャラーへの参照を保持します。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `FtmBase`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** ftm.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

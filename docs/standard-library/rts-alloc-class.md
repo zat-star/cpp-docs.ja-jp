@@ -4,30 +4,34 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - allocators/stdext::rts_alloc
 - allocators/stdext::rts_alloc::allocate
 - allocators/stdext::rts_alloc::deallocate
 - allocators/stdext::rts_alloc::equals
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - stdext::rts_alloc
 - stdext::rts_alloc [C++], allocate
 - stdext::rts_alloc [C++], deallocate
 - stdext::rts_alloc [C++], equals
 ms.assetid: ab41bffa-83d1-4a1c-87b9-5707d516931f
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 77a85485c2ad2aad64417400e9189da5ab5c7b21
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c5f20215050a5488402cc17c849e20fe2c51608c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="rtsalloc-class"></a>rts_alloc クラス
 rts_alloc テンプレート クラスは、キャッシュ インスタンスの配列を保持し、コンパイル時ではなく、実行時に割り当てと割り当て解除に使用するインスタンスを判別する[フィルター](../standard-library/allocators-header.md)を記述します。  
@@ -56,7 +60,7 @@ class rts_alloc
 |[deallocate](#deallocate)|指定した位置で始まるストレージから、指定された数のオブジェクトを解放します。|  
 |[equals](#equals)|2 つのキャッシュが等しいかどうかを比較します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
@@ -114,7 +118,7 @@ bool equals(const sync<_Cache>& _Other) const;
 ### <a name="remarks"></a>コメント  
  `caches[0].equals(other.caches[0])` の結果の場合は `true`、それ以外の場合は `false` です。 `caches` はキャッシュ オブジェクトの配列を表します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl)   
  [\<allocators>](../standard-library/allocators-header.md)
 

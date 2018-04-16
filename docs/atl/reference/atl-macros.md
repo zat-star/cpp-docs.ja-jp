@@ -1,5 +1,5 @@
 ---
-title: "ATL マクロ |Microsoft Docs"
+title: "ATL マクロ |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -14,30 +14,17 @@ helpviewer_keywords:
 - ATL, macros
 - macros, ATL
 ms.assetid: 788bd803-e7dc-4dc5-9e8d-31649471415b
-caps.latest.revision: 15
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 0e04a53a0ea8919c793614d7e3037d10ce01a03c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b78ca454112d05f75def6969c25669e52a8b3dee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-macros"></a>ATL マクロ
 カテゴリ別 ATL マクロを探すには、次のトピックを参照してください。  
@@ -99,7 +86,7 @@ ms.lasthandoff: 03/31/2017
  [Windows メッセージに関するマクロ](../../atl/reference/windows-messages-macros.md)  
  ウィンドウ メッセージを転送します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
  [ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)   
  [関数](../../atl/reference/atl-functions.md)   
@@ -107,4 +94,3 @@ ms.lasthandoff: 03/31/2017
  [構造体](../../atl/reference/atl-structures.md)   
  [Typedef](../../atl/reference/atl-typedefs.md)   
  [クラス](../../atl/reference/atl-classes.md)
-

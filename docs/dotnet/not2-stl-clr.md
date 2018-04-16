@@ -1,25 +1,32 @@
 ---
-title: "not2 (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: not2 (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::not2
-dev_langs: C++
-helpviewer_keywords: not2 function [STL/CLR]
+f1_keywords:
+- cliext::not2
+dev_langs:
+- C++
+helpviewer_keywords:
+- not2 function [STL/CLR]
 ms.assetid: f8aedcca-e4d1-4430-93b4-83dd55579d04
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7ba2ae563bd63c50039af0921bdffd9317db77e3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 183ddc8d55f6948901118ba47ee237127a632020
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="not2-stlclr"></a>not2 (STL/CLR)
 生成、`binary_negate`ファンクタをします。  
@@ -99,10 +106,10 @@ int main()
 1 0  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/機能 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [binary_negate (STL/CLR)](../dotnet/binary-negate-stl-clr.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: module/Microsoft::WRL::Module::GetObjectCount
-dev_langs: C++
-helpviewer_keywords: GetObjectCount method
+f1_keywords:
+- module/Microsoft::WRL::Module::GetObjectCount
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetObjectCount method
 ms.assetid: 9fe29747-7e7f-40f2-9f6b-9a206b17fa8e
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 62e09aa2073c86c4bb4cc943e0bd90eee9b3c422
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: ff4a38791f527800698d5e8a8c17c2fe6abd6134
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="modulegetobjectcount-method"></a>Module::GetObjectCount メソッド
 このモジュールによって管理されるオブジェクトの数を取得します。  
@@ -33,10 +40,10 @@ virtual long GetObjectCount() const;
 ## <a name="return-value"></a>戻り値  
  このモジュールによって管理されるオブジェクトの現在数。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** module.h  
   
  **名前空間:** Microsoft::WRL
  
- ## <a name="see-also"></a>関連項目
+ ## <a name="see-also"></a>参照
  [Module クラス](../windows/module-class.md)

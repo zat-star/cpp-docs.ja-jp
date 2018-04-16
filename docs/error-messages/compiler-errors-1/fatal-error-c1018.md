@@ -1,25 +1,31 @@
 ---
-title: "致命的なエラー C1018 |Microsoft ドキュメント"
-ms.custom: 
+title: 致命的なエラー C1018 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: C1018
-dev_langs: C++
-helpviewer_keywords: C1018
+f1_keywords:
+- C1018
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1018
 ms.assetid: 2ceb8a99-30b2-4b80-bf42-e9f3305b3c52
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4bab21cfcdbc0336e7485055c989314fa3710e8f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5623d4d2dadf3bf7de36ae7d9ef2f83d5792669c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fatal-error-c1018"></a>致命的なエラー C1018
 予期しない #elif です。  

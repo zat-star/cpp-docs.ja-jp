@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 6503e0cd-2d3a-4330-a925-8bed8c27c2be
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3f9e548dc3c9262349fc05bd6bea19290b57ad94
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dc15e730666a643dfaa028fe7bc6166144897308
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="language-specific-handler"></a>言語固有のハンドラー
 存在する UNW_FLAG_EHANDLER または UNW_FLAG_UHANDLER フラグが設定されるたびに、言語固有のハンドラーの相対アドレスが UNWIND_INFO 内に存在します。 前のセクションで説明した、言語固有のハンドラーは、例外ハンドラーの検索の一部として、またはアンワインドの一部として呼び出されます。 次のプロトタイプがあります。  
@@ -68,5 +72,5 @@ typedef struct _DISPATCHER_CONTEXT {
   
  **HandlerData**言語固有のハンドラーのデータをこの関数を指します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理 (x64)](../build/exception-handling-x64.md)

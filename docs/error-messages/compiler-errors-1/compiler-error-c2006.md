@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C2006 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2006 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C2006
@@ -19,12 +19,13 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4db382ab78cbd230813fada89f9c04244035932f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 8d182e7a98d01dee4047defa5adb5ccc2dc7cde5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2006"></a>コンパイラ エラー C2006
 'directive' 'token' が見つかりません、ファイル名を想定します。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 10/09/2017
 #include stdio.h   // C2006  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C2006b.cpp  

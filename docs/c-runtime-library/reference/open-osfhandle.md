@@ -1,13 +1,13 @@
 ---
 title: _open_osfhandle | Microsoft Docs
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 12/12/2017
 ms.reviewer: 
 ms.suite: 
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _open_osfhandle
 apilocation:
@@ -33,69 +33,71 @@ helpviewer_keywords:
 - file handles [C++], associating
 - _open_osfhandle function
 ms.assetid: 30d94df4-7868-4667-a401-9eb67ecb7855
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 34f60a327f3bc4c6a6ce1beb6d7b399faa393a70
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 8d214df5d1e1cd3a48336723cecbf530402eafe3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="openosfhandle"></a>_open_osfhandle
-C ランタイム ファイル記述子を既存のオペレーティング システムのファイル ハンドルに関連付けます。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      int _open_osfhandle (  
-   intptr_t osfhandle,  
-   int flags   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `osfhandle`  
- オペレーティング システムのファイル ハンドル。  
-  
- `flags`  
- 許可される操作の種類。  
-  
-## <a name="return-value"></a>戻り値  
- 正常に終了した場合、`_open_osfhandle` は C ランタイム ファイル記述子を返します。 それ以外の場合、-1 を返します。  
-  
-## <a name="remarks"></a>コメント  
- `_open_osfhandle` 関数は、C ランタイム ファイル記述子を割り当て、`osfhandle` で指定したオペレーティング システムのファイル ハンドルに関連付けます。 `flags` 引数は、Fcntl.h で定義された 1 つ以上のマニフェスト定数で構成された整数式です。 `flags` 引数を構成するために複数のマニフェスト定数が使用される場合、定数はビットごとの OR 演算子を使用して組み合わされます ( **&#124;** )。  
-  
- Fcntl.h では、次のマニフェスト定数が定義されています。  
-  
- **_O_APPEND**  
- 書き込み操作の前に、毎回、ファイル ポインターをファイルの末尾に位置指定します。  
-  
- **_O_RDONLY**  
- 読み取り専用でファイルを開きます。  
-  
- **_O_TEXT**  
- ファイルをテキスト (変換) モードで開きます。  
-  
- **_O_WTEXT**  
- Unicode (UTF-16 に変換) モードでファイルを開きます。  
-  
- `_open_osfhandle` で開いたファイルを閉じるには、`_close` を呼び出します。 `_close` を呼び出すことによって元のハンドルも閉じるため、元のハンドルで Win32 関数 `CloseHandle` を呼び出す必要はありません。  
-  
-## <a name="requirements"></a>要件  
-  
-|ルーチン|必須ヘッダー|  
-|-------------|---------------------|  
-|`_open_osfhandle`|\<io.h>|  
-  
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="see-also"></a>関連項目  
- [ファイル処理](../../c-runtime-library/file-handling.md)
+
+C ランタイム ファイル記述子を既存のオペレーティング システムのファイル ハンドルに関連付けます。
+
+## <a name="syntax"></a>構文
+
+```cpp
+int _open_osfhandle (
+   intptr_t osfhandle,
+   int flags
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*osfhandle*  
+オペレーティング システムのファイル ハンドル。
+
+*flags*  
+許可される操作の種類。
+
+## <a name="return-value"></a>戻り値
+
+正常に終了した場合、`_open_osfhandle` は C ランタイム ファイル記述子を返します。 それ以外の場合、-1 を返します。
+
+## <a name="remarks"></a>コメント
+
+`_open_osfhandle`関数が C ランタイム ファイル記述子を割り当てますで指定されたオペレーティング システム ファイル ハンドルに関連付けます*osfhandle*です。 *フラグ*引数は Fcntl.h で定義されているマニフェスト定数の 1 つ以上の整数式です。 2 つまたは複数のマニフェスト定数を使用してフォームにする場合、*フラグ*引数、定数はビットごとの OR 演算子で組み合わされます ( **&#124;** )。
+
+Fcntl.h には、次のマニフェスト定数が定義されています。
+
+**\_O\_追加**  
+書き込み操作の前に、毎回、ファイル ポインターをファイルの末尾に位置指定します。
+
+**\_O\_RDONLY**  
+読み取り専用でファイルを開きます。
+
+**\_O\_TEXT**  
+ファイルをテキスト (変換) モードで開きます。
+
+**\_O\_WTEXT**  
+Unicode (UTF-16 に変換) モードでファイルを開きます。
+
+使用して開いたファイルを閉じる`_open_osfhandle`、呼び出す[\_を閉じる](../../c-runtime-library/reference/close.md)です。 呼び出しによって基になる OS ファイル ハンドルが閉じられたも`_close`Win32 関数を呼び出す必要はありませんので、`CloseHandle`元のハンドル。 ファイル記述子がによって所有されている場合、`FILE *`ストリーム、呼び出すことで、 [fclose](../../c-runtime-library/reference/fclose-fcloseall.md)を`FILE *`ストリームは、ファイル記述子と基になるハンドルの両方にも閉じられます。 この場合、呼び出さない`_close`ファイル記述子。
+
+## <a name="requirements"></a>必要条件
+
+|ルーチンによって返される値|必須ヘッダー|
+|-------------|---------------------|
+|`_open_osfhandle`|\<io.h>|
+
+互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[ファイル処理](../../c-runtime-library/file-handling.md)  

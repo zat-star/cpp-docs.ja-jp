@@ -1,29 +1,32 @@
 ---
-title: "A.19   Examples Showing Incorrect Nesting of Work-sharing Directives | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "動作共有ディレクティブの入れ子が不適切な A.19 例 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 906e900d-9259-44d6-a095-c1ba9135d269
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8a3f8a4e1ca62a77c16dafedd0921ca842d7a048
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# A.19   Examples Showing Incorrect Nesting of Work-sharing Directives
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-このセクションの例ではディレクティブの入れ子の規則について説明します。  ディレクティブの入れ子の詳細についてはページの 33 [セクション 2.9](../../parallel/openmp/2-9-directive-nesting.md) を参照してください。  
+# <a name="a19---examples-showing-incorrect-nesting-of-work-sharing-directives"></a>A.19 Work-sharing ディレクティブの正しくない入れ子の例
+このセクションの例では、ディレクティブの入れ子の規則を説明します。 ディレクティブの入れ子の詳細については、次を参照してください。[セクション 2.9](../../parallel/openmp/2-9-directive-nesting.md) 33 ページにします。  
   
- 次の例では `for` の内側と外側のディレクティブが入れ子になっていて`parallel` のディレクティブにバインドするため非準拠です :  
+ 次の例が準拠していないため、内部と外部`for`ディレクティブは入れ子になったし、同じバインド`parallel`ディレクティブ。  
   
 ```  
 void wrong1(int n)  
@@ -41,7 +44,7 @@ void wrong1(int n)
 }  
 ```  
   
- 前の例の次に動的に入れ子形式は非準拠です :  
+ 前の例の次の動的に入れ子になったバージョンに準拠していないもです。  
   
 ```  
 void wrong2(int n)  
@@ -64,7 +67,7 @@ void work1(int i, int n)
 }  
 ```  
   
- 次の例では `for` と `single` のディレクティブが入れ子になっている同じ並列領域にバインドするため非準拠です :  
+ 次の例が準拠していないため、`for`と`single`ディレクティブは入れ子と同じ並列領域にバインドします。  
   
 ```  
 void wrong3(int n)  
@@ -81,7 +84,7 @@ void wrong3(int n)
 }  
 ```  
   
- 次の例では `for` 内の `barrier` のディレクティブがデッドロックが発生する可能性があるため非準拠です :  
+ 次の例が準拠していないため、`barrier`内ディレクティブ、`for`デッドロックが発生することができます。  
   
 ```  
 void wrong4(int n)  
@@ -99,7 +102,7 @@ void wrong4(int n)
 }  
 ```  
   
- 次の例では `barrier` が 1 台のスレッドは一度にクリティカル セクションに入ることができるとは限らないためデッドロックが発生するため非準拠です :  
+ 次の例が準拠していないため、`barrier`結果デッドロックが発生原因という事実に一度に 1 つのスレッドは、クリティカル セクションを入力できます。  
   
 ```  
 void wrong5()  
@@ -116,7 +119,7 @@ void wrong5()
 }  
 ```  
   
- 次の例ではが 1 `barrier` 一つのスレッドだけ `single` のセクションを実行することによりデッドロックが発生するため非準拠です :  
+ 次の例が準拠していないため、`barrier`のみ 1 つのスレッドが実行されるという事実のデッドロックの結果、`single`セクション。  
   
 ```  
 void wrong6()  

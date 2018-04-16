@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -55,18 +56,22 @@ f1_keywords:
 - ATLSECURITY/ATL::CAccessToken::SetDefaultDacl
 - ATLSECURITY/ATL::CAccessToken::SetOwner
 - ATLSECURITY/ATL::CAccessToken::SetPrimaryGroup
-dev_langs: C++
-helpviewer_keywords: CAccessToken class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAccessToken class
 ms.assetid: bb5c5945-56a5-4083-b442-76573cee83ab
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e217f73afcf00d5569f731d86c726ae3191ffa93
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b8d2a314ea7697ef4379b899ee6845cd4ceca707
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="caccesstoken-class"></a>CAccessToken クラス
 このクラスは、アクセス トークンのラッパーです。  
@@ -86,7 +91,7 @@ class CAccessToken
   
 |名前|説明|  
 |----------|-----------------|  
-|[CAccessToken:: ~ CAccessToken](#dtor)|デストラクターです。|  
+|[CAccessToken::~CAccessToken](#dtor)|デストラクターです。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -139,14 +144,14 @@ class CAccessToken
 |[CAccessToken::SetPrimaryGroup](#setprimarygroup)|プライマリ グループを設定するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。|  
   
 ## <a name="remarks"></a>コメント  
- [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)プロセスまたはスレッドのセキュリティ コンテキストを記述し、Windows NT または Windows 2000 のシステムにログオンしている各ユーザーに割り当てられているオブジェクトです。  
+ [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)プロセスまたはスレッドのセキュリティ コンテキストを記述し、Windows システムにログオンしている各ユーザーに割り当てられているオブジェクトです。  
   
  Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="attach"></a>CAccessToken::Attach  
+##  <a name="attach"></a>  CAccessToken::Attach  
  指定したアクセス トークンのハンドルの所有権を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -160,7 +165,7 @@ void Attach(HANDLE hToken) throw();
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、アサーション エラーが発生場合、`CAccessToken`オブジェクトには、アクセス トークンの所有権が既に存在します。  
   
-##  <a name="dtor"></a>CAccessToken:: ~ CAccessToken  
+##  <a name="dtor"></a>  CAccessToken::~CAccessToken  
  デストラクターです。  
   
 ```
@@ -170,7 +175,7 @@ virtual ~CAccessToken() throw();
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放します。  
   
-##  <a name="checktokenmembership"></a>CAccessToken::CheckTokenMembership  
+##  <a name="checktokenmembership"></a>  CAccessToken::CheckTokenMembership  
  指定された SID が有効になっているかどうかを決定するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -197,7 +202,7 @@ bool CheckTokenMembership(
 > [!NOTE]
 >  `CAccessToken`偽装トークンと、プライマリ トークンではないオブジェクトがある必要があります。  
   
-##  <a name="createimpersonationtoken"></a>CAccessToken::CreateImpersonationToken  
+##  <a name="createimpersonationtoken"></a>  CAccessToken::CreateImpersonationToken  
  偽装アクセス トークンを作成するには、このメソッドを呼び出します。  
   
 ```
@@ -219,7 +224,7 @@ bool CreateImpersonationToken(
 ### <a name="remarks"></a>コメント  
  `CreateImpersonationToken`呼び出し[DuplicateToken](http://msdn.microsoft.com/library/windows/desktop/aa446616)新しい権限借用トークンを作成します。  
   
-##  <a name="createprimarytoken"></a>CAccessToken::CreatePrimaryToken  
+##  <a name="createprimarytoken"></a>  CAccessToken::CreatePrimaryToken  
  新しいプライマリ トークンを作成するには、このメソッドを呼び出します。  
   
 ```
@@ -245,7 +250,7 @@ bool CreatePrimaryToken(
 ### <a name="remarks"></a>コメント  
  `CreatePrimaryToken`呼び出し[DuplicateTokenEx](http://msdn.microsoft.com/library/windows/desktop/aa446617)を新しいプライマリ トークンを作成します。  
   
-##  <a name="createprocessasuser"></a>CAccessToken::CreateProcessAsUser  
+##  <a name="createprocessasuser"></a>  CAccessToken::CreateProcessAsUser  
  によって表されるユーザーのセキュリティ コンテキストで実行されている、新しいプロセスを作成するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -301,7 +306,7 @@ bool CreateProcessAsUser(
   
  このメソッドが成功するため、 `CAccessToken` (制限付きトークンである) 場合を除き、オブジェクトは AssignPrimaryToken を保持する必要があります実行します。  
   
-##  <a name="createrestrictedtoken"></a>CAccessToken::CreateRestrictedToken  
+##  <a name="createrestrictedtoken"></a>  CAccessToken::CreateRestrictedToken  
  新しく作成するには、このメソッドを呼び出す制限`CAccessToken`オブジェクト。  
   
 ```
@@ -331,13 +336,10 @@ bool CreateRestrictedToken(
 ### <a name="remarks"></a>コメント  
  `CreateRestrictedToken`使用して、 [CreateRestrictedToken](http://msdn.microsoft.com/library/windows/desktop/aa446583) Win32 関数を作成、新しい`CAccessToken`オブジェクトを制限します。  
   
-> [!NOTE]
->  このメソッドは、Windows 2000 で利用可能な以降のみです。  
-  
 > [!IMPORTANT]
 >  使用する場合`CreateRestrictedToken`、以下を確認する: 既存のトークンは有効な (かつ、ユーザーが入っていない) および`SidsToDisable`と`PrivilegesToDelete`が有効 (かつ、ユーザーが入っていない)。 メソッドが false を返す場合は、機能を拒否します。  
   
-##  <a name="detach"></a>CAccessToken::Detach  
+##  <a name="detach"></a>  CAccessToken::Detach  
  アクセス トークンの所有権を取り消すには、このメソッドを呼び出します。  
   
 ```
@@ -350,7 +352,7 @@ HANDLE Detach() throw();
 ### <a name="remarks"></a>コメント  
  このメソッドでは失効、`CAccessToken`のアクセス トークンの所有者。  
   
-##  <a name="disableprivilege"></a>CAccessToken::DisablePrivilege  
+##  <a name="disableprivilege"></a>  CAccessToken::DisablePrivilege  
  権限を無効にするには、このメソッドを呼び出す、`CAccessToken`オブジェクト。  
   
 ```
@@ -369,7 +371,7 @@ bool DisablePrivilege(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="disableprivileges"></a>CAccessToken::DisablePrivileges  
+##  <a name="disableprivileges"></a>  CAccessToken::DisablePrivileges  
  1 つ以上の特権を無効にするには、このメソッドを呼び出す、`CAccessToken`オブジェクト。  
   
 ```
@@ -388,7 +390,7 @@ bool DisablePrivileges(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="enableprivilege"></a>CAccessToken::EnablePrivilege  
+##  <a name="enableprivilege"></a>  CAccessToken::EnablePrivilege  
  特権を有効にするには、このメソッドを呼び出す、`CAccessToken`オブジェクト。  
   
 ```
@@ -407,7 +409,7 @@ bool EnablePrivilege(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="enableprivileges"></a>CAccessToken::EnablePrivileges  
+##  <a name="enableprivileges"></a>  CAccessToken::EnablePrivileges  
  1 つ以上の特権を有効にするには、このメソッドを呼び出す、`CAccessToken`オブジェクト。  
   
 ```
@@ -426,7 +428,7 @@ bool EnablePrivileges(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="getdefaultdacl"></a>CAccessToken::GetDefaultDacl  
+##  <a name="getdefaultdacl"></a>  CAccessToken::GetDefaultDacl  
  返すには、このメソッドを呼び出して、`CAccessToken`オブジェクトの既定の DACL です。  
   
 ```
@@ -440,7 +442,7 @@ bool GetDefaultDacl(CDacl* pDacl) const throw(...);
 ### <a name="return-value"></a>戻り値  
  既定の DACL があった場合、回復は false それ以外の場合は true を返します。  
   
-##  <a name="geteffectivetoken"></a>CAccessToken::GetEffectiveToken  
+##  <a name="geteffectivetoken"></a>  CAccessToken::GetEffectiveToken  
  取得するには、このメソッドを呼び出して、`CAccessToken`有効で、現在のスレッドのアクセス トークンと等しいオブジェクト。  
   
 ```
@@ -454,7 +456,7 @@ bool GetEffectiveToken(DWORD dwDesiredAccess) throw();
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="getgroups"></a>CAccessToken::GetGroups  
+##  <a name="getgroups"></a>  CAccessToken::GetGroups  
  返すには、このメソッドを呼び出して、`CAccessToken`トークンのオブジェクトのグループです。  
   
 ```
@@ -468,7 +470,7 @@ bool GetGroups(CTokenGroups* pGroups) const throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="gethandle"></a>CAccessToken::GetHandle  
+##  <a name="gethandle"></a>  CAccessToken::GetHandle  
  アクセス トークンへのハンドルを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -478,7 +480,7 @@ HANDLE GetHandle() const throw();
 ### <a name="return-value"></a>戻り値  
  ハンドルを返します、`CAccessToken`オブジェクトのアクセス トークン。  
   
-##  <a name="getimpersonationlevel"></a>CAccessToken::GetImpersonationLevel  
+##  <a name="getimpersonationlevel"></a>  CAccessToken::GetImpersonationLevel  
  アクセス トークンから偽装レベルを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -493,7 +495,7 @@ bool GetImpersonationLevel(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="getlogonsessionid"></a>CAccessToken::GetLogonSessionId  
+##  <a name="getlogonsessionid"></a>  CAccessToken::GetLogonSessionId  
  関連付けられたログオン セッションの ID を取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -510,7 +512,7 @@ bool GetLogonSessionId(LUID* pluid) const throw(...);
 ### <a name="remarks"></a>コメント  
  場合はデバッグ ビルドで、アサーション エラーが発生`pluid`無効な値です。  
   
-##  <a name="getlogonsid"></a>CAccessToken::GetLogonSid  
+##  <a name="getlogonsid"></a>  CAccessToken::GetLogonSid  
  関連付けられたログオン SID を取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -527,7 +529,7 @@ bool GetLogonSid(CSid* pSid) const throw(...);
 ### <a name="remarks"></a>コメント  
  場合はデバッグ ビルドで、アサーション エラーが発生*pSid*無効な値です。  
   
-##  <a name="getowner"></a>CAccessToken::GetOwner  
+##  <a name="getowner"></a>  CAccessToken::GetOwner  
  関連付けられている所有者を取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -544,7 +546,7 @@ bool GetOwner(CSid* pSid) const throw(...);
 ### <a name="remarks"></a>コメント  
  所有者は、既定ではこのアクセス トークンが有効なときに作成されたオブジェクトに設定されます。  
   
-##  <a name="getprimarygroup"></a>CAccessToken::GetPrimaryGroup  
+##  <a name="getprimarygroup"></a>  CAccessToken::GetPrimaryGroup  
  関連付けられているプライマリ グループを取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -561,7 +563,7 @@ bool GetPrimaryGroup(CSid* pSid) const throw(...);
 ### <a name="remarks"></a>コメント  
  グループは、既定ではこのアクセス トークンが有効なときに作成されたオブジェクトに設定されます。  
   
-##  <a name="getprivileges"></a>CAccessToken::GetPrivileges  
+##  <a name="getprivileges"></a>  CAccessToken::GetPrivileges  
  関連付けられている特権を取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -575,7 +577,7 @@ bool GetPrivileges(CTokenPrivileges* pPrivileges) const throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="getprocesstoken"></a>CAccessToken::GetProcessToken  
+##  <a name="getprocesstoken"></a>  CAccessToken::GetProcessToken  
  指定されたプロセスからアクセス トークンを使用して `CAccessToken` を初期化するには、このメソッドを呼び出します。  
   
 ```
@@ -595,7 +597,7 @@ bool GetProcessToken(DWORD dwDesiredAccess, HANDLE hProcess = NULL) throw();
 ### <a name="remarks"></a>コメント  
  呼び出し、 [OpenProcessToken](http://msdn.microsoft.com/library/aa379295\(vs.85\).aspx) Win32 関数。  
   
-##  <a name="getprofile"></a>CAccessToken::GetProfile  
+##  <a name="getprofile"></a>  CAccessToken::GetProfile  
  関連付けられたユーザー プロファイルを指すハンドルを取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -605,7 +607,7 @@ HANDLE GetProfile() const throw();
 ### <a name="return-value"></a>戻り値  
  プロファイルが存在しない場合、ユーザー プロファイル、または NULL を指すハンドルを返します。  
   
-##  <a name="getsource"></a>CAccessToken::GetSource  
+##  <a name="getsource"></a>  CAccessToken::GetSource  
  ソースを取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -619,7 +621,7 @@ bool GetSource(TOKEN_SOURCE* pSource) const throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="getstatistics"></a>CAccessToken::GetStatistics  
+##  <a name="getstatistics"></a>  CAccessToken::GetStatistics  
  関連付けられている情報を取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -633,7 +635,7 @@ bool GetStatistics(TOKEN_STATISTICS* pStatistics) const throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="getterminalservicessessionid"></a>CAccessToken::GetTerminalServicesSessionId  
+##  <a name="getterminalservicessessionid"></a>  CAccessToken::GetTerminalServicesSessionId  
  関連付けられているターミナル サービス セッションの ID を取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -647,7 +649,7 @@ bool GetTerminalServicesSessionId(DWORD* pdwSessionId) const throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="getthreadtoken"></a>CAccessToken::GetThreadToken  
+##  <a name="getthreadtoken"></a>  CAccessToken::GetThreadToken  
  初期化するためにこのメソッドを呼び出して、`CAccessToken`の特定のスレッドからトークンを使用します。  
   
 ```
@@ -672,7 +674,7 @@ bool GetThreadToken(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="gettokenid"></a>CAccessToken::GetTokenId  
+##  <a name="gettokenid"></a>  CAccessToken::GetTokenId  
  関連付けられているトークンの ID を取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -686,7 +688,7 @@ bool GetTokenId(LUID* pluid) const throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="gettype"></a>CAccessToken::GetType  
+##  <a name="gettype"></a>  CAccessToken::GetType  
  トークンの種類を取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -703,7 +705,7 @@ bool GetType(TOKEN_TYPE* pType) const throw(...);
 ### <a name="remarks"></a>コメント  
  **TOKEN_TYPE**列挙型には、プライマリ トークンと権限借用トークンを区別する値が含まれています。  
   
-##  <a name="getuser"></a>CAccessToken::GetUser  
+##  <a name="getuser"></a>  CAccessToken::GetUser  
  関連付けられているユーザーを識別するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -717,7 +719,7 @@ bool GetUser(CSid* pSid) const throw(...);
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
-##  <a name="hkeycurrentuser"></a>CAccessToken::HKeyCurrentUser  
+##  <a name="hkeycurrentuser"></a>  CAccessToken::HKeyCurrentUser  
  関連付けられたユーザー プロファイルを指すハンドルを取得するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -727,7 +729,7 @@ HKEY HKeyCurrentUser() const throw();
 ### <a name="return-value"></a>戻り値  
  プロファイルが存在しない場合、ユーザー プロファイル、または NULL を指すハンドルを返します。  
   
-##  <a name="impersonate"></a>CAccessToken::Impersonate  
+##  <a name="impersonate"></a>  CAccessToken::Impersonate  
  権限の借用を割り当てるには、このメソッドを呼び出す`CAccessToken`スレッドにします。  
   
 ```
@@ -746,7 +748,7 @@ bool Impersonate(HANDLE hThread = NULL) const throw(...);
   
  [CAutoRevertImpersonation クラス](../../atl/reference/cautorevertimpersonation-class.md)権限を借用したアクセス トークンを自動的に戻すには使用できます。  
   
-##  <a name="impersonateloggedonuser"></a>CAccessToken::ImpersonateLoggedOnUser  
+##  <a name="impersonateloggedonuser"></a>  CAccessToken::ImpersonateLoggedOnUser  
  ログオン ユーザーのセキュリティ コンテキストを偽装する呼び出し元のスレッドを許可するには、このメソッドを呼び出します。  
   
 ```
@@ -761,7 +763,7 @@ bool ImpersonateLoggedOnUser() const throw(...);
 > [!IMPORTANT]
 >  偽装関数への呼び出しは、何らかの理由で失敗すると場合、クライアントを偽装できませんし、クライアントが要求呼び出しを行ったプロセスのセキュリティ コンテキストでします。 場合は、プロセスが、高い特権を持つアカウントとして実行されているまたは管理グループのメンバーは、ユーザーがアクションを実行することがありますか通常は許可されません。 そのため、この関数の戻り値常に確認する必要があります。  
   
-##  <a name="istokenrestricted"></a>CAccessToken::IsTokenRestricted  
+##  <a name="istokenrestricted"></a>  CAccessToken::IsTokenRestricted  
  場合は、テストするには、このメソッドを呼び出す、`CAccessToken`オブジェクトには、制限付きの Sid の一覧が含まれています。  
   
 ```
@@ -771,7 +773,7 @@ bool IsTokenRestricted() const throw();
 ### <a name="return-value"></a>戻り値  
  オブジェクトには、Sid、Sid を制限がない場合は、false の制限の一覧が含まれている場合、またはメソッドが失敗した場合は true を返します。  
   
-##  <a name="loaduserprofile"></a>CAccessToken::LoadUserProfile  
+##  <a name="loaduserprofile"></a>  CAccessToken::LoadUserProfile  
  このメソッドに関連付けられているユーザー プロファイルの読み込みを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -784,7 +786,7 @@ bool LoadUserProfile() throw(...);
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、アサーション エラーが発生場合、`CAccessToken`有効なトークンが含まれていないか、または、ユーザーは既にプロファイルがします。  
   
-##  <a name="logonuser"></a>CAccessToken::LogonUser  
+##  <a name="logonuser"></a>  CAccessToken::LogonUser  
  指定された資格情報に関連付けられているユーザーのログオン セッションを作成するには、このメソッドを呼び出します。  
   
 ```
@@ -818,7 +820,7 @@ bool LogonUser(
 ### <a name="remarks"></a>コメント  
  関連付けられる、ログオンによるトークン アクセス、`CAccessToken`です。 このメソッドが成功するため、`CAccessToken`オブジェクトの所有者を識別する基本の信頼されたコンピューターの一部として、SE_TCB_NAME 特権を保持する必要があります。 参照してください[LogonUser](http://msdn.microsoft.com/library/windows/desktop/aa378184)必要な権限に関する詳細についてはします。  
   
-##  <a name="opencomclienttoken"></a>CAccessToken::OpenCOMClientToken  
+##  <a name="opencomclienttoken"></a>  CAccessToken::OpenCOMClientToken  
  初期化するために、クライアントからの呼び出しを処理、COM サーバー内からこのメソッドを呼び出して、`CAccessToken`の COM クライアントからアクセス トークンを使用します。  
   
 ```
@@ -846,7 +848,7 @@ bool OpenCOMClientToken(
 ### <a name="remarks"></a>コメント  
  [CAutoRevertImpersonation クラス](../../atl/reference/cautorevertimpersonation-class.md)できますを使用して自動的に設定して作成した権限を借用したアクセス トークンを戻す、`bImpersonate`フラグを*true*です。  
   
-##  <a name="opennamedpipeclienttoken"></a>CAccessToken::OpenNamedPipeClientToken  
+##  <a name="opennamedpipeclienttoken"></a>  CAccessToken::OpenNamedPipeClientToken  
  初期化するために、名前付きパイプ経由でこのメソッドは、サーバー内から取得要求を呼び出して、`CAccessToken`のクライアントからアクセス トークンを使用します。  
   
 ```
@@ -878,7 +880,7 @@ bool OpenNamedPipeClientToken(
 ### <a name="remarks"></a>コメント  
  [CAutoRevertImpersonation クラス](../../atl/reference/cautorevertimpersonation-class.md)できますを使用して自動的に設定して作成した権限を借用したアクセス トークンを戻す、`bImpersonate`フラグを*true*です。  
   
-##  <a name="openrpcclienttoken"></a>CAccessToken::OpenRPCClientToken  
+##  <a name="openrpcclienttoken"></a>  CAccessToken::OpenRPCClientToken  
  初期化するために、RPC クライアントからの呼び出しを処理するサーバー内からこのメソッドを呼び出して、`CAccessToken`のクライアントからアクセス トークンを使用します。  
   
 ```
@@ -910,7 +912,7 @@ bool OpenRPCClientToken(
 ### <a name="remarks"></a>コメント  
  [CAutoRevertImpersonation クラス](../../atl/reference/cautorevertimpersonation-class.md)できますを使用して自動的に設定して作成した権限を借用したアクセス トークンを戻す、`bImpersonate`フラグを*true*です。  
   
-##  <a name="openthreadtoken"></a>CAccessToken::OpenThreadToken  
+##  <a name="openthreadtoken"></a>  CAccessToken::OpenThreadToken  
  偽装レベルを設定し、初期化するには、このメソッドを呼び出す、`CAccessToken`の特定のスレッドからトークンを使用します。  
   
 ```
@@ -944,7 +946,7 @@ bool OpenThreadToken(
   
  [CAutoRevertImpersonation クラス](../../atl/reference/cautorevertimpersonation-class.md)できますを使用して自動的に設定して作成した権限を借用したアクセス トークンを戻す、`bImpersonate`フラグを*true*です。  
   
-##  <a name="privilegecheck"></a>CAccessToken::PrivilegeCheck  
+##  <a name="privilegecheck"></a>  CAccessToken::PrivilegeCheck  
  指定された権限のセットが有効かどうかを確認するには、このメソッドを呼び出して、 **CAccessToken**オブジェクト。  
   
 ```
@@ -966,7 +968,7 @@ bool PrivilegeCheck(
 ### <a name="remarks"></a>コメント  
  ときに`PrivilegeCheck`が返される、**属性**のそれぞれに所属[LUID_AND_ATTRIBUTES](http://msdn.microsoft.com/library/windows/desktop/aa379263)対応する権限が有効になっている場合は、構造体を SE_PRIVILEGE_USED_FOR_ACCESS に設定します。 このメソッドは、 [PrivilegeCheck](http://msdn.microsoft.com/library/windows/desktop/aa379304) Win32 関数。  
   
-##  <a name="revert"></a>CAccessToken::Revert  
+##  <a name="revert"></a>  CAccessToken::Revert  
  権限借用トークンを使用してスレッドを停止するには、このメソッドを呼び出します。  
   
 ```
@@ -983,7 +985,7 @@ bool Revert(HANDLE hThread = NULL) const throw();
 ### <a name="remarks"></a>コメント  
  権限借用トークンのバージョンを再設定を自動的に実行することができます、 [CAutoRevertImpersonation クラス](../../atl/reference/cautorevertimpersonation-class.md)です。  
   
-##  <a name="setdefaultdacl"></a>CAccessToken::SetDefaultDacl  
+##  <a name="setdefaultdacl"></a>  CAccessToken::SetDefaultDacl  
  既定値を設定するには、このメソッドを呼び出すの DACL、`CAccessToken`オブジェクト。  
   
 ```
@@ -1000,7 +1002,7 @@ bool SetDefaultDacl(const CDacl& rDacl) throw(...);
 ### <a name="remarks"></a>コメント  
  既定の DACL は、新しいオブジェクトがこのアクセス トークンが有効で作成されるときに既定で使用される DACL です。  
   
-##  <a name="setowner"></a>CAccessToken::SetOwner  
+##  <a name="setowner"></a>  CAccessToken::SetOwner  
  所有者を設定するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -1017,7 +1019,7 @@ bool SetOwner(const CSid& rSid) throw(...);
 ### <a name="remarks"></a>コメント  
  所有者は、このアクセス トークンが有効なときに作成された新しいオブジェクトに使用される既定の所有者です。  
   
-##  <a name="setprimarygroup"></a>CAccessToken::SetPrimaryGroup  
+##  <a name="setprimarygroup"></a>  CAccessToken::SetPrimaryGroup  
  プライマリ グループを設定するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
   
 ```
@@ -1034,7 +1036,7 @@ bool SetPrimaryGroup(const CSid& rSid) throw(...);
 ### <a name="remarks"></a>コメント  
  プライマリ グループは、このアクセス トークンが有効なときに作成された新しいオブジェクトの既定のグループです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATLSecurity サンプル](../../visual-cpp-samples.md)   
  [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)   
  [クラスの概要](../../atl/atl-class-overview.md)

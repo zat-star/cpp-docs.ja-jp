@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - C++ exception handling [MFC], upgrade considerations
 - CATCH macro [MFC]
 - exceptions [MFC], what's changed
 - THROW_LAST macro [MFC]
 ms.assetid: 3aa20d8c-229e-449c-995c-ab879eac84bc
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a701bcc6aae94dfe7cd51feb8bbe8c469cf79c4c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 073715c72dfad83490b377b5d55e1169297be1ef
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="exceptions-changes-to-exception-macros-in-version-30"></a>例外処理 : MFC 3.0 での変更点
 これは、高度なトピックです。  
@@ -35,7 +39,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [例外の再スロー](#_core_re.2d.throwing_exceptions)  
   
-##  <a name="_core_exception_types_and_the_catch_macro"></a>例外の種類と、CATCH マクロ  
+##  <a name="_core_exception_types_and_the_catch_macro"></a> 例外の種類と、CATCH マクロ  
  MFC の以前のバージョンで、**キャッチ**マクロは、例外の種類を判断する MFC の実行時型情報を使用。 例外の型が決定されます、つまり、キャッチ側でします。 C++ の例外を除き、ただし、例外の型は常にスロー サイトでによって決まりますがスローされる例外オブジェクトの種類。 スローされたオブジェクトへのポインターの型がスローされたオブジェクトの種類を異なる位置、まれなケースで互換性が失われます。  
   
  次の例では、MFC バージョン 3.0 と以前のバージョンの間には、この違いの結果を示します。  
@@ -56,7 +60,7 @@ ms.lasthandoff: 10/24/2017
   
  この問題を回避するには、関数からスロー式を呼び出し元のコードに移動し、例外が生成された時点にコンパイラに認識されている実際の型の例外をスローします。  
   
-##  <a name="_core_re.2d.throwing_exceptions"></a>例外の再スロー  
+##  <a name="_core_re.2d.throwing_exceptions"></a> 例外の再スロー  
  Catch ブロックには、それをキャッチした例外ポインターをスローできません。  
   
  たとえば、このコードは以前のバージョンで有効ですがバージョン 3.0 から予期しない結果。  

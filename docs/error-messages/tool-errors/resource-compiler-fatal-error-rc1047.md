@@ -15,32 +15,19 @@ dev_langs:
 helpviewer_keywords:
 - RC1047
 ms.assetid: cd794a87-2634-4d25-9fd3-8c934e3c4d1e
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: f3f66b2b50bb3dead42a17bef0b72a94f761a63f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5de683e2b784c4a34950eb4b0f80fcaa3ff64b3f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resource-compiler-fatal-error-rc1047"></a>リソース コンパイラの致命的なエラー RC1047
 "オプションが多すぎますオプション、'string'"  
   
- 指定したオプションは、何度もに指定されました。 指定した文字列には、エラーが発生したオプションに引数があります。
+ 指定されたオプション指定回数が多すぎます。 指定した文字列は、エラーが発生したオプションに引数です。

@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C2036 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2036 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C2036
@@ -19,12 +19,13 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cba1bcdc4ee346c8b6752ebf6360d3fc891c8e74
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 8ffb8f2b8ad0df1741687c1081fc499d3a9fde31
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2036"></a>コンパイラ エラー C2036
 'identifier': 不明なサイズ  

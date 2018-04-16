@@ -15,34 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - C4913
 ms.assetid: b94aa52e-6029-4170-9134-017714931546
-caps.latest.revision: 5
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: a452937a9ba1999083ba3c980b0e74943f4cd9e5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 67f0d5d3c163c4e6bb85f298eb96203577e148b1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4913"></a>コンパイラの警告 (レベル 4) C4913
-**ユーザー定義のバイナリ演算子 ',' が存在するが、オーバー ロードは見つかりませんでしたすべてのオペランド、既定のビルドインバイナリ演算子 ',' を使用。**  
+**ユーザー定義のバイナリ演算子 ',' は存在しますが、すべてのオペランドに適用できるオーバーロードは見つかりませんでした。既定のビルドインバイナリ演算子 ',' を使用します。**  
   
  オーバーロードされたコンマ演算子を含むプログラムで、組み込みコンマ演算子への呼び出しが発生しました。発生したのではないかと考えられていた変換は、発生しませんでした。  
   

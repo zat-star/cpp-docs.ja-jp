@@ -15,31 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C4131
 ms.assetid: 7903b3e1-454f-4be2-aa9b-230992f96a2d
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 4bc0d1262026998e79e365e9d47fba0186636f00
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ea37a3f210a2c379471b481fb0812b6c0630d32a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4131"></a>コンパイラの警告 (レベル 4) C4131
 'function': 旧スタイルの宣言が使われています  

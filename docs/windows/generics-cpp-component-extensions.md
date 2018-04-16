@@ -1,77 +1,69 @@
 ---
-title: "Generics  (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "generic_cpp"
-  - "generic"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "generics [C++]"
+title: "ジェネリック (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- generic_cpp
+- generic
+dev_langs:
+- C++
+helpviewer_keywords:
+- generics [C++]
 ms.assetid: c7ccc316-a411-4c00-b2e2-f0c0eadc6cfd
-caps.latest.revision: 24
-caps.handback.revision: 24
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 415da036c9ac2f285b97096368754f176d655eff
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Generics  (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ジェネリックは、パラメーター化された型とメソッドです。  一般的な機能が Windows ランタイムと共通言語ランタイムの両方でサポートされている共通言語ランタイムだけがサポートされ、このセクションで、検索する。  また、独自のジェネリック メソッドを検索し、Visual C\+\+ を使用して作成された、Visual C\+\+ の .NET Framework 言語でジェネリック型を作成するメソッドを使用する方法について説明します。  最後に、このセクションでは、ジェネリックと C\+\+ テンプレートを比較します。  
+# <a name="generics--c-component-extensions"></a>ジェネリック (C++ コンポーネント拡張)
+ジェネリックは、パラメーター化された型およびメソッドです。 このセクションで、Windows ランタイムと、共通言語ランタイムの両方でサポートされているジェネリック機能と調べるは共通言語ランタイムのみでサポートされています。 また、Visual C の .NET Framework 言語で作成されたジェネリック型を使用する方法と、独自のジェネリック メソッドおよび Visual c での型を作成する方法を確認します。 最後に、このセクションでは、ジェネリックおよび C++ テンプレートの比較を提供します。  
   
-## このセクションの内容  
- **Windows ランタイムと共通言語ランタイムによってサポートされる**  
+## <a name="in-this-section"></a>このセクションの内容  
+ **Windows ランタイムと共通言語ランタイムでサポートされています。**  
   
- [Overview of Generics in Visual C\+\+](../windows/overview-of-generics-in-visual-cpp.md)  
- ジェネリックの詳細については、言語機能のジェネリックのジェネリック型パラメーターとして、参照型と値型の使用方法について説明する刺激、用語の定義です。  
+ [Visual C++ のジェネリックの概要](../windows/overview-of-generics-in-visual-cpp.md)  
+ ジェネリックの概要については、言語の機能で、ジェネリックおよび参照型と値の型のジェネリック型パラメーターとして使用に関する情報について説明するために使用する用語の定義の動機です。  
   
- [Generic Interfaces \(Visual C\+\+\)](../Topic/Generic%20Interfaces%20\(Visual%20C++\).md)  
- ジェネリック インターフェイスを定義および使用する方法について説明します。  
+ [ジェネリック インターフェイス (Visual C++)](../windows/generic-interfaces-visual-cpp.md)  
+ 定義とジェネリック インターフェイスの使用に関する情報です。  
   
- [Generic Delegates \(Visual C\+\+\)](../Topic/Generic%20Delegates%20\(Visual%20C++\).md)  
- 汎用デリゲートを定義および使用する方法について説明します。  
+ [汎用デリゲート (Visual C++)](../windows/generic-delegates-visual-cpp.md)  
+ 定義して、汎用デリゲートの使用に関する情報。  
   
- [Constraints on Generic Type Parameters \(C\+\+\/CLI\)](../Topic/Constraints%20on%20Generic%20Type%20Parameters%20\(C++-CLI\).md)  
- ジェネリック型に対する制約を使用する方法について説明します。  
+ [ジェネリック型パラメーターの制約 (C++/CLI)](../windows/constraints-on-generic-type-parameters-cpp-cli.md)  
+ ジェネリック型に制約を使用してに関する情報です。  
   
- [Consuming Generics \(C\+\+\/CLI\)](../windows/consuming-generics-cpp-cli.md)  
- 定義された、Visual C\+\+ の他の言語で記述された .NET アセンブリでジェネリックを使用する方法について説明します。  
+ [ジェネリックの使用 (C++/CLI)](../windows/consuming-generics-cpp-cli.md)  
+ Visual C では、他の言語で作成される可能性のある、.NET アセンブリで定義されているジェネリックの使用に関する情報です。  
   
- [Generics and Templates \(Visual C\+\+\)](../windows/generics-and-templates-visual-cpp.md)  
- いつジェネリックとテンプレートの比較、それぞれを使用するときと、それらを有効に結合する方法を示します。  
+ [ジェネリックとテンプレート (Visual C++)](../windows/generics-and-templates-visual-cpp.md)  
+ ジェネリックとテンプレート、ときに使用する、各意義のある結合する方法の比較できます。  
   
- **共通言語ランタイムによってサポートされる**  
+ **共通言語ランタイムでサポートされています。**  
   
- [Generic Functions \(C\+\+\/CLI\)](../windows/generic-functions-cpp-cli.md)  
- ジェネリック関数とメソッドを定義して使用する方法について説明します。  
+ [ジェネリック関数 (C++/CLI)](../windows/generic-functions-cpp-cli.md)  
+ ジェネリック関数とメソッド定義と使用に関する情報です。  
   
- [Generic Classes \(C\+\+\/CLI\)](../Topic/Generic%20Classes%20\(C++-CLI\).md)  
- ジェネリック クラスを定義および使用する方法について説明します。  
+ [ジェネリック クラス (C++/CLI)](../windows/generic-classes-cpp-cli.md)  
+ 定義とジェネリック クラスの使用に関する情報です。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [方法: for each を使用してジェネリック コレクションを反復処理する](../dotnet/how-to-iterate-over-a-generic-collection-with-for-each.md)  
- ジェネリック コレクションの [for each、in](../dotnet/for-each-in.md) キーワードを使用します。  
+ 使用して、[ごとで](../dotnet/for-each-in.md)ジェネリック コレクションではキーワードです。  
   
- [.NET Framework クラス ライブラリのジェネリック](../Topic/Generics%20in%20the%20.NET%20Framework%20Class%20Library%20\(C%23%20Programming%20Guide\).md)  
- .NET Framework クラス ライブラリの `System.Collections.Generic`がいくつか使用できるジェネリック コレクション クラスと関連インターフェイスを含む名前空間について説明します。  
-  
- [ジェネリックの概要](../Topic/Introduction%20to%20Generics%20\(C%23%20Programming%20Guide\).md)  
- C\# のドキュメントのジェネリック セクション。  
-  
- [Visual Basic におけるジェネリック型](../Topic/Generic%20Types%20in%20Visual%20Basic%20\(Visual%20Basic\).md)  
- Visual Basic ドキュメントのジェネリック セクション。  
-  
- [テンプレートの概要](../Topic/Templates%20Overview.md)  
- C\+\+ テンプレートについて説明します。  
-  
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

@@ -4,24 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.editors.newcustomresource
-dev_langs: C++
+f1_keywords:
+- vc.editors.newcustomresource
+dev_langs:
+- C++
 helpviewer_keywords:
 - resources [C++], adding
 - Custom Resource Type dialog box
 ms.assetid: 8216e29d-27ca-4aed-8036-d55fa4468ea2
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1929cb1c9f24b8008449b3da18af29f89456d5a8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 7fea21a8b4c104c49521ce57a81758d91420a95b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="new-custom-resource-dialog-box"></a>[新規カスタム リソース] ダイアログ ボックス
 新しいカスタム リソースを作成できます。  
@@ -32,5 +38,5 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  リソース名またはによって予約されている ID を指定しない[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)]です。 予約済みの名前は DESIGNINFO、HWB、および TEXTINCLUDE、予約済み ID は 255 です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [[リソースの追加] ダイアログ ボックス](../windows/add-resource-dialog-box.md)

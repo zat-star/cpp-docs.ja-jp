@@ -1,25 +1,32 @@
 ---
-title: "hash_map::reverse_iterator (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: hash_map::reverse_iterator (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::hash_map::reverse_iterator
-dev_langs: C++
-helpviewer_keywords: reverse_iterator member [STL/CLR]
+f1_keywords:
+- cliext::hash_map::reverse_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- reverse_iterator member [STL/CLR]
 ms.assetid: 63778922-82e5-4692-8447-da8964a974bb
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bcea7859ac990d9557ea4f8897e5593d0ce4f82d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0b1ef37e518c194e51ddc690ae634941cd5b5255
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmapreverseiterator-stlclr"></a>hash_map::reverse_iterator (STL/CLR)
 被制御シーケンスの反転反復子の型です。  
@@ -62,12 +69,12 @@ int main()
 [c 3] [b 2] [a 1]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
  [hash_map::const_iterator (STL/CLR)](../dotnet/hash-map-const-iterator-stl-clr.md)   
  [hash_map::const_reverse_iterator (STL/CLR)](../dotnet/hash-map-const-reverse-iterator-stl-clr.md)   

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - vc-attr.db_param
 - vc-attr.db_column
@@ -14,7 +15,8 @@ f1_keywords:
 - vc-attr.db_command
 - vc-attr.db_table
 - vc-attr.db_source
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - attributes [C++], database
 - attributes [C++], data access
@@ -25,15 +27,18 @@ helpviewer_keywords:
 - OLE DB consumers [C++], database attributes
 - attributes [C++], OLE DB consumer
 ms.assetid: 560d2456-e307-4cb7-ba7b-4d0ed674697f
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ca857a5d304d137009161618bddeed49886233b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 18ec902d3b9defc57c10a08b436393a48091e749
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="simplifying-data-access-with-database-attributes"></a>データベース属性によるデータ アクセスの簡略化
 このトピックでは、データベース操作を簡素化するデータベースの属性の使用を示します。  
@@ -51,7 +56,7 @@ ms.lasthandoff: 10/24/2017
 -   **Db_table**属性付きのバージョンでの呼び出しは、次のテンプレートの宣言に相当します。  
   
     ```  
-    class CAuthorsNoAttr : public CTable<CAccessor<CAuthorsNoAttrAccessor> >  
+    class CAuthorsNoAttr : public CTable<CAccessor<CAuthorsNoAttrAccessor>>  
     ```  
   
 -   **Db_column**属性付きのバージョンでの呼び出しは、列マップに相当する (を参照してください`BEGIN_COLUMN_MAP ... END_COLUMN_MAP`) テンプレートの宣言にします。  
@@ -63,11 +68,11 @@ ms.lasthandoff: 10/24/2017
  このトピックで説明する属性については、次を参照してください。 [OLE DB コンシューマー属性](../../windows/ole-db-consumer-attributes.md)です。  
   
 ## <a name="table-and-accessor-declaration-using-attributes"></a>テーブルおよびアクセサーの宣言属性の使用  
- 次のコード呼び出し`db_source`と**db_table**テーブル クラスにします。 `db_source`接続を使用するデータ ソースを指定します。 **db_table**テーブル クラスを宣言する適切なテンプレート コードを挿入します。 **db_column**列マップを指定して、アクセサーの宣言を挿入します。 ATL をサポートするすべてのプロジェクトで OLE DB コンシューマー属性を使用することができます。  
+ 次のコード呼び出し`db_source`と**db_table**テーブル クラスにします。 `db_source` 接続を使用するデータ ソースを指定します。 **db_table**テーブル クラスを宣言する適切なテンプレート コードを挿入します。 **db_column**列マップを指定して、アクセサーの宣言を挿入します。 ATL をサポートするすべてのプロジェクトで OLE DB コンシューマー属性を使用することができます。  
   
  属性を使用してテーブルおよびアクセサーの宣言を次に示します。  
   
-```  
+```cpp
 //////////////////////////////////////////////////////////////////////  
 // Table and accessor declaration using attributes  
 // authors.h  
@@ -103,7 +108,7 @@ public:
 ## <a name="table-and-accessor-declaration-using-templates"></a>テーブルおよびアクセサーの宣言にテンプレートを使用します。  
  テンプレートを使用したテーブルおよびアクセサーの宣言を次に示します。  
   
-```  
+```cpp
 //////////////////////////////////////////////////////////////////////  
 // Table and user record class declaration using templates  
 // authors.h  
@@ -131,7 +136,8 @@ public:
    HRESULT OpenDataSource()  
    {  
       CDataSource _db;  
-      HRESULT hr;  
+
+HRESULT hr;  
       hr = _db.OpenFromInitializationString(L"your connection string");  
       if (FAILED(hr))  
       {  
@@ -157,12 +163,12 @@ public:
       COLUMN_ENTRY_LENGTH_STATUS(3, m_YearBorn, m_dwYearBornLength, m_dwYearBornStatus)  
    END_COLUMN_MAP()  
 };  
-class CAuthorsNoAttr : public CTable<CAccessor<CAuthorsNoAttrAccessor> >  
+class CAuthorsNoAttr : public CTable<CAccessor<CAuthorsNoAttrAccessor>>  
 {  
 public:  
    HRESULT OpenAll()  
    {  
-      HRESULT hr;  
+HRESULT hr;  
       hr = OpenDataSource();  
       if (FAILED(hr))  
          return hr;  
@@ -189,7 +195,7 @@ public:
    }  
    HRESULT OpenRowset(DBPROPSET *pPropSet = NULL)  
    {  
-      HRESULT hr = Open(m_session, "Authors", pPropSet);  
+HRESULT hr = Open(m_session, "Authors", pPropSet);  
 #ifdef _DEBUG  
       if(FAILED(hr))  
          AtlTraceErrorRecords(hr);  
@@ -204,6 +210,6 @@ public:
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー属性します。](../../windows/ole-db-consumer-attributes.md)   
  [属性のチュートリアル](http://msdn.microsoft.com/en-us/73df1d5d-261a-4521-98fb-06dcbf5ec0d0)

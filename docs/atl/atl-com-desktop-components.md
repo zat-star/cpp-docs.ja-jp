@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ATL, reference
 - ATL, about ATL
 ms.assetid: 291f38d1-d2de-4687-86a9-99b4fd35706c
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d27371a994f13ebe8c91452d44645c5d3f5eac29
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b55aef95cbe34dc51910035f4a731eed3a6a5679
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="atl-com-desktop-components"></a>ATL COM デスクトップ コンポーネント
 ATL リファレンスでは、アクティブ テンプレート ライブラリ (ATL)、コンポーネント オブジェクト モデル (COM) オブジェクトのプログラミングを簡略化するテンプレート ベースの C++ クラスのセットを説明します。 完全に活用するために ATL、COM を熟知して作業を強くお勧めします。  
@@ -65,7 +69,3 @@ ATL リファレンスでは、アクティブ テンプレート ライブラ�
   
  [OLE DB テンプレート](../data/oledb/ole-db-templates.md)  
  OLE DB のコンシューマーおよびプロバイダーのテンプレートのリファレンスが用意されています。このテンプレート クラスのセットは、一般的に使用される多くの OLE DB インターフェイスを実装します。  
-  
- [Visual C++ ライブラリ](http://msdn.microsoft.com/en-us/fec23c40-10c0-4857-9cdc-33a3b99b30ae)  
- Visual C++ に用意されているさまざまなライブラリへのリンクがあります。ATL、MFC、OLE DB の各テンプレート、C ランタイム ライブラリ、および C++ 標準ライブラリが含まれます。
-

@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.classes.array
-dev_langs: C++
+f1_keywords:
+- vc.classes.array
+dev_langs:
+- C++
 helpviewer_keywords:
 - arrays [MFC], classes
 - collection classes [MFC], arrays
 - classes [MFC], array
 ms.assetid: fdeabf95-2fe7-43a8-8f88-d954133caf52
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6a269a165dc56a9765144d69fe7edc4034c999d6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 03046468fba206d01f7bd57273588a1c2c8c1000
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ready-to-use-array-classes"></a>使用可能な配列クラス
 次のクラスは、すぐに使用できる配列クラスです。  
@@ -48,6 +53,6 @@ ms.lasthandoff: 10/24/2017
  [CStringArray](../mfc/reference/cstringarray-class.md)  
  ストア`CString`配列内のオブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

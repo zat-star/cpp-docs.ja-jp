@@ -1,28 +1,33 @@
 ---
-title: ".NET プログラミング C + +/CLI (Visual C) |Microsoft ドキュメント"
-ms.custom: 
+title: .NET プログラミング C + +/CLI (Visual C) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - programming [C++], .NET programming
 - .NET Framework [C++]
 - .NET applications [C++]
 - Visual C++, .NET programming
 ms.assetid: 2c7f3b0f-a266-4f0e-b318-d6f1371e04a9
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 829f7302cf1086162c81be78acb05abcdb0fdf1f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f1c18ea36a4ebced809ea32e74dca9dcb00e3968
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="net-programming-with-ccli-visual-c"></a>C++/CLI (Visual C++) による .NET プログラミング
 次のトピックでは、.NET プラットフォームを対象として Visual C++ を使用する方法について説明します。  
@@ -68,5 +73,5 @@ ms.lasthandoff: 10/24/2017
   
  [ボックス化 (C++/CLI)](../dotnet/boxing-cpp-cli.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ネイティブと .NET の相互運用性](../dotnet/native-and-dotnet-interoperability.md)

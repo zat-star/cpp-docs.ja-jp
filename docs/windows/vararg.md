@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: vc-attr.vararg
-dev_langs: C++
-helpviewer_keywords: vararg attribute
+f1_keywords:
+- vc-attr.vararg
+dev_langs:
+- C++
+helpviewer_keywords:
+- vararg attribute
 ms.assetid: 20fc3244-18e9-411c-990e-d5b4fa29a570
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 96689914ae299700f2640fa205cbad8887692454
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: ee82536c4cb172fb825487c7780bafcc1f007a59
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vararg"></a>vararg
 関数が可変個の引数を取ることを指定します。  
@@ -52,19 +59,19 @@ __interface X : public IUnknown
 };  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|インターフェイス メソッド|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
  属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDL 属性](../windows/idl-attributes.md)   
  [メソッド属性](../windows/method-attributes.md)   

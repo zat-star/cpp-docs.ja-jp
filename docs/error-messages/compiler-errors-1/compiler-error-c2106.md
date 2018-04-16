@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C2106 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2106 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C2106
@@ -19,12 +19,13 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0b4c09d450bdb010b8436c841cd57b7c2978567c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 36196b87acfd2cd7aa064c414b2e9d0f4a2f7ead
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2106"></a>コンパイラ エラー C2106
 'operator': 左のオペランドが左辺値にする必要があります  

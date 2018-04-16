@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _RTC_SetErrorFuncW
+ms.topic: reference
+apiname:
+- _RTC_SetErrorFuncW
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,7 +25,8 @@ apitype: DLLExport
 f1_keywords:
 - _RTC_SetErrorFuncW
 - RTC_SetErrorFuncW
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - run-time errors
 - RTC_SetErrorFuncW function
@@ -31,15 +34,17 @@ helpviewer_keywords:
 - _RTC_SetErrorFuncW function
 - RTC_error_fnW typedef
 ms.assetid: b3e0d71f-1bd3-4c37-9ede-2f638eb3c81a
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b3285e266091a902373f0bfd7b70b9c1123c19f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f586823ffcab1e8d602375c9d955c78ac64c043f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="rtcseterrorfuncw"></a>_RTC_SetErrorFuncW
 実行時エラー チェック (RTC) を報告するためのハンドラーとして関数を指定します。  
@@ -75,7 +80,7 @@ ms.lasthandoff: 10/24/2017
   
  **typedef int (__cdecl \*_RTC_error_fnW)(int**  `errorType` **, const wchar_t \*** *filename* **, int**  *linenumber* **, const wchar_t \*** `moduleName` **, const wchar_t \*** *format* **, ...);**  
   
- ここで、  
+ それぞれの文字について以下に説明します。  
   
  `errorType`  
  [_RTC_SetErrorType](../../c-runtime-library/reference/rtc-seterrortype.md)で指定したエラーの種類。  
@@ -94,9 +99,9 @@ ms.lasthandoff: 10/24/2017
   
  **_RTC_error_fnW** の使用例については、「[ネイティブ ランタイム チェックのカスタマイズ](/visualstudio/debugger/native-run-time-checks-customization)」をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_RTC_SetErrorFuncW`|\<rtcapi.h>|  
   
@@ -105,6 +110,6 @@ ms.lasthandoff: 10/24/2017
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_CrtDbgReport、_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md)   
  [ランタイム エラー チェック](../../c-runtime-library/run-time-error-checking.md)

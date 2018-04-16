@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,7 +16,8 @@ f1_keywords:
 - AFXOLE/COleLinkingDoc::Revoke
 - AFXOLE/COleLinkingDoc::OnFindEmbeddedItem
 - AFXOLE/COleLinkingDoc::OnGetLinkedItem
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COleLinkingDoc [MFC], COleLinkingDoc
 - COleLinkingDoc [MFC], Register
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - COleLinkingDoc [MFC], OnFindEmbeddedItem
 - COleLinkingDoc [MFC], OnGetLinkedItem
 ms.assetid: 9f547f35-2f95-427f-b9c0-85c31940198b
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d9d02d128a96550cce393fc439ef7fdabcccd293
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 611d09a12da1d2ebf6fcae8d7573cc48a5318f97
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="colelinkingdoc-class"></a>直接クラス
 OLE コンテナー ドキュメントの基底クラスです。OLE コンテナー ドキュメントは、ドキュメントが保持する埋め込みアイテムへのリンクをサポートします。  
@@ -98,7 +102,7 @@ class COleLinkingDoc : public COleDocument
   
  `COleLinkingDoc`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxole.h  
   
 ##  <a name="colelinkingdoc"></a>COleLinkingDoc::COleLinkingDoc  
@@ -181,7 +185,7 @@ void Revoke();
   
  名前付きのファイルを閉じるときに、この関数を呼び出す必要がありますが、通常必要はありませんメソッドを直接呼び出す。 `Revoke`によって呼び出されます`COleLinkingDoc`の実装の`OnCloseDocument`、 `OnNewDocument`、 `OnOpenDocument`、および`OnSaveDocument`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル OCLIENT](../../visual-cpp-samples.md)   
  [COleDocument クラス](../../mfc/reference/coledocument-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

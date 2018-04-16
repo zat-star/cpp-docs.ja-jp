@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3887
 ms.assetid: a7e82426-ef99-437b-9562-2822004e18fe
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6ffa92a9984f982c1a71f1417f0f17c8ee36d4c4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 7dccbd3a34764eedc53c69ddd69c693cc4782d2a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3887"></a>コンパイラ エラー C3887
 'var': リテラル データ メンバーの初期化子が定数式にする必要があります  
@@ -43,7 +44,7 @@ ref struct Y1 {
 };  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C3887b.cpp  

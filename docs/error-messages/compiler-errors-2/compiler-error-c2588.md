@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2588
 ms.assetid: 19a0cabd-ca13-44a5-9be3-ee676abf9bc4
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 807574f0f94f989726ca19d3260b9668f6c84055
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: c6d71e5bfe442f2b3f2225cd4dc6cb88fc73d24a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2588"></a>コンパイラ エラー C2588
 ':: ~ identifier': 無効なグローバル デストラクター  

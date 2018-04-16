@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::queue::operator==
-dev_langs: C++
-helpviewer_keywords: operator== member [STL/CLR]
+f1_keywords:
+- cliext::queue::operator==
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator== member [STL/CLR]
 ms.assetid: ad183c61-a24a-4851-aac7-2a47a1371ec2
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 07e674dff56bc64f8b549b7f5d541032d1eaf310
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7ca0d4596db074ef5896358d6e73d8422f6f5419
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="operator-queue-stlclr"></a>operator== (queue) (STL/CLR)
 キューのと同じ比較します。  
@@ -90,12 +97,12 @@ int main()
 [a b c] == [a b d] is False  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/キュー >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
  [operator! = (キュー) (STL/CLR)](../dotnet/operator-inequality-queue-stl-clr.md)   
  [演算子\<(キュー) (STL/CLR)](../dotnet/operator-less-than-queue-stl-clr.md)   

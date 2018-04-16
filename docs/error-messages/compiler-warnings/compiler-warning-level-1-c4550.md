@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4550
-dev_langs: C++
-helpviewer_keywords: C4550
+f1_keywords:
+- C4550
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4550
 ms.assetid: f902b4ed-5f17-48ea-b693-92f4fb8c8054
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3b51c657fd94b1b10175e467ff2084665bdb5958
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 08b0e586500b4de2ed0005d118f6302e67ecc7d1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4550"></a>コンパイラの警告 (レベル 1) C4550
 式には、引数リストのない関数  

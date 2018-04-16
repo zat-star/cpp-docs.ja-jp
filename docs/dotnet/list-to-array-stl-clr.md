@@ -1,41 +1,46 @@
 ---
-title: "list::to_array (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::list::to_array"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "to_array メンバー [STL/CLR]"
+title: "list::to_array (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::list::to_array
+dev_langs:
+- C++
+helpviewer_keywords:
+- to_array member [STL/CLR]
 ms.assetid: 3ea7b90c-127b-43cd-804b-019b86b77582
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: ef25a5f7dd53524b21862dc7fdb4ebee5bb6d178
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# list::to_array (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-新しい配列に被制御シーケンスをコピーします。  
+# <a name="listtoarray-stlclr"></a>list::to_array (STL/CLR)
+被制御シーケンスを新しい配列にコピーします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 cli::array<Value>^ to_array();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスを格納した配列を返します。  配列のフォームの被制御シーケンスのコピーを取得するために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数では、被制御シーケンスを格納する配列を返します。 使用する配列形式の被制御シーケンスのコピーを入手します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_list_to_array.cpp   
@@ -66,12 +71,15 @@ int main()
   
 ```  
   
-  **b c d**  
- **b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/リスト\>  
+```Output  
+a b c d  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/一覧 >  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [list (STL/CLR)](../dotnet/list-stl-clr.md)

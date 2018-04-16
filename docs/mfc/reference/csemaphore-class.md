@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CSemaphore
 - AFXMT/CSemaphore
 - AFXMT/CSemaphore::CSemaphore
-dev_langs: C++
-helpviewer_keywords: CSemaphore [MFC], CSemaphore
+dev_langs:
+- C++
+helpviewer_keywords:
+- CSemaphore [MFC], CSemaphore
 ms.assetid: 385fc7e4-8f86-4be2-85e1-d23b38c12f7f
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0184d013b0a36aeb77bebbba9f6e4ecef47b7f85
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 378007ee4ebbb457fb8922d44d063b3bdf05729d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csemaphore-class"></a>CSemaphore クラス
 クラスのオブジェクト`CSemaphore`「セマフォ」を表す — 現在指定されたリソースにアクセスするスレッドの数のカウントにアクセスを管理する 1 つまたは複数のプロセスで、限られた数のスレッドをできるようにする同期オブジェクトです。  
@@ -61,7 +66,7 @@ class CSemaphore : public CSyncObject
   
  `CSemaphore`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxmt.h  
   
 ##  <a name="csemaphore"></a>CSemaphore::CSemaphore  
@@ -94,7 +99,7 @@ CSemaphore(
 > [!IMPORTANT]
 >  作成した後、`CSemaphore`オブジェクトを使用して[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)をミュー テックスが既に存在しないことを確認します。 ミュー テックスが予期せず存在、悪意のあるプロセスが発生したり、悪意ミュー テックスを使用することがある必ずしも意図している可能性があります。 ここでは、推奨されるセキュリティを考慮したプロシージャがハンドルを終了し、クリックすると、オブジェクトの作成でエラーが発生しました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数クラス](../../mfc/reference/csyncobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
 

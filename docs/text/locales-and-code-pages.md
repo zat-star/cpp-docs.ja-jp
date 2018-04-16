@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - locales [C++], about locales
 - locale IDs [C++]
@@ -22,15 +24,17 @@ helpviewer_keywords:
 - code pages [C++], locales
 - conventions [C++], international character support
 ms.assetid: bd937361-b6d3-4c98-af95-beb7c903187b
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 1115af5eb7726138a1954f832ec2761a47667e44
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 54ab2f67a382da831ff4c1038f0269d0044f751f
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="locales-and-code-pages"></a>ロケールとコード ページ
 ロケール ID は、特定の地域の規則や言語を反映します。 1 つの言語が複数の国や地域で使用されることもあります。たとえば、ポルトガル語は、ポルトガルだけでなくブラジルでも使用されています。 逆に、1 つの国や地域に複数の公用語が存在する場合もあります。 たとえば、カナダでは、公用語として英語とフランス語の 2 つの言語が使用されています。 そこでカナダには、カナダ英語とカナダ フランス語の 2 つの異なったロケールが存在します。 ロケールに依存するカテゴリとしては、日付の形式や通貨値の表示形式などがあります。  
@@ -43,7 +47,7 @@ ms.lasthandoff: 10/24/2017
   
  コード ページの詳細については、「 [Code Pages](../c-runtime-library/code-pages.md)」を参照してください。  
   
- C のランタイム ライブラリには、ロケールとマルチバイトの 2 種類の内部コード ページが存在します。 プログラムの実行中に現在のコード ページを変更することができます (ドキュメントを参照して、 [setlocale、_wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)と[_setmbcp](../c-runtime-library/reference/setmbcp.md)関数)。 また、ランタイム ライブラリは、オペレーティング システムのコード ページの値を取得して使用することもできます。 Windows 2000 では、オペレーティング システムのコード ページは、"システム既定 ANSI"コード ページです。 このコード ページは、プログラムの実行中に変更されることはありません。  
+ C のランタイム ライブラリには、ロケールとマルチバイトの 2 種類の内部コード ページが存在します。 プログラムの実行中に現在のコード ページを変更することができます (ドキュメントを参照して、 [setlocale、_wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)と[_setmbcp](../c-runtime-library/reference/setmbcp.md)関数)。 また、ランタイム ライブラリは、入手してのプログラムの実行中の定数は、オペレーティング システム コード ページの値を使用します。  
   
  ロケールのコード ページを変更すると、ロケールに依存する関数の動作は、そのコード ページで規定されている動作に変更されます。 ロケールに依存する関数はすべて、既定で、まず "C" ロケール固有のコード ページを基に動作します。 システム内部のロケールのコード ページもロケールに特有なその他の属性も、`setlocale` 関数を呼び出すことで変更できます。 `setlocale` (LC_ALL, "") を呼び出すと、オペレーティング システムのユーザー ロケールが示すロケールに設定されます。  
   
@@ -51,6 +55,6 @@ ms.lasthandoff: 10/24/2017
   
  C のランタイム関数 `setlocale` は、現在のプログラムのロケール情報の一部または全部の設定、変更、および問い合わせが可能です。 [_Wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)ルーチンは、ワイド文字バージョンの`setlocale`; 引数と戻り値の`_wsetlocale`ワイド文字列です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Unicode と MBCS](../text/unicode-and-mbcs.md)   
  [文字セットにおける移植性の利点](../text/benefits-of-character-set-portability.md)

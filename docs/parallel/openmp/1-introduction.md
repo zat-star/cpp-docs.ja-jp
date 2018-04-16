@@ -1,26 +1,31 @@
 ---
-title: "1. Introduction | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "1. 概要 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: c42e72bc-0e31-4b1c-b670-cd82673c0c5a
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f850e236ebfd056da93700df06ec830e5a573284
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 1. Introduction
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ここではC および C\+\+ プログラムで共有メモリの並列化を指定するために使用できるコンパイラ ディレクティブライブラリ関数と環境変数のコレクションを指定します。  ここで説明する機能は*OpenMP C\/C\+\+ アプリケーション プログラミング インターフェイス*  として知られています \(API\)。  この特定の目的は販売元からの共有メモリのアーキテクチャでは汎用性のあるためプログラムに同時実行プログラミング モデルを提供することです。  OpenMP C\/C\+\+ API は多数の販売元からコンパイラによってサポートされます。  OpenMP の詳細については*OpenMP FORTRAN アプリケーション プログラミング インターフェイス*  が次の Web サイトでを検索する場合 :  
+# <a name="1-introduction"></a>1.はじめに
+このドキュメントでは、コンパイラ ディレクティブ、ライブラリ関数、および C および C++ プログラムで共有メモリの並列処理を指定するために使用する環境変数のコレクションを指定します。 このドキュメントで説明されている機能と総称、 *OpenMP C と C++ アプリケーション プログラム インターフェイス (API)*です。 この仕様の目的は、並列プログラミング モデルを提供するさまざまなベンダーから共有メモリ アーキテクチャ間で移植できるプログラムです。 OpenMP C と C++ API は、多くのベンダーからのコンパイラでサポートされます。 詳細については、OpenMP など、 *OpenMP Fortran アプリケーション プログラム インターフェイス*、次の web サイトで見つかんだことができます。  
   
- 移植性を許可している間このドキュメントで定義されたディレクティブライブラリ関数と環境変数はユーザーが並列プログラムを作成して管理することができます。  ディレクティブは一つのプログラムで複数のデータ構造体を含む C および C\+\+ の逐次プログラミング モデル \(SPMD\) 拡張して構造体および同期コンストラクトを共有する作業および私有化データの共有をサポートします。  OpenMP の C をサポートしC\+\+ をアクティブ OpenMP のすべてのコンパイラ ディレクティブの解釈を API にコンパイラ コマンド ライン オプションを含むコンパイラが可能になります。
+ [http://www.openmp.org](http://www.openmp.org)  
+  
+ ディレクティブ、ライブラリ関数、およびこのドキュメントで定義されている環境変数、ユーザーが作成および移植性を確保しながら並列プログラムを管理します。 ディレクティブは、C の拡張し複数の data (SPMD) コンス トラクターの work-sharing コンス トラクター、および同期構造は、1 つのプログラムを使用するシーケンシャルの C++ プログラミング モデルし、の共有とプライベート データのサポートを提供します。 OpenMP C および C++ API をサポートするコンパイラを有効にし、すべての OpenMP コンパイラ ディレクティブの解釈は、コンパイラにコマンド ライン オプションが含まれます。

@@ -1,32 +1,37 @@
 ---
-title: "synchronize | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.synchronize"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "synchronize attribute"
+title: "同期 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- vc-attr.synchronize
+dev_langs:
+- C++
+helpviewer_keywords:
+- synchronize attribute
 ms.assetid: 15fc8544-955d-4765-b3d5-0f619c8b3f40
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 6d326a4069334a223db7824e5fa3bcaefbc97697
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# synchronize
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="synchronize"></a>同期
 ターゲット メソッドへのアクセスを同期します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,15 +39,15 @@ caps.handback.revision: 10
   
 ```  
   
-## 解説  
- ターゲット オブジェクトのメソッドを同期する  **同期**  C\+\+ 属性の実装をサポートします。  同期は複数のオブジェクトをターゲット メソッドのアクセスを制御することにより共通リソース \(クラスのメソッドなど\) を使用できるようになります。  
+## <a name="remarks"></a>コメント  
+ **同期**C++ 属性は、オブジェクトの対象のメソッドを同期するためのサポートを実装します。 同期により、対象のメソッドへのアクセスを制御することで、クラスのメソッド) などの一般的なリソースを使用する複数のオブジェクト。  
   
- この属性によって挿入されるコードは対象メソッドの先頭に `Lock` の適切なメソッド \(スレッド モデルによって決まります\) が呼び出されます。  メソッドが終了すると`Unlock` は自動的に呼び出されます。  これらの関数の詳細については[CComAutoThreadModule:: ロック](../Topic/CComAutoThreadModule::Lock.md) を参照してください。  
+ この属性によって挿入されたコードに呼び出し、適切な`Lock`対象メソッドの先頭にメソッド (スレッド モデルによって決まります)。 メソッドが終了したときに`Unlock`自動的に呼び出されます。 これらの関数の詳細については、次を参照してください[CComAutoThreadModule::Lock。](../atl/reference/ccomautothreadmodule-class.md#lock)  
   
- この属性は [コクラス](../windows/coclass.md)[ProgID](../Topic/progid.md)または [vi\_progid](../windows/vi-progid.md) の属性 \(そのうちの 1 つを意味する属性を適用することを同じ要素に必要です。  の一つの属性が使用されそのほかの 2 つが自動的に適用されます。  たとえば**ProgID** が適用されている場合**vi\_progid** と  **コクラス**  も適用されます。  
+ この属性を使用するには、 [coclass](../windows/coclass.md)、 [progid](../windows/progid.md)、または [vi_progid](../windows/vi-progid.md) 属性 (または、これらのいずれかを意味する別の属性) も同じ要素に適用する必要があります。 いずれか 1 つの属性を使用すると、他の 2 つも自動的に適用されます。 たとえば、 **progid** を適用すると、 **vi_progid** と **coclass** も適用されます。  
   
-## 使用例  
- 次のコードは `CMyClass` のオブジェクトの `UpdateBalance` のメソッドの同期を提供します。  
+## <a name="example"></a>例  
+ 次のコードの同期機能を提供、`UpdateBalance`のメソッド、`CMyClass`オブジェクト。  
   
 ```  
 // cpp_attr_ref_synchronize.cpp  
@@ -69,19 +74,18 @@ class CMyClass {
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|クラスメソッドメソッド|  
-|**複数回の適用**|Ｘ|  
-|**必要な属性**|次の一つ以上 :  **コクラス ProgID**または **vi\_progid**。|  
+|**対象**|クラスのメソッド|  
+|**反復可能**|×|  
+|**必要な属性**|**coclass**、 **progid**、 **vi_progid**のうち 1 つ以上。|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [COM Attributes](../Topic/COM%20Attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [COM 属性](../windows/com-attributes.md)   

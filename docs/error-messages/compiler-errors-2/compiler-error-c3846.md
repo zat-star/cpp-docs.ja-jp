@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3846
 ms.assetid: c470f8a5-106b-4efb-b8dc-e1319e04130f
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ede4decb1a6dde5a85008c6e15f5f764224627e3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 58ffd3f240505d173014f1f9b358b4957a41eaf5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3846"></a>コンパイラ エラー C3846
 'symbol': 'assembly2' からシンボルをインポートできません: 'symbol' が既に別のアセンブリ 'assembly1' からインポートされると  
@@ -54,4 +55,3 @@ int main()
 {  
 }  
 ```  
-

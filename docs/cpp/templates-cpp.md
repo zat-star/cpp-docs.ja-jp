@@ -16,16 +16,17 @@ helpviewer_keywords:
 - templates, C++
 - templates [C++]
 ms.assetid: 90fcc14a-2092-47af-9d2e-dba26d25b872
-caps.latest.revision: 21
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 6ce40029e40906441ebd7c64ff9011a61f26045b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 935bee8447ad0d49ae965fb92538d2e260ec68ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="templates-c"></a>テンプレート (C++)
 テンプレートは、C++ では汎用のプログラミングの基礎です。 C++ では厳密に型指定された言語では、すべての変数を明示的にプログラマが宣言されている、またはコンパイラによって推測された特定の型を持つ必要があります。 ただし、多くのデータ構造やアルゴリズムの種類に関係なく同じに見えます。 これらの操作の種類のクラスや関数の操作を定義し、ユーザーがどのような具象型を指定できるテンプレートの有効化で動作する必要があります。  

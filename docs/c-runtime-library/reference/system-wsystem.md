@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - system
 - _wsystem
@@ -26,7 +27,8 @@ apitype: DLLExport
 f1_keywords:
 - _tsystem
 - _wsystem
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _wsystem function
 - wsystem function
@@ -36,21 +38,23 @@ helpviewer_keywords:
 - commands, executing
 - command interpreter
 ms.assetid: 7d3df2b6-f742-49ce-bf52-012b0aee3df5
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 85d5f0f745f66aebc526759be192af508510be92
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e3d46fd4b4df463bfce940360744a0a548652e2b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="system-wsystem"></a>system、_wsystem
 コマンドを実行します。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -97,14 +101,14 @@ int _wsystem(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tsystem`|`system`|`system`|`_wsystem`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`system`|\<process.h> または \<stdlib.h>|  
 |`_wsystem`|\<process.h> または \<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  この例では、`system` を使用してテキスト ファイルをタイプします。  
@@ -134,7 +138,7 @@ Line one.
 Line two.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [_exec 系関数と _wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)   
  [exit、_Exit、_exit](../../c-runtime-library/reference/exit-exit-exit.md)   

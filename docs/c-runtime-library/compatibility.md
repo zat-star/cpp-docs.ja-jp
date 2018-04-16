@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.programs
-dev_langs: C++
+f1_keywords:
+- c.programs
+dev_langs:
+- C++
 helpviewer_keywords:
 - CRT, compatibility
 - compatibility, C run-time libraries
 - compatibility
 ms.assetid: 346709cb-edda-4909-9a19-3d253eddb6b7
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f6a524e552728df0cee3e320aa36bf92d687c539
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bed3ebc3723bfe6af8e3d12fc3702ecb0dda7b4f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="compatibility"></a>互換性
 Universal C Run-Time Library (UCRT) は、C++ に適合するために必要な C 標準ライブラリの大部分をサポートしています。 C99 (ISO/IEC 9899:1999) ライブラリを実装しています (ただし、\<tgmath.h> で定義されている型がジェネリックのマクロと、\<complex.h> での厳密な型の互換性は除きます)。 また、UCRT は、POSIX.1 (ISO/IEC 9945-1:1996、POSIX システム アプリケーション プログラミング インターフェイス) の C ライブラリの大きなサブセットを実装していますが、すべての POSIX 標準に完全に適合しているわけではありません。  さらに、UCRT はいくつかの Microsoft 固有の関数とマクロを実装していますが、これらは標準には含まれていません。  
@@ -33,13 +38,13 @@ Universal C Run-Time Library (UCRT) は、C++ に適合するために必要な 
   
  標準 C ライブラリの関数の中には、パラメーターを誤用した場合やバッファーのチェックを行わない場合、安全に使用できないものがありました。 これらの関数は、多くの場合、コードのセキュリティ問題の発生源になります。 Microsoft では、これらの関数の一連の安全性を高めたバージョンを作成し、パラメーターの使い方を確認するようにしました。また、実行時に問題が検出された場合は、無効パラメーター ハンドラーが呼び出されます。  既定では、使用されているものより安全性の高いバリアントを使用できる場合に、古い関数であるという警告が Visual C++ コンパイラから出されます。 C++ コードをコンパイルする場合に `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` を 1 に定義すると、ほとんどの警告が解消されます。 こうすると、テンプレートのオーバーロードを使用して安全性の高いバリアントが呼び出されるため、ソース コードの移植性を維持できます。 この警告を表示しないようにするには、これらの関数を使用するコードでヘッダーをインクルードする前に `_CRT_SECURE_NO_WARNINGS` を定義します。 詳細については、「 [Security Features in the CRT](../c-runtime-library/security-features-in-the-crt.md)」を参照してください。  
   
- 特定の関数に関するドキュメントで別途説明されている場合を除き、UCRT は Windows API と互換性があります。  Windows 8 ストア アプリ、または Windows 10 上のユニバーサル Windows アプリでは、特定の関数がサポートされません。 これらの関数は、「 [/Windows ストアや Windows Phone のアプリでサポートされていない CRT 機能](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」の一覧に含まれています。この一覧には、 [Windows ランタイム](http://msdn.microsoft.com/en-us/9a1a18b8-9802-4ec5-b9de-0d2dfdf414e9)でサポートされない関数が列挙されています。  
+ 特定の関数に関するドキュメントで別途説明されている場合を除き、UCRT は Windows API と互換性があります。  Windows 8 ストア アプリ、または Windows 10 上のユニバーサル Windows プラットフォーム (UWP) アプリでは、特定の関数がサポートされません。 これらの関数は、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」の一覧に含まれています。この一覧には、Windows ランタイムと [UWP](/uwp) でサポートされない関数が列挙されています。  
   
 ## <a name="related-articles"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
-|[Windows ストア アプリ、Windows ランタイム、および C ランタイム](../c-runtime-library/windows-store-apps-the-windows-runtime-and-the-c-run-time.md)|UCRT ルーチンがユニバーサル Windows アプリまたは Windows ストア アプリと互換性がないケースについて説明します。|  
+|[UWP アプリ、Windows ランタイム、および C ランタイム](../c-runtime-library/windows-store-apps-the-windows-runtime-and-the-c-run-time.md)|UCRT ルーチンがユニバーサル Windows アプリまたは Microsoft ストア アプリと互換性がないケースについて説明します。|  
 |[ANSI C 準拠](../c-runtime-library/ansi-c-compliance.md)|UCRT における標準に適合した名前付けについて説明します。|  
 |[UNIX](../c-runtime-library/unix.md)|プログラムを UNIX に移植するためのガイドラインを提供します。|  
 |[Windows プラットフォーム (CRT)](../c-runtime-library/windows-platforms-crt.md)|CRT がサポートするオペレーティング システムの一覧を示します。|  

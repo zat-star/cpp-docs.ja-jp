@@ -1,25 +1,32 @@
 ---
-title: "hash_map::hasher (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: hash_map::hasher (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::hash_map::hasher
-dev_langs: C++
-helpviewer_keywords: hasher member [STL/CLR]
+f1_keywords:
+- cliext::hash_map::hasher
+dev_langs:
+- C++
+helpviewer_keywords:
+- hasher member [STL/CLR]
 ms.assetid: 72e4c4c9-ea35-4f75-98bb-e53979706de1
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1e51ad2ff52894286c7313596464762e4c516c92
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: bf7bb169f3d3811bd5d089cec15ce586d7b4ebbd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmaphasher-stlclr"></a>hash_map::hasher (STL/CLR)
 キーのハッシュのデリゲート。  
@@ -59,11 +66,11 @@ hash(L'a') = 1616896120
 hash(L'b') = 570892832  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
  [hash_map::hash_delegate (STL/CLR)](../dotnet/hash-map-hash-delegate-stl-clr.md)

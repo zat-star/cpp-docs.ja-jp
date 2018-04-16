@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -16,7 +17,8 @@ f1_keywords:
 - ATLCTL/ATL::CComControl::FireOnChanged
 - ATLCTL/ATL::CComControl::FireOnRequestEdit
 - ATLCTL/ATL::CComControl::MessageBox
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - control flags
 - CComControlBase class, CComControl class
@@ -26,15 +28,17 @@ helpviewer_keywords:
 - ambient properties
 - controls [ATL], properties
 ms.assetid: 55368c27-bd16-45a7-b701-edb36157c8e8
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0ddbd18ac39721dd80eb547e53c7708891b94aa9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ae81e2b6beac11f94f8d117b004da2f8d0db8724
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomcontrol-class"></a>CComControl クラス
 このクラスは、作成して、ATL コントロールを管理するためのメソッドを提供します。  
@@ -89,7 +93,7 @@ class ATL_NO_VTABLE CComControl : public CComControlBase,
   
  `CComControl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlctl.h  
   
 ##  <a name="ccomcontrol"></a>CComControl::CComControl  
@@ -213,7 +217,7 @@ int MessageBox(
 ### <a name="remarks"></a>コメント  
  `MessageBox`開発時とユーザーに、エラーまたは警告メッセージを表示する簡単な方法としては役立ちます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CWindowImpl クラス](../../atl/reference/cwindowimpl-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [CComControlBase クラス](../../atl/reference/ccomcontrolbase-class.md)   

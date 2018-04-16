@@ -1,41 +1,46 @@
 ---
-title: "hash_map::rbegin (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_map::rbegin"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "rbegin メンバー [STL/CLR]"
+title: hash_map::rbegin (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::hash_map::rbegin
+dev_langs:
+- C++
+helpviewer_keywords:
+- rbegin member [STL/CLR]
 ms.assetid: e3b6c4d5-9482-471e-b5fc-70331b082a9b
 caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 4f3f87fd1ba0e2f09885a01e712a05ba99faf442
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_map::rbegin (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashmaprbegin-stlclr"></a>hash_map::rbegin (STL/CLR)
 反転被制御シーケンスの先頭を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 reverse_iterator rbegin();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスの最後の要素を指定するか、返します空のシーケンスの先頭を指し示す反転反復子を返します。  したがって、これは反転シーケンスの `beginning` を指定します。  これを使用して被制御シーケンスの逆順に見た現在の \(`current`\) 先頭を指定する反復子を取得しますが、このステータスは被制御シーケンスの長さが変わると変化することがあります。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数では、最後の要素または空のシーケンスの先頭を越えた、被制御シーケンスの指定、逆順反復子を返します。 したがって、これを指定、`beginning`反転シーケンスのです。 指定する反復子を取得するために使用、`current`被制御シーケンスの長さを変更した場合、逆の順序で表示される、被制御シーケンスですがその状態の先頭は変更できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_map_rbegin.cpp   
@@ -67,16 +72,19 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**\*rbegin\(\) \= \[c 3\]**  
-**\*\+\+rbegin\(\) \= \[b 2\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_map\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+*rbegin() = [c 3]  
+*++rbegin() = [b 2]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_map >  
   
-## 参照  
- [hash\_map](../dotnet/hash-map-stl-clr.md)   
- [hash\_map::begin](../dotnet/hash-map-begin-stl-clr.md)   
- [hash\_map::end](../dotnet/hash-map-end-stl-clr.md)   
- [hash\_map::rend](../Topic/hash_map::rend%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
+ [hash_map::begin (STL/CLR)](../dotnet/hash-map-begin-stl-clr.md)   
+ [hash_map::end (STL/CLR)](../dotnet/hash-map-end-stl-clr.md)   
+ [hash_map::rend (STL/CLR)](../dotnet/hash-map-rend-stl-clr.md)

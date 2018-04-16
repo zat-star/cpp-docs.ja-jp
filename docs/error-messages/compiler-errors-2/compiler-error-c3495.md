@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3495
-dev_langs: C++
-helpviewer_keywords: C3495
+f1_keywords:
+- C3495
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3495
 ms.assetid: 1fd40cb8-8373-403d-b8a8-f08424a50807
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8cf93a5de639ce0c8270ef374eabdedb6c6551bd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3818f42410fd97d5df9b157828658c30ac9974e6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3495"></a>コンパイラ エラー C3495
 'var': ラムダ キャプチャには自動ストレージ存続期間が指定されている必要があります  
@@ -43,7 +49,7 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ラムダ式](../../cpp/lambda-expressions-in-cpp.md)   
 
 

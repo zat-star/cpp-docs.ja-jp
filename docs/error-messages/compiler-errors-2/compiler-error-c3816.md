@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3816
 ms.assetid: 2e52cc7f-e31c-41a3-8d6f-9f5fab3648c0
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e771249c615bde8fb96243ab665b7ba5beaaa14e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 866a12639507488d8b9c34ab13ea72cf2239b5fb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3816"></a>コンパイラ エラー C3816
 'declaration' が以前に宣言または定義には、異なるマネージまたは WinRTmodifier  

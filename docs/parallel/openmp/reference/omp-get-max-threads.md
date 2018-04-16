@@ -1,5 +1,5 @@
 ---
-title: "omp_get_max_threads |Microsoft ドキュメント"
+title: omp_get_max_threads | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - omp_get_max_threads
 dev_langs:
@@ -15,33 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - omp_get_max_threads OpenMP function
 ms.assetid: f47c3725-3e40-469f-8bc8-a1e47f264cc3
-caps.latest.revision: 10
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 8acb323a72300a3e613c0b8df8f5dfadd6de7643
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d3caf2054cee2092ab55a4a65160b4621c3b597d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ompgetmaxthreads"></a>omp_get_max_threads
-場合は、並列領域なしで利用できるスレッドの数を示す整数を返します[num_threads](../../../parallel/openmp/reference/num-threads.md)コードでその時点で定義されています。  
+並行領域なし場合、で利用できるスレッドの数を示す整数を返します[num_threads](../../../parallel/openmp/reference/num-threads.md)その時点で、コードで定義されました。  
   
 ## <a name="syntax"></a>構文  
   
@@ -50,7 +37,7 @@ int omp_get_max_threads( )
 ```  
   
 ## <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [3.1.3 omp_get_max_threads 関数](../../../parallel/openmp/3-1-3-omp-get-max-threads-function.md)します。  
+ 詳細については、次を参照してください。 [3.1.3 omp_get_max_threads 関数](../../../parallel/openmp/3-1-3-omp-get-max-threads-function.md)です。  
   
 ## <a name="example"></a>例  
   
@@ -90,5 +77,5 @@ int main( )
 8  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

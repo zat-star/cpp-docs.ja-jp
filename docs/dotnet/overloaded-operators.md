@@ -1,31 +1,36 @@
 ---
-title: "オーバーロードされた演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "演算子のオーバーロード, CLR クラスの"
-  - "演算子 [C++], オーバーロード"
+title: "オーバー ロードされた演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator overloading, in a CLR class
+- operators [C++], overloading
 ms.assetid: 30391426-afe7-4497-bf22-e4816c1e48c8
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 94ee9d7bcffe7d17a5d5cf91fa3accdbe206b641
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# オーバーロードされた演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-演算子のオーバーロードは、[!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では C\+\+ マネージ拡張から大幅に変更されています。  
+# <a name="overloaded-operators"></a>オーバーロードされた演算子
+演算子のオーバー ロードが大幅にマネージ拡張から変更 C++ の Visual C にします。  
   
- たとえば参照型の宣言では、ネイティブな `operator+` 構文を使用するのではなく、演算子の基になる内部名、ここでは `op_Addition` を明示的に記述します。  また、演算子を呼び出すときに名前によって明示的に呼び出す必要があり、このために \(a\) 直感的な構文と \(b\) 既存の型と新しい型の混在という、演算子のオーバーロードによって得られる 2 つの大きな利点を得ることができません。  たとえば、次のようになります。  
+ ネイティブを使用するのではなくなどの参照型の宣言で`operator+`構文明示的に記述する - 演算子の基になる内部名をここでは、`op_Addition`です。 演算子の呼び出しをさらに、演算子のオーバー ロードの 2 つの主な利点したがってによって、その名前を明示的に呼び出すには: (a)、直感的な構文と (b) 既存の型と新しい型を混在します。 例:  
   
 ```  
 public __gc __sealed class Vector {  
@@ -52,7 +57,7 @@ int main()
 }  
 ```  
   
- 新しい構文では、静的な演算子の宣言と使用の両方で、ネイティブな C\+\+ プログラマが当然のように求める機能が復元されました。  新しい構文に変換された `Vector` クラスを次に示します。  
+ 新しい構文では、ネイティブの C++ プログラマの通常の期待が復元、両方の宣言と静的な演算子の使用されます。 ここでは、`Vector`クラスが新しい構文に変換します。  
   
 ```  
 public ref class Vector sealed {  
@@ -79,5 +84,5 @@ int main()
 }  
 ```  
   
-## 参照  
- [クラスまたはインターフェイス内でのメンバー宣言 \(C\+\+\/CLI\)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)
+## <a name="see-also"></a>参照  
+ [クラスまたはインターフェイス内でのメンバー宣言 (C++/CLI)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)

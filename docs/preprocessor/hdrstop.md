@@ -1,60 +1,64 @@
 ---
-title: "hdrstop | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "hdrstop_CPP"
-  - "vc-pragma.hdrstop"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "hdrstop プラグマ"
-  - "プラグマ, hdrstop"
+title: "hdrstop |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- hdrstop_CPP
+- vc-pragma.hdrstop
+dev_langs:
+- C++
+helpviewer_keywords:
+- hdrstop pragma
+- pragmas, hdrstop
 ms.assetid: 5ea8370a-10d1-4538-ade6-4c841185da0e
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 18216663524c48e4ec4ee327ff096c8b3dbd391c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# hdrstop
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hdrstop"></a>hdrstop
 プリコンパイル ファイル名およびコンパイル状態が保存される場所に対する追加の制御を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 #pragma hdrstop [( "filename" )]    
 ```  
   
-## 解説  
- *filename* は、使用または作成する \([\/Yu](../build/reference/yu-use-precompiled-header-file.md) と [\/Yc](../build/reference/yc-create-precompiled-header-file.md) のどちらが指定されているかに基づく\) プリコンパイル済みヘッダー ファイルの名前です。  *filename* にパスの指定が含まれていない場合、プリコンパイル済みヘッダー ファイルはソース ファイルと同じディレクトリにあると想定されます。  
+## <a name="remarks"></a>コメント  
+ *Filename*使用または作成するプリコンパイル済みヘッダー ファイルの名前を指定します (かどうかに応じて[/Yu](../build/reference/yu-use-precompiled-header-file.md)または[/Yc](../build/reference/yc-create-precompiled-header-file.md)が指定されている)。 場合*filename*パスの指定が含まれていない、プリコンパイル済みヘッダー ファイルがソース ファイルと同じディレクトリにあると見なされます。  
   
- \/Yc でコンパイルするときに C ファイルまたは C\+\+ ファイルに **hdrstop** プラグマが含まれている場合、コンパイラはプラグマの位置までのコンパイル状態を保存します。  プラグマの後ろにあるコードのコンパイル状態は保存されません。  
+ C または C++ ファイルが含まれている場合、 **hdrstop**プラグマ/Yc でコンパイルした場合、コンパイラは、プラグマの位置までコンパイルの状態を保存します。 プラグマの後ろにあるコードのコンパイル状態は保存されません。  
   
- コンパイル状態が保存されるプリコンパイル済みヘッダー ファイルに名前を付けるには、*filename* を使用します。  **hdrstop** と *filename* の間にスペースを挿入してもかまいません。  **hdrstop** プラグマで指定されるファイル名は文字列であるため、C または C\+\+ の文字列の制約を受けます。  具体的には、文字列を引用符で囲み、エスケープ文字 \(円記号\) を使用してディレクトリ名を指定する必要があります。  次に例を示します。  
+ 使用して*filename*コンパイル済みの状態が保存されるプリコンパイル済みヘッダー ファイルの名前。 間にスペース**hdrstop**と*filename*は省略可能です。 指定されたファイル名、 **hdrstop**プラグマ文字列は、そのため、C または C++ の文字列の制約を受けます。 具体的には、文字列を引用符で囲み、エスケープ文字 (円記号) を使用してディレクトリ名を指定する必要があります。 例:  
   
 ```  
 #pragma hdrstop( "c:\\projects\\include\\myinc.pch" )  
 ```  
   
- プリコンパイルされたヘッダー ファイルの名前は、次の規則 \(優先度順に表示\) に従って決定されます。  
+ プリコンパイルされたヘッダー ファイルの名前は、次の規則 (優先度順に表示) に従って決定されます。  
   
-1.  \/Fp コンパイラ オプションの引数  
+1.  /Fp コンパイラ オプションの引数  
   
-2.  \#**pragma hdrstop** への *filename* 引数  
+2.  *Filename* # 引数**プラグマ hdrstop**  
   
 3.  拡張子 .PCH を持つソース ファイルのベース名  
   
- \/Yc オプションおよび \/Yu オプションの場合、この 2 つのコンパイル オプションまたは **hdrstop** プラグマでファイル名を指定しないと、ソース ファイルのベース名がプリコンパイル済みヘッダー ファイルのベース名として使用されます。  
+ /Yc および/Yu オプションで、次の 2 つのコンパイル オプションのどちらも、また**hdrstop**プラグマ ファイルの名前を指定する、ソース ファイルの基本名が、プリコンパイル済みヘッダー ファイルのベース名として使用します。  
   
  また、次のように、プリプロセス コマンドを使用してマクロ置換を実行することもできます。  
   
@@ -67,13 +71,13 @@ caps.handback.revision: 7
 #pragma hdrstop( INCLUDE_PATH PCH_FNAME )  
 ```  
   
- **hdrstop** プラグマを配置できる場所は、次の規則に従います。  
+ 次の規則は、where、 **hdrstop**プラグマを配置することができます。  
   
 -   すべてのデータ宣言、関数宣言、および定義の外にある必要があります。  
   
 -   ヘッダー ファイルにではなく、ソース ファイルに指定する必要があります。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 #include <windows.h>                 // Include several files  
@@ -86,7 +90,7 @@ __inline Disp( char *szToDisplay )   // Define an inline function
 #pragma hdrstop  
 ```  
   
- この例では、2 つのファイルがインクルードされ、インライン関数が定義された後に、**hdrstop** プラグマが記述されています。  初めは、プラグマの位置が不自然に見えるかもしれません。  ただし、手動プリコンパイル オプション \/Yc および \/Yu で **hdrstop** プラグマを使用すると、インライン コードであっても、ソース ファイル全体をプリコンパイルできることを考慮してください。  Microsoft コンパイラでは、データ宣言以外のプリコンパイルも実行できます。  
+ この例では、 **hdrstop**プラグマは、2 つのファイルが含まれています、インライン関数が定義されている後に表示されます。 初めは、プラグマの位置が不自然に見えるかもしれません。 、ただし、その使用を検討して、手動プリコンパイル オプション/Yc および/Yu、で、 **hdrstop**プラグマにより、ソース ファイル全体をプリコンパイルする — インライン コードも含みます。 Microsoft コンパイラでは、データ宣言以外のプリコンパイルも実行できます。  
   
-## 参照  
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+## <a name="see-also"></a>参照  
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

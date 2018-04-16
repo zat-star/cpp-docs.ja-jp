@@ -8,7 +8,7 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - clog10
 - clog10f
@@ -33,21 +33,24 @@ f1_keywords:
 - complex/clog10
 - complex/clog10f
 - complex/clog10l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - clog10 function
 - clog10f function
 - clog10l function
 ms.assetid: 2ddae00d-ef93-4441-add3-f4d58358401b
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: bab5be9a8c686c2c6cd207232ddc6f98d11aa519
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 59fa3d069d68fdb55a9377ca4a4bf89adb1de9f2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="clog10-clog10f-clog10l"></a>clog10、clog10f、clog10l
 複素数の底 10 の対数を取得します。  
@@ -90,15 +93,15 @@ _Lcomplex clog10l(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`clog10` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは、 `clog10` は常に `_Dcomplex` 値を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|C ヘッダー|C++ ヘッダー|  
+|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
 |-------------|--------------|------------------|  
 |`clog10`、               `clog10f`、`clogl`|\<complex.h>|\<ccomplex>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [cexp、cexpf、cexpl](../../c-runtime-library/reference/cexp-cexpf-cexpl.md)   
  [cpow、cpowf、cpowl](../../c-runtime-library/reference/cpow-cpowf-cpowl.md)   

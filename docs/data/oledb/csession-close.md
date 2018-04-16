@@ -1,47 +1,51 @@
 ---
-title: "CSession::Close | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CSession::Close"
-  - "ATL.CSession.Close"
-  - "CSession.Close"
-  - "ATL::CSession::Close"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Close メソッド"
+title: "Csession::close |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CSession::Close
+- ATL.CSession.Close
+- CSession.Close
+- ATL::CSession::Close
+dev_langs:
+- C++
+helpviewer_keywords:
+- Close method
 ms.assetid: dc36c4c0-e588-4c0b-91d1-fc7dc5c8e7f4
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: bfe56cbcd6403cf6e809a963d75774d1802c80e1
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CSession::Close
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[CSession::Open](../../data/oledb/csession-open.md)で開かれたセッションを終了します。  
+# <a name="csessionclose"></a>CSession::Close
+によって開かれたセッションを閉じます[csession::open](../../data/oledb/csession-open.md)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
-void Close( ) throw( );  
+```cpp
+void Close() throw();  
   
 ```  
   
-## 解説  
- **m\_spOpenRowset** のポインターを解放します。  
+## <a name="remarks"></a>コメント  
+ リリース、 **m_spOpenRowset**ポインター。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CSession クラス](../../data/oledb/csession-class.md)

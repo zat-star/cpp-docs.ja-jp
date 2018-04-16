@@ -1,43 +1,47 @@
 ---
-title: "OpenMP Directives | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "OpenMP ディレクティブ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
 ms.assetid: 0562c263-344c-466d-843e-de830d918940
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2e8d47e6376b3786b27305e65bdb55f0c292995d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# OpenMP Directives
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-OpenMP API で使用されるディレクティブへのリンクを示します。  
+# <a name="openmp-directives"></a>OpenMP ディレクティブ
+OpenMP API で使用するディレクティブへのリンクを提供します。  
   
- Visual C\+\+ ではOpenMP のディレクティブをサポートします :  
+ Visual C には、次の OpenMP ディレクティブがサポートされています。  
   
-|ディレクティブ|Description|  
-|-------------|-----------------|  
-|[atomic](../../../parallel/openmp/reference/atomic.md)|とをアトミックに更新されるメモリ位置指定します。|  
-|[barrier](../../../parallel/openmp/reference/barrier.md)|チームでスレッドを同期します ; すべてのスレッドがバリアにすべてのスレッドがバリアを実行するまで一時停止します。|  
-|[critical](../../../parallel/openmp/reference/critical.md)|コードが 1 台のスレッドは一度に実行されることを指定します。|  
-|[flush](../../../parallel/openmp/reference/flush-openmp.md)|すべてのスレッドにすべての共有オブジェクトのメモリ内の同じビューを持つことを指定します。|  
-|[for](../Topic/for%20\(OpenMP\).md)|実行されるスレッドに分割できます。並列領域の内部にループでの作業になります。|  
-|[master](../../../parallel/openmp/reference/master.md)|マスターの threadshould だけプログラムのセクションを実行することを指定します。|  
-|[ordered](../../../parallel/openmp/reference/ordered-openmp-directives.md)|FOR ループを並列化して中のコードでは順次ループとして実行することを指定します。|  
-|[parallel](../../../parallel/openmp/reference/parallel.md)|複数のスレッドで同時に実行されるコードである並列領域を定義します。|  
-|[sections](../../../parallel/openmp/reference/sections-openmp.md)|すべてのスレッドに分割できます。コード例を示します。|  
-|[single](../Topic/single.md)|マスター スレッド コードのセクションをシングル スレッドで実行することを指定できるようにします。|  
-|[threadprivate](../Topic/threadprivate.md)|変数がスレッドに対してプライベートであることを指定します。|  
+|ディレクティブ|説明|  
+|---------------|-----------------|  
+|[atomic](../../../parallel/openmp/reference/atomic.md)|指定するアトミックに更新されるメモリの場所。|  
+|[barrier](../../../parallel/openmp/reference/barrier.md)|チーム内のすべてのスレッドを同期します。すべてのスレッドがバリアを実行するまで、すべてのスレッドがバリアで一時停止します。|  
+|[critical](../../../parallel/openmp/reference/critical.md)|コードが、一度に 1 つのスレッドでのみ実行されるかを指定します。|  
+|[flush](../../../parallel/openmp/reference/flush-openmp.md)|すべてのスレッドがすべての共有オブジェクトのメモリについて同じビューを持つことを指定します。|  
+|[for](../../../parallel/openmp/reference/for-openmp.md)|行われる動作、スレッド間で除算、並行領域内の for ループします。|  
+|[master](../../../parallel/openmp/reference/master.md)|マスター スレッドのみが、プログラムのセクションを実行することを指定します。|  
+|[順序付け](../../../parallel/openmp/reference/ordered-openmp-directives.md)|順次ループと同様に実行されるループの並行処理の下には、そのコードを指定します。|  
+|[parallel](../../../parallel/openmp/reference/parallel.md)|同時に複数のスレッドで実行されるコードである並列領域を定義します。|  
+|[sections](../../../parallel/openmp/reference/sections-openmp.md)|すべてのスレッド間で分配するコード セクションを識別します。|  
+|[single](../../../parallel/openmp/reference/single.md)|コードのセクションをシングル スレッドで実行するように指定することができます。|  
+|[threadprivate](../../../parallel/openmp/reference/threadprivate.md)|変数が、スレッドに対してプライベートであることを指定します。|  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OpenMP](../../../parallel/openmp/openmp-in-visual-cpp.md)   
- [Clauses](../../../parallel/openmp/reference/openmp-clauses.md)
+ [句](../../../parallel/openmp/reference/openmp-clauses.md)

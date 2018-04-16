@@ -1,56 +1,57 @@
 ---
-title: "[分離された COM] ([&lt;プロジェクト名&gt; プロパティ ページ] ダイアログ ボックス - [構成プロパティ] - [マニフェスト ツール]) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCManifestTool.RegistrarScriptFile"
-  - "VC.Project.VCManifestTool.ComponentFileName"
-  - "VC.Project.VCManifestTool.TypeLibraryFile"
-  - "VC.Project.VCManifestTool.ReplacementsFile"
-dev_langs: 
-  - "C++"
+title: "マニフェスト ツール分離 COM プロパティ (Visual C) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCManifestTool.RegistrarScriptFile
+- VC.Project.VCManifestTool.ComponentFileName
+- VC.Project.VCManifestTool.TypeLibraryFile
+- VC.Project.VCManifestTool.ReplacementsFile
+dev_langs:
+- C++
 ms.assetid: 457582b8-cfde-49c0-92e3-3a6b9e8c08eb
-caps.latest.revision: 12
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fe2098c4caead6ebc9ad4747354ae96f093f2c91
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# [分離された COM] ([&lt;プロジェクト名&gt; プロパティ ページ] ダイアログ ボックス - [構成プロパティ] - [マニフェスト ツール])
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このダイアログ ボックスを使用して、[Mt.exe](http://msdn.microsoft.com/library/aa375649) の **\[分離された COM\]** オプションを指定します。  
+# <a name="isolated-com-manifest-tool-configuration-properties-ltprojectnamegt-property-pages-dialog-box"></a>COM、マニフェスト ツールは、[構成プロパティを分離&lt;Projectname&gt;プロパティ ページ] ダイアログ ボックス
+このダイアログ ボックスを使用して、**分離された COM**オプション[Mt.exe](http://msdn.microsoft.com/library/aa375649)です。  
   
- このプロパティ ページ ダイアログ ボックスを表示するには、プロジェクトまたはプロパティ シートのプロパティ ページを開きます。  **\[共通プロパティ\]** の **\[マニフェスト ツール\]** ノードを展開し、**\[分離された COM\]** をクリックします。  
+ このプロパティ ページ ダイアログ ボックスにアクセスするには、プロジェクトまたはプロパティ シートのプロパティ ページを開きます。 展開して、**マニフェスト ツール**ノードの下**共通プロパティ**、し、**分離された COM**です。  
   
-## タスク一覧  
+## <a name="task-list"></a>タスク一覧  
   
--   [方法 : COM コンポーネントを使用する分離アプリケーションをビルドする](../Topic/How%20to:%20Build%20Isolated%20Applications%20to%20Consume%20COM%20Components.md)  
+-   [方法 : COM コンポーネントを使用する分離アプリケーションをビルドする](../build/how-to-build-isolated-applications-to-consume-com-components.md)  
   
-## UIElement の一覧  
- **\[タイプ ライブラリ ファイル\]**  
- マニフェスト ファイルを生成するためにマニフェスト ツールが使用するタイプ ライブラリ ファイル \(.tlb ファイル\) の名前を指定するには、\/tlb オプションを使用します。  
+## <a name="uielement-list"></a>UIElement の一覧  
+ **タイプ ライブラリ ファイル**  
+ /Tlb オプションを使用すると、マニフェストのツールを使用して、マニフェスト ファイルを生成するタイプ ライブラリ ファイル (.tlb ファイル) の名前を指定します。  
   
- **\[レジスタ スクリプト ファイル\]**  
- マニフェスト ファイルを生成するためにマニフェスト ツールが使用するレジストラー スクリプト ファイル \(.rgs ファイル\) の名前を指定するには、\/rgs オプションを使用します。  
+ **レジストラー スクリプト ファイル**  
+ /Rgs オプションを使用すると、マニフェスト ファイルを生成するのにマニフェスト ツールを使用するレジスタ スクリプト ファイル (.rgs ファイル) の名前を指定します。  
   
- **\[コンポーネント ファイル名\]**  
- マニフェスト ツールで生成されるリソースの名前を指定するには、\/dll オプションを使用します。  **\[タイプ ライブラリ ファイル\]** の値または **\[レジスタ スクリプト ファイル\]** の値が指定されている場合は、このプロパティの値を入力する必要があります。  
+ **コンポーネントのファイル名**  
+ /Dll オプションを使用すると、マニフェスト ツールにより生成されるリソースの名前を指定します。 このプロパティの値を入力する必要があるときにいずれかの値**タイプ ライブラリ ファイル**または**レジスタ スクリプト ファイル**が指定されています。  
   
- **\[置換ファイル\]**  
- .rgs ファイル内の置換可能な文字列の値が格納されているファイルへの完全パスを指定するには、\/replacements オプションを使用します。  
+ **置換ファイル**  
+ /Replacements オプションを使用すると、.rgs ファイルで置換できる文字列の値を含むファイルへの完全パスを指定します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [分離アプリケーション](http://msdn.microsoft.com/library/aa375190)   
- [side\-by\-side アセンブリ](_win32_side_by_side_assemblies)   
- [ClickOnce アプリケーション マニフェスト](../Topic/ClickOnce%20Application%20Manifest.md)   
+ [ClickOnce アプリケーション マニフェスト](/visualstudio/deployment/clickonce-application-manifest)   
  [マニフェスト ツールのプロパティ ページ](../ide/manifest-tool-property-pages.md)   
- [方法 : プロジェクト プロパティ ページを開く](../misc/how-to-open-project-property-pages.md)   
- [方法 : プロジェクトのプロパティ シートを編集する](../misc/how-to-edit-project-property-sheets.md)
+ [プロジェクトのプロパティの操作](../ide/working-with-project-properties.md)   

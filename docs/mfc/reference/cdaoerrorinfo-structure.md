@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CDaoErrorInfo
-dev_langs: C++
+f1_keywords:
+- CDaoErrorInfo
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDaoErrorInfo structure [MFC]
 - DAO (Data Access Objects), Errors collection
 ms.assetid: cd37ef71-b0b3-401d-bc2b-540c9147f532
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e3d7637bfd6247dee79df4716a3e638a49e36cbf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: da47b4b68a9fd73b3962254121006eff47282336
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdaoerrorinfo-structure"></a>CDaoErrorInfo 構造体
 `CDaoErrorInfo`構造体には、データ アクセス オブジェクト (DAO) に対して定義されているエラー オブジェクトに関する情報が含まれています。  
@@ -62,9 +67,9 @@ struct CDaoErrorInfo
   
  によって取得される情報、 [CDaoException::GetErrorInfo](../../mfc/reference/cdaoexception-class.md#geterrorinfo)メンバー関数は、`CDaoErrorInfo`構造体。 確認、 [m_pErrorInfo](../../mfc/reference/cdaoexception-class.md#m_perrorinfo)からそのデータ メンバー、`CDaoException`例外ハンドラー、または呼び出しでキャッチするオブジェクト`GetErrorInfo`から、`CDaoException`可能性のあるエラーを確認するために明示的に作成したオブジェクトDAO インターフェイスへの直接の呼び出し中に発生します。 `CDaoErrorInfo`定義、`Dump`デバッグでメンバー関数を作成します。 使用することができます`Dump`の内容をダンプする`CDaoErrorInfo`オブジェクト。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdao.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CDaoException クラス](../../mfc/reference/cdaoexception-class.md)

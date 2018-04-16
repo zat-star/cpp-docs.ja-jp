@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3531
 ms.assetid: 2bdb9fdc-9ddf-403e-8b92-02763d434487
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c7c8158d798df3fb48c45194ff6a01a1cbf3ab4a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 7753e30e305b7b36adc3b4d2b535f755fa455bdd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3531"></a>コンパイラ エラー C3531
 'symbol': 型持つにはは、'auto' が含まれていますシンボルは、initializer を持つ必要があります。  
@@ -50,5 +51,5 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto キーワード](../../cpp/auto-keyword.md)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CImage
-dev_langs: C++
-helpviewer_keywords: CImage class [MFC], limitations
+f1_keywords:
+- CImage
+dev_langs:
+- C++
+helpviewer_keywords:
+- CImage class [MFC], limitations
 ms.assetid: 4bedaab8-7dd1-4c91-ab35-b75fb56765b0
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cb13e31df1b30c775d1e961f09b10163d06b1ea7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 27046704975bf8f5e28f12acbfa72e860660fdbd
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="cimage-limitations-with-earlier-operating-systems"></a>以前のオペレーティング システムにおける CImage の制限
 多く`CImage`関数は、新しいバージョンの Windows でのみ動作します。 Windows 95/98 または Windows NT 4.0 および Windows 2000 です。 この記事では、特定のメソッドのバージョンの制限事項について説明します。  
@@ -45,5 +51,5 @@ ms.lasthandoff: 10/24/2017
   
  _WIN32_WINNT 0x0500 に設定とアプリケーションまたはそれ以上をコンパイルする場合**描画**98 以降、Windows 2000 または Windows を実行しているシステムに自動的に透過性を処理します。 動作もせずに Windows NT 4.0、Windows 95; での透過性のサポートただし、使用する必要があります**/delayload** msimg32 の読み込みを遅延します。LIB、前述の`AlphaBlend`と`TransparentBlt`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CImage クラス](../atl-mfc-shared/reference/cimage-class.md)

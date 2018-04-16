@@ -1,12 +1,12 @@
 ---
-title: "Extern リンケージの指定を使用した |Microsoft ドキュメント"
-ms.custom: 
+title: Extern リンケージの指定を使用した |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - extern
@@ -21,12 +21,13 @@ caps.latest.revision: 11
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: b17479bfda8dbe009d3b2381afc2d87819811bc5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: db93feb8c8fad13cf8de082858e68b89f93b5323
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-extern-to-specify-linkage"></a>extern を使用したリンケージの指定
 ## <a name="syntax"></a>構文  
@@ -123,7 +124,7 @@ extern "C" int CFunc2(); // Error: not the first declaration of
   
  関数とオブジェクトが明示的に宣言**静的**複合リンケージ指定子の本体内で (**{}**) は静的関数またはオブジェクトとして扱われます、リンケージ指定子は無視されます。 `extern` キーワードを使用して宣言したかのように、他の関数やオブジェクトが動作します。 (を参照してください[extern リンケージの指定を使用した](../cpp/using-extern-to-specify-linkage.md)詳細については、`extern`キーワードです)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  [extern ストレージ クラス指定子](../c-language/extern-storage-class-specifier.md)   
  [識別子の動作](../c-language/behavior-of-identifiers.md)   

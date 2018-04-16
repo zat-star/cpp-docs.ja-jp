@@ -15,38 +15,25 @@ dev_langs:
 helpviewer_keywords:
 - U1086
 ms.assetid: 6d3cd68a-ead6-4a6d-a205-01324785de7e
-caps.latest.revision: 5
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 4e7ececef5613b199e175b24f3698791b2484e05
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b4d4f77f5de7d89c68804458103de624f913ff26
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="nmake-fatal-error-u1086"></a>NMAKE の致命的なエラー U1086
 **推論規則は、依存関係を持つことはできません。**  
   
- コロン (**:**) 推論のルールの後に次のいずれか。  
+ コロン (**:**) 推論のルールが続かなければなりませんこれらのいずれか。  
   
 -   改行文字  
   
 -   セミコロン (**;**)、コマンドで指定します。  
   
--   シャープ記号 (**#**)、コメントを指定します。
+-   番号記号 (**#**)、コメントを指定します。

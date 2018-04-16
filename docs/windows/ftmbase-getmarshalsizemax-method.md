@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: ftm/Microsoft::WRL::FtmBase::GetMarshalSizeMax
-dev_langs: C++
-helpviewer_keywords: GetMarshalSizeMax method
+f1_keywords:
+- ftm/Microsoft::WRL::FtmBase::GetMarshalSizeMax
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetMarshalSizeMax method
 ms.assetid: b416b1bf-c73e-45d5-abb8-04921c1a0c94
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3597d19e1bcdc6b1b14e150c66236585f8c35fb8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 0d68889531c270db190f861eb20a34783b88987f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ftmbasegetmarshalsizemax-method"></a>FtmBase::GetMarshalSizeMax メソッド
 指定したオブジェクトの指定されたインターフェイス ポインターをマーシャ リングするために必要なバイト数の上限値を取得します。  
@@ -63,10 +70,10 @@ STDMETHODIMP GetMarshalSizeMax(
 ## <a name="return-value"></a>戻り値  
  正常終了した場合は S_OK、それ以外の場合、E_FAIL または E_NOINTERFACE します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** ftm.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [FtmBase クラス](../windows/ftmbase-class.md)

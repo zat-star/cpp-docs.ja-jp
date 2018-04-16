@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - mutex/std::recursive_timed_mutex
 - mutex/std::recursive_timed_mutex::recursive_timed_mutex
@@ -15,9 +16,10 @@ f1_keywords:
 - mutex/std::recursive_timed_mutex::try_lock_for
 - mutex/std::recursive_timed_mutex::try_lock_until
 - mutex/std::recursive_timed_mutex::unlock
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 59cc2d5c-ed80-45f3-a0a8-05652a8ead7e
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -29,11 +31,13 @@ helpviewer_keywords:
 - std::recursive_timed_mutex [C++], try_lock_for
 - std::recursive_timed_mutex [C++], try_lock_until
 - std::recursive_timed_mutex [C++], unlock
-ms.openlocfilehash: 0a47e7794dd38169b99711bbc1898083a1c8c149
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5ec98e8c357bf1f40fdc608873dbbb18f0f5f18f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="recursivetimedmutex-class"></a>recursive_timed_mutex クラス
 *timed mutex 型*を表します。 この型のオブジェクトは、プログラム内での時間制限ブロックを使った相互排他を強制するのに使用されます。 [timed_mutex](../standard-library/timed-mutex-class.md) 型のオブジェクトとは異なり、`recursive_timed_mutex` オブジェクトにロック メソッドを呼び出すことによる影響は詳細に定義されています。  
@@ -51,7 +55,7 @@ class recursive_timed_mutex;
 |名前|説明|  
 |----------|-----------------|  
 |[recursive_timed_mutex](#recursive_timed_mutex)|ロックされていない `recursive_timed_mutex` オブジェクトを構築します。|  
-|[~recursive_timed_mutex デストラクター](#dtorrecursive_timed_mutex_destructor)|`recursive_timed_mutex` オブジェクトによって使用されるすべてのリソースを解放します。|  
+|[~recursive_timed_mutex デストラクター](#dtorrecursive_timed_mutex_destructor)|`recursive_timed_mutex` オブジェクトによって使用されているすべてのリソースを解放します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -63,7 +67,7 @@ class recursive_timed_mutex;
 |[try_lock_until](#try_lock_until)|指定した時刻まで `mutex` の所有権の取得を試みます。|  
 |[unlock](#unlock)|`mutex` の所有権を解放します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<ミュー テックス >  
   
  **名前空間:** std  
@@ -158,7 +162,7 @@ void unlock();
   
  呼び出しスレッドが `mutex` を所有していない場合の動作は未定義です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<mutex>](../standard-library/mutex.md)
 

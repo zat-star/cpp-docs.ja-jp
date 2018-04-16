@@ -4,25 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: complex/std::complex<double>
-dev_langs: C++
-helpviewer_keywords: complex<double> function
+ms.topic: reference
+f1_keywords:
+- complex/std::complex<double>
+dev_langs:
+- C++
+helpviewer_keywords:
+- complex<double> function
 ms.assetid: 0d0b9d2a-9b9b-410b-82a0-86b6df127e47
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0dcf311843f212991f303b5cd9b74ea90e269c3c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3d82fccaa98dd0591cf8d7b3a9fcabb9e78f7d88
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="complexltdoublegt"></a>complex&lt;double&gt;
-順序付けされたオブジェクトのペア (いずれも **double** 型) を格納するオブジェクトについて説明します。最初のオブジェクトが複素数の実数部*、*2 番目のオブジェクトが虚数部を表します。  
+型のオブジェクトの順序付けされたペアを格納するオブジェクトについて説明します **倍***、* まず、2 つ目、複素数の実数部を表す虚数部を表すです。  
   
 ## <a name="syntax"></a>構文  
   

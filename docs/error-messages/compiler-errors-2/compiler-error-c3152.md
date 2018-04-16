@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3152
 ms.assetid: 4ee6e2cd-5d19-4b73-833d-765c35797e4b
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c5e375586f6047ac0fef846cd6bf7b4f1e68d330
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 222a45a8a8820c426902ef3584a3663103b63fa2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3152"></a>コンパイラ エラー C3152
 'construct': 'keyword' はクラス、構造体、または仮想メンバー関数にのみ適用できます  
@@ -41,4 +42,3 @@ ref class C {
    virtual int g() sealed;   // OK  
 };  
 ```  
-

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _futime64
 - _futime32
@@ -29,7 +30,8 @@ f1_keywords:
 - _futime
 - futime64
 - _futime64
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _futime function
 - futime32 function
@@ -39,15 +41,17 @@ helpviewer_keywords:
 - futime function
 - _futime32 function
 ms.assetid: b942ce8f-5cc7-4fa8-ab47-de5965eded53
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 03eda993cbc087d5dc39f2c9d0f985ac5db48099
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8caa47cd82f61c46ee10f03987bac9735ce506cc
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="futime-futime32-futime64"></a>_futime、_futime32、_futime64
 開いているファイルの変更時刻を設定します。  
@@ -84,7 +88,7 @@ int _futime64(
   
  `__utimbuf64` 構造体を使用する `_futime64` は、UTC の 3000 年 12 月 31 日 23時 59分: 59 秒までのファイル日付を読み取りおよび変更できますが、これに対して `_futime32` の呼び出しは、ファイルの日付が UTC の 2038 年 1 月 18 日 23 時 59分: 59 秒よりも後の場合は失敗します。 これらの関数の日付範囲の下限は、1970 年 1 月 1 日の午前 0 時です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|オプション ヘッダー|  
 |--------------|---------------------|---------------------|  
@@ -158,5 +162,5 @@ Volume in drive Z has no label.
 File time modified  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)

@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - applications [MFC], database
 - database applications [MFC]
 - database applications [MFC], creating
 - MFC, database applications
 ms.assetid: 9371da59-8536-43cd-8314-706ad320e2ec
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 58939d60401af9061288fa5a9b61c25b6278aec8
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f3403807e38f59abc68bf93f510476951c5ec8ce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sequence-of-operations-for-creating-database-applications"></a>データベース アプリケーションの作成手順
 次の表は、データベース アプリケーションの作成で、役割と、フレームワークの役割を示します。  
@@ -42,7 +46,7 @@ ms.lasthandoff: 10/31/2017
 |.. または、明示的な作成[CDatabase](../mfc/reference/cdatabase-class.md)開きたいデータベースごとに、コードでします。|データベース オブジェクトを基に、レコード セット オブジェクト。|データベース オブジェクトでは、データ ソースへのインターフェイスを提供します。|  
 |レコード セットのデータ列を動的にバインドします。|ODBC では、バインドを管理するレコード セットの派生クラスにコードを追加します。 記事を参照して[レコード セット: データ列を動的に結びつける (ODBC)](../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)です。||  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワークでのビルド](../mfc/building-on-the-framework.md)   
  [MFC アプリケーションの作成操作のシーケンス](../mfc/sequence-of-operations-for-building-mfc-applications.md)   
  [OLE アプリケーションの作成操作のシーケンス](../mfc/sequence-of-operations-for-creating-ole-applications.md)   

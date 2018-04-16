@@ -17,16 +17,17 @@ helpviewer_keywords:
 - exceptions [C++], bad_cast
 - bad_cast keyword [C++]
 ms.assetid: 31eae1e7-d8d5-40a0-9fef-64a6a4fc9021
-caps.latest.revision: 9
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 70758ca099853f94ad06b8a9f5029203a480a772
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d7880a01f247d5dc3cce5a6f247297ef65289367
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="badcast-exception"></a>bad_cast 例外
 `bad_cast` 例外は、参照型へのキャストが失敗した結果として `dynamic_cast` 演算子によってスローされます。  
@@ -94,7 +95,7 @@ Circle& ref_circle = circle_instance;
 Shape& ref_shape = dynamic_cast<Shape&>(ref_circle);  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [dynamic_cast 演算子](../cpp/dynamic-cast-operator.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [C++ 例外処理](../cpp/cpp-exception-handling.md)

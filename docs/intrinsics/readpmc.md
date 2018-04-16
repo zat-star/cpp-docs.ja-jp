@@ -1,62 +1,66 @@
 ---
-title: "__readpmc | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__readpmc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "パフォーマンス監視カウンターの読み取り命令"
-  - "__readpmc 組み込み"
-  - "rdpmc 命令"
+title: "_ _readpmc |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- __readpmc
+dev_langs:
+- C++
+helpviewer_keywords:
+- Read Performance Monitoring Counters instruction
+- __readpmc intrinsic
+- rdpmc instruction
 ms.assetid: 14ed45a6-28b6-4635-8437-a597c04b43d4
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aa479f2b37198911ba1140cf551dd736b6e118d4
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# __readpmc
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="readpmc"></a>__readpmc
+**Microsoft 固有の仕様**  
   
- `counter` で指定されているパフォーマンス カウンターを監視 `rdpmc` 読み取り命令を生成します。  
+ 生成、`rdpmc`命令で指定されたカウンターの監視パフォーマンスの読み取りが`counter`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-unsigned __int64 __readpmc(   
-   unsigned long counter   
+unsigned __int64 __readpmc(   
+   unsigned long counter   
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `counter`  
- 読み取るパフォーマンス カウンター。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `counter`  
+ 読み取りパフォーマンス カウンター。  
   
-## 戻り値  
- 指定のパフォーマンス カウンター値。  
+## <a name="return-value"></a>戻り値  
+ 指定されたパフォーマンス カウンターの値。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__readpmc`|x86[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__readpmc`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- この組み込みではカーネル モードでのみ使用できルーチンは組み込みとしてのみ使用できます。  
+## <a name="remarks"></a>コメント  
+ この組み込みはカーネル モードでのみ、使用可能なルーチンが、組み込みとしてのみです。  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+## <a name="see-also"></a>参照  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

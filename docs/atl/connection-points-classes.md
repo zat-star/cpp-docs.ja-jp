@@ -1,54 +1,59 @@
 ---
-title: "コネクション ポイント クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.atl.connection"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クラス [C++], コネクション ポイント"
-  - "コネクション ポイント クラス"
+title: "接続ポイント クラス (ATL) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- vc.atl.connection
+dev_langs:
+- C++
+helpviewer_keywords:
+- classes [C++], connection points
+- connection points classes
 ms.assetid: 076365fa-299a-4dce-84c3-a5dff0e0da1f
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aa0ef8139c659b5085b20709e0c96ab2bf821ce4
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# コネクション ポイント クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のクラスは、コネクション ポイントをサポートします:  
+# <a name="connection-points-classes"></a>接続ポイント クラス
+次のクラスは、接続ポイントをサポートを提供します。  
   
--   [IConnectionPointContainerImpl](../Topic/IConnectionPointContainerImpl%20Class.md) は、コネクション ポイント コンテナーを実装します。  
+-   [入力したコネクション](../atl/reference/iconnectionpointcontainerimpl-class.md)接続ポイント コンテナーを実装します。  
   
--   [IConnectionPointImpl](../Topic/IConnectionPointImpl%20Class.md) は、コネクション ポイントを実装します。  
+-   [IConnectionPointImpl](../atl/reference/iconnectionpointimpl-class.md)コネクション ポイントを実装します。  
   
--   [IPropertyNotifySinkCP](../atl/reference/ipropertynotifysinkcp-class.md) は [IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638) のインターフェイスを表すコネクション ポイントを実装します。  
+-   [IPropertyNotifySinkCP](../atl/reference/ipropertynotifysinkcp-class.md)を表す接続ポイントを実装する、 [IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638)インターフェイスです。  
   
--   [CComDynamicUnkArray](../Topic/CComDynamicUnkArray%20Class.md) は、コネクション ポイント シンクとの間の無制限の接続を管理します。  
+-   [CComDynamicUnkArray](../atl/reference/ccomdynamicunkarray-class.md)接続ポイントとそのシンクの無制限の接続を管理します。  
   
--   [CComUnkArray](../atl/reference/ccomunkarray-class.md) は、コネクション ポイント シンクとの間の接続の数を管理します。  
+-   [CComUnkArray](../atl/reference/ccomunkarray-class.md)固定数の接続ポイントとそのシンク間の接続を管理します。  
   
--   [CFirePropNotifyEvent](../Topic/CFirePropNotifyEvent%20Class.md) は、オブジェクトのプロパティが変更された通知しますまたは変更することを通知するクライアント シンクが。  
+-   [CFirePropNotifyEvent](../atl/reference/cfirepropnotifyevent-class.md)オブジェクトのプロパティが変更されたかを変更するには、クライアントのシンクに通知します。  
   
--   [IDispEventImpl](../atl/reference/idispeventimpl-class.md) は、ATL COM オブジェクトのコネクション ポイントをサポートします。  これらのコネクション ポイントは、の COM オブジェクトによって提供されるイベント シンク マップにマップされます。  
+-   [IDispEventImpl](../atl/reference/idispeventimpl-class.md) ATL COM オブジェクトのコネクション ポイントのサポートを提供します。 これらの接続ポイントは、COM オブジェクトによって提供されているイベント シンク マップにマップされます。  
   
--   適切なハンドラーにイベントをルーティング、クラスのイベント シンク マップとともに[IDispEventSimpleImpl](../atl/reference/idispeventsimpleimpl-class.md) の 作業が機能します。  
+-   [されます](../atl/reference/idispeventsimpleimpl-class.md)イベント シンクと連動させるが、適切なハンドラー関数にイベントをルーティングするクラスにマップします。  
   
-## 関連トピック  
- [コネクション ポイント](../atl/atl-connection-points.md)  
+## <a name="related-articles"></a>関連トピック  
+ [接続ポイント](../atl/atl-connection-points.md)  
   
- [イベント処理と ATL](../Topic/Event%20Handling%20and%20ATL.md)  
+ [イベント処理と ATL](../atl/event-handling-and-atl.md)  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)   
- [コネクション ポイントに関するマクロ](../atl/reference/connection-point-macros.md)   
- [コネクション ポイントに関するグローバル関数](../Topic/Connection%20Point%20Global%20Functions.md)
+ [接続ポイント マクロ](../atl/reference/connection-point-macros.md)   
+ [コネクション ポイントに関するグローバル関数](../atl/reference/connection-point-global-functions.md)
+

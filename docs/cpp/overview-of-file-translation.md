@@ -1,12 +1,12 @@
 ---
-title: "ファイル変換の概要 |Microsoft ドキュメント"
-ms.custom: 
+title: ファイル変換の概要 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -22,12 +22,13 @@ caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 188574c43ca3650599fae58c0da1306ab49b5007
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a088d2da30aa77f477f3f6e5064b6b98170e953b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="overview-of-file-translation"></a>ファイル変換の概要
 C++ プログラムは、C プログラムと同様、1 つ以上のファイルで構成されます。 これらの各ファイルは、次の概念的な順序で変換されます (実際の順序は "as if" 規則に従います。つまり、変換は、これらの手順に従ったかのように行われる必要があります)。  
@@ -57,7 +58,7 @@ C++ プログラムは、C プログラムと同様、1 つ以上のファイル
   
 -   1 つの定義済みマクロ**_ _cplusplus**C++ の場合のみ定義されています。 参照してください[定義済みマクロ](../preprocessor/predefined-macros.md)で、 *『 プリプロセッサ リファレンス 』*詳細についてはします。  
   
--   C プリプロセッサでは、C++ の演算子は認識されません: **.\***、 ** -> \* **、および`::`です。 参照してください[演算子](../cpp/cpp-built-in-operators-precedence-and-associativity.md)と[式](../cpp/expressions-cpp.md)演算子の詳細についてはします。  
+-   C プリプロセッサでは、C++ の演算子は認識されません: **.\***、  **-> \*** 、および`::`です。 参照してください[演算子](../cpp/cpp-built-in-operators-precedence-and-associativity.md)と[式](../cpp/expressions-cpp.md)演算子の詳細についてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構文規則](../cpp/lexical-conventions.md)

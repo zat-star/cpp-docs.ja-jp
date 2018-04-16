@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: omp_unset_lock
-dev_langs: C++
-helpviewer_keywords: omp_unset_lock OpenMP function
+ms.topic: reference
+f1_keywords:
+- omp_unset_lock
+dev_langs:
+- C++
+helpviewer_keywords:
+- omp_unset_lock OpenMP function
 ms.assetid: 68fcb728-040b-4bad-979e-aaecb9097a4e
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a9ace2f59a46750f99d9e302bae84b0dc660ecbc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0a2809bbf31a283fe19f707a94363309616afcee
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ompunsetlock"></a>omp_unset_lock
 ロックを解放します。  
@@ -44,5 +50,5 @@ void omp_unset_lock(
 ## <a name="example"></a>例  
  参照してください[omp_init_lock 関数](../../../parallel/openmp/reference/omp-init-lock.md)の使用例については`omp_unset_lock`します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

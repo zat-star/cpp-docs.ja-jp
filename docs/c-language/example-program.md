@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: fc22ef82-9caa-425f-b201-2891bc123d1f
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 976b3c21e24a8e1e6c99664b31d32f85985d7f55
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 903e4890bfad23310f0663fde52af4065e78486e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="example-program"></a>サンプル プログラム
 次の C ソース プログラムは 2 つのソース ファイルで構成されています。 C プログラムで使用できるさまざまな宣言と定義の一部について、概要を示します。 後のセクションでは、これらの宣言、定義、および初期化を記述する方法と、**static** や `extern` のような C のキーワードを使用する方法について説明します。 `printf` 関数は C ヘッダー ファイル STDIO.H. で宣言されます。  
@@ -82,5 +86,5 @@ int max( int a, int b )          // Note formal parameters are
   
  識別子の有効期間と可視性については、「[有効期間、スコープ、可視性、およびリンケージ](../c-language/lifetime-scope-visibility-and-linkage.md)」で説明します。 関数の詳細については、「[関数](../c-language/functions-c.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ソース ファイルとソース プログラム](../c-language/source-files-and-source-programs.md)

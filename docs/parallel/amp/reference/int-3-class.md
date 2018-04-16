@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::int_3::get_x
 - amp_short_vectors/Concurrency::graphics::int_3::operator-=
@@ -77,17 +78,20 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::int_3::get_zyx
 - amp_short_vectors/Concurrency::graphics::int_3::xz
 - amp_short_vectors/Concurrency::graphics::int_3::set_yz
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: d4af182f-30f1-455c-b16d-aa99cd314038
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 020e74f8c225ee8416c1fc836f560fa1be6bd1fc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d66a71701fb0806dbd93490587a9e0d8b3af46fe
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="int3-class"></a>int_3 クラス
 3 個の整数の short ベクターを表します。  
@@ -159,23 +163,23 @@ class int_3;
 |----------|-----------------|  
 |int_3::operator-||  
 |int_3::operator--||  
-|int_3::operator % =||  
-|int_3::operator & =||  
-|int_3::operator * =||  
+|int_3::operator%=||  
+|int_3::operator&=||  
+|int_3::operator*=||  
 |int_3::operator/=||  
-|int_3::operator ^ =||  
-|int_3::operator &#124; =||  
-|int_3::operator ~||  
+|int_3::operator^=||  
+|int_3::operator&#124;=||  
+|int_3::operator~||  
 |int_3::operator++||  
-|int_3::operator + =||  
-|int_3::operator <\<=||  
-|int_3::operator = =||  
+|int_3::operator+=||  
+|int_3::operator<\<=||  
+|int_3::operator=||  
 |int_3::operator-=||  
-|int_3::operator >> =||  
+|int_3::operator>>=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#size)||  
   
@@ -217,12 +221,12 @@ class int_3;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `int_3`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
 
-## <a name="ctor"></a>int_3 
+## <a name="ctor"></a> int_3 
 
 既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -274,7 +278,7 @@ explicit inline int_3(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-## <a name="size"></a>サイズ 
+## <a name="size"></a> サイズ 
 
 ## <a name="syntax"></a>構文  
   
@@ -282,5 +286,5 @@ explicit inline int_3(
 static const int size = 3;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

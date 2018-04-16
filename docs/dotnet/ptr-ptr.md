@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,18 +13,23 @@ f1_keywords:
 - ptr.ptr
 - msclr.com.ptr.ptr
 - msclr::com::ptr::ptr
-dev_langs: C++
-helpviewer_keywords: ptr::ptr
+dev_langs:
+- C++
+helpviewer_keywords:
+- ptr::ptr
 ms.assetid: 4f5883b4-7c0a-46c6-aa9f-4e49eed463eb
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 99016a9006bb13be70fe38fd222ad25a08792b20
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 49013e718ad540e88a1cbd00eceb6bb3dc0071b8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ptrptr"></a>ptr::ptr
 構築、`com::ptr`を COM オブジェクトをラップします。  
@@ -110,12 +116,12 @@ int main() {
 }  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\com\ptr.h >  
   
  **Namespace** msclr::com  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ptr メンバー](../dotnet/ptr-members.md)   
  [ptr::CreateInstance](../dotnet/ptr-createinstance.md)   
  [ptr::~ptr](../dotnet/ptr-tilde-ptr.md)

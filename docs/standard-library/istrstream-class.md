@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - strstream/std::istrstream::rdbuf
 - strstream/std::istrstream::str
-dev_langs: C++
-helpviewer_keywords: istrstream class
+dev_langs:
+- C++
+helpviewer_keywords:
+- istrstream class
 ms.assetid: c2d41c75-bd2c-4437-bd77-5939ce1b97af
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0147176ae66dc695cdbcdccaa20d49ac49d320be
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aec0c2bbac29da5406002aefbd6a6adcac926a33
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="istrstream-class"></a>istrstream クラス
 クラス [strstreambuf](../standard-library/strstreambuf-class.md) のストリーム バッファーからの、要素とエンコードされたオブジェクトの抽出を制御するオブジェクトを表します。  
@@ -51,7 +56,7 @@ class istrstream : public istream
 |[rdbuf](#rdbuf)|ストリームの関連付けられた `strstreambuf` オブジェクトへのポインターを返します。|  
 |[str](#str)|[freeze](../standard-library/strstreambuf-class.md#freeze) を呼び出し、被制御シーケンスの先頭へのポインターを返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<strstream>  
   
  **名前空間:** std  
@@ -117,7 +122,7 @@ char *str();
 ### <a name="example"></a>例  
   **str** の使用例は、[strstream::str](../standard-library/strstreambuf-class.md#str) をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [istream](../standard-library/istream-typedefs.md#istream)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   

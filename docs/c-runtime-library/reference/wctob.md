@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - wctob
 apilocation:
@@ -32,30 +32,17 @@ helpviewer_keywords:
 - wctob function
 - characters, converting
 ms.assetid: 46aec98b-c2f2-4e9d-9d89-7db99ba8a9a6
-caps.latest.revision: 14
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 8eee02245359e71f32944f1a1f5c7180223553e3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2534eb98c39be91ed753fdc0ff286a9a5c5ce707
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="wctob"></a>wctob
 ワイド文字がマルチバイト文字に対応し、そのマルチバイト文字の表現を返すかどうかを指定します。  
@@ -73,20 +60,20 @@ int wctob(
  変換される値。  
   
 ## <a name="return-value"></a>戻り値  
- `wctob` はワイド文字を正常に変換すると、そのマルチバイト文字が 1 バイト長である場合にのみ、マルチバイト文字の表現を返します。 場合`wctob`検出すると、ワイド文字をマルチバイト文字またはマルチバイト文字に変換できないは 1 バイトの長さで、これは、-1 を返します。  
+ `wctob` はワイド文字を正常に変換すると、そのマルチバイト文字が 1 バイト長である場合にのみ、マルチバイト文字の表現を返します。 場合`wctob`検出すると、マルチバイト文字またはマルチバイト文字に変換できないワイド文字は 1 バイトの長さで、これは、-1 を返しますでは正確に一致しません。  
   
 ## <a name="remarks"></a>コメント  
  `wctob` 関数は、マルチバイト文字が 1 バイト長である場合、`wchar` に含まれているワイド文字を、戻り値 `int` によって渡された対応するマルチバイト文字に変換します。  
   
  `wctob` が正常に実行されず、対応するマルチバイト文字が検出されなかった場合、この関数は、`errno` を `EILSEQ` に設定し、-1 を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`wctob`|\<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  このプログラムは、`wcstombs` 関数の動作を示しています。  
@@ -122,7 +109,7 @@ int main( void )
 Determined the corresponding multibyte character to be "A".  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [_mbclen、mblen、_mblen_l](../../c-runtime-library/reference/mbclen-mblen-mblen-l.md)   

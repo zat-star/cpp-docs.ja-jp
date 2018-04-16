@@ -1,12 +1,12 @@
 ---
-title: "C++ のラムダ式の constexpr |Microsoft ドキュメント"
-ms.custom: 
+title: C++ のラムダ式の constexpr |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 07/19/2017
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -17,12 +17,13 @@ caps.latest.revision: 0
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: c6221118477c79d683d468469b1f87dfa33efded
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 307ce6ab87ca36de561ebcf1ad8bd30eb73e4192
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="constexpr-lambda-expressions-in-c"></a>constexpr C++ のラムダ式
 **Visual Studio 2017 15.3 およびそれ以降のバージョン**(で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md)): としてラムダ式を宣言することは`constexpr`か指定する定数式で使用時に各データ メンバーの初期化がキャプチャまたはが導入されています、定数式は許可されています。  
@@ -61,7 +62,7 @@ ms.lasthandoff: 09/25/2017
     constexpr int(*inc)(int) = Increment;
 ```
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [C++ 標準ライブラリ内の関数オブジェクト](../standard-library/function-objects-in-the-stl.md)   
  [関数呼び出し](../cpp/function-call-cpp.md)   

@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CElementTraits
 - atlcoll/ATL::CElementTraits
-dev_langs: C++
-helpviewer_keywords: CElementTraits class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CElementTraits class
 ms.assetid: 496528e5-7f80-4b45-be0c-6f646feb43c5
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cda18f6148f9a1cbc39a6e7003cce6324e36eeeb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ebe629a08170ce011b22595c8b821b278e16faa7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="celementtraits-class"></a>CElementTraits クラス
 このクラスは、移動、コピーとを比較する、ハッシュ演算メソッドおよび関数を提供するコレクション クラスによって使用されます。  
@@ -44,9 +49,9 @@ class CElementTraits : public CDefaultElementTraits<T>
   
  詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcoll.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDefaultElementTraits クラス](../../atl/reference/cdefaultelementtraits-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

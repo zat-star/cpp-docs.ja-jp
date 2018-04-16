@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _vsnwprintf_s
 - _vsnwprintf_s_l
@@ -48,30 +48,17 @@ helpviewer_keywords:
 - _vsnwprintf_s function
 - formatted text [C++]
 ms.assetid: 147ccfce-58c7-4681-a726-ef54ac1c604e
-caps.latest.revision: 30
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: f54fd258fac9ecf82c80943dc4f531ffe950f80c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6e908750b54778d4aad7affeb6bd748a84ab39bc
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="vsnprintfs-vsnprintfs-vsnprintfsl-vsnwprintfs-vsnwprintfsl"></a>vsnprintf_s、_vsnprintf_s、_vsnprintf_s_l、_vsnwprintf_s、_vsnwprintf_s_l
 引数リストへのポインターを使用して、書式付き出力を書き込みます。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [vsnprintf、_vsnprintf、_vsnprintf_l、_vsnwprintf、_vsnwprintf_l](../../c-runtime-library/reference/vsnprintf-vsnprintf-vsnprintf-l-vsnwprintf-vsnwprintf-l.md) です。  
@@ -151,7 +138,7 @@ int _vsnwprintf_s(
  `locale`  
  使用するロケール。  
   
- 詳細については、[書式の指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関する記事をご覧ください。  
+ 詳細については、「 [printf 関数と wprintf 関数の書式指定フィールド](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」を参照してください。  
   
 ## <a name="return-value"></a>戻り値  
  `vsnprintf_s` 関数、`_vsnprintf_s` 関数、および `_vsnwprintf_s` 関数は、書き込まれた文字数を返します。終端の null 文字は含まれません。出力エラーが発生した場合は、負の値を返します。 `vsnprintf_s` は `_vsnprintf_s` と同じです。 `vsnprintf_s` 関数は ANSI 規格に準拠する目的で含まれています。 `_vnsprintf` 関数は下位互換性のために残されています。  
@@ -162,7 +149,7 @@ int _vsnwprintf_s(
   
 ### <a name="error-conditions"></a>エラー条件  
   
-|`Condition`|リターン|`errno`|  
+|`Condition`|Return|`errno`|  
 |-----------------|------------|-------------|  
 |`buffer` は `NULL` です|-1|`EINVAL`|  
 |`format` は `NULL` です|-1|`EINVAL`|  
@@ -182,7 +169,7 @@ int _vsnwprintf_s(
 > [!NOTE]
 >  終端の null 用の空きを確保するために、`count` を必ずバッファー長未満にするか、`_TRUNCATE` を使用します。  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -191,9 +178,9 @@ int _vsnwprintf_s(
 |`_vsntprintf_s`|`_vsnprintf_s`|`_vsnprintf_s`|`_vsnwprintf_s`|  
 |`_vsntprintf_s_l`|`_vsnprintf_s_l`|`_vsnprintf_s_l`|`_vsnwprintf_s_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|省略可能なヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
 |-------------|---------------------|----------------------|  
 |`vsnprintf_s`|\<stdio.h> および \<stdarg.h>|\<varargs.h>*|  
 |`_vsnprintf_s`, `_vsnprintf_s_l`|\<stdio.h> および \<stdarg.h>|\<varargs.h>*|  
@@ -201,7 +188,7 @@ int _vsnwprintf_s(
   
  \* UNIX V との互換性用。  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -235,7 +222,7 @@ nSize: 9, buff: Hi there!
 nSize: -1, buff: Hi there!  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)   
  [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _lock_file
+ms.topic: reference
+apiname:
+- _lock_file
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,21 +26,24 @@ apitype: DLLExport
 f1_keywords:
 - _lock_file
 - lock_file
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - file locking [C++]
 - _lock_file function
 - lock_file function
 ms.assetid: 75c7e0e6-efff-4747-b6ed-9bcf2b0894c3
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2af66326d69aa5764922499bbd63a71cd0663216
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9bd039c6f966deae2a05c354051e64ea35ca1c65
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="lockfile"></a>_lock_file
 `FILE` オブジェクトへ同時にアクセスするスレッド間の一貫性を保つために、`FILE` オブジェクトをロックします。  
@@ -58,13 +63,13 @@ void _lock_file(
 ## <a name="remarks"></a>コメント  
  `_lock_file` 関数は、`file`で指定した `FILE` オブジェクトをロックします。 `_lock_file`では、基になるファイルはロックされません。 ファイルのロックを解除するには、[_unlock_file](../../c-runtime-library/reference/unlock-file.md) を使用します。 `_lock_file` と `_unlock_file` の呼び出しは、スレッド内で一致する必要があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_lock_file`|\<stdio.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -141,7 +146,7 @@ tS
 eFciornsdt  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
  [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   

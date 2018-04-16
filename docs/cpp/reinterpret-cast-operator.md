@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: reinterpret_cast_cpp
-dev_langs: C++
-helpviewer_keywords: reinterpret_cast keyword [C++]
+f1_keywords:
+- reinterpret_cast_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- reinterpret_cast keyword [C++]
 ms.assetid: eb3283c7-7f88-467e-affd-407d37b46d6c
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b3ad3912c9046e877da0913a34cb1b3253baa454
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0957a696d7675a932aa86531d39f2e4895ba1ff9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="reinterpretcast-operator"></a>reinterpret_cast 演算子
 ポインターが他のポインター型に変換されることを許可します。 また、整数型から任意のポインター型への変換およびその逆の変換を許可します。  
@@ -85,6 +91,6 @@ Output:
   
  `reinterpret_cast` は、ポインターが整数型として処理されることを許可します。 結果は、一意のインデックス (高レベルの発生確率で一意) を生成するためにビット シフトされ、XOR されます。 インデックスは、関数の戻り値の型への標準 C 形式のキャストにより切り捨てられます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キャスト演算子](../cpp/casting-operators.md)   
  [キーワード](../cpp/keywords-cpp.md)

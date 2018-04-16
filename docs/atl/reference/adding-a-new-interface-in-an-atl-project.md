@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: vc.appwiz.ATL.interface
-dev_langs: C++
+f1_keywords:
+- vc.appwiz.ATL.interface
+dev_langs:
+- C++
 helpviewer_keywords:
 - interfaces, adding to ATL objects
 - Implement Interface ATL wizard
 - controls [ATL], interfaces
 - ATL projects, adding interfaces
 ms.assetid: 7d34b023-2c6b-4155-aca3-d47a40968063
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 21aeda51a917bcb48b16ff8f9c2bc505adc18f1d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1c07306a660162b23ecaffa4dd239b2538be0295
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-a-new-interface-in-an-atl-project"></a>ATL プロジェクトで新しいインターフェイスの追加
 インターフェイスをオブジェクトやコントロールを追加する場合は、そのインターフェイスで各メソッドのスタブ関数を作成します。 オブジェクトやコントロールでは、既存のタイプ ライブラリ内にあるインターフェイスのみを追加できます。 また、インターフェイスを追加するクラスを実装する必要があります、 [BEGIN_COM_MAP](com-map-macros.md#begin_com_map)マクロまたは、プロジェクトが考えられる場合があります、`coclass`属性。  
@@ -48,7 +53,7 @@ ms.lasthandoff: 10/24/2017
   
 4.  インターフェイスのメソッドを実装します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)   
  [Visual C プロジェクトの種類](../../ide/visual-cpp-project-types.md)   
  [アプリケーション ウィザードを使用したデスクトップ プロジェクトの作成](../../ide/creating-desktop-projects-by-using-application-wizards.md)   

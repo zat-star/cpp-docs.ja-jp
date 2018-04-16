@@ -1,39 +1,43 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4742 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4742"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4742"
+title: "コンパイラの警告 (レベル 1) C4742 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4742
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4742
 ms.assetid: e520881d-1eeb-48b1-9df0-8017ee8ba076
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: da12d4d1e5e8b6f9be6c21601e04f08d1b269cec
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4742
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'var' は 'file1' および 'file2' 内で異なるアライメントを含んでいます: '数値' および '数値'  
+# <a name="compiler-warning-level-1-c4742"></a>コンパイラの警告 (レベル 1) C4742
+'var' が 'file1' および 'file2' 内で異なるアラインメント: 番号と番号  
   
- 2 つのファイルで参照または定義された外部変数は、それぞれのファイルでのアライメントが異なっています。  この警告は *file1* の変数の `__alignof` は *file2*の変数の `__alignof` が異なることをコンパイラがわかったときに表示されます。  これは、異なるファイルで変数を宣言するときに互換性のない型を使用したか、異なるファイルで一致しない `#pragma pack` を使用したことが原因で発生する場合があります。  
+ 参照または 2 つのファイルで定義されている外部変数は、それらのファイルで異なるアラインメントをいます。 コンパイラを検索するときに、この警告が生成されます`__alignof`で変数の*file1*異なる`__alignof`で変数の*file2*です。 可能性があります、別のファイル内の変数を宣言するときに、互換性のない型を使用して、または一致しないを使用して`#pragma pack`別のファイルにします。  
   
- この警告を解決するには、同じ型定義を使用するか、変数ごとに異なる名前を使用します。  
+ この警告を解決するのには、同じ種類の定義を使用するか、または異なる名前の変数を使用します。  
   
- 詳細については、「[pack](../../preprocessor/pack.md)」および「[\_\_alignof 演算子](../../cpp/alignof-operator.md)」を参照してください。  
+ 詳細については、次を参照してください。[パック](../../preprocessor/pack.md)と[_ _alignof 演算子](../../cpp/alignof-operator.md)です。  
   
-## 使用例  
- これは、型を定義する 1 つ目のファイルです。  
+## <a name="example"></a>例  
+ これは、型を定義する最初のファイルです。  
   
 ```  
 // C4742a.c  
@@ -43,8 +47,8 @@ struct X {
 } global;  
 ```  
   
-## 使用例  
- 次の例では C4742 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4742 を生成します。  
   
 ```  
 // C4742b.c  

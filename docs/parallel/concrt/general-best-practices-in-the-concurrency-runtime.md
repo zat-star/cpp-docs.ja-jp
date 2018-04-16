@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: Concurrency Runtime, general best practices
+dev_langs:
+- C++
+helpviewer_keywords:
+- Concurrency Runtime, general best practices
 ms.assetid: ce5c784c-051e-44a6-be84-8b3e1139c18b
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 70903fd7d74f23d17fffb9795b36c5351745a829
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d5c2c626ceb0243e91e56d70f0d8ae71208b157f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="general-best-practices-in-the-concurrency-runtime"></a>同時実行ランタイムに関する全般的なベスト プラクティス
 ここでは、同時実行ランタイムの複数の領域に適用されるベスト プラクティスについて説明します。  
@@ -151,7 +156,7 @@ Error details:
   
  [[トップ](#top)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行ランタイムに関するベスト プラクティスします。](../../parallel/concrt/concurrency-runtime-best-practices.md)   
  [並列パターン ライブラリ (PPL)](../../parallel/concrt/parallel-patterns-library-ppl.md)   
  [非同期エージェント ライブラリ](../../parallel/concrt/asynchronous-agents-library.md)   

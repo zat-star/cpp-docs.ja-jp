@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,22 +15,25 @@ f1_keywords:
 - AFXDISP/COleTemplateServer::ConnectTemplate
 - AFXDISP/COleTemplateServer::Unregister
 - AFXDISP/COleTemplateServer::UpdateRegistry
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COleTemplateServer [MFC], COleTemplateServer
 - COleTemplateServer [MFC], ConnectTemplate
 - COleTemplateServer [MFC], Unregister
 - COleTemplateServer [MFC], UpdateRegistry
 ms.assetid: 47a2887d-8162-4993-a842-a784177c7f5c
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e04bea5b4a76172e5d9f28358d013ed7cbd3538c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d4bf5f696eeff3e4e26a9d77714c0d5a6f093aaa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coletemplateserver-class"></a>COleTemplateServer クラス
 OLE のビジュアル編集サーバー、オートメーション サーバー、およびリンク コンテナー (埋め込みアイテムへのリンクをサポートするアプリケーションのことです) で使います。  
@@ -72,7 +76,7 @@ class COleTemplateServer : public COleObjectFactory
   
  `COleTemplateServer`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
   
 ##  <a name="coletemplateserver"></a>COleTemplateServer::COleTemplateServer  
@@ -164,7 +168,7 @@ void UpdateRegistry(
   
  詳細については、「 [Implementing the IDispatch Interface](http://msdn.microsoft.com/en-us/0e171f7f-0022-4e9b-ac8e-98192828e945)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル HIERSVR](../../visual-cpp-samples.md)   
  [COleObjectFactory クラス](../../mfc/reference/coleobjectfactory-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

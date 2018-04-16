@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2094
 ms.assetid: 9e4f8f88-f189-46e7-91c9-481bacc7af87
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d87846c5ea26ee9157f895f43b1f96fdc67602d3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: f20930a38a429aba3e3959f57f937bbfa9962da9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2094"></a>コンパイラ エラー C2094
 ラベル 'identifier' が定義されていません  
@@ -41,7 +42,7 @@ int main() {
 }   // C2094  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```cpp  
 // C2094b.c  

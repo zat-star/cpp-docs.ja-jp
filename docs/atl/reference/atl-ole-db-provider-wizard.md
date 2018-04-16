@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: vc.codewiz.class.atl.provider.overview
-dev_langs: C++
+f1_keywords:
+- vc.codewiz.class.atl.provider.overview
+dev_langs:
+- C++
 helpviewer_keywords:
 - ATL OLE DB Provider Wizard
 - ATL projects, adding ATL OLE DB providers
 ms.assetid: cf91ba78-01d1-4d12-b673-e95d96bfbebe
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 170f10d06112969d9147c37b20572f0888140d0a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 660f70be8ec4ac1efcec056c694d0e2fc3256071
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-ole-db-provider-wizard"></a>ATL OLE DB プロバイダー ウィザード
 このウィザードでは、OLE DB プロバイダーを構成するクラスを作成します。  
@@ -75,6 +80,6 @@ ms.lasthandoff: 10/24/2017
  **行セットの .cpp ファイル**  
  プロバイダーの実装ファイルです。 このファイルの名前を編集したり、既存の実装ファイルを選択することができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL OLE DB プロバイダー](../../atl/reference/adding-an-atl-ole-db-provider.md)
 

@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: application button [MFC], customizing
+dev_langs:
+- C++
+helpviewer_keywords:
+- application button [MFC], customizing
 ms.assetid: ebb11180-ab20-43df-a234-801feca9eb38
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5a2512c212efe2cba09d23baf1a997de3a98d154
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4a4a150985bd5c552b361620df87e34511ef8027
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-customize-the-application-button"></a>方法: アプリケーション ボタンをカスタマイズする
 アプリケーション ボタンをクリックすると、コマンドのメニューが表示されます。 通常、メニューに含まれるファイルに関連するコマンドなど**開く**、**保存**、**印刷**、および**終了**です。  
@@ -61,6 +66,6 @@ ms.lasthandoff: 10/24/2017
   
 -   **Ribbon エディター ツールバー**をクリックして**Ribbon のテスト**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リボン デザイナー (MFC)](../mfc/ribbon-designer-mfc.md)
 

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _memicmp_l
 - _memicmp
@@ -36,30 +36,17 @@ helpviewer_keywords:
 - memicmp_l function
 - _memicmp_l function
 ms.assetid: 0a6eb945-4077-4f84-935d-1aaebe8db8cb
-caps.latest.revision: 19
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 72cdb770716181ee5ac6b93b94d36fcd49bab7dd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b79c36bc665d1d7a32ef50984a75b48811985d1e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="memicmp-memicmpl"></a>_memicmp、_memicmp_l
 2 つのバッファーの文字を比較します (大文字と小文字を区別しない)。  
@@ -110,14 +97,14 @@ int _memicmp_l(
   
  `_memicmp` は、ロケールに依存する動作に現在のロケールを使用します。`_memicmp_l` は、渡されたロケールを代わりに使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_memicmp`|\<memory.h> または \<string.h>|  
 |`_memicmp_l`|\<memory.h> または \<string.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -154,7 +141,7 @@ Compare 'Those Who Will Not Learn from' to 'THOSE WHO WILL NOT LEARN FROM'
 First is equal to second.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
  [_memccpy](../../c-runtime-library/reference/memccpy.md)   
  [memchr、wmemchr](../../c-runtime-library/reference/memchr-wmemchr.md)   

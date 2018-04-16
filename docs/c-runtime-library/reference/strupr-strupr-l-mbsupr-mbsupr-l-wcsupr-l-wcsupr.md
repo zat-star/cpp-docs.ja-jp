@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _mbsupr_l
 - _mbsupr
@@ -39,7 +40,8 @@ f1_keywords:
 - _strupr
 - mbsupr_l
 - _wcsupr
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - tcsupr_l function
 - mbsupr function
@@ -67,21 +69,23 @@ helpviewer_keywords:
 - _tcsupr function
 - strings [C++], converting case
 ms.assetid: caac8f16-c233-41b6-91ce-575ec7061b77
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 88362cf0100a7b8d118f38632e9751afa79ae4e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 904f897a36c3db24ce78983e3c02cc0f019bf16e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strupr-struprl-mbsupr-mbsuprl-wcsuprl-wcsupr"></a>_strupr、_strupr_l、_mbsupr、_mbsupr_l、_wcsupr_l、_wcsupr
 文字列を大文字に変換します。 これらの関数にはセキュリティが強化されたバージョンがあります。「[_strupr_s、_strupr_s_l、_mbsupr_s、_mbsupr_s_l、_wcsupr_s、_wcsupr_s_l](../../c-runtime-library/reference/strupr-s-strupr-s-l-mbsupr-s-mbsupr-s-l-wcsupr-s-wcsupr-s-l.md)」をご覧ください。  
   
 > [!IMPORTANT]
->  `_mbsupr` および `_mbsupr_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbsupr` および `_mbsupr_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -147,7 +151,7 @@ unsigned char *_mbsupr_l(
  変更された文字列へのポインターを返します。 同じ位置で変更が実行されるため、返されるポインターは入力引数として渡されるポインターと同じです。 エラーを示す戻り値は予約されていません。  
   
 ## <a name="remarks"></a>コメント  
- `_strupr` 関数は、`str` 内の小文字を同じ位置で大文字に変換します。 変換は、ロケールの `LC_CTYPE` カテゴリの設定により決定されます。 他の文字は影響を受けません。 `LC_CTYPE` の詳細については、[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md) に関する記事をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンは、現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、代わりに渡されたロケールを使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `_strupr` 関数は、`str` 内の小文字を同じ位置で大文字に変換します。 変換は、ロケールの `LC_CTYPE` カテゴリの設定により決定されます。 他の文字は影響を受けません。 `LC_CTYPE` の詳細については、[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md) に関する記事をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンは、現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、代わりに渡されたロケールを使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  `_wcsupr` 関数と `_mbsupr` 関数は、`_strupr` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsupr` 関数の引数と戻り値はワイド文字列で、`_mbsupr` 関数の引数と戻り値はマルチバイト文字列です。 それ以外では、これらの関数の動作は同じです。  
   
@@ -162,20 +166,20 @@ unsigned char *_mbsupr_l(
 |`_tcsupr`|`_strupr`|`_mbsupr`|`_wcsupr`|  
 |`_tcsupr_l`|`_strupr_l`|`_mbsupr_l`|`_wcsupr_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strupr`, `_strupr_l`|\<string.h>|  
 |`_wcsupr`, `_wcsupr_l`|\<string.h> または \<wchar.h>|  
 |`_mbsupr`, `_mbsupr_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  [_strlwr](../../c-runtime-library/reference/strlwr-wcslwr-mbslwr-strlwr-l-wcslwr-l-mbslwr-l.md) に関する記事の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール](../../c-runtime-library/locale.md)   
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [_strlwr、_wcslwr、_mbslwr、_strlwr_l、_wcslwr_l、_mbslwr_l](../../c-runtime-library/reference/strlwr-wcslwr-mbslwr-strlwr-l-wcslwr-l-mbslwr-l.md)

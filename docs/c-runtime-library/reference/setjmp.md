@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: setjmp
+ms.topic: reference
+apiname:
+- setjmp
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,22 +22,26 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: setjmp
-dev_langs: C++
+f1_keywords:
+- setjmp
+dev_langs:
+- C++
 helpviewer_keywords:
 - programs [C++], saving states
 - current state
 - setjmp function
 ms.assetid: 684a8b27-e8eb-455b-b4a8-733ca1cbd7d2
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 69704f5c7fd407addef7e886e4509f4f3cce1ebe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ef5c4b0e026090718fc02dd109a1fccb91152010
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="setjmp"></a>setjmp
 プログラムの現在の状態を保存します。  
@@ -66,18 +72,18 @@ int setjmp(
   
  詳細については、「[setjmp/longjmp の使用](../../cpp/using-setjmp-longjmp.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`setjmp`|\<setjmp.h >|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_fpreset](../../c-runtime-library/reference/fpreset.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [longjmp](../../c-runtime-library/reference/longjmp.md)   
  [_setjmp3](../../c-runtime-library/setjmp3.md)

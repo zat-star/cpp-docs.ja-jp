@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - queue/std::operator!=
 - queue/std::operator&gt;
@@ -16,7 +16,7 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 7c435b48-175c-45b0-88eb-24561044019c
-caps.latest.revision: 13
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::operator!= (queue)
@@ -25,12 +25,11 @@ helpviewer_keywords:
 - std::operator&lt; (queue)
 - std::operator&lt;= (queue)
 - std::operator== (queue)
+ms.openlocfilehash: 3590d1421364179a57fc72bee93939e4871ae24c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: c3d30f04ad3b8f330c70b75ca21bdab44913f336
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltqueuegt-operators"></a>&lt;queue&gt; 演算子
 ||||  
@@ -160,7 +159,7 @@ The queue q1 is less than the queue q2.
 The queue q1 is not less than the queue q3.  
 ```  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  演算子の左側のキュー オブジェクトが右側のキュー オブジェクト以下かどうかをテストします。  
   
 ```  
@@ -345,7 +344,7 @@ The queue q1 is not greater than the queue q2.
 The queue q1 is greater than the queue q3.  
 ```  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  演算子の左側のキュー オブジェクトが右側のキュー オブジェクト以上かどうかをテストします。  
   
 ```  
@@ -406,7 +405,6 @@ The queue q1 is less than the queue q2.
 The queue q1 is greater than or equal to the queue q3.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<queue>](../standard-library/queue.md)
-
 

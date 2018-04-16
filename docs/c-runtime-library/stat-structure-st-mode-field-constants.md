@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -22,7 +23,8 @@ f1_keywords:
 - S_IREAD
 - _S_IFCHR
 - _S_IFREG
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - S_IFDIR constant
 - stat structure
@@ -42,15 +44,17 @@ helpviewer_keywords:
 - _S_IREAD constant
 - _S_IFCHR constant
 ms.assetid: fd462004-7563-4766-8443-30b0a86174b6
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: eb6277eea45aec64c285c3e2780d65be0224ce11
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6d5502a563c674818626627a5161e7051682f258
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="stat-structure-stmode-field-constants"></a>_stat 構造体の st_mode フィールド定数
 ## <a name="syntax"></a>構文  
@@ -76,7 +80,7 @@ ms.lasthandoff: 10/24/2017
 |`_S_IWRITE`|書き込みアクセス許可、所有者|  
 |`_S_IEXEC`|実行/検索アクセス許可、所有者|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_stat、_wstat 関数](../c-runtime-library/reference/stat-functions.md)   
  [_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32](../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   
  [標準の型](../c-runtime-library/standard-types.md)   

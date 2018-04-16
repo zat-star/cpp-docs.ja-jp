@@ -1,24 +1,29 @@
 ---
-title: "#<a name=\"import-attributes-c--microsoft-docs\"></a>インポート属性 (C++) |Microsoft ドキュメント"
+title: "#インポート属性 (C++) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
-helpviewer_keywords: '#import directive, attributes'
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- '#import directive, attributes'
 ms.assetid: 2a5085e3-82ee-4f83-892b-0aa6cc13863b
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fd11326e33ff783b3868215794f9803e97d41c55
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 76507ef9d840b9d3544442af2881810d715bd4ca
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="import-attributes-c"></a>#import の属性 (C++)
 #import ディレクティブと共に使用される属性のリンクを示します。  
@@ -32,7 +37,7 @@ ms.lasthandoff: 10/24/2017
 |[auto_rename](../preprocessor/auto-rename.md)|潜在的な名前の競合を解決するため、変数名に 2 つのアンダースコア (__) を追加して C++ の予約語の名前を変更します。|  
 |[auto_search](../preprocessor/auto-search.md)|タイプ ライブラリが #import を使用して参照され、自身が別のタイプ ライブラリを参照している場合、コンパイラが他のタイプ ライブラリに対して暗黙の #import を実行できることを指定します。|  
 |[embedded_idl](../preprocessor/embedded-idl.md)|属性が生成されたコードを保持して、タイプ ライブラリを .tlh ファイルに書き込むことを指定します。|  
-|[除外します。](../preprocessor/exclude-hash-import.md)|生成されるタイプ ライブラリのヘッダー ファイルから項目を除外します。|  
+|[exclude](../preprocessor/exclude-hash-import.md)|生成されるタイプ ライブラリのヘッダー ファイルから項目を除外します。|  
 |[high_method_prefix](../preprocessor/high-method-prefix.md)|高レベルのプロパティおよびメソッドの名前付けで使用されるプレフィックスを指定します。|  
 |[high_property_prefixes](../preprocessor/high-property-prefixes.md)|3 つのプロパティ メソッドの代替プレフィックスを指定します。|  
 |[implementation_only](../preprocessor/implementation-only.md)|.tlh ヘッダー ファイル (プライマリ ヘッダー ファイル) の生成を抑制します。|  
@@ -58,5 +63,5 @@ ms.lasthandoff: 10/24/2017
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [#import ディレクティブ](../preprocessor/hash-import-directive-cpp.md)

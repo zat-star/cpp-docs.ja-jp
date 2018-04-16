@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -77,7 +78,8 @@ f1_keywords:
 - AFXTOOLBARIMAGES/CMFCToolBarImages::UpdateImage
 - AFXTOOLBARIMAGES/CMFCToolBarImages::PreMultiplyAlpha
 - AFXTOOLBARIMAGES/CMFCToolBarImages::m_bDisableTrueColorAlpha
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCToolBarImages [MFC], CMFCToolBarImages
 - CMFCToolBarImages [MFC], AdaptColors
@@ -147,15 +149,17 @@ helpviewer_keywords:
 - CMFCToolBarImages [MFC], PreMultiplyAlpha
 - CMFCToolBarImages [MFC], m_bDisableTrueColorAlpha
 ms.assetid: d4e50518-9ffc-406f-9996-f79e5cd38155
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c317390f804e90ed2faf4302ab0a46d783dd49ad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b557a56b1d525941c96b9a6a96fd367b64afcaf0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfctoolbarimages-class"></a>CMFCToolBarImages クラス
 ツールバー上のイメージです。 `CMFCToolBarImages`クラスはアプリケーション リソースまたはファイルから読み込んだツール バー イメージを管理します。  
@@ -251,7 +255,7 @@ class CMFCToolBarImages : public CObject
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMFCToolBarImages::m_bDisableTrueColorAlpha](#m_bdisabletruecoloralpha)|`TRUE`場合は true カラー アルファ ブレンド (32 ビット カラー) は無効です。|  
   
@@ -269,7 +273,7 @@ class CMFCToolBarImages : public CObject
   
  `CMFCToolBarImages`   
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxtoolbarimages.h  
   
 ##  <a name="adaptcolors"></a>CMFCToolBarImages::AdaptColors  
@@ -1298,7 +1302,7 @@ BOOL SmoothResize(double dblImageScale);
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   

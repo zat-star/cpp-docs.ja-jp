@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::multiset::equal_range
-dev_langs: C++
-helpviewer_keywords: equal_range member [STL/CLR]
+f1_keywords:
+- cliext::multiset::equal_range
+dev_langs:
+- C++
+helpviewer_keywords:
+- equal_range member [STL/CLR]
 ms.assetid: 0fa617fb-8316-4310-b906-0322fa04aebe
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1e03ecf53edf4f5eb0e792aca3d4cb1008bbdc6a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a2d5104368499042ee979c201b345a06a587c79a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multisetequalrange-stlclr"></a>multiset::equal_range (STL/CLR)
 指定したキーに一致する範囲を検索します。  
@@ -79,12 +86,12 @@ equal_range(L'x') empty = True
  b  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マルチセット (STL/CLR)](../dotnet/multiset-stl-clr.md)   
  [multiset::count (STL/CLR)](../dotnet/multiset-count-stl-clr.md)   
  [multiset::find (STL/CLR)](../dotnet/multiset-find-stl-clr.md)   

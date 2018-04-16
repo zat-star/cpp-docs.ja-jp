@@ -29,30 +29,17 @@ helpviewer_keywords:
 - CFileTime class
 - shared classes, CFileTime
 ms.assetid: 1a358a65-1383-4124-b0d4-59b026e6860f
-caps.latest.revision: 18
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 5ff7abc32093691d230787e8eb2d859bb4e77428
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d48e899bb058ed27559a4ef699a3a53267064f98
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cfiletime-class"></a>加算クラス
 このクラスは、ファイルに関連付けられた日付と時刻の値を管理するためのメソッドを提供します。  
@@ -76,44 +63,44 @@ class CFileTime :  public FILETIME
 |名前|説明|  
 |----------|-----------------|  
 |[CFileTime::GetCurrentTime](#getcurrenttime)|この静的関数を取得する、`CFileTime`を現在のシステム日付と時刻を表すオブジェクト。|  
-|[CFileTime::GetTime](#gettime)|時刻を取得するには、このメソッドを呼び出して、`CFileTime`オブジェクトです。|  
-|[CFileTime::LocalToUTC](#localtoutc)|ローカル ファイルの時刻を世界協定時刻 (UTC) のファイル時刻に変換するには、このメソッドを呼び出します。|  
-|[CFileTime::SetTime](#settime)|によって格納された日時を設定するには、このメソッドを呼び出して、`CFileTime`オブジェクトです。|  
-|[CFileTime::UTCToLocal](#utctolocal)|時刻、世界協定時刻 (UTC) に基づいてファイルをローカル時刻に変換するには、このメソッドを呼び出します。|  
+|[CFileTime::GetTime](#gettime)|時刻を取得するには、このメソッドを呼び出して、`CFileTime`オブジェクト。|  
+|[CFileTime::LocalToUTC](#localtoutc)|ローカルのファイル時刻を世界協定時刻 (UTC) のファイル時刻に変換するには、このメソッドを呼び出します。|  
+|[CFileTime::SetTime](#settime)|によって格納された日時を設定するには、このメソッドを呼び出して、`CFileTime`オブジェクト。|  
+|[CFileTime::UTCToLocal](#utctolocal)|このメソッドを呼び出して時刻、世界協定時刻 (UTC) に基づいてローカル ファイルの時刻に変換します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CFileTime::operator-](#operator_-)|この演算子を使用で減算を実行する、`CFileTime`または`CFileTimeSpan`オブジェクトです。|  
-|[CFileTime::operator! =](#operator_neq)|2 つを比較して`CFileTime`の非等値オブジェクトです。|  
+|[CFileTime::operator-](#operator_-)|この演算子は使用で減算を実行する、`CFileTime`または`CFileTimeSpan`オブジェクト。|  
+|[CFileTime::operator! =](#operator_neq)|この演算子は、2 つを比較して`CFileTime`の非等値オブジェクトです。|  
 |[CFileTime::operator +](#operator_add)|この演算子は、`CFileTimeSpan` オブジェクトで加算を実行するために使用します。|  
-|[CFileTime::operator + = 演算子](#operator_add_eq)|この演算子は、`CFileTimeSpan` オブジェクトで加算を実行し、結果を現在のオブジェクトに代入するために使用します。|  
+|[CFileTime::operator + =](#operator_add_eq)|この演算子は、`CFileTimeSpan` オブジェクトで加算を実行し、結果を現在のオブジェクトに代入するために使用します。|  
 |[CFileTime::operator&lt;](#operator_lt)|この演算子は、2 つの `CFileTime` オブジェクトを比較して、小さい方を決定します。|  
 |[CFileTime::operator&lt;=](#operator_lt_eq)|この演算子では、2 つの `CFileTime` オブジェクトを比較して、等しいかどうか、または小さい方を決定します。|  
 |[CFileTime::operator =](#operator_eq)|代入演算子です。|  
-|[CFileTime::operator =](#operator_-_eq)|この演算子を使用で減算を実行する、`CFileTimeSpan`オブジェクトし、結果を現在のオブジェクトに代入します。|  
+|[CFileTime::operator =](#operator_-_eq)|この演算子は使用で減算を実行する、`CFileTimeSpan`オブジェクトし、現在のオブジェクトに、結果を代入します。|  
 |[CFileTime::operator = =](#operator_eq_eq)|この演算子は、2 つの `CFileTime` オブジェクトが等しいかどうかを比較します。|  
 |[CFileTime::operator&gt;](#operator_gt)|この演算子は、2 つの `CFileTime` オブジェクトを比較して、大きい方を決定します。|  
 |[CFileTime::operator&gt;=](#operator_gt_eq)|この演算子は、2 つの `CFileTime` オブジェクトを比較して、等しいかどうか、または大きい方を決定します。|  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
-|[CFileTime::Day](#day)|1 日を構成するための静的データ メンバーが 100 ナノ秒間隔の数を格納します。|  
-|[CFileTime::Hour](#hour)|1 時間を構成するための静的データ メンバーが 100 ナノ秒間隔の数を格納します。|  
-|[CFileTime::Millisecond](#millisecond)|1 ミリ秒を 100 ナノ秒間隔の数が格納される静的データ メンバーを構成します。|  
-|[CFileTime::Minute](#minute)|1 分を構成するための 100 ナノ秒間隔の数が格納される静的データ メンバーです。|  
-|[CFileTime::Second](#second)|1 秒間を構成するための静的データ メンバーが 100 ナノ秒間隔の数を格納します。|  
-|[CFileTime::Week](#week)|1 週間を構成するための 100 ナノ秒間隔の数が格納される静的データ メンバーです。|  
+|[CFileTime::Day](#day)|1 日を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。|  
+|[CFileTime::Hour](#hour)|1 時間を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。|  
+|[CFileTime::Millisecond](#millisecond)|1 ミリ秒を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。|  
+|[CFileTime::Minute](#minute)|1 分を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。|  
+|[CFileTime::Second](#second)|1 秒間を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。|  
+|[CFileTime::Week](#week)|1 週間を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、作成、アクセスおよびファイルの変更に関連付けられた日付と時刻の値を管理するためのメソッドを提供します。 メソッドとこのクラスのデータでよく使用されますと共に`CFileTimeSpan`相対時間値の処理のオブジェクト。  
+ このクラスは、作成、アクセスおよびファイルの変更に関連付けられた日付と時刻の値を管理するためのメソッドを提供します。 このクラスのデータとメソッドがと共にで頻繁に使用`CFileTimeSpan`相対時刻値の処理のオブジェクト。  
   
- 日付と時刻の値は、1601 年 1 月 1 日から 100 ナノ秒間隔の数を表す 64 ビット値として格納されます。 これは、世界協定時刻 (UTC) 形式です。  
+ 日付と時刻の値は 1601 年 1 月 1 日以降の 100 ナノ秒間隔の数を表す 64 ビット値として格納されます。 これは、世界協定時刻 (UTC) 形式です。  
   
- 計算を簡単には、次の静的な const メンバー変数が用意されています。  
+ 計算が簡単には、次の静的 const メンバー変数が用意されています。  
   
 |メンバー変数|100 ナノ秒間隔の数|  
 |---------------------|-----------------------------------------|  
@@ -124,14 +111,14 @@ class CFileTime :  public FILETIME
 |Day|時間 * 24|  
 |週|1 日 * 7|  
   
- **注**すべてのファイル システムの作成を記録でき、最終アクセス時刻およびすべてのファイル システム、同じ方法でそれらを記録します。 Windows NT FAT ファイル システム上の例を作成するためのある時間の解像度は 10 ミリ秒、書き込み時間は 2 秒の解像度およびアクセス時間が 1 日 (アクセス日) の解像度です。 NTFS では、アクセス時間は 1 時間の解像度を持ちます。 さらに、FAT は現地時間でディスク上の時刻を記録しますが、NTFS がディスク上の時刻を UTC に記録します。 詳細については、次を参照してください。[ファイル時間](http://msdn.microsoft.com/library/windows/desktop/ms724290)します。  
+ **注**作成を記録できるすべてのファイル システムとの最終アクセス時刻およびすべてのファイル システム、同じ方法でそれらを記録します。 Windows NT FAT ファイル システム上の例を作成する時間は 10 ミリ秒単位の解像度、書き込み時間は 2 秒単位の解像度およびアクセス時刻が 1 日 (アクセス日) の解決。 NTFS では、アクセス時間は 1 時間の解像度がします。 さらに、FAT は現地時刻でディスク上の時刻を記録しますが、NTFS がディスク上の時刻を UTC に記録します。 詳細については、次を参照してください。[ファイル回](http://msdn.microsoft.com/library/windows/desktop/ms724290)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `FILETIME`  
   
  `CFileTime`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atltime.h  
   
 ##  <a name="cfiletime"></a>CFileTime::CFileTime  
@@ -148,20 +135,20 @@ CFileTime(ULONGLONG nTime) throw();
  A [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284)構造体。  
   
  `nTime`  
- 日付と時刻を 64 ビット値として表されます。  
+ 日付と 64 ビット値として表される時刻。  
   
 ### <a name="remarks"></a>コメント  
- `CFileTime`を既存の日付と時刻からを使用してオブジェクトを作成できる、`FILETIME`構造体、または 64 ビット値 (ローカルまたは時刻を世界協定時刻 (UTC)) として表されます。 既定のコンス トラクターは、時間を 0 に設定します。  
+ `CFileTime`を既存の日付と時刻からを使用してオブジェクトを作成する、`FILETIME`構造体、または 64 ビットの値 (ローカルまたは世界協定時刻 (UTC) 時刻の形式) として表されます。 既定のコンス トラクターは、時間を 0 に設定します。  
   
 ##  <a name="day"></a>CFileTime::Day  
- 1 日を構成するための静的データ メンバーが 100 ナノ秒間隔の数を格納します。  
+ 1 日を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。  
   
 ```
 static const ULONGLONG Day = Hour* 24;
 ```  
   
 ### <a name="example"></a>例  
- 例を参照してください[CFileTime::Millisecond](#millisecond)します。  
+ 例を参照して[CFileTime::Millisecond](#millisecond)です。  
   
 ##  <a name="getcurrenttime"></a>CFileTime::GetCurrentTime  
  この静的関数を取得する、`CFileTime`を現在のシステム日付と時刻を表すオブジェクト。  
@@ -174,63 +161,63 @@ static CFileTime GetCurrentTime() throw();
  現在のシステム日付と時刻を世界協定時刻 (UTC) 形式で返します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&41;](../../atl-mfc-shared/reference/codesnippet/cpp/cfiletime-class_1.cpp)]  
+ [!code-cpp[NVC_MFCFiles#41](../../atl-mfc-shared/reference/codesnippet/cpp/cfiletime-class_1.cpp)]  
   
 ##  <a name="gettime"></a>CFileTime::GetTime  
- 時刻を取得するには、このメソッドを呼び出して、`CFileTime`オブジェクトです。  
+ 時刻を取得するには、このメソッドを呼び出して、`CFileTime`オブジェクト。  
   
 ```
 ULONGLONG GetTime() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 日付と時刻をローカルまたは世界協定時刻 (UTC) 形式のいずれかである可能性があります、64 ビットの数値として返します。  
+ ローカルまたは世界協定時刻 (UTC) 形式のいずれかである可能性があります、64 ビットの数値として日付を返します。  
   
 ##  <a name="hour"></a>CFileTime::Hour  
- 1 時間を構成するための静的データ メンバーが 100 ナノ秒間隔の数を格納します。  
+ 1 時間を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。  
   
 ```
 static const ULONGLONG Hour = Minute* 60;
 ```  
   
 ### <a name="example"></a>例  
- 例を参照してください[CFileTime::Millisecond](#millisecond)します。  
+ 例を参照して[CFileTime::Millisecond](#millisecond)です。  
   
 ##  <a name="localtoutc"></a>CFileTime::LocalToUTC  
- ローカル ファイルの時刻を世界協定時刻 (UTC) のファイル時刻に変換するには、このメソッドを呼び出します。  
+ ローカルのファイル時刻を世界協定時刻 (UTC) のファイル時刻に変換するには、このメソッドを呼び出します。  
   
 ```
 CFileTime LocalToUTC() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 返します。、 `CFileTime` UTC 形式の時刻を表すオブジェクト。  
+ 返します、 `CFileTime` UTC 形式で時刻を含むオブジェクト。  
   
 ### <a name="example"></a>例  
- 例を参照してください[CFileTime::UTCToLocal](#utctolocal)します。  
+ 例を参照して[CFileTime::UTCToLocal](#utctolocal)です。  
   
 ##  <a name="millisecond"></a>CFileTime::Millisecond  
- 1 ミリ秒を 100 ナノ秒間隔の数が格納される静的データ メンバーを構成します。  
+ 1 ミリ秒を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。  
   
 ```
 static const ULONGLONG Millisecond = 10000;
 ```  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&44;](../../atl-mfc-shared/reference/codesnippet/cpp/cfiletime-class_2.cpp)]  
+ [!code-cpp[NVC_MFCFiles#44](../../atl-mfc-shared/reference/codesnippet/cpp/cfiletime-class_2.cpp)]  
   
 ##  <a name="minute"></a>CFileTime::Minute  
- 1 分を構成するための 100 ナノ秒間隔の数が格納される静的データ メンバーです。  
+ 1 分を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。  
   
 ```
 static const ULONGLONG Minute = Second* 60;
 ```  
   
 ### <a name="example"></a>例  
- 例を参照してください[CFileTime::Millisecond](#millisecond)します。  
+ 例を参照して[CFileTime::Millisecond](#millisecond)です。  
   
 ##  <a name="operator_-"></a>CFileTime::operator-  
- この演算子を使用で減算を実行する、`CFileTime`または`CFileTimeSpan`オブジェクトです。  
+ この演算子は使用で減算を実行する、`CFileTime`または`CFileTimeSpan`オブジェクト。  
   
 ```
 CFileTime operator-(CFileTimeSpan span) const throw();
@@ -245,10 +232,10 @@ CFileTimeSpan operator-(CFileTime ft) const throw();
  `CFileTime` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。、`CFileTime`オブジェクトまたは`CFileTimeSpan`2 つのオブジェクト間の時間差の結果を表すオブジェクト。  
+ 返します、`CFileTime`オブジェクトまたは`CFileTimeSpan`2 つのオブジェクト間の時間差の結果を表すオブジェクト。  
   
 ##  <a name="operator_neq"></a>CFileTime::operator! =  
- 2 つを比較して`CFileTime`の非等値オブジェクトです。  
+ この演算子は、2 つを比較して`CFileTime`の非等値オブジェクトです。  
   
 ```
 bool operator!=(CFileTime ft) const throw();
@@ -259,7 +246,7 @@ bool operator!=(CFileTime ft) const throw();
  比較される `CFileTime` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **true**比較対象のアイテムがと等しくない場合、`CFileTime`オブジェクト、それ以外の場合**false**します。  
+ 返します**true**比較対象のアイテムと等しくない場合、`CFileTime`オブジェクト、それ以外の場合**false**です。  
   
 ##  <a name="operator_add"></a>CFileTime::operator +  
  この演算子は、`CFileTimeSpan` オブジェクトで加算を実行するために使用します。  
@@ -273,9 +260,9 @@ CFileTime operator+(CFileTimeSpan span) const throw();
  `CFileTimeSpan` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。、`CFileTime`元の時刻との相対的な時間の結果を表すオブジェクト。  
+ 返します、`CFileTime`元の時刻と相対時刻の結果を表すオブジェクト。  
   
-##  <a name="operator_add_eq"></a>CFileTime::operator + = 演算子  
+##  <a name="operator_add_eq"></a>CFileTime::operator + =  
  この演算子は、`CFileTimeSpan` オブジェクトで加算を実行し、結果を現在のオブジェクトに代入するために使用します。  
   
 ```
@@ -287,7 +274,7 @@ CFileTime& operator+=(CFileTimeSpan span) throw();
  `CFileTimeSpan` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 取得、更新された`CFileTime`元の時刻との相対的な時間の結果を表すオブジェクト。  
+ 更新されたを返します`CFileTime`元の時刻と相対時刻の結果を表すオブジェクト。  
   
 ##  <a name="operator_lt"></a>CFileTime::operator&lt;  
  この演算子は、2 つの `CFileTime` オブジェクトを比較して、小さい方を決定します。  
@@ -301,10 +288,10 @@ bool operator<(CFileTime ft) const throw();
  比較される `CFileTime` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **true**最初のオブジェクトが、1 秒より小さい (前の時刻) の場合**false**それ以外の場合。  
+ 返します**true**場合は、最初のオブジェクトが、2 番目より小さい (前の時刻) **false**それ以外の場合。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&43;](../../atl-mfc-shared/reference/codesnippet/cpp/cfiletime-class_3.cpp)]  
+ [!code-cpp[NVC_MFCFiles#43](../../atl-mfc-shared/reference/codesnippet/cpp/cfiletime-class_3.cpp)]  
   
 ##  <a name="operator_lt_eq"></a>CFileTime::operator&lt;=  
  この演算子では、2 つの `CFileTime` オブジェクトを比較して、等しいかどうか、または小さい方を決定します。  
@@ -318,7 +305,7 @@ bool operator<=(CFileTime ft) const throw();
  比較される `CFileTime` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **true**最初のオブジェクト (前の時刻) よりも小さいか等しい場合、2 番目にそれ以外の場合**false**します。  
+ 返します**true**最初のオブジェクト (前の時刻) よりも小さいか等しい場合に、2 つ目は、それ以外の場合**false**です。  
   
 ##  <a name="operator_eq"></a>CFileTime::operator =  
  代入演算子です。  
@@ -332,10 +319,10 @@ CFileTime& operator=(const FILETIME& ft) throw();
  A`CFileTime`新しい時刻と日付を含むオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 取得、更新された`CFileTime`オブジェクトです。  
+ 更新されたを返します`CFileTime`オブジェクト。  
   
 ##  <a name="operator_-_eq"></a>CFileTime::operator =  
- この演算子を使用で減算を実行する、`CFileTimeSpan`オブジェクトし、結果を現在のオブジェクトに代入します。  
+ この演算子は使用で減算を実行する、`CFileTimeSpan`オブジェクトし、現在のオブジェクトに、結果を代入します。  
   
 ```
 CFileTime& operator-=(CFileTimeSpan span) throw();
@@ -343,10 +330,10 @@ CFileTime& operator-=(CFileTimeSpan span) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `span`  
- A`CFileTimeSpan`減算する相対的な時間を表すオブジェクト。  
+ A`CFileTimeSpan`を減算する相対的な時間を含むオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 取得、更新された`CFileTime`オブジェクトです。  
+ 更新されたを返します`CFileTime`オブジェクト。  
   
 ##  <a name="operator_eq_eq"></a>CFileTime::operator = =  
  この演算子は、2 つの `CFileTime` オブジェクトが等しいかどうかを比較します。  
@@ -360,7 +347,7 @@ bool operator==(CFileTime ft) const throw();
  `CFileTime`と比較するオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **true** 、オブジェクトが等しい場合、それ以外の場合**false**します。  
+ 返します**true** 、オブジェクトが等しい場合、それ以外の場合**false**です。  
   
 ##  <a name="operator_gt"></a>CFileTime::operator&gt;  
  この演算子は、2 つの `CFileTime` オブジェクトを比較して、大きい方を決定します。  
@@ -374,7 +361,7 @@ bool operator>(CFileTime ft) const throw();
  比較される `CFileTime` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **true** (後の時刻) の最初のオブジェクトがより大きい場合は、2 番目よりもそれ以外の場合**false**します。  
+ 返します**true** (後の時刻) の最初のオブジェクトがより大きいかどうか、2 番目よりそれ以外の場合**false**です。  
   
 ##  <a name="operator_gt_eq"></a>CFileTime::operator&gt;=  
  この演算子は、2 つの `CFileTime` オブジェクトを比較して、等しいかどうか、または大きい方を決定します。  
@@ -388,20 +375,20 @@ bool operator>=(CFileTime ft) const throw();
  比較される `CFileTime` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **true**最初のオブジェクト (後の時刻) より大きいか等しい場合、2 番目にそれ以外の場合**false**します。  
+ 返します**true**最初のオブジェクト (後の時刻) より大きいか等しい場合に、2 つ目は、それ以外の場合**false**です。  
   
 ##  <a name="second"></a>CFileTime::Second  
- 1 日を構成するための静的データ メンバーが 100 ナノ秒間隔の数を格納します。  
+ 1 日を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。  
   
 ```
 static const ULONGLONG Second = Millisecond* 1000;
 ```  
   
 ### <a name="example"></a>例  
- 例を参照してください[CFileTime::Millisecond](#millisecond)します。  
+ 例を参照して[CFileTime::Millisecond](#millisecond)です。  
   
 ##  <a name="settime"></a>CFileTime::SetTime  
- によって格納された日時を設定するには、このメソッドを呼び出して、`CFileTime`オブジェクトです。  
+ によって格納された日時を設定するには、このメソッドを呼び出して、`CFileTime`オブジェクト。  
   
 ```
 void SetTime(ULONGLONG nTime) throw();
@@ -409,36 +396,35 @@ void SetTime(ULONGLONG nTime) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `nTime`  
- 日付と時刻をローカル アカウントまたは世界協定時刻 (UTC) 形式で表す 64 ビット値。  
+ 日付とローカルまたは世界協定時刻 (UTC) 形式の時刻を表す 64 ビット値。  
   
 ##  <a name="utctolocal"></a>CFileTime::UTCToLocal  
- 時刻、世界協定時刻 (UTC) に基づいてファイルをローカル時刻に変換するには、このメソッドを呼び出します。  
+ このメソッドを呼び出して時刻、世界協定時刻 (UTC) に基づいてローカル ファイルの時刻に変換します。  
   
 ```
 CFileTime UTCToLocal() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 返します。、`CFileTime`ファイルのローカル時刻の形式の時刻を表すオブジェクト。  
+ 返します、`CFileTime`ファイルのローカル時刻形式の時刻を含むオブジェクト。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&42;](../../atl-mfc-shared/reference/codesnippet/cpp/cfiletime-class_4.cpp)]  
+ [!code-cpp[NVC_MFCFiles#42](../../atl-mfc-shared/reference/codesnippet/cpp/cfiletime-class_4.cpp)]  
   
 ##  <a name="week"></a>CFileTime::Week  
- 1 週間を構成するための 100 ナノ秒間隔の数が格納される静的データ メンバーです。  
+ 1 週間を構成するための 100 ナノ秒間隔の数を格納する静的データ メンバーです。  
   
 ```
 static const ULONGLONG Week = Day* 7;
 ```  
   
 ### <a name="example"></a>例  
- 例を参照してください[CFileTime::Millisecond](#millisecond)します。  
+ 例を参照して[CFileTime::Millisecond](#millisecond)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284)   
  [持つクラス](../../atl-mfc-shared/reference/cfiletimespan-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
- [ATL と MFC クラスの共有](../../atl-mfc-shared/atl-mfc-shared-classes.md)
-
+ [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)
 
 

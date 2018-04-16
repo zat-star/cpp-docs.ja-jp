@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _fseek_nolock
 - _fseeki64_nolock
@@ -38,30 +38,17 @@ helpviewer_keywords:
 - _fseeki64_nolock function
 - seek file pointers
 ms.assetid: 2dd4022e-b715-462b-b935-837561605a02
-caps.latest.revision: 13
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 256ea0d3f0c1eabf917ea914bc6194744fb38d5c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 413811b5a0a02324de455ff521b729f2fd8295ea
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fseeknolock-fseeki64nolock"></a>_fseek_nolock、_fseeki64_nolock
 指定した場所にファイル ポインターを移動します。  
@@ -97,7 +84,7 @@ int _fseeki64_nolock(
 ## <a name="remarks"></a>コメント  
  これらの関数はそれぞれ `fseek` および `_fseeki64` のロックなしバージョンです。他のスレッドによる干渉から保護されないことを除き、それぞれ、`fseek` および `_fseeki64` と同じです。 これらの関数では他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
@@ -106,7 +93,7 @@ int _fseeki64_nolock(
   
  互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [ftell、_ftelli64](../../c-runtime-library/reference/ftell-ftelli64.md)   
  [_lseek、_lseeki64](../../c-runtime-library/reference/lseek-lseeki64.md)   

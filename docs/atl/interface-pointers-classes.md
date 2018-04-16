@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: vc.atl.pointers.interface
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- vc.atl.pointers.interface
+dev_langs:
+- C++
 helpviewer_keywords:
 - pointers, to interfaces
 - interfaces, pointers classes
 - interface pointers classes
 ms.assetid: 712617a1-17ae-4b5c-a32c-a48b758df7a6
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d2dfe77eefeec24a2be1ba6d0cceaa53218d72a0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7919b775ae8dc416fb67ac0f742835a117bbe087
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="interface-pointers-classes"></a>インターフェイス ポインター クラス
 次のクラスは、指定されたインターフェイス ポインターを管理します。  
@@ -37,6 +42,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [CComGITPtr](../atl/reference/ccomgitptr-class.md)インターフェイス ポインターと、グローバル インターフェイス テーブル (GIT) を処理するメソッドを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

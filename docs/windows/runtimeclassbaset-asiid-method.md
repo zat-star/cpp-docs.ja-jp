@@ -1,25 +1,32 @@
 ---
-title: "Runtimeclassbaset::asiid メソッド |Microsoft ドキュメント"
-ms.custom: 
+title: Runtimeclassbaset::asiid メソッド |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: implements/Microsoft::WRL::Details::RuntimeClassBaseT::AsIID
-dev_langs: C++
-helpviewer_keywords: AsIID method
+f1_keywords:
+- implements/Microsoft::WRL::Details::RuntimeClassBaseT::AsIID
+dev_langs:
+- C++
+helpviewer_keywords:
+- AsIID method
 ms.assetid: 90d7df8a-cf9e-4eef-8837-bc1a25f3fa1a
-caps.latest.revision: "5"
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 796718c4533bf8730ca7a4c733e5809fb0fde880
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 17d67ee58e9ecc3b0ef463d6af132fec3a1c0a2f
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="runtimeclassbasetasiid-method"></a>RuntimeClassBaseT::AsIID メソッド
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -27,9 +34,7 @@ WRL インフラストラクチャをサポートし、コードから直接使�
 ## <a name="syntax"></a>構文  
   
 ```  
-template<  
-   typename T  
->  
+template<typename T>  
 __forceinline static HRESULT AsIID(  
    _In_ T* implements,  
    REFIID riid,  

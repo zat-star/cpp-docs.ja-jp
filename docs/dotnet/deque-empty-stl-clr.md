@@ -1,25 +1,32 @@
 ---
-title: "deque::empty (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: deque::empty (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::deque::empty
-dev_langs: C++
-helpviewer_keywords: empty member [STL/CLR]
+f1_keywords:
+- cliext::deque::empty
+dev_langs:
+- C++
+helpviewer_keywords:
+- empty member [STL/CLR]
 ms.assetid: 6ff3dd07-ebdf-47f9-b0d2-8a3229390d3b
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8cc9c3edb0fb8bc458090a5692e4e150a41cace0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 3f9ceb0664ca8cd6081a3de6e1819c4ea4bf7e4c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dequeempty-stlclr"></a>deque::empty (STL/CLR)
 要素が存在しないかどうかをテストします。  
@@ -71,11 +78,11 @@ size() = 0
 empty() = True  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/deque >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
  [deque::size (STL/CLR)](../dotnet/deque-size-stl-clr.md)

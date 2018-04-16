@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -98,7 +99,8 @@ f1_keywords:
 - AFXCMN/CToolBarCtrl::SetStyle
 - AFXCMN/CToolBarCtrl::SetToolTips
 - AFXCMN/CToolBarCtrl::SetWindowTheme
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CToolBarCtrl [MFC], CToolBarCtrl
 - CToolBarCtrl [MFC], AddBitmap
@@ -189,15 +191,17 @@ helpviewer_keywords:
 - CToolBarCtrl [MFC], SetToolTips
 - CToolBarCtrl [MFC], SetWindowTheme
 ms.assetid: 8f2f8ad2-05d7-4975-8715-3f2eed795248
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ae8e41f1381daeb97b2fa918a436db9dab8bc953
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 054e3de4daa7d5bd25583286e958c0c9b07c4090
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctoolbarctrl-class"></a>CToolBarCtrl クラス
 Windows ツール バー コモン コントロールの機能が用意されています。  
@@ -355,7 +359,7 @@ class CToolBarCtrl : public CWnd
   
  `CToolBarCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="addbitmap"></a>CToolBarCtrl::AddBitmap  
@@ -2087,7 +2091,7 @@ HRESULT SetWindowTheme(LPCWSTR pszSubAppName);
 ### <a name="remarks"></a>コメント  
  このメンバー関数の機能をエミュレートする、 [TB_SETWINDOWTHEME](http://msdn.microsoft.com/library/windows/desktop/bb787465)メッセージ、Windows SDK で説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CMNCTRL1](../../visual-cpp-samples.md)   
  [MFC サンプル MFCIE](../../visual-cpp-samples.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   

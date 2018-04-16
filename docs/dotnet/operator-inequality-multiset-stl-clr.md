@@ -1,33 +1,37 @@
 ---
-title: "operator!= (multiset) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multiset::operator!="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator!= メンバー [STL/CLR]"
+title: "operator! = (multiset) (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::multiset::operator!=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator!= member [STL/CLR]
 ms.assetid: d4bad562-b58b-4578-94ab-0aa0e191b3ca
-caps.latest.revision: 14
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c29e9de16a3c909b7294d425599093f2b80c62f1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator!= (multiset) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-等価比較をクリックします。  
+# <a name="operator-multiset-stlclr"></a>operator!= (multiset) (STL/CLR)
+等しくない比較を一覧表示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Key>  
@@ -35,17 +39,17 @@ template<typename Key>
         multiset<Key>% right);  
 ```  
   
-#### パラメーター  
- \[left\]  
- 比較の左辺のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 左へ  
+ 比較する左のコンテナー。  
   
- \[right\]  
- 比較の右辺のコンテナー。  
+ 右  
+ 比較する右のコンテナー。  
   
-## 解説  
- 演算子関数の戻り値 `!(``left``==``right``)`。  2 個のマルチセットが要素によって比較された要素の場合 `left` が `right` と同じ順序されていないかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ 演算子関数を返します`!(left == right)`です。 テストするために使用するかどうか`left`順序付けされていないと同じ`right`がいつ行われる 2 つのマルチセット要素で要素を比較します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multiset_operator_ne.cpp   
@@ -85,19 +89,22 @@ int main()
   
 ```  
   
-  **b c**  
- **b d**  
-**b c \[\]\! \= b c \[\] false です。**  
-**b c \[\]\! \[\] d \= b です**   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+```Output  
+ a b c  
+ a b d  
+[a b c] != [a b c] is False  
+[a b c] != [a b d] is True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext と set >  
   
-## 参照  
- [multiset](../dotnet/multiset-stl-clr.md)   
- [operator\=\= \(multiset\)](../Topic/operator==%20\(multiset\)%20\(STL-CLR\).md)   
- [operator\< \(multiset\)](../dotnet/operator-less-than-multiset-stl-clr.md)   
- [operator\>\= \(multiset\)](../Topic/operator%3E=%20\(multiset\)%20\(STL-CLR\).md)   
- [operator\> \(multiset\)](../dotnet/operator-greater-than-multiset-stl-clr.md)   
- [operator\<\= \(multiset\)](../Topic/operator%3C=%20\(multiset\)%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マルチセット (STL/CLR)](../dotnet/multiset-stl-clr.md)   
+ [演算子 = = (multiset) (STL/CLR)](../dotnet/operator-equality-multiset-stl-clr.md)   
+ [演算子\<(multiset) (STL/CLR)](../dotnet/operator-less-than-multiset-stl-clr.md)   
+ [operator > = (multiset) (STL/CLR)](../dotnet/operator-greater-or-equal-multiset-stl-clr.md)   
+ [operator > (multiset) (STL/CLR)](../dotnet/operator-greater-than-multiset-stl-clr.md)   
+ [operator<= (multiset) (STL/CLR)](../dotnet/operator-less-or-equal-multiset-stl-clr.md)

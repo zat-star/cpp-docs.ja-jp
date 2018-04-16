@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - progress_reporter
 - PPLTASKS/concurrency::progress_reporter
 - PPLTASKS/concurrency::progress_reporter::progress_reporter
 - PPLTASKS/concurrency::progress_reporter::report
-dev_langs: C++
-helpviewer_keywords: progress_reporter class
+dev_langs:
+- C++
+helpviewer_keywords:
+- progress_reporter class
 ms.assetid: b836efab-2d05-4649-b6fa-d15236f1f813
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a72250bcb35b625276d0b8692ce1ec9d13a20ade
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 122a5b5c402e356863c40e2fb7d461dbe3f0b7b9
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="progressreporter-class"></a>progress_reporter クラス
 progress reporter クラスは、特定の型の進行状況の通知をレポートできます。 各 progress_reporter オブジェクトが、特定の非同期アクションまたは操作にバインドされます。  
@@ -51,26 +56,26 @@ class progress_reporter;
   
 |名前|説明|  
 |----------|-----------------|  
-|[レポート](#report)|progress reporter クラスのバインド先となる非同期アクションまたは非同期操作に、進行状況レポートを送信します。|  
+|[report](#report)|progress reporter クラスのバインド先となる非同期アクションまたは非同期操作に、進行状況レポートを送信します。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、Windows ストア アプリでのみ使用できます。  
+ この型は、Windows ランタイム アプリをできるだけです。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `progress_reporter`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** ppltasks.h  
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>progress_reporter 
+##  <a name="ctor"></a> progress_reporter 
 
 ```
 progress_reporter();
 ```  
   
-##  <a name="report"></a>レポート 
+##  <a name="report"></a> レポート 
 
  progress reporter クラスのバインド先となる非同期アクションまたは非同期操作に、進行状況レポートを送信します。  
   
@@ -82,5 +87,5 @@ void report(const _ProgressType& val) const;
  `val`  
  進行状況を示す通知によって報告されるペイロード。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

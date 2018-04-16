@@ -1,41 +1,46 @@
 ---
-title: "CAtlServiceModuleT::ServiceMain 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ServiceMain"
-  - "CServiceModule::ServiceMain"
-  - "CServiceModule.ServiceMain"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ServiceMain メソッド"
+title: "CAtlServiceModuleT::ServiceMain 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ServiceMain
+- CServiceModule::ServiceMain
+- CServiceModule.ServiceMain
+dev_langs:
+- C++
+helpviewer_keywords:
+- ServiceMain method
 ms.assetid: f21408c1-1919-4dec-88d8-bf5b39ac9808
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 633e9bc4689ced93e1c22151b32654f7ae9d7ece
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CAtlServiceModuleT::ServiceMain 関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\(SCM\) サービス コントロール マネージャーはサービスのコントロール パネルのアプリケーションを開き、サービスを選択し、を **\[開始\]**をクリックすると `ServiceMain` を呼び出します。  
+# <a name="catlservicemoduletservicemain-function"></a>CAtlServiceModuleT::ServiceMain 関数
+サービス コントロール マネージャー (SCM) を呼び出す`ServiceMain`コントロール パネルの サービス アプリケーションを開いたときに、サービスを選択し、をクリックして**開始**です。  
   
- SCM が `ServiceMain`を呼び出した後、サービスは SCM にハンドラー関数を付ける必要があります。  この関数は SCM がサービスの状態を取得し、特定の命令を渡すようにします \(一時停止、停止など\)。  SCM は、Win32 API の関数にこの関数を時サービス パス **\_Handler**、[RegisterServiceCtrlHandler](http://msdn.microsoft.com/library/windows/desktop/ms685054)取得します。  \(**\_Handler** は静的でないメンバー関数を呼び出す [&#91;ハンドラー&#93;](../Topic/CAtlServiceModuleT::Handler%20Function.md)静的メンバー関数です\)。  
+ SCM 後、呼び出して`ServiceMain`サービスがハンドラー関数には、SCM の与える必要があります。 この関数は、サービスの状態を取得して (一時停止または停止) などの具体的な手順を渡す SCM を使用できます。 SCM は、サービスが成功したときにこの関数を取得**_Handler** Win32 API 関数を[RegisterServiceCtrlHandler](http://msdn.microsoft.com/library/windows/desktop/ms685054)です。 (**_Handler**非静的メンバー関数を呼び出す静的メンバー関数は、[ハンドラー](../atl/reference/catlservicemodulet-class.md#handler))。  
   
- 起動時に、サービスは、状態を SCM に通知する必要があります。  このクラスは Win32 API 関数に **SERVICE\_START\_PENDING** 渡すことによってこれを、[SetServiceStatus](http://msdn.microsoft.com/library/windows/desktop/ms686241)を説明します。  
+ 起動時に、サービスは、現在の状態の SCM を通知する必要もします。 これは渡すことによって、 **SERVICE_START_PENDING** Win32 API 関数を[SetServiceStatus](http://msdn.microsoft.com/library/windows/desktop/ms686241)です。  
   
- `ServiceMain` は、`CAtlExeModuleT::InitializeCom`を呼び出し、Win32 API 関数 [CoInitializeEx](http://msdn.microsoft.com/library/windows/desktop/ms695279)を呼び出す。  既定では、`InitializeCom` は、関数に **COINIT\_MULTITHREADED** のフラグを渡します。  このフラグは、プログラムでフリー スレッド サーバーであることを示します。  
+ `ServiceMain`呼び出して`CAtlExeModuleT::InitializeCom`、Win32 API 関数を呼び出している[CoInitializeEx](http://msdn.microsoft.com/library/windows/desktop/ms695279)です。 既定では、`InitializeCom`渡します、 **COINIT_MULTITHREADED**関数へのフラグ。 このフラグは、プログラムがフリー スレッドのサーバーであることを示します。  
   
- 次に、`CAtlServiceModuleT::Run` は、サービスの主要な処理を実行するために呼び出されます。  **\[実行\]** は、サービスを停止するまで継続します。  
+ ここで、`CAtlServiceModuleT::Run`サービスの主な作業を実行すると呼びます。 **実行**サービスが停止されるまでの実行を継続します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [サービス](../atl/atl-services.md)   
- [CAtlServiceModuleT::ServiceMain](../Topic/CAtlServiceModuleT::ServiceMain.md)
+ [CAtlServiceModuleT::ServiceMain](../atl/reference/catlservicemodulet-class.md#servicemain)
+

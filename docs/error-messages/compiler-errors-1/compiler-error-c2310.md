@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2310
 ms.assetid: 1969c682-b97e-43fb-b9a9-f783e7ff1710
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 05c6b4501261764bf3c97a699fa2935b50ec0896
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 526ba25418a3d61764eb2ce1fa36c1e5faea00e3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2310"></a>コンパイラ エラー C2310
 catch ハンドラーは 1 つの型を指定する必要があります。  

@@ -1,50 +1,53 @@
 ---
-title: "モジュール定義ステートメントに関する規則 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - ".def"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "モジュール定義ファイル"
-  - "モジュール定義ファイル, ステートメント構文"
+title: "モジュール定義ステートメントに関する規則 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- .def
+dev_langs:
+- C++
+helpviewer_keywords:
+- module definition files, statement syntax
+- module definition files
 ms.assetid: f65cd3a7-65d7-4d06-939f-a8b1ecd50f2d
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 40eb4875b195871aff8d274667e005d63424a110
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# モジュール定義ステートメントに関する規則
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-以下の構文規則は、.def ファイル内のすべてのステートメントに適用されます。  特定のステートメントに対してだけ適用される規則については、それぞれのステートメントの説明を参照してください。  
+# <a name="rules-for-module-definition-statements"></a>モジュール定義ステートメントに関する規則
+次の構文規則は、.def ファイル内のすべてのステートメントに適用されます。 特定のステートメントに適用されるその他の規則は、それぞれのステートメントについて説明します。  
   
--   ステートメント、属性キーワード、およびユーザー指定の識別子では、大文字と小文字が区別されます。  
+-   ステートメント、属性のキーワード、およびユーザー指定の識別子は大文字小文字を区別します。  
   
--   スペースやセミコロン \(;\) を含む長いファイル名は、引用符 \("\) で囲みます。  
+-   長いファイル名を空白またはセミコロン (;) を格納している引用符 (") で囲む必要があります。  
   
--   ステートメントのキーワードと引数の間、およびステートメントとステートメントの間は、1 つ以上のスペース、タブ、改行文字のいずれかで区切ります。  引数を示すコロン \(:\) や等号 \(\=\) の両側には、スペース、タブ、改行文字のいずれかを挿入します。  
+-   ステートメントのキーワードを引数に区別するため、個々 のステートメントを区切るために、スペース、タブ、または改行文字の 1 つまたは複数を使用します。 コロン (:) または等号 (=) の引数を指定するは、0 以上のスペース、タブ、または改行文字で囲まれています。  
   
--   **NAME** ステートメントまたは **LIBRARY** ステートメントを使用する場合は、ほかのどのステートメントよりも先に記述します。  
+-   A**名前**または**ライブラリ**ステートメントでは、使用する場合の他のすべてのステートメント必要があります前にします。  
   
--   **SECTIONS** ステートメントと **EXPORTS** ステートメントは、同じ .def ファイル内で複数回使用できます。  各ステートメントでは、複数の引数を指定できます。この場合、それぞれの指定を 1 つ以上のスペース、タブ、改行文字のいずれかで区切ります。  ステートメント キーワードは、最初の指定の前に 1 回記述します。ただし、以降のそれぞれの指定の前で、繰り返し使用してもかまいません。  
+-   **セクション**と**エクスポート**.def ファイル内のステートメントが複数回使用できます。 各ステートメントでは、複数の仕様は、1 つ以上のスペース、タブ、または改行文字で区切る必要を実行できます。 ステートメントのキーワードでは、最初の指定の前に 1 回指定する必要があり、各追加の指定の前に繰り返すことができます。  
   
--   大半のステートメントは、LINK のコマンド ライン オプションでも指定できます。  詳細については、該当する LINK オプションの説明を参照してください。  
+-   多くのステートメントでは、同等のリンク コマンド ライン オプションがあります。 追加の詳細について、対応するリンク オプションの説明を参照してください。  
   
--   .def ファイル内のコメントには、セミコロン \(;\) をコメント行の先頭に付けます。  コメントはステートメントと同じ行には記述できませんが、複数行にわたるステートメントでは指定と指定の間に挿入できます。たとえば、**SECTIONS** ステートメントや **EXPORTS** ステートメントは複数行にわたるステートメントです。  
+-   .Def ファイル内のコメントはセミコロン (;) で指定されているそれぞれのコメント行の先頭にします。 コメントはステートメントでは、回線を共有することはできませんが、複数行のステートメントの仕様を区切ることができます。 (**セクション**と**エクスポート**複数行のステートメントします)。  
   
--   数値引数は、10 進表記か 16 進表記で指定します。  
+-   数値の引数が 10 進数で指定されているか、16 進数です。  
   
--   文字列の引数が[予約語](../../build/reference/reserved-words.md)と一致する場合は、二重引用符 \("\) で囲みます。  
+-   文字列引数に一致する場合、[予約語](../../build/reference/reserved-words.md)、二重引用符 (") で囲む必要があります。  
   
-## 参照  
- [モジュール定義 \(.def\) ファイル](../Topic/Module-Definition%20\(.Def\)%20Files.md)   
- [Frequently Asked Questions on Building](http://msdn.microsoft.com/ja-jp/56a3bb8f-0181-4989-bab4-a07ba950ab08)
+## <a name="see-also"></a>参照  
+ [モジュール定義 (.def) ファイル](../../build/reference/module-definition-dot-def-files.md)  

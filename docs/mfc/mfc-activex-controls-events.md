@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC ActiveX controls [MFC], events
 - notifications [MFC], notifying containers of events
@@ -20,15 +22,17 @@ helpviewer_keywords:
 - events [MFC], ActiveX controls
 - OLE events [MFC]
 ms.assetid: e1e57e0c-206b-4923-a0b5-682c26564f74
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 98be16e8e493592f06aa2e4963f748e32b3f345d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b6760f2051542a28e78f5f8f2fa81f6937388d82
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-activex-controls-events"></a>MFC ActiveX コントロール : イベント
 ActiveX コントロールは、コントロールに問題が発生しましたが、コンテナーに通知するのにイベントを使用します。 イベントの一般的な例には、コントロール、コントロールの状態で、キーボード、および変更を使用して入力データのクリックが含まれます。 これらのアクションが発生すると、コントロールは、コンテナーのアラートを生成するイベントを発生させます。  
@@ -56,7 +60,7 @@ ActiveX コントロールは、コントロールに問題が発生しました
   
 -   [MFC ActiveX コントロール: カスタム イベントの追加](../mfc/mfc-activex-controls-adding-custom-events.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
  [MFC ActiveX コントロール: メソッド](../mfc/mfc-activex-controls-methods.md)   
  [COleControl クラス](../mfc/reference/colecontrol-class.md)

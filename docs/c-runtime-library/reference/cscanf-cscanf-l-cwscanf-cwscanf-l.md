@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _cscanf_l
 - _cscanf
@@ -36,7 +37,8 @@ f1_keywords:
 - _cwscanf_l
 - cscanf_l
 - _tcscanf
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _cwscanf function
 - data [C++], reading from the console
@@ -52,21 +54,23 @@ helpviewer_keywords:
 - reading data [C++], from the console
 - _cwscanf_l function
 ms.assetid: dbfe7547-b577-4567-a1cb-893fa640e669
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 327a6eaea6b3e3dc82f0d30f63d5dd677915e738
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 341cc89c1cc73552bfa5c0da79bd75e7bea65ce0
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="cscanf-cscanfl-cwscanf-cwscanfl"></a>_cscanf、_cscanf_l、_cwscanf、_cwscanf_l
 コンソールから書式化されたデータを読み出します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_cscanf_s、_cscanf_s_l、_cwscanf_s、_cwscanf_s_l](../../c-runtime-library/reference/cscanf-s-cscanf-s-l-cwscanf-s-cwscanf-s-l.md)」を参照してください。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -107,7 +111,7 @@ int _cwscanf_l(
 ## <a name="remarks"></a>コメント  
  `_cscanf` 関数は、コンソールからデータを `argument` で指定した位置に直接読み込みます。 [_getche](../../c-runtime-library/reference/getch-getwch.md) 関数は文字を読み取るために使用されます。 省略可能なパラメーターは、それぞれ、`format` の型指定子に対応する型の変数へのポインターにする必要があります。 format は、入力フィールドの解釈を制御し、[scanf](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md) 関数の `format` パラメーターと同じ形式と機能を持ちます。 `_cscanf` は、通常、入力文字がエコーされますが、最後の呼び出しが `_ungetch` に対してである場合はエコーしません。  
   
- この関数は、パラメーターを検証します。 形式が NULL の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、関数から `EOF` が返されます。  
+ この関数は、パラメーターを検証します。 形式が NULL の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `EOF`が返されます。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
@@ -118,14 +122,14 @@ int _cwscanf_l(
 |`_tcscanf`|`_cscanf`|`_cscanf`|`_cwscanf`|  
 |`_tcscanf_l`|`_cscanf_l`|`_cscanf_l`|`_cwscanf_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_cscanf`、`_cscanf_l`|\<conio.h>|  
 |`_cwscanf`, `_cwscanf_l`|\<conio.h> または \<wchar.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -168,7 +172,7 @@ Enter three integers: 1 2 3
 You entered 3 2 1  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   
  [_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](../../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)   
  [fscanf、_fscanf_l、fwscanf、_fwscanf_l](../../c-runtime-library/reference/fscanf-fscanf-l-fwscanf-fwscanf-l.md)   

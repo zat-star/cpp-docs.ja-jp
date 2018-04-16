@@ -15,33 +15,19 @@ dev_langs:
 helpviewer_keywords:
 - C4179
 ms.assetid: 6faa05e0-5f0a-4f7d-81b1-a42c008f00e5
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: c0d6e8231d6d7dc312c017ab58aa99eae69417f6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e183e72ff83aa7afd1a7e1adf125a0303a3fc1bf
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="compiler-warning-level-1-c4179"></a>コンパイラの警告 (レベル 1) C4179
-'//*': として解析 '/'、'/\*': 標準との混同 '//' コメント  
+'//*': として解析 '/' および '/\*': 標準との混同 '//' のコメント  
   
- **//\***正しくないコメントの区切り記号です。 Use **//** or **/\*** instead.
+ **//\*** は、正しくないコメントの区切り記号です。 代わりに、 **//** または **/\*** を使用してください。

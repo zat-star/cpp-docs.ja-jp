@@ -1,25 +1,31 @@
 ---
-title: ".FPO |Microsoft ドキュメント"
+title: .FPO | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: .FPO
-dev_langs: C++
-helpviewer_keywords: .FPO directive
+ms.topic: reference
+f1_keywords:
+- .FPO
+dev_langs:
+- C++
+helpviewer_keywords:
+- .FPO directive
 ms.assetid: 35f4cd61-32f9-4262-b657-73f04f775d09
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fc26358e1da11ada6b23364576bfedb379bc4030
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 76f3fb3d06e3d09cdd63e48ef2ab8a6ce95c81e6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fpo"></a>.FPO
 します。FPO ディレクティブは、.debug' に対する $F セグメントまたはセクションにデバッグ レコードの生成を制御します。  
@@ -63,5 +69,5 @@ cbFrame
  *cbFrame*  
  フレームの種類を示します。  参照してください[FPO_DATA](http://msdn.microsoft.com/library/windows/desktop/ms679352)詳細についてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

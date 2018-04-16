@@ -1,24 +1,30 @@
 ---
-title: "最後に |Microsoft ドキュメント"
-ms.custom: 
+title: 最後に |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: finally keyword [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- finally keyword [C++]
 ms.assetid: b55f3c8e-1af0-43e8-bcfb-99c3685d2578
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 55e2b77fbbcc607d802c4ea9e54d7ef56d473bd5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: dd357c8eeed9eddc6940ce02de6e5d2b4f8c68d0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="finally"></a>finally
 加え`try`と`catch`句、CLR の例外処理のサポート、`finally`句。 セマンティクスは次のと同じ、`__finally`構造化例外処理 (SEH) をブロックします。 A`__finally`ブロックに従って、`try`または`catch`ブロックします。  
@@ -62,5 +68,5 @@ MyException
 in finally  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理](../windows/exception-handling-cpp-component-extensions.md)

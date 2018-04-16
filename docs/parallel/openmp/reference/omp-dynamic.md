@@ -1,25 +1,31 @@
 ---
-title: "OMP_DYNAMIC |Microsoft ドキュメント"
+title: OMP_DYNAMIC | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: OMP_DYNAMIC
-dev_langs: C++
-helpviewer_keywords: OMP_DYNAMIC OpenMP environment variable
+ms.topic: reference
+f1_keywords:
+- OMP_DYNAMIC
+dev_langs:
+- C++
+helpviewer_keywords:
+- OMP_DYNAMIC OpenMP environment variable
 ms.assetid: e306049d-b644-4b73-8b63-46c835bff98b
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b5c416919678cd7b0f80bd1299c7682fe159cd19
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6fcff25541921ccac9dc2e205480dc6277f620b1
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ompdynamic"></a>OMP_DYNAMIC
 OpenMP ランタイムが、並行領域内のスレッドの数を調整できるかどうかを指定します。  
@@ -50,5 +56,5 @@ set OMP_DYNAMIC=TRUE
 set OMP_DYNAMIC  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [環境変数](../../../parallel/openmp/reference/openmp-environment-variables.md)

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - _SCL_SECURE_NO_DEPRECATE
 dev_langs:
@@ -17,16 +17,17 @@ helpviewer_keywords:
 - Safe Libraries, C++ Standard Library
 - Safe C++ Standard Library
 ms.assetid: 3993340f-1f29-4d81-b3f5-52a52bc8e148
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6e53abd44312ea40eef68c39450ba63746f9c42e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 62c5e582773f534aa046eeaeda439b43358e07c2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="safe-libraries-c-standard-library"></a>安全なライブラリ: C++ 標準ライブラリ
 Visual C++ に付属しているライブラリ (C++ 標準ライブラリを含む) には、安全性を向上するためのいくつかの機能強化が加えられています。  
@@ -52,9 +53,8 @@ Visual C++ に付属しているライブラリ (C++ 標準ライブラリを含
   
  [Checked Iterators](../standard-library/checked-iterators.md)  
   
- [反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)  
+ [Debug Iterator Support](../standard-library/debug-iterator-support.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリの概要](../standard-library/cpp-standard-library-overview.md)
-
 

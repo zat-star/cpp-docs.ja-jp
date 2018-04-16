@@ -4,28 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - IPropertyPage2Impl
 - ATLCTL/ATL::IPropertyPage2Impl
 - ATLCTL/ATL::IPropertyPage2Impl::EditProperty
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - property pages
 - IPropertyPage2 ATL implementation
 - IPropertyPage2Impl class
 ms.assetid: e89fbe90-203a-47f0-a5de-23616697e1ce
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 40cdaeef31226cf47dcf4beb08f11242932578c6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 17773bdd07d4ae25b33bc104d46d607b5069f78d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ipropertypage2impl-class"></a>IPropertyPage2Impl クラス
 このクラスは実装**IUnknown**の既定の実装の継承と[IPropertyPageImpl](../../atl/reference/ipropertypageimpl-class.md)です。  
@@ -68,7 +72,7 @@ class IPropertyPage2Impl : public IPropertyPageImpl<T>
   
  `IPropertyPage2Impl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlctl.h  
   
 ##  <a name="editproperty"></a>IPropertyPage2Impl::EditProperty  
@@ -84,7 +88,7 @@ HRESULT EditProperty(DISPID dispID);
 ### <a name="remarks"></a>コメント  
  参照してください[IPropertyPage2::EditProperty](http://msdn.microsoft.com/library/windows/desktop/ms690353) Windows SDK にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IPerPropertyBrowsingImpl クラス](../../atl/reference/iperpropertybrowsingimpl-class.md)   
  [ISpecifyPropertyPagesImpl クラス](../../atl/reference/ispecifypropertypagesimpl-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

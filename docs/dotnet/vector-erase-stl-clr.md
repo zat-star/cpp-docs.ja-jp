@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::vector::erase
-dev_langs: C++
-helpviewer_keywords: erase member [STL/CLR]
+f1_keywords:
+- cliext::vector::erase
+dev_langs:
+- C++
+helpviewer_keywords:
+- erase member [STL/CLR]
 ms.assetid: 624905eb-83c0-499b-a07a-c10aebd7acc3
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7edabb5d02b09944f5745a6d6cfc264fb120eade
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f6f0b8fcef4715355038c3eaca88ee9c69b3375c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vectorerase-stlclr"></a>vector::erase (STL/CLR)
 指定した位置にある要素を削除します。  
@@ -98,11 +105,11 @@ erase(begin(), end()-1) = e
 size() = 1  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/vector >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
  [vector::clear (STL/CLR)](../dotnet/vector-clear-stl-clr.md)

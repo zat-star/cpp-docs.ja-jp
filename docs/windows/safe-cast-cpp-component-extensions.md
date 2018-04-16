@@ -4,25 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - safe_cast
 - safe_cast_cpp
 - stdcli::language::safe_cast
-dev_langs: C++
-helpviewer_keywords: safe_cast keyword [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- safe_cast keyword [C++]
 ms.assetid: 4fa688bf-a8ec-49bc-a4c5-f48134efa4f7
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bf02b1c8aa84688df5ef29f4c5e69fa818b31904
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 14bcf198d527fae51a579a2aa6e072a4c57424f1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="safecast-c-component-extensions"></a>safe_cast (C++ コンポーネント拡張)
 `safe_cast` 操作は、指定された式を指定した型で返します (成功した場合)。失敗した場合は、`InvalidCastException` をスローします。  
@@ -69,10 +75,10 @@ expression
 ### <a name="remarks"></a>コメント  
  `safe_cast`スロー`InvalidCastException`変換できない場合*式*で指定された型に*タイプ id*です。キャッチする`InvalidCastException`を指定して、 [/EH (例外処理モデル)](../build/reference/eh-exception-handling-model.md)コンパイラ オプション、および try ブロックと catch ステートメントを使用します。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  **例**  
   
  次のコード例を使用する方法を示しています`safe_cast`Windows ランタイムとします。  
@@ -149,10 +155,10 @@ expression
   
 -   [方法: C++/CLI で safe_cast を使用する](../dotnet/how-to-use-safe-cast-in-cpp-cli.md)  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/clr**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  **例**  
   
  コンパイラで `static_cast` を使用できないが `safe_cast` を使用できる状況の例の 1 つは、関連していないインターフェイス型の間でのキャストです。  `safe_cast` を使用した場合、コンパイラは変換エラーを生成せず、キャストが可能であるかどうかを実行時に検証します。  
@@ -187,5 +193,5 @@ int main() {
 Caught expected exception  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

@@ -1,29 +1,34 @@
 ---
-title: "decltype (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: decltype (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-f1_keywords: decltype_cpp
-dev_langs: C++
+f1_keywords:
+- decltype_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - operators [C++], decltype
 - decltype operator
 - operators [C++], type of an expression
 - operators [C++], deduce expression type
 ms.assetid: 6dcf8888-8196-4f13-af50-51e3797255d4
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 472b09b268fe9f493a4df025950a3565fd6c944c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ee3c83512929e4592a5ee75b954bc6c19f52f448
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="decltype--c"></a>decltype (C++)
 `decltype` 型指定子は、指定された式の型を生成します。 `decltype`と共に指定子を入力、 [auto キーワード](../cpp/auto-cpp.md)、主に記述する開発者にとってテンプレート ライブラリ役に立ちます。 `auto` と `decltype` を使用して、テンプレートの引数の型に応じた戻り値の型を持つテンプレート関数を宣言します。 または、`auto` と `decltype` を使用して、別の関数の呼び出しをラップしたテンプレート関数を宣言し、ラップされた関数の戻り値の型を返します。  
@@ -205,7 +210,7 @@ constexpr bool test2 = !IsCallable<int*, int>::value;
 static_assert(test2, "PASS2");
 ```
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  Visual C++ 2010 以降のバージョン。  
   
  `decltype(auto)`Visual Studio 2015 以降が必要です。  

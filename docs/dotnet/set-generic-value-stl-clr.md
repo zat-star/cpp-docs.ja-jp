@@ -1,41 +1,46 @@
 ---
-title: "set::generic_value (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::set::generic_value"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "generic_value メンバー [STL/CLR]"
+title: "set::generic_value (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::set::generic_value
+dev_langs:
+- C++
+helpviewer_keywords:
+- generic_value member [STL/CLR]
 ms.assetid: bdb11400-c7b8-466f-abae-5c878e7721c2
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: b00197812b2f68c5bbc4d2b76d84c77235d6f458
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# set::generic_value (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンテナーのジェネリック インターフェイスで使用する要素の型。  
+# <a name="setgenericvalue-stlclr"></a>set::generic_value (STL/CLR)
+コンテナーのジェネリック インターフェイスを使用するための要素の型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef GValue generic_value;  
 ```  
   
-## 解説  
- この型は、テンプレートのコンテナー クラスのジェネリック インターフェイスで使用するために格納された要素の値を記述する型 `GValue` オブジェクトを表します。  
+## <a name="remarks"></a>コメント  
+ この型は、型のオブジェクトを表します。`GValue`ストアド要素の値をこのテンプレートのコンテナー クラスのジェネリック インターフェイスを使用することについて説明します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_set_generic_value.cpp   
@@ -70,16 +75,19 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**  
- **a**   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+```Output  
+a b c  
+a b c  
+a  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext と set >  
   
-## 参照  
- [設定](../dotnet/set-stl-clr.md)   
- [set::generic\_container](../dotnet/set-generic-container-stl-clr.md)   
- [set::generic\_iterator](../dotnet/set-generic-iterator-stl-clr.md)   
- [set::generic\_reverse\_iterator](../Topic/set::generic_reverse_iterator%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
+ [set::generic_container (STL/CLR)](../dotnet/set-generic-container-stl-clr.md)   
+ [set::generic_iterator (STL/CLR)](../dotnet/set-generic-iterator-stl-clr.md)   
+ [set::generic_reverse_iterator (STL/CLR)](../dotnet/set-generic-reverse-iterator-stl-clr.md)

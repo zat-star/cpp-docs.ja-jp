@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3539
-dev_langs: C++
-helpviewer_keywords: C3539
+f1_keywords:
+- C3539
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3539
 ms.assetid: 34a33a0f-d1b6-498f-b312-ffad2d4799b3
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 03283217be6aabbf216e2e60ad47abfc01a961d6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ccfa0b6ca6306de4d1454fa112bd413151450ae0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3539"></a>コンパイラ エラー C3539
 'type': テンプレート引数が 'auto' を含む型にすることはできません  
@@ -44,5 +50,5 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto キーワード](../../cpp/auto-keyword.md)

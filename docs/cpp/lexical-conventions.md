@@ -14,16 +14,17 @@ helpviewer_keywords:
 - lexical conventions
 - conventions, lexical
 ms.assetid: 03f9efff-bb95-45ef-9157-0a3fac809ccf
-caps.latest.revision: 10
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 6259610d0aefab5471d90d18d3b04764f11de95c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8c132def87ce2ba2fbe72f8a4696071ab62fda82
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lexical-conventions"></a>構文規則
 このセクションでは、C++ プログラムの基本要素について説明します。 "構文の要素" または "トークン" と呼ばれるこれらの要素を使用して、ステートメント、定義、宣言などを作成し、これらを使用して完全なプログラムを作成します。 このセクションでは、次のような構文の要素について説明します。  
@@ -48,5 +49,5 @@ ms.lasthandoff: 09/25/2017
   
  このセクションには、 [ファイル変換の概要](../cpp/cpp-built-in-operators-precedence-and-associativity.md) トピックも含まれています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)

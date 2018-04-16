@@ -33,16 +33,17 @@ helpviewer_keywords:
 - CD2DTextFormat [MFC], ReCreate
 - CD2DTextFormat [MFC], m_pTextFormat
 ms.assetid: db194cec-9dae-4644-ab84-7c43b7164117
-caps.latest.revision: 16
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 26fbbbe2d9f5edde6e247d69e9e6bc840f05a55b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: b94ab280dab2bd265d7eda89c7c1ad7e9f97f8e9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2dtextformat-class"></a>CD2DTextFormat クラス
 IDWriteTextFormat のラッパーです。  
@@ -82,7 +83,7 @@ class CD2DTextFormat : public CD2DResource;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CD2DTextFormat::m_pTextFormat](#m_ptextformat)|IDWriteTextFormat へのポインター。|  
   
@@ -93,7 +94,7 @@ class CD2DTextFormat : public CD2DResource;
   
  [CD2DTextFormat](../../mfc/reference/cd2dtextformat-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="_dtorcd2dtextformat"></a>CD2DTextFormat:: ~ CD2DTextFormat  
@@ -231,6 +232,5 @@ virtual HRESULT ReCreate(CRenderTarget* */);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

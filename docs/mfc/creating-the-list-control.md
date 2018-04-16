@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CListCtrl class [MFC], creating control
 - list controls [MFC]
 ms.assetid: a4cb1729-31b6-4d2b-a44b-367474848a39
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: dd187bf945e2bcf018575db8d45e4d653c5b869b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 85afbe49943e06a66cf2fa914cc87f07b0fa8c52
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-the-list-control"></a>リスト コントロールの作成
 一覧を制御する方法 ([CListCtrl](../mfc/reference/clistctrl-class.md)) が作成されるクラスを使用してまたはコントロールを直接使用するしているかどうかによって異なります[CListView](../mfc/reference/clistview-class.md)代わりにします。 使用する場合`CListView`フレームワークは、そのドキュメント/ビューの作成のシーケンスの一部として、ビューを構築します。 リスト ビューを作成するには、リスト コントロールにも (この 2 つは同じもの) が作成されます。 ビューので、コントロールが作成された[OnCreate](../mfc/reference/cwnd-class.md#oncreate)ハンドラー関数。 この場合、コントロールが呼び出しを使用して、項目を追加するための準備ができて[GetListCtrl](../mfc/reference/clistview-class.md#getlistctrl)です。  
@@ -41,7 +45,7 @@ ms.lasthandoff: 10/24/2017
   
 2.  コントロールの呼び出します[作成](../mfc/reference/clistctrl-class.md#create)メンバー関数は、可能性のあるで[フィルターと並べ替え順序](../mfc/reference/cview-class.md#oninitialupdate)、親ウィンドウの可能性がありますの早期[OnCreate](../mfc/reference/cwnd-class.md#oncreate)ハンドラー関数 (ユーザー場合サブクラス化コントロール)。 コントロールのスタイルを設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CListCtrl の使い方](../mfc/using-clistctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

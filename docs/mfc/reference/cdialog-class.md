@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -27,7 +28,8 @@ f1_keywords:
 - AFXWIN/CDialog::SetHelpID
 - AFXWIN/CDialog::OnCancel
 - AFXWIN/CDialog::OnOK
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDialog [MFC], CDialog
 - CDialog [MFC], Create
@@ -47,15 +49,17 @@ helpviewer_keywords:
 - CDialog [MFC], OnCancel
 - CDialog [MFC], OnOK
 ms.assetid: ca64b77e-2cd2-47e3-8eff-c2645ad578f9
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b823d40d4504be0180c3af3a6fb5359bf86725cd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 89c9670d19330e63a466c38a205a3122237e4f02
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdialog-class"></a>CDialog クラス
 [画面] ダイアログ ボックスを表示するための基本クラス。  
@@ -146,7 +150,7 @@ class CDialog : public CWnd
   
  `CDialog`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="cdialog"></a>詳細  
@@ -515,7 +519,7 @@ void SetHelpID(UINT nIDR);
  *nIDR*  
  状況依存のヘルプ ID を指定します  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル DLGCBR32](../../visual-cpp-samples.md)   
  [MFC サンプル DLGTEMPL](../../visual-cpp-samples.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   

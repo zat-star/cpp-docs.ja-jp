@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - custom stream manipulators
 - streams, custom stream manipulators
 - output streams, custom stream manipulators
 ms.assetid: fa4655a7-d68f-4fea-a26e-73c3ad5c90a5
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5848e4f200f528261a135e38e1898a256433871b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bf75690c2a6c4a38ea576e799f707b4161418d02
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="custom-manipulators-with-arguments"></a>引数を使用するカスタム マニピュレーター
 このセクションでは、1 つまたは複数の引数を使用する出力ストリーム マニピュレーターを作成する方法と非出力ストリームのマニピュレーターを使用する方法について説明します。  
@@ -31,6 +35,6 @@ ms.lasthandoff: 10/24/2017
   
  [1 つの引数を使用する他の出力ストリーム マニピュレーター](../standard-library/other-one-argument-output-stream-manipulators.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [iostream プログラミング](../standard-library/iostream-programming.md)
 

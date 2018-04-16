@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - sampler
 - AMP_GRAPHICS/sampler
@@ -21,30 +21,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 9a6a9807-497d-402d-b092-8c4d86275b80
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: f81208e40cb2a211b714af1efe801e81cd567374
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 43aa9b68d2369ff2a0ade4bb4cb122b2481d3cd4
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="sampler-class"></a>sampler クラス
 サンプラーのクラスは、テクスチャ サンプリングに使用するサンプリング構成情報を集計します。  
@@ -88,14 +75,14 @@ class sampler;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `sampler`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_graphics.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>サンプラー 
+##  <a name="ctor"></a> サンプラー 
 
- インスタンスを構築、 [sampler クラス](sampler-class.md)します。  
+ インスタンスを構築、 [sampler クラス](sampler-class.md)です。  
   
 ```  
 sampler() restrict(cpu);
@@ -150,7 +137,7 @@ sampler(// [6] move constructor
  [6] 移動コンス トラクター  
  新しい `sampler` インスタンスに移動する `sampler` オブジェクト。  
   
-##  <a name="address_mode"></a>address_mode 
+##  <a name="address_mode"></a> address_mode 
 
  `sampler` オブジェクトのアドレス モードを取得します。  
   
@@ -158,7 +145,7 @@ sampler(// [6] move constructor
 __declspec(property(get= get_address_mode)) Concurrency::graphics::address_mode address_mode;  
 ```  
   
-##  <a name="border_color"></a>border_color 
+##  <a name="border_color"></a> border_color 
 
  `sampler` オブジェクトの境界線の色を取得します。  
   
@@ -166,7 +153,7 @@ __declspec(property(get= get_address_mode)) Concurrency::graphics::address_mode 
 __declspec(property(get= get_border_color)) Concurrency::graphics::float_4 border_color;  
 ```  
   
-##  <a name="filter_mode"></a>filter_mode 
+##  <a name="filter_mode"></a> filter_mode 
 
  `sampler` オブジェクトのフィルター モードを取得します。  
   
@@ -174,7 +161,7 @@ __declspec(property(get= get_border_color)) Concurrency::graphics::float_4 borde
 __declspec(property(get= get_filter_mode)) Concurrency::graphics::filter_mode filter_mode;  
 ```  
   
-##  <a name="get_address_mode"></a>get_address_mode 
+##  <a name="get_address_mode"></a> get_address_mode 
 
  この `sampler` のために構成されたフィルター モードを返します。  
   
@@ -185,7 +172,7 @@ Concurrency::graphics::address_mode get_address_mode() const __GPU;
 ### <a name="return-value"></a>戻り値  
  サンプラーのために構成されたアドレス モード。  
   
-##  <a name="get_border_color"></a>get_border_color 
+##  <a name="get_border_color"></a> get_border_color 
 
  この `sampler` に構成された境界線の色を返します。  
   
@@ -196,7 +183,7 @@ Concurrency::graphics::float_4 get_border_color() const restrict(amp, cpu);
 ### <a name="return-value"></a>戻り値  
  境界線の色が含まれる float_4。  
   
-##  <a name="get_filter_mode"></a>get_filter_mode 
+##  <a name="get_filter_mode"></a> get_filter_mode 
 
  この `sampler` のために構成されたフィルター モードを返します。  
   
@@ -207,7 +194,7 @@ Concurrency::graphics::filter_mode get_filter_mode() const restrict(amp, cpu);
 ### <a name="return-value"></a>戻り値  
  サンプラーのために構成されたフィルター モード。  
   
-##  <a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a> 演算子 = 
 
  別のサンプラー オブジェクトの値を既存のサンプラーに割り当てます。  
   
@@ -231,6 +218,5 @@ sampler& operator= (// [2] move assingment operator sampler&& _Other) restrict(a
 ### <a name="return-value"></a>戻り値  
  このサンプラーのインスタンスへの参照。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

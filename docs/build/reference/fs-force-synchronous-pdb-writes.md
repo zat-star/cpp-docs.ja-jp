@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: /FS
-dev_langs: C++
+f1_keywords:
+- /FS
+dev_langs:
+- C++
 helpviewer_keywords:
 - -FS compiler option [C++]
 - /FS compiler option [C++]
 ms.assetid: b2caaffe-f6e1-4963-b068-648f06b105e0
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a29b5f58517a8348c20bb233491aec01fda7f771
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cec8aa3d1b3417b6bfcb35757ac4a4a51961e16b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fs-force-synchronous-pdb-writes"></a>/FS (同期 PDB 書き込みの強制)
 プログラム データベース (PDB) ファイルの書き込みを — によって作成された[/Zi](../../build/reference/z7-zi-zi-debug-information-format.md)または[/ZI](../../build/reference/z7-zi-zi-debug-information-format.md)— MSPDBSRV をシリアル化します。EXE です。  
@@ -51,6 +56,6 @@ ms.lasthandoff: 10/24/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

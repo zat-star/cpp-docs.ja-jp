@@ -1,41 +1,46 @@
 ---
-title: "set::key_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::set::key_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "key_type メンバー [STL/CLR]"
+title: "set::key_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::set::key_type
+dev_langs:
+- C++
+helpviewer_keywords:
+- key_type member [STL/CLR]
 ms.assetid: 2c057cf7-ac3d-40a6-b7fc-eb1c0a317381
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 03044f7c769491282713183b773cda34710c1f46
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# set::key_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="setkeytype-stlclr"></a>set::key_type (STL/CLR)
 順序付けキーの型です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef Key key_type;  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター `Key` のシノニムです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_set_key_type.cpp   
@@ -63,13 +68,16 @@ int main()
   
 ```  
   
-  **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+```Output  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext と set >  
   
-## 参照  
- [設定](../dotnet/set-stl-clr.md)   
- [set::key\_compare](../dotnet/set-key-compare-stl-clr.md)   
- [set::value\_type](../dotnet/set-value-type-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
+ [set::key_compare (STL/CLR)](../dotnet/set-key-compare-stl-clr.md)   
+ [set::value_type (STL/CLR)](../dotnet/set-value-type-stl-clr.md)

@@ -1,12 +1,12 @@
 ---
-title: "volatile (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: volatile (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - volatile_cpp
@@ -22,12 +22,13 @@ caps.latest.revision: 43
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 1bbbceaa8f170ad8c75173d60d38e5dd3df1fbdd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 02560da98c583281cc05921f2e924a12f41688c3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="volatile-c"></a>volatile (C++)
 オブジェクトをハードウェアがプログラム内で変更できることを宣言するために使用できる型修飾子です。  
@@ -79,7 +80,7 @@ volatile declarator ;
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  [const](../cpp/const-cpp.md)   
  [const ポインターと volatile ポインター](../cpp/const-and-volatile-pointers.md)

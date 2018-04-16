@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,18 +14,23 @@ f1_keywords:
 - lock.~lock
 - msclr::lock::~lock
 - lock::~lock
-dev_langs: C++
-helpviewer_keywords: ~lock destructor
+dev_langs:
+- C++
+helpviewer_keywords:
+- ~lock destructor
 ms.assetid: 55fa9f6c-d7a6-48ef-9236-ee03342c1d20
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2fe737a0e40c1b45e7c5622ee377663e997e87ac
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f81ebc097d53029dc4d4e161c9cf43e15e37b94d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="locklock"></a>lock::~lock
 Destructs、`lock`オブジェクト。  
@@ -127,11 +133,11 @@ In thread 6, Counter = 10
 All threads completed.  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\lock.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [lock のメンバー](../dotnet/lock-members.md)   
  [lock::lock](../dotnet/lock-lock.md)

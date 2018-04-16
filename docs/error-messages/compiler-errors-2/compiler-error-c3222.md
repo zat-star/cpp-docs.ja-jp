@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3222
 ms.assetid: 5624bde8-2fd0-4b8b-92ce-5dfbaf91cf93
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0028b9540127433bdbd17b01f1a5a3dfd9361558
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: edc882f340e92defeaa2db92d868680f7791e7b9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3222"></a>コンパイラ エラー C3222
 'parameter': ジェネリック関数またはマネージあるいは WinRT 型のメンバー関数に対して、既定引数を宣言できません  
@@ -40,4 +41,3 @@ public ref class G {
    void f( int n = 0 );   // C3222  
 };  
 ```  
-

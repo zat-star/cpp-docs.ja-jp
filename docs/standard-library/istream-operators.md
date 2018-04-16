@@ -5,26 +5,27 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - istream/std::operator&gt;&gt;
 dev_langs:
 - C++
 ms.assetid: 7174da41-f301-4a34-b631-0ab918b188d2
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dc68ed6c0122fbe1176bfda1d446421677902e6c
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 30cb2b182d8047eb1b2a5eaa384b01c719799043
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="ltistreamgt-operators"></a>&lt;istream&gt; 演算子
  
-##  <a name="op_gt_gt"></a>  operator&gt;&gt;  
+##  <a name="op_gt_gt"></a>  演算子&gt;&gt;  
  ストリームから文字と文字列を抽出します。  
   
 ```  
@@ -103,7 +104,7 @@ basic_istream<Elem, Tr>& operator>>(
     basic_istream<Elem, Tr>& Istr, Elem& Ch);
 ```  
   
- 可能な場合は要素を抽出し、この要素を `Ch` に格納します。 そうでない場合は、**is**. [setstate](../standard-library/basic-ios-class.md#setstate)( **failbit**) が呼び出されます。 いずれの場合も、`Istr` を返します。  
+ 可能な場合は要素を抽出し、この要素を `Ch` に格納します。 そうでない場合は、**is**. [setstate](../standard-library/basic-ios-class.md#setstate)( **failbit**) を呼び出します。 いずれの場合も、`Istr` を返します。  
   
  下記のテンプレート関数は  
   
@@ -177,5 +178,4 @@ int main( )
   
 ## <a name="see-also"></a>関連項目  
  [\<istream>](../standard-library/istream.md)
-
 

@@ -1,27 +1,30 @@
 ---
-title: "A.21   Scoping Variables with the private Clause | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "A.21 プライベート句を使用して変数のスコープ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 7cdb4a7f-af24-44ac-9d33-e43840bc8f3d
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3d05a124e0b872210d28ed35fcd90872e0c051eb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# A.21   Scoping Variables with the private Clause
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-次の例で `i` と `j` の値は並列領域の終了に未定義です :  
+# <a name="a21---scoping-variables-with-the-private-clause"></a>A.21 private 句付きのスコープ変数
+値`i`と`j`次の例では、並行領域からの終了時に定義されていません。  
   
 ```  
 int i, j;  
@@ -35,4 +38,4 @@ j = 2;
 printf_s("%d %d\n", i, j);  
 ```  
   
- `private` 句の詳細についてはページの 25 [セクション 2.7.2.1](../../parallel/openmp/2-7-2-1-private.md) を参照してください。
+ 詳細については、`private`句を参照してください[セクション 2.7.2.1](../../parallel/openmp/2-7-2-1-private.md) [25] ページ。

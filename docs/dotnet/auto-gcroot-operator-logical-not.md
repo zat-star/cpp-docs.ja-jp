@@ -1,29 +1,35 @@
 ---
 title: auto_gcroot::operator! | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - msclr.auto_gcroot.operator!
 - auto_gcroot.operator!
 - msclr::auto_gcroot::operator!
 - auto_gcroot::operator!
-dev_langs: C++
-helpviewer_keywords: auto_gcroot::operator!
+dev_langs:
+- C++
+helpviewer_keywords:
+- auto_gcroot::operator!
 ms.assetid: f9728be3-2e09-4c01-a594-43e0d59d40d3
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9f40c2465e144b25f649cf358a4aa5e3ad3a6902
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 525c03560d636ec8c16c26392a241f4826b31cda
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="autogcrootoperator"></a>auto_gcroot::operator!
 使用するための演算子`auto_gcroot`条件式でします。  
@@ -66,11 +72,11 @@ now s is valid
 now s is invalid  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto_gcroot メンバー](../dotnet/auto-gcroot-members.md)   
  [auto_gcroot::operator bool](../dotnet/auto-gcroot-operator-bool.md)

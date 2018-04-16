@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - const keyword [C++]
 ms.assetid: b21c0271-1ad0-40a0-b21c-5e812bba0318
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 8a6a238f28ec8f84cd127b4af88a84edb26506ee
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c296f473f9128907e69437edf66734a7566242ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="const-c"></a>const (C++)
 データの宣言を変更するときに、 **const**キーワードは、オブジェクトまたは変数は変更可能なを指定します。  
@@ -175,5 +176,5 @@ extern "C" const int x=10;
   
 -   [#define](../preprocessor/hash-define-directive-c-cpp.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)

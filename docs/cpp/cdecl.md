@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - __cdecl keyword [C++]
 ms.assetid: 1ff1d03e-fb4e-4562-8be1-74f1ad6427f1
-caps.latest.revision: 16
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 5216462ad00d332aec2d00eba78f5d84cdfd7c82
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d73de8b2a158c09ebd61306683f6fdc1ad0f514e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdecl"></a>__cdecl
 **Microsoft 固有の仕様**  
@@ -45,7 +46,7 @@ ms.lasthandoff: 09/25/2017
   
  ARM と x64 のプロセッサでは、`__cdecl` はコンパイラによって受け入れられますが、通常は無視されます。 ARM と x64 の規約に基づいて、引数は可能であればレジスタで渡され、残りの引数はスタックで渡されます。 X64 のコードは、使用`__cdecl`を上書きする、 **/Gv**コンパイラ オプションと、既定の x64 呼び出し規約を使用します。  
   
- 静的でないクラス関数がアウトオブラインで宣言されている場合、アウトオブラインの宣言で呼び出し規則の修飾子を指定する必要はありません。 つまり、クラスの静的でないメンバー メソッドの場合は、宣言時に指定された呼び出し規約が定義の時点で仮定されます。 次のクラス定義があるとします。  
+ 静的でないクラス関数がアウトオブラインで宣言されている場合、アウトオブラインの宣言で呼び出し規則の修飾子を指定する必要はありません。 つまり、クラスの静的でないメンバー メソッドの場合は、宣言時に指定された呼び出し規則が定義の時点で仮定されます。 次のクラス定義があるとします。  
   
 ```cpp  
 struct CMyClass {  
@@ -75,6 +76,6 @@ int __cdecl system(const char *);
 typedef BOOL (__cdecl *funcname_ptr)(void * arg1, const char * arg2, DWORD flags, ...);  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [引数の渡し規則と名前付け規則](../cpp/argument-passing-and-naming-conventions.md)   
  [キーワード](../cpp/keywords-cpp.md)

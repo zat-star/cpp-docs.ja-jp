@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::set::operator<
-dev_langs: C++
-helpviewer_keywords: operator< member [STL/CLR]
+f1_keywords:
+- cliext::set::operator<
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator< member [STL/CLR]
 ms.assetid: bd6b351d-3f33-4f66-97fa-b7e8f36ce9fd
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f0c290eecaef9be1ef4ffa222c14905a934e4373
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5ba01bbe0660286a54b0bc685a9dc85bdcd3e7b2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="operatorlt-set-stlclr"></a>演算子&lt;(set) (STL/CLR)
 リストが比較未満です。  
@@ -89,12 +96,12 @@ int main()
 [a b c] < [a b d] is True  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
  [演算子 = = (set) (STL/CLR)](../dotnet/operator-equality-set-stl-clr.md)   
  [operator! = (set) (STL/CLR)](../dotnet/operator-inequality-set-stl-clr.md)   

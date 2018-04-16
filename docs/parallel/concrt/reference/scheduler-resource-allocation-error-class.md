@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - scheduler_resource_allocation_error
 - CONCRT/concurrency::scheduler_resource_allocation_error
 - CONCRT/concurrency::scheduler_resource_allocation_error::scheduler_resource_allocation_error
 - CONCRT/concurrency::scheduler_resource_allocation_error::get_error_code
-dev_langs: C++
-helpviewer_keywords: scheduler_resource_allocation_error class
+dev_langs:
+- C++
+helpviewer_keywords:
+- scheduler_resource_allocation_error class
 ms.assetid: 8b40449a-7abb-4d0a-bb85-c0e9a495ae97
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 334712def2fbd458b648b02cbfab05e202cc0e1b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b84533fb578ed0e2988f88420d46aeb2ed7c9657
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="schedulerresourceallocationerror-class"></a>scheduler_resource_allocation_error クラス
 このクラスは、同時実行ランタイムでクリティカル リソースを取得できないためにスローされる例外を表します。  
@@ -56,12 +61,12 @@ class scheduler_resource_allocation_error : public std::exception;
   
  `scheduler_resource_allocation_error`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-##  <a name="get_error_code"></a>get_error_code 
+##  <a name="get_error_code"></a> get_error_code 
 
  例外の原因となったエラー コードを返します。  
   
@@ -72,7 +77,7 @@ HRESULT get_error_code() const throw();
 ### <a name="return-value"></a>戻り値  
  `HRESULT`例外の原因となったエラーの値。  
   
-##  <a name="ctor"></a>scheduler_resource_allocation_error 
+##  <a name="ctor"></a> scheduler_resource_allocation_error 
 
  `scheduler_resource_allocation_error` オブジェクトを構築します。  
   
@@ -92,5 +97,5 @@ explicit _CRTIMP scheduler_resource_allocation_error(
  `_Hresult`  
  `HRESULT`例外の原因となったエラーの値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

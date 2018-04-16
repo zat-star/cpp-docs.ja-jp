@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C2864 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2864 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
-f1_keywords: C2864
-dev_langs: C++
-helpviewer_keywords: C2864
+f1_keywords:
+- C2864
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2864
 ms.assetid: d0ca2ad9-90a6-4aef-8511-98a3b414c102
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f205aeb886921439360191def0853e33e4eb0fea
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b463e8036b8bf452729ddfe11dea73aa9aae3a3e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2864"></a>コンパイラ エラー C2864
 'variable' : in-class initializer を持つ静的データ メンバーには、非揮発性 const integral 型が必要です  

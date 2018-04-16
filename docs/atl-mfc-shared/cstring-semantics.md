@@ -1,36 +1,41 @@
 ---
-title: "CString の評価 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "代入ステートメント, 割り当て (CString オブジェクトの)"
-  - "CString オブジェクト, 代入の意味"
-  - "意味 (Cstring での)"
+title: "Cstring の |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- semantics in Cstring
+- CString objects, assignment semantics
+- assignment statements, assigning CString objects
 ms.assetid: d4023480-526f-499a-85f6-324b4de5b85f
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 394e459a46003e3f1baccff7dd4c76f40b73e354
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CString の評価
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="cstring-semantics"></a>CString の評価
+にもかかわらず[CString](../atl-mfc-shared/reference/cstringt-class.md)オブジェクトを拡張できる動的オブジェクトは、組み込みのプリミティブ型と単純なクラスのように動作します。 各`CString`オブジェクトを一意の値を表します。 `CString`オブジェクトは、文字列へのポインターではなく実際の文字列としての考える必要があります。  
+  
+ 1 つを割り当てることができます**CString**を別のオブジェクト。 ただし、変更する場合、2 つのいずれかの`CString`オブジェクト、他の`CString`オブジェクトは変更されません、次の例に示すようにします。  
+  
+ [!code-cpp[NVC_ATLMFC_Utilities#188](../atl-mfc-shared/codesnippet/cpp/cstring-semantics_1.cpp)]  
+  
+ 注の例を 2 つ`CString`オブジェクトが等しいと見なされる""同じ文字の文字列を表すためです。 `CString`クラスは、等値演算子をオーバー ロード (`==`) 2 つを比較する`CString`オブジェクト自身の id (アドレス) ではなく、値 (内容) をベースにします。  
+  
+## <a name="see-also"></a>参照  
+ [文字列 (ATL と MFC)](../atl-mfc-shared/strings-atl-mfc.md)
 
-[CString](../atl-mfc-shared/reference/cstringt-class.md) のオブジェクトが拡大できる動的オブジェクトである場合も、これらは組み込みのプリミティブ型、および単純なクラスと同様に動作します。  `CString` の各オブジェクトは、一意の値を表します。  文字列への`CString` のオブジェクトは、に関するように、実際の文字列ポインターではなくしてください。  
-  
- 別の **CString** の 1 種類のオブジェクトを代入できます。  ただし、`CString` の 2 種類のオブジェクトの 1 つを変更すると、`CString` の他のオブジェクトには、次の例に示すように、変更できません:  
-  
- [!code-cpp[NVC_ATLMFC_Utilities#188](../atl-mfc-shared/codesnippet/CPP/cstring-semantics_1.cpp)]  
-  
- 同じ文字列を表すため `CString` の 2 種類のオブジェクトが等しい「例」見なされることに注意してください。  `CString` のクラスは、ID \(アドレスではなく\) 値 \(内容\) に基づいて `CString` の 2 種類のオブジェクトを比較するには、等値演算子 \(`==`\) をオーバーロードします。  
-  
-## 参照  
- [文字列](../atl-mfc-shared/strings-atl-mfc.md)

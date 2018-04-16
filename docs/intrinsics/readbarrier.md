@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: _ReadBarrier
-dev_langs: C++
-helpviewer_keywords: _ReadBarrier intrinsic
+ms.topic: reference
+f1_keywords:
+- _ReadBarrier
+dev_langs:
+- C++
+helpviewer_keywords:
+- _ReadBarrier intrinsic
 ms.assetid: f9e54a92-61bc-4f55-8195-b8932065a796
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 654d68ddf16dd0e162e0e50bbfb85f15fe9b5a86
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d76238ed0c3ae66dc153a0a2066d5463a130b859
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="readbarrier"></a>_ReadBarrier  
   
@@ -36,11 +42,11 @@ ms.lasthandoff: 10/24/2017
 void _ReadBarrier(void);  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
-|`_ReadBarrier`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`_ReadBarrier`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
  **ヘッダー ファイル** \<intrin.h >  
   
@@ -49,6 +55,6 @@ void _ReadBarrier(void);
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
  [キーワード](../cpp/keywords-cpp.md)

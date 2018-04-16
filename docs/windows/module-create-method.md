@@ -1,25 +1,32 @@
 ---
-title: "Module::create メソッド |Microsoft ドキュメント"
-ms.custom: 
+title: Module::create メソッド |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: module/Microsoft::WRL::Module::Create
-dev_langs: C++
-helpviewer_keywords: Create method
+f1_keywords:
+- module/Microsoft::WRL::Module::Create
+dev_langs:
+- C++
+helpviewer_keywords:
+- Create method
 ms.assetid: bfa97fd7-5226-4604-92a5-3b9697053e64
-caps.latest.revision: "5"
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0a5d3888657d491502b13283b5b9d7141940ade3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: e566b34140c0b82072c8469cd8d965f807e244ec
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="modulecreate-method"></a>Module::Create メソッド
 モジュールのインスタンスを作成します。  
@@ -28,15 +35,11 @@ ms.lasthandoff: 10/24/2017
   
 ```  
 WRL_NOTHROW static Module& Create();  
-template<  
-   typename T  
->  
+template<typename T>  
 WRL_NOTHROW static Module& Create(  
    T callback  
 );  
-template<  
-   typename T  
->  
+template<typename T>  
 WRL_NOTHROW static Module& Create(  
    _In_ T* object,  
    _In_ void (T::* method)()  

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wgetdcwd_nolock
 - _getdcwd_nolock
@@ -29,7 +30,8 @@ f1_keywords:
 - _getdcwd_nolock
 - _tgetdcwd_nolock
 - getdcwd_nolock
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - getdcwd_nolock function
 - _tgetdcwd_nolock function
@@ -41,21 +43,23 @@ helpviewer_keywords:
 - _wgetdcwd_nolock function
 - directories [C++], current working
 ms.assetid: d9bdf712-43f8-4173-8f9a-844e82beaa97
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c806573e229553bca232584235322ccc15dfbe79
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7c1d9f4c57ef942f11f5e5dee79356a3e2d7f47a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getdcwdnolock-wgetdcwdnolock"></a>_getdcwd_nolock、_wgetdcwd_nolock
 指定されたドライブの現在の作業ディレクトリの完全なパスを取得します。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -94,16 +98,16 @@ wchar_t *_wgetdcwd_nolock(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tgetdcwd_nolock`|`_getdcwd_nolock`|`_getdcwd_nolock`|`_wgetdcwd_nolock`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_getdcwd_nolock`|\<direct.h>|  
 |`_wgetdcwd_nolock`|\<direct.h> または \<wchar.h>|  
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)   
  [_chdir、_wchdir](../../c-runtime-library/reference/chdir-wchdir.md)   
  [_getcwd、_wgetcwd](../../c-runtime-library/reference/getcwd-wgetcwd.md)   

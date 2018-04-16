@@ -1,13 +1,15 @@
 ---
-title: "使用して基本的な概念のマネージ例外 |Microsoft ドキュメント"
-ms.custom: 
+title: 使用して基本的な概念のマネージ例外 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - try-catch exception handling, managed applications
 - __finally keyword, managed exceptions
@@ -17,15 +19,18 @@ helpviewer_keywords:
 - throwing exceptions, managed exceptions
 - Visual C++, handling managed exceptions
 ms.assetid: 40ce8931-1ecc-491a-815f-733b23fcba35
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 530bf529faa3fc5c08ea850f8ae390e12d49ac14
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5e2faf56f050610e6c98ff82cdca10333a54fd93
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="basic-concepts-in-using-managed-exceptions"></a>マネージ例外の使用についての基本概念
 このトピックでは、マネージ アプリケーションでの例外処理について説明します。 つまり、と共にコンパイルされるアプリケーション、 **/clr**コンパイラ オプション。  
@@ -156,7 +161,7 @@ In 'catch(MyStruct^ catchException)'
 catch(Object^)  
 ```  
   
- および  
+ と、呼び出し  
   
 ```  
 catch(...)  
@@ -168,7 +173,7 @@ catch(...)
   
  使用することをお勧めスローおよびキャッチする例外を管理しない、ときに、 [/EHsc](../build/reference/eh-exception-handling-model.md)コンパイラ オプションの代わりに**/EHs**または**/EHa**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理](../windows/exception-handling-cpp-component-extensions.md)   
  [safe_cast](../windows/safe-cast-cpp-component-extensions.md)   
  [例外処理](../cpp/exception-handling-in-visual-cpp.md)

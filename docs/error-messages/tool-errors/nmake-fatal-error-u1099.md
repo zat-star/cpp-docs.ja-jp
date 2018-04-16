@@ -1,35 +1,39 @@
 ---
-title: "NMAKE の致命的なエラー U1099 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "U1099"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "U1099"
+title: "NMAKE の致命的なエラー U1099 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- U1099
+dev_langs:
+- C++
+helpviewer_keywords:
+- U1099
 ms.assetid: 6688a805-43e6-4247-a2d0-14be082f0b13
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8bf8d662960e5857686f3f8301cc8481f350d4b3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# NMAKE の致命的なエラー U1099
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="nmake-fatal-error-u1099"></a>NMAKE の致命的なエラー U1099
 スタック オーバーフロー  
   
- 処理中のメイクファイルは複雑すぎるため、NMAKE の現在のスタックに割り当てることができません。  NMAKE のスタックの大きさは 0x3000 \(12K\) です。  
+ 処理中のメイクファイルが複雑すぎるため、現在のスタック割り当て (nmake の)。 NMAKE は、0x3000 (12 K) の割り当てがあります。  
   
- NMAKE のスタック割り当てを増やすには、大きな値のスタック オプションを指定して [editbin \/stack](../../build/reference/stack.md) を実行します。  
+ NMAKE のスタック割り当てを増やすを実行、 [editbin/stack](../../build/reference/stack.md)ユーティリティの大きなスタック オプションを使用します。  
   
- **editbin \/STACK:reserve NMAKE.EXE**  
+ **editbin/STACK:reserve (nmake の)。EXE**  
   
- 上記の例で、*reserve* には NMAKE に指定された現在のスタック割り当てよりも大きい値を指定します。
+ ここで*予約*数値を現在のスタック割り当て (nmake の) を超えています。

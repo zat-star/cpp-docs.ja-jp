@@ -5,18 +5,15 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
-- tuple/std::get
-- tuple/std::make_tuple
-- tuple/std::tie
 - tuple/std::get
 - tuple/std::make_tuple
 - tuple/std::tie
 dev_langs:
 - C++
 ms.assetid: bc6be38f-5258-4c14-b81b-63caa335fd44
-caps.latest.revision: 13
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::get [C++]
@@ -25,12 +22,11 @@ helpviewer_keywords:
 - std::get [C++]
 - std::make_tuple [C++]
 - std::tie [C++]
+ms.openlocfilehash: ecc544c1f18e31a71d11a212fc9618a6b085f461
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 3404df4c21b1abb4153c6163f1fd5537ed87928e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="lttuplegt-functions"></a>&lt;tuple&gt; 関数
 ||||  
@@ -115,7 +111,7 @@ int main() {
 0 1.42 Call me Tuple  
 ```  
   
-##  <a name="make_tuple"></a>make_tuple
+##  <a name="make_tuple"></a>  make_tuple
  要素値から `tuple` を作成します。  
   
 ```  
@@ -172,7 +168,7 @@ int main() {
  4 5 6 7  
 ```  
   
-##  <a name="tie"></a>同順位
+##  <a name="tie"></a>  tie
  要素参照から `tuple` を作成します。  
   
 ```  
@@ -228,7 +224,6 @@ int main() {
 0 1 2 3  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<tuple>](../standard-library/tuple.md)
-
 

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::unnorm_2::operator+=
 - amp_short_vectors/Concurrency::graphics::unnorm_2::y
@@ -33,17 +34,20 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::unnorm_2::get_x
 - amp_short_vectors/Concurrency::graphics::unnorm_2::g
 - amp_short_vectors/Concurrency::graphics::unnorm_2::operator++
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 62e88ea7-e29f-4f62-95ce-61a1f39f5e34
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aa4e69a5953a3acfbc9a29134badb3ff2d731a18
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 80e5cf0a1a1c3e2a4e10520772ebea931fdf3634
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="unorm2-class"></a>unorm_2 クラス
 2 個の符号なし正規数の short ベクターを表します。  
@@ -90,16 +94,16 @@ class unorm_2;
 |名前|説明|  
 |----------|-----------------|  
 |unorm_2::operator--||  
-|unorm_2::operator * =||  
+|unorm_2::operator*=||  
 |unorm_2::operator/=||  
 |unorm_2::operator++||  
-|unorm_2::operator + =||  
-|unorm_2::operator = =||  
+|unorm_2::operator+=||  
+|unorm_2::operator=||  
 |unorm_2::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |unorm_2::size 定数||  
   
@@ -119,12 +123,12 @@ class unorm_2;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `unorm_2`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>unorm_2 
+##  <a name="ctor"></a> unorm_2 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -198,11 +202,11 @@ explicit inline unorm_2(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="unorm_2__size"></a>サイズ 
+##  <a name="unorm_2__size"></a> サイズ 
 
 ```  
 static const int size = 2;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

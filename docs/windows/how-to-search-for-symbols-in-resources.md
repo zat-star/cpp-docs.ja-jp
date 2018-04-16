@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - symbols, finding
 - resources [Visual Studio], searching for symbols
 ms.assetid: 6efef8e8-d0d4-4c49-b895-314974e7791a
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 04b2bb47977a349bfd06dc6770aab80626395714
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 154c7a7284272ceef7a3e2d82fcd90d05069b7fe
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-search-for-symbols-in-resources"></a>方法: リソース内のシンボルを検索する
 ### <a name="to-find-symbols-in-resources"></a>リソース内のシンボルを検索するには  
@@ -45,7 +50,7 @@ ms.lasthandoff: 10/24/2017
   
  Win32  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [シンボル: リソース識別子](../windows/symbols-resource-identifiers.md)   
  [リソース ファイル (Visual Studio)](../windows/resource-files-visual-studio.md)   
  [リソース エディター](../windows/resource-editors.md)

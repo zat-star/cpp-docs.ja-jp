@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - array/std::array::get
 - array/std::get
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: e0700a33-a833-4655-8735-16e71175efc8
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -21,12 +21,13 @@ helpviewer_keywords:
 - std::array [C++], get
 - std::get [C++]
 - std::swap [C++]
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 96c66e4a6cef556795cf9bee3ecabac6677ef9f3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: be5128d8a5a8d3b6d60395633122fa3dd697435e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltarraygt-functions"></a>&lt;array&gt; 関数
 \<array> ヘッダーには、`array` オブジェクトで動作する `get` と`swap` の 2 つの非メンバー関数が含まれています。  
@@ -164,7 +165,6 @@ int main()
 0 1 2 3  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<array>](../standard-library/array.md)
-
 

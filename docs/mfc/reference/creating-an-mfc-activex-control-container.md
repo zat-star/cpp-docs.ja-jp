@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.appwiz.activex.container
-dev_langs: C++
+f1_keywords:
+- vc.appwiz.activex.container
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC ActiveX controls [MFC], containers
 - ActiveX control containers [MFC], creating
 - containers [MFC], creating
 - OLE controls [MFC], containers
 ms.assetid: ec70e137-7c14-4940-bd0e-fd4edcc63ea5
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c9ac70acd706237cfeb40e709d2562883263c687
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2054a11365cc6f9db7a5608f0b056d0d85ff117d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-an-mfc-activex-control-container"></a>MFC ActiveX コントロール コンテナーの作成
 ActiveX コントロール コンテナーを実行する (OLE 以前) の ActiveX コントロールの環境を提供する親プログラムです。 対応の有無にかかわらず、MFC ActiveX コントロールを含むアプリケーションを作成することができますが、MFC を行うにははるかに簡単です。  
@@ -42,6 +47,6 @@ ActiveX コントロール コンテナーを実行する (OLE 以前) の Activ
   
 3.  [MFC ActiveX コントロールします。](../../mfc/mfc-activex-controls.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ プロジェクトの種類](../../ide/visual-cpp-project-types.md)
 

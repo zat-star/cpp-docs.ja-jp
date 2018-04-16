@@ -1,12 +1,12 @@
 ---
-title: "ステートメント (c++) |Microsoft ドキュメント"
-ms.custom: 
+title: ステートメント (c++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - do_cpp
@@ -22,12 +22,13 @@ caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 8c81bbeea9f841a834d59186017b2932f83de862
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7e03a20ad2b49d5c9337e0c8250e5d7c321ee882
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="do-while-statement-c"></a>do-while ステートメント (C++)
 実行、*ステートメント*指定した終了条件まで繰り返し (、*式*) 0 に評価します。  
@@ -65,7 +66,7 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [繰り返しステートメント](../cpp/iteration-statements-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [while ステートメント (C++)](../cpp/while-statement-cpp.md)   

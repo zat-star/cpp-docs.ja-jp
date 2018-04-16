@@ -1,25 +1,31 @@
 ---
-title: "-無視 (特定の警告を無視する) |Microsoft ドキュメント"
-ms.custom: 
+title: -無視 (特定の警告を無視する) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: /OVERWRITE
-dev_langs: C++
-helpviewer_keywords: /IGNORE linker option
+f1_keywords:
+- /OVERWRITE
+dev_langs:
+- C++
+helpviewer_keywords:
+- /IGNORE linker option
 ms.assetid: 37e77387-8838-4697-898f-d376ac641124
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 496142cd483bab8ba58fe2ed6b31619616216bb4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0d8815438ce56629bd120c30b0d0db9fef96916d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ignore-ignore-specific-warnings"></a>/IGNORE (特定の警告を無視する)
 ```  

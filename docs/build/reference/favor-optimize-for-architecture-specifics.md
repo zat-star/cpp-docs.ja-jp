@@ -1,70 +1,74 @@
 ---
-title: "/favor (アーキテクチャ固有の最適化) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/favor"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "-favor コンパイラ オプション [C++]"
-  - "/favor コンパイラ オプション [C++]"
+title: "-優先 (アーキテクチャ固有の最適化) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /favor
+dev_langs:
+- C++
+helpviewer_keywords:
+- -favor compiler option [C++]
+- /favor compiler option [C++]
 ms.assetid: ad264df2-e30f-4d68-8bd0-10d6bee71a2a
-caps.latest.revision: 31
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 31
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4f9ec5882cb1535f089250bc467c795263132d35
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /favor (アーキテクチャ固有の最適化)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**\/favor:** `option` は 特定のアーキテクチャまたは AMD と Intel アーキテクチャのマイクロアーキテクチャの仕様に合わせて最適化されるコードを作成します。  
+# <a name="favor-optimize-for-architecture-specifics"></a>/favor (アーキテクチャ固有の最適化)
+**/favor:** `option` AMD および Intel アーキテクチャのマイクロ アーキテクチャの仕様または特定のアーキテクチャ用に最適化されたコードが生成されます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /favor:{blend | ATOM | AMD64 | INTEL64}  
 ```  
   
-## 解説  
- **\/favor:blend**  
- \(x86 および x64\) および AMD Intel アーキテクチャのマイクロアーキテクチャの仕様に合わせて最適化されるコードを作成します。  **\/favor:blend** が特定のプロセッサで最大限のパフォーマンスを得ることができない場合もありますが、x86 および x64 プロセッサで最適なパフォーマンスが得られるようにデザインされています。  既定で、**\/favor:blend** が有効になります。  
+## <a name="remarks"></a>コメント  
+ **/favor:blend**  
+ (x86 および x64) は、AMD、および Intel アーキテクチャのマイクロ アーキテクチャの仕様に最適化されたコードを生成します。 中に**/favor:blend**最適なパフォーマンスを得られない場合が可能であれば、特定のプロセッサ、ものでは x86 および x64 プロセッサの広範な範囲で、最適なパフォーマンスが得られる。 既定では、 **/favor:blend**が有効になっています。  
   
- **\/favor:ATOM**  
- \(x86 および x64\) は、Intel プロセッサと Intel プロセッサは Centrino テクノロジの仕様に合わせて最適化されるコードを作成します。  コードは、**\/favor:ATOM** を使用して、または Intel プロセッサの Intel SSSE3、SSE3、SSE2 と SSE 命令が生成される可能性のある生成されます。  
+ **/favor:ATOM**  
+ (x86 および x64) は、Intel Atom プロセッサや Intel Centrino Atom プロセッサ テクノロジの仕様用に最適化されたコードを生成します。 使用して生成されるコード**/favor:ATOM** Intel プロセッサ Intel SSSE3、SSE3、SSE2、および SSE 命令を生成も可能性があります。  
   
- **\/favor:AMD64**  
- \(x64\) のみ AMD Opteron 用に生成されたコードを、64 ビット拡張機能をサポートする Athlon プロセッサを最適化します。  最適化されたコードは、すべての x64 互換のプラットフォームで動作します。  コードは、**\/favor:AMD64** を使用して Intel64 をサポートする Intel プロセッサで実行すると、パフォーマンスが低下する可能性が生成されます。  
+ **/favor:AMD64**  
+ (x64 のみ) の 64 ビットの拡張機能をサポートする Athlon プロセッサと AMD Opteron、生成されたコードを最適化します。 最適化されたコードは、互換性のあるプラットフォームにすべての x64 で実行できます。 使用して生成されるコード**/favor:AMD64** Intel64 をサポートする Intel プロセッサのパフォーマンスは低下が発生する可能性があります。  
   
- **\/favor:INTEL64**  
- \(x64\) のみ Intel64 をサポートする Intel プロセッサ用に生成されたコードを最適化するので、通常、このプラットフォームでより高いパフォーマンスが得られます。  結果コードはどの x64 プラットフォームで動作します。  コードは、**\/favor:INTEL64** と AMD Opteron で実行すると、パフォーマンス、64 ビット拡張機能をサポートする Athlon プロセッサが生じる可能性が生成されます。  
+ **/favor:INTEL64**  
+ (x64 のみ) Intel64 で、そのプラットフォームのパフォーマンスの向上を通常生成をサポートする Intel プロセッサに対して生成されたコードを最適化します。 結果として得られるコードをすべての x64 で実行できるプラットフォームです。 生成されたコード**/favor:INTEL64** AMD Opteron、および 64 ビットの拡張機能をサポートする Athlon プロセッサのパフォーマンスは低下が発生する可能性があります。  
   
 > [!NOTE]
->  Intel64 アーキテクチャは、以前は Extended Memory 64 Technology と呼ばれ、対応するコンパイラ オプションは **\/favor:EM64T** でした。  
+>  Intel64 アーキテクチャが以前の拡張メモリ 64 テクノロジ、および対応するコンパイラ オプションが**/favor:EM64T**です。  
   
- [!INCLUDE[vcprx64](../Token/vcprx64_md.md)] アーキテクチャ用にプログラミングする方法の詳細については、「[x64 ソフトウェア規約](../../build/x64-software-conventions.md)」を参照してください。  
+ プログラム方法については、[!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)]アーキテクチャを参照してください[x64 ソフトウェア規約](../../build/x64-software-conventions.md)です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーを選択します。  
+2.  選択、 **C/C++**フォルダーです。  
   
-3.  **\[コマンド ライン\]** プロパティ ページを選択します。  
+3.  選択、**コマンドライン**プロパティ ページ。  
   
-4.  **\[追加オプション\]** ボックスにコンパイラ オプションを入力します。  
+4.  コンパイラ オプションを入力して、**追加オプション**ボックス。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

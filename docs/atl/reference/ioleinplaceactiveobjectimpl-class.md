@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,21 +18,24 @@ f1_keywords:
 - ATLCTL/ATL::IOleInPlaceActiveObjectImpl::OnFrameWindowActivate
 - ATLCTL/ATL::IOleInPlaceActiveObjectImpl::ResizeBorder
 - ATLCTL/ATL::IOleInPlaceActiveObjectImpl::TranslateAccelerator
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - IOleInPlaceActiveObjectImpl class
 - ActiveX controls [C++], communication between container and control
 - IOleInPlaceActiveObject, ATL implementation
 ms.assetid: 44e6cc6d-a2dc-4187-98e3-73cf0320dea9
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b72f211d605958c345d84ae7297f5d513b7adc18
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6d88f85e83a88b0a1ce2bd4566e3ca479dddc1af
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ioleinplaceactiveobjectimpl-class"></a>IOleInPlaceActiveObjectImpl クラス
 このクラスは、インプレース コントロールとコンテナー間の通信を支援するメソッドを提供します。  
@@ -75,7 +79,7 @@ class IOleInPlaceActiveObjectImpl
   
  `IOleInPlaceActiveObjectImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlctl.h  
   
 ##  <a name="contextsensitivehelp"></a>IOleInPlaceActiveObjectImpl::ContextSensitiveHelp  
@@ -175,7 +179,7 @@ HRESULT TranslateAccelerator(LPMSG lpmsg);
 ### <a name="remarks"></a>コメント  
  参照してください[ioleinplaceactiveobject::translateaccelerator](http://msdn.microsoft.com/library/windows/desktop/ms693360) Windows SDK にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComControl クラス](../../atl/reference/ccomcontrol-class.md)  
  [ActiveX コントロールのインターフェイス](http://msdn.microsoft.com/library/windows/desktop/ms692724)  
  [クラスの概要](../../atl/atl-class-overview.md)

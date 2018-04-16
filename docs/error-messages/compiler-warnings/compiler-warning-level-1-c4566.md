@@ -1,36 +1,40 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4566 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4566"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4566"
+title: "コンパイラの警告 (レベル 1) C4566 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4566
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4566
 ms.assetid: 65f40730-e86f-447c-b37b-16caadcfe311
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 22a53aae49f025c8d05beb3b491288e5c82345a6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4566
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ユニバーサル文字名 'char' によって表示されている文字は、現在のコード ページ \('ページ'\) で表示できません  
+# <a name="compiler-warning-level-1-c4566"></a>コンパイラの警告 (レベル 1) C4566
+ユニバーサル文字名 'char' で表される文字は、現在のコード ページ (ページ) で表されることはできません。  
   
- 一部の Unicode 文字は、現在の ANSI コード ページに表示できません。  
+ 現在の ANSI コード ページにないすべての Unicode 文字を表現できます。  
   
- 半角文字 \(1 バイトの文字\) はマルチバイトの文字に変換できますが、全角文字 \(2 バイトの文字\) は変換できません。  
+ ナロー文字列 (1 バイト文字) は、ワイド文字列 (2 バイト文字) がありませんが、マルチバイト文字に変換されます。  
   
- 次の例では警告 C4566 が生成されます。  
+ 次の例では、C4566 が生成されます。  
   
 ```  
 // C4566.cpp  

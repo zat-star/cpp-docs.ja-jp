@@ -1,32 +1,37 @@
 ---
-title: "map::erase (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::map::erase"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "erase メンバー [STL/CLR]"
+title: "map::erase (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::map::erase
+dev_langs:
+- C++
+helpviewer_keywords:
+- erase member [STL/CLR]
 ms.assetid: a8fc88dd-a726-4a5b-bdf2-87743e98e687
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 320be2b045ed128885a581b995f1e3979baea491
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# map::erase (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="maperase-stlclr"></a>map::erase (STL/CLR)
 指定した位置にある要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 iterator erase(iterator where);  
@@ -34,29 +39,29 @@ iterator erase(iterator first, iterator last);
 bool erase(key_type key)  
 ```  
   
-#### パラメーター  
- 最初  
- 消去する範囲の先頭。  
+#### <a name="parameters"></a>パラメーター  
+ 先頭  
+ 消去する範囲の開始しています。  
   
  key  
  消去するキー値。  
   
  last  
- 消去する範囲の最後。  
+ 消去する範囲の終了。  
   
  where  
  消去する要素。  
   
-## 解説  
- 一つ目のメンバー関数は、そのような要素が存在しない場合 `where`が指す被制御シーケンスの要素を削除し、削除した要素を後に残った一つ目の要素を指定する場合は [map::end](../dotnet/map-end-stl-clr.md)`()` 反復子を返します。  単一の要素を削除する場合に使用します。  
+## <a name="remarks"></a>コメント  
+ 最初のメンバー関数によって示される、被制御シーケンスの要素を削除する`where`、し、削除、要素の後に残る最初の要素を指定する反復子を返しますまたは[map::end (STL/CLR)](../dotnet/map-end-stl-clr.md) `()`このような要素が存在しない場合。 それを使用するには 1 つの要素を削除します。  
   
- 2 つ目のメンバー関数は、そのような要素が存在しない場合 `[`範囲`first``,``last``)`の被制御シーケンスの要素を削除し、要素を削除した後に残った一つ目の要素を指定する `end()` または反復子を返します。  使用するゼロ以上の連続する要素を削除するには、それを。  
+ 2 番目のメンバー関数、被制御シーケンスの要素の範囲内の削除 [`first`、 `last`)、し、削除された要素の後に残る最初の要素を指定する反復子を返しますまたは`end()`場合、このような要素がないです。存在する. これを使用するには 0 個以上の連続する要素を削除します。  
   
- 3 つ目のメンバー関数は、キーに `key`に並べる等価を削除し、削除した要素の数を返します。被制御シーケンスの要素を紹介します。  指定したキーに一致するすべての要素を削除し、count の場合に使用します。  
+ 3 番目のメンバー関数と同じ順序キーを持つは、被制御シーケンスのいずれかの要素を削除する`key`、削除された要素の数のカウントを返します。 これを使用して、削除し、指定したキーと一致するすべての要素をカウントします。  
   
- 各要素の削除は、被制御シーケンス内の要素数に比例する対数に時間がかかります。  
+ 各要素の消去では、被制御シーケンス内の要素の数の対数に比例して時間がかかります。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_map_erase.cpp   
@@ -104,18 +109,21 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**erase\(begin\(\)\) \= \[b 2\]**  
- **\[\] \[3 2 b c d 4 \[\] \[\]e 5\]**  
-**erase\(begin\(\)、end\(\)\-1\) \= \[e 5\]**  
-**size\(\) \= 1**  
-**erase \(L'x\) \= 0**  
-**erase \(L'e\) \= 1**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+erase(begin()) = [b 2]  
+ [b 2] [c 3] [d 4] [e 5]  
+erase(begin(), end()-1) = [e 5]  
+size() = 1  
+erase(L'x') = 0  
+erase(L'e') = 1  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [マップ](../dotnet/map-stl-clr.md)   
- [map::clear](../dotnet/map-clear-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [map::clear (STL/CLR)](../dotnet/map-clear-stl-clr.md)

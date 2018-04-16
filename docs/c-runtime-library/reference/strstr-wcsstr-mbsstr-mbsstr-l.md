@@ -1,12 +1,13 @@
 ---
-title: "strstr、wcsstr、_mbsstr、_mbsstr_l | Microsoft Docs"
-ms.custom: 
+title: strstr、wcsstr、_mbsstr、_mbsstr_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
 apiname:
 - _mbsstr
 - wcsstr
@@ -25,6 +26,7 @@ apilocation:
 - ntdll.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- ntoskrnl.exe
 apitype: DLLExport
 f1_keywords:
 - _fstrstr
@@ -33,7 +35,8 @@ f1_keywords:
 - wcsstr
 - _mbsstr
 - _tcsstr
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - strings [C++], searching
 - mbsstr function
@@ -50,21 +53,23 @@ helpviewer_keywords:
 - _mbsstr_l function
 - strstr function
 ms.assetid: 03d70c3f-2473-45cb-a5f8-b35beeb2748a
-caps.latest.revision: "32"
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5699f3771e75016e0e7db636416a31eb1e6a8957
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d56fc0f254a426eea10abec979ff7d656659bd82
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="strstr-wcsstr-mbsstr-mbsstrl"></a>strstr、wcsstr、_mbsstr、_mbsstr_l
 文字列で最初に見つかった検索文字列へのポインターを返します。  
   
 > [!IMPORTANT]
->  `_mbsstr` および `_mbsstr_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbsstr` および `_mbsstr_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -143,7 +148,7 @@ const unsigned char *_mbsstr_l(
   
  C では、これらの関数は、最初の引数に `const` ポインターを受け取ります。 C++ では、2 つのオーバーロードを使用できます。 `const` へのポインターを受け取るオーバーロードでは、`const` へのポインターが返されます。非 `const` へのポインターを受け取るバージョンでは、非 `const` へのポインターが返されます。 マクロ`_CRT_CONST_CORRECT_OVERLOADS`場合は、両方が定義されている、`const`と非-`const`これらの関数のバージョンを利用できます。 必要な以外の場合`const`シンボルを定義する両方の C++ オーバー ロードの動作`_CONST_RETURN`です。  
   
- 出力値は、`LC_CTYPE` のロケール カテゴリ設定で決まります。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ 出力値は、`LC_CTYPE` のロケール カテゴリ設定で決まります。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -160,7 +165,7 @@ const unsigned char *_mbsstr_l(
 |`wcsstr`|\<string.h> または \<wchar.h>|  
 |`_mbsstr`, `_mbsstr_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   

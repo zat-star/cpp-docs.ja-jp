@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 24aa0d52-4014-4acb-8052-f4e2e4bbc3bb
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5e30d0664716df0f4cdf7d394d9c9a5fd7e8c798
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1b3473d7cd4ec23749f95bd06a1d993abc3209df
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="porting-guide-com-spy"></a>移植のガイド: COM Spy
 このトピックは、旧バージョンの Visual C++ プロジェクトを Visual Studio の最新バージョンにアップグレードするプロセスについて説明する一連の記事の 2 番目です。 このトピックのコード例は、前回 Visual Studio 2005 でコンパイルされています。  
@@ -173,7 +177,7 @@ private void button1_Click(object sender, EventArgs e)
   
  これは問題なく実行できました。COM Spy が起動して実行され、Dog コンポーネントを監視するよう構成されると、アクティビティを示す大量のデータが表示されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [移植およびアップグレード: 例とケース スタディ](../porting/porting-and-upgrading-examples-and-case-studies.md)   
  [次の例: spy++](../porting/porting-guide-spy-increment.md)   
  [前の例: MFC Scribble](../porting/porting-guide-mfc-scribble.md)

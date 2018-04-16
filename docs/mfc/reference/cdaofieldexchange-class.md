@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,22 +15,25 @@ f1_keywords:
 - AFXDAO/CDaoFieldExchange::SetFieldType
 - AFXDAO/CDaoFieldExchange::m_nOperation
 - AFXDAO/CDaoFieldExchange::m_prs
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDaoFieldExchange [MFC], IsValidOperation
 - CDaoFieldExchange [MFC], SetFieldType
 - CDaoFieldExchange [MFC], m_nOperation
 - CDaoFieldExchange [MFC], m_prs
 ms.assetid: 350a663e-92ff-44ab-ad53-d94efa2e5823
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b95af3e80234cf7f3910fc9a4ef3468ab5d90ba7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1c4a62d3f9631d4e2807bf12e1eda3bd4b4f5112
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdaofieldexchange-class"></a>CDaoFieldExchange クラス
 DAO データベース クラスで使われる DAO レコード フィールド エクスチェンジ (DFX: DAO Record Field eXchange) ルーチンをサポートします。  
@@ -78,7 +82,7 @@ class CDaoFieldExchange
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CDaoFieldExchange`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdao.h  
   
 ##  <a name="isvalidoperation"></a>CDaoFieldExchange::IsValidOperation  
@@ -152,6 +156,6 @@ void SetFieldType(UINT nFieldType);
   
  一般に、フィールド データ メンバーまたはパラメーター データ メンバーに関連付けられている DFX 関数呼び出しの各グループの前への呼び出し`SetFieldType`です。 `nFieldType`の各パラメーター`SetFieldType`呼び出しに続く DFX 関数呼び出しによって表されるデータ メンバーの種類を識別する、`SetFieldType`呼び出します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [CDaoRecordset クラス](../../mfc/reference/cdaorecordset-class.md)

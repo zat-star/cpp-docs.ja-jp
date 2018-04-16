@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - bad_target
 - CONCRT/concurrency::bad_target
 - CONCRT/concurrency::bad_target::bad_target
-dev_langs: C++
-helpviewer_keywords: bad_target class
+dev_langs:
+- C++
+helpviewer_keywords:
+- bad_target class
 ms.assetid: e6dcddbf-9217-4fac-ac7f-7b8b4781d2f5
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4eb4f5158b3f8178bf34d5e5a27a8c28336b8946
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 178d8519516790be3cdb2d9178cc8ffdf144ea23
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="badtarget-class"></a>bad_target クラス
 このクラスは、実行する操作の無効なターゲットへのポインターがメッセージング ブロックに渡された場合にスローされる例外を表します。  
@@ -49,12 +54,12 @@ class bad_target : public std::exception;
   
  `bad_target`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>bad_target 
+##  <a name="ctor"></a> bad_target 
 
  `bad_target` オブジェクトを構築します。  
   
@@ -68,7 +73,7 @@ bad_target() throw();
  `_Message`  
  エラーの説明メッセージ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [非同期メッセージ ブロック](../../../parallel/concrt/asynchronous-message-blocks.md)
 

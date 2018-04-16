@@ -4,14 +4,16 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - alignas_cpp
 - __alignof_cpp
 - alignof_cpp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - alignas [C++]
 - alignment of structures
@@ -19,15 +21,17 @@ helpviewer_keywords:
 - alignof [C++]
 - types [C++], alignment requirements
 ms.assetid: acb1eed7-6398-40bd-b0c5-684ceb64afbc
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 94940b15e185866d8f24a20c417e730c52b8502c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: faceca31928d9c49f3c1cf5b933a65767ece7453
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="alignof-operator"></a>__alignof 演算子
 C++11 では、指定した型の配置をバイト単位で返す `alignof` 演算子が導入されています。 移植性を最大にするため、Microsoft 固有の __alignof 演算子ではなく、alignof 演算子を使用してください。  
@@ -39,24 +43,21 @@ C++11 では、指定した型の配置をバイト単位で返す `alignof` 演
 ## <a name="syntax"></a>構文  
   
 ```  
-  
-      __alignof(   
-   type    
-)  
+  __alignof( type )
 ```  
   
 ## <a name="remarks"></a>コメント  
  例:  
   
-|式|値|  
+|正規表現|[値]|  
 |----------------|-----------|  
-|**_ _alignof (char)**|1|  
-|**_ _alignof (短い形式)**|2|  
-|**_ _alignof (int)**|4|  
-|**_ _alignof ( \__int64)**|8|  
-|**_ _alignof (float)**|4|  
-|**_ _alignof (double)**|8|  
-|**_ _alignof (char\* )**|4|  
+|**__alignof( char )**|1|  
+|**__alignof( short )**|2|  
+|**__alignof( int )**|4|  
+|**__alignof( \__int64 )**|8|  
+|**__alignof( float )**|4|  
+|**__alignof( double )**|8|  
+|**__alignof( char\* )**|4|  
   
  `__alignof` 値は、基本型の `sizeof` 値と同じです。 ただし、次の例を検討します。  
   
@@ -101,6 +102,6 @@ S* p = (S*)aligned_malloc(n * sizeof(S), __alignof(S));
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [キーワード](../cpp/keywords-cpp.md)

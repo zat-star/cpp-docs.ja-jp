@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - operators [C], unary
 - tilde (~) one's complement operator
@@ -20,15 +22,17 @@ helpviewer_keywords:
 - logical negation
 - '! operator, unary arithmetic operators'
 ms.assetid: 78c91415-d469-499e-9dfe-4435350fd333
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a655523a22c66d4b255d82d071a4efff29e6a6a1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9741286ba4af5820f8d8eebadfd88d3bb14abaef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unary-arithmetic-operators"></a>単項算術演算子
 C の単項プラス演算子、算術否定演算子、補数演算子、および論理否定演算子については、後の一覧で説明します。  
@@ -42,7 +46,7 @@ C の単項プラス演算子、算術否定演算子、補数演算子、およ
   
  ポインターの単項算術演算は無効です。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次の例は、単項算術演算子を示します。  
   
 ```  
@@ -65,5 +69,5 @@ if( !(x < y) )
   
  `x` が `y` 以上の場合、式の結果は 1 (true) になります。 `x` が `y` よりも小さい場合、結果は 0 (false) になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)

@@ -17,16 +17,17 @@ helpviewer_keywords:
 - names [C++], with no linkage
 - function parameters [C++]
 ms.assetid: 7174c500-12d2-4572-8c16-63c27c758fb1
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 161698d01e9cc9aeaac8f2b9bdc491343555880d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 13acb94022caf7ad9ddbf2fe94ad2fa95a70dc80
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="names-with-no-linkage"></a>リンケージのない名前
 リンケージを持たない名前は次のとおりです。  
@@ -114,5 +115,5 @@ void GoodFuncDef( char ch )  // Define GoodFuncDef
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)

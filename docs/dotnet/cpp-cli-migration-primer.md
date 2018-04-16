@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - C++/CLI Version 2
 - upgrading Visual C++ applications, Managed Extensions for C++ to Visual C++ 2005 syntax
@@ -15,18 +17,21 @@ helpviewer_keywords:
 - Managed Extensions for C++, upgrading syntax
 - C++/CLI Version 2, managed extensions
 ms.assetid: 8ec926b5-73f6-4f0c-bcdf-5203d293849a
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5861a4931a1241a213157b94ca189c6b95f0fb6a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 17474b347a6daf2d477a6ed731e13db86e068b05
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="ccli-migration-primer"></a>C++/CLI 移行ガイド
-これは、Visual c、c++ マネージ拡張から、Visual C プログラムを移行するためのガイドです。 チェックリスト概要構文の変更には、次を参照してください。 [C++ 構文のアップグレード チェックリストの (NOTINBUILD) マネージ拡張](http://msdn.microsoft.com/en-us/edbded88-7ef3-4757-bd9d-b8f48ac2aada)です。  
+これは、Visual c、c++ マネージ拡張から、Visual C プログラムを移行するためのガイドです。 
   
  C++/CLI は ISO-C++ 標準言語に対する動的コンポーネント プログラミング パラダイムを拡張します。 新しい言語では、マネージ拡張を強化するさまざまな改良が施されました。 このセクションでは、このようなマッピングが存在し、マッピングが存在しないこれらのコンストラクトを伴う Visual c マネージ C++ 言語の機能拡張の列挙とのマッピングを提供します。  
   
@@ -49,6 +54,6 @@ ms.lasthandoff: 10/24/2017
  [言語の変更の概要 (C++/CLI)](../dotnet/general-language-changes-cpp-cli.md)  
  キャスト表記のサポート、リテラル文字列の動作などのセマンティクスの変更、および ISO-C++ と C++/CLI とのセマンティクスの相違について詳しく紹介します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)   
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

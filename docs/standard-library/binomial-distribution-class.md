@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::binomial_distribution
 - random/std::binomial_distribution::reset
@@ -22,7 +22,6 @@ f1_keywords:
 - random/std::binomial_distribution::param_type::t
 - random/std::binomial_distribution::param_type::operator==
 - random/std::binomial_distribution::param_type::operator!=
-- random/std::binomial_distribution::param_type
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,16 +35,17 @@ helpviewer_keywords:
 - std::binomial_distribution [C++], param_type
 - std::binomial_distribution [C++], param_type
 ms.assetid: b7c8a26a-da8c-45a5-a3a8-208f7a3609ce
-caps.latest.revision: 22
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0576050177fa7685f38265ba24f43dab01749b73
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: ae3889c06ddc69e81ae5e144c70d68d7dc34c3ce
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="binomialdistribution-class"></a>binomial_distribution クラス
 二項分布を生成します。  
@@ -107,7 +107,7 @@ public:
   
 分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) を参照してください。  
   
-二項分布の離散確率関数の詳細については、Wolfram MathWorld の記事「[二項分布](http://go.microsoft.com/fwlink/LinkId=398469)」を参照してください。  
+二項分布の離散確率関数の詳細については、Wolfram MathWorld の記事「[二項分布](http://go.microsoft.com/fwlink/p/?linkid=398469)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -234,7 +234,7 @@ Histogram for 100 samples:
     21 :  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **ヘッダー:** \<random>  
   
 **名前空間:** std  
@@ -294,9 +294,8 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
-
 
 
 

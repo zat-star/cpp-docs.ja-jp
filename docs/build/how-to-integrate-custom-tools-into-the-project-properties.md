@@ -4,29 +4,35 @@ ms.custom:
 ms.date: 04/27/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: msbuild.cpp.howto.integratecustomtools
-dev_langs: C++
-helpviewer_keywords: 'msbuild (c++), howto: integrate custom tools'
+f1_keywords:
+- msbuild.cpp.howto.integratecustomtools
+dev_langs:
+- C++
+helpviewer_keywords:
+- 'msbuild (c++), howto: integrate custom tools'
 ms.assetid: f32d91a4-44e9-4de3-aa9a-1c7f709ad2ee
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 128b19c1175fb5f39599a9ccaeae66d1fc53fdab
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a762fc573953bcfb09180b9b830b761448d87a0d
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="how-to-integrate-custom-tools-into-the-project-properties"></a>方法: カスタム ツールをプロジェクト プロパティに統合する
 カスタム ツールのオプションを追加するには、Visual Studio に**プロパティ ページ**ウィンドウでは、基になる XML スキーマ ファイルを作成します。  
   
  **構成プロパティ**のセクションで、**プロパティ ページ**ウィンドウとして知られている設定グループを表示する*ルール*です。 すべてのルールには、ツールまたは機能のグループの設定が含まれています。 たとえば、**リンカー**ルールには、リンカー ツールの設定が含まれています。 ルールの設定に分割できます*カテゴリ*です。  
   
- このドキュメントでは、Visual Studio の起動時に、プロパティが読み込まれるように、カスタム ツールのプロパティを含むセット ディレクトリにファイルを作成する方法について説明します。 ファイルを変更する方法については、次を参照してください。[プラットフォーム機能拡張の第 2 部](http://go.microsoft.com/fwlink/?LinkID=191489)Visual Studio プロジェクトのチームのブログです。  
+ このドキュメントでは、Visual Studio の起動時に、プロパティが読み込まれるように、カスタム ツールのプロパティを含むセット ディレクトリにファイルを作成する方法について説明します。 ファイルを変更する方法については、次を参照してください。[プラットフォーム機能拡張の第 2 部](http://go.microsoft.com/fwlink/p/?linkid=191489)Visual Studio プロジェクトのチームのブログです。  
   
 ### <a name="to-add-or-change-project-properties"></a>プロジェクトのプロパティを追加または変更  
   
@@ -44,5 +50,5 @@ ms.lasthandoff: 10/24/2017
   
 7.  **ソリューション エクスプ ローラー**、プロジェクトを右クリックし、クリックして**プロパティ**です。 **プロパティ ページ**ウィンドウの左側のウィンドウで、ルールの名前を持つ新しいノードがあることを確認してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MSBuild (Visual C++)](../build/msbuild-visual-cpp.md)

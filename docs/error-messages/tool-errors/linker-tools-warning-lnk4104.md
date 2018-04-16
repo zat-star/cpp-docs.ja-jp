@@ -1,32 +1,36 @@
 ---
-title: "リンカー ツールの警告 LNK4104 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK4104"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK4104"
+title: "リンカー ツールの警告 LNK4104 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- LNK4104
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK4104
 ms.assetid: ca6728db-d616-419a-a570-65e8445c6079
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b26286f375f54a20e1d3db534576f692179ade24
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカー ツールの警告 LNK4104
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-シンボル 'symbol' のエクスポートは PRIVATE になります。  
+# <a name="linker-tools-warning-lnk4104"></a>リンカー ツールの警告 LNK4104
+シンボル 'symbol' のエクスポートがプライベートにする必要があります。  
   
- `symbol` は以下のいずれかです。  
+ `symbol`次のいずれかになります。  
   
 -   `DllCanUnloadNow`  
   
@@ -58,4 +62,4 @@ caps.handback.revision: 9
   
 -   `RasCustomEntryDlg`  
   
- DLL 用のインポート ライブラリをビルドし、上の関数をモジュール定義ファイルで PRIVATE と指定せずにエクスポートすると、この警告が発生します。  通常、これらの関数は、OLE 専用にエクスポートします。  これらの関数をインポート ライブラリに含むと、ライブラリにリンクしたプログラムが間違って呼び出し、動作が異常になることがあります。  PRIVATE キーワードの詳細については、「[EXPORTS](../Topic/EXPORTS.md)」を参照してください。
+ この警告では、dll インポート ライブラリを構築するときに出力し、上記の関数のいずれかのモジュール定義ファイルでプライベートとしてを指定せずにエクスポートします。 一般に、これらの関数は、OLE でのみ使用するエクスポートされます。 リンクされているライブラリを正しくプログラムがそれらへの呼び出しを行うときに、インポート ライブラリ内に配置することは異常な動作につながります。 PRIVATE キーワードの詳細については、次を参照してください。[エクスポート](../../build/reference/exports.md)です。

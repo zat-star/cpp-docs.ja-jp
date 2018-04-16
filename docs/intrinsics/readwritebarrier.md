@@ -1,58 +1,62 @@
 ---
-title: "_ReadWriteBarrier | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_ReadWriteBarrier"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_ReadWriteBarrier 組み込み"
-  - "ReadWriteBarrier 組み込み"
+title: "_ReadWriteBarrier |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- _ReadWriteBarrier
+dev_langs:
+- C++
+helpviewer_keywords:
+- ReadWriteBarrier intrinsic
+- _ReadWriteBarrier intrinsic
 ms.assetid: dd9f58b5-8bb6-494e-bb0f-9fe184f3908d
-caps.latest.revision: 27
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 27
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: acc177ad5f98405571a418f849d35fa98242e0f2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# _ReadWriteBarrier
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="readwritebarrier"></a>_ReadWriteBarrier
+**Microsoft 固有の仕様**  
   
  呼び出し場所全体にわたってメモリ アクセスの順序を変更できるコンパイラの最適化を制限します。  
   
 > [!CAUTION]
->  コンパイラ組み込み関数 `_ReadBarrier`、`_WriteBarrier`、`_ReadWriteBarrier` と、`MemoryBarrier` マクロは、すべて非推奨となっているため、使用しないでください。  スレッド間通信には、[C\+\+ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)で定義されている [atomic\_thread\_fence](../Topic/atomic_thread_fence%20Function.md) や [std::atomic\<T\>](../standard-library/atomic.md) などの機構を使用します。  ハードウェア アクセスには、[volatile](../cpp/volatile-cpp.md) "キーワードと共に [\/volatile:iso](../build/reference/volatile-volatile-keyword-interpretation.md) コンパイラ オプションを使用します。  
+>  コンパイラ組み込み関数 `_ReadBarrier`、`_WriteBarrier`、`_ReadWriteBarrier` と、`MemoryBarrier` マクロは、すべて非推奨となっているため、使用しないでください。 スレッド間通信の場合などのメカニズムを使用して[atomic_thread_fence](../standard-library/atomic-functions.md#atomic_thread_fence)と[std::atomic\<T >](../standard-library/atomic.md)で定義されている、 [C++ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md). ハードウェアへのアクセスを使用して、 [/volatile:iso](../build/reference/volatile-volatile-keyword-interpretation.md)コンパイラ オプションと共に、[揮発性](../cpp/volatile-cpp.md)キーワード。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void _ReadWriteBarrier(void);  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`_ReadWriteBarrier`|x86、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`_ReadWriteBarrier`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  `_ReadWriteBarrier` 組み込み関数は、呼び出し場所全体にわたってメモリ アクセスを削除または順序変更できるコンパイラの最適化を制限します。  
   
-## END Microsoft 固有の仕様  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_ReadBarrier](../intrinsics/readbarrier.md)   
- [\_WriteBarrier](../intrinsics/writebarrier.md)   
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+## <a name="see-also"></a>参照  
+ [_ReadBarrier](../intrinsics/readbarrier.md)   
+ [_WriteBarrier](../intrinsics/writebarrier.md)   
+ [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
+ [キーワード](../cpp/keywords-cpp.md)

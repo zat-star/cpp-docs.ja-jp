@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,22 +15,25 @@ f1_keywords:
 - AFXTEMPL/CTypedPtrMap::Lookup
 - AFXTEMPL/CTypedPtrMap::RemoveKey
 - AFXTEMPL/CTypedPtrMap::SetAt
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CTypedPtrMap [MFC], GetNextAssoc
 - CTypedPtrMap [MFC], Lookup
 - CTypedPtrMap [MFC], RemoveKey
 - CTypedPtrMap [MFC], SetAt
 ms.assetid: 9f377385-c6e9-4471-8b40-8fe220c50164
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b35de0ea2b0f7e11dddcdf7b99f2ab01dcf7a7de
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9056fc73e2718b2a21936c39e630f4d4fddf1eed
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctypedptrmap-class"></a>CTypedPtrMap クラス
 ポインター マップ クラス `CMapPtrToPtr`、 `CMapPtrToWord`、 `CMapWordToPtr`、および `CMapStringToPtr`のオブジェクトに対してタイプ セーフな "ラップ" が用意されています。  
@@ -80,7 +84,7 @@ class CTypedPtrMap : public BASE_CLASS
   
  `CTypedPtrMap`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxtempl.h  
   
 ##  <a name="getnextassoc"></a>CTypedPtrMap::GetNextAssoc  
@@ -97,7 +101,7 @@ void GetNextAssoc(
  `rPosition`  
  参照を指定します、**位置**によって以前返される値`GetNextAssoc`または`BASE_CLASS` **:: 中**呼び出します。  
   
- *キー*  
+ *KEY*  
  マップのキーの型を指定するテンプレート パラメーター。  
   
  `rKey`  
@@ -170,7 +174,7 @@ BOOL RemoveKey(KEY key);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- *キー*  
+ *KEY*  
  マップのキーの型を指定するテンプレート パラメーター。  
   
  `key`  
@@ -190,7 +194,7 @@ void SetAt(KEY key, VALUE newValue);
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- *キー*  
+ *KEY*  
  マップのキーの型を指定するテンプレート パラメーター。  
   
  `key`  
@@ -202,7 +206,7 @@ void SetAt(KEY key, VALUE newValue);
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください。 [CMapStringToOb::SetAt](../../mfc/reference/cmapstringtoob-class.md#setat)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプルの収集](../../visual-cpp-samples.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CMapPtrToPtr クラス](../../mfc/reference/cmapptrtoptr-class.md)   

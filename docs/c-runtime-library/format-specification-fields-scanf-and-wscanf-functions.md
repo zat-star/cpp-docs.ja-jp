@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -18,7 +19,8 @@ apitype: DLLExport
 f1_keywords:
 - wscanf
 - scanf
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - width, specifications in scanf function
 - scanf format specifications
@@ -28,15 +30,17 @@ helpviewer_keywords:
 - format specification fields for scanf function
 - type fields
 ms.assetid: 7e95de1b-0b71-4de3-9f81-c9560c78e039
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 55d92c5e162541b2b805074740d542a52866c48a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2286d7a6b82cf917c264cc43b82dec3939af6d94
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="format-specification-fields-scanf-and-wscanf-functions"></a>scanf 関数と wscanf 関数の書式指定フィールド
 ここにある情報は、セキュリティが強化されたバージョンを含む `scanf` 系の関数すべてに当てはまり、`scanf` に対する `stdin` などの入力ストリームを解析してプログラム変数に挿入する値に変換する方法を `scanf` 関数に指示するために使用するシンボルについても説明します。  
@@ -67,7 +71,7 @@ ms.lasthandoff: 10/24/2017
   
  `_s` 系の関数で `scanf` サフィックスが付いているセキュリティが強化されたバージョンでは、型が `c`、`C`、`s`、`S`、または `[` であるすべてのパラメーターに続けてバッファー サイズのパラメーターを渡す必要があります。 `scanf` 系の関数のセキュリティが強化されたバージョンの詳細については、「[scanf_s、_scanf_s_l、wscanf_s、_wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [scanf 関数の文字幅指定](../c-runtime-library/scanf-width-specification.md)   
  [scanf 関数の型フィールド文字](../c-runtime-library/scanf-type-field-characters.md)   
  [scanf、_scanf_l、wscanf、_wscanf_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   

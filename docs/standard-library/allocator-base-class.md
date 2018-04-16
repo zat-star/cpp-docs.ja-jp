@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - allocators/stdext::allocator_base
 - allocators/stdext::allocators::allocator_base
@@ -47,16 +47,17 @@ helpviewer_keywords:
 - stdext::allocator_base [C++], destroy
 - stdext::allocator_base [C++], max_size
 ms.assetid: f920b45f-2a88-4bb0-8ead-b6126b426ed4
-caps.latest.revision: 17
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d99f12abb1ff9d0d26f40d41888e6db27ca48996
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: a8ca7f07f3d458b18dfb0ee21c5499b0b4bfffff
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="allocatorbase-class"></a>allocator_base クラス
 同期フィルターからユーザー定義のアロケーターを作成するために必要な、基底クラスと共通の関数を定義します。  
@@ -106,7 +107,7 @@ class allocator_base
 |[destroy](#destroy)|オブジェクトが格納されたメモリの割り当てを解除せずに、オブジェクトのデストラクターを呼び出します。|  
 |[max_size](#max_size)|空きメモリがすべて使用される前にクラス アロケーター オブジェクトによって割り当てることのできる、型 `Type` の要素の数を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
@@ -320,9 +321,8 @@ typedef std::size_t size_type;
 typedef Type value_type;
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<allocators>](../standard-library/allocators-header.md)
-
 
 
 

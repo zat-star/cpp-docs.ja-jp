@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3145
 ms.assetid: f165c874-0f51-45c7-85e8-ebe321cbc168
-caps.latest.revision: 13
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f9fb45f3fc90a0586f0f5b08dd12f0a244dd2332
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 6b6548d04d701cb510669d91780979951c485685
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3145"></a>コンパイラ エラー C3145
 'object': グローバルまたは静的変数は、マネージ型または WinRT 型の ’type’ を含むことはできません。  
@@ -73,4 +74,3 @@ int main() {
    interior_ptr<int> p = &(h_MyClass->data);  
 }  
 ```  
-

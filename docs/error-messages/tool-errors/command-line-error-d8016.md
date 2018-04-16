@@ -15,40 +15,27 @@ dev_langs:
 helpviewer_keywords:
 - D8016
 ms.assetid: eec51312-7471-4f92-94b2-d517cafc8ef5
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 79dad5a5134e91b67a395870e4ff7fa8e14066fb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 463de86acf0446f125b66ec1cdc3768c6238b630
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="command-line-error-d8016"></a>コマンド ライン エラー D8016
-'オプション&1;' および 'option2' コマンド ライン オプションは互換性がありません。  
+'オプション 1' と '・ オプション 2' のコマンド ライン オプションは互換性がありません。  
   
- コマンド ライン オプションを同時に指定することはできません。  
+ コマンド ライン オプションを指定することはできません。  
   
- CL などの環境変数、オプションの指定を確認してください。  
+ CL などの環境変数、オプションの指定についてを確認してください。  
   
- **/clr**意味**/EHa**、およびその他の操作を指定することはできません**/EH**コンパイラ オプションを**/clr**します。 詳細については、「[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+ **/clr**意味**/EHa**、およびその他の操作を指定することはできません**/EH**コンパイラ オプションを**/clr**です。 詳細については、「[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
   
- 更新から D8016 が発生する可能性があります、 [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] 6.0 プロジェクト: プロジェクト更新ウィザードの処理を有効にすることがあります**/RTC**オーバーライド プロジェクトのソース コード ファイルごとに、 **/RTC**プロジェクトに設定します。  これを解決するには、変更、 **/RTC**プロジェクト設定の既定の設定に、プロジェクト内の各ソース コード ファイルの設定、つまり**/RTC**ファイルごとに有効になります。  
+ 更新した後に d8016 可能性があります、 [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] 6.0 プロジェクト: プロジェクト更新ウィザードの処理を有効にすることがあります**/RTC**各ソース コードのファイル プロジェクト内には、これよりも優先、 **/RTC**の設定、プロジェクトです。  これを解決するには、変更、 **/RTC**プロジェクト内の各ソース コード ファイルの既定の設定に設定することを意味のプロジェクト設定**/RTC**ファイルごとに有効になります。  
   
- 参照してください[/RTC (ランタイム エラー チェック)](../../build/reference/rtc-run-time-error-checks.md)変更する方法について、 **/RTC**プロパティの設定です。
+ 参照してください[/RTC (ランタイム エラー チェック)](../../build/reference/rtc-run-time-error-checks.md)変更する方法について、 **/RTC**プロパティの設定。

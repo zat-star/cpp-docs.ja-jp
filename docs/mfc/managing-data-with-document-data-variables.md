@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - documents [MFC], data storage
 - friend classes [MFC]
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - document data [MFC]
 - member variables [MFC], document class [MFC]
 ms.assetid: e70b87f4-8c30-49e5-8986-521c2ff91704
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: af24c461d579ee784487697cc376d9e8f0816643
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c737557d503ca7e0959d159a0818f1ca78280ea2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="managing-data-with-document-data-variables"></a>ドキュメント データ変数を使ったデータ管理
 ドキュメント クラスのメンバー変数として、ドキュメントのデータを実装します。 たとえば、この Scribble プログラムが型のデータ メンバーを宣言して`CObList`— へのポインターを格納するリンクされたリスト`CObject`オブジェクト。 この一覧を使用して、フリーハンド線画を構成する点の配列を格納します。  
@@ -39,6 +43,6 @@ ms.lasthandoff: 10/24/2017
   
  頻繁なデータ転送には、直接のアクセスが必要です、またはドキュメント クラスの非パブリック メンバーを使用する、クラスのフレンド クラス (C++ の用語) ドキュメント クラスのビューを作成することがあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ドキュメントの使い方](../mfc/using-documents.md)
 

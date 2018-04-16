@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3347
 ms.assetid: e939ad29-0b78-4681-9618-9bdae5675cee
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f7a450d86c1da57d67f499bd88cde5ce32ee1930
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 75d81462324690ae126938ffeab5a8eea9334426
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3347"></a>コンパイラ エラー C3347
 'arg': 必要な引数が属性 idl_module 内で指定されていません  

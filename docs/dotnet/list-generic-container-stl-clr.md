@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::list::generic_container
-dev_langs: C++
-helpviewer_keywords: generic_container member [STL/CLR]
+f1_keywords:
+- cliext::list::generic_container
+dev_langs:
+- C++
+helpviewer_keywords:
+- generic_container member [STL/CLR]
 ms.assetid: 1a8b708e-3c75-4551-a86e-5b50d6be706a
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7be6b4fa0f8c5d3c9c22487ad29b7a4d874c6d71
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5f04032a3777e9537a7565f479d2a3dce5b407cb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listgenericcontainer-stlclr"></a>list::generic_container (STL/CLR)
 コンテナーのジェネリック インターフェイスの型。  
@@ -86,12 +93,12 @@ a b c d
 a b c d e  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualC.StlClr.IList%601>   
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::generic_iterator (STL/CLR)](../dotnet/list-generic-iterator-stl-clr.md)   

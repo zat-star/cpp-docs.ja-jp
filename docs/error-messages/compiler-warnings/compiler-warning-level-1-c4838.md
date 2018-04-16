@@ -13,24 +13,26 @@ dev_langs:
 helpviewer_keywords:
 - C4838
 ms.assetid: fea07924-5feb-4ed4-99b5-1a8c41d28db6
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 227af1840fe5aee63545e35456fe09749f00de1d
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 76002ebf0a6ac6e610b1fcd10d02fab49287495b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4838"></a>コンパイラの警告 (レベル 1) C4838
-'type_1' から 'type_2' への変換が縮小変換が必要です。  
+'type_1' から 'type_2' への変換で縮小変換が必要です。  
   
  集計またはリストの初期化を使用する場合、暗黙的な縮小変換が見つかりました。  
   
- 割り当てと初期化で暗黙的な縮小変換では、C 言語および C++ ダイヤの多くのコード エラーの原因は、予期しないを絞り込む場合でもです。 コードをより安全なさせるには、標準の C++ では、初期化リストで縮小変換が発生したときに、診断メッセージが必要です。 Visual c では、診断が[コンパイラ エラー C2397](../../error-messages/compiler-errors-1/compiler-error-c2397.md)以降 Visual Studio 2015 でサポートされている均一な初期化構文を使用する場合。 コンパイラは、リストまたは Visual Studio 2013 でサポートされている集約の初期化の構文を使用する場合は、C4838 を警告を生成します。  
+ 割り当てと初期化、暗黙的な縮小変換により、C 言語および C++ ダイヤ、場合でも、多くのコード エラーの原因は、予期しない縮小します。 コードをより安全にするために、C++ 標準では、初期化リストで縮小変換が発生したときに、診断メッセージが必要です。 Visual c では、診断が[コンパイラ エラー C2397](../../error-messages/compiler-errors-1/compiler-error-c2397.md) Visual Studio 2015 以降でサポートされている均一な初期化構文を使用する場合。 コンパイラは、リストまたは Visual Studio 2013 でサポートされている集約の初期化の構文を使用する場合は、C4838 を警告を生成します。  
   
- 縮小変換は変換された値の有効範囲は、ターゲットに適合することがわかっている場合でも問題ないことができます。 この場合は、知っている、コンパイラがより。 縮小変換を意図的に作成する場合、開発者の意図を明示的に静的キャストを使用します。 それ以外の場合、この警告メッセージほとんどの場合を示します、コード内のバグがあるか。 初期化するオブジェクトの入力を処理するのに十分な大きさである型であることを確認することで解決することができます。  
+ 変換された値の有効範囲がターゲットに収まることがわかっている場合にも問題ありません縮小変換を指定できます。 この場合、わかってコンパイラよりも多くです。 縮小変換を意図的に作成する場合は、明示、意図静的キャストを使用します。 それ以外の場合、この警告メッセージほとんどの場合を示します、コード内のバグがあるか。 初期化するオブジェクトが型の入力を処理するのに十分な大きさであることを確認することで修正できます。  
   
  次の例では、C4838 を生成し、その修正方法を示しています。  
   

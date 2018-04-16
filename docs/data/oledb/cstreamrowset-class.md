@@ -4,34 +4,40 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ATL::CStreamRowset<TAccessor>
 - ATL::CStreamRowset
 - CStreamRowset
 - ATL.CStreamRowset<TAccessor>
 - ATL.CStreamRowset
-dev_langs: C++
-helpviewer_keywords: CStreamRowset class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CStreamRowset class
 ms.assetid: a106e953-a38a-464e-8ea5-28963d9e4811
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 003b6b84195c491d1c72c3de289de375459ba261
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 817d9454ad97580cdfb3eb6d68fbc819ed64dd90
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cstreamrowset-class"></a>CStreamRowset クラス
 使用される、`CCommand`または`CTable`宣言します。  
   
-## <a name="syntax"></a>構文  
-  
-```  
+## <a name="syntax"></a>構文
+
+```cpp
 template <class TAccessor = CAccessorBase>  
 class CStreamRowset  
 ```  
@@ -58,7 +64,7 @@ class CStreamRowset
   
  [!code-cpp[NVC_OLEDB_Consumer#12](../../data/oledb/codesnippet/cpp/cstreamrowset-class_2.cpp)]  
   
- `ICommand::Execute`返します、`ISequentialStream`に格納されているポインター`m_spStream`です。 使用して、**読み取り**の XML 形式 (Unicode 文字列) のデータを取得します。 例:  
+ `ICommand::Execute` 返します、`ISequentialStream`に格納されているポインター`m_spStream`です。 使用して、**読み取り**の XML 形式 (Unicode 文字列) のデータを取得します。 例:  
   
  [!code-cpp[NVC_OLEDB_Consumer#13](../../data/oledb/codesnippet/cpp/cstreamrowset-class_3.cpp)]  
   
@@ -67,9 +73,9 @@ class CStreamRowset
 > [!NOTE]
 >  この機能は、SQL Server 2000 でのみ動作します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)

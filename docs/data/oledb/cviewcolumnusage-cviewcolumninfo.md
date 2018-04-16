@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - m_szTableSchema
 - m_szCatalog
@@ -21,7 +22,8 @@ f1_keywords:
 - m_guidColumn
 - m_szTableName
 - m_szName
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COLUMN_PROPID
 - m_szSchema
@@ -41,15 +43,18 @@ helpviewer_keywords:
 - COLUMN_GUID
 - m_guidColumn
 ms.assetid: 4af14d6b-b224-4d72-b035-9d3aaacde32f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 834f1f0bd60bb573c5371a8a5aa3e2185bb115d2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4845af212cd7c2cd7a542cd2b23eed6c8991c1da
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cviewcolumnusage-cviewcolumninfo"></a>CViewColumnUsage、CViewColumnInfo
 Typedef クラスを呼び出す**CViewColumnUsage**そのパラメーター クラスを実装する**CViewColumnInfo**です。  
@@ -73,8 +78,8 @@ Typedef クラスを呼び出す**CViewColumnUsage**そのパラメーター ク
 |m_guidColumn|COLUMN_GUID|  
 |m_nColumnPropID|COLUMN_PROPID|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

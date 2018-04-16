@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CStatistics
 - m_szTableSchema
@@ -14,7 +15,8 @@ f1_keywords:
 - m_szTableCatalog
 - m_nCardinality
 - m_szTableName
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - m_nCardinality
 - m_szTableSchema
@@ -26,15 +28,18 @@ helpviewer_keywords:
 - m_szTableName
 - CStatisticInfo parameter class
 ms.assetid: 5822231c-6963-44a6-ae2f-29aca76e1600
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0063851a2a81f1fcafaf39497a64bdde3d3d43f0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: d267bbedf1663f7dfc5f31cd102a45c121c77af8
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cstatistics-cstatisticinfo"></a>CStatistics、CStatisticInfo
 Typedef クラスを呼び出す**CStatistics**そのパラメーター クラスを実装する**CStatisticInfo**です。  
@@ -53,8 +58,8 @@ Typedef クラスを呼び出す**CStatistics**そのパラメーター クラ�
 |m_szTableName|TABLE_NAME|  
 |m_nCardinality|CARDINALITY|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

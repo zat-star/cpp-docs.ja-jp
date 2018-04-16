@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _strtoui64
 - _strtoui64_l
@@ -34,7 +35,8 @@ f1_keywords:
 - strtoui64
 - _strtoui64
 - wcstoui64_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _strtoui64_l function
 - _wcstoui64_l function
@@ -46,15 +48,17 @@ helpviewer_keywords:
 - strtoui64_l function
 - strtoui64 function
 ms.assetid: 7fcb537e-4554-4ceb-a5b6-bc09244e72ef
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e1c774473bea1449f5ae1b254d1b98abe8a195d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2ad6ce06ef428005ea07214b426df0c61f623429
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strtoui64-wcstoui64-strtoui64l-wcstoui64l"></a>_strtoui64、_wcstoui64、_strtoui64_l、_wcstoui64_l
 文字列を unsigned `__int64` 値に変換します。  
@@ -130,16 +134,16 @@ unsigned __int64 _wcstoui64(
   
  `whitespace` は、空白文字とタブ文字で構成でき、無視されます。`digits` は 1 つ以上の 10 進数です。 この形式に一致しない文字を見つけるとスキャンを停止します。 `base` が 2 ～ 36 の間の場合、数値の基数として使用されます。 `base` が 0 の場合、`nptr` が指す文字列の先頭の文字を使用して、基数を判断します。 最初の文字が 0 で、2 番目の文字が 'x' または 'X' 以外の場合、文字列は 8 進数と解釈されます。 最初の文字が '0' で、2 番目の文字が 'x' または 'X' である場合、文字列は 16 進数と解釈されます。 最初の文字が '1' ～ '9' の間の数値の場合、文字列は 10 進数と解釈されます。 'a' ～ 'z' (または 'A' ～ 'Z') の文字には、10 ～ 35 の値が割り当てられています。`base` よりも小さい値が割り当てられている文字のみ許可されます。 基数の範囲外にある文字を最初に見つけた時点で、スキャンは停止されます。 たとえば、`base` が 0 で、スキャンされた最初の文字が '0' の場合、8 進数と見なされ、'8' または '9' の文字が出現すると、スキャンは停止されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strtoui64`|\<stdlib.h>|  
 |`_wcstoui64`|\<stdlib.h> または \<wchar.h>|  
 |`_strtoui64_l`|\<stdlib.h>|  
 |`_wcstoui64_l`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -161,7 +165,7 @@ int main() {
 u = 18446744073709551615  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [localeconv](../../c-runtime-library/reference/localeconv.md)   

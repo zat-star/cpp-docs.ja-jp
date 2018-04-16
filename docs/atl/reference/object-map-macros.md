@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - atlcom/ATL::DECLARE_OBJECT_DESCRIPTION
 - atlcom/ATL::OBJECT_ENTRY_AUTO
 - atlcom/ATL::OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 680087f4-9894-41dd-a79c-6f337e1f13c1
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8c1547f4d78c599ef0e272e8e2e881430c72ced1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 626744eb9f2d9dbe6a013bd329406150af35ecca
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="object-map-macros"></a>オブジェクト マップに関するマクロ
 これらのマクロは、オブジェクトのマップとエントリを定義します。  
@@ -32,7 +36,7 @@ ms.lasthandoff: 10/24/2017
 |[OBJECT_ENTRY_AUTO](#object_entry_auto)|オブジェクト マップに ATL オブジェクトを入力オブジェクトのインスタンスを作成し、レジストリを更新します。|  
 |[役立つ](#object_entry_non_createable_ex_auto)|オブジェクトを登録して初期化するように指定する一方で、`CoCreateInstance` を使用してオブジェクトを外部で作成できないように指定できます。|  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
    
 ##  <a name="declare_object_description"></a>DECLARE_OBJECT_DESCRIPTION  
@@ -109,5 +113,5 @@ OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO( clsid, class )
   
  `OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO`オブジェクトを登録して初期化することを指定することができます (を参照してください[OBJECT_ENTRY_AUTO](#object_entry_auto)詳細については) を使用して作成する必要がありますされませんが、`CoCreateInstance`です。  
   
-## <a name="see-also"></a>関連項目  
- [マクロ](../../atl/reference/atl-macros.md)
+## <a name="see-also"></a>参照  
+ [[マクロ]](../../atl/reference/atl-macros.md)

@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.mfc.macros.classes
-dev_langs: C++
+f1_keywords:
+- vc.mfc.macros.classes
+dev_langs:
+- C++
 helpviewer_keywords:
 - DestructElements function
 - ConstructElements function
@@ -16,15 +19,17 @@ helpviewer_keywords:
 - collection classes [MFC], helper functions
 - helper functions collection class [MFC]
 ms.assetid: bc3a2368-9edd-4748-9e6a-13cba79517ca
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b3d6baf4ba1622a9a9b54dcb25ed42eae89c86a0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 82b11c4cbe8f862121d89c308ab11d53582931d7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="collection-class-helpers"></a>コレクション クラスのヘルパー
 コレクション クラス`CMap`、 `CList`、および`CArray`を比較する、コピー、および要素をシリアル化するためにグローバル テンプレートのヘルパー関数を使用します。 基づくクラスの実装の一部として`CMap`、 `CList`、および`CArray`マップ、リスト、または配列に格納されたデータの種類に合うように、必要に応じて、これらの関数をオーバーライドする必要があります。 などのヘルパー関数を上書きする方法について`SerializeElements`、記事を参照して[コレクション: タイプ セーフなコレクションを作成する方法](../../mfc/how-to-make-a-type-safe-collection.md)です。 なお**ConstructElements**と**DestructElements**使用されなくなりました。  
@@ -75,7 +80,7 @@ CompareElements(
   
  C++ 言語には、比較演算子が定義されています ( `==`) 単純型の場合 ( `char`、 `int`、 **float**など) クラスおよび構造体の比較演算子が定義されていません。 使用する場合`CompareElements`それを使用するコレクション クラスの 1 つのインスタンスを作成、比較演算子を定義するか、オーバー ロードまたは`CompareElements`バージョン適切な値を返しますを使用します。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
    **ヘッダー:** afxtempl.h   
   
 ##  <a name="copyelements"></a>CopyElements  
@@ -107,7 +112,7 @@ void AFXAPI CopyElements(
   
  この関数およびその他のヘルパー関数を実装する方法については、記事を参照してください。[コレクション: タイプ セーフなコレクションを作成する方法](../how-to-make-a-type-safe-collection.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxtempl.h  
   
 ##  <a name="dumpelements"></a>DumpElements  
@@ -140,7 +145,7 @@ void  AFXAPI DumpElements(
  既定の実装では、何も行われません。 場合は、コレクションの要素から派生`CObject`を呼び出してオーバーライドは通常、コレクションの要素を反復処理する`Dump`ターンの各要素に対してです。  
   
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxtempl.h  
   
 ##  <a name="hashkey"></a>HashKey  
@@ -176,7 +181,7 @@ template <> UINT AFXAPI HashKey(unsigned __int64 key)
 }
  ```
  
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxtempl.h 
   
 ##  <a name="serializeelements"></a>SerializeElements  
@@ -208,10 +213,10 @@ void AFXAPI SerializeElements(CArchive& ar, TYPE* pElements, INT_PTR nCount);
 ### <a name="example"></a>例  
  アーティクルの例を参照して[コレクション: タイプ セーフなコレクションを作成する方法](../how-to-make-a-type-safe-collection.md)です。  
  
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxtempl.h 
     
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   
  [CMap クラス](cmap-class.md)   
  [CList クラス](clist-class.md)   

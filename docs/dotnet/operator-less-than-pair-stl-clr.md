@@ -1,33 +1,37 @@
 ---
-title: "operator&lt; (pair) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::pair::operator<"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator< メンバー [STL/CLR]"
+title: "演算子&lt;(組) (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::pair::operator<
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator< member [STL/CLR]
 ms.assetid: e7061b29-1289-4ea9-ae69-feea8abbfb25
-caps.latest.revision: 8
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 3deb4737f8e82dd6fa8cd7ce99bfa67ed9f1b5fd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator&lt; (pair) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ペアより小さい\) を比較します。  
+# <a name="operatorlt-pair-stlclr"></a>演算子&lt;(組) (STL/CLR)
+ペアの比較よりも小さいです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value1,  
@@ -36,17 +40,17 @@ template<typename Value1,
         pair<Value1, Value2>% right);  
 ```  
   
-#### パラメーター  
- \[left\]  
- 比較の左辺のペア。  
+#### <a name="parameters"></a>パラメーター  
+ 左へ  
+ 比較する左のペア。  
   
- \[right\]  
- 比較の右辺のペア。  
+ 右  
+ 比較する右のペア。  
   
-## 解説  
- 演算子関数の戻り値 `left``.first <``right``.first || !(``right``.first <``left``.first &&``left``.second <``right``.second`。  2 組のかっこが要素によって比較された要素の場合 `left` が `right` の前に順序付けされているかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ 演算子関数を返します`left.first <` `right.first || !(right.first <` `left.first &&` `left.second <` `right.second`です。 テストするために使用するかどうか`left`が順序付け、前に`right`とき要素によって比較対象の要素では 2 つのペア。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_pair_operator_lt.cpp   
@@ -69,19 +73,22 @@ int main()
   
 ```  
   
-  **\[X、3 つ\]**  
-**\[X、4 つ\]**  
-**\[\] \<\) x 3 x 3\] false です。**  
-**\[\] \<\) x 3 x 4\]当てはまります。**   
-## 必要条件  
- **ヘッダー:** \<cliext\/ユーティリティ\>  
+```Output  
+[x, 3]  
+[x, 4]  
+[x 3] < [x 3] is False  
+[x 3] < [x 4] is True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext ユーティリティ/>  
   
-## 参照  
- [pair](../dotnet/pair-stl-clr.md)   
- [operator\=\= \(pair\)](../dotnet/operator-equality-pair-stl-clr.md)   
- [operator\!\= \(pair\)](../dotnet/operator-inequality-pair-stl-clr.md)   
- [operator\>\= \(pair\)](../dotnet/operator-greater-or-equal-pair-stl-clr.md)   
- [operator\> \(pair\)](../dotnet/operator-greater-than-pair-stl-clr.md)   
- [operator\<\= \(pair\)](../dotnet/operator-less-or-equal-pair-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [ペア (STL/CLR)](../dotnet/pair-stl-clr.md)   
+ [演算子 = = (組) (STL/CLR)](../dotnet/operator-equality-pair-stl-clr.md)   
+ [operator! = (組) (STL/CLR)](../dotnet/operator-inequality-pair-stl-clr.md)   
+ [operator > = (組) (STL/CLR)](../dotnet/operator-greater-or-equal-pair-stl-clr.md)   
+ [operator > (組) (STL/CLR)](../dotnet/operator-greater-than-pair-stl-clr.md)   
+ [operator<= (pair) (STL/CLR)](../dotnet/operator-less-or-equal-pair-stl-clr.md)

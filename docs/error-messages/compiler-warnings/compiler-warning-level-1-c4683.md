@@ -1,43 +1,47 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4683 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4683"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4683"
+title: "コンパイラの警告 (レベル 1) C4683 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4683
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4683
 ms.assetid: e6e77364-dba1-46dd-ae1d-03da23070bce
-caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e0a8ca498a3c95a1b37229f6ac973cf74a8e28ff
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4683
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="compiler-warning-level-1-c4683"></a>コンパイラの警告 (レベル 1) C4683
 **'**   
- ***function* ': イベントソースに 'out' パラメーターが存在します。複数のイベント ハンドラーをフックするときに注意が必要です。**  
+ ***関数*': イベント ソースが 'out' のパラメーター以外の複数のイベント ハンドラーをフックするときに注意**  
   
- 複数のイベント シンクが COM イベント ソースを待機している場合は、out パラメーターの値が無視されることがあります。  
+ 1 つ以上のイベント シンクが COM イベント ソースをリッスンしている場合は、out パラメーターの値が無視可能性があります。  
   
- 以下の場合にはメモリ リークが発生します。  
+ 次のような状況で、メモリ リークが発生する注意してください。  
   
-1.  BSTR \* など、内部的に割り当てられた out パラメーターがメソッドにある場合。  
+1.  メソッドに内部的に割り当てられると、たとえば BSTR を out パラメーターがあるかどうか * です。  
   
-2.  イベントに複数のハンドラーがある場合 \(マルチキャスト イベント\)。  
+2.  イベントに複数のハンドラーがある場合 (はマルチキャスト イベント)  
   
- メモリ リークの原因は、out パラメーターが複数のハンドラーによって設定されているのに、最後のハンドラーによってのみ呼び出しサイトに返されているためです。  
+ メモリ リークの原因は、out パラメーターが複数のハンドラーで設定が最後のハンドラーによってのみ、呼び出しサイトに返されることです。  
   
- 次の例では警告 C4683 が生成されます。  
+ 次の例では、C4683 が生成されます。  
   
 ```  
 // C4683.cpp  

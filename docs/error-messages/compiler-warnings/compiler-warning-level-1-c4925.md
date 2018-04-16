@@ -15,31 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C4925
 ms.assetid: a4b206c0-016a-4f28-873a-bb8bb41bad50
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: afa8b609b28b278bb064090ff0e50c97630e0b6d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e686aeb361e238470776a9f762e7fa6d3bc65648
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4925"></a>コンパイラの警告 (レベル 1) C4925
 'method': dispinterface メソッドはスクリプトから呼び出すことはできません  

@@ -4,29 +4,35 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: data.alignment
-dev_langs: C++
-helpviewer_keywords: data alignment [C++]
+f1_keywords:
+- data.alignment
+dev_langs:
+- C++
+helpviewer_keywords:
+- data alignment [C++]
 ms.assetid: 35ac3d2d-a4b3-421b-954f-b7372b1f18e1
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2dcbb5c484e92089f7a669426b9a6727d205b45d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6f1fa9d918e0032a0ca718ec9c2c97b83f1d5462
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="data-alignment"></a>データの整列
 次の C ランタイム関数はデータを配置できます。  
   
 ### <a name="data-alignment-routines"></a>データ配置ルーチン  
   
-|ルーチン|用途|  
+|ルーチンによって返される値|使用|  
 |-------------|---------|  
 |[_aligned_free](../c-runtime-library/reference/aligned-free.md)|[_aligned_malloc](../c-runtime-library/reference/aligned-malloc.md) または [_aligned_offset_malloc](../c-runtime-library/reference/aligned-offset-malloc.md) で割り当てられたメモリ ブロックを解放します。|  
 |[_aligned_free_dbg](../c-runtime-library/reference/aligned-free-dbg.md)|[_aligned_malloc](../c-runtime-library/reference/aligned-malloc.md) または [_aligned_offset_malloc](../c-runtime-library/reference/aligned-offset-malloc.md) で割り当てられたメモリ ブロックを解放します (デバッグのみ)。|  
@@ -45,5 +51,5 @@ ms.lasthandoff: 10/24/2017
 |[_aligned_recalloc](../c-runtime-library/reference/aligned-recalloc.md)|[_aligned_malloc](../c-runtime-library/reference/aligned-malloc.md) または [_aligned_offset_malloc](../c-runtime-library/reference/aligned-offset-malloc.md) で割り当てられたメモリ ブロックのサイズを変更し、メモリを 0 に初期化します。|  
 |[_aligned_recalloc_dbg](../c-runtime-library/reference/aligned-recalloc-dbg.md)|[_aligned_malloc](../c-runtime-library/reference/aligned-malloc.md) または [_aligned_offset_malloc](../c-runtime-library/reference/aligned-offset-malloc.md) で割り当てられたメモリ ブロックのサイズを変更し、メモリを 0 に初期化します (デバッグ バージョンのみ)。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

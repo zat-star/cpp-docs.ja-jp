@@ -1,5 +1,5 @@
 ---
-title: "ConvertBSTRToString |Microsoft ドキュメント"
+title: ConvertBSTRToString | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - ConvertBSTRToString function
 ms.assetid: ab6ce555-3d75-4e9c-9cb8-ada6d8ce43b1
-caps.latest.revision: 11
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: c559509083d21ff8b742ef80a55ac161bbca2f53
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a7f3463e34c17bcde4f64b89e1ae083228317293
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="convertbstrtostring"></a>ConvertBSTRToString
 **Microsoft 固有の仕様**  
@@ -75,10 +76,10 @@ char * text: Test
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** comutil.h。  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<comutil.h >。  
   
  **Lib:** comsuppw.lib または comsuppwd.lib (を参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)詳細)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ COM のグローバル関数](../cpp/compiler-com-global-functions.md)

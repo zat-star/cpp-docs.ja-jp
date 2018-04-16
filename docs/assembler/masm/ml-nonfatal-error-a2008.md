@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: A2008
-dev_langs: C++
-helpviewer_keywords: A2008
+ms.topic: error-reference
+f1_keywords:
+- A2008
+dev_langs:
+- C++
+helpviewer_keywords:
+- A2008
 ms.assetid: ca24157f-c88a-4678-ae06-3bc3cd956001
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7bcef41e81ea0f3d6229cf828a661fdc8f8fdec4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: afef8194fea15f9ebfa65201d43ddbdda2b61786
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ml-nonfatal-error-a2008"></a>ML の致命的でないエラー A2008
 **構文エラー:**  
@@ -40,5 +46,5 @@ ms.lasthandoff: 10/24/2017
   
 -   旧式のディレクティブが使用されました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

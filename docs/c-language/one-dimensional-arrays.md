@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - brackets [ ]
 - brackets [ ], arrays
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - square brackets [ ], arrays
 - subscript expressions
 ms.assetid: e28536e5-3b77-46b5-97fd-9b938c771816
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ea3d4c2461579fcafc4f9ff7ba5071572229c640
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 033d772a40ddf55474ca845c9c5708423bcf5e90
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="one-dimensional-arrays"></a>1 次元配列
 角かっこ (**[ ]**) が続く後置式は、配列オブジェクトの要素の添字表現です。 添字式は、次のように表現されると、*postfix-expression* を超える *expression* 位置にあるアドレスにある値を表します。  

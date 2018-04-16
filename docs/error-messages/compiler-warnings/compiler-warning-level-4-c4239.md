@@ -1,35 +1,39 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4239 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4239"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4239"
+title: "コンパイラの警告 (レベル 4) C4239 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4239
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4239
 ms.assetid: a23dc16a-649e-4870-9a24-275de1584fcd
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 18f1c6d700de0c621ebde02c7dcb2817091677cd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4239
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-非標準の拡張機能が使用されています : 'token' : 'type' から 'type' への変換です。  
+# <a name="compiler-warning-level-4-c4239"></a>コンパイラの警告 (レベル 4) C4239
+標準の拡張機能を使用します 'token': 'type' から 'type' への変換。  
   
- この型変換は C\+\+ 標準では許可されていませんが、ここでは拡張機能として許可されています。  この警告の後には、違反した言語規則を示す複数行の説明が常に表示されます。  
+ C++ 標準では、この型の変換は許可されていないが、許可されている拡張機能としては、ここです。 この警告では、少なくとも 1 つの行の説明に違反して言語のルールを記述する常が続きます。  
   
-## 使用例  
- 次の例では C4239 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4239 が生成されます。  
   
 ```  
 // C4239.cpp  
@@ -45,10 +49,10 @@ void func(void) {
 }  
 ```  
   
-## 使用例  
- 整数型から列挙型への変換は、厳密には許可されていません。  
+## <a name="example"></a>例  
+ 整数型から列挙型への変換は厳密には許可されません。  
   
- 次の例では C4239 エラーが生成されます。  
+ 次の例では、C4239 が生成されます。  
   
 ```  
 // C4239b.cpp  

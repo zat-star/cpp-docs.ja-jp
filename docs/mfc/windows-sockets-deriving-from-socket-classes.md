@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - derived classes [MFC], from socket classes
 - Windows Sockets [MFC], deriving from socket classes
 - sockets [MFC], deriving from socket classes
 ms.assetid: 3a26e67a-e323-433b-9b05-eca018799801
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0152afbafe7c4756bebd87f931b9a6b6f4e31269
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 63f8b8f735b62c1cbfedd50320bf65cec5905632
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="windows-sockets-deriving-from-socket-classes"></a>Windows ソケット : ソケット クラスからの派生
 この記事では、いくつかのいずれかのソケット クラスから独自のクラスを派生させることによって利用できる機能について説明します。  
@@ -46,6 +50,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [Windows ソケット: 文字列の変換](../mfc/windows-sockets-converting-strings.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC における Windows ソケット](../mfc/windows-sockets-in-mfc.md)
 

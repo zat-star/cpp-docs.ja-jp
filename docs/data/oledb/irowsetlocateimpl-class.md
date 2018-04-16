@@ -1,36 +1,41 @@
 ---
-title: "IRowsetLocateImpl クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IRowsetLocateImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ブックマーク, OLE DB"
-  - "IRowsetLocateImpl クラス"
-  - "プロバイダー, ブックマーク"
+title: "IRowsetLocateImpl クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- IRowsetLocateImpl
+dev_langs:
+- C++
+helpviewer_keywords:
+- providers, bookmarks
+- IRowsetLocateImpl class
+- bookmarks, OLE DB
 ms.assetid: a8aa3149-7ce8-4976-a680-2da193fd3234
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 27af767c9104159d6c398db226a5a45a36e01e2f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# IRowsetLocateImpl クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="irowsetlocateimpl-class"></a>IRowsetLocateImpl クラス
+OLE DB を実装する[IRowsetLocate](https://msdn.microsoft.com/en-us/library/ms721190.aspx)インターフェイスで、行セットから任意の行をフェッチします。  
+  
+## <a name="syntax"></a>構文
 
-行セットの任意の行をフェッチする OLE DB の [IRowsetLocate](https://msdn.microsoft.com/en-us/library/ms721190.aspx) インターフェイスを実装します。  
-  
-## 構文  
-  
-```  
+```cpp
 template <  
    class T,   
    class RowsetInterface,   
@@ -38,70 +43,68 @@ template <
    class MapClass = CAtlMap < RowClass::KeyType, RowClass* >,   
    class BookmarkKeyType = LONG,   
    class BookmarkType = LONG,   
-   class BookmarkMapClass = CAtlMap < RowClass::KeyType, RowClass* >  
->  
+   class BookmarkMapClass = CAtlMap < RowClass::KeyType, RowClass* >>  
 class ATL_NO_VTABLE IRowsetLocateImpl : public IRowsetImpl<  
-   T,   
-   RowsetInterface,   
-   RowClass,   
-   MapClass  
->  
+       T,   
+       RowsetInterface,   
+       RowClass,   
+       MapClass>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- `IRowsetLocateImpl`から派生したクラスです。  
+ 派生したクラス`IRowsetLocateImpl`です。  
   
  `RowsetInterface`  
- `IRowsetImpl`から派生したクラスです。  
+ 派生したクラス`IRowsetImpl`です。  
   
  `RowClass`  
- **HROW**のストレージ ユニット。  
+ 記憶域ユニットを**HROW**です。  
   
  `MapClass`  
- すべての行ハンドルのストレージ ユニットはプロバイダーによって保持される。  
+ すべての行ハンドルの記憶域ユニットでは、プロバイダーによって保持されています。  
   
  `BookmarkKeyType`  
- LONG や文字列などのブックマークの種類。  通常のブックマークは少なくとも 2 バイト数が必要です。\(バイトの長さは、OLE DB [標準のブックマーク](https://msdn.microsoft.com/en-us/library/ms712954.aspx)**DBBMK\_FIRST**、**DBBMK\_LAST**と **DBBMK\_INVALID**用に予約されます\)。  
+ 長整数型または文字列など、ブックマークの型。 通常のブックマークには、少なくとも 2 バイトの長さが必要です。 (単一バイトの長さは、OLE DB 用に予約[標準ブックマーク](https://msdn.microsoft.com/en-us/library/ms712954.aspx)**DBBMK_FIRST**、 **DBBMK_LAST**、および**一方**)。  
   
  `BookmarkType`  
- 保持ブックマークにリレーションシップのマッピングの機能。  
+ ブックマークのデータ間の関係を維持するためのマッピング メカニズムです。  
   
  `BookmarkMapClass`  
- すべての行ハンドルのストレージ ユニットはブックマークによって保持される。  
+ すべての行ハンドルの記憶域ユニットは、ブックマークを保持します。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### インターフェイス メソッド  
-  
-|||  
-|-|-|  
-|[Compare](../../data/oledb/irowsetlocateimpl-compare.md)|2 個のブックマークを比較します。|  
-|[GetRowsAt](../../data/oledb/irowsetlocateimpl-getrowsat.md)|フェッチはブックマークからのオフセットで指定した行から開始を使用します。|  
-|[GetRowsByBookmark](../../data/oledb/irowsetlocateimpl-getrowsbybookmark.md)|指定したブックマークに一致する行をフェッチします。|  
-|[ハッシュ](../../data/oledb/irowsetlocateimpl-hash.md)|指定したブックマークのハッシュ値を返します。|  
-  
-### データ メンバー  
+### <a name="interface-methods"></a>インターフェイス メソッド  
   
 |||  
 |-|-|  
-|[m\_rgBookmarks](../Topic/IRowsetLocateImpl::m_rgBookmarks.md)|ブックマークの配列。|  
+|[Compare](../../data/oledb/irowsetlocateimpl-compare.md)|2 つのブックマークを比較します。|  
+|[GetRowsAt](../../data/oledb/irowsetlocateimpl-getrowsat.md)|ブックマークからのオフセットによって指定された行で始まる行がフェッチされます。|  
+|[GetRowsByBookmark](../../data/oledb/irowsetlocateimpl-getrowsbybookmark.md)|指定されたブックマークに一致する行をフェッチします。|  
+|[ハッシュ](../../data/oledb/irowsetlocateimpl-hash.md)|指定されたブックマークの値のハッシュを返します。|  
   
-## 解説  
- `IRowsetLocateImpl` は [IRowsetLocate](https://msdn.microsoft.com/en-us/library/ms721190.aspx) インターフェイスの OLE DB テンプレートの実装です。  `IRowsetLocate` が 行セットの任意の行をフェッチするために使用されます。  このインターフェイスを実装しない行セットは `sequential` の行セットです。  `IRowsetLocate` が行セットにと 0 列は行のブックマーク;です この列を読み取ると、同じ行に配置を変更するために使用できるブックマーク値を取得します。  
+### <a name="data-members"></a>データ メンバー  
   
- `IRowsetLocateImpl` が プロバイダーのブックマーク サポートを実装するために使用されます。  ブックマークは、プレースホルダー \(行セットのインデックス\) その行に直ちに制御コンシューマーにデータにすばやくアクセスを許可します。  プロバイダーは、ブックマークが行を識別できるかを判断します。  `IRowsetLocateImpl` のメソッドを使用して、ブックマークを比較し、オフセットによって行をフェッチし、ブックマークに行をフェッチし、ブックマークのハッシュ値を返すことができます。  
+|||  
+|-|-|  
+|[m_rgBookmarks](../../data/oledb/irowsetlocateimpl-m-rgbookmarks.md)|ブックマークの配列。|  
   
- 行セットの OLE DB のブックマークをサポートするには、このクラスから行セットを継承させます。  
+## <a name="remarks"></a>コメント  
+ `IRowsetLocateImpl` OLE DB テンプレートの実装、 [IRowsetLocate](https://msdn.microsoft.com/en-us/library/ms721190.aspx)インターフェイスです。 `IRowsetLocate` 行セットからの任意の行のフェッチに使用されます。 このインターフェイスを実装していない行セットは、`sequential`行セット。 ときに`IRowsetLocate`存在は、行セットで列 0 行のブックマークです。 この列を読み取り、ブックマーク値を取得、同じ行に位置を変更するために使用できます。  
   
- ブックマーク サポートの実装の詳細については、*Visual C\+\+ Programmer's Guide* の [プロバイダーのブックマーク サポート](../../data/oledb/provider-support-for-bookmarks.md) と `Platform``SDK`の *OLE DB Programmer's Reference* の [ブックマーク](https://msdn.microsoft.com/en-us/library/ms709728.aspx) を参照してください。  
+ `IRowsetLocateImpl` プロバイダーのブックマーク サポートの実装に使用します。 ブックマークは、プレース ホルダー (インデックス行セットで)、行にすばやく戻るコンシューマーを有効にするデータを高速アクセスを許可します。 プロバイダーをどのようなブックマークが一意に決定の行を識別します。 使用して`IRowsetLocateImpl`メソッド、ブックマークを比較する、行のフェッチは、オフセット、ブックマークによる行のフェッチされ、ブックマークのハッシュ値を返します。  
   
-## 必要条件  
+ OLE DB のブックマークを行セットをサポートするには、このクラスから継承行セットを確認します。  
+  
+ ブックマーク サポートを実装する方法については、次を参照してください[プロバイダーのブックマークをサポートして](../../data/oledb/provider-support-for-bookmarks.md)で、 *Visual C++ プログラマ ガイド*と[ブックマーク](https://msdn.microsoft.com/en-us/library/ms709728.aspx)、で*。OLE DB プログラマーズ リファレンス*Platform SDK でします。  
+  
+## <a name="requirements"></a>必要条件  
  **ヘッダー**: atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   
  [IRowsetLocate:IRowset](https://msdn.microsoft.com/en-us/library/ms721190.aspx)   
  [プロバイダーのブックマーク サポート](../../data/oledb/provider-support-for-bookmarks.md)   
- [Bookmarks](https://msdn.microsoft.com/en-us/library/ms709728.aspx)
+ [ブックマーク](https://msdn.microsoft.com/en-us/library/ms709728.aspx)

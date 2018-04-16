@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - testing, OLE DB providers
 - testing providers
@@ -15,15 +17,18 @@ helpviewer_keywords:
 - conformance testing [OLE DB]
 - OLE DB providers, testing
 ms.assetid: d1a4f147-2edd-476c-b452-0e6a0ac09891
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8ef7e32f56fdff81c7a66a1dfcc6c613201e2f49
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 38f822496bd5b257a782e9e04047e164ac9681d8
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="passing-ole-db-conformance-tests"></a>OLE DB 準拠合致テスト
 プロバイダーを一貫したものにするには、Data Access SDK は、OLE DB 準拠合致テストのセットを提供します。 テストは、プロバイダーのすべての側面を確認し、妥当なという保証は正常に、プロバイダーの機能を提供します。 Microsoft Data Access SDK では、OLE DB 準拠合致テストを検索できます。 このセクションでは、準拠テストに合格する必要があることについて説明します。 OLE DB 準拠合致テストの実行方法の詳細については、SDK を参照してください。  
@@ -38,7 +43,7 @@ ms.lasthandoff: 10/24/2017
   
  次のコードは、 **ValidateCommandID**検証ルーチン。  
   
-```  
+```cpp
 /////////////////////////////////////////////////////////////////////  
 // MyProviderRS.H  
 // Class: CMyProviderRowset   
@@ -81,5 +86,5 @@ HRESULT ValidateCommandID(DBID* pTableID, DBID* pIndexID)
   
 -   フリー スレッドのプログラミング (つまり、書き込み時のロック) の規則に従って適切なプログラミングします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [高度なプロバイダー手法](../../data/oledb/advanced-provider-techniques.md)

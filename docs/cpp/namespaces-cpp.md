@@ -10,6 +10,7 @@ ms.tgt_pltfrm:
 ms.topic: language-reference
 f1_keywords:
 - namespace_CPP
+- using_CPP
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - global namespace
 - Visual C++, namespaces
 ms.assetid: d1a5a9ab-1cad-47e6-a82d-385bb77f4188
-caps.latest.revision: 14
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: deb5926f15e4efad4378a9930f1e353e9af58516
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 801bd8ee8e81c0126ae88c1fb9213b25b9f103dd
+ms.sourcegitcommit: 4e01d36ffa64ea11bacf589f79d2f1df947e2510
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="namespaces-c"></a>名前空間 (C++)
 名前空間は、その内部にある識別子 (型、関数、変数などの名前) のスコープを定める宣言領域です。 名前空間は、コードを論理グループにまとめるため、およびコード ベースに複数のライブラリが含まれる場合に特に発生する名前の競合を回避するために使用されます。 名前空間スコープのすべての識別子は互いどうしを修飾なしで参照できます。 名前空間の外部識別子は、たとえば、各識別子の完全修飾名を使用してメンバーにアクセスできます`std::vector<std::string> vec;`、または else によって、[宣言を使用して](../cpp/using-declaration.md)、単一の識別子の (`using std::string`)、または、 [ディレクティブを使用して](../cpp/namespaces-cpp.md#using_directives)、名前空間内のすべての識別子 (`using namespace std;`)。 ヘッダー ファイル内のコードは、常に完全修飾された名前空間の名前を使用する必要があります。  
@@ -75,7 +77,7 @@ Func(mgr);
   
 ```  
   
-## <a id="using_directives"></a>ディレクティブを使用します。  
+## <a id="using_directives"></a> ディレクティブを使用します。  
  `using`ディレクティブ内のすべての名を使用して、**名前空間**なしで使用する、*名前空間名*で明示的な修飾子として。 使用して、使用して、名前空間に複数の異なる識別子を使用している場合、実装ファイル (つまり *.cpp) でディレクティブ使用して、検討し、1 つまたは 2 つの識別子だけを使用する場合にのみ取り込むこれらの識別子のスコープとすべての識別子、名前空間で宣言します。 ローカル変数に名前空間変数と同じ名前が付いている場合、名前空間変数が不可視になります。 グローバル変数と同じ名前の名前空間変数を使用するとエラーになります。  
   
 > [!NOTE]
@@ -257,7 +259,7 @@ namespace Contoso
   
 ```  
   
-## <a id="namespace_aliases"></a>Namespace エイリアス  
+## <a id="namespace_aliases"></a> Namespace エイリアス  
  名前空間の名前は一意である必要があります。つまり、多くの場合、短くなりすぎないようにする必要があります。 名前が長くてコードが読みにくい場合、または using ディレクティブを使用できないヘッダー ファイルに入力するのが面倒な場合は、実際の名前の省略形として機能する名前空間のエイリアスを作成することができます。 例:  
   
 ```cpp  
@@ -279,6 +281,5 @@ namespace
   
  これし、呼ばれ、無名または匿名の名前空間の他のファイルで変数の宣言をコードに非表示にする場合に便利です (つまりは与えられた内部リンケージ) 名前空間を作成する必要はありません。 同じファイル内のすべてのコードは名前のない名前空間の識別子を参照できますが、そのファイルの外 (より厳密に言えば、翻訳単位の外) では、識別子および名前空間自体が不可視になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言と定義](declarations-and-definitions-cpp.md)
-

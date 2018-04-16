@@ -1,71 +1,75 @@
 ---
-title: "レギュラー DLL でのデータベース、OLE、およびソケット拡張 DLL の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DLL [C++], 拡張機能"
-  - "DLL [C++], 初期化"
-  - "DLL [C++], 標準"
+title: 標準の MFC Dll でのデータベース、OLE、およびソケットの MFC 拡張 Dll の使用 |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- DLLs [C++], initializing
+- DLLs [C++], extension
+- DLLs [C++], regular
 ms.assetid: 9f1d14a7-9e2a-4760-b3b6-db014fcdb7ff
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0042dd5dc6049447868cf5ca5ea1112b3695f3a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# レギュラー DLL でのデータベース、OLE、およびソケット拡張 DLL の使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-レギュラー DLL から拡張 DLL を使用するときに、拡張 DLL がレギュラー DLL の **CDynLinkLibrary** オブジェクト チェーンにリンクされていない場合、問題が発生することがあります。  MFC データベース OLE、およびソケット サポート DLL のデバッグ バージョンは、拡張 DLL として実装されているので、独自の拡張 DLL を明示的に使用していなくても、これらの MFC 機能を使用する場合に同様の問題が発生することもあります。  問題の徴候は、以下のとおりです。  
+# <a name="using-database-ole-and-sockets-mfc-extension-dlls-in-regular-mfc-dlls"></a>標準の MFC Dll でのデータベース、OLE、およびソケットの MFC 拡張 Dll の使用
+MFC 拡張 DLL がないワイヤード (有線) にする場合は、MFC 拡張 DLL を正規の MFC DLL からを使用する場合、 **CDynLinkLibrary**オブジェクトのチェーンの正規の MFC DLL の一連の関連する問題の 1 つ以上に実行する可能性があります。 MFC データベース、OLE、およびソケットのデバッグ バージョンをサポートしているため、Dll が MFC 拡張 Dll として実装されてを明示的に使用していない、独自の MFC 拡張 Dll のいずれかのいなくても、機能をこれらの MFC を使用している場合と同様の問題が発生する可能性があります。 いくつかの現象は次のとおりです。  
   
--   拡張 DLL 内で定義されたクラス型を持つオブジェクトを非シリアル化しようとすると、TRACE デバッグ ウィンドウに "Warning: Cannot load CYourClass from archive.   Class not defined." というメッセージが表示され、オブジェクトの非シリアル化が失敗します。  
+-   クラスの型のオブジェクトを逆シリアル化しようとしています。 定義されている場合、MFC 拡張 DLL を、メッセージ"警告: アーカイブから CYourClass を読み込むことができません。 クラス定義されていません。" シリアル化が失敗のトレースのデバッグ ウィンドウとオブジェクトに表示されます。  
   
--   不正なクラスを示す例外がスローされる可能性があります。  
+-   無効なクラスを示す例外がスローされます。  
   
--   拡張 DLL 内に格納されたリソースの読み込みが失敗します。これは、`AfxFindResourceHandle` が **NULL** または不正なリソース ハンドルを返すからです。  
+-   MFC 拡張 DLL に格納されているリソースを読み込みが失敗`AfxFindResourceHandle`返します**NULL**または正しくないリソース ハンドル。  
   
--   `DllGetClassObject`、`DllCanUnloadNow`、および `COleObjectFactory` のメンバー関数 \(`UpdateRegistry`、`Revoke`、`RevokeAll`、`RegisterAll`\) が、拡張 DLL 内で定義されたクラス ファクトリの配置に失敗します。  
+-   `DllGetClassObject`、 `DllCanUnloadNow`、および`UpdateRegistry`、 `Revoke`、 `RevokeAll`、および`RegisterAll`のメンバー関数は`COleObjectFactory`MFC 拡張 DLL で定義されているクラス ファクトリの検索に失敗します。  
   
--   `AfxDoForAllClasses` が拡張 DLL 内のどのクラスでも動作しません。  
+-   `AfxDoForAllClasses`MFC 拡張 DLL 内のすべてのクラスに対しては機能しません。  
   
--   標準 MFC データベース、ソケット、または OLE リソースの読み込みが失敗します。  たとえば、**AfxLoadString**\(**AFX\_IDP\_SQL\_CONNECT\_FAIL**\) は、レギュラー DLL による MFC データベース クラスの使い方が正しくても、空の文字列を返します。  
+-   標準の MFC データベース、ソケットの場合、または OLE リソースを読み込めませんでした。 たとえば、 **AfxLoadString**(**AFX_IDP_SQL_CONNECT_FAIL**) 標準の MFC DLL が MFC データベース クラスを使用して正しく場合でも、空の文字列を返します。  
   
- これらの問題を解決するには、**CDynLinkLibrary** オブジェクトを作成する初期化関数を拡張 DLL 内に作成し、エクスポートします。  拡張 DLL を使用する各レギュラー DLL から正確に一度ずつ、この初期化関数を呼び出します。  
+ これらの問題を解決作成し、MFC 拡張 DLL を作成する初期化関数をエクスポートするには、 **CDynLinkLibrary**オブジェクト。 MFC 拡張 DLL を使用する各正規の MFC DLL から 1 回だけ初期化関数の呼び出しです。  
   
-## MFC OLE、MFC データベース \(DAO\)、および MFC ソケットのサポート  
- レギュラー DLL 内の MFC OLE、MFC データベース \(DAO\)、および MFC ソケットのサポートを使用している場合は、MFC デバッグ拡張 DLL である MFCOxxD.dll、MFCDxxD.dll、および MFCNxxD.dll が自動的にリンクされます。xx はバージョン番号を表します。  使用する DLL ごとに、定義済みの初期化関数を呼び出す必要があります。  
+## <a name="mfc-ole-mfc-database-or-dao-or-mfc-sockets-support"></a>MFC OLE、MFC データベース (または DAO)、または MFC ソケットのサポート  
+ MFC ソケットがそれぞれ標準 MFC DLL のサポート、MFC OLE、MFC データベース (または DAO) を使用している、または、MFC デバッグ MFC 拡張 Dll MFCOxxD.dll、MFCDxxD.dll、および MFCNxxD.dll (xx はバージョン番号) は自動的にリンクします。 これらの Dll は、使用するごとに定義済みの初期化関数を呼び出す必要があります。  
   
- データベース サポートを使用する場合は、`AfxDbInitModule` の呼び出しをレギュラー DLL の `CWinApp::InitInstance` 関数に追加します。  この呼び出しは、基本クラスを呼び出す前、または MFCDxxD.dll にアクセスするコードを追加する前に行う必要があります。  この関数はパラメーターを使用せず、void を返します。  
+ データベース サポートの呼び出しを追加して`AfxDbInitModule`正規 MFC dll の`CWinApp::InitInstance`関数。 この呼び出しは、基底クラスを呼び出す前に発生または MFCDxxD.dll をアクセスするコードを追加確認してください。 この関数は、パラメーターを受け取らないし、void を返します。  
   
- OLE サポートを使用する場合は、`AfxOleInitModule` の呼び出しをレギュラー DLL の `CWinApp::InitInstance` 関数に追加します。  **COleControlModule InitInstance** 関数が、既に `AfxOleInitModule` を呼び出していることに注意してください。OLE コントロールをビルドしていて、`COleControlModule` を使用している場合は、`AfxOleInitModule` の呼び出しを追加しないでください。  
+ OLE サポートへの呼び出しを追加`AfxOleInitModule`正規 MFC dll の`CWinApp::InitInstance`します。 なお、 **COleControlModule InitInstance**関数呼び出し`AfxOleInitModule`既に、したがって OLE コントロールを構築してを使用している場合`COleControlModule`への呼び出しを追加しないでください`AfxOleInitModule`。  
   
- ソケット サポートを使用する場合は、`AfxNetInitModule` の呼び出しをレギュラー DLL の `CWinApp::InitInstance` 関数に追加します。  
+ ソケットのサポートの呼び出しを追加して`AfxNetInitModule`正規 MFC dll の`CWinApp::InitInstance`します。  
   
- MFC DLL およびアプリケーションのリリース ビルドでは、データベース サポート、ソケット サポート、または OLE サポートで個別の DLL を使用しないでください。  ただし、リリース モードでのこれらの初期化関数の呼び出しは安全です。  
+ MFC Dll のリリース ビルドをことと、アプリケーションでは、ソケットの場合、データベースの個別の Dll を使用しないでくださいまたは OLE サポートを注意してください。 ただしをリリース モードでこれらの初期化関数を呼び出しても安全です。  
   
-## CDynLinkLibrary オブジェクト  
- このトピックの冒頭に述べた各操作中、MFC では必要な値またはオブジェクトを検索する必要があります。  たとえば、非シリアル化を行う間、MFC は現時点で使用可能なすべてのランタイム クラスを検索して、アーカイブ内のオブジェクトを正しいランタイム クラスに対応付けます。  
+## <a name="cdynlinklibrary-objects"></a>CDynLinkLibrary オブジェクト  
+ 各このトピックの冒頭に示した操作中に、MFC は、目的の値またはオブジェクトを検索する必要があります。 たとえば、逆シリアル化中に MFC が、適切なランタイム クラスでアーカイブ内のオブジェクトと一致する現在使用可能なすべてのランタイム クラスを検索する必要があります。  
   
- このような検索の一部として、MFC では **CDynLinkLibrary** オブジェクト チェーンを検索して使用中のすべての拡張 DLL をスキャンします。  **CDynLinkLibrary** オブジェクトは、コンストラクターの中で自動的にチェインにアタッチされ、各拡張 DLL によって初期化時に作成されます。  さらに、すべてのモジュール \(アプリケーションまたはレギュラー DLL\) には、独自の **CDynLinkLibrary** オブジェクト チェインがあります。  
+ MFC がのチェーンに、使用中のすべての MFC 拡張 Dll でのスキャンに、これらの検索の一部として**CDynLinkLibrary**オブジェクト。 **CDynLinkLibrary**オブジェクト、構築時に、チェーンに自動的にアタッチし、初期化中にさらに各 MFC 拡張 DLL によって作成されます。 さらに、(アプリケーションまたはレギュラー MFC DLL) のすべてのモジュールには、独自のチェーン**CDynLinkLibrary**オブジェクト。  
   
- 拡張 DLL を **CDynLinkLibrary** チェーンにリンクするには、その拡張 DLL を使用する各モジュールのコンテキスト内に **CDynLinkLibrary** オブジェクトを作成する必要があります。  このため、レギュラー DLL から拡張 DLL を使用する予定がある場合は、**CDynLinkLibrary** オブジェクトを作成するエクスポート初期化関数を提供する必要があります。  拡張 DLL を使用する各レギュラー DLL は、そのエクスポート初期化関数を呼び出します。  
+ MFC 拡張 DLL にワイヤード (有線) を取得するため、 **CDynLinkLibrary**チェーンを作成する必要があります、 **CDynLinkLibrary** MFC 拡張 DLL を使用するすべてのモジュールのコンテキスト内のオブジェクト。 そのため、MFC 拡張 DLL は標準の MFC Dll から使用することが場合が備わっていることを作成するエクスポートされた初期化関数、 **CDynLinkLibrary**オブジェクト。 MFC の拡張機能を使用する各レギュラー DLL は MFC DLL にエクスポートされた初期化関数を呼び出す必要があります。  
   
- 拡張 DLL を使用するのが MFC アプリケーション \(.exe\) だけで、レギュラー DLL からは使用しない場合は、その拡張 DLL の `DllMain` 内に **CDynLinkLibrary** オブジェクトを作成するだけで十分です。  この作成は、MFC DLL ウィザード の拡張 DLL コードで行います。  拡張 DLL を暗黙に読み込む場合、`DllMain` はアプリケーションが開始する前に読み込まれ、実行されます。  作成された **CDynLinkLibrary** は、MFC DLL が MFC アプリケーション用に保存する既定のチェインにリンクされます。  
+ MFC 拡張 DLL はのみ使用する予定 MFC アプリケーション (.exe) と標準の MFC DLL からしない場合は、それを作成するための十分な**CDynLinkLibrary** MFC 拡張 DLL 内のオブジェクト`DllMain`です。 これは、MFC DLL ウィザード MFC 拡張 DLL のコードの動作です。 MFC 拡張 DLL を暗黙的に、読み込み時に`DllMain`を読み込んで、アプリケーションが開始する前に実行します。 どの**CDynLinkLibrary**の作成は、ワイヤード (有線) 既定チェーンに、MFC DLL が MFC アプリケーションの予約をします。  
   
- 1 つのチェイン内の 1 つの拡張 DLL から複数の **CDynLinkLibrary** オブジェクトを作成することは、お勧めできません。特に、その拡張 DLL がメモリから動的にアンロードされる場合はお勧めできません。  また、1 つのモジュールから初期化関数を 2 度以上呼び出さないでください。  
+ 複数を設定することは適切であることに注意してください**CDynLinkLibrary** MFC 拡張 DLL がメモリから動的に読み込まれます場合は特に、1 つのチェーン内の 1 つの MFC 拡張 DLL からのオブジェクトします。 初期化関数も複数回から呼び出さないで 1 つのモジュール。  
   
-## サンプル コード  
- 次のサンプル コードでは、レギュラー DLL が暗黙に拡張 DLL にリンクされていると仮定しています。  これを実現するには、レギュラー DLL のビルド時に、拡張 DLL のインポート ライブラリ \(.lib\) とリンクします。  
+## <a name="sample-code"></a>サンプル コード  
+ このサンプル コードでは、標準の MFC DLL が MFC 拡張 DLL にリンクが暗黙的に想定しています。 これは、標準の MFC DLL を作成するときに MFC 拡張 DLL のインポート ライブラリ (.lib) にリンクすることによって行います。  
   
- 以下は、拡張 DLL のソースの内容です。  
+ 次の行は、MFC 拡張 DLL のソースにする必要があります。  
   
 ```  
 // YourExtDLL.cpp:  
@@ -80,7 +84,7 @@ DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 {  
     if (dwReason == DLL_PROCESS_ATTACH)  
     {  
-        // extension DLL one-time initialization  
+        // MFC extension DLL one-time initialization  
         if (!AfxInitExtensionModule(extensionDLL, hInstance))  
            return 0;  
     }  
@@ -88,7 +92,7 @@ DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 }  
   
 // Exported DLL initialization is run in context of  
-// application or regular DLL  
+// application or regular MFC DLL  
 extern "C" void WINAPI InitYourExtDLL()  
 {  
     // create a new CDynLinkLibrary for this app  
@@ -98,7 +102,7 @@ extern "C" void WINAPI InitYourExtDLL()
 }  
 ```  
   
- **InitYourExtDLL** 関数を必ずエクスポートします。  このためには、**\_\_declspec\(dllexport\)** を使うか、DLL の .def ファイルに以下の行を記述します。  
+ インポートできるように、 **InitYourExtDLL**関数。 こうことが使用して**方式**または次のように、DLL の .def ファイル内。  
   
 ```  
 // YourExtDLL.Def:  
@@ -109,7 +113,7 @@ EXPORTS
     InitYourExtDLL  
 ```  
   
- 拡張 DLL を使って、各レギュラー DLL 内の `CWinApp` 派生オブジェクトの `InitInstance` メンバーの呼び出しを追加します。  
+ 呼び出しを追加、`InitInstance`のメンバー、`CWinApp`の MFC 拡張 DLL を使用して各正規の MFC DLL 内のオブジェクトを派生します。  
   
 ```  
 // YourRegularDLL.cpp:  
@@ -127,32 +131,32 @@ public:
 BOOL CYourRegularDLL::InitInstance()  
 {  
     // any DLL initialization goes here  
-    TRACE0("YOUR regular DLL initializing\n");  
+    TRACE0("YOUR regular MFC DLL initializing\n");  
   
-    // wire any extension DLLs into CDynLinkLibrary chain  
+    // wire any MFC extension DLLs into CDynLinkLibrary chain  
     InitYourExtDLL();  
   
     return TRUE;  
 }  
 ```  
   
-### 目的に合ったトピックをクリックしてください  
+### <a name="what-do-you-want-to-do"></a>実行する操作  
   
--   [拡張 DLL の初期化](../build/initializing-extension-dlls.md)  
+-   [MFC 拡張 DLL を初期化します。](../build/run-time-library-behavior.md#initializing-extension-dlls)  
   
--   [レギュラー DLL の初期化](../Topic/Initializing%20Regular%20DLLs.md)  
+-   [正規の MFC Dll を初期化します。](../build/run-time-library-behavior.md#initializing-regular-dlls)  
   
-### さらに詳しくは次のトピックをクリックしてください  
+### <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
--   [拡張 DLLs](../build/extension-dlls.md)  
+-   [MFC 拡張 DLL](../build/extension-dlls.md)  
   
--   [MFC と静的にリンクされるレギュラー DLL](../build/regular-dlls-statically-linked-to-mfc.md)  
+-   [MFC と静的にリンクされるレギュラー MFC DLL](../build/regular-dlls-statically-linked-to-mfc.md)  
   
--   [MFC と動的にリンクされるレギュラー DLL](../Topic/Regular%20DLLs%20Dynamically%20Linked%20to%20MFC.md)  
+-   [MFC と動的にリンクされるレギュラー MFC DLL](../build/regular-dlls-dynamically-linked-to-mfc.md)  
   
--   [DLL の構成要素としての MFC](../mfc/tn011-using-mfc-as-part-of-a-dll.md)  
+-   [DLL の一部としての MFC を使用します。](../mfc/tn011-using-mfc-as-part-of-a-dll.md)  
   
--   [テクニカル ノート 33: MFC の DLL バージョン](../mfc/tn033-dll-version-of-mfc.md)  
+-   [MFC の DLL バージョン](../mfc/tn033-dll-version-of-mfc.md)  
   
-## 参照  
- [拡張 DLL](../build/extension-dlls.md)
+## <a name="see-also"></a>参照  
+ [MFC 拡張 DLL](../build/extension-dlls.md)

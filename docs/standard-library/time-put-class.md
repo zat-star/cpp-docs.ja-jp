@@ -4,16 +4,18 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xloctime/std::time_put
 - locale/std::time_put::char_type
 - locale/std::time_put::iter_type
 - locale/std::time_put::do_put
 - locale/std::time_put::put
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::time_put [C++]
 - std::time_put [C++], char_type
@@ -21,15 +23,17 @@ helpviewer_keywords:
 - std::time_put [C++], do_put
 - std::time_put [C++], put
 ms.assetid: df79493e-3331-48d2-97c3-ac3a745f0791
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7d7d4d2554e346f67d62f3832ed1722c35970154
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b926fce11dcb7f2a18cc29a6dd653d1fb061bc20
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="timeput-class"></a>time_put クラス
 このテンプレート クラスは、時刻値から `CharType` 型のシーケンスへの変換を制御するためにロケール ファセットとして使用できるオブジェクトを表します。  
@@ -72,7 +76,7 @@ class time_put : public locale::facet;
 |[do_put](#do_put)|時刻と日付の情報を `CharType` のシーケンスとして出力する仮想関数。|  
 |[put](#put)|時刻と日付の情報を `CharType` のシーケンスとして出力します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
@@ -248,11 +252,11 @@ explicit time_put(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: これらの値が定義されていません。  
   
  コンス トラクターは、ベース オブジェクトと[locale::facet](../standard-library/locale-class.md#facet_class)(*_Refs*)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<locale>](../standard-library/locale.md)   
  [time_base クラス](../standard-library/time-base-class.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)

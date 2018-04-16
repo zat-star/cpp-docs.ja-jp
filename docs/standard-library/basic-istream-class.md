@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - istream/std::basic_istream
 - istream/std::basic_istream::gcount
@@ -23,7 +24,8 @@ f1_keywords:
 - istream/std::basic_istream::sync
 - istream/std::basic_istream::tellg
 - istream/std::basic_istream::unget
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::basic_istream [C++]
 - std::basic_istream [C++], gcount
@@ -41,15 +43,17 @@ helpviewer_keywords:
 - std::basic_istream [C++], tellg
 - std::basic_istream [C++], unget
 ms.assetid: c7c27111-de6d-42b4-95a3-a7e65259bf17
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d8189e621ac137986c72657441c5584e09795edd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cef43fa717e5b4c11257b3f44ef2bb76af2d9ba7
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="basicistream-class"></a>basic_istream クラス
 `Elem` 型の要素を含むストリーム バッファーからの要素とエンコードされたオブジェクトの抽出を制御するオブジェクトを表します。この型は [char_type](../standard-library/basic-ios-class.md#char_type) とも呼ばれ、その文字特性は、[traits_type](../standard-library/basic-ios-class.md#traits_type) とも呼ばれるクラス *Tr* によって決定されます。  
@@ -170,7 +174,7 @@ setstate(state);
 |[operator>>](#op_gt_gt)|入力ストリームで関数を呼び出すか、または入力ストリームから書式設定されたデータを読み取ります。|  
 |[operator=](#op_eq)|演算子の右辺の `basic_istream` をこのオブジェクトに代入します。 これは、コピーを残さない `rvalue` 参照を伴う移動代入です。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<istream>  
   
  **名前空間:** std  
@@ -438,7 +442,7 @@ Type 'abcdef': abcdef
 def  
 ```  
   
-##  <a name="op_gt_gt"></a>基本的な\_istream::operator >>
+##  <a name="op_gt_gt"></a>  basic\_istream::operator>>
   
 入力ストリームで関数を呼び出すか、または入力ストリームから書式設定されたデータを読み取ります。  
   
@@ -964,7 +968,7 @@ abc
 abc  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   
  [iostreams の規則](../standard-library/iostreams-conventions.md)

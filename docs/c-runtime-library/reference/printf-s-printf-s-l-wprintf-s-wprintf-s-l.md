@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _printf_s_l
 - wprintf_s
@@ -45,30 +45,17 @@ helpviewer_keywords:
 - tprintf_s_l function
 - _wprintf_s_l function
 ms.assetid: 044ebb2e-5cc1-445d-bb4c-f084b405615b
-caps.latest.revision: 21
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 008ecd864959078951a3671a318abfa6e593bd49
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2929c79c9ab5cfa5e4455e8a75c76988a1f7cf86
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="printfs-printfsl-wprintfs-wprintfsl"></a>printf_s、_printf_s_l、wprintf_s、_wprintf_s_l
 標準出力ストリームに書式付きで出力します。 これらのバージョンの [printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」にあるとおり、セキュリティが強化されています。  
@@ -116,7 +103,7 @@ int _wprintf_s_l(
   
  `errno` とエラー コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
- `printf_s`および`fprintf_s`という点以外の動作は同じ`printf_s`に出力する`stdout`型の出力先ではなく`FILE`です。 詳細については、「[fprintf_s、_fprintf_s_l、fwprintf_s、_fwprintf_s_l](../../c-runtime-library/reference/fprintf-s-fprintf-s-l-fwprintf-s-fwprintf-s-l.md)」を参照してください。  
+ `printf_s` および`fprintf_s`という点以外の動作は同じ`printf_s`に出力する`stdout`型の出力先ではなく`FILE`です。 詳細については、「[fprintf_s、_fprintf_s_l、fwprintf_s、_fwprintf_s_l](../../c-runtime-library/reference/fprintf-s-fprintf-s-l-fwprintf-s-fwprintf-s-l.md)」を参照してください。  
   
  `wprintf_s` 関数は `printf_s` のワイド文字バージョンで、`format` はワイド文字列です。 ストリームが ANSI モードで開かれている場合、`wprintf_s` と `printf_s` の動作は同じになります。 `printf_s` では、UNICODE ストリームへの出力はサポートされていません。  
   
@@ -147,14 +134,14 @@ Line one
 > [!IMPORTANT]
 >  `format` にユーザー定義の文字列を指定しないでください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`printf_s`, `_printf_s_l`|\<stdio.h>|  
 |`wprintf_s`, `_wprintf_s_l`|\<stdio.h> または \<wchar.h>|  
   
- コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル`stdin`、 `stdout`、および`stderr`、C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
   
 ## <a name="example"></a>例  
   
@@ -234,7 +221,7 @@ Address as:   0012FF78
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [ロケール](../../c-runtime-library/locale.md)   

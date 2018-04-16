@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2702
 ms.assetid: 6def15d4-9a8d-43e7-ae35-42d7cb57c27e
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b9bf76f5f48b781c51bcf219f398e071a09f290d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: f95a98262f9c7c00850575af883e4269590ead8e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2702"></a>コンパイラ エラー C2702
 _ _except は終了ブロックには表示されない場合があります。  

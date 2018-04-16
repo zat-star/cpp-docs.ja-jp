@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ATL projects, tutorials
 - controls [ATL], tutorials
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - tutorials [ATL]
 - ATL, tutorials
 ms.assetid: f921a121-09c8-4812-9317-e15b2f1471fa
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 858534a72dbd7d8f9849f95aa3c6e4bef070dd26
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3a7737728668adddbf3ca8ed0c41cdbf5e6bb61d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="active-template-library-atl-tutorial"></a>Active Template Library (ATL) のチュートリアル
 ATL は、効率的な柔軟で軽量のコントロールを作成するプロセスを簡単に設計されています。 このチュートリアルでは、多くの ATL および COM の基本事項を示す、ActiveX コントロールの作成を説明します。  
@@ -46,6 +50,6 @@ ATL は、効率的な柔軟で軽量のコントロールを作成するプロ�
   
 -   [手順 7: Web ページ上のコントロールの配置](../atl/putting-the-control-on-a-web-page-atl-tutorial-part-7.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../atl/active-template-library-atl-concepts.md)
 

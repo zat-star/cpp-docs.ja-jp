@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname: _except_handler3
+apiname:
+- _except_handler3
 apilocation:
 - msvcrt.dll
 - msvcr90.dll
@@ -20,20 +22,23 @@ apitype: DLLExport
 f1_keywords:
 - _except_handler3
 - except_handler3
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _except_handler3 function
 - except_handler3 function
 ms.assetid: b0c64898-0ae5-48b7-9724-80135a0813e2
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: dbbde719028df2d7b535548f4343b88e2c90efbd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b4fe280562d4f1278d74ae118712c9167de4b54d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="excepthandler3"></a>_except_handler3
 内部 CRT 関数。 現在の例外を処理する適切な例外ハンドラーを見つけるためにフレームワークによって使用されます。  
@@ -68,5 +73,5 @@ int _except_handler3(
 ## <a name="remarks"></a>コメント  
  適切な例外ハンドラーが見つかった場合、このメソッドはそのハンドラーに例外を渡します。 この状況では、このメソッドはそれを呼び出したコードには戻らず、戻り値は無関係です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../c-runtime-library/reference/crt-alphabetical-function-reference.md)

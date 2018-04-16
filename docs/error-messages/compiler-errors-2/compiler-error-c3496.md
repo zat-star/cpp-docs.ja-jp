@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3496
-dev_langs: C++
-helpviewer_keywords: C3496
+f1_keywords:
+- C3496
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3496
 ms.assetid: e19885f2-677f-4c1e-bc69-e35852262dc3
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 86c80c4b708bd4315b2ce2ceaf7b61e0629a8b2e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e8e5e441011c69e2b50b4565981d89a7730d542f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3496"></a>コンパイラ エラー C3496
 'this' は常に値によってキャプチャされます。'&' は無視されました  
@@ -46,5 +52,5 @@ class C
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ラムダ式](../../cpp/lambda-expressions-in-cpp.md)

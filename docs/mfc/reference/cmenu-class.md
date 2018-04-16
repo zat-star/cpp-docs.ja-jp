@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -49,7 +50,8 @@ f1_keywords:
 - AFXWIN/CMenu::TrackPopupMenu
 - AFXWIN/CMenu::TrackPopupMenuEx
 - AFXWIN/CMenu::m_hMenu
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMenu [MFC], CMenu
 - CMenu [MFC], AppendMenu
@@ -91,15 +93,17 @@ helpviewer_keywords:
 - CMenu [MFC], TrackPopupMenuEx
 - CMenu [MFC], m_hMenu
 ms.assetid: 40cacfdc-d45c-4ec7-bf28-991c72812499
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5b54a2cecf6ae091680582a3997cc8ee9c1c625d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 104c965da403040308386e019d56684577318eee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmenu-class"></a>CMenu クラス
 Windows の `HMENU`をカプセル化したものです。  
@@ -186,7 +190,7 @@ class CMenu : public CObject
   
  `CMenu`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="appendmenu"></a>CMenu::AppendMenu  
@@ -596,7 +600,7 @@ UINT GetDefaultItem(
  *gmdiFlags*  
  関数がメニュー項目を検索する方法を指定する値。 このパラメーターには、なし、1 つ、または、次の値の組み合わせを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |**GMDI_GOINTOPOPUPS**|、既定の項目のいずれかのサブメニューを開く場合、関数がある、対応するサブメニューを再帰的に検索するを指定します。 サブメニューには、既定の項目がなければ、戻り値は、サブメニューを開く項目を識別します。<br /><br /> 既定では、サブメニューを開く項目であるかどうかに関係なく、指定されたメニューの最初の既定の項目を返します。|  
 |**GMDI_USEDISABLED**|関数は、無効になっている場合でも、既定の項目を返すにを指定します。<br /><br /> 既定では、関数は、無効または淡色表示の項目をスキップします。|  
@@ -1318,7 +1322,7 @@ BOOL TrackPopupMenuEx(
 ### <a name="remarks"></a>コメント  
  浮動小数点のポップアップ メニュー画面のどこでも表示できます。 ポップアップ メニューを作成するときにエラーの処理の詳細については、次を参照してください。[バインド](http://msdn.microsoft.com/library/windows/desktop/ms648003)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CTRLTEST](../../visual-cpp-samples.md)   
  [MFC サンプル DYNAMENU](../../visual-cpp-samples.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   

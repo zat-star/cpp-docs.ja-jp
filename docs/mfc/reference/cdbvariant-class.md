@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -24,7 +25,8 @@ f1_keywords:
 - AFXDB/CDBVariant::m_pstring
 - AFXDB/CDBVariant::m_pstringA
 - AFXDB/CDBVariant::m_pstringW
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDBVariant [MFC], CDBVariant
 - CDBVariant [MFC], Clear
@@ -41,15 +43,17 @@ helpviewer_keywords:
 - CDBVariant [MFC], m_pstringA
 - CDBVariant [MFC], m_pstringW
 ms.assetid: de23609c-c560-4b24-bd6b-9d8903fd5b49
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 71b19df1d89d07b578156e46a2915bdcd5c70004
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2c100dc1a101d1c880dd5bd44e0986690728b4e2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdbvariant-class"></a>CDBVariant クラス
 MFC ODBC クラスのバリアント型を表します。  
@@ -82,7 +86,7 @@ class CDBVariant
   
 ### <a name="public-union-members"></a>共用体のパブリック メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CDBVariant::m_boolVal](#m_boolval)|型の値を含む**BOOL**です。|  
 |[CDBVariant::m_chVal](#m_chval)|型の値を含む`unsigned char`です。|  
@@ -106,7 +110,7 @@ class CDBVariant
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CDBVariant`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdb.h  
   
 ##  <a name="cdbvariant"></a>CDBVariant::CDBVariant  
@@ -220,6 +224,6 @@ void Clear();
 ### <a name="remarks"></a>コメント  
  **M_pstringW**共用体データ メンバーが所属します。 アクセスする前に**m_pstringW**、最初の値を確認[CDBVariant::m_dwType](#m_dwtype)です。 場合`m_dwType`に設定されている**DBVT_WSTRING**、し**m_pstringW**の有効なポインターが含まれています。 それ以外の場合にアクセスする**m_pstringW**信頼性のない結果が生成されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [CRecordset クラス](../../mfc/reference/crecordset-class.md)

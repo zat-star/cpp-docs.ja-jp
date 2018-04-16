@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.codewiz.class.mfc.simple.doctemp
-dev_langs: C++
-helpviewer_keywords: MFC Add Class Wizard, document control strings
+f1_keywords:
+- vc.codewiz.class.mfc.simple.doctemp
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC Add Class Wizard, document control strings
 ms.assetid: 14e1c834-5e79-4dbd-811f-ec8f0a9cdcb2
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 674a25bcc77c884fbda69712131d480150ad0847
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3a9d37b1a886c28d267cd7a387317edce6bf7f3a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="document-template-strings-mfc-add-class-wizard"></a>[ドキュメント テンプレート文字列] ページ (MFC クラス追加ウィザード)
 ウィザードのこのページは、次の条件を満たすクラスに対してのみ使用できます。  
@@ -69,7 +75,7 @@ ms.lasthandoff: 10/24/2017
  **ドキュメント クラス**  
  プロジェクトのドキュメント クラスを示します。 既定では、このクラスは、メイン アプリケーションのドキュメントに記載されている、[生成されたクラス](../../mfc/reference/generated-classes-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。 その他のドキュメント クラスをプロジェクトに追加している場合は、リストから、別のドキュメント クラスを選択できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC クラス追加ウィザード](../../mfc/reference/mfc-add-class-wizard.md)   
  [MFC クラス](../../mfc/reference/adding-an-mfc-class.md)   
  [クラスの追加](../../ide/adding-a-class-visual-cpp.md)

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _ismbckata
 - _ismbchira_l
@@ -34,7 +35,8 @@ f1_keywords:
 - ismbchira_l
 - _ismbchira_l
 - _ismbchira
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _ismbckata function
 - _ismbchira function
@@ -47,21 +49,23 @@ helpviewer_keywords:
 - Hiragana
 - ismbckata function
 ms.assetid: 2db388a2-be31-489b-81c8-f6bf3f0582d3
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b0e257ac4a1998e75fc47e719df2163d49654c71
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 38fe65f2b81def4afe08339f38b00cd69702fd83
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ismbchira-ismbchiral-ismbckata-ismbckatal"></a>_ismbchira、_ismbchira_l、_ismbckata、_ismbckata_l
 **コード ページ 932 固有の関数**  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -95,9 +99,9 @@ int _ismbckata_l(
 ## <a name="remarks"></a>コメント  
  これらの各関数は特定の条件で特定のマルチバイト文字をテストします。  
   
- これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-|ルーチン|テスト条件 (コード ページ 932 のみ)|  
+|ルーチンによって返される値|テスト条件 (コード ページ 932 のみ)|  
 |-------------|-------------------------------------------|  
 |`_ismbchira`|2 バイトひらがな: 0x829F<=`c`<=0x82F1。|  
 |`_ismbchira_l`|2 バイトひらがな: 0x829F<=`c`<=0x82F1。|  
@@ -106,18 +110,18 @@ int _ismbckata_l(
   
  **コード ページ 932 固有情報終了**  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbchira`|\<mbstring.h>|  
 |`_ismbchira_l`|\<mbstring.h>|  
 |`_ismbckata`|\<mbstring.h>|  
 |`_ismbckata_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../../c-runtime-library/character-classification.md)   
  [_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)   
  [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)   

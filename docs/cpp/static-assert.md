@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: static_assert_cpp
-dev_langs: C++
+f1_keywords:
+- static_assert_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - C++ keywords, static_assert
 - C2338
 - assertions [C++], static_assert
 - static_assert
 ms.assetid: 28dd3668-e78c-4de8-ba68-552084743426
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9073f513000684fd75ccdba250c2f92513a94bdc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 660b91f4902e42d393509aa190172e53839b2621
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="staticassert"></a>static_assert
 コンパイル時にソフトウェアのアサーションをテストします。 指定された定数式が場合`false`が提供されている場合、コンパイラが、指定したメッセージを表示され、コンパイル エラー C2338 で失敗はそれ以外の場合、宣言には効果はありません。  
@@ -110,7 +115,7 @@ public:
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アサーションとユーザー指定のメッセージ (C++)](../cpp/assertion-and-user-supplied-messages-cpp.md)   
  [#error ディレクティブ (C/C++)](../preprocessor/hash-error-directive-c-cpp.md)   
  [assert マクロ、_assert、_wassert](../c-runtime-library/reference/assert-macro-assert-wassert.md)   

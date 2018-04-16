@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2165
 ms.assetid: b108313b-b8cb-4dce-b2ec-f2b31c9cdc87
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d382462f17de0c98fc084e23e2cadf028c3e8ef1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: d8d319826edac5ccdb83ab69b89abc11d5e54b68
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2165"></a>コンパイラ エラー C2165
 'keyword' : データへのポインターは変更できません  

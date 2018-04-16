@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - metadata, extending
 - custom attributes, extending metadata
 ms.assetid: 98b29048-a3ea-4698-8441-f149cdaec9fb
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b7c96ff7be36ac90560d36c3c0989379eea24777
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 9d974e8526f983801ed011520f7f78ff8c6cb564
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="user-defined-attributes--c-component-extensions"></a>ユーザー定義の属性 (C++ コンポーネント拡張)
 カスタム属性を使用すると、インターフェイス、クラスまたは構造体、メソッド、パラメーター、または列挙型のメタデータを拡張できます。  
@@ -33,7 +38,7 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="remarks"></a>コメント  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
 ## <a name="common-language-runtime"></a>共通言語ランタイム  
@@ -54,10 +59,10 @@ ms.lasthandoff: 10/24/2017
   
  Visual C でアセンブリの署名については、次を参照してください。[厳密な名前のアセンブリ (アセンブリ署名) (C + + CLI)](../dotnet/strong-name-assemblies-assembly-signing-cpp-cli.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/clr**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  **例**  
   
  次の例では、カスタム属性を定義する方法を示します。  
@@ -215,5 +220,5 @@ ref struct A : Attribute {
 ref struct B {};  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

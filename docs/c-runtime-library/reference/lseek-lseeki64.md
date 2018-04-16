@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _lseeki64
 - _lseek
@@ -27,7 +28,8 @@ f1_keywords:
 - _lseeki64
 - _lseek
 - lseeki64
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - lseek function
 - _lseek function
@@ -36,15 +38,17 @@ helpviewer_keywords:
 - file pointers [C++], moving
 - seek file pointers
 ms.assetid: aba8a768-d40e-48c3-b38e-473dbd782f93
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: af250c88b7c5443529cf4aa9524f3d2e78413e87
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e9b711af0b5f8c5aec24ccfa4e395951b1caf302
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="lseek-lseeki64"></a>_lseek、_lseeki64
 指定した場所にファイル ポインターを移動します。  
@@ -94,14 +98,14 @@ __int64 _lseeki64(
   
  `_lseek` を使用して、ポインターをファイルの任意の場所またはファイルの最後の後に移動することができます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_lseek`|\<io.h>|  
 |`_lseeki64`|\<io.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -176,7 +180,7 @@ Position for current position seek = 10
 Position for end of file seek = 57  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
  [fseek、_fseeki64](../../c-runtime-library/reference/fseek-fseeki64.md)   
  [_tell、_telli64](../../c-runtime-library/reference/tell-telli64.md)

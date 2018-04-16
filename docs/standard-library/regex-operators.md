@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - regex/std::operator!=
 - regex/std::operator>
@@ -17,14 +17,13 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: ec623e65-c186-491f-aa18-6b12b47e1127
-caps.latest.revision: 12
+caps.latest.revision: 
 manager: ghogen
+ms.openlocfilehash: 40dd9bb9a674542d216ced2bb53b65efeb5d34a0
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 7c37cc1a2708346ed8af0fd8b5df9a91a625feb6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltregexgt-operators"></a>&lt;regex&gt; 演算子
 ||||  
@@ -258,7 +257,7 @@ sub < "aab" == true
 sub < 'a' == false  
 ```  
   
-##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
+##  <a name="op_lt_lt"></a>  演算子&lt;&lt;  
  ストリームに sub_match を挿入します。  
   
 ```  
@@ -316,7 +315,7 @@ int main()
 whole match: caaa  
 ```  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  さまざまなオブジェクトが他方以下かどうかの比較。  
   
 ```  
@@ -657,7 +656,7 @@ sub > "aab" == false
 sub > 'a' == true  
 ```  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  さまざまなオブジェクトが他方以上かどうかの比較。  
   
 ```  
@@ -764,7 +763,7 @@ sub >= "aab" == false
 sub >= 'a' == true  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<regex>](../standard-library/regex.md)  
 [regex_constants クラス](../standard-library/regex-constants-class.md)  
 [regex_error クラス](../standard-library/regex-error-class.md)  
@@ -773,6 +772,5 @@ sub >= 'a' == true
 [regex_token_iterator クラス](../standard-library/regex-token-iterator-class.md)  
 [regex_traits クラス](../standard-library/regex-traits-class.md)  
 [\<regex> typedefs](../standard-library/regex-typedefs.md)  
-
 
 

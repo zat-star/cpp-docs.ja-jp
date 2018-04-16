@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _set_controlfp
+ms.topic: reference
+apiname:
+- _set_controlfp
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,21 +26,24 @@ apitype: DLLExport
 f1_keywords:
 - set_controlfp
 - _set_controlfp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - set_controlfp function
 - floating-point functions, setting control word
 - _set_controlfp function
 ms.assetid: e0689d50-f68a-4028-a9c1-fb23eedee4ad
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0f738b643ac225df45b063839f2f758b2766e5d0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8b095fe13e8ecf20769ab833ace574d740fd185b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="setcontrolfp"></a>_set_controlfp
 浮動小数点制御ワードを設定します。  
@@ -67,15 +72,15 @@ void __cdecl _set_controlfp(
   
  コンパイルするときにこの関数は使用されなくなりました[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)共通言語ランタイムには、既定の浮動小数点精度のみがサポートされるためです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|互換性|  
+|ルーチンによって返される値|必須ヘッダー|互換性|  
 |-------------|---------------------|-------------------|  
 |`_set_controlfp`|\<float.h>|x86 プロセッサのみ|  
   
  互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [_clear87、_clearfp](../../c-runtime-library/reference/clear87-clearfp.md)   
  [_status87、_statusfp、_statusfp2](../../c-runtime-library/reference/status87-statusfp-statusfp2.md)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.strings
-dev_langs: C++
-helpviewer_keywords: language strings
+f1_keywords:
+- c.strings
+dev_langs:
+- C++
+helpviewer_keywords:
+- language strings
 ms.assetid: bbee63b1-af0b-4e44-9eaf-dd3e265c05fd
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d65dc3b8d7dd62994eb0a8b546e290d1b6e47b9a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 85f0c9b06ae85128209f06d95375e09043b3f9c8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="language-strings"></a>Language Strings
 `setlocale` 関数と `_create_locale` 関数は、Unicode コード ページを使用しない、オペレーティング システムの Windows NLS API によってサポートされている言語を使用できます。 オペレーティング システムのバージョンによってサポートされている言語の一覧については、[各国語サポートの (NLS) の API リファレンス](https://www.microsoft.com/resources/msdn/goglobal/default.mspx)に関するページをご覧ください。 言語識別文字列は、サポート対象の言語の一覧の **[Language]** と **[Language name abbreviation]** の列の値のいずれかです。 オペレーティング システムのバージョンごとの言語サポートに関する詳細については、[MS-LCID]: Windows Language Code Identifier (LCID) Reference ([MS-LCID]: Windows 言語コード識別子 (LCID) リファレンス) の「[Appendix A: Product Behavior (付録 A: 製品の動作)](http://msdn.microsoft.com/goglobal/bb896001.aspx)」をご覧ください。   
@@ -65,7 +71,7 @@ C ランタイム ライブラリの実装では、以下の言語識別文字�
 |german-swiss|de-CH|  
 |irish-english|en-IE|  
 |italian-swiss|it-CH|  
-|norwegian|no|  
+|norwegian|Ｘ|  
 |norwegian-bokmal|nb-NO|  
 |norwegian-nynorsk|nn-NO|  
 |portuguese-brazilian|pt-BR|  
@@ -94,7 +100,7 @@ C ランタイム ライブラリの実装では、以下の言語識別文字�
 |us|en-US|  
 |usa|en-US|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール名、言語、および国/地域識別文字列](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
  [国/地域別文字列](../c-runtime-library/country-region-strings.md)   
  [setlocale、_wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)   

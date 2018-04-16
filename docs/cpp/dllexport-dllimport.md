@@ -19,16 +19,17 @@ helpviewer_keywords:
 - dllimport __declspec keyword
 - __declspec keyword [C++], dllimport
 ms.assetid: ff95b645-ef55-4e72-b848-df44657b3208
-caps.latest.revision: 13
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 029f5b915b71395f81ada2e2174eafeb59230443
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d4e5b98b5541d1dc5f4a94c9611668a9ea8d787a
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="dllexport-dllimport"></a>dllexport、dllimport
 **Microsoft 固有の仕様**  
@@ -39,8 +40,8 @@ ms.lasthandoff: 09/25/2017
   
 ```  
   
-      __declspec( dllimport ) declarator  
-__declspec( dllexport ) declarator  
+   __declspec( dllimport ) declarator  
+   __declspec( dllexport ) declarator  
 ```  
   
 ## <a name="remarks"></a>コメント  
@@ -86,6 +87,6 @@ DllExport int n;
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
- [_ _declspec](../cpp/declspec.md)   
+## <a name="see-also"></a>参照  
+ [__declspec](../cpp/declspec.md)   
  [キーワード](../cpp/keywords-cpp.md)

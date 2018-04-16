@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _lsearch_s
 apilocation:
@@ -37,30 +37,17 @@ helpviewer_keywords:
 - _lsearch_s function
 - lsearch_s function
 ms.assetid: d2db0635-be7a-4799-8660-255f14450882
-caps.latest.revision: 17
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 4969a12a821040c007a43248dc15927ee9f6ab40
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a680c990ec91edf225057ea729fd3343a57610d4
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="lsearchs"></a>_lsearch_s
 値の線形探索を実行します。 「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_lsearch](../../c-runtime-library/reference/lsearch.md) です。  
@@ -118,15 +105,15 @@ void *_lsearch_s(
   
  `context` ポインターは、検索対象のデータ構造体がオブジェクトの一部であり、`compare` 関数でオブジェクトのメンバーにアクセスする必要がある場合に役立ちます。 たとえば、`compare` 関数のコードは void ポインターを該当するオブジェクト型にキャストして、そのオブジェクトのメンバーにアクセスできます。 `context` ポインターを追加すると、`compare` 関数でデータを使用可能にする静的変数を使用する場合の再入バグを回避するために、追加のコンテキストを使用できるので、`_lsearch_s` がより安全になります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_lsearch_s`|\<search.h>|  
   
- 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)   
  [bsearch_s](../../c-runtime-library/reference/bsearch-s.md)   
  [_lfind_s](../../c-runtime-library/reference/lfind-s.md)   

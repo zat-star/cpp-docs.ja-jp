@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: abbd405e-3038-427c-8c24-e00598f0936a
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 397c3faeeed85633f949c331c9be12c6a8a5a46b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 06cb6c97580b4c4c9a6c961cb76f2c4d84d841ac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="portability-at-abi-boundaries-modern-c"></a>ABI の境界での移植性 (Modern C++)
 バイナリ インターフェイスの境界で十分にポータブル型と規則を使用します。 "ポータブル type"は、C の組み込み型または C の組み込み型のみを含む構造体です。 クラスの型は、呼び出し元と呼び出し先が一致レイアウト、規則などを呼び出すことときにのみ使用できます。これは、同じコンパイラおよびコンパイラ設定で両方がコンパイルされるときにのみ可能です。  
@@ -39,7 +43,7 @@ extern "C" {        // functions using explicit "this"
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)

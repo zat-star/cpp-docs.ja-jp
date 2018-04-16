@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3721
 ms.assetid: c696ca38-3e00-4875-abbe-7bce0f46930e
-caps.latest.revision: 13
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 31386a3b3dfaac3697dedfa86e753176c569ed80
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: b2a0e91b3ccb6bbcb5ecef15e7fb33754c239932
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3721"></a>コンパイラ エラー C3721
 'signature': イベントの署名は互換性がありません  
@@ -32,4 +33,3 @@ ms.lasthandoff: 10/10/2017
  イベントの宣言が正しくありません。 詳細については、次を参照してください。 [_ _event](../../cpp/event.md)です。  
   
  C3721 は古い形式のコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**です。  
-

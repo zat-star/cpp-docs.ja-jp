@@ -1,64 +1,75 @@
 ---
-title: "_rotl8, _rotl16 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_rotl8"
-  - "_rotl16"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_rotl16 intrinsic"
-  - "_rotl8 intrinsic"
+title: "_rotl8、_rotl16 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- _rotl8
+- _rotl16
+dev_langs:
+- C++
+helpviewer_keywords:
+- _rotl8 intrinsic
+- _rotl16 intrinsic
 ms.assetid: 8c519ab6-aef9-4f07-a387-daee8408368f
-caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fa52db7c28541b1a4baf32927a495856ed3bb664
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# _rotl8, _rotl16
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="rotl8-rotl16"></a>_rotl8、_rotl16
+**Microsoft 固有の仕様**  
   
- 指定したビット位置の数だけ、最上位ビット \(MSB\) に向かって入力値を左に回転します。  
+ 指定したビット位置の数だけ、最上位ビット (MSB) に向かって入力値を左に回転します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-unsigned char _rotl8(     unsigned char value,     unsigned char shift  ); unsigned short _rotl16(     unsigned short value,     unsigned char shift  );  
+unsigned char _rotl8(   
+   unsigned char value,   
+   unsigned char shift   
+);  
+unsigned short _rotl16(   
+   unsigned short value,   
+   unsigned char shift   
+);  
 ```  
   
-#### パラメーター  
- \[入力\] `value`  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `value`  
  回転する値。  
   
- \[入力\] `shift`  
+ [入力] `shift`  
  回転するビット数。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  回転後の値。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`_rotl8`|x86、ARM、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`_rotl16`|x86、ARM、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`_rotl8`|x86、ARM、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`_rotl16`|x86、ARM、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  左シフト演算とは異なり、左回転を実行すると、上端からあふれた上位ビットは最下位ビット位置に移動します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // rotl.cpp  
@@ -85,17 +96,20 @@ int main()
 }  
 ```  
   
-  **Rotating 0x41 left by 0 bits gives 0x41**  
-**Rotating 0x41 left by 1 bits gives 0x82**  
-**Rotating 0x41 left by 2 bits gives 0x5**  
-**Rotating 0x41 left by 3 bits gives 0xa**  
-**Rotating 0x41 left by 4 bits gives 0x14**  
-**Rotating 0x41 left by 5 bits gives 0x28**  
-**Rotating 0x41 left by 6 bits gives 0x50**  
-**Rotating 0x41 left by 7 bits gives 0xa0**  
-**Rotating unsigned short 0x12 left by 10 bits gives 0x4800**   
-## END Microsoft 固有の仕様  
+```Output  
+Rotating 0x41 left by 0 bits gives 0x41  
+Rotating 0x41 left by 1 bits gives 0x82  
+Rotating 0x41 left by 2 bits gives 0x5  
+Rotating 0x41 left by 3 bits gives 0xa  
+Rotating 0x41 left by 4 bits gives 0x14  
+Rotating 0x41 left by 5 bits gives 0x28  
+Rotating 0x41 left by 6 bits gives 0x50  
+Rotating 0x41 left by 7 bits gives 0xa0  
+Rotating unsigned short 0x12 left by 10 bits gives 0x4800  
+```  
   
-## 参照  
- [\_rotr8, \_rotr16](../intrinsics/rotr8-rotr16.md)   
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+  
+## <a name="see-also"></a>参照  
+ [_rotr8、_rotr16](../intrinsics/rotr8-rotr16.md)   
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

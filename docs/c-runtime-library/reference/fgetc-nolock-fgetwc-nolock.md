@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _fgetc_nolock
 - _fgetwc_nolock
@@ -30,7 +31,8 @@ f1_keywords:
 - _fgetc_nolock
 - _fgettc_nolock
 - fgetc_nolock
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - fgetc_nolock function
 - fgetwc_nolock function
@@ -42,15 +44,17 @@ helpviewer_keywords:
 - reading characters from streams
 - _fgettc_nolock function
 ms.assetid: fb8e7c5b-4503-493a-879e-6a1db75aa114
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 51cf03e0c06ea0a206f9ccbe11cba91372e28e1f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 475693126cbc33b16710bf260d342c5c5f079540
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fgetcnolock-fgetwcnolock"></a>_fgetc_nolock、_fgetwc_nolock
 スレッドをロックせずにストリームから文字を読み取ります。  
@@ -82,14 +86,14 @@ wint_t _fgetwc_nolock(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_fgettc_nolock`|`_fgetc_nolock`|`_fgetc_nolock`|`_fgetwc_nolock`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_fgetc_nolock`|\<stdio.h>|  
 |`_fgetwc_nolock`|\<stdio.h> または \<wchar.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -141,7 +145,7 @@ Line one.
 Line two.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fputc、fputwc](../../c-runtime-library/reference/fputc-fputwc.md)   
  [getc、getwc](../../c-runtime-library/reference/getc-getwc.md)

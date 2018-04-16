@@ -1,37 +1,41 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4581 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4581"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4581"
+title: "コンパイラの警告 (レベル 1) C4581 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4581
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4581
 ms.assetid: 598bcd87-257d-4eb3-94e4-15bb31aadc99
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 59bf4eafe722283f5fced046e845c6b46ca3ce82
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4581
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-使用できない動作: 属性を処理するために、'"string1"' を 'string2' で置き換えました  
+# <a name="compiler-warning-level-1-c4581"></a>コンパイラの警告 (レベル 1) C4581
+動作が使用されていません: '"string1"' が 'string2' 属性を処理に置き換えられます  
   
- このエラーは、Visual C\+\+ 属性のパラメーター チェックを行う Visual C\+\+ 2005 で行ったコンパイラ準拠作業の結果として生成されることがあります。  
+ このエラーは、Visual C 2005 で行ったコンパイラ準拠作業の結果として生成されることができます。 Visual c 属性のパラメーター チェックします。  
   
- 以前のバージョンでは、引用符で囲まれている属性値も囲まれていない属性値も受け入れられていました。  値が列挙体の場合は、引用符で囲まないでください。  
+ 以前のバージョンでは、属性値は引用符で囲まれているかどうかに受け入れられました。 値が列挙体の場合は、いない囲む必要があります引用符で囲んで指定します。  
   
-## 使用例  
- 次の例では C4581 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4581 を生成します。  
   
 ```  
 // C4581.cpp  

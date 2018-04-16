@@ -1,32 +1,37 @@
 ---
-title: "binary_negate (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::binary_negate"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "binary_negate 関数 [STL/CLR]"
+title: binary_negate (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::binary_negate
+dev_langs:
+- C++
+helpviewer_keywords:
+- binary_negate function [STL/CLR]
 ms.assetid: 0c3b47eb-0f37-4cb2-b879-4c9f0e57d275
 caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 3780c89c178c0c71f3388d2bd846ed7d52af3ceb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# binary_negate (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このテンプレート クラスは、呼び出されたときに保存された 2 引数のファンクタの論理的でない返すファンクタを表します。  保存されたファンクタの観点からは、指定する関数オブジェクトを使用します。  
+# <a name="binarynegate-stlclr"></a>binary_negate (STL/CLR)
+このテンプレート クラスは、ファンクタを記述、呼び出されると、論理を返しますストアドの 2 つの引数ファンクタのではありません。 使用するそのストアド ファンクタの観点から、関数オブジェクトを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Fun>  
@@ -50,35 +55,35 @@ public:
     };  
 ```  
   
-#### パラメーター  
- 関数  
- 保存されたファンクタの種類。  
+#### <a name="parameters"></a>パラメーター  
+ 楽しい  
+ ストアド ファンクタの型。  
   
-## メンバー関数  
+## <a name="member-functions"></a>メンバー関数  
   
 |型定義|説明|  
-|---------|--------|  
-|delegate\_type|汎用デリゲートの型。|  
-|first\_argument\_type|ファンクタの最初の引数の型。|  
-|result\_type|ファンクタの結果の型です。|  
-|second\_argument\_type|ファンクタ 2 番目の引数の型です。|  
-|stored\_function\_type|ファンクタの種類。|  
+|---------------------|-----------------|  
+|delegate_type|汎用デリゲートの型。|  
+|first_argument_type|ファンクタ最初の引数の型。|  
+|result_type|ファンクタ結果の型。|  
+|second_argument_type|ファンクタ 2 番目の引数の型。|  
+|stored_function_type|ファンクタの型。|  
   
 |メンバー|説明|  
-|----------|--------|  
-|binary\_negate|ファンクタを構築します。|  
+|------------|-----------------|  
+|binary_negate|ファンクタを構築します。|  
   
 |演算子|説明|  
-|---------|--------|  
-|operator\(\)|必要な関数を計算します。|  
-|delegate\_type^\(\)演算子|デリゲートにファンクタをキャストします。|  
+|--------------|-----------------|  
+|演算子 ()|必要な関数を計算します。|  
+|演算子 delegate_type^()|デリゲートにファンクタをキャストします。|  
   
-## 解説  
- このテンプレート クラスは、別の 2 引数のファンクタを格納する 2 引数のファンクタを表します。  そのオブジェクトが関数として呼び出されると、2 個の引数という保存されたファンクタの論理的でない返すようにメンバー演算子を定義します `operator()`。  
+## <a name="remarks"></a>コメント  
+ このテンプレート クラスは、別の 2 つの引数ファンクタを格納する 2 つの引数ファンクタをについて説明します。 このメンバー演算子を定義する`operator()`のため、オブジェクトが関数として呼び出される場合、返されることを論理 2 つの引数で呼び出されるストアド ファンクタのではありません。  
   
- 型が `delegate_type^` である適切に変換する関数の引数が、またはオブジェクトを渡すことができます。  
+ 型が関数の引数として、オブジェクトを渡すことができますも`delegate_type^`適切に変換されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_binary_negate.cpp   
@@ -128,14 +133,17 @@ int main()
   
 ```  
   
-  **4 3**  
- **4 4**  
- **1 0**  
- **1 0**   
-## 必要条件  
- **ヘッダー:** の \<cliext と機能\>  
+```Output  
+4 3  
+4 4  
+1 0  
+1 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/機能 >  
   
-## 参照  
- [not2](../dotnet/not2-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [not2 (STL/CLR)](../dotnet/not2-stl-clr.md)

@@ -11,16 +11,17 @@ ms.topic: error-reference
 dev_langs:
 - C++
 ms.assetid: 5e79ab46-6031-499a-a986-716c866b6c0e
-caps.latest.revision: 2
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f92bae0e75d9a09de874cd999c044e703b3f3171
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 1b88f51aa9365c0795c8d3d944ba9f3a8db059d9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-c4746"></a>コンパイラの警告 C4746
 揮発性アクセス '\<式 >' は/volatile: [iso (& a) #124; ms] 設定; _iso_volatile_load/store 組み込み関数の使用を検討してください。  

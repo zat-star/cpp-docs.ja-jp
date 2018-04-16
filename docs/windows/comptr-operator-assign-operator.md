@@ -1,25 +1,32 @@
 ---
-title: "Comptr::operator = 演算子 |Microsoft ドキュメント"
-ms.custom: 
+title: Comptr::operator = 演算子 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: client/Microsoft::WRL::ComPtr::operator=
-dev_langs: C++
-helpviewer_keywords: operator= operator
+f1_keywords:
+- client/Microsoft::WRL::ComPtr::operator=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator= operator
 ms.assetid: 1a0c2752-f7d8-4819-9443-07b88b69ef02
-caps.latest.revision: "3"
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 238c58e8fda169d86dc4be625ed16efa81c21fef
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 6b221ff75e250830feefbbd2d3db0d8697095c96
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="comptroperator-operator"></a>ComPtr::operator= 演算子
 値を現在の ComPtr に割り当てます。  
@@ -33,27 +40,21 @@ WRL_NOTHROW ComPtr& operator=(
 WRL_NOTHROW ComPtr& operator=(  
    _In_opt_ T *other  
 );  
-template <  
-   typename U  
->  
+template <typename U>  
 WRL_NOTHROW ComPtr& operator=(  
    _In_opt_ U *other  
 );  
 WRL_NOTHROW ComPtr& operator=(  
    const ComPtr &other  
 );  
-template<  
-   class U  
->  
+template<class U>  
 WRL_NOTHROW ComPtr& operator=(  
    const ComPtr<U>& other  
 );  
 WRL_NOTHROW ComPtr& operator=(  
    _Inout_ ComPtr &&other  
 );  
-template<  
-   class U  
->  
+template<class U>  
 WRL_NOTHROW ComPtr& operator=(  
    _Inout_ ComPtr<U>&& other  
 );  

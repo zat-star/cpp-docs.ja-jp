@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - attribute-injected classes and methods
 - wizard-generated classes and methods
@@ -17,15 +19,18 @@ helpviewer_keywords:
 - consumer wizard-generated classes and methods
 - user record classes in OLE DB consumer
 ms.assetid: dba0538f-2afe-4354-8cbb-f202ea8ade5a
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5189794a8f9c1aa44d46a5580fbfa177f15f7b53
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 194c71fda245663e648298af17a6ceb874aef4d5
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="consumer-wizard-generated-classes"></a>コンシューマー ウィザードで生成されたクラス
 ATL OLE DB コンシューマー ウィザードを使用してコンシューマーを生成する場合、OLE DB テンプレートと OLE DB 属性のどちらかを使用するよう選択できます。 どちらの場合も、ウィザードによってコマンド クラスとユーザー レコード クラスが生成されます。 コマンド クラスには、ウィザードで指定したデータ ソースと行セットを開くためのコードが含まれています。 ユーザー レコード クラスには、選択したデータベース テーブルの列マップが含まれています。 ただし、生成されるコードはそれぞれ異なります。  
@@ -146,7 +151,7 @@ SELECT \
  最後に、ウィザードでは、次のようなコマンド クラス宣言が生成されます。  
   
 ```  
-class CProducts : public CCommand<CAccessor<CProductsAccessor> >  
+class CProducts : public CCommand<CAccessor<CProductsAccessor>>  
 ```  
   
 ## <a name="attribute-injected-user-record-classes"></a>属性が挿入されたユーザー レコード クラス  
@@ -179,12 +184,12 @@ public:
  挿入されたコマンド クラス宣言は次のようになります。  
   
 ```  
-class CProducts : public CCommand<CAccessor<_CProductsAccessor> >  
+class CProducts : public CCommand<CAccessor<_CProductsAccessor>>  
 ```  
   
  挿入されたコードのほとんどは、テンプレート バージョンと同じか類似するものです。 主な相違点は、「 [コンシューマー ウィザード生成メソッド](../../data/oledb/consumer-wizard-generated-methods.md)」で説明されている挿入されたメソッドの部分です。  
   
  挿入されたコードを表示する方法については、「 [挿入されたコードのデバッグ](/visualstudio/debugger/how-to-debug-injected-code)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィザードを使用した OLE DB コンシューマーの作成](../../data/oledb/creating-an-ole-db-consumer-using-a-wizard.md)

@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: /yd
-dev_langs: C++
+f1_keywords:
+- /yd
+dev_langs:
+- C++
 helpviewer_keywords:
 - /Yd compiler option [C++]
 - -Yd compiler option [C++]
 - debugging [C++], debug information files
 - Yd compiler option [C++]
 ms.assetid: c5a699fe-65ce-461e-964c-7f5eb2a8320a
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9b86ec1bf3c47de45eaf9120d8e8f68ac9377db6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 419d97357fd3424d5de980f76c6758eaa47f3c7d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="yd-place-debug-information-in-object-file"></a>/Yd (デバッグ情報のオブジェクト ファイルへの取り込み)
 使用する場合は、プリコンパイル済みヘッダー (.pch) ファイルから作成されたデバッグ情報をすべてのオブジェクト ファイルの完全なペース、 [/Yc](../../build/reference/yc-create-precompiled-header-file.md)と[/Z7](../../build/reference/z7-zi-zi-debug-information-format.md)オプション。 使用しないでください。  
@@ -63,7 +68,7 @@ ms.lasthandoff: 10/24/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  F.cpp と G.cpp、各を含むこれら 2 つの基本ファイルがあると**#include**ステートメント。  
   
 ```  
@@ -87,6 +92,6 @@ CL /YuETC.H /Z7 G.CPP
   
  プリコンパイル済みヘッダーはでコンパイルされていない場合**/Z7**、以降のコンパイルを使用してそのまま使用することができます**/Z7**です。 ただし、デバッグ情報が現在のオブジェクト ファイル内に配置し、関数、およびプリコンパイル済みヘッダーで定義されている型のローカル シンボルは、デバッガーを使用できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

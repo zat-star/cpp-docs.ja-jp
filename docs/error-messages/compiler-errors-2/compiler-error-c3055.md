@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3055
 ms.assetid: 60446ee0-18dd-48fc-9059-f0a14229dce8
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d7a8992a34eaf278b45e76b8ce737ee7daca79f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: b85138c6183598c8db2ab89099aa66940f60e8cd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3055"></a>コンパイラ エラー C3055
 'symbol' : 'threadprivate' ディレクティブの中で使用される前に、シンボルを参照することはできません  
@@ -48,7 +49,7 @@ void test() {
 }  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C3055b.cpp  

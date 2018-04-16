@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: '&&'
-dev_langs: C++
-helpviewer_keywords: '&& rvalue reference declarator'
+f1_keywords:
+- '&&'
+dev_langs:
+- C++
+helpviewer_keywords:
+- '&& rvalue reference declarator'
 ms.assetid: eab0ce3a-c5a3-4992-aa70-6a8ab1f7491d
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8d0595078c9515c5c705a1cbfb1ed6b5e55db788
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e35d0efc92e011cfb4d93746efd1b03ac94a0779
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="rvalue-reference-declarator-ampamp"></a>右辺値参照宣言子:&amp;&amp;
 右辺値の式への参照を保持します。  
@@ -59,7 +65,7 @@ int main()
   
  Visual C 2010 では、前にへの各呼び出し`operator+`割り当てを返します、新しい一時的な`string`オブジェクト (右辺値)。 `operator+` は、ソース文字列が左辺値であるか右辺値であるかわからないため、文字列を他の文字列に追加できません。 ソース文字列が両方とも左辺値である場合、それらのソース文字列はプログラム内の他の場所で参照されている場合があるため、変更しないでください。 右辺値の参照を使用すると、右辺値を受け取るように `operator+` を変更することができ、この値はプログラムの別の場所では参照できません。 そのため、`operator+` は 1 つの文字列を別の文字列に追加できるようになります。 これによって、`string` クラスが実行する必要がある動的メモリ割り当ての数を大幅に減らすことができます。 詳細については、`string`クラスを参照してください[basic_string クラス](../standard-library/basic-string-class.md)です。  
   
- また、コンパイラが戻り値の最適化 (RVO) または名前付き戻り値の最適化 (NRVO) を使用できない場合に、移動セマンティクスが役立ちます。 このような場合、型が移動コンストラクターを定義していれば、コンパイラはその移動コンストラクターを呼び出します。 という名前の戻り値の最適化の詳細については、次を参照してください。[戻り値の最適化 Visual c 2005 で名前付き](http://go.microsoft.com/fwlink/?LinkId=131571)します。  
+ また、コンパイラが戻り値の最適化 (RVO) または名前付き戻り値の最適化 (NRVO) を使用できない場合に、移動セマンティクスが役立ちます。 このような場合、型が移動コンストラクターを定義していれば、コンパイラはその移動コンストラクターを呼び出します。 という名前の戻り値の最適化の詳細については、次を参照してください。[戻り値の最適化 Visual c 2005 で名前付き](http://go.microsoft.com/fwlink/p/?linkid=131571)します。  
   
  移動セマンティクスをより深く理解するために、`vector` オブジェクトに要素を挿入する例について考えてみましょう。 `vector` オブジェクトの容量が超過した場合、`vector` オブジェクトは、挿入された要素の領域を作成するために、各要素にメモリを再割り当てして、別のメモリ位置に各要素をコピーする必要があります。 挿入操作が要素をコピーするときは、新しい要素を作成し、コピー コンストラクターを呼び出して前の要素から新しい要素にデータをコピーした後、前の要素を破棄します。 移動セマンティクスを使用すると、負荷の高いメモリ割り当てとコピー操作を実行する必要がなく、オブジェクトを直接移動できます。  
   
@@ -405,10 +411,10 @@ print_type_and_value<string&>(string& t)
   
  テンプレート引数の推論は、完全転送を実装するうえでの重要な要素です。 このトピックの前の方の「完全転送」のセクションでは、完全転送についてより詳細に説明しています。  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  右辺値参照は、左辺値を右辺値と区別します。 不要なメモリ割り当てとコピー操作の必要性をなくすことで、アプリケーションのパフォーマンスを向上させることができます。 任意の引数を受け取って別の関数に転送し、他の関数が直接呼び出されたかのようにする、1 つのバージョンの関数を記述することもできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [左辺値参照宣言子: &](../cpp/lvalue-reference-declarator-amp.md)   
  [左辺値と右辺値](../cpp/lvalues-and-rvalues-visual-cpp.md)   

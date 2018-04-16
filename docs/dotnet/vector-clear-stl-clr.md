@@ -1,41 +1,46 @@
 ---
-title: "vector::clear (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector::clear"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "clear メンバー [STL/CLR]"
+title: "vector::clear (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::vector::clear
+dev_langs:
+- C++
+helpviewer_keywords:
+- clear member [STL/CLR]
 ms.assetid: 4ed20ec8-3089-4c36-b68f-1b51c639041f
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 63bb863d6503fa66d3a8b19e002d9a912f953298
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# vector::clear (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="vectorclear-stlclr"></a>vector::clear (STL/CLR)
 すべての要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void clear();  
 ```  
   
-## 解説  
- メンバー関数は、実質的に [vector::erase](../dotnet/vector-erase-stl-clr.md)`(`[vector::begin](../dotnet/vector-begin-stl-clr.md)`(),`[vector::end](../dotnet/vector-end-stl-clr.md)`())`を呼び出します。  被制御シーケンスが空であることを確認するために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数が効果的に呼び出し[vector::erase (STL/CLR)](../dotnet/vector-erase-stl-clr.md) `(` [vector::begin (STL/CLR)](../dotnet/vector-begin-stl-clr.md) `(),` [vector::end (STL/CLR)](../dotnet/vector-end-stl-clr.md) `())`. これを使用するには、被制御シーケンスが空であることを確認します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_vector_clear.cpp   
@@ -72,15 +77,18 @@ int main()
   
 ```  
   
-  **b c**  
-**size\(\) \= 0**  
- **b**  
-**size\(\) \= 0**   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+```Output  
+ a b c  
+size() = 0  
+ a b  
+size() = 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/vector >  
   
-## 参照  
- [ベクター](../dotnet/vector-stl-clr.md)   
- [vector::erase](../dotnet/vector-erase-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [vector::erase (STL/CLR)](../dotnet/vector-erase-stl-clr.md)

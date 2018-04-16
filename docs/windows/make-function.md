@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: implements/Microsoft::WRL::Make
-dev_langs: C++
-helpviewer_keywords: Make function
+f1_keywords:
+- implements/Microsoft::WRL::Make
+dev_langs:
+- C++
+helpviewer_keywords:
+- Make function
 ms.assetid: 66704143-df99-4a95-904d-ed99607e1034
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ec9edad09252402578788eeccb8e9ea7508ab98d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: aac2a50e3c50941d607dea32c9f7c9eecde8e589
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="make-function"></a>Make 関数
 指定した Windows ランタイム クラスを初期化します。 同じモジュールで定義されているコンポーネントのインスタンスを作成するのにには、この関数を使用します。  
@@ -232,10 +239,10 @@ ComPtr<T> Make();
 ## <a name="remarks"></a>コメント  
  参照してください[する方法: 直接に WRL コンポーネントをインスタンス化](../windows/how-to-instantiate-wrl-components-directly.md)この関数の間の違いについて学習して[Microsoft::WRL::Details::MakeAndInitialize](../windows/makeandinitialize-function.md)、および例についてはします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

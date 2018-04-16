@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -33,20 +34,23 @@ f1_keywords:
 - ATLBASE/ATL::CComModule::m_hInstResource
 - ATLBASE/ATL::CComModule::m_hInstTypeLib
 - ATLBASE/ATL::CComModule::m_pObjMap
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CComModule class
 - DLL modules [C++], ATL
 ms.assetid: f5face2c-8fd8-40e6-9ec3-54ab74701769
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c9e3d47f68575b27d65422f9adec2c24dee83425
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5b86e1f082b7be844afe3b1a84d182d1c722f500
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccommodule-class"></a>CComModule クラス
 ATL 7.0 の時点で`CComModule`は推奨されなくなりました。 を参照してください[ATL モジュール クラス](../../atl/atl-module-classes.md)詳細についてはします。  
@@ -125,7 +129,7 @@ class CComModule : public _ATL_MODULE
   
  `CComModule`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="getclassobject"></a>CComModule::GetClassObject  
@@ -623,5 +627,5 @@ virtual HRESULT UpdateRegistryFromResourceS(
   
  置き換え可能パラメーターおよびスクリプトに関する詳細については、記事を参照してください。 [ATL レジストリ コンポーネント (レジストラー)](../../atl/atl-registry-component-registrar.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C4957
-dev_langs: C++
-helpviewer_keywords: C4957
+f1_keywords:
+- C4957
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4957
 ms.assetid: a18c52d4-23e2-44f1-b4b5-f7fa5a7f3987
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c43ddf0e336d9964d08939bb7c1dd145caf6c848
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e66a12210f9ff67cec922b172b3c7370ee49a952
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-c4957"></a>コンパイラの警告 C4957
 'cast': 'cast_from' から 'cast_to' への明示的なキャストは検証できません  

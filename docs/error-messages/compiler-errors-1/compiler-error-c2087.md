@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2087
 ms.assetid: 89761e83-415a-4468-a4c6-b6dedfd1dd6a
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c177a62939bf46eea24cf26f41a44502f9a70f18
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 047c58d495233ba69d8d688696b80aa756bb9462
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2087"></a>コンパイラ エラー C2087
 'identifier': 添字がありません  
@@ -40,7 +41,7 @@ int main() {
 }  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C2087b.cpp  

@@ -1,41 +1,46 @@
 ---
-title: "priority_queue::generic_value (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::priority_queue::generic_value"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "generic_value メンバー [STL/CLR]"
+title: "priority_queue::generic_value (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::priority_queue::generic_value
+dev_langs:
+- C++
+helpviewer_keywords:
+- generic_value member [STL/CLR]
 ms.assetid: d534e95b-7939-4fb4-bb71-2164e2b97c4f
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 19ebfefefcc3827fb632654e39a865449b3cf675
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# priority_queue::generic_value (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンテナーのジェネリック インターフェイスで使用する要素の型。  
+# <a name="priorityqueuegenericvalue-stlclr"></a>priority_queue::generic_value (STL/CLR)
+コンテナーのジェネリック インターフェイスを使用するための要素の型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef GValue generic_value;  
 ```  
   
-## 解説  
- この型は、テンプレートのコンテナー クラスのジェネリック インターフェイスで使用するために格納された要素の値を記述する型 `GValue` オブジェクトを表します。\(`GValue` は `value_type` が ref 型の場合は `value_type` または `value_type^` です\)。  
+## <a name="remarks"></a>コメント  
+ この型は、型のオブジェクトを表します。`GValue`ストアド要素の値をこのテンプレートのコンテナー クラスのジェネリック インターフェイスを使用することについて説明します。 (`GValue`か`value_type`または`value_type^`場合`value_type`ref 型です)。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_priority_queue_generic_value.cpp   
@@ -74,15 +79,18 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**  
- **a b c**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+c a b  
+c a b  
+c b a  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [priority\_queue::generic\_container](../dotnet/priority-queue-generic-container-stl-clr.md)   
- [priority\_queue::value\_type](../dotnet/priority-queue-value-type-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [priority_queue::generic_container (STL/CLR)](../dotnet/priority-queue-generic-container-stl-clr.md)   
+ [priority_queue::value_type (STL/CLR)](../dotnet/priority-queue-value-type-stl-clr.md)

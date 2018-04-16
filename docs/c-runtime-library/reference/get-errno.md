@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _get_errno
+ms.topic: reference
+apiname:
+- _get_errno
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,22 +23,26 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: _get_errno
-dev_langs: C++
+f1_keywords:
+- _get_errno
+dev_langs:
+- C++
 helpviewer_keywords:
 - get_errno function
 - errno global variable
 - _get_errno function
 ms.assetid: b3fd5ebc-f41b-4314-a2f4-2f2d79d6e740
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 03f54ac06cd260859bce4be5fc028be2a2c8a6bd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b8acf119565b0b318887c547c6610652a2530e4f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="geterrno"></a>_get_errno
 errno グローバル変数の現在の値を取得します。  
@@ -85,14 +91,14 @@ errno = 2
 fyi, ENOENT = 2  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_get_errno`|\<stdlib.h>|\<errno.h>|  
   
- 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_set_errno](../../c-runtime-library/reference/set-errno.md)   
  [errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: xfunctional/std::unary_negate
-dev_langs: C++
-helpviewer_keywords: unary_negate class
+ms.topic: reference
+f1_keywords:
+- xfunctional/std::unary_negate
+dev_langs:
+- C++
+helpviewer_keywords:
+- unary_negate class
 ms.assetid: e3b86eec-3205-49b9-ab83-f55225af4e0c
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 37383047b16b26f1d059896d892693e67664cb47
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6ade97adb85c09ecac81f0de754db312b31b49c7
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="unarynegate-class"></a>unary_negate クラス
 指定した単項関数の戻り値を否定するメンバー関数を提供するテンプレート クラス。  
@@ -104,12 +110,12 @@ The number of elements in v1 not greater than 10 is: 3.
 */  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

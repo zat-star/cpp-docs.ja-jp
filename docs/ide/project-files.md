@@ -1,34 +1,38 @@
 ---
-title: "プロジェクト ファイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".vcproj ファイル"
-  - "プロジェクト ファイル [C++], .vcproj ファイル形式"
-  - "VCPROJ (Visual C++ プロジェクト ファイル) 形式"
-  - "Visual C++ プロジェクト, プロジェクト ファイルの形式"
+title: "プロジェクト ファイル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- .vcproj files
+- Visual C++ projects, project file format
+- VCPROJ (Visual C++ project file) format
+- project files [C++], .vcproj file format
 ms.assetid: 5261cf45-3136-40a6-899e-dc1339551401
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ac1b6d01bc454e2bcc7f1c8fd125f9d6ff96c90f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# プロジェクト ファイル
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Visual C\+\+ プロジェクト ファイルは、Visual C\+\+ プロジェクトをビルドするために必要な情報を含む、ファイル名拡張子が .vcxproj の XML ベースのファイルです。  
+# <a name="project-files"></a>プロジェクト ファイル
+Visual C プロジェクト ファイルは、XML ベースのファイルを .vcxproj ファイル名拡張子を持ち、Visual C プロジェクトをビルドするために必要な情報が含まれています。  
   
-## 例  
- 次のサンプル .vcxproj ファイルは、**\[新しいプロジェクト\]** ダイアログ ボックスで **\[Win32 コンソール アプリケーション\]** を指定して作成されたものです。  プロジェクト ファイルを処理するには、コマンド ラインで msbuild.exe ツールを使用するか、または [!INCLUDE[TLA2#tla_ide](../build/includes/tla2sharptla_ide_md.md)] で **\[ビルド\]** コマンドを使用します \(このサンプルは、必要なソース ファイルとヘッダー ファイルが用意されていないため処理できません\)。プロジェクト ファイル内の XML 要素の詳細については、「[Project File Schema Reference](../Topic/MSBuild%20Project%20File%20Schema%20Reference.md)」を参照してください。  
+## <a name="example"></a>例  
+ 指定することによって、次のサンプル .vcxproj ファイルが生成されて、 **Win32 コンソール アプリケーション**で、**新しいプロジェクト** ダイアログ ボックス。 プロジェクトを処理する、ファイルは、コマンドラインで msbuild.exe ツールを使用して、または**ビルド**コマンドを[!INCLUDE[TLA2#tla_ide](../build/includes/tla2sharptla_ide_md.md)]です。 (このサンプルを処理できませんので、必要なソース ファイルとヘッダー ファイルが指定されていません。)プロジェクト ファイル内の XML 要素の詳細については、次を参照してください。[プロジェクト ファイル スキーマ リファレンス](/visualstudio/msbuild/msbuild-project-file-schema-reference)です。  
   
 ```  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -128,6 +132,6 @@ Visual C\+\+ プロジェクト ファイルは、Visual C\+\+ プロジェク�
 </Project>  
 ```  
   
-## 参照  
- [Visual Studio での C\+\+ プロジェクトのビルド](../ide/building-cpp-projects-in-visual-studio.md)   
+## <a name="see-also"></a>参照  
+ [Visual Studio での C++ プロジェクトのビルド](../ide/building-cpp-projects-in-visual-studio.md)   
  [プロジェクトのプロパティの操作](../ide/working-with-project-properties.md)

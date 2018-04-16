@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -38,7 +39,8 @@ f1_keywords:
 - AFXBASETABBEDPANE/CBaseTabbedPane::SetAutoDestroy
 - AFXBASETABBEDPANE/CBaseTabbedPane::SetAutoHideMode
 - AFXBASETABBEDPANE/CBaseTabbedPane::ShowTab
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CBaseTabbedPane [MFC], AddTab
 - CBaseTabbedPane [MFC], AllowDestroyEmptyTabbedPane
@@ -69,15 +71,17 @@ helpviewer_keywords:
 - CBaseTabbedPane [MFC], SetAutoHideMode
 - CBaseTabbedPane [MFC], ShowTab
 ms.assetid: f22c0080-5b29-4a0a-8f74-8f0a4cd2dbcf
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: eaabdbbcab97366aa272e51f57d215b63a0161a4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: be9752822ee009ceddb735806d36ea3507242951
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cbasetabbedpane-class"></a>CBaseTabbedPane クラス
 [CDockablePane Class](../../mfc/reference/cdockablepane-class.md) の機能を拡張して、タブ付きウィンドウの作成をサポートします。  
@@ -158,7 +162,7 @@ class CBaseTabbedPane : public CDockablePane
   
  `CBaseTabbedPane`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxBaseTabbedPane.h  
   
 ##  <a name="addtab"></a>Cbasetabbedpane::addtab  
@@ -622,7 +626,7 @@ virtual CMFCAutoHideToolBar* SetAutoHideMode(
   
  タブ付きペインをプログラムで自動非表示モードに切り替えるには、このメソッドを呼び出します。 メイン フレーム ウィンドウに、ウィンドウをドッキングする必要があります ( [CDockablePane::GetDefaultPaneDivider](../../mfc/reference/cdockablepane-class.md#getdefaultpanedivider)への有効なポインターを返す必要があります、 [CPaneDivider](../../mfc/reference/cpanedivider-class.md))。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)

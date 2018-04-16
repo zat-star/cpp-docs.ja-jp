@@ -1,31 +1,35 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4536 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4536"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4536"
+title: "コンパイラの警告 (レベル 4) C4536 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4536
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4536
 ms.assetid: ab4d0686-f813-4e88-a264-b40d3630ed6c
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 43e7109ea4a45af68d12220e0352dc6dfd9ce816
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4536
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'type name' : 型名がメタデータの限度である 'limit' 文字を超えています。  
+# <a name="compiler-warning-level-4-c4536"></a>コンパイラの警告 (レベル 4) C4536
+'type name': 型名は 'limit' 文字のメタデータの限度を超えています。  
   
- マネージ型の場合は、型名がメタデータ内で切り捨てられます。  詳細については、「[コンパイラ エラー C3180](../../error-messages/compiler-errors-2/compiler-error-c3180.md)」を参照してください。  
+ 管理対象の型メタデータに型名が切り捨てられます。 参照してください[C3180](../../error-messages/compiler-errors-2/compiler-error-c3180.md)詳細についてはします。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[Compiler Warnings That Are Off by Default](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。

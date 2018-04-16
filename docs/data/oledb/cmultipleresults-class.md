@@ -1,45 +1,50 @@
 ---
-title: "CMultipleResults クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CMultipleResults"
-  - "ATL::CMultipleResults"
-  - "CMultipleResults"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CMultipleResults クラス"
+title: "CMultipleResults クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL.CMultipleResults
+- ATL::CMultipleResults
+- CMultipleResults
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMultipleResults class
 ms.assetid: 6ce5bbb9-b551-483c-988a-e6aee9135a19
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: aa14b76b673e999519e25b4b7102b5fc5457b3f8
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CMultipleResults クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="cmultipleresults-class"></a>CMultipleResults クラス
+複数の結果セットを処理するコマンドを実行する場合に、使用`CMultipleResults`の`CCommand`テンプレート引数*TMultiple*です。  
+  
+## <a name="syntax"></a>構文
 
-複数の結果セットを処理するコマンドを表示するには、`CCommand` のテンプレート引数 *TMultiple*で `CMultipleResults` を使用します。  
-  
-## 構文  
-  
-```  
+```cpp
 class CMultipleResults  
 ```  
   
-## 解説  
- 複数の結果セットを処理するには、[CCommand](../../data/oledb/ccommand-class.md)、このクラスから継承しなければなりません。  
+## <a name="remarks"></a>コメント  
+ 複数の結果を処理するために設定すると、 [CCommand](../../data/oledb/ccommand-class.md)このクラスから継承する必要があります。  
   
-## 必要条件  
- **ヘッダー:** の atldbcli  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** atldbcli  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)

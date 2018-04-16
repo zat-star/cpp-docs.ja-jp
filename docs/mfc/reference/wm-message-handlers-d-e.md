@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -21,7 +22,8 @@ f1_keywords:
 - ON_WM_ENABLE
 - ON_WM_DRAWITEM
 - ON_WM_DRAWCLIPBOARD
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ON_WM_ENTERIDLE [MFC]
 - ON_WM_DESTROYCLIPBOARD [MFC]
@@ -38,15 +40,17 @@ helpviewer_keywords:
 - ON_WM_DEVICECHANGE [MFC]
 - WM_ messages [MFC]
 ms.assetid: 56fb89c8-68a8-4adf-883e-a9f63bf677e9
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d1b5518d1eb784888f1c894797e8d9959b400172
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 68a11d88c4b6cb0c5235d54ac9d0333126f39765
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="wm-message-handlers-d---e"></a>WM_ で始まるメッセージのハンドラー : D - E
 左側の次のマップ エントリは、右側の関数プロトタイプに対応します。  
@@ -73,7 +77,7 @@ ms.lasthandoff: 10/24/2017
 |ON_WM_ERASEBKGND()|afx_msg BOOL [OnEraseBkgnd](../../mfc/reference/cwnd-class.md#onerasebkgnd)(CDC *) です。|  
 |ON_WM_EXITSIZEMOVE()|afx_msg void [OnExitSizeMove](../../mfc/reference/cwnd-class.md#onexitsizemove)();|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)   
  [WM_ で始まるメッセージのハンドラー](../../mfc/reference/handlers-for-wm-messages.md)
 

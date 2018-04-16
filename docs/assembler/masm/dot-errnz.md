@@ -1,38 +1,41 @@
 ---
-title: ".ERRNZ | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - ".ERRNZ"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".ERRNZ directive"
+title: .ERRNZ | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- .ERRNZ
+dev_langs:
+- C++
+helpviewer_keywords:
+- .ERRNZ directive
 ms.assetid: 373a9222-140f-4505-8dec-ef370a069ebf
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 32e88595787eea86a8d707e77a806c01f359ed41
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# .ERRNZ
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-*式が*  true の場合はエラーを生成します \(以外\)。  
+# <a name="errnz"></a>.ERRNZ
+エラーが発生*式*が true (ゼロ以外)。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 .ERRNZ expression [[, message]]  
 ```  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

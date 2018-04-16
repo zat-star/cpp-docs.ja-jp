@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - future/std::packaged_task
 - future/std::packaged_task::packaged_task
@@ -21,30 +21,25 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 0a72cbe3-f22a-4bfe-8e50-dcb268c98780
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 3ca8c4c008daa02af2bba0df8468bea3c063c28a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+helpviewer_keywords:
+- std::packaged_task [C++]
+- std::packaged_task [C++], packaged_task
+- std::packaged_task [C++], get_future
+- std::packaged_task [C++], make_ready_at_thread_exit
+- std::packaged_task [C++], reset
+- std::packaged_task [C++], swap
+- std::packaged_task [C++], valid
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6ce3db6f4685d8448efd88bf2203d541cc864abd
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="packagedtask-class"></a>packaged_task クラス
 呼び出しラッパーであり、呼び出しシグネチャが `Ty(ArgTypes...)` である*非同期プロバイダー*を記述します。 その*関連付けられた非同期状態*には、可能性がある結果に加えて呼び出し可能オブジェクトのコピーが保持されます。  
@@ -73,7 +68,7 @@ class packaged_task;
 |[make_ready_at_thread_exit](#make_ready_at_thread_exit)|関連付けられた非同期状態に格納された呼び出し可能オブジェクトを呼び出し、戻り値をアトミックに格納します。|  
 |[reset](#reset)|関連付けられた非同期状態を置き換えます。|  
 |[swap](#swap)|関連付けられた非同期状態を、指定したオブジェクトのものと交換します。|  
-|[有効です](#valid)|オブジェクトが関連付けられた非同期状態であるかどうかを指定します。|  
+|[valid](#valid)|オブジェクトが関連付けられた非同期状態であるかどうかを指定します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -83,7 +78,7 @@ class packaged_task;
 |[packaged_task::operator()](#op_call)|関連付けられた非同期状態に格納された呼び出し可能オブジェクトを呼び出し、戻り値をアトミックに格納し、状態を *ready* に設定します。|  
 |[packaged_task::operator bool](#op_bool)|オブジェクトが関連付けられた非同期状態であるかどうかを指定します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<将来 >  
   
  **名前空間:** std  
@@ -231,10 +226,9 @@ bool valid() const;
 ### <a name="return-value"></a>戻り値  
  オブジェクトが関連付けられた非同期状態である場合は `true` を返します。それ以外の場合は `false` を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<future>](../standard-library/future.md)
-
 
 
 

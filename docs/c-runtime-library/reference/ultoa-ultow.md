@@ -1,12 +1,13 @@
 ---
-title: "_ultoa、_ultow | Microsoft Docs"
-ms.custom: 
+title: _ultoa、_ultow | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
 apiname:
 - _ultoa
 - _ultow
@@ -29,7 +30,8 @@ f1_keywords:
 - _ultoa
 - _ultow
 - _ultot
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ultot function
 - converting integers
@@ -40,15 +42,17 @@ helpviewer_keywords:
 - _ultoa function
 - converting numbers, to strings
 ms.assetid: 7a472dc4-5652-4513-93c3-3358522c23be
-caps.latest.revision: "17"
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 05a79538edf1e39b26ad38f365b5fc52bb713f61
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 94073b947848199bdc093f959ddceadcb1835f16
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="ultoa-ultow"></a>_ultoa、_ultow
 符号なし長整数型を文字列に変換します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_ultoa_s、_ultow_s](../../c-runtime-library/reference/ultoa-s-ultow-s.md)」を参照してください。  
@@ -94,7 +98,7 @@ wchar_t *_ultow(
  これらの各関数は、`str` へのポインターを返します。 エラーの戻り値はありません。  
   
 ## <a name="remarks"></a>コメント  
- `_ultoa` 関数は、`value` を null で終わる文字列に変換し、結果 (最大 33 バイト) を `str` に格納します。 オーバーフロー チェックは行われません。 `radix`基本型を指定`value`です。`radix` 2 ~ 36 の範囲内である必要があります。 `_ultow` 関数は、`_ultoa` 関数のワイド文字バージョンです。  
+ `_ultoa` 関数は、`value` を null で終わる文字列に変換し、結果 (最大 33 バイト) を `str` に格納します。 オーバーフロー チェックは行われません。 `radix` 基本型を指定`value`です。`radix` 2 ~ 36 の範囲内である必要があります。 `_ultow` 関数は、`_ultoa` 関数のワイド文字バージョンです。  
   
 > [!IMPORTANT]
 >  バッファー オーバーランを回避するには、`str` のバッファーを、変換された数字および末尾の null 文字を保持できるよう十分に大きくします。  
@@ -114,7 +118,7 @@ wchar_t *_ultow(
 |`_ultoa`|\<stdlib.h>|  
 |`_ultow`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  [_itoa](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md) の例を参照してください。  

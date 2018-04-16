@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __forceinline_cpp
 - __inline_cpp
 - inline_cpp
-dev_langs: C++
-helpviewer_keywords: inline functions [C++], class members
+dev_langs:
+- C++
+helpviewer_keywords:
+- inline functions [C++], class members
 ms.assetid: 355f120c-2847-4608-ac04-8dda18ffe10c
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9b4d4ad6a2fbfbb30fe5f0b465c8bb70753cd701
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: de370d8dbff1f1340539adc825f7f5316c59a468
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="inline-functions-c"></a>インライン関数 (C++)
 クラス宣言の本体で定義される関数はインライン関数です。  
@@ -206,7 +211,7 @@ int main()
   
 -   元のスタック フレームの復元  
   
--   リターン  
+-   Return  
   
 ## <a name="inline-functions-vs-macros"></a>インライン関数およびマクロ  
  インライン関数はマクロに似ていますが、インライン関数がコンパイラによって解析されるのに対し (関数コードはコンパイル時に呼び出しの時点で展開されるため)、マクロはプリプロセッサによって展開されます。 そのため、これらにはいくつかの重要な違いがあります。  
@@ -264,6 +269,6 @@ Sample Input: a
 Sample Output: A  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [noinline](../cpp/noinline.md)   
  [auto_inline](../preprocessor/auto-inline.md)

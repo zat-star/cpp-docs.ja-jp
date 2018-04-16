@@ -6,17 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 3175bf1c-86d8-4eda-8d8f-c5b6753d8e38
-caps.latest.revision: "30"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: dee99cf85ff47fe7dbde8bd8bc7f60f708a5ebc6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aca49513c52c5eff9c10461281bb4235fa39349f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="delegates-ccx"></a>デリゲート (C++/CX)
 `delegate`関数オブジェクトには、標準 C++ の Windows ランタイムに相当する参照型を宣言するキーワードを使用します。 関数シグネチャに似たデリゲート宣言。これは、ラップされた関数が持つ必要のある、戻り値の型およびパラメーターの型を指定します。 これは、ユーザー定義のデリゲート宣言です。  
@@ -110,7 +112,7 @@ event PrimeFoundHandler^ primeFoundEvent;
  [!code-cpp[Cx_delegates#115](../cppcx/codesnippet/CPP/delegatesevents/class1.cpp#115)]  
   
 > [!WARNING]
->  "this" ポインターをキャプチャするラムダを使用する場合は、ラムダを終了する前に `-=` 演算子を使用し、明示的にイベントから登録解除してください。 詳細については、「 [Events](../cppcx/events-c-cx.md)」を参照してください。  
+>  "this" ポインターをキャプチャするラムダを使用する場合は、ラムダを終了する前に `-=` 演算子を使用し、明示的にイベントから登録解除してください。 詳細については、「[イベント](../cppcx/events-c-cx.md)」を参照してください。  
   
 ### <a name="generic-delegates"></a>汎用デリゲート  
  C++/CX 内の汎用デリゲートには、ジェネリック クラスの宣言に似た制限があります。 これらを public として宣言することはできません。 プライベートまたは内部の汎用デリゲートを宣言し、C++ から利用することができますが、このデリゲートは .winmd のメタデータに対して出力されないため、.NET クライアントや JavaScript クライアントから利用することは実装できません。 この例では、次のように C++ でのみ利用できる汎用デリゲートを宣言します。  
@@ -132,7 +134,7 @@ event PrimeFoundHandler^ primeFoundEvent;
   
  .NET でのイベント ハンドラーの扱いに慣れている場合は、イベントを発生させる前に、イベントのローカル コピーを作成することが推奨されている点を理解しているはずです。 この結果、イベントが呼び出される直前にイベント ハンドラーが削除される可能性がある、という競合状態を回避できます。 C++/CX では、イベント ハンドラーが追加または削除されたときに新しいハンドラーの一覧が作成されるため、この作業を実行する必要はありません。 C++ オブジェクトはイベントを発生させる前に、ハンドラーの一覧の参照カウントをインクリメントするため、すべてのハンドラーが有効であることが保証されます。 ただし、このことは同時に、利用側スレッドでイベント ハンドラーを削除した場合でも、発行側オブジェクトがそのリストのコピーを使用して引き続き動作している状況では (もうそのコピーは古いのですが)、依然としてそのハンドラーが呼び出される可能性があることを意味します。 発行側オブジェクトは、自らが次にそのイベントを発生させるまでは、更新されたリストを取得しません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型システム](../cppcx/type-system-c-cx.md)   
  [Visual C 言語リファレンス](../cppcx/visual-c-language-reference-c-cx.md)   
  [名前空間参照](../cppcx/namespaces-reference-c-cx.md)

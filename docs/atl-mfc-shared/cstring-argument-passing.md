@@ -1,52 +1,57 @@
 ---
-title: "CString 引数の渡し方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "引数渡し [C++]"
-  - "引数渡し [C++], C の文字列"
-  - "引数 [C++], 渡す"
-  - "CString オブジェクト, 渡す (引数を)"
-  - "関数 [C++], 文字列 (入出力として)"
-  - "渡す (引数を), C の文字列"
-  - "string 引数"
-  - "文字列 [C++], 関数の入出力としての"
+title: "CString 引数の渡し方 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- strings [C++], as function input/output
+- argument passing [C++]
+- arguments [C++], passing
+- functions [C++], strings as input/output
+- argument passing [C++], C strings
+- passing arguments, C strings
+- CString objects, passing arguments
+- string arguments
 ms.assetid: a67bebff-edf1-4cf4-bbff-d1cc6a901099
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3d33c8cc46ada41f851c90aaae0cabfadb1466d0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CString 引数の渡し方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="cstring-argument-passing"></a>CString 引数の渡し方
+この記事に渡す方法を説明します[CString](../atl-mfc-shared/reference/cstringt-class.md)関数のオブジェクトを返す方法`CString`関数からのオブジェクト。  
+  
+##  <a name="_core_cstring_argument.2d.passing_conventions"></a>CString 引数渡し規約  
+ クラス インターフェイスを定義する際に、メンバー関数の引数渡し規約を決定する必要があります。 一部の標準的なルールを渡すと、返すことがある`CString`オブジェクト。 説明する規則に従う場合[関数の入力として文字列](#_core_strings_as_function_inputs)と[関数の出力として文字列](#_core_strings_as_function_outputs)、効率が高く、正しいコードになります。  
+  
+##  <a name="_core_strings_as_function_inputs"></a>関数の入力として文字列  
+ 最も効率的な安全な方法を使用して、`CString`を渡すには、呼び出された関数内のオブジェクト、`CString`関数オブジェクト。 、名前に関係なく、`CString`オブジェクトは格納されません文字列内部的には null 終端文字を含む C スタイル文字列として。 代わりに、`CString`オブジェクトを追跡がある文字の数。 持つ`CString`提供、 `LPCTSTR` null で終わる文字列へのポインターは、コードには常にそれを実行する場合は、長くなることがある作業量が少ない。 変更を加えたために、結果は一時的な`CString`内容の古いコピーを無効化、`LPCTSTR`ポインター。  
+  
+ 意味が場合によっては、C スタイル文字列を指定します。 たとえば、呼び出された関数が C で記述しでサポートされないオブジェクトの状況があります。 この例では、強制、`CString`パラメーターを`LPCTSTR`、および関数が C スタイルの null で終わる文字列を取得します。 前に、他の方向を作成、`CString`オブジェクトを使用して、`CString`を C スタイル文字列パラメーターを受け取るコンス トラクターです。  
+  
+ 文字列の内容が、関数が変更する場合は、宣言のパラメーターを定数として`CString`参照 (**CString &**)。  
+  
+##  <a name="_core_strings_as_function_outputs"></a>関数の出力として文字列  
+ 一般に戻ることができます`CString`ため関数からのオブジェクト`CString`オブジェクトがプリミティブ型のような値のセマンティクスに従います。 読み取り専用文字列を取得するには、定数を使用`CString`参照 (**const CString &**)。 次の例は、の使用を示しています。`CString`パラメーターと戻り値の型。  
+  
+ [!code-cpp[NVC_ATLMFC_Utilities#197](../atl-mfc-shared/codesnippet/cpp/cstring-argument-passing_1.cpp)]  
+  
+ [!code-cpp[NVC_ATLMFC_Utilities#198](../atl-mfc-shared/codesnippet/cpp/cstring-argument-passing_2.cpp)]  
+  
+## <a name="see-also"></a>参照  
+ [文字列 (ATL と MFC)](../atl-mfc-shared/strings-atl-mfc.md)
 
-ここでは [CString](../atl-mfc-shared/reference/cstringt-class.md) オブジェクトを関数の引数や戻り値として利用する方法について説明します。`CString`  
-  
-##  <a name="_core_cstring_argument.2d.passing_conventions"></a> CString の引数渡し規約  
- クラスのインターフェイスを定義するときは、メンバー関数の引数渡し規約を決める必要があります。  `CString` オブジェクトを関数の引数または戻り値として使用する場合はいくつかの標準的な規則があります。  これらの規則 \(「[関数入力として文字列を利用する場合](#_core_strings_as_function_inputs)」と「[関数出力として文字列を利用する場合](#_core_strings_as_function_outputs)」を参照\) に従うと、コードが効率的で正確になります。  
-  
-##  <a name="_core_strings_as_function_inputs"></a> 関数入力として文字列を利用する場合  
- 呼び出される関数の中で `CString` オブジェクトを最も効率的かつ安全に使用する方法は、関数に `CString` オブジェクトを渡すことです。  名前に反して、`CString` オブジェクトは、null 終端文字がある C スタイルの文字列として文字列を内部的に格納しません。  代わりに、`CString` オブジェクトは、文字列の文字数を追跡します。  `CString` を使用して null で終わる文字列への `LPCTSTR` ポインターを設定することは小さな操作ですが、コード内でその操作を常に実行する必要がある場合はたいへんな作業になる可能性があります。  `CString` の内容を変更すると `LPCTSTR` ポインターの古いコピーが無効になるので、結果は一時的なものです。  
-  
- C スタイルの文字列を指定することに意味がある場合があります。  たとえば、呼び出される関数が C で記述され、オブジェクトをサポートしていない状況が考えられます。  この場合は、`CString` パラメーターを `LPCTSTR` に強制的に変換すると、関数で C スタイルの null で終わる文字列が取得されます。  さらに、C スタイルの文字列パラメーターを指定できる `CString` コンストラクターを使用して `CString` オブジェクトを作成する方法もあります。  
-  
- 関数の中で文字列の値を変更する場合は、パラメーターとして非定数 `CString` 型への参照 \(**CString&**\) を宣言します。  
-  
-##  <a name="_core_strings_as_function_outputs"></a> 関数出力として文字列を利用する場合  
- 通常は、`CString` オブジェクトはプリミティブ型同様の値セマンティクスに従うため、関数から `CString` オブジェクトを返すことができます。  読み取り専用文字列を戻り値にするときは、定数 `CString` 型への参照 \(**const CString&**\) として宣言します。  次の例では、`CString` オブジェクトをパラメーターと戻り値の両方として使用しています。  
-  
- [!code-cpp[NVC_ATLMFC_Utilities#197](../atl-mfc-shared/codesnippet/CPP/cstring-argument-passing_1.cpp)]  
-  
- [!code-cpp[NVC_ATLMFC_Utilities#198](../atl-mfc-shared/codesnippet/CPP/cstring-argument-passing_2.cpp)]  
-  
-## 参照  
- [文字列](../atl-mfc-shared/strings-atl-mfc.md)

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::double_2::set_x
 - amp_short_vectors/Concurrency::graphics::double_2::operator+=
@@ -37,30 +37,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: c19c2d21-3cbf-4ce5-b460-3b8253688f82
-caps.latest.revision: 11
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: cb780d4164099b9b2b609a0d430054af8cd8aa25
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1c447587fcefbd922cbe6c1ba5f63ef1d3a2efce
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="double2-class"></a>double_2 クラス
 2 個の倍精度浮動小数点数の short ベクターを表します。  
@@ -106,18 +93,18 @@ class double_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|double_2:-||  
-|double_2:--||  
-|double_2::operator * =||  
+|double_2::operator-||  
+|double_2::operator--||  
+|double_2::operator*=||  
 |double_2::operator/=||  
 |double_2::operator++||  
-|double_2::operator + = 演算子||  
-|double_2::operator =||  
+|double_2::operator+=||  
+|double_2::operator=||  
 |double_2::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |double_2::size 定数||  
   
@@ -137,12 +124,12 @@ class double_2;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `double_2`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>double_2 
+##  <a name="ctor"></a> double_2 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -205,12 +192,11 @@ explicit inline double_2(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="double_2__size"></a>サイズ 
+##  <a name="double_2__size"></a> サイズ 
 
 ```  
 static const int size = 2;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

@@ -4,29 +4,33 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - _BitScanReverse64
 - _BitScanReverse_cpp
 - _BitScanReverse
 - _BitScanReverse64_cpp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - bsr instruction
 - _BitScanReverse intrinsic
 - BitScanReverse intrinsic
 ms.assetid: 2520a207-af8b-4aad-9ae7-831abeadf376
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1547a5aa4ab4709c47305bd5097ba138171fd71c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1eff59da3ee52c560cdb56f0519aef5576a05946
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="bitscanreverse-bitscanreverse64"></a>_BitScanReverse、_BitScanReverse64
 **Microsoft 固有の仕様**  
@@ -56,12 +60,12 @@ unsigned char _BitScanReverse64(
 ## <a name="return-value"></a>戻り値  
  `Index` が設定された場合は 0 以外、設定済みビットが見つからなかった場合は 0。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|Header|  
 |---------------|------------------|------------|  
-|`_BitScanReverse`|x86、ARM、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|\<intrin.h >|  
-|`_BitScanReverse64`|ARM、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]||  
+|`_BitScanReverse`|x86、ARM、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|\<intrin.h>|  
+|`_BitScanReverse64`|ARM, [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]||  
   
 ## <a name="example"></a>例  
   
@@ -109,5 +113,5 @@ Mask: 12 Index: 3
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

@@ -45,16 +45,17 @@ helpviewer_keywords:
 - /= operator
 - <<= operator
 ms.assetid: b028cf35-2ff1-4f14-9027-fd53ebec8aa0
-caps.latest.revision: 8
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 34ed921ed7eb690372f1635ed845271fa7520a86
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c84244a619873dcd61b52dee317a751ff28ec3ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="assignment-operators"></a>代入演算子
 ## <a name="syntax"></a>構文  
@@ -205,7 +206,7 @@ B = A;
   
  ANSI C では、代入式の結果は左辺値ではありません。 したがって、有効な C++ の式 `(a += b) += c` は C では無効です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [二項演算子を含む式](../cpp/expressions-with-binary-operators.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [C の代入演算子](../c-language/c-assignment-operators.md)

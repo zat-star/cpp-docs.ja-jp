@@ -1,32 +1,37 @@
 ---
-title: "multiset::multiset (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multiset::multiset"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "multiset メンバー [STL/CLR]"
+title: "multiset::multiset (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::multiset::multiset
+dev_langs:
+- C++
+helpviewer_keywords:
+- multiset member [STL/CLR]
 ms.assetid: a6ddb2df-d7cd-4b12-aee7-81da1f67f57f
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 9d6698941c0660cb7a2bf72f68621ad049640373
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# multiset::multiset (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="multisetmultiset-stlclr"></a>multiset::multiset (STL/CLR)
 コンテナー オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 multiset();  
@@ -43,79 +48,71 @@ multiset(System::Collections::Generic::IEnumerable<GValue>^ right,
     key_compare^ pred);  
 ```  
   
-#### パラメーター  
- 最初  
- 挿入する範囲の先頭。  
+#### <a name="parameters"></a>パラメーター  
+ 先頭  
+ 挿入する範囲の開始しています。  
   
  last  
- 挿入する範囲の最後。  
+ 挿入する範囲の終了。  
   
  pred  
- 被制御シーケンスの順序述語。  
+ 被制御シーケンスの述語を順序付けです。  
   
- \[right\]  
+ 右  
  挿入するオブジェクトまたは範囲。  
   
-## 解説  
- 次のコンストラクターを見てください。  
+## <a name="remarks"></a>コメント  
+ : コンス トラクター  
   
  `multiset();`  
   
- 既定の順序述語 `key_compare()`要素を持たない被制御シーケンスを、初期化します。  既定の順序述語の空の最初の被制御シーケンスを指定する場合に使用します。  
+ 既定の順序の述語を使用して要素を持たない、被制御シーケンスを初期化`key_compare()`です。 これを使用するには、既定の順序の述語を持つ、空の初期被制御シーケンスを指定します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `explicit multiset(key_compare^ pred);`  
   
- 命令述語 `pred`要素を持たない被制御シーケンスを、初期化します。  順序指定述語の空の最初の被制御シーケンスを指定する場合に使用します。  
+ 順序の指定の述語での要素を持たない被制御シーケンスを初期化します`pred`です。 これを使用して、順序指定された述語を持つ、空の初期被制御シーケンスを指定します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `multiset(multiset<Key>% right);`  
   
- 既定の順序述語のシーケンス `[``right``.`[multiset::begin](../dotnet/multiset-begin-stl-clr.md)`(),``right``.`[multiset::end](../dotnet/multiset-end-stl-clr.md)`())`の被制御シーケンスを、初期化します。  マルチセット オブジェクト `right`によって制御されるシーケンスのコピーである既定命令述語の最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します [`right.begin()`、 `right.end()`)、既定の順序の述語とします。 Multiset のオブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`既定の順序の述語とします。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `multiset(multiset<Key>^ right);`  
   
- 既定の順序述語のシーケンス `[``right``->`[multiset::begin](../dotnet/multiset-begin-stl-clr.md)`(),``right``->`[multiset::end](../dotnet/multiset-end-stl-clr.md)`())`の被制御シーケンスを、初期化します。  マルチセット オブジェクト `right`によって制御されるシーケンスのコピーである既定命令述語の最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します [`right->begin()`、 `right->end()`)、既定の順序の述語とします。 Multiset のオブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`既定の順序の述語とします。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
- `template<typename InIter>`  
+ `template<typename InIter> multiset(InIter first, InIter last);`  
   
- `multiset(InIter first, InIter last);`  
+ シーケンスに、被制御シーケンスを初期化します [`first`、 `last`)、既定の順序の述語とします。 使用する既定の順序の述語で被制御シーケンスの別のシーケンスのコピーを作成します。  
   
- 既定の順序述語のシーケンス `[``first``,``last``)`の被制御シーケンスを、初期化します。  既定の順序述語の別のシーケンスの被制御シーケンスのコピーを、作成するために使用します。  
+ : コンス トラクター  
   
- 次のコンストラクターを見てください。  
+ `template<typename InIter> multiset(InIter first, InIter last, key_compare^ pred);`  
   
- `template<typename InIter>`  
+ シーケンスに、被制御シーケンスを初期化します。 [`first`、 `last`)、順序の指定の述語に置き換えます`pred`です。 これを使用するには、被制御シーケンスの順序指定された述語を持つ、別のシーケンスのコピーを作成します。  
   
- `multiset(InIter first, InIter last,`  
-  
- `key_compare^ pred);`  
-  
- 述語 `pred`命令のシーケンス `[``first``,``last``)`の被制御シーケンスを、初期化します。  順序指定述語の別のシーケンスの被制御シーケンスのコピーを、作成するために使用します。  
-  
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `multiset(System::Collections::Generic::IEnumerable<Key>^ right);`  
   
- 既定の順序述語列挙子を `right`、指定したシーケンスの被制御シーケンスを初期化します。  既定の順序述語の列挙子は、作成している別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+ 列挙子によって指定されたシーケンスの被制御シーケンスを初期化します`right`既定の順序の述語とします。 これを使用するには、被制御シーケンスの既定の順序の述語と、列挙子によって記述された別のシーケンスのコピーを作成します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
- `multiset(System::Collections::Generic::IEnumerable<Key>^ right,`  
+ `multiset(System::Collections::Generic::IEnumerable<Key>^ right, key_compare^ pred);`  
   
- `key_compare^ pred);`  
+ 列挙子によって指定されたシーケンスの被制御シーケンスを初期化します`right`、順序の指定の述語と`pred`です。 これを使用するには、被制御シーケンスの順序指定された述語を持つ、列挙子によって記述された別のシーケンスのコピーを作成します。  
   
- 命令述語 `pred`列挙子を `right`、指定したシーケンスの被制御シーケンスを初期化します。  順序指定述語の列挙子は、作成している別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+## <a name="example"></a>例  
   
-## 使用例  
-  
-```  
+```cpp  
 // cliext_multiset_construct.cpp   
 // compile with: /clr   
 #include <cliext/set>   
@@ -187,22 +184,25 @@ int main()
   
 ```  
   
-  **size\(\) \= 0**  
- **b c**  
-**size\(\) \= 0**  
- **a b c**  
- **b c**  
- **a b c**  
- **b c**  
- **a b c**  
- **a b c**  
- **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+```Output  
+size() = 0  
+ a b c  
+size() = 0  
+ c b a  
+ a b c  
+ c b a  
+ a b c  
+ c b a  
+ c b a  
+ a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext と set >  
   
-## 参照  
- [multiset](../dotnet/multiset-stl-clr.md)   
- [multiset::generic\_container](../dotnet/multiset-generic-container-stl-clr.md)   
- [multiset::operator\=](../dotnet/multiset-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マルチセット (STL/CLR)](../dotnet/multiset-stl-clr.md)   
+ [multiset::generic_container (STL/CLR)](../dotnet/multiset-generic-container-stl-clr.md)   
+ [multiset::operator= (STL/CLR)](../dotnet/multiset-operator-assign-stl-clr.md)

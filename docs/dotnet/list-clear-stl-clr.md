@@ -1,41 +1,46 @@
 ---
-title: "list::clear (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::list::clear"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "clear メンバー [STL/CLR]"
+title: "list::clear (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::list::clear
+dev_langs:
+- C++
+helpviewer_keywords:
+- clear member [STL/CLR]
 ms.assetid: 5aac9a64-52f6-4a73-8b24-e30ceedcbc20
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: aeb17552a3ba8988de67cfe4d3530fd544b953f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# list::clear (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="listclear-stlclr"></a>list::clear (STL/CLR)
 すべての要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void clear();  
 ```  
   
-## 解説  
- メンバー関数は、実質的に [list::erase](../dotnet/list-erase-stl-clr.md)`(`[list::begin](../Topic/list::begin%20\(STL-CLR\).md)`(),`[list::end](../Topic/list::end%20\(STL-CLR\).md)`())`を呼び出します。  被制御シーケンスが空であることを確認するために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数が効果的に呼び出し[list::erase (STL/CLR)](../dotnet/list-erase-stl-clr.md) `(` [list::begin (STL/CLR)](../dotnet/list-begin-stl-clr.md) `(),` [list::end (STL/CLR)](../dotnet/list-end-stl-clr.md) `())`. これを使用するには、被制御シーケンスが空であることを確認します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_list_clear.cpp   
@@ -72,15 +77,18 @@ int main()
   
 ```  
   
-  **b c**  
-**size\(\) \= 0**  
- **b**  
-**size\(\) \= 0**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/リスト\>  
+```Output  
+ a b c  
+size() = 0  
+ a b  
+size() = 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/一覧 >  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)   
- [list::erase](../dotnet/list-erase-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [list::erase (STL/CLR)](../dotnet/list-erase-stl-clr.md)

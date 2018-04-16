@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2435
 ms.assetid: be6aa8f8-579b-42ea-bdd8-2d01393646ad
-caps.latest.revision: 12
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1616208a5ea0b8c3680e87a23846fc58be816623
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: b70ebf347e2d5b6af8938e348a5e789412241256
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2435"></a>コンパイラ エラー C2435
 'var': 動的な初期化、マネージ CRT が必要ですが、/clr:safe と共にコンパイルできません  

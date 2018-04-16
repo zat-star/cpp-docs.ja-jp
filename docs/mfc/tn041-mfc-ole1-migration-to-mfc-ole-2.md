@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.mfc.ole
-dev_langs: C++
+f1_keywords:
+- vc.mfc.ole
+dev_langs:
+- C++
 helpviewer_keywords:
 - OLE1 [MFC]
 - migrating OLE1 to OLE2
@@ -19,15 +22,17 @@ helpviewer_keywords:
 - upgrading Visual C++ applications [MFC], OLE1 to OLE2
 - TN041
 ms.assetid: 67f55552-4b04-4ddf-af0b-4d9eaf5da957
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 81f4ca65bcde12154caf3a85411ea581d0cc1fd4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 894c171c025ef125495faad21dba2a98c08e8b88
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn041-mfcole1-migration-to-mfcole-2"></a>テクニカル ノート 41: MFC/OLE1 から MFC/OLE 2 への移植
 > [!NOTE]
@@ -747,7 +752,7 @@ pMenu->TrackPopupMenu(TPM_CENTERALIGN | TPM_RIGHTBUTTON,
   
  また、MFC 3.0 で HIERSVR サンプルは、そのサーバーのアイテムのデザインが多少異なりますを使用します。 これは、メモリを節約でき、リンクより柔軟です。 HIERSVR の 2.0 バージョンで、ツリー内の各ノード*は a* `COleServerItem`です。 `COleServerItem`これらのノードごとに必ずしも必要ではよりもオーバーヘッドがもう少しが、`COleServerItem`のアクティブなリンクが必要です。 特定の時点で、非常にアクティブなリンクがあります、ほとんどの場合。 このバージョンの MFC で HIERSVR をより効率的に行うをするには、間のノードから、`COleServerItem`です。 両方 CServerNode と**よう**クラスです。 **よう**(から派生した`COleServerItem`) のみが必要に応じて作成します。 コンテナー (またはコンテナー) は、特定のノードをその特定のリンクを使用してを停止、CServerNode に関連付けられているようオブジェクトは削除されます。 この設計より効率的かつ柔軟です。 その柔軟性は、複数のリンクを選択範囲を処理する場合にします。 複数の選択をサポートして HIERSVR これら 2 つのバージョンのどちらが簡単に追加する (およびそのような選択項目にリンクをサポートする) ことが、MFC 3.0 のバージョンと HIERSVR、ので、`COleServerItem`はネイティブのデータから分離します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

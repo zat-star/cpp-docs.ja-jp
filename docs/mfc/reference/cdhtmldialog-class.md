@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -65,7 +66,8 @@ f1_keywords:
 - AFXDHTML/CDHtmlDialog::m_spHtmlDoc
 - AFXDHTML/CDHtmlDialog::m_strCurrentUrl
 - AFXDHTML/CDHtmlDialog::m_szHtmlResID
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDHtmlDialog [MFC], CDHtmlDialog
 - CDHtmlDialog [MFC], CanAccessExternal
@@ -123,15 +125,17 @@ helpviewer_keywords:
 - CDHtmlDialog [MFC], m_strCurrentUrl
 - CDHtmlDialog [MFC], m_szHtmlResID
 ms.assetid: 3f941c85-87e1-4f0f-9cc5-ffee8498b312
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a82079e43a5c4e1bfbcb9bb339663314d4ab2a49
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eb546ffc35438e19bd5230d6e71db28061109bc0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdhtmldialog-class"></a>CDHtmlDialog クラス
 HTML を使用するダイアログ ボックスの作成に使用されるユーザー インターフェイスの実装にダイアログ リソースではなくです。  
@@ -239,7 +243,7 @@ class CDHtmlDialog : public CDialog, public CDHtmlEventSink
   
  `CDHtmlDialog`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdhtml.h  
   
 ##  <a name="ddx_dhtml_helper_macros"></a>DDX_DHtml ヘルパー マクロ  
@@ -394,7 +398,7 @@ void DDX_DHtml_CheckBox(
  `szId`  
  HTML コントロールの ID パラメーターの指定した値。  
   
- *value*  
+ *値*  
  交換される値。  
   
 ### <a name="example"></a>例  
@@ -463,7 +467,7 @@ void DDX_DHtml_ElementText(
  *dispid*  
  データを交換する HTML 要素のディスパッチ ID。  
   
- *value*  
+ *値*  
  交換される値。  
   
 ##  <a name="ddx_dhtml_radio"></a>CDHtmlDialog::DDX_DHtml_Radio  
@@ -483,7 +487,7 @@ void DDX_DHtml_Radio(
  `szId`  
  HTML コントロールの ID パラメーターの指定した値。  
   
- *value*  
+ *値*  
  交換される値。  
   
 ##  <a name="ddx_dhtml_selectindex"></a>CDHtmlDialog::DDX_DHtml_SelectIndex  
@@ -503,7 +507,7 @@ void DDX_DHtml_SelectIndex(
  `szId`  
  HTML コントロールの id パラメーターの指定した値。  
   
- *value*  
+ *値*  
  交換される値。  
   
 ##  <a name="ddx_dhtml_selectstring"></a>CDHtmlDialog::DDX_DHtml_SelectString  
@@ -523,7 +527,7 @@ void DDX_DHtml_SelectString(
  `szId`  
  HTML コントロールの ID パラメーターの指定した値。  
   
- *value*  
+ *値*  
  交換される値。  
   
 ##  <a name="ddx_dhtml_selectvalue"></a>CDHtmlDialog::DDX_DHtml_SelectValue  
@@ -543,7 +547,7 @@ void DDX_DHtml_SelectValue(
  `szId`  
  HTML コントロールの ID パラメーターの指定した値。  
   
- *value*  
+ *値*  
  交換される値。  
   
 ### <a name="example"></a>例  
@@ -1389,7 +1393,7 @@ STDMETHOD(UpdateUI)(void);
 ### <a name="remarks"></a>コメント  
  このメンバー関数が CDHtmlDialog の実装の[IDocHostUIHandler::UpdateUI](https://msdn.microsoft.com/library/aa753268.aspx)Windows SDK で説明されている。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル DHtmlExplore](../../visual-cpp-samples.md)   
  [DDX_DHtml ヘルパー マクロ](#ddx_dhtml_helper_macros)   
  [階層図](../../mfc/hierarchy-chart.md)

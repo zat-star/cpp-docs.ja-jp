@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - fwprintf
 - fprintf
@@ -28,7 +29,8 @@ f1_keywords:
 - fprintf
 - fwprintf
 - _ftprintf
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _fwprintf_l function
 - fprintf function
@@ -42,15 +44,17 @@ helpviewer_keywords:
 - print formatted data to streams
 - fwprintf_l function
 ms.assetid: 34a87e1c-6e4d-4d48-a611-58314dd4dc4b
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 709e3ac033f72c59732f93b1143886d3b90cbf52
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5ed0a1d2d2368e99b6e920e5236de989afb97981
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fprintf-fprintfl-fwprintf-fwprintfl"></a>fprintf、_fprintf_l、fwprintf、_fwprintf_l
 書式付きデータをストリームに出力します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[fprintf_s、_fprintf_s_l、fwprintf_s、_fwprintf_s_l](../../c-runtime-library/reference/fprintf-s-fprintf-s-l-fwprintf-s-fwprintf-s-l.md)」をご覧ください。  
@@ -98,7 +102,7 @@ int _fwprintf_l(
 ## <a name="return-value"></a>戻り値  
  `fprintf` は、書き込まれたバイト数を返します。 `fwprintf` は、書き込まれたワイド文字数を返します。 これらの関数は、出力エラーが発生した場合、負の値を返します。 `stream` または `format` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、これらの関数は無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、関数は -1 を返し、`errno` を `EINVAL` に設定します。 書式文字列の書式指定文字か有効かどうかは、`fprintf_s` または `fwprintf_s` を使用した場合とは違い、確認されません。  
   
- エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `fprintf` は、一連の文字および値を書式設定し、出力 `stream` に出力します。 各関数の `argument` (指定されている場合) は、`format` 中の対応する書式指定に応じて変換され、格納されます。 `fprintf` の引数 `format` は、`printf` の場合と同じ構文および用法となります。  
@@ -119,14 +123,14 @@ int _fwprintf_l(
   
  詳細については、[書式指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関するページを参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fprintf`, `_fprintf_l`|\<stdio.h>|  
 |`fwprintf`, `_fwprintf_l`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -165,7 +169,7 @@ this is a string
 1.500000  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](../../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)   
  [fscanf、_fscanf_l、fwscanf、_fwscanf_l](../../c-runtime-library/reference/fscanf-fscanf-l-fwscanf-fwscanf-l.md)   

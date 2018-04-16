@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: ISpecifyPropertyPages
-dev_langs: C++
+f1_keywords:
+- ISpecifyPropertyPages
+dev_langs:
+- C++
 helpviewer_keywords:
 - ISpecifyPropertyPages method
 - property pages, specifying
 ms.assetid: ee8678cf-c708-49ab-b0ad-fc2db31f1ac3
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a4519bee0d1f9c5e433114f12a6568bde6b8c4fb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8985499c76a7dc65523a5c2904bcb774a4364d41
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="specifying-property-pages"></a>プロパティ ページを指定します。
 ActiveX コントロールを作成するときに多くの場合に、コントロールのプロパティを設定するために使用するプロパティ ページに関連付けます。 コンテナーの使用を制御する、 **ISpecifyPropertyPages**インターフェイスについては、コントロールのプロパティを設定するプロパティ ページを使用できます。 コントロールにこのインターフェイスを実装する必要があります。  
@@ -44,7 +49,7 @@ ActiveX コントロールを作成するときに多くの場合に、コント
   
  [!code-cpp[NVC_ATL_Windowing#72](../atl/codesnippet/cpp/specifying-property-pages_1.h)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロパティ ページ](../atl/atl-com-property-pages.md)   
  [例](../visual-cpp-samples.md)
 

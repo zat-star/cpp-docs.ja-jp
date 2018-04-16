@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::set::begin
-dev_langs: C++
-helpviewer_keywords: begin member [STL/CLR]
+f1_keywords:
+- cliext::set::begin
+dev_langs:
+- C++
+helpviewer_keywords:
+- begin member [STL/CLR]
 ms.assetid: 4bfe0b50-bd7e-4b7a-81ba-143f40a7d916
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6592db26bd9e5fc89cf3022663550cf3891b4f6e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c1bdbefae41d8dc92749b20705a9556e3c17744b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setbegin-stlclr"></a>set::begin (STL/CLR)
 被制御シーケンスの先頭を指定します。  
@@ -68,11 +75,11 @@ int main()
 *++begin() = b  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
  [set::end (STL/CLR)](../dotnet/set-end-stl-clr.md)

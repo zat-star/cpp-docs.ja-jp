@@ -1,76 +1,80 @@
 ---
-title: "_set_doserrno | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_set_doserrno"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-runtime-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_set_doserrno"
-  - "set_doserrno"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_doserrno グローバル変数"
-  - "_set_doserrno 関数"
-  - "doserrno グローバル変数"
-  - "set_doserrno 関数"
+title: _set_doserrno | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- _set_doserrno
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-runtime-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _set_doserrno
+- set_doserrno
+dev_langs:
+- C++
+helpviewer_keywords:
+- _set_doserrno function
+- doserrno global variable
+- set_doserrno function
+- _doserrno global variable
 ms.assetid: 8686c159-3797-4705-a53e-7457869ca6f3
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1f31e353bc901a2a29d80f4c02ff9e860ed5f6fa
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# _set_doserrno
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[\_doserrno](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md) のグローバル変数の値を設定します。  
+# <a name="setdoserrno"></a>_set_doserrno
+[_doserrno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) グローバル変数の値を設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-errno_t _set_doserrno(   
-   int value   
+errno_t _set_doserrno(   
+   int value   
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `value`  
- `_doserrno` の変更後の値。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `value`  
+ `_doserrno` の新しい値。  
   
-## 戻り値  
- 正常終了した場合はゼロを返します。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は 0 を返します。  
   
-## 解説  
- 有効値は、Errno.h で定義されます。  
+## <a name="remarks"></a>コメント  
+ 使用できる値は Errno.h で定義します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
-|----------|------------|----------------|  
-|`_set_doserrno`|\<stdlib.h\>|\<errno.h\>|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
+|-------------|---------------------|---------------------|  
+|`_set_doserrno`|\<stdlib.h>|\<errno.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## 参照  
- [\_get\_doserrno](../Topic/_get_doserrno.md)   
- [errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)
+## <a name="see-also"></a>参照  
+ [_get_doserrno](../../c-runtime-library/reference/get-doserrno.md)   
+ [errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)

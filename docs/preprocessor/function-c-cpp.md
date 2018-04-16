@@ -1,48 +1,50 @@
 ---
-title: "function (C/C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "function_CPP"
-  - "vc-pragma.function"
-dev_langs: 
-  - "C++"
-  - "C"
-helpviewer_keywords: 
-  - "function プラグマ"
-  - "プラグマ, 関数"
+title: "関数 (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- function_CPP
+- vc-pragma.function
+dev_langs:
+- C++
+helpviewer_keywords:
+- function pragma
+- pragmas, function
 ms.assetid: cbd1bd60-fabf-4b5a-9c3d-2d9f4b871365
-caps.latest.revision: 10
-caps.handback.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8b6f83e92cdcfe6434c99497a9eddf496027798f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# function (C/C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="function-cc"></a>function (C/C++)
 このプラグマの引数リストで指定された関数を呼び出します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 #pragma function( function1 [, function2, ...] )  
 ```  
   
-## 解説  
- **intrinsic** プラグマ \(または \/Oi\) を使用し、組み込み関数を生成するようコンパイラに指示する場合 \(組み込み関数は、関数呼び出しではなく、インライン コードとして生成されます\)、**function** プラグマを使用すれば、関数呼び出しを明示的に適用できます。  コンパイラが function プラグマを検出した後、組み込み関数を含む最初の関数定義に達した時点でそのプラグマが有効になります。  その後、function プラグマの効果は、ソース ファイルの最後まで、または同じ組み込み関数を指定した **intrinsic** プラグマが検出されるまで持続します。  **function** プラグマは、関数の外側でのみ \(グローバル レベルで\) 使用できます。  
+## <a name="remarks"></a>コメント  
+ 使用する場合、**組み込み**プラグマ (または/Oi) コンパイラに通知します (組み込み関数は、関数呼び出しとしてではなく、インライン コードとして生成されます) の組み込み関数を生成する、使用することができます、**関数**プラグマ関数呼び出しを明示的に強制します。 コンパイラが function プラグマを検出した後、組み込み関数を含む最初の関数定義に達した時点でそのプラグマが有効になります。 ソース ファイルの末尾にまたはの外観に効果が引き続き、**組み込み**プラグマ同じ組み込み関数を指定します。 **関数**プラグマは関数の外側でのみ使用できます: グローバル レベルでします。  
   
- 組み込み形式を持つ関数の一覧は、「[\#pragma intrinsic](../preprocessor/intrinsic.md)」を参照してください。  
+ 組み込み形式を持つ関数の一覧は、次を参照してください。 [#pragma intrinsic](../preprocessor/intrinsic.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // pragma_directive_function.cpp  
@@ -89,7 +91,10 @@ int main() {
 }  
 ```  
   
-  **str is 'Now\*\*\*\*\*\*\*\*\*\*\*\*'**  
-**str is '\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!'**   
-## 参照  
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+```Output  
+str is 'Now************'  
+str is '!!!!!!!!!!!!!!!'  
+```  
+  
+## <a name="see-also"></a>参照  
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

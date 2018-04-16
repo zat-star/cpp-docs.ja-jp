@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2585
 ms.assetid: 05bb1a9c-28fb-4a88-a1b5-aea85ebdee1c
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 25df5237d2536f6f74226121cbeceba61a454390
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: cb0720c7fa9cde9a735c4353bb6bf1d8714ff0fd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2585"></a>コンパイラ エラー C2585
 'type' に明示的な変換があいまいです。  

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - nextafterf
 - _nextafterf
@@ -44,7 +45,8 @@ f1_keywords:
 - math/nexttoward
 - math/nexttowardf
 - math/nexttowardl
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _nextafter function
 - nextafter function
@@ -55,15 +57,17 @@ helpviewer_keywords:
 - nexttowardf function
 - nexttowardl function
 ms.assetid: 9785bfb9-de53-4bd0-9637-f05fa0c1f6ab
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3dad9078ba4c683b4d29d366943559ad8228cb31
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a4fe078e00b28f09284f3b91ad93ee1393bea108
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="nextafter-nextafterf-nextafterl-nextafter-nextafterf-nexttoward-nexttowardf-nexttowardl"></a>nextafter、nextafterf、nextafterl、_nextafter、_nextafterf、nexttoward、nexttowardf、nexttowardl
 次の表現可能な浮動小数点値を返します。  
@@ -149,15 +153,15 @@ long double nexttowardl(
   
  `_nextafter` と `_nextafterf` の関数は、Microsoft 固有の関数です。 `_nextafterf` 関数は、x64 用にコンパイルするときにのみ使用できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー (C)|必須ヘッダー (C++)|  
+|ルーチンによって返される値|必須ヘッダー (C)|必須ヘッダー (C++)|  
 |-------------|---------------------------|-------------------------------|  
 |`nextafter`, `nextafterf`, `nextafterl`, `_nextafterf`, `nexttoward`, `nexttowardf`, `nexttowardl`|\<math.h>|\<math.h> または \<cmath>|  
 |`_nextafter`|\<float.h>|\<float.h> または \<cfloat>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [isnan、_isnan、_isnanf](../../c-runtime-library/reference/isnan-isnan-isnanf.md)

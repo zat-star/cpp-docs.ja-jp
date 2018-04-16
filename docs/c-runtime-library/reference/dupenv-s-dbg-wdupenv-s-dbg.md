@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _dupenv_s_dbg
 - _wdupenv_s_dbg
@@ -26,7 +27,8 @@ f1_keywords:
 - _tdupenv_s_dbg
 - _dupenv_s_dbg
 - _wdupenv_s_dbg
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _tdupenv_s_dbg function
 - dupenv_s_dbg function
@@ -36,15 +38,17 @@ helpviewer_keywords:
 - wdupenv_s_dbg function
 - _dupenv_s_dbg function
 ms.assetid: e3d81148-e24e-46d0-a21d-fd87b5e6256c
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 72412790fc7bd71d25d0a77fdb0ede8d7b9e31a9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7f9f35fba63fd5b0866a8f2fe13164855d722588
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="dupenvsdbg-wdupenvsdbg"></a>_dupenv_s_dbg、_wdupenv_s_dbg
 現在の環境から値を取得します。  追加のデバッグ情報を提供するために [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md) でメモリを割り当てる、[_dupenv_s, _wdupenv_s](../../c-runtime-library/reference/dupenv-s-wdupenv-s.md) のバージョン。  
@@ -108,14 +112,14 @@ errno_t _wdupenv_s_dbg(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tdupenv_s_dbg`|`_dupenv_s_dbg`|`_dupenv_s_dbg`|`_wdupenv_s_dbg`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_dupenv_s_dbg`|\<crtdbg.h>|  
 |`_wdupenv_s_dbg`|\<crtdbg.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -148,7 +152,7 @@ pathext = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.pl
 nonexistentvariable = (null)  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [環境定数](../../c-runtime-library/environmental-constants.md)   
  [getenv_s、_wgetenv_s](../../c-runtime-library/reference/getenv-s-wgetenv-s.md)   

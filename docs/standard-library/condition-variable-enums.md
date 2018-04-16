@@ -5,18 +5,17 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - condition_variable/std::cv_status
 ms.assetid: f261ad79-e25b-4afa-9f8a-909ce697e0d8
-caps.latest.revision: 11
+caps.latest.revision: 
 manager: ghogen
+ms.openlocfilehash: 834c567af78936d570c8f7c675d9d35f02e23c78
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: c988c741cd282efa3358980a6fbccca7f4b0b34c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltconditionvariablegt-enums"></a>&lt;condition_variable&gt; 列挙型
 ||  
@@ -28,9 +27,8 @@ ms.lasthandoff: 10/03/2017
   
 class cv_status { no_timeout timeout };  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<condition_variable>](../standard-library/condition-variable.md)
-
 
 
 

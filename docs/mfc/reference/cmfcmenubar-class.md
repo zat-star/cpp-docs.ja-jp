@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -60,7 +61,8 @@ f1_keywords:
 - AFXMENUBAR/CMFCMenuBar::SetMenuFont
 - AFXMENUBAR/CMFCMenuBar::SetRecentlyUsedMenus
 - AFXMENUBAR/CMFCMenuBar::SetShowAllCommands
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCMenuBar [MFC], AdjustLocations
 - CMFCMenuBar [MFC], AllowChangeTextLabels
@@ -113,15 +115,17 @@ helpviewer_keywords:
 - CMFCMenuBar [MFC], SetRecentlyUsedMenus
 - CMFCMenuBar [MFC], SetShowAllCommands
 ms.assetid: 8a3ce4c7-b012-4dc0-b4f8-53c10b4b86b8
-caps.latest.revision: "36"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c638679058d6c914d3dac4207b9ae320c4ee2697
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 56e8e97645d4baa74033af07ba08ab2eae0a3557
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcmenubar-class"></a>CMFCMenuBar クラス
 ドッキングを実装するメニュー バーです。  
@@ -220,7 +224,7 @@ class CMFCMenuBar : public CMFCToolbar
   
  `CMFCMenuBar`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxmenubar.h  
   
 ##  <a name="adjustlocations"></a>CMFCMenuBar::AdjustLocations  
@@ -1002,7 +1006,7 @@ static void SetShowAllCommands(BOOL bShowAllCommands = TRUE);
 ### <a name="remarks"></a>コメント  
  メニューがすべてのメニュー コマンドが表示されない場合は、ほとんど使用されるコマンドが表示されません。 メニュー コマンドを表示する方法についての詳細については、次を参照してください。 [CMFCMenuBar クラス](../../mfc/reference/cmfcmenubar-class.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCToolBar クラス](../../mfc/reference/cmfctoolbar-class.md)

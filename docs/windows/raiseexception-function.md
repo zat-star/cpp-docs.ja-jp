@@ -1,56 +1,60 @@
 ---
-title: "RaiseException 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "internal/Microsoft::WRL::Details::RaiseException"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RaiseException 関数"
+title: "RaiseException 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- internal/Microsoft::WRL::Details::RaiseException
+dev_langs:
+- C++
+helpviewer_keywords:
+- RaiseException function
 ms.assetid: f9c74f6d-112a-4d2e-900f-622f795d5dbf
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 380e3792c5b2b9504bec841965e70bd47ec619d4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# RaiseException 関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="raiseexception-function"></a>RaiseException 関数
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-inline void __declspec(noreturn)  
-   RaiseException(  
+inline void __declspec(noreturn)   RaiseException(  
       HRESULT hr,   
       DWORD dwExceptionFlags = EXCEPTION_NONCONTINUABLE);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `hr`  
- 発生させる例外の例外コード; つまり、操作が失敗した場合に HRESULT。  
+ 例外コードの例外の発生します。つまり、失敗した操作の HRESULT です。  
   
  `dwExceptionFlags`  
- 継続的な例外を示すフラグ \(フラグ値はゼロ\) や noncontinuable 例外 \(フラグ値は 0 以外のです\)。  既定では、例外 noncontinuable です。  
+ 継続可能例外 (フラグの値は 0)、または (フラグの値は 0 以外) noncontinuable の例外を示すフラグです。 既定では、例外は、継続不可能です。  
   
-## 解説  
- 呼び出し元のスレッドで例外を発生させます。  
+## <a name="remarks"></a>コメント  
+ 呼び出し元のスレッドで例外が発生します。  
   
- 詳細については、Windows の **RaiseException** 関数を参照します。  
+ 詳細については、Windows を参照してください。 **RaiseException**関数。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** internal.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

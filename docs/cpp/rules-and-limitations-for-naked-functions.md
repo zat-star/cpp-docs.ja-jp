@@ -1,24 +1,29 @@
 ---
-title: "Naked 関数の規則と制限 |Microsoft ドキュメント"
-ms.custom: 
+title: Naked 関数の規則と制限 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-dev_langs: C++
-helpviewer_keywords: naked functions [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- naked functions [C++]
 ms.assetid: ff203858-2dd3-4a76-8a57-d0d06817adef
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 827585c5c6695b30c090c95d8c135a4a40b301c1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b9a007cd18714906b3897004549da83053b42ec3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="rules-and-limitations-for-naked-functions"></a>naked 関数の規則と制限
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -77,7 +82,7 @@ __declspec(naked) int __fastcall  power(int i, int j) {
 }  
 ```  
   
-**END Microsoft 固有の仕様**  
+**Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [naked 関数呼び出し](../cpp/naked-function-calls.md)

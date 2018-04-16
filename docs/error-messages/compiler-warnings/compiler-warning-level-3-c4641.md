@@ -1,37 +1,41 @@
 ---
-title: "コンパイラの警告 (レベル 3) C4641 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4641"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4641"
+title: "コンパイラの警告 (レベル 3) C4641 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4641
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4641
 ms.assetid: 28fe5c3e-6039-42da-9100-1312b5b15aea
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c140bb3664f72646e74ab9f47909dade76a50ca8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 3) C4641
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-XML ドキュメント コメントはあいまいな相互参照を含んでいます  
+# <a name="compiler-warning-level-3-c4641"></a>コンパイラの警告 (レベル 3) C4641
+XML ドキュメント コメントはあいまいな相互参照  
   
- 参照を明確に解決できませんでした。  この警告を解決するには、参照を明確にするために必要なパラメーター情報を指定します。  
+ コンパイラは、明確に参照を解決できませんでした。 この警告を解決するのには、参照があいまいでないために必要なパラメーター情報を指定します。  
   
- 詳細については、「[XML に関するドキュメント](../../ide/xml-documentation-visual-cpp.md)」を参照してください。  
+ 詳細については、「 [XML Documentation](../../ide/xml-documentation-visual-cpp.md)」を参照してください。  
   
-## 使用例  
- 次の例では C4641 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4641 を生成します。  
   
 ```  
 // C4641.cpp  

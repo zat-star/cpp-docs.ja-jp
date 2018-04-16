@@ -13,16 +13,17 @@ dev_langs:
 helpviewer_keywords:
 - move constructor
 ms.assetid: e75efe0e-4b74-47a9-96ed-4e83cfc4378d
-caps.latest.revision: 13
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 07debd120c7757c049d1e3d23dfe1bb065a3cc17
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 69280eff199b9c04b51bf9b7aa298a67bf31bd89
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="move-constructors-and-move-assignment-operators-c"></a>移動コンストラクターと移動代入演算子 (C++)
 このトピックの内容を記述する方法を説明します、*移動コンス トラクター*と C++ のクラスの移動代入演算子。 移動コンストラクターを使用すると、アプリケーションのパフォーマンスを大幅に向上できる移動セマンティクスを実装できます。 移動セマンティクスの詳細については、次を参照してください。[右辺値参照宣言子: & &](../cpp/rvalue-reference-declarator-amp-amp.md)です。  
@@ -318,6 +319,6 @@ MemoryBlock(MemoryBlock&& other)
   
  [Std::move](../standard-library/utility-functions.md#move)関数の rvalue プロパティを保持する、`other`パラメーター。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [右辺値参照宣言子: & (& a)](../cpp/rvalue-reference-declarator-amp-amp.md)   
  [\<ユーティリティ > に移動](http://msdn.microsoft.com/en-us/abef7e85-9dd6-4724-85da-d7f7fe95dca9)

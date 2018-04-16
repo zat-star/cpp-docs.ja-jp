@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __asm keyword [C++], register values
 - inline assembly, registers
 - registers, inline assembly
 - preserving registers
 ms.assetid: dbcd7360-6f3e-4b22-9ee2-9f65ca6f2543
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: bc9b874535e2169a1ca16bb934fb4d13029c46e6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 66805c6e9331f55beb01b13a536596c53e35049c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-and-preserving-registers-in-inline-assembly"></a>インライン アセンブリでのレジスタの使用および保持
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -43,5 +47,5 @@ ms.lasthandoff: 10/24/2017
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

@@ -1,12 +1,12 @@
 ---
-title: "コンパイラの警告 (レベル 1) c4947 警告 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラの警告 (レベル 1) C4947 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - C4947
@@ -19,32 +19,18 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ac033535632e94a365aa8dafd849f2ab28a3af7
-ms.openlocfilehash: 08eb5385924ee4a01a942274b8c4ec10060b12c4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e24b2ec34c81152088bf2e9cee73237dfa43b41b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4947"></a>コンパイラの警告 (レベル 1) C4947
-'type_or_member': obsolete としてマークされています  
+'type_or_member': 廃止としてマークされています  
   
-メンバーまたは型が<xref:System.ObsoleteAttribute>クラス</xref:System.ObsoleteAttribute>では廃止としてマークされました  
+メンバーまたは型が、 <xref:System.ObsoleteAttribute> クラスで obsolete としてマークされています。  
   
 ## <a name="example"></a>例  
 次の例では C4947 が生成されます。  

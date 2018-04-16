@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - attributes [C++], class attributes
 - class attributes
 ms.assetid: fad04ea1-d8ff-46d4-bb42-2b4500a6ab60
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9d6883774f6deeae2d8c372b68362c743d206eb9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: afc3f277170dbbdf92f280d341bffb042ab70af2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="class-attributes"></a>クラス属性
 次の属性に適用される、[クラス](../cpp/class-cpp.md)C++ のキーワードです。  
@@ -62,5 +67,5 @@ ms.lasthandoff: 10/24/2017
 |[version](../windows/version-cpp.md)|クラスの複数のバージョン間で特定のバージョンを識別します。|  
 |[vi_progid](../windows/vi-progid.md)|ProgID のバージョンに依存しない形式を指定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [使用法別の属性](../windows/attributes-by-usage.md)

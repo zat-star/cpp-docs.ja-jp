@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CDaoRelationFieldInfo
-dev_langs: C++
+f1_keywords:
+- CDaoRelationFieldInfo
+dev_langs:
+- C++
 helpviewer_keywords:
 - DAO (Data Access Objects), Relations collection
 - CDaoRelationFieldInfo structure [MFC]
 ms.assetid: 47cb89ca-dc80-47ce-96fd-cc4b88512558
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f0de5f712d6b4413c4cfd21da1d22e0f1ff22dcd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a8b9d27154608a19da1e575a46ec424f11eec2e7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdaorelationfieldinfo-structure"></a>CDaoRelationFieldInfo 構造体
 `CDaoRelationFieldInfo`構造体には、データ アクセス オブジェクト (DAO) に対して定義されているリレーションシップのフィールドに関する情報が含まれています。  
@@ -50,9 +55,9 @@ struct CDaoRelationFieldInfo
   
  呼び出す、 [GetRelationInfo](../../mfc/reference/cdaodatabase-class.md#getrelationinfo)メンバー関数を含むの`CDaoDatabase`のリレーションのコレクションが格納されている興味のあるリレーションシップ オブジェクト内のオブジェクトします。 その後アクセス、`m_pFieldInfos`のメンバー、 [CDaoRelationInfo](../../mfc/reference/cdaorelationinfo-structure.md)オブジェクト。 `CDaoRelationFieldInfo`定義、`Dump`デバッグでメンバー関数を作成します。 使用することができます`Dump`の内容をダンプする`CDaoRelationFieldInfo`オブジェクト。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdao.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CDaoRelationInfo 構造体](../../mfc/reference/cdaorelationinfo-structure.md)

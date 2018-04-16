@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname: __setusermatherr
+apiname:
+- __setusermatherr
 apilocation:
 - msvcr80.dll
 - msvcr90.dll
@@ -18,19 +20,24 @@ apilocation:
 - msvcr100.dll
 - api-ms-win-crt-math-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: __setusermatherr
-dev_langs: C++
-helpviewer_keywords: __setusermatherr
+f1_keywords:
+- __setusermatherr
+dev_langs:
+- C++
+helpviewer_keywords:
+- __setusermatherr
 ms.assetid: f306818d-381a-4d68-8739-71b92bacb5ea
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fa4f5b7b60bf4ea6fea0d0d63d2ee911101174b5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eefd80ae9eafd20615d90a259af247b4bcb7ce0a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setusermatherr"></a>__setusermatherr
 数値演算エラーを処理するために、[_matherr](../c-runtime-library/reference/matherr.md) ルーチンではなく、ユーザーが指定したルーチンを指定します。  
@@ -51,8 +58,8 @@ void __setusermatherr(
   
 ## <a name="remarks"></a>コメント  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |__setusermatherr|matherr.c|

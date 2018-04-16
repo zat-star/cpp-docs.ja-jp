@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CAtlFileMapping
 - atlfile/ATL::CAtlFileMapping
-dev_langs: C++
-helpviewer_keywords: CAtlFileMapping class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAtlFileMapping class
 ms.assetid: 899fc058-e05e-48b5-aca9-340403bb9e26
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a028c2458b0a5085a1f46bf31f377e6ed9e4d346
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2dce8e219c2a64ecc6e9b307533ecc0ea11d2792
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlfilemapping-class"></a>CAtlFileMapping クラス
 このクラスのメソッドへのキャスト演算子の追加メモリ マップト ファイルを表します[CAtlFileMappingBase](../../atl/reference/catlfilemappingbase-class.md)です。  
@@ -56,7 +61,7 @@ class CAtlFileMapping : public CAtlFileMappingBase
   
  `CAtlFileMapping`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlfile.h  
   
 ##  <a name="operator_t_star"></a>CAtlFileMapping::operator T *  
@@ -72,6 +77,6 @@ operator T*() const throw();
 ### <a name="remarks"></a>コメント  
  呼び出し[CAtlFileMappingBase::GetData](../../atl/reference/catlfilemappingbase-class.md#getdata)として返されたポインターとして再解釈し、 `T`  **\*** 場所*T*は、テンプレートとして使用される型です。このクラスのパラメーターです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CAtlFileMappingBase クラス](../../atl/reference/catlfilemappingbase-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: xfunctional/std::less_equal
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- xfunctional/std::less_equal
+dev_langs:
+- C++
 helpviewer_keywords:
 - less_equal function
 - less_equal struct
 ms.assetid: 32085782-c7e0-4310-9b40-8aa3c1bff211
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b568198401ceb36a0b094609e3e2e4c118b3821f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 26550c7762aec0958cb6b6af87c7ddca08df515e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="lessequal-struct"></a>less_equal 構造体
 引数に対して "以下" 演算 (`operator<=`) を実行する二項述語。  
@@ -122,12 +127,12 @@ Original vector v1 = (31247 37154 48755 15251 6205 2836 2836 2836)
 Sorted vector v1 = (2836 2836 2836 6205 15251 31247 37154 48755)
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 
 

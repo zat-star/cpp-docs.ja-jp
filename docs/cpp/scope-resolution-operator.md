@@ -1,12 +1,12 @@
 ---
-title: "スコープ解決演算子::: |Microsoft ドキュメント"
-ms.custom: 
+title: 'スコープ解決演算子::: |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - '::'
@@ -22,12 +22,13 @@ caps.latest.revision: 8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 715eb7c5e004d7e0731ef599e54beb5fc6690e50
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 69b52b3029271ffae3d4a7b3441c49a01270abb4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="scope-resolution-operator-"></a>スコープ解決演算子: ::
 スコープ解決演算子 `::` は異なるスコープで使用される識別子を特定し、あいまいさを解消するために使用されます。 スコープの詳細については、次を参照してください。[スコープ](../cpp/scope-visual-cpp.md)です。  
@@ -181,6 +182,6 @@ int main() {
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [名前空間](../cpp/namespaces-cpp.md)   

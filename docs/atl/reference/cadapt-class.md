@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,22 +13,25 @@ f1_keywords:
 - ATLCOMCLI/ATL::CAdapt
 - ATLCOMCLI/ATL::CAdapt::CAdapt
 - ATLCOMCLI/ATL::CAdapt::m_T
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - address-of operator
 - adapter objects
 - '& operator, address-of operator'
 - CAdapt class
 ms.assetid: 0bb695a5-72fe-43d1-8f39-7e4da6e34765
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 37ce02b9493c47a2c93d9e54e14f73b5c980317d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b4e565b1e2c20abf31919774d7bc6eb34f4c5f78
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cadapt-class"></a>CAdapt クラス
 このテンプレートは、オブジェクトのアドレス以外の値を返すために、アドレス演算子を再定義するクラスをラップするときに使用されます。  
@@ -76,7 +80,7 @@ class CAdapt
   
  通常 container-style クラスでは、`CAdapt`、`CComBSTR`、`CComPtr`、または `CComQIPtr` オブジェクトを保存する場合に `_com_ptr_t` を使用します。 これは、C++11 Standard のサポート前には C++ Standard Library コンテナーで最も一般的に必要とされていましたが、C++11 Standard Library コンテナーは `operator&()` をオーバーロードした型と共に自動的に動作します。 標準ライブラリでは、これを実現内部的に使用して、 [std::addressof](../../standard-library/memory-functions.md#addressof)オブジェクトの場合は true。 アドレスを取得します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcomcli.h  
   
 ##  <a name="cadapt"></a>CAdapt::CAdapt  
@@ -173,5 +177,5 @@ bool operator== (const T& rSrc) const;
 ### <a name="return-value"></a>戻り値  
  間の比較の結果`m_T`と`rSrc`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

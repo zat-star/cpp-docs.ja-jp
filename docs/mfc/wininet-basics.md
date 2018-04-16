@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - OnStatusCallback method [MFC]
 - WinInet classes [MFC], displaying progress
 - WinInet classes [MFC], about WinInet classes
 ms.assetid: 665de5ac-e80d-427d-8d91-2ae466885940
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0598b131305684e9134a223fd599a8b642bf6da7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f3c9502c720b0f443ace3cfe637fb4826281ecf4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="wininet-basics"></a>WinInet の基礎
 WinInet を使用して、ダウンロードしてから、アプリケーション内のファイルをアップロードする FTP サポートを追加することができます。 オーバーライドできます[OnStatusCallback](../mfc/reference/cinternetsession-class.md#onstatuscallback)を使用して、`dwContext`を検索して、ファイルをダウンロードすると、ユーザーに進行状況に関する情報を提供するパラメーターです。  
@@ -66,7 +70,7 @@ WinInet を使用して、ダウンロードしてから、アプリケーショ
 ##  <a name="_core_display_progress_information_while_transferring_files"></a>ファイルの転送中に進行状況に関する情報を表示します。  
  たとえば、ファイルの読み取りに FTP サーバーとの接続を作成し、Web ページの取得に HTTP サーバーにも接続するアプリケーションを記述する場合があります、`CInternetSession`オブジェクト、2 つ`CInternetConnection`オブジェクト (いずれかになります、 **CFtpSession**し、もう一方が、 **CHttpSession**)、2 つと`CInternetFile`オブジェクト (接続ごとに 1 つ)。 既定値を使用した場合、`dwContext`パラメーターでないことができますを区別する、 `OnStatusCallback` FTP 接続と HTTP 接続の進行状況を示す呼び出しの進行状況を示す呼び出し。 指定した場合、 `dwContext` ID で、後でのテストできます`OnStatusCallback`、どの操作がコールバックを生成することがわかります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)   
  [Win32 インターネット拡張機能 (WinInet)](../mfc/win32-internet-extensions-wininet.md)
 

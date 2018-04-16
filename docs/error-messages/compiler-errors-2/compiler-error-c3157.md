@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3157
 ms.assetid: fe94d97f-612e-4729-8b2b-b057d84822a1
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 750a8b2a666fc13e3fb50930204d02a6fc000ae5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: e50e91eff18314671f08b4cf0b308d329d634eaf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3157"></a>コンパイラ エラー C3157
 ParamArray 属性は、最後のパラメーターにのみ適用できます。  

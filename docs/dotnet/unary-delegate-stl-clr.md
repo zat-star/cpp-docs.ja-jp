@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::unary_delegate
-dev_langs: C++
-helpviewer_keywords: unary_delegate function [STL/CLR]
+f1_keywords:
+- cliext::unary_delegate
+dev_langs:
+- C++
+helpviewer_keywords:
+- unary_delegate function [STL/CLR]
 ms.assetid: b3ee253c-98e8-466e-a272-505e47aed061
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 50a59472b2aa2873cf1efe00741f3ddfd98f0e5e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: df8c3177750433c95b6a98865409d51926c327d2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unarydelegate-stlclr"></a>unary_delegate (STL/CLR)
 Genereic クラスでは、引数が 1 つのデリゲートについて説明します。 使用するデリゲートの引数と戻り値の型を指定します。  
@@ -85,12 +92,12 @@ hash(L'a') = 5
 hash(L'b') = 22  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/機能 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [binary_delegate (STL/CLR)](../dotnet/binary-delegate-stl-clr.md)   
  [binary_delegate_noreturn (STL/CLR)](../dotnet/binary-delegate-noreturn-stl-clr.md)   
  [unary_delegate_noreturn (STL/CLR)](../dotnet/unary-delegate-noreturn-stl-clr.md)

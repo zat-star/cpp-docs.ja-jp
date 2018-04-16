@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _flushall
+ms.topic: reference
+apiname:
+- _flushall
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,23 +23,27 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: _flushall
-dev_langs: C++
+f1_keywords:
+- _flushall
+dev_langs:
+- C++
 helpviewer_keywords:
 - flushall function
 - flushing streams
 - streams, flushing
 - _flushall function
 ms.assetid: 2cd73562-6d00-4ca2-b13c-80d0ae7870b5
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6360e87ee46940e1209205399eb4fa1493188aae
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 25e8a0045758d22a9b519cd1ffe4cc675a7674c2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="flushall"></a>_flushall
 すべてのストリームをフラッシュし、すべてのバッファーをクリアします。  
@@ -60,13 +66,13 @@ int _flushall( void );
   
  ディスクへのコミットの機能の制御については、「[ストリーム入出力](../../c-runtime-library/stream-i-o.md)」、「[fopen](../../c-runtime-library/reference/fopen-wfopen.md)」、および「[_fdopen](../../c-runtime-library/reference/fdopen-wfdopen.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_flushall`|\<stdio.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -90,7 +96,7 @@ int main( void )
 There were 3 streams flushed  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [_commit](../../c-runtime-library/reference/commit.md)   
  [fclose、_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   

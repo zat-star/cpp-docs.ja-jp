@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.mfc.macros.ole
-dev_langs: C++
+f1_keywords:
+- vc.mfc.macros.ole
+dev_langs:
+- C++
 helpviewer_keywords:
 - OLE controls [MFC], persistence
 - persistence, OLE controls
 ms.assetid: 64f8dc80-f110-41af-b3ea-14948f6bfdf7
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b6bdd34d34fc7b1395a6f06a052ed21e60bf319d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3452bccd4bdf94c84e4549f99829aaa087e1803b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="persistence-of-ole-controls"></a>OLE コントロールの永続化
 OLE コントロールの機能の 1 つは永続化 (またはプロパティのシリアル化)、これにより、ファイルやストリームとの間、プロパティの値を読み書きする OLE コントロール。 コンテナー アプリケーションでは、シリアル化を使用して、アプリケーションがコントロールを破棄した後も、コントロールのプロパティの値を格納します。 OLE コントロールのプロパティ値をファイルから読み取ることができますし、または、後でストリームとコントロールの新しいインスタンスを作成します。  
@@ -720,5 +725,5 @@ pPX  ,
  [!code-cpp[NVC_MFCActiveXControl#14](../../mfc/codesnippet/cpp/persistence-of-ole-controls_1.cpp)]  
 [!code-cpp[NVC_MFCActiveXControl#15](../../mfc/codesnippet/cpp/persistence-of-ole-controls_2.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

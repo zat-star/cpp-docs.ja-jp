@@ -1,32 +1,37 @@
 ---
-title: "VerifyInheritanceHelper 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::VerifyInheritanceHelper"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "VerifyInheritanceHelper 構造体"
+title: "VerifyInheritanceHelper 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- implements/Microsoft::WRL::Details::VerifyInheritanceHelper
+dev_langs:
+- C++
+helpviewer_keywords:
+- VerifyInheritanceHelper structure
 ms.assetid: 8a48a702-0f71-4807-935b-8311f0a7a8b6
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: e9e740dc15618388fe9c1428705b47bd495a1c37
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# VerifyInheritanceHelper 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="verifyinheritancehelper-structure"></a>VerifyInheritanceHelper 構造体
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -40,31 +45,31 @@ template <
 struct VerifyInheritanceHelper<I, Nil>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `I`  
  型。  
   
  `Base`  
- 他のスレッドが入力されます。  
+ 別の型。  
   
-## 解説  
- 1 個のインターフェイスが別のインターフェイスから派生されるかどうかをテストします。  
+## <a name="remarks"></a>コメント  
+ 1 つのインターフェイスは別のインターフェイスから派生するかどうかをテストします。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[VerifyInheritanceHelper::Verify メソッド](../windows/verifyinheritancehelper-verify-method.md)|現在のテンプレート パラメーターで指定される 2 種類のインターフェイスをテストし、1 種類のインターフェイスが他から派生されるかどうかを判定します。|  
+|----------|-----------------|  
+|[VerifyInheritanceHelper::Verify メソッド](../windows/verifyinheritancehelper-verify-method.md)|現在のテンプレート パラメーターで指定された 2 つのインターフェイスをテストし、1 つのインターフェイスは、他から派生されているかどうかを決定します。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `VerifyInheritanceHelper`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

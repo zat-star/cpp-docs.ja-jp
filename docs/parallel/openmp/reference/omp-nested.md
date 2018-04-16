@@ -1,56 +1,60 @@
 ---
-title: "OMP_NESTED | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "OMP_NESTED"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OMP_NESTED OpenMP environment variable"
+title: OMP_NESTED | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- OMP_NESTED
+dev_langs:
+- C++
+helpviewer_keywords:
+- OMP_NESTED OpenMP environment variable
 ms.assetid: c43f5287-a548-40d0-bd54-0c6b2b9f9a53
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 363a125cb7f9858b1ef4105234344d2a8d35b707
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# OMP_NESTED
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-入れ子になった並列化が `omp_set_nested` を有効にするか無効か入れ子になった並列化が有効かどうかを指定します。  
+# <a name="ompnested"></a>OMP_NESTED
+入れ子になった並列処理が有効かどう、入れ子になった並列処理が有効か無効にしない限り、指定`omp_set_nested`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 set OMP_NESTED[=TRUE | =FALSE]  
 ```  
   
-## 解説  
- `OMP_NESTED` 環境変数を [omp\_set\_nested](../../../parallel/openmp/reference/omp-set-nested.md) の関数によってオーバーライドできます。  
+## <a name="remarks"></a>コメント  
+ `OMP_NESTED`で環境変数をオーバーライドすることができます、 [omp_set_nested](../../../parallel/openmp/reference/omp-set-nested.md)関数。  
   
- OpenMP 標準の Visual C\+\+ の実装の既定値は `OMP_DYNAMIC=FALSE` です。  
+ OpenMP の標準の Visual C 実装では既定値は`OMP_DYNAMIC=FALSE`します。  
   
- 詳細については、「[4.4 OMP\_NESTED](../Topic/4.4%20OMP_NESTED.md)」を参照してください。  
+ 詳細については、次を参照してください。 [4.4 OMP_NESTED](../../../parallel/openmp/4-4-omp-nested.md)です。  
   
-## 使用例  
- 次のコマンドは true に `OMP_NESTED` 環境変数を設定します :  
+## <a name="example"></a>例  
+ 次のコマンド セット、`OMP_NESTED`環境変数を TRUE にします。  
   
 ```  
 set OMP_NESTED=TRUE  
 ```  
   
- 次のコマンドは `OMP_NESTED` 環境変数の現在の設定を示しています :  
+ 次のコマンドの現在の設定を表示する、`OMP_NESTED`環境変数。  
   
 ```  
 set OMP_NESTED  
 ```  
   
-## 参照  
- [Environment Variables](../../../parallel/openmp/reference/openmp-environment-variables.md)
+## <a name="see-also"></a>参照  
+ [環境変数](../../../parallel/openmp/reference/openmp-environment-variables.md)

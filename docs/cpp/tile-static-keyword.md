@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: tile_static_CPP
-dev_langs: C++
-helpviewer_keywords: tile_static keyword
+f1_keywords:
+- tile_static_CPP
+dev_langs:
+- C++
+helpviewer_keywords:
+- tile_static keyword
 ms.assetid: d78384d4-65d9-45cf-b3df-7e904f489d06
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1259fb7731e188bdb5a02a7a573b5eddd6a47df5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ad47c85a8815d8a1a77f15788c3b312267cb055b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tilestatic-keyword"></a>tile_static キーワード
 `tile_static` キーワードは、スレッドのタイル内のすべてのスレッドによってアクセスできる変数を宣言するために使用されます。 実行が宣言の位置を達したときに変数の有効期間が開始し、カーネル関数の復帰時に終了します。 タイルを使用する方法については、次を参照してください。[を使用してタイル](../parallel/amp/using-tiles.md)です。  
@@ -151,7 +157,7 @@ for (int i = 0; i < 4; i++) {
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft 固有の修飾子](../cpp/microsoft-specific-modifiers.md)   
  [C++ AMP の概要](../parallel/amp/cpp-amp-overview.md)   
  [parallel_for_each 関数 (C++ AMP)](../parallel/amp/reference/concurrency-namespace-functions-amp.md#parallel_for_each)   

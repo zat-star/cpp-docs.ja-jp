@@ -16,16 +16,17 @@ helpviewer_keywords:
 - __declspec keyword (C++), safebuffers
 - safebuffers __declspec keyword
 ms.assetid: 0b0dce14-4523-44d2-8070-5dd0fdabc618
-caps.latest.revision: 13
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: ceb7d5796002bd54055b74d56a136706890494c4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eb9541bfc4a94253ac26e118e22c3abb2663a893
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="safebuffers"></a>safebuffers
 **Microsoft 固有の仕様**  
@@ -39,7 +40,7 @@ __declspec( safebuffers )
 ```  
   
 ## <a name="remarks"></a>コメント  
- **/GS**コンパイラ オプションは、スタック上のセキュリティ チェックを挿入することによってバッファー オーバーランをテストするコンパイラです。 セキュリティ チェックの対象になるデータ構造の種類は「 [/GS (バッファー セキュリティ チェック)](../build/reference/gs-buffer-security-check.md)です。 バッファー オーバーランの検出の詳細については、次を参照してください。[コンパイラ セキュリティ チェックで深さ](http://go.microsoft.com/fwlink/?linkid=7260)MSDN Web サイトです。  
+ **/GS**コンパイラ オプションは、スタック上のセキュリティ チェックを挿入することによってバッファー オーバーランをテストするコンパイラです。 セキュリティ チェックの対象になるデータ構造の種類は「 [/GS (バッファー セキュリティ チェック)](../build/reference/gs-buffer-security-check.md)です。 バッファー オーバーランの検出の詳細については、次を参照してください。[コンパイラ セキュリティ チェックで深さ](http://go.microsoft.com/fwlink/p/?linkid=7260)MSDN Web サイトです。  
   
  専門家による手動コード レビューまたは外部解析によって、関数がバッファー オーバーランしないと判断される場合もあります。 その場合は、適用することで、関数のセキュリティ チェックを抑制できます、`__declspec(safebuffers)`関数の宣言キーワード。  
   
@@ -83,7 +84,7 @@ int wmain() {
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ _declspec](../cpp/declspec.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [inline、_ _inline、 \__forceinline](inline-functions-cpp.md)   

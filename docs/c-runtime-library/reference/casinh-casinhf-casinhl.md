@@ -8,7 +8,7 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - casinh
 - casinhl
@@ -40,33 +40,20 @@ helpviewer_keywords:
 - casinhf function
 - casinhl function
 ms.assetid: bd18340b-21dd-4c86-a14e-e8e15dd97e3b
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 1620eb200723fe4b2cd6553e7ba50405b026d53c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: adddb62e9b16eb8506fc175a597629da7c14808e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="casinh-casinhf-casinhl"></a>casinh、casinhf、casinhl
-ブランチ カット範囲の外で、複雑な数値の逆ハイパーボリック サインを取得 [-i + i] 虚数部の軸に沿ったです。  
+複素数ブランチ カット範囲の外での逆ハイパーボリック サインを取得 [-i、+ i] 虚数部の軸に沿ったです。  
   
 ## <a name="syntax"></a>構文  
   
@@ -98,15 +85,15 @@ _Lcomplex casinhl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`casinh` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは、 `casinh` は常に `_Dcomplex` 値を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|C ヘッダー|C++ ヘッダー|  
+|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
 |-------------|--------------|------------------|  
 |`casinh`、               `casinhf`、`casinhl`|\<complex.h>|\<ccomplex>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [catanh、catanhf、catanhl](../../c-runtime-library/reference/catanh-catanhf-catanhl.md)   
  [ctanh、ctanhf、ctanhl](../../c-runtime-library/reference/ctanh-ctanhf-ctanhl.md)   

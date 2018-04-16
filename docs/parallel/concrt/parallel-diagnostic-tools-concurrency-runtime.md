@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: Parallel Diagnostic Tools [Concurrency Runtime]
+dev_langs:
+- C++
+helpviewer_keywords:
+- Parallel Diagnostic Tools [Concurrency Runtime]
 ms.assetid: b1a3f1d2-f5df-4f29-852e-906b3d8341fc
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2e85ee1a0c250cf67f2a379ccad8c11a99b96f76
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1a7c6aa769faaacd128bb51a422227230fa4a851
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="parallel-diagnostic-tools-concurrency-runtime"></a>並列診断ツール (同時実行ランタイム)
 [!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)] は、マルチ スレッド アプリケーションのデバッグおよびプロファイリングを広範にサポートします。  
@@ -32,13 +37,13 @@ ms.lasthandoff: 10/24/2017
 ## <a name="event-tracing"></a>イベントのトレース  
  同時実行ランタイムを使用して[Event Tracing for Windows](http://msdn.microsoft.com/library/windows/desktop/bb968803) (ETW) にさまざまなイベントが発生したときに、プロファイラーなどのインストルメンテーション ツールを通知します。 これらのイベントなどのスケジューラがアクティブ化または非アクティブ化されたときにコンテキストを開始、終了、ブロック、ブロックを解除すると、または生成すると、ときに、並列アルゴリズムを開始または終了するとします。  
   
- などのツール、[同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer)この機能を利用してです。 したがって、通常がありませんこれらのイベントを直接操作します。 ただし、これらのイベントは、カスタムのプロファイラーを開発する場合または役立ちますなど、イベント トレース ツールを使用すると[Xperf](http://go.microsoft.com/fwlink/linkid=160628)です。  
+ などのツール、[同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer)この機能を利用してです。 したがって、通常がありませんこれらのイベントを直接操作します。 ただし、これらのイベントは、カスタムのプロファイラーを開発する場合または役立ちますなど、イベント トレース ツールを使用すると[Xperf](http://go.microsoft.com/fwlink/p/?linkid=160628)です。  
   
  同時実行ランタイムでは、トレースが有効になっている場合にのみ、これらのイベントを発生させます。 呼び出す、 [concurrency::EnableTracing](reference/concurrency-namespace-functions.md#enabletracing)イベントのトレースを有効にする関数、および[concurrency::DisableTracing](reference/concurrency-namespace-functions.md#disabletracing)トレースを無効にする関数。  
   
  次の表では、イベントのトレースが有効にすると、ランタイムを発生させるイベントについて説明します。  
   
-|イベント|説明|値|  
+|event|説明|[値]|  
 |-----------|-----------------|-----------|  
 
 |[concurrency::ConcRT_ProviderGuid](reference/concurrency-namespace-constants1.md#concrt_providerguid)|同時実行ランタイムの ETW プロバイダーの識別子 |。`f7b697a3-4db5-4d3b-be71-c4d284e6592f`|  
@@ -69,6 +74,6 @@ ms.lasthandoff: 10/24/2017
   
  ランタイムを呼び出す回数を追跡する`EnableTracing`と`DisableTracing`です。 そのため、呼び出す場合は、 `EnableTracing` 、複数回呼び出す必要があります`DisableTracing`トレースを無効にするために、同じ回数。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行ランタイム](../../parallel/concrt/concurrency-runtime.md)
 

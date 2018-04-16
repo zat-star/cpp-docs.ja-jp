@@ -1,62 +1,64 @@
 ---
-title: "IRowsetUpdateImpl::Undo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.IRowsetUpdateImpl.Undo"
-  - "ATL::IRowsetUpdateImpl::Undo"
-  - "IRowsetUpdateImpl::Undo"
-  - "IRowsetUpdateImpl.Undo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Undo メソッド"
+title: "Irowsetupdateimpl::undo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL.IRowsetUpdateImpl.Undo
+- ATL::IRowsetUpdateImpl::Undo
+- IRowsetUpdateImpl::Undo
+- IRowsetUpdateImpl.Undo
+dev_langs:
+- C++
+helpviewer_keywords:
+- Undo method
 ms.assetid: f3dc7764-050c-4322-9b2f-9ca772a0fb88
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: da14d4451a209202f63d54d876bc48aba3e3e5ad
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# IRowsetUpdateImpl::Undo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-行への変更は、最後のフェッチまたは Update 元に戻します。  
+# <a name="irowsetupdateimplundo"></a>IRowsetUpdateImpl::Undo
+最後のフェッチまたは更新以降、行への変更を元に戻します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
-      STDMETHOD ( Undo )(  
-   HCHAPTER /* hReserved */,  
+```cpp
+      STDMETHOD (Undo )(HCHAPTER /* hReserved */,  
    DBCOUNTITEM cRows,  
    const HROW rghRows[ ],  
    DBCOUNTITEM* pcRowsUndone,  
    HROW** prgRowsUndone,  
-   DBROWSTATUS** prgRowStatus   
-);  
+   DBROWSTATUS** prgRowStatus);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `hReserved`  
- \[\] [IRowsetUpdate::Undo](https://msdn.microsoft.com/en-us/library/ms719655.aspx)の `hChapter` パラメーターに対応します。  
+ [in]対応する、`hChapter`パラメーター [IRowsetUpdate::Undo](https://msdn.microsoft.com/en-us/library/ms719655.aspx)です。  
   
  *pcRowsUndone*  
- \[\] [IRowsetUpdate::Undo](https://msdn.microsoft.com/en-us/library/ms719655.aspx)の `pcRows` パラメーターに対応します。  
+ [out]対応する、`pcRows`パラメーター [IRowsetUpdate::Undo](https://msdn.microsoft.com/en-us/library/ms719655.aspx)です。  
   
  *prgRowsUndone*  
- \[\] [IRowsetUpdate::Undo](https://msdn.microsoft.com/en-us/library/ms719655.aspx)の *prgRows* パラメーターに対応します。  
+ [in]対応する、 *prgRows*パラメーター [IRowsetUpdate::Undo](https://msdn.microsoft.com/en-us/library/ms719655.aspx)です。  
   
- 他のパラメーターには、*OLE DB Programmer's Reference*の [IRowsetUpdate::Undo](https://msdn.microsoft.com/en-us/library/ms719655.aspx) を参照してください。  
+ その他のパラメーターを参照してください。 [IRowsetUpdate::Undo](https://msdn.microsoft.com/en-us/library/ms719655.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
- [IRowsetUpdateImpl クラス](../Topic/IRowsetUpdateImpl%20Class.md)
+## <a name="see-also"></a>参照  
+ [IRowsetUpdateImpl クラス](../../data/oledb/irowsetupdateimpl-class.md)

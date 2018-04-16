@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wtof_l
 - atof
@@ -55,31 +55,17 @@ helpviewer_keywords:
 - _wtof function
 - string conversion, to floating point values
 ms.assetid: eb513241-c9a9-4f5c-b7e7-a49b14abfb75
-caps.latest.revision: 26
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 3bb571d759b8a6360326554f4915e60d6ab0aa93
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d89644b1ff00bda2db5aa1a8c007668fc895a3b6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atof-atofl-wtof-wtofl"></a>atof、_atof_l、_wtof、_wtof_l
 文字列を double 型に変換します。  
@@ -137,7 +123,7 @@ double _wtof_l(
 |`_tstof`|`atof`|`atof`|`_wtof`|  
 |`_ttof`|`atof`|`atof`|`_wtof`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |ルーチン|必須ヘッダー|  
 |------------------|---------------------|  
@@ -194,7 +180,7 @@ Function: atof("  -2,309e-25") = -2.000000e+00
 Function: _atof_l("  -2,309e-25", fr)) = -2.309000e-25  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ロケール](../../c-runtime-library/locale.md)   

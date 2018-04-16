@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: stdexcept/std::domain_error
-dev_langs: C++
-helpviewer_keywords: domain_error class
+ms.topic: reference
+f1_keywords:
+- stdexcept/std::domain_error
+dev_langs:
+- C++
+helpviewer_keywords:
+- domain_error class
 ms.assetid: a1d8245d-61c2-4d1e-973f-073bd5dd5fa3
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 83efa172517e7a7e5161bc77821e139297024191
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 33b767376eede7c83412ff6dc6e5001aa4f97a99
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="domainerror-class"></a>domain_error クラス
 このクラスは、ドメイン エラーを通知するためにスローされる例外すべてに対する基底クラスとして機能します。  
@@ -66,12 +72,12 @@ Type: class std::domain_error
 *\  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<stdexcept>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [logic_error クラス](../standard-library/logic-error-class.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

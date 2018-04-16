@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -19,20 +20,23 @@ apitype: DLLExport
 f1_keywords:
 - _ismbb
 - ismbb
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ismbb routines
 - _ismbb routines
 ms.assetid: d63c232e-3fe4-4844-aafd-2133846ece4b
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0f326ec0ed43463d0d2ca15103c77bb914a11592
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ad7e454af3ff8923d60315cd74d48daf9bd665a2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ismbb-routines"></a>_ismbb 系ルーチン
 現在のロケールまたは指定された LC_CTYPE 変換状態カテゴリを使用して、特定の条件に対して整数値 `c` をテストします。  
@@ -53,7 +57,7 @@ ms.lasthandoff: 10/24/2017
   
  `_ismbb` ファミリのルーチンは、特定の整数 `c` を次のようにテストします。  
   
-|ルーチン|バイト テスト条件|  
+|ルーチンによって返される値|バイト テスト条件|  
 |-------------|-------------------------|  
 |[_ismbbalnum](../c-runtime-library/reference/ismbbalnum-ismbbalnum-l.md)|`isalnum` &#124;&#124; `_ismbbkalnum`.|  
 |[_ismbbalpha](reference/ismbbalpha-ismbbalpha-l.md)|`isalpha` &#124;&#124; `_ismbbkalnum`.|  
@@ -70,7 +74,7 @@ ms.lasthandoff: 10/24/2017
   
  次の表は、これらのルーチンのテスト条件を構成する値の論理和を示します。 マニフェスト定数 `_BLANK`、 `_DIGIT`、 `_LOWER`、 `_PUNCT`、および `_UPPER` は Ctype.h で定義されます。  
   
-|ルーチン|_BLANK|_DIGIT|LOWER|_PUNCT|UPPER|非<br /><br /> ASCII<br /><br /> テキスト|非<br /><br /> ASCII<br /><br /> 区切り文字|  
+|ルーチンによって返される値|_BLANK|_DIGIT|LOWER|_PUNCT|UPPER|非<br /><br /> ASCII<br /><br /> テキスト|非<br /><br /> ASCII<br /><br /> 区切り文字|  
 |-------------|-------------|-------------|-----------|-------------|-----------|------------------------------|-------------------------------|  
 |`_ismbbalnum`|—|x|x|—|x|x|—|  
 |`_ismbbalpha`|—|—|x|—|x|x|—|  
@@ -84,7 +88,7 @@ ms.lasthandoff: 10/24/2017
   
  `_ismbb` ルーチンは、関数とマクロの両方として実装されます。 実装の選び方については、「[関数またはマクロの選択に関する推奨事項](../c-runtime-library/recommendations-for-choosing-between-functions-and-macros.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../c-runtime-library/byte-classification.md)   
  [is、isw 系ルーチン](../c-runtime-library/is-isw-routines.md)   
  [_mbbtombc、_mbbtombc_l](../c-runtime-library/reference/mbbtombc-mbbtombc-l.md)   

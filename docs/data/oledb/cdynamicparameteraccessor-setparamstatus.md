@@ -4,53 +4,55 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CDynamicParameterAccessor::SetParamStatus
 - ATL.CDynamicParameterAccessor.SetParamStatus
 - ATL::CDynamicParameterAccessor::SetParamStatus
 - CDynamicParameterAccessor.SetParamStatus
 - SetParamStatus
-dev_langs: C++
-helpviewer_keywords: SetParamStatus method
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetParamStatus method
 ms.assetid: 0c2271f6-457d-46ca-88b7-4590aadb20d7
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8b239000efa761ee30aa44fb8285fa96992e0b0b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4af01d1f389f57adeffb953b4a83800e6b1b5387
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cdynamicparameteraccessorsetparamstatus"></a>CDynamicParameterAccessor::SetParamStatus
 バッファーに格納され、指定されたパラメーターのステータスを設定します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
+```
+bool SetParamStatus(DBORDINAL nParam,  
+   DBSTATUS status);  ```  
   
-      bool SetParamStatus(  
-   DBORDINAL nParam,  
-   DBSTATUS status  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
+#### Parameters  
  `nParam`  
- [in]パラメーターの数 (1 からのオフセット)。 に対するパラメーター 0 は、戻り値に予約されています。 パラメーター数は、SQL またはストアド プロシージャの呼び出しでその順序に基づいて、パラメーターのインデックスです。 参照してください[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)例についてはします。  
+ [in] The parameter number (offset from 1). Parameter 0 is reserved for return values. The parameter number is the index of the parameter based on its order in the SQL or stored procedure call. See [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) for an example.  
   
  *status*  
- [in]`DBSTATUS`指定されたパラメーターの状態。 詳細について`DBSTATUS`値を参照してください[ステータス](https://msdn.microsoft.com/en-us/library/ms722617.aspx)で、 *OLE DB プログラマーズ リファレンス*、または検索`DBSTATUS`oledb.h でします。  
+ [in] The `DBSTATUS` status of the specified parameter. For information on `DBSTATUS` values, see [Status](https://msdn.microsoft.com/en-us/library/ms722617.aspx) in the *OLE DB Programmer's Reference*, or search for `DBSTATUS` in oledb.h.  
   
-## <a name="remarks"></a>コメント  
- 返します**true**成功した場合または**false**エラー発生時にします。  
+## Remarks  
+ Returns **true** on success or **false** on failure.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** atldbcli.h  
+## Requirements  
+ **Header:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
- [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)
+## See Also  
+ [CDynamicParameterAccessor Class](../../data/oledb/cdynamicparameteraccessor-class.md)

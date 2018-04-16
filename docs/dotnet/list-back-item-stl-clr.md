@@ -1,25 +1,32 @@
 ---
-title: "list::back_item (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: list::back_item (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::list::back_item
-dev_langs: C++
-helpviewer_keywords: back_item member [STL/CLR]
+f1_keywords:
+- cliext::list::back_item
+dev_langs:
+- C++
+helpviewer_keywords:
+- back_item member [STL/CLR]
 ms.assetid: 63dcdd21-61f7-4e0f-88a7-c9c8f8a2c50a
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 295ab7a1cc96f5e961f5c6c375a904d45c4b1345
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5e41b042843b3d2d302e517e9281a1bb28e9afc7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listbackitem-stlclr"></a>list::back_item (STL/CLR)
 最後の要素にアクセスします。  
@@ -71,12 +78,12 @@ back_item = c
  a b x  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::back (STL/CLR)](../dotnet/list-back-stl-clr.md)   
  [list::front (STL/CLR)](../dotnet/list-front-stl-clr.md)   

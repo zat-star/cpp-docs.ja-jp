@@ -15,16 +15,17 @@ helpviewer_keywords:
 - OLE DB, adding ATL OLE DB consumer to projects
 - ATL OLE DB consumers
 ms.assetid: f940a513-4e42-4148-b521-dd0d7dc89fa2
-caps.latest.revision: 11
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: defc933014bd287eb48f53635efba12a40960711
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 41e31e82c97252a2ab5e34a78db5af1fd4e24f98
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-an-atl-ole-db-consumer"></a>ATL OLE DB コンシューマーの追加
 このウィザードを使用すると、プロジェクトに ATL OLE DB コンシューマーを追加します。 ATL OLE DB コンシューマーは、OLE DB アクセサー クラスとデータ バインディングのデータ ソースにアクセスするために必要なので構成されます。 プロジェクトは、ATL COM アプリケーションまたは ATL のサポート (ATL OLE DB コンシューマー ウィザードが自動的に追加します) を含む MFC または Win32 アプリケーションとして作成されていなければなりません。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 10/09/2017
   
 ### <a name="to-add-an-atl-ole-db-consumer-to-your-project"></a>プロジェクトに ATL OLE DB コンシューマーを追加するには  
   
-1.  クラス ビュー で、プロジェクトを右クリックします。 ショートカット メニューをクリックして**追加**をクリックし、**クラスの追加**です。  
+1.  クラス ビュー で、プロジェクトを右クリックします。 ショートカット メニューをクリックして**追加** をクリックし、**クラスの追加**です。  
   
 2.  Visual C フォルダーをダブルクリックして、 **ATL OLE DB コンシューマー**アイコンまたは選択し、をクリックして**開く**です。  
   
@@ -43,7 +44,6 @@ ms.lasthandoff: 10/09/2017
   
 4.  をクリックして**完了**ウィザードを閉じます。 プロジェクトで、新しく作成された OLE DB コンシューマー コードが挿入されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)
-
 

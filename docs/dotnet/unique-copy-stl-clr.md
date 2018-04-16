@@ -1,32 +1,37 @@
 ---
-title: "unique_copy (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::unique_copy"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "unique_copy 関数 [STL/CLR]"
+title: "unique_copy (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::unique_copy
+dev_langs:
+- C++
+helpviewer_keywords:
+- unique_copy function [STL/CLR]
 ms.assetid: 37aa5b06-42c5-420d-94c5-00f00ad26471
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: ca88897a16a78dcb0f331f2ce56db29ab692a3c2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# unique_copy (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-互いに隣接する重複する要素を除く先の範囲にソース範囲内の要素をコピーします。  
+# <a name="uniquecopy-stlclr"></a>unique_copy (STL/CLR)
+互いに隣接する重複要素を除き、ソース範囲の要素をターゲット範囲にコピーします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _InIt, class _OutIt> inline  
@@ -36,13 +41,13 @@ template<class _InIt, class _OutIt, class _Pr> inline
         _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `unique_copy`も同じように動作します。  詳細については、「[unique\_copy](../Topic/unique_copy.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`unique_copy`です。 詳細については、次を参照してください。 [unique_copy](../standard-library/algorithm-functions.md#unique_copy)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>参照  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

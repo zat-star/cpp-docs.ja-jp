@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - strncmp
 - _mbsncmp
@@ -35,7 +36,8 @@ f1_keywords:
 - strncmp
 - _mbsncmp
 - wcsncmp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _tcsnccmp function
 - ftcsncmp function
@@ -55,21 +57,23 @@ helpviewer_keywords:
 - characters [C++], comparing
 - _ftcsnccmp function
 ms.assetid: 2fdbf4e6-77da-4b59-9086-488f6066b8af
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d3baca7feae2b45c7761e46daa4adeb7a0968580
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 92ec6c3c6a28258ffc953fc9c7f5a344e1f3d0f9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strncmp-wcsncmp-mbsncmp-mbsncmpl"></a>strncmp、wcsncmp、_mbsncmp、_mbsncmp_l
 2 つの文字列を、指定した文字数まで比較します。  
   
 > [!IMPORTANT]
->  `_mbsncmp` および `_mbsncmp_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbsncmp` および `_mbsncmp_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -129,7 +133,7 @@ int _mbsncmp_l(
   
  また、`_mbsncmp` および `_mbsncmp_l` はパラメーターを検証します。 `string1` または `string2` が Null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`_mbsncmp` および `_mbsncmp_l` は `_NLSCMPERROR` を返し、`errno` を `EINVAL` に設定します。 `strncmp` および `wcsncmp` は、パラメーターを検証しません。 それ以外では、これらの関数の動作は同じです。  
   
- `_mbsncmp` および `_mbsncmp_l` の比較の動作は、ロケールの `LC_CTYPE` カテゴリの設定により影響されます。 これは、マルチバイト文字の先頭および末尾のバイトの検出を制御します。 詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_mbsncmp` は、ロケールに依存するこの動作に現在のロケールを使用します。 `_mbsncmp_l` 関数は、代わりに `locale` パラメーターを使用することを除けば、同一です。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。 ロケールが 1 バイトのロケールの場合、これらの関数の動作は `strncmp` と同一です。  
+ `_mbsncmp` および `_mbsncmp_l` の比較の動作は、ロケールの `LC_CTYPE` カテゴリの設定により影響されます。 これは、マルチバイト文字の先頭および末尾のバイトの検出を制御します。 詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_mbsncmp` は、ロケールに依存するこの動作に現在のロケールを使用します。 `_mbsncmp_l` 関数は、代わりに `locale` パラメーターを使用することを除けば、同一です。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。 ロケールが 1 バイトのロケールの場合、これらの関数の動作は `strncmp` と同一です。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -140,15 +144,15 @@ int _mbsncmp_l(
 |`_tccmp`|マクロまたはインライン関数にマップされます|`_mbsncmp`|マクロまたはインライン関数にマップされます|  
 |**該当なし**|**該当なし**|`_mbsncmp_l`|**該当なし**|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`strncmp`|\<string.h>|  
 |`wcsncmp`|\<string.h> または \<wchar.h>|  
 |`_mbsncmp`, `_mbsncmp_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -199,14 +203,14 @@ Function:   strnicmp _strnicmp (first 10 characters only)
 Result:      String 1 is equal to string 2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
  [_mbsnbcmp、_mbsnbcmp_l](../../c-runtime-library/reference/mbsnbcmp-mbsnbcmp-l.md)   
  [_mbsnbicmp、_mbsnbicmp_l](../../c-runtime-library/reference/mbsnbicmp-mbsnbicmp-l.md)   
  [strcmp、wcscmp、_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
+ [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
  [_strnicmp、_wcsnicmp、_mbsnicmp、_strnicmp_l、_wcsnicmp_l、_mbsnicmp_l](../../c-runtime-library/reference/strnicmp-wcsnicmp-mbsnicmp-strnicmp-l-wcsnicmp-l-mbsnicmp-l.md)   
  [strrchr、wcsrchr、_mbsrchr、_mbsrchr_l](../../c-runtime-library/reference/strrchr-wcsrchr-mbsrchr-mbsrchr-l.md)   
  [_strset、_strset_l、_wcsset、_wcsset_l、_mbsset、_mbsset_l](../../c-runtime-library/reference/strset-strset-l-wcsset-wcsset-l-mbsset-mbsset-l.md)   

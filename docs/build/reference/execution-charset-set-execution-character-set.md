@@ -1,31 +1,34 @@
 ---
-title: "-実行-文字セット (セット実行文字セット) |Microsoft ドキュメント"
-ms.custom: 
+title: -実行-文字セット (セット実行文字セット) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - execution-charset
 - /execution-charset
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - /execution-charset compiler option
 - -execution-charset compiler option
 ms.assetid: 0e02f487-2236-45bc-95f3-5760933a8f96
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 64051b4cf54830085a3b35daf6fa8fc3c9af624d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7cfb315c0dece0edc6228f70ed3900be80543cc7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="execution-charset-set-execution-character-set"></a>/execution-charset (設定実行文字セット)
 実行文字セットの実行可能ファイルで指定することができます。  
@@ -60,7 +63,7 @@ ms.lasthandoff: 10/24/2017
   
 4.  選択**OK**して変更を保存します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [/source-charset (設定ソース文字セット)](../../build/reference/source-charset-set-source-character-set.md)   

@@ -1,28 +1,33 @@
 ---
-title: "_ _stosd |Microsoft ドキュメント"
+title: __stosd | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: __stosd
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- __stosd
+dev_langs:
+- C++
 helpviewer_keywords:
 - stosd instruction
 - rep stosd instruction
 - __stosd intrinsic
 ms.assetid: 03104247-1cea-49f6-b6f8-287917bf5680
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a489531113ce17cee28414a07662114e58a61341
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 76764c29da9d654d0b1883d5475d69043a35cb44
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="stosd"></a>__stosd
 **Microsoft 固有の仕様**  
@@ -49,11 +54,11 @@ void __stosd(
  [入力] `Count`  
  書き込むダブルワードのブロックの長さ。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
-|`__stosd`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__stosd`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
  **ヘッダー ファイル** \<intrin.h >  
   
@@ -93,5 +98,5 @@ printf_s( "%u %u %u %u",
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

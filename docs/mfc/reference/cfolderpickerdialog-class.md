@@ -17,16 +17,17 @@ dev_langs:
 helpviewer_keywords:
 - CFolderPickerDialog [MFC], CFolderPickerDialog
 ms.assetid: 8db01684-dd1d-4e9c-989e-07a2318a8156
-caps.latest.revision: 22
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2e93bb9c9ac6aa447e3df43d4612bd792df091e9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 2ca0f618006345d0d36650655a4e62d721b4d4d4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cfolderpickerdialog-class"></a>CFolderPickerDialog クラス
 CFolderPickerDialog クラスは、フォルダー ピッカー モードの CFileDialog を実装します。  
@@ -63,7 +64,7 @@ class CFolderPickerDialog : public CFileDialog;
   
  `CFolderPickerDialog`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdlgs.h  
   
 ##  <a name="cfolderpickerdialog"></a>CFolderPickerDialog::CFolderPickerDialog  
@@ -101,6 +102,5 @@ virtual ~CFolderPickerDialog();
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

@@ -15,31 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C4008
 ms.assetid: fb45e535-cb68-4743-80e9-a6e34cfffeca
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 0539a36dddf5bed1d7474f6456eb710bb0506ae4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: afd45078ac75ec9da8343baa2c203e75b324fb6e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-levels-2-and-3-c4008"></a>コンパイラの警告 (レベル 2 および 3) C4008
 'identifier': 'attribute' 属性は無視されました  
@@ -48,6 +34,6 @@ ms.lasthandoff: 04/12/2017
   
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>次のような原因をチェックして問題を解決するには  
   
-1.  `__fastcall`データを持つ属性。  
+1.  データを伴う`__fastcall` 属性。  
   
 2.  **メイン** 関数の **静的** または **インライン** 属性。

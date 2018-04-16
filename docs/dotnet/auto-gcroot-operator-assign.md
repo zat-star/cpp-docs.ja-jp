@@ -1,36 +1,40 @@
 ---
-title: "auto_gcroot::operator= | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "auto_gcroot.operator="
-  - "msclr::auto_gcroot::operator="
-  - "msclr.auto_gcroot.operator="
-  - "auto_gcroot::operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "演算子 ="
+title: "auto_gcroot::operator = |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- auto_gcroot.operator=
+- msclr::auto_gcroot::operator=
+- msclr.auto_gcroot.operator=
+- auto_gcroot::operator=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator=
 ms.assetid: 99eba5eb-5a2c-4edf-b3d5-c903f818233d
-caps.latest.revision: 13
-caps.handback.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: b924c3596d1f381d42c711e42e93fd9ae6d037e7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# auto_gcroot::operator=
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="autogcrootoperator"></a>auto_gcroot::operator=
 代入演算子。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 auto_gcroot<_element_type> & operator=(  
@@ -45,14 +49,14 @@ auto_gcroot<_element_type> & operator=(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_right`  
- 現在の `auto_gcroot`に割り当てるオブジェクトまたは `auto_gcroot`。  
+ オブジェクトまたは`auto_gcroot`現在に割り当てられる`auto_gcroot`です。  
   
-## 戻り値  
- これ `_right`を所有する現在の `auto_gcroot`。  
+## <a name="return-value"></a>戻り値  
+ 現在`auto_gcroot`、所有しているようになりました`_right`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_gcroot_operator_equals.cpp  
@@ -105,21 +109,24 @@ int main()
 }  
 ```  
   
-  **ClassA のコンストラクター: 最初**  
-**Hello 最初に A ~\!**  
-**ClassA のコンストラクター: 第 2**  
-**ClassA のデストラクター: 最初**  
-**ClassA のコンストラクター: 3 番目の**  
-**3 番目の B から Hello\!**  
-**ClassA のデストラクター: 第 2**  
-**3 番目の A から Hello\!**  
-**done**  
-**ClassA のデストラクター: 3 番目の**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_gcroot.h\>  
+```Output  
+in ClassA constructor: first  
+Hello from first A!  
+in ClassA constructor: second  
+in ClassA destructor: first  
+in ClassA constructor: third  
+Hello from third B!  
+in ClassA destructor: second  
+Hello from third A!  
+done  
+in ClassA destructor: third  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
-## 参照  
- [auto\_gcroot Members](../dotnet/auto-gcroot-members.md)   
- [auto\_gcroot::attach](../dotnet/auto-gcroot-attach.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>参照  
+ [auto_gcroot メンバー](../dotnet/auto-gcroot-members.md)   
+ [auto_gcroot::attach](../dotnet/auto-gcroot-attach.md)

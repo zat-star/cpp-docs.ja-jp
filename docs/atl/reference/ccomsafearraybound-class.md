@@ -11,7 +11,6 @@ ms.topic: reference
 f1_keywords:
 - CComSafeArrayBound
 - ATLSAFE/ATL::CComSafeArrayBound
-- ATLSAFE/ATL::CComSafeArrayBound
 - ATLSAFE/ATL::GetCount
 - ATLSAFE/ATL::GetLowerBound
 - ATLSAFE/ATL::GetUpperBound
@@ -22,16 +21,17 @@ dev_langs:
 helpviewer_keywords:
 - CComSafeArrayBound class
 ms.assetid: dd6299db-5f84-4630-bbf0-f5add5318437
-caps.latest.revision: 21
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4de823b4cdb2d7926b2a9d640b2e8f7352e389fd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 01198e8de5f2eb1cbe0787bd287820d222875c20
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomsafearraybound-class"></a>CComSafeArrayBound クラス
 このクラスは、用のラッパー、 [SAFEARRAYBOUND](http://msdn.microsoft.com/en-us/303a9bdb-71d6-4f14-8747-84cf84936c6d)構造体。  
@@ -66,7 +66,7 @@ class CComSafeArrayBound : public SAFEARRAYBOUND
   
  **ヘッダー:** atlsafe.h  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsafe.h  
   
 ##  <a name="ccomsafearraybound"></a>CComSafeArrayBound::CComSafeArrayBound  
@@ -176,6 +176,5 @@ LONG SetLowerBound(LONG lLowerBound) throw();
   
  上限の境界は、要素と下限の境界値の数によって異なります。 たとえば、下限は 0 要素の数は 10、上限の境界が 9 に自動的に設定されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)
-

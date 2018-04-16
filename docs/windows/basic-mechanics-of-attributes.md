@@ -1,42 +1,45 @@
 ---
-title: "Basic Mechanics of Attributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "attributes [C++], inserting in code"
-  - "attributes [C++], about attributes"
+title: "属性の基本的なしくみ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- attributes [C++], inserting in code
+- attributes [C++], about attributes
 ms.assetid: dc2069c3-b9f3-4a72-965c-4e5208ce8e34
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 99771e798e4957de5ff69601a5d3494e5fcacc35
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Basic Mechanics of Attributes
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-プロジェクトに属性を挿入する 3 とおりの方法があります。  まずソース・コードに手動で追加できます。  第 2 にプロジェクトのプロパティ グリッドを使用して列を挿入することもできます。  最後にウィザードを使用して列を挿入することもできます。  \[プロパティ\] ウィンドウと各種ウィザードの使用の詳細については[Visual C\+\+ の作成と管理のプロジェクト](../ide/creating-and-managing-visual-cpp-projects.md) を参照してください。  
+# <a name="basic-mechanics-of-attributes"></a>属性の基本的なしくみ
+プロジェクトに属性を挿入する次の 3 つの方法はあります。 最初に、挿入できますに手動でソース コードです。 次に、プロジェクト内のオブジェクトのプロパティ グリッドを使用してそれらを挿入できます。 最後に、さまざまなウィザードを使用してそれらを挿入できます。 [プロパティ] ウィンドウとさまざまなウィザードの使用に関する詳細については、次を参照してください。 [Visual c プロジェクトの管理の作成と](../ide/creating-and-managing-visual-cpp-projects.md)です。  
   
- Visual C\+\+ .NET 以降ではコンパイラはソース ファイルの属性の存在を認識して動的にコンパイル中に実行を解析および検証できます。  
+ としてする前に、プロジェクトのビルド時に、コンパイラ解析各 C++ ソース ファイルのオブジェクト ファイルを生成します。 ただし、コンパイラには、属性が検出されると、解析、構文を検査します。 コンパイラ、動的にプロバイダーを呼び出して、属性をコードの挿入やコンパイル時にその他の変更を加えます。 プロバイダーの実装は、属性の種類によって異なります。 たとえば、ATL 関連の属性は、Atlprov.dll によって実装されます。  
   
- 同様にプロジェクトがビルドされるとコンパイラはC\+\+ のソース ファイルを解析するにはオブジェクト ファイルを作成します。  ただしコンパイラが属性に検出するとコンパイラが解析され構文的に検証されます。  コンパイラはコードを動的に挿入するかコンパイル時に他の変更を加えるに属性プロバイダーを呼び出します。  プロバイダーの実装は属性の種類によって異なります。  たとえばATL 関連の属性は Atlprov.dll によって実装されます。  
-  
- 次の図はコンパイラの属性とプロバイダー間の関係を示します。  
+ 次の図は、コンパイラと、属性プロバイダー間のリレーションシップを示しています。  
   
  ![コンポーネント属性コミュニケーション](../windows/media/vccompattrcomm.gif "vcCompAttrComm")  
   
 > [!NOTE]
->  属性の使用方法はソース ファイルの内容は変更されません。  一度だけ生成されたコード属性はデバッグ セッション中に表示されますあります。  またプロジェクト内の各ソース ファイルの場合属性の別の結果を表示するテキスト ファイルを生成できます。  この手順の詳細については[\/Fx \(挿入されたコードのマージ\)](../build/reference/fx-merge-injected-code.md) と [挿入されたコードのデバッグ](../Topic/How%20to:%20Debug%20Injected%20Code.md) を参照してください。  
+>  属性の使用方法には、ソース ファイルの内容は変更されません。 生成された属性のコードが表示されている間のみです、デバッグ セッションです。 さらに、プロジェクト内の各ソース ファイルの属性を置換した結果を表示するテキスト ファイルを生成できます。 この手順の詳細については、次を参照してください。 [/Fx (挿入されたコードのマージ)](../build/reference/fx-merge-injected-code.md)と[挿入されたコードのデバッグ](/visualstudio/debugger/how-to-debug-injected-code)です。  
   
- ほとんどの C\+\+ 構造体のように属性に適切な使用を定義する一連の特性があります。  このような属性コンテキスト参照し各属性に関するトピックの属性コンテキストの表で説明します。  たとえば[コクラス](../windows/coclass.md) の属性は. C\+\+ ソース ファイル内のどこにでも挿入できる [cpp\_quote](../Topic/cpp_quote.md) の属性に対して既存のクラスまたは構造体にのみ適用できません。  
+ ほとんどの C++ コンストラクトのような属性は、適切な使用方法を定義する一連の特性があります。 これし、呼ばれ属性のコンテキスト属性コンテキストのテーブルの各属性のリファレンス トピックで説明されています。 たとえば、[コクラス](../windows/coclass.md)属性のみ適用できます既存のクラスまたは構造体にはなく、 [cpp_quote](../windows/cpp-quote.md)属性は、C++ ソース ファイル内のどこにでも挿入できます。  
   
-## 参照  
- [Concepts](../windows/attributed-programming-concepts.md)
+## <a name="see-also"></a>参照  
+ [概念](../windows/attributed-programming-concepts.md)

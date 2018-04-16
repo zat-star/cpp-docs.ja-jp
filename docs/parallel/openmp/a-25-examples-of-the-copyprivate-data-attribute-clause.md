@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 7b1cb6a5-5691-4b95-b3ac-d7543ede6405
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d141ec66aa7ed0bac53c8242a87d08e092272eaa
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7cdf7598e00bab72966fe79454567b0a59dcbaae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="a25---examples-of-the-copyprivate-data-attribute-clause"></a>A.25 copyprivate データ属性句の例
 **例 1:** 、`copyprivate`句 ([セクション 2.7.2.8](../../parallel/openmp/2-7-2-8-copyprivate.md) [32] ページ) 他のスレッド内のプライベート変数のすべてのインスタンスに直接の 1 つのスレッドによって取得された値をブロードキャストするために使用できます。  

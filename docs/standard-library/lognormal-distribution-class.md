@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::lognormal_distribution
 - random/std::lognormal_distribution::reset
@@ -21,7 +22,8 @@ f1_keywords:
 - random/std::lognormal_distribution::param_type::s
 - random/std::lognormal_distribution::param_type::operator==
 - random/std::lognormal_distribution::param_type::operator!=
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::lognormal_distribution [C++]
 - std::lognormal_distribution [C++], reset
@@ -33,15 +35,17 @@ helpviewer_keywords:
 - std::lognormal_distribution [C++], param_type
 - std::lognormal_distribution [C++], param_type
 ms.assetid: f2d6a431-6c3a-4370-b12e-4adb4ddf6cc4
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 53bef5714a90958a36c74e6dea6656f02778e78e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 03eda021ea5ff1e1515cf58cfb19cb4f332a6938
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="lognormaldistribution-class"></a>lognormal_distribution クラス
 対数正規分布を生成します。  
@@ -87,7 +91,7 @@ public:
   
 プロパティ関数 `m()` および `s()` は、格納されている分布パラメーター *m* および *s* に対してそれぞれの値を返します。  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
 
 メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
   
@@ -97,7 +101,7 @@ public:
   
 分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-LogNormal 分布の詳細については、Wolfram MathWorld の記事「[LogNormal Distribution](http://go.microsoft.com/fwlink/LinkId=400917)」をご覧ください。  
+LogNormal 分布の詳細については、Wolfram MathWorld の記事「[LogNormal Distribution](http://go.microsoft.com/fwlink/p/?linkid=400917)」をご覧ください。  
   
 ## <a name="example"></a>例  
   
@@ -183,7 +187,7 @@ Distribution for 10 samples:
     10: 5.4406507912  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -242,6 +246,6 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<random>](../standard-library/random.md)
 

@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
-helpviewer_keywords: jump statements
+dev_langs:
+- C++
+helpviewer_keywords:
+- jump statements
 ms.assetid: 7d8ff59c-b1bd-4164-85e9-f508851ed62c
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0765fd9fac779893edafe745c73d44df3a2c1487
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 84fb6cf5b1710389bbe0f2065a3d8f46606656a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="jump-statements-c"></a>ジャンプ ステートメント (C++)
 C ++ のジャンプ ステートメントは、コントロールをローカルで即座に移動します。  
@@ -43,5 +48,5 @@ goto identifier;
   
 -   [goto ステートメント](../cpp/goto-statement-cpp.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ ステートメントの概要](../cpp/overview-of-cpp-statements.md)

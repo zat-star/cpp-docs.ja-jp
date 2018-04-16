@@ -1,12 +1,12 @@
 ---
-title: "メンバー アクセス |Microsoft ドキュメント"
-ms.custom: 
+title: メンバー アクセス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -22,12 +22,13 @@ caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 21cdc3de990a8b23645bb09f9f093fb0f2498254
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 18348c3d59457b7920f7902687f0220121c30e2c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="member-access"></a>メンバー アクセス
 メンバー アクセス演算子をオーバー ロードがクラス メンバーへのアクセスを制御できます (**->**)。 この演算子は、この使用方法では単項演算子と見なされ、オーバーロードされる演算子関数は、クラス メンバー関数である必要があります。 したがって、このような関数の宣言は次のとおりです。  
@@ -46,5 +47,5 @@ class-type *operator->()
   
  **.** メンバー アクセス演算子はオーバー ロードできません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [演算子のオーバーロード](../cpp/operator-overloading.md)

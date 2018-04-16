@@ -1,85 +1,78 @@
 ---
-title: "CDynamicParameterAccessor::GetParamString | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDynamicParameterAccessor.GetParamString"
-  - "GetParamString"
-  - "CDynamicParameterAccessor::GetParamString"
-  - "ATL.CDynamicParameterAccessor.GetParamString"
-  - "ATL::CDynamicParameterAccessor::GetParamString"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetParamString メソッド"
+title: "Cdynamicparameteraccessor::getparamstring |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CDynamicParameterAccessor.GetParamString
+- GetParamString
+- CDynamicParameterAccessor::GetParamString
+- ATL.CDynamicParameterAccessor.GetParamString
+- ATL::CDynamicParameterAccessor::GetParamString
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetParamString method
 ms.assetid: 078c2b1c-7072-47c1-a203-f47e75363f91
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 203732a5f8d7b1eea9d8047ccf7dc4cb67f83213
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CDynamicParameterAccessor::GetParamString
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-バッファーに格納され、指定したパラメーターの文字列データを取得します。  
+# <a name="cdynamicparameteraccessorgetparamstring"></a>CDynamicParameterAccessor::GetParamString
+バッファーに格納され、指定されたパラメーターの文字列データを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+bool GetParamString(DBORDINAL nParam,  
+  CSimpleStringA& strOutput) throw();bool GetParamString(DBORDINAL nParam,  
+  CSimpleStringW& strOutput) throw();bool GetParamString(DBORDINAL nParam,  
+  CHAR* pBuffer,  
+   size_t* pMaxLen) throw();bool GetParamString(DBORDINAL nParam,  
+  WCHAR* pBuffer,  
+   size_t* pMaxLen) throw();  
 ```  
   
-      bool GetParamString(  
-   DBORDINAL nParam,  
-   CSimpleStringA& strOutput  
-) throw( );  
-bool GetParamString(  
-   DBORDINAL nParam,  
-   CSimpleStringW& strOutput  
-) throw( );  
-bool GetParamString(  
-   DBORDINAL nParam,  
-   CHAR* pBuffer,  
-   size_t* pMaxLen  
-) throw( );  
-bool GetParamString(  
-   DBORDINAL nParam,  
-   WCHAR* pBuffer,  
-   size_t* pMaxLen  
-) throw( );  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nParam`  
- \[\]パラメーター数 \(1\) からのオフセット。  パラメーターは 0 戻り値のために予約されています。  パラメーターの数は、SQL またはストアド プロシージャ呼び出しの順序に基づいてパラメーターのインデックスです。  例については、" [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) を参照してください。  
+ [in]パラメーターの数 (1 からのオフセット)。 に対するパラメーター 0 は、戻り値に予約されています。 パラメーター数は、SQL またはストアド プロシージャの呼び出しでその順序に基づいて、パラメーターのインデックスです。 参照してください[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)例についてはします。  
   
  `strOutput`  
- \[\]**CSimpleStringA** \(ANSI\) または指定されたパラメーターの Unicode \(**CSimpleStringW**\) 文字列データ。  `CString`型のパラメーターを渡す必要があります \(例:  
+ [out]ANSI (**CSimpleStringA**) または Unicode (**CSimpleStringW**) 文字列型の指定されたパラメーターのデータ。 型のパラメーターを渡す必要があります`CString`、例を示します。  
   
- [!code-cpp[NVC_OLEDB_Consumer#9](../../data/oledb/codesnippet/CPP/cdynamicparameteraccessor-getparamstring_1.cpp)]  
+ [!code-cpp[NVC_OLEDB_Consumer#9](../../data/oledb/codesnippet/cpp/cdynamicparameteraccessor-getparamstring_1.cpp)]  
   
  `pBuffer`  
- \[\]**CHAR** \(ANSI\) または指定されたパラメーターの Unicode \(**WCHAR**\) 文字列データへのポインター。  
+ [out]ANSI へのポインター (**CHAR**) または Unicode (**WCHAR**) 文字列型の指定されたパラメーターのデータ。  
   
  `pMaxLen`  
- \[\] `pBuffer` によって指し示されたバッファーのサイズへのポインター \(終端の null 文字を含む\)。  
+ [out]バッファーのサイズへのポインターが指す`pBuffer`(文字を含む、終端の NULL)。  
   
-## 解説  
- 成功の戻り **true** または失敗の **false**。  
+## <a name="remarks"></a>コメント  
+ 返します**true**成功した場合または**false**エラー発生時にします。  
   
- `pBuffer` が NULL の場合、このメソッドはデータをコピーしません `pMaxLen` とサービスの **true** 指されたをメモリに必要なバッファーのサイズを設定します。  
+ 場合`pBuffer`が NULL の場合、このメソッドが指すメモリに必要なバッファー サイズを設定`pMaxLen`を返すと**true**データをコピーすることがなくです。  
   
- このメソッドは、文字列全体を含めるには、バッファー `pBuffer` が十分な大きさで失敗します。  
+ このメソッドが失敗バッファー`pBuffer`文字列全体を格納するのに十分な大きさではありません。  
   
- バッファーから文字列パラメーター データを取得するために `GetParamString` を使用します。  バッファーから文字列パラメーター データを取得するために [GetParam](../Topic/CDynamicParameterAccessor::GetParam.md) を使用します。  
+ 使用して`GetParamString`バッファーから文字列パラメーターのデータを取得します。 使用して[GetParam](../../data/oledb/cdynamicparameteraccessor-getparam.md)バッファーから文字列以外のパラメーターのデータを取得します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)

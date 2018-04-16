@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
-helpviewer_keywords: output streams
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- output streams
 ms.assetid: b49410e3-5caa-4153-9d0d-c4266408dc83
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c2a16e9125c0c121aea3905b6e20eba59ef1dc68
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ae5179ee14534ed0982f4b996c8f88f1cfc560a8
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="output-streams"></a>出力ストリーム
 出力ストリーム オブジェクトは、バイトのターゲットです。 3 つの最も重要な出力ストリーム クラスは `ostream`、`ofstream`、および `ostringstream` です。  
@@ -54,7 +59,7 @@ ms.lasthandoff: 10/24/2017
   
  [引数を使用しない独自マニピュレーターの作成](../standard-library/writing-your-own-manipulators-without-arguments.md)  
   
-## <a name="see-also"></a>関連項目 
+## <a name="see-also"></a>参照 
  [ofstream](../standard-library/basic-ofstream-class.md)   
  [ostringstream](../standard-library/basic-ostringstream-class.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)

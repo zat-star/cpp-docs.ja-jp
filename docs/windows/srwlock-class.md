@@ -1,78 +1,83 @@
 ---
-title: "SRWLock クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "corewrappers/Microsoft::WRL::Wrappers::SRWLock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SRWLock クラス"
+title: "SRWLock クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- corewrappers/Microsoft::WRL::Wrappers::SRWLock
+dev_langs:
+- C++
+helpviewer_keywords:
+- SRWLock class
 ms.assetid: 4fa250e3-5f29-4b06-ac24-61b6c04ade93
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 1325a089739b3820009aa239f56805264dbb6b83
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# SRWLock クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-スリム リーダー\/ライター ロックを表します。  
+# <a name="srwlock-class"></a>SRWLock クラス
+スリム リーダー/ライター ロックに相当します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class SRWLock;  
 ```  
   
-## 解説  
- スリム リーダーとライター ロックとはスレッド間でリソースへのアクセスを同期するために使用されます。  詳細については、MSDN ライブラリの [同期関数](http://msdn.microsoft.com/ja-jp/9b6359c2-0113-49b6-83d0-316ad95aba1b) を参照します。  
+## <a name="remarks"></a>コメント  
+ スリム リーダー/ライター ロックは、オブジェクトまたはリソースへのスレッド間でのアクセスを同期するために使用されます。 詳細については、次を参照してください。[同期関数](http://msdn.microsoft.com/en-us/9b6359c2-0113-49b6-83d0-316ad95aba1b)です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック typedef  
+### <a name="public-typedefs"></a>パブリック typedef  
   
 |||  
 |-|-|  
 |**SyncLockExclusive**|排他モードで取得した SRWLock オブジェクトのシノニムです。|  
 |**SyncLockShared**|共有モードで取得した SRWLock オブジェクトのシノニムです。|  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |[SRWLock::SRWLock コンストラクター](../windows/srwlock-srwlock-constructor.md)|SRWLock クラスの新しいインスタンスを初期化します。|  
-|[SRWLock::~SRWLock デストラクター](../windows/srwlock-tilde-srwlock-destructor.md)|Deinitializes SRWLock クラスのインスタンス。|  
+|[SRWLock::~SRWLock デストラクター](../windows/srwlock-tilde-srwlock-destructor.md)|SRWLock クラスのインスタンスの初期化を解除します。|  
   
-### パブリック メソッド  
-  
-|名前|説明|  
-|--------|--------|  
-|[SRWLock::LockExclusive メソッド](../windows/srwlock-lockexclusive-method.md)|排他モードの SRWLock オブジェクトを取得します。|  
-|[SRWLock::LockShared メソッド](../windows/srwlock-lockshared-method.md)|共有モードの SRWLock オブジェクトを取得します。|  
-|[SRWLock::TryLockExclusive メソッド](../windows/srwlock-trylockexclusive-method.md)|SRWLock の現在のディレクトリまたは指定オブジェクトの排他モードの SRWLock オブジェクトを取得しようとします。|  
-|[SRWLock::TryLockShared メソッド](../windows/srwlock-trylockshared-method.md)|SRWLock の現在のディレクトリまたは指定オブジェクトの共有モードの SRWLock オブジェクトを取得しようとします。|  
-  
-### プロテクト データ メンバー  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[SRWLock::SRWLock\_ データ メンバー](../windows/srwlock-srwlock-data-member.md)|SRWLock の現在のオブジェクトの基になるロック変数も含まれます。|  
+|----------|-----------------|  
+|[SRWLock::LockExclusive メソッド](../windows/srwlock-lockexclusive-method.md)|排他モードで SRWLock オブジェクトを取得します。|  
+|[SRWLock::LockShared メソッド](../windows/srwlock-lockshared-method.md)|共有モードで SRWLock オブジェクトを取得します。|  
+|[SRWLock::TryLockExclusive メソッド](../windows/srwlock-trylockexclusive-method.md)|現在または指定した SRWLock オブジェクトの排他モードで SRWLock オブジェクトを取得しようとしています。|  
+|[SRWLock::TryLockShared メソッド](../windows/srwlock-trylockshared-method.md)|現在または指定した SRWLock オブジェクトの共有モードで SRWLock オブジェクトを取得しようとしています。|  
   
-## 継承階層  
+### <a name="protected-data-member"></a>プロテクト データ メンバー  
+  
+|name|説明|  
+|----------|-----------------|  
+|[SRWLock::SRWLock_ データ メンバー](../windows/srwlock-srwlock-data-member.md)|現在の SRWLock オブジェクトの基になるロック変数が含まれています。|  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `SRWLock`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
- **名前空間:** Microsoft::WRL::Wrappers  
+ **Namespace:** Microsoft::WRL::Wrappers  
   
-## 参照  
- [Microsoft::WRL::Wrappers 名前空間](../Topic/Microsoft::WRL::Wrappers%20Namespace.md)
+## <a name="see-also"></a>参照  
+ [Microsoft::WRL::Wrappers 名前空間](../windows/microsoft-wrl-wrappers-namespace.md)

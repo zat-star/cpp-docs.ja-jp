@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3059
 ms.assetid: 57220324-8286-4cab-a1ab-45385eb1eae0
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a596a1b570b7966a02ee6d102209918c260f4c3e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: e51938cbea3b2ab1e65cf97dc515bb7f420cf272
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3059"></a>コンパイラ エラー C3059
 'var' : 'threadprivate' シンボルは 'clause' 句の中で使用することはできません  
@@ -48,7 +49,7 @@ int main() {
 }  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C3059b.cpp  

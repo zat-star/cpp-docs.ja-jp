@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - fdopen
 apilocation:
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - fdopen function
 ms.assetid: 3243c1d2-2826-4d2d-bfa2-a2da45f9cc7a
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f5034a5bf5bfa339a2a355016123b33e747108a1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 31dce1dfb23e0ede872e1defb600db65c43a6b82
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fdopen"></a>fdopen
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_fdopen](../../c-runtime-library/reference/fdopen-wfdopen.md) を使用してください。

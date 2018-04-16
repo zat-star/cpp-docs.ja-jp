@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -37,7 +38,8 @@ f1_keywords:
 - AFX/CFile::hFileNull
 - AFX/CFile::m_hFile
 - AFX/CFile::m_pTM
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CFile [MFC], CFile
 - CFile [MFC], Abort
@@ -67,15 +69,17 @@ helpviewer_keywords:
 - CFile [MFC], m_hFile
 - CFile [MFC], m_pTM
 ms.assetid: b2eb5757-d499-4e67-b044-dd7d1abaa0f8
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4db8a7ee97c414a7775df393d419c7d12d61cdbf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1f7a2b0e1dd95b460d6b6007e79378bc69f1b4ce
+ms.sourcegitcommit: 2aeb507a426fc7881ea59115b1d5139c0a30ba91
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="cfile-class"></a>CFile クラス
 ファイルに関する MFC の基底クラスです。  
@@ -137,7 +141,7 @@ class CFile : public CObject
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CFile::m_pTM](#m_ptm)|ポインター`CAtlTransactionManager`オブジェクト。|  
   
@@ -157,7 +161,7 @@ class CFile : public CObject
   
  `CFile`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afx.h  
   
 ##  <a name="abort"></a>解放  
@@ -183,7 +187,7 @@ virtual void Abort();
 ```  
 CFile();  
 CFile(CAtlTransactionManager* pTM);  
-  CFile(HANDLE hFile);
+CFile(HANDLE hFile);
 
  
 CFile(
@@ -557,10 +561,10 @@ virtual BOOL Open(
   
 |`pError`|エラーが発生しました|戻り値|CFileException コンテンツ|  
 |--------------|------------------------|------------------|----------------------------|  
-|**NULL**|いいえ|**場合は TRUE。**|適用なし|  
-|ポインター`CFileException`|いいえ|**場合は TRUE。**|変更なし|  
-|**NULL**|はい|**FALSE**|適用なし|  
-|ポインター`CFileException`|はい|**FALSE**|エラーを記述する初期化|  
+|**NULL**|×|**場合は TRUE。**|N/A|  
+|ポインター`CFileException`|×|**場合は TRUE。**|変更なし|  
+|**NULL**|[はい]|**FALSE**|N/A|  
+|ポインター`CFileException`|[はい]|**FALSE**|エラーを記述する初期化|  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCFiles#13](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_9.cpp)]  
@@ -670,7 +674,7 @@ UINT nFrom);
 ### <a name="remarks"></a>コメント  
  次の表に、可能な値、`nFrom`パラメーター。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |`CFile::begin`|ファイルの先頭からのシークします。|  
 |`CFile::current`|シーク ファイル ポインターの現在の場所からします。|  
@@ -829,7 +833,7 @@ virtual void Write(
   
  さらに、例を参照[ほか](#cfile)と[CFile::Open](#open)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル DRAWCLI](../../visual-cpp-samples.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

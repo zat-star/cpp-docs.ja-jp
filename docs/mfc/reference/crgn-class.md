@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -30,7 +31,8 @@ f1_keywords:
 - AFXWIN/CRgn::PtInRegion
 - AFXWIN/CRgn::RectInRegion
 - AFXWIN/CRgn::SetRectRgn
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CRgn [MFC], CRgn
 - CRgn [MFC], CombineRgn
@@ -53,15 +55,17 @@ helpviewer_keywords:
 - CRgn [MFC], RectInRegion
 - CRgn [MFC], SetRectRgn
 ms.assetid: d904da84-76aa-481e-8780-b09485f49e64
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 57bf810ed1e44ee04b9018da3987c0232fca5e28
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6d5556db19d7f0ec92f915dda49dfeb24390ab70
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crgn-class"></a>CRgn クラス
 Windows のグラフィック デバイス インターフェイス (GDI) の領域をカプセル化したものです。  
@@ -124,7 +128,7 @@ class CRgn : public CGdiObject
   
  `CRgn`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="combinergn"></a>CRgn::CombineRgn  
@@ -764,7 +768,7 @@ void SetRectRgn(LPCRECT lpRect);
   
  代わりにこの関数を使用して、`CreateRectRgn`ローカル メモリ マネージャーへの呼び出しを避けるためにメンバー関数。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
 

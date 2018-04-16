@@ -4,26 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: e7630a15-2978-4dbe-a29b-3a46371a0151
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cbcb5cc6c4b01f3cbf996431435f42a7b034d002
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 684067eae668398e71ca4ace0cc136e3210e0dbf
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="2726-reduction"></a>2.7.2.6 reduction
 
 この句に表示されるスカラー変数の削減を実行する*変数一覧*、演算子で*op*です。 構文、`reduction`句を次に示します。
 
-> 削減 (*op*:*変数一覧*)
+> reduction(*op*: *variable-list*)
 
 パフォーマンスが低下は、通常、次の種類のいずれかのステートメントの指定します。
 
@@ -35,22 +39,22 @@ ms.lasthandoff: 10/24/2017
 > *x*--  
 > --*x*  
 
-ここで、
+それぞれの文字について以下に説明します。
 
 *x*  
 指定されたリダクション変数のいずれか、`list`です。
 
-*変数の一覧*  
+*variable-list*  
 スカラー リダクション変数のコンマ区切りの一覧です。
 
 *expr*  
 参照しないスカラーの型を持つ式*x*です。
 
 *op*  
-オーバー ロードされた演算子ではなくのいずれかの +、(& a) #42;、-、 &amp;、^、&#124;以外の場合は、 &amp; &amp;、または (& a) #124; &#124;。
+オーバー ロードされた演算子ではなくのいずれかが、+、 &#42;、-、 &amp;、^、 &#124;、 &amp; &amp;、または&#124;&#124;です。
 
 *binop*  
-オーバー ロードされた演算子ではなくのいずれかの +, &#42;、-、 &amp;、^、または (& a) #124;。
+オーバー ロードされた演算子ではなくのいずれかが、+、 &#42;、-、 &amp;、^、または&#124;です。
 
 次の例に示します、`reduction`句。  
   
@@ -65,7 +69,7 @@ for (i=0; i<n; i++) {
   
 例のように、演算子を関数呼び出しの内部隠れることがあります。 ユーザーは、演算子がで指定されているように注意する必要があります、`reduction`句は、リダクション演算に一致します。
 
-右オペランド、&#124; &#124;です。演算子を持たない副作用この例を使用でき、これらが注意を払って使用する必要があります。 このコンテキストで、ループのシーケンシャル実行中に発生するされませんが保証される副作用に並列実行中に発生します。 この違いは、イテレーションの実行の順序が不確定であるために発生します。
+右オペランド、 &#124; &#124;演算子この例では副作用がないと、これらが許可されるが、注意を払って使用する必要があります。 このコンテキストで、ループのシーケンシャル実行中に発生するされませんが保証される副作用に並列実行中に発生します。 この違いは、イテレーションの実行の順序が不確定であるために発生します。
 
 演算子では使用の削減のため、コンパイラで使用するプライベート変数の初期値を決定する終了演算子が決定されます。 演算子を明示的に指定すると、リダクション ステートメントをコンス トラクターの構文の範囲外に置くことができます。 任意の数の`reduction`、ディレクティブの句を指定することがありますが、変数は、多くても 1 つに含めることは`reduction`そのディレクティブの句。
 

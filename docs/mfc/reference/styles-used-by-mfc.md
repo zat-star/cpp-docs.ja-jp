@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.mfc.styles
-dev_langs: C++
+f1_keywords:
+- vc.mfc.styles
+dev_langs:
+- C++
 helpviewer_keywords:
 - button objects (CButton), button styles
 - button styles [MFC]
@@ -202,15 +205,17 @@ helpviewer_keywords:
 - WS_EX_TRANSPARENT constant [MFC]
 - WS_EX_WINDOWEDGE constant [MFC]
 ms.assetid: d3b9af37-31b5-4c97-a8ad-189fd724b04c
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4a06775fa50d66b82a9684c68e9aad003e619fa0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9ed12f793047aa4a97a31ca0f40c62896c46a358
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="styles-used-by-mfc"></a>MFC で使用するスタイル  
   
@@ -534,7 +539,7 @@ MFC では、次のコンボ ボックス スタイルを使用できます。 W
 |`WS_EX_TRANSPARENT`|このスタイルで作成したウィンドウが透明にすることを指定します。 つまり、このウィンドウより奥にあるすべてのウィンドウは、このウィンドウによって隠されることはありません。 このスタイルで作成したウィンドウは、自らより奥にあるすべての兄弟ウィンドウが更新された後でのみ、`WM_PAINT` メッセージを受信します。|  
 |`WS_EX_WINDOWEDGE`|ウィンドウが発生したエッジの罫線を持つことを指定します。|  
     
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 [MFC クラスの概要](../../mfc/class-library-overview.md)  
 [Cwnd::create](../../mfc/reference/cwnd-class.md#create)  

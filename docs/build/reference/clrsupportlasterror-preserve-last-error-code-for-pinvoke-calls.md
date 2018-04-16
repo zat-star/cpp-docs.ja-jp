@@ -1,27 +1,32 @@
 ---
-title: "-CLRSUPPORTLASTERROR (Preserve 最終エラー コードの PInvoke 呼び出し) |Microsoft ドキュメント"
-ms.custom: 
+title: -CLRSUPPORTLASTERROR (Preserve 最終エラー コードの PInvoke 呼び出し) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: /CLRSUPPORTLASTERROR
-dev_langs: C++
+f1_keywords:
+- /CLRSUPPORTLASTERROR
+dev_langs:
+- C++
 helpviewer_keywords:
 - /CLRSUPPORTLASTERROR linker option
 - -CLRSUPPORTLASTERROR linker option
 ms.assetid: b7057990-4154-4b1d-9fc9-6236f7be7575
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 23f8215e94139417c6bd098b669904783fb88b36
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e082637e25832c5c5036910f7b67aff53d867bdb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="clrsupportlasterror-preserve-last-error-code-for-pinvoke-calls"></a>/CLRSUPPORTLASTERROR (PInvoke 呼び出しの最終エラー コードの保持)
 **/CLRSUPPORTLASTERROR**、既定でオンになっている、DLL 内のコードからネイティブ関数を呼び出すことができる P/invoke 機構を通じて呼び出された関数の最後のエラー コードを保持してコンパイルした**/clr**です。  
@@ -155,6 +160,6 @@ GetLastError for application call failed (127).
 GetLastError for system call succeeded (183).  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

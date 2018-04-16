@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _utime64
 - _utime
@@ -67,30 +67,17 @@ helpviewer_keywords:
 - tutime64 function
 - tutime32 function
 ms.assetid: 8d482d40-19b9-4591-bfee-5d7f601d1a9e
-caps.latest.revision: 16
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 80836179c63da2f62384abd07fe2a4970d9bce55
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f94c67fe75f5675192dbd0f306d8eef0aace70f5
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="utime-utime32-utime64-wutime-wutime32-wutime64"></a>_utime、_utime32、_utime64、_wutime、_wutime32、_wutime64
 ファイルの変更時刻を設定します。  
@@ -146,7 +133,7 @@ int _wutime64(
  `ENOENT`  
  パスまたはファイル名が見つからない  
   
- リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
  変更日が 1970 年 1 月 1 日午前 0 時以降で、使用する関数の終了日より前の場合、ファイルの日付を変更できます。 `_utime` と `_wutime` は 64 ビットの時刻値を使用するため、終了日は UTC の 3000 年 12 月 31 日 23 時 59 分 59 秒になります。 以前の動作を強制するよう `_USE_32BIT_TIME_T` が定義されている場合、終了日は UTC の 2038 年 1 月 18 日 23 時 59 分 59 秒になります。 `_utime32` または `_wutime32` は、`_USE_32BIT_TIME_T` の定義内容に関係なく 32 ビットの時刻型を使用し、常に早いほうの終了日を使用します。 `_utime64` または `_wutime64` は常に 64 ビットの時刻型を使用するため、これらの関数では遅いほうの終了日がサポートされます。  
   
@@ -175,15 +162,15 @@ int _wutime64(
 |`_tutime32`|`_utime32`|`_utime32`|`_wutime32`|  
 |`_tutime64`|`_utime64`|`_utime64`|`_wutime64`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|省略可能なヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
 |-------------|----------------------|----------------------|  
 |`_utime`、`_utime32`、`_utime64`|\<sys/utime.h>|\<errno.h>|  
 |`_utime64`|\<sys/utime.h>|\<errno.h>|  
 |`_wutime`|\<utime.h> または \<wchar.h>|\<errno.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  このプログラムは `_utime` を使用して、ファイル変更時刻を現在の時刻に設定します。  
@@ -255,7 +242,7 @@ File time modified
                0 Dir(s)  20,742,955,008 bytes free  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
  [ctime、_ctime32、_ctime64、_wctime、_wctime32、_wctime64](../../c-runtime-library/reference/ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)   

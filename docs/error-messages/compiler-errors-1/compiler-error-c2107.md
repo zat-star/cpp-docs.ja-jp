@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2107
-dev_langs: C++
-helpviewer_keywords: C2107
+f1_keywords:
+- C2107
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2107
 ms.assetid: 2866a121-884e-4bb5-8613-36de5817000e
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 72ae821ce05d978f2f520b86f5a63b2e4569aabc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d6123da392cc6437593b0805c5bc6e94f450e282
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2107"></a>コンパイラ エラー C2107
 無効なインデックスです、間接参照は許可されていません  

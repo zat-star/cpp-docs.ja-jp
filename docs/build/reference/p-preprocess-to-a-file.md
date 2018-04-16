@@ -1,72 +1,76 @@
 ---
-title: "/P (プリプロセス出力のファイルへの書き込み) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLCompilerTool.GeneratePreprocessedFile"
-  - "/p"
-  - "VC.Project.VCCLWCECompilerTool.GeneratePreprocessedFile"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/P コンパイラ オプション [C++]"
-  - "出力ファイル, プリプロセッサ"
-  - "P コンパイラ オプション [C++]"
-  - "-P コンパイラ オプション [C++]"
-  - "プリプロセス (出力ファイルを)"
+title: "-P (ファイルへのプリプロセス) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLCompilerTool.GeneratePreprocessedFile
+- /p
+- VC.Project.VCCLWCECompilerTool.GeneratePreprocessedFile
+dev_langs:
+- C++
+helpviewer_keywords:
+- /P compiler option [C++]
+- -P compiler option [C++]
+- P compiler option [C++]
+- output files, preprocessor
+- preprocessing output files
 ms.assetid: 123ee54f-8219-4a6f-9876-4227023d83fc
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0f4de2f19820a846197806e0a24ddc213dd636c4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /P (プリプロセス出力のファイルへの書き込み)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-C と C\+\+ のソース ファイルに対してプリプロセスが実行され、プリプロセス出力がファイルに書き込まれます。  
+# <a name="p-preprocess-to-a-file"></a>/P (プリプロセス出力のファイルへの書き込み)
+C および C++ ソース ファイルを前処理し、ファイルをプリプロセス済みの出力を書き込みます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /P  
 ```  
   
-## 解説  
- ファイル名は、ソース ファイルの基本名に拡張子 .i が付加されます。  プロセスでは、すべてのプリプロセッサ ディレクティブが実行され、マクロ拡張が実行されて、コメントが削除されます。  プリプロセスの出力のコメントを保持するには、**\/P** オプションに加えて、[\/C \(プリプロセス時のコメントの保持\)](../../build/reference/c-preserve-comments-during-preprocessing.md) オプションも使用します。  
+## <a name="remarks"></a>コメント  
+ ファイルは、ソース ファイルと .i 拡張機能として同じ基本名にします。 プロセスでは、すべてのプリプロセッサ ディレクティブが実行されます。、マクロの展開が実行されて、およびコメントが削除されます。 プリプロセス済みの出力内のコメントを保持するために使用して、 [(保持コメント中に前処理)/C](../../build/reference/c-preserve-comments-during-preprocessing.md)オプションと共に**/P**です。  
   
- **\/P** オプションを使用すると、出力される各インクルード ファイルの先頭と末尾に `#line` ディレクティブが挿入されます。また、条件付きコンパイルを指定するプリプロセッサ ディレクティブがある場合は、そのディレクティブで削除される行の前後にも挿入されます。  これらのディレクティブがあると、プリプロセス済みファイルの行番号が付け直されます。  その結果、処理の後半で生成されたエラーは、プリプロセス済みファイルの行番号ではなく、元のソース ファイルの行番号を参照します。  `#line` ディレクティブが生成されないようにするには、**\/P** に加えて [\/EP \(\#line ディレクティブを挿入しない stdout へのプリプロセス\)](../../build/reference/ep-preprocess-to-stdout-without-hash-line-directives.md) を使用します。  
+ **/P**追加`#line`ディレクティブを先頭と末尾各インクルード ファイルの条件付きコンパイル用のプリプロセッサ ディレクティブによって削除された行に出力します。 これらのディレクティブは、前処理済みファイルの行を再設定します。 その結果、処理の後のステージ中に生成されたエラーは、前処理済みファイル内の行ではなく、元のソース ファイルの行番号を参照してください。 生成を抑制する`#line`、ディレクティブを使用して[/EP (#line ディレクティブしない stdout へのプリプロセス)](../../build/reference/ep-preprocess-to-stdout-without-hash-line-directives.md)だけでなく**/P**です。  
   
- **\/P** オプションはコンパイルを中止します。  [\/Fo \(オブジェクト ファイルの名前の指定\)](../../build/reference/fo-object-file-name.md) を指定した場合でも .obj ファイルは生成されません。  プリプロセス済みファイルをコンパイルに再送信する必要があります。  また **\/P** は、**\/FA**、**\/Fa**、および **\/Fm** の各オプションによる出力ファイルも出力しません。  詳細については、「[\/FA、\/Fa \(リスティング ファイル\)](../../build/reference/fa-fa-listing-file.md)」および「[\/Fm \(マップ ファイルの名前の指定\)](../Topic/-Fm%20\(Name%20Mapfile\).md)」を参照してください。  
+ **/P**オプションには、コンパイルが行われません。 使用する場合でも、.obj ファイルが生成されません[/Fo (オブジェクト ファイル名)](../../build/reference/fo-object-file-name.md)です。 コンパイルのプリプロセス済みのファイルを再送信する必要があります。 **/P**も抑制の出力ファイル、 **/FA**、 **/Fa**、および**/Fm**オプション。 詳細については、次を参照してください。 [/FA、/Fa (ファイルを一覧表示する)](../../build/reference/fa-fa-listing-file.md)と[/Fm (マップ ファイルの名前)](../../build/reference/fm-name-mapfile.md)です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[プリプロセッサ\]** プロパティ ページをクリックします。  
+3.  クリックして、**プリプロセッサ**プロパティ ページ。  
   
-4.  **\[プリプロセス ファイルの生成\]** プロパティを変更します。  
+4.  変更、**プリプロセス ファイルの生成**プロパティです。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.GeneratePreprocessedFile%2A>」を参照してください。  
   
-## 使用例  
- 次のコマンド ラインは、`ADD.C` をプリプロセスし、コメントを保持し、`#line` ディレクティブを挿入し、結果を `ADD.I` というファイルに書き込みます。  
+## <a name="example"></a>例  
+ 次のコマンドラインを前処理`ADD.C`、コメントを保持、追加`#line`ディレクティブは、その結果をファイルに書き込みます`ADD.I`:  
   
 ```  
 CL /P /C ADD.C  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
- [\/Fi \(出力ファイル名のプリプロセス\)](../../build/reference/fi-preprocess-output-file-name.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
+ [/Fi (出力ファイル名のプリプロセス)](../../build/reference/fi-preprocess-output-file-name.md)

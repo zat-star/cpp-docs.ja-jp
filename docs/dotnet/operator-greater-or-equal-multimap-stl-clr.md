@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::multimap::operator>=
-dev_langs: C++
-helpviewer_keywords: operator>= member [STL/CLR]
+f1_keywords:
+- cliext::multimap::operator>=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator>= member [STL/CLR]
 ms.assetid: a9e2451b-476f-48ad-a305-50798c2991f2
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 60b35585caa5957cc2973acd60c010abf1938a16
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 407383c3df679dff35712baf03171994ecc9b79c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="operatorgt-multimap-stlclr"></a>演算子&gt;= (multimap) (STL/CLR)
 リストよりも大きいまたは等しい比較します。  
@@ -90,12 +97,12 @@ int main()
 [a b c] >= [a b d] is False  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
  [演算子 = = (multimap) (STL/CLR)](../dotnet/operator-equality-multimap-stl-clr.md)   
  [operator! = (multimap) (STL/CLR)](../dotnet/operator-inequality-multimap-stl-clr.md)   

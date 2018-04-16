@@ -1,5 +1,5 @@
 ---
-title: "fesetenv |Microsoft ドキュメント"
+title: fesetenv | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -8,8 +8,9 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: fesetenv
+ms.topic: reference
+apiname:
+- fesetenv
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -26,18 +27,22 @@ apitype: DLLExport
 f1_keywords:
 - fesetenv
 - fenv/fesetenv
-dev_langs: C++
-helpviewer_keywords: fesetenv function
+dev_langs:
+- C++
+helpviewer_keywords:
+- fesetenv function
 ms.assetid: ffc64fff-8ea7-4d59-9e04-ff96ef8cd012
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 98ceb7a1be89284f02de2f1f2ed42e6e3198d885
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c2717c0fee2582cac3c9013f3f49ff37744cbde9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fesetenv"></a>fesetenv
 現在の浮動小数点環境を設定します。  
@@ -62,17 +67,17 @@ int fesetenv(
   
  この関数を呼び出すと、`penv` オブジェクト内にある例外状態フラグが設定されますが、その例外は発生しません。  
   
- この関数を使用するには、呼び出しの前に `#pragma fenv_access(on)` ディレクティブを使用してアクセスを妨げる可能性のある浮動小数点の最適化をオフにする必要があります。 詳細については、「[fenv_access](../../preprocessor/fenv-access.md)」を参照してください。  
+ この関数を使用するには、呼び出しの前に `#pragma fenv_access(on)` ディレクティブを使用してアクセスを妨げる可能性のある浮動小数点の最適化をオフにする必要があります。 詳細については、「 [fenv_access](../../preprocessor/fenv-access.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
 |`fesetenv`|\<fenv.h>|\<cfenv>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [fegetenv](../../c-runtime-library/reference/fegetenv1.md)   
  [feclearexcept](../../c-runtime-library/reference/feclearexcept1.md)   

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Create method [MFC], ActiveX controls
 - CreateControl method [MFC]
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - ActiveX control containers [MFC], non-dialog containers
 - ActiveX control containers [MFC], inserting controls
 ms.assetid: 46f195b0-b8ca-4409-8cca-fbfaf2c9ab9f
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1e773085167266cd413b4d2279863d2b68c52bed
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c380d0a525c2f026054ebae1812450c4d4634c1e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="activex-control-containers-using-controls-in-a-non-dialog-container"></a>ActiveX コントロール コンテナー : ダイアログ ベースではないコンテナーでのコントロールの使用
 一部の SDI などのアプリケーションまたは MDI アプリケーションでは、アプリケーションのウィンドウにコントロールを埋め込むされます。 **作成**、Visual C によって挿入された、ラッパー クラスのメンバー関数はダイアログ ボックスがなくても、コントロールのインスタンスを動的に作成できます。  
@@ -70,6 +74,6 @@ ms.lasthandoff: 10/24/2017
   
 5.  プロジェクトをリビルドします。 Circ コントロールは、アプリケーションのビューが作成されるたびに動的に作成されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ActiveX コントロール コンテナー](../mfc/activex-control-containers.md)
 

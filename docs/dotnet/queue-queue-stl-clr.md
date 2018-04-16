@@ -1,32 +1,37 @@
 ---
-title: "queue::queue (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::queue::queue"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "queue メンバー [STL/CLR]"
+title: queue::queue (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::queue::queue
+dev_langs:
+- C++
+helpviewer_keywords:
+- queue member [STL/CLR]
 ms.assetid: 6106c07f-d5eb-4f0b-82df-ee4e2e751047
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d6c4b24ad40bf19b7a20aafcfa2d02fb6490fed1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# queue::queue (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンテナーのアダプター オブジェクトを構築します。  
+# <a name="queuequeue-stlclr"></a>queue::queue (STL/CLR)
+コンテナー アダプター オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 queue();  
@@ -35,39 +40,39 @@ queue(queue<Value, Container>^ right);
 explicit queue(container_type% wrapped);  
 ```  
   
-#### パラメーター  
- \[right\]  
+#### <a name="parameters"></a>パラメーター  
+ 右  
  コピーするオブジェクト。  
   
- ラップされる  
- 使用するラップされたコンテナー。  
+ ラップされました。  
+ 使用するラップされたコンテナーです。  
   
-## 解説  
- 次のコンストラクターを見てください。  
+## <a name="remarks"></a>コメント  
+ : コンス トラクター  
   
  `queue();`  
   
- 空のラップされたコンテナーを作成します。  空の最初の被制御シーケンスを指定する場合に使用します。  
+ 空のラップされたコンテナーを作成します。 空の初期被制御シーケンスの指定に使用するとします。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `queue(queue<Value, Container>% right);`  
   
- `right.get_container()`のコピーであるラップされたコンテナーを作成します。  キュー `right`オブジェクトによって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ ラップされたコンテナーのコピーを作成する`right.get_container()`です。 キュー オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `queue(queue<Value, Container>^ right);`  
   
- `right->get_container()`のコピーであるラップされたコンテナーを作成します。  キュー `*right`オブジェクトによって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ ラップされたコンテナーのコピーを作成する`right->get_container()`です。 キュー オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`*right`です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `explicit queue(container_type wrapped);`  
   
- ラップされたコンテナーとして既存のコンテナー `wrapped` を使用します。  既存のコンテナーからキューを構築するときに使用します。  
+ 既存のコンテナーを使用して`wrapped`ラップのコンテナーとして。 既存のコンテナーからキューを構築するために使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_queue_construct.cpp   
@@ -107,17 +112,20 @@ int main()
   
 ```  
   
-  **size\(\) \= 0**  
- **X x x x X**  
- **X x x x X**  
- **X x x x X**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+size() = 0  
+ x x x x x  
+ x x x x x  
+ x x x x x  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [queue::assign](../dotnet/queue-assign-stl-clr.md)   
- [queue::generic\_container](../dotnet/queue-generic-container-stl-clr.md)   
- [queue::operator\=](../dotnet/queue-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [queue::assign (STL/CLR)](../dotnet/queue-assign-stl-clr.md)   
+ [queue::generic_container (STL/CLR)](../dotnet/queue-generic-container-stl-clr.md)   
+ [queue::operator= (STL/CLR)](../dotnet/queue-operator-assign-stl-clr.md)

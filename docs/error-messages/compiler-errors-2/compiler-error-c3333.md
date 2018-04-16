@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3333
 ms.assetid: 51693978-fba6-435a-a696-74735cc875de
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: adfe433496ff5794dd532e777c3a04250898d35f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 351c9669f9f4f7fbbc7b09d48a517b67a07b679c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3333"></a>コンパイラ エラー C3333
 'type library': 壊れたタイプ ライブラリは #import できません  

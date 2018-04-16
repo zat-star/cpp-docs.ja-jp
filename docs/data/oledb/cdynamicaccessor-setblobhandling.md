@@ -4,38 +4,41 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CDynamicAccessor::SetBlobHandling
 - CDynamicAccessor.SetBlobHandling
 - ATL::CDynamicAccessor::SetBlobHandling
 - SetBlobHandling
 - ATL.CDynamicAccessor.SetBlobHandling
-dev_langs: C++
-helpviewer_keywords: SetBlobHandling method
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetBlobHandling method
 ms.assetid: fa8b0bb3-a21b-4d64-aeef-e79bf61d079c
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c6117d0ebc2e41ee70900d17dd9a4804c232a070
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 21a877cb3aa3d6ff96521348350857c141b8e7b0
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cdynamicaccessorsetblobhandling"></a>CDynamicAccessor::SetBlobHandling
 BLOB の現在の行の値の処理を設定します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      bool SetBlobHandling(  
-   DBBLOBHANDLINGENUM eBlobHandling   
-);  
+```cpp
+      bool SetBlobHandling(DBBLOBHANDLINGENUM eBlobHandling);  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -53,8 +56,8 @@ BLOB の現在の行の値の処理を設定します。
   
  コンス トラクター メソッド[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) BLOB 処理する値を設定**DBBLOBHANDLING_DEFAULT**です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)

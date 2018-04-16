@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3470
 ms.assetid: 170c7a9d-214d-41b1-8f15-d4a4fc38aaa5
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2e5aa00f0dc70220d5706d6843b94562430d7249
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 7ae5a2d2d95c3ab6a521493874b416c87d4e5a9b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3470"></a>コンパイラ エラー C3470
 'type' : クラスには、インデクサー (既定のインデックス付きプロパティ) および演算子 [] を同時に指定することはできません  

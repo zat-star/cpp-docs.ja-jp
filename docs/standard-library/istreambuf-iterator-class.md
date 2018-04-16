@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - streambuf/std::istreambuf_iterator
 - iterator/std::istreambuf_iterator::char_type
@@ -15,7 +16,8 @@ f1_keywords:
 - iterator/std::istreambuf_iterator::streambuf_type
 - iterator/std::istreambuf_iterator::traits_type
 - iterator/std::istreambuf_iterator::equal
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::istreambuf_iterator [C++]
 - std::istreambuf_iterator [C++], char_type
@@ -25,15 +27,17 @@ helpviewer_keywords:
 - std::istreambuf_iterator [C++], traits_type
 - std::istreambuf_iterator [C++], equal
 ms.assetid: 39002da2-61a6-48a5-9d0c-5df8271f6038
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 280e7c43f4541e393a828d7eeed34e72f82a0689
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dc69f36b5dae84775025b2e7e8086321dfe55fd5
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="istreambufiterator-class"></a>istreambuf_iterator クラス
 istreambuf_iterator テンプレート クラスは、入力ストリーム バッファーから文字要素を抽出する入力反復子オブジェクトを表します。これには、`basic_streambuf`\< **CharType**, **Traits**> へのポインター型の、格納されたオブジェクトを介してアクセスします。  
@@ -88,7 +92,7 @@ class istreambuf_iterator
 |[operator++](#op_add_add)|入力ストリームから次の文字を返すか、オブジェクトをインクリメントする前にオブジェクトをコピーして、そのコピーを返します。|  
 |[operator->](#operator-_gt)|メンバーの値 (存在する場合) を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iterator>  
   
  **名前空間:** std  
@@ -419,7 +423,7 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [iterator 構造体](../standard-library/iterator-struct.md)   
  [\<iterator>](../standard-library/iterator.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::map::equal_range
-dev_langs: C++
-helpviewer_keywords: equal_range member [STL/CLR]
+f1_keywords:
+- cliext::map::equal_range
+dev_langs:
+- C++
+helpviewer_keywords:
+- equal_range member [STL/CLR]
 ms.assetid: c0d7409c-344d-4102-99c4-aeab8643a073
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 13500bbd5842460dff5cf071bd626555bf1c5cc9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 665475d63129bab1c1413d51f6324aba52806fc3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mapequalrange-stlclr"></a>map::equal_range (STL/CLR)
 指定したキーに一致する範囲を検索します。  
@@ -80,12 +87,12 @@ equal_range(L'x') empty = True
  [b 2]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
  [map::count (STL/CLR)](../dotnet/map-count-stl-clr.md)   
  [map::find (STL/CLR)](../dotnet/map-find-stl-clr.md)   

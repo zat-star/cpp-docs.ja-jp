@@ -1,33 +1,37 @@
 ---
-title: "コマンド ライン エラー D8037 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "D8037"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "D8037"
+title: "コマンド ライン エラー D8037 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- D8037
+dev_langs:
+- C++
+helpviewer_keywords:
+- D8037
 ms.assetid: acddaaa0-bd84-426f-a37b-8f680b379c9d
-caps.latest.revision: 3
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6cc19633528cddfdd18f8cb8bb17b150432462c4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コマンド ライン エラー D8037
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-一時 IL ファイルを作成できません。古い IL ファイルの一時ディレクトリを消去してください  
+# <a name="command-line-error-d8037"></a>コマンド ライン エラー D8037
+一時 il ファイルを作成することはできません。古い il ファイルのクリーンアップの一時ディレクトリ  
   
- コンパイラの一時的な中間ファイルを作成するための領域が不足しています。  このエラーを解決するには、**TMP** 環境変数によって指定されるディレクトリから古い MSIL ファイルをすべて削除します。  これらのファイルは、\_CL\_hhhhhhhh.ss という形式になります。h はランダムな 16 進数を、ss は IL ファイルの種類を表します。  さらに、オペレーティング システムに最新の更新プログラムを適用してコンピューターを最新の状態にします。  
+ 一時的なコンパイラの中間ファイルを作成するには、十分な領域がありません。 このエラーを解決するで指定されたディレクトリで古い MSIL ファイルを削除、 **TMP**環境変数。 これらのファイルは、h がランダムな 16 進数字を表し、ss は IL ファイルの種類を表します、フォーム _CL_hhhhhhhh.ss なります。 また、最新のオペレーティング システムの修正プログラムでコンピューターを更新することを確認します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [コマンド ライン エラー D8000 から D9999](../../error-messages/tool-errors/command-line-errors-d8000-through-d9999.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)

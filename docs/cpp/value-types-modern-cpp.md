@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: f63bb62c-60da-40d5-ac14-4366608fe260
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f9e91bf5bd5c35388646178335ed2ab42c3d1304
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5d84888236b81fe862c6a22793e926ebf7df55c0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="value-types-modern-c"></a>値型 (Modern C++)
 C++ のクラスは、既定値の型ではします。 このトピックでは、値の型とその使用に関連する問題の概要を説明します。  
@@ -120,7 +124,7 @@ public:
 ## <a name="section"></a>セクション  
  Content  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 型システム](../cpp/cpp-type-system-modern-cpp.md)   
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   

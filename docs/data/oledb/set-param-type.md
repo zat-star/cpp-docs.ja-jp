@@ -1,36 +1,40 @@
 ---
-title: "SET_PARAM_TYPE |Microsoft ドキュメント"
+title: SET_PARAM_TYPE | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: SET_PARAM_TYPE
-dev_langs: C++
-helpviewer_keywords: SET_PARAM_TYPE macro
+ms.topic: reference
+f1_keywords:
+- SET_PARAM_TYPE
+dev_langs:
+- C++
+helpviewer_keywords:
+- SET_PARAM_TYPE macro
 ms.assetid: 85979070-2d55-4c67-94b1-9b9058babc59
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b8fb0ab344f5ee9e34c1157d661bced369afac41
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0c2355b69be471f2f644a0126533bf17c4702cdc
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="setparamtype"></a>SET_PARAM_TYPE
 `COLUMN_ENTRY` マクロの後に続く `SET_PARAM_TYPE` マクロが入力、出力、入出力のいずれであるかを指定します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-SET_PARAM_TYPE(  
-type  
- )  
+```cpp
+SET_PARAM_TYPE(type)  
   
 ```  
   
@@ -47,10 +51,11 @@ type
   
 -   **DBPARAMIO_OUTPUT** 出力パラメーター。  
   
--   **DBPARAMIO_INPUT &#124;です。DBPARAMIO_OUTPUT**パラメーターは、入力と出力パラメーターの両方です。  
+-   **DBPARAMIO_INPUT &#124; DBPARAMIO_OUTPUT** The parameter is both an input and an output parameter.  
   
 ## <a name="example"></a>例  
-```cpp  
+```
+cpp  
 class CArtistsProperty
 {
 public:
@@ -90,8 +95,8 @@ END_COLUMN_MAP()
 };
 ``` 
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)

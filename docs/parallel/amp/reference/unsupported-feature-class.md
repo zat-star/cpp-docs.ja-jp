@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - unsupported_feature
 - AMPRT/unsupported_feature
 - AMPRT/Concurrency::unsupported_feature
-dev_langs: C++
-helpviewer_keywords: unsupported_feature class
+dev_langs:
+- C++
+helpviewer_keywords:
+- unsupported_feature class
 ms.assetid: 6b1ab917-df13-48c7-9648-7cb2465a0ff5
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2d9a85d0ca9b6ff952d6f7ae6420bedfabea5289
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e4be595382436f26ed43215c86d3f350532c52af
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="unsupportedfeature-class"></a>unsupported_feature クラス
 サポートされていない機能が使用される場合にスローされる例外です。  
@@ -49,7 +54,7 @@ class unsupported_feature : public runtime_exception;
   
  `unsupported_feature`  
   
-## <a name="unsupported_feature__ctor"></a>unsupported_feature 
+## <a name="unsupported_feature__ctor"></a> unsupported_feature 
 
   unsupported_feature 例外の新しいインスタンスを構築します。  
   
@@ -69,10 +74,10 @@ unsupported_feature() throw();
 ### <a name="return-value"></a>戻り値  
  `unsupported_feature` オブジェクト。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amprt.h  
   
  **名前空間:** Concurrency  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

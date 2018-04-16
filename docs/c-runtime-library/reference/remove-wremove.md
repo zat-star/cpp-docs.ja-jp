@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wremove
 - remove
@@ -27,7 +28,8 @@ f1_keywords:
 - remove
 - _wremove
 - _tremove
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - tremove function
 - _wremove function
@@ -37,15 +39,17 @@ helpviewer_keywords:
 - wremove function
 - remove function
 ms.assetid: b6345ec3-3289-4645-93a4-28b9e478cc19
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 43e7443204404f79a797cab09cb56560e719a896
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3bfccec10c08563f647b10fd9ad9dff70930668b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="remove-wremove"></a>remove、_wremove
 ファイルを削除します。  
@@ -80,14 +84,14 @@ int _wremove(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tremove`|**remove**|**remove**|`_wremove`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |**remove**|\<stdio.h> または \<io.h>|  
 |`_wremove`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -121,6 +125,6 @@ This file will be deleted.
 Deleted 'CRT_REMOVE.TXT'  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_unlink、_wunlink](../../c-runtime-library/reference/unlink-wunlink.md)

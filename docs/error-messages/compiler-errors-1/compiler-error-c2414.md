@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2414
 ms.assetid: bbe94e03-862e-4990-b15e-544ae464727d
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c6238cf17686eb168a2f120c00fc34655715a950
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: f3b532fdb8448f616916adcaf047dc83923f62c0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2414"></a>コンパイラ エラー C2414
 オペランドの数が正しくありません。  

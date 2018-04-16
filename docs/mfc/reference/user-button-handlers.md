@@ -26,16 +26,17 @@ helpviewer_keywords:
 - ON_BN_HILITE [MFC]
 - ON_BN_CLICKED [MFC]
 ms.assetid: 410ea968-478f-4806-b7b8-5d7c8dc2bf42
-caps.latest.revision: 10
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 767dbbfc2ae11ebbbca3736467b1f76bb4138609
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: eb5acc7a127af69d65536d131f9b388b4f4ff8f9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="user-button-handlers"></a>ユーザー ボタン ハンドラー
 関数プロトタイプに対応するマップ エントリを次に示します。  
@@ -49,7 +50,6 @@ ms.lasthandoff: 10/09/2017
 |ON_BN_PAINT ( \<id >、 \<memberFxn >)|afx_msg void memberFxn ();|  
 |ON_BN_UNHILITE ( \<id >、 \<memberFxn >)|afx_msg void memberFxn ();|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)
-
 

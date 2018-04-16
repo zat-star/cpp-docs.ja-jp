@@ -1,73 +1,78 @@
 ---
-title: "CAssertions、CAssertionInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CAssertions"
-  - "m_szCatalog"
-  - "m_bInitiallyDeferred"
-  - "CONSTRAINT_NAME"
-  - "m_szSchema"
-  - "INITIALLY_DEFERRED"
-  - "m_bIsDeferrable"
-  - "m_szName"
-  - "CAssertionInfo"
-  - "CONSTRAINT_CATALOG"
-  - "CONSTRAINT_SCHEMA"
-  - "IS_DEFERRABLE"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CAssertionInfo パラメーター クラス"
-  - "CAssertions TYPEDEF クラス"
-  - "CONSTRAINT_CATALOG"
-  - "CONSTRAINT_NAME"
-  - "CONSTRAINT_SCHEMA"
-  - "DESCRIPTION クラスのデータ メンバー"
-  - "INITIALLY_DEFERRED"
-  - "IS_DEFERRABLE"
-  - "m_bInitiallyDeferred"
-  - "m_bIsDeferrable"
-  - "m_szCatalog"
-  - "m_szDescription"
-  - "m_szName"
-  - "m_szSchema"
+title: "CAssertions、CAssertionInfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CAssertions
+- m_szCatalog
+- m_bInitiallyDeferred
+- CONSTRAINT_NAME
+- m_szSchema
+- INITIALLY_DEFERRED
+- m_bIsDeferrable
+- m_szName
+- CAssertionInfo
+- CONSTRAINT_CATALOG
+- CONSTRAINT_SCHEMA
+- IS_DEFERRABLE
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAssertionInfo parameter class
+- DESCRIPTION class data member
+- CAssertions typedef class
+- IS_DEFERRABLE
+- m_szSchema
+- m_bInitiallyDeferred
+- CONSTRAINT_CATALOG
+- m_szCatalog
+- CONSTRAINT_NAME
+- CONSTRAINT_SCHEMA
+- m_szName
+- m_szDescription
+- INITIALLY_DEFERRED
+- m_bIsDeferrable
 ms.assetid: 2a79c2da-5c9b-4fa6-98e8-90b7f5d6f021
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 8662c95d4c1a4f8b35813fced53a2ede5f8dbc2b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CAssertions、CAssertionInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-パラメーター **CAssertionInfo**クラスを実装するに **CAssertions** typedef クラスを呼び出します。  
+# <a name="cassertions-cassertioninfo"></a>CAssertions、CAssertionInfo
+Typedef クラスを呼び出す**CAssertions**そのパラメーター クラスを実装する**CAssertionInfo**です。  
   
-## 解説  
- typedef クラスの使用の詳細については、" [スキーマ行セット クラスと Typedef クラス](../Topic/Schema%20Rowset%20Classes%20and%20Typedef%20Classes.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)typedef クラスの使用に関する詳細についてはします。  
   
- このクラスは、カタログに定義された特定のユーザーが所有するアサーションを識別します。  
+ このクラスは、特定のユーザーによって所有されているカタログで定義されているアサーションを識別します。  
   
- 次の表は **CAssertionInfo** と対応する OLE DB の列でクラスのデータ メンバーを示しています。  スキーマと列の詳細については、" *OLE DB Programmer's Reference* の [アサーションの行セット](https://msdn.microsoft.com/en-us/library/ms719776.aspx) を参照してください。  
+ 次の表に、クラスのデータ メンバーの**CAssertionInfo**とその対応する OLE DB 列です。 参照してください[アサーションの行セット](https://msdn.microsoft.com/en-us/library/ms719776.aspx)で、 *OLE DB プログラマーズ リファレンス*スキーマと列の詳細についてはします。  
   
-|データ メンバー|OLE DB の列|  
-|--------------|---------------|  
-|m\_szCatalog|CONSTRAINT\_CATALOG|  
-|m\_szSchema|CONSTRAINT\_SCHEMA|  
-|m\_szName|CONSTRAINT\_NAME|  
-|m\_bIsDeferrable|IS\_DEFERRABLE|  
-|m\_bInitiallyDeferred|INITIALLY\_DEFERRED|  
-|m\_szDescription|DESCRIPTION|  
+|データ メンバー|OLE DB 列|  
+|------------------|--------------------|  
+|m_szCatalog|CONSTRAINT_CATALOG|  
+|m_szSchema|CONSTRAINT_SCHEMA|  
+|m_szName|CONSTRAINT_NAME|  
+|m_bIsDeferrable|IS_DEFERRABLE|  
+|m_bInitiallyDeferred|INITIALLY_DEFERRED|  
+|m_szDescription|説明|  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## 参照  
- [CRestrictions クラス](../Topic/CRestrictions%20Class.md)
+## <a name="see-also"></a>参照  
+ [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

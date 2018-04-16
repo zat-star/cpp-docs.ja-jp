@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C4920
-dev_langs: C++
-helpviewer_keywords: C4920
+f1_keywords:
+- C4920
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4920
 ms.assetid: 1e501f2e-93c1-4d27-a4fa-54fc86271ae7
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ba6d3cc41299c5b4b4b9329168f814ab732f524f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c87237f5ac2240cfd2063c58055d626b72285287
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4920"></a>コンパイラの警告 (レベル 1) C4920
 enum enum member member=value は既に enum enum as member=value に示されています  

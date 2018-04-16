@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: ec71583a-287b-4599-8767-1d255e080fe3
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7f84f891a12da90efbe68371d077e2d41b111ea0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1b458dbe06bd69817c659c3bfec1d1ab7a216d1f
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="auto-parallelization-and-auto-vectorization"></a>自動並行化と自動ベクター化
 自動並行化と自動ベクター化は、コード内のループのパフォーマンスが自動的に向上するように設計されています。  
@@ -115,9 +119,9 @@ for (int i = 0; i < 1000; ++i)
   
  実際にはベクター化のしくみを示す例は、次を参照してください[Project Austin Part 2 of 6: Page Curling。](http://blogs.msdn.com/b/vcblog/archive/2012/09/27/10348494.aspx)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ループ](../preprocessor/loop.md)   
- [ネイティブ コードでの並列プログラミング](http://go.microsoft.com/fwlink/?linkid=263662)   
+ [ネイティブ コードでの並列プログラミング](http://go.microsoft.com/fwlink/p/?linkid=263662)   
  [/Qpar (自動並行化)](../build/reference/qpar-auto-parallelizer.md)   
  [/Qpar-report (自動並行化レポート作成レベル)](../build/reference/qpar-report-auto-parallelizer-reporting-level.md)   
  [/Qvec-report (自動ベクター化レポート作成レベル)](../build/reference/qvec-report-auto-vectorizer-reporting-level.md)   

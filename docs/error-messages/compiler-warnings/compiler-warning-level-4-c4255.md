@@ -15,37 +15,24 @@ dev_langs:
 helpviewer_keywords:
 - C4255
 ms.assetid: 2087b635-4b4c-4182-8a01-c26770d2bb88
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 307b802e317ab36d2097453fe88f0e03046e0930
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b750bc866dbc5eb36eaa25febca8f1fd5cc8b789
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4255"></a>コンパイラの警告 (レベル 4) C4255
-'function': 関数プロトタイプがありません: '()' を '(void)' に変換します。  
+'function': 関数プロトタイプがありません: '()' を '(void)' を変換します。  
   
- コンパイラでは、関数の引数の明示的なリストは検出されませんでした。 この警告では、C コンパイラでのみです。  
+ コンパイラは関数の引数の明示的なリストを見つかりませんでした。 この警告は、C コンパイラの場合のみです。  
   
- 既定では、この警告はオフに設定されています。 参照してください[コンパイラの警告ことは既定で無効](../../preprocessor/compiler-warnings-that-are-off-by-default.md)の詳細。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
  次の例では、C4255 が生成されます。  
   

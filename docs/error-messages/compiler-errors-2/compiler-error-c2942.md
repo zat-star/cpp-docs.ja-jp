@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C2942 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2942 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - C2942
@@ -19,12 +19,13 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c3f5a5a8941a1f0cc42127f5bda7d9c97a52bc18
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 2685762bc57b4ff0c2d056dff4c246d2286503eb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2942"></a>コンパイラ エラー C2942
 'class': 関数の仮引数として再定義された type-class-id  

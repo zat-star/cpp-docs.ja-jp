@@ -4,21 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: corewrappers/Microsoft::WRL::Wrappers::HString::operator==
-dev_langs: C++
+f1_keywords:
+- corewrappers/Microsoft::WRL::Wrappers::HString::operator==
+dev_langs:
+- C++
 ms.assetid: 77ff4c1a-e62a-4256-bf9d-0f017137c630
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a53b451ca5beae1e26bdda8cac9041669f63cd87
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 6db6c449a7ceb4799feb4740c11385875a6309ec
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hstringoperator-operator"></a>HString::Operator== 演算子
 2 つのパラメーターが等しいかどうかを示します。  
@@ -58,10 +64,10 @@ inline bool operator==(
 ## <a name="return-value"></a>戻り値  
  `true`場合、`lhs`と`rhs`パラメーターが等しい。 それ以外の場合、`false`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [HString クラス](../windows/hstring-class.md)

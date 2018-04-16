@@ -1,25 +1,29 @@
 ---
-title: "F です。 新機能とバージョン 2.0 では説明 |Microsoft ドキュメント"
+title: "F. 新機能とバージョン 2.0 では説明 |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 0d4beb66-f2d5-468c-8cd3-4b00dcbab061
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4f2d0399925c27e75c465f905f52e7e2ed2ba86f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b9a661f183816fec0f7a71c990f1508338100f4d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="f-new-features-and-clarifications-in-version-20"></a>F です。 新機能とバージョン 2.0 の説明
+# <a name="f-new-features-and-clarifications-in-version-20"></a>F. 新機能とバージョン 2.0 の説明
 この付録の内容は、バージョン 1.0 からバージョン 2.0 に移行する際、OpenMP C と C++ 仕様に加えられた主な変更点をまとめたものです。 次の項目は、仕様に追加された新機能を示します。  
   
 -   OpenMP ディレクティブにコンマを使用できる ([セクション 2.1](../../parallel/openmp/2-1-directive-format.md)ページ 7 で)。  

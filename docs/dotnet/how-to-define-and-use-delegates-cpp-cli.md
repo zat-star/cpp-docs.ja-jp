@@ -4,21 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: delegates
+dev_langs:
+- C++
+helpviewer_keywords:
+- delegates
 ms.assetid: 1cdf3420-89c1-47c0-b796-aa984020e0f8
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 22483b1b1e90c406d1a2f6bd1731f15008b58daa
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7f400a03f1b9ae877ee7ec681cb038698a92598a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-define-and-use-delegates-ccli"></a>方法: デリゲートを定義および使用する (C++/CLI)
 この記事の内容を定義および C + でのデリゲートを使用する方法を示しています。 + CLI です。  
@@ -511,5 +517,5 @@ int main() {
 14  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [delegate (C++ コンポーネント拡張)](../windows/delegate-cpp-component-extensions.md)

@@ -13,16 +13,17 @@ dev_langs:
 helpviewer_keywords:
 - _set_com_error_handler function
 ms.assetid: 49fe4fca-5e37-4d83-abaf-15be5ce37f94
-caps.latest.revision: 11
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 626227fb9c5162e5b9fc72fc64348b75ecb27e44
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c04c6b2a1177288544536130cf88c8fd8fb673e6
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="setcomerrorhandler"></a>_set_com_error_handler
 **Microsoft 固有の仕様**  
@@ -96,10 +97,10 @@ int main()
 Exception raised: Unable to establish the connection!  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** comdef.h  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<comdef.h >  
   
  **Lib:**場合、 **wchar_t をネイティブ型**コンパイラ オプションは、comsuppw.lib または comsuppwd.lib を使用します。 場合**wchar_t をネイティブ型**オフ、comsupp.lib を使用します。 「[/Zc:wchar_t (wchar_t をネイティブ型として認識)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ COM のグローバル関数](../cpp/compiler-com-global-functions.md)

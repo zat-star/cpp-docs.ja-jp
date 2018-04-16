@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C1126
 ms.assetid: f22b26a6-8ad7-47cf-a237-196c8ea60aca
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: abe40b1813facb9531312e08371fbe769c32c119
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 4f5346a3adb5535242207ebc3a3c9b2fcffa7a40
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fatal-error-c1126"></a>致命的なエラー C1126
 'identifier': 自動メモリ割り当てサイズを超えています  

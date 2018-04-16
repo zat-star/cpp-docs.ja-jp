@@ -6,20 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::IDisposable
-dev_langs: C++
-helpviewer_keywords: Platform::IDisposable Interface
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::IDisposable
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::IDisposable Interface
 ms.assetid: f4344056-7030-42ed-bc98-b140edffddcd
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 0bc36087532bbac86b5891408fc3e4bea30c0256
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4c9ff9deff5df9bb0e0b3bdc88a482aa8063bef3
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformidisposable-interface"></a>Platform::IDisposable インターフェイス
 アンマネージ リソースを解放するために使用されます。  
@@ -46,7 +51,7 @@ public interface class IDisposable
 |------------|-----------------|  
 |Dispose|アンマネージ リソースを解放するために使用されます。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  

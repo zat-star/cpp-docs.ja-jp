@@ -1,35 +1,39 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4091 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4091"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4091"
+title: "コンパイラの警告 (レベル 1) C4091 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4091
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4091
 ms.assetid: 3a404967-ab42-49b0-b324-fd7ba1859d78
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9be40d65b657a7ac34fb105a2b1b16c702e4922c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4091
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'キーワード' : 変数が何も宣言されていないときは、'型' の左辺を無視します。  
+# <a name="compiler-warning-level-1-c4091"></a>コンパイラの警告 (レベル 1) C4091
+'keyword': 'type' の左側で変数が宣言されていない場合は無視されます  
   
- コンパイラは、ユーザーが変数を宣言しようとしたことを検出しましたが、変数を宣言できませんでした。  
+ ここで、変数を宣言するためのもので、ユーザーが可能性がありますが、コンパイラは、変数を宣言することができませんでした状況が検出されました。  
   
-## 使用例  
- ユーザー定義型の宣言の先頭で指定された `__declspec` 属性は、その型の変数に適用されます。  C4091 は、変数が宣言されていないことを示します。  次の例では C4091 エラーが生成されます。  
+## <a name="example"></a>例  
+ A`__declspec`その型の変数にユーザー定義型の宣言の冒頭にある属性が適用されます。 C4091 では、変数が宣言されていないことを示します。 次の例では、C4091 を生成します。  
   
 ```  
 // C4091.cpp  
@@ -44,8 +48,8 @@ __declspec(dllimport) class X2 {} varX;
 class __declspec(dllimport) X3 {};  
 ```  
   
-## 使用例  
- 識別子が typedef の場合は、変数名にすることもできません。  次の例では C4091 エラーが生成されます。  
+## <a name="example"></a>例  
+ 識別子が typedef である場合は、その変数名こともできません。 次の例では、C4091 を生成します。  
   
 ```  
 // C4091_b.cpp  

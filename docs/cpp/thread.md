@@ -18,27 +18,27 @@ helpviewer_keywords:
 - TLS (thread local storage), compiler implementation
 - __declspec keyword [C++], thread
 ms.assetid: 667f2a77-6d1f-4b41-bee8-05e67324fab8
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: f460497071445cff87308fa9bf6e0d43c6f13a3e
-ms.openlocfilehash: 7261dc1d6d76eeac8a6b2959bc9bb6fc3c98a66e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a8c514879368b8ea3d676635f2b922a2e1c07224
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="thread"></a>スレッド
 
-**Microsoft 固有の仕様**  
-**スレッド**拡張ストレージ クラス修飾子を使用して、スレッド ローカル変数を宣言します。 移植可能な c++ 11 では同等で、後で、使用、 [thread_local](../cpp/storage-classes-cpp.md#thread_local)ストレージ クラス指定子。
+**Microsoft 固有の仕様**
+
+**スレッド**拡張ストレージ クラス修飾子を使用して、スレッド ローカル変数を宣言します。 移植可能な c++ 11 では同等で、後で、使用、 [thread_local](../cpp/storage-classes-cpp.md#thread_local)コードの移植性のストレージ クラス指定子。 Windows で**thread_local**がで実装される**_declspec**です。
 
 ## <a name="syntax"></a>構文
 
-```
-__declspec( thread ) declarator
-```
+> **__declspec( thread )** *declarator*  
 
 ## <a name="remarks"></a>コメント
 
@@ -47,16 +47,20 @@ __declspec( thread ) declarator
 スレッド ローカル変数の宣言を使用する必要があります[拡張属性構文](../cpp/declspec.md)と`__declspec`キーワード、**スレッド**キーワード。 たとえば、次に示すコードは、整数型のスレッド ローカル変数を宣言して特定の値に初期化します。
 
 ```cpp
-__declspec( thread ) int tls_i = 1;  
+__declspec( thread ) int tls_i = 1;
 ```
 
-スレッド ローカルのオブジェクトおよび変数を宣言するときは、以下のガイドラインに従う必要があります。
+スレッド ローカル変数を動的に読み込まれるライブラリを使用する場合は、スレッド ローカル変数を正しく初期化されませんを引き起こす可能性のある要因について注意する必要があります。
+
+1. (コンス トラクターを含む) が関数呼び出しで、変数が初期化される場合、スレッド、プロセスに読み込むバイナリ/DLL の原因となったおよびバイナリ/DLL が読み込まれた後に開始されたこれらのスレッドのこの関数のみが呼び出されます。 DLL が読み込まれるときに既に実行されているその他のスレッドの初期化関数は呼び出されません。 動的な初期化は、しないメッセージの DLL にない場合は、プロセス、スレッドの開始時に取得の DLL_THREAD_ATTACH の DllMain の呼び出しが、DLL で発生します。
+
+1. 定数値を持つ静的に初期化されるスレッド ローカル変数は、すべてのスレッドでは正しく初期化一般にされます。 ただし、2017 年 12 月の時点で問題がある既知の準拠 constexpr 変数が表示されるため、Microsoft Visual C コンパイラで静的な初期化ではなく動的です。
+
+   注: これら両方の問題修正後で、コンパイラの更新プログラムが必要です。
+
+さらに、スレッド ローカル オブジェクトと変数を宣言するときに、次のガイドラインを従う必要があります。
 
 - 適用することができます、**スレッド**属性クラスとデータの宣言と定義にのみ**スレッド**関数宣言または定義では使用できません。
-
-- 使用、**スレッド**干渉する可能性があります属性[遅延読み込み](../build/reference/linker-support-for-delay-loaded-dlls.md)DLL のインポートします。
-
-- XP システムで**スレッド**DLL を使用して _declspec データが LoadLibrary 経由で動的に読み込まれる場合、正常に機能しない可能性があります。
 
 - 指定することができます、**スレッド**静的ストレージ存続期間のあるデータ項目にのみ属性。 これには、グローバルなデータ オブジェクトが含まれます (両方**静的**と**extern**)、ローカルな静的オブジェクト、およびクラスの静的データ メンバーです。 使用して自動データ オブジェクトを宣言することはできません、**スレッド**属性。
 
@@ -83,15 +87,15 @@ __declspec( thread ) int tls_i = 1;
 
 - 標準 C では、自分自身への参照を含む式でオブジェクトや変数を初期化できます。ただし、この場合のオブジェクトは、非静的なものに限られます。 C++ では、通常、自分自身への参照を含む式でこのようにオブジェクトを動的に初期化できますが、この種の初期化はスレッド ローカル オブジェクトでは許可されません。 例:
 
-    ```cpp
-    // declspec_thread_3.cpp
-    // compile with: /LD
-    #define Thread __declspec( thread )
-    int j = j;   // Okay in C++; C error
-    Thread int tls_i = sizeof( tls_i );   // Okay in C and C++
-    ```
+   ```cpp
+   // declspec_thread_3.cpp
+   // compile with: /LD
+   #define Thread __declspec( thread )
+   int j = j;   // Okay in C++; C error
+   Thread int tls_i = sizeof( tls_i );   // Okay in C and C++
+   ```
 
-     なお、 **sizeof**初期化されるオブジェクトを含む式自体への参照にはなりませんし、C および C++ では許可します。
+   なお、 **sizeof**初期化されるオブジェクトを含む式自体への参照にはなりませんし、C および C++ では許可します。
 
 **Microsoft 固有の仕様はここまで**
 
@@ -99,5 +103,4 @@ __declspec( thread ) int tls_i = 1;
 
 [__declspec](../cpp/declspec.md)  
 [キーワード](../cpp/keywords-cpp.md)  
-[スレッド ローカル ストレージ (TLS: Thread Local Storage)](../parallel/thread-local-storage-tls.md)
-
+[スレッド ローカル ストレージ (TLS: Thread Local Storage)](../parallel/thread-local-storage-tls.md)  

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::vector::operator<=
-dev_langs: C++
-helpviewer_keywords: operator<= member [STL/CLR]
+f1_keywords:
+- cliext::vector::operator<=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator<= member [STL/CLR]
 ms.assetid: d4f9d0ba-1fa3-4895-aef4-c9f9a06dbe05
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1e2b2e9cc116c06cb1f0c91d093566fa8ac77eac
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e1ba24b8d41638b07d11ed6126ff9fdc0e7258ca
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="operatorlt-vector-stlclr"></a>演算子&lt;= (ベクトル) (STL/CLR)
 以下のベクターの比較できます。  
@@ -88,12 +95,12 @@ int main()
 [a b d] <= [a b c] is False  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/vector >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
  [演算子 = = (ベクトル) (STL/CLR)](../dotnet/operator-equality-vector-stl-clr.md)   
  [operator! = (ベクトル) (STL/CLR)](../dotnet/operator-inequality-vector-stl-clr.md)   

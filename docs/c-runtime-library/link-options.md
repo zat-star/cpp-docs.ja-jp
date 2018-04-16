@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - nothrownew.obj
 - newmode.obj
@@ -36,37 +38,39 @@ helpviewer_keywords:
 - threadlocale.obj
 - pnoarg.obj
 ms.assetid: 05b5a77b-9dd1-494b-ae46-314598c770bb
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7e22f2d3c69bf4f0daf38c4f59b416d8d44a431a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d0108ecd9d0b9caaa2df3d450c185d5937a96463
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="link-options"></a>リンク オプション
 CRT lib ディレクトリには、コード変更を加えずに特定の CRT 機能を有効にする複数のオブジェクト ファイルが含まれます。 これらは、リンカー コマンド ラインに追加するだけで使用することができるため、「リンク オプション」と呼ばれます。  
   
- ピュア モード バージョンは存在しますが、Visual Studio 2015 では使用されていません。 ネイティブおよび /clr コードには標準のバージョン、/clr:pure モードにはピュア バージョン (プレフィックスは a p) を使用します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+ ピュア モード バージョンは、Visual Studio 2015 から推奨されていません。 ネイティブおよび /clr コードに標準のバージョンを使用してください。  
   
 |ネイティブおよび /clr|ピュア モード|説明|  
 |----------------------|---------------|-----------------|  
 |binmode.obj|pbinmode.obj|既定のファイルの変換モードをバイナリに設定します。 [_fmode](../c-runtime-library/fmode.md) をご覧ください。|  
-|chkstk.obj|適用なし|CRT を使用していない場合にスタック チェックと alloca サポートを提供します。|  
+|chkstk.obj|N/A|CRT を使用していない場合にスタック チェックと alloca サポートを提供します。|  
 |commode.obj|pcommode.obj|グローバル コミット フラグを "コミット" に設定します。 [fopen、_wfopen](../c-runtime-library/reference/fopen-wfopen.md) および [fopen_s、_wfopen_s](../c-runtime-library/reference/fopen-s-wfopen-s.md) をご覧ください。|  
-|fp10.obj|適用なし|既定の精度制御を 64 ビットに変更します。 「[浮動小数点サポート](../c-runtime-library/floating-point-support.md)」をご覧ください。|  
+|fp10.obj|N/A|既定の精度制御を 64 ビットに変更します。 「[浮動小数点サポート](../c-runtime-library/floating-point-support.md)」をご覧ください。|  
 |invalidcontinue.obj|pinvalidcontinue.obj|何もしない既定の無効なパラメーター ハンドラーを設定します。つまり、CRT 関数に渡される無効なパラメーターによってエラー番号が設定され、エラーの結果が返されます。|  
-|loosefpmath.obj|適用なし|浮動小数点コードが非正規化値を許容するようにします。|  
+|loosefpmath.obj|N/A|浮動小数点コードが非正規化値を許容するようにします。|  
 |newmode.obj|pnewmode.obj|失敗時に [malloc](../c-runtime-library/reference/malloc.md) が新しいハンドラーを呼び出すようにします。 [_set_new_mode](../c-runtime-library/reference/set-new-mode.md)、[_set_new_handler](../c-runtime-library/reference/set-new-handler.md)、[calloc](../c-runtime-library/reference/calloc.md)、[realloc](../c-runtime-library/reference/realloc.md) をご覧ください。|  
 |noarg.obj|pnoarg.obj|argc および argv のすべてのプロセスを無効にします。|  
-|nochkclr.obj|適用なし|処理を行いません。 プロジェクトから削除してください。|  
+|nochkclr.obj|N/A|処理を行いません。 プロジェクトから削除してください。|  
 |noenv.obj|pnoenv.obj|CRT のキャッシュ済み環境の作成を無効にします。|  
 |nothrownew.obj|pnothrownew.obj|CRT で new のスローしないバージョンを有効にします。 「[new および delete 演算子](../cpp/new-and-delete-operators.md)」をご覧ください。|  
 |setargv.obj|psetargv.obj|コマンド ライン引数のワイルドカードの展開を有効にします。 「[ワイルドカード引数の展開](../c-language/expanding-wildcard-arguments.md)」をご覧ください。|  
 |threadlocale.obj|pthreadlocale.obj|既定ですべての新しいスレッドに対してスレッド単位のロケールを有効にします。|  
 |wsetargv.obj|pwsetargv.obj|コマンド ライン引数のワイルドカードの展開を有効にします。 「[ワイルドカード引数の展開](../c-language/expanding-wildcard-arguments.md)」をご覧ください。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

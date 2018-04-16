@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _strcmpi
 - strcmpi
@@ -30,16 +30,17 @@ dev_langs:
 helpviewer_keywords:
 - strcmpi function
 ms.assetid: 74206b2f-9bca-4d32-9cdc-93cb94c2aaa1
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8fc2f2934d257b7690550e55091cf3bf31d5eadd
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: d686c8f2c15a2b41f1b266108cc33fab45a0d227
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strcmpi"></a>strcmpi
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_stricmp](../../c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md) を使用してください。

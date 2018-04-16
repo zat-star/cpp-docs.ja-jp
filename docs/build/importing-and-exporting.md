@@ -1,56 +1,60 @@
 ---
-title: "インポートとエクスポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__declspec(dllimport) キーワード [C++]"
-  - "DLL [C++], エクスポート"
-  - "DLL [C++], インポート"
-  - "エクスポート (DLL を) [C++]"
-  - "インポート (DLL を) [C++]"
+title: "インポートとエクスポート |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- DLLs [C++], importing
+- exporting DLLs [C++]
+- importing DLLs [C++]
+- DLLs [C++], exporting from
+- __declspec(dllimport) keyword [C++]
 ms.assetid: 7c44c2aa-2117-4cec-9615-a65bfd3f8f7b
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6c0727002e264f3b0cfe39b763c29fd70725b982
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# インポートとエクスポート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次の 2 つの方法を使って、アプリケーションにパブリック シンボルをインポートしたり、DLL から関数をエクスポートしたりできます。  
+# <a name="importing-and-exporting"></a>インポートとエクスポート
+アプリケーションにパブリック シンボルをインポートまたは 2 つのメソッドを使用して DLL から関数をエクスポートできます。  
   
--   DLL をビルドするときにモジュール定義 \(.def\) ファイルを使用します。  
+-   DLL をビルドする際に、モジュール定義 (.def) ファイルを使用します。  
   
--   メイン アプリケーションの関数定義で、**\_\_declspec\(dllimport\)** キーワードまたは **\_\_declspec\(dllexport\)** キーワードを使用します。  
+-   キーワードを使用して**_declspec**または**方式**メイン アプリケーションの関数定義で  
   
-## .def ファイルの使用  
- モジュール定義ファイル \(.def\) は、テキスト ファイルです。DLL のさまざまな属性を記述する 1 つ以上のモジュール文が含まれています。  **\_\_declspec\(dllexport\)** キーワードまたは **\_\_declspec\(dllexport\)** キーワードを使わずに DLL の関数をエクスポートする場合は、DLL に .def ファイルが必要です。  
+## <a name="using-a-def-file"></a>.Def ファイルを使用します。  
+ モジュール定義ファイル (.def) は、テキスト ファイルです。DLL のさまざまな属性を記述する 1 つ以上のモジュール文が含まれています。 使用しない場合**_declspec**または**方式**DLL の関数をエクスポートする DLL に .def ファイルが必要です。  
   
- .def ファイルを使うと、[アプリケーションへのインポート](../build/importing-using-def-files.md)や [DLL からのエクスポート](../build/exporting-from-a-dll-using-def-files.md)を行うことができます。  
+ .Def ファイルを使用する[アプリケーションをインポート](../build/importing-using-def-files.md)または[DLL からエクスポート](../build/exporting-from-a-dll-using-def-files.md)です。  
   
-## \_\_declspec の使用  
- Visual C\+\+ では、Visual C\+\+ の 16 ビット版で使用されていた **\_\_export** キーワードの代わりに、**\_\_declspec\(dllimport\)** と **\_\_declspec\(dllexport\)** を使用します。  
+## <a name="using-declspec"></a>_ _Declspec を使用します。  
+ Visual C++ 使用**_declspec (dllimport)**と**方式**を置き換える、 **_ _export**キーワードの 16 ビット バージョンの Visual C で以前に使用します。  
   
- **\_\_declspec\(dllimport\)** を使用しなくてもコードは正しくコンパイルされますが、使用した方がコードがより洗練されます。  \_\_declspec\(dllimport\) を使うと、ある関数が DLL 内にあるかないかをコンパイラが判断できるようになり、その結果、コードでは通常 DLL の境界を越える関数呼び出し内に存在する間接操作のレベルをスキップできます。  ただし、DLL 内に変数をインポートするには、**\_\_declspec\(dllimport\)** を必ず使用する必要があります。  
+ 使用する必要はありません**_declspec (dllimport)**これが正しくコンパイルするコードの優れたコードを生成するコンパイラを使用します。 コンパイラはかどうか、関数が存在する DLL のか、通常するが DLL の境界を越える関数呼び出しの間接参照のレベルをスキップするコードを生成するために、コンパイラにより決定できるため、優れたコードを生成することです。 ただし、使用する必要があります**_declspec**を DLL で使用される変数をインポートします。  
   
- .def ファイルの EXPORT セクションが適切な場合、**\_\_declspec\(dllexport\)** は不要です。  **\_\_declspec\(dllexport\)** を追加すると、.def ファイルを使わなくても .exe または .dll から関数を簡単にエクスポートできます。  
+ 適切な .def ファイルの EXPORTS セクションに**方式**は必要ありません。 **方式**.def ファイルを使用せず、.exe または .dll ファイルから関数をエクスポートする簡単な方法を提供するようになりました。  
   
- Win32 移植可能実行可能形式は、インポートを固定するために参照しなければならないページ数を最小限に抑えるようにデザインされています。  このために、あらゆるプログラム用のインポート アドレス全部をインポート アドレス テーブルという場所にまとめています。  こうすることで、ローダーはインポートにアクセスするときに 1 ページか 2 ページを変更するだけで済みます。  
+ インポートを修正する参照しなければならないページの数を最小限に抑えるには、Win32 のポータブル実行可能ファイル形式は設計されています。 これを行うには、インポート アドレス テーブルと呼ばれる 1 つの場所で任意のプログラムのすべてのインポート アドレスがかかります。 これにより、インポートにアクセスするときに、1 つまたは 2 つのページを変更するローダー。  
   
-## 目的に合ったトピックをクリックしてください  
+## <a name="what-do-you-want-to-do"></a>実行する操作  
   
--   [\_\_declspec\(dllimport\) を使ったアプリケーションへのインポート](../build/importing-into-an-application-using-declspec-dllimport.md)  
+-   [アプリケーションへのインポート](../build/importing-into-an-application-using-declspec-dllimport.md)  
   
--   [DLL からのエクスポート](../build/exporting-from-a-dll.md)  
+-   [DLL からのエクスポートします。](../build/exporting-from-a-dll.md)  
   
-## 参照  
- [Visual C\+\+ の DLL](../build/dlls-in-visual-cpp.md)
+## <a name="see-also"></a>参照  
+ [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)

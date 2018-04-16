@@ -4,13 +4,15 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - _variant_t::operator==
 - _variant_t::operator!=
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - '!= operator'
 - relational operators [C++], _variant_t class
@@ -22,15 +24,17 @@ helpviewer_keywords:
 - operator != [C++], relational operators
 - == operator [C++], with specific Visual C++ objects
 ms.assetid: 141bacb8-41a2-44dd-b3c0-4ad1f884f4ea
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: eacfe9584cedfd45a952dca62dae545f617b1433
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 86ae6c517eaefc45c6fbeb5108efdf7e6b92b769
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="variantt-relational-operators"></a>_variant_t 関係演算子
 **Microsoft 固有の仕様**  
@@ -70,5 +74,5 @@ bool operator!=(
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_variant_t クラス](../cpp/variant-t-class.md)

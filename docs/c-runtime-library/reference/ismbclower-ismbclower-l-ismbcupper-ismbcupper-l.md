@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _ismbclower
 - _ismbclower_l
@@ -41,36 +41,23 @@ helpviewer_keywords:
 - ismbclower_l function
 - _ismbcupper_l function
 ms.assetid: 17d89587-65bc-477c-ba8f-a84e63cf59e7
-caps.latest.revision: 19
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 2d62b6859490047796d66cc2b56090a130ffd5f9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 865c2280ab395b5c8172ee978da16a2bcc26f7b9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ismbclower-ismbclowerl-ismbcupper-ismbcupperl"></a>_ismbclower、_ismbclower_l、_ismbcupper、_ismbcupper_l
 マルチバイト文字が小文字または大文字であるかどうかをチェックします。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -104,27 +91,27 @@ int _ismbcupper_l(
 ## <a name="remarks"></a>コメント  
  これらの各関数は特定の条件で特定のマルチバイト文字をテストします。  
   
- これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-|ルーチン|テスト条件|コード ページ 932 の例|  
+|ルーチンによって返される値|テスト条件|コード ページ 932 の例|  
 |-------------|--------------------|---------------------------|  
 |`_ismbclower`|小文字の英字|`c` が ASCII 小文字の英字 (0x61<=`c`<=0x7A) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
 |`_ismbclower_l`|小文字の英字|`c` が ASCII 小文字の英字 (0x61<=`c`<=0x7A) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
 |`_ismbcupper`|大文字の英字|`c` が ASCII 大文字の英字 (0x41<=`c`<=0x5A) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
 |`_ismbcupper_l`|大文字の英字|`c` が ASCII 大文字の英字 (0x41<=`c`<=0x5A) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbclower`|\<mbstring.h>|  
 |`_ismbclower_l`|\<mbstring.h>|  
 |`_ismbcupper`|\<mbstring.h>|  
 |`_ismbcupper_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../../c-runtime-library/character-classification.md)   
  [_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)   
  [ロケール](../../c-runtime-library/locale.md)   

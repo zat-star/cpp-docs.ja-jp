@@ -1,76 +1,81 @@
 ---
-title: "プロジェクトの作成 (ATL チュートリアル、パート 1) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
+title: "プロジェクト (ATL チュートリアル、パート 1) を作成する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs:
+- C++
 ms.assetid: f6b727d1-390a-4b27-b82f-daadcd9fc059
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1a9a5fc9a0d2175a419bbc0fb1aacbc9ea25006c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# プロジェクトの作成 (ATL チュートリアル、パート 1)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このチュートリアルでは、ActiveX オブジェクトを作成する属性なし ATL プロジェクトによってための一連のウォーク多角形を表示します。  オブジェクトは、ユーザーの表示を更新するには、多角形、およびコードを構成する辺の数を変更することを許可するオプションが用意されています。  
+# <a name="creating-the-project-atl-tutorial-part-1"></a>プロジェクトの作成 (ATL チュートリアル、パート 1)
+このチュートリアルでは、属性なしの ATL プロジェクトを多角形を表示する ActiveX オブジェクトを作成する手順について説明します。 オブジェクトには、辺の多角形、およびコードの表示を更新数を変更するユーザーを許可するためのオプションが含まれています。  
   
 > [!NOTE]
->  ATL と MFC は、Visual Studio Express Edition にはサポートされていません。  
+>  ATL および MFC は一般にサポートされていません Visual Studio の Express edition でします。  
   
 > [!NOTE]
->  このチュートリアルでは、POLYGON サンプルと同じソース・コードを作成します。  ソース・コードを手動で入力することを回避したい場合 [&#91;Polygon sample abstract&#93;](../top/visual-cpp-samples.md)からダウンロードできます。  このチュートリアルでは、またはを使用してそれをするように独自のプロジェクトのエラーを確認するために、多角形のソース・コードを参照。  
+>  このチュートリアルでは、多角形のサンプルと同じソース コードを作成します。 ソース コードを手動で入力しないようにする場合をからダウンロードできます、[多角形サンプル抽象](../visual-cpp-samples.md)です。 「チュートリアル、または独自のプロジェクトでのエラー チェックを使用すると、多角形のソース コードを参照し、できます。  
   
-### ATL を使用して最初の ATL プロジェクトを作成するには、ウィザードを投影します  
+### <a name="to-create-the-initial-atl-project-using-the-atl-project-wizard"></a>ATL プロジェクト ウィザードを使用して初期 ATL プロジェクトを作成するには  
   
-1.  Visual Studio 開発環境では、**\[ファイル\]** のメニューのをクリック **\[新規作成\]** し、**プロジェクト**をクリックします。  
+1.  Visual Studio 開発環境でをクリックして**新規**上、**ファイル** メニューをクリックして**プロジェクト**です。  
   
-2.  **\[Visual C\+\+ プロジェクト\]** のフォルダーをクリックし、**\[ATL プロジェクト\]** を選択します。  
+2.  クリックして、 **Visual C プロジェクト**フォルダーと選択**ATL プロジェクト**です。  
   
-3.  プロジェクトの名前として" `[多角形]`。  
+3.  型`Polygon`プロジェクト名として。  
   
-     ソース・コードの位置は、担当の Documents\\Visual の Studio プロジェクトに既定で表示されます、新しいフォルダーが自動的に作成されます。  
+     My documents \visual Studio プロジェクトでは、ソース コードの場所は既定で通常と、新しいフォルダーを自動的に作成されます。  
   
-4.  **\[OK\]** と ATL プロジェクト ウィザードが開きますをクリックします。  
+4.  をクリックして**OK**と ATL プロジェクト ウィザードが開きます。  
   
-5.  使用できるオプションを表示します **\[アプリケーションの設定\]**。  
+5.  をクリックして**アプリケーション設定**使用可能なオプションを表示します。  
   
-6.  作成すると同時に、コントロールは DLL として、コントロールでは、インプロセス サーバーであり **\[アプリケーションの種類\]** を保持します。  
+6.  コントロールを作成すると、コントロールは、インプロセス サーバーである必要がありますのままにして、**アプリケーションの種類**DLL として。  
   
-7.  他のオプションを既定値のままにして、**\[完了\]** をクリックします。  
+7.  その既定値で、他のオプションのままにし、をクリックして**完了**です。  
   
- ATL プロジェクト ウィザードは、複数のファイルを生成するプロジェクトを作成します。  多角形のオブジェクトを抽出して、ソリューション エクスプローラーでこれらのファイルを表示できます。  ファイルを示します。  
+ ATL プロジェクト ウィザードでは、いくつかのファイルを生成することによって、プロジェクトを作成します。 ソリューション エクスプ ローラーでこれらのファイルを表示するには、Polygon オブジェクトを展開します。 ファイルは次のとおりです。  
   
 |ファイル|説明|  
-|----------|--------|  
-|Polygon.cpp|`DllMain`、`DllCanUnloadNow`、`DllGetClassObject`、`DllRegisterServer`と `DllUnregisterServer`の実装が含まれています。  また、プロジェクトの ATL オブジェクトのリストであるオブジェクト マップが含まれます。  これは、最初は空白です。|  
-|Polygon.def|このモジュール定義ファイルは、DLL に必要なエクスポートに関する情報をリンカーに示します。|  
-|Polygon.idl|、オブジェクトが特定のインターフェイスを定義するインターフェイス定義言語ファイル。|  
-|Polygon.rgs|このレジストリ スクリプトは、プログラムの DLL を登録するための情報が含まれています。|  
-|Polygon.rc|最初にプロジェクトの名前を含むバージョン情報と文字列を含むリソース ファイル。|  
-|Resource.h|リソース ファイル用のヘッダー ファイルです。|  
-|Polygonps.def|このモジュール定義ファイルは、プロキシ\/スタブ コードに必要なエクスポートに関する情報をリンカーに、アパートメント間呼び出しをサポートします。|  
-|stdafx.cpp|`#include` ATL 実装ファイルです。|  
-|stdafx.h|`#include` ATL ヘッダー ファイル。|  
+|----------|-----------------|  
+|Polygon.cpp|実装を含む`DllMain`、 `DllCanUnloadNow`、 `DllGetClassObject`、 `DllRegisterServer`、および`DllUnregisterServer`です。 オブジェクト マップは、あるプロジェクトで ATL オブジェクトの一覧も含まれています。 これは、最初は空です。|  
+|Polygon.def|このモジュール定義ファイルは、リンカーが、DLL で必要なエクスポートに関する情報を提供します。|  
+|Polygon.idl|インターフェイス定義言語ファイル、オブジェクト固有のインターフェイスを記述します。|  
+|Polygon.rgs|このレジストリ スクリプトには、プログラムの DLL を登録するための情報が含まれています。|  
+|Polygon.rc|最初にバージョン情報と、プロジェクト名を含む文字列を含むリソース ファイル。|  
+|Resource.h|リソース ファイルのヘッダー ファイル。|  
+|Polygonps.def|このモジュール定義ファイルは、アパートメント間で呼び出しをサポートするプロキシとスタブのコードに必要なエクスポートに関する情報をリンカーを提供します。|  
+|stdafx.cpp|ファイル`#include`ATL 実装ファイル。|  
+|stdafx.h|ファイル`#include`ATL ヘッダー ファイルです。|  
   
-1.  ソリューション エクスプローラーで、`Polygon` プロジェクトを右クリックします。  
+1.  ソリューション エクスプ ローラーで右クリックし、`Polygon`プロジェクト。  
   
-2.  ショートカット メニューのをクリック **\[プロパティ\]**。  
+2.  ショートカット メニューをクリックして**プロパティ**です。  
   
-3.  **\[リンカー\]** をクリックします。  **○\[Per\-User\]** に **\[リダイレクト\]** オプションを変更します。  
+3.  をクリックして**リンカー**です。 変更、 **UserRedirection あたり**オプションを**はい**です。  
   
-4.  **\[OK\]** をクリックします。  
+4.  **[OK]**をクリックします。  
   
- 次の手順では、プロジェクトにコントロールを追加します。  
+ 次の手順では、プロジェクトに、コントロールを追加します。  
   
- [手順 2 ~](../atl/adding-a-control-atl-tutorial-part-2.md)  
+ [手順 2 に](../atl/adding-a-control-atl-tutorial-part-2.md)  
   
-## 参照  
- [チュートリアル](../Topic/Active%20Template%20Library%20\(ATL\)%20Tutorial.md)
+## <a name="see-also"></a>参照  
+ [チュートリアル](../atl/active-template-library-atl-tutorial.md)
+

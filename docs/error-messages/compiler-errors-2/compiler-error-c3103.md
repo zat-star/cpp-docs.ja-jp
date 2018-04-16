@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C3103 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3103 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C3103
@@ -19,12 +19,13 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c640db4e67c2de728260ef4f4843c9bb6f73d08f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 5bd4bdf877be1cb4af7ce8de82b6c16ae2c966f6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3103"></a>コンパイラ エラー C3103
 'argument': 名前付き引数を繰り返す  

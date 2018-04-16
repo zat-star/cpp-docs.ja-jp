@@ -1,46 +1,51 @@
 ---
-title: "CStringT によるメモリ管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "CStringT"
-  - "ATL::CStringT"
-  - "ATL.CStringT"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CFixedStringT クラス, 記述"
-  - "CString オブジェクト, メモリ管理"
-  - "CStringT クラス, メモリ管理"
-  - "IAtlStringMgr クラス, 使用"
-  - "メモリ [C++], 使い方"
-  - "文字列 [C++], カスタム メモリ管理"
-  - "文字列 [C++], メモリ管理"
+title: "CStringT によるメモリ管理 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CStringT
+- ATL::CStringT
+- ATL.CStringT
+dev_langs:
+- C++
+helpviewer_keywords:
+- CString objects, memory management
+- memory [C++], usage
+- IAtlStringMgr class, using
+- strings [C++], custom memory management
+- CFixedStringT class, description of
+- strings [C++], memory management
+- CStringT class, memory management
 ms.assetid: 88b8342d-19b5-48c4-9cf6-e4c44cece21e
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bbf623344ec52abce28a08670e7f3cd09140563b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CStringT によるメモリ管理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="memory-management-with-cstringt"></a>CStringT によるメモリ管理
+クラス[CStringT](../atl-mfc-shared/reference/cstringt-class.md)は可変長文字列の操作に使用されるテンプレート クラス。 これらの文字列を保持するためにメモリが割り当てられの各インスタンスに関連付けられている文字列マネージャー オブジェクトを介してリリース`CStringT`です。 MFC と ATL の既定のインスタンス化を提供します。`CStringT`という`CString`、 `CStringA`、および`CStringW`、別の文字型の文字列を操作します。 これらの文字型は型**TCHAR**、 `char`、および`wchar_t`、それぞれします。 これらの既定の文字列型では、(ATL) でプロセス ヒープまたは (MFC) では、CRT ヒープからメモリを割り当てる文字列マネージャーを使用します。 一般的なアプリケーションは、このメモリの割り当て方法で十分です。 ただし、処理を要するを行うコードの文字列 (マルチ スレッド コード) の既定のメモリ マネージャーが適切に機能しない可能性がありますを使用します。 このトピックの既定のメモリ管理動作をオーバーライドする方法について説明`CStringT`、当面のタスク用に最適化されたアロケーターを具体的に作成します。  
+  
+-   [カスタム文字列マネージャーの実装 (基本方法)](../atl-mfc-shared/implementation-of-a-custom-string-manager-basic-method.md)  
+  
+-   [ヒープ競合の回避](../atl-mfc-shared/avoidance-of-heap-contention.md)  
+  
+-   [カスタム文字列マネージャーの実装 (詳細方法)](../atl-mfc-shared/implementation-of-a-custom-string-manager-advanced-method.md)  
+  
+-   [CFixedStringT: 例のカスタム文字列マネージャー](../atl-mfc-shared/cfixedstringt-example-of-a-custom-string-manager.md)  
+  
+## <a name="see-also"></a>参照  
+ [CustomString サンプル](../visual-cpp-samples.md)
 
-クラス [CStringT](../atl-mfc-shared/reference/cstringt-class.md)、可変長文字列操作に使用されるテンプレート クラスです。  これらの文字列を保持するメモリは `CStringT`の各インスタンスに関連付けられた文字列マネージャー オブジェクトを介して割り当てと解放されます。  MFC および ATL `CString`は、`CStringA`と `CStringW`と呼ばれる異なる文字型の文字列を処理する `CStringT`の既定のインスタンス化を提供します。  これらの文字型は型 **TCHAR**、`char`と `wchar_t`、それぞれです。  これらの既定の文字列型はヒープ プロセス \(ATL\) または CRT ヒープからメモリを割り当てる文字列マネージャーを使用します \(MFC\)。  一般的なアプリケーションでは、このメモリ割り当ての設定で十分です。  ただし文字列にローカライズ的に使用する内で、コード \(またはマルチスレッド コード\) の既定のメモリ マネージャーが最上位に実行しない場合があります。  このトピックでは、タスク オブジェクト用に最適化されたアロケーターを作成する `CStringT`の既定のメモリ管理の動作をオーバーライドする方法について説明します。  
-  
--   [カスタム文字列マネージャー \(基本メソッド\) の実装](../atl-mfc-shared/implementation-of-a-custom-string-manager-basic-method.md)  
-  
--   [ヒープの競合の回避](../atl-mfc-shared/avoidance-of-heap-contention.md)  
-  
--   [カスタム文字列マネージャー \(高度なメソッド\) の実装](../Topic/Implementation%20of%20a%20Custom%20String%20Manager%20\(Advanced%20Method\).md)  
-  
--   [CFixedStringT: カスタム文字列マネージャーの例](../atl-mfc-shared/cfixedstringt-example-of-a-custom-string-manager.md)  
-  
-## 参照  
- [CustomString サンプル](../top/visual-cpp-samples.md)

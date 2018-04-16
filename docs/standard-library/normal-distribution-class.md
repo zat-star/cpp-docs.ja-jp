@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::normal_distribution
 - random/std::normal_distribution::reset
@@ -21,7 +22,8 @@ f1_keywords:
 - random/std::normal_distribution::param_type::stddev
 - random/std::normal_distribution::param_type::operator==
 - random/std::normal_distribution::param_type::operator!=
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::normal_distribution [C++]
 - std::normal_distribution [C++], reset
@@ -33,15 +35,17 @@ helpviewer_keywords:
 - std::normal_distribution [C++], param_type
 - std::normal_distribution [C++], param_type
 ms.assetid: bf92cdbd-bc72-4d4a-b588-173d748f0d7d
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0d825affb04f2172ac3d53e632193345725b93b6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3a3d4de1e2316c2a406d6e2a3278c60c214201aa
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="normaldistribution-class"></a>normal_distribution クラス
 正規分布を生成します。  
@@ -91,7 +95,7 @@ public:
   
 プロパティ関数 `mean()` および `stddev()` は、格納されている分布パラメーター `mean` および `stddev` に対してそれぞれの値を返します。  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
 
 メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
   
@@ -101,7 +105,7 @@ public:
   
 分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-正規分布の詳細については、Wolfram MathWorld の記事「[正規分布](http://go.microsoft.com/fwlink/LinkId=400924)」をご覧ください。  
+正規分布の詳細については、Wolfram MathWorld の記事「[正規分布](http://go.microsoft.com/fwlink/p/?linkid=400924)」をご覧ください。  
   
 ## <a name="example"></a>例  
   
@@ -188,7 +192,7 @@ Distribution for 10 samples:
     10: 2.7821317338  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **ヘッダー:** \<random>  
   
 **名前空間:** std  
@@ -247,7 +251,7 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
 
 

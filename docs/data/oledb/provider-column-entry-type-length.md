@@ -1,64 +1,67 @@
 ---
-title: "PROVIDER_COLUMN_ENTRY_TYPE_LENGTH | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PROVIDER_COLUMN_ENTRY_TYPE_LENGTH"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PROVIDER_COLUMN_ENTRY_TYPE_LENGTH マクロ"
+title: PROVIDER_COLUMN_ENTRY_TYPE_LENGTH | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- PROVIDER_COLUMN_ENTRY_TYPE_LENGTH
+dev_langs:
+- C++
+helpviewer_keywords:
+- PROVIDER_COLUMN_ENTRY_TYPE_LENGTH macro
 ms.assetid: a60b1a8b-0903-4ff4-91ec-ed62126449fb
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: cb7d5eb61674cc5db6af4af2df8ec0a06712ea1e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# PROVIDER_COLUMN_ENTRY_TYPE_LENGTH
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プロバイダーでサポートされる特定の列を表します。  
+# <a name="providercolumnentrytypelength"></a>PROVIDER_COLUMN_ENTRY_TYPE_LENGTH
+プロバイダーでサポートされている特定の列を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
-PROVIDER_COLUMN_ENTRY_TYPE_LENGTH(  
-name  
+```cpp
+PROVIDER_COLUMN_ENTRY_TYPE_LENGTH(name  
 , ordinal, dbtype, size, member )  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *name*  
   
- \[\]項目の名前です。  
+ [in]列の名前。  
   
  `ordinal`  
- \[入力\] 列番号。  列がブックマーク列でない場合は、行数は 0 です。  
+ [in]列番号。 列は、ブックマーク列でない限り、列番号は 0 をできません。  
   
  `dbtype`  
- \[\] [DBTYPE](https://msdn.microsoft.com/en-us/library/ms711251.aspx)のデータ型。  
+ [in]データ型[DBTYPE](https://msdn.microsoft.com/en-us/library/ms711251.aspx)です。  
   
  `size`  
- \[\]バイト列のサイズ。  
+ [in]列のサイズ (バイト単位)。  
   
  `member`  
- \[\]データを格納するデータ クラスのメンバー変数。  
+ [in]データを格納するデータ クラスにメンバー変数です。  
   
-## 解説  
- [PROVIDER\_COLUMN\_ENTRY\_LENGTH](../../data/oledb/provider-column-entry-length.md) に似ていますが、割り当て列のデータ型やサイズを指定できます。  
+## <a name="remarks"></a>コメント  
+ ような[PROVIDER_COLUMN_ENTRY_LENGTH](../../data/oledb/provider-column-entry-length.md)列のデータ型とサイズを指定することもできます。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート用マクロ](../../data/oledb/macros-for-ole-db-provider-templates.md)   
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   

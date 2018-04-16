@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CComEnumOnSTL
 - atlcom/ATL::CComEnumOnSTL
-dev_langs: C++
-helpviewer_keywords: CComEnumOnSTL class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CComEnumOnSTL class
 ms.assetid: befe1a44-7a00-4f28-9a2e-cc0fa526643c
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 740d1d35781fcea7820bfcb32171b744534b20fe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d42d99baf154bc5434f2d771aeaabb71c5502b30
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomenumonstl-class"></a>クラス
 このクラスは、C++ 標準ライブラリ コレクションに基づく COM 列挙子オブジェクトを定義します。  
@@ -88,7 +93,7 @@ class ATL_NO_VTABLE CComEnumOnSTL : public IEnumOnSTLImpl<Base, piid,
   
  `CComEnumOnSTL`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ## <a name="example"></a>例  
@@ -102,7 +107,7 @@ class ATL_NO_VTABLE CComEnumOnSTL : public IEnumOnSTLImpl<Base, piid,
   
  このコードを作成、`typedef`の`CComEnumOnSTL`のベクターを公開する`CComVariant`により s、 **IEnumVariant**インターフェイスです。 **CVariantCollection**クラスを特化するだけ**CreateSTLEnumerator**この型の列挙子オブジェクトを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [つまり](../../atl/reference/ienumonstlimpl-class.md)   
  [ATLCollections サンプル: 単独、CComEnumOnSTL、およびカスタム コピー ポリシー クラス](../../visual-cpp-samples.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   

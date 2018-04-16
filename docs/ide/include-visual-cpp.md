@@ -1,60 +1,63 @@
 ---
-title: "&lt;include&gt; (Visual C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "include"
-  - "<include>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "<include> C++ XML タグ"
-  - "include C++ XML タグ"
+title: '&lt;含める&gt;(Visual C) |Microsoft ドキュメント'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-ide
+ms.tgt_pltfrm: ''
+ms.topic: article
+f1_keywords:
+- include
+- <include>
+dev_langs:
+- C++
+helpviewer_keywords:
+- include C++ XML tag
+- <include> C++ XML tag
 ms.assetid: 392a3e61-0371-4617-8362-446650876ce3
 caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f9a6b07ce540d67a44e46a24fb943dac93bb95a4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# &lt;include&gt; (Visual C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\<include\> タグを使用すると、ソース コード内の型およびメンバーの説明として、別のファイル内のコメントを参照できます。  これはソース コードのファイルにドキュメント コメントを直接記述しない方法です。  たとえば、チームが企業全体で使用される標準の「定型」というコメントを挿入するために \<include\> を使用できます。  
+# <a name="ltincludegt-visual-c"></a>&lt;含める&gt;(Visual C)
+\<include> タグを使用して、ソース コード内の型とメンバーを記述する別のファイル内のコメントを参照することができます。 これは文書化のコメントをソース コード ファイル内に直接配置する方法の代替です。  たとえば、使用することができます\<含める > は、チームや会社で使用する標準的な「定型」コメントを挿入しますします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 <include file='filename' path='tagpath' />  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `filename`  
- ドキュメントを含むファイルの名前。  ファイル名にパスを指定することもできます。  単一引用符で囲みます。  コンパイラは `filename`を検索警告が発行されます。  
+ ドキュメントを含むファイルの名前。 ファイル名をパスで修飾することができます。  名前は、一重引用符または二重引用符で囲みます。  コンパイラは、`filename` が見つからない場合に警告を発行します。  
   
  `tagpath`  
- 目的のノード セットを選択する有効な XPath 式はファイルに含まれています。  
+ ファイルに含まれている必要なノード セットを選択する有効な XPath 式です。  
   
  `name`  
- タグの名前指定子。その後ろにコメントを指定します。`name` には `id` を指定します。  
+ コメントの前に配置するタグの名前指定子。`name` には `id` が指定されます。  
   
  `id`  
- タグの ID。その後ろにコメントを指定します。  単一引用符で囲みます。  
+ コメントの前に配置するタグの ID。  名前は、一重引用符または二重引用符で囲みます。  
   
-## 解説  
- \<include\> タグは、XML の XPath 構文を使用します。  \<include\>を使用してカスタマイズ方法については、XPath ドキュメントを参照してください。  
+## <a name="remarks"></a>コメント  
+ \<include> タグは XML XPath 構文を使用します。 使用してカスタマイズする方法については、XPath に関するドキュメントを参照してください\<含める >。  
   
- コンパイル時に [\/doc](../build/reference/doc-process-documentation-comments-c-cpp.md) を指定してドキュメント コメントをファイルに出力します。  
+ コンパイル時に [/doc](../build/reference/doc-process-documentation-comments-c-cpp.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
-## 使用例  
- 複数ファイルの例を次に示します。  \<include\>を使用する最初のファイルは次のドキュメント コメントが含まれています:  
+## <a name="example"></a>例  
+ これは、複数ファイルの例です。 最初のファイルを使用して\<含める >、次のドキュメントのコメントが含まれています。  
   
 ```  
 // xml_include_tag.cpp  
@@ -74,7 +77,7 @@ public ref class Test2 {
 };  
 ```  
   
- 2 番目のファイル xml\_include\_tag.doc には、次のドキュメント コメントが記述されています。  
+ 2 番目のファイル xml_include_tag.doc には、次のドキュメントのコメントが含まれています。  
   
 ```  
 <MyDocs>  
@@ -94,7 +97,7 @@ The summary for this other type.
 </MyDocs>  
 ```  
   
-## プログラムの出力  
+## <a name="program-output"></a>プログラムの出力  
   
 ```  
 <?xml version="1.0"?>  
@@ -117,5 +120,5 @@ The summary for this other type.
 </doc>  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [XML に関するドキュメント](../ide/xml-documentation-visual-cpp.md)

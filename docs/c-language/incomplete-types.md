@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - void keyword [C], incomplete
 - types [C], incomplete
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - void keyword [C]
 - structures, incomplete
 ms.assetid: 01bc0cf6-9fa7-458c-9371-ecbe54ea6aee
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2dd7ab170717cb0e20d71ad4e62e2cbc03483fbf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9e14c2811debfe01f7eb5ae7fc36bebfe0580017
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="incomplete-types"></a>不完全な型
 不完全な型とは、識別子を記述する型でありながら、識別子のサイズを決定するために必要な情報が欠けている型です。 "不完全な型" には次のようなものがあります。  
@@ -65,5 +69,5 @@ ms.lasthandoff: 10/24/2017
     char a[25]; /* a now has complete type */  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言と型](../c-language/declarations-and-types.md)

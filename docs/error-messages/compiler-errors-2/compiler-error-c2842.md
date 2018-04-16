@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2842
-dev_langs: C++
-helpviewer_keywords: C2842
+f1_keywords:
+- C2842
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2842
 ms.assetid: 8674f08d-9f50-46ad-9229-abc6b74fa0e5
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3998ff0b07ba78228ac51bccac047d8889ccf81b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 47130ec2bf73889130d64f3ca8411bbc38dabf93
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2842"></a>コンパイラ エラー C2842
 'class' : マネージ型または WinRT 型はそれ自体の 'operator new' または 'operator delete' を定義できません  

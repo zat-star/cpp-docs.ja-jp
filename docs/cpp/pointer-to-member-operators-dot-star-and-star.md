@@ -4,13 +4,15 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - .*
 - ->*
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - expressions [C++], pointer
 - pointer-to-member operators [C++]
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - expressions [C++], operators
 - ->* operator
 ms.assetid: 2632be3f-1c81-4523-b56c-982a92a68688
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a77c69b2268ea1d97cc92122ab587b1c70be0e42
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6db7b7190a1374564071775ce2ea6c0777bdf567
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="pointer-to-member-operators--and--gt"></a>メンバーへのポインター演算子:. */&gt;*
 ## <a name="syntax"></a>構文  

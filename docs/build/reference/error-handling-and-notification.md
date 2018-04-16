@@ -1,24 +1,29 @@
 ---
-title: "エラー処理と通知 |Microsoft ドキュメント"
-ms.custom: 
+title: エラー処理と通知 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: error handling, and notification
+dev_langs:
+- C++
+helpviewer_keywords:
+- error handling, and notification
 ms.assetid: b621cf60-d869-451a-b05e-dc86d78addaa
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b7666325caafdbdf2a56eeb1c02c183d0ead54e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 738721eb3fc37ba076157129cb88a22f2c90e464
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="error-handling-and-notification"></a>エラー処理と通知
 エラー処理と通知の詳細については、次を参照してください。[ヘルパー関数について](understanding-the-helper-function.md)です。  
@@ -41,5 +46,5 @@ ms.lasthandoff: 10/24/2017
   
 -   [例外](../../build/reference/exceptions-c-cpp.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカーによる DLL の遅延読み込み](../../build/reference/linker-support-for-delay-loaded-dlls.md)

@@ -4,25 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::stack
-dev_langs: C++
+f1_keywords:
+- cliext::stack
+dev_langs:
+- C++
 helpviewer_keywords:
 - <stack> header [STL/CLR]
 - <cliext/stack> header [STL/CLR]
 - stack class [STL/CLR]
 ms.assetid: 6ee96b9f-8a33-4cf7-b7e0-6535c24bdefb
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: dad00eecc05b8b3020dcf024b297b4b090317ee4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c7f6d9eac97fa1907a0901c725645f29dcdd5d9e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="stack-stlclr"></a>stack (STL/CLR)
 このテンプレート クラスでは、後入れ先出しのアクセス権を持つ要素の可変長シーケンスを制御するオブジェクトについて説明します。 コンテナー アダプターを使用する`stack`プッシュ ダウン スタックとの基になるコンテナーを管理します。  
@@ -42,7 +48,7 @@ template<typename Value,
 ```  
   
 #### <a name="parameters"></a>パラメーター  
- 値  
+ [値]  
  被制御シーケンス内の要素の型。  
   
  コンテナー  
@@ -89,7 +95,7 @@ template<typename Value,
   
 ## <a name="interfaces"></a>インターフェイス  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |<xref:System.ICloneable>|オブジェクトが重複してください。|  
 |IStack\<値、コンテナー >|汎用的なコンテナーのアダプターを管理します。|  
@@ -97,12 +103,12 @@ template<typename Value,
 ## <a name="remarks"></a>コメント  
  オブジェクトは、割り当てし、型の基になるコンテナーを制御するシーケンスの記憶域を解放`Container`、格納する`Value`要素および要求時に増加します。 オブジェクトは、プッシュおよびポップだけの最後の要素、後入れ先出しキュー (LIFO キュー、またはスタックとも呼ばれます) の実装へのアクセスを制限します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/stack >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   

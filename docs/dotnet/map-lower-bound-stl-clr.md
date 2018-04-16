@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::map::lower_bound
-dev_langs: C++
-helpviewer_keywords: lower_bound member [STL/CLR]
+f1_keywords:
+- cliext::map::lower_bound
+dev_langs:
+- C++
+helpviewer_keywords:
+- lower_bound member [STL/CLR]
 ms.assetid: 959651a0-f949-4cc1-859b-248b6930f16c
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5cd5c26d2e2dfc206c04f26e219df7dd91609e29
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5106a68fabc9248c8d9342cbcfba7dbe102832f2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="maplowerbound-stlclr"></a>map::lower_bound (STL/CLR)
 指定したキーに一致する範囲の先頭を検出します。  
@@ -78,12 +85,12 @@ lower_bound(L'x')==end() = True
 *lower_bound(L'b') = [b 2]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
  [map::count (STL/CLR)](../dotnet/map-count-stl-clr.md)   
  [map::equal_range (STL/CLR)](../dotnet/map-equal-range-stl-clr.md)   

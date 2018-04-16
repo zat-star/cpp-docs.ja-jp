@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
-helpviewer_keywords: memory, managing
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- memory, managing
 ms.assetid: be564a5e-577e-40a7-bfe3-25ad21e57270
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 25b2de4791a843f151dfb653af177b947fb2fde6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 81c1b35115464a734c0f242df2e7c015855ecebe
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="memory-management-classes"></a>メモリ管理クラス
 これらのクラスは、ヒープのポインター、スマート ポインター、およびその他のメモリ割り当てルーチンをサポートします。  
@@ -65,6 +70,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [IAtlMemMgr](../atl/reference/iatlmemmgr-class.md)このクラスは、メモリ マネージャーへのインターフェイスを表します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

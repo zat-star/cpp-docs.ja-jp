@@ -1,25 +1,32 @@
 ---
-title: "hash_multiset::hasher (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: hash_multiset::hasher (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::hash_multiset::hasher
-dev_langs: C++
-helpviewer_keywords: hasher member [STL/CLR]
+f1_keywords:
+- cliext::hash_multiset::hasher
+dev_langs:
+- C++
+helpviewer_keywords:
+- hasher member [STL/CLR]
 ms.assetid: c68c59ae-bc9e-4caf-9240-04eb65273517
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a755de47e132b29be1c075fc912392b0f84fba15
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 4ed9c1bcf47de2326a0ff051054c1a8d99ab690c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultisethasher-stlclr"></a>hash_multiset::hasher (STL/CLR)
 キーのハッシュのデリゲート。  
@@ -59,11 +66,11 @@ hash(L'a') = 1616896120
 hash(L'b') = 570892832  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_multiset (STL/CLR)](../dotnet/hash-multiset-stl-clr.md)   
  [hash_multiset::hash_delegate (STL/CLR)](../dotnet/hash-multiset-hash-delegate-stl-clr.md)

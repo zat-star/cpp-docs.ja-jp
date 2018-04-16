@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: Remote Automation, creating programs
+dev_langs:
+- C++
+helpviewer_keywords:
+- Remote Automation, creating programs
 ms.assetid: 8eb31320-1037-4029-b1f3-fdc9406dbaf1
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 393e8aea159e83e43b83a9f06522466c60baba9b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 86a9b9f4dccaaa3a97366dffb11955d3b148aff5
+ms.sourcegitcommit: fa7a6dccddce3747389c91277a53e296f905305c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="creating-programs-that-use-remote-automation"></a>リモート オートメーションを使用するプログラムの作成
 すべてのオートメーション オブジェクトとすべてのオートメーション コント ローラーは、再コンパイルの必要性と再リンクの必要なく、ソース コードを変更せずにリモート オートメーションを使用できます。 ローカルでの動作をセットアップした後 (つまり、同じコンピューターに)、リモートで実行するために、いくつかの手順のみを通過する必要があります。  
@@ -45,7 +50,7 @@ ms.lasthandoff: 10/24/2017
   
  手順 3 では、正しくインストールし、選択したサーバーのコンピューターにサーバー アプリケーションの登録が含まれます。 ここでも、アプリケーションが自動登録の場合は、実行すると、登録できます。  
   
- 手順 4 では、リモート実行を許可するサーバーの構成が含まれます。 RAC マネージャー サーバー コンピューター上で実行していることを確認、**クライアント アクセス** タブにフォーカスがあります。 アクティブ化モデルを選択する (通常**キーによってリモート作成を許可する**です。 クリックする必要は、このオプションを選択する場合も、**リモート アクティベーションを許可**'Y' にレジストリ エントリの値を設定する チェック ボックス)。 Windows NT を実行しているか、Windows 2000 を許可するリモートが作成されます (ACL) オプションを選択もある場合、オプションを適用して、ACL を編集する、**編集 ACL**ボタンをクリックします。  
+ 手順 4 では、リモート実行を許可するサーバーの構成が含まれます。 RAC マネージャー サーバー コンピューター上で実行していることを確認、**クライアント アクセス** タブにフォーカスがあります。 アクティブ化モデルを選択する (通常**キーによってリモート作成を許可する**です。 クリックする必要は、このオプションを選択する場合も、**リモート アクティベーションを許可**'Y' にレジストリ エントリの値を設定する チェック ボックス)。 許可するリモートが作成されます (ACL) オプションを選択するもある場合、オプションをプッシュして ACL を編集する、**編集 ACL**ボタンをクリックします。  
   
  リモート オートメーションを使用を許可するのには、オートメーション マネージャーがインストールされ、サーバー コンピューターか、マシンで実行されていることを確認する必要があります。 インストールされていない場合は、AUTMGR32 をコピーします。Exe を使用して、Windows システム ディレクトリ。 これを行う方法については、次を参照してください。[リモート オートメーションのインストール](../mfc/remote-automation-installation.md)です。 リモート オートメーションを開始するには、オートメーション マネージャーを実行します。 メッセージの数が表示される小さなステータス ウィンドウが表示されます。 開始されると、それ自体を最小限に抑えるされます。 クリックすることができますを引き続きステータス情報を表示する場合、**オートメーション マネージャー**  タブ、ウィンドウを復元するには、タスク バーでします。  
   
@@ -53,7 +58,7 @@ ms.lasthandoff: 10/24/2017
   
  ラジオ ボタンのシングル クリックでは、RAC マネージャーもできるリモート オートメーションと分散 COM (DCOM をサポートするプラットフォーム上の DCOM) の間で切り替えることに注意してください。 DCOM を選択する場合は、さまざまな他の構成オプションを設定できます。 詳細については、DCOM のドキュメントを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リモート オートメーション](../mfc/remote-automation.md)   
  [AUTOCLIK と AUTODRIV を使用したリモート オートメーションの実行](../mfc/running-remote-automation-using-autoclik-and-autodriv.md)
 

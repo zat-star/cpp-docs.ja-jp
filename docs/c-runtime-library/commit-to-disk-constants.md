@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.constants
-dev_langs: C++
-helpviewer_keywords: commit-to-disk constants
+f1_keywords:
+- vc.constants
+dev_langs:
+- C++
+helpviewer_keywords:
+- commit-to-disk constants
 ms.assetid: 0b903b23-b4fa-431e-a937-51d95f695ecf
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 128b670302683208680fbf1499c26af474c72c3e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9dd4873d8f9b3a658996bfd057372e8fb29e3478
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="commit-to-disk-constants"></a>ディスク コミット定数
 **Microsoft 固有の仕様**  
@@ -50,9 +56,9 @@ ms.lasthandoff: 10/24/2017
   
  生成される実行ファイルでは、`fflush` への呼び出しはバッファーの内容をディスクに直接書き込み、`_flushall` への呼び出しはすべてのバッファーの内容をディスクに書き込みます。 これら 2 つの関数のみが、COMMODE.OBJ の影響を受けます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../c-runtime-library/stream-i-o.md)   
  [_fdopen、_wfdopen](../c-runtime-library/reference/fdopen-wfdopen.md)   
  [fopen、_wfopen](../c-runtime-library/reference/fopen-wfopen.md)   

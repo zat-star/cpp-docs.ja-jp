@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - stricmp
 - wcsicmp
@@ -32,16 +32,17 @@ helpviewer_keywords:
 - stricmp function
 - wcsicmp function
 ms.assetid: 2e3c6703-2635-4961-a253-e2c4c5029ed8
-caps.latest.revision: 5
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f9d2e33b23eabde4d7be3f47b7a0d2d54feb0066
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 7016b6d902bb39a16073b44dbb1daf9b8803b612
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="stricmp-wcsicmp"></a>stricmp、wcsicmp
 これらの POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_stricmp、_wcsicmp、_mbsicmp、_stricmp_l、_wcsicmp_l、_mbsicmp_l](../../c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md) を使用してください。

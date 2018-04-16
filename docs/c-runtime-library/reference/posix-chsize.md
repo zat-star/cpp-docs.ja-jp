@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - chsize
 apilocation:
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - chsize function
 ms.assetid: f94d62f6-b539-4cbf-bf99-b81d081b4216
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 215fdb31143f03e1a44643b8849ec7212cccab12
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 065a713e61c4fc1b1b459948a11b68b855591538
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="chsize"></a>chsize
 この POSIX 関数は使用されなくなりました。 代わりに ISO C++ 準拠の [_chsize](../../c-runtime-library/reference/chsize.md) またはセキュリティが強化された [_chsize_s](../../c-runtime-library/reference/chsize-s.md) を使用してください。

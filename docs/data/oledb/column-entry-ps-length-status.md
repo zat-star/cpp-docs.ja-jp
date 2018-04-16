@@ -1,46 +1,40 @@
 ---
-title: "COLUMN_ENTRY_PS_LENGTH_STATUS |Microsoft ドキュメント"
+title: COLUMN_ENTRY_PS_LENGTH_STATUS | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: COLUMN_ENTRY_PS_LENGTH_STATUS
-dev_langs: C++
-helpviewer_keywords: COLUMN_ENTRY_PS_LENGTH_STATUS macro
+ms.topic: reference
+f1_keywords:
+- COLUMN_ENTRY_PS_LENGTH_STATUS
+dev_langs:
+- C++
+helpviewer_keywords:
+- COLUMN_ENTRY_PS_LENGTH_STATUS macro
 ms.assetid: 04291671-329d-4974-b04e-36ef3f037787
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 03f2204ea04ebe069a6685b8fa72ee4586a6db83
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e118a807fe5aac14428ce96bbcedcfdf9eb092cf
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="columnentrypslengthstatus"></a>COLUMN_ENTRY_PS_LENGTH_STATUS
 データベースの特定の列を行セットのバインドを表します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-COLUMN_ENTRY_PS_LENGTH_STATUS(  
-nOrdinal  
-,   
-nPrecision  
-,   
-nScale  
-,   
-data  
-,   
-length  
-,   
-status  
- )  
+```cpp
+COLUMN_ENTRY_PS_LENGTH_STATUS(nOrdinal, nPrecision, nScale, data, length, status)  
   
 ```  
   
@@ -74,10 +68,10 @@ status
   
 -   間、 [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md)と[END_PARAM_MAP](../../data/oledb/end-param-map.md)マクロです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md)   
  [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md)   

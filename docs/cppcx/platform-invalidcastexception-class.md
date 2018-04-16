@@ -6,22 +6,26 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::InvalidCastException::InvalidCastException
 - VCCORLIB/Platform::InvalidCastException
-dev_langs: C++
-helpviewer_keywords: Platform::InvalidCastException
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::InvalidCastException
 ms.assetid: 0215131d-1251-4913-9561-824410e045b6
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 00ae3e193f3f7114d3d271f7a928dbb5c10c176c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 91224dcf2884faf194cf450a4b158a71c295b3ea
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platforminvalidcastexception-class"></a>Platform::InvalidCastException クラス
 キャストまたは明示的な変換が無効な場合にスローされます。  
@@ -35,7 +39,7 @@ public ref class InvalidCastException : COMException,    IException,    IPrintab
 ### <a name="remarks"></a>コメント  
  詳細については、 [COMException](../cppcx/platform-comexception-class.md) クラスを参照してください。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -44,5 +48,5 @@ public ref class InvalidCastException : COMException,    IException,    IPrintab
   
  **メタデータ:** platform.winmd  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform::COMException クラス](../cppcx/platform-comexception-class.md)

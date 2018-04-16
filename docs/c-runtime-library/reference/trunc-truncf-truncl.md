@@ -8,7 +8,7 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - trunc
 - truncf
@@ -33,21 +33,24 @@ f1_keywords:
 - math/trunc
 - math/truncf
 - math/truncl
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - trunc function
 - truncf function
 - truncl function
 ms.assetid: de2038ac-ac0b-483e-870c-e8992dcd4fd0
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b2a78deabb758a7d8fe8b0da61899bf7ad11dd8f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b97cc80701ef7f099fd7df177b40a935cce30a52
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="trunc-truncf-truncl"></a>trunc、truncf、truncl
 指定した浮動小数点以下に最も近い整数を指定します。  
@@ -86,7 +89,7 @@ long double truncl(
   
  それ以外の場合は、次のいずれかを返します。  
   
-|問題点|リターン|  
+|懸案事項|Return|  
 |-----------|------------|  
 |`x` = ±INFINITY|x|  
 |`x` =  ±0|x|  
@@ -101,15 +104,15 @@ long double truncl(
   
  浮動小数点から整数に暗黙的に変換することで切り捨てることもできますが、これは対象の型に格納できる値に限ります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
 |`trunc`、`truncf`、`truncl`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [floor、floorf、floorl](../../c-runtime-library/reference/floor-floorf-floorl.md)   
  [ceil、ceilf、ceill](../../c-runtime-library/reference/ceil-ceilf-ceill.md)   

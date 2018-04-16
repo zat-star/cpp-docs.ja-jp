@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - not function
 ms.assetid: d2ddbd5c-33c0-4aff-8961-feac155b4ba1
-caps.latest.revision: 12
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: da6e9bef4d969f22c5ce87fd9654e4f8401b4769
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: 62a6cba9111bc5c60ad286b3409ff76257fc4cfc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="not"></a>not
 ! 演算子の 代替手段。  
@@ -80,5 +81,5 @@ a is zero
 a is zero  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iso646.h>

@@ -1,57 +1,61 @@
 ---
-title: "__ud2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__ud2"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "UD2 命令"
-  - "__ud2 組み込み"
+title: __ud2 | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- __ud2
+dev_langs:
+- C++
+helpviewer_keywords:
+- UD2 instruction
+- __ud2 intrinsic
 ms.assetid: 0831cd5a-8b65-402e-bb57-11e1d5d7ffd2
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c24ef85598b94280badd31c5f4570ee6915100b5
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# __ud2
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="ud2"></a>__ud2
+**Microsoft 固有の仕様**  
   
- 未定義命令が生成されます。  
+ 未定義の命令を生成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void __ud2();  
 ```  
   
-## 解説  
- プロセッサが未定義の手順を実行すると無効なオペコードの例外が発生します。  
+## <a name="remarks"></a>コメント  
+ プロセッサでは、未定義の命令を実行する場合に無効な opcode 例外が発生します。  
   
- `__ud2` の関数は `UD2` のマシン語命令とカーネル モードでのみ使用できます。  詳細については文書の検索「 Intel アーキテクチャのソフトウェア開発者の手動Volume 2: サイトの命令セットの参照です [Intel Corporation](http://go.microsoft.com/fwlink/?LinkId=127) 」。  
+ `__ud2`関数と同じ、`UD2`マシン語命令、およびカーネル モードでのみ使用できます。 詳細については、検索、ドキュメントの"Intel アーキテクチャ ソフトウェア デベロッパーズ マニュアル、ボリューム 2: 命令セットの参照を"で、 [Intel Corporation](http://go.microsoft.com/fwlink/p/?linkid=127)サイトです。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__ud2`|x86[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__ud2`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 使用例  
- 次の例は例外を発生させる未定義手順を実行します。  例外ハンドラーはゼロから 1 つリターン コードを変更します。  
+## <a name="example"></a>例  
+ 次の例では、例外を発生させます。 未定義の命令を実行します。 例外ハンドラーは、0 から 1 し、リターン コードを変更します。  
   
 ```  
 // __ud2_intrinsic.cpp  
@@ -83,6 +87,11 @@ int main() {
 }  
 ```  
   
-  **\_\_ud2 の前 \(\)。  リターン コード \= 0 です。  例外ハンドラー。  \_\_ud2 \(\) の後。  リターン コード \= 1。**    
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+```Output  
+Before __ud2(). Return code = 0.  
+  In the exception handler.  
+After __ud2().  Return code = 1.  
+```  
+  
+## <a name="see-also"></a>参照  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

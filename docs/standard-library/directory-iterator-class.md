@@ -7,47 +7,44 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - filesystem/std::experimental::filesystem::directory_iterator
-- directory_iterator
 - filesystem/std::experimental::filesystem::_Directory_iterator::_Directory_iterator
-- filesystem/std::experimental::filesystem::directory_iterator
-- FILESYSTEM/std::experimental::filesystem::directory_iterator::directory_iterator
-- FILESYSTEM/std::experimental::filesystem::directory_iterator::increment
-- FILESYSTEM/std::experimental::filesystem::directory_iterator::operator=
-- FILESYSTEM/std::experimental::filesystem::directory_iterator::operator==
-- FILESYSTEM/std::experimental::filesystem::directory_iterator::operator!=
-- FILESYSTEM/std::experimental::filesystem::directory_iterator::operator*
-- FILESYSTEM/std::experimental::filesystem::directory_iterator::operator->
-- FILESYSTEM/std::experimental::filesystem::directory_iterator::operator++
+- filesystem/std::experimental::filesystem::directory_iterator::directory_iterator
+- filesystem/std::experimental::filesystem::directory_iterator::increment
+- filesystem/std::experimental::filesystem::directory_iterator::operator=
+- filesystem/std::experimental::filesystem::directory_iterator::operator==
+- filesystem/std::experimental::filesystem::directory_iterator::operator!=
+- filesystem/std::experimental::filesystem::directory_iterator::operator*
+- filesystem/std::experimental::filesystem::directory_iterator::operator-&gt;
+- filesystem/std::experimental::filesystem::directory_iterator::operator++
 dev_langs:
 - C++
 ms.assetid: dca2ecf8-3e69-4644-a83d-705061e10cc8
-caps.latest.revision: 19
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 4eb80d5309a7749c1374d72be16798dbeea33bdc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+helpviewer_keywords:
+- std::experimental::filesystem::directory_iterator
+- std::experimental::filesystem::_Directory_iterator::_Directory_iterator
+- std::experimental::filesystem::directory_iterator
+- std::experimental::filesystem::directory_iterator::directory_iterator
+- std::experimental::filesystem::directory_iterator::increment
+- std::experimental::filesystem::directory_iterator::operator=
+- std::experimental::filesystem::directory_iterator::operator==
+- std::experimental::filesystem::directory_iterator::operator!=
+- std::experimental::filesystem::directory_iterator::operator*
+- std::experimental::filesystem::directory_iterator::operator-&gt;
+- std::experimental::filesystem::directory_iterator::operator++
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 27152fc2ebc7944e4b96dce75937ac3c3b04616d
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="directoryiterator-class"></a>directory_iterator クラス
 ディレクトリのファイル名を走査する入力反復子を表します。 反復子 X の場合、式 *X の結果は、ファイル名とそのステータスに関する既知の情報をラップする directory_entry クラスのオブジェクトになります。  
@@ -79,7 +76,7 @@ directory_iterator(const directory_iterator&) = default;
 directory_iterator(directory_iterator&&) noexcept = default;  
 ```  
   
- 1 つ目のコンストラクターは、end-of-sequence 反復子を生成します。 2 番目と&3; 番目のコンストラクターは、mydir に pval を格納してから、mydir をディレクトリとして開いて読み取ろうとします。 成功した場合は、ディレクトリの最初のファイル名を myentry に格納し、成功しなかった場合は end-of-sequence 反復子を生成します。  
+ 1 つ目のコンストラクターは、end-of-sequence 反復子を生成します。 2 番目と 3 番目のコンストラクターは、mydir に pval を格納してから、mydir をディレクトリとして開いて読み取ろうとします。 成功した場合は、ディレクトリの最初のファイル名を myentry に格納し、成功しなかった場合は end-of-sequence 反復子を生成します。  
   
  既定のコンストラクターは想定どおりの動作をします。  
   
@@ -150,5 +147,4 @@ directory_iterator& operator++(int);
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<filesystem>](../standard-library/filesystem.md)   
  [ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)
-
 

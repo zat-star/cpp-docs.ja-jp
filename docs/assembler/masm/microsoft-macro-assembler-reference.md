@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - MASM (Microsoft Macro Assembler), reference
 - MASM (Microsoft Macro Assembler), overview
 - MASM (Microsoft Macro Assembler)
 - MASM (Microsoft Macro Assembler), documentation overview
 ms.assetid: 1446d55f-e2e7-4fd1-a9b8-b15cf7d4e47c
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: df9df0f039bb9fcf9b157c642025b3f140c26ccc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4fa951c5386847f216eea8581865ff3ba03a9e05
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="microsoft-macro-assembler-reference"></a>Microsoft Macro Assembler リファレンス
 Microsoft マクロ アセンブラー (MASM) は、インライン アセンブリにいくつかの利点を提供します。 MASM には、ループ、算術演算子、およびテキスト文字列の処理などの機能を含む言語マクロにはが含まれています。 MASM も制御できます大きいハードウェア、386、および Pentium プロセッサの命令セットをサポートしているためです。 MASM を使用するもに時間とメモリのオーバーヘッドを軽減できます。  
@@ -50,10 +54,10 @@ Microsoft マクロ アセンブラー (MASM) は、インライン アセンブ
  ファイルの出力を作成する方法については[!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)]します。  
   
 ## <a name="related-sections"></a>関連項目  
- [Visual C++](../../top/visual-cpp-in-visual-studio.md)  
+ [Visual C++](../../visual-cpp-in-visual-studio.md)  
  Visual Studio および Visual C のドキュメントのさまざまな領域へのリンクを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ組み込み関数](../../intrinsics/compiler-intrinsics.md)   
  [x86Intrinsics](../../intrinsics/x86-intrinsics-list.md)   
  [x64 (amd64) 組み込み](../../intrinsics/x64-amd64-intrinsics-list.md)

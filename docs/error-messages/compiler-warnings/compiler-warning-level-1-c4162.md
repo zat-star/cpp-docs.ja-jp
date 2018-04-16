@@ -1,36 +1,40 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4162 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4162"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4162"
+title: "コンパイラの警告 (レベル 1) C4162 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4162
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4162
 ms.assetid: 21ae3c92-501d-4689-ad7d-13753cb65eff
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 980c2229b06e5c7bef85901daaa788a6a2911ee3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4162
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'identifier' : C リンケージを持つ関数が見つかりません。  
+# <a name="compiler-warning-level-1-c4162"></a>コンパイラの警告 (レベル 1) C4162
+'identifier': 見つかった C リンケージを持つ関数  
   
- C リンケージを持つ関数が宣言されていますが、見つかりません。  
+ C リンケージを持つ関数は宣言されていますが、見つかりません。  
   
- この警告を解決するには、.c ファイルでコンパイルします \(C コンパイラを呼び出します\)。C\+\+ コンパイラを呼び出す必要がある場合は、extern "C" を関数宣言の前に指定します。  
+ この警告を解決するのには、.c ファイルでコンパイル (C コンパイラを呼び出します)。  C++ コンパイラを呼び出す必要があります、extern"C"関数宣言の前に配置します。  
   
- 次の例では C4162 警告が生成されます。  
+ 次の例には、C4162 が生成されます。  
   
 ```  
 // C4162.cpp  
@@ -45,7 +49,7 @@ int main() {
 }  
 ```  
   
- 解決方法 :  
+ 考えられる解決方法:  
   
 ```  
 // C4162b.cpp  

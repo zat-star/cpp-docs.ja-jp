@@ -1,52 +1,58 @@
 ---
-title: "Converting Bitmaps to Toolbars | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "bitmaps [C++], converting to toolbars"
-  - "Toolbar editor, converting bitmaps"
-  - "toolbars [C++], converting bitmaps"
+title: "ビットマップ ツールバーからへの変換 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- bitmaps [C++], converting to toolbars
+- Toolbar editor, converting bitmaps
+- toolbars [C++], converting bitmaps
 ms.assetid: 971c181b-40f5-44be-843d-677a7c235667
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: d189395bbedff4d73cc690d454ddd07af4d109e6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Converting Bitmaps to Toolbars
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ビットマップを変換して、新しいツール バーを作成できます。  ビットマップのグラフィックは、ツール バーのボタンのイメージに変換されます。  通常、1 つのビットマップには複数のボタンのイメージがあり、ボタンごとに 1 つのイメージが含まれています。  イメージのサイズは任意で、既定の幅は 16 ピクセル、高さはイメージの高さです。  イメージ エディターで、\[イメージ\] メニューの \[ツール バー エディター\] をクリックすると、[&#91;新規ツール バー&#93; ダイアログ ボックス](../mfc/new-toolbar-resource-dialog-box.md)でボタンのイメージのサイズを指定できます。  
+# <a name="converting-bitmaps-to-toolbars"></a>ビットマップからツール バーへの変換
+新しいツールバーを作成するには、ビットマップを変換します。 グラフィック ビットマップからツールバーのボタンのイメージに変換します。 通常、ビットマップには、1 つのビットマップのボタンごとに 1 つのイメージのいくつかのボタン イメージが含まれています。 イメージのサイズにすることができます。既定では 16 ピクセルとイメージの高さです。 ボタンのイメージのサイズを指定することができます、[新規ツールバー ダイアログ ボックス](../windows/new-toolbar-resource-dialog-box.md)からツール バー エディターを選択すると、**イメージ**イメージ エディターでのメニュー。  
   
-### ビットマップをツール バーに変換するには  
+### <a name="to-convert-bitmaps-to-a-toolbar"></a>ツールバーのビットマップを変換するには  
   
-1.  [イメージ エディター](../mfc/image-editor-for-icons.md)で既存のビットマップ リソースを開きます。  ビットマップが .rc ファイルにない場合は、\[リソースの追加\] ダイアログ ボックスの \[インポート\] をクリックします。.rc ファイルに追加するビットマップに移動し、\[開く\] をクリックします。  
+1.  既存のビットマップ リソースを開く、[イメージ エディター](../windows/image-editor-for-icons.md)です。 (ビットマップが .rc ファイルにない場合、.rc ファイルを右クリックし、選択**インポート**、ショートカット メニューを .rc ファイルに追加するビットマップに移動し、クリックして**開く**)。  
   
-2.  \[イメージ\] メニューの \[ツール バー エディター\] をクリックします。  
+2.  **イメージ**] メニューの [選択**ツール バー エディター**です。  
   
-     [&#91;新規ツール バー&#93; ダイアログ ボックス](../mfc/new-toolbar-resource-dialog-box.md)が表示されます。  アイコン イメージの幅と高さは、ビットマップに合わせて変更できます。  その後、ツール バー イメージがツール バー エディターに表示されます。  
+     [新規ツールバー ダイアログ ボックス](../windows/new-toolbar-resource-dialog-box.md)が表示されます。 ビットマップに合わせてアイコン イメージの高さと幅を変更することができます。 ツール バー エディター ツール バー イメージが表示されます。  
   
-3.  変換を完了するには、[&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)を使用してボタンのコマンド ID を変更します。  新しい ID を入力するか、ドロップダウン リストの ID を選択します。  
+3.  変換を完了するには、コマンドを変更**ID**  ボタンを使用して、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)します。 新しい入力**ID**かを選択して、 **ID**ドロップダウン リストからです。  
   
     > [!TIP]
-    >  \[プロパティ\] ウィンドウのタイトル バーには、プッシュピン ボタンがあります。  このボタンをクリックすると、ウィンドウの \[自動的に隠す\] の有効と無効を切り替えることができます。  各プロパティ ウィンドウを開かずに、すべてのツール バー ボタンのプロパティの表示をすばやく切り替えるには、\[プロパティ\] ウィンドウが固定されたままになるように、\[自動的に隠す\] をオフにします。  
+    >  [プロパティ] ウィンドウには、タイトル バーのプッシュピン ボタンが含まれています。 このボタンをクリックすると有効またはウィンドウの自動非表示を無効にします。 すばやくを順番にすべてのツール バー ボタン プロパティを windows の個々 のプロパティを再度開くことがなく、オフにする自動非表示にするため、[プロパティ] ウィンドウがまだ定常化します。  
   
- また、[&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)を使用すると、新しいツール バーのボタンのコマンド ID を変更できます。  新しいツール バーを編集する方法については、「[ツール バー ボタンの作成、移動、および編集](../mfc/creating-moving-and-editing-toolbar-buttons.md)」を参照してください。  
+ 使用して、新しいツールバーのボタンのコマンド Id を変更することも、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)します。 新しいツールバーの編集方法の詳細については、次を参照してください。[作成、移動、および編集ツール バー ボタン](../windows/creating-moving-and-editing-toolbar-buttons.md)です。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  MFC または ATL  
   
-## 参照  
- [Creating New Toolbars](../mfc/creating-new-toolbars.md)   
- [Toolbar Editor](../mfc/toolbar-editor.md)
+## <a name="see-also"></a>参照  
+ [ツールバーの新規作成](../windows/creating-new-toolbars.md)   
+ [ツール バー エディター](../windows/toolbar-editor.md)
+

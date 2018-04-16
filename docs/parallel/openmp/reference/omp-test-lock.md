@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: omp_test_lock
-dev_langs: C++
-helpviewer_keywords: omp_test_lock OpenMP function
+ms.topic: reference
+f1_keywords:
+- omp_test_lock
+dev_langs:
+- C++
+helpviewer_keywords:
+- omp_test_lock OpenMP function
 ms.assetid: 314ca85e-0749-4c16-800f-b0f36fed256d
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 052b552cab9d8fb0ff6b969e85a7108ca232b572
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4acf73f72bde16d5bcc1dba47ab7958f9dc2b6d9
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="omptestlock"></a>omp_test_lock
 ロックを設定しようとしていますが、スレッドの実行をブロックしません。  
@@ -95,5 +101,5 @@ Thread 3 - acquired simple_lock
 Thread 3 - released simple_lock  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3509
 ms.assetid: cc2db39a-2f98-4e40-b803-496e585494e6
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 16b9e4c2dd49dc966ccb060553e5fd2f12e7635b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: bb8fcb4c51ce0a7e69154e77ac5990898275ba16
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3509"></a>コンパイラ エラー C3509
 'type': 無効な Automation 戻り値の型です。パラメーターがマークされている 'retval'、戻り値の型の場合、'void'、'HRESULT' または 'SCODE' する必要があります。  

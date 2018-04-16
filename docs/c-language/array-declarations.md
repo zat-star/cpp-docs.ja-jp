@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - multidimensional arrays
 - declaring arrays
 - arrays [C++], declaring
 ms.assetid: 5f958b97-cef0-4058-bbc6-37c460aaed9b
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 74cfdf5393487ddd2cda7d478c0940c6db74b35a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 06742239c48503a5917317a674a39f50a38702c7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="array-declarations"></a>配列の宣言
 "配列宣言" では、配列に名前を付けて、その要素の型を指定します。 また、配列の要素数も定義できます。 配列型の変数は、配列要素の型へのポインターと見なされます。  
@@ -78,7 +82,7 @@ char A[2][3];
   
  配列の個々の要素を参照するには、「[Postfix Operators](../c-language/postfix-operators.md)」 (後置形式の演算子) の説明に従って添字式を使用します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  これらの例は配列宣言を示しています。  
   
 ```  
@@ -105,7 +109,7 @@ extern char *name[];
   
  配列の最大サイズを保持するために必要な整数型は、**size_t** のサイズになります。 STDDEF.H ヘッダー ファイルに定義されている **size_t** は、0x00000000 - 0x7CFFFFFF の範囲の `unsigned int` です。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言子と変数宣言](../c-language/declarators-and-variable-declarations.md)

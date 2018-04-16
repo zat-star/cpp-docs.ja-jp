@@ -1,51 +1,53 @@
 ---
-title: "2.4.3 single Construct | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "2.4.3 コンス トラクターの 1 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 15c180cd-e462-4b41-bf8c-cb8b1afb1a9b
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 72dc551986f149bda668c438ac5f51d01d530c51
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 2.4.3 single Construct
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**シングル**  のディレクティブは構造化のブロックはチーム \(\)マスター スレッドの 1 種類のスレッドによってのみ実行されるように指定する構造体を指定します。   **シングル**  のディレクティブの構文は次のとおりです :  
+# <a name="243-single-construct"></a>2.4.3 single コンストラクト
+**単一**ディレクティブが関連付けられている構造化ブロックが、チーム (必ずしもマスター スレッド) 内の 1 つだけのスレッドによって実行されることを指定する構成を識別します。 構文、**単一**ディレクティブは、次のようにします。  
   
 ```  
-#pragma omp single [clause[[,] clause] ...] new-line  
-   structured-block  
+#pragma omp single [clause[[,] clause] ...] new-linestructured-block  
 ```  
   
- 句は次のいずれかです :  
+ 句では、次のいずれかです。  
   
- **\(プライベート**   *変数*  の  *リスト* **\)**  
+ **プライベート (** *変数一覧* **)**  
   
- **\(firstprivate**  *変数*  の  *リスト* **\)**  
+ **firstprivate (** *変数一覧* **)**  
   
- **\(copyprivate**  *変数*  の  *リスト* **\)**  
+ **copyprivate (** *変数一覧* **)**  
   
  **nowait**  
   
- **nowait** の句の指定がない場合  **シングル**  の構造の後暗黙的なバリアがあります。  
+ 後に、暗黙的な障害物が、**単一**れない限り、作成、 **nowait**句を指定します。  
   
- **シングル**  のディレクティブに制限 : は次のとおりです。  
+ 制限は、**単一**ディレクティブは、次のとおり。  
   
--   **nowait** の一つの句だけ  **シングル**  のディレクティブで指定できます。  
+-   1 つだけ**nowait**句に表示できる、**単一**ディレクティブです。  
   
--   **copyprivate** の句は **nowait** の句を使用しないでください。  
+-   **Copyprivate**に句を使用しないでください、 **nowait**句。  
   
-## cref:  
+## <a name="cross-references"></a>クロス リファレンス  
   
--   **プライベート  firstprivate** と **copyprivate** の句はページの 25 [セクション 2.7.2](../Topic/2.7.2%20Data-Sharing%20Attribute%20Clauses.md) が表示されます。
+-   **プライベート**、 **firstprivate**、および**copyprivate**句を参照してください[セクション 2.7.2](../../parallel/openmp/2-7-2-data-sharing-attribute-clauses.md) [25] ページ。

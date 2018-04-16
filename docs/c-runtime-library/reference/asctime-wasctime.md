@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wasctime
 - asctime
@@ -27,7 +28,8 @@ f1_keywords:
 - _tasctime
 - asctime
 - _wasctime
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - asctime function
 - tasctime function
@@ -37,15 +39,17 @@ helpviewer_keywords:
 - time structure conversion
 - time, converting
 ms.assetid: 974f1727-10ff-4ed4-8cac-2eb2d681f576
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2e356e6bef6c46bfede3f8337969fd1385cebd66
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c89b43613e1eb82eb35876ea733e13c5d2995352
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="asctime-wasctime"></a>asctime、_wasctime
 `tm` 時間構造体を文字列に変換します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)」を参照してください。  
@@ -73,7 +77,7 @@ wchar_t *_wasctime(
   
  `asctime` 関数は、構造体として格納されている時間を文字列に変換します。 `timeptr` 値は通常、TIME.H で定義された `tm` 構造体へのポインターを返す、`gmtime` または `localtime` への呼び出しから取得されます。  
   
-|timeptr メンバー|値|  
+|timeptr メンバー|[値]|  
 |--------------------|-----------|  
 |`tm_hour`|午前 0 時 (0 ~ 23) 以降の時間|  
 |`tm_isdst`|夏時間が有効な場合は正、夏時間が無効な場合は 0、夏時間かどうかが不明な場合は負。 C ランタイム ライブラリでは、アメリカ合衆国の規則を前提に夏時間 (DST) を計算します。|  
@@ -99,9 +103,9 @@ wchar_t *_wasctime(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tasctime`|`asctime`|`asctime`|`_wasctime`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`asctime`|\<time.h>|  
 |`_wasctime`|\<time.h> または \<wchar.h>|  
@@ -137,7 +141,7 @@ int main( void )
 Current date and time: Sun Feb 03 11:38:58 2002  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [ctime、_ctime32、_ctime64、_wctime、_wctime32、_wctime64](../../c-runtime-library/reference/ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)   
  [_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   

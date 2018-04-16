@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - memcpy_s
 - wmemcpy_s
@@ -33,30 +33,17 @@ helpviewer_keywords:
 - memcpy_s function
 - wmemcpy_s function
 ms.assetid: 5504e20a-83d9-4063-91fc-3f55f7dabe99
-caps.latest.revision: 27
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 44d9ecb713c0fa85f11c3d01b5a15707b0bfaf57
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 16926cfb0f95911b3e272013167e7fa09b072b25
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="memcpys-wmemcpys"></a>memcpy_s、wmemcpy_s
 バッファー間でバイトをコピーします。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [memcpy、wmemcpy](../../c-runtime-library/reference/memcpy-wmemcpy.md) です。  
@@ -98,7 +85,7 @@ errno_t wmemcpy_s(
   
 |`dest`|`destSize`|`src`|`count`|戻り値|`dest` の内容|  
 |------------|----------------|-----------|---|------------------|------------------------|  
-|任意|任意|任意|0|0|変更されません|  
+|任意|任意|任意|0|0|変更されない|  
 |`NULL`|任意|任意|0 以外|`EINVAL`|変更されません|  
 |任意|任意|`NULL`|0 以外|`EINVAL`|`dest` は 0 に設定されます|  
 |任意|< `count`|任意|0 以外|`ERANGE`|`dest` は 0 に設定されます|  
@@ -108,14 +95,14 @@ errno_t wmemcpy_s(
   
  これらの関数では、パラメーターの検証が行われます。 `count` が 0 以外であるか、`dest` または `src` が Null ポインターであるか、`destSize` が `count` 未満である場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `EINVAL` または `ERANGE` を返し、`errno` を戻り値に設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`memcpy_s`|\<memory.h> または \<string.h>|  
 |`wmemcpy_s`|\<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -157,7 +144,7 @@ int main()
 0 1 4 9 16 25 36 49 64 81   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
  [_memccpy](../../c-runtime-library/reference/memccpy.md)   
  [memchr、wmemchr](../../c-runtime-library/reference/memchr-wmemchr.md)   

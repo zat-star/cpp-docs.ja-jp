@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: LNK1237
-dev_langs: C++
-helpviewer_keywords: LNK1237
+f1_keywords:
+- LNK1237
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK1237
 ms.assetid: 8722ffa8-096a-4bb0-85f9-f3aa0e10872a
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 43ab77f153b6e53709422a1826a6beee25d65b2a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ee9ec0e197d51f76ff57ef06f5584c55df0a4746
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-error-lnk1237"></a>リンカ ツール エラー LNK1237
 コード生成中には、コンパイラはシンボル 'symbol' は 'module'/GL でコンパイルされたモジュールで定義されているへの参照を導入しました。  

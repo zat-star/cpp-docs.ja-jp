@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3110
 ms.assetid: 821dc71f-896e-4b2d-af0e-aa9932934b7b
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ec824ca430ea336d6bec1bb43af31201531803a5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 573b7bbbe40929d291c10426e7826293e8dfd4bc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3110"></a>コンパイラ エラー C3110
 'function_name': COM インターフェイスのメソッドをオーバー ロードすることはできません  

@@ -1,37 +1,41 @@
 ---
-title: "x64 ソフトウェア規約 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Visual C++, x64 呼び出し規約"
-  - "x64 コーディング規則"
+title: "x64 ソフトウェア規約 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- x64 coding conventions
+- Visual C++, x64 calling conventions
 ms.assetid: 750f3d97-1706-4840-b2fc-41a007329a08
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d3b016fb60670dc8674691c52d593b468e597eed
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# x64 ソフトウェア規約
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このセクションでは、x86 アーキテクチャに対する 64 ビット拡張である [!INCLUDE[vcprx64](../Token/vcprx64_md.md)] の Visual C\+\+ 呼び出し規約について説明します。  
+# <a name="x64-software-conventions"></a>x64 ソフトウェア規約
+このセクションには、Visual C の呼び出し規約がについて説明[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]、64 ビットの拡張機能を x86 アーキテクチャ。  
   
--   [x64 呼び出し規約の概要](../build/overview-of-x64-calling-conventions.md)  
+-   [x64 呼び出し規則の概要](../build/overview-of-x64-calling-conventions.md)  
   
 -   [型とストレージ](../build/types-and-storage.md)  
   
 -   [レジスタの使用](../build/register-usage.md)  
   
--   [呼び出し規約](../build/calling-convention.md)  
+-   [呼び出し規則](../build/calling-convention.md)  
   
 -   [スタックの使用](../build/stack-usage.md)  
   
@@ -43,9 +47,9 @@ caps.handback.revision: 13
   
 -   [イメージ形式](../build/image-format.md)  
   
- 次のコンパイラ オプションを使用すると、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)] 対応アプリケーションを最適化できます。  
+ 次のコンパイラ オプションでは、アプリケーションを最適化できます[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]:。  
   
--   [\/favor \(アーキテクチャ固有の最適化\)](../build/reference/favor-optimize-for-architecture-specifics.md)  
+-   [/favor (アーキテクチャ固有の最適化)](../build/reference/favor-optimize-for-architecture-specifics.md)  
   
-## 参照  
- [呼び出し規約](../Topic/Calling%20Conventions.md)
+## <a name="see-also"></a>参照  
+ [呼び出し規約](../cpp/calling-conventions.md)

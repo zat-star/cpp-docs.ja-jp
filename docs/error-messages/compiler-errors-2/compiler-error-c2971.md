@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2971
 ms.assetid: fdb5467b-9a41-41ef-ac20-2e9428d5a4fc
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9cf5dfdc80db11803f0060daf5aeb47701a08816
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 81194765278adc82d57a7a95cc8528f1fd6e1ef3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2971"></a>コンパイラ エラー C2971
 'class': テンプレート パラメーター 'param': 'arg': 非型引数としてローカル変数を使用することはできません  

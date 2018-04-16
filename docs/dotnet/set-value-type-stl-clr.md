@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::set::value_type
-dev_langs: C++
-helpviewer_keywords: value_type member [STL/CLR]
+f1_keywords:
+- cliext::set::value_type
+dev_langs:
+- C++
+helpviewer_keywords:
+- value_type member [STL/CLR]
 ms.assetid: 9af2fe12-9a8e-4919-9619-7a2f80988951
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e26cfef4ebe1ba904cc374cf7bfed5862607e77d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: bb7ff562d6b37b167d4b97949fd2cba7b3b3b154
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="setvaluetype-stlclr"></a>set::value_type (STL/CLR)
 要素の型。  
@@ -67,12 +74,12 @@ int main()
 a b c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
  [set::const_reference (STL/CLR)](../dotnet/set-const-reference-stl-clr.md)   
  [set::key_type (STL/CLR)](../dotnet/set-key-type-stl-clr.md)   

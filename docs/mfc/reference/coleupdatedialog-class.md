@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,20 +13,23 @@ f1_keywords:
 - AFXODLGS/COleUpdateDialog
 - AFXODLGS/COleUpdateDialog::COleUpdateDialog
 - AFXODLGS/COleUpdateDialog::DoModal
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COleUpdateDialog [MFC], COleUpdateDialog
 - COleUpdateDialog [MFC], DoModal
 ms.assetid: 699ca980-52b1-4cf8-9ab1-ac6767ad5b0e
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 447d6571977d636809212adc616f21d284e7fc16
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 32a7d41c507c2b7b932ba33df911151bfc417091
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coleupdatedialog-class"></a>関数クラス
 OLE の [リンクの編集] ダイアログ ボックスを使って、ドキュメント内の既存のリンク オブジェクトや埋め込みオブジェクトの更新のみを行います。これは、OLE の [リンクの編集] ダイアログ ボックスの特別な使い方です。  
@@ -70,7 +74,7 @@ class COleUpdateDialog : public COleLinksDialog
   
  `COleUpdateDialog`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxodlgs.h  
   
 ##  <a name="coleupdatedialog"></a>COleUpdateDialog::COleUpdateDialog  
@@ -119,7 +123,7 @@ virtual INT_PTR DoModal();
 ### <a name="remarks"></a>コメント  
  ユーザーは [キャンセル] ボタンを選択しない限り、すべてのリンクや埋め込みが更新されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル OCLIENT](../../visual-cpp-samples.md)   
  [関数クラス](../../mfc/reference/colelinksdialog-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

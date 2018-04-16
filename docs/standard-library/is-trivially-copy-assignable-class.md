@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - type_traits/std::is_trivially_copy_assignable
 dev_langs:
@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - is_trivially_copy_assignable
 ms.assetid: 7410133e-f367-493f-92a7-e34e3ec5e879
-caps.latest.revision: 12
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c8fe1f72d609c30dbd7abf9fb0d0ca6803d90a29
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 0f8aad09e3ed083b9ffdd2199c9a9ab6462b840b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="istriviallycopyassignable-class"></a>is_trivially_copy_assignable クラス
 型が自明なコピー代入演算子を持つかどうかをテストします。  
@@ -45,14 +46,13 @@ struct is_trivially_copy_assignable;
   
  クラス `T` の代入コンストラクターが自明となるのは、クラス `T` の代入コンストラクターが暗黙的に指定されており、クラス `T` に仮想関数と仮想基底が含まれず、クラス型の非静的データ メンバーすべてのクラスに自明な代入演算子が含まれており、かつクラスの型配列の非静的データ メンバーすべてでクラスに自明な代入演算子が含まれている場合です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
-
 
 
 

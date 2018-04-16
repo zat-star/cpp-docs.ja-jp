@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3413
 ms.assetid: de6c9b05-c373-4bd8-8cb0-12c2cd2e5674
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aeba2eb81f2843c4478437c0292bb908210eb9ba
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 1403c65b0eac3879cbbcd612b077d4b4b3937b49
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3413"></a>コンパイラ エラー C3413
 'name': 明示的インスタンス化が無効です  

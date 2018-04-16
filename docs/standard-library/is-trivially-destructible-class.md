@@ -16,16 +16,17 @@ dev_langs:
 helpviewer_keywords:
 - is_trivially_destructible
 ms.assetid: 3f7a787d-2448-40c5-ac51-a228318e02ce
-caps.latest.revision: 13
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 47b734f531e0bc958c41afbef5f5023ca01649cb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: ee42d7686c51950f62cbc8fdac187d9b2609b2b3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="istriviallydestructible-class"></a>is_trivially_destructible クラス
 型が普通に破棄可能であるかどうかをテストします。  
@@ -44,14 +45,13 @@ struct is_trivially_destructible;
 ## <a name="remarks"></a>コメント  
  型 `T` が破棄可能な型であり、デストラクターが自明でない演算を使用しないことがコンパイラに判明している場合、型述語のインスタンスは true を保持します。 それ以外の場合、false を保持します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
-
 
 
 

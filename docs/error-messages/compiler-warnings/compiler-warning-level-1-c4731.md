@@ -1,34 +1,38 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4731 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4731"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4731"
+title: "コンパイラの警告 (レベル 1) C4731 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4731
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4731
 ms.assetid: 5658c24c-3e6f-4505-835b-1fb92d47cab0
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9d8c59a22166c3f4f44db3bea43e241a2199009d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4731
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'pointer' : インライン アセンブラー コードにより変更されたフレーム ポインター レジスタ 'register' です。  
+# <a name="compiler-warning-level-1-c4731"></a>コンパイラの警告 (レベル 1) C4731
+'pointer': フレーム ポインター レジスタ 'register' インライン アセンブラー コードによって変更されました。  
   
- フレーム ポインター レジスタが変更されています。  レジスタをインライン アセンブリ ブロックまたはフレーム変数 \(ローカルまたはパラメーター、変更されたレジスタによって異なります\) に保存して、復元する必要があります。この処理を行わないと、コードは正常に動作しません。  
+ フレーム ポインター レジスタが変更されました。 保存して、インライン アセンブリ ブロックまたはフレーム変数 (ローカルまたはによって変更されたレジスタのパラメーター) に登録を復元する必要がありますか、コードが正しく動作しない可能性があります。  
   
- 次の例では警告 C4731 が生成されます。  
+ 次の例では、C4731 が生成されます。  
   
 ```  
 // C4731.cpp  
@@ -48,4 +52,4 @@ void bad(int p) {
 }  
 ```  
   
- EBP はフレーム ポインター \(FPO が無効\) であり、変更対象です。  `p` が後で参照される場合は、`EBP` に対して相対的に参照されます。  ただし、`EBP` はコードで上書きされているため、プログラムは正常に動作せず、違反になる場合もあります。
+ EBP が (FPO は許可されていません) フレーム ポインターであり変更しています。 ときに`p`後は、参照、に対する相対参照されている`EBP`です。 しかし、`EBP`が、コードで上書きされているため、プログラムが正しく動作しないもエラーの可能性があります。

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _TCHAR type
 - mappings, TCHAR.H data types
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - TCHAR type
 - TCHAR.H data types, mapping
 ms.assetid: a03de0db-8118-4bd9-a03f-640e8dfc5ed3
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1509860f81ffb42a4416ac10814247cac5dcb64f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b00ab2106db9b25433f721aadadf0718bef990a0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="a-sample-generic-text-program"></a>汎用テキストのプログラム例
 **Microsoft 固有の仕様**  
@@ -182,9 +186,9 @@ int __cdecl main(int argc, char **argv, char **envp)
 }  
 ```  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)   
  [データ型のマップ](../c-runtime-library/data-type-mappings.md)   
  [定数とグローバル変数のマップ](../c-runtime-library/constant-and-global-variable-mappings.md)   

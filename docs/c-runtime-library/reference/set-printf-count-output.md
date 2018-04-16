@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _set_printf_count_output
 apilocation:
@@ -33,16 +33,17 @@ helpviewer_keywords:
 - set_printf_count_output function
 - _set_printf_count_output function
 ms.assetid: d8259ec5-764e-42d0-9169-72172e95163b
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 279b14f0387348d322bbe09428af24daa5fd2f69
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: 8229146184b4d4d0cfbccd60f6c4209356db5f8f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="setprintfcountoutput"></a>_set_printf_count_output
 [printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) ファミリの関数で、`%n` 形式のサポートを有効または無効にします。  
@@ -65,13 +66,13 @@ int _set_printf_count_output(
 ## <a name="remarks"></a>コメント  
  セキュリティ上の理由で、`%n` 形式指定子のサポートは、`printf` とそのすべてのバリアントにおいて既定で無効になっています。 `printf` 形式指定に `%n` がある場合には、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、既定の動作として無効なパラメーター ハンドラーが呼び出されます。 呼び出す`_set_printf_count_output`0 以外の引数を持つにより`printf`-ファミリの関数を解釈する`%n`」の説明に従って[書式指定構文: printf 関数と wprintf 関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_set_printf_count_output`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -100,5 +101,5 @@ int main()
 i = 5  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_get_printf_count_output](../../c-runtime-library/reference/get-printf-count-output.md)

@@ -1,45 +1,50 @@
 ---
-title: "multimap::upper_bound (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multimap::upper_bound"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "upper_bound メンバー [STL/CLR]"
+title: "multimap::upper_bound (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::multimap::upper_bound
+dev_langs:
+- C++
+helpviewer_keywords:
+- upper_bound member [STL/CLR]
 ms.assetid: bfb8cf64-cecf-4685-8ac9-e7228ecee809
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: adcfb64d4bea21e2adf0dab781664e8c05104cbf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# multimap::upper_bound (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="multimapupperbound-stlclr"></a>multimap::upper_bound (STL/CLR)
 指定したキーに一致する範囲の末尾を検索します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 iterator upper_bound(key_type key);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  key  
- 検索するキー値。  
+ 検索対象のキー値。  
   
-## 解説  
- このメンバー関数は `key`に並べる等価である、被制御シーケンス内の最後の要素 `X` が決まります。  そのような要素が存在しない場合、または `X` が被制御シーケンスの最後の要素である場合、[multimap::end](../dotnet/multimap-end-stl-clr.md)`()`;を返します それ以外の場合は `X`を超える最初の要素を指定する反復子を返します。  被制御シーケンスで指定したキーに一致する要素のシーケンスの最後を現在の検索に使用されます。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数の最後の要素を決定する`X`をするのと同じ順序を持つ被制御シーケンス内`key`です。 このような要素が存在しない場合、または場合`X`、被制御シーケンスの最後の要素では返します[multimap::end (STL/CLR)](../dotnet/multimap-end-stl-clr.md)`()`;最初の要素を指定する反復子を返しますそれ以外の場合`X`. これを使用して、指定したキーと一致する、被制御シーケンス内で現在の要素のシーケンスの末尾を検索します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multimap_upper_bound.cpp   
@@ -73,18 +78,21 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**upper\_bound\(L'x'\)\=\=end\(\) \= true**  
-**\*upper\_bound \(L'a\) \= \[b 2\]**  
-**\*upper\_bound \(L'b\) \= \[c 3\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+upper_bound(L'x')==end() = True  
+*upper_bound(L'a') = [b 2]  
+*upper_bound(L'b') = [c 3]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [multimap](../dotnet/multimap-stl-clr.md)   
- [multimap::count](../dotnet/multimap-count-stl-clr.md)   
- [multimap::equal\_range](../dotnet/multimap-equal-range-stl-clr.md)   
- [multimap::find](../dotnet/multimap-find-stl-clr.md)   
- [multimap::lower\_bound](../dotnet/multimap-lower-bound-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
+ [multimap::count (STL/CLR)](../dotnet/multimap-count-stl-clr.md)   
+ [multimap::equal_range (STL/CLR)](../dotnet/multimap-equal-range-stl-clr.md)   
+ [multimap::find (STL/CLR)](../dotnet/multimap-find-stl-clr.md)   
+ [multimap::lower_bound (STL/CLR)](../dotnet/multimap-lower-bound-stl-clr.md)

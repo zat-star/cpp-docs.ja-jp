@@ -1,50 +1,55 @@
 ---
-title: "Assigning Access Keys to Menu Commands | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "access keys [C++], checking"
-  - "menus, shortcut keys"
-  - "keyboard shortcuts [C++], command assignments"
-  - "access keys [C++], assigning"
-  - "mnemonics, adding to menus"
-  - "keyboard shortcuts [C++], uniqueness checking"
-  - "mnemonics, uniqueness checking"
-  - "Check Mnemonics command"
+title: "メニュー コマンドに対するアクセス キーの割り当て |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- access keys [C++], checking
+- menus, shortcut keys
+- keyboard shortcuts [C++], command assignments
+- access keys [C++], assigning
+- mnemonics, adding to menus
+- keyboard shortcuts [C++], uniqueness checking
+- mnemonics, uniqueness checking
+- Check Mnemonics command
 ms.assetid: fbcf1a00-af6a-4171-805a-0ac01d4e8b0d
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: ccf64739d0a54b5a96551b3a8145dc3c3f8378c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Assigning Access Keys to Menu Commands
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-メニューとメニュー コマンドにアクセス キー \(ユーザーがキーボードを使ってメニューを選択できるようにするニーモニック\) を割り当てることができます。  
+# <a name="assigning-access-keys-to-menu-commands"></a>メニュー コマンドに対するアクセス キーの割り当て
+メニューとメニュー コマンドにアクセス キー (ユーザーがキーボードを使ってメニューを選択できるようにするニーモニック) を割り当てることができます。  
   
-### メニュー コマンドにアクセス \(ショートカット\) キーを割り当てるには  
+### <a name="to-assign-an-access-shortcut-key-to-a-menu-command"></a>メニュー コマンドにアクセス (ショートカット) キーを割り当てるには  
   
-1.  メニュー名やコマンド名の文字の前にアンパサンド \(**&**\) を入力し、対応するアクセス キーとしてその文字を指定します。 たとえば、"&File" は ALT\+F を、Microsoft Windows で作成されるアプリケーションの \[File\] メニューのショートカット キーとして設定します。  
+1.  メニュー名やコマンド名の文字の前にアンパサンド (**&**) を入力し、対応するアクセス キーとしてその文字を指定します。 たとえば、"&File" は ALT+F を、Microsoft Windows で作成されるアプリケーションの [File] メニューのショートカット キーとして設定します。  
   
-     メニュー項目は、文字の 1 つがショートカット キーに割り当てられている表示可能キューを提供します。 アンパーサンドに続く文字は、下線付きで表示されます \(オペレーティング システムによって異なる\)。  
+     メニュー項目は、文字の 1 つがショートカット キーに割り当てられている表示可能キューを提供します。 アンパーサンドに続く文字は、下線付きで表示されます (オペレーティング システムによって異なる)。  
   
     > [!NOTE]
-    >  メニューを右クリックし、ショートカット メニューから **\[ニーモニックの確認\]** を選択して、メニューのすべてのアクセスキーが一意であることを確認してください。  
+    >  メニューを右クリックし、ショートカット メニューから **[ニーモニックの確認]** を選択して、メニューのすべてのアクセスキーが一意であることを確認してください。  
   
- マネージ プロジェクトにリソースを追加する方法については、『*.NET Framework 開発者ガイド*』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、リソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」をご覧ください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  Win32  
   
-## 参照  
- [Menu Editor](../Topic/Menu%20Editor.md)
+## <a name="see-also"></a>参照  
+ [メニュー エディター](../windows/menu-editor.md)

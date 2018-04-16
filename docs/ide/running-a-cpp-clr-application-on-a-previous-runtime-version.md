@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - applications [C++], runtime version specified
 - versions [C++]
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - common language runtime [C++], version specified
 - deploying applications [C++], runtime version specified
 ms.assetid: 940171b7-6937-4b14-8e87-c199e23f4f2e
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b8e0a9860c3c6d4fef87a76aad037f70c1ea787f
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1f64c0dc31be260332d4d79e8fa38d63bbf6357c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="running-a-c-clr-application-on-a-previous-runtime-version"></a>以前のランタイム バージョンでの C++ /clr アプリケーションの実行
 未指定のそれ以外の場合、コンパイラが、アプリケーションをビルドに使用するバージョンの共通言語ランタイム (CLR) で実行する、C++ の .NET Framework のアプリケーションが作成されています。 ただし、1 つのバージョンの必要な機能を提供するその他のバージョンで実行するランタイムの構築された .exe アプリケーションです。  
@@ -41,5 +45,5 @@ ms.lasthandoff: 10/31/2017
   
  Version 1.0 または CLR では、Visual C でビルドしたアプリケーションのバージョン 1.1 で実行するのには、コンパイラを使用してコンパイルする必要があります[/clr:initialAppDomain](../build/reference/clr-common-language-runtime-compilation.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デスクトップ アプリケーションの配置](../ide/deploying-native-desktop-applications-visual-cpp.md)

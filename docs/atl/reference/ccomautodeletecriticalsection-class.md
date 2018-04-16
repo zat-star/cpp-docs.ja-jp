@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CComAutoDeleteCriticalSection
 - atlcore/ATL::CComAutoDeleteCriticalSection
-dev_langs: C++
-helpviewer_keywords: CComAutoDeleteCriticalSection class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CComAutoDeleteCriticalSection class
 ms.assetid: 2396dbea-1c60-4841-b50e-c4e18af311a3
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d073e392030db72d6371a798875daf3d7a90e247
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d0a0c5fdd45e819105a3f47e98c02bb5ad3d51be
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomautodeletecriticalsection-class"></a>CComAutoDeleteCriticalSection クラス
 このクラスは、取得し、クリティカル セクション オブジェクトの所有権を解放するためのメソッドを提供します。  
@@ -45,10 +50,10 @@ class CComAutoDeleteCriticalSection : public CComSafeDeleteCriticalSection
   
  `CComAutoDeleteCriticalSection`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcore.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComSafeDeleteCriticalSection クラス](../../atl/reference/ccomsafedeletecriticalsection-class.md)   
  [CComCriticalSection クラス](../../atl/reference/ccomcriticalsection-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

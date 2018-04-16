@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2503
 ms.assetid: da86cc89-fd04-400b-aa8d-a5ffaf7e3918
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9a5a005e07f885fa9113f7810e15ba8bb6a19c80
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 1eb2f8d30d7e61dbc6fe0b4a0872046c38dbe549
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2503"></a>コンパイラ エラー C2503
 'class': 基底クラスは、サイズが 0 の配列を含めることはできません  

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3345
-dev_langs: C++
-helpviewer_keywords: C3345
+f1_keywords:
+- C3345
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3345
 ms.assetid: 1dda4c79-73bb-441b-b939-746154c3afba
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ae9a2cc09dfed19874b8c1525e91732f702e6d75
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ca51e90d8c0cbb1806cc0b042d9c3ae2480a9729
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3345"></a>コンパイラ エラー C3345
 'identifier': モジュール名に対する無効な識別子です  
@@ -58,7 +64,7 @@ BOOL WINAPI DllMain(DWORD dwReason, LPVOID lpReserved) {
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [__iscsym](../../c-runtime-library/reference/iscsym-functions.md)   
  [文字分類](../../c-runtime-library/character-classification.md)   
  [モジュール](../../windows/module-cpp.md)

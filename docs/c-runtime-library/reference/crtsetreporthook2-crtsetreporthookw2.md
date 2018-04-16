@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _CrtSetReportHook2
 - _CrtSetReportHookW2
@@ -36,16 +36,17 @@ helpviewer_keywords:
 - _CrtSetReportHookW2 function
 - CrtSetReportHookW2 function
 ms.assetid: 12e5f68d-c8a7-4b1a-9a75-72ba4a8592d0
-caps.latest.revision: 14
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ec98ae83793d2f72026bd71ea1c625069df23b7d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 4f449a335eebc54fbfaf18ab94c853bb93a87cea
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="crtsetreporthook2-crtsetreporthookw2"></a>_CrtSetReportHook2、_CrtSetReportHookW2
 C ランタイム デバッグ レポート プロセスにフックして、クライアント定義レポート関数をインストールまたはアンインストールします (デバッグ バージョンのみ)。  
@@ -101,14 +102,14 @@ int YourReportHook( int reportType, char *message, int *returnValue );
 > [!NOTE]
 >  アプリケーションが `/clr` でコンパイルされ、main が終了した後でレポート関数が呼び出された場合、レポート関数がいずれかの CRT 関数を呼び出すと、CLR は例外をスローします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_CrtSetReportHook2`|\<crtdbg.h>|\<errno.h>|  
 |`_CrtSetReportHookW2`|\<crtdbg.h>|\<errno.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
@@ -261,5 +262,5 @@ _CrtSetReportHook2(_CRT_RPTHOOK_REMOVE, TestHook2) returned 0
 _CrtSetReportHook2(_CRT_RPTHOOK_REMOVE, TestHook1) returned 0  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)

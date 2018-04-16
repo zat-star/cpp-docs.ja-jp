@@ -1,14 +1,14 @@
 ---
-title: "catanh、catanhf、catanhl | Microsoft Docs"
-ms.custom: 
+title: catanh、catanhf、catanhl | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.tgt_pltfrm: ''
+ms.topic: reference
 apiname:
 - catanh
 - catanhf
@@ -44,29 +44,16 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: c70314e30419f6315fc1c3afe84e8e9fc104d728
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: abce100af16bff2ec7fd2de82d66ec3a7e59604e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="catanh-catanhf-catanhl"></a>catanh、catanhf、catanhl
-ブランチ カット実際の軸に沿った間隔 [-1; +1] 以外に、複雑な数値の双曲線逆正接を取得します。  
+ブランチ カット実際の軸に沿った間隔 [-1; +1] 以外に、複素数の逆ハイパーボリック タンジェントを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -98,15 +85,15 @@ _Lcomplex catanhl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`catanh` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは、 `catanh` は常に `_Dcomplex` 値を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|C ヘッダー|C++ ヘッダー|  
+|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
 |-------------|--------------|------------------|  
 |`catanh`、               `catanhf`、`catanhl`|\<complex.h>|\<ccomplex>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [ctanh、ctanhf、ctanhl](../../c-runtime-library/reference/ctanh-ctanhf-ctanhl.md)   
  [catan、catanf、catanl](../../c-runtime-library/reference/catan-catanf-catanl.md)   

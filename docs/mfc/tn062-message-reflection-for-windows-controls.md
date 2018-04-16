@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.controls.messages
-dev_langs: C++
+f1_keywords:
+- vc.controls.messages
+dev_langs:
+- C++
 helpviewer_keywords:
 - ON_WM_VKEYTOITEM_REFLECT macro [MFC]
 - ON_WM_DRAWITEM_REFLECT macro [MFC]
@@ -33,15 +36,17 @@ helpviewer_keywords:
 - WM_NOTIFY message [MFC]
 - ON_CONTROL_REFLECT macro
 ms.assetid: 53efb0ba-fcda-4fa0-a3c7-14e0b78fb494
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fd588bb17f199efecd57eb8e8a6e85dea0936408
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bdf9a0dd227cb54ba85c85901f706966326b1b66
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn062-message-reflection-for-windows-controls"></a>テクニカル ノート 62: Windows コントロールへのメッセージ リフレクション (メッセージ返送)
 > [!NOTE]
@@ -176,7 +181,7 @@ ms.lasthandoff: 10/24/2017
   
 8.  アプリケーションをビルドして実行します。 エディット コントロールでは、黄色の背景色があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

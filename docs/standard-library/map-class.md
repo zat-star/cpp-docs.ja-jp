@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - map/std::map
 - map/std::map::allocator_type
@@ -50,7 +51,8 @@ f1_keywords:
 - map/std::map::swap
 - map/std::map::upper_bound
 - map/std::map::value_comp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::map [C++]
 - std::map [C++], allocator_type
@@ -95,15 +97,17 @@ helpviewer_keywords:
 - std::map [C++], upper_bound
 - std::map [C++], value_comp
 ms.assetid: 7876f4c9-ebb4-4878-af1e-09364c43af0a
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ce9135d298a0b80cedae87f20d65f4e012502cae
-ms.sourcegitcommit: 0bbc9aac12c926b2b03726ae5b4a09d916e17d6b
+ms.workload:
+- cplusplus
+ms.openlocfilehash: be1d2ddf9c80c2039608a3cf5f459284796b685d
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="map-class"></a>map クラス
 データ値と並べ替えキーのペアになっている要素が含まれているコレクションに対して、データの格納と取得を実行するために使用します。 キーの値は一意で、データを自動的に並べ替えるために使用されます。  
@@ -181,7 +185,7 @@ class map;
 |[const_reference](#const_reference)|map に格納された `const` 要素への参照の typedef (読み取りと `const` 操作を実行するため)。|  
 |[const_reverse_iterator](#const_reverse_iterator)|map 内の任意の `const` 要素を読み取ることができる双方向反復子を提供する型。|  
 |[difference_type](#difference_type)|反復子が指す要素の範囲内にある map の要素の数に対する符号付き整数の typedef。|  
-|[iterator](#iterator)|map 内の任意の要素の読み取りまたは変更ができる双方向反復子の typedef。|  
+|[Iterator](#iterator)|map 内の任意の要素の読み取りまたは変更ができる双方向反復子の typedef。|  
 |[key_compare](#key_compare)|2 つの並べ替えキーを比較して、map 内の 2 つの要素の相対順序を決定できる関数オブジェクトの typedef。|  
 |[key_type](#key_type)|map の各要素に格納されている並べ替えキーの typedef。|  
 |[mapped_type](#mapped_type)|map の各要素に格納されているデータの typedef。|  
@@ -358,7 +362,7 @@ const_iterator cbegin() const;
 ### <a name="remarks"></a>コメント  
  `cbegin` の戻り値で範囲内の要素を変更することはできません。  
   
- `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 この例では、`Container` が `begin()` と `cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と`cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.begin();
@@ -381,7 +385,7 @@ const_iterator cend() const;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -529,7 +533,7 @@ typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
   
  `const_reverse_iterator`のオブジェクトである要素へのマップ ポイントによって定義された[value_type](#value_type)、つまり型の`pair<const Key, Type>`、最初のメンバーが、キーの要素には、およびメンバーは、要素によって保持されているマップのデータムが秒です。  
   
- map 内の要素を指す `const_reverse_iterator crIter` を逆参照するには、**->** 演算子を使用します。  
+ hash_map 内の要素を指す `const_reverse_iterator crIter` を逆参照するには、**->** 演算子を使用します。  
   
  要素のキーの値にアクセスする`crIter`  -> **最初**、これと同じ (\* `crIter`).**最初**です。  
   
@@ -1503,7 +1507,7 @@ typedef implementation-defined iterator;
 ```  
   
 ### <a name="remarks"></a>コメント  
- map によって定義される **iterator** は [value_type](#value_type) のオブジェクトである要素を指します。これは `pair`*\<***constKey**, **Type***>* 型で、その最初のメンバーは要素へのキーであり、2 番目のメンバーは要素が保持するマップされたデータです。  
+ **反復子**のオブジェクトである要素へのマップ ポイントによって定義された[value_type](#value_type)られている型の`pair` * \< * **constKey**、**型 * * * >*、最初のメンバーが、キーの要素には、およびメンバーは、要素によって保持されているマップのデータムが秒です。  
   
  map 内の要素を指す**反復子**`Iter`を逆参照するには、**->** 演算子を使用します。  
   
@@ -2309,7 +2313,7 @@ typedef std::reverse_iterator<iterator> reverse_iterator;
 ### <a name="remarks"></a>コメント  
  `reverse_iterator` 型は要素の値を変更できず、逆の順序で map を反復処理するために使用します。  
   
- map によって定義される `reverse_iterator` は、[value_type](#value_type) のオブジェクトである要素を指します。これは `pair`*\<***constKey**, **Type***>* 型で、その最初のメンバーは要素へのキーであり、2 番目のメンバーは要素が保持するマップされたデータです。  
+ `reverse_iterator`のオブジェクトである要素へのマップ ポイントによって定義された[value_type](#value_type)られている型の`pair` * \< * **constKey**、**型 * * * >*、最初のメンバーが、キーの要素には、およびメンバーは、要素によって保持されているマップのデータムが秒です。  
   
  逆参照する、 `reverse_iterator` `rIter` 、map 内の要素を指すを使用して、  **->** 演算子。  
   

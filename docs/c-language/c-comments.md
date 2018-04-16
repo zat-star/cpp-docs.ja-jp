@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - code comments, C code
 - comments, documenting code
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - /* */ comment delimiters
 - comments
 ms.assetid: 0f5f2825-e673-49e7-8669-94e2f5294989
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 78c3e97530198b6685e402237bda5cdaf9a0754a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c2962669c6d925931d0e8ff0cbf3796dbbd1b430
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-comments"></a>C コメント
 "コメント" は、コンパイラによって 1 個の空白文字として扱われる、スラッシュとアスタリスクの組み合わせ (<b>/\*</b>) で始まる文字シーケンスです。それ以外の場合は無視されます。 コメントには、"コメント終了" 区切り記号 (<b>\*/</b>) を除いて、改行文字も含む、表現できる文字セットの文字の任意の組み合わせを含めることができます。 コメントは複数行にわたって記述できますが、入れ子にすることはできません。  
@@ -87,7 +91,7 @@ printf( "Hello\n" );  /* Comments can go here */
   
  Microsoft C の既定では、Microsoft 拡張機能が有効になっています。 これらの拡張機能を無効にするには、/Za を使用します。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C トークン](../c-language/c-tokens.md)

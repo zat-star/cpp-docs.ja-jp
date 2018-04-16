@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: div
+ms.topic: reference
+apiname:
+- div
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,8 +23,10 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: div
-dev_langs: C++
+f1_keywords:
+- div
+dev_langs:
+- C++
 helpviewer_keywords:
 - div function
 - quotients, computing
@@ -30,15 +34,17 @@ helpviewer_keywords:
 - dividing integers
 - remainder computing
 ms.assetid: 8ae80d97-54fd-499e-b14c-e30993b58119
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f5e2a97661ad47ed0cf46e0feaa2ccba292f5043
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2090ca5e08af74854177f02d6313d6c1304ed2c6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="div"></a>div
 2 つの整数値の商と剰余を計算します。  
@@ -75,13 +81,13 @@ lldiv_t div(
   
  `long` 型または `long long` 型の引数を使用するオーバーロードは、C++ コードにのみ使用できます。 戻り値の型 [ldiv_t](../../c-runtime-library/standard-types.md) には、メンバー `long quot` と `long rem` が含まれ、戻り値の型 [lldiv_t](../../c-runtime-library/standard-types.md) には `div_t` のメンバーと同じ意味を持つメンバー `long long quot` と `long long rem` が含まれます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`div`|\<stdlib.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -121,7 +127,7 @@ x is 876, y is 13
 The quotient is 67, and the remainder is 5  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ldiv、lldiv](../../c-runtime-library/reference/ldiv-lldiv.md)   
  [imaxdiv](../../c-runtime-library/reference/imaxdiv.md)

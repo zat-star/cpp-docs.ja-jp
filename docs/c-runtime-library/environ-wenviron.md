@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -12,7 +13,8 @@ f1_keywords:
 - wenviron
 - _wenviron
 - _environ
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - environ function
 - _environ function
@@ -20,21 +22,23 @@ helpviewer_keywords:
 - process environment
 - wenviron function
 ms.assetid: 7e639962-6536-47cd-8095-0cbe44a56e03
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f20054dac02857187ef4507b0b4ebfd6b7c6fe0e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 277f8a853a5262d524016630f52bfcbfc8a8b18b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="environ-wenviron"></a>_environ、_wenviron
 `_environ` 変数は、プロセスの環境を構成するマルチバイト文字列へのポインターの配列を指すポインターです。 このグローバル変数は使用されなくなりました。セキュリティを強化したバージョンである [getenv_s、_wgetenv_s](../c-runtime-library/reference/getenv-s-wgetenv-s.md) および[_putenv_s、_wputenv_s](../c-runtime-library/reference/putenv-s-wputenv-s.md) を、グローバル変数の代わりに使用する必要があります。 `_environ` は Stdlib.h で宣言されています。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -82,7 +86,7 @@ j = _wputenv( "env_var_y=string2" );  // also results in implicit call:
   
  したがって、マルチバイト環境では、値 "`env_var_z`" は `putenv` への最初の暗黙的な呼び出しの後には "`string1`" ですが、`putenv` への 2 回目の暗黙的な呼び出しでこの値は上書きされ、"`env_var_z`" の値は "`string2`" に設定されます。 Unicode 環境 (`_wenviron` にある) およびマルチバイト環境 (`_environ` にある) は、この一連の呼び出しの後には異なっていることになります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル変数](../c-runtime-library/global-variables.md)   
  [getenv、_wgetenv](../c-runtime-library/reference/getenv-wgetenv.md)   
  [getenv_s、_wgetenv_s](../c-runtime-library/reference/getenv-s-wgetenv-s.md)   

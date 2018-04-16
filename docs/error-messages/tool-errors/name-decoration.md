@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - name decoration [C++]
 - names [C++], decorated
 - decorated names, calling conventions
 ms.assetid: 8327a27b-bb4f-49f2-8218-b851b9d2a463
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0016a340f44394ec2aa8a285c6ce3cf1c2bc8f7a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f780b91d7d58ecdfc9b2af4295c76253357f8e66
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="name-decoration"></a>名前の装飾
 名前の装飾は、通常は C++ の名前付け規則を指しますが、C の場合でもよく適用されます。 既定では、C++ では関数名、パラメーター、および戻り値の型を使用して、関数のリンカー名が作成されます。 次の関数について考えてみます。  
@@ -45,5 +49,5 @@ void CALLTYPE test(void)
   
  現在では、コンパイラ販売元間またはコンパイラのバージョン間でさえも、C++ の名前付けの規則が確立されていません。 そのため、別のコンパイラでコンパイルされたオブジェクト ファイルをリンクすると、名前付け方式が異なり、外部参照が未解決になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー ツール エラー LNK2001](../../error-messages/tool-errors/linker-tools-error-lnk2001.md)

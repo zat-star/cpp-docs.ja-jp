@@ -1,16 +1,18 @@
 ---
-title: "バージョン (バージョン情報) |Microsoft ドキュメント"
-ms.custom: 
+title: バージョン (バージョン情報) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VC.Project.VCLinkerTool.Version
 - /version
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - -VERSION linker option
 - Version Information linker option
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - /VERSION linker option
 - VERSION linker option
 ms.assetid: b86d0e86-dca6-4316-aee2-d863ccb9f223
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6a0792a3895aac2887e635cb300f8ba9fde67e97
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aeb8d2845c5e8daa931e354b149fc1c35b37fbd7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="version-version-information"></a>/VERSION (バージョン情報)
 ```  
@@ -34,7 +38,7 @@ ms.lasthandoff: 10/24/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- ここで、  
+ それぞれの文字について以下に説明します。  
   
  *主要な*と*マイナー*  
  .Exe または .dll ファイルのヘッダーに必要なバージョン番号です。  
@@ -62,6 +66,6 @@ ms.lasthandoff: 10/24/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.Version%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

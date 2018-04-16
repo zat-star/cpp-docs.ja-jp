@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::list::merge
-dev_langs: C++
-helpviewer_keywords: merge member [STL/CLR]
+f1_keywords:
+- cliext::list::merge
+dev_langs:
+- C++
+helpviewer_keywords:
+- merge member [STL/CLR]
 ms.assetid: f8e93cd3-bd08-4086-859b-08a2899cc9a6
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6547cb0a60b0e65bbfd11acd03d1d5bf7d926c86
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0fdf7ee26bdb465e8a86109a4450353c4dc642a0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listmerge-stlclr"></a>list::merge (STL/CLR)
 2 つの被制御シーケンスの順序をマージします。  
@@ -116,12 +123,12 @@ c2.size() = 0
 c1.size() = 0  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::sort (STL/CLR)](../dotnet/list-sort-stl-clr.md)   
  [list::splice (STL/CLR)](../dotnet/list-splice-stl-clr.md)

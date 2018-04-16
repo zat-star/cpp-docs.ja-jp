@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - concurrent_priority_queue
 - CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue
@@ -18,18 +19,22 @@ f1_keywords:
 - CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::size
 - CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::swap
 - CONCURRENT_PRIORITY_QUEUE/concurrency::concurrent_priority_queue::try_pop
-dev_langs: C++
-helpviewer_keywords: concurrent_priority_queue class
+dev_langs:
+- C++
+helpviewer_keywords:
+- concurrent_priority_queue class
 ms.assetid: 3e740381-0f4e-41fc-8b66-ad0bb55f17a3
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d6789bd74924912361b3045d112c91ec6dcaedbe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 16a9114278cd9559a0a21191faeb87ee34b5a5df
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="concurrentpriorityqueue-class"></a>concurrent_priority_queue クラス
 `concurrent_priority_queue` クラスは、複数のスレッドが項目を同時にプッシュおよびポップできるようにするコンテナーです。 項目は優先順位の順にポップされます。この優先順位は、テンプレート引数として指定されたファンクタによって決まります。  
@@ -96,12 +101,12 @@ template <typename T,
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `concurrent_priority_queue`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concurrent_priority_queue.h  
   
  **名前空間:** concurrency  
   
-##  <a name="clear"></a>オフ 
+##  <a name="clear"></a> オフ 
 
  同時実行の優先度のすべての要素を消去します。 このメソッドは同時実行セーフではありません。  
   
@@ -110,9 +115,9 @@ void clear();
 ```  
   
 ### <a name="remarks"></a>コメント  
- `clear`同時実行セーフではありません。 他のスレッドがメソッドを呼び出していない同時実行の優先順位キューにこのメソッドを呼び出すとを確認する必要があります。 `clear`メモリを解放しません。  
+ `clear` 同時実行セーフではありません。 他のスレッドがメソッドを呼び出していない同時実行の優先順位キューにこのメソッドを呼び出すとを確認する必要があります。 `clear` メモリを解放しません。  
   
-##  <a name="ctor"></a>concurrent_priority_queue 
+##  <a name="ctor"></a> concurrent_priority_queue 
 
  同時実行の優先度のキューを作成します。  
   
@@ -176,7 +181,7 @@ concurrent_priority_queue(
   
  6 番目と 7 番目のコンス トラクターは、優先順位キューの移動を指定`_Src`です。  
   
-##  <a name="empty"></a>空 
+##  <a name="empty"></a> 空 
 
  テスト時に、同時実行の優先順位キューが空の場合、このメソッドが呼び出されます。 このメソッドは同時実行セーフです。  
   
@@ -185,9 +190,9 @@ bool empty() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `true`関数が呼び出された時点で、優先順位キューが空の場合`false`それ以外の場合。  
+ `true` 関数が呼び出された時点で、優先順位キューが空の場合`false`それ以外の場合。  
   
-##  <a name="get_allocator"></a>get_allocator 
+##  <a name="get_allocator"></a> get_allocator 
 
  同時実行の優先キューを構築するために使用されるアロケーターのコピーを返します。 このメソッドは同時実行セーフです。  
   
@@ -198,7 +203,7 @@ allocator_type get_allocator() const;
 ### <a name="return-value"></a>戻り値  
  構築するために使用されるアロケーターのコピー、`concurrent_priority_queue`オブジェクト。  
   
-##  <a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a> 演算子 = 
 
  別の `concurrent_priority_queue` オブジェクトの内容をこのオブジェクトに割り当てます。 このメソッドは同時実行セーフではありません。  
   
@@ -215,7 +220,7 @@ concurrent_priority_queue& operator= (concurrent_priority_queue&& _Src);
 ### <a name="return-value"></a>戻り値  
  この `concurrent_priority_queue` オブジェクトへの参照。  
   
-##  <a name="push"></a>プッシュ 
+##  <a name="push"></a> プッシュ 
 
  同時実行の優先順位キューに要素を追加します。 このメソッドは同時実行セーフです。  
   
@@ -229,7 +234,7 @@ void push(value_type&& _Elem);
  `_Elem`  
  同時実行の優先順位キューに追加する要素。  
   
-##  <a name="size"></a>サイズ 
+##  <a name="size"></a> サイズ 
 
  同時実行の優先順位キュー内の要素の数を返します。 このメソッドは同時実行セーフです。  
   
@@ -243,7 +248,7 @@ size_type size() const;
 ### <a name="remarks"></a>コメント  
  返されるサイズが、関数への呼び出しによって追加されたすべての要素を含めることが保証`push`です。 ただし、保留中の同時実行操作の結果は反映されません可能性があります。  
   
-##  <a name="swap"></a>スワップ 
+##  <a name="swap"></a> スワップ 
 
  2 つの同時実行の優先順位キューの内容を交換します。 このメソッドは同時実行セーフではありません。  
   
@@ -255,7 +260,7 @@ void swap(concurrent_priority_queue& _Queue);
  `_Queue`  
  `concurrent_priority_queue`でコンテンツを交換するオブジェクト。  
   
-##  <a name="try_pop"></a>try_pop 
+##  <a name="try_pop"></a> try_pop 
 
  削除し、キューが空でない場合、キューから最高の優先度要素を返します。 このメソッドは同時実行セーフです。  
   
@@ -268,9 +273,9 @@ bool try_pop(reference _Elem);
  キューが空でない場合に、最高の優先順位の要素に取り込まれる変数への参照。  
   
 ### <a name="return-value"></a>戻り値  
- `true`値がポップされ場合、`false`それ以外の場合。  
+ `true` 値がポップされ場合、`false`それ以外の場合。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [並列コンテナーと並列オブジェクト](../../../parallel/concrt/parallel-containers-and-objects.md)
 

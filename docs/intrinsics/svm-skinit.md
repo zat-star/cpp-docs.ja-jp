@@ -1,35 +1,39 @@
 ---
-title: "__svm_skinit | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__svm_skinit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SKINIT 命令"
-  - "__svm_skinit 組み込み"
+title: "_ _svm_skinit |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- __svm_skinit
+dev_langs:
+- C++
+helpviewer_keywords:
+- SKINIT instruction
+- __svm_skinit intrinsic
 ms.assetid: 787ec781-4cf2-40a2-aa20-5192334b131a
-caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 918bd300e11c52b7b4139cfc80b12a5de2b828a4
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# __svm_skinit
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="svmskinit"></a>__svm_skinit
+**Microsoft 固有の仕様**  
   
- 仮想マシンのモニターなどおそらく安全なソフトウェアを読み込み開始します。  
+ 仮想マシンのモニターなど、検証可能なセキュリティで保護されたソフトウェアの読み込みを開始します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void __svm_skinit(  
@@ -37,28 +41,28 @@ void __svm_skinit(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
-|パラメーター|Description|  
-|------------|-----------------|  
-|`SLB`|バイト 32 ビット\) の物理アドレスはローダー ブロックが安全 \(SLB\) です。|  
+|パラメーター|説明|  
+|---------------|-----------------|  
+|`SLB`|64 K バイトの 32 ビットの物理アドレスをセキュリティで保護ローダー ブロック (SLB)。|  
   
-## 解説  
- `__svm_skinit` の関数は `SKINIT` のマシン語命令と同じです。  この関数はプロセッサを使用し確認し読み込むトラス プラットフォーム テッド モジュールがカーネルというセキュリティ \(TPM\) ソフトウェアを信頼したセキュリティ システムの一部です \(SK\)。  仮想マシンのモニターではセキュリティ カーネルの例です。  セキュリティ システムはマルチプロセッサ コンピューターでの初期化処理中に読み込まれるプログラム コンポーネントを確認し割り込みデバイスのアクセスまたは別の改竄するのプログラム コンポーネントを保護します。  
+## <a name="remarks"></a>コメント  
+ `__svm_skinit`関数と同じ、`SKINIT`マシン語命令します。 この関数は、プロセッサおよび信頼されたプラットフォーム モジュール (TPM) を確認し、セキュリティ カーネル (SK) と呼ばれる信頼されているソフトウェアのロードを使用したセキュリティ システムの一部です。 仮想マシンのモニターは、セキュリティのカーネルの例を示します。 セキュリティ システムは、プログラム コンポーネントが初期化プロセス中に読み込まれ、コンポーネントをマルチプロセッサ コンピューターの場合は、割り込み、デバイスのアクセス、または別のプログラムによる改ざんから保護を確認します。  
   
- `SLB` のパラメーターは  *安全なローダー ブロックと*  呼ばれるメモリのブロック\) の物理アドレスを指定します \(SLB\)。  SLB はコンピューターのオペレーティング環境を作成しそれを読み込みますカーネル セキュリティが強化されたローダーというプログラムが。  
+ `SLB`パラメーターと呼ばれるメモリの 64 K のブロックの物理アドレスを指定、*ローダーのブロックをセキュリティで保護された*(SLB)。 SLB には、セキュリティで保護されたローダーをコンピューターの動作環境を確立し、後でセキュリティ カーネルを読み込むと呼ばれるプログラムが含まれています。  
   
- この関数はゲスト オペレーティング システムとアプリケーションのホスト仮想マシンのモニターの相互作用をサポートします。  詳細については文書の検索「 AMD64 アーキテクチャのプログラマの Manual Volume 2: システム」24593 番目のプログラミングのリビジョン 3.11 [AMD corporation](http://go.microsoft.com/fwlink/?LinkId=23746) を返します。  
+ この関数は、ホストの仮想マシンのモニターと、ゲスト オペレーティング システムとそのアプリケーションとの対話をサポートします。 詳細については、ドキュメントの検索"AMD64 アーキテクチャ プログラマの手動ボリューム 2: システム プログラミングでは、"の文書番号 24593、リビジョン、3.11、 [AMD corporation](http://go.microsoft.com/fwlink/p/?linkid=23746)サイトです。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__svm_skinit`|x86[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__svm_skinit`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+## <a name="see-also"></a>参照  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

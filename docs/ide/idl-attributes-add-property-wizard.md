@@ -1,57 +1,61 @@
 ---
-title: "[IDL 属性] (プロパティの追加ウィザード) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.codewiz.prop.idlattributes"
-dev_langs: 
-  - "C++"
+title: "IDL 属性、プロパティの追加ウィザード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.codewiz.prop.idlattributes
+dev_langs:
+- C++
 ms.assetid: 356ed666-79d0-4bd9-a5e7-cda679cbadbd
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8ec158c117161c5a5c2ffd23cef0d5c79c312ae7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# [IDL 属性] (プロパティの追加ウィザード)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-プロパティの追加ウィザードのこのページを使用して、プロパティのインターフェイス定義言語 \(IDL: Interface Definition Language\) を設定します。  
+# <a name="idl-attributes-add-property-wizard"></a>[IDL 属性] (プロパティの追加ウィザード)
+プロパティの追加ウィザードのこのページを使用すると、プロパティの任意のインターフェイス定義言語 (IDL) の設定を指定できます。  
   
- **id**  
- プロパティを識別する数字の ID を設定します。  このオプションは、カスタム インターフェイスのプロパティに対しては使用できません。  「MIDL Language Reference」の「[id](http://msdn.microsoft.com/library/windows/desktop/aa367040)」を参照してください。  
+ **ID**  
+ プロパティを識別する数値 ID を設定します。 このオプションでは、カスタム インターフェイスのプロパティを使用できません。 参照してください[id](http://msdn.microsoft.com/library/windows/desktop/aa367040)で、 *MIDL 参照*です。  
   
  **helpcontext**  
- ユーザーがこのプロパティに関するヘルプ ファイルの情報を表示できるようにするためのコンテキスト ID を指定します。  「MIDL Language Reference」の「[helpcontext](http://msdn.microsoft.com/library/windows/desktop/aa366851)」を参照してください。  
+ コンテキスト ID をユーザーに関する情報を表示、ヘルプ ファイルでこのプロパティを指定します。 参照してください[helpcontext](http://msdn.microsoft.com/library/windows/desktop/aa366851)で、 *MIDL 参照*です。  
   
  **helpstring**  
- 適用先の要素の記述に使用される文字列を指定します。  既定では、"プロパティ *Property name*" に設定されています。「MIDL Language Reference」の「[helpstring](http://msdn.microsoft.com/library/windows/desktop/aa366856)」を参照してください。  
+ 適用すると、要素の記述に使用される文字の文字列を指定します。 既定では、その設定が"プロパティ*プロパティ名*"。 参照してください[helpstring](http://msdn.microsoft.com/library/windows/desktop/aa366856)で、 *MIDL 参照*です。  
   
-## その他のオプション  
- すべてのプロパティ型に対してすべてのオプションを使用できるわけではありません。  
+## <a name="other-options"></a>その他のオプション  
+ すべてのオプションすべてのプロパティ タイプを利用できます。  
   
-|オプション|Description|  
-|-----------|-----------------|  
-|**bindable**|プロパティがデータ連結をサポートすることを示します。  「MIDL Language Reference」の「[bindable](http://msdn.microsoft.com/library/windows/desktop/aa366738)」を参照してください。  プロパティのストック実装ではこのオプションが既定で設定されており、変更できません。|  
-|**defaultbind**|この 1 つの連結可能なプロパティがオブジェクトを最もよく表すことを示します。  「MIDL Language Reference」の「[defaultbind](http://msdn.microsoft.com/library/windows/desktop/aa366790)」を参照してください。|  
-|**displaybind**|このプロパティを連結可能としてユーザーに表示する必要があることを示します。  「MIDL Language Reference」の「[displaybind](http://msdn.microsoft.com/library/windows/desktop/aa366804)」を参照してください。|  
-|**immediatebind**|データ連結オブジェクトのこのプロパティに対するすべての変更がすぐにデータベースに通知されることを示します。  「MIDL Language Reference」の「[immediatebind](http://msdn.microsoft.com/library/windows/desktop/aa367045)」を参照してください。|  
-|**defaultcollelem**|プロパティが、既定のコレクションの要素に対するアクセサーであることを示します。  「MIDL Language Reference」の「[defaultcollelem](http://msdn.microsoft.com/library/windows/desktop/aa366792)」を参照してください。|  
-|**nonbrowsable**|プロパティ ブラウザーに表示しないインターフェイス メンバーまたはディスパッチ インターフェイス メンバーを指定します。  「MIDL Language Reference」の「[nonbrowsable](http://msdn.microsoft.com/library/windows/desktop/aa367117)」を参照してください。|  
-|**requestedit**|プロパティが **OnRequestEdit** 通知をサポートすることを示します。「MIDL Language Reference」の「[requestedit](http://msdn.microsoft.com/library/windows/desktop/aa367155)」を参照してください。  プロパティのストック実装ではこのオプションが既定で設定されており、変更できません。|  
-|**source**|プロパティのメンバーがイベントのソースであることを示します。  「MIDL Language Reference」の「[source](http://msdn.microsoft.com/library/windows/desktop/aa367166)」を参照してください。|  
-|**hidden**|プロパティが存在しても、ユーザー指向ブラウザーに表示されないことを示します。  「MIDL Language Reference」の「[hidden](http://msdn.microsoft.com/library/windows/desktop/aa366861)」を参照してください。|  
-|**restricted**|プロパティの任意の呼び出しができないことを示します。  「MIDL Language Reference」の「[restricted](http://msdn.microsoft.com/library/windows/desktop/aa367157)」を参照してください。|  
-|`local`|プロパティがリモートではないことを MIDL コンパイラに示します。  「MIDL Language Reference」の「[local](http://msdn.microsoft.com/library/windows/desktop/aa367071)」を参照してください。|  
+|オプション|説明|  
+|------------|-----------------|  
+|**bindable**|プロパティがデータ バインディングをサポートしていることを示します。 参照してください[バインド可能な](http://msdn.microsoft.com/library/windows/desktop/aa366738)で、 *MIDL 参照*です。 プロパティのストックの実装には、このオプションは、既定で設定され、変更不可能なです。|  
+|**defaultbind**|このベスト、単一のバインド可能なプロパティを表すことを示すオブジェクト。 参照してください[defaultbind](http://msdn.microsoft.com/library/windows/desktop/aa366790)で、 *MIDL 参照*です。|  
+|**displaybind**|このプロパティをバインド可能なとしてユーザーに表示することを示します。 参照してください[displaybind](http://msdn.microsoft.com/library/windows/desktop/aa366804)で、 *MIDL 参照*です。|  
+|**immediatebind**|データ バインドされたオブジェクトのプロパティに対する変更をすべてのデータベースに直ちに通知されることを示します。 参照してください[immediatebind](http://msdn.microsoft.com/library/windows/desktop/aa367045)で、 *MIDL 参照*です。|  
+|**defaultcollelem**|プロパティが既定のコレクションの要素のアクセサー関数であることを示します。 参照してください[defaultcollelem](http://msdn.microsoft.com/library/windows/desktop/aa366792)で、 *MIDL 参照*です。|  
+|**nonbrowsable**|タグでインターフェイスまたはディスパッチ インターフェイスのメンバーは、プロパティ ブラウザーでは表示されません。 参照してください[nonbrowsable](http://msdn.microsoft.com/library/windows/desktop/aa367117)で、 *MIDL 参照*です。|  
+|**requestedit**|プロパティをサポートしていることを示します、 **OnRequestEdit**通知を参照してください[requestedit](http://msdn.microsoft.com/library/windows/desktop/aa367155)で、 *MIDL 参照*です。 プロパティのストックの実装には、このオプションは、既定で設定され、変更不可能なです。|  
+|**ソース**|プロパティのメンバーは、イベントの発生元であることを示します。 参照してください[ソース](http://msdn.microsoft.com/library/windows/desktop/aa367166)で、 *MIDL 参照*です。|  
+|**hidden**|プロパティが存在するが、ユーザー指向ブラウザーに表示されます必要がありますいないことを示します。 参照してください[隠し](http://msdn.microsoft.com/library/windows/desktop/aa366861)で、 *MIDL 参照*です。|  
+|**restricted**|プロパティを任意に呼び出すことができませんを指定します。 参照してください[制限](http://msdn.microsoft.com/library/windows/desktop/aa367157)で、 *MIDL 参照*です。|  
+|`local`|MIDL コンパイラにプロパティがリモートでないことを指定します。 参照してください[ローカル](http://msdn.microsoft.com/library/windows/desktop/aa367071)で、 *MIDL 参照*です。|  
   
-## 参照  
- [プロパティの追加](../Topic/Adding%20a%20Property%20\(Visual%20C++\).md)   
- [\[名前\] \(プロパティの追加ウィザード\)](../Topic/Names,%20Add%20Property%20Wizard.md)   
- [インターフェイスの実装](../ide/implementing-an-interface-visual-cpp.md)   
+## <a name="see-also"></a>参照  
+ [プロパティを追加します。](../ide/adding-a-property-visual-cpp.md)   
+ [名前、プロパティの追加ウィザード](../ide/names-add-property-wizard.md)   
+ [インターフェイスを実装します。](../ide/implementing-an-interface-visual-cpp.md)   
  [ストック プロパティ](../ide/stock-properties.md)

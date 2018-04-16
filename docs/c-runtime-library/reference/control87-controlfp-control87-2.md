@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _control87
 - _controlfp
@@ -47,30 +47,17 @@ helpviewer_keywords:
 - EM_AMBIGUOUS
 - control87_2 function
 ms.assetid: 0d09729d-d9a0-43d6-864c-43ff25e7e0c5
-caps.latest.revision: 34
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
-ms.openlocfilehash: 25dfd357f0b3385f1e9bdcc4249ad3cf4399e0b6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/28/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d2405b569c7e7accb828ba7052a9ea9fae125f0a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="control87-controlfp-control872"></a>_control87、_controlfp、__control87_2
 浮動小数点制御ワードの取得および設定を行います。 `_controlfp` のセキュリティが強化されたバージョンについては、「[_controlfp_s](../../c-runtime-library/reference/controlfp-s.md)」をご覧ください。  
@@ -163,9 +150,9 @@ _controlfp(_DN_FLUSH, _MCW_DN);
 |`_MCW_RC` (丸め制御)|0x00000300|`_RC_CHOP`<br /><br /> `_RC_UP`<br /><br /> `_RC_DOWN`<br /><br /> `_RC_NEAR`|0x00000300<br /><br /> 0x00000200<br /><br /> 0x00000100<br /><br /> 0x00000000|  
 |`_MCW_PC` (精度制御)<br /><br /> (ARM プラットフォームまたは [!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] プラットフォームではサポートされていません。)|0x00030000|`_PC_24` (24 ビット)<br /><br /> `_PC_53` (53 ビット)<br /><br /> `_PC_64` (64 ビット)|0x00020000<br /><br /> 0x00010000<br /><br /> 0x00000000|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_control87`、`_controlfp`、`_control87_2`|\<float.h>|  
   
@@ -218,7 +205,7 @@ Default:  0x0001
 0.1 * 0.1 = 1.000000000000000e-002  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [_clear87、_clearfp](../../c-runtime-library/reference/clear87-clearfp.md)   
  [_status87、_statusfp、_statusfp2](../../c-runtime-library/reference/status87-statusfp-statusfp2.md)   

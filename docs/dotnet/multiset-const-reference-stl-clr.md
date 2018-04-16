@@ -1,25 +1,32 @@
 ---
-title: "multiset::const_reference (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: multiset::const_reference (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::multiset::const_reference
-dev_langs: C++
-helpviewer_keywords: const_reference member [STL/CLR]
+f1_keywords:
+- cliext::multiset::const_reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- const_reference member [STL/CLR]
 ms.assetid: 6eb23893-ba20-4ddd-8206-60a9bacb8b1a
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 57ddb5079c77c1b353dee2572de17c9229ad7dcd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c976824a763c27efe81d4c4430eb30a714028454
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multisetconstreference-stlclr"></a>multiset::const_reference (STL/CLR)
 要素への定数参照の型です。  
@@ -65,12 +72,12 @@ int main()
 a b c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マルチセット (STL/CLR)](../dotnet/multiset-stl-clr.md)   
  [multiset::reference (STL/CLR)](../dotnet/multiset-reference-stl-clr.md)   
  [multiset::value_type (STL/CLR)](../dotnet/multiset-value-type-stl-clr.md)

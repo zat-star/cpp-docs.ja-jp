@@ -4,44 +4,46 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CManualAccessor::AddParameterEntry
 - ATL.CManualAccessor.AddParameterEntry
 - CManualAccessor.AddParameterEntry
 - AddParameterEntry
 - ATL::CManualAccessor::AddParameterEntry
-dev_langs: C++
-helpviewer_keywords: AddParameterEntry method
+dev_langs:
+- C++
+helpviewer_keywords:
+- AddParameterEntry method
 ms.assetid: 9048b164-052b-41b1-a861-227fc529e0b5
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c2e364ce947baa800611f50b67add748a47472fd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: ab686bfed7abd3bece3effbcf9f5e2b98132bb8b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cmanualaccessoraddparameterentry"></a>CManualAccessor::AddParameterEntry
 パラメーターのエントリの構造体をパラメーターの入力を追加します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      void AddParameterEntry(  
-   DBORDINAL nOrdinal,  
-   DBTYPE wType,  
-   DBLENGTH nColumnSize,  
+```
+void AddParameterEntry(DBORDINAL nOrdinal,  
+   DBTYPE wType,  DBLENGTH nColumnSize,  
    void* pData,  
    void* pLength = NULL,  
    void* pStatus = NULL,  
-   DBPARAMIO eParamIO = DBPARAMIO_INPUT   
-) throw ( );  
+   DBPARAMIO eParamIO = DBPARAMIO_INPUT) throw ();  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -71,10 +73,10 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  この関数を使用するには、まず[CreateParameterAccessor](../../data/oledb/cmanualaccessor-createparameteraccessor.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CManualAccessor クラス](../../data/oledb/cmanualaccessor-class.md)   
- [Cmanualaccessor::addbindentry](../../data/oledb/cmanualaccessor-addbindentry.md)   
+ [CManualAccessor::AddBindEntry](../../data/oledb/cmanualaccessor-addbindentry.md)   
  [DBViewer サンプル](../../visual-cpp-samples.md)

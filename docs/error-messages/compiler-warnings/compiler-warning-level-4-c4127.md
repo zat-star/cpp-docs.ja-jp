@@ -15,31 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C4127
 ms.assetid: f59ded9e-5227-45bd-ac43-2aa861581363
-caps.latest.revision: 12
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 3e9fb4ed25e51311ec4f6b1d71a249c21d466069
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d1a5bbd86b6197907f043478df225dceb79679f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4127"></a>コンパイラの警告 (レベル 4) C4127
 条件式が定数です。  

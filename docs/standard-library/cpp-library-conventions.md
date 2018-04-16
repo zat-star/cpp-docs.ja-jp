@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - C++ Standard Library, conventions
 - classes [C++]
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - coding conventions, C++ Standard Library
 - naming conventions [C++], C++ library
 ms.assetid: bf41b79a-2d53-4f46-8d05-779358335146
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 67848252bf875303c8120c9d4935e0135f705489
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 168e37834f90e12de5e9b210ba15f8309ff41044
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="c-library-conventions"></a>C++ ライブラリの規則
 C++ ライブラリは、標準 C ライブラリとほとんど同じ規則に従い、ここで説明するいくつかの追加事項があります。  
@@ -57,7 +61,7 @@ C++ ライブラリは、標準 C ライブラリとほとんど同じ規則に�
   
 -   置き換え可能な関数の既定バージョンを含む、ライブラリで提供されている関数は、*最も多い場合でで*、例外の指定に列記されている例外をスローする可能性があります。 ライブラリによって提供されるデストラクターは例外をスローしません。 `qsort` が例外をスローする比較関数を呼び出すときのように、標準 C ライブラリの関数は例外を伝播することがありますが、それ以外の場合は例外をスローしません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリの概要](../standard-library/cpp-standard-library-overview.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

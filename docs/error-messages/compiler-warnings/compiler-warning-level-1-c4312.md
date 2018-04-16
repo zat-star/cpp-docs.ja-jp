@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4312
-dev_langs: C++
-helpviewer_keywords: C4312
+f1_keywords:
+- C4312
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4312
 ms.assetid: 541906ed-4f62-4bcb-947f-cf9ae7411bcb
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0d7aea3eb674f473e50b3914639d0d69abccca17
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0a4e6fa46fe9b84b138fffedf206d08ffbb30790
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4312"></a>コンパイラの警告 (レベル 1) C4312
 '操作' :  'type1' からより大きいサイズの 'type2' へ変換します。  

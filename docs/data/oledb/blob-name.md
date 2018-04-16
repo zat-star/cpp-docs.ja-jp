@@ -1,41 +1,40 @@
 ---
-title: "BLOB_NAME |Microsoft ドキュメント"
+title: BLOB_NAME | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: BLOB_NAME
-dev_langs: C++
-helpviewer_keywords: BLOB_NAME macro
+ms.topic: reference
+f1_keywords:
+- BLOB_NAME
+dev_langs:
+- C++
+helpviewer_keywords:
+- BLOB_NAME macro
 ms.assetid: 757acd0d-946d-447d-937e-94ecd700ba38
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 25198fb70b454b849364a9ff3e61de03a802e9a9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: b4d5d7bbad25c7b2921e7b379c1014f893216d3d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="blobname"></a>BLOB_NAME
 と共に使用`BEGIN_COLUMN_MAP`と`END_COLUMN_MAP`バイナリ ラージ オブジェクトをバインドする ([BLOB](https://msdn.microsoft.com/en-us/library/ms711511.aspx))。 ような[BLOB_ENTRY](../../data/oledb/blob-entry.md)ただし、このマクロは、列番号ではなく列名を取得します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-BLOB_NAME(  
-pszName  
-,   
-IID  
-,   
-flags  
-,   
-data )  
+```cpp
+BLOB_NAME(pszName, IID, flags, data )  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -54,10 +53,10 @@ data )
 ## <a name="example"></a>例  
  参照してください[BLOB を取得する方法ですか?](../../data/oledb/retrieving-a-blob.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md)   
  [END_COLUMN_MAP](../../data/oledb/end-column-map.md)   

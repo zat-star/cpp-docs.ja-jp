@@ -4,30 +4,34 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - sstream/std::basic_stringstream
 - sstream/std::basic_stringstream::allocator_type
 - sstream/std::basic_stringstream::rdbuf
 - sstream/std::basic_stringstream::str
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::basic_stringstream [C++]
 - std::basic_stringstream [C++], allocator_type
 - std::basic_stringstream [C++], rdbuf
 - std::basic_stringstream [C++], str
 ms.assetid: 49629814-ca37-45c5-931b-4ff894e6ebd2
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a181befa29f7d97a2705e13de44175e592376c96
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f6616f5eadc5291b917d7121f5eebb92baeec8c3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="basicstringstream-class"></a>basic_stringstream クラス
 クラス [basic_stringbuf](../standard-library/basic-stringbuf-class.md)< **Elem**, **Tr**, `Alloc`> のストリーム バッファーを使用して、要素とエンコードされたオブジェクトの挿入と抽出を制御するオブジェクトを表します。  
@@ -62,7 +66,7 @@ class basic_stringstream : public basic_iostream<Elem, Tr>
   
 |||  
 |-|-|  
-|[allocator_type](#allocator_type)|この型は、テンプレート パラメーター `Alloc`のシノニムです。|  
+|[allocator_type](#allocator_type)|この型は、テンプレート パラメーター `Alloc` のシノニムです。|  
   
 ### <a name="member-functions"></a>メンバー関数  
   
@@ -71,13 +75,13 @@ class basic_stringstream : public basic_iostream<Elem, Tr>
 |[rdbuf](#rdbuf)|型 `pointer` の格納されたストリーム バッファーのアドレスを [basic_stringbuf](../standard-library/basic-stringbuf-class.md)< `Elem`, `Tr`, `Alloc`> に返します。|  
 |[str](#str)|文字列バッファー内のテキストを設定または取得します。書き込み位置は変更しません。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<sstream>  
   
  **名前空間:** std  
   
 ##  <a name="allocator_type"></a>  basic_stringstream::allocator_type  
- この型は、テンプレート パラメーター `Alloc`のシノニムです。  
+ この型は、テンプレート パラメーター `Alloc` のシノニムです。  
   
 ```  
 typedef Alloc allocator_type;  
@@ -141,7 +145,7 @@ void str(
 ### <a name="example"></a>例  
   **str** の使用例については、「[basic_stringbuf::str](../standard-library/basic-stringbuf-class.md#str)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   
  [iostreams の規則](../standard-library/iostreams-conventions.md)

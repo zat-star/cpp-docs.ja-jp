@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - regex/std::regex_iterator
 - regex/std::regex_iterator::operator==
@@ -14,7 +15,8 @@ f1_keywords:
 - regex/std::regex_iterator::operator*
 - regex/std::regex_iterator::operator->
 - regex/std::regex_iterator::operator++
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::regex_iterator
 - std::regex_iterator::operator==
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - std::regex_iterator::operator->
 - std::regex_iterator::operator++
 ms.assetid: 0cfd8fd0-5a95-4f3c-bf8e-6ef028c423d3
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ef28175227bc35641909af71268a86804218649e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: de39838066c8271e35cc4732fd4f0f3c853f19f2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="regexiterator-class"></a>regex_iterator クラス
 一致の反復子クラス。  
@@ -73,7 +77,7 @@ private:
   
 ### <a name="parameters"></a>パラメーター  
  `BidIt`  
- サブマッチ用の反復子の型。  
+ サブマッチの反復子の型。  
   
  `Elem`  
  一致させる要素の型。  
@@ -84,7 +88,7 @@ private:
 ## <a name="remarks"></a>コメント  
  このテンプレート クラスは、定数前方反復子オブジェクトを表します。 反復子範囲 `match_results<BidIt>` で定義された文字シーケンスに正規表現オブジェクト `*pregex` を繰り返し適用することによって、 `[begin, end)`型のオブジェクトを抽出します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  正規表現の例については、以下の例をご覧ください。  
   
 - [regex_match](../standard-library/regex-functions.md#regex_match)  
@@ -95,7 +99,7 @@ private:
   
 - [swap](../standard-library/regex-functions.md#swap)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<regex>  
   
  **名前空間:** std  
@@ -769,7 +773,7 @@ match == a
 match == a  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<regex>](../standard-library/regex.md)  
 [regex_constants クラス](../standard-library/regex-constants-class.md)  
 [regex_error クラス](../standard-library/regex-error-class.md)  

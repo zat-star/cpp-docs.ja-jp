@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _fseeki64
 - fseek
@@ -25,7 +26,8 @@ apitype: DLLExport
 f1_keywords:
 - fseek
 - _fseeki64
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _fseeki64 function
 - fseeki64 function
@@ -34,15 +36,17 @@ helpviewer_keywords:
 - file pointers [C++]
 - seek file pointers
 ms.assetid: f6bb1f8b-891c-426e-9e14-0e7e5c62df70
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 723dbef32f053bd522dcb25c78d6ed805bce6ee5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4dd4c4e6550946bafdaf0ad8f521e1e942ae04c1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fseek-fseeki64"></a>fseek、_fseeki64
 指定した場所にファイル ポインターを移動します。  
@@ -87,7 +91,7 @@ int _fseeki64(
  `SEEK_SET`  
  ファイルの先頭。  
   
- `fseek` と `_fseeki64` を使用して、ファイル内の任意の場所にポインターを移動できます。 ポインターは、ファイルの末尾を越えて配置することもできます。 `fseek`および`_fseeki64`ファイルの終端のインジケーターをクリアし、前にすべての結果を否定`ungetc`に対して呼び出す`stream`です。  
+ `fseek` と `_fseeki64` を使用して、ファイル内の任意の場所にポインターを移動できます。 ポインターは、ファイルの末尾を越えて配置することもできます。 `fseek` および`_fseeki64`ファイルの終端のインジケーターをクリアし、前にすべての結果を否定`ungetc`に対して呼び出す`stream`です。  
   
  データを追加するためにファイルを開く場合、現在のファイルの位置は、次の書き込みが発生する場所ではなく最後の I/O 操作によって決まります。 追加のために開かれたファイルで I/O 操作がまだ発生していない場合、ファイルの位置はファイルの先頭です。  
   
@@ -103,14 +107,14 @@ int _fseeki64(
   
  この関数では、実行中に他のスレッドをロックするので、スレッド セーフです。 ロックしないバージョンについては、「[_fseek_nolock、_fseeki64_nolock](../../c-runtime-library/reference/fseek-nolock-fseeki64-nolock.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fseek`|\<stdio.h>|  
 |`_fseeki64`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -152,7 +156,7 @@ File pointer is set to middle of first line.
 This is the file 'fseek.out'.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
  [ftell、_ftelli64](../../c-runtime-library/reference/ftell-ftelli64.md)   

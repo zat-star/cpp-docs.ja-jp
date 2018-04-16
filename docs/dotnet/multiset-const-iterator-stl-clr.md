@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::multiset::const_iterator
-dev_langs: C++
-helpviewer_keywords: const_iterator member [STL/CLR]
+f1_keywords:
+- cliext::multiset::const_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- const_iterator member [STL/CLR]
 ms.assetid: 42855717-f118-4315-95b0-763f94bba888
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b535cb91285beaba894ff64f91ee4b8ebd025cbd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a0de4d2bbc90f739913a9182edd0d14fe363562d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multisetconstiterator-stlclr"></a>multiset::const_iterator (STL/CLR)
 被制御シーケンスの定数反復子の型です。  
@@ -62,11 +69,11 @@ int main()
 a b c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マルチセット (STL/CLR)](../dotnet/multiset-stl-clr.md)   
  [multiset::iterator (STL/CLR)](../dotnet/multiset-iterator-stl-clr.md)

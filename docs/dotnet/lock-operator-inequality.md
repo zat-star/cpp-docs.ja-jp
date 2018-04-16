@@ -1,36 +1,40 @@
 ---
-title: "lock::operator!= | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "lock.operator!="
-  - "msclr.lock.operator!="
-  - "msclr::lock::operator!="
-  - "lock::operator!="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lock::operator!="
+title: "lock::operator! = |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- lock.operator!=
+- msclr.lock.operator!=
+- msclr::lock::operator!=
+- lock::operator!=
+dev_langs:
+- C++
+helpviewer_keywords:
+- lock::operator!=
 ms.assetid: ed1d674e-9ee9-4257-8a7e-2e3567d50222
-caps.latest.revision: 6
-caps.handback.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7285a974b788fd2f6e885a67dab9257a83886d6d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# lock::operator!=
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-等値演算子。  
+# <a name="lockoperator"></a>lock::operator!=
+非等値演算子。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class T> bool operator!=(  
@@ -38,14 +42,14 @@ template<class T> bool operator!=(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `t`  
- 非等値に比較するオブジェクト。  
+ 非等値を比較するオブジェクト。  
   
-## 戻り値  
- `t` がロック オブジェクトと異なる場合 `true`、別の方法で `false` を返します。  
+## <a name="return-value"></a>戻り値  
+ 返します`true`場合`t`ロックのオブジェクトと異なります`false`それ以外の場合。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_lock_op_ineq.cpp  
@@ -66,12 +70,15 @@ int main () {
 }  
 ```  
   
-  **Inequal\!**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\lock.h\>  
+```Output  
+Inequal!  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\lock.h >  
   
-## 参照  
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>参照  
  [lock のメンバー](../dotnet/lock-members.md)   
- [lock::operator\=\=](../dotnet/lock-operator-equality.md)
+ [lock::operator==](../dotnet/lock-operator-equality.md)

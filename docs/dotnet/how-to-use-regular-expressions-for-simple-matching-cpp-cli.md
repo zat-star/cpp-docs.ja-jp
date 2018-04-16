@@ -1,35 +1,39 @@
 ---
-title: "方法: 正規表現を使用して単純検索を行う (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IsMatch メソッド"
-  - "正規表現 [C++], 単純な一致"
-  - "検索, 部分文字列の正確な一致"
-  - "文字列 [C++], 部分文字列の正確な一致"
-  - "部分文字列, 単純な一致"
+title: '方法: 正規表現を使用して単純検索を行う (C + + CLI) |Microsoft ドキュメント'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- substrings, simple matches
+- searching, exact substring matches
+- strings [C++], exact substring matching
+- regular expressions [C++], simple matching
+- IsMatch method
 ms.assetid: 4661f6f3-0f6d-48f2-abe4-cb4770bf9bd5
 caps.latest.revision: 10
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 46a9301904d3293c242ca631c161b7e71304f283
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: 正規表現を使用して単純検索を行う (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-正規表現を使用して部分文字列の完全一致を検索するコード例を次に示します。  この検索は、静的な <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> メソッドで実行されます。このメソッドは、入力として 2 つの文字列を受け取ります。  1 つ目は検索文字列で、2 つ目は、検索パターンです。  
+# <a name="how-to-use-regular-expressions-for-simple-matching-ccli"></a>方法: 正規表現を使用して単純検索を行う (C++/CLI)
+次のコード例では、正規表現を使用して部分文字列の完全一致の検索対象にします。 検索は、静的な<xref:System.Text.RegularExpressions.Regex.IsMatch%2A>メソッドで、2 つの文字列を入力として取得します。 1 つは、検索対象文字列と 2 つ目は、パターンを検索します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // regex_simple.cpp  
@@ -63,6 +67,6 @@ int main()
 }  
 ```  
   
-## 参照  
- [.NET Framework の正規表現](../Topic/.NET%20Framework%20Regular%20Expressions.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>参照  
+ [.NET Framework 正規表現](/dotnet/standard/base-types/regular-expressions)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

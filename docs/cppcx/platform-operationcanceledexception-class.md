@@ -6,22 +6,26 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::OperationCanceledException::OperationCanceledException
 - VCCORLIB/Platform::OperationCanceledException
-dev_langs: C++
-helpviewer_keywords: Platform::OperationCanceledException
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::OperationCanceledException
 ms.assetid: 5351bc20-5408-423a-8169-f09acc8a3fbb
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: f4879acaa0f8f5a033f4650c5db58b6ed08ac3a1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 39c8475a131195a2e1237edb78b114d3c10609f2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformoperationcanceledexception-class"></a>Platform::OperationCanceledException クラス
 操作が中止されるとスローされます。  
@@ -35,7 +39,7 @@ public ref class OperationCanceledException : COMException,    IException,    IP
 ### <a name="remarks"></a>コメント  
  詳細については、 [COMException](../cppcx/platform-comexception-class.md) クラスを参照してください。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -44,5 +48,5 @@ public ref class OperationCanceledException : COMException,    IException,    IP
   
  **メタデータ:** platform.winmd  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform::COMException クラス](../cppcx/platform-comexception-class.md)

@@ -19,30 +19,17 @@ helpviewer_keywords:
 - message maps, ATL
 - ATL, message handlers
 ms.assetid: 1f97bc16-a8a0-4cf0-b90f-1778813a5c8e
-caps.latest.revision: 22
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 2726e73d35d01c942ac3d251579fe350be549800
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 04aff6922358048fcbd330096eb26a412cdb75ee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmessagemap-class"></a>CMessageMap クラス
 このクラスは、オブジェクトのメッセージが別のオブジェクトによってアクセスするマップを使用します。  
@@ -69,13 +56,13 @@ class ATL_NO_VTABLE CMessageMap
   
  ATL を使用して`CMessageMap`サポートが含まれている windows および動的メッセージ マップのチェインにします。 たとえば、そのクラスを含む、 [CContainedWindow](../../atl/reference/ccontainedwindowt-class.md)オブジェクトから派生しなければなりません`CMessageMap`です。 次のコードがから取得した、 [SUBEDIT](../../visual-cpp-samples.md)サンプルです。 を通じて[CComControl](../../atl/reference/ccomcontrol-class.md)、`CAtlEdit`から自動的に派生`CMessageMap`です。  
   
- [!code-cpp[NVC_ATL_Windowing # 90](../../atl/codesnippet/cpp/cmessagemap-class_1.h)]  
+ [!code-cpp[NVC_ATL_Windowing#90](../../atl/codesnippet/cpp/cmessagemap-class_1.h)]  
   
  含まれているウィンドウ`m_EditCtrl`、外側のクラスのメッセージ マップを使用`CAtlEdit`から派生した`CMessageMap`です。  
   
  メッセージ マップの詳細については、次を参照してください[メッセージ マップ](../../atl/message-maps-atl.md)"ATL ウィンドウ クラス"記事の内容。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="processwindowmessage"></a>CMessageMap::ProcessWindowMessage  
@@ -116,9 +103,8 @@ virtual BOOL ProcessWindowMessage(
 ### <a name="remarks"></a>コメント  
  ウィンドウ プロシージャによって呼び出される、 [CContainedWindow](../../atl/reference/ccontainedwindowt-class.md)オブジェクトまたはオブジェクトのことを動的にチェーン メッセージ マップにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDynamicChain クラス](../../atl/reference/cdynamicchain-class.md)   
  [送るに](message-map-macros-atl.md#begin_msg_map)   
  [ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

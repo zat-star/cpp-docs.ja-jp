@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::gamma_distribution
 - random/std::gamma_distribution::reset
@@ -21,7 +22,8 @@ f1_keywords:
 - random/std::gamma_distribution::param_type::beta
 - random/std::gamma_distribution::param_type::operator==
 - random/std::gamma_distribution::param_type::operator!=
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::gamma_distribution [C++]
 - std::gamma_distribution [C++], reset
@@ -33,15 +35,17 @@ helpviewer_keywords:
 - std::gamma_distribution [C++], param_type
 - std::gamma_distribution [C++], param_type
 ms.assetid: 2a6798ac-6152-41d7-8ef6-d684d92f1572
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8c02ce03349ba24a2550f91d34b05e361d38c0ec
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0d3cb7f844a579dced503186f8d786aef0fb6cd2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="gammadistribution-class"></a>gamma_distribution クラス
 ガンマ分布を生成します。  
@@ -77,7 +81,7 @@ public:
 ```    
 #### <a name="parameters"></a>パラメーター  
 *RealType*  
-浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、「[\<random>](../standard-library/random.md)」を参照してください。  
+浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
   
 *URNG* Uniform Random Number Generator エンジン。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
   
@@ -91,7 +95,7 @@ public:
   
 プロパティ関数 `alpha()` と `beta()` はそれぞれ、格納されている分布パラメーター *alpha* と *beta* の値を返します。  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
 
 メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
   
@@ -99,9 +103,9 @@ public:
   
 `operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
   
-分布クラスとそのメンバーの詳細については、「[\<random>](../standard-library/random.md)」を参照してください。  
+分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-ガンマ分布の詳細については、Wolfram MathWorld の記事「[ガンマ分布](http://go.microsoft.com/fwlink/LinkId=401111)」を参照してください。  
+ガンマ分布の詳細については、Wolfram MathWorld の記事「[ガンマ分布](http://go.microsoft.com/fwlink/p/?linkid=401111)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -186,7 +190,7 @@ Distribution for 10 samples:
     10: 2.1201210996  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **ヘッダー:** \<random>  
   
 **名前空間:** std  
@@ -214,7 +218,7 @@ explicit gamma_distribution(const param_type& parm);
   
 1 つ目のコンストラクターは、格納されている値 `alpha` と `beta` にそれぞれ *alpha* と *beta* の値を保持するオブジェクトを作成します。  
   
-2 つ目のコンストラクターは、格納パラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
   
 ##  <a name="param_type"></a>  gamma_distribution::param_type  
 分布のパラメーターを格納します。  
@@ -245,7 +249,7 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<random>](../standard-library/random.md)
 
 

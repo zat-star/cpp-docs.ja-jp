@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2757
-dev_langs: C++
-helpviewer_keywords: C2757
+f1_keywords:
+- C2757
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2757
 ms.assetid: 421f102f-8a32-4d47-a109-811ddf2c909d
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e10d357679fc7a0d1a5e183bdc1eb95a7a597c00
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6100e413c599a9aa6300e6cd7c675c6e2b156178
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2757"></a>コンパイラ エラー C2757
 'symbol': この名前のシンボルが既に存在し、そのため、この名前は名前空間の名前として使用できません  

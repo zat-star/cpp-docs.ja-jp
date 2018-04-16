@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C3084 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3084 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - C3084
@@ -19,12 +19,13 @@ caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eb33859f52cf608c940561cce2562f9c601d2bf4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: a160c807bbc8a44c8073cc66ddacad7c8a398d53
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3084"></a>コンパイラ エラー C3084
 'function': ファイナライザーまたはデストラクターを 'keyword' にすることはできません。  

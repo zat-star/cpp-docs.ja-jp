@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,7 +13,8 @@ f1_keywords:
 - ATLWIN/ATL::CWinTraits
 - ATLWIN/ATL::CWinTraits::GetWndExStyle
 - ATLWIN/ATL::CWinTraits::GetWndStyle
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMDIChildWinTraits class
 - window styles, default values for ATL
@@ -20,15 +22,17 @@ helpviewer_keywords:
 - CFrameWinTraits class
 - CControlWinTraits class
 ms.assetid: f78f486e-6d9c-42c6-8e86-371e05aa7e59
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fecb7c614320c202a1159a527b34159c01099af6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5c5e71f969f86aee419a0ff9d3701f4d43be5c32
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cwintraits-class"></a>CWinTraits クラス
 このクラスは、window オブジェクトを作成するときに使用するスタイルを標準化するためのメソッドを提供します。  
@@ -76,7 +80,7 @@ template <DWORD t_dwStyle = 0, DWORD t_dwExStyle = 0>  class CWinTraits
   
  特定のスタイルが設定されているインスタンスごとの単位で設定するには、他のスタイルを許容しつつ、ウィンドウ クラスのすべてのインスタンスを使用することを確認する場合は、 [CWinTraitsOR](../../atl/reference/cwintraitsor-class.md)代わりにします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="getwndstyle"></a>CWinTraits::GetWndStyle  
@@ -107,7 +111,7 @@ static DWORD GetWndExStyle(DWORD dwExStyle);
 ### <a name="return-value"></a>戻り値  
  オブジェクトの拡張ウィンドウ スタイル。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスのメンバー](http://msdn.microsoft.com/en-us/dbe6a147-3f01-4aea-a3fb-fe6ebadc31f8)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [ウィンドウの特徴を理解する](../../atl/understanding-window-traits.md)

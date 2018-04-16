@@ -4,20 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 84607ea2-149b-4c6d-b802-282f7f59d42d
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b644a78ddff41db1b2fa5bc13e2d2eb0bf897210
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: b0057fc06d6a025dbc2a5537f0885271b3693ba3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ptr-members"></a>ptr Members
 メンバー`com::ptr`です。  
@@ -47,5 +52,5 @@ ms.lasthandoff: 10/24/2017
   
  [ptr::operator bool](../dotnet/ptr-operator-bool.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [com::ptr クラス](../dotnet/com-ptr-class.md)

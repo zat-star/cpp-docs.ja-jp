@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - iterator/std::move_iterator
 - iterator/std::move_iterator::iterator_type
@@ -16,7 +17,8 @@ f1_keywords:
 - iterator/std::move_iterator::pointer
 - iterator/std::move_iterator::reference
 - iterator/std::move_iterator::base
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::move_iterator [C++]
 - std::move_iterator [C++], iterator_type
@@ -27,15 +29,17 @@ helpviewer_keywords:
 - std::move_iterator [C++], reference
 - std::move_iterator [C++], base
 ms.assetid: a5e5cdd8-a264-4c6b-9f9c-68b0e8edaab7
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 59ad715516adfa716a307e1a4e0b7e4cf39e154a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 55f3062c44b02741093402b4e40cad6c9036ccf3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="moveiterator-class"></a>move_iterator クラス
 クラス テンプレート `move_iterator` は反復子のラッパーです。 move_iterator は、ラップする (格納する) 反復子と同じ動作を提供します。ただし、格納されている反復子の逆参照演算子を右辺値参照に変換して、コピーを移動を切り替えます。 右辺値の詳細については、「[右辺値参照宣言子: &&](../cpp/rvalue-reference-declarator-amp-amp.md)」をご覧ください。  
@@ -86,7 +90,7 @@ class move_iterator;
 |[move_iterator::operator+=](#op_add_eq)|右辺値を格納されている反復子に加算し、`*this` を返します。|  
 |[move_iterator::operator-=](#operator-_eq)|右辺値を格納されている反復子から減算し、`*this` を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iterator>  
   
  **名前空間:** std  
@@ -293,7 +297,7 @@ typedef typename iterator_traits<RandomIterator>::value_type   value_type;
 ### <a name="remarks"></a>コメント  
  この型は、反復子特性 `typename iterator_traits<RandomIterator>::value_type` の同意語です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<iterator>](../standard-library/iterator.md)   
  [左辺値と右辺値](../cpp/lvalues-and-rvalues-visual-cpp.md)   
  [移動コンストラクターと移動代入演算子 (C++)](../cpp/move-constructors-and-move-assignment-operators-cpp.md)   

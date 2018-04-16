@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2975
-dev_langs: C++
-helpviewer_keywords: C2975
+f1_keywords:
+- C2975
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2975
 ms.assetid: 526f6b9d-6c76-4c12-9252-1b1d7c1e06c7
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 65644cc13629481941ffdd8676e51311c665f106
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f779ec2623b6b07f61c1e8347304288d0bcfe96a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2975"></a>コンパイラ エラー C2975
 

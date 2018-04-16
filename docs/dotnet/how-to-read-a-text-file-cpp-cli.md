@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - reading text files
 - text files, reading
 ms.assetid: 80551c01-d769-4b6d-8db7-fd53bde21b62
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 68add197649dd494225787775ab772e8ffc0fc89
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a1924a918d8a3255ca4a8488adc366155c1110dd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-read-a-text-file-ccli"></a>方法: テキスト ファイルを読み込む (C++/CLI)
 <xref:System.IO.StreamReader> クラスを使用して、テキスト ファイルを一度に 1 行ずつ開いて読み取る方法を次の例に示します。このクラスは、<xref:System.IO?displayProperty=fullName> 名前空間で定義されています。 このクラスのインスタンスを使用してテキスト ファイルを開いてから、<xref:System.IO.StreamReader.ReadLine%2A?displayProperty=fullName> メソッドを使用して各行を取得します。  
@@ -64,6 +69,6 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイルおよびストリーム入出力](http://msdn.microsoft.com/Library/4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2)   
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

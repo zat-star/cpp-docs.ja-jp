@@ -1,41 +1,46 @@
 ---
-title: "multimap::rbegin (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multimap::rbegin"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "rbegin メンバー [STL/CLR]"
+title: "multimap::rbegin (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::multimap::rbegin
+dev_langs:
+- C++
+helpviewer_keywords:
+- rbegin member [STL/CLR]
 ms.assetid: fd5a2a04-b03d-4920-b8f2-e01985cb91e3
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 40ee5ecaf9b502a920ee0cdf94e6450a8e32c313
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# multimap::rbegin (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="multimaprbegin-stlclr"></a>multimap::rbegin (STL/CLR)
 反転被制御シーケンスの先頭を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 reverse_iterator rbegin();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスの最後の要素を指定するか、返します空のシーケンスの先頭を指し示す反転反復子を返します。  したがって、これは反転シーケンスの `beginning` を指定します。  これを使用して被制御シーケンスの逆順に見た現在の \(`current`\) 先頭を指定する反復子を取得しますが、このステータスは被制御シーケンスの長さが変わると変化することがあります。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数では、最後の要素または空のシーケンスの先頭を越えた、被制御シーケンスの指定、逆順反復子を返します。 したがって、これを指定、`beginning`反転シーケンスのです。 指定する反復子を取得するために使用、`current`被制御シーケンスの長さを変更した場合、逆の順序で表示される、被制御シーケンスですがその状態の先頭は変更できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multimap_rbegin.cpp   
@@ -67,16 +72,19 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**\*rbegin\(\) \= \[c 3\]**  
-**\*\+\+rbegin\(\) \= \[b 2\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+*rbegin() = [c 3]  
+*++rbegin() = [b 2]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [multimap](../dotnet/multimap-stl-clr.md)   
- [multimap::begin](../dotnet/multimap-begin-stl-clr.md)   
- [multimap::end](../dotnet/multimap-end-stl-clr.md)   
- [multimap::rend](../dotnet/multimap-rend-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
+ [multimap::begin (STL/CLR)](../dotnet/multimap-begin-stl-clr.md)   
+ [multimap::end (STL/CLR)](../dotnet/multimap-end-stl-clr.md)   
+ [multimap::rend (STL/CLR)](../dotnet/multimap-rend-stl-clr.md)

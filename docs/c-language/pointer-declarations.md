@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - pointer declarations
 - declarations, pointers
 - const keyword [C]
 - pointers, declarations
 ms.assetid: 8b3b7fc7-f44d-480d-b6f9-cebe4e5462a6
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e7d8b351f7cc58d37d4da8bc273d8541aee54446
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0ac15c18ce3277e8268b6b4582de4046f5f74d64
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="pointer-declarations"></a>ポインター宣言
 "ポインター宣言" はポインター変数に名前を付け、変数が指すオブジェクトの型を指定します。 ポインターとして宣言された変数は、メモリ アドレスを保持します。  
@@ -62,7 +66,7 @@ ms.lasthandoff: 10/24/2017
   
  構造体型、共用体型、または列挙型へのポインターは、構造体型、共用体型、または列挙型を定義する前に宣言できます。 ポインターの宣言には、次の例に示すように、構造体タグまたは共用体タグを使用します。 このような宣言ができるのは、コンパイラがポインター変数の領域を割り当てるのに、構造体や共用体のサイズが不要であるためです。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  ポインター宣言の例を次に示します。  
   
 ```  

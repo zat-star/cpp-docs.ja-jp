@@ -1,41 +1,46 @@
 ---
-title: "stack::container_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stack::container_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "container_type メンバー [STL/CLR]"
+title: "stack::container_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::stack::container_type
+dev_langs:
+- C++
+helpviewer_keywords:
+- container_type member [STL/CLR]
 ms.assetid: ca0e862d-e57d-4638-b0ba-b4c206de38ed
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0effbbf90cf4d9d00d331505281a3261b694a678
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# stack::container_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="stackcontainertype-stlclr"></a>stack::container_type (STL/CLR)
 基になるコンテナーの型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef Container value_type;  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター `Container` のシノニムです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_stack_container_type.cpp   
@@ -60,12 +65,15 @@ int main()
   
 ```  
   
-  **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext とスタック\>  
+```Output  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/stack >  
   
-## 参照  
- [スタック](../dotnet/stack-stl-clr.md)   
- [stack::get\_container](../Topic/stack::get_container%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [stack::get_container (STL/CLR)](../dotnet/stack-get-container-stl-clr.md)

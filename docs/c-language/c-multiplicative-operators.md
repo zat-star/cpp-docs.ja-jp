@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - arithmetic operators [C++], multiplicative operators
 - / operator
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - slash (/) operator
 - multiplication operator [C++], multiplicative operators
 ms.assetid: 495471c9-319b-4eb4-bd97-039a025fd3a9
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 77b87e796f71258086aadd5aa6da9845de8095c5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c8fbcbb5579c63ef0cab375ec19e2afee47e97ee
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="c-multiplicative-operators"></a>C 乗算演算子
 乗算演算子は、乗算 (**\***)、除算 (**/**)、および剰余 (`%`) 演算を実行します。  
@@ -69,9 +73,9 @@ ms.lasthandoff: 10/24/2017
   
  剰余演算子による除算で、いずれかのオペランドが負の値である場合、結果は被除数 (式の 1 つ目のオペランド) と同じ符号を持ちます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次に示す宣言は、その後の例で使用されます。  
   
 ```  
@@ -101,7 +105,7 @@ n = i % j;
   
  **Microsoft 固有の仕様**  
   
- 剰余の符号は、被除数の符号と同じです。 例:  
+ 剰余の符号は、被除数の符号と同じです。 例えば:  
   
 ```  
 50 % -6 = 2  
@@ -110,7 +114,7 @@ n = i % j;
   
  どちらの場合も、`50` と `2` の符号が同じになっています。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
 ## <a name="see-also"></a>関連項目  
  [乗算演算子と剰余演算子](../cpp/multiplicative-operators-and-the-modulus-operator.md)

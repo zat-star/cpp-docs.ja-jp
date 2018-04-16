@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3038
-dev_langs: C++
-helpviewer_keywords: C3038
+f1_keywords:
+- C3038
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3038
 ms.assetid: 140ada3e-5636-43ef-a4ee-22a9f66a771f
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3ddd3aaface0e500dc92778333cd3672398909da
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 61cb06c7ebeff6dd24cdcd82026d09b5fd5d9a33
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3038"></a>コンパイラ エラー C3038
 'var': 'private' 句の変数を、それを囲むコンテキスト内で減少変数にすることはできません  

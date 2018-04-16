@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - HelpContext method [C++]
 ms.assetid: 160d6443-9b68-4cf5-a540-50da951a5b2b
-caps.latest.revision: 6
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: d3eb0678e7d3b7cb4c1824cf17bc25499bf0c0ce
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2dbdd52b311a35d390a61a0601a63c1b680f79b6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comerrorhelpcontext"></a>_com_error::HelpContext
 **Microsoft 固有の仕様**  
@@ -47,5 +48,5 @@ DWORD HelpContext( ) const throw( );
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_com_error クラス](../cpp/com-error-class.md)

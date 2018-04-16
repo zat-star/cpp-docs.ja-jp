@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - HTML controls, modifying
 - DHTML controls
 - DHTML controls, modifying
 ms.assetid: c053f35f-8629-4600-9595-721f5956777a
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 74ed32c0322d23cd3da1d439dcc8d8eadb246c13
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 571b7f4f52e3f6838822db39ba0bbf5148d57d1e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="modifying-the-atl-dhtml-control"></a>ATL DHTML コントロールの変更
 ATL コントロール ウィザードは、ビルドして、コントロールを実行できるようにし、プロジェクト ファイル内のメソッドを記述する方法とディスパッチ方法を使用して、コントロールの C++ コードを DHTML を呼び出す方法を確認できるように、スタート コードを提供します。 インターフェイスにディスパッチ メソッドを追加することができます。 次に、HTML リソースのメソッドを呼び出すことができます。  
@@ -80,6 +84,6 @@ ATL コントロール ウィザードは、ビルドして、コントロール
   
  今すぐビルドすることができ、[変更 DHTML コントロールをテスト](../atl/testing-the-modified-atl-dhtml-control.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DHTML コントロールのサポート](../atl/atl-support-for-dhtml-controls.md)
 

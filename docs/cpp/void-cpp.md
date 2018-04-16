@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: void_cpp
-dev_langs: C++
+f1_keywords:
+- void_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - void keyword [C++]
 - functions [C++], void
 - pointers, void
 ms.assetid: d203edba-38e6-4056-8b89-011437351057
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5ec762d15c878df4bcde01284f1b10783bff7e3c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a800aca290a178e3b193c245df515385311b5593
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="void-c"></a>void (C++)
 関数の戻り値の型として `void` キーワードを使用した場合は、関数が値を戻さないことを示します。 関数のパラメーター リストで void を使用した場合は、関数がパラメーターを受け取らないことを示します。 ポインターの宣言で void を使用した場合は、ポインターが "汎用" であることを示します。  
@@ -49,4 +54,4 @@ int main() {
   
 ## <a name="see-also"></a>関連項目  
  [キーワード](../cpp/keywords-cpp.md)   
- [基本型](../cpp/fundamental-types-cpp.md)
+ [基本的な型](../cpp/fundamental-types-cpp.md)

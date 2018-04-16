@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C2075
-dev_langs: C++
-helpviewer_keywords: C2075
+f1_keywords:
+- C2075
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2075
 ms.assetid: 8b1865d2-540b-4117-b982-e7a58a0b6cf7
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3f71631369c1f12910e323fcbdeec6dd4a6a4ce8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 375c2c7d422ed15f127b37b2f88f44c215f0962d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2075"></a>コンパイラ エラー C2075
 'identifier' : 配列の初期化には中かっこ ({}) が必要です  
@@ -35,7 +41,7 @@ int main() {
 }  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C2075b.c  

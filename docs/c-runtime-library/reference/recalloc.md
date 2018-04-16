@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _recalloc
+ms.topic: reference
+apiname:
+- _recalloc
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,20 +26,23 @@ apitype: DLLExport
 f1_keywords:
 - _recalloc
 - recalloc
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _recalloc function
 - recalloc function
 ms.assetid: 1db8305a-3f03-418c-8844-bf9149f63046
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 007f174b3cbdb7e8ca53af19b6f9764200ff690a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: de1b57dfed2d678722c2ccf496ac7a6f6d6a2fcb
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="recalloc"></a>_recalloc
 `realloc` と `calloc` の組み合わせです。 メモリ内の配列を再割り当てし、その要素を 0 に初期化します。  
@@ -86,19 +91,19 @@ _set_new_mode(1)
   
  この呼び出しはプログラムの最初の方で指定するか、NEWMODE.OBJ にリンクします。  
   
- C ランタイム ライブラリのデバッグ バージョンとリンクするアプリケーション`_recalloc`に解決される[_recalloc_dbg](../../c-runtime-library/reference/recalloc-dbg.md)です。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」を参照してください。  
+ C ランタイム ライブラリのデバッグ バージョンとリンクするアプリケーション`_recalloc`に解決される[_recalloc_dbg](../../c-runtime-library/reference/recalloc-dbg.md)です。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。  
   
  `_recalloc` は `__declspec(noalias)` と `__declspec(restrict)` でマークされています。これは、この関数がグローバル変数を変更せず、返されるポインターがエイリアス化されない保証があることを意味します。 詳細については、「[noalias](../../cpp/noalias.md)」、および「[restrict](../../cpp/restrict.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_recalloc`|\<stdlib.h> と \<malloc.h>|  
   
  互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
  [_recalloc_dbg](../../c-runtime-library/reference/recalloc-dbg.md)   
  [_aligned_recalloc](../../c-runtime-library/reference/aligned-recalloc.md)   

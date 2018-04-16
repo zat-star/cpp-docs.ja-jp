@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _get_current_locale
 apilocation:
@@ -35,30 +35,17 @@ helpviewer_keywords:
 - locales, getting information on
 - __get_current_locale function
 ms.assetid: 572217f2-a37a-4105-a293-a250b4fabd99
-caps.latest.revision: 13
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: e2f14ad541750967d63a50c13ec82a9ed57fce05
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e7199cb6cf4f0451f4607c7b9cd8a670a4d5afe2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getcurrentlocale"></a>_get_current_locale
 現在のロケールを表すロケール オブジェクトを取得します。  
@@ -73,19 +60,19 @@ _locale_t _get_current_locale(void);
  現在のロケールを表すロケール オブジェクト。  
   
 ## <a name="remarks"></a>コメント  
- `_get_current_locale`関数は、取得、現在設定されているスレッドのロケールし、そのロケールを表すロケール オブジェクトを返します。  
+ `_get_current_locale`関数は、現在設定されている取得のスレッドのロケールと、そのロケールを表すロケール オブジェクトを返します。  
   
  この関数の以前の名前 `__get_current_locale` (先頭に 2 個のアンダースコア) は、使用されなくなりました。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_get_current_locale`|\<locale.h>|  
   
- 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
  [_create_locale、_wcreate_locale](../../c-runtime-library/reference/create-locale-wcreate-locale.md)   
  [_free_locale](../../c-runtime-library/reference/free-locale.md)

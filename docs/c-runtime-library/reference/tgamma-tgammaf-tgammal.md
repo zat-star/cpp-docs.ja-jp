@@ -1,57 +1,61 @@
 ---
 title: "tgamma、tgammaf、tgammal | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "cpp"
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "tgamma"
-  - "tgammaf"
-  - "tgammal"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-math-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "tgamma"
-  - "tgammaf"
-  - "tgammal"
-  - "math/tgamma"
-  - "math/tgammaf"
-  - "math/tgammal"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "tgamma 関数"
-  - "tgammaf 関数"
-  - "tgammal 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- tgamma
+- tgammaf
+- tgammal
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-math-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- tgamma
+- tgammaf
+- tgammal
+- math/tgamma
+- math/tgammaf
+- math/tgammal
+dev_langs:
+- C++
+helpviewer_keywords:
+- tgamma function
+- tgammaf function
+- tgammal function
 ms.assetid: f1bd2681-8af2-48a9-919d-5358fd068acd
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7525da71d114179d40b937816f9ebe08d5a892a9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# tgamma、tgammaf、tgammal
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="tgamma-tgammaf-tgammal"></a>tgamma、tgammaf、tgammal
 指定した値のガンマ関数を決定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 double tgamma(  
@@ -76,42 +80,42 @@ long double tgammal(
   
 ```  
   
-#### パラメーター  
- \[入力\] `x`  
- ガンマ値を検索する値。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `x`  
+ ガンマを検索する値。  
   
-## 戻り値  
- 成功した場合、取得のガンマ `x`します。  
+## <a name="return-value"></a>戻り値  
+ 正常に終了した場合は `x` のガンマを返します。  
   
- 場合に、範囲エラーが発生する可能性がありますの大きさ `x` 大きすぎるか小さすぎるため、データ型。 場合に、ドメイン エラーまたは範囲エラーが発生する `x` \< \= 0。  
+ `x` の大きさがデータ型に対して大きすぎる場合や小さすぎる場合は、範囲エラーが発生することがあります。 `x` <=0 の場合は、ドメイン エラーまたは範囲エラーが発生することがあります。  
   
-|懸案事項|リターン|  
-|----------|----------|  
-|x \= ±0|±INFINITY|  
-|x \= 負の整数|NaN|  
-|x \= \- 無限大|NaN|  
-|x \= \+ INFINITY|\+ INFINITY|  
-|x \= NaN|NaN|  
+|懸案事項|Return|  
+|-----------|------------|  
+|x = ±0|±INFINITY|  
+|x = 負の整数|NaN|  
+|x =  -INFINITY|NaN|  
+|x = +INFINITY|+INFINITY|  
+|x = NaN|NaN|  
 |ドメイン エラー|NaN|  
-|極エラー|±HUGE\_VAL、±HUGE\_VALF、または ±HUGE\_VALL|  
-|オーバーフロー エラーの範囲|±HUGE\_VAL、±HUGE\_VALF、または ±HUGE\_VALL|  
-|アンダー フロー範囲エラー|丸めた正しい値です。|  
+|極エラー|±HUGE_VAL、±HUGE_VALF、または ±HUGE_VALL|  
+|オーバーフロー範囲エラー|±HUGE_VAL、±HUGE_VALF、または ±HUGE_VALL|  
+|アンダーフロー範囲エラー|丸めた後の正確な値。|  
   
- エラーが報告されるの説明に従って [\_matherr](../../c-runtime-library/reference/matherr.md)します。  
+ エラーは、[_matherr](../../c-runtime-library/reference/matherr.md) で指定されたとおりに報告されます。  
   
-## 解説  
- C\+\+ ではオーバー ロードであるためにを実行し、float、long double 型 tgamma のオーバー ロードを呼び出すことができます。 C プログラムでは tgamma は常に取得し、double 型の値を返します。  
+## <a name="remarks"></a>コメント  
+ C++ ではオーバーロードが可能であるため、float 型および long double 型を受け取って返す tgamma のオーバーロードを呼び出すことができます。 C プログラムでは、tgamma は常に double を受け取って返します。  
   
- X が自然数の場合は、この関数は、\(x\-1\) の階乗を返します。  
+ x が自然数の場合、この関数は (x-1) の階乗を返します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-|関数|C ヘッダー|C\+\+ ヘッダー|  
-|--------|------------|----------------|  
-|`tgamma`、`tgammaf`、 `tgammal`|\<math.h\>|\<cmath\>|  
+|関数|C ヘッダー|C++ ヘッダー|  
+|--------------|--------------|------------------|  
+|`tgamma`、`tgammaf`、`tgammal`|\<math.h>|\<cmath>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 参照  
- [関数リファレンス \(アルファベット順\)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
+## <a name="see-also"></a>参照  
+ [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [lgamma、lgammaf、lgammal](../../c-runtime-library/reference/lgamma-lgammaf-lgammal.md)

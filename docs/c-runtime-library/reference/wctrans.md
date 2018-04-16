@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: wctrans
+ms.topic: reference
+apiname:
+- wctrans
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,23 +23,27 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: wctrans
-dev_langs: C++
+f1_keywords:
+- wctrans
+dev_langs:
+- C++
 helpviewer_keywords:
 - character codes, wctrans
 - characters, codes
 - characters, converting
 - wctrans function
 ms.assetid: 215404bf-6d60-489c-9ae9-880e6b586162
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6b22ed97755b150831282c517b9bf98851da9003
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 11e7c1b687b8052b9e17ca95b5e4e8bfab8e572b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="wctrans"></a>wctrans
 文字コードの 1 つのセットから別のセットへのマッピングを指定します。  
@@ -67,13 +73,13 @@ wctrans_t wctrans(
 |`tolower(`  `c`  `)`|`towctrans(`  `c` `, wctrans("towlower" ) )`|  
 |`towupper(`  `c`  `)`|`towctrans(`  `c` `, wctrans( "toupper" ) )`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |ルーチン|必須ヘッダー|  
 |-------------|---------------------|  
 |`wctrans`|\<wctype.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -111,6 +117,6 @@ int main()
 65  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)

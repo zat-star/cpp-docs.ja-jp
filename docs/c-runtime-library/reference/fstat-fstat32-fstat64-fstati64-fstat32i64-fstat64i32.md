@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _fstat32
 - _fstat64
@@ -40,7 +41,8 @@ f1_keywords:
 - _fstat
 - fstat32
 - _fstat64i32
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _fstat64 function
 - fstati64 function
@@ -56,15 +58,17 @@ helpviewer_keywords:
 - _fstati64 function
 - fstat32i64 function
 ms.assetid: 088f5e7a-9636-4cf7-ab8e-e28d2aa4280a
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b148bbda218e5f357d7cd5c771073f2d91b87c4c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c9518a0ea841a252717c225df7f07deba3a1ffbf
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32"></a>_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32
 開いているファイルに関する情報を取得します。  
@@ -158,7 +162,7 @@ int _fstat64i32(
 |`_fstat32i64`|マクロ定義の影響を受けない|32 ビット|64 ビット|  
 |`_fstat64i32`|マクロ定義の影響を受けない|64 ビット|32 ビット|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
@@ -169,7 +173,7 @@ int _fstat64i32(
 |`_fstat32i64`|\<sys/stat.h> と \<sys/types.h>|  
 |`_fstat64i32`|\<sys/stat.h> と \<sys/types.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -236,7 +240,7 @@ File size     : 16
 Time modified : Wed May 07 15:25:11 2003  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_access、_waccess](../../c-runtime-library/reference/access-waccess.md)   
  [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   

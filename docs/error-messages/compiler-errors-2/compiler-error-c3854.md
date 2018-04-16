@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3854
 ms.assetid: 32a9ead0-c6c7-485a-8802-c7b1fe921d3a
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ed910ecf91642a6a1a1c5777be09b0251ddeda2d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 34285e8de195b2b7c516cf665f3b2cbf37039e6d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3854"></a>コンパイラ エラー C3854
 '=' の左辺の式は、関数に評価されます。 (関数は左辺値ではありません) 関数に割り当てることはできません。  

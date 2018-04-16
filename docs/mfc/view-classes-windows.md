@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.classes.view
-dev_langs: C++
+f1_keywords:
+- vc.classes.view
+dev_langs:
+- C++
 helpviewer_keywords:
 - form and record views [MFC]
 - splitter window classes [MFC]
 - view classes [MFC], Windows
 ms.assetid: b11683fb-9f43-4de3-9499-2b55775f9870
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0148ead7a978389f763efbe9ee6306ec7a5839cd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3d737176df2676f543f47bb77a0d205fa7c908fc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="view-classes-windows"></a>ビュー クラス (Windows)
 `CView`その派生クラスは、フレーム ウィンドウのクライアント領域を表す子ウィンドウ。 ビューは、データを表示し、ドキュメントの入力をそのまま使用します。  
@@ -88,6 +93,6 @@ ms.lasthandoff: 10/24/2017
  [CRichEditCntrItem](../mfc/reference/cricheditcntritem-class.md)  
  項目に格納されている ole クライアント側のアクセスを提供する`CRichEditView`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

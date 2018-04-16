@@ -7,13 +7,11 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::random_device
 - random/std::random_device::min
 - random/std::random_device::max
-- random/std::random_device::entropy
-- random/std::random_device::operator()
 - random/std::random_device::entropy
 - random/std::random_device::operator()
 dev_langs:
@@ -25,16 +23,17 @@ helpviewer_keywords:
 - std::random_device [C++], entropy
 - std::random_device [C++], entropy
 ms.assetid: 4393d515-0cb6-4e0d-a2ba-c780f05dc1bf
-caps.latest.revision: 27
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d5cb39aa4158f69b1c6e168742e6c7a2b3dcdc97
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: f4256ac0a58f3cc21322ff84565838d36174a00a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="randomdevice-class"></a>random_device クラス
 外部デバイスからランダム シーケンスを生成します。  
@@ -67,7 +66,7 @@ public:
   
 |||  
 |-|-|  
-|[random_device](#random_device)|[エントロピ](#entropy)|  
+|[random_device](#random_device)|[entropy](#entropy)|  
 |[random_device::operator()](#op_call)||  
   
 ## <a name="remarks"></a>コメント  
@@ -114,7 +113,7 @@ a random value == 213725214
   
 これは単純な例であり、このジェネレーターの一般的な使用例を表しているわけではありません。 代表的なコード サンプルについては、「[\<random>](../standard-library/random.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -149,7 +148,6 @@ result_type operator()();
 ### <a name="remarks"></a>コメント  
 閉区間 [ `min, max`] で、メンバー関数 `min()` および `max()` で定義されたように、一様に分布した値を返します。 乱数が取得できない場合は、[exception](../standard-library/exception-class.md) から導出される実装定義型の値をスローします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<random>](../standard-library/random.md)
-
 

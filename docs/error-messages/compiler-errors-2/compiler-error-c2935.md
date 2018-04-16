@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2935
 ms.assetid: e11ef90d-0756-4e43-8a09-4974c6aa72a3
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bf3e24aef4cb1111ca6018498a09c28a703aa531
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: d270ed23d9bddc9ef14d1ebd9a6aca78f24d59f3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2935"></a>コンパイラ エラー C2935
 'class': type-class-id がグローバル関数として再定義されています  

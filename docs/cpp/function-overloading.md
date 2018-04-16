@@ -1,46 +1,51 @@
 ---
 title: "関数のオーバー ロード |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 1/25/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - function overloading [C++], about function overloading
 - function overloading
 - declaring functions [C++], overloading
 ms.assetid: 3c9884cb-1d5e-42e8-9a49-6f46141f929e
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2486357766d2dbd9f5d4250e2d0fb38e02ba51bc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d21ecfb649748c9bf7e190d4857ce93ebee61dd1
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="function-overloading"></a>関数のオーバーロード
-C++ では、同じスコープ内で同じ名前の複数の関数を指定できます。 これらは、オーバーロードされた関数と呼ばれます。これについては、オーバーロードに関するトピックで詳しく説明します。 オーバーロードされた関数により、プログラマは、引数の種類と数に応じて関数に異なるセマンティクスを指定できます。  
+C++ では、同じスコープ内で同じ名前の複数の関数を指定できます。 これらと呼ばれる*オーバー ロードされた*関数。 オーバー ロードされた関数を使用すると、型と引数の数に応じて関数に異なるセマンティクスを指定できます。 
   
- たとえば、**印刷**、文字列を受け取る関数 (または**char \*** ) 引数が型の引数を受け取る 1 よりも大幅に異なるタスクを実行**二重**. オーバーロードにより、統一性のある名前付けが可能になり、プログラマは `print_sz` や `print_d` のような名前を作成する必要がなくなります。 次の表は、同じスコープ内の同じ名前を持つ関数を区別するために、C++ で関数宣言のどの部分が使用されるかをまとめたものです。  
+ たとえば、**印刷**を受け取る関数、 **std::string**引数は、型の引数を受け取る 1 よりも大幅に異なるタスクを実行可能性があります**二重**です。 オーバー ロードが省けますなどを使用して名前`print_string`または`print_double`です。 コンパイル時に、コンパイラは、呼び出し元が渡された引数の型に基づいて、どのオーバー ロードを使用してを選択します。  呼び出す場合**print(42.0)** 、**印刷 (ダブル d) を無効にする**関数が呼び出されます。 呼び出す場合**("hello world") を印刷**、 **print(std::string) を void**オーバー ロードが呼び出されます。
+
+メンバー関数と非メンバー関数の両方をオーバー ロードすることができます。 次の表は、同じスコープ内の同じ名前を持つ関数を区別するために、C++ で関数宣言のどの部分が使用されるかをまとめたものです。  
   
 ### <a name="overloading-considerations"></a>オーバーロードに関する考慮事項  
   
 |関数宣言要素|オーバーロードに使用されるかどうか|  
 |----------------------------------|---------------------------|  
-|関数の戻り値の型|いいえ|  
-|引数の数|はい|  
-|引数の型|はい|  
-|省略記号の有無|はい|  
-|`typedef` 名の使用|いいえ|  
-|未指定の配列の範囲|いいえ|  
-|**const**または`volatile`(下記参照)|はい|  
-  
- 関数は戻り値の型に基づいて識別できますが、同じ基準でオーバーロードすることはできません。  `Const`または`volatile`に適用するクラスで使用される場合をオーバー ロードに、基準としてのみ使用される、**この**関数の戻り値型ではなく、クラスへのポインター。  つまり、オーバー ロードは場合にのみ、 **const**または`volatile`キーワード宣言内の関数の引数リストに依存します。  
+|関数の戻り値の型|×|  
+|引数の数|[はい]|  
+|引数の型|[はい]|  
+|省略記号の有無|[はい]|  
+|`typedef` 名の使用|×|  
+|未指定の配列の範囲|×|  
+|**const**または `volatile`|[はい]、関数全体に適用される場合|
+|[ref-qualifier](#ref-qualifier)|[はい]|  
   
 ## <a name="example"></a>例  
  次の例は、どのようにオーバーロードが使用できるかを示しています。  
@@ -50,68 +55,71 @@ C++ では、同じスコープ内で同じ名前の複数の関数を指定で�
 // compile with: /EHsc  
 #include <iostream>  
 #include <math.h>  
-  
+#include <string>
+
 // Prototype three print functions.  
-int print( char *s );                  // Print a string.  
-int print( double dvalue );            // Print a double.  
-int print( double dvalue, int prec );  // Print a double with a  
-//  given precision.  
-using namespace std;  
-int main( int argc, char *argv[] )  
-{  
-const double d = 893094.2987;  
-if( argc < 2 )  
-    {  
-// These calls to print invoke print( char *s ).  
-print( "This program requires one argument." );  
-print( "The argument specifies the number of" );  
-print( "digits precision for the second number" );  
-print( "printed." );  
-exit(0);  
-    }  
-  
-// Invoke print( double dvalue ).  
-print( d );  
-  
-// Invoke print( double dvalue, int prec ).  
-print( d, atoi( argv[1] ) );  
-}  
-  
+int print(std::string s);             // Print a string.  
+int print(double dvalue);            // Print a double.  
+int print(double dvalue, int prec);  // Print a double with a  
+                                     //  given precision.  
+using namespace std;
+int main(int argc, char *argv[])
+{
+    const double d = 893094.2987;
+    if (argc < 2)
+    {
+        // These calls to print invoke print( char *s ).  
+        print("This program requires one argument.");
+        print("The argument specifies the number of");
+        print("digits precision for the second number");
+        print("printed.");
+        exit(0);
+    }
+
+    // Invoke print( double dvalue ).  
+    print(d);
+
+    // Invoke print( double dvalue, int prec ).  
+    print(d, atoi(argv[1]));
+}
+
 // Print a string.  
-int print( char *s )  
-{  
-cout << s << endl;  
-return cout.good();  
-}  
-  
+int print(string s)
+{
+    cout << s << endl;
+    return cout.good();
+}
+
 // Print a double in default precision.  
-int print( double dvalue )  
-{  
-cout << dvalue << endl;  
-return cout.good();  
-}  
-  
-// Print a double in specified precision.  
+int print(double dvalue)
+{
+    cout << dvalue << endl;
+    return cout.good();
+}
+
+//  Print a double in specified precision.  
 //  Positive numbers for precision indicate how many digits  
 //  precision after the decimal point to show. Negative  
 //  numbers for precision indicate where to round the number  
 //  to the left of the decimal point.  
-int print( double dvalue, int prec )  
-{  
-// Use table-lookup for rounding/truncation.  
-static const double rgPow10[] = {   
-10E-7, 10E-6, 10E-5, 10E-4, 10E-3, 10E-2, 10E-1, 10E0,  
-10E1,  10E2,  10E3,  10E4, 10E5,  10E6  
-    };  
-const int iPowZero = 6;  
-// If precision out of range, just print the number.  
-if( prec < -6 || prec > 7 )  
-return print( dvalue );  
-// Scale, truncate, then rescale.  
-dvalue = floor( dvalue / rgPow10[iPowZero - prec] ) *  
-rgPow10[iPowZero - prec];  
-cout << dvalue << endl;  
-return cout.good();  
+int print(double dvalue, int prec)
+{
+    // Use table-lookup for rounding/truncation.  
+    static const double rgPow10[] = {
+        10E-7, 10E-6, 10E-5, 10E-4, 10E-3, 10E-2, 10E-1, 
+        10E0, 10E1,  10E2,  10E3,  10E4, 10E5,  10E6 };
+    const int iPowZero = 6;
+
+    // If precision out of range, just print the number.  
+    if (prec < -6 || prec > 7)
+    {
+        return print(dvalue);
+    }
+    // Scale, truncate, then rescale.  
+    dvalue = floor(dvalue / rgPow10[iPowZero - prec]) *
+        rgPow10[iPowZero - prec];
+    cout << dvalue << endl;
+    return cout.good();
 }  
 ```  
   
@@ -180,7 +188,7 @@ F1 = Add( 3, 6 );
   
  この 2 つのセット間の積集合が空であることに注意してください。 このため、エラー メッセージが生成されます。  
   
- 引数の一致を使用して関数 *n* は既定の引数と見なさ *n* +1 の個別の関数、それぞれ異なる数の引数にします。  
+ 引数の一致を使用して関数*n*は既定の引数と見なさ*n*+1 の個別の関数、それぞれ異なる数の引数にします。  
   
  省略記号 (...) はワイルドカードとして機能します。これは任意の実際の引数と一致します。 オーバーロード関数セットを非常に注意して設計しないと、これが多くのあいまいさの原因になる可能性があります。  
   
@@ -253,14 +261,14 @@ volatile Over&
   
 |変換前の型|変換後の型|  
 |-----------------------|---------------------|  
-|*型名*|*型名***&**|  
-|*型名***&**|*型名*|  
-|*型名* ****|*型名\**|  
-|*型名* **(** *引数リスト* **)**|**(** *\*型名* **) (** *引数リスト* **)**|  
-|*型名*|**const** *型名*|  
-|*型名*|`volatile`*型名*|  
-|*型名\**|**const** *型名\**|  
-|*型名\**|`volatile`*型名\**|  
+|*type-name*|*type-name* **&**|  
+|*type-name* **&**|*type-name*|  
+|*type-name* **[ ]**|*type-name\**|  
+|*type-name* **(** *argument-list* **)**|**(** *\*type-name* **) (** *argument-list* **)**|  
+|*type-name*|**const** *type-name*|  
+|*type-name*|`volatile` *type-name*|  
+|*type-name\**|**const** *type-name\**|  
+|*type-name\**|`volatile` *type-name\**|  
   
  変換が試行されたシーケンスは次のとおりです。  
   
@@ -293,7 +301,7 @@ volatile Over&
   
  上記の規則は、派生の特定のパスに沿ってのみ適用されます。 次の図に示すグラフについて考えます。  
   
- ![マルチ &#45; 優先変換を示す継承](../cpp/media/vc391t2.gif "vc391T2")  
+ ![マルチ&#45;優先変換を示す継承](../cpp/media/vc391t2.gif "vc391T2")  
 優先される変換を示す複数継承のグラフ  
   
  `C*` 型から `B*` 型への変換は、`C*` 型から `A*` 型への変換よりも適しています。 理由は、これらが同じパスにあり、`B*` の方が近いからです。 しかし、`C*` 型から `D*` 型への変換が、`A*` 型への変換より適しているというわけではありません。これらの変換は違うパスをたどるので、優先順位が決まらないからです。  
@@ -341,7 +349,7 @@ LogToFile( udc );
   
  前の例では、ユーザー定義の変換の場合、**演算子 long**、変換が呼び出され`udc`入力**長い**です。 場合を入力するユーザー定義変換なし**長い**されていた定義されている場合、変換が進む次のように: 型`UDC`型に変換されますが`int`ユーザー定義の変換を使用します。 型から標準の変換、`int`入力**長い**が適用されて、宣言の引数の一致するようにします。  
   
- 引数の一致にユーザー定義の変換が必要な場合、最適な一致を評価するときに標準の変換は使用されません。 このことは、複数の候補関数がユーザー定義変換を必要としている場合でも同じです。このような場合、それらの候補関数は等しいと判断されます。 例:  
+ 引数の一致にユーザー定義の変換が必要な場合、最適な一致を評価するときに標準の変換は使用されません。 このことは、複数の候補関数がユーザー定義変換を必要としている場合でも同じです。このような場合、それらの候補関数は等しいと判断されます。 例えば:  
   
 ```  
 // argument_matching2.cpp  
@@ -398,8 +406,47 @@ obj.name
 ```  
   
  引数マッチングに関して、`->*` 演算子および `.*` (メンバーへのポインター) 演算子の左オペランドは `.` 演算子および `->` (メンバー選択) 演算子と同じ方法で処理されます。  
+
+## <a name="ref-qualifiers"></a> メンバー関数に対する ref 修飾子  
+Ref 修飾子可能になるかどうか、指すオブジェクトに基づいて、メンバー関数をオーバー ロードする`this`は右辺値または左辺値です。  この機能は、場所を選択しないと、データへのポインターを提供シナリオでの不要なコピー操作を避けるために使用できます。 たとえば、クラス**C**コンス トラクターは、一部のデータを初期化し、そのデータのコピーをメンバー関数で返します**get_data()**です。 型のオブジェクト**C**は右辺値である、破棄されようとしてをクリックし、コンパイラは、 **get_data() (& a) (& a)**それをコピーするのではなく、オーバー ロードのデータを移動します。 
+
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class C
+{
+
+public:
+    C() {/*expensive initialization*/}
+    vector<unsigned> get_data() & 
+    { 
+        cout << "lvalue\n";
+        return _data;
+    }
+    vector<unsigned> get_data() && 
+    {
+        cout << "rvalue\n";
+        return std::move(_data);
+    }
+    
+private:
+    vector<unsigned> _data;
+};
+
+int main()
+{
+    C c;
+    auto v = c.get_data(); // get a copy. prints "lvalue".
+    auto v2 = C().get_data(); // get the original. prints "rvalue"
+    return 0;
+}
+
+```
   
-## <a name="restrictions"></a>制約  
+## <a name="restrictions-on-overloading"></a>オーバー ロードに関する制限  
  許容可能なオーバーロード関数のセットには複数の制限が適用されます。  
   
 -   一連のオーバーロードされた関数の 2 つの関数には、異なる引数リストが必要です。  
@@ -423,7 +470,7 @@ obj.name
     void Print( PSTR szToPrint );  
     ```  
   
-     先行する 2 つの関数の引数リストはまったく同じです。 `PSTR`型のシノニムは、 **char \***です。 メンバーのスコープでは、このコードによりエラーが発生します。  
+     先行する 2 つの関数の引数リストはまったく同じです。 `PSTR` 型のシノニムは、 **char \***です。 メンバーのスコープでは、このコードによりエラーが発生します。  
   
 -   列挙型は別個の型です。また、オーバーロードされた関数を識別するために使用できます。  
   
@@ -442,12 +489,15 @@ obj.name
     void Print( char szToPrint[][9][42] );  
     ```  
   
-## <a name="declaration-matching"></a>宣言の一致  
+## <a name="overloading-overriding-and-hiding"></a>オーバー ロード、オーバーライド、および非表示にします。
+  
  同じスコープ内で同じ名前の 2 つの関数宣言は、同じ関数またはオーバーロードされる 2 種類の関数を参照できます。 宣言の引数リストに (前のセクションで説明したように) 型が同じ引数が含まれている場合、関数宣言は同じ関数を参照しています。 それ以外の場合は、オーバーロードを使用して選択された 2 つの異なる関数を参照します。  
   
- クラス スコープは、厳密に遵守されます。このため、基底クラスで宣言された関数は、派生クラスで宣言された関数と同じスコープ内にありません。 派生クラスの関数が基底クラスの関数と同じ名前で宣言されると、オーバーロードが発生するのではなく、派生クラスの関数で基底クラスの関数が非表示になります。  
+ クラス スコープは、厳密に遵守されます。このため、基底クラスで宣言された関数は、派生クラスで宣言された関数と同じスコープ内にありません。 派生クラスで関数が基底クラスを派生クラスの関数の仮想関数と同じ名前で宣言されている*オーバーライド*基底クラス関数。 詳細については、次を参照してください。[仮想関数](../cpp/virtual-functions.md)です。
+
+基底クラス関数が、'virtual' で、宣言されていないかどうかは、派生クラスの関数といいます*を非表示に*ことです。 オーバーライドして、非表示にするは、オーバー ロードとは異なります。  
   
- ブロック スコープは、厳密に遵守されます。このため、ファイル スコープで宣言された関数は、ローカルで宣言された関数と同じスコープ内にありません。 ローカルで宣言された関数の名前がファイル スコープで宣言された関数と同じ場合、ローカルで宣言された関数では、オーバーロードが発生する代わりに、ファイル スコープ関数を非表示にします。 例:  
+ ブロック スコープは、厳密に遵守されます。このため、ファイル スコープで宣言された関数は、ローカルで宣言された関数と同じスコープ内にありません。 ローカルで宣言された関数の名前がファイル スコープで宣言された関数と同じ場合、ローカルで宣言された関数では、オーバーロードが発生する代わりに、ファイル スコープ関数を非表示にします。 例えば:  
   
 ```  
 // declaration_matching1.cpp  
@@ -525,7 +575,10 @@ double Account::Deposit( double dAmount, char *szPassword )
    else  
       return 0.0;  
 }  
-```  
+```
+
+
+
   
 ## <a name="see-also"></a>関連項目  
  [関数 (C++)](../cpp/functions-cpp.md)

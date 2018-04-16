@@ -1,32 +1,37 @@
 ---
-title: "vector::generic_iterator (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector::generic_iterator"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "generic_iterator メンバー [STL/CLR]"
+title: "vector::generic_iterator (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::vector::generic_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- generic_iterator member [STL/CLR]
 ms.assetid: e396bce6-5b1e-46b6-afa5-6bb96cf5d5d5
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e276b9f0bc4e98ea42015562152b6e4b890b7f6f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# vector::generic_iterator (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンテナーのジェネリック インターフェイスで使用の反復子の型。  
+# <a name="vectorgenericiterator-stlclr"></a>vector::generic_iterator (STL/CLR)
+コンテナーのジェネリック インターフェイスを使用するため、反復子の型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef Microsoft::VisualC::StlClr::Generic::  
@@ -34,10 +39,10 @@ typedef Microsoft::VisualC::StlClr::Generic::
     generic_iterator;  
 ```  
   
-## 解説  
- この型は、テンプレートのコンテナー クラスにジェネリック インターフェイスで使用できるジェネリック反復子について説明します。  
+## <a name="remarks"></a>コメント  
+ この型は、このテンプレートのコンテナー クラスのジェネリック インターフェイスで使用できる汎用の反復子を表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_vector_generic_iterator.cpp   
@@ -74,15 +79,18 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**  
- **C\+\+.**   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+```Output  
+a b c  
+a b c  
+a a c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/vector >  
   
-## 参照  
- [ベクター](../dotnet/vector-stl-clr.md)   
- [vector::generic\_container](../dotnet/vector-generic-container-stl-clr.md)   
- [vector::generic\_reverse\_iterator](../Topic/vector::generic_reverse_iterator%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [vector::generic_container (STL/CLR)](../dotnet/vector-generic-container-stl-clr.md)   
+ [vector::generic_reverse_iterator (STL/CLR)](../dotnet/vector-generic-reverse-iterator-stl-clr.md)

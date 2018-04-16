@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - __swprintf_l
 - sprintf
@@ -54,30 +54,17 @@ helpviewer_keywords:
 - sprintf_l function
 - formatted text [C++]
 ms.assetid: f6efe66f-3563-4c74-9455-5411ed939b81
-caps.latest.revision: 36
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 0a584008d0697dda3e45d8bafa74128d1978d5ce
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: be279979cdbdf9a4c0b814cc684464670cc1e867
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="sprintf-sprintfl-swprintf-swprintfl-swprintfl"></a>sprintf、_sprintf_l、swprintf、_swprintf_l、__swprintf_l
 文字列に書式付きデータを書き込みます。 これらの関数のセキュリティを強化したバージョンについては、「[sprintf_s、_sprintf_s_l、swprintf_s、_swprintf_s_l](../../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md)」をご覧ください。 セキュリティを強化したバージョンの `swprintf` と `_swprintf_l` は、`count` パラメーターを受け取りません。  
@@ -147,10 +134,10 @@ int _sprintf_l(
  `locale`  
  使用するロケール。  
   
- 詳細については、[書式の指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関する記事をご覧ください。  
+ 詳細については、「 [printf 関数と wprintf 関数の書式指定フィールド](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」を参照してください。  
   
 ## <a name="return-value"></a>戻り値  
- 書き込まれた文字数またはエラーが発生した場合は-1。 `buffer` または `format` が Null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、`errno` を `EINVAL` に設定します。  
+ 書き込まれた文字数またはエラーが発生した場合は-1。 `buffer` または `format` が Null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
   
  `sprintf` 関数は、`buffer` に格納されているバイト数を返します。終端の null 文字は含まれません。 `swprintf` は、`buffer` に格納されているワイド文字数を返します。終端の null ワイド文字は含まれません。  
   
@@ -164,7 +151,7 @@ int _sprintf_l(
   
  `swprintf` 関数は ISO C 規格に準拠しています。この規格では、2 番目のパラメーター `count` を `size_t` 型で指定する必要があります。 古い非標準の動作を強制的に実行させるには、`_CRT_NON_CONFORMING_SWPRINTFS` を定義します。 この古い動作は、将来的には削除される可能性があるので、規格に準拠した新しい動作を使用するようにコードを変更する必要があります。  
   
- C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -173,14 +160,14 @@ int _sprintf_l(
 |`_stprintf`|`sprintf`|`sprintf`|`_swprintf`|  
 |`_stprintf_l`|`_sprintf_l`|`_sprintf_l`|`__swprintf_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`sprintf`, `_sprintf_l`|\<stdio.h>|  
 |`swprintf`, `_swprintf_l`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -243,7 +230,7 @@ wrote 11 characters
 wrote -1 characters  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
  [printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,18 +13,22 @@ f1_keywords:
 - ATLCOLL/ATL::CDefaultCharTraits
 - ATLCOLL/ATL::CDefaultCharTraits::CharToLower
 - ATLCOLL/ATL::CDefaultCharTraits::CharToUpper
-dev_langs: C++
-helpviewer_keywords: CDefaultCharTraits class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CDefaultCharTraits class
 ms.assetid: f94a3934-597f-401d-8513-ed6924ae069a
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 02595c426a631e15bf2f1b5baed2550a8befe20a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 283f588af0e824801fbec13f32ae1276c13eb724
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdefaultchartraits-class"></a>CDefaultCharTraits クラス
 このクラスは、大文字と小文字を変換するための 2 つの静的関数を提供します。  
@@ -51,7 +56,7 @@ class CDefaultCharTraits
 ## <a name="remarks"></a>コメント  
  このクラスには、クラスによって使用される関数[CStringElementTraitsI](../../atl/reference/cstringelementtraitsi-class.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcoll.h  
   
 ##  <a name="chartolower"></a>CDefaultCharTraits::CharToLower  
@@ -81,5 +86,5 @@ static char CharToUpper(char x);
  *x*  
  大文字に変換する文字。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

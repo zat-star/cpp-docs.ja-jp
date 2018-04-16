@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _isleadbyte_l
 - isleadbyte
@@ -27,7 +28,8 @@ f1_keywords:
 - _istleadbyte
 - _isleadbyte_l
 - isleadbyte
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - lead bytes
 - _isleadbyte_l function
@@ -35,21 +37,23 @@ helpviewer_keywords:
 - istleadbyte function
 - isleadbyte function
 ms.assetid: 3b2bcf09-d82b-4803-9e80-59d04942802a
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e6d679d634d14f3a762a6ef3d32d2ca4c5d4b6f0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 82c8f6eb81e96527c0955d9b19fd8ce931e8d7fe
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="isleadbyte-isleadbytel"></a>isleadbyte、_isleadbyte_l
 文字がマルチバイト文字の先行バイトかどうかを判定します。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「                  [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」を参照してください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -70,9 +74,9 @@ int _isleadbyte_l(
  `isleadbyte` では、引数がテスト条件を満たす場合に 0 以外の値が返され、テスト条件を満たさない場合に 0 が返されます。 "C" ロケールと 1 バイト文字セット (SBCS) のロケールでは、 `isleadbyte` は常に 0 を返します。  
   
 ## <a name="remarks"></a>コメント  
- `isleadbyte` のマクロは、引数がマルチバイト文字の先行バイトの場合に 0 以外の値を返します。 `isleadbyte`-1 から任意の整数引数に対して意味のある結果が生成されます (`EOF`) に`UCHAR_MAX`(0 xff) まで、包括的です。  
+ `isleadbyte` のマクロは、引数がマルチバイト文字の先行バイトの場合に 0 以外の値を返します。 `isleadbyte` -1 から任意の整数引数に対して意味のある結果が生成されます (`EOF`) に`UCHAR_MAX`(0 xff) まで、包括的です。  
   
- `isleadbyte` の予想される引数の型は `int`です。符号付き文字が渡されると、コンパイラはこれを符号拡張して整数に変換し、予期しない結果が生じる場合があります。  
+ `isleadbyte` の予想される引数の型は `int` です。符号付き文字が渡されると、コンパイラはこれを符号拡張して整数に変換し、予期しない結果が生じる場合があります。  
   
  この関数の `_l` サフィックスが付いたバージョンは、サフィックスが付いていないバージョンと同じですが、ロケールに依存する動作については、現在のロケールではなく渡されたロケールを使用する点が異なります。  
   
@@ -82,16 +86,16 @@ int _isleadbyte_l(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_istleadbyte`|常に false を返します|**_** `isleadbyte`|常に false を返します|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`isleadbyte`|\<ctype.h>|  
 |`_isleadbyte_l`|\<ctype.h>|  
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)

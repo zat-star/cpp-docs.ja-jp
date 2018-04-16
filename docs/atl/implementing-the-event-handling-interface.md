@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ATL, event handling
 - event handling, ATL
 - interfaces, event and event sink
 ms.assetid: eb2a5b33-88dc-4ce3-bee0-c5c38ea050d7
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3ea192e863fe9813a762c0c948cc141b068c3f43
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9226cf2630ad18651f9bda2f154f49b5b739a433
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="implementing-the-event-handling-interface"></a>イベント処理インターフェイスを実装します。
 ATL を支援するイベントを処理するために必要なすべての 3 つの要素: イベント インターフェイスを実装する、イベント ソースのことを通知するイベント ソースをアドバイズとします。 実行する必要があります具体的な手順は、イベント インターフェイスと、アプリケーションのパフォーマンス要件の種類によって異なります。  
@@ -46,6 +50,6 @@ ATL を支援するイベントを処理するために必要なすべての 3 �
   
  `IDispEventImpl`と`IDispEventSimpleImpl`クラスでは、cookie を管理します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イベント処理](../atl/event-handling-and-atl.md)
 

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2293
 ms.assetid: 17e7b4e2-368b-4dd7-a01b-d82be60f8e56
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9aa5420a0de44224773ec6948184711d18b83e10
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 0b57daead4d355c81d0d411e37665e453d8f76c1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2293"></a>コンパイラ エラー C2293
 'identifier': メンバー変数を __based の指定子にできません。  

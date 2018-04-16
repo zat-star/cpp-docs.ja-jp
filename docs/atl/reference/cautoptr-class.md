@@ -21,30 +21,17 @@ dev_langs:
 helpviewer_keywords:
 - CAutoPtr class
 ms.assetid: 08988d53-4fb0-4711-bdfc-8ac29c63f410
-caps.latest.revision: 23
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 309a3d0ddceab2995c85e156c7db09ddd7edfa86
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2b8ded7bbf4dbe4e4f2ada7054cebab996934316
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cautoptr-class"></a>CAutoPtr クラス
 このクラスは、スマート ポインター オブジェクトを表します。  
@@ -61,7 +48,7 @@ class CAutoPtr
   
 #### <a name="parameters"></a>パラメーター  
  `T`  
- ポインター型。  
+ ポインター型です。  
   
 ## <a name="members"></a>メンバー  
   
@@ -76,7 +63,7 @@ class CAutoPtr
   
 |名前|説明|  
 |----------|-----------------|  
-|[CAutoPtr::Attach](#attach)|既存のポインターの所有権を取得するには、このメソッドを呼び出します。|  
+|[CAutoPtr::Attach](#attach)|このメソッドを呼び出して既存のポインターの所有権を取得します。|  
 |[CAutoPtr::Detach](#detach)|ポインターの所有権を解放するには、このメソッドを呼び出します。|  
 |[CAutoPtr::Free](#free)|指すオブジェクトを削除するには、このメソッドを呼び出して、`CAutoPtr`です。|  
   
@@ -86,7 +73,7 @@ class CAutoPtr
 |----------|-----------------|  
 |[CAutoPtr::operator T *](#operator_t_star)|キャスト演算子です。|  
 |[CAutoPtr::operator =](#operator_eq)|代入演算子です。|  
-|[-> CAutoPtr::operator](#operator_ptr)|メンバーへのポインター演算子です。|  
+|[CAutoPtr::operator -> します。](#operator_ptr)|メンバーへのポインター演算子です。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
@@ -95,24 +82,24 @@ class CAutoPtr
 |[CAutoPtr::m_p](#m_p)|ポインターのデータ メンバー変数です。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、作成およびスコープ外にあるときに自動的にリソースを解放して、メモリ リークを防ぐため、スマート ポインターを管理するためのメソッドを提供します。  
+ このクラスは、作成と管理のスコープ外になるときに自動的にリソースを解放することによってメモリ リークを防ぐことが、スマート ポインターのメソッドを提供します。  
   
- さらに、`CAutoPtr`のコピー コンス トラクターと代入演算子所有権を譲渡、ポインターのポインターを変換先のポインターにコピーし、元のポインターを NULL に設定します。 したがって&2; つあることがない`CAutoPtr`は同じポインターを格納する各オブジェクトし、同じポインターを&2; 回削除する可能性を低減これです。  
+ さらに、`CAutoPtr`のコピー コンス トラクターと代入演算子所有権を譲渡、ポインターのポインターを変換先のポインターにコピーし、元のポインターを NULL に設定します。 そのため 2 つあることはできません`CAutoPtr`は同じポインターを格納する各オブジェクトし、同じポインターを削除すると、2 回の可能性を低減これです。  
   
- `CAutoPtr`またポインターのコレクションの作成を簡素化されます。 コレクション クラスを派生して、デストラクターをオーバーライドではなくのコレクションを作成する単純な`CAutoPtr`オブジェクトです。 コレクションが削除されると、`CAutoPtr`オブジェクトがスコープ外に出るし、自動的に削除します。  
+ `CAutoPtr`また、ポインターのコレクションの作成を簡略化します。 コレクション クラスを派生して、デストラクターをオーバーライドではなくのコレクションを作成する単純な`CAutoPtr`オブジェクト。 コレクションが削除されると、`CAutoPtr`オブジェクトがスコープ外に出るし、自動的に削除されます。  
   
- [CHeapPtr](../../atl/reference/cheapptr-class.md)バリアントと同様に動作し、`CAutoPtr`を割り当て、C++ ではなく別のヒープ関数を使用してメモリを解放する点を除き、**新しい**と**削除**演算子。 [出たリソース](../../atl/reference/cautovectorptr-class.md)に似ていますが`CAutoPtr`、唯一の違いが使用されている**new[] をベクトル**と**ベクトル delete[]**メモリ割り当てし、解放をします。  
+ [CHeapPtr](../../atl/reference/cheapptr-class.md)バリアントと同じ方法で動作`CAutoPtr`それらの割り当てし、C++ ではなく、異なるヒープ関数を使用しているメモリを解放する点を除いて、**新しい**と**削除**演算子。 [出たリソース](../../atl/reference/cautovectorptr-class.md)に似ていますが`CAutoPtr`、唯一の違いを使用すること**new[] をベクトル**と**ベクター delete[]**空きメモリの割り当てとにします。  
   
- 関連項目[CAutoPtrArray](../../atl/reference/cautoptrarray-class.md)と[CAutoPtrList](../../atl/reference/cautoptrlist-class.md)配列またはスマート ポインターのリストが必要な場合です。  
+ 関連項目[CAutoPtrArray](../../atl/reference/cautoptrarray-class.md)と[CAutoPtrList](../../atl/reference/cautoptrlist-class.md)配列や、スマート ポインターのリストが必要な場合です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ## <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Utilities #&74;](../../atl/codesnippet/cpp/cautoptr-class_1.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#74](../../atl/codesnippet/cpp/cautoptr-class_1.cpp)]  
   
 ##  <a name="attach"></a>CAutoPtr::Attach  
- 既存のポインターの所有権を取得するには、このメソッドを呼び出します。  
+ このメソッドを呼び出して既存のポインターの所有権を取得します。  
   
 ```
 void Attach(T* p) throw();
@@ -123,12 +110,12 @@ void Attach(T* p) throw();
  `CAutoPtr` This ポインターの所有権を持つオブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- ときに、`CAutoPtr`オブジェクトへのポインターの所有権を取得するに自動的に削除されますポインターと、割り当てられているデータ スコープ外になったときにします。 場合[CAutoPtr::Detach](#detach)が呼び出されると、プログラマ再度責任を解放するいずれかの指定されたリソースが割り当てられます。  
+ ときに、`CAutoPtr`オブジェクト ポインターの所有権は自動的に削除ポインターと、割り当てられているデータ スコープ外になったときにします。 場合[CAutoPtr::Detach](#detach)が呼び出されると、プログラマ再度責任を解放するいずれかの指定されたリソースが割り当てられます。  
   
- デバッグ ビルドで、アサーション エラーが発生場合、 [CAutoPtr::m_p](#m_p)データ メンバーは、現在は、既存の値を指します。 つまり、null はありません。  
+ デバッグ ビルドで、アサーション場合にエラーが発生、 [CAutoPtr::m_p](#m_p)データ メンバーは、現在、既存の値を指します。 つまり、null はありません。  
   
 ### <a name="example"></a>例  
- 例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
+ 例を参照してください、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)です。  
   
 ##  <a name="cautoptr"></a>CAutoPtr::CAutoPtr  
  コンストラクターです。  
@@ -149,13 +136,13 @@ CAutoPtr(CAutoPtr<T>& p) throw();
  既存のポインター。  
   
  `TSrc`  
- 別の作業で管理されている型`CAutoPtr`、現在のオブジェクトを初期化するために使用します。  
+ 別に管理されている型`CAutoPtr`, 現在のオブジェクトを初期化するために使用されます。  
   
 ### <a name="remarks"></a>コメント  
- `CAutoPtr`オブジェクトの作成は、既存のポインターを使用して、このような場合、ポインターの所有権を転送します。  
+ `CAutoPtr`既存のポインターを使用してオブジェクトを作成する、この場合、ポインターの所有権を転送します。  
   
 ### <a name="example"></a>例  
- 例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
+ 例を参照してください、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)です。  
   
 ##  <a name="dtor"></a>CAutoPtr:: ~ CAutoPtr  
  デストラクターです。  
@@ -165,7 +152,7 @@ CAutoPtr(CAutoPtr<T>& p) throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 割り当てられたリソースを解放します。 呼び出し[CAutoPtr::Free](#free)します。  
+ 割り当てられたリソースを解放します。 呼び出し[CAutoPtr::Free](#free)です。  
   
 ##  <a name="detach"></a>CAutoPtr::Detach  
  ポインターの所有権を解放するには、このメソッドを呼び出します。  
@@ -178,10 +165,10 @@ T* Detach() throw();
  ポインターのコピーを返します。  
   
 ### <a name="remarks"></a>コメント  
- ポインターの所有権を解放、 [CAutoPtr::m_p](#m_p)データ メンバー変数を NULL にし、ポインターのコピーを返します。 呼び出した後**デタッチ**、それを解放するには、プログラマの責任リソースが割り当てられますられる、`CAutoPtr`オブジェクトがある以前とは見なさ reponsibility します。  
+ ポインターの所有権を解放、 [CAutoPtr::m_p](#m_p)データ メンバー変数に NULL ポインターのコピーを返します。 呼び出した後**デタッチ**はプログラマを解放するまで割り当てられているリソースを`CAutoPtr`オブジェクト可能性がありますが以前と見なされます reponsibility です。  
   
 ### <a name="example"></a>例  
- 例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
+ 例を参照してください、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)です。  
   
 ##  <a name="free"></a>CAutoPtr::Free  
  指すオブジェクトを削除するには、このメソッドを呼び出して、`CAutoPtr`です。  
@@ -222,13 +209,13 @@ CAutoPtr<T>& operator= (CAutoPtr<TSrc>& p);
  クラスの型。  
   
 ### <a name="return-value"></a>戻り値  
- 参照を返す、 **CAutoPtr\< T >**します。  
+ 参照を返します、 **CAutoPtr\< T >**です。  
   
 ### <a name="remarks"></a>コメント  
- 代入演算子をデタッチ、`CAutoPtr`オブジェクトを現在のポインターから新しいポインターのアタッチと`p`、その場所にします。  
+ 代入演算子の関連付けを解除、`CAutoPtr`オブジェクトを現在のポインターから、新しいポインターのアタッチと`p`代わりにします。  
   
 ### <a name="example"></a>例  
- 例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
+ 例を参照してください、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)です。  
   
 ##  <a name="operator_ptr"></a>CAutoPtr::operator-&gt;  
  メンバーへのポインター演算子です。  
@@ -238,13 +225,13 @@ T* operator->() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 値を返す、 [CAutoPtr::m_p](#m_p)データ メンバー変数です。  
+ 値を返します、 [CAutoPtr::m_p](#m_p)データ メンバー変数。  
   
 ### <a name="remarks"></a>コメント  
- この演算子が指すクラスのメソッドを呼び出すを使用して、`CAutoPtr`オブジェクトです。 デバッグ ビルドで、アサーション エラーが発生場合、`CAutoPtr`が NULL を指します。  
+ この演算子によって示されるクラスのメソッドを呼び出すを使用して、`CAutoPtr`オブジェクト。 デバッグ ビルドで、アサーション場合にエラーが発生、 `CAutoPtr` NULL を指します。  
   
 ### <a name="example"></a>例  
- 例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
+ 例を参照してください、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)です。  
   
 ##  <a name="operator_t_star"></a>CAutoPtr::operator T *  
  キャスト演算子です。  
@@ -257,10 +244,9 @@ operator T* () const throw();
  クラス テンプレートで定義されたオブジェクト データ型へのポインターを返します。  
   
 ### <a name="example"></a>例  
- 例を参照して、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)します。  
+ 例を参照してください、 [CAutoPtr 概要](../../atl/reference/cautoptr-class.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CHeapPtr クラス](../../atl/reference/cheapptr-class.md)   
  [出たリソース クラス](../../atl/reference/cautovectorptr-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

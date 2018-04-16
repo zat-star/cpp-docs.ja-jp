@@ -4,28 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - allocators/stdext::freelist
 - allocators/stdext::freelist::pop
 - allocators/stdext::freelist::push
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - stdext::freelist
 - stdext::freelist [C++], pop
 - stdext::freelist [C++], push
 ms.assetid: 8ad7e35c-4c80-4479-8ede-1a2497b06d71
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a49953e328807b16579996e47ee3f69a32e67e2a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2f0e85e247346e71093df393a69b91b579236e2f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="freelist-class"></a>freelist クラス
 メモリ ブロックのリストを管理します。  
@@ -61,7 +65,7 @@ class freelist
 |[pop](#pop)|フリー リストから最初のメモリ ブロックを削除します。|  
 |[push](#push)|メモリ ブロックをリストに追加します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
@@ -107,7 +111,7 @@ bool push(void* ptr);
 ### <a name="remarks"></a>コメント  
  最大クラスの `full` 関数が `false` を返す場合、このメンバー関数は、`ptr` が指すメモリ ブロックをリストの先頭に追加します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<allocators>](../standard-library/allocators-header.md)
 
 

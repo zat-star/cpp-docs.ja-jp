@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - message maps [MFC], about message maps
 - mappings [MFC], commands
@@ -18,21 +20,23 @@ helpviewer_keywords:
 - mappings [MFC], messages
 - messages [MFC], mapping
 ms.assetid: 996f0652-0698-4b8c-b893-cdaa836d9d0f
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 03a07410f6decb6497312a9f04b421bed367dfad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c415b12b22c19a5e1f2d19fd9c808a98485eb7ae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mapping-messages"></a>メッセージ マップ
 メッセージまたはコマンドを受信できるフレームワーク クラスごとに独自「メッセージ マップです」 フレームワークでは、メッセージ マップを使用して、メッセージとコマンドをハンドラー関数に接続します。 クラスから派生した任意のクラス`CCmdTarget`メッセージ マップを持つことができます。 他の記事では、メッセージ マップの詳細を説明し、それらを使用する方法について説明します。  
   
  名前「メッセージ マップ」を行っても両方を処理するメッセージがメッセージし、コマンド: メッセージの一覧のすべての 3 つのカテゴリ[メッセージ カテゴリ](../mfc/message-categories.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワークのメッセージとコマンド](../mfc/messages-and-commands-in-the-framework.md)
 

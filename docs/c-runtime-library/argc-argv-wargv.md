@@ -4,34 +4,39 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
 - __wargv
 - __argv
 - __argc
-apilocation: msvcrt120.dll
+apilocation:
+- msvcrt120.dll
 apitype: DLLExport
 f1_keywords:
 - __argv
 - __argc
 - __wargv
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __argv
 - __wargv
 - __argc
 ms.assetid: 17001b0a-04ad-4762-b3a6-c54847f02d7c
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: dbb6e0886844cda7142ee52fcb545e122c38ea8e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 14e1a7e98e3d152d54c1d7d3d8f47671f71129cd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="argc-argv-wargv"></a>__argc、__argv、__wargv
 `__argc` グローバル変数は、プログラムに渡されるコマンド ライン引数の数です。 `__argv` は、プログラム引数を含む 1 バイト文字列またはマルチバイト文字列の配列へのポインターです。`__wargv` は、プログラム引数を含むワイド文字列の配列へのポインターです。 これらのグローバル変数によって、`main` または `wmain` に引数が提供されます。  
@@ -55,15 +60,15 @@ extern wchar_t ** __wargv;
 |---------------------|---------------------------|-----------------------|  
 |`__targv`|`__argv`|`__wargv`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |グローバル変数|必須ヘッダー|  
 |---------------------|---------------------|  
 |`__argc`、`__argv`、`__wargv`|\<stdlib.h>、\<cstdlib> (C++)|  
   
- `__argc`、`__argv`、および `__wargv` は Microsoft 拡張機能です。 互換性の詳細については、「[互換性](../c-runtime-library/compatibility.md)」を参照してください。  
+ `__argc`、`__argv`、および `__wargv` は Microsoft 拡張機能です。 互換性の詳細については、「[互換性](../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル変数](../c-runtime-library/global-variables.md)   
  [main: プログラムの起動](../cpp/main-program-startup.md)   
  [main に代わる wmain の使用](../cpp/using-wmain-instead-of-main.md)

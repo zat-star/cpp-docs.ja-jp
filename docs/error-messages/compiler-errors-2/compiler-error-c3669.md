@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C3669 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3669 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C3669
@@ -19,12 +19,13 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0dc4197da5cafc986b9293c3428c80f6f43fc25f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 56e725bd03ecd1ba4f8ab3d77eeab6633a9ef062
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3669"></a>コンパイラ エラー C3669
 'member': オーバーライド指定子 'override' の静的メンバー関数またはコンス トラクターでは許可されていません  

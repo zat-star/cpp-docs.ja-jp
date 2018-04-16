@@ -1,60 +1,63 @@
 ---
-title: "SimpleClassFactory クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "module/Microsoft::WRL::SimpleClassFactory"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SimpleClassFactory クラス"
+title: SimpleClassFactory クラス |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- module/Microsoft::WRL::SimpleClassFactory
+dev_langs:
+- C++
+helpviewer_keywords:
+- SimpleClassFactory class
 ms.assetid: 6edda1b2-4e44-4e14-9364-72f519249962
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: ''
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: b6cdca5ecf84a9c0c21d37fcaef281df7665cacc
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/22/2018
 ---
-# SimpleClassFactory クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-基本的な機能を基本クラスを作成する手順について説明します。  
+# <a name="simpleclassfactory-class"></a>SimpleClassFactory クラス
+基底クラスを作成するための基本的なメカニズムを提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<  
-   typename Base  
->  
+template<typename Base>  
 class SimpleClassFactory : public ClassFactory<>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `Base`  
  基本クラスです。  
   
-## 解説  
- 基本クラスが既定のコンストラクターを提供する必要があります。  
+## <a name="remarks"></a>コメント  
+ 基本クラスには、既定のコンス トラクターを提供する必要があります。  
   
- 次のコード例は [ActivatableClassWithFactoryEx](../Topic/ActivatableClass%20Macros.md) マクロの SimpleClassFactory を使用する方法を示します。  
+ 次のコード例で SimpleClassFactory を使用する方法を示します、 [ActivatableClassWithFactoryEx](../windows/activatableclass-macros.md)マクロです。  
   
  `ActivatableClassWithFactoryEx(MyClass, SimpleClassFactory, MyServerName);`  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |[SimpleClassFactory::CreateInstance メソッド](../windows/simpleclassfactory-createinstance-method.md)|指定されたインターフェイスのインスタンスを作成します。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `I0`  
   
  `ChainInterfaces`  
@@ -77,10 +80,10 @@ class SimpleClassFactory : public ClassFactory<>;
   
  `SimpleClassFactory`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** module.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

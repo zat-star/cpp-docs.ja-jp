@@ -1,64 +1,69 @@
 ---
-title: "ODBC データ ソース アドミニストレーター | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "管理 (ODBC データ ソース アドミニストレーター)"
-  - "アドミニストレーター (ODBC の)"
-  - "ドライバー [C++], ODBC"
-  - "インストール (ODBC を)"
-  - "ODBC [C++], ODBC データ ソース アドミニストレーター"
-  - "ODBC データ ソース アドミニストレーター [C++]"
-  - "ODBC データ ソース [C++], ODBC データ ソース アドミニストレーター"
-  - "ODBC ドライバー [C++], インストール"
+title: "ODBC アドミニストレーター |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- installing ODBC
+- ODBC data sources [C++], ODBC Administrator
+- ODBC drivers [C++], installing
+- ODBC [C++], ODBC Administrator
+- Administrator in ODBC
+- administration ODBC Administrator
+- ODBC Administrator [C++]
+- drivers [C++], ODBC
 ms.assetid: b8652790-3437-4e7d-bc83-6ea6981f008b
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4a7d60f11457e509ae67da83aa6bc589af1ce43a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ODBC データ ソース アドミニストレーター
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ODBC データ ソース アドミニストレーターは、ローカルまたはネットワーク経由で[データ ソース](../../data/odbc/data-source-odbc.md)の登録や設定を行います。  ウィザードは、ODBC データ ソース アドミニストレーターの提供する情報を利用して、データ ソースに接続するコードを生成します。  
+# <a name="odbc-administrator"></a>ODBC データ ソース アドミニストレーター
+ODBC アドミニストレーターを登録し、構成、[データ ソース](../../data/odbc/data-source-odbc.md)に使用できるローカルまたはネットワーク上でします。 ウィザードは、ODBC データ ソース アドミニストレーターの提供する情報を利用して、データ ソースに接続するコードを生成します。  
   
- MFC ODBC クラスまたは MFC DAO \(データ アクセス オブジェクト\) クラスで使用する ODBC データ ソースをセットアップするには、最初にデータ ソースの登録と設定を行う必要があります。  データ ソースの追加や削除には ODBC データ ソース アドミニストレーターを使います。  使用する ODBC ドライバーによっては、新しいデータ ソースも作成できます。  
+ MFC ODBC クラスまたは MFC DAO (データ アクセス オブジェクト) クラスで使用する ODBC データ ソースをセットアップするには、最初にデータ ソースの登録と設定を行う必要があります。 データ ソースの追加や削除には ODBC データ ソース アドミニストレーターを使います。 使用する ODBC ドライバーによっては、新しいデータ ソースも作成できます。  
   
- ODBC データ ソース アドミニストレーターは、セットアップ時にインストールされます。  インストール時に、\[カスタム\] インストールを選択し、\[データベース オプション\] ダイアログ ボックスで ODBC ドライバーを指定しなかった場合は、セットアップ プログラムを再度実行して、必要なファイルをインストールする必要があります。  
+ ODBC データ ソース アドミニストレーターは、セットアップ時にインストールされます。 選択した場合**カスタム**インストールで ODBC ドライバーを選択していないと、**データベース オプション**ダイアログ ボックスで、必要なファイルをインストールするには、もう一度セットアップを実行する必要があります。  
   
- ODBC ドライバーは、セットアップ時に選択してインストールします。  また、セットアップ後に、Visual C\+\+ セットアップ プログラムを使って、Visual C\+\+ に添付されているドライバーをインストールすることもできます。  
+ ODBC ドライバーは、セットアップ時に選択してインストールします。 また、セットアップ後に、Visual C++ セットアップ プログラムを使って、Visual C++ に添付されているドライバーをインストールすることもできます。  
   
- Visual C\+\+ に添付されていない ODBC ドライバーをインストールする場合は、そのドライバーのセットアップ プログラムを実行してください。  
+ Visual C++ に添付されていない ODBC ドライバーをインストールする場合は、そのドライバーのセットアップ プログラムを実行してください。  
   
-#### Visual C\+\+ に添付されている ODBC ドライバーをインストールするには  
+#### <a name="to-install-odbc-drivers-that-ship-with-visual-c"></a>Visual C++ に添付されている ODBC ドライバーをインストールするには  
   
-1.  Visual C\+\+ の CD からセットアップ プログラムを起動します。  
+1.  Visual C++ の CD からセットアップ プログラムを起動します。  
   
      セットアップ プログラムの最初のダイアログ ボックスが表示されます。  
   
-2.  各ダイアログ ボックスの \[次へ\] をクリックしていくと、\[インストール オプション\] ダイアログ ボックスが表示されます。  \[カスタム\] を選択し、\[次へ\] をクリックします。  
+2.  をクリックして**次**に到達するまでは、各ダイアログ ボックスで、**インストール オプション** ダイアログ ボックス。 選択**カスタム**、クリックして`Next`です。  
   
-3.  \[Microsoft Visual C\+\+ のセットアップ\] ダイアログ ボックスで、\[データベース オプション\] チェック ボックス以外のすべてのチェック ボックスをオフにし、\[詳細\] をクリックして \[データベース オプション\] ダイアログ ボックスを表示します。  
+3.  内のすべてのチェック ボックスをオフに、 **Microsoft Visual C のセットアップ**以外 ダイアログ ボックス、**データベース オプション**チェック ボックスをクリックして**詳細**を表示する**データベース オプション** ダイアログ ボックス。  
   
-4.  \[Microsoft Data Access Objects\] チェック ボックスをオフにし、\[Microsoft ODBC Drivers\] チェック ボックスをオンにします。次に、\[詳細\] をクリックします。  
+4.  クリア、 **Microsoft データ アクセス オブジェクト** チェック ボックス、 **Microsoft ODBC ドライバー**チェック ボックスをクリックして**詳細**です。  
   
-     \[Microsoft ODBC ドライバー\] ダイアログ ボックスが表示されます。  
+     **Microsoft ODBC ドライバー**  ダイアログ ボックスが表示されます。  
   
-5.  インストールするドライバーを選択し、\[OK\] を二度クリックします。  
+5.  ドライバーをインストールして、をクリックする選択**OK** 2 回クリックします。  
   
-6.  残りの各ダイアログ ボックスの \[次へ\] をクリックし、インストールを開始します。  インストールが完了すると、セットアップ プログラムが知らせます。  
+6.  をクリックして**次**のインストールを開始する残りのダイアログ ボックス。 インストールが完了すると、セットアップ プログラムが知らせます。  
   
- ドライバーをインストールしたら、ODBC データ ソース アドミニストレーターを使用してデータ ソースを設定できます。  ODBC アイコンはコントロール パネルにあります。  
+ ドライバーをインストールしたら、ODBC データ ソース アドミニストレーターを使用してデータ ソースを設定できます。 ODBC アイコンはコントロール パネルにあります。  
   
-## 参照  
- [ODBC \(Open Database Connectivity\)](../Topic/Open%20Database%20Connectivity%20\(ODBC\).md)   
- [データ ソース \(ODBC\)](../../data/odbc/data-source-odbc.md)
+## <a name="see-also"></a>参照  
+ [Open Database Connectivity (ODBC)](../../data/odbc/open-database-connectivity-odbc.md)   
+ [データ ソース (ODBC)](../../data/odbc/data-source-odbc.md)

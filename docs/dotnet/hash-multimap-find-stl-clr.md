@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_multimap::find
-dev_langs: C++
-helpviewer_keywords: find member [STL/CLR]
+f1_keywords:
+- cliext::hash_multimap::find
+dev_langs:
+- C++
+helpviewer_keywords:
+- find member [STL/CLR]
 ms.assetid: ce839c5e-b8c5-434e-9cc0-e4c6ee6a6bb3
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0873f3c046349d70e7617c0de97036260fc4b79f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c0c49ccfad44c7504990068ffa70953b672e5e99
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultimapfind-stlclr"></a>hash_multimap::find (STL/CLR)
 指定したキーに一致する要素を検索します。  
@@ -81,12 +88,12 @@ find C = False
 ## <a name="description"></a>説明  
  なお`find`をいくつかの要素が見つかったは保証されません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
  [hash_multimap::equal_range (STL/CLR)](../dotnet/hash-multimap-equal-range-stl-clr.md)   
  [hash_multimap::lower_bound (STL/CLR)](../dotnet/hash-multimap-lower-bound-stl-clr.md)   

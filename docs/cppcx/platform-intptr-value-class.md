@@ -6,23 +6,27 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/PlatformIntPtr::IntPtr
 - VCCORLIB/PlatformIntPtr::op_explicit Operator
 - VCCORLIB/PlatformIntPtr::ToInt32
-dev_langs: C++
-helpviewer_keywords: Platform::IntPtr Struct
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::IntPtr Struct
 ms.assetid: 6c0326e8-edfd-4e53-a963-240b845dcde8
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 4bd0fcdf8f7b7f825a087a2176babeb59bac4f05
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 93263e1347857b9c78a62852bea96e10c8d68fac
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformintptr-value-class"></a>Platform::IntPtr 値クラス
 サイズがプラットフォームに特有の (32 ビットまたは 64 ビット)、符号付きポインターまたはハンドルを表します。  
@@ -38,11 +42,11 @@ public value struct IntPtr
   
 |メンバー|説明|  
 |------------|-----------------|  
-|[Intptr::intptr](#ctor)|IntPtr の新しいインスタンスを初期化します。|  
+|[IntPtr::IntPtr](#ctor)|IntPtr の新しいインスタンスを初期化します。|  
 |[IntPtr::op_explicit 演算子](#op-explicit)|指定されたパラメーターを IntPtr、または IntPtr 値へのポインターに変換します。|  
-|[Intptr::toint32](#toint32)|現在の IntPtr を 32 ビット整数に変換します。|  
+|[IntPtr::ToInt32](#toint32)|現在の IntPtr を 32 ビット整数に変換します。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -61,7 +65,7 @@ IntPtr( __int64 handle-or-pointer );   IntPtr( void* value );   IntPtr( int 32-b
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- 値  
+ value  
  64 ビットのハンドルまたはポインター、または 64 ビット値へのポインター、または 64 ビット値に変換できる 32 ビット値。  
   
 
@@ -90,7 +94,7 @@ static IntPtr::operator IntPtr( void* value1);   static IntPtr::operator IntPtr(
   
 
 
-## <a name="toint32"></a> Intptr::toint32 メソッド
+## <a name="toint32"> </a> Intptr::toint32 メソッド
 現在の IntPtr 値を 32 ビット整数に変換します。  
   
 ### <a name="syntax"></a>構文  
@@ -103,5 +107,5 @@ int32 IntPtr::ToInt32();
  32 ビット整数。  
   
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

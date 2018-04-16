@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - setvbuf
 apilocation:
@@ -32,30 +32,17 @@ helpviewer_keywords:
 - stream buffering
 - setvbuf function
 ms.assetid: 6aa5aa37-3408-4fa0-992f-87f9f9c4baea
-caps.latest.revision: 16
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 3955a2e5c2f0371c804f1b5a7374540ca8720339
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 072a1a9b1fca01dc8c6266f65232e4a8d8183580
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="setvbuf"></a>setvbuf
 ストリームのバッファリングとバッファー サイズを制御します。  
@@ -89,7 +76,7 @@ int setvbuf(
   
  `stream` が `NULL` である場合や、`mode` または `size` が有効な変更の範囲内にない場合には、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、`errno` を `EINVAL` に設定します。  
   
- これらと他のエラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `setvbuf` 関数により、プログラムはバッファー処理と `stream` のバッファー サイズの両方を制御することができます。 `stream` は、開かれて以来 I/O 操作を実施されたことのない開いているファイルを参照する必要があります。 `buffer` が指し示す配列が `NULL` でない場合には、それがバッファーとして使用されます。その配列が `NULL` である場合、`setvbuf` は自動的に割り当てられるバッファーを使用し、その長さは `size` /2 * 2 バイトです。  
@@ -105,13 +92,13 @@ int setvbuf(
  `_IONBF`  
  `buffer` または `size` に関係なく、バッファーは使用されません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`setvbuf`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -153,7 +140,7 @@ int main( void )
 'stream2' now has no buffer  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fclose、_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   
  [fflush](../../c-runtime-library/reference/fflush.md)   

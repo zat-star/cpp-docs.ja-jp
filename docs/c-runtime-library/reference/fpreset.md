@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _fpreset
 apilocation:
@@ -33,30 +33,17 @@ helpviewer_keywords:
 - floating-point numbers, resetting math package
 - _fpreset function
 ms.assetid: f31c6a04-b464-4f07-a7c4-42133360e328
-caps.latest.revision: 16
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 0d5bf6ef97700e010a6565eccf7087a613adf9c3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1d6868978b27428dc6f2290fea69ec2f2527e28e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fpreset"></a>_fpreset
 浮動小数点パッケージをリセットします。  
@@ -70,15 +57,15 @@ void _fpreset( void );
 ## <a name="remarks"></a>コメント  
  `_fpreset` 関数は、浮動小数点数値演算パッケージを再初期化します。 `_fpreset` は、通常、`signal`、`system`、または `_exec` もしくは `_spawn` 関数と一緒に使用します。 プログラムでは、`signal` で浮動小数点エラー シグナル (`SIGFPE`) をトラップした場合、`_fpreset` を呼び出して、`longjmp` を使用することにより、浮動小数点エラーから安全に回復することができます。  
   
- コンパイルすると、この関数は使用されなくなりました[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)共通言語ランタイムでは、浮動小数点の既定の精度のみがサポートされるためです。  
+ コンパイルするときにこの関数は使用されなくなりました[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)共通言語ランタイムには、既定の浮動小数点精度のみがサポートされるためです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_fpreset`|\<float.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -194,9 +181,9 @@ Dividing    5 by    0...
 Error 131: Divide by zero  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [_exec 関数、_wexec 関数](../../c-runtime-library/exec-wexec-functions.md)   
+ [_exec 系関数と _wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)   
  [signal](../../c-runtime-library/reference/signal.md)   
  [_spawn 関数、_wspawn 関数](../../c-runtime-library/spawn-wspawn-functions.md)   
  [system、_wsystem](../../c-runtime-library/reference/system-wsystem.md)

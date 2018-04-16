@@ -1,80 +1,82 @@
 ---
-title: "emitidl | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.emitidl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "emitidl attribute"
+title: "emitidl |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- vc-attr.emitidl
+dev_langs:
+- C++
+helpviewer_keywords:
+- emitidl attribute
 ms.assetid: 85b80c56-578e-4392-ac03-8443c74ebb7d
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 55fc74eef3d2ead7312f7dca46f20c3a1ed7ba91
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# emitidl
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-その後の IDL 属性が生成される .idl ファイルを処理して配置されているかどうかを判定します。  
+# <a name="emitidl"></a>emitidl
+すべての後続の IDL 属性が処理され、生成された .idl ファイル内に配置するかどうかを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+[ emitidl(state, defaultimports=boolean) ];
 ```  
   
-      [ emitidl([boolean],  
-   defaultimports=[boolean]  
-) ] ;  
-```  
+### <a name="parameters"></a>パラメーター  
+*state*  
+これらの使用可能な値のいずれかの: **true**、 **false**、**強制**、**制限**、**プッシュ**、または**pop**です。  
   
-#### パラメーター  
- `boolean`  
- 有効値 : **trueFalse 強制 restricted プッシュ** または **pop**。  
+-   場合**true**、ソース コード ファイルで発生した任意の IDL カテゴリ属性が生成された .idl ファイルに配置されます。 これは、既定の設定**emitidl**です。  
   
--   **true** が生成された .idl ファイルはソース・コード ファイルで見つかったすべての IDL 宣言のカテゴリ属性。  これは **out** の既定の設定です。  
+-   場合**false**、ソース コード ファイルで発生した任意の IDL カテゴリ属性が生成された .idl ファイルに配置されていません。  
   
--   **False** が生成された .idl ファイルはソース・コード ファイルで見つかったすべてのカテゴリの配置する IDL 属性。  
+-   場合**制限**、IDL 属性なしで、ファイルにある、[モジュール](../windows/module-cpp.md)属性。 コンパイラは、.idl ファイルを生成できません。  
   
--   **restricted**の [モジュール](../windows/module-cpp.md) の属性を持たないファイルの割り当ての IDL 属性。  コンパイラは.idl ファイルは生成されません。  
+-   場合**強制**、後ろに続くオーバーライド**制限**属性は、ファイルを持つ必要、**モジュール**属性 IDL がある場合は、ファイルの属性です。  
   
--   **強制**  のファイルの上書きに IDL 属性がある場合ファイルは  **モジュール**  の属性を持つことを要求する **restricted**  の後続の属性。  
+-   **プッシュ**現在を保存できる**emitidl**内部へ設定**emitidl**スタック、および**pop**設定できます**emitidl**どのような値は、内部の上部に**emitidl**スタック。  
   
--   **プッシュ**  は **out**  の内部スタックに **out**  の現在の設定を保存できるようにし値が **out**  の内部スタックの上部にある **pop**  は **out**  をに設定することもできます。  
+`defaultimports=`*ブール*\(省略可能)  
+-   場合*ブール*は**true**docobj.idl が生成された .idl ファイルにインポートします。 また場合は、.idl ファイルと同じ名前、.h ファイル`#include`.h ファイルと同じディレクトリ内に、ソース コードが検出されたし、生成された .idl ファイルには、その .idl ファイルのインポート ステートメントが含まれています。  
   
- \[**defaultimports***\=*\(省略可能\) `boolean` 入力\]  
- -   `boolean` が **True** 場合docobj.idl は生成された .idl ファイルにインポートします。  また.h ファイルと同じディレクトリにソース・コードに含まれる同じ `#include` の .idl ファイルとして .h ファイルとし生成された .idl ファイルは次のインポート ステートメントを .idl ファイルが含まれます。  
+-   場合*ブール*は**false**docobj.idl が生成された .idl ファイルにインポートされていません。 .Idl ファイルをインポートする必要があります明示的に[インポート](../windows/import.md)です。  
   
--   `boolean` が **False** 場合docobj.idl は生成された .idl ファイルにインポートします。  明示的に [インポート](../windows/import.md) の .idl ファイルをインポートする必要があります。  
+## <a name="remarks"></a>コメント  
+後に、 **emitidl** C++ 属性がソース コード ファイルで発生した、IDL カテゴリの属性が生成された .idl ファイルに配置されます。 ある場合ありません**emitidl**属性に、ソース コード ファイル内の IDL 属性が生成された .idl ファイルに出力します。  
   
-## 解説  
- **out** C\+\+ 属性がソース・コード ファイルで見つかった後IDL カテゴリ属性は生成された .idl ファイルに格納されます。  **out** の属性がない場合ソース・コード ファイルの IDL 属性は生成された .idl ファイルに出力されます。  
+複数を設定することは**emitidl**ソース コード ファイル内の属性です。 場合`[emitidl(false)];`後ろに続くなしでファイルに見つかりました`[emitidl(true)];`、生成された .idl ファイルの属性は処理されません。  
   
- ソース・コード ファイルの **out** の複数の属性を持つことができます。  `[emitidl(false)];` が後続の `[emitidl(true)];` なしでファイルに検出された場合属性は生成された .idl ファイルに処理されません。  
+コンパイラが、新しいファイルを検出するたびに**emitidl**に暗黙的に設定されている**true**です。  
   
- コンパイラが新しいファイルが発生するたびに**out** は **true** に暗黙的に設定されます。  
+## <a name="requirements"></a>必要条件  
   
-## 必要条件  
-  
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|任意|  
-|**複数回の適用**|Ｘ|  
+|**対象**|任意の場所|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [Compiler Attributes](../windows/compiler-attributes.md)   
- [Stand\-Alone Attributes](../Topic/Stand-Alone%20Attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+[コンパイラ属性](../windows/compiler-attributes.md)   
+[スタンドアロン属性](../windows/stand-alone-attributes.md)   
+[属性のサンプル](http://msdn.microsoft.com/en-us/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)

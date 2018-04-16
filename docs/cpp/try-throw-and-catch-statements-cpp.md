@@ -28,16 +28,17 @@ helpviewer_keywords:
 - throwing exceptions [C++]
 - throw keyword [C++], throw() vs. throw(...)
 ms.assetid: 15e6a87b-b8a5-4032-a7ef-946c644ba12a
-caps.latest.revision: 24
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 89db418a92239460379d1ea41d2d49a8073095c2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b100f1ee61b06639e75290fafd01dca6a10a820c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="try-throw-and-catch-statements-c"></a>try、throw、および catch ステートメント (C++)
 C++ で例外処理を実装するには、`try`、`throw`、`catch` の式を使用します。  
@@ -103,7 +104,7 @@ catch(...) {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 例外処理](../cpp/cpp-exception-handling.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [未処理の C++ 例外](../cpp/unhandled-cpp-exceptions.md)   

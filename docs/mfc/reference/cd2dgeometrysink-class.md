@@ -47,16 +47,17 @@ helpviewer_keywords:
 - CD2DGeometrySink [MFC], SetSegmentFlags
 - CD2DGeometrySink [MFC], m_pSink
 ms.assetid: e5e07f41-0343-4ab1-9d6b-8c62ed33c04a
-caps.latest.revision: 17
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 89286aaccd2c59efb2bac14978a2d8838af7a4e5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 0e48ad7304cb505526ab5eab0b9cd1bbba62895c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2dgeometrysink-class"></a>CD2DGeometrySink クラス
 ID2D1GeometrySink のラッパーです。  
@@ -103,14 +104,14 @@ class CD2DGeometrySink;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CD2DGeometrySink::m_pSink](#m_psink)|ID2D1GeometrySink へのポインター。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CD2DGeometrySink`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="_dtorcd2dgeometrysink"></a>CD2DGeometrySink:: ~ CD2DGeometrySink  
@@ -310,6 +311,5 @@ void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags);
  `vertexFlags`  
  Geometry シンクに追加された新しいセグメントに適用する線と結合のオプションです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: filesystem/std::tr2::sys::recursive_directory_iterator
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- filesystem/std::tr2::sys::recursive_directory_iterator
+dev_langs:
+- C++
 ms.assetid: 79a061bd-5b64-404c-97e8-749c888c2ced
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 384184fd8932c134ebb4554fab2d6e2af736a5d5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c432cde8a4c565e6195658ab27ce5f2cb1838f6a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="recursivedirectoryiterator-class"></a>recursive_directory_iterator クラス
 ディレクトリ内のファイル名を走査する入力反復子を記述します。反復子は再帰的にサブディレクトリに下ることができます。 反復子 X の場合、式 *X の結果は、ファイル名とそのステータスに関する既知の情報をラップする directory_entry クラスのオブジェクトになります。  
   
- 詳細およびコード例については、「[ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)」をご覧ください。  
+ 詳細およびコード例については、「[ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   

@@ -1,27 +1,31 @@
 ---
-title: "コンテナー内のウィンドウを使用して |Microsoft ドキュメント"
-ms.custom: 
+title: コンテナー内のウィンドウを使用して |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ATL, windows
 - windows [C++], ATL
 - contained windows in ATL
 ms.assetid: 7b3d79e5-b569-413f-9b98-df4f14efbe2b
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 08d263e07a828fb1b4d485fc6f80be68d52142dd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f812b99131d63b87df8dbfd8c9afd5493d0a0140
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-contained-windows"></a>コンテナー内のウィンドウを使用します。
 ATL の実装に含まれている windows [CContainedWindowT](../atl/reference/ccontainedwindowt-class.md)です。 コンテナー内のウィンドウでは、そのメッセージを独自のクラスで扱い、コンテナー オブジェクトをデリゲートするウィンドウを表します。  
@@ -42,6 +46,6 @@ ATL の実装に含まれている windows [CContainedWindowT](../atl/reference/
   
  コンテナー内のウィンドウの詳細については、次を参照してください。、 [SUBEDIT](../visual-cpp-samples.md)サンプルです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウ クラス](../atl/atl-window-classes.md)
 

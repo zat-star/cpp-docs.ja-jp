@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: strerror function
+dev_langs:
+- C++
+helpviewer_keywords:
+- strerror function
 ms.assetid: 9fb9366e-d9a8-47d4-ad51-d98774a0617f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b3eaa12e4e97e72c167231c93951e0bf2ad2e36f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 117b6301eee9026f5987b4c182a63265ae78b151
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strerror-function"></a>strerror 関数
 **ANSI 4.11.6.2** `strerror` 関数によって返されるエラー メッセージ文字列の内容  
@@ -65,5 +70,5 @@ ms.lasthandoff: 10/24/2017
 36  Resource deadlock would occur  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ライブラリ関数](../c-language/library-functions.md)

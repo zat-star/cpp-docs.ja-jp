@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2365
 ms.assetid: 35839b0b-4055-4b79-8957-b3a0871bdd02
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f696a9379550bfeb47c65471a345322ddaadcf4a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 0df8543311b2212a53b571cf47fd4e0de54b003a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2365"></a>コンパイラ エラー C2365
 'class member': 再定義; 以前の定義は 'class member' でした  

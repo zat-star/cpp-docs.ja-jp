@@ -1,32 +1,36 @@
 ---
-title: "RECORD (MASM) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "RECORD"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RECORD directive"
+title: "レコード (MASM) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- RECORD
+dev_langs:
+- C++
+helpviewer_keywords:
+- RECORD directive
 ms.assetid: c83db394-0fe3-468f-813f-13302cdc862d
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dcad460e914cadbc45eeeeea87461b7082e25635
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# RECORD (MASM)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-指定したフィールドから構成されるレコード型を宣言します。  *fieldname は* フィールドの名前を指定し *幅は*  ビット数を指定して *式は*  初期値を指定します。  
+# <a name="record-masm"></a>RECORD (MASM)
+指定したフィールドから成るレコードの種類を宣言します。 *fieldname* 、フィールドの名前*幅*ビット単位の数を指定し、*式*その初期値を提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,5 +38,5 @@ caps.handback.revision: 6
 [[, fieldname:width [[= expression]]]]...  
 ```  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _get_dstbias
 - __dstbias
@@ -27,22 +28,25 @@ f1_keywords:
 - __dstbias
 - _get_dstbias
 - get_dstbias
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __dstbias
 - daylight saving time offset
 - get_dstbias function
 - _get_dstbias function
 ms.assetid: e751358c-1ecc-411b-ae2c-81b2ec54ea45
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7e6c96fba04fff658c30fe9378748ed2549668ac
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4f6d43b904b96f7323c76637d1f38c024d4696f1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getdstbias"></a>_get_dstbias
 夏時間のオフセット (秒単位) を取得します。  
@@ -70,15 +74,15 @@ ms.lasthandoff: 10/24/2017
   
  マクロ `_dstbias` または非推奨の関数 `__dstbias` の代わりに、この関数を使用することをお勧めします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_get_dstbias`|\<time.h>|  
   
- 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)   
  [_get_daylight](../../c-runtime-library/reference/get-daylight.md)   

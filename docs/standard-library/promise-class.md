@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - future/std::promise
 - future/std::promise::promise
@@ -20,7 +20,7 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 2931558c-d94a-4ba1-ac4f-20bf7b6e23f9
-caps.latest.revision: 15
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -33,12 +33,13 @@ helpviewer_keywords:
 - std::promise [C++], set_value
 - std::promise [C++], set_value_at_thread_exit
 - std::promise [C++], swap
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6673483beb2552ba1b3a11b76d65e9be484c2a39
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 4cc20303a02fbf21fd54e18569f964e268809439
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="promise-class"></a>promise クラス
 *非同期プロバイダー*を記述します。  
@@ -78,7 +79,7 @@ class promise;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `promise`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<将来 >  
   
  **名前空間:** std  
@@ -241,12 +242,11 @@ void swap(promise& Other) noexcept;
  `Other`  
  `promise` オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
 
 
 
 
  
-
 

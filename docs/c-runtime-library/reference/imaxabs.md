@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: imaxabs
+ms.topic: reference
+apiname:
+- imaxabs
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,19 +23,24 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: imaxabs
-dev_langs: C++
-helpviewer_keywords: imaxabs function
+f1_keywords:
+- imaxabs
+dev_langs:
+- C++
+helpviewer_keywords:
+- imaxabs function
 ms.assetid: de2566a3-1415-4e9a-91b5-7ac3a49ebf5e
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2bdd796b23275b4585f0e94aeb20197f7e6b893a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ff253849a185b61a9bea98d280cb8f8fdbe112e3
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="imaxabs"></a>imaxabs
 任意のサイズの整数の絶対値を計算します。  
@@ -56,13 +63,13 @@ intmax_t imaxabs(
 > [!NOTE]
 >  `intmax_t` を使用して表すことができる負の整数の範囲は、正の整数が表すことができる範囲より広いため、変換できない引数を `imaxabs` に指定することはできます。 引数の絶対値を戻り値の型で表すことができない場合、`imaxabs` の動作は未定義です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`imaxabs`|\<inttypes.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -91,7 +98,7 @@ int main(int argc, char *argv[])
 The absolute value of -9223372036854775806 is 9223372036854775806  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [abs、labs、llabs、_abs64](../../c-runtime-library/reference/abs-labs-llabs-abs64.md)   

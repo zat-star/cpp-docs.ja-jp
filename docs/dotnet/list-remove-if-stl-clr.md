@@ -1,25 +1,32 @@
 ---
-title: "list::remove_if (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: list::remove_if (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::list::remove_if
-dev_langs: C++
-helpviewer_keywords: remove_if member [STL/CLR]
+f1_keywords:
+- cliext::list::remove_if
+dev_langs:
+- C++
+helpviewer_keywords:
+- remove_if member [STL/CLR]
 ms.assetid: cbc66192-751b-41c5-b557-d5d7bbc2a840
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0707efbf12782336d74d6e0012146cc1b2b4a01b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 39cdd5fe6f7bf143b6e46b8fcde1a34f919be191
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listremoveif-stlclr"></a>list::remove_if (STL/CLR)
 指定されたテストに合格した要素を削除します。  
@@ -83,12 +90,12 @@ a b b b c
 b b b  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::clear (STL/CLR)](../dotnet/list-clear-stl-clr.md)   
  [list::erase (STL/CLR)](../dotnet/list-erase-stl-clr.md)   

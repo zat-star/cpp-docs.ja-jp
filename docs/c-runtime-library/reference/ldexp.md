@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: ldexp
+ms.topic: reference
+apiname:
+- ldexp
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,7 +26,8 @@ apitype: DLLExport
 f1_keywords:
 - ldexp
 - _ldexpl
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - calculating real numbers
 - computing real numbers
@@ -33,15 +36,17 @@ helpviewer_keywords:
 - exponent, floating-point numbers
 - floating-point functions, mantissa and exponent
 ms.assetid: aa7f5310-3879-4f63-ae74-86a39fbdedfa
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6664c7109b96896a09f131fc142426144047bf68
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8d6098b6755267551dff86d063dccb6213ca4a74
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ldexp"></a>ldexp
 浮動小数点数に整数である 2 の累乗を乗算します。  
@@ -86,9 +91,9 @@ long double ldexpl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`ldexp` または `float` 型を受け取る `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`ldexp` は常に `double` および `int` を受け取って `double` を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|C ヘッダー|C++ ヘッダー|  
+|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
 |-------------|--------------|------------------|  
 |`ldexp`、`ldexpf`、`ldexpl`|\<math.h>|\<cmath>|  
   
@@ -118,7 +123,7 @@ int main( void )
 4.0 times two to the power of 3 is 32.0  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [frexp](../../c-runtime-library/reference/frexp.md)   
  [modf、modff、modfl](../../c-runtime-library/reference/modf-modff-modfl.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_multimap::mapped_type
-dev_langs: C++
-helpviewer_keywords: mapped_type member [STL/CLR]
+f1_keywords:
+- cliext::hash_multimap::mapped_type
+dev_langs:
+- C++
+helpviewer_keywords:
+- mapped_type member [STL/CLR]
 ms.assetid: b97db6a7-9d4e-42f0-a725-ac309f5374bf
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 414f2b96e983577c0539eb8c876b787bd5bffab3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 24a5b4d5be8579f4de0e6bcc3479ac82bc324b81
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultimapmappedtype-stlclr"></a>hash_multimap::mapped_type (STL/CLR)
 各キーに関連付けられた、マップされた値の型です。  
@@ -31,7 +38,7 @@ typedef Mapped mapped_type;
 ```  
   
 ## <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Mapped`のシノニムです。  
+ この型は、テンプレート パラメーター `Mapped` のシノニムです。  
   
 ## <a name="example"></a>例  
   
@@ -65,12 +72,12 @@ int main()
 1 2 3  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
  [hash_multimap::key_compare (STL/CLR)](../dotnet/hash-multimap-key-compare-stl-clr.md)   
  [hash_multimap::value_type (STL/CLR)](../dotnet/hash-multimap-value-type-stl-clr.md)

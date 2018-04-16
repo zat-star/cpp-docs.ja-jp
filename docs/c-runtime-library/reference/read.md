@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _read
+ms.topic: reference
+apiname:
+- _read
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,8 +23,10 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: _read
-dev_langs: C++
+f1_keywords:
+- _read
+dev_langs:
+- C++
 helpviewer_keywords:
 - data [CRT]
 - _read function
@@ -31,15 +35,17 @@ helpviewer_keywords:
 - reading data [C++]
 - files [C++], reading
 ms.assetid: 2ce9c433-57ad-47fe-9ac1-4a7d4c883d30
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2473dcac2d737d8419a90f4f8e7a47939065f3be
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0ad5b18300ec36cc55a6eb02476b454829193cd8
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="read"></a>_read
 
@@ -68,7 +74,7 @@ int _read(
   
 ## <a name="return-value"></a>戻り値  
 
-`_read`小さい場合があります、読み取られたバイト数を返しますより*カウント*よりも少ない場合*カウント*ファイル内の残りのバイト数またはその場合は、ファイルがテキスト モードで開かれた場合と、各キャリッジ リターンとライン フィードのペア`\r\n`は 1 つの改行文字に置き換えられます`\n`です。 戻り値ではその単一の改行文字だけがカウントされます。 この置き換えは、ファイル ポインターには影響しません。  
+`_read` 小さい場合があります、読み取られたバイト数を返しますより*カウント*よりも少ない場合*カウント*ファイル内の残りのバイト数またはその場合は、ファイルがテキスト モードで開かれた場合と、各キャリッジ リターンとライン フィードのペア`\r\n`は 1 つの改行文字に置き換えられます`\n`です。 戻り値ではその単一の改行文字だけがカウントされます。 この置き換えは、ファイル ポインターには影響しません。  
   
 この関数はファイルの終わりで読み取りをすると、0 を返します。 場合*fd*は無効ですが、ファイルが開いていないを読み取り、またはファイルがロックされているで説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、この関数は -1 を返し、 `errno` を `EBADF`に設定します。  
   
@@ -82,13 +88,13 @@ int _read(
   
 ファイルがテキスト モードで開かれた場合、ファイルの終わりを示すインジケーターとして扱われる CTRL + Z の文字が `_read` で検出された時点で、読み取りは終了します。 ファイルの終わりのインジケーターをクリアするには、[_lseek](../../c-runtime-library/reference/lseek-lseeki64.md) を使用します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_read`|\<io.h>|  
   
-互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
 
@@ -147,7 +153,7 @@ Line two.
 Read 19 bytes from file  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [下位入出力](../../c-runtime-library/low-level-i-o.md)   
 [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   

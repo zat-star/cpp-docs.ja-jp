@@ -1,68 +1,73 @@
 ---
-title: "方法: Windows デスクトップ アプリケーションでの Windows 10 SDK の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
+title: "方法: Windows 10 を使用して、Windows デスクトップ アプリケーションで SDK |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs:
+- C++
 ms.assetid: eed6421e-9355-44a6-9582-3f1d453a6d44
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 1f5e6f09b371c4d295b4bcdff469396a2671d22a
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/03/2018
 ---
-# 方法: Windows デスクトップ アプリケーションでの Windows 10 SDK の使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[!INCLUDE[vs_dev14](../mfc/includes/vs_dev14_md.md)] でクラシック Windows デスクトップ プロジェクトを作成するときには、Windows 8.1 の SDK でビルドするように既定で設定されています。 このバージョンの Windows SDK は Windows 10 を含む最近のすべての Windows リリースと互換性がありますが、Windows 10 SDK に含まれる最新の Windows API および CRT 関数を含んでいません。 新しい API を使用する場合は、Windows 10 SDK を参照するようにプロジェクトのターゲットを変更できます。  
+# <a name="how-to-use-the-windows-10-sdk-in-a-windows-desktop-application"></a>方法: Windows デスクトップ アプリケーションでの Windows 10 SDK の使用
+Visual Studio 2017 でクラシック Windows デスクトップ プロジェクトを作成する場合は設定して既定では、C++ デスクトップ ワークロードがインストールまたは最後に更新されたときにインストールされている Windows 10 SDK のバージョンでビルドします。 このバージョンの Windows SDK は、最近のすべての Windows リリースと互換性が。 SDK の以前のバージョンを対象とする場合は、プロジェクトを開くことができます |プロパティの Windows SDK のバージョンのドロップダウン内で使用可能なその他の SDK バージョンを選択します。  
   
- [!INCLUDE[vs_dev14](../mfc/includes/vs_dev14_md.md)] および Windows 10 SDK 以降、CRT ライブラリは、ユニバーサル Windows アプリで使用可能な関数を含んだもの \(ucrtbase\) と、その他のすべてを含んでいるもの \(vcruntime140\) の 2 つに分割されました。 Windows 10 SDK には、多数の C99 関数をはじめとする新しい関数が含まれているため、これらの関数を使用するために、次の手順に従う必要があります。 「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」を参照してください。  
+ Visual Studio 2015 および Windows 10 SDK 以降、CRT ライブラリが、1 つ (ucrtbase) をユニバーサル Windows アプリで使用する使用可能な関数を含む、他のすべて (vcruntime140) が含まれる 2 つの部分に分けられます。 Windows 10 SDK には、多数の C99 関数をはじめとする新しい関数が含まれているため、これらの関数を使用するために、次の手順に従う必要があります。 「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」を参照してください。  
   
-### Windows 10 SDK をターゲットとするには  
+### <a name="to-target-the-windows-10-sdk"></a>Windows 10 SDK をターゲットとするには  
   
-1.  Windows 10 SDK がインストールされていることを確認します。 Windows 10 SDK は、[Windows 10 開発者ツール](http://go.microsoft.com/fwlink/?LinkID=617631)の一部としてインストールされます。  
+1.  Windows 10 SDK がインストールされていることを確認します。 一部として、Windows 10 SDK がインストールされている、[ツール for Windows 10](http://go.microsoft.com/fwlink/p/?linkid=617631)です。  
   
-2.  プロジェクト ノードのショートカット メニューを開き、**\[Retarget SDK Version\] \(SDK バージョンの再ターゲット\)** をクリックします。  
+2.  プロジェクト ノードのショートカット メニューを開き、 **[Retarget SDK Version] (SDK バージョンの再ターゲット)**をクリックします。  
   
-     ![SDK バージョンの再ターゲット](../windows/media/retargetingwindowssdk1.png "RetargetingWindowsSDK1")  
+     ![SDK のバージョンを再ターゲット](../windows/media/retargetingwindowssdk1.PNG "RetargetingWindowsSDK1")  
   
-     **\[ソリューション操作の再ターゲット\]** ダイアログが表示されます。  
+     **[ソリューション操作の再ターゲット]** ダイアログが表示されます。  
   
-     ![ソリューション操作の再ターゲット](../windows/media/retargetingwindowssdk2.png "RetargetingWindowsSDK2")  
+     ![ソリューションの操作を確認](../windows/media/retargetingwindowssdk2.PNG "RetargetingWindowsSDK2")  
   
-3.  **\[ターゲット プラットフォーム バージョン\]** ドロップダウン リストで、ターゲットとする Windows 10 SDK を選択するか、変更を加えない場合には 8.1 を選択します。 \[OK\] ボタンを選択して変更を適用します。  
+3.  **ターゲット プラットフォーム バージョン** ドロップダウン リストで、対象となる Windows 10 SDK のバージョンを選択します。 [OK] ボタンを選択して変更を適用します。  
   
      このコンテキストでは、8.1 が、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008、および Windows Vista との下位互換性も備えた Windows SDK バージョンを参照することに注意してください。  
   
      この手順が成功すると、出力ウィンドウに次のテキストが表示されます。  
   
-     `再ターゲットの終了: 完了 1、失敗 0、スキップ 0`  
+     `Retargeting End: 1 completed, 0 failed, 0 skipped`  
   
-4.  プロジェクト プロパティを開いて**\[構成プロパティ\]、\[全般\]** セクションで、**\[Windows Target Platform Version\] \(Windows ターゲット プラットフォームのバージョン\)** の値を確認します。 ここで値を変更することは、この手順を実行するのと同じ効果があります。 「[\[全般\] プロパティ ページ \(プロジェクト\)](../Topic/General%20Property%20Page%20\(Project\).md)」を参照してください。  
+4.  プロジェクト プロパティを開いて **[構成プロパティ]、[全般]** セクションで、 **[Windows Target Platform Version] (Windows ターゲット プラットフォームのバージョン)**の値を確認します。 ここで値を変更することは、この手順を実行するのと同じ効果があります。 「 [General Property Page (Project)](../ide/general-property-page-project.md)」を参照してください。  
   
-     ![ターゲット プラットフォーム バージョン](../windows/media/retargetingwindowssdk3.png "RetargetingWindowsSDK3")  
+     ![ターゲット プラットフォーム バージョン](../windows/media/retargetingwindowssdk3.PNG "RetargetingWindowsSDK3")  
   
-     この操作は、ヘッダー ファイルとライブラリ ファイルへのパスを含むプロジェクトのマクロの値を変更します。 変更内容を確認するには、\[プロジェクト プロパティ\] ダイアログの \[Visual C\+\+ ディレクトリ\] セクションで、\[インクルード ディレクトリ\] などプロパティの 1 つを選択し、ドロップダウン リストのオープンを選択して、\< 編集 \> を選択します。**\[インクルード ディレクトリ\]** ダイアログが表示されます。  
+     この操作は、ヘッダー ファイルとライブラリ ファイルへのパスを含むプロジェクトのマクロの値を変更します。 プロジェクトのプロパティ ダイアログ ボックスの Visual C ディレクトリ セクションで、変更内容を表示するインクルード ディレクトリ などプロパティのいずれかの場合は選択して、ドロップダウン リストを開き、選択\<編集 >。 **[インクルード ディレクトリ]** ダイアログが表示されます。  
   
-     ![&#91;インクルード ディレクトリ&#93; ダイアログ ボックス](../windows/media/retargetingwindowssdk4.png "RetargetingWindowsSDK4")  
+     ![インクルード ディレクトリ](../windows/media/retargetingwindowssdk4.PNG "RetargetingWindowsSDK4")  
   
-     **\[マクロ \>\>\]** ボタンを選択し、マクロの一覧を Windows SDK マクロまでスクロール ダウンして、すべての新しい値を確認します。  
+     選択、**マクロ >>**  ボタン、およびすべての新しい値を表示する Windows SDK マクロにマクロの一覧を下にスクロールします。  
   
-     ![Windows SDK マクロ](../windows/media/retargetingwindowssdk5.png "RetargetingWindowsSDK5")  
+     ![Windows SDK マクロ](../windows/media/retargetingwindowssdk5.PNG "RetargetingWindowsSDK5")  
   
 5.  この操作を必要に応じて他のプロジェクトでも繰り返し、ソリューションをリビルドします。  
   
-### Windows 8.1 SDK をターゲットとするには  
+### <a name="to-target-the-windows-81-sdk"></a>Windows 8.1 SDK をターゲットとするには  
   
-1.  プロジェクト ノードのショートカット メニューを開き、**\[Retarget SDK Version\] \(SDK バージョンの再ターゲット\)** をクリックします。  
+1.  プロジェクト ノードのショートカット メニューを開き、 **[Retarget SDK Version] (SDK バージョンの再ターゲット)**をクリックします。  
   
-2.  \[ターゲット プラットフォーム バージョン\] ドロップダウン リストで、8.1 を選択します。  
+2.  [ターゲット プラットフォーム バージョン] ドロップダウン リストで、8.1 を選択します。  
   
-## 参照  
- [Windows Desktop Applications \(Visual C\+\+\)](../windows/how-to-use-the-windows-10-sdk-in-a-windows-desktop-application.md)
+## <a name="see-also"></a>参照  
+ [Windows デスクトップ アプリケーション (Visual C)](../windows/how-to-use-the-windows-10-sdk-in-a-windows-desktop-application.md)

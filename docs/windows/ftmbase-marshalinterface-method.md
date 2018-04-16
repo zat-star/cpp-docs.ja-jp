@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: ftm/Microsoft::WRL::FtmBase::MarshalInterface
-dev_langs: C++
-helpviewer_keywords: MarshalInterface method
+f1_keywords:
+- ftm/Microsoft::WRL::FtmBase::MarshalInterface
+dev_langs:
+- C++
+helpviewer_keywords:
+- MarshalInterface method
 ms.assetid: fc8421b4-06e4-4925-b908-c285fe4790d2
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2b6bd889a20c2c31de8e5fb6d11990fc2579ef2d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 9df1e5d7559b434c1af0f1feff3b73b8141a8865
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ftmbasemarshalinterface-method"></a>FtmBase::MarshalInterface メソッド
 一部のクライアント プロセスで、プロキシ オブジェクトを初期化するために必要なデータをストリームに書き込みます。  
@@ -73,10 +80,10 @@ STDMETHODIMP MarshalInterface(
  E_FAIL  
  操作に失敗しました。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** ftm.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [FtmBase クラス](../windows/ftmbase-class.md)

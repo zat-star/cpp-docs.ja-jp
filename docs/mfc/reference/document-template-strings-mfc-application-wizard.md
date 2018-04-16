@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.appwiz.mfc.exe.doctemp
-dev_langs: C++
-helpviewer_keywords: MFC Application Wizard, document template strings
+f1_keywords:
+- vc.appwiz.mfc.exe.doctemp
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC Application Wizard, document template strings
 ms.assetid: 8109f662-3182-4682-977a-2503321c678a
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 96cbb565ffae20d449b2164280fa461b2acfd4fd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5d2fdabb971ab9aad06f5500b98e9d8591266c85
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="document-template-strings-mfc-application-wizard"></a>[ドキュメント テンプレート文字列] (MFC アプリケーション ウィザード)
 MFC アプリケーション ウィザードのこのページではドキュメント管理とローカライズ化のために次のオプションを指定または変更します。 ドキュメント テンプレート文字列が含むアプリケーションの使用可能な**ドキュメント/ビュー アーキテクチャ サポート**で、[アプリケーションの種類](../../mfc/reference/application-type-mfc-application-wizard.md)です。 これらはダイアログ ボックスを使用できません。 ドキュメント テンプレート文字列のほとんどは表示されているアプリケーションのユーザーによって使用されるためにローカライズされます、**リソース言語**に示されている、**アプリケーションの種類**ウィザードのページです。  
@@ -37,13 +43,13 @@ MFC アプリケーション ウィザードのこのページではドキュメ
   
 |オプション|説明|  
 |------------|-----------------|  
-|**言語**|すべてのボックスの文字列が表示される言語を示します**ローカライズ文字列**です。 このボックスに値を変更するには、下の適切な言語を選択**リソース言語**で、[アプリケーションの種類](../../mfc/reference/application-type-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。|  
+|**Language**|すべてのボックスの文字列が表示される言語を示します**ローカライズ文字列**です。 このボックスに値を変更するには、下の適切な言語を選択**リソース言語**で、[アプリケーションの種類](../../mfc/reference/application-type-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。|  
 |**メイン フレーム キャプション**|メイン アプリケーション フレームの上部に表示されるテキストを設定します。 既定では、プロジェクトの名前。|  
 |**ドキュメントの種類の名前**|アプリケーションのドキュメントのグループ化するドキュメントの種類を識別します。 既定では、プロジェクトの名前。 既定値を変更しても、このダイアログ ボックスでその他のオプションは変更されません。|  
 |**フィルター名**|ユーザーがファイルの種類のファイルを検索するときに指定する名前を設定します。 このオプションはから利用可能な**ファイルの種類**と**型として保存**、標準の Windows でのオプション**開く**と**として保存** ダイアログ ボックス。 既定値は、プロジェクト名 + + のファイル、続くで提供される拡張子**ファイル拡張子**です。 たとえば、ウィジェットは、プロジェクトの名前し、ファイル拡張子は .wgt、**フィルター名**既定では、ウィジェット ファイル (*.wgt)。|  
 |**ファイルの新しい短い名前**|標準の Windows に表示される名前を設定`New`ダイアログ ボックスで、1 つ以上の新しいドキュメント テンプレートがある場合。 アプリケーションの場合、[オートメーション サーバー](../../mfc/automation-servers.md)、この名前は、オートメーション オブジェクトの短い名前として使用します。 既定では、プロジェクトの名前。|  
 |**ファイルの種類の長い名前**|システム レジストリでファイルの種類名を設定します。 アプリケーションがオートメーション サーバーの場合は、この名前は、オートメーション オブジェクトの長い名前として使用されます。 既定では、プロジェクト名とします。ドキュメントです。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)
 

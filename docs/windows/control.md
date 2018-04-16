@@ -1,32 +1,37 @@
 ---
-title: "control | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.control"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Control attribute"
+title: "コントロール |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- vc-attr.control
+dev_langs:
+- C++
+helpviewer_keywords:
+- Control attribute
 ms.assetid: 3d046bb2-4afe-4cb8-a762-233b296e1975
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 00e9ce0a3e310ad9d07f41b0053ed5249a35a339
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# control
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ユーザー定義型はコントロールであることを指定します。  
+# <a name="control"></a>control
+ユーザー定義型がコントロールであることを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,10 +39,10 @@ caps.handback.revision: 10
   
 ```  
   
-## 解説  
- **コントロール**  の属性は [コクラス](../windows/coclass.md) の属性を意味します。   **コントロール**  C\+\+ 属性に [コントロール](http://msdn.microsoft.com/library/windows/desktop/aa366764) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **コントロール**属性の意味、[コクラス](../windows/coclass.md)属性。 **コントロール**C++ 属性と同じ機能を持つ、[コントロール](http://msdn.microsoft.com/library/windows/desktop/aa366764)MIDL 属性。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cpp_attr_ref_control.cpp  
@@ -54,21 +59,20 @@ __interface ICustom {
 class CTest : public ICustom {};  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  `struct`|  
-|**複数回の適用**|Ｘ|  
+|**対象**|**class**、 `struct`|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   
+ [Typedef、Enum、Union、および Struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   

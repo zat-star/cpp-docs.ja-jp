@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -15,19 +16,24 @@ apilocation:
 - msvcr110.dll
 - msvcr120.dll
 apitype: DLLExport
-f1_keywords: scanf
-dev_langs: C++
-helpviewer_keywords: scanf function, type field characters
+f1_keywords:
+- scanf
+dev_langs:
+- C++
+helpviewer_keywords:
+- scanf function, type field characters
 ms.assetid: 5d546a84-715b-44ca-b1c5-bbe997f9ff62
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 16eed3844487671a72538d8fbbbd9d4669e01dbc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ebc971ea109a0e83288f5bb000e09461f4fbefec
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="scanf-type-field-characters"></a>scanf 関数の型フィールド文字
 次の情報は、 `scanf` など、安全なバージョンを含む `scanf_s`関数ファミリのいずれかに適用されます。  
@@ -38,8 +44,8 @@ ms.lasthandoff: 10/24/2017
   
 |文字|必要な入力の型|引数の型|安全なバージョンのサイズ引数ですか。|  
 |---------------|----------------------------|----------------------|--------------------------------------|  
-|`c`|文字です。 `scanf` 関数で使用する場合は 1 バイト文字を指定し、 `wscanf` 関数で使用する場合はワイド文字を指定します。 空白文字は通常はスキップされますが、 `c` が指定されている場合は読み取られます。 次の空白以外の 1 バイト文字を読み取るには `%1s` を使用し、次の空白以外のワイド文字を読み取るには `%1ws` を使用します。|`char` へのポインターは `scanf` 関数で使用され、 `wchar_t` へのポインターは `wscanf` 関数で使用されます。|必須です。 サイズには null 終端文字のスペースは含まれません。|  
-|`C`|反対のサイズ文字です。 `scanf` 関数で使用する場合はワイド文字を指定し、 `wscanf` 関数で使用する場合は 1 バイト文字を指定します。 空白文字は通常はスキップされますが、 `C` が指定されている場合は読み取られます。 次の空白以外の 1 バイト文字を読み取るには `%1s` を使用し、次の空白以外のワイド文字を読み取るには `%1ws` を使用します。|`wchar_t` へのポインターは `scanf` 関数で使用され、 `char` へのポインターは `wscanf` 関数で使用されます。|必須です。 サイズ引数には null 終端文字のスペースは含まれません。|  
+|`c`|文字です。 `scanf` 関数で使用する場合は 1 バイト文字を指定し、 `wscanf` 関数で使用する場合はワイド文字を指定します。 空白文字は通常はスキップされますが、 `c` が指定されている場合は読み取られます。 次の空白以外の 1 バイト文字を読み取るには `%1s` を使用し、次の空白以外のワイド文字を読み取るには `%1ws` を使用します。|`char` へのポインターは `scanf` 関数で使用され、 `wchar_t` へのポインターは `wscanf` 関数で使用されます。|必須。 サイズには null 終端文字のスペースは含まれません。|  
+|`C`|反対のサイズ文字です。 `scanf` 関数で使用する場合はワイド文字を指定し、 `wscanf` 関数で使用する場合は 1 バイト文字を指定します。 空白文字は通常はスキップされますが、 `C` が指定されている場合は読み取られます。 次の空白以外の 1 バイト文字を読み取るには `%1s` を使用し、次の空白以外のワイド文字を読み取るには `%1ws` を使用します。|`wchar_t` へのポインターは `scanf` 関数で使用され、 `char` へのポインターは `wscanf` 関数で使用されます。|必須。 サイズ引数には null 終端文字のスペースは含まれません。|  
 |`d`|10 進整数です。|`int`へのポインターです。|いいえ。|  
 |`i`|整数。 入力文字列が "0x" または "0X" で始まる場合は 16 進数、文字列が "0" で始まる場合は 8 進数、それ以外の場合は 10 進数です。|`int`へのポインターです。|いいえ。|  
 |`o`|8 進数です。|`int`へのポインターです。|いいえ。|  
@@ -49,8 +55,8 @@ ms.lasthandoff: 10/24/2017
 |`e`, `E`, `f`, `F`, `g`, `G`|次の順序で構成される浮動小数点の値です。省略可能な符号 (+ または -)、小数点のある一連の 10 進数、省略可能な指数 ("e" または "E") とそれに続く省略可能な符号付き整数値。|`float`へのポインターです。|いいえ。|  
 |`a`, `A`|次の順序で構成される浮動小数点の値です。小数点 (省略可能) のある一連の 16 進数、指数 ("p" または "P") とそれに続く 10 進数の値。|`float`へのポインターです。|いいえ。|  
 |`n`|ストリームまたはバッファーからの入力は読み取られません。|`int`へのポインターであり、そこには `scanf` 関数または `wscanf` 関数への呼出しまでストリームまたはバッファーから読み取られた文字数が格納されます。|いいえ。|  
-|`s`|最初の空白文字 (スペース、タブ、または改行) までの文字列。 スペースで区切られていない文字列を読み取るには、「`[ ]`」で説明したように、角かっこのセット ( [[ ]](../c-runtime-library/scanf-width-specification.md)関数ファミリのいずれかに適用されます。|`scanf` 関数で使用する場合は 1 バイト文字配列を意味し、 `wscanf` 関数で使用する場合はワイド文字配列を意味します。 どちらの場合も、文字配列は入力フィールドと自動的に追加される終端の null 文字に十分な大きさにする必要があります。|必須です。 サイズには null 終端文字のスペースが含まれます。|  
-|`S`|最初の空白文字 (スペース、タブ、または改行) までの反対のサイズ文字列。 空白文字で区切られていない文字列を読み取るには、「[scanf Width Specification](../c-runtime-library/scanf-width-specification.md)」(scanf 関数の文字幅指定) の説明にあるように、角かっこのセット (`[ ]`) を使用します。|`scanf` 関数で使用する場合はワイド文字配列を意味し、`wscanf` 関数で使用する場合は 1 バイト文字配列を意味します。 どちらの場合も、文字配列は入力フィールドと自動的に追加される終端の null 文字に十分な大きさにする必要があります。|必須です。 サイズには null 終端文字のスペースが含まれます。|  
+|`s`|最初の空白文字 (スペース、タブ、または改行) までの文字列。 スペースで区切られていない文字列を読み取るには、「`[ ]`」で説明したように、角かっこのセット ( [[ ]](../c-runtime-library/scanf-width-specification.md)関数ファミリのいずれかに適用されます。|`scanf` 関数で使用する場合は 1 バイト文字配列を意味し、 `wscanf` 関数で使用する場合はワイド文字配列を意味します。 どちらの場合も、文字配列は入力フィールドと自動的に追加される終端の null 文字に十分な大きさにする必要があります。|必須。 サイズには null 終端文字のスペースが含まれます。|  
+|`S`|最初の空白文字 (スペース、タブ、または改行) までの反対のサイズ文字列。 空白文字で区切られていない文字列を読み取るには、「[scanf Width Specification](../c-runtime-library/scanf-width-specification.md)」(scanf 関数の文字幅指定) の説明にあるように、角かっこのセット (`[ ]`) を使用します。|`scanf` 関数で使用する場合はワイド文字配列を意味し、`wscanf` 関数で使用する場合は 1 バイト文字配列を意味します。 どちらの場合も、文字配列は入力フィールドと自動的に追加される終端の null 文字に十分な大きさにする必要があります。|必須。 サイズには null 終端文字のスペースが含まれます。|  
   
   
  必要であれば、サイズ引数は、その引数が適用される引数のすぐ後のパラメーター リストに渡されます。 コード例を次に示します。  
@@ -73,5 +79,5 @@ scanf_s("%10s %8s", string1, 11, string2, 9);
   
  `scanf` 関数と `wscanf` 関数で文字列をスキャンするには、型指定子 `s` と `S` ではなく、 `c` と `C`で上記の表を使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [scanf、_scanf_l、wscanf、_wscanf_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)

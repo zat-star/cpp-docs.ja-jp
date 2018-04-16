@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - thread-local variables
 - TLS (thread local storage)
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - thread-local storage
 - storage, thread local storage
 ms.assetid: a0f1b109-c953-4079-aa10-e47f5483173d
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 46aaf6677a779ada2457814aecba5c84a59e1f1c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1eef6199f67702aeb3d3a886c52e910302a7dcad
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="thread-local-storage"></a>スレッド ローカル ストレージ
 **Microsoft 固有の仕様**  
@@ -38,7 +42,7 @@ __declspec( thread ) int tls_i = 1;
   
  静的に連結されるスレッド ローカル変数を宣言する場合は、次のガイドラインに従ってください。  
   
--   **__declspec(thread)** の属性の使用は、DLL のインポートの[遅延読み込み](../build/reference/linker-support-for-delay-loaded-dlls.md)に干渉する可能性があります**。**  
+-   動的な初期化が含まれているスレッド ローカル変数は、DLL の読み込みを発生させるスレッド、およびプロセスで既に実行されているスレッドでのみ初期化されます。 詳細については、[スレッド](../cpp/thread.md) に関するページを参照してください。  
   
 -   スレッド属性は、データの宣言と定義だけに適用できます。 関数の宣言や定義には使用できません。 たとえば、次のコードはコンパイラ エラーになります。  
   
@@ -99,7 +103,7 @@ __declspec( thread ) int tls_i = 1;
   
  スレッド属性の使用の詳細については、[マルチスレッドのトピック](../parallel/multithreading-support-for-older-code-visual-cpp.md)に関するページをご覧ください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 拡張ストレージ クラス属性](../c-language/c-extended-storage-class-attributes.md)

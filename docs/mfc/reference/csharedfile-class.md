@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,21 +14,24 @@ f1_keywords:
 - AFXADV/CSharedFile::CSharedFile
 - AFXADV/CSharedFile::Detach
 - AFXADV/CSharedFile::SetHandle
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CSharedFile [MFC], CSharedFile
 - CSharedFile [MFC], Detach
 - CSharedFile [MFC], SetHandle
 ms.assetid: 5d000422-9ede-4318-a8c9-f7412b674f39
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e98c4b48580740a6a61d0a2f55a995a967111448
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 27c749f86f9e3fbd310fd03b3a82768d58632087
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csharedfile-class"></a>関数クラス
 [CMemFile](../../mfc/reference/cmemfile-class.md)-共有メモリ ファイルをサポートするクラスを派生します。  
@@ -75,7 +79,7 @@ class CSharedFile : public CMemFile
   
  `CSharedFile`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxadv.h  
   
 ##  <a name="csharedfile"></a>CSharedFile::CSharedFile  
@@ -126,7 +130,7 @@ void SetHandle(
 ### <a name="remarks"></a>コメント  
  場合`bAllowGrow`が 0 でないため、メモリ ブロックのサイズはたとえば、この、必要に応じて増加しようとしてがの場合行われたファイルに書き込むバイト数、メモリ ブロックの割り当てられたよりもします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CMemFile クラス](../../mfc/reference/cmemfile-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CMemFile クラス](../../mfc/reference/cmemfile-class.md)

@@ -1,11 +1,12 @@
 ---
-title: "CComPolyObject クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComPolyObject クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CComPolyObject
@@ -18,21 +19,24 @@ f1_keywords:
 - ATLCOM/ATL::CComPolyObject::QueryInterface
 - ATLCOM/ATL::CComPolyObject::Release
 - ATLCOM/ATL::CComPolyObject::m_contained
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - aggregate objects [C++], in ATL
 - aggregation [C++], ATL objects
 - CComPolyObject class
 ms.assetid: eaf67c18-e855-48ca-9b15-f1df3106121b
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 49945127d726c1a83ed01f70dee2190622a4c68d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3518fd5936c4871e99eaf597f12fb3ab7cc8aff6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccompolyobject-class"></a>CComPolyObject クラス
 このクラスは実装**IUnknown**集計または非集約オブジェクト。  
@@ -97,7 +101,7 @@ class CComPolyObject : public IUnknown,
   
  `CComPolyObject`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="addref"></a>CComPolyObject::AddRef  
@@ -226,7 +230,7 @@ STDMETHOD_(ULONG, Release)();
 ### <a name="return-value"></a>戻り値  
  デバッグ ビルドで、**リリース**診断に役に立たず、テスト可能な値を返します。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComObjectRootEx クラス](../../atl/reference/ccomobjectrootex-class.md)   
  [DECLARE_POLY_AGGREGATABLE](aggregation-and-class-factory-macros.md#declare_poly_aggregatable)   
  [クラスの概要](../../atl/atl-class-overview.md)

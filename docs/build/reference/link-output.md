@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: link
-dev_langs: C++
+f1_keywords:
+- link
+dev_langs:
+- C++
 helpviewer_keywords:
 - mapfiles [C++]
 - ILK files
@@ -23,15 +26,17 @@ helpviewer_keywords:
 - DLLs [C++], as linker output
 - LINK tool [C++], mapfile
 ms.assetid: a98b557c-1947-447a-be1f-616fb45a9580
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d01f19f31f83324beab1e44efe181086d6432175
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 567a87ab5cb4badd5f32423b8fb3067b21c46e9e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="link-output"></a>LINK からの出力
 Link からの出力には、.exe ファイル、Dll、マップ ファイル、およびメッセージが含まれています。  
@@ -56,6 +61,6 @@ Link からの出力には、.exe ファイル、Dll、マップ ファイル、
   
  リンク LNK フォームでのエラーと警告メッセージが発行された*nnnn*です。 このエラーのプレフィックスと番号の範囲は LIB、DUMPBIN、および EDITBIN によっても使われます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

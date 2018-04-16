@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: vc.codewiz.class.atl.mts.options
-dev_langs: C++
+f1_keywords:
+- vc.codewiz.class.atl.mts.options
+dev_langs:
+- C++
 ms.assetid: 2fbe259c-6be1-4d0e-9cfe-721c75c97cb1
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5a9a9d095f57b79990e72864662f34e06a8f007d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 102e6a0a9b7055000d051f5fb729dd45863a16cd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="com-10-atl-com-10-component-wizard"></a>COM+ 1.0、ATL COM+ 1.0 コンポーネント ウィザード
 ATL COM + 1.0 コンポーネント ウィザードのこのページを使用すると、サポートするには、インターフェイスの種類と追加のインターフェイスを指定できます。  
@@ -55,7 +60,7 @@ ATL COM + 1.0 コンポーネント ウィザードのこのページを使用�
 |**サポートされていません**|オブジェクトがトランザクションを除外することを指定します。 .H ファイル (属性付きプロジェクトの場合) または .idl ファイル (プロジェクト属性なし) には、コンポーネントの属性マクロ custom(TLBATTR_TRANS_NOTSUPP,0) を追加します。|  
 |**新しいが必要です。**|オブジェクトが常にあるトランザクション ストリームのルート コンポーネントの属性マクロ custom(TLBATTR_TRANS_REQNEW,0) .h ファイル (属性付きプロジェクト)、または .idl ファイル (属性なしプロジェクト) を追加することでを指定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL COM + 1.0 コンポーネント ウィザード](../../atl/reference/atl-com-plus-1-0-component-wizard.md)   
  [ATL COM + 1.0 コンポーネント](../../atl/reference/adding-an-atl-com-plus-1-0-component.md)
 

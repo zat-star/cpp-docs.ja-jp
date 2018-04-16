@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.classes.file
-dev_langs: C++
+f1_keywords:
+- vc.classes.file
+dev_langs:
+- C++
 helpviewer_keywords:
 - disk file classes [MFC]
 - stdio classes [MFC]
@@ -21,15 +24,17 @@ helpviewer_keywords:
 - stream classes [MFC]
 - memory file classes [MFC]
 ms.assetid: 92821c3f-d9e1-47f6-98c9-3b632d86e811
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4d5321c2e4167c38123f57ff8e416e50bc8ac5a4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 454e64d67321282030126d2aab023e9f587c1cca
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="file-io-classes"></a>ファイル I/O クラス
 これらのクラスは、従来のディスク ファイル、メモリ内のファイル、Active ストリーム、および Windows ソケットへのインターフェイスを提供します。 派生したすべてのクラス`CFile`で使用できる、`CArchive`オブジェクトをシリアル化を実行します。  
@@ -70,6 +75,6 @@ ms.lasthandoff: 10/24/2017
  [関数](../mfc/reference/crecentfilelist-class.md)  
  最近使用した (MRU) ファイルの一覧を保持します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

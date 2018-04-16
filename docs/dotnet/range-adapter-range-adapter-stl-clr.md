@@ -1,32 +1,37 @@
 ---
-title: "range_adapter::range_adapter (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::range_adapter::range_adapter"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "range_adapter メンバー [STL/CLR]"
+title: range_adapter::range_adapter (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::range_adapter::range_adapter
+dev_langs:
+- C++
+helpviewer_keywords:
+- range_adapter member [STL/CLR]
 ms.assetid: b16af13f-3358-4e82-927d-d0d4986bcb18
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 3a8b93b6a02a2ad0db7282f7e5e8e3159dd23add
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# range_adapter::range_adapter (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="rangeadapterrangeadapter-stlclr"></a>range_adapter::range_adapter (STL/CLR)
 アダプター オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 range_adapter();  
@@ -35,42 +40,42 @@ range_adapter(range_adapter<Iter>^ right);
 range_adapter(Iter first, Iter last);  
 ```  
   
-#### パラメーター  
- 最初  
+#### <a name="parameters"></a>パラメーター  
+ 先頭  
  ラップする最初の反復子。  
   
  last  
- ラップする 2 番目の反復子。  
+ ラップする 2 つ目の反復子。  
   
- \[right\]  
+ 右  
  コピーするオブジェクト。  
   
-## 解説  
- 次のコンストラクターを見てください。  
+## <a name="remarks"></a>コメント  
+ : コンス トラクター  
   
  `range_adapter();`  
   
- 既定で構築されて反復子の格納されている反復子のペアを初期化します。  
+ 既定で構築される反復子を持つ格納された反復子のペアを初期化します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `range_adapter(range_adapter<Iter>% right);`  
   
- `right`に格納されるペアをコピーして格納されている反復子のペアを初期化します。  
+ 格納されている組み合わせをコピーして格納された反復子のペアを初期化`right`です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `range_adapter(range_adapter<Iter>^ right);`  
   
- `*right`に格納されるペアをコピーして格納されている反復子のペアを初期化します。  
+ 格納されている組み合わせをコピーして格納された反復子のペアを初期化`*right`です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `range_adapter(Iter^ first, last);`  
   
- `first` と `last`の格納されている反復子のペアを初期化します。  
+ 格納された反復子のペアを初期化します`first`と`last`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_range_adapter_construct.cpp   
@@ -113,14 +118,17 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**  
- **b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アダプター\>  
+```Output  
+a b c  
+a b c  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アダプター/>  
   
-## 参照  
- [range\_adapter](../dotnet/range-adapter-stl-clr.md)   
- [range\_adapter::operator\=](../dotnet/range-adapter-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [range_adapter (STL/CLR)](../dotnet/range-adapter-stl-clr.md)   
+ [range_adapter::operator= (STL/CLR)](../dotnet/range-adapter-operator-assign-stl-clr.md)

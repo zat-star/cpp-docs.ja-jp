@@ -1,11 +1,12 @@
 ---
-title: "RTC (実行時エラー チェック) |Microsoft ドキュメント"
-ms.custom: 
+title: RTC (実行時エラー チェック) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - /rtc
@@ -13,7 +14,8 @@ f1_keywords:
 - VC.Project.VCCLCompilerTool.UninitializedVariableCheck
 - VC.Project.VCCLCompilerTool.StackFrameCheck
 - VC.Project.VCCLCompilerTool.BasicRuntimeChecks
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - /RTCs compiler option [C++]
 - -RTC1 compiler option [C++]
@@ -32,15 +34,17 @@ helpviewer_keywords:
 - RTCc compiler option
 - -RTCc compiler option [C++]
 ms.assetid: 9702c558-412c-4004-acd5-80761f589368
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 53581ad182a451adf3dde28ba463985ab82dd34e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8699a96dcd7c04bc1b2707e964afb4b68068147e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="rtc-run-time-error-checks"></a>/RTC (ランタイム エラー チェック)
 組み合わせて、実行時エラー チェック機能を無効にするために使用、 [runtime_checks](../../preprocessor/runtime-checks.md)プラグマ。  
@@ -124,7 +128,7 @@ c = a;  // No run-time error with /RTCu
   
 -   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.BasicRuntimeChecks%2A> プロパティおよび <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.SmallerTypeCheck%2A> プロパティを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [方法 : ネイティブ ランタイム チェックを使用する](/visualstudio/debugger/how-to-use-native-run-time-checks)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2081
-dev_langs: C++
-helpviewer_keywords: C2081
+f1_keywords:
+- C2081
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2081
 ms.assetid: 7db9892d-364d-4178-a49d-f8398ece09a0
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 20f9f98ca03b9ed71d360b1b7c8bb64494a58416
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 10a3e8f4444fcdb0fe9e286abf5331c1d8bae523
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2081"></a>コンパイラ エラー C2081
 'identifier': 仮パラメーター リストが不正です名前。  
@@ -35,7 +41,7 @@ ms.lasthandoff: 10/24/2017
 void func( int i, j ) {}  // C2081, no type specified for j  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C2081b.c  

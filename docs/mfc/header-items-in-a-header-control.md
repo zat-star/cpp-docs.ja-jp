@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - header controls [MFC], header items in
 - header items in header controls [MFC]
 - CHeaderCtrl class [MFC], header items in
 - controls [MFC], header
 ms.assetid: ac79ef1f-a671-4ab2-93e9-b1aa016a48bf
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c084e38085c9cb1144a35900699a11bd58f3f105
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c2143a89d9b91c9c6db53beedce0875ee76f34cc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="header-items-in-a-header-control"></a>ヘッダー コントロールのヘッダー項目
 ヘッダー コントロールを構成するヘッダー項目の動作と外観を細かく制御がある ([CHeaderCtrl](../mfc/reference/cheaderctrl-class.md))。 各ヘッダー項目には、文字列、ビットマップ イメージ、関連付けられているイメージ リスト、またはそれに関連付けられているアプリケーションで定義された 32 ビット値からイメージを持つことができます。 ヘッダー項目には、文字列、ビットマップ、またはイメージが表示されます。  
@@ -39,6 +43,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [イメージ リストのヘッダー コントロールの使い方](../mfc/using-image-lists-with-header-controls.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CHeaderCtrl の使い方](../mfc/using-cheaderctrl.md)
 

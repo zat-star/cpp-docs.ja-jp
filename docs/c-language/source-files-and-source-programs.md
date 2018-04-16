@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - files [C++], source
 - programs [C++], source
 - source files, specifying in compiler
 - source programs
 ms.assetid: 18bb2826-17da-48e5-92a2-10e649f1bc9f
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f8355dd04376e73618a215fa73160dc1ee64dae2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 06d237478a790437eea433d6060c8d7dca977782
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="source-files-and-source-programs"></a>ソース ファイルとソース プログラム
 ソース プログラムは、1 つ以上の "ソース ファイル" または "翻訳単位" に分割できます。 コンパイラへの入力は "翻訳単位" と呼ばれます。  
@@ -49,5 +53,5 @@ ms.lasthandoff: 10/24/2017
   
  ソース ファイルは、実行可能なステートメントを含む必要はありません。 たとえば、変数の定義を 1 つのソース ファイルに置き、これらの変数を使用する他のソース ファイルでこれらの変数への参照を宣言すると便利な場合があります。 この手法により、必要なときに簡単に定義を見つけて更新できるようになります。 同じ理由から、定数およびマクロは、ソース ファイルで必要に応じて参照できる "インクルード ファイル" または "ヘッダー ファイル" という名前の別個のファイルにまとめることがよくあります。 [マクロ](../preprocessor/macros-c-cpp.md)および[インクルード ファイル](../preprocessor/hash-include-directive-c-cpp.md)については、『*プリプロセッサ リファレンス*』の説明を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラムの構造](../c-language/program-structure.md)

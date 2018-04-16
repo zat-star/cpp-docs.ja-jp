@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - message maps, ATL
 - ATL, message handlers
 ms.assetid: 9e100400-65c7-4a85-8857-4e6cb6dd7340
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 650dcd31e07ef1995f09b0521991d79726b22774
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 12eeb74266e9c303817430958025d6536147356c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="message-maps-atl"></a>メッセージ マップ (ATL)
 メッセージ マップは、特定のメッセージ、コマンド、または通知ハンドラー関数を関連付けます。 ATL を使用して、[メッセージ マップ マクロ](../atl/reference/message-map-macros-atl.md)ウィンドウのメッセージ マップを指定することができます。 ウィンドウの手順で`CWindowImpl`、 `CDialogImpl`、および`CContainedWindowT`ウィンドウのメッセージのメッセージ マップにリダイレクトされます。  
@@ -30,13 +34,13 @@ ms.lasthandoff: 10/24/2017
 ## <a name="chained-message-maps"></a>チェーンのメッセージ マップ  
  ATL こともできます、チェーン メッセージ マップにメッセージを別のクラスで定義されているメッセージ マップを処理するように指示します。 たとえば、そのクラスにチェーンのすべてのウィンドウの一貫した動作を提供する共通のメッセージを別のクラス処理を実装することができます。 基底クラスまたはクラスのデータ メンバーを連結することができます。  
   
- ATL もサポート動的チェーンできる別のオブジェクトのメッセージ マップにチェーンする実行時にします。 動的な組み合わせを実装する必要がありますの派生クラスから[CDynamicChain](../atl/reference/cdynamicchain-class.md)です。 宣言し、[場合](reference/message-map-macros-atl.md#chain_msg_map_dynamic)メッセージ マップ マクロです。 `CHAIN_MSG_MAP_DYNAMIC`オブジェクトおよび連鎖しているメッセージ マップを識別する一意の番号が必要です。 呼び出すことによってこの一意の値を定義する必要があります`CDynamicChain::SetChainEntry`です。  
+ ATL もサポート動的チェーンできる別のオブジェクトのメッセージ マップにチェーンする実行時にします。 動的な組み合わせを実装する必要がありますの派生クラスから[CDynamicChain](../atl/reference/cdynamicchain-class.md)です。 宣言し、[場合](reference/message-map-macros-atl.md#chain_msg_map_dynamic)メッセージ マップ マクロです。 `CHAIN_MSG_MAP_DYNAMIC` オブジェクトおよび連鎖しているメッセージ マップを識別する一意の番号が必要です。 呼び出すことによってこの一意の値を定義する必要があります`CDynamicChain::SetChainEntry`です。  
   
- クラスの派生元提供メッセージ マップを宣言するクラスをチェーンする[CMessageMap](../atl/reference/cmessagemap-class.md)です。 `CMessageMap`他のオブジェクトへのメッセージ マップを公開するオブジェクトを許可します。 なお`CWindowImpl`から既に派生`CMessageMap`です。  
+ クラスの派生元提供メッセージ マップを宣言するクラスをチェーンする[CMessageMap](../atl/reference/cmessagemap-class.md)です。 `CMessageMap` 他のオブジェクトへのメッセージ マップを公開するオブジェクトを許可します。 なお`CWindowImpl`から既に派生`CMessageMap`です。  
   
 ## <a name="alternate-message-maps"></a>代替のメッセージ マップ  
  最後に、ATL はで宣言された、代替のメッセージ マップをサポートしている、 [ALT_MSG_MAP](reference/message-map-macros-atl.md#alt_msg_map)マクロです。 各代替のメッセージ マップに渡す一意の番号によって識別される`ALT_MSG_MAP`です。 代替のメッセージを使用してマップは、1 つのマップ内の複数のウィンドウのメッセージを処理することができます。 既定では、なお`CWindowImpl`代替メッセージ マップを使用しません。 このサポートを追加するには、上書き、`WindowProc`メソッドで、 `CWindowImpl`-派生クラスと呼び出し`ProcessWindowMessage`メッセージ マップの識別子を使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウの実装](../atl/implementing-a-window.md)
 

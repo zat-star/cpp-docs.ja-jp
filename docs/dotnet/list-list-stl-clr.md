@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::list::list
-dev_langs: C++
-helpviewer_keywords: list member [STL/CLR]
+f1_keywords:
+- cliext::list::list
+dev_langs:
+- C++
+helpviewer_keywords:
+- list member [STL/CLR]
 ms.assetid: 51b58f63-c65a-4d54-b746-0c10635b123b
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f5ed413ec892ebdf89fc903ac9a9f06e4f2d917a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 2ae85dbdab7bb1d72862aa315949821ba5cdb830
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listlist-stlclr"></a>list::list (STL/CLR)
 コンテナー オブジェクトを構築します。  
@@ -165,12 +172,12 @@ size() = 0
  x x x x x x  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::assign (STL/CLR)](../dotnet/list-assign-stl-clr.md)   
  [list::generic_container (STL/CLR)](../dotnet/list-generic-container-stl-clr.md)   

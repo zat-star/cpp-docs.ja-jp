@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3388
-dev_langs: C++
-helpviewer_keywords: C3388
+f1_keywords:
+- C3388
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3388
 ms.assetid: 34336545-ed13-4d81-ab5f-f869799fe4c2
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: dce412e8998448cdbf746b4598804f2645e10237
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4362617295ccbce8f71aeff3e5258f85835fa9bb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3388"></a>コンパイラ エラー C3388
 'type': 制約として使用できません。解析を続行するために 'ref class' を使用します  

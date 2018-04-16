@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.variables
-dev_langs: C++
+f1_keywords:
+- c.variables
+dev_langs:
+- C++
 helpviewer_keywords:
 - global variables
 - variables, global
 - global variables, Microsoft run-time library
 ms.assetid: 01d1551c-2f0c-4f72-935c-6442caccf84f
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 74e4d0a87976017deda146274947d98a76002004
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fec44138379e3510f353f0fdd99f7a6a1905f9cc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="global-variables"></a>グローバル変数
 Microsoft C ランタイム ライブラリには、次のグローバル変数またはマクロが用意されています。 これらのグローバル変数またはマクロの一部は、より安全かつ機能的なバージョンが優先されるため、推奨されていません。グローバル変数の代わりにそれらを使用することをお勧めします。  
@@ -38,7 +43,7 @@ Microsoft C ランタイム ライブラリには、次のグローバル変数�
 |[_pctype、_pwctype、_wctype、_mbctype、_mbcasemap](../c-runtime-library/pctype-pwctype-wctype-mbctype-mbcasemap.md)|文字分類関数によって使用される情報を格納します。|  
 |[_pgmptr、_wpgmptr](../c-runtime-library/pgmptr-wpgmptr.md)|使用しないでください。 代わりに、`_get_pgmptr` または `_get_wpgmptr` を使用します。<br /><br /> プログラムの起動時に、プログラムの呼び出し方法に応じて、プログラムの完全修飾パスまたは相対パス、完全なプログラム名、またはファイル名拡張子の付かないプログラム名に初期化されます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C ランタイム ライブラリ リファレンス](../c-runtime-library/c-run-time-library-reference.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)   
  [__argc、\__argv、\__wargv](../c-runtime-library/argc-argv-wargv.md)   

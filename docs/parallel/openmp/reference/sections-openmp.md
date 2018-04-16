@@ -1,33 +1,37 @@
 ---
-title: "sections (OpenMP) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "section"
-  - "SECTIONS"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "sections OpenMP directive"
+title: "セクション (OpenMP) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- section
+- SECTIONS
+dev_langs:
+- C++
+helpviewer_keywords:
+- sections OpenMP directive
 ms.assetid: 4cd1d776-e198-470e-930a-01fb0ab0a0bd
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9cdc8a79f95f2a2a4dee3c43c067177f0924b46f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# sections (OpenMP)
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-すべてのスレッドに分割できます。コード例を示します。  
+# <a name="sections-openmp"></a>sections (OpenMP)
+すべてのスレッド間で分配するコード セクションを識別します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #pragma omp [parallel] sections [clauses]  
@@ -35,22 +39,22 @@ caps.handback.revision: 11
    #pragma omp section  
    {  
       code_block   
-   }   
+   }   
 }  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
- `clause` \(省略可能\)  
- ゼロ以上の句。   **セクション**  でサポートされる用語のリストについては" 解説 " を参照してください。  
+ `clause` (省略可能)  
+ 0 個以上の句。 サポートされている句の一覧については、「解説」セクションを参照してください**セクション**です。  
   
-## 解説  
- **セクション**  のディレクティブは  **セクション**  を指定できます。また詳細にディレクティブを含める。  
+## <a name="remarks"></a>コメント  
+ **セクション**ディレクティブは、0 個以上を含めることができます**セクション**ディレクティブです。  
   
- **セクション**  の OpenMP のディレクティブは次の句をサポートします :  
+ **セクション**ディレクティブは、次の OpenMP 句をサポートしています。  
   
--   [firstprivate](../Topic/firstprivate.md)  
+-   [firstprivate](../../../parallel/openmp/reference/firstprivate.md)  
   
 -   [lastprivate](../../../parallel/openmp/reference/lastprivate.md)  
   
@@ -60,11 +64,11 @@ caps.handback.revision: 11
   
 -   [reduction](../../../parallel/openmp/reference/reduction.md)  
   
- **並列**  も指定されている場合`clause` は `nowait` を除く  **並列**  または  **セクション**  のディレクティブによって使用される句になります。  
+ 場合**並列**も指定すると、`clause`できます句によって受け入れられる、**並列**または**のセクションでは**、ディレクティブを除く`nowait`です。  
   
- 詳細については、「[2.4.2 sections Construct](../../../parallel/openmp/2-4-2-sections-construct.md)」を参照してください。  
+ 詳細については、次を参照してください。 [2.4.2 sections のコンストラクト](../../../parallel/openmp/2-4-2-sections-construct.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // omp_sections.cpp  
@@ -82,7 +86,10 @@ int main() {
 }  
 ```  
   
-  **Hello スレッドから 0**   
-**Hello スレッドから 0**    
-## 参照  
- [Directives](../../../parallel/openmp/reference/openmp-directives.md)
+```Output  
+Hello from thread 0  
+Hello from thread 0  
+```  
+  
+## <a name="see-also"></a>参照  
+ [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

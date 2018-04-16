@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3069
 ms.assetid: ca94291b-2bb4-4e3f-9acf-534234b83513
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2a6d4ccfd4f532c8f7c64f775e17260f26f8d457
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 6470ec9177ee1478c691fa3afb2c5e997e16be8a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3069"></a>コンパイラ エラー C3069
 'operator': 列挙型には使用できません  

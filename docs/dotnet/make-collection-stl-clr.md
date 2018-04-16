@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::make_collection
-dev_langs: C++
-helpviewer_keywords: make_collection function [STL/CLR]
+f1_keywords:
+- cliext::make_collection
+dev_langs:
+- C++
+helpviewer_keywords:
+- make_collection function [STL/CLR]
 ms.assetid: c25fb0cb-ebd8-4198-a565-bad28d32ee19
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 08c0730567b327896ee3e5b5d7ed86b8de4b391a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 718483b6d95e1eb1eb67f66d2b9c18a8e17cae20
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="makecollection-stlclr"></a>make_collection (STL/CLR)
 ように、`range_adapter`反復子のペアにします。  
@@ -97,10 +104,10 @@ SyncRoot not nullptr = True
  | a b c |  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext アダプター/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [range_adapter (STL/CLR)](../dotnet/range-adapter-stl-clr.md)

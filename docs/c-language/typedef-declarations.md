@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - declarations, typedef
 - typedef declarations
 - types [C], declarations
 ms.assetid: e92a3b82-9269-4bc6-834a-6f431ccac83e
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: daffef64ab4c212a9688b05e450f226519869f7d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 851776be55ce485d660aa46f4338235c3a1a413a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="typedef-declarations"></a>typedef 宣言
 typedef 宣言は、ストレージ クラスとしての typedef による宣言です。 宣言子は、新しい型になります。 typedef 宣言を使用して、既に C で定義されている型や、宣言した型に対して、より短い、またはわかりやすい名前を作成できます。 Typedef 名を使用して、変更可能な実装の詳細をカプセル化できます。  
@@ -124,7 +128,7 @@ fv *signal( int, fv * );   /* Uses typedef type */
 pfv signal( int, pfv );    /* Uses typedef type */  
 ```  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  typedef 宣言の例を次に示します。  
   
 ```  
@@ -166,6 +170,6 @@ DRAWF box;
 void box( int, int );  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 

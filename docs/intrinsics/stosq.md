@@ -1,69 +1,73 @@
 ---
-title: "__stosq | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__stosq"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "rep stosq 命令"
-  - "stosq 命令"
-  - "__stosq 組み込み"
+title: __stosq | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- __stosq
+dev_langs:
+- C++
+helpviewer_keywords:
+- rep stosq instruction
+- stosq instruction
+- __stosq intrinsic
 ms.assetid: 3ea28297-4369-4c2d-bf0c-91fa539ce209
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 80d1a9d8eb221ddef753f5cd27a868ea2e214ad0
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# __stosq
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="stosq"></a>__stosq
+**Microsoft 固有の仕様**  
   
- ストアの文字列 \(`rep stosq`\) 命令を生成します。  
+ ストア文字列命令が生成されます (`rep stosq`)。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-void __stosb(   
-   unsigned __int64* Dest,   
-   unsigned __int64 Data,   
-   size_t Count   
+void __stosb(   
+   unsigned __int64* Dest,   
+   unsigned __int64 Data,   
+   size_t Count   
 );  
 ```  
   
-#### パラメーター  
- \[出力\] `Dest`  
- 操作のコピー先。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `Dest`  
+ 操作の出力先。  
   
- \[入力\] `Data`  
+ [入力] `Data`  
  格納するデータ。  
   
- \[入力\] `Count`  
- 書き込む各ブロックの長さ。  
+ [入力] `Count`  
+ 書き込む quadwords のブロックの長さ。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
+|---------------|------------------|  
 |`__stosq`|AMD64|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- 結果はクワドワード `Data` が `Dest` の文字列の `Count` の各ブロックに記述する必要があります。  
+## <a name="remarks"></a>コメント  
+ 結果、quadword される`Data`のブロックに書き込まれる`Count`で quadwords、`Dest`文字列。  
   
- このルーチンは組み込みとしてのみ使用できます。  
+ このルーチンは、組み込みとしてのみ使用できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // stosq.c  
@@ -83,13 +87,13 @@ int main()
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 0 ffffffffffff ffffffffffff 0  
 ```  
   
-### 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+## <a name="see-also"></a>参照  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

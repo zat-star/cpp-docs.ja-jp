@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: SUBTITLE
-dev_langs: C++
-helpviewer_keywords: SUBTITLE directive
+ms.topic: reference
+f1_keywords:
+- SUBTITLE
+dev_langs:
+- C++
+helpviewer_keywords:
+- SUBTITLE directive
 ms.assetid: b882ae31-9998-46ed-bd88-6656263143e7
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7edfab3404c79f97686ec78ac618c6135e265ec2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8df76595782f35f32d1a9e1ff8ed0f989951d9c5
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="subtitle"></a>SUBTITLE
 一覧の字幕を定義します。 同じ[SUBTTL](../../assembler/masm/subttl.md)です。  
@@ -31,5 +37,5 @@ ms.lasthandoff: 10/24/2017
 SUBTITLE text  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

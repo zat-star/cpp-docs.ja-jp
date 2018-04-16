@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wgetcwd
 - _getcwd
@@ -30,7 +31,8 @@ f1_keywords:
 - _wgetcwd
 - tgetcwd
 - _tgetcwd
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - getcwd function
 - working directory
@@ -40,15 +42,17 @@ helpviewer_keywords:
 - wgetcwd function
 - directories [C++], current working
 ms.assetid: 888dc8c6-5595-4071-be55-816b38e3e739
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e72618467666a98bdda5867b23d9ef2ce37319f2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 91e660f548fdb8814e521f9c63c58e1b965949d4
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getcwd-wgetcwd"></a>_getcwd、_wgetcwd
 現在の作業ディレクトリを取得します。  
@@ -76,7 +80,7 @@ wchar_t *_wgetcwd(
 ## <a name="return-value"></a>戻り値  
  `buffer`へのポインターを返します。 `NULL` 戻り値はエラーを示し、 `errno` は、 `ENOMEM`に設定され、 `maxlen` バイトを割り当てるのにメモリが不足している ( `NULL` の引数が `buffer`として指定されている場合) ことを示すか、または `ERANGE`に設定され、パスが `maxlen` 文字より長いことを示します。 `maxlen` が 0 以下の場合、この関数は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーを呼び出します。  
   
- リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+ リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  `_getcwd` 関数は、既定のドライブの現在の作業ディレクトリの完全なパスを取得し、それを `buffer`に格納します。 整数の引数 `maxlen` はパスの最大長を指定します。 パスの長さ (終端の null 文字を含む) が `maxlen`。 を超える場合、エラーが発生します。 `buffer` 引数は `NULL`になる可能性があります。パスを格納するため、 `maxlen` サイズ以上のバッファー (必要であればそれ以上) が `malloc`を使用して自動的に割り当てられます。 このバッファーは `free` を呼び出し、それに `_getcwd` の戻り値 (割り当てられるバッファーへのポインター) を渡すことにより、後で解放できます。  
@@ -93,14 +97,14 @@ wchar_t *_wgetcwd(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tgetcwd`|`_getcwd`|`_getcwd`|`_wgetcwd`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_getcwd`|\<direct.h>|  
 |`_wgetcwd`|\<direct.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -135,7 +139,7 @@ int main( void )
 C:\Code  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)   
  [_chdir、_wchdir](../../c-runtime-library/reference/chdir-wchdir.md)   
  [_mkdir、_wmkdir](../../c-runtime-library/reference/mkdir-wmkdir.md)   

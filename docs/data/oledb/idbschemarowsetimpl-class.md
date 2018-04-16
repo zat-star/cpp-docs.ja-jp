@@ -4,29 +4,36 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: IDBSchemaRowsetImpl
-dev_langs: C++
-helpviewer_keywords: IDBSchemaRowsetImpl class
+ms.topic: reference
+f1_keywords:
+- IDBSchemaRowsetImpl
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDBSchemaRowsetImpl class
 ms.assetid: bd7bf0d7-a1c6-4afa-88e3-cfdbdf560703
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8d901b6674c19cda5a2cc9da2826c9523280b58c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 2895aeebd49e38b157ab55912fcc4b7c52ba953e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="idbschemarowsetimpl-class"></a>IDBSchemaRowsetImpl クラス
 スキーマ行セットの実装を提供します。  
   
-## <a name="syntax"></a>構文  
-  
-```  
+## <a name="syntax"></a>構文
+
+```cpp
 template <class SessionClass>  
 class ATL_NO_VTABLE IDBSchemaRowsetImpl : public IDBSchemaRowset  
 ```  
@@ -63,10 +70,10 @@ class ATL_NO_VTABLE IDBSchemaRowsetImpl : public IDBSchemaRowset
   
  スキーマ行セットの詳細については、 [OLE DB プログラマーズ リファレンス](https://msdn.microsoft.com/en-us/library/ms712921.aspx) の *スキーマ行セット*に関するセクションを参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDBSchemaRowsetImpl クラス メンバー](http://msdn.microsoft.com/en-us/e74f6f82-541c-42e7-b4c6-e2d4656a0649)   
  [スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)   
  [スキーマ行セットのサポート](../../data/oledb/supporting-schema-rowsets.md)

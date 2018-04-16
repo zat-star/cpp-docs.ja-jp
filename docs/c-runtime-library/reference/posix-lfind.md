@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: lfind
+ms.topic: reference
+apiname:
+- lfind
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,19 +22,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: lfind
-dev_langs: C++
-helpviewer_keywords: lfind function
+f1_keywords:
+- lfind
+dev_langs:
+- C++
+helpviewer_keywords:
+- lfind function
 ms.assetid: 2528e787-94b6-4740-8a8d-6efc276d1f42
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e37e6e9440d58fba26a447ce7be5f0ed3cdb6d8a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6246d7fa80f9a89f2a57171ae805b03e75f664b2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="lfind"></a>lfind
 この POSIX 関数は使用されなくなりました。 代わりに ISO C++ 準拠の [_lfind](../../c-runtime-library/reference/lfind.md) またはセキュリティが強化された [_lfind_s](../../c-runtime-library/reference/lfind-s.md) を使用してください。

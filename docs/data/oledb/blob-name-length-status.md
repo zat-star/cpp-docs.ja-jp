@@ -1,43 +1,40 @@
 ---
-title: "BLOB_NAME_LENGTH_STATUS |Microsoft ドキュメント"
+title: BLOB_NAME_LENGTH_STATUS | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: BLOB_NAME_LENGTH_STATUS
-dev_langs: C++
-helpviewer_keywords: BLOB_NAME_LENGTH_STATUS macro
+ms.topic: reference
+f1_keywords:
+- BLOB_NAME_LENGTH_STATUS
+dev_langs:
+- C++
+helpviewer_keywords:
+- BLOB_NAME_LENGTH_STATUS macro
 ms.assetid: 3cc3ec8d-80a5-4522-848a-123fcaee58cb
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 549ba195b55736b739d979c8aa2dc7de5e7cdbbb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 525ad2411afa3a19124acb82459e9c5e7e6d8f3c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="blobnamelengthstatus"></a>BLOB_NAME_LENGTH_STATUS
 と共に使用`BEGIN_COLUMN_MAP`と`END_COLUMN_MAP`バイナリ ラージ オブジェクトをバインドする ([BLOB](https://msdn.microsoft.com/en-us/library/ms711511.aspx))。 ような[BLOB_NAME](../../data/oledb/blob-name.md)ただし、このマクロは、長さと、BLOB データの列の状態も取得します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-BLOB_NAME_LENGTH_STATUS(  
-pszName  
-,   
-IID  
-,   
-flags  
-,   
-data  
-,   
-length  
+```cpp
+BLOB_NAME_LENGTH_STATUS(pszName, IID, flags, data, length  
 , status )  
 ```  
   
@@ -60,10 +57,10 @@ length
  *status*  
  [out]BLOB フィールドの状態です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md)   
  [END_COLUMN_MAP](../../data/oledb/end-column-map.md)   

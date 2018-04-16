@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -13,7 +14,8 @@ f1_keywords:
 - _LK_LOCK
 - _LK_NBRLCK
 - _LK_UNLCK
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - LK_UNLCK constant
 - LK_NBRLCK constant
@@ -26,15 +28,17 @@ helpviewer_keywords:
 - _LK_RLCK constant
 - LK_LOCK constant
 ms.assetid: c3dc92c8-60e3-4d29-9f50-5d217627c8ad
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 799b00209463c90c61b4b497a88af39ba554cd01
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a4231235fc35a8b6d22f49e2ba05db337a619713
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="locking-constants"></a>_locking 定数
 ## <a name="syntax"></a>構文  
@@ -65,6 +69,6 @@ ms.lasthandoff: 10/24/2017
  `_LK_UNLCK`  
  指定したバイトをロック解除します。 (バイトはすでにロックされている必要があります)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_locking](../c-runtime-library/reference/locking.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)

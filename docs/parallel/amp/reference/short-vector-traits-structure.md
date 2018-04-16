@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - short_vector_traits
 - AMP_SHORT_VECTORS/short_vector_traits
@@ -16,34 +16,20 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: cd9492da-9e02-4a6e-9d50-b61252cdb460
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 22ba62ab8b3b4f9d14953dbab3edd8228ea85193
-ms.openlocfilehash: aa123da5dfb5675a4b44d386224bf17e79df40a3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 21f249a464cd9f55d8cbb4aea79bcb705104306b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="shortvectortraits-structure"></a>short_vector_traits 構造体
-short_vector_traits により、基になるベクトルの長さと短いベクター型のスカラー型、またはスカラー型の取得  
+short_vector_traits により、基になるベクトルの長さと short ベクター型のスカラー型、またはスカラー型の取得  
   
 ## <a name="syntax"></a>構文  
   
@@ -121,30 +107,29 @@ struct short_vector_traits<double_4>;
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[short_vector_traits::size 定数](#size)||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `short_vector_traits`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>short_vector_traits::short_vector_traits コンス トラクター  
+##  <a name="ctor"></a>  short_vector_traits::short_vector_traits Constructor  
   
 ```  
 short_vector_traits();
 ```  
   
-##  <a name="size"></a>short_vector_traits::size 定数  
+##  <a name="size">short_vector_traits::size 定数</a>  
   
 ```  
 static int const size = 1;  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
-
+## <a name="see-also"></a>参照  
+ [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

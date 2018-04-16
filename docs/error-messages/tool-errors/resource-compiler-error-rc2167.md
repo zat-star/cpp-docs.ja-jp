@@ -15,32 +15,19 @@ dev_langs:
 helpviewer_keywords:
 - RC2167
 ms.assetid: 9b24a8eb-367b-4ff6-8266-b0c215f32d6a
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a5455945f5e0d50482fed0afb75b26c86fd7d89e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1fd3515021c48f9293e7ee4223acaa7472ed7de5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resource-compiler-error-rc2167"></a>リソース コンパイラ エラー RC2167
 認識できない VERSIONINFO フィールドです。BEGIN またはコンマが必要  
   
- 認識できないフィールドに存在、**固定**の一部では、 **VERSIONINFO**宣言を構成します。 A **VERSIONINFO**フィールドはコンマで区切られた DWORD である必要があります。
+ 認識できないフィールドが見つかりました、**固定**の一部、 **VERSIONINFO**構造体宣言します。 A **VERSIONINFO**フィールドはコンマで区切られた DWORD でなければなりません。

@@ -1,33 +1,36 @@
 ---
-title: ".NOLISTIF | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - ".NOLISTIF"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".NOLISTIF directive"
+title: ".NOLISTIF |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- .NOLISTIF
+dev_langs:
+- C++
+helpviewer_keywords:
+- .NOLISTIF directive
 ms.assetid: 9243af7a-7221-4531-bbc3-281b6b292bfd
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 00eea01c5b08c18856ca6031eea8974258d81bc4
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# .NOLISTIF
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-条件が false に評価する条件ブロックのリストを制限します \(0\)。  
+# <a name="nolistif"></a>.NOLISTIF
+False (0) に評価される条件が条件付きブロックの一覧を表示しません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,8 +38,8 @@ manager: "ghogen"
   
 ```  
   
-## 解説  
- これは、既定の設定です。  [.SFCOND](../Topic/.SFCOND.md) と同じです。  
+## <a name="remarks"></a>コメント  
+ 既定値です。 同じ[です。SFCOND](../../assembler/masm/dot-sfcond.md)です。  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

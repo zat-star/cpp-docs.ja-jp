@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,20 +13,23 @@ f1_keywords:
 - AFXDISP/COleException
 - AFXDISP/COleException::Process
 - AFXDISP/COleException::m_sc
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COleException [MFC], Process
 - COleException [MFC], m_sc
 ms.assetid: 2571e9fe-26cc-42f0-9ad9-8ad5b4311ec1
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1a26ab8bb81487346908a4d1d7596ad33b5c3c31
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7e895e893c6032a8f8d7db0549f872c82cd0d9b5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coleexception-class"></a>COleException クラス
 OLE 操作に関する例外条件を表します。  
@@ -64,7 +68,7 @@ class COleException : public CException
   
  `COleException`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
   
 ##  <a name="m_sc"></a>COleException::m_sc  
@@ -106,7 +110,7 @@ static SCODE PASCAL Process(const CException* pAnyException);
 ### <a name="example"></a>例  
   例を参照して[coledispatchdriver::createdispatch](../../mfc/reference/coledispatchdriver-class.md#createdispatch)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CALCDRIV](../../visual-cpp-samples.md)   
  [CException クラス](../../mfc/reference/cexception-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)

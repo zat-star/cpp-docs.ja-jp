@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3712
-dev_langs: C++
-helpviewer_keywords: C3712
+f1_keywords:
+- C3712
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3712
 ms.assetid: 65b1fcaf-be89-4c55-9e40-25ec03457253
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 69f23d7192bc72f5f287a3a5b84b7840f9d25310
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 99e622b6a786a5f76a156851cfa11a59633990eb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3712"></a>コンパイラ エラー C3712
 'method': イベント ハンドラー メソッドが 'method' には、ソースと同じ型の返す必要があります  

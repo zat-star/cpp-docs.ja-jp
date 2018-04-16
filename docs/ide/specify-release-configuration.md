@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.appwiz.importwiz.releasesettings
-dev_langs: C++
+f1_keywords:
+- vc.appwiz.importwiz.releasesettings
+dev_langs:
+- C++
 ms.assetid: 3e2fc73c-bdbd-4790-b2bd-d31731f0cece
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ce56bc4839ff7f284a9c8c9bd96331742459fd00
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ff208af8bb89dbcb7df00b37ce542a5adae5fa23
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="specify-release-configuration-settings-create-new-project-from-existing-code-files-wizard"></a>[リリースの構成の設定] (既存コード ファイルからの新しいプロジェクトの作成ウィザード)
 既存コード ファイルからの新しいプロジェクトの作成ウィザードのこのページを使用すると、リリース構成のプロジェクト設定を指定できます。  
@@ -43,7 +48,7 @@ ms.lasthandoff: 10/24/2017
  新しいプロジェクトのデバッグ構成の出力ファイルのディレクトリ パスを指定します。 このオプションが有効になっているときに、**を使用して外部のビルド システム**オプションがオン、**プロジェクト設定の指定**ページ。  
   
  **プリプロセッサの定義 (/D)**  
- 新しいプロジェクトのプリプロセッサ シンボルを定義します。 詳細については、「[/D (プリプロセッサの定義)](../build/reference/d-preprocessor-definitions.md)」を参照してください。  
+ 新しいプロジェクトのプリプロセッサ シンボルを定義します。 詳細については、「 [/D (Preprocessor Definitions)](../build/reference/d-preprocessor-definitions.md)」を参照してください。  
   
  **検索パスを含める (/I)**  
  新しいプロジェクトのプリプロセッサ ディレクティブに渡されたファイル参照を解決するのには、コンパイラによって検索されるディレクトリの一覧に追加するディレクトリ パスを指定します。 詳細については、「[/I (追加インクルード ディレクトリ)](../build/reference/i-additional-include-directories.md)」を参照してください。  
@@ -57,5 +62,5 @@ ms.lasthandoff: 10/24/2017
  **.NET アセンブリを使用して強制的に (/FU)**  
  新しいプロジェクトをビルド時に .NET アセンブリを指定します。 詳細については、「[/FU (強制 #using ファイルの名前の指定)](../build/reference/fu-name-forced-hash-using-file.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [[プロジェクト設定の指定] (既存コード ファイルからの新しいプロジェクトの作成ウィザード)](../ide/specify-project-settings-create-new-project-from-existing-code-files-wizard.md)

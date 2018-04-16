@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - thread stacks [C++]
 - resources [C++], multithreading
@@ -21,15 +23,17 @@ helpviewer_keywords:
 - mutex [C++]
 - threading [C++], thread stacks
 ms.assetid: 1415f47d-417f-4f42-949b-946fb28aab0e
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e431c73b94975904a64b60c7541a2d665267d5b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4ede0e6dc1740f93f4905dc69b1927aee0d1a7ff
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="writing-a-multithreaded-win32-program"></a>マルチスレッド Win32 プログラムの作成
 複数のスレッドでプログラムを記述するときに、その動作を調整する必要がありますと[プログラムのリソースの使用](#_core_sharing_common_resources_between_threads)です。 各スレッドが受信することを確認することも必要[独自のスタック](#_core_thread_stacks)です。  
@@ -69,5 +73,5 @@ ReleaseMutex( hIOMutex);
   
  Win32 には、スレッドの個別データを格納するために、スレッド ローカル ストレージ (TLS: Thread-Local Storage) も用意されています。 詳細については、次を参照してください。[スレッド ローカル ストレージ (TLS)](../parallel/thread-local-storage-tls.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C と Win32 を使用するマルチスレッド](../parallel/multithreading-with-c-and-win32.md)

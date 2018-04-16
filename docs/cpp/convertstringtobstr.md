@@ -1,25 +1,31 @@
 ---
-title: "ConvertStringToBSTR |Microsoft ドキュメント"
+title: ConvertStringToBSTR | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: ConvertStringToBSTR
-dev_langs: C++
-helpviewer_keywords: ConvertStringToBSTR function
+f1_keywords:
+- ConvertStringToBSTR
+dev_langs:
+- C++
+helpviewer_keywords:
+- ConvertStringToBSTR function
 ms.assetid: 071f9b3b-9643-4e06-a1e5-de96ed15bab2
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2e6e62a4de1e1bc4e38bc05fa1012867c2e7fc3e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b396930f6a16c3773b917dc21b2c61525350f397
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="convertstringtobstr"></a>ConvertStringToBSTR
 **Microsoft 固有の仕様**  
@@ -67,10 +73,10 @@ BSTR text: Test
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** comutil.h  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<comutil.h >  
   
  **Lib:** comsuppw.lib または comsuppwd.lib (を参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)詳細)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ COM のグローバル関数](../cpp/compiler-com-global-functions.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::list::pop_front
-dev_langs: C++
-helpviewer_keywords: pop_front member [STL/CLR]
+f1_keywords:
+- cliext::list::pop_front
+dev_langs:
+- C++
+helpviewer_keywords:
+- pop_front member [STL/CLR]
 ms.assetid: 6a0bad42-6796-41d9-a3e9-1488b3882574
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aa9df1ea52b525d00aa77478f6fcbe1f3e29b29c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 4122e485075ae5c6586fd92a4cae3a04fa08431a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listpopfront-stlclr"></a>list::pop_front (STL/CLR)
 最初の要素を削除します。  
@@ -67,12 +74,12 @@ a b c
 b c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::pop_back (STL/CLR)](../dotnet/list-pop-back-stl-clr.md)   
  [list::push_back (STL/CLR)](../dotnet/list-push-back-stl-clr.md)   

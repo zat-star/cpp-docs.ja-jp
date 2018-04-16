@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xloctime/std::time_get
 - locale/std::time_get::char_type
@@ -25,7 +26,8 @@ f1_keywords:
 - locale/std::time_get::get_time
 - locale/std::time_get::get_weekday
 - locale/std::time_get::get_year
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::time_get [C++]
 - std::time_get [C++], char_type
@@ -45,15 +47,17 @@ helpviewer_keywords:
 - std::time_get [C++], get_weekday
 - std::time_get [C++], get_year
 ms.assetid: 869d5f5b-dbab-4628-8333-bdea7e272023
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6178c35ff5d9ed0fbe53af7d488cc24cbcf81f2d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b1c682110c032150c8406d93c83b89efbc5bc802
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="timeget-class"></a>time_get クラス
 このテンプレート クラスは、`CharType` 型のシーケンスから時刻値への変換を制御するためにロケール ファセットとして使用できるオブジェクトを表します。  
@@ -108,7 +112,7 @@ class time_get : public time_base;
 |[get_weekday](#get_weekday)|曜日の名前として文字列を解析します。|  
 |[get_year](#get_year)|年の名前として文字列を解析します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
@@ -990,13 +994,13 @@ explicit time_get(size_t refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: これらの値が定義されていません。  
   
  デストラクターが保護されているため、利用できる直接的な例はありません。  
   
  コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)( `refs`) を使用して、その基本オブジェクトを初期化します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<locale>](../standard-library/locale.md)   
  [time_base クラス](../standard-library/time-base-class.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)

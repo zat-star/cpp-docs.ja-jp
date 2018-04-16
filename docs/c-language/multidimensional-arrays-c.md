@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - arrays [C], multidimensional
 - multidimensional arrays
 - subscript expressions
 ms.assetid: 4ba5c360-1f17-4575-b370-45f62e1f2bc2
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fbc5ca61d1a45521c67426144ad5991170849230
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7b3b067db3812fbe7e5db1d367635eedc5362527
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="multidimensional-arrays-c"></a>多次元配列 (C)
 添字式には、次のように複数の添字がある場合があります。  
@@ -36,11 +40,11 @@ expression3
 ]...  
 ```  
   
- 添字式は、左から右へ関連付けられます。 左端の添字式、*expression1***[***expression2***]** が最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***) は、最終的なポインター値が配列型のアドレスを指していない限り、最後の添字式が評価された後に適用されます (下の例を参照)。  
+ 添字式は、左から右へ関連付けられます。 左端の添字式 * expression1***[***expression2 ***]**、最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***) は、最終的なポインター値が配列型のアドレスを指していない限り、最後の添字式が評価された後に適用されます (下の例を参照)。  
   
  複数の添字を持つ式は、"多次元配列" の要素を参照します。 多次元配列は、要素が配列である配列です。 たとえば、3 次元配列の最初の要素は 2 次元配列です。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  以下では、その後の各例で使用するために、`prop` という名前の配列を宣言しています。この配列には 3 つの要素があり、各要素は `int` 値の 4 × 6 配列になっています。  
   
 ```  

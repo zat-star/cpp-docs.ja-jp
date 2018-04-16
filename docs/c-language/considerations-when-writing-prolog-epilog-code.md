@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - layouts, stack frame
 - stack frame layout
 - __LOCAL_SIZE constant
 - stack, stack frame layout
 ms.assetid: 3b8addec-e809-48e4-b1d0-5bad133bd4b8
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 021fddcbc63fdfb6faf4c0a3919293046649bab5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 01a153011ad0cd571762c6473f6121a55045396c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="considerations-when-writing-prologepilog-code"></a>プロローグ/エピローグ コードの記述時の考慮事項
 **Microsoft 固有の仕様**  
@@ -86,7 +90,7 @@ __declspec ( naked ) func()
 }     
 ```  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [naked 関数](../c-language/naked-functions.md)

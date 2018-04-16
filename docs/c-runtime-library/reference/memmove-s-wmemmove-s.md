@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - wmemmove_s
 - memmove_s
@@ -26,20 +27,23 @@ apitype: DLLExport
 f1_keywords:
 - wmemmove_s
 - memmove_s
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - wmemmove_s function
 - memmove_s function
 ms.assetid: a17619e4-1307-4bb0-98c6-77f8c68dab2d
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 834cd18283874bc975d896f319bb6f8ebf962792
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 48d63ebfc9e59872f48384f2c84a8dab6df52182
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="memmoves-wmemmoves"></a>memmove_s、wmemmove_s
 バッファーを別のバッファーに移動します。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [memmove、wmemmove](../../c-runtime-library/reference/memmove-wmemmove.md) です。  
@@ -89,16 +93,16 @@ errno_t wmemmove_s(
 ## <a name="remarks"></a>コメント  
  コピー`count`から文字のバイトを`src`に`dest`です。 コピー元とコピー先の領域の一部が重なり合っている場合、`memmove_s` は重なり合っている領域のコピー元のバイトをコピーした後で上書きします。  
   
- `dest` または `src` が Null ポインターの場合、またはコピー先文字列が小さすぎる場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
+ `dest` または `src` が Null ポインターの場合、またはコピー先文字列が小さすぎる場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `EINVAL` を返し、 `errno` を `EINVAL`に設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`memmove_s`|\<string.h>|  
 |`wmemmove_s`|\<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -136,7 +140,7 @@ Before: 0123456789
  After: 0012345789  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
  [_memccpy](../../c-runtime-library/reference/memccpy.md)   
  [memcpy、wmemcpy](../../c-runtime-library/reference/memcpy-wmemcpy.md)   

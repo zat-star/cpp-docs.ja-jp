@@ -1,13 +1,13 @@
 ---
-title: "tile_barrier クラス |Microsoft ドキュメント"
-ms.custom: 
+title: tile_barrier クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.tgt_pltfrm: ''
+ms.topic: reference
 f1_keywords:
 - tile_barrier
 - AMP/tile_barrier
@@ -25,26 +25,13 @@ caps.latest.revision: 17
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 4bacc84c4e267ffca14290186750ae1d3bdf899f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e7d868b4bd677d207590de6449e3d5643001e857
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="tilebarrier-class"></a>tile_barrier クラス
 `wait` メソッドを使用してスレッド グループ (タイル) で実行されているスレッドの実行を同期します。 ランタイムのみがこのクラスをインスタンス化できます。  
@@ -67,7 +54,7 @@ class tile_barrier;
   
 |名前|説明|  
 |----------|-----------------|  
-|[待機](#wait)|タイルのすべてのスレッドの待機が完了するまで、スレッド グループ (タイル) のすべてのスレッドの実行を停止するように指示します。|  
+|[wait](#wait)|タイルのすべてのスレッドの待機が完了するまで、スレッド グループ (タイル) のすべてのスレッドの実行を停止するように指示します。|  
 |[wait_with_all_memory_fence](#wait_with_all_memory_fence)|すべてのメモリ アクセスが完了し、タイルのすべてのスレッドがこの呼び出しに到達するまで、タイルのすべてのスレッドの実行をブロックします。|  
 |[wait_with_global_memory_fence](#wait_with_global_memory_fence)|すべてのグローバル メモリ アクセスが完了し、タイルのすべてのスレッドがこの呼び出しに到達するまで、タイルのすべてのスレッドの実行をブロックします。|  
 |[wait_with_tile_static_memory_fence](#wait_with_tile_static_memory_fence)|すべての `tile_static` メモリ アクセスが完了し、タイルのすべてのスレッドがこの呼び出しに到達するまで、タイルのすべてのスレッドの実行をブロックします。|  
@@ -80,7 +67,7 @@ class tile_barrier;
   
  **名前空間:** Concurrency  
 
-## <a name="tile_barrier__ctor"></a>tile_barrier コンス トラクター  
+## <a name="tile_barrier__ctor"></a>  tile_barrier コンス トラクター  
  既存のものをコピーして、クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文 
@@ -94,7 +81,7 @@ tile_barrier(
  `_Other`  
  コピーする `tile_barrier` オブジェクト。  
 
-## <a name="wait"></a>待機 
+## <a name="wait"></a>  wait 
 タイルのすべてのスレッドの待機が完了するまで実行を停止するには、スレッド グループ (タイル) のすべてのスレッドに指示します。  
   
 ### <a name="syntax"></a>構文 
@@ -103,7 +90,7 @@ tile_barrier(
 void wait() const restrict(amp);  
 ```    
 
-## <a name="wait_with_all_memory_fence"></a>wait_with_all_memory_fence   
+## <a name="wait_with_all_memory_fence"></a>  wait_with_all_memory_fence   
 タイルのすべてのスレッドがこの呼び出しに到達するまで、タイルのすべてのスレッドの実行をブロックします。 これによって、すべてのメモリ アクセスがスレッド タイルの他のスレッドから参照でき、プログラムの順序で実行されます。  
   
 ### <a name="syntax"></a>構文 
@@ -113,7 +100,7 @@ void wait_with_all_memory_fence() const restrict(amp);
 ```  
   
 
-## <a name="wait_with_global_memory_fence"></a>wait_with_global_memory_fence   
+## <a name="wait_with_global_memory_fence"></a>  wait_with_global_memory_fence   
 タイルのすべてのスレッドがこの呼び出しに到達するまで、タイルのすべてのスレッドの実行をブロックします。 これによって、すべてのグローバル メモリ アクセスがスレッド タイルの他のスレッドから参照でき、プログラムの順序で実行されます。  
   
 ### <a name="syntax"></a>構文 
@@ -122,7 +109,7 @@ void wait_with_all_memory_fence() const restrict(amp);
 void wait_with_global_memory_fence() const  restrict(amp);  
 ```
 
-## <a name="wait_with_tile_static_memory_fence"></a>wait_with_tile_static_memory_fence   
+## <a name="wait_with_tile_static_memory_fence"></a>  wait_with_tile_static_memory_fence   
 タイルのすべてのスレッドがこの呼び出しに到達するまで、タイルのすべてのスレッドの実行をブロックします。 これにより、`tile_static`メモリ アクセスがスレッド タイルの他のスレッドから参照でき、プログラムの順序で実行されます。  
   
 ### <a name="syntax"></a>構文 
@@ -133,4 +120,3 @@ void wait_with_tile_static_memory_fence() const restrict(amp);
   
 ## <a name="see-also"></a>関連項目  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
-

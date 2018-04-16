@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 341d8297-03eb-4351-9ed0-138ec59b375c
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a41ffad94af09cb4228aadb901004ed4de9b7522
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 74a48a8f087bc70cda0ba7fb61772646d1446aa5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="summary-of-keywords"></a>キーワードの概要
 *keyword*: 次のいずれか  
@@ -33,5 +37,5 @@ ms.lasthandoff: 10/24/2017
 |**default**|`goto`|`sizeof`|`volatile`|  
 |**do**|**if**|**static**|`while`|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [字句文法](../c-language/lexical-grammar.md)

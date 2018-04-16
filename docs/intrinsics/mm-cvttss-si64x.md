@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: _mm_cvttss_si64x
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- _mm_cvttss_si64x
+dev_langs:
+- C++
 helpviewer_keywords:
 - _mm_cvttss_si64x intrinsic
 - cvttss2si instruction
 ms.assetid: f9a3fd07-5bd8-4758-8744-6315c082cf87
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fa5dee3ee67678f561a80042c1dc0aab2403a555
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2e9667f93f6255ce1e1bc42b5fac1e8e68543e8e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="mmcvttsssi64x"></a>_mm_cvttss_si64x
 **Microsoft 固有の仕様**  
@@ -43,7 +48,7 @@ __int64 _mm_cvttss_si64x(
 ## <a name="return-value"></a>戻り値  
  最初の浮動小数点値の 64 ビット整数への変換の結果。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -92,6 +97,6 @@ int main()
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
- [_ _m128](../cpp/m128.md)   
+## <a name="see-also"></a>参照  
+ [__m128](../cpp/m128.md)   
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::map::iterator
-dev_langs: C++
-helpviewer_keywords: iterator member [STL/CLR]
+f1_keywords:
+- cliext::map::iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- iterator member [STL/CLR]
 ms.assetid: b2953b9b-0e6d-49f3-a28f-47d04d16d5f6
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b34c5d93fffd236cd16843fd074b5c1b8181c4b4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5770c2ae9805cccf6da6cf83c96ed9d3e9860cd7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mapiterator-stlclr"></a>map::iterator (STL/CLR)
 被制御シーケンスの反復子の型です。  
@@ -62,11 +69,11 @@ int main()
 [a 1] [b 2] [c 3]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
  [map::const_iterator (STL/CLR)](../dotnet/map-const-iterator-stl-clr.md)

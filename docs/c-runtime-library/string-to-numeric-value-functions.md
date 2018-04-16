@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -18,20 +19,23 @@ apitype: DLLExport
 f1_keywords:
 - _tcstoui64
 - _tcstoi64
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - parsing, numeric strings
 - string conversion, to numeric values
 ms.assetid: 11cbd9ce-033b-4914-bf66-029070e7e385
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 11fca1402fbf1d740b06e2eac9632496792f7da0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 68586bac573018bceb7dc982625ff6a859d18871
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="string-to-numeric-value-functions"></a>文字列を数値に変換する関数
 -   [strtod、_strtod_l、wcstod、_wcstod_l](../c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l.md)  
@@ -96,7 +100,7 @@ ms.lasthandoff: 10/24/2017
   
  `wcstod`、`wcstol`、`wcstoul`、`_wcstoi64`、`_wcstoui64` はそれぞれ、`strtod`、`strtol`、`strtoul`、`_strtoi64`、`_strtoui64` のワイド文字バージョンです。これらのワイド文字関数の変換終了引数へのポインターはワイド文字です。 ワイド文字関数は、それが 1 バイト文字の場合と同様に動作します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../c-runtime-library/data-conversion.md)   
  [ロケール](../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

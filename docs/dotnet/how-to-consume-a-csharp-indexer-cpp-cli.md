@@ -1,39 +1,41 @@
 ---
-title: "方法: C# インデクサーを使用する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++, インデクサー"
-  - "インデクサー, 利用 (C# を)"
+title: "方法: c# インデクサーを使用する (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs:
+- C++
+helpviewer_keywords:
+- C++, indexers
+- indexers, consuming C#
 ms.assetid: 5a11850c-a1a2-4a0a-b95e-f6dc5a87f439
-caps.latest.revision: 13
-caps.handback.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 2ed069e1f9d7effa686cd572bd505a41dcf60c04
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: C# インデクサーを使用する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Visual C\+\+ にはインデクサーは含まれていませんが、インデックス付きのプロパティが用意されています。  C\# インデクサーを使用するには、インデックス付きのプロパティのようにインデクサーにアクセスします。  
+# <a name="how-to-consume-a-c-indexer-ccli"></a>方法: C# インデクサーを使用する (C++/CLI)
+Visual C にインデクサー; が含まれていませんこれには、プロパティがインデックス付けします。 インデックス付きプロパティの場合と同様に c# インデクサーを使用するには、インデクサーにアクセスします。  
   
- インデクサーの詳細については、次のトピックを参照してください。  
+ インデクサーの詳細についてを参照してください。  
   
--   [インデクサー](../Topic/Indexers%20\(C%23%20Programming%20Guide\).md)  
+-   [インデクサー](/dotnet/csharp/programming-guide/indexers/index)  
   
--   [方法: インデックス付きプロパティを使用する](../misc/how-to-use-indexed-properties.md)  
-  
-## 使用例  
- 次の C\# プログラムは、インデクサーを定義します。  
+## <a name="example"></a>例  
+ 次の c# プログラムでは、インデクサーを定義します。  
   
 ```  
 // consume_cs_indexers.cs  
@@ -71,8 +73,8 @@ public class MainClass {
 */  
 ```  
   
-## 使用例  
- この Visual C\+\+ プログラムはインデクサーを使用します。  
+## <a name="example"></a>例  
+ この Visual C プログラムでは、インデクサーを使用します。  
   
 ```  
 // consume_cs_indexers_2.cpp  
@@ -88,16 +90,19 @@ int main() {
 }  
 ```  
   
-  **Element \#0 \= 21**  
-**Element \#1 \= 0**  
-**Element \#2 \= 0**  
-**Element \#3 \= 0**  
-**Element \#4 \= 0**  
-**Element \#5 \= 0**  
-**Element \#6 \= 0**  
-**Element \#7 \= 0**  
-**Element \#8 \= 0**  
-**Element \#9 \= 0**  
-**Element \#10 \= 0**   
-## 参照  
- [他の .NET 言語との相互運用性](../dotnet/interoperability-with-other-dotnet-languages-cpp-cli.md)
+```Output  
+Element #0 = 21  
+Element #1 = 0  
+Element #2 = 0  
+Element #3 = 0  
+Element #4 = 0  
+Element #5 = 0  
+Element #6 = 0  
+Element #7 = 0  
+Element #8 = 0  
+Element #9 = 0  
+Element #10 = 0  
+```  
+  
+## <a name="see-also"></a>参照  
+ [他の .NET 言語との相互運用性 (C++/CLI)](../dotnet/interoperability-with-other-dotnet-languages-cpp-cli.md)

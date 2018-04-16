@@ -6,7 +6,7 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - COLLECTION/Platform::Collections::VectorView::VectorView
 - COLLECTION/Platform::Collections::VectorView::First
@@ -14,18 +14,22 @@ f1_keywords:
 - COLLECTION/Platform::Collections::VectorView::GetMany
 - COLLECTION/Platform::Collections::VectorView::IndexOf
 - COLLECTION/Platform::Collections::VectorView::Size
-dev_langs: C++
-helpviewer_keywords: VectorView Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- VectorView Class
 ms.assetid: 05cd461d-dce7-49d3-b0e7-2e5c78ed8192
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: c69052eec58bb84416561de93df845a09514490f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5f196a1f58e5c480ef09d13a72f1c8ac3a0a50db
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcollectionsvectorview-class"></a>Platform::Collections::VectorView クラス
 インデックスによって個別にアクセスできるオブジェクトのシーケンシャル コレクションの読み取り専用ビューを表します。 コレクション内の各オブジェクトの型は、テンプレート パラメーターによって指定されます。  
@@ -53,27 +57,27 @@ template <typename T, typename E>
   
 |名前|説明|  
 |----------|-----------------|  
-|[Vectorview::vectorview](#ctor)|VectorView クラスの新しいインスタンスを初期化します。|  
+|[VectorView::VectorView](#ctor)|VectorView クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[Vectorview::first](#first)|VectorView 内の最初の要素を指定する反復子を返します。|  
-|[Vectorview::getat](#getat)|指定されたインデックスで示される現在の VectorView の要素を取得します。|  
-|[Vectorview::getmany](#getmany)|指定されたインデックスを開始位置として、現在の VectorView から項目のシーケンスを取得します。|  
-|[Vectorview::indexof](#indexof)|現在の VectorView 内で指定された項目を検索し、見つかった場合は項目のインデックスを返します。|  
-|[Vectorview::size](#size)|現在の VectorView オブジェクトの要素数を返します。|  
+|[VectorView::First](#first)|VectorView 内の最初の要素を指定する反復子を返します。|  
+|[VectorView::GetAt](#getat)|指定されたインデックスで示される現在の VectorView の要素を取得します。|  
+|[VectorView::GetMany](#getmany)|指定されたインデックスを開始位置として、現在の VectorView から項目のシーケンスを取得します。|  
+|[VectorView::IndexOf](#indexof)|現在の VectorView 内で指定された項目を検索し、見つかった場合は項目のインデックスを返します。|  
+|[VectorView::Size](#size)|現在の VectorView オブジェクトの要素数を返します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `VectorView`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Platform::Collections  
 
-## <a name="first"></a>Vectorview::first メソッド
+## <a name="first"></a>  Vectorview::first メソッド
 VectorView 内の最初の要素を指定する反復子を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -92,7 +96,7 @@ virtual Windows::Foundation::Collections::IIterator<T>^
   
 
 
-## <a name="getat"></a>Vectorview::getat メソッド
+## <a name="getat"></a>  Vectorview::getat メソッド
 指定されたインデックスで示される現在の VectorView の要素を取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -113,7 +117,7 @@ T GetAt(
   
 
 
-## <a name="getmany"></a>Vectorview::getmany メソッド
+## <a name="getmany"></a>  Vectorview::getmany メソッド
 指定されたインデックスを開始位置として、現在の VectorView から項目のシーケンスを取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -138,7 +142,7 @@ virtual unsigned int GetMany(
   
 
 
-## <a name="indexof"></a>Vectorview::indexof メソッド
+## <a name="indexof"></a>  Vectorview::indexof メソッド
 現在の VectorView 内で指定された項目を検索し、見つかった場合は項目のインデックスを返します。  
   
 ### <a name="syntax"></a>構文  
@@ -165,7 +169,7 @@ virtual bool IndexOf(
   
 
 
-## <a name="size"></a>Vectorview::size メソッド
+## <a name="size"></a>  Vectorview::size メソッド
 現在の VectorView オブジェクトの要素数を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -180,7 +184,7 @@ virtual property unsigned int Size;
   
 
 
-## <a name="ctor"></a>Vectorview::vectorview コンス トラクター
+## <a name="ctor"></a>  Vectorview::vectorview コンス トラクター
 VectorView クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  
@@ -274,6 +278,6 @@ VectorView(
 
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)   
- [C++ での Windows ランタイム コンポーネントを作成します。](/MicrosoftDocs/windows-uwp/blob/docs/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md)
+ [C++ での Windows ランタイム コンポーネントを作成します。](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)

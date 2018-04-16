@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -87,7 +88,8 @@ f1_keywords:
 - AFXDOCKINGMANAGER/CDockingManager::m_nDockSensitivity
 - AFXDOCKINGMANAGER/CDockingManager::m_nTimeOutBeforeDockingBarDock
 - AFXDOCKINGMANAGER/CDockingManager::m_nTimeOutBeforeToolBarDock
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDockingManager [MFC], AddDockSite
 - CDockingManager [MFC], AddHiddenMDITabbedBar
@@ -167,15 +169,17 @@ helpviewer_keywords:
 - CDockingManager [MFC], m_nTimeOutBeforeDockingBarDock
 - CDockingManager [MFC], m_nTimeOutBeforeToolBarDock
 ms.assetid: 98e69c43-55d8-4f43-b861-4fda80ec1e32
-caps.latest.revision: "37"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a19688b10cb0e3b7966044c725cebb236ca30660
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2f1a436ab6bfbc5e21e43267d3992310ed6f6a20
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdockingmanager-class"></a>CDockingManager クラス
 メイン フレーム ウィンドウのドッキング レイアウトを制御するコア機能を実装します。  
@@ -267,7 +271,7 @@ class CDockingManager : public CObject
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CDockingManager::m_bHideDockingBarsInContainerMode](#m_bhidedockingbarsincontainermode)|OLE コンテナー モードのペインがドッキング マネージャーに非表示にするかどうかを指定します。|  
 |[CDockingManager::m_dockModeGlobal](#m_dockmodeglobal)|グローバルのドッキング モードを指定します。|  
@@ -307,7 +311,7 @@ class CDockingManager : public CObject
   
  [CDockingManager](../../mfc/reference/cdockingmanager-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxDockingManager.h  
   
 ##  <a name="adddocksite"></a>CDockingManager::AddDockSite  
@@ -1574,7 +1578,7 @@ static AFX_SMARTDOCK_THEME __stdcall GetSmartDockingTheme();
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   

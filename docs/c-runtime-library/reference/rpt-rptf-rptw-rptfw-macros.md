@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -39,7 +40,8 @@ f1_keywords:
 - _RPTF3
 - RPT2
 - _RPTF1
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - debugging [CRT], using macros
 - _RPTW3 macro
@@ -93,15 +95,17 @@ helpviewer_keywords:
 - RPTFW1 macro
 - RPTW1 macro
 ms.assetid: a5bf8b30-57f7-4971-8030-e773b7a1ae13
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 43efb76381db85f4f1d601cb6d83dd82074e960a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 51668f9b286a6b438d7f7b686114b2fcf70c25ed
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="rpt-rptf-rptw-rptfw-macros"></a>_RPT、_RPTF、_RPTW、_RPTFW のマクロ
 デバッグ レポートを生成してアプリケーションの進行状況を追跡します (デバッグ バージョンのみ)。 なお *n* 内の引数の数を指定`args`0、1、2、3、4、または 5 を指定できます。  
@@ -167,7 +171,7 @@ _RPTFWn(
   
  デバッグ レポートを生成するマクロが他にも 2 つ存在します。 [_ASSERT](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) マクロは、その式の引数が FALSE に評価される場合にのみ、レポートを生成します。 [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) は `_ASSERT` とまったく同じですが、生成されるレポートに失敗した式が含まれます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |マクロ|必須ヘッダー|  
 |-----------|---------------------|  
@@ -176,7 +180,7 @@ _RPTFWn(
 |`_RPTW` マクロ|\<crtdbg.h>|  
 |`_RPTFW` マクロ|\<crtdbg.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
@@ -186,5 +190,5 @@ _RPTFWn(
 ## <a name="example"></a>例  
  「[_ASSERT](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)」のトピックの例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)

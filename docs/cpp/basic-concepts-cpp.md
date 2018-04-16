@@ -1,12 +1,12 @@
 ---
-title: "基本的な概念 (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 基本的な概念 (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: 'index-page '
 dev_langs:
 - C++
@@ -17,12 +17,13 @@ caps.latest.revision: 8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: de04abfce744cfaf98d70fb75538222b5cfa55f8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3f47ef027e2ca13e02ed10f186853cb0eb6845ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="basic-concepts--c"></a>基本的な概念 (C++)
 このセクションでは、C++ の理解にとって重要な概念について説明します。 C プログラマは、これらの概念の多くをよく知っていますが、プログラムの予期しない結果を引き起こす可能性のある微妙な違いがいくつかあります。 ここでは、次のトピックについて説明します。  
@@ -45,5 +46,5 @@ ms.lasthandoff: 09/25/2017
   
 -   [単純、標準レイアウトと POD 型](../cpp/trivial-standard-layout-and-pod-types.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)

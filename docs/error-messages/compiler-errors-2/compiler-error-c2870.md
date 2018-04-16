@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2870
-dev_langs: C++
-helpviewer_keywords: C2870
+f1_keywords:
+- C2870
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2870
 ms.assetid: 80523ee9-1fd3-4dc4-8a77-5083deb99066
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 75b9189795c7351745e9624cfb9cc11259834b76
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: daf7a6d7598b8f341a2b1c413d8284ec6e56a3cb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2870"></a>コンパイラ エラー C2870
 'name': 名前空間の定義は、ファイル スコープ、またはすぐに別の名前空間の定義内に表示される必要があります  

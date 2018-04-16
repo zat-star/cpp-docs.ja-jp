@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - DBL_EPSILON constant
 - FLT_EPSILON constant
 - floating-point numbers, precision
 ms.assetid: 1acb1add-ac06-4134-a2fd-aff13d8c4c15
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ad6d78b6209b2a2d45f0d0e5874dff1271da880b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 371aad5dc573a13ca834d8d6d9667a43bb40324e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="why-floating-point-numbers-may-lose-precision"></a>浮動小数点数の精度の低下
 一般に、浮動小数点の 10 進値には正確なバイナリ表現がありません。 これは、CPU が浮動小数点データを表す方法の副作用です。 このため、有効桁数の一部が失われるが発生する可能性があり、浮動小数点演算が予期しない結果を生成可能性があります。  
@@ -70,5 +74,5 @@ They are not equal! The value of c is  2.4679999352 or 2.468000
 ## <a name="comments"></a>コメント  
  EPSILON、1.192092896e として float に対して定義されている FLT_EPSILON 定数を使用できます-07F、または倍精度 2.2204460492503131e として定義されている DBL_EPSILON-016 です。 これらの定数の float.h を含める必要があります。 これらの定数が定義されている最も小さい正の値として x 番号は、このような x + 1.0 は 1.0 に等しくします。 これは非常に小さい数であるため、非常に大きな数値に関連する計算のユーザー定義許容値を使用する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コードの最適化](../../build/reference/optimizing-your-code.md)

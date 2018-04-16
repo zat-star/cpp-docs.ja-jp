@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 ms.assetid: ff521893-f445-4dc8-a2f6-699185bb7024
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3d0b0234ea6a3f63f0730b3e0dc965f1e8c8e902
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ac578edcfab6acb59360c80794c4f2c02470b470
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltctgmathgt"></a>&lt;ctgmath&gt;
 実際には、\<tgmath.h> と同等のジェネリック型の数値演算マクロを提供する、C++ 標準ライブラリ ヘッダー \<ccomplex> と \<cmath> をインクルードします。  
@@ -34,7 +38,7 @@ ms.lasthandoff: 10/24/2017
   
  このヘッダーをインクルードすると、標準 C ライブラリ ヘッダーの外部リンケージで宣言された名前が、`std` 名前空間でも宣言されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<ccomplex>](../standard-library/ccomplex.md)   
  [\<cmath>](../standard-library/cmath.md)   
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   

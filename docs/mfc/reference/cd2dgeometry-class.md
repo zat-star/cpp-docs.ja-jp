@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -30,7 +31,8 @@ f1_keywords:
 - AFXRENDERTARGET/CD2DGeometry::Tessellate
 - AFXRENDERTARGET/CD2DGeometry::Widen
 - AFXRENDERTARGET/CD2DGeometry::m_pGeometry
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CD2DGeometry [MFC], CD2DGeometry
 - CD2DGeometry [MFC], Attach
@@ -53,15 +55,17 @@ helpviewer_keywords:
 - CD2DGeometry [MFC], Widen
 - CD2DGeometry [MFC], m_pGeometry
 ms.assetid: 3f95054b-fdb8-4e87-87f2-9fc3df7279ec
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 02a0b36d01a14b6765d8169caa1966297b759658
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3b9d8373bdf1cba1c57936dfb4d98c5401c80476
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2dgeometry-class"></a>CD2DGeometry クラス
 ID2D1Geometry のラッパーです。  
@@ -112,7 +116,7 @@ class CD2DGeometry : public CD2DResource;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CD2DGeometry::m_pGeometry](#m_pgeometry)|ID2D1Geometry へのポインター。|  
   
@@ -123,7 +127,7 @@ class CD2DGeometry : public CD2DResource;
   
  `CD2DGeometry`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="_dtorcd2dgeometry"></a>CD2DGeometry:: ~ CD2DGeometry  
@@ -556,5 +560,5 @@ BOOL Widen(
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は TRUE を返します。 それ以外の場合、FALSE を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

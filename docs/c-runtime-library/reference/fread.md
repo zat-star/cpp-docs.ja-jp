@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: fread
+ms.topic: reference
+apiname:
+- fread
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,23 +23,27 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: fread
-dev_langs: C++
+f1_keywords:
+- fread
+dev_langs:
+- C++
 helpviewer_keywords:
 - reading data [C++], from input streams
 - fread function
 - data [C++], reading from input stream
 - streams [C++], reading data from
 ms.assetid: 9a3c1538-93dd-455e-ae48-77c1e23c53f0
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a3ca6ea76bf710db5e7d758963039e7c65f31fbe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d01c3362c94b0c644cb53aec6e45ce83b98dbf07
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fread"></a>fread
 ストリームからデータを読み取ります。  
@@ -67,22 +73,22 @@ size_t fread(
  `FILE` 構造体へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- `fread`返します。 実際に読み取られた完全な項目の数、可能性のあるより小さい`count`エラーが発生した場合、またはファイルの末尾が到達する前に発生した場合`count`です。 `feof` 関数または `ferror` 関数を使用すれば、読み取りエラーとファイルの終端に達した状態とを区別できます。 `size`または `count` が 0 である場合、`fread` は 0 を返し、バッファーの内容は変更されません。 `stream` または `buffer` が null ポインターの場合、`fread` は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
+ `fread` 返します。 実際に読み取られた完全な項目の数、可能性のあるより小さい`count`エラーが発生した場合、またはファイルの末尾が到達する前に発生した場合`count`です。 `feof` 関数または `ferror` 関数を使用すれば、読み取りエラーとファイルの終端に達した状態とを区別できます。 `size`または `count` が 0 である場合、`fread` は 0 を返し、バッファーの内容は変更されません。 `stream` または `buffer` が null ポインターの場合、`fread` は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
   
- エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `fread` 関数は、入力 `stream` から、`size` バイトの `count` 項目まで読み取り、`buffer` に格納します。 `stream` に関連付けられたファイル ポインター (存在する場合) は、実際に読み取られたバイト数でインクリメントされます。 指定したストリームがテキスト モードで開かれている場合は、キャリッジ リターンとライン フィードのペアが 1 つの改行文字に置き換えられます。 この置き換えは、ファイル ポインターまたは戻り値には影響しません。 エラーが発生した場合、ファイル ポインターの位置は不確定になります。 部分的に読み取られた項目の値を特定できません。  
   
  この関数は他のスレッドをロックします。 ロックしないバージョンが必要な場合は、`_fread_nolock` を使用してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fread`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -134,7 +140,7 @@ Number of items read = 25
 Contents of buffer = zyxwvutsrqponmlkjihgfedcb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fwrite](../../c-runtime-library/reference/fwrite.md)   
  [_read](../../c-runtime-library/reference/read.md)

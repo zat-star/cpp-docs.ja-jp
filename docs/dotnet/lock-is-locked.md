@@ -1,46 +1,51 @@
 ---
-title: "lock::is_locked | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "is_locked"
-  - "msclr::lock::is_locked"
-  - "lock::is_locked"
-  - "msclr::lock.is_locked"
-  - "lock.is_locked"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lock::is_locked"
+title: "lock::is_locked |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- is_locked
+- msclr::lock::is_locked
+- lock::is_locked
+- msclr::lock.is_locked
+- lock.is_locked
+dev_langs:
+- C++
+helpviewer_keywords:
+- lock::is_locked
 ms.assetid: d888827c-8052-47c6-87a2-8c42f60a688d
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f561a56b5859f6e7d0eaedeb6e6410bd4fe64a6d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# lock::is_locked
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="lockislocked"></a>lock::is_locked
 ロックが保持されているかどうかを示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 bool is_locked();  
 ```  
   
-## 戻り値  
- ロックが保持されて`true`、別の方法で `false`。  
+## <a name="return-value"></a>戻り値  
+ `true`ロックが保持されている場合`false`それ以外の場合。  
   
-## 使用例  
- この例は、複数のスレッド間でクラスの単一のインスタンスを使用します。クラスは、データへのアクセスが各スレッドに対して一貫していることを確認するために、独自のロックを使用します。メイン アプリケーション スレッドは、ワーカー スレッドがまだ、すべてのワーカー スレッド終了まで待機が完了したタスクを定期的に確認するために、クラス インスタンスの同じロックを使用します。  
+## <a name="example"></a>例  
+ この例では、複数のスレッド間でクラスの 1 つのインスタンスで使用します。  クラスは、その内部データへのアクセスがスレッドごとに一貫していることを確認するのに自体に対するロックを使用します。  メイン アプリケーション スレッドは、ワーカー スレッドがまだ存在していて、そのタスクを完了したすべてのワーカー スレッドまで終了を待機を定期的に確認するクラスの同じインスタンスでロックを使用します。  
   
 ```  
 // msl_lock_is_locked.cpp  
@@ -115,22 +120,25 @@ int main() {
 }  
 ```  
   
-  **スレッド 3 で、カウンター \= 0**  
-**スレッド 3 で、カウンター \= 10**  
-**スレッド 5 で、カウンター \= 0**  
-**スレッド 5 で、カウンター \= 10**  
-**スレッド 4 で、カウンター \= 0**  
-**スレッド 4 で、カウンター \= 10**  
-**スレッド 7 で、カウンター \= 0**  
-**スレッド 7 で、カウンター \= 10**  
-**スレッド 6 で、カウンター \= 0**  
-**スレッド 6 で、カウンター \= 10**  
-**完了しているすべてのスレッド。**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\lock.h\>  
+```Output  
+In thread 3, Counter = 0  
+In thread 3, Counter = 10  
+In thread 5, Counter = 0  
+In thread 5, Counter = 10  
+In thread 4, Counter = 0  
+In thread 4, Counter = 10  
+In thread 7, Counter = 0  
+In thread 7, Counter = 10  
+In thread 6, Counter = 0  
+In thread 6, Counter = 10  
+All threads completed.  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\lock.h >  
   
-## 参照  
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>参照  
  [lock のメンバー](../dotnet/lock-members.md)   
- [lock::operator bool](../Topic/lock::operator%20bool.md)
+ [lock::operator bool](../dotnet/lock-operator-bool.md)

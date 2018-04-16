@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3807
 ms.assetid: 7e2b0aab-8c61-4e71-b9c1-fcaeb6a1b5ea
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5be5f1f4d28393f561eda280ab555ba58cf5a228
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: fc8e760d295cc0a4c2482449038ea09e89547425
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3807"></a>コンパイラ エラー C3807
 'type': ComImport 属性を持つクラスが 'type2' から派生できません、インターフェイスの実装のみが許可されています。  

@@ -4,13 +4,15 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - VC.Project.VCLinkerTool.OutputFile
 - /out
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - output files, name linker option
 - -OUT linker option
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - /OUT C++ linker option
 - linker [C++], output files
 ms.assetid: 976210a4-e51f-4cfb-af5e-c16344455834
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1dbf2e353ffb060a7bba2f38617e8fa86a1ab9c5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2a548e21e6bb485a326a2a9e34c6f47d968bbb6f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="out-output-file-name"></a>/OUT (出力ファイル名)
 ```  
@@ -34,7 +38,7 @@ ms.lasthandoff: 10/24/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- ここで、  
+ それぞれの文字について以下に説明します。  
   
  *ファイル名*  
  出力ファイルのユーザー指定の名前。 既定の名前に置き換えます。  
@@ -60,6 +64,6 @@ ms.lasthandoff: 10/24/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.OutputFile%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

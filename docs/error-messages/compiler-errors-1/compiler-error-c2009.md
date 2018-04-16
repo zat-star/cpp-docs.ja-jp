@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C2009 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2009 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
-f1_keywords: C2009
-dev_langs: C++
-helpviewer_keywords: C2009
+f1_keywords:
+- C2009
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2009
 ms.assetid: fe9d94ed-20a5-4d83-b9c4-60ee69d2f30a
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2bbae441d7b4c9e57a4080dd643f6563eed6c48e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c2d7e8efba4a1116d2d48e11a94d67161f3ca774
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2009"></a>コンパイラ エラー C2009
 マクロの仮引数リストで 'identifier' が 2 回以上使われています  
@@ -42,7 +48,7 @@ int main()
 ```  
   
 ## <a name="example"></a>例  
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C2009b.cpp  

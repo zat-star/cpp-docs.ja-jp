@@ -21,30 +21,17 @@ dev_langs:
 helpviewer_keywords:
 - CSacl class
 ms.assetid: 8624889b-aebc-4183-9d29-a20f07837f05
-caps.latest.revision: 22
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: bd9ef9932938cfe5ec65965b3a40116da7f43b90
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f4308211dd22c39311b4d767c4c4487d9bf23971
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="csacl-class"></a>CSacl クラス
 このクラスは、SACL (システム アクセス制御リスト) 構造体のラッパーです。  
@@ -89,17 +76,17 @@ class CSacl : public CAcl
   
  追加、削除、作成、およびから Ace を削除する指定されたクラスのメソッドを使用して、 **SACL**オブジェクト。 関連項目[AtlGetSacl](security-global-functions.md#atlgetsacl)と[AtlSetSacl](security-global-functions.md#atlsetsacl)です。  
   
- Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CAcl](../../atl/reference/cacl-class.md)  
   
  `CSacl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="addauditace"></a>CSacl::AddAuditAce  
+##  <a name="addauditace"></a>  CSacl::AddAuditAce  
  監査アクセス制御エントリ (ACE) を追加、`CSacl`オブジェクト。  
   
 ```
@@ -146,11 +133,11 @@ bool AddAuditAce(
  返します**true**に ACE が追加された場合、`CSacl`オブジェクト、 **false**エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- A`CSacl`オブジェクトには、セキュリティ イベント ログに監査レコードを生成するアクセス試行の種類を指定するアクセス制御エントリ (Ace) が含まれています。 このメソッドにそのような ACE を追加、`CSacl`オブジェクト。 2 番目の形式の`AddAuditAce`は Windows 2000 で利用可能な以降のみです。  
+ A`CSacl`オブジェクトには、セキュリティ イベント ログに監査レコードを生成するアクセス試行の種類を指定するアクセス制御エントリ (Ace) が含まれています。 このメソッドにそのような ACE を追加、`CSacl`オブジェクト。  
   
  参照してください[ACE_HEADER](http://msdn.microsoft.com/library/windows/desktop/aa374919)で設定できるさまざまなフラグの詳細については、`AceFlags`パラメーター。  
   
-##  <a name="csacl"></a>CSacl::CSacl  
+##  <a name="csacl"></a>  CSacl::CSacl  
  コンストラクターです。  
   
 ```
@@ -175,7 +162,7 @@ CSacl(const ACL& rhs) throw(...);
 ### <a name="remarks"></a>コメント  
  デストラクターは、すべてのアクセス制御エントリ (Ace) を含む、オブジェクトが取得した任意のリソースを解放します。  
   
-##  <a name="getacecount"></a>CSacl::GetAceCount  
+##  <a name="getacecount"></a>  CSacl::GetAceCount  
  アクセス制御エントリ (Ace) の数を返します、`CSacl`オブジェクト。  
   
 ```
@@ -185,7 +172,7 @@ UINT GetAceCount() const throw();
 ### <a name="return-value"></a>戻り値  
  含まれている Ace の数を返します、`CSacl`オブジェクト。  
   
-##  <a name="operator_eq"></a>CSacl::operator =  
+##  <a name="operator_eq"></a>  CSacl::operator =  
  代入演算子。  
   
 ```
@@ -199,7 +186,7 @@ CSacl& operator=(const ACL& rhs) throw(...);
 ### <a name="return-value"></a>戻り値  
  更新されたへの参照を返します`CSacl`オブジェクト。 いることを確認、 **ACL**パラメーターは実際には、システム アクセス制御リスト (SACL) および随意アクセス制御リスト (DACL) ではなくです。 アサーションが発生すると、デバッグ ビルドとリリース ビルドでは、 **ACL**パラメーターは無視されます。  
   
-##  <a name="removeace"></a>CSacl::RemoveAce  
+##  <a name="removeace"></a>  CSacl::RemoveAce  
  特定の ACE (アクセス制御エントリ) を削除、 **CSacl**オブジェクト。  
   
 ```
@@ -213,7 +200,7 @@ void RemoveAce(UINT nIndex) throw();
 ### <a name="remarks"></a>コメント  
  このメソッドはから派生[CAtlArray::RemoveAt](../../atl/reference/catlarray-class.md#removeat)です。  
   
-##  <a name="removeallaces"></a>CSacl::RemoveAllAces  
+##  <a name="removeallaces"></a>  CSacl::RemoveAllAces  
  格納されているアクセス制御エントリ (Ace) のすべてを削除、`CSacl`オブジェクト。  
   
 ```
@@ -223,10 +210,9 @@ void RemoveAllAces() throw();
 ### <a name="remarks"></a>コメント  
  削除ごと**ACE**構造体 (存在する場合)、`CSacl`オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CAcl クラス](../../atl/reference/cacl-class.md)   
- [Acl](http://msdn.microsoft.com/library/windows/desktop/aa374872)   
+ [ACLs](http://msdn.microsoft.com/library/windows/desktop/aa374872)   
  [Ace](http://msdn.microsoft.com/library/windows/desktop/aa374868)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティに関するグローバル関数](../../atl/reference/security-global-functions.md)
-

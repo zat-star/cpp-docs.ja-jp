@@ -8,7 +8,7 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - cpow
 - cpowf
@@ -33,21 +33,24 @@ f1_keywords:
 - complex/cpow
 - complex/cpowf
 - complex/copwl
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - cpow function
 - cpowf function
 - complex/cpowl function
 ms.assetid: 83fe2187-22b7-4295-ab16-4d77abdbb80b
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b8888a929380e150ad9f66e2e75caf48ccf89d21
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6b47a19b364854f207d3f1923923e64bb319f8ce
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="cpow-cpowf-cpowl"></a>cpow、cpowf、cpowl
 数値を指定された値で累乗して返します。底と指数は複素数です。 この関数には、負の実数軸に沿った指数の分岐切断線があります。  
@@ -85,15 +88,15 @@ _Lcomplex cpowl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`cpow` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは、 `cpow` は常に `_Dcomplex` 値を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|C ヘッダー|C++ ヘッダー|  
+|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
 |-------------|--------------|------------------|  
 |`cpow`、               `cpowf`、`cpowl`|\<complex.h>|\<ccomplex>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [cexp、cexpf、cexpl](../../c-runtime-library/reference/cexp-cexpf-cexpl.md)   
  [clog10、clog10f、clog10l](../../c-runtime-library/reference/clog10-clog10f-clog10l.md)   

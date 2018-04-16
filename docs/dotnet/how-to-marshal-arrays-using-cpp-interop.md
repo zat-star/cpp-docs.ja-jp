@@ -1,38 +1,42 @@
 ---
-title: "方法: C++ Interop を使用して配列をマーシャリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [C++], マーシャリング"
-  - "C++ 相互運用機能, 配列"
-  - "データ マーシャリング [C++], 配列"
-  - "相互運用 [C++], 配列"
-  - "マーシャリング [C++], 配列"
+title: "方法: C++ Interop を使用して配列をマーシャ リング |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs:
+- C++
+helpviewer_keywords:
+- arrays [C++], marshaling
+- marshaling [C++], arrays
+- interop [C++], arrays
+- C++ Interop, arrays
+- data marshaling [C++], arrays
 ms.assetid: c2b37ab1-8acf-4855-ad3c-7d2864826b14
-caps.latest.revision: 18
-caps.handback.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 526a87029f6447183988391c9b7b5a95baa8b8c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: C++ Interop を使用して配列をマーシャリングする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、Visual C\+\+ の相互運用性の 1 つのファセットについて説明します。  詳細については、「[C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)」を参照してください。  
+# <a name="how-to-marshal-arrays-using-c-interop"></a>方法: C++ Interop を使用して配列をマーシャリングする
+このトピックでは、Visual C の相互運用性のファセットの 1 つを示します。 詳細については、次を参照してください。[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)です。  
   
- 次のコード例では、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md) の \#pragma ディレクティブを使用してマネージ関数とアンマネージ関数を同じファイル内で実装していますが、これらの関数は、別個のファイルに定義された場合も同じように相互運用できます。  アンマネージ関数のみを含むファイルは、[\/clr \(共通言語ランタイムのコンパイル\)](../build/reference/clr-common-language-runtime-compilation.md) でコンパイルする必要はありません。  
+ 次のコード例、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md)個別のファイルで定義されている場合、これらの関数が同様に、相互運用が、マネージ リソースと、同じファイル内の関数をアンマネージ #pragma ディレクティブを実装します。 アンマネージ関数のみを含むファイルを使用してコンパイルする必要はありません[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)です。  
   
-## 使用例  
- マネージ配列をアンマネージ関数に渡す方法を次の例に示します。  マネージ関数は、アンマネージ関数を呼び出す前に [pin\_ptr \(C\+\+\/CLI\)](../Topic/pin_ptr%20\(C++-CLI\).md) を使用して、配列のガベージ コレクションを抑制します。  GC ヒープを指す固定されたポインターをマネージ関数に提供することにより、配列のコピーを作成する際のオーバーヘッドを回避できます。  アンマネージ関数が GC ヒープ メモリにアクセスしていることを示すために、配列のコンテンツが修正され、マネージ関数がコントロールを再開したときに変更が反映されます。  
+## <a name="example"></a>例  
+ 次の例では、マネージ配列をアンマネージ関数に渡す方法を示します。 マネージ関数を使用して[pin_ptr (C + + CLI)](../windows/pin-ptr-cpp-cli.md)を抑制する状況、アンマネージ関数を呼び出す前に、配列のガベージ コレクション。 GC ヒープにピン留めされたポインターを使用して、アンマネージ関数を提供することでは、配列のコピーを作成するオーバーヘッドを回避することができます。 アンマネージ関数は GC ヒープ メモリへのアクセス、配列の内容を変更してを変更がであるを示すために、マネージ関数が制御を再開するときに反映されます。  
   
 ```  
 // PassArray1.cpp  
@@ -89,8 +93,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- アンマネージ配列をマネージ関数に渡す方法を次の例に示します。  マネージ関数は、マネージ配列を作成して配列のコンテンツをコピーするのではなく、配列メモリに直接アクセスします。これにより、マネージ関数による変更は、アンマネージ関数がコントロールを再び取得したときにアンマネージ関数に反映されます。  
+## <a name="example"></a>例  
+ 次の例では、マネージ関数をアンマネージ配列を渡す方法を示します。 マネージ関数では、コントロールを再び獲得ときに、アンマネージ関数に反映するマネージ関数によって行われた変更が許可される直接 (ではなくマネージ配列を作成し、配列の内容をコピー) 配列のメモリにアクセスします。  
   
 ```  
 // PassArray2.cpp  
@@ -136,5 +140,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+## <a name="see-also"></a>参照  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

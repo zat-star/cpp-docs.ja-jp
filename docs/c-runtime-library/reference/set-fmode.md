@@ -1,79 +1,83 @@
 ---
-title: "_set_fmode | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_set_fmode"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-stdio-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_set_fmode"
-  - "set_fmode"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_set_fmode 関数"
-  - "ファイル変換 [C++], 既定のモード"
-  - "ファイル変換 [C++], 設定 (モードを)"
-  - "set_fmode 関数"
+title: _set_fmode | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- _set_fmode
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-stdio-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _set_fmode
+- set_fmode
+dev_langs:
+- C++
+helpviewer_keywords:
+- file translation [C++], default mode
+- _set_fmode function
+- file translation [C++], setting mode
+- set_fmode function
 ms.assetid: f80eb9c7-733b-4652-a9bc-6b3790a35f12
-caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 89917dc107971a5b58d46eb8676f094f7d7e70cb
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# _set_fmode
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-既定のファイルをファイル I\/O 操作の変換モードを設定します。  
+# <a name="setfmode"></a>_set_fmode
+ファイル入出力操作の既定のファイル変換モードを設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-errno_t _set_fmode(   
-   int mode   
+errno_t _set_fmode(   
+   int mode   
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `mode`  
- 必要なファイルの変換モード: `_O_TEXT` または `_O_BINARY`。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `mode`  
+ ファイルの変換モードを `_O_TEXT` または `_O_BINARY` に設定します。  
   
-## 戻り値  
- 、失敗の正常終了した場合はエラー コードを返します。  `mode` が `_O_TEXT` または `_O_BINARY` または `_O_WTEXT`でない場合、無効なパラメーター ハンドラーが [パラメーターの検証](../../c-runtime-library/parameter-validation.md)"に説明されているように、呼び出されます。  実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は 0 を、失敗した場合はエラー コードを返します。 `mode` が `_O_TEXT`、`_O_BINARY`、または `_O_WTEXT` でない場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
   
-## 解説  
- function set [\_fmode](../../c-runtime-library/fmode.md) のグローバル変数です。  この変数は、ファイル I\/O 操作 `_open` と `_pipe`の変換モードは既定のファイルを指定します。  
+## <a name="remarks"></a>コメント  
+ この関数は、[_fmode](../../c-runtime-library/fmode.md) グローバル変数を設定します。 この変数は、ファイル入出力操作 `_open` および `_pipe` の既定のファイル変換モードを指定します。  
   
- `_O_TEXT` と `_O_BINARY` は Fcntl.h で定義されます。  `EINVAL` は、Errno.h で定義されます。  
+ `_O_TEXT` および `_O_BINARY` は Fcntl.h で定義されています。 `EINVAL` は Errno.h で定義されています。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
-|----------|------------|----------------|  
-|`_set_fmode`|\<stdlib.h\>|\<fcntl.h、errno.h\> \<\>|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
+|-------------|---------------------|---------------------|  
+|`_set_fmode`|\<stdlib.h>|\<fcntl.h>、\<errno.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_set_fmode.c  
@@ -131,10 +135,13 @@ int main()
 }  
 ```  
   
-  **既定のモードはバイナリです**  
-**B C D ef G H I J K L**   
-## 参照  
- [\_fmode](../../c-runtime-library/fmode.md)   
- [\_get\_fmode](../../c-runtime-library/reference/get-fmode.md)   
- [\_setmode](../../c-runtime-library/reference/setmode.md)   
+```Output  
+Default Mode is binary  
+A   B   C   D   E   F   G   H   I   J   K   L     
+```  
+  
+## <a name="see-also"></a>参照  
+ [_fmode](../../c-runtime-library/fmode.md)   
+ [_get_fmode](../../c-runtime-library/reference/get-fmode.md)   
+ [_setmode](../../c-runtime-library/reference/setmode.md)   
  [テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)

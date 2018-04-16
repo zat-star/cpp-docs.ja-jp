@@ -4,33 +4,37 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: BEGIN_PARAM_MAP
-dev_langs: C++
-helpviewer_keywords: BEGIN_PARAM_MAP macro
+ms.topic: reference
+f1_keywords:
+- BEGIN_PARAM_MAP
+dev_langs:
+- C++
+helpviewer_keywords:
+- BEGIN_PARAM_MAP macro
 ms.assetid: 32f3f70e-c7c6-4b80-ab98-e02c8eb3a894
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0afb13e4d9d89f819b4f88138e8ac8cbc650c7a9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 5503e96bb25484089933f9a36186df6cc72df67a
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="beginparammap"></a>BEGIN_PARAM_MAP
 パラメーターのマップ エントリの先頭をマークします。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-BEGIN_PARAM_MAP(  
-x  
- )  
+```cpp
+BEGIN_PARAM_MAP(x)  
   
 ```  
   
@@ -44,10 +48,10 @@ x
 ## <a name="example"></a>例  
  例を参照して、 [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md)マクロです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [END_PARAM_MAP](../../data/oledb/end-param-map.md)   
  [SET_PARAM_TYPE](../../data/oledb/set-param-type.md)

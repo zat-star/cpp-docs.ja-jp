@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2945
 ms.assetid: be640257-7017-45d1-986a-9fe8caab52f3
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cff20d21e5d770f26116b3cae01dd6702ac16d1e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: dce5e327caf9979711119871809dbd02b3966f64
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2945"></a>コンパイラ エラー C2945
 明示的なインスタンス生成でテンプレート クラスの特殊化を参照していません。  

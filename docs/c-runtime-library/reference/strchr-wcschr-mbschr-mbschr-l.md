@@ -1,12 +1,13 @@
 ---
-title: "strchr、wcschr、_mbschr、_mbschr_l | Microsoft Docs"
-ms.custom: 
+title: strchr、wcschr、_mbschr、_mbschr_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
 apiname:
 - strchr
 - wcschr
@@ -25,6 +26,7 @@ apilocation:
 - ntdll.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- ntoskrnl.exe
 apitype: DLLExport
 f1_keywords:
 - _ftcschr
@@ -32,7 +34,8 @@ f1_keywords:
 - wcschr
 - _tcschr
 - _mbschr
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - strings [C++], searching
 - mbschr function
@@ -47,21 +50,23 @@ helpviewer_keywords:
 - tcschr function
 - mbschr_l function
 ms.assetid: 2639905d-e983-43b7-b885-abef32cfac43
-caps.latest.revision: "31"
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ca72da21f6d3b5699e9b4fa354f3fd280a35631f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6d9dc85eca176b47987b5b6d065a63f9798bc58e
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="strchr-wcschr-mbschr-mbschrl"></a>strchr、wcschr、_mbschr、_mbschr_l
 現在のロケールまたは指定された LC_CTYPE 変換状態カテゴリを使用し、文字列内の文字を探します。  
   
 > [!IMPORTANT]
->  `_mbschr` および `_mbschr_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbschr` および `_mbschr_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -137,7 +142,7 @@ const unsigned char *_mbschr_l(
   
  `wcschr` 関数、`_mbschr` 関数、および `_mbschr_l` 関数は、`strchr` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `wcschr` 関数の引数と戻り値はワイド文字列で、`_mbschr` 関数の引数と戻り値はマルチバイト文字列です。 `_mbschr` はマルチバイト文字シーケンスを認識します。 また、文字列が null ポインターの場合、`_mbschr` は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、`_mbschr` は `NULL` を返し、`errno` を `EINVAL` に設定します。 `strchr` および `wcschr` は、パラメーターを検証しません。 それ以外では、これらの関数の動作は同じです。  
   
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  C では、これらの関数は、最初の引数に `const` ポインターを受け取ります。 C++ では、2 つのオーバーロードを使用できます。 `const` へのポインターを受け取るオーバーロードでは、`const` へのポインターが返されます。非 `const` へのポインターを受け取るバージョンでは、非 `const` へのポインターが返されます。 マクロ`_CRT_CONST_CORRECT_OVERLOADS`場合は、両方が定義されている、`const`と非-`const`これらの関数のバージョンを利用できます。 必要な以外の場合`const`シンボルを定義する両方の C++ オーバー ロードの動作`_CONST_RETURN`です。  
   
@@ -156,7 +161,7 @@ const unsigned char *_mbschr_l(
 |`wcschr`|\<string.h> または \<wchar.h>|  
 |`_mbschr`, `_mbschr_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   

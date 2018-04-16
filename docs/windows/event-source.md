@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: vc-attr.event_source
-dev_langs: C++
+f1_keywords:
+- vc-attr.event_source
+dev_langs:
+- C++
 helpviewer_keywords:
 - event handling, attributes
 - event logs, event source
@@ -17,15 +20,18 @@ helpviewer_keywords:
 - event sources
 - event handling, creating event source
 ms.assetid: 0983e36a-6127-4fbb-8a22-8dfec6564c16
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2f7f56e8cfbc8532ad4cd4f1dcfcac4b0ad9fde5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 05371b5c2d9acd091adcbdf81d2994f205e36ef7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="eventsource"></a>event_source
 イベント ソースを作成します。  
@@ -69,20 +75,20 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  テンプレート クラスまたは構造体にイベントを含めることはできません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|**class**、 `struct`|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|**type** = `type`=**com**|  
 |**無効な属性**|なし|  
   
  詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ属性](../windows/compiler-attributes.md)   
  [event_receiver](../windows/event-receiver.md)   
  [_ _event](../cpp/event.md)   

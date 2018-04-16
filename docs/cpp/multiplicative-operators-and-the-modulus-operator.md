@@ -24,16 +24,17 @@ helpviewer_keywords:
 - multiplicative operators [C++]
 - division operator
 ms.assetid: b53ea5da-d0b4-40dc-98f3-0aa52d548293
-caps.latest.revision: 9
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: b63a36817bb0366d21fba11c5e1e4eccbcc6951f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bb6ad2396b47932f05d9404485e4b32a7e92363b
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="multiplicative-operators-and-the-modulus-operator"></a>乗算演算子と剰余演算子
 ## <a name="syntax"></a>構文  
@@ -75,7 +76,7 @@ f / 0.0
 > [!NOTE]
 >  乗算演算子によって実行される変換ではオーバーフロー条件やアンダーフロー条件が提供されないため、乗算演算の結果を変換後のオペランドの型で表すことができない場合、情報が失われる可能性があります。  
   
-## <a name="microsoft-specific"></a>Microsoft 固有の仕様 →  
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
  Microsoft C++ では、剰余式の結果は常に最初のオペランドと同じ符号になります。  
   
 **Microsoft 固有の仕様はここまで**  

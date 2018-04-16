@@ -1,57 +1,60 @@
 ---
-title: "__identifier (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__identifier"
-  - "__identifier_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__identifier keyword [C++]"
+title: "_ _identifier (c + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __identifier
+- __identifier_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- __identifier keyword [C++]
 ms.assetid: 348428af-afa7-4ff3-b571-acf874301cf2
-caps.latest.revision: 18
-caps.handback.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 4d68d21fc9436bff0e39fa474b97ec54138e15b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# __identifier (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-識別子として Visual C\+\+ キーワードを使用できます。  
+# <a name="identifier-ccli"></a>__identifier (C++/CLI)
+識別子としては、Visual C のキーワードの使用を有効にします。  
   
-## すべてのプラットフォーム  
- **構文**  
+## <a name="all-platforms"></a>すべてのプラットフォーム  
+**構文**  
   
 ```  
-  
 __identifier(  
 Visual_C++_keyword  
 )  
   
 ```  
   
- **解説**  
+**解説**  
   
- キーワードでない識別子の `__identifier` キーワードの使用は許可されますが、厳密なので、スタイルの関係しないでください。  
+使用、`__identifier`キーワードではない識別子のキーワードは許可されていますが、スタイルの問題としてお勧めします。  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
+## <a name="windows-runtime"></a>Windows ランタイム  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-### 例  
+### <a name="examples"></a>使用例  
  **例**  
   
- 次の例では、`template` というクラスを C\# で作成され、DLL として配布されます。  `template` クラスを使用する Visual C\+\+ プログラムでは、`__identifier` キーワードは `template` は標準 C\+\+ キーワードであるという事実を非表示にします。  
+ 次の例では、という名前のクラス`template`c# で作成され、DLL として配布します。 使用する Visual C プログラムで、`template`クラス、`__identifier`キーワードを非表示に、ファクトを`template`は標準の C++ キーワード。  
   
 ```  
 // identifier_template.cs  
@@ -71,18 +74,18 @@ int main() {
 }  
 ```  
   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
  **解説**  
   
- `__identifier` キーワードは **\/clr** と **\/clr:oldSyntax** のコンパイラ オプションで有効です。  
+ `__identifier`キーワードが有効では、 **/clr**コンパイラ オプション。  
   
-### 要件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-### 例  
+### <a name="examples"></a>使用例  
  **例**  
   
- 次の例では、`template` というクラスを C\# で作成され、DLL として配布されます。  `template` クラスを使用する Visual C\+\+ プログラムでは、`__identifier` キーワードは `template` は標準 C\+\+ キーワードであるという事実を非表示にします。  
+ 次の例では、という名前のクラス`template`c# で作成され、DLL として配布します。 使用する Visual C プログラムで、`template`クラス、`__identifier`キーワードを非表示に、ファクトを`template`は標準の C++ キーワード。  
   
 ```  
 // identifier_template.cs  
@@ -103,6 +106,6 @@ int main() {
 }  
 ```  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)   
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)   
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

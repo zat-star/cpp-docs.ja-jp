@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: wWinMain
-dev_langs: C++
+f1_keywords:
+- wWinMain
+dev_langs:
+- C++
 helpviewer_keywords:
 - wide characters [C++], wmain function
 - wWinMain function
 - wmain function
 ms.assetid: 41213c41-668c-40a4-8a1e-77d9eded720d
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 1a8956ec3b17892e5507e4c70c602a2a5b430566
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 721915ca5ebbc75b17771dae0804e94aa360177c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="support-for-using-wmain"></a>wmain の使用
 Visual C のサポートを定義する、 **wmain**関数を Unicode アプリケーションにワイド文字の引数を渡すことです。 仮パラメーターを宣言する**wmain**と同様の形式を使用して**メイン**です。 さらに、ワイド文字の引数と、必要であればワイド文字環境ポインターもプログラムに渡すことができます。 **wmain** の引数 `argv` と `envp` の型は `wchar_t*` です。 例:  
@@ -38,7 +43,7 @@ wmain( int argc, wchar_t *argv[ ], wchar_t *envp[ ] )
   
  プログラムが **wmain** 関数を使っている場合は、ワイド文字環境がプログラムの起動時に作成され、また `_wenviron` グローバル変数によって環境のアドレスが示されます。 最初の呼び出しで、MBCS (ASCII) 環境が作成された`_putenv`または`getenv`によって指されると、`_environ`グローバル変数。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Unicode のサポート](../text/support-for-unicode.md)   
  [Unicode プログラミングの要約](../text/unicode-programming-summary.md)   
  [WinMain 関数](http://msdn.microsoft.com/library/windows/desktop/ms633559)

@@ -1,47 +1,52 @@
 ---
-title: "marshal_context クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "marshal_context"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "marshal_context クラス [C++]"
+title: "marshal_context クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- marshal_context
+dev_langs:
+- C++
+helpviewer_keywords:
+- marshal_context class [C++]
 ms.assetid: 241b0cf6-4ca4-4812-aaee-d671c11dc034
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 9b59dfa82563a0c115f521bb881411981a30efc9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# marshal_context クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このクラスには、ネイティブ コードとマネージ環境との間でデータを変換します。  
+# <a name="marshalcontext-class"></a>marshal_context クラス
+このクラスは、ネイティブおよびマネージ環境間でデータを変換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class marshal_context  
 ```  
   
-## 解説  
- コンテキストを必要とするデータ変換に `marshal_context` クラスを使用します。  変換がコンテキストを必要とするマーシャリング ファイルが含まれ、詳細については、" [C\+\+ におけるマーシャリングの概要](../dotnet/overview-of-marshaling-in-cpp.md) を参照してください。  コンテキストを使用する場合、マーシャリングの結果は `marshal_context` オブジェクトが破棄されるまでのみ有効です。  結果を保持するために、データをコピーする必要があります。  
+## <a name="remarks"></a>コメント  
+ 使用して、`marshal_context`コンテキストを必要とするデータ変換のクラスです。 参照してください[概要の C++ におけるマーシャ リング](../dotnet/overview-of-marshaling-in-cpp.md)詳細については、どの変換コンテキストが必要にあり、マーシャ リング ファイルを含める。 マーシャ リング コンテキストを使用する場合の結果の有効期限のみ、`marshal_context`オブジェクトは破棄されます。 結果を保持するには、データをコピーする必要があります。  
   
- 同じ `marshal_context` は複数のデータ変換に使用できます。  コンテキストを再利用するには、このように前のマーシャリングの呼び出しの結果には影響しません。  
+ 同じ`marshal_context`複数のデータ変換に使用できます。 この方法でコンテキストを再利用しても、以前のマーシャ リングの呼び出しからの結果に影響はありません。  
   
-## 必要条件  
- **Header file:** \<msclr\\marshal.h、\> \<msclr\\marshal\_windows.h、\> \<msclr\\marshal\_cppstd.h、または\> \<msclr\\marshal\_atl.h\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル:** \<msclr\marshal.h >、 \<msclr\marshal_windows.h >、 \<msclr\marshal_cppstd.h >、または\<msclr\marshal_atl.h >  
   
- **名前空間:** msclr::interop  
+ **Namespace:** msclr::interop  
   
-## 参照  
- [C\+\+ におけるマーシャリングの概要](../dotnet/overview-of-marshaling-in-cpp.md)   
- [marshal\_as](../dotnet/marshal-as.md)
+## <a name="see-also"></a>参照  
+ [C++ におけるマーシャ リングの概要](../dotnet/overview-of-marshaling-in-cpp.md)   
+ [marshal_as](../dotnet/marshal-as.md)

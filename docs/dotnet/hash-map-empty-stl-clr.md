@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_map::empty
-dev_langs: C++
-helpviewer_keywords: empty member [STL/CLR]
+f1_keywords:
+- cliext::hash_map::empty
+dev_langs:
+- C++
+helpviewer_keywords:
+- empty member [STL/CLR]
 ms.assetid: 2a145e16-a48a-4304-8fa6-5b2361693083
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b0fc23e13e04604bfb1f63349140dcca23332e0d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f6888fef76d81d5ffc56447450f3c133f26bc838
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmapempty-stlclr"></a>hash_map::empty (STL/CLR)
 要素が存在しないかどうかをテストします。  
@@ -72,11 +79,11 @@ size() = 0
 empty() = True  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
  [hash_map::size (STL/CLR)](../dotnet/hash-map-size-stl-clr.md)

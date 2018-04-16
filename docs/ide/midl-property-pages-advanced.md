@@ -1,64 +1,68 @@
 ---
-title: "[詳細] ([MIDL] プロパティ ページ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCMidlTool.ErrorCheckBounds"
-  - "VC.Project.VCMidlTool.ErrorCheckStubData"
-  - "VC.Project.VCMidlTool.ErrorCheckAllocations"
-  - "VC.Project.VCMidlTool.CPreprocessOptions"
-  - "VC.Project.VCMidlTool.UndefinePreprocessorDefinitions"
-  - "VC.Project.VCMidlTool.EnableErrorChecks"
-  - "VC.Project.VCMidlTool.RedirectOutputAndErrors"
-  - "VC.Project.VCMidlTool.ErrorCheckEnumRange"
-  - "VC.Project.VCMidlTool.StructMemberAlignment"
-  - "VC.Project.VCMidlTool.ErrorCheckRefPointers"
-  - "VC.Project.VCMidlTool.ValidateParameters"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MIDL、プロパティ ページ"
+title: "[Midl] プロパティ ページ: 高度な |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCMidlTool.ErrorCheckBounds
+- VC.Project.VCMidlTool.ErrorCheckStubData
+- VC.Project.VCMidlTool.ErrorCheckAllocations
+- VC.Project.VCMidlTool.CPreprocessOptions
+- VC.Project.VCMidlTool.UndefinePreprocessorDefinitions
+- VC.Project.VCMidlTool.EnableErrorChecks
+- VC.Project.VCMidlTool.RedirectOutputAndErrors
+- VC.Project.VCMidlTool.ErrorCheckEnumRange
+- VC.Project.VCMidlTool.StructMemberAlignment
+- VC.Project.VCMidlTool.ErrorCheckRefPointers
+- VC.Project.VCMidlTool.ValidateParameters
+dev_langs:
+- C++
+helpviewer_keywords:
+- MIDL, property pages
 ms.assetid: d1c92e01-f403-4ed6-ab45-4043a3c9c6bb
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d6e7dde047c3311c6fd694a91c7a63fcfbcc95d0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# [詳細] ([MIDL] プロパティ ページ)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\[MIDL\] フォルダーの \[詳細\] プロパティ ページでは、以下の MIDL コンパイラ オプションを指定します。  
+# <a name="midl-property-pages-advanced"></a>[詳細] ([MIDL] プロパティ ページ)
+**[詳細設定]**プロパティ ページで、 **MIDL**フォルダーは、次の MIDL コンパイラ オプションを指定します。  
   
--   エラーのチェック \([\/error](http://msdn.microsoft.com/library/windows/desktop/aa367324)\)  
+-   エラー チェックを有効にする ([/error](http://msdn.microsoft.com/library/windows/desktop/aa367324))  
   
--   メモリの割り当てをチェック \([\/error](http://msdn.microsoft.com/library/windows/desktop/aa367324)\)  
+-   割り当ての確認 ([/error](http://msdn.microsoft.com/library/windows/desktop/aa367324))  
   
--   範囲のチェック \([\/error](http://msdn.microsoft.com/library/windows/desktop/aa367324)\)  
+-   範囲のチェック ([/error](http://msdn.microsoft.com/library/windows/desktop/aa367324))  
   
--   enum の範囲のチェック \([\/error](http://msdn.microsoft.com/library/windows/desktop/aa367324)\)  
+-   Enum の範囲のチェック ([/error](http://msdn.microsoft.com/library/windows/desktop/aa367324))  
   
--   参照ポインターのチェック \([\/error](http://msdn.microsoft.com/library/windows/desktop/aa367324)\)  
+-   参照ポインターをチェック ([/error](http://msdn.microsoft.com/library/windows/desktop/aa367324))  
   
--   スタブ データのチェック \([\/error](http://msdn.microsoft.com/library/windows/desktop/aa367324)\)  
+-   スタブ データを確認する ([/error](http://msdn.microsoft.com/library/windows/desktop/aa367324))  
   
--   パラメーターの有効化 \([\/robust](http://msdn.microsoft.com/library/windows/desktop/aa367363)\) \*  
+-   パラメーターを検証する ([/robust](http://msdn.microsoft.com/library/windows/desktop/aa367363)) *  
   
--   構造体メンバーのアラインメント \([\/Zp](http://msdn.microsoft.com/library/windows/desktop/aa367388)\)  
+-   構造体メンバーの配置 ([/Zp](http://msdn.microsoft.com/library/windows/desktop/aa367388))  
   
--   出力先の変更 \([\/o](http://msdn.microsoft.com/library/windows/desktop/aa367351)\)  
+-   出力にリダイレクト ([/o](http://msdn.microsoft.com/library/windows/desktop/aa367351))  
   
--   C プリプロセス オプション \([\/cpp\_opt](http://msdn.microsoft.com/library/windows/desktop/aa367318)\)  
+-   C プリプロセス オプション ([/cpp_opt](http://msdn.microsoft.com/library/windows/desktop/aa367318))  
   
--   プリプロセッサ定義の解除 \([\/U](http://msdn.microsoft.com/library/windows/desktop/aa367373)\)  
+-   プリプロセッサ定義の解除 ([/U](http://msdn.microsoft.com/library/windows/desktop/aa367373))  
   
- \* \/robust は、Windows 2000 以降のコンピューター用にビルドするときだけ使用します。  ATL プロジェクトのビルド時に \/robust を使用する場合は、dlldatax.c ファイルの以下の行を変更してください。  
+ \*/Windows 2000 またはそれ以降のコンピューターを構築するときに使用するためだけ堅牢なは。 ATL プロジェクトをビルドして使用するかどうかは/robust, dlldatax.c ファイルのこの行を変更します。  
   
 ```  
 #define _WIN32_WINNT 0x0400   //for Windows NT 4.0 or Windows 95 with DCOM  
@@ -66,9 +70,9 @@ to
 #define _WIN32_WINNT 0x0500   //for Windows NT 4.0 or Windows 95 with DCOM  
 ```  
   
- \[MIDL\] フォルダーの \[詳細\] プロパティ ページを表示する方法については、「[方法 : &#91;プロパティ ページ&#93; でプロジェクトのプロパティを指定する](../Topic/How%20to:%20Specify%20Project%20Properties%20with%20Property%20Pages.md)」を参照してください。  
+ アクセスする方法については、 **[詳細設定]**プロパティ ページで、 **MIDL**フォルダーを参照してください[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)です。  
   
- C\+\+ プロジェクト用の MIDL オプションにプログラムでアクセスする方法については、「<xref:Microsoft.VisualStudio.VCProjectEngine.VCMidlTool>」を参照してください。  
+ C++ プロジェクト用の MIDL オプションにアクセスする方法については、次を参照してください。<xref:Microsoft.VisualStudio.VCProjectEngine.VCMidlTool>です。  
   
-## 参照  
- [\[MIDL\] プロパティ ページ](../Topic/MIDL%20Property%20Pages.md)
+## <a name="see-also"></a>参照  
+ [[MIDL] プロパティ ページ](../ide/midl-property-pages.md)

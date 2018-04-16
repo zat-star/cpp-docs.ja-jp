@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - writing a parallel_for loop [Concurrency Runtime]
 - parallel_for function, example
 ms.assetid: adb4d64e-5514-4b70-8dcb-b9210e6b5a1c
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 678f5cef343157378f159157906888af517dc74a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 60ae6b7f496f86bde91801e486315587fb693436
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-write-a-parallelfor-loop"></a>方法: parallel_for ループを記述する
 この例は、使用する方法を示します[concurrency::parallel_for](reference/concurrency-namespace-functions.md#parallel_for)を 2 つの行列の積を計算します。  
@@ -54,7 +58,7 @@ parallel: 1311
   
  **cl.exe/EHsc 並列-マトリックスの multiply.cpp**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [並列アルゴリズム](../../parallel/concrt/parallel-algorithms.md)   
  [parallel_for 関数](reference/concurrency-namespace-functions.md#parallel_for)
 

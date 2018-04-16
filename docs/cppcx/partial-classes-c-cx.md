@@ -6,17 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 69d93575-636c-4564-8cca-6dfba0c7e328
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: e4f3b0186d3a7d1aa30ea71f6d80abd5d614e255
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7d6cd93a8f4d82bb5ecdc94c701d346f1331558c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="partial-classes-ccx"></a>部分クラス (C++/CX)
 部分クラスは、ユーザーがクラス定義の一部を変更するのと同時に、XAML デザイナーなどの自動コード生成ソフトウェアも同じクラスのコードを変更するようなシナリオをサポートする構造体です。 部分クラスを使用することにより、デザイナーがコードを上書きすることを防ぐことができます。 Visual Studio プロジェクトでは、生成されたファイルに `partial` 修飾子が自動的に適用されます。  
@@ -88,14 +90,14 @@ ms.lasthandoff: 10/24/2017
   
  `partial` キーワードは、 `ref class` キーワードまたは `value class` キーワードと組み合わせた場合のみサポートされます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  次の例では、2 つのコード ファイルにまたがって `Address` クラスを定義しています。 デザイナーは `Address.details.h` を変更し、ユーザーは `Address.h`を変更します。 最初のファイルのクラス定義のみ、 `partial` キーワードを使用します。  
   
  [!code-cpp[cx_partial#07](../cppcx/codesnippet/CPP/partialclassexample/address.details.h#07)]  
   
  [!code-cpp[cx_partial#09](../cppcx/codesnippet/CPP/partialclassexample/address.h#09)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型システム](../cppcx/type-system-c-cx.md)   
  [Visual C 言語リファレンス](../cppcx/visual-c-language-reference-c-cx.md)   
  [名前空間参照](../cppcx/namespaces-reference-c-cx.md)

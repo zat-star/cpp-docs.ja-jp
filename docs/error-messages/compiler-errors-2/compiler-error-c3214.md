@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C3214 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3214 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: C3214
-dev_langs: C++
-helpviewer_keywords: C3214
+f1_keywords:
+- C3214
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3214
 ms.assetid: 49ee4a9a-2549-4adb-9d3a-38e154303c2e
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6d280f500368ac7ac6ad0a987b987e1f9e57b6a5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 77485fea44e9d18f0a08b360076a1e8d1c797c1b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3214"></a>コンパイラ エラー C3214
 'type': ジェネリック 'generic_type' のジェネリック パラメーター 'param' の型引数が無効です。制約 'constraint' を満たしていません  

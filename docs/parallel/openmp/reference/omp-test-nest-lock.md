@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: omp_test_nest_lock
-dev_langs: C++
-helpviewer_keywords: omp_test_nest_lock OpenMP function
+ms.topic: reference
+f1_keywords:
+- omp_test_nest_lock
+dev_langs:
+- C++
+helpviewer_keywords:
+- omp_test_nest_lock OpenMP function
 ms.assetid: 4c909bbe-80e0-4100-aca6-d415d7dc5294
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 938a79bc164a940050dea126dc513d2f61cb9feb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8ba6791c5c5279c82715821d0d32ae7970092319
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="omptestnestlock"></a>omp_test_nest_lock
 入れ子にできるロックを設定しようとしていますが、スレッドの実行をブロックしません。  
@@ -113,5 +119,5 @@ Thread 2 - released nestable_lock
 Thread 2 - released nestable_lock  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

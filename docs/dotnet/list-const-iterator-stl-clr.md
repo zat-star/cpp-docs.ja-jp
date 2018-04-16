@@ -1,41 +1,46 @@
 ---
-title: "list::const_iterator (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::list::const_iterator"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "const_iterator メンバー [STL/CLR]"
+title: "list::const_iterator (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::list::const_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- const_iterator member [STL/CLR]
 ms.assetid: 24e19077-02d2-456e-a3f1-7caaf0b6c974
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 4927349bc0f6519bfaa2b64e8de89d8ad74a4b7b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# list::const_iterator (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="listconstiterator-stlclr"></a>list::const_iterator (STL/CLR)
 被制御シーケンスの定数反復子の型です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef T2 const_iterator;  
 ```  
   
-## 解説  
- この型は、被制御シーケンスの定数ランダム アクセス反復子として使用できる未指定の型 `T2` オブジェクトを表します。  
+## <a name="remarks"></a>コメント  
+ この型が指定されていない型のオブジェクトを表します`T2`被制御シーケンスの定数ランダム アクセス反復子として使用されることができます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_list_const_iterator.cpp   
@@ -59,12 +64,15 @@ int main()
   
 ```  
   
-  **b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/リスト\>  
+```Output  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/一覧 >  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)   
- [list::iterator](../dotnet/list-iterator-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [list::iterator (STL/CLR)](../dotnet/list-iterator-stl-clr.md)

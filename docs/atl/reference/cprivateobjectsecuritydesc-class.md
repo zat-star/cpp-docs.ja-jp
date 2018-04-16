@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,18 +16,22 @@ f1_keywords:
 - ATLSECURITY/ATL::CPrivateObjectSecurityDesc::Create
 - ATLSECURITY/ATL::CPrivateObjectSecurityDesc::Get
 - ATLSECURITY/ATL::CPrivateObjectSecurityDesc::Set
-dev_langs: C++
-helpviewer_keywords: CPrivateObjectSecurityDesc class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CPrivateObjectSecurityDesc class
 ms.assetid: 2c4bbb13-bf99-4833-912a-197f6815bb5d
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 310ccd778a0d681afad40b7dd67067c9e9af875d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e4845d652d2b1dceb8ffc0f2772f88565eb81e29
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="cprivateobjectsecuritydesc-class"></a>CPrivateObjectSecurityDesc クラス
 このクラスは、プライベート オブジェクト セキュリティ記述子オブジェクトを表します。  
@@ -59,7 +64,7 @@ class CPrivateObjectSecurityDesc : public CSecurityDesc
   
 |||  
 |-|-|  
-|[演算子 =](#operator_eq)|代入演算子。|  
+|[operator =](#operator_eq)|代入演算子。|  
   
 ## <a name="remarks"></a>コメント  
  このクラスから派生[CSecurityDesc](../../atl/reference/csecuritydesc-class.md)メソッドを作成して、プライベート オブジェクトのセキュリティ記述子の管理を提供します。  
@@ -71,10 +76,10 @@ class CPrivateObjectSecurityDesc : public CSecurityDesc
   
  `CPrivateObjectSecurityDesc`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="converttoautoinherit"></a>CPrivateObjectSecurityDesc::ConvertToAutoInherit  
+##  <a name="converttoautoinherit"></a>  CPrivateObjectSecurityDesc::ConvertToAutoInherit  
  セキュリティ記述子とそのアクセス制御リスト (Acl) を継承可能なアクセス制御エントリ (Ace) の自動適用をサポートする形式に変換するには、このメソッドを呼び出します。  
   
 ```
@@ -104,7 +109,7 @@ bool ConvertToAutoInherit(
 ### <a name="remarks"></a>コメント  
  このメソッドが随意アクセス制御の Ace が (DACL) を一覧表示するかどうかを決定しようと現在のセキュリティ記述子のシステム アクセス制御リスト (SACL) は、親のセキュリティ記述子から継承されました。 呼び出す、 [ConvertToAutoInheritPrivateObjectSecurity](http://msdn.microsoft.com/library/windows/desktop/aa376403)関数。  
   
-##  <a name="cprivateobjectsecuritydesc"></a>CPrivateObjectSecurityDesc::CPrivateObjectSecurityDesc  
+##  <a name="cprivateobjectsecuritydesc"></a>  CPrivateObjectSecurityDesc::CPrivateObjectSecurityDesc  
  コンストラクターです。  
   
 ```
@@ -124,7 +129,7 @@ CPrivateObjectSecurityDesc() throw();
 ### <a name="remarks"></a>コメント  
  デストラクターは、割り当てられているすべてのリソースを解放し、プライベート オブジェクトのセキュリティ記述子を削除します。  
   
-##  <a name="create"></a>CPrivateObjectSecurityDesc::Create  
+##  <a name="create"></a>  CPrivateObjectSecurityDesc::Create  
  このメソッドを呼び出して割り当ておよび呼び出し元のリソース マネージャーによって作成されるプライベート オブジェクトの自己相対セキュリティ記述子を初期化します。  
   
 ```
@@ -176,12 +181,12 @@ bool Create(
 ### <a name="remarks"></a>コメント  
  このメソッドを呼び出す[CreatePrivateObjectSercurity](http://msdn.microsoft.com/library/windows/desktop/aa376405)または[CreatePrivateObjectSecurityEx](http://msdn.microsoft.com/library/windows/desktop/aa446581)です。  
   
- 2 番目のメソッド、または許可する新しいオブジェクトのオブジェクトの種類の GUID を指定する Ace が継承する方法を制御するのみ以降 Windows 2000 を実行しているシステムで利用可能です。  
+ 2 番目のメソッドは、新しいオブジェクトのオブジェクトの種類の GUID を指定するか、Ace を継承する方法を制御するを許可します。  
   
 > [!NOTE]
 >  自己相対セキュリティ記述子は、連続するメモリ ブロックにすべてのセキュリティ情報を格納するセキュリティ記述子です。  
   
-##  <a name="get"></a>CPrivateObjectSecurityDesc::Get  
+##  <a name="get"></a>  CPrivateObjectSecurityDesc::Get  
  このメソッドを呼び出して、プライベート オブジェクトのセキュリティ記述子から情報を取得します。  
   
 ```
@@ -203,7 +208,7 @@ bool Get(
 ### <a name="remarks"></a>コメント  
  セキュリティ記述子には、構造と関連データがセキュリティ保護可能なオブジェクトのセキュリティ情報が含まれています。  
   
-##  <a name="operator_eq"></a>CPrivateObjectSecurityDesc::operator =  
+##  <a name="operator_eq"></a>  CPrivateObjectSecurityDesc::operator =  
  代入演算子。  
   
 ```
@@ -217,7 +222,7 @@ CPrivateObjectSecurityDesc& operator= (const CPrivateObjectSecurityDesc& rhs) th
 ### <a name="return-value"></a>戻り値  
  更新されたを返します`CPrivateObjectSecurityDesc`オブジェクト。  
   
-##  <a name="set"></a>CPrivateObjectSecurityDesc::Set  
+##  <a name="set"></a>  CPrivateObjectSecurityDesc::Set  
  プライベートのオブジェクトのセキュリティ記述子を変更するには、このメソッドを呼び出します。  
   
 ```
@@ -255,9 +260,9 @@ bool Set(
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- 2 番目のメソッド、または許可するオブジェクトのオブジェクトの種類の GUID を指定する Ace が継承する方法を制御するのみ以降 Windows 2000 を実行しているシステムで利用可能です。  
+ 2 番目のメソッドは、オブジェクトのオブジェクトの種類の GUID を指定するか、Ace を継承する方法の制御を許可します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SECURITY_DESCRIPTOR](http://msdn.microsoft.com/library/windows/desktop/aa379561)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティのグローバル関数](../../atl/reference/security-global-functions.md)   

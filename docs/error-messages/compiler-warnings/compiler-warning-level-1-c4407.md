@@ -1,38 +1,42 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4407 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4407"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4407"
+title: コンパイラの警告 (レベル 1) C4407 |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
+ms.topic: error-reference
+f1_keywords:
+- C4407
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4407
 ms.assetid: 32bc2c21-363a-4bb8-b486-725faeaededc
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 736b5f99115d6e2a39ee77005c7b3248ac191453
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4407
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ポインターとメンバー間で異なる表示がキャストされました。コンパイラは正しくないコードを生成する可能性があります。  
+# <a name="compiler-warning-level-1-c4407"></a>コンパイラの警告 (レベル 1) C4407
+メンバーに対して異なるポインターの間でキャスト、コンパイラは正しくないコードを生成可能性があります。  
   
- 不正なキャストが見つかりました。  
+ 不正なキャストが検出されました。  
   
- C4407 は、Visual C\+\+ 2005 で行ったコンパイラ準拠作業のために生成されることもあります。  メンバーへのポインターには、修飾名とアドレス演算子を必要と&しています。  
+ Visual C 2005 で行われたコンパイラ準拠作業により C4407 で生成されることができます。 修飾名とアドレス演算子に今すぐメンバーへのポインターが必要です (&)。  
   
- C4407 は、多重継承のメンバーへのポインターから単一継承のメンバーへのポインターにキャストした場合に発生することがあります。  このようなキャストが正常に動作する場合もありますが、単一継承のメンバーへのポインター表現では十分な情報を保持できないためにエラーになることもあります。  **\/vmm** を指定してコンパイルすると解決されることがあります \(詳細については、「[\/vmm、\/vms、\/vmv \(通常の最適化\)](../../build/reference/vmm-vms-vmv-general-purpose-representation.md)」を参照してください\)。  基本クラスを再配置してみることもできます。基本クラスは派生クラスから非ゼロのオフセット位置に置かれるため、変換で失われた情報が検知されます。  
+ C4407 は、間、複数の継承ポインター メンバーへの単一継承にメンバーのポインターにキャストする場合に発生することができます。 場合によっては有効しますが、できない場合があります単一継承メンバーへのポインター表現が十分な情報を保持しないため。 コンパイルする、 **/vmm 最適化**役立つ場合があります (詳細については、次を参照してください。 [/vmm の最適化、/vms、/vmv (通常)](../../build/reference/vmm-vms-vmv-general-purpose-representation.md))。 試すこともできます。 基本クラスを再配置コンパイラは基本クラスが派生クラスから 0 以外のオフセットであるために、変換に情報の損失検出します。  
   
- 次の例では警告 C4407 が生成されます。  
+ 次の例では、C4407 が生成されます。  
   
 ```  
 // C4407.cpp  

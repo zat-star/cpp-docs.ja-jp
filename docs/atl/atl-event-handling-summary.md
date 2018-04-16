@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: event handling, implementing
+dev_langs:
+- C++
+helpviewer_keywords:
+- event handling, implementing
 ms.assetid: e8b47ef0-0bdc-47ff-9dd6-34df11dde9a2
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8c4aec5679ae7a880bd5305037e880de9ff7d93a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cb863f334c00569ef849167cc39d365e0588f666
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-event-handling-summary"></a>ATL イベント処理の概要
 一般に、COM イベントの処理は、比較的単純なプロセスです。 次の 3 つの主要なステップがあります。  
@@ -34,10 +39,10 @@ ms.lasthandoff: 10/24/2017
   
 |を派生します。|インターフェイスの種類に適した|すべてのメソッド * を実装する必要があります。|実行時にタイプ ライブラリが必要です。|  
 |-----------------|---------------------------------|---------------------------------------------|-----------------------------------------|  
-|インターフェイス|Vtable|はい|いいえ|  
-|[IDispatchImpl](../atl/reference/idispatchimpl-class.md)|デュアル|はい|はい|  
-|[IDispEventImpl](../atl/reference/idispeventimpl-class.md)|ディスパッチ インターフェイス|いいえ|はい|  
-|[されます](../atl/reference/idispeventsimpleimpl-class.md)|ディスパッチ インターフェイス|いいえ|いいえ|  
+|インターフェイス|Vtable|[はい]|×|  
+|[IDispatchImpl](../atl/reference/idispatchimpl-class.md)|デュアル|[はい]|[はい]|  
+|[IDispEventImpl](../atl/reference/idispeventimpl-class.md)|ディスパッチ インターフェイス|×|[はい]|  
+|[されます](../atl/reference/idispeventsimpleimpl-class.md)|ディスパッチ インターフェイス|×|×|  
   
  \*実装に必要なことはありません ATL サポート クラスを使用する場合、 **IUnknown**または`IDispatch`メソッド手動でします。  
   
@@ -53,7 +58,7 @@ ms.lasthandoff: 10/24/2017
 |[CComCompositeControl::AdviseSinkMap(TRUE)](../atl/reference/ccomcompositecontrol-class.md#advisesinkmap)|[CComCompositeControl::AdviseSinkMap(FALSE)](../atl/reference/ccomcompositecontrol-class.md#advisesinkmap)|複合コントロールでの ActiveX コントロール |いいえ |`CComCompositeControl::AdviseSinkMap`イベント シンク マップのすべてのエントリが示されます。 同じ関数では、エントリをアドバイズです。 このメソッドはによって自動的に、`CComCompositeControl`クラスです |。  
 |[CAxDialogImpl::AdviseSinkMap(TRUE)](../atl/reference/caxdialogimpl-class.md#advisesinkmap)|[CAxDialogImpl::AdviseSinkMap(FALSE)](../atl/reference/caxdialogimpl-class.md#advisesinkmap)|ダイアログ ボックスでの ActiveX コントロール |いいえ |`CAxDialogImpl::AdviseSinkMap`アドバイスを提供し、ダイアログ リソース内のすべての ActiveX コントロールをアドバイズです。 これは、自動的にする |。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イベント処理](../atl/event-handling-and-atl.md)   
  [IDispEventImpl のサポート](../atl/supporting-idispeventimpl.md)
 

@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.appwiz.importwiz.location
-dev_langs: C++
+f1_keywords:
+- vc.appwiz.importwiz.location
+dev_langs:
+- C++
 ms.assetid: 29ddffb9-5918-4d72-8c7a-a365f9de96dd
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 36b20340da6cae933acb0650b3e073e3835a0204
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 04f73f89745f797658029eac2331d1764af4c065
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="specify-project-location-and-source-files-create-new-project-from-existing-code-files-wizard"></a>[プロジェクトの場所とソース ファイルの指定] (既存コード ファイルからの新しいプロジェクトの作成ウィザード)
 指定するには、既存のコード ファイルからの新しいプロジェクトの作成ウィザードのこのページを使用します。  
@@ -61,4 +66,4 @@ ms.lasthandoff: 10/24/2017
  指定されたファイル拡張子を基に新しいプロジェクトに、ウィザードを追加するファイルの種類を指定します。 ファイル拡張子は、アスタリスクのワイルドカード文字が付きます。 とはファイル拡張子の一覧で、セミコロンで区切られます。  
   
  **ソリューション エクスプ ローラーですべてのファイルを表示します。**  
- 新しいプロジェクトに参照および表示にするソリューション エクスプ ローラー ウィンドウのすべてのファイルを指定します。 このオプションの既定値はオンです。
+ 新しいプロジェクトに参照および表示にするソリューション エクスプ ローラー ウィンドウのすべてのファイルを指定します。 既定では、このオプションは有効になっています。

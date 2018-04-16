@@ -18,30 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - CComClassFactory class
 ms.assetid: e56dacf7-d5c4-4c42-aef4-a86d91981a1b
-caps.latest.revision: 20
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: a0c1c115bfffa1de9a2a8c91c5268de66c68e7cd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2af57c666cf2ee452d2707045d259ada695a2848
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomclassfactory-class"></a>CComClassFactory クラス
 このクラスは、実装、 [IClassFactory](http://msdn.microsoft.com/library/windows/desktop/ms694364)インターフェイスです。  
@@ -68,7 +55,7 @@ class CComClassFactory
   
  ATL オブジェクトから派生することで、クラス ファクトリを取得する通常[CComCoClass](../../atl/reference/ccomcoclass-class.md)です。 このクラスには、マクロが含まれています。 [DECLARE_CLASSFACTORY](aggregation-and-class-factory-macros.md#declare_classfactory)、宣言`CComClassFactory`既定のクラス ファクトリとして。 この既定をオーバーライドするには、いずれかを指定、 `DECLARE_CLASSFACTORY` *XXX*クラスの定義でマクロです。 たとえば、 [DECLARE_CLASSFACTORY_EX](aggregation-and-class-factory-macros.md#declare_classfactory_ex)マクロは、クラス ファクトリの指定したクラスを使用します。  
   
- [!code-cpp[NVC_ATL_COM 8](../../atl/codesnippet/cpp/ccomclassfactory-class_1.h)]  
+ [!code-cpp[NVC_ATL_COM#8](../../atl/codesnippet/cpp/ccomclassfactory-class_1.h)]  
   
  上記のクラス定義を指定する**CMyClassFactory**オブジェクトの既定のクラス ファクトリとして使用されます。 **CMyClassFactory**から派生する必要があります`CComClassFactory`オーバーライドと`CreateInstance`です。  
   
@@ -80,7 +67,7 @@ class CComClassFactory
   
 - [DECLARE_CLASSFACTORY_SINGLETON](aggregation-and-class-factory-macros.md#declare_classfactory_singleton)使用[CComClassFactorySingleton](../../atl/reference/ccomclassfactorysingleton-class.md)を構築する 1 つ[CComObjectGlobal](../../atl/reference/ccomobjectglobal-class.md)オブジェクト。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="createinstance"></a>CComClassFactory::CreateInstance  
@@ -122,8 +109,7 @@ STDMETHOD(LockServer)(BOOL fLock);
   
  呼び出す`LockServer`クライアントを複数のオブジェクトをすばやく作成できるように、クラス ファクトリを保持できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CComObjectRootEx クラス](../../atl/reference/ccomobjectrootex-class.md)   
  [CComGlobalsThreadModel](atl-typedefs.md#ccomglobalsthreadmodel)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3373
-dev_langs: C++
-helpviewer_keywords: C3373
+f1_keywords:
+- C3373
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3373
 ms.assetid: 6e7586c3-1a15-4773-ad20-f90090a400dc
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 641842664228bdbf9442c50cf5233332e05534c8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5de888c83ca91d9e05cd5521d487f9c8d4e3492f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3373"></a>コンパイラ エラー C3373
 属性 'attribute' はコクラス以外で引数を必要としません  

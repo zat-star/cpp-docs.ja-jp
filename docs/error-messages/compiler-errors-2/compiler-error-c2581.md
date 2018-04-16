@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2581
 ms.assetid: 24a4e4c1-24d3-4e42-b760-7dcaf9740b16
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 591db0c4da45677205b8999d5661d44f12be5cb5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 205d972237a71a05839dbc4236d248a11e6ee53d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2581"></a>コンパイラ エラー C2581
 'type': 静的 ' 演算子 = =' 関数は無効です  

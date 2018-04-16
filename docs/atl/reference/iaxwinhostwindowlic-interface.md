@@ -10,24 +10,25 @@ ms.tgt_pltfrm:
 ms.topic: reference
 f1_keywords:
 - IAxWinHostWindowLic
-- No header/ATL::IAxWinHostWindowLic
-- No header/ATL::CreateControlLic
-- No header/ATL::CreateControlLicEx
+- ATLIFACE/ATL::IAxWinHostWindowLic
+- ATLIFACE/ATL::CreateControlLic
+- ATLIFACE/ATL::CreateControlLicEx
 dev_langs:
 - C++
 helpviewer_keywords:
 - IAxWinHostWindowLic interface
 ms.assetid: 750f1520-6bce-428c-aca0-fccbe3f063c7
-caps.latest.revision: 19
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 61bd50d5602812cc70ccc3201e9df255f469604a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 6d0e8c0a8ec941c7a7980b81fcd95df08298ea28
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iaxwinhostwindowlic-interface"></a>IAxWinHostWindowLic インターフェイス
 このインターフェイスは、ライセンスされたコントロールとそのホスト オブジェクトを操作するためのメソッドを提供します。  
@@ -52,7 +53,7 @@ interface IAxWinHostWindowLic : IAxWinHostWindow
   
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)のこのインターフェイスのメンバーを使用するサンプルです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  このインターフェイスの定義は、次のように idl ファイルまたは C++ として使用できます。  
   
 |定義の型|ファイル|  
@@ -106,7 +107,6 @@ STDMETHOD(CreateControlLicEx)(
   
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用するサンプルの`IAxWinHostWindowLic::CreateControlLicEx`します。
-
 
 
 

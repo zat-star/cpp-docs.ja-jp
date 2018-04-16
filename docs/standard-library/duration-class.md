@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - chrono/std::chrono::duration
 - chrono/std::chrono::duration::duration
@@ -18,30 +18,19 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 06b863b3-65be-4ded-a72e-6e1eb1531077
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: f3376d8c03608fde5a2a614bf0a3058fd8692800
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+helpviewer_keywords:
+- std::chrono [C++], duration
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 742c6acf9f404275fbf9c74a55abd661224d5bc6
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="duration-class"></a>duration クラス
 2 つの時点の間における経過時間である *time interval* を保持する型を表します。  
@@ -73,7 +62,7 @@ class duration <duration<Rep, Period1>, Period2>;
   
 |名前|説明|  
 |----------|-----------------|  
-|[期間](#duration)|`duration` オブジェクトを構築します。|  
+|[duration](#duration)|`duration` オブジェクトを構築します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -81,8 +70,8 @@ class duration <duration<Rep, Period1>, Period2>;
 |----------|-----------------|  
 |[count](#count)|時間間隔内でのクロック ティック数を返します。|  
 |[max](#max)|静的。 テンプレート パラメーター `Ref` の最大許容値を返します。|  
-|[min](#min)|静的。 テンプレート パラメーター `Ref` の最小許容値を返します。|  
-|[0](#zero)|静的。 実際には、`Rep`(0) を返します。|  
+|[分](#min)|静的。 テンプレート パラメーター `Ref` の最小許容値を返します。|  
+|[zero](#zero)|静的。 実際には、`Rep`(0) を返します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -98,7 +87,7 @@ class duration <duration<Rep, Period1>, Period2>;
 |[duration::operator+=](#op_add_eq)|指定した `duration` オブジェクトのティック カウントを、格納されたティック カウントに加算します。|  
 |[duration::operator-=](#operator-_eq)|指定した `duration` オブジェクトのティック カウントを、格納されたティック カウントから減算します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<chrono >  
   
  **名前空間:** std::chrono  
@@ -149,7 +138,7 @@ constexpr duration(const duration<Rep2, Period2>& Dur);
   
  `D2` を浮動小数点型として処理できず、[ratio_divide\<D1::period, D2::period>::type::den](../standard-library/ratio.md) が 1 ではない場合、duration 型の `D1` は、別の duration 型の `D2` と*通約可能*になります。  
   
- `Rep2` が暗黙的に `rep` に変換可能ではなく、`treat_as_floating_point<rep>` が *true を保持*していないか、`treat_as_floating_point<Rep2>` が *false を保持*していない場合、2 番目のコンストラクターはオーバーロードの解決に関与しません。 詳しくは、「[<type_traits>](../standard-library/type-traits.md)」をご覧ください。  
+ `Rep2` が暗黙的に `rep` に変換可能ではなく、`treat_as_floating_point<rep>` が *true を保持*していないか、`treat_as_floating_point<Rep2>` が *false を保持*していない場合、2 番目のコンストラクターはオーバーロードの解決に関与しません。 詳細については、「[<type_traits>](../standard-library/type-traits.md)」を参照してください。  
   
  変換でオーバーフローが発生して `treat_as_floating_point<rep>` が *true を保持*していない場合、または両方の `ratio_divide<Period2, period>::den` が 1 ではなく `treat_as_floating_point<Rep2>` が *false を保持*していない場合、3 番目のコンストラクターはオーバーロードの解決に関与しません。 詳しくは、「[<type_traits>](../standard-library/type-traits.md)」をご覧ください。  
   
@@ -308,8 +297,7 @@ duration& operator%=(const rep& Div);duration& operator%=(const duration& Div);
 ### <a name="remarks"></a>コメント  
  最初のメンバー関数では、格納されたティック カウント剰余の Div を減算し、*this を返します。 最初のメンバー関数では、格納されたティック カウント剰余の Div.count() を減算し、\*this を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<chrono>](../standard-library/chrono.md)   
  [duration_values 構造体](../standard-library/duration-values-structure.md)
-

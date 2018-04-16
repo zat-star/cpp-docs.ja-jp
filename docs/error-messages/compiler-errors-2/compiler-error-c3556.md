@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -15,38 +15,63 @@ dev_langs:
 helpviewer_keywords:
 - C3556
 ms.assetid: 9b002dcc-494e-414f-9587-20c2a0a39333
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: d4612c76c662cb1f271e2c85c9403bf957e72dbc
-ms.lasthandoff: 04/12/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4cff9466ff006f303913f52101db57708020ed8c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3556"></a>コンパイラ エラー C3556
-'expression': 'decltype' の引数が正しくありません  
   
- コンパイラは `decltype(``expression``)` 型指定子への引数である式の型を推測できません。 次のコード例では、 `myFunction` がオーバーロードされているため、コンパイラは `myFunction` 引数の型を推定できません。  
+> '*式*': 'decltype' の引数が正しくありません  
   
-```  
-void myFunction();  
+コンパイラは `decltype(`*expression*`)` 型指定子への引数である式の型を推測できません。  
+  
+## <a name="example"></a>例  
+  
+次のコード例では、 `myFunction` がオーバーロードされているため、コンパイラは `myFunction` 引数の型を推定できません。 この問題を解決する可能性がありますを使用する`static_cast`特定へのポインターのインスタンスを作成するでを指定する関数をオーバー ロード、`decltype`式。  
+  
+```cpp  
+// C3556.cpp
+// compile with: cl /W4 /EHsc C3556.cpp
+#include <iostream>
+
 void myFunction(int);  
-decltype(myFunction); // C3556  
+void myFunction(float, float); 
+
+void callsMyFunction(decltype(myFunction) fn); // C3556
+// One way to fix is to comment out the line above, and
+// use static_cast to create specialized function pointer 
+// instances:
+auto myFunctionInt = static_cast<void(*)(int)>(myFunction);
+auto myFunctionFloatFloat = static_cast<void(*)(float,float)>(myFunction);
+void callsMyFunction(decltype(myFunctionInt) fn, int n);
+void callsMyFunction(decltype(myFunctionFloatFloat) fn, float f, float g);
+
+void myFunction(int i) { 
+    std::cout << "called myFunction(" << i << ")" << std::endl; 
+} 
+
+void myFunction(float f, float g) { 
+    std::cout << "called myFunction(" << f << ", " << g << ")" << std::endl; 
+}  
+
+void callsMyFunction(decltype(myFunctionInt) fn, int n) {
+    fn(n);
+}
+
+void callsMyFunction(decltype(myFunctionFloatFloat) fn, float f, float g) {
+    fn(f, g);
+}
+
+int main() {
+    callsMyFunction(myFunction, 42);
+    callsMyFunction(myFunction, 0.1f, 2.3f);
+}
 ```

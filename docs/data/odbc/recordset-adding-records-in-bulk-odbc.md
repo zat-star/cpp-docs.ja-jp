@@ -1,47 +1,52 @@
 ---
-title: "レコードセット: レコードを大量に追加する方法 (ODBC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "バルク レコードの追加 (レコードセットへの)"
-  - "ODBC レコードセット, 追加 (レコードを)"
-  - "レコードセット, 追加 (レコードを)"
+title: "レコード セット: バルク (ODBC) レコードを追加する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- ODBC recordsets, adding records
+- recordsets, adding records
+- bulk record additions to recordsets
 ms.assetid: 4685f656-14b9-4f10-a1c5-147b2b89a0b4
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 251d2fa4b7c28c1458fdc5643c9b17c53ba1b0ee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# レコードセット: レコードを大量に追加する方法 (ODBC)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="recordset-adding-records-in-bulk-odbc"></a>レコードセット: レコードを大量に追加する方法 (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
   
- MFC [CRecordset](../Topic/CRecordset%20Class.md) クラスには最適化機能が組み込まれているため、大量の新しいレコードを効率的にテーブルに追加できます。  
+ MFC [CRecordset](../../mfc/reference/crecordset-class.md)クラスにはテーブルに一括で新しいレコードを追加するときに、効率を向上させる新しい最適化します。  
   
 > [!NOTE]
->  このトピックの内容は、バルク行フェッチが実装されていない `CRecordset` の派生オブジェクトを対象にしています。  バルク行フェッチを使用する場合は、「[レコードセット : バルク行フェッチ \(ODBC\)](../Topic/Recordset:%20Fetching%20Records%20in%20Bulk%20\(ODBC\).md)」を参照してください。  
+>  このトピックの内容は、バルク行フェッチが実装されていない `CRecordset` の派生オブジェクトを対象にしています。 バルク行フェッチを使用している場合は、次を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
   
- [CRecordset::Open](../Topic/CRecordset::Open.md) メンバー関数の **dwOptions** パラメーターには、新しいオプションとして **optimizeBulkAdd** があります。このオプションを使うと、**Requery** や **Close** を呼び出さずに、複数のレコードを連続して効率的に追加できます。  最初の **Update** 呼び出しの前からダーティなフィールドだけが、以降の `AddNew` または **Update** の呼び出しでもダーティとしてマークされます。  
+ 新しいオプション、 **dwOptions**パラメーターを[:open](../../mfc/reference/crecordset-class.md#open)メンバー関数は、 **optimizeBulkAdd**、複数のレコードを追加するときにパフォーマンスが向上呼び出さずに連続して**Requery**または**閉じる**です。 1 つ目の前にダーティであるフィールドだけ**更新**呼び出しが後続のダーティとマークされて`AddNew` /**更新**呼び出しです。  
   
- レコードを追加、編集、削除するときに、データベース クラスを通じて ODBC API 関数 **::SQLSetPos** を使う場合は、この最適化処理は不要です。  
+ データベース クラスを活用するために使用するかどうか、 **:: SQLSetPos** ODBC API 関数の追加、編集、およびレコードを削除するには、この最適化は必要ありません。  
   
- ODBC カーソル ライブラリを読み込んでいる場合、または ODBC ドライバーが **::SQLSetPos** による追加、編集、および削除をサポートしていない場合は、この最適化処理によって大量のレコードを効率的に追加できます。  この最適化処理を有効にするには、レコードセットの **Open** 呼び出しの **dwOptions** パラメーターを次のように設定します。  
+ ODBC カーソル ライブラリが読み込まれる、または ODBC ドライバーでは、追加もサポートされていません、編集、および削除**:: SQLSetPos**、この最適化のパフォーマンスを追加します。 この最適化を有効にするには設定、 **dwOptions**内のパラメーター、**開く**レコード セットには、次の呼び出し。  
   
 ```  
 appendOnly | optimizeBulkAdd  
 ```  
   
-## 参照  
- [レコードセット \(ODBC\)](../../data/odbc/recordset-odbc.md)   
- [レコードセット: レコードの追加、更新、削除 \(ODBC\)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)   
- [レコードセット: レコードのロック \(ODBC\)](../../data/odbc/recordset-locking-records-odbc.md)
+## <a name="see-also"></a>参照  
+ [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
+ [レコード セット: 追加、更新、および削除 (Odbc)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)   
+ [レコードセット: レコードのロック (ODBC)](../../data/odbc/recordset-locking-records-odbc.md)

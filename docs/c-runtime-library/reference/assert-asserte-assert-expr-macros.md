@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,7 +25,8 @@ f1_keywords:
 - ASSERTE
 - _ASSERT
 - _ASSERT_EXPR
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - debugging [CRT], using macros
 - _ASSERTE macro
@@ -33,15 +35,17 @@ helpviewer_keywords:
 - _ASSERT macro
 - _ASSERT_EXPR macro
 ms.assetid: e98fd2a6-7f5e-4aa8-8fe8-e93490deba36
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 44141622fa2fa760338109820ad185fb4e1e3ecf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b5dae684d922287c1301338ed3a59844ff6313ac
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="assert-asserte-assertexpr-macros"></a>_ASSERT、_ASSERTE、_ASSERT_EXPR マクロ
 式を評価し、結果が `False` の場合に、デバッグ レポートを生成します (デバッグ バージョンのみ)。  
@@ -92,7 +96,7 @@ _ASSERTE(
   
  `_ASSERT_EXPR`、`_ASSERT`、`_ASSERTE` はそれぞれマクロであり、\<crtdbg.h> を組み込むことによって使用可能になりますが、`_DEBUG` が定義されるときに、アプリケーションは、C ランタイム ライブラリのデバッグ バージョンとリンクする必要があります。これらのマクロは、他のランタイム関数を呼び出すからです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |マクロ|必須ヘッダー|  
 |-----------|---------------------|  
@@ -173,7 +177,7 @@ crt_ASSERT_macro.c(59) : Assertion failed: p1 == p2
 'I am p1' != 'I am p2'  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   
  [assert マクロ、_assert、_wassert](../../c-runtime-library/reference/assert-macro-assert-wassert.md)   
  [_RPT、_RPTF、_RPTW、_RPTFW のマクロ](../../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md)

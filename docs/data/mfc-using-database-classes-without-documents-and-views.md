@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ODBC applications [C++], without views
 - documents [C++], applications without
@@ -24,15 +26,18 @@ helpviewer_keywords:
 - database applications [C++], without documents
 - user interface [C++], drawing information
 ms.assetid: 15bf52d4-91cf-4b1d-8b37-87c3ae70123a
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 89c8c1d67a8273b542c088783e4b5121038c9fc2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 1691d1f90201b25cc53cd07e80626e98c447e66b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-using-database-classes-without-documents-and-views"></a>MFC: ドキュメントとビューを用いないデータベース クラスの使用
 場合があります、データベース アプリケーションのフレームワークのドキュメント/ビュー アーキテクチャを使用しない場合があります。 このトピックでは、次の内容について説明します。  
@@ -119,5 +124,5 @@ CYourNameApp theApp;
   
 -   レコード セット オブジェクトを使用して、ドキュメントまたはビューのコンテキスト内と同様です。 メンバーに、アプリケーションまたはフレーム ウィンドウ オブジェクトの関数に対応するレコード セットを作成します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC データベース クラス](../data/mfc-database-classes-odbc-and-dao.md)

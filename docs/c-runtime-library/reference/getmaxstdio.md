@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _getmaxstdio
+ms.topic: reference
+apiname:
+- _getmaxstdio
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,22 +26,25 @@ apitype: DLLExport
 f1_keywords:
 - _getmaxstdio
 - getmaxstdio
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - files [C++], number open
 - _getmaxstdio function
 - getmaxstdio function
 - open files, getting number
 ms.assetid: 700ca8ce-4a8c-4e00-9467-dfa9d6b831a0
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: db700e385fe59d5ff6cc7448c17444cb2b0e8796
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 89a7e989406e5726d0ad5a2a42eaa2198dee6b72
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getmaxstdio"></a>_getmaxstdio
 ストリーム入出力のレベルで許可されている、同時に開かれたファイルの数を返します。  
@@ -56,13 +61,13 @@ int _getmaxstdio( void );
 ## <a name="remarks"></a>コメント  
  [_setmaxstdio](../../c-runtime-library/reference/setmaxstdio.md) を使用して、`stdio` のレベルで許可される、同時に開けるファイル数を設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_getmaxstdio`|\<stdio.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -89,5 +94,5 @@ int main()
 2048  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)

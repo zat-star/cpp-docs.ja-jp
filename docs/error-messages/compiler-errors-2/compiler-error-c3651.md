@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3651
-dev_langs: C++
-helpviewer_keywords: C3651
+f1_keywords:
+- C3651
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3651
 ms.assetid: a03e692e-c219-4654-9827-8415cfa5a22d
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 74188570b1a049b6945c183ab950aebbc4ca30a7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ec89bd879bb4e54ec55206e4decfc1ecfb067afb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3651"></a>コンパイラ エラー C3651
 'member': 明示的なオーバーライドとして使用することはできません、基底クラスのメンバーである必要があります  

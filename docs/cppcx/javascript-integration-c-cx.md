@@ -1,22 +1,29 @@
 ---
-title: "JavaScript 統合 (C++/CX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/30/2016"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "JavaScript 統合 (C + + CX) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 01/18/2018
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: language-reference
 ms.assetid: 5b3b4406-e20e-4c40-9d1d-5dcd860beeac
-caps.latest.revision: 7
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7b249bba4cdf409988431e48fd85d3d306c0f976
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/21/2018
 ---
-# JavaScript 統合 (C++/CX)
-「[Windows ランタイム コンポーネントの作成](http://msdn.microsoft.com/library/9a6b8f0a-7d5e-40a0-a9c5-a59b4908e133)」を参照してください。  
-  
-## 参照  
- [その他の言語との相互運用](../cppcx/interoperating-with-other-languages-c-cx.md)
+# <a name="javascript-integration-ccx"></a>JavaScript 統合 (C++/CX)
+
+詳細については、次を参照してください。 [C++ での Windows ランタイム コンポーネントの作成](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)です。
+
+## <a name="see-also"></a>関連項目
+
+[その他の言語と相互運用](../cppcx/interoperating-with-other-languages-c-cx.md)  

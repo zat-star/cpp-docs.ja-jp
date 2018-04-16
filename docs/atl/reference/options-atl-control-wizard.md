@@ -1,93 +1,98 @@
 ---
-title: "オプション、ATL コントロール ウィザード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "vc.codewiz.class.atl.control.options"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL コントロール ウィザード、オプション"
+title: "オプション、ATL コントロール ウィザード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- vc.codewiz.class.atl.control.options
+dev_langs:
+- C++
+helpviewer_keywords:
+- ATL Control Wizard, options
 ms.assetid: 4607c51a-992d-433e-9281-919c6f519a3d
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 60cc90ca5d5c374c223f9fe350d1a6a7357329ee
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# オプション、ATL コントロール ウィザード
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ここに "検索結果" の概要を挿入します。  
+# <a name="options-atl-control-wizard"></a>オプション、ATL コントロール ウィザード
+「検索結果」の概要をここに挿入します。  
   
- ウィザードのこのページを使用して、作成するコントロールの種類とコントロールに含めるインターフェイス サポートのレベルを定義します。  
+ ウィザードのこのページを使用すると、作成するコントロールの種類とが含まれているインターフェイスのサポートのレベルを定義します。  
   
-## UIElement の一覧  
- **\[コントロール型\]**  
+## <a name="uielement-list"></a>UIElement の一覧  
+ **コントロール型**  
  作成するコントロールの種類。  
   
--   **\[標準コントロール\]: ActiveX コントロール**  
+-   **標準コントロール: ActiveX コントロール。**  
   
--   **\[複合コントロール\]**: ダイアログ ボックスと同様に、他の ActiveX コントロールや Windows コントロールを含めることができる ActiveX コントロールです。  複合コントロールの種類は以下のとおりです。  
+-   **複合コントロール**: ActiveX コントロール (ダイアログ ボックスに似ています) を含めることができる他の ActiveX コントロールまたは Windows のコントロールです。 複合コントロールは次のとおりです。  
   
-    -   複合コントロールを実装するダイアログ ボックスのテンプレート  
+    -   複合コントロールを実装するダイアログ ボックスのテンプレートです。  
   
-    -   起動時に複合コントロールを自動的に登録するカスタム リソース REGISTRY  
+    -   カスタム リソースの場合は、レジストリで、自動的に呼び出されたときに、複合コントロールを登録します。  
   
-    -   複合コントロールを実装する C\+\+ クラス  
+    -   複合コントロールを実装する C++ クラスです。  
   
-    -   複合コントロールによって公開される COM インターフェイス  
+    -   複合コントロールによって公開される COM インターフェイスです。  
   
-    -   複合コントロールを含む HTML テスト ページ  
+    -   複合コントロールを含む HTML テスト ページ。  
   
-     既定では、このコントロールは [CComControlBase::m\_bWindowOnly](../Topic/CComControlBase::m_bWindowOnly.md) を true に設定します。この値は、ウィンドウを持つコントロールであることを示します。  このコントロールはシンク マップを実装します。  詳細については、「[DHTML コントロールのサポート](../../atl/atl-support-for-dhtml-controls.md)」を参照してください。  
+     既定では、このコントロールの設定[CComControlBase::m_bWindowOnly](../../atl/reference/ccomcontrolbase-class.md#m_bwindowonly)にする場合は true、ウィンドウを持つコントロールであることを示します。 シンク マップを実装します。 詳細については、次を参照してください。 [DHTML コントロールのサポート](../../atl/atl-support-for-dhtml-controls.md)です。  
   
--   **\[DHTML コントロール\]**: ATL DHTML コントロールは、HTML を使用して、ユーザー インターフェイスを指定します。  DHTML UI クラスには COM マップが含まれます。  既定では、このコントロールは [CComControlBase::m\_bWindowOnly](../Topic/CComControlBase::m_bWindowOnly.md) を true に設定します。この値は、ウィンドウを持つコントロールであることを示します。  
+-   **DHTML コントロール**: An ATL DHTML コントロールが HTML を使用して、ユーザー インターフェイスを指定します。 DHTML UI クラスには、COM マップが含まれています。 既定では、このコントロールの設定[CComControlBase::m_bWindowOnly](../../atl/reference/ccomcontrolbase-class.md#m_bwindowonly)にする場合は true、ウィンドウを持つコントロールであることを示します。  
   
-     詳細については、「[DHTML コントロール プロジェクトの要素の識別](../../atl/identifying-the-elements-of-the-dhtml-control-project.md)」を参照してください。  
+     詳細については、次を参照してください。 [DHTML コントロール プロジェクトの要素の識別](../../atl/identifying-the-elements-of-the-dhtml-control-project.md)です。  
   
- **\[ライト コントロール\]**  
- ほとんどのコンテナーに必須のインターフェイスだけがサポートされます。  **\[ライト コントロール\]** はすべての種類のコントロールに対して設定できます。ミニマル標準コントロール、ミニマル複合コントロール、およびミニマル DHTML コントロールを作成できます。  
+ **最小限の制御**  
+ ほとんどのコンテナーに必須のインターフェイスのみをサポートしています。 設定することができます**最小限の制御**コントロールの種類のいずれかの: 最小限の標準的な制御、最小限の複合コントロールまたは最小限に抑える DHTML コントロールを作成することができます。  
   
- **\[集約\]**  
- 作成するコントロールに集約サポートを追加します。  詳細については、「[集約](../../atl/aggregation.md)」を参照してください。  
+ **集計**  
+ 作成するコントロールの集計のサポートを追加します。 詳細については、次を参照してください。[集計](../../atl/aggregation.md)です。  
   
--   **\[はい\]**: 集約できるコントロールが作成されます。  
+-   **[はい]**: 集計できるコントロールを作成します。  
   
--   **\[いいえ\]**: 集約できないコントロールが作成されます。  
+-   **いいえ**: 集計が不可能なコントロールを作成します。  
   
--   **\[アグリゲーションのみ\]**: 集約を通じてのみインスタンス化されるコントロールが作成されます。  
+-   **のみ**: 集約を介してのみインスタンス化するコントロールを作成します。  
   
- **\[スレッド モデル\]**  
- コントロールで使用するスレッド化モデルを指定します。  
+ **スレッド処理モデル**  
+ コントロールによってスレッド モデルが使用されることを指定します。  
   
--   **\[シングル\]**: コントロールは、プライマリ COM スレッドだけで実行されます。  
+-   **1 つ**: コントロールがプライマリ COM スレッドでのみ実行されます。  
   
--   **\[アパートメント\]**: コントロールは、任意のシングル スレッド アパートメントで作成できます。  既定値です。  
+-   **アパートメント**: 任意の 1 つのスレッドのアパートメントでのコントロールを作成することができます。 これが既定値です。  
   
- **\[インターフェイス\]**  
- このコントロールがコンテナーに対して公開するインターフェイスの種類。  
+ **Interface**  
+ このコントロールがコンテナーに公開するインターフェイスの型。  
   
--   **\[デュアル\]**: `IDispatch` を使用して、または VTBL によって直接、プロパティとメソッドを公開するインターフェイスが作成されます。  
+-   **デュアル**: プロパティとメソッドを介して公開されるインターフェイスを作成`IDispatch`VTBL を介して直接、します。  
   
--   **\[カスタム\]**: VTBL によって直接メソッドを公開するインターフェイスが作成されます。  
+-   **カスタム**: VTBL によって直接メソッドを公開するインターフェイスを作成します。  
   
-     **\[カスタム\]** を選択すると、コントロールが **\[オートメーション互換\]** であることを指定できます。  **\[オートメーション互換\]** を選択すると、ウィザードによって [oleautomation](../../windows/oleautomation.md) 属性が IDL 内のインターフェイスに追加されます。このインターフェイスは oleaut32.dll 内の汎用マーシャラーでマーシャリングできます。  詳細については、[!INCLUDE[winsdkshort](../../atl/reference/includes/winsdkshort_md.md)] の「[Marshaling Details](http://msdn.microsoft.com/library/windows/desktop/ms692621)」を参照してください。  
+     選択した場合**カスタム**、コントロールことを指定することができますし、**オートメーション互換性**です。 選択した場合**オートメーション互換性**、し、ウィザードの追加、 [oleautomation](../../windows/oleautomation.md)属性、IDL 内にあるインターフェイスを oleaut32.dll でユニバーサル、マーシャラーによってインターフェイスをマーシャ リングすることができます。 参照してください[マーシャ リングの詳細](http://msdn.microsoft.com/library/windows/desktop/ms692621)詳細については、Windows SDK に含まれています。  
   
-     また、**\[オートメーション互換\]** を選択する場合は、コントロール内のすべてのメソッドのすべてのパラメーターを **VARIANT** 互換にする必要があります。  
+     さらに、選択した場合**オートメーション互換性**、コントロールのすべてのメソッドのすべてのパラメーターである必要があります**バリアント**互換性。  
   
- **\[サポート\]**  
- コントロールのその他のサポートを設定します。  
+ **サポート**  
+ コントロールの他のサポートを設定します。  
   
--   **\[接続ポイント\]**: オブジェクトのクラスを [IConnectionPointContainerImpl](../Topic/IConnectionPointContainerImpl%20Class.md) から派生させ、その派生クラスでソース インターフェイスを公開できるようにすることによって、オブジェクトのコネクション ポイントを有効にします。  
+-   **コネクション ポイント**: オブジェクトのクラスから派生することで、オブジェクトのコネクション ポイントを有効に[入力したコネクション](../../atl/reference/iconnectionpointcontainerimpl-class.md)ソース インターフェイスを公開することができるとします。  
   
--   **\[ライセンス\]**: [ライセンス処理](http://msdn.microsoft.com/library/windows/desktop/ms690543)用のサポートをコントロールに追加します。  ライセンス コントロールをホストできるのは、クライアント コンピューターに適切なライセンスがある場合だけです。  
+-   **ライセンス**: に、コントロールのサポートを追加[ライセンス](http://msdn.microsoft.com/library/windows/desktop/ms690543)です。 クライアント コンピューターに適切なライセンスがある場合にのみ、ライセンスされたコントロールをホストすることができます。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [ATL コントロール ウィザード](../../atl/reference/atl-control-wizard.md)
+

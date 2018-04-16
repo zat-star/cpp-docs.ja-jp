@@ -4,21 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: CLR types, passing by reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- CLR types, passing by reference
 ms.assetid: d91e471c-34ff-4786-9e0d-c6db0494b946
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f7e03106c9a4e49e727e278538ca984b740ad446
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 1774484414ba40ce36730004e84da5f75752a284
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-use-tracking-references-in-ccli"></a>方法: C++/CLI で追跡参照を使用する
 この記事は、C + で追跡参照 (%) を使用する方法を示しています。 + CLI 参照渡しする共通言語ランタイム (CLR) 型です。  
@@ -345,5 +351,5 @@ T %
 T &  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [参照演算子の追跡](../windows/tracking-reference-operator-cpp-component-extensions.md)

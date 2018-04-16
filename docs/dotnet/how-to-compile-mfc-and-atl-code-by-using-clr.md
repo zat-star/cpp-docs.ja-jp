@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC [C++], interoperability
 - ATL [C++], interoperability
@@ -19,15 +21,18 @@ helpviewer_keywords:
 - interop [C++], /clr compiler option
 - extension DLLs [C++], /clr compiler option
 ms.assetid: 12464bec-33a4-482c-880a-c078de7f6ea5
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 77e28bcd53d5f497edbbff938f428322a9400fee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f03e324cf4f88d47232cba5e15ec65181af91feb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-compile-mfc-and-atl-code-by-using-clr"></a>方法: /clr を使用して MFC および ATL コードをコンパイルする
 このトピックでは、共通言語ランタイムをターゲットに既存の MFC および ATL プログラムをコンパイルする方法について説明します。  
@@ -86,5 +91,5 @@ ms.lasthandoff: 10/24/2017
   
 3.  DllMain とものを含むファイルを呼び出してで**ソリューション エクスプ ローラー**ファイルを右クリックし、クリックして**プロパティ**です。 [**構成プロパティ**、ノードを展開します] の横に**C/C++**を選択し、**全般**です。 右側のウィンドウで **プロジェクトの既定値**設定、**共通言語ランタイム サポートでコンパイル**に**いいえ共通言語ランタイム サポート**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname: __CxxFrameHandler
+apiname:
+- __CxxFrameHandler
 apilocation:
 - msvcr110.dll
 - msvcrt.dll
@@ -17,19 +19,24 @@ apilocation:
 - msvcr90.dll
 - msvcr120.dll
 apitype: DLLExport
-f1_keywords: __CxxFrameHandler
-dev_langs: C++
-helpviewer_keywords: __CxxFrameHandler
+f1_keywords:
+- __CxxFrameHandler
+dev_langs:
+- C++
+helpviewer_keywords:
+- __CxxFrameHandler
 ms.assetid: b79ac97f-425a-42ae-9b91-8beaef935333
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 75f900560f226557bc160bdf74df4467b0c7aa32
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4741e0da471e9b82b4d4a2f436feaae482fbbae0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cxxframehandler"></a>__CxxFrameHandler
 内部 CRT 関数。 構造化例外フレームを処理するために CRT によって使用されます。  
@@ -63,8 +70,8 @@ EXCEPTION_DISPOSITION __CxxFrameHandler(
   
 ## <a name="remarks"></a>コメント  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |__CxxFrameHandler|excpt.h、ehdata.h|

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::list::back
-dev_langs: C++
-helpviewer_keywords: back member [STL/CLR]
+f1_keywords:
+- cliext::list::back
+dev_langs:
+- C++
+helpviewer_keywords:
+- back member [STL/CLR]
 ms.assetid: 3241e497-42ab-4108-8598-3f90eac76f07
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b781a1619f3b5a776190e721cc606812de4611de
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7b0e654f5df9452177b3017f045b5db2f217031a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listback-stlclr"></a>list::back (STL/CLR)
 最後の要素にアクセスします。  
@@ -71,12 +78,12 @@ back() = c
  a b x  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::back_item (STL/CLR)](../dotnet/list-back-item-stl-clr.md)   
  [list::front (STL/CLR)](../dotnet/list-front-stl-clr.md)   

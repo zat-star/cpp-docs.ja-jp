@@ -13,19 +13,20 @@ dev_langs:
 helpviewer_keywords:
 - numerical limits
 ms.assetid: 5ebc9837-e273-4ea6-ac7d-14b3c2c974c7
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 5d717daf2dcc23f44a4b053deb22c471dacb777d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e531de79621eb3a010a41c7e5059dd5b76b2c2fc
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="numerical-limits-c"></a>数値制限 (C++)
-2 つの標準インクルード ファイル LIMITS.H と FLOAT.H は、数値の制限 (特定の型の変数に保持できる最小値と最大値) を定義します。 これらの最小値と最大値は ANSI C と同じデータ表現を使用する C++ コンパイラに移植することは保証します。制限します。H インクルード ファイルを定義、[整数型の数値の制限](../cpp/integer-limits.md)、および FLOAT です。H を定義、[浮動小数点型の数値の制限](../cpp/floating-limits.md)です。  
+2 つの標準のインクルード ファイル、 \<limits.h > と\<float.h >、数値の制限、または指定された型の変数を保持できる最小値と最大値を定義します。 これらの最小値と最大値は ANSI C と同じデータ表現を使用する C++ コンパイラに移植することは保証します。\<Limits.h > は、ファイルを定義、[整数型の数値の制限](../cpp/integer-limits.md)、および\<float.h > を定義、[浮動小数点型の数値の制限](../cpp/floating-limits.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本的な概念](../cpp/basic-concepts-cpp.md)

@@ -1,11 +1,12 @@
 ---
-title: "CAtlFile クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CAtlFile クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CAtlFile
@@ -23,18 +24,22 @@ f1_keywords:
 - ATLFILE/ATL::CAtlFile::UnlockRange
 - ATLFILE/ATL::CAtlFile::Write
 - ATLFILE/ATL::CAtlFile::m_pTM
-dev_langs: C++
-helpviewer_keywords: CAtlFile class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAtlFile class
 ms.assetid: 93ed160b-af2a-448c-9cbe-e5fa46c199bb
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 557c0451f0c33e13a8fb572f77c387b43daea6f8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a66e697a3599e7bfeef0f1d5d147e19b668222ce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlfile-class"></a>CAtlFile クラス
 このクラスは、ファイル処理 API、Windows の周囲に thin ラッパーを提供します。  
@@ -74,7 +79,7 @@ class CAtlFile : public CHandle
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CAtlFile::m_pTM](#m_ptm)|ポインター`CAtlTransactionManager`オブジェクト|  
   
@@ -86,7 +91,7 @@ class CAtlFile : public CHandle
   
  `CAtlFile`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlfile.h  
   
 ##  <a name="catlfile"></a>CAtlFile::CAtlFile  
@@ -405,7 +410,7 @@ HRESULT Write(
 ### <a name="remarks"></a>コメント  
  最初の 3 つを呼び出す[WriteFile](http://msdn.microsoft.com/library/windows/desktop/aa365747)、最後の呼び出し[WriteFileEx](http://msdn.microsoft.com/library/windows/desktop/aa365748)データ ファイルを書き込めません。 使用して[CAtlFile::Seek](#seek)ファイル ポインターを移動します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マーキーのサンプル](../../visual-cpp-samples.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [CHandle クラス](../../atl/reference/chandle-class.md)

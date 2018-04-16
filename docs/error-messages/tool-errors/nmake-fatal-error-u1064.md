@@ -1,31 +1,35 @@
 ---
-title: "NMAKE の致命的なエラー U1064 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "U1064"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "U1064"
+title: "NMAKE の致命的なエラー U1064 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- U1064
+dev_langs:
+- C++
+helpviewer_keywords:
+- U1064
 ms.assetid: 7141e66e-cde6-4173-84df-a391f3ebcdd1
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 20b6c767145176c459d0b70d96842223218cd0b2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# NMAKE の致命的なエラー U1064
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-MAKEFILE が見つかりません、またターゲットが指定されていません。  
+# <a name="nmake-fatal-error-u1064"></a>NMAKE の致命的なエラー U1064
+MAKEFILE が見つかりません、また指定したターゲット  
   
- NMAKE のコマンド ラインにはメイクファイルもターゲットも指定されておらず、現在のフォルダーにも MAKEFILE という名前のファイルは存在しません。  
+ メイクファイルまたはターゲット (nmake の) のコマンドラインが指定されませんでしたし、現在のディレクトリにはメイクファイルをという名前のファイルが含まれていませんでした。  
   
- NMAKE には、メイクファイルまたはコマンド ラインのターゲット \(あるいはその両方\) を指定する必要があります。  メイクファイルを NMAKE で使用するには、\/F オプションを指定するかメイクファイルに MAKEFILE という名前を付けて現在のフォルダーに置いてください。  メイクファイルが用意されていない場合でも、コマンド ラインでターゲットを指定していれば NMAKE は推論規則に基づいてターゲットを生成します。
+ NMAKE では、メイクファイルまたはコマンド ライン ターゲット (または両方) が必要です。 Nmake メイクファイルを使用できるようにするには、/F オプションを指定するか、現在のディレクトリのメイクファイルをという名前のファイルを配置します。 NMAKE は、メイクファイルが指定されていない場合は、推論規則を使用して、コマンドラインのターゲットを作成できます。

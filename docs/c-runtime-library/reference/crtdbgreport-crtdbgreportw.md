@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _CrtDbgReport
 - _CrtDbgReportW
@@ -37,31 +37,17 @@ helpviewer_keywords:
 - CrtDbgReportW function
 - _CrtDbgReportW function
 ms.assetid: 6e581fb6-f7fb-4716-9432-f0145d639ecc
-caps.latest.revision: 18
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: f197e4f6341508f05e566f45566f26a18be43bed
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 45cd908519fbacb42e017676a245451a5966891e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="crtdbgreport-crtdbgreportw"></a>_CrtDbgReport、_CrtDbgReportW
 デバッグ メッセージのあるレポートを生成し、3 つの宛先 (デバッグ バージョンのみ) にレポートを送信します。  
@@ -126,21 +112,20 @@ int _CrtDbgReportW(
 |`_CRTDBG_MODE_WNDW`|利用不可|Windows [MessageBox](http://msdn.microsoft.com/library/windows/desktop/ms645505) API を呼び出して、メッセージおよび **[中止]**、**[再試行]**、**[無視]** の各ボタンを表示するメッセージ ボックスを作成します。 ユーザーが **[中止]** をクリックすると、`_CrtDbgReport` または `_CrtDbgReport` はすぐに中止されます。 ユーザーが **[再試行]** をクリックすると、1 を返します。 ユーザーが **[無視]** をクリックすると、実行は継続され、`_CrtDbgReport` および `_CrtDbgReportW` は 0 を返します。 エラー状況が存在するときに **[無視]** をクリックすると、"未定義の動作" という結果になることがよくあります。|  
 |`_CRTDBG_MODE_FILE`|`__HFILE`|Windows [WriteFile](http://msdn.microsoft.com/library/windows/desktop/aa365747.aspx) API を使用して、ユーザーが指定した `HANDLE` にメッセージを書き込みますが、ハンドルの有効性は検証しません。アプリケーションは、レポート ファイルを開き、有効なファイル ハンドルを渡す役割を果たします。|  
 |`_CRTDBG_MODE_FILE`|`_CRTDBG_FILE_STDERR`|`stderr` にメッセージを書き込みます。|  
-|`_CRTDBG_MODE_FILE`|`_CRTDBG_FILE_STDOUT`|
-          `stdout` にメッセージを書き込みます。|  
+|`_CRTDBG_MODE_FILE`|`_CRTDBG_FILE_STDOUT`|`stdout` にメッセージを書き込みます。|  
   
  レポートは 1 つ、2 つ、または 3 つの宛先に送信できます。またどの宛先にも送信しないこともできます。 レポート モードおよびレポート ファイルを指定する方法の詳細については、「[_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md)」および「[_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md)」関数を参照してください。 デバッグ マクロおよびレポート関数の使用方法の詳細については、「[レポート用マクロの使用](/visualstudio/debugger/macros-for-reporting)」を参照してください。  
   
  アプリケーションで `_CrtDbgReport` および `_CrtDbgReportW` で提供されるよりさらに柔軟性が必要な場合は、独自のレポート関数を書き込み、[_CrtSetReportHook](../../c-runtime-library/reference/crtsetreporthook.md) 関数を使用してそれを C ランタイム ライブラリのレポート機構にフックすることができます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_CrtDbgReport`|\<crtdbg.h>|  
 |`_CrtDbgReportW`|\<crtdbg.h>|  
   
- `_CrtDbgReport` および `_CrtDbgReportW` は Microsoft 拡張機能です。 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ `_CrtDbgReport` および `_CrtDbgReportW` は Microsoft 拡張機能です。 詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
@@ -158,9 +143,9 @@ int main(int argc, char *argv[]) {
 }  
 ```  
   
- レポート関数を変更する方法の例については、「[crt_dbg2](http://msdn.microsoft.com/en-us/21e1346a-6a17-4f57-b275-c76813089167)」を参照してください。  
+ レポート関数を変更する方法の例については、「[crt_dbg2](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/crt/crt_dbg2)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   
  [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md)   
  [_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md)   

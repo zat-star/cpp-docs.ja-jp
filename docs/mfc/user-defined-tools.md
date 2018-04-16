@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: user-defined tools (MFC Extensions)
+dev_langs:
+- C++
+helpviewer_keywords:
+- user-defined tools (MFC Extensions)
 ms.assetid: cb887421-78ce-4652-bc67-96a53984ccaa
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f4a8363d9d91ed90b1daf2434a4ee2159eec627a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 17f0751a2cb3f78730ec948d737dc99b85c2e735
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="user-defined-tools"></a>ユーザー定義のツール
 MFC には、ユーザー定義のツールがサポートしています。 ユーザー定義のツールは、外部のユーザーが指定したプログラムを実行する特別なコマンドです。 カスタマイズ プロセスを使用して、ユーザー定義のツールを管理することができます。 アプリケーション オブジェクトを派生していない場合にこのプロセスを使用することはできませんただし、 [CWinAppEx クラス](../mfc/reference/cwinappex-class.md)です。 カスタマイズの詳細については、次を参照してください。 [MFC のカスタマイズ](../mfc/customization-for-mfc.md)です。  
@@ -58,7 +63,7 @@ MFC には、ユーザー定義のツールがサポートしています。 ユ
   
 3.  各ツールでは、設定のテキスト ラベルを設定して`CUserTool::m_strLabel`を呼び出して、コマンドを設定および`CUserTool::SetCommand`です。 既定の実装[CUserTool クラス](../mfc/reference/cusertool-class.md)への呼び出しで指定されているプログラムから使用可能なアイコンを自動的に取得`SetCommand`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC のカスタマイズ](../mfc/customization-for-mfc.md)   
  [CUserTool クラス](../mfc/reference/cusertool-class.md)   
  [CUserToolsManager クラス](../mfc/reference/cusertoolsmanager-class.md)   

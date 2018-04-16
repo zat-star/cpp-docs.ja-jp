@@ -1,11 +1,12 @@
 ---
-title: "CPagerCtrl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CPagerCtrl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CPagerCtrl
@@ -31,7 +32,8 @@ f1_keywords:
 - AFXCMN/CPagerCtrl::SetButtonSize
 - AFXCMN/CPagerCtrl::SetChild
 - AFXCMN/CPagerCtrl::SetScrollPos
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CPagerCtrl [MFC], CPagerCtrl
 - CPagerCtrl [MFC], Create
@@ -55,15 +57,17 @@ helpviewer_keywords:
 - CPagerCtrl [MFC], SetChild
 - CPagerCtrl [MFC], SetScrollPos
 ms.assetid: 65ac58dd-4f5e-4b7e-b15c-e0d435a7e884
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5cc411b868d07dede6ae7585732148c18d3158de
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c79fa877023c7a01c4814f61d75a54cb0dd64b51
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cpagerctrl-class"></a>CPagerCtrl クラス
 `CPagerCtrl` クラスは、Windows のページャー コントロールをラップします。ページャー コントロールには、外側のウィンドウに収まらない内側のウィンドウをスクロールによって表示する機能があります。  
@@ -123,7 +127,7 @@ class CPagerCtrl : public CWnd
   
  `CPagerCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="cpagerctrl"></a>CPagerCtrl::CPagerCtrl  
@@ -549,7 +553,7 @@ void SetScrollPos(int iPos);
 ### <a name="remarks"></a>コメント  
  このメソッドは、送信、 [PGM_SETPOS](http://msdn.microsoft.com/library/windows/desktop/bb760886) Windows SDK で説明するメッセージ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CPagerCtrl クラス](../../mfc/reference/cpagerctrl-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [複数のページャー コントロール](http://msdn.microsoft.com/library/windows/desktop/bb760855)

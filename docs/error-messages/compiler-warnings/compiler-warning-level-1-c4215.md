@@ -1,34 +1,38 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4215 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4215"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4215"
+title: "コンパイラの警告 (レベル 1) C4215 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4215
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4215
 ms.assetid: f2aab64d-1bab-4f75-95ee-89e1263047b1
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 900b27141f6e74760dd80f76ebf4e12c1368603f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4215
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-非標準の拡張機能が使用されています : long float です。  
+# <a name="compiler-warning-level-1-c4215"></a>コンパイラの警告 (レベル 1) C4215
+使用される標準の拡張機能: long float  
   
- 既定の Microsoft 拡張機能 \(\/Ze\) では、**long float** 型は **double** 型として処理されます。  ANSI 互換オプション \([\/Za](../../build/reference/za-ze-disable-language-extensions.md)\) では、このように処理されません。  互換性維持のため、**double** 型を使用してください。  
+ 既定の Microsoft 拡張機能 (/Ze) が扱う**long float**として**二重**です。 ANSI 互換 ([/Za](../../build/reference/za-ze-disable-language-extensions.md)) はありません。 使用して**二重**互換性を維持します。  
   
- 次の例では警告 C4215 が生成されます。  
+ 次の例では、C4215 が生成されます。  
   
 ```  
 // C4215.cpp  

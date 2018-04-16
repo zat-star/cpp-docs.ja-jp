@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _ismbbtrail
 - _ismbbtrail_l
@@ -28,22 +29,25 @@ f1_keywords:
 - ismbbtrail
 - _ismbbtrail_l
 - ismbbtrail_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ismbbtrail_l function
 - _ismbbtrail function
 - _ismbbtrail_l function
 - ismbbtrail function
 ms.assetid: dfdd0292-960b-4c1d-bf11-146e0fc80247
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8b99e318e95644b327f3629658ac5100f08c05d8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dc0a56d64a44f9c2fc0c72ec7019cc56420c7dda
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ismbbtrail-ismbbtraill"></a>_ismbbtrail、_ismbbtrail_l
 バイトがマルチバイト文字の後続バイトかどうかを判定します。  
@@ -71,11 +75,11 @@ int _ismbbtrail_l(
  整数 `c` がマルチバイト文字の 2 番目のバイトの場合、`_ismbbtrail` は 0 以外の値を返します。 たとえば、コード ページ 932 でのみ、有効な範囲は 0x40 – 0x7E、0x80 – 0xFC です。  
   
 ## <a name="remarks"></a>コメント  
- `_ismbbtrail` は、ロケールに依存する動作に現在のロケールを使用します。 `_ismbbtrail_l` は、代わりに渡されるロケールを使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `_ismbbtrail` は、ロケールに依存する動作に現在のロケールを使用します。 `_ismbbtrail_l` は、代わりに渡されるロケールを使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_ismbbtrail`|\<mbctype.h> または \<mbstring.h>|\<ctype.h>、* \<limits.h>、\<stdlib.h>|  
 |`_ismbbtrail_l`|\<mbctype.h> または \<mbstring.h>|\<ctype.h>、* \<limits.h>、\<stdlib.h>|  
@@ -84,6 +88,6 @@ int _ismbbtrail_l(
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
  [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)

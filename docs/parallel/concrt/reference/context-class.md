@@ -1,12 +1,13 @@
 ---
-title: "コンテキスト クラス |Microsoft ドキュメント"
-ms.custom: 
+title: コンテキスト クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
 f1_keywords:
 - Context
 - CONCRT/concurrency::Context
@@ -23,18 +24,22 @@ f1_keywords:
 - CONCRT/concurrency::Context::Unblock
 - CONCRT/concurrency::Context::VirtualProcessorId
 - CONCRT/concurrency::Context::Yield
-dev_langs: C++
-helpviewer_keywords: Context class
+dev_langs:
+- C++
+helpviewer_keywords:
+- Context class
 ms.assetid: c0d553f3-961d-4ecd-9a29-4fa4351673b8
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: dc49f795fb4c8f987271bd4f147a04e3ac873e33
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9195ec68a47e2ed528a42bb018cfba6316101a0c
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="context-class"></a>Context クラス
 実行コンテキストの抽象化を表します。  
@@ -86,7 +91,7 @@ class Context;
   
  **名前空間:** concurrency  
   
-##  <a name="block"></a>ブロック 
+##  <a name="block"></a> ブロック 
 
  現在のコンテキストをブロックします。  
   
@@ -103,13 +108,13 @@ static void __cdecl Block();
   
  このメソッドを含む、例外のさまざまな[scheduler_resource_allocation_error](scheduler-resource-allocation-error-class.md)です。  
   
-##  <a name="dtor"></a>~ コンテキスト 
+##  <a name="dtor"></a> ~ コンテキスト 
 
 ```
 virtual ~Context();
 ```  
   
-##  <a name="currentcontext"></a>CurrentContext 
+##  <a name="currentcontext"></a> CurrentContext 
 
  現在のコンテキストへのポインターを返します。  
   
@@ -123,7 +128,7 @@ static Context* __cdecl CurrentContext();
 ### <a name="remarks"></a>コメント  
  呼び出し元のコンテキストにスケジューラが現在関連付けられていない場合、このメソッドを呼び出すと、プロセスの既定のスケジューラが作成されるか、または呼び出し元コンテキストにアタッチされます。  
   
-##  <a name="getid"></a>GetId 
+##  <a name="getid"></a> GetId 
 
  コンテキストが属するスケジューラ内で一意のコンテキストの識別子を返します。  
   
@@ -134,7 +139,7 @@ virtual unsigned int GetId() const = 0;
 ### <a name="return-value"></a>戻り値  
  コンテキストが属するスケジューラ内で一意であるコンテキストの識別子。  
   
-##  <a name="getschedulegroupid"></a>GetScheduleGroupId 
+##  <a name="getschedulegroupid"></a> GetScheduleGroupId 
 
  コンテキストが現在実行されているスケジュール グループの識別子を返します。  
   
@@ -148,7 +153,7 @@ virtual unsigned int GetScheduleGroupId() const = 0;
 ### <a name="remarks"></a>コメント  
  このメソッドからの戻り値は、コンテキストが実行されているスケジュール グループの瞬間的にサンプリングします。 このメソッドが呼び出された場合、現在のコンテキスト以外のコンテキストで、値が古くなっているが返され、依存することはできませんが、現在。 通常、このメソッドは、デバッグやトレースのみを目的に使用されます。  
   
-##  <a name="getvirtualprocessorid"></a>GetVirtualProcessorId 
+##  <a name="getvirtualprocessorid"></a> GetVirtualProcessorId 
 
  コンテキストが現在実行されている仮想プロセッサの識別子を返します。  
   
@@ -162,7 +167,7 @@ virtual unsigned int GetVirtualProcessorId() const = 0;
 ### <a name="remarks"></a>コメント  
  このメソッドからの戻り値は、コンテキストが実行されている仮想プロセッサの瞬間的にサンプリングします。 この値が返され、依存することはできませんが、現在古いできます。 通常、このメソッドは、デバッグやトレースのみを目的に使用されます。  
   
-##  <a name="id"></a>Id 
+##  <a name="id"></a> Id 
 
  現在のコンテキストが属するスケジューラ内で一意の現在のコンテキストの識別子を返します。  
   
@@ -173,7 +178,7 @@ static unsigned int __cdecl Id();
 ### <a name="return-value"></a>戻り値  
  現在のコンテキストが、現在のコンテキストが属する; スケジューラ内で一意では、現在のコンテキストの識別子のスケジューラにアタッチされている場合それ以外の場合、値`-1`です。  
   
-##  <a name="iscurrenttaskcollectioncanceling"></a>IsCurrentTaskCollectionCanceling 
+##  <a name="iscurrenttaskcollectioncanceling"></a> IsCurrentTaskCollectionCanceling 
 
  現在のコンテキストで現在インラインで実行されているタスク コレクションがアクティブなキャンセル処理中である (または間もなくキャンセル処理が開始される) かどうかを示す値を返します。  
   
@@ -184,7 +189,7 @@ static bool __cdecl IsCurrentTaskCollectionCanceling();
 ### <a name="return-value"></a>戻り値  
  呼び出し元のコンテキストにスケジューラがアタッチされ、タスク インライン タスク グループは、そのコンテキストで実行されて、かどうかを示すそのタスク グループは、アクティブなキャンセル中 (またはいたします);それ以外の場合、値`false`です。  
   
-##  <a name="issynchronouslyblocked"></a>IsSynchronouslyBlocked 
+##  <a name="issynchronouslyblocked"></a> IsSynchronouslyBlocked 
 
  コンテキストが同期的にブロックされているかどうかを判断します。 コンテキストがブロックを引き起こしたアクションを明示的に実行した場合、そのコンテキストは同期的にブロックされていると見なされます。  
   
@@ -200,7 +205,7 @@ virtual bool IsSynchronouslyBlocked() const = 0;
   
  このメソッドからの戻り値は、コンテキストが同期的にブロックされているかどうかの瞬間的な例です。 この値が返され、非常に特定の状況でのみ使用できますが、現在古い可能性があります。  
   
-##  <a name="operator_delete"></a>delete 演算子 
+##  <a name="operator_delete"></a> delete 演算子 
 
  A`Context`オブジェクトは、ランタイムによって内部的に破棄されます。 これは明示的に削除できません。  
   
@@ -212,7 +217,7 @@ void operator delete(void* _PObject);
  `_PObject`  
  削除するオブジェクトへのポインター。  
   
-##  <a name="oversubscribe"></a>Oversubscribe 
+##  <a name="oversubscribe"></a> Oversubscribe 
 
  スケジューラの仮想プロセッサのいずれかで実行されるコンテキストで呼び出された場合に、コード ブロックの期間中、追加の仮想プロセッサをそのスケジューラに挿入します。  
   
@@ -224,7 +229,7 @@ static void __cdecl Oversubscribe(bool _BeginOversubscription);
  `_BeginOversubscription`  
  場合`true`、予備の仮想プロセッサが、オーバー サブスクリプションの中に追加することを示します。 場合`false`、ことを示している、オーバー サブスクリプションを終了する必要があります、以前に追加された仮想プロセッサを削除する必要があります。  
   
-##  <a name="schedulegroupid"></a>ScheduleGroupId 
+##  <a name="schedulegroupid"></a> ScheduleGroupId 
 
  現在のコンテキストが実行されているスケジュール グループの識別子を返します。  
   
@@ -235,7 +240,7 @@ static unsigned int __cdecl ScheduleGroupId();
 ### <a name="return-value"></a>戻り値  
  現在のコンテキストはスケジューラにアタッチされ、スケジュール グループにも取り組んで、スケジューラの識別子をグループ化する場合、現在のコンテキスト取り組んでいます。それ以外の場合、値`-1`です。  
   
-##  <a name="unblock"></a>ブロックを解除します。 
+##  <a name="unblock"></a> ブロックを解除します。 
 
  コンテキストのブロックを解除し、実行できるようにします。  
   
@@ -250,7 +255,7 @@ virtual void Unblock() = 0;
   
  コードが別のスレッドを呼び出せるようにするには、そのコンテキストを公開するポイント間で重要な期間があることに注意してください、`Unblock`メソッドと、実際のメソッドの呼び出しポイント`Block`が行われます。 この期間中には、順番がブロックされ、独自の理由 (たとえば、ロックの獲得) ブロックを解除するすべてのメソッドを呼び出さないでください。 呼び出し、`Block`と`Unblock`メソッドは、ブロックおよびブロック解除の理由を追跡しません。 1 つのオブジェクトの所有権が必要な`Block`と`Unblock`ペア。  
   
-##  <a name="virtualprocessorid"></a>VirtualProcessorId 
+##  <a name="virtualprocessorid"></a> VirtualProcessorId 
 
  現在のコンテキストが実行されている仮想プロセッサの識別子を返します。  
   
@@ -264,7 +269,7 @@ static unsigned int __cdecl VirtualProcessorId();
 ### <a name="remarks"></a>コメント  
  このメソッドからの戻り値は、現在のコンテキストが実行されている仮想プロセッサの瞬間的にサンプリングします。 この値が返され、依存することはできませんが、現在古いできます。 通常、このメソッドは、デバッグやトレースのみを目的に使用されます。  
   
-##  <a name="yield"></a>Yield 
+##  <a name="yield"></a> Yield 
 
  別のコンテキストが実行できるように実行を譲歩します。 実行の権利を譲る他のコンテキストが存在しない場合、スケジューラによって別のオペレーティング システム スレッドに明け渡されます。  
   
@@ -275,7 +280,7 @@ static void __cdecl Yield();
 ### <a name="remarks"></a>コメント  
  呼び出し元のコンテキストにスケジューラが現在関連付けられていない場合、このメソッドを呼び出すと、プロセスの既定のスケジューラが作成されるか、または呼び出し元コンテキストにアタッチされます。  
   
-##  <a name="yieldexecution"></a>YieldExecution 
+##  <a name="yieldexecution"></a> YieldExecution 
 
  別のコンテキストが実行できるように実行を譲歩します。 実行の権利を譲る他のコンテキストが存在しない場合、スケジューラによって別のオペレーティング システム スレッドに明け渡されます。  
   

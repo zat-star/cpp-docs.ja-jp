@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.classes.ole
-dev_langs: C++
+f1_keywords:
+- vc.classes.ole
+dev_langs:
+- C++
 helpviewer_keywords:
 - ActiveX classes [MFC]
 - dialog classes [MFC], OLE
 - OLE common dialog classes [MFC]
 - common dialog classes [MFC]
 ms.assetid: 706526ae-f94f-4909-a0f8-6b5fe954fd97
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: db64f8c3e2c310b306a1be4696a5c4c7d2cea4f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0617354337e75e2c2431df894c054722349e2306
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ole-common-dialog-classes"></a>OLE コモン ダイアログ クラス
 これらのクラスは、いくつかの標準の OLE ダイアログ ボックスを実装することで、OLE の一般的なタスクを処理します。 OLE の機能の一貫性のあるユーザー インターフェイスも提供します。  
@@ -58,6 +63,6 @@ ms.lasthandoff: 10/24/2017
  [COleBusyDialog](../mfc/reference/colebusydialog-class.md)  
  サーバーがビジー状態、サーバーが応答していないダイアログ ボックス、ビジー状態のアプリケーションへの呼び出しを処理するための標準のユーザー インターフェイスを表示します。 通常、によって自動的に表示されます、`COleMessageFilter`実装します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../mfc/class-library-overview.md)
 

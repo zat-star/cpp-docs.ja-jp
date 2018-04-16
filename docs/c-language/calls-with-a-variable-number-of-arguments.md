@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - arguments [C++], function
 - arguments [C++], variable number of
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - '... ellipsis'
 - function calls, variable number of arguments
 ms.assetid: 8808fb26-4822-42f5-aba3-ac64b54e151b
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 10f2eb4597808f726d55c3ece76b99c394d691c3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 446e15a6f578413cf3f0ddefa980303c10a5d280
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="calls-with-a-variable-number-of-arguments"></a>可変個の引数を使用した呼び出し
 部分的なパラメーター リストは、コンマの後に 3 つのピリオドが続く省略記号表記 (**、...**) で終了させることができます。これによって、関数に渡される引数がまだあること、ただしこれ以上の情報は与えられないことを示すことができます。 型チェックは、このような引数に対しては実行されません。 1 個以上のパラメーターを省略記号表記の前に指定する必要があります。省略記号表記は、パラメーター リストの最後のトークンである必要があります。 省略記号表記がない場合、パラメーター リストで宣言されている型以外のパラメーターを受け取った関数の動作は未定義です。  
@@ -41,5 +45,5 @@ ms.lasthandoff: 10/24/2017
 int average( int first, ...);  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数呼び出し](../c-language/function-calls.md)

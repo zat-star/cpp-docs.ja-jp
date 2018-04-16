@@ -1,32 +1,37 @@
 ---
-title: "set_intersection (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::set_intersection"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "set_intersection 関数 [STL/CLR]"
+title: "set_intersection (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::set_intersection
+dev_langs:
+- C++
+helpviewer_keywords:
+- set_intersection function [STL/CLR]
 ms.assetid: 8a799b20-55a5-4fba-a9c1-a48597cbdae6
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 3647893f3025621aa5c95eb4023b76e06ac596b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# set_intersection (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-並べ替えの条件が二項述語で指定できる単一の所属するすべての要素が、並べ替えられた先の範囲に両方の並べ替えられたソース範囲内に結合します。  
+# <a name="setintersection-stlclr"></a>set_intersection (STL/CLR)
+両方の並べ替えられたソース範囲に属するすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _InIt1, class _InIt2, class _OutIt> inline  
@@ -37,13 +42,13 @@ template<class _InIt1, class _InIt2, class _OutIt, class _Pr> inline
         _InIt2 _First2, _InIt2 _Last2, _OutIt _Dest, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `set_intersection`も同じように動作します。  詳細については、「[set\_intersection](../Topic/set_intersection.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`set_intersection`です。 詳細については、次を参照してください。 [set_intersection](../standard-library/algorithm-functions.md#set_intersection)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>参照  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

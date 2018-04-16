@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CDateTimeCtrl
-dev_langs: C++
-helpviewer_keywords: DateTimePicker control [MFC], CDateTimeCtrl class
+f1_keywords:
+- CDateTimeCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- DateTimePicker control [MFC], CDateTimeCtrl class
 ms.assetid: cb2a8720-43f1-4c33-a3a4-def9a1622e00
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 59353359afc1ddb1ea28f22a2049c6fca8ea049f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ab0f8c64b953a9ddaffa3382863762256b90c6c9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-cdatetimectrl"></a>CDateTimeCtrl の使い方
 日付と時刻の選択コントロール ([CDateTimeCtrl](../mfc/reference/cdatetimectrl-class.md)) を入力するか、特定の日付を選択すること、直感的で認識可能なメソッドを実装します。 コントロールのメイン インターフェイスは、コンボ ボックスの機能と似ています。 ただし、ユーザー コントロールを展開する (既定)、月間予定表コントロールが表示される場合は、特定の日付を指定するユーザーを許可します。 日付を選択すると、月間予定表コントロールでは、自動的に表示されなくなります。  
@@ -41,6 +47,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [日時指定コントロールの通知メッセージの処理](../mfc/processing-notification-messages-in-date-and-time-picker-controls.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コントロール](../mfc/controls-mfc.md)
 

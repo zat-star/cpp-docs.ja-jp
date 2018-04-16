@@ -1,23 +1,27 @@
 ---
-title: "例外と C++ ではスタックがアンワインド |Microsoft ドキュメント"
-ms.custom: 
+title: 例外と C++ ではスタックがアンワインド |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: a1a57eae-5fc5-4c49-824f-3ce2eb8129ed
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: eedfb9c453fbd48ef2c5868fb186156397eeb500
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b2b354ebaa72c5257e2752a948ece6320a5d8e70
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="exceptions-and-stack-unwinding-in-c"></a>C++ での例外とスタック アンワインド
 C++ 例外の機能では、制御は throw ステートメントから、スローされる型を処理できる最初の catch ステートメントに移動します。 呼ばれるプロセスで破棄はのすべての自動変数、throw 間のスコープ内および catch ステートメントを catch ステートメントに達すると、*スタック アンワインド*です。 スタック アンワインドでは、次のように実行されます。  

@@ -1,32 +1,37 @@
 ---
-title: "multimap::generic_iterator (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multimap::generic_iterator"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "generic_iterator メンバー [STL/CLR]"
+title: multimap::generic_iterator (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::multimap::generic_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- generic_iterator member [STL/CLR]
 ms.assetid: 8f62088c-edad-4563-99e3-a102d9d40533
 caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 2d2c08675338f34012610234a152ebc72930f1c7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# multimap::generic_iterator (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンテナーのジェネリック インターフェイスで使用の反復子の型。  
+# <a name="multimapgenericiterator-stlclr"></a>multimap::generic_iterator (STL/CLR)
+コンテナーのジェネリック インターフェイスを使用するため、反復子の型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef Microsoft::VisualC::StlClr::Generic::  
@@ -34,10 +39,10 @@ typedef Microsoft::VisualC::StlClr::Generic::
     generic_iterator;  
 ```  
   
-## 解説  
- この型は、テンプレートのコンテナー クラスにジェネリック インターフェイスで使用できるジェネリック反復子について説明します。  
+## <a name="remarks"></a>コメント  
+ この型は、このテンプレートのコンテナー クラスのジェネリック インターフェイスで使用できる汎用の反復子を表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multimap_generic_iterator.cpp   
@@ -73,14 +78,17 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
- **1 \[\] \[b 2 \[\]c 3\]**  
- **\[1 つ\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+[a 1] [b 2] [c 3]  
+[a 1] [b 2] [c 3]  
+[a 1]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [multimap](../dotnet/multimap-stl-clr.md)   
- [multimap::generic\_container](../dotnet/multimap-generic-container-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
+ [multimap::generic_container (STL/CLR)](../dotnet/multimap-generic-container-stl-clr.md)

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -72,7 +73,8 @@ f1_keywords:
 - AFXDB/CRecordset::m_pDatabase
 - AFXDB/CRecordset::m_strFilter
 - AFXDB/CRecordset::m_strSort
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CRecordset [MFC], CRecordset
 - CRecordset [MFC], AddNew
@@ -137,15 +139,17 @@ helpviewer_keywords:
 - CRecordset [MFC], m_strFilter
 - CRecordset [MFC], m_strSort
 ms.assetid: dd89a21d-ef39-4aab-891b-1e373d67c855
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ef856814b931f50359356e25ee8386a8e0a9c3b0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c2375739fe4d8442d4ecb7a1514641d45de4a8be
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crecordset-class"></a>CRecordset クラス
 データ ソースから選択された 1 組のレコードセットを表現します。  
@@ -264,7 +268,7 @@ class CRecordset : public CObject
   
  `CRecordset`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdb.h  
   
 ##  <a name="addnew"></a>CRecordset::AddNew  
@@ -1779,7 +1783,7 @@ virtual BOOL Update();
 ### <a name="example"></a>例  
  記事を参照して[トランザクション: レコード セット (ODBC) でのトランザクションを実行する](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CDatabase クラス](../../mfc/reference/cdatabase-class.md)   

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - call
 - AGENTS/concurrency::call
@@ -16,18 +17,22 @@ f1_keywords:
 - AGENTS/concurrency::call::propagate_message
 - AGENTS/concurrency::call::send_message
 - AGENTS/concurrency::call::supports_anonymous_source
-dev_langs: C++
-helpviewer_keywords: call class
+dev_langs:
+- C++
+helpviewer_keywords:
+- call class
 ms.assetid: 1521970a-1e9c-4b0c-a681-d18e40976f49
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b1c629355db7f2e77ef0854a52c86848adb70c6f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9a63873b7666e4f75ddd39fbf684ebb80c1f85e8
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="call-class"></a>call クラス
 `call` メッセージング ブロックは、複数のソースを持つ、順序付けられた `target_block` であり、メッセージを受け取ったときに指定された関数を呼び出します。  
@@ -52,7 +57,7 @@ class call : public target_block<multi_link_registry<ISource<T>>>;
   
 |名前|説明|  
 |----------|-----------------|  
-|[呼び出し](#ctor)|オーバーロードされます。 構築、`call`メッセージング ブロックです。|  
+|[call](#ctor)|オーバーロードされます。 構築、`call`メッセージング ブロックです。|  
 |[~ call デストラクター](#dtor)|破棄、`call`メッセージング ブロックです。|  
   
 ### <a name="protected-methods"></a>プロテクト メソッド  
@@ -75,12 +80,12 @@ class call : public target_block<multi_link_registry<ISource<T>>>;
   
  `call`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>呼び出し 
+##  <a name="ctor"></a> 呼び出し 
 
  構築、`call`メッセージング ブロックです。  
   
@@ -131,7 +136,7 @@ call(
   
  型`filter_method`シグネチャを持つファンクターは、`bool (T const &)`これは、これによって呼び出されます。`call`メッセージング ブロックを、提供されたメッセージを受け入れる必要がありますかどうかを判断します。  
   
-##  <a name="dtor"></a>~ を呼び出す 
+##  <a name="dtor"></a> ~ を呼び出す 
 
  破棄、`call`メッセージング ブロックです。  
   
@@ -139,7 +144,7 @@ call(
 ~call();
 ```  
   
-##  <a name="process_input_messages"></a>process_input_messages 
+##  <a name="process_input_messages"></a> process_input_messages 
 
  入力メッセージの関数を呼び出すを実行します。  
   
@@ -150,7 +155,7 @@ virtual void process_input_messages(_Inout_ message<T>* _PMessage);
 ### <a name="parameters"></a>パラメーター  
  `_PMessage`  
   
-##  <a name="process_message"></a>process_message 
+##  <a name="process_message"></a> process_message 
 
  これによって承認されたメッセージを処理`call`メッセージング ブロックです。  
   
@@ -162,7 +167,7 @@ virtual void process_message(_Inout_ message<T>* _PMessage);
  `_PMessage`  
  処理されるメッセージへのポインター。  
   
-##  <a name="propagate_message"></a>propagate_message 
+##  <a name="propagate_message"></a> propagate_message 
 
  メッセージを非同期的に渡す、`ISource`ブロックをこの`call`メッセージング ブロックです。 によって呼び出された、`propagate`メソッドは、ソース ブロックによって呼び出されるとします。  
   
@@ -182,7 +187,7 @@ virtual message_status propagate_message(
 ### <a name="return-value"></a>戻り値  
  A [message_status](concurrency-namespace-enums.md)のメッセージを行うには、対象の決定を示す値。  
   
-##  <a name="send_message"></a>send_message 
+##  <a name="send_message"></a> send_message 
 
  メッセージを同期的に渡す、`ISource`ブロックをこの`call`メッセージング ブロックです。 によって呼び出された、`send`メソッドは、ソース ブロックによって呼び出されるとします。  
   
@@ -202,7 +207,7 @@ virtual message_status send_message(
 ### <a name="return-value"></a>戻り値  
  A [message_status](concurrency-namespace-enums.md)のメッセージを行うには、対象の決定を示す値。  
   
-##  <a name="supports_anonymous_source"></a>supports_anonymous_source 
+##  <a name="supports_anonymous_source"></a> supports_anonymous_source 
 
  上書き、`supports_anonymous_source`を示すこのブロックがリンクされていないソースによって提供されたメッセージを受け入れることができます。  
   
@@ -211,8 +216,8 @@ virtual bool supports_anonymous_source();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `true`ブロックは延期いないために、メッセージを提供します。  
+ `true` ブロックは延期いないために、メッセージを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [transformer クラス](transformer-class.md)

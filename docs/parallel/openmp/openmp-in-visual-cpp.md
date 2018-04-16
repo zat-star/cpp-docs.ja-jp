@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - OpenMP in Visual C++
 - explicit parallelization
 - explicit parallelization, OpenMP in Visual C++
 ms.assetid: 54d8d0da-1f47-4312-9f25-5875c7dc08ed
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: df7c1681daf0f0ccae7d6307b2f6c000c01a313c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 734b118cfdd1523379e9fb1e5e157bf9da9824af
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="openmp-in-visual-c"></a>Visual C++ の OpenMP
 OpenMP C および C++ アプリケーション プログラミング インターフェイスでは、複数のプロセッサを効果的に使用するアプリケーションを作成することができます。 Visual C では、OpenMP 2.0 標準をサポートします。  
@@ -40,7 +44,7 @@ OpenMP C および C++ アプリケーション プログラミング インタ�
  OpenMP アーキテクチャのレビュー委員会からバージョン 2.0 の仕様に記載されているとは、OpenMP C および C++ API について説明します。  
   
 ## <a name="related-sections"></a>関連項目  
- [/openmp (OpenMP 2.0 サポートの有効にする)](../../build/reference/openmp-enable-openmp-2-0-support.md)  
+ [/openmp (OpenMP 2.0 サポートの有効化)](../../build/reference/openmp-enable-openmp-2-0-support.md)  
  コンパイラで処理する`#pragma omp`です。  
   
  [定義済みマクロ](../../preprocessor/predefined-macros.md)  

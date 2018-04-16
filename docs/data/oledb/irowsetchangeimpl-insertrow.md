@@ -1,52 +1,54 @@
 ---
-title: "IRowsetChangeImpl::InsertRow | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.IRowsetChangeImpl.InsertRow"
-  - "InsertRow"
-  - "IRowsetChangeImpl.InsertRow"
-  - "ATL::IRowsetChangeImpl::InsertRow"
-  - "IRowsetChangeImpl::InsertRow"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "InsertRow メソッド"
+title: "Irowsetchangeimpl::insertrow |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL.IRowsetChangeImpl.InsertRow
+- InsertRow
+- IRowsetChangeImpl.InsertRow
+- ATL::IRowsetChangeImpl::InsertRow
+- IRowsetChangeImpl::InsertRow
+dev_langs:
+- C++
+helpviewer_keywords:
+- InsertRow method
 ms.assetid: 93027be3-921e-438e-a19a-6e5aadb813eb
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: cd41e9539c47d5dd8031e0deaef724f824169038
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# IRowsetChangeImpl::InsertRow
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-行セットの新しい行を作成し、初期化します。  
+# <a name="irowsetchangeimplinsertrow"></a>IRowsetChangeImpl::InsertRow
+作成し、行セットに新しい行を初期化します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
-      STDMETHOD ( InsertRow )(  
-   HCHAPTER /* hReserved */,  
+```cpp
+      STDMETHOD (InsertRow )(HCHAPTER /* hReserved */,  
    HACCESSOR hAccessor,  
    void* pData,  
-   HROW* phRow   
-);  
+   HROW* phRow);  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [IRowsetChange::InsertRow](https://msdn.microsoft.com/en-us/library/ms716921.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[irowsetchange::insertrow](https://msdn.microsoft.com/en-us/library/ms716921.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [IRowsetChangeImpl クラス](../../data/oledb/irowsetchangeimpl-class.md)

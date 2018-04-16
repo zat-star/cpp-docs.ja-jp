@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _getche_nolock
 - _getwche_nolock
@@ -29,7 +30,8 @@ f1_keywords:
 - getche_nolock
 - getwche_nolock
 - gettche_nolock
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - characters, getting from console
 - _gettche_nolock function
@@ -40,21 +42,23 @@ helpviewer_keywords:
 - _getwche_nolock function
 - gettche_nolock function
 ms.assetid: 9e853ad4-4d8a-4442-9ae5-da4b434f0b8c
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f687d05ec1d9f4f41ab92d4a48cd321d7b70e53a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8e03f66143b6bb0c23fbb35bb95a0b88a30c6540
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getchenolock-getwchenolock"></a>_getche_nolock、_getwche_nolock
 エコーありで、スレッドはロックしないで、コンソールから文字を取得します。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -75,14 +79,14 @@ wint_t _getwche_nolock( void );
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_gettche_nolock`|`_getche_nolock`|`_getch_nolock`|`_getwche_nolock`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_getche_nolock`|\<conio.h>|  
 |`_getwche_nolock`|\<conio.h> または \<wchar.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -120,7 +124,7 @@ abcdefy
 Type 'Y' when finished typing keys: abcdefyY  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   
  [_cgets、_cgetws](../../c-runtime-library/cgets-cgetws.md)   
  [getc、getwc](../../c-runtime-library/reference/getc-getwc.md)   

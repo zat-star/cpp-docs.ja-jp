@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: allocate_cpp
-dev_langs: C++
+f1_keywords:
+- allocate_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - __declspec keyword [C++], allocate
 - allocate __declspec keyword
 ms.assetid: 67828b31-de60-4c0e-b0a6-ef3aab22641d
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 83f819338286139e2b03efd900c7dc6026f6895b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2494b9ec9ad78e3ea6910669c4d896448f60b06f
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="allocate"></a>allocate
 **Microsoft 固有の仕様**  
@@ -31,10 +36,9 @@ ms.lasthandoff: 10/24/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-  
-__declspec(allocate("  
-segname  
-")) declarator  
+
+   __declspec(allocate("segname")) declarator  
+
 ```  
   
 ## <a name="remarks"></a>コメント  
@@ -63,6 +67,6 @@ int main() {
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
- [_ _declspec](../cpp/declspec.md)   
+## <a name="see-also"></a>参照  
+ [__declspec](../cpp/declspec.md)   
  [キーワード](../cpp/keywords-cpp.md)

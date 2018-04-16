@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: ICollectionOnSTLImpl interface
+dev_langs:
+- C++
+helpviewer_keywords:
+- ICollectionOnSTLImpl interface
 ms.assetid: 6d49f819-1957-4813-b074-3f12c494d8ca
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 21ca1d07a39950c5d5de83ed6e3a09c12c775d4d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f5b80b55361a8f7bfa195b08d02feb94af0874bc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="implementing-a-c-standard-library-based-collection"></a>C++ 標準ライブラリに基づくコレクションを実装します。
 ATL には、`ICollectionOnSTLImpl`に迅速に、オブジェクトに C++ 標準ライブラリに基づくコレクション インターフェイスを実装するインターフェイスです。 このクラスのしくみを理解するのには、簡単な例 (下記) はこのクラスを使用して、オートメーション クライアントを目的と読み取り専用のコレクションを実装する機能します。  
@@ -100,7 +105,7 @@ ATL には、`ICollectionOnSTLImpl`に迅速に、オブジェクトに C++ 標�
   
  ここで、任意のクライアントで、コードをテストできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コレクションと列挙子](../atl/atl-collections-and-enumerators.md)   
  [ATLCollections サンプル](../visual-cpp-samples.md)   
  [ATL コピー ポリシー クラス](../atl/atl-copy-policy-classes.md)

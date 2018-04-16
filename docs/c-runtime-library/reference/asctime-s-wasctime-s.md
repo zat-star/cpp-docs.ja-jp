@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wasctime_s
 - asctime_s
@@ -39,30 +39,17 @@ helpviewer_keywords:
 - _wasctime_s function
 - asctime_s function
 ms.assetid: 17ad9b2b-a459-465d-976a-42822897688a
-caps.latest.revision: 29
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 4d4b2bf3c4fb4180b6da1d39ca26bfe819971f31
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6914dd9c305a1313cde43e69f012786462f1d4a6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="asctimes-wasctimes"></a>asctime_s、_wasctime_s
 `tm` 時間構造体を文字列に変換します。 これらの関数は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、[asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md) のセキュリティが強化されたバージョンです。  
@@ -107,10 +94,10 @@ errno_t _wasctime_s(
   
 ### <a name="error-conditions"></a>エラー条件  
   
-|`buffer`|`numberOfElements`|`tm`|リターン|`buffer` の値|  
+|`buffer`|`numberOfElements`|`tm`|Return|`buffer` の値|  
 |--------------|------------------------|----------|------------|-----------------------|  
 |`NULL`|どれでも可|どれでも可|`EINVAL`|変更されない|  
-|`NULL` ではない (有効なメモリを指す)|0|どれでも可|`EINVAL`|変更されない|  
+|`NULL` ではありません (有効なメモリを指します)|0|どれでも可|`EINVAL`|変更されない|  
 |`NULL` ではない|0< size < 26|どれでも可|`EINVAL`|空の文字列|  
 |`NULL` ではない|>= 26|`NULL`|`EINVAL`|空の文字列|  
 |`NULL` ではない|>= 26|無効な時間構造体または時間のコンポーネントの値が範囲外|`EINVAL`|空の文字列|  
@@ -121,7 +108,7 @@ errno_t _wasctime_s(
 ## <a name="remarks"></a>コメント  
  `asctime` 関数は、構造体として格納されている時間を文字列に変換します。 `_tm` 値は、通常は `gmtime` または `localtime` の呼び出しにより取得されます。 TIME.H で定義されているように、どちらの関数も `tm` 構造体に入力するために使用できます。  
   
-|timeptr メンバー|値|  
+|timeptr メンバー|[値]|  
 |--------------------|-----------|  
 |`tm_hour`|午前 0 時 (0 ~ 23) 以降の時間|  
 |`tm_isdst`|夏時間が有効な場合は正、夏時間が無効な場合は 0、夏時間かどうかが不明な場合は負。 C ランタイム ライブラリでは、アメリカ合衆国の規則を前提に夏時間 (DST) を計算します。|  
@@ -145,11 +132,11 @@ errno_t _wasctime_s(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tasctime_s`|`asctime_s`|`asctime_s`|`_wasctime_s`|  
   
- C++ では、テンプレートのオーバーロードによってこれらの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、テンプレートのオーバーロードによってこれらの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`asctime_s`|\<time.h>|  
 |`_wasctime_s`|\<time.h> または \<wchar.h>|  
@@ -194,7 +181,7 @@ int main( void )
 Current date and time: Wed May 14 15:30:17 2003  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [ctime_s、_ctime32_s、_ctime64_s、_wctime_s、_wctime32_s、_wctime64_s](../../c-runtime-library/reference/ctime-s-ctime32-s-ctime64-s-wctime-s-wctime32-s-wctime64-s.md)   
  [_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   

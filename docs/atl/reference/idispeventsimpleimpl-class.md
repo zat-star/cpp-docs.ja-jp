@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -18,18 +19,22 @@ f1_keywords:
 - ATLCOM/ATL::IDispEventSimpleImpl::GetTypeInfoCount
 - ATLCOM/ATL::IDispEventSimpleImpl::Invoke
 - ATLCOM/ATL::IDispEventSimpleImpl::Unadvise
-dev_langs: C++
-helpviewer_keywords: IDispEventSimpleImpl class
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDispEventSimpleImpl class
 ms.assetid: 971d82b7-a921-47fa-a4d8-909bed377ab0
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a6500a73151f2d04c6f6ec9185aca385f9c3108a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f8a5b3098961af4f3f9262cdc4c99dbe80b4ac7c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="idispeventsimpleimpl-class"></a>されますクラス
 このクラスの実装を提供する、`IDispatch`メソッド、せず、タイプ ライブラリから型情報を取得します。  
@@ -100,7 +105,7 @@ class ATL_NO_VTABLE IDispEventSimpleImpl : public _IDispEventLocator<nID, pdiid>
   
  `IDispEventSimpleImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="advise"></a>IDispEventSimpleImpl::Advise  
@@ -255,7 +260,7 @@ HRESULT Unadvise(IUnknown* pUnk);
   
  **Unavise**によって決定されるオブジェクトの既定のイベント ソースの IID を取得、既定のイベント ソースとの接続を区切り、 [AtlGetObjectSourceInterface](composite-control-global-functions.md#atlgetobjectsourceinterface)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ATL_FUNC_INFO 構造体](../../atl/reference/atl-func-info-structure.md)   
  [IDispatchImpl クラス](../../atl/reference/idispatchimpl-class.md)   
  [IDispEventImpl クラス](../../atl/reference/idispeventimpl-class.md)   

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - m_nOrdinal
 - m_szPKColumnName
@@ -33,7 +34,8 @@ f1_keywords:
 - FK_COLUMN_GUID
 - m_szFKTableName
 - CForeignKeys
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - m_szPKTableCatalog
 - FK_COLUMN_GUID
@@ -61,15 +63,18 @@ helpviewer_keywords:
 - m_guidPKColumn
 - FK_TABLE_NAME
 ms.assetid: 1c401a4a-0827-4255-9214-bc893e1cd79d
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 53082b43f529bebb8c2b3d6b9f96608aadf5a3f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e31251156e84a6befec036f9e27c45f3aba1d895
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cforeignkeys-cforeignkeysinfo"></a>CForeignKeys、CForeignKeysInfo
 Typedef クラスを呼び出す**CForeignKeys**そのパラメーター クラスを実装する**CForeignKeysInfo**です。  
@@ -85,7 +90,7 @@ Typedef クラスを呼び出す**CForeignKeys**そのパラメーター クラ�
 |------------------|--------------------|  
 |m_szPKTableCatalog|PK_TABLE_CATALOG|  
 |m_szPKTableSchema|PK_TABLE_SCHEMA|  
-|m_szPKTableName|PK_TABLE_NAME、|  
+|m_szPKTableName|PK_TABLE_NAME|  
 |m_szPKColumnName|PK_COLUMN_NAME|  
 |m_guidPKColumn|PK_COLUMN_GUID|  
 |m_nPKColumnPropID|PK_COLUMN_PROPID|  
@@ -96,11 +101,11 @@ Typedef クラスを呼び出す**CForeignKeys**そのパラメーター クラ�
 |m_guidFKColumn|FK_COLUMN_GUID|  
 |m_nFKColumnPropID|FK_COLUMN_PROPID|  
 |m_nOrdinal|序数|  
-|m_szUpdateRule|句|  
+|m_szUpdateRule|UPDATE_RULE|  
 |m_szDeleteRule|DELETE_RULE|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

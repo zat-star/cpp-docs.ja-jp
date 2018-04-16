@@ -1,65 +1,67 @@
 ---
-title: "CUtlProps::SetPropValue | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "SetPropValue"
-  - "ATL::CUtlProps<T>::SetPropValue"
-  - "ATL.CUtlProps<T>.SetPropValue"
-  - "ATL.CUtlProps.SetPropValue"
-  - "CUtlProps::SetPropValue"
-  - "CUtlProps<T>::SetPropValue"
-  - "CUtlProps.SetPropValue"
-  - "CUtlProps<T>.SetPropValue"
-  - "ATL::CUtlProps::SetPropValue"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetPropValue メソッド"
+title: "Cutlprops::setpropvalue |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- SetPropValue
+- ATL::CUtlProps<T>::SetPropValue
+- ATL.CUtlProps<T>.SetPropValue
+- ATL.CUtlProps.SetPropValue
+- CUtlProps::SetPropValue
+- CUtlProps<T>::SetPropValue
+- CUtlProps.SetPropValue
+- CUtlProps<T>.SetPropValue
+- ATL::CUtlProps::SetPropValue
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetPropValue method
 ms.assetid: 69a703c0-f640-4ca3-8850-0c4e75d52429
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: cd54b1483d43578bad63afff6eeab74d536ae133
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CUtlProps::SetPropValue
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="cutlpropssetpropvalue"></a>CUtlProps::SetPropValue
 プロパティ セットのプロパティを設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
-      HRESULT SetPropValue(  
-   const GUID* pguidPropSet,  
+```cpp
+HRESULT SetPropValue(const GUID* pguidPropSet,  
    DBPROPID dwPropId,  
-   VARIANT* pvValue   
-);  
+   VARIANT* pvValue);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pguidPropSet`  
- \[\] PropSet の GUID。  
+ [in]PropSet の GUID です。  
   
  `dwPropId`  
- \[\]プロパティ インデックス。  
+ [in]プロパティのインデックス。  
   
  `pvValue`  
- \[\]新しいプロパティ値を含むバリアントへのポインター。  
+ [in]新しいプロパティ値を含んでいるバリアントへのポインター。  
   
-## 戻り値  
- 成功した場合、`S_OK` の`Failure`。  
+## <a name="return-value"></a>戻り値  
+ `Failure` エラー発生時に、`S_OK`正常終了した場合。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CUtlProps クラス](../../data/oledb/cutlprops-class.md)

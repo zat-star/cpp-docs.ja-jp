@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: nowait
-dev_langs: C++
-helpviewer_keywords: nowait OpenMP clause
+ms.topic: reference
+f1_keywords:
+- nowait
+dev_langs:
+- C++
+helpviewer_keywords:
+- nowait OpenMP clause
 ms.assetid: 8a74265d-879c-46cf-8071-a1084f24f16e
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c5cc3f82334752854300c683b9aa1b02c7e94791
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 968045d24fb4add0af95f0136160092a7d68fe54
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="nowait"></a>nowait
 ディレクティブ内の暗黙のバリアをオーバーライドします。  
@@ -31,11 +37,11 @@ nowait
 ```  
   
 ## <a name="remarks"></a>コメント  
- `nowait`次のディレクティブに適用されます。  
+ `nowait` 次のディレクティブに適用されます。  
   
 -   [for](../../../parallel/openmp/reference/for-openmp.md)  
   
--   [セクション](../../../parallel/openmp/reference/sections-openmp.md)  
+-   [sections](../../../parallel/openmp/reference/sections-openmp.md)  
   
 -   [single](../../../parallel/openmp/reference/single.md)  
   
@@ -88,5 +94,5 @@ int main( )
 4, 16, 2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [句](../../../parallel/openmp/reference/openmp-clauses.md)

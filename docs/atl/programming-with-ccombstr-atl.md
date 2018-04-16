@@ -1,26 +1,30 @@
 ---
-title: "CComBSTR (ATL) を使用したプログラミング |Microsoft ドキュメント"
-ms.custom: 
+title: CComBSTR (ATL) を使用したプログラミング |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CComBSTR class, programming with
 - Unicode, using CComBSTR [ATL]
 ms.assetid: d3bd0851-d132-4be9-9c4c-6ccba17acb2b
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4d75d2df47f69384ead62712836eee057aed94f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f8f496dd73c2d15f8f78ddbdc205f31a8520c674
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="programming-with-ccombstr-atl"></a>CComBSTR を使用したプログラミング (ATL)
 ATL クラス[CComBSTR](../atl/reference/ccombstr-class.md)をラップするラッパーを提供、`BSTR`データ型。 中に`CComBSTR`便利なツールは、注意を必要とするいくつかの状況があります。  
@@ -75,7 +79,7 @@ ATL クラス[CComBSTR](../atl/reference/ccombstr-class.md)をラップするラ
   
  エントリの場合は、関数のパラメーターが、同じコードは、リークが発生しませんに注意してください**[で, out]**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../atl/active-template-library-atl-concepts.md)   
  [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)   
  [wstring](../standard-library/basic-string-class.md)   

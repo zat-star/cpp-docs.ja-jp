@@ -1,34 +1,37 @@
 ---
-title: "C++ のグローバル定数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "定数, global"
-  - "グローバル定数"
+title: "C++ のグローバル定数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- global constants
+- constants, global
 ms.assetid: df5a9bd4-d0a8-4c1c-956e-b481d0bded7d
-caps.latest.revision: 9
-caps.handback.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 766e1a6f48ecf3f64110e64d916c50d92c89345d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# C++ のグローバル定数
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-C\+\+ のグローバル定数は静的なリンケージを持ちます。  これは C とは異なります。  複数のファイルで C\+\+ のグローバル定数を使用すると、未解決の外部参照エラーになります。  コンパイラはグローバル定数を最適化して取り除き、変数のための領域は予約しません。  
+# <a name="global-constants-in-c"></a>C++ のグローバル定数
+C++ のグローバル定数は、静的リンケージを持ちます。 これは、C とは異なりますグローバルを使用しようとする場合は、複数のファイルで C++ の定数エラーが発生した未解決外部です。 コンパイラは、変数の予約された領域がなくなる、グローバル定数を最適化します。  
   
- このエラーを解決するには、定数の初期化をヘッダー ファイルに入れて、関数のプロトタイプと同じように、CPP ファイルでこのヘッダーを必要に応じて取り込みます。  別の方法として、変数を非定数とし、アクセスするときには、定数参照します。  
+ このエラーを解決するのには 1 つの方法は、const の初期化をヘッダー ファイルに含めるし、必要に応じて、関数のプロトタイプする場合と同様に、CPP ファイルでそのヘッダーをインクルードします。 別の方法としては、非定数、変数を作成し、それを評価するときに、定数の参照を使用してです。  
   
- 次の例では警告 C2019 が生成されます。  
+ 次の例では、C2019 が生成されます。  
   
 ```  
 // global_constants.cpp  
@@ -41,7 +44,7 @@ int main() {
 }  
 ```  
   
- 次に、以下のコードを実行します。  
+ この場合、次のようになります。  
   
 ```  
 // global_constants_2.cpp  
@@ -53,5 +56,5 @@ void test() {
 }  
 ```  
   
-## 参照  
- [リンカ ツール エラー LNK2019](../Topic/Linker%20Tools%20Error%20LNK2019.md)
+## <a name="see-also"></a>参照  
+ [リンカー ツール エラー LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: for
-dev_langs: C++
-helpviewer_keywords: for OpenMP directive
+ms.topic: reference
+f1_keywords:
+- for
+dev_langs:
+- C++
+helpviewer_keywords:
+- for OpenMP directive
 ms.assetid: 8b54e034-9db2-4c1a-a2b1-72e14e930506
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8c1e7f5df003796050958f803cc931a49d2d52d3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ab923dd43dfb29a458d12f57eb1ceefdb5539daf
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="for-openmp"></a>for (OpenMP)
 行われる動作、スレッド間で除算、並行領域内の for ループします。  
@@ -125,5 +131,5 @@ int main() {
 The sum of 1 through 10 is 55  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

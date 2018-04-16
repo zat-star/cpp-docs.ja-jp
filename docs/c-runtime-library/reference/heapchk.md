@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _heapchk
+ms.topic: reference
+apiname:
+- _heapchk
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,7 +26,8 @@ apitype: DLLExport
 f1_keywords:
 - _heapchk
 - heapchk
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - debugging [CRT], heap-related problems
 - consistency checking of heaps
@@ -32,15 +35,17 @@ helpviewer_keywords:
 - heaps, checking consistency
 - _heapchk function
 ms.assetid: 859619a5-1e35-4f02-9e09-11d9fa266ec0
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9fcbafbb98385878dbc84f300e8d2bf0dac581c7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1656c488b722d2ed791da16db8a014e53568e82d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="heapchk"></a>_heapchk
 ヒープに対して整合性チェックを実行します。  
@@ -74,9 +79,9 @@ int _heapchk( void );
 ## <a name="remarks"></a>コメント  
  `_heapchk` 関数を使用すると、ヒープの最小限の一貫性をチェックしてヒープ関連の問題をデバッグできます。 オペレーティング システムで `_heapchk` がサポートされていない場合 (Windows 98 など)、この関数は `_HEAPOK` を返し、`errno` を `ENOSYS` に設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_heapchk`|\<malloc.h>|\<errno.h>|  
   
@@ -125,7 +130,7 @@ int main( void )
 OK - heap is fine  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
  [_heapadd](../../c-runtime-library/heapadd.md)   
  [_heapmin](../../c-runtime-library/reference/heapmin.md)   

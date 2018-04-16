@@ -1,33 +1,37 @@
 ---
-title: "operator!= (queue) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::queue::operator!="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator!= メンバー [STL/CLR]"
+title: "operator! = (キュー) (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::queue::operator!=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator!= member [STL/CLR]
 ms.assetid: aa9e23e5-518e-473c-b15c-9b610bb215d6
-caps.latest.revision: 15
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 6282acabb882ac2921835c958c2a7e138b0a6742
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator!= (queue) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-キューの不等価比較。  
+# <a name="operator-queue-stlclr"></a>operator!= (queue) (STL/CLR)
+キューには、比較と等しくありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value,  
@@ -36,17 +40,17 @@ template<typename Value,
         queue<Value, Container>% right);  
 ```  
   
-#### パラメーター  
- \[left\]  
- 比較の左辺のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 左へ  
+ 比較する左のコンテナー。  
   
- \[right\]  
- 比較の右辺のコンテナー。  
+ 右  
+ 比較する右のコンテナー。  
   
-## 解説  
- 演算子関数の戻り値 `!(``left``==``right``)`。  2 個のキューが要素によって比較された要素の場合 `left` が `right` と同じ順序されていないかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ 演算子関数を返します`!(left == right)`です。 テストするために使用するかどうか`left`順序付けされていないと同じ`right`要素によって比較対象の要素が 2 つのキューの場合。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_queue_operator_ne.cpp   
@@ -86,19 +90,22 @@ int main()
   
 ```  
   
-  **b c**  
- **b d**  
-**b c \[\]\! \= b c \[\] false です。**  
-**b c \[\]\! \[\] d \= b です**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+ a b c  
+ a b d  
+[a b c] != [a b c] is False  
+[a b c] != [a b d] is True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [operator\=\= \(queue\)](../dotnet/operator-equality-queue-stl-clr.md)   
- [operator\< \(queue\)](../dotnet/operator-less-than-queue-stl-clr.md)   
- [operator\>\= \(queue\)](../Topic/operator%3E=%20\(queue\)%20\(STL-CLR\).md)   
- [operator\> \(queue\)](../dotnet/operator-greater-than-queue-stl-clr.md)   
- [operator\<\= \(queue\)](../dotnet/operator-less-or-equal-queue-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [演算子 = = (キュー) (STL/CLR)](../dotnet/operator-equality-queue-stl-clr.md)   
+ [演算子\<(キュー) (STL/CLR)](../dotnet/operator-less-than-queue-stl-clr.md)   
+ [operator > = (キュー) (STL/CLR)](../dotnet/operator-greater-or-equal-queue-stl-clr.md)   
+ [operator > (キュー) (STL/CLR)](../dotnet/operator-greater-than-queue-stl-clr.md)   
+ [operator<= (queue) (STL/CLR)](../dotnet/operator-less-or-equal-queue-stl-clr.md)

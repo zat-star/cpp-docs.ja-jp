@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,7 +18,8 @@ f1_keywords:
 - AFXRENDERTARGET/CDCRenderTarget::Detach
 - AFXRENDERTARGET/CDCRenderTarget::GetDCRenderTarget
 - AFXRENDERTARGET/CDCRenderTarget::m_pDCRenderTarget
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDCRenderTarget [MFC], CDCRenderTarget
 - CDCRenderTarget [MFC], Attach
@@ -27,15 +29,17 @@ helpviewer_keywords:
 - CDCRenderTarget [MFC], GetDCRenderTarget
 - CDCRenderTarget [MFC], m_pDCRenderTarget
 ms.assetid: aa8059c9-08e6-49e4-9b8c-00fa54077a61
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 68ab290c70b4e7811753c4aa6fbb6e8e28414a03
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 502c9d7cedf782c6ce23ebaf22d30c9b0e5e7409
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdcrendertarget-class"></a>CDCRenderTarget クラス
 ID2D1DCRenderTarget のラッパーです。  
@@ -72,7 +76,7 @@ class CDCRenderTarget : public CRenderTarget;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CDCRenderTarget::m_pDCRenderTarget](#m_pdcrendertarget)|ID2D1DCRenderTarget オブジェクトへのポインター。|  
   
@@ -83,7 +87,7 @@ class CDCRenderTarget : public CRenderTarget;
   
  [CDCRenderTarget](../../mfc/reference/cdcrendertarget-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="attach"></a>CDCRenderTarget::Attach  
@@ -174,5 +178,5 @@ operator ID2D1DCRenderTarget*();
 ### <a name="return-value"></a>戻り値  
  ID2D1DCRenderTarget インターフェイスまたはオブジェクトがまだ初期化されていない場合は、NULL へのポインター。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

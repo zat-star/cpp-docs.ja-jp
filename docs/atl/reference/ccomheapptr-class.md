@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CComHeapPtr
 - ATLBASE/ATL::CComHeapPtr
 - ATLBASE/ATL::CComHeapPtr::CComHeapPtr
-dev_langs: C++
-helpviewer_keywords: CComHeapPtr class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CComHeapPtr class
 ms.assetid: bd08b53d-da2b-43ab-a79c-e7c8dbbc5994
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d851e2c6fb4892bd65cf26ea747a6b99a8006cee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8619c050ecc356e1445991b625da00c04f462848
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomheapptr-class"></a>CComHeapPtr クラス
 ヒープのポインターを管理するためのスマート ポインター クラスです。  
@@ -56,7 +61,7 @@ class CComHeapPtr : public CHeapPtr<T, CComAllocator>
   
  `CComHeapPtr`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="ccomheapptr"></a>CComHeapPtr::CComHeapPtr  
@@ -74,7 +79,7 @@ explicit CComHeapPtr(T* pData) throw();
 ### <a name="remarks"></a>コメント  
  既存を使用して、ヒープのポインターを作成することができます必要に応じて`CComHeapPtr`オブジェクト。 場合は、新しい`CComHeapPtr`オブジェクトは、新しいポインターとリソースを管理する責任を引き継ぎます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CHeapPtr クラス](../../atl/reference/cheapptr-class.md)   
  [CHeapPtrBase クラス](../../atl/reference/cheapptrbase-class.md)   
  [CComAllocator クラス](../../atl/reference/ccomallocator-class.md)   

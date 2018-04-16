@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: break
-dev_langs: C++
-helpviewer_keywords: break keyword [C]
+f1_keywords:
+- break
+dev_langs:
+- C++
+helpviewer_keywords:
+- break keyword [C]
 ms.assetid: 015627c7-0924-49b2-a4d1-c77edf5eae6a
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a180c88fc71e4786e8512bc26421825132611ed4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 648ab54d23e22d6c6aae3022593440cb892c1ea9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="break-statement-c"></a>break ステートメント (C)
 `break` ステートメントは、それを囲む最も近い `do`、`for`、`switch`、または `while` の各ステートメントの実行を終了します。 制御は、終了したステートメントの後に続くステートメントに移動します。  
@@ -49,5 +55,5 @@ int main() {
 } // Loop exits only when 'Q' is pressed  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [break ステートメント](../cpp/break-statement-cpp.md)

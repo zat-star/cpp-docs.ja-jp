@@ -1,8 +1,8 @@
 ---
-redirect_url: /cpp/standard-library/standard-library-reference
-ms.openlocfilehash: e8ec19abf2251fb5a6f31ce711026cb197bf19d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: MT
+redirect_url: /cpp/standard-library/cpp-standard-library-reference
+ms.openlocfilehash: dc294eb7d608b1db602eabb3543fe238afbf71bc
+ms.sourcegitcommit: 795a1c7ec1bfdca811c4041832e3e0aaef2e0397
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/21/2018
 ---

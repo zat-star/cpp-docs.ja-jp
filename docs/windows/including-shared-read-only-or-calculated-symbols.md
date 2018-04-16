@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.editors.symbol.shared.calculated
-dev_langs: C++
+f1_keywords:
+- vc.editors.symbol.shared.calculated
+dev_langs:
+- C++
 helpviewer_keywords:
 - symbols, read-only
 - symbols, shared
@@ -18,15 +21,18 @@ helpviewer_keywords:
 - calculated symbols
 - shared symbols
 ms.assetid: 32b77faf-a066-4371-a072-9a5b84c0766d
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fefc31c6ac9eb1f66c2fb6481bd7bb63171a8a8f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: bf0beeb90e2d4c4d22f45322f881bb7a247acf12
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="including-shared-read-only-or-calculated-symbols"></a>共有シンボル (読み取り専用) または計算型シンボルのインクルード
 別のアプリケーションによって作成されたリソース ファイルを開発環境に初めて読み取るとき、インクルードされるすべてのヘッダー ファイルが読み取り専用とマークされます。 その後、使用することができます、 [] ダイアログ ボックスの [リソース インクルード](../windows/resource-includes-dialog-box.md)追加の読み取り専用シンボル ヘッダー ファイルを追加します。  
@@ -71,15 +77,15 @@ ms.lasthandoff: 10/24/2017
   
      この方法でインクルードされるファイル内のシンボルは、リソース ファイルを開くたびに評価されますが、ファイルを保存するときにディスク上で置き換えられません。  
   
-4.  **[OK]** をクリックします。  
+4.  **[OK]**をクリックします。  
   
 
   
- 要件  
+ 必要条件  
   
  Win32  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [シンボル名の制限](../windows/symbol-name-restrictions.md)   
  [シンボル値の制限](../windows/symbol-value-restrictions.md)   
  [定義済みシンボル Id](../windows/predefined-symbol-ids.md)   

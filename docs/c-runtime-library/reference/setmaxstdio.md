@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _setmaxstdio
+ms.topic: reference
+apiname:
+- _setmaxstdio
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,22 +26,25 @@ apitype: DLLExport
 f1_keywords:
 - setmaxstdio
 - _setmaxstdio
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - maximum open files
 - _setmaxstdio function
 - setmaxstdio function
 - open files, maximum
 ms.assetid: 9e966875-9ff5-47c4-9b5f-e79e83b70249
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3c18b478c83c57a8a3bfd8238b367dbe4846d025
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5317437202cef423759ac850aab2360892521746
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="setmaxstdio"></a>_setmaxstdio
 `stdio` のレベルで同時に開かれるファイル数の最大値を設定します。  
@@ -73,16 +78,16 @@ int _setmaxstdio(
 > [!NOTE]
 >  この上限は、特定の Win32 プラットフォームと構成でサポートされる上限を超える可能性があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_setmaxstdio`|\<stdio.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  `_setmaxstdio` の使用例については、「[_getmaxstdio](../../c-runtime-library/reference/getmaxstdio.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)

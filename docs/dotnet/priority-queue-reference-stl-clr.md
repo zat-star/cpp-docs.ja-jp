@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::priority_queue::reference
-dev_langs: C++
-helpviewer_keywords: reference member [STL/CLR]
+f1_keywords:
+- cliext::priority_queue::reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- reference member [STL/CLR]
 ms.assetid: b063eaf1-c238-4aef-ac54-a81d0f671418
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ce2b615cf2a31077a6e285881e838d4a2b2f0da1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 70fc94ed7888c6f5ac9c8f80b1c3cc28783769eb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="priorityqueuereference-stlclr"></a>priority_queue::reference (STL/CLR)
 要素への参照の型です。  
@@ -69,12 +76,12 @@ c a b
 x a b  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/キュー >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
  [priority_queue::const_reference (STL/CLR)](../dotnet/priority-queue-const-reference-stl-clr.md)   
  [priority_queue::value_type (STL/CLR)](../dotnet/priority-queue-value-type-stl-clr.md)

@@ -1,41 +1,46 @@
 ---
-title: "hash_set::rend (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_set::rend"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "rend メンバー [STL/CLR]"
+title: "hash_set::rend (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::hash_set::rend
+dev_langs:
+- C++
+helpviewer_keywords:
+- rend member [STL/CLR]
 ms.assetid: 12764bf1-ff3e-48db-a6ef-fe120187bc4e
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 01bf5fe0a3f38d401ccefe8578a9516fd3b710c0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_set::rend (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashsetrend-stlclr"></a>hash_set::rend (STL/CLR)
 反転被制御シーケンスの末尾を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 reverse_iterator rend();  
 ```  
   
-## 解説  
- このメンバー関数は、反転反復子を被制御シーケンスの先頭を指し示す前方反復子を返します。  したがって、これは反転シーケンスの `end` を指定します。  これを使用して被制御シーケンスの逆順に見た現在の末尾 \(`current`\) を指定する反復子を取得しますが、このステータスは被制御シーケンスの長さが変わると変化することがあります。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスの先頭位置を指し示す反転反復子を返します。 したがって、これを指定、`end`反転シーケンスのです。 指定する反復子を取得するために使用、`current`被制御シーケンスの長さを変更した場合は逆の順序で表示される、被制御シーケンスですがその状態の終了を変更できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_set_rend.cpp   
@@ -65,16 +70,19 @@ int main()
   
 ```  
   
-  **b c**  
-**\*。\-\-rend\(\) \= b**  
-**\*\-\-rend\(\) \= a**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+ a b c  
+*-- --rend() = b  
+*--rend() = a  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_set](../dotnet/hash-set-stl-clr.md)   
- [hash\_set::begin](../dotnet/hash-set-begin-stl-clr.md)   
- [hash\_set::end](../dotnet/hash-set-end-stl-clr.md)   
- [hash\_set::rbegin](../dotnet/hash-set-rbegin-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)   
+ [hash_set::begin (STL/CLR)](../dotnet/hash-set-begin-stl-clr.md)   
+ [hash_set::end (STL/CLR)](../dotnet/hash-set-end-stl-clr.md)   
+ [hash_set::rbegin (STL/CLR)](../dotnet/hash-set-rbegin-stl-clr.md)

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xstring/std::basic_string
 - xstring/std::basic_string::allocator_type
@@ -64,7 +65,8 @@ f1_keywords:
 - xstring/std::basic_string::size
 - xstring/std::basic_string::substr
 - xstring/std::basic_string::swap
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::basic_string [C++]
 - std::basic_string [C++], allocator_type
@@ -123,15 +125,17 @@ helpviewer_keywords:
 - std::basic_string [C++], substr
 - std::basic_string [C++], swap
 ms.assetid: a9c3e0a2-39bf-4c8a-b093-9abe30839591
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8c642d592b464b1a6844a8fa2e5f28b2b41467a1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 895b0921785e29a49bd367c2676995ba9af8e309
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="basicstring-class"></a>basic_string クラス
 `basic_string` テンプレート クラスのオブジェクトによって制御されるシーケンスは C++ の標準文字列クラスで、通常文字列と呼ばれますが、C++ 標準ライブラリ全体で使用される C スタイルの null で終わる文字列と混同しないようにしてください。 標準 C++ 文字列は、比較と連結演算子、反復子、C++ 標準ライブラリ アルゴリズム、クラスのアロケーターによって管理されるメモリのコピーおよび割り当てなど、通常の型として文字列の使用を有効にするコンテナーです。 標準 C++ 文字列を C スタイルの null で終わる文字列に変換する場合は、[basic_string::c_str](#c_str) メンバーを使用します。  
@@ -169,7 +173,7 @@ class basic_string;
 |[const_reference](#const_reference)|読み取りと `const` 操作の実行のために、文字列に格納された `const` 要素への参照を提供する型。|  
 |[const_reverse_iterator](#const_reverse_iterator)|文字列内の任意の `const` 要素を読み取ることができるランダム アクセス反復子を提供する型。|  
 |[difference_type](#difference_type)|同じ文字列内の要素を参照する 2 反復子の違いを提供する型。|  
-|[iterator](#iterator)|文字列内の任意の要素を読み取り、または変更できるランダム アクセス反復子を提供する型。|  
+|[Iterator](#iterator)|文字列内の任意の要素を読み取り、または変更できるランダム アクセス反復子を提供する型。|  
 |[npos](#npos)|"Not found"いずれかを示す-1 または「残りの文字をすべて」に初期化された符号なし整数値検索機能に失敗するとします。|  
 |[pointer](#pointer)|文字列または文字アレイ内の文字要素へのポインターを提供する型。|  
 |[reference](#reference)|文字列に格納されている要素への参照を提供する型。|  
@@ -603,7 +607,7 @@ reference at(size_type _Off);
  パラメーターのインデックスで指定した位置の文字列の文字への参照。  
   
 ### <a name="remarks"></a>コメント  
- 文字列の最初の要素がゼロから始まるインデックスと、次の要素が連続した正の整数によってインデックスが作成できるように、文字列の長さの *n* が、  *n* th要素のインデックス番号を*n -* 1 です。  
+ 文字列の最初の要素がゼロから始まるインデックスと、次の要素が連続した正の整数によってインデックスが作成できるように、文字列の長さの*n*が、 *n*番目の要素のインデックス数を*n -* 1 です。  
   
  メンバー [operator&#91;&#93;](#op_at) は、メンバー関数 **at** より高速な文字列の要素への読み取り/書き込みアクセスを提供します。  
   
@@ -1008,7 +1012,7 @@ const_iterator cbegin() const;
 ### <a name="remarks"></a>コメント  
  `cbegin` の戻り値で範囲内の要素を変更することはできません。  
   
- `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と `cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と`cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.begin();
@@ -1031,7 +1035,7 @@ const_iterator cend() const;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -3428,7 +3432,7 @@ reference operator[](size_type _Off);
  パラメーターのインデックスで指定した位置の文字列の文字への参照。  
   
 ### <a name="remarks"></a>コメント  
- 文字列の最初の要素、ゼロから始まるインデックスがあり、次の要素が連続した正の整数によってインデックスが作成できるように、文字列の長さの *n* が、  *n* 番目の要素のインデックス番号を *n*  - 1。  
+ 文字列の最初の要素はゼロから始まるインデックスを持ち、次の要素は連続した正の整数によってインデックスが作成されます。これにより、長さ *n* の文字列が *n* - 1 の数でインデックスが作成された *n* 番目の要素を持つようになります。  
   
  `operator[]` はメンバー関数 [at](#at) より高速な文字列の要素への読み取り/書き込みアクセスを提供します。  
   
@@ -4240,7 +4244,7 @@ typedef std::reverse_iterator<iterator> reverse_iterator;
  `reverse_iterator` 型は文字の値を変更するために使用でき、逆の順序で文字列を反復処理するために使用されます。  
   
 ### <a name="example"></a>例  
-  `reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#rbegin) の例を参照してください。  
+  `reverse_iterator` の宣言方法や使用方法の例については、[rbegin](#rbegin) の例をご覧ください。  
   
 ##  <a name="rfind"></a>  basic_string::rfind  
  指定された文字シーケンスに一致する部分文字列の最初の出現を文字列で後方に検索します。  

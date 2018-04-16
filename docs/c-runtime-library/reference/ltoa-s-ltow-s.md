@@ -1,12 +1,13 @@
 ---
-title: "_ltoa_、_ltow_s | Microsoft Docs"
-ms.custom: 
+title: _ltoa_、_ltow_s | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
 apiname:
 - _ltoa_s
 - _ltow_s
@@ -27,7 +28,8 @@ f1_keywords:
 - _ltoa_s
 - ltoa_s
 - ltow_s
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - converting integers
 - _ltoa_s function
@@ -37,15 +39,17 @@ helpviewer_keywords:
 - ltoa_s function
 - _ltow_s function
 ms.assetid: d7dc61ea-1ccd-412d-b262-555a58647386
-caps.latest.revision: "18"
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a9a6bc0bc74463ad38cc43a0adb514d9eb722783
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 181f03752a16f64329eb94ae0cd8fac091fa2987
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="ltoas-ltows"></a>_ltoa_s、_ltow_s
 長整数を文字列に変換します。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_ltoa、_ltow](../../c-runtime-library/reference/ltoa-ltow.md) です。  
@@ -100,7 +104,7 @@ errno_t _ltow_s(
   
  `str` が `NULL` ポインターの場合、または `sizeOfstr` がゼロ以下の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、これらの関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は-1 を返して `errno` を `EINVAL` に設定し、`value` または `str` が長整数の範囲外である場合は、これらの関数は -1 を返して `errno` を `ERANGE` に設定します。  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   

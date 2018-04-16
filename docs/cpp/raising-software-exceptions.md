@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - run-time errors, treating as exceptions
 - exception handling [C++], errors as exceptions
@@ -20,15 +22,17 @@ helpviewer_keywords:
 - software exceptions [C++]
 - formats [C++], exception codes
 ms.assetid: be1376c3-c46a-4f52-ad1d-c2362840746a
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b19503d60629011621ef320b46325e17a217804c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4eb616945a831502077066bdf306bef306f543eb
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="raising-software-exceptions"></a>ソフトウェア例外の発生
 プログラム エラーの最も一般的な原因のいくつかは、システムによって例外としてフラグが設定されません。 たとえば、メモリ ブロックを割り当てるときにメモリが不足していると、ランタイム関数または API 関数で例外は発生しませんが、エラー コードが返されます。  
@@ -43,9 +47,9 @@ ms.lasthandoff: 10/24/2017
   
 -   例外処理フィルターを使用して、定義した例外コードをテストします。  
   
- WINERROR.H ファイルは例外コードの形式を示します。 既存の例外コードと競合するコードを定義しないように、第 3 上位ビットを 1 に設定します。 4 つの最上位ビットは、次の表に示すように設定する必要があります。  
+ \<Winerror.h > ファイルは、例外コードの形式を示しています。 既存の例外コードと競合するコードを定義しないように、第 3 上位ビットを 1 に設定します。 4 つの最上位ビットは、次の表に示すように設定する必要があります。  
   
-|ビット|推奨バイナリ設定|説明|  
+|Bits|推奨バイナリ設定|説明|  
 |----------|--------------------------------|-----------------|  
 |31-30|11|これら 2 つのビットは、コードの基本的なステータスを示します (11 = エラー、00 = 成功、01 = 情報、10 = 警告)。|  
 |29|1|クライアント ビット。 ユーザー定義コードの場合は 1 に設定します。|  
@@ -80,6 +84,6 @@ __except (GetExceptionCode() == STATUS_INSUFFICIENT_MEM ||
         GetExceptionCode() == STATUS_FILE_BAD_FORMAT )  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外ハンドラーの記述](../cpp/writing-an-exception-handler.md)   
  [構造化例外処理 (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

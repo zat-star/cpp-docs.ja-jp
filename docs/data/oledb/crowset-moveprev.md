@@ -1,58 +1,62 @@
 ---
-title: "CRowset::MovePrev | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CRowset<TAccessor>.MovePrev"
-  - "CRowset.MovePrev"
-  - "MovePrev"
-  - "CRowset::MovePrev"
-  - "ATL.CRowset.MovePrev"
-  - "ATL::CRowset<TAccessor>::MovePrev"
-  - "ATL::CRowset::MovePrev"
-  - "ATL.CRowset<TAccessor>.MovePrev"
-  - "CRowset<TAccessor>::MovePrev"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MovePrev メソッド"
+title: CRowset::MovePrev | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CRowset<TAccessor>.MovePrev
+- CRowset.MovePrev
+- MovePrev
+- CRowset::MovePrev
+- ATL.CRowset.MovePrev
+- ATL::CRowset<TAccessor>::MovePrev
+- ATL::CRowset::MovePrev
+- ATL.CRowset<TAccessor>.MovePrev
+- CRowset<TAccessor>::MovePrev
+dev_langs:
+- C++
+helpviewer_keywords:
+- MovePrev method
 ms.assetid: 7ced2bfb-f556-40fc-97ea-0d4e7213e114
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 272221d484beacbc856842ad70e588a91fa8ef07
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CRowset::MovePrev
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="crowsetmoveprev"></a>CRowset::MovePrev
 前のレコードにカーソルを移動します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
+  
+```cpp
+HRESULT MovePrev() throw();  
   
 ```  
   
-HRESULT MovePrev( ) throw( );  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-```  
+## <a name="remarks"></a>コメント  
+ このメソッドは、いずれかを設定することが必要です**DBPROP_CANFETCHBACKWARDS**または**DBPROP_CANSCROLLBACKWARDS**に`VARIANT_TRUE`呼び出す前に**開く**上の表に、または行セットを含むコマンド。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
-  
-## 解説  
- このメソッドは、コマンドを `VARIANT_TRUE` にテーブルの **開く** を呼び出す前に **DBPROP\_CANFETCHBACKWARDS** または行セットを含む **DBPROP\_CANSCROLLBACKWARDS** 設定する必要があります。  
-  
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CRowset クラス](../Topic/CRowset%20Class.md)   
+## <a name="see-also"></a>参照  
+ [CRowset クラス](../../data/oledb/crowset-class.md)   
  [CRowset::MoveNext](../../data/oledb/crowset-movenext.md)   
  [CRowset::MoveToBookmark](../../data/oledb/crowset-movetobookmark.md)   
  [CRowset::MoveLast](../../data/oledb/crowset-movelast.md)

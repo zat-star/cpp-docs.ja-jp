@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - sizeof operator
 ms.assetid: 8bc3b6fb-54a1-4eb7-ada0-05f8c5efc532
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 67b699a93880a89e634ac024699ac79a9ea8d3ba
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 072dbd8d41a867f7cd31316ef0bc1c20660952ef
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="sizeof-operator"></a>sizeof 演算子
 型 `char` のサイズに対するオペランドのサイズが出力されます。  
@@ -40,7 +41,7 @@ sizeof  ( type-name )
 ```  
   
 ## <a name="remarks"></a>コメント  
- `sizeof` 演算子の結果は、インクルード ファイル STDDEF.H で定義されている整数型、`size_t` です。 この演算子を使うと、コンピューターに依存するデータ サイズをプログラムで指定せずに済みます。  
+ 結果、`sizeof`演算子は型`size_t`、インクルード ファイルで定義されている整数型\<stddef.h >。 この演算子を使うと、コンピューターに依存するデータ サイズをプログラムで指定せずに済みます。  
   
  `sizeof` のオペランドには、次のいずれかを指定できます。  
   
@@ -114,6 +115,6 @@ The size of the pointer is 4
 sizeof array / sizeof array[0]  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [キーワード](../cpp/keywords-cpp.md)

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDialog class [MFC], members
 - OnInitDialog function
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - OnOK function
 - MFC dialog boxes [MFC], overriding member functions
 ms.assetid: 78eb566c-e361-4c86-8db5-c7e2791b249a
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1b5c5c4d5689c57f02766f2d6c2af2ddad88ee1e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5aa3fb072ca882b03b9da96d54cdefbba5e59a68
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="commonly-overridden-member-functions"></a>通常オーバーライドされるメンバー関数
 次の表のほとんどの場合でオーバーライドされるメンバー関数、 `CDialog`-クラスを派生します。  
@@ -48,6 +52,6 @@ ms.lasthandoff: 10/24/2017
   
  これらのメンバー関数の詳細については、クラスを参照してください。 [CDialog](../mfc/reference/cdialog-class.md)で、 *『 MFC リファレンス*とのディスカッション[ ダイアログ ボックスのライフ サイクル](../mfc/life-cycle-of-a-dialog-box.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ダイアログ ボックス](../mfc/dialog-boxes.md)   
  [通常追加されるメンバー関数](../mfc/commonly-added-member-functions.md)

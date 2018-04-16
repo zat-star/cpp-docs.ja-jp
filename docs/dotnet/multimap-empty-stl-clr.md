@@ -1,41 +1,46 @@
 ---
-title: "multimap::empty (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multimap::empty"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "empty メンバー [STL/CLR]"
+title: "multimap::empty (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::multimap::empty
+dev_langs:
+- C++
+helpviewer_keywords:
+- empty member [STL/CLR]
 ms.assetid: 6214279b-289a-4843-a52a-2034667a2ba3
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 23083cdeab16cfc48e2bc14fd7ca96e85022e0e0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# multimap::empty (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="multimapempty-stlclr"></a>multimap::empty (STL/CLR)
 要素が存在しないかどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 bool empty();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスが空の場合に true を返します。  これは [multimap::size](../Topic/multimap::size%20\(STL-CLR\).md)`() == 0`と同じです。  multimap が空であるかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスが空の場合に true を返します。 等価である[multimap::size (STL/CLR)](../dotnet/multimap-size-stl-clr.md)`() == 0`です。 これを使用するには、multimap が空かどうかをテストします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multimap_empty.cpp   
@@ -66,16 +71,19 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**size\(\) \= 3**  
-**empty\(\) \= false**  
-**size\(\) \= 0**  
-**empty\(\) \= true**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+size() = 3  
+empty() = False  
+size() = 0  
+empty() = True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [multimap](../dotnet/multimap-stl-clr.md)   
- [multimap::size](../Topic/multimap::size%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
+ [multimap::size (STL/CLR)](../dotnet/multimap-size-stl-clr.md)

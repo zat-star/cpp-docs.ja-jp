@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: schedule
-dev_langs: C++
-helpviewer_keywords: schedule OpenMP clause
+ms.topic: reference
+f1_keywords:
+- schedule
+dev_langs:
+- C++
+helpviewer_keywords:
+- schedule OpenMP clause
 ms.assetid: 286f1fc3-6598-4837-b4c8-8b1fa3193965
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 30023c9e994300b9dcdb09509e7d0c2218aa26f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bc2a91a87504b72ddbd296e31516608451286b04
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="schedule"></a>スケジュール
 適用されます、[の](../../../parallel/openmp/reference/for-openmp.md)ディレクティブです。  
@@ -43,7 +49,7 @@ schedule(type[,size])
 -   `static`  
   
  `size` (省略可能)  
- イテレーションのサイズを指定します。 `size`整数を指定する必要があります。 有効でない場合に`type`は`runtime`します。  
+ イテレーションのサイズを指定します。 `size` 整数を指定する必要があります。 有効でない場合に`type`は`runtime`します。  
   
 ## <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [2.4.1 for のコンストラクト](../../../parallel/openmp/2-4-1-for-construct.md)です。  
@@ -163,5 +169,5 @@ int main( )
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [句](../../../parallel/openmp/reference/openmp-clauses.md)

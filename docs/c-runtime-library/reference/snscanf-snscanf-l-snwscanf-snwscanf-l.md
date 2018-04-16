@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _snwscanf
 - _snscanf_l
@@ -57,16 +57,17 @@ helpviewer_keywords:
 - strings [C++], reading
 - _snscanf function
 ms.assetid: da1ac890-f905-4cd7-954b-3c90957b5551
-caps.latest.revision: 24
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 37ebbde63bec1ef670e4e0bf9596c2e59aa5fcc5
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: ecc4efef2c5f770e6a1d08a3f394ba439f7dc079
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="snscanf-snscanfl-snwscanf-snwscanfl"></a>_snscanf、_snscanf_l、_snwscanf、_snwscanf_l
 指定した長さの書式付きデータを文字列から読み出します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_snscanf_s、_snscanf_s_l、_snwscanf_s、_snwscanf_s_l](../../c-runtime-library/reference/snscanf-s-snscanf-s-l-snwscanf-s-snwscanf-s-l.md)」をご覧ください。  
@@ -121,7 +122,7 @@ int __cdecl _snwscanf_l(
 ## <a name="return-value"></a>戻り値  
  これらの関数は、正常に変換および代入されたフィールドの数を返します。読み込まれただけで代入されなかったフィールドは戻り値には含まれません。 戻り値が 0 の場合は、代入されたフィールドがなかったことを示します。 エラーが発生するか、最初の変換前に文字列の終端に達した場合は `EOF` が返されます。 詳細については、[sscanf](../../c-runtime-library/reference/sscanf-sscanf-l-swscanf-swscanf-l.md) を参照してください  
   
- `input` または `format` が `NULL` ポインターである場合、または `length` がゼロ以下の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `EOF` を返し、`errno` を `EINVAL` に設定します。  
+ `input` または `format` が `NULL` ポインターである場合、または `length` がゼロ以下の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `EOF` を返し、 `errno` を `EINVAL`に設定します。  
   
  エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
@@ -137,14 +138,14 @@ int __cdecl _snwscanf_l(
 |`_sntscanf`|`_snscanf`|`_snscanf`|`_snwscanf`|  
 |`_sntscanf_l`|`_snscanf_l`|`_snscanf_l`|`_snwscanf_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_snscanf`, `_snscanf_l`|\<stdio.h>|  
 |`_snwscanf`, `_snwscanf_l`|\<stdio.h> または \<wchar.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -179,5 +180,5 @@ _snscanf converted 2 fields: 15 and 12.000000
 _snwscanf converted 2 fields: 15 and 12.000000  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [scanf 関数の文字幅指定](../../c-runtime-library/scanf-width-specification.md)

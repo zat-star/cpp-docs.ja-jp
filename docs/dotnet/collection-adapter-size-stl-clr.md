@@ -1,41 +1,46 @@
 ---
-title: "collection_adapter::size (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::collection_adapter::size"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "size メンバー [STL/CLR]"
+title: collection_adapter::size (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::collection_adapter::size
+dev_langs:
+- C++
+helpviewer_keywords:
+- size member [STL/CLR]
 ms.assetid: 71866719-9e29-4572-bfb9-60321f2937c5
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 670b91a1b01f3234cf3a41b89498994836691fc4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# collection_adapter::size (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="collectionadaptersize-stlclr"></a>collection_adapter::size (STL/CLR)
 要素の数をカウントします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 size_type size();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスの長さを返します。  これは `IEnumerable` または `IEnumerable<Value>`の特殊化では定義されていません。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスの長さを返します。 特殊化で定義されていない`IEnumerable`または`IEnumerable<Value>`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_collection_adapter_size.cpp   
@@ -60,12 +65,15 @@ int main()
   
 ```  
   
-  **X x x x x X**  
-**size\(\) \= 6**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アダプター\>  
+```Output  
+ x x x x x x  
+size() = 6  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アダプター/>  
   
-## 参照  
- [collection\_adapter](../Topic/collection_adapter%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [collection_adapter (STL/CLR)](../dotnet/collection-adapter-stl-clr.md)

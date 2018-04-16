@@ -1,84 +1,88 @@
 ---
-title: "Partial (C++ コンポーネント拡張) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "partial_CPP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "partial"
-  - "C + +/CX、partial"
+title: "partial (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- partial_CPP
+dev_langs:
+- C++
+helpviewer_keywords:
+- partial
+- C++/CX, partial
 ms.assetid: 43adf1f5-10c5-44aa-a66f-7507e2bdabf8
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: dd2debe47b0c60907c1a75f4e8b96d227468a345
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Partial (C++ コンポーネント拡張)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`partial` キーワードを使用して、同じ ref クラスの別々の部分を個別に作成したり、別々のファイル内に作成したりできます。  
+# <a name="partial--c-component-extensions"></a>Partial (C++ コンポーネント拡張)
+`partial`キーワードとは独立して、および異なるファイル内に作成される同じ ref クラスのさまざまな部分を有効にします。  
   
-## すべてのランタイム  
- \(この言語機能は [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]にのみ適用されます。\)  
+## <a name="all-runtimes"></a>すべてのランタイム  
+ (この言語機能は、Windows ランタイムのみに適用されます)。  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
- 2 個の部分定義がある ref クラスの場合、`partial` キーワードは最初に出現した定義に適用されます。通常、これは自動生成されたコードによって実行されるため、人間の作成者はこのキーワードをそれほど使用しません。  クラス内の以後の部分定義については、*class\-key* キーワードとクラス ID から `partial` 修飾子を省略します。  コンパイラが定義済み ref クラスおよびクラス ID を検出したときに、`partial` キーワードが指定されていない場合には、ref クラスのすべての部分定義が内部的に 1 つの定義に統合されます。  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ 2 つの部分定義を持つ ref クラスの`partial`の定義の最初に出現するキーワードが適用され、これは、通常、自動生成されたコードでヒューマン コードの作成者が非常に多くの場合、キーワードを使用しないようにします。 後続部分のすべての定義、クラス、省略、`partial`から修飾子、*クラス キー*キーワードとクラスの識別子。 以前に定義した ref クラスとクラス識別子がない、コンパイラが検出した場合`partial`キーワード、ref クラス定義を複数の定義を 1 つの部分のすべてを内部的に結合します。  
   
-### 構文  
+### <a name="syntax"></a>構文  
   
 ```cpp  
-  
 partial class-key identifier {  
-   /* The first part of the partial class definition. This is typically auto-generated*/  
+   /* The first part of the partial class definition. 
+      This is typically auto-generated */  
 }  
 // ...  
 class-key identifier {  
-   /* The subsequent part(s) of the class definition. The same identifier is specified, but the "partial" keyword is omitted. */  
+   /* The subsequent part(s) of the class definition. The same 
+      identifier is specified, but the "partial" keyword is omitted. */  
 }  
-  
 ```  
   
-### パラメーター  
- *class\-key*  
- [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]でサポートされるクラスまたは構造体を宣言するキーワード。  `ref class`、`value class`、`ref struct`、`value struct` のいずれかになります。  
+### <a name="parameters"></a>パラメーター  
+ *クラス キー*  
+ クラスまたは Windows ランタイムでサポートされている構造体を宣言するキーワードです。 いずれか`ref class`、 `value class`、 `ref struct`、または`value struct`です。  
   
  *identifier*  
- 定義される型の名前。  
+ 定義済みの型の名前。  
   
-### 解説  
- 部分クラスは、1 つのファイル内のクラス定義の一部分を変更するシナリオをサポートします。XAML デザイナーなどの自動コード生成ソフトウェアは、別のファイル内の同じクラスを変更します。  部分クラスを使用することにより、自動コード生成ソフトウェアがコードを上書きすることを防ぐことができます。  Visual Studio プロジェクトでは、生成されたファイルに `partial` 修飾子が自動的に適用されます。  
+### <a name="remarks"></a>コメント  
+ 部分クラスは、1 つのファイル サービスおよび自動コード生成ソフトウェア内のクラス定義の 1 つの部分を変更するシナリオをサポートしています: XAML デザイナーなど-別のファイルで同じクラスにコードを変更します。 部分クラスを使用するには、コードを上書きしてから、自動コード ジェネレーターができなくなります。 Visual Studio プロジェクトでは、生成されたファイルに `partial` 修飾子が自動的に適用されます。  
   
- 内容: `partial` キーワードを省略した場合、完全なクラス定義に指定できるすべての要素を 1 つの部分定義で指定することができますが、例外が 2 つあります。  ただし、クラスのアクセシビリティ \(たとえば、`public partial class X {…};`\)、または `declspec`を指定できません。  
+ 内容: 2 つの例外を除き、部分クラス定義含めることができる場合、完全クラス定義を含む可能性のあるもの、`partial`キーワードを省略します。 ただし、クラスのアクセシビリティを指定することはできません (たとえば、 `public partial class X { ... };`)、または`declspec`です。  
   
- *identifier* に部分クラス定義で使用するアクセス指定子は *identifier*の後続の部分的または完全なクラス定義の既定のアクセシビリティには影響しません。  静的データ メンバーはインライン定義できます。  
+ アクセス指定子の部分クラス定義で使用される*識別子*、既定のユーザー補助機能の後続の部分的または完全クラス定義には影響しません*識別子*です。 静的データ メンバーのインライン定義が許可されます。  
   
- 宣言: *identifier* クラスの部分定義は、名前 *identifier*のみがありますが、*identifier* はクラス定義を必要とする方法では使用できません。  名前 *identifier* が *identifier*のサイズがわかっているときは使用できません。または *identifier* の基本クラスまたはメンバーをコンパイラの後までを使用するように *identifier*の完全な定義が発生します。  
+ 宣言: クラスの部分定義*識別子*という名前のみ説明*識別子*が*識別子*クラスが必要な方法では使用できません定義です。 名前*識別子*のサイズを知るには使用できません*識別子*、または基底クラスまたはのメンバーを使用する*識別子*まで、コンパイラでの完全定義が発生した後*識別子*です。  
   
- 数と順序: *identifier*のゼロことも、より多くの部分クラス定義。  *identifier* のすべての部分クラス定義 \(完全な定義がある構文によって *identifier* の 1 種類の完全な定義を記述する必要があります。; それ以外の場合、クラスは前方宣言\)、*identifier*の事前の宣言に指定する必要がある場合は、以外は使用できません。  すべての class\-key が同じである必要があります。  
+ 数字と順序。 0 個以上の部分クラス定義をできる*識別子*です。 すべての部分クラス定義*識別子*の 1 つの完全定義の前に構文的にする必要があります*識別子*(です完全な定義がある場合、それ以外の場合、クラス以外は使用できません、。事前宣言) の事前宣言の前をする必要がありますが、*識別子*です。 すべてのクラス キーが一致する必要があります。  
   
- 完全な定義: *identifier*クラスの定義の時点で、動作は *identifier* の定義が見つかり、部分クラスで定義された順序ですべての基本クラスなど、メンバーを宣言する場合と同じです。  
+ 完全な定義: クラスの完全定義の点で*識別子*、動作は同じとしての定義*識別子*すべて基底クラスやメンバーなどの順序で宣言されています。発生しましたがおよび、部分クラスで定義されています。  
   
- テンプレート: 部分クラスはテンプレートにできません。  
+ テンプレート: 部分クラスは、テンプレートになることはできません。  
   
- ジェネリック: 完全な定義をジェネリックにできる場合、部分クラスをジェネリックにできます。  ただし、すべての部分クラスと完全なクラスのジェネリック パラメーターが、仮パラメーター名を含めて厳密に同じであることが必要です。  
+ ジェネリック: 完全定義がジェネリックにする場合、部分クラスでジェネリック型を指定できます。 すべての部分と完全クラスには正確に同じジェネリック パラメーター、仮パラメーター名を含む必要があります。  
   
- この方法の詳細については `partial` キーワードを使用して参照します [Partial Classes \(C\+\+\/CX\)](http://go.microsoft.com/fwlink/p/?LinkId=249023)。  
+ 使用する方法についての詳細、`partial`キーワードを参照してください[部分クラス (C + + CX)](http://go.microsoft.com/fwlink/p/?LinkId=249023)です。  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-## 共通言語ランタイム  
- \(この言語機能は共通言語ランタイムには適用されません。\)  
+## <a name="common-language-runtime"></a>共通言語ランタイム  
+ (この言語機能は適用されませんを共通言語ランタイム。)  
   
-## 参照  
- [Partial Classes \(C\+\+\/CX\)](http://go.microsoft.com/fwlink/p/?LinkId=249023)
+## <a name="see-also"></a>参照  
+ [部分クラス (C + + CX)](http://go.microsoft.com/fwlink/p/?LinkId=249023)

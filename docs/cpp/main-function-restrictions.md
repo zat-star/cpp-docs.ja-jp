@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - main function, restrictions on using
 ms.assetid: 7b3df731-344b-44a8-850c-11cbcbfbfa83
-caps.latest.revision: 8
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 10fe82b0bb7ad700164b05ba466854db7716ba76
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8a94844a0d5636c58a764114ed6f413923d69950
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="main-function-restrictions"></a>main 関数に関する制約
 いくつかの制限を適用する、**メイン**関数を他の C++ 関数には適用されません。 **メイン**関数。  
@@ -39,5 +40,5 @@ ms.lasthandoff: 09/25/2017
   
 -   呼び出すことはできません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [main: プログラムの起動](../cpp/main-program-startup.md)

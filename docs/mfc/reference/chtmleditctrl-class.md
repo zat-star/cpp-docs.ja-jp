@@ -23,16 +23,17 @@ helpviewer_keywords:
 - CHtmlEditCtrl [MFC], GetDHtmlDocument
 - CHtmlEditCtrl [MFC], GetStartDocument
 ms.assetid: 0fc4a238-b05f-4874-9edc-6a6701f064d9
-caps.latest.revision: 22
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f3ea794bfcb3d7e62a53ed8423918e5448990dae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 8a4cdfd1f11a3420f2d7ec46b1a30bb3eaf20a30
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="chtmleditctrl-class"></a>関数クラス
 MFC ウィンドウ内の WebBrowser ActiveX コントロールの機能が用意されています。  
@@ -74,7 +75,7 @@ class CHtmlEditCtrl: public CWnd,
   
  `CHtmlEditCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxhtml.h  
   
 ##  <a name="chtmleditctrl"></a>CHtmlEditCtrl::CHtmlEditCtrl  
@@ -137,7 +138,6 @@ BOOL GetDHtmlDocument(IHTMLDocument2** ppDocument) const;
 virtual LPCTSTR GetStartDocument();
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)
-
 

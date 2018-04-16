@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3482
-dev_langs: C++
-helpviewer_keywords: C3482
+f1_keywords:
+- C3482
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3482
 ms.assetid: bf99558e-bef4-421c-bb16-dcd9c54c1011
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b19769a8a326613401263fa7700b85c36a9dbbe1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4ff7a17d663be7168c5743838d782043d7c0ee92
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3482"></a>コンパイラ エラー C3482
 'this' は非静的メンバー関数内でのラムダ キャプチャとしてのみ使用できます  
@@ -49,5 +55,5 @@ public:
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ラムダ式](../../cpp/lambda-expressions-in-cpp.md)

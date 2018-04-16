@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - streambuf/std::ostreambuf_iterator
 - iterator/std::ostreambuf_iterator::char_type
@@ -14,7 +15,8 @@ f1_keywords:
 - iterator/std::ostreambuf_iterator::streambuf_type
 - iterator/std::ostreambuf_iterator::traits_type
 - iterator/std::ostreambuf_iterator::failed
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::ostreambuf_iterator [C++]
 - std::ostreambuf_iterator [C++], char_type
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - std::ostreambuf_iterator [C++], traits_type
 - std::ostreambuf_iterator [C++], failed
 ms.assetid: dad1e624-2f45-4e94-8887-a885e95f9071
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 792d2f658ed64b44254b5e93b9f2b2bde9eb0a1d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 695b8415cd5958d200ba9120e28bebd543614f24
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ostreambufiterator-class"></a>ostreambuf_iterator Class
 テンプレート クラス ostreambuf_iterator は、抽出**演算子 >>** を使用して連続する文字要素を出力ストリームに書き込む出力反復子オブジェクトを表します。 `ostreambuf_iterator` は、出力ストリームに挿入されるオブジェクトの型がジェネリック型ではなく文字である点が、[ostream_iterator クラス](../standard-library/ostream-iterator-class.md)のオブジェクトとは異なります。  
@@ -81,7 +85,7 @@ template <class CharType = char class Traits = char_traits <CharType>>
 |[operator++](#op_add_add)|操作が呼び出される前に示したものと同じオブジェクトに `ostreambuf_iterator` を返す、実質的な機能を持たないインクリメント演算子。|  
 |[operator=](#op_eq)|この演算子は、関連付けられているストリーム バッファーに文字を挿入します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iterator>  
   
  **名前空間:** std  
@@ -446,7 +450,7 @@ The characters written to the output stream
 *\  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<iterator>](../standard-library/iterator.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)

@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.mfc.components
-dev_langs: C++
+f1_keywords:
+- vc.mfc.components
+dev_langs:
+- C++
 helpviewer_keywords:
 - components [MFC], localizing
 - TN057
@@ -19,15 +22,17 @@ helpviewer_keywords:
 - DLLs [MFC], localizing MFC
 - localization [MFC], resources
 ms.assetid: 5376d329-bd45-41bd-97f5-3d895a9a0af5
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8b8d8bcd21128b6d2d78d936e68f60040a75496c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e27b737a76b30e7193a9afb7797a20951294032e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn057-localization-of-mfc-components"></a>テクニカル ノート 57: MFC コンポーネントのローカライズ
 > [!NOTE]
@@ -78,7 +83,7 @@ CMyApp::InitInstance()
   
  最も単純で安全な方法は、アプリケーションまたは DLL 自体 (またはそのサテライト DLL のいずれかを使用している場合) にローカライズされた MFC リソースを含めるにです。 MFC7xLOC.DLL を正しくインストールの問題を回避できます。 ように、(ローカライズされたリソースを指す正しく RC のコマンドラインの設定) 上記の静的な場合、同じ手順に従ってするには、except も削除する必要があること、`/D_AFXDLL`定義 AppWizard によって追加されました。 ときに`/D_AFXDLL`はコマを定義します。H (およびその他の MFC RC ファイル) 実際には定義しませんのすべてのリソース (ため、それらからプルされ、MFC Dll 代わりに)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

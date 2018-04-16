@@ -1,45 +1,49 @@
 ---
-title: "/vmm、/vms、/vmv (通常の最適化) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/vms"
-  - "/vmm"
-  - "/vmv"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/vmm コンパイラ オプション [C++]"
-  - "/vms コンパイラ オプション [C++]"
-  - "/vmv コンパイラ オプション [C++]"
-  - "汎用的処理形式のコンパイラ オプション"
-  - "Single Inheritance コンパイラ オプション"
-  - "仮想継承コンパイラ オプション"
-  - "vmm コンパイラ オプション [C++]"
-  - "-vmm コンパイラ オプション [C++]"
-  - "vms コンパイラ オプション [C++]"
-  - "-vms コンパイラ オプション [C++]"
-  - "vmv コンパイラ オプション [C++]"
-  - "-vmv コンパイラ オプション [C++]"
+title: "vmm、vm--vmv (汎用表現) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /vms
+- /vmm
+- /vmv
+dev_langs:
+- C++
+helpviewer_keywords:
+- Virtual Inheritance compiler option
+- general purpose representation compiler options
+- vms compiler option [C++]
+- vmm compiler option [C++]
+- /vmm compiler option [C++]
+- -vmm compiler option [C++]
+- -vms compiler option [C++]
+- /vms compiler option [C++]
+- vmv compiler option [C++]
+- /vmv compiler option [C++]
+- Single Inheritance compiler option
+- -vmv compiler option [C++]
 ms.assetid: 0fcd7ae0-3031-4c62-a2a8-e154c8685dae
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d54ea3cabbbe631006cc22a80fdbf500585ff20f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /vmm、/vms、/vmv (通常の最適化)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[\/vmb、\/vmg \(処理形式\)](../../build/reference/vmb-vmg-representation-method.md) が[処理形式](../../build/reference/vmb-vmg-representation-method.md)として選択されたときに使用します。  これらのオプションは、まだ検出されていないクラス定義の継承モデルを示します。  
+# <a name="vmm-vms-vmv-general-purpose-representation"></a>/vmm、/vms、/vmv (通常の最適化)
+際に使用される[/vmb、/vmg () を処理形式](../../build/reference/vmb-vmg-representation-method.md)として選択されて、[表現メソッド](../../build/reference/vmb-vmg-representation-method.md)です。 これらのオプションでは、not まだ検出クラス定義の継承モデルを示しています。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /vmm  
@@ -47,32 +51,32 @@ caps.handback.revision: 12
 /vmv  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  これらのオプションの説明を次の表に示します。  
   
 |オプション|説明|  
-|-----------|--------|  
-|**\/vmm**|クラスのメンバーへの最も一般的なポインター表現を多重継承するクラスに対して指定します。<br /><br /> 対応する[継承キーワード](../../cpp/inheritance-keywords.md)および [\#pragma pointers\_to\_members](../Topic/pointers_to_members.md) の引数は **multiple\_inheritance** です。<br /><br /> この表現は、単一継承に必要な表現よりもサイズが大きくなります。<br /><br /> メンバーへのポインターが宣言されているクラス定義の継承モデルが仮想モデルの場合、コンパイラはエラーを出力します。|  
-|**\/vms**|クラスのメンバーへの最も一般的なポインター表現を何も継承しないクラスか、単一継承するクラスに対して指定します。<br /><br /> 対応する[継承キーワード](../../cpp/inheritance-keywords.md)および [\#pragma pointers\_to\_members](../Topic/pointers_to_members.md) の引数は **single\_inheritance** です。<br /><br /> これは、クラスのメンバーへのポインターの最小サイズの表現です。<br /><br /> メンバーへのポインターが宣言されているクラス定義の継承モデルが多重継承モデルまたは仮想モデルの場合、コンパイラはエラーを出力します。|  
-|**\/vmv**|クラスのメンバーへの最も一般的なポインター表現を仮想継承するクラスに対して指定します。  エラーになることはありません。これは、既定の設定です。<br /><br /> 対応する[継承キーワード](../../cpp/inheritance-keywords.md)および [\#pragma pointers\_to\_members](../Topic/pointers_to_members.md) の引数は **virtual\_inheritance** です。<br /><br /> このオプションは、ポインターを解釈するために、ほかのオプションよりもポインターのサイズが大きくなり、追加コードが必要になります。|  
+|------------|-----------------|  
+|**/vmm の最適化**|多重継承を使用するいずれかを指定するには、クラスのメンバーへのポインターの最も一般的な表現を指定します。<br /><br /> 対応する[継承キーワード](../../cpp/inheritance-keywords.md)とする引数[#pragma pointers_to_members](../../preprocessor/pointers-to-members.md)は**multiple_inheritance**です。<br /><br /> この表現は、単一継承で必要となるより大きいです。<br /><br /> メンバーへのポインターが宣言されているクラス定義の継承モデルが仮想の場合、コンパイラはエラーを生成します。|  
+|**/vms**|ありません継承または単一継承のいずれかを使用するいずれかを指定するには、クラスのメンバーへのポインターの最も一般的な表現を指定します。<br /><br /> 対応する[継承キーワード](../../cpp/inheritance-keywords.md)とする引数[#pragma pointers_to_members](../../preprocessor/pointers-to-members.md)は**single_inheritance**です。<br /><br /> これは、クラスのメンバーへのポインターの最小サイズの表現です。<br /><br /> メンバーへのポインターが宣言されているクラス定義の継承モデルが複数ある場合または仮想、コンパイラ エラーが発生します。|  
+|**/vmv**|仮想継承を使用するいずれかを指定するには、クラスのメンバーへのポインターの最も一般的な表現を指定します。 ありません、エラーが発生し、既定値です。<br /><br /> 対応する[継承キーワード](../../cpp/inheritance-keywords.md)とする引数[#pragma pointers_to_members](../../preprocessor/pointers-to-members.md)は**virtual_inheritance**です。<br /><br /> このオプションは、大きいサイズのポインターと他のオプションよりもポインターを解釈する追加のコードが必要です。|  
   
- 上のどの継承モデル オプションを選択しても、クラス メンバーを指すすべてのポインターに対してそのモデルが適用されます。継承の種類やポインター宣言の位置 \(クラス定義の前または後ろ\) は関係ありません。  したがって、常に単一継承のクラスを使用している場合は、**\/vms** を使ってコンパイルするとコード サイズが小さくなります。最も一般的な方法でコンパイルするには、 **\/vmv** を使ってコンパイルします。ただし、このオプションではデータ表現が大きくなります。  
+ これらの継承モデル オプションのいずれかを指定すると、そのモデルが、クラス後の継承の種類や前に、またはにポインターを宣言するかどうかに関係なく、クラス メンバーへのすべてのポインターに対して使用されます。 そのため、常に単一継承のクラスを使用する場合は、コードのサイズを小さくでコンパイルする**/vms**ただし、最も一般的なケース (を犠牲にして、最大のデータ表現) を使用する場合は、コンパイル時に**。/vmv**です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  **\[追加のオプション\]** ボックスにコンパイラ オプションを入力します。  
+4.  **[追加のオプション]** ボックスにコンパイラ オプションを入力します。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 参照  
- [\/vmb、\/vmg \(処理形式\)](../../build/reference/vmb-vmg-representation-method.md)   
+## <a name="see-also"></a>参照  
+ [/vmb、/vmg)](../../build/reference/vmb-vmg-representation-method.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

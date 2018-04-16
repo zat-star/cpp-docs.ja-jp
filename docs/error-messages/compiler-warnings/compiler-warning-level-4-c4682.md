@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C4682
-dev_langs: C++
-helpviewer_keywords: C4682
+f1_keywords:
+- C4682
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4682
 ms.assetid: 858ea157-1244-4a61-85df-97b3de43d418
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 95409a9c23b9f0cc7a034323e661ce1ce0e4b173
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d367203113ea8fad20cd914d381b4c941856d6b8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4682"></a>コンパイラの警告 (レベル 4) C4682
 'parameter': 方向性のあるパラメーター属性が指定されていません。[in] を既定とします  

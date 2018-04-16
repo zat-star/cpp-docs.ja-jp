@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_map::hash_map
-dev_langs: C++
-helpviewer_keywords: hash_map member [STL/CLR]
+f1_keywords:
+- cliext::hash_map::hash_map
+dev_langs:
+- C++
+helpviewer_keywords:
+- hash_map member [STL/CLR]
 ms.assetid: d65eb3fa-4bf9-4186-95f8-5517c90ef1fa
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b00688397cc76bb618631dfa92f4da16e6f4bc4a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e53d52a2d057854bdaf4b5471b548ce39fc86f66
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmaphashmap-stlclr"></a>hash_map::hash_map (STL/CLR)
 コンテナー オブジェクトを構築します。  
@@ -262,12 +269,12 @@ size() = 0
  [a 1] [b 2] [c 3]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
  [hash_map::generic_container (STL/CLR)](../dotnet/hash-map-generic-container-stl-clr.md)   
  [hash_map::operator= (STL/CLR)](../dotnet/hash-map-operator-assign-stl-clr.md)

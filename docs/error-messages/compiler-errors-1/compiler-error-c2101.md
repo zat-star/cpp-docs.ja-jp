@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2101
 ms.assetid: 42f0136f-8cc1-4f2b-be1c-721ec9278e66
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 65b63962ebdc073ab6ecb68de5251d9e1eae8399
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 035b0d70a75652edb5ba01357076ba9942acdfae
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2101"></a>コンパイラ エラー C2101
 '&' に、オペランドとしての左辺値がありません  

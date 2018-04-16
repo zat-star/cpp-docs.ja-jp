@@ -1,132 +1,136 @@
 ---
-title: "LIB の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Lib"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LIB [C++], モード"
+title: LIB の概要 |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
+ms.topic: article
+f1_keywords:
+- Lib
+dev_langs:
+- C++
+helpviewer_keywords:
+- LIB [C++], modes
 ms.assetid: e997d423-f574-434f-8b56-25585d137ee0
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ef3d1e57371fdea62bb557830baca633f4165637
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# LIB の概要
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-LIB は、プログラムをビルドするときに [LINK](../../build/reference/linker-options.md) で使用できる標準ライブラリ、インポート ライブラリ、およびエクスポート ファイルを作成します。  LIB はコマンド ラインから実行します。  
+# <a name="overview-of-lib"></a>LIB の概要
+Lib、インポート ライブラリ、およびエクスポートで使用できるファイル[リンク](../../build/reference/linker-options.md)プログラムを作成するときにします。 LIB は、コマンド プロンプトから実行されます。  
   
  LIB は、次のモードで使用できます。  
   
--   [ライブラリの管理](../../build/reference/managing-a-library.md)  
+-   [構築または COFF ライブラリを変更します。](../../build/reference/managing-a-library.md)  
   
--   [ライブラリ メンバーの抽出](../../build/reference/extracting-a-library-member.md)  
+-   [ファイルにメンバー オブジェクトを抽出します。](../../build/reference/extracting-a-library-member.md)  
   
--   [インポート ライブラリとエクスポート ファイル](../../build/reference/working-with-import-libraries-and-export-files.md)  
+-   [インポート ライブラリとエクスポート ファイルを作成します。](../../build/reference/working-with-import-libraries-and-export-files.md)  
   
- これらのモードは相互に排他的です。LIB は、一度に 1 つのモードでしか使用できません。  
+ これらのモードは相互に排他的です。LIB は、一度に 1 つのモードで使用できます。  
   
-## LIB オプション  
- 次の表に、lib.exe のオプションとその参照先へのリンクを示します。  
+## <a name="lib-options"></a>Lib オプション  
+ 次の表には、詳細情報へのリンクを使用して、lib.exe のオプションが一覧表示します。  
   
- **\/DEF**  
+ **/DEF**  
  インポート ライブラリとエクスポート ファイルを作成します。  
   
- 詳細については、「[インポート ライブラリとエクスポート ファイルのビルド](../../build/reference/building-an-import-library-and-export-file.md)」を参照してください。  
+ 詳細については、次を参照してください。[インポート ライブラリとエクスポート ファイルのビルド](../../build/reference/building-an-import-library-and-export-file.md)です。  
   
- **\/ERRORREPORT**  
- lib.exe の内部エラー情報を Microsoft に送信します。  
+ **/ERRORREPORT**  
+ Lib.exe の内部エラーに関する情報を Microsoft に送信します。  
   
- 詳細については、「[LIB の実行](../../build/reference/running-lib.md)」を参照してください。  
+ 詳細については、次を参照してください。 [LIB の実行](../../build/reference/running-lib.md)です。  
   
- **\/EXPORT**  
+ **/エクスポート**  
  プログラムから関数をエクスポートします。  
   
- 詳細については、「[インポート ライブラリとエクスポート ファイルのビルド](../../build/reference/building-an-import-library-and-export-file.md)」を参照してください。  
+ 詳細については、次を参照してください。[インポート ライブラリとエクスポート ファイルのビルド](../../build/reference/building-an-import-library-and-export-file.md)です。  
   
- **\/EXTRACT**  
- 既存のライブラリのメンバーからオブジェクト \(.obj\) ファイルを作成します。  
+ **/EXTRACT します。**  
+ 既存のライブラリのメンバーのコピーを含むオブジェクト (.obj) ファイルを作成します。  
   
- 詳細については、「[ライブラリ メンバーの抽出](../../build/reference/extracting-a-library-member.md)」を参照してください。  
+ 詳細については、次を参照してください。[ライブラリ メンバーの抽出](../../build/reference/extracting-a-library-member.md)です。  
   
- **\/INCLUDE**  
- シンボル テーブルにシンボルを追加します。  
+ **/INCLUDE します。**  
+ シンボルをシンボル テーブルに追加します。  
   
- 詳細については、「[インポート ライブラリとエクスポート ファイルのビルド](../../build/reference/building-an-import-library-and-export-file.md)」を参照してください。  
+ 詳細については、次を参照してください。[インポート ライブラリとエクスポート ファイルのビルド](../../build/reference/building-an-import-library-and-export-file.md)です。  
   
- **\/LIBPATH**  
- 環境で指定されるライブラリのパスを一時的に変更します。  
+ **/LIBPATH**  
+ 環境ライブラリ パスをオーバーライドします。  
   
- 詳細については、「[ライブラリの管理](../../build/reference/managing-a-library.md)」を参照してください。  
+ 詳細については、次を参照してください。[ライブラリの管理](../../build/reference/managing-a-library.md)です。  
   
- **\/LIST**  
- 出力ライブラリに関する情報を標準出力に表示します。  
+ **/一覧表示**  
+ 標準出力に出力ライブラリに関する情報を表示します。  
   
- 詳細については、「[ライブラリの管理](../../build/reference/managing-a-library.md)」を参照してください。  
+ 詳細については、次を参照してください。[ライブラリの管理](../../build/reference/managing-a-library.md)です。  
   
- **\/LTCG**  
- リンク時コード生成を使用してライブラリがビルドされます。  
+ **/LTCG**  
+ リンク時コード生成を使用してビルドするライブラリが発生します。  
   
- 詳細については、「[LIB の実行](../../build/reference/running-lib.md)」を参照してください。  
+ 詳細については、次を参照してください。 [LIB の実行](../../build/reference/running-lib.md)です。  
   
- **\/MACHINE**  
+ **/MACHINE**  
  プログラムのターゲット プラットフォームを指定します。  
   
- 詳細については、「[LIB の実行](../../build/reference/running-lib.md)」を参照してください。  
+ 詳細については、次を参照してください。 [LIB の実行](../../build/reference/running-lib.md)です。  
   
- **\/NAME**  
- インポート ライブラリをビルドするときに、そのインポート ライブラリの対象となる DLL の名前を指定します。  
+ **/名前**  
+ インポート ライブラリをビルドする場合は、インポート ライブラリを作成する対象の DLL の名前を指定します。  
   
- 詳細については、「[ライブラリの管理](../../build/reference/managing-a-library.md)」を参照してください。  
+ 詳細については、次を参照してください。[ライブラリの管理](../../build/reference/managing-a-library.md)です。  
   
- **\/NODEFAULTLIB**  
- 外部参照を解決するときに、検索するライブラリ リストから既定のライブラリを除外します。  
+ **/NODEFAULTLIB**  
+ 外部参照を解決するときに、検索するライブラリの一覧から 1 つまたは複数の既定のライブラリを削除します。  
   
- 詳細については、「[ライブラリの管理](../../build/reference/managing-a-library.md)」を参照してください。  
+ 詳細については、次を参照してください。[ライブラリの管理](../../build/reference/managing-a-library.md)です。  
   
- **\/NOLOGO**  
- LIB の著作権情報とバージョン情報が表示されなくなり、コマンド ファイルもエコーされません。  
+ **/NOLOGO**  
+ LIB 著作権メッセージとバージョン番号の表示を中止し、コマンド ファイルのエコーを防止します。  
   
- 詳細については、「[LIB の実行](../../build/reference/running-lib.md)」を参照してください。  
+ 詳細については、次を参照してください。 [LIB の実行](../../build/reference/running-lib.md)です。  
   
- **\/OUT**  
- 既定の出力ファイル名を変更します。  
+ **/入力出力**  
+ 既定の出力ファイル名をオーバーライドします。  
   
- 詳細については、「[ライブラリの管理](../../build/reference/managing-a-library.md)」を参照してください。  
+ 詳細については、次を参照してください。[ライブラリの管理](../../build/reference/managing-a-library.md)です。  
   
- **\/REMOVE**  
- オブジェクトを出力ライブラリから削除します。  
+ **/削除します。**  
+ 出力ライブラリからのオブジェクトを除外します。  
   
- 詳細については、「[ライブラリの管理](../../build/reference/managing-a-library.md)」を参照してください。  
+ 詳細については、次を参照してください。[ライブラリの管理](../../build/reference/managing-a-library.md)です。  
   
- **\/SUBSYSTEM**  
- オペレーティング システムに対して、出力ライブラリにリンクして作成されたプログラムの実行方法を指示します。  
+ **/SUBSYSTEM**  
+ オペレーティング システムに出力ライブラリにリンクすることによって作成されたプログラムを実行する方法を説明します。  
   
- 詳細については、「[ライブラリの管理](../../build/reference/managing-a-library.md)」を参照してください。  
+ 詳細については、次を参照してください。[ライブラリの管理](../../build/reference/managing-a-library.md)です。  
   
- **\/VERBOSE**  
- 追加されている .obj ファイルの名前など、セッションの進行状況を詳しく表示します。  
+ **/VERBOSE**  
+ 追加される .obj ファイルの名前を含め、セッションの進行状況に関する詳細を表示します。  
   
- 詳細については、「[LIB の実行](../../build/reference/running-lib.md)」を参照してください。  
+ 詳細については、次を参照してください。 [LIB の実行](../../build/reference/running-lib.md)です。  
   
- **\/WX**  
+ **/WX**  
  警告をエラーとして扱います。  
   
- 詳細については、「[LIB の実行](../../build/reference/running-lib.md)」を参照してください。  
+ 詳細については、次を参照してください。 [LIB の実行](../../build/reference/running-lib.md)です。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [LIB リファレンス](../../build/reference/lib-reference.md)   
  [LIB の入力ファイル](../../build/reference/lib-input-files.md)   
  [LIB の出力ファイル](../../build/reference/lib-output-files.md)   
- [LIB のその他の出力](../../build/reference/other-lib-output.md)   
+ [他のライブラリ出力](../../build/reference/other-lib-output.md)   
  [ライブラリの構造](../../build/reference/structure-of-a-library.md)

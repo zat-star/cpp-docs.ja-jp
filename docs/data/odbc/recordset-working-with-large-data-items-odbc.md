@@ -1,13 +1,15 @@
 ---
-title: "レコード セット: 大量のデータ項目 (ODBC) の操作 |Microsoft ドキュメント"
-ms.custom: 
+title: 'レコード セット: 大量のデータ項目 (ODBC) の操作 |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - BLOB (binary large object), recordsets
 - ODBC recordsets, binary large objects
@@ -15,15 +17,18 @@ helpviewer_keywords:
 - binary large objects
 - CLongBinary class, using in recordsets
 ms.assetid: 3e80b5a8-b6e7-43c6-a816-e54befc513a3
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7ad1ba9120575840ac833a20061b3e1c5a547412
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: bf82e1fabd45e9bccd63e4ba46068b75d2c2a0a7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="recordset-working-with-large-data-items-odbc"></a>レコードセット: 大量のデータの処理 (ODBC)
 このトピックは、MFC ODBC クラスと MFC DAO クラスの両方に適用されます。  
@@ -64,7 +69,7 @@ ms.lasthandoff: 10/24/2017
 > [!CAUTION]
 >  CLongBinary オブジェクトは、関数呼び出しでパラメーターとして使用できません。 さらに、その実装は、呼び出す**:: SQLGetData**、必ずしも、スクロール可能なスナップショットのスクロールのパフォーマンスが低下します。 可能性もある場合は true を使用するときに、 **:: SQLGetData**動的スキーマの列を取得するために直接できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
  [レコード セット: 合計およびその他の集計の結果 (ODBC) を取得します。](../../data/odbc/recordset-obtaining-sums-and-other-aggregate-results-odbc.md)   
  [レコード フィールド エクスチェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)

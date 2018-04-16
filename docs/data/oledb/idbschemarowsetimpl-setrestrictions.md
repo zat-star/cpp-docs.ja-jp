@@ -4,38 +4,41 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - IDBSchemaRowsetImpl::SetRestrictions
 - SetRestrictions
 - IDBSchemaRowsetImpl.SetRestrictions
-dev_langs: C++
-helpviewer_keywords: SetRestrictions method
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetRestrictions method
 ms.assetid: 707d5065-b853-4d38-9b67-3066b4d3b279
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2c4ee1c0aa3c852f99e29002d2df6d74f765e2b5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f3ac45e93e0a2561bd8ab24dc7c0c6b19b245b60
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="idbschemarowsetimplsetrestrictions"></a>IDBSchemaRowsetImpl::SetRestrictions
 特定のスキーマ行セットでサポートする制限を指定します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      void SetRestrictions(  
-   ULONG cRestrictions,  
-   GUID* /* rguidSchema */,  
-   ULONG* rgRestrictions   
-);  
+```
+void SetRestrictions(ULONG cRestrictions,  
+  GUID* /* rguidSchema */,  
+   ULONG* rgRestrictions);  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -59,10 +62,10 @@ ms.lasthandoff: 10/24/2017
   
  スキーマ行セットの詳細については、次を参照してください。 [IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx)で、 *OLE DB プログラマーズ リファレンス*Windows SDK に含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDBSchemaRowsetImpl クラス](../../data/oledb/idbschemarowsetimpl-class.md)   
  [IDBSchemaRowsetImpl クラス メンバー](http://msdn.microsoft.com/en-us/e74f6f82-541c-42e7-b4c6-e2d4656a0649)   
  [スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)   

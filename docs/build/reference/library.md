@@ -1,41 +1,45 @@
 ---
-title: "LIBRARY | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "LIBRARY"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LIBRARY ステートメント (.def ファイル)"
+title: "ライブラリ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- LIBRARY
+dev_langs:
+- C++
+helpviewer_keywords:
+- LIBRARY .def file statement
 ms.assetid: 1d7ccc92-e088-4ef7-9ef0-25c3862cc051
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 71637c83eda0ee641a4b66d94ba113162baa7bf2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# LIBRARY
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-DLL を作成するよう LINK に指示します。  ビルドで .exp ファイルが使用されていない場合は、同時にインポート ライブラリも作成されます。  
+# <a name="library"></a>LIBRARY
+DLL を作成するリンクを示します。 同時には、リンクは、ビルドで .exp ファイルを使用しない場合に、インポート ライブラリを作成します。  
   
 ```  
 LIBRARY [library][BASE=address]  
 ```  
   
-## 解説  
- 引数 *library* には、DLL の名前を指定します。  [\/OUT](../../build/reference/out-output-file-name.md) リンカー オプションを使って、DLL の出力名を指定することもできます。  
+## <a name="remarks"></a>コメント  
+ *ライブラリ*引数は、DLL の名前を指定します。 使用することも、 [/out](../../build/reference/out-output-file-name.md)リンカー オプションを DLL の出力名を指定します。  
   
- 引数 BASE\=*address* には、オペレーティング システムが DLL ファイルを読み込むベース アドレスを指定します。  既定では、DLL ファイルの読み込み先は 0x10000000 になりますが、この引数でこのアドレスを変更できます。  ベース アドレスの詳細については、[\/BASE](../../build/reference/base-base-address.md) オプションの説明を参照してください。  
+ 基本 =*アドレス*引数は、オペレーティング システムは DLL の読み込みに使用するベース アドレスを設定します。 この引数は、0x10000000 の既定の DLL の場所を上書きします。 説明を参照して、 [/base](../../build/reference/base-base-address.md)詳細については、ベース アドレスはオプションです。  
   
- DLL をビルドするときは、必ず [\/DLL](../../build/reference/dll-build-a-dll.md) リンカー オプションを使用してください。  
+ 使用してください、 [/DLL](../../build/reference/dll-build-a-dll.md)リンカー オプション、DLL をビルドするときにします。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [モジュール定義ステートメントに関する規則](../../build/reference/rules-for-module-definition-statements.md)

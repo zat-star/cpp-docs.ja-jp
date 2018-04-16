@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _vfprintf_l
 - vfprintf
@@ -28,7 +29,8 @@ f1_keywords:
 - vfwprintf
 - _vftprintf
 - vfprintf
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _vfwprintf_l function
 - _vftprintf function
@@ -42,15 +44,17 @@ helpviewer_keywords:
 - _vfprintf_l function
 - formatted text [C++]
 ms.assetid: 4443be50-cedf-40b2-b3e2-ff2b3af3b666
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 918188296fe58bd38159415c149ddfb0c9917284
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d08c0b5361d9ead2c5e4b1e64ed6bc8a8111453f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="vfprintf-vfprintfl-vfwprintf-vfwprintfl"></a>vfprintf、_vfprintf_l、vfwprintf、_vfwprintf_l
 引数リストへのポインターを使用して、書式付き出力を書き込みます。 これらの関数のセキュリティを強化したバージョンを使用できます。「[vfprintf_s、_vfprintf_s_l、vfwprintf_s、_vfwprintf_s_l](../../c-runtime-library/reference/vfprintf-s-vfprintf-s-l-vfwprintf-s-vfwprintf-s-l.md)」を参照してください。  
@@ -95,7 +99,7 @@ int _vfwprintf_l(
  `locale`  
  使用するロケール。  
   
- 詳細については、[書式の指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関する記事をご覧ください。  
+ 詳細については、「 [printf 関数と wprintf 関数の書式指定フィールド](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」を参照してください。  
   
 ## <a name="return-value"></a>戻り値  
  `vfprintf` 関数と `vfwprintf` 関数は、書き込まれた文字数を返します。終端の null 文字は含まれません。出力エラーが発生した場合は、負の値を返します。 `stream` または `format` が Null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、関数は -1 を返し、`errno` を `EINVAL` に設定します。  
@@ -119,9 +123,9 @@ int _vfwprintf_l(
 |`_vftprintf`|`vfprintf`|`vfprintf`|`vfwprintf`|  
 |`_vftprintf_l`|`_vfprintf_l`|`_vfprintf_l`|`_vfwprintf_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|省略可能なヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
 |-------------|---------------------|----------------------|  
 |`vfprintf`, `_vfprintf_l`|\<stdio.h> および \<stdarg.h>|\<varargs.h>*|  
 |`vfwprintf`, `_vfwprintf_l`|\<stdio.h> または \<wchar.h>、および \<stdarg.h>|\<varargs.h>*|  
@@ -130,7 +134,7 @@ int _vfwprintf_l(
   
  互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)   
  [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   

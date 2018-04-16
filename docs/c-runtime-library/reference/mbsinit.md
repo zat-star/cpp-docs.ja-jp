@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: mbsinit
+ms.topic: reference
+apiname:
+- mbsinit
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,19 +22,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: mbsinit
-dev_langs: C++
-helpviewer_keywords: mbsinit function
+f1_keywords:
+- mbsinit
+dev_langs:
+- C++
+helpviewer_keywords:
+- mbsinit function
 ms.assetid: 4618555b-baaa-4d04-93fa-36abae411034
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5b6105de398d50770aecc55cd10f209e6c4521ba
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4d5fded06a892c2f9362741be676ef72963fbca2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="mbsinit"></a>mbsinit
 マルチバイト文字の変換状態を追跡します。  
@@ -164,5 +171,5 @@ MB String: AaBbCcxXyYzZ
 WC String: AaBbCcxXyYzZ  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)

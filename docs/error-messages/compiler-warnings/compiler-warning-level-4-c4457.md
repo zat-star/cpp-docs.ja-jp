@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4457
-dev_langs: C++
-helpviewer_keywords: C4457
+f1_keywords:
+- C4457
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4457
 ms.assetid: 02fd149a-917d-4f67-97a6-eb714572271f
-caps.latest.revision: "0"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a8ede4500e579436d5d6b9db581a06c14a6aca43
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 77965ba08b311768b54788692d3f5b7fa724f5b8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4457"></a>コンパイラの警告 (レベル 4) C4457
   

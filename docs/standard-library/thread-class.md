@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - thread/std::thread
 - thread/std::thread::id Class
@@ -18,9 +19,10 @@ f1_keywords:
 - thread/std::thread::joinable
 - thread/std::thread::native_handle
 - thread/std::thread::swap
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: df249bc7-ff81-4ff9-a6d6-5e3d9a8f56a1
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -34,11 +36,13 @@ helpviewer_keywords:
 - std::thread [C++], joinable
 - std::thread [C++], native_handle
 - std::thread [C++], swap
-ms.openlocfilehash: 70f791044d7ebdcb97ee53d4c99bd1db4ed3561b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8a681e61888653c0abada81c5b35ff3b96b75200
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="thread-class"></a>thread クラス
 アプリケーション内の実行スレッドを観察および管理するために使用するオブジェクトを定義します。  
@@ -72,11 +76,11 @@ class thread;
   
 |名前|説明|  
 |----------|-----------------|  
-|[デタッチ](#detach)|`thread` オブジェクトから関連するスレッドをデタッチします。|  
+|[detach](#detach)|`thread` オブジェクトから関連するスレッドをデタッチします。|  
 |[get_id](#get_id)|関連付けられたスレッドの一意の識別子を返します。|  
 |[hardware_concurrency](#hardware_concurrency)|静的。 ハードウェア スレッド コンテキストの数の見積もりを返します。|  
 |[join](#join)|関連のスレッドが完了するまでブロックします。|  
-|[参加可能です](#joinable)|関連付けられたスレッドが結合可能かどうかを指定します。|  
+|[joinable](#joinable)|関連付けられたスレッドが結合可能かどうかを指定します。|  
 |[native_handle](#native_handle)|スレッド ハンドルを表す実装固有の型を返します。|  
 |[swap](#swap)|オブジェクトの状態を指定した `thread` オブジェクトと交換します。|  
   
@@ -86,12 +90,12 @@ class thread;
 |----------|-----------------|  
 |[thread::operator=](#op_eq)|スレッドを現在の `thread` オブジェクトと関連付けます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<スレッド >  
   
  **名前空間:** std  
   
-##  <a name="detach"></a>thread::detach
+##  <a name="detach"></a>  thread::detach
  関連するスレッドをデタッチします。 オペレーティング システムは、終了時にスレッド リソースを解放することが必要になります。  
   
 ```
@@ -105,7 +109,7 @@ void detach();
   
  呼び出し元のオブジェクトに関連付けられているスレッドが無効な場合、関数は、エラー コード `no_such_process` で `system_error` をスローします。  
   
-##  <a name="get_id"></a>thread::get_id
+##  <a name="get_id"></a>  thread::get_id
  関連付けられたスレッドの一意の識別子を返します。  
   
 ```
@@ -115,7 +119,7 @@ id get_id() const noexcept;
 ### <a name="return-value"></a>戻り値  
  関連付けられたスレッドを一意に識別する [thread::id](#id_class) オブジェクト、またはオブジェクトに関連付けられているスレッドがない場合は `thread::id()`。  
   
-##  <a name="hardware_concurrency"></a>thread::hardware_concurrency
+##  <a name="hardware_concurrency"></a>  thread::hardware_concurrency
  ハードウェア スレッド コンテキストの数の見積もりを返す静的メソッド。  
   
 ```
@@ -139,7 +143,7 @@ class thread::id {
   
  既定で構築される `thread::id` オブジェクトは等しいものになります。  
   
-##  <a name="join"></a>thread::join
+##  <a name="join"></a>  thread::join
  呼び出し元のオブジェクトに関連付けられている実行スレッドが完了するまでブロックします。  
   
 ```
@@ -149,7 +153,7 @@ void join();
 ### <a name="remarks"></a>コメント  
  呼び出しが成功すると、呼び出し元のオブジェクトの後続の [get_id](#get_id) 呼び出しは、既存のどのスレッドの `thread::id` にも等しくない既定の [thread::id](#id_class) を返します。呼び出しが成功しなかった場合、`get_id` によって返される値は変更されません。  
   
-##  <a name="joinable"></a>thread::joinable
+##  <a name="joinable"></a>  thread::joinable
  関連付けられたスレッドが*結合可能*かどうかを指定します。  
   
 ```
@@ -162,7 +166,7 @@ bool joinable() const noexcept;
 ### <a name="remarks"></a>コメント  
  `get_id() != id()` の場合、スレッド オブジェクトは*結合可能*です。  
   
-##  <a name="native_handle"></a>thread::native_handle
+##  <a name="native_handle"></a>  thread::native_handle
  スレッド ハンドルを表す実装固有の型を返します。 スレッド ハンドルは、実装固有の方法で使用できます。  
   
 ```
@@ -191,7 +195,7 @@ thread& operator=(thread&& Other) noexcept;
   
  関連付けが行われると、`Other` が既定で構築される状態に設定されます。  
   
-##  <a name="swap"></a>thread::swap
+##  <a name="swap"></a>  thread::swap
  オブジェクトの状態を、指定された `thread` オブジェクトの状態と交換します。  
   
 ```
@@ -230,7 +234,7 @@ thread(thread&& Other) noexcept;
   
  3 番目のコンストラクターは、`Other` に関連付けられているスレッドに関連付けられているオブジェクトを構築します。 `Other` は既定で構築される状態に設定されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [\<thread>](../standard-library/thread.md)
 

@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - customizations [MFC], keyboard and mouse (MFC Extensions)
 - keyboard and mouse customizations (MFC Extensions)
 ms.assetid: 1f789f1b-5f2e-4b11-b974-e3e2a2e49d82
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 090c74c87810f6c2e7a7641deb248aa97931d93f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1b031c4af05df7ad2b8c0850cefb116d4ac249d7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="keyboard-and-mouse-customization"></a>キーボードとマウスのカスタマイズ
 MFC は、キーボードとマウス入力の処理方法をカスタマイズする、アプリケーションのユーザーに許可します。 ユーザーは、コマンドをキーボード ショートカットを割り当てることによって、キーボード入力をカスタマイズできます。 ユーザーは、ユーザーがアプリケーションの特定のウィンドウ内をダブルクリックしたときに実行されるコマンドを選択してもマウス入力をカスタマイズできます。 このトピックでは、アプリケーションの入力をカスタマイズする方法について説明します。  
@@ -44,7 +48,7 @@ MFC は、キーボードとマウス入力の処理方法をカスタマイズ�
 ## <a name="mouse-customization"></a>マウスのカスタマイズ  
  次の図は、**マウス**のタブ、**カスタマイズ** ダイアログ ボックス。  
   
- ![マウス タブ、[カスタマイズ] ダイアログ ボックスで](../mfc/media/mfcnextmousetab.png "mfcnextmousetab")  
+ ![マウスタブ、[カスタマイズ] ダイアログ ボックスで](../mfc/media/mfcnextmousetab.png "mfcnextmousetab")  
 マウスのカスタマイズ タブ  
   
  メニューを割り当てるには、このタブで、ユーザーが操作するコマンドをマウスのダブルクリック操作します。 ユーザーは、ウィンドウの左側からビューを選択し、右側にあるコントロールを使用して、コマンド、ダブルクリック アクションと関連付けます。 ユーザー後がクリックした**閉じる**ユーザーがビューの任意の場所をダブルクリックしたときに、アプリケーションが関連付けられているコマンドを実行します。  
@@ -72,7 +76,7 @@ MFC は、キーボードとマウス入力の処理方法をカスタマイズ�
   
  この種の攻撃を防ぐが実行される前に、コマンドが有効であることを確認するアプリケーションのコマンド ハンドラーにコードを追加します。 ユーザー インターフェイスでコマンドがアプリケーションに送信されないようにするために依存しません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC のカスタマイズ](../mfc/customization-for-mfc.md)   
  [CKeyboardManager クラス](../mfc/reference/ckeyboardmanager-class.md)   
  [CMouseManager クラス](../mfc/reference/cmousemanager-class.md)   

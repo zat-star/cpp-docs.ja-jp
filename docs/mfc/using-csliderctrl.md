@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CSliderCtrl
-dev_langs: C++
+f1_keywords:
+- CSliderCtrl
+dev_langs:
+- C++
 helpviewer_keywords:
 - CSliderCtrl class [MFC], using
 - slider controls [MFC], using
 ms.assetid: 242c7bcd-126e-4b9b-8f76-8082ad06fe73
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 01ba4f1852f7f5d79de94712b8465fb54e62acb3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1e92358b3aa7d8cffb0c05112e9b8b3587ee6590
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-csliderctrl"></a>CSliderCtrl の使い方
 [CSliderCtrl](../mfc/reference/csliderctrl-class.md)クラスは、トラック バーとも呼ばれるスライダー コントロールを表します。 「スライダー コントロール」は、スライダーと省略可能な目盛りを含むウィンドウ マークします。 ユーザーは、マウスまたは方向キーを使用して、スライダーを移動、スライダー コントロールは、変更を示す通知メッセージを送信します。  
@@ -40,6 +45,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [スライダー コントロールの通知メッセージ](../mfc/slider-notification-messages.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コントロール](../mfc/controls-mfc.md)
 

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _ismbbpunct
 - _ismbbpunct_l
@@ -28,22 +29,25 @@ f1_keywords:
 - ismbbpunct_l
 - _ismbbpunct_l
 - _ismbbpunct
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ismbbpunct function
 - _ismbbpunct function
 - ismbbpunct_l function
 - _ismbbpunct_l function
 ms.assetid: 1976c9d3-7d1a-415f-ac52-2715c7bb56eb
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 960ded27c68e5e22825375f7242cbaef08f4b5c3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cd6e7eb83752a8848ba6ff0ffb39309cd01e8679
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ismbbpunct-ismbbpunctl"></a>_ismbbpunct、_ismbbpunct_l
 特定の文字が区切り文字かどうかを判断します。  
@@ -68,17 +72,17 @@ int _ismbbpunct_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- `_ismbbpunct` は、整数 `c` が非 ASCII 区切り記号の場合は 0 以外の値を返します。 `_ismbbpunct` は、ロケールに依存する任意の文字設定に現在のロケールを使用します。 `_ismbbpunct_l` は、渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `_ismbbpunct` は、整数 `c` が非 ASCII 区切り記号の場合は 0 以外の値を返します。 `_ismbbpunct` は、ロケールに依存する任意の文字設定に現在のロケールを使用します。 `_ismbbpunct_l` は、渡されるロケールを使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbbpunct`|\<mbctype.h>|  
 |`_ismbbpunct_l`|\<mbctype.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
  [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)

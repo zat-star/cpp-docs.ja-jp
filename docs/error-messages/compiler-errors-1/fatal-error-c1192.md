@@ -1,12 +1,12 @@
 ---
-title: "致命的なエラー C1192 |Microsoft ドキュメント"
-ms.custom: 
+title: 致命的なエラー C1192 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - c1192
@@ -19,12 +19,13 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5b742c92c6832a8b0500befb56fea5781fa40cc5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: f7cea5935018e1d9a011be61081e5d3b979b2eb1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fatal-error-c1192"></a>致命的なエラー C1192
 \#'file' で失敗しました。  

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - acoshf
 - acosh
@@ -31,21 +32,24 @@ f1_keywords:
 - math/acosh
 - math/acoshf
 - math/acoshl
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - acoshf function
 - acosh function
 - acoshl function
 ms.assetid: 6985c4d7-9e2a-44ce-9a9b-5a43015f15f7
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: adfdc0de08d0ce8b4103d7f8c063b61fc93b3c95
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 460b6540a724cd7a67d1de22b67238800e5fd5ca
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="acosh-acoshf-acoshl"></a>acosh、acoshf、acoshl
 逆ハイパーボリック コサインを計算します。  
@@ -83,15 +87,15 @@ long double acoshl(
 |x < 1|none|none|  
   
 ## <a name="remarks"></a>コメント  
- C++ を使用する場合、`acosh` または `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`acosh` は常に `double` を受け取って返します。  
+ C++ を使用する場合、`acosh` または `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、 `acosh` は常に `double`を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
-|`acosh`、`acoshf`、`acoshl`|\<math.h>|\<cmath>|  
+|`acosh`、 `acoshf`、 `acoshl`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -121,7 +125,7 @@ cosh( 0.785398 ) = 1.324609
 acosh( 1.324609 ) = 0.785398  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [cos、cosf、cosl、cosh、coshf、coshl](../../c-runtime-library/reference/cos-cosf-cosl-cosh-coshf-coshl.md)   
  [sin、sinf、sinl、sinh、sinhf、sinhl](../../c-runtime-library/reference/sin-sinf-sinl-sinh-sinhf-sinhl.md)   

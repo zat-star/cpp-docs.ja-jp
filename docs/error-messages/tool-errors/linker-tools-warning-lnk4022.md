@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: LNK4022
-dev_langs: C++
-helpviewer_keywords: LNK4022
+f1_keywords:
+- LNK4022
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK4022
 ms.assetid: 890f487e-db98-45dd-a226-c7ccead82b1e
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7bd9553f158a64960a068942fcb25d3d9019f7bd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9e35974a72de349f94f2189f676b6dc955c48fab
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-warning-lnk4022"></a>リンカー ツールの警告 LNK4022
 シンボル 'symbol' の一意の一致を見つけることができません。  

@@ -1,27 +1,31 @@
 ---
-title: "ATL モジュール クラス |Microsoft ドキュメント"
-ms.custom: 
+title: ATL モジュール クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CComModule class, what's changed
 - ATL, module classes
 - module classes
 ms.assetid: fd75382d-c955-46ba-a38e-37728b7fa00f
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7558ca9deb6fd915d902b761e001d3d97472e86c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b254edfe75cfcdaee7ab15351f7c05c3d163e301
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-module-classes"></a>ATL モジュール クラス
 このトピックでは、ATL 7.0 で新規に追加されたモジュールのクラスについて説明します。  
@@ -62,7 +66,7 @@ ms.lasthandoff: 10/24/2017
   
      Init と用語のメソッドに移動コンス トラクターとデストラクターのモジュールのクラスです。Init と用語を呼び出す必要はありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../atl/active-template-library-atl-concepts.md)   
  [クラスの概要](../atl/atl-class-overview.md)
 

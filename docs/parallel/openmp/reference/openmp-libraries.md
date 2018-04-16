@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 ms.assetid: f89abf97-67e3-4327-bc30-43f85b9533a2
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: faac1a2a081a2ce0b02f2008bf3766537557df28
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 760e7d138ab71244419ff71960948d4d10f125eb
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="openmp-libraries"></a>OpenMP ライブラリ
 Visual C の OpenMP ランタイム ライブラリを構成する .lib ファイルについて説明します。  
@@ -27,7 +31,7 @@ Visual C の OpenMP ランタイム ライブラリを構成する .lib ファ�
 |OpenMP のランタイム ライブラリ|特性|  
 |------------------------------|---------------------|  
 |VCOMP です。LIB|マルチ スレッド、動的リンク (VCOMP 用インポート ライブラリ。LIB)。|  
-|VCOMPD です。LIB|マルチ スレッド、動的リンク (VCOMPD 用インポート ライブラリ。カバー) (デバッグ)|  
+|VCOMPD.LIB|マルチ スレッド、動的リンク (VCOMPD 用インポート ライブラリ。カバー) (デバッグ)|  
   
  _DEBUG がコンパイル時に定義されている場合、 `#include omp.h` VCOMPD のソース コードでは、します。LIB 既定 lib になります。 それ以外の場合、VCOMP です。LIB が使用されます。  
   
@@ -35,5 +39,5 @@ Visual C の OpenMP ランタイム ライブラリを構成する .lib ファ�
   
  OpenMP Dll は、Visual C 再頒布可能パッケージ ディレクトリにおよび、OpenMP を使用するアプリケーションを配布する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ライブラリ リファレンス](../../../parallel/openmp/reference/openmp-library-reference.md)

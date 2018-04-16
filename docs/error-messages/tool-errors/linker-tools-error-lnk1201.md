@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: LNK1201
-dev_langs: C++
-helpviewer_keywords: LNK1201
+f1_keywords:
+- LNK1201
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK1201
 ms.assetid: 64c3f496-a428-4b54-981e-faa82ef9c8a1
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 344f56eb3097bad447d9a0b12a0c5aac6f68b119
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 44e2ad811645889cd655bf297f6f8b9492574def
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-error-lnk1201"></a>リンカ ツール エラー LNK1201
 プログラム データベース 'filename' への書き込みエラーディスク領域の不足、無効なパス、または十分な特権の確認します。  

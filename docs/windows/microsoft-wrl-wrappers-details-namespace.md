@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,18 +16,23 @@ f1_keywords:
 - client/Microsoft::WRL::Details
 - module/Microsoft::WRL::Details
 - event/Microsoft::WRL::Details
-dev_langs: C++
-helpviewer_keywords: Details namespace
+dev_langs:
+- C++
+helpviewer_keywords:
+- Details namespace
 ms.assetid: 6d3f04ac-9b53-4a82-a188-a85309ec34a4
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9ed72cd48cada79b831d89246d1338b79fdc5c9f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 520871366f02ef636eef5b2cc9c19344979c6fb6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="microsoftwrlwrappersdetails-namespace"></a>Microsoft::WRL::Wrappers::Details 名前空間
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -52,10 +58,10 @@ namespace Microsoft::WRL::Wrappers::Details;
 |----------|-----------------|  
 |[CompareStringOrdinal メソッド](../windows/comparestringordinal-method.md)|指定した 2 つを比較して`HSTRING`オブジェクトおよび並べ替え順序におけるそれらの相対位置を示す整数を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers::Details  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Wrappers 名前空間](../windows/microsoft-wrl-wrappers-namespace.md)

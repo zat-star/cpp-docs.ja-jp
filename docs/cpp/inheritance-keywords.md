@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
@@ -14,7 +15,8 @@ f1_keywords:
 - __virtual_inheritance
 - __multiple_inheritance_cpp
 - __single_inheritance
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __single_inheritance keyword [C++]
 - declaring derived classes [C++]
@@ -25,15 +27,17 @@ helpviewer_keywords:
 - derived classes [C++], declaring
 - inheritance, keywords
 ms.assetid: bb810f56-7720-4fea-b8b6-9499edd141df
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 65d338f642d705fec6f1a45b5e88f05c1ee55cc8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 442e8958b1d2201d7261242bd9cd90da29a60a62
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="inheritance-keywords"></a>継承キーワード
 **Microsoft 固有の仕様**  
@@ -44,7 +48,7 @@ class [__multiple_inheritance] class-name;
 class [__virtual_inheritance] class-name;  
 ```  
   
- ここで、  
+ それぞれの文字について以下に説明します。  
   
  *クラス名*  
  宣言するクラスの名前。  
@@ -85,5 +89,5 @@ int S::*p;
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)

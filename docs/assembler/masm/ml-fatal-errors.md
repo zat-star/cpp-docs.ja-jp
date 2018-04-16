@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: error-reference
+dev_langs:
+- C++
 ms.assetid: 5a5b0a84-f84d-494d-a8ff-69c53b88451d
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7d9abbff787101d78ba5a1c7197b6e48203571db
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5e907807a23b5b03313d60670ef7788899cf8480
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ml-fatal-errors"></a>ML の致命的なエラー
 ML の致命的なエラーの詳細については、次を参照してください。 [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

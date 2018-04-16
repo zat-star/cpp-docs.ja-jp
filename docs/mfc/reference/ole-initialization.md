@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - afxdisp/AfxOleInit
 - afxdisp/AfxEnableControlContainer
-dev_langs: C++
-helpviewer_keywords: OLE initialization
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE initialization
 ms.assetid: aa8a54a7-24c3-4344-b2c6-dbcf6084fa31
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5fd0a194dc8f5b9272921a0445ecf5754ec2a4e7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 014d0679be8a03b60c2e759b36c056b35784be78
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ole-initialization"></a>OLE の初期化
 アプリケーションでは、OLE システム サービスを使用できます、前に OLE システム Dll の初期化する必要があり、Dll が適切なバージョンであることを確認します。 **AfxOleInit**関数を OLE システム Dll を初期化します。  
@@ -45,7 +50,7 @@ void AfxEnableControlContainer( );
 ### <a name="remarks"></a>コメント  
  (ActiveX コントロールと呼ばれるようになりました) OLE コントロールの詳細については、次を参照してください。 [ActiveX コントロールのトピック](../mfc-activex-controls.md)です。  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
 
   
@@ -72,8 +77,8 @@ BOOL AFXAPI AfxOleInit();
 > [!NOTE]
 >  MFC アプリケーションは、シングルスレッド アパートメント (STA) として初期化する必要があります。 呼び出す場合[CoInitializeEx](http://msdn.microsoft.com/library/windows/desktop/ms695279)で、`InitInstance`オーバーライドで指定`COINIT_APARTMENTTHREADED`(なく`COINIT_MULTITHREADED`)。 詳細については、[prb] を参照してください: MFC アプリケーションとして、マルチ スレッド アパートメント (828643) でアプリケーションを初期化するときの応答を停止[http://support.microsoft.com/default.aspxscid=kb;en-us;828643](http://support.microsoft.com/default.aspxscid=kb;en-us;828643)です。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

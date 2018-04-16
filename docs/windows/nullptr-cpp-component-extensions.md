@@ -1,49 +1,53 @@
 ---
-title: "nullptr  (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__nullptr keyword (C++)"
-  - "nullptr keyword [C++]"
+title: "nullptr (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- __nullptr keyword (C++)
+- nullptr keyword [C++]
 ms.assetid: 594cfbf7-06cb-4366-9ede-c0b703e1d095
-caps.latest.revision: 24
-caps.handback.revision: 22
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: be7fcc147a5f6f4b96f7bf7dd68376613489946c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# nullptr  (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`nullptr` キーワードは *null ポインター値を*表します。  オブジェクトのハンドル、内部ポインター、またはネイティブ ポインター型がオブジェクトを指さないことを示すために null ポインター値を使用します。  
+# <a name="nullptr--c-component-extensions"></a>nullptr (C++ コンポーネント拡張)
+`nullptr`キーワードを表す、 *null ポインター値*です。 Null ポインター値を使用して、あるオブジェクトのハンドル、内部ポインター、またはネイティブ ポインター型を指していないオブジェクトを示します。  
   
- マネージまたはネイティブ コードの `nullptr` を使用します。  コンパイラはマネージ ネイティブ null ポインター値に適切な異なる手順を生成します。  このキーワードの ISO C\+\+ 標準バージョンの使い方の詳細については、「[nullptr](../Topic/nullptr.md)」を参照してください。  
+ 使用して`nullptr`マネージまたはネイティブ コードにします。 コンパイラは、適切なが異なるについては、マネージ コードとネイティブの null ポインターの値を出力します。 このキーワードの ISO 標準 C++ バージョンを使用する方法の詳細については、次を参照してください。 [nullptr](../cpp/nullptr.md)です。  
   
- `__nullptr` キーワードは `nullptr`と同じ意味を持ちますが、ネイティブ コードだけに適用されます。Microsoft 固有のキーワード。  ネイティブ C\/C\+\+ コードの `nullptr` を使用し、[\/clr](../build/reference/clr-common-language-runtime-compilation.md) のコンパイラ オプションを使用すると、コンパイラは `nullptr` がネイティブまたはマネージ null ポインター値を表示するかどうかを判断できません。  コンパイラに意図を明確にするため、マネージ値または `__nullptr` をネイティブ値を指定するように指定するに `nullptr` を使用します。  
+ `__nullptr`キーワードは Microsoft 固有キーワードと同じ意味のある`nullptr`がネイティブ コードのみに適用されます。 使用する場合`nullptr`ネイティブ C/C++ コードし、コンパイル時に、 [/clr](../build/reference/clr-common-language-runtime-compilation.md)コンパイラ オプションは、コンパイラが判断できないかどうか`nullptr`ネイティブまたはマネージの null ポインター値を示します。 目的は、オフにすると、コンパイラを使用します`nullptr`管理対象の値を指定するまたは`__nullptr`ネイティブ値を指定します。  
   
- `nullptr` キーワードは、Visual Basic の `Nothing` と C\# の `null` と同じです。  
+ `nullptr`キーワードは等価`Nothing`Visual Basic では、 `null` (C#)。  
   
-## 使用法  
- `nullptr` キーワードはいずれもハンドル、ネイティブ ポインター使用したり、関数の引数を使用できます。  
+## <a name="usage"></a>使用法  
+ `nullptr`ハンドル、ネイティブ ポインター、または関数の引数を使用できる場所でキーワードを使用できます。  
   
- `nullptr` キーワードは、型ではなく、使用するために以下のサポートされていません。:  
+ `nullptr`キーワード型ではないで使用することはできません。  
   
 -   [sizeof](../cpp/sizeof-operator.md)  
   
 -   [typeid](../cpp/typeid-operator.md)  
   
--   \(`throw (Object^)nullptr;` の動作が`throw nullptr`\)  
+-   `throw nullptr`(ただし`throw (Object^)nullptr;`は機能)  
   
- `nullptr` キーワードは、次のポインター型の初期化に使用できます。:  
+ `nullptr`キーワードは、次のポインター型の初期化で使用することができます。  
   
 -   ネイティブ ポインター  
   
@@ -51,16 +55,16 @@ manager: "ghogen"
   
 -   マネージ ハンドル  
   
--   マネージ内部ポインター  
+-   管理対象の内部ポインター  
   
- 参照を使用する前にポインターやハンドルの参照が null であるかどうかをテストするために `nullptr` キーワードを使用できます。  
+ `nullptr`キーワードは、参照を使用する前に、ポインターまたはハンドルの参照が null かどうかを使用できます。  
   
- エラー チェック時に null ポインター値を使用する言語間の関数呼び出しが正しく解釈されます。  
+ エラーをチェックするための null ポインターの値を使用する言語の間での関数呼び出しを正しく解釈される必要があります。  
   
- ゼロにハンドルを初期化できません; `nullptr` のみ使用できます。  オブジェクトのハンドルへの定数 0 の代入は `Object^`に `Int32` 二重のキャストが生成されます。  
+ ゼロ; へのハンドルを初期化することはできません。のみ`nullptr`使用できます。 定数 0 のオブジェクト ハンドルの割り当てをボックス化された生成`Int32`とへのキャスト`Object^`です。  
   
-## 使用例  
- 次のコード例は `nullptr` キーワードがハンドル、ネイティブ ポインターどこでも使用できるか、または関数の引数が使用できることを示します。  この例は、使用する前に参照をチェックするために `nullptr` キーワードが使用できることを示します。  
+## <a name="example"></a>例  
+ 次のコード例では、ことを示します、`nullptr`キーワードを使用できるハンドル、ネイティブ ポインター、または関数の引数を使用することができます。 例では、ことを示しています、`nullptr`が使用する前に参照を確認するキーワードを使用できます。  
   
 ```  
 // mcpp_nullptr.cpp  
@@ -87,10 +91,10 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  **例**  
   
- 次のコード例は、`nullptr` とゼロがネイティブ ポインターで交換して使用できることを示します。  
+ 次のコード例に示しますを`nullptr`あり、ネイティブ ポインターに 0 を置き換えて使用できます。  
   
 ```  
 // mcpp_nullptr_1.cpp  
@@ -119,14 +123,20 @@ int main() {
   
  **出力**  
   
-  **pMyClass \=\= " nullptr**  
- **pMyClass \=\= 0**  
- **pMyClass \=\= " nullptr**  
- **pMyClass \=\= 0**   
-## 使用例  
+```Output  
+pMyClass == nullptr  
+  
+pMyClass == 0  
+  
+pMyClass == nullptr  
+  
+pMyClass == 0  
+```  
+  
+## <a name="example"></a>例  
  **例**  
   
- 次のコード例は `nullptr` として任意の型のハンドルまたはすべての型にネイティブ ポインターとして解釈することを示します。  異なる種類のハンドルでオーバーロードする関数では、あいまいさのエラーが生成されます。  `nullptr`、明示的に型にキャストされなければなりません。  
+ 次のコード例に示しますを`nullptr`は任意の型へのハンドルまたは任意の型へのネイティブ ポインターとして解釈されます。 さまざまな種類にハンドルが関数のオーバー ロードが発生した場合、あいまいなエラーが生成されます。 `nullptr`型に明示的にキャストする必要があります。  
   
 ```  
 // mcpp_nullptr_2.cpp  
@@ -142,10 +152,10 @@ void f_null() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  **例**  
   
- 次のコード例は `nullptr` をキャストすることが許可されると、`nullptr` 値を含むキャストの型へのポインターやハンドルを返します。  
+ 次のコード例は、そのキャストを示しています。`nullptr`が許可されを含むキャストの型へのポインターまたはハンドルを返します、`nullptr`値。  
   
 ```  
 // mcpp_nullptr_3.cpp  
@@ -164,10 +174,10 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  **例**  
   
- 次のコード例は `nullptr` が関数のパラメーターとして使用できることを示します。  
+ 次のコード例に示しますを`nullptr`関数のパラメーターとして使用できます。  
   
 ```  
 // mcpp_nullptr_4.cpp  
@@ -184,11 +194,14 @@ int main() {
   
  **出力**  
   
-  **テスト**   
-## 使用例  
+```Output  
+test  
+```  
+  
+## <a name="example"></a>例  
  **例**  
   
- 次のコード例はハンドルが宣言され、明示的に初期化される場合に、それらが `nullptr`に初期化される既定示します。  
+ 次のコード例は、ハンドルが宣言されており、明示的に初期化されない、ときにある既定値に初期化を示しています。`nullptr`です。  
   
 ```  
 // mcpp_nullptr_5.cpp  
@@ -211,11 +224,14 @@ int main() {
   
  **出力**  
   
-  **NULL**   
-## 使用例  
+```Output  
+NULL  
+```  
+  
+## <a name="example"></a>例  
  **例**  
   
- 次のコード例は **\/clr**でコンパイルした場合 `nullptr` がネイティブ ポインターに割り当てることができることを示します。  
+ 次のコード例に示しますを`nullptr`をコンパイルすると、ネイティブ ポインターに割り当てることが**/clr**です。  
   
 ```  
 // mcpp_nullptr_6.cpp  
@@ -226,9 +242,9 @@ int main() {
 }  
 ```  
   
-## 要件  
- コンパイラ オプション: \(必須ではない; **\/ZW**、および **\/clr**を含むすべてのコード生成オプションでサポートされる\)  
+## <a name="requirements"></a>必要条件  
+ コンパイラ オプション: (必要な; を含むすべてのコード生成オプションでサポートされていない**/ZW**と**/clr**)  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)   
- [nullptr](../Topic/nullptr.md)
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)   
+ [nullptr](../cpp/nullptr.md)

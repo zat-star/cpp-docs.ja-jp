@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CAtlAutoThreadModuleT
 - ATLBASE/ATL::CAtlAutoThreadModuleT
 - ATLBASE/ATL::CAtlAutoThreadModuleT::GetDefaultThreads
-dev_langs: C++
-helpviewer_keywords: CAtlAutoThreadModuleT class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAtlAutoThreadModuleT class
 ms.assetid: ae1667c6-3fb8-47bc-b35d-9ea5e9896d7f
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 594e6bd026d214e2dd5d12e702d26a5942cfc872
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 082214794b2caa66e8be1127c664e0ffec18a394
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlautothreadmodulet-class"></a>CAtlAutoThreadModuleT クラス
 このクラスは、スレッド プール、アパートメント モデルの COM サーバーを実装するためのメソッドを提供します。  
@@ -68,7 +73,7 @@ class ATL_NO_VTABLE CAtlAutoThreadModuleT : public IAtlAutoThreadModule
   
  `CAtlAutoThreadModuleT`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="getdefaultthreads"></a>CAtlAutoThreadModuleT::GetDefaultThreads  
@@ -84,7 +89,7 @@ static int GetDefaultThreads();
 ### <a name="remarks"></a>コメント  
  スレッドの数を計算するための別の方法を使用する場合は、このメソッドをオーバーライドします。 既定では、スレッドの数は、プロセッサの数に基づきます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IAtlAutoThreadModule クラス](../../atl/reference/iatlautothreadmodule-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [IAtlAutoThreadModule クラス](../../atl/reference/iatlautothreadmodule-class.md)   

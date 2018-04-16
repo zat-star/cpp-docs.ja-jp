@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - data type conversion [C++], type-cast conversions
 - conversions [C++], type-cast
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - type casts [C++], about type-cast conversion
 - type-cast conversions [C++]
 ms.assetid: 57ab5902-f12f-4326-a2f6-6282f1d4025a
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d3426d6ff06a5d07dd64889e6a5d89da543cfe68
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f402eb49e86c8d6d3ce6c332172375125f577a2b
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="type-cast-conversions"></a>型キャスト変換
 型キャストを使用して、明示的に型を変換できます。  
@@ -60,7 +64,7 @@ ms.lasthandoff: 10/24/2017
   
  識別子のサイズが変更されない限り、型キャストを左辺値の式にできます。 左辺値式の詳細については、「[左辺値と右辺値の式](../c-language/l-value-and-r-value-expressions.md)」をご覧ください。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
  キャストで式を型 `void` に変換できますが、その結果の式を使用できるのは、値が不要な場合のみです。 **void \*** に変換され、元の型に戻されたオブジェクト ポインターは、元の値に戻ります。  
   

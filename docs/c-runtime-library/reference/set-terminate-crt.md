@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: set_terminate
+ms.topic: reference
+apiname:
+- set_terminate
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,22 +23,26 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: set_terminate
-dev_langs: C++
+f1_keywords:
+- set_terminate
+dev_langs:
+- C++
 helpviewer_keywords:
 - set_terminate function
 - terminate function
 - exception handling, termination
 ms.assetid: 3ff1456a-7898-44bc-9266-a328a80b6006
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f2e2ac7ad7b103b5c1da790b61f560c758d9d124
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eba062bd1b791f055b2ae1c74c2a0107a4039d23
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="setterminate-crt"></a>set_terminate (CRT)
 `terminate` によって呼び出される独自の終了ルーチンをインストールします。  
@@ -72,9 +78,9 @@ typedef void ( *terminate_function )( );
   
  動的にリンクされるすべての DLL または EXE ファイルに対して、`set_terminate` ハンドラーは単一です。自分で `set_terminate` を呼び出しても別のハンドラーに置き換えられます。あるいはハンドラーを別の DLL または EXE ファイルに自分で置き換えることもできます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`set_terminate`|\<eh.h>|  
   
@@ -83,7 +89,7 @@ typedef void ( *terminate_function )( );
 ## <a name="example"></a>例  
  [terminate](../../c-runtime-library/reference/terminate-crt.md) の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理ルーチン](../../c-runtime-library/exception-handling-routines.md)   
  [abort](../../c-runtime-library/reference/abort.md)   
  [_get_terminate](../../c-runtime-library/reference/get-terminate.md)   

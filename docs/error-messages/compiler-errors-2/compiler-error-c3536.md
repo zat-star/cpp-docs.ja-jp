@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3536
-dev_langs: C++
-helpviewer_keywords: C3536
+f1_keywords:
+- C3536
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3536
 ms.assetid: 8d866075-866b-49eb-9979-ee27b308f7e3
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 90db065c9a16e72a396bd1c1ae54bb99cdb97153
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1bf9e3baacf7028d37c08db095a16d136f99d361
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3536"></a>コンパイラ エラー C3536
 'symbol': 初期化される前に使用することはできません  
@@ -47,5 +53,5 @@ int main()
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto キーワード](../../cpp/auto-keyword.md)

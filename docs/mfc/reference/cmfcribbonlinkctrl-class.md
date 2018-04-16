@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -23,7 +24,8 @@ f1_keywords:
 - AFXRIBBONLINKCTRL/CMFCRibbonLinkCtrl::OnSetIcon
 - AFXRIBBONLINKCTRL/CMFCRibbonLinkCtrl::OpenLink
 - AFXRIBBONLINKCTRL/CMFCRibbonLinkCtrl::SetLink
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCRibbonLinkCtrl [MFC], CMFCRibbonLinkCtrl
 - CMFCRibbonLinkCtrl [MFC], CopyFrom
@@ -39,15 +41,17 @@ helpviewer_keywords:
 - CMFCRibbonLinkCtrl [MFC], OpenLink
 - CMFCRibbonLinkCtrl [MFC], SetLink
 ms.assetid: 77ae1941-e0ab-4a9d-911e-1752d34c079b
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f4ab0d0b0d71455dfae3100a7ae291ed98764c48
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3007c98629b83e6302556582220684075d5049b6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcribbonlinkctrl-class"></a>CMFCRibbonLinkCtrl クラス
 リボン上に配置するハイパーリンクを実装します。 ハイパーリンクをクリックすると、Web ページが表示されます。  
@@ -92,7 +96,7 @@ class CMFCRibbonLinkCtrl : public CMFCRibbonButton
   
  [CMFCRibbonButton](../../mfc/reference/cmfcribbonbutton-class.md) [CMFCRibbonLinkCtrl](../../mfc/reference/cmfcribbonlinkctrl-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxRibbonLinkCtrl.h  
   
 ##  <a name="cmfcribbonlinkctrl"></a>CMFCRibbonLinkCtrl::CMFCRibbonLinkCtrl  
@@ -266,7 +270,7 @@ void SetLink(LPCTSTR lpszLink);
  [入力] `lpszLink`  
  ハイパーリンクのテキストを指定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCRibbonButton クラス](../../mfc/reference/cmfcribbonbutton-class.md)

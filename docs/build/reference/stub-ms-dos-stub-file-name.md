@@ -1,74 +1,78 @@
 ---
-title: "/STUB (MS-DOS スタブ ファイル名) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/stub"
-  - "VC.Project.VCLinkerTool.DosStub"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/STUB リンカー オプション"
-  - "MS-DOS スタブ ファイル名リンカー オプション"
-  - "STUB リンカー オプション"
-  - "-STUB リンカー オプション"
-  - "Win32 [C++], アタッチ (MS-DOS スタブ プログラム)"
-  - "Windows API [C++], アタッチ (MS-DOS スタブ プログラム)"
+title: "スタブ (MS-DOS スタブ ファイル名) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /stub
+- VC.Project.VCLinkerTool.DosStub
+dev_langs:
+- C++
+helpviewer_keywords:
+- Win32 [C++], attaching MS-DOS stub program
+- STUB linker option
+- MS-DOS stub file name linker option
+- /STUB linker option
+- Windows API [C++], attaching MS-DOS stub program
+- -STUB linker option
 ms.assetid: 65221ffe-4f9a-4a14-ac69-3cfb79b40b5f
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2bb7d1b9f56e7cea5d476d5ece6bdfab50fbe7a9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /STUB (MS-DOS スタブ ファイル名)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="stub-ms-dos-stub-file-name"></a>/STUB (MS-DOS スタブ ファイル名)
 ```  
 /STUB:filename  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  それぞれの文字について以下に説明します。  
   
- *filename*  
- MS\-DOS アプリケーション。  
+ *ファイル名*  
+ MS-DOS アプリケーションです。  
   
-## 解説  
- \/STUB オプションは、MS\-DOS スタブ プログラムを Win32 プログラムにアタッチします。  
+## <a name="remarks"></a>コメント  
+ /STUB オプションは、MS-DOS スタブ プログラムを Win32 プログラムにアタッチします。  
   
- スタブ プログラムとは、ファイルを MS\-DOS で実行したときに起動するプログラムです。  スタブ プログラムは通常、メッセージを表示するだけのものです。ただし、有効な MS\-DOS のアプリケーションの場合、どのアプリケーションでもスタブ プログラムとして使用できます。  
+ MS-DOS でファイルが実行された場合は、スタブ プログラムが呼び出されます。 適切なメッセージです。 通常が表示されます。ただし、有効な任意 MS-DOS アプリケーションでは、スタブ プログラムを指定できます。  
   
- コマンド ラインで、スタブ プログラムとして設定するファイル名をコロン \(:\) の後ろに指定します。  リンカーによって *filename* がチェックされ、実行可能ファイルでない場合はエラー メッセージが表示されます。  スタブ プログラムとして設定できるのは、.exe ファイルだけです。.com ファイルはスタブ プログラムとして設定できません。  
+ 指定、 *filename*のコマンドラインでは、コロン (:) の後にスタブ プログラムです。 リンカー チェック*filename*し、ファイルが、実行可能ファイルではない場合、エラー メッセージを発行します。 プログラムは、.exe ファイルである必要があります。スタブ プログラム .com ファイルが正しくありません。  
   
- このオプションが指定されていないと、次のメッセージを出力する既定のスタブ プログラムがアタッチされます。  
+ このオプションを使用しない場合、リンカーには、次のメッセージを発行する既定のスタブ プログラムがアタッチされます。  
   
 ```  
 This program cannot be run in MS-DOS mode.  
 ```  
   
- 仮想デバイス ドライバーをビルドする場合は、既定のヘッダーではなく VxD で使用される IMAGE\_DOS\_HEADER 構造体 \(WINNT.H で定義されている\) を含むファイル名を *filename* に指定できます。  
+ 仮想デバイス ドライバーを作成するときに*filename* (WINNT で定義されている IMAGE_DOS_HEADER 構造体を含むファイル名を指定することができます。H) をクリックし、既定のヘッダーではなく、VXD で使用します。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  **\[追加のオプション\]** ボックスにオプションを入力します。  
+4.  オプションを入力、**追加オプション**ボックス。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

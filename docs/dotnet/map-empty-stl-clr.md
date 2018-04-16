@@ -1,41 +1,46 @@
 ---
-title: "map::empty (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::map::empty"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "empty メンバー [STL/CLR]"
+title: "map::empty (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::map::empty
+dev_langs:
+- C++
+helpviewer_keywords:
+- empty member [STL/CLR]
 ms.assetid: ce41d37a-2896-48df-87ea-d3f3b3e5ab45
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 9b2b0a94d416d4b84e46a89bd3013f06f063741a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# map::empty (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="mapempty-stlclr"></a>map::empty (STL/CLR)
 要素が存在しないかどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 bool empty();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスが空の場合に true を返します。  これは [map::size](../Topic/map::size%20\(STL-CLR\).md)`() == 0`と同じです。  マップが空であるかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスが空の場合に true を返します。 等価である[map::size (STL/CLR)](../dotnet/map-size-stl-clr.md)`() == 0`です。 使用するマップが空かどうかをテストします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_map_empty.cpp   
@@ -66,16 +71,19 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**size\(\) \= 3**  
-**empty\(\) \= false**  
-**size\(\) \= 0**  
-**empty\(\) \= true**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+size() = 3  
+empty() = False  
+size() = 0  
+empty() = True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [マップ](../dotnet/map-stl-clr.md)   
- [map::size](../Topic/map::size%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [map::size (STL/CLR)](../dotnet/map-size-stl-clr.md)

@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - HTML controls, ATL support
 - DHTML controls, ATL support
 ms.assetid: b627547a-3768-4346-9900-4b7a21fb8e27
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0dfa6a3a2e399ff108bdd97b3dfb9a16b627aefe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 74b271f56fe7c8d3345ce53de06a18a2700175f2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="identifying-the-elements-of-the-dhtml-control-project"></a>DHTML コントロール プロジェクトの要素の識別
 DHTML コントロール コードのほとんどが正確にそのような ATL コントロールに対して作成されます。 ジェネリック コードの基本を理解するには、使用、 [ATL チュートリアル](../atl/active-template-library-atl-tutorial.md)、セクションを参照して[ATL プロジェクトを作成する](../atl/reference/creating-an-atl-project.md)と[ATL COM オブジェクトの基本事項](../atl/fundamentals-of-atl-com-objects.md)です。  
@@ -60,6 +64,6 @@ DHTML コントロール コードのほとんどが正確にそのような ATL
   
  参照してください[ATL DHTML コントロールを作成する](../atl/creating-an-atl-dhtml-control.md)DHTML コントロールの構築を開始します。 参照してください[プロパティのテストおよびテスト コンテナーでイベント](../mfc/testing-properties-and-events-with-test-container.md)テスト コンテナーにアクセスする方法についてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DHTML コントロールのサポート](../atl/atl-support-for-dhtml-controls.md)
 

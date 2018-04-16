@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - memory/std::pointer_traits::element_type
 - memory/std::pointer_traits::pointer
@@ -19,17 +20,20 @@ f1_keywords:
 - xmemory0/std::pointer_traits::difference_type
 - xmemory0/std::pointer_traits::rebind
 - memory/std::pointer_traits::pointer_to
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 545aecf1-3561-4859-8b34-603c079fe1b3
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6d40f9149a9a03e4de40713ba9c7c0ce65f0edad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e419d8789e9dd6f3ed98e36a05a96d2e5f985082
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="pointertraits-struct"></a>pointer_traits 構造体
 `allocator_traits` テンプレート クラスのオブジェクトが、ポインター型 `Ptr` を持つアロケーターを記述するために必要とする情報を提供します。  
@@ -65,7 +69,7 @@ struct Ptr
   
 ### <a name="structs"></a>構造体  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |`pointer_traits::rebind`|基になるポインター型を指定された型に変換しようとします。|  
   
@@ -75,7 +79,7 @@ struct Ptr
 |----------|-----------------|  
 |[pointer_to](#pointer_to)|任意の参照をクラス `Ptr` のオブジェクトに変換します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
@@ -87,7 +91,7 @@ struct Ptr
 static pointer pointer_to(element_type& obj);
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<memory>](../standard-library/memory.md)   
  [allocator_traits クラス](../standard-library/allocator-traits-class.md)
 

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - memory/std::allocator
 - memory/std::allocator::const_pointer
@@ -23,7 +24,8 @@ f1_keywords:
 - memory/std::allocator::destroy
 - memory/std::allocator::max_size
 - memory/std::allocator::rebind
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::allocator [C++]
 - std::allocator [C++], const_pointer
@@ -41,15 +43,17 @@ helpviewer_keywords:
 - std::allocator [C++], max_size
 - std::allocator [C++], rebind
 ms.assetid: 3fd58076-56cc-43bb-ad58-b4b7c9c6b410
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f298085fab156e8aecd0931dc72e358409a979d7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 05a0ac72a689c0f82db1bb4d18169542c0df4bc9
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="allocator-class"></a>allocator クラス
 このテンプレート クラスは、**Type** 型のオブジェクトの配列に対し、ストレージの割り当てと解放を管理するオブジェクトを記述します。 **allocator** クラスのオブジェクトは、C++ 標準ライブラリのいくつかのコンテナー テンプレート クラスのコンストラクターで指定されている既定のアロケーター オブジェクトです。  
@@ -124,7 +128,7 @@ class allocator
 |-|-|  
 |[operator=](#op_eq)|`allocator` オブジェクトを別の `allocator` オブジェクトに割り当てます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
@@ -1046,6 +1050,6 @@ The modified vector v is:
  ( 150 200 300 400 500 600 700 ).  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

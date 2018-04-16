@@ -1,25 +1,25 @@
 ---
 title: "リモートの Linux コンピューターへの接続 | Microsoft Docs"
 ms.custom: 
-ms.date: 11/16/2016
+ms.date: 11/06/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-linux
+ms.technology: cpp-linux
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 5eeaa683-4e63-4c46-99ef-2d5f294040d4
-author: BrianPeek
-ms.author: brpeek
+author: corob-msft
+ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+- linux
+ms.openlocfilehash: 4ff19875064302e891236c931f28ebef630904e4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: dd817a7d9fad4946cd0aa9f641f9e8f495f1be9a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-
 # <a name="connect-to-your-remote-linux-computer"></a>リモートの Linux コンピューターへの接続
 
 ビルド時に、Linux コードはリモートの Linux コンピューターにコピーされ、Visual Studio で選択した設定に応じて、そのシステム上でコンパイルされます。  このリモート接続をセットアップするには、次のようにします。

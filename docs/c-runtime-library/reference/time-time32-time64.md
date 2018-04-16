@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - time
 - _time64
@@ -31,7 +32,8 @@ f1_keywords:
 - time/_time32
 - time/_time64
 - _time32
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - time32 function
 - _time32 function
@@ -40,15 +42,17 @@ helpviewer_keywords:
 - system time
 - time64 function
 ms.assetid: 280e00f2-2b93-4ece-94cd-e048484c6cc7
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 04e1db45e10d738d0a4270e7f2a4d6c71698f707
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3490c7ac1425e2ea2e76943709dbeb5d43a4e151
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="time-time32-time64"></a>time、_time32、_time64
 システム時刻を取得します。  
@@ -79,13 +83,13 @@ __time64_t _time64(
   
  `time` は `_time64` 用のラッパーで、既定では `time_t` は `__time64_t`と同じです。 コンパイラが `time_t` を古い 32 ビットの `time_t`として解釈するよう強制する必要がある場合には、 `_USE_32BIT_TIME_T`を定義します。 ただし、これは勧められていません。2038 年 1 月 18 日以降、64 ビット プラットフォームでは、このマクロをアプリケーションで使用することはできなくなり、エラーの原因となるためです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
-|`time`、`_time32`、`_time64`|C: \<time.h>、C++: \<ctime> または \<time.h>|  
+|`time`、 `_time32`、 `_time64`|C: \<time.h>、C++: \<ctime> または \<time.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -239,7 +243,7 @@ Christmas            Sat Dec 25 12:00:00 1993
 Today is Friday, day 25 of April in the year 2003.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
  [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   

@@ -1,72 +1,129 @@
 ---
-title: "Platform::Array クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/30/2016"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vccorlib/Platform::Array"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Platform::Array クラス"
+title: "Platform::array クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 12/30/2016
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Namespace not found::Platform
+- VCCORLIB/Namespace not found::Platform::Array Constructors
+- VCCORLIB/Namespace not found::Platform::Array::Value
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Array Class
 ms.assetid: 7815ab40-88c5-42b0-83b8-081cef0cda31
-caps.latest.revision: 9
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8e3d2964e1488e74e7a07f20c38ee4fbbcf6e387
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# Platform::Array クラス
-アプリケーション バイナリ インターフェイス \(ABI\) を越えて受け渡しでき、変更もできる 1 次元配列を表します。  
+# <a name="platformarray-class"></a>Platform::Array クラス
+アプリケーション バイナリ インターフェイス (ABI) を越えて受け渡しでき、変更もできる 1 次元配列を表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```cpp  
-  
+```cpp    
 template <typename T>  
-    private ref class Array<TArg,1> :   
-         public WriteOnlyArray<TArg, 1>,  
-         public IBoxArray<TArg>  
-  
+private ref class Array<TArg, 1> :   
+    public WriteOnlyArray<TArg, 1>,  
+    public IBoxArray<TArg>   
 ```  
   
-## メンバー  
- Platform::Array は [Platform::WriteOnlyArray クラス](../cppcx/platform-writeonlyarray-class.md) からすべてのメソッドを継承し、`Value` の [Platform::IBoxArray インターフェイス](../cppcx/platform-iboxarray-interface.md) プロパティを実装します。  
+### <a name="members"></a>メンバー  
+ Platform::array からすべてのメソッドの継承[platform::writeonlyarray クラス](../cppcx/platform-writeonlyarray-class.md)を実装し、`Value`のプロパティ、 [platform::iboxarray インターフェイス](../cppcx/platform-iboxarray-interface.md)です。  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[Array コンストラクター](../cppcx/array-constructors.md)|クラス テンプレート パラメーター *T* によって指定された型の、変更可能な 1 次元配列を初期化します。|  
+|----------|-----------------|  
+|[Array コンストラクター](#ctor)|クラス テンプレート パラメーターによって指定された型の変更可能な 1 次元配列を初期化します*T*です。|  
   
-### メソッド  
- 「[Platform::WriteOnlyArray クラス](../cppcx/platform-writeonlyarray-class.md)」を参照してください。  
+### <a name="methods"></a>メソッド  
+ 参照してください[platform::writeonlyarray クラス](../cppcx/platform-writeonlyarray-class.md)です。  
   
-### プロパティ  
+### <a name="properties"></a>プロパティ  
   
 |||  
 |-|-|  
-|[Array::Value プロパティ](../cppcx/array-value-property.md)|現在の配列へのハンドルを取得します。|  
+|[Array::Value](#value)|現在の配列へのハンドルを取得します。|  
   
-## 解説  
+### <a name="remarks"></a>コメント  
  この Array クラスはシール クラスであり、継承できません。  
   
- Windows ランタイムの型システムは、ジャグ配列の概念をサポートしていないため、IVector\<Platform::Array\<T\>\> を戻り値またはメソッド パラメーターとして渡すことはできません。 ABI を通じてジャグ配列またはシーケンスのシーケンスを渡すには、`IVector<IVector<T>^>` を使用します。  
+ Windows ランタイムの型システムは、ジャグ配列の概念をサポートしていませんし、そのため、IVector を渡すことはできません < platform::array\<T >> 戻り値またはメソッド パラメーターとして。 ABI を通じてジャグ配列またはシーケンスのシーケンスを渡すには、 `IVector<IVector<T>^>`を使用します。  
   
- Platform::Array を使用するタイミングと方法の詳細については、「[Array と WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md)」を参照してください。  
+ Platform::array を使用するタイミングと方法の詳細については、次を参照してください。 [Array と WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md)です。  
   
- Windows ランタイムの型システムは、ジャグ配列の概念をサポートしていないため、IVector\<Platform::Array\<T\>\> を戻り値またはメソッド パラメーターとして渡すことはできません。 ABI を通じてジャグ配列またはシーケンスのシーケンスを渡すには、`IVector<IVector<T>^>` を使用します。  
+ Windows ランタイムの型システムは、ジャグ配列の概念をサポートしていませんし、そのため、IVector を渡すことはできません < platform::array\<T >> 戻り値またはメソッド パラメーターとして。 ABI を通じてジャグ配列またはシーケンスのシーケンスを渡すには、 `IVector<IVector<T>^>`を使用します。  
   
  このクラスは、コンパイラによって自動的に含まれる vccorlib.h ヘッダーで定義されます。 これは platform.winmd で定義されているパブリック型ではないため、Intellisense では表示されますが、オブジェクト ブラウザーでは表示されません。  
   
-## 必要条件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
+
+ 
+## <a name="ctor"></a>  Array コンス トラクター
+クラス テンプレート パラメーターによって指定された型の変更可能な 1 次元配列を初期化します*T*です。  
   
-## 参照  
- [プラットフォーム名前空間](../cppcx/platform-namespace-c-cx.md)   
+## <a name="syntax"></a>構文  
+  
+```cpp  
+Array(unsigned int size);  
+Array(T* data, unsigned int size);    
+```  
+  
+#### <a name="parameters"></a>パラメーター  
+ `T`  
+ クラス テンプレート パラメーター。  
+  
+ `size`  
+ 配列の要素数。  
+  
+ `data`  
+ この Array オブジェクトを初期化するために使用する型 `T` のデータ配列へのポインター。  
+  
+### <a name="remarks"></a>コメント  
+ Platform::array のインスタンスを作成する方法の詳細については、次を参照してください。 [Array と WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md)です。
+
+## <a name="get"></a>  Array::get メソッド
+指定されたインデックス位置にある配列要素への参照を取得します。  
+  
+## <a name="syntax"></a>構文  
+  
+```cpp    
+T& get(unsigned int index)  const;  
+```  
+  
+#### <a name="parameters"></a>パラメーター  
+ `index`  
+ 配列の要素を識別する 0 から始まるインデックス。 最小インデックスは 0、最大のインデックスによって指定された値、`size`内のパラメーター、[配列コンス トラクター](#ctor)です。  
+  
+### <a name="return-value"></a>戻り値  
+ `index` パラメーターで指定された配列要素。  
+  
+## <a name="value"></a>  Array::value プロパティ
+現在の配列へのハンドルを取得します。  
+  
+## <a name="syntax"></a>構文  
+  
+```cpp 
+property Array^ Value;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 現在の配列へのハンドル。  
+
+## <a name="see-also"></a>参照  
+ [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)   
  [Array と WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md)

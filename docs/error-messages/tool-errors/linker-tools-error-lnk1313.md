@@ -1,34 +1,38 @@
 ---
-title: "リンカ ツール エラー LNK1313 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK1313"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK1313"
+title: "リンカ ツール エラー LNK1313 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- LNK1313
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK1313
 ms.assetid: 5df0b72e-bb3f-428c-8d84-6084238f9827
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a9030921178fc23c225a775359724cf5c932d95e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカ ツール エラー LNK1313
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ijw\/ネイティブ モジュールが検出されました。純粋なモジュールとリンクできません。  
+# <a name="linker-tools-error-lnk1313"></a>リンカ ツール エラー LNK1313
+ijw/ネイティブ モジュールが検出されました。純粋なモジュールとリンクできません。  
   
- 現在のバージョンの Visual C\+\+ では、ネイティブ、またはネイティブ\/マネージ混合の .obj ファイルと **\/clr:pure** でコンパイルされた .obj ファイルのリンクをサポートしていません。  
+ 現在のバージョンの Visual C がでコンパイルされた .obj ファイルのネイティブまたは混合マネージ/ネイティブ .obj ファイルのリンクをサポートしていない**/clr: 純粋な**します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // LNK1313.cpp  
@@ -37,7 +41,7 @@ ijw\/ネイティブ モジュールが検出されました。純粋なモジ�
 int main() {}  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // LNK1313_b.cpp  
@@ -46,7 +50,7 @@ int main() {}
 void test(){}  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では lnk1313 エラーが生成されます。  
   
 ```  

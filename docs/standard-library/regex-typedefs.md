@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - regex/std::cmatch
 - regex/std::cregex_iterator
@@ -28,16 +28,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: e6a69067-106c-4a24-9e08-7c867a3a2260
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a280d441f4ded04f76d82340e4907486f104c49a
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 7dad87e2d6e402333db5f51bdf8deaee1090df86
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltregexgt-typedefs"></a>&lt;regex&gt; typedefs
 ||||  
@@ -232,7 +233,7 @@ typedef sub_match<wstring::const_iterator> wssub_match;
 ### <a name="remarks"></a>コメント  
  この型は、`wstring::const_iterator` 型の反復子に合わせて特殊化したテンプレート クラス [sub_match クラス](../standard-library/sub-match-class.md)を表します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<regex>](../standard-library/regex.md)  
 [regex_constants クラス](../standard-library/regex-constants-class.md)  
 [regex_error クラス](../standard-library/regex-error-class.md)  
@@ -241,4 +242,3 @@ typedef sub_match<wstring::const_iterator> wssub_match;
 [\<regex> 系演算子](../standard-library/regex-operators.md)  
 [regex_token_iterator クラス](../standard-library/regex-token-iterator-class.md)  
 [regex_traits クラス](../standard-library/regex-traits-class.md)  
-

@@ -1,48 +1,53 @@
 ---
-title: "コマンドとテーブル | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CAccessorRowset クラス, コマンドとテーブル クラス"
-  - "CCommand クラス, OLE DB コンシューマー テンプレート"
-  - "コマンド [C++], OLE DB コンシューマー テンプレート"
-  - "CTable クラス"
-  - "OLE DB コンシューマー テンプレート, コマンドのサポート"
-  - "OLE DB コンシューマー テンプレート, テーブル サポート"
-  - "行セット, アクセス"
-  - "テーブル [C++], OLE DB コンシューマー テンプレート"
+title: "コマンドとテーブル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE DB consumer templates, table support
+- CCommand class, OLE DB consumer templates
+- commands [C++], OLE DB Consumer Templates
+- CTable class
+- CAccessorRowset class, command and table classes
+- rowsets, accessing
+- tables [C++], OLE DB Consumer Templates
+- OLE DB consumer templates, command support
 ms.assetid: 4bd3787b-6d26-40a9-be0c-083080537c12
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: b3500b5b39e4f6e483789cdc13a055b2fe45fa39
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# コマンドとテーブル
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コマンドとテーブルを使用して、行セットにアクセスできます。つまり、行セットを開き、コマンドを実行し、列をバインドできます。  [CCommand](../../data/oledb/ccommand-class.md) クラスと [CTable](../../data/oledb/ctable-class.md) クラスは、それぞれコマンド オブジェクトとテーブル オブジェクトをインスタンス化します。  次の図に示すように、これらのクラスは [CAccessorRowset](../Topic/CAccessorRowset%20Class.md) の派生クラスです。  
+# <a name="commands-and-tables"></a>コマンドとテーブル
+コマンドとテーブル行セットにアクセスすることを許可します。つまり、行セットを開き、コマンドを実行し、列をバインドします。 [CCommand](../../data/oledb/ccommand-class.md)と[CTable](../../data/oledb/ctable-class.md)クラスがそれぞれのコマンドとテーブルのオブジェクトをインスタンス化します。 これらのクラスから派生して[CAccessorRowset](../../data/oledb/caccessorrowset-class.md)次の図に示すようにします。  
   
- ![CCommand および CTable](../../data/oledb/media/vccommandstables.gif "vcCommandsTables")  
-コマンド クラスとテーブル クラス  
+ ![CCommand および CTable](../../data/oledb/media/vccommandstables.gif "vccommandstables")  
+コマンドとテーブル クラス  
   
- 前の表では、`TAccessor` は「[アクセサーと行セット](../../data/oledb/accessors-and-rowsets.md)」に示されている任意の種類のアクセサーになります。  *TRowset* は、「[アクセサーと行セット](../../data/oledb/accessors-and-rowsets.md)」に示されている任意の種類の行セットにすることができます。  *TMultiple* では、結果の種類 \(単一または複数の結果セット\) を指定します。  
+ 前の表に`TAccessor`、アクセサーの種類に指定できる[アクセサーの種類](../../data/oledb/accessors-and-rowsets.md)です。 *TRowset*任意の行セット型に指定できる[行セットの種類](../../data/oledb/accessors-and-rowsets.md)です。 *TMultiple* (1 つまたは複数の結果セット) の結果の型を指定します。  
   
- [ATL OLE DB コンシューマー ウィザード](../../atl/reference/atl-ole-db-consumer-wizard.md)で、コマンド オブジェクトとテーブル オブジェクトのどちらが必要かを指定します。  
+ [ATL OLE DB コンシューマー ウィザード](../../atl/reference/atl-ole-db-consumer-wizard.md)コマンドまたはテーブル オブジェクトをするかどうかを指定することができます。  
   
--   コマンドを使用しないデータ ソースでは、`CTable` クラスを使用できます。  このクラスは一般に、パラメーターを指定せず、複数の結果を必要としない単純な行セットに使用します。  この単純なクラスは、指定されたテーブル名を使用してデータ ソースのテーブルを開きます。  
+-   コマンドせず、データ ソースを使用できます、`CTable`クラスです。 一般的に使用するパラメータを指定しないと、複数の結果を必要とする単純な行セットの。 この単純なクラスは、指定したテーブル名を使用してデータ ソースのテーブルを開きます。  
   
--   コマンドをサポートするデータ ソースでは、代わりに `CCommand` クラスを使用できます。  コマンドを実行するには、このクラスに対して [Open](../../data/oledb/ccommand-open.md) を呼び出します。  または、`Prepare` を呼び出して、複数回実行するコマンドを準備することもできます。  
+-   をコマンドをサポートするデータ ソースを使用できます、`CCommand`クラスの代わりにします。 コマンドを実行するには、呼び出す[開く](../../data/oledb/ccommand-open.md)このクラスにします。 代わりに、呼び出すことができます`Prepare`2 回以上実行するコマンドを準備します。  
   
-     **CCommand** には、アクセサーの種類、行セットの種類、および結果の種類 \(既定では `CNoMultipleResults` または `CMultipleResults`\) の 3 つのテンプレート引数があります。  `CMultipleResults` を指定すると、`CCommand` クラスは **IMultipleResults** インターフェイスをサポートし、複数の行セットを処理します。  [DBVIEWER](http://msdn.microsoft.com/ja-jp/07620f99-c347-4d09-9ebc-2459e8049832) サンプルは、複数の結果を処理する方法を示しています。  
+     **CCommand** 3 つのテンプレート引数を持つ: アクセサーの型、行セットの種類、および結果型は (`CNoMultipleResults`、既定では、または`CMultipleResults`)。 指定した場合`CMultipleResults`、`CCommand`クラスでサポート、 **IMultipleResults**インターフェイスし、複数の行セットを処理します。 [DBVIEWER](http://msdn.microsoft.com/en-us/07620f99-c347-4d09-9ebc-2459e8049832)サンプルを複数の結果を処理する方法を示します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)

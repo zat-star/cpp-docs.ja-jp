@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ratio/std::mega
 - ratio/std::peta
@@ -36,17 +37,20 @@ f1_keywords:
 - ratio/std::exa
 - ratio/std::deci
 - ratio/std::deca
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 8543e912-2d84-45ea-b3c0-bd7bfacee405
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 13bcb39bd1bdcc24dc6f14d2cecf887c5213c450
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 415c91f79102103fe71e21384b16d691779e6a2d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltratiogt"></a>&lt;ratio&gt;
 
@@ -70,7 +74,7 @@ template<std::intmax_t Numerator, std::intmax_t Denominator = 1>
 }
 ```  
 
-テンプレート`ratio`静的な定数を定義`num`と`den`ように`num`  /  `den`分子を = =/分母および`num`と`den`一般的な要因があるないです。 `num` / `den`このテンプレート クラスで表される値です。 したがって、`type`インスタンス化を指定`ratio<num, den>`です。  
+テンプレート`ratio`静的な定数を定義`num`と`den`ように`num`  /  `den`分子を = =/分母および`num`と`den`一般的な要因があるないです。 `num` / `den` このテンプレート クラスで表される値です。 したがって、`type`インスタンス化を指定`ratio<num, den>`です。  
   
 ### <a name="specializations"></a>特殊化
 
@@ -80,7 +84,7 @@ template<std::intmax_t Numerator, std::intmax_t Denominator = 1>
   
 それぞれの特殊化は、`ratio` の特殊化である必要がある 2 つのテンプレート パラメーターを使用します。 `type` の値は関連する論理操作によって決定されます。  
   
-|名前|`type` 値|  
+|name|`type` 値|  
 |----------|------------------|  
 |`ratio_add`|`R1 + R2`|  
 |`ratio_divide`|`R1 / R2`|  
@@ -116,7 +120,7 @@ typedef ratio<1000000000000000, 1> peta;
 typedef ratio<1000000000000000000, 1> exa;
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
 
 

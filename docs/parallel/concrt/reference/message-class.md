@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - message
 - AGENTS/concurrency::message
@@ -21,30 +21,17 @@ dev_langs:
 helpviewer_keywords:
 - message class
 ms.assetid: 3e1f3505-6c0c-486c-8191-666d0880ec62
-caps.latest.revision: 21
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: c6cc72c1fe9385eabe86194031913b7363d602ff
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 030b3d376b26afb077edd765d338b4c5d1b0841f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="message-class"></a>message クラス
 メッセージング ブロック間で渡されるデータ ペイロードが格納される、基本的なメッセージ エンベロープ。  
@@ -66,7 +53,7 @@ class message : public ::Concurrency::details::_Runtime_object;
   
 |名前|説明|  
 |----------|-----------------|  
-|`type`|型の別名`T`します。|  
+|`type`|型の別名`T`です。|  
   
 ### <a name="public-constructors"></a>パブリック コンストラクター  
   
@@ -79,30 +66,30 @@ class message : public ::Concurrency::details::_Runtime_object;
   
 |名前|説明|  
 |----------|-----------------|  
-|[add_ref](#add_ref)|追加の参照カウントを`message`オブジェクトです。 参照カウントのメッセージの有効期間を決定する必要があるメッセージ ブロックで使用します。|  
-|[msg_id](#msg_id)|ID を返す、`message`オブジェクトです。|  
-|[remove_ref](#remove_ref)|参照カウントから減算し、`message`オブジェクトです。 参照カウントのメッセージの有効期間を決定する必要があるメッセージ ブロックで使用します。|  
+|[add_ref](#add_ref)|参照カウントに追加、`message`オブジェクト。 参照カウントのメッセージの有効期間を決定する必要があるメッセージ ブロックのために使用します。|  
+|[msg_id](#msg_id)|ID を返します、`message`オブジェクト。|  
+|[remove_ref](#remove_ref)|参照カウントから減算し、`message`オブジェクト。 参照カウントのメッセージの有効期間を決定する必要があるメッセージ ブロックのために使用します。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[ペイロード](#payload)|ペイロード、`message`オブジェクトです。|  
+|[payload](#payload)|ペイロード、`message`オブジェクト。|  
   
 ## <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。[非同期メッセージ ブロック](../../../parallel/concrt/asynchronous-message-blocks.md)します。  
+ 詳細については、次を参照してください。[非同期メッセージ ブロック](../../../parallel/concrt/asynchronous-message-blocks.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `message`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** agents.h  
   
  **名前空間:** concurrency  
   
-##  <a name="add_ref"></a>add_ref 
+##  <a name="add_ref"></a> add_ref 
 
- 追加の参照カウントを`message`オブジェクトです。 参照カウントのメッセージの有効期間を決定する必要があるメッセージ ブロックで使用します。  
+ 参照カウントに追加、`message`オブジェクト。 参照カウントのメッセージの有効期間を決定する必要があるメッセージ ブロックのために使用します。  
   
 ```
 long add_ref();
@@ -111,7 +98,7 @@ long add_ref();
 ### <a name="return-value"></a>戻り値  
  参照カウントの新しい値。  
   
-##  <a name="ctor"></a>メッセージ 
+##  <a name="ctor"></a> メッセージ 
 
  `message` オブジェクトを構築します。  
   
@@ -138,12 +125,12 @@ message(
  このメッセージの一意の ID。  
   
  `_Msg`  
- ポインターまたは参照、`message`オブジェクトです。  
+ 参照またはへのポインター、`message`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- ポインターを受け取るコンス トラクター、`message`引数がスローされたオブジェクトの[invalid_argument](../../../standard-library/invalid-argument-class.md)例外場合、パラメーター`_Msg`は`NULL`です。  
+ ポインターを受け取るコンス トラクター、`message`オブジェクト引数のスローされて、 [invalid_argument](../../../standard-library/invalid-argument-class.md)例外場合、パラメーター`_Msg`は`NULL`します。  
   
-##  <a name="dtor"></a>~ メッセージ 
+##  <a name="dtor"></a> ~message 
 
  `message` オブジェクトを破棄します。  
   
@@ -151,28 +138,28 @@ message(
 virtual ~message();
 ```  
   
-##  <a name="msg_id"></a>msg_id 
+##  <a name="msg_id"></a> msg_id 
 
- ID を返す、`message`オブジェクトです。  
+ ID を返します、`message`オブジェクト。  
   
 ```
 runtime_object_identity msg_id() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `runtime_object_identity`の`message`オブジェクトです。  
+ `runtime_object_identity`の`message`オブジェクト。  
   
-##  <a name="payload"></a>ペイロード 
+##  <a name="payload"></a> ペイロード 
 
- ペイロード、`message`オブジェクトです。  
+ ペイロード、`message`オブジェクト。  
   
 ```
 T const payload;
 ```  
   
-##  <a name="remove_ref"></a>remove_ref 
+##  <a name="remove_ref"></a> remove_ref 
 
- 参照カウントから減算し、`message`オブジェクトです。 参照カウントのメッセージの有効期間を決定する必要があるメッセージ ブロックで使用します。  
+ 参照カウントから減算し、`message`オブジェクト。 参照カウントのメッセージの有効期間を決定する必要があるメッセージ ブロックのために使用します。  
   
 ```
 long remove_ref();
@@ -181,6 +168,5 @@ long remove_ref();
 ### <a name="return-value"></a>戻り値  
  参照カウントの新しい値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)
-

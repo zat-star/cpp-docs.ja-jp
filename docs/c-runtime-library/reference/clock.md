@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - clock
 apilocation:
@@ -34,30 +34,17 @@ helpviewer_keywords:
 - processor time used
 - calculating processor time used
 ms.assetid: 3e1853dd-498f-49ba-b06a-f2315f20904e
-caps.latest.revision: 15
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 3a226377499df1747a022325b762b3cdfdd35ea6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d56f29f1693fba1f4b455d8ae80ee38603e3a604
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="clock"></a>clock
 呼び出しプロセスにかかったウォール クロック時間を計算します。  
@@ -76,9 +63,9 @@ clock_t clock( void );
   
 十分な時間がある場合、`clock` から返される値は `clock_t` の正の最大値を超える可能性があります。 プロセスの実行時間が長い場合、`clock` から返される値は常に `(clock_t)(-1)` となります。これは、ISO C99 (7.23.2.1) と ISO C11 標準 (7.27.2.1) で指定されています。 Microsoft では `clock_t` を `long` (符号付き 32 ビット整数) として実装しており、`CLOCKS_PER_SEC` マクロは 1000 として定義されています。 これで、`clock` 関数の最大戻り値は 2147483.647 秒 (約 24.8 日) となります。 この時間より長く実行されるプロセスでは、`clock` から返される値を信頼しないでください。 64 ビットの `time` 関数または Windows の [QueryPerformanceCounter](https://msdn.microsoft.com/library/windows/desktop/ms644904) 関数を使用して、プロセスの数年の経過時間を記録することができます。  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`clock`|\<time.h>|  
   
@@ -135,7 +122,7 @@ Done!
 Time to do 600000000 empty loops is 1.354 seconds  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [difftime、_difftime32、_difftime64](../../c-runtime-library/reference/difftime-difftime32-difftime64.md)   
  [time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)

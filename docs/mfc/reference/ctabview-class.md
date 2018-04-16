@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -18,7 +19,8 @@ f1_keywords:
 - AFXTABVIEW/CTabView::SetActiveView
 - AFXTABVIEW/CTabView::IsScrollBar
 - AFXTABVIEW/CTabView::OnActivateView
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CTabView [MFC], AddView
 - CTabView [MFC], FindTab
@@ -29,15 +31,17 @@ helpviewer_keywords:
 - CTabView [MFC], IsScrollBar
 - CTabView [MFC], OnActivateView
 ms.assetid: 8e6ecd9d-d28d-432b-8ec8-0446f0204d52
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5ebbf63d409e54ee3d71c4da43aea8bff12fd51c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: adbb5d92387634356f1185cee73d5969944ac27a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctabview-class"></a>CTabView クラス
 `CTabView`クラス タブのコントロール クラスの使用を簡略化 ( [CMFCTabCtrl](../../mfc/reference/ctabview-class.md)) MFC のドキュメント/ビュー アーキテクチャを使用するアプリケーションでします。  
@@ -80,7 +84,7 @@ class CTabbedView : public CView
   
  [!code-cpp[NVC_MFC_TabbedView#1](../../mfc/reference/codesnippet/cpp/ctabview-class_1.h)]  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxTabView.h  
   
 ##  <a name="addview"></a>CTabView::AddView  
@@ -214,7 +218,7 @@ BOOL SetActiveView(int iTabNum);
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [CMFCTabCtrl::SetActiveTab](../../mfc/reference/cmfctabctrl-class.md#setactivetab)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCTabCtrl](../../mfc/reference/ctabview-class.md)   

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: AMP/Concurrency
-dev_langs: C++
-helpviewer_keywords: Concurrency namespace
+ms.topic: reference
+f1_keywords:
+- AMP/Concurrency
+dev_langs:
+- C++
+helpviewer_keywords:
+- Concurrency namespace
 ms.assetid: b5aab265-3bac-42c5-8ead-f92ce05ef267
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c67ed88a395b6d688fdc753ed45f08fd5b41925c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1a9f82baade21cdbde41fc49fd0bfe6163c0f6af
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="concurrency-namespace-c-amp"></a>Concurrency 名前空間 (C++ AMP)
 データ並列ハードウェアでの C++ コードの実行を高速化するクラスと関数を提供します。 詳細については、次を参照してください[C++ AMP の概要。](../cpp-amp-overview.md)  
@@ -64,9 +70,9 @@ namespace Concurrency;
   
 ### <a name="enumerations"></a>列挙  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
-|[access_type 列挙型](concurrency-namespace-enums-amp.md#access_type)|データ アクセスの種類を指定します。|  
+|[access_type Enumeration](concurrency-namespace-enums-amp.md#access_type)|データ アクセスの種類を指定します。|  
 |[queuing_mode 列挙型](concurrency-namespace-enums-amp.md#queuing_mode)|アクセラレータでサポートされているキュー モードを指定します。|  
   
 ### <a name="operators"></a>演算子  
@@ -98,7 +104,7 @@ namespace Concurrency;
 |[atomic_fetch_or](concurrency-namespace-functions-amp.md#atomic_fetch_or)|オーバーロードされます。 指定された位置に格納されている値をその値と分割不可能な操作として指定された値のビットごとの `or` に設定します。|  
 |[atomic_fetch_sub](concurrency-namespace-functions-amp.md#atomic_fetch_sub)|オーバーロードされます。 指定された位置に格納された値を、その値と分割不可能な操作として指定された値の差に設定します。|  
 |[atomic_fetch_xor](concurrency-namespace-functions-amp.md#atomic_fetch_xor)|オーバーロードされます。 指定された位置に格納されている値をその値と分割不可能な操作として指定された値のビットごとの `xor` に設定します。|  
-|[copy](concurrency-namespace-functions-amp.md#copy)|C++ AMP オブジェクトをコピーします。 すべての同期データ転送の条件が満たされます。 アクセラレータでコードを実行しているときにデータをコピーすることはできません。 この関数の一般的な形式は `copy(src, dest)` です。|  
+|[copy](concurrency-namespace-functions-amp.md#copy)|C++ AMP オブジェクトをコピーします。 すべての同期データ転送の要件が満たされます。 アクセラレータでコードを実行しているときにデータをコピーすることはできません。 この関数の一般的な形式は `copy(src, dest)` です。|  
 |[copy_async](concurrency-namespace-functions-amp.md#copy_async)|C++ AMP オブジェクトをコピーし、返します[completion_future](completion-future-class.md)待機できます。 アクセラレータでコードを実行しているときにデータはコピーできません。 この関数の一般的な形式は `copy(src, dest)` です。|  
 |[direct3d_abort](concurrency-namespace-functions-amp.md#direct3d_abort)|制限句 `restrict(amp)` がある関数の実行を中止します。|  
 |[direct3d_errorf](concurrency-namespace-functions-amp.md#direct3d_errorf)|Visual Studio に書式指定文字列出力**出力**ウィンドウとが発生し、 [runtime_exception](runtime-exception-class.md)文字列の書式設定が同じ例外。|  
@@ -114,10 +120,10 @@ namespace Concurrency;
 |[HLSL_MAX_NUM_BUFFERS 定数](concurrency-namespace-constants-amp.md#hlsl_max_num_buffers)|DirectX で許容される最大バッファー数。|  
 |[MODULENAME_MAX_LENGTH 定数](concurrency-namespace-constants-amp.md#modulename_max_length)|モジュール名の最大長を格納します。 この値は、コンパイラとランタイムで同じにする必要があります。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リファレンス (C++ AMP)](reference-cpp-amp.md)
 
 

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _set_purecall_handler
 - _set_purecall_handler_m
@@ -31,7 +32,8 @@ f1_keywords:
 - stdlib/_set_purecall_handler
 - stdlib/_get_purecall_handler
 - _get_purecall_handler
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _set_purecall_handler function
 - set_purecall_handler function
@@ -41,15 +43,17 @@ helpviewer_keywords:
 - _set_purecall_handler_m function
 - _get_purecall_handler function
 ms.assetid: 2759b878-8afa-4129-86e7-72afc2153d9c
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b32cf4e20be739f712cb9c0b0e0c8d3b0f0792ad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 918fbe6c27333c705dbb2768ccd903c64e0fd687
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getpurecallhandler-setpurecallhandler"></a>_get_purecall_handler、_set_purecall_handler
 純粋仮想関数呼び出しのエラー ハンドラーを取得または設定します。  
@@ -82,13 +86,13 @@ _purecall_handler __cdecl _set_purecall_handler(
   
  既定の動作を復元するには、`nullptr` 引数を使用して `_set_purecall_handler` を呼び出します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_get_purecall_handler`, `_set_purecall_handler`|\<cstdlib> または \<stdlib.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -139,6 +143,6 @@ int _tmain(int argc, _TCHAR* argv[])
 In _purecall_handler.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   
  [_purecall](../../c-runtime-library/reference/purecall.md)

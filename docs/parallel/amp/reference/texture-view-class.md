@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - texture_view
 - AMP_GRAPHICS/texture_view
@@ -23,30 +23,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 6ec2e289-1626-4727-9592-07981cf1d27d
-caps.latest.revision: 11
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 4896b3ee55a5955c33e1c2652eb73851e4ec5a64
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 72f88cc10da623cbda4f3426596fe07650bf4b46
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="textureview-class"></a>texture_view クラス
 テクスチャへの読み取りアクセスおよび書き込みアクセスを提供します。 `texture_view` は、既定の 32 ビット bpse である `int`、`unsigned int`、または `float` の値型のテクスチャを読み取るためにのみ使用できます。 他のテクスチャ形式を読み取るには、`texture_view<const value_type, _Rank>` を使用します。  
@@ -99,7 +86,7 @@ class texture_view<const value_type, _Rank>
 |[gather_green](#gather_green)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの緑 (y) 要素を返します。|  
 |[gather_red](#gather_red)|オーバーロードされます。 指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの赤 (x) 要素を返します。|  
 |[get](#get)|オーバーロードされます。 インデックスで要素の値を取得します。|  
-|[サンプル](#sample)|オーバーロードされます。 指定されたサンプリング構成を使用して詳細な指定された座標およびレベルでテクスチャをサンプリングします。|  
+|[sample](#sample)|オーバーロードされます。 指定されたサンプリング構成を使用して詳細な指定された座標およびレベルでテクスチャをサンプリングします。|  
 |[set](#set)|インデックスで要素の値を設定します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
@@ -107,7 +94,7 @@ class texture_view<const value_type, _Rank>
 |名前|説明|  
 |----------|-----------------|  
 |[operator()](#operator_call)|オーバーロードされます。 インデックスで要素の値を取得します。|  
-|[演算子](#operator_at)|オーバーロードされます。 インデックスで要素の値を取得します。|  
+|[operator[]](#operator_at)|オーバーロードされます。 インデックスで要素の値を取得します。|  
 |[operator=](#operator_eq)|オーバーロードされます。 代入演算子。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
@@ -121,12 +108,12 @@ class texture_view<const value_type, _Rank>
   
  `texture_view`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_graphics.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="dtor"></a>~ texture_view 
+##  <a name="dtor"></a> ~texture_view 
 
  `texture_view` インスタンスを破棄します。  
   
@@ -134,7 +121,7 @@ class texture_view<const value_type, _Rank>
 ~texture_view() restrict(amp, cpu);
 ```  
   
-##  <a name="ctor"></a>texture_view 
+##  <a name="ctor"></a> texture_view 
 
  `texture_view` インスタンスを構築します。  
   
@@ -196,7 +183,7 @@ texture_view(// [7] copy constructor
  `_Mip_levels`  
  `texture_view` を使用してアクセスできる MIPMAP レベルの数。  
   
-##  <a name="gather_red"></a>gather_red 
+##  <a name="gather_red"></a> gather_red 
 
  指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの赤 (x) 要素を返します。  
   
@@ -226,7 +213,7 @@ const gather_return_type gather_red(
 ### <a name="return-value"></a>戻り値  
  4 つのサンプリングされたテクセル値の赤 (x) 要素を含むランク 4 の短いベクター。  
   
-##  <a name="gather_green"></a>gather_green 
+##  <a name="gather_green"></a> gather_green 
 
  指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの緑 (y) 要素を返します。  
   
@@ -256,7 +243,7 @@ const gather_return_type gather_green(
 ### <a name="return-value"></a>戻り値  
  4 つのサンプリングされたテクセル値の緑 (y) 要素を含むランク 4 の短いベクター。  
   
-##  <a name="gather_blue"></a>gather_blue 
+##  <a name="gather_blue"></a> gather_blue 
 
  指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルの青 (z) 要素を返します。  
   
@@ -286,7 +273,7 @@ const gather_return_type gather_blue(
 ### <a name="return-value"></a>戻り値  
  4 つのサンプリングされたテクセル値の赤 (x) 要素を含むランク 4 の短いベクター。  
   
-##  <a name="gather_alpha"></a>gather_alpha 
+##  <a name="gather_alpha"></a> gather_alpha 
 
  指定されたサンプリング構成を使用して指定された座標でテクスチャをサンプリングし、4 つのサンプリングされたテクセルのアルファ (w) 要素を返します。  
   
@@ -316,7 +303,7 @@ const gather_return_type gather_alpha(
 ### <a name="return-value"></a>戻り値  
  4 つのサンプリングされたテクセル値のアルファ (w) 要素を含むランク 4 の短いベクター。  
   
-##  <a name="get"></a>取得 
+##  <a name="get"></a> 取得 
 
  指定したインデックス位置にある要素の値を取得します。  
   
@@ -340,7 +327,7 @@ value_type get(
 ### <a name="return-value"></a>戻り値  
  要素の値。  
   
-##  <a name="operator_eq"></a>演算子 = 
+##  <a name="operator_eq"></a> 演算子 = 
 
  指定された `texture_view` と同じテクスチャのビューをこの `texture_view` インスタンスに割り当てます。  
   
@@ -368,7 +355,7 @@ texture_view<const value_type, _Rank>& operator= (// [3] copy constructor
 ### <a name="return-value"></a>戻り値  
  この `texture_view` インスタンスへの参照。  
   
-##  <a name="operator_at"></a>演算子 
+##  <a name="operator_at"></a> operator[] 
 
  インデックスごとの要素の値を返します。  
   
@@ -395,7 +382,7 @@ value_type operator[] (int _I0) const restrict(amp);
 ### <a name="return-value"></a>戻り値  
  `_Index` でインデックス付けされている要素の値。  
   
-##  <a name="operator_call"></a>operator() 
+##  <a name="operator_call"></a> operator() 
 
  インデックスごとの要素の値を返します。  
   
@@ -453,7 +440,7 @@ value_type operator() (
 ### <a name="return-value"></a>戻り値  
  `_Index` でインデックス付けされている要素の値。  
   
-##  <a name="sample"></a>サンプル 
+##  <a name="sample"></a> サンプル 
 
  指定されたサンプリング構成を使用して詳細な指定された座標およびレベルでテクスチャをサンプリングします。  
   
@@ -492,7 +479,7 @@ value_type sample(
 ### <a name="return-value"></a>戻り値  
  補間されたサンプル値。  
   
-##  <a name="set"></a>設定 
+##  <a name="set"></a> 設定 
 
  指定したインデックス位置にある要素の値を指定した値に設定します。  
   
@@ -509,7 +496,7 @@ void set(
  `value`  
  要素を設定する値。  
   
-##  <a name="value_type"></a>value_type 
+##  <a name="value_type"></a> value_type 
 
  texture_view の要素の値型です。  
   
@@ -517,6 +504,5 @@ void set(
 typedef typename const value_type value_type;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

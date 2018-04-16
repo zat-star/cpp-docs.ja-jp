@@ -1,32 +1,37 @@
 ---
-title: "list::sort (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::list::sort"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "sort メンバー [STL/CLR]"
+title: "list::sort (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::list::sort
+dev_langs:
+- C++
+helpviewer_keywords:
+- sort member [STL/CLR]
 ms.assetid: f811d5f4-a19e-4194-8765-1e68097c52f0
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 159391bc7d362c755c194f478692b2a271d779ed
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# list::sort (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-被制御シーケンスを順序付けます。  
+# <a name="listsort-stlclr"></a>list::sort (STL/CLR)
+被制御シーケンスを並べ替えます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void sort();  
@@ -34,18 +39,18 @@ template<typename Pred2>
     void sort(Pred2 pred);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  pred  
  要素のペアの比較子。  
   
-## 解説  
- 一つ目のメンバー関数は `operator<` に並べ替えられたよう、被制御シーケンスの要素を再配置します。。要素は、値のシーケンスによって進行とともに減りません。  昇順のシーケンスを並べ替えるには、このメンバー関数を使用します。  
+## <a name="remarks"></a>コメント  
+ 最初のメンバー関数は、によって順序がされるように、被制御シーケンス内の要素を再配置`operator<`--進行中は、シーケンス値で要素を縮小しません。 昇順に並べ替え順序を並べ替えるには、このメンバー関数を使用します。  
   
- 2 つ目のメンバー関数は、まず 1 番目と同様に動作します。ただし、シーケンスは `pred` に並べ替えられます。`pred``(X, Y)` は、生成されたシーケンスの要素 `Y` に従ってすべての要素 `X` の場合は false になります。  、述語関数またはデリゲートで指定した順序でシーケンスを並べ替えるために使用します。  
+ 2 番目のメンバー関数の動作、最初と同じで、シーケンスが順序付けする点を除いて`pred`  --  `pred(X, Y)`は任意の要素に対して false`X`要素に依存している`Y`結果のシーケンスにします。 述語の関数またはデリゲートで指定した順序でシーケンスの並べ替えに使用します。  
   
- 関数は、どちらも安定した並べ替えを実行します。。元の被制御シーケンス内の要素のペアは、被制御シーケンスの反転されません。  
+ 両方関数は、安定した並べ替えを実行します。--結果として得られる被制御シーケンス内の元の被制御シーケンス内の要素のペアを逆にありません。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_list_sort.cpp   
@@ -80,17 +85,20 @@ int main()
   
 ```  
   
-  **b c**  
- **a b c**  
- **b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/リスト\>  
+```Output  
+a b c  
+c b a  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/一覧 >  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)   
- [list::merge](../dotnet/list-merge-stl-clr.md)   
- [list::reverse](../dotnet/list-reverse-stl-clr.md)   
- [list::splice](../Topic/list::splice%20\(STL-CLR\).md)   
- [list::unique](../dotnet/list-unique-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [list::merge (STL/CLR)](../dotnet/list-merge-stl-clr.md)   
+ [list::reverse (STL/CLR)](../dotnet/list-reverse-stl-clr.md)   
+ [list::splice (STL/CLR)](../dotnet/list-splice-stl-clr.md)   
+ [list::unique (STL/CLR)](../dotnet/list-unique-stl-clr.md)

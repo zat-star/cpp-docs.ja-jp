@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - m_szTableSchema
 - CColumnPrivileges
@@ -26,7 +27,8 @@ f1_keywords:
 - m_szTableName
 - CColumnPrivilegeInfo
 - m_szGrantee
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COLUMN_PROPID
 - GRANTOR
@@ -51,15 +53,18 @@ helpviewer_keywords:
 - CColumnPrivilegeInfo parameter class
 - m_bIsGrantable
 ms.assetid: 245df365-421f-43c6-9fcd-fb2197c871c6
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1c502a9c74f0de5c27af788a0f23778c42db8c20
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 7595d0f945744804b91a62ecfd41c5d2f3d9b165
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ccolumnprivileges-ccolumnprivilegeinfo"></a>CColumnPrivileges、CColumnPrivilegeInfo
 Typedef クラスを呼び出す**CColumnPrivileges**そのパラメーター クラスを実装する**CColumnPrivilegeInfo**です。  
@@ -84,8 +89,8 @@ Typedef クラスを呼び出す**CColumnPrivileges**そのパラメーター �
 |m_szPrivilegeType|PRIVILEGE_TYPE|  
 |m_bIsGrantable|IS_GRANTABLE|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

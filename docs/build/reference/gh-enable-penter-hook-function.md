@@ -1,67 +1,71 @@
 ---
-title: "/Gh (_penter フック関数の有効化) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_penter"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Gh コンパイラ オプション [C++]"
-  - "_penter 関数"
-  - "Gh コンパイラ オプション [C++]"
-  - "-Gh コンパイラ オプション [C++]"
+title: "-Gh (_penter フック関数の有効化) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _penter
+dev_langs:
+- C++
+helpviewer_keywords:
+- /Gh compiler option [C++]
+- Gh compiler option [C++]
+- _penter function
+- -Gh compiler option [C++]
 ms.assetid: 1510a082-8a0e-486e-a309-6add814b494f
-caps.latest.revision: 18
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dec38a8822bb8a330c4dccff9833780ea3a0a45d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /Gh (_penter フック関数の有効化)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-すべてのメソッドまたは関数の先頭で `_penter` 関数を呼び出します。  
+# <a name="gh-enable-penter-hook-function"></a>/Gh (_penter フック関数の有効化)
+呼び出しにより、`_penter`すべてのメソッドまたは関数の開始時の関数。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Gh  
 ```  
   
-## 解説  
- `_penter` 関数はライブラリ関数ではなく、`_penter` の定義はユーザー自身が行います。  
+## <a name="remarks"></a>コメント  
+ `_penter`関数は、任意のライブラリの一部ではないの定義を指定するかどうかは`_penter`します。  
   
- `_penter` 関数のプロトタイプを宣言する必要があるのは、\_penter 関数を明示的に呼び出す場合だけです。  この関数は、次に示すプロトタイプがあらかじめ宣言されているものとして記述します。この関数では、呼び出し元から制御が渡された時点ですべてのレジスタの内容をプッシュし、呼び出し元に制御を返す時点でそれをポップして元の状況に戻す必要があります。  
+ 明示的に呼び出す予定がない限り`_penter`プロトタイプを提供する必要はありません。 関数は、する必要がありますとして記述があった次のプロトタイプでは、エントリのすべてのレジスタのコンテンツをプッシュおよび終了時に変更されていないコンテンツを表示する必要があります。  
   
 ```  
 void __declspec(naked) _cdecl _penter( void );  
 ```  
   
- この宣言は、64 ビット プロジェクトには使用できません。  
+ この宣言は、64 ビット プロジェクトで使用可能ではありません。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  \[追加のオプション\]ボックスにコンパイラ オプションを入力します。  
+4.  **[追加のオプション]** ボックスにコンパイラ オプションを入力します。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 使用例  
- 次のコードは、**\/Gh** を使ってコンパイルしたときに、`_penter` がどのようにして 2 回呼び出されるかを示しています。つまり、`main` 関数に入ったときと、`x` 関数に入ったときに 1 回ずつ呼び出されます。  
+## <a name="example"></a>例  
+ 次のコードをコンパイルしたときに**/Gh**を示して 方法`_penter`を 2 回呼び出す関数に入るときに 1 回`main`関数に入るときに 1 回`x`です。  
   
 ```  
 // Gh_compiler_option.cpp  
@@ -100,8 +104,11 @@ extern "C" void __declspec(naked) _cdecl _penter( void ) {
 }  
 ```  
   
-  **In a function\!**  
-**In a function\!**   
-## 参照  
+```Output  
+In a function!  
+In a function!  
+```  
+  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

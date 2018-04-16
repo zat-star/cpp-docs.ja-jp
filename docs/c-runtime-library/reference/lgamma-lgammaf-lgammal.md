@@ -8,7 +8,7 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - lgamma
 - lgammaf
@@ -33,21 +33,24 @@ f1_keywords:
 - math/lgamma
 - math/lgammaf
 - math/lgammal
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - lgamma function
 - lgammal function
 - lgammaf function
 ms.assetid: 6e326c58-7077-481a-a329-c82ae56ae9e6
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: afc048d131bd75a9645c045b3bceae90344c07eb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e7ef4a64252342484a1c6aa68722013f1e6bffdf
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="lgamma-lgammaf-lgammal"></a>lgamma、lgammaf、lgammal
 指定した値のガンマ関数の絶対値の自然対数を決定します。  
@@ -84,7 +87,7 @@ long double lgammal(
 ## <a name="return-value"></a>戻り値  
  正常に終了した場合、`x.` のガンマ関数の絶対値の自然対数を返します。  
   
-|問題点|リターン|  
+|懸案事項|Return|  
 |-----------|------------|  
 |`x` = NaN|NaN|  
 |`x` = ±0|+INFINITY|  
@@ -100,14 +103,14 @@ long double lgammal(
   
  x が有理数の場合、この関数は (`x`-1) の階乗の対数を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
 |`lgamma`、`lgammaf`、`lgammal`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [tgamma、tgammaf、tgammal](../../c-runtime-library/reference/tgamma-tgammaf-tgammal.md)

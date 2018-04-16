@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::deque::erase
-dev_langs: C++
-helpviewer_keywords: erase member [STL/CLR]
+f1_keywords:
+- cliext::deque::erase
+dev_langs:
+- C++
+helpviewer_keywords:
+- erase member [STL/CLR]
 ms.assetid: 831fbc2b-604f-446b-88bc-b37531304c33
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cef46857d049d06e5c92082d9002e8d157c485a8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7cd061a112be18a0a8e3f2e2531db8fa0940e48c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dequeerase-stlclr"></a>deque::erase (STL/CLR)
 指定した位置にある要素を削除します。  
@@ -98,11 +105,11 @@ erase(begin(), end()-1) = e
 size() = 1  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/deque >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
  [deque::clear (STL/CLR)](../dotnet/deque-clear-stl-clr.md)

@@ -1,48 +1,52 @@
 ---
-title: "リンカー ツールの警告 LNK4247 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK4247"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK4247"
+title: リンカー ツールの警告 LNK4247 |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
+ms.topic: error-reference
+f1_keywords:
+- LNK4247
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK4247
 ms.assetid: 085d7fdf-9eaf-4641-8473-6eaadd073c7b
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 517605993199942f863faa78e14a022529214a64
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカー ツールの警告 LNK4247
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-エントリ ポイント 'decorated\_function\_name' にはスレッド属性が既に指定されています。'属性' は無視されます。  
+# <a name="linker-tools-warning-lnk4247"></a>リンカー ツールの警告 LNK4247
+エントリ ポイント 'decorated_function_name' は既に thread 属性です。' attribute' は無視されます。  
   
- [\/ENTRY \(エントリ ポイント シンボル\)](../../build/reference/entry-entry-point-symbol.md) で指定されたエントリ ポイントにスレッド処理属性がありましたが、[\/CLRTHREADATTRIBUTE \(CLR スレッド属性の設定\)](../../build/reference/clrthreadattribute-set-clr-thread-attribute.md) は別のスレッド処理モデルでも指定されていました。  
+ 指定されたエントリ ポイントが、 [/ENTRY (エントリ ポイント シンボル)](../../build/reference/entry-entry-point-symbol.md)、スレッドの属性を必要があるが、 [/CLRTHREADATTRIBUTE (CLR スレッド属性を設定)](../../build/reference/clrthreadattribute-set-clr-thread-attribute.md)を指定した、別のスレッド モデルです。  
   
- リンカーは \/CLRTHREADATTRIBUTE で指定された値を無視しました。  
+ リンカーでは、/CLRTHREADATTRIBUTE で指定した値が無視されます。  
   
- この警告を解決するには、次の方法があります。  
+ この警告を解決するには。  
   
--   \/CLRTHREADATTRIBUTE をビルドから削除します。  
+-   ビルドから/CLRTHREADATTRIBUTE を削除します。  
   
--   属性をソース コード ファイルから削除します。  
+-   ソース コード ファイルから属性を削除します。  
   
--   属性をソースから削除し、かつ \/CLRTHREADATTRIBUTE をビルドから削除して、既定の CLR スレッド処理モデルを受け入れます。  
+-   ソースと/CLRTHREADATTRIBUTE から、ビルドから両方属性を削除し、既定の CLR スレッド モデルをそのまま使用します。  
   
--   ソースの属性に一致するように \/CLRTHREADATTRIBUTE に渡される値を変更します。  
+-   ソース内の属性を持つことに同意したことなど、/CLRTHREADATTRIBUTE に渡された値を変更します。  
   
--   \/CLRTHREADATTRIBUTE に渡される値に一致するようにソースの属性を変更します。  
+-   /CLRTHREADATTRIBUTE に渡された値と、一致するように、ソース内の属性を変更します。  
   
- 次のサンプルは LNK4247 を生成します。  
+ 次の例には、LNK4247 が生成されます。  
   
 ```  
 // LNK4247.cpp  

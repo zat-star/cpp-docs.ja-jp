@@ -6,24 +6,28 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::Exception::Exception
 - VCCORLIB/Platform::Exception::CreateException
 - VCCORLIB/Platform::Exception::HResult
 - VCCORLIB/Platform::Exception::Message
-dev_langs: C++
-helpviewer_keywords: Platform::Exception Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Exception Class
 ms.assetid: ca1d5a67-3a5a-48fe-8099-f9c38a2d2dce
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: c2a6ee18779bbd1f54cf33a7b13a60725701c34c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 51df721524fa871b28cc7e4bcb088d4a82a0d1ad
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformexception-class"></a>Platform::Exception クラス
 アプリケーションの実行中に発生したエラーを表します。 カスタム例外クラスは、 `Platform::Exception`から派生できません。 カスタム例外が必要な場合は、 `Platform::COMException` を使用し、アプリケーション特有の HRESULT を指定できます。  
@@ -43,24 +47,24 @@ public ref class Exception : Object,    IException,    IPrintable,    IEquatable
   
 |メンバー|説明|  
 |------------|-----------------|  
-|[Exception::exception](#ctor)|`Exception` クラスの新しいインスタンスを初期化します。|  
+|[Exception::Exception](#ctor)|`Exception` クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="methods"></a>メソッド  
  `Exception`クラスは継承、 `Equals()`、 `Finalize()`、`GetHashCode()`、`GetType()`、`MemberwiseClose()`、および`ToString()`メソッドを[platform::object クラス](../cppcx/platform-object-class.md)です。 `Exception` クラスには、次のメソッドもあります。  
   
 |メンバー|説明|  
 |------------|-----------------|  
-|[Exception::createexception](#createexception)|指定された HRESULT 値を表す例外を作成します。|  
+|[Exception::CreateException](#createexception)|指定された HRESULT 値を表す例外を作成します。|  
   
 ### <a name="properties"></a>プロパティ  
  Exception クラスには、次のプロパティもあります。  
   
 |メンバー|説明|  
 |------------|-----------------|  
-|[Exception::hresult](#hresult)|例外に対応する HRESULT。|  
-|[Exception::message](#message)|例外について説明するメッセージ。 この値は読み取り専用で、 `Exception` が構築された後は変更できません。|  
+|[Exception::HResult](#hresult)|例外に対応する HRESULT。|  
+|[Exception::Message](#message)|例外について説明するメッセージ。 この値は読み取り専用で、 `Exception` が構築された後は変更できません。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -69,7 +73,7 @@ public ref class Exception : Object,    IException,    IPrintable,    IEquatable
   
  **メタデータ:** platform.winmd  
 
-## <a name="createexception"></a>Exception::createexception メソッド
+## <a name="createexception"></a> Exception::createexception メソッド
 指定した HRESULT 値から Platform::Exception^ を作成します。  
   
 ### <a name="syntax"></a>構文  
@@ -96,7 +100,7 @@ Exception^ CreateException(int32 hr, Platform::String^ message)
   
 
 
-## <a name="ctor"></a>Exception::exception コンス トラクター
+## <a name="ctor"></a>  Exception::exception コンス トラクター
 Exception クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  
@@ -116,7 +120,7 @@ Exception(int32 hresult, ::Platform::String^ message)
   
 
 
-## <a name="hresult"></a>Exception::hresult プロパティ
+## <a name="hresult"></a>  Exception::hresult プロパティ
 例外に対応する HRESULT。  
   
 ### <a name="syntax"></a>構文  
@@ -133,7 +137,7 @@ public:property int HResult {    int get();}
   
 
 
-## <a name="message"></a>Exception::message プロパティ
+## <a name="message"></a> Exception::message プロパティ
 エラーを説明するメッセージです。  
   
 ### <a name="syntax"></a>構文  
@@ -150,5 +154,5 @@ public:property String^ Message;
   
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

@@ -15,37 +15,24 @@ dev_langs:
 helpviewer_keywords:
 - C4928
 ms.assetid: 77235d7f-9360-45cb-8348-d148c605c4a3
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 019a54b9911bd749e067a3a6989a8f79513f7181
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1e5f096ada450818f8175a8807d074b407afd2d1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4928"></a>コンパイラの警告 (レベル 1) C4928
 コピー初期化が正しくありません。複数のユーザー定義の変換が暗黙的に適用されています。  
   
- 1 つ以上のユーザー定義の変換ルーチンが見つかりませんでした。 コンパイラでは、このようなすべてのルーチンで、コードが実行されます。  
+ 1 つ以上のユーザー定義の変換ルーチンが見つかりませんでした。 コンパイラは、このようなすべてのルーチンで、コードを実行します。  
   
- 既定では、この警告はオフに設定されています。 参照してください[コンパイラの警告ことは既定で無効](../../preprocessor/compiler-warnings-that-are-off-by-default.md)の詳細。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
  次の例では、C4928 が生成されます。  
   

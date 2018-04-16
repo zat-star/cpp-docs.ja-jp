@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2790
 ms.assetid: 38d4fce1-ba00-413d-8bc1-e8aa43d7bc1f
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b10da64605743612a4d5522b5c19d1f2029ced8c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 11ea7285d20808f16f2588d50caebe99429c8da0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2790"></a>コンパイラ エラー C2790
 'super': このキーワードはクラス メンバー関数の本体内でのみ使用できます  

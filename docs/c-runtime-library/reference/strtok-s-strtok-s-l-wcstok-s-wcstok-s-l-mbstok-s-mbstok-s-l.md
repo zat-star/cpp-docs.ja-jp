@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wcstok_s_l
 - _mbstok_s_l
@@ -37,7 +38,8 @@ f1_keywords:
 - wcstok_s
 - _mbstok_s
 - _strtok_s_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _strtok_s_l function
 - _mbstok_s_l function
@@ -54,22 +56,24 @@ helpviewer_keywords:
 - _mbstok_s function
 - strtok_s function
 ms.assetid: 7696c972-f83b-4617-8c82-95973e9fdb46
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1fd0738d1a08eb0c2285f12314770ec1120e7d97
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 868d9d3fc206931b20858ee360c2380cc5f03d61
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strtoks-strtoksl-wcstoks-wcstoksl-mbstoks-mbstoksl"></a>strtok_s、_strtok_s_l、wcstok_s、_wcstok_s_l、_mbstok_s、_mbstok_s_l
 
 現在のロケールまたは渡されたロケールを使用して、文字列内の次のトークンを検索します。 これらのバージョンの [strtok、_strtok_l、wcstok、_wcstok_l、_mbstok、_mbstok_l](../../c-runtime-library/reference/strtok-strtok-l-wcstok-wcstok-l-mbstok-mbstok-l.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」にあるとおり、セキュリティが強化されています。  
   
 > [!IMPORTANT]
->  `_mbstok_s` および `_mbstok_s_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbstok_s` および `_mbstok_s_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -119,10 +123,10 @@ unsigned char* _mbstok_s(
 *str*  
 検索するトークンを含む文字列。  
   
-*区切り記号*  
+*delimiters*  
 使用する区切り記号文字のセット。  
   
-*コンテキスト*  
+*context*  
 関数呼び出しの間の位置情報を格納するために使用します。  
   
 *locale*  
@@ -134,7 +138,7 @@ unsigned char* _mbstok_s(
   
 ### <a name="error-conditions"></a>エラー条件  
   
-|*str*|*区切り記号*|*コンテキスト*|戻り値|`errno`|  
+|*str*|*delimiters*|*context*|戻り値|`errno`|  
 |----------------|------------------|---------------|------------------|-------------|  
 |`NULL`|任意|null ポインターへのポインター|`NULL`|`EINVAL`|  
 |任意|`NULL`|任意|`NULL`|`EINVAL`|  
@@ -154,9 +158,9 @@ unsigned char* _mbstok_s(
 
 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 この関数のバージョン、`_l`サフィックスは、このロケールに依存する動作に現在のスレッド ロケールを使用します。 バージョンで、`_l`代わりに使用する点を除いて、サフィックスは同じ、*ロケール*パラメーター。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
-|ルーチン|必須ヘッダー|
+|ルーチンによって返される値|必須ヘッダー|
 |-------------|---------------------|
 |`strtok_s`|\<string.h>|
 |`_strtok_s_l`|\<string.h>|
@@ -238,7 +242,7 @@ Tokens:
  tokens  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [文字列操作](../../c-runtime-library/string-manipulation-crt.md)  
 [ロケール](../../c-runtime-library/locale.md)  

@@ -1,29 +1,34 @@
 ---
-title: "CA2CAEX クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CA2CAEX クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CA2CAEX
 - ATLCONV/ATL::CA2CAEX
 - ATLCONV/ATL::CA2CAEX::CA2CAEX
 - ATLCONV/ATL::CA2CAEX::m_psz
-dev_langs: C++
-helpviewer_keywords: CA2CAEX class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CA2CAEX class
 ms.assetid: 388e7c1d-a144-474c-a182-b15f69a74bd8
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0ae0db059d092feb1a24a3c7c635817250f2813b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f579716cff70d0c9f20ea0fa0133dcb4d86c8db3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ca2caex-class"></a>CA2CAEX クラス
 このクラスは、文字列変換マクロは使用`CA2CTEX`と`CT2CAEX`、および typedef **CA2CA**です。  
@@ -83,7 +88,7 @@ class CA2CAEX
 ## <a name="example"></a>例  
  参照してください[ATL および MFC 文字列変換マクロ](string-conversion-macros.md)をこれらの文字列変換マクロを使用する例についてはします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlconv.h  
   
 ##  <a name="ca2caex"></a>CA2CAEX::CA2CAEX  
@@ -131,7 +136,7 @@ operator LPCSTR() const throw();
 ### <a name="return-value"></a>戻り値  
  種類としてテキスト文字列を返す`LPCSTR`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CA2AEX クラス](../../atl/reference/ca2aex-class.md)   
  [CA2WEX クラス](../../atl/reference/ca2wex-class.md)   
  [CW2AEX クラス](../../atl/reference/cw2aex-class.md)   

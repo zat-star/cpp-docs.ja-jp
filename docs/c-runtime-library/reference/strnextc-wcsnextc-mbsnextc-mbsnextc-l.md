@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _strnextc
 - _mbsnextc_l
@@ -38,7 +39,8 @@ f1_keywords:
 - _ftcsnextc
 - _strnextc
 - wcsnextc
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _mbsnextc function
 - _tcsnextc function
@@ -51,21 +53,23 @@ helpviewer_keywords:
 - mbsnextc_l function
 - wcsnextc function
 ms.assetid: e3086173-9eb5-4540-a23a-5d866bd05340
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d9d2554bb581fb63df0453ea664e5b76c41994fd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c77954cd7eefaa1e739622af4ccf1b3d7a43b7ad
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strnextc-wcsnextc-mbsnextc-mbsnextcl"></a>_strnextc、_wcsnextc、_mbsnextc、_mbsnextc_l
 文字列の次の文字を検索します。  
   
 > [!IMPORTANT]
->  `_mbsnextc` および `_mbsnextc_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbsnextc` および `_mbsnextc_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -99,7 +103,7 @@ unsigned int _mbsnextc_l(
 ## <a name="remarks"></a>コメント  
  `_mbsnextc` 関数は、文字列のポインターを進めずに `str` の次のマルチバイト文字の整数値を返します。 `_mbsnextc` 関数は、現在使用中の[マルチバイト コード ページ](../../c-runtime-library/code-pages.md)に基づいて、マルチバイト文字列を認識します。  
   
- `str` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、関数から 0 が返されます。  
+ `str` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、関数から 0 が返されます。  
   
  **セキュリティに関するメモ** この API は、バッファー オーバーランが原因で発生する潜在的な脅威の影響を受けます。 バッファー オーバーランは、システムを攻撃するときによく使用される方法であり、その結果、認められていない権限が昇格されます。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
@@ -109,13 +113,13 @@ unsigned int _mbsnextc_l(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tcsnextc`|`_strnextc`|`_mbsnextc`|`_wcsnextc`|  
   
- `_strnextc`および`_wcsnextc`は 1 バイト文字の文字列とワイド文字列バージョンの`_mbsnextc`します。 `_wcsnextc` は `string` の次のワイド文字単位の整数値を返します。`_strnextc` は `string` の次の 1 バイト文字の整数値を返します。 `_strnextc` と `_wcsnextc` はこの割り当てにのみ使用し、それ以外には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
+ `_strnextc` および`_wcsnextc`は 1 バイト文字の文字列とワイド文字列バージョンの`_mbsnextc`します。 `_wcsnextc` は `string` の次のワイド文字単位の整数値を返します。`_strnextc` は `string` の次の 1 バイト文字の整数値を返します。 `_strnextc` と `_wcsnextc` はこの割り当てにのみ使用し、それ以外には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
   
- `_mbsnextc_l` は、代わりに渡されるロケール パラメーターを使用することを除いて同じものです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_mbsnextc_l` は、代わりに渡されるロケール パラメーターを使用することを除いて同じものです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_mbsnextc`|\<mbstring.h>|  
 |`_mbsnextc_l`|\<mbstring.h>|  
@@ -124,7 +128,7 @@ unsigned int _mbsnextc_l(
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

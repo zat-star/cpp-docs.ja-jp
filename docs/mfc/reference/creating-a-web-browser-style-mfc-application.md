@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.appwiz.mfcweb.project
-dev_langs: C++
+f1_keywords:
+- vc.appwiz.mfcweb.project
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC, Web applications
 - Web browsers, creating from MFC architecture
 - Web browsers
 - Web applications [MFC], creating
 ms.assetid: 257f8c03-33c3-428c-832e-0b70aff6168d
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6c88ca61fb7dfdfbe90ed3b460c0fe9bc3a045ce
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b7b886f2f1eeed327c2f07f1776777771a5d6ad6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-a-web-browser-style-mfc-application"></a>Web ブラウザー形式の MFC アプリケーションの作成
 ネットワークとローカル ファイル システムで Web ブラウザー形式のアプリケーション (HTML またはアクティブ ドキュメント) など、インターネットまたはイントラネットでは、フォルダーから情報にアクセスできます。 アプリケーションのビュー クラスから派生することによって[CHtmlView](../../mfc/reference/chtmlview-class.md)、効果的に WebBrowser コントロールと、ビューを提供することで Web ブラウザー アプリケーションを作成します。  
@@ -75,7 +80,7 @@ void CWebView::OnInitialUpdate()
 } 
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル MFCIE](http://msdn.microsoft.com/en-us/7391aa0c-fca8-4994-a6c9-6c5c7470fba0)   
  [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)   
  [プロジェクトのプロパティの使用](../../ide/working-with-project-properties.md)   

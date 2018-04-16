@@ -11,30 +11,17 @@ ms.topic: article
 dev_langs:
 - C++
 ms.assetid: ed448953-687a-4b57-a1cb-12967bd770ea
-caps.latest.revision: 8
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 34499221267c3a8cf384353ab45be8ad55b52fb8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6e8d3317a77093855a4f61d027f5f37f60d1b41e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="summary-of-expressions"></a>式の概要
 *primary-expression*:  
@@ -171,5 +158,5 @@ ms.lasthandoff: 04/01/2017
   
  *logical-OR-expression*  **&#124;&#124;**  *logical-AND-expression*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [句の構造文法](../c-language/phrase-structure-grammar.md)

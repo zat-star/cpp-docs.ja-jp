@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - def files
 - module definition files
 - .def files
 ms.assetid: 08c0bc28-c5d2-47aa-9624-7fc68bcaa4d8
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 15dbdfcd1074b32e2a707616571484db3ced9d2a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 49f5eb5b75bad22b59cb4fbb98554bbfd44d13b8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="module-definition-def-files"></a>モジュール定義 (.def) ファイル
 モジュール定義 (.def) ファイルは、エクスポート、属性、および他のプログラムについては、関連する問題に関する情報をリンカーを提供します。 .Def ファイルは、DLL を作成するときに最も役立ちます。 あるため[リンカー オプション](../../build/reference/linker-options.md)使用できるモジュール定義ステートメントではなく .def ファイルは通常必要ありません。 使用することも[方式](../../build/exporting-from-a-dll-using-declspec-dllexport.md)を指定する方法として関数をエクスポートします。  
@@ -54,6 +58,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [予約語](../../build/reference/reserved-words.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C/C++ ビルドのリファレンス](../../build/reference/c-cpp-building-reference.md)   
  [リンカー オプション](../../build/reference/linker-options.md)  

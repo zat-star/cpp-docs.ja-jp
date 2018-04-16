@@ -1,28 +1,33 @@
 ---
-title: "&lt;ロケール&gt;|Microsoft ドキュメント"
-ms.custom: 
+title: '&lt;locale&gt; | Microsoft Docs'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
 f1_keywords:
 - <locale>
 - locale/std::<locale>
 - std::<locale>
-dev_langs: C++
-helpviewer_keywords: locale header
+dev_langs:
+- C++
+helpviewer_keywords:
+- locale header
 ms.assetid: ca56f9d2-7128-44da-8df1-f4c78c17fbf2
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 87e478109df859fc6c95da70500ab84a1cba1b4c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6ac044246cf9dea3d5760d60453182b2ec5711d0
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltlocalegt"></a>&lt;locale&gt;
 文字分類と文字列の照合順序の国際化サポートを含む、数値、通貨、暦のデータの表示や書式設定に関するさまざまな文化的慣習をカプセル化および操作するために、C++ プログラムで使用できるテンプレート クラスおよび関数を定義します。  
@@ -64,7 +69,7 @@ ms.lasthandoff: 10/24/2017
 |[collate](../standard-library/collate-class.md)|文字列の並べ替え規則を処理するためのファセットを提供する照合テンプレート クラス。|  
 |[collate_byname](../standard-library/collate-byname-class.md)|特定のロケールの照合ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。文字列の並べ替え規則に関する文化的領域に固有の情報を取得できるようにします。|  
 |[ctype](../standard-library/ctype-class.md)|文字の分類、大文字と小文字の変換、およびネイティブ文字セットとロケールで使用される文字セットとの変換に使用されるファセットを提供するテンプレート クラス。|  
-|[ctype\<char >](../standard-library/ctype-char-class.md)|テンプレート クラスの明示的な特殊化クラス**ctype\<CharType**> を入力する`char`型の文字のさまざまなプロパティを表すロケール ファセットとして使用できるオブジェクトを記述します。`char`.|  
+|[ctype\<char>](../standard-library/ctype-char-class.md)|テンプレート クラスの明示的な特殊化クラス**ctype\<CharType**> を入力する`char`型の文字のさまざまなプロパティを表すロケール ファセットとして使用できるオブジェクトを記述します。`char`|  
 |[ctype_base](../standard-library/ctype-base-class.md)|個々の文字または範囲全体の文字を分類またはテストするための列挙型を定義するために使用される ctype クラスの基底クラス。|  
 |[ctype_byname](../standard-library/ctype-byname-class.md)|特定のロケールの ctype ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。文字の分類や、大文字と小文字およびネイティブと指定されたロケールの文字セットでの文字の変換を実行できるようにします。|  
 |[locale](../standard-library/locale-class.md)|特定のローカライズされた環境を集合的に定義する一連のファセットとして、カルチャ固有の情報をカプセル化するロケール オブジェクトを表すクラス。|  
@@ -88,7 +93,7 @@ ms.lasthandoff: 10/24/2017
 |[wbuffer_convert クラス](../standard-library/wbuffer-convert-class.md)|バイト ストリーム バッファーとの間の要素の転送を制御するストリーム バッファーを説明します。|  
 |[wstring_convert クラス](../standard-library/wstring-convert-class.md)|ワイド文字列とバイト文字列間の変換を実行するテンプレート クラス。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コード ページ](../c-runtime-library/code-pages.md)   
  [ロケール名、言語、および国/地域識別文字列](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)

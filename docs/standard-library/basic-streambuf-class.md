@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - streambuf/std::basic_streambuf
 - streambuf/std::basic_streambuf::char_type
@@ -53,7 +54,8 @@ f1_keywords:
 - streambuf/std::basic_streambuf::underflow
 - streambuf/std::basic_streambuf::xsgetn
 - streambuf/std::basic_streambuf::xsputn
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::basic_streambuf [C++]
 - std::basic_streambuf [C++], char_type
@@ -101,15 +103,17 @@ helpviewer_keywords:
 - std::basic_streambuf [C++], xsgetn
 - std::basic_streambuf [C++], xsputn
 ms.assetid: 136af6c3-13bf-4501-9288-b93da26efac7
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0586de707bb015e21df5c7975b98be6966cd0262
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 924a0b48736d327c571941ebd7d640ab3f4b30bb
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="basicstreambuf-class"></a>basic_streambuf クラス
 ストリームの特定の表現との相互間での要素の伝送を制御する、ストリーム バッファーを派生させるための抽象基底クラスについて説明します。  

@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - string/std::getline
 - string/std::stod
@@ -20,7 +20,7 @@ f1_keywords:
 - string/std::to_string
 - string/std::to_wstring
 ms.assetid: 1a4ffd11-dce5-4cc6-a043-b95de034c7c4
-caps.latest.revision: 15
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -37,12 +37,13 @@ helpviewer_keywords:
 - std::swap [C++]
 - std::to_string [C++]
 - std::to_wstring [C++]
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5e40a0fb4c46a9be68893f16490e23ac4d5e5a7e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 5f6b8c5da1b8d848d751a8ce2189b864538f4cfe
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltstringgt-functions"></a>&lt;string&gt; 関数
 ||||  
@@ -534,7 +535,6 @@ wstring to_wstring(long double Val);
   
  `wstring(Buf)` が返されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<string>](../standard-library/string.md)
-
 

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - array/std::array
 - array/std::array::const_iterator
@@ -41,35 +41,6 @@ f1_keywords:
 - array/std::array::swap
 - array/std::array::operator=
 - array/std::array::operator[]
-- array/std::array::const_iterator
-- array/std::array::const_pointer
-- array/std::array::const_reference
-- array/std::array::const_reverse_iterator
-- array/std::array::difference_type
-- array/std::array::iterator
-- array/std::array::pointer
-- array/std::array::reference
-- array/std::array::reverse_iterator
-- array/std::array::size_type
-- array/std::array::value_type
-- array/std::array::assign
-- array/std::array::at
-- array/std::array::back
-- array/std::array::begin
-- array/std::array::cbegin
-- array/std::array::cend
-- array/std::array::crbegin
-- array/std::array::crend
-- array/std::array::data
-- array/std::array::empty
-- array/std::array::end
-- array/std::array::fill
-- array/std::array::front
-- array/std::array::max_size
-- array/std::array::rbegin
-- array/std::array::rend
-- array/std::array::size
-- array/std::array::swap
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -134,16 +105,17 @@ helpviewer_keywords:
 - std::array [C++], size
 - std::array [C++], swap
 ms.assetid: fdfd43a5-b2b5-4b9e-991f-93bf10fb4293
-caps.latest.revision: 22
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c874e6249bd106a3eaa2265e3e62a9bf5d47438d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: e5829e7b241fc4669e67f9200f2f3f0b2cf9f2c8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="array-class-c-standard-library"></a>array クラス (C++ 標準ライブラリ)
 長さ `N` の `Ty` 型の要素のシーケンスを制御するオブジェクトを記述します。 このシーケンスは、`array<Ty, N>` オブジェクト内に含まれる `Ty` の配列として格納されます。  
@@ -173,7 +145,7 @@ class array;
 |[const_reference](#const_reference)|要素への定数参照の型です。|  
 |[const_reverse_iterator](#const_reverse_iterator)|被制御シーケンスの定数反転反復子の型です。|  
 |[difference_type](#difference_type)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[iterator](#iterator)|被制御シーケンスの反復子の型です。|  
+|[Iterator](#iterator)|被制御シーケンスの反復子の型です。|  
 |[pointer](#pointer)|要素へのポインターの型です。|  
 |[reference](#reference)|要素への参照の型です。|  
 |[reverse_iterator](#reverse_iterator)|被制御シーケンスの反転反復子の型です。|  
@@ -210,7 +182,7 @@ class array;
 |[array::operator[]](#op_at)|指定した位置にある要素にアクセスします。|  
   
 ## <a name="remarks"></a>コメント  
- この型は、既定のコンストラクター `array()` と既定代入演算子 `operator=` を持ち、`aggregate` の要件を満たします。 そのため、`array<Ty, N>` 型のオブジェクトは、集計初期化子を使用して初期化できます。 次に例を示します。  
+ この型は、既定のコンストラクター `array()` と既定代入演算子 `operator=` を持ち、`aggregate` の要件を満たします。 そのため、`array<Ty, N>` 型のオブジェクトは、集計初期化子を使用して初期化できます。 たとえば、オブジェクトに適用された  
   
 ```  
 array<int, 4> ai = { 1, 2, 3 };  
@@ -218,7 +190,7 @@ array<int, 4> ai = { 1, 2, 3 };
   
  このコードは、4 つの整数値を保持するオブジェクト `ai` を作成し、最初の 3 つの要素はそれぞれ値 1、2、3 に初期化し、4 番目の要素は 0 に初期化します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **Header:** \<array>  
   
  **名前空間:** std  
@@ -478,7 +450,7 @@ const_iterator cbegin() const noexcept;
 ### <a name="remarks"></a>コメント  
  `cbegin` の戻り値で範囲内の要素を変更することはできません。  
   
- `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と `cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `begin()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `begin()` と`cbegin()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.begin();
@@ -501,7 +473,7 @@ const_iterator cend() const noexcept;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -1576,7 +1548,7 @@ void swap(array& right);
  コンテンツを交換する配列。  
   
 ### <a name="remarks"></a>コメント  
-このメンバー関数は、 `*this` と `right`の間で被制御シーケンスを交換します。 さまざまな要素の割り当てを実行し、`N` に比例してコンストラクターを呼び出します。  
+このメンバー関数は、`*this` と `right` の間で被制御シーケンスを交換します。 さまざまな要素の割り当てを実行し、`N` に比例してコンストラクターを呼び出します。  
 
 2 つの `array` インスタンスを交換するのに使用できる非メンバー [swap](array-functions.md#swap) 関数もあります。  
   
@@ -1635,7 +1607,7 @@ typedef Ty value_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Ty`のシノニムです。  
+ この型は、テンプレート パラメーター `Ty` のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -1675,7 +1647,6 @@ int main()
 0 1 2 3  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<array>](../standard-library/array.md)
-
 

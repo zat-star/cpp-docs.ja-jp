@@ -4,40 +4,43 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - SetData
 - IRowsetUpdateImpl::SetData
 - IRowsetUpdateImpl.SetData
 - ATL::IRowsetUpdateImpl::SetData
 - ATL.IRowsetUpdateImpl.SetData
-dev_langs: C++
-helpviewer_keywords: SetData method
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetData method
 ms.assetid: 7288a8d1-a7cf-4957-b832-0f3b18fd0da4
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e098db995bad0d99e47d6108436a5324d2920e9d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 475951b0914e63dcbb0213ffb673677c49b74c17
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="irowsetupdateimplsetdata"></a>IRowsetUpdateImpl::SetData
 1 つまたは複数の列のデータ値を設定します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      STDMETHOD ( SetData )(  
-   HROW hRow,  
+```cpp
+      STDMETHOD (SetData )(HROW hRow,  
    HACCESSOR hAccessor,  
-   void* pSrcData   
-);  
+   void* pSrcData);  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -46,8 +49,8 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  このメソッドは、 [irowsetchangeimpl::setdata](../../data/oledb/irowsetchangeimpl-setdata.md)がメソッドにはでは操作の即時または遅延のいずれかの処理を許可するように元のデータのキャッシュが含まれます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IRowsetUpdateImpl クラス](../../data/oledb/irowsetupdateimpl-class.md)

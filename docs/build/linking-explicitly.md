@@ -1,9 +1,8 @@
 ---
 redirect_url: /cpp/build/linking-an-executable-to-a-dll#linking-explicitly
-ms.translationtype: MT
-ms.sourcegitcommit: 22da7776e46171467a37d46c3de3227f060eaf77
 ms.openlocfilehash: 89c79afa1a10992ef698c9a7a3257893304bc03d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.sourcegitcommit: 795a1c7ec1bfdca811c4041832e3e0aaef2e0397
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/21/2018
 ---

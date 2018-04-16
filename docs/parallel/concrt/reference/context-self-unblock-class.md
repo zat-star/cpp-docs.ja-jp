@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - context_self_unblock
 - CONCRT/concurrency::context_self_unblock
 - CONCRT/concurrency::context_self_unblock::context_self_unblock
-dev_langs: C++
-helpviewer_keywords: context_self_unblock class
+dev_langs:
+- C++
+helpviewer_keywords:
+- context_self_unblock class
 ms.assetid: 9601cd28-4f40-4c2e-89ab-747068956331
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a5e0bca06b97d6c36313bd54fed5c96df2e0219f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5110ca71f1d5bde29e24fb94a448aaaaf28182aa
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="contextselfunblock-class"></a>context_self_unblock クラス
 このクラスは、同じコンテキストから `Unblock` オブジェクトの `Context` メソッドが呼び出された場合にスローされる例外を表します。 これは、特定のコンテキストがそれ自体のブロックを解除しようとしたことを示します。  
@@ -46,12 +51,12 @@ class context_self_unblock : public std::exception;
   
  `context_self_unblock`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>context_self_unblock 
+##  <a name="ctor"></a> context_self_unblock 
 
  `context_self_unblock` オブジェクトを構築します。  
   
@@ -66,5 +71,5 @@ context_self_unblock() throw();
  `_Message`  
  エラーの説明メッセージ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::deque::size_type
-dev_langs: C++
-helpviewer_keywords: size_type member [STL/CLR]
+f1_keywords:
+- cliext::deque::size_type
+dev_langs:
+- C++
+helpviewer_keywords:
+- size_type member [STL/CLR]
 ms.assetid: c598871c-0ce8-4599-ab4c-2d0ea5f3f8e4
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 36b307e371fea279a8a3931221ee2cb05e9aa834
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 37aabb7704857c887555d46bbff5590cf2d4712e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dequesizetype-stlclr"></a>deque::size_type (STL/CLR)
 2 つの要素の間の距離を符号付きの型。  
@@ -65,11 +72,11 @@ int main()
 end()-begin() = 3  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/deque >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
  [deque::empty (STL/CLR)](../dotnet/deque-empty-stl-clr.md)

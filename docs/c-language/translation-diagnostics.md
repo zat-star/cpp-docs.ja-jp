@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 3730ca7c-0147-452d-bd4a-6a1e97e9793e
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bb7f826be88ebec640a6f3b40b38478eea91ed36
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 10349357fa0411357b702ff48ff9407c1f5b91e7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="translation-diagnostics"></a>変換: 診断
 **ANSI 2.1.1.3** 診断を識別する方法  
@@ -31,5 +35,5 @@ filename( line-number ) : diagnostic Cnumbermessage
   
  ここで、*filename* はエラーが発生したソース ファイルの名前、*line-number* はコンパイラがエラーを検出した行番号、`diagnostic` は "error" または "warning"、`number` は (構文に示すように先頭に **C** が付いた) 一意の 4 桁の番号、`message` は説明メッセージです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [実装で定義された動作](../c-language/implementation-defined-behavior.md)

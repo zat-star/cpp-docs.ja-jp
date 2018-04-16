@@ -1,42 +1,47 @@
 ---
-title: "set::key_compare (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::set::key_compare"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "key_compare メンバー [STL/CLR]"
+title: "set::key_compare (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::set::key_compare
+dev_langs:
+- C++
+helpviewer_keywords:
+- key_compare member [STL/CLR]
 ms.assetid: 4ce14c96-24d7-48eb-ae78-4ab192f7422a
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 983f65b01689d120703e3da586a1cf71927241aa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# set::key_compare (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 種類のキーの順序のデリゲート。  
+# <a name="setkeycompare-stlclr"></a>set::key_compare (STL/CLR)
+2 つのキーの順序付けのデリゲート。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Microsoft::VisualC::StlClr::BinaryDelegate<GKey, GKey, bool>  
     key_compare;  
 ```  
   
-## 解説  
- 型は、Key 引数の順序を決定するデリゲートのシノニムです。  
+## <a name="remarks"></a>コメント  
+ 型は、そのキーの引数の順序を決定するデリゲートのシノニムです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_set_key_compare.cpp   
@@ -72,19 +77,23 @@ int main()
   
 ```  
   
-  **\(L'a、L'a\) \= false を比較します。**  
-**\(L'a、L'b\) \= True を比較します。**  
-**\(L'b、L'a\) \= false を比較します。**  
-**\(L'a、L'a\) \= false を比較します。**  
-**\(L'a、L'b\) \= false を比較します。**  
-**\(L'b、L'a\) \= True を比較します。**   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+```Output  
+compare(L'a', L'a') = False  
+compare(L'a', L'b') = True  
+compare(L'b', L'a') = False  
   
- **名前空間:** の cliext  
+compare(L'a', L'a') = False  
+compare(L'a', L'b') = False  
+compare(L'b', L'a') = True  
+```  
   
-## 参照  
- [設定](../dotnet/set-stl-clr.md)   
- [set::key\_comp](../dotnet/set-key-comp-stl-clr.md)   
- [set::key\_type](../dotnet/set-key-type-stl-clr.md)   
- [set::value\_compare](../Topic/set::value_compare%20\(STL-CLR\).md)
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext と set >  
+  
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
+ [set::key_comp (STL/CLR)](../dotnet/set-key-comp-stl-clr.md)   
+ [set::key_type (STL/CLR)](../dotnet/set-key-type-stl-clr.md)   
+ [set::value_compare (STL/CLR)](../dotnet/set-value-compare-stl-clr.md)

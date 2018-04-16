@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -21,7 +22,8 @@ f1_keywords:
 - CBS_HASSTRINGS
 - CBS_DISABLENOSCROLL
 - CBS_OWNERDRAWFIXED
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CBS_OWNERDRAWVARIABLE constant [MFC]
 - CBS_NOINTEGRALHEIGHT constant [MFC]
@@ -38,15 +40,17 @@ helpviewer_keywords:
 - CBS_UPPERCASE constant [MFC]
 - CBS_DROPDOWNLIST constant
 ms.assetid: d21a5023-e6a2-495b-a6bd-010a515cbc63
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 52cfd21df2f0f72da10589745fb3a8be3e0b24e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 028a58c443ba45a4b8167a17f73f6f3fa54e4ca7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="combo-box-styles"></a>コンボ ボックス スタイル
 MFC では、次のコンボ ボックス スタイルを使用できます。  
@@ -77,7 +81,7 @@ MFC では、次のコンボ ボックス スタイルを使用できます。
   
 -   **CBS_UPPERCASE** 選択フィールドとリスト両方のすべてのテキストを大文字に変換します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC によって使用されているスタイル](../../mfc/reference/styles-used-by-mfc.md)   
  [CComboBox::Create](ccombobox class.md # ccombobox__create   
 

@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CAsyncSocket
-dev_langs: C++
+f1_keywords:
+- CAsyncSocket
+dev_langs:
+- C++
 helpviewer_keywords:
 - CAsyncSocket class [MFC], programming model
 - Windows Sockets [MFC], asynchronous
@@ -17,15 +20,17 @@ helpviewer_keywords:
 - sockets [MFC], asynchronous operation
 - Windows Sockets [MFC], converting Unicode and MBCS strings
 ms.assetid: 825dae17-7c1b-4b86-8d6c-da7f1afb5d8d
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 31dc9159c0f66b5c1482efebd482e049b5ef270a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 41a1bf9e7b162ecfe9724f22996f8883d95cce72
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="windows-sockets-using-class-casyncsocket"></a>Windows ソケット: CAsyncSocket クラスの使い方
 この記事は、クラスを使用する方法を説明します。 [CAsyncSocket](../mfc/reference/casyncsocket-class.md)です。 このクラスが非常に低いレベルで Windows ソケット API をカプセル化ことに注意してください。 `CAsyncSocket`ネットワーク通信がネットワーク イベントの通知のコールバックをするプログラマによって使用されます。 この想定に基づいて、この記事は、基本的な命令のみを提供します。 使用を検討する必要がありますおそらく`CAsyncSocket`Windows ソケットの MFC アプリケーションで複数のネットワーク プロトコルを処理する簡単なは柔軟性を犠牲にしたくない場合。 複数の通信をよりでしたモデルを使用して、一般的な代替クラスの直接プログラミングの効率向上を取得できることが多いとも`CSocket`します。  
@@ -52,7 +57,7 @@ ms.lasthandoff: 10/24/2017
   
      [!code-cpp[NVC_MFCSimpleSocket#3](../mfc/codesnippet/cpp/windows-sockets-using-class-casyncsocket_1.cpp)]  
   
-     または  
+     - または -  
   
      [!code-cpp[NVC_MFCSimpleSocket#4](../mfc/codesnippet/cpp/windows-sockets-using-class-casyncsocket_2.cpp)]  
   
@@ -74,7 +79,7 @@ ms.lasthandoff: 10/24/2017
   
 2.  ソケットがクライアントの場合は、ソケット オブジェクトをサーバーに接続を使用して、ソケット[不要なため](../mfc/reference/casyncsocket-class.md#connect)です。  
   
-     または  
+     - または -  
   
      ソケットがサーバーの場合は、設定の待機を開始するソケット (で[CAsyncSocket::Listen](../mfc/reference/casyncsocket-class.md#listen)) クライアントからの接続試行します。 接続要求を受信するには、その内容に同意を[CAsyncSocket::Accept](../mfc/reference/casyncsocket-class.md#accept)です。  
   
@@ -104,7 +109,7 @@ ms.lasthandoff: 10/24/2017
   
 -   Unicode およびマルチバイト文字の間の変換 (MBCS) 文字列を設定します。  
   
- これらの条項と追加情報の定義は、次を参照してください[Windows ソケット: ブロッキング](../mfc/windows-sockets-blocking.md)、 [Windows ソケット: バイトの順序付け](../mfc/windows-sockets-byte-ordering.md)、 [Windows ソケット: 文字列の変換](../mfc/windows-sockets-converting-strings.md)。.  
+ これらの条項と追加情報の定義は、次を参照してください[Windows ソケット: ブロッキング](../mfc/windows-sockets-blocking.md)、 [Windows ソケット: バイトの順序付け](../mfc/windows-sockets-byte-ordering.md)、 [Windows ソケット: 文字列の変換](../mfc/windows-sockets-converting-strings.md).  
   
  クラスのこれらの問題に関係なく**CAsycnSocket**場合があります、最適な選択肢をアプリケーションで必要なすべての柔軟性と制御を取得できます。 クラスを使用してを考慮する必要があります、場合`CSocket`代わりにします。 `CSocket`多くのお客様からの詳細を非表示にします。 Windows ブロッキング呼び出し中にメッセージと、ポンプへのアクセスを it `CArchive`、バイト順序の違いと文字列の変換を行うを管理します。  
   
@@ -116,6 +121,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [Windows ソケット: データグラム ソケット](../mfc/windows-sockets-datagram-sockets.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC における Windows ソケット](../mfc/windows-sockets-in-mfc.md)
 

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -85,7 +86,8 @@ f1_keywords:
 - AFXMDIFRAMEWNDEX/CMDIFrameWndEx::WinHelp
 - AFXMDIFRAMEWNDEX/CMDIFrameWndEx::m_bCanCovertControlBarToMDIChild
 - AFXMDIFRAMEWNDEX/CMDIFrameWndEx::m_bDisableSetRedraw
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMDIFrameWndEx [MFC], ActiveItemRecalcLayout
 - CMDIFrameWndEx [MFC], AddPane
@@ -163,15 +165,17 @@ helpviewer_keywords:
 - CMDIFrameWndEx [MFC], m_bCanCovertControlBarToMDIChild
 - CMDIFrameWndEx [MFC], m_bDisableSetRedraw
 ms.assetid: dbcafcb3-9a7a-4f11-9dfe-ba57565c81d0
-caps.latest.revision: "42"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 397572f735fc6392be875c95fd57749e0503b77b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d3d5080f86760c997c2036e766db66a5c4215f1f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmdiframewndex-class"></a>CMDIFrameWndEx クラス
 機能を拡張[CMDIFrameWnd](../../mfc/reference/cframewnd-class.md)Windows のマルチ ドキュメント インターフェイス (MDI) のフレーム ウィンドウです。  
@@ -209,7 +213,7 @@ class CMDIFrameWndEx : public CMDIFrameWnd
 |[Cmdiframewndex::enablemditabbedgroups](#enablemditabbedgroups)|有効または MDI タブ付きグループの機能を無効にします。|  
 |[CMDIFrameWndEx::EnableMDITabs](#enablemditabs)|有効または MDI タブの機能を無効にします。 有効にすると、フレーム ウィンドウには、各 MDI 子ウィンドウのタブが表示されます。|  
 |[CMDIFrameWndEx::EnableMDITabsLastActiveActivation](#enablemditabslastactiveactivation)|ユーザーが現在のタブを閉じるときに、最後のアクティブなタブをアクティブ化するかどうかを指定します。|  
-|[CMDIFrameWndEx::EnablePaneMenu](#enablepanemenu)|有効またはアプリケーション ウィンドウの一覧を表示するポップアップ ウィンドウのメニューの自動作成と管理を無効にします。  。|  
+|[CMDIFrameWndEx::EnablePaneMenu](#enablepanemenu)|有効またはアプリケーション ウィンドウの一覧を表示するポップアップ ウィンドウのメニューの自動作成と管理を無効にします。  である必要があります。|  
 |[CMDIFrameWndEx::EnableWindowsDialog](#enablewindowsdialog)|コマンド ID を呼び出すメニュー項目を挿入、 [CMFCWindowsManagerDialog](../../mfc/reference/cmfcwindowsmanagerdialog-class.md)  ダイアログ ボックス。|  
 |[CMDIFrameWndEx::GetActivePopup](#getactivepopup)|現在表示されているポップアップ メニューへのポインターを返します。|  
 |[CMDIFrameWndEx::GetPane](#getpane)|指定されたコントロール ID を持つペインのポインターを返します|  
@@ -268,7 +272,7 @@ class CMDIFrameWndEx : public CMDIFrameWnd
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMDIFrameWndEx::m_bCanCovertControlBarToMDIChild](#m_bcancovertcontrolbartomdichild)|MDI 子ウィンドウにドッキング ペインを変換できるかどうかを判断します。|  
 |[CMDIFrameWndEx::m_bDisableSetRedraw](#m_bdisablesetredraw)|有効または MDI 子ウィンドウの再描画の最適化を無効にします。|  
@@ -294,7 +298,7 @@ class CMDIFrameWndEx : public CMDIFrameWnd
   
  [CMDIFrameWndEx](../../mfc/reference/cmdiframewndex-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxMDIFrameWndEx.h  
   
 ##  <a name="activeitemrecalclayout"></a>CMDIFrameWndEx::ActiveItemRecalcLayout  
@@ -496,7 +500,7 @@ BOOL DockPaneLeftOf(
  ドッキング ペインへのポインター。  
   
  [入力] `pLeftOf`  
- ドッキング サイトとして機能するウィンドウへのポインター。 。  
+ ドッキング サイトとして機能するウィンドウへのポインター。 である必要があります。  
   
 ### <a name="return-value"></a>戻り値  
  返します`TRUE`操作が成功した場合。 それ以外の場合は、`FALSE` を返します。  
@@ -1795,7 +1799,7 @@ virtual void WinHelp(
 ### <a name="remarks"></a>コメント  
  このメソッドは[CWnd::WinHelp](../../mfc/reference/cwnd-class.md#winhelp)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMDIFrameWnd](../../mfc/reference/cframewnd-class.md)   

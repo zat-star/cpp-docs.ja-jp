@@ -15,16 +15,17 @@ helpviewer_keywords:
 - explicit instantiation
 - instantiation, explicit
 ms.assetid: 8b0d4e32-45a6-49d5-8041-1ebdd674410e
-caps.latest.revision: 9
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: ecd8f8c893abab10699a0bd43f368356335c6e10
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e272652ecc82b65d0251194f17a746ddde58fcc1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="explicit-instantiation"></a>明示的なインスタンス化
 明示的なインスタンス化によって、テンプレート化されたクラスまたは関数をコードで実際に使用することなく、そのインスタンスを作成できます。 配布用のテンプレートを使用するライブラリ (.lib) ファイルを作成する場合は、この方法が便利です。そのため、インスタンス化されないテンプレート定義はオブジェクト (.obj) ファイルに格納されません。  
@@ -62,5 +63,5 @@ extern template MyStack<int, 6>::MyStack( void );
 > [!NOTE]
 >  特殊化の `extern` キーワードは、クラス本体の外部で定義されたメンバー関数にのみ適用されます。 クラス宣言内で定義されている関数はインライン関数と見なされ、常にインスタンス化されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数テンプレート](../cpp/function-templates.md)

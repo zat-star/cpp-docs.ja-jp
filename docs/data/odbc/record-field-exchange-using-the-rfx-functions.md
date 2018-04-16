@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ODBC [C++], data types
 - data types [C++], ODBC record field exchange
@@ -17,15 +19,18 @@ helpviewer_keywords:
 - RFX (ODBC) [C++], data types
 - function calls, RFX functions
 ms.assetid: c594300b-5a29-4119-a68b-e7ca32def696
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6c330ee2f9d3952068e2a400cd8f6e23103dc20e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: a270b26fc0fd9be721ee0656f9f0d14ab579b477
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="record-field-exchange-using-the-rfx-functions"></a>レコード フィールド エクスチェンジ: RFX 関数の使い方
 このトピックの本文を構成する RFX 関数の呼び出しを使用する方法について説明、`DoFieldExchange`をオーバーライドします。  
@@ -53,7 +58,7 @@ ms.lasthandoff: 10/24/2017
 ##  <a name="_core_rfx_data_types"></a>RFX データ型  
  クラス ライブラリには、データ ソースとレコード セットの間で多数の異なるデータ型を転送するための RFX 関数が用意されています。 次の一覧には、データ型での RFX 関数の概要を示します。 RFX 関数呼び出しを記述する必要がありますの場合、データ型でこれらの関数から選択します。  
   
-|関数|データ型|  
+|関数|データの種類|  
 |--------------|---------------|  
 |`RFX_Bool`|**BOOL**|  
 |`RFX_Byte`|**BYTE**|  
@@ -69,7 +74,7 @@ ms.lasthandoff: 10/24/2017
 
  詳細については、マニュアルを参照して、RFX 関数 [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)で、*クラス ライブラリ リファレンス*です。 C++ のデータ型が SQL データ型にマップする方法については、ANSI SQL データ型にマップ C++ のデータ型の表を参照してください。  [SQL: SQL と C++ のデータ型 (ODBC)](../../data/odbc/sql-sql-and-cpp-data-types-odbc.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード フィールド エクス (チェンジ RFX)](../../data/odbc/record-field-exchange-rfx.md)   
  [レコード フィールド エクス チェンジ: RFX の動作方法](../../data/odbc/record-field-exchange-how-rfx-works.md)   
  [レコード セット: レコード セット (ODBC) のパラメーター化](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)   

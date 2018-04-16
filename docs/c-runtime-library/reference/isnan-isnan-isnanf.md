@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _isnan
 - _isnanf
@@ -31,7 +32,8 @@ f1_keywords:
 - math/_isnan
 - math/_isnanf
 - _isnanf
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - NAN (not a number)
 - _isnan function
@@ -39,15 +41,17 @@ helpviewer_keywords:
 - Not a Number (NANs)
 - isnan function
 ms.assetid: 391fbc5b-89a4-4fba-997e-68f1131caf82
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 982760deff4c5e2439c8743aa0de736a24faa02a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 10d0997b1a6b304634c612f0f1615a059fd812b2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="isnan-isnan-isnanf"></a>isnan、_isnan、_isnanf
 浮動小数点値が非数 (NaN) かどうかをテストします。  
@@ -89,16 +93,16 @@ bool isnan(
   
  `_isnan` と `_isnanf` の関数は、Microsoft 固有の関数です。 `_isnanf` 関数は、x64 用にコンパイルするときにのみ使用できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー (C)|必須ヘッダー (C++)|  
+|ルーチンによって返される値|必須ヘッダー (C)|必須ヘッダー (C++)|  
 |-------------|---------------------------|-------------------------------|  
 |`isnan`, `_isnanf`|\<math.h>|\<math.h> または \<cmath>|  
 |`_isnan`|\<float.h>|\<float.h> または \<cfloat>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [_finite、_finitef](../../c-runtime-library/reference/finite-finitef.md)   
  [_fpclass、_fpclassf](../../c-runtime-library/reference/fpclass-fpclassf.md)

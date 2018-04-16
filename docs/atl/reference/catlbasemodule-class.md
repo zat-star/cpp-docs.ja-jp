@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -18,18 +19,22 @@ f1_keywords:
 - ATLCORE/ATL::CAtlBaseModule::RemoveResourceInstance
 - ATLCORE/ATL::CAtlBaseModule::SetResourceInstance
 - ATLCORE/ATL::CAtlBaseModule::m_bInitFailed
-dev_langs: C++
-helpviewer_keywords: CAtlBaseModule class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAtlBaseModule class
 ms.assetid: 55ade80c-9b0c-4c51-933e-2158436c1096
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3249240ef90224dc1a297a848f1eba55d915fdac
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 88671ae94a1df10f3866dd2ae2e70092d1ca0c4d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlbasemodule-class"></a>CAtlBaseModule クラス
 このクラスは、すべての ATL プロジェクトでインスタンス化します。  
@@ -75,7 +80,7 @@ class CAtlBaseModule : public _ATL_BASE_MODULE
   
  `CAtlBaseModule`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcore.h  
   
 ##  <a name="addresourceinstance"></a>CAtlBaseModule::AddResourceInstance  
@@ -174,6 +179,6 @@ HINSTANCE SetResourceInstance(HINSTANCE hInst) throw();
 ### <a name="return-value"></a>戻り値  
  更新されたリソース インスタンスを返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [モジュール クラス](../../atl/atl-module-classes.md)

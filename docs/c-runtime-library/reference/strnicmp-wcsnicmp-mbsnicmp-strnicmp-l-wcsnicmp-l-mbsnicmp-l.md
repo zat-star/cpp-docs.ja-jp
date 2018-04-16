@@ -1,12 +1,13 @@
 ---
-title: "_strnicmp、_wcsnicmp、_mbsnicmp、_strnicmp_l、_wcsnicmp_l、_mbsnicmp_l | Microsoft Docs"
-ms.custom: 
+title: _strnicmp、_wcsnicmp、_mbsnicmp、_strnicmp_l、_wcsnicmp_l、_mbsnicmp_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
 apiname:
 - _wcsnicmp
 - _strnicmp_l
@@ -27,6 +28,7 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- ntoskrnl.exe
 apitype: DLLExport
 f1_keywords:
 - wcsnicmp_l
@@ -45,7 +47,8 @@ f1_keywords:
 - CORECRT_WSTRING/_wcsnicmp_l
 - string/_strnicmp
 - string/_strnicmp_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - tcsnicmp function
 - _tcsncicmp function
@@ -72,21 +75,23 @@ helpviewer_keywords:
 - mbsnicmp function
 - _wcsnicmp function
 ms.assetid: df6e5037-4039-4c85-a0a6-21d4ef513966
-caps.latest.revision: "24"
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 632d0c29612d8209d162fcdf357aad3f149653f7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5bfee9f8799a4d7d1f55b85c2c12c77286ea4dac
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="strnicmp-wcsnicmp-mbsnicmp-strnicmpl-wcsnicmpl-mbsnicmpl"></a>_strnicmp、_wcsnicmp、_mbsnicmp、_strnicmp_l、_wcsnicmp_l、_mbsnicmp_l
 大文字小文字に関係なく、2 つの文字列の指定された数の文字を比較します。  
   
 > [!IMPORTANT]
->  `_mbsnicmp` および `_mbsnicmp_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbsnicmp` および `_mbsnicmp_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -152,9 +157,9 @@ int _mbsnicmp_l(
   
  ASCII 表の 91 から 96 の文字 ('['、'\\'、']'、'^'、'_'、および '\`') は、アルファベット文字より小さいものとして評価されます。 この順序付けは `stricmp` と同じです。  
   
- `_wcsnicmp` 関数と `_mbsnicmp` 関数は、`_strnicmp` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsnicmp` 関数の引数はワイド文字列で、`_mbsnicmp` 関数の引数はマルチバイト文字列です。 `_mbsnicmp` は現在のマルチバイト コード ページに基づいてマルチバイト文字のシーケンスを認識し、エラーが発生した場合は `_NLSCMPERROR` を返します 詳細については、「[コード ページ](../../c-runtime-library/code-pages.md)」を参照してください。 それ以外では、これらの関数の動作は同じです。 これらの関数はロケールの設定の影響を受けます。`_l` サフィックスが付いていないバージョンは、ロケールに依存する動作で現在のロケールを使用し、`_l` サフィックスが付いているバージョンは、渡される `locale` を代わりに使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_wcsnicmp` 関数と `_mbsnicmp` 関数は、`_strnicmp` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsnicmp` 関数の引数はワイド文字列で、`_mbsnicmp` 関数の引数はマルチバイト文字列です。 `_mbsnicmp` は現在のマルチバイト コード ページに基づいてマルチバイト文字のシーケンスを認識し、エラーが発生した場合は `_NLSCMPERROR` を返します 詳細については、「[コード ページ](../../c-runtime-library/code-pages.md)」を参照してください。 それ以外では、これらの関数の動作は同じです。 これらの関数はロケールの設定の影響を受けます。`_l` サフィックスが付いていないバージョンは、ロケールに依存する動作で現在のロケールを使用し、`_l` サフィックスが付いているバージョンは、渡される `locale` を代わりに使用します。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
- これらのすべての関数では、パラメーターの検証が行われます。 `string1` または `string2` が Null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、`errno` を `EINVAL` に設定します。  
+ これらのすべての関数では、パラメーターの検証が行われます。 `string1` または `string2` が null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、 `errno` を `EINVAL`に設定します。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -172,7 +177,7 @@ int _mbsnicmp_l(
 |`_wcsnicmp`, `_wcsnicmp_l`|<string.h> または <wchar.h>|  
 |`_mbsnicmp`, `_mbsnicmp_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  [strncmp](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md) の例を参照してください。  

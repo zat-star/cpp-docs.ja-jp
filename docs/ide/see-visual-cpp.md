@@ -4,26 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - <see>
 - see
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - <see> C++ XML tag
 - see C++ XML tag
 ms.assetid: 20ef66f4-b278-45cf-8613-63919edf5720
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 25dc28c993289942d0eafd2f20fb5c849f1658c4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 15e1aedefe6d20c181ff208f76a61f49e15f5214
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltseegt-visual-c"></a>&lt;参照してください&gt;(Visual C)
 \<see> タグを使用すると、テキスト内でリンクを指定できます。 使用して[ \<seealso >](../ide/seealso-visual-cpp.md) 「参照」セクションに表示するテキストを示すためにします。  
@@ -75,5 +79,5 @@ generic<class T>
 ref class C {};  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML に関するドキュメント](../ide/xml-documentation-visual-cpp.md)

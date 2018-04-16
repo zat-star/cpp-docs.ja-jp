@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - Detach method [C++]
 ms.assetid: 0652053e-af37-44e9-a278-2522212ebfed
-caps.latest.revision: 6
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: f61b0fb05f182ef2723fdcc564fd697f490aed20
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c04007df7d40e12f3f416b2f2cd437bdaf1314f4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comptrtdetach"></a>_com_ptr_t::Detach
 **Microsoft 固有の仕様**  
@@ -44,5 +45,5 @@ Interface* Detach( ) throw( );
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_com_ptr_t クラス](../cpp/com-ptr-t-class.md)

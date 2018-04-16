@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::less_equal
-dev_langs: C++
-helpviewer_keywords: less_equal function [STL/CLR]
+f1_keywords:
+- cliext::less_equal
+dev_langs:
+- C++
+helpviewer_keywords:
+- less_equal function [STL/CLR]
 ms.assetid: 87d5bebc-6e5a-4d70-b15c-7260d06d50f0
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ec26c1a09c39c9f7a06b70252b122eb7ff56f2b6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f0ecc202e1a83f0f32b0febef488bb1979cccb86
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lessequal-stlclr"></a>less_equal (STL/CLR)
 このテンプレート クラスは、ファンクタを記述、呼び出されると、true を返しますのみが、最初の引数が、2 番目未満になるかどうか。 使用する、引数の型の観点から、関数オブジェクトを指定します。  
@@ -120,10 +127,10 @@ int main()
 0 1  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/機能 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [greater (STL/CLR)](../dotnet/greater-stl-clr.md)

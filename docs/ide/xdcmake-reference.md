@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: xdcmake
-dev_langs: C++
-helpviewer_keywords: xdcmake program
+f1_keywords:
+- xdcmake
+dev_langs:
+- C++
+helpviewer_keywords:
+- xdcmake program
 ms.assetid: 14e65747-d000-4343-854b-8393bf01cbac
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ad0744da891c93dab44c980ed10aa4213a4dddb3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ea635d701b4dea2471067072083d9568f11f3d82
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="xdcmake-reference"></a>XDCMake リファレンス
 xdcmake.exe は、.xdc ファイルを .xml ファイルにコンパイルされるプログラムです。 ソース コードをコンパイルしたときに、各ソース コード ファイルの Visual C コンパイラによって .xdc ファイルが作成された[/doc](../build/reference/doc-process-documentation-comments-c-cpp.md)し、ソース コード ファイルで XML タグでマークされたドキュメントのコメントが含まれている場合。  
@@ -39,7 +45,7 @@ xdcmake.exe は、.xdc ファイルを .xml ファイルにコンパイルされ
  xdcmake`input_filename options`  
   
 ## <a name="parameters"></a>パラメーター  
- ここで、  
+ それぞれの文字について以下に説明します。  
   
  `input_filename`  
  Xdcmake.exe への入力として使用する .xdc ファイルのファイル名。 1 つまたは複数の .xdc ファイルを指定するか、現在のディレクトリ内のすべての .xdc ファイルを使用する *.xdc を使用します。  
@@ -59,5 +65,5 @@ xdcmake.exe は、.xdc ファイルを .xml ファイルにコンパイルされ
   
  参照してください[ドキュメント コメントとして推奨されるタグ](../ide/recommended-tags-for-documentation-comments-visual-cpp.md)ソース コード ファイルにドキュメント コメントを追加する方法についてのです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML に関するドキュメント](../ide/xml-documentation-visual-cpp.md)

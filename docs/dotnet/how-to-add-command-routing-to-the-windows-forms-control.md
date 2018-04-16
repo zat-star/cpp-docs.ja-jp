@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - command routing [C++], adding to Windows Forms controls
 - Windows Forms controls [C++], command routing
 ms.assetid: bf138ece-b463-442a-b0a0-de7063a760c0
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 21f3fda51f9df72d9af78a03783771e74fbf3370
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: bcd082b22c61e2444d70d936c225e538c2429222
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-add-command-routing-to-the-windows-forms-control"></a>方法: Windows フォーム コントロールにコマンド ルーティングを追加する
 [CWinFormsView](../mfc/reference/cwinformsview-class.md) MFC コマンド (たとえば、フレームのメニュー項目やツールバーのボタン) を処理することを許可するユーザー コントロールにコマンドおよび更新コマンド UI メッセージをルーティングします。  
@@ -96,7 +101,7 @@ ms.lasthandoff: 10/24/2017
   
      追加したメニュー オプションを選択します。 .dll 内のメソッドが呼び出されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ビューとして Windows フォーム ユーザー コントロールをホストしています。](../dotnet/hosting-a-windows-forms-user-control-as-an-mfc-view.md)   
  [関数のインターフェイス](../mfc/reference/icommandsource-interface.md)   
  [ICommandTarget インターフェイス](../mfc/reference/icommandtarget-interface.md)   

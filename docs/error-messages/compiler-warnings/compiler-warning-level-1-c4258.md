@@ -15,36 +15,22 @@ dev_langs:
 helpviewer_keywords:
 - C4258
 ms.assetid: bbb75e6d-6693-4e62-8ed3-b006a0ec55e3
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 0f3da4315033fe33282526c6a67de6b6666c8604
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 436ef3dd9984750885390a3974572b9d86bd7243
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4258"></a>コンパイラの警告 (レベル 1) C4258
-'variable': 定義から、ループは無視します。外側のスコープの定義を使用すると"  
+'variable': 定義から、ループが無視されます。外側のスコープから定義を使用すると"  
   
- [/Ze](../../build/reference/za-ze-disable-language-extensions.md)と[/Zc:forScope](../../build/reference/zc-forscope-force-conformance-in-for-loop-scope.md)で定義された変数、[の](../../cpp/for-statement-cpp.md)ループの後のスコープから外れ、**の**ループが終了します。 外側のループ内で定義された、ループ変数と同じ名前の変数がスコープを含むでもう一度使用されている場合、この警告が発生した、**の**ループします。 例:  
+ [/Ze](../../build/reference/za-ze-disable-language-extensions.md)と[/Zc:forScope](../../build/reference/zc-forscope-force-conformance-in-for-loop-scope.md)で定義された変数、[の](../../cpp/for-statement-cpp.md)ループが後にスコープ外に出る、**の**ループが終了します。 この警告を含むスコープの外側のループ内で定義された、ループ変数と同じ名前を持つ変数が再度使用される場合に発生、**の**ループします。 例:  
   
 ```  
 // C4258.cpp  

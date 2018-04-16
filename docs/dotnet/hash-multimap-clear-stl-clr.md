@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_multimap::clear
-dev_langs: C++
-helpviewer_keywords: clear member [STL/CLR]
+f1_keywords:
+- cliext::hash_multimap::clear
+dev_langs:
+- C++
+helpviewer_keywords:
+- clear member [STL/CLR]
 ms.assetid: 8ad99f08-93b3-42b7-be07-f9a8ec556554
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8bda656c05db383f944e66d90f9117d4dcb80a9f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 581579af2aae110bcf36166c58d671b1a27dfd71
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultimapclear-stlclr"></a>hash_multimap::clear (STL/CLR)
 すべての要素を削除します。  
@@ -78,11 +85,11 @@ size() = 0
 size() = 0  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
  [hash_multimap::erase (STL/CLR)](../dotnet/hash-multimap-erase-stl-clr.md)

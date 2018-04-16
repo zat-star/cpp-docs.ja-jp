@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3867
-dev_langs: C++
-helpviewer_keywords: C3867
+f1_keywords:
+- C3867
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3867
 ms.assetid: bc5de03f-e01a-4407-88c3-2c63f0016a1e
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4f8e4612dc12274c689ec0d4e9406dea74c608f4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6c5fdcdfed8393402d9514a286469d0cbe4f0e7b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3867"></a>コンパイラ エラー C3867
 'func': 関数呼び出しには引数リストがありません。メンバーへのポインターを作成するために '&func' を使用してください  

@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C3350 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3350 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - C3350
@@ -19,12 +19,13 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 14aa2cf76173861decffdd8d951ce0210d82b67e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 3ec6d0823fe29b51a002f6c46f728f0c526c6169
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3350"></a>コンパイラ エラー C3350
 'delegate': delegate コンストラクターには数値の引数が必要です  
@@ -51,4 +52,3 @@ int main() {
    SumDelegate ^ pSD2 = gcnew SumDelegate(&X::F2);  
 }  
 ```  
-

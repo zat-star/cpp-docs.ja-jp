@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - regex/std::regex_traits
 - regex/std::regex_traits::char_type
@@ -25,7 +26,8 @@ f1_keywords:
 - regex/std::regex_traits::value
 - regex/std::regex_traits::imbue
 - regex/std::regex_traits::getloc
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::regex_traits [C++]
 - std::regex_traits [C++], char_type
@@ -45,15 +47,17 @@ helpviewer_keywords:
 - std::regex_traits [C++], imbue
 - std::regex_traits [C++], getloc
 ms.assetid: bc5a5eed-32fc-4eb7-913d-71c42e729e81
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5ee2c2aa566e8426e56da490ae9a3a71348dfeee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 267461681ef3d70e1ac6d30867c86d8f33a58faa
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="regextraits-class"></a>regex_traits クラス
 照合する要素の特性を記述します。  
@@ -96,7 +100,7 @@ public:
   
  各 `regex_traits` オブジェクトは、そのオブジェクトの一部のメンバー関数が使用する `regex_traits::locale` 型のオブジェクトを保持します。 既定のロケールは、 `regex_traits::locale()`のコピーです。 メンバー関数 `imbue` は、ロケール オブジェクトを置き換えます。また、メンバー関数 `getloc` は、ロケール オブジェクトのコピーを返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<regex>  
   
  **名前空間:** std  
@@ -1546,7 +1550,7 @@ class digit == d == true
 hex C == 12  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<regex>](../standard-library/regex.md)  
 [regex_constants クラス](../standard-library/regex-constants-class.md)  
 [regex_error クラス](../standard-library/regex-error-class.md)  

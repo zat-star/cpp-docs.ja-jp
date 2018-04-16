@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wsearchenv_s
 - _searchenv_s
@@ -28,7 +29,8 @@ f1_keywords:
 - _wsearchenv_s
 - wsearchenv_s
 - searchenv_s
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - tsearchenv_s function
 - files [C++], finding
@@ -43,21 +45,23 @@ helpviewer_keywords:
 - _searchenv_s function
 - environment paths
 ms.assetid: 47f9fc29-250e-4c09-b52e-9e9f0ef395ca
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8d2b78a892308b6984ef11d317cf46c1d46ca6ef
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9a92a7b0d76f2f6d3fd1cb4027e17ecbf014baec
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="searchenvs-wsearchenvs"></a>_searchenv_s、_wsearchenv_s
 環境のパスを使用してファイルを検索します。 これらの [_searchenv および _wsearchenv](../../c-runtime-library/reference/searchenv-wsearchenv.md) のバージョンは、「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」(CRT のセキュリティ機能) で説明されているように、セキュリティが強化されています。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -110,7 +114,7 @@ errno_t _wsearchenv_s(
   
 |`filename`|`varname`|`pathname`|`numberOfElements`|戻り値|`pathname` の内容|  
 |----------------|---------------|----------------|------------------------|------------------|----------------------------|  
-|任意|任意|`NULL`|任意|`EINVAL`|適用なし|  
+|任意|任意|`NULL`|任意|`EINVAL`|N/A|  
 |`NULL`|任意|任意|任意|`EINVAL`|変更されない|  
 |任意|任意|任意|<= 0|`EINVAL`|変更されない|  
   
@@ -125,7 +129,7 @@ errno_t _wsearchenv_s(
   
  `_wsearchenv_s` は `_searchenv_s` のワイド文字バージョンであり、`_wsearchenv_s` の引数はワイド文字列です。 それ以外では、`_wsearchenv_s` と `_searchenv_s` の動作は同じです。  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -133,14 +137,14 @@ errno_t _wsearchenv_s(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tsearchenv_s`|`_searchenv_s`|`_searchenv_s`|`_wsearchenv_s`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_searchenv_s`|\<stdlib.h>|  
 |`_wsearchenv_s`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -178,7 +182,7 @@ Path for CL.EXE:
 C:\Program Files\Microsoft Visual Studio 2010\VC\BIN\CL.EXE  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)   
  [_searchenv、_wsearchenv](../../c-runtime-library/reference/searchenv-wsearchenv.md)   
  [getenv、_wgetenv](../../c-runtime-library/reference/getenv-wgetenv.md)   

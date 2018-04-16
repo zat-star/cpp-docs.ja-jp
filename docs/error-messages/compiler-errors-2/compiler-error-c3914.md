@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3914
-dev_langs: C++
-helpviewer_keywords: C3914
+f1_keywords:
+- C3914
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3914
 ms.assetid: 8f3190e6-ee50-4916-9ecc-3b8748b2e1e7
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4d38483d3edd477babb7a240a7b79841850f6a9e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e02902afe01351838ee7f0f0b114c1000f572dc0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3914"></a>コンパイラ エラー C3914
 既定のプロパティを静的にすることはできません。  

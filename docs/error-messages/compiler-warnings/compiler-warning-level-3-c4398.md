@@ -15,39 +15,26 @@ dev_langs:
 helpviewer_keywords:
 - C4398
 ms.assetid: b6221432-9fed-4272-a547-a73f587904e6
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 18270bb89bcc5d1855750c572a5b6fb9e51c2ba3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d5ce6355e50c1ea2594820388edc34c69ea0e899
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-3-c4398"></a>コンパイラの警告 (レベル 3) C4398
-'variable': 複数の appdomain でプロセスごとのグローバル オブジェクトが正しく機能しません。__declspec(appdomain) の使用を検討してください。  
+'variable': プロセスごとのグローバル オブジェクトは複数の appdomain と共に動作しない可能性があります__declspec(appdomain) を使用してください。  
   
- 仮想関数を[_ _clrcall](../../cpp/clrcall.md)の作成ネイティブ型で規則を呼び出すと、アプリケーション ドメインの vtable ごとです。 複数のアプリケーション ドメインで使用する場合は、このような変数が適切に修正されない場合があります。  
+ 仮想関数と[_ _clrcall](../../cpp/clrcall.md)の作成をネイティブ型に規則を呼び出すと、アプリケーション ドメインの vtable ごとです。 複数のアプリケーション ドメインで使用する場合は、このような変数が適切に修正されない場合があります。  
   
- この警告を解決するには、変数を明示的にマークすることによって`__declspec(appdomain)`します。 コンパイルしてこの警告を解決するバージョンの Visual Studio 2017 する前に Visual Studio で**/clr: 純粋な**、appdomain ごとのグローバル変数は既定では、これです。  
+ この警告を解決するには、変数を明示的にマークすることによって`__declspec(appdomain)`です。 Visual Studio 2017 より前に、の Visual Studio のバージョンは、この警告を解決でコンパイルすると**/clr: 純粋な**、これにより、appdomain ごとのグローバル変数既定値です。  
   
- 詳細については、次を参照してください。 [appdomain](../../cpp/appdomain.md)と[アプリケーション ドメインと Visual c](../../dotnet/application-domains-and-visual-cpp.md)します。  
+ 詳細については、次を参照してください。 [appdomain](../../cpp/appdomain.md)と[アプリケーション ドメインと Visual c](../../dotnet/application-domains-and-visual-cpp.md)です。  
   
 ## <a name="example"></a>例  
  次の例では、C4398 を生成します。  

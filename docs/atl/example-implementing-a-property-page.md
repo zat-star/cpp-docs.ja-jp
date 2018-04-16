@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: property pages, implementing
+dev_langs:
+- C++
+helpviewer_keywords:
+- property pages, implementing
 ms.assetid: c30b67fe-ce08-4249-ae29-f3060fa8d61e
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 04f2871af749091e97ec1731650f998739995781
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 96314b4b8ba7696f784354c2353070ca3873c11c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="example-implementing-a-property-page"></a>例: プロパティ ページの実装
 この例では、ビルドを表示し、変更することができます) のプロパティのプロパティ ページ、[ドキュメント クラス](../mfc/document-classes.md)インターフェイスです。  
@@ -48,7 +53,7 @@ ms.lasthandoff: 10/24/2017
 ##  <a name="vcconusing_the_atl_object_wizard"></a>ATL プロパティ ページ クラスの追加  
  最初と呼ばれる DLL サーバー用の新しい ATL プロジェクトを作成`ATLPages7`です。 使用できるように、 [ATL プロパティ ページ ウィザード](../atl/reference/atl-property-page-wizard.md)プロパティ ページを生成します。 プロパティ ページ、**短い名前**の**DocProperties**に切り替えて、**文字列**ページを次の表に示すように、プロパティ固有 ページの項目を設定します。  
   
-|アイテム|値|  
+|アイテム|[値]|  
 |----------|-----------|  
 |タイトル|TextDocument|  
 |ドキュメント文字列|VCUE TextDocument プロパティ|  
@@ -127,7 +132,7 @@ ms.lasthandoff: 10/24/2017
   
  使用して、[クラスの追加 ダイアログ ボックス](../ide/add-class-dialog-box.md)と[ATL シンプル オブジェクト ウィザード](../atl/reference/atl-simple-object-wizard.md)新しいクラスを生成して使用する`Helper`短い名前として。 作成した後は、次の表に示すように、メソッドを追加します。  
   
-|アイテム|値|  
+|アイテム|[値]|  
 |----------|-----------|  
 |メソッド名|`ShowPage`|  
 |パラメーター|`[in] BSTR bstrCaption, [in] BSTR bstrID, [in] IUnknown* pUnk`|  
@@ -165,7 +170,7 @@ End Module
   
  このマクロを実行すると、ファイル名と、現在アクティブなテキスト ドキュメントの読み取り専用の状態を示すプロパティ ページが表示されます。 ドキュメントの読み取り専用の状態は、開発環境でドキュメントに書き込む機能のみが反映されます。ディスク上のファイルの読み取り専用の属性には影響しません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロパティ ページ](../atl/atl-com-property-pages.md)   
  [例](../visual-cpp-samples.md)
 

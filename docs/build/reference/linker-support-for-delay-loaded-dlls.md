@@ -1,44 +1,48 @@
 ---
-title: "リンカーによる DLL の遅延読み込み | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "遅延読み込み (DLL を), リンカー サポート"
+title: "リンカーによる Dll の遅延読み込みの |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- delayed loading of DLLs, linker support
 ms.assetid: b2d7e449-2809-42b1-9c90-2c0ca5e31a14
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 83e75df963889730e4514c38d0551af241a788fa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカーによる DLL の遅延読み込み
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-Visual C\+\+ のリンカーは DLL の遅延読み込みをサポートするようになりました。  このため、[!INCLUDE[winsdkshort](../../atl/reference/includes/winsdkshort_md.md)] の関数 **LoadLibrary** と **GetProcAddress** を使用して DLL の遅延読み込みを実装する必要がなくなりました。  
+# <a name="linker-support-for-delay-loaded-dlls"></a>リンカーによる DLL の遅延読み込み
+Visual C リンカーは、Dll の遅延読み込みをサポートします。 Windows SDK の機能を使用する必要がなくなるこの**LoadLibrary**と**GetProcAddress** DLL 遅延読み込みを実装します。  
   
- Visual C\+\+ 6.0 以前のバージョンでは、実行時に DLL を読み込む方法は、**LoadLibrary** と **GetProcAddress** を使用する方法だけでした。DLL は、その DLL を使用する実行可能ファイルまたは DLL が読み込まれたたときに、オペレーティング システムによって読み込まれました。  
+ Visual C 6.0 では、前に実行時に DLL を読み込む必要があるを使用して**LoadLibrary**と**GetProcAddress**; オペレーティング システムは DLL を読み込むときに実行可能ファイルまたは読み込まれた DLL を使用します。  
   
- Visual C\+\+ 6.0 からは、DLL との静的なリンクの場合に、DLL の関数の呼び出し時に初めて DLL が遅延読み込みされるようにするオプションをリンカーで選択できるようになりました。  
+ Visual C 6.0 から始まり、DLL を静的にリンクするときに、リンカーは、プログラムは、その DLL で関数を呼び出すまで、DLL の読み込みを遅延するオプションを提供します。  
   
- アプリケーションでは、[\/DELAYLOAD \(遅延読み込みインポート\)](../../build/reference/delayload-delay-load-import.md) リンカー オプションとヘルパー関数 \(Visual C\+\+ では既定の実装\) を使用して、DLL の読み込みを遅延できます。  ヘルパー関数は、**LoadLibrary** と **GetProcAddress** を呼び出して、実行時に DLL を読み込みます。  
+ アプリケーションが遅れる原因を使用して、DLL を読み込む、 [/DELAYLOAD (遅延読み込みインポート)](../../build/reference/delayload-delay-load-import.md)リンカー オプション、ヘルパー関数 (Visual C によって提供される既定の実装) を使用します。 ヘルパー関数は DLL の読み込み、実行時に呼び出すことによって**LoadLibrary**と**GetProcAddress**します。  
   
- 以下の場合は、DLL の遅延読み込みをお勧めします。  
+ DLL の遅延読み込み場合を考慮する必要があります。  
   
--   プログラムで DLL の関数を呼び出さない可能性がある。  
+-   プログラムは、DLL の関数を呼び出さない可能性があります。  
   
--   プログラムの実行の後半まで DLL の関数を呼び出さない可能性がある。  
+-   DLL の関数が、プログラムの実行の後半まで呼び出さない可能性があります。  
   
- DLL の遅延読み込みは、.EXE プロジェクトまたは .DLL プロジェクトのビルド時に指定できます。  DLL の遅延読み込みを行う .DLL プロジェクトの場合、それ自体では **Dllmain** で遅延読み込みエントリ ポイントを呼び出しません。  
+ いずれかのビルド時に DLL の遅延読み込みを指定することができます、します。EXE またはします。DLL のプロジェクトです。 です。DLL プロジェクトを 1 つまたは複数の Dll の読み込みを遅らせる呼び出す必要はありません自体、遅延読み込みのエントリ ポイント Dllmain 内です。  
   
- DLL の遅延読み込みの詳細については、次のトピックを参照してください。  
+ 次のトピックでは、Dll の遅延読み込みについて説明します。  
   
 -   [遅延読み込みする DLL の指定](../../build/reference/specifying-dlls-to-delay-load.md)  
   
@@ -54,10 +58,10 @@ Visual C\+\+ のリンカーは DLL の遅延読み込みをサポートする�
   
 -   [DLL の遅延読み込みの制約](../../build/reference/constraints-of-delay-loading-dlls.md)  
   
--   [ヘルパー関数について](http://msdn.microsoft.com/ja-jp/6279c12c-d908-4967-b0b3-cabfc3e91d3d)  
+-   [ヘルパー関数について](understanding-the-helper-function.md)  
   
 -   [独自のヘルパー関数の作成](../../build/reference/developing-your-own-helper-function.md)  
   
-## 参照  
- [Visual C\+\+ の DLL](../../build/dlls-in-visual-cpp.md)   
- [リンク](../Topic/Linking.md)
+## <a name="see-also"></a>参照  
+ [Visual C の Dll](../../build/dlls-in-visual-cpp.md)   
+ [リンク](../../build/reference/linking.md)

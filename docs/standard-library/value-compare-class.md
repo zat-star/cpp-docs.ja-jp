@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: value_compare
-dev_langs: C++
-helpviewer_keywords: value_compare class
+ms.topic: reference
+f1_keywords:
+- value_compare
+dev_langs:
+- C++
+helpviewer_keywords:
+- value_compare class
 ms.assetid: c306c5b9-3505-4357-aa6b-216451b951ed
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b93a591bb6441fd2d1ed04bfda8fcfa7cbad5946
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c8ecc53d5bd7069d364d881c69f34d4a25b44915
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="valuecompare-class"></a>value_compare クラス
 要素のキーの値を比較し、要素の hash_map 内の相対順序を決定して、hash_map の要素を比較できる関数オブジェクトを提供します。  
@@ -54,12 +60,12 @@ protected:
 ## <a name="example"></a>例  
  value_compare の宣言方法や使用方法の例については、[hash_map::value_comp](../standard-library/hash-map-class.md#value_comp) の例を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<hash_map>  
   
  **名前空間:** stdext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [binary_function 構造体](../standard-library/binary-function-struct.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)

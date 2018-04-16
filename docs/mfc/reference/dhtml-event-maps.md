@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.macros.shared
-dev_langs: C++
+f1_keywords:
+- vc.macros.shared
+dev_langs:
+- C++
 helpviewer_keywords:
 - event map macros [MFC]
 - DHTML [MFC], event map macros
@@ -16,15 +19,17 @@ helpviewer_keywords:
 - DHTML events [MFC], event map
 - DHTML events [MFC]
 ms.assetid: 9a2c8ae7-7216-4a5e-bc60-6b98695be0c6
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5588f716cfc7aec0caba7fd6943770353e7b2b1e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 56e2ebb76da167b6d9d3a790d391dbe4e544bc6b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dhtml-event-maps"></a>DHTML イベント マップ
 DHTML イベントの処理には、次のマクロを使用できます。  
@@ -85,7 +90,7 @@ DHTML イベントの処理には、次のマクロを使用できます。
 |[END_URL_ENTRIES](#end_url_entries)|URL イベント エントリ マップの最後をマークします。|  
 |[URL_EVENT_ENTRY](#url_event_entry)|マルチページ ダイアログは、内のページには、URL または HTML リソースをマップします。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="begin_dhtml_event_map"></a>BEGIN_DHTML_EVENT_MAP  
@@ -106,7 +111,7 @@ BEGIN_DHTML_EVENT_MAP(className)
   
  `virtual const DHtmlEventMapEntry* GetDHtmlEventMap();`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="begin_dhtml_event_map_inline"></a>BEGIN_DHTML_EVENT_MAP_INLINE  
@@ -127,7 +132,7 @@ BEGIN_DHTML_EVENT_MAP_INLINE(className)
   
  `virtual const DHtmlEventMapEntry* GetDHtmlEventMap();`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
 
   
@@ -147,7 +152,7 @@ DECLARE_DHTML_EVENT_MAP()
   
  `virtual const DHtmlEventMapEntry* GetDHtmlEventMap( );`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event"></a>DHTML_EVENT  
@@ -170,7 +175,7 @@ DHTML_EVENT(dispid, elemName,  memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_axcontrol"></a>DHTML_EVENT_AXCONTROL  
@@ -193,7 +198,7 @@ DHTML_EVENT_AXCONTROL(dispid, controlName,  memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_class"></a>DHTML_EVENT_CLASS  
@@ -216,7 +221,7 @@ DHTML_EVENT_CLASS(dispid, elemName,  memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_element"></a>DHTML_EVENT_ELEMENT  
@@ -243,7 +248,7 @@ DHTML_EVENT_ELEMENT(dispid, elemName,  memberFxn)
   
  要素が識別される場合、このマクロを使用すると、バブルのイベントを処理すると、`elemName`イベントのソースができない可能性があります (ソースのいずれかの要素に含まれる可能性があります`elemName`)。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onafterupdate"></a>DHTML_EVENT_ONAFTERUPDATE  
@@ -263,7 +268,7 @@ DHTML_EVENT_ONAFTERUPDATE(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onbeforeupdate"></a>DHTML_EVENT_ONBEFOREUPDATE  
@@ -283,7 +288,7 @@ DHTML_EVENT_ONBEFOREUPDATE(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onblur"></a>DHTML_EVENT_ONBLUR  
@@ -303,7 +308,7 @@ DHTML_EVENT_ONBLUR(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onchange"></a>DHTML_EVENT_ONCHANGE  
@@ -323,7 +328,7 @@ DHTML_EVENT_ONCHANGE(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onclick"></a>DHTML_EVENT_ONCLICK  
@@ -343,7 +348,7 @@ DHTML_EVENT_ONCLICK(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_ondataavailable"></a>DHTML_EVENT_ONDATAAVAILABLE  
@@ -363,7 +368,7 @@ DHTML_EVENT_ONDATAAVAILABLE(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_ondatasetchanged"></a>DHTML_EVENT_ONDATASETCHANGED  
@@ -383,7 +388,7 @@ DHTML_EVENT_ONDATASETCHANGED(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_ondatasetcomplete"></a>DHTML_EVENT_ONDATASETCOMPLETE  
@@ -404,7 +409,7 @@ DHTML_EVENT_ONDATASETCOMPLETE(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_ondblclick"></a>DHTML_EVENT_ONDBLCLICK  
@@ -424,7 +429,7 @@ DHTML_EVENT_ONDBLCLICK(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_ondragstart"></a>DHTML_EVENT_ONDRAGSTART  
@@ -444,7 +449,7 @@ DHTML_EVENT_ONDRAGSTART(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onerrorupdate"></a>DHTML_EVENT_ONERRORUPDATE  
@@ -465,7 +470,7 @@ DHTML_EVENT_ONERRORUPDATE(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onfilterchange"></a>DHTML_EVENT_ONFILTERCHANGE  
@@ -487,7 +492,7 @@ DHTML_EVENT_ONFILTERCHANGE(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onfocus"></a>DHTML_EVENT_ONFOCUS  
@@ -509,7 +514,7 @@ DHTML_EVENT_ONFOCUS(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onhelp"></a>DHTML_EVENT_ONHELP  
@@ -531,7 +536,7 @@ DHTML_EVENT_ONHELP(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onkeydown"></a>DHTML_EVENT_ONKEYDOWN  
@@ -553,7 +558,7 @@ DHTML_EVENT_ONKEYDOWN(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onkeypress"></a>DHTML_EVENT_ONKEYPRESS  
@@ -575,7 +580,7 @@ DHTML_EVENT_ONKEYPRESS(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onkeyup"></a>DHTML_EVENT_ONKEYUP  
@@ -597,7 +602,7 @@ DHTML_EVENT_ONKEYUP(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onmousedown"></a>DHTML_EVENT_ONMOUSEDOWN  
@@ -619,7 +624,7 @@ DHTML_EVENT_ONMOUSEDOWN(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onmousemove"></a>DHTML_EVENT_ONMOUSEMOVE  
@@ -641,7 +646,7 @@ DHTML_EVENT_ONMOUSEMOVE(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onmouseout"></a>DHTML_EVENT_ONMOUSEOUT  
@@ -663,7 +668,7 @@ DHTML_EVENT_ONMOUSEOUT(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onmouseover"></a>DHTML_EVENT_ONMOUSEOVER  
@@ -685,7 +690,7 @@ DHTML_EVENT_ONMOUSEOVER(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onmouseup"></a>DHTML_EVENT_ONMOUSEUP  
@@ -707,7 +712,7 @@ DHTML_EVENT_ONMOUSEUP(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onresize"></a>DHTML_EVENT_ONRESIZE  
@@ -729,7 +734,7 @@ DHTML_EVENT_ONRESIZE(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onrowenter"></a>DHTML_EVENT_ONROWENTER  
@@ -751,7 +756,7 @@ DHTML_EVENT_ONROWENTER(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onrowexit"></a>DHTML_EVENT_ONROWEXIT  
@@ -773,7 +778,7 @@ DHTML_EVENT_ONROWEXIT(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_onselectstart"></a>DHTML_EVENT_ONSELECTSTART  
@@ -795,7 +800,7 @@ DHTML_EVENT_ONSELECTSTART(elemName, memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="dhtml_event_tag"></a>DHTML_EVENT_TAG  
@@ -818,7 +823,7 @@ DHTML_EVENT_TAG(dispid, elemName,  memberFxn)
 ### <a name="remarks"></a>コメント  
  このマクロを使用するエントリを追加、 [DHTML イベント マップ](#begin_dhtml_event_map_inline)クラスにします。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="end_dhtml_event_map"></a>END_DHTML_EVENT_MAP  
@@ -831,7 +836,7 @@ END_DHTML_EVENT_MAP()
 ### <a name="remarks"></a>コメント  
  組み合わせて使用する必要があります[BEGIN_DHTML_EVENT_MAP](#begin_dhtml_event_map)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="begin_dhtml_url_event_map"></a>BEGIN_DHTML_URL_EVENT_MAP  
@@ -848,7 +853,7 @@ BEGIN_DHTML_URL_EVENT_MAP()
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#196](../../mfc/codesnippet/cpp/dhtml-event-maps_1.cpp)]  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="begin_embed_dhtml_event_map"></a>BEGIN_EMBED_DHTML_EVENT_MAP  
@@ -876,7 +881,7 @@ BEGIN_EMBED_DHTML_EVENT_MAP(className, mapName)
 ### <a name="example"></a>例  
  例を参照してください[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="begin_url_entries"></a>BEGIN_URL_ENTRIES  
@@ -897,7 +902,7 @@ BEGIN_URL_ENTRIES(className)
 ### <a name="example"></a>例  
  例を参照してください[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="declare_dhtml_url_event_map"></a>DECLARE_DHTML_URL_EVENT_MAP  
@@ -913,7 +918,7 @@ DECLARE_DHTML_URL_EVENT_MAP()
   
  DHTML と URL イベント マップに含まれる[DHTML イベント マップの埋め込み](#begin_embed_dhtml_event_map)と[URL イベント エントリ](#begin_url_entries)DHTML イベントをページ単位のハンドラーにマップします。 使用して[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)マップを実装します。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="end_dhtml_url_event_map"></a>END_DHTML_URL_EVENT_MAP  
@@ -931,7 +936,7 @@ END_DHTML_URL_EVENT_MAP(className)
 ### <a name="example"></a>例  
  例を参照してください[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="end_embed_dhtml_event_map"></a>END_EMBED_DHTML_EVENT_MAP  
@@ -945,7 +950,7 @@ END_EMBED_DHTML_EVENT_MAP()
 ### <a name="example"></a>例  
  例を参照してください[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="end_url_entries"></a>END_URL_ENTRIES  
@@ -959,7 +964,7 @@ END_URL_ENTRIES()
 ### <a name="example"></a>例  
  例を参照してください[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
   
 ##  <a name="url_event_entry"></a>URL_EVENT_ENTRY  
@@ -988,7 +993,7 @@ URL_EVENT_ENTRY(className, url,  mapName)
  例を参照してください[BEGIN_DHTML_URL_EVENT_MAP](#begin_dhtml_url_event_map)です。  
 
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdhtml.h  
 
 ##  <a name="end_dhtml_event_map_inline"></a>END_DHTML_EVENT_MAP_INLINE
@@ -1002,8 +1007,8 @@ END_DHTML_EVENT_MAP_INLINE( )
 ### <a name="remarks"></a>コメント  
  組み合わせて使用する必要があります[BEGIN_DHTML_EVENT_MAP_INLINE](#begin_dhtml_event_map_inline)です。  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdhtml.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [マクロとグローバル](mfc-macros-and-globals.md)   

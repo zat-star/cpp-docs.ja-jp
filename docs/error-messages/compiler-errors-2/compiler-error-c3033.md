@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3033
 ms.assetid: 8628b6bb-a650-4ed2-af13-57acd2f7ddbb
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 18b9381f15af4d337abc89da1c82e22cfa6a14ce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: c005874c7a11f5ec250daa42f8857070bbfad8dc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3033"></a>コンパイラ エラー C3033
 'var': 'clause' 句の変数は const 宣言された型を含むことはできません  

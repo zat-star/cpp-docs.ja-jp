@@ -4,13 +4,15 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - vs.resvw.resource.including
 - vc.resvw.resource.including
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - compiling source code, including resources
 - comments [C++], compiled files
@@ -19,15 +21,18 @@ helpviewer_keywords:
 - '#include directive'
 - include directive (#include)
 ms.assetid: 357e93c2-0a29-42f9-806f-882f688b8924
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0ea8ba64c7dbf609eb23fb2d7d0e0b739d06dc0f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 201985a10d0f5a58fc7d617e307d2715bf29be32
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-include-resources-at-compile-time"></a>方法: コンパイル時にリソースをインクルードする
 一般的に、1 つのリソース スクリプト (.rc) ファイルですべてのリソースの既定の設定を操作することは、簡単かつ便利なやり方です。 ただし、追加できますリソース他のファイルに現在のプロジェクトにコンパイル時にそれらを一覧表示して、**コンパイル時ディレクティブ**ボックスに、 [] ダイアログ ボックスの [リソース インクルード](../windows/resource-includes-dialog-box.md)です。  
@@ -58,10 +63,10 @@ ms.lasthandoff: 10/24/2017
   
 
   
- 要件  
+ 必要条件  
   
  Win32  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リソース ファイル (Visual Studio)](../windows/resource-files-visual-studio.md)   
  [リソース エディター](../windows/resource-editors.md)

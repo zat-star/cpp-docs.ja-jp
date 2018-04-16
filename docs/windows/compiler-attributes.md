@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - cl.exe compiler, attributes
 - attributes [C++], compiler
 ms.assetid: 53cd9bee-1521-48ec-b171-80feac2096cc
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 72c8ee6a0d3b5a61e5fb60236269f89055a56a9b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: e83743859d4c4bdfb515df6008969a9cc7b56e2e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-attributes"></a>コンパイラ属性
 コンパイラ属性は、さまざまな機能を提供します。  
@@ -40,5 +45,5 @@ ms.lasthandoff: 10/24/2017
 |[satype](../windows/satype.md)|データ型を指定します、 **SAFEARRAY**です。|  
 |[version](../windows/version-cpp.md)|インターフェイスまたはクラスの複数のバージョン間で特定のバージョンを識別します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グループ別の属性](../windows/attributes-by-group.md)

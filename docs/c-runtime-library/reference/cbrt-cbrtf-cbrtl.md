@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - cbrt
 - cbrtf
@@ -36,30 +36,17 @@ helpviewer_keywords:
 - cbrtf function
 - cbrt function
 ms.assetid: ab51d916-3db2-4beb-b46a-28b4062cd33f
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 3f336ef0f5b84f6e49e7f923c71769508c17efe7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 73ae5542cd15d414f34e063a03fbafb6e1425381
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="cbrt-cbrtf-cbrtl"></a>cbrt、cbrtf、cbrtl
 立方根を計算します。  
@@ -98,13 +85,13 @@ long double cbrtl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`cbrt` または `float` 型を受け取る `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`cbrt` は常に `double` を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
 |`cbrt`、`cbrtf`、`cbrtl`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -130,8 +117,8 @@ int main( void )
 The cube root of -64.64 is -4.013289  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [exp、expf、策の説明](../../c-runtime-library/reference/exp-expf.md)   
+ [exp, expf, expl](../../c-runtime-library/reference/exp-expf.md)   
  [log、logf、log10、log10f](../../c-runtime-library/reference/log-logf-log10-log10f.md)   
  [pow、powf、powl](../../c-runtime-library/reference/pow-powf-powl.md)

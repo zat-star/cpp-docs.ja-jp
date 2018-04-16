@@ -1,36 +1,40 @@
 ---
-title: "コンパイラの警告 (レベル 3) C4265 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4265"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4265"
+title: "コンパイラの警告 (レベル 3) C4265 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4265
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4265
 ms.assetid: 20547159-6f30-4cc4-83aa-927884c8bb4c
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 587f4b09718fbd8f8debf0c85178feb9f9616a6d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 3) C4265
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'class' : クラスは仮想関数を含んでいますが、デストラクターは仮想デストラクターではありません。  
+# <a name="compiler-warning-level-3-c4265"></a>コンパイラの警告 (レベル 3) C4265
+'class': クラスは仮想関数を含んでいますが、デストラクターが仮想ではありません。  
   
- クラスに仮想関数があっても、デストラクターが非仮想の場合は、基本クラスのポインターを通じてクラスが破棄されるときに、その型のオブジェクトが正常に破棄されないことがあります。  
+ 非仮想デストラクターですが仮想関数をクラスには、ときにオブジェクト型の可能性があります破棄されません正しくクラスが基底クラスへのポインターから破棄されるときにします。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[Compiler Warnings That Are Off by Default](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
- 次の例では警告 C4265 が生成されます。  
+ 次の例では、C4265 が生成されます。  
   
 ```  
 // C4265.cpp  

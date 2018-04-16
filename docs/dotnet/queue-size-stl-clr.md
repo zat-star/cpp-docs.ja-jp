@@ -1,41 +1,46 @@
 ---
-title: "queue::size (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::queue::size"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "size メンバー [STL/CLR]"
+title: "queue::size (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::queue::size
+dev_langs:
+- C++
+helpviewer_keywords:
+- size member [STL/CLR]
 ms.assetid: 864510ef-5a00-4377-b286-1e73f237e359
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 46f1eec77c1a4b030b412e21709dff0c2300712d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# queue::size (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="queuesize-stlclr"></a>queue::size (STL/CLR)
 要素の数をカウントします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 size_type size();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスの長さを返します。  被制御シーケンスの要素数を現在特定するときに使用します。  では、気遣うのシーケンスに 0 以外のなサイズかどうかのみ、[queue::empty](../Topic/queue::empty%20\(STL-CLR\).md)`()`を参照してください。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスの長さを返します。 これを使用するには、被制御シーケンス内の現在の要素の数を決定します。 シーケンスが参照してください、0 以外のサイズを持つかどうかは、関心のあるすべて場合[queue::empty (STL/CLR)](../dotnet/queue-empty-stl-clr.md)`()`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_queue_size.cpp   
@@ -69,15 +74,18 @@ int main()
   
 ```  
   
-  **b c**  
-**size\(\) \= 3 から始まる 3**  
-**size\(\) \= ポップ後の 2**  
-**size\(\) \= 2 を追加すると 4**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+ a b c  
+size() = 3 starting with 3  
+size() = 2 after popping  
+size() = 4 after adding 2  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [queue::empty](../Topic/queue::empty%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [queue::empty (STL/CLR)](../dotnet/queue-empty-stl-clr.md)

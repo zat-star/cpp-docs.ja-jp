@@ -1,47 +1,51 @@
 ---
-title: "リンカー ツールの警告 LNK4253 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK4253"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK4253"
+title: "リンカー ツールの警告 LNK4253 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- LNK4253
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK4253
 ms.assetid: ec7433a9-aa9c-495a-a9f2-075e7bc3e7bc
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6d1142544852980b8bd1d543783a9ffdf3361879
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカー ツールの警告 LNK4253
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-セクション 'section1' は 'section2' にマージされていません。既に 'section3' にマージされています  
+# <a name="linker-tools-warning-lnk4253"></a>リンカー ツールの警告 LNK4253
+セクション '「section1」' 'セクション 2;' にマージされていませんセクション '3' に既にマージ  
   
- 競合する複数のマージ要求が検出されました。  リンカーはいずれかの要求を無視します。  
+ リンカーが複数検出された競合のマージを要求します。 リンカーは、要求の 1 つでは無視します。  
   
- **\/MERGE** オプションまたはディレクティブが検出されましたが、その `from` セクションは、前にあった **\/MERGE** オプションまたはディレクティブ \(またはリンカーからの暗黙のマージ\) によって、既に別のセクションにマージされています。  
+ A **/merge**オプションまたはディレクティブが発生した、`from`セクションは既に別のセクションにより、以前にマージされました**/merge**オプションまたはディレクティブ (またはから暗黙のマージリンカー)。  
   
- LNK4253 警告を解決するには、いずれかのマージ要求を削除します。  
+ LNK4253 を解決するには、マージ要求の 1 つを削除します。  
   
- Visual C\+\+ で x86 コンピューターと Windows CE ターゲット プラットフォーム \(ARM、MIPS、SH4、および Thumb\) を対象としている場合、.CRT セクションは読み取り専用です。  コードが以前の動作 \(.CRT セクションが読み書き可能\) に依存している場合、予期しない動作が発生することがあります。  
+ X86 を対象とするときにマシンと、C++ での Windows CE ターゲット (ARM、MIPS、SH4、および Thumb)、します。CRT のセクションでは今すぐ読み取り専用です。 コードは、以前の動作に依存している場合 (です。CRT のセクションでは、読み取り/書き込み)、予期しない現象が発生する可能性があります。  
   
  詳細については、次のトピックを参照してください。  
   
--   [\/MERGE \(セクションの結合\)](../../build/reference/merge-combine-sections.md)  
+-   [/MERGE (セクション)](../../build/reference/merge-combine-sections.md)  
   
--   [コメント](../../preprocessor/comment-c-cpp.md)  
+-   [コメント (C/C++)](../../preprocessor/comment-c-cpp.md)  
   
-## 使用例  
- 次の例では、リンカーに `.rdata` セクションのマージを 2 回指示してますが、マージ先のセクションが異なります。  次の例では LNK4253 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、リンカーはマージするように指示、`.rdata`セクションを 2 回セクションが異なります。 次の例では、LNK4253 を生成します。  
   
 ```  
 // LNK4253.cpp  

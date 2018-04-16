@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4376
-dev_langs: C++
-helpviewer_keywords: C4376
+f1_keywords:
+- C4376
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4376
 ms.assetid: 5f202c74-9489-48fe-b36f-19cd882b1589
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b78407a29ade4c6792afbd8e15295199b7d6b2c4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5a0bb98149ca800fd7cfde7b85ec52e1133bd894
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4376"></a>コンパイラの警告 (レベル 1) C4376
 アクセス指定子 'old_specifier:' はサポートされていません。'new_specifier:' を使用してください  

@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: filesystem/std::experimental::filesystem::filesystem_error
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- filesystem/std::experimental::filesystem::filesystem_error
+dev_langs:
+- C++
 ms.assetid: c53aac27-c1fa-43e4-8967-48ea8ba1f172
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0012a895dbda27ce26d50ae49b3752d13963a89f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 764be5467282b04e4cd7fa13ee44fddee7c0a51b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="filesystemerror-class"></a>filesystem_error クラス
 低レベル システム オーバーフローをレポートするためにスローされるすべての例外のための基底クラス。  
@@ -74,12 +79,12 @@ const char *what() const noexcept;
   
  このメンバー関数は、NTBS へのポインターを返します。この NTBS は、可能であればruntime_error::what()、system_error::what()、mymesg、mypval1.native_string()、および mypval2.native_string() から構成されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<filesystem >  
   
  **名前空間:** std::experimental::filesystem  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [system_error クラス](../standard-library/system-error-class.md)   
  [\<filesystem>](../standard-library/filesystem.md)   

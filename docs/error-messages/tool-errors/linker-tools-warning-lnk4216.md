@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: LNK4216
-dev_langs: C++
-helpviewer_keywords: LNK4216
+f1_keywords:
+- LNK4216
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK4216
 ms.assetid: 68512095-acbc-47aa-96bf-9eb0e73b24a3
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1632a5ed6d550af26229eb4daea9c09e2022560d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c471740e097e05405de1d0c1f48c1c66f6f088ac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-warning-lnk4216"></a>リンカー ツールの警告 LNK4216
 エクスポートされたエントリ ポイントのエントリ  

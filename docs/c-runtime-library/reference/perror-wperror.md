@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wperror
 - perror
@@ -27,7 +28,8 @@ f1_keywords:
 - _wperror
 - _tperror
 - perror
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _tperror function
 - tperror function
@@ -37,15 +39,17 @@ helpviewer_keywords:
 - _wperror function
 - perror function
 ms.assetid: 34fce792-16fd-4673-9849-cd88b54b6cd5
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e8d1d1012040e3dfb1955502e3891dc27ddb689c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3929d35ac258823a70bf063f2e90e3ce8f1dfb4a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="perror-wperror"></a>perror、_wperror
 エラー メッセージを印刷します。  
@@ -83,14 +87,14 @@ void _wperror(
   
  Windows オペレーティングシステムでは、ERRNO.H に一覧表示されている一部の `errno` の値は使用されていません。 これらの値は、UNIX オペレーティング システムで使用するために予約されたものです。 Windows オペレーティング システムで使用される `errno` の値の一覧については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。 `perror` は、これらのプラットフォームで使用されていないすべての `errno` の値に対して空白の文字列を印刷します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`perror`|\<stdio.h> または \<stdlib.h>|  
 |`_wperror`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -145,7 +149,7 @@ strerror says open failed: No such file or directory
 _strerror says open failed: No such file or directory  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [clearerr](../../c-runtime-library/reference/clearerr.md)   
  [ferror](../../c-runtime-library/reference/ferror.md)   

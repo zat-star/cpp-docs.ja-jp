@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - getwc
 - getc
@@ -28,7 +29,8 @@ f1_keywords:
 - getwc
 - _gettchar
 - getc
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - characters, reading
 - _gettc function
@@ -39,15 +41,17 @@ helpviewer_keywords:
 - getwc function
 - gettc function
 ms.assetid: 354ef514-d0c7-404b-92f5-995f6a834bb3
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 78a94d954631dfffbdcdc4bcad252599c673f44b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fca8635d0597f1f48c16cac28410a62c7bc723ba
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getc-getwc"></a>getc、getwc
 ストリームから単一の文字を読み取ります。  
@@ -79,7 +83,7 @@ wint_t getwc(
   
  ルーチン固有の解説は、次のとおりです。  
   
-|ルーチン|コメント|  
+|ルーチンによって返される値|コメント|  
 |-------------|-------------|  
 |`getc`|`fgetc` と同じですが、関数およびマクロとして実装されます。|  
 |`getwc`|`getc` のワイド文字バージョン。 `stream` がテキスト モードまたはバイナリ モードで開かれるかどうかに従って、マルチバイト文字またはワイド文字を読み取ります。|  
@@ -90,14 +94,14 @@ wint_t getwc(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_gettc`|`getc`|`getc`|`getwc`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`getc`|\<stdio.h>|  
 |`getwc`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -149,7 +153,7 @@ Line two.
 Input was: Line one.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fgetc、fgetwc](../../c-runtime-library/reference/fgetc-fgetwc.md)   
  [_getch、_getwch](../../c-runtime-library/reference/getch-getwch.md)   

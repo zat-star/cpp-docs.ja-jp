@@ -19,16 +19,17 @@ helpviewer_keywords:
 - named constants, enumeration declarations
 - declaring enumerations
 ms.assetid: 081829db-5dca-411e-a53c-bffef315bcb3
-caps.latest.revision: 27
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 5a28ef1a4330f3519a1084921d493b6595f31112
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 96b1b29baaa779fda1e1f076daf3d8bd9335403b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="enumerations-c"></a>列挙型 [C++]
 列挙体は、列挙子と呼ばれる一連の名前付き整数定数で構成されるユーザー定義型です。  
@@ -193,6 +194,6 @@ int main()
 }
 ``` 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 列挙体の宣言](../c-language/c-enumeration-declarations.md)   
  [キーワード](../cpp/keywords-cpp.md)

@@ -1,40 +1,45 @@
 ---
-title: "アクセラレータの [タイプ] プロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Type プロパティ"
-  - "VIRTKEY"
+title: "アクセラレータの種類 プロパティ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Type property
+- VIRTKEY
 ms.assetid: 8c349bc4-e6ad-43fa-959e-f29168af35b8
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 214d8ca9c45a3657215833764268794b152bd337
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# アクセラレータの [タイプ] プロパティ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-アクセラレータの \[タイプ\] プロパティは、アクセラレータ ID に関連付けられているショートカット キーの組み合わせが、仮想キーの組み合わせであるか、または ASCII\/ANSI キー値であるかを決定します。  
+# <a name="accelerator-type-property"></a>アクセラレータの [タイプ] プロパティ
+アクセラレータ**型**プロパティは、アクセラレータ ID に関連付けられているショートカット キーの組み合わせが仮想キーの組み合わせまたは ASCII/ANSI キーの値かどうかを決定します。  
   
--   \[タイプ\] プロパティが \[ASCII\] の場合、[&#91;修飾子&#93;](../windows/accelerator-modifier-property.md) は \[なし\] または \[Alt\] のいずれかです。または、キーの前に ^ を付けることによって、Ctrl キーを使用するアクセラレータを \[修飾子\] に指定することもできます。  
+-   場合、**型**プロパティは**ASCII**、[修飾子](../windows/accelerator-modifier-property.md)なしにしかなれませんか、または alt キーを押し、CTRL キーを使用するアクセラレータを持つことができます (前のキーで指定された、^)。  
   
--   \[タイプ\] プロパティが \[VIRTKEY\] の場合は、\[修飾子\] の値と \[キー\] の値を任意に組み合わせることができます。  
+-   場合、**型**プロパティは**VIRTKEY**修飾子とキー値の任意の組み合わせが無効です。  
   
     > [!NOTE]
-    >  アクセラレータ テーブルに値を入力し、その値が ASCII\/ANSI として扱われるようにするには、テーブル内のエントリの \[タイプ\] をクリックし、ドロップダウン リストの \[ASCII\] を選択します。  ただし、\[編集\] メニューの \[キー タイピング登録\] を使用して \[キー\] プロパティを指定する場合は、\[キー\] のコードを入力する前に、\[タイプ\] プロパティを \[VIRTKEY\] から \[ASCII\] に変更する必要があります。  
+    >  アクセラレータ テーブルに値を入力し、ASCII または ANSI として扱われます値である場合は、テーブル内のエントリの種類と、ドロップダウン リストから選択 ASCII をクリックします。 ただし、使用する場合、 **キー タイピング登録**コマンド (**編集**メニュー) キーを指定する必要がありますを変更する、**型**プロパティ VIRTKEY から ASCII に*する前に*キー コードを入力します。  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  Win32  
   
-## 参照  
- [Setting Accelerator Properties](../windows/setting-accelerator-properties.md)   
- [Accelerator Editor](../Topic/Accelerator%20Editor.md)
+## <a name="see-also"></a>参照  
+ [アクセラレータのプロパティの設定](../windows/setting-accelerator-properties.md)   
+ [アクセラレータ エディター](../windows/accelerator-editor.md)

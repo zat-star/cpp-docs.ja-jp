@@ -1,32 +1,37 @@
 ---
-title: "partial_sum (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::partial_sum"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "partial_sum 関数 [STL/CLR]"
+title: partial_sum (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::partial_sum
+dev_langs:
+- C++
+helpviewer_keywords:
+- partial_sum function [STL/CLR]
 ms.assetid: 845badae-8519-4ac8-9ea7-2b921bac7c51
 caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7200fbf4adb7866125cfd8956b7b35ad5d5a2657
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# partial_sum (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-入力計算の一連の合計は最初の要素の `i`th 要素を受け取り、移動先の範囲または計算の `i`th 要素のこのような合計合計操作の結果が別の指定二項演算が別の一般的な手順の結果またがります。  
+# <a name="partialsum-stlclr"></a>partial_sum (STL/CLR)
+一連の最初の要素から入力範囲内の合計を計算、`i`番目の要素でこのような各合計の結果を格納および`i`番目の要素をターゲット範囲の汎用化されたプロシージャの結果を計算または場所合計演算指定した別の二項演算に置き換えられます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _InIt, class _OutIt> inline  
@@ -36,13 +41,13 @@ template<class _InIt, class _OutIt, class _Fn2> inline
         _OutIt _Dest, _Fn2 _Func);  
 ```  
   
-## 解説  
- この関数は、STL の数値関数 `partial_sum`と同様に動作します。  詳細については、「[partial\_sum](../Topic/partial_sum.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリの数値関数と同じ`partial_sum`です。 詳細については、次を参照してください。 [partial_sum](../standard-library/numeric-functions.md#partial_sum)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/桁数\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/numeric >  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [数値](../dotnet/numeric-stl-clr.md)
+## <a name="see-also"></a>参照  
+ [numeric (STL/CLR)](../dotnet/numeric-stl-clr.md)

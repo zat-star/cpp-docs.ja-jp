@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - monitoring file system events
 - FileSystemWatcher class, examples
@@ -15,15 +17,18 @@ helpviewer_keywords:
 - events [C++], monitoring
 - file system events [C++]
 ms.assetid: 207a3069-e63d-417e-8b56-00ab44f29c52
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7b0b75ea559cac35ef764818d3a99162a72cfc62
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: ba75c40b87da01052cd6511cdfd4b8b08219742d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-monitor-file-system-changes-ccli"></a>方法: ファイル システムの変更を監視する (C++/CLI)
 次のコード例では<xref:System.IO.FileSystemWatcher>作成、変更、削除、または名前が変更されたファイルに対応するイベントを登録します。 ディレクトリのファイルへの変更を定期的にポーリングするには、代わりに使用することができます、<xref:System.IO.FileSystemWatcher>変更が検出されたときにイベントを発生させるクラスです。  
@@ -90,7 +95,7 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [System.IO 名前空間](https://msdn.microsoft.com/en-us/library/system.io.aspx)   
  [ファイルおよびストリーム入出力](http://msdn.microsoft.com/Library/4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2)   
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

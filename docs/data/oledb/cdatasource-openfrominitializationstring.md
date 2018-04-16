@@ -4,39 +4,42 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CDataSource.OpenFromInitializationString
 - OpenFromInitializationString
 - CDataSource::OpenFromInitializationString
 - ATL::CDataSource::OpenFromInitializationString
 - ATL.CDataSource.OpenFromInitializationString
-dev_langs: C++
-helpviewer_keywords: OpenFromInitializationString method
+dev_langs:
+- C++
+helpviewer_keywords:
+- OpenFromInitializationString method
 ms.assetid: 5ef1f1fd-92a9-4e1c-ad80-d3601b094b8c
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aa25389a5924dc235791d11ee7d37eb1febe4259
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f05654c9b8647f62d967f97fa4b373471e049cda
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cdatasourceopenfrominitializationstring"></a>CDataSource::OpenFromInitializationString
 ユーザーが指定した初期化文字列で指定されたデータ ソースを開きます。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      HRESULT OpenFromInitializationString(   
-   LPCOLESTR szInitializationString,   
-   bool fPromptForInfo = false    
-) throw( );  
+```
+HRESULT OpenFromInitializationString(LPCOLESTR szInitializationString,   
+   bool fPromptForInfo= false) throw();  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -54,8 +57,8 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  このメソッドは、oledb32.dll 内のサービス コンポーネントを使ってデータ ソース オブジェクトを開きます。この DLL には、リソース共有や自動トランザクション登録などのサービス コンポーネント機能の実装が含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDataSource クラス](../../data/oledb/cdatasource-class.md)

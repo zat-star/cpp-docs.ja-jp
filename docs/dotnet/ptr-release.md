@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,18 +13,23 @@ f1_keywords:
 - ptr::Release
 - msclr.com.ptr.Release
 - msclr::com::ptr::Release
-dev_langs: C++
-helpviewer_keywords: Release method
+dev_langs:
+- C++
+helpviewer_keywords:
+- Release method
 ms.assetid: 7855781e-e4f6-4ad5-86a5-a81e2c3d90db
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e1d7ab4d7cba32ae2d0d513decafb4111022f408
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 3959ea6f1c48c22af15272a768cb73923911829a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ptrrelease"></a>ptr::Release
 COM オブジェクトのすべての所有されている参照を解放します。  
@@ -112,11 +118,11 @@ int main() {
 }  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\com\ptr.h >  
   
  **Namespace** msclr::com  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ptr メンバー](../dotnet/ptr-members.md)   
  [ptr::Detach](../dotnet/ptr-detach.md)

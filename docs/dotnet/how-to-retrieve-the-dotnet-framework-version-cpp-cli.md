@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - .NET Framework, version
 - Version property, retrieving .NET Framework version
 ms.assetid: fc786fbc-c915-4b15-bcad-0d68cf2c44bd
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6b5ac441e7fa91d73c4605a39585d2e293318417
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 343c3d9933006a5e2f938429138c595c5fb28b91
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-retrieve-the-net-framework-version-ccli"></a>方法: .NET Framework のバージョンを取得する (C++/CLI)
 次のコード例を使用して、現在インストールされている .NET Framework のバージョンを確認する方法を示しています、<xref:System.Environment.Version%2A>ポインターであるプロパティを<xref:System.Version>バージョン情報を含むオブジェクト。  
@@ -48,6 +53,6 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows の操作 (C + + CLI)](../dotnet/windows-operations-cpp-cli.md)   
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

@@ -1,82 +1,87 @@
 ---
-title: "Adding Event Handlers for Dialog Box Controls | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Dialog editor, adding event handlers to controls"
-  - "controls [C++], event handlers"
-  - "dialog box controls, events"
-  - "event handlers, for dialog box controls"
+title: "ダイアログ ボックス コントロールのイベント ハンドラーの追加 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Dialog editor, adding event handlers to controls
+- controls [C++], event handlers
+- dialog box controls, events
+- event handlers, for dialog box controls
 ms.assetid: f9c70f24-ea6f-44df-82eb-78a2deaee769
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: afe50d56d6b96cc4bc0b871f72c27feb0a750e89
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Adding Event Handlers for Dialog Box Controls
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-既にクラスに関連付けられているプロジェクトのダイアログ ボックスの場合は、イベント ハンドラーの作成時にいくつかのショートカットを利用できます。  既定のコントロール通知イベントまたは適用可能な Windows メッセージに対するハンドラーをすばやく作成できます。  
+# <a name="adding-event-handlers-for-dialog-box-controls"></a>ダイアログ ボックス コントロールへのイベント ハンドラーの追加
+既にクラスに関連付けられているプロジェクト ダイアログ ボックスでイベント ハンドラーを作成するときに、いくつかのショートカット利用できます。 既定のコントロールの通知イベントまたは該当する Windows メッセージのハンドラーをすばやく作成できます。  
   
-#### 既定のコントロール通知イベントのハンドラーを作成するには  
+#### <a name="to-create-a-handler-for-the-default-control-notification-event"></a>既定のコントロールの通知イベントのハンドラーを作成するには  
   
-1.  コントロールをダブルクリックします。  テキスト エディターが表示されます。  
+1.  コントロールをダブルクリックします。 テキスト エディターが開きます。  
   
-2.  テキスト エディターで、コントロール通知ハンドラーのコードを追加します。  
+2.  テキスト エディターで、コントロール通知ハンドラー コードを追加します。  
   
-#### 適用可能な Windows メッセージのハンドラーを作成するには  
+#### <a name="to-create-a-handler-for-any-applicable-windows-message"></a>該当する Windows メッセージのハンドラーを作成するには  
   
-1.  通知イベントの処理に使用するコントロールをクリックします。  
+1.  通知イベントを処理するコントロールをクリックします。  
   
-2.  [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)の \[イベント コントロール\] ボタンをクリックし、コントロールに関連付けられている共通の Windows イベントの一覧を表示します。  たとえば、\[バージョン情報\] ダイアログ ボックスの標準の \[OK\] ボタンは、以下の通知イベントを表示します。  
+2.  [プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)、 をクリックして、**イベント コントロール**コントロールに関連付けられた一般的な Windows イベントの一覧を表示するボタンをクリックします。 たとえば、標準の**OK**のボタンでは、**に関する** ダイアログ ボックスには、次の通知イベントが一覧表示します。  
   
-     **BN\_CLICKED**  
+ **BN_CLICKED**  
   
-     **BN\_DOUBLECLICKED**  
+ **BN_DOUBLECLICKED**  
   
-     **BN\_KILLFOCUS**  
+ **BN_KILLFOCUS**  
   
-     **BN\_SETFOCUS**  
+ **BN_SETFOCUS**  
   
     > [!NOTE]
-    >  または、ダイアログ ボックスを選択し、\[イベント コントロール\] ボタンをクリックすると、ダイアログ ボックスのすべてのコントロールに共通する Windows イベントの一覧が表示されます。  
+    >  または、ダイアログ ボックスをオンにし、をクリックして、**イベント** ダイアログ ボックスですべてのコントロールの一般的な Windows イベントの一覧を表示するボタンをクリックします。  
   
-3.  \[プロパティ\] ウィンドウで、処理するイベントの右側の列をクリックし、表示された通知イベント名を選択します。たとえば、**OnBnClickedOK** は **BN\_CLICKED** を処理します。  
+3.  **プロパティ**ウィンドウは、右側の列を処理するイベントの横をクリックし、推奨される通知イベントの名前 (たとえば、 **OnBnClickedOK**ハンドル**BN_CLICKED**).  
   
     > [!NOTE]
-    >  既定のイベント ハンドラー名を選択するのではなく、イベント ハンドラーの名前を独自に決めることもできます。  
+    >  または、既定のイベント ハンドラー名を選択するのではなく、任意のイベント ハンドラーの名前を指定できます。  
   
-     イベントを選択すると、テキスト エディターが開き、選択したイベント ハンドラーのコードが表示されます。  たとえば、既定の **OnBnClickedOK** の場合は、次のコードが追加されます。  
+     イベントを選択すると、Visual Studio はテキスト エディターが開き、イベント ハンドラーのコードが表示されます。 既定値の次のコードを追加するなど、 **OnBnClickedOK**:  
   
-    ```  
+ ```  
     void CAboutDlg::OnBnClickedOk(void)  
-    {  
-       // TODO: Add your control notification handler code here  
-    }  
-    ```  
+ { *// TODO: Add your control notification handler code here  
+ }  
+ ```  
   
- ダイアログ ボックスを実装するクラス以外のクラスにイベント ハンドラーを追加するには、[イベント ハンドラー ウィザード](../ide/event-handler-wizard.md)を使用します。  詳細については、「[イベント ハンドラーの追加](../ide/adding-an-event-handler-visual-cpp.md)」を参照してください。  
+ イベント ハンドラーを追加すると、クラス以外のダイアログ ボックスを実装する 1 つを使用する場合、[イベント ハンドラー ウィザード](../ide/event-handler-wizard.md)です。 詳細については、次を参照してください。[イベント ハンドラーを追加する](../ide/adding-an-event-handler-visual-cpp.md)です。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
-### 要件  
+### <a name="requirements"></a>必要条件  
  Win32  
   
-## 参照  
- [Default Control Events](../Topic/Default%20Control%20Events.md)   
- [Defining Member Variables for Dialog Controls](../mfc/defining-member-variables-for-dialog-controls.md)   
- [ダイアログ ボックス コントロールおよび変数の型](../Topic/Dialog%20Box%20Controls%20and%20Variable%20Types.md)   
- [クラスの追加](../Topic/Adding%20a%20Class%20\(Visual%20C++\).md)   
+## <a name="see-also"></a>参照  
+ [既定のコントロール イベント](../windows/default-control-events.md)   
+ [ダイアログ コントロールのメンバー変数を定義します。](../windows/defining-member-variables-for-dialog-controls.md)   
+ [ダイアログ ボックス コントロールおよび変数の型](../ide/dialog-box-controls-and-variable-types.md)   
+ [クラスの追加](../ide/adding-a-class-visual-cpp.md)   
  [メンバー関数の追加](../ide/adding-a-member-function-visual-cpp.md)   
  [メンバー変数の追加](../ide/adding-a-member-variable-visual-cpp.md)   
- [仮想関数のオーバーライド](../Topic/Overriding%20a%20Virtual%20Function%20\(Visual%20C++\).md)   
+ [仮想関数のオーバーライド](../ide/overriding-a-virtual-function-visual-cpp.md)   
  [MFC メッセージ ハンドラー](../mfc/reference/adding-an-mfc-message-handler.md)
+

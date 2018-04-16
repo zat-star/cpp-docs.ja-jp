@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CAxWindow2T class
 - Calendar control (ActiveX), hosting with ATL AXHost
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - hosting ActiveX controls
 - AXHost method
 ms.assetid: 2c1200ec-effb-4814-820a-509519699468
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bb2e7da3ed12b48f82f5769dd8436f0440031226
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2aac8a8b9cbf0b72378a286943faa6e36a8f3f74
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hosting-activex-controls-using-atl-axhost"></a>ATL AXHost を使用して ActiveX コントロールをホストしています。
 このトピックのサンプルでは、AXHost を作成する方法と ATL のさまざまな機能を使用して ActiveX コントロールをホストする方法を示します。 コントロールとシンク イベントにアクセスする方法も示しています (を使用して[IDispEventImpl](../atl/reference/idispeventimpl-class.md)) でホストされるコントロールからです。 このサンプルでは、メイン ウィンドウ、または子ウィンドウで、カレンダー コントロールをホストします。  
@@ -37,7 +41,7 @@ ms.lasthandoff: 10/24/2017
   
  次に概要を示します。  
   
-|USE_METHOD|Host|アクセス制御とイベント シンク|使用する関数|  
+|USE_METHOD|ホスト|アクセス制御とイベント シンク|使用する関数|  
 |-----------------|----------|--------------------------------------|---------------------------|  
 |1|子ウィンドウ|1 つの手順|CreateControlLicEx|  
 |2|メイン ウィンドウ|1 つの手順|AtlAxCreateControlLicEx|  
@@ -46,11 +50,11 @@ ms.lasthandoff: 10/24/2017
 |5|子ウィンドウ|複数のステップ|CreateControlLic|  
 |6|メイン ウィンドウ|複数のステップ|AtlAxCreateControlLic|  
 |7|子ウィンドウ|複数のステップ|CreateControl|  
-|9|メイン ウィンドウ|複数のステップ|AtlAxCreateControl|  
+|8|メイン ウィンドウ|複数のステップ|AtlAxCreateControl|  
   
  [!code-cpp[NVC_ATL_AxHost#1](../atl/codesnippet/cpp/hosting-activex-controls-using-atl-axhost_1.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コントロール コンテインメントよく寄せられる質問](../atl/atl-control-containment-faq.md)   
  [して](reference/composite-control-global-functions.md#atlaxcreatecontrol)   
  [行うに](reference/composite-control-global-functions.md#atlaxcreatecontrolex)   

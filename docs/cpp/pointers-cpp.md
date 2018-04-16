@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - declarators, pointers
 - declarations, pointers
 - pointers [C++]
 - pointers, declarations
 ms.assetid: 595387c5-8e58-4670-848f-344c7caf985e
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6a80b4227cd166edbbd146291ad57bd4efef95e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e81d56cee716a11f918149279f0b0fefadfe4bb3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pointers-c"></a>ポインター (C++)
 ポインターは次の順序で宣言します。  
@@ -268,6 +272,6 @@ node 2 = 789
 a (add node)  d (display list)  q (quit)  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [間接演算子: *](../cpp/indirection-operator-star.md)   
  [address-of 演算子: &](../cpp/address-of-operator-amp.md)

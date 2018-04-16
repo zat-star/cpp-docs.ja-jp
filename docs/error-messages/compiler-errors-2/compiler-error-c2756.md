@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2756
 ms.assetid: 42eb988d-4043-4dee-8fd4-596949f69a55
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 55d129583f56ea60a7e9dccdcd7006a73a3733d8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 4ca6e01d1c4b2f7dda2a941eeef4599d62241fe3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2756"></a>コンパイラ エラー C2756
 'template type': 既定のテンプレート引数は部分的特殊化では使用できません  

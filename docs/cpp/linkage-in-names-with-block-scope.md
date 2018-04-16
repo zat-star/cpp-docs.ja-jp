@@ -17,16 +17,17 @@ helpviewer_keywords:
 - block scope [C++]
 - external linkage, scope linkage rules
 ms.assetid: 73efa91a-f761-47f7-bbd9-9f9e3508e218
-caps.latest.revision: 8
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: de093c90e0da4a906d8aefebfb7048733c1a1f1d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fed200614ef6385aab24755e5eb202fd875494c3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linkage-in-names-with-block-scope"></a>ブロック スコープを持つ名前にあるリンケージ
 次のリンケージ規則はブロック スコープの名前に適用されます (ローカル名)。  
@@ -35,5 +36,5 @@ ms.lasthandoff: 09/25/2017
   
 -   ブロック スコープを持つ他のすべての名前にはリンケージがありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)

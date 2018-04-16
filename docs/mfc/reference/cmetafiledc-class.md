@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,7 +16,8 @@ f1_keywords:
 - AFXEXT/CMetaFileDC::CloseEnhanced
 - AFXEXT/CMetaFileDC::Create
 - AFXEXT/CMetaFileDC::CreateEnhanced
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMetaFileDC [MFC], CMetaFileDC
 - CMetaFileDC [MFC], Close
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - CMetaFileDC [MFC], Create
 - CMetaFileDC [MFC], CreateEnhanced
 ms.assetid: ffce60fa-4181-4d46-9832-25e46fad4db4
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f78c167bc2692309c657b591bb22e68dde328e71
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8bb903bb38194be5b6a72f27ed683e965d7605b4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmetafiledc-class"></a>CMetaFileDC クラス
 イメージやテキストを自由に作成するための一連のグラフィック デバイス インターフェイス (GDI) コマンドを含む Windows のメタファイルを実装します。  
@@ -83,7 +87,7 @@ class CMetaFileDC : public CDC
   
  `CMetaFileDC`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxext.h  
   
 ##  <a name="close"></a>CMetaFileDC::Close  
@@ -203,7 +207,7 @@ BOOL CreateEnhanced(
   
  拡張メタファイルのファイル名を使用する必要があります、します。EMF 拡張機能です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDC クラス](../../mfc/reference/cdc-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
 

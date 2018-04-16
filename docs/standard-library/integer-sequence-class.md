@@ -4,16 +4,18 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - type_traits/std::index_sequence
 - type_traits/std::make_index_sequence
 - type_traits/std::integer_sequence
 - type_traits/std::make_integer_sequence
 - type_traits/std::index_sequence_for
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::index_sequence
 - std::make_index_sequence
@@ -21,15 +23,17 @@ helpviewer_keywords:
 - std::make_integer_sequence
 - std::index_sequence_for
 ms.assetid: 2cfdddee-819d-478e-bb78-c8a9c2696803
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 129847900bc64ea0696f2736f173b9e57f7595ae
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 90fe4e380072d85e19cf2c4ecb1d9e3e4b913842
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="integersequence-class"></a>integer_sequence クラス
 整数のシーケンスを表します。 このクラスを使用して、関数に引数として渡される std::tuple\<T...> などの可変個引数型のパラメーター パックを推測および拡大できます。  
@@ -125,11 +129,11 @@ int main()
   
   `index_sequence` をパラメーター パック用に設定するために `index_sequence_for`\<T...> を使用していますが、これは `make_index_sequence`\<sizeof...(T)> のエイリアスです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  ヘッダー: <type_traits>  
   
  名前空間: std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [省略記号と可変個引数テンプレート](../cpp/ellipses-and-variadic-templates.md)
 

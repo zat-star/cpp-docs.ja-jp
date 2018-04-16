@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3283
-dev_langs: C++
-helpviewer_keywords: C3283
+f1_keywords:
+- C3283
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3283
 ms.assetid: c51d912c-cde3-4928-904e-26734c8954ce
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 94b1028f19cd5ca8b490e3247d0f55cff36bb19a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8c58f8b41a521388d1eab6e03b76646785a9239d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3283"></a>コンパイラ エラー C3283
 'type': インターフェイスにインスタンス コンストラクターを含めることはできません  
@@ -36,7 +42,7 @@ interface class I {
 };  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C3283b.cpp  

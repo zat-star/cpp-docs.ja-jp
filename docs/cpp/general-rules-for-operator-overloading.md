@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: operator overloading [C++], rules
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator overloading [C++], rules
 ms.assetid: eb2b3754-35f7-4832-b1da-c502893dc0c7
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 92bcbc85a3edf683d00818a4c1da76849dbc29cc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 199db318eb847687d10044e0376b70c8d6d44feb
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="general-rules-for-operator-overloading"></a>演算子のオーバーロードに関する一般的な規則
 次の規則は、オーバーロードした演算子の実装のされ方を抑制します。 ただし、これらには適用されません、[新しい](../cpp/new-operator-cpp.md)と[削除](../cpp/delete-operator-cpp.md)演算子は、個別にについて説明しています。  
@@ -27,7 +32,7 @@ ms.lasthandoff: 10/24/2017
   
 -   組み込みのデータ型に適用された場合、演算子の意味は再定義できません。  
   
--   オーバーロードされた演算子は、非静的クラス メンバー関数またはグローバル関数である必要があります。 プライベートまたはプロテクト クラス メンバーへのアクセスを必要とするグローバル関数は、クラスのフレンドとして宣言する必要があります。 グローバル関数は、クラスまたは列挙型の引数、またはクラスまたは列挙型への参照である引数を 1 個以上受け取る必要があります。 例:  
+-   オーバーロードされた演算子は、非静的クラス メンバー関数またはグローバル関数である必要があります。 プライベートまたはプロテクト クラス メンバーへのアクセスを必要とするグローバル関数は、クラスのフレンドとして宣言する必要があります。 グローバル関数は、クラスまたは列挙型の引数、またはクラスまたは列挙型への参照である引数を 1 個以上受け取る必要があります。 例えば:  
   
     ```  
     // rules_for_operator_overloading.cpp  

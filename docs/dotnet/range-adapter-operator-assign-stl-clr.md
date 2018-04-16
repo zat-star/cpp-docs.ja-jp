@@ -1,47 +1,51 @@
 ---
-title: "range_adapter::operator= (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::operator="
-  - "cliext::range_adapter::operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator= メンバー [STL/CLR]"
+title: range_adapter::operator = (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::operator=
+- cliext::range_adapter::operator=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator= member [STL/CLR]
 ms.assetid: ac378ccc-a42c-4a90-bc27-9b416bee7fa9
 caps.latest.revision: 9
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 41b3e9e197347525ca64a549871c0ae44a4ba274
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# range_adapter::operator= (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-格納されている反復子のペアを置き換えます。  
+# <a name="rangeadapteroperator-stlclr"></a>range_adapter::operator= (STL/CLR)
+格納された反復子のペアを置き換えます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 range_adapter<Iter>% operator=(range_adapter<Iter>% right);  
 ```  
   
-#### パラメーター  
- \[right\]  
+#### <a name="parameters"></a>パラメーター  
+ 右  
  コピーするアダプター。  
   
-## 解説  
- このメンバー演算子は、オブジェクトに `right` を返します `*this`をコピーします。  `right`の格納されている反復子のペアのコピーに格納された反復子のペアを置き換えるために使用します。  
+## <a name="remarks"></a>コメント  
+ メンバー演算子コピー`right`オブジェクトを返します`*this`です。 使用してに格納された反復子のペアのコピーで、格納された反復子のペアを置換する`right`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_range_adapter_operator_as.cpp   
@@ -75,12 +79,15 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アダプター\>  
+```Output  
+a b c  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アダプター/>  
   
-## 参照  
- [range\_adapter](../dotnet/range-adapter-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [range_adapter (STL/CLR)](../dotnet/range-adapter-stl-clr.md)

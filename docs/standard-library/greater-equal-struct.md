@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: xfunctional/std::greater_equal
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- xfunctional/std::greater_equal
+dev_langs:
+- C++
 helpviewer_keywords:
 - greater_equal struct
 - greater_equal function
 ms.assetid: a8ba911b-7af8-4653-b972-d8618f4df7d5
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3e4156dd6c1bf3c44733044b6662697dbf310048
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f3f89b7a84a3b73ca162387810b8bc6dbf1b90fc
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="greaterequal-struct"></a>greater_equal 構造体
 引数に対して "以上" 演算 (`operator>=`) を実行する二項述語。  
@@ -117,12 +122,12 @@ Sorted vector v1 = (41 6262 6262 6334 18467 19169 26500)
 Resorted vector v1 = (26500 19169 18467 6334 6262 6262 41)
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 
 

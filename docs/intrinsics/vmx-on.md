@@ -1,27 +1,32 @@
 ---
-title: "_ _vmx_on |Microsoft ドキュメント"
+title: __vmx_on | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: __vmx_on
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- __vmx_on
+dev_langs:
+- C++
 helpviewer_keywords:
 - VMXON instruction
 - __vmx_on intrinsic
 ms.assetid: 16804991-6a75-4adf-8ec2-bc95acfa4801
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 364b883e9106d8356c1f68bead6a9ba0d00dafe2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 06b29bae4744f067bd50400850bcb7af0dc6eb30
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="vmxon"></a>__vmx_on
 **Microsoft 固有の仕様**  
@@ -42,16 +47,16 @@ unsigned char __vmx_on(
   
 ## <a name="return-value"></a>戻り値  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |0|操作が成功しました。|  
 |1|現在 VMCS の `VM-instruction error field` で有効な拡張状態が発生したため、操作は失敗しました。|  
 |2|有効な状態がないため操作は失敗しました。|  
   
 ## <a name="remarks"></a>コメント  
- `__vmx_on`に対応する関数、`VMXON`マシン語命令します。 この関数は、ホストの仮想マシンのモニターと、ゲスト オペレーティング システムとそのアプリケーションとの対話をサポートします。 詳細については、「Intel 仮想化技術仕様の「ia-32 Intel アーキテクチャ」、ドキュメントの検索に番号 C97063 002 を文書化、 [Intel Corporation](http://go.microsoft.com/fwlink/?LinkId=127)サイトです。  
+ `__vmx_on`に対応する関数、`VMXON`マシン語命令します。 この関数は、ホストの仮想マシンのモニターと、ゲスト オペレーティング システムとそのアプリケーションとの対話をサポートします。 詳細については、「Intel 仮想化技術仕様の「ia-32 Intel アーキテクチャ」、ドキュメントの検索に番号 C97063 002 を文書化、 [Intel Corporation](http://go.microsoft.com/fwlink/p/?linkid=127)サイトです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -61,5 +66,5 @@ unsigned char __vmx_on(
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

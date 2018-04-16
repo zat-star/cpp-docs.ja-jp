@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - conditional operators
 - operators [C++], conditional
 - expressions [C++], conditional
 ms.assetid: c4f1a5ca-0844-44a7-a384-eca584d4e3dd
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0e8c9b14ece9f3af56be11909679592cfe5ca2de
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: acfb89584de60c41d17c532b389099b815d0fb3a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="conditional-expression-operator"></a>条件式演算子
 C 言語では、三項演算子として条件式演算子 (**? :**) を使用します。  
@@ -54,7 +58,7 @@ C 言語では、三項演算子として条件式演算子 (**? :**) を使用�
   
  ポインターの型を比較する際、ポインターが指している型の型修飾子 (**const** または `volatile`) は重要ではありません。ただし、結果の型は、条件式を構成する両方の要素の型修飾子を継承します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次に、条件演算子の使用例を示します。  
   
 ```  
@@ -76,5 +80,5 @@ int y;
   
  この例では、2 つの関数 `f1` と `f2`、および 2 つの変数 `x` と `y` を宣言しています。 プログラムの後半では、これら 2 つの変数が同じ値の場合に `f1` 関数を呼び出します。 それ以外の場合は `f2` を呼び出します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [条件演算子: ? :](../cpp/conditional-operator-q.md)

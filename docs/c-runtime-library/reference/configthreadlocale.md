@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _configthreadlocale
+ms.topic: reference
+apiname:
+- _configthreadlocale
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,7 +26,8 @@ apitype: DLLExport
 f1_keywords:
 - _configthreadlocale
 - configthreadlocale
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - configthreadlocale function
 - locales, per-thread
@@ -32,15 +35,17 @@ helpviewer_keywords:
 - per-thread locale
 - thread locale
 ms.assetid: 10e4050e-b587-4f30-80bc-6c76b35fc770
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a86fd9be56b18c3ad51e3b24e965ae67b6b38fe4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c12a60cb56373958f8e467b3a1ec3f6e4ff82c0b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="configthreadlocale"></a>_configthreadlocale
 スレッドごとのロケール オプションを設定します。  
@@ -78,9 +83,9 @@ int _configthreadlocale(
   
  `type` が表にリストされている値のいずれでもない場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、-1 を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_configthreadlocale`|\<locale.h>|  
   
@@ -193,7 +198,7 @@ The thread locale is now set to German_Germany.1252.
 The time in German locale is: 'Mittwoch, 12. Mai 2004'  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [setlocale, _wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
  [_beginthread, _beginthreadex](../../c-runtime-library/reference/beginthread-beginthreadex.md)   
  [ロケール](../../c-runtime-library/locale.md)   

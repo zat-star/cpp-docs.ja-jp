@@ -1,24 +1,30 @@
 ---
-title: "方法: safe_cast を使用して、C + + CLI |Microsoft ドキュメント"
-ms.custom: 
+title: '方法: safe_cast を使用して、C + + CLI |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: safe_cast keyword [C++], upcasting
+dev_langs:
+- C++
+helpviewer_keywords:
+- safe_cast keyword [C++], upcasting
 ms.assetid: 0fbc87d8-ecdf-4cd5-81f4-0d8cc18e2aff
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f7b15eddc8aa7454d98122b92ffc03c07a315390
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 1d6dedd414d916ec3ecc7ec6ecf3e856deaa3fe3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-use-safecast-in-ccli"></a>方法: C++/CLI で safe_cast を使用する
 この記事は、C + で safe_cast を使用する方法を示しています。 + CLI アプリケーションです。 Safe_cast について[!INCLUDE[cppwrt_short](../build/reference/includes/cppwrt_short_md.md)]を参照してください[safe_cast](../windows/safe-cast-cpp-component-extensions.md)です。  
@@ -333,5 +339,5 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [safe_cast](../windows/safe-cast-cpp-component-extensions.md)

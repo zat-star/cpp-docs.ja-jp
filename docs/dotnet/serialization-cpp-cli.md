@@ -1,13 +1,15 @@
 ---
-title: "シリアル化 (C + + CLI) |Microsoft ドキュメント"
-ms.custom: 
+title: シリアル化 (C + + CLI) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - serialization [C++]
 - SerializableAttribute class, managed applications
@@ -16,15 +18,18 @@ helpviewer_keywords:
 - .NET Framework [C++], serialization
 - serialization [C++], about serialization
 ms.assetid: 869010ca-74e1-4989-b409-4643cdb94084
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 57ec673e945d0db14ce8fee0d477d7aeb2a9e238
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 6efd56655cb5b262eab7d7f14c197e11466fb8bf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="serialization-ccli"></a>シリアル化 (C++/CLI)
 シリアル化 (オブジェクトまたは永続的なメディアにメンバーの状態を保存するプロセス) のマネージ クラス (個々 のフィールドまたはプロパティを含む) でサポートされて、<xref:System.SerializableAttribute>と<xref:System.NonSerializedAttribute>クラスです。  
@@ -57,5 +62,5 @@ private:
 ### <a name="comments"></a>コメント  
  その「短い名前」を使用して両方の属性を参照できることに注意してください (**Serializable**と**NonSerialized**)。 詳細についてはこの[属性の適用](/dotnet/standard/attributes/applying-attributes)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

@@ -1,44 +1,48 @@
 ---
-title: "fpclassify | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "fpclassify"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "HeaderDef"
-f1_keywords: 
-  - "fpclassify"
-  - "math/fpclassify"
-helpviewer_keywords: 
-  - "fpclassify マクロ"
-  - "fpclassify 関数"
+title: "fpclassify | Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- fpclassify
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: HeaderDef
+f1_keywords:
+- fpclassify
+- math/fpclassify
+helpviewer_keywords:
+- fpclassify macro
+- fpclassify function
 ms.assetid: bf549499-7ff9-4a58-8692-f2d1cb6bab81
-caps.latest.revision: 3
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 81a2c9c5237d455908e1d0e4f58bff87418a7f8b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# fpclassify
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="fpclassify"></a>fpclassify
 引数の浮動小数点の分類を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int fpclassify(   
@@ -59,32 +63,32 @@ int fpclassify(
   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `x`  
  テストする浮動小数点値。  
   
-## 戻り値  
- `fpclassify` 引数の浮動小数点クラスを示す整数値を返す `x`します。 によって返される有効な値を表 `fpclassify`, \< math.h \> に定義されている。  
+## <a name="return-value"></a>戻り値  
+ `fpclassify` 関数は、引数 `x` の浮動小数点の分類を示す整数値を返します。 次の表に、`fpclassify` が返す可能性がある、\<math.h> に定義された値を示します。  
   
-|値|説明|  
-|-------|--------|  
-|`FP_NAN`|サイレント モード、シグナル、または不確定な NaN|  
+|[値]|説明|  
+|-----------|-----------------|  
+|`FP_NAN`|クワイエット型、シグナル型、または不確定の NaN|  
 |`FP_INFINITE`|正または負の無限大|  
-|`FP_NORMAL`|正または負正規化された 0 でない値|  
-|`FP_SUBNORMAL`|正または負の値が非正規化|  
-|`FP_ZERO`|正または負のゼロ値|  
+|`FP_NORMAL`|正規化された正または負の 0 以外の値|  
+|`FP_SUBNORMAL`|正規化されない正または負の値|  
+|`FP_ZERO`|正または負の 0 値|  
   
-## 解説  
- C では、 `fpclassify` マクロです。 C\+\+ では、 `fpclassify` の引数の型を使用するオーバー ロードされた関数は、 `float`, 、`double`, 、または `long double`です。 どちらの場合に返される値は、中間表記ではなく、引数式の有効な型に依存します。 たとえば、通常 `double` または `long double` 値は、無限になる、denormal、またはゼロ値に変換すると、 `float`です。  
+## <a name="remarks"></a>コメント  
+ C では、`fpclassify` はマクロです。C++ では、`fpclassify` は、`float`、`double`、または `long double` の引数の型を使用してオーバーロードされた関数です。 どちらの場合も、返される値は、中間表記ではなく、引数式の有効な型に依存します。 たとえば、`double` または `long double` の正規化値は、`float` に変換すると、無限大値、非正規化値、またはゼロ値になります。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-|関数とマクロ|必須ヘッダー \(C\)|必須ヘッダー \(C\+\+\)|  
-|------------|------------------|----------------------|  
-|`fpclassify`|\<math.h\>|\<math.h\> または \<cmath\>|  
+|関数/マクロ|必須ヘッダー (C)|必須ヘッダー (C++)|  
+|---------------------|---------------------------|-------------------------------|  
+|`fpclassify`|\<math.h>|\<math.h> または \<cmath>|  
   
- `fpclassify` マクロと `fpclassify` 関数は、C99 および c\+\+ 11 仕様に準拠しています。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ `fpclassify` マクロと `fpclassify` 関数は、C99 および C++ 11 仕様に準拠しています。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [isnan、\_isnan、\_isnanf](../../c-runtime-library/reference/isnan-isnan-isnanf.md)
+ [isnan、_isnan、_isnanf](../../c-runtime-library/reference/isnan-isnan-isnanf.md)

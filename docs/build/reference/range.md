@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: /RANGE
-dev_langs: C++
+f1_keywords:
+- /RANGE
+dev_langs:
+- C++
 helpviewer_keywords:
 - /RANGE dumpbin option
 - -RANGE dumpbin option
 ms.assetid: 7eeba266-32be-49cc-a350-96bdf541f98a
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2558beae1a7bd689beba001f4637b1109b70faa5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1ccca814a388a458513773247f79cecf87fcdeae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="range"></a>/RANGE
 Dumpbin/RAWDATA または/DISASM などその他の dumpbin オプションと共に使用する場合の出力を変更します。  
@@ -49,5 +54,5 @@ Dumpbin/RAWDATA または/DISASM などその他の dumpbin オプションと�
 dumpbin /disasm /range:4219334,0x004061CD t.exe  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DUMPBIN オプション](../../build/reference/dumpbin-options.md)

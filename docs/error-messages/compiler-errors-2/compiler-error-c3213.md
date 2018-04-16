@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3213
 ms.assetid: 1f079e36-b3e9-40f8-8e95-08eeba3adc82
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 593e967d944f4a29371469c69d80605e3e2579ac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 68121ff469ac0018575b9db0b31ba3103a69e93c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3213"></a>コンパイラ エラー C3213
 基底クラス 'base_type' のアクセス可能性が 'derived_type' よりも小さい  

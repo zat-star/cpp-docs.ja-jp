@@ -1,51 +1,55 @@
 ---
-title: "/INTEGRITYCHECK (シグネチャ確認が必要) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "-INTEGRITYCHECK (シグネチャ確認が必要) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 9e738825-2c98-40cd-8ad2-5d0d9c14893e
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7bf86676ecbc37e346f538d180612f21352fb48b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /INTEGRITYCHECK (シグネチャ確認が必要)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="integritycheck-require-signature-check"></a>/INTEGRITYCHECK (シグネチャ確認が必要)
 読み込み時にバイナリ イメージのデジタル署名を確認する必要があることを指定します。  
   
 ```  
 /INTEGRITYCHECK[:NO]  
 ```  
   
-## 解説  
- 既定では、**\/INTEGRITYCHECK** は無効になっています。  
+## <a name="remarks"></a>コメント  
+ 既定では、 **/INTEGRITYCHECK**は無効になっています。  
   
- **\/INTEGRITYCHECK** オプションは、Windows でイメージを読み込むために、\(DLL ファイルまたは実行可能ファイルの PE ヘッダーに\) メモリ マネージャーによるデジタル署名のためのフラグを設定します。  このオプションは、特定の Windows 機能によって読み込まれるカーネル モード コードを実装する、32 ビットと 64 ビットの両方の DLL に対して設定する必要があり、Windows Vista、[!INCLUDE[win7](../../build/includes/win7_md.md)]、[!INCLUDE[win8](../../build/includes/win8_md.md)]、[!INCLUDE[winsvr08](../../build/includes/winsvr08_md.md)]、[!INCLUDE[winserver8](../../build/includes/winserver8_md.md)] のすべてのデバイス ドライバーに推奨されます。  Windows Vista 以前の Windows は、このフラグを無視します。  詳細については、「[Forced Integrity Signing of Portable Executable \(PE\) files \(ポータブル実行可能 \(PE\) ファイルの整合性の署名を強制的に実行\)](http://social.technet.microsoft.com/wiki/contents/articles/255.forced-integrity-signing-of-portable-executable-pe-files.aspx)」を参照してください。  
+ **/INTEGRITYCHECK**オプション セットに、DLL ファイルまたは実行可能ファイルの PE ヘッダーに — メモリ マネージャーは Windows でイメージを読み込むために、デジタル署名の確認に使用するフラグ。 このオプションは、特定の Windows 機能によって読み込まれるカーネル モード コードを実装する、32 ビットと 64 ビットの両方の DLL に対して設定する必要があり、Windows Vista、[!INCLUDE[win7](../../build/includes/win7_md.md)]、[!INCLUDE[win8](../../build/reference/includes/win8_md.md)]、[!INCLUDE[winsvr08](../../build/reference/includes/winsvr08_md.md)]、[!INCLUDE[winserver8](../../build/reference/includes/winserver8_md.md)] のすべてのデバイス ドライバーに推奨されます。 Windows Vista 以前の Windows は、このフラグを無視します。 詳細については、次を参照してください。[強制整合性署名のポータブル実行可能 (PE) ファイル](http://social.technet.microsoft.com/wiki/contents/articles/255.forced-integrity-signing-of-portable-executable-pe-files.aspx)です。  
   
-### このリンカー オプションを Visual Studio で設定するには  
+### <a name="to-set-this-linker-option-in-visual-studio"></a>このリンカー オプションを Visual Studio で設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、次を参照してください。[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[構成プロパティ\]** ノードを展開します。  
+2.  展開して、**構成プロパティ**ノード。  
   
-3.  **\[リンカー\]** ノードを展開します。  
+3.  展開して、**リンカー**ノード。  
   
-4.  **\[コマンド ライン\]** プロパティ ページを選択します。  
+4.  選択、**コマンドライン**プロパティ ページ。  
   
-5.  **\[追加オプション\]** に、`/INTEGRITYCHECK` または `/INTEGRITYCHECK:NO` を入力します。  
+5.  **追加オプション**、入力`/INTEGRITYCHECK`または`/INTEGRITYCHECK:NO`です。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)   
- [Forced Integrity Signing of Portable Executable \(PE\) files \(ポータブル実行可能 \(PE\) ファイルの整合性の署名を強制的に実行\)](http://social.technet.microsoft.com/wiki/contents/articles/255.forced-integrity-signing-of-portable-executable-pe-files.aspx)   
- [カーネル モードのコード署名の手順](http://msdn.microsoft.com/windows/hardware/gg487328.aspx)   
- [Windows 7 と Windows Server 2008 R2 での AppInit DLL](http://msdn.microsoft.com/windows/hardware/gg463040.aspx)
+ [強制整合性署名のポータブル実行可能 (PE) ファイル](http://social.technet.microsoft.com/wiki/contents/articles/255.forced-integrity-signing-of-portable-executable-pe-files.aspx)   
+ [カーネル モード コード署名のチュートリアル](http://msdn.microsoft.com/windows/hardware/gg487328.aspx)   
+ [Windows 7 および Windows Server 2008 で AppInit Dll](http://msdn.microsoft.com/windows/hardware/gg463040.aspx)

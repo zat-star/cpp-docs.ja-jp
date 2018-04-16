@@ -1,64 +1,66 @@
 ---
-title: "CRowsetImpl::GetColumnInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "GetColumnInfo"
-  - "CRowsetImpl.GetColumnInfo"
-  - "CRowsetImpl::GetColumnInfo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetColumnInfo メソッド"
+title: "Crowsetimpl::getcolumninfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- GetColumnInfo
+- CRowsetImpl.GetColumnInfo
+- CRowsetImpl::GetColumnInfo
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetColumnInfo method
 ms.assetid: 9ef76525-f996-4c6f-81b9-68eb260350ef
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 18ed527d47b8bfb4ffa64c88597cc2e241ad9852
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CRowsetImpl::GetColumnInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="crowsetimplgetcolumninfo"></a>CRowsetImpl::GetColumnInfo
 特定のクライアント要求の列情報を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```cpp
+      static ATLCOLUMNINFO* CRowsetBaseImpl::GetColumnInfo(T* pv,  
+   ULONG* pcCols);  
 ```  
   
-      static ATLCOLUMNINFO* CRowsetBaseImpl::GetColumnInfo(  
-   T* pv,  
-   ULONG* pcCols   
-);  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pv`  
- \[\]ユーザーの `CRowsetImpl` の派生クラスへのポインター。  
+ [in]ユーザーへのポインター`CRowsetImpl`クラスを派生します。  
   
  `pcCols`  
- \[\]列数へのポインター。出力\) が返されました。  
+ [in]返される列の数を (出力) のポインター。  
   
-## 戻り値  
- **ATLCOLUMNINFO** の静的な構造体へのポインター。  
+## <a name="return-value"></a>戻り値  
+ 静的なへのポインター **ATLCOLUMNINFO**構造体。  
   
-## 解説  
- このメソッドは高度なオーバーライドです。  
+## <a name="remarks"></a>コメント  
+ このメソッドは、高度なオーバーライドです。  
   
- このメソッドは基本クラスによって実装されたクライアント要求の列情報を取得するために呼び出されます。  通常、このメソッドは `IColumnsInfoImpl`によって呼び出されます。  このメソッドをオーバーライドする場合は、`CRowsetImpl`に\-派生クラス メソッドのバージョンを配置する必要があります。  メソッドが非テンプレート化されますクラスに配置される可能性があるため、適切な `CRowsetImpl`に\-派生クラス `pv` を変更する必要があります。  
+ このメソッドは、特定のクライアント要求の列情報を取得するいくつかの基本実装クラスによって呼び出されます。 このメソッドが呼び出されます通常、`IColumnsInfoImpl`です。 このメソッドをオーバーライドする場合は、メソッドでのバージョンを配置する必要があります、 `CRowsetImpl`-クラスを派生します。 変更する必要がありますので、メソッドは、テンプレート化以外のクラスに配置することも、`pv`を適切な`CRowsetImpl`-クラスを派生します。  
   
- 次の例では **GetColumnInfo's** の使い方を示しています。  この例では、**CMyRowset** は `CRowsetImpl`\-派生クラスです。  このクラスのすべてのインスタンスの `GetColumnInfo` をオーバーライドするには、**CMyRowset** クラス定義内に次のメソッドを追加する:  
+ 次の例で**GetColumnInfo の**使用します。 この例では**CMyRowset**は、 `CRowsetImpl`-クラスを派生します。 オーバーライドするために`GetColumnInfo`をこのクラスのすべてのインスタンスの配置では、次のメソッド、 **CMyRowset**クラス定義。  
   
- [!CODE [NVC_OLEDB_Provider#1](../CodeSnippet/VS_Snippets_Cpp/NVC_OLEDB_Provider#1)]  
+ [!code-cpp[NVC_OLEDB_Provider#1](../../data/oledb/codesnippet/cpp/crowsetimpl-getcolumninfo_1.h)]  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CRowsetImpl クラス](../../data/oledb/crowsetimpl-class.md)

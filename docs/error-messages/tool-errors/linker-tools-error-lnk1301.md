@@ -15,37 +15,24 @@ dev_langs:
 helpviewer_keywords:
 - LNK1301
 ms.assetid: 760da428-7182-4b25-b20a-de90d4b9a9cd
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 3694841447a83f02821aa260cdfdceaf7bd2ec5b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cfcdb90b967ce5f0e9eda8dded9b93db5bdcc268
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-error-lnk1301"></a>リンカ ツール エラー LNK1301
 LTCG clr モジュールが見つかると、/LTCG:parameter と互換性がありません。  
   
- /Clr、/GL でコンパイルされたモジュールは、/LTCG の (PGO) パラメーターをプロファイル ガイド付き最適化のいずれかと共にリンカーに渡されました。  
+ /Clr:pure および/GL でコンパイルされたモジュールは、/LTCG の (PGO) パラメーターをプロファイル ガイド付き最適化のいずれかと共にリンカーに渡されました。  
   
- /Clr のモジュールは、最適化のガイド付きプロファイルはサポートされていません。  
+ /Clr:pure モジュールでは、プロファイル ガイド付き最適化はサポートされていません。  
   
  詳細については次を参照してください:  
   
@@ -55,11 +42,11 @@ LTCG clr モジュールが見つかると、/LTCG:parameter と互換性があ�
   
 -   [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)  
   
--   [プロファイル ガイド付き最適化](../../build/reference/profile-guided-optimizations.md)  
+-   [ガイド付き最適化のプロファイル](../../build/reference/profile-guided-optimizations.md)  
   
 ### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  /Clr でコンパイルされないまたは/LTCG PGO パラメーターのいずれかでリンクされていません。  
+1.  /Clr でコンパイルしないでまたは/LTCG を PGO パラメーターのいずれかとリンクしません。  
   
 ## <a name="example"></a>例  
  次の例では、LNK1301 が生成されます。  

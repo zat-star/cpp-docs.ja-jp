@@ -1,47 +1,51 @@
 ---
-title: "方法: .NET コレクションを STL/CLR コンテナーに変換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "STL/CLR コンテナー [STL/CLR]"
-  - "STL/CLR, 変換 (.NET コレクションから)"
+title: '方法: STL/CLR コンテナーを .NET コレクションから変換 |Microsoft ドキュメント'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- STL/CLR, converting from .NET collections
+- STL/CLR Containers [STL/CLR]
 ms.assetid: bb927c48-78e8-4150-bd0b-787c651f4a87
 caps.latest.revision: 9
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 6366dd10e60d8f2ea60811f74ba2b2e10457dd84
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: .NET コレクションを STL/CLR コンテナーに変換する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、等価 STL\/CLR のコンテナーに .NET のコレクションを変換する方法を示します。  一例として、STL\/CLR [vector](../dotnet/vector-stl-clr.md) に .NET <xref:System.Collections.Generic.List%601> を変換する方法と、STL\/CLR [マップ](../dotnet/map-stl-clr.md)に .NET <xref:System.Collections.Generic.Dictionary%602> を変換する方法について説明しますが、プロシージャは、すべてのコレクションおよびコンテナーに似ています。  
+# <a name="how-to-convert-from-a-net-collection-to-a-stlclr-container"></a>方法: .NET コレクションを STL/CLR コンテナーに変換する
+このトピックでは、同等の STL/CLR コンテナーを .NET コレクションに変換する方法を示します。 例として、.NET に変換する方法を示します<xref:System.Collections.Generic.List%601>、STL/CLR に[ベクター](../dotnet/vector-stl-clr.md) .NET を変換する方法および<xref:System.Collections.Generic.Dictionary%602>、STL/CLR に[マップ](../dotnet/map-stl-clr.md)手順はすべてのコレクションとコンテナーは似ていますが、.  
   
-### コレクションのコンテナーを作成するには  
+### <a name="to-create-a-container-from-a-collection"></a>コレクションからコンテナーを作成するには  
   
-1.  コレクション全体を変換するには、STL\/CLR のコンテナーを作成し、コンストラクターにコレクションを渡します。  
+1.  コレクション全体を変換するには、STL/CLR コンテナーを作成し、コレクションをコンス トラクターに渡します。  
   
      最初の例では、この手順を示します。  
   
  または  
   
-1.  [collection\_adapter](../Topic/collection_adapter%20\(STL-CLR\).md) オブジェクトを作成してジェネリック STL\/CLR のコンテナーを作成します。  このテンプレート クラスは、引数として .NET インターフェイスのコレクションを取得します。  どのインターフェイスがサポートされているかを確認するには、[collection\_adapter](../Topic/collection_adapter%20\(STL-CLR\).md)を参照してください。  
+1.  作成して、汎用的な STL/CLR コンテナーを作成、 [collection_adapter](../dotnet/collection-adapter-stl-clr.md)オブジェクト。 このテンプレート クラスは、引数として .NET コレクション インターフェイスを使用します。 どのインターフェイスがサポートされていることを確認するには、次を参照してください。 [collection_adapter (STL/CLR)](../dotnet/collection-adapter-stl-clr.md)です。  
   
-2.  コンテナーに .NET のコレクションの内容をコピーします。  これは [アルゴリズム](../Topic/algorithm%20\(STL-CLR\).md)STL\/CLR を使用するか、.NET のコレクションを反復処理し、STL\/CLR のコンテナーに各要素のコピーを挿入することによって行うことができます。  
+2.  コンテナーを .NET コレクションの内容をコピーします。 STL/CLR を使用してこれ行う[アルゴリズム](../dotnet/algorithm-stl-clr.md)、.NET コレクションを反復処理して、STL/CLR コンテナーに各要素のコピーを挿入するか、します。  
   
      2 番目の例では、この手順を示します。  
   
-## 使用例  
- この例では、ジェネリック <xref:System.Collections.Generic.List%601> を作成し、5 個の要素を追加します。  次に、引数として <xref:System.Collections.Generic.IEnumerable%601> を受け取るコンストラクターを使用して `vector` を作成します。  
+## <a name="example"></a>例  
+ この例では、ジェネリック型を作成<xref:System.Collections.Generic.List%601>し 5 つの要素を追加します。 次に、作成、`vector`を受け取るコンス トラクターを使用して、<xref:System.Collections.Generic.IEnumerable%601>を引数として。  
   
 ```  
 // cliext_convert_list_to_vector.cpp  
@@ -76,14 +80,17 @@ int main(array<System::String ^> ^args)
 }  
 ```  
   
-  **cliext::vector の内容は次のとおりです。:**  
-**2**  
-**3**  
-**5**  
-**7**  
-**11**   
-## 使用例  
- この例では、ジェネリック <xref:System.Collections.Generic.Dictionary%602> を作成し、5 個の要素を追加します。  その後、単純な STL\/CLR のコンテナーとして <xref:System.Collections.Generic.Dictionary%602> をラップするために `collection_adapter` を作成します。  最後に、`map` を作成し、`map` に `collection_adapter`を反復処理して <xref:System.Collections.Generic.Dictionary%602> の内容をコピーします。  このプロセスの間に、`make_pair` 関数を使用して、新しいコントロールを作成し、`map`に新しいペアを挿入します。  
+```Output  
+The contents of the cliext::vector are:  
+2  
+3  
+5  
+7  
+11  
+```  
+  
+## <a name="example"></a>例  
+ この例では、ジェネリック型を作成<xref:System.Collections.Generic.Dictionary%602>し 5 つの要素を追加します。 次に、作成、`collection_adapter`をラップする、<xref:System.Collections.Generic.Dictionary%602>単純な STL/CLR コンテナーとして。 最後に、作成、`map`の内容をコピーして、<xref:System.Collections.Generic.Dictionary%602>を`map`を反復処理して、`collection_adapter`です。 このプロセス中を使用して、新しいペアを作成、`make_pair`関数とに直接新しいペアを挿入、`map`です。  
   
 ```  
 // cliext_convert_dictionary_to_map.cpp  
@@ -124,13 +131,16 @@ int main(array<System::String ^> ^args)
 }  
 ```  
   
-  **cliext::map の内容は次のとおりです。:**  
-**Key: 0.00 Value: 0**  
-**Key: 13.00 Value: 13**  
-**Key: 22.00 Value: 22**  
-**Key: 42.00 Value: 42**  
-**Key: 74.00 Value: 74**   
-## 参照  
- [STL\/CLR ライブラリ](../dotnet/stl-clr-library-reference.md)   
- [adapter](../dotnet/adapter-stl-clr.md)   
- [方法: STL\/CLR コンテナーを .NET コレクションに変換する](../dotnet/how-to-convert-from-a-stl-clr-container-to-a-dotnet-collection.md)
+```Output  
+The contents of the cliext::map are:  
+Key: 0.00 Value: 0  
+Key: 13.00 Value: 13  
+Key: 22.00 Value: 22  
+Key: 42.00 Value: 42  
+Key: 74.00 Value: 74  
+```  
+  
+## <a name="see-also"></a>参照  
+ [STL/CLR ライブラリ リファレンス](../dotnet/stl-clr-library-reference.md)   
+ [アダプター (STL/CLR)](../dotnet/adapter-stl-clr.md)   
+ [方法: STL/CLR コンテナーを .NET コレクションに変換する](../dotnet/how-to-convert-from-a-stl-clr-container-to-a-dotnet-collection.md)

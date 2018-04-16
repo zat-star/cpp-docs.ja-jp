@@ -1,32 +1,37 @@
 ---
-title: "swap_ranges (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::swap_ranges"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "swap_ranges 関数 [STL/CLR]"
+title: "swap_ranges (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::swap_ranges
+dev_langs:
+- C++
+helpviewer_keywords:
+- swap_ranges function [STL/CLR]
 ms.assetid: 3fb39a84-b088-48f1-8bb7-2bbe68b048a9
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c3b486446ff1f2061fa28a31bceaf5e560beec15
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# swap_ranges (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-別の要素、同じサイズの範囲と 1 の範囲の要素を交換します。  
+# <a name="swapranges-stlclr"></a>swap_ranges (STL/CLR)
+1 つの範囲の要素を、同じサイズの別の範囲の要素と交換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _FwdIt1, class _FwdIt2> inline  
@@ -34,13 +39,13 @@ template<class _FwdIt1, class _FwdIt2> inline
         _FwdIt2 _First2);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `swap_ranges`も同じように動作します。  詳細については、「[swap\_ranges](../Topic/swap_ranges.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`swap_ranges`です。 詳細については、次を参照してください。 [swap_ranges](../standard-library/algorithm-functions.md#swap_ranges)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>参照  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

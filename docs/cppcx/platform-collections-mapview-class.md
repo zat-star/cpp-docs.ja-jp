@@ -6,7 +6,7 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - COLLECTION/Platform::Collections::MapView::MapView
 - COLLECTION/Platform::Collections::MapView::First
@@ -14,18 +14,22 @@ f1_keywords:
 - COLLECTION/Platform::Collections::MapView::Lookup
 - COLLECTION/Platform::Collections::MapView::Size
 - COLLECTION/Platform::Collections::MapView::Split
-dev_langs: C++
-helpviewer_keywords: MapView Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- MapView Class
 ms.assetid: 9577dde7-f599-43c6-b1e4-7d653706fd62
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 349dbfd081301e8bf3661c8a6cf18766adaaf238
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f55a980f0d4fcb6982adb4d40353a47ee2f4d120
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcollectionsmapview-class"></a>Platform::Collections::MapView クラス
 キーと値のペアのコレクションである、 *マップ*への読み取り専用ビューを表します。  
@@ -59,28 +63,28 @@ ref class MapView sealed;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Mapview::mapview](#ctor)|MapView クラスの新しいインスタンスを初期化します。|  
+|[MapView::MapView](#ctor)|MapView クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[Mapview::first](#first)|マップ ビュー内の最初の要素に初期化される反復子を返します。|  
-|[Mapview::haskey](#haskey)|現在の MapView に、指定されたキーが含まれているかどうかを判定します。|  
-|[Mapview::lookup](#lookup)|現在の MapView オブジェクト内の、指定されたキーの位置の要素を取得します。|  
-|[Mapview::size](#size)|現在の MapView オブジェクトの要素数を返します。|  
-|[Mapview::split](#split)|元の MapView オブジェクトを、2 つの MapView オブジェクトに分割します。|  
+|[MapView::First](#first)|マップ ビュー内の最初の要素に初期化される反復子を返します。|  
+|[MapView::HasKey](#haskey)|現在の MapView に、指定されたキーが含まれているかどうかを判定します。|  
+|[MapView::Lookup](#lookup)|現在の MapView オブジェクト内の、指定されたキーの位置の要素を取得します。|  
+|[MapView::Size](#size)|現在の MapView オブジェクトの要素数を返します。|  
+|[MapView::Split](#split)|元の MapView オブジェクトを、2 つの MapView オブジェクトに分割します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `MapView`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Platform::Collections  
 
 
-## <a name="first"></a>Mapview::first メソッド
+## <a name="first"></a> Mapview::first メソッド
 マップ ビュー内の最初の要素を指定する反復子を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -98,7 +102,7 @@ virtual Windows::Foundation::Collections::IIterator<
   
 
 
-## <a name="haskey"></a>Mapview::haskey メソッド
+## <a name="haskey"></a>  Mapview::haskey メソッド
 現在の MapView に、指定されたキーが含まれているかどうかを判定します。  
   
 ### <a name="syntax"></a>構文  
@@ -117,7 +121,7 @@ bool HasKey(K key);
   
 
 
-##  <a name="lookup"></a>Mapview::lookup メソッド
+##  <a name="lookup"></a> Mapview::lookup メソッド
 型 K の指定されたキーに関連付けられている型 V の値を取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -135,7 +139,7 @@ V Lookup(K key);
   
 
 
-##  <a name="ctor"></a>Mapview::mapview コンス トラクター
+##  <a name="ctor"></a> Mapview::mapview コンス トラクター
 MapView クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  
@@ -178,7 +182,7 @@ MapView(
 
 
 
-##  <a name="size"></a>Mapview::size メソッド
+##  <a name="size"></a> Mapview::size メソッド
 現在の MapView オブジェクトの要素数を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -193,7 +197,7 @@ virtual property unsigned int Size;
   
 
 
-##  <a name="split"></a>Mapview::split メソッド
+##  <a name="split"></a> Mapview::split メソッド
 現在の MapView を 2 つの MapView オブジェクトに分割します。 このメソッドは操作不可です。  
   
 ### <a name="syntax"></a>構文  
@@ -216,5 +220,5 @@ void Split(
 ### <a name="remarks"></a>コメント  
  このメソッドは操作可能ではありません。これは何も実行しません。  
     
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)

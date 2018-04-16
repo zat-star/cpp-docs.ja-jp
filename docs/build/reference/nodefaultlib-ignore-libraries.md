@@ -1,73 +1,77 @@
 ---
-title: "/NODEFAULTLIB (ライブラリを無視する) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.IgnoreAllDefaultLibraries"
-  - "VC.Project.VCLinkerTool.IgnoreDefaultLibraryNames"
-  - "/nodefaultlib"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/NODEFAULTLIB リンカー オプション"
-  - "既定のライブラリ, 削除"
-  - "無視 (ライブラリの) リンカー オプション"
-  - "ライブラリ, 無視"
-  - "NODEFAULTLIB リンカー オプション"
-  - "-NODEFAULTLIB リンカー オプション"
+title: "-NODEFAULTLIB (ライブラリの無視) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.OVERWRITEAllDefaultLibraries
+- VC.Project.VCLinkerTool.OVERWRITEDefaultLibraryNames
+- /nodefaultlib
+dev_langs:
+- C++
+helpviewer_keywords:
+- default libraries, removing
+- -NODEFAULTLIB linker option
+- libraries, ignore
+- NODEFAULTLIB linker option
+- /NODEFAULTLIB linker option
+- ignore libraries linker option
 ms.assetid: 7270b673-6711-468e-97a7-c2925ac2be6e
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 24045fbbba41eb9d7ca1929a86d3dd599d3490ba
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /NODEFAULTLIB (ライブラリを無視する)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="nodefaultlib-ignore-libraries"></a>/NODEFAULTLIB (ライブラリを無視する)
 ```  
 /NODEFAULTLIB[:library]   
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  それぞれの文字について以下に説明します。  
   
- *library*  
- 外部参照を解決するときに無視するライブラリを指定します。  
+ *ライブラリ*  
+ 外部参照を解決するときに無視するライブラリです。  
   
-## 解説  
- \/NODEFAULTLIB オプションは、リンカーが外部参照を解決するときに検索するライブラリ リストから、検索の必要がない既定のライブラリを 1 つ以上除外します。  
+## <a name="remarks"></a>コメント  
+ /NODEFAULTLIB オプションを使用すると、リンカーは、外部参照を解決するときに、検索するライブラリの一覧から 1 つまたは複数の既定のライブラリを削除します。  
   
- 既定のライブラリへの参照を含まない .obj ファイルを作成するには、[\/Zl \(既定のライブラリ名の省略\)](../../build/reference/zl-omit-default-library-name.md) を使用します。  
+ 既定のライブラリへの参照が含まれていない .obj ファイルを作成するには、使用[/Zl (既定ライブラリ名の省略)](../../build/reference/zl-omit-default-library-name.md)です。  
   
- \/NODEFAULTLIB は、既定では、外部参照を解決するときに検索するライブラリ リストから、既定のライブラリをすべて除外します。  *library* パラメーター \(省略可能\) を指定して、外部参照を解決するときに検索するライブラリのリストから、複数のライブラリを指定して除外できます。  除外するライブラリごとに \/NODEFAULTLIB オプションを 1 つずつ指定します。  
+ 既定では、/NODEFAULTLIB は、外部参照を解決するときに、検索するライブラリの一覧からすべての既定のライブラリを削除します。 省略可能な*ライブラリ*パラメーターでは、外部参照を解決するときに、検索するライブラリの一覧から、指定されたライブラリまたはライブラリを削除することができます。 除外する各ライブラリの 1 つの/NODEFAULTLIB オプションを指定します。  
   
- リンカーが外部参照を解決するときは、まず明示的に指定されたライブラリを検索し、次に \/DEFAULTLIB オプションで指定された既定のライブラリを検索します。その後、.obj ファイルで指定された既定のライブラリを検索します。  
+ リンカーは、明示的に指定し、次にライブラリが/DEFAULTLIB オプションで指定された既定のライブラリに、次の .obj ファイルの既定のライブラリを最初に検索して、外部定義への参照を解決します。  
   
- \/NODEFAULTLIB:*library* と [\/DEFAULTLIB:](../../build/reference/defaultlib-specify-default-library.md)*library* で同じライブラリ名を指定すると、前者の指定が優先されるためそのライブラリは検索されません。  
+ /NODEFAULTLIB:*ライブラリ*オーバーライド[/DEFAULTLIB:](../../build/reference/defaultlib-specify-default-library.md)*ライブラリ*とき同じ*ライブラリ*両方の名前を指定します。  
   
- たとえば、\/NODEFAULTLIB を使用して C ランタイム ライブラリなしでプログラムをビルドするときは、[\/ENTRY](../../build/reference/entry-entry-point-symbol.md) も使用して、プログラムのエントリ ポイント \(関数\) を指定することが必要な場合もあります。  詳細については、「[CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)」を参照してください。  
+ /NODEFAULTLIB を使用する場合など、C ランタイム ライブラリなしプログラムをビルドするしなければならない場合も使用[/ENTRY](../../build/reference/entry-entry-point-symbol.md)をプログラムでエントリ ポイント (関数) を指定します。 詳しくは、「[CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)」をご覧ください。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[リンカー\]** フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  **\[入力\]** プロパティ ページをクリックします。  
+3.  クリックして、**入力**プロパティ ページ。  
   
-4.  **\[すべての既定のライブラリの無視\]** プロパティをクリックするか、無視するライブラリのリストを **\[特定のライブラリの無視\]** プロパティで指定します。  **\[コマンド ライン\]** プロパティ ページに、これらのプロパティに加えた変更内容が反映されます。  
+4.  選択、**すべて既定のライブラリの無視**プロパティで無視するライブラリの一覧を指定または、**特定のライブラリの無視**プロパティです。 **コマンドライン**プロパティ ページには、これらのプロパティに加えた変更の効果が表示されます。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.IgnoreDefaultLibraryNames%2A>」および「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.IgnoreAllDefaultLibraries%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

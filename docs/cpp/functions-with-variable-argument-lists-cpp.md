@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - arguments [C++], variable number of
 - variable argument lists
@@ -16,21 +18,23 @@ helpviewer_keywords:
 - declaring functions [C++], variables
 - function calls, variable number of arguments
 ms.assetid: 27c2f83a-21dd-44c6-913c-2834cb944703
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9cde959d2a2b17bf346a23aca7a7724523b69b6f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a715662ac6680218e3b15822108f429733569bfa
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="functions-with-variable-argument-lists--c"></a>リストに可変個引数関数 (C++)
 最後のメンバーが省略記号 (...) である関数宣言は、可変数の引数を受け取ることができます。 このような場合、C++ は、明示的に宣言された引数に対してのみ型チェックを行います。 引数の数や型も変わるほどの汎用関数を作成する必要がある場合は、可変個引数リストを使用できます。 ファミリの関数は、可変個引数リストを使用する関数の例です。`printf`*引数宣言リスト*  
   
 ## <a name="functions-with-variable-arguments"></a>可変個の引数を取る関数  
- 宣言した後の引数にアクセスするには、以下に示すように、標準インクルード ファイル STDARG.H に含まれているマクロを使用します。  
+ 宣言した後の引数にアクセスするには、標準インクルード ファイルに含まれているマクロを使用して\<stdarg.h > 以下のとおりです。  
   
  **Microsoft 固有の仕様**  
   
@@ -42,9 +46,9 @@ ms.lasthandoff: 10/24/2017
   
  `char` 型の引数が可変個の引数として渡される場合は、`int` 型に変換されます。 同様に、型の引数**float**渡される型に可変個の引数として変換されます**二重**です。 他の型の引数は、通常の整数および浮動小数点の上位変換を受ける可能性があります。 参照してください[標準変換](standard-conversions.md)詳細についてはします。  
   
- 変数リストを必要とする関数は、引数リストで省略記号 (...) を使用して宣言されます。 変数リストによって渡された引数にアクセスするには、STDARG.H インクルード ファイル内に記述された型とマクロを使用します。 これらのマクロの詳細については、次を参照してください。 [va_arg、va_copy、va_end、va_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)です。 これは、C ランタイム ライブラリのドキュメントにあります。  
+ 変数リストを必要とする関数は、引数リストで省略記号 (...) を使用して宣言されます。 型およびに記載されているマクロを使用して、 \<stdarg.h > 変数リストによって渡される引数にアクセスするファイルをインクルードします。 これらのマクロの詳細については、次を参照してください。 [va_arg、va_copy、va_end、va_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)です。 これは、C ランタイム ライブラリのドキュメントにあります。  
   
- 次の例は、マクロが (STDARG で宣言型を併用する方法を示しています。 します。H): 
+ 次の例は、マクロが型を併用する方法を示します (で宣言されている\<stdarg.h >)。 
   
 ```  
 // variable_argument_lists.cpp  

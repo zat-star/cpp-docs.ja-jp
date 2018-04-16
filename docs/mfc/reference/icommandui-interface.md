@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,18 +18,22 @@ f1_keywords:
 - AFXWINFORMS/ICommandUI::Index
 - AFXWINFORMS/ICommandUI::Radio
 - AFXWINFORMS/ICommandUI::Text
-dev_langs: C++
-helpviewer_keywords: ICommandUI interface [MFC]
+dev_langs:
+- C++
+helpviewer_keywords:
+- ICommandUI interface [MFC]
 ms.assetid: 134afe8d-dcdf-47ca-857a-a166a6b665dd
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e64d55250a9739e8465a4ae79ecb293e2879daef
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4971ceaea57b91ff708315a2c32c7bac2801798f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="icommandui-interface"></a>ICommandUI インターフェイス
 ユーザー インターフェイスのコマンドを管理します。  
@@ -123,8 +128,8 @@ property String^ Text;
 ## <a name="remarks"></a>コメント
 このプロパティは、このコマンドのユーザー インターフェイスのアイテムのテキストを設定します。 テキストをテキスト文字列のハンドルに設定します。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwinforms.h (アセンブリ atlmfc\lib\mfcmifc80.dll で定義)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CCmdUI クラス](../../mfc/reference/ccmdui-class.md)

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ATL::IDBSchemaRowsetImpl::GetSchemas
 - GetSchemas
@@ -15,31 +16,33 @@ f1_keywords:
 - ATL::IDBSchemaRowsetImpl<SessionClass>::GetSchemas
 - IDBSchemaRowsetImpl.GetSchemas
 - IDBSchemaRowsetImpl::GetSchemas
-dev_langs: C++
-helpviewer_keywords: GetSchemas method
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetSchemas method
 ms.assetid: fbe725a6-3acd-45f8-bcaf-10a6c1239cd2
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 20d346ff4b2ed3dd3f4fc90190c51e1fa41dbc46
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: fd659ccb537a8b556c29f0487c1c2412797dc343
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="idbschemarowsetimplgetschemas"></a>IDBSchemaRowsetImpl::GetSchemas
 [IDBSchemaRowsetImpl::GetRowset](../../data/oledb/idbschemarowsetimpl-getrowset.md)でアクセスできるスキーマ行セットの一覧を返します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      STDMETHOD ( GetSchema s )(  
-   ULONG * pcSchemas,  
+```cpp
+      STDMETHOD (GetSchema s )(ULONG * pcSchemas,  
    GUID ** prgSchemas,  
-   ULONG** prgRest  
-);  
+   ULONG** prgRest);  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -57,12 +60,12 @@ ms.lasthandoff: 10/24/2017
   
  この関数の実装では、セッション クラスでスキーマ マップを持っている必要があります。 スキーマ マップ情報を使用して、マップ内のスキーマの GUID の配列で応答します。 これは、プロバイダーによってサポートされるスキーマを表します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDBSchemaRowsetImpl クラス](../../data/oledb/idbschemarowsetimpl-class.md)   
  [IDBSchemaRowsetImpl クラス メンバー](http://msdn.microsoft.com/en-us/e74f6f82-541c-42e7-b4c6-e2d4656a0649)   
- [Idbschemarowsetimpl::getrowset](../../data/oledb/idbschemarowsetimpl-getrowset.md)   
- [Idbschemarowset::getrowset](https://msdn.microsoft.com/en-us/library/ms722634.aspx)   
+ [IDBSchemaRowsetImpl::GetRowset](../../data/oledb/idbschemarowsetimpl-getrowset.md)   
+ [IDBSchemaRowset::GetRowset](https://msdn.microsoft.com/en-us/library/ms722634.aspx)   
  [スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - vc-attr.db_param
 - vc-attr.db_column
@@ -15,18 +16,23 @@ f1_keywords:
 - vc-attr.db_table
 - vc.templates.ole
 - vc-attr.db_source
-dev_langs: C++
-helpviewer_keywords: OLE DB consumer templates, classes
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE DB consumer templates, classes
 ms.assetid: cfc7f698-1a0e-4a09-a4d3-ccb99e6654fe
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4c401cebf9fd09686a532031322793fd9bedac50
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 29f833f6a598b9028506fb11d163be49212bd998
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ole-db-consumer-templates-reference"></a>OLE DB コンシューマー テンプレート リファレンス
 OLE DB コンシューマー テンプレートには、次のクラスが含まれています。 参考資料には、上のトピックにはもが含まれています、 [OLE DB コンシューマー テンプレート用マクロ](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)です。  
@@ -118,7 +124,7 @@ OLE DB コンシューマー テンプレートには、次のクラスが含ま
  テンプレート クラスのテンプレート引数として使用される`CCommand`と`CTable`、アクセサー クラスの引数を受け取る。 使用して`CNoAccessor`出力列やパラメーターをサポートするクラスしたくない場合。  
   
  [CNoMultipleResults](../../data/oledb/cnomultipleresults-class.md)  
- テンプレート引数として使用される、`CCommand`テンプレートを 1 つの行セットを処理するコマンドを追加するときにします。 `CNoMultipleResults`テンプレート引数の既定値です。  
+ テンプレート引数として使用される、`CCommand`テンプレートを 1 つの行セットを処理するコマンドを追加するときにします。 `CNoMultipleResults` テンプレート引数の既定値です。  
   
  [CNoRowset](../../data/oledb/cnorowset-class.md)  
  テンプレート引数として使用される`CCommand`または`CTable`コマンドまたはテーブルに行セットが返されない場合は。  
@@ -141,6 +147,6 @@ OLE DB コンシューマー テンプレートには、次のクラスが含ま
  [CDBErrorInfo](../../data/oledb/cdberrorinfo-class.md)  
  OLE DB エラー情報を取得するために使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート リファレンス](../../data/oledb/ole-db-provider-templates-reference.md)   
  [OLE DB テンプレート](../../data/oledb/ole-db-templates.md)

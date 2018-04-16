@@ -15,36 +15,22 @@ dev_langs:
 helpviewer_keywords:
 - C4218
 ms.assetid: d6c3cd90-4518-49e9-ae86-4ba9e2761d98
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 6f657da21a7756973b9f9febe823003ebfd68fd1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 156a43f57f52f50f6542f3502658d5e0e16f1bd9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4218"></a>コンパイラの警告 (レベル 1) C4218
-非標準の拡張機能が使用されています : 少なくとも、ストレージ クラスか型を指定しなければなりません。  
+使用される標準の拡張機能: ストレージ クラスまたは型を指定する必要があります  
   
- 既定 Microsoft の拡張機能 (/Ze)、型やストレージ クラスを指定することがなく変数を宣言することができます。 既定の型は `int` です。  
+ 既定 Microsoft 拡張機能 (/Ze)、型やストレージ クラスを指定することがなく変数を宣言することができます。 既定の型は `int` です。  
   
 ## <a name="example"></a>例  
   
@@ -58,4 +44,4 @@ int main()
 }  
 ```  
   
- このような宣言は、ANSI 互換の無効な ([/Za](../../build/reference/za-ze-disable-language-extensions.md))。
+ このような宣言があります。 ANSI 互換 ([/Za](../../build/reference/za-ze-disable-language-extensions.md))。

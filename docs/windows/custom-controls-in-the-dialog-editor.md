@@ -1,59 +1,65 @@
 ---
-title: "Custom Controls in the Dialog Editor | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Custom Control"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "controls [C++], templates"
-  - "custom controls [Visual Studio], dialog boxes"
-  - "custom controls [Visual Studio]"
-  - "dialog box controls, custom (user) controls"
-  - "Dialog editor, custom controls"
+title: "ダイアログ エディターのカスタム コントロール |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- Custom Control
+dev_langs:
+- C++
+helpviewer_keywords:
+- controls [C++], templates
+- custom controls [Visual Studio], dialog boxes
+- custom controls [Visual Studio]
+- dialog box controls, custom (user) controls
+- Dialog editor, custom controls
 ms.assetid: f494b314-4000-4bbe-bbd0-4b18fb71ede1
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: c507f4d252100055d4ed7f24e9c407bf8edb82d0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Custom Controls in the Dialog Editor
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ダイアログ エディターを使用すると、既存の "カスタム" コントロールや "ユーザー" コントロールをダイアログ ボックス テンプレートで使用できます。  
+# <a name="custom-controls-in-the-dialog-editor"></a>ダイアログ エディターのカスタム コントロール
+ダイアログ エディターを使用するを使用して既存の"custom"または「ユーザー」コントロールはダイアログ ボックス テンプレートでします。  
   
 > [!NOTE]
->  この場合のカスタム コントロールを ActiveX コントロールと混同しないでください。  ActiveX コントロールは以前に OLE カスタム コントロールと呼ばれていました。  また、この場合のコントロールを Windows でのオーナー描画コントロールと混同しないでください。  
+>  この意味でのカスタム コントロールでは、ActiveX コントロールと混同しないでください。 ActiveX コントロールがカスタムの OLE コントロールとも呼ばれます。 また、Windows のオーナー描画コントロールでこれらのコントロールを混同しないでください。  
   
- この機能は、Windows で用意されていないコントロールを使用できるようにするためのものです。  実行時には、コントロールはウィンドウ クラス \(C\+\+ クラスとは異なります\) に関連付けられます。  このタスクを実現する一般的な方法は、ダイアログ ボックスに静的コントロールなどのコントロールをインストールすることです。  実行時には、そのコントロールを [OnInitDialog](../Topic/CDialog::OnInitDialog.md) 関数内で削除し、カスタム コントロールに置き換えます。  
+ この機能は、Windows で指定されている以外のコントロールを使用できるようにするものです。 実行時に、コントロールは、(同じではありません、C++ クラス) ウィンドウ クラスに関連付けられます。 同じタスクを実行する一般的な方法では、ダイアログ ボックスで、静的なコントロールなど、任意のコントロールをインストールします。 実行時で、 [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog)関数、そのコントロールを削除し、独自のカスタム コントロールで置き換えます。  
   
- これは、旧式のテクニックです。  ほとんどの場合は、ActiveX コントロールを記述するか、または Windows コモン コントロールをサブクラス化することをお勧めします。  
+ これは、以前の技術です。 現在は、ほとんどの場合 ActiveX コントロールまたは Windows のコモン コントロールのサブクラスを作成します。  
   
- この種のカスタム コントロールには、以下の制限があります。  
+ これらのカスタム コントロール用に限定されます。  
   
--   ダイアログ ボックス内での位置の設定。  
+-   ダイアログ ボックスで、場所を設定します。  
   
--   キャプションの入力。  
+-   キャプションを入力します。  
   
--   コントロールのウィンドウ クラス名の識別。アプリケーション コードでは、この名前でコントロールを登録する必要があります。  
+-   (アプリケーション コードは、コントロールをこの名前に登録する必要があります)、コントロールのウィンドウ クラスの名前を識別します。  
   
--   コントロールのスタイルを設定する 32 ビットの 16 進値の入力。  
+-   コントロールのスタイルを設定する 32 ビットの 16 進値を入力します。  
   
--   拡張スタイルの設定。  
+-   拡張スタイルを設定します。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  Win32  
   
-## 参照  
- [Controls in Dialog Boxes](../mfc/controls-in-dialog-boxes.md)   
+## <a name="see-also"></a>参照  
+ [ダイアログ ボックスのコントロール](../windows/controls-in-dialog-boxes.md)   
  [コントロール](../mfc/controls-mfc.md)
+

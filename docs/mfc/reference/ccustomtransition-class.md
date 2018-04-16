@@ -33,16 +33,17 @@ helpviewer_keywords:
 - CCustomTransition [MFC], m_initialVelocity
 - CCustomTransition [MFC], m_pInterpolator
 ms.assetid: 5bd3f492-940f-4290-a38b-fa68eb8f8401
-caps.latest.revision: 17
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b94fd32bd00a484c5f8e3ba9e86efc5a9637e4e2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: d7db8c2dc1d78fae3aebdecaac689c14695a8acb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccustomtransition-class"></a>CCustomTransition クラス
 カスタム遷移を実装します。  
@@ -71,7 +72,7 @@ class CCustomTransition : public CBaseTransition;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CCustomTransition::m_bInitialValueSpecified](#m_binitialvaluespecified)|SetInitialValue で初期値が指定されたかどうかを指定します。|  
 |[CCustomTransition::m_bInitialVelocitySpecified](#m_binitialvelocityspecified)|初期ベロシティが SetInitialVelocity で指定されたかどうかを指定します。|  
@@ -89,7 +90,7 @@ class CCustomTransition : public CBaseTransition;
   
  `CCustomTransition`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="ccustomtransition"></a>CCustomTransition::CCustomTransition  
@@ -176,6 +177,5 @@ void SetInitialVelocity(DOUBLE initialVelocity);
 ### <a name="parameters"></a>パラメーター  
  `initialVelocity`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

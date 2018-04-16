@@ -1,25 +1,32 @@
 ---
-title: "multiset::operator = (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: multiset::operator = (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::multiset::operator=
-dev_langs: C++
-helpviewer_keywords: operator= member [STL/CLR]
+f1_keywords:
+- cliext::multiset::operator=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator= member [STL/CLR]
 ms.assetid: 74e60042-d0d6-471f-8fdb-79b3c6856440
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1339d26047e65a5a509ab1a17295de5928f38f3d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 93a7a0c8e75c62bc9b116e7d0a39a446a58148b9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multisetoperator-stlclr"></a>multiset::operator= (STL/CLR)
 被制御シーケンスを置き換えます。  
@@ -74,10 +81,10 @@ a b c
 a b c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [multiset (STL/CLR)](../dotnet/multiset-stl-clr.md)

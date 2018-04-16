@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC database programming symbols
 - symbols [C++], MFC
 - databases [C++], MFC programming model
 ms.assetid: 3f676a2c-cf07-415e-a336-680abdc42a5e
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1a480bad2a95e3af7dda332695ad1239755c21a7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 02b2d376c08ee2645967ffd2db6852de2026477c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-database-programming-symbols"></a>MFC データベース プログラミングのシンボル
 このテーブル内のシンボルは、データベースのサポートが追加されたときに、MFC プロジェクトでのみ表示されます。 MFC への接続の SQL server とデータベース プログラミングをサポートしています。  
@@ -43,9 +48,9 @@ ms.lasthandoff: 10/24/2017
 |AFX_IDP_SQL_SNAPSHOT_ NOT_SUPPORTED|AFX_IDP_SQL_SQL_CONFORMANCE|  
 |AFX_IDP_SQL_SQL_NO_TOTAL|AFX_IDP_SQL_UPDATE_DELETE_FAILED|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  MFC  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC の定義済みシンボル](../windows/mfc-predefined-symbols.md)   
  [シンボル: リソース識別子](../windows/symbols-resource-identifiers.md)

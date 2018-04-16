@@ -23,16 +23,17 @@ helpviewer_keywords:
 - aggregation [C++], ATL objects
 - CComContainedObject class
 ms.assetid: e8616b41-c200-47b8-bf2c-fb9f713ebdad
-caps.latest.revision: 20
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3579d4080b4dba130b58592fa47efd636805ed1d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: e9d580a8027e37ce2db5e70b72c4f8cf2a99e516
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomcontainedobject-class"></a>したクラス
 このクラスは実装[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)所有者オブジェクトの委任することによって**IUnknown**です。  
@@ -77,7 +78,7 @@ class CComContainedObject : public Base
   
  `CComContainedObject`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="addref"></a>CComContainedObject::AddRef  
@@ -159,6 +160,5 @@ STDMETHOD_(ULONG, Release)();
 ### <a name="return-value"></a>戻り値  
  デバッグ ビルドで、**リリース**診断に役に立たず、テスト可能な値を返します。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)
-

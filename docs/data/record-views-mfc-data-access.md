@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC [C++], record views
 - ODBC recordsets [C++], record views
@@ -15,15 +17,18 @@ helpviewer_keywords:
 - record views [C++]
 - forms [C++], data access tasks
 ms.assetid: 562122d9-01d8-4284-acf6-ea109ab0408d
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 38c5d65e89aa4fb76ff96fa82cd52e42475e2353
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e698cad29405fce4b5a0d23e166217502753dc1d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="record-views--mfc-data-access"></a>レコード ビュー (MFC データ アクセス)
 このセクションでは、MFC ODBC クラスにのみ適用されます。 OLE DB レコード ビューについては、次を参照してください。 [COleDBRecordView](../mfc/reference/coledbrecordview-class.md)と[を使用して OLE DB レコード ビュー](../data/oledb/using-ole-db-record-views.md)です。  
@@ -54,6 +59,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [レコード ビューを使用します。](../data/using-a-record-view-mfc-data-access.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ アクセス プログラミング (MFC/ATL)](../data/data-access-programming-mfc-atl.md)   
  [ODBC ドライバーの一覧](../data/odbc/odbc-driver-list.md)

@@ -1,35 +1,40 @@
 ---
-title: "auto_handle::reset | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "auto_handle.reset"
-  - "msclr::auto_handle::reset"
-  - "auto_handle::reset"
-  - "msclr.auto_handle.reset"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "auto_handle::reset"
+title: "auto_handle::reset |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- auto_handle.reset
+- msclr::auto_handle::reset
+- auto_handle::reset
+- msclr.auto_handle.reset
+dev_langs:
+- C++
+helpviewer_keywords:
+- auto_handle::reset
 ms.assetid: 32dc3a83-80fd-45c9-8f79-8c4096c30f57
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 39746666423e98db2135079415ad184f1f0c62f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# auto_handle::reset
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-現在のスレッドによって所有されるオブジェクトを破棄し、必要に応じて新しいオブジェクトを所有します。  
+# <a name="autohandlereset"></a>auto_handle::reset
+現在所有されているオブジェクトを破棄し、必要に応じて、新しいオブジェクトを所有しているを実行します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void reset(  
@@ -38,11 +43,11 @@ void reset(
 void reset();  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_new_ptr`  
- \(省略可能\) 新しいオブジェクト。  
+ (省略可能)新しいオブジェクト。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_handle_reset.cpp  
@@ -82,18 +87,21 @@ int main()
 }  
 ```  
   
-  **ClassA のコンストラクター: 最初**  
-**Hello 最初に A ~\!**  
-**ClassA のコンストラクター: 第 2**  
-**ClassA のデストラクター: 最初**  
-**2 番目の A から Hello\!**  
-**ClassA のデストラクター: 第 2**  
-**done**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_handle.h\>  
+```Output  
+ClassA constructor: first  
+Hello from first A!  
+ClassA constructor: second  
+ClassA destructor: first  
+Hello from second A!  
+ClassA destructor: second  
+done  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\auto_handle.h >  
   
-## 参照  
- [auto\_handle Members](../dotnet/auto-handle-members.md)   
- [auto\_handle::release](../Topic/auto_handle::release.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>参照  
+ [auto_handle メンバー](../dotnet/auto-handle-members.md)   
+ [auto_handle::release](../dotnet/auto-handle-release.md)

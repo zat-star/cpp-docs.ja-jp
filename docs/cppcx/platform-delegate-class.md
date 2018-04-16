@@ -1,49 +1,54 @@
 ---
-title: "Platform::Delegate クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/30/2016"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Platform/Platform::Delegate"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Platform::Delegate クラス"
+title: "Platform::delegate クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 12/30/2016
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::Delegate
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Delegate Class
 ms.assetid: 82b21271-768f-4193-9ca2-be68ddfd546e
-caps.latest.revision: 5
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 603d159572ac998f1ad04ed3558b1f2d88457708
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# Platform::Delegate クラス
+# <a name="platformdelegate-class"></a>Platform::Delegate クラス
 関数オブジェクトを表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 public delegate void delegate_name();  
 ```  
   
-## メンバー  
- Delegate クラスには、[Platform::Object クラス](../cppcx/platform-object-class.md) から派生した Equals\(\)、GetHashCode\(\)、ToString\(\) メソッドがあります。  
+### <a name="members"></a>メンバー  
+ Delegate クラスには、 [Platform::Object Class](../cppcx/platform-object-class.md)から派生した Equals()、GetHashCode()、ToString() メソッドがあります。  
   
-## 解説  
- デリゲートを作成するには [delegate](~/windows/delegate-cpp-component-extensions.md) キーワードを使用します。Platform::Delegate を明示的に使用しないでください。 詳細については、「[デリゲート](../cppcx/delegates-c-cx.md)」を参照してください。 デリゲートを作成および使用する方法の例については、[C\+\+ で Windows ランタイム コンポーネントを作成する](http://msdn.microsoft.com/library/5b7251e6-4271-4f13-af80-c1cf5b1489bf) を参照してください。  
+### <a name="remarks"></a>コメント  
+ デリゲートを作成するには [delegate](../windows/delegate-cpp-component-extensions.md) キーワードを使用します。Platform::Delegate を明示的に使用しないでください。 詳細については、「[デリゲート](../cppcx/delegates-c-cx.md)」を参照してください。 作成し、デリゲートの利用方法の例は、次を参照してください。 [C++ での Windows ランタイム コンポーネントの作成](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)です。  
   
-## 必要条件  
- **サポートされている最低限のクライアント:** [!INCLUDE[win8](../cppcx/includes/win8-md.md)]  
+### <a name="requirements"></a>必要条件  
+ **クライアントがサポートされる最小:** Windows 8  
   
- **サポートされている最低限のサーバー:** [!INCLUDE[winserver8](../cppcx/includes/winserver8-md.md)]  
+ **サポートされているサーバーの最小値:** Windows Server 2012  
   
  **名前空間:** Platform  
   
  **メタデータ:** platform.winmd  
   
-## 参照  
- [プラットフォーム名前空間](../cppcx/platform-namespace-c-cx.md)
+## <a name="see-also"></a>参照  
+ [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

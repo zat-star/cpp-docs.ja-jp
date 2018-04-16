@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -23,7 +24,8 @@ f1_keywords:
 - AFXOLE/CAsyncMonikerFile::OnProgress
 - AFXOLE/CAsyncMonikerFile::OnStartBinding
 - AFXOLE/CAsyncMonikerFile::OnStopBinding
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CAsyncMonikerFile [MFC], CAsyncMonikerFile
 - CAsyncMonikerFile [MFC], Close
@@ -39,15 +41,17 @@ helpviewer_keywords:
 - CAsyncMonikerFile [MFC], OnStartBinding
 - CAsyncMonikerFile [MFC], OnStopBinding
 ms.assetid: 17378b66-a49a-4b67-88e3-7756ad26a2fc
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: de31d57f3b9724cf8a3075b34be45a21556aea2f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 546e251f3387175812e6ba7f8cfed5d8a878d658
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="casyncmonikerfile-class"></a>CAsyncMonikerFile クラス
 ActiveX コントロール (以前の OLE コントロール) で非同期モニカーを使用するための機能が用意されています。  
@@ -110,7 +114,7 @@ class CAsyncMonikerFile : public CMonikerFile
   
  `CAsyncMonikerFile`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxole.h  
   
 ##  <a name="casyncmonikerfile"></a>CAsyncMonikerFile::CAsyncMonikerFile  
@@ -406,7 +410,7 @@ virtual BOOL Open(
   
  [!code-cpp[NVC_MFCWinInet#7](../../mfc/codesnippet/cpp/casyncmonikerfile-class_3.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CMonikerFile クラス](../../mfc/reference/cmonikerfile-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CMonikerFile クラス](../../mfc/reference/cmonikerfile-class.md)   

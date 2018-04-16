@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: 'index-page '
-f1_keywords: vc.atl.structures
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- vc.atl.structures
+dev_langs:
+- C++
 helpviewer_keywords:
 - ATL, structures
 - structures, ATL
 ms.assetid: 622173c8-6f2e-457c-8fae-28d4e80ecdb5
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2546608c3c84a2228fba35bb1470064f64c2212b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0f071f9db47334721212d2fe5b13bed31e25f0c0
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atl-structures"></a>構造体
 

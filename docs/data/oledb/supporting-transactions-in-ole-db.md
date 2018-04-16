@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - OLE DB consumer templates [C++], transaction support
 - transactions [C++], OLE DB support for
@@ -16,26 +18,29 @@ helpviewer_keywords:
 - databases [C++], transactions
 - distributed transactions [C++]
 ms.assetid: 3d72e583-ad38-42ff-8f11-e2166d60a5a7
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9a7b1e937a7fa1ab33ff74d3c4e42856928320fc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 84849b2d9bfd899a0ffd8a5d8eafe12f91a4adce
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="supporting-transactions-in-ole-db"></a>OLE DB でのトランザクションのサポート
 A[トランザクション](../../data/transactions-mfc-data-access.md)グループ、またはバッチの場合は、すべて成功が 1 回にコミットされるか (存在する任意の 1 つには失敗) は一切コミットされませんように一連のデータ ソースを更新する方法は、トランザクション全体がロールバックされます。 このプロセスは、データ ソースの結果の整合性を確保します。  
   
  OLE DB では、次の 3 つの方法でトランザクションをサポートしています。  
   
--   [Itransactionlocal::starttransaction](https://msdn.microsoft.com/en-us/library/ms709786.aspx)  
+-   [ITransactionLocal::StartTransaction](https://msdn.microsoft.com/en-us/library/ms709786.aspx)  
   
--   [Itransaction::commit](https://msdn.microsoft.com/en-us/library/ms713008.aspx)  
+-   [ITransaction::Commit](https://msdn.microsoft.com/en-us/library/ms713008.aspx)  
   
--   [Itransaction::abort](https://msdn.microsoft.com/en-us/library/ms709833.aspx)  
+-   [ITransaction::Abort](https://msdn.microsoft.com/en-us/library/ms709833.aspx)  
   
 ## <a name="relationship-of-sessions-and-transactions"></a>セッションとトランザクションの関係  
  1 つのデータ ソース オブジェクトには、内部、または特定の時点でトランザクションのスコープ外のできる 1 つ以上のセッション オブジェクトを作成できます。  
@@ -59,5 +64,5 @@ A[トランザクション](../../data/transactions-mfc-data-access.md)グルー
 ## <a name="distributed-transactions"></a>分散トランザクション  
  分散トランザクションは、分散型データを更新するトランザクションです。1 つ以上のネットワーク コンピューター システム上のデータは、します。 分散システムでトランザクションをサポートする場合は、OLE DB トランザクション サポートではなく、.NET Framework を使用する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセサーの使用](../../data/oledb/using-accessors.md)

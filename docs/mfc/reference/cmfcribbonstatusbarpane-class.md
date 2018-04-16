@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -23,7 +24,8 @@ f1_keywords:
 - AFXRIBBONSTATUSBARPANE/CMFCRibbonStatusBarPane::StartAnimation
 - AFXRIBBONSTATUSBARPANE/CMFCRibbonStatusBarPane::StopAnimation
 - AFXRIBBONSTATUSBARPANE/CMFCRibbonStatusBarPane::OnFinishAnimation
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCRibbonStatusBarPane [MFC], CMFCRibbonStatusBarPane
 - CMFCRibbonStatusBarPane [MFC], GetAlmostLargeText
@@ -39,15 +41,17 @@ helpviewer_keywords:
 - CMFCRibbonStatusBarPane [MFC], StopAnimation
 - CMFCRibbonStatusBarPane [MFC], OnFinishAnimation
 ms.assetid: 5d034c3c-ecca-4267-b88c-0f55a2884dd0
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0f736494e55248650636526f9f3c394d39047e97
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e3d5059adf0ebbd1ed651d57354ae73beadb919f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcribbonstatusbarpane-class"></a>CMFCRibbonStatusBarPane クラス
 `CMFCRibbonStatusBarPane`クラスは、リボン ステータス バーに追加できるリボン要素を実装します。  
@@ -80,7 +84,7 @@ class CMFCRibbonStatusBarPane : public CMFCRibbonButton
 |[CMFCRibbonStatusBarPane::SetAnimationList](#setanimationlist)|アニメーションを使用できるイメージ リストをペインに割り当てます。|  
 |[CMFCRibbonStatusBarPane::SetTextAlign](#settextalign)|テキストの配置を設定します。|  
 |[CMFCRibbonStatusBarPane::StartAnimation](#startanimation)|ペインに割り当てられているアニメーションを開始します。|  
-|[CMFCRibbonStatusBarPane::StopAnimation](#stopanimation)|ペインに割り当てられているアニメーションを停止します。 」を参照してください。|  
+|[CMFCRibbonStatusBarPane::StopAnimation](#stopanimation)|ペインに割り当てられているアニメーションを停止します。 である必要があります。|  
   
 ### <a name="protected-methods"></a>プロテクト メソッド  
   
@@ -102,7 +106,7 @@ class CMFCRibbonStatusBarPane : public CMFCRibbonButton
   
  [CMFCRibbonStatusBarPane](../../mfc/reference/cmfcribbonstatusbarpane-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxribbonstatusbarpane.h  
   
 ##  <a name="cmfcribbonstatusbarpane"></a>CMFCRibbonStatusBarPane::CMFCRibbonStatusBarPane  
@@ -336,7 +340,7 @@ void StartAnimation(
 void StopAnimation();
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCRibbonButton クラス](../../mfc/reference/cmfcribbonbutton-class.md)   

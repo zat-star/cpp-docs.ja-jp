@@ -1,50 +1,56 @@
 ---
-title: "Making Controls the Same Width, Height, or Size | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Make Same Size command"
-  - "controls [C++], sizing"
+title: "同じ幅、高さ、またはサイズのコントロールの作成 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Make Same Size command
+- controls [C++], sizing
 ms.assetid: 94b50613-67e2-497b-a2b6-6d98dccfd345
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 6aac3e9249bd6583bc718cba9667bdc2bc9a7ab9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Making Controls the Same Width, Height, or Size
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-最も優先度の高いコントロールのサイズに基づいて、コントロール グループのサイズを変更できます。  また、[キャプション テキストの大きさに基づいてコントロールのサイズを変更](../mfc/sizing-individual-controls.md)できます。  
+# <a name="making-controls-the-same-width-height-or-size"></a>複数のコントロールに対する同一の幅、高さ、またはサイズの設定
+主要なコントロールのサイズに基づいてコントロールのグループのサイズを変更することができます。 こともできます[キャプション テキストのサイズに基づいて、コントロールのサイズを変更する](../windows/sizing-individual-controls.md)です。  
   
-### 複数のコントロールを同じ幅、高さ、またはサイズにするには  
+### <a name="to-make-controls-the-same-width-height-or-size"></a>複数のコントロールを同じ幅、高さ、またはサイズ  
   
-1.  サイズを変更する[コントロールを選択](../mfc/selecting-multiple-controls.md)します。  
+1.  [コントロールを選択する](../windows/selecting-multiple-controls.md)サイズを変更します。  
   
-     複数のコントロールを選択した場合は、最初に選択したものが最も優先度の高いコントロールになります。  グループ内のコントロールの最終的なサイズは、最も優先度の高いコントロールのサイズによって決まります。  最も優先度の高いコントロールの選択の詳細については、「[最も優先度の高いコントロールの指定](../mfc/specifying-the-dominant-control.md)」を参照してください。  
+     系列の最初に選択コントロールは、主要なコントロールです。 グループ内のコントロールの最終的なサイズは、主要なコントロールのサイズによって異なります。 主要なコントロールを選択する方法の詳細については、次を参照してください。 [Dominant コントロールの指定](../windows/specifying-the-dominant-control.md)です。  
   
-2.  \[書式\] メニューの \[同じサイズに揃える\] を選択し、以下のコマンドのいずれかを選択します。  
+2.  **形式**] メニューの [選択**同じサイズに揃える**、次のコマンドのいずれかを選択します。  
   
-    -   **Both**  
+    -   **両方とも**  
   
     -   **高さ**  
   
     -   **幅**  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  Win32  
   
-## 参照  
- [Controls in Dialog Boxes](../mfc/controls-in-dialog-boxes.md)   
+## <a name="see-also"></a>参照  
+ [ダイアログ ボックスのコントロール](../windows/controls-in-dialog-boxes.md)   
  [コントロール](../mfc/controls-mfc.md)
+

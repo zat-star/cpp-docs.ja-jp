@@ -1,33 +1,37 @@
 ---
-title: "CMyProviderCommand (MyProviderRS.H) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cmyprovidercommand"
-  - ""myproviderrs.h""
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CMyProviderCommand クラス MyProviderRS.H"
-  - "OLE DB プロバイダー, ウィザードが生成したファイル"
+title: "CMyProviderCommand (MyProviderRS.H) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cmyprovidercommand
+- myproviderrs.h
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE DB providers, wizard-generated files
+- CMyProviderCommand class in MyProviderRS.H
 ms.assetid: b30b956e-cc91-4cf5-9fe6-f8b1ce9cc2a5
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: fe0852b619dc89df4ab9a04f2e7dcbac5d308fce
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CMyProviderCommand (MyProviderRS.H)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-`CMyProviderCommand` クラスは、プロバイダー コマンド オブジェクトのための実装です。  これは、`IAccessor`、`ICommandText`、および **ICommandProperties** の各インターフェイスの実装を提供します。  `IAccessor` は、行セットで使用されるものと同じインターフェイスです。  コマンド オブジェクトは、アクセサーを使用してパラメーター間の連結を指定します。  行セット オブジェクトは、出力列の連結を指定するために、これらの連結を使用します。  `ICommandText` インターフェイスを使用すると、コマンドをテキストとして指定できるため便利です。  この例では、`ICommandText` インターフェイスは、後でカスタム コードを追加するときに使用します。また、`ICommand::Execute` メソッドもオーバーライドします。  **ICommandProperties** インターフェイスは、コマンド オブジェクトと行セット オブジェクトで使用されるすべてのプロパティを処理します。  
+# <a name="cmyprovidercommand-myproviderrsh"></a>CMyProviderCommand (MyProviderRS.H)
+`CMyProviderCommand`クラスは、プロバイダー コマンド オブジェクトの実装です。 実装を提供、 `IAccessor`、 `ICommandText`、および**ICommandProperties**インターフェイスです。 `IAccessor`インターフェイスは、行セット内の 1 つと同じです。 コマンド オブジェクトでは、アクセサーを使用して、バインド パラメーターを指定します。 行セット オブジェクトでは、出力列のバインドを指定するのに、それらを使用します。 `ICommandText`インターフェイスは、テキスト コマンドを指定する便利な方法です。 この例では、`ICommandText`インターフェイスの後でカスタム コードを追加する場合以外もオーバーライドの場合は、`ICommand::Execute`メソッドです。 **ICommandProperties**インターフェイスは、すべてのコマンドや行セット オブジェクトのプロパティを処理します。  
   
 ```  
 // CMyProviderCommand  
@@ -42,11 +46,11 @@ class ATL_NO_VTABLE CMyProviderCommand :
    public IColumnsInfoImpl<CMyProviderCommand>  
 ```  
   
- コマンドと行セットで使用される連結はすべて、`IAccessor` インターフェイスで操作します。  コンシューマーは、DBBINDING 構造体の配列を引数として IAccessor::CreateAccessor を呼び出します。  各 **DBBINDING** 構造体には、列バインディングの処理方法 \(型や長さなど\) を指示する情報が含まれています。  プロバイダーは構造体を受け取り、データをどのように転送しらたよいか、変換の必要はないかを指定します。  `IAccessor` インターフェイスは、コマンドのパラメーターを処理するためにコマンド オブジェクトで使用されます。  
+ `IAccessor`インターフェイス コマンドと行セットで使用されるすべてのバインドを管理します。 コンシューマーは**iaccessor::createaccessor**の配列で**DBBINDING**構造体。 各**DBBINDING**構造には列のバインドの型と長さ) などの処理方法に関する情報が含まれています。 プロバイダーは、構造体を受け取り、データの転送方法と、すべての変換が必要かどうかを判断します。 `IAccessor`インターフェイスは、コマンドのパラメーターを処理するコマンド オブジェクトで使用します。  
   
- コマンド オブジェクトは、`IColumnsInfo` の実装も提供します。  OLE DB には、`IColumnsInfo` インターフェイスも必要です。  コンシューマーは、インターフェイスを使用して、コマンドからのパラメーターに関する情報を取得できます。  行セット オブジェクトは、`IColumnsInfo` インターフェイスを使用して、出力列に関する情報をプロバイダーに返します。  
+ コマンド オブジェクトは、の実装も用意されています。`IColumnsInfo`です。 OLE DB が必要です、`IColumnsInfo`インターフェイスです。 インターフェイスは、コマンドからパラメーターに関する情報を取得するコンシューマーを使用します。 行セット オブジェクトを使用して、`IColumnsInfo`インターフェイスをプロバイダーに、出力列に関する情報を返します。  
   
- プロバイダーには、`IObjectWithSite` インターフェイスも含まれます。  `IObjectWithSite` インターフェイスは ATL 2.0 より実装されました。このインターフェイスを使用すると、実装側は自身に関する情報を子に渡すことができます。  コマンド オブジェクトは、`IObjectWithSite` 情報を使用して、生成された行セット オブジェクトに、その行セット オブジェクトの作成元を知らせます。  
+ プロバイダーと呼ばれるインターフェイスも含まれています。`IObjectWithSite`です。 `IObjectWithSite`インターフェイスは、ATL 2.0 が実装されていたでき、その子にそれ自体に関する情報を渡すインプリメンタです。 コマンド オブジェクトを使用して、`IObjectWithSite`いずれかを通知する情報が行セット オブジェクトが作成したかの概要を生成します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [プロバイダー ウィザードで生成されたファイル](../../data/oledb/provider-wizard-generated-files.md)

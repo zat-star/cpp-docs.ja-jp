@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.codewiz.classes.adding.mfc
-dev_langs: C++
+f1_keywords:
+- vc.codewiz.classes.adding.mfc
+dev_langs:
+- C++
 helpviewer_keywords:
 - classes [MFC], adding MFC
 - MFC, adding classes
 ms.assetid: 9a96b67f-40bf-43d4-8872-2f8dfc5404f1
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6d0bff223639a3d7f099b7134d519d5a0e43ae3b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2ab339ce7dc883c80941f0fe7f72da7ef852af52
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-an-mfc-class"></a>MFC クラスの追加
 プロジェクトに Microsoft Foundation Class (MFC) ライブラリ クラスから派生したクラスを追加するには、使用、**クラスの追加**で使用できるコマンド[クラス ビュー](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925)です。 新しいクラスの名前を指定、基本クラスを選択し、それが関連付けられている (該当する場合) ダイアログ ボックスの ID を選択します。 コード ウィザードでは、ヘッダー ファイルと実装ファイルを作成し、それらをプロジェクトに追加します。  
@@ -39,7 +44,7 @@ ms.lasthandoff: 10/24/2017
   
 4.  をクリックして**完了**ウィザードを終了し、クラス ビューで、新しいクラスを表示します。 ウィザードでは、によって作成されたファイルを表示することもできます。**ソリューション エクスプ ローラー**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)   
  [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
  [クラスの概要](../../mfc/class-library-overview.md)

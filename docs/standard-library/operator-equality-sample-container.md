@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - std.==
 - std::==
@@ -14,21 +15,24 @@ f1_keywords:
 - std.operator==
 - std::operator==
 - ==
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - operator ==, containers
 - operator==, containers
 - == operator, with specific standard C++ objects
 ms.assetid: d3d8754e-5157-4b8b-bf9c-da41856f5eed
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c42f6328ce7867c49e240bbcd5946e551b2a5ac6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 43fe92355367d03a23b2540c79dcda4562a5df15
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="operator-ltsample-containergt"></a>operator== (&lt;sample container&gt;)
 > [!NOTE]
@@ -48,6 +52,6 @@ bool operator==(
 ## <a name="return-value"></a>戻り値  
  返します`left.`[サイズ](../standard-library/container-class-size.md) ` == right.size && equal(left.`[開始](../standard-library/container-class-begin.md)`, left.`[終了](../standard-library/container-class-end.md)`, right.begin)`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<sample container>](../standard-library/sample-container.md)
 

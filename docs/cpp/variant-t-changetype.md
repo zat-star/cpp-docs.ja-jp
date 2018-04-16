@@ -1,12 +1,12 @@
 ---
-title: "_variant_t::ChangeType |Microsoft ドキュメント"
-ms.custom: 
+title: _variant_t::ChangeType |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - _variant_t::ChangeType
@@ -22,12 +22,13 @@ caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 535bc332a108cf50badca116c496661b7c257bf7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5fb59090ebc4c6ff9120e813ae12a9defbe618b5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="varianttchangetype"></a>_variant_t::ChangeType
 **Microsoft 固有の仕様**  
@@ -56,5 +57,5 @@ ms.lasthandoff: 09/25/2017
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_variant_t クラス](../cpp/variant-t-class.md)

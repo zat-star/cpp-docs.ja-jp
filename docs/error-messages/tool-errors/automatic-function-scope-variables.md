@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - automatic variables
 - variables, automatic
 - functions [C++], scope
 - scope, declared within functions
 ms.assetid: 6e1a14c2-1fb0-4937-8628-8d963cc35ed4
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5101d25a043248fe7f9a83813462e75b792d7fd3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 73f883f1991df8f8240c7759b277c23258197da0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="automatic-function-scope-variables"></a>自動変数 (関数スコープ)
 関数内で宣言された変数は、その関数のスコープ内でのみ使用できます。  
@@ -62,5 +66,5 @@ void test(void) {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー ツール エラー LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)

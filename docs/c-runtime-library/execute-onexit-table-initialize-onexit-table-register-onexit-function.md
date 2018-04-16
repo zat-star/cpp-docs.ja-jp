@@ -10,7 +10,8 @@ apiname:
 - _execute_onexit_table
 - _initialize_onexit_table
 - _register_onexit_function
-apilocation: api-ms-win-crt-runtime-l1-1-0.dll
+apilocation:
+- api-ms-win-crt-runtime-l1-1-0.dll
 apitype: DLLExport
 f1_keywords:
 - _execute_onexit_table
@@ -19,21 +20,24 @@ f1_keywords:
 - process/_initialize_onexit_table
 - _register_onexit_function
 - process/_register_onexit_function
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _execute_onexit_table function
 - _initialize_onexit_table function
 - _register_onexit_function function
 ms.assetid: ad9e4149-d4ad-4fdf-aaaf-cf786fcb4473
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 630b8a5160eaa808c12c16ec8dd45a96a621b7bb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d2aa296c04d81fcdea2000ab8e2dbc1ae5523673
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="executeonexittable-initializeonexittable-registeronexitfunction"></a>_execute_onexit_table、_initialize_onexit_table、_register_onexit_function
 終了時に呼び出されるルーチンを管理します。  
@@ -74,15 +78,15 @@ int _execute_onexit_table(
   
  `_execute_onexit_table` 関数は、onexit 関数テーブル内のすべての関数を実行し、テーブルをクリアして、制御を返します。 `_execute_onexit_table` の呼び出しの後、このテーブルは無効な状態になります。再度使用するには `_initialize_onexit_table` を呼び出して事前に再初期化しておく必要があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_initialize_onexit_table function`、`_register_onexit_function`、`_execute_onexit_table`|C、C++: \<process.h>|  
   
- `_initialize_onexit_table`、`_register_onexit_function`、`_execute_onexit_table` の各関数は、Microsoft 固有の関数です。 互換性の詳細については、「[互換性](../c-runtime-library/compatibility.md)」を参照してください。  
+ `_initialize_onexit_table`、`_register_onexit_function`、`_execute_onexit_table` の各関数は、Microsoft 固有の関数です。 互換性の詳細については、「[互換性](../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [atexit](../c-runtime-library/reference/atexit.md)   
  [exit、_Exit、_exit](../c-runtime-library/reference/exit-exit-exit.md)   
  [_onexit、_onexit_m](../c-runtime-library/reference/onexit-onexit-m.md)

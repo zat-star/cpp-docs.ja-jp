@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: type_traits/std::is_member_pointer
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- type_traits/std::is_member_pointer
+dev_langs:
+- C++
 helpviewer_keywords:
 - is_member_pointer class
 - is_member_pointer
 ms.assetid: da07ff4e-9ee0-4baa-ad93-1741f10913d1
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 49be20f858d14552cfde1ad3fc4cecf0fc738e84
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3acdc4deb52df68059a1cc38660e459dcf656234
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ismemberpointer-class"></a>is_member_pointer クラス
 型がメンバーへのポインターであるかどうかをテストします。  
@@ -84,12 +89,12 @@ is_member_pointer<int trivial::*> == true
 is_member_pointer<int (functional::*)()> == true  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)   
  [is_member_function_pointer クラス](../standard-library/is-member-function-pointer-class.md)   
  [is_member_object_pointer クラス](../standard-library/is-member-object-pointer-class.md)   

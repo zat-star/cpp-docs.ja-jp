@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: U1035
-dev_langs: C++
-helpviewer_keywords: U1035
+f1_keywords:
+- U1035
+dev_langs:
+- C++
+helpviewer_keywords:
+- U1035
 ms.assetid: 68f0cc59-007e-4109-ac30-7ac4ac447e6d
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a4d672618656b72ab7ac4c4ed617c90080b58304
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0d7730f882b40c24822cb4b8e2c6a12147cacf2d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="nmake-fatal-error-u1035"></a>NMAKE の致命的なエラー U1035
 構文エラー: 予想 ':' または '=' 区切り記号  

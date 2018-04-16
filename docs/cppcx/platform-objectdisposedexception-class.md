@@ -1,47 +1,52 @@
 ---
-title: "Platform::ObjectDisposedException クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/30/2016"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Platform/Platform::ObjectDisposedException"
-  - "Platform/Platform::ObjectDisposedException::ObjectDisposedException"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Platform::ObjectDisposedException"
+title: "Platform::objectdisposedexception クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 12/30/2016
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::ObjectDisposedException
+- VCCORLIB/Platform::ObjectDisposedException::ObjectDisposedException
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::ObjectDisposedException
 ms.assetid: 68506fe4-d09c-4407-999f-1e3edb261d41
-caps.latest.revision: 5
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 52732d37179a12ebe8470380570e3cf51965d9c6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# Platform::ObjectDisposedException クラス
+# <a name="platformobjectdisposedexception-class"></a>Platform::ObjectDisposedException クラス
 破棄されたオブジェクトで操作が実行されるとスローされます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 public ref class ObjectDisposedException : COMException,    IException,    IPrintable,    IEquatable  
 ```  
   
-## コメント  
- 詳細については、「[COMException](../cppcx/platform-comexception-class.md)」を参照してください。  
+### <a name="remarks"></a>コメント  
+ 詳細については、「 [COMException](../cppcx/platform-comexception-class.md)」を参照してください。  
   
-## 必要条件  
- **サポートされている最低限のクライアント:** [!INCLUDE[win8](../cppcx/includes/win8-md.md)]  
+### <a name="requirements"></a>必要条件  
+ **クライアントがサポートされる最小:** Windows 8  
   
- **サポートされている最低限のサーバー:** [!INCLUDE[winserver8](../cppcx/includes/winserver8-md.md)]  
+ **サポートされているサーバーの最小値:** Windows Server 2012  
   
  **名前空間:** Platform  
   
  **メタデータ:** platform.winmd  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Platform::COMException クラス](../cppcx/platform-comexception-class.md)

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - what's new [C++], keywords
 - what's new [C++], language features
@@ -15,15 +17,18 @@ helpviewer_keywords:
 - keywords [C++]
 - Managed Extensions for C++, replacement syntax
 ms.assetid: 1e400ee6-3ac9-4910-a608-9d3d5993e423
-caps.latest.revision: "77"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 13830c1533c4a4124a6e77105f3b9daa794c8240
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: e32057e17614da98c78d877fe95180dd02500909
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="component-extensions-for-runtime-platforms"></a>ランタイム プラットフォームのコンポーネントの拡張機能
 Visual C++ には、ランタイム プラットフォームに対するプログラミングに役立つ言語拡張が用意されています。 使用する C + + CX、ユニバーサル Windows プラットフォーム アプリとネイティブ コードにコンパイルされるコンポーネントをプログラミングできます。 C + を使用して、Windows ランタイムの COM インターフェイスに対して直接プログラミングしてユニバーサル Windows プラットフォーム アプリを作成できますが、+ CX、コンス トラクター、例外、およびその他の最新の C++ プログラミングの表現方法で操作することができます。 .NET プラットフォームでマネージ実行環境での C++ プログラミングを有効にするを使用することが C + + CLI です。  
@@ -45,44 +50,44 @@ Visual C++ には、ランタイム プラットフォームに対するプロ�
   
 |キーワード|状況依存|目的|参照|  
 |-------------|-----------------------|-------------|---------------|  
-|`ref class`<br /><br /> `ref struct`|いいえ|クラスを宣言します。|[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)|  
-|`value class`<br /><br /> `value struct`|いいえ|値クラスを宣言します。|[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)|  
-|`interface class`<br /><br /> `interface struct`|いいえ|インターフェイスを宣言します。|[インターフェイス クラス](../windows/interface-class-cpp-component-extensions.md)|  
-|`enum class`<br /><br /> `enum struct`|いいえ|列挙型を宣言します。|[列挙型クラス](../windows/enum-class-cpp-component-extensions.md)|  
-|`property`|はい|プロパティを宣言します。|[プロパティ](../windows/property-cpp-component-extensions.md)|  
-|`delegate`|はい|デリゲートを宣言します。|[delegate (C++ コンポーネント拡張)](../windows/delegate-cpp-component-extensions.md)|  
-|`event`|はい|イベントを宣言します。|[event](../windows/event-cpp-component-extensions.md)|  
+|`ref class`<br /><br /> `ref struct`|×|クラスを宣言します。|[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)|  
+|`value class`<br /><br /> `value struct`|×|値クラスを宣言します。|[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)|  
+|`interface class`<br /><br /> `interface struct`|×|インターフェイスを宣言します。|[インターフェイス クラス](../windows/interface-class-cpp-component-extensions.md)|  
+|`enum class`<br /><br /> `enum struct`|×|列挙型を宣言します。|[列挙型クラス](../windows/enum-class-cpp-component-extensions.md)|  
+|`property`|[はい]|プロパティを宣言します。|[プロパティ](../windows/property-cpp-component-extensions.md)|  
+|`delegate`|[はい]|デリゲートを宣言します。|[delegate (C++ コンポーネント拡張)](../windows/delegate-cpp-component-extensions.md)|  
+|`event`|[はい]|イベントを宣言します。|[event](../windows/event-cpp-component-extensions.md)|  
   
 ## <a name="override-specifiers"></a>オーバーライド指定子  
  次のキーワードは、派生のオーバーライド動作を修飾するために使用できます。 `new` キーワードは C++ の拡張ではありませんが、追加のコンテキストで使用できるキーワードとしてこの一覧に含めてあります。 一部の指定子は、ネイティブのプログラミングに対しても有効です。 詳細については、次を参照してください。[する方法: オーバーライド指定子を宣言ネイティブ コンパイルで (C + + CLI)](../dotnet/how-to-declare-override-specifiers-in-native-compilations-cpp-cli.md)です。  
   
 |キーワード|状況依存|目的|参照|  
 |-------------|-----------------------|-------------|---------------|  
-|`abstract`|はい|関数またはクラスが抽象型であることを示します。|[abstract](../windows/abstract-cpp-component-extensions.md)|  
-|`new`|いいえ|関数が基底クラスのバージョンのオーバーライドでないことを示します。|[new (新しいスロット vtable の)](../windows/new-new-slot-in-vtable-cpp-component-extensions.md)|  
-|`override`|はい|メソッドが基底クラスのバージョンのオーバーライドでなければならないことを示します。|[override](../windows/override-cpp-component-extensions.md)|  
-|`sealed`|はい|クラスを基底クラスとして使用しないことを示します。|[sealed](../windows/sealed-cpp-component-extensions.md)|  
+|`abstract`|[はい]|関数またはクラスが抽象型であることを示します。|[abstract](../windows/abstract-cpp-component-extensions.md)|  
+|`new`|×|関数が基底クラスのバージョンのオーバーライドでないことを示します。|[new (新しいスロット vtable の)](../windows/new-new-slot-in-vtable-cpp-component-extensions.md)|  
+|`override`|[はい]|メソッドが基底クラスのバージョンのオーバーライドでなければならないことを示します。|[override](../windows/override-cpp-component-extensions.md)|  
+|`sealed`|[はい]|クラスを基底クラスとして使用しないことを示します。|[sealed](../windows/sealed-cpp-component-extensions.md)|  
   
 ## <a name="keywords-for-generics"></a>ジェネリックのキーワード  
  ジェネリック型をサポートするために追加されたキーワードを次に示します。 詳細については、「[ジェネリック](../windows/generics-cpp-component-extensions.md)」を参照してください。  
   
 |キーワード|状況依存|目的|  
 |-------------|-----------------------|-------------|  
-|`generic`|いいえ|ジェネリック型を宣言します。|  
-|`where`|はい|ジェネリック型パラメーターに適用される制約を指定します。|  
+|`generic`|×|ジェネリック型を宣言します。|  
+|`where`|[はい]|ジェネリック型パラメーターに適用される制約を指定します。|  
   
 ## <a name="miscellaneous-keywords"></a>その他のキーワード  
  C++ 拡張に追加されたその他のキーワードを次に示します。  
   
 |キーワード|状況依存|目的|参照|  
 |-------------|-----------------------|-------------|---------------|  
-|`finally`|はい|例外処理の既定の動作を示します。|[例外処理](../windows/exception-handling-cpp-component-extensions.md)|  
-|`for each, in`|いいえ|コレクションの要素を列挙します。|[for each、in](../dotnet/for-each-in.md)|  
-|`gcnew`|いいえ|ガベージ コレクション ヒープに型を割り当てます。 `new` と `delete` の代わりに使用します。|[ref new、gcnew](../windows/ref-new-gcnew-cpp-component-extensions.md)|  
-|`ref new`|はい|Windows ランタイム型を割り当てます。 `new` と `delete` の代わりに使用します。|[ref new、gcnew](../windows/ref-new-gcnew-cpp-component-extensions.md)|  
-|`initonly`|はい|宣言または静的コンストラクターでしかメンバーを初期化できないことを示します。|[initonly (C++/CLI)](../dotnet/initonly-cpp-cli.md)|  
-|`literal`|はい|リテラル変数を作成します。|[リテラル](../windows/literal-cpp-component-extensions.md)|  
-|`nullptr`|いいえ|ハンドルまたはポインターでオブジェクトを参照しないことを示します。|[nullptr](../windows/nullptr-cpp-component-extensions.md)|  
+|`finally`|[はい]|例外処理の既定の動作を示します。|[例外処理](../windows/exception-handling-cpp-component-extensions.md)|  
+|`for each, in`|×|コレクションの要素を列挙します。|[for each、in](../dotnet/for-each-in.md)|  
+|`gcnew`|×|ガベージ コレクション ヒープに型を割り当てます。 `new` と `delete` の代わりに使用します。|[ref new、gcnew](../windows/ref-new-gcnew-cpp-component-extensions.md)|  
+|`ref new`|[はい]|Windows ランタイム型を割り当てます。 `new` と `delete` の代わりに使用します。|[ref new、gcnew](../windows/ref-new-gcnew-cpp-component-extensions.md)|  
+|`initonly`|[はい]|宣言または静的コンストラクターでしかメンバーを初期化できないことを示します。|[initonly (C++/CLI)](../dotnet/initonly-cpp-cli.md)|  
+|`literal`|[はい]|リテラル変数を作成します。|[リテラル](../windows/literal-cpp-component-extensions.md)|  
+|`nullptr`|×|ハンドルまたはポインターでオブジェクトを参照しないことを示します。|[nullptr](../windows/nullptr-cpp-component-extensions.md)|  
   
 ## <a name="template-constructs"></a>テンプレートの構成要素  
  次の言語構成要素は、キーワードとしてではなく、テンプレートとして実装されています。 指定した場合、 **/ZW**コンパイラ オプションで定義されている、`lang`名前空間。 指定した場合、 **/clr**コンパイラ オプションで定義されている、`cli`名前空間。  
@@ -130,6 +135,6 @@ Visual C++ には、ランタイム プラットフォームに対するプロ�
 |[#using ディレクティブ](../preprocessor/hash-using-directive-cpp.md)|外部アセンブリをインポートします。|  
 |[XML に関するドキュメント](../ide/xml-documentation-visual-cpp.md)|使用して XML ベースのコード ドキュメントについて説明します[/doc (ドキュメント コメントの処理) (C/C++)](../build/reference/doc-process-documentation-comments-c-cpp.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET プログラミング C + +/CLI (Visual C)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)   
  [ネイティブと .NET の相互運用性](../dotnet/native-and-dotnet-interoperability.md)

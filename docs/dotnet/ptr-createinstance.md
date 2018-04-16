@@ -1,35 +1,40 @@
 ---
-title: "ptr::CreateInstance | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ptr.CreateInstance"
-  - "msclr::com::ptr::CreateInstance"
-  - "msclr.com.ptr.CreateInstance"
-  - "ptr::CreateInstance"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ptr::CreateInstance"
+title: ptr::CreateInstance |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- ptr.CreateInstance
+- msclr::com::ptr::CreateInstance
+- msclr.com.ptr.CreateInstance
+- ptr::CreateInstance
+dev_langs:
+- C++
+helpviewer_keywords:
+- ptr::CreateInstance
 ms.assetid: 9e8e4c4c-1651-4839-8829-5857d74470fe
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d764d18f3148dba663e1e6796c44a0add6aa8109
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ptr::CreateInstance
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`com::ptr` 内で COM オブジェクトのインスタンスを作成します。  
+# <a name="ptrcreateinstance"></a>ptr::CreateInstance
+内の COM オブジェクトのインスタンスを作成、`com::ptr`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void CreateInstance(  
@@ -70,29 +75,29 @@ void CreateInstance(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `progid`  
  `ProgID` 文字列。  
   
  `pouter`  
- 集約オブジェクトの IUnknown インターフェイス \(制御元の IUnknown\) へのポインター。  `pouter` を指定しない場合は、`NULL` が使用されます。  
+ 集約オブジェクトの IUnknown インターフェイス (controlling IUnknown) へのポインター。 場合`pouter`が指定されていない`NULL`を使用します。  
   
  `cls_context`  
- 新規作成されたオブジェクトを管理するコードが実行されるコンテキスト。  `CLSCTX` 列挙型の値の、いずれかが値として使用されます。  `cls_context` を指定しない場合は、値 CLSCTX\_ALL が使用されます。  
+ 新しく作成されたオブジェクトを管理するコードを実行するコンテキスト。 値がから取得されます、`CLSCTX`列挙します。 場合`cls_context`が指定されていない値 CLSCTX_ALL が使用されます。  
   
  `rclsid`  
- オブジェクトの作成に使用されるデータとコードに関連付けられている `CLSID`。  
+ `CLSID`データとオブジェクトの作成に使用されるコードに関連付けられています。  
   
-## 例外  
- `com::ptr` が COM オブジェクトへの参照を既に所有する場合、`CreateInstance` は <xref:System.InvalidOperationException> をスローします。  
+## <a name="exceptions"></a>例外  
+ 場合、 `com::ptr` COM オブジェクトへの参照が既に所有して`CreateInstance`スロー<xref:System.InvalidOperationException>です。  
   
- この関数は、`CoCreateInstance` を呼び出し、エラー `HRESULT` を適切な例外に変換するために <xref:System.Runtime.InteropServices.Marshal.ThrowExceptionForHR%2A> を使用します。  
+ この関数が呼び出す`CoCreateInstance`を使用して<xref:System.Runtime.InteropServices.Marshal.ThrowExceptionForHR%2A>エラーに変換する`HRESULT`適切な例外にします。  
   
-## 解説  
- `CreateInstance` は、`CoCreateInstance` を使用することにより、ProgID または CLSID のいずれかから識別された指定のオブジェクトの新しいインスタンスを作成します。  `com::ptr` は、新しく作成されたオブジェクトを参照し、消滅時に所有されている参照をすべて自動的に解放します。  
+## <a name="remarks"></a>コメント  
+ `CreateInstance`使用して`CoCreateInstance`ProgID または CLSID のいずれかを識別する、指定したオブジェクトの新しいインスタンスを作成します。 `com::ptr`新しく作成されたオブジェクトを参照し、自動的に破棄後に所有しているすべての参照を解放します。  
   
-## 使用例  
- この例では、プライベート メンバー `IXMLDOMDocument` オブジェクトをラップするために `com::ptr` を使用する CLR クラスを実装します。  クラス コンストラクターは、ProgID から、または CLSCTX と CLSID からドキュメント オブジェクトを作成するために、`CreateInstance` の 2 つの異なる形式を使用します。  
+## <a name="example"></a>例  
+ この例を使用して CLR クラスを実装して、`com::ptr`をそのプライベート メンバーをラップする`IXMLDOMDocument`オブジェクト。 クラスのコンス トラクターの 2 つの異なる形式を使用して`CreateInstance`ProgID または CLSID に加えて、CLSCTX からドキュメント オブジェクトを作成します。  
   
 ```  
 // comptr_createinstance.cpp  
@@ -141,10 +146,10 @@ int main() {
 }  
 ```  
   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\com\\ptr.h\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\com\ptr.h >  
   
- **名前空間** msclr::com  
+ **Namespace** msclr::com  
   
-## 参照  
- [ptr Members](../dotnet/ptr-members.md)
+## <a name="see-also"></a>参照  
+ [ptr のメンバー](../dotnet/ptr-members.md)

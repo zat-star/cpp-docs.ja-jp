@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -18,7 +19,8 @@ f1_keywords:
 - AFXTEMPL/CTypedPtrArray::InsertAt
 - AFXTEMPL/CTypedPtrArray::SetAt
 - AFXTEMPL/CTypedPtrArray::SetAtGrow
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CTypedPtrArray [MFC], Add
 - CTypedPtrArray [MFC], Append
@@ -29,15 +31,17 @@ helpviewer_keywords:
 - CTypedPtrArray [MFC], SetAt
 - CTypedPtrArray [MFC], SetAtGrow
 ms.assetid: e3ecdf1a-a889-4156-92dd-ddbd36ccd919
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 975844d2a5dcad3afecd07411d2992abb6c8578b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6e08749341bd7865c89e397e36aeff3a6ccc0d71
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctypedptrarray-class"></a>CTypedPtrArray クラス
 `CPtrArray` クラスまたは `CObArray`クラスのオブジェクトに対してタイプセーフな "ラッパー" を提供します。  
@@ -91,7 +95,7 @@ class CTypedPtrArray : public BASE_CLASS
   
  `CTypedPtrArray`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxtempl.h  
   
 ##  <a name="add"></a>CTypedPtrArray::Add  
@@ -301,7 +305,7 @@ void SetAtGrow(
 ### <a name="remarks"></a>コメント  
  詳細についてを参照してください。 [CObArray::SetAtGrow](../../mfc/reference/cobarray-class.md#setatgrow)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプルの収集](../../visual-cpp-samples.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CPtrArray クラス](../../mfc/reference/cptrarray-class.md)   

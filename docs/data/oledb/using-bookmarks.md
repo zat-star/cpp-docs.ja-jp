@@ -4,28 +4,33 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - rowsets, bookmarks
 - OLE DB provider templates, bookmarks
 - bookmarks, OLE DB
 - OLE DB providers, bookmark support
 ms.assetid: 7fa1d1a8-5063-4aa9-93ee-815bb9c98fae
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4b7c5c1a7722e378e313e1b0fe8e9ed10d97ddb9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 18c3f8cfb77e9bcd0719fd7130441f628df6eb58
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="using-bookmarks"></a>ブックマークの使用
-行セットを開く前に、ブックマークを使用することをプロバイダーに指示する必要があります。 これを行うには、次のように設定します。、 **DBPROP_BOOKMARKS**プロパティを**true**プロパティで設定します。 特殊マクロを使用する必要がありますので、プロバイダーが列 0 としてブックマークを取得`BOOKMARK_ENTRY`と`CBookmark`クラスの静的アクセサーを使用している場合。 `CBookmark`引数がブックマーク バッファーの長さ (バイト単位) は、テンプレート クラスです。 ブックマークに必要なバッファーの長さは、プロバイダーによって異なります。 次の例で示すように、ODBC OLE DB プロバイダーを使用する場合、バッファーは 4 バイトにする必要があります。  
+行セットを開く前に、ブックマークを使用することをプロバイダーに指示する必要があります。 これを行うには、次のように設定します。、 **DBPROP_BOOKMARKS**プロパティを**true**プロパティで設定します。 特殊マクロを使用する必要がありますので、プロバイダーが列 0 としてブックマークを取得`BOOKMARK_ENTRY`と`CBookmark`クラスの静的アクセサーを使用している場合。 `CBookmark` 引数がブックマーク バッファーの長さ (バイト単位) は、テンプレート クラスです。 ブックマークに必要なバッファーの長さは、プロバイダーによって異なります。 次の例で示すように、ODBC OLE DB プロバイダーを使用する場合、バッファーは 4 バイトにする必要があります。  
   
 ```  
 class CProducts  
@@ -39,9 +44,11 @@ public:
 };  
   
 CDBPropSet propset(DBPROPSET_ROWSET);  
+
 propset.AddProperty(DBPROP_BOOKMARKS, true);  
   
-CTable<CAccessor<CProducts> > product;  
+
+CTable<CAccessor<CProducts>> product;  
 product.Open(session, "Products", &propset);  
 ```  
   
@@ -52,13 +59,17 @@ CTable<CDynamicAccessor> product;
 CBookmark<>              bookmark;  
 CDBPropSet propset(DBPROPSET_ROWSET);  
   
+
 propset.AddProperty(DBPROP_BOOKMARKS, true);  
+
 product.Open(session, "Products", &propset);  
+
 product.MoveNext();  
+
 product.GetBookmark(&bookmark);  
 ```  
   
  プロバイダーのブックマークをサポートする方法については、次を参照してください。[プロバイダーのブックマーク サポート](../../data/oledb/provider-support-for-bookmarks.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセサーの使用](../../data/oledb/using-accessors.md)

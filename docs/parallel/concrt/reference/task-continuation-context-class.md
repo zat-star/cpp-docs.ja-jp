@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - task_continuation_context
 - PPLTASKS/concurrency::task_continuation_context
@@ -15,21 +16,25 @@ f1_keywords:
 - PPLTASKS/concurrency::task_continuation_context::use_current
 - PPLTASKS/concurrency::task_continuation_context::use_default
 - PPLTASKS/concurrency::task_continuation_context::use_synchronous_execution
-dev_langs: C++
-helpviewer_keywords: task_continuation_context class
+dev_langs:
+- C++
+helpviewer_keywords:
+- task_continuation_context class
 ms.assetid: 1fb5a76a-3682-45c2-a615-8b6b527741f0
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 48ef4f4646aedf648e3bb9efb572c203d7047378
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 41cd6fa1dd219eb7179209839f0176deff43345c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="taskcontinuationcontext-class"></a>task_continuation_context クラス
-`task_continuation_context` クラスを使用すると、継続する場所を指定できます。 このクラスは、Windows ストア アプリから使用する場合にのみ役に立ちます。 Windows ストア アプリを使用していない場合、タスク継続の実行コンテキストはランタイムによって決まり、構成できません。  
+`task_continuation_context` クラスを使用すると、継続する場所を指定できます。 のみである Windows ランタイム アプリからこのクラスを使用すると便利です。 非 Windows ランタイム アプリでは、タスク継続の実行コンテキストは、ランタイムによって決定され、構成できません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -54,12 +59,12 @@ class task_continuation_context : public details::_ContextCallback;
   
  `task_continuation_context`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** ppltasks.h  
   
  **名前空間:** concurrency  
 
-## <a name="get_current_winrt_context"></a>get_current_winrt_context
+## <a name="get_current_winrt_context"></a> get_current_winrt_context
  現在の WinRT スレッド コンテキストを表すタスクの継続コンテキスト オブジェクトを返します。  
   
 ## <a name="syntax"></a>構文  
@@ -79,7 +84,7 @@ static task_continuation_context get_current_winrt_context();
  このメソッドがに似ていますが、`use_current`メソッドも使用せず C + ネイティブの C++ コードに + CX 拡張機能のサポート。 使用する上級ユーザー作成のものでは +/ネイティブと Windows ランタイムの呼び出し元の両方のライブラリ コードは CX に依存しません。 この機能が必要な場合を除き、ことをお勧め、 `use_current` C + に使用されるメソッド + CX クライアント。  
   
   
-##  <a name="use_arbitrary"></a>use_arbitrary 
+##  <a name="use_arbitrary"></a> use_arbitrary 
 
  タスクの継続コンテキストを作成します。このコンテキストを使用すると、ランタイムで継続用の実行コンテキストを選択できます。  
   
@@ -95,9 +100,9 @@ static task_continuation_context use_arbitrary();
   
  `use_arbitrary` を使用すると、STA で作成されたアパートメント対応のタスクの継続に関する既定の動作を無効にすることができます。  
   
- このメソッドは、Windows ストア アプリでのみ使用できます。  
+ このメソッドは、Windows ランタイム アプリで利用できますのみです。  
   
-##  <a name="use_current"></a>use_current 
+##  <a name="use_current"></a> use_current 
 
  現在の実行コンテキストを表すタスクの継続コンテキスト オブジェクトを返します。  
   
@@ -113,9 +118,9 @@ static task_continuation_context use_current();
   
  `use_current` によって返される値を使用することで、ランタイムに対して、継続はキャプチャされたコンテキスト (STA と MTA) で実行されることを示すことができます。このような実行は、継続元タスクがアパートメントに対応しているかどうかに関係なく行われます。 アパートメントに対応するタスクとは、Windows Runtime `IAsyncInfo` インターフェイスのラップを解除するタスク、またはそのようなタスクの子となるタスクです。  
   
- このメソッドは、Windows ストア アプリでのみ使用できます。  
+ このメソッドは、Windows ランタイム アプリで利用できますのみです。  
   
-##  <a name="use_default"></a>use_default 
+##  <a name="use_default"></a> use_default 
 
  タスクの既定の継続コンテキストを作成します。  
   
@@ -127,13 +132,13 @@ static task_continuation_context use_default();
  既定の継続コンテキスト。  
   
 ### <a name="remarks"></a>コメント  
- 既定のコンテキストは、継続コンテキスト指定せずに `then` メソッドを呼び出すときに使用されます。 Windows 7 以前に対応した Windows アプリケーション、および Windows 8 以降に対応したデスクトップ アプリケーションでは、ランタイムによって、タスクの継続を実行する状況が判別されます。 ただし Windows ストア アプリでは、アパートメント対応のタスクの継続に関する既定の継続コンテキストは、`then` が呼び出されるアパートメントになります。  
+ 既定のコンテキストは、継続コンテキスト指定せずに `then` メソッドを呼び出すときに使用されます。 Windows 7 以前に対応した Windows アプリケーション、および Windows 8 以降に対応したデスクトップ アプリケーションでは、ランタイムによって、タスクの継続を実行する状況が判別されます。 ただし、Windows ランタイム アプリでアパートメント対応のタスクの継続に関する既定の継続コンテキストは、アパートメント、`then`が呼び出されます。  
   
  アパートメントに対応するタスクとは、Windows Runtime `IAsyncInfo` インターフェイスのラップを解除するタスク、またはそのようなタスクの子となるタスクです。 したがって、Windows ランタイム STA でアパートメント対応のタスクについて継続をスケジュールする場合、継続はその STA で実行されます。  
   
  アパートメント以外に対応するタスクの継続は、ランタイムが選択したコンテキストで実行されます。  
 
-## <a name="use_synchronous_execution"></a>task_continuation_context::use_synchronous_execution  
+## <a name="use_synchronous_execution"></a> task_continuation_context::use_synchronous_execution  
 同期の実行コンテキストを表すタスクの継続コンテキスト オブジェクトを返します。  
   
 ## <a name="syntax"></a>構文  
@@ -151,5 +156,5 @@ static task_continuation_context use_synchronous_execution();
  継続元タスクが既に完了して、継続が関連付けられている場合、継続は継続をアタッチするコンテキストで同期的に実行します。  
   
  
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [concurrency 名前空間](concurrency-namespace.md)

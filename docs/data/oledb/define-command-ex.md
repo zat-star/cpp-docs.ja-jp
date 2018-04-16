@@ -1,38 +1,40 @@
 ---
-title: "DEFINE_COMMAND_EX |Microsoft ドキュメント"
+title: DEFINE_COMMAND_EX | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: DEFINE_COMMAND_EX
-dev_langs: C++
-helpviewer_keywords: DEFINE_COMMAND_EX macro
+ms.topic: reference
+f1_keywords:
+- DEFINE_COMMAND_EX
+dev_langs:
+- C++
+helpviewer_keywords:
+- DEFINE_COMMAND_EX macro
 ms.assetid: d3e2ef20-1455-46d2-8499-8ab84bbb90a4
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9b3386f420e3af97ab01defbe57303a8100a2965
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e3fb4ce434f578ed79f3ed086adf73a6a49da870
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="definecommandex"></a>DEFINE_COMMAND_EX
 使用する場合、行セットの作成に使用されるコマンドを指定、 [CCommand](../../data/oledb/ccommand-class.md)クラスです。 Unicode と ANSI のアプリケーションをサポートしています。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-DEFINE_COMMAND_EX(  
-x  
-,   
-wszCommand  
- )  
+```cpp
+DEFINE_COMMAND_EX(x, wszCommand)  
   
 ```  
   
@@ -51,8 +53,8 @@ wszCommand
 ## <a name="example"></a>例  
  参照してください[BOOKMARK_ENTRY](../../data/oledb/bookmark-entry.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)

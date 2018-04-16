@@ -1,32 +1,37 @@
 ---
-title: "CriticalSection::Lock メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "corewrappers/Microsoft::WRL::Wrappers::CriticalSection::Lock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Lock メソッド"
+title: "Criticalsection::lock メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- corewrappers/Microsoft::WRL::Wrappers::CriticalSection::Lock
+dev_langs:
+- C++
+helpviewer_keywords:
+- Lock method
 ms.assetid: 37cb184c-e13c-49ef-b6a0-13908a956414
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: af996faeebd0fcddb85993badd71ceecd32d494e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# CriticalSection::Lock メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-指定クリティカル セクション オブジェクトの所有権のを待ちます。  呼び出し元スレッドが所有権を付与されたときに、関数の戻り値。  
+# <a name="criticalsectionlock-method"></a>CriticalSection::Lock メソッド
+指定されたクリティカル セクション オブジェクトの所有権を待機します。 この関数は、呼び出し元のスレッドには、所有権が付与されるを返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 SyncLock Lock();  
@@ -36,20 +41,20 @@ SyncLock Lock();
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `cs`  
- ユーザー指定のクリティカル セクション オブジェクト。  
+ クリティカル セクションのユーザーが指定したオブジェクトです。  
   
-## 戻り値  
- 現在のクリティカル セクションのロックを解除するために使用できるロック オブジェクト。  
+## <a name="return-value"></a>戻り値  
+ 現在の重要なセクションのロック解除に使用できるロック オブジェクト。  
   
-## 解説  
- **Lock** の最初の関数は、現在のクリティカル セクション オブジェクトに影響します。  **Lock** の 2 番目の関数は、ユーザーが指定したクリティカル セクションに影響します。  
+## <a name="remarks"></a>コメント  
+ 最初の**ロック**関数が現在のクリティカル セクション オブジェクトに影響します。 2 番目**ロック**関数、ユーザー指定のクリティカル セクションに影響します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
- **名前空間:** Microsoft::WRL::Wrappers  
+ **Namespace:** Microsoft::WRL::Wrappers  
   
-## 参照  
- [CriticalSection クラス](../Topic/CriticalSection%20Class.md)
+## <a name="see-also"></a>参照  
+ [CriticalSection クラス](../windows/criticalsection-class.md)

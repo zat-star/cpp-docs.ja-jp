@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: scheduler policies
+dev_langs:
+- C++
+helpviewer_keywords:
+- scheduler policies
 ms.assetid: 58fb68bd-4a57-40a8-807b-6edb6f083cd9
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 85b9c40d5253c707567a7cb0a1c751b1392fc995
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6c2e669a429bebbfde19f54200610819d0849d8f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="scheduler-policies"></a>スケジューラ ポリシー
 このドキュメントでは、同時実行ランタイム スケジューラ ポリシーの役割について説明します。 A*スケジューラ ポリシー*スケジューラがタスクを管理するときに使用する方法を制御します。 たとえば、一部のタスクで実行を必要とするアプリケーション`THREAD_PRIORITY_NORMAL`およびその他のタスクで実行する`THREAD_PRIORITY_HIGHEST`です。  2 つのスケジューラ インスタンスを作成することができます: いずれかを指定する、`ContextPriority`ポリシーが`THREAD_PRIORITY_NORMAL`もう 1 つを同じポリシーを指定する`THREAD_PRIORITY_HIGHEST`です。  
@@ -60,9 +65,9 @@ ms.lasthandoff: 10/24/2017
  使用して、 [concurrency::CurrentScheduler::GetPolicy](reference/currentscheduler-class.md#getpolicy)と[concurrency::Scheduler::GetPolicy](reference/scheduler-class.md#getpolicy)スケジューラ ポリシーのコピーを取得するメソッド。 これらのメソッドから受信したポリシー値スケジューラを作成するときに指定するポリシー値と異なることができます。  
   
 ## <a name="example"></a>例  
- スケジューラの動作を制御する特定のスケジューラ ポリシーを使用する例を検証するを参照してください[する方法: 特定のスケジューラ ポリシーの指定](../../parallel/concrt/how-to-specify-specific-scheduler-policies.md)と[する方法: エージェントを使用して特定のスケジューラ ポリシーを作成します。。](../../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md).  
+ スケジューラの動作を制御する特定のスケジューラ ポリシーを使用する例を検証するを参照してください[する方法: 特定のスケジューラ ポリシーの指定](../../parallel/concrt/how-to-specify-specific-scheduler-policies.md)と[する方法: エージェントを使用して特定のスケジューラ ポリシーを作成します。](../../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md).  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [タスク スケジューラ](../../parallel/concrt/task-scheduler-concurrency-runtime.md)   
  [方法: 特定のスケジューラ ポリシーを指定します。](../../parallel/concrt/how-to-specify-specific-scheduler-policies.md)   
  [方法: 特定のスケジューラ ポリシーを使用するエージェントを作成する](../../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md)

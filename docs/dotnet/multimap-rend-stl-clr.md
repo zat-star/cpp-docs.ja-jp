@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::multimap::rend
-dev_langs: C++
-helpviewer_keywords: rend member [STL/CLR]
+f1_keywords:
+- cliext::multimap::rend
+dev_langs:
+- C++
+helpviewer_keywords:
+- rend member [STL/CLR]
 ms.assetid: f8d3f683-eeab-4a8b-af3f-fb6653114594
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 72ca29c14f4395f6505386efdda7f27e637219eb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d57fe9ff6fca1c24eca77be3a7c7d584d68c1e52
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multimaprend-stlclr"></a>multimap::rend (STL/CLR)
 反転被制御シーケンスの末尾を指定します。  
@@ -73,12 +80,12 @@ int main()
 *--rend() = [a 1]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
  [multimap::begin (STL/CLR)](../dotnet/multimap-begin-stl-clr.md)   
  [multimap::end (STL/CLR)](../dotnet/multimap-end-stl-clr.md)   

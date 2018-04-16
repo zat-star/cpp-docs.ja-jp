@@ -1,58 +1,64 @@
 ---
-title: "Flipping an Image (Image Editor for Icons) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Image editor [C++], flipping and rotating images"
-  - "images [C++], flipping"
-  - "images [C++], rotating"
+title: "反転イメージ (アイコン用イメージ エディター) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Image editor [C++], flipping and rotating images
+- images [C++], flipping
+- images [C++], rotating
 ms.assetid: a63d251c-7343-4ad6-9442-1faa04a9a2a1
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 394b92ce5103a0aa40cf170ede96624104c868cf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Flipping an Image (Image Editor for Icons)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-イメージを次の方法で回転させることができます。  
+# <a name="flipping-an-image-image-editor-for-icons"></a>イメージの回転 (アイコン用イメージ エディター)
+反転またはにイメージを回転させることができます。  
   
--   元のイメージのミラー イメージを作成する。  
+-   元のミラー イメージを作成します。  
   
--   イメージを上下反転させる。  
+-   上下逆に、イメージを有効にします。  
   
--   イメージを一度に右に 90 度回転させる。  
+-   一度に右側にイメージを 90 度回転させます。  
   
-### イメージを水平方向に回転させるには \(ミラー イメージ\)  
+### <a name="to-flip-the-image-horizontally-mirror-image"></a>イメージを水平方向に反転させる (ミラー イメージ)  
   
-1.  \[イメージ\] メニューの \[左右反転\] をクリックします。  
+1.  **イメージ**] メニューの [選択**水平方向に反転**です。  
   
-### イメージを垂直方向に回転させるには \(上下反転\)  
+### <a name="to-flip-the-image-vertically-turn-upside-down"></a>イメージを垂直方向に反転させる (上下)  
   
-1.  \[イメージ\] メニューの \[上下反転\] をクリックします。  
+1.  **イメージ**] メニューの [選択**垂直方向に反転**です。  
   
-### イメージを 90 度回転させるには  
+### <a name="to-rotate-the-image-90-degrees"></a>イメージを 90 ° 回転するには  
   
-1.  \[イメージ\] メニューの \[90 度回転\] をクリックします。  
+1.  **イメージ**] メニューの [選択**90 度回転**です。  
   
     > [!NOTE]
-    >  各コマンドには、[アクセラレータ \(ショートカット\) キー](../mfc/accelerator-keys-image-editor-for-icons.md)、またはイメージ エディターでイメージの外側をクリックすると表示されるショートカット メニューからアクセスできます。  
+    >  使用することも、[アクセラレータ (ショートカット) キー](../windows/accelerator-keys-image-editor-for-icons.md)これらのコマンドのショートカット メニュー (イメージ エディターで、イメージの外側をクリックします) から、コマンドにアクセスまたはします。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  なし  
   
-## 参照  
- [Editing Graphical Resources](../mfc/editing-graphical-resources-image-editor-for-icons.md)   
- [Image Editor for Icons](../mfc/image-editor-for-icons.md)
+## <a name="see-also"></a>参照  
+ [グラフィカル リソースの編集](../windows/editing-graphical-resources-image-editor-for-icons.md)   
+ [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)
+

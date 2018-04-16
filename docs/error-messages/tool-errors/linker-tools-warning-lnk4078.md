@@ -15,44 +15,31 @@ dev_langs:
 helpviewer_keywords:
 - LNK4078
 ms.assetid: 5a16796d-6caf-42d9-8f65-b042843eafb8
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 81f5c9e42d05bbc5646ad0b3fd27fd39408301b1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8109ef98237f545a2139be8f0502acd11407314b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-warning-lnk4078"></a>リンカー ツールの警告 LNK4078
-複数の 'セクション名' セクションが別の属性が見つかりました  
+複数の 'section name' セクションが別の属性を持つが見つかりました。  
   
- 2 つのリンクが見つかったら、または名前が同じである他のセクションで異なる属性です。  
+ リンクが検出された 2 つまたは複数のセクションでは、同じを名前で異なる属性。  
   
- この警告は、リンクまたは LIB の以前のバージョンで作成されたインポート ライブラリまたはエクスポート ファイルによって可能性があります。  
+ この警告は、以前のバージョンのリンクまたは LIB によって作成されたインポート ライブラリまたはエクスポート ファイルによって可能性があります。  
   
  ファイルと再リンクを再作成します。  
   
 ## <a name="example"></a>例  
- LNK4078 は、互換性に影響する変更点によって発生することも: で指定されるセクション[init_seg](../../preprocessor/init-seg.md) x86 が読み取り/書き込み、読み取り専用ようになりました。  
+ LNK4078 は重大な変更によっても発生する: で指定されるセクション[init_seg](../../preprocessor/init-seg.md) x86 が読み取り/書き込み、読み取り専用ようになりました。  
   
- 次の例では、LNK4078 を生成します。  
+ 次の例では、LNK4078 が生成されます。  
   
 ```  
 // LNK4078.cpp  

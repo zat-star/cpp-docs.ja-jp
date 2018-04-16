@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - platforms [C++], 64-bit
 - 64-bit programming [C++], configuring projects
 - project configurations [C++]
 ms.assetid: 2b9ae001-df36-4750-83b2-982145d632ad
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 97e128d7e940420698d57ccca5cc2afc01d27b02
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7e651d28af3bd8635691d6a54d6c4cca8eb8c160
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-configure-visual-c-projects-to-target-64-bit-x64-platforms"></a>方法: Visual C プロジェクトを 64 ビットを対象とする、x64 プラットフォーム
 
@@ -66,7 +70,7 @@ Visual Studio IDE でプロジェクト構成を使用すると、プラット�
     > [!NOTE]
     >  プロジェクトのプロパティは、ファイル レベルでオーバーライドされる場合、いずれも変更されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [.NET framework の 64 ビット アプリケーション](/dotnet/framework/64-bit-apps)   
 [64 ビット、x64 用の Visual C の構成のターゲット](../build/configuring-programs-for-64-bit-visual-cpp.md)   

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - bsearch_s
 apilocation:
@@ -31,31 +31,17 @@ helpviewer_keywords:
 - arrays [CRT], binary search
 - bsearch_s function
 ms.assetid: d5690d5e-6be3-4f1d-aa0b-5ca6dbded276
-caps.latest.revision: 27
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 67caa4f6f6f9ba43c5d4b8a23af8be9bebcc717b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5c1ec2b76d64f9a65d19362f592483490c8b9bb3
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="bsearchs"></a>bsearch_s
 並べ替えられた配列のバイナリ検索を実行します。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [bsearch](../../c-runtime-library/reference/bsearch.md) です。  
@@ -95,7 +81,7 @@ void *bsearch_s(
 ## <a name="return-value"></a>戻り値  
  `bsearch_s` は、`base` が指し示す配列内の `key` が出現した箇所にポインターを返します。 `key` がない場合、関数は `NULL`を返します。 配列が昇順でないか、同一キーで重複するレコードがある場合、結果は予測不可能になります。  
   
- この関数に無効なパラメーターが渡されると、「 [Parameter Validation](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。 詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ この関数に無効なパラメーターが渡されると、「 [Parameter Validation](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。 詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ### <a name="error-conditions"></a>エラー条件  
   
@@ -118,13 +104,13 @@ void *bsearch_s(
   
  `context` ポインターは、検索対象のデータ構造体がオブジェクトの一部であり、関数をオブジェクトのアクセス メンバーと比較する場合に役立ちます。 `compare` 関数は void ポインターを該当するオブジェクト型とそのオブジェクトのアクセス メンバーにキャストします。 `context` パラメーターを追加すると、 `bsearch_s` 関数でデータを使用可能にする静的関数を使用する場合の再入バグを回避するために、追加のコンテキストを使用できるので、 `compare` がより安全になります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`bsearch_s`|\<stdlib.h > と \<search.h >|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  このプログラムでは、 [qsort_s](../../c-runtime-library/reference/qsort-s.md)で文字列の配列を並べ替え、bsearch_s を使用して "cat" という単語を検索します。  
@@ -211,7 +197,7 @@ cat cow dog goat horse human pig rat
 cat found at 002F0F04  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)   
  [_lfind](../../c-runtime-library/reference/lfind.md)   
  [_lsearch](../../c-runtime-library/reference/lsearch.md)   

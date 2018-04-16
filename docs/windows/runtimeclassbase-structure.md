@@ -4,21 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: implements/Microsoft::WRL::Details::RuntimeClassBase
-dev_langs: C++
+f1_keywords:
+- implements/Microsoft::WRL::Details::RuntimeClassBase
+dev_langs:
+- C++
 ms.assetid: 6ada4f81-a857-488a-ad56-8d0b11ccbfcc
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 93fc65c37830d5a618374fce8cba1c03ff5b875b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: a052d9db920074763ce92bb54b78a881b3a2a513
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="runtimeclassbase-structure"></a>RuntimeClassBase 構造体
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -37,10 +43,10 @@ struct RuntimeClassBase;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `RuntimeClassBase`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
  **Namespace:** Microsoft::WRL::Details  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

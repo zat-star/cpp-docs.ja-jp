@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -29,7 +30,8 @@ f1_keywords:
 - AFXEXT/CControlBar::SetInPlaceOwner
 - AFXEXT/CControlBar::m_bAutoDelete
 - AFXEXT/CControlBar::m_pInPlaceOwner
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CControlBar [MFC], CControlBar
 - CControlBar [MFC], CalcDynamicLayout
@@ -51,15 +53,17 @@ helpviewer_keywords:
 - CControlBar [MFC], m_bAutoDelete
 - CControlBar [MFC], m_pInPlaceOwner
 ms.assetid: 4d668c55-9b42-4838-97ac-cf2b3000b82c
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cb4852990bd928a00c5aaf8de4669ed791f68468
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a911ff6251a6b34162377610ae139cfa3a7cefaa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccontrolbar-class"></a>CControlBar Class
 コントロール バー クラスの基底クラス[CStatusBar](../../mfc/reference/cstatusbar-class.md)、 [CToolBar](../../mfc/reference/ctoolbar-class.md)、 [CDialogBar](../../mfc/reference/cdialogbar-class.md)、 [CReBar](../../mfc/reference/crebar-class.md)、および[COleResizeBar](../../mfc/reference/coleresizebar-class.md)です。  
@@ -128,7 +132,7 @@ class CControlBar : public CWnd
   
  `CControlBar`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxext.h  
   
 ##  <a name="calcdynamiclayout"></a>CControlBar::CalcDynamicLayout  
@@ -497,7 +501,7 @@ void SetInPlaceOwner(CWnd* pWnd);
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CTRLBARS](../../visual-cpp-samples.md)   
  [CWnd クラス](../../mfc/reference/cwnd-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

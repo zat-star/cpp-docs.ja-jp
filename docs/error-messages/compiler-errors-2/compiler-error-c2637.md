@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2637
 ms.assetid: 58d94447-eb96-4d8f-a690-dd78d322462e
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5891e09b979b96117772fee9c9fff1cb63c807b6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: f676205e2850e411ddb5e5b996114c00c65087f2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2637"></a>コンパイラ エラー C2637
 'identifier': データ メンバーへのポインターを変更することはできません  

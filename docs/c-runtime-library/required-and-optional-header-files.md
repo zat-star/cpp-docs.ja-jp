@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.headers
-dev_langs: C++
+f1_keywords:
+- c.headers
+dev_langs:
+- C++
 helpviewer_keywords:
 - include files, required in run time
 - header files, required in run time
 ms.assetid: f64d0bf5-e2c3-4b42-97d0-443b3d901d9f
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 45e9d2e6940955b07624b89cafd09b7d89d9cd2c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9dde09f2125b595ffb3d79a69b4755353a0116bb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="required-and-optional-header-files"></a>必須ヘッダー ファイルと省略可能ヘッダー ファイル
 各ランタイム ルーチンの説明には、そのルーチンで必須および省略可能なインクルード ファイル、またはヘッダー (.H) ファイルの一覧が含まれています。 内部で呼び出される別のルーチンで使用されるルーチンまたは定義の関数の宣言を取得するには、必須ヘッダー ファイルを含める必要があります。 省略可能ヘッダー ファイルは通常、定義済みの定数、型定義、インライン マクロを活用するために含まれます。 次の表では、省略可能ヘッダー ファイルの内容の例をいくつか示します。  
@@ -34,5 +39,5 @@ ms.lasthandoff: 10/24/2017
   
  ランタイム ライブラリのヘッダー ファイルは、ANSI/ISO C 標準で推奨されるスタイルで関数の宣言を提供します。 コンパイラは、その関連する関数の宣言より後に発生するすべてのルーチン参照に対して型チェックを実行します。 関数の宣言は、既定の `int` 以外の一部の型の値を返すルーチンでは特に重要です。 宣言内で適切な戻り値を指定しないルーチンは、コンパイラによって `int` を返すものと見なされますが、これにより予期しない結果が生じることがあります。 詳細については、「[型チェック](../c-runtime-library/type-checking-crt.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _chsize_s
 apilocation:
@@ -33,30 +33,17 @@ helpviewer_keywords:
 - chsize_s function
 - _chsize_s function
 ms.assetid: d88d2e94-6e3b-42a5-8631-16ac4d82fa38
-caps.latest.revision: 16
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: eb8292d70a77a5901c710349d6912e46cfda8f63
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 89ed8eb6511c9ba7126506e84e815616af78f84f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="chsizes"></a>_chsize_s
 ファイル サイズを変更します。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_chsize](../../c-runtime-library/reference/chsize.md) です。  
@@ -80,7 +67,7 @@ errno_t _chsize_s(
 ## <a name="return-value"></a>戻り値  
  ファイル サイズが正常に変更された場合は、`_chsize_s` は値 0 を返します。 0 以外の戻り値はエラーを示します: 指定したファイルがアクセスに対してロックされている場合、戻り値は `EACCES` になり、指定したファイルが読み取り専用かまたは記述子が無効な場合は `EBADF`、デバイスで空いている領域が残っていない場合は `ENOSPC`、サイズが 0 未満の場合は `EINVAL` になります。 `errno` は同じ値に設定されます。  
   
- リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  `_chsize_s` 関数は、`fd` に関連付けられているファイルを `size` に指定された長さに拡張するか切り捨てます。 ファイルは、書き込みを許可するモードで開かれている必要があります。 ファイルが拡張される場合は、null 文字 ('\0') が追加されます。 ファイルが切り捨てられる場合、短くなったファイルの末尾からファイルの元の長さまでのすべてのデータは失われます。  
@@ -89,15 +76,15 @@ errno_t _chsize_s(
   
  この関数は、パラメーターを検証します。 `fd` が有効なファイル記述子ではないか、サイズが 0 未満である場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_chsize_s`|\<io.h>|\<errno.h>|  
   
- 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_chsize](../../c-runtime-library/reference/chsize.md)   
  [_close](../../c-runtime-library/reference/close.md)   

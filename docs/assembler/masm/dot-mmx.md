@@ -1,25 +1,31 @@
 ---
-title: ".MMX |Microsoft ドキュメント"
+title: .MMX | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: .MMX
-dev_langs: C++
-helpviewer_keywords: .MMX directive
+ms.topic: reference
+f1_keywords:
+- .MMX
+dev_langs:
+- C++
+helpviewer_keywords:
+- .MMX directive
 ms.assetid: 69d360cb-b530-46e3-9cfe-204d71baa38d
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f1fcb1e4d19630f1e31c0156a1ebb2e81e2718b8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6a2b44bee9a024f8df8dffa0109effe5ed193ada
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="mmx"></a>.MMX
 MMX または単一命令複数データ (SIMD) 命令のアセンブリを有効にします。  
@@ -32,5 +38,5 @@ MMX または単一命令複数データ (SIMD) 命令のアセンブリを有�
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

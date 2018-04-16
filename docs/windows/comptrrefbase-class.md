@@ -1,32 +1,37 @@
 ---
-title: "ComPtrRefBase クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "client/Microsoft::WRL::Details::ComPtrRefBase"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ComPtrRefBase クラス"
+title: "ComPtrRefBase クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- client/Microsoft::WRL::Details::ComPtrRefBase
+dev_langs:
+- C++
+helpviewer_keywords:
+- ComPtrRefBase class
 ms.assetid: 6d344c1a-cc13-4a3f-8a0d-f167ccb9348f
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 071598c83086afe12e1d19ef541dbfb3d0dbc55a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ComPtrRefBase クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="comptrrefbase-class"></a>ComPtrRefBase クラス
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -35,41 +40,41 @@ template <
 class ComPtrRefBase;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- ここからは、派生されない [ComPtr\<T\>](../windows/comptr-class.md) の型または型の ComPtr オブジェクトで表されるインターフェイス。  
+ A [ComPtr\<T >](../windows/comptr-class.md)型または型が、ComPtr によって表されるだけではなく、インターフェイスから派生します。  
   
-## 解説  
- [ComPtrRef](../Topic/ComPtrRef%20Class.md) クラスの基本クラスを表します。  
+## <a name="remarks"></a>コメント  
+ 基本クラスを表す、 [ComPtrRef](../windows/comptrref-class.md)クラスです。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック typedef  
-  
-|名前|説明|  
-|--------|--------|  
-|`InterfaceType`|テンプレート パラメーター `T`の型のシノニムです。|  
-  
-### パブリック演算子  
+### <a name="public-typedefs"></a>パブリック typedef  
   
 |名前|説明|  
-|--------|--------|  
-|[ComPtrRefBase::operator IInspectable\*\* 演算子](../windows/comptrrefbase-operator-iinspectable-star-star-operator.md)|IInspectable インターフェイス ポインターへのポインター上には [ptr\_](../windows/comptrrefbase-ptr-data-member.md) の現在のデータ メンバーをキャストします。|  
-|[ComPtrRefBase::operator IUnknown\*\* 演算子](../windows/comptrrefbase-operator-iunknown-star-star-operator.md)|IUnknown インターフェイス ポインターへのポインター上には [ptr\_](../windows/comptrrefbase-ptr-data-member.md) の現在のデータ メンバーをキャストします。|  
+|----------|-----------------|  
+|`InterfaceType`|テンプレート パラメーターの型のシノニム`T`です。|  
   
-### プロテクト データ メンバー  
+### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
-|--------|--------|  
-|[ComPtrRefBase::ptr\_ データ メンバー](../windows/comptrrefbase-ptr-data-member.md)|現在のテンプレート パラメーターによって指定された型へのポインター。|  
+|----------|-----------------|  
+|[ComPtrRefBase::operator IInspectable** 演算子](../windows/comptrrefbase-operator-iinspectable-star-star-operator.md)|現在ではキャスト[ptr _](../windows/comptrrefbase-ptr-data-member.md)データ メンバーをポインターを-a のポインター - IInspectable インターフェイスです。|  
+|[ComPtrRefBase::operator IUnknown** 演算子](../windows/comptrrefbase-operator-iunknown-star-star-operator.md)|現在ではキャスト[ptr _](../windows/comptrrefbase-ptr-data-member.md)データ メンバーをポインターに-を-ポインターの IUnknown インターフェイスです。|  
   
-## 継承階層  
+### <a name="protected-data-members"></a>プロテクト データ メンバー  
+  
+|name|説明|  
+|----------|-----------------|  
+|[ComPtrRefBase::ptr_ データ メンバー](../windows/comptrrefbase-ptr-data-member.md)|現在のテンプレート パラメーターで指定された型へのポインター。|  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `ComPtrRefBase`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

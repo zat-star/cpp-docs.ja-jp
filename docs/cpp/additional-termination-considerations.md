@@ -15,19 +15,20 @@ helpviewer_keywords:
 - exiting applications
 - programs [C++], terminating
 ms.assetid: acbe2332-9d8a-4a58-a471-dd652a837384
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: a97c2061b9d677fd31b40d320a7cfe73540adc56
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d3f2cd02a80ce1dc1002c9fa1bea1cc1dd22ed68
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="additional-termination-considerations"></a>終了に関するその他の考慮事項
 使用して、C++ プログラムを終了する**終了**、 `return`、または**中止**です。 `atexit` 関数を使用して終了処理を追加できます。 次の各セクションでは、これらについて説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [起動と終了](../cpp/startup-and-termination-cpp.md)

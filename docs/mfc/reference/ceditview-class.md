@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -27,7 +28,8 @@ f1_keywords:
 - AFXEXT/CEditView::OnReplaceSel
 - AFXEXT/CEditView::OnTextNotFound
 - AFXEXT/CEditView::dwStyleDefault
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CEditView [MFC], CEditView
 - CEditView [MFC], FindText
@@ -47,15 +49,17 @@ helpviewer_keywords:
 - CEditView [MFC], OnTextNotFound
 - CEditView [MFC], dwStyleDefault
 ms.assetid: bf38255c-fcbe-450c-95b2-3c5e35f86c37
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 38b8389418657499d43263399f1a05b3a0326c84
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 78aa34f1790b2e86dae183b96c88b4ed35483927
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ceditview-class"></a>CEditView クラス
 Windows のエディット コントロールの機能を提供するビュー クラスの一種であり、シンプルなテキスト編集エディターを実装できます。  
@@ -149,7 +153,7 @@ class CEditView : public CCtrlView
   
  `CEditView`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxext.h  
   
 ##  <a name="ceditview"></a>CEditView::CEditView  
@@ -448,7 +452,7 @@ void UnlockBuffer() const;
 ### <a name="remarks"></a>コメント  
  呼び出す`UnlockBuffer`によって返されたポインターを使用して完了したら[LockBuffer](#lockbuffer)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル SUPERPAD](../../visual-cpp-samples.md)   
  [CCtrlView クラス](../../mfc/reference/cctrlview-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

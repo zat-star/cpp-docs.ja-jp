@@ -5,18 +5,17 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - sstream/std::swap
 ms.assetid: bc9607e8-7c6b-44ef-949b-19e917b450ad
-caps.latest.revision: 10
+caps.latest.revision: 
 manager: ghogen
+ms.openlocfilehash: 1c186910203df481bef047f2d1813097590c7508
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: dfa71e79d801fbe48f55b81ae4189cdd6d977afe
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltsstreamgt-functions"></a>&lt;sstream&gt; 関数
 ||  
@@ -58,7 +57,6 @@ void swap(
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は、`left.swap(right)` を実行します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<sstream>](../standard-library/sstream.md)
-
 

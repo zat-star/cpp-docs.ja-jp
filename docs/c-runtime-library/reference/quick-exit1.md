@@ -8,8 +8,9 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: quick_exit
+ms.topic: reference
+apiname:
+- quick_exit
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -27,18 +28,22 @@ f1_keywords:
 - quick_exit
 - process/quick_exit
 - stdlib/quick_exit
-dev_langs: C++
-helpviewer_keywords: quick_exit function
+dev_langs:
+- C++
+helpviewer_keywords:
+- quick_exit function
 ms.assetid: ecfbdae6-01c4-45fa-aaeb-b368e1de2a9c
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d2ae187d0132ca53b1ffba2b26ef18fa467b9072
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 30c8ae3290ac4b15247b88b0b2201634e42b560b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="quickexit"></a>quick_exit
 通常のプログラムが終了するようにします。  
@@ -65,15 +70,15 @@ __declspec(noreturn) void quick_exit(
   
  登録された関数が呼び出された後、 `quick_exit` は、 `_Exit` 値を使用してコントロールをホスト環境に返すことにより、 `status` を呼び出します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`quick_exit`|\<process.h> または \<stdlib.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [abort](../../c-runtime-library/reference/abort.md)   
  [atexit](../../c-runtime-library/reference/atexit.md)   

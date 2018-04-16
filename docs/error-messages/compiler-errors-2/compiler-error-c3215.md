@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3215
-dev_langs: C++
-helpviewer_keywords: C3215
+f1_keywords:
+- C3215
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3215
 ms.assetid: d0d16007-8885-42e0-b086-2d3a61f348c5
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e4a649c01762b8a113e928bb63ffe293f86d21c3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cf9e1f0b726f8b77a8943a5c6495b67f9d3e252c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3215"></a>コンパイラ エラー C3215
 'type1': 'type2' によって既に制限されているジェネリック型パラメーターです  
@@ -40,7 +46,7 @@ where T : A,A
 ref class C {};   // C3215  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C3215b.cpp  

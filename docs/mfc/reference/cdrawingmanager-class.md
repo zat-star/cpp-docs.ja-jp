@@ -1,11 +1,12 @@
 ---
-title: "CDrawingManager クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CDrawingManager クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CDrawingManager
@@ -35,7 +36,8 @@ f1_keywords:
 - AFXDRAWMANAGER/CDrawingManager::SetAlphaPixel
 - AFXDRAWMANAGER/CDrawingManager::SetPixel
 - AFXDRAWMANAGER/CDrawingManager::SmartMixColors
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDrawingManager [MFC], CDrawingManager
 - CDrawingManager [MFC], CreateBitmap_32
@@ -63,15 +65,17 @@ helpviewer_keywords:
 - CDrawingManager [MFC], SetPixel
 - CDrawingManager [MFC], SmartMixColors
 ms.assetid: 9e4775ca-101b-4aa9-a85a-4d047c701215
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 73b8adbff021a179f3bd3185fa85ee18c84a441a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 689d538c03a35175040663aedb7bd6130aae10fd
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="cdrawingmanager-class"></a>CDrawingManager クラス
 `CDrawingManager`クラスは、複雑な描画アルゴリズムを実装します。  
@@ -128,7 +132,7 @@ class CDrawingManager : public CObject
  [CObject](../../mfc/reference/cobject-class.md)  
  `CDrawingManager`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdrawmanager.h  
   
 ##  <a name="cdrawingmanager"></a>CDrawingManager::CDrawingManager  
@@ -576,7 +580,7 @@ static COLORREF __stdcall HLStoRGB_ONE(
  指定された HLS 色の RGB 表現します。  
   
 ### <a name="remarks"></a>コメント  
- 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/linkid=119126)です。  
+ 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/p/?linkid=119126)です。  
   
  このメソッドと`CDrawingManager::HLStoRGB_TWO`メソッドは、同じ操作を実行しますが、異なる値が必要、`H`パラメーター。 このメソッドで`H`円に占める割合です。 `CDrawingManager::HLStoRGB_TWO`メソッド、`H`は 0 ~ 360 両方を表現する赤の間の角度の値。 たとえば、 `HLStoRGB_ONE`、値は 0.25 の`H`と 90 の値と等価`HLStoRGB_TWO`です。  
   
@@ -604,7 +608,7 @@ static COLORREF __stdcall HLStoRGB_TWO(
  指定された HLS 色の RGB 表現します。  
   
 ### <a name="remarks"></a>コメント  
- 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/linkid=119126)です。  
+ 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/p/?linkid=119126)です。  
   
  このメソッドと[CDrawingManager::HLStoRGB_ONE](#hlstorgb_one)メソッドは、同じ操作を実行しますが、異なる値が必要、`H`パラメーター。 このメソッドで`H`は 0 ~ 360 両方を表現する赤の間の角度の値。 [CDrawingManager::HLStoRGB_ONE](#hlstorgb_one)メソッド、`H`円に占める割合です。 たとえば、 `HLStoRGB_ONE`、値は 0.25 の`H`と 90 の値と等価`HLStoRGB_TWO`です。  
   
@@ -631,7 +635,7 @@ static COLORREF __stdcall HSVtoRGB(
  指定された HSV 色の RGB 表現します。  
   
 ### <a name="remarks"></a>コメント  
- 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/linkid=119126)です。  
+ 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/p/?linkid=119126)です。  
   
 ##  <a name="huetorgb"></a>CDrawingManager::HuetoRGB  
  色合いの値を赤、緑、青の各要素に変換します。  
@@ -800,7 +804,7 @@ static void __stdcall RGBtoHSL(
 |[出力] `L`|メソッドが、色の明るさを格納する double 型へのポインター。|  
   
 ### <a name="remarks"></a>コメント  
- 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/linkid=119126)です。  
+ 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/p/?linkid=119126)です。  
   
  返された値`H`は 0 ~ 0 と 1 の両方が赤を表す位置 1 の比率として表されます。 返される値`S`と`L`0 ~ 1 の間の数値します。  
   
@@ -829,7 +833,7 @@ static void __stdcall RGBtoHSV(
  このメソッドが、色の結果として得られる値を格納する double 型へのポインター。  
   
 ### <a name="remarks"></a>コメント  
- 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/linkid=119126)です。  
+ 色は、HSV (色合い、鮮やかさ、および値)、HSL (色合い、鮮やかさ、および明るさ)、または RGB (赤、緑、および青) として表現できます。 色の異なる表現の詳細については、次を参照してください。[色](http://go.microsoft.com/fwlink/p/?linkid=119126)です。  
   
  返された値`H`0 ~ 360 の間の数は、0 と 360 の両方が赤を示します。 戻り値は、`S`と`V`0 ~ 1 の間の数値します。  
   
@@ -956,6 +960,6 @@ void DrawRotated(
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)

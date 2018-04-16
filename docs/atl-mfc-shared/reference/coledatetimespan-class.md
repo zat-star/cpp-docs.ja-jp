@@ -35,31 +35,17 @@ helpviewer_keywords:
 - Date data type, MFC encapsulation of
 - COleDateTimeSpan class
 ms.assetid: 7441526d-a30a-4019-8fb3-3fee6f897cbe
-caps.latest.revision: 19
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 0c696f59a6f4be7b4d966aad2a16a846d737009f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 173ae35f49379bcccf552a105b5615378e7a42cd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coledatetimespan-class"></a>しかしクラス
 相対的な時間、時間間隔を表します。  
@@ -102,7 +88,7 @@ class COleDateTimeSpan
 |[演算子 +、-](#operator_add_-)|追加、減算、および符号を変更`COleDateTimeSpan`値。|  
 |[演算子 + =、=](#operator_add_eq_-_eq)|加算および減算、`COleDateTimeSpan`値からこの`COleDateTimeSpan`値。|  
 |[演算子 =](#operator_eq)|コピー、`COleDateTimeSpan`値。|  
-|[演算子 = =、<,></,><>](#coledatetimespan_relational_operators)|2 つの比較`COleDateTimeSpan`値。|  
+|[演算子 = =、<、< =](#coledatetimespan_relational_operators)|2 つの比較`COleDateTimeSpan`値。|  
 |[演算子 double](#operator_double)|この変換`COleDateTimeSpan`値を**二重**です。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
@@ -121,7 +107,7 @@ class COleDateTimeSpan
   
  詳細については、`COleDateTime`と`COleDateTimeSpan`クラスは、記事を参照して[日付と時刻: オートメーション サポート](../../atl-mfc-shared/date-and-time-automation-support.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** ATLComTime.h  
   
 ##  <a name="coledatetimespan_relational_operators"></a>メンバーの関係演算子  
@@ -149,9 +135,9 @@ bool operator>=(const COleDateTimeSpan& dateSpan) const throw();
 >  ATLASSERT がいずれかのオペランドが有効でない場合に発生します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities #25](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_1.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#25](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_1.cpp)]  
   
- [!code-cpp[NVC_ATLMFC_Utilities # 26](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_2.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#26](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_2.cpp)]  
   
 ##  <a name="coledatetimespan"></a>COleDateTimeSpan::COleDateTimeSpan  
  `COleDateTimeSpan` オブジェクトを構築します。  
@@ -176,14 +162,14 @@ COleDateTimeSpan(LONG lDays, int nHours, int nMins, int nSecs) throw();
   
 - **メンバー (** `dblSpanSrc` **)**構築、`COleDateTimeSpan`浮動小数点値からのオブジェクト。  
   
-- **メンバー (** `lDays` **、** `nHours` **、** `nMins` **、** `nSecs` **)**構築、`COleDateTimeSpan`指定された数値の値に初期化されるオブジェクト。  
+- **メンバー (** `lDays` **、** `nHours` **、** `nMins` **、** `nSecs` **)** 構築、`COleDateTimeSpan`指定された数値の値に初期化されるオブジェクト。  
   
  新しいステータス`COleDateTimeSpan`オブジェクトが有効に設定されています。  
   
  境界の詳細については`COleDateTimeSpan`、値は、記事を参照して[日付と時刻: オートメーション サポート](../../atl-mfc-shared/date-and-time-automation-support.md)です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities #14](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_3.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#14](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_3.cpp)]  
   
 ##  <a name="format"></a>COleDateTimeSpan::Format  
  書式設定された文字列表現を生成、`COleDateTimeSpan`オブジェクト。  
@@ -220,14 +206,14 @@ CString Format(UINT nID) const;
   
  この関数の形式の簡単な説明に従います。  
   
- **Format(** `pFormat` **)**  
+ **書式設定 (** `pFormat` **)**  
  この形式でパーセント記号 (%)、末尾に挿入される特殊な書式設定コードを含む書式指定文字列を使用して値を書式化`printf`です。 書式指定文字列は、関数にパラメーターとして渡されます。  
   
- **Format(** `nID` **)**  
+ **書式設定 (** `nID` **)**  
  この形式でパーセント記号 (%)、末尾に挿入される特殊な書式設定コードを含む書式指定文字列を使用して値を書式化`printf`です。 書式指定文字列は、リソースです。 この文字列リソースの ID は、パラメーターとして渡されます。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities #15](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_4.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#15](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_4.cpp)]  
   
 ##  <a name="getdays"></a>COleDateTimeSpan::GetDays  
  この日付、期間値の日の部分を取得します。  
@@ -259,7 +245,7 @@ LONG GetDays() const throw();
 - [GetTotalSeconds](#gettotalseconds)  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities #16](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_5.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#16](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_5.cpp)]  
   
 ##  <a name="gethours"></a>COleDateTimeSpan::GetHours  
  この日付、期間値の時間部分を取得します。  
@@ -291,7 +277,7 @@ LONG GetHours() const throw();
 - [GetTotalSeconds](#gettotalseconds)  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities 17](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_6.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#17](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_6.cpp)]  
   
 ##  <a name="getminutes"></a>COleDateTimeSpan::GetMinutes  
  この日付、期間値の分の部分を取得します。  
@@ -323,7 +309,7 @@ LONG GetMinutes() const throw();
 - [GetTotalSeconds](#gettotalseconds)  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 18](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_7.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#18](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_7.cpp)]  
   
 ##  <a name="getseconds"></a>COleDateTimeSpan::GetSeconds  
  この日付、期間値の 2 番目の部分を取得します。  
@@ -355,7 +341,7 @@ LONG GetSeconds() const throw();
 - [GetTotalSeconds](#gettotalseconds)  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities #19](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_8.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#19](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_8.cpp)]  
   
 ##  <a name="getstatus"></a>COleDateTimeSpan::GetStatus  
  状態を取得します (有効) この`COleDateTimeSpan`オブジェクト。  
@@ -388,7 +374,7 @@ enum DateTimeSpanStatus{
   
  状態、`COleDateTimeSpan`オブジェクトでは、次の場合。  
   
--   このオブジェクトが、オーバーフローまたはアンダー フロー代入演算操作中、つまり場合、`+=`または`-=`です。  
+-   このオブジェクトが発生したため、オーバーフローまたはアンダー フロー代入演算操作中、つまり場合、`+=`または`-=`です。  
   
 -   場合は、無効な値は、このオブジェクトに割り当てられました。  
   
@@ -428,7 +414,7 @@ double GetTotalDays() const throw();
 - [GetTotalSeconds](#gettotalseconds)  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities #20](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_9.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#20](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_9.cpp)]  
   
 ##  <a name="gettotalhours"></a>COleDateTimeSpan::GetTotalHours  
  時間単位で表すこの日付、期間値を取得します。  
@@ -470,7 +456,7 @@ double GetTotalMinutes() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- この日付、期間は、分数で表される値。 この関数は、double 型の値を返すようにプロトタイプ宣言は、常に整数値を返します。  
+ この日付、期間値で表される分数を返します。 この関数は、double 型の値を返すようにプロトタイプ宣言は、常に整数値を返します。  
   
 ### <a name="remarks"></a>コメント  
  この関数の範囲の 5.26e9 ~ 5.26e9 からの戻り値。  
@@ -502,7 +488,7 @@ double GetTotalSeconds() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 日付、期間の値が秒で表されるこのです。 この関数は、double 型の値を返すようにプロトタイプ宣言は、常に整数値を返します。  
+ この日付、期間値 (秒) を返します。 この関数は、double 型の値を返すようにプロトタイプ宣言は、常に整数値を返します。  
   
 ### <a name="remarks"></a>コメント  
  この関数の戻り値の範囲の間で約 - 3.16e11 に 3.16e11 です。  
@@ -566,7 +552,7 @@ enum DateTimeSpanStatus{
   
  状態、`COleDateTimeSpan`オブジェクトでは、次の場合。  
   
--   このオブジェクトが、オーバーフローまたはアンダー フロー代入演算操作中、つまり場合、`+=`または`-=`です。  
+-   このオブジェクトが発生したため、オーバーフローまたはアンダー フロー代入演算操作中、つまり場合、`+=`または`-=`です。  
   
 -   場合は、無効な値は、このオブジェクトに割り当てられました。  
   
@@ -587,7 +573,7 @@ COleDateTimeSpan& operator=(double dblSpanSrc) throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- このオーバー ロードされた代入演算子、ソースの日付、期間値にコピーするこの`COleDateTimeSpan`オブジェクト。  
+ このオーバー ロードされた代入演算子は、これにソースの日付、期間値をコピー`COleDateTimeSpan`オブジェクト。  
   
 ##  <a name="operator_add_-"></a>COleDateTimeSpan::operator +、-  
  追加、減算、および符号を変更`COleDateTimeSpan`値。  
@@ -601,14 +587,14 @@ COleDateTimeSpan operator-() const throw();
 ### <a name="remarks"></a>コメント  
  最初の 2 つの演算子では、追加し、日付、期間の値を減算できます。 3 つ目では、日付、期間の値の符号を変更できます。  
   
- 場合は、その結果の状態は null オペランドのいずれかが`COleDateTimeSpan`値は null です。  
+ 結果の状態は null オペランドのいずれかの場合`COleDateTimeSpan`値は null です。  
   
  オペランドのいずれかが有効ではなく、もう一方が null でない場合、その結果のステータス`COleDateTimeSpan`値が無効です。  
   
  有効、無効、および null 状態の値の詳細については、次を参照してください。、[ついて](#m_status)メンバー変数。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 23](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_10.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#23](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_10.cpp)]  
   
 ##  <a name="operator_add_eq_-_eq"></a>COleDateTimeSpan::operator + =、=  
  加算および減算、`COleDateTimeSpan`値からこの`COleDateTimeSpan`値。  
@@ -619,14 +605,14 @@ COleDateTimeSpan& operator-=(const COleDateTimeSpan dateSpan) throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- これらの演算子では、追加し、これから日付/時間間隔の値を減算できます。`COleDateTimeSpan`オブジェクト。 場合は、その結果の状態は null オペランドのいずれかが`COleDateTimeSpan`値は null です。  
+ これらの演算子では、追加し、これから日付/時間間隔の値を減算できます。`COleDateTimeSpan`オブジェクト。 結果の状態は null オペランドのいずれかの場合`COleDateTimeSpan`値は null です。  
   
  オペランドのいずれかが有効ではなく、もう一方が null でない場合、その結果のステータス`COleDateTimeSpan`値が無効です。  
   
  有効、無効、および null 状態の値の詳細については、次を参照してください。、[ついて](#m_status)メンバー変数。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 24](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_11.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#24](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_11.cpp)]  
   
 ##  <a name="operator_double"></a>二重 COleDateTimeSpan::operator  
  この変換`COleDateTimeSpan`値を**二重**です。  
@@ -669,7 +655,7 @@ void SetDateTimeSpan(LONG lDays, int nHours, int nMins, int nSecs) throw();
 - [GetTotalSeconds](#gettotalseconds)  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 21](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_12.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#21](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_12.cpp)]  
   
 ##  <a name="setstatus"></a>COleDateTimeSpan::SetStatus  
  これの状態 (有効) に設定`COleDateTimeSpan`オブジェクト。  
@@ -705,14 +691,13 @@ enum DateTimeSpanStatus{
     >  この関数は、高度なプログラミング環境です。 この関数では、このオブジェクトのデータは変更されません。 状態を設定に使用されるほとんどの場合、`null`または**無効な**します。 なお、代入演算子 ([演算子 =](#eq)) および[SetDateTimeSpan](#setdatetimespan)ソース値に基づいて、オブジェクトの状態を設定しないでください。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 22](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_13.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#22](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_13.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [COleDateTime クラス](../../atl-mfc-shared/reference/coledatetime-class.md)   
  [CTime クラス](../../atl-mfc-shared/reference/ctime-class.md)   
  [CTimeSpan クラス](../../atl-mfc-shared/reference/ctimespan-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)
-
 
 

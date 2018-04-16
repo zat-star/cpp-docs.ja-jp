@@ -1,11 +1,12 @@
 ---
-title: "ライブラリの管理 |Microsoft ドキュメント"
-ms.custom: 
+title: ライブラリの管理 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VC.Project.VCLibrarianTool.OVERWRITEAllDefaultLibraries
@@ -20,7 +21,8 @@ f1_keywords:
 - VC.Project.VCLibrarianTool.SubSystemVersion
 - VC.Project.VCLibrarianTool.OVERWRITEDefaultLibraryName
 - VC.Project.VCLibrarianTool.SubSystem
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - /LIBPATH library manager option
 - OUT library manager option
@@ -47,15 +49,17 @@ helpviewer_keywords:
 - LIST library manager option
 - /CONVERT library manager option
 ms.assetid: f56a8b85-fbdc-4c09-8d8e-00f0ffe1da53
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6ef7f9b1cbeb3aeab28a4c02bce9099aaaf0078d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 05ced49a960aea0b32365b80fe76095893f63d5e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="managing-a-library"></a>ライブラリの管理
 LIB の既定のモードは、ビルドまたは COFF オブジェクトのライブラリの変更があります。 LIB は、/EXTRACT (オブジェクトをファイルにコピー) または/DEF (インポート ライブラリのビルド) を指定しないと、このモードで実行されます。  
@@ -87,7 +91,7 @@ LIB [options...] files...
  /入力出力:*ファイル名*  
  既定の出力ファイル名をオーバーライドします。 既定では、コマンドラインと拡張機能では、最初のライブラリまたはオブジェクトの次のファイルの基本名と、現在のディレクトリに出力ライブラリが作成されます。 lib です。  
   
- [削除]:*オブジェクト*  
+ 削除:*オブジェクト*  
  指定した*オブジェクト*出力ライブラリからです。 LIB、出力ライブラリを作成 (オブジェクト ファイルまたはライブラリでは問わず)、すべてのオブジェクトを結合して/REMOVE で指定されたオブジェクトが削除されます。  
   
  /SUBSYSTEM: {コンソール &#124;です。EFI_APPLICATION &#124;です。EFI_BOOT_SERVICE_DRIVER &#124;です。EFI_ROM &#124;です。EFI_RUNTIME_DRIVER &#124;です。ネイティブ &#124;です。POSIX &#124;です。WINDOWS &#124;です。WINDOWSCE} [、#[. ##]  
@@ -108,5 +112,5 @@ LIB [options...] files...
 > [!NOTE]
 >  メンバーを削除両方と同じ手順でファイルを抽出できません。 /EXTRACT を使用して、メンバー オブジェクトを抽出しを使用して再び/REMOVE LIB を実行する必要があります最初。 この動作は、他の Microsoft 製品で提供される (OMF ライブラリ) の 16 ビット LIB の動作とは異なります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LIB リファレンス](../../build/reference/lib-reference.md)

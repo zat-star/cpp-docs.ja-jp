@@ -1,32 +1,37 @@
 ---
-title: "bind2nd (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::bind2nd"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "bind2nd 関数 [STL/CLR]"
+title: bind2nd (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::bind2nd
+dev_langs:
+- C++
+helpviewer_keywords:
+- bind2nd function [STL/CLR]
 ms.assetid: 457cebea-38e4-4466-a468-fe9eb138e80c
 caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 3617cb917012a48398c6c9f530c2419aa8ea195b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# bind2nd (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-引数とファンクタの `binder2nd` を生成します。  
+# <a name="bind2nd-stlclr"></a>bind2nd (STL/CLR)
+生成、`binder2nd`引数およびファンクタ。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Fun,  
@@ -35,24 +40,24 @@ template<typename Fun,
         Arg right);  
 ```  
   
-## テンプレート名  
- 引数  
+## <a name="template-parameters"></a>テンプレート パラメーター  
+ arg  
  引数の型。  
   
- 関数  
- ファンクタの種類。  
+ 楽しい  
+ ファンクタの型。  
   
-## 関数パラメーター  
- ファンクタ  
- ラップする必要ファンクタ。  
+## <a name="function-parameters"></a>関数パラメーター  
+ ファンクター  
+ ラップするファンクタ。  
   
- \[right\]  
+ 右  
  ラップする 2 番目の引数。  
   
-## 解説  
- このテンプレート関数は [binder2nd](../Topic/binder2nd%20\(STL-CLR\).md)`<Fun>(functor, right)`を返します。  呼び出し元の引数である 1 引数のファンクタの 2 引数のファンクタと 2 番目の引数をラップする便利な手段として使用します。  
+## <a name="remarks"></a>コメント  
+ テンプレート関数を返します[binder2nd (STL/CLR)](../dotnet/binder2nd-stl-clr.md)`<Fun>(functor, right)`です。 最初の引数を持つ呼び出し元引数が 1 つファンクタで 2 つの引数ファンクターと 2 番目の引数をラップする便利な手段として使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_bind2nd.cpp   
@@ -95,13 +100,16 @@ int main()
   
 ```  
   
-  **4 3**  
- **0 \-1**  
- **0 \-1**   
-## 必要条件  
- **ヘッダー:** の \<cliext と機能\>  
+```Output  
+4 3  
+0 -1  
+0 -1  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/機能 >  
   
-## 参照  
- [binder2nd](../Topic/binder2nd%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [binder2nd (STL/CLR)](../dotnet/binder2nd-stl-clr.md)

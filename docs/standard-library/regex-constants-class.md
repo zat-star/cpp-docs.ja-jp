@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - regex/std::regex_constants
 - regex/std::regex_constants::error_collate
@@ -91,16 +91,17 @@ helpviewer_keywords:
 - std::regex_constants [C++], optimize
 - std::regex_constants [C++], collate
 ms.assetid: 4a69c0ba-c46d-46e4-bd29-6f4efb805f26
-caps.latest.revision: 18
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4b14c219f755e50e1ede0e8fd58d9a5158283235
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 320b2c390a1220e47191dec4166170daa5537cb2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="regexconstants-class"></a>regex_constants クラス
 正規表現フラグの名前空間です。  
@@ -118,7 +119,7 @@ namespace regex_constants {
 ## <a name="remarks"></a>コメント  
  `regex_constants` 名前空間は、各種のフラグおよび関連するフラグ値をカプセル化します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<regex>  
   
  **名前空間:** std  
@@ -286,7 +287,7 @@ enum syntax_option_type
   
  `collate` -- 一致でロケールを区別します  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<regex>](../standard-library/regex.md)  
 [regex_error クラス](../standard-library/regex-error-class.md)  
 [\<regex> 系関数](../standard-library/regex-functions.md)  
@@ -295,4 +296,3 @@ enum syntax_option_type
 [regex_token_iterator クラス](../standard-library/regex-token-iterator-class.md)  
 [regex_traits クラス](../standard-library/regex-traits-class.md)  
 [\<regex> typedefs](../standard-library/regex-typedefs.md)  
-

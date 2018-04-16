@@ -13,30 +13,31 @@ dev_langs:
 helpviewer_keywords:
 - ranges, floating-point constants
 - floating-point constants, limits
-- FLOAT.H header file
+- float.h header file
 - limits, floating-point constants
 - floating-point numbers [C++]
 - floating limits
 ms.assetid: fc718652-1f4c-4ed8-af60-0e769637459c
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: a19ed24e7765c9b0042831fc2eda9df937be42b3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6406d3d2d81fa3025a024606da68d61b5dcefdb7
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="floating-limits"></a>浮動小数点の制限
 **Microsoft 固有の仕様**  
   
- 次の表に、浮動小数点定数の値に関する制限を示します。 また、これらの制限は、標準ヘッダー ファイル FLOAT.H で定義されます。  
+ 次の表に、浮動小数点定数の値に関する制限を示します。 これらの制限は、標準ヘッダー ファイルで定義されても\<float.h >。  
   
 ### <a name="limits-on-floating-point-constants"></a>浮動小数点定数の制限  
   
-|定数|説明|値|  
+|定数|説明|[値]|  
 |--------------|-------------|-----------|  
 |FLT_DIG DBL_DIG LDBL_DIG|q 桁の浮動小数点数を、精度を失わずに丸めて浮動小数点表現にしたり、戻したりできる桁数 q。|6 15 15|  
 |FLT_EPSILON DBL_EPSILON LDBL_EPSILON|x + 1.0 が 1.0 に等しくならないような最小の正数 x。|1.192092896e-07F 2.2204460492503131e-016 2.2204460492503131e-016|  
@@ -57,5 +58,5 @@ ms.lasthandoff: 09/25/2017
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [整数の制限](../cpp/integer-limits.md)

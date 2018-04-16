@@ -1,12 +1,12 @@
 ---
-title: "静的メンバー (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 静的メンバー (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -26,19 +26,20 @@ caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 568ceedfcc3cd470cdd9003dfb41c691f9986f25
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 420139a8e7eba02411ef0e1e3cf39cecc5b3e97a
+ms.sourcegitcommit: d9ee6f777974d031570f4260c9581ea2c81ad875
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="static-members-c"></a>静的メンバー (C++)
 クラスには、静的なメンバー データとメンバー関数を含めることができます。 データ メンバーとして宣言されて**静的**クラスのすべてのオブジェクトのデータの 1 つだけのコピーが保持されます。
   
  静的データ メンバーは、特定のクラス型のオブジェクトの一部ではありません。 その結果、静的データ メンバーの宣言は定義とは見なされません。 データ メンバーはクラス スコープで宣言されますが、定義はファイル スコープで行われます。 これらの静的メンバーは外部リンケージを持ちます。 次に例を示します。  
   
-```  
+```cpp  
 // static_data_members.cpp  
 class BufferedOutput  
 {  
@@ -71,13 +72,13 @@ int main()
   
  静的データ メンバーは、クラス型のオブジェクトを参照せずに参照できます。 `BufferedOutput` オブジェクトを使用して書き込まれたバイト数は、次のように取得できます。  
   
-```  
+```cpp  
 long nBytes = BufferedOutput::bytecount;  
 ```  
   
- 静的メンバーを存在させるために、クラス型のオブジェクトが存在する必要はありません。 静的メンバーは、メンバー選択を使用してアクセスすることもできます (**です。** および** -> **) 演算子。 例:  
+ 静的メンバーを存在させるために、クラス型のオブジェクトが存在する必要はありません。 静的メンバーは、メンバー選択を使用してアクセスすることもできます (**です。** および**->**) 演算子。 例えば:  
   
-```  
+```cpp  
 BufferedOutput Console;  
   
 long nBytes = Console.bytecount;  

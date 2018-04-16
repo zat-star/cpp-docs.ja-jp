@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - lexical conventions
 - conventions, lexical
 ms.assetid: 20668a49-cab7-4153-a6d9-7439aac3ff3b
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cae6e69b62252f506136ecf8b7de03b09777ebf8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f6fe5581721dec428480e3640e4875eda20a09b0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="elements-of-c"></a>C の要素
 このセクションでは、C プログラムの構築に使用される名前、数、文字など、C プログラミング言語の要素について説明します。 ANSI C 構文では、これらのコンポーネント トークンにラベルが付けられます。  
@@ -47,5 +51,5 @@ ms.lasthandoff: 10/24/2017
   
  演算子は、値の操作方法を指定するシンボル (単一文字および文字の組み合わせ) です。 各シンボルはトークンと呼ばれる 1 つの単位として解釈されます。 詳細については、「[演算子](../c-language/c-operators.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 言語リファレンス](../c-language/c-language-reference.md)

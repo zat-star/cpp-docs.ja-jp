@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: type_traits/std::extent
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- type_traits/std::extent
+dev_langs:
+- C++
 helpviewer_keywords:
 - extent class
 - extent
 ms.assetid: 6d16263d-90b2-4330-9ec7-b59ed898792d
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 185cb6108801b31c19301a0f7488352a6948f5bb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4be9ccb62e4229f2672a8dae0637796c9ce68fc5
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="extent-class"></a>extent クラス
 配列の次元を取得します。  
@@ -68,12 +73,12 @@ extent 0 == 5
 extent 1 == 10  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)   
  [remove_all_extents クラス](../standard-library/remove-all-extents-class.md)   
  [remove_extent クラス](../standard-library/remove-extent-class.md)

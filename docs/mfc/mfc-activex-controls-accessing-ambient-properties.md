@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC ActiveX controls [MFC], accessing ambient properties
 - properties [MFC], accessing ambient
 ms.assetid: fdc9db29-e6b0-45d2-a879-8bd60e2058a7
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e16570c288d47e146053fa42f3c6954bafb09569
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b05e6d37a0550cf157dcd43a22689c9db029b51f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-activex-controls-accessing-ambient-properties"></a>MFC ActiveX コントロール : アンビエント プロパティへのアクセス
 この記事では、ActiveX コントロールがそのコントロールのコンテナーのアンビエント プロパティにアクセスする方法について説明します。  
@@ -64,6 +68,6 @@ ms.lasthandoff: 10/24/2017
   
  (一部の操作によって、コンテナーの)、アンビエント プロパティの値が変更された場合、 **OnAmbientPropertyChanged**コントロールのメンバー関数が呼び出されます。 このような通知を処理するには、このメンバー関数をオーバーライドします。 パラメーターを**OnAmbientPropertyChanged**影響を受けるアンビエント プロパティのディスパッチ id を指定します。 このディスパッチ ID の値にすることがあります**DISPID_UNKNOWN**、1 つまたは複数のアンビエント プロパティが変更されているが、影響を受けたプロパティに関する情報が利用できないことを示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
 

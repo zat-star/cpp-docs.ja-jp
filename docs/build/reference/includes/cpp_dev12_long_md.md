@@ -1,3 +1,1 @@
----
----
 Visual Studio 2013 の Visual C++

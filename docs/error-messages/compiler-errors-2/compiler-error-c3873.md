@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3873
-helpviewer_keywords: C3873
+f1_keywords:
+- C3873
+helpviewer_keywords:
+- C3873
 ms.assetid: e68fd3be-2391-492b-ac3f-d2428901b2e9
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b2e95250fd2bf789425585b704f50bd4d1c51b2c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: adbc98bd40b6dcfa4640c416b5ec38640b0ee822
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3873"></a>コンパイラ エラー C3873
 'char': この文字を識別子の最初の文字にすることはできません  

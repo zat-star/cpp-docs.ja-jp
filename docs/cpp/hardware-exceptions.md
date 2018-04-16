@@ -17,16 +17,17 @@ helpviewer_keywords:
 - hardware exceptions [C++]
 - low level errors
 ms.assetid: 06ac6f01-a8cf-4426-bb12-1688315ae1cd
-caps.latest.revision: 6
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: a8a6ef05d6cbacc717e3f57735bfb798742c037b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 36272def7cf37d53e219011bef0e5151628d2299
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hardware-exceptions"></a>ハードウェア例外
 オペレーティング システムによって認識される標準例外のほとんどは、ハードウェア定義された例外です。 Windows はいくつかの低レベルのソフトウェア例外を認識しますが、それらは通常、オペレーティング システムで処理するのが適しています。  
@@ -52,6 +53,6 @@ ms.lasthandoff: 09/25/2017
   
  前の表に示した多くの例外は、デバッガーやオペレーティング システムなどの低レベルのコードで処理されることが前提となっています。 整数と浮動小数点数のエラーを除き、コードでこれらのエラーを処理しないでください。 したがって、通常は例外処理フィルターを使用して例外を無視 (0 に評価) してください。 そうしないと、下位レベルのしくみで適切に対応できなくなります。 これらの低レベルのエラーの潜在的な影響に対して適切な対策を行うことができます、ただし、[終了ハンドラーを記述](../cpp/writing-a-termination-handler.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外ハンドラーの記述](../cpp/writing-an-exception-handler.md)   
  [構造化例外処理 (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

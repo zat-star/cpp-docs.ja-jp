@@ -11,7 +11,6 @@ ms.topic: reference
 f1_keywords:
 - CComObjectRootEx
 - ATLCOM/ATL::CComObjectRootEx
-- ATLCOM/ATL::CComObjectRootEx
 - ATLCOM/ATL::InternalAddRef
 - ATLCOM/ATL::InternalRelease
 - ATLCOM/ATL::Lock
@@ -30,30 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - reference counting
 ms.assetid: 894a3d7c-2daf-4fd0-8fa4-e6a05bcfb631
-caps.latest.revision: 20
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: ff699c5d4620de01bd1f2ed1e3b87a4d77aa8396
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bab27a9d8b5af8315d9d3468933ea016b12e3399
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomobjectrootex-class"></a>CComObjectRootEx クラス
 このクラスは、非集計と集計の両方のオブジェクトのオブジェクト参照カウントの管理を処理するメソッドを提供します。  
@@ -111,9 +97,9 @@ class CComObjectRootEx : public CComObjectRootBase
   
  COM サーバーを実装するクラスを継承する必要があります`CComObjectRootEx`または[CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)です。  
   
- クラスの定義を指定する場合、 [DECLARE_POLY_AGGREGATABLE](aggregation-and-class-factory-macros.md#declare_poly_aggregatable)マクロ、ATL がのインスタンスを作成する**CComPolyObject\<CYourClass >**とき**IClassFactory::CreateInstance**と呼びます。 作成中に、外側の不明な値がチェックされます。 場合は**NULL**、 **IUnknown**非集約オブジェクトには実装されています。 外側の unknown がない場合**NULL**、 **IUnknown**集約オブジェクトには実装されています。  
+ クラスの定義を指定する場合、 [DECLARE_POLY_AGGREGATABLE](aggregation-and-class-factory-macros.md#declare_poly_aggregatable)マクロのインスタンスを作成する ATL **CComPolyObject\<CYourClass >**とき**IClassFactory:。CreateInstance**と呼びます。 作成中に、外側の不明な値がチェックされます。 場合は**NULL**、 **IUnknown**非集約オブジェクトには実装されています。 外側の unknown がない場合**NULL**、 **IUnknown**集約オブジェクトには実装されています。  
   
- クラスが指定されていない場合、`DECLARE_POLY_AGGREGATABLE`マクロ、ATL がのインスタンスを作成する**CAggComObject\<CYourClass >**集約オブジェクトまたはのインスタンスの**CComObject\<CYourClass >**の非集約オブジェクト。  
+ クラスが指定されていない場合、`DECLARE_POLY_AGGREGATABLE`マクロのインスタンスを作成する ATL **CAggComObject\<CYourClass >**集約オブジェクトまたはのインスタンスの**CComObject\<CYourClass>**の非集約オブジェクト。  
   
  使用する利点`CComPolyObject`両方を避けることが`CComAggObject`と`CComObject`モジュールに、集計と非集計のケースに対処します。 1 つ`CComPolyObject`オブジェクトは両方のケースを処理します。 そのため、vtable の 1 つだけのコピーと関数の 1 つのコピーは、モジュール内に存在します。 Vtable が大きい場合は、モジュールのサイズを大幅に縮小このできます。 ただし、vtable が小さい場合を使用して`CComPolyObject`には、集計または非集約オブジェクトは、最適化されていないために、わずかに大きくモジュールのサイズになりますが`CComAggObject`と`CComObject`です。  
   
@@ -121,7 +107,7 @@ class CComObjectRootEx : public CComObjectRootBase
   
  場合は、オブジェクトは集計されません**IUnknown**によって実装される`CComObject`または`CComPolyObject`です。 この場合、呼び出し`QueryInterface`、 `AddRef`、および**リリース**に委任されます`CComObjectRootEx`の`InternalQueryInterface`、 `InternalAddRef`、および`InternalRelease`実際の操作を実行します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="ccomobjectrootex"></a>CComObjectRootEx::CComObjectRootEx  
@@ -157,7 +143,7 @@ HRESULT FinalConstruct();
 ### <a name="example"></a>例  
  通常から派生したクラスでは、このメソッドをオーバーライド`CComObjectRootEx`を作成するには、オブジェクトを集計します。 例:  
   
- [!code-cpp[NVC_ATL_COM #40](../../atl/codesnippet/cpp/ccomobjectrootex-class_1.h)]  
+ [!code-cpp[NVC_ATL_COM#40](../../atl/codesnippet/cpp/ccomobjectrootex-class_1.h)]  
   
  構築に失敗した場合は、エラーを返すことができます。 マクロを使用することもできます。[アグリゲート](aggregation-and-class-factory-macros.md#declare_protect_final_construct)されてから、外部のオブジェクトを保護する場合、作成中に、内部の集計オブジェクト カウントをインクリメント デクリメントして参照カウントを 0 には削除します。  
   
@@ -310,10 +296,10 @@ static void WINAPI ObjectMain(bool bStarting);
 ### <a name="remarks"></a>コメント  
  値、`bStarting`パラメーターは、モジュールがされているかどうかを示します初期化するか、または終了します。 既定の実装`ObjectMain`、何も行われませんが、初期化またはクラスに割り当てるリソースをクリーンアップするのには、クラスでこの関数をオーバーライドすることができます。 なお`ObjectMain`クラスのすべてのインスタンスが要求される前と呼びます。  
   
- `ObjectMain`エントリ ポイント関数が実行できる操作の種類が制限されているために、DLL のエントリ ポイントから呼び出されます。 これらの制限の詳細については、次を参照してください。[ランタイム ライブラリの動作](../../build/run-time-library-behavior.md)と[DllMain](http://msdn.microsoft.com/library/windows/desktop/ms682583)です。  
+ `ObjectMain`エントリ ポイント関数が実行できる操作の種類が制限されているために、DLL のエントリ ポイントから呼び出されます。 これらの制限の詳細については、次を参照してください。 [Dll および Visual c ランタイム ライブラリの動作](../../build/run-time-library-behavior.md)と[DllMain](http://msdn.microsoft.com/library/windows/desktop/ms682583)です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_COM #41](../../atl/codesnippet/cpp/ccomobjectrootex-class_2.h)]  
+ [!code-cpp[NVC_ATL_COM#41](../../atl/codesnippet/cpp/ccomobjectrootex-class_2.h)]  
   
 ##  <a name="outeraddref"></a>CComObjectRootEx::OuterAddRef  
  集計の外側の不明な参照カウントをインクリメントします。  
@@ -364,9 +350,8 @@ void Unlock();
   
  スレッド モデルがシングル スレッドの場合、このメソッドは何も行いません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../atl/reference/ccomaggobject-class.md)   
  [CComObject クラス](../../atl/reference/ccomobject-class.md)   
  [CComPolyObject クラス](../../atl/reference/ccompolyobject-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

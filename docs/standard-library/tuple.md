@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - <tuple>
 dev_langs:
@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - tuple header
 ms.assetid: e4ef5c2d-318b-44f6-8bce-fce4ecd796a3
-caps.latest.revision: 20
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d41cb6ad790ab9a40baf6affa48e8bbddc11bc71
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: b84a2094205e3db7935d5768a3f86ba765487685
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="lttuplegt"></a>&lt;tuple&gt;
 さまざまな型のオブジェクトを保持するインスタンスを持つテンプレート `tuple` を定義します。  
@@ -62,7 +63,6 @@ ms.lasthandoff: 10/03/2017
 |[make_tuple](../standard-library/tuple-functions.md#make_tuple)|要素値から `tuple` を作成します。|  
 |[tie](../standard-library/tuple-functions.md#tie)|要素参照から `tuple` を作成します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<array>](../standard-library/array.md)
-
 

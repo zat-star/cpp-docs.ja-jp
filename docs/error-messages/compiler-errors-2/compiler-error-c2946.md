@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2946
 ms.assetid: c86dfbfc-7702-4f09-8a53-d205710e99c2
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e5e02ea2e96a3c6356a9372700c80d000aa48992
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 887afb5a42a7dac47b5d3b8490acf8256601f189
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2946"></a>コンパイラ エラー C2946
 明示的なインスタンス生成。'class' はテンプレート クラスの特殊化ではありません  

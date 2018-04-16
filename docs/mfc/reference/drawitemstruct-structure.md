@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: DRAWITEMSTRUCT
-dev_langs: C++
-helpviewer_keywords: DRAWITEMSTRUCT structure [MFC]
+f1_keywords:
+- DRAWITEMSTRUCT
+dev_langs:
+- C++
+helpviewer_keywords:
+- DRAWITEMSTRUCT structure [MFC]
 ms.assetid: ba9ef1d4-aebb-45e9-b956-4b81a02e50f7
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c63183cf721523b2f6b776dfad3bb9490816c703
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 438d698b486b455d7898a836d510aa5ec1c6e454
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="drawitemstruct-structure"></a>DRAWITEMSTRUCT 構造体
 `DRAWITEMSTRUCT` 構造体は、オーナー ウィンドウでオーナー描画コントロールまたはメニュー項目の描画方法を決定する情報を提供します。  
@@ -121,10 +127,10 @@ typedef struct tagDRAWITEMSTRUCT {
 ## <a name="remarks"></a>コメント  
  オーナー描画コントロールのオーナー ウィンドウまたはメニュー項目は、この構造体へのポインターを `lParam` メッセージの `WM_DRAWITEM` パラメーターとして受け取ります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** winuser.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [体](../../mfc/reference/cwnd-class.md#ondrawitem)
 

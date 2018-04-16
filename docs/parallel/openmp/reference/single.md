@@ -1,5 +1,5 @@
 ---
-title: "単一 |Microsoft ドキュメント"
+title: "1 つ |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - Single
 dev_langs:
@@ -15,33 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - single OpenMP directive
 ms.assetid: 85cf94fb-cb9c-4d82-8609-adffa9f552e1
-caps.latest.revision: 11
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 7a353009983e0b5a96065fc094dabc0a4afb89e6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b93480f01ea35129812b3d4f3c42ce2130046243
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="single"></a>single
-コードのセクションを単一スレッドで実行すべきことを指定できます。  
+コードのセクションをシングル スレッドで実行するように指定することができます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -54,7 +41,7 @@ ms.lasthandoff: 02/24/2017
   
 #### <a name="parameters"></a>パラメーター  
  `clause` (省略可能)  
- 0 個以上の句。 サポートされている句の一覧については、「解説」セクションを参照してください**単一**します。  
+ 0 個以上の句。 サポートされている句の一覧については、「解説」セクションを参照してください**単一**です。  
   
 ## <a name="remarks"></a>コメント  
  **単一**ディレクティブは、次の OpenMP 句をサポートしています。  
@@ -67,9 +54,9 @@ ms.lasthandoff: 02/24/2017
   
 -   [private](../../../parallel/openmp/reference/private-openmp.md)  
   
- [マスター](../../../parallel/openmp/reference/master.md)ディレクティブを使用して、コードのセクションをマスター スレッド上でのみ実行すべきことを指定できます。  
+ [マスター](../../../parallel/openmp/reference/master.md)ディレクティブを使用して、コードのセクションをマスター スレッドでのみ実行するように指定できます。  
   
- 詳細については、次を参照してください。 [2.4.3 単一構築](../../../parallel/openmp/2-4-3-single-construct.md)します。  
+ 詳細については、次を参照してください。 [2.4.3 1 つ構築](../../../parallel/openmp/2-4-3-single-construct.md)です。  
   
 ## <a name="example"></a>例  
   
@@ -103,5 +90,5 @@ compute results
 write output  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

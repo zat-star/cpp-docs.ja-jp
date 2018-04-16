@@ -1,42 +1,46 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4256 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4256"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4256"
+title: "コンパイラの警告 (レベル 4) C4256 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4256
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4256
 ms.assetid: a755a32e-895a-4837-a2b5-4ea06b736798
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4bbaec27948f061cb21eeb432446517d4f9a6b2c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4256
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'function' : 仮想基本クラスを含むクラス用コンストラクターは '...' を含んでいます; 呼び出しは以前のバージョンの Visual C\+\+ と互換性がない可能性があります。  
+# <a name="compiler-warning-level-4-c4256"></a>コンパイラの警告 (レベル 4) C4256
+'function': 仮想基底クラスのコンス トラクターが '…';呼び出しは古いバージョンの Visual C と互換性がない可能性があります。  
   
- 互換性がない場合もあります。  
+ 可能な互換性がないです。  
   
- 次のコード例について考えます。  コンストラクター S2::S2 \(int i、…の定義\) バージョン 7 以前のバージョンの Visual C\+\+ コンパイラを使用してコンパイルされ、次の例では、S3 の現在のバージョンを、コンストラクターへの呼び出しを使用して、特殊な呼び出し規約の変更について、正しくコンパイルされます。  両方とも Visual C\+\+ 6.0 を使用してコンパイルされた場合、呼び出しはパラメーターが省略記号に渡されなかった場合、アクセス許可が大幅には機能しません。  
+ 次のコード例について考えます。 場合 S2::S2 コンス トラクターの定義 (int i,...) バージョン 7 より前に、Visual C コンパイラのバージョンを使用してコンパイルされましたが、現在のバージョンを使用して次の例をコンパイルするのため S3 のコンス トラクターの呼び出しは正しく機能しません特別なケース呼び出し規約の変更。 両方は、Visual C 6.0 を使用してコンパイルされた場合、呼び出しは機能しませんうまくいずれか、または、省略記号のパラメーターが渡されない限り、します。  
   
- この警告を解決するには、次の方法があります。  
+ この警告を解決するには  
   
-1.  コンストラクターに省略記号を使用しない。  
+1.  コンス トラクターでは、省略記号ボタンを使用しないでください。  
   
-2.  プロジェクト内のすべてのコンポーネントが、このクラスを定義または参照するライブラリを含めて、現在のバージョンでビルドされていることを確認してから、[warning](../../preprocessor/warning.md) プラグマを使用して、この警告を無効にする。  
+2.  プロジェクト内のすべてのコンポーネント (を定義することがありますまたはこのクラスを参照するライブラリを含む)、現在のバージョンで構築された後に、あるを使用して、警告を無効にするかどうかを確認、[警告](../../preprocessor/warning.md)プラグマ。  
   
- 次の例では警告 C4256 が生成されます。  
+ 次の例では、C4256 が生成されます。  
   
 ```  
 // C4256.cpp  

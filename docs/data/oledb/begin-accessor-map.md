@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: BEGIN_ACCESSOR_MAP
-dev_langs: C++
-helpviewer_keywords: BEGIN_ACCESSOR_MAP macro
+ms.topic: reference
+f1_keywords:
+- BEGIN_ACCESSOR_MAP
+dev_langs:
+- C++
+helpviewer_keywords:
+- BEGIN_ACCESSOR_MAP macro
 ms.assetid: e6d6e3a4-62fa-4e49-8c53-caf8c9d20091
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 611da93ac883b9d36fe86fbcd07ca75dfe5f350a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0fd9684d3ab428ffa2e874f781208812d1ad12fc
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="beginaccessormap"></a>BEGIN_ACCESSOR_MAP
 アクセサー マップ エントリの開始位置を示します。  
@@ -27,13 +34,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-  
-BEGIN_ACCESSOR_MAP(  
-x  
-,   
-num  
- )  
-  
+BEGIN_ACCESSOR_MAP(x, num)  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -94,10 +95,10 @@ END_ACCESSOR_MAP()
  ```
 
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md)   
  [END_ACCESSOR](../../data/oledb/end-accessor.md)   

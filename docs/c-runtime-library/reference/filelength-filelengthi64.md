@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _filelengthi64
 - _filelength
@@ -38,30 +38,17 @@ helpviewer_keywords:
 - files [C++], length
 - _filelengthi64 function
 ms.assetid: 3ab83d5a-543c-4079-b9d9-0abfc7da0275
-caps.latest.revision: 14
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: a09dca7637c950988dbf9a0cda12f7e14b8cecee
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bcf35d33958157a424bf78950c3b4cf23f33708e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="filelength-filelengthi64"></a>_filelength、_filelengthi64
 ファイルの長さを取得します。  
@@ -84,19 +71,19 @@ __int64 _filelengthi64(
 ## <a name="return-value"></a>戻り値  
  `_filelength` と `_filelengthi64` のいずれも、`fd` に関連付けられているターゲット ファイルのファイルの長さ (バイト単位) を返します。 `fd` が無効なファイル記述子の場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、この関数によって無効なパラメーター ハンドラーが呼び出されます。 どちらの関数がエラーを示す設定に-1 L を返しますの実行の継続が許可された場合`errno`に`EBADF`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_filelength`|\<io.h>|  
 |`_filelengthi64`|\<io.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_chsize](../../c-runtime-library/reference/chsize.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_chsize](../../c-runtime-library/reference/chsize.md)   
  [_fileno](../../c-runtime-library/reference/fileno.md)   

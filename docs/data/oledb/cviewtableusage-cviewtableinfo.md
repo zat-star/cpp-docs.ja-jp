@@ -1,66 +1,71 @@
 ---
-title: "CViewTableUsage、CViewTableInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "m_szTableSchema"
-  - "m_szCatalog"
-  - "CViewTableInfo"
-  - "m_szTableCatalog"
-  - "m_szSchema"
-  - "m_szTableName"
-  - "m_szName"
-  - "CViewTableUsage"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CViewTableInfo パラメーター クラス"
-  - "CViewTableUsage TYPEDEF クラス"
-  - "m_szCatalog"
-  - "m_szName"
-  - "m_szSchema"
-  - "m_szTableCatalog"
-  - "m_szTableName"
-  - "m_szTableSchema"
-  - "TABLE_CATALOG"
-  - "TABLE_NAME"
-  - "TABLE_SCHEMA"
+title: "CViewTableUsage、CViewTableInfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- m_szTableSchema
+- m_szCatalog
+- CViewTableInfo
+- m_szTableCatalog
+- m_szSchema
+- m_szTableName
+- m_szName
+- CViewTableUsage
+dev_langs:
+- C++
+helpviewer_keywords:
+- CViewTableInfo parameter class
+- CViewTableUsage typedef class
+- m_szSchema
+- m_szTableSchema
+- TABLE_CATALOG
+- m_szCatalog
+- TABLE_NAME
+- TABLE_SCHEMA
+- m_szName
+- m_szTableCatalog
+- m_szTableName
 ms.assetid: 10b74f2a-8010-4f97-acc2-ffce07349981
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 470a7be46c5afbae5f6d3a1fb88377e56ea0e1fa
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CViewTableUsage、CViewTableInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-パラメーター **CViewTableInfo**クラスを実装するに **CViewTableUsage** typedef クラスを呼び出します。  
+# <a name="cviewtableusage-cviewtableinfo"></a>CViewTableUsage、CViewTableInfo
+Typedef クラスを呼び出す**CViewTableUsage**そのパラメーター クラスを実装する**CViewTableInfo**です。  
   
-## 解説  
- typedef クラスの使用の詳細については、" [スキーマ行セット クラスと Typedef クラス](../Topic/Schema%20Rowset%20Classes%20and%20Typedef%20Classes.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)typedef クラスの使用に関する詳細についてはします。  
   
- このクラスは、カタログに定義された特定のユーザーがアクセスできる表示されていたテーブルを識別します。  
+ このクラスは、表示されたテーブル、カタログで定義されている、特定のユーザーにアクセスできるを識別します。  
   
- 次の表は、クラスのデータ メンバーとそれらに該当する OLE DB の列の一覧です。  スキーマと列の詳細については、" *OLE DB Programmer's Reference* の [VIEW\_TABLE\_USAGE の行セット](https://msdn.microsoft.com/en-us/library/ms719727.aspx) を参照してください。  
+ 次の表には、クラスのデータ メンバーとその対応する OLE DB 列が一覧表示します。 参照してください[VIEW_TABLE_USAGE 行セット](https://msdn.microsoft.com/en-us/library/ms719727.aspx)で、 *OLE DB プログラマーズ リファレンス*スキーマと列の詳細についてはします。  
   
-|データ メンバー|OLE DB の列|  
-|--------------|---------------|  
-|m\_szCatalog|VIEW\_CATALOG|  
-|m\_szSchema|VIEW\_SCHEMA|  
-|m\_szName|VIEW\_NAME|  
-|m\_szTableCatalog|TABLE\_CATALOG|  
-|m\_szTableSchema|TABLE\_SCHEMA|  
-|m\_szTableName|TABLE\_NAME|  
+|データ メンバー|OLE DB 列|  
+|------------------|--------------------|  
+|m_szCatalog|VIEW_CATALOG|  
+|m_szSchema|VIEW_SCHEMA|  
+|m_szName|VIEW_NAME|  
+|m_szTableCatalog|TABLE_CATALOG|  
+|m_szTableSchema|TABLE_SCHEMA|  
+|m_szTableName|TABLE_NAME|  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## 参照  
- [CRestrictions クラス](../Topic/CRestrictions%20Class.md)
+## <a name="see-also"></a>参照  
+ [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

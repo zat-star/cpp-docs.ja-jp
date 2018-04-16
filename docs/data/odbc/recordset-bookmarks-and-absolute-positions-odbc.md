@@ -1,14 +1,17 @@
 ---
-title: "レコード セット: ブックマークと絶対位置 (ODBC) |Microsoft ドキュメント"
-ms.custom: 
+title: 'レコード セット: ブックマークと絶対位置 (ODBC) |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: SetAbsolutePosition
-dev_langs: C++
+f1_keywords:
+- SetAbsolutePosition
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDBVariant class, bookmarks
 - absolute positions, ODBC recordsets
@@ -27,15 +30,18 @@ helpviewer_keywords:
 - GetBookmark method
 - SetAbsolutePosition method, bookmarks
 ms.assetid: 189788d6-33c1-41c5-9265-97db2a5d43cc
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b4d703d49173ba950f073342de014127e5696202
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4b206e5d09d86613af0585df7510b0f88397984a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="recordset-bookmarks-and-absolute-positions-odbc"></a>レコードセット: ブックマークと絶対位置 (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
@@ -88,5 +94,5 @@ rs.SetBookmark( varRecordToReturnTo );
   
  レコード セットの移動の詳細については、次を参照してください。[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコードセット (ODBC)](../../data/odbc/recordset-odbc.md)

@@ -1,13 +1,13 @@
 ---
-title: "アルゴリズム |Microsoft Docs"
-ms.custom: 
+title: アルゴリズム |Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.tgt_pltfrm: ''
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -21,26 +21,13 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 5b5ffafb841fcb883dc66880933e8d123256e575
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 369479614174e1e66d91e39e3decacaf24268a08
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="algorithms"></a>アルゴリズム
 アルゴリズムは、C++ 標準ライブラリの基本的な部分です。 アルゴリズムは、コンテナー自体と共に機能するのではありません。反復子と共に機能します。 そのため、C++ 標準ライブラリ コンテナーのすべてではありませんが、そのほとんどで同じアルゴリズムを使用できます。 このセクションでは、C++ 標準ライブラリ アルゴリズムの規則と用語について説明します。  
@@ -48,9 +35,9 @@ ms.lasthandoff: 02/24/2017
 ## <a name="remarks"></a>コメント  
  アルゴリズム テンプレート関数の説明では、いくつかの簡略な語句を使用しています。  
   
--   "範囲 [*A*, *B*) 内" は、*A* から始まり *B* の直前までの&0; 個以上の離散値のシーケンスを意味します。範囲は、*B* が *A* から到達可能な場合にのみ有効です。*A* をオブジェクト *N* に格納 (*N* = *A*) し、オブジェクトを&0; 回以上インクリメント (++*N*) して、有限数のインクリメント (N == B*) の後で *B* と等しいかどうかを比較できます。*  
+-   "範囲 [*A*, *B*) 内" は、*A* から始まり *B* の直前までの 0 個以上の離散値のシーケンスを意味します。範囲は、*B* が *A* から到達可能な場合にのみ有効です。*A* をオブジェクト *N* に格納 (*N* = *A*) し、オブジェクトを 0 回以上インクリメント (++*N*) して、有限数のインクリメント (N == B*) の後で *B* と等しいかどうかを比較できます。*  
   
--   "各 *N* (範囲 [*A*, *B*) 内)" は、*N* が値 *A* で始まり、値 *B* と等しくなるまで&0; 回以上インクリメントされるという意味です。*N* == *B* の場合は、範囲外です。  
+-   "各 *N* (範囲 [*A*, *B*) 内)" は、*N* が値 *A* で始まり、値 *B* と等しくなるまで 0 回以上インクリメントされるという意味です。*N* == *B* の場合は、範囲外です。  
   
 -   "*X* のような範囲 [*A*, *B* の最小値 *N*)" という語句は、条件 *X* が満たされるまで、範囲 [*A*, *B*) 内の各 *N* に対して、条件 *X* が判断されるという意味です。  
   
@@ -72,12 +59,11 @@ ms.lasthandoff: 02/24/2017
   
  範囲 [0, `Last` - `First`) 内の各 *N* および範囲 (N, `Last` - `First`) の各 *M* に対し、述語 !(\*(`First` + *M*) < \*(*First* + *N*)) が true の場合、範囲 [`First`, `Last`) 内で反復子によって指定された要素のシーケンスは、演算子 **<** で順序付けられたシーケンスです。 (要素が昇順で並べ替えられていることに注意してください)。述語関数 **operator<**、または、それに代わる関数では、どちらのオペランドも変更されません。 評価されるたびに、同じ `bool` の結果となります。また、いずれかのオペランドのコピーがオペランドに代入される場合、同じ結果となります。 さらに、比較するオペランドに対して厳密弱順序を適用する必要があります。  
   
- 範囲 [1, `Last` - `First`) の各 *N* に対し、述語 !(\*`First` < \*(`First` + *N*)) が true の場合、範囲 [`First`, `Last`) 内の反復子で指定された要素のシーケンスは、**operator<** によって順序付けられたヒープです。 (最初の要素が最大です)。その内部構造は、テンプレート関数 [make_heap](http://msdn.microsoft.com/Library/b09f795c-f368-4aa8-b57e-61ee6100ddc2)、[pop_heap]--brokenlink--(../Topic/not%20found:c10b0c65-410c-4c83-abf8-8b7f61bba8d0.md#pop_heap)、および [push_heap] - brokenlink--(../Topic/not%20found:c10b0c65-410c-4c83-abf8-8b7f61bba8d0.md#push_heap) にのみ別名で知られています。 順序付けられたシーケンスと同様、述語関数 **operator<**、または、それに変わる関数では、そのどちらのオペランドも変更できません。さらに、比較するオペランドに対して厳密弱順序を強制します。 評価されるたびに、同じ `bool` の結果となります。また、いずれかのオペランドのコピーがオペランドに代入される場合、同じ結果となります。  
+ 範囲 [1, `Last` - `First`) の各 *N* に対し、述語 !(\*`First` < \*(`First` + *N*)) が true の場合、範囲 [`First`, `Last`) 内の反復子で指定された要素のシーケンスは、**operator<** によって順序付けられたヒープです。 (最初の要素が最大です)。テンプレート関数にのみその内部構造が知られている[make_heap](../standard-library/algorithm-functions.md#make_heap)、 [pop_heap](../standard-library/algorithm-functions.md#pop_heap)、および[push_heap](../standard-library/algorithm-functions.md#push_heap)です。 順序付けられたシーケンスと同様、述語関数 **operator<**、または、それに変わる関数では、そのどちらのオペランドも変更できません。さらに、比較するオペランドに対して厳密弱順序を強制します。 評価されるたびに、同じ `bool` の結果となります。また、いずれかのオペランドのコピーがオペランドに代入される場合、同じ結果となります。  
   
  C++ 標準ライブラリ アルゴリズムは、[\<algorithm>](../standard-library/algorithm.md) および [\<numeric>](../standard-library/numeric.md) ヘッダー ファイルにあります。  
   
 ## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 

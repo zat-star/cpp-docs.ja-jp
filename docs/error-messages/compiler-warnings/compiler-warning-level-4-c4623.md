@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4623
-dev_langs: C++
-helpviewer_keywords: C4623
+f1_keywords:
+- C4623
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4623
 ms.assetid: e630d8d0-f6ea-469c-a74f-07b027587225
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a8d2827c32f38025611a65657395860fbb19e440
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d9a47f0cc967011465286329461abc72eccb8c80
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4623"></a>コンパイラの警告 (レベル 4) C4623
 '`derived class`' : 基底クラスの既定のコンストラクターがアクセスできないか削除されているため、既定のコンストラクターは暗黙的に削除済みとして定義されました  

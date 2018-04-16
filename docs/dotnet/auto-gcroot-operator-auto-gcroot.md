@@ -1,45 +1,50 @@
 ---
-title: "auto_gcroot::operator auto_gcroot | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "auto_gcroot.operator auto_gcroot"
-  - "auto_gcroot::operator auto_gcroot"
-  - "msclr.auto_gcroot.operator auto_gcroot"
-  - "msclr::auto_gcroot::operator auto_gcroot"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "auto_gcroot 演算子"
+title: "auto_gcroot::operator auto_gcroot |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- auto_gcroot.operator auto_gcroot
+- auto_gcroot::operator auto_gcroot
+- msclr.auto_gcroot.operator auto_gcroot
+- msclr::auto_gcroot::operator auto_gcroot
+dev_langs:
+- C++
+helpviewer_keywords:
+- auto_gcroot operator
 ms.assetid: 43e3f27a-9f68-444f-9149-a9282a9b935a
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 58ccf1aa32a999fd85f6dc0a14fb514f6508a386
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# auto_gcroot::operator auto_gcroot
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`auto_gcroot` と互換性のある型間の演算子を型に選択します。  
+# <a name="autogcrootoperator-autogcroot"></a>auto_gcroot::operator auto_gcroot
+間に型キャスト演算子`auto_gcroot`と互換性のある型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename _other_type>  
 operator auto_gcroot<_other_type>();  
 ```  
   
-## 戻り値  
- `auto_gcroot<_other_type>`にキャストされる現在の `auto_gcroot`。  
+## <a name="return-value"></a>戻り値  
+ 現在`auto_gcroot`にキャスト`auto_gcroot<_other_type>`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_gcroot_op_auto_gcroot.cpp  
@@ -76,12 +81,15 @@ int main() {
 }  
 ```  
   
-  **Hello 最初 B から\!**  
-**Hello 最初に A ~\!**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_gcroot.h\>  
+```Output  
+Hello from first B!  
+Hello from first A!  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
-## 参照  
- [auto\_gcroot Members](../dotnet/auto-gcroot-members.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>参照  
+ [auto_gcroot のメンバー](../dotnet/auto-gcroot-members.md)

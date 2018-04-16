@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -21,20 +22,23 @@ f1_keywords:
 - ATLSIMPSTR/ATL::nDataLength
 - ATLSIMPSTR/ATL::nRefs
 - ATLSIMPSTR/ATL::pStringMgr
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CStringData class
 - shared classes, CStringData
 ms.assetid: 4e31b5ca-3dbe-4fd5-b692-8211fbfb2593
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 43242e00d50c46b17e97c71ffe5e61e253347879
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7523ca52c0ded8ec9b3cf02dd6798beca8be5cf8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cstringdata-class"></a>CStringData クラス
 このクラスは、文字列オブジェクトのデータを表します。  
@@ -91,7 +95,7 @@ struct CStringData
     > [!NOTE]
     >  文字列オブジェクトの実際の文字バッファー文字列マネージャーが割り当てられるし、に追加されますが、`CStringData`オブジェクト。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsimpstr.h  
   
 ##  <a name="addref"></a>CStringData::AddRef  
@@ -231,7 +235,7 @@ void Unlock() throw();
   
  開発者は、文字列データを共有しないことを確認する必要がありますロックおよびロック解除が使用されます。 ロックの良い例が示される、 [LockBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#lockbuffer)と[として](../../atl-mfc-shared/reference/csimplestringt-class.md#unlockbuffer)のメソッド`CSimpleStringT`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)
 

@@ -1,42 +1,47 @@
 ---
-title: "hash_multiset::key_compare (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_multiset::key_compare"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "key_compare メンバー [STL/CLR]"
+title: "hash_multiset::key_compare (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::hash_multiset::key_compare
+dev_langs:
+- C++
+helpviewer_keywords:
+- key_compare member [STL/CLR]
 ms.assetid: 7382d18b-3cac-4a93-98db-fab486a8d275
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c8e254cfaac3018506344945edbd9e499a8c2fda
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_multiset::key_compare (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 種類のキーの順序のデリゲート。  
+# <a name="hashmultisetkeycompare-stlclr"></a>hash_multiset::key_compare (STL/CLR)
+2 つのキーの順序付けのデリゲート。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Microsoft::VisualC::StlClr::BinaryDelegate<GKey, GKey, bool>  
     key_compare;  
 ```  
   
-## 解説  
- 型は、Key 引数の順序を決定するデリゲートのシノニムです。  
+## <a name="remarks"></a>コメント  
+ 型は、そのキーの引数の順序を決定するデリゲートのシノニムです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_multiset_key_compare.cpp   
@@ -72,19 +77,23 @@ int main()
   
 ```  
   
-  **\(L'a、L'a\) \= True を比較します。**  
-**\(L'a、L'b\) \= True を比較します。**  
-**\(L'b、L'a\) \= false を比較します。**  
-**\(L'a、L'a\) \= false を比較します。**  
-**\(L'a、L'b\) \= false を比較します。**  
-**\(L'b、L'a\) \= True を比較します。**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+compare(L'a', L'a') = True  
+compare(L'a', L'b') = True  
+compare(L'b', L'a') = False  
   
- **名前空間:** の cliext  
+compare(L'a', L'a') = False  
+compare(L'a', L'b') = False  
+compare(L'b', L'a') = True  
+```  
   
-## 参照  
- [hash\_multiset](../dotnet/hash-multiset-stl-clr.md)   
- [hash\_multiset::key\_comp](../dotnet/hash-multiset-key-comp-stl-clr.md)   
- [hash\_multiset::key\_type](../dotnet/hash-multiset-key-type-stl-clr.md)   
- [hash\_multiset::value\_compare](../dotnet/hash-multiset-value-compare-stl-clr.md)
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_set >  
+  
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_multiset (STL/CLR)](../dotnet/hash-multiset-stl-clr.md)   
+ [hash_multiset::key_comp (STL/CLR)](../dotnet/hash-multiset-key-comp-stl-clr.md)   
+ [hash_multiset::key_type (STL/CLR)](../dotnet/hash-multiset-key-type-stl-clr.md)   
+ [hash_multiset::value_compare (STL/CLR)](../dotnet/hash-multiset-value-compare-stl-clr.md)

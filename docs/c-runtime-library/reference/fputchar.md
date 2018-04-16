@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - fputchar
 apilocation:
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - fputchar function
 ms.assetid: d6cf3492-ace9-47a7-9f7d-3c25aa8ad526
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6284e76c557a26f97d209040a467dc8a98e0c0a1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 36db16b81a80168b6adfd676c489132f28d79bbc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fputchar"></a>fputchar
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_fputchar](../../c-runtime-library/reference/fputchar-fputwchar.md) を使用してください。

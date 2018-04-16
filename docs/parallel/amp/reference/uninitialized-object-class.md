@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - uninitialized_object
 - AMPRT/uninitialized_object
@@ -17,31 +17,17 @@ dev_langs:
 helpviewer_keywords:
 - uninitialized_object class
 ms.assetid: 6ae3c4e8-64a6-4511-a158-03be197b63af
-caps.latest.revision: 10
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: 1ff7840ec3ff4ab00b7e13d647c329a892dade42
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4a6c602ffa6cb444ce2245a655d47ffc9b548276
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="uninitializedobject-class"></a>uninitialized_object クラス
 初期化されていないオブジェクトが使用される場合にスローされる例外です。  
@@ -58,7 +44,7 @@ class uninitialized_object : public runtime_exception;
   
 |名前|説明|  
 |----------|-----------------|  
-|[uninitialized_object のコンス トラクター](#ctor)|`uninitialized_object` クラスの新しいインスタンスを初期化します。|  
+|[uninitialized_object コンス トラクター](#ctor)|`uninitialized_object` クラスの新しいインスタンスを初期化します。|  
 
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
@@ -68,11 +54,11 @@ class uninitialized_object : public runtime_exception;
   
  `uninitialized_object`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amprt.h  
   
  **名前空間:** Concurrency  
-## <a name="uninitialized_object__ctor"></a>unsupported_feature 
+## <a name="uninitialized_object__ctor"></a> unsupported_feature 
 
 unsupported_feature 例外の新しいインスタンスを構築します。  
   
@@ -92,6 +78,5 @@ unsupported_feature() throw();
 ### <a name="return-value"></a>戻り値  
  `unsupported_feature` オブジェクト。 
 
-## <a name="see-also"></a>関連項目  
- [同時実行 Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
-
+## <a name="see-also"></a>参照  
+ [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

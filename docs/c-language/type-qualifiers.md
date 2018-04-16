@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - volatile keyword [C], type qualifier
 - type qualifiers
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - memory, access using volatile
 - volatile keyword [C], type specifier
 ms.assetid: bb4c6744-1dd7-40a8-b4eb-f5585be30908
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c4fad93505a5778c23171b413654624a32e825b2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8fc671e624b16299db3366885f7bcd38b8518ee5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="type-qualifiers"></a>型修飾子
 型修飾子は、2 つのうちいずれかの特性を識別子に割り当てます。 **const** 型修飾子は、変更不可能なオブジェクトを宣言します。 `volatile` 型修飾子は、同時実行されるスレッドなど、そのプログラムの制御範囲以外の要素によって値を変更できる項目を宣言します。  
@@ -72,5 +76,5 @@ int volatile vint;     /* Volatile integer        */
   
 -   項目は **const** と `volatile` の両方であってもかまいません。その場合、自身のプログラムではその項目を変更できませんが、非同期のプロセスでは変更できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言と型](../c-language/declarations-and-types.md)

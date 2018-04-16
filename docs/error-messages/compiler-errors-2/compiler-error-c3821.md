@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3821
 ms.assetid: 2b327c7a-5faf-443c-ae82-944fae25b4df
-caps.latest.revision: 12
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eda98ddd6247a2b3d137c015e5e4e3b06f04d821
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 47e0a2ed3c824ed1598f7e998d4966b95cc9233b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3821"></a>コンパイラ エラー C3821
 'function': マネージ型または関数をアンマネージ関数で使用することはできません  
@@ -66,4 +67,3 @@ int main() {
    }  
 } // C3821  
 ```  
-

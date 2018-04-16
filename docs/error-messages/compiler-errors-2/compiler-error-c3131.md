@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3131
 ms.assetid: 38f20fac-83c9-4cd9-b7b5-74ca8f650ea6
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 94edcfe07650bbbeba6161633a0059250d910abd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 53b42516687d34b7eeb92ee46becf9afa99ef592
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3131"></a>コンパイラ エラー C3131
 プロジェクトは、'name' プロパティに 'module' 属性を持つ必要があります。  

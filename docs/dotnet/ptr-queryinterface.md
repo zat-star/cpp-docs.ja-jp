@@ -1,35 +1,40 @@
 ---
-title: "ptr::QueryInterface | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ptr.QueryInterface"
-  - "ptr::QueryInterface"
-  - "msclr::com::ptr::QueryInterface"
-  - "msclr.com.ptr.QueryInterface"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "QueryInterface メソッド"
+title: "ptr::QueryInterface |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ptr.QueryInterface
+- ptr::QueryInterface
+- msclr::com::ptr::QueryInterface
+- msclr.com.ptr.QueryInterface
+dev_langs:
+- C++
+helpviewer_keywords:
+- QueryInterface method
 ms.assetid: c2619517-3fde-493b-b12d-da8f62d5d803
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 687c57c32d4f270d397e3ed8fd068d603cbcb9b9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ptr::QueryInterface
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-インターフェイスの所有された COM オブジェクトを照会し、別の `com::ptr`に結果をアタッチします。  
+# <a name="ptrqueryinterface"></a>ptr::QueryInterface
+インターフェイスの COM オブジェクトのクエリを実行し、結果を別に添付`com::ptr`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _other_type>  
@@ -38,18 +43,18 @@ void QueryInterface(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `other`  
- インターフェイスを取得 `com::ptr`。  
+ `com::ptr`インターフェイスを取得します。  
   
-## 例外  
- 内部的には、`QueryInterface` は所有されている COM オブジェクト頼まれ、エラー `HRESULT`<xref:System.Runtime.InteropServices.Marshal.ThrowExceptionForHR%2A>で例外に変換されます。  
+## <a name="exceptions"></a>例外  
+ 内部的には、`QueryInterface`所有されている COM オブジェクトおよびすべてのエラーで呼び出される`HRESULT`で例外に変換<xref:System.Runtime.InteropServices.Marshal.ThrowExceptionForHR%2A>です。  
   
-## 解説  
- 現在のラッパーが所有する COM オブジェクトの異なるインターフェイスの COM ラッパーを作成するには、このメソッドを使用します。  メソッドの呼び出し `QueryInterface``com::ptr`"に COM オブジェクトとアタッチします。特定のインターフェイスへのポインターを要求する返されたインターフェイス ポインター所有されている COM オブジェクトを通じてこの。  
+## <a name="remarks"></a>コメント  
+ このメソッドを使用すると、現在のラッパーが所有する COM オブジェクトの別のインターフェイスに対して COM ラッパーを作成できます。 このメソッドを呼び出す`QueryInterface`所有されている COM オブジェクト、COM の特定のインターフェイスへのポインターを要求を使ってオブジェクトを渡されたに返されたインターフェイス ポインターをアタッチ`com::ptr`です。  
   
-## 使用例  
- この例では、プライベート メンバー `IXMLDOMDocument` オブジェクトをラップするために `com::ptr` を使用する CLR クラスを実装します。  `WriteTopLevelNode` のメンバー関数は `IXMLDOMNode` でローカル `com::ptr` を塗りつぶすために `QueryInterface` を使用し、コンソールのノード名とテキストのプロパティを記述するプライベート メンバー関数に `com::ptr` \(追跡参照によって\) を渡します。  
+## <a name="example"></a>例  
+ この例を使用して CLR クラスを実装して、`com::ptr`をそのプライベート メンバーをラップする`IXMLDOMDocument`オブジェクト。 `WriteTopLevelNode`メンバー関数を使用して`QueryInterface`ローカルを入力する`com::ptr`で、`IXMLDOMNode`し渡します、 `com::ptr` (追跡参照) をノードの名前、およびテキストのプロパティをコンソールに出力するプライベート メンバー関数をします。  
   
 ```  
 // comptr_queryinterface.cpp  
@@ -150,12 +155,15 @@ int main() {
 }  
 ```  
   
-  **\<\#documentpersnickety\/\#document\>\<\>**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\com\\ptr.h\>  
+```Output  
+<#document>persnickety</#document>  
+```  
   
- **名前空間** msclr::com  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\com\ptr.h >  
   
-## 参照  
- [ptr Members](../dotnet/ptr-members.md)   
+ **Namespace** msclr::com  
+  
+## <a name="see-also"></a>参照  
+ [ptr メンバー](../dotnet/ptr-members.md)   
  [ptr::GetInterface](../dotnet/ptr-getinterface.md)

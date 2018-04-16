@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: PRJ0019
-dev_langs: C++
-helpviewer_keywords: PRJ0019
+f1_keywords:
+- PRJ0019
+dev_langs:
+- C++
+helpviewer_keywords:
+- PRJ0019
 ms.assetid: 5390a62b-aacf-4bc8-b9d7-08f1e0233423
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: bd9287a702116652b9f1ce52b84c67d0ea4761e0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 509c346d0452969d891ab03d67737beb6797bf28
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="project-build-error-prj0019"></a>プロジェクト ビルド エラー PRJ0019
 ツールからエラー コードが返されます  

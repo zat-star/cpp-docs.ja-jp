@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - attributes [C++], reference topics
 - attributes [COM]
 - COM, attributes
 ms.assetid: 52a5dd70-e8be-4bba-afd6-daf90fe689a0
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f9cd3657426a2a51a582ab695376287a3e975056
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 63e23f6a6520085ff5a5a072cb349d079615b6f0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="com-attributes"></a>COM 属性
 COM 属性は、COM で開発および .NET Framework 共通言語ランタイムの数多くの領域をサポートするためにコードを挿入します。 これらの分野カスタム インターフェイスの実装と、既存のインターフェイスからストック プロパティ、メソッド、およびイベントをサポートします。 さらに、複合と ActiveX コントロールの実装のサポートを確認できます。  
@@ -42,5 +47,5 @@ COM 属性は、COM で開発および .NET Framework 共通言語ランタイ�
 |[スレッド処理](../windows/threading-cpp.md)|COM オブジェクトのスレッド モデルを指定します。|  
 |[vi_progid](../windows/vi-progid.md)|コントロールのバージョン依存 ProgID を定義します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グループ別の属性](../windows/attributes-by-group.md)

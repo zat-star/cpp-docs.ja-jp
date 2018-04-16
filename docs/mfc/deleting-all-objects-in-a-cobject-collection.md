@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - objects [MFC], deleting in collections
 - objects in CObject collections, deleting
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - objects in CObject collections
 - collection classes [MFC], shared objects
 ms.assetid: 81d2c1d5-a0a5-46e1-8ab9-82b45cf7afd2
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8065af989f220f5954b851149c1b7c7a814a7d1f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 04f1edc7f181bdb23e050d2fa608c9b3a2056749
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="deleting-all-objects-in-a-cobject-collection"></a>CObject コレクションの全オブジェクトの削除
 この記事では、(コレクション オブジェクト自体を削除するには) なしのコレクション内のすべてのオブジェクトを削除する方法について説明します。  
@@ -87,6 +91,6 @@ ms.lasthandoff: 10/24/2017
   
  呼び出すことができます`RemoveAll`マップ内のすべての要素を削除するまたは`RemoveKey`を指定したキーに個々 の要素を削除します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コレクションの全メンバーへのアクセス](../mfc/accessing-all-members-of-a-collection.md)
 

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C2903
-dev_langs: C++
-helpviewer_keywords: C2903
+f1_keywords:
+- C2903
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2903
 ms.assetid: bf6b223f-4921-48c7-82b9-ff318b42c801
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2241d4421c2fcee89b06bf176cfab9bb788693d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9632a481227cfe428a84c1c0366f88a44f7f27dd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2903"></a>コンパイラ エラー C2903
 'identifier' : シンボルがクラス テンプレートでも関数テンプレートでもありません  

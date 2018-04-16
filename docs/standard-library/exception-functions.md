@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - exception/std::current_exception
 - exception/std::get_terminate
@@ -18,7 +18,7 @@ f1_keywords:
 - exception/std::uncaught_exception
 - exception/std::unexpected
 ms.assetid: c09ac569-5e35-4fe8-872d-ca5810274dd7
-caps.latest.revision: 12
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::current_exception [C++]
@@ -31,12 +31,11 @@ helpviewer_keywords:
 - std::terminate [C++]
 - std::uncaught_exception [C++]
 - std::unexpected [C++]
+ms.openlocfilehash: ea24d26ed840d1c7222abbbf9fce2bc18c2a7a5f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 616c8d4dd0982f0cd96a3678f6f8595b074f291f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltexceptiongt-functions"></a>&lt;exception&gt; 関数
 ||||  
@@ -307,7 +306,6 @@ void unexpected();
 ### <a name="example"></a>例  
   **unexpected** の使用例については、「[set_unexpected](../standard-library/exception-functions.md#set_unexpected)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<exception>](../standard-library/exception.md)
-
 

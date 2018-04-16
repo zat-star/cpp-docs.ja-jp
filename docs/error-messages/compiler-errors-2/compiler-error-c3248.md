@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3248
 ms.assetid: d00b9d7d-b6be-4a5b-bb52-48174ea71fc4
-caps.latest.revision: 12
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b7db0bbd40d96e6f648362f4342d19aacd3f4ce5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: a1cc7f831a1071e19f7009037e142c385904ea7f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3248"></a>コンパイラ エラー C3248
 'function1': '__sealed' として宣言されている関数は、'function2' によってオーバーライドすることはできません  
@@ -32,4 +33,3 @@ ms.lasthandoff: 10/10/2017
 派生クラスが **__sealed** 仮想メソッドをオーバーライドしようとしました。  
   
 C3248 が古い形式のコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**です。  
-

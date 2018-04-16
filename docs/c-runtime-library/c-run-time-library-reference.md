@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.runtime
-dev_langs: C++
+f1_keywords:
+- c.runtime
+dev_langs:
+- C++
 helpviewer_keywords:
 - CRT
 - run-time libraries
 - CRT, reference
 ms.assetid: a503e11c-8dca-4846-84fb-025a826c32b8
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b1c9965b221002a38428d3d813f4568e937cf52d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7683dd8c6c896f972df3e47d5ba37a0f413724fa
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="c-run-time-library-reference"></a>C ランタイム ライブラリ リファレンス
 Microsoft ランタイム ライブラリでは、Microsoft Windows オペレーティング システムのプログラミングに使用できるルーチンを提供しています。 これらのルーチンにより、C および C++ 言語では提供されない共通プログラミング タスクの多くを自動化できます。  
@@ -61,11 +66,5 @@ Microsoft ランタイム ライブラリでは、Microsoft Windows オペレー
  [DLL と Visual C++ ランタイム ライブラリの動作](../build/run-time-library-behavior.md)  
  DLL に使用されるエントリ ポイントとスタートアップ コードについて説明します。  
   
- [Visual C++ ライブラリ](http://msdn.microsoft.com/en-us/fec23c40-10c0-4857-9cdc-33a3b99b30ae)  
- Visual C++ に用意されているさまざまなライブラリへのリンクがあります。ATL、MFC、OLE DB の各テンプレート、C ランタイム ライブラリ、および C++ 標準ライブラリが含まれます。  
-  
  [デバッグ](/visualstudio/debugger/debugging-in-visual-studio)  
  Visual Studio デバッガーを使用してアプリケーションやストアド プロシージャの論理エラーを修正する方法を説明するトピックへのリンクがあります。  
-  
-## <a name="see-also"></a>関連項目  
- [Visual C++ ライブラリ リファレンス](http://msdn.microsoft.com/en-us/fec23c40-10c0-4857-9cdc-33a3b99b30ae)

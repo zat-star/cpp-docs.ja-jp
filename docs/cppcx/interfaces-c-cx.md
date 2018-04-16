@@ -6,17 +6,19 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 ms.assetid: 11034314-d54a-426d-923b-5ab7a6b9f8ce
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 0d986077561357f1a2530f097dc4bfbc78f1413e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aa87713b49fe41dbdb7eb8f9e6382c8f78b51d0c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="interfaces-ccx"></a>インターフェイス (C++/CX)
 ref クラスは多くても 1 つの具象基底クラスからしか継承できませんが、任意の数のインターフェイス クラスを実装できます。 インターフェイス クラス (インターフェイス構造体) 自体は、複数のインターフェイス クラスを継承 (または要求) でき、メンバー関数をオーバーロードすることができ、型パラメーターを持つことができます。  
@@ -97,7 +99,7 @@ ref クラスは多くても 1 つの具象基底クラスからしか継承で�
   
 -   template 宣言された ref クラスは、プライベートである必要があります。 ジェネリック インターフェイスを実装でき、テンプレート パラメーターを渡すことができます*T*を汎用引数*T*です。テンプレート化された ref クラスの各インスタンス化は、それ自体が ref クラスです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型システム](../cppcx/type-system-c-cx.md)   
  [Visual C 言語リファレンス](../cppcx/visual-c-language-reference-c-cx.md)   
  [名前空間参照](../cppcx/namespaces-reference-c-cx.md)

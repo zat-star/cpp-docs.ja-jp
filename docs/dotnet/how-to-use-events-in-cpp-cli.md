@@ -1,32 +1,36 @@
 ---
-title: "方法: C++/CLI でイベントを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "イベント [C++], アクセス (インターフェイスで)"
+title: "方法: イベントを使用して、C + + CLI |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- events [C++], accessing in interfaces
 ms.assetid: fbf452dc-2dd7-4322-adc0-656512d654d1
-caps.latest.revision: 15
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d55adef749f66038b16d0e327e687e64227a5e93
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: C++/CLI でイベントを使用する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、そのイベントを呼び出すとイベントが、関数宣言し、インターフェイスを実装するイベント ハンドラーとクラス インターフェイスを使用する方法を示します。  
+# <a name="how-to-use-events-in-ccli"></a>方法: C++/CLI でイベントを使用する
+この記事では、イベントと、そのイベントを呼び出す関数を宣言するインターフェイスとインターフェイスを実装するクラスとイベント ハンドラーを使用する方法を示します。  
   
-## インターフェイス イベント  
- 次のコード例はイベント ハンドラーを呼び出しますイベントがイベント ハンドラーの名前を書き込むコンソールとイベント ハンドラーを削除する追加します。  
+## <a name="interface-events"></a>インターフェイスのイベント  
+ 次のコード例は、イベント ハンドラーを追加、イベントを呼び出します: それが原因で、イベント ハンドラーの名前をコンソールに書き込む — し、イベント ハンドラーを削除します。  
   
 ```  
 // mcppv2_events2.cpp  
@@ -76,9 +80,12 @@ int main () {
   
  **出力**  
   
-  **EventReceiver::Handler**   
-## カスタムのアクセサー メソッド  
- 次の例ではハンドラーには、イベント発生させるが追加または削除されたときのイベントの動作を定義する方法を示します。  
+```Output  
+EventReceiver::Handler  
+```  
+  
+## <a name="custom-accessor-methods"></a>カスタムのアクセサー メソッド  
+ 次の例では、ハンドラーが追加または削除されると、イベントが発生したときに、イベントの動作を定義する方法を示します。  
   
 ```  
 // mcppv2_events6.cpp  
@@ -163,10 +170,13 @@ int main() {
   
  **出力**  
   
-  **H1 イベント ハンドラー**  
-**引数 1 および 2.2 のイベント ハンドラー H2**   
-## 既定のアクセスを追加、削除、および拡張アクセサーをオーバーライドします。  
- このサンプルに既定のアクセスをオーバーライドし、削除し、イベントのメソッドを発生させる方法を示します:  
+```Output  
+In event handler H1  
+In event handler H2 with args 1 and 2.2  
+```  
+  
+## <a name="override-default-access-on-add-remove-and-raise-accessors"></a>上書きの既定のアクセスを追加、削除、およびアクセサーを発生させる  
+ このサンプルでは、add、remove、および raise の各イベント メソッドに既定のアクセスをオーバーライドする方法を示します。  
   
 ```  
 // mcppv2_events3.cpp  
@@ -218,9 +228,12 @@ int main() {
   
  **出力**  
   
-  **17**   
-## 複数のイベント ハンドラー  
- イベント レシーバー、またはそのほかのクライアント コードがイベントに、一つ以上のハンドラーを追加できます。  
+```Output  
+17  
+```  
+  
+## <a name="multiple-event-handlers"></a>複数のイベント ハンドラー  
+ イベント レシーバー、またはその他のクライアント コードは、イベントに、1 つまたは複数のハンドラーを追加することができます。  
   
 ```  
 // mcppv2_events4.cpp  
@@ -291,11 +304,14 @@ int main() {
   
  **出力**  
   
-  **クリック \(x\=7、y\=3.14159\)**   
-**DblClick \(s\=System.Char \[\]\)**   
-**DblClickAgain \(s\=System.Char \[\]\)**    
-## 静的なイベント  
- 次の例では、静的なイベントを定義して使用する方法を示します。  
+```Output  
+Click(x=7,y=3.14159)  
+DblClick(s=System.Char[])  
+DblClickAgain(s=System.Char[])  
+```  
+  
+## <a name="static-events"></a>静的イベント  
+ 次の例を定義し、静的イベントを使用する方法を示します。  
   
 ```  
 // mcppv2_events7.cpp  
@@ -376,12 +392,15 @@ int main() {
   
  **出力**  
   
-  **H1 イベント ハンドラー**  
-**引数 11 および 11.11 のイベント ハンドラー H2**  
-**H1 イベント ハンドラー**  
-**引数 22 および 22.22 のイベント ハンドラー H2**   
-## 仮想イベント  
- このサンプルでは、仮想インターフェイスのマネージ イベント、クラスに実装します:  
+```Output  
+In event handler H1  
+In event handler H2 with args 11 and 11.11  
+In event handler H1  
+In event handler H2 with args 22 and 22.22  
+```  
+  
+## <a name="virtual-events"></a>仮想イベント  
+ このサンプルでは、インターフェイスとクラスにマネージ仮想イベントを実装します。  
   
 ```  
 // mcppv2_events5.cpp  
@@ -460,8 +479,12 @@ int main() {
   
  **出力**  
   
-  **H1 ハンドラー**  
-**引数 1 および 2.2 のハンドラー H2** 単純なイベントは、基本クラスのイベントをオーバーライドするか、非表示に指定することはできません。イベントのアクセサーを定義し、各アクセサーで `new` または `override` キーワードを指定します。  
+```Output  
+In handler H1  
+In handler H2 with args 1 and 2.2  
+```  
+  
+ オーバーライドまたは基本クラス イベントを非表示には、単純なイベントを指定できません。  すべてのイベントのアクセサー関数を定義し、指定する必要があります、`new`または`override`各アクセサー関数ではキーワードです。  
   
 ```  
 // mcppv2_events5_a.cpp  
@@ -493,8 +516,8 @@ ref struct C : B {
 };  
 ```  
   
-## 抽象的なイベント  
- 次の例は、抽象的なイベントを実装する方法を示します。  
+## <a name="abstract-events"></a>抽象イベント  
+ 次の例では、抽象イベントを実装する方法を示します。  
   
 ```  
 // mcppv2_events10.cpp  
@@ -572,10 +595,13 @@ int main () {
   
  **出力**  
   
-  **hi**  
-**Hello Event2 から**   
-## 別のアセンブリで定義されているイベントを発生させます  
- イベントとイベント ハンドラーは、1 回のアセンブリ内で定義され、他のアセンブリで使用できます。  
+```Output  
+hi  
+hello from Event2  
+```  
+  
+## <a name="raising-events-that-are-defined-in-a-different-assembly"></a>別のアセンブリで定義されているイベントを発生させる  
+ イベントとイベント ハンドラーを 1 つのアセンブリで定義されているし、別のアセンブリで使用します。  
   
 ```  
 // mcppv2_events8.cpp  
@@ -593,7 +619,7 @@ public:
 };  
 ```  
   
- このクライアント コードがイベントを処理する:  
+ このクライアント コードでは、イベントを使用します。  
   
 ```  
 // mcppv2_events9.cpp  
@@ -622,7 +648,10 @@ int main() {
   
  **出力**  
   
-  **hello**  
-**hello**   
-## 参照  
+```Output  
+hello  
+hello  
+```  
+  
+## <a name="see-also"></a>参照  
  [event](../windows/event-cpp-component-extensions.md)

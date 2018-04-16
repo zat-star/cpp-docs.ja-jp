@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C3063 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3063 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
-f1_keywords: C3063
-dev_langs: C++
-helpviewer_keywords: C3063
+f1_keywords:
+- C3063
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3063
 ms.assetid: 0ecf6f1f-e4a7-487a-9fd5-79d8ac470001
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 26d30e56c3e694b39f583b29d8bd378b6dcaee0f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 764cebae9e95992ba3d5ffa1773af4802c489392
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3063"></a>コンパイラ エラー C3063
 演算子 'operator': すべてのオペランドが同じ列挙型を持つ必要があります  

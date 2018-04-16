@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2351
 ms.assetid: 5439ccf6-66f6-4859-964c-c73f5eddfc1b
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 97b6c52436d2850cfaaa1685692b7d974a6d8cad
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 954b610ede6d00e1f9f4d0b3630c67566534355a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2351"></a>コンパイラ エラー C2351
 古い C++ コンス トラクター初期化構文です。  

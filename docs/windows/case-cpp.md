@@ -1,33 +1,37 @@
 ---
-title: "case (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.case"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "case attribute"
+title: "ケース (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- vc-attr.case
+dev_langs:
+- C++
+helpviewer_keywords:
+- case attribute
 ms.assetid: 6fb883c3-0526-4932-a901-b4564dcaeb7d
-caps.latest.revision: 10
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: adacffa4dbce4cc908c393cb5019375234e9ff85
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# case (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**共用体**  で [switch\_type](../windows/switch-type.md) の属性を使用します。  
+# <a name="case-c"></a>case (C++)
+使用される、 [switch_type](../windows/switch-type.md)属性、**共用体**です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -36,25 +40,25 @@ manager: "ghogen"
 ) ]  
 ```  
   
-#### パラメーター  
- *value*  
- は処理を提供する可能な入力値。   **値**  の種類は次の 1 種類の一つです :  
+#### <a name="parameters"></a>パラメーター  
+ *値*  
+ 入力の処理を提供する値。 型**値**種類は次のいずれかになります。  
   
 -   `int`  
   
 -   `char`  
   
--   **boolean**  
+-   `boolean`  
   
 -   `enum`  
   
- またはそのような型の識別子。  
+ または、このような型の識別子。  
   
-## 解説  
- **case** C\+\+ 属性に **case** の MIDL の属性と同じ機能があります。  この属性は [switch\_type](../windows/switch-type.md) の属性でのみ使用されます。  
+## <a name="remarks"></a>コメント  
+ **ケース**C++ 属性と同じ機能を持つ、**ケース**MIDL 属性。 この属性を使用してのみ、 [switch_type](../windows/switch-type.md)属性。  
   
-## 使用例  
- 次のコードは **case** 属性の使用方法を示します :  
+## <a name="example"></a>例  
+ 次のコードの使い方を示しています、**ケース**属性。  
   
 ```  
 // cpp_attr_ref_case.cpp  
@@ -73,21 +77,20 @@ struct SizedValue2 {
 [module(name="ATLFIRELib")];  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  または `struct` のメンバー|  
-|**複数回の適用**|Ｘ|  
+|**対象**|メンバー、**クラス**または`struct`|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2167
 ms.assetid: 3de3de96-12cd-47df-b24e-34cc9747ef83
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d378fb71f4806d7c73ac366c1aafecd571c535f0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: e6510402bd3c5223932392d8c03e5b60c000bf90
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2167"></a>コンパイラ エラー C2167
 'function': 組み込み関数の実引数が多すぎます。  

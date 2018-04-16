@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,21 +13,24 @@ f1_keywords:
 - ATLCTL/ATL::CFirePropNotifyEvent
 - ATLCTL/ATL::CFirePropNotifyEvent::FireOnChanged
 - ATLCTL/ATL::CFirePropNotifyEvent::FireOnRequestEdit
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - sinks, notifying of ATL events
 - CFirePropNotifyEvent class
 - connection points [C++], notifying of events
 ms.assetid: eb7a563e-6bce-4cdf-8d20-8c6a5307781b
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4bcc9926974f9a61e951c15bca9af168eadab435
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c9571ad4ba928c208c6c028f6e30cf7c27c196d4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cfirepropnotifyevent-class"></a>CFirePropNotifyEvent クラス
 このクラスは、コントロール プロパティの変更について、コンテナーのシンクに通知するためのメソッドを提供します。  
@@ -56,7 +60,7 @@ class CFirePropNotifyEvent
   
  コントロールの作成の詳細については、次を参照してください。、 [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlctl.h  
   
 ##  <a name="fireonchanged"></a>CFirePropNotifyEvent::FireOnChanged  
@@ -99,5 +103,5 @@ static HRESULT FireOnRequestEdit(IUnknown* pUnk, DISPID dispID);
 ### <a name="remarks"></a>コメント  
  この関数は、コントロールがコネクション ポイントをサポートしていない場合でもの呼び出しが安全です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

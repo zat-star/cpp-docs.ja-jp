@@ -1,32 +1,37 @@
 ---
-title: "ImplementsHelper 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::ImplementsHelper"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ImplementsHelper 構造体"
+title: "ImplementsHelper 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- implements/Microsoft::WRL::Details::ImplementsHelper
+dev_langs:
+- C++
+helpviewer_keywords:
+- ImplementsHelper structure
 ms.assetid: b857ba80-81bd-4e53-92b6-210991954243
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 1a51de59278e476be1e99b60ef1b0ab8a6e3f3cd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ImplementsHelper 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="implementshelper-structure"></a>ImplementsHelper 構造体
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -37,31 +42,31 @@ template <
 friend struct Details::ImplementsHelper;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `RuntimeClassFlagsT`  
- [RuntimeClassType](../windows/runtimeclasstype-enumeration.md) の一つ以上の列挙子を指定するフラグのフィールド。  
+ 1 つ以上を指定するフラグのフィールド[RuntimeClassType](../windows/runtimeclasstype-enumeration.md)列挙子。  
   
  `ILst`  
- インターフェイス ID のリスト。  
+ インターフェイスの Id の一覧。  
   
  `IsDelegateToClass`  
- 実装の現在のインスタンスが `ILst`の最初の三つの基本クラス `true` ;を指定します。それ以外の場合は `false`。  
+ 指定`true`実装の現在のインスタンスで最初のインターフェイス ID の基本クラスである場合`ILst`、それ以外の`false`します。  
   
-## 解説  
- ヘルプが [実装](../Topic/Implements%20Structure.md) 構造を実装します。  
+## <a name="remarks"></a>コメント  
+ により、実装、 [Implements](../windows/implements-structure.md)構造体。  
   
- このテンプレートは、インターフェイスのリストを走査し、基本クラスと QueryInterface を有効にするために必要な情報として追加します。  
+ このテンプレートは、インターフェイスのリストを走査し、QueryInterface を有効にするために必要な情報と、基底クラスとしては、それらを追加します。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `ImplementsHelper`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
- [Reference \(Windows Runtime Library\)](http://msdn.microsoft.com/ja-jp/00000000-0000-0000-0000-000000000000)   
+## <a name="see-also"></a>参照  
+ [参照 (Windows ランタイム ライブラリ)](http://msdn.microsoft.com/en-us/00000000-0000-0000-0000-000000000000)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

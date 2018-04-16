@@ -1,32 +1,36 @@
 ---
-title: "方法: ユーザー インタラクティブな状態を確認する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ユーザー対話状態"
-  - "Visual C++, ユーザー対話状態"
+title: "方法: ユーザー インタラクティブな状態を確認する (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Visual C++, user interactive state
+- user interactive state
 ms.assetid: 9f52323e-38b8-4a41-9b1d-052012ad839b
-caps.latest.revision: 9
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a2cb3ffb8e0bfd8eba04555286894b6f1e58cfd7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: ユーザー インタラクティブな状態を確認する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ユーザー インタラクティブなコンテキストで実行中のコードであるかどうかを確認する方法を次のコード例に示します。  <xref:System.Environment.UserInteractive%2A> が false の場合、コードはサービス プロセスとして、または Web アプリケーション内部から実行されています。この場合、ユーザーとは対話できません。  
+# <a name="how-to-determine-the-user-interactive-state-ccli"></a>方法: ユーザー インタラクティブな状態を確認する (C++/CLI)
+次のコード例では、コードがユーザー対話型のコンテキストで実行されているかどうかを確認する方法を示します。 場合<xref:System.Environment.UserInteractive%2A>が false の場合、サービスのプロセスとして実行しているコードまたはから Web アプリケーションでは、内部場合必要がありますいないしようとするユーザーと対話します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // user_interactive.cpp  
@@ -43,6 +47,6 @@ int main()
 }  
 ```  
   
-## 参照  
- [Windows の操作](../dotnet/windows-operations-cpp-cli.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>参照  
+ [Windows の操作 (C + + CLI)](../dotnet/windows-operations-cpp-cli.md)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

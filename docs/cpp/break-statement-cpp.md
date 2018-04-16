@@ -1,25 +1,31 @@
 ---
-title: "break ステートメント (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: break ステートメント (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-f1_keywords: break_cpp
-dev_langs: C++
-helpviewer_keywords: break keyword [C++]
+f1_keywords:
+- break_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- break keyword [C++]
 ms.assetid: 63739928-8985-4b05-93ce-016322e6da3d
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 89be581f6e10ce5c3c7b0f92c37d165affb28844
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d1f9c9a09652eb76511c7d059cc70eae3fb99ffd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="break-statement-c"></a>break ステートメント (C++)
 `break` ステートメントは、それを囲む最も近いループまたは条件付きステートメントの実行を終了させます。 このステートメントの終了の後ろにステートメントがある場合は、そこに制御が移動します。  
@@ -155,7 +161,7 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ジャンプ ステートメント](../cpp/jump-statements-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [continue ステートメント](../cpp/continue-statement-cpp.md)

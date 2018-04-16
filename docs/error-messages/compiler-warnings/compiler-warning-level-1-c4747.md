@@ -15,43 +15,30 @@ dev_langs:
 helpviewer_keywords:
 - C4747
 ms.assetid: af37befd-ba1f-4bdc-96e1-a953f7a2ad9c
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 7ecbfe8e2ace06cb6e667d77d315f544ce0b451c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 094576ec19582b640ba0d4c57dfa34593177a267
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4747"></a>コンパイラの警告 (レベル 1) C4747
-マネージ 'entrypoint' を呼び出す: マネージ コードは、DLL エントリ ポイントおよび DLL エントリ ポイントから到達した呼び出しを含むローダー ロックでは実行されません  
+呼び出すマネージ 'entrypoint': マネージ コード DLL エントリ ポイントおよび DLL エントリ ポイントから到達した呼び出しを含むローダー ロック下で実行できません  
   
- MSIL にコンパイルされる可能性がある) DLL エントリ ポイントが検出されました。  エントリ ポイントが MSIL にコンパイルされた DLL の読み込み中に潜在的な問題があるため DLL エントリ ポイント関数を MSIL にコンパイルを強くお勧めしています。  
+ コンパイラは、MSIL にコンパイルされる可能性がある) DLL エントリ ポイントを検出します。  エントリ ポイントが MSIL にコンパイル済み DLL を読み込むと潜在的な問題があるため MSIL に DLL エントリ ポイント関数のコンパイルを強くお勧めしています。  
   
- 詳細については、次を参照してください。[混在アセンブリの初期化](../../dotnet/initialization-of-mixed-assemblies.md)と[リンカ ツール エラー LNK1306](../../error-messages/tool-errors/linker-tools-error-lnk1306.md)します。  
+ 詳細については、次を参照してください。[混在アセンブリの初期化](../../dotnet/initialization-of-mixed-assemblies.md)と[リンカ ツール エラー LNK1306](../../error-messages/tool-errors/linker-tools-error-lnk1306.md)です。  
   
 ### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  使用して、モジュールをコンパイルしないで**/clr**します。  
+1.  モジュールをコンパイルできません**/clr**です。  
   
-2.  エントリ ポイント関数をマーク`#pragma unmanaged`します。  
+2.  エントリ ポイント関数をマーク`#pragma unmanaged`です。  
   
 ## <a name="example"></a>例  
  次の例では、C4747 を生成します。  

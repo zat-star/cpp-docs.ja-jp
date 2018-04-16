@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.mappings
-dev_langs: C++
+f1_keywords:
+- c.mappings
+dev_langs:
+- C++
 helpviewer_keywords:
 - _tWinMain
 - TCHAR.H data types, list of routine mappings
 - generic-text mappings
 ms.assetid: 38f33d3b-0f7b-430d-8a4f-75e27c6f1c42
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f7b85af65da564f7231d606933ff1ebbb90d5af0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f44da30387421123ab6998cfbb2855a743aace39
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="routine-mappings"></a>ルーチンのマップ
 汎用テキスト ルーチンのマップは TCHAR.H で定義されます。 `_tccpy` と `_tclen` は MBCS モデルの関数にマップされます。これらは完全を期すために SBCS モデルまたは Unicode モデルのマクロまたはインライン関数にマップされます。 汎用テキスト ルーチンの詳細については、`SBCS`、`_MBCS`、または `_UNICODE` に関連するルーチンのヘルプ トピックを参照してください。  
@@ -270,7 +275,7 @@ ms.lasthandoff: 10/24/2017
 |`_vtprintf`|`vprintf`|`vprintf`|`vwprintf`|  
 |`_vtprintf_s`|`vprintf_s`|`vprintf_s`|`vwprintf_s`|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)   
  [データ型のマップ](../c-runtime-library/data-type-mappings.md)   
  [定数とグローバル変数のマップ](../c-runtime-library/constant-and-global-variable-mappings.md)   

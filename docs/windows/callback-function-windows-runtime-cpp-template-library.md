@@ -1,31 +1,35 @@
 ---
-title: "コールバック関数 (Windows ランタイム C++ テンプレート ライブラリ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "event/Microsoft::WRL::Callback"
-dev_langs: 
-  - "C++"
+title: "コールバック関数 (Windows ランタイム C++ テンプレート ライブラリ) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- event/Microsoft::WRL::Callback
+dev_langs:
+- C++
 ms.assetid: afb15d25-3230-44f7-b321-e17c54872943
-caps.latest.revision: 4
-caps.handback.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 2b2d83096ce4e6ff9245a9e26516d6a487155695
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コールバック関数 (Windows ランタイム C++ テンプレート ライブラリ)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="callback-function-windows-runtime-c-template-library"></a>コールバック関数 (Windows ランタイム C++ テンプレート ライブラリ)
 メンバー関数がコールバック メソッドであるオブジェクトを作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<  
@@ -198,7 +202,7 @@ ComPtr<TDelegateInterface> Callback(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `TDelegateInterface`  
  イベントが発生したときに呼び出すデリゲートのインターフェイスを指定するテンプレート パラメーター。  
   
@@ -244,16 +248,16 @@ ComPtr<TDelegateInterface> Callback(
  `method`  
  イベントが発生したときに呼び出すメンバー関数。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  指定されたコールバック メソッドをメンバー関数に持つオブジェクト。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  デリゲート オブジェクトのベースは、IInspectable ではなく、IUnknown である必要があります。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** event.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

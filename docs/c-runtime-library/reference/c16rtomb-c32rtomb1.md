@@ -8,7 +8,7 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - c16rtomb
 - c32rtomb
@@ -36,30 +36,17 @@ helpviewer_keywords:
 - c16rtomb function
 - c32rtomb function
 ms.assetid: 7f5743ca-a90e-4e3f-a310-c73e16f4e14d
-caps.latest.revision: 3
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 585fd26bf3ea6a2d392a61b4f7793a0a9e84e267
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2deca697a3dcb338ae9e9ea9e071c73979695ad8
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="c16rtomb-c32rtomb"></a>c16rtomb、c32rtomb
 UTF-16 または UTF-32 ワイド文字を現在のロケールのマルチバイト文字に変換します。  
@@ -99,15 +86,15 @@ size_t c32rtomb(
   
  `state` 変換状態オブジェクトにより、この関数とマルチバイト出力のシフト状態を維持するその他の再開可能な関数を続けて呼び出すことが可能になります。 再開可能関数と再開不可能関数を一緒に使用する場合、または、再開可能関数間で `setlocale` が呼び出される場合、結果は未定義です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`c16rtomb`, `c32rtomb`|C、C++: \<uchar.h>|  
   
  互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

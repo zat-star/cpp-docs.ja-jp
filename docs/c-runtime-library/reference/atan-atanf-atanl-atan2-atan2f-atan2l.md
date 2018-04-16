@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - atan2f
 - atan2l
@@ -47,30 +47,17 @@ helpviewer_keywords:
 - trigonometric functions
 - atan2f function
 ms.assetid: 7a87a18e-c94d-4727-9cb1-1bb5c2725ae4
-caps.latest.revision: 21
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 53291ede13fdd83a531052743ae22ef8bb146b0f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5da2b1bcc38c1b41a35de30e589f9660f19f78da
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atan-atanf-atanl-atan2-atan2f-atan2l"></a>atan、atanf、atanl、atan2、atan2f、atan2l
 `x` (`atan`、`atanf`、および `atanl`) のアークタンジェントまたは `y`/`x` (`atan2`、`atan2f`、および `atan2l`) のアークタンジェントを計算します。  
@@ -120,7 +107,7 @@ long double atan2l(
  任意の数値。  
   
 ## <a name="return-value"></a>戻り値  
- `atan`タンジェントを返します`x`範囲 - π/2 ~ π/2 ラジアンにします。 `atan2`タンジェントを返します`y/x`範囲 π ~ π ラジアンにします。 `x` が 0 の場合、`atan` は 0 を返します。 `atan2` のパラメーターが両方とも 0 の場合、関数は 0 を返します。 すべての結果はラジアンにあります。  
+ `atan` タンジェントを返します`x`範囲 - π/2 ~ π/2 ラジアンにします。 `atan2` タンジェントを返します`y/x`範囲 π ~ π ラジアンにします。 `x` が 0 の場合、`atan` は 0 を返します。 `atan2` のパラメーターが両方とも 0 の場合、関数は 0 を返します。 すべての結果はラジアンにあります。  
   
  `atan2` は、両方のパラメーターの符号を使用して、戻り値のクアドラントを判断します。  
   
@@ -135,9 +122,9 @@ long double atan2l(
   
  C++ ではオーバーロードが可能であるため、`atan` および `atan2` のオーバーロードを呼び出すことができます。 C プログラムでは、`atan` および `atan2` は、常に double を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`atan`, `atan2`, `atanf`, `atan2f`, `atanl`, `atan2l`|\<math.h>|  
   
@@ -172,7 +159,7 @@ Arctangent of 5.000000: 1.373401
 Arctangent of 0.500000 / 5.000000: 0.099669  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [acos、acosf、acosl](../../c-runtime-library/reference/acos-acosf-acosl.md)   
  [asin、asinf、asinl](../../c-runtime-library/reference/asin-asinf-asinl.md)   

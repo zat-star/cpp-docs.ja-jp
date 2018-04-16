@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 2/1/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -18,17 +19,21 @@ f1_keywords:
 - ATLIFASE/ATL::IRegistrar::StringUnregister
 - ATLIFASE/ATL::IRegistrar::ResourceRegister
 - ATLIFASE/ATL::IRegistrar::ResourceUnregister
-dev_langs: C++
-helpviewer_keywords: Iregistrar Interface
+dev_langs:
+- C++
+helpviewer_keywords:
+- Iregistrar Interface
 ms.assetid: e88c04b7-0c93-4ae8-aeb9-ecd78f87421e
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6f79815d873a7c9f5f8c5f0397248f54776a7c20
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6c0b304b00b5cc5c613ff7e81818d1c637989e5f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iregistrar-interface"></a>IRegistrar インターフェイス
 このインターフェイスは atliface.h で定義され、内部関数によって使用される不要メンバーなど[ため](catlmodule-class.md#updateregistryfromresourced)です。   
@@ -58,7 +63,7 @@ typedef interface IRegistrar IRegistrar;
   
 
  
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlifase.h  
   
 ##  <a name="resourceregistersz"></a>IRegistrar::ResourceRegisterSz 
@@ -139,7 +144,7 @@ virtualHRESULT STDMETHODCALLTYPE ResourceUnregister(
     /* [in] */ _In_z_ LPCOLESTR szType) = 0; 
 ```  
  
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [置き換え可能パラメーターの使用 (レジストラー プリプロセッサ)](../../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [モジュール クラス](../../atl/atl-module-classes.md)   

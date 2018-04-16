@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -36,7 +37,8 @@ f1_keywords:
 - texecvpe
 - _texecv
 - _wexec
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _texecle function
 - _texecv function
@@ -60,15 +62,17 @@ helpviewer_keywords:
 - _exec function
 - _texecvpe function
 ms.assetid: a261df93-206a-4fdc-b8ac-66aa7db83bc6
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1f571a6d0a84ca6d2990ed4910ef52ea0d54e2d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a2b01ce48463f3aad723bee38ee9f3ef1b499c3f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="exec-wexec-functions"></a>_exec、_wexec 系関数
 この系列の各関数は、新しいプロセスを読み込んで実行します。  
@@ -237,11 +241,11 @@ int main( int ac, char* av[] )
 }  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
  **ヘッダー:** process.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../c-runtime-library/process-and-environment-control.md)   
  [abort](../c-runtime-library/reference/abort.md)   
  [atexit](../c-runtime-library/reference/atexit.md)   

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::multiset::generic_container
-dev_langs: C++
-helpviewer_keywords: generic_container member [STL/CLR]
+f1_keywords:
+- cliext::multiset::generic_container
+dev_langs:
+- C++
+helpviewer_keywords:
+- generic_container member [STL/CLR]
 ms.assetid: 292d6592-e22b-432a-b64d-c8937f19f417
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5032cfbeea2336b967a5f1a8c6a38a674c4da50d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 00b15b44cf115b8e315fa620141b6c5e49da9bc3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multisetgenericcontainer-stlclr"></a>multiset::generic_container (STL/CLR)
 コンテナーのジェネリック インターフェイスの型。  
@@ -84,11 +91,11 @@ a b c d
 a b c d e  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext と set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マルチセット (STL/CLR)](../dotnet/multiset-stl-clr.md)   
  [multiset::generic_iterator (STL/CLR)](../dotnet/multiset-generic-iterator-stl-clr.md)

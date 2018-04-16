@@ -29,16 +29,17 @@ helpviewer_keywords:
 - CAnimationValue [MFC], GetAnimationVariableList
 - CAnimationValue [MFC], m_value
 ms.assetid: 78c5ae19-ede5-4f20-bfbe-68b467b603c2
-caps.latest.revision: 17
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5b37801619fae84519dde000c922d34c4b9e1509
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: e56217b4cf92583d965b221360803ce4b4de3b44
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="canimationvalue-class"></a>CAnimationValue クラス
 1 つの値を持つアニメーション オブジェクトの機能を実装します。  
@@ -82,7 +83,7 @@ class CAnimationValue : public CAnimationBaseObject;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CAnimationValue::m_value](#m_value)|アニメーションの値を表すアニメーションをカプセル化された変数です。|  
   
@@ -96,7 +97,7 @@ class CAnimationValue : public CAnimationBaseObject;
   
  `CAnimationValue`
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="addtransition"></a>CAnimationValue::AddTransition  
@@ -255,6 +256,5 @@ void SetDefaultValue(DOUBLE dblDefaultValue);
 ### <a name="remarks"></a>コメント  
  このメソッドを使用すると、既定値を設定できます。 既定値は、アニメーションが開始されていない、基になる COM オブジェクトが作成されていないときに、アプリケーションに返されます。 CAnimationVarible にカプセル化された基になる COM オブジェクトが既に作成されて場合、は、このメソッドで再作成、したがって、もう一度 EnableValueChanged/EnableIntegerValueChanged メソッドの呼び出しにする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

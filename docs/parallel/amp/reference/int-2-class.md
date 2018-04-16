@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::int_2::y
 - amp_short_vectors/Concurrency::graphics::int_2::set_x
@@ -33,17 +34,20 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::int_2::set_xy
 - amp_short_vectors/Concurrency::graphics::int_2::operator+=
 - amp_short_vectors/Concurrency::graphics::int_2::operator--
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 258b02e9-f1ee-46c2-8edd-dc9f69184846
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2eb503747b9e3a8b8a630fccdbdd8b0da9428058
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d5abe11c29263817c8530d01fb3e190ba5866326
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="int2-class"></a>int_2 クラス
 2 個の整数の short ベクターを表します。  
@@ -91,23 +95,23 @@ class int_2;
 |----------|-----------------|  
 |int_2::operator-||  
 |int_2::operator--||  
-|int_2::operator % =||  
-|int_2::operator & =||  
-|int_2::operator * =||  
+|int_2::operator%=||  
+|int_2::operator&=||  
+|int_2::operator*=||  
 |int_2::operator/=||  
-|int_2::operator ^ =||  
-|int_2::operator &#124; =||  
-|int_2::operator ~||  
+|int_2::operator^=||  
+|int_2::operator&#124;=||  
+|int_2::operator~||  
 |int_2::operator++||  
-|int_2::operator + =||  
-|int_2::operator <\<=||  
-|int_2::operator = =||  
+|int_2::operator+=||  
+|int_2::operator<\<=||  
+|int_2::operator=||  
 |int_2::operator-=||  
-|int_2::operator >> =||  
+|int_2::operator>>=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#int_2__size)||  
   
@@ -127,12 +131,12 @@ class int_2;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `int_2`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>int_2 
+##  <a name="ctor"></a> int_2 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -195,11 +199,11 @@ explicit inline int_2(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="int_2__size"></a>サイズ 
+##  <a name="int_2__size"></a> サイズ 
 
 ```  
 static const int size = 2;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

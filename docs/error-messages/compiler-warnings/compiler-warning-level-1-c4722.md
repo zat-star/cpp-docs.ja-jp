@@ -1,12 +1,12 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4722 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラの警告 (レベル 1) C4722 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - C4722
@@ -19,27 +19,13 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: a88d734f0f17437efe3b4a60a3439135b7feec4e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 97c9dff3044eda5ea04bd41a9fda81b5f1af4f13
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4722"></a>コンパイラの警告 (レベル 1) C4722
 'function': デストラクターに値が戻りません。メモリ リークの可能性があります  

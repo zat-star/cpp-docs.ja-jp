@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: MFC, Common Controls library
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, Common Controls library
 ms.assetid: 7471e6f0-49b0-47f7-86e7-8d6bc3541694
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: effc8b927aadc821e189837ab3506f05cb426e93
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 04ed1be46d4c3d7f36bfa501bfc933fbba41e8d1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="isolation-of-the-mfc-common-controls-library"></a>MFC コモン コントロール ライブラリの分離
 コモン コントロール ライブラリが今すぐ分離 (ユーザー Dll) などのさまざまなモジュールを許可する MFC 内で独自のマニフェストでバージョンを指定することで別のバージョンのコモン コントロール ライブラリを使用します。  

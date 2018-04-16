@@ -17,16 +17,17 @@ helpviewer_keywords:
 - catch keyword [C++], mixed
 - try-catch keyword [C++], mixed-language
 ms.assetid: a149154e-36dd-4d1a-980b-efde2a563a56
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 074ff13ed281d30caeede227cdab2cff090fab1e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 375f954f3df300b50a11067b009614ff8879b9b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mixing-c-structured-and-c-exceptions"></a>C (構造化) と C++ の混合例外
 移植性の高いコードを記述する場合は、C++ プログラムで構造化例外処理を使用することはお勧めしません。 ただし、場合をコンパイルする**/EHa**構造化例外と C++ ソース コードを混在させるし、両方の種類の例外を処理するための機能が必要です。 C++ のコードによってスローされる例外を処理できない構造化例外ハンドラーには、オブジェクトまたは型指定された例外の概念はありません、ただし、C++**キャッチ**ハンドラーが構造化例外を処理できます。 このような C++ 例外処理の構文として (**を再試行してください**、 `throw`、**キャッチ**) C コンパイラは構造化例外処理の構文では許容されません (`__try`、 `__except`、 `__finally`)C コンパイラでサポートされています。  
@@ -49,5 +50,5 @@ ms.lasthandoff: 09/25/2017
   
 -   [SEH と C++ EH の相違点](../cpp/exception-handling-differences.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 例外処理](../cpp/cpp-exception-handling.md)

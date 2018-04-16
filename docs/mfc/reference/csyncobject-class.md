@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,22 +15,25 @@ f1_keywords:
 - AFXMT/CSyncObject::Lock
 - AFXMT/CSyncObject::Unlock
 - AFXMT/CSyncObject::m_hObject
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CSyncObject [MFC], CSyncObject
 - CSyncObject [MFC], Lock
 - CSyncObject [MFC], Unlock
 - CSyncObject [MFC], m_hObject
 ms.assetid: c62ea6eb-a17b-4e01-aed4-321fc435a5f4
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 66d21e3e2a9e530772419a269ea5e95e5daf35e3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9b0c5f53c80bed1814295fd190cf73675a269b32
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csyncobject-class"></a>関数クラス
 Win32 の同期オブジェクトに共通の機能を提供する純粋仮想クラスです。  
@@ -77,7 +81,7 @@ class CSyncObject : public CObject
   
  `CSyncObject`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxmt.h  
   
 ##  <a name="csyncobject"></a>CSyncObject::CSyncObject  
@@ -151,7 +155,7 @@ virtual BOOL Unlock() = 0; virtual BOOL Unlock(
 ### <a name="remarks"></a>コメント  
  常に、2 つのパラメーター宣言の既定の実装を返します**TRUE**です。 この関数は呼び出し元のスレッドが所有する同期オブジェクトへのアクセスを解放します。 2 番目の宣言は、被制御リソースの 1 つ以上のアクセスを許可するセマフォなどの同期オブジェクトに対して提供されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
 

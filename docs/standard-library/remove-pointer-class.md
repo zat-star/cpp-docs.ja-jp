@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: type_traits/std::remove_pointer
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- type_traits/std::remove_pointer
+dev_langs:
+- C++
 helpviewer_keywords:
 - remove_pointer class
 - remove_pointer
 ms.assetid: 2cd4e417-32fb-4f53-bd16-4e8a98240832
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ba07a13c8955a45c49797619ba69f7f89f71d5bc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6518b0a66de16f2a076b074993edbdc65403322f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="removepointer-class"></a>remove_pointer クラス
 型へのポインターから型を作成します。  
@@ -65,11 +70,11 @@ int main()
 remove_pointer_t<int *> == int  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)   
  [add_pointer クラス](../standard-library/add-pointer-class.md)

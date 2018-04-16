@@ -8,8 +8,9 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: fesetexceptflag
+ms.topic: reference
+apiname:
+- fesetexceptflag
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -26,18 +27,22 @@ apitype: DLLExport
 f1_keywords:
 - fesetexceptflag
 - fenv/fesetexceptflag
-dev_langs: C++
-helpviewer_keywords: fesetexceptflag function
+dev_langs:
+- C++
+helpviewer_keywords:
+- fesetexceptflag function
 ms.assetid: 2f7dad77-9e54-4097-a3e3-35176ace4de5
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 786970d63482f2cede5e6b20af605accebe87da7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 24aff3007d88f9ae5ebc30811e652284ecebeba5
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fesetexceptflag"></a>fesetexceptflag
 現在の浮動小数点環境の指定した浮動小数点状態フラグを設定します。  
@@ -75,16 +80,16 @@ int fesetexceptflag(
   
  `excepts` 引数は、0、サポートされる浮動小数点例外処理マクロ、または複数のマクロのビット演算 OR の場合があります。 他の引数値の結果は未定義です。  
   
- この関数を使用するには、呼び出しの前に `#pragma fenv_access(on)` ディレクティブを使用してアクセスを妨げる可能性のある浮動小数点の最適化をオフにする必要があります。 詳細については、「[fenv_access](../../preprocessor/fenv-access.md)」を参照してください。  
+ この関数を使用するには、呼び出しの前に `#pragma fenv_access(on)` ディレクティブを使用してアクセスを妨げる可能性のある浮動小数点の最適化をオフにする必要があります。 詳細については、「 [fenv_access](../../preprocessor/fenv-access.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|C ヘッダー|C++ ヘッダー|  
 |--------------|--------------|------------------|  
 |`fesetexceptflag`|\<fenv.h>|\<cfenv>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [fegetexceptflag](../../c-runtime-library/reference/fegetexceptflag2.md)

@@ -4,38 +4,40 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CheckRestrictions
 - IDBSchemaRowsetImpl::CheckRestrictions
 - IDBSchemaRowsetImpl.CheckRestrictions
-dev_langs: C++
-helpviewer_keywords: CheckRestrictions method
+dev_langs:
+- C++
+helpviewer_keywords:
+- CheckRestrictions method
 ms.assetid: 3c9d77d2-0e4b-48fa-80db-d735da19f1cf
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d6e057c56e824327d726e073a02f0fa636553c40
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 44e661bc782af4a162936caae7c8c1be06585647
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="idbschemarowsetimplcheckrestrictions"></a>IDBSchemaRowsetImpl::CheckRestrictions
 スキーマ行セットに対して制限の妥当性をチェックします。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      HRESULT CheckRestrictions(  
-   REFGUID rguidSchema,  
-   ULONG cRestrictions,  
-   const VARIANT rgRestrictions[]  
-);  
+```
+HRESULT CheckRestrictions(REFGUID rguidSchema,  
+   ULONG cRestrictions,  const VARIANT rgRestrictions[]);  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -55,10 +57,10 @@ ms.lasthandoff: 10/24/2017
   
  スキーマ行セットの詳細については、次を参照してください。 [IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx)で、 *OLE DB プログラマーズ リファレンス*Windows SDK に含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDBSchemaRowsetImpl クラス](../../data/oledb/idbschemarowsetimpl-class.md)   
  [IDBSchemaRowsetImpl クラス メンバー](http://msdn.microsoft.com/en-us/e74f6f82-541c-42e7-b4c6-e2d4656a0649)   
  [スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)

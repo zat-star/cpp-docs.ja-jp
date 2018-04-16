@@ -4,9 +4,8 @@ ms.custom:
 ms.date: 12/30/2016
 ms.technology: cpp-windows
 ms.reviewer: 
-s.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::WriteOnlyArray::begin
 - VCCORLIB/Platform::WriteOnlyArray::Data
@@ -14,18 +13,22 @@ f1_keywords:
 - VCCORLIB/Platform::WriteOnlyArray::FastPass
 - VCCORLIB/Platform::WriteOnlyArray::Length
 - VCCORLIB/Platform::WriteOnlyArray::set
-dev_langs: C++
-helpviewer_keywords: Platform::WriteOnlyArray Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::WriteOnlyArray Class
 ms.assetid: 92d7dd56-ec58-4b8c-88ba-9c903668b687
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 32c3fc0c59f94ca35d80ebfd4f16330517399e72
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 081dc6489b6cd16ef9065ce8ec332c7593105617
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="platformwriteonlyarray-class"></a>Platform::WriteOnlyArray クラス
 メソッドで設定する配列を呼び出し元から渡すときに入力パラメーターとして使用される 1 次元配列を表します。  
@@ -43,7 +46,7 @@ private ref class WriteOnlyArray<T, 1>
 ### <a name="public-methods"></a>パブリック メソッド  
  これらのメソッドのアクセシビリティは内部です。つまり、これらのメソッドには C++ アプリまたはコンポーネント内でのみアクセスできます。  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 
 |[Writeonlyarray::begin](#begin)|配列の最初の要素を指す反復子 |。  
@@ -57,7 +60,7 @@ private ref class WriteOnlyArray<T, 1>
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `WriteOnlyArray`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
  **メタデータ:** Platform.winmd  
@@ -130,7 +133,7 @@ property bool FastPass{
   
 
 
-## <a name="get"></a>Writeonlyarray::get メソッド
+## <a name="get"></a>  Writeonlyarray::get メソッド
 指定したインデックス位置にある要素を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -190,6 +193,6 @@ T& set(
  HRESULT 値を解釈する方法の詳細については、次を参照してください。 [COM エラー コードの構造体](http://go.microsoft.com/fwlink/p/?LinkId=262045)です。  
   
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)   
- [C++ での Windows ランタイム コンポーネントを作成します。](/MicrosoftDocs/windows-uwp/blob/docs/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md)
+ [C++ での Windows ランタイム コンポーネントを作成します。](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)

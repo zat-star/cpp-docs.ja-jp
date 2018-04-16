@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::logical_not
-dev_langs: C++
-helpviewer_keywords: logical_not function [STL/CLR]
+f1_keywords:
+- cliext::logical_not
+dev_langs:
+- C++
+helpviewer_keywords:
+- logical_not function [STL/CLR]
 ms.assetid: 32a2c6e2-1c58-41ac-8827-f3ee5adfe81d
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 013f559376739584e393f79516b1626cc1fc99f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 8d27e18d540d9638caf819636a37f243b362d369
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="logicalnot-stlclr"></a>logical_not (STL/CLR)
 このテンプレート クラスは、ファンクタを記述、呼び出されると、true を返す場合にのみ引数が false としてテストします。 使用する、引数の型の観点から、関数オブジェクトを指定します。  
@@ -109,10 +116,10 @@ int main()
 0 1  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/機能 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [negate (STL/CLR)](../dotnet/negate-stl-clr.md)

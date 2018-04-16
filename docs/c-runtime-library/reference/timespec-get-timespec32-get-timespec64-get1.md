@@ -8,7 +8,7 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - timespec_get
 - _timespec32_get
@@ -36,21 +36,24 @@ f1_keywords:
 - timespec
 - _timespec32
 - _timespec64
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - timespec_get function
 - _timespec32_get function
 - _timespec64_get function
 ms.assetid: ed757258-b4f2-4c1d-a91b-22ea6ffce4ab
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b6f14e43556a9b066f9dc34520c327cff7fa1004
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 13b85eef72ed1a2180af1b41bf93eefe499967bd
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="timespecget-timespec32get-timespec64get"></a>timespec_get、_timespec32_get、_timespec64_get
 指定された時間の基準に基づいて、最初の引数が指す間隔を現在のカレンダーの時間に設定します。  
@@ -92,15 +95,15 @@ int _timespec64_get(
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
-|`timespec_get`、`_timespec32_get`、`_timespec64_get`|C: \<time.h>、C++: \<ctime> または \<time.h>|  
+|`timespec_get`では、 `_timespec32_get`では、 `_timespec64_get`|C: \<time.h>、C++: \<ctime> または \<time.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
  [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   

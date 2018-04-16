@@ -4,27 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - SIG_IGN
 - SIG_DFL
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - signal action constants
 - SIG_IGN constant
 - SIG_DFL constant
 ms.assetid: c3cb4f15-d39e-4d9d-84f9-0d33e3eb5993
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 26a5b349836b7c9b08a66d4df8f3d2bedbe5b63f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 256f11d3f8daa8a00e70e24aa19c31b71413c13c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="signal-action-constants"></a>signal のアクション定数
 割り込みシグナルを受信したときに実行されるアクションは、`func` の値によって異なります。  
@@ -53,6 +57,6 @@ ms.lasthandoff: 10/24/2017
  `SIG_ERR`  
  エラーが発生したことを示すシグナルからの戻り値の型。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [signal](../c-runtime-library/reference/signal.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)

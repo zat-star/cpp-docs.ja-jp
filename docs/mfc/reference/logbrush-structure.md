@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: LOGBRUSH
-dev_langs: C++
-helpviewer_keywords: LOGBRUSH structure [MFC]
+f1_keywords:
+- LOGBRUSH
+dev_langs:
+- C++
+helpviewer_keywords:
+- LOGBRUSH structure [MFC]
 ms.assetid: 1bf96768-52c5-4444-9bb8-d41ba2e27e68
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: abc5a751d6edf0aa5d51666592927bf5713d1908
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ec6cc9b61f837db4c9766c077fa60f4d9c2b95bd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="logbrush-structure"></a>LOGBRUSH 構造体
 `LOGBRUSH`構造体は、スタイル、色、および物理的なブラシのパターンを定義します。 これは、Windows によって使用[CreateBrushIndirect](http://msdn.microsoft.com/library/windows/desktop/dd183487)と[構造体](http://msdn.microsoft.com/library/windows/desktop/dd162705)関数。  
@@ -79,10 +85,10 @@ typedef struct tag LOGBRUSH { /* lb */
 ## <a name="remarks"></a>コメント  
  **LbColor**ハッチ ブラシの前景の色を制御、 [CDC::SetBkMode](../../mfc/reference/cdc-class.md#setbkmode)と[CDC::SetBkColor](../../mfc/reference/cdc-class.md#setbkcolor)関数は、背景色を制御します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** wingdi.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CDC::GetCharABCWidths](../../mfc/reference/cdc-class.md#getcharabcwidths)
 

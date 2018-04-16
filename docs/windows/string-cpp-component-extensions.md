@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - string support with /clr
 - /clr compiler option [C++], string support
 ms.assetid: c695f965-9be0-4e20-9661-373bfee6557e
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3fb87578a0046a70da9a68ab6a1a08b2d6a9f4d1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: e988da5393e32871794a2a1e7565801b0b338c2d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="string--c-component-extensions"></a>文字列 (C++ コンポーネント拡張)
 Visual C コンパイラ サポート*文字列*、これは、文字のシーケンスとしてテキストを表すオブジェクト。 Visual C++ では、文字列の変数 (暗黙的な値) とリテラル (文字列が引用符で囲まれた明示的な値) をサポートしています。  
@@ -46,7 +51,7 @@ using namespace default;
 ### <a name="remarks"></a>コメント  
  詳細と文字列の例については、次を参照してください[platform::string、std::wstring、およびリテラル (プラットフォーム)。](http://msdn.microsoft.com/en-us/ec92fbc6-edf3-4137-a85e-8e29bdb857a8)  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
 ## <a name="common-language-runtime"></a>共通言語ランタイム  
@@ -73,10 +78,10 @@ using namespace default;
   
  詳細については、次を参照してください。[文字列リテラルと文字リテラル](../cpp/string-and-character-literals-cpp.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/clr**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  **例**  
   
  文字列を連結して比較するコード例を次に示します。  
@@ -283,7 +288,7 @@ System.SByte*
 System.String  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)   
  [文字列リテラルと文字リテラル](../cpp/string-and-character-literals-cpp.md)   
  [/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)

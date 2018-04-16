@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C3400 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3400 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: C3400
-dev_langs: C++
-helpviewer_keywords: C3400
+f1_keywords:
+- C3400
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3400
 ms.assetid: d44169a8-73b6-4766-b406-b3a6c93f2a4d
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5eb0815c218fc018120f7502a4d1c081e98d6642
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 77c68c81aef564e6dc15ec782d631ca90feb24f4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3400"></a>コンパイラ エラー C3400
 'constraint_1' と 'constraint_2' を含む、循環制約の依存関係です  

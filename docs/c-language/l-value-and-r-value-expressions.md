@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - L-values
 - member-selection expressions
 - R-value expressions
 - subscript expressions
 ms.assetid: b790303e-ec6f-4d0d-bc55-df42da267172
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8c2d37d95a20ac2a71c50d468a7793ae4ab8956f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6fb26b4488f6c75c0d9d7b70afb68c3c1b5e3178
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="l-value-and-r-value-expressions"></a>左辺値と右辺値の式
 メモリ位置を示す式は「左辺値」式と呼ばれます。 左辺値は記憶領域の "ロケーター" 値や、等号 (**=**) の左側に表示されることを意味する "左" 値を表します。 多くの場合、左辺値は識別子です。  
@@ -62,7 +66,7 @@ long l;
   
  Microsoft C の既定では、Microsoft 拡張機能が有効になっています。 これらの拡張機能を無効にするには、/Za コンパイラ オプションを使用します。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
 ## <a name="see-also"></a>関連項目  
  [オペランドおよび式](../c-language/operands-and-expressions.md)

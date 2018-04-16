@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -18,7 +19,8 @@ f1_keywords:
 - AFXODLGS/COlePropertiesDialog::m_op
 - AFXODLGS/COlePropertiesDialog::m_psh
 - AFXODLGS/COlePropertiesDialog::m_vp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COlePropertiesDialog [MFC], COlePropertiesDialog
 - COlePropertiesDialog [MFC], DoModal
@@ -29,15 +31,17 @@ helpviewer_keywords:
 - COlePropertiesDialog [MFC], m_psh
 - COlePropertiesDialog [MFC], m_vp
 ms.assetid: a54dbc89-1447-4329-bd01-00e98ec9e935
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bd91209201373a3ee03e942ecfe9f939f58e328a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a5460926e1f58a557b26d8e5fa0a0ed763fc5de6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="colepropertiesdialog-class"></a>メンバー クラス
 Windows に共通の [OLE プロジェクト プロパティ] ダイアログ ボックスをカプセル化します。  
@@ -97,7 +101,7 @@ class COlePropertiesDialog : public COleDialog
   
  `COlePropertiesDialog`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxodlgs.h  
   
 ##  <a name="colepropertiesdialog"></a>COlePropertiesDialog::COlePropertiesDialog  
@@ -138,7 +142,7 @@ COlePropertiesDialog(
   
      このページには、アイテムを表示する、アイコンの変更、およびイメージのスケーリングを変更するためのオプションが含まれています。  
   
--   Link  
+-   リンク  
   
      このページには、リンク アイテムの場所を変更して、リンク アイテムの更新のオプションが含まれています。 このページから、ユーザーが選択された項目のリンクを分割できます。  
   
@@ -157,7 +161,7 @@ virtual INT_PTR DoModal();
  場合**IDCANCEL** 、Windows を呼び出すことができます、返される[情報を得る](http://msdn.microsoft.com/library/windows/desktop/ms646916)エラーが発生したかどうかを判断する関数。  
   
 ##  <a name="m_gp"></a>COlePropertiesDialog::m_gp  
- 型の構造体[OLEUIGNRLPROPS](http://msdn.microsoft.com/library/windows/desktop/ms687297)OLE オブジェクトのプロパティ ダイアログ ボックスの [全般] ページを初期化するために使用される、します。  
+ 型の構造体[OLEUIGNRLPROPS](http://msdn.microsoft.com/library/windows/desktop/ms687297)OLE オブジェクトのプロパティダイアログ ボックスの [全般] ページを初期化するために使用される、します。  
   
 ```  
 OLEUIGNRLPROPS m_gp;  
@@ -169,7 +173,7 @@ OLEUIGNRLPROPS m_gp;
  詳細については、 **OLEUIGNRLPROPS**構造体、Windows SDK を参照してください。  
   
 ##  <a name="m_lp"></a>COlePropertiesDialog::m_lp  
- 型の構造体[OLEUILINKPROPS](http://msdn.microsoft.com/library/windows/desktop/ms680735)OLE オブジェクトのプロパティ ダイアログ ボックスの [リンク] ページを初期化するために使用される、します。  
+ 型の構造体[OLEUILINKPROPS](http://msdn.microsoft.com/library/windows/desktop/ms680735)OLE オブジェクトのプロパティダイアログ ボックスの [リンク] ページを初期化するために使用される、します。  
   
 ```  
 OLEUILINKPROPS m_lp;  
@@ -207,7 +211,7 @@ PROPSHEETHEADER m_psh;
  詳細については、 **PROPSHEETHEADER**構造体、Windows SDK を参照してください。  
   
 ##  <a name="m_vp"></a>COlePropertiesDialog::m_vp  
- 型の構造体[OLEUIVIEWPROPS](http://msdn.microsoft.com/library/windows/desktop/ms693751)OLE オブジェクトのプロパティ ダイアログ ボックスの [表示] ページを初期化するために使用される、します。  
+ 型の構造体[OLEUIVIEWPROPS](http://msdn.microsoft.com/library/windows/desktop/ms693751)OLE オブジェクトのプロパティダイアログ ボックスの [表示] ページを初期化するために使用される、します。  
   
 ```  
 OLEUIVIEWPROPS m_vp;  
@@ -247,7 +251,7 @@ virtual BOOL OnApplyScale(
 > [!NOTE]
 >  共通の OLE オブジェクトのプロパティ ダイアログ ボックスが表示される前に、フレームワークでは、この関数は**NULL**の`pItem`- 1 を`nCurrentScale`です。 これは、スケーリングの制御を有効にするかどうかを決定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル CIRC](../../visual-cpp-samples.md)   
  [関数クラス](../../mfc/reference/coledialog-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

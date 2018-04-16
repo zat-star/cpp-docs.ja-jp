@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 10/30/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - programs [C++], projects
 - project templates [Visual Studio], C++
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - applications [C++], projects
 - Visual C++ projects, types
 ms.assetid: 7337987e-1e7b-4120-9a4b-94f0401f15e7
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 625489b69b3831d78bbe9bc80d92838e1e79b0c8
-ms.sourcegitcommit: 69632887f7a85f4841c49b4c1353d3144927a52c
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a837aa04b0e0c2b8d3d9f5cfd48181a9ea23b346
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="visual-c-project-types"></a>Visual C++ プロジェクトの種類
 
@@ -102,6 +106,6 @@ C++ での Windows ユニバーサル アプリの概要については、次を
 
 プロジェクト テンプレートによって生成されたファイルの多くには TODO コメントが含まれています。このコメントは、独自のソース コードを作成できる場所を特定するのに役立ちます。 コードを追加する方法の詳細については、次を参照してください。[コード ウィザードを使用した機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)と[リソース ファイルの操作](../windows/working-with-resource-files.md)です。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [アプリケーション ウィザードを使用したデスクトップ プロジェクトの作成](../ide/creating-desktop-projects-by-using-application-wizards.md)   

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2707
-dev_langs: C++
-helpviewer_keywords: C2707
+f1_keywords:
+- C2707
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2707
 ms.assetid: 3deaf45c-74da-4c9d-acc6-b82412720b74
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 46ca756cf6491506cefc38e34992fa5e3fb67429
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 877ca1b0592625823e262f77f7f2adcfc5c04e3e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2707"></a>コンパイラ エラー C2707
 'identifier': 組み込み関数のコンテキストが正しくありません  

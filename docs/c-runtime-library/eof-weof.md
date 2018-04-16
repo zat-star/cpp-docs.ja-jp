@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: EOF
-dev_langs: C++
+f1_keywords:
+- EOF
+dev_langs:
+- C++
 helpviewer_keywords:
 - EOF function
 - WEOF function
 - end of file
 ms.assetid: a7150563-cdae-4cdf-9798-ad509990e505
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0d2aa2496683f10b0f603839d27104bd0e28fa50
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1e9881d28f0f8f4a32c5bc049d4f9bac805124d9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="eof-weof"></a>EOF、WEOF
 ## <a name="syntax"></a>構文  
@@ -37,7 +42,7 @@ ms.lasthandoff: 10/24/2017
   
  WEOF は、ワイド型ストリームの終端を示すために、またはエラー状態を報告するために使用される **wint_t** 型の戻り値です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [putc、putwc](../c-runtime-library/reference/putc-putwc.md)   
  [ungetc、ungetwc](../c-runtime-library/reference/ungetc-ungetwc.md)   
  [scanf、_scanf_l、wscanf、_wscanf_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   

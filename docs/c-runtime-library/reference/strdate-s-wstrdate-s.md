@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _strdate_s
 - _wstrdate_s
@@ -42,31 +42,17 @@ helpviewer_keywords:
 - _strdate_s function
 - _wstrdate_s function
 ms.assetid: d41d8ea9-e5ce-40d4-864e-1ac29b455991
-caps.latest.revision: 24
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 5b1701f41b2f66ccbc2601763c09a4db0523c2ed
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e71476fbb1810505f0b50a04d20f6235ff727c92
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strdates-wstrdates"></a>_strdate_s、_wstrdate_s
 現在のシステム日付をバッファーにコピーします。 これらは、「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」 (CRT のセキュリティ機能) の説明にあるとおり、セキュリティが強化されたバージョンの [_strdate、_wstrdate](../../c-runtime-library/reference/strdate-wstrdate.md) です。  
@@ -100,11 +86,11 @@ errno_t _wstrdate_s(
  バッファーのサイズ。  
   
 ## <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 を返します。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは ERRNO.H で定義されます。この関数によって生成される正確なエラーについては、下記の表をご覧ください。 エラー コードの詳細については、「[errno 定数](../../c-runtime-library/errno-constants.md)」をご覧ください。  
+ 正常終了した場合は 0。 障害が発生した場合、戻り値はエラー コードを示します。 エラー コードは ERRNO.H で定義されます。この関数によって生成される正確なエラーについては、下記の表をご覧ください。 エラー コードの詳細については、「[errno 定数](../../c-runtime-library/errno-constants.md)」をご覧ください。  
   
 ## <a name="error-conditions"></a>エラー条件  
   
-|`buffer`|`numberOfElements`|リターン|`buffer` の内容|  
+|`buffer`|`numberOfElements`|Return|`buffer` の内容|  
 |--------------|------------------------|------------|--------------------------|  
 |`NULL`|(任意)|`EINVAL`|変更されない|  
 |`NULL` ではない (有効なバッファーを指す)|0|`EINVAL`|変更されない|  
@@ -123,7 +109,7 @@ errno_t _wstrdate_s(
   
  `buffer` が `NULL` ポインターである場合、または `numberOfElements` が 9 文字未満の場合は、「[パラメータの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、バッファーが `NULL` である、または `numberOfElements` が 0 以下である場合に `errno` を `EINVAL` に設定します。あるいは、`numberOfElements` が 9 より小さい場合、`errno` を `ERANGE` に設定します。  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mapping"></a>汎用テキスト ルーチンのマップ  
   
@@ -131,9 +117,9 @@ errno_t _wstrdate_s(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tstrdate_s`|`_strdate_s`|`_strdate_s`|`_wstrdate_s`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strdate`|\<time.h>|  
 |`_wstrdate`|\<time.h> または \<wchar.h>|  
@@ -142,7 +128,7 @@ errno_t _wstrdate_s(
 ## <a name="example"></a>例  
  [time](../../c-runtime-library/reference/time-time32-time64.md) の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   
  [ctime_s、_ctime32_s、_ctime64_s、_wctime_s、_wctime32_s、_wctime64_s](../../c-runtime-library/reference/ctime-s-ctime32-s-ctime64-s-wctime-s-wctime32-s-wctime64-s.md)   

@@ -31,16 +31,17 @@ helpviewer_keywords:
 - CD2DResource [MFC], m_bIsAutoDestroy
 - CD2DResource [MFC], m_pParentTarget
 ms.assetid: 34e3ee18-aab6-4c39-9294-de869e1f7820
-caps.latest.revision: 18
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2cc6b80803cbddcbd05655a8f9620c102aef3e9c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: b292bf680a146d730554c56c60df9a649b670ba3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2dresource-class"></a>CD2DResource クラス
 ブラシ、レイヤー、テキストなどの D2D リソースの作成および管理インターフェイスを提供する抽象クラスです。  
@@ -77,7 +78,7 @@ class CD2DResource : public CObject;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CD2DResource::m_bIsAutoDestroy](#m_bisautodestroy)|(CRenderTarget) の所有者によって destoyed されるリソースには|  
 |[CD2DResource::m_pParentTarget](#m_pparenttarget)|親 CRenderTarget へのポインター)|  
@@ -87,7 +88,7 @@ class CD2DResource : public CObject;
   
  `CD2DResource`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="_dtorcd2dresource"></a>CD2DResource:: ~ CD2DResource  
@@ -182,6 +183,5 @@ virtual HRESULT ReCreate(CRenderTarget* pRenderTarget);
 ### <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

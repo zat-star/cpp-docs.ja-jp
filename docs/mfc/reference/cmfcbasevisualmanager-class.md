@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -21,7 +22,8 @@ f1_keywords:
 - AFXVISUALMANAGER/CMFCBaseVisualManager::GetStandardWindowsTheme
 - AFXVISUALMANAGER/CMFCBaseVisualManager::CleanUpThemes
 - AFXVISUALMANAGER/CMFCBaseVisualManager::UpdateSystemColors
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCBaseVisualManager [MFC], CMFCBaseVisualManager
 - CMFCBaseVisualManager [MFC], DrawCheckBox
@@ -35,15 +37,17 @@ helpviewer_keywords:
 - CMFCBaseVisualManager [MFC], CleanUpThemes
 - CMFCBaseVisualManager [MFC], UpdateSystemColors
 ms.assetid: d56f3afc-cdea-4de1-825a-a08999c571e0
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fc8329781d794d2abb460c3bc93948939b26d2ed
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: edb579cff639da9965c7214c2dd8abce8459d254
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcbasevisualmanager-class"></a>CMFCBaseVisualManager クラス
 派生のビジュアル マネージャーと Windows テーマ API 間のレイヤー。  
@@ -100,7 +104,7 @@ class CMFCBaseVisualManager: public CObject
   
  [CMFCBaseVisualManager](../../mfc/reference/cmfcbasevisualmanager-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxvisualmanager.h  
   
 ##  <a name="cleanupthemes"></a>CMFCBaseVisualManager::CleanUpThemes  
@@ -386,6 +390,6 @@ void UpdateSystemColors();
 ### <a name="remarks"></a>コメント  
  内部使用のみ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)

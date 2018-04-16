@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _printf_l
 - wprintf
@@ -28,7 +29,8 @@ f1_keywords:
 - printf
 - _tprintf
 - wprintf
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - printf function
 - printf_l function
@@ -45,15 +47,17 @@ helpviewer_keywords:
 - printf function, using
 - formatted text [C++]
 ms.assetid: 77a854ae-5b48-4865-89f4-f2dc5cf80f52
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b6bd520f0c84a71caadb9e480a19d8d42ea69828
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f2ebdd4061b50646f9450bfdfaf2ea4db90b5774
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="printf-printfl-wprintf-wprintfl"></a>printf、_printf_l、wprintf、_wprintf_l
 標準出力ストリームに書式付きで出力します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[printf_s、_printf_s_l、wprintf_s、_wprintf_s_l](../../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)」をご覧ください。  
@@ -134,14 +138,14 @@ Line one
 |`_tprintf`|`printf`|`printf`|`wprintf`|  
 |`_tprintf_l`|`_printf_l`|`_printf_l`|`_wprintf_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`printf`, `_printf_l`|\<stdio.h>|  
 |`wprintf`, `_wprintf_l`|\<stdio.h> または \<wchar.h>|  
   
- コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル`stdin`、 `stdout`、および`stderr`、C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
   
 ## <a name="example"></a>例  
   
@@ -229,7 +233,7 @@ Real numbers:
 Address as:   0012FF3C  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [ロケール](../../c-runtime-library/locale.md)   

@@ -1,63 +1,67 @@
 ---
-title: "bss_seg | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc-pragma.bss_seg"
-  - "bss_seg_CPP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "bss_seg プラグマ"
-  - "プラグマ, bss_seg"
+title: "bss_seg |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- vc-pragma.bss_seg
+- bss_seg_CPP
+dev_langs:
+- C++
+helpviewer_keywords:
+- pragmas, bss_seg
+- bss_seg pragma
 ms.assetid: 755f0154-de51-4778-97d3-c9b24e445079
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f4c253cd24bd8246469532cd283e97be4b21f46d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# bss_seg
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="bssseg"></a>bss_seg
 初期化されていない変数が格納される .obj ファイル内のセグメントを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 #pragma bss_seg( [ [ { push | pop }, ] [ identifier, ] ] [ "segment-name" [, "segment-class" ] )  
 ```  
   
-## 解説  
- Obj ファイルは [dumpbin](../build/reference/dumpbin-command-line.md) アプリケーションで表示できます。  初期化されていないデータの .obj ファイルの既定セグメントは、.bss です。  場合によっては **bss\_seg** を使用して、初期化されていないデータを 1 つのセクションにグループ化することで、読み込み時間を短縮できます。  
+## <a name="remarks"></a>コメント  
+ Obj ファイルと見なすことができます、 [dumpbin](../build/reference/dumpbin-command-line.md)アプリケーションです。 初期化されていないデータの .obj ファイルの既定セグメントは、.bss です。 場合によっては、使用**bss_seg**高速化することができますを 1 つのセクションに初期化されていないデータをグループ化で、読み込み時間。  
   
- パラメーターなしの **bss\_seg** は、セグメントを .bss にリセットします。  
+ **bss_seg**パラメーターなしのセグメントを .bss にリセットします。  
   
- **push** \(省略可能\)  
- レコードを内部コンパイラ スタックに格納します。  **push** は *identifier* と *segment\-name* を持つことができます。  
+ **プッシュ**(省略可能)  
+ レコードを内部コンパイラ スタックに格納します。 A**プッシュ**持つことができます、*識別子*と*セグメント名*です。  
   
- **pop** \(省略可能\)  
+ **pop** (省略可能)  
  内部コンパイラ スタックの最上部からレコードを削除します。  
   
- *identifier* \(省略可能\)  
- **push** と共に使用した場合、内部コンパイラ スタックのレコードに名前を割り当てます。  **pop** と共に使用した場合、*identifier* が削除されるまでレコードを内部スタックからポップします。*identifier* が内部スタックにない場合は何もポップされません。  
+ *識別子*(省略可能)  
+ 使用すると**プッシュ**、内部コンパイラ スタックのレコードに名前が割り当てられます。 使用すると**pop**、レコードまで内部スタックからポップ*識別子*が削除された場合は*識別子*がない内部スタックで、何もポップします。  
   
- *identifier* を使用すると、1 つの **pop** コマンドで複数のレコードをポップできます。  
+ *識別子*により、複数のレコードが 1 つでポップできます**pop**コマンド。  
   
- *"segment\-name"* \(省略可能\)  
- セグメントの名前。 **pop** と共に使用した場合、スタックがポップされ、*segment\-name* がアクティブなセグメント名になります。  
+ *"segment-name"*(optional)  
+ 引数の名前。 使用すると**pop**、スタックがポップされますと*セグメント名*アクティブなセグメント名になります。  
   
- *"segment\-class"* \(省略可能\)  
- Version 2.0 未満の C\+\+ との互換性のために残されています。  これは無視されます。  
+ *"segment-class"* (optional)  
+ Version 2.0 未満の C++ との互換性のために残されています。 これは無視されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // pragma_directive_bss_seg.cpp  
@@ -75,11 +79,11 @@ int main() {
 }  
 ```  
   
- 初期化されたデータのセクション \([data\_seg](../preprocessor/data-seg.md)\)、関数 \([code\_seg](../preprocessor/code-seg.md)\)、および const 変数のセクション \([const\_seg](../preprocessor/const-seg.md)\) を指定することもできます。  
+ 初期化されたデータのセクションを指定することもできます ([data_seg](../preprocessor/data-seg.md))、関数 ([code_seg](../preprocessor/code-seg.md))、および const 変数 ([const_seg](../preprocessor/const-seg.md))。  
   
- **bss\_seg** プラグマを使用して割り当てられたデータは、その位置に関する情報を保持しません。  
+ 使用して割り当てられたデータ、 **bss_seg**プラグマがその位置に関する情報を保持しません。  
   
- セクションを作成する場合に使用しない名前のリストについては、「[\/SECTION](../build/reference/section-specify-section-attributes.md)」を参照してください。  
+ 参照してください[/section](../build/reference/section-specify-section-attributes.md)セクションを作成するときに使用しない名前の一覧についてはします。  
   
-## 参照  
- [プラグマ ディレクティブと \_\_Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+## <a name="see-also"></a>参照  
+ [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

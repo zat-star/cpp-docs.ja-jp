@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - declarations, enumerations
 - define directive (#define), alternative to
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - named constants, enumeration declarations
 - declaring enumerations
 ms.assetid: bd18f673-4dda-4bc1-92fd-d1ce10074910
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 69b35d3007a26cd7ca605617b7441525f44ef3ca
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f4109bb9ed66a89765b6270fce6a3cd5821698a2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-enumeration-declarations"></a>C 列挙体の宣言
 列挙体は、名前が付いた一連の整数定数で構成されます。 列挙型の宣言では、列挙タグ (省略可能) の名前を指定し、名前が付いた一連の整数識別子を定義します (これらの識別子は、"列挙セット"、"列挙定数"、"列挙子"、または "メンバー" と呼ばれます)。 列挙型の変数には、その型で定義された列挙セットの 1 つの値が格納されます。  
@@ -81,7 +85,7 @@ enumerator-list
   
 -   列挙タグは通常のスコープ規則に従います。 参照範囲が同じである他の列挙体タグ、構造体タグ、共用体タグと異なる必要があります。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次に、列挙体宣言の例を示します。  
   
 ```  
@@ -156,5 +160,5 @@ if ( match_flag == false )
 enum { yes, no } response;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [列挙型](../cpp/enumerations-cpp.md)

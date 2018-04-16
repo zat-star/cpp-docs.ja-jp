@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::queue::pop
-dev_langs: C++
-helpviewer_keywords: pop member [STL/CLR]
+f1_keywords:
+- cliext::queue::pop
+dev_langs:
+- C++
+helpviewer_keywords:
+- pop member [STL/CLR]
 ms.assetid: 38f6c03b-e8f8-4663-b3d6-18314cdc8e7d
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: de17790b127ad62c35db835c9555e7c410764812
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 8521ea0a85b8a4997f38a6236981d85b82ecc884
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="queuepop-stlclr"></a>queue::pop (STL/CLR)
 最後の要素を削除します。  
@@ -68,11 +75,11 @@ a b c
 b c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/キュー >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
  [queue::push (STL/CLR)](../dotnet/queue-push-stl-clr.md)

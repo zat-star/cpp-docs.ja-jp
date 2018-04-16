@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: event/Microsoft::WRL::EventSource::InvokeAll
-dev_langs: C++
-helpviewer_keywords: InvokeAll method
+f1_keywords:
+- event/Microsoft::WRL::EventSource::InvokeAll
+dev_langs:
+- C++
+helpviewer_keywords:
+- InvokeAll method
 ms.assetid: 1506618f-0421-4428-a4d0-4ea2b10a3bf6
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 279d40bf8da171547e27313c4f1a9a3578d93be2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 45835b6929ae73559c427d374430b64e7ff21a61
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="eventsourceinvokeall-method"></a>EventSource::InvokeAll メソッド
 現在関連付けられている各イベント ハンドラーを呼び出します[EventSource](../windows/eventsource-class.md)オブジェクトの指定した引数型と引数を使用します。  
@@ -241,10 +248,10 @@ void InvokeAll(
  `arg9`  
  9 番目のイベント ハンドラーの引数。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** event.h  
   
  **名前空間:** Microsoft::WRL
  
- ## <a name="see-also"></a>関連項目
+ ## <a name="see-also"></a>参照
  [EventSource クラス](../windows/eventsource-class.md)

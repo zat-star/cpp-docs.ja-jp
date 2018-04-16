@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: omp_get_nested
-dev_langs: C++
-helpviewer_keywords: omp_get_nested OpenMP function
+ms.topic: reference
+f1_keywords:
+- omp_get_nested
+dev_langs:
+- C++
+helpviewer_keywords:
+- omp_get_nested OpenMP function
 ms.assetid: e9784847-516e-40d3-89f7-b8b6898d8667
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2d67008fde4d8d3093c33bfc9389004ce3b339db
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: df6a3fafdb749031ae5e55a58e1e26ccad76985c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ompgetnested"></a>omp_get_nested
 入れ子になった並列処理が有効になっているかどうかを示す値を返します。  
@@ -41,5 +47,5 @@ int omp_get_nested( );
 ## <a name="example"></a>例  
  参照してください[omp_set_nested](../../../parallel/openmp/reference/omp-set-nested.md)の使用例については`omp_get_nested`します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

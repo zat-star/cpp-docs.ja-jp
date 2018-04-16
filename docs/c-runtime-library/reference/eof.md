@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _eof
 apilocation:
@@ -35,30 +35,17 @@ helpviewer_keywords:
 - testing, for end-of-file
 - end of file
 ms.assetid: 265703f4-d07e-4005-abf3-b1d0cdd9e0b0
-caps.latest.revision: 14
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 79e55c9b1496ef7a6050e5f0ed5a5c05b1616b73
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 106f673f5058043dfe0443970e9d946315c91d6d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="eof"></a>_eof
 ファイルの終わり (EOF) かどうかをテストします。  
@@ -81,7 +68,7 @@ int _eof(
 ## <a name="remarks"></a>コメント  
  `_eof` 関数は、`fd` に関連付けられたファイルの終わりに達したかどうかを判定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|オプション ヘッダー|  
 |--------------|---------------------|---------------------|  
@@ -141,7 +128,7 @@ This file contains some text.
 Number of bytes read = 29  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [エラー処理](../../c-runtime-library/error-handling-crt.md)   
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
  [clearerr](../../c-runtime-library/reference/clearerr.md)   

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: _HAS_ITERATOR_DEBUGGING
-dev_langs: C++
-helpviewer_keywords: _HAS_ITERATOR_DEBUGGING
+ms.topic: reference
+f1_keywords:
+- _HAS_ITERATOR_DEBUGGING
+dev_langs:
+- C++
+helpviewer_keywords:
+- _HAS_ITERATOR_DEBUGGING
 ms.assetid: 90077dbb-8a76-4963-83a6-29f4854007a8
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 77690e373363aebec8876bc20fe88e3f09f8d79b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 39b82fbe2a7c3afa0d731185b2e9578d48c89b23
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="hasiteratordebugging"></a>_HAS_ITERATOR_DEBUGGING  
   
@@ -43,7 +49,7 @@ ms.lasthandoff: 10/24/2017
 #define _ITERATOR_DEBUG_LEVEL 0  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md)   
  [反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)   
  [チェックを行う反復子](../standard-library/checked-iterators.md)   

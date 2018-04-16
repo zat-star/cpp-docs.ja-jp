@@ -1,16 +1,18 @@
 ---
-title: "-GT (サポート ファイバー セーフ スレッド ローカル ストレージ) |Microsoft ドキュメント"
-ms.custom: 
+title: -GT (サポート ファイバー セーフ スレッド ローカル ストレージ) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VC.Project.VCCLCompilerTool.EnableFiberSafeOptimizations
 - /gt
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - /GT compiler option [C++]
 - GT compiler option [C++]
@@ -19,15 +21,17 @@ helpviewer_keywords:
 - -GT compiler option [C++]
 - fiber-safe static thread-local storage compiler option [C++]
 ms.assetid: 071fec79-c701-432b-9970-457344133159
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5912f241716bbaf9aba989dabbeb25d38ab465c0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 86c027a1796f42d7b2932f68aff00136ee0d217f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="gt-support-fiber-safe-thread-local-storage"></a>/GT (スレッド ローカル ストレージを使用したファイバー保護のサポート)
 静的スレッド ローカル ストレージに割り当てられたデータを使用して割り当てられたデータに対して、ファイバー保護をサポートしている`__declspec(thread)`です。  
@@ -57,6 +61,6 @@ ms.lasthandoff: 10/24/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.EnableFiberSafeOptimizations%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

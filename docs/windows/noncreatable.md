@@ -1,32 +1,37 @@
 ---
-title: "noncreatable | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.noncreatable"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "noncreatable attribute"
+title: "noncreatable |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- vc-attr.noncreatable
+dev_langs:
+- C++
+helpviewer_keywords:
+- noncreatable attribute
 ms.assetid: 4d17937b-0bff-41af-ba57-53e18b7ab5a9
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: bb9f67b4efac28a1cacd6301c8ca849246f9a481
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# noncreatable
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-単独ではインスタンス化できないオブジェクトを定義します。  
+# <a name="noncreatable"></a>noncreatable
+単独でインスタンス化できないオブジェクトを定義します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,12 +39,12 @@ caps.handback.revision: 9
   
 ```  
   
-## 解説  
- **作成**  C\+\+ 属性に [作成](http://msdn.microsoft.com/library/windows/desktop/aa367118) の MIDL の属性と同じ機能を持ちますが生成された .IDL ファイルにコンパイラが自動的に渡されます。  
+## <a name="remarks"></a>コメント  
+ **Noncreatable** C++ 属性と同じ機能を持つ、 [noncreatable](http://msdn.microsoft.com/library/windows/desktop/aa367118) MIDL 属性、生成されたに自動的に渡されるとします。コンパイラで IDL ファイルです。  
   
- この属性はATL を使用してプロジェクト内で使用するときは属性の動作が変わります。  上記の動作に加えて属性も [OBJECT\_ENTRY\_NON\_CREATEABLE\_EX\_AUTO](../Topic/OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO.md) マクロを挿入します。  このマクロを ATL オブジェクトには外部で作成できないことを示します。  
+ ATL を使用するプロジェクト内でこの属性を使用する場合、属性の動作を変更します。 上記の動作だけでなく、属性でもは挿入、[役立つ](../atl/reference/object-map-macros.md#object_entry_non_createable_ex_auto)マクロです。 このマクロは ATL にそのオブジェクトを外部で作成できないことを示します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cpp_attr_ref_noncreatable.cpp  
@@ -59,20 +64,19 @@ class CMyClass : public A
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  `struct`|  
-|**複数回の適用**|Ｘ|  
-|**必要な属性**|**コクラス**|  
+|**対象**|**class**、 `struct`|  
+|**反復可能**|×|  
+|**必要な属性**|**coclass**|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _CrtSetReportFile
+ms.topic: reference
+apiname:
+- _CrtSetReportFile
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,20 +25,23 @@ apitype: DLLExport
 f1_keywords:
 - CrtSetReportFile
 - _CrtSetReportFile
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CrtSetReportFile function
 - _CrtSetReportFile function
 ms.assetid: 3126537e-511b-44af-9c1c-0605265eabc4
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7769c38c939b0deb1e1c61d53fad6b500f3860dd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a97e3f856dae60eeae9b96f3d5b422f8a262c68a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="crtsetreportfile"></a>_CrtSetReportFile
 [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) を使用して `_CRTDBG_MODE_FILE` を指定すると、メッセージ テキストを受け取るためのファイル ハンドルを指定できます。 `_CrtSetReportFile` は、[_CrtDbgReport, _CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) によってテキストの出力先を指定するためにも使用されます (デバッグ バージョンのみ)。  
@@ -58,7 +63,7 @@ _HFILE _CrtSetReportFile(
  `reportType` の新しいレポート ファイル。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合、`_CrtSetReportFile` は `reportType` で指定したレポートの種類に対して定義された前のレポート ファイルを返します。 `reportType` に無効な値が渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、この関数によって無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、関数から `_CRTDBG_HFILE_ERROR` が返されます。 詳しくは、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+ 正常に終了した場合、`_CrtSetReportFile` は `reportType` で指定したレポートの種類に対して定義された前のレポート ファイルを返します。 `reportType` に無効な値が渡されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、この関数によって無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `_CRTDBG_HFILE_ERROR`が返されます。 詳しくは、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `_CrtSetReportFile` は [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) 関数と一緒に使用して、`_CrtDbgReport` によって生成される特定のレポートの種類の送信先を定義するために使用されます。 特定のレポートの種類の `_CrtSetReportMode` レポート モードを割り当てるために `_CRTDBG_MODE_FILE` が呼び出された場合は、ターゲットとして使用する特定のファイルまたはストリームを定義するために `_CrtSetReportFile` を呼び出す必要があります。 [_DEBUG](../../c-runtime-library/debug.md) が定義されていない場合、`_CrtSetReportFile` の呼び出しは前処理で削除されます。  
@@ -99,15 +104,15 @@ _RPT0(_CRT_ERROR,"1st message\n");
   
  各レポートの種類によって使用されるレポート ファイルを個別に制御できます。 たとえば、`reportType` の `_CRT_ERROR` は `stderr` にレポートされるよう指定し、`reportType` の `_CRT_ASSERT` はユーザー定義ファイルのハンドルまたはストリームにレポートされるように指定することができます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_CrtSetReportFile`|\<crtdbg.h>|\<errno.h>|  
   
- コンソールは、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリではサポートされていません。 コンソール (`stdin`、`stdout`、および `stderr`) に関連付けられている標準ストリームのハンドルは、C ランタイム関数によって [!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)] アプリで使用する前に、リダイレクトする必要があります。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル —`stdin`、 `stdout`、および`stderr`— C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
  **ライブラリ:** [CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)

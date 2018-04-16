@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3883
-dev_langs: C++
-helpviewer_keywords: C3883
+f1_keywords:
+- C3883
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3883
 ms.assetid: cdd1c1f4-f268-4469-9c62-d52303114b0c
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ef1203b3162aa08f1de9a5a4ee68277d2c3489cc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dd82d41ea978126018691ab35121b3bdd757d063
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3883"></a>コンパイラ エラー C3883
 'var': initonly スタティック データ メンバーを初期化する必要があります  

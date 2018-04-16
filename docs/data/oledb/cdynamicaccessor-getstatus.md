@@ -4,46 +4,47 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ATL::CDynamicAccessor::GetStatus
 - CDynamicAccessor.GetStatus
 - ATL.CDynamicAccessor.GetStatus
 - CDynamicAccessor::GetStatus
-dev_langs: C++
-helpviewer_keywords: GetStatus method
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetStatus method
 ms.assetid: 8f1aba69-5c2c-4ca7-ad84-7b4b27995eb8
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fd1c55e78cdc4a0ec8bd5c24c7010ec133b043bf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: db78ecf633e3f69e24f1684949bddc0e0c21ce2c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cdynamicaccessorgetstatus"></a>CDynamicAccessor::GetStatus
 指定された列の状態を取得します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      bool GetStatus(   
-   DBORDINAL nColumn,   
-   DBSTATUS* pStatus    
-) const throw( );  
-bool GetStatus(  
-   const CHAR* pColumnName,  
-   DBSTATUS* pStatus   
-) const throw( );  
-bool GetStatus(  
-   const WCHAR* pColumnName,  
-   DBSTATUS* pStatus   
-) const throw( );  
+```
+bool GetStatus(DBORDINAL nColumn,   
+  DBSTATUS* pStatus) const throw();  
+
+bool GetStatus(const CHAR* pColumnName,  
+   DBSTATUS* pStatus) const throw();  
+
+bool GetStatus(const WCHAR* pColumnName,  
+   DBSTATUS* pStatus) const throw();  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -59,9 +60,9 @@ bool GetStatus(
 ## <a name="return-value"></a>戻り値  
  返します**true**指定された列が検出された場合。 この関数を返しますそれ以外の場合、 **false**です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)   
  [CDynamicAccessor::SetStatus](../../data/oledb/cdynamicaccessor-setstatus.md)

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: setbuf
+ms.topic: reference
+apiname:
+- setbuf
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,21 +23,25 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: setbuf
-dev_langs: C++
+f1_keywords:
+- setbuf
+dev_langs:
+- C++
 helpviewer_keywords:
 - setbuf function
 - stream buffering
 ms.assetid: 13beda22-7b56-455d-8a6c-f2eb636885b9
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a57e815376414724b2c92977c52a309f86c63b50
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 73de6c601f6a01fca15e8270104e2d8148539a4c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="setbuf"></a>setbuf
 ストリーム バッファリングを制御します。 この関数は使用されなくなりました。代わりに [setvbuf](../../c-runtime-library/reference/setvbuf.md) をご使用ください。  
@@ -61,13 +67,13 @@ void setbuf(
   
  `setbuf` は [setvbuf](../../c-runtime-library/reference/setvbuf.md) によって置き換えられました。これは新しいコード用の優先ルーチンです。 `setbuf` では、既存のコードとの互換性が保持されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`setbuf`|\<stdio.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -108,7 +114,7 @@ stream1 set to user-defined buffer at: 0012FCDC
 stream2 buffering disabled  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fclose、_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   
  [fflush](../../c-runtime-library/reference/fflush.md)   

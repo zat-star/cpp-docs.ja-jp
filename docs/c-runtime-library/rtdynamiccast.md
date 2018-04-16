@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname: __RTDynamicCast
+apiname:
+- __RTDynamicCast
 apilocation:
 - msvcr90.dll
 - msvcr110.dll
@@ -17,19 +19,24 @@ apilocation:
 - msvcr80.dll
 - msvcr110_clr0400.dll
 apitype: DLLExport
-f1_keywords: __RTDynamicCast
-dev_langs: C++
-helpviewer_keywords: __RTDynamicCast
+f1_keywords:
+- __RTDynamicCast
+dev_langs:
+- C++
+helpviewer_keywords:
+- __RTDynamicCast
 ms.assetid: 56aa2d7a-aa47-46ef-830d-e37175611239
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b648d2f0f63a13451d5625c99e5bf614c8402017
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 375fcbb4d059ebd431cfd3f86bbf7e3ddb7a3d93
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="rtdynamiccast"></a>__RTDynamicCast
 [dynamic_cast](../cpp/dynamic-cast-operator.md) 演算子のランタイム実装です。  
@@ -71,8 +78,8 @@ PVOID __RTDynamicCast (
 ## <a name="remarks"></a>コメント  
  `inptr` を `TargetType` 型のオブジェクトに変換します。 `inptr` の型は、`TargetType` がポインターの場合はポインター、`TargetType` が参照の場合は左辺値である必要があります。 `TargetType` は、以前に定義されたクラス型への参照かポインター、または void 型へのポインターである必要があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |__RTDynamicCast|rtti.h|

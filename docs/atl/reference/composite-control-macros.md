@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - atlcom/ATL::BEGIN_SINK_MAP
 - atlcom/ATL::END_SINK_MAP
 - atlcom/ATL::SINK_ENTRY
-dev_langs: C++
-helpviewer_keywords: composite controls, macros
+dev_langs:
+- C++
+helpviewer_keywords:
+- composite controls, macros
 ms.assetid: 17f2dd5e-07e6-4aa6-b965-7a361c78c45e
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 154c8f30e1d0141af7c0825d5af1208b95881a86
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b609801a1716e47b208644be02d4746abf8c288a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="composite-control-macros"></a>複合コントロール マクロ
 これらのマクロは、イベント シンク マップとエントリを定義します。  
@@ -37,7 +42,7 @@ ms.lasthandoff: 10/24/2017
 |[SINK_ENTRY_INFO](#sink_entry_info)|使用するための手動で指定された型情報を持つイベント シンク マップ エントリ[されます](../../atl/reference/idispeventsimpleimpl-class.md)です。|  
 |[SINK_ENTRY_INFO_P](#sink_entry_info)| (Visual Studio 2017)Iid へのポインターを受け取る点を除いて、SINK_ENTRY_INFO 類似します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
 
 ##  <a name="begin_sink_map"></a>BEGIN_SINK_MAP  
@@ -154,6 +159,6 @@ SINK_ENTRY_INFO_P( id, piid, dispid, fn, info ) // (Visual Studio 2017)
  最初の 4 つのマクロのパラメーターがの場合と同じ、 [SINK_ENTRY_EX](#sink_entry_ex)マクロです。 最後のパラメーターは、イベントの種類の情報を提供します。 ActiveX イベント シンクのみサポートしている戻り値の型 HRESULT または void、イベント ハンドラー メソッドからの CE ATL の実装その他の戻り値はサポートされていませんし、その動作は未定義です。  
   
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロ](../../atl/reference/atl-macros.md)   
  [複合コントロールに関するグローバル関数](../../atl/reference/composite-control-global-functions.md)

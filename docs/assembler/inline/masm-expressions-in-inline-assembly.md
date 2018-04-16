@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - expressions [C++], MASM
 - expressions [C++], inline assembly
 - inline assembly, MASM expressions
 - MASM (Microsoft Macro Assembler), expressions
 ms.assetid: c80e89e6-1084-4654-bb14-68c5f6ef2840
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 29b823c15beb67518a81d3bc4200fc5c6691de39
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9dd456cf25bb8945ab1cda4ca40efd9e662a9fe3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="masm-expressions-in-inline-assembly"></a>インライン アセンブリでの MASM 式
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -30,5 +34,5 @@ ms.lasthandoff: 10/24/2017
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [__asm ブロックでのアセンブリ言語の使用](../../assembler/inline/using-assembly-language-in-asm-blocks.md)

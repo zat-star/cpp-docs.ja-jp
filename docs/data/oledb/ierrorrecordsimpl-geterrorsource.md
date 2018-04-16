@@ -1,51 +1,53 @@
 ---
-title: "IErrorRecordsImpl::GetErrorSource | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IErrorRecordsImpl.GetErrorSource"
-  - "GetErrorSource"
-  - "IErrorRecordsImpl::GetErrorSource"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetErrorSource メソッド"
+title: IErrorRecordsImpl::GetErrorSource | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- IErrorRecordsImpl.GetErrorSource
+- GetErrorSource
+- IErrorRecordsImpl::GetErrorSource
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetErrorSource method
 ms.assetid: 5436f1ce-c5a4-403b-a62b-c58e70e5c925
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: a06b19a75a00be3b8a6befbf3f26218127022025
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# IErrorRecordsImpl::GetErrorSource
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-エラー レコードのエラーの原因となったソース・コードを取得します。  
+# <a name="ierrorrecordsimplgeterrorsource"></a>IErrorRecordsImpl::GetErrorSource
+エラー レコードからエラーが発生したソース コードを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```cpp
+      LPOLESTR GetErrorSource(ERRORINFO& rCurError);  
 ```  
   
-      LPOLESTR GetErrorSource(  
-   ERRORINFO& rCurError   
-);  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `rCurError`  
- **IErrorInfo** インターフェイスの `ERRORINFO` レコード。  
+ `ERRORINFO`レコードで、 **IErrorInfo**インターフェイスです。  
   
-## 戻り値  
- 文字列へのポインター エラーのソース・コードです。  
+## <a name="return-value"></a>戻り値  
+ エラーのソース コードを含む文字列へのポインター。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [IErrorRecordsImpl クラス](../../data/oledb/ierrorrecordsimpl-class.md)

@@ -6,20 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: COLLECTION/Platform::Collections::InputIterator::InputIterator
-dev_langs: C++
-helpviewer_keywords: InputIterator Class
+ms.topic: reference
+f1_keywords:
+- COLLECTION/Platform::Collections::InputIterator::InputIterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- InputIterator Class
 ms.assetid: ef72eea4-32a9-42b9-8119-ce87dbdcd3be
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 15dd1d6ece1af3d561801c497b87f7be4f7d5397
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: caf29e32fc4af5c6d1e3f65abbe250bb150679c0
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcollectionsinputiterator-class"></a>Platform::Collections::InputIterator クラス
 Windows ランタイムから派生したコレクションの標準テンプレート ライブラリ InputIterator を提供します。  
@@ -43,15 +48,15 @@ class InputIterator;
 |----------|-----------------|  
 |`difference_type`|ポインターの相違点 (ptrdiff_t)。|  
 |`iterator_category`|入力反復子のカテゴリ (::std::input_iterator_tag)。|  
-|`pointer`|ポインター、`const X`|  
-|`reference`|参照を`const X`|  
+|`pointer`|ポインター、 `const X`|  
+|`reference`|参照を `const X`|  
 |`value_type`|`X` 型名。|  
   
 ### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
 |----------|-----------------|  
-|[Inputiterator::inputiterator](#ctor)|InputIterator クラスの新しいインスタンスを初期化します。|  
+|[InputIterator::InputIterator](#ctor)|InputIterator クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -66,12 +71,12 @@ class InputIterator;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `InputIterator`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Platform::Collections  
 
-## <a name="ctor"></a>Inputiterator::inputiterator コンス トラクター
+## <a name="ctor"></a>  Inputiterator::inputiterator コンス トラクター
 InputIterator クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  
@@ -87,7 +92,7 @@ explicit InputIterator(Windows::Foundation::Collections<X>^ iter);
   
 
 
-## <a name="operator-arrow"></a>Inputiterator::operator-&gt;演算子
+## <a name="operator-arrow"></a>  InputIterator::operator-&gt; Operator
 現在の InputIterator により指定される要素のアドレスを取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -101,7 +106,7 @@ pointer operator->() const;
   
 
 
-## <a name="operator-dereference"></a>Inputiterator::operator * 演算子
+## <a name="operator-dereference"></a>  Inputiterator::operator * 演算子
 現在の InputIterator により指定された要素への参照を取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -115,7 +120,7 @@ reference operator*() const;
   
 
 
-## <a name="operator-equality"></a>Inputiterator::operator = = 演算子
+## <a name="operator-equality"></a>  Inputiterator::operator = = 演算子
 現在の InputIterator が、指定された InputIterator と等しいかどうかを示します。  
   
 ### <a name="syntax"></a>構文  
@@ -133,7 +138,7 @@ bool operator== (const InputIterator& other) const;
   
 
 
-## <a name="operator-increment"></a>Inputiterator::operator++ 演算子
+## <a name="operator-increment"></a>  Inputiterator::operator++ 演算子
 現在の InputIterator をインクリメントします。  
   
 ### <a name="syntax"></a>構文  
@@ -153,7 +158,7 @@ InputIterator operator++(int);
   
 
 
-## <a name="operator-inequality"></a>Inputiterator::operator! = 演算子
+## <a name="operator-inequality"></a>  Inputiterator::operator! = 演算子
 現在の InputIterator が、指定された InputIterator と等しくないかどうかを示します。  
   
 ### <a name="syntax"></a>構文  
@@ -170,5 +175,5 @@ bool operator!=(const InputIterator& other) const;
  現在の InputIterator が `true` と等しくない場合は `other`。それ以外の場合は `false`。   
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)

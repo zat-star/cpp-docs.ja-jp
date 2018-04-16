@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: <sstream>
-dev_langs: C++
-helpviewer_keywords: sstream header
+ms.topic: reference
+f1_keywords:
+- <sstream>
+dev_langs:
+- C++
+helpviewer_keywords:
+- sstream header
 ms.assetid: 56f55bc5-549d-4e7f-aaad-99e0ffa49c9e
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 04c6675dd7af1fbbd1202337dda2fcf3570f5be0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 319c9cc1b61565eaeffb442b2f4e280aab9b720c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltsstreamgt"></a>&lt;sstream&gt;
 割り当てられた配列オブジェクトに格納されているシーケンスの iostreams 操作をサポートする、いくつかのテンプレート クラスを定義します。 テンプレート クラス [basic_string](../standard-library/basic-string-class.md) のオブジェクトとの間で、このようなシーケンスが簡単に変換されます。  
@@ -113,13 +119,13 @@ void swap (
 |[basic_ostringstream](../standard-library/basic-ostringstream-class.md)|**Elem** 型の要素を含む [basic_stringbuf](../standard-library/basic-stringbuf-class.md)<**Elem**, **Tr**, `Alloc`> クラスのストリーム バッファーへ要素とエンコードされたオブジェクトを挿入する際の、挿入を制御するオブジェクトを記述します。Elem 型の文字特性は **Tr** クラスによって決められ、その要素は `Alloc` クラスのアロケーターによって割り当てられます。|  
 |[basic_stringstream](../standard-library/basic-stringstream-class.md)|**Elem** 型の要素を含む [basic_stringbuf](../standard-library/basic-stringbuf-class.md)<**Elem**, **Tr**, `Alloc`> クラスのストリーム バッファーを使用して要素とエンコードされたオブジェクトを挿入および抽出する際の、挿入と抽出を制御するオブジェクトを記述します。Elem 型の文字特性は **Tr** クラスによって決められ、その要素は `Alloc` クラスのアロケーターによって割り当てられます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 - **ヘッダー:** \<sstream>  
   
 - **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   

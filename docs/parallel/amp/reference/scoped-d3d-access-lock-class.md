@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - scoped_d3d_access_lock
 - AMPRT/scoped_d3d_access_lock
 - AMPRT/concurrency::direct3d::scoped_d3d_access_lock::scoped_d3d_access_lock
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 0ad333e6-9839-4736-a722-16d95d70c4b1
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d23a2513e1a952a6b37fb7dfdf3fd09d0ace0767
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4a592249221129bce35f8592dcec56ff2379472d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="scopedd3daccesslock-class"></a>scoped_d3d_access_lock クラス
 accelerator_view オブジェクトに対する D3D アクセス ロックの RAII ラッパーです。  
@@ -50,12 +54,12 @@ class scoped_d3d_access_lock;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `scoped_d3d_access_lock`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amprt.h  
   
  **Namespace:** concurrency::direct3d  
 
-##  <a name="ctor"></a>scoped_d3d_access_lock 
+##  <a name="ctor"></a> scoped_d3d_access_lock 
 
  `scoped_d3d_access_lock` オブジェクトを構築します。 このオブジェクトがスコープから外れると、ロックは解放されます。  
  
@@ -94,14 +98,14 @@ scoped_d3d_access_lock(// [3] move constructor
  別の `scoped_d3d_access_lock` オブジェクトから既存の D3D アクセスのロックを受け取ります。 構造体はブロックを行いません。  
 
   
-##  <a name="dtor"></a>~ scoped_d3d_access_lock 
+##  <a name="dtor"></a> ~scoped_d3d_access_lock 
 
  関連付けられた `accelerator_view` オブジェクトに対する D3D アクセスのロックを解除します。  
   
 ```  
 ~scoped_d3d_access_lock();
 ```  
-## <a name="operator_eq"></a>演算子 = 
+## <a name="operator_eq"></a> 演算子 = 
 
 以前のロックを解放して、別の `scoped_d3d_access_lock` オブジェクトから D3D アクセスのロックの所有権を取得します。  
  
@@ -116,5 +120,5 @@ scoped_d3d_access_lock& operator= (scoped_d3d_access_lock&& _Other);
 ### <a name="return-value"></a>戻り値  
  この `scoped_accelerator_view_lock` への参照。  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::direct3d 名前空間](concurrency-direct3d-namespace.md)

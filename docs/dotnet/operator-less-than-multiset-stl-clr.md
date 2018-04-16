@@ -1,33 +1,37 @@
 ---
-title: "operator&lt; (multiset) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multiset::operator<"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator< メンバー [STL/CLR]"
+title: "演算子&lt;(multiset) (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::multiset::operator<
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator< member [STL/CLR]
 ms.assetid: 48150cda-4f3e-4535-860c-89f622a7f0a8
-caps.latest.revision: 16
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d2eef84b72ab36a0c4dbdfc02e4b58752126a7f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator&lt; (multiset) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-リストより小さい\) を比較します。  
+# <a name="operatorlt-multiset-stlclr"></a>演算子&lt;(multiset) (STL/CLR)
+リストが比較未満です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Key>  
@@ -35,17 +39,17 @@ template<typename Key>
         multiset<Key>% right);  
 ```  
   
-#### パラメーター  
- \[left\]  
- 比較の左辺のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 左へ  
+ 比較する左のコンテナー。  
   
- \[right\]  
- 比較の右辺のコンテナー。  
+ 右  
+ 比較する右のコンテナー。  
   
-## 解説  
- 演算子関数は、`!(``right``[i] <``left``[i])` が当てはまります。また、`left``[i] <``right``[i]`最小位置 `i` の場合、true を返します。  それ以外の点では、2 種類のマルチセットが要素によって比較された要素の場合 `left` は `right` の前に並べるかをテストするときに使用する `left``->size() <``right``->size()` を返します。  
+## <a name="remarks"></a>コメント  
+ 演算子関数を返す場合は true、最下位の位置の`i`を`!(right[i] < left[i])`も真であることをお勧め`left[i] < right[i]`です。 返しますそれ以外の場合、`left->size() < right->size()`をテストするために使用するかどうか`left`前に順序付け`right`がいつ行われる 2 つのマルチセット要素で要素を比較します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multiset_operator_lt.cpp   
@@ -85,19 +89,22 @@ int main()
   
 ```  
   
-  **b c**  
- **b d**  
-**b c \[\] \< \[\] b c false です。**  
-**b \[\] \< \[\] b c d 当てはまります。**   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+```Output  
+ a b c  
+ a b d  
+[a b c] < [a b c] is False  
+[a b c] < [a b d] is True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext と set >  
   
-## 参照  
- [multiset](../dotnet/multiset-stl-clr.md)   
- [operator\=\= \(multiset\)](../Topic/operator==%20\(multiset\)%20\(STL-CLR\).md)   
- [operator\!\= \(multiset\)](../dotnet/operator-inequality-multiset-stl-clr.md)   
- [operator\>\= \(multiset\)](../Topic/operator%3E=%20\(multiset\)%20\(STL-CLR\).md)   
- [operator\> \(multiset\)](../dotnet/operator-greater-than-multiset-stl-clr.md)   
- [operator\<\= \(multiset\)](../Topic/operator%3C=%20\(multiset\)%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マルチセット (STL/CLR)](../dotnet/multiset-stl-clr.md)   
+ [演算子 = = (multiset) (STL/CLR)](../dotnet/operator-equality-multiset-stl-clr.md)   
+ [operator! = (multiset) (STL/CLR)](../dotnet/operator-inequality-multiset-stl-clr.md)   
+ [operator > = (multiset) (STL/CLR)](../dotnet/operator-greater-or-equal-multiset-stl-clr.md)   
+ [operator > (multiset) (STL/CLR)](../dotnet/operator-greater-than-multiset-stl-clr.md)   
+ [operator<= (multiset) (STL/CLR)](../dotnet/operator-less-or-equal-multiset-stl-clr.md)

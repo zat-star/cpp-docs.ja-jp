@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: Critical
-dev_langs: C++
-helpviewer_keywords: critical OpenMP directive
+ms.topic: reference
+f1_keywords:
+- Critical
+dev_langs:
+- C++
+helpviewer_keywords:
+- critical OpenMP directive
 ms.assetid: 2ab87d6d-5ca4-43ae-9f0a-1f517a6a2bab
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c3527d7716edc30a7b8265881f0a3bd674c68957
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ef2ce946fed85fbedce2a1ad0401ad0a36aab783
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="critical"></a>critical
 されたコードが、一度に 1 つのスレッドで実行するのみを指定します。  
@@ -102,5 +108,5 @@ int main()
 max = 29358  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

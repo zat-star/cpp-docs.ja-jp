@@ -4,35 +4,37 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: COLUMN_ENTRY
-dev_langs: C++
-helpviewer_keywords: COLUMN_ENTRY macro
+ms.topic: reference
+f1_keywords:
+- COLUMN_ENTRY
+dev_langs:
+- C++
+helpviewer_keywords:
+- COLUMN_ENTRY macro
 ms.assetid: a10aef29-6d70-49ec-b572-5b5c4abe1b46
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c4d398f93e84662ca3101a6fcbaacfeb6b477cb1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 9239095874c1274c0c13d37e0f466ac69b2f20e2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="columnentry"></a>COLUMN_ENTRY
 行セットの特定の列を行セットのバインドを表します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-COLUMN_ENTRY(  
-nOrdinal  
-,   
-data  
- )  
+```cpp
+COLUMN_ENTRY(nOrdinal, data)  
   
 ```  
   
@@ -57,10 +59,10 @@ data
 ## <a name="example"></a>例  
  マクロのトピックで例を参照して[BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md)と[BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md)   
  [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md)   

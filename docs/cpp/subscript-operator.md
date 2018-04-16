@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: '[]'
-dev_langs: C++
+f1_keywords:
+- '[]'
+dev_langs:
+- C++
 helpviewer_keywords:
 - operators [C++], subscript
 - postfix operators [C++]
 - '[] operator'
 - subscript operator [C++], syntax
 ms.assetid: 69c31494-52da-4dd0-8bbe-6ccbfd50f197
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e1b40b16c3ee349419259ae1e2240e28e3e7e911
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1fbcb3657af276cdfc9aa05d461c090b76f6de0b
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="subscript-operator"></a>添字演算子:
 ## <a name="syntax"></a>構文  
@@ -34,7 +39,7 @@ postfix-expression [ expression ]
 ```  
   
 ## <a name="remarks"></a>コメント  
- (どの基本式もかまいません)、添字演算子が続く後置式**[ ]**配列のインデックスを指定します。  
+ 添字演算子 **[ ]** が続く後置式 (基本式である場合もあります) は、配列インデックスを指定します。  
   
  マネージ配列については、次を参照してください。[配列](../windows/arrays-cpp-component-extensions.md)です。  
   
@@ -46,11 +51,11 @@ cout << nArray[2] << endl;            // prints "2"
 cout << 2[nArray] << endl;            // prints "2"  
 ```  
   
- 上の例では、式 `nArray[2]` は `2[nArray]` と同じです。 理由添字式の結果は*e1***[** *e2* **]**によって得られます。  
+ 上の例では、式 `nArray[2]` は `2[nArray]` と同じです。 理由添字式の結果は*e1 * * * [** *e2* **]**によって得られます。  
   
- **\*((** *e2* **)**  *+*  **(***e1***))**  
+ **\*( (** *e2* **)** *+* **(***e1***) )**  
   
- 式から得られるアドレスが*e2*アドレスからのバイト*e1*です。 配列内の次のオブジェクトを生成するアドレスのスケールではなく、 *e2*です。 例:  
+ 式から得られるアドレスが*e2*アドレスからのバイト*e1*です。 配列内の次のオブジェクトを生成するアドレスのスケールではなく、 *e2*です。 例えば:  
   
 ```  
 double aDbl[2];  
@@ -60,9 +65,9 @@ double aDbl[2];
   
  添字式には、次のように複数の添字がある場合があります。  
   
- *expression1* **[***expression2***] [***expression3***]**しています.  
+ *expression1* **[***expression2***] [***expression3***]**...  
   
- 添字式は、左から右へ関連付けられます。 左端の添字式、*expression1***[***expression2***]** が最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***)、最終的なポインター値が配列型のアドレスしない限り、最後の添字式が評価された後に適用します。  
+ 添字式は、左から右へ関連付けられます。 左端の添字式 * expression1***[***expression2 ***]**、最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***)、最終的なポインター値が配列型のアドレスしない限り、最後の添字式が評価された後に適用します。  
   
  複数の添字を持つ式は、多次元配列の要素を参照します。 多次元配列は、要素が配列である配列です。 たとえば、3 次元配列の最初の要素は 2 次元配列です。 次の例では、文字の単純な 2 次元配列を宣言して初期化しています。  
   

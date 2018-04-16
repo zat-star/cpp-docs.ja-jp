@@ -4,24 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: MessageHandler
-dev_langs: C++
-helpviewer_keywords: MessageHandler function
+ms.topic: reference
+f1_keywords:
+- MessageHandler
+dev_langs:
+- C++
+helpviewer_keywords:
+- MessageHandler function
 ms.assetid: 8a0acf97-1b0d-4226-91b9-75446634a03c
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cd6828f5c6b4f89b7d939e4fd909e72e3039b69f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7247868f85a30cbecef416c690f181f068f7eaf2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
-# <a name="messagehandler"></a>メッセージ ハンドラ
+# <a name="messagehandler"></a>MessageHandler
 **メッセージ ハンドラ**の 2 番目のパラメーターで識別される関数の名前を指定、`MESSAGE_HANDLER`メッセージ マップ マクロです。  
   
 ## <a name="syntax"></a>構文  
@@ -56,7 +62,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  メッセージ マップでこのメッセージ ハンドラーを使用しての例は、次を参照してください。 [MESSAGE_HANDLER](reference/message-map-macros-atl.md#message_handler)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウの実装](../atl/implementing-a-window.md)   
  [メッセージ マップ](../atl/message-maps-atl.md)   
  [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: __shiftright128
-dev_langs: C++
-helpviewer_keywords: __shiftright128 intrinsic
+ms.topic: reference
+f1_keywords:
+- __shiftright128
+dev_langs:
+- C++
+helpviewer_keywords:
+- __shiftright128 intrinsic
 ms.assetid: 5419a6c4-0de1-43fb-b314-4faa5b2d051f
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5b7913802df6894697875e90b86286870d32fccc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 56fbd52709addbba414d6c6fc839baf96f0b2c02
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="shiftright128"></a>__shiftright128
 **Microsoft 固有の仕様**  
@@ -49,7 +55,7 @@ unsigned __int64 __shiftright128(
 ## <a name="return-value"></a>戻り値  
  結果の下位 64 ビット。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -65,6 +71,6 @@ unsigned __int64 __shiftright128(
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
- [_ _shiftleft128](../intrinsics/shiftleft128.md)   
+## <a name="see-also"></a>参照  
+ [__shiftleft128](../intrinsics/shiftleft128.md)   
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

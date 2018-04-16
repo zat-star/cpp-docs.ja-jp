@@ -1,25 +1,31 @@
 ---
-title: "_com_ptr_t::CreateInstance |Microsoft ドキュメント"
-ms.custom: 
+title: _com_ptr_t::CreateInstance |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-f1_keywords: _com_ptr_t::CreateInstance
-dev_langs: C++
-helpviewer_keywords: CreateInstance method [C++]
+f1_keywords:
+- _com_ptr_t::CreateInstance
+dev_langs:
+- C++
+helpviewer_keywords:
+- CreateInstance method [C++]
 ms.assetid: ab89b0e1-9da3-4784-a079-58b17340f111
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 73048093c35fe28bf02af60d6b99963df8394dc7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e4764cf615bf04e9f2b1c3c816becc5a58da35f3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comptrtcreateinstance"></a>_com_ptr_t::CreateInstance
 **Microsoft 固有の仕様**  
@@ -74,5 +80,5 @@ HRESULT CreateInstance(
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_com_ptr_t クラス](../cpp/com-ptr-t-class.md)

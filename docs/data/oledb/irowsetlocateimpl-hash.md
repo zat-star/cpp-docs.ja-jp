@@ -1,54 +1,56 @@
 ---
-title: "IRowsetLocateImpl::Hash | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IRowsetLocateImpl::Hash"
-  - "IRowsetLocateImpl.Hash"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Hash メソッド"
+title: "Irowsetlocateimpl::hash |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- IRowsetLocateImpl::Hash
+- IRowsetLocateImpl.Hash
+dev_langs:
+- C++
+helpviewer_keywords:
+- Hash method
 ms.assetid: 7df4386d-80fb-4332-a85f-baae98cdc6e0
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 321f10dd0f6b25441b1dc78fa660ff2aa66b3d36
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# IRowsetLocateImpl::Hash
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-指定したブックマークのハッシュ値を返します。  
+# <a name="irowsetlocateimplhash"></a>IRowsetLocateImpl::Hash
+指定されたブックマークの値のハッシュを返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
-      STDMETHOD ( Hash )(  
-   HCHAPTER /* hReserved */,  
+```cpp
+      STDMETHOD (Hash )(HCHAPTER /* hReserved */,  
    DBBKMARK cbBookmarks,  
    const DBBKMARK* rgcbBookmarks[],  
    const BYTE* rgpBookmarks[],  
    DBHASHVALUE rgHashValues[],  
-   DBROWSTATUS rgBookmarkStatus[]   
-);  
+   DBROWSTATUS rgBookmarkStatus[]);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `hReserved`  
- \[\] [IRowsetLocate::Hash](https://msdn.microsoft.com/en-us/library/ms709697.aspx)に `hChapter` パラメーターに対応します。  
+ [in]対応する`hChapter`パラメーターを[IRowsetLocate::Hash](https://msdn.microsoft.com/en-us/library/ms709697.aspx)です。  
   
- 他のパラメーターには、*OLE DB Programmer's Reference*の [IRowsetLocate::Hash](https://msdn.microsoft.com/en-us/library/ms709697.aspx) を参照してください。  
+ その他のパラメーターを参照してください。 [IRowsetLocate::Hash](https://msdn.microsoft.com/en-us/library/ms709697.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [IRowsetLocateImpl クラス](../../data/oledb/irowsetlocateimpl-class.md)

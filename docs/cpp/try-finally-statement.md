@@ -1,11 +1,12 @@
 ---
-title: "try-finally ステートメント |Microsoft ドキュメント"
-ms.custom: 
+title: try-finally ステートメント |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - __try
@@ -14,7 +15,8 @@ f1_keywords:
 - __finally_cpp
 - __try_cpp
 - __finally
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __try keyword [C++]
 - __finally keyword [C++]
@@ -25,15 +27,17 @@ helpviewer_keywords:
 - __leave keyword [C++], try-finally statement
 - structured exception handling [C++], try-finally
 ms.assetid: 826e0347-ddfe-4f6e-a7bc-0398e0edc7c2
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c8fd9128593d1a4ae266376ca5c8cd18ca2d119f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c57676cace8451de266d30d4c146e3ae0c3cb1b5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="try-finally-statement"></a>try-finally ステートメント
 **Microsoft 固有の仕様**  
@@ -96,7 +100,7 @@ __finally {
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [終了ハンドラーの記述](../cpp/writing-a-termination-handler.md)   
  [構造化例外処理 (C/C++)](../cpp/structured-exception-handling-c-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   

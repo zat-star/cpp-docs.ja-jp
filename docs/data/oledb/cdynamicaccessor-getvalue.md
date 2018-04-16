@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - GetValue
 - CDynamicAccessor::GetValue<ctype>
@@ -16,55 +17,49 @@ f1_keywords:
 - ATL.CDynamicAccessor.GetValue
 - ATL::CDynamicAccessor::GetValue
 - ATL::CDynamicAccessor::GetValue<ctype>
-dev_langs: C++
-helpviewer_keywords: GetValue method
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetValue method
 ms.assetid: 553f44af-68bc-4cb6-8774-e0940003fa90
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 131c0ebba0ec271a4a92967f677d237703bb592a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 3b572faceb1ea27f05bb1a422a86de4b42f9175c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cdynamicaccessorgetvalue"></a>CDynamicAccessor::GetValue
 指定された列のデータを取得します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      void* GetValue(   
-   DBORDINAL nColumn    
-) const throw( );  
-void* GetValue(  
-   const CHAR* pColumnName   
-) const throw( );  
-void* GetValue(  
-   const WCHAR* pColumnName   
-) const throw( );  
+```cpp
+void* GetValue(DBORDINAL nColumn) const throw();  
+
+void* GetValue(const CHAR* pColumnName) const throw();  
+
+void* GetValue(const WCHAR* pColumnName) const throw();  
+
+template < class ctype >
+bool GetValue(DBORDINAL nColumn, ctype* pData) const throw();  
+
 template < class ctype >  
-bool GetValue(  
-   DBORDINAL nColumn,  
-   ctype* pData   
-) const throw( );  
+bool GetValue(const CHAR* pColumnName, ctype* pData) const throw();  
+
 template < class ctype >  
-bool GetValue(  
-   const CHAR* pColumnName,  
-   ctype* pData   
-) const throw( );  
-template < class ctype >  
-bool GetValue(  
-   const WCHAR* pColumnName,  
-   ctype* pData   
-) const throw( );  
+bool GetValue(const WCHAR* pColumnName, ctype* pData) const throw();  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
  `ctype`  
- [in]文字列型を除く任意のデータ型を処理するテンプレート パラメーター (**CHAR\***、 **WCHAR\***)、特別な処理を必要とします。 `GetValue`ここでの指定に基づいて適切なデータ型を使用します。  
+ [in]文字列型を除く任意のデータ型を処理するテンプレート パラメーター (**CHAR\***、 **WCHAR\***)、特別な処理を必要とします。 `GetValue` ここでの指定に基づいて適切なデータ型を使用します。  
   
  `nColumn`  
  [in]列番号。 列番号は、1 から始まります。 値 0 は、存在する場合に、ブックマーク列を参照します。  
@@ -85,8 +80,8 @@ bool GetValue(
   
  デバッグ モードで表示されるアサーション場合のサイズ`pData`が指している列のサイズと等しくないです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)

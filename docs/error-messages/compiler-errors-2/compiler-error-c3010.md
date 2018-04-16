@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3010
 ms.assetid: e959d038-bba6-432a-9c0a-0470474de7d9
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 44003e751d87e946c5f56717f24d997ab0ea46a8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: cb72ab844831c277271b5f531bd240ed35744d64
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3010"></a>コンパイラ エラー C3010
 'label': OpenMP 構造化ブロックからのジャンプは許可されていません  

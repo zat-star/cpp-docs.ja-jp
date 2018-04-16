@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _vcprintf_s
 - _vcprintf_s_l
@@ -34,7 +35,8 @@ f1_keywords:
 - vcwprintf_s
 - vcprintf_s_l
 - _vcprintf_s
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _vtcprintf_s_l function
 - _vcwprintf_s_l function
@@ -50,21 +52,23 @@ helpviewer_keywords:
 - vtcprintf_s function
 - formatted text [C++]
 ms.assetid: 5a46d45a-30db-45df-9850-455cbdac5636
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 14b8d90fb017d55362f320f8504ca4d4bbb94d67
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 35f0ff7a77da54515e879315843cd6544d27194b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="vcprintfs-vcprintfsl-vcwprintfs-vcwprintfsl"></a>_vcprintf_s、_vcprintf_s_l、_vcwprintf_s、_vcwprintf_s_l
 引数リストへのポインターを使用して、書式付き出力をコンソールに書き込みます。 これらのバージョンの [_vcprintf、_vcprintf_l、_vcwprintf、_vcwprintf_l](../../c-runtime-library/reference/vcprintf-vcprintf-l-vcwprintf-vcwprintf-l.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」にあるとおり、セキュリティが強化されています。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -121,16 +125,16 @@ int _vcwprintf_s_l(
 |`_vtcprintf_s`|`_vcprintf_s`|`_vcprintf_s`|`_vcwprintf_s`|  
 |`_vtcprintf_s_l`|`_vcprintf_s_l`|`_vcprintf_s_l`|`_vcwprintf_s_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|省略可能なヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
 |-------------|---------------------|----------------------|  
 |`_vcprintf_s`, `_vcprintf_s_l`|\<conio.h> および \<stdarg.h>|\<varargs.h>*|  
 |`_vcwprintf_s`, `_vcwprintf_s_l`|\<conio.h> または \<wchar.h>、および \<stdarg.h>|\<varargs.h>*|  
   
  \* UNIX V との互換性用。  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -163,7 +167,7 @@ int main()
   (Related to symbol '<symbol>' defined on line 5).  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)   
  [_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](../../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)   

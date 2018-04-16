@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - OLE server applications [MFC], activation
 - OLE items [MFC], visual editing
@@ -25,15 +27,17 @@ helpviewer_keywords:
 - activation [MFC], embedded OLE items
 - OLE activation [MFC]
 ms.assetid: ed8357d9-e487-4aaa-aa6b-2edc4de25dfa
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 678d8dbed5d8ba659a6c0a33752f28b3e2d2c61b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 70017721fb59fa0c6d18d568546d9618257328b5
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="activation-c"></a>アクティベーション (C++)
 この記事では、OLE アイテムのビジュアル編集でのライセンス認証の役割について説明します。 ユーザーには、コンテナー ドキュメント内の OLE 項目が埋め込まれる後、は、使用する必要があります。 これを行うには、ユーザーがそのアイテムをアクティブ化すると、項目をダブルクリックします。 ライセンス認証のための最も頻繁にアクティビティを編集します。 OLE アイテム、編集、起動されたときに、項目を作成するサーバー アプリケーションに属しているを反映するように変更するのには、現在のフレーム ウィンドウ内のメニューとツールバーが。 この動作は、既知のインプレース アクティブ化は、コンテナー ドキュメントのウィンドウを離れることがなく複合ドキュメントに埋め込まれたアイテムを編集できます。  

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: free
+ms.topic: reference
+apiname:
+- free
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,21 +23,25 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: free
-dev_langs: C++
+f1_keywords:
+- free
+dev_langs:
+- C++
 helpviewer_keywords:
 - memory blocks, deallocating
 - free function
 ms.assetid: 74ded9cf-1863-432e-9306-327a42080bb8
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 61d750fce6e31923636b4eb8c0181bf405b7be39
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 161b067c432a30e58db51410f0540d60d5e74bc8
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="free"></a>free
 メモリ ブロックを割り当て解除または解放します。  
@@ -59,24 +65,24 @@ void free(
   
  メモリ ブロックを解放すると、[_heapmin](../../c-runtime-library/reference/heapmin.md) が、未使用の領域を結合して、それらをオペレーティング システムに戻すことで、ヒープ上の空きメモリの量を最小限に抑えます。 オペレーティング システムにリリースされない解放されたメモリは、空きプールに復元され、再度割り当てに使用できます。  
   
- アプリケーションが C のランタイム ライブラリのデバッグ バージョンにリンクされている場合、`free` は [_free_dbg](../../c-runtime-library/reference/free-dbg.md) として解決されます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」を参照してください。  
+ アプリケーションが C のランタイム ライブラリのデバッグ バージョンにリンクされている場合、`free` は [_free_dbg](../../c-runtime-library/reference/free-dbg.md) として解決されます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。  
   
  `free` は `__declspec(noalias)` としてマークされます。これは、関数がグローバル変数を変更しないことを保証します。 詳細については、「[noalias](../../cpp/noalias.md)」を参照してください。  
   
  [_malloca](../../c-runtime-library/reference/malloca.md) を使用して割り当てられたメモリを解放するには、[_freea](../../c-runtime-library/reference/freea.md) を使用します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`free`|\<stdlib.h> と \<malloc.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[malloc](../../c-runtime-library/reference/malloc.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
  [_alloca](../../c-runtime-library/reference/alloca.md)   
  [calloc](../../c-runtime-library/reference/calloc.md)   

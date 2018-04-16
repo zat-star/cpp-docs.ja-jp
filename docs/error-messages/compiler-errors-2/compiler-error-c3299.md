@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3299
 ms.assetid: 7cabdf01-bceb-404f-9401-cdd9c7fc1641
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 147615d493b9e2affabd206816b6a5593bc3532c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 3612762f397914b6058516db7d8f56b840873c1e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3299"></a>コンパイラ エラー C3299
 'member_function': 制約を指定できません。それらは基本メソッドから継承されています  

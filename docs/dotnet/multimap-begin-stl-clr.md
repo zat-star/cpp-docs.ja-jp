@@ -1,25 +1,32 @@
 ---
-title: "multimap::begin (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: multimap::begin (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::multimap::begin
-dev_langs: C++
-helpviewer_keywords: begin member [STL/CLR]
+f1_keywords:
+- cliext::multimap::begin
+dev_langs:
+- C++
+helpviewer_keywords:
+- begin member [STL/CLR]
 ms.assetid: 2e1e48f5-31e5-4ead-abae-bb5220925226
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: dc49e0c96529fdce1e9aa29928c6b94b01110e4c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7b3883594e9b7155617e06aef60b28daec6701b4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multimapbegin-stlclr"></a>multimap::begin (STL/CLR)
 被制御シーケンスの先頭を指定します。  
@@ -71,11 +78,11 @@ int main()
 *++begin() = [b 2]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
  [multimap::end (STL/CLR)](../dotnet/multimap-end-stl-clr.md)

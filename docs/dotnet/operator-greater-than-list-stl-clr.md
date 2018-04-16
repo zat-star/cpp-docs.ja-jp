@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::list::operator>
-dev_langs: C++
-helpviewer_keywords: operator> member [STL/CLR]
+f1_keywords:
+- cliext::list::operator>
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator> member [STL/CLR]
 ms.assetid: 58584708-1fa6-4908-84f6-790d53f46d9a
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 272324af8bf4a0cd26e4763c8346669a4833ccd9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0a50137d309c5913d627a065455061123c0e6146
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="operatorgt-list-stlclr"></a>演算子&gt;(リスト) (STL/CLR)
 比較よりも大きい値を一覧表示します。  
@@ -88,12 +95,12 @@ int main()
 [a b d] > [a b c] is True  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [演算子 = = (リスト) (STL/CLR)](../dotnet/operator-equality-list-stl-clr.md)   
  [operator! = (リスト) (STL/CLR)](../dotnet/operator-inequality-list-stl-clr.md)   

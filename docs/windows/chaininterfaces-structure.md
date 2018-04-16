@@ -1,32 +1,37 @@
 ---
-title: "ChainInterfaces 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::ChainInterfaces"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ChainInterfaces 構造体"
+title: "ChainInterfaces 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- implements/Microsoft::WRL::ChainInterfaces
+dev_langs:
+- C++
+helpviewer_keywords:
+- ChainInterfaces structure
 ms.assetid: d7415b59-5468-4bef-a3fd-8d82b12f0e9c
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: e9417b3950e4df98ed4e13ea1bb40e76c383868e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ChainInterfaces 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-一連のインターフェイス ID に適用できる初期化関数と検証を指定します。  
+# <a name="chaininterfaces-structure"></a>ChainInterfaces 構造体
+一連のインターフェイス ID に適用できる検証および初期化関数を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -59,72 +64,72 @@ template <
 struct ChainInterfaces<MixIn<DerivedType, BaseType, hasImplements>, I1, I2, I3, I4, I5, I6, I7, I8, I9>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `I0`  
- \(必須\) インターフェイス ID 0。  
+ (必須)インターフェイス ID 0 です。  
   
  `I1`  
- \(必須\) インターフェイス ID 1。  
+ (必須)ID 1 のインターフェイスです。  
   
  `I2`  
- \(省略可能\) インターフェイス ID 2。  
+ (省略可能)インターフェイス ID は 2 です。  
   
  `I3`  
- \(省略可能\) インターフェイス ID 3。  
+ (省略可能)ID 3 のインターフェイスです。  
   
  `I4`  
- \(省略可能\) インターフェイス ID 4。  
+ (省略可能)インターフェイス ID 4 です。  
   
  `I5`  
- \(省略可能\) インターフェイス ID 5。  
+ (省略可能)ID 5 のインターフェイスです。  
   
  `I6`  
- \(省略可能\) インターフェイス ID 6。  
+ (省略可能)インターフェイス ID 6 です。  
   
  `I7`  
- \(省略可能\) インターフェイス ID 7。  
+ (省略可能)インターフェイス ID 7 です。  
   
  `I8`  
- \(省略可能\) インターフェイス ID 8。  
+ (省略可能)インターフェイス ID 8 です。  
   
  `I9`  
- \(省略可能\) インターフェイス ID 9。  
+ (省略可能)インターフェイス ID 9 です。  
   
  `DerivedType`  
- 派生型。  
+ 派生型です。  
   
  `BaseType`  
- 派生型の基本型。  
+ 派生型の基本データ型。  
   
  `hasImplements`  
- `true`の手段が [実装](../Topic/Implements%20Structure.md) 構造体から派生しないクラスとともに [MixIn](../windows/mixin-structure.md) 構造体を使用できるブール値。  
+ ブール値を`true`、使用することはできません、 [MixIn](../windows/mixin-structure.md)クラスから派生していないを持つ構造体、[を実装](../windows/implements-structure.md)構造です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### プロテクト メソッド  
-  
-|名前|説明|  
-|--------|--------|  
-|[ChainInterfaces::CanCastTo メソッド](../Topic/ChainInterfaces::CanCastTo%20Method.md)|指定されたインターフェイス ID が ChainInterface のテンプレート パラメーターで定義されているクラスのそれぞれにキャストすることができるかどうかを示します。|  
-|[ChainInterfaces::CastToUnknown メソッド](../windows/chaininterfaces-casttounknown-method.md)|IUnknown へのポインターに `I0` テンプレート パラメーターによって定義される型のインターフェイス ポインターをキャストします。|  
-|[ChainInterfaces::FillArrayWithIid メソッド](../Topic/ChainInterfaces::FillArrayWithIid%20Method.md)|指定した位置に `I0` テンプレート パラメーターで定義されているインターフェイス ID を指定された配列のインターフェイス ID が格納されます。|  
-|[ChainInterfaces::Verify メソッド](../windows/chaininterfaces-verify-method.md)|`I9` してテンプレート パラメーター `I0` で定義されている各インターフェイスが IUnknown または IInspectable から継承すること、および `I0` が `I1` から `I9`から継承することを確認します。|  
-  
-### プロテクト コンストラクター  
+### <a name="protected-methods"></a>プロテクト メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[ChainInterfaces::IidCount 定数](../windows/chaininterfaces-iidcount-constant.md)|`I9`してテンプレート `I0` パラメーターで指定されたインターフェイスに含まれるインターフェイス ID の総数。|  
+|----------|-----------------|  
+|[ChainInterfaces::CanCastTo メソッド](../windows/chaininterfaces-cancastto-method.md)|指定されたインターフェイス ID を ChainInterface テンプレート パラメーターで定義された特殊化の各にキャストできるかどうかを示します。|  
+|[ChainInterfaces::CastToUnknown メソッド](../windows/chaininterfaces-casttounknown-method.md)|によって定義された型のインターフェイス ポインターにキャスト、 `I0` IUnknown へのポインターをテンプレート パラメーター。|  
+|[ChainInterfaces::FillArrayWithIid メソッド](../windows/chaininterfaces-fillarraywithiid-method.md)|ストアで定義されているインターフェイス ID、`I0`インターフェイス Id の指定した配列内の指定した場所にテンプレート パラメーター。|  
+|[ChainInterfaces::Verify メソッド](../windows/chaininterfaces-verify-method.md)|テンプレート パラメーターによって、各インターフェイスが定義されていることを確認`I0`を通じて`I9`IUnknown や、IInspectable から継承`I0`から継承`I1`を通じて`I9`です。|  
   
-## 継承階層  
+### <a name="protected-constants"></a>プロテクト コンス トラクター  
+  
+|name|説明|  
+|----------|-----------------|  
+|[ChainInterfaces::IidCount 定数](../windows/chaininterfaces-iidcount-constant.md)|インターフェイスのテンプレート パラメーターで指定されたインターフェイスに含まれる Id の合計数`I0`を通じて`I9`です。|  
+  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `I0`  
   
  `ChainInterfaces`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,18 +13,23 @@ f1_keywords:
 - lock.lock
 - msclr.lock.lock
 - msclr::lock::lock
-dev_langs: C++
-helpviewer_keywords: lock constructor
+dev_langs:
+- C++
+helpviewer_keywords:
+- lock constructor
 ms.assetid: c9ad6c71-36ec-49c5-8ebd-f5c3a0cc94f0
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0bc0c0e61b4500bae9589cbf6b536f1a23ae45c8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 5148da4421b24a64dca97288975af42b9688e4ae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="locklock"></a>lock::lock
 構築、`lock`オブジェクト、必要に応じて、指定された時間、またはまったく恒久的に、ロックの取得を待機しています。  
@@ -156,12 +162,12 @@ In thread 6, Counter = 10
 All threads completed.  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\lock.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [lock のメンバー](../dotnet/lock-members.md)   
  [ロック:: ~ ロック](../dotnet/lock-tilde-lock.md)   
  [lock::acquire](../dotnet/lock-acquire.md)   

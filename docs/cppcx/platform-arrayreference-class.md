@@ -6,20 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::ArrayReference::ArrayReference
-dev_langs: C++
-helpviewer_keywords: Platform::ArrayReference Class
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::ArrayReference::ArrayReference
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::ArrayReference Class
 ms.assetid: 9ab3b15e-8a60-4600-8fcb-7d6c86284f4b
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: d2de3a679f4abd70dfeda04cd0ea8a2ebcd3b4c6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0987511b6653bee85b6cc5c4c680331d12519450
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformarrayreference-class"></a>Platform::ArrayReference クラス
 `ArrayReference` は、C スタイル配列に入力データを格納するときに、入力パラメーターの [Platform::Array^](../cppcx/platform-array-class.md) と置き換えることができる最適化の種類です。  
@@ -36,7 +41,7 @@ class ArrayReference
   
 |名前|説明|  
 |----------|-----------------|  
-|[Arrayreference::arrayreference](#ctor)|`ArrayReference` クラスの新しいインスタンスを初期化します。|  
+|[ArrayReference::ArrayReference](#ctor)|`ArrayReference` クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -50,7 +55,7 @@ class ArrayReference
 ### <a name="remarks"></a>コメント  
  `ArrayReference` を使用して C スタイル配列にデータを格納する方法であれば、一度 `Platform::Array` 変数にコピーしたうえで改めて C スタイル配列にコピーするような余分な操作が不要になります。 `ArrayReference`を使用した場合には、コピー操作が 1 回のみとなります。 コード例は、次を参照してください。 [Array と WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -59,7 +64,7 @@ class ArrayReference
   
  **ヘッダー:** vccorlib.h  
   
-## <a name="ctor"></a>Arrayreference::arrayreference コンス トラクター
+## <a name="ctor"></a>  Arrayreference::arrayreference コンス トラクター
 新しいインスタンスを初期化、 [platform::arrayreference](../cppcx/platform-arrayreference-class.md)クラスです。  
   
 ### <a name="syntax"></a>構文  
@@ -84,7 +89,7 @@ ArrayReference(ArrayReference&& otherArg)
   
 
 
-## <a name="operator-assign"></a>Arrayreference::operator = 演算子
+## <a name="operator-assign"></a>  Arrayreference::operator = 演算子
 現在指定されたオブジェクトを割り当てます[platform::arrayreference](../cppcx/platform-arrayreference-class.md)移動セマンティクスを使用してオブジェクト。  
   
 ### <a name="syntax"></a>構文  
@@ -107,7 +112,7 @@ ArrayReference& operator=(ArrayReference&& otherArg);
   
 
 
-## <a name="operator-call"></a>Arrayreference::operator() 演算子
+## <a name="operator-call"></a>  Arrayreference::operator() 演算子
 現在の変換[platform::arrayreference](../cppcx/platform-arrayreference-class.md)にオブジェクト、 [platform::array](../cppcx/platform-array-class.md)クラスです。  
   
 ### <a name="syntax"></a>構文  
@@ -128,5 +133,5 @@ Array<TArg>^ operator ();
 
   
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

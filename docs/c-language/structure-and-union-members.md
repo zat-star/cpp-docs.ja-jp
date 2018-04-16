@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - member-selection operators
 - structure members, referencing
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - operators [C], member selection
 - structure member selection
 ms.assetid: bb1fe304-af49-4f98-808d-afdc99b3e319
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a736a1e66fd857b7d959279a6b44a6d0f9ebd6f3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2183aead53ee02f36bc982e4f33ad174346da5f2
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="structure-and-union-members"></a>構造体と共用体のメンバー
 "メンバー選択式" は構造体と共用体のメンバーを参照します。 このような式には、選択したメンバーの値と型が割り当てられます。  
@@ -73,7 +77,7 @@ identifier
   
  *expression* はポインター値になります。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次に、この構造体宣言の例を示します。 これらの例で使用されている間接演算子 (**\***) については、「[間接演算子とアドレス演算子](../c-language/indirection-and-address-of-operators.md)」を参照してください。  
   
 ```  

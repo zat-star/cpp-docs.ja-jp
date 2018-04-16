@@ -1,18 +1,20 @@
 ---
-title: "-(追加インクルード ディレクトリ) |Microsoft ドキュメント"
-ms.custom: 
+title: -(追加インクルード ディレクトリ) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VC.Project.VCCLWCECompilerTool.AdditionalIncludeDirectories
 - VC.Project.VCCLCompilerTool.AdditionalIncludeDirectories
 - /I
 - VC.Project.VCNMakeTool.IncludeSearchPath
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - /I compiler option [C++]
 - Additional Include Directories compiler option
@@ -21,15 +23,17 @@ helpviewer_keywords:
 - set include directories
 - include directories, compiler option [C++]
 ms.assetid: 3e9add2a-5ed8-4d15-ad79-5b411e313a49
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 91868a657e4b537c286378276701915c1e160a77
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bfbf962a92af22d3e724c592fec6cf812b610dc7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="i-additional-include-directories"></a>/I (追加インクルード ディレクトリ)
 インクルード ファイルを検索するディレクトリの一覧に、ディレクトリを追加します。  
@@ -78,6 +82,6 @@ ms.lasthandoff: 10/24/2017
 CL /I \INCLUDE /I\MY\INCLUDE MAIN.C  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

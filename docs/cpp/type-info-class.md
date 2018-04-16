@@ -16,16 +16,17 @@ helpviewer_keywords:
 - class type_info
 - type_info class
 ms.assetid: 894ddda2-7de4-4da3-9404-d2c74e356c16
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: b87dec1f3d3a04d984c3bbd96344ebcb0a163f19
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9cd5a1844bfeec798ee25a3cb8e65efd019e65e9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="typeinfo-class"></a>type_info Class
 **Type_info**クラスは、コンパイラによって、プログラム内で生成される型情報を表します。 このクラスのオブジェクトは、実質的には型の名前へのポインターを格納します。 **Type_info**クラスもまたは照合順序の 2 つの型の等価性を比較するのに適したエンコードした値を格納します。 型のエンコーディング規則と照合順序については指定されていないため、プログラムによって異なる場合があります。  
@@ -53,12 +54,11 @@ public:
   
  型の照合順序と継承関係には関連性はありません。 使用して、 **type_info::before**メンバー関数の種類の照合順序を決定します。 保証はありませんを**type_info::before**さまざまなプログラムや、同じプログラムの別の実行で同じ結果を得られます。 この方法で**type_info::before**アドレスのような**(&)**演算子。  
   
- **Type_info::name**メンバー関数を返します、 **const char\* **型の人間が判読できる名前を表す null で終わる文字列にします。 ポイントされたメモリはキャッシュされ、直接解放されることはありません。  
+ **Type_info::name**メンバー関数を返します、 **const char\*** 型の人間が判読できる名前を表す null で終わる文字列にします。 ポイントされたメモリはキャッシュされ、直接解放されることはありません。  
   
- **:Raw_name**メンバー関数を返します、 **const char\* **オブジェクトの種類の装飾名を表す null で終わる文字列にします。 実際、名前は保存領域を節約するために、修飾された形式で格納されます。 そのため、この関数はよりも高速**type_info::name**に名前を外す必要がないためです。 によって返される文字列、 **:raw_name**関数は、比較操作で役に立ちますが、読み取ることができません。 人間が判読できる文字列を必要がある場合、 **type_info::name**関数を使用します。  
+ **:Raw_name**メンバー関数を返します、 **const char\*** オブジェクトの種類の装飾名を表す null で終わる文字列にします。 実際、名前は保存領域を節約するために、修飾された形式で格納されます。 そのため、この関数はよりも高速**type_info::name**に名前を外す必要がないためです。 によって返される文字列、 **:raw_name**関数は、比較操作で役に立ちますが、読み取ることができません。 人間が判読できる文字列を必要がある場合、 **type_info::name**関数を使用します。  
   
  場合にのみ、ポリモーフィックなクラスの型情報が生成される、 [/GR (ランタイム型情報の有効化)](../build/reference/gr-enable-run-time-type-information.md)コンパイラ オプションを指定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム型情報](../cpp/run-time-type-information.md)
-

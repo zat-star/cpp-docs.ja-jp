@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - type_traits/std::is_void
 dev_langs:
@@ -16,16 +16,17 @@ helpviewer_keywords:
 - is_void class
 - is_void
 ms.assetid: 99b0de3b-1b38-4949-b053-080e5363174e
-caps.latest.revision: 21
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 78a8493f8f71b61df5cfe0dd5b80abb5a6eb504a
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 6bb753ad54ee2a74dc9de2556c65e3e3c537f191
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="isvoid-class"></a>is_void クラス
 型が void であるかどうかをテストします。  
@@ -77,12 +78,11 @@ is_void<void()> == false
 is_void<void> == true  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
-
 

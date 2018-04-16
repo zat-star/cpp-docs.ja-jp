@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _ismbcalpha
 - _ismbcalnum
@@ -38,7 +39,8 @@ f1_keywords:
 - _ismbcalnum_l
 - _ismbcalnum
 - ismbcdigit_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ismbcalpha function
 - _ismbcalnum function
@@ -53,21 +55,23 @@ helpviewer_keywords:
 - ismbcalnum_l function
 - ismbcalpha_l function
 ms.assetid: 12d57925-aebe-46e0-80b0-82b84c4c31ec
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3ad428851bd89dd2e9efd49a900ccdc28066b246
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 02214850013233c616d2bd23970b8921f0ff5e86
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ismbcalnum-ismbcalnuml-ismbcalpha-ismbcalphal-ismbcdigit-ismbcdigitl"></a>_ismbcalnum、_ismbcalnum_l、_ismbcalpha、_ismbcalpha_l、_ismbcdigit、_ismbcdigit_l
 マルチバイト文字が英数字、英字、または数字であるかどうかをチェックします。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -114,25 +118,25 @@ int _ismbcdigit_l
 ## <a name="remarks"></a>コメント  
  これらの各ルーチンは特定の条件で特定のマルチバイト文字をテストします。  
   
- これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-|ルーチン|テスト条件|コード ページ 932 の例|  
+|ルーチンによって返される値|テスト条件|コード ページ 932 の例|  
 |-------------|--------------------|---------------------------|  
 |`_ismbcalnum,_ismbcalnum_l`|英数字|`c` が ASCII の英字の 1 バイト表現である場合に限り、0 以外の値を返します。`_ismbcdigit` と `_ismbcalpha` の例を参照してください。|  
 |`_ismbcalpha,_ismbcalpha_l`|alphabetic|`c` が ASCII の英字 (0x41<=`c`<=0x5A または 0x61<=`c`<=0x7A) またはカタカナ (0xA6<=`c`<=0xDF) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
 |`_ismbcdigit,_ismbcdigit`|数字|`c` が ASCII 数字 (0x30<=`c`<=0x39) の 1 バイト表現である場合に限り、0 以外の値を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbcalnum,_ismbcalnum_l`|\<mbstring.h>|  
 |`_ismbcalpha,_ismbcalpha_l`|\<mbstring.h>|  
 |`_ismbcdigit,_ismbcdigit_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../../c-runtime-library/character-classification.md)   
  [_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)   
  [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)   

@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - mutex/std::adopt_lock
 - mutex/std::call_once
@@ -13,7 +13,7 @@ f1_keywords:
 - mutex/std::lock
 - mutex/std::try_to_lock
 ms.assetid: 78ab3c8b-c7db-4226-ac93-e2e78ff8b964
-caps.latest.revision: 11
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::adopt_lock [C++]
@@ -21,12 +21,11 @@ helpviewer_keywords:
 - std::defer_lock [C++]
 - std::lock [C++]
 - std::try_to_lock [C++]
+ms.openlocfilehash: 8fcee8ec1313a153764c94a709e32b3a6109b576
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: a81d134a4fb49f9123dbed5b4146976d5c676379
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltmutexgt-functions-and-variables"></a>&lt;mutex&gt; 関数および変数
 ||||  
@@ -90,9 +89,8 @@ void lock(L1&, L2&, L3&...);
 const try_to_lock_t try_to_lock;
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<mutex>](../standard-library/mutex.md)
-
 
 
 

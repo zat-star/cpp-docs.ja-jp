@@ -1,37 +1,41 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4905 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4905"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4905"
+title: "コンパイラの警告 (レベル 1) C4905 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4905
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4905
 ms.assetid: 40240bf4-b14e-4c22-aeb2-52f2851532f6
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 93225b21aa8fbe834589c689a465b508593cc64b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4905
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="compiler-warning-level-1-c4905"></a>コンパイラの警告 (レベル 1) C4905
 'LPSTR' にキャストされた幅の広いリテラル文字列  
   
- 認識できないキャストが見つかりました。  キャストは成功しましたが、変換ルーチンを使用する必要があります。  
+ コンパイラでは、安全でないキャストが検出されました。 キャストが成功するが変換ルーチンを使用する必要があります。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[Compiler Warnings That Are Off by Default](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
-## 使用例  
- 次の例では C4905 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4905 を生成します。  
   
 ```  
 // C4905.cpp  

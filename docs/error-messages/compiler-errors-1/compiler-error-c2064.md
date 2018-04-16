@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C2064 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2064 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C2064
@@ -19,12 +19,13 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f0f874e2c985bc300792d716bc7135fa6e9b5bb8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: e0c82ae2de90a6e4e6e7e66648d84c2b55a9c2b0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2064"></a>コンパイラ エラー C2064
 N 引数を取り込む関数には評価されません。  

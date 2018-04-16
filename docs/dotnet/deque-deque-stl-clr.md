@@ -1,32 +1,37 @@
 ---
-title: "deque::deque (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::deque::deque"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "deque メンバー [STL/CLR]"
+title: "deque::deque (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::deque::deque
+dev_langs:
+- C++
+helpviewer_keywords:
+- deque member [STL/CLR]
 ms.assetid: e5bc9511-619e-469c-b50a-e06858e7fce7
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: b077e4c92d9307b8ff99126c824d0a902ce1ff83
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# deque::deque (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="dequedeque-stlclr"></a>deque::deque (STL/CLR)
 コンテナー オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 deque();  
@@ -39,70 +44,70 @@ template<typename InIt>
 deque(System::Collections::Generic::IEnumerable<Value>^ right);  
 ```  
   
-#### パラメーター  
- count  
+#### <a name="parameters"></a>パラメーター  
+ `count`  
  挿入する要素の数。  
   
- 最初  
- 挿入する範囲の先頭。  
+ `first`  
+ 挿入する範囲の開始しています。  
   
- last  
- 挿入する範囲の最後。  
+ `last`  
+ 挿入する範囲の終了。  
   
- \[right\]  
+ `right`  
  挿入するオブジェクトまたは範囲。  
   
- val  
- 挿入する要素の値。  
+ `val`  
+ 挿入する要素の値です。  
   
-## 解説  
- 次のコンストラクターを見てください。  
+## <a name="remarks"></a>コメント  
+ : コンス トラクター  
   
  `deque();`  
   
- 要素を持たない被制御シーケンスを初期化します。  空の最初の被制御シーケンスを指定する場合に使用します。  
+ 要素を持たない被制御シーケンスを初期化します。 空の初期被制御シーケンスの指定に使用するとします。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `deque(deque<Value>% right);`  
   
- 被制御シーケンスが `[``right``.`[deque::begin](../dotnet/deque-begin-stl-clr.md)`(),` `right``.`[deque::end](../Topic/deque::end%20\(STL-CLR\).md)`())` というシーケンスで初期化されます。  `right`deque オブジェクトによって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します。 [`right.begin()`、 `right.end()`)。 Deque オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`です。 反復子の詳細については、次を参照してください。 [deque::begin (STL/CLR)](../dotnet/deque-begin-stl-clr.md)と[deque::end (STL/CLR)](../dotnet/deque-end-stl-clr.md)です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `deque(deque<Value>^ right);`  
   
- 被制御シーケンスが `[``right``->`[deque::begin](../dotnet/deque-begin-stl-clr.md)`(),` `right``->`[deque::end](../Topic/deque::end%20\(STL-CLR\).md)`())` というシーケンスで初期化されます。  ハンドルが `right`である deque オブジェクトによって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します。 [`right->begin()`、 `right->end()`)。 ハンドルがあるの deque オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `explicit deque(size_type count);`  
   
- 値 `value_type()`で `count` 要素との被制御シーケンスを個別に初期化します。  既定値を持つ要素でコンテナーを塗りつぶすためにすべてを使用します。  
+ 被制御シーケンスを初期化します`count`値を持つ要素各`value_type()`です。 使用する要素をコンテナーを格納するのに既定値を持ちます。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `deque(size_type count, value_type val);`  
   
- 値 `val`で `count` 要素との被制御シーケンスを個別に初期化します。  同じ値を持つ要素でコンテナーを塗りつぶすためにすべてを使用します。  
+ 被制御シーケンスを初期化します`count`値を持つ要素各`val`です。 使用する要素をコンテナーを格納するのに、同じ値を持ちます。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `template<typename InIt>`  
   
  `deque(InIt first, InIt last);`  
   
- シーケンス `[``first``,``last``)`の被制御シーケンスを初期化します。  別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+ シーケンスに、被制御シーケンスを初期化します。 [`first`、 `last`)。 これを使用するには、被制御シーケンスの別のシーケンスのコピーを作成します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `deque(System::Collections::Generic::IEnumerable<Value>^ right);`  
   
- 列挙子が `right`指定したシーケンスの被制御シーケンスを初期化します。  列挙子によって指定された別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+ 列挙子によって指定されたシーケンスの被制御シーケンスを初期化します`right`です。 これを使用するには、被制御シーケンスの列挙子によって記述された別のシーケンスのコピーを作成します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // cliext_deque_construct.cpp   
 // compile with: /clr   
 #include <cliext/deque>   
@@ -156,20 +161,23 @@ int main()
   
 ```  
   
-  **size\(\) \= 0**  
- **0 0 0**  
- **X x x x x X**  
- **X x x x X**  
- **X x x x x X**  
- **X x x x x X**  
- **X x x x x X**   
-## 必要条件  
- **ヘッダー:** \<cliext\/deque\>  
+```Output  
+size() = 0  
+ 0 0 0  
+ x x x x x x  
+ x x x x x  
+ x x x x x x  
+ x x x x x x  
+ x x x x x x  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/deque >  
   
-## 参照  
- [deque](../dotnet/deque-stl-clr.md)   
- [deque::assign](../dotnet/deque-assign-stl-clr.md)   
- [deque::generic\_container](../Topic/deque::generic_container%20\(STL-CLR\).md)   
- [operator\= \(deque\)](../dotnet/operator-assign-deque-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
+ [deque::assign (STL/CLR)](../dotnet/deque-assign-stl-clr.md)   
+ [deque::generic_container (STL/CLR)](../dotnet/deque-generic-container-stl-clr.md)   
+ [operator= (deque) (STL/CLR)](../dotnet/operator-assign-deque-stl-clr.md)

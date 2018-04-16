@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4530
-dev_langs: C++
-helpviewer_keywords: C4530
+f1_keywords:
+- C4530
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4530
 ms.assetid: a04dcdb2-84db-459d-9e5e-4e743887465f
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cd91b0c46e5243a223b3b8ab8cdfc9a03cd64cb2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: adfa006e3b84517601237bbd844ac983115e74ec
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4530"></a>コンパイラの警告 (レベル 1) C4530
 C++ 例外処理を使っていますが、アンワインド セマンティクスが有効になっていません。 /EHsc を指定してください。  

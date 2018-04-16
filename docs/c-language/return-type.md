@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - function return types
 - return values [C++], function procedures
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - return keyword [C++], function return types
 - functions [C++], return types
 ms.assetid: 3e5b8a97-b341-48c5-8be8-8986980ef586
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4faa6143342d8765fce460a653090152c0b10417
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9768baa53e39f1b3243aba24385d592010c3d81a
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="return-type"></a>戻り値の型
 関数の戻り値の型は、関数によって返される値のサイズと型を規定し、次の構文の type-specifier に相当します。  

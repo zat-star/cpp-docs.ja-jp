@@ -1,13 +1,15 @@
 ---
-title: "明示的なオーバーライド (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 明示的なオーバーライド (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - virtual functions [C++], explicit overrides
 - overriding, functions
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - explicit virtual function overrides
 - explicit override of virtual function
 ms.assetid: ee583234-5cda-4e90-b55e-3f9fbf079ced
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b08b2a725a5a27451ed83215a7ccd892ecef6b96
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8e2047b15d245c7c4b8e093e23a9ca6c4f16ac44
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="explicit-overrides-c"></a>明示的なオーバーライド (C++)
 **Microsoft 固有の仕様**  
@@ -127,5 +131,5 @@ In CMyClass::IMyInt2::mf2()
 In CMyClass::IMyInt2::mf2(int)  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [継承](../cpp/inheritance-cpp.md)

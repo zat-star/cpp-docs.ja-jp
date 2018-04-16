@@ -1,81 +1,85 @@
 ---
-title: "/MAP (マップ ファイルの生成) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/map"
-  - "VC.Project.VCLinkerTool.MapFileName"
-  - "VC.Project.VCLinkerTool.GenerateMapFile"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/MAP リンカー オプション"
-  - "生成 (マップ ファイルの) リンカー オプション"
-  - "MAP リンカー オプション"
-  - "-MAP リンカー オプション"
-  - "mapfile リンカー オプション"
-  - "マップ ファイル, 作成 (リンカーを)"
-  - "マップ ファイル, 情報 (リンクされているプログラムに関する)"
-  - "マップ ファイル, 指定 (ファイル名を)"
+title: "マップ (マップ ファイルの生成) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /map
+- VC.Project.VCLinkerTool.MapFileName
+- VC.Project.VCLinkerTool.GenerateMapFile
+dev_langs:
+- C++
+helpviewer_keywords:
+- mapfiles, creating linker
+- generate mapfile linker option
+- mapfile linker option
+- mapfiles, information about program being linked
+- MAP linker option
+- -MAP linker option
+- mapfiles, specifying file name
+- /MAP linker option
 ms.assetid: 9ccce53d-4e36-43da-87b0-7603ddfdea63
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f01daff11d41263766b66ed335c60d4bf83ced45
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /MAP (マップ ファイルの生成)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="map-generate-mapfile"></a>/MAP (マップ ファイルの生成)
 ```  
 /MAP[:filename]  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  それぞれの文字について以下に説明します。  
   
- *filename*  
- ユーザー指定のマップ ファイル名。  既定の名前を置き換えます。  
+ *ファイル名*  
+ マップ ファイルのユーザー指定の名前。 既定の名前に置き換えます。  
   
-## 解説  
- \/MAP オプションは、リンク時にマップ ファイルを生成します。  
+## <a name="remarks"></a>コメント  
+ /MAP オプションを使用すると、リンカーは、マップ ファイルを作成します。  
   
- 既定では、マップ ファイルは、プログラムのベース名に拡張子 .map が付いた名前になります。  *filename* \(省略可能\) を指定すると、既定のマップ ファイル名をオーバーライドできます。  
+ 既定では、名前にマップ ファイル、プログラム、および拡張 .map ベース名です。 省略可能な*filename*マップ ファイルの既定の名前をオーバーライドすることができます。  
   
- マップ ファイルは、リンクするプログラムに関する次の情報が書き込まれたテキスト ファイルです。  
+ マップ ファイルは、リンクされているプログラムに関する次の情報を含むテキスト ファイルです。  
   
--   モジュール名。つまり、ファイルのベース名です。  
+-   ファイルの基本名は、モジュール名、  
   
--   プログラム ファイルのヘッダーに書き込まれているタイムスタンプ。ファイル システムに書き込まれているタイムスタンプではありません。  
+-   (ファイル システム) からではなく、プログラム ファイルのヘッダーからのタイムスタンプ  
   
--   プログラム内のグループの一覧。各グループの先頭アドレス \(*section*:*offset* の形で表記\)、長さ、グループ名、およびクラスが記述されています。  
+-   各グループの開始アドレスを使用して、プログラム内のグループの一覧 (として*セクション*:*オフセット*)、長さ、グループ名、およびクラス  
   
--   パブリック シンボルの一覧。各シンボルのアドレス \(*section*:*offset* の形で表記\)、シンボル名、フラット アドレス、およびそのシンボルを定義している .obj ファイルが記述されています。  
+-   各アドレスに、パブリック シンボルの一覧 (として*セクション*:*オフセット*)、シンボルの名前、フラットなアドレス、およびシンボルが定義されている .obj ファイル  
   
--   エントリ ポイント \(*section*:*offset* の形で表記\)。  
+-   エントリ ポイント (として*セクション*:*オフセット*)  
   
- [\/MAPINFO](../../build/reference/mapinfo-include-information-in-mapfile.md) オプションは、マップ ファイルに記述する追加情報を指定します。  
+ [/MAPINFO](../../build/reference/mapinfo-include-information-in-mapfile.md)オプションは、マップ ファイルに含まれる追加の情報を指定します。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[デバッグ\] プロパティ ページをクリックします。  
+3.  クリックして、**デバッグ**プロパティ ページ。  
   
-4.  \[マップ ファイルの作成\] プロパティを変更します。  
+4.  変更、**マップ ファイルの生成**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.GenerateMapFile%2A>」および「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.MapFileName%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

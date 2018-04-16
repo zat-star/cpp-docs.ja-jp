@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: type_traits/std::is_reference
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- type_traits/std::is_reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - is_reference class
 - is_reference
 ms.assetid: 3d9e631f-3092-430c-843e-e914ab58c257
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f641412cd4f612bfbe3e94d2982b0b813b4e1991
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9490fbb402fcd5bfbaa297f547a9e5d2b5be463c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="isreference-class"></a>is_reference クラス
 型が参照であるかどうかをテストします。  
@@ -76,11 +81,11 @@ is_reference<int()> == false
 is_reference<int(&)()> == true  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)   
  [is_pointer クラス](../standard-library/is-pointer-class.md)

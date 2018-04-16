@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,18 +24,22 @@ f1_keywords:
 - not_eq
 - std::not_eq
 - std.not_eq
-dev_langs: C++
-helpviewer_keywords: not_eq function
+dev_langs:
+- C++
+helpviewer_keywords:
+- not_eq function
 ms.assetid: d87ad299-8b50-4393-a57f-06f70e1f23fb
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 55d31bbb9d7823161bd98d76884298f3cc089f4d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8803fceb8e22daeea33445efac8921387df58e7b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="noteq"></a>not_eq
 != 演算子の代替手段。  
@@ -76,5 +81,5 @@ a is not equal to b
 a is not equal to b  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iso646.h>

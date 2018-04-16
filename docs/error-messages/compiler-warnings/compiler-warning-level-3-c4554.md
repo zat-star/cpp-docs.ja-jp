@@ -15,33 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - C4554
 ms.assetid: 55bb68f0-2e80-4330-8921-51083c4f8d53
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: c45b4456d247049fd0123760a301b877ac944da0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d783663d463895143f1782649f9082b6f7b76581
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-3-c4554"></a>コンパイラの警告 (レベル 3) C4554
-'operator': 演算子の優先順位の問題があります。かっこを使用して、優先順位を明確にするには  
+'operator': 演算子の優先順位に問題があります。かっこを使用する優先順位を明確にします。  
   
  次の例では、C4554 が生成されます。  
   

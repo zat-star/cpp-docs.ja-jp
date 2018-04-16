@@ -4,37 +4,41 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CDataSource&
 - CDataConnection.operatorCDataSource&
 - operatorCDataSource&
 - CDataConnection::operatorCDataSource&
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDataSource& operator
 - operator & (CDataSource)
 ms.assetid: 852faeee-f1b1-4465-9828-b261d1edf022
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fc2309b7b97a97d19ff9a68895fef3ed3bda8b7c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 255d1fe1d6363277c300fee134c5c41473ee8c3b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cdataconnectionoperator-cdatasourceamp"></a>Cdataconnection::operator CDataSource&amp;
 格納されている参照を返します`CDataSource`オブジェクト。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-operator const CDataSource&() throw( );  
+```cpp
+operator const CDataSource&() throw();  
   
 ```  
   
@@ -48,9 +52,9 @@ operator const CDataSource&() throw( );
   
  [!code-cpp[NVC_OLEDB_Consumer#4](../../data/oledb/codesnippet/cpp/cdataconnection-operator-cdatasource-amp_2.cpp)]  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDataConnection クラス](../../data/oledb/cdataconnection-class.md)   
  [CDataConnection::operator CDataSource*](../../data/oledb/cdataconnection-operator-cdatasource-star.md)

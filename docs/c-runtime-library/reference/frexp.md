@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: frexp
+ms.topic: reference
+apiname:
+- frexp
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,7 +26,8 @@ apitype: DLLExport
 f1_keywords:
 - frexp
 - _frexpl
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _frexpl function
 - mantissas, floating-point variables
@@ -33,15 +36,17 @@ helpviewer_keywords:
 - frexp function
 - floating-point functions, mantissa and exponent
 ms.assetid: 9b020f2e-3967-45ec-a6a8-d467a071aa55
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f463ee2e077d4d1cc90e4fe2fc04eeda025bb6a2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 02eab6e7912a69a6189568d9a5530ace88d8430b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="frexp"></a>frexp
 浮動小数点数の仮数と指数を取得します。  
@@ -71,20 +76,20 @@ long double frexp(
  格納された整数の指数へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- `frexp` は仮数部を返します。 `x` が 0 の場合、この関数は、仮数と指数部の両方に対して 0 を返します。 `expptr` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
+ `frexp` は仮数部を返します。 `x` が 0 の場合、この関数は、仮数と指数部の両方に対して 0 を返します。 `expptr` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、0 を返します。  
   
 ## <a name="remarks"></a>コメント  
  `frexp`関数は浮動小数点値を分割 (`x`)、仮数部に (`m`) と指数部 (`n`) になるようの絶対値`m`は 0.5 以上 1.0 未満と`x` =  `m`* 2<sup>n</sup>です。 整数の指数 `n` は、`expptr` によって指定された場所に格納されます。  
   
  C++ ではオーバーロードが可能であるため、`frexp` のオーバーロードを呼び出すことができます。 C プログラムで、`frexp` は常に double と整数を受け取って、double 値を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`frexp`|\<math.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -111,7 +116,7 @@ int main( void )
 frexp( 16.400000, &n ) = 0.512500, n = 5  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ldexp](../../c-runtime-library/reference/ldexp.md)   
  [modf、modff、modfl](../../c-runtime-library/reference/modf-modff-modfl.md)

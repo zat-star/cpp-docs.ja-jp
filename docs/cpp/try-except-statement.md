@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
@@ -19,7 +20,8 @@ f1_keywords:
 - _exception_info_cpp
 - EXCEPTION_EXECUTE_HANDLER
 - _abnormal_termination
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __try keyword [C++]
 - EXCEPTION_CONTINUE_EXECUTION macro
@@ -32,15 +34,17 @@ helpviewer_keywords:
 - _exception_info keyword [C++]
 - _abnormal_termination keyword [C++]
 ms.assetid: 30d60071-ea49-4bfb-a8e6-7a420de66381
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 12aeb14d63f20592c94292b1548a8d3d700fef0b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 24be4e7fd6b4dc95d9964e69943a94ecad947a47
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="try-except-statement"></a>try-except ステートメント
 
@@ -49,11 +53,11 @@ ms.lasthandoff: 10/24/2017
 
 ## <a name="syntax"></a>構文  
   
-> **_ _try します。**   
+> **__try**   
 > {  
 >    保護されたコード  
 > }  
-> **_ _except** (*式*)  
+> **__except** ( *expression* )  
 > {  
 >    例外ハンドラーのコード  
 > }  
@@ -112,13 +116,13 @@ typedef struct _EXCEPTION_POINTERS {
 } EXCEPTION_POINTERS, *PEXCEPTION_POINTERS; 
 ```  
 
-ポインター型`PEXCEPTION_RECORD`と`PCONTEXT`WINNT にインクルード ファイルで定義されます。H、および`_EXCEPTION_RECORD`と`_CONTEXT`EXCPT にインクルード ファイルで定義されます。H
+ポインター型`PEXCEPTION_RECORD`と`PCONTEXT`インクルード ファイルで定義されて\<winnt.h >、および`_EXCEPTION_RECORD`と`_CONTEXT`インクルード ファイルで定義された\<excpt.h >
 
 使用することができます`GetExceptionCode`例外ハンドラー内で。 ただし、使用することができます`GetExceptionInformation`例外フィルター式内でのみです。 これが示す情報は、一般的にスタックにあり、制御が例外ハンドラーに移されると使用できなくなります。
 
 組み込み関数`AbnormalTermination`は終了ハンドラー内で使用できます。 場合は 0 を返しますの本文、 **、try-finally**ステートメントが順次終了しました。 その他の場合は、1 を返します。
 
-EXCPT.H は、組み込み関数の代替名を次のように定義しています。
+excpt.h は、これらの組み込みのいくつかの代替名を定義します。
 
 `GetExceptionCode`等価します。`_exception_code`
 
@@ -192,7 +196,7 @@ world
 
 **Microsoft 固有の仕様はここまで**  
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [例外ハンドラーの記述](../cpp/writing-an-exception-handler.md)   
 [構造化例外処理 (C/C++)](../cpp/structured-exception-handling-c-cpp.md)   

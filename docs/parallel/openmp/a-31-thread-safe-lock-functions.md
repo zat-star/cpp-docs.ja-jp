@@ -1,31 +1,34 @@
 ---
-title: "A.31   Thread-Safe Lock Functions | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "A.31 スレッド セーフであるロック関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 3ad89eb8-076c-405a-be5e-88d3d707a832
-caps.latest.revision: 10
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 34a1d9b2a923af68bb63fb29a7031a7efa433a26
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# A.31   Thread-Safe Lock Functions
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-次の C\+\+ のコード例に `omp_init_lock` \(ページの 42[セクション 3.2.1](../../parallel/openmp/3-2-1-omp-init-lock-and-omp-init-nest-lock-functions.md)\) を使用して並列領域のロックの配列を初期化する方法を示しています。  
+# <a name="a31---thread-safe-lock-functions"></a>A.31 スレッド セーフなロック関数
+次の C++ の例を使用して、並行領域内のロックの配列を初期化する方法を示します`omp_init_lock`([セクション 3.2.1](../../parallel/openmp/3-2-1-omp-init-lock-and-omp-init-nest-lock-functions.md)ページ 42 で)。  
   
-## 例  
+## <a name="example"></a>例  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // A_13_omp_init_lock.cpp  

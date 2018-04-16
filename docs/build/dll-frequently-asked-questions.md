@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - troubleshooting [C++], DLLs
 - DLLs [C++], frequently asked questions
 - FAQs [C++], DLLs
 ms.assetid: 09dd068e-fc33-414e-82f7-289c70680256
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ddacf677dab37bc85492dff1ec13dde23132da15
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 39c3a36f697527c7e133409f49656e4415f86a7f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dll-frequently-asked-questions"></a>DLL に関してよく寄せられる質問  
   
@@ -39,7 +43,7 @@ ms.lasthandoff: 10/24/2017
 
 ## <a name="mfc_multithreaded_1"></a>MFC DLL に複数のスレッドを作成できますか。  
   
-初期化中に、MFC DLL を安全の作成を除く複数のスレッドの Win32 スレッド ローカル ストレージ (TLS) などの関数を使用する限り、 **TlsAlloc**スレッド ローカル ストレージを割り当てることです。 ただし、MFC DLL を使用して場合**_declspec**をスレッド ローカル ストレージを割り当て、クライアント アプリケーションは暗黙的にリンクされて DLL です。 クライアント アプリケーションが DLL への呼び出しに明示的にリンク**LoadLibrary** DLL は正常に読み込まれません。 MFC Dll 内の複数のスレッドの作成の詳細については、サポート技術情報の記事、"[prb]:: 呼び出し LoadLibrary() に負荷が DLL がする静的 TLS"(Q118816) を参照してください。  
+初期化中に、MFC DLL を安全の作成を除く複数のスレッドの Win32 スレッド ローカル ストレージ (TLS) などの関数を使用する限り、 **TlsAlloc**スレッド ローカル ストレージを割り当てることです。 ただし、MFC DLL を使用して場合**_declspec**をスレッド ローカル ストレージを割り当て、クライアント アプリケーションは暗黙的にリンクされて DLL です。 クライアント アプリケーションが DLL への呼び出しに明示的にリンク**LoadLibrary** DLL は正常に読み込まれません。 MFC Dll 内の複数のスレッドの作成の詳細については、サポート技術情報の記事、"[prb]:: 呼び出し LoadLibrary() に負荷が DLL がする静的 TLS"(Q118816) を参照してください。 Dll 内のスレッド ローカル変数の詳細については、次を参照してください。[スレッド](../cpp/thread.md)です。
   
  起動中に、新しい MFC スレッドを作成する MFC DLL では、アプリケーションによって読み込まれるときの応答を停止します。 これは、スレッドが呼び出すことによって作成されるたびにも含まれます。`AfxBeginThread`または`CWinThread::CreateThread`内。  
   
@@ -77,5 +81,5 @@ DLL が MFC では、標準への変更に静的にリンクされている標�
   
 メモリ リークの原因の 1 つは、MFC メッセージ ハンドラー関数内部で使用される一時オブジェクトで作成します。 MFC アプリケーションでこれらの一時オブジェクトが自動的にクリーンアップで、`CWinApp::OnIdle()`メッセージの処理の間に呼び出される関数。 ただし、MFC のダイナミック リンク ライブラリ (Dll) では、`OnIdle()`関数は自動的に呼び出されません。 その結果、一時オブジェクトが自動的にクリーンアップされません。 一時オブジェクトをクリーンアップする DLL を呼び出す必要があります明示的に`OnIdle(1)`定期的にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)

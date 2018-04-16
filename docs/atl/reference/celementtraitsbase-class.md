@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,18 +15,22 @@ f1_keywords:
 - ATLCOLL/ATL::CElementTraitsBase::OUTARGTYPE
 - ATLCOLL/ATL::CElementTraitsBase::CopyElements
 - ATLCOLL/ATL::CElementTraitsBase::RelocateElements
-dev_langs: C++
-helpviewer_keywords: CElementTraitsBase class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CElementTraitsBase class
 ms.assetid: 75284caf-347e-4355-a7d8-efc708dd514a
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d0201ecd971b13b69e210b356ba9192bfdc89a54
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c9bbea69d2265563a0da4fda8b45cc09234a7789
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="celementtraitsbase-class"></a>CElementTraitsBase クラス
 このクラスは、既定のコピーを提供し、コレクション クラスのメソッドを移動します。  
@@ -62,7 +67,7 @@ class CElementTraitsBase
   
  詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcoll.h  
   
 ##  <a name="copyelements"></a>CElementTraitsBase::CopyElements  
@@ -125,5 +130,5 @@ static void RelocateElements(
 ### <a name="remarks"></a>コメント  
  このメソッドを呼び出す[memmove](../../c-runtime-library/reference/memmove-wmemmove.md)、これは、ほとんどのデータ型。 オブジェクトの移動中に、独自のメンバーへのポインターが含まれている場合は、このメソッドをオーバーライドする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

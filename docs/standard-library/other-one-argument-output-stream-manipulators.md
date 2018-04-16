@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
-helpviewer_keywords: output streams, one-argument manipulators
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- output streams, one-argument manipulators
 ms.assetid: e381dee8-6b16-4cef-805a-4a6a1d2b696b
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a3d453746b9f9af7219f181949ba9958c27a1577
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 55b70fd546dc2f3d5d0db6d8845864ef8b89cd8e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="other-one-argument-output-stream-manipulators"></a>1 つの引数を使用する他の出力ストリーム マニピュレーター
 次の例ではクラス `money` を使用していますが、このクラスは `long` 型です。 `setpic` マニピュレーターにより、"画像" の書式設定文字列を、`money` クラスのオーバーロードされたストリーム挿入演算子で使用可能なクラスに関連付けています。 画像文字列はストリーム クラスのデータ メンバーではなく `money` クラスの静的変数として格納されるため、新しい出力ストリーム クラスを派生させる必要はありません。  
@@ -83,6 +88,6 @@ int main( )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [引数を使用するカスタム マニピュレーター](../standard-library/custom-manipulators-with-arguments.md)
 

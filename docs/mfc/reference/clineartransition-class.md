@@ -23,16 +23,17 @@ helpviewer_keywords:
 - CLinearTransition [MFC], m_dblFinalValue
 - CLinearTransition [MFC], m_duration
 ms.assetid: 7fcb2dba-beb8-4933-9f5d-3b7fb1585ef0
-caps.latest.revision: 18
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7379c49ef54a86d68e5b9f47a35437befc53d8d8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 4d74b32955c1b4d4682f3d2fb42c8c6e1498e56d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="clineartransition-class"></a>CLinearTransition クラス
 線形遷移をカプセル化します。  
@@ -74,7 +75,7 @@ class CLinearTransition : public CBaseTransition;
   
  [CLinearTransition](../../mfc/reference/clineartransition-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="clineartransition"></a>CLinearTransition::CLinearTransition  
@@ -123,6 +124,5 @@ DOUBLE m_dblFinalValue;
 UI_ANIMATION_SECONDS m_duration;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

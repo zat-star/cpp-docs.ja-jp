@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - updating user interface objects [MFC]
 - command routing [MFC], update commands
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - command routing [MFC], update handlers
 - update handlers, calling
 ms.assetid: 7359f6b1-4669-477d-bd99-690affed08d9
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2b19a01ce06b76b49593adf54fa8af728be2d5c6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eaf2773a2d9e393c783a39e01c75f8efa62796df
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="when-update-handlers-are-called"></a>更新ハンドラーが呼び出されるタイミング
 ユーザーを生成するファイル メニューにマウスをクリックすると、`WM_INITMENUPOPUP`メッセージ。 ドロップダウン メニュー、ユーザーが確認できるようにする前に、フレームワークの更新の機構は総称して [ファイル] メニューのすべての項目を更新します。  
@@ -44,6 +48,6 @@ ms.lasthandoff: 10/24/2017
   
  メニューの初期化が framework では、アプリケーションの受信時に発生する自動、`WM_INITMENUPOPUP`メッセージ。 アイドル ループ時に、フレームワークは、コマンド ルーティング ボタン更新ハンドラーのほぼ同じ方法でメニューの場合と同様を検索します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ユーザー インターフェイス オブジェクトの更新方法](../mfc/how-to-update-user-interface-objects.md)
 

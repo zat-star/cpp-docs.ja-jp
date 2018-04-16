@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,7 +16,8 @@ f1_keywords:
 - AFXANIMATIONCONTROLLER/CCubicTransition::m_dblFinalValue
 - AFXANIMATIONCONTROLLER/CCubicTransition::m_dblFinalVelocity
 - AFXANIMATIONCONTROLLER/CCubicTransition::m_duration
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CCubicTransition [MFC], CCubicTransition
 - CCubicTransition [MFC], Create
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - CCubicTransition [MFC], m_dblFinalVelocity
 - CCubicTransition [MFC], m_duration
 ms.assetid: 4fc30e9c-160c-45e1-bdbe-51adf8fee9c5
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 323b40a0adcc48424e4598bb3d91f5d43f90ff36
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 806a8b92867d120a9ae099b96ecaf6fecfca4ea6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccubictransition-class"></a>CCubicTransition クラス
 3 次遷移をカプセル化します。  
@@ -74,7 +78,7 @@ class CCubicTransition : public CBaseTransition;
   
  `CCubicTransition`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="ccubictransition"></a>CCubicTransition::CCubicTransition  
@@ -134,5 +138,5 @@ DOUBLE m_dblFinalVelocity;
 UI_ANIMATION_SECONDS m_duration;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

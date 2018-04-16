@@ -1,52 +1,56 @@
 ---
-title: "CBulkRowset::MoveLast | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CBulkRowset.MoveLast"
-  - "ATL.CBulkRowset.MoveLast"
-  - "ATL::CBulkRowset<TAccessor>::MoveLast"
-  - "CBulkRowset::MoveLast"
-  - "CBulkRowset<TAccessor>.MoveLast"
-  - "ATL::CBulkRowset::MoveLast"
-  - "ATL.CBulkRowset<TAccessor>.MoveLast"
-  - "CBulkRowset<TAccessor>::MoveLast"
-  - "MoveLast"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MoveLast メソッド"
+title: CBulkRowset::MoveLast | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CBulkRowset.MoveLast
+- ATL.CBulkRowset.MoveLast
+- ATL::CBulkRowset<TAccessor>::MoveLast
+- CBulkRowset::MoveLast
+- CBulkRowset<TAccessor>.MoveLast
+- ATL::CBulkRowset::MoveLast
+- ATL.CBulkRowset<TAccessor>.MoveLast
+- CBulkRowset<TAccessor>::MoveLast
+- MoveLast
+dev_langs:
+- C++
+helpviewer_keywords:
+- MoveLast method
 ms.assetid: c880f8b4-9ab6-49ee-8c2d-72d240782514
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 2c4b508d41f8e566c1355c3fc5d3d549116dea8c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CBulkRowset::MoveLast
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="cbulkrowsetmovelast"></a>CBulkRowset::MoveLast
 最後の行に移動します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
+  
+```cpp
+HRESULT MoveLast() throw();  
   
 ```  
   
-HRESULT MoveLast( ) throw( );  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-```  
-  
-## 戻り値  
- 標準の `HRESULT` を返します。  
-  
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CBulkRowset クラス](../Topic/CBulkRowset%20Class.md)
+## <a name="see-also"></a>参照  
+ [CBulkRowset クラス](../../data/oledb/cbulkrowset-class.md)

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - printing [MFC], active documents
 - active documents [MFC], printing
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - IPrint interface
 - printing [MFC]
 ms.assetid: 3db0945b-5e13-4be4-86a0-6aecdae565bd
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 037e32f5284ab27c072f09c8965009eca1d0e7c7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 927a5d9b4bea41157c8cfac6f3dbfe42fc323bb2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="programmatic-printing"></a>プログラムによる印刷
 OLE が永続的なドキュメントを一意に識別するための手段を提供 (**GetClassFile**) と、関連付けられているコードへのロード (`CoCreateInstance`、 **QueryInterface(IID_IPersistFile)**、 **QueryInterface(IID_IPersistStorage)**、 **:load**、および**機能として**)。 Active ドキュメント コンテインメント (OLE 2.0 に付属していない既存の OLE デザインを使用して) ドキュメントの印刷をさらに有効にするにはベースの標準の印刷インターフェイスが導入されています`IPrint`、読み込むことができる任意のオブジェクトで一般的に使用できる、ドキュメントの種類の永続的な状態です。 アクティブ ドキュメントの各ビューをサポートできます必要に応じて、 **IPrint**これらの機能を提供するインターフェイスです。  
@@ -78,6 +82,6 @@ interface IContinueCallback : IUnknown
   
  **FContinue**、ただしのコンテキストでは使用されません**::print**以外ではなく、使用して印刷**IContinueCallback::FContinuePrint**です。 任意の印刷オブジェクトを定期的に呼び出す必要があります**現在**印刷ページの数、印刷されるページの数と、クライアントは印刷の状態を示す文字列を渡す(「5/ページ 19」) などのユーザーに表示するを選択します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Active ドキュメント コンテナー](../mfc/active-document-containers.md)
 

@@ -1,70 +1,69 @@
 ---
-title: "CDynamicParameterAccessor::SetParamString | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CDynamicParameterAccessor.SetParamString"
-  - "ATL::CDynamicParameterAccessor::SetParamString"
-  - "SetParamString"
-  - "CDynamicParameterAccessor::SetParamString"
-  - "CDynamicParameterAccessor.SetParamString"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetParamString メソッド"
+title: "Cdynamicparameteraccessor::setparamstring |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL.CDynamicParameterAccessor.SetParamString
+- ATL::CDynamicParameterAccessor::SetParamString
+- SetParamString
+- CDynamicParameterAccessor::SetParamString
+- CDynamicParameterAccessor.SetParamString
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetParamString method
 ms.assetid: 77a38d23-7e33-4e5a-bda6-c12c4c3fe2e4
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 11a9436c2e42c9c5f08533f7bfae45e8945575d0
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CDynamicParameterAccessor::SetParamString
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-バッファーに格納され、指定したパラメーターの文字列データを設定します。  
+# <a name="cdynamicparameteraccessorsetparamstring"></a>CDynamicParameterAccessor::SetParamString
+バッファーに格納され、指定されたパラメーターの文字列データを設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+bool SetParamString(DBORDINAL nParam,   
+   constCHAR* pString,   
+   DBSTATUS status = DBSTATUS_S_OK) throw();bool SetParamString(DBORDINAL nParam,   
+   constWCHAR* pString,   
+   DBSTATUS status = DBSTATUS_S_OK) throw();  
 ```  
   
-      bool SetParamString(   
-   DBORDINAL nParam,   
-   const CHAR* pString,   
-   DBSTATUS status = DBSTATUS_S_OK    
-) throw( );  
-bool SetParamString(   
-   DBORDINAL nParam,   
-   const WCHAR* pString,   
-   DBSTATUS status = DBSTATUS_S_OK    
-) throw( );  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nParam`  
- \[\]パラメーター数 \(1\) からのオフセット。  パラメーターは 0 戻り値のために予約されています。  パラメーターの数は、SQL またはストアド プロシージャ呼び出しの順序に基づいてパラメーターのインデックスです。  例については、" [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) を参照してください。  
+ [in]パラメーターの数 (1 からのオフセット)。 に対するパラメーター 0 は、戻り値に予約されています。 パラメーター数は、SQL またはストアド プロシージャの呼び出しでその順序に基づいて、パラメーターのインデックスです。 参照してください[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)例についてはします。  
   
  `pString`  
- \[\]**CHAR** \(ANSI\) または指定されたパラメーターの Unicode \(**WCHAR**\) 文字列データへのポインター。  oledb.h の `DBSTATUS` を参照してください。  
+ [in]ANSI へのポインター (**CHAR**) または Unicode (**WCHAR**) 文字列型の指定されたパラメーターのデータ。 参照してください`DBSTATUS`oledb.h でします。  
   
  *status*  
- \[\]指定されたパラメーターの `DBSTATUS` の状態。  `DBSTATUS` 値の詳細については、*OLE DB Programmer's Reference*の [状態](https://msdn.microsoft.com/en-us/library/ms722617.aspx) を参照するか、oledb.h の `DBSTATUS` を検索します。  
+ [in]`DBSTATUS`指定されたパラメーターの状態。 詳細について`DBSTATUS`値を参照してください[ステータス](https://msdn.microsoft.com/en-us/library/ms722617.aspx)で、 *OLE DB プログラマーズ リファレンス*、または検索`DBSTATUS`oledb.h でします。  
   
-## 解説  
- 成功の戻り **true** または失敗の **false**。  
+## <a name="remarks"></a>コメント  
+ 返します**true**成功した場合または**false**エラー発生時にします。  
   
- `SetParamString` は `pString`に指定する最大サイズを超える文字列を設定しようとすると失敗します。  
+ `SetParamString` 指定された最大サイズを超える文字列を設定しようとする場合は失敗`pString`です。  
   
- バッファーの文字列パラメーター データを設定するために `SetParamString` を使用します。  バッファー パラメーターにもデータを設定するために [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) を使用します。  
+ 使用して`SetParamString`をバッファーに文字列パラメーターのデータを設定します。 使用して[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)をバッファーに文字列以外のパラメーターのデータを設定します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)

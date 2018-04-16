@@ -15,35 +15,21 @@ dev_langs:
 helpviewer_keywords:
 - C4948
 ms.assetid: d006cb17-754a-4c70-ba7f-c3200e2cd8fa
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 6483f704967faa75d9298e0bb7e942e9a8202c00
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 71db8e647a42c943ce5d43aeac9b5eb923fc587b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-2-c4948"></a>コンパイラの警告 (レベル 2) C4948
-'アクセサー' の戻り値の型が対応する setter の最後のパラメーターの型と一致しません  
+'accessor' の戻り値の型が、対応する setter の最後のパラメーターの型と一致しません  
   
-どのようなデータ型が取得されると、インデックス付きプロパティの設定に不整合が検出されました。  
+どのようなデータ型が取得されていると、インデックス付きプロパティの設定の不一致が見つかりました。  
   
-C4948 は古いコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**します。  
-
+C4948 は古い形式のコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**です。  

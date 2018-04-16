@@ -4,26 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - setlocale_CPP
 - vc-pragma.setlocale
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - pragmas, setlocale
 - setlocale pragma
 ms.assetid: e60b43d9-fbdf-4c4e-ac85-805523a13b86
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 05ddb536dc4d7929141c7c153fdd9ec5ce1e9d7a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c52697fffb27e6fd25936f3c6566f027cc265c18
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="setlocale"></a>setlocale
 ワイド文字定数、リテラル文字列を変換するときに使用するロケール (国/地域および言語) を定義します。  
@@ -48,5 +52,5 @@ ms.lasthandoff: 10/24/2017
   
  言語文字列を発行する機能は、コンピューター上でのコード ページおよび言語 ID のサポートによって異なります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラグマ ディレクティブと __Pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

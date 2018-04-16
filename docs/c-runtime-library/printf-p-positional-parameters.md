@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -15,20 +16,23 @@ apilocation:
 - msvcr80.dll
 - msvcr100.dll
 apitype: DLLExport
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _printf_p function, positional parameters
 - printf_p function, positional parameters
 ms.assetid: beb4fd85-a7aa-4665-9085-2c907a5b9ab0
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 83b3630addfe94c438be21ca2470ade01193a997
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 10d48a899b2d2e6ad644c385c2b2116353c20f8e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="printfp-positional-parameters"></a>printf_p の位置指定パラメーター
 位置指定パラメータを使用すると、書式指定文字列のフィールドに代入する引数を番号で指定することができます。 次の位置指定パラメーター `printf` 関数を使用できます。  
@@ -72,7 +76,7 @@ _printf_p("%2$s %1$s", "November", "10");
 10 November  
 ```  
   
-従来の書式指定文字列とは異なり、位置指定パラメーターを書式指定文字列内に複数回使用できます。 次に例を示します。  
+従来の書式指定文字列とは異なり、位置指定パラメーターを書式指定文字列内に複数回使用できます。 たとえば、オブジェクトに適用された  
   
 ```C  
 _printf_p("%1$d times %1$d is %2$d", 10, 100);  
@@ -87,7 +91,7 @@ _printf_p("%1$d times %1$d is %2$d", 10, 100);
 書式指定文字列のどこかに、すべての引数を必ず 1 回以上使用する必要があります。 1 つの書式指定文字列で使用できる位置指定パラメータの最大数は、`_ARGMAX` で指定されます。  
   
 ### <a name="width-and-precision"></a>幅と精度  
-`*n$` を使用して位置指定パラメーターを幅指定子または有効桁数指定子として指定できます。ここで、`n` は、パラメーター リストでの幅指定パラメーターまたは有効桁数のパラメーターの位置を示します。 幅または有効桁数の値は、\* シンボルの直後に指定する必要があります。 次に例を示します。  
+`*n$` を使用して位置指定パラメーターを幅指定子または有効桁数指定子として指定できます。ここで、`n` は、パラメーター リストでの幅指定パラメーターまたは有効桁数のパラメーターの位置を示します。 幅または有効桁数の値は、\* シンボルの直後に指定する必要があります。 たとえば、オブジェクトに適用された  
   
 ```C  
 _printf_p("%1$*2$s","Hello", 10);  
@@ -152,5 +156,5 @@ ghi abc def
 333.333300 2.22 0.100
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [書式指定構文: printf 関数と wprintf 関数](../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)

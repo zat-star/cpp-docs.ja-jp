@@ -1,39 +1,43 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4383 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4383"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4383"
+title: "コンパイラの警告 (レベル 1) C4383 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4383
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4383
 ms.assetid: 96c0e52d-874e-4b57-a154-0e49b6a00fae
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1a7c478783c7f908125de7b97a1d21a9f1ece029
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4383
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'instance\_dereference\_operator' : ユーザー定義された '演算子' 演算子が存在するときに、ハンドルを逆参照する意味が変更する可能性があります。演算子がオペランドに対して明示的になるように、演算子をスタティック関数として書き込んでください  
+# <a name="compiler-warning-level-1-c4383"></a>コンパイラの警告 (レベル 1) C4383
+'instance_dereference_operator': ユーザー定義の 'operator' 演算子が存在するときに、ハンドルの逆参照の意味を変更できますオペランドに対して明示的に指定する静的関数として、演算子を書き込んでください。  
   
- マネージ型の逆参照演算子のユーザー定義のインスタンス オーバーライドを追加するときに、その型の逆参照演算子がハンドルのオブジェクトを返す機能をオーバーライドする可能性があります。  スタティックなユーザー定義の逆参照演算子を記述することを検討してください。  
+ マネージ型に逆参照演算子のインスタンスのユーザー定義の上書きを追加すると、ハンドルのオブジェクトを取得する型の逆参照演算子の機能を無効可能性があります。 検討逆参照演算子を静的なユーザー定義を記述します。  
   
- 詳細については、「[オブジェクト演算子 \(^\) へのハンドル](../../windows/handle-to-object-operator-hat-cpp-component-extensions.md)」および「[Tracking Reference Operator](../../windows/tracking-reference-operator-cpp-component-extensions.md)」を参照してください。  
+ 詳細については、次を参照してください。[オブジェクト演算子 (^) へのハンドル](../../windows/handle-to-object-operator-hat-cpp-component-extensions.md)と[参照演算子の追跡](../../windows/tracking-reference-operator-cpp-component-extensions.md)です。  
   
- また、インスタンス演算子を、参照されるメタデータを経由して他の言語のコンパイラで利用することはできません。  詳細については、「[ユーザー定義の演算子](../../dotnet/user-defined-operators-cpp-cli.md)」を参照してください。  
+ また、インスタンス演算子では、参照されたメタデータを使用して他の言語コンパイラを使用できません。 詳細については、次を参照してください。[ユーザー定義の演算子 (C + + CLI)](../../dotnet/user-defined-operators-cpp-cli.md)です。  
   
-## 使用例  
- 次の例では C4383 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4383 を生成します。  
   
 ```  
 // C4383.cpp  

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - __uncaught_exception
 apilocation:
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - __uncaught_exception
 ms.assetid: 4d9b75c6-c9c7-4876-b761-ea9ab1925e96
-caps.latest.revision: 2
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 496947e60ab3a2b32a12b52700610aa4878ad2d0
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 2b43a6b08087dcaeeda7959eaadbee9c250f4de9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="uncaughtexception"></a>__uncaught_exception
 1 つまたは複数の例外がスローされたが、[try-catch](../../cpp/try-throw-and-catch-statements-cpp.md) ステートメントの対応する `catch` ブロックによってまだ処理されていないことを示します。  
@@ -55,11 +56,11 @@ bool __uncaught_exception(
   
 ## <a name="remarks"></a>コメント  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |__uncaught_exception|eh.h|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [try、throw、catch ステートメント (C++)](../../cpp/try-throw-and-catch-statements-cpp.md)

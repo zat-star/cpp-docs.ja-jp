@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.strings
-dev_langs: C++
+f1_keywords:
+- c.strings
+dev_langs:
+- C++
 helpviewer_keywords:
 - country/region strings
 - localization, locale
@@ -16,15 +19,17 @@ helpviewer_keywords:
 - setlocale function
 - language strings
 ms.assetid: a0e5a0c5-5602-4da0-b65f-de3d6c8530a2
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 54a309b75d5e6b1773b7dd9bb294a1538397fd05
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f98014ae0a610c1618e971cd833523ff9535b6ff
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="locale-names-languages-and-countryregion-strings"></a>ロケール名、言語、および国/地域識別文字列
 `setlocale` および `_create_locale` 関数の*ロケール*引数は、Windows NLS API でサポートされているロケール名、言語、国/地域コード、コード ページなどを使用して設定できます。 *ロケール*引数は次の形式になります。  
@@ -58,7 +63,7 @@ _wsetlocale(LC_ALL, L"de-DE");
 _wsetlocale(LC_ALL, L"LC_MONETARY=en-GB;LC_TIME=es-ES");  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C ランタイム ライブラリ リファレンス](../c-runtime-library/c-run-time-library-reference.md)   
  [_get_current_locale](../c-runtime-library/reference/get-current-locale.md)   
  [setlocale、_wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)   

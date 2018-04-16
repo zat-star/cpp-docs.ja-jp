@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,18 +24,22 @@ f1_keywords:
 - and_eq
 - std.and_eq
 - std::and_eq
-dev_langs: C++
-helpviewer_keywords: and_eq macro
+dev_langs:
+- C++
+helpviewer_keywords:
+- and_eq macro
 ms.assetid: 11091772-e359-4c2b-95c6-00841ac04354
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9314242e8251c1cecb246fa7ee9f47e270b7a97c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ebe5ea2c4dc85adf5f194de39240eaa96c4ab321
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="andeq"></a>and_eq
 &= 演算子の代替手段。  
@@ -76,5 +81,5 @@ int main( )
 2  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iso646.h>

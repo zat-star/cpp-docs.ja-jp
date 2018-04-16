@@ -1,69 +1,71 @@
 ---
-title: "CCommand::Create | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CCommand.Create"
-  - "CCommand::Create"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Create メソッド [C++]"
+title: "Ccommand::create |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CCommand.Create
+- CCommand::Create
+dev_langs:
+- C++
+helpviewer_keywords:
+- Create method [C++]
 ms.assetid: e4bede7a-68bd-491a-97f4-89b03d45cd24
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 113d1e67197dd85acbec7ccffb93a3be7537d679
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CCommand::Create
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[CCommand::CreateCommand](../Topic/CCommand::CreateCommand.md) を指定したセッションのコマンドを作成するには、And はコマンド テキストを指定するに [ICommandText::SetCommandText](https://msdn.microsoft.com/en-us/library/ms709825.aspx) を呼び出します。  
+# <a name="ccommandcreate"></a>CCommand::Create
+呼び出し[ccommand::createcommand](../../data/oledb/ccommand-createcommand.md)指定したセッションのコマンドを作成するを呼び出して[icommandtext::setcommandtext](https://msdn.microsoft.com/en-us/library/ms709825.aspx)コマンド テキストを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
-      HRESULT CCommandBase::Create(  
-   const CSession& session,   
+```cpp
+HRESULT CCommandBase::Create(const CSession& session,   
    LPCWSTR wszCommand,   
-   REFGUID guidCommand = DBGUID_DEFAULT  
-) throw ( );  
-HRESULT CCommandBase::Create(  
-   const CSession& session,   
+   REFGUID guidCommand = DBGUID_DEFAULT) throw ();  
+
+
+HRESULT CCommandBase::Create(const CSession& session,   
    LPCSTR szCommand,   
-   REFGUID guidCommand = DBGUID_DEFAULT  
-) throw ( );  
+   REFGUID guidCommand = DBGUID_DEFAULT) throw ();  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `session`  
- \[\]コマンドを作成しているセッション。  
+ [in]コマンドを作成するセッションです。  
   
  `wszCommand`  
- \[\]コマンド文字列を Unicode テキストへのポインター。  
+ [in]コマンド文字列の Unicode テキストへのポインター。  
   
  `szCommand`  
- \[\]コマンド文字列を ANSI テキストへのポインター。  
+ [in]コマンド文字列の ANSI テキストへのポインター。  
   
  `guidCommand`  
- \[\]プロバイダーのコマンド テキストの解析に使用する構文、一般的な規則を指定する入力 GUID。  言語の詳細については、*OLE DB Programmer's Reference*の [ICommandText::GetCommandText](https://msdn.microsoft.com/en-us/library/ms709825.aspx) を参照してください。  
+ [in]コマンド テキストを解析中に、構文と使用するプロバイダーの一般的な規則を指定する GUID です。 言語仕様の説明は、次を参照してください。 [ICommandText::GetCommandText](https://msdn.microsoft.com/en-us/library/ms709825.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- **作成** の最初のフォームは Unicode のコマンド文字列が使用されます。  **作成** の 2 番目のフォームは ANSI コマンド文字列を受け取ります \(ある ANSI アプリケーションを下位互換性に指定\)。  
+## <a name="remarks"></a>コメント  
+ 最初のフォーム**作成**Unicode コマンド文字列を使用します。 2 番目の形式の**作成**(既存の ANSI アプリケーションの旧バージョンと互換性のための指定) ANSI コマンド文字列を使用します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CCommand クラス](../../data/oledb/ccommand-class.md)

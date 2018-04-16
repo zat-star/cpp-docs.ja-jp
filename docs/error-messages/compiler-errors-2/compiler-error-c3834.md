@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3834
 ms.assetid: 059e0dc4-300b-4e74-b6c2-41a57831fe2a
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e586de68a14044ac2907ebbd086bb7469e53a7d1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 8a827b2abe6352f083dbd21bdd9647af9b3b1f5c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3834"></a>コンパイラ エラー C3834
 無効な明示的なキャスト ピンされたポインターへピンされたローカル変数を代わりに使用します。  
@@ -44,4 +45,3 @@ int main() {
    pin_ptr<int> p2 = &x;   // OK  
 }  
 ```  
-

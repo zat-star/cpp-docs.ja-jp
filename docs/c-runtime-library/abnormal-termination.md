@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname: _abnormal_termination
+apiname:
+- _abnormal_termination
 apilocation:
 - msvcr110.dll
 - msvcr110_clr0400.dll
@@ -17,19 +19,24 @@ apilocation:
 - msvcr80.dll
 - msvcr100.dll
 apitype: DLLExport
-f1_keywords: _abnormal_termination
-dev_langs: C++
-helpviewer_keywords: _abnormal_termination
+f1_keywords:
+- _abnormal_termination
+dev_langs:
+- C++
+helpviewer_keywords:
+- _abnormal_termination
 ms.assetid: 952970a4-9586-4c3d-807a-db729448c91c
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 17dbe8079972626439f2706061258265303f5226
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fc205afd297c7cce87ae630369551e02f3109d88
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="abnormaltermination"></a>_abnormal_termination
 システムが終了ハンドラーの内部リストの実行中に、[try-finally ステートメント](../cpp/try-finally-statement.md)の `__finally` ブロックが入力されているかどうかを示します。  
@@ -47,11 +54,11 @@ int   _abnormal_termination(
 ## <a name="remarks"></a>コメント  
  これは、アンワインドの例外を管理するために使用される内部関数で、ユーザー コードから呼び出されるものではありません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |_abnormal_termination|excpt.h|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [try-finally ステートメント](../cpp/try-finally-statement.md)

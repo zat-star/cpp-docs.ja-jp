@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C2767 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2767 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C2767
@@ -19,12 +19,13 @@ caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8fe74f9374a6fb74a514fd2655b2e1dbadf02639
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 9147d85afaee50a2b0c2e47debe5603d6e208712
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2767"></a>コンパイラ エラー C2767
 マネージ型または WinRTarray ディメンションの不一致: N 個の引数 - M が設定されますが必要です  

@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CHeaderCtrl class [MFC], creating
 - header controls [MFC], creating
 ms.assetid: 7864d9d2-4a2c-4622-b58b-7b110a1e28d2
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c47e458d4cd6e9df556eef5e1f61806633208011
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 33f536a86a21e56eb36e546109f916ae5d6ca806
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-the-header-control"></a>ヘッダー コントロールの作成
 ヘッダー コントロールがダイアログ エディターで直接使用できます (ただし、ヘッダー コントロールが含まれるリスト コントロールを追加することができます)  
@@ -49,7 +53,7 @@ ms.lasthandoff: 10/24/2017
   
  詳細については、次を参照してください。[ヘッダー コントロールの作成](http://msdn.microsoft.com/library/windows/desktop/bb775238)Windows SDK に含まれています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CHeaderCtrl の使い方](../mfc/using-cheaderctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

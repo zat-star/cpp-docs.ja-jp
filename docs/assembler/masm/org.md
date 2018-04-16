@@ -1,32 +1,36 @@
 ---
-title: "ORG | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ORG"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ORG directive"
+title: ORG | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ORG
+dev_langs:
+- C++
+helpviewer_keywords:
+- ORG directive
 ms.assetid: ab654827-99dd-4018-b27e-f29a7bb392eb
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d4ba01dddae8baa145d4cb62d9b036879d30a921
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# ORG
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-*式*  にカウンター メモリ位置を設定します。  
+# <a name="org"></a>ORG
+場所を設定しますカウンターを*式*です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,5 +39,5 @@ expression
   
 ```  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

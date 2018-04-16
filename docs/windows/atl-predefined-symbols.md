@@ -1,46 +1,51 @@
 ---
-title: "ATL Predefined Symbols | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "symbols, ATL predefined"
-  - "ATL symbols"
+title: "ATL の定義済みシンボル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- symbols, ATL predefined
+- ATL symbols
 ms.assetid: 60d8f4e6-6ed9-47f3-9051-e4bf34384456
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: d56fcfa8fb65f183acfe96c3981023d06f5e524a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ATL Predefined Symbols
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-以下に示すシンボルは ATL ヘッダー ファイルに定義されていますが、標準の Windows アプリケーションの関数とアクションをサポートします。  これらのシンボルは主にダイアログ ボックスで使用されます。  [ダイアログ エディター](../mfc/dialog-editor.md)でダイアログ ボックスとコントロールを扱う場合は、これらのシンボルはコモン コントロールに関連付けられて、\[プロパティ\] ウィンドウに表示されます。  たとえば、ダイアログ ボックスに \[キャンセル\] ボタンがある場合、そのコマンドは [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)のシンボル IDCANCEL に関連付けられます。  
+# <a name="atl-predefined-symbols"></a>ATL の定義済みシンボル
+ATL ヘッダー ファイルでこれらのシンボルが定義されているが、標準の Windows アプリケーションの関数とアクションをサポートします。 これらのシンボルは、ダイアログ ボックスで主に使用されます。 ダイアログ ボックス コントロールで作業しているときに、[ダイアログ エディター](../windows/dialog-editor.md)、コモン コントロールに関連付けられたプロパティ ウィンドウでこれらのシンボルが表示されます。 たとえば、ダイアログ ボックスに [キャンセル] ボタンがある場合は、そのコマンドに関連付けられるシンボル IDCANCEL で、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)します。  
   
 |||  
 |-|-|  
-|IDABORT|コントロール : ダイアログ ボックスの \[中止\] ボタン|  
-|IDC\_STATIC|コントロール : 静的コントロール|  
-|IDCANCEL|コントロール : ダイアログ ボックスの \[キャンセル\] ボタン|  
-|IDIGNORE|コントロール : ダイアログ ボックスの \[無視\] ボタン|  
-|IDNO|コントロール : ダイアログ ボックスの \[いいえ\] ボタン|  
-|IDOK|コントロール : ダイアログ ボックスの \[OK\] ボタン|  
-|IDR\_ACCELERATOR1|リソース : アクセラレータ テーブル|  
-|IDRETRY|コントロール : ダイアログ ボックスの \[再試行\] ボタン|  
-|IDS\_PROJNAME|文字列 : 現在のアプリケーション名|  
-|IDYES|コントロール : ダイアログ ボックスの \[はい\] ボタン|  
+|IDABORT|コントロール: ダイアログ ボックスの 中止 ボタン|  
+|IDC_STATIC|Control: 静的コントロール|  
+|IDCANCEL|コントロール: ダイアログ ボックスの キャンセル ボタン|  
+|IDIGNORE|コントロール: ダイアログ ボックス 無視 ボタン|  
+|IDNO|制御: ダイアログ ボックスがないボタン|  
+|IDOK|コントロール: ダイアログ ボックスの OK ボタン|  
+|IDR_ACCELERATOR1|リソース: アクセラレータ テーブル|  
+|IDRETRY|コントロール: ダイアログ ボックスの 再試行|  
+|IDS_PROJNAME|現在のアプリケーション名を文字列:|  
+|IDYES|コントロール: ダイアログ ボックスの はい ボタンします。|  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  ATL  
   
-## 参照  
- [Predefined Symbol IDs](../windows/predefined-symbol-ids.md)   
- [Symbols: Resource Identifiers](../mfc/symbols-resource-identifiers.md)
+## <a name="see-also"></a>参照  
+ [定義済みシンボル Id](../windows/predefined-symbol-ids.md)   
+ [シンボル: リソース識別子](../windows/symbols-resource-identifiers.md)

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -23,7 +24,8 @@ f1_keywords:
 - AFXINET/CInternetSession::OpenURL
 - AFXINET/CInternetSession::SetCookie
 - AFXINET/CInternetSession::SetOption
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CInternetSession [MFC], CInternetSession
 - CInternetSession [MFC], Close
@@ -39,15 +41,17 @@ helpviewer_keywords:
 - CInternetSession [MFC], SetCookie
 - CInternetSession [MFC], SetOption
 ms.assetid: ef54feb4-9d0f-4e65-a45d-7a4cf6c40e51
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 12648a44b30e7e9cc883db6395b1c806cb7d6513
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e7aad2f6ce26fd5ca9ed0ec323a8fcb05ac17f7c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cinternetsession-class"></a>CInternetSession クラス
 単一のインターネット セッションまたは複数の同時インターネット セッションを作成し、初期化します。必要な場合は、プロキシ サーバーへの接続も記述します。  
@@ -116,7 +120,7 @@ class CInternetSession : public CObject
   
  `CInternetSession`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxinet.h  
   
 ##  <a name="cinternetsession"></a>CInternetSession::CInternetSession  
@@ -425,7 +429,7 @@ virtual void OnStatusCallback(
   
  `dwInternetStatus`パラメーターは、実行中の操作を示すしの内容を決定`lpvStatusInformation`になります。 `dwStatusInformationLength`含まれるデータの長さを示す`lpvStatusInformation`です。 次の状態の値を`dwInternetStatus`次のように定義されます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |`INTERNET_STATUS_RESOLVING_NAME`|含まれている名前の IP アドレスの検索`lpvStatusInformation`です。|  
 |`INTERNET_STATUS_NAME_RESOLVED`|含まれている名前の IP アドレスを正常に見つかった`lpvStatusInformation`です。|  
@@ -583,7 +587,7 @@ BOOL SetOption(
 ### <a name="return-value"></a>戻り値  
  操作が成功した場合、値は**TRUE**が返されます。 エラーが発生しました、値の場合**FALSE**が返されます。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのに呼び出せる可能性があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [関数クラス](../../mfc/reference/cinternetconnection-class.md)   

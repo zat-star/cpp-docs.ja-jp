@@ -4,13 +4,15 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - else
 - if
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - if keyword [C]
 - else clauses
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - if keyword [C], if statement syntax
 - nested statements
 ms.assetid: d7fc16a0-fdbc-4f39-b596-76e1ca4ad4a5
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1f7d7e43ab50cc50321aea79aad200231f719c3d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cb0e4929b55d6cfc0ef01ee183b74b2439b85d10
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="if-statement-c"></a>if ステートメント (C)
 **if** ステートメントは、条件分岐を制御します。 **if** ステートメントの本体は、式の値が 0 でないの場合に実行されます。 **if** ステートメントの構文には 2 とおりの形式があります。  

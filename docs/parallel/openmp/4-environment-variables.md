@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 4ec7ed81-e9ca-46a1-84f8-8f9ce4587346
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5fcd308f21d66535a983e70506fe91afb5c7042f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cef1bac78afbcc8b852c3bd42e0904e1963137c8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="4-environment-variables"></a>4.環境変数
 OpenMP C および C++ API の環境変数 (または同等のプラットフォーム固有のメカニズム) を説明並列コードの実行を制御します。  環境変数の名前を大文字にする必要があります。 割り当てられている値は大文字と小文字であり、先頭および末尾の空白文字があります。  プログラムが開始した後の値に変更は無視されます。  

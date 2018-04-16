@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: rmtmp
+ms.topic: reference
+apiname:
+- rmtmp
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,19 +22,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: rmtmp
-dev_langs: C++
-helpviewer_keywords: rmtmp function
+f1_keywords:
+- rmtmp
+dev_langs:
+- C++
+helpviewer_keywords:
+- rmtmp function
 ms.assetid: d79f0364-39e8-42fb-a73a-63c22a646cd8
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d774d116afbd06c24a27101cdbeaf6c8602aac2f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 58d76dc44882092858c65fab5c4eac4be0336b32
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="rmtmp"></a>rmtmp
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_rmtmp](../../c-runtime-library/reference/rmtmp.md) を使用してください。

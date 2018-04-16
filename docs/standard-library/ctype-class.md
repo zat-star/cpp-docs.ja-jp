@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xlocale/std::ctype
 - xlocale/std::ctype::char_type
@@ -24,7 +25,8 @@ f1_keywords:
 - xlocale/std::ctype::tolower
 - xlocale/std::ctype::toupper
 - xlocale/std::ctype::widen
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::ctype [C++]
 - std::ctype [C++], char_type
@@ -43,15 +45,17 @@ helpviewer_keywords:
 - std::ctype [C++], toupper
 - std::ctype [C++], widen
 ms.assetid: 3627154c-49d9-47b5-b28f-5bbedee38e3b
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 10bc57e29383386df63de4cd6f27299a8f9986a6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d0403dd297d726f0d0ef1ab7794d37b05c46967b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ctype-class"></a>ctype クラス
 文字の分類、大文字と小文字の変換、およびネイティブ文字セットとロケールで使用される文字セットとの変換に使用されるふぁセットを提供するクラス。  
@@ -115,7 +119,7 @@ class ctype : public ctype_base;
 |[toupper](#toupper)|文字または文字の範囲を大文字に変換します。|  
 |[widen](#widen)|ネイティブ文字セットの `char` 型の文字を、ロケールで使用される `CharType` 型の対応する文字に変換します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
@@ -151,7 +155,7 @@ explicit ctype(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: これらの値が定義されていません。  
   
  デストラクターが保護されているため、利用できる直接的な例はありません。  
   
@@ -806,7 +810,7 @@ Hello everyone!
 Hello everyone!  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<locale>](../standard-library/locale.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

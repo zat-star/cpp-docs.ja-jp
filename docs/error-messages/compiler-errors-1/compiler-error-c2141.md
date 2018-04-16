@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2141
-dev_langs: C++
-helpviewer_keywords: C2141
+f1_keywords:
+- C2141
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2141
 ms.assetid: 10cf770f-0500-4220-ac90-a863b7ea5fe6
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 641e8cec02ced5bb61f60932fb90a2dc2c4afea0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 895887efad44b190d213e2e237a35e80d682b0ab
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2141"></a>コンパイラ エラー C2141
 配列サイズのオーバーフロー  

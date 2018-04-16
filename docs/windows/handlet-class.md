@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: corewrappers/Microsoft::WRL::Wrappers::HandleT
-dev_langs: C++
-helpviewer_keywords: HandleT class
+f1_keywords:
+- corewrappers/Microsoft::WRL::Wrappers::HandleT
+dev_langs:
+- C++
+helpviewer_keywords:
+- HandleT class
 ms.assetid: 3822b32a-a426-4d94-a54d-919d4df60ee2
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 293be59e15ca91254cad520a6d7fbf84410ed8e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 0ff7261735149abb8db607c5fc0cd4aa837fdfd7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="handlet-class"></a>HandleT クラス
 オブジェクトへのハンドルを表します。  
@@ -76,17 +83,17 @@ class HandleT;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[HandleT::handle_ データ メンバー](../windows/handlet-handle-data-member.md)|HandleT オブジェクトによって表されるハンドルが含まれています。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `HandleT`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Wrappers 名前空間](../windows/microsoft-wrl-wrappers-namespace.md)

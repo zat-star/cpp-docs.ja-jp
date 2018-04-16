@@ -1,50 +1,53 @@
 ---
-title: "Ierrorrecordsimpl::adderrorrecord |Microsoft ドキュメント"
+title: IErrorRecordsImpl::AddErrorRecord | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - IErrorRecordsImpl.AddErrorRecord
 - AddErrorRecord
 - IErrorRecordsImpl::AddErrorRecord
-dev_langs: C++
-helpviewer_keywords: AddErrorRecord method
+dev_langs:
+- C++
+helpviewer_keywords:
+- AddErrorRecord method
 ms.assetid: b5f8e9ae-509d-454f-b511-4bda7e972607
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2962800465c06a0a2c780f26a8e00741db378358
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 63b2a768a3670a5c1d81c44cafe2dd3c893ba9c2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ierrorrecordsimpladderrorrecord"></a>IErrorRecordsImpl::AddErrorRecord
 OLE DB エラー オブジェクトをレコードを追加します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      STDMETHOD( AddErrorRecord )(  
-   ERRORINFO *pErrorInfo,  
+```cpp
+      STDMETHOD(AddErrorRecord )(ERRORINFO *pErrorInfo,  
    DWORD dwLookupID,  
    DISPPARAMS *pdispparams,  
    IUnknown *punkCustomError,  
-   DWORD dwDynamicErrorID   
-);  
+   DWORD dwDynamicErrorID);  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
  参照してください[IErrorRecords::AddErrorRecord](https://msdn.microsoft.com/en-us/library/ms725362.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IErrorRecordsImpl クラス](../../data/oledb/ierrorrecordsimpl-class.md)

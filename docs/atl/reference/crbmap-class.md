@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,18 +15,22 @@ f1_keywords:
 - ATLCOLL/ATL::CRBMap::Lookup
 - ATLCOLL/ATL::CRBMap::RemoveKey
 - ATLCOLL/ATL::CRBMap::SetAt
-dev_langs: C++
-helpviewer_keywords: CRBMap class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CRBMap class
 ms.assetid: 658e94dc-e835-4356-aed1-1513e1f66969
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 127f8b0448d141917193d41d11d5ed95576ff482
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3cfa4d6fff6b46341f01b4d5ce18d9ec418738bf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="crbmap-class"></a>CRBMap クラス
 このクラスは、赤、黒のバイナリ ツリーを使用して、マッピング構造体を表します。  
@@ -88,7 +93,7 @@ class CRBMap : public CRBTree<K, V, KTraits, VTraits>
   
  `CRBMap`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcoll.h  
   
 ##  <a name="crbmap"></a>CRBMap::CRBMap  
@@ -135,7 +140,7 @@ CPair* Lookup(KINARGTYPE key) throw();
  `key`  
  検索する要素を識別するキーを指定します。  
   
- *value*  
+ *値*  
  検索された値を受け取る変数。  
   
 ### <a name="return-value"></a>戻り値  
@@ -180,7 +185,7 @@ POSITION SetAt(
  `key`  
  追加するキー値、`CRBMap`オブジェクト。  
   
- *value*  
+ *値*  
  追加する値、`CRBMap`オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
@@ -194,7 +199,7 @@ POSITION SetAt(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#84](../../atl/codesnippet/cpp/crbmap-class_4.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRBTree クラス](../../atl/reference/crbtree-class.md)   
  [CAtlMap クラス](../../atl/reference/catlmap-class.md)   
  [CRBMultiMap クラス](../../atl/reference/crbmultimap-class.md)   

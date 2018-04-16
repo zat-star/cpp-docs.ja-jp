@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _ftelli64
 - ftell
@@ -26,7 +27,8 @@ apitype: DLLExport
 f1_keywords:
 - _ftelli64
 - ftell
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ftell function
 - ftelli64 function
@@ -34,15 +36,17 @@ helpviewer_keywords:
 - file pointers [C++], getting current position
 - file pointers [C++]
 ms.assetid: 40149cd8-65f2-42ff-b70c-68e3e918cdd7
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4b37db89ca7d9e3facb7de2fbce2dc819cfa03e8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b7bb0c1954d79261298cccccec980fa446d0cf00
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ftell-ftelli64"></a>ftell、_ftelli64
 ファイル ポインターの現在の位置を取得します。  
@@ -76,14 +80,14 @@ __int64 _ftelli64(
   
  この関数は実行中に呼び出し元スレッドをロックするため、スレッド セーフです。 ロックしないバージョンについては、「`_ftell_nolock`」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|省略可能なヘッダー|  
 |--------------|---------------------|----------------------|  
 |`ftell`|\<stdio.h>|\<errno.h>|  
 |`_ftelli64`|\<stdio.h>|\<errno.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -119,7 +123,7 @@ int main( void )
 Position after trying to read 100 bytes: 100  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
  [fgetpos](../../c-runtime-library/reference/fgetpos.md)   

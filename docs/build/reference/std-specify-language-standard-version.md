@@ -1,26 +1,29 @@
 ---
-title: "-std (言語の標準的なバージョンの指定) |Microsoft ドキュメント"
-ms.custom: 
+title: -std (言語の標準的なバージョンの指定) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/16/2017
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - /std
 - -std
 - VC.Project.VCCLCompilerTool.CppLanguageStandard
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 0acb74ba-1aa8-4c05-b96c-682988dc19bd
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d5397af7c83865d833b9a57a9baaf380aa207ca8
-ms.sourcegitcommit: 78f3f8208d49b7c1d87f4240f4a1496b7c29333e
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cb248f4c7ce1d9520bc328ed59b75ff081659996
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="std-specify-language-standard-version"></a>/std (言語の標準的なバージョンの指定)
 

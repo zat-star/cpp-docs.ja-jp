@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - improper_scheduler_attach
 - CONCRT/concurrency::improper_scheduler_attach
 - CONCRT/concurrency::improper_scheduler_attach::improper_scheduler_attach
-dev_langs: C++
-helpviewer_keywords: improper_scheduler_attach class
+dev_langs:
+- C++
+helpviewer_keywords:
+- improper_scheduler_attach class
 ms.assetid: 5a76da0a-091b-4748-8f62-b3a28f674f9e
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c33190f973ace4492597ddd1309297516c7415a0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0f6bcf9a03db1d604e2ff16dcf92758b7fdc88b5
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="improperschedulerattach-class"></a>improper_scheduler_attach クラス
 このクラスは、現在のコンテキストに既にアタッチされている `Attach` オブジェクトで `Scheduler` メソッドが呼び出された場合にスローされる例外を表します。  
@@ -46,12 +51,12 @@ class improper_scheduler_attach : public std::exception;
   
  `improper_scheduler_attach`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>improper_scheduler_attach 
+##  <a name="ctor"></a> improper_scheduler_attach 
 
  `improper_scheduler_attach` オブジェクトを構築します。  
   
@@ -65,6 +70,6 @@ improper_scheduler_attach() throw();
  `_Message`  
  エラーの説明メッセージ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [Scheduler クラス](scheduler-class.md)

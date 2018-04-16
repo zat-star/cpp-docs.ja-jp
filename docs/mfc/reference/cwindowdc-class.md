@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,20 +13,23 @@ f1_keywords:
 - AFXWIN/CWindowDC
 - AFXWIN/CWindowDC::CWindowDC
 - AFXWIN/CWindowDC::m_hWnd
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CWindowDC [MFC], CWindowDC
 - CWindowDC [MFC], m_hWnd
 ms.assetid: 876a3641-4cde-471c-b0d1-fe58b32af79c
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6d31f2dd9ce5855a6d31bf5896643de72cb6135a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9bc3219ff6570fab18b19f350f7dca3171ab4832
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cwindowdc-class"></a>CWindowDC クラス
 `CDC`の派生クラスです。  
@@ -46,7 +50,7 @@ class CWindowDC : public CDC
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CWindowDC::m_hWnd](#m_hwnd)|`HWND` の割り当て先である `CWindowDC`。|  
   
@@ -62,7 +66,7 @@ class CWindowDC : public CDC
   
  `CWindowDC`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  ヘッダー: afxwin.h  
   
 ##  <a name="cwindowdc"></a>CWindowDC::CWindowDC  
@@ -97,7 +101,7 @@ HWND m_hWnd;
 ### <a name="example"></a>例  
   例を参照して[CWindowDC::CWindowDC](#cwindowdc)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDC クラス](../../mfc/reference/cdc-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CDC クラス](../../mfc/reference/cdc-class.md)

@@ -24,16 +24,17 @@ dev_langs:
 helpviewer_keywords:
 - IEnumOnSTLImpl class
 ms.assetid: 1789e77b-88b8-447d-a490-806b918912ce
-caps.latest.revision: 20
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 38d645f7841cb71af9812bd1d62a979752a0343d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 98fb3d4562abc75f1023201a5bb7939275bb173f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ienumonstlimpl-class"></a>つまりクラス
 このクラスは、C++ 標準ライブラリ コレクションに基づく列挙子インターフェイスを定義します。  
@@ -97,7 +98,7 @@ class ATL_NO_VTABLE IEnumOnSTLImpl : public Base
   
  `IEnumOnSTLImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="init"></a>保ちます  
@@ -212,6 +213,5 @@ STDMETHOD(Skip)(ULONG celt);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)
-

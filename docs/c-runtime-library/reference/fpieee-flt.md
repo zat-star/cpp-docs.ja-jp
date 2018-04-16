@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _fpieee_flt
+ms.topic: reference
+apiname:
+- _fpieee_flt
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,22 +26,25 @@ apitype: DLLExport
 f1_keywords:
 - fpieee_flt
 - _fpieee_flt
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _fpieee_flt function
 - exception handling, floating-point
 - floating-point exception handling
 - fpieee_flt function
 ms.assetid: 2bc4801e-0eed-4e73-b518-215da8cc9740
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f2e3f91d2baca3829538d199ce000d56a7be24d4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 88d05d4d8c7f403cc2702c5a0ec3b2af840bd320
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fpieeeflt"></a>_fpieee_flt
 IEEE 浮動小数点例外用のユーザー定義トラップ ハンドラーを呼び出します。  
@@ -81,13 +86,13 @@ int _fpieee_flt(
   
  無効になっている保留中の例外は、有効にされたときに発生します。 このため、`_fpieee_flt` を例外フィルターとして使用した場合に、未定義の動作が生じることがあります。 浮動小数点例外を有効にする前に、必ず [_clearfp](../../c-runtime-library/reference/clear87-clearfp.md) を呼び出してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_fpieee_flt`|\<fpieee.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -156,7 +161,7 @@ int main( void )
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [_control87、_controlfp、\__control87_2](../../c-runtime-library/reference/control87-controlfp-control87-2.md)   
  [_controlfp_s](../../c-runtime-library/reference/controlfp-s.md)

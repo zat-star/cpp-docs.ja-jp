@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - local variables, lifetime
 - variables, automatic
@@ -24,15 +26,17 @@ helpviewer_keywords:
 - lifetime
 - global variables, lifetime
 ms.assetid: ff0b42cb-3f0f-49a3-a94f-d1d825d8ddfe
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ac1e1904ea5b1d7280f614ec65af2be71f862104
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8ce98025001529313260f62e8f45e85add148c77
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lifetime"></a>有効期間
 「有効期間」は、変数または関数が存在するプログラムが実行中である期間です。 識別子のストレージ存続期間でその有効期間が決まります。  
@@ -51,5 +55,5 @@ ms.lasthandoff: 10/24/2017
   
  `malloc` などの特別なライブラリ ルーチンを使用して作成された場合は、必要に応じて (動的に) メモリを割り当てることができます。 動的メモリ割り当てはライブラリ ルーチンを使用するため、言語の一部とは見なされません。 「*ランタイム ライブラリ リファレンス*」の [malloc](../c-runtime-library/reference/malloc.md) 関数を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [有効期間、スコープ、可視性、およびリンケージ](../c-language/lifetime-scope-visibility-and-linkage.md)

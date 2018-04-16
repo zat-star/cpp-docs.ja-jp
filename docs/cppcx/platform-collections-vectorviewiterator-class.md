@@ -6,20 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: COLLECTION/Platform::Collections::VectorViewIterator::VectorViewIterator
-dev_langs: C++
-helpviewer_keywords: VectorViewIterator Class
+ms.topic: reference
+f1_keywords:
+- COLLECTION/Platform::Collections::VectorViewIterator::VectorViewIterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- VectorViewIterator Class
 ms.assetid: be3aa1ae-e6ba-4a06-8d6b-86d8128026f7
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 9c7d0c53464a000f74a4e552694e40af9d201992
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4e2bd8992477ccf50aed78107fcf7edc0f8d13fb
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcollectionsvectorviewiterator-class"></a>Platform::Collections::VectorViewIterator クラス
 Windows ランタイムの派生オブジェクトの標準テンプレート ライブラリ反復子を提供`IVectorView`インターフェイスです。  
@@ -53,7 +58,7 @@ class VectorViewIterator;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Vectorviewiterator::vectorviewiterator](#ctor)|VectorViewIterator クラスの新しいインスタンスを初期化します。|  
+|[VectorViewIterator::VectorViewIterator](#ctor)|VectorViewIterator クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -63,7 +68,7 @@ class VectorViewIterator;
 |[VectorViewIterator::operator-- 演算子](#operator-decrement)|現在の VectorViewIterator をデクリメントします。|  
 |[VectorViewIterator::operator!= 演算子](#operator-inequality)|現在の VectorViewIterator が、指定された VectorViewIterator と等しくないかどうかを示します。|  
 |[VectorViewIterator::operator* 演算子](#operator-dereference)|現在の VectorViewIterator により指定された要素への参照を取得します。|  
-|[Vectorviewiterator::operator\[\]](#operator-at)|現在の VectorViewIterator から指定数だけ転置された要素への参照を取得します。|  
+|[VectorViewIterator::operator\[\]](#operator-at)|現在の VectorViewIterator から指定数だけ転置された要素への参照を取得します。|  
 |[VectorViewIterator::operator+ 演算子](#operator-plus)|指定された VectorViewIterator から指定された転置にある要素を参照する VectorViewIterator を返します。|  
 |[VectorViewIterator::operator++ 演算子](#operator-increment)|現在の VectorViewIterator をインクリメントします。|  
 |[VectorViewIterator::operator+= 演算子](#operator-plus-assign)|指定された転置数だけ現在の VectorViewIterator をインクリメントします。|  
@@ -78,12 +83,12 @@ class VectorViewIterator;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `VectorViewIterator`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Platform::Collections  
 
-## <a name="operator-arrow"></a>Vectorviewiterator::operator-&gt;演算子
+## <a name="operator-arrow"></a>  Vectorviewiterator::operator-&gt;演算子
 現在の VectorViewIterator により参照される要素のアドレスを取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -99,7 +104,7 @@ Detail::ArrowProxy<T> operator->() const;
   
 
 
-## <a name="operator-decrement"></a>Vectorviewiterator::operator - 演算子
+## <a name="operator-decrement"></a>  Vectorviewiterator::operator - 演算子
 現在の VectorViewIterator をデクリメントします。  
   
 ### <a name="syntax"></a>構文  
@@ -119,7 +124,7 @@ VectorViewIterator operator--(int);
   
 
 
-## <a name="operator-dereference"></a>Vectorviewiterator::operator * 演算子
+## <a name="operator-dereference"></a>  Vectorviewiterator::operator * 演算子
 現在の VectorViewIterator により指定された要素への参照を取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -133,7 +138,7 @@ reference operator*() const;
   
 
 
-## <a name="operator-equality"></a>Vectorviewiterator::operator = = 演算子
+## <a name="operator-equality"></a>  Vectorviewiterator::operator = = 演算子
 現在の VectorViewIterator が、指定された VectorViewIterator と等しいかどうかを示します。  
   
 ### <a name="syntax"></a>構文  
@@ -147,11 +152,11 @@ bool operator==(const VectorViewIterator& other) const;
  別の VectorViewIterator。  
   
 ### <a name="return-value"></a>戻り値  
- `true`現在の VectorViewIterator と等しい場合`other`、それ以外の`false`します。  
+ `true` 現在の VectorViewIterator と等しい場合`other`、それ以外の`false`します。  
   
 
 
-## <a name="operator-greater-than"></a>Vectorviewiterator::operator&gt;演算子
+## <a name="operator-greater-than"></a>  Vectorviewiterator::operator&gt;演算子
 現在の VectorViewIterator が、指定された VectorViewIterator より大きいかどうかを示します。  
   
 ### <a name="syntax"></a>構文  
@@ -170,7 +175,7 @@ bool operator>(const VectorViewIterator& other) const;
   
 
 
-## <a name="operator-greater-than-or-equals"></a>Vectorviewiterator::operator&gt;= 演算子
+## <a name="operator-greater-than-or-equals"></a>  Vectorviewiterator::operator&gt;= 演算子
 現在の VectorViewIterator が、指定された VectorViewIterator 以上であるかどうかを示します。  
   
 ### <a name="syntax"></a>構文  
@@ -189,7 +194,7 @@ bool operator>=(const VectorViewIterator& other) const;
   
 
 
-## <a name="operator-increment"></a>Vectorviewiterator::operator++ 演算子
+## <a name="operator-increment"></a>  Vectorviewiterator::operator++ 演算子
 現在の VectorViewIterator をインクリメントします。  
   
 ### <a name="syntax"></a>構文  
@@ -210,7 +215,7 @@ VectorViewIterator operator++(int);
   
 
 
-## <a name="operator-inequality"></a>Vectorviewiterator::operator! = 演算子
+## <a name="operator-inequality"></a>  Vectorviewiterator::operator! = 演算子
 現在の VectorViewIterator が、指定された VectorViewIterator と等しくないかどうかを示します。  
   
 ### <a name="syntax"></a>構文  
@@ -224,11 +229,11 @@ bool operator!=(const VectorViewIterator& other) const;
  別の VectorViewIterator。  
   
 ### <a name="return-value"></a>戻り値  
- `true`現在の VectorViewIterator と等しくない場合`other`、それ以外の`false`します。  
+ `true` 現在の VectorViewIterator と等しくない場合`other`、それ以外の`false`します。  
   
 
 
-## <a name="operator-less-than"></a>Vectorviewiterator::operator&lt;演算子
+## <a name="operator-less-than"></a>  Vectorviewiterator::operator&lt;演算子
 現在の VectorIterator が、指定された VectorIterator より小さいかどうかを示します。  
   
 ### <a name="syntax"></a>構文  
@@ -246,7 +251,7 @@ bool operator<(const VectorViewIterator& other) const;
   
 
 
-## <a name="operator-less-than-or-equals"></a>Vectorviewiterator::operator&lt;= 演算子
+## <a name="operator-less-than-or-equals"></a>  Vectorviewiterator::operator&lt;= 演算子
 現在の VectorIterator が、指定された VectorIterator 以下かどうかを示します。  
   
 ### <a name="syntax"></a>構文  
@@ -261,11 +266,11 @@ bool operator<=(const VectorViewIterator& other) const;
  別の VectorIterator。  
   
 ### <a name="return-value"></a>戻り値  
- `true`かどうか、現在の VectorIterator より小さいかに等しい`other`、それ以外の`false`します。  
+ `true` かどうか、現在の VectorIterator より小さいかに等しい`other`、それ以外の`false`します。  
   
 
 
-## <a name="operator-minus"></a>Vectorviewiterator::operator-演算子
+## <a name="operator-minus"></a>  Vectorviewiterator::operator-演算子
 現在の反復子から指定した数の要素を減算して新しい反復子を生成するか、現在の反復子から指定した反復子を減算して反復子間の要素数を生成します。  
   
 ### <a name="syntax"></a>構文  
@@ -289,7 +294,7 @@ difference_type operator-(const VectorViewIterator& other) const;
   
 
 
-## <a name="operator-plus-equals"></a>Vectorviewiterator::operator + = 演算子
+## <a name="operator-plus-equals"></a>  Vectorviewiterator::operator + = 演算子
 指定された転置数だけ現在の VectorViewIterator をインクリメントします。  
   
 ### <a name="syntax"></a>構文  
@@ -307,7 +312,7 @@ VectorViewIterator& operator+=(difference_type n);
   
 
 
-## <a name="operator-plus"></a>Vectorviewiterator::operator + 演算子
+## <a name="operator-plus"></a>  Vectorviewiterator::operator + 演算子
 指定された VectorViewIterator から指定された転置にある要素を参照する VectorViewIterator を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -340,7 +345,7 @@ inline VectorViewIterator<T> operator+
   
 
 
-## <a name="operator-minus-assign"></a>Vectorviewiterator::operator-= 演算子
+## <a name="operator-minus-assign"></a>  Vectorviewiterator::operator-= 演算子
 指定されたディスプレイスメントだけ現在の VectorIterator をデクリメントします。  
   
 ### <a name="syntax"></a>構文  
@@ -358,7 +363,7 @@ VectorViewIterator& operator-=(difference_type n);
   
 
 
-## <a name="operator-at"></a>Vectorviewiterator::operator\[\]
+## <a name="operator-at"></a>  VectorViewIterator::operator\[\]
 現在の VectorViewIterator から指定数だけ転置された要素への参照を取得します。  
   
 ### <a name="syntax"></a>構文  
@@ -376,7 +381,7 @@ reference operator[](difference_type n) const;
   
 
 
-## <a name="ctor"></a>Vectorviewiterator::vectorviewiterator コンス トラクター
+## <a name="ctor"></a>  Vectorviewiterator::vectorviewiterator コンス トラクター
 VectorViewIterator クラスの新しいインスタンスを初期化します。  
   
 ### <a name="syntax"></a>構文  
@@ -399,5 +404,5 @@ explicit VectorViewIterator(
   
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)

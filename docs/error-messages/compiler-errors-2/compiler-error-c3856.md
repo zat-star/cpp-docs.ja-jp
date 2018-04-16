@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3856
-dev_langs: C++
-helpviewer_keywords: C3856
+f1_keywords:
+- C3856
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3856
 ms.assetid: 242d9322-c325-4f20-be58-b2be6da56d60
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9d2f74872939a2237f2c816e348242ebd58c8b3e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ba0be4ea7cf7d82ce8c0ee412f8373ea14f1162e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3856"></a>コンパイラ エラー C3856
 'type': クラスは、クラス型ではありません  
@@ -43,7 +49,7 @@ template <class T2>  // extra template parameter list in definition
 struct S<T>::S1{};  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C3856b.cpp  
@@ -77,7 +83,7 @@ generic <class V>
 ref struct GS<T>::GS2 {};   // C3856  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C3856d.cpp  

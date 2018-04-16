@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -15,8 +16,10 @@ apilocation:
 - msvcr80.dll
 - msvcr100.dll
 apitype: DLLExport
-f1_keywords: To
-dev_langs: C++
+f1_keywords:
+- To
+dev_langs:
+- C++
 helpviewer_keywords:
 - to functions
 - string conversion, to different characters
@@ -26,15 +29,17 @@ helpviewer_keywords:
 - case, converting
 - characters, converting
 ms.assetid: f636a4c6-8c9f-4be2-baac-064f9dbae300
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a77c4b80dc83f64b61fdd3b98f7971b5ef6e5e27
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ef97b5e5ab2c21b375814cf117d6155b4a502795
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="to-functions"></a>to 系関数
 各 **to** 関数と、もしあれば関連付けられているマクロは、任意の 1 文字を別の文字に変換します。  
@@ -47,7 +52,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  **to** 系関数とマクロの変換は以下のとおりです。  
   
-|ルーチン|マクロ|説明|  
+|ルーチンによって返される値|マクロ|説明|  
 |-------------|-----------|-----------------|  
 |`__toascii`|`__toascii`|`c` を ASCII 文字に変換する|  
 |`tolower`|`tolower`|該当する場合、`c` を小文字に変換する|  
@@ -119,7 +124,7 @@ Some of THESE letters are Capitals.
 sOME OF these LETTERS ARE cAPITALS.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../c-runtime-library/data-conversion.md)   
  [ロケール](../c-runtime-library/locale.md)   
  [is、isw 系ルーチン](../c-runtime-library/is-isw-routines.md)

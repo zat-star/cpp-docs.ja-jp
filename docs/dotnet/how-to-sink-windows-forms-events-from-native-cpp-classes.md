@@ -1,28 +1,33 @@
 ---
-title: "方法: ネイティブの C++ のクラスから Windows フォーム イベントをシンク |Microsoft ドキュメント"
-ms.custom: 
+title: '方法: ネイティブの C++ のクラスから Windows フォーム イベントをシンク |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - event handling, managed/native interop
 - event handling, sinking .NET in C++
 - event handling, .NET/native interop
 - event handling, Windows Forms in C++
 ms.assetid: 6e30ddee-d058-4c8d-9956-2a43d86f19d5
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d51cc4caa7a1018e85cc880cf45894abc861d250
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 2dd3778dad837ffe23d17b58b4e579844dc71f40
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-sink-windows-forms-events-from-native-c-classes"></a>方法: ネイティブ C++ クラスから Windows フォーム イベントをシンクする
 Windows フォーム コントロールまたは MFC マクロ マップ形式の他のフォームから発生した管理対象のイベントからのコールバックを受信するネイティブの C++ クラスを有効にすることができます。 ビューとダイアログでイベントをシンクは、コントロールに対して同じタスクの実行に似ています。  
@@ -65,7 +70,7 @@ Windows フォーム コントロールまたは MFC マクロ マップ形式�
     }  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MAKE_DELEGATE](../mfc/reference/delegate-and-interface-maps.md#make_delegate)   
  [BEGIN_DELEGATE_MAP](../mfc/reference/delegate-and-interface-maps.md#begin_delegate_map)   
  [END_DELEGATE_MAP](../mfc/reference/delegate-and-interface-maps.md#end_delegate_map)   

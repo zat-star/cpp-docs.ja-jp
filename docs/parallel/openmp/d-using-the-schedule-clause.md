@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: bf3d8f51-ea05-4803-bf55-657c12e91efe
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4a0566157f2dd4d9a278113f2246bd36671e3217
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b51eeb36a4cffafde0e90586fec08d28b9672e5d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="d-using-the-schedule-clause"></a>D: スケジュール句を使用します。
 並列領域には、少なくとも 1 つのバリア、末端で持ち内の別の障壁を必要があります。 各バリアで、チームの他のメンバーは到着する最後のスレッドを待つ必要があります。 すべてのスレッドがほぼ同時にバリアに到達できるようにこの待機時間を最小限に抑えるには、共有の作業を分散します。 作業が含まれている場合は、一部の共有**の**構築では、`schedule`句は、この目的で使用できます。  

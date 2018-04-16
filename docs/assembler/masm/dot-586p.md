@@ -1,25 +1,31 @@
 ---
-title: ".586P |Microsoft ドキュメント"
+title: .586P | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: .586P
-dev_langs: C++
-helpviewer_keywords: .586P directive
+ms.topic: reference
+f1_keywords:
+- .586P
+dev_langs:
+- C++
+helpviewer_keywords:
+- .586P directive
 ms.assetid: 90da2a7d-66f4-4073-b1a9-874de6e8f05d
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 05b19f12358b26f6afd82c64a636e367e9fcd7d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d19771f0a90c3fb1107591fdcf758ecb1ad2b698
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="586p"></a>.586P
 Pentium プロセッサのすべての手順 (特権も含む) のアセンブリを有効にします。  
@@ -32,5 +38,5 @@ Pentium プロセッサのすべての手順 (特権も含む) のアセンブ�
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

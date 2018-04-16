@@ -1,56 +1,58 @@
 ---
-title: "CSession::Commit | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CSession.Commit"
-  - "ATL.CSession.Commit"
-  - "ATL::CSession::Commit"
-  - "CSession::Commit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Commit メソッド"
+title: "Csession::commit |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CSession.Commit
+- ATL.CSession.Commit
+- ATL::CSession::Commit
+- CSession::Commit
+dev_langs:
+- C++
+helpviewer_keywords:
+- Commit method
 ms.assetid: 1d5f56b9-000c-4bae-a975-89d3452f499f
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: b348fe59d0ccda86f349e772b6e2bb00c901aa9b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CSession::Commit
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="csessioncommit"></a>CSession::Commit
 トランザクションをコミットします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```cpp
+HRESULT Commit(BOOL bRetaining = FALSE,   
+   DWORD grfTC = XACTTC_SYNC,   
+   DWORD grfRM = 0) const throw();  
 ```  
   
-      HRESULT Commit(   
-   BOOL bRetaining = FALSE,   
-   DWORD grfTC = XACTTC_SYNC,   
-   DWORD grfRM = 0    
-) const throw( );  
-```  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[itransaction::commit](https://msdn.microsoft.com/en-us/library/ms713008.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [ITransaction::Commit](https://msdn.microsoft.com/en-us/library/ms713008.aspx) を参照してください。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="remarks"></a>コメント  
+ 詳細については、次を参照してください。 [itransaction::commit](https://msdn.microsoft.com/en-us/library/ms713008.aspx)です。  
   
-## 解説  
- 詳細については、「[ITransaction::Commit](https://msdn.microsoft.com/en-us/library/ms713008.aspx)」を参照してください。  
-  
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CSession クラス](../../data/oledb/csession-class.md)

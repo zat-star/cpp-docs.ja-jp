@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C4163
-dev_langs: C++
-helpviewer_keywords: C4163
+f1_keywords:
+- C4163
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4163
 ms.assetid: b08413fd-03fc-4f41-9167-a98976ac12f2
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 91e8ac4b7e16a589ba15476414b5ae2f795d04e9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6eb19f9b848268835d7fbb42f8cf1548f08853c1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4163"></a>コンパイラの警告 (レベル 1) C4163
 'identifier': 組み込み関数として使用できません。  

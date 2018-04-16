@@ -1,32 +1,37 @@
 ---
-title: "InvokeHelper 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "event/Microsoft::WRL::Details::InvokeHelper"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "InvokeHelper 構造体"
+title: "InvokeHelper 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- event/Microsoft::WRL::Details::InvokeHelper
+dev_langs:
+- C++
+helpviewer_keywords:
+- InvokeHelper structure
 ms.assetid: 555ad2bc-4dd6-4e65-a2e2-1242c395f0e5
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: acabc6833e23c4f17bc337b67a89578bc95bbd6d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# InvokeHelper 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="invokehelper-structure"></a>InvokeHelper 構造体
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<  
@@ -87,50 +92,50 @@ template<
 struct InvokeHelper<TDelegateInterface, TCallback, 9> : Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `TDelegateInterface`  
  `TCallback`  
  イベント ハンドラー関数の型。  
   
  `argCount`  
- InvokeHelper の特化型引数の数。  
+ InvokeHelper の特殊化で引数の数。  
   
-## 解説  
- 引数の指定数と型に基づいて Invoke\(\) のメソッドの実装を提供します。  
+## <a name="remarks"></a>コメント  
+ 指定した数値と引数の型に基づく Invoke() メソッドの実装を提供します。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック typedef  
+### <a name="public-typedefs"></a>パブリック typedef  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |`Traits`|各イベント ハンドラーの引数の型を定義するクラスのシノニムです。|  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |[InvokeHelper::InvokeHelper コンストラクター](../windows/invokehelper-invokehelper-constructor.md)|InvokeHelper クラスの新しいインスタンスを初期化します。|  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[InvokeHelper::Invoke メソッド](../windows/invokehelper-invoke-method.md)|シグネチャが引数に指定された回数を含むイベント ハンドラーが呼び出されます。|  
+|----------|-----------------|  
+|[InvokeHelper::Invoke メソッド](../windows/invokehelper-invoke-method.md)|指定した数の引数を含むシグネチャを持つイベント ハンドラーを呼び出します。|  
   
-### パブリック データ メンバー  
+### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
-|--------|--------|  
-|[InvokeHelper::callback\_ データ メンバー](../windows/invokehelper-callback-data-member.md)|イベントが発生すると、イベント ハンドラーの呼び出しを表します。|  
+|----------|-----------------|  
+|[InvokeHelper::callback_ データ メンバー](../windows/invokehelper-callback-data-member.md)|イベントが発生したときに呼び出すイベント ハンドラーを表します。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `InvokeHelper`  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** event.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

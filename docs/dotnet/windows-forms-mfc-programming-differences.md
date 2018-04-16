@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC [C++], Windows Forms support
 - Windows Forms [C++], compared to MFC
 ms.assetid: f3bfcf45-cfd4-45a4-8cde-5f4dbb18ee51
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 42406e1736068ccd83ed957cacdc07a5129204a5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 696e7684eb91abbf41e3f7a2e1df20b6fa7e5c17
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="windows-formsmfc-programming-differences"></a>Windows フォームと MFC のプログラミング上の違い
 トピックでは、 [MFC における Windows フォーム ユーザー コントロールを使用して](../dotnet/using-a-windows-form-user-control-in-mfc.md)MFC Windows フォームのサポートについて説明します。 .NET Framework または MFC でのプログラミングにあまり慣れていない場合は、このトピックで、.NET Framework と MFC のプログラミング上の違いに関する背景情報を参照してください。  
@@ -63,6 +68,6 @@ ms.lasthandoff: 10/24/2017
   
      MFC にはコマンド更新機構があります。 このため、アクティブなビューまたはドキュメントが、UI 要素の状態 (メニュー項目やツール ボタンの有効化/無効化、チェック状態など) を管理します。 Windows フォームには、コマンド更新機構に相当する機構がありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC における Windows フォーム ユーザー コントロールを使用します。](../dotnet/using-a-windows-form-user-control-in-mfc.md)   
  [Windows フォームのチュートリアル](http://msdn.microsoft.com/en-us/fd44d13d-4733-416f-aefc-32592e59e5d9)

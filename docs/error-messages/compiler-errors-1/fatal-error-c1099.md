@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C1099
 ms.assetid: c050b074-a06a-4026-9e10-569029cc0739
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 928ced6fe9e283cf16db651ecbf6164164e3174e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 496ffdb68cb1cbb3023319ab3324a52bb1d9db9e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fatal-error-c1099"></a>致命的なエラー C1099
 エディット コンティニュ エンジンはコンパイルを終了しています。  

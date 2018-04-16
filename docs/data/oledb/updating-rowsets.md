@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - rowsets, updating data
 - updating data, rowsets
 - updating rowsets
 - rowsets
 ms.assetid: 39588758-5c72-4254-a10d-cc2b1f473357
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4cbc1937617885e845163ed7dd307cc02b86a314
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: fcb5794de2e0358e5c17cde5ac8e69fa9e3c08f6
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="updating-rowsets"></a>更新 (行セットを)
 データベースの基本の操作は、データ ストアの更新、つまりデータの書き込みです。 OLE DB の更新機構は単純です。コンシューマー アプリケーションは、バインドされたデータ メンバーの値を設定し、これらの値を行セットに書き込みます。その後、コンシューマーはプロバイダーにデータ ストアの更新を要求します。  
@@ -48,6 +53,7 @@ ms.lasthandoff: 10/24/2017
   
 ```  
 CDBPropSet ps(DBPROPSET_ROWSET);  
+
 ps.AddProperty(DBPROP_IRowsetChange, true)  
 ps.AddProperty(DBPROP_UPDATABILITY, DBPROPVAL_UP_CHANGE | DBPROPVAL_UP_INSERT | DBPROPVAL_UP_DELETE)  
 ```  
@@ -59,7 +65,7 @@ ps.AddProperty(DBPROP_UPDATABILITY, DBPROPVAL_UP_CHANGE | DBPROPVAL_UP_INSERT | 
   
 ```  
 // Instantiate a rowset based on the user record class  
-CTable<CAccessor<CProductAccessor> > product;  
+CTable<CAccessor<CProductAccessor>> product;  
 CSession session;  
   
 // Open the rowset and move to the 100th row  
@@ -67,12 +73,13 @@ product.Open(session, "Product", &ps, 1);  // ps is the property set
 product.MoveToBookmark(&bookmark, 0);      // Assume that bookmark is set to 100th row  
   
 // Change the values of columns "Name" and "Units in Stock" in the current row of the Product table  
-_tcscpy_s( product.m_ProductName, product.m_sizeOfProductName,  
+_tcscpy_s(product.m_ProductName, product.m_sizeOfProductName,  
            _T( "Candle" ) );  
+
 product.m_UnitsInStock = 10000;  
   
 // Set the data  
-HRESULT hr = product.SetData( );  
+HRESULT hr = product.SetData();  
 ```  
   
 ## <a name="inserting-rows-into-rowsets"></a>行セットへの行の挿入  
@@ -90,7 +97,7 @@ HRESULT Insert(int nAccessor = 0, bool bGetRow = false)
   
 ```  
 // Instantiate a rowset based on the user record class  
-CTable<CAccessor<CProductAccessor> > product;  
+CTable<CAccessor<CProductAccessor>> product;  
 CSession session;  
   
 // Open the rowset and move to the 100th row  
@@ -99,12 +106,14 @@ product.MoveToBookmark(&bookmark, 0);      // Assume that bookmark is set to 100
   
 // Set the column values for a row of the Product table, then insert the row  
 product.m_ProductID = 101;  
-_tcscpy_s( product.m_ProductName, product.m_sizeOfProductName,  
+_tcscpy_s(product.m_ProductName, product.m_sizeOfProductName,  
            _T( "Candle" ) );  
+
 product.m_SupplierID = 27857;  
 product.m_CategoryID = 372;  
-_tcscpy_s( product.m_QuantityPerUnit, product.m_sizeOfQuantityPerUnit,  
+_tcscpy_s(product.m_QuantityPerUnit, product.m_sizeOfQuantityPerUnit,  
            _T( "Pack of 10" ) );  
+
 product.m_UnitPrice = 20;  
 product.m_UnitsInStock = 10000;  
 product.m_UnitsOnOrder = 5201;  
@@ -130,7 +139,7 @@ m_dwProductNameLength = 6;             // "Candle" has 6 characters
 m_dwQuantityPerUnitLength = 10;        // "Pack of 10" has 10 characters  
   
 // Insert the data  
-HRESULT hr = product.Insert( );  
+HRESULT hr = product.Insert();  
 ```  
   
  詳しい例については、「 [CRowset::Insert](../../data/oledb/crowset-insert.md)」をご覧ください。  
@@ -142,7 +151,7 @@ HRESULT hr = product.Insert( );
   
 ```  
 // Instantiate a rowset based on the user record class  
-CTable<CAccessor<CProductAccessor> > product;  
+CTable<CAccessor<CProductAccessor>> product;  
 CSession session;  
   
 // Open the rowset and move to the 100th row  
@@ -150,7 +159,7 @@ product.Open(session, "Product", &ps, 1);  // ps is the property set
 product.MoveToBookmark(&bookmark, 0);      // Assume that bookmark is set to 100th row  
   
 // Delete the row  
-HRESULT hr = product.Delete( );  
+HRESULT hr = product.Delete();  
 ```  
   
 ## <a name="immediate-and-deferred-updates"></a>即時更新と遅延更新  
@@ -174,7 +183,7 @@ pPropSet->AddProperty(DBPROP_IRowsetUpdate, true);
   
 ```  
 // Instantiate a rowset based on the user record class  
-CTable<CAccessor<CProductAccessor> > product;  
+CTable<CAccessor<CProductAccessor>> product;  
 CSession session;  
   
 // Open the rowset and move to the 100th row  
@@ -182,18 +191,23 @@ product.Open(session, "Product", &ps, 1);  // ps is the property set
 product.MoveToBookmark(&bookmark, 0);      // Assume that bookmark is set to 100th row  
   
 // Change the values of columns "Name" and "Units in Stock" in the 100th row of the Product table  
-_tcscpy_s( product.m_ProductName, product.m_sizeOfProductName,  
+_tcscpy_s(product.m_ProductName, product.m_sizeOfProductName,  
            _T( "Wick" ) );  
+
 product.m_UnitsInStock = 10000;  
-HRESULT hr = product.SetData( );  // No changes made to row 100 yet  
+
+HRESULT hr = product.SetData();  // No changes made to row 100 yet  
 product.Update();                 // Update row 100 now  
   
 // Change the values of columns "Name" and "Units in Stock" in the 101st row of the Product table  
-product.MoveNext( );  
-_tcscpy_s( product.m_ProductName, product.m_sizeOfProductName  
+product.MoveNext();  
+
+_tcscpy_s(product.m_ProductName, product.m_sizeOfProductName  
            _T( "Wax" ) );  
+
 product.m_UnitsInStock = 500;  
-HRESULT hr = product.SetData( );  // No changes made to row 101 yet  
+
+HRESULT hr = product.SetData();  // No changes made to row 101 yet  
 product.Update();                 // Update row 101 now  
 ```  
   
@@ -203,7 +217,7 @@ product.Update();                 // Update row 101 now
   
  変更を遅延させる主な理由は、変更を元に戻すことができるようにするためです。 [CRowset::Undo](../../data/oledb/crowset-undo.md) を呼び出すと、ローカル変更キャッシュの状態が、保留中の変更が作成される前のデータ ストアの状態にロールバックされます。 **Undo** は、ローカル キャッシュの状態を 1 ステップだけ (最後の変更の直前の状態に) ロールバックするのではないことにご注意ください。この処理を実行すると、その行のローカル キャッシュがクリアされます。 また、 **Undo** は現在の行のみに影響します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレートの使用](../../data/oledb/working-with-ole-db-consumer-templates.md)   
  [CRowset クラス](../../data/oledb/crowset-class.md)   
  [IRowsetChange](https://msdn.microsoft.com/en-us/library/ms715790.aspx)

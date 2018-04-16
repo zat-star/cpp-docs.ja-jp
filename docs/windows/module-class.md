@@ -1,25 +1,32 @@
 ---
-title: "モジュール クラス |Microsoft ドキュメント"
-ms.custom: 
+title: モジュール クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: module/Microsoft::WRL::Module
-dev_langs: C++
-helpviewer_keywords: Module class
+f1_keywords:
+- module/Microsoft::WRL::Module
+dev_langs:
+- C++
+helpviewer_keywords:
+- Module class
 ms.assetid: dd67e3b8-c2e1-4f53-8c0f-565a140ba649
-caps.latest.revision: "6"
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b2536d406293d84db2ce5d5bd3e0292e0e57920e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: d9911cdfc943243bd24d452139ef7452e693340f
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="module-class"></a>Module クラス
 関連するオブジェクトから成るコレクションを表します。  
@@ -28,9 +35,7 @@ ms.lasthandoff: 10/24/2017
   
 ```  
   
-template<  
-   ModuleType moduleType  
->  
+template<ModuleType moduleType>  
 class Module;  
   
 template<>  

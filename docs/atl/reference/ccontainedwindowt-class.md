@@ -31,30 +31,17 @@ helpviewer_keywords:
 - contained windows
 - CContainedWindowT class
 ms.assetid: cde0ca36-9347-4068-995a-d294dae57ca9
-caps.latest.revision: 23
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: ab2b20591ded82dd17a38f5258dfe593f7e88fc8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4cf792fed2f7a5cac45826649224a565228f9d73
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccontainedwindowt-class"></a>CContainedWindowT クラス
 このクラスは、別のオブジェクト内に含まれるウィンドウを実装します。  
@@ -121,25 +108,25 @@ class CContainedWindowT : public TBase
   
  使用すると、**に基づいてコントロールを追加**ウィザードが自動的に追加オプション、ATL プロジェクト ウィザードで、`CContainedWindowT`コントロールを実装するクラスのデータ メンバーです。 次の例では、コンテナー内のウィンドウを宣言する方法を示しています。  
   
- [!code-cpp[NVC_ATL_Windowing #38](../../atl/codesnippet/cpp/ccontainedwindowt-class_1.h)]  
+ [!code-cpp[NVC_ATL_Windowing#38](../../atl/codesnippet/cpp/ccontainedwindowt-class_1.h)]  
   
- [!code-cpp[NVC_ATL_Windowing #39](../../atl/codesnippet/cpp/ccontainedwindowt-class_2.h)]  
+ [!code-cpp[NVC_ATL_Windowing#39](../../atl/codesnippet/cpp/ccontainedwindowt-class_2.h)]  
   
- [!code-cpp[NVC_ATL_Windowing #40](../../atl/codesnippet/cpp/ccontainedwindowt-class_3.h)]  
+ [!code-cpp[NVC_ATL_Windowing#40](../../atl/codesnippet/cpp/ccontainedwindowt-class_3.h)]  
   
-|詳細情報:|参照トピック|  
+|詳細情報:|解決方法については、|  
 |--------------------------------|---------|  
 |コントロールの作成|[ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)|  
 |ATL でのウィンドウの使用|[ATL ウィンドウ クラス](../../atl/atl-window-classes.md)|  
 |ATL プロジェクト ウィザード|[ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)|  
-|Windows|[Windows](http://msdn.microsoft.com/library/windows/desktop/ms632595)およびそれ以降のトピックでは、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]|  
+|Windows|[Windows](http://msdn.microsoft.com/library/windows/desktop/ms632595)と Windows SDK のそれ以降のトピック|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `TBase`  
   
  `CContainedWindowT`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="ccontainedwindowt"></a>CContainedWindowT::CContainedWindowT  
@@ -237,10 +224,10 @@ HWND Create(
  [in]ウィンドウの名前を指定します。 既定値は**NULL**です。  
   
  `dwStyle`  
- [in]ウィンドウのスタイルです。 既定値は**WS_CHILD |WS_VISIBLE**です。 使用可能な値の一覧は、次を参照してください。 [CreateWindow](http://msdn.microsoft.com/library/windows/desktop/ms632679)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ [in]ウィンドウのスタイルです。 既定値は**WS_CHILD &#124;です。WS_VISIBLE**です。 使用可能な値の一覧は、次を参照してください。 [CreateWindow](http://msdn.microsoft.com/library/windows/desktop/ms632679) Windows SDK に含まれています。  
   
  `dwExStyle`  
- [in]拡張ウィンドウ スタイルです。 既定値は、0、拡張スタイルれないことを意味します。 使用可能な値の一覧は、次を参照してください。[について](http://msdn.microsoft.com/library/windows/desktop/ms632680)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ [in]拡張ウィンドウ スタイルです。 既定値は、0、拡張スタイルれないことを意味します。 使用可能な値の一覧は、次を参照してください。[について](http://msdn.microsoft.com/library/windows/desktop/ms632680)Windows SDK に含まれています。  
   
  `MenuOrID`  
  [in]子ウィンドウでは、ウィンドウの識別子。 最上位レベルのウィンドウのメニューは、ウィンドウのハンドルします。 既定値は**0 u**です。  
@@ -443,11 +430,10 @@ static LRESULT CALLBACK WindowProc(
 ### <a name="remarks"></a>コメント  
  `WindowProc`によって識別されるメッセージ マップにメッセージを送ります[m_dwMsgMapID](#m_dwmsgmapid)です。 必要に応じて、`WindowProc`呼び出し[DefWindowProc](#defwindowproc)追加のメッセージ処理のためです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CWindow クラス](../../atl/reference/cwindow-class.md)   
  [CWindowImpl クラス](../../atl/reference/cwindowimpl-class.md)   
  [CMessageMap クラス](../../atl/reference/cmessagemap-class.md)   
  [送るに](message-map-macros-atl.md#begin_msg_map)   
  [ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

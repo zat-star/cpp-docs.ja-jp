@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3890
 ms.assetid: 2f22c2fd-c14e-45e1-b936-b739ffc0b135
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2a83fa8f946ef79cb73fbd04bd67723182a2273a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 3f98846bc8a361bd03d453f2115e2063f37423f0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3890"></a>コンパイラ エラー C3890
 'var': リテラル データ メンバーのアドレスを取得することはできません  

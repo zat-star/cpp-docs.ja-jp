@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,20 +13,23 @@ f1_keywords:
 - AFXCVIEW/CTreeView
 - AFXCVIEW/CTreeView::CTreeView
 - AFXCVIEW/CTreeView::GetTreeCtrl
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CTreeView [MFC], CTreeView
 - CTreeView [MFC], GetTreeCtrl
 ms.assetid: 5df583a6-d69f-42ca-9d8d-57e04558afff
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6d1d8ee7d06e9926a240ca185ce36ba0b1a180af
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7530569d5e5313ebfcbdaf92ebd245962b9e443c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctreeview-class"></a>CTreeView クラス
 ツリー コントロールの使用との使用を簡略化[CTreeCtrl](../../mfc/reference/ctreectrl-class.md)MFC のドキュメント/ビュー アーキテクチャのツリー コントロールの機能をカプセル化するクラス。  
@@ -66,7 +70,7 @@ class CTreeView : public CCtrlView
   
  `CTreeView`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcview.h  
   
 ##  <a name="ctreeview"></a>CTreeView::CTreeView  
@@ -83,7 +87,7 @@ CTreeView();
 CTreeCtrl& GetTreeCtrl() const;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CCtrlView クラス](../../mfc/reference/cctrlview-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CView クラス](../../mfc/reference/cview-class.md)   

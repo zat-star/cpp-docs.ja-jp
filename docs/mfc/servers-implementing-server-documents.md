@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - OLE server applications [MFC], managing server documents
 - OLE server applications [MFC], implementing OLE servers
 - servers, server documents
 - server documents [MFC], implementing
 ms.assetid: cca1451a-ad09-47ed-b56e-bccd78fc86d1
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5d2a3f42522ecceb09261de7437446f0d5be2d6f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1c4b8618e4951ac499d504cc68b0552ea45eed03
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="servers-implementing-server-documents"></a>サーバー : サーバー ドキュメントの実装
 この記事では、アプリケーション ウィザードで、OLE サーバー オプションを指定しなかった場合、サーバー ドキュメントを正常に実装する手順について説明します。  
@@ -43,7 +47,7 @@ ms.lasthandoff: 10/24/2017
   
  詳細については、次を参照してください。 [COleServerItem](../mfc/reference/coleserveritem-class.md)と[COleServerDoc](../mfc/reference/coleserverdoc-class.md)で、*クラス ライブラリ リファレンス*です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サーバー](../mfc/servers.md)   
  [サーバー: サーバー アイテム](../mfc/servers-server-items.md)   
  [サーバー: サーバーの実装](../mfc/servers-implementing-a-server.md)   

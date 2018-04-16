@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -15,7 +16,8 @@ f1_keywords:
 - _O_TRUNC
 - _O_CREAT
 - _O_WRONLY
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _O_RDWR constant
 - O_EXCL constant
@@ -32,15 +34,17 @@ helpviewer_keywords:
 - O_RDONLY constant
 - _O_WRONLY constant
 ms.assetid: c8fa5548-9ac2-4217-801d-eb45e86f2fa4
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 51d5de22dce0b68c55fc928b1a251b30d9ceed7f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 59e108f8674b002cdbc5e7ab0b9c1868eea632df
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="file-constants"></a>ファイル定数
 ## <a name="syntax"></a>構文  
@@ -77,7 +81,7 @@ ms.lasthandoff: 10/24/2017
  `_O_WRONLY`  
  書き込み専用のファイルを開きます。このフラグを指定すると、`_O_RDONLY` と `_O_RDWR` は指定できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_open、_wopen](../c-runtime-library/reference/open-wopen.md)   
  [_sopen、_wsopen](../c-runtime-library/reference/sopen-wsopen.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wtoi
 - _wtoi_l
@@ -32,7 +33,8 @@ f1_keywords:
 - atoi
 - _atoi_l
 - _wtoi_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _atoi_l function
 - ttoi function
@@ -47,15 +49,17 @@ helpviewer_keywords:
 - atoi function
 - wtoi function
 ms.assetid: ad7fda30-28ab-421f-aaad-ef0b8868663a
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c23ba6cc06e06a6c1f6ad43cb7bc833494aaba60
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1482bbb10604b78874112b72f99b7ae18bab206e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atoi-atoil-wtoi-wtoil"></a>atoi、_atoi_l、_wtoi、_wtoi_l
 文字列を整数に変換します。  
@@ -100,7 +104,7 @@ int _wtoi_l(
   
  A`whitespace`は無視されますスペースまたはタブ文字で構成されています。`sign`はプラス (+) またはマイナス記号 (-) です。 と`digits`は 1 つ以上の数字です。  
   
- `_l` サフィックスが付いているこれらの関数の各バージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_l` サフィックスが付いているこれらの関数の各バージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -109,7 +113,7 @@ int _wtoi_l(
 |`_tstoi`|`atoi`|`atoi`|`_wtoi`|  
 |`_ttoi`|`atoi`|`atoi`|`_wtoi`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |ルーチン|必須ヘッダー|  
 |--------------|---------------------|  
@@ -163,7 +167,7 @@ Function: atoi( "3336402735171707160320" ) = 2147483647
 Overflow condition occurred.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ロケール](../../c-runtime-library/locale.md)   

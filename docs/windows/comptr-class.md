@@ -1,25 +1,32 @@
 ---
-title: "ComPtr クラス |Microsoft ドキュメント"
-ms.custom: 
+title: ComPtr クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: client/Microsoft::WRL::ComPtr
-dev_langs: C++
-helpviewer_keywords: ComPtr class
+f1_keywords:
+- client/Microsoft::WRL::ComPtr
+dev_langs:
+- C++
+helpviewer_keywords:
+- ComPtr class
 ms.assetid: a6551902-6819-478a-8df7-b6f312ab1fb0
-caps.latest.revision: "8"
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 96b46fe15b2c101ed3ebc8bb58033074f409b41c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 36ecb5fdf292873c18df8f6b2f032865f44bafd2
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="comptr-class"></a>ComPtr クラス
 テンプレート パラメーターで指定されたインターフェイスを表す *スマート ポインター* 型を作成します。 ComPtr は、基になるインターフェイス ポインターの参照カウントを自動的に維持し、参照カウントがゼロになるとそのインターフェイスを解放します。  
@@ -27,14 +34,10 @@ ms.lasthandoff: 10/24/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-template <  
-   typename T  
->  
+template <typename T>  
 class ComPtr;  
   
-template<  
-   class U  
->  
+template<class T>  
 friend class ComPtr;  
 ```  
   

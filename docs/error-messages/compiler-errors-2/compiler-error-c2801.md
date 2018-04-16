@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2801
 ms.assetid: 35dfc7ea-9e37-4e30-baa1-944dc61302f5
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bbdbfdc1b7bb9445b1a709afb42944eea0d7f241
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 41e7956ace6c54cd55a2ed9f68f18c867bc80ad9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2801"></a>コンパイラ エラー C2801
 'operator 演算子' は非静的メンバーである必要があります。  

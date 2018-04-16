@@ -4,53 +4,55 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ATL::CDynamicParameterAccessor::SetParamLength
 - CDynamicParameterAccessor.SetParamLength
 - ATL.CDynamicParameterAccessor.SetParamLength
 - CDynamicParameterAccessor::SetParamLength
 - SetParamLength
-dev_langs: C++
-helpviewer_keywords: SetParamLength method
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetParamLength method
 ms.assetid: d8e0bbfe-e1ae-4a8f-9567-584fbb0c8385
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6a73599e67d0a2308416484cb4b7376d9449cfbb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 3956ee2c43b376a0c3df3ab7b7cea6d0ee40163d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cdynamicparameteraccessorsetparamlength"></a>CDynamicParameterAccessor::SetParamLength
 バッファーに格納され、指定されたパラメーターの長さを設定します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
+```
+bool SetParamLength(DBORDINAL nParam,  
+   DBLENGTH length);  ```  
   
-      bool SetParamLength(  
-   DBORDINAL nParam,  
-   DBLENGTH length  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
+#### Parameters  
  `nParam`  
- [in]パラメーターの数 (1 からのオフセット)。 に対するパラメーター 0 は、戻り値に予約されています。 パラメーター数は、SQL またはストアド プロシージャの呼び出しでその順序に基づいて、パラメーターのインデックスです。 参照してください[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)例についてはします。  
+ [in] The parameter number (offset from 1). Parameter 0 is reserved for return values. The parameter number is the index of the parameter based on its order in the SQL or stored procedure call. See [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) for an example.  
   
  *length*  
- [in]指定されたパラメーターの長さを (バイト単位)。  
+ [in] The length in bytes of the specified parameter.  
   
-## <a name="remarks"></a>コメント  
- 返します**true**成功した場合または**false**エラー発生時にします。  
+## Remarks  
+ Returns **true** on success or **false** on failure.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** atldbcli.h  
+## Requirements  
+ **Header:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
- [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)
+## See Also  
+ [CDynamicParameterAccessor Class](../../data/oledb/cdynamicparameteraccessor-class.md)

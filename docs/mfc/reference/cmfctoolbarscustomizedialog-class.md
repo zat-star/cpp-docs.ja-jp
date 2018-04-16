@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -19,7 +20,8 @@ f1_keywords:
 - AFXTOOLBARSCUSTOMIZEDIALOG/CMFCToolBarsCustomizeDialog::GetFlags
 - AFXTOOLBARSCUSTOMIZEDIALOG/CMFCToolBarsCustomizeDialog::OnInitDialog
 - AFXTOOLBARSCUSTOMIZEDIALOG/CMFCToolBarsCustomizeDialog::PostNcDestroy
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCToolBarsCustomizeDialog [MFC], CMFCToolBarsCustomizeDialog
 - CMFCToolBarsCustomizeDialog [MFC], FillAllCommandsList
@@ -31,15 +33,17 @@ helpviewer_keywords:
 - CMFCToolBarsCustomizeDialog [MFC], OnInitDialog
 - CMFCToolBarsCustomizeDialog [MFC], PostNcDestroy
 ms.assetid: 78e2cddd-4f13-4097-afc3-1ad646a113f1
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 69002f6b0b326b9ad4eb9a5aaa2162558ff368af
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 978303c9edaec2d9776d6e1c81b530df791ca5ff
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfctoolbarscustomizedialog-class"></a>CMFCToolBarsCustomizeDialog クラス
 モードレス タブ ダイアログ ボックス ( [CPropertySheet クラス](../../mfc/reference/cpropertysheet-class.md)) を使用して、ツールバー、メニューのキーボード ショートカット、ユーザー定義のツールおよびアプリケーションで visual スタイルをカスタマイズします。 通常、このダイアログ ボックスを表示するには、 **[ツール]** メニューの **[ユーザー設定]** をクリックします。  
@@ -118,7 +122,7 @@ class CMFCToolBarsCustomizeDialog : public CPropertySheet
   
  `CMFCToolBarsCustomizeDialog`   
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxToolBarsCustomizeDialog.h  
   
 ##  <a name="addbutton"></a>CMFCToolBarsCustomizeDialog::AddButton  
@@ -682,7 +686,7 @@ BOOL SetUserCategory(LPCTSTR lpszCategory);
 ### <a name="remarks"></a>コメント  
  現在、ユーザーのカテゴリの設定は、フレームワークによって使用されていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CPropertySheet クラス](../../mfc/reference/cpropertysheet-class.md)

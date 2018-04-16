@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname: ___lc_collate_cp_func
+apiname:
+- ___lc_collate_cp_func
 apilocation:
 - msvcr120.dll
 - msvcrt.dll
@@ -17,19 +19,24 @@ apilocation:
 - msvcr110.dll
 - msvcr90.dll
 apitype: DLLExport
-f1_keywords: ___lc_collate_cp_func
-dev_langs: C++
-helpviewer_keywords: ___lc_collate_cp_func
+f1_keywords:
+- ___lc_collate_cp_func
+dev_langs:
+- C++
+helpviewer_keywords:
+- ___lc_collate_cp_func
 ms.assetid: 46ccc084-7ac9-4e5d-9138-e12cb5845615
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 36eed0a5592b41dd4f9f57c1f2f6c395d0bb784a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fe7ff6ce073f84a87e2243ab98d3b99af0dfd22c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lccollatecpfunc"></a>___lc_collate_cp_func
 内部 CRT 関数。 スレッドの現在の照合順序コード ページを取得します。  
@@ -48,13 +55,13 @@ UINT ___lc_codepage_func(void);
   
  内部 CRT 関数は実装固有であり、各リリースでの変更の対象です。 コード内では使用しないことをお勧めします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`___lc_collate_cp_func`|crt\src\setlocal.h|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_get_current_locale](../c-runtime-library/reference/get-current-locale.md)   
  [setlocale、_wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)   
  [_create_locale、_wcreate_locale](../c-runtime-library/reference/create-locale-wcreate-locale.md)   

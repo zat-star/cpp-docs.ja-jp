@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - type_traits/std::conditional
 dev_langs:
@@ -16,16 +16,17 @@ helpviewer_keywords:
 - conditional class
 - conditional
 ms.assetid: ece9f539-fb28-4e26-a79f-3264bc984493
-caps.latest.revision: 22
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4c0c6deb6a7167852101efba30a978aee78f96f9
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 2c764bfc42d633a3036f2e567078b9ea39feea8b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="conditional-class"></a>conditional クラス
 指定された条件に基づいて、2 つの型のいずれかを選択します。  
@@ -53,14 +54,13 @@ using conditional_t = typename conditional<_Test, _T1, _T2>::type;
 ## <a name="remarks"></a>コメント  
  テンプレート メンバー typedef `conditional<B, T1, T2>::type` は、 `T1` が `B` に評価されるときは `true`として、 `T2` が `B` に評価されるときは `false`として評価されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
-
 
 
 

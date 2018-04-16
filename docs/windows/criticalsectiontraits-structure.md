@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: corewrappers/Microsoft::WRL::Wrappers::HandleTraits::CriticalSectionTraits
-dev_langs: C++
-helpviewer_keywords: CriticalSectionTraits structure
+f1_keywords:
+- corewrappers/Microsoft::WRL::Wrappers::HandleTraits::CriticalSectionTraits
+dev_langs:
+- C++
+helpviewer_keywords:
+- CriticalSectionTraits structure
 ms.assetid: c515a1b5-4eb0-40bc-9035-c4d9352c9de7
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 95428e0513193c78f135157b09a354e050014f23
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: c24d8dea31a87094329276af3ebfaf9f06136adc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="criticalsectiontraits-structure"></a>CriticalSectionTraits 構造体
 無効な重要なセクションまたはリリースの重要なセクションに関数のいずれかをサポートするために CriticalSection オブジェクトを専門としています。  
@@ -48,10 +55,10 @@ struct CriticalSectionTraits;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CriticalSectionTraits`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
  **Namespace:** Microsoft::WRL::Wrappers::HandleTraits  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL::Wrappers::HandleTraits 名前空間](../windows/microsoft-wrl-wrappers-handletraits-namespace.md)

@@ -4,36 +4,39 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CRowsetImpl.SetCommandText
 - CRowsetImpl::SetCommandText
-dev_langs: C++
-helpviewer_keywords: SetCommandText method
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetCommandText method
 ms.assetid: e016d7df-c1a0-4dee-b19b-c876680221fd
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a33af61311b9c202e5e0c68579ac4f21afd98f94
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e345799f74d4c32ffae88baebb69ed828266dcfc
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="crowsetimplsetcommandtext"></a>CRowsetImpl::SetCommandText
 検証し、格納、 **DBID**2 つの文字列で $s ([m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)と[その](../../data/oledb/crowsetimpl-m-strindextext.md))。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      HRESULT CRowsetBaseImpl::SetCommandText(  
-   DBID* pTableID,  
-   DBID* pIndexID   
-);  
+```cpp
+HRESULT CRowsetBaseImpl::SetCommandText(DBID* pTableID,  
+   DBID* pIndexID);  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -51,8 +54,8 @@ ms.lasthandoff: 10/24/2017
   
  このメソッドは、呼び出すことによって作業を委任[ValidateCommandID](../../data/oledb/crowsetimpl-validatecommandid.md)と[GetCommandFromID](../../data/oledb/crowsetimpl-getcommandfromid.md) upcasted ポインターを使用します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRowsetImpl クラス](../../data/oledb/crowsetimpl-class.md)

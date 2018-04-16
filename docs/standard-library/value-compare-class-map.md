@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - std::value_compare
 - std.value_compare
@@ -16,32 +16,19 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- value_compare class
+- std::value_compare
 ms.assetid: ea97c1d0-04b2-4d42-8d96-23522c04cc41
-caps.latest.revision: 21
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: c46338445598ef77e6b8a4c1c261962fe9e7ff0f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fbb0f651c22702fdad7ca392fa76e4827c6c2e25
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="valuecompare-class-ltmapgt"></a>value_compare クラス (&lt;map&gt;)
 要素のキーの値を比較し要素のマップ内の相対順序を決定して、マップの要素を比較できる関数オブジェクトを提供します。  
@@ -67,16 +54,15 @@ protected:
 ## <a name="example"></a>例  
   `value_compare` の宣言方法や使用方法の例については、[value_comp](../standard-library/map-class.md#value_comp)の例を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<map>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [binary_function 構造体](../standard-library/binary-function-struct.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
-
 
 
 

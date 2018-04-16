@@ -1,25 +1,32 @@
 ---
-title: "list::const_reverse_iterator (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: list::const_reverse_iterator (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::list::const_reverse_iterator
-dev_langs: C++
-helpviewer_keywords: const_reverse_iterator member [STL/CLR]
+f1_keywords:
+- cliext::list::const_reverse_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- const_reverse_iterator member [STL/CLR]
 ms.assetid: d9a9a1ec-df5f-411f-9918-beb5838ffa63
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2d200ae6d8092520f08504734459220d36fe750e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e0903be0ec7e71e2ef37d34dfee193c6ecbdba3d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listconstreverseiterator-stlclr"></a>list::const_reverse_iterator (STL/CLR)
 被制御シーケンスの定数反転反復子の型。  
@@ -62,11 +69,11 @@ int main()
 c b a  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::reverse_iterator (STL/CLR)](../dotnet/list-reverse-iterator-stl-clr.md)

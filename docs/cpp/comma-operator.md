@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - comma operator
 ms.assetid: 38e0238e-19da-42ba-ae62-277bfdab6090
-caps.latest.revision: 9
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: e5e7af401a0c435931f6952674d97752d2ac7730
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 03d610e1a7aefbd0c6615cd9ed758f64b6986e3d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comma-operator-"></a>コンマ演算子: ,
 1 つのステートメントが期待される場所で 2 つのステートメントをグループ化します。  
@@ -76,8 +77,7 @@ int main () {
 30  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [二項演算子を含む式](../cpp/expressions-with-binary-operators.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [順次評価演算子](../c-language/sequential-evaluation-operator.md)
-

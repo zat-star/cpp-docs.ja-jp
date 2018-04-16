@@ -1,46 +1,50 @@
 ---
-title: "omp_get_wtime | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "omp_get_wtime"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "omp_get_wtime OpenMP function"
+title: "omp_get_wtime |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- omp_get_wtime
+dev_langs:
+- C++
+helpviewer_keywords:
+- omp_get_wtime OpenMP function
 ms.assetid: c8dee105-ec1b-42e5-a6e3-edeedcf9854c
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 57307df6a2e13c6bd3dbd90892669119f8526d70
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# omp_get_wtime
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-時刻の秒の部分が経過する位置を返します。  
+# <a name="ompgetwtime"></a>omp_get_wtime
+ある時点から経過した時間の秒の値を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 double omp_get_wtime( );  
 ```  
   
-## 戻り値  
- 時刻の秒の部分が経過することも一貫性を返します。  
+## <a name="return-value"></a>戻り値  
+ 一貫したもの、任意のポイントからの経過時間の秒数値を返します。  
   
-## 解説  
- この時点では以降の比較を使用するプログラムの実行中に一貫性です。  
+## <a name="remarks"></a>コメント  
+ そのポイントは、後続の比較ができるように、プログラム実行中に一貫性のあるは残ります。  
   
- 詳細については、「[3.3.1 omp\_get\_wtime Function](../../../parallel/openmp/3-3-1-omp-get-wtime-function.md)」を参照してください。  
+ 詳細については、次を参照してください。 [3.3.1 omp_get_wtime 関数](../../../parallel/openmp/3-3-1-omp-get-wtime-function.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // omp_get_wtime.cpp  
@@ -63,10 +67,13 @@ int main() {
 }  
 ```  
   
-  **開始 \= 594255.3671159324**   
-**末尾 \= 594256.3664474116**   
-**diff \= 0.9993314791936427**  
-**wtick \= 2.793651148400146e\-007**  
-**1\/wtick \= 3579545**   
-## 参照  
- [Functions](../../../parallel/openmp/reference/openmp-functions.md)
+```Output  
+start = 594255.3671159324  
+end = 594256.3664474116  
+diff = 0.9993314791936427  
+wtick = 2.793651148400146e-007  
+1/wtick = 3579545  
+```  
+  
+## <a name="see-also"></a>参照  
+ [関数](../../../parallel/openmp/reference/openmp-functions.md)

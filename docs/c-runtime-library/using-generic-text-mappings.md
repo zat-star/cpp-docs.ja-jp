@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: _UNICODE
-dev_langs: C++
+f1_keywords:
+- _UNICODE
+dev_langs:
+- C++
 helpviewer_keywords:
 - _TXCHAR type
 - TINT type
@@ -33,15 +36,17 @@ helpviewer_keywords:
 - UNICODE constant
 - _T type
 ms.assetid: 2848121c-e51f-4b9b-a2e6-833ece4b0cb3
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f4067e9555200805631fb72fe3e40afa09c168e3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1d0049643ef7a3695eef8c3271e22586b5c7454d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-generic-text-mappings"></a>汎用テキスト マップの使用
 **Microsoft 固有の仕様**  
@@ -103,9 +108,9 @@ RetVal = strrev(szString);
   
  このように、1 つのソース コード ファイルを記述、保守、コンパイルすることで、3 種類のそれぞれの文字セットに固有のルーチンを実行できます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [汎用テキスト マップ](../c-runtime-library/generic-text-mappings.md)   
  [データ型のマップ](../c-runtime-library/data-type-mappings.md)   
  [定数とグローバル変数のマップ](../c-runtime-library/constant-and-global-variable-mappings.md)   

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - memcmp
 - wmemcmp
@@ -33,30 +33,17 @@ helpviewer_keywords:
 - wmemcmp function
 - memcmp function
 ms.assetid: 0c21c3e3-8ee4-40e5-add1-eb26d225fd8d
-caps.latest.revision: 14
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
-ms.openlocfilehash: af4d8eab26873d9c29ab8343afc462e7ed22060c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/28/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1ab6e5371dfe6080ab970cc142891f2e4bd7c3c3
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="memcmp-wmemcmp"></a>memcmp、wmemcmp
 2 つのバッファーの文字を比較します。  
@@ -98,14 +85,14 @@ int wmemcmp(
 ## <a name="remarks"></a>コメント  
  `count` と `buf1` の最初の `buf2` 文字数を比較します。 ゼロ以外の戻り値の符号は、バッファー間で最初に異なる値のペアの差の符号です。 値は、`unsigned char` の場合は `memcmp` として解釈され、`wchar_t` の場合は `wmemcmp` として解釈されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`memcmp`|\<memory.h> または \<string.h>|  
 |`wmemcmp`|\<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -158,7 +145,7 @@ Compare '1,2' to '1,2':
 int_arr1 is equal to int_arr2.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バッファー操作](../../c-runtime-library/buffer-manipulation.md)   
  [_memccpy](../../c-runtime-library/reference/memccpy.md)   
  [memchr、wmemchr](../../c-runtime-library/reference/memchr-wmemchr.md)   

@@ -1,34 +1,39 @@
 ---
-title: "Array Attributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "arrays [C++], attributes"
+title: "属性の配列 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- arrays [C++], attributes
 ms.assetid: 36f80b76-7f20-41ae-a6bf-460e5379f26b
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 10667e62113bb2a1759c05f547183ebfb97199a1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Array Attributes
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次の属性は配列または **SAFEARRAY**. に適用されます。  
+# <a name="array-attributes"></a>配列属性
+配列には、次の属性適用または**SAFEARRAY**s。  
   
-|属性|Description|  
-|--------|-----------------|  
-|[library\_block](../windows/library-block.md)|.idl ファイルのライブラリ ブロック内の構造を配置します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|[library_block](../windows/library-block.md)|.Idl ファイルのライブラリ ブロックの内部構造を配置します。|  
 |[satype](../windows/satype.md)|SAFEARRAY 構造体のデータ型を指定します。|  
-|[string](../windows/string-cpp.md)|配列の 1 番 `char``wchar_t` **バイト**  \(または値\) 配列またはポインターが文字列のように扱うことを示します。|  
+|[string](../windows/string-cpp.md)|示します、1 次元`char`、 `wchar_t`、**バイト**(または同等の) このような配列へのポインターまたは配列を文字列として扱う必要があります。|  
   
-## 参照  
- [Attributes by Usage](../windows/attributes-by-usage.md)
+## <a name="see-also"></a>参照  
+ [使用法別の属性](../windows/attributes-by-usage.md)

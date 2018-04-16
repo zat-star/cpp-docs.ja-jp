@@ -1,32 +1,37 @@
 ---
-title: "lexicographical_compare (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::lexicographical_compare"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lexicographical_compare 関数 [STL/CLR]"
+title: "lexicographical_compare (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::lexicographical_compare
+dev_langs:
+- C++
+helpviewer_keywords:
+- lexicographical_compare function [STL/CLR]
 ms.assetid: 9ec217f3-5523-4f90-a0cc-8fb7dbe4946b
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0408ddf109d0153e55e8deadda6e98ca6d035fc8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# lexicographical_compare (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 種類のシーケンスの要素によって要素を 2 の小さい方の値であるかを判断する比較します。  
+# <a name="lexicographicalcompare-stlclr"></a>lexicographical_compare (STL/CLR)
+2 つのシーケンスを要素ごとに比較して、2 つのうちどちらが小さいかを判断します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _InIt1, class _InIt2> inline  
@@ -37,13 +42,13 @@ template<class _InIt1, class _InIt2, class _Pr> inline
         _InIt2 _First2, _InIt2 _Last2, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `lexicographical_compare`も同じように動作します。  詳細については、「[lexicographical\_compare](../Topic/lexicographical_compare.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`lexicographical_compare`です。 詳細については、次を参照してください。 [lexicographical_compare](../standard-library/algorithm-functions.md#lexicographical_compare)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>参照  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

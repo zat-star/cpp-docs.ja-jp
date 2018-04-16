@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2005
-dev_langs: C++
-helpviewer_keywords: C2005
+f1_keywords:
+- C2005
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2005
 ms.assetid: 090530ed-e0ec-4358-833a-ca24260e7ffe
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f3fdca572b0ee94d97272db445a35e78b1ce37ea
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d2cd2437b7a8a6ea9e5897fddb0af80be46ec7dd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2005"></a>コンパイラ エラー C2005
 \#行が、行番号は、'token' が見つかりましたが必要です。  
@@ -36,7 +42,7 @@ int main() {
 }  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C2005b.cpp  

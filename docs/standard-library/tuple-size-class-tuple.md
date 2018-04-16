@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - tuple_size
 - std::tuple_size
 - utility/std::tuple_size
-dev_langs: C++
-helpviewer_keywords: std::tuple_size
+dev_langs:
+- C++
+helpviewer_keywords:
+- std::tuple_size
 ms.assetid: 73852fc5-eb68-41f1-8379-465cedc2314a
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: bd57cd0e0c66340eabd54c41c24d892fe9a23bec
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 865f7808c83657236724354462b2c1947eb7ece7
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="tuplesize-class"></a>tuple_size クラス
 `tuple` を含む要素の数を報告します。  
@@ -64,7 +69,7 @@ template <class Tuple>
   
 #### <a name="parameters"></a>パラメーター  
 *Tuple*  
-組の型。 
+タプルの型。 
   
 *Elem*  
 配列要素の型。 
@@ -117,14 +122,14 @@ int main()
  0 1.5 2 3.7  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<tuple>  
  **ヘッダー:** \<array> (配列の特殊化用)  
  **ヘッダー:** \<utility> (ペアの特殊化用)  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<tuple>](../standard-library/tuple.md)   
  [タプル](../standard-library/tuple-class.md)  
  [tuple_element クラス](../standard-library/tuple-element-class-tuple.md)

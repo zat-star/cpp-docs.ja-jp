@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - forward_list/std::forward_list
 - forward_list/std::forward_list::allocator_type
@@ -46,7 +47,8 @@ f1_keywords:
 - forward_list/std::forward_list::splice_after
 - forward_list/std::forward_list::swap
 - forward_list/std::forward_list::unique
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::forward_list
 - std::forward_list::allocator_type
@@ -87,15 +89,17 @@ helpviewer_keywords:
 - std::forward_list::swap
 - std::forward_list::unique
 ms.assetid: 89a3b805-ab60-4858-b772-5855130c11b1
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: eba062342aeb0ecc6e9818d7da9eead94b81a9af
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c2861f4b51b5d1deefd1d4959343d16c2979b67d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="forwardlist-class"></a>forward_list クラス
 要素の可変長シーケンスを制御するオブジェクトを表します。 シーケンスはノードのシングル リンク リストとして格納され、各ノードには型 `Type` のメンバーが含まれます。  
@@ -140,7 +144,7 @@ class forward_list
 |[const_pointer](#const_pointer)|前方リスト内の `const` 要素へのポインターを提供する型。|  
 |[const_reference](#const_reference)|前方リスト内の要素への定数参照を提供する型。|  
 |[difference_type](#difference_type)|前方リストの要素の数を、反復子が指す要素の範囲に基づいて表すために使用できる符号付き整数型。|  
-|[iterator](#iterator)|前方リストの反復子を提供する型。|  
+|[Iterator](#iterator)|前方リストの反復子を提供する型。|  
 |[pointer](#pointer)|前方リスト内の要素へのポインターを提供する型。|  
 |[reference](#reference)|前方リスト内の要素への参照を提供する型。|  
 |[size_type](#size_type)|2 つの要素間の距離を表す、符号なしの型。|  
@@ -184,7 +188,7 @@ class forward_list
 |-|-|  
 |[operator=](#op_eq)|別の前方リストのコピーで前方リストの要素を置き換えます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<forward_list>  
   
  **名前空間:** std  
@@ -305,7 +309,7 @@ const_iterator cend() const;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -605,7 +609,7 @@ void merge(forward_list& right, Predicate comp);
 |`comp`|要素を並べ替えるために使用される比較関数オブジェクト。|  
   
 ### <a name="remarks"></a>コメント  
- `forward_list::merge`要素を削除、 `forward_list` `right`、し、これに挿入`forward_list`です。 以下に示すように、両方のシーケンスを同じ述語に基づいて順序付けする必要があります。 結合されたシーケンスも、その比較関数オブジェクトに基づいて順序付けされます。  
+ `forward_list::merge` 要素を削除、 `forward_list` `right`、し、これに挿入`forward_list`です。 以下に示すように、両方のシーケンスを同じ述語に基づいて順序付けする必要があります。 結合されたシーケンスも、その比較関数オブジェクトに基づいて順序付けされます。  
   
  `i` および `j` の位置にある要素を指定する反復子 `Pi` および `Pj` がある場合、最初のメンバー関数は、`i < j` のたびに、順序 `!(*Pj < *Pi)` を設定します。 (要素は `ascending`順序で並び替えられます)。2 番目のメンバー関数は、`i < j` のたびに、順序 `! comp(*Pj, *Pi)` を設定します。  
   
@@ -956,6 +960,6 @@ typedef typename Allocator::value_type value_type;
 ### <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター _ `Ty` のシノニムです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<forward_list>](../standard-library/forward-list.md)
 

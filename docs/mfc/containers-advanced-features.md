@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - links [MFC], to embedded OLE objects
 - containers [MFC], links to embedded OLE objects
@@ -19,15 +21,17 @@ helpviewer_keywords:
 - server/container applications [MFC]
 - containers [MFC], container applications
 ms.assetid: 221fd99c-b138-40fa-ad6a-974e3b3ad1f8
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6e55ed4fec962fcafa97b155d8688fcf62c1f2fb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4e79b1c88996e835a907129fa5810d4c4dca0770
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="containers-advanced-features"></a>コンテナー : 高度な機能
 この記事では、既存のコンテナー アプリケーションに省略可能な高度な機能を組み込む必要な手順について説明します。 これらの機能は次のとおりです。  
@@ -78,7 +82,7 @@ ms.lasthandoff: 10/24/2017
   
  MFC OLE サンプル[OCLIENT](../visual-cpp-samples.md)この機能を実装します。 これを行う方法の例は、次を参照してください。、 `InitInstance` 、OCLIENT 内の関数。このサンプル アプリケーションの CPP ファイルです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンテナー](../mfc/containers.md)   
  [サーバー](../mfc/servers.md)
 

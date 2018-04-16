@@ -7,36 +7,23 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - insertion operators
 ms.assetid: cdefe986-6548-4cd1-8a67-b431d7d36a1c
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 96d388b7ddfdf561e016b4e74ffeb9ca072c7cb2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6049d92ab2ca1f7f724f3e27037c5df5c4304ea6
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="using-insertion-operators-and-controlling-format"></a>挿入演算子と制御形式の使用
 このトピックでは、独自のクラスに対して書式を制御する方法と挿入演算子を作成する方法について説明します。 すべての標準 C++ のデータ型であらかじめプログラミングされている挿入 (**<<**) 演算子は、出力ストリーム オブジェクトにバイトを送信します。 挿入演算子は定義済み "マニピュレーター" と共に機能します。マニピュレーターとは、整数引数の既定の書式を変更する要素です。  
@@ -230,13 +217,12 @@ std::cout <<extracted;   //   This
   
  この動作は手動で克服できますが、文字列のラウンド トリップをより簡単に行うために、C++14 では、`<iomanip>` に `std::quoted` ストリーム マニピュレーターが追加されます。 `quoted()` は、挿入時に文字列を区切り記号 (既定では二重引用符 (")) で囲み、抽出時に終わりの区切り記号までのすべての文字を抽出するストリームを操作します。 埋め込まれた引用符は、エスケープ文字 (既定では '\\\\') でエスケープされます。  
   
- 区切り記号はストリーム オブジェクト内でのみ表示され、抽出された文字列では表示されません。ただし、[basic_stringstream::str](../standard-library/basic-stringstream-class.md#str)() によって返される文字列では表示されます。  
+ 区切り記号は、ストリーム オブジェクト内でのみ表示抽出された文字列で存在しないが、によって返される文字列に存在する[basic_stringstream::str](../standard-library/basic-stringstream-class.md#str)です。  
   
  挿入演算子と抽出演算子の空白の処理は、コード内での文字列の表記方法に依存しません。そのため、入力文字列が未加工の文字列リテラルであるか、標準の文字列であるかにかかわらず、quoted 演算子は便利です。 埋め込みの引用符、改行、タブなどが含まれる入力文字列は、書式にかかわらず、quoted() マニピュレーターで保持されます。  
   
- 詳細情報と完全なコード例については、「[quoted]--brokenlink--(../Topic/%3Cios%3E%20functions.md#quoted)」をご覧ください。  
+ 詳細と完全なコード例については、次を参照してください。[引用符で囲まれた](../standard-library/iomanip-functions.md#quoted)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [出力ストリーム](../standard-library/output-streams.md)   
-
 

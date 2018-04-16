@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: MFC ActiveX controls [MFC], methods
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], methods
 ms.assetid: e20271de-6ffa-4ba0-848b-bafe6c9e510c
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f1c0fe2f5e54205c3e9c82ebf1d9cb40504e5023
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8e3b343b13118930612e4adfed4c33a65a9e7be8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-activex-controls-methods"></a>MFC ActiveX コントロール : メソッド
 ActiveX コントロールは、それ自体とそのコントロールのコンテナー間の通信にイベントを発生させます。 コンテナーは、メソッドとプロパティを使用して、コントロールとも通信できます。 メソッドは、関数とも呼ばれます。  
@@ -48,6 +53,6 @@ ActiveX コントロールは、それ自体とそのコントロールのコン
   
 -   [MFC ActiveX コントロール: メソッドからのエラー コードのリターン](../mfc/mfc-activex-controls-returning-error-codes-from-a-method.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
 

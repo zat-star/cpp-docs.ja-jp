@@ -26,16 +26,17 @@ dev_langs:
 helpviewer_keywords:
 - CComPtrBase class
 ms.assetid: 6dbe9543-dee8-4a97-b02f-dd3a25f4a1a0
-caps.latest.revision: 19
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f0d9b4d49a7568df905a595e2cf6494b2b98706d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 1e6bf79ce5de5d19468b3cbb230e16882483dc30
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomptrbase-class"></a>CComPtrBase クラス
 このクラスは、メモリの COM ベースのルーチンを使用するスマート ポインター クラスの基礎を提供します。  
@@ -94,7 +95,7 @@ class CComPtrBase
 ## <a name="remarks"></a>コメント  
  このクラスは、COM メモリ管理ルーチンを使用するその他のスマート ポインターの基盤[CComQIPtr](../../atl/reference/ccomqiptr-class.md)と[CComPtr](../../atl/reference/ccomptr-class.md)です。 派生クラスは、独自のコンス トラクターと演算子がによって提供されるメソッドに依存して`CComPtrBase`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcomcli.h  
   
 ##  <a name="advise"></a>CComPtrBase::Advise  
@@ -373,6 +374,5 @@ HRESULT SetSite(IUnknown* punkParent) throw();
 ### <a name="remarks"></a>コメント  
  このメソッドを呼び出す[AtlSetChildSite](composite-control-global-functions.md#atlsetchildsite)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)
-

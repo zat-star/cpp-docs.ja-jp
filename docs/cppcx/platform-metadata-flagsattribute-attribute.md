@@ -6,20 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::Metadata::FlagsAttribute
-dev_langs: C++
-helpviewer_keywords: Platform::Metadata::FlagsAttribute Attribute
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::Metadata::FlagsAttribute
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Metadata::FlagsAttribute Attribute
 ms.assetid: 56f4a191-cc81-4742-aff8-bd2219c0735c
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 4e2e4aec3a7b324acbcd99e731a9f4f41d568dc0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8ce558d7534d99d1755bf9005f5e62cee35a5727
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformmetadataflagsattribute-attribute"></a>Platform::Metadata::FlagsAttribute 属性
 列挙体をビット フィールド、つまりフラグのセットとして扱えることを示します。  
@@ -38,7 +43,7 @@ public ref class Flags abstract : Attribute
   
 ### <a name="remarks"></a>コメント  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -47,5 +52,5 @@ public ref class Flags abstract : Attribute
   
  **メタデータ:** platform.winmd  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform::Metadata 名前空間](../cppcx/platform-metadata-namespace.md)

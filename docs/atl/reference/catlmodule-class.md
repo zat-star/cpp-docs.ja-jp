@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -23,18 +24,22 @@ f1_keywords:
 - ATLBASE/ATL::CAtlModule::UpdateRegistryFromResourceS
 - ATLBASE/ATL::CAtlModule::m_libid
 - ATLBASE/ATL::CAtlModule::m_pGIT
-dev_langs: C++
-helpviewer_keywords: CAtlModule class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAtlModule class
 ms.assetid: 63fe02f1-4c4b-4e7c-ae97-7ad7b4252415
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6c2c9b9c5eaaa2cf908b2b1ff82bafaa892d1e43
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6c969341656d0861224cf0835d08e31907328b5f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlmodule-class"></a>不要クラス
 このクラスは、いくつかの ATL モジュール クラスによって使用されるメソッドを提供します。  
@@ -88,7 +93,7 @@ class ATL_NO_VTABLE CAtlModule : public _ATL_MODULE
   
  `CAtlModule`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="addcommonrgsreplacements"></a>CAtlModule::AddCommonRGSReplacements  
@@ -320,7 +325,7 @@ HRESULT WINAPI UpdateRegistryFromResourceS(
 ### <a name="remarks"></a>コメント  
  ような[として](#updateregistryfromresourced)を除く`CAtlModule::UpdateRegistryFromResourceS`ATL レジストリ コンポーネント (レジストラー) への静的リンクを作成します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ATL_MODULE](atl-typedefs.md#_atl_module)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [モジュール クラス](../../atl/atl-module-classes.md)   

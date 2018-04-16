@@ -1,12 +1,10 @@
 ---
-title: "strftime、wcsftime、_strftime_l、_wcsftime_l | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+title: strftime、wcsftime、_strftime_l、_wcsftime_l | Microsoft Docs
+ms.custom: ''
+ms.date: 03/22/2018
+ms.technology:
+- cpp-standard-libraries
+ms.topic: reference
 apiname:
 - strftime
 - _wcsftime_l
@@ -29,7 +27,10 @@ f1_keywords:
 - _tcsftime
 - strftime
 - wcsftime
-dev_langs: C++
+- _strftime_l
+- _wcsftime_l
+dev_langs:
+- C++
 helpviewer_keywords:
 - _strftime_l function
 - strftime function
@@ -39,185 +40,169 @@ helpviewer_keywords:
 - _tcsftime function
 - time strings
 ms.assetid: 6330ff20-4729-4c4a-82af-932915d893ea
-caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ec9c46f1a6d52a8769e5db454d44baf9ec9d8a8a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cc71dc09b6634e01b1ba78621344dfb5c589c8d5
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="strftime-wcsftime-strftimel-wcsftimel"></a>strftime、wcsftime、_strftime_l、_wcsftime_l
-時刻の文字列の書式を指定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-size_t strftime(  
-   char *strDest,  
-   size_t maxsize,  
-   const char *format,  
-   const struct tm *timeptr   
-);  
-size_t _strftime_l(  
-   char *strDest,  
-   size_t maxsize,  
-   const char *format,  
-   const struct tm *timeptr,  
-   _locale_t locale  
-);  
-size_t wcsftime(  
-   wchar_t *strDest,  
-   size_t maxsize,  
-   const wchar_t *format,  
-   const struct tm *timeptr   
-);  
-size_t _wcsftime_l(  
-   wchar_t *strDest,  
-   size_t maxsize,  
-   const wchar_t *format,  
-   const struct tm *timeptr,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `strDest`  
- 出力する文字列。  
-  
- `maxsize`  
- `strDest` バッファーのサイズ。文字数 (`char` や `wchart_t`) で測定されます。  
-  
- `format`  
- 書式指定文字列。  
-  
- `timeptr`  
- `tm` データ構造。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- `strftime` は `strDest` 内の文字数を返し、`wcsftime` は対応するワイド文字数を返します。  
-  
- 終端の NULL を含む文字数の合計が `maxsize` を超える場合、`strftime` と `wcsftime` の両方が 0 を返し、`strDest` の内容は不確定です。  
-  
- `strDest` 内の文字数は、`format` 内のリテラル文字数と、書式コードを使用して `format` に追加される可能性がある文字数に等しくなります。 文字列の終端の NULL は戻り値にはカウントされません。  
-  
-## <a name="remarks"></a>コメント  
- `strftime`と`wcsftime`関数形式、`tm`時刻の値`timeptr`に従って、指定された`format`引数と、バッファー内の結果ストア`strDest`です。 文字列には最大 `maxsize` 文字を含めることができます。 `timeptr` 構造のフィールドについては、「[asctime](../../c-runtime-library/reference/asctime-wasctime.md)」をご覧ください。 `wcsftime` は `strftime` のワイド文字版です。その文字列ポインター引数はワイド文字の文字列を指します。 それ以外では、これらの関数の動作は同じです。  
-  
+
+時刻の文字列の書式を指定します。
+
+## <a name="syntax"></a>構文
+
+```
+size_t strftime(
+   char *strDest,
+   size_t maxsize,
+   const char *format,
+   const struct tm *timeptr
+);
+size_t _strftime_l(
+   char *strDest,
+   size_t maxsize,
+   const char *format,
+   const struct tm *timeptr,
+   _locale_t locale
+);
+size_t wcsftime(
+   wchar_t *strDest,
+   size_t maxsize,
+   const wchar_t *format,
+   const struct tm *timeptr
+);
+size_t _wcsftime_l(
+   wchar_t *strDest,
+   size_t maxsize,
+   const wchar_t *format,
+   const struct tm *timeptr,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*strDest*<br/>
+出力する文字列。
+
+*maxsize*<br/>
+サイズ、*追加される文字*バッファー、単位は文字 (**char**または**wchar_t**)。
+
+*format*<br/>
+書式指定文字列。
+
+*timeptr*<br/>
+**tm**データ構造体。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+`strftime` 配置する文字数を返します*追加される文字*と`wcsftime`対応するワイド文字数を返します。
+
+場合は、文字、終端の null の合計数は、複数の*maxsize*の両方を`strftime`と`wcsftime`0 との内容を返す*追加される文字*は不確定になります。
+
+文字数*追加される文字*のリテラル文字の数と等しく、*形式*に追加することがありますの文字だけでなく*形式*書式設定コードを使用しています。 文字列の終端の NULL は戻り値にはカウントされません。
+
+## <a name="remarks"></a>コメント
+
+`strftime`と`wcsftime`関数形式、 **tm**時刻の値*timeptr*に従って、指定された*形式*引数の結果を格納し、バッファー*追加される文字*です。 最大で*maxsize*文字は、文字列に配置されます。 内のフィールドの詳細については、 *timeptr*構造体は、「 [asctime](../../c-runtime-library/reference/asctime-wasctime.md)です。 `wcsftime` は `strftime` のワイド文字版です。その文字列ポインター引数はワイド文字の文字列を指します。 それ以外では、これらの関数の動作は同じです。
+
 > [!NOTE]
->  Visual C++ 2005 より前のバージョンでは、`wcsftime` の `format` パラメーターがデータ型 `const wchar_t *` としてドキュメントに説明されていましたが、実際に実装された `format` データ型は `const char *` でした。 実装、`format`データ型が、現在と以前のドキュメントを反映するように更新された`const wchar_t *`です。  
-  
- この関数は、パラメーターを検証します。 場合`strDest`、 `format`、または`timeptr`null ポインターでは、または、`tm`によってアドレス指定されるデータ構造体`timeptr`が正しくありません (たとえば、日付や時刻の値が範囲外が含まれる場合)、または、`format`文字列無効な書式設定コードが含まれています」の説明に従って、無効なパラメーター ハンドラーが呼び出される[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、この関数は 0 を返し、`errno` を `EINVAL` に設定します。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_tcsftime`|`strftime`|`strftime`|`wcsftime`|  
-  
- `format` 引数は 1 つ以上のコードで構成されます。`printf` と同じように、書式コードの前にはパーセント記号 (`%`) を指定します。 文字で始まらないが`%`をそのままコピーされる`strDest`です。 現在のロケールの `LC_TIME` カテゴリは、`strftime` の出力の書式に影響します。 (`LC_TIME` の詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。)`_l` サフィックスが付いていない関数では、現在設定されているロケールを使用します。 `_l` サフィックスが付いているこれらの関数の各バージョンは、現在設定されているロケールの代わりに、ロケールをパラメーターとして使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
-  
- `strftime` の書式コードを以下に示します。  
-  
- `%a`  
- 曜日の略称  
-  
- `%A`  
- 曜日の正式な名前  
-  
- `%b`  
- 月の略称  
-  
- `%B`  
- 月の正式な名前  
-  
- `%c`  
- ロケールに合った日付と時刻の表記  
-  
- `%d`  
- 10 進数 (01 ~ 31) で月の日  
-  
- `%H`  
- 24 時間形式で表される時間 (00 ~ 23)  
-  
- `%I`  
- 12 時間形式 (01 ~ 12)  
-  
- `%j`  
- 10 進数 (001 ~ 366) の年の日付  
-  
- `%m`  
- 10 進数 (01 ~ 12)  
-  
- `%M`  
- 10 進数による分 (00 ~ 59)  
-  
- `%p`  
- 現在のロケールのです。 12 時間制のインジケーター  
-  
- `%S`  
- 10 進数による秒 (00 ~ 59)  
-  
- `%U`  
- 日曜日を週の最初の日として、10 進数、年間の週 (00 ~ 53)  
-  
- `%w`  
- 10 進数による曜日 (0 ~ 6 です。日曜日は 0)  
-  
- `%W`  
- 月曜が週の最初の日の 10 進数で、年の週 (00 ~ 53)  
-  
- `%x`  
- 現在のロケールの日付表記  
-  
- `%X`  
- 現在のロケールの時刻表記  
-  
- `%y`  
- 10 進数として、2 桁の年年 (00 ~ 99)  
-  
- `%Y`  
- 世紀を付けた 10 進数の年  
-  
- `%z, %Z`  
- レジストリ設定に応じて、タイム ゾーンの名前またはタイム ゾーンの略称のいずれか。タイム ゾーンが不明の場合は文字なし  
-  
- `%%`  
- パーセント記号  
-  
- `printf` 関数と同じように、書式コードのプレフィックスとして `#` フラグを付けることができます。 その場合、書式コードの説明は次のように変更します。  
-  
-|[書式コード]|説明|  
-|-----------------|-------------|  
-|`%#a, %#A, %#b, %#B, %#p, %#X, %#z, %#Z, %#%`|`#` フラグは無視されます。|  
-|`%#c`|現在のロケールに合った、長い日付と時刻の表記。 たとえば、"Tuesday, March 14, 1995, 12:41:29" です。|  
-|`%#x`|現在のロケールに合った、長い日付の表記。 たとえば、"Tuesday, March 14, 1995" です。|  
-|`%#d, %#H, %#I, %#j, %#m, %#M, %#S, %#U, %#w, %#W, %#y, %#Y`|先頭にゼロがある場合は削除します。|  
-  
-## <a name="requirements"></a>要件  
-  
-|ルーチン|必須ヘッダー|  
-|-------------|---------------------|  
-|`strftime`|\<time.h>|  
-|`wcsftime`|\<time.h> または \<wchar.h>|  
-|`_strftime_l`|\<time.h>|  
-|`_wcsftime_l`|\<time.h> または \<wchar.h>|  
-  
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
- [time](../../c-runtime-library/reference/time-time32-time64.md) の例を参照してください。  
-  
-## <a name="see-also"></a>関連項目  
- [ロケール](../../c-runtime-library/locale.md)   
- [時間管理](../../c-runtime-library/time-management.md)   
- [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [localeconv](../../c-runtime-library/reference/localeconv.md)   
- [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
- [strxfrm、wcsxfrm、_strxfrm_l、_wcsxfrm_l](../../c-runtime-library/reference/strxfrm-wcsxfrm-strxfrm-l-wcsxfrm-l.md)
+>  Visual C 2005 以前のバージョン、ドキュメントの説明、*形式*のパラメーター`wcsftime`データ型として`const wchar_t *`がの実際の実装、*形式*データ型が`const char *`です。 実装、*形式*データ型が、現在と以前のドキュメントを反映するように更新された`const wchar_t *`です。
+
+この関数は、パラメーターを検証します。 場合*追加される文字*、*形式*、または*timeptr*が null ポインターの場合、または、 **tm**によってアドレス指定されるデータ構造体*timeptr*が正しくありません (たとえば、日付や時刻の値が範囲外が含まれる場合)、または、*形式*文字列に無効な書式設定コードが含まれている場合、無効なパラメーター ハンドラーが呼び出されます」の説明に従って[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 続けるには、関数の戻り値 0 とセットの実行が許可された場合**errno**に**EINVAL**です。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|`_tcsftime`|`strftime`|`strftime`|`wcsftime`|
+
+*形式*引数は、コードを 1 つまたは複数の; とで構成されます。 `printf`、書式指定コードには、パーセント記号が付きます (**%**)。 文字で始まらないが**%**をそのままコピーされる`strDest`です。 **LC_TIME** 、現在のロケールのカテゴリは、の出力の書式設定に影響が`strftime`です。 (詳細について**LC_TIME**を参照してください[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md))。`strftime`と`wcsftime`関数を使用して、現在設定されているロケール。 `_strftime_l`と`_wcsftime_l`ロケールをパラメーターとして受け取る、し、現在設定されているのではなくそれを使用する点を除いて、これらの関数のバージョンが同一のロケールです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+`strftime`関数では、これらのコードを書式指定をサポートします。
+
+|||
+|-|-|
+|コード|置換文字列|
+|`%a`|ロケールでの曜日の省略名|
+|`%A`|ロケールでの曜日の正式名|
+|`%b`|ロケールにおける月の省略名|
+|`%B`|ロケールにおける月の正式名|
+|`%c`|ロケールに合った日付と時刻の表記|
+|`%C`|年が 100 で割った値し、10 進数 (00−99) を整数に切り捨てられます|
+|`%d`|10 進数 (01 ~ 31) で月の日|
+|`%D`|`%m/%d/%y` と同じ意味です。|
+|`%e`|1 桁の数字をスペースでは、場所の前に 10 進数 (1 ~ 31) で月の日|
+|`%F`|`%Y-%m-%d` と同じ意味です。|
+|`%g`|10 進数として ISO 8601 週に基づく年の最後の 2 つの桁 (00 ~ 99)|
+|`%G`|ISO 8601 週に基づく年を 10 進数として|
+|`%h`|月の省略名 (に相当`%b`)|
+|`%H`|24 時間形式で表される時間 (00 ~ 23)|
+|`%I`|12 時間形式 (01 ~ 12)|
+|`%j`|10 進数 (001 ~ 366) 年の日付|
+|`%m`|月を表す 10 進数値 (01 ~ 12)|
+|`%M`|10 進数による分 (00 ~ 59)|
+|`%n`|改行文字 (**\n**)|
+|`%p`|ロケールのです。 12 時間制のインジケーター|
+|`%r`|ロケールの 12 時間制の時刻|
+|`%R`|`%H:%M` と同じ意味です。|
+|`%S`|10 進数による秒 (00 ~ 59)|
+|`%t`|水平タブ文字 (**\t**)|
+|`%T`|等価`%H:%M:%S`、ISO 8601 時刻の形式|
+|`%u`|ISO 8601 曜日の 10 進数 (1 ~ 7 です。月曜日が 1)|
+|`%U`|10 進数年の週番号 (00 ~ 53) で、最初の日曜日は第 1 週の最初の日|
+|`%V`|ISO 8601 週数を 10 進数 (00 ~ 53)|
+|`%w`|10 進数による曜日 (0 ~ 6 です。日曜日は 0)|
+|`%W`|10 進数年の週番号 (00 ~ 53)、最初の月曜日は第 1 週の最初の日|
+|`%x`|ロケールの形式の日付形式|
+|`%X`|ロケールの時刻の形式|
+|`%y`|10 進数として、2 桁の年年 (00 ~ 99)|
+|`%Y`|世紀を付けた 10 進数の年|
+|`%z`|ISO 8601 形式では、UTC からのオフセットタイム ゾーンが不明の場合は文字なし|
+|`%Z`|ロケールのタイム ゾーンの名前またはレジストリの設定に応じて、タイム ゾーンの省略形タイム ゾーンが不明の場合は文字なし|
+|`%%`|パーセント記号|
+
+`printf` 関数と同じように、書式コードのプレフィックスとして `#` フラグを付けることができます。 その場合、書式コードの説明は次のように変更します。
+
+|[書式コード]|説明|
+|-----------------|-------------|
+|`%#a`, `%#A`, `%#b`, `%#B`, `%#g`, `%#G`, `%#h`, `%#n`, `%#p`, `%#t`, `%#u`, `%#w`, `%#X`, `%#z`, `%#Z`, `%#%`|`#` フラグは無視されます。|
+|`%#c`|長い日付と時刻形式をロケールに対応します。 たとえば、"Tuesday, March 14, 1995, 12:41:29" です。|
+|`%#x`|長い日付形式、ロケールに対応します。 たとえば、"Tuesday, March 14, 1995" です。|
+|`%#d`, `%#D`, `%#e`, `%#F`, `%#H`, `%#I`, `%#j`, `%#m`, `%#M`, `%#r`, `%#R`, `%#S`, `%#T`, `%#U`, `%#V`, `%#W`, `%#y`, `%#Y`|先頭のゼロまたは空白 (存在する場合) を削除します。|
+
+によって生成される ISO 8601 曜日と年の週に基づく`%V`、 `%g`、および`%G`、ここで、第 1 週は年 1 月 4 日、これを含む、少なくとも 4 日、年の最初の週はある週の始まりを月曜日を週を使用します。 年の第 1 月曜日が、第 2 の場合は、第 3、または第 4、前の日数は、前の年の最後の週の一部です。 その日の`%V`53 との両方に置き換え、`%g`と`%G`前年の桁の数字によって置き換えられます。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|`strftime`|\<time.h>|
+|`wcsftime`|\<time.h> または \<wchar.h>|
+|`_strftime_l`|\<time.h>|
+|`_wcsftime_l`|\<time.h> または \<wchar.h>|
+
+`_strftime_l`と`_wcsftime_l`関数は、Microsoft に固有です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+[time](../../c-runtime-library/reference/time-time32-time64.md) の例を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[ロケール](../../c-runtime-library/locale.md) <br/>
+[時間管理](../../c-runtime-library/time-management.md) <br/>
+[文字列操作](../../c-runtime-library/string-manipulation-crt.md) <br/>
+[localeconv](../../c-runtime-library/reference/localeconv.md) <br/>
+[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md) <br/>
+[strcoll 系関数](../../c-runtime-library/strcoll-functions.md) <br/>
+[strxfrm、wcsxfrm、_strxfrm_l、_wcsxfrm_l](../../c-runtime-library/reference/strxfrm-wcsxfrm-strxfrm-l-wcsxfrm-l.md)<br/>

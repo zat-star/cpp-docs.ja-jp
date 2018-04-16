@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C2675 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2675 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
-f1_keywords: C2675
-dev_langs: C++
-helpviewer_keywords: C2675
+f1_keywords:
+- C2675
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2675
 ms.assetid: 4b92a12b-bff8-4dd5-a109-620065fc146c
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c9c5815e7c57eb2469599a26c2cbc5202018f27e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 60bc86f87f6b1bd247d8f866b9d8bc7131f4898e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2675"></a>コンパイラ エラー C2675
 単項 'operator': 'type' はいないこの演算子または定義を適切な型への変換を定義済の演算子に  

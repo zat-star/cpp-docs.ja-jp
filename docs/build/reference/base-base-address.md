@@ -1,59 +1,63 @@
 ---
-title: "/BASE (ベース アドレス) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/base"
-  - "VC.Project.VCLinkerTool.BaseAddress"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/BASE リンカー オプション"
-  - "@ シンボル (ベース アドレスの)"
-  - "アット マーク シンボル (ベース アドレスの)"
-  - "ベース アドレス [C++]"
-  - "BASE リンカー オプション"
-  - "-BASE リンカー オプション"
-  - "DLL [C++], リンク"
-  - "環境変数 [C++], LIB"
-  - "実行可能ファイル [C++], ベース アドレス"
-  - "キー アドレス サイズ"
-  - "LIB 環境変数"
-  - "プログラム [C++], ベース アドレス"
-  - "プログラム [C++], 防止 (再配置を)"
-  - "セミコロン [C++], 指定子"
+title: "ベース (ベース アドレス) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /base
+- VC.Project.VCLinkerTool.BaseAddress
+dev_langs:
+- C++
+helpviewer_keywords:
+- base addresses [C++]
+- programs [C++], preventing relocation
+- semicolon [C++], specifier
+- -BASE linker option
+- key address size
+- environment variables [C++], LIB
+- programs [C++], base address
+- LIB environment variable
+- BASE linker option
+- DLLs [C++], linking
+- /BASE linker option
+- '@ symbol for base address'
+- executable files [C++], base address
+- at sign symbol for base address
 ms.assetid: 00b9f6fe-0bd2-4772-a69c-7365eb199069
-caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9ddf399757d881484817be676ca3077b4fc21709
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /BASE (ベース アドレス)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="base-base-address"></a>/BASE (ベース アドレス)
 ```  
 /BASE:{address[,size] | @filename,key}  
 ```  
   
- \/BASE オプションでは、プログラムのベース アドレスを設定して、.exe ファイルの既定の配置場所 \(0x400000\) または DLL の既定の配置場所 \(0x10000000\) をオーバーライドします。  オペレーティング システムでは、プログラムをまず指定されたベース アドレスか既定のベース アドレスに読み込みます。  このとき、読み込み先に十分なメモリがないと、プログラムを別の場所に配置し直します。  この再配置を防ぐには、[\/FIXED](../../build/reference/fixed-fixed-base-address.md) オプションを指定します。  
+ 基本オプションは、.exe または DLL ファイルの既定の場所をオーバーライドして、プログラムのベース アドレスを設定します。 .Exe ファイルの既定のベース アドレスは、32 ビットのイメージ 0x400000 または 64 ビットのイメージ 0x140000000 です。 Dll の場合、既定のベース アドレスは、32 ビットのイメージ 0x10000000 または 64 ビットのイメージ 0x180000000 です。 アドレス space layout randomization (機能) をサポートしていないか、/DYNAMICBASE:NO オプションが設定されたときのオペレーティング システムで、オペレーティング システムは、最初に指定されたプログラムまたは既定のベース アドレスをロードを試みます。 十分な空き領域がない使用可能な場合、システムには、プログラムが再配置します。 再配置を防ぐためを使用して、 [固定/](../../build/reference/fixed-fixed-base-address.md)オプション。  
   
- *address* が 64 KB の倍数でない場合、リンカーはエラーを生成します。オプションとしてプログラムのサイズを指定して、プログラムが指定したサイズに収まらない場合にリンカーが警告を出すようにできます。  
+ 場合、リンカーはエラー*アドレス*64 K の倍数ではありません。 必要に応じて、プログラムのサイズを指定することができます。リンカーは、プログラムが指定したサイズに収まらない場合に警告を発行します。  
   
- コマンド ラインでは、別の方法でベース アドレスを指定できます。つまり、アット マーク \(@\) の後ろにファイル名 \(*filename*\) と *filename* ファイルの中のキー \(`key`\) を指定します。  この *filename* ファイルはテキスト ファイルとし、この中にプログラムが使うすべての DLL の場所とサイズを記述します。  リンカーは指定されているパスで *filename* を探します。パスが指定されていない場合は、環境変数 LIB で指定されているディレクトリを検索します。  *filename* ファイルでは、次の構文で 1 行につき DLL を 1 つ指定します。  
+ コマンド ラインでは、ベース アドレスを指定する別の方法は、ベース アドレスの応答ファイルを使用してです。 ベース アドレスの応答ファイルは、ベース アドレスと、プログラムで使用すると、すべての Dll と基本アドレスごとに固有のテキストをキーの省略可能なサイズを含むテキスト ファイルです。 応答ファイルを使用してベース アドレスを指定するには、使用、アット マーク (@) 応答ファイルの名前を続けて*filename*、コンマ、その後に、`key`ファイルで使用するベース アドレスの値。 リンカー *filename*いずれかを指定したパスでパスを指定しない場合、LIB 環境変数で指定したディレクトリ内、または。 内の各行*filename* 1 つの DLL を表し、次の構文を持ちます。  
   
 ```  
   
-key address [size] ;comment  
+key address [size] ;comment  
 ```  
   
- `key` は英数字から成る文字列です。key の大文字小文字は区別されません。  key では通常は DLL ファイル名を指定しますが、ほかの名前も指定できます。  `key` の後ろには、ベース *address* を C 言語の表記法、16 進表記法、または 10 進表記法で指定し、最後にオプションとして最大 `size` を指定します。  3 つの引数はすべて、スペースまたはタブで区切ります。  指定した `size` がプログラムに必要な仮想アドレス空間より小さい場合は、リンク時に警告が出力されます。  コメント `comment` は、セミコロン \(;\) で指定します。コメントは、アドレスやサイズ指定と同じ行に置くことも、独立した別の行に置くこともできます。  セミコロンから行の終わりまでの内容はすべて無視されます。  次は、ベース アドレス指定を示すファイルの一部です。  
+ `key`文字の英数字の文字列は、大文字小文字を区別します。 通常、DLL の名前ですが、必要はありません。 `key`ベースが続く*アドレス*C 言語、16 進数、または 10 進表記で省略可能な最大`size`です。 3 つの引数は、スペースまたはタブで区切られます。 リンカー警告を発行、指定した`size`が、プログラムに必要な仮想アドレス空間よりも小さいです。 A`comment`セミコロン (;) で指定され、同一または別の行を指定できます。 リンカーは、行の末尾にセミコロンからすべてのテキストを無視します。 この例では、このようなファイルの一部を示します。  
   
 ```  
 main   0x00010000    0x08000000    ; for PROJECT.exe  
@@ -61,31 +65,31 @@ one    0x28000000    0x00100000    ; for DLLONE.DLL
 two    0x28100000    0x00300000    ; for DLLTWO.DLL  
 ```  
   
- このファイル名を DLLS.txt とします。この情報を適用するためのコマンドを次に示します。  
+ これらの行を格納しているファイルには、DLLS.txt が呼び出されるとは、次のコマンド例には、この情報が適用されます。  
   
 ```  
 link dlltwo.obj /dll /base:@dlls.txt,two  
 ```  
   
-## 解説  
- それぞれの DLL がアドレス空間内で重ならないようにベース アドレスを割り当てると、実行時のページングが軽減され、パフォーマンスが向上します。  
+## <a name="remarks"></a>コメント  
+ セキュリティ上の理由から、使用するをお勧めします。、 [/DYNAMICBASE](../../build/reference/dynamicbase-use-address-space-layout-randomization.md)オプションは、実行可能ファイルのベース アドレスを指定する代わりにします。 これには、ランダムにリベースできる読み込み時に Windows の address space layout randomization (機能) 機能を使用して、実行可能イメージが生成されます。 /DYNAMICBASE オプションは、既定では、オンです。  
   
- 別の方法としては、[NAME](../Topic/NAME%20\(C-C++\).md) ステートメントまたは [LIBRARY](../../build/reference/library.md) ステートメントの引数 *BASE* で、ベース アドレスを設定できます。  \/BASE オプションと [\/DLL](../../build/reference/dll-build-a-dll.md) オプションを併用すると、**LIBRARY** ステートメントと等価になります。  
+ ベース アドレスを設定する別の方法を使用して、*基本*の引数、[名前](../../build/reference/name-c-cpp.md)または[ライブラリ](../../build/reference/library.md)ステートメントです。 /BASE と[/DLL](../../build/reference/dll-build-a-dll.md)オプションは一緒に相当する、**ライブラリ**ステートメントです。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  展開して、**リンカー**フォルダーです。  
   
-3.  **\[詳細\]** プロパティ ページをクリックします。  
+3.  選択、**詳細**プロパティ ページ。  
   
-4.  \[ベース アドレス\] プロパティを変更します。  
+4.  変更、**のベース アドレス**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.BaseAddress%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

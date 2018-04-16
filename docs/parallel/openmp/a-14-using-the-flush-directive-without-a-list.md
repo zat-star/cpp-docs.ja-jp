@@ -1,31 +1,34 @@
 ---
-title: "A.14   Using the flush Directive without a List | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "リストを伴わずフラッシュ ディレクティブを使用して A.14 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 9e63141a-d0c6-43a5-ac16-b0bd7c89b871
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b2a88558de3c04f1ae05922b1ad5bc7f63aed996
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# A.14   Using the flush Directive without a List
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-次の例では影響を受けない共有オブジェクト \(ページの 20 [セクション 2.6.5](../Topic/2.6.5%20flush%20Directive.md) の場合\) が一覧に `flush` のディレクティブによって影響を受ける共有オブジェクトを区別したものです :  
+# <a name="a14---using-the-flush-directive-without-a-list"></a>A.14 リストのない flush ディレクティブの使用
+次の例 (の[セクション 2.6.5](../../parallel/openmp/2-6-5-flush-directive.md) 20 ページで) 共有に影響を受けるオブジェクトを区別、`flush`ディレクティブの影響を受けない共有オブジェクトからリストのないです。  
   
-## 例  
+## <a name="example"></a>例  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // omp_flush_without_list.c  

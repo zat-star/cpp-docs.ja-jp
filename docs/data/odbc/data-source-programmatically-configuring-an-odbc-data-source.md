@@ -4,26 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: SQLConfigDataSource
-dev_langs: C++
+f1_keywords:
+- SQLConfigDataSource
+dev_langs:
+- C++
 helpviewer_keywords:
 - ODBC data sources, configuring
 - SQLConfigDataSource method example
 - ODBC connections, configuring
 - configuring ODBC data sources
 ms.assetid: b8cabe9b-9e12-4d73-ae36-7cb12dee3213
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cd401acedbdfd8928ab3b2b085ce02595bdaa13b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: ac5756452a8b1c2d5dbf2f27ac7d3e1a8b069ca2
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="data-source-programmatically-configuring-an-odbc-data-source"></a>データ ソース: プログラムにおける ODBC データ ソースの設定
 このトピックでは、ODBC (Open Database Connectivity) データ ソース名をプログラムで設定する方法について説明します。 この方法を使うと、柔軟なデータ アクセスが可能になり、ユーザーが ODBC データ ソース アドミニストレーターなどのプログラムを使って明示的にデータ ソースを指定する必要もありません。  
@@ -34,7 +40,7 @@ ms.lasthandoff: 10/24/2017
   
  しかし、多くの DBMS では、プログラム上でデータ ソースを作成できます。 一部のデータ ソースは、データベースのフォルダー仕様を保持しています。 つまり、フォルダーがデータ ソースであり、データ ソース内の各テーブルは別個のファイルに格納されます。たとえば、dBASE の場合、各テーブルは .dbf ファイルです。 Microsoft Access や SQL Server などの他の ODBC データベース ドライバーでは、データ ソースを確立するには、いくつかの条件を満たすことが必要です。 たとえば、SQL Server ODBC ドライバーを使用する場合は、SQL Server コンピューターを確立する必要があります。  
   
-##  <a name="_core_sqlconfigdatasource_example"></a>SQLConfigDataSource の例  
+##  <a name="_core_sqlconfigdatasource_example"></a> SQLConfigDataSource の例  
  次の例では、 **:::sqlconfigdatasource**新しい Excel データ ソースを作成する ODBC API 関数には新しい Excel データ ソースが呼び出されます。  
   
 ```  
@@ -58,10 +64,10 @@ SQLConfigDataSource(NULL,ODBC_ADD_DSN, "Excel Files (*.xls)",
   
  この情報を使用せず、レジストリに直接書き込までしたが**:::sqlconfigdatasource**、ドライバー マネージャーがそのデータを維持するために使用する現在の手法には、任意のアプリケーションが依存することです。 新しいバージョンの ODBC ドライバー マネージャーでデータ ソースのレコードを保持する方法に変更があると、この手法を使うアプリケーションは動作しなくなります。 API 関数が提供されている場合はできるだけそれを使うようにしてください。 たとえば、コードの移植性が 16 ビットから 32 ビットを使用する場合、 **:::sqlconfigdatasource**関数、関数は Odbc.ini ファイルまたはレジストリに正常に書き込まれるためです。  
   
-##  <a name="_core_sqlconfigdatasource_parameters"></a>SQLConfigDataSource のパラメーター  
+##  <a name="_core_sqlconfigdatasource_parameters"></a> SQLConfigDataSource のパラメーター  
  次のパラメーターを説明した、 **:::sqlconfigdatasource**関数。 多くの情報は、ODBC API から取得*プログラマーズ リファレンス*Visual C バージョン 1.5 以降で提供されます。  
   
-###  <a name="_core_function_prototype"></a>関数プロトタイプ  
+###  <a name="_core_function_prototype"></a> 関数プロトタイプ  
   
 ```  
 BOOL SQLConfigDataSource(HWND hwndParent,UINT fRequest, LPCSTR lpszDriver, LPCSTR lpszAttributes);  
@@ -69,7 +75,7 @@ BOOL SQLConfigDataSource(HWND hwndParent,UINT fRequest, LPCSTR lpszDriver, LPCST
   
 ### <a name="remarks"></a>コメント  
   
-####  <a name="_core_parameters_and_usage"></a>パラメーターと使用状況  
+####  <a name="_core_parameters_and_usage"></a> パラメーターと使用状況  
  *hwndParent*  
  新しいデータ ソースに関する追加情報をユーザーから得るために ODBC ドライバー マネージャーまたは特定の ODBC ドライバーが作成するダイアログ ボックスのオーナーとして指定するウィンドウ。 `lpszAttributes` パラメーターの提供する情報が不十分な場合は、ダイアログ ボックスが表示されます。 *HwndParent*パラメーターがあります**NULL**です。  
   
@@ -115,7 +121,7 @@ BOOL SQLConfigDataSource(HWND hwndParent,UINT fRequest, LPCSTR lpszDriver, LPCST
   
 3.  ドライバー名を選択します。  
   
-4.  **[OK]** をクリックします。  
+4.  **[OK]**をクリックします。  
   
  Odbc データ ソース アドミニストレーターでは、特定のドライバーの新しいデータ ソースを作成するための情報が表示されたら、クリックして**ヘルプ**です。 このドライバーのヘルプ ファイルが開き、通常は、ドライバーの使い方に関する重要な情報が表示されます。  
   

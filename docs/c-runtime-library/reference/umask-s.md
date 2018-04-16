@@ -1,13 +1,15 @@
 ---
 title: _umask_s | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _umask_s
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- _umask_s
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,7 +26,8 @@ apitype: DLLExport
 f1_keywords:
 - unmask_s
 - _umask_s
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - masks, file-permission-setting
 - _umask_s function
@@ -33,15 +36,17 @@ helpviewer_keywords:
 - umask_s function
 - files [C++], permission settings for
 ms.assetid: 70898f61-bf2b-4d8d-8291-0ccaa6d33145
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 67899d1dd082ffd023ca78ac8a4961288ffd0165
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 315473748d64e572c73746ce6f6fc97ccc912bb0
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="umasks"></a>_umask_s
 既定のファイル アクセス許可マスクを設定します。 「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」 (CRT のセキュリティ機能) の説明にあるとおり、セキュリティが強化されたバージョンの [_umask](../../c-runtime-library/reference/umask.md) です。  
@@ -92,13 +97,13 @@ errno_t _umask_s(
   
  `pmode` がマニフェスト定数のいずれかの組み合わせではない、または、別の定数セットを組み込んでいる場合、この関数は単にそれらを無視します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_umask_s`|\<io.h> と \<sys/stat.h> と \<sys/types.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -134,7 +139,7 @@ int main( void )
 Oldmask = 0x0000  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
  [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   

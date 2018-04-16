@@ -18,16 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - CDefaultCompareTraits class
 ms.assetid: a17e2740-e7b4-48f2-aeb7-c80ce84b63f7
-caps.latest.revision: 19
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 13c8bfd8ac02979f82e205ec86269b7ac40c8b08
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 410d34d59da33b6d929abbe2af0798a6cf46238b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdefaultcomparetraits-class"></a>CDefaultCompareTraits クラス
 このクラスは、既定の要素の比較関数を提供します。  
@@ -57,7 +58,7 @@ class CDefaultCompareTraits
   
  詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcoll.h  
   
 ##  <a name="compareelements"></a>CDefaultCompareTraits::CompareElements  
@@ -106,6 +107,5 @@ static int CompareElementsOrdered(const T& element1, const T& element2);
 ### <a name="remarks"></a>コメント  
  この関数の既定の実装を使用して、 `==`、  **\<** 、および **>** 演算子。 単純なデータ型以外のオブジェクト、この関数は、オーバーライドする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)
-

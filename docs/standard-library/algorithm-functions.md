@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - algorithm/std::adjacent_find
 - algorithm/std::all_of
@@ -105,9 +105,10 @@ f1_keywords:
 - algorithm/std::count_if
 - algorithm/std::partition_copy
 - algorithm/std::swap
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: c10b0c65-410c-4c83-abf8-8b7f61bba8d0
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -210,11 +211,13 @@ helpviewer_keywords:
 - std::count_if [C++]
 - std::partition_copy [C++]
 - std::swap [C++]
-ms.openlocfilehash: 2b70ab848071bb1196ceb57f986a6e74fe43d2de
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: eb5b068f30703119d0771725a9cb9980a1ca65ea
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="ltalgorithmgt-functions"></a>&lt;algorithm&gt; 関数
 ||||  
@@ -231,7 +234,7 @@ ms.lasthandoff: 10/24/2017
 |[is_partitioned](#is_partitioned)|[is_permutation](#is_permutation)|[is_sorted](#is_sorted)|  
 |[is_sorted_until](#is_sorted_until)|[iter_swap](#iter_swap)|[lexicographical_compare](#lexicographical_compare)|  
 |[lower_bound](#lower_bound)|[make_heap](#make_heap)|[max](#max)|  
-|[max_element](#max_element)|[merge](#merge)|[min](#min)|  
+|[max_element](#max_element)|[merge](#merge)|[分](#min)|  
 |[min_element](#min_element)|[minmax](#minmax)|[minmax_element](#minmax_element)|  
 |[mismatch](#mismatch)|[move_backward](#move_backward)|[next_permutation](#next_permutation)|  
 |[none_of](#none_of)|[nth_element](#nth_element)|[partial_sort](#partial_sort)|  
@@ -4088,7 +4091,7 @@ template<class ForwardIterator, class BinaryPredicate>
   
  `pair<ForwardIterator, ForwardIterator>`  
   
- `(`[min_element](../standard-library/algorithm-functions.md#min_element)`(first, last), `[max_element](../standard-library/algorithm-functions.md#max_element)`(first, last))`です。  
+ `(` [min_element](../standard-library/algorithm-functions.md#min_element)`(first, last), `[max_element](../standard-library/algorithm-functions.md#max_element)`(first, last))`.  
   
 ### <a name="remarks"></a>コメント  
  1 番目のテンプレート関数は、以下を返します。  
@@ -4535,7 +4538,7 @@ After another next_permutation of vector v1,
 ```  
   
 ##  <a name="nth_element"></a>  nth_element  
- パーティションの範囲の要素を正しく検索、  *n*番目の要素範囲のシーケンスの前にすべての要素が、シーケンス内にあるすべての要素から、以下になるよう、大きいか等しいことを再構成します。  
+ 範囲内のシーケンスの *n* 番目の要素を正しく検索し、その要素の前にあるすべての要素がその要素以下、シーケンス内でその要素に続くすべての要素がその要素以上になるようにして、要素の範囲を分割します。  
   
 ```  
 template<class RandomAccessIterator>  
@@ -4562,7 +4565,7 @@ void nth_element( RandomAccessIterator first, RandomAccessIterator _Nth, RandomA
 ### <a name="remarks"></a>コメント  
  参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
   
- `nth_element`アルゴリズムとは限りませんのサブ範囲の要素か側の *n*番目の要素が並べ替えられます。 そのため、一定の選択した要素を下回る範囲内の要素を並べ替える `partial_sort` よりも保証は少なくなり、下の範囲の要素を並べ替えが不要な場合に `partial_sort` のより高速な代替として使用することができます。  
+ `nth_element` アルゴリズムは、*n* 番目の要素の両側のサブ範囲内の要素が並べ替えられることを保証していません。 そのため、一定の選択した要素を下回る範囲内の要素を並べ替える `partial_sort` よりも保証は少なくなり、下の範囲の要素を並べ替えが不要な場合に `partial_sort` のより高速な代替として使用することができます。  
   
  どちらの要素も他方より小さくない場合、要素は同等ですが、必ずしも等しいわけではありません。  
   
@@ -5403,7 +5406,7 @@ int main( ) {
 ```  
   
 ##  <a name="random_shuffle"></a>  random_shuffle  
- Std::random_shuffle() 関数は推奨されず、置き換え[std::shuffle](../standard-library/algorithm-functions.md#shuffle)です。 コード例および詳細については、「 [\<ランダム >](../standard-library/random.md)と Stackoverflow の投稿[理由は:random_shuffle メソッドで使用されなくなった c++ 14?](http://go.microsoft.com/fwlink/?LinkId=397954)です。  
+ Std::random_shuffle() 関数は推奨されず、置き換え[std::shuffle](../standard-library/algorithm-functions.md#shuffle)です。 コード例および詳細については、「 [\<ランダム >](../standard-library/random.md)と Stackoverflow の投稿[理由は:random_shuffle メソッドで使用されなくなった c++ 14?](http://go.microsoft.com/fwlink/p/?linkid=397954)です。  
   
 ##  <a name="remove"></a>  remove  
  特定の範囲から指定された値を除去します。残りの要素の順序に影響を及ぼすことはなく、指定された値を含まない新しい範囲の末尾を返します。  
@@ -7397,8 +7400,7 @@ void shuffle(RandomAccessIterator first,
           `RandomAccessIterator` および `ValueSwappable` の要件を満たしている必要があります。  
   
  `last`  
- シャッフルされる範囲 (境界を含まない) の最後の要素に対する反復子。 
-          `RandomAccessIterator` および `ValueSwappable` の要件を満たしている必要があります。  
+ シャッフルされる範囲 (境界を含まない) の最後の要素に対する反復子。 `RandomAccessIterator` および `ValueSwappable` の要件を満たしている必要があります。  
   
  `gen`  
  

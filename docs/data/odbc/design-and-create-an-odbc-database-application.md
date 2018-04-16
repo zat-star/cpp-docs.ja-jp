@@ -1,32 +1,35 @@
 ---
-title: "ODBC データベース アプリケーションのデザインと作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーションのデザイン [C++], データベース アプリケーション"
+title: デザインし、ODBC データベース アプリケーションを作成 |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- application design [C++], database applications
 ms.assetid: 0eb106b3-91b7-4c42-8c93-a8224aa9fe12
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 25a1f041f9f2968fd74749727044573f1d787797
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ODBC データベース アプリケーションのデザインと作成
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ODBC データベース アプリケーションのデザインと設定については、以下のトピックを参照してください。  
+# <a name="design-and-create-an-odbc-database-application"></a>ODBC データベース アプリケーションのデザインと作成
+これらのトピックでは、ODBC データベース アプリケーションを設計および設定できます。  
   
-## このセクションの内容  
-  
--   [データベース トピックに関する Microsoft サポート技術情報の文書の検索](../../data/where-can-i-find-microsoft-knowledge-base-articles-on-database-topics-q.md)  
+## <a name="in-this-section"></a>このセクションの内容  
   
 -   [ODBC と MFC](../../data/odbc/odbc-and-mfc.md)  
   
@@ -34,7 +37,6 @@ ODBC データベース アプリケーションのデザインと設定につ�
   
 -   [ODBC の基礎](../../data/odbc/odbc-basics.md)  
   
--   [ODBC データベース アプリケーションのデザインと作成](#_core_design_and_create_an_odbc_database_application)  
   
-## 参照  
- [ODBC \(Open Database Connectivity\)](../Topic/Open%20Database%20Connectivity%20\(ODBC\).md)
+## <a name="see-also"></a>参照  
+ [ODBC (Open Database Connectivity)](../../data/odbc/open-database-connectivity-odbc.md)

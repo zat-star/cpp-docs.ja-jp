@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2688
-dev_langs: C++
-helpviewer_keywords: C2688
+f1_keywords:
+- C2688
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2688
 ms.assetid: 168c9e9d-8f65-4664-af86-db71d3e6ee46
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: eaacdb4c7404dd370de31ad1bca6c07391279584
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5b398ec1102ff5d5c795e6734e65564d11cd0ce3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2688"></a>コンパイラ エラー C2688
 'C2::fgrv': covariant の戻りを複数、または仮想継承が varargs 関数はサポートされていません  

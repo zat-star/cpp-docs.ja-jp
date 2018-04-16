@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3354
 ms.assetid: 185de401-231e-4999-a149-172ee4c69d84
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bd5552afb4981a3ff5303f0f992dbea78cb3a36e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: e4fc95051f9a59db0fcb06fd4990637efda34516
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3354"></a>コンパイラ エラー C3354
 'function': デリゲートを作成するための関数に、戻り値の型 'type' を指定することはできません。  
@@ -53,4 +54,3 @@ delegate VoidPfn func(); // C3354
 // try the following line instead  
 // delegate  void func();  
 ```  
-

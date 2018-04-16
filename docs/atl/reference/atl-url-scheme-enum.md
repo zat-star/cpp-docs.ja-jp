@@ -7,42 +7,27 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: 'index-page '
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
-- ATL_URL_SCHEME
+- ATLUTIL/ATL::ATL_URL_SCHEME
 ms.assetid: f4131046-8ba0-4ec1-8209-84203f05d20e
-caps.latest.revision: 7.2
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
-ms.openlocfilehash: 608508b60192ccfdaf4cb0ea09d5274e07de9f0c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3aa6cf05204f4483245073b5c260e552e935dd0f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-
-
 # <a name="atlurlscheme"></a>ATL_URL_SCHEME  
 
-この列挙体のメンバーがで認識されるスキームの定数を提供[CUrl](curl-class.md)します。  
+この列挙体のメンバーがで認識されるスキームの定数を提供[CUrl](curl-class.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -61,10 +46,10 @@ ms.lasthandoff: 02/24/2017
 };  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlutil.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../active-template-library-atl-concepts.md)   
  [CUrl::SetScheme](curl-class.md#setscheme)   
  [CUrl::GetScheme](curl-class.md#getscheme)

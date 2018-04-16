@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4047
-dev_langs: C++
-helpviewer_keywords: C4047
+f1_keywords:
+- C4047
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4047
 ms.assetid: b75ad6fb-5c93-4434-a85f-c4083051a5de
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fafa1878b62b2e010f2f80541c454082b07e6059
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9d42913533129fad2cbdc803e6f3d81bdea3ebd1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4047"></a>コンパイラの警告 (レベル 1) C4047
 'operator' : 間接参照のレベルが 'identifier1' と 'identifier2' で異なっています。  

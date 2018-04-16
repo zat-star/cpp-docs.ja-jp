@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: .ALLOCSTACK
-dev_langs: C++
-helpviewer_keywords: .ALLOCSTACK directive
+ms.topic: reference
+f1_keywords:
+- .ALLOCSTACK
+dev_langs:
+- C++
+helpviewer_keywords:
+- .ALLOCSTACK directive
 ms.assetid: 9801594b-7ac2-4df2-a49d-07d9dd9af99e
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b4e78703a979bb89078d9bb53e0c8093501446d6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f37fcabdae3e8b96670fed12d98cf9d0a2adcf63
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="allocstack"></a>.ALLOCSTACK
 生成、 **UWOP_ALLOC_SMALL**または**UWOP_ALLOC_LARGE**プロローグ内の現在のオフセットの指定したサイズでします。  
@@ -70,5 +76,5 @@ text ENDS
 END  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

@@ -4,39 +4,42 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: IRowsetNotifyCP
-dev_langs: C++
-helpviewer_keywords: IRowsetNotifyCP class
+ms.topic: reference
+f1_keywords:
+- IRowsetNotifyCP
+dev_langs:
+- C++
+helpviewer_keywords:
+- IRowsetNotifyCP class
 ms.assetid: ccef402b-94a0-4c2e-9a13-7e854ef82390
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1d110b3bc304664681532ae7511a9e886a05058b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: a43825ee3fa676ce07dcd3bc4e121abd400ef322
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="irowsetnotifycp-class"></a>IRowsetNotifyCP クラス
 プロバイダー サイト ポイントの接続インターフェイスを実装する[IRowsetNotify](https://msdn.microsoft.com/en-us/library/ms712959.aspx)です。  
   
-## <a name="syntax"></a>構文  
-  
-```  
-template <  
-   class T,   
-   class ReentrantEventSync = CComSharedMutex   
->  
+## <a name="syntax"></a>構文
+
+```cpp
+template <class T, class ReentrantEventSync = CComSharedMutex>  
 class IRowsetNotifyCP :   
    public IConnectionPointImpl<  
       T,   
       piid = &__uuidof(IRowsetNotify),   
-      CComDynamicUnkArray DynamicUnkArray  
-   >,  
+      CComDynamicUnkArray DynamicUnkArray>,  
    public ReentrantEventSync  
 ```  
   
@@ -64,16 +67,16 @@ class IRowsetNotifyCP :
 |[Fire_OnRowsetChange](../../data/oledb/irowsetnotifycp-fire-onrowsetchange.md)|行セット全体に影響する変更をコンシューマーに通知します。|  
   
 ## <a name="remarks"></a>コメント  
- `IRowsetNotifyCP`実装は、接続ポイントに対するリスナーに通知する関数をブロードキャスト**IID_IRowsetNotify**行セットの内容を変更します。  
+ `IRowsetNotifyCP` 実装は、接続ポイントに対するリスナーに通知する関数をブロードキャスト**IID_IRowsetNotify**行セットの内容を変更します。  
   
  実装し、登録する必要がありますもなお`IRowsetNotify`(とも呼ばれる、「シンク」) を使用して、コンシューマーで[IRowsetNotifyImpl](../../data/oledb/irowsetnotifyimpl-class.md)コンシューマーが通知を処理できるようにします。 参照してください[通知の受信](../../data/oledb/receiving-notifications.md)に関するコンシューマーのコネクション ポイントのインターフェイスを実装します。  
   
  通知の実装の詳細については、「通知のサポート」を参照してください[更新可能なプロバイダーを作成する](../../data/oledb/creating-an-updatable-provider.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   
  [通知 (COM)](http://msdn.microsoft.com/library/windows/desktop/ms678433)   

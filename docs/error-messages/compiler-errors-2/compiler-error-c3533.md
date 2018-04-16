@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3533
-dev_langs: C++
-helpviewer_keywords: C3533
+f1_keywords:
+- C3533
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3533
 ms.assetid: a68b1ba5-466e-4190-a1a4-505ccfe548b7
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b519a08080edb8dda37760bd826224657365afae
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e7bcd9c710ac5cdd50b966a72291918459d984be
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3533"></a>コンパイラ エラー C3533
 'type': パラメーターは 'auto' を含む型を持つことはできません  
@@ -48,6 +54,6 @@ void f(auto j){} // C3533
 template<auto T> class C{}; // C3533  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto キーワード](../../cpp/auto-keyword.md)   
  [/Zc:auto (変数の型の推測)](../../build/reference/zc-auto-deduce-variable-type.md)

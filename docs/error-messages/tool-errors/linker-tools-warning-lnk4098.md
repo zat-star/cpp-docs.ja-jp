@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: LNK4098
-dev_langs: C++
-helpviewer_keywords: LNK4098
+f1_keywords:
+- LNK4098
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK4098
 ms.assetid: 1f1b1408-1316-4e34-80f5-6a02f2db0ac1
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0acc9ba4a43e37712e3643b49975fc15a4cce280
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b199c19417d7d3be866109fff7361fb4ead959d2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-warning-lnk4098"></a>リンカー ツールの警告 LNK4098
 defaultlib 'library' と競合していますが; 他のライブラリの使用/NODEFAULTLIB:library を使用してください。  

@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: filesystem/std::experimental::filesystem::path
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- filesystem/std::experimental::filesystem::path
+dev_langs:
+- C++
 ms.assetid: 8a1227ca-aeb2-4e0e-84aa-86e34e4f4fe8
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4221702df42bc82d1a0573f9a8b10252017b282a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9e91ee287b1403b49f7a70ab3d96686650d6b2f0
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="path-class"></a>path クラス
 **path** クラスとは、string\_type 型のオブジェクトを格納するクラスであり、パス名としての使用に適したクラスです。ここでは、このオブジェクトに myname という名前を付けて説明を進めます。 string\_type は、basic\_string\<value_type> のシノニムです。この value\_type は、Windows では char のシノニムになり、Posix では wchar_t のシノニムになります。  
@@ -594,11 +599,11 @@ wstring wstring() const;
   
  mypath に格納されているシーケンスをホスト システムに適した wchar_t シーケンスのエンコーディングに変換してから、wstring 型のオブジェクトに格納して返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<filesystem >  
   
  **名前空間:** std::experimental::filesystem
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
 

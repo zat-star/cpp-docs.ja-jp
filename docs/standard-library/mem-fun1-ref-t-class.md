@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: xfunctional/std::mem_fun1_ref_t
-dev_langs: C++
-helpviewer_keywords: mem_fun1_ref_t class
+ms.topic: reference
+f1_keywords:
+- xfunctional/std::mem_fun1_ref_t
+dev_langs:
+- C++
+helpviewer_keywords:
+- mem_fun1_ref_t class
 ms.assetid: 7d6742f6-19ba-4523-b3c8-0e5b8f11464f
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8173e0c9c33b649ab298dc8ece2757f492edaecd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 35dd25e56ba838864eeeb64d43fc8c2d25cff803
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="memfun1reft-class"></a>mem_fun1_ref_t クラス
 参照引数による初期化を行うときに、1 つの引数を使用する **non_const** メンバー関数を二項関数オブジェクトとして呼び出せるようにするアダプター クラス。  
@@ -41,7 +47,7 @@ class mem_fun1_ref_t : public binary_function<Type, Arg, Result> {
   
 #### <a name="parameters"></a>パラメーター  
  `_Pm`  
- 関数オブジェクトに変換される **Type** クラスのメンバー関数へのポインター。  
+ 関数オブジェクトに変換されるクラス **Type** のメンバー関数へのポインター。  
   
  `left`  
  `_Pm` メンバー関数が呼び出されるオブジェクト。  
@@ -58,12 +64,12 @@ class mem_fun1_ref_t : public binary_function<Type, Arg, Result> {
 ## <a name="example"></a>例  
  `mem_fun1_ref_t` のコンストラクターは通常は直接使用されません。ヘルパー関数 `mem_fun_ref` を使用してメンバー関数を適合させます。 メンバー関数アダプターの使用例については、「[mem_fun_ref](../standard-library/functional-functions.md#mem_fun_ref)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

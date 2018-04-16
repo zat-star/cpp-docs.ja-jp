@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,7 +18,8 @@ f1_keywords:
 - AFXANIMATIONCONTROLLER/CSinusoidalTransitionFromRange::m_duration
 - AFXANIMATIONCONTROLLER/CSinusoidalTransitionFromRange::m_period
 - AFXANIMATIONCONTROLLER/CSinusoidalTransitionFromRange::m_slope
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CSinusoidalTransitionFromRange [MFC], CSinusoidalTransitionFromRange
 - CSinusoidalTransitionFromRange [MFC], Create
@@ -27,15 +29,17 @@ helpviewer_keywords:
 - CSinusoidalTransitionFromRange [MFC], m_period
 - CSinusoidalTransitionFromRange [MFC], m_slope
 ms.assetid: 8b66a729-5f10-431a-b055-e3600d0065da
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a01360d79d752e37da42759f22aecbb0cd65b52f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d53e89f1fa73926976896743ab5293d85e5d81c0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csinusoidaltransitionfromrange-class"></a>CSinusoidalTransitionFromRange クラス
 振幅が指定の範囲である正弦波範囲遷移をカプセル化します。  
@@ -80,7 +84,7 @@ class CSinusoidalTransitionFromRange : public CBaseTransition;
   
  [CSinusoidalTransitionFromRange](../../mfc/reference/csinusoidaltransitionfromrange-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="create"></a>CSinusoidalTransitionFromRange::Create  
@@ -162,5 +166,5 @@ UI_ANIMATION_SECONDS m_period;
 UI_ANIMATION_SLOPE m_slope;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

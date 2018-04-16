@@ -1,45 +1,50 @@
 ---
-title: "map::operator(STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::map::operator[]"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operatormember [] [STL/CLR]"
+title: "map::operator(STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::map::operator[]
+dev_langs:
+- C++
+helpviewer_keywords:
+- operatormember [] [STL/CLR]
 ms.assetid: 50e494c5-62d4-4469-8da3-7432ee4dff97
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d8bfbba2909c3bf8256df433294c5d52605db816
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# map::operator(STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-関連するマップされたな値にキーを割り当てます。  
+# <a name="mapoperatorstlclr"></a>map::operator(STL/CLR)
+関連するマップされた値をキーにマップします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 mapped_type operator[](key_type key);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  key  
- 検索するキー値。  
+ 検索対象のキー値。  
   
-## 解説  
- このメンバー関数は `key`に並べる等価を持つ要素を見つけることを目指しています。  1 を検出した場合、関連するマップされたな;値を返します。それ以外の場合は `value_type(``key``, mapped_type())` を挿入し、関連付けられた \(既定\) マップされた値を返します。  関連のキーがあるマップされたな値を検索または None エントリがあるキーであることを確認するために使用します。  
+## <a name="remarks"></a>コメント  
+ メンバー関数と同等の順序を持つ要素を検索する試み`key`です。 1 つが見つかると、値を返します、関連付けられているマップです。それ以外の場合、これは挿入`value_type(key, mapped_type())`し、関連付けられているを返します (既定値) には、値がマップされています。 これを使用してに関連付けられたキーの指定、マップされた値を確認するか、何も見つからない場合は、キーのエントリが存在することを確認します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_map_operator_sub.cpp   
@@ -80,17 +85,20 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**c1 \[\] A \= 0**  
-**c1 \[\] b \= 2**  
- **A 0 \[\] \[\] \[1 b 2 \[\]c 3\]**  
- **A 10 \[\] \[\] \[1 b 2 \[\]c 13\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+c1[A] = 0  
+c1[b] = 2  
+ [A 0] [a 1] [b 2] [c 3]  
+ [A 10] [a 1] [b 2] [c 13]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [マップ](../dotnet/map-stl-clr.md)   
- [map::find](../Topic/map::find%20\(STL-CLR\).md)   
- [map::insert](../dotnet/map-insert-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [map::find (STL/CLR)](../dotnet/map-find-stl-clr.md)   
+ [map::insert (STL/CLR)](../dotnet/map-insert-stl-clr.md)

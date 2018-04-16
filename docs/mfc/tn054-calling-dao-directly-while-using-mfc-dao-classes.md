@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.mfc.dao
-dev_langs: C++
+f1_keywords:
+- vc.mfc.dao
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC, DAO and
 - passwords [MFC], calling DAO
@@ -19,15 +22,17 @@ helpviewer_keywords:
 - TN054
 - DAO (Data Access Objects), and MFC
 ms.assetid: f7de7d85-8d6c-4426-aa05-2e617c0da957
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d75f7ccf070bdc23702d6999c7fe45b35301360c
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+ms.openlocfilehash: de49cec931878cbfe06939269721b17a37a66202
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn054-calling-dao-directly-while-using-mfc-dao-classes"></a>テクニカル ノート 54: MFC DAO クラス使用中の DAO の直接呼び出し
 > [!NOTE]
@@ -297,7 +302,7 @@ void SetDBPassword(LPCTSTR pDB,
 } 
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

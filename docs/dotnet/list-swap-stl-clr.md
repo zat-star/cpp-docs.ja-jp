@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::list::swap
-dev_langs: C++
-helpviewer_keywords: swap member [STL/CLR]
+f1_keywords:
+- cliext::list::swap
+dev_langs:
+- C++
+helpviewer_keywords:
+- swap member [STL/CLR]
 ms.assetid: 188b66c2-0a08-4001-a566-41d0955c89bd
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6c264e8d75b3a8f6fdd50b7f1a8e6bf03bd2d21a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d252605e35a223a6b0aa12820ac5d9fc2894b9c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listswap-stlclr"></a>list::swap (STL/CLR)
 2 つのコンテナーのコンテンツを交換します。  
@@ -35,7 +42,7 @@ void swap(list<Value>% right);
  コンテンツを交換するコンテナー。  
   
 ## <a name="remarks"></a>コメント  
- このメンバー関数は、 `*this` と `right`の間で被制御シーケンスを交換します。 定数時間では、例外をスローしません。 2 つのコンテナーの内容を交換する簡単な方法として使用するとします。  
+ このメンバー関数は、`*this` と `right` の間で被制御シーケンスを交換します。 定数時間では、例外をスローしません。 2 つのコンテナーの内容を交換する簡単な方法として使用するとします。  
   
 ## <a name="example"></a>例  
   
@@ -83,12 +90,12 @@ x x x x x
 a b c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::assign (STL/CLR)](../dotnet/list-assign-stl-clr.md)   
  [list::operator= (STL/CLR)](../dotnet/list-operator-assign-stl-clr.md)

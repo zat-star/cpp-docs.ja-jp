@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::uniform_real_distribution
 - random/std::uniform_real_distribution::reset
@@ -22,7 +22,6 @@ f1_keywords:
 - random/std::uniform_real_distribution::param_type::b
 - random/std::uniform_real_distribution::param_type::operator==
 - random/std::uniform_real_distribution::param_type::operator!=
-- random/std::uniform_real_distribution::param_type
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -36,16 +35,17 @@ helpviewer_keywords:
 - std::uniform_real_distribution [C++], param_type
 - std::uniform_real_distribution [C++], param_type
 ms.assetid: 5cf906fd-0319-4984-b21b-98425cd7532d
-caps.latest.revision: 18
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: be2205fc4795320c3d3998de7ff5324a23af00d1
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 0491a5ed53dafa56b5c6de77b8c5f0998d5554a1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="uniformrealdistribution-class"></a>uniform_real_distribution クラス
 下限を含み上限を含まない出力範囲内で、浮動小数点の一様 (すべての値の可能性が同様である) 分布を生成します。  
@@ -94,7 +94,7 @@ public:
   
 プロパティ メンバー `a()` は、現在格納されている分布の最小限度値を返し、`b()` は、現在格納されている最大限度値を返します。 この分布クラスの場合、これらの最小値と最大値は、「[\<random>](../standard-library/random.md)」トピックで説明されている一般的なプロパティ関数 `min()` と `max()` で返される値と同じです。  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
 
 メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
   
@@ -182,7 +182,7 @@ Distribution for 10 samples:
          10: 0.8795716566
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -241,9 +241,8 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
-
 
 
 

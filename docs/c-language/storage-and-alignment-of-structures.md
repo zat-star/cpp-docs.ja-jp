@@ -16,16 +16,17 @@ helpviewer_keywords:
 - storing structures
 - packing structures
 ms.assetid: 60ff292f-2595-4f37-ae00-4c4b4f047196
-caps.latest.revision: 8
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0cb5ec55ed3125ac86b0042812ba7fc25388a155
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: d9c09137da32c7ef9d42f0302087379af922652f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="storage-and-alignment-of-structures"></a>構造体の格納とアラインメント
 **Microsoft 固有の仕様**  
@@ -38,19 +39,19 @@ ms.lasthandoff: 10/09/2017
   
  隣接するビット フィールドは、同じサイズの整数型で、次のビット フィールドがビット フィールドの共通のアラインメント要件によって課される境界を越えずに現在の割り当て単位に収まる場合は、同じ 1、2、または 4 バイトの割り当て単位にパックされます。  
   
- 領域を節約したり、既存のデータ構造に合わせたりするために、コンパクト化の程度を調整して構造体を格納できます。 [/Zp](../build/reference/zp-struct-member-alignment.md)[*n*] コンパイラ オプションおよび[#pragma pack](../preprocessor/pack.md)コントロールがどのようにデータを構造化が"パック"されるメモリにします。 /Zp を使用すると [*n*] オプションをどこ *n*  1、2、4、8、または 16 ですが、各構造体メンバーのアラインメント要件は、バイト境界に 1 つ目が格納された後にフィールドのパッキング サイズ (*n*)、小さい方です。 バイト境界を数式として表現すると、次のようになります。  
+ 領域を節約したり、既存のデータ構造に合わせたりするために、コンパクト化の程度を調整して構造体を格納できます。 [/Zp](../build/reference/zp-struct-member-alignment.md)[*n*] コンパイラ オプションと [#pragma pack](../preprocessor/pack.md) は、構造体データがメモリに "パック" される方法を制御します。 /Zp[*n*] オプション (*n* は 1、2、4、8、16) を使用すると、2 番目以降の各構造体メンバーは、バイト境界に合わせて格納されます。バイト境界は、フィールドのアラインメント要件とパッキング サイズ (*n*) のいずれか小さい方です。 バイト境界を数式として表現すると、次のようになります。  
   
 ```  
 min( n, sizeof( item ) )  
 ```  
   
- ここで *n*  /Zp で表されたパッキング サイズは、[*n*] オプションと*項目*構造体のメンバーは、します。 既定のパッキング サイズは、/Zp8 です。  
+ ここで、*n* は /Zp[*n*] オプションで表されたパッキング サイズであり、*item* は構造体メンバーです。 既定のパッキング サイズは、/Zp8 です。  
   
  `pack` プラグマを使用して、特定の構造体にコマンド ラインで指定したパッキング以外のパッキングを指定するには、構造体の前に `pack` プラグマを指定します (パッキング サイズは 1、2、4、8、または 16)。 コマンド ラインで指定したパッキングに戻すには、引数なしで `pack` プラグマを指定します。  
   
- ビット フィールドは、既定で Microsoft C コンパイラの **long** サイズに設定されます。 構造体のメンバーは、型または/Zp のサイズにアライン [*n*] サイズ、小さい方です。 既定のサイズは 4 です。  
+ ビット フィールドは、既定で Microsoft C コンパイラの **long** サイズに設定されます。 構造体メンバーは、型のサイズまたは /Zp[*n*] サイズのいずれか小さい方に合わせられます。 既定のサイズは 4 です。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体宣言](../c-language/structure-declarations.md)

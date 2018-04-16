@@ -1,25 +1,32 @@
 ---
-title: "hash_set::const_iterator (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: hash_set::const_iterator (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::hash_set::const_iterator
-dev_langs: C++
-helpviewer_keywords: const_iterator member [STL/CLR]
+f1_keywords:
+- cliext::hash_set::const_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- const_iterator member [STL/CLR]
 ms.assetid: 5b346a3e-cdbb-4300-9b25-a16a5f74f9b2
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0a4dde55c1e019c89565f236d729a55997311cfd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 4c182dc8ca6fe5bad6b765be171a63306017e7c0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashsetconstiterator-stlclr"></a>hash_set::const_iterator (STL/CLR)
 被制御シーケンスの定数反復子の型です。  
@@ -62,11 +69,11 @@ int main()
 a b c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)   
  [hash_set::iterator (STL/CLR)](../dotnet/hash-set-iterator-stl-clr.md)

@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: vc.codewiz.class.atl.dlg.overview
-dev_langs: C++
+f1_keywords:
+- vc.codewiz.class.atl.dlg.overview
+dev_langs:
+- C++
 helpviewer_keywords:
 - ATL projects, adding dialog resources
 - ATL Dialog Wizard
 ms.assetid: b0b9ace5-83c9-40d3-82c3-eb6293f10583
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 003cda9f3b0916cb7c86dfce874840268a64dbff
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6cdf16b3e82ce69fa06b3eacda8d7b48643fb3c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="atl-dialog-wizard"></a>ATL ダイアログ ウィザード
 このウィザードが、プロジェクトに、ATL ダイアログ ボックスから派生したオブジェクトを挿入[CAxDialogImpl](../../atl/reference/caxdialogimpl-class.md)です。 ダイアログ ボックスから派生した`CAxDialogImpl`ActiveX コントロールをホストできます。  
@@ -46,6 +51,6 @@ ms.lasthandoff: 10/24/2017
   
  ウィザードでは、ファイルは上書きされません。 クリックすると、既存のファイルの名前を選択するかどうかは**完了**ウィザードの指示に従って、クラスの実装が、ファイルの内容に追加されるかどうかを指定するようにします。 をクリックして**はい**; ファイルを追加する をクリックして**なし**ウィザードに戻り、別のファイル名を指定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL ダイアログ ボックス](../../atl/reference/adding-an-atl-dialog-box.md)
 

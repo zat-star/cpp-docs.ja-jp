@@ -1,23 +1,27 @@
 ---
-title: "C++ 型システム (Modern C) |Microsoft ドキュメント"
-ms.custom: 
+title: C++ 型システム (Modern C) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 553c0ed6-77c4-43e9-87b1-c903eec53e80
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 47d8fdec93c9d77e6648c5f648171a8ff349474d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7abede5a7370461b0e77bd51ea12f7ab9b184e5c
+ms.sourcegitcommit: cff1a8a49f0cd50f315a250c5dd27e15c173845f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="c-type-system-modern-c"></a>C++ 型システム (Modern C++)
 概念*型*は C++ では非常に重要です。 変数、関数の引数、関数の戻り値をコンパイルするには、それぞれに型が必要です。 さらに、すべての式 (リテラル値を含む) には、評価前にコンパイラーにより暗黙的に型が指定されます。 いくつかの種類の例`int`、整数値を格納する`double`浮動小数点値を格納する (とも呼ばれる*スカラー*データ型)、または標準ライブラリ クラス[:basic_string](../standard-library/basic-string-class.md)テキストを格納します。 `class` や `struct` を定義することで、独自の型を作成できます。 型は、変数 (または式の結果) に割り当てられるメモリの量、その変数に格納される値の種類、それらの値の解釈方法 (ビット パターンとして)、その型で実行可能な操作を指定します。 ここでは、C++ の型システムの主な機能の概要を示します。  
@@ -40,7 +44,7 @@ ms.lasthandoff: 10/24/2017
   
  次の例は、それぞれ記述を含む、いくつかの簡単な変数宣言を示しています。 この例は、コンパイラが型情報を使用して、特定の後続の処理を許可または拒否する方法も示しています。  
   
-```  
+```cpp  
   
 int result = 0;              // Declare and initialize an integer.  
 double coefficient = 10.8;   // Declare and initialize a floating   
@@ -66,7 +70,7 @@ int maxValue;                // Not recommended! maxValue contains
   
  次の図は、組み込み型の相対サイズを示しています。  
   
- ![サイズ (バイト) の構築 (& a) #45; の種類で](../cpp/media/built-intypesizes.png "組み込み inTYpeSizes")  
+ ![サイズのバイト単位で構築された&#45;の種類で](../cpp/media/built-intypesizes.png "組み込み inTYpeSizes")  
   
  次の表は、最もよく使用される基本型の一覧です。  
   
@@ -87,7 +91,7 @@ int maxValue;                // Not recommended! maxValue contains
 ## <a name="const-type-qualifier"></a>const 型修飾子  
  組み込み型またはユーザー定義型は、const キーワードで修飾することができます。 また、メンバー関数は `const` で修飾したり、`const` でオーバーロードすることもできます。 `const` 型の値を初期化後に変更することはできません。  
   
-```  
+```cpp  
   
 const double PI = 3.1415;  
 PI = .75 //Error. Cannot modify const variable.  
@@ -115,7 +119,7 @@ PI = .75 //Error. Cannot modify const variable.
   
  まず知る必要がある点は、生のポインター変数を宣言すると、ポインターが逆参照されるときに参照するメモリ位置のアドレスを格納するのに必要なメモリだけが割り当てられるという点です。 データ値自体のメモリの割り当て (とも呼ばれる*バッキング ストア*) がまだ割り当てられていません。 言い換えると、生のポインター変数を宣言することで、実際のデータの変数ではなくメモリ アドレスの変数を作成することになります。 バッキング ストアへの有効なアドレスが含まれることを確認する前にポインター変数を逆参照すると、プログラムで定義されていない動作 (通常は重大なエラー) が発生します。 この種のエラーの例を次に示します。  
   
-```  
+```cpp  
   
 int* pNumber;       // Declare a pointer-to-int variable.  
 *pNumber = 10;      // error. Although this may compile, it is  
@@ -127,7 +131,7 @@ int* pNumber;       // Declare a pointer-to-int variable.
   
  この例では、実際の整数データまたはそこに割り当てられた有効なメモリ アドレスを格納するメモリを割り当てずに、ポインター型を逆参照しています。 このエラーを修正するコード例を次に示します。  
   
-```  
+```cpp  
   
     int number = 10;          // Declare and initialize a local integer  
                               // variable for data backing store.  
@@ -147,7 +151,7 @@ int* pNumber;       // Declare a pointer-to-int variable.
   
  ただし、これは、動的に割り当てられるオブジェクト、特に複雑なコードと呼ばれるリソース バグの原因で削除することを忘れがち、*メモリ リーク*です。 したがって、最新の C++ では生のポインターを使用しないことを強くお勧めします。 生のポインターをラップする方が適切ではほとんどの場合、[スマート ポインター](../cpp/smart-pointers-modern-cpp.md)、自動的にメモリを解放します (コードがスマート ポインターのスコープ外に出る) 場合は、デストラクターが呼び出される; スマート ポインターを使用して、事実上C++ プログラムでバグのクラス全体を削除します。 次の例では、`MyClass` がパブリック メソッド `DoSomeWork();` を持つユーザー定義型であることを前提としています。  
   
-```  
+```cpp  
   
 void someFunction() {  
     unique_ptr<MyClass> pMc(new MyClass);  
@@ -167,7 +171,7 @@ void someFunction() {
 ## <a name="windows-data-types"></a>Windows のデータ型  
  C および C++ 向けの従来の Win32 プログラミングでは、ほとんどの関数は Windows 固有の typedef マクロと #define マクロ (`windef.h` で定義) を使用して、パラメーターと戻り値の型を指定します。 これら Windows データ型はほとんどの場合のみ特別な名前 (別名) C と C++ の組み込み型を指定します。 これらの typedef とプリプロセッサの定義の一覧については、次を参照してください。 [Windows Data Types](http://msdn.microsoft.com/en-us/4553cafc-450e-4493-a4d4-cb6e2f274d46)です。 HRESULT や LCID など、typedef には便利で内容がわかりやすいものがあります。 INT など、他の typedef には特別な意味がなく、C++ の基本型のエイリアスにすぎません。 他の Windows のデータ型には、C プログラミングおよび 16 ビット プロセッサの時代から残っている名前がありますが、最新のハードウェアやオペレーティング システムでは目的も意味もありません。 として一覧に、Windows ランタイム ライブラリに関連付けられている特殊なデータ型もあります[Windows ランタイムの基本データ型](http://msdn.microsoft.com/en-us/b5735851-ec07-48c1-92b4-ca9f768096f6)です。 最新の C++ では、値の解釈方法について Windows の型が追加の意味を伝えるのでない限り、一般的なガイドラインとして C++ の基本型が推奨されます。  
   
-## <a name="more-information"></a>詳細情報  
+## <a name="more-information"></a>説明  
  C++ の型システムの詳細については、次のトピックを参照してください。  
   
 |||  

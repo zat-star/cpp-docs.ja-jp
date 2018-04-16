@@ -1,25 +1,31 @@
 ---
-title: "セクション (C/C++) |Microsoft ドキュメント"
-ms.custom: 
+title: セクション (C/C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: SECTIONS
-dev_langs: C++
-helpviewer_keywords: SECTIONS .def file statement
+f1_keywords:
+- SECTIONS
+dev_langs:
+- C++
+helpviewer_keywords:
+- SECTIONS .def file statement
 ms.assetid: 7b974366-9ef5-4e57-bbcc-73a1df6f8857
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9d1564d068f4d69c3190b8bb24a32e7efb01dbef
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0ab2f021a53e8ae685891863500feb3873e13e2e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sections-cc"></a>SECTIONS (C/C++)
 1 つまたは複数のセクションを導入`definitions`のセクションで、プロジェクトの出力ファイルのアクセス指定子であります。  
@@ -66,5 +72,5 @@ section [CLASS 'classname'] specifier
   
  セクションの属性を指定するのと同じ方法は、 [/section](../../build/reference/section-specify-section-attributes.md)オプション。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [モジュール定義ステートメントに関する規則](../../build/reference/rules-for-module-definition-statements.md)

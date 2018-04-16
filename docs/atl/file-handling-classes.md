@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
-helpviewer_keywords: file classes [C++]
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- file classes [C++]
 ms.assetid: 94355eb1-daa3-4825-b183-7392b3899561
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bdb64cc1897ec6a08c64d081779132f40fa36f49
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6196bd9e6e1ce07d65c44c1b9f0fed2d595af89d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="file-handling-classes"></a>ファイル処理クラス
 これらのクラスは、ファイル、一時ファイル、およびメモリ マップト ファイルを処理するためのメソッドを提供します。  
@@ -31,6 +36,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [CAtlTemporaryFile](../atl/reference/catltemporaryfile-class.md)このクラスは、作成および一時ファイルを使用するメソッドを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
 

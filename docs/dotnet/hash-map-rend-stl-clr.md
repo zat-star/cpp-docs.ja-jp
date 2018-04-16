@@ -1,25 +1,32 @@
 ---
-title: "hash_map::rend (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: hash_map::rend (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::hash_map::rend
-dev_langs: C++
-helpviewer_keywords: rend member [STL/CLR]
+f1_keywords:
+- cliext::hash_map::rend
+dev_langs:
+- C++
+helpviewer_keywords:
+- rend member [STL/CLR]
 ms.assetid: 87fb2a06-c92b-4d86-855d-22f5c04aabdb
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1dff16e2ee77c9f628e5e7239ae9d26cc28c790a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 548293266752dcb5d1ca14eeb56dabff7957bd78
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmaprend-stlclr"></a>hash_map::rend (STL/CLR)
 反転被制御シーケンスの末尾を指定します。  
@@ -73,12 +80,12 @@ int main()
 *--rend() = [a 1]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
  [hash_map::begin (STL/CLR)](../dotnet/hash-map-begin-stl-clr.md)   
  [hash_map::end (STL/CLR)](../dotnet/hash-map-end-stl-clr.md)   

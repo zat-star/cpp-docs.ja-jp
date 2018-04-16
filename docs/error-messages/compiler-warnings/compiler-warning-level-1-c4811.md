@@ -15,33 +15,19 @@ dev_langs:
 helpviewer_keywords:
 - C4811
 ms.assetid: fbd79351-3dc1-45cf-b5b3-411f48c1590f
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 3d92ed8a67a9975c9cf0a7ad6fa2ec0b62a6d4bf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 901465650c74ff0d95225c2ca361e6c61107eb72
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4811"></a>コンパイラの警告 (レベル 1) C4811
 プラグマ conform(forScope, show) の値 == value  
   
- この警告が生成されるは、使用する場合、**を表示する**のオプション、[準拠](../../preprocessor/conform.md)プラグマです。 *value* は現在の conform 値です。
+ この警告は、 **conform** プラグマの [show](../../preprocessor/conform.md) オプションを使用すると発行されます。 *value* は現在の conform 値です。

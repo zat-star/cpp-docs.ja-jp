@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: RW4004
-dev_langs: C++
-helpviewer_keywords: RW4004
+f1_keywords:
+- RW4004
+dev_langs:
+- C++
+helpviewer_keywords:
+- RW4004
 ms.assetid: 596b6a89-9ce7-4ba7-bdcb-e8054c7efafa
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: aedc73ddc2934cf44ae5ebf98cf0e4e50814feb9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0249f7d01ee344f0fa17bdc39e58e9fce26c9b25
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resource-compiler-warning-rw4004"></a>リソース コンパイラの警告 RW4004
 仮想キー コードに相当しない ASCII 文字  

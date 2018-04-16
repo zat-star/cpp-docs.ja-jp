@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -40,7 +41,8 @@ f1_keywords:
 - AFXCAPTIONBAR/CMFCCaptionBar::m_clrBarBackground
 - AFXCAPTIONBAR/CMFCCaptionBar::m_clrBarBorder
 - AFXCAPTIONBAR/CMFCCaptionBar::m_clrBarText
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCCaptionBar [MFC], Create
 - CMFCCaptionBar [MFC], DoesAllowDynInsertBefore
@@ -73,15 +75,17 @@ helpviewer_keywords:
 - CMFCCaptionBar [MFC], m_clrBarBorder
 - CMFCCaptionBar [MFC], m_clrBarText
 ms.assetid: acb54d5f-14ff-4c96-aeb3-7717cf566d9a
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4449ebd1563fe02705913fd4f19e51d195b3d732
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9c23129c1ac857e812b0da837b19322741087934
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfccaptionbar-class"></a>CMFCCaptionBar クラス
 A`CMFCCaptionBar`オブジェクトは 3 つの要素を表示できるコントロール バー: ボタン、テキスト ラベル、およびビットマップ。 表示できる各要素の数は 1 つずつです。 各要素は、コントロールの左端、右端、または中央に揃えて配置できます。 また、キャプション バーの上部または下部の境界線にフラット スタイルまたは 3D スタイルを適用することもできます。  
@@ -133,7 +137,7 @@ class CMFCCaptionBar : public CPane
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMFCCaptionBar::m_clrBarBackground](#m_clrbarbackground)|キャプション バーの背景色。|  
 |[CMFCCaptionBar::m_clrBarBorder](#m_clrbarborder)|キャプション バーの境界線の色。|  
@@ -173,7 +177,7 @@ class CMFCCaptionBar : public CPane
   
  [CMFCCaptionBar](../../mfc/reference/cmfccaptionbar-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcaptionbar.h  
   
 ##  <a name="create"></a>CMFCCaptionBar::Create  
@@ -668,6 +672,6 @@ void SetText(
   
 -   ALIGN_CENTER  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname: __dllonexit
+apiname:
+- __dllonexit
 apilocation:
 - msvcrt.dll
 - msvcr110.dll
@@ -18,19 +20,24 @@ apilocation:
 - msvcr90.dll
 - msvcr120_clr0400.dll
 apitype: DLLExport
-f1_keywords: __dllonexit
-dev_langs: C++
-helpviewer_keywords: __dllonexit
+f1_keywords:
+- __dllonexit
+dev_langs:
+- C++
+helpviewer_keywords:
+- __dllonexit
 ms.assetid: 708f2ceb-f95c-46b0-a58d-d68b3fa36f12
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9e59acec12c90d101ef385c379c092c7034f1ed0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7ed3b28381b92f4f11e4be99f97a2615a8379274
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dllonexit"></a>__dllonexit
 終了時に呼び出されるルーチンを登録します。  
@@ -64,11 +71,11 @@ _onexit_t __dllonexit(   _onexit_t func,
   
  `_PVFV` 型は、`typedef void (__cdecl *_PVFV)(void)` と定義されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必要なファイル|  
+|ルーチンによって返される値|必要なファイル|  
 |-------------|-------------------|  
 |__dllonexit|onexit.c|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_onexit、_onexit_m](../c-runtime-library/reference/onexit-onexit-m.md)

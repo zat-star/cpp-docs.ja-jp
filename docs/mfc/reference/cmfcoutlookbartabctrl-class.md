@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -29,7 +30,8 @@ f1_keywords:
 - AFXOUTLOOKBARTABCTRL/CMFCOutlookBarTabCtrl::SetPageButtonTextAlign
 - AFXOUTLOOKBARTABCTRL/CMFCOutlookBarTabCtrl::SetToolbarImageList
 - AFXOUTLOOKBARTABCTRL/CMFCOutlookBarTabCtrl::SetVisiblePageButtons
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCOutlookBarTabCtrl [MFC], AddControl
 - CMFCOutlookBarTabCtrl [MFC], CanShowFewerPageButtons
@@ -51,15 +53,17 @@ helpviewer_keywords:
 - CMFCOutlookBarTabCtrl [MFC], SetToolbarImageList
 - CMFCOutlookBarTabCtrl [MFC], SetVisiblePageButtons
 ms.assetid: b1f2b3f7-cc59-49a3-99d8-7ff9b37c044b
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 19a1c373bc982828bfa26f89955bce684fb7e68c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d38cfd03c9d4fe192b8c1ee7e235140dba382ddb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcoutlookbartabctrl-class"></a>CMFCOutlookBarTabCtrl Class
 Microsoft Outlook の **ナビゲーション ウィンドウ** と同じ外観を持つタブ コントロールです。  
@@ -132,7 +136,7 @@ class CMFCOutlookBarTabCtrl : public CMFCBaseTabCtrl
   
  [CMFCOutlookBarTabCtrl](../../mfc/reference/cmfcoutlookbartabctrl-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxoutlookbartabctrl.h  
   
 ##  <a name="addcontrol"></a>CMFCOutlookBarTabCtrl::AddControl  
@@ -459,7 +463,7 @@ void SetVisiblePageButtons(int nVisiblePageButtons);
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCBaseTabCtrl クラス](../../mfc/reference/cmfcbasetabctrl-class.md)   

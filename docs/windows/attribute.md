@@ -4,26 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: vc-attr.attribute
-dev_langs: C++
+f1_keywords:
+- vc-attr.attribute
+dev_langs:
+- C++
 helpviewer_keywords:
 - __typeof keyword
 - custom attributes, creating
 - attribute attribute
 - attributes [C++], custom
 ms.assetid: 8cb3489f-65c4-44ea-b0aa-3c3c6b15741d
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6d5233e5b3f2a27fc821c786d99cb3d996e5c039
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 42ea9049fdd97691bd139599705856baa8acfee1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="attribute"></a>属性
 カスタム属性を作成できます。  
@@ -145,14 +151,14 @@ ref class MyAttr : System::Attribute   // OK, but redundant.
   
  `attribute`エイリアス<xref:System.AttributeUsageAttribute?displayProperty=fullName>(AttributeAttribute されません。 これは、属性の名前付け規則の例外)。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|`ref`**クラス**、 **ref 構造体**|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
@@ -214,6 +220,6 @@ int main() {
 2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [属性のアルファベット順リファレンス](../windows/attributes-alphabetical-reference.md)   
  [カスタム属性](http://msdn.microsoft.com/en-us/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)

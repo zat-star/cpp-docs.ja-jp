@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -29,7 +30,8 @@ f1_keywords:
 - AFXCOLORBUTTON/CMFCColorButton::RebuildPalette
 - AFXCOLORBUTTON/CMFCColorButton::UpdateColor
 - AFXCOLORBUTTON/CMFCColorButton::m_bEnabledInCustomizeMode
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCColorButton [MFC], CMFCColorButton
 - CMFCColorButton [MFC], EnableAutomaticButton
@@ -51,15 +53,17 @@ helpviewer_keywords:
 - CMFCColorButton [MFC], UpdateColor
 - CMFCColorButton [MFC], m_bEnabledInCustomizeMode
 ms.assetid: 9fdf34ae-4cc5-4c5e-9d89-1c50e8a73699
-caps.latest.revision: "34"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cedbcd404e0f9dd575fe19486e97382e5975196c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e49cec1c34af066d6f30cf70003252f28e2bb8dc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfccolorbutton-class"></a>CMFCColorButton クラス
 `CMFCColorButton`と[CMFCColorBar クラス](../../mfc/reference/cmfccolorbar-class.md)カラー ピッカー コントロールを実装するクラスが一緒に使用されます。  
@@ -107,7 +111,7 @@ class CMFCColorButton : public CMFCButton
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |`m_bAltColorDlg`|ブール値。 場合`TRUE`、フレームワークによって表示、 [CMFCColorDialog](../../mfc/reference/cmfccolordialog-class.md)色 ダイアログ ボックスの場合、*他の*ボタンがクリックされた場合、または`FALSE`システムの色 ダイアログ ボックス。 既定値は `TRUE` です。 詳細については、次を参照してください。 [CMFCColorButton::EnableOtherButton](#enableotherbutton)です。|  
 |`m_bAutoSetFocus`|ブール値。 場合`TRUE`、フレームワークでは、メニューが表示されている場合、または、[色] メニューにフォーカスを設定`FALSE`フォーカスは変わりません。 既定値は `TRUE` です。|  
@@ -138,7 +142,7 @@ class CMFCColorButton : public CMFCButton
  [!code-cpp[NVC_MFC_StatusBarDemo#10](../../mfc/reference/codesnippet/cpp/cmfccolorbutton-class_1.h)]  
 [!code-cpp[NVC_MFC_StatusBarDemo#11](../../mfc/reference/codesnippet/cpp/cmfccolorbutton-class_2.cpp)]  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcolorbutton.h  
   
 ##  <a name="cmfccolorbutton"></a>CMFCColorButton::CMFCColorButton  
@@ -433,7 +437,7 @@ virtual void UpdateColor(COLORREF color);
 ### <a name="remarks"></a>コメント  
  `UpdateColor`関数は、現在選択されているボタンの色を変更し、送信することによって、親に通知を`WM_COMMAND`、メッセージ、`BN_CLICKED`標準通知します。 使用して、 [CMFCColorButton::GetColor](#getcolor)メソッドを選択した色を取得します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCButton クラス](../../mfc/reference/cmfcbutton-class.md)   

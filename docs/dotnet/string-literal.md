@@ -1,26 +1,31 @@
 ---
-title: "リテラル文字列 |Microsoft ドキュメント"
-ms.custom: 
+title: リテラル文字列 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - string literals
 - strings [C++], string literals
 ms.assetid: 6d1fc3f8-0d58-4d68-9678-16b4f6dc4766
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9302f9031aa9d9e3717ddb2cbe991ec412440b4a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: dd62f85b87473d1371daf2d2fa009d8620e59b57
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="string-literal"></a>リテラル文字列
 リテラル文字列の処理は、Visual C を c++ マネージ拡張から変更されました。  
@@ -110,6 +115,6 @@ int main () {
   
  コンパイラ フラグとして、あいまいな呼び出しをそのため、いる必要がありますの変換、`const char[4]`を`String^`単純変換を完全に一致があります。 これは、変更を新しい言語バージョンが導入されました。 これとは、呼び出しは、フラグが理由としてあいまいです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一般的な言語の変更 (C + + CLI)](../dotnet/general-language-changes-cpp-cli.md)   
  [String](../windows/string-cpp-component-extensions.md)

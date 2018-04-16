@@ -1,29 +1,34 @@
 ---
-title: "CLR 統合 (C++/CX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/22/2017"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "CLR 統合 (C + + CX) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 01/22/2017
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: language-reference
 ms.assetid: 76e213cf-2f3d-4181-b35b-9fd25d5b307c
-caps.latest.revision: 10
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d832e3856d7df444663e0b99b759e2ea620b27ed
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# CLR 統合 (C++/CX)
-一部の [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 型は、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] での特別な処理と、共通言語ランタイム \(CLR\) に基づく言語を受け取ります。 この記事では、1 つの言語のいくつかの型から別の言語へのマップの仕組みについて説明します。 たとえば、CLR は Windows.Foundation.IVector を System.Collections.IList へ、Windows.Foundation.IMap を System.Collections.IDictionary へ、というようにマップします。 同様に、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] はPlatform::Delegate や Platform::String などの型を特別にマップします。  
+# <a name="clr-integration-ccx"></a>CLR 統合 (C++/CX)
+一部の Windows ランタイム型では、特別な処理を受信 C + + CX と共通言語ランタイム (CLR) に基づく言語です。 この記事では、1 つの言語のいくつかの型から別の言語へのマップの仕組みについて説明します。 たとえば、CLR は Windows.Foundation.IVector を System.Collections.IList へ、Windows.Foundation.IMap を System.Collections.IDictionary へ、というようにマップします。 同様に、C + + CX が platform::delegate や platform::string などの型を特別にマップします。  
   
-## [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] から [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] へのマッピング  
- [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] が Windows メタデータ \(.winmd\) ファイルを読み取る場合、コンパイラは共通の [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] の名前空間と型を [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] の名前空間と型にマップします。 たとえば、数値の [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 型 `UInt32` は `default::uint32` に自動的にマップされます。  
+## <a name="mapping-the-windows-runtime-to-ccx"></a>Windows ランタイムをマッピングする C + + CX  
+ ときに C + + CX が Windows メタデータ (.winmd) ファイルを読み取り、コンパイラは一般的な Windows ランタイム名前空間と型を自動的にマップすると C + +/CX 名前空間と型。 たとえば、数値の Windows ランタイム型`UInt32`に自動的にマップされて`default::uint32`です。  
   
- [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] は、他のいくつかの [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 型を **Platform** 名前空間にマップします。 たとえば、**Windows::Foundation** HSTRING ハンドル \(読み取り専用の Unicode テキスト文字列を表す\) は、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] `Platform::String` クラスにマップされます。[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 操作によってエラー HRESULT が戻される場合、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] `Platform::Exception` にマップされます。 詳細については、「[Built\-in Types](http://msdn.microsoft.com/ja-jp/acc196fd-09da-4882-b554-6c94685ec75f)」を参照してください。  
+ C + + CX マップを他のいくつかの Windows ランタイム型、**プラットフォーム**名前空間。 たとえば、 **windows::foundation**読み取り専用の Unicode テキスト文字列を表す、HSTRING ハンドルは、C + にマップされて + CX`Platform::String`クラスです。 Windows ランタイム操作では、エラーの hresult 値を返します、する場合は、C + マッピング + CX`Platform::Exception`です。 詳細については、「 [Built-in Types](http://msdn.microsoft.com/en-us/acc196fd-09da-4882-b554-6c94685ec75f)」を参照してください。  
   
- [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] は [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] 名前空間の特定の型をマップすることで、型の機能強化も行います。 これらの型については、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] は、C\+\+ に固有であり、型の標準 .winmd ファイルでは使用できないヘルパー コンストラクターおよびメソッドを提供しています。  
+ C + + CX も、型の機能を強化するために Windows ランタイム名前空間内の特定の種類をマップします。 これらの型、C + + CX ヘルパー コンス トラクターとは C++ に固有であり、型の標準 .winmd ファイルでは使用できませんメソッドを提供します。  
   
  新しいコンストラクターとヘルパー メソッドをサポートしている値構造体を次の一覧に示します。 構造体の初期化リストを使用するコードを既に作成済みの場合、新たに追加されたコンストラクターを使用するように変更してください。  
   
@@ -55,7 +60,7 @@ caps.handback.revision: 10
   
  **Windows::UI::Xaml::Media**  
   
--   \[マトリックス\]  
+-   [マトリックス]  
   
  **Windows::UI::Xaml::Media::Animation**  
   
@@ -67,10 +72,10 @@ caps.handback.revision: 10
   
 -   Matrix3D  
   
-## CLR から [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] へのマッピング  
- Visual C\+\+ または C\# コンパイラーが .winmd ファイルを読み取るときに、メタデータ ファイル内の特定の型を、該当する [!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] または CLR 型に自動的にマップします。 たとえば、CLR では、IVector\<T\> インターフェイスが IList\<T\> にマップされます。 しかし、[!INCLUDE[cppwrt_short](../cppcx/includes/cppwrt-short-md.md)] では、IVector\<T\> インターフェイスは別の型にマップされません。  
+## <a name="mapping-the-clr-to-ccx"></a>CLR をマッピングする C + + CX  
+ Visual C または c# コンパイラーが .winmd ファイルを読み込む場合に自動的にマップのメタデータ ファイルで特定の種類に適切な C + + CX または CLR 型。 CLR、IVector でなど\<T > インターフェイスが IList にマップされて\<T > です。 C + + CX、IVector\<T > インターフェイスは別の型にマップされていません。  
   
- [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] の IReference\<T\> は .NET の Nullable\<T\> にマップします。  
+ IReference\<T >、Windows ランタイムでは、null を許容するマップ\<T > を .NET でします。  
   
-## 参照  
- [その他の言語との相互運用](../cppcx/interoperating-with-other-languages-c-cx.md)
+## <a name="see-also"></a>参照  
+ [その他の言語と相互運用](../cppcx/interoperating-with-other-languages-c-cx.md)

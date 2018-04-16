@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: open
+ms.topic: reference
+apiname:
+- open
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,19 +22,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: open
-dev_langs: C++
-helpviewer_keywords: open function
+f1_keywords:
+- open
+dev_langs:
+- C++
+helpviewer_keywords:
+- open function
 ms.assetid: e3139118-4da2-434b-a551-fcf3fccf49b5
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2fa7d6e6fe322cf37dec0322ba6db20998673717
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aa5c695f776655cfdfa0cf1ed7816b0e4e7d6e3b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="open"></a>開く
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_open](../../c-runtime-library/reference/open-wopen.md) を使用してください。

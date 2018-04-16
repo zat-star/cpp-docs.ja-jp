@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _CrtSetReportMode
 apilocation:
@@ -31,16 +31,17 @@ helpviewer_keywords:
 - _CrtSetReportMode function
 - CrtSetReportMode function
 ms.assetid: 3ecc6a12-afdd-4242-b046-8187ff6d4b36
-caps.latest.revision: 15
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 45319f7584d0c18533433d01b3467ccfeecac8df
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 3b5e6aedfb1cc216c621a18c74d45cdf084c5d11
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="crtsetreportmode"></a>_CrtSetReportMode
 `_CrtDbgReport` と、[_ASSERT、_ASSERTE、_ASSERT_EXPR のマクロ](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)、[_ASSERT、_ASSERTE、_ASSERT_EXPR のマクロ](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)、[_RPT、_RPTF、_RPTW、_RPTFW のマクロ](../../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md)、[_RPT、_RPTF、_RPTW、_RPTFW のマクロ](../../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md) (デバッグ バージョンのみ) など、[_CrtDbgReport、_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) を呼び出すマクロにより生成された特定のレポート タイプの宛先を指定します。  
@@ -62,7 +63,7 @@ int _CrtSetReportMode(
  `reportType` の新しいレポート モード。  
   
 ## <a name="return-value"></a>戻り値  
- 正常に終了した場合、`_CrtSetReportMode` は `reportType` で指定されたレポートの種類の以前のレポート モードを返します。 無効な値が `reportType` として渡されるか、無効なモードが `reportMode` に指定されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、`_CrtSetReportMode` は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、-1 を返します。 詳しくは、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+ 正常に終了した場合、`_CrtSetReportMode` は `reportType` で指定されたレポートの種類の以前のレポート モードを返します。 無効な値が `reportType` として渡されるか、無効なモードが `reportMode` に指定されると、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、`_CrtSetReportMode` は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、-1 を返します。 詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  `_CrtSetReportMode` は、`_CrtDbgReport` の出力先を指定します。 マクロ `_ASSERT`、`_ASSERTE`、`_RPT`、および `_RPTF` は `_CrtDbgReport` を呼び出すので、`_CrtSetReportMode` はこれらのマクロで指定されるテキストの出力先を指定します。  
@@ -103,15 +104,15 @@ _CrtSetReportFile( _CRT_ASSERT, _CRTDBG_FILE_STDERR );
   
  さらに、各レポートの種類のレポート モードは、個別に制御できます。 たとえば、`reportType` の `_CRT_WARN` は出力デバッグ文字列に送り、`_CRT_ASSERT` は前に説明したようにデバッグ メッセージ ウィンドウを使用して表示し、`stderr` に送るように指定できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_CrtSetReportMode`|\<crtdbg.h>|\<errno.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
  **ライブラリ:** [CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)

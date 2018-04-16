@@ -1,93 +1,98 @@
 ---
-title: "文字列データ管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Unicode, 文字列オブジェクト"
+title: データ管理の文字列 |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- Unicode, string objects
 ms.assetid: 0b53a542-eeb1-4108-9ada-6700645b6f8f
 caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ad7a17b1b34375fcb45019bcaf8878757288a290
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/10/2018
 ---
-# 文字列データ管理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Visual C\+\+ は文字列データを管理するいくつかの方法が用意されています:  
+# <a name="string-data-management"></a>文字列データ管理
+Visual C には、文字列データを管理するいくつかの方法が用意されています。  
   
--   C スタイルの null で終わる文字列を使用する[文字列操作](../c-runtime-library/string-manipulation-crt.md)  
+-   [文字列操作](../c-runtime-library/string-manipulation-crt.md)C スタイルの null で終わる文字列を操作するため  
   
--   管理の文字列の Win32 API 関数  
+-   文字列を管理するための Win32 API 関数  
   
--   柔軟性が提供する MFC クラスの [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)、サイズ変更可能な文字列オブジェクト。  
+-   Mfc の[CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)、柔軟で、サイズ変更可能な文字列オブジェクトを提供します。  
   
--   [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)をクラス、`CString`と同じ機能を MFC 依存しない文字列オブジェクトに提供します。  
+-   クラス[CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)と同じ機能を MFC に依存しない文字列オブジェクトを提供します。 `CString`  
   
- ほぼすべてのプログラムは、文字列データを使用します。  MFC の `CString` のクラスは、柔軟な文字列の処理に最も適しています。  7.0 以降、`CString` は、MFC または MFC に依存しないプログラムで使用できます。  ランタイム ライブラリと `CString` は、Unicode または MBCS プログラミングで、がマルチバイト 、ワイド文字を含む文字列をサポートします。  
+ ほぼすべてのプログラムは、文字列データを操作します。 MFC の`CString`クラスは、柔軟な文字列処理の最適なソリューションでは多くの場合。 Version 7.0 以降を`CString`MFC または MFC に依存しないプログラムで使用できます。 ランタイム ライブラリと`CString`Unicode や MBCS のプログラミングと同様に、マルチバイト (ワイド) 文字を含む文字列をサポートします。  
   
- ここでは、クラス ライブラリの文字列操作に関連する提供する汎用サービスについて説明します。  ここで説明するトピックは次のとおりです。:  
+ この記事では、文字列の操作に関連するクラス ライブラリを提供する汎用的なサービスについて説明します。 この記事で説明されているトピックは次のとおりです。  
   
--   [Unicode と MBCS は移植性があります。](#_core_unicode_and_mbcs_provide_portability)  
+-   [Unicode と MBCS 提供の移植性](#_core_unicode_and_mbcs_provide_portability)  
   
--   [CString および定数は、ポインターをを](#_core_cstrings_and_const_char_pointers)  
+-   [Cstring と const char ポインター](#_core_cstrings_and_const_char_pointers)  
   
 -   [CString の参照カウント](#_core_cstring_reference_counting)  
   
- [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md) のクラスは、文字列の操作をサポートします。  通常、C ランタイム ライブラリの文字列のパッケージで提供される機能を置き換え、拡張することを前提とします。  これらのような処理で基本文字列の `CString` のクラスの提供するメンバー関数と演算子が見つかりました。  クラスは、**CStrings** および標準 C\+\+ 文字列のデータ型を構築し、割り当てること、および比較するコンストラクターと演算子が用意されています。  `CString` が `CObject`から派生していないため、MFC \(Microsoft Foundation Class\) ライブラリ\) のほとんどではなく `CString` オブジェクトを使用できます。  
+ [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)クラスは、文字列操作のためのサポートを提供します。 置換し、通常、C ランタイム ライブラリ文字列パッケージによって提供される機能を拡張しています。 `CString`クラス メンバー関数と演算子の似た Basic では、簡略化された文字列処理を提供します。 このクラスもコンス トラクターと演算子の提供を構築する、割り当て、および比較する**Cstring**と標準 C++ 文字列データ型。 `CString`から派生していない`CObject`、使用することができます`CString`ほとんどの Microsoft Foundation Class ライブラリ (MFC) とは別にオブジェクト。  
   
- `CString` オブジェクトは値に基づいて操作が決定されます。`CString` のオブジェクトは一意の値を表します。  文字列に実際の文字列ではなくポインターとして `CString` に注意してください。  
+ `CString` オブジェクトは、「値のセマンティクスです」に従う A`CString`オブジェクトを一意の値を表します。 考えること、`CString`文字列へのポインターとしてではなく、実際の文字列として。  
   
- `CString` のオブジェクトは、文字の可変数のシーケンスを表します。  `CString` のオブジェクトは、文字の配列として考えることができます。  
+ A`CString`オブジェクトは、可変個の文字のシーケンスを表します。 `CString` オブジェクトは、文字の配列として考えることができます。  
   
-##  <a name="_core_unicode_and_mbcs_provide_portability"></a> Unicode と MBCS は移植性があります。  
- MFC Version 3.0 以降では、MFC は、`CString`が Unicode とマルチバイト文字セット \(MBCS\) の両方に対して、が有効になります。  このサポートには、Unicode または ANSI 文字の場合、ビルドできる移植可能なアプリケーションを作成できるようにしやすくします。  この移植性を有効にするには、`CString` オブジェクトの各文字はとしてアプリケーションをビルド、または `char` それ以外の場合はです **\_UNICODE** ときにシンボルが定義されている場合、型 **TCHAR**の `wchar_t` として定義されます。  `wchar_t` の文字は、16 ビットです。  MBCS はシンボル **\_MBCS** ビルド定義すると有効になります。  MFC 自体は **\_MBCS** 記号 \(NAFX ライブラリの場合\) または定義された **\_UNICODE** のシンボル \(UAFX ライブラリ用\) ビルドします。  
+##  <a name="_core_unicode_and_mbcs_provide_portability"></a> Unicode と MBCS の移植性を提供します。  
+ MFC バージョン 3.0 以降では、MFC では、インクルード`CString`Unicode とマルチバイト文字セット (MBCS) の両方に対して有効にします。 このサポートでは、Unicode または ANSI のいずれかの文字を構築することができるポータブル アプリケーションを作成するためのやすくなります。 この移植性の内の各文字を有効にする、`CString`オブジェクトの型が**TCHAR**、として定義されている`wchar_t`シンボルを定義する場合**_UNICODE**アプリケーションをビルドするときに、`char`しない場合。 A`wchar_t`文字が 16 ビット幅。 シンボルでビルドする場合に、MBCS が有効になっている**_MBCS**定義します。 MFC 自体がいずれかでビルドされた、 **_MBCS** (NAFX ライブラリ) のシンボルまたは**_UNICODE** (UAFX ライブラリ) のシンボルを定義します。  
   
 > [!NOTE]
->  どのフォームまたは移動する文字の文字列のこれ `CString` の例や文字列に含まれる文書が正しく **\_T** マクロを使用して Unicode での移植性には、書式設定された文字の文字列を示します:  
+>  `CString`の例では、これと Unicode の移植性のリテラル文字列が正しく書式設定文字列の表示の記事に付属するを使用して、 **_T**マクロをリテラル文字列形式を。  
   
  `L"literal string"`  
   
 > [!NOTE]
->  コンパイラは Unicode 文字列として扱うかを示します。  たとえば、次のコード:  
+>  コンパイラは、Unicode 文字列として扱います。 コード例を次に示します。  
   
- [!code-cpp[NVC_ATLMFC_Utilities#187](../atl-mfc-shared/codesnippet/CPP/string-data-management_1.cpp)]  
-  
-> [!NOTE]
->  **\_UNICODE** が ANSI 文字列と、定義されている場合はない Unicode 文字列として変換されます。  詳細については、" " [Unicode とマルチバイト文字セット \(MBCS: Multibyte Character Set\) のサポート](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md)を参照してください。  
-  
- `CString` のオブジェクトは **INT\_MAX** まで \(2,147,483,647\) の文字を格納できます。  取得するに **TCHAR** のデータ型が使用されます。または設定するに `CString` 内の個々の文字を追加します。  文字配列とは異なり、`CString` のクラスに組み込みメモリ割り当ての機能があります。  これは `CString` のオブジェクトが自動的に必要に応じて拡張できます \(つまり、該当する長い文字列への `CString` のオブジェクトの開発を気にする必要はありません\)。  
-  
-##  <a name="_core_cstrings_and_const_char_pointers"></a> CString および定数は、ポインターをを  
- `CString` のオブジェクトは、Unicode の下に **const char\*** と同じでない場合は\) 文字の C スタイルの文字列 \( `PCXSTR`のように、機能できます。  [CSimpleStringT::operator PCXSTR](../Topic/CSimpleStringT::operator%20PCXSTR.md) の変換演算子は `CString` のオブジェクトは自由な関数呼び出しの文字のポインターの代わりになるようにします。  **CString\( LPCWSTR**`pszSrc`**\)** のコンストラクターは、文字のポインターが `CString` のオブジェクトに代入されるようにします。  
-  
- その `CString` のオブジェクトを圧縮は行われません。  `Chicago`を含む `CString` の 2 種類のオブジェクトを行った場合、たとえば `Chicago` の文字は 2 か所に格納されます。   \(これは、MFC の将来のバージョンの場合は、に依存しないでください。\)  
+ [!code-cpp[NVC_ATLMFC_Utilities#187](../atl-mfc-shared/codesnippet/cpp/string-data-management_1.cpp)]  
   
 > [!NOTE]
->  直接文字に非定数ポインターとして `CString` にアクセスする必要がある場合 [CSimpleStringT::GetBuffer](../Topic/CSimpleStringT::GetBuffer.md) と [CSimpleStringT::ReleaseBuffer](../Topic/CSimpleStringT::ReleaseBuffer.md) のメンバー関数を使用します。  
+>  場合は、Unicode 文字列として変換**_UNICODE**が定義されているか、文字列以外の場合、ANSI として。 詳細については、記事を参照してください。 [Unicode およびマルチバイト文字セット (MBCS) のサポート](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md)です。  
+  
+ A`CString`オブジェクトに格納できる最大**INT_MAX** (2,147, 483,647) 文字です。 **TCHAR**を取得または設定内の個々 の文字データ型が使用される、`CString`オブジェクト。 文字配列とは異なり、`CString`クラスには、組み込みのメモリ割り当てが可能です。 これにより、`CString`必要に応じて自動的に拡張するオブジェクト (つまり必要はありませんの増加について心配する、`CString`長い文字列に合わせてオブジェクト)。  
+  
+##  <a name="_core_cstrings_and_const_char_pointers"></a> Cstring と const char ポインター  
+ A`CString`オブジェクトは、C スタイルのリテラル文字列のように機能できますも (、`PCXSTR`と同じである**const char\***  Unicode 下にない場合)。 [CSimpleStringT::operator PCXSTR](../atl-mfc-shared/reference/csimplestringt-class.md#operator_pcxstr)変換演算子を使うと`CString`自由に関数呼び出しで文字へのポインターの代わりに使用するオブジェクト。 **CString (LPCWSTR** `pszSrc` **)**コンス トラクターの代わりに使用する文字へのポインターを使用する`CString`オブジェクト。  
+  
+ 行われませんフォールドに`CString`オブジェクト。 2 つの操作を行う場合`CString`オブジェクトを含む`Chicago`など、内の文字`Chicago`2 か所に格納されます。 (これではありません、MFC の将来のバージョンの場合は true。 それに依存しないようにするためです。)  
   
 > [!NOTE]
->  `BSTR` のオブジェクトを使用して \(以前の OLE オートメーション\) と呼ばれるオートメーションで使用される割り当てと設定に [CStringT::AllocSysString](../Topic/CStringT::AllocSysString.md) と [CStringT::SetSysString](../Topic/CStringT::SetSysString.md) のメンバー関数。  
+>  使用して、 [CSimpleStringT::GetBuffer](../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)と[CSimpleStringT::ReleaseBuffer](../atl-mfc-shared/reference/csimplestringt-class.md#releasebuffer)メンバー関数に直接アクセスする必要がある場合、`CString`文字への非定数ポインターとして。  
   
 > [!NOTE]
->  可能な場合は、ヒープではなく、フレーム `CString` のオブジェクトを割り当てます。  これは、メモリを節約し、パラメーターの引き渡しを簡単になります。  
+>  使用して、 [CStringT::AllocSysString](../atl-mfc-shared/reference/cstringt-class.md#allocsysstring)と[名称](../atl-mfc-shared/reference/cstringt-class.md#setsysstring)メンバー関数を割り当てて設定`BSTR`オートメーション (以前の OLE オートメーション) で使用されるオブジェクト。  
   
- `CString` のクラスは、Microsoft Foundation Class ライブラリのコレクション クラスとして `CString` のコレクション内でのオブジェクト要素として確実に格納することもできますが、実行されません。  
+> [!NOTE]
+>  可能であれば、割り当てる`CString`ヒープではなく、フレームのオブジェクト。 これにより、メモリを節約し、パラメーターの引き渡しを簡略化します。  
+  
+ `CString`クラスとしては実装されません Microsoft Foundation Class ライブラリ コレクション クラス、ただし`CString`オブジェクトをコレクション内の要素として確実に格納することができます。  
   
 ##  <a name="_core_cstring_reference_counting"></a> CString の参照カウント  
- MFC バージョン 4.0 の時点で、[CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md) のオブジェクトがコピーされると、MFC はインクリメントしてデータをコピーではなく参照の数が表示されます。  これにより、有効な値と値を返す `CString` のオブジェクトをパラメーターを渡すことになります。  これらの操作ではコピー コンストラクターが、場合によっては複数回呼び出します。  参照カウントをインクリメントすることは、これらの一般的な操作のオーバーヘッドを減少し、`CString` 使用して人目を引くを選択します。  
+ MFC バージョン 4.0 の時点でとき[CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)オブジェクトのコピーは、MFC は、データをコピーするのではなく、参照カウントをインクリメントします。 これにより、値を返す、パラメーターの引き渡し`CString`より効率的な値でオブジェクト。 これらの操作を呼び出せる、場合によっては複数回コピー コンス トラクターが発生します。 これらの一般的な操作には、そのオーバーヘッドが軽減されを使用して参照カウントをインクリメント`CString`もより魅力的なオプションです。  
   
- 各コピーが破棄されると、元のオブジェクトの参照カウントがデクリメントされます。  元の `CString` のオブジェクトは参照カウントがゼロに低下するまで破棄されません。  
+ 各コピーは破棄されると、元のオブジェクト内の参照カウントは減少します。 元の`CString`オブジェクトは、参照カウントがゼロになるまでは破棄されません。  
   
- 参照カウントを無効または有効にするには `CString` のメンバー関数 [CSimpleStringT::LockBuffer](../Topic/CSimpleStringT::LockBuffer.md) と [CSimpleStringT::UnlockBuffer](../Topic/CSimpleStringT::UnlockBuffer.md) を使用できます。  
+ 使用することができます、`CString`メンバー関数[CSimpleStringT::LockBuffer](../atl-mfc-shared/reference/csimplestringt-class.md#lockbuffer)と[CSimpleStringT::UnlockBuffer](../atl-mfc-shared/reference/csimplestringt-class.md#unlockbuffer)参照カウントを有効または無効にします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [MFC の一般的なトピック](../mfc/general-mfc-topics.md)
+

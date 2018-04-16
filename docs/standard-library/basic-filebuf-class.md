@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - fstream/std::basic_filebuf
 - fstream/std::basic_filebuf::char_type
@@ -26,7 +27,8 @@ f1_keywords:
 - fstream/std::basic_filebuf::sync
 - fstream/std::basic_filebuf::uflow
 - fstream/std::basic_filebuf::underflow
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::basic_filebuf [C++]
 - std::basic_filebuf [C++], char_type
@@ -47,15 +49,17 @@ helpviewer_keywords:
 - std::basic_filebuf [C++], uflow
 - std::basic_filebuf [C++], underflow
 ms.assetid: 3196ba5c-bf38-41bd-9a95-70323ddfca1a
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ffc7f3e830d9caccf3428b2d9d3b70253d8d3b18
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5c9891f67c376d13794778c82b167092237df3f7
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="basicfilebuf-class"></a>basic_filebuf クラス
 文字の特徴がクラス `Tr` によって決まる型 `Elem` の要素と、外部ファイルに格納されている要素のシーケンスとの間でやり取りされる転送を制御するストリーム バッファーを記述します。  
@@ -462,7 +466,7 @@ virtual int_type overflow(int_type _Meta = traits_type::eof);
  関数が失敗すると、**traits_type::eof** が返されます。 それ以外の場合は、**traits_type::**[not_eof](../standard-library/char-traits-struct.md#not_eof)(_ *Meta*) を返します。  
   
 ### <a name="remarks"></a>コメント  
- _ *Meta***!= traits_type::**[eof](../standard-library/char-traits-struct.md#eof) の場合、プロテクト仮想メンバー関数は、要素 **ch = traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(\_ *Meta*) を出力バッファーに挿入しようとします。 これはさまざまな方法で行うことができます。  
+ 場合 _ * メタ ***! = traits_type::**[eof](../standard-library/char-traits-struct.md#eof)、プロテクト仮想メンバー関数は、要素を挿入するよう努めて**ch = traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(\_ *メタ*) 出力バッファーにします。 これはさまざまな方法で行うことができます。  
   
 -   書き込み位置が使用可能な場合は、書き込み位置に要素を格納し、出力バッファーのネクスト ポインターをインクリメントできます。  
   

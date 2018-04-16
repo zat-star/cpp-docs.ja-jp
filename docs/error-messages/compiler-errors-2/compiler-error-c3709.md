@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3709
 ms.assetid: d5576b04-2f93-420a-8f3e-8b8e987e8dab
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d0d84ab43d1d1f47083ce71318d7675e27633d10
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 4d56a4c18543ad71e524a4cc08eecd35ab6e7e2e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3709"></a>コンパイラ エラー C3709
 'function': _ _hook のイベントを指定するための構文が正しくありません/\__unhook  

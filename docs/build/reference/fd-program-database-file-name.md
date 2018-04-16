@@ -1,77 +1,81 @@
 ---
-title: "/Fd (プログラム データベース ファイル名) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/FD"
-  - "VC.Project.VCCLWCECompilerTool.ProgramDataBaseFileName"
-  - "VC.Project.VCCLCompilerTool.ProgramDataBaseFileName"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".pdb ファイル, 作成"
-  - "/FD コンパイラ オプション [C++]"
-  - "FD コンパイラ オプション [C++]"
-  - "-FD コンパイラ オプション [C++]"
-  - "PDB ファイル, 作成"
-  - "プログラム データベース コンパイラ オプション [C++]"
-  - "プログラム データベース ファイル名 [C++]"
+title: -Fd (プログラム データベース ファイル名) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
+ms.topic: article
+f1_keywords:
+- /FD
+- VC.Project.VCCLWCECompilerTool.ProgramDataBaseFileName
+- VC.Project.VCCLCompilerTool.ProgramDataBaseFileName
+dev_langs:
+- C++
+helpviewer_keywords:
+- /FD compiler option [C++]
+- program database file name [C++]
+- -FD compiler option [C++]
+- PDB files, creating
+- program database compiler option [C++]
+- .pdb files, creating
+- FD compiler option [C++]
 ms.assetid: 3977a9ed-f0ac-45df-bf06-01cedd2ba85a
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a9cda26f310ec110c452394e960d3fb81d1f3e8a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /Fd (プログラム データベース ファイル名)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[\/Z7、\/Zi、\/ZI \(デバッグ情報の形式\)](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md) で生成されたプログラム データベース \(PDB\) ファイルの名前を指定します。  
+# <a name="fd-program-database-file-name"></a>/Fd (プログラム データベース ファイル名)
+によって作成されたプログラム データベース (PDB) ファイルのファイル名を指定[/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Fdpathname  
 ```  
   
-## 解説  
- **\/Fd** を指定しないと、既定の PDB ファイル名 VC`x`0.pdb が使用されます。`x` は現在使用している Visual C\+\+ のメジャー バージョンです。  
+## <a name="remarks"></a>コメント  
+ せず**/Fd**、PDB ファイル名の既定値は VC*x*0. pdb、場所*x*メジャー バージョンの Visual C の使用中です。  
   
- 円記号でファイル名 \(パスの末尾に含まれない\) でパスを指定した場合、コンパイラは、指定したディレクトリに含まれている`x`0.pdb VC .pdb ファイルを作成します。  
+ ファイル名 (パスはバック スラッシュで終わる) を含まないパス名を指定する場合、コンパイラが VC をという名前の .pdb ファイルを作成*x*指定したディレクトリ内の 0 pdb です。  
   
- ファイル名の拡張子を指定しない場合は、拡張子 .pdb が付加されます。  
+ 拡張機能を含まないファイル名を指定する場合、コンパイラは、拡張機能として .pdb を使用します。  
   
- このオプションでは、簡易リビルドとインクリメンタル コンパイルに使用されるステート \(.idb\) ファイルの名前も指定します。  
+ このオプションも最小リビルドとインクリメンタル コンパイルの使用状態 (.idb) ファイルを名前します。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[出力ファイル\]** プロパティ ページをクリックします。  
+3.  **[出力ファイル]** プロパティ ページをクリックします。  
   
-4.  **\[プログラム データベース ファイルの名前\]** プロパティを変更します。  
+4.  変更、**プログラム データベース ファイル名**プロパティです。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.ProgramDataBaseFileName%2A>」を参照してください。  
   
-## 使用例  
- 次のコマンド ラインは、PROG.pdb という名前の .pdb ファイルと、PROG.idb という名前の .idb ファイルを作成します。  
+## <a name="example"></a>例  
+ このコマンドラインには、名前付き PROG.pdb および名前付き PROG.idb .idb ファイルの .pdb ファイルが作成されます。  
   
 ```  
 CL /DDEBUG /Zi /FdPROG.PDB PROG.CPP  
 ```  
   
-## 参照  
- [出力ファイル \(\/F\) オプション](../../build/reference/output-file-f-options.md)   
+## <a name="see-also"></a>参照  
+ [出力ファイル (/F) オプション](../../build/reference/output-file-f-options.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
- [パス名の指定](../Topic/Specifying%20the%20Pathname.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
+ [パス名の指定](../../build/reference/specifying-the-pathname.md)

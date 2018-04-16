@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: utility/std::tuple_element
-dev_langs: C++
-helpviewer_keywords: std::tuple_element
+ms.topic: reference
+f1_keywords:
+- utility/std::tuple_element
+dev_langs:
+- C++
+helpviewer_keywords:
+- std::tuple_element
 ms.assetid: 4c51a6c1-ce81-462f-8c6c-291d69f2b77c
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4fc5269448ad61bc11409afbb2d6515c17a95864
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3e108f012dbad9e82f85bca08a7e6086734cf001
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="tupleelement-class"></a>tuple_element クラス
 `tuple` 要素をラップします。 `array` 要素および `pair` 要素のラップの特殊化。  
@@ -62,11 +68,11 @@ template <class T1, class T2>
 ```  
   
 ### <a name="parameters"></a>パラメーター  
-*インデックス*  
+*Index*  
 指定した要素のインデックス。  
   
 *Tuple*  
-組の型。  
+タプルの型。  
   
 *Elem*  
 配列要素の型。  
@@ -176,9 +182,9 @@ int main() {
  0 1.333  
 ```  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<tuple>  
  **ヘッダー:** \<array> (配列の特殊化用) **ヘッダー:** \<utility> (ペアの特殊化用) **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [tuple ](../standard-library/tuple-class.md)

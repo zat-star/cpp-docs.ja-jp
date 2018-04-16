@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.codewiz.event.overview
-dev_langs: C++
-helpviewer_keywords: Add Event Wizard [C++]
+f1_keywords:
+- vc.codewiz.event.overview
+dev_langs:
+- C++
+helpviewer_keywords:
+- Add Event Wizard [C++]
 ms.assetid: bdd2a7bb-13d5-44d7-abc9-e785ba4e05ce
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 02df801788d17f9ab00adc5c527db155d7db88f2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 62ecbe7dece323ce5e99fbe32b3b936fe3661362
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="add-event-wizard"></a>イベント追加 ウィザード
 このウィザードでは、MFC ActiveX コントロール プロジェクトにイベントを追加します。 独自のイベントを指定することができます、通常のストック イベントをカスタマイズするまたはストック イベントの一覧から選択できます。  
@@ -58,5 +64,5 @@ ms.lasthandoff: 10/24/2017
  **パラメーター リスト**  
  すべてのパラメーターとその型のメソッドに現在追加されて表示されます。 パラメーターを追加すると、ウィザードは更新**パラメーター リスト**とその型の各パラメーターを表示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イベントの追加](../ide/adding-an-event-visual-cpp.md)

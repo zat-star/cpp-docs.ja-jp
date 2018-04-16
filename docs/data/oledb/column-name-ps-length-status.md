@@ -1,88 +1,81 @@
 ---
-title: "COLUMN_NAME_PS_LENGTH_STATUS | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "COLUMN_NAME_PS_LENGTH_STATUS"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COLUMN_NAME_PS_LENGTH_STATUS マクロ"
+title: COLUMN_NAME_PS_LENGTH_STATUS | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- COLUMN_NAME_PS_LENGTH_STATUS
+dev_langs:
+- C++
+helpviewer_keywords:
+- COLUMN_NAME_PS_LENGTH_STATUS macro
 ms.assetid: a1a2e2ca-f0ae-4896-8aa3-67a96c270b05
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: bc3c2582804e8774205e62211ce533b49406921f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# COLUMN_NAME_PS_LENGTH_STATUS
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-行セット内の特定の列に行セットのバインディングを表します。  [COLUMN\_NAME](../Topic/COLUMN_NAME.md)、このマクロと同様に、精度、スケール、列の長さと列のステータスを取得します。  
+# <a name="columnnamepslengthstatus"></a>COLUMN_NAME_PS_LENGTH_STATUS
+行セットの特定の列を行セットのバインドを表します。 ような[COLUMN_NAME](../../data/oledb/column-name.md)ただし、このマクロは、有効桁数、小数点以下桁数、列の長さ、および列の状態にも受け取ります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```cpp
+COLUMN_NAME_PS_LENGTH_STATUS(pszName, nPrecision, nScale, data, length, status )  
 ```  
   
-COLUMN_NAME_PS_LENGTH_STATUS(  
-pszName  
-,   
-nPrecision  
-,   
-nScale  
-,   
-data  
-,   
-length  
-,   
-status )  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pszName`  
- \[\]項目の名前へのポインター。  名前は Unicode 文字列である必要があります。  名前の先頭に「L」を追加することにより実現できます \(例: `L"MyColumn"`。  
+ [in]列の名前へのポインター。 名前は、Unicode 文字列にする必要があります。 たとえば、名前の前に 'L' を設定することによってこれを実行できます:`L"MyColumn"`です。  
   
  `nPrecision`  
- \[\]、バインドし列の最大の精度。  
+ [in]バインドする列の最大有効桁数です。  
   
  `nScale`  
- \[\]、バインドしたい列の小数点以下桁数。  
+ [in]バインドする列の小数点以下桁数。  
   
  `data`  
- \[\]ユーザー レコードと対応するデータ メンバー。  
+ [in]ユーザー レコードに対応するデータ メンバーです。  
   
  *length*  
- \[\]列の長さにバインドされるようにします。  
+ [in]列の長さをバインドする変数です。  
   
  *status*  
- \[\]列のステータスにバインドされるようにします。  
+ [in]列の状態にバインドする変数です。  
   
-## 解説  
- **COLUMN\_NAME\_\*** のマクロで使用される情報の [COLUMN\_NAME](../Topic/COLUMN_NAME.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[COLUMN_NAME](../../data/oledb/column-name.md)場所について、 **COLUMN_NAME_\*** マクロを使用します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../Topic/Macros%20and%20Global%20Functions%20for%20OLE%20DB%20Consumer%20Templates.md)   
- [BEGIN\_ACCESSOR](../../data/oledb/begin-accessor.md)   
- [BEGIN\_ACCESSOR\_MAP](../../data/oledb/begin-accessor-map.md)   
- [BEGIN\_COLUMN\_MAP](../Topic/BEGIN_COLUMN_MAP.md)   
- [COLUMN\_NAME](../Topic/COLUMN_NAME.md)   
- [COLUMN\_NAME\_EX](../../data/oledb/column-name-ex.md)   
- [COLUMN\_NAME\_LENGTH](../Topic/COLUMN_NAME_LENGTH.md)   
- [COLUMN\_NAME\_LENGTH\_STATUS](../Topic/COLUMN_NAME_LENGTH_STATUS.md)   
- [COLUMN\_NAME\_STATUS](../../data/oledb/column-name-status.md)   
- [COLUMN\_NAME\_PS](../../data/oledb/column-name-ps.md)   
- [COLUMN\_NAME\_PS\_LENGTH](../Topic/COLUMN_NAME_PS_LENGTH.md)   
- [COLUMN\_NAME\_PS\_STATUS](../../data/oledb/column-name-ps-status.md)   
- [COLUMN\_NAME\_TYPE](../../data/oledb/column-name-type.md)   
- [COLUMN\_NAME\_TYPE\_PS](../../data/oledb/column-name-type-ps.md)   
- [COLUMN\_NAME\_TYPE\_SIZE](../../data/oledb/column-name-type-size.md)   
- [COLUMN\_NAME\_TYPE\_STATUS](../Topic/COLUMN_NAME_TYPE_STATUS.md)
+## <a name="see-also"></a>参照  
+ [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
+ [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md)   
+ [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md)   
+ [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md)   
+ [COLUMN_NAME](../../data/oledb/column-name.md)   
+ [COLUMN_NAME_EX](../../data/oledb/column-name-ex.md)   
+ [COLUMN_NAME_LENGTH](../../data/oledb/column-name-length.md)   
+ [COLUMN_NAME_LENGTH_STATUS](../../data/oledb/column-name-length-status.md)   
+ [COLUMN_NAME_STATUS](../../data/oledb/column-name-status.md)   
+ [COLUMN_NAME_PS](../../data/oledb/column-name-ps.md)   
+ [COLUMN_NAME_PS_LENGTH](../../data/oledb/column-name-ps-length.md)   
+ [COLUMN_NAME_PS_STATUS](../../data/oledb/column-name-ps-status.md)   
+ [COLUMN_NAME_TYPE](../../data/oledb/column-name-type.md)   
+ [COLUMN_NAME_TYPE_PS](../../data/oledb/column-name-type-ps.md)   
+ [COLUMN_NAME_TYPE_SIZE](../../data/oledb/column-name-type-size.md)   
+ [COLUMN_NAME_TYPE_STATUS](../../data/oledb/column-name-type-status.md)

@@ -1,45 +1,48 @@
 ---
-title: "/ALLOWBIND | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/allowbind"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ALLOWBIND editbin オプション"
-  - "/ALLOWBIND editbin オプション"
-  - "-ALLOWBIND editbin オプション"
+title: "-ALLOWBIND |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /allowbind
+dev_langs:
+- C++
+helpviewer_keywords:
+- ALLOWBIND editbin option
+- /ALLOWBIND editbin option
+- -ALLOWBIND editbin option
 ms.assetid: eaadbb8c-4339-4281-9a75-3a1ce2352ff8
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a4cbd5c619b0a9e146adb9a8ec9117f59e01b89d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /ALLOWBIND
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-DLL をバインドすることができるかどうかを指定します。  
+# <a name="allowbind"></a>/ALLOWBIND
+DLL をバインドできるかどうかを指定します。  
   
 ```  
   
 /ALLOWBIND[:NO]  
-  
 ```  
   
-## 解説  
- イメージをバインドするように Bind.exe に示す DLL のヘッダーの **\/ALLOWBIND** のオプションが小さい。  バインドは、ローダーが必要再ベース高速読み込み、それぞれの参照される DLL のアドレスのフィックスアップを要求する場合にイメージを実行してから。  これはデジタル署名にバインディング無効にするシグネチャを DLL にバインドされてしない場合があります。  バインドは ASLR \(ASLR\) がイメージに対して ASLR 機能をサポートする Windows のバージョンの **\/DYNAMICBASE** を使用して有効に影響しません。  
+## <a name="remarks"></a>コメント  
+ **/ALLOWBIND**オプションは、ビットを示す Bind.exe にバインドする、イメージが許可されている DLL のヘッダーを設定します。 バインディングは、読み込みも高速、ローダーが再配置して、参照される各 DLL のアドレスのフィックス アップを実行する必要があるないときにイメージを許可できます。 デジタル署名されている場合にバインドする DLL は好ましくありません-バインドには、署名が無効になります。 バインドも何も起こりませんアドレス space layout randomization (機能) が有効な場合、イメージを使用して**/DYNAMICBASE** ASLR をサポートする Windows のバージョンにします。  
   
- Bind.exe が DLL をバインドするのを防ぐことが **\/ALLOWBIND:NO** を使用します。  
+ 使用して**/ALLOWBIND:NO**を Bind.exe が DLL をバインドするを防ぐためにします。  
   
- 詳細については、[\/ALLOWBIND](../../build/reference/allowbind-prevent-dll-binding.md) のリンカー オプションを参照します。  
+ 詳細については、次を参照してください。、 [/ALLOWBIND](../../build/reference/allowbind-prevent-dll-binding.md)リンカー オプション。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [EDITBIN オプション](../../build/reference/editbin-options.md)

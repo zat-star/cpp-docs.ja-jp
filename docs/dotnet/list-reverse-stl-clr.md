@@ -1,41 +1,46 @@
 ---
-title: "list::reverse (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::list::reverse"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "reverse メンバー [STL/CLR]"
+title: "list::reverse (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::list::reverse
+dev_langs:
+- C++
+helpviewer_keywords:
+- reverse member [STL/CLR]
 ms.assetid: de3bce1e-01fe-461d-a785-5cf4fcea988f
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: aedc8861815d7a6fbd91af984656940a928b3a84
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# list::reverse (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="listreverse-stlclr"></a>list::reverse (STL/CLR)
 被制御シーケンスを反転させます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void reverse();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスのすべての要素の順序を反転させます。  要素の一覧を反映するために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンス内のすべての要素の順序を反転させます。 要素の一覧を反映するために使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_list_reverse.cpp   
@@ -64,13 +69,16 @@ int main()
   
 ```  
   
-  **b c**  
- **a b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/リスト\>  
+```Output  
+a b c  
+c b a  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/一覧 >  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)   
- [list::sort](../dotnet/list-sort-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [list::sort (STL/CLR)](../dotnet/list-sort-stl-clr.md)

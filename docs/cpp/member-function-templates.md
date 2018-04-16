@@ -1,12 +1,12 @@
 ---
-title: "メンバー関数テンプレート |Microsoft ドキュメント"
-ms.custom: 
+title: メンバー関数テンプレート |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -17,12 +17,13 @@ caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: f460497071445cff87308fa9bf6e0d43c6f13a3e
-ms.openlocfilehash: bba7b35c08fbc171ddbb4c572285c0aed2f58a3b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f6d16c94eb9d88f8e000f3830477fbf420acf8b6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="member-function-templates"></a>メンバー関数テンプレート
 
@@ -71,8 +72,6 @@ int main()
 ```  
   
 ## <a name="example"></a>例
-
- さらに、Visual Studio .NET 2003 以降では、メンバー テンプレートはクラスの外部でも定義できます。  
   
 ```cpp
 // defining_member_templates_outside_class.cpp  
@@ -100,7 +99,7 @@ int main()
   
  メンバー テンプレート関数は、仮想関数にできません。また、基底クラスの仮想関数と同じ名前で宣言されている場合に、基底クラスから仮想関数をオーバーライドできません。  
   
- Visual C .NET 2003 では、テンプレート化されたユーザー定義変換のサポートが導入されました。 次のサンプルは、Visual C++ .NET 2003 で標準の仕様のとおりに動作します。  
+次の例は、テンプレート化されたユーザー定義の変換を示しています。  
   
 ```cpp
 // templated_user_defined_conversions.cpp  
@@ -120,7 +119,6 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
  [関数テンプレート](../cpp/function-templates.md)
-

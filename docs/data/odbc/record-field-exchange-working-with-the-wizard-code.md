@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - DoFieldExchange method, overriding
 - Unicode, with database classes
@@ -22,15 +24,18 @@ helpviewer_keywords:
 - overriding, DoFieldExchange
 - m_nFields data member, initializing
 ms.assetid: f00d882a-ff1b-4a75-9717-98d8762bb237
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e611bee4962a64ff725ca086a28583fe9a3b30e5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 8909a9e933e7b3f1c59fa9ab283706f7a6d1f0c0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="record-field-exchange-working-with-the-wizard-code"></a>レコード フィールド エクスチェンジ: ウィザード コードの操作
 このトピックのコードを MFC アプリケーション ウィザードと**クラスの追加**(」の説明に従って[MFC ODBC コンシューマーの追加](../../mfc/reference/adding-an-mfc-odbc-consumer.md)) RFX とそのコードを変更する方法をサポートするために記述します。  
@@ -146,5 +151,5 @@ m_nFields += 3;
  これは、次の 3 つの新しいフィールドの追加のコードです。 初期化する必要がありますパラメーター データ メンバーを追加する場合、 [m_nParams](../../mfc/reference/crecordset-class.md#m_nparams)データ メンバーは、パラメーター データ メンバーの数が含まれています。 Put、`m_nParams`かっこの外側に初期化します。  
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード フィールド エクスチェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)

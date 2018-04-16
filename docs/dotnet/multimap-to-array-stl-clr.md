@@ -1,25 +1,32 @@
 ---
-title: "multimap::to_array (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: multimap::to_array (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::multimap::to_array
-dev_langs: C++
-helpviewer_keywords: to_array member [STL/CLR]
+f1_keywords:
+- cliext::multimap::to_array
+dev_langs:
+- C++
+helpviewer_keywords:
+- to_array member [STL/CLR]
 ms.assetid: eb4872dd-5e32-4a82-8ad4-37b533eb6814
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c51fe6e8196f68ade3977c6d239d859cd0752d46
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 623af4746595ba587ec2f0eef2c21e7e11256249
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multimaptoarray-stlclr"></a>multimap::to_array (STL/CLR)
 被制御シーケンスを新しい配列にコピーします。  
@@ -70,10 +77,10 @@ int main()
 [a 1] [b 2] [c 3]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3174
 ms.assetid: fe6b3b5a-8196-485f-a45f-0b2e51df4086
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 09a0bdf1732ccd58b201e6cf1f52b3cbf17efab1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 2dea7e564b7685cf58f9d97f15659d7f911817a6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3174"></a>コンパイラ エラー C3174
 モジュール属性が指定されませんでした。  

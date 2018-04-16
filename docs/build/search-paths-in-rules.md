@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - search paths in NMAKE inference rules
 - inference rules in NMAKE
 - rules, inference
 ms.assetid: 38feded6-536d-425d-bf40-fff3173a5506
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 808ec39bafd6ad5c7982f63055ba92fccff7a285
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3d62ab17831afec4cc1f8e424766925529dd8e1f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="search-paths-in-rules"></a>規則の検索パス
 ```  
@@ -65,5 +69,5 @@ ms.lasthandoff: 10/24/2017
         $(CC) $(CFLAGS) $<  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [規則の定義](../build/defining-a-rule.md)

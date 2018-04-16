@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: PRJ0006
-dev_langs: C++
-helpviewer_keywords: PRJ0006
+f1_keywords:
+- PRJ0006
+dev_langs:
+- C++
+helpviewer_keywords:
+- PRJ0006
 ms.assetid: ce092be4-1652-414f-8cb5-b97ef5841f89
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ef1dff813c709a117d92abcdd7a2d4f9d3420c65
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 817450fb6b72f985d7ff49f7e65f9dfa0933b4d6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="project-build-error-prj0006"></a>プロジェクト ビルド エラー PRJ0006
 一時ファイル 'file' を開けませんでした。 ファイルが存在し、ディレクトリ書き込みで保護されていないことを確認してください。  

@@ -23,16 +23,17 @@ dev_langs:
 helpviewer_keywords:
 - CNoWorkerThread class
 ms.assetid: 29f06bae-b658-4aac-9c14-331e996d25d1
-caps.latest.revision: 21
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 36af37fae778a572d790a137073c62cfde22019c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 9d5722ece0c85c07445f22d93e4840b9188b246c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cnoworkerthread-class"></a>CNoWorkerThread クラス
 引数としてこのクラスを使用して、`MonitorClass`動的キャッシュのメンテナンスを無効にする場合、キャッシュ クラスをテンプレート パラメーター。  
@@ -65,7 +66,7 @@ class CNoWorkerThread
   
  このクラスでメソッドを実装して、何もしません。 常に HRESULT を返すメソッドは、S_OK を返し、常に、ハンドルまたはスレッドの ID を返すメソッドは、0 を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlutil.h  
   
 ##  <a name="addhandle"></a>CNoWorkerThread::AddHandle  
@@ -171,4 +172,3 @@ HRESULT Shutdown(DWORD dwWait = ATL_WORKER_THREAD_WAIT) throw();
   
 ### <a name="remarks"></a>コメント  
  このクラスで提供される実装では、何も行われません。
-

@@ -1,25 +1,31 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4656 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラの警告 (レベル 1) C4656 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
-f1_keywords: C4656
-dev_langs: C++
-helpviewer_keywords: C4656
+f1_keywords:
+- C4656
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4656
 ms.assetid: b5aaef74-2320-4345-a6ae-b813881a491c
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 790ff92b66fc60ad3310af58ce08a8224b63d37c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f342887bc91a48e9446f1403f1722c40b989546d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4656"></a>コンパイラの警告 (レベル 1) C4656
 'symbol': データ型は、新しいまたは前回のビルド以降に変更されたまたは個所で異なる定義  

@@ -1,33 +1,37 @@
 ---
-title: "operator&lt; (vector) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector::operator<"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator< メンバー [STL/CLR]"
+title: "演算子&lt;(ベクトル) (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::vector::operator<
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator< member [STL/CLR]
 ms.assetid: 41fbd028-e937-4337-9429-57e79a993eef
-caps.latest.revision: 18
-caps.handback.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: aa4437304f6c2aa05c8e0785c472b5de43925cd8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator&lt; (vector) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ベクターより小さい\) を比較します。  
+# <a name="operatorlt-vector-stlclr"></a>演算子&lt;(ベクトル) (STL/CLR)
+ベクター比較よりも小さいです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value>  
@@ -35,17 +39,17 @@ template<typename Value>
         vector<Value>% right);  
 ```  
   
-#### パラメーター  
- \[left\]  
- 比較の左辺のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 左へ  
+ 比較する左のコンテナー。  
   
- \[right\]  
- 比較の右辺のコンテナー。  
+ 右  
+ 比較する右のコンテナー。  
   
-## 解説  
- 演算子関数は、`!(``right``[i] <``left``[i])` が当てはまります。また、`left``[i] <``right``[i]`最小位置 `i` の場合、true を返します。  それ以外の点では、2 種類のベクターが要素によって比較された要素の場合 `left` は `right` の前に並べるかをテストするときに使用する `left``->size() <``right``->size()` を返します。  
+## <a name="remarks"></a>コメント  
+ 演算子関数を返す場合は true、最下位の位置の`i`を`!(right[i] < left[i])`も真であることをお勧め`left[i] < right[i]`です。 返しますそれ以外の場合、`left->size() < right->size()`をテストするために使用するかどうか`left`前に順序付け`right`要素によって比較対象の要素が 2 つのベクトルの場合。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_vector_operator_lt.cpp   
@@ -84,19 +88,22 @@ int main()
   
 ```  
   
-  **b c**  
- **b d**  
-**b c \[\] \< \[\] b c false です。**  
-**b \[\] \< \[\] b c d 当てはまります。**   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+```Output  
+ a b c  
+ a b d  
+[a b c] < [a b c] is False  
+[a b c] < [a b d] is True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/vector >  
   
-## 参照  
- [ベクター](../dotnet/vector-stl-clr.md)   
- [operator\=\= \(vector\)](../Topic/operator==%20\(vector\)%20\(STL-CLR\).md)   
- [operator\!\= \(vector\)](../Topic/operator!=%20\(vector\)%20\(STL-CLR\).md)   
- [operator\>\= \(vector\)](../Topic/operator%3E=%20\(vector\)%20\(STL-CLR\).md)   
- [operator\> \(vector\)](../dotnet/operator-greater-than-vector-stl-clr.md)   
- [operator\<\= \(vector\)](../dotnet/operator-less-or-equal-vector-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [演算子 = = (ベクトル) (STL/CLR)](../dotnet/operator-equality-vector-stl-clr.md)   
+ [operator! = (ベクトル) (STL/CLR)](../dotnet/operator-inequality-vector-stl-clr.md)   
+ [operator > = (ベクトル) (STL/CLR)](../dotnet/operator-greater-or-equal-vector-stl-clr.md)   
+ [operator > (ベクトル) (STL/CLR)](../dotnet/operator-greater-than-vector-stl-clr.md)   
+ [operator<= (vector) (STL/CLR)](../dotnet/operator-less-or-equal-vector-stl-clr.md)

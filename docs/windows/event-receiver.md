@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: vc-attr.event_receiver
-dev_langs: C++
+f1_keywords:
+- vc-attr.event_receiver
+dev_langs:
+- C++
 helpviewer_keywords:
 - event_receiver attribute
 - event receivers
@@ -18,15 +21,18 @@ helpviewer_keywords:
 - event sinks, creating
 - event sinks
 ms.assetid: bf8fe770-3ea2-4128-b46b-166222ee4097
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4995d413cfce885bf1a78068948bc7a06518692e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 50ea26172e2f5112e760aa02d9247d07afbead2b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="eventreceiver"></a>event_receiver
 イベント レシーバー (シンク) を作成します。  
@@ -72,20 +78,20 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  テンプレート クラスまたは構造体にイベントを含めることはできません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|**class**、 `struct`|  
-|**反復可能**|いいえ|  
+|**反復可能**|×|  
 |**必要な属性**|**コクラス**とき*layout_dependent*=**は true。**|  
 |**無効な属性**|なし|  
   
  詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ属性](../windows/compiler-attributes.md)   
  [event_source](../windows/event-source.md)   
  [_ _event](../cpp/event.md)   

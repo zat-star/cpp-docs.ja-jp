@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - m_szTableSchema
 - CONSTRAINT_TYPE
@@ -25,7 +26,8 @@ f1_keywords:
 - CONSTRAINT_CATALOG
 - CONSTRAINT_SCHEMA
 - IS_DEFERRABLE
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - DESCRIPTION class data member
 - CTableConstraints typedef class
@@ -50,15 +52,18 @@ helpviewer_keywords:
 - INITIALLY_DEFERRED
 - m_bIsDeferrable
 ms.assetid: aaa07ade-0bfa-41d0-94df-8342152a4ff0
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cda2e1ccfa479eb2b71a4a21f49b67b127e9984c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: d90307bfea01f203ad61180b87aed418769c3162
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ctableconstraints-ctableconstraintinfo"></a>CTableConstraints、CTableConstraintInfo
 Typedef クラスを呼び出す**CTableConstraints**そのパラメーター クラスを実装する**CTableConstraintInfo**です。  
@@ -81,10 +86,10 @@ Typedef クラスを呼び出す**CTableConstraints**そのパラメーター �
 |m_szType|CONSTRAINT_TYPE|  
 |m_bIsDeferrable|IS_DEFERRABLE|  
 |m_bInitiallyDeferred|INITIALLY_DEFERRED|  
-|m_szDescription|DESCRIPTION|  
+|m_szDescription|説明|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

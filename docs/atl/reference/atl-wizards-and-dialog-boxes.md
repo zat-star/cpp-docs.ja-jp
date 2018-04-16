@@ -7,22 +7,23 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: 'index-page '
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - ATL, class wizards
 ms.assetid: 51cf002a-83bc-41ba-aeb8-364ea2331375
-caps.latest.revision: 10
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c2fd2a7295b702726e9be30e0f3009c627727cd6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: 4c335d5146e28d3331fac8b0073a6bd6c7d1def5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atl-wizards-and-dialog-boxes"></a>ATL ウィザードとダイアログ ボックス
 アクティブ テンプレート ライブラリ (ATL) ウィザードでは、COM オブジェクトのさまざまな種類の定型コードを生成します。 プロジェクトのショートカット メニューを開き、ウィザードを実行することができます**ソリューション エクスプ ローラー**を選択して**追加**、**クラス**です。  
@@ -41,5 +42,4 @@ ms.lasthandoff: 10/09/2017
 |[ATL COM + 1.0 コンポーネント](../../atl/reference/adding-an-atl-com-plus-1-0-component.md)|基本的な ATL COM + 1.0 コンポーネントを作成します。|  
 |[ATL Active Server Page コンポーネント](../../atl/reference/adding-an-atl-active-server-page-component.md)|基本的な ATL Active Server Page コンポーネントを作成します。|  
 |[ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)|ATL ドキュメントへのリンク。|
-
 

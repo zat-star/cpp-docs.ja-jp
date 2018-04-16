@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: swab
+ms.topic: reference
+apiname:
+- swab
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,19 +22,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: swab
-dev_langs: C++
-helpviewer_keywords: swab function
+f1_keywords:
+- swab
+dev_langs:
+- C++
+helpviewer_keywords:
+- swab function
 ms.assetid: fb8b7137-420d-4485-bb65-e1ec68602905
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 46d1c2a79398ccf49c17fb180431eff5a691ca08
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 80f5a21e23d605fa8bd9eeac633272d8f2a93347
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="swab"></a>swab
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_swab](../../c-runtime-library/reference/swab.md) を使用してください。

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.mfc.macros
-dev_langs: C++
-helpviewer_keywords: type libraries [MFC], accessing
+f1_keywords:
+- vc.mfc.macros
+dev_langs:
+- C++
+helpviewer_keywords:
+- type libraries [MFC], accessing
 ms.assetid: a03fa7f0-86c2-4119-bf81-202916fb74b3
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8f05738c02fd70fde5fc2d92c5ee1e823747797c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bbc5ceabe60d7ee15d85495bb1a431955a589849
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="type-library-access"></a>タイプ ライブラリ アクセス
 タイプ ライブラリは、他の OLE に対応するアプリケーションに対する OLE コントロールのインターフェイスを公開します。 各 OLE コントロールは、1 つまたは複数のインターフェイスを公開する場合、タイプ ライブラリにすることが必要です。  
@@ -47,7 +53,7 @@ DECLARE_OLETYPELIB(class_name)
 ### <a name="remarks"></a>コメント  
  コントロールのクラス ヘッダー ファイルでこのマクロを使用します。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
 
 ##  <a name="implement_oletypelib"></a>IMPLEMENT_OLETYPELIB  
@@ -73,8 +79,8 @@ IMPLEMENT_OLETYPELIB(class_name, tlid, wVerMajor,  wVerMinor)
 ### <a name="remarks"></a>コメント  
  このマクロを使用して任意のコントロール クラスの実装ファイルに表示する必要があります、`DECLARE_OLETYPELIB`マクロです。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
    
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

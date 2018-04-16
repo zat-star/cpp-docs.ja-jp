@@ -1,34 +1,38 @@
 ---
-title: "同時実行ランタイムとその他の同時実行モデルの比較 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "同時実行ランタイム、他のモデルとの比較"
+title: "その他の同時実行モデルの同時実行ランタイムとの比較 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Concurrency Runtime, compared to other models
 ms.assetid: d8b9a1f4-f15f-43c3-a5b4-c0991edf9c86
-caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 18
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e20523eb8a2c78cfa72b6c3084e9ca9f620a916c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 同時実行ランタイムとその他の同時実行モデルの比較
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="comparing-the-concurrency-runtime-to-other-concurrency-models"></a>同時実行ランタイムとその他の同時実行モデルの比較
 このドキュメントでは、同時実行ランタイムとその他のテクノロジの機能やプログラミング モデルの違いについて説明します。 同時実行ランタイムのメリットと他のプログラミング モデルのメリットの違いを理解しておくことによって、アプリケーションの要件に最も適したテクノロジを選択できます。  
   
  現在、Windows スレッド プールや OpenMP などの別のプログラミング モデルを使用している場合は、状況に応じて同時実行ランタイムに移行すると効果的です。 たとえば、「 [Migrating from OpenMP to the Concurrency Runtime](../../parallel/concrt/migrating-from-openmp-to-the-concurrency-runtime.md) 」では、OpenMP から同時実行ランタイムに移行するのが適した状況について説明しています。 ただし、アプリケーションのパフォーマンスと現在のデバッグ サポートに満足している場合、移行は必要ありません。  
   
  同時実行ランタイムの機能と生産性向上を通して、別の同時実行モデルを使用する既存のアプリケーションを補完できます。 同時実行ランタイムでは、複数のタスク スケジューラが同じコンピューティング リソースを求めて競合する場合に、負荷分散は保証されません。 ただし、作業負荷が重複しない場合、この影響はごくわずかです。  
   
-##  <a name="a-nametopa-sections"></a><a name="top"></a> セクション  
+##  <a name="top"></a> セクション  
   
 -   [プリエンプティブ スケジューリングと協調スケジューリングの比較](#models)  
   
@@ -36,7 +40,7 @@ caps.handback.revision: 18
   
 -   [同時実行ランタイムと OpenMP の比較](#openmp)  
   
-##  <a name="a-namemodelsa-comparing-preemptive-scheduling-to-cooperative-scheduling"></a><a name="models"></a> プリエンプティブ スケジューリングと協調スケジューリングの比較  
+##  <a name="models"></a> プリエンプティブ スケジューリングと協調スケジューリングの比較  
  プリエンプティブ モデルと協調スケジューリング モデルは、複数のタスクで、プロセッサやハードウェア スレッドなど、コンピューティング リソースを共有するための 2 つの一般的な方法です。  
   
 ### <a name="preemptive-and-cooperative-scheduling"></a>プリエンプティブ スケジューリングと協調スケジューリング  
@@ -55,7 +59,7 @@ caps.handback.revision: 18
   
  [[トップ](#top)]  
   
-##  <a name="a-namewinapia-comparing-the-concurrency-runtime-to-the-windows-api"></a><a name="winapi"></a> 同時実行ランタイムと Windows API の比較  
+##  <a name="winapi"></a> 同時実行ランタイムと Windows API の比較  
  Microsoft Windows アプリケーション プログラミング インターフェイス (通常は Windows API と呼ばれます。以前は Win32 と呼ばれていました) は、アプリケーションで同時実行を可能にするプログラミング モデルを提供します。 同時実行ランタイムは、基になるオペレーティング システムから利用できない追加のプログラミング モデルを提供するために、Windows API を基に構築されています。  
   
  同時実行ランタイムは、並列処理を実行する Windows API のスレッド モデルに基づいています。 また、Windows API のメモリ管理とスレッド ローカル ストレージのメカニズムも使用します。 Windows 7 および Windows Server 2008 R2 では、ユーザー スケジュール可能スレッドに関する Windows API サポート、および 64 を超えるハードウェア スレッドのあるコンピューターに関する Windows API サポートを使用します。 同時実行ランタイムは、協調タスク スケジューラおよびワーク スティーリング アルゴリズムを提供してコンピューティング リソースを最大限に活用すること、および複数のスケジューラ インスタンスを同時に使用できるようにすることで、Windows API モデルを拡張します。  
@@ -81,8 +85,8 @@ caps.handback.revision: 18
   
  [[トップ](#top)]  
   
-##  <a name="a-nameopenmpa-comparing-the-concurrency-runtime-to-openmp"></a><a name="openmp"></a> 同時実行ランタイムと OpenMP の比較  
- 同時実行ランタイムでは、さまざまなプログラミング モデルを使用できます。 これらのモデルは、他のライブラリのモデルと重複する場合や、他のライブラリのモデルを補完する場合があります。 このセクションでは、同時実行ランタイムと [OpenMP](../../parallel/concrt/comparing-the-concurrency-runtime-to-other-concurrency-models.md#openmp_in_visual_c_add_add) を比較します。  
+##  <a name="openmp"></a> 同時実行ランタイムと OpenMP の比較  
+ 同時実行ランタイムでは、さまざまなプログラミング モデルを使用できます。 これらのモデルは、他のライブラリのモデルと重複する場合や、他のライブラリのモデルを補完する場合があります。 このセクションでは、同時実行ランタイムと [OpenMP](../../parallel/concrt/comparing-the-concurrency-runtime-to-other-concurrency-models.md#openmp) を比較します。  
   
  OpenMP プログラミング モデルは、オープン標準により定義されており、Fortran および C/C++ プログラミング言語へのバインドが適切に定義されています。 OpenMP バージョン 2.0 および 2.5 は、反復処理の並列アルゴリズムに適しています。つまり、これらは、データの配列を並列に反復処理します。 OpenMP は、並列化の度合いが事前に決定され、システムで使用可能なリソースと対応する場合に最も効果的です。 OpenMP モデルは、非常に大きい計算の問題が 1 台のコンピューターの処理リソース全体に分散される高パフォーマンスのコンピューティングに特に適しています。 このシナリオでは、ハードウェア環境が判明しており、このアルゴリズムが実行された場合、コンピューティング リソースへの排他アクセスがあることを、開発者は当然予測できます。  
   
@@ -94,9 +98,9 @@ caps.handback.revision: 18
   
  [[トップ](#top)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行ランタイム](../../parallel/concrt/concurrency-runtime.md)     
  [概要](../../parallel/concrt/asynchronous-message-blocks.md)   
  [並列パターン ライブラリ (PPL)](../../parallel/concrt/parallel-patterns-library-ppl.md)   
  [非同期エージェント ライブラリ](../../parallel/concrt/asynchronous-agents-library.md)   
- [OpenMP](../../parallel/concrt/comparing-the-concurrency-runtime-to-other-concurrency-models.md#openmp_in_visual_c_add_add)
+ [OpenMP](../../parallel/concrt/comparing-the-concurrency-runtime-to-other-concurrency-models.md#openmp)

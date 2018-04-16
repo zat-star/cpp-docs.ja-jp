@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3384
-dev_langs: C++
-helpviewer_keywords: C3384
+f1_keywords:
+- C3384
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3384
 ms.assetid: c9f92c6a-62a9-4333-b2b1-bc55c7f288b6
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ce70a37639288bce3244f48635ae4b756bb98cad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d62e977dfa9663adacb7d7b4e78642a4e2b5dcb3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3384"></a>コンパイラ エラー C3384
 'type_parameter': 値の制約および ref 制約を同時に使用することはできません  

@@ -1,39 +1,44 @@
 ---
-title: "OLE DB コンシューマーとプロバイダー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB コンシューマー"
-  - "OLE DB コンシューマー, OLE DB データ アーキテクチャ"
-  - "OLE DB プロバイダー"
-  - "OLE DB プロバイダー, OLE DB データ アーキテクチャ"
-  - "OLE DB, データ モデル"
+title: "OLE DB コンシューマーとプロバイダー |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE DB providers, OLE DB data architecture
+- OLE DB providers
+- OLE DB consumers, OLE DB data architecture
+- OLE DB consumers
+- OLE DB, data model
 ms.assetid: 886cb39d-652b-4557-93f0-4b1b0754d8bc
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: ec0a8764ef8f5e906ad399d76a5a004c313f500b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# OLE DB コンシューマーとプロバイダー
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-OLE DB アーキテクチャでは、コンシューマーとプロバイダーの概念が使用されています。  コンシューマーはデータの要求を行います。  プロバイダーは、データを表形式に変換し、コンシューマーに返すことによってこれらの要求に応答します。  コンシューマーが行う呼び出しは、プロバイダーで実装されている必要があります。  
+# <a name="ole-db-consumers-and-providers"></a>OLE DB コンシューマーとプロバイダー
+OLE DB アーキテクチャでは、コンシューマーとプロバイダーのモデルを使用します。 コンシューマーは、データの要求を行います。 プロバイダーは、表形式でデータを配置して、コンシューマーに返すによってこれらの要求に応答します。 コンシューマーが行う任意の呼び出しは、プロバイダーに実装する必要があります。  
   
- 技術的な定義では、コンシューマーは、OLE DB インターフェイスを通じてデータにアクセスする任意のシステムまたはアプリケーション コードです。必ずしも OLE DB コンポーネントではありません。  インターフェイスはプロバイダーで実装されます。  プロバイダーは、データへのアクセスをカプセル化してほかのオブジェクト \(つまりコンシューマー\) に公開する OLE DB インターフェイスを実装するソフトウェア コンポーネントです。  
+ 技術的な定義で、コンシューマーは、システムまたはアプリケーション コード (OLE DB コンポーネント必ずしも) OLE DB インターフェイスを介してデータにアクセスします。 プロバイダーでは、インターフェイスを実装します。 したがって、プロバイダーは、データへのアクセスをカプセル化し、その他のオブジェクト (つまり、消費者) に公開する OLE DB インターフェイスを実装する任意のソフトウェア コンポーネントです。  
   
- 役割の面から見ると、コンシューマーは、OLE DB インターフェイスでメソッドを呼び出し、OLE DB プロバイダーは、必要な OLE DB インターフェイスを実装します。  
+ コンシューマーが OLE DB インターフェイスのメソッドを呼び出しての役割の観点からOLE DB プロバイダーでは、必要な OLE DB インターフェイスを実装します。  
   
- OLE DB では、クライアントやサーバーという用語は使用しません。これらの役割付けが常に \(特に n 層の状況では\) 妥当であるとは限らないからです。  コンシューマーは、他のコンポーネントを処理する層のコンポーネントである場合があるので、コンシューマーをクライアント コンポーネントと呼ぶと混乱を招きます。  また、プロバイダーはサーバーというよりはデータベース ドライバーに近い動作をすることがあります。  
+ OLE DB では、これらのロールはないため常に意味では、n 層の場合に特に条項クライアントとサーバーを回避できます。 コンシューマーは、別のコンポーネントを処理する層のコンポーネントであることが、それを呼び出すクライアント コンポーネントことは複雑になる場合。 また、プロバイダーもサーバーよりもデータベース ドライバーなどよりは機能します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB プログラミング](../../data/oledb/ole-db-programming.md)   
  [OLE DB プログラミングの概要](../../data/oledb/ole-db-programming-overview.md)

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: fwide
+ms.topic: reference
+apiname:
+- fwide
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,19 +22,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: fwide
-dev_langs: C++
-helpviewer_keywords: fwide function
+f1_keywords:
+- fwide
+dev_langs:
+- C++
+helpviewer_keywords:
+- fwide function
 ms.assetid: a4641f5b-d74f-4946-95d5-53a64610d28d
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f10bd98a6dedba2181aa1d5ebba60f64dda093be
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e38bce95a26bd8b128a048768870c63f7de9da9f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fwide"></a>fwide
 未実装。  
@@ -59,7 +66,7 @@ int fwide(
 ## <a name="remarks"></a>コメント  
  この関数の現在のバージョンは、標準に準拠していません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  

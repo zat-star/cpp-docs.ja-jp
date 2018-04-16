@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: xutility/std::input_iterator_tag
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- xutility/std::input_iterator_tag
+dev_langs:
+- C++
 helpviewer_keywords:
 - input_iterator_tag class
 - input_iterator_tag struct
 ms.assetid: ad68a4c6-f315-4ce1-8b74-c1fc71bd1577
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 68e43b8295d56d8f0895dc1a41fdd5d4526384ef
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cd73fd177c43d8720bf341014a61930afcfc07c1
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="inputiteratortag-struct"></a>input_iterator_tag 構造体
 入力反復子を表す **iterator_category** 関数の戻り値の型を提供するクラス。  
@@ -38,12 +43,12 @@ struct input_iterator_tag {};
 ## <a name="example"></a>例  
  **iterator_tag** の使用例については、「[iterator_traits](../standard-library/iterator-traits-struct.md)」または「[random_access_iterator_tag](../standard-library/random-access-iterator-tag-struct.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iterator>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

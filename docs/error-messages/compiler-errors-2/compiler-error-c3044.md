@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3044
-dev_langs: C++
-helpviewer_keywords: C3044
+f1_keywords:
+- C3044
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3044
 ms.assetid: 9f3e25b2-4676-49ab-97bf-6c88cd0fa377
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 313b5d1d6b0d8204d4d4716d0671e8093f4978d5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 565c30afd75277c2b11ce5252c5df0ae2238263a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3044"></a>コンパイラ エラー C3044
 'section' : OpenMP 'sections' ディレクティブの直下でのみ入れ子にすることができます  

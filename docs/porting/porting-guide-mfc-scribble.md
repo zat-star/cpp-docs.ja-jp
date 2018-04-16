@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 8ddb517d-89ba-41a1-ab0d-4d2c6d9047e8
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7288b343563056f6e1daa4f0cb61b43fb263792f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 88be2baf2c2ce11be4594501ef12c2e339dec4dd
+ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="porting-guide-mfc-scribble"></a>移植のガイド: MFC Scribble
 このトピックは、古いバージョンの Visual Studio で作成された Visual C++ プロジェクトを Visual Studio 2017 にアップグレードする手順を紹介する複数のトピックの 1 つ目です。 これらのトピックでは、例によってアップグレード プロセスを照会し、とてもシンプルなプロジェクトから始めて、少し複雑なものに進みます。 このトピックでは、特定のプロジェクト (MFC Scribble) についてのアップグレード プロセスの作業を行います。 これは、C++ プロジェクトのアップグレード プロセスに関する基本的な紹介として適しています。  
@@ -84,11 +88,11 @@ _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
  テスト スイートはないため、アプリを起動して、UI から手動で機能をテストしました。 問題は検出されませんでした。  
   
 ### <a name="step-4-improve-the-code"></a>手順 4. レイアウトを改良する  
- Visual Studio 2017 に移行したので、C++ の新機能を活用するためにいくつかの変更を加えます。 現在のバージョンの Visual C++ コンパイラは、以前のバージョンよりも C++ への適合性が向上しているので、コードの安全性を高めるためにコードを変更し、ほかのコンパイラやオペレーティング システムへの移植性を高めたい場合には、幾らかの改良を加えることを検討してください。  
+ Visual Studio 2017 に移行したので、C++ の新機能を活用するためにいくつかの変更を加えます。 現在のバージョンの C++ コンパイラは、以前のバージョンよりも C++ への適合性が向上しているので、コードの安全性を高めるためにコードを変更し、ほかのコンパイラやオペレーティング システムへの移植性を高めたい場合には、幾らかの改良を加えることを検討してください。  
   
 ## <a name="next-steps"></a>次の手順  
  Scribble は小規模で単純な Windows デスクトップ アプリケーションであり、変換は難しくありません。 多くの小規模で単純なアプリケーションは、新しいバージョンに簡単に変換できます。  コードの行数が多く、エンジニアリングの最新の標準になっていない可能性がある古いレガシー コードや、複数のプロジェクトとライブラリ、カスタム ビルド アプリを持つ複雑なアプリケーションや、複雑なスクリプトを作成して自動化されていビルドでは、アップグレードにもう少し時間がかかります。 [次の例](../porting/porting-guide-com-spy.md)の COM Spy と呼ばれる ATL/COM アプリケーションに進みます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [移植およびアップグレード: 例とケース スタディ](../porting/porting-and-upgrading-examples-and-case-studies.md)   
  [次の例: COM Spy](../porting/porting-guide-com-spy.md)

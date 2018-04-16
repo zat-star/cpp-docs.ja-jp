@@ -17,11 +17,12 @@ caps.latest.revision: "46"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: dfd16b0c3393b6b0a27e88a971042cf772fbd9b1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 7520e2d78c924ee21c489d2e8327c4bda9b973aa
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="walkthrough-compile-a-c-program-on-the-command-line"></a>チュートリアル: コマンドラインでの C プログラムをコンパイルします。
 Visual C には、完全な Windows デスクトップ アプリケーション、モバイル アプリは、基本的なコンソール プログラムから作成するすべてのものを使用できる C コンパイラが含まれています。  
@@ -33,7 +34,7 @@ Visual C には、完全な Windows デスクトップ アプリケーション�
   
  Visual Studio は、多くの言語とプラットフォームの全機能を備えたエディター、リソース マネージャー、デバッガー、およびコンパイラをサポートする強力な統合開発環境です。 これらの機能とをダウンロードして無料の Visual Studio Community エディションをなど、Visual Studio をインストールする方法についてを参照してください。 [VisualStudio.com](https://www.visualstudio.com/)です。  
   
- Visual Studio ビルド ツールは、コマンド ライン コンパイラ、ツール、および C および C++ プログラムのビルドに必要なライブラリのみをインストールします。 ビルド ラボに最適ですや教室行使比較的迅速にインストールします。 コマンド ライン ツールのみをインストールするには、ダウンロード[Visual Studio ビルド ツール](https://go.microsoft.com/fwlink/?linkid=840931)installer を実行します。 詳細については、次を参照してください。 [Visual c ビルド ツール](http://landinghub.visualstudio.com/visual-cpp-build-tools)です。  
+ Visual Studio ビルド ツールは、コマンド ライン コンパイラ、ツール、および C および C++ プログラムのビルドに必要なライブラリのみをインストールします。 ビルド ラボに最適ですや教室行使比較的迅速にインストールします。 コマンド ライン ツールのみをインストールするには、ダウンロード[Visual Studio ビルド ツール](https://go.microsoft.com/fwlink/p/?linkid=840931)installer を実行します。 詳細については、次を参照してください。 [Visual c ビルド ツール](http://landinghub.visualstudio.com/visual-cpp-build-tools)です。  
   
  C または C++ プログラムをビルドするには、コマンドラインで、前に、ツールがインストールされていると、コマンドラインからアクセスできることを確認する必要があります。 Visual C では、ツール、ヘッダー、および使用するライブラリを検索するためにコマンドライン環境の複雑な要件がします。 **標準のコマンド プロンプト ウィンドウで、Visual C を使用することはできません**です。 必要があります、*開発者コマンド プロンプト*は通常のコマンド プロンプト ウィンドウを設定されているすべての必要な環境変数を持つウィンドウです。 幸いにも、Visual C は、コマンド ライン ビルド用に設定する環境がある開発者コマンド プロンプトを起動するためのショートカットをインストールします。 残念ながら、開発者コマンド プロンプトのショートカットと配置されている場所の名前は、異なるバージョンの Windows で Visual C のほぼすべてのバージョンで異なります。 最初のチュートリアル タスクを使用する右側のショートカットの検索を開始します。  
   
@@ -142,7 +143,7 @@ Visual C には、完全な Windows デスクトップ アプリケーション�
   
      これで先ほどコンパイルし、コマンドラインを使用して C プログラムを実行します。  
   
-## <a name="next-steps"></a>次のステップ  
+## <a name="next-steps"></a>次の手順  
  この「こんにちは, World」の例は、簡単に C プログラムを取得できます。 ヘッダー ファイルと複数のソース ファイルではライブラリにリンクし、有益な処理を行う現実世界のプログラムがあります。  
   
  このチュートリアルで手順を使用すると、示したサンプル コードを入力する代わりに、独自の C コードをビルドします。 また、別の場所に表示されている多くの C コード サンプル プログラムをビルドすることができます。 複数のソース コード ファイルのあるプログラムをコンパイルするには、すべてのコマンド ラインで、次のようにそれらを入力します。  
@@ -165,7 +166,7 @@ Visual C には、完全な Windows デスクトップ アプリケーション�
   
  C++ の Visual C コンパイラは、ISO C99 標準と互換性のある一般的に厳密に準拠していません。 ほとんどの場合、C コードの移植性がコンパイルされ、期待どおりを実行します。 Visual C は、ISO C11 のほとんどの変更をサポートしていません。 Visual C コンパイラでは、特定のライブラリ関数と POSIX 関数名が使用されなくなりました。 関数がサポートされますが、優先名が変更されました。 詳細については、次を参照してください。 [CRT のセキュリティ機能](../c-runtime-library/security-features-in-the-crt.md)と[コンパイラの警告 (レベル 3) C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル: 標準の C++ プログラム (C++) の作成](../windows/walkthrough-creating-a-standard-cpp-program-cpp.md)   
  [C 言語リファレンス](../c-language/c-language-reference.md)   
  [C/C++ プログラムのビルド](../build/building-c-cpp-programs.md)   

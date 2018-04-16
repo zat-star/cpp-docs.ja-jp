@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - attributed programming
 - attributes [C++], frequently asked questions
 - FAQs (frequently asked questions), attributed programming [C++]
 ms.assetid: a1b8349f-7f51-43c4-95ea-4edb6e5f243f
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c61ced7e0931f1dba46a7a6b760755f799d29b6b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 76b7ad2c7acb9d232602c620a70cefabbecee531
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="attribute-programming-faq"></a>属性プログラミングの FAQ
 このトピックは、以下のよく寄せられる質問に回答します。  
@@ -47,7 +52,7 @@ ms.lasthandoff: 10/24/2017
 ##  <a name="vcconattributeprogrammmingfaqanchor1"></a>HRESULT は何ですか。  
  `HRESULT`は多くの場合、使用される戻り値として属性と ATL で一般に単純なデータ型です。 次の表では、さまざまな値について説明します。 ヘッダー ファイル winerror.h には、多くの値が含まれています。  
   
-|名前|説明|値|  
+|name|説明|[値]|  
 |----------|-----------------|-----------|  
 |S_OK|処理は成功しました|0x00000000|  
 |E_UNEXPECTED|予期しないエラー|0x8000FFFF|  
@@ -90,7 +95,7 @@ class CMyClass
 |[default](../windows/default-cpp.md)|[defaultvalue](../windows/defaultvalue.md)|[defaultvtable](../windows/defaultvtable.md)|  
 |[emitidl](../windows/emitidl.md)|[entry](../windows/entry.md)|[first_is](../windows/first-is.md)|  
 |[helpcontext](../windows/helpcontext.md)|[helpfile](../windows/helpfile.md)|[helpstring](../windows/helpstring.md)|  
-|[helpstringcontext](../windows/helpstringcontext.md)|[helpstringdll](../windows/helpstringdll.md)|[id](../windows/id.md)|  
+|[helpstringcontext](../windows/helpstringcontext.md)|[helpstringdll](../windows/helpstringdll.md)|[ID](../windows/id.md)|  
 |[iid_is](../windows/iid-is.md)|[import](../windows/import.md)|[importlib](../windows/importlib.md)|  
 |[include](../windows/include-cpp.md)|[includelib](../windows/includelib-cpp.md)|[last_is](../windows/last-is.md)|  
 |[length_is](../windows/length-is.md)|[max_is](../windows/max-is.md)|[no_injected_text](../windows/no-injected-text.md)|  
@@ -258,5 +263,5 @@ int main() {}
 ##  <a name="vcconcaniuseattributesonclassderivedfromclassthatalsousesattributesanchor"></a>属性を使用するクラスから派生したクラスで属性を使用することができますか。  
  いいえ、属性を使用するクラスから派生したクラスで属性の使用はサポートされていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../windows/attributed-programming-concepts.md)

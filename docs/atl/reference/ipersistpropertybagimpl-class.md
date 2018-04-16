@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,18 +15,22 @@ f1_keywords:
 - ATLCOM/ATL::IPersistPropertyBagImpl::InitNew
 - ATLCOM/ATL::IPersistPropertyBagImpl::Load
 - ATLCOM/ATL::IPersistPropertyBagImpl::Save
-dev_langs: C++
-helpviewer_keywords: IPersistPropertyBagImpl class
+dev_langs:
+- C++
+helpviewer_keywords:
+- IPersistPropertyBagImpl class
 ms.assetid: 712af24d-99f8-40f2-9811-53b3ff6e5b19
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1854f4c078bb6c8ce6a987961dc75444e104278c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3783d505c989b11205104cd70a9c440aa6f645f7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ipersistpropertybagimpl-class"></a>IPersistPropertyBagImpl クラス
 このクラスは実装**IUnknown**でき、そのプロパティをクライアントが提供するプロパティ バッグに保存するオブジェクト。  
@@ -67,7 +72,7 @@ class ATL_NO_VTABLE IPersistPropertyBagImpl : public IPersistPropertyBag
   
  `IPersistPropertyBagImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcom.h  
   
 ##  <a name="getclassid"></a>IPersistPropertyBagImpl::GetClassID  
@@ -120,6 +125,6 @@ STDMETHOD(Save)(
   
  参照してください[IPersistPropertyBag::Save](https://msdn.microsoft.com/library/aa768207.aspx) Windows SDK にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [あり、その場合](property-map-macros.md#begin_prop_map)   
  [クラスの概要](../../atl/atl-class-overview.md)

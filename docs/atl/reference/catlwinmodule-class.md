@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,18 +14,22 @@ f1_keywords:
 - ATLBASE/ATL::CAtlWinModule::CAtlWinModule
 - ATLBASE/ATL::CAtlWinModule::AddCreateWndData
 - ATLBASE/ATL::CAtlWinModule::ExtractCreateWndData
-dev_langs: C++
-helpviewer_keywords: CAtlWinModule class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAtlWinModule class
 ms.assetid: 7ec844af-0f68-4a34-b0c8-9de50a025df0
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 59f555f129548b3ced008b61364fa4a9900e062d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dcaf3d6573432b7f6f16826b2551a7e9330abed9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="catlwinmodule-class"></a>CAtlWinModule クラス
 このクラスは、ATL の windowing コンポーネントのサポートを提供します。  
@@ -62,7 +67,7 @@ class CAtlWinModule : public _ATL_WIN_MODULE
   
  `CAtlWinModule`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="addcreatewnddata"></a>CAtlWinModule::AddCreateWndData  
@@ -112,7 +117,7 @@ void* ExtractCreateWndData();
 ### <a name="return-value"></a>戻り値  
  ポインターを返します、`_AtlCreateWndData`構造に追加した[CAtlWinModule::AddCreateWndData](#addcreatewnddata)、またはオブジェクトがない場合は NULL です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ATL_WIN_MODULE](atl-typedefs.md#_atl_win_module)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [モジュール クラス](../../atl/atl-module-classes.md)

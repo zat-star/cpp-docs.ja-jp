@@ -62,6 +62,31 @@ f1_keywords:
 - __utimbuf64
 - div_t
 - _CRT_ALLOC_HOOK
+- int8_t
+- uint8_t
+- int16_t
+- uint16_t
+- int32_t
+- uint32_t
+- int64_t
+- int_least8_t
+- uint_least8_t
+- int_least16_t
+- uint_least16_t
+- int_least32_t
+- uint_least32_t
+- int_least64_t
+- uint_least64_t
+- int_fast8_t
+- uint_fast8_t
+- int_fast16_t
+- uint_fast16_t
+- int_fast32_t
+- uint_fast32_t
+- int_fast64_t
+- uint_fast64_t
+- intmax_t
+- uintmax_t
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -144,28 +169,29 @@ helpviewer_keywords:
 - CRT_REPORT_HOOK type
 - _finddata_t type
 ms.assetid: 23312dd2-4a6a-4d70-9b48-2a5d0d8c9f28
-caps.latest.revision: 27
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
-ms.openlocfilehash: 297b69d78d764bfc11d15dfef532c35fee36920c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 05/18/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4fd51f03d9a4134ee7193d5aede410bb541cd19f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="standard-types"></a>基本データ型
 Microsoft ランタイム ライブラリには、次の基本データ型および Typedefs が用意されています。  
   
 ### <a name="fixed-width-integral-types-stdinth"></a>固定長整数型 (stdint.h)  
   
-|名前|同等の組み込み型|  
+|name|同等の組み込み型|  
 |----------|-------------------------------|  
-|int8_t、uint8_t|signed char、unsigned char|  
-|int16_t、int16_t|short、unsigned short|  
-|int32_t、uint32_t|int、unsigned int|  
-|int64_t、int64_t|long long、unsigned long long|  
+|int8\_t, uint8\_t|signed char、unsigned char|  
+|int16\_t, uint16\_t|short、unsigned short|  
+|int32\_t, uint32\_t|int、unsigned int|  
+|int64\_t, uint64\_t|long long、unsigned long long|  
 |int_least8_t、uint_least8_t|signed char、unsigned char|  
 |int_least16_t、uint_least16_t|short、unsigned short|  
 |int_least32_t、uint_least32_t|int、unsigned int|  
@@ -240,5 +266,5 @@ Microsoft ランタイム ライブラリには、次の基本データ型およ
 |`wctype_t` 整数|各言語の文字セットの文字をすべて表すことができます。|WCHAR.H、<br /><br /> CRTDEFS.H|  
 |`wint_t` 整数|任意のワイド文字またはワイド文字のファイル終端値を格納するデータ オブジェクト型。|WCHAR.H、<br /><br /> CRTDEFS.H|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C ランタイム ライブラリ リファレンス](../c-runtime-library/c-run-time-library-reference.md)

@@ -1,11 +1,12 @@
 ---
-title: "CDC クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CDC クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CDC
@@ -208,7 +209,8 @@ f1_keywords:
 - AFXWIN/CDC::WidenPath
 - AFXWIN/CDC::m_hAttribDC
 - AFXWIN/CDC::m_hDC
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDC [MFC], CDC
 - CDC [MFC], AbortDoc
@@ -409,15 +411,17 @@ helpviewer_keywords:
 - CDC [MFC], m_hAttribDC
 - CDC [MFC], m_hDC
 ms.assetid: 715b3334-cb2b-4c9c-8067-02eb7c66c8b2
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 11ece1ca08fc7f8b02c3f32284a986abc3e8e361
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 97099ead68a0060862465c9c3e020da523b85b86
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="cdc-class"></a>CDC クラス
 デバイス コンテキスト オブジェクトのクラスを定義します。  
@@ -445,17 +449,17 @@ class CDC : public CObject
 |[CDC::AddMetaFileComment](#addmetafilecomment)|バッファーから、指定された拡張メタファイルにコメントをコピーします。|  
 |[CDC::AlphaBlend](#alphablend)|透明または半透明ピクセルのビットマップを表示します。|  
 |[CDC::AngleArc](#anglearc)|線分と円弧を描画し、円弧の終点に現在の位置を移動します。|  
-|[除いて](#arc)|楕円の円弧を描画します。|  
+|[CDC::Arc](#arc)|楕円の円弧を描画します。|  
 |[CDC::ArcTo](#arcto)|楕円の円弧を描画します。この関数がに似ていますが`Arc`, 現在の位置が更新される点が異なります。|  
 |[CDC::Attach](#attach)|この Windows デバイス コンテキストにアタッチ`CDC`オブジェクト。|  
-|[Cdc::beginpath](#beginpath)|デバイス コンテキストでは、パスの角かっこを開きます。|  
-|[Cdc::bitblt](#bitblt)|指定したデバイス コンテキストからビットマップをコピーします。|  
+|[CDC::BeginPath](#beginpath)|デバイス コンテキストでは、パスの角かっこを開きます。|  
+|[CDC::BitBlt](#bitblt)|指定したデバイス コンテキストからビットマップをコピーします。|  
 |[CDC::Chord](#chord)|弦 (楕円を描画し、線分の交差部分で区切られた閉じた図) を描画します。|  
 |[CDC::CloseFigure](#closefigure)|パス内の開いている図を閉じます。|  
 |[CDC::CreateCompatibleDC](#createcompatibledc)|別のデバイス コンテキストと互換性があるメモリ デバイス コンテキストを作成します。 メモリ内のイメージの準備に使用できます。|  
 |[CDC::CreateDC](#createdc)|特定のデバイスのデバイス コンテキストを作成します。|  
 |[CDC::CreateIC](#createic)|特定のデバイスの情報コンテキストを作成します。 これにより、高速なデバイス コンテキストを作成することがなく、デバイスに関する情報を取得します。|  
-|[デバイス コンテキストの破棄](#deletedc)|これに関連付けられている Windows デバイス コンテキストを削除`CDC`オブジェクト。|  
+|[CDC::DeleteDC](#deletedc)|これに関連付けられている Windows デバイス コンテキストを削除`CDC`オブジェクト。|  
 |[CDC::DeleteTempMap](#deletetempmap)|によって呼び出される、`CWinApp`一時的なを削除するアイドル処理ハンドラー`CDC`によって作成されたオブジェクト`FromHandle`です。 また、デバイス コンテキストをデタッチします。|  
 |[CDC::Detach](#detach)|これから Windows デバイス コンテキストを切り離します`CDC`オブジェクト。|  
 |[CDC::DPtoHIMETRIC](#dptohimetric)|デバイス単位**HIMETRIC**単位です。|  
@@ -469,12 +473,12 @@ class CDC : public CObject
 |[CDC::DrawIcon](#drawicon)|アイコンを描画します。|  
 |[CDC::DrawState](#drawstate)|イメージを表示し、状態を示すための視覚効果を適用します。|  
 |[CDC::DrawText](#drawtext)|書式設定された指定した四角形内のテキストを描画します。|  
-|[には](#drawtextex)|書式設定されたその他の形式を使用して指定された四角形内のテキストを描画します。|  
+|[CDC::DrawTextEx](#drawtextex)|書式設定されたその他の形式を使用して指定された四角形内のテキストを描画します。|  
 |[CDC::Ellipse](#ellipse)|楕円を描きます。|  
 |[CDC::EndDoc](#enddoc)|によって開始された印刷ジョブを終了、`StartDoc`メンバー関数。|  
 |[CDC::EndPage](#endpage)|ページが終了したデバイス ドライバーに通知します。|  
 |[CDC::EndPath](#endpath)|パスの角かっこを終了し、デバイス コンテキストに、角かっこで定義されているパスを選択します。|  
-|[Cdc::enumobjects](#enumobjects)|ペンを列挙し、デバイス コンテキストで使用可能なブラシします。|  
+|[CDC::EnumObjects](#enumobjects)|ペンを列挙し、デバイス コンテキストで使用可能なブラシします。|  
 |[CDC::Escape](#escape)|アプリケーションでは GDI を介して特定のデバイスから直接使用できない機能にアクセスできます。 エスケープの Windows 関数にアクセスをできます。 アプリケーションによって行われたエスケープ呼び出しは変換され、デバイス ドライバーに送信します。|  
 |[CDC::ExcludeClipRect](#excludecliprect)|指定した四角形の負符号の既存のクリッピング領域で構成される新しいクリップ領域を作成します。|  
 |[CDC::ExcludeUpdateRgn](#excludeupdatergn)|クリップ領域から、ウィンドウで更新された領域を除外することで、ウィンドウの無効な領域内での描画を防止します。|  
@@ -510,7 +514,7 @@ class CDC : public CObject
 |[CDC::GetCurrentPosition](#getcurrentposition)|ペンの論理座標での現在の位置を取得します。|  
 |[CDC::GetDCBrushColor](#getdcbrushcolor)|現在のブラシの色を取得します。|  
 |[CDC::GetDCPenColor](#getdcpencolor)|現在のペンの色を取得します。|  
-|[について](#getdevicecaps)|指定した特定のディスプレイ デバイスの機能のデバイスに固有の情報の種類を取得します。|  
+|[CDC::GetDeviceCaps](#getdevicecaps)|指定した特定のディスプレイ デバイスの機能のデバイスに固有の情報の種類を取得します。|  
 |[CDC::GetFontData](#getfontdata)|スケーラブルなフォント ファイルからフォント メトリック情報を取得します。 取得する情報は、フォント ファイルと返される情報の長さにオフセットを指定することによって識別されます。|  
 |[CDC::GetFontLanguageInfo](#getfontlanguageinfo)|現在選択されているフォントを指定した表示のコンテキストに関する情報を返します。|  
 |[CDC::GetGlyphOutline](#getglyphoutline)|アウトライン曲線または現在のフォントのアウトライン文字のビットマップを取得します。|  
@@ -548,7 +552,7 @@ class CDC : public CObject
 |[CDC::GetWindowOrg](#getwindoworg)|関連付けられたウィンドウの原点の x 座標と y 座標を取得します。|  
 |[CDC::GetWorldTransform](#getworldtransform)|ページ領域変換への現在のワールド空間を取得します。|  
 |[CDC::GradientFill](#gradientfill)|四角形、三角形の構造を gradating 色で塗りつぶします。|  
-|[Cdc::graystring](#graystring)|描画には、指定された場所に (灰色) のテキストが淡色表示されます。|  
+|[CDC::GrayString](#graystring)|描画には、指定された場所に (灰色) のテキストが淡色表示されます。|  
 |[CDC::HIMETRICtoDP](#himetrictodp)|変換**HIMETRIC**デバイス単位の単位。|  
 |[CDC::HIMETRICtoLP](#himetrictolp)|変換**HIMETRIC**論理単位に単位です。|  
 |[CDC::IntersectClipRect](#intersectcliprect)|現在の地域と四角形の積集合を形成する、新しいクリップ領域を作成します。|  
@@ -565,7 +569,7 @@ class CDC : public CObject
 |[CDC::OffsetViewportOrg](#offsetviewportorg)|現在のビューポートの原点の座標に対する相対ビューポートの原点を変更します。|  
 |[CDC::OffsetWindowOrg](#offsetwindoworg)|現在のウィンドウの原点の座標の基準としたウィンドウの原点を変更します。|  
 |[CDC::PaintRgn](#paintrgn)|選択されたブラシを使用して領域を塗りつぶします。|  
-|[Cdc::patblt](#patblt)|ビット パターンを作成します。|  
+|[CDC::PatBlt](#patblt)|ビット パターンを作成します。|  
 |[CDC::Pie](#pie)|扇形を描画します。|  
 |[CDC::PlayMetaFile](#playmetafile)|特定のデバイスで指定されたメタファイルのコンテンツを再生します。 強化されたバージョンの`PlayMetaFile`指定された拡張メタファイルで保存された画像が表示されます。 メタファイルは、何度でも再生できます。|  
 |[CDC::PlgBlt](#plgblt)|指定されたデバイス コンテキストの指定した平行四辺形に元のデバイス コンテキストで指定した四角形から色データのビットのビット ブロック転送を実行します。|  
@@ -578,7 +582,7 @@ class CDC : public CObject
 |[CDC::PolyPolygon](#polypolygon)|現在の多角形の塗りつぶしモードの使用がいっぱいになる 2 つ以上の多角形を作成します。 多角形は、不整合である可能性があります。 または重なる可能性があります。|  
 |[CDC::PolyPolyline](#polypolyline)|接続されている直線セグメントの複数の系列を描画します。 現在の位置が使用も、この関数で更新します。|  
 |[CDC::PtVisible](#ptvisible)|指定したポイントがクリップ領域内にするかどうかを指定します。|  
-|[:Realizepalette](#realizepalette)|現在の論理パレットのパレット エントリをシステム パレットにマップします。|  
+|[CDC::RealizePalette](#realizepalette)|現在の論理パレットのパレット エントリをシステム パレットにマップします。|  
 |[CDC::Rectangle](#rectangle)|現在のペンを使用して四角形を描画し、現在のブラシを使用してそれを塗りつぶします。|  
 |[CDC::RectVisible](#rectvisible)|クリップ領域内に指定された四角形の任意の部分があるかどうかを判断します。|  
 |[CDC::ReleaseAttribDC](#releaseattribdc)|リリース`m_hAttribDC`属性のデバイス コンテキスト。|  
@@ -592,10 +596,10 @@ class CDC : public CObject
 |[CDC::ScrollDC](#scrolldc)|Bits の四角形は、水平方向および垂直方向にスクロールします。|  
 |[CDC::SelectClipPath](#selectclippath)|指定されたモードを使用して、既存のクリッピング領域を含む新しい領域を組み合わせて、デバイス コンテキストのクリッピング領域として、現在のパスを選択します。|  
 |[CDC::SelectClipRgn](#selectcliprgn)|指定されたモードを使用して現在のクリップ領域と指定された領域を結合します。|  
-|[Cdc::selectobject](#selectobject)|ペンなど GDI 描画オブジェクトを選択します。|  
+|[CDC::SelectObject](#selectobject)|ペンなど GDI 描画オブジェクトを選択します。|  
 |[CDC::SelectPalette](#selectpalette)|論理パレットを選択します。|  
 |[CDC::SelectStockObject](#selectstockobject)|定義済みのストック ペン、ブラシ、または Windows によって提供されるフォントのいずれかを選択します。|  
-|[Cdc::setabortproc](#setabortproc)|Windows を呼び出す場合は、印刷ジョブを中断する必要がありますプログラマが指定したコールバック関数を設定します。|  
+|[CDC::SetAbortProc](#setabortproc)|Windows を呼び出す場合は、印刷ジョブを中断する必要がありますプログラマが指定したコールバック関数を設定します。|  
 |[CDC::SetArcDirection](#setarcdirection)|円弧および四角形の機能に使用する描画方向を設定します。|  
 |[CDC::SetAttribDC](#setattribdc)|セット`m_hAttribDC`属性のデバイス コンテキスト。|  
 |[CDC::SetBkColor](#setbkcolor)|現在の背景色を設定します。|  
@@ -612,7 +616,7 @@ class CDC : public CObject
 |[CDC::SetMiterLimit](#setmiterlimit)|デバイス コンテキストのマイター結合の長さの制限を設定します。|  
 |[CDC::SetOutputDC](#setoutputdc)|セット`m_hDC`、出力デバイス コンテキスト。|  
 |[CDC::SetPixel](#setpixel)|指定された色の最も近いものを指定した位置にピクセルに設定します。|  
-|[CDC::SetPixelV](#setpixelv)|指定された色の最も近いものを指定した座標にあるピクセルに設定します。 `SetPixelV`も高速`SetPixel`のためを実際に描画するポイントの色の値を返す必要はありません。|  
+|[CDC::SetPixelV](#setpixelv)|指定された色の最も近いものを指定した座標にあるピクセルに設定します。 `SetPixelV` も高速`SetPixel`のためを実際に描画するポイントの色の値を返す必要はありません。|  
 |[CDC::SetPolyFillMode](#setpolyfillmode)|多角形の塗りつぶしモードを設定します。|  
 |[CDC::SetROP2](#setrop2)|現在の描画モードを設定します。|  
 |[CDC::SetStretchBltMode](#setstretchbltmode)|ビットマップの伸縮モードを設定します。|  
@@ -659,11 +663,11 @@ class CDC : public CObject
 > [!NOTE]
 >  Windows 95/98、下にあるすべての画面座標では、16 ビットに制限されます。 したがって、`int`に渡される、`CDC`メンバー関数は、-32768 ~ 32767 の範囲内である必要があります。  
   
- Microsoft Foundation Class ライブラリがから派生したいくつかのクラスを提供する特定の用途、`CDC`です。 `CPaintDC`呼び出しをカプセル化`BeginPaint`と`EndPaint`です。 `CClientDC`ウィンドウのクライアント領域に関連付けられているディスプレイ コンテキストを管理します。 `CWindowDC`そのフレームやコントロールを含むウィンドウ全体に関連付けられているディスプレイ コンテキストを管理します。 `CMetaFileDC`メタファイル デバイス コンテキストに関連付けます。  
+ Microsoft Foundation Class ライブラリがから派生したいくつかのクラスを提供する特定の用途、`CDC`です。 `CPaintDC` 呼び出しをカプセル化`BeginPaint`と`EndPaint`です。 `CClientDC` ウィンドウのクライアント領域に関連付けられているディスプレイ コンテキストを管理します。 `CWindowDC` そのフレームやコントロールを含むウィンドウ全体に関連付けられているディスプレイ コンテキストを管理します。 `CMetaFileDC` メタファイル デバイス コンテキストに関連付けます。  
   
- `CDC`2 つのメンバー関数を提供[GetLayout](#getlayout)と[SetLayout](#setlayout)、ウィンドウからそのレイアウトを継承していないデバイス コンテキストのレイアウトを反転することにします。 このような右から左方向は、アラビア語やヘブライ語の文字のレイアウトが、ヨーロッパの標準ではありませんなどのカルチャ用に記述されたアプリケーションの必要があります。  
+ `CDC` 2 つのメンバー関数を提供[GetLayout](#getlayout)と[SetLayout](#setlayout)、ウィンドウからそのレイアウトを継承していないデバイス コンテキストのレイアウトを反転することにします。 このような右から左方向は、アラビア語やヘブライ語の文字のレイアウトが、ヨーロッパの標準ではありませんなどのカルチャ用に記述されたアプリケーションの必要があります。  
   
- `CDC`2 つのデバイス コンテキストを含む[m_hDC](#m_hdc)と[は](#m_hattribdc)、これはの作成時に、`CDC`オブジェクト、同じデバイスを参照してください。 `CDC`すべての出力 GDI の呼び出しを指示`m_hDC`ほとんど属性 GDI への呼び出しと`m_hAttribDC`です。 (属性呼び出しの例は、 `GetTextColor`、中に`SetTextColor`出力呼び出しです)。  
+ `CDC` 2 つのデバイス コンテキストを含む[m_hDC](#m_hdc)と[は](#m_hattribdc)、これはの作成時に、`CDC`オブジェクト、同じデバイスを参照してください。 `CDC` すべての出力 GDI の呼び出しを指示`m_hDC`ほとんど属性 GDI への呼び出しと`m_hAttribDC`です。 (属性呼び出しの例は、 `GetTextColor`、中に`SetTextColor`出力呼び出しです)。  
   
  フレームワークがこれらの 2 つのデバイス コンテキストを使用して実装するなど、`CMetaFileDC`メタファイルに物理デバイスから属性を読み取り中に出力を送信するオブジェクト。 印刷プレビューは、同様に、フレームワークに実装されます。 また、アプリケーション固有のコードで同様の方法で、2 つのデバイス コンテキストを使用することができます。  
   
@@ -671,7 +675,7 @@ class CDC : public CObject
   
 |使用します。|M_hDC を使用します。|  
 |-----------------------|-----------------|  
-|[通常](#gettextextent)|[GetOutputTextExtent](#getoutputtextextent)|  
+|[GetTextExtent](#gettextextent)|[GetOutputTextExtent](#getoutputtextextent)|  
 |[GetTabbedTextExtent](#gettabbedtextextent)|[GetOutputTabbedTextExtent](#getoutputtabbedtextextent)|  
 |[GetTextMetrics](#gettextmetrics)|[GetOutputTextMetrics](#getoutputtextmetrics)|  
 |[GetCharWidth](#getcharwidth)|[GetOutputCharWidth](#getoutputcharwidth)|  
@@ -683,10 +687,10 @@ class CDC : public CObject
   
  `CDC`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
-##  <a name="abortdoc"></a>CDC::AbortDoc  
+##  <a name="abortdoc"></a>  CDC::AbortDoc  
  現在の印刷ジョブを終了し、最後の呼び出し以降にアプリケーションがデバイスに書き込みがすべて消去、 [StartDoc](#startdoc)メンバー関数。  
   
 ```  
@@ -722,7 +726,7 @@ int AbortDoc();
 ### <a name="example"></a>例  
   例を参照して[CDC::StartDoc](#startdoc)です。  
   
-##  <a name="abortpath"></a>CDC::AbortPath  
+##  <a name="abortpath"></a>  CDC::AbortPath  
  閉じ、デバイス コンテキストの任意のパスを破棄します。  
   
 ```  
@@ -735,7 +739,7 @@ BOOL AbortPath();
 ### <a name="remarks"></a>コメント  
  デバイス コンテキストで、ファイルを開くパス角かっこがある場合は、パスの角かっこは閉じられ、パスは破棄されます。 デバイス コンテキストに閉じたパスがある場合、パスは破棄されます。  
   
-##  <a name="addmetafilecomment"></a>CDC::AddMetaFileComment  
+##  <a name="addmetafilecomment"></a>  CDC::AddMetaFileComment  
  バッファーから、指定された拡張メタファイルにコメントをコピーします。  
   
 ```  
@@ -757,7 +761,7 @@ BOOL AddMetaFileComment(
 ### <a name="remarks"></a>コメント  
  コメントは、プライベートな情報を含めることがあります: たとえば、ソース、画像と日付の作成します。 コメントは、続くデータ、アプリケーションの署名で開始する必要があります。 コメントは、位置指定のデータを含めることはできません。 位置に固有のデータは、レコードの場所を指定し、できないように含まれるため、1 つのメタファイル別メタファイル内に埋め込むことがあります。 この関数は、拡張メタファイルでのみ使用できます。  
   
-##  <a name="alphablend"></a>CDC::AlphaBlend  
+##  <a name="alphablend"></a>  CDC::AlphaBlend  
  透明または半透明ピクセルのビットマップを表示するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -811,7 +815,7 @@ BOOL AlphaBlend(
 ### <a name="remarks"></a>コメント  
  参照してください[およびアルファブレンド](http://msdn.microsoft.com/library/windows/desktop/dd183351)詳細については、Windows SDK に含まれています。  
   
-##  <a name="anglearc"></a>CDC::AngleArc  
+##  <a name="anglearc"></a>  CDC::AngleArc  
  線分と円弧を描画します。  
   
 ```  
@@ -845,11 +849,11 @@ BOOL AngleArc(
 ### <a name="remarks"></a>コメント  
  直線セグメントは、現在の位置から円弧の始点が描画されます。円弧の中心と特定の半径の円の境界に沿って描画します。 円弧の長さは、指定された開始および掃引角度によって定義されます。  
   
- `AngleArc`円弧の終点に現在の位置を移動します。この関数によって描画された円弧が現在の変換とマッピング モードによっては楕円に表示されます。 円弧を描画する前に、この関数は、現在の位置から円弧の始点に線分を描画します。指定された中心点を指定した radius を使って仮想円を構築することによって円弧を描画します。 円弧の始点は、開始角度で度数で、円の x 軸から反時計回りに計測によって決定されます。 掃引角度に度の数によって、開始位置から反時計回りに計測して終了点が同様にあります。  
+ `AngleArc` 円弧の終点に現在の位置を移動します。この関数によって描画された円弧が現在の変換とマッピング モードによっては楕円に表示されます。 円弧を描画する前に、この関数は、現在の位置から円弧の始点に線分を描画します。指定された中心点を指定した radius を使って仮想円を構築することによって円弧を描画します。 円弧の始点は、開始角度で度数で、円の x 軸から反時計回りに計測によって決定されます。 掃引角度に度の数によって、開始位置から反時計回りに計測して終了点が同様にあります。  
   
  掃引角度が 360 度より大きい場合、円弧は複数回です。 この関数は、現在のペンを使用して線を描画します。 この図は表示されません。  
   
-##  <a name="arc"></a>除いて  
+##  <a name="arc"></a>  CDC::Arc  
  楕円の円弧を描画します。  
   
 ```  
@@ -915,7 +919,7 @@ BOOL Arc(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#29](../../mfc/codesnippet/cpp/cdc-class_1.cpp)]  
   
-##  <a name="arcto"></a>CDC::ArcTo  
+##  <a name="arcto"></a>  CDC::ArcTo  
  楕円の円弧を描画します。  
   
 ```  
@@ -978,7 +982,7 @@ BOOL ArcTo(
   
  円弧の始点の現在位置から線が描画されます。エラーが発生しなかった場合、現在の位置は、円弧の終点に設定されます。現在のペンを使用して、円弧が描画されます。その操作は表示されません。  
   
-##  <a name="attach"></a>CDC::Attach  
+##  <a name="attach"></a>  CDC::Attach  
  このメンバー関数をアタッチを使用して、`hDC`を`CDC`オブジェクト。  
   
 ```  
@@ -995,7 +999,7 @@ BOOL Attach(HDC hDC);
 ### <a name="remarks"></a>コメント  
  `hDC`両方に格納されて`m_hDC`、出力デバイス コンテキスト `m_hAttribDC`属性のデバイス コンテキスト。  
   
-##  <a name="beginpath"></a>Cdc::beginpath  
+##  <a name="beginpath"></a>  CDC::BeginPath  
  デバイス コンテキストでは、パスの角かっこを開きます。  
   
 ```  
@@ -1013,7 +1017,7 @@ BOOL BeginPath();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#30](../../mfc/codesnippet/cpp/cdc-class_2.cpp)]  
   
-##  <a name="bitblt"></a>Cdc::bitblt  
+##  <a name="bitblt"></a>  CDC::BitBlt  
  コピー元デバイス コンテキストから現在のデバイス コンテキストにビットマップをコピーします。  
   
 ```  
@@ -1061,27 +1065,27 @@ BOOL BitBlt(
 ### <a name="remarks"></a>コメント  
  アプリケーションは、windows またはことを確認するバイト境界上のクライアント領域を揃えることができます、`BitBlt`バイト境界の四角形で操作が行われます。 (設定、 **CS_BYTEALIGNWINDOW**または**により**ウィンドウ クラスを登録するときにフラグを設定します)。  
   
- `BitBlt`四角形のバイト境界で配置操作はよりも大幅に高速`BitBlt`バイト境界となる四角形で操作します。 ウィンドウ クラスを登録する必要が、独自のデバイス コンテキストのバイトのアラインメントなどのクラスのスタイルを指定する場合は、実行するために Microsoft Foundation classes ではなくです。 グローバル関数を使用して[AfxRegisterWndClass](../../mfc/reference/application-information-and-management.md#afxregisterwndclass)です。  
+ `BitBlt` 四角形のバイト境界で配置操作はよりも大幅に高速`BitBlt`バイト境界となる四角形で操作します。 ウィンドウ クラスを登録する必要が、独自のデバイス コンテキストのバイトのアラインメントなどのクラスのスタイルを指定する場合は、実行するために Microsoft Foundation classes ではなくです。 グローバル関数を使用して[AfxRegisterWndClass](../../mfc/reference/application-information-and-management.md#afxregisterwndclass)です。  
   
  Gdi`nWidth`と`nHeight`コピー先デバイス コンテキストを使用して、1 回、および元デバイス コンテキストを使用して、1 回です。 GDI が、Windows を使用して、結果として得られるエクステントが一致しない場合`StretchBlt`圧縮するか、必要に応じて、元のビットマップを拡大する関数。  
   
  変換先、ソース、およびパターン ビットマップは、同じ色の書式を持たない場合、`BitBlt`関数、ソースとパターンに合わせて変換先です。 コピー先のビットマップの前景色と背景色は、変換に使用されます。  
   
- ときに、`BitBlt`関数は、カラーをモノクロ ビットマップに変換、白のビット (1) を背景色、前景の色を黒のビット (0) に設定します。 コピー先デバイス コンテキストの前景色と背景色が使用されます。 カラーをモノクロに変換する`BitBlt`を白に背景色と一致するピクセルに設定し、その他のすべてのピクセルを黒に設定します。 `BitBlt`デバイスのカラー コンテキストの前景色と背景色を使用して、カラーをモノクロに変換します。  
+ ときに、`BitBlt`関数は、カラーをモノクロ ビットマップに変換、白のビット (1) を背景色、前景の色を黒のビット (0) に設定します。 コピー先デバイス コンテキストの前景色と背景色が使用されます。 カラーをモノクロに変換する`BitBlt`を白に背景色と一致するピクセルに設定し、その他のすべてのピクセルを黒に設定します。 `BitBlt` デバイスのカラー コンテキストの前景色と背景色を使用して、カラーをモノクロに変換します。  
   
  すべてのデバイス コンテキストをサポートする注`BitBlt`です。 指定されたデバイス コンテキストをサポートしているかどうかを確認する`BitBlt`を使用して、`GetDeviceCaps`メンバー関数し、指定、 **RASTERCAPS**インデックス。  
   
 ### <a name="example"></a>例  
   例を参照して[CDC::CreateCompatibleDC](#createcompatibledc)です。  
   
-##  <a name="cdc"></a>CDC::CDC  
+##  <a name="cdc"></a>  CDC::CDC  
  `CDC` オブジェクトを構築します。  
   
 ```  
 CDC();
 ```  
   
-##  <a name="chord"></a>CDC::Chord  
+##  <a name="chord"></a>  CDC::Chord  
  弦 (楕円を描画し、線分の交差部分で区切られた閉じた図) を描画します。  
   
 ```  
@@ -1147,7 +1151,7 @@ BOOL Chord(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#31](../../mfc/codesnippet/cpp/cdc-class_3.cpp)]  
   
-##  <a name="closefigure"></a>CDC::CloseFigure  
+##  <a name="closefigure"></a>  CDC::CloseFigure  
  パス内の開いている図を閉じます。  
   
 ```  
@@ -1158,11 +1162,11 @@ BOOL CloseFigure();
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 関数は、図の最初のポイントに現在の位置から行を描画して、図を閉じます (通常は、最新の呼び出しで指定された点、`MoveTo`メンバー関数) し、直線の接合スタイルを使用して線を接続します。 使用して、図表が閉じている場合、`LineTo`メンバー関数の代わりに`CloseFigure`端点キャップを使用して、結合ではなく角を作成します。 `CloseFigure`デバイス コンテキストで、ファイルを開くパス角かっこがある場合にのみ呼び出す必要があります。  
+ 関数は、図の最初のポイントに現在の位置から行を描画して、図を閉じます (通常は、最新の呼び出しで指定された点、`MoveTo`メンバー関数) し、直線の接合スタイルを使用して線を接続します。 使用して、図表が閉じている場合、`LineTo`メンバー関数の代わりに`CloseFigure`端点キャップを使用して、結合ではなく角を作成します。 `CloseFigure` デバイス コンテキストで、ファイルを開くパス角かっこがある場合にのみ呼び出す必要があります。  
   
  パスの図は、この関数を使用して明示的に閉じられている場合を除き、開かれています。 (図開くことができる場合でも、現在のポイントと、図の開始点は同じです。)直線または曲線後のパスに追加された`CloseFigure`新しい図形を開始します。  
   
-##  <a name="createcompatibledc"></a>CDC::CreateCompatibleDC  
+##  <a name="createcompatibledc"></a>  CDC::CreateCompatibleDC  
  指定されたデバイスと互換性があるメモリ デバイス コンテキストを作成`pDC`です。  
   
 ```  
@@ -1186,7 +1190,7 @@ BOOL CreateCompatibleDC(CDC* pDC);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#32](../../mfc/codesnippet/cpp/cdc-class_4.cpp)]  
   
-##  <a name="createdc"></a>CDC::CreateDC  
+##  <a name="createdc"></a>  CDC::CreateDC  
  指定したデバイスのデバイス コンテキストを作成します。  
   
 ```  
@@ -1218,7 +1222,7 @@ BOOL CreateDC(
   
  デバイス名がこれらの規則に従います。 コロン (:) が推奨される、省略可能です。 Windows は、コロンで終わるデバイス名がコロンのない同じ名前と同じポートにマップされるように、終端のコロンを削除します。 ドライバおよびポートの名前では、先頭または末尾のスペースを含めることはできません。 GDI 出力関数は、情報のコンテキストには使用できません。  
   
-##  <a name="createic"></a>CDC::CreateIC  
+##  <a name="createic"></a>  CDC::CreateIC  
  指定したデバイスの情報コンテキストを作成します。  
   
 ```  
@@ -1250,7 +1254,7 @@ BOOL CreateIC(
   
  デバイス名がこれらの規則に従います。 コロン (:) が推奨される、省略可能です。 Windows は、コロンで終わるデバイス名がコロンのない同じ名前と同じポートにマップされるように、終端のコロンを削除します。 ドライバおよびポートの名前では、先頭または末尾のスペースを含めることはできません。 GDI 出力関数は、情報のコンテキストには使用できません。  
   
-##  <a name="deletedc"></a>デバイス コンテキストの破棄  
+##  <a name="deletedc"></a>  CDC::DeleteDC  
  一般に、この関数を呼び出していませんデストラクターはそれを行います。  
   
 ```  
@@ -1272,14 +1276,14 @@ BOOL DeleteDC();
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::GetPrinterDC](../../mfc/reference/cprintdialog-class.md#getprinterdc)です。  
   
-##  <a name="deletetempmap"></a>CDC::DeleteTempMap  
+##  <a name="deletetempmap"></a>  CDC::DeleteTempMap  
  によって自動的に呼び出されます、`CWinApp`アイドル処理ハンドラー`DeleteTempMap`一時的な削除`CDC`によって作成されたオブジェクト`FromHandle`がデバイス コンテキスト ハンドルを破棄しません ( `hDC`s)、に一時的に関連付けられています。`CDC`オブジェクト。  
   
 ```  
 static void PASCAL DeleteTempMap();
 ```  
   
-##  <a name="detach"></a>CDC::Detach  
+##  <a name="detach"></a>  CDC::Detach  
  デタッチするには、この関数を呼び出す`m_hDC`(出力デバイス コンテキスト) から、`CDC`オブジェクトし、両方を設定`m_hDC`と`m_hAttribDC`に**NULL**です。  
   
 ```  
@@ -1289,7 +1293,7 @@ HDC Detach();
 ### <a name="return-value"></a>戻り値  
  Windows デバイス コンテキスト。  
   
-##  <a name="dptohimetric"></a>CDC::DPtoHIMETRIC  
+##  <a name="dptohimetric"></a>  CDC::DPtoHIMETRIC  
  付与すると、この関数を使用して**HIMETRIC**のサイズ (ピクセル) に変換する OLE を**HIMETRIC**です。  
   
 ```  
@@ -1303,7 +1307,7 @@ void DPtoHIMETRIC(LPSIZE lpSize) const;
 ### <a name="remarks"></a>コメント  
  かどうか、デバイス コンテキスト オブジェクトのマッピング モードは`MM_LOENGLISH`、 `MM_HIENGLISH`、 `MM_LOMETRIC`、または`MM_HIMETRIC`変換は、物理インチのピクセルの数に基づいて、します。 マッピング モードは、他の非強制モードのいずれかのかどうか (例: `MM_TEXT`)、変換は、論理インチ ピクセルの数に基づいて、します。  
   
-##  <a name="dptolp"></a>CDC::DPtoLP  
+##  <a name="dptolp"></a>  CDC::DPtoLP  
  デバイス単位を論理単位に変換します。  
   
 ```  
@@ -1331,7 +1335,7 @@ void DPtoLP(LPSIZE lpSize) const;
 ### <a name="remarks"></a>コメント  
  関数は、各ポイントの座標や、デバイスの座標系から GDI の論理座標系に変換、サイズのディメンションにマップされます。 変換は、現在のマップ モードと、元のドメインと、デバイスのウィンドウおよびビューポートのエクステントの設定によって異なります。  
   
-##  <a name="draw3drect"></a>CDC::Draw3dRect  
+##  <a name="draw3drect"></a>  CDC::Draw3dRect  
  3 次元の四角形を描画するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1378,7 +1382,7 @@ void Draw3dRect(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#33](../../mfc/codesnippet/cpp/cdc-class_5.cpp)]  
   
-##  <a name="drawdragrect"></a>CDC::DrawDragRect  
+##  <a name="drawdragrect"></a>  CDC::DrawDragRect  
  このメンバー関数をドラッグ四角形を再描画するには、繰り返しを呼び出します。  
   
 ```  
@@ -1415,7 +1419,7 @@ void DrawDragRect(
   
  初めて呼び出す`DrawDragRect`、`lpRectLast`パラメーターでなければなりません**NULL**です。  
   
-##  <a name="drawedge"></a>CDC::DrawEdge  
+##  <a name="drawedge"></a>  CDC::DrawEdge  
  指定された種類とスタイルの四角形のエッジに描画するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1438,7 +1442,7 @@ BOOL DrawEdge(
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="drawescape"></a>CDC::DrawEscape  
+##  <a name="drawescape"></a>  CDC::DrawEscape  
  描画グラフィックス デバイス インターフェイス (GDI) を通じて直接使用されないビデオ ディスプレイの機能にアクセスします。  
   
 ```  
@@ -1464,7 +1468,7 @@ int DrawEscape(
 ### <a name="remarks"></a>コメント  
  アプリケーションを呼び出すと`DrawEscape`で識別されるデータ`nInputSize`と`lpszInputData`指定ディスプレイ ドライバーに直接渡されます。  
   
-##  <a name="drawfocusrect"></a>CDC::DrawFocusRect  
+##  <a name="drawfocusrect"></a>  CDC::DrawFocusRect  
  四角形にフォーカスがあることを示すために使用されるスタイルの四角形を描画します。  
   
 ```  
@@ -1479,9 +1483,9 @@ void DrawFocusRect(LPCRECT lpRect);
  これは、ブール型 XOR 関数であるために、同じ四角形をもう一度この関数を呼び出すと、四角形が表示から削除します。 この関数で描画する四角形をスクロールすることはできません。 この関数によって描画された四角形を含む領域をスクロールするには、まず`DrawFocusRect`四角形を表示から削除するをクリックし、領域にスクロールし、呼び出す`DrawFocusRect`新しい位置に四角形を描画するには、もう一度です。  
   
 > [!CAUTION]
-> `DrawFocusRect`のみ動作`MM_TEXT`モード。 他のモードでこの関数がフォーカスされた四角形を正しく描画しないが、エラー値を返すことはできません。  
+> `DrawFocusRect` のみ動作`MM_TEXT`モード。 他のモードでこの関数がフォーカスされた四角形を正しく描画しないが、エラー値を返すことはできません。  
   
-##  <a name="drawframecontrol"></a>CDC::DrawFrameControl  
+##  <a name="drawframecontrol"></a>  CDC::DrawFrameControl  
  指定された種類とスタイルのフレーム コントロールを描画するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -1560,7 +1564,7 @@ BOOL DrawFrameControl(
   
  [!code-cpp[NVC_MFCDocView#34](../../mfc/codesnippet/cpp/cdc-class_6.cpp)]  
   
-##  <a name="drawicon"></a>CDC::DrawIcon  
+##  <a name="drawicon"></a>  CDC::DrawIcon  
  現在によって表されるデバイスのアイコンを描画`CDC`オブジェクト。  
   
 ```  
@@ -1599,7 +1603,7 @@ BOOL DrawIcon(
 ### <a name="example"></a>例  
   例を参照して[CWnd::IsIconic](../../mfc/reference/cwnd-class.md#isiconic)です。  
   
-##  <a name="drawstate"></a>CDC::DrawState  
+##  <a name="drawstate"></a>  CDC::DrawState  
  イメージを表示し、無効ななどの状態または既定の状態を示す視覚効果を適用するには、このメンバー関数を呼び出します。  
   
 > [!NOTE]
@@ -1719,7 +1723,7 @@ BOOL DrawState(
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="drawtext"></a>CDC::DrawText  
+##  <a name="drawtext"></a>  CDC::DrawText  
  指定した四角形内のテキストの書式を設定するには、このメンバー関数を呼び出します。 追加の書式設定オプションを指定する[には](#drawtextex)します。  
   
 ```  
@@ -1767,11 +1771,11 @@ int DrawText(
   
  場合、`DT_CALCRECT`フラグを指定すると、によって指定された四角形`lpRect`幅とテキストを描画するために必要な高さを反映するように更新されます。  
   
- 場合、**ため**テキスト配置フラグが設定されている (を参照してください[CDC::SetTextAlign](#settextalign))、`DrawText`四角形の左側ではなく、現在の位置で始まるテキストが表示されます。 `DrawText`テキストは折り返されませんときに、**ため**フラグが設定されている (つまり、`DT_WORDBREAK`フラグには影響はありません)。  
+ 場合、**ため**テキスト配置フラグが設定されている (を参照してください[CDC::SetTextAlign](#settextalign))、`DrawText`四角形の左側ではなく、現在の位置で始まるテキストが表示されます。 `DrawText` テキストは折り返されませんときに、**ため**フラグが設定されている (つまり、`DT_WORDBREAK`フラグには影響はありません)。  
   
  テキストの色を設定することがあります[CDC::SetTextColor](#settextcolor)です。  
   
-##  <a name="drawtextex"></a>には  
+##  <a name="drawtextex"></a>  CDC::DrawTextEx  
  指定した四角形内のテキストの書式を設定します。  
   
 ```  
@@ -1817,7 +1821,7 @@ int DrawTextEx(
   
  テキストの色を設定することがあります[CDC::SetTextColor](#settextcolor)です。  
   
-##  <a name="ellipse"></a>CDC::Ellipse  
+##  <a name="ellipse"></a>  CDC::Ellipse  
  楕円を描きます。  
   
 ```  
@@ -1856,7 +1860,7 @@ BOOL Ellipse(LPCRECT lpRect);
   
  幅または外接する四角形の高さのいずれかが 0 の場合、省略記号は描画されません。  
   
-##  <a name="enddoc"></a>CDC::EndDoc  
+##  <a name="enddoc"></a>  CDC::EndDoc  
  呼び出しによって開始された印刷ジョブの終了、 [StartDoc](#startdoc)メンバー関数。  
   
 ```  
@@ -1876,7 +1880,7 @@ int EndDoc();
 ### <a name="example"></a>例  
   例を参照して[CDC::StartDoc](#startdoc)です。  
   
-##  <a name="endpage"></a>CDC::EndPage  
+##  <a name="endpage"></a>  CDC::EndPage  
  アプリケーションのページへの書き込みが完了したことをデバイスに通知します。  
   
 ```  
@@ -1894,7 +1898,7 @@ int EndPage();
 ### <a name="example"></a>例  
   例を参照して[CDC::StartDoc](#startdoc)です。  
   
-##  <a name="endpath"></a>CDC::EndPath  
+##  <a name="endpath"></a>  CDC::EndPath  
  パスの角かっこを終了し、デバイス コンテキストに、角かっこで定義されているパスを選択します。  
   
 ```  
@@ -1907,7 +1911,7 @@ BOOL EndPath();
 ### <a name="example"></a>例  
   例を参照して[cdc::beginpath](#beginpath)です。  
   
-##  <a name="enumobjects"></a>Cdc::enumobjects  
+##  <a name="enumobjects"></a>  CDC::EnumObjects  
  ペンを列挙し、デバイス コンテキストで使用可能なブラシします。  
   
 ```  
@@ -1930,7 +1934,7 @@ int EnumObjects(
  アプリケーションによって提供されるデータへのポインター。 データは、オブジェクトの情報と共に、コールバック関数に渡されます。  
   
 ### <a name="return-value"></a>戻り値  
- によって返される最後の値を指定します、[コールバック関数](../../mfc/reference/callback-function-for-cdc-enumobjects.md)です。 その意味では、ユーザー定義されます。  
+ によって返される最後の値を指定します、[コールバック関数](callback-functions-used-by-mfc.md#enum_objects)です。 その意味では、ユーザー定義されます。  
   
 ### <a name="remarks"></a>コメント  
  各オブジェクトについて、指定された型のそのオブジェクトの情報を渡すコールバック関数が呼び出されます。 オブジェクトがあるか、コールバック関数は 0 を返しますまで、システムは、コールバック関数を呼び出します。  
@@ -1950,7 +1954,7 @@ int EnumObjects(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#35](../../mfc/codesnippet/cpp/cdc-class_7.cpp)]  
   
-##  <a name="escape"></a>CDC::Escape  
+##  <a name="escape"></a>  CDC::Escape  
  このメンバー関数は、Win32 プログラミングのために残さです。  
   
 ```  
@@ -2018,7 +2022,7 @@ int Escape(
   
 - [CDC::EndPage](#endpage)  
   
-- [Cdc::setabortproc](#setabortproc)  
+- [CDC::SetAbortProc](#setabortproc)  
   
 - [CDC::StartDoc](#startdoc)  
   
@@ -2030,7 +2034,7 @@ int Escape(
   
  アプリケーションは、定義済みのエスケープ値を使用する場合は、最初のバージョンを使用します。 アプリケーションには独自のエスケープ値が定義されている場合は、2 番目のバージョンを使用します。 参照してください[ExtEscape](http://msdn.microsoft.com/library/windows/desktop/dd162708) 2 番目のバージョンの詳細については、Windows SDK に含まれています。  
   
-##  <a name="excludecliprect"></a>CDC::ExcludeClipRect  
+##  <a name="excludecliprect"></a>  CDC::ExcludeClipRect  
  指定した四角形の負符号の既存のクリッピング領域で構成される新しいクリップ領域を作成します。  
   
 ```  
@@ -2073,7 +2077,7 @@ int ExcludeClipRect(LPCRECT lpRect);
 ### <a name="remarks"></a>コメント  
  絶対値で指定された四角形の幅`x2`  -  `x1`、ユニット数が 32,767 を超えることはできません。 同様に、四角形の高さにこの制限が適用されます。  
   
-##  <a name="excludeupdatergn"></a>CDC::ExcludeUpdateRgn  
+##  <a name="excludeupdatergn"></a>  CDC::ExcludeUpdateRgn  
  関連付けられているクリッピング領域から、ウィンドウで更新された領域を除外することで、ウィンドウの無効な領域内での描画を防止、`CDC`オブジェクト。  
   
 ```  
@@ -2095,7 +2099,7 @@ int ExcludeUpdateRgn(CWnd* pWnd);
   
 - **SIMPLEREGION**領域には、重複する境界がありません。  
   
-##  <a name="extfloodfill"></a>CDC::ExtFloodFill  
+##  <a name="extfloodfill"></a>  CDC::ExtFloodFill  
  現在のブラシを使用して、ディスプレイ画面の領域を塗りつぶします。  
   
 ```  
@@ -2135,7 +2139,7 @@ BOOL ExtFloodFill(
   
  メモリ デバイス コンテキストとラスター表示テクノロジのサポートをサポートするデバイスだけ`ExtFloodFill`です。 詳細については、次を参照してください。、[調べるため](#getdevicecaps)メンバー関数。  
   
-##  <a name="exttextout"></a>CDC::ExtTextOut  
+##  <a name="exttextout"></a>  CDC::ExtTextOut  
  現在選択されているフォントを使用して、四角形領域内で文字の文字列に書き込むには、このメンバー関数を呼び出します。  
   
 ```  
@@ -2195,7 +2199,7 @@ BOOL ExtTextOut(
   
  場合`nOptions`は 0 と`lpRect`は**NULL**関数は、四角形の領域を使用せずにデバイス コンテキストにテキストを書き込みます。 既定では、関数は現在位置を使用することも、更新することもありません。 アプリケーションを呼び出したときに、現在の位置を更新する必要があるかどうか`ExtTextOut`、アプリケーションが呼び出すことができます、`CDC`メンバー関数は、[呼び出された](#settextalign)で`nFlags`'éý'**のため**. このフラグを設定すると、Windows は無視されます*x*と*y*後続の呼び出しで`ExtTextOut`し、現在の位置を代わりに使用します。 アプリケーションを使用する場合**ため**を現在の位置を更新する`ExtTextOut`テキストの前の行の末尾をかが指す配列の最後の要素で指定した位置に、現在の位置を設定`lpDxWidths`、大きい方です。  
   
-##  <a name="fillpath"></a>CDC::FillPath  
+##  <a name="fillpath"></a>  CDC::FillPath  
  現在のパス内の開いている図形を閉じ、現在のブラシおよび多角形の塗りつぶしモードを使用してパスの内部を塗りつぶします。  
   
 ```  
@@ -2208,7 +2212,7 @@ BOOL FillPath();
 ### <a name="remarks"></a>コメント  
  内部では、いっぱいになった後にデバイス コンテキストからのパスは破棄されます。  
   
-##  <a name="fillrect"></a>CDC::FillRect  
+##  <a name="fillrect"></a>  CDC::FillRect  
  このメンバー関数は、指定されたブラシを使用して、指定した四角形の塗りつぶしを呼び出します。  
   
 ```  
@@ -2229,11 +2233,11 @@ void FillRect(
   
  ブラシ必要があるいずれかを使用して作成する、 [CBrush](../../mfc/reference/cbrush-class.md)メンバー関数[CreateHatchBrush](../../mfc/reference/cbrush-class.md#createhatchbrush)、[とき](../../mfc/reference/cbrush-class.md#createpatternbrush)、および[CreateSolidBrush](../../mfc/reference/cbrush-class.md#createsolidbrush)、によって取得されたか、 `GetStockObject` Windows の機能です。  
   
- 指定した四角形の入力時に`FillRect`四角形の右および下の辺は含まれません。 GDI まで、四角形を塗りつぶしますは含まれません、右列と下の行を現在のマップ モードに関係なく。 `FillRect`値を比較、**上部**、**下部**、**左**、および**右**指定した四角形のメンバーです。 場合**下部**と同じかそれよりも少ない**上部**、または**右**と同じかそれよりも少ない**左**、四角形が描画されていません。  
+ 指定した四角形の入力時に`FillRect`四角形の右および下の辺は含まれません。 GDI まで、四角形を塗りつぶしますは含まれません、右列と下の行を現在のマップ モードに関係なく。 `FillRect` 値を比較、**上部**、**下部**、**左**、および**右**指定した四角形のメンバーです。 場合**下部**と同じかそれよりも少ない**上部**、または**右**と同じかそれよりも少ない**左**、四角形が描画されていません。  
   
- `FillRect`ような[CDC::FillSolidRect](#fillsolidrect)。 ただし、`FillRect`ブラシを受け取り、したがって、純色、ディザリングされた色、ハッチ ブラシ、またはパターン塗りつぶす四角形を使用できます。 `FillSolidRect`純色のみを使用して (によって示される、 **COLORREF**パラメーター)。 `FillRect`通常よりも低い`FillSolidRect`です。  
+ `FillRect` ような[CDC::FillSolidRect](#fillsolidrect)。 ただし、`FillRect`ブラシを受け取り、したがって、純色、ディザリングされた色、ハッチ ブラシ、またはパターン塗りつぶす四角形を使用できます。 `FillSolidRect` 純色のみを使用して (によって示される、 **COLORREF**パラメーター)。 `FillRect` 通常よりも低い`FillSolidRect`です。  
   
-##  <a name="fillrgn"></a>CDC::FillRgn  
+##  <a name="fillrgn"></a>  CDC::FillRgn  
  指定された領域を塗りつぶします`pRgn`で指定されたブラシを含む`pBrush`です。  
   
 ```  
@@ -2258,7 +2262,7 @@ BOOL FillRgn(
 ### <a name="example"></a>例  
   例を参照して[CRgn::CreateRoundRectRgn](../../mfc/reference/crgn-class.md#createroundrectrgn)です。  
   
-##  <a name="fillsolidrect"></a>CDC::FillSolidRect  
+##  <a name="fillsolidrect"></a>  CDC::FillSolidRect  
  このメンバー関数は、指定した純色で指定された四角形の塗りつぶしを呼び出します。  
   
 ```  
@@ -2279,7 +2283,7 @@ void FillSolidRect(
  `lpRect`  
  (論理単位で) に外接する四角形を指定します。 ポインターを渡すことができます、 [RECT](../../mfc/reference/rect-structure1.md)データ構造体、または`CRect`このパラメーターのオブジェクト。  
   
- `clr`四角形の塗りつぶしに使用する色を指定します。  
+ `clr` 四角形の塗りつぶしに使用する色を指定します。  
   
  *x*  
  論理で四角形の左上隅の x 座標を指定します。  
@@ -2294,12 +2298,12 @@ void FillSolidRect(
  四角形の高さを指定します。  
   
 ### <a name="remarks"></a>コメント  
- `FillSolidRect`よく似ています[CDC::FillRect](#fillrect)ただし、`FillSolidRect`純色のみを使用して (によって示される、 **COLORREF**パラメーター)、中に`FillRect`ブラシを受け取り、いっぱいに使用することができます、。純色、ディザリングされた色、ハッチ ブラシ、またはパターンを含む四角形。 `FillSolidRect`通常より高速`FillRect`です。  
+ `FillSolidRect` よく似ています[CDC::FillRect](#fillrect)ただし、`FillSolidRect`純色のみを使用して (によって示される、 **COLORREF**パラメーター)、中に`FillRect`ブラシを受け取り、いっぱいに使用することができます、。純色、ディザリングされた色、ハッチ ブラシ、またはパターンを含む四角形。 `FillSolidRect` 通常より高速`FillRect`です。  
   
 > [!NOTE]
 >  呼び出すと`FillSolidRect`、背景色を使用して設定されている[SetBkColor](#setbkcolor)、によって示される色に設定されている`clr`です。  
   
-##  <a name="flattenpath"></a>CDC::FlattenPath  
+##  <a name="flattenpath"></a>  CDC::FlattenPath  
  現在のデバイス コンテキストに選択したパス内の任意の曲線に変換し、行のシーケンスに、各曲線。  
   
 ```  
@@ -2309,7 +2313,7 @@ BOOL FlattenPath();
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="floodfill"></a>CDC::FloodFill  
+##  <a name="floodfill"></a>  CDC::FloodFill  
  現在のブラシを使用して、ディスプレイ画面の領域を塗りつぶします。  
   
 ```  
@@ -2339,7 +2343,7 @@ BOOL FloodFill(
   
  `ExtFloodFill`関数は柔軟性が、同様の機能を提供します。  
   
-##  <a name="framerect"></a>CDC::FrameRect  
+##  <a name="framerect"></a>  CDC::FrameRect  
  指定された四角形の周囲の境界線を描画`lpRect`です。  
   
 ```  
@@ -2362,7 +2366,7 @@ void FrameRect(
   
  描画される境界線`FrameRect`で描画される境界線と同じ位置では、**四角形**同じ座標を使用してメンバー関数 (場合**四角形**ワイド論理ユニットが 1 であるペンを使用)。 四角形の内部が未入力`FrameRect`です。  
   
-##  <a name="framergn"></a>CDC::FrameRgn  
+##  <a name="framergn"></a>  CDC::FrameRgn  
  によって指定された領域の周囲に境界線を描画`pRgn`で指定されたブラシを使用して`pBrush`です。  
   
 ```  
@@ -2392,7 +2396,7 @@ BOOL FrameRgn(
 ### <a name="example"></a>例  
   例を参照して[CRgn::CombineRgn](../../mfc/reference/crgn-class.md#combinergn)です。  
   
-##  <a name="fromhandle"></a>CDC::FromHandle  
+##  <a name="fromhandle"></a>  CDC::FromHandle  
  ポインターを返します、`CDC`デバイス コンテキストへのハンドルが指定されるとします。  
   
 ```  
@@ -2412,7 +2416,7 @@ static CDC* PASCAL FromHandle(HDC hDC);
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::GetPrinterDC](../../mfc/reference/cprintdialog-class.md#getprinterdc)です。  
   
-##  <a name="getarcdirection"></a>CDC::GetArcDirection  
+##  <a name="getarcdirection"></a>  CDC::GetArcDirection  
  デバイス コンテキストの現在の円弧の方向を返します。  
   
 ```  
@@ -2431,7 +2435,7 @@ int GetArcDirection() const;
 ### <a name="remarks"></a>コメント  
  円弧と四角形の関数は、円弧の方向を使用します。  
   
-##  <a name="getaspectratiofilter"></a>CDC::GetAspectRatioFilter  
+##  <a name="getaspectratiofilter"></a>  CDC::GetAspectRatioFilter  
  現在の縦横比のフィルターの設定を取得します。  
   
 ```  
@@ -2444,7 +2448,7 @@ CSize GetAspectRatioFilter() const;
 ### <a name="remarks"></a>コメント  
  縦横比は、デバイスのピクセル幅と高さによって形成される比率です。 デバイスの縦横比に関する情報は、作成、選択、およびフォントの表示に使用されます。 Windows には、特別なフィルターをすべて使用できるフォントから特定の縦横比用に設計されたフォントを選択する、縦横比のフィルターが用意されています。 フィルターで指定した縦横比を使用して、`SetMapperFlags`メンバー関数。  
   
-##  <a name="getbkcolor"></a>CDC::GetBkColor  
+##  <a name="getbkcolor"></a>  CDC::GetBkColor  
  現在の背景色を返します。  
   
 ```  
@@ -2457,7 +2461,7 @@ COLORREF GetBkColor() const;
 ### <a name="remarks"></a>コメント  
  バック グラウンド モードの場合**不透明**システムでは、背景色を使用して、スタイル設定された行のギャップ、ハッチ ブラシ、行と文字セルの背景の間のギャップを入力します。 ビットマップの色とモノクロ デバイス コンテキストの間で変換するときにも、背景色が使用されます。  
   
-##  <a name="getbkmode"></a>CDC::GetBkMode  
+##  <a name="getbkmode"></a>  CDC::GetBkMode  
  バック グラウンド モードを返します。  
   
 ```  
@@ -2470,7 +2474,7 @@ int GetBkMode() const;
 ### <a name="remarks"></a>コメント  
  バック グラウンド モードでは、テキストやハッチ ブラシ、ペン スタイルが実線を描画する前に、システムが描画サーフェイス上の既存の背景色を削除するかどうかを定義します。  
   
-##  <a name="getboundsrect"></a>CDC::GetBoundsRect  
+##  <a name="getboundsrect"></a>  CDC::GetBoundsRect  
  指定したデバイス コンテキストに現在までの累積外接する四角を返します。  
   
 ```  
@@ -2501,7 +2505,7 @@ UINT GetBoundsRect(
   
 - **DCB_DISABLE**累積の境界が無効になっています。  
   
-##  <a name="getbrushorg"></a>CDC::GetBrushOrg  
+##  <a name="getbrushorg"></a>  CDC::GetBrushOrg  
  デバイス コンテキストで現在選択されているブラシの原点を (デバイス単位) を取得します。  
   
 ```  
@@ -2514,7 +2518,7 @@ CPoint GetBrushOrg() const;
 ### <a name="remarks"></a>コメント  
  初期のブラシの原点が (0, 0) がクライアント領域のです。 戻り値は、デスクトップ ウィンドウの原点に対するデバイス単位でのこのポイントを指定します。  
   
-##  <a name="getcharacterplacement"></a>CDC::GetCharacterPlacement  
+##  <a name="getcharacterplacement"></a>  CDC::GetCharacterPlacement  
  文字列に関するさまざまな情報を取得します。  
   
 ```  
@@ -2559,7 +2563,7 @@ DWORD GetCharacterPlacement(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、関数の機能をエミュレート[GetCharacterPlacement](http://msdn.microsoft.com/library/windows/desktop/dd144860\(v=vs.85\).aspx)Windows SDK で説明されている。  
   
-##  <a name="getcharabcwidths"></a>CDC::GetCharABCWidths  
+##  <a name="getcharabcwidths"></a>  CDC::GetCharABCWidths  
  現在の TrueType フォントから指定された範囲内の連続する文字の幅を取得します。  
   
 ```  
@@ -2603,7 +2607,7 @@ BOOL GetCharABCWidths(
   
  非 TrueType フォントの文字の幅を取得するアプリケーションを使用する必要があります、 [GetCharWidth](http://msdn.microsoft.com/library/windows/desktop/dd144861) Windows の機能です。  
   
-##  <a name="getcharabcwidthsi"></a>CDC::GetCharABCWidthsI  
+##  <a name="getcharabcwidthsi"></a>  CDC::GetCharABCWidthsI  
  現在の TrueType フォントから指定された範囲内の連続したグリフ インデックスの論理単位の幅を取得します。  
   
 ```  
@@ -2633,7 +2637,7 @@ BOOL GetCharABCWidthsI(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、関数の機能をエミュレート[GetCharABCWidthsI](http://msdn.microsoft.com/library/windows/desktop/dd144859)Windows SDK で説明されている。  
   
-##  <a name="getcharwidth"></a>CDC::GetCharWidth  
+##  <a name="getcharwidth"></a>  CDC::GetCharWidth  
  現在のフォントからの連続した文字グループの個々 の文字幅を取得を使用して`m_hAttribDC`、入力デバイス コンテキスト。  
   
 ```  
@@ -2671,7 +2675,7 @@ BOOL GetCharWidth(
   
  特定のフォントの文字の連続したグループ内の文字が存在しない場合は、既定の文字の幅の値が割り当てられます。  
   
-##  <a name="getcharwidthi"></a>CDC::GetCharWidthI  
+##  <a name="getcharwidthi"></a>  CDC::GetCharWidthI  
  現在のフォントから指定された範囲内の連続したグリフ インデックスの論理座標、幅を取得します。  
   
 ```  
@@ -2701,7 +2705,7 @@ BOOL GetCharWidthI(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、関数の機能をエミュレート[GetCharWidthI](http://msdn.microsoft.com/library/windows/desktop/dd144864)Windows SDK で説明されている。  
   
-##  <a name="getclipbox"></a>CDC::GetClipBox  
+##  <a name="getclipbox"></a>  CDC::GetClipBox  
  現在のクリップ領域を囲む外接する最小の四角形の寸法を取得します。  
   
 ```  
@@ -2726,7 +2730,7 @@ virtual int GetClipBox(LPRECT lpRect) const;
 ### <a name="remarks"></a>コメント  
  ディメンションが指すバッファーにコピーされます`lpRect`です。  
   
-##  <a name="getcoloradjustment"></a>CDC::GetColorAdjustment  
+##  <a name="getcoloradjustment"></a>  CDC::GetColorAdjustment  
  デバイス コンテキストの色の調整値を取得します。  
   
 ```  
@@ -2740,7 +2744,7 @@ BOOL GetColorAdjustment(LPCOLORADJUSTMENT lpColorAdjust) const;
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="getcurrentbitmap"></a>CDC::GetCurrentBitmap  
+##  <a name="getcurrentbitmap"></a>  CDC::GetCurrentBitmap  
  現在選択されているポインターを返します`CBitmap`オブジェクト。  
   
 ```  
@@ -2753,7 +2757,7 @@ CBitmap* GetCurrentBitmap() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、一時オブジェクトを返す可能性があります。  
   
-##  <a name="getcurrentbrush"></a>CDC::GetCurrentBrush  
+##  <a name="getcurrentbrush"></a>  CDC::GetCurrentBrush  
  現在選択されているポインターを返します`CBrush`オブジェクト。  
   
 ```  
@@ -2766,7 +2770,7 @@ CBrush* GetCurrentBrush() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、一時オブジェクトを返す可能性があります。  
   
-##  <a name="getcurrentfont"></a>CDC::GetCurrentFont  
+##  <a name="getcurrentfont"></a>  CDC::GetCurrentFont  
  現在選択されているポインターを返します`CFont`オブジェクト。  
   
 ```  
@@ -2779,7 +2783,7 @@ CFont* GetCurrentFont() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、一時オブジェクトを返す可能性があります。  
   
-##  <a name="getcurrentpalette"></a>CDC::GetCurrentPalette  
+##  <a name="getcurrentpalette"></a>  CDC::GetCurrentPalette  
  現在選択されているポインターを返します`CPalette`オブジェクト。  
   
 ```  
@@ -2792,7 +2796,7 @@ CPalette* GetCurrentPalette() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、一時オブジェクトを返す可能性があります。  
   
-##  <a name="getcurrentpen"></a>CDC::GetCurrentPen  
+##  <a name="getcurrentpen"></a>  CDC::GetCurrentPen  
  現在選択されているポインターを返します`CPen`オブジェクト。  
   
 ```  
@@ -2805,7 +2809,7 @@ CPen* GetCurrentPen() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、一時オブジェクトを返す可能性があります。  
   
-##  <a name="getcurrentposition"></a>CDC::GetCurrentPosition  
+##  <a name="getcurrentposition"></a>  CDC::GetCurrentPosition  
  (論理座標) 内の現在位置を取得します。  
   
 ```  
@@ -2818,7 +2822,7 @@ CPoint GetCurrentPosition() const;
 ### <a name="remarks"></a>コメント  
  現在の位置を設定できる、`MoveTo`メンバー関数。  
   
-##  <a name="getdcbrushcolor"></a>CDC::GetDCBrushColor  
+##  <a name="getdcbrushcolor"></a>  CDC::GetDCBrushColor  
  現在のブラシの色を取得します。  
   
 ```  
@@ -2833,7 +2837,7 @@ COLORREF GetDCBrushColor() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、関数の機能をエミュレート[GetDCBrushColor](http://msdn.microsoft.com/library/windows/desktop/dd144872)Windows SDK で説明されている。  
   
-##  <a name="getdcpencolor"></a>CDC::GetDCPenColor  
+##  <a name="getdcpencolor"></a>  CDC::GetDCPenColor  
  現在のペンの色を取得します。  
   
 ```  
@@ -2848,7 +2852,7 @@ COLORREF GetDCPenColor() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数で、Win32 関数[GetDCPenColor](http://msdn.microsoft.com/library/windows/desktop/dd144875)Windows SDK で説明されている。  
   
-##  <a name="getdevicecaps"></a>について  
+##  <a name="getdevicecaps"></a>  CDC::GetDeviceCaps  
  ディスプレイ デバイスに関する情報をデバイスに固有の幅の広い範囲を取得します。  
   
 ```  
@@ -2865,7 +2869,7 @@ int GetDeviceCaps(int nIndex) const;
 ### <a name="example"></a>例  
   例を参照して[CPrintDialog::GetDefaults](../../mfc/reference/cprintdialog-class.md#getdefaults)です。  
   
-##  <a name="getfontdata"></a>CDC::GetFontData  
+##  <a name="getfontdata"></a>  CDC::GetFontData  
  スケーラブルなフォント ファイルからフォント メトリック情報を取得します。  
   
 ```  
@@ -2901,7 +2905,7 @@ DWORD GetFontData(
   
  アプリケーションが、この関数を使用して、非 TrueType フォントの情報を取得しようとしています。 場合、`GetFontData`メンバー関数は-1 を返します。  
   
-##  <a name="getfontlanguageinfo"></a>CDC::GetFontLanguageInfo  
+##  <a name="getfontlanguageinfo"></a>  CDC::GetFontLanguageInfo  
  現在選択されているフォントを指定した表示のコンテキストに関する情報を返します。  
   
 ```  
@@ -2914,7 +2918,7 @@ DWORD GetFontLanguageInfo() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、関数の機能をエミュレート[GetFontLanguageInfo](http://msdn.microsoft.com/library/windows/desktop/dd144886)Windows SDK で説明されている。  
   
-##  <a name="getglyphoutline"></a>CDC::GetGlyphOutline  
+##  <a name="getglyphoutline"></a>  CDC::GetGlyphOutline  
  アウトライン曲線または現在のフォントのアウトライン文字のビットマップを取得します。  
   
 ```  
@@ -2934,7 +2938,7 @@ DWORD GetGlyphOutline(
  `nFormat`  
  情報を返す関数の形式を指定します。 次の値のいずれか、または 0 を指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
 |**GGO_BITMAP**|グリフのビットマップを返します。 ときに、関数からが指すバッファー`lpBuffer`ダブルワード境界に 1 ビット/ピクセルのビットマップが含まれています。|  
 |**GGO_NATIVE**|デバイス単位を使用して、ラスタライザーのネイティブ形式でデータ ポイント、曲線を返します。 すべての変換がで指定されたこの値を指定すると、`lpmat2`は無視されます。|  
@@ -2961,7 +2965,7 @@ DWORD GetGlyphOutline(
   
  グリフのアウトラインは、一連の輪郭として返されます。 各輪郭がによって定義された、 [TTPOLYGONHEADER](http://msdn.microsoft.com/library/windows/desktop/dd145158)構造が続く多くとして**それに続く**それを記述するために必要なとしての構造体します。 すべてのポイントとして返されます[POINTFX](http://msdn.microsoft.com/library/windows/desktop/dd162806)構造体し、絶対位置、いない相対的な移動を表します。 によって指定された開始ポイント、 **pfxStart**のメンバー、 [TTPOLYGONHEADER](http://msdn.microsoft.com/library/windows/desktop/dd145158)構造体は、輪郭のアウトラインを開始するポイント。 [それに続く](http://msdn.microsoft.com/library/windows/desktop/dd145157)後に続く構造体は、多角形のレコードまたはスプライン レコードのいずれかを指定できます。 折れ線レコードは、一連のポイントです。点の間の線では、文字の概要について説明します。 スプライン レコードは、TrueType (つまり、二次方程式 b スプライン) によって使用される、二次曲線を表します。  
   
-##  <a name="getgraphicsmode"></a>CDC::GetGraphicsMode  
+##  <a name="getgraphicsmode"></a>  CDC::GetGraphicsMode  
  指定したデバイス コンテキストの現在のグラフィックス モードを取得します。  
   
 ```  
@@ -2978,7 +2982,7 @@ int GetGraphicsMode() const;
 ### <a name="remarks"></a>コメント  
  このメソッド[については](http://msdn.microsoft.com/library/windows/desktop/dd144892)します。  
   
-##  <a name="gethalftonebrush"></a>CDC::GetHalftoneBrush  
+##  <a name="gethalftonebrush"></a>  CDC::GetHalftoneBrush  
  ハーフトーン ブラシを取得するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -2993,7 +2997,7 @@ static CBrush* PASCAL GetHalftoneBrush();
   
  ![ディザリングされたペンのストロークの詳細](../../mfc/reference/media/vc318s1.gif "vc318s1")  
   
-##  <a name="getkerningpairs"></a>CDC::GetKerningPairs  
+##  <a name="getkerningpairs"></a>  CDC::GetKerningPairs  
  文字のペアの指定したデバイス コンテキストで現在選択されているフォントをカーニングを取得します。  
   
 ```  
@@ -3012,7 +3016,7 @@ int GetKerningPairs(
 ### <a name="return-value"></a>戻り値  
  関数が成功した場合は、取得したカーニング ペアの数またはカーニング、フォントのペアの合計数を指定します。 関数が失敗したかのフォント カーニングのペアがない場合は、0 が返されます。  
   
-##  <a name="getlayout"></a>CDC::GetLayout  
+##  <a name="getlayout"></a>  CDC::GetLayout  
  テキストとグラフィックス プリンターまたはメタファイルなどのデバイス コンテキストのレイアウトを決定するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -3025,7 +3029,7 @@ DWORD GetLayout() const;
 ### <a name="remarks"></a>コメント  
  既定のレイアウトは左右からです。  
   
-##  <a name="getmapmode"></a>CDC::GetMapMode  
+##  <a name="getmapmode"></a>  CDC::GetMapMode  
  現在のマップ モードを取得します。  
   
 ```  
@@ -3041,7 +3045,7 @@ int GetMapMode() const;
 > [!NOTE]
 >  呼び出す場合[SetLayout](#setlayout) DC を右から左のレイアウトに変更する**SetLayout**へのマッピング モードは自動的に変更`MM_ISOTROPIC`です。 その結果、その後続の呼び出し`GetMapMode`戻ります`MM_ISOTROPIC`です。  
   
-##  <a name="getmiterlimit"></a>CDC::GetMiterLimit  
+##  <a name="getmiterlimit"></a>  CDC::GetMiterLimit  
  デバイス コンテキストの角を返します。  
   
 ```  
@@ -3054,7 +3058,7 @@ float GetMiterLimit() const;
 ### <a name="remarks"></a>コメント  
  マイター結合を持つ幾何学的線を描画、マイターが使用されます。  
   
-##  <a name="getnearestcolor"></a>CDC::GetNearestColor  
+##  <a name="getnearestcolor"></a>  CDC::GetNearestColor  
  指定した論理色に最も一致する純色を返します。  
   
 ```  
@@ -3071,7 +3075,7 @@ COLORREF GetNearestColor(COLORREF crColor) const;
 ### <a name="remarks"></a>コメント  
  特定のデバイスは、この色を表現できる必要があります。  
   
-##  <a name="getoutlinetextmetrics"></a>CDC::GetOutlineTextMetrics  
+##  <a name="getoutlinetextmetrics"></a>  CDC::GetOutlineTextMetrics  
  TrueType フォントのメトリック情報を取得します。  
   
 ```  
@@ -3096,7 +3100,7 @@ UINT GetOutlineTextMetrics(
 ### <a name="remarks"></a>コメント  
  [OUTLINETEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd162755)構造体には、TrueType 形式に用意されているフォント メトリック情報の大部分が含まれています。 など、[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd145132)構造体。 最後の 4 つのメンバー、 **OUTLINETEXTMETRIC**構造体は、文字列へのポインター。 アプリケーションは、これらの文字列の他のメンバーに必要な容量に加えて領域を割り当てる必要があります。 メモリを割り当てるための最も簡単な方法を指定することによって必要なサイズを取得するが、文字列のサイズにシステムの制限がないため、 **NULL**の`lpotm`最初の呼び出しで、`GetOutlineTextMetrics`関数。  
   
-##  <a name="getoutputcharwidth"></a>CDC::GetOutputCharWidth  
+##  <a name="getoutputcharwidth"></a>  CDC::GetOutputCharWidth  
  出力デバイス コンテキストを使用して`m_hDC`、し、現在のフォントから文字の隣接するグループ内の個々 の文字幅を取得します。  
   
 ```  
@@ -3126,7 +3130,7 @@ BOOL GetOutputCharWidth(
   
  特定のフォントの文字の連続したグループ内の文字が存在しない場合は、既定の文字の幅の値が割り当てられます。  
   
-##  <a name="getoutputtabbedtextextent"></a>CDC::GetOutputTabbedTextExtent  
+##  <a name="getoutputtabbedtextextent"></a>  CDC::GetOutputTabbedTextExtent  
  幅と高さを使用する文字の文字列を計算するには、このメンバー関数を呼び出す[m_hDC](#m_hdc)、出力デバイス コンテキスト。  
   
 ```  
@@ -3170,7 +3174,7 @@ CSize GetOutputTabbedTextExtent(
   
  場合`nTabPositions`は 0 と`lpnTabStopPositions`は**NULL**タブは、平均の文字幅を 8 に拡張されます。 場合`nTabPositions`1 の場合は、タブ ストップが先の配列の最初の値で指定された間隔で区切られる`lpnTabStopPositions`ポイント。 場合`lpnTabStopPositions`を 1 つの値を超えるポイント、タブ ストップで指定された数まで、配列内の各値の設定は`nTabPositions`します。  
   
-##  <a name="getoutputtextextent"></a>CDC::GetOutputTextExtent  
+##  <a name="getoutputtextextent"></a>  CDC::GetOutputTextExtent  
  出力デバイス コンテキストを使用するには、このメンバー関数を呼び出す[m_hDC](#m_hdc)、現在のフォントを使用して、テキストの行の高さと幅を計算します。  
   
 ```  
@@ -3199,7 +3203,7 @@ CSize GetOutputTextExtent(const CString& str) const;
   
  一部のデバイスは、通常のセル配列の文字を配置しないため (つまり、カーニングが実行される)、文字列の文字のエクステントの合計を文字列の範囲を等しいできない可能性があります。  
   
-##  <a name="getoutputtextmetrics"></a>CDC::GetOutputTextMetrics  
+##  <a name="getoutputtextmetrics"></a>  CDC::GetOutputTextMetrics  
  現在のフォントを使用して、メトリックを取得`m_hDC`、出力デバイス コンテキスト。  
   
 ```  
@@ -3213,7 +3217,7 @@ BOOL GetOutputTextMetrics(LPTEXTMETRIC lpMetrics) const;
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="getpath"></a>CDC::GetPath  
+##  <a name="getpath"></a>  CDC::GetPath  
  行のエンドポイントとデバイス コンテキストに選択されているパスに含まれる曲線の制御点を定義する座標を取得します。  
   
 ```  
@@ -3254,7 +3258,7 @@ int GetPath(
 ### <a name="example"></a>例  
   例を参照して[cdc::beginpath](#beginpath)です。  
   
-##  <a name="getpixel"></a>CDC::GetPixel  
+##  <a name="getpixel"></a>  CDC::GetPixel  
  指定されたポイントのピクセルの RGB 色の値を取得*x*と*y*です。  
   
 ```  
@@ -3285,7 +3289,7 @@ COLORREF GetPixel(POINT point) const;
   
  **GetPixel**メンバー関数が 2 つの形式です。 最初の 2 つの座標値を取得します。2 つ目は、いずれか、[ポイント](../../mfc/reference/point-structure1.md)構造体、または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)オブジェクト。  
   
-##  <a name="getpolyfillmode"></a>CDC::GetPolyFillMode  
+##  <a name="getpolyfillmode"></a>  CDC::GetPolyFillMode  
  現在の多角形の塗りつぶしモードを取得します。  
   
 ```  
@@ -3298,7 +3302,7 @@ int GetPolyFillMode() const;
 ### <a name="remarks"></a>コメント  
  参照してください、`SetPolyFillMode`多角形の塗りつぶしモードの詳細については、メンバー関数。  
   
-##  <a name="getrop2"></a>CDC::GetROP2  
+##  <a name="getrop2"></a>  CDC::GetROP2  
  現在の描画モードを取得します。  
   
 ```  
@@ -3311,7 +3315,7 @@ int GetROP2() const;
 ### <a name="remarks"></a>コメント  
  描画モードでは、画面の表面に色でペンの色とオブジェクトの内部を結合する方法を指定します。  
   
-##  <a name="getsafehdc"></a>CDC::GetSafeHdc  
+##  <a name="getsafehdc"></a>  CDC::GetSafeHdc  
  取得するには、このメンバー関数を呼び出す[m_hDC](#m_hdc)、出力デバイス コンテキスト。  
   
 ```  
@@ -3324,7 +3328,7 @@ HDC GetSafeHdc() const;
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、null ポインターの使用でも動作します。  
   
-##  <a name="getstretchbltmode"></a>CDC::GetStretchBltMode  
+##  <a name="getstretchbltmode"></a>  CDC::GetStretchBltMode  
  現在のビットマップの伸縮モードを取得します。  
   
 ```  
@@ -3339,7 +3343,7 @@ int GetStretchBltMode() const;
   
  **STRETCH_ANDSCANS**と**終了した**モードは、通常モノクロ ビットマップのピクセルをフォア グラウンドを保持するために使用します。 **STRETCH_DELETESCANS**モードは通常カラー ビットマップの色を保持するために使用します。  
   
-##  <a name="gettabbedtextextent"></a>CDC::GetTabbedTextExtent  
+##  <a name="gettabbedtextextent"></a>  CDC::GetTabbedTextExtent  
  幅と高さを使用する文字の文字列を計算するには、このメンバー関数を呼び出す[は](#m_hattribdc)属性のデバイス コンテキスト。  
   
 ```  
@@ -3383,7 +3387,7 @@ CSize GetTabbedTextExtent(
   
  場合`nTabPositions`は 0 と`lpnTabStopPositions`は**NULL**タブは、平均の文字幅の 8 倍に拡張されます。 場合`nTabPositions`1 の場合は、タブ ストップが先の配列の最初の値で指定された間隔で区切られる`lpnTabStopPositions`ポイント。 場合`lpnTabStopPositions`を 1 つの値を超えるポイント、タブ ストップで指定された数まで、配列内の各値の設定は`nTabPositions`します。  
   
-##  <a name="gettextalign"></a>CDC::GetTextAlign  
+##  <a name="gettextalign"></a>  CDC::GetTextAlign  
  デバイス コンテキストのテキスト配置フラグの状態を取得します。  
   
 ```  
@@ -3424,7 +3428,7 @@ UINT GetTextAlign() const;
   
 3.  この結果とフラグの等価性をテストします。  
   
-##  <a name="gettextcharacterextra"></a>CDC::GetTextCharacterExtra  
+##  <a name="gettextcharacterextra"></a>  CDC::GetTextCharacterExtra  
  文字間隔の現在の設定を取得します。  
   
 ```  
@@ -3439,7 +3443,7 @@ int GetTextCharacterExtra() const;
   
  文字間隔の既定値は 0 です。  
   
-##  <a name="gettextcolor"></a>CDC::GetTextColor  
+##  <a name="gettextcolor"></a>  CDC::GetTextColor  
  現在のテキストの色を取得します。  
   
 ```  
@@ -3452,7 +3456,7 @@ COLORREF GetTextColor() const;
 ### <a name="remarks"></a>コメント  
  テキストの色は GDI テキスト出力のメンバー関数を使用して描画された文字の前景色[TextOut](#textout)、 [ExtTextOut](#exttextout)、および[TabbedTextOut](#tabbedtextout)です。  
   
-##  <a name="gettextextent"></a>CDC::GetTextExtent  
+##  <a name="gettextextent"></a>  CDC::GetTextExtent  
  幅の大きさを現在のフォントを使用してテキストの行の高さを計算するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -3485,7 +3489,7 @@ CSize GetTextExtent(const CString& str) const;
   
  一部のデバイスは、通常のセル配列の文字を配置しないため (つまり、カーニングが実行される)、文字列の文字のエクステントの合計を文字列の範囲を等しいできない可能性があります。  
   
-##  <a name="gettextextentexpointi"></a>CDC::GetTextExtentExPointI  
+##  <a name="gettextextentexpointi"></a>  CDC::GetTextExtentExPointI  
  指定された領域内に収まるし、それらの各文字のテキストのエクステントを配列に設定を指定した文字列の文字数を取得します。  
   
 ```  
@@ -3523,7 +3527,7 @@ BOOL GetTextExtentExPointI(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、関数の機能をエミュレート[GetTextExtentExPointI](http://msdn.microsoft.com/library/windows/desktop/dd144936)Windows SDK で説明されている。  
   
-##  <a name="gettextextentpointi"></a>CDC::GetTextExtentPointI  
+##  <a name="gettextextentpointi"></a>  CDC::GetTextExtentPointI  
  幅と高さの指定されたグリフ インデックスの配列を取得します。  
   
 ```  
@@ -3549,7 +3553,7 @@ BOOL GetTextExtentPointI(
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、関数の機能をエミュレート[GetTextExtentPointI](http://msdn.microsoft.com/library/windows/desktop/dd144939)Windows SDK で説明されている。  
   
-##  <a name="gettextface"></a>CDC::GetTextFace  
+##  <a name="gettextface"></a>  CDC::GetTextFace  
  現在のフォントのフォント名をバッファーにコピーするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -3576,7 +3580,7 @@ int GetTextFace(CString& rString) const;
 ### <a name="remarks"></a>コメント  
  フォント名は、null で終わる文字列としてコピーされます。  
   
-##  <a name="gettextmetrics"></a>CDC::GetTextMetrics  
+##  <a name="gettextmetrics"></a>  CDC::GetTextMetrics  
  属性のデバイス コンテキストを使用して、現在のフォントのメトリックを取得します。  
   
 ```  
@@ -3590,7 +3594,7 @@ BOOL GetTextMetrics(LPTEXTMETRIC lpMetrics) const;
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="getviewportext"></a>CDC::GetViewportExt  
+##  <a name="getviewportext"></a>  CDC::GetViewportExt  
  デバイス コンテキストのビューポートの x 範囲と y 範囲を取得します。  
   
 ```  
@@ -3600,7 +3604,7 @@ CSize GetViewportExt() const;
 ### <a name="return-value"></a>戻り値  
  X と y-範囲範囲 (デバイス単位) として、`CSize`オブジェクト。  
   
-##  <a name="getviewportorg"></a>CDC::GetViewportOrg  
+##  <a name="getviewportorg"></a>  CDC::GetViewportOrg  
  デバイス コンテキストに関連付けられているビューポートの原点の x 座標と y 座標を取得します。  
   
 ```  
@@ -3610,7 +3614,7 @@ CPoint GetViewportOrg() const;
 ### <a name="return-value"></a>戻り値  
  ビューポート (デバイス座標) での原点を`CPoint`オブジェクト。  
   
-##  <a name="getwindow"></a>CDC::GetWindow  
+##  <a name="getwindow"></a>  CDC::GetWindow  
  ディスプレイ デバイス コンテキストに関連付けられているウィンドウを返します。  
   
 ```  
@@ -3623,7 +3627,7 @@ CWnd* GetWindow() const;
 ### <a name="remarks"></a>コメント  
  これは、高度な機能です。 たとえば、このメンバー関数を印刷するとき、または印刷プレビューで [ビュー] ウィンドウを返さない可能性があります。 出力に関連付けられているウィンドウを常に返します。 指定されたドメイン コント ローラーを使用して出力関数は、このウィンドウに描画します。  
   
-##  <a name="getwindowext"></a>CDC::GetWindowExt  
+##  <a name="getwindowext"></a>  CDC::GetWindowExt  
  デバイス コンテキストに関連付けられているウィンドウの x 範囲と y 範囲を取得します。  
   
 ```  
@@ -3633,7 +3637,7 @@ CSize GetWindowExt() const;
 ### <a name="return-value"></a>戻り値  
  X- と y のエクステント (論理単位で) として、`CSize`オブジェクト。  
   
-##  <a name="getwindoworg"></a>CDC::GetWindowOrg  
+##  <a name="getwindoworg"></a>  CDC::GetWindowOrg  
  デバイス コンテキストに関連付けられているウィンドウの原点の x 座標と y 座標を取得します。  
   
 ```  
@@ -3643,7 +3647,7 @@ CPoint GetWindowOrg() const;
 ### <a name="return-value"></a>戻り値  
  として論理座標でウィンドウの原点を`CPoint`オブジェクト。  
   
-##  <a name="getworldtransform"></a>CDC::GetWorldTransform  
+##  <a name="getworldtransform"></a>  CDC::GetWorldTransform  
  ページ領域変換への現在のワールド空間を取得します。  
   
 ```  
@@ -3664,7 +3668,7 @@ BOOL GetWorldTransform(XFORM& rXform) const;
 ### <a name="remarks"></a>コメント  
  このメソッド[GetWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd144953)です。  
   
-##  <a name="gradientfill"></a>CDC::GradientFill  
+##  <a name="gradientfill"></a>  CDC::GradientFill  
  塗りつぶす四角形、三角形の構造体を他の 1 つの側からスムーズにフェードするには、このメンバー関数を呼び出します。  
   
 ```  
@@ -3698,7 +3702,7 @@ BOOL GradientFill(
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 `GradientFill` Windows SDK に含まれています。  
   
-##  <a name="graystring"></a>Cdc::graystring  
+##  <a name="graystring"></a>  CDC::GrayString  
  描画には、メモリ ビットマップ内のテキストを書き込むし、ビットマップの暗転、ディスプレイにビットマップをコピーして指定された場所に (灰色) のテキストが淡色表示されます。  
   
 ```  
@@ -3721,7 +3725,7 @@ virtual BOOL GrayString(
  淡色 (灰色表示) を使用するブラシを識別します。  
   
  `lpfnOutput`  
- 文字列を描画するアプリケーションによって提供されるコールバック関数のプロシージャ インスタンスのアドレスを指定します。 詳細については、Windows の説明を参照してください。 **OutputFunc** [コールバック関数](../../mfc/reference/callback-function-for-cdc-graystring.md)です。 場合、このパラメーターは**NULL**、システムは、Windows を使用して`TextOut`、文字列を描画する関数と`lpData`出力する文字の文字列への long ポインターであると見なされます。  
+ 文字列を描画するアプリケーションによって提供されるコールバック関数のプロシージャ インスタンスのアドレスを指定します。 詳細については、Windows の説明を参照してください。 **OutputFunc** [コールバック関数](callback-functions-used-by-mfc.md#graystring)です。 場合、このパラメーターは**NULL**、システムは、Windows を使用して`TextOut`、文字列を描画する関数と`lpData`出力する文字の文字列への long ポインターであると見なされます。  
   
  `lpData`  
  出力関数に渡されるデータへの far ポインターを指定します。 場合`lpfnOutput`は**NULL**、`lpData`出力する文字列への long ポインターにする必要があります。  
@@ -3757,7 +3761,7 @@ virtual BOOL GrayString(
   
  プレビュー モードへの呼び出しでは、framework がときに、`GrayString`にメンバー関数が変換された、`TextOut`呼び出す、またはコールバック関数は呼び出されません。  
   
-##  <a name="himetrictodp"></a>CDC::HIMETRICtoDP  
+##  <a name="himetrictodp"></a>  CDC::HIMETRICtoDP  
  変換する場合は、この関数を使用して**HIMETRIC** OLE ピクセルのサイズ。  
   
 ```  
@@ -3771,7 +3775,7 @@ void HIMETRICtoDP(LPSIZE lpSize) const;
 ### <a name="remarks"></a>コメント  
  かどうか、デバイス コンテキスト オブジェクトのマッピング モードは`MM_LOENGLISH`、 `MM_HIENGLISH`、`MM_LOMETRIC`または`MM_HIMETRIC`変換は、物理インチのピクセルの数に基づいて、します。 マッピング モードは、他の非強制モードのいずれかのかどうか (例: `MM_TEXT`)、変換は、論理インチ ピクセルの数に基づいて、します。  
   
-##  <a name="himetrictolp"></a>CDC::HIMETRICtoLP  
+##  <a name="himetrictolp"></a>  CDC::HIMETRICtoLP  
  変換するには、この関数を呼び出す**HIMETRIC**論理単位に単位です。  
   
 ```  
@@ -3787,7 +3791,7 @@ void HIMETRICtoLP(LPSIZE lpSize) const;
   
  変換は最初に変換することで実現、 **HIMETRIC**単位 (ピクセル) とデバイス コンテキストの現在のマップの単位を使用して論理ユニットにこれらの単位を変換します。 デバイスのウィンドウとビューポートのエクステントが結果に影響することに注意してください。  
   
-##  <a name="intersectcliprect"></a>CDC::IntersectClipRect  
+##  <a name="intersectcliprect"></a>  CDC::IntersectClipRect  
  現在の地域とによって指定される四角形の積集合を形成する、新しいクリップ領域を作成`x1`、 `y1`、 `x2`、および`y2`です。  
   
 ```  
@@ -3830,7 +3834,7 @@ int IntersectClipRect(LPCRECT lpRect);
 ### <a name="remarks"></a>コメント  
  GDI は、新しい境界内に収まるようにすべての後続の出力をクリップします。 幅と高さは、32,767 を超えないです。  
   
-##  <a name="invertrect"></a>CDC::InvertRect  
+##  <a name="invertrect"></a>  CDC::InvertRect  
  指定した四角形の内容を反転します。  
   
 ```  
@@ -3849,7 +3853,7 @@ void InvertRect(LPCRECT lpRect);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#36](../../mfc/codesnippet/cpp/cdc-class_8.cpp)]  
   
-##  <a name="invertrgn"></a>CDC::InvertRgn  
+##  <a name="invertrgn"></a>  CDC::InvertRgn  
  によって指定された領域の色を反転`pRgn`です。  
   
 ```  
@@ -3866,7 +3870,7 @@ BOOL InvertRgn(CRgn* pRgn);
 ### <a name="remarks"></a>コメント  
  モノクロ モニターでこの関数では白と黒の黒いピクセル白です。 カラー ディスプレイ上の反転は、表示の色を生成する方法に依存します。  
   
-##  <a name="isprinting"></a>CDC::IsPrinting  
+##  <a name="isprinting"></a>  CDC::IsPrinting  
  印刷デバイス コンテキストは使用されているかどうかを判断します。  
   
 ```  
@@ -3876,7 +3880,7 @@ BOOL IsPrinting() const;
 ### <a name="return-value"></a>戻り値  
  0 以外の場合、`CDC`オブジェクトはプリンター DC 以外の場合は 0 です。  
   
-##  <a name="lineto"></a>CDC::LineTo  
+##  <a name="lineto"></a>  CDC::LineTo  
  現在の位置が、指定された地点を描きます*x*と*y* (または`point`)。  
   
 ```  
@@ -3906,7 +3910,7 @@ BOOL LineTo(POINT point);
 ### <a name="example"></a>例  
   例を参照して[CRect::CenterPoint](../../atl-mfc-shared/reference/crect-class.md#centerpoint)です。  
   
-##  <a name="lptodp"></a>CDC::LPtoDP  
+##  <a name="lptodp"></a>  CDC::LPtoDP  
  デバイス単位の論理ユニットに変換します。  
   
 ```  
@@ -3936,7 +3940,7 @@ void LPtoDP(LPSIZE lpSize) const;
   
  ポイントの x 座標と y 座標は、-32,768 ~ 32,767 の範囲内で 2 バイト符号付き整数です。 場所のマッピング モードが、これらの制限を超える値になります。 の場合、システム値を設定-32,768 から 32,767、それぞれします。  
   
-##  <a name="lptohimetric"></a>CDC::LPtoHIMETRIC  
+##  <a name="lptohimetric"></a>  CDC::LPtoHIMETRIC  
  論理ユニットに変換するには、この関数を呼び出す**HIMETRIC**単位です。  
   
 ```  
@@ -3952,7 +3956,7 @@ void LPtoHIMETRIC(LPSIZE lpSize) const;
   
  デバイス コンテキストの現在のマップの単位を使用して、これらの単位に変換すること (ピクセル) に論理ユニットを変換して、変換は実現**HIMETRIC**単位です。  
   
-##  <a name="m_hattribdc"></a>CDC::m_hAttribDC  
+##  <a name="m_hattribdc"></a>  CDC::m_hAttribDC  
  この属性のデバイス コンテキスト`CDC`オブジェクト。  
   
 ```  
@@ -3962,7 +3966,7 @@ HDC m_hAttribDC;
 ### <a name="remarks"></a>コメント  
  既定では、このデバイス コンテキストと等しい`m_hDC`です。 一般に、`CDC`デバイス コンテキストから情報を要求する GDI 呼び出しが宛て`m_hAttribDC`です。 参照してください、 [CDC](../../mfc/reference/cdc-class.md)クラスのこれらの 2 つのデバイス コンテキストの使用について説明します。  
   
-##  <a name="m_hdc"></a>CDC::m_hDC  
+##  <a name="m_hdc"></a>  CDC::m_hDC  
  この出力デバイス コンテキスト`CDC`オブジェクト。  
   
 ```  
@@ -3972,7 +3976,7 @@ HDC m_hDC;
 ### <a name="remarks"></a>コメント  
  既定では、`m_hDC`と等しい`m_hAttribDC`、によってラップされたその他のデバイス コンテキスト`CDC`です。 一般に、`CDC`には、出力を作成する GDI 呼び出し、`m_hDC`デバイス コンテキスト。 初期化するには`m_hDC`と`m_hAttribDC`にさまざまなデバイス をポイントします。 参照してください、 [CDC](../../mfc/reference/cdc-class.md)クラスのこれらの 2 つのデバイス コンテキストの使用について説明します。  
   
-##  <a name="maskblt"></a>CDC::MaskBlt  
+##  <a name="maskblt"></a>  CDC::MaskBlt  
  指定されたマスクとラスター オペレーションを使用する元とコピー先のビットマップの色のデータを結合します。  
   
 ```  
@@ -4034,7 +4038,7 @@ BOOL MaskBlt(
   
  ソース、パターン、およびコピー先ビットマップの色の形式が異なる場合、この関数には、変換先の形式に一致するように、パターンまたはソースの形式に変換します。 マスク ビットマップがモノクロ ビットマップでない場合は、エラーが発生します。 拡張メタファイルは記録されているときにエラーが発生した (および 0 を返します) 場合は、ソース デバイス コンテキスト拡張メタファイル デバイス コンテキストを識別します。 サポートしないデバイス`MaskBlt`です。 アプリケーションを呼び出す必要があります`GetDeviceCaps`をデバイスにこの関数がサポートしているかどうかを判断します。 この関数の動作と同様にマスク ビットマップを指定しない場合は`BitBlt`、フォア グラウンド ラスター オペレーション コードを使用します。 ピクセルのオフセットは、ポイント (0, 0) にマップするときのマスクのビットマップ ソース デバイス コンテキストのビットマップにします。 これは、マスク ビットマップにマスクの設定が含まれている場合に便利です。アプリケーション簡単に適用、いずれかのマスクの中のタスクにピクセル オフセットを調整することによってしに四角形のサイズが送信される`MaskBlt`です。  
   
-##  <a name="modifyworldtransform"></a>CDC::ModifyWorldTransform  
+##  <a name="modifyworldtransform"></a>  CDC::ModifyWorldTransform  
  指定されたモードを使用してデバイス コンテキストのワールド変換を変更します。  
   
 ```  
@@ -4060,7 +4064,7 @@ BOOL ModifyWorldTransform(
 ### <a name="remarks"></a>コメント  
  このメソッド[ModifyWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd145060)です。  
   
-##  <a name="moveto"></a>CDC::MoveTo  
+##  <a name="moveto"></a>  CDC::MoveTo  
  指定された地点を現在の位置を移動*x*と*y* (または`point`)。  
   
 ```  
@@ -4087,7 +4091,7 @@ CPoint MoveTo(POINT point);
 ### <a name="example"></a>例  
   例を参照して[CRect::CenterPoint](../../atl-mfc-shared/reference/crect-class.md#centerpoint)です。  
   
-##  <a name="offsetcliprgn"></a>CDC::OffsetClipRgn  
+##  <a name="offsetcliprgn"></a>  CDC::OffsetClipRgn  
  指定されたオフセットで、デバイス コンテキストのクリッピング領域に移動します。  
   
 ```  
@@ -4122,7 +4126,7 @@ int OffsetClipRgn(SIZE size);
 ### <a name="remarks"></a>コメント  
  関数は、領域を移動*x* x 軸に単位と*y* y 軸に沿って単位です。  
   
-##  <a name="offsetviewportorg"></a>CDC::OffsetViewportOrg  
+##  <a name="offsetviewportorg"></a>  CDC::OffsetViewportOrg  
  現在のビューポートの原点の座標に対する相対ビューポートの原点の座標を変更します。  
   
 ```  
@@ -4141,7 +4145,7 @@ virtual CPoint OffsetViewportOrg(
 ### <a name="return-value"></a>戻り値  
  以前のビューポートの原点が (デバイス座標) でとして、`CPoint`オブジェクト。  
   
-##  <a name="offsetwindoworg"></a>CDC::OffsetWindowOrg  
+##  <a name="offsetwindoworg"></a>  CDC::OffsetWindowOrg  
  現在のウィンドウの原点の座標の基準としたウィンドウの原点の座標を変更します。  
   
 ```  
@@ -4160,7 +4164,7 @@ CPoint OffsetWindowOrg(
 ### <a name="return-value"></a>戻り値  
  前のウィンドウの原点が (論理座標で) として、`CPoint`オブジェクト。  
   
-##  <a name="operator_hdc"></a>CDC::operator HDC  
+##  <a name="operator_hdc"></a>  CDC::operator HDC  
  デバイス コンテキスト ハンドルを取得するこの演算子を使用して、`CDC`オブジェクト。  
   
 ```  
@@ -4173,7 +4177,7 @@ operator HDC() const;
 ### <a name="remarks"></a>コメント  
  Windows Api を直接呼び出すために、ハンドルを使用することができます。  
   
-##  <a name="paintrgn"></a>CDC::PaintRgn  
+##  <a name="paintrgn"></a>  CDC::PaintRgn  
  指定された領域を塗りつぶします`pRgn`現在のブラシを使用します。  
   
 ```  
@@ -4187,7 +4191,7 @@ BOOL PaintRgn(CRgn* pRgn);
 ### <a name="return-value"></a>戻り値  
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
-##  <a name="patblt"></a>Cdc::patblt  
+##  <a name="patblt"></a>  CDC::PatBlt  
  ビット パターンは、デバイス上に作成します。  
   
 ```  
@@ -4233,7 +4237,7 @@ BOOL PatBlt(
   
  すべてのデバイス コンテキストのサポート、`PatBlt`関数。 デバイス コンテキストをサポートしているかどうかを判断する`PatBlt`、呼び出し、`GetDeviceCaps`メンバー関数を**RASTERCAPS**インデックスを作成しの戻り値の確認、 **RC_BITBLT**フラグ。  
   
-##  <a name="pie"></a>CDC::Pie  
+##  <a name="pie"></a>  CDC::Pie  
  中心と 2 つのエンドポイントが線で結ばれて楕円の円弧を描画することによって作られる扇形を描画します。  
   
 ```  
@@ -4301,7 +4305,7 @@ BOOL Pie(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#37](../../mfc/codesnippet/cpp/cdc-class_9.cpp)]  
   
-##  <a name="playmetafile"></a>CDC::PlayMetaFile  
+##  <a name="playmetafile"></a>  CDC::PlayMetaFile  
  デバイス コンテキストで指定されたメタファイルのコンテンツを再生します。  
   
 ```  
@@ -4335,7 +4339,7 @@ BOOL PlayMetaFile(
   
  この関数では、出力デバイス コンテキストの状態が保持されます。 任意のオブジェクトが作成されますが、拡張メタファイルでは削除されませんが、この関数によって削除されます。 この関数を停止するアプリケーションを呼び出すことができます、 **CancelDC**操作を終了する別のスレッドからの Windows の機能です。 この場合、関数は、0 を返します。  
   
-##  <a name="plgblt"></a>CDC::PlgBlt  
+##  <a name="plgblt"></a>  CDC::PlgBlt  
  指定されたデバイス コンテキストの指定した平行四辺形に元のデバイス コンテキストで指定した四角形から色データのビットのビット ブロック転送を実行します。  
   
 ```  
@@ -4397,7 +4401,7 @@ BOOL PlgBlt(
   
  元とコピー先デバイス コンテキストは、互換性のないデバイスを表している場合は`PlgBlt`はエラーを返します。  
   
-##  <a name="polybezier"></a>CDC::PolyBezier  
+##  <a name="polybezier"></a>  CDC::PolyBezier  
  1 つまたは複数のベジエ スプラインを描画します。  
   
 ```  
@@ -4421,7 +4425,7 @@ BOOL PolyBezier(
   
  現在の位置が使用されるもによって更新、`PolyBezier`関数。 この図は表示されません。 この関数は、現在のペンを使用して線を描画します。  
   
-##  <a name="polybezierto"></a>CDC::PolyBezierTo  
+##  <a name="polybezierto"></a>  CDC::PolyBezierTo  
  1 つまたは複数のベジエ スプラインを描画します。  
   
 ```  
@@ -4441,12 +4445,12 @@ BOOL PolyBezierTo(
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- この関数では、3 次ベジエ スプラインを描画で指定されたコントロール ポイントを使用して、`lpPoints`パラメーター。 最初スプラインは、現在の位置からの制御点として、最初の 2 つのポイントを使用して 3 番目のポイントを描画します。 後続の各スプラインは、この関数は、3 つの点が必要し、開始点として、次の直前のスプラインの終了点を使用します。 `PolyBezierTo`現在の位置を最後のベジエ スプラインの終了位置に移動します。 この図は表示されません。 この関数は、現在のペンを使用して線を描画します。  
+ この関数では、3 次ベジエ スプラインを描画で指定されたコントロール ポイントを使用して、`lpPoints`パラメーター。 最初スプラインは、現在の位置からの制御点として、最初の 2 つのポイントを使用して 3 番目のポイントを描画します。 後続の各スプラインは、この関数は、3 つの点が必要し、開始点として、次の直前のスプラインの終了点を使用します。 `PolyBezierTo` 現在の位置を最後のベジエ スプラインの終了位置に移動します。 この図は表示されません。 この関数は、現在のペンを使用して線を描画します。  
   
 ### <a name="example"></a>例  
   例を参照して[cdc::beginpath](#beginpath)です。  
   
-##  <a name="polydraw"></a>CDC::PolyDraw  
+##  <a name="polydraw"></a>  CDC::PolyDraw  
  一連の線分とベジエ スプラインを描画します。  
   
 ```  
@@ -4489,7 +4493,7 @@ BOOL PolyDraw(
 ### <a name="example"></a>例  
   例を参照して[cdc::beginpath](#beginpath)です。  
   
-##  <a name="polygon"></a>CDC::Polygon  
+##  <a name="polygon"></a>  CDC::Polygon  
  2 つ以上の点の (頂点) 現在のペンを使用して回線で接続で構成される多角形を描画します。  
   
 ```  
@@ -4516,7 +4520,7 @@ BOOL Polygon(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#38](../../mfc/codesnippet/cpp/cdc-class_10.cpp)]  
   
-##  <a name="polyline"></a>CDC::Polyline  
+##  <a name="polyline"></a>  CDC::Polyline  
  指定された点を結ぶ線分を描画`lpPoints`です。  
   
 ```  
@@ -4540,7 +4544,7 @@ BOOL Polyline(
   
  詳細については、次を参照してください。[ポリライン](http://msdn.microsoft.com/library/windows/desktop/dd162815)Windows SDK に含まれています。  
   
-##  <a name="polylineto"></a>CDC::PolylineTo  
+##  <a name="polylineto"></a>  CDC::PolylineTo  
  1 つまたは複数の直線を描画します。  
   
 ```  
@@ -4560,9 +4564,9 @@ BOOL PolylineTo(
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 指定された最初のポイントに現在の位置から、直線を描画は、`lpPoints`現在のペンを使用してパラメーター。 以降の各行の関数から描画前の行の終了位置で指定された次の点に`lpPoints`です。 `PolylineTo`現在の位置を最後の行の終了位置に移動します。 この関数で描画される直線セグメントでは、閉じた図形をフォームの場合の図は表示されません。  
+ 指定された最初のポイントに現在の位置から、直線を描画は、`lpPoints`現在のペンを使用してパラメーター。 以降の各行の関数から描画前の行の終了位置で指定された次の点に`lpPoints`です。 `PolylineTo` 現在の位置を最後の行の終了位置に移動します。 この関数で描画される直線セグメントでは、閉じた図形をフォームの場合の図は表示されません。  
   
-##  <a name="polypolygon"></a>CDC::PolyPolygon  
+##  <a name="polypolygon"></a>  CDC::PolyPolygon  
  現在の多角形の塗りつぶしモードの使用がいっぱいになる 2 つ以上の多角形を作成します。  
   
 ```  
@@ -4594,7 +4598,7 @@ BOOL PolyPolygon(
   
  現在の多角形の塗りつぶしモードを取得または設定を使用して、`GetPolyFillMode`と`SetPolyFillMode`メンバー関数。  
   
-##  <a name="polypolyline"></a>CDC::PolyPolyline  
+##  <a name="polypolyline"></a>  CDC::PolyPolyline  
  接続されている直線セグメントの複数の系列を描画します。  
   
 ```  
@@ -4620,7 +4624,7 @@ BOOL PolyPolyline(
 ### <a name="remarks"></a>コメント  
  直線セグメントは、現在のペンを使用して描画されます。 セグメントが形成する図形が入力されていません。 現在の位置が使用も、この関数で更新します。  
   
-##  <a name="ptvisible"></a>CDC::PtVisible  
+##  <a name="ptvisible"></a>  CDC::PtVisible  
  指定したポイントが、デバイス コンテキストのクリッピング領域内にあるかどうかを判断します。  
   
 ```  
@@ -4644,7 +4648,7 @@ BOOL PtVisible(POINT point) const;
 ### <a name="return-value"></a>戻り値  
  クリップ領域内で指定したポイントがある場合は 0 以外。それ以外の場合 0 を返します。  
   
-##  <a name="queryabort"></a>CDC::QueryAbort  
+##  <a name="queryabort"></a>  CDC::QueryAbort  
  によってインストールされているアボート関数を呼び出し、 [SetAbortProc](#setabortproc)印刷を終了する必要があるかどうかに、印刷アプリケーションおよびクエリのメンバー関数。  
   
 ```  
@@ -4654,7 +4658,7 @@ BOOL QueryAbort() const;
 ### <a name="return-value"></a>戻り値  
  印刷を続行する場合、または中止プロシージャがない場合は 0 以外を返します。 印刷ジョブを終了する必要がある場合は 0 になります。 戻り値は、中止関数によって提供されます。  
   
-##  <a name="realizepalette"></a>:Realizepalette  
+##  <a name="realizepalette"></a>  CDC::RealizePalette  
  マップのエントリは、現在の論理パレットから、システム パレット。  
   
 ```  
@@ -4671,7 +4675,7 @@ UINT RealizePalette();
   
  さらに、Windows では、非アクティブなウィンドウ関数を使用できる色に可能な限り呼び出すことによって要求された色と一致します。 これにより、非アクティブなウィンドウに表示される色の望ましくない変更が大幅に減少します。  
   
-##  <a name="rectangle"></a>CDC::Rectangle  
+##  <a name="rectangle"></a>  CDC::Rectangle  
  現在のペンを使用して四角形を描画します。  
   
 ```  
@@ -4711,7 +4715,7 @@ BOOL Rectangle(LPCRECT lpRect);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#39](../../mfc/codesnippet/cpp/cdc-class_11.cpp)]  
   
-##  <a name="rectvisible"></a>CDC::RectVisible  
+##  <a name="rectvisible"></a>  CDC::RectVisible  
  ディスプレイ コンテキストのクリッピング領域内で指定された四角形の任意の部分があるかどうかを判断します。  
   
 ```  
@@ -4725,7 +4729,7 @@ virtual BOOL RectVisible(LPCRECT lpRect) const;
 ### <a name="return-value"></a>戻り値  
  クリップ領域内で指定された四角形の任意の部分が存在する場合は 0 以外。それ以外の場合 0 を返します。  
   
-##  <a name="releaseattribdc"></a>CDC::ReleaseAttribDC  
+##  <a name="releaseattribdc"></a>  CDC::ReleaseAttribDC  
  設定するには、このメンバー関数を呼び出す`m_hAttribDC`に**NULL**です。  
   
 ```  
@@ -4735,7 +4739,7 @@ virtual void ReleaseAttribDC();
 ### <a name="remarks"></a>コメント  
  これは発生しません、**デタッチ**を実行します。 出力デバイス コンテキストだけが接続されている、`CDC`オブジェクト、およびそののみをデタッチすることができます。  
   
-##  <a name="releaseoutputdc"></a>CDC::ReleaseOutputDC  
+##  <a name="releaseoutputdc"></a>  CDC::ReleaseOutputDC  
  設定するには、このメンバー関数を呼び出す、`m_hDC`メンバー **NULL**です。  
   
 ```  
@@ -4745,7 +4749,7 @@ virtual void ReleaseOutputDC();
 ### <a name="remarks"></a>コメント  
  出力デバイス コンテキストが関連付けられている場合、このメンバー関数を呼び出すことはできません、`CDC`オブジェクト。 使用して、**デタッチ**出力デバイス コンテキストをデタッチするメンバー関数。  
   
-##  <a name="resetdc"></a>CDC::ResetDC  
+##  <a name="resetdc"></a>  CDC::ResetDC  
  によってラップされたデバイス コンテキストを更新するには、このメンバー関数を呼び出して、`CDC`オブジェクト。  
   
 ```  
@@ -4768,7 +4772,7 @@ BOOL ResetDC(const DEVMODE* lpDevMode);
   
  このメンバー関数を呼び出す前に、デバイス コンテキストに選択されている必要がある (ストック オブジェクト) 以外のすべてのオブジェクトが選択されていることを確認する必要があります。  
   
-##  <a name="restoredc"></a>CDC::RestoreDC  
+##  <a name="restoredc"></a>  CDC::RestoreDC  
  デバイス コンテキストをによって識別される前の状態に復元`nSavedDC`です。  
   
 ```  
@@ -4783,11 +4787,11 @@ virtual BOOL RestoreDC(int nSavedDC);
  指定されたコンテキストが復元された場合は 0 以外。それ以外の場合 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- `RestoreDC`状態情報を以前の呼び出しによって作成されたスタックからポップすることで、デバイス コンテキストに戻します、`SaveDC`メンバー関数。  
+ `RestoreDC` 状態情報を以前の呼び出しによって作成されたスタックからポップすることで、デバイス コンテキストに戻します、`SaveDC`メンバー関数。  
   
  スタックには、複数のデバイス コンテキストの状態情報を含めることができます。 によってコンテキストが指定されている場合`nSavedDC`、スタックの最上部ではない`RestoreDC`によって指定されたデバイス コンテキスト間のすべての状態情報を削除`nSavedDC`とスタックの上部とします。 削除済みの情報は失われます。  
   
-##  <a name="roundrect"></a>CDC::RoundRect  
+##  <a name="roundrect"></a>  CDC::RoundRect  
  現在のペンを使用して角の丸い四角形を描画します。  
   
 ```  
@@ -4841,7 +4845,7 @@ BOOL RoundRect(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCDocView#40](../../mfc/codesnippet/cpp/cdc-class_12.cpp)]  
   
-##  <a name="savedc"></a>CDC::SaveDC  
+##  <a name="savedc"></a>  CDC::SaveDC  
  Windows で保持されているコンテキスト スタックに (クリッピング領域、選択したオブジェクトのマッピング モードなど) の状態情報をコピーして、デバイス コンテキストの現在の状態を保存します。  
   
 ```  
@@ -4854,9 +4858,9 @@ virtual int SaveDC();
 ### <a name="remarks"></a>コメント  
  保存されたデバイス コンテキストを使用して後で復元できます`RestoreDC`です。  
   
- `SaveDC`任意の数時間の任意の数のデバイス コンテキストの状態を保存するために使用します。  
+ `SaveDC` 任意の数時間の任意の数のデバイス コンテキストの状態を保存するために使用します。  
   
-##  <a name="scaleviewportext"></a>CDC::ScaleViewportExt  
+##  <a name="scaleviewportext"></a>  CDC::ScaleViewportExt  
  現在の値に対して相対的ビューポートの範囲を変更します。  
   
 ```  
@@ -4892,7 +4896,7 @@ virtual CSize ScaleViewportExt(
   
  新しいビューポートの範囲は、現在の範囲に指定された分子を乗算して特定の分母で除算して計算されます。  
   
-##  <a name="scalewindowext"></a>CDC::ScaleWindowExt  
+##  <a name="scalewindowext"></a>  CDC::ScaleWindowExt  
  現在の値を基準としたウィンドウの範囲を変更します。  
   
 ```  
@@ -4928,7 +4932,7 @@ virtual CSize ScaleWindowExt(
   
  新しいウィンドウの範囲は、現在の範囲に指定された分子を乗算と指定された分母で割ることによって計算されます。  
   
-##  <a name="scrolldc"></a>CDC::ScrollDC  
+##  <a name="scrolldc"></a>  CDC::ScrollDC  
  Bits の四角形は、水平方向および垂直方向にスクロールします。  
   
 ```  
@@ -4968,7 +4972,7 @@ BOOL ScrollDC(
   
  アプリケーションを使用する必要があります、`ScrollWindow`クラスのメンバー関数`CWnd`ウィンドウの全体のクライアント領域をスクロールする必要がある場合。 それ以外の場合、使用する`ScrollDC`です。  
   
-##  <a name="selectclippath"></a>CDC::SelectClipPath  
+##  <a name="selectclippath"></a>  CDC::SelectClipPath  
  指定されたモードを使用して、既存のクリッピング領域を含む新しい領域を組み合わせて、デバイス コンテキストのクリッピング領域として、現在のパスを選択します。  
   
 ```  
@@ -4995,7 +4999,7 @@ BOOL SelectClipPath(int nMode);
 ### <a name="remarks"></a>コメント  
  識別されたデバイス コンテキストには、閉じているパスを含める必要があります。  
   
-##  <a name="selectcliprgn"></a>CDC::SelectClipRgn  
+##  <a name="selectcliprgn"></a>  CDC::SelectClipRgn  
  デバイス コンテキストの現在のクリップ領域として指定された領域を選択します。  
   
 ```  
@@ -5046,7 +5050,7 @@ int SelectClipRgn(
   
  GDI でグラフィック オブジェクトのスケーリングを行う必要のあるアプリケーションを使用できます、 **GETSCALINGFACTOR**スケール ファクターを決めるため。 このスケール ファクターでは、クリップに影響します。 グラフィックスをクリップ領域が使用する場合、GDI は、座標をスケール ファクターで除算します。 テキストをクリップ領域が使用する場合は、GDI にスケールの調整はありません。 スケール ファクターに 1 と 2 で除算する座標スケール ファクターは 2 と 4 で除算する座標などなど。  
   
-##  <a name="selectobject"></a>Cdc::selectobject  
+##  <a name="selectobject"></a>  CDC::SelectObject  
  デバイス コンテキストにオブジェクトを選択します。  
   
 ```  
@@ -5097,7 +5101,7 @@ CGdiObject* SelectObject(CGdiObject* pObject);
   
  Windows 3.1 用と、後で、`SelectObject`かメタファイルで使用されているかどうか、関数が同じ値を返します。 以前のバージョンの Windows で `SelectObject`メタファイルに使用されたときに 0 以外の値の場合は成功と失敗の場合は 0 が返されます。  
   
-##  <a name="selectpalette"></a>CDC::SelectPalette  
+##  <a name="selectpalette"></a>  CDC::SelectPalette  
  指定されている論理パレットを選択`pPalette`デバイス コンテキストのパレットを選択したオブジェクトとして。  
   
 ```  
@@ -5121,7 +5125,7 @@ CPalette* SelectPalette(
   
  アプリケーションは、1 つ以上のデバイス コンテキストに論理パレットを選択できます。 ただし、論理パレットへの変更が選択されているすべてのデバイス コンテキストに影響されます。 アプリケーションは、1 つ以上のデバイス コンテキストにパレットを選択した場合デバイス コンテキストはすべてに属する同じ物理デバイス。  
   
-##  <a name="selectstockobject"></a>CDC::SelectStockObject  
+##  <a name="selectstockobject"></a>  CDC::SelectStockObject  
  選択、 [CGdiObject](../../mfc/reference/cgdiobject-class.md)定義済みのストック ペン、ブラシ、フォントのいずれかに対応するオブジェクト。  
   
 ```  
@@ -5160,7 +5164,7 @@ virtual CGdiObject* SelectStockObject(int nIndex);
   
 - **OEM_FIXED_FONT** OEM に依存するフォントを固定します。  
   
-- **SYSTEM_FONT**システム フォントです。 既定では、Windows は、メニューのダイアログ ボックス コントロールおよびその他のテキストを描画するのに、システム フォントを使用します。 ただし、ダイアログ、および windows で使用されるフォントを取得する SYSTEM_FONT に依存しないように、最適なです。 代わりに、使用、`SystemParametersInfo`現在のフォントを取得する SPI_GETNONCLIENTMETRICS パラメーターを持つ関数です。 `SystemParametersInfo`現在のテーマを考慮し、キャプション、メニューのおよびメッセージのダイアログのフォントの情報を提供します。  
+- **SYSTEM_FONT**システム フォントです。 既定では、Windows は、メニューのダイアログ ボックス コントロールおよびその他のテキストを描画するのに、システム フォントを使用します。 ただし、ダイアログ、および windows で使用されるフォントを取得する SYSTEM_FONT に依存しないように、最適なです。 代わりに、使用、`SystemParametersInfo`現在のフォントを取得する SPI_GETNONCLIENTMETRICS パラメーターを持つ関数です。 `SystemParametersInfo` 現在のテーマを考慮し、キャプション、メニューのおよびメッセージのダイアログのフォントの情報を提供します。  
   
 - **SYSTEM_FIXED_FONT**バージョン 3.0 より前の Windows で使用するシステムの固定幅フォントです。 このオブジェクトは、Windows の旧バージョンとの互換性のために使用できます。  
   
@@ -5169,7 +5173,7 @@ virtual CGdiObject* SelectStockObject(int nIndex);
 ### <a name="return-value"></a>戻り値  
  ポインター、`CGdiObject`関数が成功した場合、置き換えられたオブジェクト。 示される実際のオブジェクトが、 [CPen](../../mfc/reference/cpen-class.md)、 [CBrush](../../mfc/reference/cbrush-class.md)、または[CFont](../../mfc/reference/cfont-class.md)オブジェクト。 戻り値は、呼び出しが失敗した場合は、 **NULL**です。  
   
-##  <a name="setabortproc"></a>Cdc::setabortproc  
+##  <a name="setabortproc"></a>  CDC::SetAbortProc  
  印刷ジョブの中止のプロシージャをインストールします。  
   
 ```  
@@ -5178,7 +5182,7 @@ int SetAbortProc(BOOL (CALLBACK* lpfn)(HDC, int));
   
 ### <a name="parameters"></a>パラメーター  
  `lpfn`  
- 中止手順として、インストールを中止関数へのポインター。 コールバック関数の詳細についてを参照してください。 [cdc::setabortproc 用コールバック関数](../../mfc/reference/callback-function-for-cdc-setabortproc.md)です。  
+ 中止手順として、インストールを中止関数へのポインター。 コールバック関数の詳細についてを参照してください。 [cdc::setabortproc 用コールバック関数](callback-functions-used-by-mfc.md#setabortproc)です。  
   
 ### <a name="return-value"></a>戻り値  
  結果を示す、`SetAbortProc`関数。 次の値の一部は、他のユーザーよりも該当する可能性がすべて可能です。  
@@ -5206,7 +5210,7 @@ int SetAbortProc(BOOL (CALLBACK* lpfn)(HDC, int));
   
  また、すべてのコールバック関数がコールバックの境界を越えて例外をスローすることはできませんので、Windows に返す前に Microsoft Foundation 例外をトラップする必要がありますに注意してください。 例外の詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
   
-##  <a name="setarcdirection"></a>CDC::SetArcDirection  
+##  <a name="setarcdirection"></a>  CDC::SetArcDirection  
  円弧および四角形の機能に使用する描画方向を設定します。  
   
 ```  
@@ -5231,9 +5235,9 @@ int SetArcDirection(int nArcDirection);
 |---------|---------|  
 |`ArcTo`|**四角形**|  
 |`Chord`|`RoundRect`|  
-|**楕円**||  
+|**Ellipse**||  
   
-##  <a name="setattribdc"></a>CDC::SetAttribDC  
+##  <a name="setattribdc"></a>  CDC::SetAttribDC  
  属性デバイス コンテキストを設定するには、この関数を呼び出す`m_hAttribDC`です。  
   
 ```  
@@ -5247,7 +5251,7 @@ virtual void SetAttribDC(HDC hDC);
 ### <a name="remarks"></a>コメント  
  このメンバー関数に、デバイス コンテキストにアタッチできません、`CDC`オブジェクト。 出力デバイス コンテキストだけが接続されている、`CDC`オブジェクト。  
   
-##  <a name="setbkcolor"></a>CDC::SetBkColor  
+##  <a name="setbkcolor"></a>  CDC::SetBkColor  
  指定された色を現在の背景色を設定します。  
   
 ```  
@@ -5266,7 +5270,7 @@ virtual COLORREF SetBkColor(COLORREF crColor);
   
  デバイスは、指定された色を表示できません、システムは最も近い物理色に背景色を設定します。  
   
-##  <a name="setbkmode"></a>CDC::SetBkMode  
+##  <a name="setbkmode"></a>  CDC::SetBkMode  
  バック グラウンド モードを設定します。  
   
 ```  
@@ -5290,7 +5294,7 @@ int SetBkMode(int nBkMode);
 ### <a name="example"></a>例  
   例を参照して[CWnd::OnCtlColor](../../mfc/reference/cwnd-class.md#onctlcolor)です。  
   
-##  <a name="setboundsrect"></a>CDC::SetBoundsRect  
+##  <a name="setboundsrect"></a>  CDC::SetBoundsRect  
  指定したデバイス コンテキストの外接する四角情報の蓄積を制御します。  
   
 ```  
@@ -5324,7 +5328,7 @@ UINT SetBoundsRect(
 ### <a name="remarks"></a>コメント  
  Windows では、すべての描画操作の外接する四角形を維持できます。 この四角形のクエリを実行し、アプリケーションでリセットできます。 描画の境界は、ビットマップ キャッシュが無効になるに役立ちます。  
   
-##  <a name="setbrushorg"></a>CDC::SetBrushOrg  
+##  <a name="setbrushorg"></a>  CDC::SetBrushOrg  
  デバイス コンテキストに、アプリケーションを選択する次のブラシを GDI が割り当てる元を指定します。  
   
 ```  
@@ -5353,7 +5357,7 @@ CPoint SetBrushOrg(POINT point);
   
  使用しないでください`SetBrushOrg`在庫と`CBrush`オブジェクト。  
   
-##  <a name="setcoloradjustment"></a>CDC::SetColorAdjustment  
+##  <a name="setcoloradjustment"></a>  CDC::SetColorAdjustment  
  指定した値を使用して、デバイス コンテキストの色の調整値を設定します。  
   
 ```  
@@ -5370,7 +5374,7 @@ BOOL SetColorAdjustment(const COLORADJUSTMENT* lpColorAdjust);
 ### <a name="remarks"></a>コメント  
  カラー調整値への呼び出しに元のビットマップの入力色の調整を使用して、`CDC::StretchBlt`メンバー関数は、ときに**ハーフトーン**モードを設定します。  
   
-##  <a name="setdcbrushcolor"></a>CDC::SetDCBrushColor  
+##  <a name="setdcbrushcolor"></a>  CDC::SetDCBrushColor  
  現在のデバイス コンテキスト (DC) ブラシの色を指定した色の値に設定します。  
   
 ```  
@@ -5389,7 +5393,7 @@ COLORREF SetDCBrushColor(COLORREF crColor);
 ### <a name="remarks"></a>コメント  
  このメソッドは、関数の機能をエミュレート[SetDCBrushColor](http://msdn.microsoft.com/library/windows/desktop/dd162969)Windows SDK で説明されている。  
   
-##  <a name="setdcpencolor"></a>CDC::SetDCPenColor  
+##  <a name="setdcpencolor"></a>  CDC::SetDCPenColor  
  現在のデバイス コンテキスト (DC) のペンの色を指定した色の値に設定します。  
   
 ```  
@@ -5406,7 +5410,7 @@ COLORREF SetDCPenColor(COLORREF crColor);
 ### <a name="remarks"></a>コメント  
  このメンバー関数で、Win32 関数[SetDCPenColor](http://msdn.microsoft.com/library/windows/desktop/dd162970)Windows SDK で説明されている。  
   
-##  <a name="setgraphicsmode"></a>CDC::SetGraphicsMode  
+##  <a name="setgraphicsmode"></a>  CDC::SetGraphicsMode  
  指定したデバイス コンテキストのグラフィック モードを設定します。  
   
 ```  
@@ -5425,7 +5429,7 @@ int SetGraphicsMode(int iMode);
 ### <a name="remarks"></a>コメント  
  このメソッド[SetGraphicsMode](http://msdn.microsoft.com/library/windows/desktop/dd162977)です。  
   
-##  <a name="setlayout"></a>CDC::SetLayout  
+##  <a name="setlayout"></a>  CDC::SetLayout  
  右から左、アラビア語やヘブライ語などのカルチャの標準のレイアウトにテキストとグラフィックス デバイス コンテキストのレイアウトを変更するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -5436,9 +5440,9 @@ DWORD SetLayout(DWORD dwLayout);
  `dwLayout`  
  デバイス コンテキストのレイアウトおよびビットマップは、フラグを制御します。 次の値の組み合わせとなります。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-------------|  
-|まず|呼び出しのために、リフレクションを無効に[cdc::bitblt](#bitblt)と[CDC::StretchBlt](#stretchblt)です。|  
+|LAYOUT_BITMAPORIENTATIONPRESERVED|呼び出しのために、リフレクションを無効に[cdc::bitblt](#bitblt)と[CDC::StretchBlt](#stretchblt)です。|  
 |LAYOUT_RTL|右から左にある既定の水平レイアウトを設定します。|  
 |LAYOUT_LTR|左右からに既定のレイアウトを設定します。|  
   
@@ -5456,7 +5460,7 @@ DWORD SetLayout(DWORD dwLayout);
   
  レイアウトを変更すると、 **LAYOUT_RTL**フラグ、通常 右を指定するフラグを設定または左が取り消されます。 混乱を避けるためには、標準のフラグの代替名を定義することがあります。 推奨される代替フラグ名の一覧は、次を参照してください。 [SetLayout](http://msdn.microsoft.com/library/windows/desktop/dd162979) Windows SDK に含まれています。  
   
-##  <a name="setmapmode"></a>CDC::SetMapMode  
+##  <a name="setmapmode"></a>  CDC::SetMapMode  
  マップ モードを設定します。  
   
 ```  
@@ -5467,21 +5471,21 @@ virtual int SetMapMode(int nMapMode);
  `nMapMode`  
  新しいマップ モードを指定します。 次の値のいずれかを指定できます。  
   
-- `MM_ANISOTROPIC`論理ユニットは、任意にスケーリングされた軸を持つ任意の単位に変換されます。 マップ モードに設定`MM_ANISOTROPIC`現在のウィンドウまたはビューポートの設定は変更されません。 単位を変更するには、印刷の向き、およびスケーリングを呼び出す、[両](#setwindowext)と[される](#setviewportext)メンバー関数。  
+- `MM_ANISOTROPIC` 論理ユニットは、任意にスケーリングされた軸を持つ任意の単位に変換されます。 マップ モードに設定`MM_ANISOTROPIC`現在のウィンドウまたはビューポートの設定は変更されません。 単位を変更するには、印刷の向き、およびスケーリングを呼び出す、[両](#setwindowext)と[される](#setviewportext)メンバー関数。  
   
-- `MM_HIENGLISH`各論理ユニットは、0.001 インチに変換されます。 正の x が右側です。正の y です。  
+- `MM_HIENGLISH` 各論理ユニットは、0.001 インチに変換されます。 正の x が右側です。正の y です。  
   
-- `MM_HIMETRIC`それぞれの論理単位は 0.01 ミリメートルに変換されます。 正の x が右側です。正の y です。  
+- `MM_HIMETRIC` それぞれの論理単位は 0.01 ミリメートルに変換されます。 正の x が右側です。正の y です。  
   
-- `MM_ISOTROPIC`論理ユニットが均等にスケーリングされた軸上で任意の単位に変換されます。つまり、x 軸方向の 1 単位は、y 軸方向の 1 単位です。 使用して、`SetWindowExt`と`SetViewportExt`メンバー関数は、目的の単位と軸の方向を指定します。 GDI 必要に応じて調整は、ことを確認する、x と y のユニットが同じサイズを保持します。  
+- `MM_ISOTROPIC` 論理ユニットが均等にスケーリングされた軸上で任意の単位に変換されます。つまり、x 軸方向の 1 単位は、y 軸方向の 1 単位です。 使用して、`SetWindowExt`と`SetViewportExt`メンバー関数は、目的の単位と軸の方向を指定します。 GDI 必要に応じて調整は、ことを確認する、x と y のユニットが同じサイズを保持します。  
   
-- `MM_LOENGLISH`それぞれの論理単位は 0.01 インチに変換されます。 正の x が右側です。正の y です。  
+- `MM_LOENGLISH` それぞれの論理単位は 0.01 インチに変換されます。 正の x が右側です。正の y です。  
   
-- `MM_LOMETRIC`各論理ユニットは、0.1 ミリメートルに変換されます。 正の x が右側です。正の y です。  
+- `MM_LOMETRIC` 各論理ユニットは、0.1 ミリメートルに変換されます。 正の x が右側です。正の y です。  
   
-- `MM_TEXT`各論理ユニットは、1 台のデバイス ピクセルに変換されます。 正の x が右側です。正の y がダウンしています。  
+- `MM_TEXT` 各論理ユニットは、1 台のデバイス ピクセルに変換されます。 正の x が右側です。正の y がダウンしています。  
   
-- `MM_TWIPS`各論理ユニットは、1/20 ポイントに変換されます。 (ポイントは、1/72 インチであるため、twip は 1/1440 インチ) です。正の x が右側です。正の y です。  
+- `MM_TWIPS` 各論理ユニットは、1/20 ポイントに変換されます。 (ポイントは、1/72 インチであるため、twip は 1/1440 インチ) です。正の x が右側です。正の y です。  
   
 ### <a name="return-value"></a>戻り値  
  以前のマッピング モード。  
@@ -5497,7 +5501,7 @@ virtual int SetMapMode(int nMapMode);
 ### <a name="example"></a>例  
   例を参照して[付け](../../mfc/reference/cview-class.md#onpreparedc)です。  
   
-##  <a name="setmapperflags"></a>CDC::SetMapperFlags  
+##  <a name="setmapperflags"></a>  CDC::SetMapperFlags  
  フォント マッパーの論理フォントを物理フォントに変換するときに使用する方法を変更します。  
   
 ```  
@@ -5518,7 +5522,7 @@ DWORD SetMapperFlags(DWORD dwFlag);
   
  物理的なフォントの論理フォントの仕様に一致する縦横比がなければ、GDI が新しい縦横比を選択し、この新しい縦横比に一致するフォントを選択します。  
   
-##  <a name="setmiterlimit"></a>CDC::SetMiterLimit  
+##  <a name="setmiterlimit"></a>  CDC::SetMiterLimit  
  デバイス コンテキストのマイター結合の長さの制限を設定します。  
   
 ```  
@@ -5535,7 +5539,7 @@ BOOL SetMiterLimit(float fMiterLimit);
 ### <a name="remarks"></a>コメント  
  マイター長が外部結合の線の壁の積集合を結合の内側の線の壁の積集合からの距離として定義されます。 マイターは、線の幅にマイター長の最大許容比率です。 マイターが既定値は 10.0 です。  
   
-##  <a name="setoutputdc"></a>CDC::SetOutputDC  
+##  <a name="setoutputdc"></a>  CDC::SetOutputDC  
  出力デバイス コンテキストを設定するには、このメンバー関数を呼び出す`m_hDC`です。  
   
 ```  
@@ -5549,7 +5553,7 @@ virtual void SetOutputDC(HDC hDC);
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、デバイス コンテキストにアタッチされていない場合にのみ呼び出すことができます、`CDC`オブジェクト。 このメンバー関数は、設定`m_hDC`デバイス コンテキストをアタッチできませんが、`CDC`オブジェクト。  
   
-##  <a name="setpixel"></a>CDC::SetPixel  
+##  <a name="setpixel"></a>  CDC::SetPixel  
  指定された色の最も近いものを指定した位置にあるピクセル設定`crColor`です。  
   
 ```  
@@ -5585,7 +5589,7 @@ COLORREF SetPixel(
   
  一部のデバイスでは、`SetPixel` 関数がサポートされていません。 デバイスをサポートしているかどうかを判断する`SetPixel`、呼び出し、`GetDeviceCaps`メンバー関数が、 **RASTERCAPS**インデックスを作成しの戻り値を確認して、 **RC_BITBLT**フラグ。  
   
-##  <a name="setpixelv"></a>CDC::SetPixelV  
+##  <a name="setpixelv"></a>  CDC::SetPixelV  
  指定された色の最も近いものを指定した座標にあるピクセルに設定します。  
   
 ```  
@@ -5617,9 +5621,9 @@ BOOL SetPixelV(
  正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- クリップ領域と、デバイス画面の表示部分の両方で、ポイントがあります。 すべてのデバイスは、メンバー関数をサポートします。 詳細については、次を参照してください。、 **RC_BITBLT**で機能、`CDC::GetDeviceCaps`メンバー関数。 `SetPixelV`も高速`SetPixel`のためを実際に描画するポイントの色の値を返す必要はありません。  
+ クリップ領域と、デバイス画面の表示部分の両方で、ポイントがあります。 すべてのデバイスは、メンバー関数をサポートします。 詳細については、次を参照してください。、 **RC_BITBLT**で機能、`CDC::GetDeviceCaps`メンバー関数。 `SetPixelV` も高速`SetPixel`のためを実際に描画するポイントの色の値を返す必要はありません。  
   
-##  <a name="setpolyfillmode"></a>CDC::SetPolyFillMode  
+##  <a name="setpolyfillmode"></a>  CDC::SetPolyFillMode  
  多角形の塗りつぶしモードを設定します。  
   
 ```  
@@ -5638,7 +5642,7 @@ int SetPolyFillMode(int nPolyFillMode);
   
  多角形の塗りつぶしモードのときは**ワインディング**システムは、図が描いた領域を入力するかどうかを決定する方向を使用します。 多角形の場合は、各直線セグメントは、時計回りまたは反時計回りに描画されます。 囲まれた領域から、図の外側に描画虚数部の行が時計回りに直線セグメントを通過するたびに、カウントが増加します。 行は、反時計回りの線分を通過、ときに、カウントがデクリメントします。 行が、図の外側に達すると、カウントが 0 でない場合、領域を塗りつぶします。  
   
-##  <a name="setrop2"></a>CDC::SetROP2  
+##  <a name="setrop2"></a>  CDC::SetROP2  
  現在の描画モードを設定します。  
   
 ```  
@@ -5691,7 +5695,7 @@ int SetROP2(int nDrawMode);
   
  描画モードはラスター デバイスのみです。ベクターのデバイスには適用されません。 描画モードは、2 つの変数、AND、OR、および XOR (排他的 OR)、バイナリ演算子と単項演算を使用していないすべてのブール組み合わせを表すバイナリ ラスター オペレーション コードです。  
   
-##  <a name="setstretchbltmode"></a>CDC::SetStretchBltMode  
+##  <a name="setstretchbltmode"></a>  CDC::SetStretchBltMode  
  ビットマップの伸縮モードを設定、`StretchBlt`メンバー関数。  
   
 ```  
@@ -5702,16 +5706,16 @@ int SetStretchBltMode(int nStretchMode);
  *nStretchMode*  
  ストレッチ モードを指定します。 次の値のいずれかを指定できます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**BLACKONWHITE**|排除し、既存のピクセルの色の値を使用して、論理 AND 演算を実行します。 モノクロ ビットマップは、このモードは、白いピクセルを犠牲にしてピクセルを黒を保持します。|  
 |**COLORONCOLOR**|ピクセルを削除します。 このモードでは、情報を保存しようとしないでピクセルの削除されたすべての行を削除します。|  
-|**ハーフトーン**|元の四角形からピクセルを先の四角形のピクセルのブロックにマップします。 対象ブロックのピクセルの平均的な色は、元のピクセルの色を概算します。|  
+|**HALFTONE**|元の四角形からピクセルを先の四角形のピクセルのブロックにマップします。 対象ブロックのピクセルの平均的な色は、元のピクセルの色を概算します。|  
 ||設定した後、**ハーフトーン**ストレッチ モード、アプリケーションは、Win32 関数を呼び出す必要があります[SetBrushOrgEx](http://msdn.microsoft.com/library/windows/desktop/dd162967)ブラシの原点を設定します。 これを行う場合は、ブラシのずれが発生します。|  
 |**STRETCH_ANDSCANS**|**Windows 95/98**: と同じ**BLACKONWHITE**|  
 |**STRETCH_DELETESCANS**|**Windows 95/98**: と同じ**COLORONCOLOR**|  
 |**STRETCH_HALFTONE**|**Windows 95/98**: と同じ**ハーフトーン**です。|  
-|**終了しました。**|**Windows 95/98**: と同じ**WHITEONBLACK**|  
+|**STRETCH_ORSCANS**|**Windows 95/98**: と同じ**WHITEONBLACK**|  
 |**WHITEONBLACK**|排除し、既存のピクセルの色の値を使用して、論理 OR 演算を実行します。 ビットマップがモノクロ ビットマップの場合は、このモードには、黒のピクセルを犠牲にして白いピクセルが保持されます。|  
   
 ### <a name="return-value"></a>戻り値  
@@ -5726,7 +5730,7 @@ int SetStretchBltMode(int nStretchMode);
   
  ほかの伸縮モードも、デバイス ドライバーの機能によって使用できる場合があります。  
   
-##  <a name="settextalign"></a>CDC::SetTextAlign  
+##  <a name="settextalign"></a>  CDC::SetTextAlign  
  テキスト配置フラグを設定します。  
   
 ```  
@@ -5763,7 +5767,7 @@ UINT SetTextAlign(UINT nFlags);
 ### <a name="remarks"></a>コメント  
  `TextOut`と`ExtTextOut`メンバー関数は、表示またはデバイス上のテキストの文字列の配置時にこれらのフラグを使用します。 フラグは、特定の時点と、テキストを外接する四角形のリレーションシップを指定します。 このポイントの座標がパラメーターとして渡される、`TextOut`メンバー関数。 テキストを外接する四角形は、テキスト文字列の文字が隣接するセルによって形成されます。  
   
-##  <a name="settextcharacterextra"></a>CDC::SetTextCharacterExtra  
+##  <a name="settextcharacterextra"></a>  CDC::SetTextCharacterExtra  
  文字間隔の量を設定します。  
   
 ```  
@@ -5780,7 +5784,7 @@ int SetTextCharacterExtra(int nCharExtra);
 ### <a name="remarks"></a>コメント  
  GDI は、この間隔をデバイス コンテキストに、行のテキストを書き込むときに、改行文字を含む、各文字を追加します。 文字間隔の既定値は 0 です。  
   
-##  <a name="settextcolor"></a>CDC::SetTextColor  
+##  <a name="settextcolor"></a>  CDC::SetTextColor  
  テキストの色を指定した色に設定します。  
   
 ```  
@@ -5802,7 +5806,7 @@ virtual COLORREF SetTextColor(COLORREF crColor);
 ### <a name="example"></a>例  
   例を参照して[CWnd::OnCtlColor](../../mfc/reference/cwnd-class.md#onctlcolor)です。  
   
-##  <a name="settextjustification"></a>CDC::SetTextJustification  
+##  <a name="settextjustification"></a>  CDC::SetTextJustification  
  文字列の区切り文字にスペースを追加します。  
   
 ```  
@@ -5826,7 +5830,7 @@ int SetTextJustification(
   
  後に、`SetTextJustification`メンバー関数が呼び出されると、テキスト出力関数の呼び出し (など`TextOut`) 改行文字の指定した数の間で均等に指定された余分なスペースを配布します。 改行文字は、空白文字 (ASCII 32) では通常が、その他の文字としてフォントによって定義されている可能性があります。  
   
- このメンバー関数は`GetTextExtent`は通常使用`SetTextJustification`です。 `GetTextExtent`配置する前に指定された行の幅を計算します。 アプリケーションがで指定する領域の量を判断できます、`nBreakExtra`パラメーターによって返される値を減算して`GetTextExtent`配置後に続く文字列の幅から。  
+ このメンバー関数は`GetTextExtent`は通常使用`SetTextJustification`です。 `GetTextExtent` 配置する前に指定された行の幅を計算します。 アプリケーションがで指定する領域の量を判断できます、`nBreakExtra`パラメーターによって返される値を減算して`GetTextExtent`配置後に続く文字列の幅から。  
   
  `SetTextJustification`フォントの種類で複数の実行を含む行を整列する関数を使用できます。 この場合、行を段階的な部分に作成を整列し、それぞれの実行を個別に記述する必要があります。  
   
@@ -5834,7 +5838,7 @@ int SetTextJustification(
   
  各行が配置された後、次の行に持ち込まれるようにするこのエラーの用語をクリアする必要があります。 呼び出してという用語をクリアできます`SetTextJustification`で`nBreakExtra`を 0 に設定します。  
   
-##  <a name="setviewportext"></a>CDC::SetViewportExt  
+##  <a name="setviewportext"></a>  CDC::SetViewportExt  
  デバイス コンテキストのビューポートの x 範囲と y 範囲を設定します。  
   
 ```  
@@ -5873,7 +5877,7 @@ CSize SetViewportExt(SIZE size);
 ### <a name="example"></a>例  
   例を参照して[付け](../../mfc/reference/cview-class.md#onpreparedc)です。  
   
-##  <a name="setviewportorg"></a>CDC::SetViewportOrg  
+##  <a name="setviewportorg"></a>  CDC::SetViewportOrg  
  デバイス コンテキストのビューポートの原点を設定します。  
   
 ```  
@@ -5905,7 +5909,7 @@ CPoint SetViewportOrg(POINT point);
 ### <a name="example"></a>例  
   例を参照して[付け](../../mfc/reference/cview-class.md#onpreparedc)です。  
   
-##  <a name="setwindowext"></a>CDC::SetWindowExt  
+##  <a name="setwindowext"></a>  CDC::SetWindowExt  
  デバイス コンテキストに関連付けられているウィンドウの x 範囲と y 範囲を設定します。  
   
 ```  
@@ -5951,7 +5955,7 @@ CSize SetWindowExt(SIZE size);
 ### <a name="example"></a>例  
   例を参照して[付け](../../mfc/reference/cview-class.md#onpreparedc)です。  
   
-##  <a name="setwindoworg"></a>CDC::SetWindowOrg  
+##  <a name="setwindoworg"></a>  CDC::SetWindowOrg  
  デバイス コンテキストのウィンドウの原点を設定します。  
   
 ```  
@@ -5980,7 +5984,7 @@ CPoint SetWindowOrg(POINT point);
   
  ウィンドウの原点が GDI、ビューポートの原点をで指定されたデバイス座標システムでのマップ元となる論理座標システムでの位置をマーク、**変換する**関数。 GDI は、ビューポートの原点をウィンドウの原点をマップするために必要なプロセスと同じで、他のすべてのポイントをマップします。 たとえば、ウィンドウの原点の位置を円のすべてのポイントは、ビューポートの原点の位置を円になります。 同様に、ウィンドウの原点を通過する行のすべてのポイントは、ビューポートの原点を通過するための行になります。  
   
-##  <a name="setworldtransform"></a>CDC::SetWorldTransform  
+##  <a name="setworldtransform"></a>  CDC::SetWorldTransform  
  ワールド空間と、指定したデバイス コンテキストのページの領域の 2 次元の線形変換を設定します。 この変換は、スケール、回転、傾斜、またはグラフィックス出力を使用できます。  
   
 ```  
@@ -6001,7 +6005,7 @@ BOOL SetWorldTransform(const XFORM& rXform);
 ### <a name="remarks"></a>コメント  
  このメソッド[SetWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd145104)です。  
   
-##  <a name="startdoc"></a>CDC::StartDoc  
+##  <a name="startdoc"></a>  CDC::StartDoc  
  新しい印刷ジョブが開始されるデバイス ドライバーに通知し、後続のすべての`StartPage`と`EndPage`まで同じジョブでの呼び出しをスプールする必要があります、`EndDoc`の呼び出しが行わします。  
   
 ```  
@@ -6026,14 +6030,14 @@ int StartDoc(LPCTSTR lpszDocName);
   
  Windows バージョン 3.1 以降では、この関数が置き換えられます、 **STARTDOC**プリンター エスケープします。 この関数を使用して他の印刷ジョブに複数のページを含むドキュメントが混在しないことを確認します。  
   
- `StartDoc`メタファイルの内部は使用できません。  
+ `StartDoc` メタファイルの内部は使用できません。  
   
 ### <a name="example"></a>例  
  次のコード片の既定のプリンターを取得、印刷ジョブを開き、および「こんにちは, World!」の 1 ページにスプール 。 このコードで印刷されるテキストは、プリンターの論理ユニットにスケーリングされていない、ため出力テキスト可能性がありますに文字を小さくしてこのような結果が読み取ることができないことです。 など、関数のスケーリング CDC `SetMapMode`、 `SetViewportOrg`、および`SetWindowExt`、スケーリングを修正するために使用できます。  
   
  [!code-cpp[NVC_MFCDocView#41](../../mfc/codesnippet/cpp/cdc-class_13.cpp)]  
   
-##  <a name="startpage"></a>CDC::StartPage  
+##  <a name="startpage"></a>  CDC::StartPage  
  データを受信するプリンタ ドライバを準備するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -6044,7 +6048,7 @@ int StartPage();
  大きいか等しい場合は、関数が成功すると、0 または負の値を使用している場合、エラーが発生しました。  
   
 ### <a name="remarks"></a>コメント  
- `StartPage`置き換えるソフトウェア更新プログラム、 **NEWFRAME**と**BANDINFO**をエスケープします。  
+ `StartPage` 置き換えるソフトウェア更新プログラム、 **NEWFRAME**と**BANDINFO**をエスケープします。  
   
  印刷の呼び出しのシーケンスの詳細については、次を参照してください。、 [StartDoc](#startdoc)メンバー関数。  
   
@@ -6053,7 +6057,7 @@ int StartPage();
 ### <a name="example"></a>例  
   例を参照して[CDC::StartDoc](#startdoc)です。  
   
-##  <a name="stretchblt"></a>CDC::StretchBlt  
+##  <a name="stretchblt"></a>  CDC::StretchBlt  
  コピー元の四角形から、必要に応じてコピー先の四角形に合うようにビットマップを拡大または縮小してコピーします。  
   
 ```  
@@ -6149,7 +6153,7 @@ BOOL StretchBlt(
   
  一部のデバイスでは、`StretchBlt` 関数がサポートされていません。 デバイスをサポートしているかどうかを判断する`StretchBlt`、呼び出し、`GetDeviceCaps`メンバー関数が、 **RASTERCAPS**インデックスを作成しの戻り値を確認して、 **RC_STRETCHBLT**フラグ。  
   
-##  <a name="strokeandfillpath"></a>CDC::StrokeAndFillPath  
+##  <a name="strokeandfillpath"></a>  CDC::StrokeAndFillPath  
  パス内の任意の開いている図形を閉じ、現在のペンを使用して、パスの外枠を描画および現在のブラシを使用して、その内部を塗りつぶします。  
   
 ```  
@@ -6162,7 +6166,7 @@ BOOL StrokeAndFillPath();
 ### <a name="remarks"></a>コメント  
  デバイス コンテキストでは、閉じているパスを含める必要があります。 `StrokeAndFillPath`メンバー関数は、パス内のすべての開いている図形を閉じると同じ効果があり、ペンの幅が線の描画と塗りつぶされた領域がいなくても、ストロークの領域に重ならないする点を除いて、個別にパスを入力します。  
   
-##  <a name="strokepath"></a>CDC::StrokePath  
+##  <a name="strokepath"></a>  CDC::StrokePath  
  現在のペンを使用して、指定されたパスを表示します。  
   
 ```  
@@ -6175,7 +6179,7 @@ BOOL StrokePath();
 ### <a name="remarks"></a>コメント  
  デバイス コンテキストでは、閉じているパスを含める必要があります。  
   
-##  <a name="tabbedtextout"></a>CDC::TabbedTextOut  
+##  <a name="tabbedtextout"></a>  CDC::TabbedTextOut  
  タブ ストップの位置の配列で指定した値にタブを展開する、指定した位置に文字の文字列に書き込むには、このメンバー関数を呼び出します。  
   
 ```  
@@ -6233,7 +6237,7 @@ CSize TabbedTextOut(
   
  既定では、関数は現在位置を使用することも、更新することもありません。 アプリケーションは、関数を呼び出すときに、現在の位置を更新する必要があるを場合、アプリケーションが呼び出すことができます、[呼び出された](#settextalign)メンバー関数が`nFlags`'éý'**ため**です。 このフラグを設定すると、Windows は無視されます、 *x*と*y*後続の呼び出しでパラメーター `TabbedTextOut`、代わりに、現在の位置を使用します。  
   
-##  <a name="textout"></a>CDC::TextOut  
+##  <a name="textout"></a>  CDC::TextOut  
  現在選択されているフォントを使用して、文字列を指定位置から書き込みます。  
   
 ```  
@@ -6277,7 +6281,7 @@ BOOL TextOut(
 ### <a name="example"></a>例  
   例を参照して[cdc::beginpath](#beginpath)です。  
   
-##  <a name="transparentblt"></a>CDC::TransparentBlt  
+##  <a name="transparentblt"></a>  CDC::TransparentBlt  
  コピー先デバイス コンテキストに指定されたソース デバイス コンテキストからピクセルの四角形に対応する色データのビット ブロックを転送するには、このメンバー関数を呼び出します。  
   
 ```  
@@ -6329,11 +6333,11 @@ BOOL TransparentBlt(
  **TRUE**成功した場合は**FALSE**です。  
   
 ### <a name="remarks"></a>コメント  
- `TransparentBlt`透過性では、します。は、RGB 色が示される`clrTransparent`転送で、透過的なレンダリングします。  
+ `TransparentBlt` 透過性では、します。は、RGB 色が示される`clrTransparent`転送で、透過的なレンダリングします。  
   
  詳細については、次を参照してください。 [TransparentBlt](http://msdn.microsoft.com/library/windows/desktop/dd145141) Windows SDK に含まれています。  
   
-##  <a name="updatecolors"></a>CDC::UpdateColors  
+##  <a name="updatecolors"></a>  CDC::UpdateColors  
  クライアント領域のピクセルごとに、システム パレットで現在を照合することによって、デバイス コンテキストのクライアント領域を色分けする更新プログラム。  
   
 ```  
@@ -6347,7 +6351,7 @@ void UpdateColors();
   
  `UpdateColors`メンバー関数は、通常、更新、クライアント区分、領域を再描画よりも高速です。 ただし、関数は、システム パレットを変更する前に、各ピクセルの色に基づいた色の変換を実行するため、この関数に対する各呼び出しは、色の正確さが失われる結果します。  
   
-##  <a name="widenpath"></a>CDC::WidenPath  
+##  <a name="widenpath"></a>  CDC::WidenPath  
  パスが、デバイス コンテキストに現在選択されているペンを使用して描画された場合に描画される領域として、現在のパスを再定義します。  
   
 ```  
@@ -6360,7 +6364,7 @@ BOOL WidenPath();
 ### <a name="remarks"></a>コメント  
  この関数は現在のペンが幾何学的ペンの 2 つ目のバージョンで作成された場合にのみ成功`CreatePen`メンバー関数は、ペンが最初のバージョンで作成された場合または`CreatePen`デバイス単位、1 以上で、幅をします。 デバイス コンテキストでは、閉じているパスを含める必要があります。 任意のベジエ曲線のパスでは、直線のおおよその拡張の曲線のシーケンスに変換されます。 そのためのベジエ曲線が残っていない後のパスで`WidenPath`と呼びます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CPaintDC クラス](../../mfc/reference/cpaintdc-class.md)   

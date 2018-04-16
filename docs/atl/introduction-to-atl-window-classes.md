@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: window classes
+dev_langs:
+- C++
+helpviewer_keywords:
+- window classes
 ms.assetid: 503efc2c-a269-495d-97cf-3fb300d52f3d
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 253c7145f9b312890f20eddb6bb8eab425fd60c5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 636fe8aa87b6880f5cda77fb46fc481d99d78a81
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="introduction-to-atl-window-classes"></a>ATL ウィンドウ クラスの概要
 実装し、ウィンドウの操作は、次の ATL クラスが設計されています。  
@@ -45,6 +50,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [CWinTraits](../atl/reference/cwintraits-class.md)と[CWinTraitsOR](../atl/reference/cwintraitsor-class.md) ATL ウィンドウ オブジェクトの特徴を標準化する単純なメソッドを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウ クラス](../atl/atl-window-classes.md)
 

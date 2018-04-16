@@ -8,35 +8,29 @@ ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
+f1_keywords:
+- atldef/ATL::_ATL_DEBUG_INTERFACES
+- atldef/ATL::_ATL_DEBUG_QI
+- atldef/ATL::ATLASSERT
+- afx/ATL::ATLENSURE
+- atltrace/ATL::ATLTRACENOTIMPL
+- atltrace/ATL::ATLTRACE
 dev_langs:
 - C++
 helpviewer_keywords:
 - macros, error reporting
 ms.assetid: 4da9b87f-ec5c-4a32-ab93-637780909b9d
-caps.latest.revision: 18
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: f59c09b7eb1621094b170d3bed31b5891081194e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9098b944f70ab4e4448fe40aa2347b0128e6e1a7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="debugging-and-error-reporting-macros"></a>デバッグと、エラー報告のマクロ
 これらのマクロは、デバッグとトレースに役立つ機能を提供します。  
@@ -106,7 +100,7 @@ ATLASSERT(booleanExpression);
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、`ATLASSERT`評価`booleanExpression`し、結果が false の場合は、デバッグ レポートを生成します。  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldef.h  
     
 ##  <a name="atlensure"></a>ATLENSURE  
@@ -136,9 +130,9 @@ ATLENSURE_THROW(booleanExpression, hr);
  違い**ATLENSURE**と`ATLASSERT`される**ATLENSURE**リリースでは、例外はデバッグ ビルドと同様にも構築がスローされます。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Utilities # 108](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_1.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#108](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_1.cpp)]  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afx.h  
 
 ##  <a name="atltracenotimpl"></a>ATLTRACENOTIMPL  
@@ -156,9 +150,9 @@ ATLTRACENOTIMPL(funcname);
  リリース ビルドでは、単純に返します**E_NOTIMPL**です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Utilities #127](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_2.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#127](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_2.cpp)]  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atltrace.h 
 
 ##  <a name="atltrace"></a>ATLTRACE
@@ -254,13 +248,13 @@ ATLTRACE2(
   
  カスタム トレース カテゴリを宣言するには、宣言のグローバル インスタンス、`CTraceCategory`クラスの次のようにします。  
   
- [!code-cpp[NVC_ATL_Utilities # 109](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_3.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#109](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_3.cpp)]  
   
  カテゴリ名、`MY_CATEGORY`に指定した名前は、この例では、`category`パラメーター。 最初のパラメーターは、ATL/MFC トレース ツールに表示されるカテゴリの名前です。 2 番目のパラメーターは、既定のトレース レベルです。 このパラメーターは省略可能で、既定のトレース レベルは 0 です。  
   
  ユーザー定義のカテゴリを使用します。  
   
- [!code-cpp[NVC_ATL_Utilities # 110](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_4.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#110](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_4.cpp)]  
   
  トレース メッセージをフィルター処理することを指定する前に Stdafx.h にこれらのマクロの定義を挿入、`#include <atlbase.h>`ステートメントです。  
   
@@ -275,9 +269,8 @@ ATLTRACE2(
  **ATLTRACE**と`ATLTRACE2`、同じように動作**ATLTRACE**は旧バージョンとの互換性のために含まれます。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Utilities # 111](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_5.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#111](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_5.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロ](../../atl/reference/atl-macros.md)   
  [デバッグとエラー報告に関するグローバル関数](../../atl/reference/debugging-and-error-reporting-global-functions.md)
-

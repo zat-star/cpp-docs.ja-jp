@@ -4,32 +4,38 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CCommand.Close
 - CCommand::Close
-dev_langs: C++
-helpviewer_keywords: Close method
+dev_langs:
+- C++
+helpviewer_keywords:
+- Close method
 ms.assetid: 4da9c02c-7082-4e47-a0fa-78b546f0f7d2
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 51ed32c8c4298198b0d54390151e4a904ebd918d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 3d25c726ef5961f7504eb72fef230a94588e7734
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ccommandclose"></a>CCommand::Close
 コマンドに関連付けられているアクセサー行セットを解放します。  
   
-## <a name="syntax"></a>構文  
-  
-```  
-void Close( );  
+## <a name="syntax"></a>構文
+
+```cpp
+void Close();  
 ```  
   
 ## <a name="remarks"></a>コメント  
@@ -44,9 +50,9 @@ void Close( );
   
  [!code-cpp[NVC_OLEDB_Consumer#2](../../data/oledb/codesnippet/cpp/ccommand-close_1.cpp)]  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CCommand クラス](../../data/oledb/ccommand-class.md)   
  [CCommand::ReleaseCommand](../../data/oledb/ccommand-releasecommand.md)

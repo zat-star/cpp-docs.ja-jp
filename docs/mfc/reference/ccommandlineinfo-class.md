@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -21,7 +22,8 @@ f1_keywords:
 - AFXWIN/CCommandLineInfo::m_strPortName
 - AFXWIN/CCommandLineInfo::m_strPrinterName
 - AFXWIN/CCommandLineInfo::m_strRestartIdentifier
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CCommandLineInfo [MFC], CCommandLineInfo
 - CCommandLineInfo [MFC], ParseParam
@@ -35,15 +37,17 @@ helpviewer_keywords:
 - CCommandLineInfo [MFC], m_strPrinterName
 - CCommandLineInfo [MFC], m_strRestartIdentifier
 ms.assetid: 3e313ddb-0a82-4991-87ac-a27feff4668c
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 0b59297015a6fcda8eb689193b2d968d5763654d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dd5f24ccf18f39ef231f19aa5b837914104b57c2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccommandlineinfo-class"></a>メンバー クラス
 アプリケーション起動時のコマンド ライン解析を補助します。  
@@ -106,7 +110,7 @@ class CCommandLineInfo : public CObject
   
  `CCommandLineInfo`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="ccommandlineinfo"></a>CCommandLineInfo::CCommandLineInfo  
@@ -304,7 +308,7 @@ virtual void ParseParam(
   
  その他のフラグとパラメーターの値を処理する派生クラスでは、この関数をオーバーライドします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CWinApp::ParseCommandLine](../../mfc/reference/cwinapp-class.md#parsecommandline)   

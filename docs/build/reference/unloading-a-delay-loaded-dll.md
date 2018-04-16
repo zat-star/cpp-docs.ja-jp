@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __FUnloadDelayLoadedDLL2
 - delayed loading of DLLs, unloading
 ms.assetid: 6463bc71-020e-4aff-a4ca-90360411c54e
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0962059e6e55ce68133960cc9f8d1de8c7f0ef61
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8b47969da4c560f28c07ac09caef83873e362ddc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unloading-a-delay-loaded-dll"></a>遅延読み込みした DLL のアンロード
 既定値が指定した遅延読み込みヘルパーは、遅延読み込み記述子がポインターの元のインポート アドレス テーブル (IAT) のコピーと pUnloadIAT フィールドを確認します。 その場合へのポインターをインポート遅延記述子のリストで保存します。 これにより、その DLL を明示的にアンロードをサポートするために名前で DLL を検索するヘルパー関数。  
@@ -68,5 +72,5 @@ __FUnloadDelayLoadedDLL2("user32.DLL");
 __FUnloadDelayLoadedDLL2("User32.DLL");.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘルパー関数について](understanding-the-helper-function.md)

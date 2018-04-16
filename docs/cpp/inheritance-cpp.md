@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - derived classes [C++]
 - derived classes [C++], about derived classes
 - classes [C++], derived
 ms.assetid: 3534ca19-d9ed-4a40-be1b-b921ad0e6956
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8538418b6457994162500dea013f2addd4269849
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 50b6b180a6def741daa47a5054f1c61d3265ebd7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="inheritance--c"></a>継承 (C++)
 このセクションでは、派生クラスを使用して拡張可能プログラムを生成する方法について説明します。  
@@ -63,5 +67,5 @@ ms.lasthandoff: 10/24/2017
   
  [_ _Super](../cpp/super.md)と[_ _interface](../cpp/interface.md)キーワードは、このセクションに記載されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)

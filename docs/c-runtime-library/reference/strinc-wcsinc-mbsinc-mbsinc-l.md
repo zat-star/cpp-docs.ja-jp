@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _mbsinc
 - _wcsinc
@@ -34,7 +35,8 @@ f1_keywords:
 - wcsinc
 - mbsinc
 - _mbsinc_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _mbsinc function
 - wcsinc function
@@ -47,21 +49,23 @@ helpviewer_keywords:
 - _tcsinc function
 - tcsinc function
 ms.assetid: 54685943-8e2c-45e9-a559-2d94930dc6b4
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 04fb17130f82c4b34b461f9d4fe0880b1363d3c0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 08e8d0e25b7d685856ccf4af068408bf0ac495cb
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strinc-wcsinc-mbsinc-mbsincl"></a>_strinc、_wcsinc、_mbsinc、_mbsinc_l
 文字列ポインターを 1 文字進めます。  
   
 > [!IMPORTANT]
->  `_mbsinc` および `_mbsinc_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbsinc` および `_mbsinc_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -95,7 +99,7 @@ unsigned char *_mbsinc_l(
  これらの各ルーチンは、`current` の直後に続く文字へのポインターを返します。  
   
 ## <a name="remarks"></a>コメント  
- `_mbsinc` 関数は、`current` の直後に続くマルチバイト文字の最初のバイトへのポインターを返します。 `_mbsinc` は、現在使用中の[マルチバイト コード ページ](../../c-runtime-library/code-pages.md)に従ってマルチバイト文字シーケンスを認識します。`_mbsinc_l` は、渡されたロケール パラメーターを代わりに使用することを除いて同じものです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `_mbsinc` 関数は、`current` の直後に続くマルチバイト文字の最初のバイトへのポインターを返します。 `_mbsinc` は、現在使用中の[マルチバイト コード ページ](../../c-runtime-library/code-pages.md)に従ってマルチバイト文字シーケンスを認識します。`_mbsinc_l` は、渡されたロケール パラメーターを代わりに使用することを除いて同じものです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  Tchar.h に定義されている汎用テキスト関数 `_tcsinc` は、`_mbsinc` にマップされるか (`_MBCS` が定義されている場合)、または `_wcsinc` にマップされます (`_UNICODE` が定義されている場合)。 それ以外の場合、`_tcsinc` は `_strinc` に割り当てられます。 `_strinc` と `_wcsinc` はそれぞれ、`_mbsinc` の 1 バイト文字バージョンとワイド文字バージョンです。 `_strinc` と `_wcsinc` はこの割り当てにのみ使用し、それ以外には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
   
@@ -104,9 +108,9 @@ unsigned char *_mbsinc_l(
 > [!IMPORTANT]
 >  これらの関数は、バッファー オーバーランの脅威に対して脆弱な場合があります。 バッファー オーバーランは、認められていない特権の昇格の原因となるため、システムの攻撃に使用される可能性があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_mbsinc`|\<mbstring.h>|  
 |`_mbsinc_l`|\<mbstring.h>|  
@@ -115,7 +119,7 @@ unsigned char *_mbsinc_l(
   
  互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [_strdec、_wcsdec、_mbsdec、_mbsdec_l](../../c-runtime-library/reference/strdec-wcsdec-mbsdec-mbsdec-l.md)   
  [_strnextc、_wcsnextc、_mbsnextc、_mbsnextc_l](../../c-runtime-library/reference/strnextc-wcsnextc-mbsnextc-mbsnextc-l.md)   

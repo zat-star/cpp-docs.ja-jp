@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2774
-dev_langs: C++
-helpviewer_keywords: C2774
+f1_keywords:
+- C2774
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2774
 ms.assetid: 10f428c6-7f49-489a-92ba-6ef978b7caaf
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: efa25c9e1c5fa755dc2b31290ab8c921366455c6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8b5b8b898dead7d08795e25d87f66a2c24214fc3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2774"></a>コンパイラ エラー C2774
 'identifier': このプロパティに関連付けられた 'put' メソッドはありません  

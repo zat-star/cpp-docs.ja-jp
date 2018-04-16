@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: goto
-dev_langs: C++
+f1_keywords:
+- goto
+dev_langs:
+- C++
 helpviewer_keywords:
 - labeled statement
 - statements, labeled
 - goto keyword [C]
 ms.assetid: 3d0473dc-4b18-4fcc-9616-31a38499d7d7
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ab5bfa5b145f698b1c93c4a494802cd63bbcfb04
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ea0543a13d16850be4259d2d93f763dd0edcbda3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="goto-and-labeled-statements-c"></a>goto ステートメントとラベル付きステートメント (C)
 `goto` ステートメントは、特定のラベルに制御を移します。 この特定のラベルは、同じ関数内に存在する必要があり、同じ関数内の 1 つのステートメントの前にのみ指定できます。  
@@ -75,5 +80,5 @@ int main()
   
  この例で `goto` ステートメントは、`i` が 5 に等しい場合に、`stop` というラベルの位置に制御を移します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ステートメント](../c-language/statements-c.md)

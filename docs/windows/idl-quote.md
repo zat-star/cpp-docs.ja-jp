@@ -1,32 +1,37 @@
 ---
-title: "idl_quote | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.idl_quote"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "idl_quote attribute"
+title: "idl_quote |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- vc-attr.idl_quote
+dev_langs:
+- C++
+helpviewer_keywords:
+- idl_quote attribute
 ms.assetid: a370e1b7-948b-4e67-9a25-58facf24e4c9
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 288d90bf2e32024792eaf5ec44825a9ac992bd71
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# idl_quote
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-はVisual C\+\+ の現在のバージョンでサポートされていない使用して生成された .idl ファイルにIDL いる構造体。  
+# <a name="idlquote"></a>idl_quote
+Visual C の現在のバージョンでサポートされていない IDL コンストラクトを使用することができますを生成された .idl ファイルへのパススルーします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,15 +40,15 @@ caps.handback.revision: 10
 ) ]  
 ```  
   
-#### パラメーター  
- *text*  
- コンパイラ エラーを返さないで生成された .idl ファイルに渡されるようにVisual C\+\+ コンパイラを使用する属性名。  
+#### <a name="parameters"></a>パラメーター  
+ *テキスト*  
+ Visual C コンパイラはコンパイラ エラーを返さずに、生成された .idl ファイルへのパススルーにする属性の名前。  
   
-## 解説  
- **idl\_quote** C\+\+ 属性は属性として最後にセミコロン \(後の角かっこ\) を使用するとあるようにテキスト  *は* マージされた .idl ファイル内に配置されます。  **idl\_quote** がシンボルで使用する場合 *テキストは*  そのシンボルの属性ブロック内に配置されます。  
+## <a name="remarks"></a>コメント  
+ 場合、 **idl_quote** C++ 属性が、(後にセミコロン、かっこ)、スタンドアロン属性として使用*テキスト*は、マージされた .idl ファイルに配置されます。 場合**idl_quote** 、シンボルの使用は*テキスト*シンボルに対する属性ブロック内に配置されます。  
   
-## 使用例  
- 次のコードはのサポートされる .idl\) と未定義の構造を定義および使用する方法を示しています  **入力**  を使用してサポートされていない属性を指定する方法を示しています :  
+## <a name="example"></a>例  
+ 次のコードは、サポートされていない属性を指定する方法を示します (を使用して**で**はサポートされている) と定義して、未定義の .idl コンストラクトを使用する方法。  
   
 ```  
 // cpp_attr_ref_idl_quote.cpp  
@@ -78,22 +83,21 @@ __interface IStatic{
 };  
 ```  
   
- このコードは MYFLOT と MYDUB と生成された .idl ファイルに含める  *テキスト入力*  します。  *name パラメーターの*  型は前に生成された .idl ファイルの参照の  *名前*  は何も配置に  *短いメッセージを*  送信します。   *依存関係の*  パラメーターは依存関係のリスト定義を生成される .idl ファイルにあらかじめ  *テキスト*  配置されるようにします。  
+ このコードと MYFLOT と MYDUB と*テキスト*エントリが生成された .idl ファイルに配置されます。 *名前*パラメーター強制的*テキスト*を参照する前に配置する*名前*で生成された .idl ファイル。 *の依存関係*パラメーターを強制的にする前に配置される依存関係のリスト定義*テキスト*で生成された .idl ファイル。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|任意|  
-|**複数回の適用**|Ｘ|  
+|**対象**|任意の場所|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Stand\-Alone Attributes](../Topic/Stand-Alone%20Attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [スタンドアロン属性](../windows/stand-alone-attributes.md)   

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::vector::reverse_iterator
-dev_langs: C++
-helpviewer_keywords: reverse_iterator member [STL/CLR]
+f1_keywords:
+- cliext::vector::reverse_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- reverse_iterator member [STL/CLR]
 ms.assetid: 0a90c5ee-a95f-4f71-a027-f1668000ccd4
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 04a4048c8ebb108efef9c4a6181f864eb2d9d708
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 476cf4370e7f2a94f41b9186042b70b15df81a68
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vectorreverseiterator-stlclr"></a>vector::reverse_iterator (STL/CLR)
 被制御シーケンスの反転反復子の型です。  
@@ -69,12 +76,12 @@ c b a
 x b a  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/vector >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
  [vector::const_iterator (STL/CLR)](../dotnet/vector-const-iterator-stl-clr.md)   
  [vector::const_reverse_iterator (STL/CLR)](../dotnet/vector-const-reverse-iterator-stl-clr.md)   

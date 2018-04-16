@@ -19,16 +19,17 @@ helpviewer_keywords:
 - CAnimationVariableChangeHandler [MFC], OnValueChanged
 - CAnimationVariableChangeHandler [MFC], SetAnimationController
 ms.assetid: 2ea4996d-5c04-4dfc-be79-d42d55050795
-caps.latest.revision: 19
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f70e8d59e291362496ec2555cf2838bf2df41d3a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 6cab28e78b24333614eaeaa817f5aacbc59a1da5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="canimationvariablechangehandler-class"></a>CAnimationVariableChangeHandler クラス
 アニメーション変数の値が変化したときに Animation API によって呼び出されるコールバックを実装します。  
@@ -65,7 +66,7 @@ class CAnimationVariableChangeHandler : public CUIAnimationVariableChangeHandler
   
  `CAnimationVariableChangeHandler`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="onvaluechanged"></a>CAnimationVariableChangeHandler::OnValueChanged  
@@ -106,6 +107,5 @@ void SetAnimationController(CAnimationController* pAnimationController);
  `pAnimationController`  
  イベントを受信するアニメーション コント ローラーへのポインター。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: Controlling Streams
-dev_langs: C++
+f1_keywords:
+- Controlling Streams
+dev_langs:
+- C++
 helpviewer_keywords:
 - streams, controlling
 - controlling streams
 - streams
 ms.assetid: 267e9013-9afc-45f6-91e3-ca093230d9d9
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d2211a2a2bb5121921928166626d726db8dea67f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3d6b2678add561eda41a7426a840b9c4ad074301
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="controlling-streams"></a>ストリームの制御
 [fopen](../c-runtime-library/reference/fopen-wfopen.md) は `FILE` 型のオブジェクトのアドレスを返します。 いくつかのライブラリ関数の引数 `stream` としてこのアドレスを使用し、開かれたファイルに対してさまざまな操作を実行します。 バイト ストリームについては、[fgetc](../c-runtime-library/reference/fgetc-fgetwc.md) を呼び出して各文字を読み取るかのようにすべての入力が処理され、[fputc](../c-runtime-library/reference/fputc-fputwc.md) を呼び出して各文字を書き込むかのようにすべての出力が処理されます。 ワイド ストリームについては、[fgetwc](../c-runtime-library/reference/fgetc-fgetwc.md) を呼び出して各文字を読み取るかのようにすべての入力が処理され、[fputwc](../c-runtime-library/reference/fputc-fputwc.md) を呼び出して各文字を書き込むかのようにすべての出力が処理されます。  
@@ -45,5 +50,5 @@ ms.lasthandoff: 10/24/2017
   
  `FILE` オブジェクト、またはそのオブジェクトと使用するために指定したファイル バッファーに格納されている値は変更しないでください。 `FILE` オブジェクトをコピーすること、およびそのコピーのアドレスをライブラリ関数への引数 `stream` として移植して使用することはできません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイルとストリーム](../c-runtime-library/files-and-streams.md)

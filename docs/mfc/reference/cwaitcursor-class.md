@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,20 +13,23 @@ f1_keywords:
 - AFXWIN/CWaitCursor
 - AFXWIN/CWaitCursor::CWaitCursor
 - AFXWIN/CWaitCursor::Restore
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CWaitCursor [MFC], CWaitCursor
 - CWaitCursor [MFC], Restore
 ms.assetid: 5dfae2ff-d7b6-4383-b0ad-91e0868c67b3
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b4e30b024b6a83a7ea2069386cff3166ce518faa
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1cf5c850158e445e7695b85e540b1e0c162e621c
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="cwaitcursor-class"></a>CWaitCursor クラス
 時間がかかる処理を実行している最中に、通常は砂時計として表示される待機カーソルを表示する 1 つの方法を提供します。  
@@ -72,7 +76,7 @@ class CWaitCursor
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CWaitCursor`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ## <a name="example"></a>例  
@@ -113,13 +117,13 @@ void Restore();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCWindowing#64](../../mfc/reference/codesnippet/cpp/cwaitcursor-class_3.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [CCmdTarget::BeginWaitCursor](../../mfc/reference/ccmdtarget-class.md#beginwaitcursor)   
  [CCmdTarget::EndWaitCursor](../../mfc/reference/ccmdtarget-class.md#endwaitcursor)   
  [CCmdTarget::RestoreWaitCursor](../../mfc/reference/ccmdtarget-class.md#restorewaitcursor)   
  [CWinApp::DoWaitCursor](../../mfc/reference/cwinapp-class.md#dowaitcursor)   
- [I: はマウス カーソルを Microsoft Foundation クラスのアプリケーションに変更する方法](http://go.microsoft.com/fwlink/linkid=128044)
+ [I: はマウス カーソルを Microsoft Foundation クラスのアプリケーションに変更する方法](http://go.microsoft.com/fwlink/p/?linkid=128044)
 
 
 

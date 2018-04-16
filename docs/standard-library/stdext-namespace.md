@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 09/06/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: stdext
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- stdext
+dev_langs:
+- C++
 helpviewer_keywords:
 - _DEFINE_DEPRECATED_HASH_CLASSES symbol
 - stdext namespace
 ms.assetid: 3e94fc89-0584-424f-bc09-081b73379545
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: bad24efa95f67718f5a5f3a0f12f99861b097493
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 265a10e71064f2bf3a318a272b751009b1b193be
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="stdext-namespace"></a>stdext 名前空間
 
@@ -37,7 +42,7 @@ ms.lasthandoff: 10/24/2017
 
 コンパイルするときに**/Za**、コンパイラ エラーが発生します。  
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [C++ 標準ライブラリの概要](../standard-library/cpp-standard-library-overview.md)
 

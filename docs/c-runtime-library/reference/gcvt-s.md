@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _gcvt_s
 apilocation:
@@ -38,30 +38,17 @@ helpviewer_keywords:
 - strings [C++], converting from floating point
 - CVTBUFSIZE
 ms.assetid: 0a8d8a26-5940-4ae3-835e-0aa6ec1b0744
-caps.latest.revision: 30
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: cc1f34eae067f0d2cc0781c9001af550b291006f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 567738b488ae648dbd67ea1d2b5cdf34b649170c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="gcvts"></a>_gcvt_s
 浮動小数点値を文字列に変換します。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_gcvt](../../c-runtime-library/reference/gcvt.md) です。  
@@ -101,11 +88,11 @@ errno_t _gcvt_s(
   
 ### <a name="error-conditions"></a>エラー条件  
   
-|`buffer`|`sizeInBytes`|`value`|`digits`|リターン|`buffer` の値|  
+|`buffer`|`sizeInBytes`|`value`|`digits`|Return|`buffer` の値|  
 |--------------|-------------------|-------------|--------------|------------|-----------------------|  
 |`NULL`|任意|任意|任意|`EINVAL`|変更されません。|  
-|`NULL` ではない (有効なメモリを指す)|ゼロ|任意|任意|`EINVAL`|変更されません。|  
-|`NULL` ではない (有効なメモリを指す)|任意|任意|>= `sizeInBytes`|`EINVAL`|変更されません。|  
+|`NULL` ではありません (有効なメモリを指します)|ゼロ|任意|任意|`EINVAL`|変更されません。|  
+|`NULL` ではありません (有効なメモリを指します)|任意|任意|>= `sizeInBytes`|`EINVAL`|変更されません。|  
   
  **セキュリティ上の問題**  
   
@@ -114,17 +101,17 @@ errno_t _gcvt_s(
 ## <a name="remarks"></a>コメント  
  `_gcvt_s` 関数は、浮動小数点 `value` を (小数点、符号バイトを含む) 文字列に変換し、この文字列を `buffer` に格納します。 `buffer` は、変換された値に、自動的に追加される終端の nulll 文字を加えたものを格納するのに十分な大きさである必要があります。 長さ `_CVTBUFSIZE` のバッファーは、浮動小数点値には十分です。 バッファー サイズ `digits` + 1 を使用する場合、関数はバッファーの末尾を上書きしないようにして、この操作のために十分なバッファーを供給します。 `_gcvt_s` は、10 進数形式で `digits` 桁を生成しようとします。 生成できない場合、指数形式で `digits` 桁を生成します。 後続のゼロは、変換時に非表示にできます。  
   
- C++ では、テンプレートのオーバーロードによってこの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、テンプレートのオーバーロードによってこの関数を簡単に使用できます。オーバーロードでは、バッファー長を自動的に推論できるため、サイズ引数を指定する必要がなくなります。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
  この関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md).を使用します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_gcvt_s`|\<stdlib.h>|\<error.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -158,7 +145,7 @@ int main()
 Converted value: 1.2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [atof、_atof_l、_wtof、_wtof_l](../../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)   

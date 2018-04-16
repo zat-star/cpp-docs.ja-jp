@@ -23,16 +23,17 @@ helpviewer_keywords:
 - operators [C++], postfix
 - decrement operators [C++]
 ms.assetid: 0204d5c8-51b0-4108-b8a1-074c5754d89c
-caps.latest.revision: 8
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: b9e8939e810336150fe3d46be4c72ee1946aebcf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5e1d6c13da3023073f3d8b3e9625fa141253ba2c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="postfix-increment-and-decrement-operators--and---"></a>後置インクリメント演算子と後置デクリメント演算子: ++ および --
 ## <a name="syntax"></a>構文  
@@ -55,7 +56,7 @@ i++;
   
  後置演算子を関数の引数に適用した場合、引数の値が関数に渡される前にインクリメントまたはデクリメントされる保証はありません。  詳細については、C++ 標準のセクション 1.9.17 を参照してください。  
   
- 型のオブジェクトの配列へのポインターに後置インクリメント演算子を適用する**長い**実際には、ポインターの内部表現に 4 が加算されます。 この動作により、ポインターを参照していた、 * n*番目の要素を指すため、配列の (*n*+1) 番目の要素。  
+ 型のオブジェクトの配列へのポインターに後置インクリメント演算子を適用する**長い**実際には、ポインターの内部表現に 4 が加算されます。 この動作により、ポインターを参照していた、  *n*番目の要素を指すため、配列の (*n*+1) 番目の要素。  
   
  後置インクリメントと後置デクリメント演算子のオペランドは変更可能である必要があります (いない**const**) 演算またはポインター型の左辺値です。 結果の型はのと同じ、*後置式*が左辺値ではなくなりました。  
   
@@ -84,7 +85,7 @@ Compass myCompass;
 for( myCompass = North; myCompass != West; myCompass++ ) // Error  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [後置式](../cpp/postfix-expressions.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [C 後置インクリメント演算子と後置デクリメント演算子](../c-language/c-postfix-increment-and-decrement-operators.md)

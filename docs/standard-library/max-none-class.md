@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - allocators/stdext::max_none
 - allocators/stdext::max_none::allocated
@@ -14,7 +15,8 @@ f1_keywords:
 - allocators/stdext::max_none::full
 - allocators/stdext::max_none::released
 - allocators/stdext::max_none::saved
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - stdext::max_none
 - stdext::max_none [C++], allocated
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - stdext::max_none [C++], released
 - stdext::max_none [C++], saved
 ms.assetid: 12ab5376-412e-479c-86dc-2c3d6a3559b6
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3a1d8f9a133c2ad07fbd46113d7e90d58066993c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: db65e89f0079c56929359c6130ad2b8342752bc9
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="maxnone-class"></a>max_none クラス
 [freelist](../standard-library/freelist-class.md) オブジェクトを最長値ゼロまでに制限する[最大クラス](../standard-library/allocators-header.md) オブジェクトを記述します。  
@@ -59,7 +63,7 @@ class max_none
 |[released](#released)|フリー リスト上のメモリ ブロックの数を減らします。|  
 |[saved](#saved)|フリー リスト上のメモリ ブロックの数を減らします。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
@@ -129,7 +133,7 @@ void saved();
 ### <a name="remarks"></a>コメント  
  このメンバー関数は何も処理を行いません。 `cache_freelist::deallocate` によって、フリー リストにメモリ ブロックが置かれるたびに、呼び出されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<allocators>](../standard-library/allocators-header.md)
 
 

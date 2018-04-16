@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: _com_ptr_t::GetInterfacePtr
-dev_langs: C++
-helpviewer_keywords: GetInterfacePtr method [C++]
+f1_keywords:
+- _com_ptr_t::GetInterfacePtr
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetInterfacePtr method [C++]
 ms.assetid: 55e3e2c7-c939-48b5-a905-4b9cbefeea7e
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2d15bcec2527b15f70e2b7a5e5e38ddcd98e77bf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8d570b7d1d25ee14b0cabd5ecec02d6f7d1573d3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comptrtgetinterfaceptr"></a>_com_ptr_t::GetInterfacePtr
 **Microsoft 固有の仕様**  
@@ -39,5 +45,5 @@ Interface*& GetInterfacePtr() throw();
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_com_ptr_t クラス](../cpp/com-ptr-t-class.md)

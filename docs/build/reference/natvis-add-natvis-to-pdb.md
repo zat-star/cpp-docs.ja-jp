@@ -1,13 +1,15 @@
 ---
-title: "-NATVIS (Natvis を pdb ファイルに追加) |Microsoft ドキュメント"
+title: -NATVIS (Natvis を pdb ファイルに追加) |Microsoft ドキュメント
 ms.date: 08/10/2017
-ms.tgt_pltfrm: 
-ms.technology: cpp-tools
+ms.tgt_pltfrm: ''
+ms.technology:
+- cpp-tools
 ms.topic: article
 f1_keywords:
 - /natvis
 - VC.Project.VCLinkerTool.ImportLIbrary
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - NATVIS linker option
 - /NATVIS linker option
@@ -17,11 +19,13 @@ ms.assetid: 8747fc0c-701a-4796-bb4d-818ab4465cca
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 36c1baec22ce0804b4271718dd9495c4213941b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 20715b48413a705aa2338e7e37538171e4141cad
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="natvis-add-natvis-to-pdb"></a>/NATVIS (Natvis を pdb ファイルに追加する)
   
@@ -50,7 +54,7 @@ PDB ファイルに追加する Natvis ファイル。 Natvis ファイルで、
   
 -   このオプションには、同等のプログラムはありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 [Visual Studio デバッガーでのネイティブ オブジェクトのカスタム ビューを作成します。](/visualstudio/debugger/create-custom-views-of-native-objects)  
 [リンカー オプションの設定](../../build/reference/setting-linker-options.md)  

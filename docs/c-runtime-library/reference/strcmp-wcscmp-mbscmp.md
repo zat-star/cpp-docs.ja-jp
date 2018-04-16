@@ -1,13 +1,13 @@
 ---
-title: "strcmp、wcscmp、_mbscmp | Microsoft Docs"
-ms.custom: 
+title: strcmp、wcscmp、_mbscmp | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.tgt_pltfrm: ''
+ms.topic: reference
 apiname:
 - wcscmp
 - _mbscmp
@@ -26,6 +26,7 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- ntoskrnl.exe
 apitype: DLLExport
 f1_keywords:
 - _mbscmp
@@ -47,37 +48,23 @@ helpviewer_keywords:
 - _ftcscmp function
 - ftcscmp function
 ms.assetid: 5d216b57-7a5c-4cb3-abf0-0f4facf4396d
-caps.latest.revision: 24
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 4bd820865bec6de284e725f433c84e4c20aa8910
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: addc2c215d0c914e3caee3dba4d32f94ca91e62c
+ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="strcmp-wcscmp-mbscmp"></a>strcmp、wcscmp、_mbscmp
 文字列を比較します。  
   
 > [!IMPORTANT]
->  `_mbscmp` は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)] で実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbscmp` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -137,7 +124,7 @@ int _mbscmp(
 |`wcscmp`|<string.h> または <wchar.h>|  
 |`_mbscmp`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -195,7 +182,7 @@ Compare strings:
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [memcmp、wmemcmp](../../c-runtime-library/reference/memcmp-wmemcmp.md)   
  [_memicmp、_memicmp_l](../../c-runtime-library/reference/memicmp-memicmp-l.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
+ [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
  [_stricmp、_wcsicmp、_mbsicmp、_stricmp_l、_wcsicmp_l、_mbsicmp_l](../../c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md)   
  [strncmp、wcsncmp、_mbsncmp、_mbsncmp_l](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)   
  [_strnicmp、_wcsnicmp、_mbsnicmp、_strnicmp_l、_wcsnicmp_l、_mbsnicmp_l](../../c-runtime-library/reference/strnicmp-wcsnicmp-mbsnicmp-strnicmp-l-wcsnicmp-l-mbsnicmp-l.md)   

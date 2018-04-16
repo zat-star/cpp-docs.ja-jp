@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::stack::operator<=
-dev_langs: C++
-helpviewer_keywords: operator<= member [STL/CLR]
+f1_keywords:
+- cliext::stack::operator<=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator<= member [STL/CLR]
 ms.assetid: fd2f500b-84d1-4eed-98ba-3a6f481ae8f5
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1a89ba3ffd5a0680dd34545e24854da4741c8d9f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: cbf63d142778b068c337811c91ebf2adc795bf84
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="operatorlt-stack-stlclr"></a>演算子&lt;= (スタック) (STL/CLR)
 以下のスタックの比較できます。  
@@ -90,12 +97,12 @@ int main()
 [a b d] <= [a b c] is False  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/stack >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
  [演算子 = = (スタック) (STL/CLR)](../dotnet/operator-equality-stack-stl-clr.md)   
  [operator! = (スタック) (STL/CLR)](../dotnet/operator-inequality-stack-stl-clr.md)   

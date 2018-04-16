@@ -45,16 +45,17 @@ helpviewer_keywords:
 - CCustomInterpolator [MFC], m_initialValue
 - CCustomInterpolator [MFC], m_initialVelocity
 ms.assetid: 28d85595-989a-40a3-b003-e0e38437a94d
-caps.latest.revision: 17
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 26763a16c4de59f33622ea904ea8aa132fe0d5f2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 4198e4b694356087cccad99d8ca62da3f23ba6ec
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccustominterpolator-class"></a>CCustomInterpolator クラス
 基本のインターポレータを実装します。  
@@ -88,7 +89,7 @@ class CCustomInterpolator;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CCustomInterpolator::m_currentValue](#m_currentvalue)|補間値です。|  
 |[CCustomInterpolator::m_currentVelocity](#m_currentvelocity)|補間された速度。|  
@@ -103,7 +104,7 @@ class CCustomInterpolator;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CCustomInterpolator`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="ccustominterpolator"></a>CCustomInterpolator::CCustomInterpolator  
@@ -301,6 +302,5 @@ virtual BOOL SetInitialValueAndVelocity(
 ### <a name="return-value"></a>戻り値  
  基本的な実装を常に TRUE を返します。 FALSE が返されますオーバーライドされた実装からイベントが失敗する場合。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

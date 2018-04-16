@@ -4,28 +4,32 @@ ms.custom:
 ms.date: 09/25/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - VC.Project.VCCLCompilerTool.ToolOptimization
 - /ox
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Ox compiler option [C++]
 - fast code [C++]
 - /Ox compiler option [C++]
 - -Ox compiler option [C++]
 ms.assetid: 3ad7c30b-c615-428c-b1d0-2e024f81c760
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 30794416ea166f6e41d8c0de81ef7812c7b71c31
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 85efa8a2beab34d0dcf1bdb74e3cf89008b10d6e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ox-enable-most-speed-optimizations"></a>/Ox (ほとんどの速度の最適化を有効にする)
 
@@ -75,7 +79,7 @@ ms.lasthandoff: 10/24/2017
 
 - 「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.Optimization%2A>」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [/O オプション (コードの最適化)](../../build/reference/o-options-optimize-code.md)  
 [コンパイラ オプション](../../build/reference/compiler-options.md)  

@@ -1,12 +1,12 @@
 ---
-title: "コンパイラ エラー C2353 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2353 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C2353
@@ -19,12 +19,13 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 353c752c4a247a0c6b70656f23d9c4e24d9b4ea6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: a2bb8210a1b0d2eb2150e9916b1230180cb72420
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2353"></a>コンパイラ エラー C2353
 例外の指定は許可されていません  

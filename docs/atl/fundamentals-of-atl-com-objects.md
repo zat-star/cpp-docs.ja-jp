@@ -1,28 +1,32 @@
 ---
-title: "ATL COM オブジェクトの基本 |Microsoft ドキュメント"
-ms.custom: 
+title: ATL COM オブジェクトの基本 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COM, and ATL
 - ATL, COM
 - ATL COM objects
 - COM objects, ATL
 ms.assetid: 0f9c9d98-cc28-45da-89ac-dc94cee422fe
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 30527a705d880e96620edfee5f7ad7897f9371a7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6a5a43af31a88420c154d7a57d27d2b69787d11d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fundamentals-of-atl-com-objects"></a>ATL COM オブジェクトの基本事項
 次の図は、クラスと ATL COM オブジェクトの定義に使用されるインターフェイス間の関係を示しています。  
@@ -80,6 +84,6 @@ ms.lasthandoff: 10/24/2017
  [ATL](../atl/active-template-library-atl-concepts.md)  
  Active Template Library を使用してプログラミングする方法に関する概念説明のトピックへのリンクを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../atl/active-template-library-atl-concepts.md)
 

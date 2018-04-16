@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ternary operators
 - operators [C]
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - associativity of operators
 - binary data, binary expressions
 ms.assetid: 13bc4c8e-2dc9-4b23-9f3a-25064e8777ed
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fee64f3d5c5e26783745961f4aa5dc076dd472c1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3d4acb0acec44d695bd4c03ffa102a0ac42971b9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-operators"></a>C 演算子
 C 演算子は、[C++ 組み込み演算子](../cpp/cpp-built-in-operators-precedence-and-associativity.md)のサブセットです。  
@@ -33,7 +37,7 @@ C 演算子は、[C++ 組み込み演算子](../cpp/cpp-built-in-operators-prece
   
  C には、次の単項演算子が用意されています。  
   
-|シンボル|名前|  
+|シンボル|name|  
 |------------|----------|  
 |**- ~ !**|否定演算子と補数演算子|  
 |**\* &**|間接演算子とアドレス演算子|  
@@ -43,7 +47,7 @@ C 演算子は、[C++ 組み込み演算子](../cpp/cpp-built-in-operators-prece
   
  二項演算子は、左から右へ結合されます。 C には、次の二項演算子が用意されています。  
   
-|シンボル|名前|  
+|シンボル|name|  
 |------------|----------|  
 |**\* / %**|乗算演算子|  
 |**+ -**|加法演算子|  
@@ -59,5 +63,5 @@ C 演算子は、[C++ 組み込み演算子](../cpp/cpp-built-in-operators-prece
   
  演算子を含む式には代入式が含まれ、単項代入演算子または二項代入演算子が使用されます。 単項代入演算子は、インクリメント (`++`) およびデクリメント (**--**) 演算子です。二項代入演算子は、単純代入演算子 (**=**) と複合代入演算子です。 複合代入演算子はそれぞれ、単純代入演算子と他の二項演算子の組み合わせです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [式と代入](../c-language/expressions-and-assignments.md)

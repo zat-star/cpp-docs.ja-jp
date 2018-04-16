@@ -4,37 +4,40 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ICommandImpl::GetDBSession
 - GetDBSession
 - ICommandImpl.GetDBSession
-dev_langs: C++
-helpviewer_keywords: GetDBSession method
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetDBSession method
 ms.assetid: e5b1cb13-453f-4698-90bf-f6bfe6814a54
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bb4a4f378d1446e722404a76a19d592a9eed0e20
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 11b94f64d389686abfea675c457e13296423b2e4
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="icommandimplgetdbsession"></a>ICommandImpl::GetDBSession
 コマンドを作成したセッションにインターフェイス ポインターを返します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      STDMETHOD (GetDBSession) (  
-   REFIID riid,  
-   IUnknown** ppSession   
-);  
+```cpp
+      STDMETHOD (GetDBSession) (REFIID riid,  
+   IUnknown** ppSession);  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -43,8 +46,8 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  セッションからのプロパティを取得するために便利です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICommandImpl クラス](../../data/oledb/icommandimpl-class.md)

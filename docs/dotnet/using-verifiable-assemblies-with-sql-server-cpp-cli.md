@@ -1,24 +1,30 @@
 ---
-title: "SQL Server で検証可能なアセンブリの使用 (C + + CLI) |Microsoft ドキュメント"
-ms.custom: 
+title: SQL Server で検証可能なアセンブリの使用 (C + + CLI) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: verifiable assemblies [C++], with SQL Server
+dev_langs:
+- C++
+helpviewer_keywords:
+- verifiable assemblies [C++], with SQL Server
 ms.assetid: 5248a60d-aa88-4ff3-b30a-b791c3ea2de9
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8c102d06e360c97f5c86e613ece869d4d38c4fc9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d03d54dd52f95f3fbba35bb896594e90aa92e867
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-verifiable-assemblies-with-sql-server-ccli"></a>SQL Server での確認可能なアセンブリの使用 (C++/CLI)
 ダイナミック リンク ライブラリ (Dll) としてパッケージ化、拡張ストアド プロシージャは、Visual C で開発した関数を使用して SQL Server の機能を拡張する手段を提供します。 拡張ストアド プロシージャは、Dll 内で関数として実装されます。 以外の関数、拡張ストアド プロシージャも定義[ユーザー定義型](../cpp/classes-and-structs-cpp.md)と[集計関数](http://msdn.microsoft.com/en-us/de255454-f45e-4281-81f9-bc61893ac5da)(SUM、AVG など)。  
@@ -82,6 +88,6 @@ go
 sqlcmd -S MyServer -E -i myScript.sql -o myResult.txt  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法:/clr:safe に移行 (C + + CLI)](../dotnet/how-to-migrate-to-clr-safe-cpp-cli.md)   
  [クラスと構造体](../cpp/classes-and-structs-cpp.md)

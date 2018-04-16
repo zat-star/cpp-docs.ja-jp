@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: 'index-page '
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - classes [C++], ATL
 - ATL, classes
 ms.assetid: 7da42e2d-ac84-4506-92bd-502a86d68bdc
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 58b0a6c8baa52acf82bffaacb7dd309b4420f3f0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bc8f03660742f0e752bb9ef12043af841797d0ab
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atl-classes"></a>ATL クラス
 アクティブ テンプレート ライブラリ (ATL) には、次のクラスが含まれています。 特定のクラスをカテゴリ別を参照してください、 [ATL クラスの概要](../../atl/atl-class-overview.md)です。  
@@ -34,7 +38,7 @@ ms.lasthandoff: 10/24/2017
 |[CAcl](../../atl/reference/cacl-class.md)|このクラスは、用のラッパー、 **ACL** (アクセス制御リスト) 構造体。|atlsecurity.h|  
 |[CAdapt](../../atl/reference/cadapt-class.md)|このテンプレートは、オブジェクトのアドレス以外の値を返すために、アドレス演算子を再定義するクラスをラップするときに使用されます。|atlcomcli.h|  
 |[CAtlArray](../../atl/reference/catlarray-class.md)|このクラスは、配列オブジェクトを実装します。|atlcoll.h|  
-|[残さ](../../atl/reference/catlautothreadmodule-class.md)|このクラスは、スレッド プール、アパートメント モデルの COM サーバーを実装します。|atlbase.h|  
+|[CAtlAutoThreadModule](../../atl/reference/catlautothreadmodule-class.md)|このクラスは、スレッド プール、アパートメント モデルの COM サーバーを実装します。|atlbase.h|  
 |[CAtlAutoThreadModuleT](../../atl/reference/catlautothreadmodulet-class.md)|このクラスは、スレッド プール、アパートメント モデルの COM サーバーを実装するためのメソッドを提供します。|atlbase.h|  
 |[CAtlBaseModule](../../atl/reference/catlbasemodule-class.md)|このクラスは、すべての ATL プロジェクトでインスタンス化します。|atlcore.h|  
 |[CAtlComModule](../../atl/reference/catlcommodule-class.md)|このクラスは、COM サーバー モジュールを実装します。|atlbase.h|  
@@ -47,7 +51,7 @@ ms.lasthandoff: 10/24/2017
 |[CAtlFileMappingBase](../../atl/reference/catlfilemappingbase-class.md)|このクラスは、メモリ マップト ファイルを表します。|atlfile.h|  
 |[CAtlList](../../atl/reference/catllist-class.md)|このクラスは、作成して、リスト オブジェクトを管理するためのメソッドを提供します。|atlcoll.h|  
 |[CAtlMap](../../atl/reference/catlmap-class.md)|このクラスは、作成と管理、map オブジェクトのメソッドを提供します。|atlcoll.h|  
-|[不要](../../atl/reference/catlmodule-class.md)|このクラスは、いくつかの ATL モジュール クラスによって使用されるメソッドを提供します。|atlbase.h|  
+|[CAtlModule](../../atl/reference/catlmodule-class.md)|このクラスは、いくつかの ATL モジュール クラスによって使用されるメソッドを提供します。|atlbase.h|  
 |[CAtlModuleT](../../atl/reference/catlmodulet-class.md)|このクラスは、ATL モジュールを実装します。|atlbase.h|  
 |[CAtlPreviewCtrlImpl](../../atl/reference/catlpreviewctrlimpl-class.md)|このクラスは、ATL リッチ プレビュー用にシェルによって提供されるホスト ウィンドウに配置されているウィンドウの実装です。|atlpreviewctrlimpl.h|  
 |[CAtlServiceModuleT](../../atl/reference/catlservicemodulet-class.md)|このクラスは、サービスを実装します。|atlbase.h|  
@@ -58,33 +62,33 @@ ms.lasthandoff: 10/24/2017
 |[CAutoPtrArray](../../atl/reference/cautoptrarray-class.md)|このクラスは、スマート ポインターの配列を構築するときに役立つメソッドを提供します。|atlbase.h|  
 |[CAutoPtrElementTraits](../../atl/reference/cautoptrelementtraits-class.md)|このクラスは、スマート ポインターのコレクションを作成するときに、メソッド、静的関数、および typedef 便利を提供します。|atlcoll.h|  
 |[CAutoPtrList](../../atl/reference/cautoptrlist-class.md)|このクラスは、スマート ポインターのリストを構築するときに役立つメソッドを提供します。|atlcoll.h|  
-|[出たリソース](../../atl/reference/cautovectorptr-class.md)|このクラスは、新しいベクトルを使用して、スマート ポインター オブジェクトを表し、オペレーターを削除します。|atlbase.h|  
+|[CAutoVectorPtr](../../atl/reference/cautovectorptr-class.md)|このクラスは、新しいベクトルを使用して、スマート ポインター オブジェクトを表し、オペレーターを削除します。|atlbase.h|  
 |[CAutoVectorPtrElementTraits](../../atl/reference/cautovectorptrelementtraits-class.md)|このクラスは、メソッド、静的関数、および typedef と delete 演算子を新しいベクトルを使用して、スマート ポインターのコレクションを作成するときに便利です。 を提供します。|atlcoll.h|  
 |[CAxDialogImpl](../../atl/reference/caxdialogimpl-class.md)|このクラスは、ActiveX コントロールをホストするダイアログ ボックス (モーダルまたはモードレス) を実装します。|atlwin.h|  
 |[CAxWindow](../../atl/reference/caxwindow-class.md)|このクラスは、ActiveX コントロールをホストしているウィンドウを操作するためのメソッドを提供します。|atlwin.h|  
 |[CAxWindow2T](../../atl/reference/caxwindow2t-class.md)|このクラスは、ActiveX コントロールをホストし、ライセンスされた ActiveX コントロールをホストするためのサポートがウィンドウを操作するためのメソッドを提供します。|atlwin.h|  
-|[次](../../atl/reference/cbindstatuscallback-class.md)|このクラスは、`IBindStatusCallback` インターフェイスを実装します。|atlctl.h|  
-|[すると](../../atl/reference/ccomaggobject-class.md)|このクラスは実装[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)集約オブジェクト。|atlcom.h|  
+|[CBindStatusCallback](../../atl/reference/cbindstatuscallback-class.md)|このクラスは、`IBindStatusCallback` インターフェイスを実装します。|atlctl.h|  
+|[CComAggObject](../../atl/reference/ccomaggobject-class.md)|このクラスは実装[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)集約オブジェクト。|atlcom.h|  
 |[CComAllocator](../../atl/reference/ccomallocator-class.md)|このクラスは、COM メモリ ルーチンを使用しているメモリを管理するためのメソッドを提供します。|atlbase.h|  
 |[CComApartment](../../atl/reference/ccomapartment-class.md)|このクラスは、アパートメント スレッド プールの EXE モジュールでの管理のサポートを提供します。|atlbase.h|  
 |[CComAutoCriticalSection](../../atl/reference/ccomautocriticalsection-class.md)|このクラスは、取得し、クリティカル セクション オブジェクトの所有権を解放するためのメソッドを提供します。|atlcore.h|  
-|[設定](../../atl/reference/ccomautothreadmodule-class.md)|ATL 7.0 の時点で`CComAutoThreadModule`は廃止されています。 を参照してください[ATL モジュール](../../atl/atl-module-classes.md)詳細についてはします。|atlbase.h|  
+|[CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md)|ATL 7.0 の時点で`CComAutoThreadModule`は廃止されています。 を参照してください[ATL モジュール](../../atl/atl-module-classes.md)詳細についてはします。|atlbase.h|  
 |[CComBSTR](../../atl/reference/ccombstr-class.md)|このクラスは、用のラッパー `BSTR`s。|atlbase.h|  
-|[ティアオフ](../../atl/reference/ccomcachedtearoffobject-class.md)|このクラスは実装[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)ティアオフ インターフェイスです。|atlcom.h|  
+|[CComCachedTearOffObject](../../atl/reference/ccomcachedtearoffobject-class.md)|このクラスは実装[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)ティアオフ インターフェイスです。|atlcom.h|  
 |[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)|このクラスは、実装、 [IClassFactory](http://msdn.microsoft.com/library/windows/desktop/ms694364)インターフェイスです。|atlcom.h|  
 |[CComClassFactory2](../../atl/reference/ccomclassfactory2-class.md)|このクラスは、実装、 [IClassFactory2](http://msdn.microsoft.com/library/windows/desktop/ms692720)インターフェイスです。|atlcom.h|  
 |[CComClassFactoryAutoThread](../../atl/reference/ccomclassfactoryautothread-class.md)|このクラスは、実装、 [IClassFactory](http://msdn.microsoft.com/library/windows/desktop/ms694364)インターフェイスし、オブジェクトが複数のアパートメント内で作成することができます。|atlcom.h|  
 |[CComClassFactorySingleton](../../atl/reference/ccomclassfactorysingleton-class.md)|このクラスから派生[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)を使用して[CComObjectGlobal](../../atl/reference/ccomobjectglobal-class.md)を 1 つのオブジェクトを構築します。|atlcom.h|  
 |[CComCoClass](../../atl/reference/ccomcoclass-class.md)|このクラスは、クラスのインスタンスを作成し、そのプロパティを取得するためのメソッドを提供します。|atlcom.h|  
 |[CComCompositeControl](../../atl/reference/ccomcompositecontrol-class.md)|このクラスは、複合コントロールを実装するために必要なメソッドを提供します。|atlctl.h|  
-|[した](../../atl/reference/ccomcontainedobject-class.md)|このクラスは実装[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)所有者オブジェクトの委任することによって**IUnknown**です。|atlcom.h|  
+|[CComContainedObject](../../atl/reference/ccomcontainedobject-class.md)|このクラスは実装[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)所有者オブジェクトの委任することによって**IUnknown**です。|atlcom.h|  
 |[CComControl](../../atl/reference/ccomcontrol-class.md)|このクラスは、作成して、ATL コントロールを管理するためのメソッドを提供します。|atlctl.h|  
 |[CComControlBase](../../atl/reference/ccomcontrolbase-class.md)|このクラスは、作成して、ATL コントロールを管理するためのメソッドを提供します。|atlctl.h|  
 |[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)|このクラスは、取得し、クリティカル セクション オブジェクトの所有権を解放するためのメソッドを提供します。|atlcore.h|  
 |[CComCritSecLock](../../atl/reference/ccomcritseclock-class.md)|このクラスは、ロックおよびロック解除、クリティカル セクション オブジェクトのメソッドを提供します。|atlbase.h|  
 |[CComCurrency](../../atl/reference/ccomcurrency-class.md)|このクラスを作成および管理するためのメソッドと演算子には、`CURRENCY`オブジェクト。|atlcur.h|  
 |[CComDynamicUnkArray](../../atl/reference/ccomdynamicunkarray-class.md)|このクラスの配列に格納**IUnknown**ポインター。|atlcom.h|  
-|[上記](../../atl/reference/ccomenum-class.md)|このクラスは、配列に基づいた COM 列挙子オブジェクトを定義します。|atlcom.h|  
+|[CComEnum](../../atl/reference/ccomenum-class.md)|このクラスは、配列に基づいた COM 列挙子オブジェクトを定義します。|atlcom.h|  
 |[CComEnumImpl](../../atl/reference/ccomenumimpl-class.md)|このクラスは、配列内に列挙されている項目が格納 COM 列挙子インターフェイスの実装を提供します。|atlcom.h|  
 |[CComEnumOnSTL](../../atl/reference/ccomenumonstl-class.md)|このクラスは、C++ 標準ライブラリ コレクションに基づく COM 列挙子オブジェクトを定義します。|atlcom.h|  
 |[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)|このクラスと同じメソッドを提供する[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)は、クリティカル セクションは提供しません。|atlcore.h|  
@@ -184,15 +188,15 @@ ms.lasthandoff: 10/24/2017
 |[IAxWinAmbientDispatchEx](../../atl/reference/iaxwinambientdispatchex-interface.md)|このインターフェイスは、ホストされるコントロールの補足のアンビエント プロパティを実装します。|atlbase.h、ATLIFace.h|  
 |[IAxWinHostWindow](../../atl/reference/iaxwinhostwindow-interface.md)|このインターフェイスは、コントロールとそのホスト オブジェクトを操作するためのメソッドを提供します。|atlbase.h、ATLIFace.h|  
 |[IAxWinHostWindowLic](../../atl/reference/iaxwinhostwindowlic-interface.md)|このインターフェイスは、ライセンスされたコントロールとそのホスト オブジェクトを操作するためのメソッドを提供します。|atlbase.h、ATLIFace.h|  
-|[単独](../../atl/reference/icollectiononstlimpl-class.md)|このクラスは、コレクション クラスによって使用されるメソッドを提供します。|atlcom.h|  
-|[入力したコネクション](../../atl/reference/iconnectionpointcontainerimpl-class.md)|このクラスは実装のコレクションを管理するための接続ポイント コンテナー [IConnectionPointImpl](../../atl/reference/iconnectionpointimpl-class.md)オブジェクト。|atlcom.h|  
+|[ICollectionOnSTLImpl](../../atl/reference/icollectiononstlimpl-class.md)|このクラスは、コレクション クラスによって使用されるメソッドを提供します。|atlcom.h|  
+|[IConnectionPointContainerImpl](../../atl/reference/iconnectionpointcontainerimpl-class.md)|このクラスは実装のコレクションを管理するための接続ポイント コンテナー [IConnectionPointImpl](../../atl/reference/iconnectionpointimpl-class.md)オブジェクト。|atlcom.h|  
 |[IConnectionPointImpl](../../atl/reference/iconnectionpointimpl-class.md)|このクラスは、接続ポイントを実装します。|atlcom.h|  
 |[IDataObjectImpl](../../atl/reference/idataobjectimpl-class.md)|このクラスは、汎用データ転送をサポートして、接続を管理するためのメソッドを提供します。|atlctl.h|  
 |[IDispatchImpl](../../atl/reference/idispatchimpl-class.md)|このクラスの既定の実装を提供する、`IDispatch`デュアル インターフェイスの一部です。|atlcom.h|  
 |[IDispEventImpl](../../atl/reference/idispeventimpl-class.md)|このクラスの実装を提供する、`IDispatch`メソッドです。|atlcom.h|  
-|[されます](../../atl/reference/idispeventsimpleimpl-class.md)|このクラスの実装を提供する、`IDispatch`メソッド、せず、タイプ ライブラリから型情報を取得します。|atlcom.h|  
+|[IDispEventSimpleImpl](../../atl/reference/idispeventsimpleimpl-class.md)|このクラスの実装を提供する、`IDispatch`メソッド、せず、タイプ ライブラリから型情報を取得します。|atlcom.h|  
 |[IDocHostUIHandlerDispatch](../../atl/reference/idochostuihandlerdispatch-interface.md)|Microsoft の HTML の解析およびレンダリング エンジンへのインターフェイス。|atlbase.h、ATLIFace.h|  
-|[つまり](../../atl/reference/ienumonstlimpl-class.md)|このクラスは、C++ 標準ライブラリ コレクションに基づく列挙子インターフェイスを定義します。|atlcom.h|  
+|[IEnumOnSTLImpl](../../atl/reference/ienumonstlimpl-class.md)|このクラスは、C++ 標準ライブラリ コレクションに基づく列挙子インターフェイスを定義します。|atlcom.h|  
 |[IObjectSafetyImpl](../../atl/reference/iobjectsafetyimpl-class.md)|このクラスの既定の実装を提供する、`IObjectSafety`インターフェイスを取得し、オブジェクトの安全性レベルを設定するクライアントを許可します。|atlctl.h|  
 |[IObjectWithSiteImpl](../../atl/reference/iobjectwithsiteimpl-class.md)|このクラスは、サイトと通信するためにオブジェクトを許可するメソッドを提供します。|atlcom.h|  
 |[IOleControlImpl](../../atl/reference/iolecontrolimpl-class.md)|このクラスの既定の実装を提供する、 **IOleControl**インターフェイスと実装**IUnknown**です。|atlctl.h|  
@@ -214,19 +218,19 @@ ms.lasthandoff: 10/24/2017
 |[ISpecifyPropertyPagesImpl](../../atl/reference/ispecifypropertypagesimpl-class.md)|このクラスは実装**IUnknown**の既定の実装を提供し、 [ISpecifyPropertyPages](http://msdn.microsoft.com/library/windows/desktop/ms695217)インターフェイスです。|atlcom.h|  
 |[ISupportErrorInfoImpl](../../atl/reference/isupporterrorinfoimpl-class.md)|このクラスの既定の実装を提供する、`ISupportErrorInfo Interface`インターフェイスし、1 つのインターフェイスのみがオブジェクトでのエラーを生成するときに使用できます。|atlcom.h|  
 |[IThreadPoolConfig インターフェイス](../../atl/reference/ithreadpoolconfig-interface.md)|このインターフェイスは、スレッド プールを構成するためのメソッドを提供します。|atlutil.h|  
-|[で](../../atl/reference/iviewobjecteximpl-class.md)|このクラスは実装**IUnknown**の既定の実装を提供し、 [IViewObject](http://msdn.microsoft.com/library/windows/desktop/ms680763)、 [IViewObject2](http://msdn.microsoft.com/library/windows/desktop/ms691318)、および[IViewObjectEx](http://msdn.microsoft.com/library/windows/desktop/ms682375)インターフェイスです。|atlctl.h|  
-|[IWorkerThreadClient インターフェイス](../../atl/reference/iworkerthreadclient-interface.md)|`IWorkerThreadClient`クライアントによって実装されるインターフェイスは、[使用](../../atl/reference/cworkerthread-class.md)クラスです。|atlutil.h|  
+|[IViewObjectExImpl](../../atl/reference/iviewobjecteximpl-class.md)|このクラスは実装**IUnknown**の既定の実装を提供し、 [IViewObject](http://msdn.microsoft.com/library/windows/desktop/ms680763)、 [IViewObject2](http://msdn.microsoft.com/library/windows/desktop/ms691318)、および[IViewObjectEx](http://msdn.microsoft.com/library/windows/desktop/ms682375)インターフェイスです。|atlctl.h|  
+|[IWorkerThreadClient インターフェイス](../../atl/reference/iworkerthreadclient-interface.md)|`IWorkerThreadClient` クライアントによって実装されるインターフェイスは、[使用](../../atl/reference/cworkerthread-class.md)クラスです。|atlutil.h|  
 |[_U_MENUorID](../../atl/reference/u-menuorid-class.md)|このクラスのラッパーを提供する**CreateWindow**と**について**です。|atlwin.h|  
 |[_U_RECT](../../atl/reference/u-rect-class.md)|この引数のアダプター クラスは、いずれかの`RECT`ポインターまたは参照ポインターの観点から実装されている関数に渡されます。|atlwin.h|  
 |[_U_STRINGorID](../../atl/reference/u-stringorid-class.md)|この引数のアダプター クラスは、いずれかのリソース名を使用できます (`LPCTSTR`s) またはリソース Id (**UINT**s)、呼び出し元の ID を使用して文字列を変換を必要とせず、関数に渡される、 **されるときは**マクロです。|atlwin.h|  
 |[Win32ThreadTraits](../../atl/reference/win32threadtraits-class.md)|このクラスは、Windows のスレッドの作成機能を提供します。 スレッド CRT 関数を使用しない場合は、このクラスを使用します。|atlbase.h|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)   
  [関数](../../atl/reference/atl-functions.md)   
  [グローバル変数](../../atl/reference/atl-global-variables.md)   
  [構造体](../../atl/reference/atl-structures.md)   
- [Typedef](../../atl/reference/atl-typedefs.md)   
+ [Typedefs](../../atl/reference/atl-typedefs.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
 
 

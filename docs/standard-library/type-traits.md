@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: <type_traits>
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- <type_traits>
+dev_langs:
+- C++
 helpviewer_keywords:
 - typetrait header
 - type_traits
 ms.assetid: 2260b51f-8160-4c66-a82f-00b534cb60d4
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: dff733e83e0917ee7f55a978886605146323f845
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 932c30ade2e6aaf1f07c878a0f6ee8960e9c83d8
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="lttypetraitsgt"></a>&lt;type_traits&gt;
 型引数のプロパティに関する情報を提供する、または変換された型を生成する、コンパイル時定数を備えたテンプレートを定義します。  
@@ -208,7 +213,7 @@ using add_const_t = typename add_const<T>::type;
 |[result_of](../standard-library/result-of-class.md)|指定された引数型を受け取る呼び出し可能型の戻り値の型を決定します。|  
 |[underlying_type](../standard-library/underlying-type-class.md)|列挙型の基になる整数型を生成します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<functional>](../standard-library/functional.md)
 
 

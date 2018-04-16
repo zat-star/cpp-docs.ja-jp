@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2063
 ms.assetid: 0a90c18f-4029-416a-9128-e8713b53e6f1
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 544e61d19fc9f00e37df51666fdc0f98bbb84e5f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 592303c26a8059898da6dc55d796de52bbb6b0a6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2063"></a>コンパイラ エラー C2063
 'identifier': 関数ではありません。  
@@ -41,7 +42,7 @@ int main() {
 }  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C2063b.c  

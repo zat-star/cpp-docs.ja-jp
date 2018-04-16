@@ -1,14 +1,17 @@
 ---
-title: "ビルド システムの変更 |Microsoft ドキュメント"
-ms.custom: 
+title: ビルド システムの変更 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: vc.msbuild.changes
-dev_langs: C++
+f1_keywords:
+- vc.msbuild.changes
+dev_langs:
+- C++
 helpviewer_keywords:
 - Build system changes, project file (.vcxprog)
 - Build system changes, custom build rules
@@ -18,20 +21,22 @@ helpviewer_keywords:
 - Build system changes, $(Inherit)
 - Build system changes, $(NoInherit)
 ms.assetid: e564d95f-a6cc-4d97-b57e-1a71daf66f4a
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 90266f54dd6972e68abe770bad4ee323eebf46b7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 59d30e2afd07c21cb42dbc2b9109d7547d6c5b9f
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="build-system-changes"></a>ビルド システムの変更点
 MSBuild システムを使用すると、Visual C プロジェクトをビルドします。 ただし、Visual Studio 2008 以前のリリースで、VCBuild システムが使用されます。 特定ファイルの種類と VCBuild に依存していたの概念は、存在しないかは現在のシステムで異なる方法で表されます。 このドキュメントでは、現在のビルド システムの違いについて説明します。  
   
-## <a name="vcproj-is-now-vcxproj"></a>.vcproj は .vcxproj はようになりました。  
+## <a name="vcproj-is-now-vcxproj"></a>.vcproj is now .vcxproj  
  プロジェクト ファイルは、不要になった .vcproj ファイル名拡張子を使用します。 Visual Studio には、以前のリリースの Visual C は、現在のシステムによって使用される形式にして作成されたプロジェクト ファイルに自動的に変換します。 プロジェクトを手動でアップグレードする方法の詳細については、次を参照してください。 [/Upgrade (devenv.exe)](/visualstudio/ide/reference/upgrade-devenv-exe)です。  
   
  現在のリリースでは、プロジェクト ファイルのファイル名拡張子は、.vcxproj がします。  
@@ -54,16 +59,16 @@ MSBuild システムを使用すると、Visual C プロジェクトをビルド
   
  現在のリリースでは、継承がリテラル値とプロパティのマクロの 1 つまたは複数の連結としてプロパティの値を指定することによってサポートされます。 **$ (Inherit)**と**$ (noinherit)**マクロはサポートされていません。  
   
- 次の例では、セミコロン区切りのリストは、[プロパティ] ページのプロパティに割り当てられます。 一覧から成るの連結、 *\<値 >*リテラルのパスと値の`MyProperty`マクロ表記を使用してアクセスされるプロパティ**$(** *MyProperty***)**です。  
+ 次の例では、セミコロン区切りのリストは、[プロパティ] ページのプロパティに割り当てられます。 一覧から成るの連結、 *\<値 >*リテラルのパスと値の`MyProperty`マクロ表記を使用してアクセスされるプロパティ**$(***MyProperty***)**.  
   
 ```  
 Property=<value>;$(MyProperty)  
 ```  
   
-## <a name="vcxprojuser-files"></a>。 vcxproj.user ファイル  
+## <a name="vcxprojuser-files"></a>.vcxproj.user Files  
  ユーザー ファイル (. vcxproj.user) の例、デバッグと配置の設定、ユーザー固有のプロパティを格納します。 Vcxproj.user ファイルは、特定のユーザーのすべてのプロジェクトに適用されます。  
   
-## <a name="vcxprojfilters-file"></a>。 vcxproj.filters ファイル  
+## <a name="vcxprojfilters-file"></a>.vcxproj.filters File  
  ときに**ソリューション エクスプ ローラー**フィルター ファイル、プロジェクトにファイルを追加するために使用 (. vcxproj.filters) 内の場所を定義、**ソリューション エクスプ ローラー**ツリー ビューでファイルを追加すると、そのファイル名拡張子に基づいて。  
   
 ## <a name="vc-directories-settings"></a>Vc++ ディレクトリの設定  

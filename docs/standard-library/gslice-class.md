@@ -4,30 +4,34 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - valarray/std::gslice
 - valarray/std::gslice::size
 - valarray/std::gslice::start
 - valarray/std::gslice::stride
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::gslice [C++]
 - std::gslice [C++], size
 - std::gslice [C++], start
 - std::gslice [C++], stride
 ms.assetid: f47cffd0-ea59-4b13-848b-7a5ce1d7e2a3
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6928fd3aa902b5ed0ab4e942950af76448e16e5e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 75dd4e6b4745bbf710541ecc423c3a01b46fc119
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="gslice-class"></a>gslice クラス
 valarray の多次元のサブセットを定義するのに使用する、値を配列するための utility クラス。 valarray が配列内のすべての要素を持つ多次元行列と見なされる場合、スライスにより多次元配列からベクターが抽出されます。  
@@ -61,7 +65,7 @@ valarray の多次元のサブセットを定義するのに使用する、値�
 |[start](#start)|`valarray` の一般的なスライスの開始インデックスを検索します。|  
 |[stride](#stride)|`valarray` の一般的なスライスの要素間の距離を検索します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<valarray>  
   
  **名前空間:** std  
@@ -343,6 +347,6 @@ The strides of vaResult are:
  vaGSlice.stride ( ) = ( 7 4 ).  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wfsopen
 - _fsopen
@@ -44,30 +44,17 @@ helpviewer_keywords:
 - _wfsopen function
 - file sharing [C++]
 ms.assetid: 5e4502ab-48a9-4bee-a263-ebac8d638dec
-caps.latest.revision: 20
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: c53bdd4bdd5d6707e6da15def20b6375dcf6e0dd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 29ace593ec55a74db72a9bfd9d8f155055923a83
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fsopen-wfsopen"></a>_fsopen、_wfsopen
 ファイル共有付きでストリームを開きます。  
@@ -118,7 +105,7 @@ FILE *_wfsopen(
   
  既存のファイルを破棄するため、`"w"` と `"w+"` の型は注意して使用します。  
   
- アクセスの種類 `"a"` または `"a+"` を使用してファイルを開くと、すべての書き込み操作はファイルの末尾から行われます。 ファイル ポインターは `fseek` 関数または `rewind` 関数を使用して移動できますが、書き込み操作の実行前には必ずファイルの終端に戻されます。 したがって、既存のデータは上書きされません。 `"r+"`、`"w+"`、または `"a+"` のいずれかのアクセスの種類を指定すると、読み取りと書き込みの両方を行うことができます (この場合、ファイルは「更新用に開かれる」と言います)。 ただし、読み取りと書き込みを切り替える場合は、その前に [fsetpos](../../c-runtime-library/reference/fsetpos.md)、[fseek](../../c-runtime-library/reference/fseek-fseeki64.md)、または [rewind](../../c-runtime-library/reference/rewind.md) のいずれかの操作を実行する必要があります。 必要に応じて、`fsetpos` 関数または `fseek` 関数には現在位置を指定できます。 上記の値に加え、`mode` に次の文字の 1 つを追加すると、改行の変換モードやファイル管理を指定できます。  
+ アクセスの種類 `"a"` または `"a+"` を使用してファイルを開くと、すべての書き込み操作はファイルの末尾から行われます。 ファイル ポインターは `fseek` 関数または `rewind` 関数を使用して移動できますが、書き込み操作の実行前には必ずファイルの終端に戻されます。したがって、既存のデータは上書きされません。 `"r+"`、`"w+"`、または `"a+"` のいずれかのアクセスの種類を指定すると、読み取りと書き込みの両方を行うことができます (この場合、ファイルは「更新用に開かれる」と言います)。 ただし、読み取りと書き込みを切り替える場合は、その前に [fsetpos](../../c-runtime-library/reference/fsetpos.md)、[fseek](../../c-runtime-library/reference/fseek-fseeki64.md)、または [rewind](../../c-runtime-library/reference/rewind.md) のいずれかの操作を実行する必要があります。 必要に応じて、`fsetpos` 関数または `fseek` 関数には現在位置を指定できます。 上記の値に加え、`mode` に次の文字の 1 つを追加すると、改行の変換モードやファイル管理を指定できます。  
   
 |用語|定義|  
 |----------|----------------|  
@@ -147,7 +134,7 @@ FILE *_wfsopen(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tfsopen`|`_fsopen`|`_fsopen`|`_wfsopen`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|省略可能なヘッダー|  
 |--------------|---------------------|----------------------|  
@@ -186,7 +173,7 @@ int main( void )
 No one else in the network can write to this file until we are done.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fclose、_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   
  [_fdopen、_wfdopen](../../c-runtime-library/reference/fdopen-wfdopen.md)   

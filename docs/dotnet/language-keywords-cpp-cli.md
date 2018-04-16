@@ -4,21 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: keywords [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- keywords [C++]
 ms.assetid: 021013b2-70ac-4df9-aa77-4af1c67a1a67
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3a1d83f94f6c5d03dc396c9d3f6c6fcbcfde5a4d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e1107ad45feaae470ed2a7481f80bb17c389042d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="language-keywords-ccli"></a>言語キーワード (C++/CLI)
 複数言語のキーワードが Visual c、c++ マネージ拡張から変更します。  
@@ -39,6 +45,6 @@ ms.lasthandoff: 10/24/2017
   
  スペース区切りキーワードなど`value class`、コンテキスト キーワードの特殊なケースです。 コンテキスト修飾子をスペースで区切られた既存のキーワードをペアリングします。 ペアは、2 つのキーワードではなく 1 つの単位として扱われます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C + +/CLI 移行ガイド](../dotnet/cpp-cli-migration-primer.md)   
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

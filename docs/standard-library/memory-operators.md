@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - memory/std::operator!=
 - memory/std::operator>
@@ -14,17 +14,20 @@ f1_keywords:
 - memory/std::operator<=
 - memory/std::operator<<
 - memory/std::operator==
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 257e3ba9-c4c2-4ae8-9b11-b156ba9c28de
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 95563f5eeb70d33e3ebba4de0aead276a2230669
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dd02495ab42fd758cca28cfc5670ea1a1e7a2a83
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltmemorygt-operators"></a>&lt;memory&gt; 演算子
 ||||  
@@ -240,7 +243,7 @@ sp0 == sp0 == true
 sp0 == sp1 == false  
 ```  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  1 つ目のオブジェクトが 2 つ目のオブジェクト以上であるかをテストします。  
   
 ```  
@@ -299,7 +302,7 @@ bool operator<(
  `Ty2`  
  右辺のポインターによって制御される型。  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  1 番目のオブジェクトが 2 番目のオブジェクト以下であるかどうかをテストします。  
   
 ```  
@@ -328,7 +331,7 @@ bool operator<=(
  右辺の共有ポインターによって制御される型。  
   
 ### <a name="remarks"></a>コメント  
- このテンプレートの演算子を返す`left.get() <= right.get()`  
+ このテンプレートの演算子を返す `left.get() <= right.get()`  
   
 ##  <a name="op_gt"></a>  operator&gt;  
  1 番目のオブジェクトが 2 番目のオブジェクトより大きいかどうかをテストします。  
@@ -358,7 +361,7 @@ bool operator>(
  `Ty2`  
  右辺の共有ポインターによって制御される型。  
   
-##  <a name="op_lt_lt"></a>  operator&lt;&lt;  
+##  <a name="op_lt_lt"></a>  演算子&lt;&lt;  
 共有ポインターをストリームに書き込みます。  
   
 ```  
@@ -409,6 +412,6 @@ int main()
 sp0 == 3f3040 (varies)  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<memory>](../standard-library/memory.md)
 

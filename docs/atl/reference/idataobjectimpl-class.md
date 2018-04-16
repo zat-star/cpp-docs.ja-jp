@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -20,22 +21,25 @@ f1_keywords:
 - ATLCTL/ATL::IDataObjectImpl::GetDataHere
 - ATLCTL/ATL::IDataObjectImpl::QueryGetData
 - ATLCTL/ATL::IDataObjectImpl::SetData
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - data transfer [C++]
 - data transfer [C++], Uniform Data Transfer
 - IDataObjectImpl class
 - IDataObject, ATL implementation
 ms.assetid: b680f0f7-7795-40a1-a0f6-f48768201c89
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: be2fbd11ac875906c9fc4fca4c58d3979f49cc3e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 644f498a491605fb69b18ec53afee689f5f90a26
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="idataobjectimpl-class"></a>IDataObjectImpl クラス
 このクラスは、汎用データ転送をサポートして、接続を管理するためのメソッドを提供します。  
@@ -85,7 +89,7 @@ class IDataObjectImpl
   
  `IDataObjectImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlctl.h  
   
 ##  <a name="dadvise"></a>IDataObjectImpl::DAdvise  
@@ -226,5 +230,5 @@ HRESULT SetData(
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::SetData](http://msdn.microsoft.com/library/windows/desktop/ms686626) Windows SDK にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3229
-dev_langs: C++
-helpviewer_keywords: C3229
+f1_keywords:
+- C3229
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3229
 ms.assetid: f2d90923-aa8b-444f-ab10-1f37dbb864e1
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4687643e69ff0c31f4aac9cd30c4fc307c8b02e4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 24911d0ccd78788e37379dd7757fe97785cdd5a4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3229"></a>コンパイラ エラー C3229
 'type': ジェネリック型パラメーターで間接指定することはできません  

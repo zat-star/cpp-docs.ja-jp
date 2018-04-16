@@ -1,36 +1,40 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4514 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4514"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4514"
+title: "コンパイラの警告 (レベル 4) C4514 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4514
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4514
 ms.assetid: cdae966a-9cd4-4e31-af30-2a014e68f614
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b6c9ac776c108a84c813ca814bc674dec4999e31
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4514
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'function' : 参照されていないインライン関数は削除されました。  
+# <a name="compiler-warning-level-4-c4514"></a>コンパイラの警告 (レベル 4) C4514
+'function': 参照されていないインライン関数は削除されました  
   
- 呼び出されていないインライン関数が、オプティマイザーによって削除されました。  
+ オプティマイザーは、呼び出されていないインライン関数を削除します。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[Compiler Warnings That Are Off by Default](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
- 次の例では警告 C4514 が生成されます。  
+ 次の例では、C4514 が生成されます。  
   
 ```  
 // C4514.cpp  

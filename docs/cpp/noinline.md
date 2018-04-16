@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: noinline_cpp
-dev_langs: C++
+f1_keywords:
+- noinline_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - noinline __declspec keyword
 - __declspec keyword [C++], noinline
 ms.assetid: f259d55b-dec7-4bde-8cf9-14521e4fdc42
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6b8548f428509c2af45858e1baf927da54ebe8f6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6d959235cbcad3e33140c2711633a55c1bba2096
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="noinline"></a>noinline
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -41,7 +46,7 @@ class X {
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_ _declspec](../cpp/declspec.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [inline、__inline、\__forceinline](inline-functions-cpp.md)

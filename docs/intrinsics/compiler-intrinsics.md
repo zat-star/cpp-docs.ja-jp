@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - intrinsics, compiler
 - compiler intrinsics
 - cl.exe compiler, performance
 - cl.exe compiler, intrinsics
 ms.assetid: 48bb9929-7d78-4fd8-a092-ae3c9f971858
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 53d6986d569bbf928282dce9e9e1cba0601bc4ad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 20b1416eacc6fa31c5e41b4a0539ce9ccbd99f88
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="compiler-intrinsics"></a>コンパイラ組み込み
 ほとんどの関数はライブラリに含まれますが、関数によっては、コンパイラに組み込まれているものもあります。 これらは、組み込み関数または組み込みと呼ばれます。  
@@ -52,7 +56,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [組み込み関数のアルファベット順の一覧](../intrinsics/alphabetical-listing-of-intrinsic-functions.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ARM アセンブラー リファレンス](../assembler/arm/arm-assembler-reference.md)   
  [Microsoft Macro Assembler リファレンス](../assembler/masm/microsoft-macro-assembler-reference.md)   
  [キーワード](../cpp/keywords-cpp.md)   

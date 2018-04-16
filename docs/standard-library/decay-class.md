@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: type_traits/std::decay
-dev_langs: C++
-helpviewer_keywords: decay class
+ms.topic: reference
+f1_keywords:
+- type_traits/std::decay
+dev_langs:
+- C++
+helpviewer_keywords:
+- decay class
 ms.assetid: 96baa2fd-c8e0-49af-be91-ba375ba7f9dc
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 74f89b08422563c9b215ece0e879de7d83e5597d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d43ee8ff7971af3026066b3483de4808ec2dc114
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="decay-class"></a>decay クラス
 値で渡されように型を生成します。 型を非参照、非定数、非揮発性にします。または、関数からの型または配列型へのポインターを作成します。  
@@ -49,12 +55,12 @@ using decay_t = typename decay<T>::type;
   
 -   それ以外の場合、修飾型 `type` は `remove_cv<U>::type` になります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
 
 

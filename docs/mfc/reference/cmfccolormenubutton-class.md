@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -29,7 +30,8 @@ f1_keywords:
 - AFXCOLORMENUBUTTON/CMFCColorMenuButton::IsEmptyMenuAllowed
 - AFXCOLORMENUBUTTON/CMFCColorMenuButton::OnDraw
 - AFXCOLORMENUBUTTON/CMFCColorMenuButton::OnDrawOnCustomizeList
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCColorMenuButton [MFC], CMFCColorMenuButton
 - CMFCColorMenuButton [MFC], EnableAutomaticButton
@@ -51,15 +53,17 @@ helpviewer_keywords:
 - CMFCColorMenuButton [MFC], OnDraw
 - CMFCColorMenuButton [MFC], OnDrawOnCustomizeList
 ms.assetid: 42685704-e994-4f7b-9553-62283c27b754
-caps.latest.revision: "29"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 665c4b40ca8ec5a149685b5d9c2c54017ca0b883
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2c6e976b1a5497e8d2814208b6b3260037458fc0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfccolormenubutton-class"></a>CMFCColorMenuButton クラス
 `CMFCColorMenuButton`メニュー コマンドまたはツールバーのボタン、カラー ピッカー ダイアログ ボックスを起動するクラスをサポートしています。  
@@ -126,7 +130,7 @@ class CMFCColorMenuButton : public CMFCToolBarMenuButton
   
  [CMFCColorMenuButton](../../mfc/reference/cmfccolormenubutton-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcolormenubutton.h  
   
 ##  <a name="cmfccolormenubutton"></a>CMFCColorMenuButton::CMFCColorMenuButton  
@@ -497,7 +501,7 @@ void SetColumnsNumber(int nColumns);
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCColorBar クラス](../../mfc/reference/cmfccolorbar-class.md)   

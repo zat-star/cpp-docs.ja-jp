@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: BEGIN_COLUMN_MAP
-dev_langs: C++
-helpviewer_keywords: BEGIN_COLUMN_MAP macro
+ms.topic: reference
+f1_keywords:
+- BEGIN_COLUMN_MAP
+dev_langs:
+- C++
+helpviewer_keywords:
+- BEGIN_COLUMN_MAP macro
 ms.assetid: d6ffe633-e0da-4e33-8faa-f7f259d05420
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 29e62e08ef03d863b17ea0d269cf049b23602774
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 45d5438d1a4ba946aa3db36cc2b92eef1aa93ba3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="begincolumnmap"></a>BEGIN_COLUMN_MAP
 列マップ エントリの先頭を示します。  
@@ -27,11 +34,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-  
-BEGIN_COLUMN_MAP(  
-x  
- )  
-  
+BEGIN_COLUMN_MAP(x)  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -50,10 +53,10 @@ x
   
  <!--[!CODE [NVC_OLEDB_Consumer#16](../codesnippet/vs_snippets_cpp/nvc_oledb_consumer#16)]  -->
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [END_COLUMN_MAP](../../data/oledb/end-column-map.md)   
  [COLUMN_ENTRY](../../data/oledb/column-entry.md)   

@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - '* operator'
 - indirection operator
 - operators [C++], indirection
 - indirection operator [C++], syntax
 ms.assetid: c50309e1-6c02-4184-9fcb-2e13c1f4ac03
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 271708c8908e6d213047283c431e03726946e059
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2c87c279ae1f45899dfa4525c3bdc65bfa5acc2c
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="indirection-operator-"></a>間接演算子: *
 ## <a name="syntax"></a>構文  
@@ -37,7 +41,7 @@ ms.lasthandoff: 10/24/2017
   
  オペランドが関数を指している場合、結果は関数指定子になります。 格納場所を指している場合、結果は格納場所を指定する左辺値になります。  
   
- 間接演算子は、ポインターへのポインターを逆参照するために累積的に使用される場合があります。 例:  
+ 間接演算子は、ポインターへのポインターを逆参照するために累積的に使用される場合があります。 例えば:  
   
 ```  
 // expre_Indirection_Operator.cpp  

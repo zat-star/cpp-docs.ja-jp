@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname: ___lc_locale_name_func
+apiname:
+- ___lc_locale_name_func
 apilocation:
 - msvcrt.dll
 - msvcr110.dll
@@ -17,19 +19,24 @@ apilocation:
 - msvcr80.dll
 - msvcr110_clr0400.dll
 apitype: DLLExport
-f1_keywords: ___lc_locale_name_func
-dev_langs: C++
-helpviewer_keywords: ___lc_locale_name_func
+f1_keywords:
+- ___lc_locale_name_func
+dev_langs:
+- C++
+helpviewer_keywords:
+- ___lc_locale_name_func
 ms.assetid: ef858308-872e-43de-95e0-9b1b4084343e
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a60ca29a61d423186c8b53f23aa9e4d2941f8c57
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 243fcd75c657125e001e4dc0544e9c315df1bd07
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="lclocalenamefunc"></a>___lc_locale_name_func
 内部 CRT 関数。 スレッドの現在のロケール名を取得します。  
@@ -48,13 +55,13 @@ wchar_t** ___lc_locale_name_func(void);
   
  内部 CRT 関数は実装固有であり、各リリースでの変更の対象です。 コード内では使用しないことをお勧めします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`___lc_locale_name_func`|crt\src\setlocal.h|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_get_current_locale](../c-runtime-library/reference/get-current-locale.md)   
  [setlocale、_wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)   
  [_create_locale、_wcreate_locale](../c-runtime-library/reference/create-locale-wcreate-locale.md)   

@@ -1,69 +1,69 @@
 ---
-title: "CTable クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::CTable"
-  - "ATL.CTable"
-  - "CTable"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTable クラス"
+title: "CTable クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL::CTable
+- ATL.CTable
+- CTable
+dev_langs:
+- C++
+helpviewer_keywords:
+- CTable class
 ms.assetid: f13fdaa3-e198-4557-977d-54b0bbc3454d
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: c8bf7bb8daa33a69dfbc6a3de41171004244cbd5
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CTable クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="ctable-class"></a>CTable クラス
+(パラメーターなしのいずれかの) 単純な行セットに直接アクセスするための手段を提供します。  
+  
+## <a name="syntax"></a>構文
 
-直接単純な行セット \(パラメーターなしで 1\) にアクセスできます。  
-  
-## 構文  
-  
-```  
-template <   
-   class TAccessor = CNoAccessor,    
-   template <typename T> class TRowset = CRowset    
->  
-class CTable :    
-   public CAccessorRowset <   
-      TAccessor,    
-      TRowset    
-   >  
+```cpp
+template <class TAccessor = CNoAccessor, 
+            template <typename T> class TRowset = CRowset>  
+class CTable :  
+   public CAccessorRowset <TAccessor, TRowset>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `TAccessor`  
  アクセサー クラス。  
   
  `TRowset`  
- 行セット クラス。  
+ 行セット クラスです。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### メソッド  
+### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
-|[&#91;Open&#93;](../../data/oledb/ctable-open.md)|テーブルを開きます。|  
+|[開く](../../data/oledb/ctable-open.md)|テーブルを開きます。|  
   
-## 解説  
- 行セットにアクセスするコマンドを実行する方法については、" [CCommand](../../data/oledb/ccommand-class.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[CCommand](../../data/oledb/ccommand-class.md)については、行セットにアクセスするためのコマンドを実行する方法です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB コンシューマー テンプレート リファレンス](../../data/oledb/ole-db-consumer-templates-reference.md)   
  [IOpenRowset::OpenRowset](https://msdn.microsoft.com/en-us/library/ms716724.aspx)

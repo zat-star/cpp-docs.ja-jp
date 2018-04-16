@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3537
 ms.assetid: f537ebd1-4fb0-4e09-a453-4f38db2c6881
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3a131b7bab9c89c7a5ea39a4b5b05d8e91b572fe
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: f425ee0d93a277bac5dc1f0a798c1a7cc3ed3bac
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3537"></a>コンパイラ エラー C3537
 'type': 'auto' を含む型にキャストすることはできません  
@@ -49,5 +50,5 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto キーワード](../../cpp/auto-keyword.md)

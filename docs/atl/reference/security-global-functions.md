@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,21 +18,24 @@ f1_keywords:
 - atlsecurity/ATL::AtlGetSacl
 - atlsecurity/ATL::AtlSetSacl
 - atlsecurity/ATL::AtlGetSecurityDescriptor
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - SIDs [C++], modifying SID objects
 - ACL object global functions
 - security IDs [C++]
 ms.assetid: 6a584bfe-16b7-47f4-8439-9c789c41567a
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d60eb8f3fbb782deadc89a3d9c3e3c44974d849c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c1439fcf15a9359d3a548945edc76c1ddcf8675f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="security-global-functions"></a>セキュリティのグローバル関数
 これらの関数は、オブジェクトの SID と ACL オブジェクトを変更するためのサポートを提供します。  
@@ -51,7 +55,7 @@ ms.lasthandoff: 10/24/2017
 |[AtlSetSacl](#atlsetsacl)|指定されたオブジェクトのシステム アクセス制御リスト (SACL: System Access Control List) の情報を設定します。|  
 |[AtlGetSecurityDescriptor](#atlgetsecuritydescriptor)|指定されたオブジェクトのセキュリティ記述子を取得します。|  
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
 
 ##  <a name="atlgetdacl"></a>AtlGetDacl  
@@ -115,7 +119,7 @@ inline bool AtlSetDacl(
   
 ### <a name="remarks"></a>コメント  
  場合はデバッグ ビルドで、アサーション エラーが発生`hObject`が有効でない場合、または`dwInheritanceFlowControl`3 つの許容値のいずれかではありません。  
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
 
 ##  <a name="atlgetgroupsid"></a>AtlGetGroupSid  
@@ -144,7 +148,7 @@ inline bool AtlGetGroupSid(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
 
 ##  <a name="atlsetgroupsid"></a>AtlSetGroupSid  
@@ -173,7 +177,7 @@ inline bool AtlSetGroupSid(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
 
 ##  <a name="atlgetownersid"></a>AtlGetOwnerSid  
@@ -202,7 +206,7 @@ inline bool AtlGetOwnerSid(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
 
 ##  <a name="atlsetownersid"></a>AtlSetOwnerSid  
@@ -231,7 +235,7 @@ inline bool AtlSetOwnerSid(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
 
 ##  <a name="atlgetsacl"></a>AtlGetSacl  
@@ -267,7 +271,7 @@ inline bool AtlGetSacl(
 ### <a name="remarks"></a>コメント  
  場合`AtlGetSacl`多数の異なるオブジェクトに何度も呼び出すは効率的で、関数を呼び出す前に 1 回 SE_SECURITY_NAME 特権を有効にすることが`bRequestNeededPrivileges`を false に設定します。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
 
 ##  <a name="atlsetsacl"></a>AtlSetSacl  
@@ -309,7 +313,7 @@ inline bool AtlSetSacl(
   
  場合`AtlSetSacl`多数の異なるオブジェクトに何度も呼び出すは効率的で、関数を呼び出す前に 1 回 SE_SECURITY_NAME 特権を有効にすることが`bRequestNeededPrivileges`を false に設定します。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
 
 ##  <a name="atlgetsecuritydescriptor"></a>AtlGetSecurityDescriptor  
@@ -351,8 +355,8 @@ inline bool AtlGetSecurityDescriptor(
 ### <a name="remarks"></a>コメント  
  場合`AtlGetSecurityDescriptor`多数の異なるオブジェクトに何度も呼び出すは効率的で、関数を呼び出す前に 1 回 SE_SECURITY_NAME 特権を有効にすることが`bRequestNeededPrivileges`を false に設定します。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h 
    
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../atl/reference/atl-functions.md)

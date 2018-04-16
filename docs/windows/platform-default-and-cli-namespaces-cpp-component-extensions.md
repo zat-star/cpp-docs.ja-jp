@@ -1,68 +1,72 @@
 ---
-title: "Platform, default, and cli Namespaces  (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "lang"
-  - "cli"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lang namespace"
-  - "cli namespace"
+title: "プラットフォーム、既定値、および cli 名前空間 (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- lang
+- cli
+dev_langs:
+- C++
+helpviewer_keywords:
+- lang namespace
+- cli namespace
 ms.assetid: 9d38bd1e-dc78-47d1-a84b-9b4683e52c9c
-caps.latest.revision: 19
-caps.handback.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 5e5fa26b46a110fd59f7568a9101270766928f89
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Platform, default, and cli Namespaces  (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-言語要素の名前は名前空間によって修飾されるため、それ以外は同じである名前と、ソース コードの別の部分で競合することはありません。  たとえば、名前が競合すると、コンパイラで[状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)を認識できなくなる場合があります。  名前空間はコンパイラによって使用されますが、コンパイルされたアセンブリでは保持されません。  
+# <a name="platform-default-and-cli-namespaces--c-component-extensions"></a>プラットフォーム、既定、および cli 名前空間 (C++ コンポーネント拡張)
+言語要素の名前は名前空間によって修飾されるため、それ以外は同じである名前と、ソース コードの別の部分で競合することはありません。 たとえば、名前の衝突されない可能性があります、コンパイラを認識し[状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)です。 名前空間はコンパイラによって使用されますが、コンパイルされたアセンブリでは保持されません。  
   
-## すべてのランタイム  
- Visual C\+\+ では、プロジェクトの作成時に、既定の名前空間がプロジェクトに与えられます。  名前空間の名前は手動で変更できますが、[!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] では、.winmd ファイルの名前が、ルート名前空間の名前と一致する必要があります。  
+## <a name="all-runtimes"></a>すべてのランタイム  
+ Visual C++ では、プロジェクトの作成時に、既定の名前空間がプロジェクトに与えられます。 ルート名前空間の名前に一致する必要があります Windows ランタイムで、.winmd ファイルの名前が手動で、名前空間を変更できます。  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
- 詳細については、「[名前空間と型の参照範囲 \(C\+\+\/CX\)](http://msdn.microsoft.com/library/windows/apps/hh969551.aspx)」を参照してください。  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ 詳細については、次を参照してください。[名前空間と型の可視性 (C + + CX)](http://msdn.microsoft.com/library/windows/apps/hh969551.aspx)です。  
   
-### 必要条件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
  **構文**  
   
 ```  
 using namespace cli;  
 ```  
   
- **コメント**  
+ **解説**  
   
- [!INCLUDE[cppcli](../build/reference/includes/cppcli_md.md)] は `cli` 名前空間をサポートしています。  **\/clr** を指定してコンパイルする場合、Syntax セクションの `using` ステートメントが適用されます。  
+ C + + CLI をサポートしている、`cli`名前空間。 コンパイルするときに**/clr**、 `using` 「構文」セクション内ステートメント暗黙的に指定します。  
   
  次の言語機能は、`cli` 名前空間に含まれます。  
   
--   [Arrays](../windows/arrays-cpp-component-extensions.md)  
+-   [配列](../windows/arrays-cpp-component-extensions.md)  
   
--   [interior\_ptr \(C\+\+\/CLI\)](../windows/interior-ptr-cpp-cli.md)  
+-   [interior_ptr (C++/CLI)](../windows/interior-ptr-cpp-cli.md)  
   
--   [pin\_ptr \(C\+\+\/CLI\)](../Topic/pin_ptr%20\(C++-CLI\).md)  
+-   [pin_ptr (C++/CLI)](../windows/pin-ptr-cpp-cli.md)  
   
--   [safe\_cast](../windows/safe-cast-cpp-component-extensions.md)  
+-   [safe_cast](../windows/safe-cast-cpp-component-extensions.md)  
   
-### 必要条件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-### 使用例  
+### <a name="examples"></a>使用例  
  **例**  
   
  次のコード例は、`cli` 名前空間のシンボルをユーザー定義シンボルとしてコードで使用できることを示します。  ただし、この場合は、同じ名前の `cli` 言語要素への参照を明示的または暗黙的に修飾する必要があります。  
@@ -83,5 +87,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

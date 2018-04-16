@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _sopen_s
 - _wsopen_s
@@ -28,7 +29,8 @@ f1_keywords:
 - wsopen_s
 - _wsopen_s
 - sopen_s
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - sopen_s function
 - _wsopen_s function
@@ -38,15 +40,17 @@ helpviewer_keywords:
 - _sopen_s function
 - files [C++], sharing
 ms.assetid: 059a0084-d08c-4973-9174-55e391b72aa2
-caps.latest.revision: "29"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4d9b5557ba6c57410526260af905950f290fb298
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 67bc88f047806e21245389837b9f712d3491033a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="sopens-wsopens"></a>_sopen_s、_wsopen_s
 共有用にファイルを開きます。 これらの [_sopen および _wsopen](../../c-runtime-library/reference/sopen-wsopen.md) のバージョンは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」で説明されているように、セキュリティが強化されています。  
@@ -128,8 +132,7 @@ errno_t _wsopen_s(
  ファイルをバイナリ (無変換) モードで開きます。 (バイナリ モードの詳細については、「[fopen](../../c-runtime-library/reference/fopen-wfopen.md)」を参照してください)。  
   
  `_O_CREAT`  
- ファイルを作成し、書き込み用に開きます。 
-          `filename` で指定されたファイルが存在する場合は無効です。  
+ ファイルを作成し、書き込み用に開きます。 `filename` で指定されたファイルが存在する場合は無効です。  
   
  `_O_CREAT | _O_SHORT_LIVED`  
  ファイルを一時ファイルとして作成し、可能な場合は、ディスクにフラッシュしません。  
@@ -138,8 +141,7 @@ errno_t _wsopen_s(
  ファイルを一時ファイルとして作成します。最後のファイル記述子が閉じられると、ファイルは削除されます。  
   
  `_O_CREAT | _O_EXCL`  
- 
-          `filename` で指定されたファイルが存在する場合、エラー値を返します。 
+ `filename` で指定されたファイルが存在する場合、エラー値を返します。 
           `_O_CREAT` と共に使用された場合にのみ適用されます。  
   
  `_O_NOINHERIT`  
@@ -149,12 +151,10 @@ errno_t _wsopen_s(
  主にディスクからのランダム アクセスを指定します。  
   
  `_O_RDONLY`  
- 読み取り専用でファイルを開きます。 
-          `_O_RDWR` または `_O_WRONLY` と共に指定することはできません。  
+ 読み取り専用でファイルを開きます。 `_O_RDWR` または `_O_WRONLY` と共に指定することはできません。  
   
  `_O_RDWR`  
- 読み取りと書き込みの両方用にファイルを開きます。 
-          `_O_RDONLY` または `_O_WRONLY` と共に指定することはできません。  
+ 読み取りと書き込みの両方用にファイルを開きます。 `_O_RDONLY` または `_O_WRONLY` と共に指定することはできません。  
   
  `_O_SEQUENTIAL`  
  主にディスクからの順次アクセスを指定します。  
@@ -218,19 +218,19 @@ errno_t _wsopen_s(
   
  `_sopen_s` では、アクセス許可が設定される前に、現在のファイル アクセス許可マスクが `pmode` に適用されます。 (「[_umask](../../c-runtime-library/reference/umask.md)」を参照。)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_sopen_s`|\<io.h>|\<fcntl.h>、\<sys\types.h>、\<sys\stat.h>、\<share.h>|  
 |`_wsopen_s`|\<io.h> または \<wchar.h>|\<fcntl.h>、\<sys/types.h>、\<sys/stat.h>、\<share.h>|  
   
- `_sopen_s` および `_wsopen_s` は Microsoft 拡張機能です。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ `_sopen_s` および `_wsopen_s` は Microsoft 拡張機能です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_locking](../../c-runtime-library/reference/locking.md)」の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
  [_close](../../c-runtime-library/reference/close.md)   
  [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   

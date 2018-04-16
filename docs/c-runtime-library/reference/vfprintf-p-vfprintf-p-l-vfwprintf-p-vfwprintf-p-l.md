@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _vfprintf_p
 - _vfwprintf_p
@@ -34,7 +35,8 @@ f1_keywords:
 - _vftprintf_p
 - _vfprintf_p_l
 - vfprintf_p
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - vfprintf_p_l function
 - _vftprintf_p_l function
@@ -50,15 +52,17 @@ helpviewer_keywords:
 - formatted text [C++]
 - vfwprintf_p function
 ms.assetid: 4d4a0914-4175-4b65-9ca1-037c4ef29147
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8a40beb8f814fd4a2761242f9b93c1ae4b3b7387
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bdbb916ef756d3437c8d4df1af725fc49fdfff6d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="vfprintfp-vfprintfpl-vfwprintfp-vfwprintfpl"></a>_vfprintf_p、_vfprintf_p_l、_vfwprintf_p、_vfwprintf_p_l
 引数リストへのポインターを使用して、書式付き出力を書き込みます。その際、書式指定文字列で引数を使用する順序を指定できます。  
@@ -103,13 +107,13 @@ int _vfwprintf_p_l(
  `locale`  
  使用するロケール。  
   
- 詳細については、[書式の指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関する記事をご覧ください。  
+ 詳細については、「 [printf 関数と wprintf 関数の書式指定フィールド](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」を参照してください。  
   
 ## <a name="return-value"></a>戻り値  
  `_vfprintf_p` 関数と `_vfwprintf_p` 関数は、書き込まれた文字数を返します。終端の null 文字は含まれません。出力エラーが発生した場合は、負の値を返します。  
   
 ## <a name="remarks"></a>コメント  
- これらの関数は、引数リストへのポインターを使用して、指定されたデータを書式化して `stream` に書き込みます。 これらの関数は、位置指定パラメーターをサポートする点を除いて `_vfprint_s` および `_vfwprint_s` のバージョンと同じです。 詳細については、「[printf_p の位置指定パラメーター](../../c-runtime-library/printf-p-positional-parameters.md)」を参照してください。  
+ これらの関数は、引数リストへのポインターを使用して、指定されたデータを書式化して `stream` に書き込みます。 これらの関数は、位置指定パラメーターをサポートする点を除いて `_vfprint_s` および `_vfwprint_s` のバージョンと同じです。 詳細については、「[printf_p の位置指定パラメーター](../../c-runtime-library/printf-p-positional-parameters.md)」をご覧ください。  
   
  `_vfwprintf_p` は `_vprintf_p` のワイド文字バージョンであり、ストリームが ANSI モードで開いている場合、この 2 つの関数の動作は同じです。 `_vprintf_p` では、UNICODE ストリームへの出力はサポートされていません。  
   
@@ -127,9 +131,9 @@ int _vfwprintf_p_l(
 |`_vftprintf_p`|`_vfprintf_p`|`_vfprintf_p`|`_vfwprintf_p`|  
 |`_vftprintf_p_l`|`_vfprintf_p_l`|`_vfprintf_p_l`|`_vfwprintf_p_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|省略可能なヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
 |-------------|---------------------|----------------------|  
 |`_vfprintf_p`, `_vfprintf_p_l`|\<stdio.h> および \<stdarg.h>|\<varargs.h>*|  
 |`_vfwprintf_p`, `_vfwprintf_p_l`|\<stdio.h> または \<wchar.h>、および \<stdarg.h>|\<varargs.h>*|  
@@ -138,7 +142,7 @@ int _vfwprintf_p_l(
   
  互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)   
  [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   

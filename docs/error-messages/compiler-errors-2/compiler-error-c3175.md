@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3175
 ms.assetid: 3f19d513-a05a-4b6c-806f-276fe5c36b90
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ec0704f01bfa34343b28c931ddce9b158783f686
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: b2b8ff8052a9d54e12a4eca6a54701708096352a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3175"></a>コンパイラ エラー C3175
 'function1': 関数 'function2' をアンマネージからマネージ型のメソッドを呼び出すことはできません  
@@ -55,4 +56,3 @@ int main() {
    func2();  
 }  
 ```  
-

@@ -5,16 +5,18 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4db57ef2-31fa-4696-bbeb-79a9035033ed
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-ms.openlocfilehash: 9cdb12373d93c17258fb615f667d7321e06f6728
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 88bae92c568285e44965d6bfaca399709105d323
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atl-http-utility-functions"></a>ATL HTTP ユーティリティ関数
 
@@ -22,7 +24,7 @@ ms.lasthandoff: 10/24/2017
 
 |||  
 |-|-|  
-|[どうか](#atlcanonicalizeurl)|URL では、安全でない文字や空白をエスケープ シーケンスに変換を正規化します。|  
+|[AtlCanonicalizeUrl](#atlcanonicalizeurl)|URL では、安全でない文字や空白をエスケープ シーケンスに変換を正規化します。|  
 |[AtlCombineUrl](#atlcombineurl)|1 つの標準形式の URL をベース URL と相対 URL を結合します。|  
 |[AtlEscapeUrl](#atlescapeurl)|すべての安全でない文字をエスケープ シーケンスに変換します。|  
 |[AtlGetDefaultUrlPort](#atlgetdefaulturlport)|特定のインターネット プロトコルまたはスキームに関連付けられている既定のポート番号を取得します。|  
@@ -31,10 +33,10 @@ ms.lasthandoff: 10/24/2017
 |[RGBToHtml](#rgbtohtml)|変換、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)値をそのカラー値に対応する HTML テキスト。|
 |[SystemTimeToHttpDate](#systemtimetohttpdate)|システム時刻を HTTP ヘッダーで使用できる形式の文字列に変換します。|
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlutil.h  
 
-## <a name="atlcanonicalizeurl"></a>どうか
+## <a name="atlcanonicalizeurl"></a> AtlCanonicalizeUrl
 URL を標準形式に変換します。安全でない文字や空白をエスケープ シーケンスに変換する処理などが含まれます。  
   
 ```    
@@ -58,13 +60,13 @@ inline BOOL AtlCanonicalizeUrl(
  `dwFlags`  
  この関数の動作を制御する ATL_URL フラグ。 
 
-- `ATL_URL_BROWSER_MODE`「#」の後に文字をデコードまたはエンコードしませんまたは"?"、し、後の末尾の空白文字は削除されません"?"。 この値が指定されていない場合は、URL 全体をエンコードされ、後続の空白が削除されます。
-- `ATL_URL_DECODE`文字、URL が解析される前にエスケープ シーケンスを含むすべての %XX シーケンスに変換します。
-- `ATL_URL_ENCODE_PERCENT`見つかったパーセント記号を任意にエンコードします。 既定では、パーセント記号はエンコードされていません。
-- `ATL_URL_ENCODE_SPACES_ONLY`空白文字のみをエンコードします。
-- `ATL_URL_ESCAPE`すべてのエスケープ シーケンス (%xx) を対応する文字に変換します。
-- `ATL_URL_NO_ENCODE`安全でない文字をエスケープ シーケンスは変換されません。
-- `ATL_URL_NO_META`メタ シーケンスは削除されません (など"です。"と"..")、URL からです。 
+- `ATL_URL_BROWSER_MODE` 「#」の後に文字をデコードまたはエンコードしませんまたは"?"、し、後の末尾の空白文字は削除されません"?"。 この値が指定されていない場合は、URL 全体をエンコードされ、後続の空白が削除されます。
+- `ATL_URL_DECODE` 文字、URL が解析される前にエスケープ シーケンスを含むすべての %XX シーケンスに変換します。
+- `ATL_URL_ENCODE_PERCENT` 見つかったパーセント記号を任意にエンコードします。 既定では、パーセント記号はエンコードされていません。
+- `ATL_URL_ENCODE_SPACES_ONLY` 空白文字のみをエンコードします。
+- `ATL_URL_ESCAPE` すべてのエスケープ シーケンス (%xx) を対応する文字に変換します。
+- `ATL_URL_NO_ENCODE` 安全でない文字をエスケープ シーケンスは変換されません。
+- `ATL_URL_NO_META` メタ シーケンスは削除されません (など"です。"と"..")、URL からです。 
   
 ### <a name="return-value"></a>戻り値  
  返します**TRUE**成功した場合、 **FALSE**エラー発生時にします。  
@@ -72,10 +74,10 @@ inline BOOL AtlCanonicalizeUrl(
 ### <a name="remarks"></a>コメント  
  現在のバージョンのように動作[InternetCanonicalizeUrl](http://msdn.microsoft.com/library/windows/desktop/aa384342) WinInet または Internet Explorer をインストールする必要はありません。  
   
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [InternetCanonicalizeUrl](http://msdn.microsoft.com/library/windows/desktop/aa384342)
 
- ## <a name="atlcombineurl"></a>AtlCombineUrl
+ ## <a name="atlcombineurl"></a> AtlCombineUrl
  ベース URL と相対 URL を結合して、1 つの標準形式の URL にします。  
   
 ```    
@@ -109,7 +111,7 @@ inline BOOL AtlCombineUrl(
 ### <a name="remarks"></a>コメント  
  現在のバージョンのように動作[InternetCombineUrl](http://msdn.microsoft.com/library/windows/desktop/aa384355) WinInet または Internet Explorer をインストールする必要はありません。  
   
-## <a name="atlescapeurl"></a>AtlEscapeUrl
+## <a name="atlescapeurl"></a> AtlEscapeUrl
  すべての安全でない文字をエスケープ シーケンスに変換します。  
   
 ```    
@@ -161,7 +163,7 @@ inline ATL_URL_PORT AtlGetDefaultUrlPort(ATL_URL_SCHEME m_nScheme) throw();
 ### <a name="return-value"></a>戻り値  
  [ATL_URL_PORT](atl-typedefs.md#atl_url_port)スキームが認識されない場合は、指定されたスキームまたは ATL_URL_INVALID_PORT_NUMBER に関連付けられています。  
 
-## <a name="atlisunsafeurlchar"></a>AtlIsUnsafeUrlChar
+## <a name="atlisunsafeurlchar"></a> AtlIsUnsafeUrlChar
  URL で使用しても安全な文字かどうかを判断します。  
   
 ```  
@@ -178,7 +180,7 @@ inline BOOL AtlIsUnsafeUrlChar(char chIn) throw();
 ### <a name="remarks"></a>コメント  
  Url で使用する必要があります文字は、この関数を使用してテストしてを使用して変換[どうか](#atlcanonicalizeurl)です。  
   
-## <a name="atlunescapeurl"></a>AtlUnescapeUrl
+## <a name="atlunescapeurl"></a> AtlUnescapeUrl
  エスケープされた文字を元の値に変換します。  
   
 ```    
@@ -214,7 +216,7 @@ inline BOOL AtlUnescapeUrl(
 ### <a name="remarks"></a>コメント  
  によって適用される変換プロセスを反転させます[AtlEscapeUrl](#atlescapeurl)です。  
   
-## <a name="rgbtohtml"></a>RGBToHtml
+## <a name="rgbtohtml"></a> RGBToHtml
 変換、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)値をそのカラー値に対応する HTML テキスト。  
   
 ```  
@@ -240,7 +242,7 @@ bool inline RGBToHtml(
 ### <a name="remarks"></a>コメント  
  HTML 色の値は、各色の赤、緑、および青のコンポーネントの 2 桁の数字を使用して、6 桁の 16 進値の前にシャープ記号 (例: #FFFFFF の色は白)。  
   
-## <a name="systemtimetohttpdate"></a>SystemTimeToHttpDate
+## <a name="systemtimetohttpdate"></a> SystemTimeToHttpDate
 システム時刻を HTTP ヘッダーで使用できる形式の文字列に変換します。  
   
 ```  
@@ -256,7 +258,7 @@ inline void SystemTimeToHttpDate(
  *strTime*  
  RFC 2616 で定義された、HTTP 日付時刻を受け取る文字列変数への参照を ([http://www.ietf.org/rfc/rfc2616.txt](http://www.ietf.org/rfc/rfc2616.txt)) および RFC 1123 ([http://www.ietf.org/rfc/rfc1123.txt](http://www.ietf.org/rfc/rfc1123.txt))。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [概念](../../atl/active-template-library-atl-concepts.md)   
  [ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)   
 

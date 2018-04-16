@@ -1,65 +1,69 @@
 ---
-title: "MFC アプリケーションのローカライズされたリソース: サテライト DLL | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DLL [C++], ローカライズ (MFC を)"
-  - "ローカリゼーション [C++], MFC リソース"
-  - "ローカライズされたリソース [C++]"
-  - "MFC DLL [C++], ローカライズ"
-  - "複数言語のサポート [C++]"
-  - "リソース専用 DLL [C++]"
-  - "リソース専用 DLL [C++], MFC アプリケーション"
-  - "リソース [MFC], ローカライズ"
-  - "サテライト DLL [C++]"
+title: "MFC アプリケーションのローカライズされたリソース: サテライト Dll |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- multiple language support [C++]
+- localization [C++], MFC resources
+- localized resources [C++]
+- MFC DLLs [C++], localizing
+- DLLs [C++], localizing MFC
+- resources [MFC], localizing
+- resource-only DLLs [C++]
+- resource-only DLLs [C++], MFC applications
+- satellite DLLs [C++]
 ms.assetid: 3a1100ae-a9c8-47b5-adbd-cbedef5992ef
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dc97e73998c581a40ed7d344b1ade5ca90b94ac2
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/09/2018
 ---
-# MFC アプリケーションのローカライズされたリソース: サテライト DLL
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-MFC Version 7.0 以降では、複数の言語にローカライズされるアプリケーションの作成に役立つサテライト DLL のサポートが強化されています。  サテライト DLL は、[リソースのみの DLL](../build/creating-a-resource-only-dll.md) であり、特定の言語にローカライズされたアプリケーションのリソースが含まれています。  アプリケーションの実行を開始すると、その環境に最適なローカライズ済みリソースが MFC によって自動的に読み込まれます。  たとえば、英語のリソースを持つアプリケーションに、フランス語とドイツ語のリソースが含まれる 2 つのサテライト DLL を指定できます。  アプリケーションを英語のシステムで実行するときは、英語のリソースが使われます。  アプリケーションをフランス語のシステムで実行するとフランス語のリソースが使われ、ドイツ語のシステムの場合はドイツ語のリソースが使われます。  
+# <a name="localized-resources-in-mfc-applications-satellite-dlls"></a>MFC アプリケーションのローカライズされたリソース: サテライト DLL
+MFC version 7.0 以降では、サテライト Dll の場合、複数の言語にローカライズされるアプリケーションを作成するときに役立つ機能のサポートの強化を提供します。 DLL は、サテライト、[リソース専用 DLL](../build/creating-a-resource-only-dll.md)特定の言語のローカライズされたアプリケーションのリソースを格納しています。 アプリケーションでは、実行を開始、MFC は自動的に、環境に最適なローカライズされたリソースを読み込みます。 たとえば、2 つのサテライト Dll、リソースとドイツ語の翻訳を含むその他のフランス語翻訳が含まれていると英語の言語リソースを持つアプリケーションことができます。 英語のシステムでは、アプリケーションが実行されるときに、英語のリソースを使用します。 フランス語のリソースを使用して、フランス語のシステムで実行される場合ドイツ語のシステムで実行される場合は、ドイツ語のリソースを使用します。  
   
- MFC アプリケーションのローカライズ済みリソースをサポートするために、MFC では特定の言語にローカライズされたリソースを持つサテライト DLL の読み込みを試みます。  サテライト DLL には、*ApplicationNameXXX*.dll という名前が付けられています。*ApplicationName* は MFC を使用する .exe または .dll の名前であり、*XXX* は ENU や DEU などの 3 文字で表したリソースの言語コードです。  
+ MFC アプリケーション、サテライト DLL をロードしようと MFC のローカライズされたリソースをサポートするためにリソースを含む、特定の言語にローカライズされます。 サテライト Dll の名前は*ApplicationNameXXX*.dll、場所*ApplicationName*の .exe または .dll、MFC を使用して名前を指定し、 *XXX*言語に対する 3 文字コードは、リソース (たとえば、'日本語' または 'DEU')。  
   
- MFC は、以下の順番で各言語のリソース DLL の読み込みを試み、該当するリソースが見つかると停止します。  
+ MFC では、1 つを見つけたときに停止する順序で次の言語の各リソース DLL をロードしようとしています。  
   
-1.  \(Windows 2000 以降のみ\) 現在のユーザーの既定の UI 言語。GetUserDefaultUILanguage\(\) Win32 API から返される値と同じです。  
+1. 現在のユーザーの既定の UI 言語、GetUserDefaultUILanguage() Win32 API から返されます。  
   
-2.  \(Windows 2000 以降のみ\) サブ言語が指定されていない現在のユーザーの既定の UI 言語。つまり、ENC \(カナダの英語\) は ENU \(アメリカの英語\)   になります。  
+2.  サブ言語が指定せず、現在のユーザーの既定の UI 言語 (つまり、ENC [カナダ英語] になる日本語 [米国英語])。  
   
-3.  システムの既定の UI 言語。  Windows 2000 以降の場合は、GetSystemDefaultUILanguage\(\) API から返される値です。  その他のプラットフォームの場合は、OS の言語です。  
+3.  システムの既定の UI 言語、GetSystemDefaultUILanguage() API から返されます。 その他のプラットフォームでは、これは OS の言語です。  
   
-4.  サブ言語が指定されていないシステムの既定の UI 言語。  
+4.  システムの既定の UI 言語、サブ言語が指定なし。  
   
-5.  3 文字で表したコード LOC を持つ見せかけの言語。  
+5.  3 文字コード LOC を持つ偽言語  
   
- サテライト DLL が見つからない場合、MFC ではアプリケーションに含まれているリソースを使用します。  
+ サテライト Dll が見つからない場合は、MFC、アプリケーション自体に含まれるすべてのリソースが使用されます。  
   
- たとえば、MFC を使用するアプリケーション LangExample.exe が Windows 2000 の複数ユーザー インターフェイス システムで動作していて、システムの UI 言語は ENU \(アメリカの英語\) で、現在のユーザーの UI 言語が   FRC \(カナダのフランス語\) に設定されているとします。  MFC は、次の順番で DLL を検索します。  
+ たとえば、アプリケーション LangExample.exe が MFC を使用し、複数のユーザー インターフェイス システム; で実行されているとしますシステム UI 言語が英語 [米国です。英語] 現在のユーザーの UI 言語が FRC [カナダ フランス語] に設定されているとします。 MFC は、次の順序で次の Dll を探します。  
   
-1.  LangExampleFRC.dll \(ユーザーの UI 言語\)  
+1.  LangExampleFRC.dll (ユーザーの UI 言語)。  
   
-2.  LangExampleFRA.dll \(サブ言語のないユーザーの UI 言語。この例では、\(フランスの\) フランス語です\)。  
+2.  LangExampleFRA.dll (フランス語 (フランス) この例では、サブ言語なしのユーザーの UI 言語。  
   
-3.  LangExampleENU.dll \(システムの UI 言語\)  
+3.  LangExampleENU.dll (システムの UI 言語)。  
   
-4.  LangExampleLOC.dll  
+4.  LangExampleLOC.dll.  
   
- これらの DLL がどれも見つからない場合、MFC は LangExample.exe のリソースを使用します。  
+ これらの Dll が見つからない場合、MFC は LangExample.exe でリソースを使用します。  
   
-## 参照  
- [Visual C\+\+ の DLL](../build/dlls-in-visual-cpp.md)   
+## <a name="see-also"></a>参照  
+ [Visual C の Dll](../build/dlls-in-visual-cpp.md)   
  [テクニカル ノート 57: MFC コンポーネントのローカライズ](../mfc/tn057-localization-of-mfc-components.md)

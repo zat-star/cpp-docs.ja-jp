@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -29,7 +30,8 @@ f1_keywords:
 - AFXDESKTOPALERTWND/CMFCDesktopAlertWnd::SetAutoCloseTime
 - AFXDESKTOPALERTWND/CMFCDesktopAlertWnd::SetSmallCaption
 - AFXDESKTOPALERTWND/CMFCDesktopAlertWnd::SetTransparency
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCDesktopAlertWnd [MFC], Create
 - CMFCDesktopAlertWnd [MFC], GetAnimationSpeed
@@ -51,15 +53,17 @@ helpviewer_keywords:
 - CMFCDesktopAlertWnd [MFC], SetSmallCaption
 - CMFCDesktopAlertWnd [MFC], SetTransparency
 ms.assetid: 73a2dd7b-ea84-4ae2-9830-7cf6e8dd2425
-caps.latest.revision: "33"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5e5927cf9697a25e7e6e76a3e71c3d41ba1b32ab
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cfebb488921d81c36f842885ad49eae3f40a37fb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcdesktopalertwnd-class"></a>CMFCDesktopAlertWnd Class
 `CMFCDesktopAlertWnd`クラスは、イベントについてユーザーに通知する画面に表示されるモードレス ダイアログ ボックスの機能を実装します。  
@@ -140,7 +144,7 @@ class CMFCDesktopAlertWnd : public CWnd
   
  [CMFCDesktopAlertWnd](../../mfc/reference/cmfcdesktopalertwnd-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxDesktopAlertWnd.h  
   
 ##  <a name="create"></a>Cmfcdesktopalertwnd::create  
@@ -454,7 +458,7 @@ virtual CSize GetDialogSize();
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCDesktopAlertWndInfo クラス](../../mfc/reference/cmfcdesktopalertwndinfo-class.md)   

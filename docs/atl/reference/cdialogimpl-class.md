@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -19,20 +20,23 @@ f1_keywords:
 - ATLWIN/ATL::OnFinalMessage
 - ATLWIN/ATL::DialogProc
 - ATLWIN/ATL::StartDialogProc
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - dialog boxes, ATL
 - CDialogImpl class
 ms.assetid: d430bc7b-8a28-4ad3-9507-277bdd2c2c2e
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aab3048667099a698bd4aff928c7a23d7fbb01e2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ab4bb1e04bd21900cdf8d8122af51547e79aea22
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdialogimpl-class"></a>CDialogImpl クラス
 このクラスは、モーダルまたはモードレス ダイアログ ボックスを作成するためのメソッドを提供します。  
@@ -97,14 +101,14 @@ template <class T,
   
  ここで`MyDlg`は、**短い名前**、ウィザードで入力した**名**ページ。  
   
-|詳細情報:|参照トピック|  
+|詳細情報:|解決方法については、|  
 |--------------------------------|---------|  
 |コントロールの作成|[ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)|  
 |ATL ダイアログ ボックスを使用|[ATL ウィンドウ クラス](../../atl/atl-window-classes.md)|  
 |ATL プロジェクト ウィザード|[ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)|  
 |ダイアログ ボックス|[ダイアログ ボックス](http://msdn.microsoft.com/library/windows/desktop/ms632588)と Windows SDK のそれ以降のトピック|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlwin.h  
   
 ##  <a name="create"></a>CDialogImpl::Create  
@@ -306,6 +310,6 @@ static LRESULT CALLBACK StartDialogProc(
 ### <a name="remarks"></a>コメント  
  最初の呼び出し後`StartDialogProc`、`DialogProc`がダイアログの手順では、およびそれ以上の呼び出しがそこに移動してように設定されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [送るに](message-map-macros-atl.md#begin_msg_map)   
  [クラスの概要](../../atl/atl-class-overview.md)

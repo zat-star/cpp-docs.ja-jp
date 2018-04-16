@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2511
-dev_langs: C++
-helpviewer_keywords: C2511
+f1_keywords:
+- C2511
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2511
 ms.assetid: df999efe-fe2b-418b-bb55-4af6a0592631
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1ba01f808fb4dd618291777c1da7490b3b95af3c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 904f8671aff18d7a9216567abc3db0f2f5cd82de
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2511"></a>コンパイラ エラー C2511
 'identifier': オーバー ロード メンバー関数の 'class' に見つかりませんでした  

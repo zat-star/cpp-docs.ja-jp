@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - external definitions
 - linkage [C++], external
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - visibility, variables
 - static storage class specifiers
 ms.assetid: b76b623a-80ec-4d5d-859b-6cef422657ee
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 729d46f1e228127b712e1533c7eab5976f690663
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3764eb29cc46ec7b6159456131dde1024b187f61
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="storage-class-specifiers-for-external-level-declarations"></a>外部レベル宣言のストレージ クラス指定子
 外部変数はファイル スコープの変数です。 これらは、関数の外部で定義され、多くの関数に使用できる可能性があります。 関数は外部レベルでのみ定義できるため、入れ子にできません。 既定では、同じ名前の外部変数と関数へのすべての参照は、同じオブジェクトへの参照であり、"外部リンケージ" が含まれていることを意味します  (**static** キーワードを使用して、これをオーバーライドできます。 **static** の詳細については、このセクションで後述する情報をご覧ください)。  
@@ -133,5 +137,5 @@ int x = 0;
   
  変数 `i` が初期化されていない場合は、自動的に 0 に設定されます。 この場合、値 1、2、および 3 が出力されています。 変数の初期化については、「[初期化](../c-language/initialization.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C ストレージ クラス](../c-language/c-storage-classes.md)

@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: property_cpp
-dev_langs: C++
+f1_keywords:
+- property_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - property __declspec keyword
 - __declspec keyword [C++], property
 ms.assetid: f3b850ba-bf48-4df7-a1d6-8259d97309ce
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4c4ec1ed2351b37f88e9cb6b0ce7efd2824e431a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 313123a75c2fbcf295d1c1d87aa423e76154091e
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="property-c"></a>property (C++)
 **Microsoft 固有の仕様**  
@@ -32,9 +37,9 @@ ms.lasthandoff: 10/24/2017
   
 ```  
   
-      __declspec( property( get=get_func_name ) ) declarator  
-__declspec( property( put=put_func_name ) ) declarator  
-__declspec( property( get=get_func_name, put=put_func_name ) ) declarator  
+   __declspec( property( get=get_func_name ) ) declarator  
+   __declspec( property( put=put_func_name ) ) declarator  
+   __declspec( property( get=get_func_name, put=put_func_name ) ) declarator  
 ```  
   
 ## <a name="remarks"></a>コメント  
@@ -74,6 +79,6 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [_ _declspec](../cpp/declspec.md)   
+## <a name="see-also"></a>参照  
+ [__declspec](../cpp/declspec.md)   
  [キーワード](../cpp/keywords-cpp.md)

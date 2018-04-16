@@ -1,47 +1,52 @@
 ---
-title: "ATL プロジェクトでの CRT へのリンク | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "DllMainCRTStartup"
-  - "wWinMainCRTStartup"
-  - "WinMainCRTStartup"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, C ランタイム ライブラリ (CRT)"
-  - "CRT, リンク (ATL と)"
-  - "DllMainCRTStartup メソッド"
-  - "WinMainCRTStartup メソッド"
-  - "wWinMainCRTStartup メソッド"
+title: "ATL プロジェクトで CRT にリンク |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- DllMainCRTStartup
+- wWinMainCRTStartup
+- WinMainCRTStartup
+dev_langs:
+- C++
+helpviewer_keywords:
+- CRT, linking with ATL
+- WinMainCRTStartup method
+- DllMainCRTStartup method
+- wWinMainCRTStartup method
+- ATL, C Run-Time library (CRT)
 ms.assetid: 650957ae-362c-4ecf-8b03-5d49138e8b5b
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 631426fece3960303d67d8929e99c404beaab998
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ATL プロジェクトでの CRT へのリンク
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[C ランタイム ライブラリ](../c-runtime-library/crt-library-features.md) \(CRT: C Run\-Time Library\) には、ATL 開発におけるプログラミングを大幅に簡略化できる関数が多数用意されています。  ATL プロジェクトはすべて CRT ライブラリにリンクされます。  メソッドのリンクの長所と短所については、「[CRT へのリンクで使用されるメソッドの利点とトレードオフ](../atl/benefits-and-tradeoffs-of-the-method-used-to-link-to-the-crt.md)」を参照してください。  
+# <a name="linking-to-the-crt-in-your-atl-project"></a>ATL プロジェクトで CRT にリンク
+[C ランタイム ライブラリ](../c-runtime-library/crt-library-features.md)(CRT) できるようにするプログラミングはるかに簡単 ATL 開発時に多くの便利な関数を提供します。 すべての ATL プロジェクトは、CRT ライブラリにリンクします。 長所と短所のメソッドのリンクを確認できます[CRT へのリンクに使用されるメソッドの利点とトレードオフ](../atl/benefits-and-tradeoffs-of-the-method-used-to-link-to-the-crt.md)です。  
   
-## CRT とのリンクによるプログラム イメージへの影響  
- CRT に静的にリンクする場合は、CRT のコードを実行可能イメージに挿入します。イメージを実行するシステム上に CRT DLL は必要ありません。  CRT に動的にリンクする場合は、CRT DLL 内のコードそのものではなく、そのコードへの参照をイメージに挿入します。  イメージを特定のシステムで実行するには、そのシステム上に CRT DLL が必要です。  CRT に動的にリンクする場合でも、**DllMainCRTStartup** などの一部のコードが静的にリンクされる場合があります。  
+## <a name="effects-of-linking-to-the-crt-on-your-program-image"></a>プログラム イメージ CRT にリンクの効果  
+ CRT に静的にリンクする場合は、CRT のコードは、実行可能イメージに配置され、イメージを実行するシステムで、CRT DLL が存在する必要はありません。 CRT に動的にリンクする場合は、CRT DLL 内のコードへの参照が、イメージが、コード自体ではないに配置されます。 イメージを指定したシステムで実行するためには、CRT DLL は、そのシステムに存在する必要があります。 でもを動的にリンクする場合、CRT、いくつかのコードを静的にリンクできるがあります (たとえば、 **DllMainCRTStartup**)。  
   
- イメージをリンクする場合は、オペレーティング システムがそのイメージを読み込んだ後で、呼び出しを開始するエントリ ポイントを明示的または暗黙的に指定します。  DLL の場合、既定のエントリ ポイントは **DllMainCRTStartup** です。  EXE の場合、既定のエントリ ポイントは **WinMainCRTStartup** です。  既定のエントリ ポイントは、\/ENTRY リンカー オプションでオーバーライドできます。  CRT は、**DllMainCRTStartup**、**WinMainCRTStartup**、および **wWinMainCRTStartup** \(EXE の Unicode エントリ ポイント\) の実装を提供します。  CRT が提供するこれらのエントリ ポイントは、グローバル オブジェクトのコンストラクターを呼び出し、一部の CRT 関数で使用される別のデータ構造体を初期化します。  静的にリンクする場合は、スタートアップ コードの追加によってイメージ サイズは約 25 KB 分増えます。  動的にリンクした場合は、コードの大部分が DLL 内にあるため、イメージのサイズを小さく抑えることができます。  
+ イメージをリンクするときに明示的または暗黙的を指定するイメージを読み込んだ後に、オペレーティング システムを呼び出すエントリ ポイント。 既定のエントリ ポイントは、dll の場合、 **DllMainCRTStartup**です。 EXE は**WinMainCRTStartup**です。 /ENTRY リンカー オプションを使用して既定値を上書きすることができます。 CRT の実装を提供する**DllMainCRTStartup**、 **WinMainCRTStartup**、および**wWinMainCRTStartup** (exe ファイルの Unicode のエントリ ポイント)。 これらの CRT に用意されているエントリ ポイントは、グローバル オブジェクトのコンス トラクターを呼び出すし、一部の CRT 関数によって使用されているその他のデータ構造を初期化します。 このスタートアップ コードでは、静的にリンクされている場合、約 25 K を画像に追加します。 動的にリンクされている場合は、イメージのサイズを小さく抑えるために、コードのほとんどが、DLL 内です。  
   
- 詳細については、リンカーに関する「[\/ENTRY \(エントリ ポイント シンボル\)](../build/reference/entry-entry-point-symbol.md)」というトピックを参照してください。  
+ 詳細については、リンカーのトピックを参照してください。 [/ENTRY (エントリ ポイント シンボル)](../build/reference/entry-entry-point-symbol.md)です。  
   
-## 最適化オプション  
- リンカー オプション \/OPT:NOWIN98 を使用すると、Windows 98 システムでの読み込み時間は長くなりますが、既定の ATL コントロールのサイズを 10 KB 縮小できます。  リンク オプションの詳細については、｢[\/OPT \(最適化\)](../build/reference/opt-optimizations.md)｣を参照してください。  
+## <a name="optimization-options"></a>最適化オプション  
+ /OPT:NOWIN98 リンカー オプションを使用してさらに減らせる 10 k は、既定の ATL コントロール譲歩読み込み Windows 98 システムで時間を増加します。 リンク オプションの詳細については、次を参照してください。 [/OPT (最適化)](../build/reference/opt-optimizations.md)です。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [ATL および C ランタイム コードによるプログラミング](../atl/programming-with-atl-and-c-run-time-code.md)   
- [ランタイム ライブラリの動作](../build/run-time-library-behavior.md)
+ [DLL と Visual C++ ランタイム ライブラリの動作](../build/run-time-library-behavior.md)
+

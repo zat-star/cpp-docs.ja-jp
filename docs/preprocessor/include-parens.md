@@ -1,53 +1,55 @@
 ---
-title: "include() | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "include()"
-dev_langs: 
-  - "C++"
-  - "C"
-helpviewer_keywords: 
-  - "include() 属性"
+title: "include() |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- include()
+dev_langs:
+- C++
+helpviewer_keywords:
+- include() attribute
 ms.assetid: 86c9dcb2-d9e0-4fd5-97d7-0bb3e23d6ecc
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: da6a8bfc67f63caa8ee1f2699c8bb8675dbae775
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# include()
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**C\+\+ 固有の仕様**  
+# <a name="include"></a>include()
+**C 固有の仕様**  
   
  自動除外を無効にします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 include("Name1"[,"Name2", ...])  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `Name1`  
  強制的に含まれる最初の項目。  
   
  `Name2`  
- 強制的に含める 2 番目の項目 \(必要な場合\)。  
+ 強制的に含める 2 番目の項目 (必要な場合)。  
   
-## 解説  
- タイプ ライブラリは、システム ヘッダーまたはその他のタイプ ライブラリで定義された項目の定義を含むことがあります。  `#import` は、そのような項目を自動的に除外して多重定義エラーを回避します。  [コンパイラの警告 \(レベル 3\) C4192](../error-messages/compiler-warnings/compiler-warning-level-3-c4192.md) で示されているように、項目が除外されていて、これらの項目が存在していない場合、この属性を使用して自動除外を無効にできます。  この属性は、任意の数の引数を受け取ることができます。各引数は、含まれるタイプ ライブラリ項目の名前です。  
+## <a name="remarks"></a>コメント  
+ タイプ ライブラリは、システム ヘッダーまたはその他のタイプ ライブラリで定義された項目の定義を含むことがあります。 `#import` は、そのような項目を自動的に除外して多重定義エラーを回避します。 によって示される項目が除外されている場合[コンパイラの警告 (レベル 3) C4192](../error-messages/compiler-warnings/compiler-warning-level-3-c4192.md)、すべきでないとされると、この属性は、自動除外を無効にするを使用することができます。 この属性は、任意の数の引数を受け取ることができます。各引数は、含まれるタイプ ライブラリ項目の名前です。  
   
- **END C\+\+ 固有の仕様**  
+ **END C 固有の仕様**  
   
-## 参照  
- [\#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
- [\#import ディレクティブ](../Topic/%23import%20Directive%20\(C++\).md)
+## <a name="see-also"></a>参照  
+ [#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
+ [#import ディレクティブ](../preprocessor/hash-import-directive-cpp.md)

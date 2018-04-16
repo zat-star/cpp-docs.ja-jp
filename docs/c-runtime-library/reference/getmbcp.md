@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _getmbcp
 apilocation:
@@ -33,16 +33,17 @@ helpviewer_keywords:
 - _getmbcp function
 - getmbcp function
 ms.assetid: 2db202d4-5c3d-4871-a0b8-ceb0b79ee7bb
-caps.latest.revision: 13
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5cfb2ee9e84d8a586d14cb95558d7d59967eeecc
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: 4bc1000e9443d60e966ef6a929ed134acd44f1b7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getmbcp"></a>_getmbcp
 現在のコード ページを取得します。  
@@ -56,13 +57,13 @@ int _getmbcp( void );
 ## <a name="return-value"></a>戻り値  
  現在のマルチバイト コード ページを返します。 戻り値 0 は、シングル バイトのコード ページが使用中であることを示します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_getmbcp`|\<mbctype.h>|  
   
  互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_setmbcp](../../c-runtime-library/reference/setmbcp.md)

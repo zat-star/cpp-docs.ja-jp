@@ -4,27 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ATL::_ATL_COM_MODULE70
 - ATL._ATL_COM_MODULE70
 - _ATL_COM_MODULE70
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _ATL_COM_MODULE70 structure
 - ATL_COM_MODULE70 structure
 ms.assetid: 5b0b2fd0-bdeb-4c7e-8870-78fa69ace6e6
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a269820c5a0965553989bc57d7c239aa95e527ef
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 573bf43c783a1fb5dbd0eca364fedddb9bafbac7
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atlcommodule70-structure"></a>_ATL_COM_MODULE70 構造体
 ATL で COM に関連するコードで使用されます。  
@@ -60,10 +64,10 @@ struct _ATL_COM_MODULE70 {
 ## <a name="remarks"></a>コメント  
  [_ATL_COM_MODULE](atl-typedefs.md#_atl_com_module)の typedef として定義された`_ATL_COM_MODULE70`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体](../../atl/reference/atl-structures.md)
 
 

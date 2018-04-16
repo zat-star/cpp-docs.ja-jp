@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C2649
-dev_langs: C++
-helpviewer_keywords: C2649
+f1_keywords:
+- C2649
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2649
 ms.assetid: 09e78f08-9b74-41e7-a76f-66bc190ba0d2
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a92b579185941b2f2cb246f04eb4390f9ccdf972
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8710d8d3c43b3e0e0b243d56b3ae8f5a7be0b47e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2649"></a>コンパイラ エラー C2649
 'identifier': 'class-key' ではありません。  

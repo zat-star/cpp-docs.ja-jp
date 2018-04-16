@@ -17,16 +17,17 @@ helpviewer_keywords:
 - _bstr_t class
 - BSTR object [C++], COM encapsulation
 ms.assetid: 58841fef-fe21-4a84-aab9-780262b5201f
-caps.latest.revision: 9
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: ce63f8243bc46d77116dbacdf82f821333cba785
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6943a75f83bac517ce3c9677b0abd8ef560e9b77
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="bstrt-class"></a>_bstr_t クラス
 **Microsoft 固有の仕様**  
@@ -55,19 +56,19 @@ ms.lasthandoff: 09/25/2017
   
 |||  
 |-|-|  
-|[演算子 =](../cpp/bstr-t-operator-equal.md)|既存の `_bstr_t` オブジェクトに新しい値を代入します。|  
+|[operator =](../cpp/bstr-t-operator-equal.md)|既存の `_bstr_t` オブジェクトに新しい値を代入します。|  
 |[演算子 + =](../cpp/bstr-t-operator-add-equal-plus.md)|`_bstr_t` の末尾に文字を追加します。|  
 |[演算子 +](../cpp/bstr-t-operator-add-equal-plus.md)|2 つの文字列を連結します。|  
 |[演算子 !](../cpp/bstr-t-operator-logical-not.md)|場合にチェック カプセル化された`BSTR`は、 **NULL**文字列。|  
 |[演算子 = =、! =、 \<、>、 \<=、> =](../cpp/bstr-t-relational-operators.md)|2 つの `_bstr_t` オブジェクトを比較します。|  
-|[演算子 wchar_t * & #124 です。char 型\*](../cpp/bstr-t-wchar-t-star-bstr-t-char-star.md)|カプセル化された Unicode またはマルチバイト `BSTR` オブジェクトへのポインターを抽出します。|  
+|[演算子 wchar_t * &#124;です。char 型\*](../cpp/bstr-t-wchar-t-star-bstr-t-char-star.md)|カプセル化された Unicode またはマルチバイト `BSTR` オブジェクトへのポインターを抽出します。|  
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** comutil.h  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<comutil.h >  
   
  **Lib:** comsuppw.lib または comsuppwd.lib (を参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)詳細)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ COM サポート クラス](../cpp/compiler-com-support-classes.md)

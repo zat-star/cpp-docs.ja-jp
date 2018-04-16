@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: afxdll
-dev_langs: C++
+f1_keywords:
+- afxdll
+dev_langs:
+- C++
 helpviewer_keywords:
 - memory [C++], DLLs
 - MFC extension DLLs [C++]
@@ -21,15 +24,17 @@ helpviewer_keywords:
 - extension DLLs [C++]
 - extension DLLs [C++], about MFC extension DLLs
 ms.assetid: f69ac3d4-e474-4b1c-87a1-6738843a135c
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f42c738983cb0d2017614279a35ab79ae677fb1b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 36a57d47d32b4526ca6d383b67ca415f705dc982
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="mfc-extension-dlls"></a>MFC 拡張 Dll
 MFC 拡張 DLL は、既存の MFC ライブラリ クラスから派生した再利用可能なクラスを主に実装する DLL です。  
@@ -60,7 +65,7 @@ MFC 拡張 DLL は、既存の MFC ライブラリ クラスから派生した�
   
  MFC のバージョン 4.0 以前では、このような特徴を持つ DLL を AFXDLL と呼んでいました。 AFXDLL を指す、`_AFXDLL`プリプロセッサ シンボルを DLL のビルド時に定義されています。  
   
- MFC の共有バージョン用のインポート ライブラリがで説明されている規則に従って名前付き[MFC Dll の名前付け規則](../build/naming-conventions-for-mfc-dlls.md)です。 Visual C++ は、MFC DLL のプレビルド バージョンのほか、いくつかの非 MFC DLL も提供します。これらの DLL は、アプリケーションで使用したり、アプリケーションと共に頒布できます。 また、Program Files\Microsoft Visual Studio フォルダーにインストールされている Redist.txt に説明があります。  
+ MFC の共有バージョン用のインポート ライブラリがで説明されている規則に従って名前付き[MFC Dll の名前付け規則](../mfc/mfc-library-versions.md#mfc-static-library-naming-conventions)です。 Visual C++ は、MFC DLL のプレビルド バージョンのほか、いくつかの非 MFC DLL も提供します。これらの DLL は、アプリケーションで使用したり、アプリケーションと共に頒布できます。 また、Program Files\Microsoft Visual Studio フォルダーにインストールされている Redist.txt に説明があります。  
   
  .def ファイルを使ってエクスポートする場合は、以下のコードをヘッダー ファイルの先頭と末尾に記述します。  
   
@@ -136,5 +141,5 @@ head ->   DLLHUSK.EXE   - or -   DLLHUSK.EXE
   
 -   [レギュラー MFC DLL でのデータベース、OLE、およびソケット MFC 拡張 DLL の使用](../build/using-database-ole-and-sockets-extension-dlls-in-regular-dlls.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)

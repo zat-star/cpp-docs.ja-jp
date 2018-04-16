@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3052
-dev_langs: C++
-helpviewer_keywords: C3052
+f1_keywords:
+- C3052
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3052
 ms.assetid: 87480c42-1ceb-4775-8d20-88c54a7bb6a6
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 59686a585f66092fbf059cc5e84f7da493134b7f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2e64f86fca9ec4f356e3af36cc2804daf5970eed
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3052"></a>コンパイラ エラー C3052
 'var': 変数が、default(none) 句の下のデータ共有句に使用されていません  

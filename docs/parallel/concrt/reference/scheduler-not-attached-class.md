@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - scheduler_not_attached
 - CONCRT/concurrency::scheduler_not_attached
 - CONCRT/concurrency::scheduler_not_attached::scheduler_not_attached
-dev_langs: C++
-helpviewer_keywords: scheduler_not_attached class
+dev_langs:
+- C++
+helpviewer_keywords:
+- scheduler_not_attached class
 ms.assetid: 26001970-b400-463b-be3d-8623359c399a
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6e18171f3984a7021884586ec519512a49dc6fbd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2671479d51c703dc4c0d0ab01b8036a130497ac6
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="schedulernotattached-class"></a>scheduler_not_attached クラス
 このクラスは、現在のコンテキストにスケジューラがアタッチされている必要がある操作を実行するときにスケジューラがアタッチされていない場合にスローされる例外を表します。  
@@ -46,12 +51,12 @@ class scheduler_not_attached : public std::exception;
   
  `scheduler_not_attached`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** concrt.h  
   
  **名前空間:** concurrency  
   
-##  <a name="ctor"></a>scheduler_not_attached 
+##  <a name="ctor"></a> scheduler_not_attached 
 
  `scheduler_not_attached` オブジェクトを構築します。  
   
@@ -65,6 +70,6 @@ scheduler_not_attached() throw();
  `_Message`  
  エラーの説明メッセージ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行 Namespace](concurrency-namespace.md)   
  [Scheduler クラス](scheduler-class.md)

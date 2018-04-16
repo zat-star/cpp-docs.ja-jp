@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: amp/Concurrency::Reference (C++ AMP)
-dev_langs: C++
-helpviewer_keywords: C++ Accelerated Massive Parallelism, reference
+ms.topic: reference
+f1_keywords:
+- amp/Concurrency::Reference (C++ AMP)
+dev_langs:
+- C++
+helpviewer_keywords:
+- C++ Accelerated Massive Parallelism, reference
 ms.assetid: 372a8aed-8a53-48c9-996f-9c3cf09c9fa8
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 84b68f4fa5ba207a9cb615877936ca08bdc2259b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 005b25fa44f229e9d9e2b59b0a20c41a661ed6c3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="reference-c-amp"></a>リファレンス (C++ AMP)
 このセクションでは、C++ Accelerated Massive Parallelism (C++ AMP) ランタイムに関する参照情報について説明します。  

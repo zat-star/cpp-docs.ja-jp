@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ios/std::basic_ios
 - ios/std::basic_ios::char_type
@@ -34,7 +35,8 @@ f1_keywords:
 - ios/std::basic_ios::tie
 - ios/std::basic_ios::widen
 - ios/std::basic_ios::explicit operator bool
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::basic_ios [C++]
 - std::basic_ios [C++], char_type
@@ -62,15 +64,17 @@ helpviewer_keywords:
 - std::basic_ios [C++], tie
 - std::basic_ios [C++], widen
 ms.assetid: 4fdcd8e1-62d2-4611-8a70-1e4f58434007
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0558bd962d8f646cc599ba604dbe749f5a02138b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6bbcfb2f315c9b453d49b2bbdb5be60a6dbc8f6f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="basicios-class"></a>basic_ios クラス
 このテンプレート クラスは、テンプレート パラメーターに依存する、入力ストリーム([basic_istream](../standard-library/basic-istream-class.md) テンプレート クラス) と出力ストリーム ([basic_ostream](../standard-library/basic-ostream-class.md) テンプレート クラス) の両方に共通のストレージとメンバー関数を表します。 (クラス [ios_base](../standard-library/ios-base-class.md) は、テンプレート パラメーターに依存しない、共通の要素を記述します。)クラス **basic_ios\<class Elem, class Traits>** のオブジェクトは、**Elem** 型の要素を含むストリームを制御するのに役立ちます。この型の特性は **Traits** クラスによって決まります。  
@@ -151,7 +155,7 @@ class basic_ios : public ios_base
 |[operator void *](#op_void_star)|ストリームが依然として良好かどうかを示します。|  
 |[operator!](#op_not)|ストリームが悪化していないかどうかを示します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<ios>  
   
  **名前空間:** std  
@@ -935,7 +939,7 @@ void swap(basic_ios&& right);
 ### <a name="remarks"></a>コメント  
  プロテクト メンバー関数は、格納されている `stream buffer pointer` を除き、`right` に格納されているすべての値を `*this` と交換します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   
  [iostreams の規則](../standard-library/iostreams-conventions.md)

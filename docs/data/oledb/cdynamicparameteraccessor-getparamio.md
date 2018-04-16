@@ -1,42 +1,45 @@
 ---
-title: "Cdynamicparameteraccessor::getparamio |Microsoft ドキュメント"
+title: CDynamicParameterAccessor::GetParamIO | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - GetParamIO
 - CDynamicParameterAccessor::GetParamIO
 - ATL.CDynamicParameterAccessor.GetParamIO
 - CDynamicParameterAccessor.GetParamIO
 - ATL::CDynamicParameterAccessor::GetParamIO
-dev_langs: C++
-helpviewer_keywords: GetParamIO method
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetParamIO method
 ms.assetid: 9c485e39-c67e-4df7-a707-c773019c4d1e
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d09eee048e737b19b21f6d71518d2b70702df8a7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 4a4ed23081ea7d9ee146a749ff642328fac7d80f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cdynamicparameteraccessorgetparamio"></a>CDynamicParameterAccessor::GetParamIO
 指定されたパラメーターが入力または出力パラメーターであるかどうかを判断します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      bool GetParamIO(   
-   DBORDINAL nParam,   
-   DBPARAMIO * pParamIO    
-) const throw( );  
+```
+bool GetParamIO(DBORDINAL nParam,   
+   DBPARAMIO* pParamIO) const throw();  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -59,8 +62,8 @@ enum DBPARAMIOENUM {
 ## <a name="return-value"></a>戻り値  
  返します**true**成功した場合または**false**エラー発生時にします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)

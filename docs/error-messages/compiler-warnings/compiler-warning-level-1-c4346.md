@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4346
-dev_langs: C++
-helpviewer_keywords: C4346
+f1_keywords:
+- C4346
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4346
 ms.assetid: 68ee562d-cca9-4a2a-9a1b-14ad1a1e7396
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 17e4644901d127bf11637bc24ea155072f83e03c
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6e6d425004fcc4dc26271b2bb56dbeffccc46311
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4346"></a>コンパイラの警告 (レベル 1) C4346
 'name': 依存名は、型ではありません  

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _RTC_GetErrDesc
 apilocation:
@@ -32,30 +32,17 @@ helpviewer_keywords:
 - _RTC_GetErrDesc function
 - RTC_GetErrDesc function
 ms.assetid: 7994ec2b-5488-4fd4-806d-a166c9a9f927
-caps.latest.revision: 12
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 00098336be0198102b6154a7d6252b024b3cf949
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5ba19cb678ab92f45f65aee4c22c28ef0908b32e
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="rtcgeterrdesc"></a>_RTC_GetErrDesc
 実行時エラー チェック (RTC) の種類に関する簡単な説明を返します。  
@@ -76,9 +63,9 @@ ms.lasthandoff: 03/29/2017
 ## <a name="return-value"></a>戻り値  
  実行時エラー チェック システムによって検出されたエラーの 1 つの種類に関する簡単な説明が含まれている文字列。 エラーが 0 未満であるか、[_RTC_NumErrors](../../c-runtime-library/reference/rtc-numerrors.md) によって返される値以上である場合、`_RTC_GetErrDesc` は NULL を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_RTC_GetErrDesc`|\<rtcapi.h>|  
   
@@ -87,6 +74,6 @@ ms.lasthandoff: 03/29/2017
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_RTC_NumErrors](../../c-runtime-library/reference/rtc-numerrors.md)   
  [ランタイム エラー チェック](../../c-runtime-library/run-time-error-checking.md)

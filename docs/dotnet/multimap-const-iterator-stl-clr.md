@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::multimap::const_iterator
-dev_langs: C++
-helpviewer_keywords: const_iterator member [STL/CLR]
+f1_keywords:
+- cliext::multimap::const_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- const_iterator member [STL/CLR]
 ms.assetid: 13b166c9-1dcd-4ff9-b1da-3b8ffa463735
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e5faa25d8bce27558cd560cb5d6a2a27063d6653
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 1b73be967cf0812a09fd5518b3648ad143d718ca
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multimapconstiterator-stlclr"></a>multimap::const_iterator (STL/CLR)
 被制御シーケンスの定数反復子の型です。  
@@ -62,11 +69,11 @@ int main()
 [a 1] [b 2] [c 3]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
  [multimap::iterator (STL/CLR)](../dotnet/multimap-iterator-stl-clr.md)

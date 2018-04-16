@@ -316,16 +316,17 @@ helpviewer_keywords:
 - CMenuImages class [MFC]
 - CleanUp method [MFC]
 ms.assetid: 3e2276aa-b02a-4781-97ba-ea074045e9e2
-caps.latest.revision: 15
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f8848bb9d8599fcff5ed24d3bccf82ef581a0eb0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: c571a86aaa93a6712cb57ebff5ccd275c73bd4af
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="internal-classes"></a>内部クラス
 次のクラスは、MFC で内部的に使用されます。 完全を期すために、このセクションではこれらの内部クラスについて説明しますが、コードで直接使用するためのものではありません。  
@@ -421,7 +422,6 @@ ms.lasthandoff: 10/09/2017
 |`CVSListBoxEditCtrl Class`|ダイアログ ボックスが表示される小さなボタンを表示することによって、標準のリスト ボックス編集コントロールを拡張します。|  
 |`CVSToolsListBox Class`|追加のボタンを追加、削除、およびリスト ボックスでアイテムを移動することにより、標準のリスト ボックス コントロールを拡張します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC デスクトップ アプリケーション](../../mfc/mfc-desktop-applications.md)
-
 

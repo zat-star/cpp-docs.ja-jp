@@ -1,41 +1,46 @@
 ---
-title: "queue::value_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::queue::value_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "value_type メンバー [STL/CLR]"
+title: "queue::value_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::queue::value_type
+dev_langs:
+- C++
+helpviewer_keywords:
+- value_type member [STL/CLR]
 ms.assetid: f1abde03-982c-4aaf-91a6-cc613df9690e
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 28291b62ec3ce9e6e4a70d4bd7d723b45be3bc0d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# queue::value_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="queuevaluetype-stlclr"></a>queue::value_type (STL/CLR)
 要素の型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef Value value_type;  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  この型は、テンプレート パラメーター `Value` のシノニムです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_queue_value_type.cpp   
@@ -63,13 +68,16 @@ int main()
   
 ```  
   
-  **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [queue::const\_reference](../dotnet/queue-const-reference-stl-clr.md)   
- [queue::reference](../dotnet/queue-reference-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [queue::const_reference (STL/CLR)](../dotnet/queue-const-reference-stl-clr.md)   
+ [queue::reference (STL/CLR)](../dotnet/queue-reference-stl-clr.md)

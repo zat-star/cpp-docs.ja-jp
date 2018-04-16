@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::deque::back_item
-dev_langs: C++
-helpviewer_keywords: back_item member [STL/CLR]
+f1_keywords:
+- cliext::deque::back_item
+dev_langs:
+- C++
+helpviewer_keywords:
+- back_item member [STL/CLR]
 ms.assetid: b112636a-2f18-4eb0-abd6-076acdabeff7
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d20a8ffdfa84c56c4716df31a8f4c3951566cead
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 9af0f0f36c3d504d2b2d28338738e413703af1ce
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dequebackitem-stlclr"></a>deque::back_item (STL/CLR)
 最後の要素にアクセスします。  
@@ -71,12 +78,12 @@ back_item = c
  a b x  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/deque >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
  [deque::back (STL/CLR)](../dotnet/deque-back-stl-clr.md)   
  [deque::front (STL/CLR)](../dotnet/deque-front-stl-clr.md)   

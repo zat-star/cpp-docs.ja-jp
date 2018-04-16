@@ -1,32 +1,37 @@
 ---
-title: "unary_negate (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::unary_negate"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "unary_negate 関数 [STL/CLR]"
+title: "unary_negate (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::unary_negate
+dev_langs:
+- C++
+helpviewer_keywords:
+- unary_negate function [STL/CLR]
 ms.assetid: 83bbdd86-199c-4451-9f70-72f9ade2264a
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 60e7a38ede07a3cf3b1c21b1c5fe26e9f588f2f1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# unary_negate (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このテンプレート クラスは、呼び出されたときに保存された 1 引数のファンクタの論理的でない返すファンクタを表します。  保存されたファンクタの観点からは、指定する関数オブジェクトを使用します。  
+# <a name="unarynegate-stlclr"></a>unary_negate (STL/CLR)
+このテンプレート クラスは、ファンクタを記述、呼び出されると、論理を返しますストアドの引数が 1 つファンクタのではありません。 使用するそのストアド ファンクタの観点から、関数オブジェクトを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Fun>  
@@ -48,33 +53,33 @@ public:
     };  
 ```  
   
-#### パラメーター  
- 関数  
- 保存されたファンクタの種類。  
+#### <a name="parameters"></a>パラメーター  
+ 楽しい  
+ ストアド ファンクタの型。  
   
-## メンバー関数  
+## <a name="member-functions"></a>メンバー関数  
   
 |型定義|説明|  
-|---------|--------|  
-|argument\_type|ファンクタの引数の型です。|  
-|delegate\_type|汎用デリゲートの型。|  
-|result\_type|ファンクタの結果の型です。|  
+|---------------------|-----------------|  
+|argument_type|ファンクタ引数の型。|  
+|delegate_type|汎用デリゲートの型。|  
+|result_type|ファンクタ結果の型。|  
   
 |メンバー|説明|  
-|----------|--------|  
-|unary\_negate|ファンクタを構築します。|  
+|------------|-----------------|  
+|unary_negate|ファンクタを構築します。|  
   
 |演算子|説明|  
-|---------|--------|  
-|operator\(\)|必要な関数を計算します。|  
-|delegate\_type^|デリゲートにファンクタをキャストします。|  
+|--------------|-----------------|  
+|演算子 ()|必要な関数を計算します。|  
+|delegate_type ^|デリゲートにファンクタをキャストします。|  
   
-## 解説  
- このテンプレート クラスは、別の 1 引数のファンクタを格納する 1 引数のファンクタを表します。  そのオブジェクトが関数として呼び出されると、引数と呼ばれる保存されたファンクタの論理的でない返すようにメンバー演算子を定義します `operator()`。  
+## <a name="remarks"></a>コメント  
+ このテンプレート クラスでは、別の引数が 1 つファンクタを格納する引数が 1 つファンクタについて説明します。 このメンバー演算子を定義する`operator()`のため、オブジェクトが関数として呼び出される場合、返されることを論理、引数で呼び出されたストアド ファンクタのではありません。  
   
- 型が `delegate_type^` である適切に変換する関数の引数が、またはオブジェクトを渡すことができます。  
+ 型が関数の引数として、オブジェクトを渡すことができますも`delegate_type^`適切に変換されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_unary_negate.cpp   
@@ -116,13 +121,16 @@ int main()
   
 ```  
   
-  **4 0**  
- **1 0**  
- **1 0**   
-## 必要条件  
- **ヘッダー:** の \<cliext と機能\>  
+```Output  
+4 0  
+1 0  
+1 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/機能 >  
   
-## 参照  
- [not1](../dotnet/not1-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [not1 (STL/CLR)](../dotnet/not1-stl-clr.md)

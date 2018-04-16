@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,18 +14,22 @@ f1_keywords:
 - ATLCOLL/ATL::CStringRefElementTraits::CompareElements
 - ATLCOLL/ATL::CStringRefElementTraits::CompareElementsOrdered
 - ATLCOLL/ATL::CStringRefElementTraits::Hash
-dev_langs: C++
-helpviewer_keywords: CStringRefElementTraits class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CStringRefElementTraits class
 ms.assetid: cc15062d-5627-46cc-ac2b-1744afdc2dbd
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 733fbfd1a215ecf9a19990e38d0d4f11be8bd560
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c89a1e0d87550614fb8991ac3efe6bf369d147e7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cstringrefelementtraits-class"></a>CStringRefElementTraits クラス
 このクラスは、コレクション クラスのオブジェクトに格納された文字列に関連する静的関数を提供します。 文字列オブジェクトが参照として処理します。  
@@ -60,7 +65,7 @@ class CStringRefElementTraits : public CElementTraitsBase<T>
   
  `CStringRefElementTraits`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlcoll.h  
   
 ##  <a name="compareelements"></a>CStringRefElementTraits::CompareElements  
@@ -111,6 +116,6 @@ static ULONG Hash(INARGTYPE str) throw();
 ### <a name="return-value"></a>戻り値  
  文字列の内容を使用して計算されたハッシュ値を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CElementTraitsBase クラス](../../atl/reference/celementtraitsbase-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

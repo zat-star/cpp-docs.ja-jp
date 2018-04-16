@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 ms.assetid: 806e7d8f-b204-4e4c-a12c-273ab540a7ca
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4de0ac69733bee42d4102edf345f69be2e5fea3f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a63dacb8da2b7c4b1c7264cfccc6d2839db1b8b1
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="openmp-clauses"></a>OpenMP 句
 OpenMP API で使用される句へのリンクを提供します。  
@@ -38,8 +42,8 @@ OpenMP API で使用される句へのリンクを提供します。
 |[private](../../../parallel/openmp/reference/private-openmp.md)|各スレッドは、変数の独自のインスタンスである必要がありますを指定します。|  
 |[reduction](../../../parallel/openmp/reference/reduction.md)|各スレッドに対してプライベートである 1 つまたは複数の変数、並列領域の末尾にあるリダクション演算の対象となることを指定します。|  
 |[schedule](../../../parallel/openmp/reference/schedule.md)|適用されます、[の](../../../parallel/openmp/reference/for-openmp.md)ディレクティブです。|  
-|[共有](../../../parallel/openmp/reference/shared-openmp.md)|すべてのスレッド間で 1 つまたは複数の変数を共有する必要がありますを指定します。|  
+|[shared](../../../parallel/openmp/reference/shared-openmp.md)|すべてのスレッド間で 1 つまたは複数の変数を共有する必要がありますを指定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OpenMP](../../../parallel/openmp/openmp-in-visual-cpp.md)   
  [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - y1
 - yn
@@ -35,16 +35,17 @@ helpviewer_keywords:
 - y1 function
 - yn function
 ms.assetid: e14215f3-53d4-4ae8-816e-4c1ec2019316
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 95f9af3a5ceaa0abc78b855a4c121945944644be
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 2268949972273493314e5a6f81da82df3a984f3c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="y0-y1-yn"></a>y0、y1、yn
 これらの POSIX 関数は使用されなくなりました。 代わりに、ISO C++ 準拠の [Bessel 系関数: _j0、_j1、_jn、_y0、_y1、_yn](../../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md) を使用してください。

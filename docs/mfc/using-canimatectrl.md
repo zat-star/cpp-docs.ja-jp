@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CAnimateCtrl
-dev_langs: C++
+f1_keywords:
+- CAnimateCtrl
+dev_langs:
+- C++
 helpviewer_keywords:
 - animation controls [MFC], CAnimateCtrl class
 - controls [MFC], animation
 - CAnimateCtrl class [MFC], about CAnimateCtrl class [MFC]
 ms.assetid: 696c0805-bef0-4e2e-a9e7-b37b9215b7f0
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2054fcd5ca73263f8d26713c4e6c1e9a59323659
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f27fd24c3c4334476c78ba0b59c90cbbb0d51f5d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-canimatectrl"></a>CAnimateCtrl の使い方
 クラスによって表される、アニメーション コントロール[CAnimateCtrl](../mfc/reference/canimatectrl-class.md)、オーディオ Video Interleaved (AVI) 形式でクリップを表示するウィンドウは、-、標準の Windows ビデオ/オーディオ形式です。 AVI クリップは、一連の映画のように、ビットマップ フレームです。  
@@ -37,6 +42,6 @@ ms.lasthandoff: 10/24/2017
   
 -   [アニメーション コントロールによる通知の送信](../mfc/notifications-sent-by-animation-controls.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コントロール](../mfc/controls-mfc.md)
 

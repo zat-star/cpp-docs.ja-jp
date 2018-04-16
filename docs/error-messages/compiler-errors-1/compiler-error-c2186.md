@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2186
 ms.assetid: 284bfb7e-ab85-4fcb-9864-1ddf7f6c94ae
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a037382ebbc87cbb480a78eadd9439c1ce48bee7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 1a3b3333fa9450ba5c734f9192b683c0789cecd6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2186"></a>コンパイラ エラー C2186
 'operator': void 型の無効なオペランドです  

@@ -15,16 +15,17 @@ helpviewer_keywords:
 - binary operators [C++]
 - expressions [C++], binary operators
 ms.assetid: 6dea3df4-a4bd-42c3-9807-4a27c120ac9a
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: cedb72a925b21c6bf121092626bc52214fc9c0f0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: beed0eaa26b025cec56252e6d82588019e0d467a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="expressions-with-binary-operators"></a>二項演算子を含む式
 二項演算子は、式の中で 2 つのオペランドに作用します。 二項演算子は次のとおりです。  
@@ -75,7 +76,7 @@ ms.lasthandoff: 09/25/2017
   
     -   [論理 AND (& &)](../cpp/logical-and-operator-amp-amp.md)  
   
-    -   [論理 OR (&#124; (&) #124;)](../cpp/logical-or-operator-pipe-pipe.md)  
+    -   [論理 OR (&#124; &#124;)](../cpp/logical-or-operator-pipe-pipe.md)  
   
 -   [代入演算子](../cpp/assignment-operators.md)  
   
@@ -103,5 +104,5 @@ ms.lasthandoff: 09/25/2017
   
 -   [コンマ演算子](../cpp/comma-operator.md)(,)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [式の型](../cpp/types-of-expressions.md)

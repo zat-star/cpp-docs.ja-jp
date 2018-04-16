@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4632
-dev_langs: C++
-helpviewer_keywords: C4632
+f1_keywords:
+- C4632
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4632
 ms.assetid: 9e35d205-cf21-4e34-8bd5-e1e7b0e2cdd3
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 34f6af06499dd57bda8bf07954db44cd76e116fb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5b8a4257428a3259665da0ac9bdcd6bac38ceda5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4632"></a>コンパイラの警告 (レベル 1) C4632
 XML ドキュメント コメント: ファイルのアクセスが拒否されました: 理由  

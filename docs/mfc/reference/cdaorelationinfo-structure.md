@@ -1,12 +1,12 @@
 ---
-title: "CDaoRelationInfo 構造体 |Microsoft ドキュメント"
-ms.custom: 
+title: CDaoRelationInfo 構造体 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - CDaoRelationInfo
@@ -20,12 +20,13 @@ caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 047b81ebaa903d2b9bdddcf6c606d1e9fe649482
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: ba437105fad22a95173b99e93aa49babab6ab5ae
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdaorelationinfo-structure"></a>CDaoRelationInfo 構造体
 `CDaoRelationInfo`構造体には、2 つのテーブルのフィールドの間で定義されている関係に関する情報が含まれています、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)オブジェクト。  
@@ -54,7 +55,7 @@ struct CDaoRelationInfo
  リレーションシップの主テーブルを名前します。  
   
  *m_strForeignTable*  
- リレーションシップの外部テーブルを名前します。 外部テーブルは、外部キーの格納に使用されるテーブルです。 一般に、外部テーブルを使用して、確立するか、参照整合性を適用します。 外部テーブルは、一対多リレーションシップの"多"側で通常です。 外部テーブルの例では、アメリカの州またはカナダの州や顧客の注文のコードを含むテーブルを含めます。  
+ リレーションシップの外部テーブルを名前します。 外部テーブルは、外部キーの格納に使用されるテーブルです。 一般に、外部テーブルを使用して、確立するか、参照整合性を適用します。 外部テーブルは、一対多リレーションシップの"多"側で通常です。 外部テーブルの例では、アメリカ合衆国の州またはカナダの州や顧客の注文のコードを含むテーブルを含めます。  
   
  `m_lAttributes`  
  リレーションシップの種類についての情報が含まれています。 このメンバーの値には、次のいずれかを指定できます。  
@@ -86,9 +87,8 @@ struct CDaoRelationInfo
   
  によって取得される情報、 [CDaoDatabase::GetRelationInfo](../../mfc/reference/cdaodatabase-class.md#getrelationinfo)メンバー関数は、`CDaoRelationInfo`構造体。 `CDaoRelationInfo`定義、`Dump`デバッグでメンバー関数を作成します。 使用することができます`Dump`の内容をダンプする`CDaoRelationInfo`オブジェクト。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdao.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDaoRelationFieldInfo 構造体](../../mfc/reference/cdaorelationfieldinfo-structure.md)
-

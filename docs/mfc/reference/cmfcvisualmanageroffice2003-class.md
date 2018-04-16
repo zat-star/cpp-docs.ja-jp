@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -95,18 +96,22 @@ f1_keywords:
 - AFXVISUALMANAGEROFFICE2003/CMFCVisualManagerOffice2003::SetDefaultWinXPColors
 - AFXVISUALMANAGEROFFICE2003/CMFCVisualManagerOffice2003::SetStatusBarOfficeXPLook
 - AFXVISUALMANAGEROFFICE2003/CMFCVisualManagerOffice2003::SetUseGlobalTheme
-dev_langs: C++
-helpviewer_keywords: CMFCVisualManagerOffice2003 Class [MFC]
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMFCVisualManagerOffice2003 Class [MFC]
 ms.assetid: 115482cd-e349-450a-8dc4-c6023d092aab
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bc0da7a9e93846bc0d51f0eaa84fa69876a62b1b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b2e3e4bc37bc62d061571d1b52b0f92ac59a949c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcvisualmanageroffice2003-class"></a>CMFCVisualManagerOffice2003 クラス
 `CMFCVisualManagerOffice2003`Microsoft Office 2003 の外観をアプリケーションに提供します。  
@@ -228,7 +233,7 @@ class CMFCVisualManagerOffice2003 : public CMFCVisualManagerOfficeXP
   
  [CMFCVisualManagerOffice2003](../../mfc/reference/cmfcvisualmanageroffice2003-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxvisualmanageroffice2003.h  
   
 ##  <a name="drawcomboborderwinxp"></a>CMFCVisualManagerOffice2003::DrawComboBorderWinXP  
@@ -2274,7 +2279,7 @@ static void SetUseGlobalTheme(BOOL bUseGlobalTheme = TRUE);
   
  場合、`CMFCVisualManagerOffice2003`オブジェクトがグローバル テーマを使用しない、GUI 要素を使用して描画、 [CMFCVisualManagerOfficeXP クラス](../../mfc/reference/cmfcvisualmanagerofficexp-class.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCVisualManager クラス](../../mfc/reference/cmfcvisualmanager-class.md)   

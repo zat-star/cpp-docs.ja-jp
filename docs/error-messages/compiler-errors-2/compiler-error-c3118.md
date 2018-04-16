@@ -15,21 +15,22 @@ dev_langs:
 helpviewer_keywords:
 - C3118
 ms.assetid: 40fbe681-8868-4cb2-a2b2-4db4449319a7
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bfa2c70051afa27e65934c684f3ac30d89c6b344
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 51cc783d29e8a3b63a8c9ecf50b1ea280dae9a9a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3118"></a>コンパイラ エラー C3118
 'interface': インターフェイスは仮想継承をサポートしていません  
   
- 仮想インターフェイスから継承しようとするとします。 次に例を示します。  
+ 仮想インターフェイスから継承しようとするとします。 たとえば、オブジェクトに適用された  
   
 ```  
 // C3118.cpp  

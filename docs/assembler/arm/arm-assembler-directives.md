@@ -4,29 +4,33 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 ms.assetid: 9cfa8896-ec10-4e77-855a-3135c40d7d2a
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1fee551d667b40b3fc36b3ca1f91e093148083a5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c6d42e099ecf8d3630e54eeb629bb3f9f46fa363
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="arm-assembler-directives"></a>ARM アセンブラー ディレクティブ
-ほとんどの場合、Microsoft ARM アセンブラー言語を使用して、ARM アセンブリの第 7 章に記載されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/?LinkId=246102)です。 ただし、一部のアセンブリ ディレクティブの Microsoft 実装は、ARM assembly ディレクティブによって異なります。 この記事では、相違点について説明します。  
+ほとんどの場合、Microsoft ARM アセンブラー言語を使用して、ARM アセンブリの第 7 章に記載されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/p/?linkid=246102)です。 ただし、一部のアセンブリ ディレクティブの Microsoft 実装は、ARM assembly ディレクティブによって異なります。 この記事では、相違点について説明します。  
   
 ## <a name="microsoft-implementations-of-arm-assembly-directives"></a>Microsoft の ARM Assembly ディレクティブの実装  
  領域  
  Microsoft ARM アセンブラーは、これらの領域の属性をサポートしています: 揃えるには、コード、CODEALIGN、データ、NOINIT、読み取り専用、読み取り/書き込み、つまみ、ARM です。  
   
- 親指と ARM 以外のすべての作業に記述されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/?LinkId=246102)です。  
+ 親指と ARM 以外のすべての作業に記述されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/p/?linkid=246102)です。  
   
  Microsoft ARM アセンブラーでは、THUMB は、コード セクションが Thumb コードが含まれ、コードのセクションでは既定値を示します。  ARM では、セクションが ARM コードが含まれていることを示します。  
   
@@ -36,13 +40,13 @@ ms.lasthandoff: 10/24/2017
  コード 16  
  Microsoft ARM アセンブラーが許可されていない pre UAL Thumb 構文を使用すると、発生するので、サポートされていません。  代わりに、UAL 構文と共に THUMB ディレクティブを使用します。  
   
- 一般的です  
+ COMMON  
  一般的な領域の配置の指定はサポートされていません。  
   
  DCDO  
  サポートされていません。  
   
- DN、QN、SN  
+ DN, QN, SN  
  型またはレジスタ エイリアスのレーンの仕様はサポートされていません。  
   
  エントリ  
@@ -56,7 +60,7 @@ ms.lasthandoff: 10/24/2017
 EXPORTsym {[type]}  
 ```  
   
- `sym`エクスポートする記号です。  `[type]`を指定する場合はいずれかであることができます`[DATA]`シンボルがデータをポイントすることを示すためにまたは`[FUNC]`シンボルがコードを指していることを示すためにします。  
+ `sym` エクスポートする記号です。  `[type]`を指定する場合はいずれかであることができます`[DATA]`シンボルがデータをポイントすることを示すためにまたは`[FUNC]`シンボルがコードを指していることを示すためにします。  
   
  シノニムをエクスポートはグローバルです。  
   
@@ -74,13 +78,13 @@ EXPORTsym {[type]}
 IMPORT sym{, WEAK alias{, TYPE t}}  
 ```  
   
- `sym`インポートするシンボルの名前です。  
+ `sym` インポートするシンボルの名前です。  
   
  弱い場合`alias`が指定されていることを示して`sym`弱い外部です。 リンク時に、その定義が見つからないかどうかは、すべての参照をバインド代わりに`alias`です。  
   
  場合型`t`が指定すると、`t`リンカーが解決を試行する方法を示す`sym`です。  これらの値`t`はことがあります。   
-1-のライブラリの検索を実行できません`sym`  
-2: ライブラリの検索を実行`sym`  
+1-のライブラリの検索を実行できません `sym`  
+2: ライブラリの検索を実行 `sym`  
 3-`sym`のエイリアス`alias`(既定値)  
   
  EXTERN は点を除いて、インポートのシノニム`sym`への参照が現在のアセンブリ内にある場合にのみをインポートします。  
@@ -98,7 +102,7 @@ IMPORT sym{, WEAK alias{, TYPE t}}
  サポートされていません。  
   
  再配置します。  
- `RELOC n`命令またはデータ定義ディレクティブに従うだけことができます。 シンボルがありません。"匿名"を再配置できることがあります。  
+ `RELOC n` 命令またはデータ定義ディレクティブに従うだけことができます。 シンボルがありません。"匿名"を再配置できることがあります。  
   
  必要があります。  
  サポートされていません。  
@@ -109,6 +113,6 @@ IMPORT sym{, WEAK alias{, TYPE t}}
  THUMBX  
  Microsoft ARM アセンブラーが Thumb 2 ee 命令セットをサポートしていないためにサポートされていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ARM アセンブラーのコマンド ライン リファレンス](../../assembler/arm/arm-assembler-command-line-reference.md)   
  [ARM アセンブラー診断メッセージ](../../assembler/arm/arm-assembler-diagnostic-messages.md)

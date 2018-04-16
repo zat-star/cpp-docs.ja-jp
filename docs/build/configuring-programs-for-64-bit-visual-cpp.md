@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - 64-bit compiler [C++], options
 - 64-bit compiler [C++]
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - programming [C++], 64-bit
 - Visual C++, 64-bit hardware
 ms.assetid: cb99f72b-8c74-48f4-846a-8921b37b97e9
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1506eb2f2220ebfdf4c116c8e7b4a41ccf0e9085
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dbe0ee3eaa3dd5e53d213496fa2520f4de1e1776
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="configure-visual-c-for-64-bit-x64-targets"></a>64 ビット、x64 用の Visual C の構成のターゲット
 
@@ -31,7 +35,7 @@ ms.lasthandoff: 10/24/2017
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
--   [方法: Visual C プロジェクトを 64 ビットを対象とする、x64 プラットフォーム](../build/how-to-configure-visual-cpp-projects-to-target-64-bit-platforms.md)  
+-   [方法 : Visual C++ プロジェクトを 64 ビット、x64 プラットフォーム用に設定する](../build/how-to-configure-visual-cpp-projects-to-target-64-bit-platforms.md)  
   
 -   [方法: 64 ビットの Visual C++ ツールセットをコマンド ラインから有効にする](../build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line.md)  
   
@@ -55,6 +59,6 @@ ms.lasthandoff: 10/24/2017
   
 [x64 (amd64) 組み込み一覧](../intrinsics/x64-amd64-intrinsics-list.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [C/C++ プログラムのビルド](building-c-cpp-programs.md)

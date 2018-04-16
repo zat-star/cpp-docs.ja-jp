@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C2375 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2375 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: C2375
-dev_langs: C++
-helpviewer_keywords: C2375
+f1_keywords:
+- C2375
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2375
 ms.assetid: 193c5e8b-1b20-4928-8a02-8c1cddaf2a26
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c95f18c959ce2c3dbd8f76e0f2fbf1130b92ceb4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 57fa2e73e9f25fb226ef52971cb933e2fec5e3f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2375"></a>コンパイラ エラー C2375
 'function' : 再定義されています。異なるリンケージです  

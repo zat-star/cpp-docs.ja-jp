@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3519
-dev_langs: C++
-helpviewer_keywords: C3519
+f1_keywords:
+- C3519
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3519
 ms.assetid: ca24b2bc-7e90-4448-ae84-3fedddf9bca7
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c655c8ba0513bcf25d5bc9666d65352a7f587374
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a558225717fecc216d0b2411c5f3d611256d30fa
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3519"></a>コンパイラ エラー C3519
 'invalid_param': embedded_idl 属性に対して無効なパラメーター  

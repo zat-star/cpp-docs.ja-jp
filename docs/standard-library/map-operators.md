@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - map/std::operator!=
 - map/std::operator&gt;
@@ -16,7 +16,7 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 7df02b9f-701c-44ed-834a-a819badc5bd0
-caps.latest.revision: 7
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::operator!= (map)
@@ -25,12 +25,11 @@ helpviewer_keywords:
 - std::operator&lt; (map)
 - std::operator&lt;= (map)
 - std::operator== (map)
+ms.openlocfilehash: d98e67ea5a65279a5bb618552bec4358bc48a445
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 6b2eb6b5ab3a8b08af5375b7767328289c68a744
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltmapgt-operators"></a>&lt;map&gt; 演算子
 ||||  
@@ -160,7 +159,7 @@ The map m1 is not less than the map m3.
 *\  
 ```  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  演算子の左辺の map オブジェクトが右辺の map オブジェクト以下かどうかを調べます。  
   
 ```
@@ -344,7 +343,7 @@ The map m1 is greater than the map m3.
 *\  
 ```  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  演算子の左辺の map オブジェクトが右辺の map オブジェクト以上かどうかを調べます。  
   
 ```
@@ -528,7 +527,7 @@ The multimap m1 is not less than the multimap m3.
 *\  
 ```  
   
-##  <a name="eq_multimap"></a>  operator&lt;=  
+##  <a name="eq_multimap"></a>  演算子&lt;=  
  演算子の左辺の multimap オブジェクトが右辺の multimap オブジェクト以下かどうかをテストします。  
   
 ```
@@ -712,7 +711,7 @@ The multimap m1 is greater than the multimap m3.
 *\  
 ```  
   
-##  <a name="op_gt_eq_multimap"></a>  operator&gt;=  
+##  <a name="op_gt_eq_multimap"></a>  演算子&gt;=  
  演算子の左辺の multimap オブジェクトが右辺の multimap オブジェクト以上かどうかをテストします。  
   
 ```
@@ -776,9 +775,8 @@ The multimap m1 is greater than or equal to the multimap m4.
 *\  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<map>](../standard-library/map.md)
-
 
 
 

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _vsprintf_p
 - _vswprintf_p
@@ -49,30 +49,17 @@ helpviewer_keywords:
 - _vsprintf_p function
 - _vstprintf_p_l function
 ms.assetid: 00821c0d-9fee-4d8a-836c-0669cfb11317
-caps.latest.revision: 20
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 2a0503bc20cb5d176374b910c7798511535864f5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 25051ad5e6c712328f216ed703e17d3d101b35b8
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="vsprintfp-vsprintfpl-vswprintfp-vswprintfpl"></a>_vsprintf_p、_vsprintf_p_l、_vswprintf_p、_vswprintf_p_l
 引数リストへのポインターを使用して、書式付き出力を書き込みます。その際、引数を使用する順序を指定できます。  
@@ -133,7 +120,7 @@ int _vswprintf_p_l(
 ## <a name="remarks"></a>コメント  
  これらの関数は、引数リストへのポインターを使用し、指定されたデータを書式指定して `buffer` が指すメモリに書き込みます。  
   
- これらの関数は、位置指定パラメーターをサポートする点を除いて `vsprintf_s` および `vswprintf_s` と同じです。 詳細については、「[printf_p の位置指定パラメーター](../../c-runtime-library/printf-p-positional-parameters.md)」を参照してください。  
+ これらの関数は、位置指定パラメーターをサポートする点を除いて `vsprintf_s` および `vswprintf_s` と同じです。 詳細については、「[printf_p の位置指定パラメーター](../../c-runtime-library/printf-p-positional-parameters.md)」をご覧ください。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
@@ -146,16 +133,16 @@ int _vswprintf_p_l(
 |`_vstprintf_p`|`_vsprintf_p`|`_vsprintf_p`|`_vswprintf_p`|  
 |`_vstprintf_p_l`|`_vsprintf_p_l`|`_vsprintf_p_l`|`_vswprintf_p_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|省略可能なヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
 |-------------|---------------------|----------------------|  
 |`_vsprintf_p`, `_vsprintf_p_l`|\<stdio.h> および \<stdarg.h>|\<varargs.h>*|  
 |`_vswprintf_p`, `_vswprintf_p_l`|\<stdio.h> または \<wchar.h>、および \<stdarg.h>|\<varargs.h>*|  
   
  \* UNIX V との互換性用。  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -206,7 +193,7 @@ int main( void )
 This is a string  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)   
  [書式指定構文: printf 関数と wprintf 関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)   

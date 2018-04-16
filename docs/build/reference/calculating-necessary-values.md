@@ -1,32 +1,36 @@
 ---
-title: "必要な値の計算 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ヘルパー関数, 計算 (必要な値を)"
+title: "必要な値を計算する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- helper functions, calculating necessary values
 ms.assetid: 4f037d0f-881a-4a48-a9d2-9f8872dfccb7
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4d1e51f1a23a81811bdd4aa6c6feec45748ee572
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 必要な値の計算
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-遅延読み込みヘルパー ルーチンでは、2 つの重要な情報を計算する必要があります。  これらの情報を計算するために、delayhlp.cpp には次の 2 つのインライン関数が用意されています。  
+# <a name="calculating-necessary-values"></a>必要な値の計算
+2 つの重要な情報は、遅延読み込みヘルパー ルーチンで計算される必要があります。 そのために、2 つのインライン関数にはこの情報を計算するための delayhlp.cpp です。  
   
--   1 番目の関数は、現在のインポートのインデックスを計算して、インポート アドレス テーブル \(IAT: Import Address Table\)、バインドされたインポート アドレス テーブル \(BIAT: Bound Import Address Table\)、および非バインド インポート アドレス テーブル \(UIAT: Unbound Import Address Table\) の 3 つの異なるテーブルに格納します。  
+-   1 つ目は、(インポート アドレス テーブル (IAT)、バインドのインポート アドレス テーブル (BIAT)、およびバインドされていないインポート アドレス テーブル (UIAT))、3 つの異なるテーブルにインポートする現在のインデックスを計算します。  
   
--   2 番目の関数は、有効な IAT 内のインポート数をカウントします。  
+-   2 つ目は、有効な IAT のインポートの数をカウントします。  
   
 ```  
 // utility function for calculating the index of the current import  
@@ -50,5 +54,5 @@ CountOfImports(PCImgThunkData pitdBase) {
     }  
 ```  
   
-## 参照  
- [Understanding the Helper Function](http://msdn.microsoft.com/ja-jp/6279c12c-d908-4967-b0b3-cabfc3e91d3d)
+## <a name="see-also"></a>参照  
+ [ヘルパー関数について](understanding-the-helper-function.md)

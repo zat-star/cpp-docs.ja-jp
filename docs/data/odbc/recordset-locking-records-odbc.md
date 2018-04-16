@@ -1,13 +1,15 @@
 ---
-title: "レコード セット: レコードのロック (ODBC) |Microsoft ドキュメント"
-ms.custom: 
+title: 'レコード セット: レコードのロック (ODBC) |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - locks [C++], recordsets
 - optimistic locking
@@ -17,15 +19,18 @@ helpviewer_keywords:
 - ODBC recordsets [C++], locking records
 - data [C++], locking
 ms.assetid: 8fe8fcfe-b55a-41a8-9136-94a7cd1e4806
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3c9e8336e0ef26c1547d5bc495dfbb3e89e7ee91
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 76d7ab2df01e485ffff70120609227b9fbae6ac5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="recordset-locking-records-odbc"></a>レコードセット: レコードのロック (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
@@ -70,7 +75,7 @@ ms.lasthandoff: 10/24/2017
 > [!NOTE]
 >  比較的少数の ODBC ドライバーは、現在、排他ロックをサポートします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
  [レコード セット: 結合 (ODBC) を実行します。](../../data/odbc/recordset-performing-a-join-odbc.md)   
  [レコードセット: レコードの追加、更新、削除 (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)

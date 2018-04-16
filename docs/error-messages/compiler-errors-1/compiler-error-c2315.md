@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2315
 ms.assetid: a0d91b81-944c-4a69-9a24-fd484aabcc5c
-caps.latest.revision: 5
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3823b969e0b976d50fadd273038c539e31d5eab6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 1a26f48dde7273d6d84f073758560d08291f5f4e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2315"></a>コンパイラ エラー C2315
 'type1': 参照は行番号の 'type2' でキャッチされました  

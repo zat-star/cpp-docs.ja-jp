@@ -4,14 +4,16 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - _O_BINARY
 - _O_TEXT
 - _O_RAW
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - O_BINARY constant
 - O_TEXT constant
@@ -24,15 +26,17 @@ helpviewer_keywords:
 - translation, modes
 - translation modes (file I/O)
 ms.assetid: a5993bf4-7e7a-47f9-83c3-e46332b85579
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8f5224064158dcbcb277524af21a0059a324fbc5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d1153251c08d626d17e87b5cc58dbd9360a21309
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="translation-mode-constants"></a>変換モード定数
 ## <a name="syntax"></a>構文  
@@ -59,7 +63,7 @@ ms.lasthandoff: 10/24/2017
   
  詳細については、「[テキスト モードとバイナリ モードのファイル入出力](../c-runtime-library/text-and-binary-mode-file-i-o.md)」および「[File Translation](../c-runtime-library/file-translation-constants.md)」 (ファイル変換) を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_open、_wopen](../c-runtime-library/reference/open-wopen.md)   
  [_pipe](../c-runtime-library/reference/pipe.md)   
  [_sopen、_wsopen](../c-runtime-library/reference/sopen-wsopen.md)   

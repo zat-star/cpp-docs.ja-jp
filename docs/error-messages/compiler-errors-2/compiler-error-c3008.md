@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3008
 ms.assetid: 04d93201-28e5-4be0-945c-aad616376f4b
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 75adf08e05a6b192c5bb785224eac770425a72a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 392725c883621490b6f9d748cf394e01af329606
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3008"></a>コンパイラ エラー C3008
 'arg' : OpenMP 'directive' ディレクティブで、引数の終わりに ')' がありません  

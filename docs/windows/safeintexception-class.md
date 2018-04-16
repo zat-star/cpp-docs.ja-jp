@@ -1,54 +1,60 @@
 ---
-title: "SafeIntException クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SafeIntException Class"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SafeIntException クラス"
+title: "SafeIntException クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- SafeIntException Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- SafeIntException class
 ms.assetid: 88bef958-1f48-4d55-ad4f-d1f9581a293a
-caps.latest.revision: 8
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 91f1c80273d0e1ed41ea86774c71fcbe8ad1bbf6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# SafeIntException クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`SafeInt` クラスでは、`SafeIntException` を使用して、数値演算が完了できない理由を識別します。  
+# <a name="safeintexception-class"></a>SafeIntException クラス
+`SafeInt`クラス`SafeIntException`数学的な操作を完了できない理由を特定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class SafeIntException;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック コンストラクター  
- [SafeIntException::SafeIntException](../Topic/SafeIntException::SafeIntException.md)  
- `SafeIntException` オブジェクトを作成します。  
+### <a name="public-constructors"></a>パブリック コンストラクター  
+ [SafeIntException::SafeIntException](../windows/safeintexception-safeintexception.md)  
+ 
+          `SafeIntException` オブジェクトを作成します。  
   
-## 解説  
- [SafeInt クラス](../windows/safeint-class.md) は、`SafeIntException` クラスを使用する唯一のクラスです。  
+## <a name="remarks"></a>コメント  
+ [SafeInt クラス](../windows/safeint-class.md)唯一のクラスを使用するには、`SafeIntException`クラスです。  
   
-## 継承階層  
- [SafeIntException Class](../windows/safeintexception-class.md)  
+## <a name="inheritance-hierarchy"></a>継承階層  
+ [SafeIntException クラス](../windows/safeintexception-class.md)  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** safeint.h  
   
- **名前空間:** msl::utilities  
+ **Namespace:** msl::utilities  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [SafeInt ライブラリ](../windows/safeint-library.md)   
  [SafeInt クラス](../windows/safeint-class.md)

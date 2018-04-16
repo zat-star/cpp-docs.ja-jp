@@ -1,32 +1,36 @@
 ---
-title: "PROC | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PROC"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PROC directive"
+title: "PROC |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- PROC
+dev_langs:
+- C++
+helpviewer_keywords:
+- PROC directive
 ms.assetid: ee5bb6b6-fa15-4d73-b0cf-e650178539a9
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0900b277650fee1c4134d354d964d49d570c6266
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# PROC
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-マークは  *ラベルと*  呼ばれるプロシージャブロックの最後起動します。  ブロックのステートメントは [呼び出し](../../assembler/masm/invoke.md) の  **呼び出し**  命令またはディレクティブを呼び出すことができます。  
+# <a name="proc"></a>PROC
+呼ばれるプロシージャ ブロックの開始と終了をマーク*ラベル*です。 ブロック内のステートメントを呼び出すことができます、**呼び出す**命令または[INVOKE](../../assembler/masm/invoke.md)ディレクティブです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,14 +41,14 @@ statements
 label ENDP  
 ```  
   
-## 解説  
- \[frames \[:*ehandler*\] *アドレス* \] ml64.exe でのみ有効でMASM に .pdata の関数テーブル エントリを生成するには関数の構造化例外処理の .xdata 情報をアンワインドする動作を制御します。  
+## <a name="remarks"></a>コメント  
+ [フレーム [:*ehandler アドレス*] のみ ml64.exe で有効であり、.pdata で関数のテーブルのエントリを生成し、関数の構造化の .xdata 内の情報をアンワインドする MASM 例外処理のアンワインド動作します。  
   
- **フレーム**  の属性を使用する場合[.ENDPROLOG](../Topic/.ENDPROLOG.md) のディレクティブを指定する必要があります。  
+ ときに、**フレーム**属性は、使用、その後である必要があります、[です。ENDPROLOG](../../assembler/masm/dot-endprolog.md)ディレクティブです。  
   
- ml64.exe の使い方の詳細については [MASM for x64 \(ml64.exe\)](../../assembler/masm/masm-for-x64-ml64-exe.md) を参照してください。  
+ 参照してください[x64 用 MASM (ml64.exe)](../../assembler/masm/masm-for-x64-ml64-exe.md) ml64.exe の使用に関する詳細。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 ; ml64 ex1.asm /link /entry:Example1 /SUBSYSTEM:CONSOLE  
@@ -66,7 +70,7 @@ _text ENDS
 END  
 ```  
   
- 上記のコードは次の関数テーブルを出力しアンワインド情報 :  
+ 上記のコードは次の関数表を生成し、アンワインド情報。  
   
 ```  
 FileHeader->Machine 34404  
@@ -89,5 +93,5 @@ Dumping Unwind Information for file ex2.exe
       Code offset: 0x01, PUSH_NONVOL, register=rbp  
 ```  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

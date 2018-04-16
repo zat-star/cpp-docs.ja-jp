@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -20,35 +20,22 @@ helpviewer_keywords:
 - incompatible iterators
 - debug iterator support
 ms.assetid: f3f5bd15-4be8-4d64-a4d0-8bc0761c68b6
-caps.latest.revision: 22
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9e2bfb1095c28ea3592c5af2b89cb2fbeddcb60c
-ms.openlocfilehash: 37f3450fbd320105781fa5398e838d3a8e317879
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3ef6eead006b6e069a9b672d78700ff85aa2f8ef
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="debug-iterator-support"></a>Debug Iterator Support
 Visual C++ ランタイム ライブラリは、反復子の不正な使用を検出し、実行時にアサートしてダイアログ ボックスを表示します。 反復子のデバッグのサポートを有効にするには、デバッグ バージョンの C++ 標準ライブラリと C ランタイム ライブラリを使ってプログラムをコンパイルする必要があります。 詳しくは、「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」をご覧ください。 チェックを行う反復子を使う方法については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」をご覧ください。  
   
- C++ 標準では、メンバー関数によってコンテナーに対する反復子が無効になる状況が説明されています。 次に&2; つの例を示します。  
+ C++ 標準では、メンバー関数によってコンテナーに対する反復子が無効になる状況が説明されています。 次に 2 つの例を示します。  
   
 -   コンテナーから要素を消去すると、要素に対する反復子が無効になります。  
   
@@ -137,7 +124,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
-次のコード例では、[for_each](../standard-library/algorithm-functions.md#for_each) アルゴリズムに対する&2; つの反復子の間に互換性がないため、アサーションが発生します。 アルゴリズムは、提供された反復子が同じコンテナーを参照しているかどうかを確認します。  
+次のコード例では、[for_each](../standard-library/algorithm-functions.md#for_each) アルゴリズムに対する 2 つの反復子の間に互換性がないため、アサーションが発生します。 アルゴリズムは、提供された反復子が同じコンテナーを参照しているかどうかを確認します。  
   
 ```cpp  
 // iterator_debugging_3.cpp  
@@ -212,9 +199,8 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [C++ 標準ライブラリの概要](../standard-library/cpp-standard-library-overview.md)
-
 
 
 

@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - makefiles
 - makefiles, contents
 ms.assetid: 29362adb-d963-4c00-84a6-b38c2ffe6a36
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5e8c72f94782536abf1ddbe041bcd42818e4c099
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bd781d93f4417bb617471ca72f63c2888918b466
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="contents-of-a-makefile"></a>メイクファイルの内容
 メイクファイルを内容します。  
@@ -29,7 +33,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [コマンド](../build/commands-in-a-makefile.md)  
   
--   [マクロ](../build/macros-and-nmake.md)  
+-   [[マクロ]](../build/macros-and-nmake.md)  
   
 -   [推論規則](../build/inference-rules.md)  
   
@@ -42,5 +46,5 @@ ms.lasthandoff: 10/24/2017
   
  サンプルについては、次を参照してください。[サンプル メイクファイル](../build/sample-makefile.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [NMAKE リファレンス](../build/nmake-reference.md)

@@ -1,41 +1,46 @@
 ---
-title: "collection_adapter::end (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::collection_adapter::end"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "end メンバー [STL/CLR]"
+title: "collection_adapter::end (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::collection_adapter::end
+dev_langs:
+- C++
+helpviewer_keywords:
+- end member [STL/CLR]
 ms.assetid: f953a734-2f17-4b68-9ca4-34f980d08887
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 3904e9ad6d9b92f26c9fbd5d95d9135f029641b8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# collection_adapter::end (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="collectionadapterend-stlclr"></a>collection_adapter::end (STL/CLR)
 被制御シーケンスの末尾を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 iterator end();  
 ```  
   
-## 解説  
- このメンバー関数は、入力反復子を被制御シーケンスの末尾を指し示す前方反復子を返します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスの最後の位置を指し示す入力反復子を返します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_collection_adapter_end.cpp   
@@ -63,12 +68,15 @@ int main()
   
 ```  
   
-  **b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アダプター\>  
+```Output  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext アダプター/>  
   
-## 参照  
- [collection\_adapter](../Topic/collection_adapter%20\(STL-CLR\).md)   
- [collection\_adapter::begin](../dotnet/collection-adapter-begin-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [collection_adapter (STL/CLR)](../dotnet/collection-adapter-stl-clr.md)   
+ [collection_adapter::begin (STL/CLR)](../dotnet/collection-adapter-begin-stl-clr.md)

@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - concatenating strings
 - strings [C++], concatenating
 ms.assetid: 51486b1f-4b1e-4061-9add-1aa38c6cdb3c
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5974e192e32c612fe995cbc736e703f6168a3e8d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: de245a061ed7d269aaafc856df0a422e31fd6d77
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="string-literal-concatenation"></a>文字列リテラルの連結
 複数の行にわたる文字列リテラルを作成するときには、2 つの文字列を連結できます。 これには、円記号を入力してから Enter キーを押します。 円記号を入力すると、コンパイラは後続の改行文字を無視します。 たとえば、次の文字列リテラル  
@@ -68,5 +72,5 @@ printf_s( "%s" , string ) ;
   
  隣接する文字列リテラルまたは隣接するワイド文字列リテラルの任意のシーケンスで指定されたマルチバイト文字シーケンスは、変換フェーズ 6 で連結され、単一のマルチバイト文字シーケンスになります。 したがって、実行時に文字列リテラルの変更を許可するようにプログラムをデザインしないでください。 ANSI C 規格では、文字列の変更結果は未定義であると規定されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 文字列リテラル](../c-language/c-string-literals.md)

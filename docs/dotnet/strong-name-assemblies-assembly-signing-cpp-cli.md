@@ -1,13 +1,15 @@
 ---
-title: "厳密名アセンブリ (アセンブリ署名) (C + + CLI) |Microsoft ドキュメント"
-ms.custom: 
+title: 厳密名アセンブリ (アセンブリ署名) (C + + CLI) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - assemblies [C++]
 - signing assemblies
@@ -16,15 +18,18 @@ helpviewer_keywords:
 - linker [C++], assembly signing
 - strong-named assemblies [C++]
 ms.assetid: c337cd3f-e5dd-4c6f-a1ad-437e85dba1cc
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 32a9502bbb1143e23ee542c1d9fff593925c527a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 2099389131145838a70b579053c65698dbc3a857
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="strong-name-assemblies-assembly-signing-ccli"></a>厳密名アセンブリ (アセンブリ署名) (C++/CLI)
 このトピックでは、アセンブリに厳密な名前を付けるとも呼ば、アセンブリに署名する方法について説明します。  
@@ -54,5 +59,5 @@ ms.lasthandoff: 10/24/2017
   
  厳密なアセンブリの詳細については、次を参照してください。[作成と使用](/dotnet/framework/app-domains/create-and-use-strong-named-assemblies)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

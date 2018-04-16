@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - stack/std::operator!=
 - stack/std::operator&gt;
@@ -16,7 +16,7 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 9c1fc282-2f61-4727-9e80-84ea5d4934a2
-caps.latest.revision: 13
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::operator!= (stack)
@@ -25,12 +25,11 @@ helpviewer_keywords:
 - std::operator&lt; (stack)
 - std::operator&lt;= (stack)
 - std::operator== (stack)
+ms.openlocfilehash: 04bdcf5e9ecbc0b5dbbe59c680629d144720e174
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: a64d5b127b0c6bc32c2f5649db93cc4d04ddaa99
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltstackgt-operators"></a>&lt;stack&gt; operators
 ||||  
@@ -179,7 +178,7 @@ The stack s1 is greater than or equal to the stack s3.
 The stack s1 from the top down is: ( 8 6 4 2 ).  
 ```  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  演算子の左辺のスタック オブジェクトが右辺のスタック オブジェクト以下かどうかを調べます。  
   
 ```  
@@ -368,7 +367,7 @@ The stack s1 is not greater than the stack s2.
 The stack s1 is greater than the stack s3.  
 ```  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  演算子の左辺のスタック オブジェクトが右辺のスタック オブジェクト以上かどうかを調べます。  
   
 ```  
@@ -432,7 +431,6 @@ The stack s1 is less than the stack s2.
 The stack s1 is greater than or equal to the stack s3.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<stack>](../standard-library/stack.md)
-
 

@@ -1,12 +1,12 @@
 ---
-title: "CSnapInPropertyPageImpl クラス |Microsoft Docs"
-ms.custom: 
+title: CSnapInPropertyPageImpl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CSnapInPropertyPageImpl
@@ -38,26 +38,13 @@ caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 57f43a1ab82c2441d271ac88ef712309bb1315dd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5fc1135f02c31c644d7d149900bbaa755a52c579
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="csnapinpropertypageimpl-class"></a>CSnapInPropertyPageImpl クラス
 このクラスは、スナップインからプロパティ ページ オブジェクトを実装するためのメソッドを提供します。  
@@ -111,7 +98,7 @@ CSnapInPropertyPageImpl : public CDialogImplBase
   
  `CSnapInPropertyPageImpl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsnap.h  
   
 ##  <a name="canceltoclose"></a>CSnapInPropertyPageImpl::CancelToClose  
@@ -163,7 +150,7 @@ PROPSHEETPAGE m_psp;
 ### <a name="remarks"></a>コメント  
  この構造体を使用して、構築した後、プロパティ ページの外観を初期化します。  
   
- 詳細については、そのメンバーの一覧を含めて、この構造を参照してください。 [PROPSHEETPAGE](http://msdn.microsoft.com/library/aa815151)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ そのメンバーの一覧を含めて、この構造の詳細についてを参照してください。 [PROPSHEETPAGE](http://msdn.microsoft.com/library/aa815151) Windows SDK に含まれています。  
   
 ##  <a name="onapply"></a>CSnapInPropertyPageImpl::OnApply  
  このメンバー関数は、ユーザーがクリックしたときに、 **OK**または**今すぐ適用**ボタンをクリックします。  
@@ -173,7 +160,7 @@ BOOL OnApply();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 以外の場合は、変更が許容されます。それ以外の場合 0 を返します。  
+ 変更が受け付けられた場合は 0 以外。それ以外の場合 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
  前に`OnApply`呼び出すことができます、フレームワークによってする必要がありますが呼び出さ`SetModified`そのパラメーターを設定および**TRUE**です。 これは、ライセンス認証、**今すぐ適用**プロパティ ページで、ユーザーによって変更するとすぐにボタンをクリックします。  
@@ -273,7 +260,7 @@ BOOL OnWizardFinish();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- プロパティ シートが破棄されるは、ウィザードが終了したと場合、0 以外の値それ以外の場合 0 を返します。  
+ プロパティ シートが、ウィザードが終了したときに破棄される場合は 0 以外。それ以外の場合 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
  ユーザーには、ときに実行する必要がいくつかのアクションを指定するには、このメンバー関数をオーバーライド、**完了**ボタンをクリックします。  
@@ -325,11 +312,10 @@ void SetModified(BOOL bChanged = TRUE);
   
 ### <a name="parameters"></a>パラメーター  
  `bChanged`  
- [in]**TRUE**プロパティ ページの設定が適用されたか、前回以降変更されていることを示すために**FALSE**プロパティ ページの設定は適用されているか、無視するかを示します。  
+ [in]**TRUE**プロパティ ページの設定が適用されたか、前回以降変更されていることを示すために**FALSE**プロパティ ページの設定が適用されているか、無視するかを示します。  
   
 ### <a name="remarks"></a>コメント  
- プロパティ シートがトラックうちページは「ダーティ」、つまり、呼び出しがのプロパティ ページを保持**SetModified (TRUE)**です。 **今すぐ適用**ボタンは常に有効にするを呼び出す場合**SetModified (TRUE)**ページのいずれか。 **今すぐ適用**を呼び出すと、ボタンは無効になります**SetModified (FALSE)**のみ場合、その他のページの [なし] は「ダーティ」ですが、ページの 1 つの  
+ プロパティ シートをページは「ダーティ」、つまり追跡、呼び出した対象のプロパティ ページを保持**SetModified (TRUE)**です。 **今すぐ適用**ボタンは常に有効にするを呼び出す場合**SetModified (TRUE)**ページのいずれか。 **今すぐ適用**を呼び出すと、ボタンは無効になります**SetModified (FALSE)**のみ場合、その他のページの [なし] は「ダーティ」ですが、ページの 1 つの  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)
-

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2393
 ms.assetid: 4bd95728-e813-4ce8-844a-c6ebe235ca82
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fa9bc840894cf677e61c0247effcb875a2fdf2ff
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: a2c4f8d31fb6ddb6eaa9472dc7537edbcdc29054
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2393"></a>コンパイラ エラー C2393
 'symbol': appdomain ごとのシンボルをセグメント 'segment' に割り当てることはできません  

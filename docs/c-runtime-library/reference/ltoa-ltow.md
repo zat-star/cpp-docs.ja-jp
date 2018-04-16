@@ -1,12 +1,13 @@
 ---
-title: "_ltoa、_ltow | Microsoft Docs"
-ms.custom: 
+title: _ltoa、_ltow | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
 apiname:
 - _ltoa
 - _ltow
@@ -27,7 +28,8 @@ f1_keywords:
 - _ltot
 - _ltoa
 - _ltow
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - converting integers
 - _ltoa function
@@ -37,15 +39,17 @@ helpviewer_keywords:
 - long integer conversion to string
 - converting numbers, to strings
 ms.assetid: 14036104-2c25-4759-87c0-918ed8521e47
-caps.latest.revision: "17"
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 135c082e4d972b18af057bf22a718ac9c4170718
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 25dc7c06f2e5eadacb568a096fda30f81a16570b
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="ltoa-ltow"></a>_ltoa、_ltow
 長整数型を文字列に変換します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_ltoa_s、_ltow_s](../../c-runtime-library/reference/ltoa-s-ltow-s.md)」を参照してください。  
@@ -96,7 +100,7 @@ wchar_t *_ltow(
 > [!IMPORTANT]
 >  バッファー オーバーランを回避するには、`str` のバッファーを、変換された数字、末尾の null 文字、および符号文字を保持できるよう十分に大きくします。  
   
- C++ では、これらの関数にテンプレートのオーバーロードがあります。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数にテンプレートのオーバーロードがあります。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -111,7 +115,7 @@ wchar_t *_ltow(
 |`_ltoa`|\<stdlib.h>|  
 |`_ltow`|\<stdlib.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  [_itoa](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md) の例を参照してください。  

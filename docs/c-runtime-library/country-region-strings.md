@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.strings
-dev_langs: C++
-helpviewer_keywords: country/region strings
+f1_keywords:
+- c.strings
+dev_langs:
+- C++
+helpviewer_keywords:
+- country/region strings
 ms.assetid: 5baf0ccf-0d9b-40dc-83bd-323705287930
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3c250e47688e5fbcb32779d58dd8fe8973cdc96c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 94ad99ebd05fa9e37a56f2e12818f30f1f4b1212
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="countryregion-strings"></a>Country/Region Strings
 国/地域識別文字列を言語識別文字列と組み合わせて、 `setlocale`、 `_wsetlocale`、 `_create_locale`、および `_wcreate_locale` の関数のロケール指定を作成できます。 さまざまなバージョンの Windows オペレーティング システムでサポートされている国/地域名の一覧については、「[National Language Support (NLS) API Reference (各国語サポート (NLS) API リファレンス)](https://www.microsoft.com/resources/msdn/goglobal/default.mspx)」をご覧ください。 一覧では、国/地域の文字列は **Locale - Language Country/Region** 列のいずれかの国の値、または **Country or Region name abbreviation** 列の省略形のいずれかとなります。 Windows オペレーティング システムのバージョンごとの言語サポートに関する詳細については、[MS-LCID]: Windows Language Code Identifier (LCID) Reference ([MS-LCID]: Windows 言語コード識別子 (LCID) リファレンス) の「[Appendix A: Product Behavior (付録 A: 製品の動作)](http://msdn.microsoft.com/goglobal/bb896001.aspx)」をご覧ください。  
@@ -52,7 +58,7 @@ ms.lasthandoff: 10/24/2017
 |united-states|USA|en-US|  
 |us|USA|en-US|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ロケール名、言語、および国/地域識別文字列](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   
  [言語識別文字列](../c-runtime-library/language-strings.md)   
  [setlocale、_wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)   

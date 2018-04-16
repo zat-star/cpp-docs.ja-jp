@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - hash_map/stdext::hash_multimap
 - hash_map/stdext::hash_multimap::allocator_type
@@ -49,7 +50,8 @@ f1_keywords:
 - hash_map/stdext::hash_multimap::swap
 - hash_map/stdext::hash_multimap::upper_bound
 - hash_map/stdext::hash_multimap::value_comp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - stdext::hash_multimap
 - stdext::hash_multimap::allocator_type
@@ -93,15 +95,17 @@ helpviewer_keywords:
 - stdext::hash_multimap::upper_bound
 - stdext::hash_multimap::value_comp
 ms.assetid: f41a6db9-67aa-43a3-a3c5-dbfe9ec3ae7d
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5a91949cc8bd5a53d1a01835dd0880e92715cec9
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d6474bd6cdbb8baa2819d80f122b5a17792251bc
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="hashmultimap-class"></a>hash_multimap クラス
 > [!NOTE]
@@ -474,7 +478,7 @@ typedef list<typename Traits::value_type, typename Traits::allocator_type>::cons
 ### <a name="remarks"></a>コメント  
  `const_iterator` 型で要素の値を変更することはできません。  
   
- hash_multimap によって定義される `const_iterator` は、[value_type](#value_type) のオブジェクトを指します。これは `pair`*\<***const Key, Type***>* 型です。 キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
+ `const_iterator`のオブジェクトへの hash_multimap 点によって定義された[value_type](#value_type)、型のある`pair`  *\< ***constKey、型***>* . キーの値はペアの 1 番目のメンバー、マップされた要素の値はペアの 2 番目のメンバーを介して取得できます。  
   
  逆参照する、 `const_iterator` `cIter` hash_multimap 内の要素を指すを使用して、  **->** 演算子。  
   
@@ -1963,7 +1967,7 @@ typedef list<typename _Traits::value_type, typename _Traits::allocator_type>::po
 ```  
   
 ### <a name="remarks"></a>コメント  
- **pointer** 型を使って要素の値を変更できます。  
+ **pointer** 型を使って要素の値を変更することができます。  
   
  ほとんどの場合、hash_multimap オブジェクト内の要素にアクセスするには、[反復子](#iterator)を使用する必要があります。  
   
@@ -2532,7 +2536,7 @@ typedef pair<const Key, Type> value_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- `value_type`宣言するペア\<const [key_type](#key_type)、 [mapped_type](#mapped_type)> のペアと\<key_type、mapped_type > 連想コンテナーのキーが変更されていないため非定数反復子または参照を使用します。  
+ `value_type` 宣言するペア\<const [key_type](#key_type)、 [mapped_type](#mapped_type)> のペアと\<key_type、mapped_type > 連想コンテナーのキーが変更されていないため非定数反復子または参照を使用します。  
   
    
   

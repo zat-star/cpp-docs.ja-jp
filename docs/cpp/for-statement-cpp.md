@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
-helpviewer_keywords: for keyword [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- for keyword [C++]
 ms.assetid: 6c7d01b3-c4c1-4c6a-aa58-e2d198f33d4a
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 700a5d39d2752ba334f06b04382dab792d5f81e5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8358af0cd6784b1974767456602350a8ccf1c57f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="for-statement-c"></a>for ステートメント (C++)
 条件が偽 (false) になるまでステートメントを繰り返し実行します。 範囲ベースの for ステートメントについては、次を参照してください。[ステートメント (C++) の範囲に基づく](../cpp/range-based-for-statement-cpp.md)です。  
@@ -152,7 +157,7 @@ int main(){
   
  これにより、`for` ループで宣言された変数の標準動作がより正確に模倣されます。その場合、ループの終了後にスコープ外に出るために `for` ループで宣言された変数が必要です。 変数が `for` ループで宣言される場合、既に同じ名前のローカル変数がある場合でも、コンパイラは `for` ループの外側のスコープでローカル変数に内部的に引き上げます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [繰り返しステートメント](../cpp/iteration-statements-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [while ステートメント (C++)](../cpp/while-statement-cpp.md)   

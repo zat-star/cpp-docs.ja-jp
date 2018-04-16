@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _expand
+ms.topic: reference
+apiname:
+- _expand
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -30,21 +32,24 @@ f1_keywords:
 - _nexpand
 - bexpand
 - _expand
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - memory blocks, changing size
 - _expand function
 - expand function
 ms.assetid: 4ac55410-39c8-45c7-bccd-3f1042ae2ed3
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 09906e3cdf8455a2a221601f475074a18a72b1b6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b6b2bf8ba3e30165f11e3392e04519a3d49cfd4a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="expand"></a>_expand
 メモリ ブロックのサイズを変更します。  
@@ -84,13 +89,13 @@ void *_expand(
   
  この関数は、パラメーターを検証します。 また、`memblock` が null ポインターの場合、この関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。 `size` が `_HEAP_MAXREQ` より大きい場合、`errno` は `ENOMEM` に設定され、関数は `NULL` を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_expand`|\<malloc.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -126,7 +131,7 @@ Allocated 512 bytes at 002C12BC
 Expanded block to 1024 bytes at 002C12BC  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
  [calloc](../../c-runtime-library/reference/calloc.md)   
  [free](../../c-runtime-library/reference/free.md)   

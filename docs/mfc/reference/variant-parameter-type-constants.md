@@ -44,16 +44,17 @@ helpviewer_keywords:
 - VTS_OPTEXCLUSIVE constant [MFC]
 - VTS_YSIZE_PIXELS constant [MFC]
 ms.assetid: de99c7a9-7aae-4dc4-b723-40c6380543ab
-caps.latest.revision: 14
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d9bd9af96a51697d1800eea1ef2883835375210d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: cc8daf0853a97e8903b47d29f70e190430931fd5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="variant-parameter-type-constants"></a>Variant パラメーター型の定数
 このトピックでは、Microsoft Foundation Class ライブラリの OLE コントロール クラスで使用するために設計された variant パラメーター型を示す新しい定数を示します。  
@@ -93,9 +94,8 @@ ms.lasthandoff: 10/09/2017
     > [!NOTE]
     >  追加のバリアント定数が定義されて、すべてのバリアント型の例外を除いて**VTS_FONT**と**VTS_PICTURE**、variant データ co へのポインターを提供します。nstant です。 これらの定数の名前、**付け**`constantname`規則。 たとえば、 **VTS_PCOLOR**へのポインター、 **VTS_COLOR**定数。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー :** afxdisp.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
-

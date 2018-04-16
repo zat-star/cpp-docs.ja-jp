@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.types.bytes
-dev_langs: C++
+f1_keywords:
+- c.types.bytes
+dev_langs:
+- C++
 helpviewer_keywords:
 - code page 932
 - byte classification routines
 - bytes, testing
 ms.assetid: 1cb52d71-fb0c-46ca-aad7-6472c1103370
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 129e549b4151d913cf0ad026faff967d30f87e44
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c8465a467ddfe799c64ee89ff30bd3c1f969aa07
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="byte-classification"></a>バイト分類
 これらの各ルーチンは、マルチバイト文字の指定されたバイトが条件を満たすかどうかをテストします。 特に指定がない場合、出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳しくは、「[setlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。  
@@ -34,7 +39,7 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="multibyte-character-byte-classification-routines"></a>マルチバイト文字のバイト分類ルーチン  
   
-|ルーチン|バイト テスト条件|  
+|ルーチンによって返される値|バイト テスト条件|  
 |-------------|-------------------------|  
 |[isleadbyte、_isleadbyte_l](../c-runtime-library/reference/isleadbyte-isleadbyte-l.md)|先行バイト: テスト結果は、現在のロケールの `LC_CTYPE` カテゴリの設定に依存します|  
 |[_ismbbalnum、_ismbbalnum_l](../c-runtime-library/reference/ismbbalnum-ismbbalnum-l.md)|`isalnum &#124;&#124; _ismbbkalnum`|  
@@ -56,5 +61,5 @@ ms.lasthandoff: 10/24/2017
   
  LIMITS.H で定義されている `MB_LEN_MAX` マクロは、マルチバイト文字が保持できる最大長のバイト数に拡大します。 STDLIB.H で定義されている `MB_CUR_MAX` は、現在のロケールのマルチバイト文字の最大長のバイト数に拡大します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

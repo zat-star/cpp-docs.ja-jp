@@ -6,21 +6,24 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VCCORLIB/Namespace not found::Platform
 - VCCORLIB/Namespace not found::Platform::Value
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 774df45d-f8a7-45a3-ae24-eecc3c681040
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: e3cbeed5893e6a757ca5ac3c17e596d3a1526e46
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2ed15a372fcb8cc72d2ad9aa1ce856470da0126b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformibox-interface"></a>Platform::IBox インターフェイス
 [Platform::IBox](../cppcx/platform-ibox-interface.md) のインターフェイスは `Windows::Foundation::IReference` のインターフェイスの C++ の名前です。  
@@ -39,7 +42,7 @@ interface class IBox
 ### <a name="remarks"></a>コメント  
  `IBox<T>` インターフェイスは、「 [値クラスと構造体 (C++/CX)](../cppcx/value-classes-and-structs-c-cx.md)」で説明されているように、主に内部的に使用され、null 許容値型を表します。 インターフェイスは、 `Object^`型のパラメーターを受け取る C++ のメソッドに渡される値の型をボックス化するためにも使用されます。 入力パラメーターは `IBox<SomeValueType>`として明示的に宣言できます。 例については、次を参照してください。[ボックス化](../cppcx/boxing-c-cx.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   
 ### <a name="members"></a>メンバー  
  `Platform::IBox` インターフェイスは [Platform::IValueType](../cppcx/platform-ivaluetype-interface.md) インターフェイスから継承されます。 `IBox` には、次に示すメンバーがあります。  
@@ -50,7 +53,7 @@ interface class IBox
 |------------|-----------------|  
 |[値](#value)|以前にこの `IBox` インスタンスに格納されていたことがあり、ボックス化が解除されている値を返します。|  
 
-## <a name="value"></a>Ibox::value プロパティ
+## <a name="value"></a> Ibox::value プロパティ
 このオブジェクトに元から格納されていた値を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -70,5 +73,5 @@ property T Value {T get();}
  例については、次を参照してください。[ボックス化](../cppcx/boxing-c-cx.md)です。  
   
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

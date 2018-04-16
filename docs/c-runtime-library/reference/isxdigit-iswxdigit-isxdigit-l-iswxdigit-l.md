@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _iswxdigit_l
 - iswxdigit
@@ -43,30 +43,17 @@ helpviewer_keywords:
 - hexadecimal characters
 - iswxdigit function
 ms.assetid: c8bc5146-0b58-4e3f-bee3-f2318dd0f829
-caps.latest.revision: 16
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 38d046526f391a85687d608ec64740fcac8e7658
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a5849caeddac4b52c80a29b5f4a6e85e2fe3e47b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="isxdigit-iswxdigit-isxdigitl-iswxdigitl"></a>isxdigit、iswxdigit、_isxdigit_l、_iswxdigit_l
 整数が 16 進数字の文字を表すかどうかを判断します。  
@@ -98,11 +85,11 @@ int _iswxdigit_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらのルーチンでは、`c` が 16 進数字の特殊表現の場合は 0 以外の値を返します。 `isxdigit`場合は 0 以外の値を返します`c`は 16 進数字 (A ~ F、a ~ f、または 0 - 9)。 `iswxdigit` は `c` が標準の 16 進数字に対応するワイド文字の場合、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらのルーチンでは、`c` が 16 進数字の特殊表現の場合は 0 以外の値を返します。 `isxdigit` 場合は 0 以外の値を返します`c`は 16 進数字 (A ~ F、a ~ f、または 0 - 9)。 `iswxdigit` は `c` が標準の 16 進数字に対応するワイド文字の場合、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  "C" ロケールの場合、`iswxdigit` 関数は、Unicode の全角 16 進数字はサポートしません。  
   
- これらの関数のうち `_l` サフィックスが付いているバージョンは、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数のうち `_l` サフィックスが付いているバージョンは、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用します。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  `isxdigit` と `_isxdigit_l` の動作は、`c` が EOF ではなく、かつ、0 ～ 0xFF の範囲でない場合は未定義です。 CRT デバッグ ライブラリを使用し、`c` がこれらの値のうちのいずれかの値でない場合は、アサーションが発生します。  
   
@@ -112,18 +99,18 @@ int _iswxdigit_l(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_istxdigit`|`isxdigit`|`isxdigit`|`iswxdigit`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`isxdigit`|\<ctype.h>|  
 |`iswxdigit`|\<ctype.h> または \<wchar.h>|  
 |`_isxdigit_l`|\<ctype.h>|  
 |`_iswxdigit_l`|\<ctype.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../../c-runtime-library/character-classification.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)

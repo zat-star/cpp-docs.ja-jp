@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - list/std::list
 - list/std::list::allocator_type
@@ -55,7 +56,8 @@ f1_keywords:
 - list/std::list::splice
 - list/std::list::swap
 - list/std::list::unique
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::list [C++]
 - std::list [C++], allocator_type
@@ -105,15 +107,17 @@ helpviewer_keywords:
 - std::list [C++], swap
 - std::list [C++], unique
 ms.assetid: d3707f4a-10fd-444f-b856-f9ca2077c1cd
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f22a8ac8c1d20bb6f972b8674c344db7c8a5ce60
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bd49b0ce1ca80c1a006975df085c332f0ef99ad2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="list-class"></a>list クラス
 C++ 標準ライブラリの list クラスは、要素を線形の配置に維持し、シーケンス内の任意の場所での効率的な挿入と削除を可能にする、シーケンス コンテナーのテンプレート クラスです。 シーケンスは要素の双方向リンク リストとして格納され、各要素には型 *Type* のメンバーが含まれます。  
@@ -157,7 +161,7 @@ class list
 |[const_reference](#const_reference)|読み取りと `const` 操作の実行のために、リストに格納された `const` 要素への参照を提供する型。|  
 |[const_reverse_iterator](#const_reverse_iterator)|リスト内の任意の `const` 要素を読み取ることができる双方向反復子を提供する型。|  
 |[difference_type](#difference_type)|同じリスト内の要素を参照する 2 反復子の違いを提供する型。|  
-|[iterator](#iterator)|リスト内の任意の要素の読み取りまたは変更ができる双方向反復子を提供する型。|  
+|[Iterator](#iterator)|リスト内の任意の要素の読み取りまたは変更ができる双方向反復子を提供する型。|  
 |[pointer](#pointer)|リスト内の要素へのポインターを提供する型。|  
 |[reference](#reference)|読み取りと `const` 操作の実行のために、リストに格納された `const` 要素への参照を提供する型。|  
 |[reverse_iterator](#reverse_iterator)|逆順のリスト内の 1 つの要素の読み取りまたは変更ができる双方向反復子を提供する型。|  
@@ -209,7 +213,7 @@ class list
 |-|-|  
 |[list::operator=](#op_eq)|別のリストのコピーでリストの要素を置き換えます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー**: \<list>  
   
 ##  <a name="allocator_type"></a>  list::allocator_type  
@@ -444,7 +448,7 @@ const_iterator cend() const;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -2528,7 +2532,7 @@ int main( )
 44  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<list>](../standard-library/list.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)

@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: ATL, about ATL
+dev_langs:
+- C++
+helpviewer_keywords:
+- ATL, about ATL
 ms.assetid: a3960991-4d76-4da5-9568-3fa7fde53ff4
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 01bd114c92b7056ead29b57c70801d2cbbacb554
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c7cf2568005049cfabd9178ea4c8732a5a985954
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="active-template-library-atl-concepts"></a>ATL (Active Template Library) の概念
 アクティブ テンプレート ライブラリ (ATL) は、小規模で高速のコンポーネント オブジェクト モデル (COM) オブジェクトを作成するのに便利なテンプレート ベースの C++ クラスのセットです。 ストックの実装、デュアル インターフェイス、標準の COM 列挙子インターフェイス、接続ポイント、ティアオフ インターフェイス、および ActiveX コントロールを含むキーの COM 機能用の特別なサポートしています。  

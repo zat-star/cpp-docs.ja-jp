@@ -1,24 +1,30 @@
 ---
-title: "CLR 配列の宣言 |Microsoft ドキュメント"
-ms.custom: 
+title: CLR 配列の宣言 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: array keyword [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- array keyword [C++]
 ms.assetid: 36a8883c-2663-43f0-a90c-28f27035e036
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a00464ce6d8ffe93ffed63818dd52b913f7224ee
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 3f263227d437ddafb65ac3da0829414e4af05855
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="declaration-of-a-clr-array"></a>CLR 配列の宣言
 宣言の構文、インスタンス化、およびマネージ配列の初期化がマネージ拡張から変更 C++ の Visual C にします。  
@@ -44,7 +50,7 @@ Int32 f() [];
 int GetArray() __gc[];  
 ```  
   
- Visual c では、宣言がはるかに簡単です。 次に例を示します。  
+ Visual c では、宣言がはるかに簡単です。 たとえば、オブジェクトに適用された  
   
 ```  
 array<Int32>^ f();  
@@ -96,6 +102,6 @@ array<Object^>^ myArray =
    gcnew array<Object^>(4){ 1, 1, 2, 3 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ型 (C + + CL)](../dotnet/managed-types-cpp-cl.md)   
  [配列](../windows/arrays-cpp-component-extensions.md)

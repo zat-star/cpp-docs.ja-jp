@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: R6002
-dev_langs: C++
-helpviewer_keywords: R6002
+f1_keywords:
+- R6002
+dev_langs:
+- C++
+helpviewer_keywords:
+- R6002
 ms.assetid: 8fbbe65a-9c43-459e-8342-e1f6d1cef7d0
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8b8bd95ed0b088fcfed61b7c0ff1db6343c69500
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6652435425cdb04084d183987ea25be7c11114ff
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-runtime-error-r6002"></a>C ランタイム エラー R6002
 浮動小数点のサポートを読み込めませんでした。  
@@ -32,7 +38,7 @@ ms.lasthandoff: 10/24/2017
 >  このエラーを解決するには、次の手順を試してみます。  
 >   
 >  -   使用して、**アプリおよび機能**または**プログラムと機能**] ページで、**コントロール パネルの [**を修復またはプログラムを再インストールします。  
-> -   確認**Windows Update**で、**コントロール パネルの **ソフトウェアの更新。  
+> -   確認**Windows Update**で、**コントロール パネルの** ソフトウェアの更新。  
 > -   アプリの更新バージョンを確認します。 問題が解決しない場合は、アプリ ベンダーにお問い合わせください。  
   
  **プログラマのための情報**  

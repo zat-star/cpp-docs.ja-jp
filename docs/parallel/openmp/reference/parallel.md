@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: parallel
-dev_langs: C++
-helpviewer_keywords: parallel OpenMP directive
+ms.topic: reference
+f1_keywords:
+- parallel
+dev_langs:
+- C++
+helpviewer_keywords:
+- parallel OpenMP directive
 ms.assetid: b8e90073-e85b-4d39-8ed8-0364441794fb
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 289a4928c9c46f6d758ddc2f30ed864488ab725e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9293a70ce0615adf1e40bcb19b1706d9e39d4cca
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="parallel"></a>parallel
 同時に複数のスレッドで実行されるコードである並列領域を定義します。  
@@ -56,7 +62,7 @@ ms.lasthandoff: 10/24/2017
   
 -   [reduction](../../../parallel/openmp/reference/reduction.md)  
   
--   [共有](../../../parallel/openmp/reference/shared-openmp.md)  
+-   [shared](../../../parallel/openmp/reference/shared-openmp.md)  
   
  **並列**でも使用できます、[セクション](../../../parallel/openmp/reference/sections-openmp.md)と[の](../../../parallel/openmp/reference/for-openmp.md)ディレクティブです。  
   
@@ -90,5 +96,5 @@ Hello from thread 3
 ## <a name="comment"></a>コメント  
  出力の順序は、別のコンピューターで異なることに注意してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

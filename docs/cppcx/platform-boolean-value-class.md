@@ -6,20 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::Boolean
-dev_langs: C++
-helpviewer_keywords: Platform::Boolean Struct
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::Boolean
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Boolean Struct
 ms.assetid: 8518a1db-7139-4187-9c7a-1ae3943373f2
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 6bc6a0a4dc709d6d9baaa4a7279f88ded764b861
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d11ffd394dc88cab8273b6f0c0cb2ebbd2fc0c53
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformboolean-value-class"></a>Platform::Boolean 値クラス
 ブール値を表します。 `bool`と同じ。  
@@ -33,7 +38,7 @@ public value struct Boolean
 ### <a name="members"></a>メンバー  
  ブール値には、 [Platform::Object Class](../cppcx/platform-object-class.md)から派生した Equals()、GetHashCode()、ToString() メソッドと、 [Platform::Type Class](../cppcx/platform-type-class.md)から派生した GetTypeCode() メソッドがあります。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -42,5 +47,5 @@ public value struct Boolean
   
  **メタデータ:** platform.winmd  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform 名前空間](../cppcx/platform-namespace-c-cx.md)

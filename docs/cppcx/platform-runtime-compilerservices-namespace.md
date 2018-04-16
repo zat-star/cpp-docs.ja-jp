@@ -6,20 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::Runtime::CompilerServices
-dev_langs: C++
-helpviewer_keywords: Platform::Runtime::CompilerServices Namespace
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::Runtime::CompilerServices
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::Runtime::CompilerServices Namespace
 ms.assetid: 8613b6b3-b193-45d1-b956-881a4a700788
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: c34d09cb9eb55af5bc0c74323585f7a7837138c2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3518f6c0471858f9b3a8399f704b840fac9faddd
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformruntimecompilerservices-namespace"></a>Platform::Runtime::CompilerServices 名前空間
 この名前空間は内部使用のみを意図しており、開発で使用するためのものではありません。  
@@ -36,7 +41,7 @@ namespace Platform {
 ### <a name="members"></a>メンバー  
  この名前空間は内部使用のためのものですが、ブラウザーでこの名前空間の次のメンバーを表示できます。  
   
-|名前|コメント|  
+|name|コメント|  
 |----------|------------|  
 |CallConvCdecl||  
 |CallConvFastcall||  
@@ -59,10 +64,10 @@ namespace Platform {
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `Platform`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **メタデータ:** platform.winmd  
   
  **名前空間:** Platform::CompilerServices  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム Namespace](platform-namespace-c-cx.md)

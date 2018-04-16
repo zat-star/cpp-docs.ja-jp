@@ -1,74 +1,78 @@
 ---
-title: "Creating Transparent or Inverse Regions in Device Images (Image Editor for Icons) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-  - "C++"
-helpviewer_keywords: 
-  - "cursors [C++], screen regions"
-  - "inverse colors, device images"
-  - "transparent regions, device images"
-  - "transparency, device images"
-  - "Image editor [C++], device images"
-  - "inverse regions, device images"
-  - "cursors [C++], transparent regions"
-  - "screen colors"
-  - "regions, transparent"
-  - "icons [C++], transparent regions"
-  - "display devices, transparent and screen regions"
-  - "transparent regions in devices"
-  - "regions, inverse"
-  - "colors [C++], Image editor"
-  - "device projects, transparent images"
-  - "icons [C++], screen regions"
+title: "デバイス イメージ (アイコン用イメージ エディター) の透過的または反転領域の作成 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- cursors [C++], screen regions
+- inverse colors, device images
+- transparent regions, device images
+- transparency, device images
+- Image editor [C++], device images
+- inverse regions, device images
+- cursors [C++], transparent regions
+- screen colors
+- regions, transparent
+- icons [C++], transparent regions
+- display devices, transparent and screen regions
+- transparent regions in devices
+- regions, inverse
+- colors [C++], Image editor
+- device projects, transparent images
+- icons [C++], screen regions
 ms.assetid: a994954b-b039-4391-a535-58d1fa10fc3b
-caps.latest.revision: 11
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 1f416b31200352fc849fb2d1c7a43f9759da47d2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Creating Transparent or Inverse Regions in Device Images (Image Editor for Icons)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[イメージ エディター](../mfc/image-editor-for-icons.md)では、初期のアイコン イメージやカーソル イメージが透明な属性を持っています。  アイコンとカーソルのイメージは四角形ですが、イメージのほとんどは四角で表示されません。これは、イメージの透明な部分では画面上で基になるイメージがアイコンやカーソルを通して透けて見えるためです。  アイコンをドラッグすると、イメージの一部が反転色で表示される場合があります。  この効果を得るには、[&#91;色&#93; ウィンドウ](../Topic/Colors%20Window%20\(Image%20Editor%20for%20Icons\).md)で画面の色と反転色を設定します。  
+# <a name="creating-transparent-or-inverse-regions-in-device-images-image-editor-for-icons"></a>デバイス イメージの透明な領域または反転領域の作成 (アイコン用イメージ エディター)
+[イメージ エディター](../windows/image-editor-for-icons.md)、初期のアイコンまたはカーソルのイメージが透明な属性です。 アイコンとカーソルのイメージは、四角形は、多くはために表示されないため、イメージの部分は透過的です。画面の基になるイメージは、アイコンやカーソルを示しています。 アイコンをドラッグするとき、反転色でイメージの部分を引き起こすことがあります。 画面の色との逆の色を設定してこの特殊効果を作成する、 [[色] ウィンドウ](../windows/colors-window-image-editor-for-icons.md)します。  
   
- アイコンとカーソルに適用した画面の色と反転色によって、派生したイメージの形と色が決まり、反転領域が決まります。  イメージのこれらの属性を持つ部分が指定した色で表示されます。  画面の色と反転色の属性を表す色は編集中に変更できます。  変更内容は、アプリケーションにおけるアイコンやカーソルの外観には影響しません。  
+ 画面と反転色のアイコンに適用してカーソル図形の色の派生のイメージか逆方向の領域を指定します。 色は、これらの属性を処理するイメージの部分を表します。 編集中の画面の色と反転色の属性を表す色を変更することができます。 これらの変更は、アイコンや、アプリケーションでのカーソルの外観には影響しません。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### 透明な領域または反転領域を作成するには  
+### <a name="to-create-transparent-or-inverse-regions"></a>透明または反転領域を作成するには  
   
-1.  \[色\] ウィンドウで、\[画面の色\] セレクターまたは \[反転色\] セレクターをクリックします。  
+1.  **色**ウィンドウで、をクリックして、**画面の色**セレクターまたは**反転色**セレクター。  
   
-2.  描画ツールを使用して、イメージに画面の色または反転色を適用します。  描画ツールの詳細については、「[Using a Drawing Tool](../mfc/using-a-drawing-tool-image-editor-for-icons.md)」を参照してください。  
+2.  画面描画ツールを使用して、イメージに逆の色を適用します。 描画ツールの詳細については、次を参照してください。[描画ツールを使用して](using-a-drawing-tool-image-editor-for-icons.md)です。  
   
-### 画面の色または反転色を変更するには  
+### <a name="to-change-the-screen-or-inverse-color"></a>画面または反転色を変更するには  
   
-1.  \[画面の色\] セレクターまたは \[反転色\] セレクターをクリックします。  
+1.  いずれかを選択、**画面の色**セレクターまたは**反転色**セレクター。  
   
-2.  \[色\] ウィンドウのカラー パレットで色を選択します。  
+2.  色を選択、**色**のパレット、**色**ウィンドウです。  
   
-     他方のセレクターに合わせて補色が自動的に指定されます。  
+     その他のセレクターの補色が自動的に指定します。  
   
     > [!TIP]
-    >  \[画面の色\] セレクターまたは \[反転色\] セレクターをダブルクリックすると、[&#91;色の調整&#93; ダイアログ ボックス](../windows/custom-color-selector-dialog-box-image-editor-for-icons.md)が表示されます。  
+    >  画面の色または反転色のセレクターをダブルクリックする場合、[カスタム カラー セレクター ダイアログ ボックス](../windows/custom-color-selector-dialog-box-image-editor-for-icons.md)が表示されます。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  なし  
   
-## 参照  
- [Accelerator Keys](../mfc/accelerator-keys-image-editor-for-icons.md)   
- [Icons and Cursors: Image Resources for Display Devices](../mfc/icons-and-cursors-image-resources-for-display-devices-image-editor-for-icons.md)
+## <a name="see-also"></a>参照  
+ [アクセラレータ キー](../windows/accelerator-keys-image-editor-for-icons.md)   
+ [アイコンとカーソル: ディスプレイ デバイスのイメージ リソース](../windows/icons-and-cursors-image-resources-for-display-devices-image-editor-for-icons.md)
+

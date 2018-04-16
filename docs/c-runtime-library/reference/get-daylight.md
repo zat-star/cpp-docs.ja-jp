@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - __daylight
 - _get_daylight
@@ -26,21 +27,24 @@ apitype: DLLExport
 f1_keywords:
 - get_daylight
 - _get_daylight
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - get_daylight function
 - daylight saving time offset
 - _get_daylight function
 ms.assetid: f85a6ba3-e187-4ca7-aed7-ffc694c8ac4c
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e6f9143b3a9f458a403fd044194cd79ac5f2388e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7af224cbf405ccb37927848bc0ee500f83ef0ada
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getdaylight"></a>_get_daylight
 夏時間のオフセット (時間単位) を取得します。  
@@ -68,15 +72,15 @@ ms.lasthandoff: 10/24/2017
   
  マクロ `_daylight` または非推奨の関数 `__daylight` の代わりに、この関数を使用することをお勧めします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_get_daylight`|\<time.h>|  
   
- 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)   
  [_get_dstbias](../../c-runtime-library/reference/get-dstbias.md)   

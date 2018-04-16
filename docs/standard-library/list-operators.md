@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - list/std::operator!=
 - list/std::operator&gt;
@@ -13,9 +13,10 @@ f1_keywords:
 - list/std::operator&lt;
 - list/std::operator&lt;=
 - list/std::operator==
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 8103d8f2-c30f-49ad-ac50-b3ba6a907ebe
-caps.latest.revision: "7"
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::operator!= (list)
@@ -24,11 +25,11 @@ helpviewer_keywords:
 - std::operator&lt; (list)
 - std::operator&lt;= (list)
 - std::operator== (list)
-ms.openlocfilehash: f3834fcb728d8faf0a2148a5a0c9449fef7e41c8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.openlocfilehash: a45d6e168378ea9a46d7dbaf926f431df0625f10
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltlistgt-operators"></a>&lt;list&gt; 演算子
 ||||  
@@ -134,7 +135,7 @@ List c1 is less than list c2.
 *\   
 ```  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  演算子の左辺の list オブジェクトが右辺の list オブジェクト以下かどうかを調べます。  
   
 ```
@@ -283,7 +284,7 @@ List c1 is greater than list c2.
 *\  
 ```  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  演算子の左辺の list オブジェクトが右辺の list オブジェクト以上かどうかを調べます。  
   
 ```
@@ -335,7 +336,7 @@ List c1 is greater than or equal to list c2.
 *\  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<list>](../standard-library/list.md)
 
 

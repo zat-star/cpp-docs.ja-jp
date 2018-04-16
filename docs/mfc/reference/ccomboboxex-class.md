@@ -1,11 +1,12 @@
 ---
-title: "CComboBoxEx クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComboBoxEx クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CComboBoxEx
@@ -25,7 +26,8 @@ f1_keywords:
 - AFXCMN/CComboBoxEx::SetImageList
 - AFXCMN/CComboBoxEx::SetItem
 - AFXCMN/CComboBoxEx::SetWindowTheme
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CComboBoxEx [MFC], CComboBoxEx
 - CComboBoxEx [MFC], Create
@@ -43,15 +45,17 @@ helpviewer_keywords:
 - CComboBoxEx [MFC], SetItem
 - CComboBoxEx [MFC], SetWindowTheme
 ms.assetid: 33ca960a-2409-478c-84a4-a2ee8ecfe8f7
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: def9fca45f36a6e161bbd4b24431c9afd20d77c5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3aecbb168316b3d6416d3a41a6f6a56b04aeb990
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomboboxex-class"></a>CComboBoxEx クラス
 イメージ リストをサポートすることにより、コンボ ボックス コントロールを拡張します。  
@@ -124,7 +128,7 @@ class CComboBoxEx : public CComboBox
   
  `CComboBoxEx`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxcmn.h  
   
 ##  <a name="ccomboboxex"></a>CComboBoxEx::CComboBoxEx  
@@ -419,7 +423,7 @@ HRESULT SetWindowTheme(LPCWSTR pszSubAppName);
 ### <a name="remarks"></a>コメント  
  このメンバー関数の機能をエミュレートする、 [CBEM_SETWINDOWTHEME](http://msdn.microsoft.com/library/windows/desktop/bb775790)メッセージ、Windows SDK で説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル MFCIE](../../visual-cpp-samples.md)   
  [CComboBox クラス](../../mfc/reference/ccombobox-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

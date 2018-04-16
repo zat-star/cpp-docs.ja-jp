@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: c856df07-705c-4ad3-9105-a268dd33e939
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 26dff1f0e8b3b88b4891617a2eef2bb2d82240eb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1ee328be7f9f0c4876738f8179c26e700c57702c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="2725-default"></a>2.7.2.5 default
 **既定**句は、ユーザーに影響を与える変数のデータ共有属性を使用できます。 構文、**既定**句を次に示します。  
@@ -38,7 +42,7 @@ default(shared | none)
   
 -   変数が、 **const**-型を修飾します。  
   
--   変数が、ループ コントロール変数の**の**直後に続くループ、**の**または**の並列**ディレクティブ、および変数の参照、ループ内が表示されます。.  
+-   変数が、ループ コントロール変数の**の**直後に続くループ、**の**または**の並列**ディレクティブ、および変数の参照、ループ内が表示されます.  
   
  変数を指定する、 **firstprivate**、 **lastprivate**、または**削減**かっこで囲んだディレクティブの句では、変数への暗黙的な参照をにより、外側コンテキスト。 このような暗黙的な参照は、上に示した要件に応じたもです。  
   

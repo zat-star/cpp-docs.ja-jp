@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - m_szTableSchema
 - m_szCatalog
@@ -25,7 +26,8 @@ f1_keywords:
 - m_szTableName
 - m_szName
 - COLUMN_DOMAIN_USAGE
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - COLUMN_PROPID
 - m_szSchema
@@ -49,15 +51,18 @@ helpviewer_keywords:
 - m_guidColumn
 - DOMAIN_CATALOG
 ms.assetid: 5ff331f1-b99c-4002-9e04-367708c5759f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e158e5ad1380ec36383fac7bca8329af192857aa
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: af56c72f7dcef0d3a611fdffe9f65cb66699ebd4
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ccolumndomainusage-ccolumndomainusageinfo"></a>CColumnDomainUsage、CColumnDomainUsageInfo
 Typedef クラスを呼び出す**CColumnDomainUsage**そのパラメーター クラスを実装する**CColumnDomainUsageInfo**です。  
@@ -81,8 +86,8 @@ Typedef クラスを呼び出す**CColumnDomainUsage**そのパラメーター �
 |m_guidColumn|COLUMN_GUID|  
 |m_nColumnPropID|COLUMN_PROPID|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

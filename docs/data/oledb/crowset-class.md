@@ -4,34 +4,40 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ATL.CRowset<TAccessor>
 - CRowset
 - ATL::CRowset
 - ATL::CRowset<TAccessor>
 - ATL.CRowset
-dev_langs: C++
-helpviewer_keywords: CRowset class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CRowset class
 ms.assetid: b0228a90-b8dd-47cc-b397-8d4c15c1e7f4
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f4e36523d2fffd4f90897daf2fd22c4dba66c8fd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0774c82715ab2fd85098147ebe1697daf7d2d2fa
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="crowset-class"></a>CRowset クラス
 OLE DB 行セット オブジェクトおよび関連するいくつかをカプセル化インターフェイスし、行セットのデータの操作メソッドを提供します。  
   
-## <a name="syntax"></a>構文  
-  
-```  
+## <a name="syntax"></a>構文
+
+```cpp
 template <class TAccessor = CAccessorBase>  
 class CRowset  
 ```  
@@ -57,7 +63,7 @@ class CRowset
 |[GetDataHere](../../data/oledb/crowset-getdatahere.md)|指定したバッファーからデータを取得します。|  
 |[GetOriginalData](../../data/oledb/crowset-getoriginaldata.md)|最近からフェッチまたは保留中の変更を無視して、データ ソースに送信されるデータを取得します。|  
 |[GetRowStatus](../../data/oledb/crowset-getrowstatus.md)|すべての行の状態を返します。|  
-|[挿入します。](../../data/oledb/crowset-insert.md)|作成して使用して新しい行を挿入[IRowsetChange:InsertRow](https://msdn.microsoft.com/en-us/library/ms716921.aspx)です。|  
+|[[挿入]](../../data/oledb/crowset-insert.md)|作成して使用して新しい行を挿入[IRowsetChange:InsertRow](https://msdn.microsoft.com/en-us/library/ms716921.aspx)です。|  
 |[IsSameRow](../../data/oledb/crowset-issamerow.md)|指定された行を現在の行とを比較します。|  
 |[MoveFirst](../../data/oledb/crowset-movefirst.md)|次のフェッチ位置の初期位置に移動します。|  
 |[MoveLast](../../data/oledb/crowset-movelast.md)|最後のレコードに移動します。|  
@@ -66,7 +72,7 @@ class CRowset
 |[MoveToBookmark](../../data/oledb/crowset-movetobookmark.md)|そのブックマークからのブックマークでマークされた行または指定されたオフセット位置の行をフェッチします。|  
 |[MoveToRatio](../../data/oledb/crowset-movetoratio.md)|行セット内の小数部の位置から始まる行がフェッチされます。|  
 |[ReleaseRows](../../data/oledb/crowset-releaserows.md)|呼び出し[irowset::releaserows](https://msdn.microsoft.com/en-us/library/ms719771.aspx)を現在の行ハンドルを解放します。|  
-|[Setdata メソッド](../../data/oledb/crowset-setdata.md)|使用して行の 1 つまたは複数の列のデータ値を設定[IRowsetChange:SetData](https://msdn.microsoft.com/en-us/library/ms721232.aspx)です。|  
+|[SetData](../../data/oledb/crowset-setdata.md)|使用して行の 1 つまたは複数の列のデータ値を設定[IRowsetChange:SetData](https://msdn.microsoft.com/en-us/library/ms721232.aspx)です。|  
 |[元に戻す](../../data/oledb/crowset-undo.md)|最後のフェッチ行に加えられた変更を元に戻すまたは[更新](../../data/oledb/crowset-update.md)です。|  
 |[更新](../../data/oledb/crowset-update.md)|保留中の最後のフェッチまたは更新してから、現在の行に加えられた変更を送信します。|  
 |[UpdateAll](../../data/oledb/crowset-updateall.md)|保留中の最後のフェッチまたは更新プログラム以降のすべての行に行われた変更を送信します。|  
@@ -76,10 +82,10 @@ class CRowset
   
  このクラスがインスタンス化されるが、テンプレート パラメーターとしてではなく渡されたものではありません`CTable`または`CCommand`(`CRowset`既定値です)。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DBViewer サンプル](../../visual-cpp-samples.md)   
  [MultiRead サンプル](../../visual-cpp-samples.md)   
  [MultiRead 属性サンプル](../../visual-cpp-samples.md)   

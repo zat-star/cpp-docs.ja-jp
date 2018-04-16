@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: <future>
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- <future>
+dev_langs:
+- C++
 ms.assetid: 2f5830fc-455d-44f9-9e3d-94ea051596a2
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e741324e6871846aba8912d53ca9aad5ce1cb739
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f52f0e08d5612f5230f859c034825591af5ebd79
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltfuturegt"></a>&lt;future&gt;
 標準ヘッダー \<future> をインクルードして、テンプレート クラスとサポート テンプレートを定義します。これらのクラスやテンプレートによって、関数の実行 (場合によっては個別のスレッドでの実行) やその結果の取得が簡略化されます。 結果は、関数によって返される値、または関数によって生成されるが関数ではキャッチされない例外になります。  
@@ -81,13 +86,13 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="enumerations"></a>列挙  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[future_errc](../standard-library/future-enums.md#future_errc)|`future_error` クラスによって報告されるエラーのシンボル名を提供します。|  
 |[future_status](../standard-library/future-enums.md#future_status)|期限が設定された wait 関数から返される理由のシンボル名を提供します。|  
-|[起動します。](../standard-library/future-enums.md#launch)|テンプレート関数 `async` で使用できるモードを示すビットマスク型を表します。|  
+|[launch](../standard-library/future-enums.md#launch)|テンプレート関数 `async` で使用できるモードを示すビットマスク型を表します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
 
 

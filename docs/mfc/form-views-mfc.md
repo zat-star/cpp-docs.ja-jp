@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - user interfaces [MFC], forms
 - forms [MFC]
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - forms-based applications [MFC]
 - forms [MFC], adding to applications
 ms.assetid: efbe73c1-4ca4-4613-aac2-30d916e92c0e
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 16bcdf6c3ffd0c88233a01a6d3a9b71250224d9a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4e784858c17c01c8a538edebdb15a89863d16438
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="form-views-mfc"></a>フォーム ビュー (MFC)
 フォームを追加するには、MFC ライブラリを含むをサポートする任意の Visual C アプリケーションを[フォーム ベースのアプリケーション](../mfc/reference/creating-a-forms-based-mfc-application.md)(1 つのビュー クラスから派生して`CFormView`)。 フォームをサポートするために、アプリケーションを最初に作成しなかった場合、Visual C は新しいフォームを挿入するときにこのサポートを追加します。 SDI または MDI アプリケーションは、既定値を実装する[ドキュメント/ビュー アーキテクチャ](../mfc/document-view-architecture.md)を選択すると、`New`コマンド (既定では、上、**ファイル**メニュー)、Visual C は、ユーザーに求めます使用可能なフォームを選択します。  
@@ -71,5 +75,5 @@ ms.lasthandoff: 10/24/2017
   
 -   [プロジェクトへのフォームの挿入](../mfc/inserting-a-form-into-a-project.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)

@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: VC.Project.VCCLCompilerTool.EnableParallelCodeGeneration
-dev_langs: C++
+f1_keywords:
+- VC.Project.VCCLCompilerTool.EnableParallelCodeGeneration
+dev_langs:
+- C++
 ms.assetid: 33ecf49d-c0d5-4f34-bce3-84ff03f38918
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 82f33d178799f56465f0d1a9794dacad7c01c77a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 073c906e7ecdfcf933e4b91cbcf8d6a77324df76
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="qpar-auto-parallelizer"></a>/Qpar (自動並行化)
 により、[自動並行化](../../parallel/auto-parallelization-and-auto-vectorization.md)を自動的に、コード内のループを並列化するコンパイラの機能です。  
@@ -48,10 +53,10 @@ ms.lasthandoff: 10/24/2017
   
 -   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> のコード例を使用してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [/Q オプション (低水準の操作)](../../build/reference/q-options-low-level-operations.md)   
  [/Qpar-report (自動並行化レポート作成レベル)](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [#pragma loop()](../../preprocessor/loop.md)   
- [ネイティブ コードでの並列プログラミング](http://go.microsoft.com/fwlink/?LinkId=263662)
+ [ネイティブ コードでの並列プログラミング](http://go.microsoft.com/fwlink/p/?linkid=263662)

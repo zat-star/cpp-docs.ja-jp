@@ -1,40 +1,43 @@
 ---
-title: "operator .TYPE | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - ".TYPE"
-  - "operator .TYPE"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator .TYPE"
-  - ".TYPE operator"
+title: "演算子。型 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- .TYPE
+- operator .TYPE
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator .TYPE
+- .TYPE operator
 ms.assetid: bf4a4be6-d019-40df-a966-8f8f34f775ea
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a67b394400520587589ef10eae166bf7be8444c4
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# operator .TYPE
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[OPATTR](../Topic/operator%20OPATTR.md) を参照してください。  
+# <a name="operator-type"></a>.TYPE 演算子
+参照してください[OPATTR](../../assembler/masm/operator-opattr.md)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 .TYPE expression  
 ```  
   
-## 参照  
- [Operators Reference](../Topic/Operators%20Reference.md)
+## <a name="see-also"></a>参照  
+ [演算子リファレンス](../../assembler/masm/operators-reference.md)

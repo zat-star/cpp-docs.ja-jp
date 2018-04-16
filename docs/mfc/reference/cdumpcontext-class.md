@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -16,7 +17,8 @@ f1_keywords:
 - AFX/CDumpContext::GetDepth
 - AFX/CDumpContext::HexDump
 - AFX/CDumpContext::SetDepth
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDumpContext [MFC], CDumpContext
 - CDumpContext [MFC], DumpAsHex
@@ -25,15 +27,17 @@ helpviewer_keywords:
 - CDumpContext [MFC], HexDump
 - CDumpContext [MFC], SetDepth
 ms.assetid: 98c52b2d-14b5-48ed-b423-479a4d1c60fa
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fe45f47520efd0a96dff9b31f18eb267d0058c61
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5d54a461bece96faeb11f78a1788049abcabbae0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdumpcontext-class"></a>CDumpContext クラス
 人が読み取ることができる形式でテキストを出力するために、ストリームに依存した診断出力をサポートします。  
@@ -94,7 +98,7 @@ class CDumpContext
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CDumpContext`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afx.h  
   
 ##  <a name="cdumpcontext"></a>CDumpContext::CDumpContext  
@@ -250,7 +254,7 @@ void SetDepth(int nNewDepth);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_Utilities#16](../../mfc/codesnippet/cpp/cdumpcontext-class_6.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [CFile クラス](../../mfc/reference/cfile-class.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)

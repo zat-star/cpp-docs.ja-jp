@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2371
 ms.assetid: d383993d-05ef-4e35-8129-3b58a6f7b7b7
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a2bb4d292384224413c2f8ca7c0bd1eab4aa46bb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 01753e3b14df40592acba8979a85a727ddc34dd2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2371"></a>コンパイラ エラー C2371
 'identifier': 再定義されています。異なる基本型です  

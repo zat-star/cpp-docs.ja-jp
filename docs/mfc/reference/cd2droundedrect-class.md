@@ -17,16 +17,17 @@ dev_langs:
 helpviewer_keywords:
 - CD2DRoundedRect [MFC], CD2DRoundedRect
 ms.assetid: 06207fb5-e92b-41c0-bceb-b45d8f466531
-caps.latest.revision: 18
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: acb20cab02b29d6ca97427ba4e39e6af9105c148
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 5496ad1262246e44871cc540b4021c7fb18216ca
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2droundedrect-class"></a>CD2DRoundedRect クラス
 `D2D1_ROUNDED_RECT`のラッパー。  
@@ -50,7 +51,7 @@ class CD2DRoundedRect : public D2D1_ROUNDED_RECT;
   
  [CD2DRoundedRect](../../mfc/reference/cd2droundedrect-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="cd2droundedrect"></a>CD2DRoundedRect::CD2DRoundedRect  
@@ -72,6 +73,5 @@ CD2DRoundedRect(const D2D1_ROUNDED_RECT* rectIn);
  `sizeRadius`  
  半径のサイズ  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

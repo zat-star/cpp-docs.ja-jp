@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _endthread
 - _endthreadex
@@ -28,7 +29,8 @@ f1_keywords:
 - endthreadex
 - _endthreadex
 - endthread
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _endthread function
 - endthread function
@@ -37,15 +39,17 @@ helpviewer_keywords:
 - _endthreadex function
 - threading [C++], terminating threads
 ms.assetid: 18a91f2f-659e-40b4-b266-ec12dcf2abf5
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8220d74a9ca94aaf4c3748a3b760a4d6cd3564ea
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 794dc5c4bbaf9653c5b6bbb08ea3e0a60ca438c4
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="endthread-endthreadex"></a>_endthread、_endthreadex
 スレッドを終了します。 `_endthread` は、 `_beginthread` によって作成されたスレッドを終了し、  `_endthreadex` は、 `_beginthreadex`によって作成されたスレッドを終了します。  
@@ -71,19 +75,19 @@ void _endthreadex(
   
  `_endthread` は、スレッド ハンドルを自動的に終了します (この動作は、Win32 `ExitThread` API とは異なります)。このため、`_beginthread` および `_endthread` を使用する場合は、Win32 [CloseHandle API](http://msdn.microsoft.com/library/windows/desktop/ms724211.aspx) を呼び出してスレッド ハンドルを明示的に終了しないでください。  
   
- Win32 `ExitThread` API と同様、 `_endthreadex` はスレッド ハンドルを終了しません。 このため、 `_beginthreadex` および `_endthreadex`を使用するときには、Win32 `CloseHandle` API を呼び出してスレッド ハンドルを終了する必要があります。  
+ Win32 `ExitThread` API と同様、 `_endthreadex` はスレッド ハンドルを終了しません。 このため、`_beginthreadex` および `_endthreadex` を使用するときには、Win32 `CloseHandle` API を呼び出してスレッド ハンドルを終了する必要があります。  
   
 > [!NOTE]
 >  `_endthread` と `_endthreadex` により、スレッドで待機中の C++ デストラクターは呼び出されなくなります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_endthread`|\<process.h>|  
 |`_endthreadex`|\<process.h>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md) のマルチスレッド バージョンのみ。  
@@ -91,6 +95,6 @@ void _endthreadex(
 ## <a name="example"></a>例  
  [_beginthread](../../c-runtime-library/reference/beginthread-beginthreadex.md)の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [_beginthread、_beginthreadex](../../c-runtime-library/reference/beginthread-beginthreadex.md)

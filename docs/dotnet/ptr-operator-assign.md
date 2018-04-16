@@ -1,36 +1,40 @@
 ---
-title: "ptr::operator= | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ptr.operator="
-  - "msclr.com.ptr.operator="
-  - "msclr::com::ptr::operator="
-  - "ptr::operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "演算子 ="
+title: "ptr::operator = |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ptr.operator=
+- msclr.com.ptr.operator=
+- msclr::com::ptr::operator=
+- ptr::operator=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator=
 ms.assetid: 58619910-46c0-4db8-b183-c811b23b2df1
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e58d177a8d12970ec5c4b9d1b8b86405f153bdc3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ptr::operator=
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`com::ptr`に COM オブジェクトを接続します。  
+# <a name="ptroperator"></a>ptr::operator=
+COM オブジェクトをアタッチ、`com::ptr`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 ptr<_interface_type> % operator=(  
@@ -38,23 +42,23 @@ ptr<_interface_type> % operator=(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_right`  
- COM アプリケーションにアタッチするには、ポインターを提供します。  
+ アタッチする COM インターフェイス ポインター。  
   
-## 戻り値  
- `com::ptr`の追跡参照。  
+## <a name="return-value"></a>戻り値  
+ 追跡参照に、`com::ptr`です。  
   
-## 例外  
- `com::ptr` が COM オブジェクトへの参照を既に所有する場合、`operator=` は <xref:System.InvalidOperationException> をスローします。  
+## <a name="exceptions"></a>例外  
+ 場合、 `com::ptr` COM オブジェクトへの参照が既に所有して`operator=`スロー<xref:System.InvalidOperationException>です。  
   
-## 解説  
- COM を割り当てるに `com::ptr` を参照する COM オブジェクトをしますが、呼び出し元の参照を解放しません。  
+## <a name="remarks"></a>コメント  
+ COM オブジェクトを割り当てる、 `com::ptr` COM オブジェクトを参照していますが、呼び出し元の参照を解放しません。  
   
- この演算子は `Attach`と同じ効果があります。  
+ この演算子と同じ効果を持つ`Attach`します。  
   
-## 使用例  
- この例では、プライベート メンバー `IXMLDOMDocument` オブジェクトをラップするために `com::ptr` を使用する CLR クラスを実装します。の `ReplaceDocument` のメンバー関数の最初の呼び出し `Release` は前に所有されているオブジェクトの新規ドキュメント オブジェクトを接続するために `operator=` を使用します。  
+## <a name="example"></a>例  
+ この例を使用して CLR クラスを実装して、`com::ptr`をそのプライベート メンバーをラップする`IXMLDOMDocument`オブジェクト。  `ReplaceDocument`メンバー関数を最初に呼び出す`Release`いずれかで所有していたオブジェクトおよび、使用`operator=`ドキュメントでは新しいオブジェクトをアタッチします。  
   
 ```  
 // comptr_op_assign.cpp  
@@ -128,13 +132,13 @@ int main() {
 }  
 ```  
   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\com\\ptr.h\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\com\ptr.h >  
   
- **名前空間** msclr::com  
+ **Namespace** msclr::com  
   
-## 参照  
- [ptr Members](../dotnet/ptr-members.md)   
+## <a name="see-also"></a>参照  
+ [ptr メンバー](../dotnet/ptr-members.md)   
  [ptr::Attach](../dotnet/ptr-attach.md)   
- [ptr::Detach](../Topic/ptr::Detach.md)   
+ [ptr::Detach](../dotnet/ptr-detach.md)   
  [ptr::Release](../dotnet/ptr-release.md)

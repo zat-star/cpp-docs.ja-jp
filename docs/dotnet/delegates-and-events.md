@@ -1,35 +1,40 @@
 ---
-title: "デリゲートとイベント | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__delegate キーワード"
-  - "__event キーワード [C++]"
-  - "delegate キーワード [C++]"
-  - "デリゲート [C++], アップグレード (C++ マネージ拡張から)"
-  - "event キーワード [C++]"
-  - "イベント [C++], アップグレード (C++ マネージ拡張から)"
+title: "デリゲートおよびイベント |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- __event keyword [C++]
+- delegate keyword [C++]
+- delegates [C++], upgrading from Managed Extensions for C++
+- __delegate keyword
+- events [C++], upgrading from Managed Extensions for C++
+- event keyword [C++]
 ms.assetid: 3505c626-7e5f-4492-a947-0e2248f7b84a
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e332c24d30d0439705b6be5e0748518f6537478d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# デリゲートとイベント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-デリゲートとイベントの宣言方法は、[!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では C\+\+ マネージ拡張から変更されています。  
+# <a name="delegates-and-events"></a>デリゲートとイベント
+デリゲートおよびイベントを宣言するための方法は、Visual C を c++ マネージ拡張から変更されました。  
   
- 今後は、次の例で示すように、従来使用されていた 2 つのアンダースコアが不要になります。  次のコードは、マネージ拡張におけるサンプル コードです。  
+ 二重のアンダー スコアが不要になった、次の例に示すようにします。 ここでは、マネージ拡張のサンプル コード:  
   
 ```  
 __delegate void ClickEventHandler(int, double);  
@@ -41,7 +46,7 @@ __gc class EventSource {
 };  
 ```  
   
- 新しい構文では、同じコードを次のように記述できます。  
+ 新しい構文では、同じコードは次のようになります。  
   
 ```  
 delegate void ClickEventHandler( int, double );  
@@ -53,9 +58,9 @@ ref class EventSource {
 };  
 ```  
   
- イベント \(およびデリゲート\) は参照型で、新しい構文ではカレット \(`^`\) を使用することによって見やすくなっています。イベントには、明示的な宣言を使った構文だけでなく、前述のコードのような簡易形式もサポートされています。  明示的な形式では、ユーザーはイベントに関連付けられた `add`、`raise`、および `remove` の各メソッドを指定します \(`add` および `remove` メソッドだけが必須で、`raise` メソッドは省略できます\)。  
+ イベント (およびデリゲート) が参照型で、これは新しい構文ではオフ、hat を使用するため (`^`)。  イベントは、明示的な宣言構文と上記のコードに示すように単純な形式の両方をサポートします。 明示的な形式でユーザーを指定します、 `add`、 `raise`、および`remove`イベントに関連付けられたメソッドです。 (だけ、`add`と`remove`メソッドが必要で;`raise`メソッドは省略可能)。  
   
- マネージ拡張でこれらのメソッドを実装する場合、明示的なイベント宣言を記述することはしませんが、存在しないイベントの名前を決める必要があります。  各メソッドは、マネージ拡張の仕様にある次の例のように、`add_EventName`、`raise_EventName`、および `remove_EventName` という形式で指定されます。  
+ マネージ拡張では、これらのメソッドを提供する場合も、明示的なイベントの宣言を指定しないが、存在しないイベントの名前にする必要があります。 各メソッドは、フォームで指定された`add_EventName`、 `raise_EventName`、および`remove_EventName`マネージ拡張の仕様から引用した次の例のように。  
   
 ```  
 // explicit implementations of add, remove, raise  
@@ -88,7 +93,7 @@ protected:
 };  
 ```  
   
- 新しい構文では、次の書き換え例が示すように、宣言が単純化されています。  次に示すように、1 つのイベントは、イベント宣言と関連するデリゲート型に続く中かっこ内で、2 つまたは 3 つのメソッドを指定します。  
+ 新しい構文では、次の変換例が示すように、宣言が簡略化します。 3 つのメソッドが中かっこで囲むし、次に示すように、イベントとその関連するデリゲート型の宣言の直後に配置またはイベントが、2 つを指定します。  
   
 ```  
 public delegate void f( int );  
@@ -130,7 +135,7 @@ public:
 };  
 ```  
   
-## 参照  
- [クラスまたはインターフェイス内でのメンバー宣言 \(C\+\+\/CLI\)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
- [delegate](../windows/delegate-cpp-component-extensions.md)   
+## <a name="see-also"></a>参照  
+ [クラスまたはインターフェイス内でメンバーの宣言 (C + + CLI)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
+ [delegate (C++ コンポーネント拡張)](../windows/delegate-cpp-component-extensions.md)   
  [event](../windows/event-cpp-component-extensions.md)

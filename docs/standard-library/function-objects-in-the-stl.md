@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - functors
 - C++ Standard Library, functors
 - C++ Standard Library, function objects
 - function objects
 ms.assetid: 85f8a735-2c7b-4f10-9c4d-95c666ec4192
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 90b37372123031026017e23c683a5a65555577ca
-ms.sourcegitcommit: b3ffb717e2af6ca8072b56bf4aa96b3afff73414
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4f426145418dab9c393e3e587939fa3e0fb5488d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="function-objects-in-the-c-standard-library"></a>C++ 標準ライブラリの関数オブジェクト
 *関数オブジェクト*、つまり *ファンクター*は、operator() を実装する任意の型です。 この演算子は *呼び出し演算子* と呼ばれます。 *適用演算子*と呼ばれることもあります。 C++ 標準ライブラリで、関数オブジェクトは、主にコンテナーの並べ替え条件として、およびアルゴリズム内で使用されます。  
@@ -70,6 +74,6 @@ ForwardIterator remove_if(
   
  `remove_if` への最後の引数は、ブール値 ( *述語*) を返す関数オブジェクトです。 関数オブジェクトの結果が `true` の場合、反復子 `first` と `last`でアクセスされている要素がコンテナーから削除されます。 引数 `pred` には、[\<functional>](../standard-library/functional.md) ヘッダー内で宣言したいずれかの関数オブジェクトを使用するか、独自の関数オブジェクトを作成できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

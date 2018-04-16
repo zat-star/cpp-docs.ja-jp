@@ -1,36 +1,41 @@
 ---
-title: "deque (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::deque"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "<cliext/deque> ヘッダー [STL/CLR]"
-  - "<deque> ヘッダー [STL/CLR]"
-  - "deque クラス [STL/CLR]"
+title: "deque (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::deque
+dev_langs:
+- C++
+helpviewer_keywords:
+- deque class [STL/CLR]
+- <deque> header [STL/CLR]
+- <cliext/deque> header [STL/CLR]
 ms.assetid: dd669da3-3c0e-45e9-8596-f6b483720941
-caps.latest.revision: 22
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 22
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 9bd847b2641e6670a91d2edf1eb926aca423ad2f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# deque (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このテンプレート クラスは、オブジェクトをコントロールとランダム アクセスを持つ要素の可変長シーケンスを記述します。  表示、ストレージの連続したブロックのように、残りの要素をコピーする必要なしに、一方の端に拡大または縮小できる要素のシーケンスを管理するために `deque` コンテナーを使用します。  したがって、`double-ended queue`を効率的に実装できます。\(したがって、名前\)。  
+# <a name="deque-stlclr"></a>deque (STL/CLR)
+このテンプレート クラスでは、ランダム アクセス権を持つ要素の可変長シーケンスを制御するオブジェクトについて説明します。 コンテナーを使用する`deque`ストレージの連続したブロックのようですが、拡大したり、一方の端を残りの要素をコピーする必要がない縮小することができますの要素のシーケンスを管理します。 効率的に、実装できるため、`double-ended queue`です。 (したがって名前です)。  
   
- 以下の説明では `GValue` は `Value` な型が `Value^`場合、後者は ref 型である同じです。  
+ 下記に、`GValue`と同じ`Value`ref 型を後者には、しない限り、どのケースでは`Value^`します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value>  
@@ -46,103 +51,103 @@ template<typename Value>
     { ..... };  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  GValue  
- 被制御シーケンスの要素のジェネリック型。  
+ 被制御シーケンス内の要素のジェネリック型。  
   
- 値  
+ [値]  
  被制御シーケンス内の要素の型。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
 |型定義|説明|  
-|---------|--------|  
-|[deque::const\_iterator](../Topic/deque::const_iterator%20\(STL-CLR\).md)|被制御シーケンスの定数反復子の型です。|  
-|[deque::const\_reference](../dotnet/deque-const-reference-stl-clr.md)|要素への定数参照の型です。|  
-|[deque::const\_reverse\_iterator](../dotnet/deque-const-reverse-iterator-stl-clr.md)|被制御シーケンスの定数反転反復子の型です。|  
-|[deque::difference\_type](../dotnet/deque-difference-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[deque::generic\_container](../Topic/deque::generic_container%20\(STL-CLR\).md)|コンテナーのジェネリック インターフェイスの種類。|  
-|[deque::generic\_iterator](../dotnet/deque-generic-iterator-stl-clr.md)|コンテナーのジェネリック インターフェイスの反復子の型。|  
-|[deque::generic\_reverse\_iterator](../Topic/deque::generic_reverse_iterator%20\(STL-CLR\).md)|コンテナーのジェネリック インターフェイスの反転反復子の型。|  
-|[deque::generic\_value](../Topic/deque::generic_value%20\(STL-CLR\).md)|コンテナーのジェネリック インターフェイスの要素の型。|  
-|[deque::iterator](../dotnet/deque-iterator-stl-clr.md)|被制御シーケンスの反復子の型です。|  
-|[deque::reference](../dotnet/deque-reference-stl-clr.md)|要素への参照の型です。|  
-|[deque::reverse\_iterator](../dotnet/deque-reverse-iterator-stl-clr.md)|被制御シーケンスの反転反復子の型です。|  
-|[deque::size\_type](../dotnet/deque-size-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[deque::value\_type](../Topic/deque::value_type%20\(STL-CLR\).md)|要素の型。|  
+|---------------------|-----------------|  
+|[deque::const_iterator (STL/CLR)](../dotnet/deque-const-iterator-stl-clr.md)|被制御シーケンスの定数反復子の型です。|  
+|[deque::const_reference (STL/CLR)](../dotnet/deque-const-reference-stl-clr.md)|要素への定数参照の型です。|  
+|[deque::const_reverse_iterator (STL/CLR)](../dotnet/deque-const-reverse-iterator-stl-clr.md)|被制御シーケンスの定数反転反復子の型です。|  
+|[deque::difference_type (STL/CLR)](../dotnet/deque-difference-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
+|[deque::generic_container (STL/CLR)](../dotnet/deque-generic-container-stl-clr.md)|コンテナーのジェネリック インターフェイスの型。|  
+|[deque::generic_iterator (STL/CLR)](../dotnet/deque-generic-iterator-stl-clr.md)|コンテナーのジェネリック インターフェイスの反復子の型。|  
+|[deque::generic_reverse_iterator (STL/CLR)](../dotnet/deque-generic-reverse-iterator-stl-clr.md)|コンテナーのジェネリック インターフェイスの反転反復子の型。|  
+|[deque::generic_value (STL/CLR)](../dotnet/deque-generic-value-stl-clr.md)|コンテナーのジェネリック インターフェイスの要素の型。|  
+|[deque::iterator (STL/CLR)](../dotnet/deque-iterator-stl-clr.md)|被制御シーケンスの反復子の型です。|  
+|[deque::reference (STL/CLR)](../dotnet/deque-reference-stl-clr.md)|要素への参照の型です。|  
+|[deque::reverse_iterator (STL/CLR)](../dotnet/deque-reverse-iterator-stl-clr.md)|被制御シーケンスの反転反復子の型です。|  
+|[deque::size_type (STL/CLR)](../dotnet/deque-size-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
+|[deque::value_type (STL/CLR)](../dotnet/deque-value-type-stl-clr.md)|要素の型。|  
   
 |メンバー関数|説明|  
-|------------|--------|  
-|[deque::assign](../dotnet/deque-assign-stl-clr.md)|すべての要素を置き換えます。|  
-|[deque::at](../dotnet/deque-at-stl-clr.md)|指定した位置にある要素にアクセスします。|  
-|[deque::back](../dotnet/deque-back-stl-clr.md)|最後の要素にアクセスします。|  
-|[deque::begin](../dotnet/deque-begin-stl-clr.md)|被制御シーケンスの先頭を指定します。|  
-|[deque::clear](../dotnet/deque-clear-stl-clr.md)|すべての要素を削除します。|  
-|[deque::deque](../dotnet/deque-deque-stl-clr.md)|コンテナー オブジェクトを構築します。|  
-|[deque::empty](../dotnet/deque-empty-stl-clr.md)|要素が存在しないかどうかをテストします。|  
-|[deque::end](../Topic/deque::end%20\(STL-CLR\).md)|被制御シーケンスの末尾を指定します。|  
-|[deque::erase](../Topic/deque::erase%20\(STL-CLR\).md)|指定した位置にある要素を削除します。|  
-|[deque::front](../Topic/deque::front%20\(STL-CLR\).md)|最初の要素にアクセスします。|  
-|[deque::insert](../dotnet/deque-insert-stl-clr.md)|指定した位置の要素を追加します。|  
-|[deque::pop\_back](../dotnet/deque-pop-back-stl-clr.md)|最後の要素を削除します。|  
-|[deque::pop\_front](../dotnet/deque-pop-front-stl-clr.md)|最初の要素を削除します。|  
-|[deque::push\_back](../dotnet/deque-push-back-stl-clr.md)|新しい最後の要素を追加します。|  
-|[deque::push\_front](../dotnet/deque-push-front-stl-clr.md)|新しい先頭要素を追加します。|  
-|[deque::rbegin](../dotnet/deque-rbegin-stl-clr.md)|反転被制御シーケンスの先頭を指定します。|  
-|[deque::rend](../Topic/deque::rend%20\(STL-CLR\).md)|反転被制御シーケンスの末尾を指定します。|  
-|[deque::resize](../dotnet/deque-resize-stl-clr.md)|要素の数を変更します。|  
-|[deque::size](../Topic/deque::size%20\(STL-CLR\).md)|要素の数をカウントします。|  
-|[deque::swap](../dotnet/deque-swap-stl-clr.md)|2 つのコンテナーのコンテンツを交換します。|  
-|[deque::to\_array](../dotnet/deque-to-array-stl-clr.md)|新しい配列に被制御シーケンスをコピーします。|  
+|---------------------|-----------------|  
+|[deque::assign (STL/CLR)](../dotnet/deque-assign-stl-clr.md)|すべての要素を置換します。|  
+|[deque::at (STL/CLR)](../dotnet/deque-at-stl-clr.md)|指定した位置にある要素にアクセスします。|  
+|[deque::back (STL/CLR)](../dotnet/deque-back-stl-clr.md)|最後の要素にアクセスします。|  
+|[deque::begin (STL/CLR)](../dotnet/deque-begin-stl-clr.md)|被制御シーケンスの先頭を指定します。|  
+|[deque::clear (STL/CLR)](../dotnet/deque-clear-stl-clr.md)|すべての要素を削除します。|  
+|[deque::deque (STL/CLR)](../dotnet/deque-deque-stl-clr.md)|コンテナー オブジェクトを構築します。|  
+|[deque::empty (STL/CLR)](../dotnet/deque-empty-stl-clr.md)|要素が存在しないかどうかをテストします。|  
+|[deque::end (STL/CLR)](../dotnet/deque-end-stl-clr.md)|被制御シーケンスの末尾を指定します。|  
+|[deque::erase (STL/CLR)](../dotnet/deque-erase-stl-clr.md)|指定した位置にある要素を削除します。|  
+|[deque::front (STL/CLR)](../dotnet/deque-front-stl-clr.md)|最初の要素にアクセスします。|  
+|[deque::insert (STL/CLR)](../dotnet/deque-insert-stl-clr.md)|指定した位置にある要素を追加します。|  
+|[deque::pop_back (STL/CLR)](../dotnet/deque-pop-back-stl-clr.md)|最後の要素を削除します。|  
+|[deque::pop_front (STL/CLR)](../dotnet/deque-pop-front-stl-clr.md)|最初の要素を削除します。|  
+|[deque::push_back (STL/CLR)](../dotnet/deque-push-back-stl-clr.md)|新しい最後の要素を追加します。|  
+|[deque::push_front (STL/CLR)](../dotnet/deque-push-front-stl-clr.md)|新しい最初の要素を追加します。|  
+|[deque::rbegin (STL/CLR)](../dotnet/deque-rbegin-stl-clr.md)|反転被制御シーケンスの先頭を指定します。|  
+|[deque::rend (STL/CLR)](../dotnet/deque-rend-stl-clr.md)|反転被制御シーケンスの末尾を指定します。|  
+|[deque::resize (STL/CLR)](../dotnet/deque-resize-stl-clr.md)|要素の数を変更します。|  
+|[deque::size (STL/CLR)](../dotnet/deque-size-stl-clr.md)|要素の数をカウントします。|  
+|[deque::swap (STL/CLR)](../dotnet/deque-swap-stl-clr.md)|2 つのコンテナーのコンテンツを交換します。|  
+|[deque::to_array (STL/CLR)](../dotnet/deque-to-array-stl-clr.md)|被制御シーケンスを新しい配列にコピーします。|  
   
 |プロパティ|説明|  
-|-----------|--------|  
-|[deque::back\_item](../Topic/deque::back_item%20\(STL-CLR\).md)|最後の要素にアクセスします。|  
-|[deque::front\_item](../dotnet/deque-front-item-stl-clr.md)|最初の要素にアクセスします。|  
+|--------------|-----------------|  
+|[deque::back_item (STL/CLR)](../dotnet/deque-back-item-stl-clr.md)|最後の要素にアクセスします。|  
+|[deque::front_item (STL/CLR)](../dotnet/deque-front-item-stl-clr.md)|最初の要素にアクセスします。|  
   
 |演算子|説明|  
-|---------|--------|  
-|[deque::operator\!\=](../dotnet/deque-operator-inequality-stl-clr.md)|`deque` の 2 種類のオブジェクトが異なるかどうかを判定します。|  
-|[deque::operator](../Topic/deque::operator\(STL-CLR\).md)|指定した位置にある要素にアクセスします。|  
-|[operator\< \(deque\)](../dotnet/operator-less-than-deque-stl-clr.md)|`deque` オブジェクトが `deque` の別のオブジェクトより小さいかどうかを判定します。|  
-|[operator\<\= \(deque\)](../dotnet/operator-less-or-equal-deque-stl-clr.md)|`deque` オブジェクトが `deque` の別のオブジェクト以下かどうかを判定します。|  
-|[operator\= \(deque\)](../dotnet/operator-assign-deque-stl-clr.md)|被制御シーケンスを置き換えます。|  
-|[operator\=\= \(deque\)](../dotnet/operator-equality-deque-stl-clr.md)|`deque` オブジェクトが `deque` の別のオブジェクトと等しいかどうかを判定します。|  
-|[operator\> \(deque\)](../dotnet/operator-greater-than-deque-stl-clr.md)|`deque` オブジェクトが `deque` の別のオブジェクトより大きいかどうかを判定します。|  
-|[operator\>\= \(deque\)](../dotnet/operator-greater-or-equal-deque-stl-clr.md)|`deque` オブジェクトが `deque` の別のオブジェクト以上かどうかを判定します。|  
+|--------------|-----------------|  
+|[deque::operator!= (STL/CLR)](../dotnet/deque-operator-inequality-stl-clr.md)|2 つの場合を決定`deque`オブジェクトが等しくないです。|  
+|[deque::operator(STL/CLR)](../dotnet/deque-operator-stl-clr.md)|指定した位置にある要素にアクセスします。|  
+|[operator< (deque) (STL/CLR)](../dotnet/operator-less-than-deque-stl-clr.md)|かどうかを`deque`オブジェクトが他よりも小さい`deque`オブジェクト。|  
+|[operator<= (deque) (STL/CLR)](../dotnet/operator-less-or-equal-deque-stl-clr.md)|かどうかを`deque`オブジェクトが別に小さい`deque`オブジェクト。|  
+|[operator= (deque) (STL/CLR)](../dotnet/operator-assign-deque-stl-clr.md)|被制御シーケンスを置き換えます。|  
+|[operator== (deque) (STL/CLR)](../dotnet/operator-equality-deque-stl-clr.md)|かどうかを`deque`オブジェクトが他と等しい`deque`オブジェクト。|  
+|[operator> (deque) (STL/CLR)](../dotnet/operator-greater-than-deque-stl-clr.md)|かどうかを`deque`オブジェクトが他よりも大きい`deque`オブジェクト。|  
+|[operator>= (deque) (STL/CLR)](../dotnet/operator-greater-or-equal-deque-stl-clr.md)|かどうかを`deque`オブジェクトがより大きいか等しい間`deque`オブジェクト。|  
   
-## インターフェイス  
+## <a name="interfaces"></a>インターフェイス  
   
-|インターフェイス|説明|  
-|--------------|--------|  
-|<xref:System.ICloneable>|オブジェクトを複製します。|  
-|<xref:System.Collections.IEnumerable>|要素によるシーケンス。|  
-|<xref:System.Collections.ICollection>|要素のグループを保持します。|  
-|<xref:System.Collections.Generic.IEnumerable%601>|指定された要素を通じてシーケンス。|  
-|<xref:System.Collections.Generic.ICollection%601>|指定された要素のグループを保持します。|  
-|<xref:System.Collections.Generic.IList%601>|指定された要素の順序付けグループを保持します。|  
-|IDequeValue\<\>|一般的なコンテナーを保持します。|  
+|Interface|説明|  
+|---------------|-----------------|  
+|<xref:System.ICloneable>|オブジェクトが重複してください。|  
+|<xref:System.Collections.IEnumerable>|要素を順番にします。|  
+|<xref:System.Collections.ICollection>|要素のグループを管理します。|  
+|<xref:System.Collections.Generic.IEnumerable%601>|型指定された要素を順番にします。|  
+|<xref:System.Collections.Generic.ICollection%601>|型指定された要素のグループを管理します。|  
+|<xref:System.Collections.Generic.IList%601>|型指定された要素の順序付きのグループを管理します。|  
+|IDeque < 値\>|ジェネリックなコンテナーを管理します。|  
   
-## 解説  
- オブジェクトは `Value` 要素ピッカー ブロック ハンドルの格納された配列によって制御されるシーケンスに対するストレージ領域を割り当てます。  配列は、オンデマンドで増加します。  increase は新しい要素を追加するまたは追加コストが定数時間である、残りの要素はそのままですように実行されます。  また、const 時間、およびブロックの残りの要素のないいずれかの側の要素を削除できます。  したがって、deque は [キュー](../Topic/queue%20\(STL-CLR\).md) テンプレート クラス [スタック](../dotnet/stack-stl-clr.md)の基になるコンテナーにすることをお勧めします。  
+## <a name="remarks"></a>コメント  
+ オブジェクトは、割り当てし、ストアドのブロックを指定したハンドルの配列を制御するシーケンスの記憶域を解放`Value`要素。 配列は、要求時に拡張します。 拡張は、付加することか、新しい要素を追加することのコストは一定の時間、残りの要素が分散されていない方法で発生します。 一定の時間内と残りの要素を中断することがなく先頭または末尾にある要素を削除することもできます。 したがって、deque です。 このテンプレート クラスを基になるコンテナーで有力候補[キュー (STL/CLR)](../dotnet/queue-stl-clr.md)またはテンプレート クラス[スタック (STL/CLR)](../dotnet/stack-stl-clr.md)です。  
   
- つまり、直接最初の \(詳細\) 要素のゼロからカウント ダウン最後の \(戻る\) 要素の [deque::size](../Topic/deque::size%20\(STL-CLR\).md)`() - 1` に数値位置がある要素を参照できる `deque` のオブジェクトがのランダム アクセス反復子。  deque がテンプレート クラス [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)の基になるコンテナーにふさわしい候補であることを意味します。  
+ A`deque`オブジェクトは、するための最初の (フロント) 要素の 0 からカウントの位置を直接指定された要素を参照できますつまりランダム アクセス反復子をサポートしている[deque::size (STL/CLR)](../dotnet/deque-size-stl-clr.md) `() - 1`最後 (背面) の要素。 Deque が基になるコンテナー テンプレート クラスに適した候補であることも意味[priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)です。  
   
- deque の反復子は、指定した要素のバイアスとともに関連付けられた deque オブジェクトへのハンドルを格納します。  関連するコンテナー オブジェクトでのみ反復子を使用できます。  deque 要素のバイアスは位置と必ずしも同じ `not` です。  挿入された最初の要素にバイアス ゼロがあり、次のタグ付き要素にバイアス値 1 がありますが、次のアタッチされた要素にバイアス値 \-1 があります。  
+ Deque の反復子は、指定した要素のバイアスと共に、関連付けられている deque オブジェクトへのハンドルを格納します。 反復子は、それらの関連するコンテナー オブジェクトにのみ使用できます。 Deque の要素のバイアスは`not`の位置と同じとは限りません。 最初の要素が 0 のバイアス、次の追加要素バイアス 1 が次の先頭に追加された要素がバイアス-1 です。  
   
- どちらの端に要素を挿入したりオフにしたりすることは `not` を呼び出す任意の有効なバイアスに格納される要素の値を表示します。  ただし、内部要素を挿入するか、オフに `can` の変更は、特定のバイアスに格納される要素の値、反復子プロパティで指定された値を変更できます。\(ホールを挿入する前に作成するか、消去の後に穴を満たすためにコンテナーは要素を上下にコピーする必要があります\)。いずれにしても、deque の反復子は、バイアスが有効な要素を指定すると有効になります。  また、有効な反復子は dereferencable です。指定した要素の値にアクセスするか、または変更するために使用できます。。バイアスが `end()`が返す反復子のバイアス値と等しくない場合。  
+ 挿入またはいずれかの端にある要素を消去するには`not`有効バイアスに格納されている要素の値を変更します。 挿入または消去内部要素、ただし、`can`反復子によって指定された値を変更することも、指定のバイアスに格納されている要素の値を変更します。 (コンテナーは、要素にコピーまたは下矢印を挿入する前に穴を作成するか、消去後に穴を入力する必要があります)。ただし、そのバイアスは、有効な要素を指定する限りは、deque 反復子は有効です。 さらに、有効な反復子は dereferencable--これを使用して、アクセスまたはそのバイアスがバイアスは、によって返される反復子と等しくない場合に限り指定--要素の値を変更することができます`end()`です。  
   
- 要素に設定するか、削除して、格納されている値のデストラクターを呼び出します。  コンテナーが破棄されると、すべての要素を消去します。  したがって、要素の型が ref クラスにあるコンテナー要素がコンテナーを重視されることを確認します。  ただし、Handles のコンテナーが `not` の要素を破棄されます。  
+ 消去、または要素を削除する、格納されている値のデストラクターを呼び出します。 コンテナーを破棄するには、すべての要素が消去されます。 したがって、要素型が ref クラスは、コンテナーを実現する要素よりも長くありませんコンテナー ただし、ハンドルのコンテナーは`not`その要素を破棄します。  
   
-## 必要条件  
- **ヘッダー:** \<cliext\/deque\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/deque >  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)   
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [スタック](../dotnet/stack-stl-clr.md)   
- [ベクター](../dotnet/vector-stl-clr.md)   
- [STL\/CLR ライブラリ](../dotnet/stl-clr-library-reference.md)
+## <a name="see-also"></a>参照  
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [STL/CLR ライブラリ リファレンス](../dotnet/stl-clr-library-reference.md)

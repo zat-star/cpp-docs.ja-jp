@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: TBSTYLE_
-dev_langs: C++
+f1_keywords:
+- TBSTYLE_
+dev_langs:
+- C++
 helpviewer_keywords:
 - flat toolbars
 - CToolBar class [MFC], styles
@@ -17,15 +20,17 @@ helpviewer_keywords:
 - CToolBarCtrl class [MFC], object styles
 - toolbar controls [MFC], style
 ms.assetid: fd0a73db-7ad1-4fe4-889b-02c3980f49e8
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 452debf30eec9f5ca5eacd562302a578e0d0138a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5c40b7e055585a11b90c2cec1fefb967b51b35cf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="customizing-the-appearance-of-a-toolbar-control"></a>ツール バー コントロールの外観のカスタマイズ
 クラス`CToolBarCtrl`外観 (および場合によっては、動作) のツールバー オブジェクトに影響する多くのスタイルを提供します。 設定してツール バー オブジェクトを変更、`dwCtrlStyle`のパラメーター、 `CToolBarCtrl::Create` (または`CToolBar::CreateEx`) メンバー関数は、ツール バー コントロールを作成します。  
@@ -60,7 +65,7 @@ ms.lasthandoff: 10/24/2017
   
  ツール バー スタイルや拡張スタイルの完全な一覧については、次を参照してください。[ツール バー コントロールとボタンのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb760439)と[ツールバー拡張スタイル](http://msdn.microsoft.com/library/windows/desktop/bb760430)Windows SDK にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CToolBarCtrl の使い方](../mfc/using-ctoolbarctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

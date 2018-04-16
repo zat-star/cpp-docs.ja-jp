@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: COleObjectFactory
-dev_langs: C++
+f1_keywords:
+- COleObjectFactory
+dev_langs:
+- C++
 helpviewer_keywords:
 - COleObjectFactory class [MFC], licensing controls
 - MFC ActiveX controls [MFC], licensing
@@ -17,15 +20,17 @@ helpviewer_keywords:
 - GetLicenseKey method [MFC]
 - licensing ActiveX controls
 ms.assetid: cacd9e45-701a-4a1f-8f1f-b0b39f6ac303
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 02df11739582cbfa84361a7c92e0cd7ee1856716
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f7b90000279e00c9be8f43ecdb33f8e3dedf6b8a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-activex-controls-licensing-an-activex-control"></a>MFC ActiveX コントロール : ActiveX コントロールのライセンス
 ライセンスのサポート、ActiveX コントロールのオプション機能を制御できますを使用して、コントロールを配布したりできるユーザーをします。 (ライセンスの問題の詳細については、ライセンスの問題を参照してください[既存の ActiveX コントロールのアップグレード](../mfc/upgrading-an-existing-activex-control.md)。)。  
@@ -121,7 +126,7 @@ ms.lasthandoff: 10/24/2017
   
  ライセンスの問題の詳細については、ライセンスの問題を参照してください。[既存の ActiveX コントロールのアップグレード](../mfc/upgrading-an-existing-activex-control.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
  [MFC ActiveX コントロール ウィザード](../mfc/reference/mfc-activex-control-wizard.md)
 

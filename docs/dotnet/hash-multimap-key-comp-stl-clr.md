@@ -1,25 +1,32 @@
 ---
-title: "hash_multimap::key_comp (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: hash_multimap::key_comp (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::hash_multimap::key_comp
-dev_langs: C++
-helpviewer_keywords: key_comp member [STL/CLR]
+f1_keywords:
+- cliext::hash_multimap::key_comp
+dev_langs:
+- C++
+helpviewer_keywords:
+- key_comp member [STL/CLR]
 ms.assetid: 221d0bfe-19ad-4c34-9b10-77921be32459
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 309cbdea7c485d98e8f3079f5551a5ecf23f2afb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a5b2de4b6bba15fc271a7eb1ec19bec2efd5f1e0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultimapkeycomp-stlclr"></a>hash_multimap::key_comp (STL/CLR)
 2 つのキーの順序付けのデリゲートをコピーします。  
@@ -79,12 +86,12 @@ compare(L'a', L'b') = False
 compare(L'b', L'a') = True  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
  [hash_multimap::key_compare (STL/CLR)](../dotnet/hash-multimap-key-compare-stl-clr.md)   
  [hash_multimap::key_type (STL/CLR)](../dotnet/hash-multimap-key-type-stl-clr.md)

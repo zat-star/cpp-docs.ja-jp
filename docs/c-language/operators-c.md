@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: e97f8804-e26c-4249-afdd-26d694eb489e
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8941d559ed1780d38806bf2a94d2dd7ad1f840e0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e6090c6cc983340379d7fba5b4f16f0846c8e854
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="operators-c"></a>演算子 (C)
 `operator`: 次のいずれか  
@@ -26,5 +30,5 @@ ms.lasthandoff: 10/24/2017
  *assignment-operator*: 次のいずれか  
  **=   \*=   /=   %=   +=   -=   <\<=   >>= &=   ^=   &#124;=**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [字句文法](../c-language/lexical-grammar.md)

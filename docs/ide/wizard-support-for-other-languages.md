@@ -1,49 +1,53 @@
 ---
-title: "ウィザードでサポートされるその他の言語 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.appwiz.EastAsianLanguages"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "言語サポート (MFC プロジェクトの)"
-  - "プロジェクト [C++], 言語サポート"
-  - "ウィザード [C++], 言語サポート"
+title: "ウィザードでサポートされるその他の言語 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.appwiz.EastAsianLanguages
+dev_langs:
+- C++
+helpviewer_keywords:
+- wizards [C++], language support
+- language support for MFC projects
+- projects [C++], language support
 ms.assetid: b653c673-0687-455c-885f-15d7e2f4149d
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8ef95c252621aa7f725098dfcd08c7b5b3620826
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ウィザードでサポートされるその他の言語
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Visual Studio のインストール時には、セットアップ アプリケーションがシステムのロケールを検出し、そのロケールに対応する言語テンプレートをインストールします。  たとえば、西ヨーロッパのロケールの場合は、英語、フランス語、イタリア語、スペイン語、およびドイツ語がインストールされます。  インストールされた言語は、MFC アプリケーション ウィザードの [&#91;アプリケーションの種類&#93;](../Topic/Application%20Type,%20MFC%20Application%20Wizard.md) ページの \[リソース言語\] ボックスに表示されます。  
+# <a name="wizard-support-for-other-languages"></a>ウィザードでサポートされるその他の言語
+Visual Studio をインストールするときに、セットアップ アプリケーションは、システムのロケールを検出し、適切な言語のテンプレート、またはそのロケールのテンプレートをインストールします。 たとえば、西ヨーロッパのロケール、セットアップはインストール英語、フランス語、イタリア語、スペイン語、およびドイツ語です。 これらの言語に表示されます、**リソース言語**ボックスの一覧、[アプリケーションの種類](../mfc/reference/application-type-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。  
   
-## 言語テンプレート  
- テンプレートは ANSI エンコードに基いており、一部のシステムでは編集できないリソースがあります。このため、システムによってはインストールされないテンプレートがあります。  たとえば、既定では、フランス語のシステムでは日本語のリソースを編集できません。  
+## <a name="language-templates"></a>言語のテンプレート  
+ すべてのテンプレートは、テンプレートは、ANSI エンコーディングおり、すべてのシステムですべてのリソースを編集するために、すべてのシステムにインストールされます。 たとえば、既定では、フランス語のシステム上の日本語リソースを編集することはできません。  
   
- Windows 2000 以降を使用して他の言語で MFC アプリケーションを作成する場合は、Visual Studio インストーラー メディア\(ディスク 1\) にある適切な言語のテンプレート ディレクトリをシステムにコピーする必要があります。  
+ Windows 2000 以降を使用している別の言語で MFC アプリケーションを作成する場合をシステムに、Visual Studio インストーラー メディア (ディスク 1) から適切な言語のテンプレート ディレクトリをコピーする必要があります。  
   
 > [!NOTE]
->  作成したプロジェクトを編集するには、選択した言語に対応するロケールにシステムのロケールを変更する必要があります。  
+>  作成したプロジェクトを編集するには、選択した言語の適切なロケールに、システム ロケールを設定する必要があります。  
   
- 次の表に示すように、各テンプレートに対して、\\Microsoft Visual Studio .NET 2003\\Vc7\\VCWizards\\mfcappwiz\\templates\\ ディレクトリのフォルダーが割り当てられています。  使用する言語テンプレートにアクセスするには、該当するフォルダーをコンピューターの \\mfcappwiz\\templates\\ ディレクトリにコピーします。  フォルダーのコピーが完了すると、MFC アプリケーション ウィザードの **\[アプリケーションの種類\]** ページの \[リソース言語\] ボックスにその言語が表示されます。  
+ テンプレートは、次の表に記載されている各割り当てる \Microsoft Visual Studio .NET 2003\Vc7\VCWizards\mfcappwiz\templates\ ディレクトリ内のフォルダーです。 テンプレートにアクセスするには、目的の言語、お使いのコンピューター上の \mfcappwiz\templates\ ディレクトリに、適切なフォルダーをコピーします。 フォルダーをコピーしたら、言語に表示されます、**リソース言語**ボックスの一覧、**アプリケーションの種類**MFC アプリケーション ウィザードのページです。  
   
-### Visual Studio .NET で指定されている言語テンプレート  
+### <a name="language-templates-provided-in-visual-studio-net"></a>Visual Studio .NET で用意されている言語のテンプレート  
   
 |言語|テンプレート|  
-|--------|------------|  
-|繁体字中国語|1028|  
-|簡体字中国語|2052|  
+|--------------|--------------|  
+|では |1028|  
+|中国語 (簡体字、中国)|2052|  
 |英語|1033|  
 |フランス語|1036|  
 |ドイツ語|1031|  
@@ -52,11 +56,11 @@ Visual Studio のインストール時には、セットアップ アプリケ�
 |韓国語|1042|  
 |スペイン語|3082|  
   
-## Visual C\+\+ ウィザードによって生成されるファイル形式  
- Visual C\+\+ ウィザードでは、インストールされた Visual Studio の言語バージョンがシステムのロケールと異なる場合、プロジェクトが Unicode で生成されます。  たとえば、地域設定が日本語以外のコンピューターに対し、日本語版の Visual Studio をインストールした場合、Visual C\+\+ ウィザードでは、Unicode ファイルから成るプロジェクトが生成されます。  これは、Windows マルチ言語 \(MUI\) パックでセットアップされたマシン全般に言えることです。  
+## <a name="format-of-visual-c-wizard-generated-files"></a>Visual C ウィザードで生成されたファイルの形式  
+ インストールされている言語バージョンの Visual Studio が、システムのロケールと一致しない場合、Visual C ウィザードで Unicode でプロジェクトが生成されます。 たとえば、日本語バージョンの Visual Studio が日本語以外の言語の地域の設定をあるコンピューターにインストールされているときにし、Visual C ウィザードはプロジェクトを生成 Unicode ファイルで構成されています。 これは、コンピューターを Windows 多言語 (MUI) pack の設定で共通です。  
   
- システム ロケールが Visual Studio の言語バージョンと同じ場合、これとは異なる動作になります。  プロジェクト ファイルはシステムの ANSI コード ページで生成されます。  
+ この動作は、設定するなど、システムのロケールは言語バージョンの Visual Studio と同じシステムによって異なります。 この場合、プロジェクト ファイルは、システム コード ページで ansi 形式で作成されます。  
   
-## 参照  
- [Visual C\+\+ プロジェクトに対して作成されるファイルの種類](../ide/file-types-created-for-visual-cpp-projects.md)   
- [Visual C\+\+ プロジェクトの作成および管理](../ide/creating-and-managing-visual-cpp-projects.md)
+## <a name="see-also"></a>参照  
+ [Visual C++ プロジェクトに対して作成されるファイルの種類](../ide/file-types-created-for-visual-cpp-projects.md)   
+ [Visual C++ プロジェクトの作成と管理](../ide/creating-and-managing-visual-cpp-projects.md)

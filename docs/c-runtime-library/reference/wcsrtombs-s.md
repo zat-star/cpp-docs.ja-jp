@@ -5,9 +5,9 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - wcsrtombs_s
 apilocation:
@@ -32,30 +32,17 @@ helpviewer_keywords:
 - wcsrtombs_s function
 - wide characters, strings
 ms.assetid: 9dccb766-113c-44bb-9b04-07a634dddec8
-caps.latest.revision: 27
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 4c32ff2061e8ce52ae193c7679b40e69515d3ab0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0bb43cf628abfabe7b5900579ec6995c95c980b2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="wcsrtombss"></a>wcsrtombs_s
 ワイド文字の文字列をマルチバイト文字の文字列表現に変換します。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおりセキュリティが強化されたバージョンの [wcsrtombs](../../c-runtime-library/reference/wcsrtombs.md) です。  
@@ -124,9 +111,9 @@ errno_t wcsrtombs_s(
   
  `count` が特殊値 [_TRUNCATE](../../c-runtime-library/truncate.md) の場合、`wcsrtombs_s` は null 終端文字用の空きを残して、コピー先のバッファーに収まる限りの文字列を変換します。  
   
- `wcsrtombs_s` は、元の文字列を正常に変換すると、null 終端文字を含む変換後の文字列のサイズ (バイト数) を `*``pReturnValue` に書き込みます (`pReturnValue` が `NULL`でない場合に限ります)。 これは、`mbstr` 引数が `NULL` である場合でも発生し、必要なバッファー サイズを決定する方法を提供します。 `mbstr` が `NULL` の場合は、`count` は無視されることに注意してください。  
+ `wcsrtombs_s` は、元の文字列を正常に変換すると、null 終端文字を含む変換後の文字列のサイズ (バイト数) を `*pReturnValue` に書き込みます (`pReturnValue` が `NULL`でない場合に限ります)。 これは、`mbstr` 引数が `NULL` である場合でも発生し、必要なバッファー サイズを決定する方法を提供します。 `mbstr` が `NULL` の場合は、`count` は無視されることに注意してください。  
   
- マルチバイト文字に変換できないワイド文字が検出された場合、`wcsrtombs_s` は `*``pReturnValue` に -1 を入れ、コピー先バッファーを空文字列に設定し、`errno` を `EILSEQ` に設定して、`EILSEQ` を返します。  
+ マルチバイト文字に変換できないワイド文字が検出された場合、`wcsrtombs_s` は `*pReturnValue` に -1 を入れ、コピー先バッファーを空文字列に設定し、`errno` を `EILSEQ` に設定して、`EILSEQ` を返します。  
   
  `wcstr` および `mbstr` が指すシーケンスが重なり合う場合、`wcsrtombs_s` の動作は未定義です。 `wcsrtombs_s` は、現在のロケールの LC_TYPE カテゴリの影響を受けます。  
   
@@ -135,7 +122,7 @@ errno_t wcsrtombs_s(
   
  `wcsrtombs_s` 関数は、再開できるかどうかの点で [wcstombs_s、_wcstombs_s_l](../../c-runtime-library/reference/wcstombs-s-wcstombs-s-l.md) と異なります。 同じ関数または再開可能な他の関数の後続の呼び出しのために、変換状態が `mbstate` に格納されます。 再開可能な関数と再開不可能な関数を混用した場合、結果は未定義です。 たとえば、アプリケーションは `wcsrlen` を使用し、`wcslen` は使用しないことがあります。これは、後続の呼び出しで `wcsrtombs_s` を使用しており、`wcstombs_s.` は使用しない場合です。  
   
- C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ## <a name="exceptions"></a>例外  
  `wcsrtombs_s` 関数は、この関数の実行中に現行スレッドのどの関数も `setlocale` を呼び出さず、かつ `mbstate` が null である限り、マルチスレッド セーフです。  
@@ -187,13 +174,13 @@ void main()
 The string was successfully converted.  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`wcsrtombs_s`|\<wchar.h>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

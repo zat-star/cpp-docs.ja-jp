@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - OLE DB providers, properties
 - properties [C++], OLE DB provider
 ms.assetid: 26a8b493-7ec4-4686-96d0-9ad5d2bca5ac
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 80b82e1fb69200f45716b2ad62a44160862f7d08
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 92c5128e3df1e2dfebfef338f3505201cfc40671
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="setting-properties-in-your-provider"></a>プロバイダーでのプロパティの設定
 目的のプロパティのプロパティ グループとプロパティ ID が見つかりません。 詳細については、次を参照してください。 [OLE DB プロパティ](https://msdn.microsoft.com/en-us/library/ms722734.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
@@ -55,5 +60,5 @@ ms.lasthandoff: 10/24/2017
   
 -   **DBPROP_CANHOLDROWS**は無視されます。 プロバイダーは独自の制限を指定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB プロバイダー テンプレートの操作](../../data/oledb/working-with-ole-db-provider-templates.md)

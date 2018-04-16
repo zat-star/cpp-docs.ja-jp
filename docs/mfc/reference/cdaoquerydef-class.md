@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -40,7 +41,8 @@ f1_keywords:
 - AFXDAO/CDaoQueryDef::SetSQL
 - AFXDAO/CDaoQueryDef::m_pDAOQueryDef
 - AFXDAO/CDaoQueryDef::m_pDatabase
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDaoQueryDef [MFC], CDaoQueryDef
 - CDaoQueryDef [MFC], Append
@@ -73,15 +75,17 @@ helpviewer_keywords:
 - CDaoQueryDef [MFC], m_pDAOQueryDef
 - CDaoQueryDef [MFC], m_pDatabase
 ms.assetid: 9676a4a3-c712-44d4-8c5d-d1cc78288d3a
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e619cbc049e64c25325ab8327ec6dd9d16e071be
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cbade1dc41b0e195606b10598e92f86195662bba
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdaoquerydef-class"></a>CDaoQueryDef クラス
 クエリ定義、つまり "querydef" を表し、通常はデータベースに保存されています。  
@@ -145,7 +149,7 @@ class CDaoQueryDef : public CObject
 > [!NOTE]
 >  DAO データベース クラスは、MFC データベース クラス ODBC Open Database Connectivity () をベースとは異なります。 DAO データベース クラスの名前では、"CDao"プレフィックスがあります。 DAO クラスで ODBC データ ソースのアクセスすることもできます。 一般に、DAO に基づいて MFC クラスは ODBC; に基づいて MFC クラスよりもより高機能ですDAO ベースのクラスは、独自のデータベース エンジンを使用して、ODBC ドライバーを介してなどのデータにアクセスできます。 DAO ベースのクラスには、DAO を直接呼び出すことがなく、クラスを使用してテーブルの追加などのデータ定義言語 (DDL) 操作もサポートします。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  クエリ定義やオブジェクトを使用するか、保存済みのクエリを使用する新しいクエリまたは一時的なクエリを保存します。  
   
 1.  すべてのケースでは構築最初、`CDaoQueryDef`へのポインターを提供するオブジェクト、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)クエリが属しているオブジェクトします。  
@@ -190,7 +194,7 @@ class CDaoQueryDef : public CObject
   
  `CDaoQueryDef`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdao.h  
   
 ##  <a name="append"></a>CDaoQueryDef::Append  
@@ -753,7 +757,7 @@ void SetSQL(LPCTSTR lpszSQL);
 ### <a name="remarks"></a>コメント  
  一般的な使用`SetSQL`パススルーの SQL クエリで使用するためのクエリ定義オブジェクトを設定します。 (対象となる DBMS 上の SQL パススルー クエリの構文、DBMS のマニュアルを参照してください)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [CDaoRecordset クラス](../../mfc/reference/cdaorecordset-class.md)   

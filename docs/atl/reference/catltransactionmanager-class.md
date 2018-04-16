@@ -1,11 +1,12 @@
 ---
-title: "CAtlTransactionManager クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CAtlTransactionManager クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CAtlTransactionManager
@@ -28,18 +29,22 @@ f1_keywords:
 - ATLTRANSACTIONMANAGER/ATL::SetFileAttributes
 - ATLTRANSACTIONMANAGER/ATL::m_bFallback
 - ATLTRANSACTIONMANAGER/ATL::m_hTransaction
-dev_langs: C++
-helpviewer_keywords: CAtlTransactionManager class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAtlTransactionManager class
 ms.assetid: b01732dc-1d16-4b42-bfac-b137fca2b740
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ae0d3c60ee17683a1d46b35caadea7784e167b7e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0def8aa809cd1ccc115ccc2a09b1ae752316098f
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="catltransactionmanager-class"></a>CAtlTransactionManager クラス
 CAtlTransactionManager クラスは、カーネル トランザクション マネージャー (KTM) 関数のラッパーを提供します。  
@@ -85,7 +90,7 @@ class CAtlTransactionManager;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[m_bFallback](#m_bfallback)|`TRUE`場合は、フォールバックがサポートされています。`FALSE`それ以外の場合。|  
 |[m_hTransaction](#m_htransaction)|トランザクションのハンドルです。|  
@@ -95,7 +100,7 @@ class CAtlTransactionManager;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [ATL::CAtlTransactionManager](../../atl/reference/catltransactionmanager-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atltransactionmanager.h  
   
 ##  <a name="dtor"></a>~ CAtlTransactionManager  
@@ -466,10 +471,10 @@ inline BOOL SetFileAttributes(LPCTSTR lpFileName, DWORD dwAttributes);
  ファイルまたはディレクトリの名前。  
   
  `dwAttributes`  
- ファイルに設定するファイル属性。 詳細については、次を参照してください。 [SetFileAttributesTransacted](http://go.microsoft.com/fwlink/linkid=158699)です。  
+ ファイルに設定するファイル属性。 詳細については、次を参照してください。 [SetFileAttributesTransacted](http://go.microsoft.com/fwlink/p/?linkid=158699)です。  
   
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`SetFileAttributesTransacted`関数。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)

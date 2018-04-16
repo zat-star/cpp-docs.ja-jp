@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.types.character
-dev_langs: C++
+f1_keywords:
+- c.types.character
+dev_langs:
+- C++
 helpviewer_keywords:
 - character classification routines
 - characters, testing
 ms.assetid: 3b6c8f0b-9701-407a-b384-9086698773f5
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d238acf9bfe55052a1d6dc316f5425774737f9f2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4c43761189d9241e77faa67ad106f346fb8f92ae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="character-classification"></a>文字分類
 これらのルーチンでは、指定された 1 バイト文字、ワイド文字、またはマルチバイト文字について条件を満たすかどうかをテストします。 (定義上、0 ～ 127 の間の ASCII 文字セットは、すべてのマルチバイト文字セットのサブセットと考えることができます。 たとえば、日本語のカタカナには ASCII 文字と非 ASCII 文字が含まれています)。  
@@ -37,7 +42,7 @@ if ((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z'))
   
 ### <a name="character-classification-routines"></a>文字分類ルーチン  
   
-|ルーチン|文字のテスト条件|  
+|ルーチンによって返される値|文字のテスト条件|  
 |-------------|------------------------------|  
 |[isalnum、iswalnum、_isalnum_l、_iswalnum_l](../c-runtime-library/reference/isalnum-iswalnum-isalnum-l-iswalnum-l.md)、[_ismbcalnum、_ismbcalnum_l、_ismbcalpha、_ismbcalpha_l、_ismbcdigit、_ismbcdigit_l](../c-runtime-library/reference/ismbcalnum-functions.md)|英数字|  
 |[_ismbcalnum、_ismbcalnum_l、_ismbcalpha、_ismbcalpha_l、_ismbcdigit、_ismbcdigit_l](../c-runtime-library/reference/ismbcalnum-functions.md)|英数字|  
@@ -65,5 +70,5 @@ if ((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z'))
 |[isxdigit、iswxdigit、_isxdigit_l、_iswxdigit_l](../c-runtime-library/reference/isxdigit-iswxdigit-isxdigit-l-iswxdigit-l.md)|16 進数|  
 |[_mbclen、mblen、_mblen_l](../c-runtime-library/reference/mbclen-mblen-mblen-l.md)|有効なマルチバイト文字の長さを返します。結果は、現在のロケールの `LC_CTYPE` のカテゴリの設定によって異なります|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

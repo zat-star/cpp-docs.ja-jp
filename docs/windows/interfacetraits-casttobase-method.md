@@ -1,62 +1,65 @@
 ---
-title: "InterfaceTraits::CastToBase メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::InterfaceTraits::CastToBase"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CastToBase メソッド"
+title: Interfacetraits::casttobase メソッド |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- implements/Microsoft::WRL::Details::InterfaceTraits::CastToBase
+dev_langs:
+- C++
+helpviewer_keywords:
+- CastToBase method
 ms.assetid: 0591a017-0adf-4358-b946-eb0a307ce7f2
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: ''
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 6817f83d40943b871327c56fac692d9a60163de2
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/22/2018
 ---
-# InterfaceTraits::CastToBase メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="interfacetraitscasttobase-method"></a>InterfaceTraits::CastToBase メソッド
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template<  
-   typename T  
->  
+template<typename T>  
 static __forceinline Base* CastToBase(  
    _In_ T* ptr  
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- `ptr`パラメーターの型。  
+ パラメーターの型`ptr`です。  
   
  `ptr`  
- 型 `T`へのポインター。  
+ 型へのポインター`T`です。  
   
-## 戻り値  
- `Base` へのポインター。  
+## <a name="return-value"></a>戻り値  
+ ポインター`Base`です。  
   
-## 解説  
- `Base`へのポインターに指定したポインターをキャストします。  
+## <a name="remarks"></a>コメント  
+ ポインターへのポインターをキャスト`Base`です。  
   
- `Base`に関する詳細については、[InterfaceTraits 構造体](../windows/interfacetraits-structure.md)のパブリックな Typedef セクションを参照します。  
+ 詳細については`Base`、パブリック Typedef セクションを参照して[InterfaceTraits 構造体](../windows/interfacetraits-structure.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [InterfaceTraits 構造体](../windows/interfacetraits-structure.md)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

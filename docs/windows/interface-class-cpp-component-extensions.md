@@ -1,98 +1,103 @@
 ---
-title: "interface class  (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "interface_CPP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "interface class keyword"
-  - "interface struct keyword"
+title: "インターフェイス クラス (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- interface_CPP
+dev_langs:
+- C++
+helpviewer_keywords:
+- interface class keyword
+- interface struct keyword
 ms.assetid: 3ccea701-f50b-4da7-ad6b-f0ee1203e2b9
-caps.latest.revision: 30
-caps.handback.revision: 28
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: abe4173dabd20442b96c8e5536b040483df4f150
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# interface class  (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-インターフェイスを宣言します。ネイティブ インターフェイスの詳細については、「[\_\_interface](../Topic/__interface.md)」を参照してください。  
+# <a name="interface-class--c-component-extensions"></a>インターフェイス クラス (C++ コンポーネント拡張)
+インターフェイスを宣言します。  ネイティブ インターフェイスについては、次を参照してください。 [_ _interface](../cpp/interface.md)です。  
   
-## すべてのランタイム  
+## <a name="all-runtimes"></a>すべてのランタイム  
  **構文**  
   
 ```  
   
-        interface_access interface class  name :  inherit_access base_interface {};  
-interface_access interface struct name :  inherit_access base_interface {};  
+interface_access  
+interface class  
+ name :  inherit_accessbase_interface{};interface_accessinterface structname :  inherit_accessbase_interface{};  
 ```  
   
  **パラメーター**  
   
- *interface\_access*  
- アセンブリの外部でインターフェイスのアクセシビリティを確認します。有効値は **パブリック** と `private`です。`private` は既定です。入れ子になったインターフェイスは *interface\_access* の指定子を含めることはできません。  
+ *interface_access*  
+ アセンブリの外部インターフェイスのアクセシビリティ。  指定できる値は**パブリック**と`private`です。  `private` が既定値です。  入れ子になったインターフェイスを持つことはできません、 *interface_access*指定子。  
   
  *name*  
  インターフェイスの名前。  
   
- *inherit\_access*  
- *base\_interface* のアクセシビリティ。基本インターフェイスの唯一の許可されたアクセシビリティは `public` \(既定\) です。  
+ *inherit_access*  
+ アクセシビリティ*base_interface*です。  許可されるユーザー補助機能の基底インターフェイスが`public`(既定)。  
   
- *base\_interface* \(省略可能\)  
- インターフェイス *name*の基本インターフェイス。  
+ *base_interface* (省略可能)  
+ インターフェイスの基本インターフェイス*名前*です。  
   
  **解説**  
   
- **インターフェイス構造体** は **インターフェイス クラス**と同じです。  
+ **構造体をインターフェイス**は等価**インターフェイス クラス**です。  
   
- インターフェイスは、関数、イベント、およびプロパティの宣言を含めることができます。すべてのインターフェイス メンバーにはパブリックなアクセシビリティがあります。  インターフェイスは、静的データ メンバー、関数、イベント、およびプロパティを含めることができ、それらの静的メンバーがインターフェイスで定義する必要があります。  
+ インターフェイスは、関数、イベント、およびプロパティの宣言を含めることができます。  すべてのインターフェイス メンバーは、パブリック アクセシビリティを持ちます。 静的データ メンバー、関数、イベント、およびプロパティが、インターフェイスに含めることもでき、これらの静的メンバーは、インターフェイスで定義する必要があります。  
   
- インターフェイスはクラスがどのように実装される可能性があるかを定義します。  インターフェイスはクラスではなく、クラスはインターフェイスの実装だけです。  クラスがインターフェイスで宣言された関数を定義する場合、関数は実装されましたり、オーバーライドされません。  したがって、名前の参照は、インターフェイス メンバーは含まれません。  
+ インターフェイスは、クラスを実装する方法を定義します。 インターフェイスはクラスではないと、クラスがインターフェイスを実装できますのみです。 クラスは、インターフェイスで宣言された関数を定義、オーバーライドされていない関数は実装されます。 そのため、名前の参照では、インターフェイスのメンバーは含まれません。  
   
- インターフェイスから派生するクラスまたは構造体は、インターフェイスのすべてのメンバーを実装しなければなりません。  インターフェイス名を実装したときにも表示されます `base_interface` のインターフェイスを実装しなければなりません。  
+ クラスまたは構造体、インターフェイスから派生したインターフェイスのすべてのメンバーを実装する必要があります。 インターフェイスを実装するときに*名前*で示されるインターフェイスを実装することも必要があります、 `base_interface`  ボックスの一覧です。  
   
- 詳細については、次のトピックを参照してください。  
+ 詳細については次を参照してください:  
   
--   [インターフェイス静的コンストラクター](../dotnet/how-to-define-an-interface-static-constructor-cpp-cli.md)  
+-   [Interface 静的コンス トラクター](../dotnet/how-to-define-an-interface-static-constructor-cpp-cli.md)  
   
--   [Generic Interfaces \(Visual C\+\+\)](../Topic/Generic%20Interfaces%20\(Visual%20C++\).md)  
+-   [ジェネリック インターフェイス (Visual C++)](../windows/generic-interfaces-visual-cpp.md)  
   
- 他の CLR 型の詳細については、「[Classes and Structs](../windows/classes-and-structs-cpp-component-extensions.md)」を参照してください。  
+ その他の CLR 型については、次を参照してください。[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)です。  
   
- 型が `__is_interface_class(``type``)`のインターフェイスかどうかコンパイル時に検出できます。  詳細については、「[Compiler Support for Type Traits](../windows/compiler-support-for-type-traits-cpp-component-extensions.md)」を参照してください。  
+ 型がインターフェイスの場合は、コンパイル時に検出できます`__is_interface_class(type)`です。 詳細については、次を参照してください。[型の特徴のコンパイラ サポート](../windows/compiler-support-for-type-traits-cpp-component-extensions.md)です。  
   
- 開発環境では、キーワード \(`interface class` など\) 選択して F1 キーを押すことで、そのキーワードに関する F1 ヘルプを表示できます。  
+ 開発環境で取得できますの F1 ヘルプでこれらのキーワードは、キーワードを強調表示され (`interface class`、たとえば) f1 キーを押します。  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
+## <a name="windows-runtime"></a>Windows ランタイム  
  **解説**  
   
- \(この言語機能には Windows ランタイムのみに適用される特記事項がありません。\)  
+ (この言語機能には Windows ランタイムのみに適用される特記事項がありません。)  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
  **解説**  
   
- \(この言語機能には共通言語ランタイムのみに適用される特記事項がありません。\)  
+ (この言語機能には共通言語ランタイムのみに適用される特記事項がありません。)  
   
-### 要件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**  
   
-### 例  
+### <a name="examples"></a>使用例  
  **例**  
   
- 次のコード例にインターフェイスが clock 関数の動作を定義する方法を示します。  
+ 次のコード例では、インターフェイスが clock 関数の動作を定義する方法を示します。  
   
 ```  
 // mcppv2_interface_class.cpp  
@@ -186,14 +191,23 @@ int main() {
   
  **出力**  
   
-  **Function\_3**  
- **Function\_2**  
- **Function\_1**  
- **8**  
- **OnClick: 7, 3.14159**  
- **Function\_1** **例**  
+```Output  
+in Function_3  
   
- 次のコード サンプルでは、これらのインターフェイスをクラスによって使用される場所で複数のインターフェイスで宣言されている同じシグネチャを持つ関数を実装するには、2 とおりの方法を示します。  
+in Function_2  
+  
+in Function_1  
+  
+8  
+  
+OnClick: 7, 3.14159  
+  
+in Function_1  
+```  
+  
+ **例**  
+  
+ 次のコード サンプルでは、宣言で複数のインターフェイスとクラスでこれらのインターフェイスが使用されている同じシグネチャを持つ関数を実装する 2 つの方法を示します。  
   
 ```  
 // mcppv2_interface_class_2.cpp  
@@ -218,5 +232,5 @@ ref struct R : I, J {
 };  
 ```  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>参照  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

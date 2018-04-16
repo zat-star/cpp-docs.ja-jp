@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: /zg
-dev_langs: C++
+f1_keywords:
+- /zg
+dev_langs:
+- C++
 helpviewer_keywords:
 - Zg compiler option [C++]
 - /Zg compiler option [C++]
@@ -16,15 +19,17 @@ helpviewer_keywords:
 - -Zg compiler option [C++]
 - generate function prototypes compiler option
 ms.assetid: c8df1b46-24ff-46f2-8356-e0a144b21dd2
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5b0db06df7808d5903791e86840210bf60dd200c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 03e42c32806bbe7142b8d4d03e2f0974eeacdf84
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="zg-generate-function-prototypes"></a>/Zg (関数プロトタイプの生成)
 削除されました。 ソース ファイルで定義された各関数の関数プロトタイプを作成しますが、ソース ファイルはコンパイルされません。  
@@ -67,6 +72,6 @@ void f2(T2 * t) {}
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

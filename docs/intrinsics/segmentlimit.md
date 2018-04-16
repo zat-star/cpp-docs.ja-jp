@@ -1,63 +1,67 @@
 ---
-title: "__segmentlimit | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__segmentlimit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__segmentlimit 組み込み"
-  - "lsl 命令"
+title: "_ _segmentlimit |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- __segmentlimit
+dev_langs:
+- C++
+helpviewer_keywords:
+- __segmentlimit intrinsic
+- lsl instruction
 ms.assetid: d0bc3630-90cb-4185-8667-686fd41e23d4
-caps.latest.revision: 21
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7f0e4ed3eab3d533c0b7e948cf89a1921388c181
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# __segmentlimit
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="segmentlimit"></a>__segmentlimit
+**Microsoft 固有の仕様**  
   
- `lsl` \(読み込みセグメントの制限\) 命令を生成します。  
+ 生成、 `lsl` (負荷のセグメントの制限) の命令。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-unsigned long __segmentlimit(   
-   unsigned long a   
+unsigned long __segmentlimit(   
+   unsigned long a   
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `a`  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `a`  
  セグメントのセレクターを指定する定数。  
   
-## 戻り値  
- セレクターに現在のアクセス許可レベルでは参照できる `a,` で指定されるセグメントのセレクター セグメントの制限。  
+## <a name="return-value"></a>戻り値  
+ 指定されたセグメント セレクターのセグメントの上限`a`セレクターは、現在のアクセス許可レベルで有効と表示されているが、します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__segmentlimit`|x86[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__segmentlimit`|x86、 [!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- セグメントの制限を取得できない場合この手順は失敗します。  エラー発生時にこの手順は ZF フラグをクリアし戻り値は未定義です。  
+## <a name="remarks"></a>コメント  
+ セグメントの上限を取得できない場合は、この命令が失敗します。 失敗した場合、この命令が ZF フラグをクリアし、戻り値が定義されていません。  
   
- このルーチンは組み込みとしてのみ使用できます。  
+ このルーチンは、組み込みとしてのみ使用できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 #include <stdio.h>  
@@ -104,10 +108,14 @@ int main(void)
 }  
 ```  
   
-  **前に : セグメントの制限 \=0xbaadbabe の \=0x0 eflags**   
-**後 : セグメントの制限 \=0xffffffff で eflags \=0x256 eflags.zf \= Set**   
-**Success\!  sl は変更されました**    
-## 終了 Microsoft 固有の仕様→  
+```Output  
+Before: segment limit =0xbaadbabe eflags =0x0  
+After: segment limit =0xffffffff eflags =0x256 eflags.zf = set  
+Success!  
+sl was changed  
+```  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+  
+## <a name="see-also"></a>参照  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

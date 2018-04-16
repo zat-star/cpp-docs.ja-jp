@@ -1,51 +1,52 @@
 ---
-title: "Idbschemarowsetimpl::createschemarowset |Microsoft ドキュメント"
+title: IDBSchemaRowsetImpl::CreateSchemaRowset | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - IDBSchemaRowsetImpl::CreateSchemaRowset
 - ATL::IDBSchemaRowsetImpl::CreateSchemaRowset
 - CreateSchemaRowset
 - IDBSchemaRowsetImpl.CreateSchemaRowset
 - ATL.IDBSchemaRowsetImpl.CreateSchemaRowset
-dev_langs: C++
-helpviewer_keywords: CreateSchemaRowset method
+dev_langs:
+- C++
+helpviewer_keywords:
+- CreateSchemaRowset method
 ms.assetid: ad3e3e4d-45b9-461c-b7b8-3af6843631b1
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b68f02797217fbb6b8277afa55f6a24ec59af22f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: e819805f9c73b2f8622b21b999b0db5f6771ecbe
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="idbschemarowsetimplcreateschemarowset"></a>IDBSchemaRowsetImpl::CreateSchemaRowset
 テンプレート パラメーターで指定されたオブジェクトの COM オブジェクトの作成関数を実装します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      template < class   
-      SchemaRowsetClass  
-       >  
-HRESULT CreateSchemaRowset(  
-   IUnknown *pUnkOuter,  
+```cpp
+template template <class SchemaRowsetClass>  
+HRESULT CreateSchemaRowset(IUnknown *pUnkOuter,  
    ULONG cRestrictions,  
    const VARIANT rgRestrictions[],  
    REFIID riid,  
    ULONG cPropertySets,  
    DBPROPSET rgPropertySets[],  
    IUnknown** ppRowset,  
-   SchemaRowsetClass*& pSchemaRowset   
-);  
+   SchemaRowsetClass*& pSchemaRowset);  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -79,10 +80,10 @@ HRESULT CreateSchemaRowset(
 ## <a name="remarks"></a>コメント  
  この関数は、あらゆる種類のスキーマ行セットに対する汎用作成関数を実装します。 通常、この関数は、ユーザーからは呼び出されません。 これはスキーマ マップの実装によって呼び出されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IDBSchemaRowsetImpl クラス](../../data/oledb/idbschemarowsetimpl-class.md)   
  [IDBSchemaRowsetImpl クラス メンバー](http://msdn.microsoft.com/en-us/e74f6f82-541c-42e7-b4c6-e2d4656a0649)   
  [SCHEMA_ENTRY](../../data/oledb/schema-entry.md)   

@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - _com_ptr_t::QueryInterface
 - _com_ptr_t.QueryInterface
-dev_langs: C++
-helpviewer_keywords: QueryInterface method [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- QueryInterface method [C++]
 ms.assetid: d03292f1-6b02-40db-9756-8b0837a97319
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1dd546da4730bfd2995b4d97be8017807d2ae161
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 21dffde38e58bb7c07a1a92421d3febe10cc1032
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comptrtqueryinterface"></a>_com_ptr_t::QueryInterface
 **Microsoft 固有の仕様**  
@@ -54,5 +59,5 @@ template<typename _InterfaceType> HRESULT QueryInterface (
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_com_ptr_t クラス](../cpp/com-ptr-t-class.md)

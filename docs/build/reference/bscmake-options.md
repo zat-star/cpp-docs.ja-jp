@@ -1,17 +1,19 @@
 ---
-title: "BSCMAKE オプション |Microsoft ドキュメント"
-ms.custom: 
+title: BSCMAKE オプション |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VC.Project.VCBscMakeTool.OutputFile
 - VC.Project.VCBscMakeTool.SuppressStartupBanner
 - VC.Project.VCBscMakeTool.PreserveSBR
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - /v BSCMAKE option
 - Iu BSCMAKE option
@@ -36,15 +38,17 @@ helpviewer_keywords:
 - /Es BSCMAKE option
 - Ei BSCMAKE option
 ms.assetid: fa2f1e06-c684-41cf-80dd-6a554835ebd2
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 972ac61ff4e838e1c1bf2ad10db50f3a3d595a5b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 46c258a5591615bb277823ccc5261fade3c5e2af
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="bscmake-options"></a>BSCMAKE オプション
 ここでは、BSCMAKE を制御するためのオプションを説明します。 一部のオプションでは、特定の情報を除外するか、または含めることによってブラウザー情報ファイルの内容を制御できます。 除外オプションを使用すると、BSCMAKE の処理が速くなるだけでなく、.bsc ファイルのサイズが小さくなります。 オプション名は大文字小文字を区別 (除く**/help**と**/NOLOGO**)。  
@@ -101,5 +105,5 @@ ms.lasthandoff: 10/24/2017
 BSCMAKE /n /S toolbox.h /o main.bsc file1.sbr file2.sbr file3.sbr  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [BSCMAKE リファレンス](../../build/reference/bscmake-reference.md)

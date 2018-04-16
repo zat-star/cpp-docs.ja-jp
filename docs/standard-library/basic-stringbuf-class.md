@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - sstream/std::basic_stringbuf
 - sstream/std::basic_stringbuf::allocator_type
@@ -21,7 +22,8 @@ f1_keywords:
 - sstream/std::basic_stringbuf::seekpos
 - sstream/std::basic_stringbuf::str
 - sstream/std::basic_stringbuf::underflow
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::basic_stringbuf [C++]
 - std::basic_stringbuf [C++], allocator_type
@@ -37,15 +39,17 @@ helpviewer_keywords:
 - std::basic_stringbuf [C++], str
 - std::basic_stringbuf [C++], underflow
 ms.assetid: 40c85f9e-42a5-4a65-af5c-23c8e3bf8113
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 06d149e6a3f69096a86d84ebe3401b5dc30e748a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 472d63a58c9a44682e942a5ebb6ebdcc7c7b1d2f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="basicstringbuf-class"></a>basic_stringbuf クラス
 文字の特徴がクラス `Tr` によって決まる型 `Elem` の要素の、配列オブジェクトに格納されている要素のシーケンスとの間での転送を制御するストリーム バッファーについて説明します。  
@@ -87,7 +91,7 @@ class basic_stringbuf : public basic_streambuf<Elem, Tr>
   
 |||  
 |-|-|  
-|[allocator_type](#allocator_type)|この型は、テンプレート パラメーター `Alloc`のシノニムです。|  
+|[allocator_type](#allocator_type)|この型は、テンプレート パラメーター `Alloc` のシノニムです。|  
 |[char_type](#char_type)|型名を `Elem` テンプレート パラメーターに関連付けます。|  
 |[int_type](#int_type)|`basic_filebuf` のスコープ内のこの型を、`Tr` スコープ内の同じ名前の型と同等にします。|  
 |[off_type](#off_type)|`basic_filebuf` のスコープ内のこの型を、`Tr` スコープ内の同じ名前の型と同等にします。|  
@@ -106,13 +110,13 @@ class basic_stringbuf : public basic_streambuf<Elem, Tr>
 |swap||  
 |[underflow](#underflow)|入力ストリームから現在の要素を抽出するプロテクト仮想メンバー関数。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<sstream>  
   
  **名前空間:** std  
   
 ##  <a name="allocator_type"></a>  basic_stringbuf::allocator_type  
- この型は、テンプレート パラメーター `Alloc`のシノニムです。  
+ この型は、テンプレート パラメーター `Alloc` のシノニムです。  
   
 ```  
 typedef Alloc allocator_type;  
@@ -380,7 +384,7 @@ basic_stringbuf& basic_stringbuf:: operator=(const basic_stringbuf& other)
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [iostream プログラミング](../standard-library/iostream-programming.md)   
  [iostreams の規則](../standard-library/iostreams-conventions.md)

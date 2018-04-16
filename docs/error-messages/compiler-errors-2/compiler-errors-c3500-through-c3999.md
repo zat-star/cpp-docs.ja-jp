@@ -1,7 +1,8 @@
 ---
 title: "コンパイラ エラー C3500 C3999 から |Microsoft ドキュメント"
-ms.date: 10/25/2017
-ms.technology: cpp-tools
+ms.date: 11/17/2017
+ms.technology:
+- cpp-tools
 ms.topic: error-reference
 f1_keywords:
 - C3502
@@ -247,27 +248,29 @@ f1_keywords:
 - C3997
 - C3998
 - C3999
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: bd6f23ad-b300-4e07-8e35-9661cab1585f
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f480eafdf210f623ade26d7b9db783fdb46d8734
-ms.sourcegitcommit: 69632887f7a85f4841c49b4c1353d3144927a52c
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7a34b3f3fb635cc666b0e9cca079373bb7c5636e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-errors-c3500-through-c3999"></a>コンパイラ エラー C3500 C3999 から
 
-ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。
+ドキュメントのこのセクションの記事では、コンパイラによって生成されるエラー メッセージのサブセットについて説明します。
 
-> [!NOTE]
-> すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio).
+[!INCLUDE[error-boilerplate](../../error-messages/includes/error-boilerplate.md)]
 
-MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。
+## <a name="error-messages"></a>エラー メッセージ
 
-|エラー|メッセージ|
+|Error|メッセージ|
 |-----------|-------------|
 |[コンパイラ エラー C3500](compiler-error-c3500.md)|無効な ProgID '*progid*'|
 |[コンパイラ エラー C3501](compiler-error-c3501.md)|ProgID の登録された typelib はありません '*progid*'。|

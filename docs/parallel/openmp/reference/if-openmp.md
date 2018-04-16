@@ -1,55 +1,59 @@
 ---
-title: "if (OpenMP) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "if"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "if OpenMP clause"
+title: "場合 (OpenMP) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- if
+dev_langs:
+- C++
+helpviewer_keywords:
+- if OpenMP clause
 ms.assetid: db5940b6-2414-4bf8-934d-3edd8393c0f8
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f878a04a7db2243109d034ad93496e860ab1e3c7
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# if (OpenMP)
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-ループを並列でもシリアル実行するかどうかを指定します。  
+# <a name="if-openmp"></a>if (OpenMP)
+並列または直列に、ループを実行するかどうかを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 if(expression)  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
  `expression`  
- true に評価される場合 \(以外\)並列領域でコードが並列実行に必要な式。  式が FALSE と評価された場合 \(ゼロ\)並列領域ではシリアル実行されます \(シングル スレッドによって\)。  
+ True (ゼロ以外) と評価された場合は、並列実行する並列領域で、コードを原因となる整数式です。 式の評価が false (0)、並列領域が (1 つのスレッド) を直列に実行されます。  
   
-## 解説  
- `if` は次のディレクティブに対象 :  
+## <a name="remarks"></a>コメント  
+ `if` 次のディレクティブに適用されます。  
   
 -   [parallel](../../../parallel/openmp/reference/parallel.md)  
   
--   [for](../Topic/for%20\(OpenMP\).md)  
+-   [for](../../../parallel/openmp/reference/for-openmp.md)  
   
 -   [sections](../../../parallel/openmp/reference/sections-openmp.md)  
   
- 詳細については、「[2.3 parallel Construct](../../../parallel/openmp/2-3-parallel-construct.md)」を参照してください。  
+ 詳細については、次を参照してください。 [2.3 parallel コンストラクト](../../../parallel/openmp/2-3-parallel-construct.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // omp_if.cpp  
@@ -80,7 +84,10 @@ int main( )
 }  
 ```  
   
-  **val \= 0シリアル化されます。**  
-**val \= 22 種類のスレッドに並列化します**   
-## 参照  
- [Clauses](../../../parallel/openmp/reference/openmp-clauses.md)
+```Output  
+val = 0, serialized  
+val = 2, parallelized with 2 threads  
+```  
+  
+## <a name="see-also"></a>参照  
+ [句](../../../parallel/openmp/reference/openmp-clauses.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::multimap::swap
-dev_langs: C++
-helpviewer_keywords: swap member [STL/CLR]
+f1_keywords:
+- cliext::multimap::swap
+dev_langs:
+- C++
+helpviewer_keywords:
+- swap member [STL/CLR]
 ms.assetid: 198018d2-7814-4237-8ec3-5f3ea950e8af
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 848203f896f8693bfc1bf4437f958fc64eb2f267
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7b708ef2abf41595fe7d5012a5df23165ce6dcd8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multimapswap-stlclr"></a>multimap::swap (STL/CLR)
 2 つのコンテナーのコンテンツを交換します。  
@@ -35,7 +42,7 @@ void swap(multimap<Key, Mapped>% right);
  コンテンツを交換するコンテナー。  
   
 ## <a name="remarks"></a>コメント  
- このメンバー関数は、 `this` と `right`の間で被制御シーケンスを交換します。 定数時間では、例外をスローしません。 2 つのコンテナーの内容を交換する簡単な方法として使用するとします。  
+ このメンバー関数は、`this` と `right` の間で被制御シーケンスを交換します。 定数時間では、例外をスローしません。 2 つのコンテナーの内容を交換する簡単な方法として使用するとします。  
   
 ## <a name="example"></a>例  
   
@@ -87,11 +94,11 @@ int main()
 [a 1] [b 2] [c 3]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
  [multimap::operator= (STL/CLR)](../dotnet/multimap-operator-assign-stl-clr.md)

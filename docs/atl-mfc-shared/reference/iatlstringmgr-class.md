@@ -23,33 +23,20 @@ helpviewer_keywords:
 - memory, managing
 - IAtlStringMgr class
 ms.assetid: 722f0346-a770-4aa7-8f94-177be8dba823
-caps.latest.revision: 16
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 4ff4aa01a6d30f377560962f98a5892bdcc37837
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 85b99b0b1f35ecbc35b4096ac8c2260d0a55680d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iatlstringmgr-class"></a>IAtlStringMgr クラス
-このクラスにインターフェイスを表します。、`CStringT`メモリ マネージャー。  
+このクラスにインターフェイスを表します、`CStringT`メモリ マネージャー。  
   
 ## <a name="syntax"></a>構文  
   
@@ -63,22 +50,22 @@ __interface IAtlStringMgr
   
 |||  
 |-|-|  
-|[割り当てる](#allocate)|新しい文字列データ構造体を割り当てるには、このメソッドを呼び出します。|  
-|[複製](#clone)|別のインスタンスで使用するための新しい文字列マネージャーへのポインターを返すには、このメソッドを呼び出す`CSimpleStringT`します。|  
+|[割り当てる](#allocate)|新しい文字列データ構造を割り当てるには、このメソッドを呼び出します。|  
+|[複製](#clone)|別のインスタンスで使用するための新しい文字列マネージャーへのポインターを返すには、このメソッドを呼び出す`CSimpleStringT`です。|  
 |[無料](#free)|文字列データの構造体を解放するには、このメソッドを呼び出します。|  
-|[GetNilString](#getnilstring)|ポインターを返す、`CStringData`空の文字列オブジェクトを使用するオブジェクト。|  
-|[再割り当てください。](#reallocate)|文字列データ構造を再割り当てするには、このメソッドを呼び出します。|  
+|[GetNilString](#getnilstring)|ポインターを返します、`CStringData`空の文字列オブジェクトによって使用されるオブジェクト。|  
+|[再割り当てします](#reallocate)|このメソッドを呼び出して、文字列データの構造を再割り当てください。|  
   
 ## <a name="remarks"></a>コメント  
- このインターフェイスは、MFC に依存しない文字列クラスによって使用されるメモリを管理します。など、 [CSimpleStringT](../../atl-mfc-shared/reference/csimplestringt-class.md)、 [CStringT](../../atl-mfc-shared/reference/cstringt-class.md)、および[CFixedStringT](../../atl-mfc-shared/reference/cfixedstringt-class.md)します。  
+ このインターフェイスは、MFC に依存しない文字列クラスによって使用されるメモリを管理します。ように[CSimpleStringT](../../atl-mfc-shared/reference/csimplestringt-class.md)、 [CStringT](../../atl-mfc-shared/reference/cstringt-class.md)、および[CFixedStringT](../../atl-mfc-shared/reference/cfixedstringt-class.md)です。  
   
- このクラスは、カスタム文字列クラスに対してカスタム メモリ マネージャーの実装も使用できます。 詳細については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
+ このクラスを使用して、カスタム文字列クラスのカスタム メモリ マネージャーを実装することができますも。 詳細については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsimpstr.h  
   
 ##  <a name="allocate"></a>IAtlStringMgr::Allocate  
- 新しい文字列データ構造体が割り当てられます。  
+ 新しい文字列データ構造体を割り当てます。  
   
 ```
 CStringData* Allocate(int nAllocLength,int nCharSize) throw();
@@ -89,37 +76,37 @@ CStringData* Allocate(int nAllocLength,int nCharSize) throw();
  新しいメモリ ブロック内の文字の数。  
   
  `nCharSize`  
- 文字列のマネージャーによって使用される文字型のサイズをバイト単位で。  
+ 文字列マネージャーによって使用される文字型のサイズをバイト単位で。  
   
 ### <a name="return-value"></a>戻り値  
  新しく割り当てられたメモリ ブロックへのポインターを返します。  
   
 > [!NOTE]
->  例外をスローして失敗した割り当てを通知できません。 失敗した割り当てを返すことによって通知される代わりに、 **NULL**します。  
+>  例外をスローして失敗した割り当てをシグナルされません。 失敗した割り当てを返すことによって通知される代わりに、 **NULL**です。  
   
 ### <a name="remarks"></a>コメント  
  呼び出す[IAtlStringMgr::Free](#free)または[IAtlStringMgr::ReAllocate](#reallocate)このメソッドによって割り当てられたメモリを解放します。  
   
 > [!NOTE]
->  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
+>  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
 ##  <a name="clone"></a>IAtlStringMgr::Clone  
- 別のインスタンスで使用するための新しい文字列マネージャーへのポインターを返します`CSimpleStringT`します。  
+ 別のインスタンスで使用するための新しい文字列マネージャーへのポインターを返します`CSimpleStringT`です。  
   
 ```
 IAtlStringMgr* Clone() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- コピーを返す、`IAtlStringMgr`オブジェクトです。  
+ コピーを返します、`IAtlStringMgr`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- よく文字列マネージャーが新しい文字列の必要なときに、フレームワークが呼び出します。 ほとんどの場合、**この**ポインターが返されます。  
+ よく文字列マネージャーが新しい文字列に必要な場合に、フレームワークによって呼び出されます ほとんどの場合、**この**ポインターが返されます。  
   
- ただし、メモリ マネージャーでの複数のインスタンスによって使用されているがサポートされていない場合`CSimpleStringT`、共有可能な文字列マネージャーへのポインターを返す必要があります。  
+ ただし、メモリ マネージャーが複数のインスタンスによって使用されているをサポートしていない場合`CSimpleStringT`、共有可能な文字列のマネージャーへのポインターが返される必要があります。  
   
 > [!NOTE]
->  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
+>  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
 ##  <a name="free"></a>IAtlStringMgr::Free  
  文字列データの構造体を解放します。  
@@ -133,32 +120,32 @@ void Free(CStringData* pData) throw();
  解放するメモリ ブロックへのポインター。  
   
 ### <a name="remarks"></a>コメント  
- 割り当てられている指定されたメモリ ブロックを解放[Allocate](#allocate)または[再割り当て](../../atl/reference/iatlmemmgr-class.md#reallocate)します。  
+ 割り当てられている指定されたメモリ ブロックを解放[Allocate](#allocate)または[再割り当て](../../atl/reference/iatlmemmgr-class.md#reallocate)です。  
   
 > [!NOTE]
->  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
+>  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
 ##  <a name="getnilstring"></a>IAtlStringMgr::GetNilString  
- 空の文字列の文字列データの構造体へのポインターを返します。  
+ 空の文字列を文字列データ構造体へのポインターを返します。  
   
 ```
 CStringData* GetNilString() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- ポインター、`CStringData`オブジェクトが空の文字列を表すために使用します。  
+ ポインター、`CStringData`空の文字列を表すオブジェクトです。  
   
 ### <a name="remarks"></a>コメント  
  空の文字列表現を取得するには、この関数を呼び出します。  
   
 > [!NOTE]
->  カスタム文字列マネージャーを実装するときにこの関数は失敗する必要があることはありません。 インスタンスを埋め込むことによってこれを確認できる**CNilStringData**文字列 manager: クラス、およびそのインスタンスへのポインターを返す。  
+>  カスタム文字列マネージャーを実装するときにこの関数が失敗しない必要があります。 インスタンスに埋め込むことによってこれを確認できる**CNilStringData**文字列マネージャー クラスとそのインスタンスへのポインターを返すにします。  
   
 > [!NOTE]
->  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
+>  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
 ##  <a name="reallocate"></a>IAtlStringMgr::Reallocate  
- 文字列データ構造を再割り当てします。  
+ 文字列データ構造を再割り当ています。  
   
 ```
 CStringData* Reallocate(  
@@ -169,28 +156,27 @@ CStringData* Reallocate(
   
 ### <a name="parameters"></a>パラメーター  
  `pData`  
- メモリ マネージャーによって以前に割り当てられたメモリへのポインター。  
+ このメモリ マネージャーによって以前に割り当てられたメモリへのポインター。  
   
  `nAllocLength`  
  新しいメモリ ブロック内の文字の数。  
   
  `nCharSize`  
- 文字列のマネージャーによって使用される文字型のサイズをバイト単位で。  
+ 文字列マネージャーによって使用される文字型のサイズをバイト単位で。  
   
 ### <a name="return-value"></a>戻り値  
  新しく割り当てられたメモリ ブロックの先頭へのポインターを返します。  
   
 ### <a name="remarks"></a>コメント  
- 指定された既存のメモリ ブロックのサイズを変更するには、この関数を呼び出す`pData`します。  
+ 指定された既存のメモリ ブロックのサイズを変更するには、この関数を呼び出す`pData`です。  
   
  呼び出す[IAtlStringMgr::Free](#free)このメソッドによって割り当てられたメモリを解放します。  
   
 > [!NOTE]
->  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)します。  
+>  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
- [ATL と MFC クラスの共有](../../atl-mfc-shared/atl-mfc-shared-classes.md)
-
+ [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)
 
 

@@ -1,13 +1,15 @@
 ---
 title: itoa | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
-apiname: itoa
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- itoa
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,19 +22,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: itoa
-dev_langs: C++
-helpviewer_keywords: itoa function
+f1_keywords:
+- itoa
+dev_langs:
+- C++
+helpviewer_keywords:
+- itoa function
 ms.assetid: 1a824780-f3fc-48d4-86c4-d8c866eb7d87
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c4ed2b1cdeb3a930851c66dd6f65ae730b90456d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ac473be35faa10cc781575e47caa567dd11bea87
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="itoa"></a>itoa
 この POSIX 関数は使用されなくなりました。 代わりに ISO C++ 準拠の [_itoa](../../c-runtime-library/reference/itoa-i64toa-ui64toa-itow-i64tow-ui64tow.md) またはセキュリティが強化された [_itoa_s](../../c-runtime-library/reference/itoa-s-i64toa-s-ui64toa-s-itow-s-i64tow-s-ui64tow-s.md) を使用してください。

@@ -1,39 +1,43 @@
 ---
-title: "リンカ ツール エラー LNK2039 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK2039"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK2039"
+title: "リンカ ツール エラー LNK2039 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- LNK2039
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK2039
 ms.assetid: eaa296bd-4901-41f6-8410-6d03ee827144
-caps.latest.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 441765d85ce65a80102ed94b3f4394ae48c0e29f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカ ツール エラー LNK2039
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-another.obj で定義 '\<\>' されている ref クラス型をインポートします; これは、インポートされるか、定義することはできません。  
+# <a name="linker-tools-error-lnk2039"></a>リンカ ツール エラー LNK2039
+ref クラスをインポートする\<型 >' another.obj で定義されている以外の場合は、インポートまたは定義されており、両方は使用できませんである必要があります  
   
- ref クラス '\<`type`は指定\>' された .obj ファイルでインポートされますが、別の .obj ファイルに定義されています。  この条件により実行時エラーまたはそのほかの予測できない動作が発生する可能性があります。  
+ Ref クラス ' <`type`>' は、指定された .obj ファイルにインポートしますが、別の .obj ファイルにも定義されています。 この条件の実行時エラーまたはその他の予期しない動作が発生することができます。  
   
-### このエラーを解決するには  
+### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  .winmd ファイルからインポートするか '`type`' が他の .obj ファイルとチェックで定義する必要があるかどうかを確認します。  
+1.  確認するかどうか '`type`'、その他の .obj ファイルで定義する必要があります、.winmd ファイルからインポートする必要があるかどうかを確認します。  
   
-2.  定義のインポートを削除します。  
+2.  定義と、インポートのいずれかを削除します。  
   
-## 参照  
- [リンカー ツール エラーと警告](../../error-messages/tool-errors/linker-tools-errors-and-warnings.md)   
- [リンカ ツール エラー LNK1332](../../error-messages/tool-errors/linker-tools-error-lnk1332.md)
+## <a name="see-also"></a>参照  
+ [リンカ ツール エラーと警告](../../error-messages/tool-errors/linker-tools-errors-and-warnings.md)   
+ [リンカー ツール エラー LNK1332](../../error-messages/tool-errors/linker-tools-error-lnk1332.md)

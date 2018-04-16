@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: internal_CPP
-dev_langs: C++
-helpviewer_keywords: context-sensitive keywords
+f1_keywords:
+- internal_CPP
+dev_langs:
+- C++
+helpviewer_keywords:
+- context-sensitive keywords
 ms.assetid: e33da089-f434-44e9-8cce-4668d05a8939
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 68ff63d5b596d575f26ec0f56a3ac7a568c8471e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 1d5af53c04c6ff9ec28e7b83cd3a8f9bce8307c2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="context-sensitive-keywords--c-component-extensions"></a>状況依存のキーワード (C++ コンポーネント拡張)
 *状況依存のキーワード*は特定のコンテキストでのみ認識される言語要素です。 特定のコンテキスト以外では、状況依存のキーワードをユーザー定義の記号として使用することができます。  
@@ -60,7 +67,7 @@ ms.lasthandoff: 10/24/2017
   
  (この機能のプラットフォーム固有の解説はありません。)  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
 ## <a name="common-language-runtime"></a>共通言語ランタイム 
@@ -68,10 +75,10 @@ ms.lasthandoff: 10/24/2017
   
  (この機能のプラットフォーム固有の解説はありません。)  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/clr**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  **例**  
   
  次のコード例は、適切なコンテキストでは、`property` 状況依存キーワードを使用してプロパティと変数を定義できることを示しています。  
@@ -103,5 +110,5 @@ int main() {
 100  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

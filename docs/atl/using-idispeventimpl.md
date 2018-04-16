@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: IDispEventImpl
-dev_langs: C++
-helpviewer_keywords: IDispEventImpl class, using
+f1_keywords:
+- IDispEventImpl
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDispEventImpl class, using
 ms.assetid: 82d53b61-9d0d-45c5-aff9-2fafa468a9ca
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b469facafd4f386b97b5cfbc5d1661cdb6f5d3ec
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f787fac05e95fff8a974692c3e6fca24561ed222
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="using-idispeventimpl"></a>IDispEventImpl を使用します。
 使用する場合`IDispEventImpl`イベントを処理する必要があります。  
@@ -75,7 +81,7 @@ ms.lasthandoff: 10/24/2017
   
  [!code-cpp[NVC_ATL_EventHandlingSample#2](../atl/codesnippet/cpp/using-idispeventimpl_2.h)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イベント処理](../atl/event-handling-and-atl.md)   
  [コード](../visual-cpp-samples.md)
 

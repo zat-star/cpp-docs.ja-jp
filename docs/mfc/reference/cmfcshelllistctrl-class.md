@@ -1,11 +1,12 @@
 ---
-title: "CMFCShellListCtrl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CMFCShellListCtrl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CMFCShellListCtrl
@@ -28,7 +29,8 @@ f1_keywords:
 - AFXSHELLLISTCTRL/CMFCShellListCtrl::OnSetColumns
 - AFXSHELLLISTCTRL/CMFCShellListCtrl::Refresh
 - AFXSHELLLISTCTRL/CMFCShellListCtrl::SetItemTypes
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCShellListCtrl [MFC], DisplayFolder
 - CMFCShellListCtrl [MFC], DisplayParentFolder
@@ -49,15 +51,17 @@ helpviewer_keywords:
 - CMFCShellListCtrl [MFC], Refresh
 - CMFCShellListCtrl [MFC], SetItemTypes
 ms.assetid: ad472958-5586-4c50-aadf-1844c30bf6e7
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 455ac8911e99843c14cdab80a6c97e243259c5a6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d4b5204fe92685431ccdd2c6735553c9b7ce85bd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcshelllistctrl-class"></a>CMFCShellListCtrl クラス
 `CMFCShellListCtrl`クラスは、Windows のリスト コントロールの機能を提供し、シェル項目の一覧を表示する機能などを展開します。  
@@ -118,7 +122,7 @@ class CMFCShellListCtrl : public CMFCListCtrl
   
  `CMFCShellListCtrl`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxshelllistCtrl.h  
   
 ##  <a name="displayfolder"></a>CMFCShellListCtrl::DisplayFolder  
@@ -408,7 +412,7 @@ void SetItemTypes(SHCONTF nTypes);
 ### <a name="remarks"></a>コメント  
  項目の種類の一覧に関する詳細については、次を参照してください。 [SHCONTF](http://msdn.microsoft.com/library/windows/desktop/bb762539)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCListCtrl クラス](../../mfc/reference/cmfclistctrl-class.md)   

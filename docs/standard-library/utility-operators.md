@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - utility/std::operator!=
 - utility/std::operator&gt;
@@ -16,7 +16,7 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: a6617109-2cec-4a69-948f-6c87116eda5f
-caps.latest.revision: 13
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::operator!= (utility)
@@ -25,12 +25,11 @@ helpviewer_keywords:
 - std::operator&lt; (utility)
 - std::operator&lt;= (utility)
 - std::operator== (utility)
+ms.openlocfilehash: 407e08934c4469776feb34d0f18b20b457d208d9
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 9f9290b171a74098af5186c17f027fcf6e34c78f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltutilitygt-operators"></a>&lt;utility&gt; 演算子
 ||||  
@@ -238,7 +237,7 @@ The pair p1 is less than the pair p2.
 The pair p1 is not less than the pair p3.  
 ```  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  演算子の左辺のペア オブジェクトが右辺のペア オブジェクト以下かどうかを調べます。  
   
 ```  
@@ -402,7 +401,7 @@ The pair p1 is greater than the pair p3.
 The pair p1 is not greater than the pair p4.  
 ```  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  演算子の左辺のペア オブジェクトが右辺のペア オブジェクト以上かどうかを調べます。  
   
 ```  
@@ -483,7 +482,6 @@ Pair p1 is greater than or equal to pair p3.
 Pair p1 is greater than or equal to pair p4.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<utility>](../standard-library/utility.md)
-
 

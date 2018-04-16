@@ -15,34 +15,21 @@ dev_langs:
 helpviewer_keywords:
 - LNK4001
 ms.assetid: 0a8b1c3a-64ce-4311-b7c0-065995059246
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 7c00778af6740f1941b8f62836d4a169a1ca8f6b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2ecc78fe50fd34a0c6f583bf103d368e23f19f2e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linker-tools-warning-lnk4001"></a>リンカー ツールの警告 LNK4001
-オブジェクト ファイルが指定されていません。ライブラリを使用します。  
+オブジェクト ファイルが指定されていません。ライブラリを使用します  
   
  リンカーが渡されましたが、1 つまたは複数の .lib ファイル、.obj ファイルがありません。  
   
- リンカーが .obj ファイルにアクセスすることは、.lib ファイル内の情報にアクセスできないため、この警告は、その他のリンカー オプションを明示的に指定する必要があるを示します。 など、指定する必要があります、[マシン/](../../build/reference/machine-specify-target-platform.md)、 [/out](../../build/reference/out-output-file-name.md)、または[/ENTRY](../../build/reference/entry-entry-point-symbol.md)オプション。
+ リンカーは、.obj ファイルにアクセスすることである .lib ファイル内の情報にアクセスできないために、この警告は、その他のリンカー オプションを明示的に指定する必要があるを示します。 たとえばを指定する必要があります、[マシン/](../../build/reference/machine-specify-target-platform.md)、 [/out](../../build/reference/out-output-file-name.md)、または[/ENTRY](../../build/reference/entry-entry-point-symbol.md)オプション。

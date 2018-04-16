@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - BEGIN_ACCESSOR macro
 - BEGIN_ACCESSOR macro, multiple accessors
 - rowsets [C++], multiple accessors
 - accessors [C++], rowsets
 ms.assetid: 80d4dc5d-4940-4a28-a4ee-d8602f71d2a6
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b50604feb05609e15fbc0f241d297c8661efa00b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 41f5ae4381dd2505b2136e796c1b8832eaa75246
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="using-multiple-accessors-on-a-rowset"></a>行セットでの複数アクセサーの使用
 複数のアクセサーを使用する必要がある 3 つの基本的なシナリオはあります。  
@@ -114,7 +119,7 @@ int main(int argc, char* argv[])
         if (hr == S_OK)  
         {  
             // Ready to fetch/access data  
-            CTable<CAccessor<CJobs> > jobs;  
+            CTable<CAccessor<CJobs>> jobs;  
   
             // Set properties for making the rowset a read/write cursor  
             CDBPropSet dbRowset(DBPROPSET_ROWSET);  
@@ -165,6 +170,6 @@ int main(int argc, char* argv[])
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アクセサーの使用](../../data/oledb/using-accessors.md)   
  [ユーザー レコード](../../data/oledb/user-records.md)

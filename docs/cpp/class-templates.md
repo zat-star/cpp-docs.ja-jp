@@ -15,16 +15,17 @@ helpviewer_keywords:
 - class templates
 - templates, class templates
 ms.assetid: 633a53c8-24ee-4c23-8c88-e7c3cb0b7ac3
-caps.latest.revision: 13
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: f460497071445cff87308fa9bf6e0d43c6f13a3e
-ms.openlocfilehash: f9e94e2b656262eff46cd75014e90110ab20dc43
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0b14b45752559c80f4aafb60aa4ba23cb0d51b91
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="class-templates"></a>クラス テンプレート
 このトピックでは、C++ クラス テンプレートに固有の規則について説明します。  
@@ -205,7 +206,7 @@ X<T>::Y<U>::~Y()
  ローカル クラスはメンバー テンプレートを持つことができません。  
   
 ## <a name="template-friends"></a>テンプレートのフレンド  
- クラス テンプレートが持つことができます[友人](http://msdn.microsoft.com/en-us/bf412640-d857-4acb-b2b5-513131cb9681)です。 クラスまたはクラス テンプレート、関数または関数テンプレートは、テンプレート クラスへのフレンドにできます。 フレンドは、クラス テンプレートまたは関数テンプレートの特殊化でもかまいませんが、部分的特殊化は許されません。  
+ クラス テンプレートが持つことができます[友人](friend-cpp.md)です。 クラスまたはクラス テンプレート、関数または関数テンプレートは、テンプレート クラスへのフレンドにできます。 フレンドは、クラス テンプレートまたは関数テンプレートの特殊化でもかまいませんが、部分的特殊化は許されません。  
   
  次の例では、フレンド関数は、クラス テンプレート内の関数テンプレートとして定義されます。 このコードは、テンプレートのすべてのインスタンス化のフレンド関数版を生成します。 この構成は、フレンド関数がクラスと同じテンプレート パラメーターに依存している場合に便利です。  
   
@@ -447,6 +448,5 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [テンプレート](../cpp/templates-cpp.md)
-

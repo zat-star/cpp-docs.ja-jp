@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2011
-dev_langs: C++
-helpviewer_keywords: C2011
+f1_keywords:
+- C2011
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2011
 ms.assetid: 992c9d51-e850-4d53-b86b-02e73b38249c
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0f32048e0de21e5af2d4d52a0c703813b1a1ff8b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c599d6add1fa51c6aae7f04019eacdc94f11bb15
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2011"></a>コンパイラ エラー C2011
 'identifier' : 'type' 型の再定義  

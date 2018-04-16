@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _get_tzname
+ms.topic: reference
+apiname:
+- _get_tzname
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,21 +26,24 @@ apitype: DLLExport
 f1_keywords:
 - _get_tzname
 - get_tzname
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _get_tzname function
 - time zones
 - get_tzname function
 ms.assetid: df0065ff-095f-4237-832c-2fe9ab913875
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a1b5f7db562dc0173cda49212425b237a44c0610
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0a44accc317bf387fcdd3ab7879020b13fba6858
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="gettzname"></a>_get_tzname
 タイム ゾーン名または夏時間ゾーン名 (DST) の文字列表現を取得します。  
@@ -95,15 +100,15 @@ errno_t _get_tzname(
   
  実行時に値を明示的に変更しない限り、既定値はそれぞれ「PST」および「PDT」です。  これらの文字配列のサイズは `TZNAME_MAX` 値で管理されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_get_tzname`|\<time.h>|  
   
- 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)   
  [_get_daylight](../../c-runtime-library/reference/get-daylight.md)   

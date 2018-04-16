@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ATL::_AtlCreateWndData
 - ATL._AtlCreateWndData
@@ -18,16 +18,17 @@ helpviewer_keywords:
 - _AtlCreateWndData structure
 - AtlCreateWndData structure
 ms.assetid: 76ed5382-bfbf-4b8b-8a29-912688dfd2ae
-caps.latest.revision: 15
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bfc663429cc7cc1fe8ff6fc917f3150d621f9f75
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: a5b0811e88188bb29ef3153f739804cbdac66083
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atlcreatewnddata-structure"></a>_AtlCreateWndData 構造体
 この構造体には、ATL の windowing コードのクラス インスタンス データが含まれています。  
@@ -52,12 +53,11 @@ ms.lasthandoff: 10/09/2017
  **m_pNext**  
  次へのポインター`_AtlCreateWndData`オブジェクト。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlbase.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体](../../atl/reference/atl-structures.md)
-
 
 
 

@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - IAxWinAmbientDispatchEx
-- No header/ATL::IAxWinAmbientDispatchEx
-- No header/ATL::SetAmbientDispatch
-dev_langs: C++
-helpviewer_keywords: IAxWinAmbientDispatchEx interface
+- ATLIFACE/ATL::IAxWinAmbientDispatchEx
+- ATLIFACE/ATL::SetAmbientDispatch
+dev_langs:
+- C++
+helpviewer_keywords:
+- IAxWinAmbientDispatchEx interface
 ms.assetid: 2c25e079-6128-4278-bc72-b2c6195ba7ef
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 92eed1ce48c4aed1ae535b4ae3751501c432281d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3fd212417a00335bfc02699cf5e38eeacc6451ad
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iaxwinambientdispatchex-interface"></a>IAxWinAmbientDispatchEx インターフェイス
 このインターフェイスは、ホストされるコントロールの補足のアンビエント プロパティを実装します。  
@@ -55,7 +60,7 @@ MIDL_INTERFACE("B2D0778B - AC99 - 4c58 - A5C8 - E7724E5316B5") IAxWinAmbientDisp
   
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)詳細についてはします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  このインターフェイスの定義は、次の表に示すようにさまざまな形式で使用できます。  
   
 |定義の型|ファイル|  
@@ -81,5 +86,5 @@ virtual HRESULT STDMETHODCALLTYPE SetAmbientDispatch(IDispatch* pDispatch) = 0;
 ### <a name="remarks"></a>コメント  
  ときに`SetAmbientDispatch`が呼び出された任意のプロパティまたはメソッドから求められる、ホストされるコントロールでこれらのプロパティは既に提供されない場合の呼び出しに、この新しいインターフェイスを使用で新しいインターフェイスへのポインター、 [IAxWinAmbientDispatch](../../atl/reference/iaxwinambientdispatch-interface.md).  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IAxWinAmbientDispatch インターフェイス](../../atl/reference/iaxwinambientdispatch-interface.md)

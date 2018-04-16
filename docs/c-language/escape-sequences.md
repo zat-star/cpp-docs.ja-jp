@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - "\r escape sequence"
 - double backslash
@@ -37,15 +39,17 @@ helpviewer_keywords:
 - "	 escape sequence"
 - backspace escape sequence
 ms.assetid: 5aef377f-a76c-4d5c-aa04-8308758ad6a8
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8206f239af5ab8be0f20eed0f73b4ad0f1ba7e2f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d341aa5af2b16d1a29bc4e3dfe2f97a68b73d6ba
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="escape-sequences"></a>エスケープ シーケンス
 先頭に円記号 (**\\**) が指定されている、アルファベットや数字で構成される文字の組み合わせは、"エスケープ シーケンス" と呼ばれます。 改行文字や単一引用符など、文字定数内の特定の文字を表すには、エスケープ シーケンスを使用する必要があります。 エスケープ シーケンスは 1 つの文字と見なされるため、文字定数として有効です。  
@@ -88,5 +92,5 @@ ms.lasthandoff: 10/24/2017
 ( (exp) ? (void) 0:_assert( #exp, __FILE__, __LINE__ ) )  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 文字定数](../c-language/c-character-constants.md)

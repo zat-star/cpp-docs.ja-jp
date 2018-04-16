@@ -8,7 +8,7 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - fmin
 - fminf
@@ -38,15 +38,17 @@ helpviewer_keywords:
 - fminf function
 - fminl function
 ms.assetid: 1916dfb5-99c1-4b0d-aefb-513525c3f2ac
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4e8fd804c63caa1a8558e19cb67b4b3f35ecf180
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d90de1e734b2d2da4770c7a5ad85a5ee60a15408
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fmin-fminf-fminl"></a>fmin、fminf、fminl
 指定された 2 つの値のうち、小さい方を特定します。  
@@ -101,14 +103,14 @@ long double fminl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、float 型および long double 型を受け取って返す `fmin` のオーバーロードを呼び出すことができます。 C プログラムでは、`fmin` は常に double を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`fmin`、`fminf`、`fminl`|C: \<math.h><br />C++: \<math.h> または \<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)  
  [fmax、fmaxf、fmaxl](fmax-fmaxf-fmaxl.md)  

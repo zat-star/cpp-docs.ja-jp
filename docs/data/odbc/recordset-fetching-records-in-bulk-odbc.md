@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - bulk row fetching, implementing
 - ODBC recordsets, bulk row fetching
@@ -21,15 +23,18 @@ helpviewer_keywords:
 - rowsets, bulk row fetching
 - RFX (ODBC), bulk row fetching
 ms.assetid: 20d10fe9-c58a-414a-b675-cdf9aa283e4f
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c0eff5528d2b612fbeab4511f64341975791f3e1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 8d9738af557cb8d4dd26b792851f8be276e91380
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="recordset-fetching-records-in-bulk-odbc"></a>レコードセット: バルク行フェッチ (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
@@ -145,7 +150,7 @@ void MultiRowSet::DoBulkFieldExchange( CFieldExchange* pFX )
   
  レコード フィールド エクス チェンジ (RFX) の詳細については、次を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。 詳細については、パラメーターを使用して、次を参照してください。[つ](../../mfc/reference/cfieldexchange-class.md#setfieldtype)と[レコード セット: レコード セット (ODBC) のパラメーター化](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
  [CRecordset::m_nFields](../../mfc/reference/crecordset-class.md#m_nfields)   
  [CRecordset::m_nParams](../../mfc/reference/crecordset-class.md#m_nparams)

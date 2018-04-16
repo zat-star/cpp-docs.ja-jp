@@ -7,40 +7,27 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - reverse_iterator method
 ms.assetid: 1d190c41-56b1-462e-b564-793b2a883c26
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 3c165863392b573fbe360f959877269e48fecb99
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b6f5524b6e1c34a90cf7dc55a7a9e706555568bd
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="container-classreverseiterator"></a>コンテナー クラス::reverse_iterator
 > [!NOTE]
->  このトピックは、C++ 標準ライブラリで使用されるコンテナーの例 (実際には機能しない) として、Visual C++ ドキュメントに含まれています。 詳しくは、「[C++ 標準ライブラリのコンテナー](../standard-library/stl-containers.md)」をご覧ください。  
+>  このトピックは、C++ 標準ライブラリで使用されるコンテナーの例 (実際には機能しない) として、Visual C++ ドキュメントに含まれています。 詳細については、「[C++ Standard Library Containers (C++ 標準ライブラリ コンテナ―)](../standard-library/stl-containers.md)」をご覧ください。  
   
  被制御シーケンスの反転反復子として使用できるオブジェクトを表します。  
   
@@ -54,6 +41,5 @@ typedef T7 reverse_iterator;
 ## <a name="remarks"></a>コメント  
  ここでは、指定されていない型 **T7** のシノニムとして記述されています (通常は `reverse_iterator` **\<**[iterator](../standard-library/container-class-iterator.md)**>**)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サンプル コンテナー クラス](../standard-library/sample-container-class.md)
-

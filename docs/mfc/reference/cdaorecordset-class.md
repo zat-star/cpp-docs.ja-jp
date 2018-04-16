@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -90,7 +91,8 @@ f1_keywords:
 - AFXDAO/CDaoRecordset::m_pDatabase
 - AFXDAO/CDaoRecordset::m_strFilter
 - AFXDAO/CDaoRecordset::m_strSort
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CDaoRecordset [MFC], CDaoRecordset
 - CDaoRecordset [MFC], AddNew
@@ -173,15 +175,17 @@ helpviewer_keywords:
 - CDaoRecordset [MFC], m_strFilter
 - CDaoRecordset [MFC], m_strSort
 ms.assetid: 2322067f-1027-4662-a5d7-aa2fc7488630
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d9742093585283350ce2c40ae533cc9e530d94bd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e50e83a2d52567d30901cea33cfccec3e236fe67
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cdaorecordset-class"></a>CDaoRecordset クラス
 データ ソースから選択された 1 組のレコードセットを表現します。  
@@ -332,7 +336,7 @@ class CDaoRecordset : public CObject
   
  `CDaoRecordset`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxdao.h  
   
 ##  <a name="addnew"></a>CDaoRecordset::AddNew  
@@ -997,7 +1001,7 @@ short GetEditMode();
   
 ### <a name="remarks"></a>コメント  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**dbEditNone**|編集操作が進行中ではありません。|  
 |**dbEditInProgress**|**編集**が呼び出されています。|  
@@ -1909,7 +1913,7 @@ BOOL Seek(
  次の文字列式のいずれかの:"<「、」\<="、「=」、"> ="、または">"です。  
   
  `pKey1`  
- ポインター、 [COleVariant](../../mfc/reference/colevariant-class.md)値を持つが、インデックスの最初のフィールドに対応しています。 必須です。  
+ ポインター、 [COleVariant](../../mfc/reference/colevariant-class.md)値を持つが、インデックスの最初のフィールドに対応しています。 必須。  
   
  *pKey2*  
  ポインター、`COleVariant`存在する場合、インデックスで、2 番目のフィールドに値が対応しています。 既定値は**NULL**です。  
@@ -2311,7 +2315,7 @@ virtual void Update();
   
  関連情報については、"AddNew Method"、"ただし Method"、「メソッドの削除」、"LastModified Property"、「更新メソッド」、および「EditMode プロパティ」DAO ヘルプのトピックを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [どちらのクラス](../../mfc/reference/cdaotabledef-class.md)   

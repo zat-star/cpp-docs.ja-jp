@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2617
 ms.assetid: d6a435d2-7d95-4dbf-ad4a-abe4744f63e8
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 502893544555ca5ec827efd667779fe87dc2976a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 5e3272cb883469abbad5ee42538a7334ecd73d62
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2617"></a>コンパイラ エラー C2617
 'function': 矛盾の return ステートメント  
@@ -42,7 +43,7 @@ func() {   // no return type prototype
 }  
 ```  
   
- 考えられる解決策:  
+ 考えられる解決方法:  
   
 ```  
 // C2617b.cpp  

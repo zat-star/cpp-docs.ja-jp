@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - accelerator_view_removed
 - AMPRT/accelerator_view_removed
 - AMPRT/Concurrency::accelerator_view_removed:accelerator_view_removed
 - AMPRT/Concurrency::accelerator_view_removed:get_view_removed_reason
-dev_langs: C++
-helpviewer_keywords: AMPRT/Concurrency::accelerator_view_removed:accelerator_view_removed Class
+dev_langs:
+- C++
+helpviewer_keywords:
+- AMPRT/Concurrency::accelerator_view_removed:accelerator_view_removed Class
 ms.assetid: 262446de-311c-454e-a5ed-e2aaced0d88a
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ca0f97432c92b821a6fef941e1a3d9dc6d542de9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a1bc6784dd4f5ce9ee6b887b16a27f3a0126a9f5
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="acceleratorviewremoved-class"></a>accelerator_view_removed クラス
 基になる DirectX の呼び出しが Windows のタイムアウトの検出と回復機構が原因で失敗した場合にスローされる例外。  
@@ -55,12 +60,12 @@ class accelerator_view_removed : public runtime_exception;
   
  `out_of_memory`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amprt.h  
   
  **名前空間:** Concurrency  
 
-## <a name="ctor"></a>accelerator_view_removed 
+## <a name="ctor"></a> accelerator_view_removed 
 
 新しいインスタンスを初期化、 [accelerator_view_removed](accelerator-view-removed-class.md)クラスです。  
   
@@ -85,7 +90,7 @@ explicit accelerator_view_removed(
 ### <a name="return-value"></a>戻り値  
  Accelerator_view_removed クラスの新しいインスタンス。  
   
-## <a name="get_view_removed_reason_method"></a>get_view_removed_reason 
+## <a name="get_view_removed_reason_method"></a> get_view_removed_reason 
 
 原因を示す HRESULT エラー コードを返します、`accelerator_view`オブジェクトの削除。  
   
@@ -96,5 +101,5 @@ HRESULT get_view_removed_reason() const throw();
 ```  
   
  
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.help
-dev_langs: C++
+f1_keywords:
+- vc.help
+dev_langs:
+- C++
 helpviewer_keywords:
 - context-sensitive Help [MFC], MFC applications
 - TN028
 - resource identifiers, context-sensitive Help
 ms.assetid: 884f1c55-fa27-4d4c-984f-30907d477484
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 37e7cd70b9c121591c42811870558bbb0cc08d31
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d8054fe4fae4aafa88c34833a5a2a92a6b9b44bf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn028-context-sensitive-help-support"></a>テクニカル ノート 28: 状況依存のヘルプのサポート
 ここでは、ヘルプ コンテキスト Id と MFC では、その他のヘルプ問題の割り当ての規則について説明します。 状況依存のヘルプのサポートには、Visual C で使用可能なヘルプ コンパイラが必要です。  
@@ -178,7 +183,7 @@ int AFXAPI AfxMessageBox(UINT nIDPrompt,
   
  2 番目のケースでは、nIDHelp の既定値は、ヘルプ ID が nIDPrompt と同じことを示す-1 です。 ヘルプは機能のみ、アプリケーションのヘルプが有効な場合、当然のことながら)。 メッセージ ボックスにヘルプをサポートしていないことを希望する場合は、0 を nIDHelp の入力が必要です。 メッセージを有効になっているのヘルプが nIDPrompt よりヘルプ ID を必要に応じて、単に nIDHelp nIDPrompt のされるものと異なるは正の値を提供する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

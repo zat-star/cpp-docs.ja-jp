@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _ismbbprint_l
 - _ismbbprint
@@ -28,22 +29,25 @@ f1_keywords:
 - _ismbbprint
 - ismbbprint
 - ismbbprint_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - ismbbprint_l function
 - ismbbprint function
 - _ismbbprint function
 - _ismbbprint_l function
 ms.assetid: d08a061c-18a8-48f2-a75d-bff4870aec9d
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 451128fda38e5733cc9650e4783964d8c8aebfdc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2499e48ffd87171df50d46bd58327dc8c7cac47a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ismbbprint-ismbbprintl"></a>_ismbbprint、_ismbbprint_l
 指定されたマルチバイト文字が印刷文字かどうかを判定します。  
@@ -74,17 +78,17 @@ int _ismbbprint_l(
 isprint || _ismbbkprint  
 ```  
   
- `c`の場合は 0 以外の値、それ以外の場合は 0 です。 `_ismbbprint` は、すべてのロケールに依存する動作に現在のロケールを使用します。 `_ismbbprint_l` は、代わりに渡されるロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ `c` の場合は 0 以外の値、それ以外の場合は 0 です。 `_ismbbprint` は、すべてのロケールに依存する動作に現在のロケールを使用します。 `_ismbbprint_l` は、代わりに渡されるロケールを使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_ismbbprint`|\<mbctype.h>|  
 |`_ismbbprint_l`|\<mbctype.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バイト分類](../../c-runtime-library/byte-classification.md)   
  [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)

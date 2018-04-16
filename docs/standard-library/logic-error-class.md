@@ -7,39 +7,25 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - stdexcept/std::logic_error
-- logic_error
 dev_langs:
 - C++
 helpviewer_keywords:
 - logic_error class
 ms.assetid: b290d73d-94e1-4288-af86-2bb5d71f677a
-caps.latest.revision: 22
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 26ca098b39cdcbad38dc3563e706fa979d44e67c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 06e97f70a8a36aa922b1fcb7b81a193ab480dcb3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="logicerror-class"></a>logic_error クラス
 このクラスは、論理的前提条件に対する違反など、プログラムの実行前に検出可能なエラーを通知するためにスローされる例外すべてに対する基底クラスとして機能します。  
@@ -88,13 +74,12 @@ Caught: logic error
 Type: class std::logic_error  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<stdexcept>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [exception クラス](../standard-library/exception-class.md)  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 

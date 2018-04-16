@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - builds [C++], events
 - custom build steps [C++], customizing builds
@@ -18,15 +20,17 @@ helpviewer_keywords:
 - build steps [C++], build events
 - builds [C++], custom build steps
 ms.assetid: beb2f017-3e9f-4b2c-9b57-2572fd2628e4
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9b724190fc409d14a0bffdbc63b369b9643f321c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9abb7ff0b9a39656999e7a53b476056f7a5b1558
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="understanding-custom-build-steps-and-build-events"></a>カスタム ビルド ステップとビルド イベントについて
 Visual C 開発環境で、次の 3 つ基本的な方法はビルド プロセスをカスタマイズします。  
@@ -70,7 +74,7 @@ Visual C 開発環境で、次の 3 つ基本的な方法はビルド プロセ�
   
  `custom build step on the project`と`post-build event`他のすべてのビルド後に順番に実行が完了を処理します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Studio での C++ プロジェクトのビルド](../ide/building-cpp-projects-in-visual-studio.md)   
  [ビルドのコマンドとプロパティの共通のマクロ](../ide/common-macros-for-build-commands-and-properties.md)   
  [ツールのビルド順序 ダイアログ ボックス](http://msdn.microsoft.com/en-us/6204c5b1-7ce9-4948-9ff6-0268642ee14c)

@@ -1,28 +1,33 @@
 ---
-title: "#<a name=\"line-directive-cc--microsoft-docs\"></a>行ディレクティブ (C/C++) |Microsoft ドキュメント"
+title: "#行ディレクティブ (C/C++) |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 10/18/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: '#line'
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- '#line'
+dev_langs:
+- C++
 helpviewer_keywords:
 - preprocessor, directives
 - line directive (#line)
 - '#line directive'
 ms.assetid: 585c1dc4-5184-4f01-98f4-80c1909744d7
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 41886c8107db882ad3bea5a041b529ba8bbbeed6
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 13760aa7c503339c16ed6418badc295170d2c938
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="line-directive-cc"></a>#line ディレクティブ (C/C++)
 
@@ -30,7 +35,7 @@ ms.lasthandoff: 10/31/2017
 
 ## <a name="syntax"></a>構文
 
-> **#line** *桁シーケンス*["*filename*"]
+> **#line** *digit-sequence* ["*filename*"]
 
 ## <a name="remarks"></a>コメント
 
@@ -60,6 +65,6 @@ ms.lasthandoff: 10/31/2017
 __LINE__, __FILE__ );}
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [プリプロセッサ ディレクティブ](../preprocessor/preprocessor-directives.md)

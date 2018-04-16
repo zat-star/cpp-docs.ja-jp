@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - /kernel
 - /kernel-
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 6d7fdff0-c3d1-4b78-9367-4da588ce8b05
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: acf0aca8105ac3934f91a6abf146d94de4eb0a80
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b0e20df59788577acb680cbd18b737f7ec2d7822
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="kernel-create-kernel-mode-binary"></a>/kernel (カーネル モード バイナリの作成)
 Windows カーネルで実行できるバイナリを作成します。  
@@ -86,8 +90,8 @@ class NONPAGESECTION MyNonPagedClass
   
     ||**/kernel** obj|**/kernel-** obj、MASM obj、または cvtresed|混在**/kernel**と**/kernel-** objs|  
     |-|----------------------|-----------------------------------------------|-------------------------------------------------|  
-    |**リンク/kernel**|はい|はい|警告 LNK4257 ○ します。|  
-    |**リンク**|はい|はい|はい|  
+    |**リンク/kernel**|[はい]|[はい]|警告 LNK4257 ○ します。|  
+    |**リンク**|[はい]|はい|[はい]|  
   
      **/KERNEL; でコンパイルされない LNK4257 リンク オブジェクトイメージは動作しない可能性があります。**  
   
@@ -103,6 +107,6 @@ class NONPAGESECTION MyNonPagedClass
   
 4.  **追加オプション**ボックスで、追加`/kernel`または`/kernel-`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

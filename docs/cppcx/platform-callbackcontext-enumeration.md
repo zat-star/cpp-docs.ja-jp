@@ -6,20 +6,25 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::CallbackContext
-dev_langs: C++
-helpviewer_keywords: Platform::CallbackContext Enumeration
+ms.topic: reference
+f1_keywords:
+- VCCORLIB/Platform::CallbackContext
+dev_langs:
+- C++
+helpviewer_keywords:
+- Platform::CallbackContext Enumeration
 ms.assetid: 60e0c7cb-5d8f-482a-bdca-ca9335ae4899
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: fba35e6847339287d3fa2a3d922c0d9e481a0754
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9f9d34f7ef8a953ce60972c27b34e257ea66d62d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcallbackcontext-enumeration"></a>Platform::CallbackContext 列挙型
 コールバック関数 (イベント ハンドラー) が実行するスレッド コンテキストを指定します。  
@@ -37,7 +42,7 @@ enum class CallbackContext {};
 |どれでも可|コールバック関数は、任意のスレッド コンテキストで実行できます。|  
 |同|コールバック関数は、非同期操作を開始したスレッド コンテキストでのみ実行できます。|  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  

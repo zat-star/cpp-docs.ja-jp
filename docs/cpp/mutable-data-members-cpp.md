@@ -1,25 +1,31 @@
 ---
-title: "変更可能なデータ メンバー (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 変更可能なデータ メンバー (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-f1_keywords: mutable_cpp
-dev_langs: C++
-helpviewer_keywords: mutable keyword [C++]
+f1_keywords:
+- mutable_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- mutable keyword [C++]
 ms.assetid: ebe89746-3d36-43a8-8d69-f426af23f551
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a3c960c5fcf5a73d339b7565cd0bec38dba98f12
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a93ae14e6f630d8974163ce8295626a524b49e3c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mutable-data-members-c"></a>変更可能なデータ メンバー (C++)
 このキーワードは、クラスの non-static データ メンバーおよび non-const データ メンバーにのみ適用できます。 データ メンバーが宣言されている場合`mutable`からこのデータ メンバーに値を代入することは、 **const**メンバー関数。  
@@ -54,5 +60,5 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)

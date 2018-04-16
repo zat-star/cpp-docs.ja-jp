@@ -1,41 +1,45 @@
 ---
-title: "方法: ネイティブ コンパイルでオーバーライド指定子を宣言する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "オーバーライド指定子 (ネイティブ コンパイルの)、オーバーライド"
+title: "方法: オーバーライド指定子を宣言 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- override specifiers in native compilation, overriding
 ms.assetid: d0551836-9ac7-41eb-a6e9-a4b3ef60767d
-caps.latest.revision: 13
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0f50e500cf25a18e86e107e22d58e6446d03379d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: ネイティブ コンパイルでオーバーライド指定子を宣言する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[sealed](../windows/sealed-cpp-component-extensions.md)、[抽象](../windows/abstract-cpp-component-extensions.md)と [オーバーライド](../windows/override-cpp-component-extensions.md) は **\/ZW** または [\/clr](../build/reference/clr-common-language-runtime-compilation.md)を使用しないでコンパイルで使用できます。  
+# <a name="how-to-declare-override-specifiers-in-native-compilations-ccli"></a>方法: ネイティブ コンパイルでオーバーライド指定子を宣言する (C++/CLI)
+[封印された](../windows/sealed-cpp-component-extensions.md)、[抽象](../windows/abstract-cpp-component-extensions.md)、および[オーバーライド](../windows/override-cpp-component-extensions.md)は使用しないでコンパイルで使用可能な**/ZW**または[/clr](../build/reference/clr-common-language-runtime-compilation.md)です。  
   
 > [!NOTE]
->  ISO の標準 C\+\+11 言語に [オーバーライド](../cpp/override-specifier.md) の ID と [最後](../cpp/final-specifier.md) 識別子があり、両方のネイティブのみようにコンパイルしてよいコードの `sealed` ではなく、Visual Studio を使用 `final` でサポートされます。  
+>  ISO c 11 標準の言語が、[オーバーライド](../cpp/override-specifier.md)識別子と[最終](../cpp/final-specifier.md)識別子、および両方が Visual Studio の使用でサポートされている`final`の代わりに`sealed`ものではコードで(ネイティブのみ) としてコンパイルします。  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- 次の例では `sealed` がネイティブ コンパイルで有効であることを示します。  
+### <a name="description"></a>説明  
+ 次の例に示しますを`sealed`はネイティブ コンパイルで有効です。  
   
-### コード  
+### <a name="code"></a>コード  
   
-```  
+```cpp  
 // sealed_native_keyword.cpp  
 #include <stdio.h>  
 __interface I1 {  
@@ -56,14 +60,14 @@ public:
 };  
 ```  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- `override` がネイティブ コンパイルで有効であることを次の例に示します。  
+### <a name="description"></a>説明  
+ 次の例を`override`はネイティブ コンパイルで有効です。  
   
-### コード  
+### <a name="code"></a>コード  
   
-```  
+```cpp  
 // override_native_keyword.cpp  
 #include <stdio.h>  
 __interface I1 {  
@@ -77,14 +81,14 @@ public:
 };  
 ```  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- この例では `abstract` がネイティブ コンパイルで有効であることを示します。  
+### <a name="description"></a>説明  
+ 次の例`abstract`はネイティブ コンパイルで有効です。  
   
-### コード  
+### <a name="code"></a>コード  
   
-```  
+```cpp  
 // abstract_native_keyword.cpp  
 class X abstract {};  
   
@@ -93,5 +97,5 @@ int main() {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [オーバーライド指定子](../windows/override-specifiers-cpp-component-extensions.md)

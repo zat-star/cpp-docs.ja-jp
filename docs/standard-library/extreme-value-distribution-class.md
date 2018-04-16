@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::extreme_value_distribution
 - random/std::extreme_value_distribution::reset
@@ -21,7 +22,8 @@ f1_keywords:
 - random/std::extreme_value_distribution::param_type::b
 - random/std::extreme_value_distribution::param_type::operator==
 - random/std::extreme_value_distribution::param_type::operator!=
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::extreme_value_distribution [C++]
 - std::extreme_value_distribution [C++], reset
@@ -33,15 +35,17 @@ helpviewer_keywords:
 - std::extreme_value_distribution [C++], param_type
 - std::extreme_value_distribution [C++], param_type
 ms.assetid: a0cd8370-0a54-4e26-9388-8b9678fb57da
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d53e49ae0a28201ac32cd1eb722c9889258f23b9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 93bf21b8dd17ddff4bf3de56417c85c6b415cb5e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="extremevaluedistribution-class"></a>extreme_value_distribution クラス
 極値分布を生成します。  
@@ -78,7 +82,7 @@ public:
 ```    
 ### <a name="parameters"></a>パラメーター  
 *RealType*  
-浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、「[\<random>](../standard-library/random.md)」を参照してください。  
+浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
   
 *URNG* 乱数ジェネレーター エンジン。 使用可能な型については、「[\<random>](../standard-library/random.md)」を参照してください。
   
@@ -94,7 +98,7 @@ public:
   
  分布クラスとそのメンバーの詳細については、「[\<random>](../standard-library/random.md)」を参照してください。  
   
- 極値分布の詳細については、Wolfram MathWorld の記事「[極値分布](http://go.microsoft.com/fwlink/LinkId=401110)」を参照してください。  
+ 極値分布の詳細については、Wolfram MathWorld の記事「[極値分布](http://go.microsoft.com/fwlink/p/?linkid=401110)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -179,7 +183,7 @@ Distribution for 10 samples:
     10: 2.0568757061  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -239,7 +243,7 @@ struct param_type {
   
  この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
 
 

@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - data types [C]
 - types [C]
 - declarations [C++], C
 - declarations [C++], types
 ms.assetid: 432a2286-cf42-42ce-8baf-c908ffb57ca8
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 29e7d1687946c463a2c486423da8fb9d585a3546
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7c40f7b236771115d9848abdfccceb0a6e1f8f2c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="declarations-and-types"></a>宣言と型
 このセクションでは、変数、関数、および型の宣言と初期化について説明します。 C 言語には、基本データ型の標準セットが含まれます。 定義済みの型に基づいて新しい型を宣言することにより、"派生型" と呼ばれる独自のデータ型を追加することもできます。 検討されているトピックは、次のとおりです。  
@@ -49,5 +53,5 @@ ms.lasthandoff: 10/24/2017
   
 -   [拡張ストレージ クラス属性](../c-language/c-extended-storage-class-attributes.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C 言語リファレンス](../c-language/c-language-reference.md)

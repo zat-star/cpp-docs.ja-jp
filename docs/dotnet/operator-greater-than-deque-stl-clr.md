@@ -1,33 +1,37 @@
 ---
-title: "operator&gt; (deque) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::deque::operator>"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator> メンバー [STL/CLR]"
+title: 演算子&gt;(deque) (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::deque::operator>
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator> member [STL/CLR]
 ms.assetid: b207be0a-c6d8-4d70-8b8d-beb48e859441
 caps.latest.revision: 17
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0a3d60a1b2f54ceb336e70f93c359793cd7cd082
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator&gt; (deque) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-比較 Deque より大きい。  
+# <a name="operatorgt-deque-stlclr"></a>演算子&gt;(deque) (STL/CLR)
+Deque 比較よりも大きいです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value>  
@@ -35,17 +39,17 @@ template<typename Value>
         deque<Value>% right);  
 ```  
   
-#### パラメーター  
- \[left\]  
- 比較の左辺のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 左へ  
+ 比較する左のコンテナー。  
   
- \[right\]  
- 比較の右辺のコンテナー。  
+ 右  
+ 比較する右のコンテナー。  
   
-## 解説  
- 演算子関数の戻り値 `right``<``left`。  2 個の deques が要素によって比較された要素の場合 `left` が `right` の後に並べるかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ 演算子関数を返します`right` `<` `left`です。 テストするために使用するかどうか`left`が後に順序付け`right`要素によって比較対象の要素が 2 つの deque の場合。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_deque_operator_gt.cpp   
@@ -84,19 +88,22 @@ int main()
   
 ```  
   
-  **b c**  
- **b d**  
-**b c \[\] \> \[\] b c false です。**  
-**\[\] \> b c d b \[\]当てはまります。**   
-## 必要条件  
- **ヘッダー:** \<cliext\/deque\>  
+```Output  
+ a b c  
+ a b d  
+[a b c] > [a b c] is False  
+[a b d] > [a b c] is True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/deque >  
   
-## 参照  
- [deque](../dotnet/deque-stl-clr.md)   
- [operator\=\= \(deque\)](../dotnet/operator-equality-deque-stl-clr.md)   
- [deque::operator\!\=](../dotnet/deque-operator-inequality-stl-clr.md)   
- [operator\< \(deque\)](../dotnet/operator-less-than-deque-stl-clr.md)   
- [operator\>\= \(deque\)](../dotnet/operator-greater-or-equal-deque-stl-clr.md)   
- [operator\<\= \(deque\)](../dotnet/operator-less-or-equal-deque-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
+ [演算子 = = (deque) (STL/CLR)](../dotnet/operator-equality-deque-stl-clr.md)   
+ [deque::operator! = (STL/CLR)](../dotnet/deque-operator-inequality-stl-clr.md)   
+ [演算子\<(deque) (STL/CLR)](../dotnet/operator-less-than-deque-stl-clr.md)   
+ [operator > = (deque) (STL/CLR)](../dotnet/operator-greater-or-equal-deque-stl-clr.md)   
+ [operator<= (deque) (STL/CLR)](../dotnet/operator-less-or-equal-deque-stl-clr.md)

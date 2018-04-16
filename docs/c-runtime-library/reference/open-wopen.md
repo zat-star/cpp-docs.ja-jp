@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _open
 - _wopen
@@ -27,7 +28,8 @@ f1_keywords:
 - _wopen
 - _topen
 - _open
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - opening files, for file I/O
 - topen function
@@ -38,15 +40,17 @@ helpviewer_keywords:
 - wopen function
 - open function
 ms.assetid: 13f6a0c3-d1aa-450d-a7aa-74abc91b163e
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b2362db1db1686bcf87cb171b3f29da48226d54b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2e8abb4d652c993f3cf45f1840c820261ac989c9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="open-wopen"></a>_open、_wopen
 ファイルを開きます。 セキュリティが強化されたバージョンを使用できるようになったため、これらの関数は推奨されていません。「[_sopen_s、_wsopen_s](../../c-runtime-library/reference/sopen-s-wsopen-s.md)」を参照してください。  
@@ -95,7 +99,7 @@ int _wopen(
  `ENOENT`  
  ファイルまたはパスが見つかりません。  
   
- これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  `_open` 関数は、`filename` で指定されたファイルを開き、`oflag` で指定されたように読み取りまたは書き込み用にファイルを準備します。 `_wopen` 関数は、`_open` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wopen` は、ワイド文字列です。 それ以外では、`_wopen` と `_open` の動作は同じです。  
@@ -115,13 +119,16 @@ int _wopen(
  ファイルをバイナリ (無変換) モードで開きます。 (バイナリ モードの詳細については、「[fopen](../../c-runtime-library/reference/fopen-wfopen.md)」を参照してください)。  
   
  `_O_CREAT`  
- ファイルを作成し、書き込み用に開きます。 `filename` で指定されたファイルが存在する場合は無効です。 `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
+ ファイルを作成し、書き込み用に開きます。 `filename` で指定されたファイルが存在する場合は無効です。 
+          `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
   
  `_O_CREAT` &#124; `_O_SHORT_LIVED`  
- ファイルを一時ファイルとして作成し、可能な場合は、ディスクにフラッシュしません。 `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
+ ファイルを一時ファイルとして作成し、可能な場合は、ディスクにフラッシュしません。 
+          `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
   
  `_O_CREAT` &#124; `_O_TEMPORARY`  
- ファイルを一時ファイルとして作成します。最後のファイル記述子が閉じられると、ファイルは削除されます。 `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
+ ファイルを一時ファイルとして作成します。最後のファイル記述子が閉じられると、ファイルは削除されます。 
+          `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
   
  `_O_CREAT` &#124; `_O_EXCL`  
  `filename` で指定されたファイルが存在する場合、エラー値を返します。 
@@ -134,12 +141,10 @@ int _wopen(
  キャッシュがディスクからのランダム アクセスに最適化されるように指定します。ただし、ランダム アクセスに限定されるわけではありません。  
   
  `_O_RDONLY`  
- 読み取り専用でファイルを開きます。 
-          `_O_RDWR` または `_O_WRONLY` と共に指定することはできません。  
+ 読み取り専用でファイルを開きます。 `_O_RDWR` または `_O_WRONLY` と共に指定することはできません。  
   
  `_O_RDWR`  
- 読み取りと書き込みの両方のモードでファイルを開きます。 
-          `_O_RDONLY` または `_O_WRONLY` と共に指定することはできません。  
+ 読み取りと書き込みの両方のモードでファイルを開きます。 `_O_RDONLY` または `_O_WRONLY` と共に指定することはできません。  
   
  `_O_SEQUENTIAL`  
  キャッシュがディスクからのシーケンシャル アクセスに最適化されるように指定します。ただし、シーケンシャル アクセスに限定されるわけではありません。  
@@ -151,12 +156,10 @@ int _wopen(
  ファイルを開き、長さゼロに切り詰めます。ファイルに書き込みアクセス許可が必要です。 `_O_RDONLY` と共に指定することはできません。 `_O_TRUNC` を `_O_CREAT` と共に使用すると、既存のファイルが開かれるか、新しいファイルが作成されます。  
   
 > [!NOTE]
->  
-          `_O_TRUNC` フラグによって、指定したファイルの内容は破棄されます。  
+>  `_O_TRUNC` フラグによって、指定したファイルの内容は破棄されます。  
   
  `_O_WRONLY`  
- 書き込み専用でファイルを開きます。 
-          `_O_RDONLY` または `_O_RDWR` と共に指定することはできません。  
+ 書き込み専用でファイルを開きます。 `_O_RDONLY` または `_O_RDWR` と共に指定することはできません。  
   
  `_O_U16TEXT`  
  Unicode UTF-16 モードでファイルを開きます。  
@@ -192,14 +195,14 @@ int _wopen(
   
  `_S_IREAD` と `_S_IWRITE` の組み合わせ以外の値が `pmode` に対して指定された場合 (別のオペレーティング システムで有効な `pmode` が指定されている場合でも)、または許可された `oflag` 値以外の値が指定された場合、この関数はアサーションをデバッグ モードで生成し、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_open`|\<io.h>|\<fcntl.h>、\<sys\types.h>、\<sys\stat.h>|  
 |`_wopen`|\<io.h> または \<wchar.h>|\<fcntl.h>、\<sys\types.h>、\<sys\stat.h>|  
   
- `_open` および `_wopen` は Microsoft 拡張機能です。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ `_open` および `_wopen` は Microsoft 拡張機能です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -252,7 +255,7 @@ Open succeeded on input file
 Open succeeded on output file  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
  [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
  [_close](../../c-runtime-library/reference/close.md)   

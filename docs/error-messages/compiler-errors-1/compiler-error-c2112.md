@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2112
 ms.assetid: 527a2fea-f585-4d00-bbb4-477aee17144b
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ef0a6bd1b91991730ed1d2d8dae442bfae664c24
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: f5f777ed766fca6857112366fb0305067c5eef67
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2112"></a>コンパイラ エラー C2112
 '-': ポインターの減算には、整数型またはポインターのオペランドが必要です。  

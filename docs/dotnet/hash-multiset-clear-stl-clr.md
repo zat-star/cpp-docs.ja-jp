@@ -1,41 +1,46 @@
 ---
-title: "hash_multiset::clear (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_multiset::clear"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "clear メンバー [STL/CLR]"
+title: "hash_multiset::clear (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::hash_multiset::clear
+dev_langs:
+- C++
+helpviewer_keywords:
+- clear member [STL/CLR]
 ms.assetid: 2253d5e3-38e6-4ad4-aff4-b546fe95830f
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 535e3e56c1851d6aec25406b3242dfde54b1215b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_multiset::clear (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashmultisetclear-stlclr"></a>hash_multiset::clear (STL/CLR)
 すべての要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void clear();  
 ```  
   
-## 解説  
- メンバー関数は、実質的に [hash\_multiset::erase](../dotnet/hash-multiset-erase-stl-clr.md)`(`[hash\_multiset::begin](../dotnet/hash-multiset-begin-stl-clr.md)`(),`[hash\_multiset::end](../dotnet/hash-multiset-end-stl-clr.md)`())`を呼び出します。  被制御シーケンスが空であることを確認するために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数が効果的に呼び出し[hash_multiset::erase (STL/CLR)](../dotnet/hash-multiset-erase-stl-clr.md) `(` [hash_multiset::begin (STL/CLR)](../dotnet/hash-multiset-begin-stl-clr.md) `(),` [hash_multiset::end (STL/CLR)](../dotnet/hash-multiset-end-stl-clr.md)`())`. これを使用するには、被制御シーケンスが空であることを確認します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_multiset_clear.cpp   
@@ -73,15 +78,18 @@ int main()
   
 ```  
   
-  **b c**  
-**size\(\) \= 0**  
- **b**  
-**size\(\) \= 0**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+ a b c  
+size() = 0  
+ a b  
+size() = 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_multiset](../dotnet/hash-multiset-stl-clr.md)   
- [hash\_multiset::erase](../dotnet/hash-multiset-erase-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_multiset (STL/CLR)](../dotnet/hash-multiset-stl-clr.md)   
+ [hash_multiset::erase (STL/CLR)](../dotnet/hash-multiset-erase-stl-clr.md)

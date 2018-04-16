@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - intermediate language, mixed-mode applications
 - mixed-mode applications
 - mixed-mode applications, intermediate language
 - projects [C++], converting to intermediate language
 ms.assetid: 855f9e3c-4f09-4bfe-8eab-a45f68292be9
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f59a90828f338d918f753c8ba79236fd7edc1587
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 0276d5b5420ed0294b2cf3438190f79d03585744
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="converting-projects-from-mixed-mode-to-pure-intermediate-language"></a>混合モードから純粋な中間言語へのプロジェクトの変換
 すべてのビジュアルの C++ CLR プロジェクトは、既定で C ランタイム ライブラリにリンクします。 その結果、これらのプロジェクトは、ネイティブ コードと、共通言語ランタイム (マネージ コード) を対象とするコードを結合するために、混合モード アプリケーションとして分類されます。 コンパイル時に、中間言語 (IL) とも呼ばれる Microsoft intermediate language (MSIL) にコンパイルします。  
@@ -49,7 +54,7 @@ ms.lasthandoff: 10/24/2017
         // #include <tchar.h>  
         ```  
   
-         または  
+         - または -  
   
          たとえば、Windows フォーム アプリケーションの場合: で  
   

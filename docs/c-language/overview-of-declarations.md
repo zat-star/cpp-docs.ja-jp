@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - declarations, about declarations
 - type qualifiers
 ms.assetid: fcd2364c-c2a5-4fbf-9027-19dac4144cb5
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f0ac465ec20d0893add63d8b5791b9445b17f8fb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
-ms.translationtype: HT
+ms.workload:
+- cplusplus
+ms.openlocfilehash: aa6285504a194d909dec7a446437ca9f584272a9
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="overview-of-declarations"></a>宣言の概要
 "宣言" は、一連の識別子の解釈と属性を指定します。 識別子に指定されたオブジェクトまたは関数のためにストレージを予約する宣言は "定義" と呼ばれます。 C における変数、関数、および型の宣言では、次の構文に従います。  
@@ -55,7 +59,7 @@ ms.lasthandoff: 10/24/2017
   
  宣言には *attribute-seq* に示されている省略可能な属性を 1 つ以上含めることができます。*seq* は、sequence (シーケンス) の省略形です。 これらの Microsoft 固有の属性は、さまざまな機能を実行します。詳細については、このブック全体で説明します。  
   
- 変数宣言の一般的な形式では、*type-specifier* は変数のデータ型を示します。 型が **const** または `volatile` で変更される場合、*type-specifier* は複合型にすることができます。 `declarator` は、配列型またはポインター型を宣言するために変更される可能性がある変数の名前を示します。 次に例を示します。  
+ 変数宣言の一般的な形式では、*type-specifier* は変数のデータ型を示します。 型が **const** または `volatile` で変更される場合、*type-specifier* は複合型にすることができます。 `declarator` は、配列型またはポインター型を宣言するために変更される可能性がある変数の名前を示します。 たとえば、オブジェクトに適用された  
   
 ```  
 int const *fp;  

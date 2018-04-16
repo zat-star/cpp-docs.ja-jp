@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: __if_exists_cpp
-dev_langs: C++
+f1_keywords:
+- __if_exists_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - identifiers, testing for existence
 - symbols, testing for existence
 - __if_exists keyword [C++]
 ms.assetid: d3eb34b6-f3a9-4063-a286-b62a28c0c7fa
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c22374acb8bdd794ea20fdcb1f798c2a240cdf58
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c7950e2fcd933bd4748c06adf93f5ce1c271b162
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ifexists-statement"></a>__if_exists ステートメント
 `__if_exists` ステートメントは、指定された識別子があるかどうかをテストします。 ID が存在する場合、指定されたステートメント ブロックが実行されます。  
@@ -128,7 +133,7 @@ g_bFlag = 1
 C::f exists  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [選択ステートメント](../cpp/selection-statements-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [__if_not_exists ステートメント](../cpp/if-not-exists-statement.md)

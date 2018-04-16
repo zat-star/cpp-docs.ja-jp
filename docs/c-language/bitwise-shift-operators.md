@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - operators [C++], bitwise
 - shift operators, bitwise
 - bitwise-shift operators
 - operators [C++], shift
 ms.assetid: d0485785-5c72-47e1-a7c0-0adde03ade23
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4b876ca52fd142c885ae51d5f7c505cc7f4af8bc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e13e65e42febf2256e11bcb428e98805cdd6550f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="bitwise-shift-operators"></a>ビット処理シフト演算子
 シフト演算子では、2 番目のオペランドで指定された位置の数だけ最初のオペランドが左 (`<<`) または右 (`>>`) にシフトされます。  
@@ -68,5 +72,5 @@ z = ( x << 8 ) + ( y >> 8 );
   
  右シフトでは符号ビットが保持されます。 符号付き整数を右にシフトすると、最上位ビットはセットされたままになります。 符号なし整数を右にシフトすると、最上位ビットはクリアされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [左シフト演算子および右シフト演算子 (<< および >>)](../cpp/left-shift-and-right-shift-operators-input-and-output.md)

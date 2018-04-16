@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - scripting, examples
 - registrar scripts [ATL]
 - scripts, Registrar scripts
 - registry, Registrar
 ms.assetid: b6df80e1-e08b-40ee-9243-9b381b172460
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: bcb1b2307ccb16e7b842e221c48c0f2a99b31db6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1b2a5dfd3bd31674917a5b41174277ef787aff25
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="registry-scripting-examples"></a>レジストリ スクリプトの例
 このトピックでは、スクリプトの例では、システム レジストリにキーを追加、レジストラー COM サーバーを登録および複数のパース ツリーを指定する方法を示します。  
@@ -117,6 +121,6 @@ HKEY_CURRENT_USER
 > [!NOTE]
 >  レジストラー スクリプトでは、トークンの最大サイズは 4 K です。 (トークンは、構文内の認識可能な要素です)。前のスクリプトの例で`HKCR`、 `HKEY_CURRENT_USER`、 `'MyVeryOwnKey'`、および`'HowGoesIt'`すべてトークンです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レジストラー スクリプトの作成](../atl/creating-registrar-scripts.md)
 

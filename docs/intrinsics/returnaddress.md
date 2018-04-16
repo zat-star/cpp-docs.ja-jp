@@ -1,43 +1,47 @@
 ---
-title: "_ReturnAddress | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_ReturnAddress"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_ReturnAddress 組み込み"
-  - "ReturnAddress 組み込み"
+title: "_ReturnAddress |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- _ReturnAddress
+dev_langs:
+- C++
+helpviewer_keywords:
+- _ReturnAddress intrinsic
+- ReturnAddress intrinsic
 ms.assetid: 7f4a5811-35e6-4f64-ba7c-21203380eeda
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ae1437d6523b94071a5e7655bfa2e7094d89305a
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# _ReturnAddress
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-## Microsoft 固有の仕様 →  
- `_ReturnAddress` の組み込みは呼び出し元に返されるの後で実行される呼び出し元の関数の命令のアドレスを指定します。  
+# <a name="returnaddress"></a>_ReturnAddress
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ `_ReturnAddress`組み込みコントロールが呼び出し元に返された後に実行される呼び出し元の関数内の命令のアドレスを提供します。  
   
- デバッガーでプログラムを通じて次の手順を実行します。  プログラムをステップ実行すると`_ReturnAddress` から返されるアドレスに注意してください。  次に`_ReturnAddress` が使用された関数から返された直後に[方法 : \[逆アセンブル\] ウィンドウを使用する](../Topic/How%20to:%20Use%20the%20Disassembly%20Window.md) を開きアドレスが `_ReturnAddress` で返される実行された一致する次の命令のアドレスことに注意してください。  
+ 次のプログラムと、デバッガーでステップを作成します。 プログラムをステップ実行するから返されるアドレスを確認します。`_ReturnAddress`です。 その後、関数から返された後すぐに、`_ReturnAddress`が、使用される、開いている、[する方法: [逆アセンブル] ウィンドウを使用して](/visualstudio/debugger/how-to-use-the-disassembly-window)と実行される次の命令のアドレスがから返されたアドレスと一致することに注意してください`_ReturnAddress`.  
   
- インライン展開のような最適化がリターン アドレスに影響する場合があります。  たとえばサンプル プログラムの下の [\/Ob1](../build/reference/ob-inline-function-expansion.md) とコンパイル `inline_func` が呼び出し元の関数に`main` にインライン展開されます。  したがって`inline_func` から `_ReturnAddress` と `main` の呼び出しはそれぞれ同じ値を決定します。  
+ インライン展開月などの最適化、戻り値のアドレスに影響します。 たとえば、次のサンプル プログラムでコンパイル[/Ob1](../build/reference/ob-inline-function-expansion.md)、`inline_func`は呼び出し元の関数をインラインになります`main`です。 したがってへの呼び出し`_ReturnAddress`から`inline_func`と`main`それぞれ同じ値が生成されます。  
   
- `_ReturnAddress` が [\/clr](../build/reference/clr-common-language-runtime-compilation.md) でコンパイルされたプログラムで使用される場合 `_ReturnAddress` の呼び出しを含む関数はネイティブ関数としてコンパイルされます。  `_ReturnAddress``_ReturnAddress` を含む関数にマネージ呼び出しとしてコンパイルされた関数が期待どおりに動作しない可能性があります。  
+ ときに`_ReturnAddress`でコンパイルされたプログラムで使用される[/clr](../build/reference/clr-common-language-runtime-compilation.md)、関数を含む、`_ReturnAddress`呼び出しはネイティブ関数としてコンパイルされます。 含む関数への呼び出しとして関数をコンパイルするときに管理されている`_ReturnAddress`、`_ReturnAddress`期待どおりに動作しない可能性があります。  
   
-## 要件  
- **ヘッダー ファイル** \<intrin.h\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // compiler_intrinsics__ReturnAddress.cpp  
@@ -68,9 +72,9 @@ int main(void)
 }  
 ```  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_AddressOfReturnAddress](../intrinsics/addressofreturnaddress.md)   
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+## <a name="see-also"></a>参照  
+ [_AddressOfReturnAddress](../intrinsics/addressofreturnaddress.md)   
+ [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
+ [キーワード](../cpp/keywords-cpp.md)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2584
-dev_langs: C++
-helpviewer_keywords: C2584
+f1_keywords:
+- C2584
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2584
 ms.assetid: 836e2c0a-86c0-4742-b432-beb0191ad20e
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1ff3567f3f4981ecb86926ad76b0d23627da1fb2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5a8e28a6e57273d9609a8658b1e963a269b52e2a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2584"></a>コンパイラ エラー C2584
 'Class': 直接基底 'Base2' がアクセスできません。既に 'Base1' のベース  

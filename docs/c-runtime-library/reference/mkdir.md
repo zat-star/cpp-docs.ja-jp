@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: mkdir
+ms.topic: reference
+apiname:
+- mkdir
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,19 +22,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: mkdir
-dev_langs: C++
-helpviewer_keywords: mkdir function
+f1_keywords:
+- mkdir
+dev_langs:
+- C++
+helpviewer_keywords:
+- mkdir function
 ms.assetid: 0a212890-181e-45d0-988d-e0f301fcdeb8
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 38b21a6d4d878474ed63eae7b34b7b2d601c0eaf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 28d60acbdd4e3dda36669108565f0ddc7b136b1b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="mkdir"></a>mkdir
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_mkdir](../../c-runtime-library/reference/mkdir-wmkdir.md) を使用してください。

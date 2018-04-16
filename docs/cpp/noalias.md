@@ -1,27 +1,32 @@
 ---
 title: "noalias |Microsoft ドキュメント"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 02/09/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: noalias_cpp
-dev_langs: C++
+f1_keywords:
+- noalias_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - noalias __declspec keyword
 - __declspec keyword [C++], noalias
 ms.assetid: efafa8b0-7f39-4edc-a81e-d287ae882c9b
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1b70c5e41b3380de241939249f51449ba65406c6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6fd57b10aba4298ff7facd725ab3ce1934ccf1ab
+ms.sourcegitcommit: f3c398b1c7dbf36ab71b5ca89d365b1913afa307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="noalias"></a>noalias
 
@@ -31,13 +36,15 @@ ms.lasthandoff: 10/24/2017
 
 関数が `noalias` として注釈が指定されている場合、オプティマイザーはパラメーター自体に加えてポインター パラメーターの第 1 レベルの間接指定のみが関数内で参照または変更されると仮定します。 表示されるグローバル状態は、コンパイルのスコープ外では、アドレスは取られません定義または参照されていないすべてのデータの設定です。 コンパイルのスコープは、すべてのソース ファイル ([/LTCG (リンク時コード生成)](../build/reference/ltcg-link-time-code-generation.md)ビルド) または 1 つのソース ファイル (非**/LTCG**ビルド)。
 
+`noalias`注釈は、注釈付きの関数の本体内でのみ適用されます。 関数としてマーク`__declspec(noalias)`関数によって返されるポインターのエイリアスには影響しません。
+
+エイリアスに影響する別の注釈を参照してください。 [__declspec(restrict)](../cpp/restrict.md)です。
+
 ## <a name="example"></a>例
 
-`__declspec(restrict)` および `__declspec(noalias)` を使用したサンプル コードを次に示します。 通常から返されるメモリ`malloc`は`restrict`CRT ヘッダーが適切に装飾されているためです。
+次の例では、使用する`__declspec(noalias)`です。
 
-ただし、この例では、ポインターでは、`mempool`と`memptr`は、コンパイラは、メモリがエイリアスの対象ができないことを保証するを持たないために、グローバルです。 `__declspec(restrict)` でポインターを返す関数を装飾することによって、戻り値で参照されるメモリがエイリアス化されていないことをコンパイラに指示します。
-
-`__declspec(noalias)` によりメモリにアクセスするこの例の関数を装飾して、この関数がパラメーター リストでポインターを経由する場合を除いてグローバル状態と干渉しないことをコンパイラに指示します。
+ときに、関数`multiply`アクセス メモリの注釈が付けられている`__declspec(noalias)`、この関数がパラメーター リストでポインターを使用してを除いてグローバル状態を変更していないことをコンパイラに伝えます。
 
 ```C
 // declspec_noalias.c
@@ -50,7 +57,7 @@ ms.lasthandoff: 10/24/2017
 
 float * mempool, * memptr;
 
-__declspec(restrict) float * ma(int size)
+float * ma(int size)
 {
     float * retval;
     retval = memptr;
@@ -58,7 +65,7 @@ __declspec(restrict) float * ma(int size)
     return retval;
 }
 
-__declspec(restrict) float * init(int m, int n)
+float * init(int m, int n)
 {
     float * a;
     int i, j;
@@ -100,12 +107,13 @@ int main()
     a = init(M, N);
     b = init(N, P);
     c = init(M, P);
-
+ 
     multiply(a, b, c);
 }
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [__declspec](../cpp/declspec.md)  
-[キーワード](../cpp/keywords-cpp.md)
+[キーワード](../cpp/keywords-cpp.md)  
+[__declspec(restrict)](../cpp/restrict.md)  

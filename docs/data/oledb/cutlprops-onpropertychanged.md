@@ -1,63 +1,65 @@
 ---
-title: "CUtlProps::OnPropertyChanged | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "OnPropertyChanged"
-  - "CUtlProps.OnPropertyChanged"
-  - "CUtlProps::OnPropertyChanged"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OnPropertyChanged メソッド"
+title: CUtlProps::OnPropertyChanged | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- OnPropertyChanged
+- CUtlProps.OnPropertyChanged
+- CUtlProps::OnPropertyChanged
+dev_langs:
+- C++
+helpviewer_keywords:
+- OnPropertyChanged method
 ms.assetid: c5924210-b685-46c4-87f8-1b81e5bd3378
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f87f6842f33bd58be9cde515396f495402235a77
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CUtlProps::OnPropertyChanged
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ハンドルへのプロパティを設定するというプロパティを連結します。  
+# <a name="cutlpropsonpropertychanged"></a>CUtlProps::OnPropertyChanged
+チェーンされたプロパティを処理するプロパティを設定した後に呼び出されます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```cpp
+      virtual HRESULT OnPropertyChanged(ULONG /* iCurSet */,  
+   DBPROP* pDBProp);  
 ```  
   
-      virtual HRESULT OnPropertyChanged(  
-   ULONG /* iCurSet */,  
-   DBPROP* pDBProp   
-);  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `iCurSet`  
- プロパティ セットの配列にインデックス; プロパティ セットを 1 回だけの場合はゼロ。  
+ 配列のインデックスのプロパティ セットです。1 つのプロパティ セットがある場合は 0 します。  
   
  `pDBProp`  
- [DBPROP](https://msdn.microsoft.com/en-us/library/ms717970.aspx) 構造体のプロパティ ID と新しい値。  
+ プロパティ ID と新しい値、 [DBPROP](https://msdn.microsoft.com/en-us/library/ms717970.aspx)構造体。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  既定の戻り値は `S_OK`です。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。 既定の戻り値は`S_OK`します。  
   
-## 解説  
- チェーンされたプロパティを処理したい場合は、ブックマークなど\) またはユーザーの値が他方の値に依存している場合、この関数をオーバーライドする必要があります。更新します。  
+## <a name="remarks"></a>コメント  
+ ブックマークや値が別のプロパティの値に依存する更新プログラムなどの連鎖のプロパティを処理する場合は、この関数をオーバーライドする必要があります。  
   
-## 使用例  
- この関数では、ユーザーが `DBPROP*` パラメーターからプロパティ ID を取得します。  次に、チェーンとプロパティに対して ID を比較することができます。  プロパティを設定すると、`SetProperties` は、他のプロパティとともに設定されたプロパティと呼ばれます。  この場合、1 は `DBPROP_IRowsetLocate`、`DBPROP_LITERALBOOKMARKS`、または `DBPROP_ORDEREDBOOKMARKS` のプロパティを取得すると、1 は `DBPROP_BOOKMARKS` のプロパティを設定できます。  
+## <a name="example"></a>例  
+ この関数では、ユーザー ID を取得しますプロパティから、`DBPROP*`パラメーター。 今では、チェーンのプロパティに対して ID を比較することです。 プロパティが見つかった場合に`SetProperties`は他のプロパティと組み合わせて設定するプロパティを使用して呼び出されます。 この場合、いずれかを取得する場合、 `DBPROP_IRowsetLocate`、 `DBPROP_LITERALBOOKMARKS`、または`DBPROP_ORDEREDBOOKMARKS`プロパティ、いずれかの設定、`DBPROP_BOOKMARKS`プロパティです。  
   
- [!CODE [NVC_OLEDB_Provider#2](../CodeSnippet/VS_Snippets_Cpp/NVC_OLEDB_Provider#2)]  
+ [!code-cpp[NVC_OLEDB_Provider#2](../../data/oledb/codesnippet/cpp/cutlprops-onpropertychanged_1.h)]  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CUtlProps クラス](../../data/oledb/cutlprops-class.md)

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: R6031
-dev_langs: C++
-helpviewer_keywords: R6031
+f1_keywords:
+- R6031
+dev_langs:
+- C++
+helpviewer_keywords:
+- R6031
 ms.assetid: 805d4cd1-cb2f-43fe-87e6-e7bd5b7329c5
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 587b370e94de573f262772de0f5a8bf34f25124b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 260c316ad43ce39a60cb7e54137a363754c1ddf7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-runtime-error-r6031"></a>C ランタイム エラー R6031
 CRT を複数回初期化しようとしてください。 これは、アプリケーションでバグを示します。  
@@ -31,7 +37,7 @@ CRT を複数回初期化しようとしてください。 これは、アプリ
 >   
 >  -   使用して、**アプリおよび機能**または**プログラムと機能**] ページで、**コントロール パネルの [**を修復またはプログラムを再インストールします。  
 > -   使用して、**アプリおよび機能**または**プログラムと機能**] ページで、**コントロール パネルの [**を削除するには、修復またはアプリで使用されるアドオンまたは拡張機能のプログラムを再インストールします。  
-> -   確認**Windows Update**で、**コントロール パネルの **ソフトウェアの更新。  
+> -   確認**Windows Update**で、**コントロール パネルの** ソフトウェアの更新。  
 > -   アプリの更新バージョンを確認します。 問題が解決しない場合は、アプリ ベンダーにお問い合わせください。  
   
  **プログラマのための情報**  

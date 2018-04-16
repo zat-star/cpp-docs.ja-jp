@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -101,7 +102,8 @@ f1_keywords:
 - AFXRIBBONBAR/CMFCRibbonBar::ShowKeyTips
 - AFXRIBBONBAR/CMFCRibbonBar::ToggleMimimizeState
 - AFXRIBBONBAR/CMFCRibbonBar::TranslateChar
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCRibbonBar [MFC], ActivateContextCategory
 - CMFCRibbonBar [MFC], AddCategory
@@ -195,15 +197,17 @@ helpviewer_keywords:
 - CMFCRibbonBar [MFC], ToggleMimimizeState
 - CMFCRibbonBar [MFC], TranslateChar
 ms.assetid: a65d06fa-1a28-4cc0-8971-bc9d7c9198fe
-caps.latest.revision: "41"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c2eb20c88ec6135c698b5a4b7c7f88d487cc8f25
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8ea33fbd2f9517734c2dcb15fd434e8ddcc36b41
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcribbonbar-class"></a>CMFCRibbonBar クラス
 `CMFCRibbonBar` クラスは、Office 2007 で使用されているものに似たリボン バーを実装します。  
@@ -342,7 +346,7 @@ class CMFCRibbonBar : public CPane
   
  [CMFCRibbonBar](../../mfc/reference/cmfcribbonbar-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー :** afxribbonbar.h  
   
 ##  <a name="activatecontextcategory"></a>CMFCRibbonBar::ActivateContextCategory  
@@ -1915,7 +1919,7 @@ void SetWindows7Look(
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CPane クラス](../../mfc/reference/cpane-class.md)   

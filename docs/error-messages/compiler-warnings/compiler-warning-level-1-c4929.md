@@ -1,35 +1,39 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4929 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4929"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4929"
+title: "コンパイラの警告 (レベル 1) C4929 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4929
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4929
 ms.assetid: 95f8ab4f-4468-4caa-acd5-8f4592f03b3c
-caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 38bfd20538db1f11ab2f7f20ab4079e9ed201bc2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4929
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'file' : typelibary は共用体を含みます。'embedded\_idl' 修飾子を無視します。  
+# <a name="compiler-warning-level-1-c4929"></a>コンパイラの警告 (レベル 1) C4929
+'file': タイプ ライブラリには、共用体が含まれています。'embedded_idl' 修飾子は無視されます。  
   
- [\#import](../Topic/%23import%20Directive%20\(C++\).md) の embedded\_idl 属性はタイプ ライブラリに適用できません。これは、タイプ ライブラリに共用体が存在するためです。  この警告を解決するには、embedded\_idl を使用しないでください。  
+ Embedded_idl 属性[#import](../../preprocessor/hash-import-directive-cpp.md)共用体は、タイプ ライブラリ内に存在するため、タイプ ライブラリに適用できませんでした。 この警告を解決するには、embedded_idl を使用しないでください。  
   
-## 使用例  
- コンポーネントを定義する例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、コンポーネントを定義します。  
   
 ```  
 // C4929a.cpp  
@@ -61,8 +65,8 @@ struct C : I {
 };  
 ```  
   
-## 使用例  
- 次の例では C4929 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4929 を生成します。  
   
 ```  
 // C4929b.cpp  

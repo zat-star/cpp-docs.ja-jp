@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: RC2101
-dev_langs: C++
-helpviewer_keywords: RC2101
+f1_keywords:
+- RC2101
+dev_langs:
+- C++
+helpviewer_keywords:
+- RC2101
 ms.assetid: 580f9d74-162f-41e9-9438-ddbe3457c359
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 53cc158d63f56c0dc44e2c6f00a127be1e058f7c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d08e9ddb7b8cda127b1d05bfef52b52833534cb2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resource-compiler-error-rc2101"></a>リソース コンパイラ エラー RC2101
 プリプロセス済みの RC ファイルに無効なディレクティブ  

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC dialog boxes [MFC], tabs
 - property pages [MFC], property sheets
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - CPropertySheet class [MFC], property sheets and pages
 - property sheets, propert pages
 ms.assetid: de8fea12-6c35-4cef-8625-b8073a379446
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 409bb0fadf994e793323c5585098f12c7f5f6c32
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 877d83a6833b9505c326bc5312d2f151add07cb8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="property-sheets-and-property-pages-mfc"></a>プロパティ シートとプロパティ ページ (MFC)
 MFC [ ダイアログ ボックス](../mfc/dialog-boxes.md)プロパティ シートとプロパティ ページを組み込むことにより実行できます。"タブ ダイアログ"を確認します。 正面や、重ねて表示されたウィンドウのグループから見たファイル フォルダーのスタックと同様に、タブ付きのシートのスタックを格納する「プロパティ シート」と呼ばれる、MFC では、この種のダイアログ ボックスで、Microsoft Word、Excel、および Visual C は、多くのダイアログ ボックスに似ていますが表示されます。 前面のタブ上のコントロールが表示されます。ラベルの付いたタブだけでは、背面のタブに表示されます。 プロパティ シートは、特に多数のプロパティまたは複数のグループに分類できる設定を管理するのに役立ちます。 通常、1 つのプロパティ シートは、いくつかの別のダイアログ ボックスを置き換えることで、ユーザー インターフェイスを簡素化できます。  
@@ -34,7 +38,7 @@ MFC [ ダイアログ ボックス](../mfc/dialog-boxes.md)プロパティ シ�
   
  プロパティ シートの作成と操作については、トピックを参照してください。[プロパティ シート](../mfc/property-sheets-mfc.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ダイアログ ボックス](../mfc/dialog-boxes.md)   
  [ダイアログ ボックスのライフ サイクル](../mfc/life-cycle-of-a-dialog-box.md)   
  [プロパティ シートとプロパティ ページ (MFC の)](../mfc/property-sheets-and-property-pages-in-mfc.md)   

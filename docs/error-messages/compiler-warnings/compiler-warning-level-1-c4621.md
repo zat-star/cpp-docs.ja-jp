@@ -1,34 +1,38 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4621 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4621"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4621"
+title: "コンパイラの警告 (レベル 1) C4621 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4621
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4621
 ms.assetid: 40931bd9-cb89-497e-86f0-cec9f016c63c
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9a72c787597748fc08a7ee64f845b5a30cec7535
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4621
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-型 'type' に対して後置形式でない 'operator \-\-' が見つかりました。前置形式にします。  
+# <a name="compiler-warning-level-1-c4621"></a>コンパイラの警告 (レベル 1) C4621
+'operator--' を型 'type'、前置形式を使用して見つかったありません後置形式  
   
- 指定された型に対して定義された後置デクリメント演算子がありません。  オーバーロードされた前置演算子を使用します。  
+ 指定した型の定義後置デクリメント演算子がありませんでした。 コンパイラは、オーバーロードされた前置演算子を使用します。  
   
- この警告は、後置の `--` 演算子を定義することで回避できます。  2 つの引数バージョンを持つ `--` 演算子を次のように作成します。  
+ この警告は、後置形式を定義することで回避できます`--`演算子。 2 つの引数のバージョンを作成、`--`演算子を次のようにします。  
   
 ```  
 // C4621.cpp  

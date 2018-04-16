@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2244
-dev_langs: C++
-helpviewer_keywords: C2244
+f1_keywords:
+- C2244
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2244
 ms.assetid: d9911c12-ceb5-4f93-ac47-b44a485215c2
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fc2afb310e7fdee866d437631f4a20554fc7a872
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4aae196f2acf59f8a06659e94583240ecd8a5653
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2244"></a>コンパイラ エラー C2244
 'identifier': 関数の定義を既存の宣言と一致しません  

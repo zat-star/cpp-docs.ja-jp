@@ -1,39 +1,43 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4691 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4691"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4691"
+title: "コンパイラの警告 (レベル 1) C4691 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4691
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4691
 ms.assetid: 722133d9-87f6-46c1-9e86-9825453d6999
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 17673ee3e65d2e0cd0d989c56759b62de38f5fdc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4691
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'型' : 参照された型は参照されていないアセンブリ 'ファイル' で必要です。現在の翻訳単位で定義された型が使用されます  
+# <a name="compiler-warning-level-1-c4691"></a>コンパイラの警告 (レベル 1) C4691
+'type': 参照されていないアセンブリ 'file'、代わりに使用される現在の翻訳単位で定義された型で参照される型が見つかりました  
   
- 元の型定義を含むメタデータ ファイルが参照されていません。コンパイラはローカルの型定義を使用しています。  
+ 元の型定義を含むメタデータ ファイルが参照されていないコンパイラを使用しているローカル型定義。  
   
- *file*を再ビルドしている場合は、[warning](../../preprocessor/warning.md)プラグマは C4691 を無視するまたは無効にできます。つまり、ビルドしているファイルが、コンパイラが型定義を検索するファイルと同じ場合は、C4691 を無視できます。  
+ 場所を再構築する場合は、の*ファイル*、C4691 無視したりプラグマでになっている[警告](../../preprocessor/warning.md)です。  つまり、構築して、ファイル、コンパイラは型定義を見つけ、ファイルと同じである場合は、C4691 を無視できます。  
   
- ただし、メタデータで参照されるアセンブリとは別のアセンブリの定義をコンパイラで使用する場合は、予期しない動作が発生する可能性があります。CLR 型は型名によってだけでなく、アセンブリによっても型指定されるためです。つまり、アセンブリ z.dll の型 Z とアセンブリ y.dll の型 Z は異なります。  
+ ただし、予期しない動作発生する可能性がコンパイラでは、同じアセンブリのメタデータで参照されている定義を使用する場合CLR 型は、型の名前だけでなく、アセンブリによっても型指定されます。  つまり、アセンブリ z.dll から型を Z とは異なりますアセンブリ y.dll から型を Z です。  
   
-## 使用例  
- 次の例では、元の型定義を使用します。  
+## <a name="example"></a>例  
+ このサンプルには、元の型定義が含まれています。  
   
 ```  
 // C4691_a.cpp  
@@ -41,8 +45,8 @@ caps.handback.revision: 11
 public ref class Original_Type {};  
 ```  
   
-## 使用例  
- 次の例では C4691\_a.dll を参照し、型 Original\_Type のフィールドを宣言します。  
+## <a name="example"></a>例  
+ このサンプルでは、C4691_a.dll を参照し、Original_Type の種類のフィールドを宣言します。  
   
 ```  
 // C4691_b.cpp  
@@ -54,10 +58,10 @@ public:
 };  
 ```  
   
-## 使用例  
- 次の例では C4691 エラーが生成されます。この例では Original\_Type の定義を使用し、C4691a.dll を参照しません。  
+## <a name="example"></a>例  
+ 次の例では、C4691 が生成されます。  このサンプルが Original_Type の定義が含まれていて、C4691a.dll を参照していません確認します。  
   
- この警告を解決するには、元の型定義を含むメタデータ ファイルを参照し、ローカル宣言とローカル定義を削除します。  
+ を解決するのには、元の型定義を含むメタデータ ファイルを参照し、ローカル宣言と定義を削除します。  
   
 ```  
 // C4691_c.cpp  

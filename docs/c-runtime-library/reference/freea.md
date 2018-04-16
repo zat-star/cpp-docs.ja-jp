@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: _freea
+ms.topic: reference
+apiname:
+- _freea
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,21 +25,24 @@ apitype: DLLExport
 f1_keywords:
 - freea
 - _freea
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _freea function
 - freea function
 - memory deallocation
 ms.assetid: dcd30584-dd9d-443b-8c4c-13237a1cecac
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 50d1c551f0ae51daafb3d83075091fa299db0fed
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6bf2bd2d3dacba307f529798727e7af745bf7cf9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="freea"></a>_freea
 メモリ ブロックを割り当て解除または解放します。  
@@ -60,28 +65,28 @@ void _freea(
 ## <a name="remarks"></a>コメント  
  `_freea` 関数は、以前に [_malloca](../../c-runtime-library/reference/malloca.md) の呼び出しによって割り当てられたメモリ ブロック (`memblock`) を割り当て解除します。 `_freea` は、ヒープまたはスタック上でメモリが割り当てられているかどうかを確認します。 スタック上で割り当てられている場合、`_freea` は何も行いません。 ヒープ上で割り当てられている場合、解放されるバイト数は、ブロックが割り当てられたときに要求されたバイト数と同じです。 `memblock` が `NULL` である場合、ポインターは無視され、`_freea` が直ちに返されます。 無効なポインター (`_malloca` によって割り当てられていないメモリ ブロックへのポインター) を解放しようとすると、以降の割り当て要求に影響を与え、エラーが発生する可能性があります。  
   
- `_freea`呼び出し`free`ヒープにメモリが割り当てられていることを検出した場合に内部的にします。 メモリが、ヒープまたはスタックのどちらにあるかは、割り当てられたメモリの直前のアドレスにメモリ内で配置されたマーカーによって決まります。  
+ `_freea` 呼び出し`free`ヒープにメモリが割り当てられていることを検出した場合に内部的にします。 メモリが、ヒープまたはスタックのどちらにあるかは、割り当てられたメモリの直前のアドレスにメモリ内で配置されたマーカーによって決まります。  
   
  メモリの解放でエラーが発生すると、エラーの性質に関するオペレーティング システムからの情報が `errno` に設定されます。 詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
  メモリ ブロックを解放すると、[_heapmin](../../c-runtime-library/reference/heapmin.md) が、未使用の領域を結合して、それらをオペレーティング システムに戻すことで、ヒープ上の空きメモリの量を最小限に抑えます。 オペレーティング システムにリリースされない解放されたメモリは、空きプールに復元され、再度割り当てに使用できます。  
   
- `_freea` に対する呼び出しは、`_malloca` に対するすべての呼び出しを伴う必要があります。 同じメモリ上で `_freea` を 2 回呼び出した場合もエラーになります。 特に、C ランタイム ライブラリのデバッグ バージョン (特に `_CRTDBG_MAP_ALLOC` を定義することで有効になった [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md) 機能) とアプリケーションがリンクされている場合、見つからないまたは重複した `_freea` の呼び出しを簡単に見つけることができます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」を参照してください。  
+ `_freea` に対する呼び出しは、`_malloca` に対するすべての呼び出しを伴う必要があります。 同じメモリ上で `_freea` を 2 回呼び出した場合もエラーになります。 特に、C ランタイム ライブラリのデバッグ バージョン (特に `_CRTDBG_MAP_ALLOC` を定義することで有効になった [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md) 機能) とアプリケーションがリンクされている場合、見つからないまたは重複した `_freea` の呼び出しを簡単に見つけることができます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。  
   
  `_freea` は `__declspec(noalias)` としてマークされます。これは、関数がグローバル変数を変更しないことを保証します。 詳細については、「[noalias](../../cpp/noalias.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`_freea`|\<stdlib.h> と \<malloc.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  「[_malloca](../../c-runtime-library/reference/malloca.md)」の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
  [_malloca](../../c-runtime-library/reference/malloca.md)   
  [calloc](../../c-runtime-library/reference/calloc.md)   

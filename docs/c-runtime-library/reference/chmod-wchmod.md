@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _chmod
 - _wchmod
@@ -27,7 +28,8 @@ f1_keywords:
 - _chmod
 - _wchmod
 - wchmod
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _chmod function
 - wchmod function
@@ -36,15 +38,17 @@ helpviewer_keywords:
 - files [C++], changing permissions
 - _wchmod function
 ms.assetid: 92f7cb86-b3b0-4232-a599-b8c04a2f2c19
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 9da654c37b79e9a5398968500f8150d82e4f022c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d6df97d52e084b56ca9f0e3e749ce933994a8dd2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="chmod-wchmod"></a>_chmod、_wchmod
 ファイルのアクセス許可の設定を変更します。  
@@ -89,7 +93,7 @@ int _wchmod(
   
  `_wchmod` 関数は、`_chmod` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wchmod` は、ワイド文字列です。 それ以外では、`_wchmod` と `_chmod` の動作は同じです。  
   
- この関数は、パラメーターを検証します。 `pmode` がマニフェスト定数のいずれかの組み合わせではない、または、別の定数セットを組み込んでいる場合、この関数は単にそれらを無視します。 `filename` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から -1 が返されます。  
+ この関数は、パラメーターを検証します。 `pmode` がマニフェスト定数のいずれかの組み合わせではない、または、別の定数セットを組み込んでいる場合、この関数は単にそれらを無視します。 `filename` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から -1 が返されます。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -97,14 +101,14 @@ int _wchmod(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tchmod`|`_chmod`|`_chmod`|`_wchmod`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_chmod`|\<io.h>|\<sys/types.h>、\<sys/stat.h>、\<errno.h>|  
 |`_wchmod`|\<io.h> または \<wchar.h>|\<sys/types.h>、\<sys/stat.h>、\<errno.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -183,7 +187,7 @@ Access is denied.
 Mode set to read/write  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイル処理](../../c-runtime-library/file-handling.md)   
  [_access、_waccess](../../c-runtime-library/reference/access-waccess.md)   
  [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   

@@ -1,28 +1,32 @@
 ---
-title: "複数の基底クラス |Microsoft ドキュメント"
-ms.custom: 
+title: 複数の基底クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-language
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - base classes [C++], multiple
 - derived classes [C++], multiple bases
 - multiple inheritance, class declaration
 - multiple base classes [C++]
 ms.assetid: a30c69fe-401c-4a87-96a0-e0da70c7c740
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 43f15ec1bf80c15f160d2a0b08a899806a3a7e01
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b765fabe8b83169353650286d05d02301dcb4807
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="multiple-base-classes"></a>複数の基本クラス
 」の説明に従って[多重継承](http://msdn.microsoft.com/en-us/3b74185e-2beb-4e29-8684-441e51d2a2ca)、1 つ以上の基底クラスからクラスを派生させることができます。 モデルでは、多重継承 (クラスが 1 つ以上の基底クラスから派生した、)、基底クラスを指定する、*ベース リスト*文法要素。 たとえば、`CollectionOfBook` および `Collection` から派生する `Book` のクラス宣言は指定できます。  
@@ -217,5 +221,5 @@ public:
   
  この図では、非仮想基底クラスを通じてクラス `A` のメンバーにアクセスすると、あいまいさが発生します。コンパイラは、`B` に関連付けられているサブオブジェクトと `C` に関連付けられているサブジェクトのどちらを使用するかを示す情報を持ちません。 しかし、`A` が仮想基底クラスとして指定されている場合、どのサブオブジェクトがアクセスされているかは問題になりません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [継承](../cpp/inheritance-cpp.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: client/Microsoft::WRL::WeakRef
-dev_langs: C++
-helpviewer_keywords: WeakRef class
+f1_keywords:
+- client/Microsoft::WRL::WeakRef
+dev_langs:
+- C++
+helpviewer_keywords:
+- WeakRef class
 ms.assetid: 572be703-c641-496c-8af5-ad6164670ba1
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 148c39f1ef38b6b20de6d50cc75352a4f30a9090
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: a8263595bdd564c313a8783a3a9baf0c6d562494
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="weakref-class"></a>WeakRef クラス
 クラシック COM ではなく、Windows ランタイムでのみ使用できる *弱い参照* を表します。 弱い参照は、アクセスできる場合とできない場合があるオブジェクトを表します。  
@@ -93,10 +100,10 @@ if (strongRef == nullptr)
   
  `WeakRef`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

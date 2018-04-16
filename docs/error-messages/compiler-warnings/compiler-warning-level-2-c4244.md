@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4244
-dev_langs: C++
-helpviewer_keywords: C4244
+f1_keywords:
+- C4244
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4244
 ms.assetid: 2c19d157-21d1-42c2-a6c0-3f30f2ce3813
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7f2059d6b17d803740f70e0d640e212d15858705
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6d1920fbc2ed78cf498df61c7177796645730cc2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-2-c4244"></a>コンパイラの警告 (レベル 2) C4244
 'argument': 'type1' から 'type2' にデータ損失の可能性への変換  

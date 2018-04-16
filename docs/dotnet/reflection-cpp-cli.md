@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - typeid keyword [C++]
 - reflection [C++}, about reflection
@@ -17,15 +19,18 @@ helpviewer_keywords:
 - data types [C++], reflection
 - reflection [C++}
 ms.assetid: 46b6ff4a-e441-4022-8892-78e69422f230
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cff5256d94593959c280614858cdde8be3dee9f6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: fab5bb3c912aeea2598189965d424ba4508cf5c8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="reflection-ccli"></a>リフレクション (C++/CLI)
 リフレクションでは、既知のデータ型を実行時に調査できます。 リフレクションでは、アセンブリに含まれているデータ型を列挙したり、クラス型や値型のメンバーを探索したりできます。 この処理は、コンパイル時に型が認識または参照された場合のどちらにも対応できます。 そのため、リフレクションは、開発およびコード管理ツール向けの便利な機能です。  
@@ -232,5 +237,5 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

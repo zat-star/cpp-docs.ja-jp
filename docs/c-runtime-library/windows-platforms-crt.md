@@ -1,14 +1,17 @@
 ---
 title: "Windows プラットフォーム (CRT) | Microsoft Docs"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 02/02/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.programs
-dev_langs: C++
+f1_keywords:
+- c.programs
+dev_langs:
+- C++
 helpviewer_keywords:
 - CRT, compatibility
 - backward compatibility [C++], C run-time libraries
@@ -17,21 +20,25 @@ helpviewer_keywords:
 - operating systems [C++]
 - Unicode [C++], Win32 platforms
 ms.assetid: 0aacaf45-6dc4-4908-bd52-57abac7b39f6
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0798263caee416d3ce020104a6ac9bbb711fd22c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c1a5e7898cad7120333bd0549a44931d9e23640c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="windows-platforms-crt"></a>Windows プラットフォーム (CRT)
-[!INCLUDE[vs2012_upd01](../c-runtime-library/includes/vs2012_upd01_md.md)] 用 C ランタイム ライブラリでは、[!INCLUDE[win8](../build/reference/includes/win8_md.md)]、[!INCLUDE[winserver8](../build/reference/includes/winserver8_md.md)]、[!INCLUDE[win7](../build/includes/win7_md.md)]、[!INCLUDE[winsvr08](../build/reference/includes/winsvr08_md.md)]、Windows Vista、x86 用 [!INCLUDE[winxp](../build/includes/winxp_md.md)] Service Pack 3 (SP3)、x64 用 [!INCLUDE[winxp](../build/includes/winxp_md.md)] Service Pack 2 (SP2)、x86 と x64 用 [!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)] Service Pack 2 (SP2) をサポートします。 これらすべてのオペレーティング システムで、Windows アプリケーション プログラミング インターフェイス (API) をサポートし、Unicode のサポートを提供します。 さらに、すべての Win32 アプリケーションで、マルチバイト文字セット (MBCS) を使用できます。  
-  
+
+Visual Studio の C ランタイム ライブラリは最新バージョンの Windows と Windows Server、[!INCLUDE[win8](../build/reference/includes/win8_md.md)]、[!INCLUDE[winserver8](../build/reference/includes/winserver8_md.md)], [!INCLUDE[win7](../build/includes/win7_md.md)]、[!INCLUDE[winsvr08](../build/reference/includes/winsvr08_md.md)]、Windows Vista をサポートし、必要に応じて x86 用の [!INCLUDE[winxp](../build/includes/winxp_md.md)] Service Pack 3 (SP3)、x64 用の [!INCLUDE[winxp](../build/includes/winxp_md.md)] Service Pack 2 (SP2)、および x86 と x64 用の [!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)] Service Pack 2 (SP2) をサポートします。 これらすべてのオペレーティング システムで、Windows デスクトップ API (Win32) をサポートし、Unicode のサポートを提供します。 さらに、すべての Win32 アプリケーションで、マルチバイト文字セット (MBCS) を使用できます。
+
 > [!NOTE]
->  [!INCLUDE[vs_dev11_long](../build/includes/vs_dev11_long_md.md)] では、[!INCLUDE[winxp](../build/includes/winxp_md.md)] と [!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)] の開発をサポートしていません。 [!INCLUDE[winxp](../build/includes/winxp_md.md)] と [!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)] のサポートを追加するには、[!INCLUDE[vs2012_upd01](../c-runtime-library/includes/vs2012_upd01_md.md)] をインストールする必要があります。  
-  
-## <a name="see-also"></a>関連項目  
- [互換性](../c-runtime-library/compatibility.md)
+> Visual Studio 2017 の **C++ を使用したデスクトップ開発**のワークロードの既定のインストールには、[!INCLUDE[winxp](../build/includes/winxp_md.md)] と [!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)] の開発のサポートは含まれていません。 省略可能なコンポーネントである **C++ に関する Windows XP サポート**をインストールして Windows XP プラットフォーム ツールセットを有効にする必要があります。
+
+## <a name="see-also"></a>関連項目
+
+[互換性](../c-runtime-library/compatibility.md)  

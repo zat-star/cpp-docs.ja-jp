@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3366
 ms.assetid: efc55bcf-c16d-43c1-a36f-87a6165fa2a8
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5d94d3a18c02cfe81f6c3ee96635c9388f54308d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: b862e606b86eca0a7eb7f2ad1e91f2776c8c0b23
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3366"></a>コンパイラ エラー C3366
 'variable': 静的データ メンバーのマネージ配列または WinRTtypes はクラス定義内で定義する必要があります  
@@ -45,4 +46,3 @@ ref class X {
   
 int X::i = 5;      // C3366  
 ```  
-

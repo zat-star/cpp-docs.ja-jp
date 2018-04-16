@@ -8,7 +8,7 @@ ms.technology:
 - cpp
 - devlang-cpp
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - ilogb
 - ilogbf
@@ -38,15 +38,17 @@ helpviewer_keywords:
 - ilogbf function
 - ilogbl function
 ms.assetid: 9ef19d57-1caa-41d5-8233-2faad3562fcb
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: f0b2e084e27b951676fddfb20b53d5f74944089e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8da5ba71b59f64c38a051fd8f31fa7bf58a4556d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ilogb-ilogbf-ilogbl"></a>ilogb、ilogbf、ilogbl
 指定した値を、バイアスをかけない 2 進数の指数として表す整数を取得します。  
@@ -97,15 +99,15 @@ int ilogbl(
   
  この関数を呼び出すことは、これに相当する `logb` 関数を呼び出してから、戻り値を `int` へキャストすることに似ています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|C ヘッダー|C++ ヘッダー|  
+|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
 |-------------|--------------|------------------|  
 |`ilogb`、`ilogbf`、`ilogbl`|\<math.h>|\<cmath>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [frexp](../../c-runtime-library/reference/frexp.md)   
  [logb、logbf、logbl、_logb、_logbf](../../c-runtime-library/reference/logb-logbf-logbl-logb-logbf.md)

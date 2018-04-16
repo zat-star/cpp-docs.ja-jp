@@ -7,9 +7,8 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
-- regex_token_iterator
 - regex/std::regex_token_iterator
 - regex/std::regex_token_iterator::regex_type
 - regex/std::regex_token_iterator::value_type
@@ -22,36 +21,28 @@ f1_keywords:
 - regex/std::regex_token_iterator::operator*
 - regex/std::regex_token_iterator::operator->
 - regex/std::regex_token_iterator::operator++
-- regex/std::regex_token_iterator::operator!=
 dev_langs:
 - C++
 helpviewer_keywords:
-- regex_token_iterator class
+- std::regex_token_iterator [C++]
+- std::regex_token_iterator [C++], regex_type
+- std::regex_token_iterator [C++], value_type
+- std::regex_token_iterator [C++], iterator_category
+- std::regex_token_iterator [C++], difference_type
+- std::regex_token_iterator [C++], pointer
+- std::regex_token_iterator [C++], reference
 ms.assetid: a213ba48-8e4e-4b6b-871a-2637acf05f15
-caps.latest.revision: 15
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 38a34e2957b3fb4cf2713d61ac3633691b04b03c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 29d8186911b51865de06b24e675a9570e3ea04cc
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="regextokeniterator-class"></a>regex_token_iterator クラス
 サブマッチ用の反復子クラス。  
@@ -97,7 +88,7 @@ private:
 ```  
 #### <a name="parameters"></a>パラメーター  
  `BidIt`  
- サブマッチ用の反復子の型。  
+ サブマッチの反復子の型。  
   
  `Elem`  
  一致させる要素の型。  
@@ -110,7 +101,7 @@ private:
   
  -1 のインデックス値は、前回の正規表現の一致の直後から始まる文字シーケンスまたは前回の正規表現の一致が存在しなかった場合の文字シーケンスの先頭から始まって現在の正規表現の一致の最初の文字の直前まで続く、または、現在の一致が存在しない場合の文字シーケンスの最後まで続く文字シーケンスを指定します。 その他のインデックス値 `idx` は、 `it.match[idx]`に保持されているキャプチャ グループの内容を指定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<regex>  
   
  **名前空間:** std  
@@ -1475,7 +1466,7 @@ match == z
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<regex>](../standard-library/regex.md)  
 [regex_constants クラス](../standard-library/regex-constants-class.md)  
 [regex_error クラス](../standard-library/regex-error-class.md)  
@@ -1484,5 +1475,4 @@ match == z
 [\<regex> 系演算子](../standard-library/regex-operators.md)  
 [regex_traits クラス](../standard-library/regex-traits-class.md)  
 [\<regex> typedefs](../standard-library/regex-typedefs.md)  
-
 

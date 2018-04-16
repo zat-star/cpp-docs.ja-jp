@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: xfunctional/std::less
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- xfunctional/std::less
+dev_langs:
+- C++
 helpviewer_keywords:
 - less struct
 - less function
 ms.assetid: 39349da3-11cd-4774-b2cc-b46af5aae5d7
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 723881fd2f46addf6b7e68a9672d5a7c546ca7d2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1f5c2ad5614bad10e34623626e2590f9da9aa23f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="less-struct"></a>less 構造体
 引数に対して "より小さい" 演算 (`operator<`) を実行する二項述語。  
@@ -113,12 +118,12 @@ Original vector v1 = (41 18467 6334 26500 19169 15724 11478)
 Sorted vector v1 = (41 6334 11478 15724 18467 19169 26500)
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 
 

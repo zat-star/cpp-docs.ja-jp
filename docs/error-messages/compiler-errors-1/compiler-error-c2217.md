@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2217
-dev_langs: C++
-helpviewer_keywords: C2217
+f1_keywords:
+- C2217
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2217
 ms.assetid: 1ce1e3f5-4171-4376-804d-967f7e612935
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0f1795534af1332859fd1a33a137573df82643b4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6af2bbd43d6e522bbe6ede2a874b7e8ebbf27c10
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2217"></a>コンパイラ エラー C2217
 'attribute1' が 'attribute2' が必要です。  

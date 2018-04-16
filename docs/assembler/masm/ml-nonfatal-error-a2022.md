@@ -1,32 +1,36 @@
 ---
-title: "ML Nonfatal Error A2022 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "A2022"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "A2022"
+title: "ML の致命的でないエラー A2022 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- A2022
+dev_langs:
+- C++
+helpviewer_keywords:
+- A2022
 ms.assetid: 3f4b1017-543e-4236-820f-61070ab58920
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 21f9da0c44bd446eb826e0169d6fe3a7c75eab31
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# ML Nonfatal Error A2022
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**命令のオペランドは同じサイズである必要があります。**  
+# <a name="ml-nonfatal-error-a2022"></a>ML の致命的でないエラー A2022
+**命令のオペランドが同じサイズにする必要があります。**  
   
- 命令にオペランドは同じサイズがありません。  
+ 命令のオペランドには、同じサイズがありませんでした。  
   
-## 参照  
- [ML Error Messages](../../assembler/masm/ml-error-messages.md)
+## <a name="see-also"></a>参照  
+ [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

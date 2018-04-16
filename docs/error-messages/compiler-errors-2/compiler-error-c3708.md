@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3708
-dev_langs: C++
-helpviewer_keywords: C3708
+f1_keywords:
+- C3708
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3708
 ms.assetid: 45e71564-9c7f-437f-98d8-a735ce162ed0
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8cc63e34c42f2c8d91c787530680d76e81192569
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ef5d02c767333b8121ffd2777fc4bc6b4a2611d1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3708"></a>コンパイラ エラー C3708
 'interface': 'keyword'; の不適切な使用互換性のあるイベント ソースのメンバーである必要があります。  

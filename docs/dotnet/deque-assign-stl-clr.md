@@ -1,32 +1,37 @@
 ---
-title: "deque::assign (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::deque::assign"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "assign メンバー [STL/CLR]"
+title: deque::assign (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::deque::assign
+dev_langs:
+- C++
+helpviewer_keywords:
+- assign member [STL/CLR]
 ms.assetid: 03fafdbb-6b10-4464-b3dc-0cc5cb8ac980
 caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 1ae8bb7a21a336987d30cb41a7a1ff9d586db830
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# deque::assign (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-すべての要素を置き換えます。  
+# <a name="dequeassign-stlclr"></a>deque::assign (STL/CLR)
+すべての要素を置換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void assign(size_type count, value_type val);  
@@ -35,32 +40,32 @@ template<typename InIt>
 void assign(System::Collections::Generic::IEnumerable<Value>^ right);  
 ```  
   
-#### パラメーター  
- count  
+#### <a name="parameters"></a>パラメーター  
+ `count`  
  挿入する要素の数。  
   
- 最初  
- 挿入する範囲の先頭。  
+ `first`  
+ 挿入する範囲の開始しています。  
   
- last  
- 挿入する範囲の最後。  
+ `last`  
+ 挿入する範囲の終了。  
   
- \[right\]  
- 挿入する列挙体。  
+ `right`  
+ 列挙型を挿入します。  
   
- val  
- 挿入する要素の値。  
+ `val`  
+ 挿入する要素の値です。  
   
-## 解説  
- 一つ目のメンバー関数は、値 `val`の `count` 要素の繰り返しで被制御シーケンスを置き換えます。  同じ値を持つ要素でコンテナーを塗りつぶすためにすべてを使用します。  
+## <a name="remarks"></a>コメント  
+ 最初のメンバー関数では、被制御シーケンスを置き換えますの繰り返しで`count`値の要素`val`です。 使用する要素をコンテナーを格納するのに、同じ値を持ちます。  
   
- `InIt` が整数型である場合、2 つ目のメンバー関数は `assign((size_type)``first``, (value_type)``last``)`と同様に動作します。  それ以外の場合は、シーケンス `[``first``,``last``)`と被制御シーケンスを置き換えます。  被制御シーケンスのコピーを作成するために、個別のシーケンスを使用します。  
+ 場合`InIt`整数型の場合は、2 番目のメンバー関数の動作と同じ`assign((size_type)first, (value_type)last)`です。 それ以外の場合、シーケンスを被制御シーケンスを置き換えます [`first`、 `last`)。 使用すると被制御シーケンスのコピーを別のシーケンス。  
   
- 3 つ目のメンバー関数は、列挙子が `right`指定するシーケンスと被制御シーケンスを置き換えます。  列挙子によって指定されたシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+ 3 番目のメンバー関数は、列挙子によって指定されたシーケンスに、被制御シーケンスを置き換えます`right`です。 これを使用するには、被制御シーケンスの列挙子によって説明されているシーケンスのコピーを作成します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // cliext_deque_assign.cpp   
 // compile with: /clr   
 #include <cliext/deque>   
@@ -96,14 +101,17 @@ int main()
   
 ```  
   
-  **X x x x x X**  
- **b**  
- **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext\/deque\>  
+```Output  
+x x x x x x  
+a b  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/deque >  
   
-## 参照  
- [deque](../dotnet/deque-stl-clr.md)   
- [operator\= \(deque\)](../dotnet/operator-assign-deque-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
+ [operator= (deque) (STL/CLR)](../dotnet/operator-assign-deque-stl-clr.md)

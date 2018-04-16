@@ -5,21 +5,20 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - system_error/std::operator!=
 - system_error/std::operator==
 dev_langs:
 - C++
 ms.assetid: c14edefb-bd8a-4e90-88d3-c59c98e6f73c
-caps.latest.revision: 11
+caps.latest.revision: 
 manager: ghogen
+ms.openlocfilehash: 84cac348fcc2c9577b3a0e1f72ac56a4bbabf90f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: ed01a5abeb54f5071968555b563849e2cd4ac1af
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltsystemerrorgt-operators"></a>&lt;system_error&gt; 演算子
 ||||  
@@ -114,9 +113,8 @@ inline bool operator<(
 ### <a name="remarks"></a>コメント  
  この関数はエラー順序をテストします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<system_error>](../standard-library/system-error.md)
-
 
 
 

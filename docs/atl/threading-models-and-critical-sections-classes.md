@@ -1,57 +1,62 @@
 ---
-title: "スレッド モデルとクリティカル セクション クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.atl.threads.models"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, クリティカル セクション"
-  - "ATL, マルチスレッド"
-  - "クリティカル セクション"
-  - "スレッド処理 [ATL], モデル"
+title: "スレッド モデルと重要なセクション クラス (ATL) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.atl.threads.models
+dev_langs:
+- C++
+helpviewer_keywords:
+- ATL, critical sections
+- ATL, multithreading
+- threading [ATL], models
+- critical sections
 ms.assetid: 759f05ef-6285-4be6-a2cc-78572dd75146
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1501fe4f761b9bc8775018d6566ceff5fb0aa477
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# スレッド モデルとクリティカル セクション クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のクラスはスレッド モデルとクリティカル セクションを定義します:  
+# <a name="threading-models-and-critical-sections-classes"></a>スレッド モデルと重要なセクション クラス
+次のクラスを定義、スレッド処理モデルと重要なセクション。  
   
--   [CAtlAutoThreadModule](../atl/reference/catlautothreadmodule-class.md) は、スレッドのプールされているアパートメント モデル COM サーバーを実装します。  
+-   [残さ](../atl/reference/catlautothreadmodule-class.md)スレッド プール、アパートメント モデルの COM サーバーを実装します。  
   
--   [CAtlAutoThreadModuleT](../atl/reference/catlautothreadmodulet-class.md) は、スレッドのプールされているアパートメント モデル COM サーバーを実装するためのメソッドを提供します。  
+-   [CAtlAutoThreadModuleT](../atl/reference/catlautothreadmodulet-class.md)スレッド プール、アパートメント モデルの COM サーバーを実装するためのメソッドを提供します。  
   
--   [CComMultiThreadModel](../atl/reference/ccommultithreadmodel-class.md) は、変数をインクリメントおよびデクリメントするためのスレッドセーフなメソッドが用意されています。  クリティカル セクションを提供します。  
+-   [CComMultiThreadModel](../atl/reference/ccommultithreadmodel-class.md)変数をインクリメントおよびデクリメントのスレッド セーフであるメソッドを提供します。 クリティカル セクションを提供します。  
   
--   [CComMultiThreadModelNoCS](../Topic/CComMultiThreadModelNoCS%20Class.md) は、変数をインクリメントおよびデクリメントするためのスレッドセーフなメソッドが用意されています。  クリティカル セクションは用意されていません。  
+-   [CComMultiThreadModelNoCS](../atl/reference/ccommultithreadmodelnocs-class.md)変数をインクリメントおよびデクリメントのスレッド セーフであるメソッドを提供します。 クリティカル セクションは提供されません。  
   
--   [CComSingleThreadModel](../atl/reference/ccomsinglethreadmodel-class.md) は、変数をインクリメントおよびデクリメントするためのメソッドを提供します。  クリティカル セクションは用意されていません。  
+-   [CComSingleThreadModel](../atl/reference/ccomsinglethreadmodel-class.md)変数をインクリメントおよびデクリメントするためのメソッドを提供します。 クリティカル セクションは提供されません。  
   
--   [CComObjectThreadModel](../Topic/CComObjectThreadModel.md) は単一のオブジェクト クラスの適切なスレッド モデルのクラスを決定します。  
+-   [CComObjectThreadModel](../atl/reference/atl-typedefs.md#ccomobjectthreadmodel) 1 つのオブジェクト クラスに対して適切なスレッド処理モデル クラスを決定します。  
   
--   [CComGlobalsThreadModel](../Topic/CComGlobalsThreadModel.md) はグローバルに使用できるオブジェクトの適切なスレッド処理モデルのクラスを決定します。  
+-   [CComGlobalsThreadModel](../atl/reference/atl-typedefs.md#ccomglobalsthreadmodel)はグローバルに使用できるオブジェクトに対して適切なスレッド処理モデル クラスを決定します。  
   
--   [CComAutoCriticalSection](../atl/reference/ccomautocriticalsection-class.md) はクリティカル セクションを取得および解放するメソッドが含まれています。  クリティカル セクションは自動的に初期化されます。  
+-   [CComAutoCriticalSection](../atl/reference/ccomautocriticalsection-class.md)を取得し、クリティカル セクションを解放するためのメソッドが含まれます。 クリティカル セクションが自動的に初期化します。  
   
--   [CComCriticalSection](../Topic/CComCriticalSection%20Class.md) はクリティカル セクションを取得および解放するメソッドが含まれています。  クリティカル セクションは明示的に初期化する必要があります。  
+-   [CComCriticalSection](../atl/reference/ccomcriticalsection-class.md)を取得し、クリティカル セクションを解放するためのメソッドが含まれます。 クリティカル セクションは、明示的に初期化する必要があります。  
   
--   [CComFakeCriticalSection](../atl/reference/ccomfakecriticalsection-class.md) は、クリティカル セクションを指定しないで `CComCriticalSection` のメソッドを反映します。  `CComFakeCriticalSection` のメソッドは何も実行しません。  
+-   [CComFakeCriticalSection](../atl/reference/ccomfakecriticalsection-class.md)内のメソッドをミラー化`CComCriticalSection`クリティカル セクションを指定しなくてもします。 メソッドは、`CComFakeCriticalSection`何もしません。  
   
--   [CRTThreadTraits](../Topic/CRTThreadTraits%20Class.md) は、CRT スレッド用の作成関数が用意されています。  スレッドが CRT 関数を使用する場合に、このクラスを使用します。  
+-   [CRTThreadTraits](../atl/reference/crtthreadtraits-class.md) CRT スレッドの作成機能を提供します。 スレッドが CRT 関数を使用する場合は、このクラスを使用します。  
   
--   [Win32ThreadTraits](../Topic/Win32ThreadTraits%20Class.md) は、Windows スレッド用の作成関数が用意されています。  スレッドが CRT 関数を使用しない場合は、このクラスを使用します。  
+-   [Win32ThreadTraits](../atl/reference/win32threadtraits-class.md) Windows スレッドの作成機能を提供します。 スレッド CRT 関数を使用しない場合は、このクラスを使用します。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)
+

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - union keyword [C], tags
 - enumeration tags
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - tags, structure tags
 - union keyword [C]
 ms.assetid: b4bda1d1-cb5e-4f60-ac2b-29af93d8a9a2
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ba0a5fcce92c0d8afe19e3b98d2ba20e1d22d6a4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7833c7c1cfd9e7e2b408203f18cf955f6bafedd8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="name-spaces"></a>名前空間
 コンパイラは、異なる種類の項目に使用されている識別子を区別するために "名前空間" を設定します。 競合を回避するために、それぞれの名前空間の中では名前は一意である必要がありますが、複数の名前空間では同一の名前を使うことができます。 これは、複数の項目が異なる名前空間にあれば、それらに同じ識別子を使用できることを意味しています。 コンパイラは、プログラム内の識別子の構文コンテキストに基づいて参照を解決できます。  
@@ -62,5 +66,5 @@ struct student {
   
  `student` が `struct` キーワードの後にある場合、コンパイラはこれを構造体のタグとして認識します。 `student` がメンバー選択演算子 (**->** または **.**) の後にある場合、名前は構造体メンバーを示します。 他のコンテキストでは、`student` は構造体変数を参照します。 ただし、タグの名前空間をオーバーロードすることは、意味が不明になるため推奨されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラムの構造](../c-language/program-structure.md)

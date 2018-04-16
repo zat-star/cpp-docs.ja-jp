@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: xfunctional/std::modulus
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- xfunctional/std::modulus
+dev_langs:
+- C++
 helpviewer_keywords:
 - modulus class
 - modulus struct
 ms.assetid: 86d342f7-b7b1-46a4-b0bb-6b7ae827369b
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 22ff9531d675c0a26ca9fea42e2ee6f3ad708e89
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a1333ac8b0ca8b9b9b0ec2e83a2c5c37e077be85
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="modulus-struct"></a>modulus 構造体
 引数に対して剰余演算 (`operator%`) を実行する定義済みの関数オブジェクト。  
@@ -117,12 +122,12 @@ The element-wise remainders of the modular division
  */  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<functional>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
 

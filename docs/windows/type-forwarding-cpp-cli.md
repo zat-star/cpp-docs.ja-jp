@@ -1,68 +1,72 @@
 ---
-title: "Type Forwarding (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "type forwarding, Visual C++"
+title: "転送先の型 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- type forwarding, Visual C++
 ms.assetid: ae730b69-0c27-41cc-84e1-3132783866ea
-caps.latest.revision: 12
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 6898c011a4e2e907cd745ccb206b0e0f0b37e78f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Type Forwarding (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-、アセンブリ A.を使用するクライアントを再コンパイルする必要がないという 1 種類のアセンブリ \(アセンブリ A\) 他の型からアセンブリ \(アセンブリ B\) を移動するには、アセンブリに*転送の* 割り当てをアセンブリのように入力します。  
+# <a name="type-forwarding-ccli"></a>型の転送 (C++/CLI)
+*転送先の入力*アセンブリ A を使用するクライアントを再コンパイルする必要がないようにに、1 つのアセンブリ (アセンブリ A) から型を別のアセンブリ (アセンブリ B) に移動することができます  
   
-## すべてのプラットフォーム  
- この機能は、すべてのランタイムでサポートされていません。  
+## <a name="all-platforms"></a>すべてのプラットフォーム  
+ この機能はすべてのランタイムでサポートされていません。  
   
-## Windows ランタイム  
- この機能は [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]ではサポートされていません。  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ この機能は、Windows ランタイムでサポートされていません。  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/ZW**  
   
-## 共通言語ランタイム  
- 次のコード例は型の転送を使用する方法を示します。  
+## <a name="common-language-runtime"></a>共通言語ランタイム  
+ 次のコード例では、型の転送を使用する方法を示します。  
   
-### 構文  
+### <a name="syntax"></a>構文  
   
 ```  
 #using "new.dll"  
 [assembly:TypeForwardedTo(type::typeid)];  
 ```  
   
-### パラメーター  
+### <a name="parameters"></a>パラメーター  
  `new`  
- 、型定義を移動するアセンブリ。  
+ 型定義の移動先のアセンブリ。  
   
  `type`  
- 他のアセンブリに移動先の型定義です。  
+ 型定義に含まれる別のアセンブリに移動します。  
   
-### 解説  
- コンポーネント \(アセンブリ\) には、クライアント アプリケーションによって他のアセンブリからコンポーネント \(アセンブリ\) から型を移動するために型の転送を使用して用意されて更新コンポーネント \(および必要な追加アセンブリ\) を使用して、後、クライアント アプリケーションは、再コンパイルで機能します。  
+### <a name="remarks"></a>コメント  
+ コンポーネント (アセンブリ) が付属していて、後にクライアント アプリケーションによって使用されているを使用する型のコンポーネント (アセンブリ) からの型を別のアセンブリに移動、更新されたコンポーネント (および必要な追加のアセンブリ) を出荷する転送とクライアントアプリケーションは、再コンパイルせずに引き続き動作します。  
   
- 既存のアプリケーションが参照するコンポーネントの作業に転送する型。  アプリケーションをビルドし直すと、アプリケーションで使用されるすべての型の適切なアセンブリ参照が必要です。  
+ 型の転送は、既存のアプリケーションによって参照されるコンポーネントに対してのみ機能します。 アプリケーションをリビルドするときに、アプリケーションで使用されている型の適切なアセンブリ参照が必要があります。  
   
- 型 \(A\)、アセンブリから型を転送する場合、その型の `TypeForwardedTo` 属性、アセンブリ参照を追加する必要があります。  参照先アセンブリには、次のいずれかを使用する必要があります:  
+ 追加する必要がありますアセンブリから型 (型 A) を転送するとき、`TypeForwardedTo`アセンブリ参照と、その型の属性です。 参照されているアセンブリには、次のいずれかを含める必要があります。  
   
--   型 A.の定義。  
+-   タイプ a の定義  
   
--   型 A の `TypeForwardedTo` 属性、アセンブリ参照。  
+-   A`TypeForwardedTo`アセンブリ参照と同様に、a の種類の属性です。  
   
- 転送できる型の例は次のとおりです。:  
+ 転送できる種類の例は次のとおりです。  
   
 -   ref クラス  
   
@@ -72,32 +76,32 @@ manager: "ghogen"
   
 -   インターフェイス  
   
- 次の型を転送する:  
+ 次の種類を転送することはできません。  
   
 -   ジェネリック型  
   
 -   ネイティブ型  
   
--   入れ子にされた型 \(入れ子にされた型を転送する場合、外側の型を転送する必要があります\)  
+-   入れ子にされた型 (入れ子にされた型を転送する場合は、する必要がありますを転送するそれを囲む型)  
   
- 共通言語ランタイムに対応するすべての言語で記述されたアセンブリに型を転送できます。  
+ 型は、共通言語ランタイムを対象とする任意の言語で作成されたアセンブリに転送できます。  
   
- したがって、アセンブリ A.dll をビルドするために使用したソース ファイルが型定義 \(`ref class MyClass`\) が含まれている場合、そのアセンブリのためにその型定義を移動したいと考え始めました:  
+ A.dll の組み立てに使用されるソース コード ファイルには、型定義が含まれている場合、(`ref class MyClass`)、その型を移動するとアセンブリ B.dll に定義。  
   
-1.  B.dll の構築に使用されたソース ファイルに `MyClass` の型定義を移動します。  
+1.  移動、 `MyClass` B.dll をビルドするために使用のソース コード ファイルに定義を入力します。  
   
-2.  アセンブリの拡張 DLL をビルドします。  
+2.  アセンブリ B.dll をビルドします。  
   
-3.  `MyClass` 型の定義を二つの構築に使用するソース・コードから削除し、置換する:  
+3.  削除、 `MyClass` A.dll をビルドし、次の置換に使用されるソース コードからの定義を入力します。  
   
     ```  
     #using "B.dll"  
     [assembly:TypeForwardedTo(MyClass::typeid)];  
     ```  
   
-4.  A.dll アセンブリをビルドします。  
+4.  A.dll のアセンブリをビルドします。  
   
-5.  クライアント アプリケーションの再コンパイルしないで A.dll を使用します。  
+5.  クライアント アプリケーションを再コンパイルしなくても A.dll を使用します。  
   
-### 要件  
- コンパイラ オプション: **\/clr**
+### <a name="requirements"></a>必要条件  
+ コンパイラ オプション: **/clr**

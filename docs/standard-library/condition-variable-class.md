@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - condition_variable/std::condition
 - condition_variable/std::condition_variable::condition_variable
@@ -16,9 +17,10 @@ f1_keywords:
 - condition_variable/std::condition_variable::wait
 - condition_variable/std::condition_variable::wait_for
 - condition_variable/std::condition_variable::wait_until
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 80b1295c-b73d-4d46-b664-6e183f2eec1b
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -31,11 +33,13 @@ helpviewer_keywords:
 - std::condition_variable::wait
 - std::condition_variable::wait_for
 - std::condition_variable::wait_until
-ms.openlocfilehash: 711e93f9de1713cd14b297c49f6322b2d4f5fbc5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d3d4f917bd9057eed6dfcd2b480bbb8afb2f7ccf
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="conditionvariable-class"></a>condition_variable クラス
 `condition_variable` 型の `mutex` がある場合に、イベントを待機するために `unique_lock<mutex>` クラスを使用します。 この型のオブジェクトは [condition_variable_any<unique_lock\<mutex>>](../standard-library/condition-variable-any-class.md) 型のオブジェクトより優れたパフォーマンスを実現することがあります。  
@@ -61,11 +65,11 @@ class condition_variable;
 |[native_handle](#native_handle)|condition_variable ハンドルを表す実装固有の型を返します。|  
 |[notify_all](#notify_all)|`condition_variable` オブジェクトを待機しているすべてのスレッドのブロックを解除します。|  
 |[notify_one](#notify_one)|`condition_variable` オブジェクトを待機しているスレッドの 1 つのブロックを解除します。|  
-|[待機](#wait)|スレッドをブロックします。|  
+|[wait](#wait)|スレッドをブロックします。|  
 |[wait_for](#wait_for)|スレッドをブロックし、スレッドがブロック解除されるまでの時間間隔を設定します。|  
 |[wait_until](#wait_until)|スレッドをブロックし、スレッドがブロック解除される最大の時刻を設定します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<condition_variable >  
   
  **名前空間:** std  
@@ -231,7 +235,7 @@ return true;
   
  3 つ目のメソッドと 4 つ目のメソッドは、`xtime` 型のオブジェクトへのポインターを使用して、`chrono::time_point` オブジェクトを置き換えます。 `xtime` オブジェクトは、シグナルを待機する時間の最大値を指定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [<condition_variable>](../standard-library/condition-variable.md)
 

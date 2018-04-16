@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - getenv_s
 - _wgetenv_s
@@ -38,36 +38,23 @@ helpviewer_keywords:
 - environment variables
 - tgetenv_s function
 ms.assetid: c3ae1ffe-d4cd-4bae-bcb1-3afa754c613a
-caps.latest.revision: 42
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1a00023e4d3e31ddb6381e90a50231449b1de18d
-ms.openlocfilehash: de79cb66e33564f321dd3277528d67a8d7e0ddc0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/28/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 34ba832030e3ad5580dd46deb39c1cbe62738ee9
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getenvs-wgetenvs"></a>getenv_s、_wgetenv_s
 現在の環境から値を取得します。 これらの [getenv および _wgetenvgets](../../c-runtime-library/reference/getenv-wgetenv.md) のバージョンは、「[Security Features in the CRT](../../c-runtime-library/security-features-in-the-crt.md)」(CRT のセキュリティ機能) で説明されているように、セキュリティが強化されています。  
   
 > [!IMPORTANT]
->  この API は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -106,7 +93,8 @@ errno_t _wgetenv_s(
  環境変数の値を格納するバッファー。  
   
  `numberOfElements`  
- `buffer` のサイズ。  
+ 
+          `buffer` のサイズ。  
   
  `varname`  
  環境変数名。  
@@ -153,14 +141,14 @@ errno_t _wgetenv_s(
   
  `TZ` 環境変数の値を確認または変更するには、必要に応じて、`getenv_s`、`_putenv`、および `_tzset` を使用します。 `TZ` の詳細については、「[_tzset](../../c-runtime-library/reference/tzset.md)」および「[_daylight、timezone、および _tzname](../../c-runtime-library/daylight-dstbias-timezone-and-tzname.md)」をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`getenv_s`|\<stdlib.h>|  
 |`_wgetenv_s`|\<stdlib.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -225,7 +213,7 @@ Original LIB variable is: c:\vctools\lib;c:\vctools\atlmfc\lib;c:\vctools\Platfo
 New LIB variable is: c:\mylib;c:\yourlib  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
  [環境定数](../../c-runtime-library/environmental-constants.md)   
  [_putenv、_wputenv](../../c-runtime-library/reference/putenv-wputenv.md)   

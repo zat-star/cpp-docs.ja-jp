@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3704
 ms.assetid: ee40ea35-a214-4dec-9489-d7f155dd0ac2
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 720af3b0ae1fa0727041e03e1573fbba4dccfae5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: ae48bc886aab0211063cc7a9c2e73f3c7bbdd368
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3704"></a>コンパイラ エラー C3704
 'function': vararg メソッドは、イベントを発生させることはできません  

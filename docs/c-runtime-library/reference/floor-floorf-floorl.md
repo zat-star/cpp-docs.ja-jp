@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - floorf
 - floorl
@@ -29,22 +30,25 @@ f1_keywords:
 - floorl
 - _floorl
 - floorf
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - floor function
 - floorf function
 - calculating floors of values
 - floorl function
 ms.assetid: e9955f70-d659-414f-8050-132e13c8ff36
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6eda1db54148009d87ef6b7a59522d61332304dc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c58979e8825c21a0e8023dec7ca3bf76964ff527
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="floor-floorf-floorl"></a>floor、floorf、floorl
 値の切り下げを計算します。  
@@ -80,18 +84,18 @@ long double floorl(
 |-----------|-------------------|-----------------------|  
 |± QNAN、IND|none|_DOMAIN|  
   
- `floor` には、ストリーミング SIMD 拡張機能 (SSE2) を使用して実装されています。 SSE2 実装の使い方の詳細および制約については、「[_set_SSE2_enable](../../c-runtime-library/reference/set-sse2-enable.md)」を参照してください。  
+ `floor` には、ストリーミング SIMD 拡張機能 (SSE2) を使用して実装されています。 SSE2 実装の使い方の詳細および制約については、「[_set_SSE2_enable](../../c-runtime-library/reference/set-sse2-enable.md)」をご覧ください。  
   
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`floor` および `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`floor` は常に `double` を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`floor`、`floorf`、`floorl`|\<math.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -128,7 +132,7 @@ The ceil of 2.8 is 3.000000
 The ceil of -2.8 is -2.000000  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ceil、ceilf、ceill](../../c-runtime-library/reference/ceil-ceilf-ceill.md)   
  [round、roundf、roundl](../../c-runtime-library/reference/round-roundf-roundl.md)   

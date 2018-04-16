@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -19,19 +20,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: _STATIC_ASSERT
-dev_langs: C++
-helpviewer_keywords: _STATIC_ASSERT macro
+f1_keywords:
+- _STATIC_ASSERT
+dev_langs:
+- C++
+helpviewer_keywords:
+- _STATIC_ASSERT macro
 ms.assetid: 89b0350c-2c2f-4be6-9786-8b1f0780a5da
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 686ac443eb32a9ca17e77baee95b50e06c6556b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f62f2f2f5a0d78a0b77cb21d869be209d9293bd0
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="staticassert-macro"></a>_STATIC_ASSERT マクロ
 コンパイル時に式を評価し、結果が `FALSE` の場合にエラーを生成します。  
@@ -72,12 +78,12 @@ int main()
 }  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |マクロ|必須ヘッダー|  
 |-----------|---------------------|  
 |`_STATIC_ASSERT`|\<crtdbg.h>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [_ASSERT、_ASSERTE、_ASSERT_EXPR マクロ](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)

@@ -1,32 +1,36 @@
 ---
-title: "方法: クラスと構造体 (C++ CLI) 定義および使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "構造体 [C++]"
-  - "クラス [C++]、インスタンス化"
+title: "方法: を定義およびクラスと構造体を使用 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- structs [C++]
+- classes [C++], instantiating
 ms.assetid: 1c03cb0d-1459-4b5e-af65-97d6b3094fd7
-caps.latest.revision: 15
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a0a276854c9f2e27439c2c16e9299d4eaa9243d4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: クラスと構造体を定義および使用する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、[!INCLUDE[cppcli](../build/reference/includes/cppcli_md.md)] でユーザー定義の参照型と値型を定義および使用する方法を示します。  
+# <a name="how-to-define-and-consume-classes-and-structs-ccli"></a>方法: クラスと構造体を定義および使用する (C++/CLI)
+この記事の定義し、ユーザー定義の参照型と C + での値の型を使用する方法を示しています。 + CLI です。  
   
-##  <a name="a-namebkmkcontentsa-contents"></a><a name="BKMK_Contents"></a> 内容  
+##  <a name="BKMK_Contents"></a> 目次  
  [オブジェクトのインスタンス化](#BKMK_Object_instantiation)  
   
  [暗黙的な抽象クラス](#BKMK_Implicitly_abstract_classes)  
@@ -37,17 +41,17 @@ manager: "ghogen"
   
  [パブリックおよびプライベートなネイティブ クラス](#BKMK_Public_and_private_native_classes)  
   
- [静的コンス トラクター](#BKMK_Static_constructors)  
+ [静的コンストラクター](#BKMK_Static_constructors)  
   
- [このセマンティクスのポインター](#BKMK_Semantics_of_the_this_pointer)  
+ [このセマンティクス ポインター](#BKMK_Semantics_of_the_this_pointer)  
   
- [シグネチャによる隠ぺい関数](#BKMK_Hide_by_signature_functions)  
+ [シグネチャによって隠ぺい関数](#BKMK_Hide_by_signature_functions)  
   
- [コピー コンス トラクター](#BKMK_Copy_constructors)  
+ [コピー コンストラクター](#BKMK_Copy_constructors)  
   
  [デストラクターとファイナライザー](#BKMK_Destructors_and_finalizers)  
   
-##  <a name="a-namebkmkobjectinstantiationa-object-instantiation"></a><a name="BKMK_Object_instantiation"></a> オブジェクトのインスタンス化  
+##  <a name="BKMK_Object_instantiation"></a>オブジェクトのインスタンス化  
  参照 (ref) 型と値型は、マネージ ヒープでのみインスタンス化できます。スタック ヒープまたはネイティブ ヒープではインスタンス化できません。  
   
 ```  
@@ -101,10 +105,10 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namebkmkimplicitlyabstractclassesa-implicitly-abstract-classes"></a><a name="BKMK_Implicitly_abstract_classes"></a> 暗黙的な抽象クラス  
-  *暗黙的な抽象クラス* インスタンス化することはできません。 クラスの基本型がインターフェイスで、そのクラスによって一部のインターフェイスのメンバー関数が実装されていない場合、そのクラスは暗黙的な抽象クラスです。  
+##  <a name="BKMK_Implicitly_abstract_classes"></a>暗黙的な抽象クラス  
+ *暗黙的な抽象クラス*インスタンス化することはできません。 クラスの基本型がインターフェイスで、そのクラスによって一部のインターフェイスのメンバー関数が実装されていない場合、そのクラスは暗黙的な抽象クラスです。  
   
- インターフェイスから派生したクラスからオブジェクトを構築できない場合は、それが暗黙的な抽象クラスであることが原因の可能性があります。 抽象クラスの詳細については、次を参照してください。 [抽象](../windows/abstract-cpp-component-extensions.md)します。  
+ インターフェイスから派生したクラスからオブジェクトを構築できない場合は、それが暗黙的な抽象クラスであることが原因の可能性があります。 抽象クラスの詳細については、次を参照してください。[抽象](../windows/abstract-cpp-component-extensions.md)です。  
   
  次のコード例は、`MyClass` が実装されていないため、`MyClass::func2` クラスをインスタンス化できないことを示しています。 例をコンパイルできるようにするには、`MyClass::func2` のコメントを解除します。  
   
@@ -128,14 +132,14 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namebkmktypevisibilitya-type-visibility"></a><a name="BKMK_Type_visibility"></a> 型の可視性  
+##  <a name="BKMK_Type_visibility"></a>型の可視性  
  共通言語ランタイム (CLR: Common Language Runtime) 型の可視性を制御できるため、アセンブリが参照された場合、アセンブリ内の型は、アセンブリ外で表示または非表示にできます。  
   
- `public` 型を含むソース ファイルに表示されるようにすることを示します、 `#using` ディレクティブを型を含むアセンブリ。  `private` 型が含まれているソース ファイルに表示されないことを示す、 `#using` ディレクティブを型を含むアセンブリ。 ただし、プライベート型は、同じアセンブリ内には表示されます。 既定では、クラスの可視性は `private` です。  
+ `public`型が、ソース ファイルを含むに表示されていることを示します、`#using`ディレクティブを型を含むアセンブリです。  `private`型が存在するソース ファイルに表示されないことを示す、`#using`型を含むアセンブリのディレクティブ。 ただし、プライベート型は、同じアセンブリ内には表示されます。 既定では、クラスの可視性は `private` です。  
   
- Visual C++ 2005 より前の既定では、ネイティブ型の場合、アセンブリ外にパブリック アクセシビリティがありました。 有効にする [コンパイラの警告 (レベル 1) C4692](../error-messages/compiler-warnings/compiler-warning-level-1-c4692.md) プライベート ネイティブ型が使用されている正常に確認できるようにします。 使用して、 [make_public](../preprocessor/make-public.md) プラグマをパブリック アクセシビリティを変更できないソース コード ファイルでネイティブ型に付与します。  
+ Visual C++ 2005 より前の既定では、ネイティブ型の場合、アセンブリ外にパブリック アクセシビリティがありました。 有効にする[コンパイラの警告 (レベル 1) C4692](../error-messages/compiler-warnings/compiler-warning-level-1-c4692.md)見る場所プライベート ネイティブ型が正しく使用されていないのに役立ちます。 使用して、 [make_public](../preprocessor/make-public.md)プラグマを変更できないソース コード ファイルでネイティブ型にパブリック アクセシビリティを付与します。  
   
- 詳細については、次を参照してください。 [#using ディレクティブ](../preprocessor/hash-using-directive-cpp.md)します。  
+ 詳細については、次を参照してください。 [#using ディレクティブ](../preprocessor/hash-using-directive-cpp.md)です。  
   
  次の例では、型を宣言してアクセシビリティを指定し、アセンブリ内でこれらの型にアクセスする方法を示しています。 もちろん、`#using` を使用して、プライベート型を含むアセンブリが参照された場合、そのアセンブリ内で表示されるのはパブリック型のみです。  
   
@@ -224,19 +228,19 @@ int main() {
 in Public_Class  
 ```  
   
-##  <a name="a-namebkmkmembervisibilitya-member-visibility"></a><a name="BKMK_Member_visibility"></a> メンバーの可視性  
+##  <a name="BKMK_Member_visibility"></a>メンバーの可視性  
  アセンブリ外からパブリック クラスのメンバーにアクセスするのとは別に、同じアセンブリからそのメンバーにアクセスするには、アクセス指定子のペア `public`、`protected`、および `private` を使用します  
   
  次の表は、さまざまなアクセス指定子の効果を示しています。  
   
 |指定子|効果|  
 |---------------|------------|  
-|public|アセンブリの内部と外部の両方でメンバーにアクセスできます。  参照してください [パブリック](../cpp/public-cpp.md) の詳細。|  
-|private|アセンブリの内部と外部の両方でメンバーにアクセスできません。  参照してください [プライベート](../Topic/private%20\(C++\).md) の詳細。|  
-|protected|アセンブリの内部と外部の両方で、派生型のメンバーにのみアクセスできます。  参照してください [保護](../Topic/protected%20\(C++\).md) の詳細。|  
-|internal|メンバーは、アセンブリの内部パブリック、プライベート アセンブリの外側にです。  `internal` は状況依存のキーワードです。  詳細については、次を参照してください。 [状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)します。|  
-|公開の保護または保護されたパブリック|メンバーはアセンブリ内ではパブリックですが、アセンブリ外では保護されています。|  
-|秘密の保護または保護されたプライベート|メンバーはアセンブリ内では保護されていますが、アセンブリ外ではプライベートです。|  
+|public|アセンブリの内部と外部の両方でメンバーにアクセスできます。  参照してください[パブリック](../cpp/public-cpp.md)詳細についてはします。|  
+|private|アセンブリの内部と外部の両方でメンバーにアクセスできません。  参照してください[プライベート](../cpp/private-cpp.md)詳細についてはします。|  
+|protected|アセンブリの内部と外部の両方で、派生型のメンバーにのみアクセスできます。  参照してください[保護](../cpp/protected-cpp.md)詳細についてはします。|  
+|internal|メンバーは、パブリック アセンブリの内部がプライベート アセンブリの外側です。  `internal` は状況依存のキーワードです。  詳細については、次を参照してください。[状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)です。|  
+|公開の保護または保護されているパブリック|メンバーはアセンブリ内ではパブリックですが、アセンブリ外では保護されています。|  
+|プライベートの保護または保護されたプライベート|メンバーはアセンブリ内では保護されていますが、アセンブリ外ではプライベートです。|  
   
  次の例は、さまざまなアクセシビリティで宣言されたメンバーを持つパブリック型と、アセンブリ内からこれらのメンバーへのアクセスを示しています。  
   
@@ -414,7 +418,7 @@ exiting function of derived class
 =======================  
 ```  
   
-##  <a name="a-namebkmkpublicandprivatenativeclassesa-public-and-private-native-classes"></a><a name="BKMK_Public_and_private_native_classes"></a> パブリックおよびプライベートなネイティブ クラス  
+##  <a name="BKMK_Public_and_private_native_classes"></a>パブリックおよびプライベートなネイティブ クラス  
  ネイティブ型はマネージ型から参照できます。  たとえば、マネージ型の関数は、型がネイティブ構造体であるパラメーターを受け取ることができます。  マネージ型と関数がアセンブリ内でパブリックの場合は、ネイティブ型もパブリックである必要があります。  
   
 ```  
@@ -455,7 +459,7 @@ int main() {
 }  
 ```  
   
-##  <a name="a-namebkmkstaticconstructorsa-static-constructors"></a><a name="BKMK_Static_constructors"></a> 静的コンス トラクター  
+##  <a name="BKMK_Static_constructors"></a> 静的コンストラクター  
  クラスや構造体などの CLR 型は、静的データ メンバーの初期化に使用できる静的コンストラクターを持つことができます。  静的コンストラクターが呼び出されるのは、型の静的メンバーが初めてアクセスされる前の 1 度だけです。  
   
  静的コンストラクターの後は、インスタンス コンストラクターが常に実行されています。  
@@ -464,7 +468,7 @@ int main() {
   
  静的コンストラクターは、CLR によってのみ呼び出されることが想定されているため、プライベート メンバー関数として定義します。  
   
- 静的コンス トラクターの詳細については、次を参照してください。 [方法: Interface 静的コンス トラクターの定義 (C + +/CLI)](../dotnet/how-to-define-an-interface-static-constructor-cpp-cli.md) します。  
+ 静的コンス トラクターの詳細については、次を参照してください。[する方法: インターフェイス静的コンス トラクターを定義 (C + + CLI)](../dotnet/how-to-define-an-interface-static-constructor-cpp-cli.md)です。  
   
 ```  
   
@@ -501,7 +505,7 @@ in static constructor
 11  
 ```  
   
-##  <a name="a-namebkmksemanticsofthethispointera-semantics-of-the-this-pointer"></a><a name="BKMK_Semantics_of_the_this_pointer"></a> このセマンティクスのポインター  
+##  <a name="BKMK_Semantics_of_the_this_pointer"></a>このセマンティクス ポインター  
  Visual C++ を使用して型を定義する場合、参照型の `this` ポインターは "ハンドル" 型です。 値型の `this` ポインターは "内部ポインター" 型です。  
   
  `this` ポインターのセマンティクスが異なることで、既定のインデクサーが呼び出されるときに予期しない動作が発生する場合があります。 次の例は、参照型と値型の両方で既定のインデクサーに適切にアクセスする方法を示しています。  
@@ -510,9 +514,7 @@ in static constructor
   
 -   [オブジェクト演算子 (^) へのハンドルします。](../windows/handle-to-object-operator-hat-cpp-component-extensions.md)  
   
--   [interior_ptr (C + +/CLI)](../windows/interior-ptr-cpp-cli.md)  
-  
--   [方法: インデックス付きプロパティを使用します。](../misc/how-to-use-indexed-properties.md)  
+-   [interior_ptr (C++/CLI)](../windows/interior-ptr-cpp-cli.md)  
   
 ```  
   
@@ -558,12 +560,12 @@ int main() {
 10.89  
 ```  
   
-##  <a name="a-namebkmkhidebysignaturefunctionsa-hide-by-signature-functions"></a><a name="BKMK_Hide_by_signature_functions"></a> シグネチャによる隠ぺい関数  
- 標準 C++ では、基底クラスの関数は、派生クラスで同じ名前を持つ関数によって、その派生クラス関数に同じ数または種類のパラメーターがない場合でも非表示になります。 これとして参照は *名前による隠ぺい* セマンティクスです。 参照型では、基底クラスの関数は、名前とパラメーター リストの両方が同じ場合に、派生クラスの関数によってのみ非表示にできます。 これは呼ば *シグネチャによる隠ぺい* セマンティクスです。  
+##  <a name="BKMK_Hide_by_signature_functions"></a>シグネチャによって隠ぺい関数  
+ 標準 C++ では、基底クラスの関数は、派生クラスで同じ名前を持つ関数によって、その派生クラス関数に同じ数または種類のパラメーターがない場合でも非表示になります。 これを呼びます*名前による隠ぺい*セマンティクスです。 参照型では、基底クラスの関数は、名前とパラメーター リストの両方が同じ場合に、派生クラスの関数によってのみ非表示にできます。 これは呼ば*シグネチャによって隠ぺい*セマンティクスです。  
   
- クラスの関数すべてがメタデータで `hidebysig` としてマークされていると、そのクラスはシグネチャによる隠ぺいクラスと見なされます。 既定では、下で作成されるすべてのクラス **/clr** が `hidebysig` 関数です。 ただし、クラスを使用してコンパイル **/clr:oldSyntax** が `hidebysig` 関数は代わりに、これらは名前による隠ぺいの関数です。 クラスに `hidebysig` 関数が含まれる場合、コンパイラが、直接基底クラスで名前によって関数を隠ぺいすることはありませんが、継承チェーンで名前による隠ぺいクラスが見つかると、名前による隠ぺい動作が続行されます。  
+ クラスの関数すべてがメタデータで `hidebysig` としてマークされていると、そのクラスはシグネチャによる隠ぺいクラスと見なされます。 既定では、下で作成されるすべてのクラス**/clr**が`hidebysig`関数。 クラスに `hidebysig` 関数が含まれる場合、コンパイラが、直接基底クラスで名前によって関数を隠ぺいすることはありませんが、継承チェーンで名前による隠ぺいクラスが見つかると、名前による隠ぺい動作が続行されます。  
   
- シグネチャによる隠ぺいセマンティクスでは、関数がオブジェクトで呼び出されると、関数呼び出しを満たす関数を含む最派生クラスがコンパイラによって特定されます。 呼び出しを満たす関数がクラスに 1 つしかない場合は、その関数がコンパイラによって呼び出されます。 呼び出しを満たす関数がクラスに複数ある場合、呼び出される関数は、オーバーロードの解決規則によって決まります。 オーバー ロードの規則の詳細については、次を参照してください。 [関数のオーバー ロード](../cpp/function-overloading.md)します。  
+ シグネチャによる隠ぺいセマンティクスでは、関数がオブジェクトで呼び出されると、関数呼び出しを満たす関数を含む最派生クラスがコンパイラによって特定されます。 呼び出しを満たす関数がクラスに 1 つしかない場合は、その関数がコンパイラによって呼び出されます。 呼び出しを満たす関数がクラスに複数ある場合、呼び出される関数は、オーバーロードの解決規則によって決まります。 オーバー ロードの規則の詳細については、次を参照してください。[関数のオーバー ロード](../cpp/function-overloading.md)です。  
   
  特定の関数呼び出しについては、基底クラスの関数のシグネチャの方が、派生クラスの関数よりも若干適していることがあるのですが、 派生クラスのオブジェクトで関数が明示的に呼び出されると、派生クラスの関数が呼び出されます。  
   
@@ -668,54 +670,12 @@ Derived::Test4
 97  
 ```  
   
- 次の例を使用してコンパイルされたコンポーネントを定義する **/clr:oldSyntax**します。 C++ のマネージ拡張を使用して定義されたクラスには、名前による隠ぺいメンバー関数が含まれます。  
-  
-```  
-  
-// compile with: /clr:oldSyntax /LD  
-using namespace System;  
-public __gc struct Base0 {  
-   void Test() {   
-      Console::WriteLine("in Base0::Test");  
-   }  
-};  
-  
-public __gc struct Base1 : public Base0 {  
-   void Test(int i) {   
-      Console::WriteLine("in Base1::Test");  
-   }  
-};  
-```  
-  
- 次の例では、前の例でビルドされたコンポーネントを使用します。 通知によって署名非表示の方法を使用してコンパイルされた型の基底クラスに機能は適用されません **/clr:oldSyntax**します。  
-  
-```  
-  
-// compile with: /clr:oldSyntax /LD  
-// compile with: /clr  
-using namespace System;  
-#using "hide_by_signature_4.dll"  
-  
-ref struct Derived : public Base1 {  
-   void Test(int i, int j) {   
-      Console::WriteLine("Derived::Test");  
-   }  
-};  
-  
-int main() {  
-   Derived ^ t = gcnew Derived;  
-   t->Test(8, 8);   // OK  
-   t->Test(8);   // OK  
-   t->Test();   // C2661  
-}  
-```  
-  
-##  <a name="a-namebkmkcopyconstructorsa-copy-constructors"></a><a name="BKMK_Copy_constructors"></a> コピー コンス トラクター  
+##  <a name="BKMK_Copy_constructors"></a>コピー コンス トラクター  
  C++ 標準では、オブジェクトの移動時にコピー コンストラクターが呼び出されることを通知します。このため、オブジェクトの作成と破棄が同じアドレスで行われます。  
   
- ただしときに、 **/clr** コンパイルと MSIL 呼び出しネイティブ関数がネイティブにコンパイルされる関数を使用 — または複数の — は値渡しとここで、ネイティブ クラスにコピー コンス トラクターやデストラクター、コピー コンス トラクターは呼び出されずとは異なるアドレスが作成された場所で、オブジェクトが破棄されます。 これにより、クラスにそのクラス自身へのポインターが含まれる場合、またはコードがアドレスによってオブジェクトを追跡している場合に問題が発生する可能性があります。  
+ ただし、 **/clr**をコンパイルし、コンパイルされる関数が MSIL 呼び出しのネイティブ関数がネイティブ クラスを使用する — または複数の — 値とに、ネイティブ クラスがコピー コンス トラクターやデストラクター、コピーなしで渡されるコンス トラクターが呼び出され、オブジェクトは、作成された、異なるアドレスで破棄されます。 これにより、クラスにそのクラス自身へのポインターが含まれる場合、またはコードがアドレスによってオブジェクトを追跡している場合に問題が発生する可能性があります。  
   
- 詳細については、「 [/clr (Common Language Runtime Compilation)](../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+ 詳細については、「[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
   
  次の例は、コピー コンストラクターが生成されない場合を示しています。  
   
@@ -775,8 +735,8 @@ S object 1 being destroyed, this=0018F37C
 S object 0 being destroyed, this=0018F378  
 ```  
   
-##  <a name="a-namebkmkdestructorsandfinalizersa-destructors-and-finalizers"></a><a name="BKMK_Destructors_and_finalizers"></a> デストラクターとファイナライザー  
- 参照型のデストラクターでは、リソースの確定的なクリーンアップを実行します。 ファイナライザーでは、アンマネージ リソースがクリーンアップされます。また、ファイナライザーはデストラクターが確定的に呼び出すか、ガベージ コレクターが非確定的に呼び出すことができます。 標準 c++ のデストラクターの概要については、次を参照してください。 [デストラクター](../cpp/destructors-cpp.md)します。  
+##  <a name="BKMK_Destructors_and_finalizers"></a>デストラクターとファイナライザー  
+ 参照型のデストラクターでは、リソースの確定的なクリーンアップを実行します。 ファイナライザーでは、アンマネージ リソースがクリーンアップされます。また、ファイナライザーはデストラクターが確定的に呼び出すか、ガベージ コレクターが非確定的に呼び出すことができます。 標準 C++ のデストラクターの概要については、次を参照してください。[デストラクター](../cpp/destructors-cpp.md)です。  
   
 ```  
 class classname {  
@@ -785,13 +745,13 @@ class classname {
 };  
 ```  
   
- Visual C++ マネージ クラスのデストラクターの動作は、C++ のマネージ拡張機能とは異なります。 この変更の詳細については、次を参照してください。 [のデストラクターのセマンティクスの変更](../dotnet/changes-in-destructor-semantics.md)します。  
+ Visual C++ マネージ クラスのデストラクターの動作は、C++ のマネージ拡張機能とは異なります。 この変更の詳細については、次を参照してください。[デストラクターのセマンティクスの変更](../dotnet/changes-in-destructor-semantics.md)です。  
   
  CLR ガベージ コレクターは、不要になった未使用マネージ オブジェクトを削除し、そのメモリを解放します。 ただし、型によって使用されているリソースの解放方法を、ガベージ コレクターが把握していないことがあります。 これらのリソースは、アンマネージ リソース (ネイティブ ファイル ハンドルなど) と呼ばれます。 アンマネージ リソースはすべて、ファイナライザーで解放することをお勧めします。 ガベージ コレクターでは、マネージ リソースが非確定的に解放されるため、ファイナライザーでマネージ リソースを参照するのは安全ではありません。ガベージ コレクターは、そのマネージ リソースを既にクリーンアップしている可能性があるためです。  
   
- Visual C ファイナライザーと同じではない、 <xref:System.Object.Finalize%2A> メソッドです。 (CLR ドキュメントがファイナライザーを使用して、 <xref:System.Object.Finalize%2A> メソッド同義語として) します。  <xref:System.Object.Finalize%2A> メソッドは、クラス継承チェーンの各ファイナライザーが呼び出されますが、ガベージ コレクターによって呼び出されます。 Visual C++ デストラクターとは異なり、派生クラスのファイナライザーの呼び出しにより、コンパイラがすべての基底クラスのファイナライザーを開始することはありません。  
+ Visual C++ ファイナライザーは、<xref:System.Object.Finalize%2A> メソッドと同じではありません  (CLR ドキュメントでは、ファイナライザーと <xref:System.Object.Finalize%2A> メソッドが同じ意味で使用されます)。 <xref:System.Object.Finalize%2A> メソッドはガベージ コレクターによって呼び出され、これにより、クラス継承チェーンの各ファイナライザーが開始されます。 Visual C++ デストラクターとは異なり、派生クラスのファイナライザーの呼び出しにより、コンパイラがすべての基底クラスのファイナライザーを開始することはありません。  
   
- Visual C コンパイラでは、リソースの確定的解放をサポートするために実装しないでください、 <xref:System.IDisposable.Dispose%2A> または <xref:System.Object.Finalize%2A> メソッドです。 ただし、これらのメソッドに詳しい方なら、ここでは、Visual C ファイナライザーとファイナライザーを呼び出すデストラクターにどのようにマップする方法、 <xref:System.IDisposable.Dispose%2A> パターン。  
+ Visual C++ コンパイラではリソースの確定的な解放がサポートされるため、<xref:System.IDisposable.Dispose%2A> メソッドまたは <xref:System.Object.Finalize%2A> メソッドは実装しようとしないでください。 ただし、これらのメソッドに慣れている方を対象に、ここでは、Visual C++ ファイナライザーとそのファイナライザーを呼び出すデストラクターが、どのように <xref:System.IDisposable.Dispose%2A> パターンに割り当てられるかを示します。  
   
 ```  
 // Visual C++ code  
@@ -841,31 +801,31 @@ ref struct A {
   
  デストラクターが存在するからといって、ファイナライザーが存在するとは限りません。 ただし、ファイナライザーが存在する場合は、デストラクターを定義し、そのデストラクターからファイナライザーを呼び出す必要があることを意味します。 これにより、アンマネージ リソースが確定的に解放されます。  
   
- デストラクターを呼び出すを使用して <xref:System.GC.SuppressFinalize%2A>-オブジェクトの終了処理します。 デストラクターが呼び出されない場合は、ガベージ コレクターによって最終的に型のファイナライザーが呼び出されます。  
+ デストラクターを呼び出すと、<xref:System.GC.SuppressFinalize%2A> を使用して、オブジェクトの終了処理が回避されます。 デストラクターが呼び出されない場合は、ガベージ コレクターによって最終的に型のファイナライザーが呼び出されます。  
   
  デストラクターを呼び出すことでオブジェクトのリソースを確定的にクリーンアップすると、CLR で非確定的にオブジェクトを終了できるようにするのに比べてパフォーマンスが向上します。  
   
- Visual C で記述され、コンパイルを使用しているコードを **/clr** 場合、型のデストラクターを実行します。  
+ Visual C で記述され、コンパイルを使用しているコードを**/clr**場合に、型のデストラクターが実行されます。  
   
--   スタック セマンティクスを使用して作成されたオブジェクトがスコープから外れる。 詳細については、次を参照してください。 [参照型の C++ スタック セマンティクス](../dotnet/cpp-stack-semantics-for-reference-types.md)します。  
+-   スタック セマンティクスを使用して作成されたオブジェクトがスコープから外れる。 詳細については、次を参照してください。[参照型の C++ スタック セマンティクス](../dotnet/cpp-stack-semantics-for-reference-types.md)です。  
   
 -   オブジェクトの作成時に例外がスローされる。  
   
 -   オブジェクトが、デストラクターが実行されているオブジェクトのメンバーである。  
   
--   呼び出す、 [削除](../cpp/delete-operator-cpp.md) ハンドルで演算子 ([オブジェクト演算子 (^) へのハンドル](../windows/handle-to-object-operator-hat-cpp-component-extensions.md))。  
+-   呼び出す、[削除](../cpp/delete-operator-cpp.md)ハンドルで演算子 ([オブジェクト演算子 (^) へのハンドル](../windows/handle-to-object-operator-hat-cpp-component-extensions.md))。  
   
 -   明示的にデストラクターを呼び出す。  
   
  クライアントによって使用されている型が他の言語で記述された場合、デストラクターは次のように呼び出されます。  
   
--   呼び出しで <xref:System.IDisposable.Dispose%2A>します。  
+-   <xref:System.IDisposable.Dispose%2A> への呼び出しで。  
   
 -   型の `Dispose(void)` への呼び出しで。  
   
 -   型が C# `using` ステートメントのスコープ外になる場合。  
   
- (参照型の場合は、スタック セマンティクスを使用しない)、マネージ ヒープで参照される型のオブジェクトを作成する場合は使用 [、try-finally](../cpp/try-finally-statement.md) の実行例外がデストラクターを防止できないことを確認するための構文です。  
+ (参照型の場合は、スタック セマンティクスを使用しない)、マネージ ヒープでは参照型のオブジェクトを作成する場合を使用して[、try-finally](../cpp/try-finally-statement.md)する例外を防ぐデストラクターは、実行されていることを確認するための構文。  
   
 ```  
   
@@ -885,11 +845,11 @@ int main() {
 }  
 ```  
   
- コンパイラが生成する、型にデストラクターがある場合、 `Dispose` メソッドを実装する <xref:System.IDisposable>します。 型が Visual C++ で記述されており、他の言語で実行されるデストラクターがその型にある場合は、その型で `IDisposable::Dispose` を呼び出すと、その型のデストラクターが呼び出されます。 型が Visual C++ クライアントで実行されている場合は、`Dispose` を直接呼び出すことはできません。代わりに、`delete` 演算子を使用して、デストラクターを呼び出します。  
+ 型にデストラクターがある場合は、`Dispose` を実装する <xref:System.IDisposable> メソッドがコンパイラによって生成されます。 型が Visual C++ で記述されており、他の言語で実行されるデストラクターがその型にある場合は、その型で `IDisposable::Dispose` を呼び出すと、その型のデストラクターが呼び出されます。 型が Visual C++ クライアントで実行されている場合は、`Dispose` を直接呼び出すことはできません。代わりに、`delete` 演算子を使用して、デストラクターを呼び出します。  
   
- 型にファイナライザーがある場合、コンパイラ生成、 `Finalize(void)` をオーバーライドするメソッド <xref:System.Object.Finalize%2A>します。  
+ 型にファイナライザーがある場合は、`Finalize(void)` をオーバーライドする <xref:System.Object.Finalize%2A> メソッドがコンパイラによって生成されます。  
   
- 型にデストラクターまたはファイナライザーのいずれかがある場合は、デザイン パターンに従って `Dispose(bool)` メソッドが生成されます  (詳細については、次を参照してください [。Dispose パターン](../Topic/Dispose%20Pattern.md))。 `Dispose(bool)` を Visual C++ で明示的に作成したり呼び出したりすることはできません。  
+ 型にデストラクターまたはファイナライザーのいずれかがある場合は、デザイン パターンに従って `Dispose(bool)` メソッドが生成されます  (詳細については、次を参照してください。 [Dispose パターン](/dotnet/standard/design-guidelines/dispose-pattern))。 `Dispose(bool)` を Visual C++ で明示的に作成したり呼び出したりすることはできません。  
   
  デザイン パターンに準拠する基底クラスが型にある場合、すべての基底クラスのデストラクターは、派生クラスのデストラクターが呼び出されるときに呼び出されます  (型が Visual C++ で記述されている場合は、このパターンが型で実装されることがコンパイラによって保証されます)。つまり、C++ 標準で指定されているように、参照クラスのデストラクターが基底クラスとメンバーに連結され、最初に、クラスのデストラクターが実行されます。次に、メンバーのデストラクターが、そのデストラクターが構築された順とは逆の順序で実行され、最後に、基底クラスのデストラクターが、そのデストラクターが構築された順とは逆の順序で実行されます。  
   
@@ -899,9 +859,9 @@ int main() {
   
  オブジェクトのファイナライザーの実行後に、すべての基底クラスのファイナライザーも呼び出されます。最初に呼び出されるのは最小限の派生型です。 データ メンバーのファイナライザーに、クラスのファイナライザーが自動的に連結することはありません。  
   
- ファイナライザーは、マネージ型のネイティブ ポインターを削除した場合、またはネイティブ ポインターを介したに対する参照は途中では収集されません。 ことを確認する必要があります。使用する代わりにマネージ型でデストラクターを呼び出して <xref:System.GC.KeepAlive%2A>します。  
+ ファイナライザーによってマネージ型のネイティブ ポインターが削除された場合は、ネイティブ ポインターへの参照、またはネイティブ ポインターを介した参照の収集が途中で終了していないことを確認する必要があります。<xref:System.GC.KeepAlive%2A> を使用する代わりに、マネージ型でデストラクターを呼び出してください。  
   
- コンパイル時に、型にファイナライザーまたはデストラクターがあるかどうかを検出できます。 詳細については、次を参照してください。 [型の特徴のコンパイラ サポート](../windows/compiler-support-for-type-traits-cpp-component-extensions.md)します。  
+ コンパイル時に、型にファイナライザーまたはデストラクターがあるかどうかを検出できます。 詳細については、次を参照してください。[型の特徴のコンパイラ サポート](../windows/compiler-support-for-type-traits-cpp-component-extensions.md)です。  
   
  次の例は 2 つの型を示しています。1 つにはアンマネージ リソースが、もう 1 つには確定的に解放されたマネージ リソースが含まれます。  
   
@@ -970,6 +930,6 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>「  
+## <a name="see-also"></a>参照  
  [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)   
  [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)

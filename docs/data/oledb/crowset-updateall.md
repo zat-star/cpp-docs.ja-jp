@@ -1,75 +1,77 @@
 ---
-title: "CRowset::UpdateAll | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CRowset::UpdateAll"
-  - "ATL.CRowset.UpdateAll"
-  - "CRowset<TAccessor>.UpdateAll"
-  - "ATL.CRowset<TAccessor>.UpdateAll"
-  - "UpdateAll"
-  - "CRowset.UpdateAll"
-  - "ATL::CRowset<TAccessor>::UpdateAll"
-  - "CRowset<TAccessor>::UpdateAll"
-  - "ATL::CRowset::UpdateAll"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "UpdateAll メソッド"
+title: "Crowset::updateall |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- CRowset::UpdateAll
+- ATL.CRowset.UpdateAll
+- CRowset<TAccessor>.UpdateAll
+- ATL.CRowset<TAccessor>.UpdateAll
+- UpdateAll
+- CRowset.UpdateAll
+- ATL::CRowset<TAccessor>::UpdateAll
+- CRowset<TAccessor>::UpdateAll
+- ATL::CRowset::UpdateAll
+dev_langs:
+- C++
+helpviewer_keywords:
+- UpdateAll method
 ms.assetid: e5b26c0a-40fc-4c91-a293-5084951788e6
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 759b00cddb37a2ceab97fe25762b88d53e3ec0ab
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CRowset::UpdateAll
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-そのため **更新** の最後のフェッチまたは呼び出し以降に行われたすべての行に対する保留中の変更を転送します。  
+# <a name="crowsetupdateall"></a>CRowset::UpdateAll
+保留中の最後のフェッチで、以降のすべての行に行われた変更を送信または**更新**それで呼び出します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```cpp
+HRESULT UpdateAll(DBCOUNTITEM* pcRows = NULL,   
+   HROW** pphRow = NULL,   
+   DBROWSTATUS** ppStatus = NULL) throw();  
 ```  
   
-      HRESULT UpdateAll(   
-   DBCOUNTITEM* pcRows = NULL,   
-   HROW** pphRow = NULL,   
-   DBROWSTATUS** ppStatus = NULL    
-) throw( );  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pcRows`  
- \[\] `UpdateAll` を更新するようにとした行数を返す場所へのポインターが必要な場合。  
+ [out]場所へのポインターを`UpdateAll`試行されると必要な場合、更新するには行の数を返します。  
   
  `pphRow`  
- \[\] `UpdateAll` が行ハンドルを返す、メモリへのポインターを更新するようにしようとしました。  ハンドルは `pphRow` が NULL の場合は返されません。  
+ [out]メモリへのポインター`UpdateAll`を更新しようとしましたが、行のハンドルを返します。 場合はハンドルが返されない`pphRow`が null です。  
   
  `ppStatus`  
- \[\] **更新** が行の値を返す場所へのポインター。  状態は `ppStatus` が NULL の場合は返されません。  
+ [out]場所へのポインターを**更新**行の状態値を返します。 場合のステータスが返されない`ppStatus`が null です。  
   
-## 解説  
- これらの行が [更新](../Topic/CRowset::Update.md) または `UpdateAll`を使用して、最後にフェッチされるか、更新されたため、すべての行に対する保留中の変更を転送します。  `UpdateAll` は まだの \(`pphRow`を参照してください\)、ハンドルがあるかどうかを変更した行に関係なく更新します。  
+## <a name="remarks"></a>コメント  
+ 保留中のこれらの行が最後にフェッチされたかを使用して更新後のすべての行に加えられた変更を送信[更新](../../data/oledb/crowset-update.md)または`UpdateAll`です。 `UpdateAll` 変更されたかどうかがあるハンドルに関係なくすべての行を更新 (を参照してください`pphRow`) か。  
   
- たとえば、行セットの 5 行を挿入するために **挿入** を使用して 5 回 **更新** を呼び出し、またはすべてを更新するに `UpdateAll` を一度呼び出すことができます。  
+ 使用する場合など、**挿入**行を挿入する 5 つの行セットで、いずれかの呼び出しをでした**更新**5 回または呼び出し`UpdateAll`更新すべてを 1 回です。  
   
- このメソッドは、すべてのプロバイダーでサポートされない省略可能なインターフェイス `IRowsetUpdate`が必要ですが、; この場合、メソッドの戻り **E\_NOINTERFACE**。  また `VARIANT_TRUE` にテーブルの **開く** を呼び出す前に **DBPROP\_IRowsetUpdate** を設定または命じなければ、行セットが含まれます。  
+ このメソッドには、省略可能なインターフェイスが必要とする`IRowsetUpdate`、する可能性がありますすべてのプロバイダーでサポートされていない以外の場合は、そうでは、返されます**E_NOINTERFACE**です。 設定する必要もあります**DBPROP_IRowsetUpdate**に`VARIANT_TRUE`呼び出す前に**開く**テーブルまたは行セットを含むコマンドをします。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CRowset クラス](../Topic/CRowset%20Class.md)   
+## <a name="see-also"></a>参照  
+ [CRowset クラス](../../data/oledb/crowset-class.md)   
  [IRowsetUpdate::Update](https://msdn.microsoft.com/en-us/library/ms719709.aspx)   
  [CRowset::SetData](../../data/oledb/crowset-setdata.md)   
- [CRowset::Update](../Topic/CRowset::Update.md)
+ [CRowset::Update](../../data/oledb/crowset-update.md)

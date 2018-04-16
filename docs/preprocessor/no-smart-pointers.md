@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: no_search_pointers
-dev_langs: C++
-helpviewer_keywords: no_smart_pointers attribute
+ms.topic: reference
+f1_keywords:
+- no_search_pointers
+dev_langs:
+- C++
+helpviewer_keywords:
+- no_smart_pointers attribute
 ms.assetid: d69dd71e-08a8-4446-a3d0-a062dc29cb17
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0837a702eb54ac19ba1a034d4c899284aba6cb37
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8d1e06265771a163375d1095b4c481aa6d7d250f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="nosmartpointers"></a>no_smart_pointers
 **C 固有の仕様**  
@@ -37,6 +43,6 @@ no_smart_pointers
   
  **END C 固有の仕様**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
  [#import ディレクティブ](../preprocessor/hash-import-directive-cpp.md)

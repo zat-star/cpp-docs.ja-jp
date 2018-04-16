@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - fgetchar
 apilocation:
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - fgetchar function
 ms.assetid: 2b27a6f2-d973-4d12-a66d-7e6b01e84470
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 69440723b2c1fb9a66293ab371e2a769f9e41855
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 7be69d1b10da19dcb54c35a2551b8fad54e6cc0b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fgetchar"></a>fgetchar
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_fgetchar](../../c-runtime-library/reference/fgetchar-fgetwchar.md) を使用してください。

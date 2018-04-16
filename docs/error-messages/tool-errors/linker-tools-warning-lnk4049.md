@@ -1,55 +1,59 @@
 ---
-title: "リンカー ツールの警告 LNK4049 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK4049"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK4049"
+title: "リンカー ツールの警告 LNK4049 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- LNK4049
+dev_langs:
+- C++
+helpviewer_keywords:
+- LNK4049
 ms.assetid: 5fd5fb24-c860-4149-a557-0ac26a65d97c
-caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f44634bd99e485e444ffe9cee7747f31374becf4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リンカー ツールの警告 LNK4049
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ローカルで定義されたシンボル 'symbol' がインポートされました。  
+# <a name="linker-tools-warning-lnk4049"></a>リンカー ツールの警告 LNK4049
+ローカルに定義されたシンボル 'symbol' がインポート  
   
- 指定されたシンボルに対して、プログラムからのエクスポートとプログラムへのインポートが同時に行われています。  
+ シンボルが両方からエクスポートし、プログラムにインポートします。  
   
- この警告は、特定のシンボルが `__declspec(dllexport)` ストレージ クラス属性を使って宣言されているオブジェクト ファイルと、そのシンボルを `__declspec(dllimport)` 属性で参照する別のオブジェクト ファイルとをリンカーで関連付けようとした場合に生成されます。  
+ 使用してシンボルを宣言するときに、この警告がリンカーによって生成された、`__declspec(dllexport)`ストレージ クラス属性の 1 つのオブジェクト ファイルとを使用して参照、`__declspec(dllimport)`別の属性です。  
   
- 警告 LNK4049 は、[リンカー ツールの警告 LNK4217](../../error-messages/tool-errors/linker-tools-warning-lnk4217.md) をより一般化した警告です。  インポート対象となるシンボルの参照元をリンカーが確認できなかった場合に、警告 LNK4049 が生成されます。  
+ 警告 LNK4049 がより一般的なバージョンの[リンカー ツールの警告 LNK4217](../../error-messages/tool-errors/linker-tools-warning-lnk4217.md)です。 リンカーは、どの関数からインポートされたシンボルがへの参照を判断できないときに、警告 LNK4049 を生成します。  
   
- LNK4217 ではなく LNK4049 が生成される一般的な事例を次に示します。  
+ LNK4217 ではなく LNK4049 を生成する場所の一般的なケースは次のとおりです。  
   
--   [\/INCREMENTAL](../../build/reference/incremental-link-incrementally.md) オプションを使用してインクリメント リンクを実行した場合。  
+-   使用してインクリメンタル リンクを実行する、 [/incremental](../../build/reference/incremental-link-incrementally.md)オプション。  
   
--   [\/LTCG](../../build/reference/ltcg-link-time-code-generation.md) オプションを使用してプログラム全体の最適化を実行した場合。  
+-   使用して、プログラム全体の最適化を実行する、 [/LTCG](../../build/reference/ltcg-link-time-code-generation.md)オプション。  
   
- LNK4049 を解決するには、以下のいずれかの操作を実行します。  
+ LNK4049 を解決するには、次のいずれかを試してください。  
   
--   LNK4049 の原因となったシンボルの事前の宣言から `__declspec(dllimport)` の名前宣言を削除します。  バイナリ イメージからシンボルを検索するには、**DUMPBIN** ユーティリティを使用します。  **DUMPBIN \/SYMBOLS** スイッチを指定すると、イメージの COFF シンボル テーブルが表示されます。  **DUMPBIN** ユーティリティの詳細については、「[DUMPBIN リファレンス](../../build/reference/dumpbin-reference.md)」を参照してください。  
+-   削除、 `__declspec(dllimport)` LNK4049 をトリガーするシンボルの事前宣言から宣言の名前を付けます。 使用してバイナリ イメージ内のシンボルを検索することができます、 **DUMPBIN**ユーティリティです。 **DUMPBIN/シンボル**スイッチには、イメージの COFF シンボル テーブルが表示されます。 詳細については、 **DUMPBIN**ユーティリティを参照してください[DUMPBIN リファレンス](../../build/reference/dumpbin-reference.md)です。  
   
--   インクリメント リンクおよびプログラム全体の最適化を一時的に無効にします。  アプリケーションを再コンパイルすると、インポート対象となるシンボルの参照元の関数名を含んだ警告 LNK4217 が生成されます。  インポート対象のシンボルから `__declspec(dllimport)` 宣言を削除し、必要に応じてインクリメント リンクまたはプログラム全体の最適化を有効にします。  
+-   インクリメンタル リンクと、プログラム全体の最適化を一時的に無効にします。 アプリケーションを再コンパイルすると、インポートされたシンボルの参照元の関数の名前を含む警告 LNK4217 が生成されます。 削除、`__declspec(dllimport)`インポート シンボルとインクリメンタル リンクの有効化または必要に応じて、プログラム全体の最適化から宣言します。  
   
- 最終的に生成されるコードは正常に動作しますが、インポートされた関数を呼び出すためのコードは、関数を直接呼び出す場合と比べて効率が落ちます。  [\/clr](../../build/reference/clr-common-language-runtime-compilation.md) オプションを使用してコンパイルした場合、この警告は表示されません。  
+ 最終的に生成されたコードが正しく動作は、インポートされた関数を呼び出すに生成されたコードは関数を直接呼び出すよりも効率が低下します。 オプションを使用してコンパイルするときに、この警告は表示されません[/clr](../../build/reference/clr-common-language-runtime-compilation.md)です。  
   
- データをインポートしたりエクスポートしたりするための宣言の詳細については、「[dllexport、dllimport](../../cpp/dllexport-dllimport.md)」を参照してください。  
+ 詳細については、インポートし、データの宣言をエクスポートを参照してください。 [dllexport、dllimport](../../cpp/dllexport-dllimport.md)です。  
   
-## 使用例  
- 次の 2 つのモジュールをリンクすると、LNK4049 が生成されます。  1 つ目のモジュールでは、エクスポートされた関数を 1 つ含むオブジェクト ファイルが生成されます。  
+## <a name="example"></a>例  
+ 次の 2 つのモジュールをリンクすると、LNK4049 が生成されます。 1 つ目のモジュールは、1 つのエクスポートされた関数を含むオブジェクト ファイルを生成します。  
   
 ```  
 // LNK4049a.cpp  
@@ -61,8 +65,8 @@ __declspec(dllexport) int func()
 }  
 ```  
   
-## 使用例  
- 2 つ目のモジュールでは、この関数 \(`main` 関数内\) の呼び出しと共に、1 つ目のモジュールでエクスポートされた関数の事前の宣言を含むオブジェクト ファイルが生成されます。  このモジュールを 1 つ目のモジュールとリンクすると、LNK4049 が生成されます。  `__declspec(dllimport)` 宣言を削除すると、この警告が解消されます。  
+## <a name="example"></a>例  
+ 2 番目のモジュール内でこの関数への呼び出しと共に、最初のモジュールでエクスポートされた関数に対する事前宣言を含むオブジェクト ファイルを生成する、`main`関数。 1 つ目のモジュールで、このモジュールをリンクすると、LNK4049 が生成されます。 削除、`__declspec(dllimport)`宣言は、警告を解決します。  
   
 ```  
 // LNK4049b.cpp  
@@ -79,6 +83,6 @@ int main()
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー ツールの警告 LNK4217](../../error-messages/tool-errors/linker-tools-warning-lnk4217.md)   
  [dllexport、dllimport](../../cpp/dllexport-dllimport.md)

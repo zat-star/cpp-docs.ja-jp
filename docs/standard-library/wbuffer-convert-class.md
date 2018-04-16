@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xlocmon/stdext::cvt::wbuffer_convert
 dev_langs:
@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - wbuffer_convert class
 ms.assetid: 4a56f9bf-4138-4612-b516-525fea401358
-caps.latest.revision: 20
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e0153bf7d40dbd4290900d15b6e68d84d0c07869
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 502b532fc0c2dfe4ba19844b35e6c301c2764a8b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="wbufferconvert-class"></a>wbuffer_convert クラス
 バイト ストリーム バッファーとの間の要素の転送を制御するストリーム バッファーを説明します。  
@@ -55,4 +56,3 @@ class wbuffer_convert
 -   基になるバイト ストリーム バッファーへのポインター  
   
 -   割り当てられた変換オブジェクトへのポインター ([wbuffer_convert](../standard-library/wbuffer-convert-class.md) のときに解放される)
-

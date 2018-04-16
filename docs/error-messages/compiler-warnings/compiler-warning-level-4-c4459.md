@@ -15,36 +15,23 @@ dev_langs:
 helpviewer_keywords:
 - C4459
 ms.assetid: ee9f6287-9c70-4b10-82a0-add82a13997f
-caps.latest.revision: 0
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
-ms.openlocfilehash: 87550474065639f6e1c7521ebfe76792d748ce9b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 47380915dd18387fa3cc2af54d42a3777aab3f5a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4459"></a>コンパイラの警告 (レベル 4) C4459
   
 > 宣言 '*識別子*' グローバル宣言を非表示になります
   
-宣言*識別子*ローカル スコープで、まったく同じ名前の宣言を非表示に*識別子*グローバル スコープでします。 この警告を参照するを認識できます。*識別子*このスコープで解決するにはローカルに宣言されたバージョンを、グローバル バージョンではなく、またはユーザーの意図ができない可能性があります。 一般に、優れたエンジニア リング手法としてグローバル変数の使用を最小限にするをお勧めします。 グローバル名前空間の汚染を最小限に抑えるするには、グローバル変数の名前付きの名前空間の使用をお勧めします。  
+宣言*識別子*ローカル スコープで、まったく同じ名前の宣言を非表示に*識別子*グローバル スコープでします。 この警告を参照するを認識できます。*識別子*このスコープで解決するにはローカルに宣言されたバージョンを、グローバル バージョンではなく、またはユーザーの意図ができない可能性があります。 一般に、優れたエンジニア リング手法としてグローバル変数の使用を最小限に抑えるをお勧めします。 グローバル名前空間の汚染を最小化するには、グローバル変数の名前付きの名前空間の使用をお勧めします。  
   
 この警告は、Visual C コンパイラのバージョン 18.00 では、Visual Studio 2015 の新機能しました。 または、コードを移行するときに、後で、コンパイラのバージョンからの警告を抑制するのには、使用、 [/Wv:18](../../build/reference/compiler-option-warning-level.md)コンパイラ オプション。 
 
@@ -78,4 +65,3 @@ int main() {
     globals::global_or_local = 3;
 } 
 ```  
-

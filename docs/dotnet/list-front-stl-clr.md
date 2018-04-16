@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::list::front
-dev_langs: C++
-helpviewer_keywords: front member [STL/CLR]
+f1_keywords:
+- cliext::list::front
+dev_langs:
+- C++
+helpviewer_keywords:
+- front member [STL/CLR]
 ms.assetid: ead6aaaa-b518-4a9c-af80-7189bf872cad
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 02cfcf5df078472cf9edeb9e0a30c893b17c4438
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: a0ec34ee2bff0a494b09b70b19a08c25e041121d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="listfront-stlclr"></a>list::front (STL/CLR)
 最初の要素にアクセスします。  
@@ -71,12 +78,12 @@ front() = a
  x b c  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/一覧 >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [list::back (STL/CLR)](../dotnet/list-back-stl-clr.md)   
  [list::back_item (STL/CLR)](../dotnet/list-back-item-stl-clr.md)   

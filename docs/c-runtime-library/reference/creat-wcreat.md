@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _creat
 - _wcreat
@@ -29,7 +30,8 @@ f1_keywords:
 - _creat
 - tcreat
 - _tcreat
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - wcreat function
 - _wcreat function
@@ -39,15 +41,17 @@ helpviewer_keywords:
 - creat function
 - _tcreat function
 ms.assetid: 3b3b795d-1620-40ec-bd2b-a4bbb0d20fe5
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5e8f61cda7d26f75677093e2377adb29a913dd35
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0355f28ada6313e201b8d761813767135ee3cbf8
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="creat-wcreat"></a>_creat、_wcreat
 新しいファイルを作成します。 `_creat` と `_wcreat` は推奨されていません。代わりに [_sopen_s、_wsopen_s](../../c-runtime-library/reference/sopen-s-wsopen-s.md) をご利用ください。  
@@ -83,7 +87,7 @@ int _wcreat(
   
  `filename` が NULL の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、これらの関数は無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。  
   
- リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
+ リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  `_creat` 関数は新しいファイルを作成するか、既存のファイルを開いて切り詰めます。 `_wcreat` 関数は、`_creat` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wcreat` は、ワイド文字列です。 それ以外では、`_wcreat` と `_creat` の動作は同じです。  
@@ -96,7 +100,7 @@ int _wcreat(
   
  `filename` により指定されたファイルが存在しない場合、所与のアクセス許可設定で新しいファイルが作成され、開くのでそれに書き込むことができます。 ファイルが既に存在し、そのアクセス許可設定で書き込みが許可される場合、`_creat` はファイルを長さ 0 に切り詰め、以前のコンテンツを破棄して開きます。ファイルに書き込むことができます。 アクセス許可設定 `pmode` は、新しく作成されたファイルにのみ適用されます。 新しいファイルは、最初に閉じた後に、指定されたアクセス許可設定を受け取ります。 整数式 `pmode` には、 に定義されている、マニフェスト定数 `_S_IWRITE` と `_S_IREAD` に一方または両方が含まれます。 両方の定数が指定されると、これらはビットごとの `OR` 演算子を使用して組み合わされます ( **&#124;** )。 `pmode` パラメーターには次のいずれかの値を設定されます。  
   
-|値|定義|  
+|[値]|定義|  
 |-----------|----------------|  
 |`_S_IWRITE`|書き込みが許可されます。|  
 |`_S_IREAD`|読み取りが許可されます。|  
@@ -106,14 +110,14 @@ int _wcreat(
   
  `_creat` では、アクセス許可を設定する前に、現在のファイル アクセス許可マスクが `pmode` に適用されます ([_umask](../../c-runtime-library/reference/umask.md) 参照)。 `_creat` は主に以前のライブラリとの互換性のための関数です。 `oflag` パラメーターに `_O_CREAT` と `_O_TRUNC` を指定して `_open` を呼び出すことは `_creat` と同じであり、新しいコードの場合に推奨されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_creat`|\<io.h>|\<sys/types.h>、\<sys/stat.h>、\<errno.h>|  
 |`_wcreat`|\<io.h> または \<wchar.h>|\<sys/types.h>、\<sys/stat.h>、\<errno.h>|  
   
- 互換性について詳しくは、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -150,7 +154,7 @@ int main( void )
 Created data file.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
  [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
  [_chsize](../../c-runtime-library/reference/chsize.md)   

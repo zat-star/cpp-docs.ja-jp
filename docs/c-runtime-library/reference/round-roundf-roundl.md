@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - round
 - roundl
@@ -28,21 +29,24 @@ f1_keywords:
 - roundf
 - roundl
 - round
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - roundl function
 - round function
 - roundf function
 ms.assetid: 6be90877-193c-4b80-a32b-c3eca33f9c6f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b1f4532b8f37b5223aa42e7055ba9edf62339925
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b90deedf85fac78fcf4cd9e4b08b4c595ef9da26
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="round-roundf-roundl"></a>round、roundf、roundl
 浮動小数点値を最も近い整数に丸めます。  
@@ -81,13 +85,13 @@ long double roundl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`round` および `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`round` は常に `double` を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`round`、`roundf`、`roundl`|\<math.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -125,12 +129,12 @@ roundl(2.500000) is 3
 roundl(-2.500000) is -3  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ceil、ceilf、ceill](../../c-runtime-library/reference/ceil-ceilf-ceill.md)   
  [floor、floorf、floorl](../../c-runtime-library/reference/floor-floorf-floorl.md)   
  [fmod、fmodf](../../c-runtime-library/reference/fmod-fmodf.md)   
- [lrint、lrintf、lrintl、llrint、llrintf、llrintl](http://msdn.microsoft.com/en-us/312fd869-a9c0-4107-bb23-ab8299d04385)   
+ [lrint、lrintf、lrintl、llrint、llrintf、llrintl](lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)   
  [llround、lroundf、lroundl、llround、llroundf、llroundl](../../c-runtime-library/reference/lround-lroundf-lroundl-llround-llroundf-llroundl.md)   
- [nearbyint、nearbyintf、nearbyintl](http://msdn.microsoft.com/en-us/15111e73-331d-41d1-81b7-3e10df894848)   
+ [nearbyint、nearbyintf、nearbyintl](nearbyint-nearbyintf-nearbyintl1.md)   
  [rint、rintf、rintl](../../c-runtime-library/reference/rint-rintf-rintl.md)

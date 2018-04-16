@@ -1,32 +1,37 @@
 ---
-title: "requires_category | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.requires_category"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "requires_category attribute"
+title: "requires_category |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- vc-attr.requires_category
+dev_langs:
+- C++
+helpviewer_keywords:
+- requires_category attribute
 ms.assetid: a645fdc6-1ef5-414d-8c56-5fe2686d4687
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 677e3c94a5db69dafb66a5cd33749c129cb35afb
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# requires_category
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="requirescategory"></a>requires_category
 ターゲット クラスの必須コンポーネントのカテゴリを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,17 +40,17 @@ caps.handback.revision: 10
 ) ]  
 ```  
   
-#### パラメーター  
- *requires\_category*  
- 必要なカテゴリ ID。  
+#### <a name="parameters"></a>パラメーター  
+ *requires_category*  
+ 必要なカテゴリの ID。  
   
-## 解説  
- **requires\_category** C\+\+ 属性はクラスに必要なコンポーネント カテゴリを指定します。  詳細については[REQUIRED\_CATEGORY](../Topic/REQUIRED_CATEGORY.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ **Requires_category** C++ 属性は、ターゲット クラスに必要なコンポーネントのカテゴリを指定します。 詳細については、次を参照してください。[要求する](../atl/reference/category-macros.md#required_category)です。  
   
- この属性は [コクラス](../windows/coclass.md)[ProgID](../Topic/progid.md)または [vi\_progid](../windows/vi-progid.md) の属性 \(そのうちの 1 つを意味する属性を適用することを同じ要素に必要です。  
+ この属性を使用するには、 [coclass](../windows/coclass.md)、 [progid](../windows/progid.md)、または [vi_progid](../windows/vi-progid.md) 属性 (または、これらのいずれかを意味する別の属性) も同じ要素に適用する必要があります。  
   
-## 使用例  
- 次のコードはオブジェクトの実装をコントロールのカテゴリ必要です。  
+## <a name="example"></a>例  
+ 次のコードでは、オブジェクトがコントロールのカテゴリを実装することが必要です。  
   
 ```  
 // cpp_attr_ref_requires_category.cpp  
@@ -61,20 +66,19 @@ caps.handback.revision: 10
 class CMyClass {};  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  `struct`|  
-|**複数回の適用**|Ｘ|  
-|**必要な属性**|次の一つ以上 :  **コクラス ProgID**または **vi\_progid**。|  
+|**対象**|**class**、 `struct`|  
+|**反復可能**|×|  
+|**必要な属性**|**coclass**、 **progid**、 **vi_progid**のうち 1 つ以上。|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [COM Attributes](../Topic/COM%20Attributes.md)   
- [implements\_category](../Topic/implements_category.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [COM 属性](../windows/com-attributes.md)   
+ [implements_category](../windows/implements-category.md)   

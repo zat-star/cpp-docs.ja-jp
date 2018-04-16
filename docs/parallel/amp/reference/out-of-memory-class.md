@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - out_of_memory
 - AMPRT/out_of_memory
@@ -17,31 +17,17 @@ dev_langs:
 helpviewer_keywords:
 - out_of_memory class
 ms.assetid: 3aa7e682-8f13-4ae6-9188-31fb423956e4
-caps.latest.revision: 11
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fc190feb08d9b221cd1cc21a9c91ad567c86c848
-ms.openlocfilehash: b593f8f85d4e36496f2ec2fc7bbadf8f2bfd742e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 88f143493aec70d6176436e6acaee7944fa142ad
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="outofmemory-class"></a>out_of_memory クラス
 システムまたはデバイスのメモリ不足のためにメソッドが失敗した場合にスローされる例外。  
@@ -67,11 +53,11 @@ class out_of_memory : public runtime_exception;
   
  `out_of_memory`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amprt.h  
   
  **名前空間:** Concurrency  
-## <a name="ctor"></a>out_of_memory 
+## <a name="ctor"></a> out_of_memory 
 
  クラスの新しいインスタンスを初期化します。  
   
@@ -92,6 +78,5 @@ out_of_memory () throw();
  `out_of_memory` クラスの新しいインスタンス。  
   
   
-## <a name="see-also"></a>関連項目  
- [同時実行 Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
-
+## <a name="see-also"></a>参照  
+ [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

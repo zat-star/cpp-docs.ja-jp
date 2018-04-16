@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - task_handle class, example
 - task_group class, example
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - structured_task_group class, example
 - improving parallel performance with task groups [Concurrency Runtime]
 ms.assetid: 53979a2a-525d-4437-8952-f1ff85b37673
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 96ef9bde4895cfc35ae5858e913389b51829d864
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ff14294236efc26b83d31ad185dc1cfd6329dbe9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-use-parallelinvoke-to-write-a-parallel-sort-routine"></a>方法: 並列呼び出しを使用して並列並べ替えルーチンを記述する
 このドキュメントを使用する方法について説明、 [parallel_invoke](../../parallel/concrt/parallel-algorithms.md#parallel_invoke)バイトニック ソート アルゴリズムのパフォーマンスを向上するためのアルゴリズムです。 バイトニック ソート アルゴリズムでは、入力シーケンスを、より小さな並べ替え済みのパーティションへと再帰的に分割します。 各パーティションの操作は他のすべての操作から独立しているため、バイトニック ソート アルゴリズムは並列的に実行することができます。  
@@ -105,7 +109,7 @@ parallel time: 1248
   
  他の並列アルゴリズムと同様に、必要に応じてコードのプロファイリングおよびチューニングを行うことをお勧めします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [タスクの並列化](../../parallel/concrt/task-parallelism-concurrency-runtime.md)   
  [parallel_invoke 関数](reference/concurrency-namespace-functions.md#parallel_invoke)
 

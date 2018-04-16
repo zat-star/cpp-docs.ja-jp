@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 6f758d3c-a7c7-4a50-92bb-97b2f6d4ab27
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 61152e939838833e9296643af1144fe363c7cf52
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5d89f6b5116459018cb50eb58b976f6f853ed088
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="algorithms-modern-c"></a>アルゴリズム (Modern C++)
 最新の C++ プログラミングのことをお勧め内のアルゴリズムを使用すること、 [C++ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)です。 次に重要な例を示します。  
@@ -78,7 +82,7 @@ auto i = find_if( begin(v), end(v),  [=](int i) { return i > x && i < y; } );
 ## <a name="random-numbers"></a>乱数  
  従来の CRT の `rand()` 関数に多くの欠陥があることは広く知られた事実であり、C++ コミュニティで長年にわたって議論されてきました。 最新の C++ でのそれらの欠点に対処する必要はありません- したり、独自一様に分布した乱数ジェネレーターを作成する —に示すとおり、迅速かつ簡単に作成するためのツールは、C++標準ライブラリで利用可能なため[\<ランダム >](../standard-library/random.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)

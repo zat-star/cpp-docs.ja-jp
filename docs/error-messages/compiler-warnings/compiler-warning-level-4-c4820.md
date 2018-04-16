@@ -15,37 +15,24 @@ dev_langs:
 helpviewer_keywords:
 - C4820
 ms.assetid: 17aa29f4-c287-49b8-bc43-8ed82ffed5ea
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: daf6e41a2e8abf113acdb50282dd7347b112bb76
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a2d0c1a99eab97ea7e598534b65520479f664c15
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4820"></a>コンパイラの警告 (レベル 4) C4820
 'バイト' : 'バイト' バイトのパディングを 'コンスラクト' 'member_name' の後に追加しました。  
   
- 型と要素の順序は、構造体の末尾にスペースを追加するコンパイラを発生します。 参照してください[align](../../cpp/align-cpp.md)構造体に埋め込みの詳細についてです。  
+ 要素の順序と型、構造体の末尾にスペースを追加するコンパイラを発生します。 参照してください[整列](../../cpp/align-cpp.md)構造体に埋め込みについての詳細。  
   
- 既定では、この警告はオフに設定されています。 参照してください[コンパイラの警告ことは既定で無効](../../preprocessor/compiler-warnings-that-are-off-by-default.md)の詳細。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
  次の例では、C4820 が生成されます。  
   

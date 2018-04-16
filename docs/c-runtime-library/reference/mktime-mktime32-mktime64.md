@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _mktime32
 - mktime
@@ -27,7 +28,8 @@ apitype: DLLExport
 f1_keywords:
 - mktime
 - _mktime64
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _mktime32 function
 - mktime function
@@ -38,15 +40,17 @@ helpviewer_keywords:
 - _mktime64 function
 - time, converting
 ms.assetid: 284ed5d4-7064-48a2-bd50-15effdae32cf
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c0e7738a68ee5f63f3bb33af7fe6412b214f88bf
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ee2673f98f219559fd42d192dd934c8fe3eaed8c
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="mktime-mktime32-mktime64"></a>mktime、_mktime32、_mktime64
 現地時刻をカレンダーの値に変換します。  
@@ -72,7 +76,7 @@ __time64_t _mktime64(
 ## <a name="return-value"></a>戻り値  
  `_mktime32` は、指定されたカレンダー時間を [time_t](../../c-runtime-library/standard-types.md) 型の値としてエンコードして返します。 場合*timeptr*午前 0 時、1970 年 1 月 1 日より前に、の日付を参照して、カレンダー時間を表すことができない場合または`_mktime32`型にキャストする-1 を返します`time_t`です。 使用する場合`_mktime32`場合*timeptr* 23時 59分: 59 2038 年 1 月 18 日世界協定時刻 (UTC) の後の日付を参照型にキャスト-1 を返す`time_t`です。  
   
- `_mktime64`型にキャスト-1 が返されます`__time64_t`場合*timeptr* UTC 3000 年 12 月 31 日 23時 59分: 59 秒後の日付を参照します。  
+ `_mktime64` 型にキャスト-1 が返されます`__time64_t`場合*timeptr* UTC 3000 年 12 月 31 日 23時 59分: 59 秒後の日付を参照します。  
   
 ## <a name="remarks"></a>コメント  
  `mktime`、`_mktime32`、および `_mktime64` 関数は、*timeptr* によって示された指定の時間構造体 (不完全な場合もある) を変換し、正規化された値を持つ完全に定義された構造体にして、次にそれを `time_t` カレンダー時間値に変換します。 変換された時間のエンコーディングは、[time](../../c-runtime-library/reference/time-time32-time64.md) 関数によって返される値と同じエンコーディングになります。 *timeptr* 構造体の `tm_wday` および `tm_yday` コンポーネントの元の値は無視され、他のコンポーネントの元の値はそれぞれの通常の範囲に限定されません。  
@@ -95,15 +99,15 @@ __time64_t _mktime64(
   
  これらの関数では、パラメーターの検証が行われます。 *timeptr* が null ポインターである場合は、「[パラメータの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、関数は -1 を返し、`errno` を `EINVAL` に設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`mktime`|\<time.h>|  
 |`_mktime32`|\<time.h>|  
 |`_mktime64`|\<time.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -149,7 +153,7 @@ Current time is Fri Apr 25 13:34:07 2003
 In 20 days the time will be Thu May 15 13:34:07 2003  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
  [gmtime、_gmtime32、_gmtime64](../../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md)   

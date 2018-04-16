@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: export functions
+dev_langs:
+- C++
+helpviewer_keywords:
+- export functions
 ms.assetid: d150395a-89d4-4298-9ac4-08f84fe1261c
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5800c18dd9a765aa85a8af90110c8ce32dc48174
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4886ee6a8bce115c2f7676124477ec81e71b16d7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="definitions-and-declarations-c"></a>定義と宣言 (C)
 **Microsoft 固有の仕様**  
@@ -64,7 +69,7 @@ extern DllImport int k;   /* These are correct and imply */
 Dllimport int j;          /* a declaration. */      
 ```  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DLL インポートおよびエクスポート関数](../c-language/dll-import-and-export-functions.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::priority_queue::priority_queue
-dev_langs: C++
-helpviewer_keywords: priority_queue member [STL/CLR]
+f1_keywords:
+- cliext::priority_queue::priority_queue
+dev_langs:
+- C++
+helpviewer_keywords:
+- priority_queue member [STL/CLR]
 ms.assetid: aab423d7-959e-48fd-9028-e9f45f43cb8a
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 77486fdadaafe9b98e93998b73a4f5eb42f7865b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 03d0054f3c755c3dd6e4bd653c972a0f7aa6735d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="priorityqueuepriorityqueue-stlclr"></a>priority_queue::priority_queue (STL/CLR)
 コンテナー アダプター オブジェクトを構築します。  
@@ -206,12 +213,12 @@ size() = 0
  a c b  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/キュー >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
  [priority_queue::assign (STL/CLR)](../dotnet/priority-queue-assign-stl-clr.md)   
  [priority_queue::generic_container (STL/CLR)](../dotnet/priority-queue-generic-container-stl-clr.md)   

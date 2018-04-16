@@ -17,16 +17,17 @@ helpviewer_keywords:
 - += operator [C++], appending strings
 - + operator [C++], _bstr_t objects
 ms.assetid: d28316ce-c2c8-4a38-bdb3-44fa4e582c44
-caps.latest.revision: 6
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 0ba8936df56359523a76992866642521f899af69
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1ceeec1461b05b25d4bb0b42321cb9b3988ce4b0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="bstrtoperator--"></a>_bstr_t::operator +=、+
 **Microsoft 固有の仕様**  
@@ -66,15 +67,15 @@ friend _bstr_t operator+(
 ## <a name="remarks"></a>コメント  
  これらの演算子は文字列連結を実行します。  
   
--   **演算子 + = (***s1***)**でカプセル化された文字を追加`BSTR`の*s1*このオブジェクトのカプセル化されたの末尾に`BSTR`.      
+-   **演算子 + = (***s1***)**でカプセル化された文字を追加`BSTR`の*s1*このオブジェクトのカプセル化されたの末尾に`BSTR`.  
   
--   **operator + (***s1***)**新しいを返します`_bstr_t`は、このオブジェクトを連結して形成される`BSTR`の*s1*です。      
+-   **operator + (***s1***)**新しいを返します`_bstr_t`は、このオブジェクトを連結して形成される`BSTR`の*s1*です。  
   
--   **operator + (***s2***&#124;***s1***)**新しいを返します`_bstr_t`マルチバイト文字列の連結によって形成される*s2*を Unicode に変換された、使用、 `BSTR`内のカプセル化された*s1*です。          
+-   **operator + (***s2***&#124;***s1***)**新しいを返します`_bstr_t`マルチバイト文字列の連結によって形成される*s2*を Unicode に変換された、使用、 `BSTR`内のカプセル化された*s1*です。  
   
--   **operator + (** `s3` **、***s1***)**新しいを返します`_bstr_t`Unicode 文字列を連結して形成する`s3``BSTR`にカプセル化された*s1*です。        
+-   **operator + (** `s3` **、***s1***)**新しいを返します`_bstr_t`Unicode 文字列を連結して形成する`s3``BSTR`にカプセル化された*s1*です。  
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_bstr_t クラス](../cpp/bstr-t-class.md)

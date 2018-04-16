@@ -37,31 +37,17 @@ dev_langs:
 helpviewer_keywords:
 - CComSafeArray class
 ms.assetid: ee349aef-33db-4c85-bd08-5d86a3c9d53a
-caps.latest.revision: 26
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 6e1337bee7dc6ca6f64f59657379f7d8ae40f5f8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7bed846015090ef9c4da841adff4968c91d8719d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ccomsafearray-class"></a>CComSafeArray クラス
 このクラスは、 **SAFEARRAY** 構造体のラッパーです。  
@@ -94,9 +80,9 @@ class CComSafeArray
 |[CComSafeArray::Attach](#attach)|**SAFEARRAY** 構造体を `CComSafeArray` オブジェクトにアタッチします。|  
 |[CComSafeArray::CopyFrom](#copyfrom)|**SAFEARRAY** 構造体の内容を `CComSafeArray` オブジェクトにコピーします。|  
 |[CComSafeArray::CopyTo](#copyto)|`CComSafeArray` オブジェクトのコピーを作成します。|  
-|[Ccomsafearray::create](#create)|
+|[オブジェクトは、](#create)|
           `CComSafeArray` オブジェクトを作成します。|  
-|[Ccomsafearray::destroy](#destroy)|`CComSafeArray` オブジェクトを破棄します。|  
+|[CComSafeArray::Destroy](#destroy)|`CComSafeArray` オブジェクトを破棄します。|  
 |[CComSafeArray::Detach](#detach)|**オブジェクトから** SAFEARRAY `CComSafeArray` をデタッチします。|  
 |[CComSafeArray::GetAt](#getat)|1 次元配列から 1 つの要素を取得します。|  
 |[CComSafeArray::GetCount](#getcount)|配列内の要素の数を返します。|  
@@ -127,13 +113,13 @@ class CComSafeArray
 |[CComSafeArray::m_psa](#m_psa)|このデータ メンバーは、 **SAFEARRAY** 構造体のアドレスを保持します。|  
   
 ## <a name="remarks"></a>コメント  
- `CComSafeArray`ラッパーを提供、[データ型の SAFEARRAY](http://msdn.microsoft.com/en-us/9ec8025b-4763-4526-ab45-390c5d8b3b1e)クラスを作成し、1 次元配列と多次元配列バリアント サポート型のいずれかのほとんどの管理を簡単になります。  
+ `CComSafeArray` は、 [SAFEARRAY Data Type](http://msdn.microsoft.com/en-us/9ec8025b-4763-4526-ab45-390c5d8b3b1e) クラスのラッパーを提供して、ほぼすべてのバリアント サポート型の 1 次元配列と多次元配列を簡単に作成および管理できるようにします。  
   
  `CComSafeArray` によりプロセス間での配列の受け渡しが単純化され、配列インデックスの値を上限と下限に照合することでセキュリティがさらに向上します。  
   
  `CComSafeArray` の下限は任意のユーザー定義値で開始できますが、C++ を通じてアクセスされる配列の下限は 0 にする必要があります。 Visual Basic などの他の言語では、別の境界値 (たとえば、-10 ～ 10) を使用できます。  
   
- 使用して[ccomsafearray::create](#create)を作成する、`CComSafeArray`オブジェクト、および[ccomsafearray::destroy](#destroy)を削除します。  
+ [オブジェクトは、](#create) CComSafeArray::Create `CComSafeArray` を使用して作成し、 [CComSafeArray::Destroy](#destroy) を使用して削除します。  
   
  `CComSafeArray` には、VARIANT データ型の次のサブセットを格納できます。  
   
@@ -155,11 +141,11 @@ class CComSafeArray
 |VT_VARIANT|バリアント ポインター|  
 |VT_CY|Currency データ型|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsafe.h  
   
 ## <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Utilities # 75](../../atl/codesnippet/cpp/ccomsafearray-class_1.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#75](../../atl/codesnippet/cpp/ccomsafearray-class_1.cpp)]  
   
 ##  <a name="add"></a>CComSafeArray::Add  
  1 つ以上の要素または 1 つの **SAFEARRAY** 構造体を `CComSafeArray`に追加します。  
@@ -294,7 +280,7 @@ HRESULT CopyTo(LPSAFEARRAY* ppArray);
 ### <a name="remarks"></a>コメント  
  このメソッドの内容をコピーする、`CComSafeArray`オブジェクトに、 **SAFEARRAY**構造体。  
   
-##  <a name="create"></a>Ccomsafearray::create  
+##  <a name="create"></a>  オブジェクトは、  
  
           `CComSafeArray` を作成します。  
   
@@ -322,7 +308,7 @@ HRESULT Create(ULONG ulCount = 0, LONG lLBound = 0);
 ### <a name="remarks"></a>コメント  
  A `CComSafeArray` 、既存のオブジェクトを作成できる**SAFEARRAYBOUND**構造体、または、配列の下限の境界で要素の数を指定することによって、ディメンションの数。 配列は、Visual C からアクセスすることは、下限が 0 にする必要があります。 他の言語は、下限値 (たとえば、-10 ~ 10 などの範囲に要素を持つ Visual の基本的なサポート配列) の他の値を許可することがあります。  
   
-##  <a name="destroy"></a>Ccomsafearray::destroy  
+##  <a name="destroy"></a>  CComSafeArray::Destroy  
  `CComSafeArray` オブジェクトを破棄します。  
   
 ```
@@ -608,9 +594,8 @@ HRESULT SetAt(LONG lIndex, const T& t, BOOL bCopy = TRUE);
 ### <a name="remarks"></a>コメント  
  `bCopy`にフラグが考慮されるときに型の要素`BSTR`または**バリアント**を配列に追加されます。 既定値の**TRUE**配列に要素が追加されたときに、データの新しいコピーが行われたことを確認します。  
   
-## <a name="see-also"></a>関連項目  
- [SAFEARRAY のデータ型](http://msdn.microsoft.com/en-us/9ec8025b-4763-4526-ab45-390c5d8b3b1e)   
+## <a name="see-also"></a>参照  
+ [SAFEARRAY Data Type](http://msdn.microsoft.com/en-us/9ec8025b-4763-4526-ab45-390c5d8b3b1e)   
  [Ccomsafearray::create](#create)   
  [Ccomsafearray::destroy](#destroy)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

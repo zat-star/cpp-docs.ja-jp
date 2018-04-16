@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _sprintf_p
 - _swprintf_p_l
@@ -33,7 +34,8 @@ f1_keywords:
 - swprint_p_l
 - swprintf_p
 - swprintf_p_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - sprintf_p_l function
 - swprintf_p function
@@ -49,15 +51,17 @@ helpviewer_keywords:
 - formatted text [C++]
 - _stprintf_p_l function
 ms.assetid: a2ae78e8-6b0c-48d5-87a9-ea2365b0693d
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 010b3f04509852012dac641aadeb4152d666898d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 46e82b8485458290629916a1eb9f44a2bf2f23ab
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="sprintfp-sprintfpl-swprintfp-swprintfpl"></a>_sprintf_p、_sprintf_p_l、_swprintf_p、_swprintf_p_l
 パラメーターが書式文字列で使用される順序を指定できる文字列に、書式付きデータを書き込みます。  
@@ -109,17 +113,17 @@ int _swprintf_p_l(
  `locale`  
  使用するロケール。  
   
- 詳細については、[書式の指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関する記事をご覧ください。  
+ 詳細については、「 [printf 関数と wprintf 関数の書式指定フィールド](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」を参照してください。  
   
 ## <a name="return-value"></a>戻り値  
  書き込まれた文字数またはエラーが発生した場合は-1。  
   
 ## <a name="remarks"></a>コメント  
- `_sprintf_p` 関数は、一連の文字と値の書式を指定して、 `buffer`に格納します。 各引数は、 `argument_list` (存在する場合) は変換され、対応する書式指定に従って`format`です。 `format`引数は、 [printf 関数と wprintf 関数の指定の構文を書式設定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。 最後に書き込まれる文字の後に `NULL` 文字が追加されます。 重なり合う文字列間でコピーした場合の動作は未定義です。 `_sprintf_p` と `sprintf_s` の違いは、`_sprintf_p` では位置指定パラメーターをサポートし、これによって、書式指定文字列で引数を使用する順序を指定できることです。 詳細については、「[printf_p の位置指定パラメーター](../../c-runtime-library/printf-p-positional-parameters.md)」を参照してください。  
+ `_sprintf_p` 関数は、一連の文字と値の書式を指定して、 `buffer`に格納します。 各引数は、 `argument_list` (存在する場合) は変換され、対応する書式指定に従って`format`です。 `format`引数は、 [printf 関数と wprintf 関数の指定の構文を書式設定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。 最後に書き込まれる文字の後に `NULL` 文字が追加されます。 重なり合う文字列間でコピーした場合の動作は未定義です。 `_sprintf_p` と `sprintf_s` の違いは、`_sprintf_p` では位置指定パラメーターをサポートし、これによって、書式指定文字列で引数を使用する順序を指定できることです。 詳細については、「[printf_p の位置指定パラメーター](../../c-runtime-library/printf-p-positional-parameters.md)」をご覧ください。  
   
  `_swprintf_p` は `_sprintf_p` のワイド文字バージョンであり、`_swprintf_p` のポインター引数はワイド文字列です。 `_swprintf_p` と `_sprintf_p` では、エンコーディング エラーの検出動作が異なる場合があります。 `_swprintf_p` と `fwprintf_p` の動作は同じですが、`_swprintf_p` は `FILE` 型の出力先ではなく文字列に出力を書き込む点と、`_swprintf_p` には書き込む最大文字数を指定する `count` パラメーターが必要である点が異なります。 これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
- `_sprintf_p` は、`buffer` に格納されているバイト数を返します。終端の `NULL` 文字は含まれません。 `_swprintf_p`格納されるワイド文字の数を返します`buffer`、終端をカウントせず`NULL`ワイド文字。 `buffer` または `format` が null ポインターの場合、または書式指定文字列に無効な書式指定文字が含まれている場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
+ `_sprintf_p` は、`buffer` に格納されているバイト数を返します。終端の `NULL` 文字は含まれません。 `_swprintf_p` 格納されるワイド文字の数を返します`buffer`、終端をカウントせず`NULL`ワイド文字。 `buffer` または `format` が null ポインターの場合、または書式指定文字列に無効な書式指定文字が含まれている場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -128,14 +132,14 @@ int _swprintf_p_l(
 |`_stprintf_p`|`_sprintf_p`|`_sprintf_p`|`_swprintf_p`|  
 |`_stprintf_p_l`|`_sprintf_p_l`|`_sprintf_p_l`|`_swprintf_p_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_sprintf_p`, `_sprintf_p_l`|\<stdio.h>|  
 |`_swprintf_p`, `_swprintf_p_l`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -212,7 +216,7 @@ Wrote 24 characters
 Wrote -1 characters  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [_fprintf_p、_fprintf_p_l、_fwprintf_p、_fwprintf_p_l](../../c-runtime-library/reference/fprintf-p-fprintf-p-l-fwprintf-p-fwprintf-p-l.md)   
  [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   

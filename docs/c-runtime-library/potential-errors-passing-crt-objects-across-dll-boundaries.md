@@ -13,16 +13,17 @@ dev_langs:
 helpviewer_keywords:
 - DLL conflicts [C++]
 ms.assetid: c217ffd2-5d9a-4678-a1df-62a637a96460
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0355b1c6a2731c9ca82e7ced37ad28f30a881eca
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
-ms.openlocfilehash: c5fa79de11c7c3a1526fc91361eecdc74f8bdcd7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="potential-errors-passing-crt-objects-across-dll-boundaries"></a>DLL の境界を越えて CRT オブジェクトを渡す場合に発生する可能性のあるエラー
 ファイル ハンドル、ロケール、環境変数などの C ランタイム (CRT) オブジェクトを DLL の境界を越えて渡す場合 (DLL の境界を越えた関数の呼び出し)、DLL またはその DLL を呼び出すファイルが異なる CRT ライブラリのコピーを使用していると、予想外の動作が発生する可能性があります。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/09/2017
   
  この問題の別の兆候には、次のようなデバッグ中の出力ウィンドウのエラーがあります。  
   
- RtlValidateHeap(#,#) に指定された無効なアドレスをヒープの:  
+ HEAP[]: Invalid Address specified to RtlValidateHeap(#,#)  
   
 ## <a name="causes"></a>原因  
  CRT ライブラリのコピーはそれぞれ状態が異なります。アプリまたは DLL により、スレッド ローカル ストレージに保存されます。 そのため、ファイル ハンドル、環境変数、ロケールなどの CRT オブジェクトは、オブジェクトが割り当てられている、または設定されているアプリまたは DLL の CRT コピーに対してのみ有効になります。 DLL とそのアプリ クライアントで CRT ライブラリの異なるコピーが使用されているとき、DLL 境界を越えてそのような CRT オブジェクトを渡しても、向こう側で正しく取得されることは期待できません。 これは特に、Visual Studio 2015 以降で、Universal CR より前のバージョンの CRT に当てはまります。 Visual C++ 2013 以前で構築されたあらゆるバージョンの Visual Studio について、バージョン固有の CRT ライブラリがありました。 データ構造や命名規則など、CRT の内部実装詳細はバージョンごとに異なります。 あるバージョンの CRT のためにコンパイルされたコードを別のバージョンの CRT DLL に動的にリンクすることは以前はできませんでした。動的にリンクされる場合もありましたが、それは偶然であり、設計によるものではありませんでした。  
@@ -131,5 +132,5 @@ MYLIB has not been set.
 New MYLIB variable is: c:\mylib;c:\yourlib  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)

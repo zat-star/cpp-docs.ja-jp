@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: A1010
-dev_langs: C++
-helpviewer_keywords: A1010
+ms.topic: error-reference
+f1_keywords:
+- A1010
+dev_langs:
+- C++
+helpviewer_keywords:
+- A1010
 ms.assetid: 9e0b5241-67f4-4740-8701-3b2d2d1ad9e4
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 22b9886587b07958650a0624386867d4bc69cfd9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 553071ff10688f0b49909b16c8c60d95899247d1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="ml-fatal-error-a1010"></a>ML の致命的なエラー A1010
 **一致しないブロックの入れ子。**  
@@ -40,5 +46,5 @@ ms.lasthandoff: 10/24/2017
   
 -   条件付きのアセンブリのように、ディレクティブ、 [ELSE](../../assembler/masm/else-masm.md)、 [ELSEIF](../../assembler/masm/elseif-masm.md)、または**ENDIF**が対応する[IF](../../assembler/masm/if-masm.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

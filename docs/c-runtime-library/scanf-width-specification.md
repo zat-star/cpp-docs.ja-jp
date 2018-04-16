@@ -23,30 +23,17 @@ dev_langs:
 helpviewer_keywords:
 - scanf function, width specification
 ms.assetid: 94b4e8fe-c4a2-4799-8b6c-a2cf28ffb09c
-caps.latest.revision: 16
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 922405b111404e5a11052fd1aba8d2729e254714
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ee2fa7f80f47e2d3379bc4e68aec4496e8f4f01a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="scanf-width-specification"></a>scanf 関数の文字幅指定
 この情報は、`scanf_s` など、安全なバージョンを含む `scanf` 関数ファミリの書式指定文字列の解釈に適用されます。 これらの関数は通常、入力ストリームが一連のトークンに分割されていることを前提とします。 トークンは空白 (スペース、タブ、または改行文字) で区切られるか、数値型の場合は数値テキストに変換できない最初の文字による、数値データ型の自然な終了で区切られます。 ただし、幅指定を使用すると、トークンの自然な終了の前に入力の解析が停止することがあります。  
@@ -122,7 +109,7 @@ wscanf_s(L"%hC", &x, 2);    // Read a single-byte character
   
  理由に関係なく、`scanf` 関数が入力フィールドの読み取りを停止すると、次の入力フィールドは、最初の未読文字から始まるとみなされます。 競合する文字がある場合は、それは未読とみなされ、次の入力フィールドの最初の文字、または入力ストリームのそのあとの読み取り操作の最初の文字になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [scanf、_scanf_l、wscanf、_wscanf_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
  [scanf_s、_scanf_s_l、wscanf_s、_wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)   
  [書式指定フィールド: scanf 関数と wscanf 関数](../c-runtime-library/format-specification-fields-scanf-and-wscanf-functions.md)   

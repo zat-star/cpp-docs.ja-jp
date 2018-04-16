@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: 'index-page '
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - Visual C++, keywords
 - keywords [C++]
@@ -15,15 +17,17 @@ helpviewer_keywords:
 - Microsoft-specific keywords
 - __identifer keyword [C++]
 ms.assetid: d7ca94a8-f785-41ce-9f73-d3c4fd508489
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 58551edf5663d7ecbaf50f4ce0660247c00249c9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: db9cd28719b1ced8efee124a4b75fbd362de60e1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="keywords-c"></a>キーワード (C++)
 キーワードは、特別な意味を持つ定義済みおよび予約済みの識別子です。 プログラムでは、キーワードを識別子として使用することはできません。 次のキーワードは Microsoft C++ 用に予約されています。 先頭にアンダースコアが付いているキーワードは Microsoft の拡張機能です。  
@@ -51,7 +55,7 @@ ms.lasthandoff: 10/24/2017
 |[break](../cpp/break-statement-cpp.md)|[case](../cpp/switch-statement-cpp.md)|[catch](../cpp/try-throw-and-catch-statements-cpp.md)|  
 |[char](../cpp/fundamental-types-cpp.md)|[class](../cpp/class-cpp.md)|[const](../cpp/const-cpp.md)|  
 |[const_cast](../cpp/const-cast-operator.md)|[continue](../cpp/continue-statement-cpp.md)|[decltype](../cpp/decltype-cpp.md)|  
-|[default](../cpp/switch-statement-cpp.md)|[delegate](../windows/delegate-cpp-component-extensions.md)|[削除](../cpp/delete-operator-cpp.md)|  
+|[default](../cpp/switch-statement-cpp.md)|[delegate](../windows/delegate-cpp-component-extensions.md)|[delete](../cpp/delete-operator-cpp.md)|  
 |[非推奨](../cpp/deprecated-cpp.md) <sup>1</sup>|[dllexport](../cpp/dllexport-dllimport.md) <sup>1</sup>|[dllimport](../cpp/dllexport-dllimport.md) <sup>1</sup>|  
 |[do](../cpp/do-while-statement-cpp.md)|[double](../cpp/fundamental-types-cpp.md)|[dynamic_cast](../cpp/dynamic-cast-operator.md)|  
 |[else](../cpp/if-else-statement-cpp.md)|[enum](../cpp/enumerations-cpp.md)|[列挙型クラス](../windows/enum-class-cpp-component-extensions.md)|  
@@ -63,7 +67,7 @@ ms.lasthandoff: 10/24/2017
 |[initonly](../dotnet/initonly-cpp-cli.md)|[インライン](../cpp/inline-functions-cpp.md)|[int](../cpp/fundamental-types-cpp.md)|  
 |[インターフェイス クラス](../windows/interface-class-cpp-component-extensions.md)|[インターフェイス構造体](../windows/interface-class-cpp-component-extensions.md)|[interior_ptr](../windows/interior-ptr-cpp-cli.md)|  
 |[リテラル](../windows/literal-cpp-component-extensions.md)|[long](../cpp/fundamental-types-cpp.md)|[変更可能です](../cpp/mutable-data-members-cpp.md)|  
-|[naked](../cpp/naked-cpp.md) <sup>1</sup>|[名前空間](namespaces-cpp.md)|[new](../windows/new-new-slot-in-vtable-cpp-component-extensions.md)|  
+|[naked](../cpp/naked-cpp.md) <sup>1</sup>|[namespace](namespaces-cpp.md)|[new](../windows/new-new-slot-in-vtable-cpp-component-extensions.md)|  
 |[new](../cpp/new-operator-cpp.md)|[noinline](../cpp/noinline.md) <sup>1</sup>|[noreturn](../cpp/noreturn.md) <sup>1</sup>|  
 |[nothrow](../cpp/nothrow-cpp.md) <sup>1</sup>|[novtable](../cpp/novtable.md) <sup>1</sup>|[nullptr](../cpp/nullptr.md)|  
 |[operator](../cpp/operator-overloading.md)|[private](../cpp/private-cpp.md)|[プロパティ](../windows/property-cpp-component-extensions.md)|  
@@ -102,6 +106,6 @@ ms.lasthandoff: 10/24/2017
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構文規則](../cpp/lexical-conventions.md)   
  [C++ の組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)

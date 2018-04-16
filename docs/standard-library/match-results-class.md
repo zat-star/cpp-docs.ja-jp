@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: regex/std::match_results
-dev_langs: C++
-helpviewer_keywords: match_results class
+ms.topic: reference
+f1_keywords:
+- regex/std::match_results
+dev_langs:
+- C++
+helpviewer_keywords:
+- match_results class
 ms.assetid: b504fdca-e5dd-429d-9960-6e27c9167fa6
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 484f7181bafc4103ef4f3dcfa4e88475a8798ada
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1174b4d3536fcb5abb42c98a680b5172abfa68db
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="matchresults-class"></a>match_results クラス
 サブマッチのシーケンスを保持します。  
@@ -64,7 +70,7 @@ class match_results {
 ```  
 #### <a name="parameters"></a>パラメーター  
  `BidIt`  
- サブマッチ用の反復子の型。  
+ サブマッチの反復子の型。  
   
  `Alloc`  
  ストレージを管理するためのアロケーターの型です。  
@@ -72,7 +78,7 @@ class match_results {
 ## <a name="remarks"></a>コメント  
  このテンプレート クラスは、正規表現の検索で生成された `sub_match<BidIt>` 型の要素の変更不可能なシーケンスを制御するオブジェクトを表します。 各要素は、それに対応するキャプチャ グループと一致したサブシーケンスを指します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<regex>  
   
  **名前空間:** std  
@@ -3224,7 +3230,7 @@ next submatch: matched == false
 empty == false  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<regex>](../standard-library/regex.md)
 
 

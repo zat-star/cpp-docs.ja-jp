@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2896
 ms.assetid: b600407b-cb05-42e3-9069-2aa6960f0eaa
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 33be17290af0c678d080f0164c63d39c5893be70
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: b60848dcaa06bb41ec290e3fb91a65fda025a8df
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2896"></a>コンパイラ エラー C2896
 'function1': 関数テンプレート 'function2' を引数として使用できません  

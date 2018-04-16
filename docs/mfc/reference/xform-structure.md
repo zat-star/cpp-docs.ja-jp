@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: XFORM
-dev_langs: C++
-helpviewer_keywords: XFORM structure [MFC]
+f1_keywords:
+- XFORM
+dev_langs:
+- C++
+helpviewer_keywords:
+- XFORM structure [MFC]
 ms.assetid: 4fb4ef5b-05d2-4884-82d1-1cb8f7be6302
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3c9e5978d82b1bbaed08eaa05dda53c78160579f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3f6f7121b5cc93c3f8f6f34f22d16cef888bbf15
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="xform-structure"></a>XFORM 構造体
 `XFORM`構造体には、次の形式。  
@@ -47,10 +53,10 @@ typedef struct  tagXFORM {  /* xfrm */
 |**傾斜**|Nothing|水平方向のプロポーショナル定数|垂直方向のプロポーショナル定数|Nothing|  
 |**リフレクション**|水平方向の反転コンポーネント|Nothing|Nothing|垂直方向の反転コンポーネント|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** wingdi.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CRgn::CreateFromData](../../mfc/reference/crgn-class.md#createfromdata)
 

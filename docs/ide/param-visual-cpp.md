@@ -4,26 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - param
 - <param>
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - param C++ XML tag
 - <param> C++ XML tag
 ms.assetid: 66c1a1c3-4f98-4bcf-8c7d-9a40308982fb
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 21dcb436c58bc3823092ba7c03511bdf04fba9d4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bf74dc4f0488c3c1b41b8ee55c20610684434ee2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ltparamgt-visual-c"></a>&lt;param&gt; (Visual C)
 \<param> タグは、メソッドのいずれか 1 つのパラメーターを説明するためにメソッドの宣言のコメントで使用する必要があります。  
@@ -60,5 +64,5 @@ public ref class MyClass {
 };  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML に関するドキュメント](../ide/xml-documentation-visual-cpp.md)

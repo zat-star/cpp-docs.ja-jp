@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - File menu
 - database applications [MFC], File menu commands
 ms.assetid: 92dafb75-c1b3-4860-80a0-87a83bfc36f2
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c9e75a88eb4093387317a3cdb84be4b0b73f4201
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 51f630f5a3fe1ee5833ac2796ff2acb1841af4c1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="file-menu-in-an-mfc-database-application"></a>MFC データベース アプリケーションの [ファイル] メニュー
 MFC データベース アプリケーションを作成してシリアル化を使用しない場合どのようにする必要がある、オープン、クローズを解釈、保存、および名前を付けてコマンドを使ってファイル] メニューの [この質問のスタイル ガイドラインはありませんが、ここでは、いくつか提案します。  
@@ -41,6 +45,6 @@ MFC データベース アプリケーションを作成してシリアル化を
   
 -   データベース アプリケーションは通常、ドキュメント全体を保存しない、ためにがおそらくを削除する、保存し、シリアル化されたドキュメントを使用してプロファイル情報を格納しない限り実装として保存します。 それ以外の場合、たとえば、「トランザクションをコミットします」[保存] コマンドを実装する場合があります。 参照してください[テクニカル ノート 22:](../mfc/tn022-standard-commands-implementation.md)詳細については、これらのコマンドをオーバーライドします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [シリアル化: シリアル化とデータベースの入力/出力](../mfc/serialization-serialization-vs-database-input-output.md)
 

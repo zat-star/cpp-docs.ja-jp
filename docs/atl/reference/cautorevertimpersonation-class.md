@@ -1,11 +1,12 @@
 ---
-title: "CAutoRevertImpersonation クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CAutoRevertImpersonation クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CAutoRevertImpersonation
@@ -14,18 +15,22 @@ f1_keywords:
 - ATLSECURITY/ATL::CAutoRevertImpersonation::Attach
 - ATLSECURITY/ATL::CAutoRevertImpersonation::Detach
 - ATLSECURITY/ATL::CAutoRevertImpersonation::GetAccessToken
-dev_langs: C++
-helpviewer_keywords: CAutoRevertImpersonation class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAutoRevertImpersonation class
 ms.assetid: 43732849-1940-4bd4-9d52-7a5698bb8838
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cd1d14e73ecc774a8074f47383345d1accc17dc4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0b1982fc3c8b0d46dfd636cab63be82509fa07f0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cautorevertimpersonation-class"></a>CAutoRevertImpersonation クラス
 このクラスは、 [CAccessToken](../../atl/reference/caccesstoken-class.md)スコープ外になったときにこの状態オブジェクト。  
@@ -60,7 +65,7 @@ class CAutoRevertImpersonation
   
  Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="attach"></a>CAutoRevertImpersonation::Attach  
@@ -127,7 +132,7 @@ const CAccessToken* GetAccessToken() throw();
 ### <a name="remarks"></a>コメント  
  権限借用のバージョンを再設定を含む目的でこのメソッドが呼び出された場合、`CAccessToken`オブジェクト、[デタッチ](#detach)メソッドを代わりに使用する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ATLSecurity サンプル](../../visual-cpp-samples.md)   
  [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)   
  [クラスの概要](../../atl/atl-class-overview.md)

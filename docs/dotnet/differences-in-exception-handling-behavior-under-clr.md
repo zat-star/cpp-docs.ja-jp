@@ -1,26 +1,31 @@
 ---
-title: "例外処理と CLR での動作の相違 |Microsoft ドキュメント"
-ms.custom: 
+title: 例外処理と CLR での動作の相違 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - EXCEPTION_CONTINUE_EXECUTION macro
 - set_se_translator function
 ms.assetid: 2e7e8daf-d019-44b0-a51c-62d7aaa89104
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 16962e39533eb2ac3d698622f8bb3a27d068b0ad
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 56bacf88b2c633704b46c6d0de3bb313767b7b2c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="differences-in-exception-handling-behavior-under-clr"></a>/CLR における例外処理動作の相違点
 [マネージ例外の使用の基本的な概念](../dotnet/basic-concepts-in-using-managed-exceptions.md)マネージ アプリケーションでの例外処理について説明します。 このトピックでは例外処理および制限がいくつかの標準の動作の違いは詳しく説明します。 詳細については、次を参照してください。 [_set_se_translator 関数](../c-runtime-library/reference/set-se-translator.md)です。  
@@ -279,7 +284,7 @@ In my_trans_func.
 Caught an SEH exception with exception code: e0000101  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [例外処理](../windows/exception-handling-cpp-component-extensions.md)   
  [safe_cast](../windows/safe-cast-cpp-component-extensions.md)   
  [例外処理](../cpp/exception-handling-in-visual-cpp.md)

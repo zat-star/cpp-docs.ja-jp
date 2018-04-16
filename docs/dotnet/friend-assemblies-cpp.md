@@ -1,24 +1,30 @@
 ---
-title: "フレンド アセンブリ (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: フレンド アセンブリ (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: friend assemblies, Visual C++
+dev_langs:
+- C++
+helpviewer_keywords:
+- friend assemblies, Visual C++
 ms.assetid: 8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 42ccf247d88efc6e0e9378ee52a4749ddc3c2b6f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 6646306092844f11819b81ee076c54db840c618b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="friend-assemblies-c"></a>フレンド アセンブリ (C++)
 適用可能なランタイムは、の*フレンド アセンブリ*言語機能を使用する名前空間のスコープまたは 1 つまたは複数のクライアント アセンブリまたは .netmodule にアクセスできるアセンブリ コンポーネント内のグローバル スコープにある型です。  
@@ -33,7 +39,7 @@ ms.lasthandoff: 10/24/2017
   
  (この言語機能はサポートされていません、Windows ランタイムでします。)  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/ZW**  
   
 ## <a name="common-language-runtime"></a>共通言語ランタイム 
@@ -55,10 +61,10 @@ ms.lasthandoff: 10/24/2017
   
  フレンド アセンブリの機能を使用する代わりに、使用することができます<xref:System.Security.Permissions.StrongNameIdentityPermission>個々 の型にアクセスを制限します。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  コンパイラ オプション: **/clr**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  次のコード例では、コンポーネントの種類にアクセスできるクライアント アセンブリを指定するコンポーネントを定義します。  
   
 ```cpp  
@@ -186,5 +192,5 @@ int main() {
 Class1::Test_Public  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

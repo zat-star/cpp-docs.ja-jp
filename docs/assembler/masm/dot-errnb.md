@@ -1,25 +1,31 @@
 ---
-title: ".ERRNB |Microsoft ドキュメント"
+title: .ERRNB | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: .ERRNB
-dev_langs: C++
-helpviewer_keywords: .ERRNB directive
+ms.topic: reference
+f1_keywords:
+- .ERRNB
+dev_langs:
+- C++
+helpviewer_keywords:
+- .ERRNB directive
 ms.assetid: 3b9a6f5e-9a4d-47a8-a1f6-b199328937de
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d04aa9a237e973235e8d02ffc54228e7d0a12a9b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 63fbd58bba2af93038c2749bb0de67a729488041
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="errnb"></a>.ERRNB
 エラーが発生*テキスト アイテム*が空白でないです。  
@@ -31,5 +37,5 @@ ms.lasthandoff: 10/24/2017
 .ERRNB <textitem> [[, message]]  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

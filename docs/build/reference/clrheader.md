@@ -1,28 +1,33 @@
 ---
-title: "-CLRHEADER |Microsoft ドキュメント"
+title: -CLRHEADER | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: /CLRHEADER
-dev_langs: C++
+f1_keywords:
+- /CLRHEADER
+dev_langs:
+- C++
 helpviewer_keywords:
 - -CLRHEADER dumpbin option
 - /CLRHEADER dumpbin option
 - CLRHEADER dumpbin option
 ms.assetid: cf73424f-4541-47e2-b94e-69b95266ef2a
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 699fa0e97236b1c5cf207e73dcbb39156bfbb130
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 73f68c4f73d132254ea64d4b3b3b9f787f3a4b82
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="clrheader"></a>/CLRHEADER
 ```  
@@ -30,7 +35,7 @@ ms.lasthandoff: 10/24/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- ここで、  
+ それぞれの文字について以下に説明します。  
   
  `file`  
  ビルドされたイメージ ファイル[/clr](../../build/reference/clr-common-language-runtime-compilation.md)です。  
@@ -44,13 +49,9 @@ ms.lasthandoff: 10/24/2017
   
 -   0--/clr (イメージは、ネイティブ コードを含めることがあります)。  
   
--   1--/clr:safe (イメージは MSIL だけ、任意の CLR プラットフォームで実行して検証可能な可能性があります)。  
-  
--   3--/clr: 純粋な (イメージは MSIL だけですが、x86 上で実行することのみプラットフォーム)。  
-  
  共通言語ランタイムのイメージをビルドしたかどうかもプログラムで確認できます。  詳細については、次を参照してください。[する方法: イメージがネイティブ モードまたは CLR 決定](../../dotnet/how-to-determine-if-an-image-is-native-or-clr.md)です。  
   
- コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+ **/Clr: 純粋な**と**/clr:safe**コンパイラ オプションは Visual Studio 2015 では廃止し、コンパイラの将来のバージョンで削除される予定です。 「純粋」または「安全」にする必要があるコードは、c# に移植する必要があります。 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DUMPBIN オプション](../../build/reference/dumpbin-options.md)

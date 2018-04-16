@@ -4,23 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - stored procedures, returning result sets
 - multiple result sets
 ms.assetid: c450c12c-a76c-4ae4-9675-071a41eeac05
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 787c2123981f894eb4b6ba088cfcef774b6ed6f8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 39faf4313fbf4ed98810e8f9dd557897f2bfb834
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="using-multiple-result-sets-from-one-stored-procedure"></a>1 つのストアド プロシージャからの複数の結果セットの使用
 ほとんどのストアド プロシージャは、複数の結果セットを返します。 このようなストアド プロシージャが通常 1 つを含むまたは以上の select ステートメント。 コンシューマーは、すべての結果セットの処理を行うために考慮する必要があります。  
@@ -35,5 +40,5 @@ ms.lasthandoff: 10/24/2017
   
 4.  呼び出す`GetNextResult`上、`CCommand`クラスです。 別の結果行セットがある場合は`GetNextResult`S_OK を返しますと手動のアクセサーを使用している場合、列を再バインドする必要があります。 場合`GetNextResult`エラーを返しますがさらに結果は使用可能な設定されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストアド プロシージャの使用](../../data/oledb/using-stored-procedures.md)

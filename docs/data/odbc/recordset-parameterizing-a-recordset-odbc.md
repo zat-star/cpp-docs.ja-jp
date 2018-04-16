@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - parameterizing recordsets
 - ODBC recordsets, parameterizing
 - recordsets, parameterizing
 - passing parameters, to queries at runtime
 ms.assetid: 7d1dfeb6-5ee0-45e2-aacc-63bc52a465cd
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e282bf795435d21264ff4ab62575b9315781a0e0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 38b17950a7aaf89cc041c4933768bf6b2da0c9b0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="recordset-parameterizing-a-recordset-odbc"></a>レコードセット: パラメーターを利用したレコードセット (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
@@ -181,7 +186,7 @@ if( !rsStudents.Requery( ) )
 > [!NOTE]
 >  Null の場合にパラメーター データ メンバーの値を設定するには、必要な場合を使用して[SetParamNull](../../mfc/reference/crecordset-class.md#setparamnull)です。 パラメーター データ メンバーが Null の場合であるかどうかをチェックすることが同様を使用して[調べる](../../mfc/reference/crecordset-class.md#isfieldnull)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
  [レコード セット: 追加、更新、および削除 (Odbc)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)   
  [レコードセット: レコード選択のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)

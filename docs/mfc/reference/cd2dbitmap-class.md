@@ -12,7 +12,6 @@ f1_keywords:
 - CD2DBitmap
 - AFXRENDERTARGET/CD2DBitmap
 - AFXRENDERTARGET/CD2DBitmap::CD2DBitmap
-- AFXRENDERTARGET/CD2DBitmap::CD2DBitmap
 - AFXRENDERTARGET/CD2DBitmap::Attach
 - AFXRENDERTARGET/CD2DBitmap::CopyFromBitmap
 - AFXRENDERTARGET/CD2DBitmap::CopyFromMemory
@@ -61,16 +60,17 @@ helpviewer_keywords:
 - CD2DBitmap [MFC], m_strPath
 - CD2DBitmap [MFC], m_uiResID
 ms.assetid: 2b3686f1-812c-462b-b449-9f0cb6949bf6
-caps.latest.revision: 17
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 967bad02cf92b0078d789e5c0b6b55f9644bb17b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 97d176524d0c4748cd257415264fb05a5c6f1be3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2dbitmap-class"></a>CD2DBitmap クラス
 ID2D1Bitmap のラッパーです。  
@@ -128,7 +128,7 @@ class CD2DBitmap : public CD2DResource;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CD2DBitmap::m_bAutoDestroyHBMP](#m_bautodestroyhbmp)|TRUE の場合、m_hBmpSrc を破棄する必要があります。それ以外の場合は FALSE。|  
 |[CD2DBitmap::m_hBmpSrc](#m_hbmpsrc)|ソース ビットマップのハンドルです。|  
@@ -145,7 +145,7 @@ class CD2DBitmap : public CD2DResource;
   
  `CD2DBitmap`
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="_dtorcd2dbitmap"></a>CD2DBitmap:: ~ CD2DBitmap  
@@ -445,6 +445,5 @@ operator ID2D1Bitmap*();
 ### <a name="return-value"></a>戻り値  
  ID2D1Bitmap インターフェイスまたはオブジェクトがまだ初期化されていない場合は、NULL へのポインター。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

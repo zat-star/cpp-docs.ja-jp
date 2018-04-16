@@ -1,36 +1,43 @@
 ---
-title: "コンパイラ エラー C2868 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2868"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2868"
+title: "コンパイラ エラー C2868 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2868
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2868
 ms.assetid: 6ff5837b-e66d-44d1-9d17-80af35e08d08
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7255aa3e73e23109535ae0e83d6e9bd907cdbcd4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラ エラー C2868
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'identifier' : using 宣言の構文が無効です。修飾された名前が必要です。  
+# <a name="compiler-error-c2868"></a>コンパイラ エラー C2868  
   
- [using 宣言](../../cpp/using-declaration.md)には、[修飾名](http://msdn.microsoft.com/ja-jp/3fefb16d-8120-4627-8b3f-3d90fbdcd1df)が必要です。  
+> '*識別子*': using 宣言の構文上の誤りです予期される修飾名。  
   
- 次の例では警告 C2868 が生成されます。  
+A[宣言を使用して](../../cpp/using-declaration.md)が必要です、*修飾名*、スコープ演算子 (`::`) 区切られた識別子名で終わる一連の名前空間、クラス、または列挙型名。 1 つのスコープ解決演算子は、グローバル名前空間から名前を導入するために可能性があります。  
   
-```  
+## <a name="example"></a>例  
+  
+次の例では、C2868 を生成し、正しい使用法も示しています。  
+  
+```cpp  
 // C2868.cpp  
 class X {  
 public:  

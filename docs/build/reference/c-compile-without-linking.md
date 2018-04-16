@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: /c
-dev_langs: C++
+f1_keywords:
+- /c
+dev_langs:
+- C++
 helpviewer_keywords:
 - suppress link
 - cl.exe compiler, compiling without linking
@@ -16,15 +19,17 @@ helpviewer_keywords:
 - c compiler option [C++]
 - /c compiler option [C++]
 ms.assetid: 8017fc3d-e5dd-4668-a1f7-3120daa95d20
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a8f10aef6c2907d0730d358a6471c17bfd6a4cf8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 112e063af9c56ead8ae7e8f59fe88853ff55f7b1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-compile-without-linking"></a>/c (リンクを行わないコンパイル)
 リンクの自動呼び出しをしないようにします。  
@@ -61,6 +66,6 @@ CL /c FIRST.C SECOND.C THIRD.OBJ
 LINK firsti.obj second.obj third.obj /OUT:filename.exe  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

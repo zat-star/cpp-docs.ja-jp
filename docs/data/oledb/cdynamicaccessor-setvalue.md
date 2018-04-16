@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ATL.CDynamicAccessor.SetValue
 - ATL::CDynamicAccessor::SetValue
@@ -15,46 +16,49 @@ f1_keywords:
 - ATL.CDynamicAccessor.SetValue<ctype>
 - CDynamicAccessor::SetValue
 - CDynamicAccessor::SetValue<ctype>
-dev_langs: C++
-helpviewer_keywords: SetValue method
+dev_langs:
+- C++
+helpviewer_keywords:
+- SetValue method
 ms.assetid: ecc18850-96e5-4845-abe5-ab34ad467238
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 194b87d9422f3e2ebf80fa647353c0cc6f72a5b4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: c919c5ec9605f65df9a20bf5ccad03ae2bf2761c
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cdynamicaccessorsetvalue"></a>CDynamicAccessor::SetValue
 指定された列にデータを格納します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      template < class ctype >    
+```cpp  
+template <class ctype>
 bool SetValue(   
    DBORDINAL nColumn,   
-   const ctype& data    
-) throw( );  
-template < class ctype >    
+   constctype& data) throw( );  
+
+template <class ctype>    
 bool SetValue(   
    const CHAR * pColumnName,   
-   const ctype& data    
-) throw( );  
+   const ctype& data) throw( );  
+
 template <class ctype>   
 bool SetValue(  
    const WCHAR *pColumnName,  
-   const ctype& data   
-) throw( );  
+   const ctype& data) throw( );  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
  `ctype`  
- [in]文字列型を除く任意のデータ型を処理するテンプレート パラメーター (**CHAR\***、 **WCHAR\***)、特別な処理を必要とします。 `GetValue`ここでの指定に基づいて適切なデータ型を使用します。  
+ [in]文字列型を除く任意のデータ型を処理するテンプレート パラメーター (**CHAR\***、 **WCHAR\***)、特別な処理を必要とします。 `GetValue` ここでの指定に基づいて適切なデータ型を使用します。  
   
  `pColumnName`  
  [in]列名を含む文字列へのポインター。  
@@ -70,8 +74,8 @@ bool SetValue(
   
  その他のすべてのデータ型は、テンプレート化されたバージョンを使用する方が簡単`GetValue`です。 テンプレート化されたバージョンを返す**true**成功した場合または**false**エラー発生時にします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)

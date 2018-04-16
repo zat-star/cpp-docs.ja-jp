@@ -15,38 +15,24 @@ dev_langs:
 helpviewer_keywords:
 - C4391
 ms.assetid: 95c6182c-fae9-4174-8f7b-98aa352e68ca
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 81b7e6ba142edb94dd77f4a63c42b245b61ccc45
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e41234f179a977643f8f44ad1e5fad05e1a2361f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4391"></a>コンパイラの警告 (レベル 1) C4391
-'signature': 'type' 組み込み関数の戻り値の型が正しくないが期待どおり  
+'signature': 組み込み関数の不適切な戻り値の型は、'type' が必要です  
   
- コンパイラ組み込み関数の関数宣言には、間違ったの戻り値の型が必要があります。 生成されるイメージが正しく動作しない可能性があります。  
+ コンパイラ組み込み関数の関数宣言では、正しくない戻り値の型がありました。 結果のイメージは正しく動作しない可能性があります。  
   
- この警告を解決するか、宣言を修正または宣言を削除し、単に #include 適切なヘッダー ファイルです。  
+ この警告を解決するか、宣言を修正してまたは宣言を削除し、単に #include 適切なヘッダー ファイルです。  
   
  次の例では、C4391 が生成されます。  
   

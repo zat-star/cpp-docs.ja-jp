@@ -1,71 +1,76 @@
 ---
-title: "CTables、CTableInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "m_szCatalog"
-  - "TABLE_SCHEMA"
-  - "CTables"
-  - "TABLE_NAME"
-  - "TABLE_CATALOG"
-  - "CTableInfo"
-  - "m_guidTable"
-  - "m_szType"
-  - "m_szSchema"
-  - "m_szName"
-  - "TABLE_GUID"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTableInfo パラメーター クラス"
-  - "CTables TYPEDEF クラス"
-  - "DESCRIPTION クラスのデータ メンバー"
-  - "m_guidTable"
-  - "m_szCatalog"
-  - "m_szDescription"
-  - "m_szName"
-  - "m_szSchema"
-  - "m_szType"
-  - "TABLE_CATALOG"
-  - "TABLE_GUID"
-  - "TABLE_NAME"
-  - "TABLE_SCHEMA"
+title: "CTables、CTableInfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- m_szCatalog
+- TABLE_SCHEMA
+- CTables
+- TABLE_NAME
+- TABLE_CATALOG
+- CTableInfo
+- m_guidTable
+- m_szType
+- m_szSchema
+- m_szName
+- TABLE_GUID
+dev_langs:
+- C++
+helpviewer_keywords:
+- DESCRIPTION class data member
+- m_szSchema
+- TABLE_CATALOG
+- m_szType
+- m_szCatalog
+- TABLE_NAME
+- TABLE_SCHEMA
+- TABLE_GUID
+- m_szName
+- m_szDescription
+- CTables typedef class
+- m_guidTable
+- CTableInfo parameter class
 ms.assetid: 57670f1b-ba99-43b0-b406-4c75b44f14f6
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: f9cc0c7140de05be49cb78745bba122dc125727b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CTables、CTableInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-パラメーター **CTableInfo**クラスを実装するに **CTables** typedef クラスを呼び出します。  
+# <a name="ctables-ctableinfo"></a>CTables、CTableInfo
+Typedef クラスを呼び出す**CTables**そのパラメーター クラスを実装する**CTableInfo**です。  
   
-## 解説  
- typedef クラスの使用の詳細については、" [スキーマ行セット クラスと Typedef クラス](../Topic/Schema%20Rowset%20Classes%20and%20Typedef%20Classes.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)typedef クラスの使用に関する詳細についてはします。  
   
- このクラスは、カタログに定義されている使用できる、ユーザーによって付与するには、テーブルの特権を識別します。  
+ このクラスは、テーブルに、カタログで定義されている場合に利用可能にしたり、特定のユーザーによって付与される特権を識別します。  
   
- 次の表は、クラスのデータ メンバーとそれらに該当する OLE DB の列の一覧です。  スキーマと列の詳細については、" *OLE DB Programmer's Reference* の [TABLES 行セット](https://msdn.microsoft.com/en-us/library/ms716980.aspx) を参照してください。  
+ 次の表には、クラスのデータ メンバーとその対応する OLE DB 列が一覧表示します。 参照してください[TABLES 行セット](https://msdn.microsoft.com/en-us/library/ms716980.aspx)で、 *OLE DB プログラマーズ リファレンス*スキーマと列の詳細についてはします。  
   
-|データ メンバー|OLE DB の列|  
-|--------------|---------------|  
-|m\_szCatalog|TABLE\_CATALOG|  
-|m\_szSchema|TABLE\_SCHEMA|  
-|m\_szName|TABLE\_NAME|  
-|m\_szType|TABLE\_TYPE|  
-|m\_guidTable|TABLE\_GUID|  
-|m\_szDescription|DESCRIPTION|  
+|データ メンバー|OLE DB 列|  
+|------------------|--------------------|  
+|m_szCatalog|TABLE_CATALOG|  
+|m_szSchema|TABLE_SCHEMA|  
+|m_szName|TABLE_NAME|  
+|m_szType|TABLE_TYPE|  
+|m_guidTable|TABLE_GUID|  
+|m_szDescription|説明|  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## 参照  
- [CRestrictions クラス](../Topic/CRestrictions%20Class.md)
+## <a name="see-also"></a>参照  
+ [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

@@ -7,9 +7,8 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
-- function
 - functional/std::function
 - functional/std::function::result_type
 - functional/std::function::assign
@@ -21,32 +20,24 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- function class
+- std::function [C++]
+- std::function [C++], result_type
+- std::function [C++], assign
+- std::function [C++], swap
+- std::function [C++], target
+- std::function [C++], target_type
 ms.assetid: 7b5ca76b-9ca3-4d89-8fcf-cad70a4aeae6
-caps.latest.revision: 26
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 0c79b2b4d1ac2e9df7f38708ff232d70392cce15
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f4dfc5366adece188fa80786ddee2dfb926ae5e3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="function-class"></a>function クラス
 呼び出し可能オブジェクトのラッパー。  
@@ -141,7 +132,7 @@ public:
 |-|-|  
 |[assign](#assign)|呼び出し可能オブジェクトをこの関数オブジェクトに割り当てます。|  
 |[swap](#swap)|2 つの呼び出し可能オブジェクトを入れ替えます。|  
-|[ターゲット](#target)|格納されている呼び出し可能オブジェクトが指定されたとおりに呼び出し可能かどうかをテストします。|  
+|[target](#target)|格納されている呼び出し可能オブジェクトが指定されたとおりに呼び出し可能かどうかをテストします。|  
 |[target_type](#target_type)|呼び出し可能オブジェクトの型情報を取得します。|  
   
 ### <a name="operators"></a>演算子  
@@ -152,7 +143,7 @@ public:
 |[function::operator()](#op_call)|呼び出し可能オブジェクトを呼び出します。|  
 |[function::operator=](#op_eq)|格納されている呼び出し可能オブジェクトを置き換えます。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<functional>  
   
  **名前空間:** std  
@@ -665,7 +656,6 @@ empty == true
 type == void  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [mem_fn](../standard-library/functional-functions.md#mem_fn)   
  [reference_wrapper クラス](../standard-library/reference-wrapper-class.md)
-

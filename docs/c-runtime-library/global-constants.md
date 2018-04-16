@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.constants
-dev_langs: C++
-helpviewer_keywords: global constants
+f1_keywords:
+- c.constants
+dev_langs:
+- C++
+helpviewer_keywords:
+- global constants
 ms.assetid: 778d86fd-3ca6-4d2b-b4c5-aee6dc1efe6b
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: afb5230ae5ee15061988f9e426393c7de16a788e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 552ce3e1e1f535cf01f458af28c44aeb5cf8980b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="global-constants"></a>グローバル定数
 Microsoft ランタイム ライブラリには、ライブラリ ルーチンで使用されるグローバル定数の定義が含まれています。 これらの定数を使用するには、各定数の説明に記載されている通りに、適切なヘッダー ファイルをインクルードします。 次の表は、グローバル定数の一覧です。  
@@ -50,7 +56,7 @@ Microsoft ランタイム ライブラリには、ライブラリ ルーチン�
 |[TZNAME_MAX](../c-runtime-library/tzname-max.md)|[_WAIT_CHILD、_WAIT_GRANDCHILD](../c-runtime-library/wait-child-wait-grandchild.md)|  
 |[WCHAR_MAX](../c-runtime-library/wchar-max.md)|[WCHAR_MIN](../c-runtime-library/wchar-min.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C ランタイム ライブラリ リファレンス](../c-runtime-library/c-run-time-library-reference.md)   
  [グローバル変数](../c-runtime-library/global-variables.md)   
  [プロローグ/エピローグ コードの記述に関する考慮事項](../cpp/considerations-for-writing-prolog-epilog-code.md)

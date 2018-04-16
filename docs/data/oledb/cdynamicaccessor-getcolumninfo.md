@@ -1,68 +1,70 @@
 ---
-title: "CDynamicAccessor::GetColumnInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "GetColumnInfo"
-  - "ATL.CDynamicAccessor.GetColumnInfo"
-  - "ATL::CDynamicAccessor::GetColumnInfo"
-  - "CDynamicAccessor.GetColumnInfo"
-  - "CDynamicAccessor::GetColumnInfo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetColumnInfo メソッド"
+title: "Cdynamicaccessor::getcolumninfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- GetColumnInfo
+- ATL.CDynamicAccessor.GetColumnInfo
+- ATL::CDynamicAccessor::GetColumnInfo
+- CDynamicAccessor.GetColumnInfo
+- CDynamicAccessor::GetColumnInfo
+dev_langs:
+- C++
+helpviewer_keywords:
+- GetColumnInfo method
 ms.assetid: 7f2102ea-b7cc-4714-812f-3ca2857f4b9a
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: a9f311e9fc5330a68edba4fd5029e97b75033406
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# CDynamicAccessor::GetColumnInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ほとんどのコンシューマーが必要とする列のメタデータを返します。  
+# <a name="cdynamicaccessorgetcolumninfo"></a>CDynamicAccessor::GetColumnInfo
+ほとんどのコンシューマーが必要な列のメタデータを返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```cpp
+HRESULT GetColumnInfo(IRowset* pRowset,   
+   DBORDINAL* pColumns,   
+   DBCOLUMNINFO** ppColumnInfo,   
+   OLECHAR** ppStringsBuffer) throw();  
 ```  
   
-      HRESULT GetColumnInfo(   
-   IRowset* pRowset,   
-   DBORDINAL* pColumns,   
-   DBCOLUMNINFO** ppColumnInfo,   
-   OLECHAR** ppStringsBuffer    
-) throw( );  
-```  
-  
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pRowset`  
- \[\] [IRowset](https://msdn.microsoft.com/en-us/library/ms720986.aspx) インターフェイスへのポインター。  
+ [in]ポインター、 [IRowset](https://msdn.microsoft.com/en-us/library/ms720986.aspx)インターフェイスです。  
   
  *pColumns*  
- \[\]行セットの列数を返すメモリへのポインター; この数は 1 がある場合、ブックマーク列が含まれます。  
+ [out]行セットの列の数を返すメモリへのポインターこの数には、1 つを使用する必要がある場合、ブックマーク列が含まれます。  
   
  *ppColumnInfo*  
- \[\] **DBCOLUMNINFO** の配列を返すことで構成するメモリへのポインター。  「DBCOLUMNINFO 構成して *OLE DB Programmer's Reference*の [IColumnsInfo::GetColumnInfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx) 」を参照してください。  
+ [out]配列を返すメモリへのポインター **DBCOLUMNINFO**構造体。 「DBCOLUMNINFO 構造体」を参照してください[icolumnsinfo::getcolumninfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
  `ppStringsBuffer`  
- \[\]単一の割り当てブロック内のすべての文字列値のストレージへのポインター \(名前は *columnid* 内または *pwszName*で使用される\) を返すメモリへのポインター。  
+ [out]すべての文字列値のストレージへのポインターを返すメモリへのポインター (内のいずれかの名前が使用される*columnid*または*pwszName*) 1 つのアロケーション ブロック内で。  
   
-## 戻り値  
- `HRESULT` 標準値のいずれか 1 つが。  
+## <a name="return-value"></a>戻り値  
+ 標準の`HRESULT`値。  
   
-## 解説  
- データ型 **DBORDINAL**、**DBCOLUMNINFO**と **OLECHAR**の詳細については、" *OLE DB Programmer's Reference* の [IColumnsInfo::GetColumnInfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[icolumnsinfo::getcolumninfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx)で、 *OLE DB プログラマーズ リファレンス*については、データ型に**DBORDINAL**、 **DBCOLUMNINFO**、および**OLECHAR**です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)

@@ -1,41 +1,45 @@
 ---
-title: "DB | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "DB"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DB directive"
+title: DB | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- DB
+dev_langs:
+- C++
+helpviewer_keywords:
+- DB directive
 ms.assetid: 0c69ccaa-043f-46e1-9f95-dc76d9bc87c8
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ddedce01fad8fd294e0b29fcc0008e8b18516cfd
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
-# DB
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-各 `initializer` のストレージのバイトを割り当て必要に応じて初期化します。  `DB` は [byte](../../assembler/masm/byte-masm.md) のシノニムです。  
+# <a name="db"></a>DB
+割り当て、必要に応じて各記憶域のバイトを初期化`initializer`です。 `DB` シノニムは、[バイト](../../assembler/masm/byte-masm.md)  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 [[name]] DB initializer [[, initializer]] ...  
 ```  
   
-## 解説  
- 型指定子がどこでも可能型であるため使用できます。  
+## <a name="remarks"></a>コメント  
+ 型指定子として使用することも、型が有効な任意の場所。  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)   
+## <a name="see-also"></a>参照  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)   
  [DB](../../assembler/masm/db.md)   
  [SBYTE](../../assembler/masm/sbyte-masm.md)

@@ -7,18 +7,22 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::Object::Equals
-dev_langs: C++
+f1_keywords:
+- VCCORLIB/Platform::Object::Equals
+dev_langs:
+- C++
 ms.assetid: 4450f835-06fc-4758-8d0a-72cf00007873
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 4986819ccd6c56548c4be0a2bdf529d3fb5b9f58
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8318e3dd7fe4702d83c0b16b19d67f156a9c2cd3
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="defaulttypenameequals-method"></a>default::(type_name)::Equals メソッド
 指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。  
@@ -39,7 +43,7 @@ bool Equals(
 ### <a name="return-value"></a>戻り値  
  オブジェクトが等しい場合は`true` 。それ以外の場合は `false`。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -48,5 +52,5 @@ bool Equals(
   
  **ヘッダー:** vccorlib.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [default 名前空間](../cppcx/default-namespace.md)

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2392
 ms.assetid: 98ced473-6383-46ed-b79c-21857d65dcb2
-caps.latest.revision: 15
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 04fecba855d986c735a64ada77d81a28485fc161
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 6fa5164028a622b03eb770e24a91c4b07968c3bc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2392"></a>コンパイラ エラー C2392
 'method1': covariant の戻り型がでサポートされていない管理または WinRTtypes、それ以外の場合 'method2' はオーバーライドされます  

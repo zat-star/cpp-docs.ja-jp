@@ -1,32 +1,37 @@
 ---
-title: "hash_multimap::hash_multimap (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_multimap::hash_multimap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "hash_multimap メンバー [STL/CLR]"
+title: "hash_multimap::hash_multimap (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::hash_multimap::hash_multimap
+dev_langs:
+- C++
+helpviewer_keywords:
+- hash_multimap member [STL/CLR]
 ms.assetid: a1d576a7-5dc7-4ad9-abef-ee7a13caaec3
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: cff49bfad9143663e8fe5d895c885918bff4a7a5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# hash_multimap::hash_multimap (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashmultimaphashmultimap-stlclr"></a>hash_multimap::hash_multimap (STL/CLR)
 コンテナー オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 hash_multimap();  
@@ -49,104 +54,90 @@ hash_multimap(System::Collections::Generic::IEnumerable<GValue>^ right,
     key_compare^ pred, hasher^ hashfn);  
 ```  
   
-#### パラメーター  
- 最初  
- 挿入する範囲の先頭。  
+#### <a name="parameters"></a>パラメーター  
+ 先頭  
+ 挿入する範囲の開始しています。  
   
  hashfn  
- バケットにキーを割り当てるためのハッシュ関数。  
+ ハッシュ バケットにマッピング キーの関数。  
   
  last  
- 挿入する範囲の最後。  
+ 挿入する範囲の終了。  
   
  pred  
- 被制御シーケンスの順序述語。  
+ 被制御シーケンスの述語を順序付けです。  
   
- \[right\]  
+ 右  
  挿入するオブジェクトまたは範囲。  
   
-## 解説  
- 次のコンストラクターを見てください。  
+## <a name="remarks"></a>コメント  
+ : コンス トラクター  
   
  `hash_multimap();`  
   
- 要素なし、既定命令述語 `key_compare()`と、既定のハッシュ関数と被制御シーケンスを初期化します。  既定の順序述語、ハッシュ関数の空の最初の被制御シーケンスを指定する場合に使用します。  
+ 既定の順序の述語を使用して要素を持たない、被制御シーケンスを初期化`key_compare()`既定のハッシュ関数を使用しています。 これを使用するには、既定の述語とハッシュ関数の順序を持つ、空の初期被制御シーケンスを指定します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `explicit hash_multimap(key_compare^ pred);`  
   
- 要素を持たない、および述語 `pred`と、既定のハッシュ関数と被制御シーケンスを初期化します。  指定した述語命令と既定のハッシュ関数の空の最初の被制御シーケンスを指定する場合に使用します。  
+ 順序の指定の述語での要素を持たない被制御シーケンスを初期化します`pred`既定のハッシュ関数を使用しています。 これを使用するには、空の初期被制御シーケンスを指定された順序の指定の述語と既定のハッシュ関数を指定します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `hash_multimap(key_compare^ pred, hasher^ hashfn);`  
   
- 要素を持たない、および述語 `pred`、ハッシュ関数 `hashfn`と被制御シーケンスを初期化します。  順序指定述語、ハッシュ関数の空の最初の被制御シーケンスを指定する場合に使用します。  
+ 順序の指定の述語での要素を持たない被制御シーケンスを初期化します`pred`、ハッシュ関数を使用して`hashfn`です。 これを使用して、指定の順序の指定の述語とハッシュ関数で、空の初期被制御シーケンスを指定します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `hash_multimap(hash_multimap<Key, Mapped>% right);`  
   
- シーケンス `[``right``.`[hash\_multimap::begin](../dotnet/hash-multimap-begin-stl-clr.md)`(),``right``.`[hash\_multimap::end](../dotnet/hash-multimap-end-stl-clr.md)`())`、既定の順序述語、および既定のハッシュ関数の被制御シーケンスを初期化します。  既定の順序述語、ハッシュ関数を hash\_multimap オブジェクト `right`、によって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します。 [`right.begin()`、 `right.end()`)、既定の順序の述語、および既定のハッシュ関数です。 Hash_multimap オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`既定の順序の指定の述語とハッシュ関数を使用します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `hash_multimap(hash_multimap<Key, Mapped>^ right);`  
   
- シーケンス `[``right``->`[hash\_multimap::begin](../dotnet/hash-multimap-begin-stl-clr.md)`(),``right``->`[hash\_multimap::end](../dotnet/hash-multimap-end-stl-clr.md)`())`、既定の順序述語、および既定のハッシュ関数の被制御シーケンスを初期化します。  既定の順序述語、ハッシュ関数を hash\_multimap オブジェクト `right`、によって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ シーケンスに、被制御シーケンスを初期化します。 [`right->begin()`、 `right->end()`)、既定の順序の述語、および既定のハッシュ関数です。 Hash_multimap オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`既定の順序の指定の述語とハッシュ関数を使用します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
- `template<typename InIter>`  
+ `template<typename InIter> hash_multimap(InIter first, InIter last);`  
   
- `hash_multimap(InIter first, InIter last);`  
+ シーケンスに、被制御シーケンスを初期化します。 [`first`、 `last`)、既定の順序の述語、および既定のハッシュ関数です。 使用する既定の順序の述語とハッシュ関数で被制御シーケンスの別のシーケンスのコピーを作成します。  
   
- シーケンス `[``first``,``last``)`、既定の順序述語、および既定のハッシュ関数の被制御シーケンスを初期化します。  既定の順序述語、ハッシュ関数を別のシーケンスの被制御シーケンスのコピーを、作成するために使用します。  
+ : コンス トラクター  
   
- 次のコンストラクターを見てください。  
+ `template<typename InIter> hash_multimap(InIter first, InIter last, key_compare^ pred);`  
   
- `template<typename InIter>`  
+ シーケンスに、被制御シーケンスを初期化します [`first`、 `last`)、順序の指定の述語に置き換えます`pred`既定のハッシュ関数を使用しています。 これを使用するには、被制御シーケンスの順序指定された述語と既定のハッシュ関数、別のシーケンスのコピーを作成します。  
   
- `hash_multimap(InIter first, InIter last,`  
+ : コンス トラクター  
   
- `key_compare^ pred);`  
+ `template<typename InIter> hash_multimap(InIter first, InIter last, key_compare^ pred, hasher^ hashfn);`  
   
- シーケンス `[``first``,``last``)`の順序、述語 `pred`の、既定のハッシュ関数の被制御シーケンスを初期化します。  指定した述語命令と既定のハッシュ関数を別のシーケンスの被制御シーケンスのコピーを、作成するために使用します。  
+ シーケンスに、被制御シーケンスを初期化します [`first`、 `last`)、順序の指定の述語と`pred`、ハッシュ関数を使用して`hashfn`です。 これを使用するには、被制御シーケンスの指定の順序の指定の述語とハッシュ関数で、別のシーケンスのコピーを作成します。  
   
- 次のコンストラクターを見てください。  
-  
- `template<typename InIter>`  
-  
- `hash_multimap(InIter first, InIter last,`  
-  
- `key_compare^ pred, hasher^ hashfn);`  
-  
- シーケンス `[``first``,``last``)`の順序、述語 `pred`、およびハッシュ関数 `hashfn`の被制御シーケンスを初期化します。  指定した述語命令とハッシュ関数を別のシーケンスの被制御シーケンスのコピーを、作成するために使用します。  
-  
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `hash_multimap(System::Collections::Generic::IEnumerable<Key>^ right);`  
   
- 列挙子は、既定 `right`命令述語で指定すると、シーケンスのおよび既定のハッシュ関数の被制御シーケンスを初期化します。  既定の順序述語、ハッシュ関数の列挙子は、作成している別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+ 列挙子によって指定されたシーケンスの被制御シーケンスを初期化します`right`既定の順序の述語、および既定のハッシュ関数です。 これを使用するには、被制御シーケンスの既定の順序の述語とハッシュ関数と、列挙子によって記述された別のシーケンスのコピーを作成します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
- `hash_multimap(System::Collections::Generic::IEnumerable<Key>^ right,`  
+ `hash_multimap(System::Collections::Generic::IEnumerable<Key>^ right, key_compare^ pred);`  
   
- `key_compare^ pred);`  
+ 列挙子によって指定されたシーケンスの被制御シーケンスを初期化します`right`、順序の指定の述語に置き換えます`pred`既定のハッシュ関数を使用しています。 これを使用するには、被制御シーケンスに指定された順序の指定の述語と既定ハッシュ関数、列挙子によって記述された別のシーケンスのコピーを作成します。  
   
- 列挙子が `right`、および述語 `pred`を指定すると、シーケンスの既定のハッシュ関数の被制御シーケンスを初期化します。  指定した述語命令と既定のハッシュ関数の列挙子は、作成している別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
+ : コンス トラクター  
   
- 次のコンストラクターを見てください。  
+ `hash_multimap(System::Collections::Generic::IEnumerable<Key>^ right, key_compare^ pred, hasher^ hashfn);`  
   
- `hash_multimap(System::Collections::Generic::IEnumerable<Key>^ right,`  
+ 列挙子によって指定されたシーケンスの被制御シーケンスを初期化します`right`、順序の指定の述語と`pred`、ハッシュ関数を使用して`hashfn`です。 これを使用するには、被制御シーケンスの指定の順序の指定の述語とハッシュ関数で、列挙子によって記述された別のシーケンスのコピーを作成します。  
   
- `key_compare^ pred, hasher^ hashfn);`  
-  
- 列挙子が `right`、および述語 `pred`を指定すると、シーケンスのハッシュ関数 `hashfn`の被制御シーケンスを初期化します。  指定した述語命令とハッシュ関数の列挙子は、作成している別のシーケンスの被制御シーケンスのコピーを作成するために使用します。  
-  
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_multimap_construct.cpp   
@@ -258,26 +249,32 @@ int main()
   
 ```  
   
-  **size\(\) \= 0**  
- **1 \[\] \[b 2 \[\]c 3\]**  
-**size\(\) \= 0**  
- **1 \[\] \[b 2 \[\]c 3\]**  
-**size\(\) \= 0**  
- **\[\] \[b c 3 2 \[\]1 つ\]**  
- **1 \[\] \[b 2 \[\]c 3\]**  
- **1 \[\] \[b 2 \[\]c 3\]**  
- **\[\] \[b c 3 2 \[\]1 つ\]**  
- **1 \[\] \[b 2 \[\]c 3\]**  
- **1 \[\] \[b 2 \[\]c 3\]**  
- **\[\] \[b c 3 2 \[\]1 つ\]**  
- **1 \[\] \[b 2 \[\]c 3\]**  
- **1 \[\] \[b 2 \[\]c 3\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_map\>  
+```Output  
+size() = 0  
+ [a 1] [b 2] [c 3]  
+size() = 0  
+ [a 1] [b 2] [c 3]  
+size() = 0  
+ [c 3] [b 2] [a 1]  
   
- **名前空間:** の cliext  
+ [a 1] [b 2] [c 3]  
+ [a 1] [b 2] [c 3]  
+ [c 3] [b 2] [a 1]  
   
-## 参照  
- [hash\_multimap](../dotnet/hash-multimap-stl-clr.md)   
- [hash\_multimap::generic\_container](../dotnet/hash-multimap-generic-container-stl-clr.md)   
- [hash\_multimap::operator\=](../dotnet/hash-multimap-operator-assign-stl-clr.md)
+ [a 1] [b 2] [c 3]  
+ [a 1] [b 2] [c 3]  
+ [c 3] [b 2] [a 1]  
+  
+ [a 1] [b 2] [c 3]  
+ [a 1] [b 2] [c 3]  
+```  
+  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/hash_map >  
+  
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
+ [hash_multimap::generic_container (STL/CLR)](../dotnet/hash-multimap-generic-container-stl-clr.md)   
+ [hash_multimap::operator= (STL/CLR)](../dotnet/hash-multimap-operator-assign-stl-clr.md)

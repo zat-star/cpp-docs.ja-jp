@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - strxfrm
 - _wcsxfrm_l
@@ -29,7 +30,8 @@ f1_keywords:
 - strxfrm
 - _tcsxfrm
 - wcsxfrm
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - strxfrm_l function
 - _tcsxfrm function
@@ -42,15 +44,17 @@ helpviewer_keywords:
 - strings [C++], comparing locale
 - _wcsxfrm_l function
 ms.assetid: 6ba8e1f6-4484-49aa-83b8-bc2373187d9e
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 747639550e05a0e00daadcbd72d25b31c72a7dd5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0545fd71f571caa2fbb12cefb010c274cbda9f28
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strxfrm-wcsxfrm-strxfrml-wcsxfrml"></a>strxfrm、wcsxfrm、_strxfrm_l、_wcsxfrm_l
 ロケール固有の情報に基づいて文字列を変換します。  
@@ -99,7 +103,7 @@ size_t wcsxfrm_l(
  変換された文字列の長さを返します。終端の null 文字は含まれません。 戻り値が `count` 以上である場合、`strDest` のコンテンツは予測できません。 エラーの場合、各関数は `errno` を設定し、`INT_MAX` を返します。 無効な文字の場合、`errno` は `EILSEQ` に設定されます。  
   
 ## <a name="remarks"></a>コメント  
- `strxfrm` 関数は、`strSource` によって指されている文字列を、`strDest` に格納されている新しい照合フォームに変換します。 null 文字を含めて `count` 以内の文字が変換され、結果の文字列に配置されます。 変換は、ロケールの `LC_COLLATE` カテゴリ設定を使用して行われます。 `LC_COLLATE` の詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `strxfrm` は、ロケールに依存する動作に現在のロケールを使用します。`_strxfrm_l` は、現在のロケールの代わりに渡されたロケールを使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `strxfrm` 関数は、`strSource` によって指されている文字列を、`strDest` に格納されている新しい照合フォームに変換します。 null 文字を含めて `count` 以内の文字が変換され、結果の文字列に配置されます。 変換は、ロケールの `LC_COLLATE` カテゴリ設定を使用して行われます。 `LC_COLLATE` の詳細については、[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md) に関する記事をご覧ください。 `strxfrm` は、ロケールに依存する動作に現在のロケールを使用します。`_strxfrm_l` は、現在のロケールの代わりに渡されたロケールを使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  変換後、変換された 2 つの文字列を使用した `strcmp` への呼び出しにより、元の 2 つの文字列に適用された `strcoll` への呼び出しと同じ結果が得られます。 `strcoll` と `stricoll` と同様に、`strxfrm` はマルチバイト文字の文字列を必要に応じて自動的に処理します。  
   
@@ -114,7 +118,7 @@ size_t wcsxfrm_l(
 |`_tcsxfrm`|`strxfrm`|`strxfrm`|`wcsxfrm`|  
 |`_tcsxfrm_l`|`_strxfrm_l`|`_strxfrm_l`|`_wcsxfrm_l`|  
   
- "C" ロケールでは、文字セット (ASCII 文字セット) 内の文字の順序は、辞書式文字順序と同じです。 ただし、その他のロケールでは、文字セット内の文字の順序が辞書式文字順序と異なる場合があります。 たとえば、ヨーロッパの一部のロケールでは、文字 'a' (値 0x61) は文字セットで文字 '&\#x00E4;' (値 0xE4) の前にありますが、辞書式の順序では文字 'ä' が文字 'a' の前にあります。  
+ "C" ロケールでは、文字セット (ASCII 文字セット) 内の文字の順序は、辞書式文字順序と同じです。 ただし、その他のロケールでは、文字セット内の文字の順序が辞書式文字順序と異なる場合があります。 たとえば、ヨーロッパの一部のロケールで文字 'a' (値 0x61) の前に、文字 ' &\#x00E4;'(値 0xE4)、文字セットが、文字 'ä' の前に、文字 'a' 辞書。  
   
  文字セットと辞書式文字順序が異なるロケールで、元の文字列で `strxfrm` を使用し、結果の文字列で `strcmp` を使用して、現在のロケールの `LC_COLLATE` カテゴリの設定に従って辞書式文字列比較を生成します。 このように、上記のロケールで 2 つの文字列を辞書式に比較するには、元の文字列で `strxfrm` を使用し、結果の文字列で `strcmp` を使用します。 または、元の文字列で `strcmp` ではなく `strcoll` を使用することもできます。  
   
@@ -133,9 +137,9 @@ strncpy( _string1, _string2, _count );
 return( strlen( _string1 ) );  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`strxfrm`|\<string.h>|  
 |`wcsxfrm`|\<string.h> または \<wchar.h>|  
@@ -144,12 +148,12 @@ return( strlen( _string1 ) );
   
  互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [localeconv](../../c-runtime-library/reference/localeconv.md)   
  [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
+ [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
  [strcmp、wcscmp、_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)   
  [strncmp、wcsncmp、_mbsncmp、_mbsncmp_l](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)

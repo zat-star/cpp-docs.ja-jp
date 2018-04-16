@@ -1,10 +1,8 @@
 ---
 redirect_url: /cpp/build/dlls-in-visual-cpp#differences-between-applications-and-dlls
-ms.translationtype: MT
-ms.sourcegitcommit: 22da7776e46171467a37d46c3de3227f060eaf77
 ms.openlocfilehash: 2ae1235d6924c70d92c8730e1b6a23c5106e71c4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.sourcegitcommit: 795a1c7ec1bfdca811c4041832e3e0aaef2e0397
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/21/2018
 ---
-

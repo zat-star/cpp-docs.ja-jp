@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::norm_2::set_x
 - amp_short_vectors/Concurrency::graphics::norm_2::set_xy
@@ -37,30 +37,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 80703f9b-61f4-414a-93fd-bc774f7d3393
-caps.latest.revision: 11
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: f37610aa77cb17fa574444cec43465ffc5ba3498
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b8a3cf125ab89c159f27fe212018780699926e79
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="norm2-class"></a>norm_2 クラス
 2 個の正規数の short ベクターを表します。  
@@ -106,18 +93,18 @@ class norm_2;
   
 |名前|説明|  
 |----------|-----------------|  
-|norm_2:-||  
-|norm_2:--||  
-|norm_2::operator * =||  
+|norm_2::operator-||  
+|norm_2::operator--||  
+|norm_2::operator*=||  
 |norm_2::operator/=||  
 |norm_2::operator++||  
-|norm_2::operator + = 演算子||  
-|norm_2::operator =||  
+|norm_2::operator+=||  
+|norm_2::operator=||  
 |norm_2::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#norm_2__size)||  
   
@@ -137,12 +124,12 @@ class norm_2;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `norm_2`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>norm_2 
+##  <a name="ctor"></a> norm_2 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -222,12 +209,11 @@ explicit inline norm_2(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="norm_2__size"></a>サイズ 
+##  <a name="norm_2__size"></a> サイズ 
 
 ```  
 static const int size = 2;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

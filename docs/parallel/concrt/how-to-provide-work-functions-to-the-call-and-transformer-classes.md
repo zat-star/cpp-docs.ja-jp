@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - call class, example
 - using the transformer class [Concurrency Runtime]
 - using the call class [Concurrency Runtime]
 ms.assetid: df715ce4-8507-41ca-b204-636d11707a73
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aafa676a1c6b885b303634c4fc31bcbfc1c6f0ab
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 52ab28a015fa0312a5d064401451640c2747e9db
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-provide-work-functions-to-the-call-and-transformer-classes"></a>方法: call クラスおよび transformer クラスに処理関数を提供する
 このトピックは、処理関数を提供するいくつかの方法を示しています、 [concurrency::call](../../parallel/concrt/reference/call-class.md)と[concurrency::transformer](../../parallel/concrt/reference/transformer-class.md)クラスです。  
@@ -64,7 +68,7 @@ ms.lasthandoff: 10/24/2017
   
  **cl.exe/EHsc call.cpp**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [非同期エージェント ライブラリ](../../parallel/concrt/asynchronous-agents-library.md)   
  [非同期メッセージ ブロック](../../parallel/concrt/asynchronous-message-blocks.md)   
  [方法: データ パイプラインでトランスフォーマーを使用します。](../../parallel/concrt/how-to-use-transformer-in-a-data-pipeline.md)   

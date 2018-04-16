@@ -1,34 +1,37 @@
 ---
-title: "2.4 Work-sharing Constructs | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "2.4 動作共有のコンストラクト |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 25bb4ded-8466-4daa-a863-766b5a99b995
-caps.latest.revision: 4
-caps.handback.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 476e4e23b22527accaa095d80b827c95aed58c15
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/16/2018
 ---
-# 2.4 Work-sharing Constructs
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-作業共有の構造は発生はチームのメンバー間の関連するステートメントの実行を配布します。  作業共有のディレクティブは新しいスレッドを開始しエントリに暗黙的なバリアは作業共有の構造はありません。  
+# <a name="24-work-sharing-constructs"></a>2.4 動作共有のコンストラクト
+Work-sharing コンス トラクターは、これを検出した、チームのメンバーのうち、関連するステートメントの実行を配布します。 動作共有ディレクティブでは、新しいスレッドが起動しないと、work-sharing コンス トラクターへのエントリに暗黙のバリアはありません。  
   
- 一つの作業  **バリア**  共有の構造とディレクティブのシーケンスはチームのすべてのスレッドで同じである必要があります。  
+ 動作共有のシーケンスの構築と**バリア**で発生するディレクティブは、チームの各スレッドで同じである必要があります。  
   
- OpenMP は次の作業共有の構造を定義し後の " " で説明しています :  
+ OpenMP には、次の work-sharing コンス トラクターを定義し、これらは後に続くセクションで説明。  
   
--   **For** のディレクティブ  
+-   **デ**ィレクティブ  
   
--   **セクション**  のディレクティブ  
+-   **セクションでは**ディレクティブ  
   
--   **シングル**  のディレクティブ
+-   **1 つ**ディレクティブ

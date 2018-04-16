@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - record views, filling list boxes
 - list boxes, filling from second recordset
@@ -17,15 +19,18 @@ helpviewer_keywords:
 - combo boxes [C++], filling from second recordset
 - CListCtrl class, filling from second recordset
 ms.assetid: 360c0834-da6b-4dc0-bcea-80e9acd611f0
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: de1282b80517a1c264121fbc0b749d3ca4ca2add
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 6e411ebcf40099a2236048dd8f151b438fe5b947
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="filling-a-list-box-from-a-second-recordset--mfc-data-access"></a>セカンド レコードセットを利用してリスト ボックスを表示する方法 (MFC データ アクセス)
 既定では、1 つのレコード ビューは 1 つのレコードセット オブジェクトに関連付けられ、そのオブジェクトのフィールドがレコード ビューのコントロールに対応付けられます。 場合によっては、レコード ビューにリスト ボックス コントロールまたはコンボ ボックス コントロールを配置して、そこに別の (セカンド) レコードセット オブジェクトの複数の値を設定することが必要となります。 ユーザーは、そのリスト ボックスを使用して、レコード ビューに表示された新しいカテゴリの情報を選択できます。 このトピックでは、いつどのようにこの処理を実行するかについて説明します。  
@@ -77,6 +82,6 @@ void CSectionForm::OnInitialUpdate()
   
  この関数は、ドキュメントから `m_courseSet` を取得して開きます。 次に、`m_ctlCourseList` を空にして、`m_courseSet` を 1 レコードずつ処理します。 各レコードに対してコンボ ボックスの `AddString` メンバー関数が呼び出されて、レコードからコース ID 値が追加されます。 最後に、コンボ ボックスの選択内容が設定されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レコード ビュー (MFC データ アクセス)](../data/record-views-mfc-data-access.md)   
  [ODBC ドライバーの一覧](../data/odbc/odbc-driver-list.md)

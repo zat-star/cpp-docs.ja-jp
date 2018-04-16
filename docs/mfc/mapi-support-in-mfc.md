@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC, MAPI support
 - MAPI support in MFC
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - MAPI, MFC
 - OnFileSendMail method [MFC]
 ms.assetid: cafbecb1-0427-4077-b4b8-159bae5b49b8
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 12ebceaa155a8af1078bd18fa74ced1a4d8e72d7
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a6cc1670559354628127729724300399d5f003ec
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mapi-support-in-mfc"></a>MFC での MAPI サポート
 MFC での Microsoft メッセージング アプリケーション プログラム インターフェイス (MAPI) クラスのサブセットのサポートに提供**CDocument**です。 具体的には、 **CDocument**メール サポートがエンドユーザーのコンピューター上に存在するかどうかを決定するメンバー関数があり、必要な場合は、標準コマンド id を持つメール送信コマンドを有効にする**判定**. このコマンドの MFC ハンドラー関数により、ユーザーに電子メールでドキュメントを送信します。  
@@ -69,6 +73,6 @@ MFC での Microsoft メッセージング アプリケーション プログラ
   
 -   [COleDocument::OnFileSendMail](../mfc/reference/coledocument-class.md#onfilesendmail)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MAPI](../mfc/mapi.md)
 

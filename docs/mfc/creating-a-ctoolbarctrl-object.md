@@ -4,27 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: CToolBarCtrl
-dev_langs: C++
+f1_keywords:
+- CToolBarCtrl
+dev_langs:
+- C++
 helpviewer_keywords:
 - toolbar controls [MFC], creating
 - CToolBarCtrl class [MFC], creating toolbars
 ms.assetid: a4f6bf0c-0195-4dbf-a09e-aee503e19dc3
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: eecb599d84cedd742a15c4a5572ce4c130b19669
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e86fad8191c4dea2eed3ae34ec96ed853ac1deae
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-a-ctoolbarctrl-object"></a>CToolBarCtrl オブジェクトの作成
-[CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)オブジェクトはいくつかの内部データ構造体を含む — ボタン イメージのビットマップの一覧、ボタンのラベルの文字列のリストの一覧`TBBUTTON`構造体 — するイメージを関連付けるや文字列の位置、スタイル、状態、およびボタンのコマンド ID。 これらのデータ構造体の要素のそれぞれは、0 から始まるインデックスによって呼ばれます。 使用する前に、`CToolBarCtrl`オブジェクト、これらのデータ構造を設定する必要があります。 データ構造の一覧は、次を参照してください。[ツール バー コントロール](https://msdn.microsoft.com/library/47xcww9x.aspx)Windows SDK に含まれています。 文字列の一覧は、ボタンのラベルに対してのみ使用できます。ツールバーから文字列を取得することはできません。  
+[CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)オブジェクトはいくつかの内部データ構造体を含む — ボタン イメージのビットマップの一覧、ボタンのラベルの文字列のリストの一覧`TBBUTTON`構造体 — するイメージを関連付けるや文字列の位置、スタイル、状態、およびボタンのコマンド ID。 これらのデータ構造体の要素のそれぞれは、0 から始まるインデックスによって呼ばれます。 使用する前に、`CToolBarCtrl`オブジェクト、これらのデータ構造を設定する必要があります。 データ構造の一覧は、次を参照してください。[ツール バー コントロール](controls-mfc.md)Windows SDK に含まれています。 文字列の一覧は、ボタンのラベルに対してのみ使用できます。ツールバーから文字列を取得することはできません。  
   
  使用する、`CToolBarCtrl`オブジェクトは通常これらの手順を行います。  
   
@@ -40,7 +45,7 @@ ms.lasthandoff: 10/24/2017
   
 5.  ツールバーをカスタマイズすることができるようにする場合は、」の説明に従って、オーナー ウィンドウのカスタマイズの通知メッセージを処理[カスタマイズ通知の処理](../mfc/handling-customization-notifications.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CToolBarCtrl の使い方](../mfc/using-ctoolbarctrl.md)   
  [コントロール](../mfc/controls-mfc.md)
 

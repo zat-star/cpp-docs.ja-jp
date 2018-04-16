@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2736
 ms.assetid: 95a6bc28-c0cb-49dc-87e6-e993dbbba881
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6356e6de30222c46b2831830e108ed3cc084c905
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 303ca2ead2411bcc0ceb24ee1329094de2adbb8a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2736"></a>コンパイラ エラー C2736
 キャストでは 'keyword' キーワードは使用できません。  

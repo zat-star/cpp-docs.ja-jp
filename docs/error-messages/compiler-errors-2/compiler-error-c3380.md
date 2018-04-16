@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3380
-dev_langs: C++
-helpviewer_keywords: C3380
+f1_keywords:
+- C3380
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3380
 ms.assetid: 86f1f4ec-4ad8-4a1a-9b6c-2d9b6129df6b
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b06f57795cea7dda7b3ba2797f7c57026a9acf60
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f8789889ab0d9ebe93941a438c286ed718ac4721
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3380"></a>コンパイラ エラー C3380
 'class': 無効なアセンブリ アクセス指定子です。'public' と 'private' のみ使用できます  

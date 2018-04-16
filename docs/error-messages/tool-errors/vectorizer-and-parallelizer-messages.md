@@ -17,33 +17,20 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: d8f4844a-f414-42ab-b9a5-925a5da9d365
-caps.latest.revision: 16
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 5c466510a00079f04ee5871b41364fff552ecf70
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 26d33c64fd57d9f0e9f9a33de6097601e65aa67d
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="vectorizer-and-parallelizer-messages"></a>ベクター化と並列化のメッセージ 
-Visual C コンパイラ オプションを使用することができます[/Qpar-report](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md)と[/Qvec-report](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md)設定、[自動並行化と自動ベクター化](../../parallel/auto-parallelization-and-auto-vectorization.md)理由コードと出力のアクティビティに関する情報メッセージにします。 この記事では、理由コードとメッセージについて説明します。  
+Visual C コンパイラ オプションを使用する[/Qpar-report](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md)と[/Qvec-report](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md)を設定する、[自動並行化と自動ベクター化](../../parallel/auto-parallelization-and-auto-vectorization.md)出力理由コードとそのアクティビティに関する情報メッセージです。 この記事では、理由コードとメッセージについて説明します。  
   
 -   [情報メッセージ](#BKMK_InformationalMessages)  
   
@@ -812,7 +799,7 @@ void code_1305( S_1305 *s, S_1305 x)
 |1400|**#pragma loop (no_vector)**を指定します。|  
 |1401|**/kernel** x86 または ARM を対象とする場合は、スイッチを指定します。|  
 |1402|**/arch:sse2 以上**または x86 を対象とする場合、以上のスイッチが指定されていません。|  
-|1403|**/arch:ATOM**スイッチを指定して、ループには、1 個の double で操作が含まれます。|  
+|1403|**/arch:ATOM**スイッチを指定して、ループには、1 個の double に対する操作が含まれています。|  
 |1404|**/O1**または**/Os**スイッチを指定します。|  
 |1405|ベクター化が動的初期化子と静的初期化子との間の最適化用に無効になっています。|  
   
@@ -1004,9 +991,9 @@ void code_1505(int *A, int *B)
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [自動並行化と自動ベクター化](../../parallel/auto-parallelization-and-auto-vectorization.md)   
- [ネイティブ コードでの並列プログラミング](http://go.microsoft.com/fwlink/?LinkId=263662)   
+ [ネイティブ コードでの並列プログラミング](http://go.microsoft.com/fwlink/p/?linkid=263662)   
  [#pragma loop()](../../preprocessor/loop.md)   
  [/Q オプション (低水準の操作)](../../build/reference/q-options-low-level-operations.md)   
  [/Qpar-report (自動並行化レポート作成レベル)](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md)   

@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2142
-dev_langs: C++
-helpviewer_keywords: C2142
+f1_keywords:
+- C2142
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2142
 ms.assetid: d0dbe10e-0952-49a4-8b33-e82fb7558b19
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3a7e3a8950718ef50c8a497847d72a371f592e59
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 91823d90eeefab73c271aab4eb716433e7dada05
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2142"></a>コンパイラ エラー C2142
 関数の宣言が異なる場合、それらのいずれかのみで指定された変数のパラメーター  

@@ -27,16 +27,17 @@ helpviewer_keywords:
 - CBitmapRenderTarget [MFC], GetBitmapRenderTarget
 - CBitmapRenderTarget [MFC], m_pBitmapRenderTarget
 ms.assetid: c89a4437-812e-4943-acb2-b429a04cc4d2
-caps.latest.revision: 16
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f07e3783de7efe4e279a4f8d69563349cb72a362
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 9438bbdeef811019003cd53c426ff688ce178ea7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cbitmaprendertarget-class"></a>CBitmapRenderTarget クラス
 ID2D1BitmapRenderTarget のラッパーです。  
@@ -72,7 +73,7 @@ class CBitmapRenderTarget : public CRenderTarget;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CBitmapRenderTarget::m_pBitmapRenderTarget](#m_pbitmaprendertarget)|ID2D1BitmapRenderTarget オブジェクトへのポインター。|  
   
@@ -83,7 +84,7 @@ class CBitmapRenderTarget : public CRenderTarget;
   
  `CBitmapRenderTarget` 
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="attach"></a>CBitmapRenderTarget::Attach  
@@ -155,6 +156,5 @@ operator ID2D1BitmapRenderTarget*();
 ### <a name="return-value"></a>戻り値  
  ID2D1BitmapRenderTarget インターフェイスまたはオブジェクトがまだ初期化されていない場合は、NULL へのポインター。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

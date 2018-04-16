@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: _com_error::WCodeToHRESULT
-dev_langs: C++
-helpviewer_keywords: WCodeToHRESULT method [C++]
+f1_keywords:
+- _com_error::WCodeToHRESULT
+dev_langs:
+- C++
+helpviewer_keywords:
+- WCodeToHRESULT method [C++]
 ms.assetid: 0ec43a4b-ca91-42d5-b270-3fde9c8412ea
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 925e1f7a2675dc0aaed3a0cab064e01681de673c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ca20bfa7574f604187734040b3ccc001d6aaf68d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comerrorwcodetohresult"></a>_com_error::WCodeToHRESULT
 **Microsoft 固有の仕様**  
@@ -47,7 +53,7 @@ ms.lasthandoff: 10/24/2017
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_com_error::wcode](../cpp/com-error-wcode.md)   
  [_com_error::HRESULTToWCode](../cpp/com-error-hresulttowcode.md)   
  [_com_error クラス](../cpp/com-error-class.md)

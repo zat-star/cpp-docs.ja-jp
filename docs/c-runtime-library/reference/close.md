@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _close
 apilocation:
@@ -32,30 +32,17 @@ helpviewer_keywords:
 - close function
 - files [C++], closing
 ms.assetid: 4708a329-8acf-4cd9-b7b0-a952e1897247
-caps.latest.revision: 12
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 9dab323afc6c70e81592119e0cec2775c239d87f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9532d8fb98786f35dfa888b5bf8bef5e3e8b2583
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="close"></a>_close
 ファイルを閉じます。  
@@ -82,9 +69,9 @@ int _close(
   
  この関数は、パラメーターを検証します。 `fd` が正しくないファイル記述子である場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、`errno` は `EBADF` に設定されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|オプション ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
 |-------------|---------------------|---------------------|  
 |`_close`|\<io.h>|\<errno.h>|  
   
@@ -93,10 +80,10 @@ int _close(
 ## <a name="example"></a>例  
  [_open](../../c-runtime-library/reference/open-wopen.md) の例を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [下位入出力](../../c-runtime-library/low-level-i-o.md)   
  [_chsize](../../c-runtime-library/reference/chsize.md)   
  [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
- [dup、dup2](../../c-runtime-library/reference/dup-dup2.md)   
+ [_dup、_dup2](../../c-runtime-library/reference/dup-dup2.md)   
  [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   
  [_unlink、_wunlink](../../c-runtime-library/reference/unlink-wunlink.md)

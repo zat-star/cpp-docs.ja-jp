@@ -1,72 +1,78 @@
 ---
-title: "Creating a New Toolbar Button | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.editors.toolbar"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Toolbar editor, creating buttons"
-  - "toolbar buttons (in Toolbar editor), button image"
-  - "toolbar buttons (in Toolbar editor), creating"
-  - "toolbar buttons (in Toolbar editor)"
+title: "新しいツール バー ボタンを作成 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.editors.toolbar
+dev_langs:
+- C++
+helpviewer_keywords:
+- Toolbar editor, creating buttons
+- toolbar buttons (in Toolbar editor), button image
+- toolbar buttons (in Toolbar editor), creating
+- toolbar buttons (in Toolbar editor)
 ms.assetid: 46c120fe-4f2a-4887-a08f-bd1fea04b3f4
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 6b89d88d931603f1f8dfd65f08cb78210eac19a3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Creating a New Toolbar Button
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-### ツール バー ボタンを新規作成するには  
+# <a name="creating-a-new-toolbar-button"></a>ツール バー ボタンの新規作成
+### <a name="to-create-a-new-toolbar-button"></a>新しいツールバー ボタンを作成するには  
   
-1.  [リソース ビュー](../windows/resource-view-window.md)で、リソース フォルダー \(\[Project1.rc\] など\) を展開します。  
+1.  [リソース ビュー](../windows/resource-view-window.md) Project1.rc など、リソース フォルダーを展開します。  
   
     > [!NOTE]
-    >  プロジェクトに .rc ファイルがまだ含まれていない場合は、「[リソース スクリプト ファイルの新規作成](../windows/how-to-create-a-resource-script-file.md)」を参照してください。  
+    >  プロジェクトに .rc ファイルがまだ含まれていない場合は、「 [リソース スクリプト ファイルの新規作成](../windows/how-to-create-a-resource-script-file.md)」を参照してください。  
   
-2.  \[Toolbar\] フォルダーを展開し、編集するツール バーを選択します。  
+2.  展開して、**ツールバー**フォルダーおよび編集するツールバーを選択します。  
   
-3.  ツール バーの右端にある空白のボタンに ID を割り当てます。  この作業は [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)の \[ID\] プロパティを編集して行います。  たとえば、ツール バー ボタンにメニュー オプションと同じ ID を割り当てたい場合。  この場合は、ドロップダウン リストでメニュー オプションの ID を選択します。  
+3.  ツールバーの右端にある空白のボタンに ID を割り当てます。 できるように編集することによって、 **ID**プロパティに、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)します。 たとえば、ツール バー ボタンのメニュー オプションと同じ ID を提供する可能性があります。 この場合、ドロップダウン リスト ボックスを使用して、選択、 **ID**のメニュー オプション。  
   
-     または  
+     - または -  
   
-     ツール バー ビューのペインで、ツール バーの右端にある空白のボタンを選択し、描画を開始します。  既定のボタン コマンド ID が割り当てられます \(ID\_BUTTON\<n\>\)。  
+     (ツールバーの表示のウィンドウ) で、ツールバーの右端にある空白のボタンを選択し、描画を開始します。 既定のボタンのコマンド ID が割り当てられます (ID_BUTTON\<n >)。  
   
- また、イメージを切り取り、新しいボタンとしてツール バーに貼り付けることもできます。  
+ コピーして、新しいボタンとしてツールバー上にイメージを貼り付けることができます。  
   
-#### イメージをボタンとしてツール バーに追加するには  
+#### <a name="to-add-an-image-to-a-toolbar-as-a-button"></a>ツールバーにボタンとしてイメージを追加するには  
   
-1.  [リソース ビュー](../windows/resource-view-window.md)で、ツール バーをダブルクリックして開きます。  
+1.  [リソース ビュー](../windows/resource-view-window.md)ツールバーをダブルクリックして開きます。  
   
-2.  ツール バーに追加するイメージを開きます。  
+2.  次に、ツールバーに追加するには、イメージを開きます。  
   
     > [!NOTE]
-    >  Visual Studio では、イメージがイメージ エディターで開かれます。  グラフィック関連のほかのプログラムでイメージを開くこともできます。  
+    >  Visual Studio で、イメージを開くと場合、イメージ エディターで開きます。 その他のグラフィックス プログラム イメージを開くこともできます。  
   
-3.  \[編集\] メニューの \[コピー\] をクリックします。  
+3.  **編集**] メニューの [選択**コピー**です。  
   
-4.  ソース ウィンドウの上部の該当するタブをクリックして、そのツール バーに切り替えます。  
+4.  [ソース] ウィンドウの上部にあるタブをクリックして、ツールバーに切り替えます。  
   
-5.  \[編集\] メニューの \[貼り付け\] をクリックします。  
+5.  **編集**] メニューの [選択**貼り付け**です。  
   
-     イメージがツール バーの新しいボタンとして表示されます。  
+     イメージは、ツールバーの [新規] ボタンとして表示されます。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
-### 要件  
+### <a name="requirements"></a>必要条件  
  MFC または ATL  
   
-## 参照  
- [Toolbar Button Properties](../mfc/toolbar-button-properties.md)   
- [Creating, Moving, and Editing Toolbar Buttons](../mfc/creating-moving-and-editing-toolbar-buttons.md)   
- [Toolbar Editor](../mfc/toolbar-editor.md)
+## <a name="see-also"></a>参照  
+ [ツール バー ボタン プロパティ](../windows/toolbar-button-properties.md)   
+ [作成、移動、およびツール バー ボタンの編集](../windows/creating-moving-and-editing-toolbar-buttons.md)   
+ [ツール バー エディター](../windows/toolbar-editor.md)
+

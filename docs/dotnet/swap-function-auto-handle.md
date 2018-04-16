@@ -1,33 +1,38 @@
 ---
-title: "swap 関数 (auto_handle) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr::swap"
-  - "msclr.swap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "swap 関数"
+title: "swap 関数 (auto_handle) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- msclr::swap
+- msclr.swap
+dev_langs:
+- C++
+helpviewer_keywords:
+- swap function
 ms.assetid: 7dd91b5c-f0de-4634-a2e2-642626706e27
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c400579603ce3385e6b4114c8c9996cab2849619
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# swap 関数 (auto_handle)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-1 `auto_handle` と別の間で交換オブジェクト。  
+# <a name="swap-function-autohandle"></a>swap 関数 (auto_handle)
+1 つの間でオブジェクトを交換`auto_handle`別とします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename _element_type>  
@@ -37,14 +42,14 @@ void swap(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_left`  
  `auto_handle`。  
   
  `_right`  
- 別の `auto_handle`。  
+ 別`auto_handle`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_swap_auto_handle.cpp  
@@ -66,13 +71,16 @@ int main() {
 }  
 ```  
   
-  **s1 \= 「String 1 " s2 \= 「String 2」**  
-**s1 \= 「String 2 " s2 \= 「String 1」**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_handle.h\>  
+```Output  
+s1 = 'string one', s2 = 'string two'  
+s1 = 'string two', s2 = 'string one'  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\auto_handle.h >  
   
-## 参照  
- [auto\_handle](../dotnet/auto-handle.md)   
- [auto\_handle::swap](../dotnet/auto-handle-swap.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>参照  
+ [auto_handle](../dotnet/auto-handle.md)   
+ [auto_handle::swap](../dotnet/auto-handle-swap.md)

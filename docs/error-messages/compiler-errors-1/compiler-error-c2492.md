@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2492
-dev_langs: C++
-helpviewer_keywords: C2492
+f1_keywords:
+- C2492
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2492
 ms.assetid: 8c44c9bb-c366-4fe5-a0ab-882e38608aaa
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 68268be94897e3c648e95185877dec9e276355c4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5410af24b5300b2c03aa0ed4e121abceb6d6d483
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2492"></a>コンパイラ エラー C2492
 '*変数*': スレッド ストレージ存続期間を使用してデータには、dll インターフェイスはありません。    

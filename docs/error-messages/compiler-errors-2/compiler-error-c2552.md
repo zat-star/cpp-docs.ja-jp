@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2552
-dev_langs: C++
-helpviewer_keywords: C2552
+f1_keywords:
+- C2552
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2552
 ms.assetid: 0e0ab759-788a-4faf-9337-80d4b9e2e8c9
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0e001837ca3d9ea9e5c5db1770188d030e21d7d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c1a438d602c23d15a1196fe4d40a5cca98867828
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2552"></a>コンパイラ エラー C2552
 'identifier': 初期化子リストによる個別の識別子の初期化に誤りがあります  

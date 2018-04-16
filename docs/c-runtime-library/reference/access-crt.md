@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - access
 apilocation:
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - access function
 ms.assetid: 65197793-bd0a-41c3-9c29-18de2d95d9a6
-caps.latest.revision: 5
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fb8d4666eef6de1cb0cd0730732bcbc6b3dfe2d2
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 4285d6797c3c84513ef77adb2b2b4d94a713b8a0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="access-crt"></a>access (CRT)
 この POSIX 関数は使用されなくなりました。 代わりに ISO C++ 準拠の [_access](../../c-runtime-library/reference/access-waccess.md) またはセキュリティが強化された [_access_s](../../c-runtime-library/reference/access-s-waccess-s.md) を使用してください。

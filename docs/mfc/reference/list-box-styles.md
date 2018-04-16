@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -24,7 +25,8 @@ f1_keywords:
 - LBS_SORT
 - LBS_MULTIPLESEL
 - LBS_OWNERDRAWFIXED
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - LBS_NOSEL constant [MFC]
 - LBS_NOREDRAW constant [MFC]
@@ -44,15 +46,17 @@ helpviewer_keywords:
 - LBS_NOINTEGRALHEIGHT constant [MFC]
 - LBS_SORT constant
 ms.assetid: 3f357b8d-9118-4f41-9e28-02ed92d1e88f
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2c1ac3ca255818bab745b7aa320ee69922359c14
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8f52734e26d1965811aded67bc1e1dde6a2c28bc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="list-box-styles"></a>リスト ボックス スタイル
 -   **LBS_DISABLENOSCROLL**リスト ボックスが無効になっている、垂直スクロール バーと、リスト ボックスを含まないスクロールするための十分な項目を表示します。 このスタイルが設定されていないと、項目が少なくてスクロールする必要がない場合、スクロール バーは表示されません。  
@@ -89,7 +93,7 @@ ms.lasthandoff: 10/24/2017
   
 -   **LBS_WANTKEYBOARDINPUT** 、リスト ボックスの所有者は受信`WM_VKEYTOITEM`または`WM_CHARTOITEM`メッセージをリスト ボックスに入力フォーカスがある状態でキーを押したときにします。 これにより、キーボード入力に対して特別な処理を実行するアプリケーション。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC によって使用されているスタイル](../../mfc/reference/styles-used-by-mfc.md)   
  [CListBox::Create](../../mfc/reference/clistbox-class.md#create)   
  [リスト ボックス スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775149)

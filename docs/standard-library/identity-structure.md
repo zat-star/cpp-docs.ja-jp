@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: utility/std::identity
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- utility/std::identity
+dev_langs:
+- C++
 helpviewer_keywords:
 - identity class
 - identity structure
 ms.assetid: 990756fd-7969-4b39-ad7e-0878e8dac8fd
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 280ce6a24e1de9d0e7206e7f9e5b0d896d8c6787
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c2411601a0294b5244049d2ead1b67c500908a33
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="identity-structure"></a>identity 構造体
 テンプレート パラメーターの型定義を指定する構造体。  
@@ -44,12 +49,12 @@ struct identity {
   
  このクラスは、以前のコードとの互換性を保つために、引数 `left` を返すidentity 関数 `operator()` も定義します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<utility>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<utility>](../standard-library/utility.md)
 
 

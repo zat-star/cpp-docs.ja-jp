@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-ide
+ms.technology:
+- cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - build events [C++], troubleshooting
 - builds [C++], build events
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - builds [C++], troubleshooting
 - custom build steps [C++], troubleshooting
 ms.assetid: e4ceb177-fbee-4ed3-a7d7-80f0d78c1d07
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 91067753fcb02dd88165e406dc5c0a39183e5d33
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5fa3b2d3910a71d189f5177e13fbd91930e15ee8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="troubleshooting-build-customizations"></a>ビルドのカスタマイズのトラブルシューティング
 カスタム ビルド ステップまたはイベントが期待どおりに動作していない場合、は、問題の原因を調べるために実行を行うことがいくつかの方法があります。  
@@ -44,5 +48,5 @@ ms.lasthandoff: 10/24/2017
   
 -   カスタム ビルド ステップを実行し、その動作を確認するには、個別にイベントをビルドします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カスタム ビルド ステップとビルド イベントについて](../ide/understanding-custom-build-steps-and-build-events.md)

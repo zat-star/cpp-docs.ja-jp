@@ -1,34 +1,38 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4526 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4526"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4526"
+title: "コンパイラの警告 (レベル 1) C4526 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4526
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4526
 ms.assetid: 490f8916-5fdc-4cad-b412-76c3382a5976
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a74d7d2e2c745a4c8e29736c1e3a7fc38892d5f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4526
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'function' : スタティック メンバー関数は仮想関数をオーバーライドできません 'virtual function' オーバーライドは無視されます、仮想関数は隠されます。  
+# <a name="compiler-warning-level-1-c4526"></a>コンパイラの警告 (レベル 1) C4526
+'function': 静的メンバー関数は仮想関数をオーバーライドできません ' 仮想 function'override が無視されます、仮想関数を非表示には  
   
- 静的メンバー関数は、仮想関数をオーバーライドするための基準を満たしています。このメンバー関数は仮想関数であり静的関数です。  
+ 静的メンバー関数では、仮想と静的メンバー関数は、仮想関数をオーバーライドする条件を満たしています。  
   
- 次のコードは C4526 を生成します。  
+ 次のコードには、C4526 が生成されます。  
   
 ```  
 // C4526.cpp  
@@ -43,8 +47,8 @@ struct myStruct2: public myStruct1 {
 };  
 ```  
   
- 考えられる修正方法は、次のとおりです。  
+ 考えられる修正方法を次に示します。  
   
--   関数が基本クラスの仮想関数をオーバーライドするための関数である場合は、静的指定子を削除します。  
+-   関数が基底クラスの仮想関数をオーバーライドするためのもので、静的な指定子を削除します。  
   
--   関数を静的なメンバー関数とする場合は、関数名を変更して基本クラスの仮想関数と競合しないようにします。
+-   関数は、静的メンバー関数を意図した場合、基底クラスの仮想関数とも競合しないように変更します。

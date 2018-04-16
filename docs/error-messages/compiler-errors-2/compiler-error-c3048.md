@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3048
-dev_langs: C++
-helpviewer_keywords: C3048
+f1_keywords:
+- C3048
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3048
 ms.assetid: 48e07091-94d9-471d-befe-7e2507631edd
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: a17a103bf49040496b886799bf58910eedff8051
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bf0fb42659248012d9f1a90b7ca112ef96d69b9a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3048"></a>コンパイラ エラー C3048
 '#pragma omp atomic' の後の式は、正しくない形式を含んでいます  

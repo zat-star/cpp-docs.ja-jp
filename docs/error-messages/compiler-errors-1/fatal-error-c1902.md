@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C1902
-dev_langs: C++
-helpviewer_keywords: C1902
+f1_keywords:
+- C1902
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1902
 ms.assetid: 2dc066cc-fcb1-4725-8bcb-9f44dd0905b7
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 89354565f67c8704eee8c8b5f9dcb94523800c63
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4e5f6c22ea848a49a12cc85508fd80a4cfcb90e0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fatal-error-c1902"></a>致命的なエラー C1902
 プログラム データベース マネージャーが一致しません。インストールを確認してください。  

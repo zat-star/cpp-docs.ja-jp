@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,21 +14,24 @@ f1_keywords:
 - AFXWIN/CPaintDC::CPaintDC
 - AFXWIN/CPaintDC::m_ps
 - AFXWIN/CPaintDC::m_hWnd
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CPaintDC [MFC], CPaintDC
 - CPaintDC [MFC], m_ps
 - CPaintDC [MFC], m_hWnd
 ms.assetid: 7e245baa-bf9b-403e-a637-7218adf28fab
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 58d1c1ec052c399cf56cd145e7ee06f52483661e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 451cc5690e871c1292f0a8ff2450eca950ada65b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cpaintdc-class"></a>CPaintDC クラス
 デバイス コンテキスト クラスから派生[CDC](../../mfc/reference/cdc-class.md)です。  
@@ -54,7 +58,7 @@ class CPaintDC : public CDC
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CPaintDC::m_hWnd](#m_hwnd)|`HWND`先である`CPaintDC`オブジェクトをアタッチします。|  
   
@@ -72,7 +76,7 @@ class CPaintDC : public CDC
   
  `CPaintDC`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="cpaintdc"></a>CPaintDC::CPaintDC  
@@ -122,7 +126,7 @@ PAINTSTRUCT m_ps;
 ### <a name="example"></a>例  
   例を参照して[CPaintDC::m_hWnd](#m_hwnd)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル MDI](../../visual-cpp-samples.md)   
  [CDC クラス](../../mfc/reference/cdc-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)

@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C3399 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3399 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: C3399
-dev_langs: C++
-helpviewer_keywords: C3399
+f1_keywords:
+- C3399
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3399
 ms.assetid: 306ad199-d150-4f6c-bcf1-24a7948b93be
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: abcf9e59df1562bd5b6b430c2c63554e87340abb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a55a6d40d6d39b368c31a2716c14d05e0e49a78c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3399"></a>コンパイラ エラー C3399
 'type' : ジェネリック パラメーターのインスタンスを作成するときに、引数を指定することはできません  

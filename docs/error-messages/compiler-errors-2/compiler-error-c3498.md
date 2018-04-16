@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C3498 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3498 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
-f1_keywords: C3498
-dev_langs: C++
-helpviewer_keywords: C3498
+f1_keywords:
+- C3498
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3498
 ms.assetid: 0a5a7817-0872-4119-83bf-980a19113374
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0429b9d21829f772596b6d0fd2c51d72b0924e26
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6d895c0dc40d94d6a8fcd567173e2d596e68e333
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3498"></a>コンパイラ エラー C3498
 'var': マネージが変数または WinRTtype をキャプチャすることはできません  
@@ -62,5 +68,5 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ラムダ式](../../cpp/lambda-expressions-in-cpp.md)

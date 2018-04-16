@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - forward_list/std::operator!=
 - forward_list/std::operator==
@@ -13,9 +13,10 @@ f1_keywords:
 - forward_list/std::operatoroperator&gt=;
 - forward_list/std::operatoroperator&lt;
 - forward_list/std::operatoroperator&lt;=
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 57492e09-3836-4dbc-9ae5-78ecf506c190
-caps.latest.revision: "11"
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::operator!= (forward_list)
@@ -24,11 +25,11 @@ helpviewer_keywords:
 - std::operatoroperator&gt=; (forward_list)
 - std::operatoroperator&lt; (forward_list)
 - std::operatoroperator&lt;= (forward_list)
-ms.openlocfilehash: c00c7d1e506e60a0a8612601835ef4a91b98ea99
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.openlocfilehash: 2c56b8ccbba914b59d1a813c39db2dcc3350e822
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltforwardlistgt-operators"></a>&lt;forward_list&gt; 演算子
 ||||  
@@ -99,7 +100,7 @@ bool operator<(
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は、テンプレート クラス `forward_list` の 2 つのオブジェクトを比較する `operator<` をオーバーロードします。 `lexicographical_compare(lhs. begin(), lhs. end(), rhs.begin(), rhs.end())` が返されます。  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  演算子の左辺の前方リスト オブジェクトが右辺の前方リスト オブジェクト以下であるかどうかを調べます。  
   
 ```
@@ -143,7 +144,7 @@ bool operator>(
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は `right < left` を返します。  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  演算子の左辺の前方リスト オブジェクトが右辺の前方リスト オブジェクト以上であるかどうかを調べます。  
   
 ```
@@ -165,7 +166,7 @@ bool operator>=(
 ### <a name="remarks"></a>コメント  
  このテンプレート関数は `!(left < right)` を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<forward_list>](../standard-library/forward-list.md)
 
 

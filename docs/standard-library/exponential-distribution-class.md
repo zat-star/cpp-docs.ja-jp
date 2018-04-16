@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::exponential_distribution
 - random/std::exponential_distribution::reset
@@ -19,7 +20,8 @@ f1_keywords:
 - random/std::exponential_distribution::param_type::lambda
 - random/std::exponential_distribution::param_type::operator==
 - random/std::exponential_distribution::param_type::operator!=
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::exponential_distribution [C++]
 - std::exponential_distribution [C++], reset
@@ -30,15 +32,17 @@ helpviewer_keywords:
 - std::exponential_distribution [C++], param_type
 - std::exponential_distribution [C++], param_type
 ms.assetid: d54f3126-a09b-45f9-a30b-0d94d03bcdc9
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 940d4c2604f65166faa95ca06ef3cc9b81a47b3e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9ac960d219535746e34d51ce778c1464be2f6c43
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="exponentialdistribution-class"></a>exponential_distribution クラス
 指数分布を生成します。  
@@ -75,7 +79,7 @@ public:
 ``` 
 ### <a name="parameters"></a>パラメーター  
 *RealType*  
-浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、「[\<random>](../standard-library/random.md)」を参照してください。  
+浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
   
 *URNG* 乱数ジェネレーター エンジン。 使用可能な型については、「[\<random>](../standard-library/random.md)」を参照してください。
   
@@ -92,9 +96,9 @@ public:
   
 プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
   
-分布クラスとそのメンバーの詳細については、「[\<random>](../standard-library/random.md)」を参照してください。  
+分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
-指数分布の詳細については、Wolfram MathWorld の記事「[指数分布](http://go.microsoft.com/fwlink/LinkId=401098)」を参照してください。  
+指数分布の詳細については、Wolfram MathWorld の記事「[指数分布](http://go.microsoft.com/fwlink/p/?linkid=401098)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -172,7 +176,7 @@ Distribution for 10 samples:
     10: 2.1201210996  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -225,6 +229,6 @@ struct param_type {
   
 この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [\<random>](../standard-library/random.md)
 

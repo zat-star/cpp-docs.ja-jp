@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - _com_error::Error
 - Error
-dev_langs: C++
-helpviewer_keywords: Error method [C++]
+dev_langs:
+- C++
+helpviewer_keywords:
+- Error method [C++]
 ms.assetid: b53a15fd-198e-4276-afcd-13439c4807f7
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 010d1b2e10d1435855c35929516ff0e7f3fd8d4e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3a318ba69fe5e5d19bacb6d5890889d31a5a44d4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comerrorerror"></a>_com_error::Error
 **Microsoft 固有の仕様**  
@@ -44,5 +49,5 @@ HRESULT Error( ) const throw( );
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_com_error クラス](../cpp/com-error-class.md)

@@ -1,72 +1,75 @@
 ---
-title: "/TLBOUT (.TLB ファイル名の指定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.TypeLibraryFile"
-  - "/tlbout"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".tlb ファイル, 名前を変更"
-  - "/TLBOUT リンカー オプション"
-  - "tlb ファイル, 名前を変更"
-  - "TLBOUT リンカー オプション"
-  - "-TLBOUT リンカー オプション"
+title: "-TLBOUT (名前です。TLB ファイル) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.TypeLibraryFile
+- /tlbout
+dev_langs:
+- C++
+helpviewer_keywords:
+- tlb files, renaming
+- TLBOUT linker option
+- /TLBOUT linker option
+- .tlb files, renaming
+- -TLBOUT linker option
 ms.assetid: 0df6d078-2e48-46c9-a1a5-02674d85dce8
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2c898121a4ac29cc05022504ebfe33949b44eca7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# /TLBOUT (.TLB ファイル名の指定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="tlbout-name-tlb-file"></a>/TLBOUT (.TLB ファイル名の指定)
 ```  
 /TLBOUT:[path\]filename  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  それぞれの文字について以下に説明します。  
   
  *path*  
- 絶対パスまたは相対パスを指定して、.tlb ファイルを作成する場所を指定します。  
+ .Tlb ファイルを作成する必要がの絶対または相対パスを指定します。  
   
- *filename*  
- MIDL コンパイラによって作成される .tlb ファイルの名前を指定します。  ファイル名の拡張子は付加されません。拡張子 .tlb が必要なときは、*filename*.tlb と指定します。  
+ *ファイル名*  
+ MIDL コンパイラによって作成された .tlb ファイルの名前を指定します。 ファイル拡張子は付加されません。指定*filename*.tlb 拡張子 .tlb を付加する場合。  
   
-## 解説  
- \/TLBOUT オプションは、.tlb ファイルの名前と拡張子を指定します。  
+## <a name="remarks"></a>コメント  
+ /TLBOUT オプションは、名前と、.tlb ファイルの拡張子を指定します。  
   
- [module](../../windows/module-cpp.md) 属性を持つプロジェクトをリンクするときは、Visual C\+\+ リンカーにより MIDL コンパイラが呼び出されます。  
+ MIDL コンパイラを持つプロジェクトをリンクするときに、Visual C リンカーによって呼び出されます。、[モジュール](../../windows/module-cpp.md)属性。  
   
- \/TLBOUT を指定しなかった場合、.tlb ファイルの名前は [\/IDLOUT](../Topic/-IDLOUT%20\(Name%20MIDL%20Output%20Files\).md) *filename* から取得されます。  \/IDLOUT も指定しなかった場合、.tlb ファイルの名前は vc70.tlb になります。  
+ .Tlb ファイルがからその名前を取得/TLBOUT が指定されていない場合[/IDLOUT](../../build/reference/idlout-name-midl-output-files.md) *filename*です。 /IDLOUT が指定されていない場合、.tlb ファイルには、vc70.tlb が呼び出されます。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[埋め込み IDL\]プロパティ ページをクリックします。  
+3.  クリックして、**埋め込み IDL**プロパティ ページ。  
   
-4.  \[タイプ ライブラリ\] プロパティを変更します。  
+4.  変更、**タイプ ライブラリ**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.TypeLibraryFile%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)   
- [\/IGNOREIDL \(属性を MIDL に挿入しない\)](../../build/reference/ignoreidl-don-t-process-attributes-into-midl.md)   
- [\/MIDL \(MIDL コマンド ライン オプションの指定\)](../../build/reference/midl-specify-midl-command-line-options.md)   
- [Building an Attributed Program](../../windows/building-an-attributed-program.md)
+ [/IGNOREIDL (しない属性の処理を MIDL に挿入)](../../build/reference/ignoreidl-don-t-process-attributes-into-midl.md)   
+ [/MIDL (MIDL コマンド ライン オプションの指定)](../../build/reference/midl-specify-midl-command-line-options.md)   
+ [属性付きプログラムの作成](../../windows/building-an-attributed-program.md)

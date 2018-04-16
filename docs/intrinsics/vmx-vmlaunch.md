@@ -1,65 +1,69 @@
 ---
-title: "__vmx_vmlaunch | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__vmx_vmlaunch"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "VMLAUNCH 命令"
-  - "__vmx_vmlaunch 組み込み"
+title: "_ _vmx_vmlaunch |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- __vmx_vmlaunch
+dev_langs:
+- C++
+helpviewer_keywords:
+- VMLAUNCH instruction
+- __vmx_vmlaunch intrinsic
 ms.assetid: 708f7c38-b7c1-4ee7-bfc4-0daeb9cc9360
-caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 14b7328ad2d9cfebb7416241bad3ca1e5081f2cf
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# __vmx_vmlaunch
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="vmxvmlaunch"></a>__vmx_vmlaunch
+**Microsoft 固有の仕様**  
   
- 現在の仮想マシンの制御構造を使用してルート VMX 操作の状態に呼び出し元のアプリケーション \(VM\) が格納されます \(VMCS\)。  
+ 現在の仮想マシン制御構造 (VMCS) を使用して、VMX の非ルート操作の状態 (VM を入力してください) で呼び出し元のアプリケーションを配置します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 unsigned char __vmx_vmlaunch(  
    void);  
 ```  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
   
-|値|説明|  
-|-------|--------|  
+|[値]|説明|  
+|-----------|-------------|  
 |0|操作が成功しました。|  
-|1|操作は現在 VMCS の `VM-instruction error field` に展開状態が利用可能に失敗しました。|  
-|2|操作は状態が利用可能なしに失敗しました。|  
+|1|現在 VMCS の `VM-instruction error field` で有効な拡張状態が発生したため、操作は失敗しました。|  
+|2|有効な状態がないため操作は失敗しました。|  
   
-## 解説  
- アプリケーションは [\_\_vmx\_vmlaunch](../intrinsics/vmx-vmlaunch.md) または [\_\_vmx\_vmresume](../intrinsics/vmx-vmresume.md) の関数を使用してVM 送信操作を実行できます。  [\_\_vmx\_vmlaunch](../intrinsics/vmx-vmlaunch.md) の関数は `Clear` の状態がである [\_\_vmx\_vmresume](../intrinsics/vmx-vmresume.md) の関数は `Launched` の状態がである VMCS でのみ使用できます VMCS でのみ使用します。  その結果`Clear` に VMCS の開始状態を設定するに [\_\_vmx\_vmclear](../intrinsics/vmx-vmclear.md) の関数を使用し1 番目のトポロジ用に [\_\_vmx\_vmlaunch](../intrinsics/vmx-vmlaunch.md) の関数を VM Enter 操作に使用する場合それ以降の [\_\_vmx\_vmresume](../intrinsics/vmx-vmresume.md) の関数は演算に VM なります。  
+## <a name="remarks"></a>コメント  
+ アプリケーションはいずれかを使用して VM 入力操作を実行することができます、 [_ _vmx_vmlaunch](../intrinsics/vmx-vmlaunch.md)または[_ _vmx_vmresume](../intrinsics/vmx-vmresume.md)関数。 [_ _Vmx_vmlaunch](../intrinsics/vmx-vmlaunch.md)関数は起動状態が VMCS でのみ使用できます`Clear`、および[_ _vmx_vmresume](../intrinsics/vmx-vmresume.md)関数は起動状態が VMCS でのみ使用できます`Launched`です。 そのため、使用、 [_ _vmx_vmclear](../intrinsics/vmx-vmclear.md)に VMCS の起動状態を設定する関数`Clear`、しを使用して、 [_ _vmx_vmlaunch](../intrinsics/vmx-vmlaunch.md)最初の VM 入力操作と、関数[_ _vmx_vmresume](../intrinsics/vmx-vmresume.md)関数の後続の VM 入力操作します。  
   
- `__vmx_vmlaunch` の関数は `VMLAUNCH` のマシン語命令と同じです。  この関数はゲスト オペレーティング システムとアプリケーションのホスト仮想マシンのモニターの相互作用をサポートします。  詳細については文書の検索「 IA\-32 Intel アーキテクチャの Intel 仮想化テクノロジ固有」サイトのパブリック文書番号 C97063\-002 [Intel Corporation](http://go.microsoft.com/fwlink/?LinkId=127)。  
+ `__vmx_vmlaunch`関数と同じ、`VMLAUNCH`マシン語命令します。 この関数は、ホストの仮想マシンのモニターと、ゲスト オペレーティング システムとそのアプリケーションとの対話をサポートします。 詳細については、「Intel 仮想化技術仕様の「ia-32 Intel アーキテクチャ」、ドキュメントの検索に番号 C97063 002 を文書化、 [Intel Corporation](http://go.microsoft.com/fwlink/p/?linkid=127)サイトです。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__vmx_vmlaunch`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__vmx_vmlaunch`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)   
- [\_\_vmx\_vmresume](../intrinsics/vmx-vmresume.md)   
- [\_\_vmx\_vmclear](../intrinsics/vmx-vmclear.md)
+## <a name="see-also"></a>参照  
+ [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
+ [__vmx_vmresume](../intrinsics/vmx-vmresume.md)   
+ [__vmx_vmclear](../intrinsics/vmx-vmclear.md)

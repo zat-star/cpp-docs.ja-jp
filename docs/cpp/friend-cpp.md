@@ -17,16 +17,17 @@ helpviewer_keywords:
 - friend classes [C++]
 - friend keyword [C++]
 ms.assetid: 8fe9ee55-d56f-40cd-9075-d9fb1375aff4
-caps.latest.revision: 10
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 2d8dd1c80e9b006b3689b6d17ad9d7635670cc98
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 46caba9230676e30cde02e31cc231d606f446767
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="friend-c"></a>friend (C++)
 状況によっては、クラスのメンバーではない関数またはすべてのメンバーが別のクラスにメンバー レベルのアクセスを許可する方が便利です。 クラスの実装側が自分のフレンドを宣言することだけが可能です。 関数またはクラスが自分自身をいずれかのクラスのフレンドとして宣言することはできません。 クラスの定義で使用して、`friend`キーワードと、非メンバー関数またはクラスのプライベートおよびプロテクト メンバーへのアクセスを許可するには、他のクラスの名前。         テンプレートの定義に型パラメーターは、フレンドとして宣言できます。  
@@ -247,5 +248,5 @@ int main() {
   
  クラス宣言内で定義された friend 関数は、それを囲んでいるクラスのスコープ内にあるとは見なされません。それらはファイル スコープ内にあると見なされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)

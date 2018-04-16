@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - memory/std::shared_ptr
 - memory/std::shared_ptr::element_type
@@ -20,7 +21,8 @@ f1_keywords:
 - memory/std::shared_ptr::operator*
 - memory/std::shared_ptr::operator=
 - memory/std::shared_ptr::operator->
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::shared_ptr [C++]
 - std::shared_ptr [C++], element_type
@@ -38,15 +40,17 @@ helpviewer_keywords:
 - std::shared_ptr [C++], unique
 - std::shared_ptr [C++], use_count
 ms.assetid: 1469fc51-c658-43f1-886c-f4530dd84860
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 25def6932680b47e69fc9b16064f046319bb5023
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0ef826862d49b5661b57faf3db1322cd91b273f9
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="sharedptr-class"></a>shared_ptr クラス
 参照カウント スマート ポインターを、動的に割り当てられたオブジェクトにラップします。  
@@ -161,7 +165,7 @@ shared_ptr<int> sp6(sp2);   // error, template parameter int and argument shared
 |[shared_ptr::operator=](#op_eq)|所有されたリソースを置き換えます。|  
 |[shared_ptr::operator-&gt;](#operator-_gt)|指定された値へのポインターを取得します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<memory>  
   
  **名前空間:** std  
@@ -174,7 +178,7 @@ typedef T element_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `T`のシノニムです。  
+ この型は、テンプレート パラメーター `T` のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -848,7 +852,7 @@ sp1.use_count() == 1
 sp1.use_count() == 2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [weak_ptr クラス](../standard-library/weak-ptr-class.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -32,7 +33,8 @@ f1_keywords:
 - AFXANIMATIONCONTROLLER/CAnimationBaseObject::m_nGroupID
 - AFXANIMATIONCONTROLLER/CAnimationBaseObject::m_nObjectID
 - AFXANIMATIONCONTROLLER/CAnimationBaseObject::m_pParentController
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CAnimationBaseObject [MFC], CAnimationBaseObject
 - CAnimationBaseObject [MFC], ApplyTransitions
@@ -57,15 +59,17 @@ helpviewer_keywords:
 - CAnimationBaseObject [MFC], m_nObjectID
 - CAnimationBaseObject [MFC], m_pParentController
 ms.assetid: 76b25917-940e-4eba-940f-31d270702603
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5b1fb434158d263b57fb34d15d976d9bae41c4df
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 35af11c38c70513cb2225bbeb8e74c4ab61c8cc5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="canimationbaseobject-class"></a>CAnimationBaseObject クラス
 すべてのアニメーション オブジェクトの基底クラスです。  
@@ -113,7 +117,7 @@ class CAnimationBaseObject : public CObject;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CAnimationBaseObject::m_bAutodestroyTransitions](#m_bautodestroytransitions)|関連する遷移が自動的に破棄する必要があるかどうかを指定します。|  
 |[CAnimationBaseObject::m_dwUserData](#m_dwuserdata)|ユーザー定義データを格納します。|  
@@ -129,7 +133,7 @@ class CAnimationBaseObject : public CObject;
   
  `CAnimationBaseObject`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="_dtorcanimationbaseobject"></a>CAnimationBaseObject:: ~ CAnimationBaseObject  
@@ -439,5 +443,5 @@ void SetUserData (DWORD dwUserData);
 ### <a name="remarks"></a>コメント  
  アニメーション オブジェクトとカスタム データを関連付けるには、このメソッドを使用します。 このデータを取得できます後で実行時に GetUserData で。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

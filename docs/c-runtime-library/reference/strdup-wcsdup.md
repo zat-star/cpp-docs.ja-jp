@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - wcsdup
 - strdup
@@ -32,16 +32,17 @@ helpviewer_keywords:
 - wcsdup function
 - strdup function
 ms.assetid: c9ac0935-b525-4e95-8a64-396fc7e34ee9
-caps.latest.revision: 5
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9cc3f48b2c8ff3d22f8333ac75b6a23994d9cc98
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 23057d87cc78098d54467e113e527b91646c05b5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strdup-wcsdup"></a>strdup、wcsdup
 これらの POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_strdup、_wcsdup、_mbsdup](../../c-runtime-library/reference/strdup-wcsdup-mbsdup.md) を使用してください。

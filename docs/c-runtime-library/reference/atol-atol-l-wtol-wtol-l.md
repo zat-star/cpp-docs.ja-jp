@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - atol
 - _wtol_l
@@ -33,7 +34,8 @@ f1_keywords:
 - _wtol
 - _ttol
 - _wtol_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - tstol function
 - atol function
@@ -50,15 +52,17 @@ helpviewer_keywords:
 - wtol function
 - _wtol function
 ms.assetid: cedfc21c-2d64-4e9c-bd04-bdf60b12db46
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4ef61564dcecabf25c0945f9774de8bc48de1447
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c727f51d67e3ef64362f36c3a6f3cbd04d9f00c4
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="atol-atoll-wtol-wtoll"></a>atol、_atol_l、_wtol、_wtol_l
 文字列を長整数に変換します。  
@@ -107,7 +111,7 @@ long _wtol_l(
   
  `_wtol` は、ワイド文字列を受け取る点を除いて `atol` と同じです。  
   
- `_l` サフィックスが付いているこれらの関数の各バージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_l` サフィックスが付いているこれらの関数の各バージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -116,7 +120,7 @@ long _wtol_l(
 |`_tstol`|`atol`|`atol`|`_wtol`|  
 |`_ttol`|`atol`|`atol`|`_wtol`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |ルーチン|必須ヘッダー|  
 |--------------|---------------------|  
@@ -171,7 +175,7 @@ Function: atol( "3336402735171707160320" ) = 2147483647
 Overflow condition occurred.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ロケール](../../c-runtime-library/locale.md)   

@@ -5,23 +5,27 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - unordered_map/std::swap
 - unordered_map/std::swap (unordered_map)
 - unordered_map/std::swap (unordered_multimap)
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: cf2e4115-f205-4a0e-90be-a143ffcc1f44
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-helpviewer_keywords: std::swap (unordered_map/multimap)
-ms.openlocfilehash: f2ffd26d26b19cefb049971918f149fe1f940270
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+helpviewer_keywords:
+- std::swap (unordered_map/multimap)
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 000bb8465d56c8b35fb6fae30ff2641a8c101e7e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltunorderedmapgt-functions"></a>&lt;unordered_map&gt; 関数
 |||  
@@ -210,6 +214,6 @@ int main()
 [c, 3] [b, 2] [a, 1]  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<unordered_map>](../standard-library/unordered-map.md)
 

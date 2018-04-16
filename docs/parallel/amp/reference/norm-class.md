@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - norm
 - AMP_SHORT_VECTORS/norm
 - AMP_SHORT_VECTORS/Concurrency::graphics::norm Constructor
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 73002f3d-c25e-4119-bcd3-4c46c9b6abf1
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7d35bc7781b1a57fdc0b8b68c5d4f78046d19134
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d462b023d85222601d0f5c59b6b256ff525c7985
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="norm-class"></a>norm クラス
 Norm 数を表します。 各要素は、浮動小数点の数値の範囲内で [-1.0f、1.0 f]。  
@@ -47,22 +51,22 @@ class norm;
 |norm::operator-||  
 |norm::operator--||  
 |norm::operator float|変換演算子です。 Norm 数、浮動小数点に変換する値をポイントします。|  
-|norm::operator * =||  
+|norm::operator*=||  
 |norm::operator/=||  
-|+ + norm::operator||  
-|norm::operator + =||  
-|norm::operator =||  
-|norm::operator =||  
+|norm::operator++||  
+|norm::operator+=||  
+|norm::operator=||  
+|norm::operator-=||  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `norm`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>norm 
+##  <a name="ctor"></a> norm 
 
  既定のコンストラクター 0.0f を初期化します。  
   
@@ -109,5 +113,5 @@ norm(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

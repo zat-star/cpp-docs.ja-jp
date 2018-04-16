@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: <numeric>
-dev_langs: C++
-helpviewer_keywords: <numeric> header
+ms.topic: reference
+f1_keywords:
+- <numeric>
+dev_langs:
+- C++
+helpviewer_keywords:
+- <numeric> header
 ms.assetid: 6d6ccb94-48cc-479b-b4a9-bd9c78d4896a
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1a4ffc7ad1e7fa512a51169e4155b54b7eca3194
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8069b55f03bd1ed22627732741043ab9eaa4f838
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltnumericgt"></a>&lt;数値&gt;
 数値処理のアルゴリズムを実行するコンテナーのテンプレート関数を定義します。  
@@ -45,7 +51,7 @@ ms.lasthandoff: 10/24/2017
 |[iota](../standard-library/numeric-functions.md#iota)|開始値を格納し、最初の要素から始めて、一連の値のインクリメント (`value++`) を `[first, last)` の間隔で各要素に入力します。|  
 |[partial_sum](../standard-library/numeric-functions.md#partial_sum)|入力範囲の最初の要素から *i* 番目の要素までの一連の合計を計算し、各合計の結果をターゲット範囲の *i* 番目の要素に格納するか、または合計演算が指定された別の二項演算に置き換えられた汎用化されたプロシージャの結果を計算します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)

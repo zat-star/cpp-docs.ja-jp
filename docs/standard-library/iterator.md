@@ -4,26 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - <iterator>
 - iterator/std::<iterator>
-dev_langs: C++
-helpviewer_keywords: iterator header
+dev_langs:
+- C++
+helpviewer_keywords:
+- iterator header
 ms.assetid: c61a3962-f3ed-411a-b5a3-e8b3c2b500bd
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2d0e3c65101455958772415228d5cf0d95fbd4d4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0216c90a922050d4a752b4dbbd1209b26892ba05
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="ltiteratorgt"></a>&lt;iterator&gt;
+# <a name="ltiteratorgt"></a>&lt;Iterator&gt;
 反復子のプリミティブ、定義済みの反復子とストリーム反復子、およびサポート テンプレートをいくつか定義します。 定義済み反復子には、挿入アダプターとリバース アダプターが含まれます。 挿入反復子アダプターのクラスには、フロント、バック、汎用の 3 つがあります。 これには、コンテナーのメンバー関数の反復子が提供する上書きセマンティクスではなく、挿入セマンティクスが用意されています。  
   
 ## <a name="syntax"></a>構文  
@@ -95,7 +100,7 @@ ms.lasthandoff: 10/24/2017
 |[insert_iterator](../standard-library/insert-iterator-class.md)|このテンプレート クラスは、出力反復子オブジェクトを表します。 このクラスは **Container** 型のコンテナーに要素を挿入します。これには、コンテナーと呼ばれる、格納された保護 **pointer** オブジェクトを介してアクセスします。 また、**iter** という **Container::iterator** クラスの保護された **iterator** オブジェクトも格納します。|  
 |[istream_iterator](../standard-library/istream-iterator-class.md)|このテンプレート クラスは、入力反復子オブジェクトを表します。 このクラスは、入力ストリームから **Ty** クラスのオブジェクトを抽出します。これには、`basic_istream`\<**Elem**, **Tr**> への pointer 型の、格納されたオブジェクトを介してアクセスします。|  
 |[istreambuf_iterator](../standard-library/istreambuf-iterator-class.md)|このテンプレート クラスは、入力反復子オブジェクトを表します。 このクラスは、出力ストリーム バッファーに **Elem** クラスの要素を挿入します。これには、`basic_streambuf`\<**Elem**, **Tr**> への **pointer** 型の、格納されたオブジェクトを介してアクセスします。|  
-|[iterator](../standard-library/iterator-struct.md)|このテンプレート クラスは、すべての反復子の基本型として使用されます。|  
+|[Iterator](../standard-library/iterator-struct.md)|このテンプレート クラスは、すべての反復子の基本型として使用されます。|  
 |[iterator_traits](../standard-library/iterator-traits-struct.md)|同じ方法で参照できるように、別の反復子の型に関連付けられているクリティカルな型を指定するテンプレート ヘルパー クラス。|  
 |[move_iterator](../standard-library/move-iterator-class.md)|`move_iterator` オブジェクトには、型 `RandomIterator` のランダム アクセス反復子が格納されています。 これは、逆参照された場合を除いて、ランダム アクセス反復子と同じように動作します。 `operator*` の結果は `value_type&&:` に暗黙的にキャストされ、`rvalue reference` が作成されます。|  
 |[ostream_iterator](../standard-library/ostream-iterator-class.md)|このテンプレート クラスは、出力反復子オブジェクトを表します。 このクラスは、出力ストリームに **Type** クラスのオブジェクトを挿入します。これには、`basic_ostream`\<**Elem**, **Tr**> への **pointer** 型の、格納されたオブジェクトを介してアクセスします。|  
@@ -105,7 +110,7 @@ ms.lasthandoff: 10/24/2017
 |[reverse_iterator](../standard-library/reverse-iterator-class.md)|このテンプレート クラスは、逆方向でのみランダム アクセス反復子のように動作するオブジェクトを表します。|  
 |[unchecked_array_iterator](../standard-library/unchecked-array-iterator-class.md)|チェックを行わないランダム アクセス反復子を使用して配列にアクセスするクラス。 **注:** このクラスは、標準 C++ ライブラリの Microsoft 拡張機能です。 この関数を使用して実装されるコードは、Microsoft 拡張機能をサポートしない C++ 標準ビルド環境には移植できません。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)

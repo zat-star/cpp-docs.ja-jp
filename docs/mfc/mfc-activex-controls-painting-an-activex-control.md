@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC ActiveX controls [MFC], painting
 - MFC ActiveX controls [MFC], optimizing
 ms.assetid: 25fff9c0-4dab-4704-aaae-8dfb1065dee3
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b2adfa5ba1c327c36df27adfd966f740307ba8c4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a2a2dc7b0cebbfaa6f6fe7dbe7dc69e5d4f80121
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-activex-controls-painting-an-activex-control"></a>MFC ActiveX コントロール : ActiveX コントロールの描画
 この記事では、ActiveX コントロールの描画プロセスとプロセスを最適化する描画コードを変更する方法について説明します。 (を参照してください[コントロールの描画の最適化](../mfc/optimizing-control-drawing.md)ないコントロールを個別に描画を最適化する方法の手法が以前に選択した GDI オブジェクトを復元します。 すべてのコントロールの描画されたが、コンテナーが自動的に復元元のオブジェクトです。)  
@@ -111,6 +115,6 @@ ms.lasthandoff: 10/24/2017
   
      メタファイルを表示する別のウィンドウが表示されます。 スケーリングがコントロールのメタファイルに与える影響を確認するには、このウィンドウのサイズを変更することができます。 このウィンドウは、いつでも閉じることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
 

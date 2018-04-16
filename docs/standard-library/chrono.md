@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - chrono/std::chrono::nanoseconds
 - chrono/std::chrono::minutes
@@ -15,17 +16,20 @@ f1_keywords:
 - chrono/std::chrono::hours
 - chrono/std::chrono::milliseconds
 - chrono/std::chrono::microseconds
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 844de749-f306-482e-89bc-6f53c99c8324
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: fe8917c18937856a6ca310a2bbf8380840202699
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 255c70eeb29e8bedaeec43d9844ca41b42fb470a
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltchronogt"></a>&lt;chrono&gt;
 期間と時点を表し、操作するクラスと関数を定義するために、標準ヘッダー \<chrono> を含めます。  
@@ -47,7 +51,7 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="structs"></a>構造体  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[common_type 構造体](../standard-library/common-type-structure.md)|`duration` と `time_point` のインスタンス化のテンプレート クラス [common_type](../standard-library/common-type-class.md) の特殊化を表します。|  
 |[duration_values 構造体](../standard-library/duration-values-structure.md)|`duration` テンプレート パラメーター `Rep` に特定の値を指定します。|  
@@ -118,7 +122,7 @@ constexpr auto my_duration_unit = 108ms;
 ```  
 ## <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
 
 

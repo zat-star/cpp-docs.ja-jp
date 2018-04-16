@@ -15,35 +15,22 @@ dev_langs:
 helpviewer_keywords:
 - C4324
 ms.assetid: 420fa929-d9c0-40b4-8808-2d8ad3ca8090
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 00301ef878d7e48ab7c6b19f830399a4060fdfb5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6ef3e94e84621de6cd19bf7abba9c3d21b8d3eef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-4-c4324"></a>コンパイラの警告 (レベル 4) C4324
-'struct_name': __declspec(align()) のためにパディングされて構造体  
+'struct_name': __declspec(align()) により構造体がパッドされました  
   
- 指定するため、構造体の末尾の余白が追加されました、 [__declspec(align)](../../cpp/align-cpp.md)値。  
+ 指定したため、構造体の末尾にパディングが追加された、 [__declspec(align)](../../cpp/align-cpp.md)値。  
   
  たとえば、次のコードでは、C4324 が生成されます。  
   

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - Description method [C++]
 ms.assetid: 88191e24-4ee8-44a6-8c4c-3758e22e0548
-caps.latest.revision: 6
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 0d91f6fded1fa1c4ea4d44cadd0d9285913b5f42
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f3ed306a8eba4e76c2eefc738b617117188e85c8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="comerrordescription"></a>_com_error::Description
 **Microsoft 固有の仕様**  
@@ -47,5 +48,5 @@ _bstr_t Description( ) const;
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_com_error クラス](../cpp/com-error-class.md)

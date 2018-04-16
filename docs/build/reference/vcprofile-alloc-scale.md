@@ -1,25 +1,31 @@
 ---
-title: "VCPROFILE_ALLOC_SCALE |Microsoft ドキュメント"
+title: VCPROFILE_ALLOC_SCALE | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: VCPROFILE_ALLOC_SCALE
-dev_langs: C++
-helpviewer_keywords: VCPROFILE_ALLOC_SCALE environment variable
+f1_keywords:
+- VCPROFILE_ALLOC_SCALE
+dev_langs:
+- C++
+helpviewer_keywords:
+- VCPROFILE_ALLOC_SCALE environment variable
 ms.assetid: 5cb5ce27-f9b8-489b-b46c-d6e9bcab2d34
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ed767299778b65a7275bbfd225daaf46ec0e98be
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b7b441f41106544633bd691c409fa04c989146f0
+ms.sourcegitcommit: 5cd2e3e51ecc8d9fc0d889555b4bfa193ba1d6a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="vcprofileallocscale"></a>VCPROFILE_ALLOC_SCALE
 プロファイル データを保持するために割り当てられたメモリの量を変更します。  

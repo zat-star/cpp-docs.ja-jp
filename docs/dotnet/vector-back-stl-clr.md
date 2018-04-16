@@ -1,41 +1,46 @@
 ---
-title: "vector::back (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector::back"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "back メンバー [STL/CLR]"
+title: vector::back (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- cliext::vector::back
+dev_langs:
+- C++
+helpviewer_keywords:
+- back member [STL/CLR]
 ms.assetid: 5edb3fcc-74c5-4f04-b8dd-edab49ba45a0
 caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 8cee3410bc914ca1187a6daf93002f13dcb7b094
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# vector::back (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="vectorback-stlclr"></a>vector::back (STL/CLR)
 最後の要素にアクセスします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 reference back();  
 ```  
   
-## 解説  
- メンバー関数は空でない必要があります。被制御シーケンスの最後の要素への参照を返します。  確認する場合は、最後の要素にアクセスするために使用していることを確認します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数では、空でない必要があります、被制御シーケンスの最後の要素への参照を返します。 存在することがわかっている場合に、最後の要素をアクセスに使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_vector_back.cpp   
@@ -67,16 +72,19 @@ int main()
   
 ```  
   
-  **b c**  
-**back\(\) \= c**  
- **b X**   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+```Output  
+ a b c  
+back() = c  
+ a b x  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/vector >  
   
-## 参照  
- [ベクター](../dotnet/vector-stl-clr.md)   
- [vector::back\_item](../dotnet/vector-back-item-stl-clr.md)   
- [vector::front](../dotnet/vector-front-stl-clr.md)   
- [vector::front\_item](../dotnet/vector-front-item-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [vector::back_item (STL/CLR)](../dotnet/vector-back-item-stl-clr.md)   
+ [vector::front (STL/CLR)](../dotnet/vector-front-stl-clr.md)   
+ [vector::front_item (STL/CLR)](../dotnet/vector-front-item-stl-clr.md)

@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 ms.assetid: 61844163-de2f-419a-808e-04de39dfdddf
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cf2dcd59800617639f986a8bb33d962d7819cdfe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a2e21fc5372c7f5ee4602bf18e5ef58ee8a34d69
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="processor-manufacturer-programming-manuals"></a>プロセッサの製造元のプログラミング マニュアル
 この記事では、製造、販売、されたりしない Microsoft によってサポートされているプロセッサについてのプログラミング情報を含む可能性のある web サイトへのリンクを提供します。 Microsoft が所有またはいない web サイト、またはそれらのコンテンツを制御します。  
@@ -33,5 +37,5 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  どちらも[!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)]。 また、Microsoft マクロ アセンブラーは、すべてのプロセッサをサポートします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft Macro Assembler リファレンス](../../assembler/masm/microsoft-macro-assembler-reference.md)

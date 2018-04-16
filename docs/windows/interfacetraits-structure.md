@@ -1,25 +1,32 @@
 ---
-title: "InterfaceTraits 構造体 |Microsoft ドキュメント"
-ms.custom: 
+title: InterfaceTraits 構造体 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: implements/Microsoft::WRL::Details::InterfaceTraits
-dev_langs: C++
-helpviewer_keywords: InterfaceTraits structure
+f1_keywords:
+- implements/Microsoft::WRL::Details::InterfaceTraits
+dev_langs:
+- C++
+helpviewer_keywords:
+- InterfaceTraits structure
 ms.assetid: ede0c284-19a7-4892-9738-ff3da4923d0a
-caps.latest.revision: "5"
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 494942ce3c50889cae7a8867dc2b86ed6a609313
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 4b4b219091393b1195b60ae78347f952c2c9d37a
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="interfacetraits-structure"></a>InterfaceTraits 構造体
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -31,9 +38,7 @@ template<
    typename I0  
 >  
 struct __declspec(novtable) InterfaceTraits;  
-template<  
-   typename CloakedType  
->  
+template<typename CloakedType>  
 struct __declspec(novtable) InterfaceTraits<CloakedIid<CloakedType>>;  
   
 template<>  

@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2569
 ms.assetid: 092bed1e-f631-436c-9586-7750629f6fac
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e99e8192d12ed37cf6ec258df8c14f61003a750d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: cf7df87144b664463f577360dac13af2d3006c8b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2569"></a>コンパイラ エラー C2569
 'EnumOrUnion': 列挙および共用体は基底クラスとして使用できません  

@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: constants, C
+dev_langs:
+- C++
+helpviewer_keywords:
+- constants, C
 ms.assetid: 4158234c-e189-4e25-970f-52a04bc6380a
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c0d2a9034af95df7f73a5f1bd393947dc31b8547
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e46966d56084a615ffdf2763adefbcd1e416a6ef
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="summary-of-constants"></a>定数の概要
 `constant`:  
@@ -141,5 +146,5 @@ ms.lasthandoff: 10/24/2017
   
  *hexadecimal-escape-sequence hexadecimal-digit*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [字句文法](../c-language/lexical-grammar.md)

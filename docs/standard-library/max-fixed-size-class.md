@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - allocators/stdext::max_fixed_size
 - allocators/stdext::max_fixed_size::allocated
@@ -14,7 +15,8 @@ f1_keywords:
 - allocators/stdext::max_fixed_size::full
 - allocators/stdext::max_fixed_size::released
 - allocators/stdext::max_fixed_size::saved
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - stdext::max_fixed_size
 - stdext::max_fixed_size [C++], allocated
@@ -23,15 +25,17 @@ helpviewer_keywords:
 - stdext::max_fixed_size [C++], released
 - stdext::max_fixed_size [C++], saved
 ms.assetid: 8c8f4588-37e9-4579-8168-ba3553800914
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4a2e91effe6cf13ce7a03f8e69c6d67d622ebdcd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6476e3e6ce9c08501be598facbc29b4a55386834
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="maxfixedsize-class"></a>max_fixed_size クラス
 [freelist](../standard-library/freelist-class.md) オブジェクトを固定の最長値までに制限する[最大クラス](../standard-library/allocators-header.md) オブジェクトを記述します。  
@@ -65,7 +69,7 @@ class max_fixed_size
 |[released](#released)|フリー リスト上のメモリ ブロックの数を減らします。|  
 |[saved](#saved)|フリー リスト上のメモリ ブロックの数を減らします。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<allocators>  
   
  **名前空間:** stdext  
@@ -145,7 +149,7 @@ void saved();
 ### <a name="remarks"></a>コメント  
  このメンバー関数は、格納された値 `_Nblocks` を増やします。 このメンバー関数は、`cache_freelist::deallocate` によって、フリー リストにメモリ ブロックが置かれるたびに、呼び出されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<allocators>](../standard-library/allocators-header.md)
 
 

@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: mbrlen
+ms.topic: reference
+apiname:
+- mbrlen
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,19 +23,24 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
 apitype: DLLExport
-f1_keywords: mbrlen
-dev_langs: C++
-helpviewer_keywords: mbrlen function
+f1_keywords:
+- mbrlen
+dev_langs:
+- C++
+helpviewer_keywords:
+- mbrlen function
 ms.assetid: dde8dee9-e091-4c4c-81b3-639808885ae1
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d8276f716049915d1cd3b8c98074255d3327144c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c5c110c1fc5917614514b4e4fd7e474569026207
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="mbrlen"></a>mbrlen
 現在のロケールのマルチバイト文字を完成させるのに必要なバイト数を決定します。マルチバイト文字の途中から再開することが可能です。  
@@ -86,13 +93,13 @@ size_t mbrlen(
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |該当なし|該当なし|`mbrlen`|該当なし|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`mbrlen`|\<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  この例は、マルチバイト文字の解釈が現在のコード ページによってどのように異なるかを示し、`mbrlen` の再開機能の例を示します。  
@@ -156,6 +163,6 @@ Character count: 25
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)

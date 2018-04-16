@@ -8,24 +8,20 @@ ms.technology:
 - cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords:
-- auto_cpp
 dev_langs:
 - C++
-helpviewer_keywords:
-- automatic storage class [C++], auto keyword
-- auto keyword [C++]
 ms.assetid: 744a41c0-2510-4140-a1be-96257e722908
-caps.latest.revision: 14
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 0413fd47b486cf1613b7c249b93e6a3507a5577c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 48c21ec8304fa5c56bb29f07eea4bec169fbda83
+ms.sourcegitcommit: 4e01d36ffa64ea11bacf589f79d2f1df947e2510
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="auto-keyword"></a>auto キーワード
 `auto` キーワードは宣言指定子です。 ただし、C++ 標準ではこのキーワードの元の意味と変更後の意味が定義されます。 Visual C 2010 では、前に、`auto`キーワードで宣言内の変数、*自動*ストレージ クラスです。 つまり、ローカルの有効期間を持つ変数です。 Visual C 2010、始まる、`auto`キーワードは、その宣言で初期化式から推測される型の変数を宣言します。 [/Zc:auto &#91;-&#93;](../build/reference/zc-auto-deduce-variable-type.md)コンパイラ オプションの意味を制御する、`auto`キーワード。  
@@ -47,5 +43,5 @@ auto declarator initializer;
   
 -   [/Zc:auto (変数の型の推測)](../build/reference/zc-auto-deduce-variable-type.md)のどの定義をコンパイラに指示するコンパイラ オプションについて説明します、`auto`キーワードを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)

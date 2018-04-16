@@ -16,16 +16,17 @@ helpviewer_keywords:
 - class types [C++], unions as
 - union keyword [C++]
 ms.assetid: 25c4e219-fcbb-4b7b-9b64-83f3252a92ca
-caps.latest.revision: 16
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 3a4cbede49c32fd7ae60320fa13b9dd4e3c729a8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9371aaf978f2ea9498445d0124b9be16cf3b0fa7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unions"></a>Unions
 `union` とは、すべてのメンバーが同じメモリの場所を共有するユーザー定義の型です。 これは、任意のどの時点においても、共用体のメンバー一覧にあるオブジェクトがただ 1 つだけ共用体に含まれていることを意味します。 また、共用体のメンバー数には関係なく、最大のメンバーを格納するのに必要なメモリーだけが常に使用されることも意味します。  
@@ -661,7 +662,7 @@ union  {  member-list  }
   
 -   メンバー関数を含めることはできません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスと構造体](../cpp/classes-and-structs-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [class](../cpp/class-cpp.md)   

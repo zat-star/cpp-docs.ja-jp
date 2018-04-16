@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - cursor library [ODBC]
 - snapshots, support in ODBC
@@ -23,15 +25,18 @@ helpviewer_keywords:
 - ODBC, timestamp
 - positioning cursors
 ms.assetid: 6608db92-82b1-4164-bb08-78153c227be3
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: a704a4904683d2b1a448e9f5f327723b7681c96b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 3d849580ce3e9b264c854633c6bb9f274874c21d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="odbc-the-odbc-cursor-library"></a>ODBC: ODBC カーソル ライブラリ
 このトピックでは、ODBC カーソル ライブラリについて説明し、その使用方法について説明します。 詳細については次を参照してください:  
@@ -73,5 +78,5 @@ ms.lasthandoff: 10/24/2017
 ##  <a name="_core_using_the_cursor_library"></a>カーソル ライブラリを使用します。  
  データ ソースに接続する場合: を呼び出して[cdatabase::openex](../../mfc/reference/cdatabase-class.md#openex)または[cdatabase::open](../../mfc/reference/cdatabase-class.md#open) — データ ソースで、カーソル ライブラリを使用するかどうかを指定できます。 そのデータ ソースでのスナップショットを作成する場合は、指定、**読み込む**オプション、`dwOptions`パラメーターを`OpenEx`指定または**TRUE**の**データ**パラメーターを**開く**(既定値は**TRUE**)。 ODBC ドライバーは、ダイナセットをサポートしている場合を開くには、データ ソースでダイナセットを使う場合は、(ダイナセットを使う場合に必要ないくつかのドライバーの機能を使用)、カーソル ライブラリを使わないでください。 その場合は、指定しない**読み込む**で`OpenEx`かを指定**FALSE**の**データ**パラメーター **を開く**.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ODBC の基礎](../../data/odbc/odbc-basics.md)

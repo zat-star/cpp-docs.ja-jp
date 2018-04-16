@@ -1,32 +1,36 @@
 ---
-title: "コンパイラの警告 (レベル 3) C4101 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4101"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4101"
+title: "コンパイラの警告 (レベル 3) C4101 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4101
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4101
 ms.assetid: d98563cd-9dce-4aae-8f12-bd552a4ea677
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 162ad70f6d87ba6de51f677d95f1af7c1b6d8054
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 3) C4101
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'identifier' : ローカル変数は 1 度も使われていません。  
+# <a name="compiler-warning-level-3-c4101"></a>コンパイラの警告 (レベル 3) C4101
+'identifier': 参照されていないローカル変数  
   
- ローカル変数が一度も使用されていません。  この警告は、次のような明らかな状況で発生します。  
+ ローカル変数は使用されません。 この警告は、明らかな場合に発生します。  
   
 ```  
 // C4101a.cpp  
@@ -36,7 +40,7 @@ int i;   // C4101
 }  
 ```  
   
- ただし、クラスのインスタンスを通じて **static** なメンバー関数を呼び出す場合にも発生します。  
+ ただし、この警告がまた発生を呼び出すときに、**静的**メンバー関数は、クラスのインスタンスを経由します。  
   
 ```  
 // C4101b.cpp  
@@ -55,10 +59,10 @@ int main() {
 }  
 ```  
   
- ここでは、コンパイラは `si` に関する情報を使用して **static** 関数にアクセスしますが、**static** 関数の呼び出しにはクラスのインスタンスが不要であるため、この警告が発生します。  この警告を解決するには、次の方法があります。  
+ コンパイラはこのような状況で、に関する情報を使用して`si`にアクセスする、**静的**関数がクラスのインスタンスを呼び出すには必要ありません、**静的**関数です。 そのため、警告します。 この警告を解決するのには、次のことができます。  
   
--   コンストラクターを追加し、コンパイラがコンストラクター内で `func` の呼び出しに `si` のインスタンスを使用するようにします。  
+-   インスタンス、コンパイラが使用して、コンス トラクターを追加`si`への呼び出しで`func`です。  
   
--   `func` の定義から **static** キーワードを削除します。  
+-   削除、**静的**キーワードの定義から`func`です。  
   
--   `int y = S::func();` のように、**static** 関数を明示的に呼び出します。
+-   呼び出す、**静的**明示的に関数:`int y = S::func();`です。

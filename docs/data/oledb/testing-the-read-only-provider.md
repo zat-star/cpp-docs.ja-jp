@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - testing, OLE DB providers
 - testing providers
 - OLE DB providers, calling
 - OLE DB providers, testing
 ms.assetid: e4aa30c1-391b-41f8-ac73-5270e46fd712
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: ad2cf102902f62d03d4027c16b7d81b255b85875
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 49f86150afe9116909a137e97a0e04d5a7d54bac
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="testing-the-read-only-provider"></a>読み取り専用プロバイダーのテスト
 プロバイダーをテストするには、コンシューマーが必要です。 コンシューマーはプロバイダーと一致させる場合に役立ちます。 OLE DB コンシューマー テンプレートは、OLE DB の thin ラッパーでプロバイダーの COM オブジェクトと一致します。 これらのプロバイダーのデバッグが容易には、ソースは、コンシューマー テンプレートに含まれる、ためです。 コンシューマー テンプレートは、コンシューマー アプリケーションを開発する非常に小さく、高速の方法ではもです。  
@@ -50,7 +55,7 @@ ms.lasthandoff: 10/24/2017
   
  (このケース TestProvDlg.h) でダイアログ クラスのヘッダー ファイルを開きます。 ヘッダー ファイル (、クラス宣言の外部に次のコードを追加します。  
   
-```  
+```cpp
 ////////////////////////////////////////////////////////////////////////  
 // TestProvDlg.h  
   
@@ -73,13 +78,13 @@ END_COLUMN_MAP()
   
  ハンドラー関数を追加、**実行**ボタンをクリックして、CTRL キーを押しをダブルクリックして、**実行**ボタンをクリックします。 関数では、次のコードを配置します。  
   
-```  
+```cpp
 ///////////////////////////////////////////////////////////////////////  
 // TestProvDlg.cpp  
   
 void CtestProvDlg::OnRun()  
 {  
-   CCommand<CAccessor<CProvider> > table;  
+   CCommand<CAccessor<CProvider>> table;  
    CDataSource source;  
    CSession   session;  
   
@@ -119,7 +124,7 @@ if (table.Open(session, _T("c:\\samples\\myprov\\myData.txt")) != S_OK)
   
  文字列で渡す"c:\\\samples\\\myprov\\\MyData.txt"で、`table.Open`行です。 ステップ インする場合、`Open`この文字列が渡されるを参照する、呼び出し、`SetCommandText`プロバイダーのメソッドです。 なお、`ICommandText::Execute`メソッドは、その文字列を使用します。  
   
- データをフェッチする呼び出し`MoveNext`テーブルにします。 `MoveNext`呼び出し、 **irowset::getnextrows**、 `GetRowCount`、および`GetData`関数。 これ以上の行がある場合 (つまり、行セット内の現在位置がより大きい`GetRowCount`)、ループが終了します。  
+ データをフェッチする呼び出し`MoveNext`テーブルにします。 `MoveNext` 呼び出し、 **irowset::getnextrows**、 `GetRowCount`、および`GetData`関数。 これ以上の行がある場合 (つまり、行セット内の現在位置がより大きい`GetRowCount`)、ループが終了します。  
   
 ```  
 while (table.MoveNext() == S_OK)  
@@ -133,5 +138,5 @@ while (table.MoveNext() == S_OK)
   
  ビルドし、プログラムをテストできるようになりましたにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [単純な読み取り専用プロバイダーの機能の拡張](../../data/oledb/enhancing-the-simple-read-only-provider.md)

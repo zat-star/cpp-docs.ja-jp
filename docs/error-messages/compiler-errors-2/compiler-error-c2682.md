@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2682
-dev_langs: C++
-helpviewer_keywords: C2682
+f1_keywords:
+- C2682
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2682
 ms.assetid: 30c6a7c4-f5f7-4fe8-81a8-c48938521ab4
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3df494f5d78a862e260fa4edfe0a2740e4fc8cdd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bb8015b580958fd8bd70488f2894360708ccf30c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2682"></a>コンパイラ エラー C2682
 'type1' から 'type2' に変換する casting_operator を使用することはできません。  

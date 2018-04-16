@@ -1,32 +1,37 @@
 ---
-title: "Implements::CanCastTo メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Implements::CanCastTo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CanCastTo メソッド"
+title: "Implements::cancastto メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- implements/Microsoft::WRL::Implements::CanCastTo
+dev_langs:
+- C++
+helpviewer_keywords:
+- CanCastTo method
 ms.assetid: a8e85c7d-4dcd-446d-bebc-a97da46ce44a
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: f1607b5fc290c398350b9e5c9d81eb50088b61c5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Implements::CanCastTo メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="implementscancastto-method"></a>Implements::CanCastTo メソッド
 指定されたインターフェイスへのポインターを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 __forceinline HRESULT CanCastTo(  
@@ -35,23 +40,23 @@ __forceinline HRESULT CanCastTo(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `riid`  
- インターフェイス ID への参照。  
+ インターフェイス ID への参照  
   
  `ppv`  
- 、ポインター `riid`で指定されたインターフェイスに成功した。  
+ かどうかは成功すると、インターフェイスへのポインターで指定された`riid`です。  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は、エラーを示す E\_NOINTERFACE などの HRESULT を返します。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は S_OK、それ以外の場合、E_NOINTERFACE など、エラーを示す HRESULT。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  これは、QueryInterface 操作を実行する内部ヘルパー関数です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
- [Implements 構造体](../Topic/Implements%20Structure.md)
+## <a name="see-also"></a>参照  
+ [Implements 構造体](../windows/implements-structure.md)

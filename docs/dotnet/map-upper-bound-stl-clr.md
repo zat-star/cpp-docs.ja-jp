@@ -1,45 +1,50 @@
 ---
-title: "map::upper_bound (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::map::upper_bound"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "upper_bound メンバー [STL/CLR]"
+title: "map::upper_bound (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::map::upper_bound
+dev_langs:
+- C++
+helpviewer_keywords:
+- upper_bound member [STL/CLR]
 ms.assetid: d772b4a8-d0dc-439a-8b5b-3c91836d9256
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 1058ee24eccbc06cf01db804ca0e715bacea4cbc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# map::upper_bound (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="mapupperbound-stlclr"></a>map::upper_bound (STL/CLR)
 指定したキーに一致する範囲の末尾を検索します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 iterator upper_bound(key_type key);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  key  
- 検索するキー値。  
+ 検索対象のキー値。  
   
-## 解説  
- このメンバー関数は `key`に並べる等価である、被制御シーケンス内の最後の要素 `X` が決まります。  そのような要素が存在しない場合、または `X` が被制御シーケンスの最後の要素である場合、[map::end](../dotnet/map-end-stl-clr.md)`()`;を返します それ以外の場合は `X`を超える最初の要素を指定する反復子を返します。  被制御シーケンスで指定したキーに一致する要素のシーケンスの最後を現在の検索に使用されます。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数の最後の要素を決定する`X`をするのと同じ順序を持つ被制御シーケンス内`key`です。 このような要素が存在しない場合、または場合`X`、被制御シーケンスの最後の要素では返します[map::end (STL/CLR)](../dotnet/map-end-stl-clr.md)`()`;最初の要素を指定する反復子を返しますそれ以外の場合`X`. これを使用して、指定したキーと一致する、被制御シーケンス内で現在の要素のシーケンスの末尾を検索します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_map_upper_bound.cpp   
@@ -73,18 +78,21 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**upper\_bound\(L'x'\)\=\=end\(\) \= true**  
-**\*upper\_bound \(L'a\) \= \[b 2\]**  
-**\*upper\_bound \(L'b\) \= \[c 3\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+upper_bound(L'x')==end() = True  
+*upper_bound(L'a') = [b 2]  
+*upper_bound(L'b') = [c 3]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [マップ](../dotnet/map-stl-clr.md)   
- [map::count](../dotnet/map-count-stl-clr.md)   
- [map::equal\_range](../dotnet/map-equal-range-stl-clr.md)   
- [map::find](../Topic/map::find%20\(STL-CLR\).md)   
- [map::lower\_bound](../dotnet/map-lower-bound-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [map::count (STL/CLR)](../dotnet/map-count-stl-clr.md)   
+ [map::equal_range (STL/CLR)](../dotnet/map-equal-range-stl-clr.md)   
+ [map::find (STL/CLR)](../dotnet/map-find-stl-clr.md)   
+ [map::lower_bound (STL/CLR)](../dotnet/map-lower-bound-stl-clr.md)

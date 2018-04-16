@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C3896 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3896 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
-f1_keywords: C3896
-dev_langs: C++
-helpviewer_keywords: C3896
+f1_keywords:
+- C3896
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3896
 ms.assetid: eb8be0f6-5b4e-4d71-8285-8a2a94f8ba29
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 37390df0763856c671a078ee2fe4df984bd995d8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4aa98283d3c83f64ba461bf818a88599f97434e0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3896"></a>コンパイラ エラー C3896
 'member': 正しくない初期化子: このリテラル データ メンバーは 'nullptr' と共にのみ初期化できます  

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - dup2
 - dup
@@ -25,20 +26,23 @@ apitype: DLLExport
 f1_keywords:
 - dup
 - dup2
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - dup function
 - dup2 function
 ms.assetid: c7572170-47ff-4e0d-b9c3-10f0ab0ba40a
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 96e6c49f00c2b9a217d4a9cacc0ab5ba3a393698
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5ec5250b7ba775d8ba99df2eb39b634f6724772b
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="dup-dup2"></a>dup、dup2
 これらの POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_dup、_dup2](../../c-runtime-library/reference/dup-dup2.md) を使用してください。

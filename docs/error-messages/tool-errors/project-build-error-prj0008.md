@@ -1,33 +1,37 @@
 ---
-title: "プロジェクト ビルド エラー PRJ0008 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "PRJ0008"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PRJ0008"
+title: "プロジェクト ビルド エラー PRJ0008 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- PRJ0008
+dev_langs:
+- C++
+helpviewer_keywords:
+- PRJ0008
 ms.assetid: 6bf7f17a-d2a8-4826-99c7-d600d846952f
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1740b0cf1edfc90258de4fe26478298ddf2875c6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# プロジェクト ビルド エラー PRJ0008
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="project-build-error-prj0008"></a>プロジェクト ビルド エラー PRJ0008
 ファイル 'file' を削除できませんでした。  
   
- **ファイルが別のプロセスによって開かれていないこと、また書き込み禁止になっていないことを確認してください。**  
+ **ファイルが別のプロセスによって開かれていないと、書き込み保護されていないことを確認してください。**  
   
- リビルドまたはクリーンアップ中に、認識されたビルド用の中間ファイルと出力ファイル、および [&#91;構成プロパティ&#93; フォルダーの &#91;全般&#93; プロパティ ページ](../Topic/General%20Property%20Page%20\(Project\).md)の \[消去時に削除する拡張子\] プロパティで指定したワイルドカードと一致するファイルが、Visual C\+\+ によってすべて削除されます。  
+ Visual C がすべて正常中間出力ファイルをビルド、およびワイルドカードの仕様を満たすすべてのファイルを削除、再構築中に、または削除、**消去時に削除する拡張子**プロパティに、[全般構成の設定 プロパティ ページ](../../ide/general-property-page-project.md)です。  
   
- このエラーが発生するのは、Visual C\+\+ がファイルを削除できない場合です。  このエラーを解決するには、ユーザーがビルドを実行できるように、ファイルとそのディレクトリを書き込み可能に指定してください。
+ Visual C がファイルを削除できない場合は、このエラーが表示されます。 エラーを解決するには、ファイルとそのディレクトリを書き込み可能、ビルドを実行するユーザー用です。

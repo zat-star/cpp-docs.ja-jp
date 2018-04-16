@@ -1,13 +1,15 @@
 ---
-title: "関数インライン展開の問題 |Microsoft ドキュメント"
-ms.custom: 
+title: 関数インライン展開の問題 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - /Ob1 C++ compiler option
 - inline functions, problems
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - -Ob2 C++ compiler option
 - function inlining problems
 ms.assetid: 65d59943-4b3c-4a43-aeb6-dccbf7686740
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 4817093bf52ab5398f1d4a788b96bcff16384c1f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 97ffa56fc748eea8f65f5fe79c7a9defa7238f82
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="function-inlining-problems"></a>関数インライン展開の問題
 関数のインライン展開を使用している必要があります。  
@@ -100,5 +104,5 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リンカー ツール エラー LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)

@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-dev_langs: C++
+ms.topic: reference
+dev_langs:
+- C++
 helpviewer_keywords:
 - data [C++], fetching
 - rowsets [C++], fetching
 - fetching
 - OLE DB consumer templates [C++], fetching data
 ms.assetid: b07f747f-9855-4f27-a03d-b1d5b10fa284
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5ae486150a23af4c1aa04177650d675087ce4e16
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 1741f761db47154e6b1e151c6a4a3fa9788e7ad2
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="fetching-data"></a>データのフェッチ
 データ ソース、セッション、および行セット オブジェクトを開いた後は、データをフェッチできます。 で使用するアクセサーの種類によっては、列をバインドする必要があります。  
@@ -99,5 +104,5 @@ ms.lasthandoff: 10/24/2017
         }  
         ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [OLE DB コンシューマー テンプレートの操作](../../data/oledb/working-with-ole-db-consumer-templates.md)

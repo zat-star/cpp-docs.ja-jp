@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.debug
-dev_langs: C++
+f1_keywords:
+- c.debug
+dev_langs:
+- C++
 helpviewer_keywords:
 - debugging [CRT], using macros
 - macros, debugging with
@@ -16,15 +19,17 @@ helpviewer_keywords:
 - debug macros
 - debugging [CRT], run-time routines
 ms.assetid: cb4d2664-10f3-42f7-a516-595558075471
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 25bbbfae7e12154f9e64540ce9f5e8bdb7ebef42
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 158a3b782ffedc7bd206f400c066c052062ad402
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="debug-routines"></a>デバッグ ルーチン
 C ランタイム ライブラリのデバッグ バージョンには、プログラムのデバッグを容易にする多くの診断サービスが用意されており、開発者は次のことが可能になります。  
@@ -41,7 +46,7 @@ C ランタイム ライブラリのデバッグ バージョンには、プロ�
   
 ### <a name="debug-versions-of-the-c-run-time-library-routines"></a>C ランタイム ライブラリ ルーチンのデバッグ バージョン  
   
-|ルーチン|用途|  
+|ルーチンによって返される値|用途|  
 |-------------|---------|  
 |[_ASSERT](../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)|式を評価し、結果が FALSE の場合はデバッグ レポートを生成します|  
 |[_ASSERTE](../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)|`_ASSERT` に似ていますが、生成されるレポートに失敗した式が含まれます|  
@@ -113,6 +118,6 @@ C ランタイム ライブラリのデバッグ バージョンには、プロ�
 |C の [abort](../c-runtime-library/reference/abort.md) ルーチン|C++ の [delete](../cpp/delete-operator-cpp.md) 演算子|  
 |C の [assert](../c-runtime-library/reference/assert-macro-assert-wassert.md) ルーチン|C++ の [new](../cpp/new-operator-cpp.md) 演算子|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)   
  [ランタイム エラー チェック](../c-runtime-library/run-time-error-checking.md)

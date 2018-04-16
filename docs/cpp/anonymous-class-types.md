@@ -14,16 +14,17 @@ helpviewer_keywords:
 - class types [C++], anonymous
 - anonymous class types
 ms.assetid: 9ba667b2-8c2a-4c29-82a6-fa120b9233c8
-caps.latest.revision: 7
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 29313d499f7459175c9dc2331148cdd6401e5e53
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2f2b3f46a463eed0d330f7e22975197f76c900b0
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="anonymous-class-types"></a>匿名クラス型
 クラスは匿名にすることができます: 宣言することがなく、*識別子*です。 これは、次のようにクラス名を `typedef` で置き換える場合に役立ちます。  
@@ -71,7 +72,7 @@ int i = ptv.iValue;
   
 ## <a name="anonymous-structs"></a>匿名構造体  
   
-### <a name="microsoft-specific"></a>Microsoft 固有の仕様 →  
+### <a name="microsoft-specific"></a>Microsoft 固有の仕様  
  Microsoft の C 拡張機能を使用すれば、名前を指定せずに、別の構造体内に構造体変数を宣言できます。 このような入れ子の構造体を "匿名構造体" といいます。 C++ では匿名構造体を使用できません。  
   
  匿名構造体のメンバーには、包含構造体のメンバーと同じようにアクセスできます。  
@@ -105,4 +106,3 @@ int main()
   
 **Microsoft 固有の仕様はここまで**  
   
-

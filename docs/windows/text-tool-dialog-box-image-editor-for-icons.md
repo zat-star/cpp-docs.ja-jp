@@ -4,24 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.editors.texttool
-dev_langs: C++
+f1_keywords:
+- vc.editors.texttool
+dev_langs:
+- C++
 helpviewer_keywords:
 - text, adding to an image
 - Text Tool dialog box
 ms.assetid: a6036ef4-1871-40db-8239-6ddbe8f422f5
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: f913d3a7eea55547558602cb2ce37fd623434989
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: ed1a15dbe8947bc52c8a91d94ca12fee6badcf77
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="text-tool-dialog-box-image-editor-for-icons"></a>[テキスト ツール] ダイアログ ボックス (アイコン用イメージ エディター)
 使用して、**テキスト ツール**テキスト カーソル、ビットマップ、またはアイコン リソースを追加する ダイアログ ボックス。  
@@ -39,9 +45,9 @@ ms.lasthandoff: 10/24/2017
   
  右クリック、**テキスト ツール** ダイアログ ボックスは、Windows の標準コマンドの一覧を含む既定のショートカット メニューにアクセスします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  なし  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グラフィカル リソースの編集](../windows/editing-graphical-resources-image-editor-for-icons.md)
 

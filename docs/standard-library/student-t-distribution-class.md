@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::student_t_distribution
 - random/std::student_t_distribution::result_type
@@ -17,7 +18,8 @@ f1_keywords:
 - random/std::student_t_distribution::min
 - random/std::student_t_distribution::max
 - random/std::student_t_distribution::param_type
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::student_t_distribution [C++]
 - std::student_t_distribution [C++], result_type
@@ -28,15 +30,17 @@ helpviewer_keywords:
 - std::student_t_distribution [C++], max
 - std::student_t_distribution [C++], param_type
 ms.assetid: 87b48127-9311-4d07-95df-833ed46bf0b1
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 5ac4d4e6a27c7686cb6a8f34209870fe3f89c265
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 744f5294830bdf19d4ace2b1c2925380684f3c92
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="studenttdistribution-class"></a>student_t_distribution クラス
 スチューデントの *t* 分布を生成します。  
@@ -83,9 +87,9 @@ public:
   
  プロパティ関数 `n()` は、格納されている分布パラメーター `n` の値を返します。  
   
- 分布クラスとそのメンバーの詳細については、「[\<random>](../standard-library/random.md)」を参照してください。  
+ 分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
   
- スチューデントの *t* 分布の詳細については、Wolfram MathWorld の記事「[Students t-Distribution](http://go.microsoft.com/fwlink/LinkId=401094)」(スチューデントの t 分布) を参照してください。  
+ スチューデントの *t* 分布の詳細については、Wolfram MathWorld の記事「[Students t-Distribution](http://go.microsoft.com/fwlink/p/?linkid=401094)」(スチューデントの t 分布) を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -162,7 +166,7 @@ Distribution for 10 samples:
     10: 92.7084335614  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -214,7 +218,7 @@ struct param_type {
   
  この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
 
 

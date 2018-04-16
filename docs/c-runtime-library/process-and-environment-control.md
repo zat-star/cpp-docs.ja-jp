@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: c.programs
-dev_langs: C++
+f1_keywords:
+- c.programs
+dev_langs:
+- C++
 helpviewer_keywords:
 - processes, stopping
 - processes, administrative tasks
@@ -17,22 +20,24 @@ helpviewer_keywords:
 - environment control routines
 - process control routines
 ms.assetid: 7fde74c3-c2a6-4d15-84b8-092160d60c3e
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b60b1544e277ef4fece8368b6913cf686960dcaa
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cee24f0e5142af37681bd293a3be3600ddbd1cc4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="process-and-environment-control"></a>プロセス制御と環境制御
 プログラム内からプロセスを開始、停止、および管理するには、プロセス制御ルーチンを使用します。 オペレーティング システム環境に関する情報を取得および変更するには、環境制御ルーチンを使用します。  
   
 ### <a name="process-and-environment-control-functions"></a>プロセス制御と環境制御の関数  
   
-|ルーチン|用途|  
+|ルーチンによって返される値|使用|  
 |-------------|---------|  
 |[abort](../c-runtime-library/reference/abort.md)|バッファーをフラッシュしたり、`atexit` および `_onexit` によって登録された関数を呼び出したりせずにプロセスを中止する|  
 |[assert](../c-runtime-library/reference/assert-macro-assert-wassert.md)|論理エラーのテスト|  
@@ -85,14 +90,14 @@ ms.lasthandoff: 10/24/2017
   
 |関数|PATH 変数を使用してファイルを検索する|引数渡し規約|環境設定|  
 |---------------|--------------------------------------|----------------------------------|--------------------------|  
-|`_execl, _spawnl`|いいえ|リスト|呼び出し元プロセスから継承|  
-|`_execle, _spawnle`|いいえ|リスト|最後の引数として渡された新しいプロセスの環境のテーブルへのポインター|  
-|`_execlp, _spawnlp`|はい|リスト|呼び出し元プロセスから継承|  
-|`_execlpe, _spawnlpe`|はい|リスト|最後の引数として渡された新しいプロセスの環境のテーブルへのポインター|  
-|`_execv, _spawnv`|いいえ|配列|呼び出し元プロセスから継承|  
-|`_execve, _spawnve`|いいえ|配列|最後の引数として渡された新しいプロセスの環境のテーブルへのポインター|  
-|`_execvp, _spawnvp`|はい|配列|呼び出し元プロセスから継承|  
-|`_execvpe, _spawnvpe`|はい|配列|最後の引数として渡された新しいプロセスの環境のテーブルへのポインター|  
+|`_execl, _spawnl`|×|リスト|呼び出し元プロセスから継承|  
+|`_execle, _spawnle`|×|リスト|最後の引数として渡された新しいプロセスの環境のテーブルへのポインター|  
+|`_execlp, _spawnlp`|[はい]|リスト|呼び出し元プロセスから継承|  
+|`_execlpe, _spawnlpe`|[はい]|リスト|最後の引数として渡された新しいプロセスの環境のテーブルへのポインター|  
+|`_execv, _spawnv`|×|配列|呼び出し元プロセスから継承|  
+|`_execve, _spawnve`|×|配列|最後の引数として渡された新しいプロセスの環境のテーブルへのポインター|  
+|`_execvp, _spawnvp`|[はい]|配列|呼び出し元プロセスから継承|  
+|`_execvpe, _spawnvpe`|[はい]|配列|最後の引数として渡された新しいプロセスの環境のテーブルへのポインター|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)

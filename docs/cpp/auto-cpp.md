@@ -4,20 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
+dev_langs:
+- C++
+f1_keywords:
+- auto_CPP
+- auto
+helpviewer_keywords:
+- auto keyword [C++]
 ms.assetid: e9d495d7-601c-4547-b897-998389a311f4
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 66c4b9b5e9ef5226e1d2bb0a5fbaee296817c22d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 334006e8ad06bdc174922d57d97d2d0f0335cf34
+ms.sourcegitcommit: 4e01d36ffa64ea11bacf589f79d2f1df947e2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="auto-c"></a>自動 (C++)
 宣言された変数の型を、その初期化式から推測します。  
@@ -127,14 +136,14 @@ int main()
 |[C3530](../error-messages/compiler-errors-2/compiler-error-c3530.md)|`auto` キーワードを他の型指定子と組み合わせることはできません。|  
 |[C3531](../error-messages/compiler-errors-2/compiler-error-c3531.md)|`auto` キーワードで宣言されたシンボルには初期化子が必要です。|  
 |[C3532](../error-messages/compiler-errors-2/compiler-error-c3532.md)|`auto` キーワードを不適切に使用して型を宣言しました。 たとえば、メソッドの戻り値の型または配列を宣言しました。|  
-|[C3533](../error-messages/compiler-errors-2/compiler-error-c3533.md)、 [C3539](../error-messages/compiler-errors-2/compiler-error-c3539.md)|パラメーターまたはテンプレート引数は `auto` キーワードで宣言することはできません。|  
+|[C3533](../error-messages/compiler-errors-2/compiler-error-c3533.md), [C3539](../error-messages/compiler-errors-2/compiler-error-c3539.md)|パラメーターまたはテンプレート引数は `auto` キーワードで宣言することはできません。|  
 |[C3535](../error-messages/compiler-errors-2/compiler-error-c3535.md)|メソッドまたはテンプレート パラメーターは `auto` キーワードで宣言することはできません。|  
 |[C3536](../error-messages/compiler-errors-2/compiler-error-c3536.md)|シンボルは初期化前に使用することはできません。 実際には、変数はその変数自体を初期化するために使用できないことを意味します。|  
 |[C3537](../error-messages/compiler-errors-2/compiler-error-c3537.md)|`auto` キーワードで宣言された型にはキャストできません。|  
 |[C3538](../error-messages/compiler-errors-2/compiler-error-c3538.md)|`auto` キーワードで宣言されている宣言子リスト内のすべてのシンボルは、同じ型に解決する必要があります。 詳細については、次を参照してください。[宣言と定義](declarations-and-definitions-cpp.md)です。|  
-|[C3540](../error-messages/compiler-errors-2/compiler-error-c3540.md)、 [C3541](../error-messages/compiler-errors-2/compiler-error-c3541.md)|[Sizeof](../cpp/sizeof-operator.md)と[typeid](../windows/typeid-cpp-component-extensions.md)演算子で宣言されたシンボルに適用することはできません、`auto`キーワード。|  
+|[C3540](../error-messages/compiler-errors-2/compiler-error-c3540.md), [C3541](../error-messages/compiler-errors-2/compiler-error-c3541.md)|[Sizeof](../cpp/sizeof-operator.md)と[typeid](../windows/typeid-cpp-component-extensions.md)演算子で宣言されたシンボルに適用することはできません、`auto`キーワード。|  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  以下のコード片は、`auto` キーワードを使用するためのいくつかの方法を示しています。  
   
  次の宣言は同等です。 最初のステートメントでは、変数 `j` は `int` 型として宣言されます。 2 番目のステートメントでは、初期化式 (0) が整数であるため、変数 `k` は型 `int` であると推測されます。  
@@ -217,7 +226,7 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto キーワード](../cpp/auto-keyword.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [/Zc:auto (変数の型の推測)](../build/reference/zc-auto-deduce-variable-type.md)   

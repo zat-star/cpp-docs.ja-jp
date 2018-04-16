@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - MFC
 - class libraries [MFC], MFC
 - MFC, application development
 ms.assetid: 617e9945-9bb3-471d-a3ba-e235fcfb55d1
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cc2da54365af1d09d92608c4e6f37c3b04fd7230
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 97f3b609a68071f34e1841128a66b5518e1b17db
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="general-mfc-topics"></a>MFC の一般的なトピック
 ここでは、MFC (Microsoft Foundation Class) ライブラリについて説明します。また、MFC フレームワークとその主要なコンポーネント、およびサブシステムの概要を示します。  
@@ -63,6 +67,6 @@ ms.lasthandoff: 10/24/2017
   
  ATL については、次を参照してください。[アクティブ テンプレート ライブラリ リファレンス](../atl/atl-class-overview.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ウィンドウ オブジェクトの操作](../mfc/working-with-window-objects.md)
 

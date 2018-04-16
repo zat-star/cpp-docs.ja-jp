@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -25,18 +26,22 @@ f1_keywords:
 - ATLSECURITY/ATL::CAcl::RemoveAces
 - ATLSECURITY/ATL::CAcl::SetEmpty
 - ATLSECURITY/ATL::CAcl::SetNull
-dev_langs: C++
-helpviewer_keywords: CAcl class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CAcl class
 ms.assetid: 20bcb9af-dc1c-4737-b923-3864776680d6
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2b49d7bf064d65e9a160311d23b304745f4d1b04
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cd3b17c3cf74e87b709353a8dd2cd00c5355c7fc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cacl-class"></a>CAcl クラス
 このクラスは、用のラッパー、 `ACL` (アクセス制御リスト) 構造体。  
@@ -107,7 +112,7 @@ class CAcl
   
  Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="caccessmaskarray"></a>CAcl::CAccessMaskArray  
@@ -356,6 +361,6 @@ void SetNull() throw();
 ### <a name="remarks"></a>コメント  
  `CAcl`を空または NULL に設定できます。 2 つの状態は異なります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティに関するグローバル関数](../../atl/reference/security-global-functions.md)

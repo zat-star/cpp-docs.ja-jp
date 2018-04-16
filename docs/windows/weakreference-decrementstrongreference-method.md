@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: implements/Microsoft::WRL::Details::WeakReference::DecrementStrongReference
-dev_langs: C++
-helpviewer_keywords: DecrementStrongReference method
+f1_keywords:
+- implements/Microsoft::WRL::Details::WeakReference::DecrementStrongReference
+dev_langs:
+- C++
+helpviewer_keywords:
+- DecrementStrongReference method
 ms.assetid: 97d70d9f-41b8-4f8d-a6fa-4137cc4f9029
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8526385764206b3bb72691fa0ed5232f8f6edf8d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: bda6de03ce17db7ebac751865686c3e74a26d0d8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="weakreferencedecrementstrongreference-method"></a>WeakReference::DecrementStrongReference メソッド
 WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
@@ -38,11 +45,11 @@ ULONG DecrementStrongReference();
 ## <a name="return-value"></a>戻り値  
  デクリメントされた強力な参照カウントします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** implements.h  
   
  **Namespace:** Microsoft::WRL::Details  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [WeakReference クラス](../windows/weakreference-class1.md)  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

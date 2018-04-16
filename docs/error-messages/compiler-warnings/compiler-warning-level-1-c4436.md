@@ -1,41 +1,45 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4436 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
+title: "コンパイラの警告 (レベル 1) C4436 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+dev_langs:
+- C++
 ms.assetid: 2b54a1fc-c9c6-4cc9-90be-faa44fc715d5
-caps.latest.revision: 2
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 2
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1018d678b6105f2d727f7806326218c168d8f728
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 1) C4436
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コンストラクターやデストラクター" class2」への仮想基本クラス「class1 "から dynamic\_cast が \/vd2 で部分的にコンパイルされたオブジェクトまたは定義します。\#pragma vtordisp \(2\) 有効に" class2」が失敗する  
+# <a name="compiler-warning-level-1-c4436"></a>コンパイラの警告 (レベル 1) C4436
+仮想ベース 'class1' から 'class2' コンス トラクターまたはデストラクターでへの dynamic_cast でした/vd2 を部分的に構築されるオブジェクト コンパイルに失敗または #pragma vtordisp(2) と ' class2' を有効に定義します。  
   
- コンパイラは、次の特性を持つ `dynamic_cast` 操作が発生しました。  
+ コンパイラが発生しました、`dynamic_cast`次の特性を持つ操作します。  
   
--   キャストは、基本クラスのポインターから派生クラスのポインターです。  
+-   キャストは、基底クラスへのポインターから派生クラスへのポインターです。  
   
--   派生クラスは、基本クラスを継承します。  
+-   派生クラスは、事実上、基本クラスを継承します。  
   
--   派生クラスは、仮想基本クラスの `vtordisp` フィールドがありません。  
+-   派生クラスがない、`vtordisp`仮想ベースのフィールドです。  
   
--   キャストは派生クラスのコンストラクターまたはデストラクター、さらに派生クラスから継承するクラスにあります。  
+-   コンス トラクターまたは、派生クラスのデストラクターで、キャストがあるまたはをさらにいくつかのクラスが派生クラスから継承します。  
   
- 警告は部分的されたオブジェクトで実行されている場合 `dynamic_cast` が正しく機能しない可能性があることを示します。これは、派生のコンストラクターとデストラクターが、さらに派生オブジェクトのサブオブジェクトを使用した場合に発生します。警告で指定した派生クラスはそれ以上の派生である、警告は無視できます。  
+ 警告を示します、`dynamic_cast`部分的に構築されるオブジェクトで動作している場合は正しくを実行可能性があります。  さらに派生オブジェクトの下位のオブジェクトで動作している派生コンス トラクターとデストラクターを発生します。  警告でという名前の派生クラスがさらにされていない場合、派生した、警告は無視できます。  
   
-## 使用例  
- 次の例では C4436 を生成し、`vtordisp` されないフィールドから発生したコード生成に関する問題を示します。  
+## <a name="example"></a>例  
+ 次の例は、C4436 を生成し、欠落しているから発生するコードの生成の問題を示しています`vtordisp`フィールドです。  
   
 ```cpp  
 // C4436.cpp  
@@ -77,7 +81,7 @@ int main()
 }  
 ```  
   
-## 参照  
- [dynamic\_cast 演算子](../../cpp/dynamic-cast-operator.md)   
- [vtordisp](../Topic/vtordisp.md)   
- [コンパイラの警告 \(レベル 4\) C4437](../../error-messages/compiler-warnings/compiler-warning-level-4-c4437.md)
+## <a name="see-also"></a>参照  
+ [dynamic_cast 演算子](../../cpp/dynamic-cast-operator.md)   
+ [vtordisp](../../preprocessor/vtordisp.md)   
+ [コンパイラの警告 (レベル 4) C4437](../../error-messages/compiler-warnings/compiler-warning-level-4-c4437.md)

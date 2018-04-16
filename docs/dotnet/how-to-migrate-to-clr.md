@@ -1,72 +1,77 @@
 ---
-title: "方法: /clr に移行する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/clr コンパイラ オプション [C++], 移植"
-  - "コンパイル (ネイティブ コードを) [C++]"
-  - "相互運用 [C++], /clr コンパイラ オプション"
-  - "相互運用性 [C++], /clr コンパイラ オプション"
-  - "移行 [C++], /clr コンパイラ オプション"
-  - "アップグレード (Visual C++ アプリケーションの), /clr コンパイラ オプション"
+title: "方法: clr への移行 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs:
+- C++
+helpviewer_keywords:
+- upgrading Visual C++ applications, /clr compiler option
+- compiling native code [C++]
+- interoperability [C++], /clr compiler option
+- interop [C++], /clr compiler option
+- migration [C++], /clr compiler option
+- /clr compiler option [C++], porting to
 ms.assetid: c9290b8b-436a-4510-8b56-eae51f4a9afc
-caps.latest.revision: 37
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 37
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: cd40443bc656b0e0ec02b1ec05b604a758628321
+ms.sourcegitcommit: 185e11ab93af56ffc650fe42fb5ccdf1683e3847
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/29/2018
 ---
-# 方法: /clr に移行する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、ネイティブ コードを **\/clr** でコンパイルしたときに発生する問題について説明します \(詳細については、「[\/clr \(共通言語ランタイムのコンパイル\)](../build/reference/clr-common-language-runtime-compilation.md)」を参照してください\)。  **\/clr** では、アンマネージ モジュールとの互換性を維持しながら、Visual C\+\+ モジュールから .NET アセンブリを呼び出したり .NET アセンブリから Visual C\+\+ モジュールを呼び出したりできます。  **\/clr** でコンパイルする利点の詳細については、「[混在 \(ネイティブおよびマネージ\) アセンブリ](../Topic/Mixed%20\(Native%20and%20Managed\)%20Assemblies.md)」および「[ネイティブと .NET の相互運用性](../Topic/Native%20and%20.NET%20Interoperability.md)」を参照してください。  
+# <a name="how-to-migrate-to-clr"></a>方法: /clr に移行する
+このトピックのネイティブ コードをコンパイルするときに発生する問題について説明**/clr** (を参照してください[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)詳細については)。 **/clr**により、Visual C モジュールを起動し、アンマネージ モジュールとの互換性を維持しながら、.NET アセンブリから呼び出すことです。 参照してください[混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)と[ネイティブ モードと .NET の相互運用性](../dotnet/native-and-dotnet-interoperability.md)でコンパイルした場合の利点について**/clr**です。  
   
-## \/clr でライブラリ プロジェクトをコンパイルする場合の既知の問題  
- Visual Studio では、ライブラリ プロジェクトを **\/clr** でコンパイルすると次のような既知の問題が発生します。  
+## <a name="known-issues-compiling-library-projects-with-clr"></a>/clr でライブラリ プロジェクトをコンパイルする場合の既知の問題  
+ ライブラリ プロジェクトをコンパイルするときに、visual Studio は、既知の問題を含む**/clr**:  
   
--   コードで [CRuntimeClass::FromName](../Topic/CRuntimeClass::FromName.md) を使用することにより、実行時に型を照会できます。  ただし、\(**\/clr** を指定してコンパイルされた\) MSIL .dll 内の型の場合、静的コンストラクターがマネージ .dll で実行される前に [CRuntimeClass::FromName](../Topic/CRuntimeClass::FromName.md) の呼び出しが行われると、呼び出しに失敗することがあります \(この問題は、コードがマネージ .dll で実行された後に FromName 呼び出しが行われた場合は発生しません\)。  この問題を回避するには、マネージ静的コンストラクターを強制的に構築します。それには、マネージ .dll で関数を定義してエクスポートし、その関数をネイティブ MFC アプリケーションから呼び出します。  たとえば、次のようになります。  
+-   コードの実行時に型[で](../mfc/reference/cruntimeclass-structure.md#fromname)です。 ただし、型がある場合、MSIL .dll 内 (でコンパイルされた**/clr**) への呼び出し`FromName`(は表示されませんこの問題のコードがある後に:jake 呼び出しが発生した場合、マネージ .dll で静的コンス トラクターを実行する前に発生した場合に失敗する可能性があります実行、マネージ .dll で)。 この問題を回避するには、マネージ静的コンストラクターを強制的に構築します。それには、マネージ .dll で関数を定義してエクスポートし、その関数をネイティブ MFC アプリケーションから呼び出します。 例:  
   
     ```  
-    // Extension DLL Header file:  
+    // MFC extension DLL Header file:  
     __declspec( dllexport ) void EnsureManagedInitialization () {  
        // managed code that won't be optimized away  
        System::GC::KeepAlive(System::Int32::MaxValue);  
     }  
     ```  
   
-## Visual C\+\+ でのコンパイル  
- プロジェクトのモジュールに対して **\/clr** を使用する前に、まずネイティブ プロジェクトを Visual Studio 2010 でコンパイルおよびリンクしてください。  
+## <a name="compile-with-visual-c"></a>Visual C++ でのコンパイル  
+ 使用する前に**/clr**プロジェクト内の任意のモジュールで最初にコンパイルし、Visual Studio 2010 でネイティブ プロジェクトをリンクします。  
   
- 以下の手順に従って順番に操作すると、**\/clr** コンパイルを簡単に実行できます。  これらの手順では、手順ごとにプロジェクトをコンパイルして実行することが重要です。  
+ 次の手順では、順番が最も簡単なパスを指定、 **/clr**コンパイルします。 これらの手順では、手順ごとにプロジェクトをコンパイルして実行することが重要です。  
   
-### Visual C\+\+ 2003 以前のバージョン  
- Visual C\+\+ 2003 以前のバージョンから Visual Studio 2010 にアップグレードする場合、Visual C\+\+ 2003 の C\+\+ 標準に対する準拠が強化されたことに関連するコンパイル エラーが発生することがあります。  
+### <a name="versions-prior-to-visual-c-2003"></a>Visual C++ 2003 以前のバージョン  
+ Visual C++ 2003 以前のバージョンから Visual Studio 2010 にアップグレードする場合、Visual C++ 2003 の C++ 標準に対する準拠が強化されたことに関連するコンパイル エラーが発生することがあります。  
   
-### Visual C\+\+ 2003 からのアップグレード  
- 以前に Visual C\+\+ 2003 で作成されたプロジェクトも、まず **\/clr** を使用しないでコンパイルする必要があります。これは、現在の Visual Studio では ANSI\/ISO 準拠が強化され、いくつか大きな変更があるためです。  最も注意が必要な変更は、[CRT のセキュリティ機能](../Topic/Security%20Features%20in%20the%20CRT.md) です。  CRT を使用するコードでは、廃止警告が生成される可能性があります。  これらの警告は抑制できますが、新しい [CRT 関数のセキュリティが強化されたバージョン](../c-runtime-library/security-enhanced-versions-of-crt-functions.md) の方がセキュリティに優れ、コード内のセキュリティ上の問題が明らかになる場合もあるので、新しいバージョンへの移行をお勧めします。  
+### <a name="upgrading-from-visual-c-2003"></a>Visual C++ 2003 からのアップグレード  
+ せず以前 Visual C 2003 で作成されたプロジェクトをコンパイルするときも、まず**/clr**ように Visual Studio が向上しています ANSI/ISO 準拠といくつかの互換性に影響する変更です。 最も注意が必要な可能性の変更が[CRT のセキュリティ機能](../c-runtime-library/security-features-in-the-crt.md)します。 CRT を使用するコードでは、廃止警告が生成される可能性があります。 これらの警告できます、抑制されたが、新しい移行[セキュリティが強化されたバージョンの CRT 関数](../c-runtime-library/security-enhanced-versions-of-crt-functions.md)をお勧め、セキュリティが向上し、コード内のセキュリティの問題を表示することがあります。  
   
-### C\+\+ マネージ拡張からのアップグレード  
- C\+\+ のマネージ拡張を使用した Visual C\+\+ .NET または Visual C\+\+ 2003 で作成されたプロジェクトは、マネージ拡張が廃止されたため、最低 1 つのプロジェクト設定を変更する必要があります。  その結果、C\+\+ マネージ拡張で作成されたコードは **\/clr** ではコンパイルされません。  代わりに、**\/clr:oldSyntax** を使用してください。  
+### <a name="upgrading-from-managed-extensions-for-c"></a>C++ マネージ拡張からのアップグレード  
+ Visual Studio 2005 以降、C++ マネージ拡張で作成されたコード コンパイルされません**/clr**です。  
   
-## C コードから C\+\+ への変換  
- Visual Studio では C ファイルをコンパイルできますが、**\/clr** でコンパイルするには、これらのファイルを C\+\+ に変換する必要があります。  実際のファイル名を変更する必要はなく、**\/Tp** を使用できます \(「[\/Tc、\/Tp、\/TC、\/TP \(ソース ファイル タイプの指定\)](../build/reference/tc-tp-tc-tp-specify-source-file-type.md)」を参照\)。**\/clr** は C\+\+ ソース コード ファイルを必要としますが、オブジェクト指向パラダイムを使用するようにコードを再適用する必要はありません。  
+## <a name="convert-c-code-to-c"></a>C コードから C++ への変換  
+ Visual Studio では、C ファイルをコンパイルはそれらを C++ に変換するために必要な**/clr**コンパイルします。 実際のファイル名を変更する必要はありません。使用することができます**/Tp** (を参照してください[/Tc、/Tp、/TC、/TP (ソース ファイル タイプの指定)](../build/reference/tc-tp-tc-tp-specify-source-file-type.md))。C++ ソース コード ファイルが必要ですが、なお**/clr**、オブジェクト指向パラダイムを使用するコードを再適用する必要はありません。  
   
- C コードは、C\+\+ ファイルとしてコンパイルするときは変更を必要とする可能性があります。  C\+\+ の型保証の規則は厳密なので、型の変換はキャストで明示的に行う必要があります。  たとえば、malloc は void ポインターを返しますが、キャストによる C では任意の型のポインターに割り当てることができます。  
+ C コードは、C++ ファイルとしてコンパイルするときは変更を必要とする可能性があります。 C++ の型保証の規則は厳密なので、型の変換はキャストで明示的に行う必要があります。 たとえば、malloc は void ポインターを返しますが、キャストによる C では任意の型のポインターに割り当てることができます。  
   
 ```  
 int* a = malloc(sizeof(int));   // C code  
 int* b = (int*)malloc(sizeof(int));   // C++ equivalent  
 ```  
   
- また C\+\+ では関数ポインターの型も厳密に保証されているので、次のような C コードは変更が必要です。  C\+\+ では、関数ポインターの型を定義する `typedef` を作成し、その後その型を使用して関数ポインターをキャストすることをお勧めします。  
+ また C++ では関数ポインターの型も厳密に保証されているので、次のような C コードは変更が必要です。 C++ では、関数ポインターの型を定義する `typedef` を作成し、その後その型を使用して関数ポインターをキャストすることをお勧めします。  
   
 ```  
 NewFunc1 = GetProcAddress( hLib, "Func1" );   // C code  
@@ -74,85 +79,85 @@ typedef int(*MYPROC)(int);   // C++ equivalent
 NewFunc2 = (MYPROC)GetProcAddress( hLib, "Func2" );  
 ```  
   
- また C\+\+ では、関数を参照したり呼び出すには、その前にプロトタイプを作成するか完全に定義する必要があります。  
+ また C++ では、関数を参照したり呼び出すには、その前にプロトタイプを作成するか完全に定義する必要があります。  
   
- C コードの識別子で、C\+\+ のキーワードとなっているもの \(`virtual`、`new`、`delete`、`bool`、`true`、`false` など\) は名前を変更する必要があります。  これは一般的に、単純な検索置換操作だけで行うことができます。  
+ C コードの識別子で、C++ のキーワードとなっているもの (`virtual`、`new`、`delete`、`bool`、`true`、`false` など) は名前を変更する必要があります。 これは一般的に、単純な検索置換操作だけで行うことができます。  
   
- 最後に、C 形式の COM 呼び出しでは、v\-table および `this` ポインターの明示的な使用が必要でしたが、C\+\+ では必要ありません。  
+ 最後に、C スタイルの COM 呼び出しが v-table から明示的に使用する必要がありますが、`this`ポインター、C++ はありません。  
   
 ```  
 COMObj1->lpVtbl->Method(COMObj, args);  // C code  
 COMObj2->Method(args);  // C++ equivalent  
 ```  
   
-## プロジェクト設定の再構成  
- プロジェクトを Visual Studio 2010 でコンパイルして実行した後は、既定の構成を変更するのではなく、**\/clr** 対応の新しいプロジェクト構成を作成する必要があります。  **\/clr** と互換性のないコンパイラ オプションがあるため、別の構成を作成することによってネイティブ型またはマネージ型としてプロジェクトをビルドできます。  プロパティ ページのダイアログ ボックスで **\/clr** が選択されると、**\/clr** と互換性のあるプロジェクト設定は無効になります \(無効になったオプションは、**\/clr** がその後選択が解除された場合、自動的に復元されます\)。  
+## <a name="reconfigure-project-settings"></a>プロジェクト設定の再構成  
+ プロジェクトをコンパイルして Visual Studio 2010 での実行後は、用の新しいプロジェクト構成を作成する必要があります**/clr**既定構成を変更するのではなくです。 **/clr**一部のコンパイラ オプションと互換性がないネイティブまたはマネージ型として、プロジェクトをビルドする個別の構成を作成することができます。 ときに**/clr**プロパティ ページ ダイアログ ボックスと互換性のないプロジェクトの設定が選択されている**/clr**は無効になります (および場合、無効なオプションが自動的に復元されません**/clr**は、後で選択されていません)。  
   
-### 新しいプロジェクト構成の作成  
- [New Project Configuration Dialog Box](http://msdn.microsoft.com/ja-jp/cca616dc-05a6-4fe3-bdc1-40c72a66f2be)の **\[設定のコピー元\]** オプションを使用して、既存のプロジェクト設定に基づくプロジェクト構成を作成できます。  これを、デバッグ構成に対して 1 回、リリース構成に対して 1 回実行してください。  この後の変更は **\/clr** 固有の構成だけに適用され、元のプロジェクト設定をそのまま保持できます。  
+### <a name="create-new-project-configurations"></a>新しいプロジェクト構成の作成  
+ 使用することができます**設定のコピー元**オプション、[新しいプロジェクト構成 ダイアログ ボックス](http://msdn.microsoft.com/en-us/cca616dc-05a6-4fe3-bdc1-40c72a66f2be)既存プロジェクトの設定に基づいてプロジェクト構成を作成します。 これを、デバッグ構成に対して 1 回、リリース構成に対して 1 回実行してください。 その後の変更を適用できます、 **/clr** -特定の構成のみ、元のプロジェクト設定はそのままです。  
   
  カスタム ビルド規則を使用するプロジェクトには、特別な注意が必要な場合があります。  
   
- この手順は、メイクファイルを使用するプロジェクトにとって別の意味があります。  この場合、別のビルド ターゲットを構成するか、または元のコピーから **\/clr** コンパイル固有のバージョンを作成できます。  
+ この手順は、メイクファイルを使用するプロジェクトにとって別の意味があります。 この場合、別のビルド ターゲットを構成するには、またはバージョンに固有で**/clr**コンパイルは、元のコピーから作成できます。  
   
-### プロジェクトの設定の変更  
- 開発環境で **\/clr** を選択するには、[\/clr \(共通言語ランタイムのコンパイル\)](../build/reference/clr-common-language-runtime-compilation.md) の指示に従ってください。  既に説明したように、この手順によって競合するプロジェクト設定は自動的に無効になります。  
+### <a name="change-project-settings"></a>プロジェクトの設定の変更  
+ **/clr**開発環境で次の手順で選択できる[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)です。 既に説明したように、この手順によって競合するプロジェクト設定は自動的に無効になります。  
   
 > [!NOTE]
->  マネージ ライブラリまたは Web サービス プロジェクトを Visual C\+\+ 2003 からアップグレードすると、**\/Zl** コンパイラ オプションが **\[コマンド ライン\]** プロパティ ページに追加されます。  これによって LNK2001 が発生します。  解決するには、**\/Zl** を **\[コマンド ライン\]** プロパティ ページから削除します。  詳細については、「[\/Zl \(既定のライブラリ名の省略\)](../build/reference/zl-omit-default-library-name.md)」および「[方法 : プロジェクト プロパティ ページを開く](../misc/how-to-open-project-property-pages.md)」を参照してください。  または、msvcrt.lib および msvcmrt.lib をリンカーの **\[Additional Dependencies\]** プロパティに追加します。  
+>  マネージ ライブラリまたは web サービス プロジェクトを Visual C 2003 からアップグレードする場合、 **/Zl**に追加されたコンパイラ オプションは、**コマンドライン**プロパティ ページ。 これによって LNK2001 が発生します。 削除**/Zl**から、**コマンドライン**プロパティ ページを解決します。 参照してください[/Zl (既定のライブラリ名の省略)](../build/reference/zl-omit-default-library-name.md)と[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)詳細についてはします。 または、msvcrt.lib および msvcmrt.lib をリンカーに追加**追加の依存関係**プロパティです。  
   
- メイクファイルで生成されたプロジェクトの場合、互換性のないコンパイラ オプションは **\/clr** 追加後に手動で無効にする必要があります。  **\/clr** と互換性のあるコンパイラ オプションの詳細については、「[\/clr の制約](../build/reference/clr-restrictions.md)」を参照してください。  
+ メイクファイルでビルドされたプロジェクトの互換性のないコンパイラ オプションを使用できない後に手動で**/clr**を追加します。 参照してください/[/clr の制約](../build/reference/clr-restrictions.md)と互換性がないコンパイラ オプションについて**/clr**です。  
   
-### プリコンパイル済みヘッダー  
- **\/clr** ではプリコンパイル済みヘッダーがサポートされています。  しかし、CPP ファイルの一部だけを **\/clr** でコンパイル \(残りのファイルはネイティブとしてコンパイル\) する場合、**\/clr** で生成されたプリコンパイル済みヘッダーには **\/clr** なしで生成されたプリコンパイル済みヘッダーとの互換性がないため、多少の変更が必要になります。  この非互換性の原因は、**\/clr** がメタデータを生成することとメタデータを必要とすることにあります。  **\/clr** でコンパイルしたモジュールは、したがって、メタデータを含まないプリコンパイル済みヘッダーを使用せず、**\/clr** でコンパイルしなかったモジュールはメタデータを含むプリコンパイル済みヘッダー ファイルを使用できません。  
+### <a name="precompiled-headers"></a>プリコンパイル済みヘッダー  
+ プリコンパイル済みヘッダーがサポートされている**/clr**です。 ただしかどうか、のみコンパイルすると、CPP ファイルの一部**/clr**コンパイル (残りのネイティブとして) いくつかの変更が必要にプリコンパイル済みヘッダーを使用して生成されたため**/clr**ものと互換性がありませんなしで生成**/clr**です。 この非互換性が生じるという事実に**/clr**を生成し、メタデータが必要です。 コンパイルされたモジュール**/clr**はそのため使用できません、メタデータを含まないプリコンパイル済みヘッダーと非**/clr**モジュールはメタデータを含むプリコンパイル済みヘッダー ファイルを使用できません。  
   
- モジュールの一部が **\/clr** でコンパイルされたプロジェクトをコンパイルする最も簡単な方法は、プリコンパイル済みのヘッダー全体を無効にすることです\(プロジェクトの \[プロパティ ページ\] ダイアログで C\/C\+\+ ノードを開き、\[プリコンパイル済みヘッダー\] を選択します。  次に、\[プリコンパイル済みヘッダーの作成\/使用\] プロパティを 「プリコンパイル済みヘッダーを使用しない」 に変更します\)。  
+ 一部のモジュールは、コンパイルされたプロジェクトをコンパイルする最も簡単な方法**/clr**はプリコンパイル済みヘッダーを完全に無効にします。 (プロジェクトの [プロパティ ページ] ダイアログで C/C++ ノードを開き、[プリコンパイル済みヘッダー] を選択します。 次に、[プリコンパイル済みヘッダーの作成/使用] プロパティを 「プリコンパイル済みヘッダーを使用しない」 に変更します)。  
   
- しかし、特に大きなプロジェクトの場合、プリコンパイル済みヘッダーを使用するとコンパイルの処理速度がかなり短縮されるので、この機能を無効化することはお勧めしません。  この場合は、**\/clr** ファイルと非 **\/clr** ファイルで別のプリコンパイル済みヘッダーを使用するように設定してください。  この操作を行うには、ソリューション エクスプローラーを使用して **\/clr** でコンパイルするモジュールを複数選択し、グループを右クリックしてからプロパティを選択します。  次に、\[ファイルを使用して PCH を作成\/使用\] プロパティと \[プリコンパイル済みヘッダー ファイル\] プロパティの両方を変更し、それぞれ異なるヘッダー ファイル名と PCH ファイルを使用するように設定します。  
+ しかし、特に大きなプロジェクトの場合、プリコンパイル済みヘッダーを使用するとコンパイルの処理速度がかなり短縮されるので、この機能を無効化することはお勧めしません。 ここで構成する最適なは、 **/clr**と非**/clr**ファイルを別のプリコンパイル済みヘッダーを使用します。 1 つの手順でこれを複数選択しコンパイルするモジュール**/clr**ソリューション エクスプ ローラーを使用して、グループを右クリックしてプロパティを選択します。 次に、[ファイルを使用して PCH を作成/使用] プロパティと [プリコンパイル済みヘッダー ファイル] プロパティの両方を変更し、それぞれ異なるヘッダー ファイル名と PCH ファイルを使用するように設定します。  
   
-## エラーの修正  
- **\/clr** でコンパイルすると、コンパイラ、リンカー、またはランタイム エラーになることがあります。  このセクションでは、最も一般的な問題について説明します。  
+## <a name="fixing-errors"></a>エラーの修正  
+ コンパイルする**/clr**コンパイラ、リンカー、または実行時エラーが発生する可能性があります。 このセクションでは、最も一般的な問題について説明します。  
   
-### メタデータのマージ  
- データ型のバージョンが異なる場合、2 つの型に対して生成されるメタデータが一致しないため、リンカーのエラーが発生することがあります\(通常、型のメンバーが条件付きで定義されているのに、その型を使用するすべての CPP ファイルの条件が同じでない場合に発生します\)。このような場合、リンカーのエラーが発生し、シンボル名と、型が定義されている 2 番目の OBJ ファイルの名前だけが報告されます。  多くの場合、OBJ ファイルがリンカーに送られる順序を変更し、他のデータ型バージョンの位置がリンカーにわかるようにすると対処できます。  
+### <a name="metadata-merge"></a>メタデータのマージ  
+ データ型のバージョンが異なる場合、2 つの型に対して生成されるメタデータが一致しないため、リンカーのエラーが発生することがあります (通常、型のメンバーが条件付きで定義されているのに、その型を使用するすべての CPP ファイルの条件が同じでない場合に発生します)。このような場合、リンカーのエラーが発生し、シンボル名と、型が定義されている 2 番目の OBJ ファイルの名前だけが報告されます。 多くの場合、OBJ ファイルがリンカーに送られる順序を変更し、他のデータ型バージョンの位置がリンカーにわかるようにすると対処できます。  
   
-### ローダー ロックのデッドロック  
- Visual C\+\+ .NET および Visual C\+\+ 2003 では、**\/clr** での初期化は非確定的なデッドロックを発生する可能性がありました。  この問題は "ローダー ロックのデッドロック" と呼ばれます。  Visual Studio 2010 では、このデッドロックが簡単に回避できるようになり、ランタイムに検出され報告されるため、非確定的ではなくなりました。  ローダー ロックの問題が発生する可能性は依然としてありますが、回避および修正はかなり容易です。  背景、ガイダンス、および解決方法の詳細については、「[混在アセンブリの初期化](../Topic/Initialization%20of%20Mixed%20Assemblies.md)」を参照してください。  
+### <a name="loader-lock-deadlock"></a>ローダー ロックのデッドロック  
+ Visual Studio 2010 以降では、「ローダー ロックのデッドロック」引き続き発生することが以前のバージョンが決定論的でありが検出され、実行時に報告します。 参照してください[混在アセンブリの初期化](../dotnet/initialization-of-mixed-assemblies.md)に関する背景、ガイダンス、およびソリューションのです。  
   
-### データのエクスポート  
- DLL データのエクスポートはエラーの原因にもなりやすいため、お勧めしません。  これは、DLL のデータ セクションは、DLL のマネージ部分の一部が実行されるまで初期化されていると保証されないためです。  「[\#using ディレクティブ](../preprocessor/hash-using-directive-cpp.md)」でメタデータを参照してください。  
+### <a name="data-exports"></a>データのエクスポート  
+ DLL データのエクスポートはエラーの原因にもなりやすいため、お勧めしません。 これは、DLL のデータ セクションは、DLL のマネージ部分の一部が実行されるまで初期化されていると保証されないためです。 参照メタデータを[#using ディレクティブ](../preprocessor/hash-using-directive-cpp.md)です。  
   
-### 型の可視性  
- ネイティブ型は既定でプライベートになりました。  Visual C\+\+ .NET 2002 および Visual C\+\+ 2003 では、ネイティブ型は既定ではパブリックでした。  これで、ネイティブ型は DLL の外側では見えなくなります。  このエラーを解決するには、これらの型に `public` を追加します。  詳細については、「[型およびメンバーの可視性](../Topic/Type%20and%20Member%20Visibility.md)」を参照してください。  
+### <a name="type-visibility"></a>型の可視性  
+ ネイティブ型は、既定ではプライベートです。 これで、ネイティブ型は DLL の外側では見えなくなります。 このエラーを解決するには、これらの型に `public` を追加します。  
   
-### 浮動小数点とアラインメントの問題  
- 共通言語ランタイムでは `__controlfp` はサポートされていません \(詳細については「[\_control87、\_controlfp、\_\_control87\_2](../Topic/_control87,%20_controlfp,%20__control87_2.md)」を参照\)。  また CLR は [align](../cpp/align-cpp.md) を守りません。  
+### <a name="floating-point-and-alignment-issues"></a>浮動小数点とアラインメントの問題  
+ `__controlfp`共通言語ランタイムでサポートされていません (を参照してください[_control87、_controlfp、 \__control87_2](../c-runtime-library/reference/control87-controlfp-control87-2.md)詳細については)。 CLR も従いません[整列](../cpp/align-cpp.md)です。  
   
-### COM の初期化  
- 共通言語ランタイムは、モジュールが初期化されると自動的に COM を初期化します \(自動的に初期化される場合、COM は MTA として初期化されます\)。  その結果、明示的に COM を初期化すると、COM が既に初期化されていることを示すリターン コードが生成されます。  COM が CLR によって既にいずれかのスレッド モデルに初期化されている場合、別のスレッド モデルを使用して明示的に COM を初期化しようとすると、アプリケーションが失敗するおそれがあります。  
+### <a name="com-initialization"></a>COM の初期化  
+ 共通言語ランタイムは、モジュールが初期化されると自動的に COM を初期化します (自動的に初期化される場合、COM は MTA として初期化されます)。 その結果、明示的に COM を初期化すると、COM が既に初期化されていることを示すリターン コードが生成されます。 COM が CLR によって既にいずれかのスレッド モデルに初期化されている場合、別のスレッド モデルを使用して明示的に COM を初期化しようとすると、アプリケーションが失敗するおそれがあります。  
   
- 共通言語ランタイムの既定では、COM は MTA として起動されます。これを変更するには [\/CLRTHREADATTRIBUTE \(CLR スレッド属性の設定\)](../build/reference/clrthreadattribute-set-clr-thread-attribute.md) を使用します。  
+ 共通言語ランタイムは、既定では MTA として COM を起動します。使用して[/CLRTHREADATTRIBUTE (CLR スレッド属性を設定)](../build/reference/clrthreadattribute-set-clr-thread-attribute.md)これを修正します。  
   
-### パフォーマンスの問題  
- MSIL に対して生成されたネイティブの C\+\+ メソッドが \(仮想関数呼び出し、または関数ポインターの使用によって\) 間接的に呼び出されると、パフォーマンスが低下することがあります。  この問題の詳細については、「[ダブル サンキング](../Topic/Double%20Thunking%20\(C++\).md)」を参照してください。  
+### <a name="performance-issues"></a>パフォーマンスの問題  
+ MSIL に対して生成されたネイティブの C++ メソッドが (仮想関数呼び出し、または関数ポインターの使用によって) 間接的に呼び出されると、パフォーマンスが低下することがあります。 詳細についてを参照してください。[ダブル サンキング](../dotnet/double-thunking-cpp.md)です。  
   
- ネイティブから MSIL に移動すると、ワーキング セットのサイズが増加することがわかります。  これは、共通言語ランタイムが、プログラムを正しく実行するための多くの機能を提供するためです。  **\/clr** アプリケーションが正しく実行されない場合は、C4793 \(既定ではオフ\) を有効化できます。詳細については、「[コンパイラの警告 \(レベル 1 および 3\) C4793](../error-messages/compiler-warnings/compiler-warning-level-1-and-3-c4793.md)」を参照してください。  
+ ネイティブから MSIL に移動すると、ワーキング セットのサイズが増加することがわかります。 これは、共通言語ランタイムが、プログラムを正しく実行するための多くの機能を提供するためです。 場合、 **/clr**アプリケーションが正しく実行されていない、C4793 を有効にすることがあります (既定でオフ) を参照してください[コンパイラの警告 (レベル 1 および 3) C4793](../error-messages/compiler-warnings/compiler-warning-level-1-and-3-c4793.md)詳細についてはします。  
   
-### シャットダウン時のプログラムの衝突  
- 場合によっては、マネージ コードが実行を終了する前に CLR がシャットダウンすることがあります。  `std::set_terminate` と `SIGTERM` を使用すると、この問題が発生します。  詳細については、「[signal 定数](../c-runtime-library/signal-constants.md)」および「[set\_terminate](../Topic/set_terminate%20\(%3Cexception%3E\).md)」を参照してください。  
+### <a name="program-crashes-on-shutdown"></a>シャットダウン時のプログラムの衝突  
+ 場合によっては、マネージ コードが実行を終了する前に CLR がシャットダウンすることがあります。 `std::set_terminate` と `SIGTERM` を使用すると、この問題が発生します。 参照してください[signal 定数](../c-runtime-library/signal-constants.md)と[set_terminate](../c-runtime-library/abnormal-termination.md)詳細についてはします。  
   
-## Visual C\+\+ の新機能の使用  
- アプリケーションのコンパイル、リンク、および実行が終了すると、**\/clr** でコンパイルされたあらゆるモジュールで .NET 機能を使用できます。  詳細については、「[Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)」を参照してください。  
+## <a name="using-new-visual-c-features"></a>Visual C++ の新機能の使用  
+ アプリケーションのコンパイル、リンク、および実行した後でコンパイルされたあらゆるモジュールで .NET 機能の使用を開始できます**/clr**です。 詳細については、「[Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)」を参照してください。  
   
- C\+\+ のマネージ拡張を使用していた場合は、新しい構文を使用してコードを変換できます。  構文上の相違の一覧については、「[\(NOTINBUILD\)Managed Extensions for C\+\+ Syntax Upgrade Checklist](http://msdn.microsoft.com/ja-jp/edbded88-7ef3-4757-bd9d-b8f48ac2aada)」を参照してください。  C\+\+ マネージ拡張の変換の詳細については、「[C\+\+\/CLI 移行ガイド](../dotnet/cpp-cli-migration-primer.md)」を参照してください。  
+ C++ のマネージ拡張を使用していた場合は、新しい構文を使用してコードを変換できます。 C++ マネージ拡張を変換する方法の詳細については、「 [C + +/CLI 移行ガイド](../dotnet/cpp-cli-migration-primer.md)です。  
   
- Visual C\+\+ での .NET プログラミングの詳細については、以下の項目を参照してください。  
+ Visual C++ での .NET プログラミングの詳細については、以下の項目を参照してください。  
   
--   [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)  
+-   [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)  
   
--   [ネイティブと .NET の相互運用性](../Topic/Native%20and%20.NET%20Interoperability.md)  
+-   [ネイティブと .NET の相互運用性](../dotnet/native-and-dotnet-interoperability.md)  
   
--   [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)  
+-   [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)  
   
-## 参照  
- [混在 \(ネイティブおよびマネージ\) アセンブリ](../Topic/Mixed%20\(Native%20and%20Managed\)%20Assemblies.md)
+## <a name="see-also"></a>参照  
+ [混在 (ネイティブおよびマネージ) アセンブリ](../dotnet/mixed-native-and-managed-assemblies.md)

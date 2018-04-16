@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -24,7 +25,8 @@ f1_keywords:
 - AFXWIN/CMDIFrameWnd::MDIRestore
 - AFXWIN/CMDIFrameWnd::MDISetMenu
 - AFXWIN/CMDIFrameWnd::MDITile
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMDIFrameWnd [MFC], CMDIFrameWnd
 - CMDIFrameWnd [MFC], CreateClient
@@ -41,15 +43,17 @@ helpviewer_keywords:
 - CMDIFrameWnd [MFC], MDISetMenu
 - CMDIFrameWnd [MFC], MDITile
 ms.assetid: fa8736e6-511b-4c51-8b4d-eba78378aeb9
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1968d34302cea355f174c96fb51b5bec3941fcb5
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bc40ac38d4f74848448b26284ad225faad04864e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmdiframewnd-class"></a>CMDIFrameWnd クラス
 Windows のマルチ ドキュメント インターフェイス (MDI: Multiple Document Interface) のフレーム ウィンドウの機能が用意されています。さらに、ウィンドウを管理するメンバーも用意されています。  
@@ -119,7 +123,7 @@ class CMDIFrameWnd : public CFrameWnd
   
 -   MDI フレーム ウィンドウにも、実装の**ID_WINDOW_NEW**、これは、新しいフレームと現在のドキュメントのビューを作成します。 アプリケーションでは、MDI ウィンドウの処理をカスタマイズするこれら既定コマンドの実装をオーバーライドできます。  
   
- C++ を使用しないでください**削除**フレーム ウィンドウを破棄する演算子です。 代わりに、 `CWnd::DestroyWindow` を使用してください。 `CFrameWnd`の実装`PostNcDestroy`ウィンドウが破棄されるときに、C++ オブジェクトが削除されます。 ユーザーが既定値であるフレーム ウィンドウを閉じたとき`OnClose`ハンドラーを呼び出す`DestroyWindow`です。  
+ C++ を使用しないでください**削除**フレーム ウィンドウを破棄する演算子です。 代わりに、`CWnd::DestroyWindow` を使用してください。 `CFrameWnd`の実装`PostNcDestroy`ウィンドウが破棄されるときに、C++ オブジェクトが削除されます。 ユーザーが既定値であるフレーム ウィンドウを閉じたとき`OnClose`ハンドラーを呼び出す`DestroyWindow`です。  
   
  詳細については`CMDIFrameWnd`を参照してください[フレーム ウィンドウ](../../mfc/frame-windows.md)します。  
   
@@ -134,7 +138,7 @@ class CMDIFrameWnd : public CFrameWnd
   
  `CMDIFrameWnd`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwin.h  
   
 ##  <a name="cmdiframewnd"></a>CMDIFrameWnd::CMDIFrameWnd  
@@ -412,7 +416,7 @@ void MDITile(int nType);
 ### <a name="example"></a>例  
  例を参照して[CMDIFrameWnd::MDICascade](#mdicascade)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC サンプル MDI](../../visual-cpp-samples.md)   
  [MFC サンプルは](../../visual-cpp-samples.md)   
  [MFC サンプル SNAPVW](../../visual-cpp-samples.md)   

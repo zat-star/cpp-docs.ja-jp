@@ -1,23 +1,27 @@
 ---
-title: "プロパティ ページ (ATL チュートリアル、パート 6) の追加 |Microsoft ドキュメント"
-ms.custom: 
+title: プロパティ ページ (ATL チュートリアル、パート 6) の追加 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: get-started-article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: df80d255-e7ea-49d9-b940-3f012e90cf9b
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 90023486dd8e34195b2dd9f8a788f3f76235d407
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 067c5d662fee3838a33a3b53fd5dab2946ab50cf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="adding-a-property-page-atl-tutorial-part-6"></a>プロパティ ページの追加 (ATL チュートリアル、パート 6)
 プロパティ ページは、必要な場合を共有できるように個別の COM オブジェクトとして実装されます。 このステップでは、コントロールにプロパティ ページを追加するタスクを次の操作を行います。  
@@ -150,6 +154,6 @@ ms.lasthandoff: 10/24/2017
   
  [手順 5 に戻る](../atl/adding-an-event-atl-tutorial-part-5.md)&#124;です。[手順 7 に](../atl/putting-the-control-on-a-web-page-atl-tutorial-part-7.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル](../atl/active-template-library-atl-tutorial.md)
 

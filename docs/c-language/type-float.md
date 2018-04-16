@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - type float
 - exponent length
@@ -21,15 +23,17 @@ helpviewer_keywords:
 - IEEE floating-point representation
 - lengths, exponent
 ms.assetid: 706e332b-17a0-4a30-b7d8-5d6cd372524b
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cb53ac2375a5afa9ac3c2f1d2d7b2ba9de1b7141
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c0b1362d5cb0451f5190ca63ab0344f557256190
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="type-float"></a>float 型
 浮動小数点数が IEEE (米国電気電子技術者協会) 形式を使用します。 Float 型の単精度値は、符号ビット、余分な 127 形式 (8 ビット) 2 進指数、および 23 ビットの仮数から成る 4 バイトを持ちます。 仮数は、1.0 と 2.0 の間の数字を表します。 仮数の上位ビットは常に 1 であるため、数に格納されません。 この表現は、float 型のために、約 3.4E-38 から 3.4E+38 の範囲を提供します。  
@@ -40,8 +44,8 @@ ms.lasthandoff: 10/24/2017
   
 |型|有効桁数|バイト数|  
 |----------|------------------------|---------------------|  
-|フローティング|6 - 7|4|  
-|double|15 - 16|9|  
+|float|6 - 7|4|  
+|double|15 - 16|8|  
   
  浮動小数点変数は、数の値を含む仮数と、数の桁を含む指数によって表されます。  
   
@@ -89,5 +93,5 @@ f_short = f_short * f_long;
 f_longer = f_short * f_short;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本型の格納](../c-language/storage-of-basic-types.md)

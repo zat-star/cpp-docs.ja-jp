@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_map::load_factor
-dev_langs: C++
-helpviewer_keywords: load_factor member [STL/CLR]
+f1_keywords:
+- cliext::hash_map::load_factor
+dev_langs:
+- C++
+helpviewer_keywords:
+- load_factor member [STL/CLR]
 ms.assetid: e3a29b1f-ea20-4153-87b0-3935044d4d7a
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 30bf5fe4552b76b31a5512c1d4ff88ea0c381a09
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 9ab07fb96c4adba271de11012cd394621c2e099b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmaploadfactor-stlclr"></a>hash_map::load_factor (STL/CLR)
 バケットごとの平均要素数をカウントします。  
@@ -94,12 +101,12 @@ load_factor() = 0.0234375
 max_load_factor() = 0.25  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
  [hash_map::bucket_count (STL/CLR)](../dotnet/hash-map-bucket-count-stl-clr.md)   
  [hash_map::max_load_factor (STL/CLR)](../dotnet/hash-map-max-load-factor-stl-clr.md)

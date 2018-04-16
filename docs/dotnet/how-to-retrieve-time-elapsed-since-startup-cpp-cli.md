@@ -1,35 +1,39 @@
 ---
-title: "方法: 起動からの経過時間を取得する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "カウンター, 経過時間"
-  - "スタートアップ"
-  - "スタートアップ, 経過時間"
-  - "目盛りカウント"
-  - "時間, 起動からの経過"
+title: "方法: 起動からの経過時間を取得 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- time, elapsed since startup
+- counters, elapsed time
+- startup, time elapsed since
+- tick counts
+- startup
 ms.assetid: a31fdecc-099e-4dd1-a176-f682289c5dd0
-caps.latest.revision: 9
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 2929cd6466b0e05cf2ae029eaee0cbe214d3a17c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 方法: 起動からの経過時間を取得する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ティック数、つまり Windows を起動してからの経過時間 \(ミリ秒\) を確認する方法を次のコード例に示します。  この値は、<xref:System.Environment.TickCount%2A?displayProperty=fullName> メンバーに格納されています。この値は、32 ビットであるため、約 24.9 日に 1 回 0 にリセットされます。  
+# <a name="how-to-retrieve-time-elapsed-since-startup-ccli"></a>方法: 起動からの経過時間を取得する (C++/CLI)
+ティック数を確認する方法を次のコード例に示します。 または Windows からの経過時間 (ミリ秒) を開始します。 この値は、<xref:System.Environment.TickCount%2A?displayProperty=fullName>メンバーと、32 ビット値になっているためをゼロにリセットすべて続けたです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // startup_time.cpp  
@@ -54,6 +58,6 @@ int main( )
 }  
 ```  
   
-## 参照  
- [Windows の操作](../dotnet/windows-operations-cpp-cli.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>参照  
+ [Windows の操作 (C + + CLI)](../dotnet/windows-operations-cpp-cli.md)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

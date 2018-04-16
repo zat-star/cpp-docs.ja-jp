@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: U1071
-dev_langs: C++
-helpviewer_keywords: U1071
+f1_keywords:
+- U1071
+dev_langs:
+- C++
+helpviewer_keywords:
+- U1071
 ms.assetid: 328a0c1f-a867-410e-943d-7b6b75a975ab
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2e00aff7e4e1c8f3d59839aed734606c8e165b3d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 19a714f0bd8924eeadb17c1c61988a77556e37f2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="nmake-fatal-error-u1071"></a>NMAKE の致命的なエラー U1071
 ターゲット 'targetname' の依存関係ツリーに順番に表示します。  

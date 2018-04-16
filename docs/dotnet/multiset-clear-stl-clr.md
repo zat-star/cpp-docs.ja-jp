@@ -1,41 +1,46 @@
 ---
-title: "multiset::clear (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multiset::clear"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "clear メンバー [STL/CLR]"
+title: "multiset::clear (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::multiset::clear
+dev_langs:
+- C++
+helpviewer_keywords:
+- clear member [STL/CLR]
 ms.assetid: 63c21716-fa08-47b9-b457-0b76052c5079
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: f12141a08ffdeeb3ced26d4313a8cfb245d2f3a9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# multiset::clear (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="multisetclear-stlclr"></a>multiset::clear (STL/CLR)
 すべての要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void clear();  
 ```  
   
-## 解説  
- メンバー関数は、実質的に [multiset::erase](../dotnet/multiset-erase-stl-clr.md)`(`[multiset::begin](../dotnet/multiset-begin-stl-clr.md)`(),`[multiset::end](../dotnet/multiset-end-stl-clr.md)`())`を呼び出します。  被制御シーケンスが空であることを確認するために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数が効果的に呼び出し[multiset::erase (STL/CLR)](../dotnet/multiset-erase-stl-clr.md) `(` [multiset::begin (STL/CLR)](../dotnet/multiset-begin-stl-clr.md) `(),` [multiset::end (STL/CLR)](../dotnet/multiset-end-stl-clr.md)`())`. これを使用するには、被制御シーケンスが空であることを確認します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multiset_clear.cpp   
@@ -73,15 +78,18 @@ int main()
   
 ```  
   
-  **b c**  
-**size\(\) \= 0**  
- **b**  
-**size\(\) \= 0**   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+```Output  
+ a b c  
+size() = 0  
+ a b  
+size() = 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext と set >  
   
-## 参照  
- [multiset](../dotnet/multiset-stl-clr.md)   
- [multiset::erase](../dotnet/multiset-erase-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [マルチセット (STL/CLR)](../dotnet/multiset-stl-clr.md)   
+ [multiset::erase (STL/CLR)](../dotnet/multiset-erase-stl-clr.md)

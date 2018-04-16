@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C3480
-dev_langs: C++
-helpviewer_keywords: C3480
+f1_keywords:
+- C3480
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3480
 ms.assetid: 7b2e055a-9604-4d13-861b-b38bda1a6940
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: d84314d20ea00e880981e418c2b5b11008f74229
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 344e76f5d146e6bc715619bce7e68c80ffda211f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3480"></a>コンパイラ エラー C3480
 'var': ラムダ キャプチャ変数は、外側の関数スコープの変数である必要があります  
@@ -56,5 +62,5 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ラムダ式](../../cpp/lambda-expressions-in-cpp.md)

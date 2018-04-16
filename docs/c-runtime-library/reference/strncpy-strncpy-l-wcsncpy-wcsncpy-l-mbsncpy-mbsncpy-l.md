@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - strncpy
 - _strncpy_l
@@ -40,7 +41,8 @@ f1_keywords:
 - _strncpy_l
 - _mbsncpy_l
 - _wcsncpy_l
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - wcsncpy_l function
 - characters [C++], copying
@@ -68,21 +70,23 @@ helpviewer_keywords:
 - tcsncpy function
 - _strncpy_l function
 ms.assetid: ac4345a1-a129-4f2f-bb8a-373ec58ab8b0
-caps.latest.revision: "42"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 29d91de13d5fba6402018fa96f2bd5946db04936
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f881508cfa72686a791dae61af44c615e72cbfdc
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strncpy-strncpyl-wcsncpy-wcsncpyl-mbsncpy-mbsncpyl"></a>strncpy、_strncpy_l、wcsncpy、_wcsncpy_l、_mbsncpy、_mbsncpy_l
 文字列の文字を別の文字列にコピーします。 これらの関数のセキュリティを強化したバージョンを使用できます。「[strncpy_s、_strncpy_s_l、wcsncpy_s、_wcsncpy_s_l、_mbsncpy_s、_mbsncpy_s_l](../../c-runtime-library/reference/strncpy-s-strncpy-s-l-wcsncpy-s-wcsncpy-s-l-mbsncpy-s-mbsncpy-s-l.md)」をご覧ください。  
   
 > [!IMPORTANT]
->  `_mbsncpy` および `_mbsncpy_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbsncpy` および `_mbsncpy_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -187,7 +191,7 @@ unsigned char *_mbsncpy_l(
   
  `wcsncpy` 関数と `_mbsncpy` 関数は、`strncpy` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `wcsncpy` 関数と `_mbsncpy` 関数は、それぞれ引数と戻り値が異なります。 それ以外では、これらの関数の動作は同じです。  
   
- これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
@@ -201,9 +205,9 @@ unsigned char *_mbsncpy_l(
 > [!NOTE]
 >  `_strncpy_l` および `_wcsncpy_l` はロケールに依存しません。これらは `_tcsncpy_l` のために用意されている関数で、直接呼び出すためのものではありません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`strncpy`|\<string.h>|  
 |`wcsncpy`|\<string.h> または \<wchar.h>|  
@@ -279,7 +283,7 @@ Buffer overrun: s = 'ars.' (should be 'test')
   
  自動変数のレイアウトや、エラー検出とコード保護のレベルは、コンパイラの設定を変更すると変わることがあります。 この例は、他のコンパイル環境で、または他のコンパイラ オプションを指定してビルドすると、出力の結果が異なることがあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   

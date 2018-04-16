@@ -1,59 +1,64 @@
 ---
-title: "文字列 (ATL/MFC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, 文字列処理クラス"
-  - "char ポインター"
-  - "const char 型へのポインター"
-  - "コピー (文字列オブジェクトを)"
-  - "C スタイルの文字列"
-  - "言語の移植性 [C++]"
-  - "リテラル文字列 [C++], CString クラス"
-  - "リテラル文字列 [C++], クラス CStringT"
-  - "MBCS [C++], CString サポート"
-  - "MFC [C++], 文字列処理クラス"
-  - "移植性 [C++], Unicode と ANSI の文字列オブジェクト"
-  - "参照カウント [C++]"
-  - "文字列 [C++]"
-  - "文字列 [C++], CString クラス"
-  - "文字列 [C++], クラス CStringT"
-  - "文字列 [C++], ATL で"
-  - "文字列 [C++], MFC で"
-  - "文字列 [C++], 文字列操作"
+title: "文字列 (ATL MFC) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- const char pointers
+- strings [C++], in ATL
+- MFC [C++], string handling class
+- MBCS [C++], CString support
+- strings [C++], class CStringT
+- char pointers
+- reference counting [C++]
+- strings [C++], string operations
+- portability [C++], Unicode and ANSI string objects
+- literal strings [C++], class CString
+- copying string objects
+- ATL, string handling class
+- strings [C++], in MFC
+- strings [C++]
+- C-style strings
+- language portability [C++]
+- strings [C++], class CString
+- literal strings [C++], class CStringT
 ms.assetid: 3b33125b-1684-4542-a3a7-b00de7d0419e
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6a82f0d02cc8dc9b7c487c8cd9506a4c7d0360fe
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# 文字列 (ATL/MFC)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ほぼすべてのプログラムは、文字列データを使用します。  Visual C\+\+ は、この文字列データを管理する複数の方法を提供します。  
+# <a name="strings-atlmfc"></a>文字列 (ATL と MFC)
+ほぼすべてのプログラムは、文字列データを操作します。 Visual C には、文字列データを管理するいくつかの方法が用意されています。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [CStringT の使用](../atl-mfc-shared/using-cstringt.md)  
- テンプレート クラスの CStringT を使用してプログラミングする方法について説明します。  
+ CStringT テンプレート クラスを使用したプログラミングについて説明します。  
   
  [CString の使用](../atl-mfc-shared/using-cstring.md)  
- CString を使用してプログラミングするに CStringT の既定の実装。  
+ CString、CStringT の既定の実装を使用するプログラミングについて説明します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [CStringT の概要](../atl-mfc-shared/reference/cstringt-class.md)  
- 共有 `CStringT` クラスに関する参照情報を提供します。  
+ 共有に関するリファレンス情報を提供`CStringT`クラスです。  
   
  [MFC の概念](../mfc/mfc-concepts.md)  
- 概念説明のトピックとタスク ベースのトピック MFC ライブラリを使用したプログラミングに役立つ手順について説明します。  
+ 役立つ概念とタスク ベースのトピックを提供、MFC ライブラリを使用してプログラミングされます。  
   
-## 参照  
- [ATL\/MFC の共有クラス](../atl-mfc-shared/atl-mfc-shared-classes.md)
+## <a name="see-also"></a>参照  
+ [ATL/MFC 共有クラス](../atl-mfc-shared/atl-mfc-shared-classes.md)
+

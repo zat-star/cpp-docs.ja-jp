@@ -1,31 +1,35 @@
 ---
-title: "operator&lt; 演算子 (Microsoft::WRL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "client/Microsoft::WRL::operator<"
-dev_langs: 
-  - "C++"
+title: "演算子&lt;演算子 (microsoft::wrl) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- client/Microsoft::WRL::operator<
+dev_langs:
+- C++
 ms.assetid: bfae0e1c-1648-482b-99c2-3217d62aba46
-caps.latest.revision: 3
-caps.handback.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: fca41cae7c8fdadd215b049228da0b87788d2717
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# operator&lt; 演算子 (Microsoft::WRL)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-1 種類のオブジェクトのアドレスが他方の数値より小さいかどうかを判断します。  
+# <a name="operatorlt-operator-microsoftwrl"></a>演算子&lt;演算子 (microsoft::wrl)
+1 つのオブジェクトのアドレスが他よりも少ないかどうかを判断します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 template<class T, class U>  
@@ -34,20 +38,20 @@ template<class T, class U>
 bool operator<(const Details::ComPtrRef<ComPtr<T>>& a, const Details::ComPtrRef<ComPtr<U>>& b) throw();  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `a`  
  左側のオブジェクト。  
   
  `b`  
- 右オブジェクト。  
+ 右側のオブジェクト。  
   
-## 戻り値  
- `a` のアドレスである場合 `b`のアドレス未満`true` ; それ以外の場合は `false`。  
+## <a name="return-value"></a>戻り値  
+ `true`場合のアドレス`a`のアドレスよりも小さい`b`、それ以外の`false`します。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

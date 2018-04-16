@@ -15,33 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - C4403
 ms.assetid: d95597c9-4762-4f33-86e4-1d98f0e80d52
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 4163c2e1e22a20b4aa553b5203b0cbbfbf72903a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: db9c0c07ebab0bfc36a39876db1773d5af102c64
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4403"></a>コンパイラの警告 (レベル 1) C4403
-PTR 演算子が正しくありません。  
+PTR 演算子は正しくありません。  
   
  PTR 演算子は、インライン アセンブラー コードで不適切に使用されます。  
   

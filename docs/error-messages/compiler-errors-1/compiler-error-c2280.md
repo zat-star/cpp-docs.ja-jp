@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 04/25/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C2280
-helpviewer_keywords: C2280
-dev_langs: C++
+f1_keywords:
+- C2280
+helpviewer_keywords:
+- C2280
+dev_langs:
+- C++
 ms.assetid: e6c5b1fb-2b9b-4554-8ff9-775eeb37161b
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: af19f0a0c347ab0f898a3a3d72b8cca5cb07dad8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 10bfe6701c6f2465bcc37e4fadf71c796664b59e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2280"></a>コンパイラ エラー c2280 を発行  
   

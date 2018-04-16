@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4906
-dev_langs: C++
-helpviewer_keywords: C4906
+f1_keywords:
+- C4906
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4906
 ms.assetid: 05318e74-799b-412a-9dce-f02b8161d762
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 784bce01aa18991a28e4410f9fbaf3eb502ddd60
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ba4ce917a0ed9b4c900ba39f5ab2d84f02ca44be
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4906"></a>コンパイラの警告 (レベル 1) C4906
 'LPWSTR' にキャストされたリテラル文字列  

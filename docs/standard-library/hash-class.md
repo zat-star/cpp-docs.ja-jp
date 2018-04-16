@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - functional/std::hash
 - bitset/std::hash
@@ -18,7 +19,8 @@ f1_keywords:
 - vector/std::hash
 - XSTDDEF/std::hash
 - xstring/std::hash
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::hash [C++]
 - std::hash [C++]
@@ -30,15 +32,17 @@ helpviewer_keywords:
 - std::hash [C++]
 - std::hash [C++]
 ms.assetid: e1b500c6-a5c8-4f6f-ad33-7ec52eb8e2e4
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3224ea06ecb74021d9e0971910a4ce974fa56b0a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2c847ca2bdcb6dc9aeb0b322f60b8abc5b240caa
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="hash-class"></a>hash クラス
 値のハッシュ コードを計算します。  
@@ -79,12 +83,12 @@ int main()
 3  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **ヘッダー:** \<functional>  
   
 **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<unordered_map>](../standard-library/unordered-map.md)   
  [unordered_multimap クラス](../standard-library/unordered-multimap-class.md)   
  [unordered_multiset クラス](../standard-library/unordered-multiset-class.md)   

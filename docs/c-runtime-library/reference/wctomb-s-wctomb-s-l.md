@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wctomb_s_l
 - wctomb_s
@@ -38,30 +38,17 @@ helpviewer_keywords:
 - characters, converting
 - string conversion, multibyte character strings
 ms.assetid: 7e94a888-deed-4dbd-b5e9-d4a0455538b8
-caps.latest.revision: 18
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: ac97c0bc957c28d8d0837199157d52d4ac0536e1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3025340d4af81f20fd086d07058ac820828dda75
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="wctombs-wctombsl"></a>wctomb_s、_wctomb_s_l
 ワイド文字を対応するマルチバイト文字に変換します。 「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [wctomb、_wctomb_l](../../c-runtime-library/reference/wctomb-wctomb-l.md) です。  
@@ -118,16 +105,16 @@ errno_t _wctomb_s_l(
   
  `wctomb_s` がワイド文字をマルチバイト文字に変換する場合、ワイド文字のバイト数 (常に `MB_CUR_MAX` 以内) を `pRetValue` によって示される整数に与えます。 `wchar` がワイド文字の null 文字 (L'\0') である場合、`wctomb_s` は 1 で `pRetValue` を塗りつぶします。 ターゲット ポインター `mbchar` が NULL の場合、`wctomb_s` は `pRetValue` に 0 を格納します。 現在のロケールで変換が不可能な場合`wctomb_s`に-1 を配置`pRetValue`です。  
   
- `wctomb_s` は、ロケールに依存する情報に現在のロケールを使用します。`_wctomb_s_l` は、渡されたロケールを代わりに使用することを除いて同じです。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `wctomb_s` は、ロケールに依存する情報に現在のロケールを使用します。`_wctomb_s_l` は、渡されたロケールを代わりに使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`wctomb_s`|\<stdlib.h>|  
 |`_wctomb_s_l`|\<stdlib.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  このプログラムは、`wctomb` 関数の動作を示しています。  
@@ -156,7 +143,7 @@ Convert a wide character:
    Multibyte character: a  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ変換](../../c-runtime-library/data-conversion.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [_mbclen、mblen、_mblen_l](../../c-runtime-library/reference/mbclen-mblen-mblen-l.md)   

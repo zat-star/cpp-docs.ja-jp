@@ -15,32 +15,19 @@ dev_langs:
 helpviewer_keywords:
 - RC2152
 ms.assetid: 8efcba8f-9971-43cc-a1cd-8d7c9aec133c
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 2058fb0c7ff40d169f3a566ac1cc5c9bffe50e12
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 41924f6a435d1e5f78aae57618e7c37f5dc5da74
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="resource-compiler-error-rc2152"></a>リソース コンパイラ エラー RC2152
-無効な制御文字  
+無効なコントロール文字  
   
- **ACCELERATORS** ステートメントの制御文字は無効です。 有効な制御文字は、(のみ)、キャレットを次の&1; つの文字で構成されています (**^**)。
+ **ACCELERATORS** ステートメントの制御文字は無効です。 有効なコントロール文字から成る 1 文字 (のみ)、キャレット (**^**)。

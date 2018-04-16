@@ -1,72 +1,78 @@
 ---
-title: "Creating an Icon or Other Image (Image Editor for Icons) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.editors.bitmap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "bitmaps [C++]"
-  - "images [C++], creating"
-  - "resource toolbars"
-  - "resources [Visual Studio], creating images"
-  - "bitmaps [C++], creating"
-  - "graphics [C++], creating"
-  - "Image editor [C++], creating images"
+title: "アイコンまたはその他のイメージ (アイコン用イメージ エディター) の作成 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.editors.bitmap
+dev_langs:
+- C++
+helpviewer_keywords:
+- bitmaps [C++]
+- images [C++], creating
+- resource toolbars
+- resources [Visual Studio], creating images
+- bitmaps [C++], creating
+- graphics [C++], creating
+- Image editor [C++], creating images
 ms.assetid: 66db3fb2-cfc1-48a2-9bdd-53f61eb7ee30
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: ae1cc8525b0c93cff5564c2185d80480a632718b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Creating an Icon or Other Image (Image Editor for Icons)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ビットマップ、アイコン、カーソル、ツール バーなどの新しいイメージを作成し、イメージ エディターを使用してそれらの外観をカスタマイズできます。  また、[テンプレート](../Topic/How%20to:%20Use%20Resource%20Templates.md)の後にパターン化された新しいビットマップを作成することもできます。  
+# <a name="creating-an-icon-or-other-image-image-editor-for-icons"></a>アイコンまたはその他のイメージの作成 (アイコン用イメージ エディター)
+(ビットマップ、アイコン、カーソル、またはツールバー)、新しいイメージを作成し、その外観をカスタマイズする、イメージ エディターを使用することができます。 後でパターン化新しいビットマップを作成することも、[テンプレート](../windows/how-to-use-resource-templates.md)です。  
   
-### アンマネージ C\+\+ プロジェクトに新しいイメージ リソースを追加するには  
+### <a name="to-add-a-new-image-resource-to-an-unmanaged-c-project"></a>アンマネージ C++ プロジェクトに新しいイメージ リソースを追加するには  
   
-1.  [&#91;リソース&#93; ビュー](../windows/resource-view-window.md)で .rc ファイルを右クリックし、ショートカット メニューの \[リソースの追加\] をクリックします。  \(カーソルなどの既存のイメージ リソースが既に .rc ファイルにある場合は、\[Cursor\] フォルダーを右クリックし、ショートカット メニューの \[Cursor を挿入\] をクリックします。\)  
+1.  [リソース ビュー](../windows/resource-view-window.md)、.rc ファイルを右クリックし **リソースの挿入**ショートカット メニューからです。 (を単に右クリック、カーソルなど、.rc ファイルに既存のイメージ リソースがある場合、**カーソル**フォルダーを選択**挿入カーソル**ショートカット メニューからです)。  
   
     > [!NOTE]
-    >  **メモ** プロジェクトに .rc ファイルがまだ含まれていない場合は、「[リソース スクリプト ファイルの新規作成](../windows/how-to-create-a-resource-script-file.md)」を参照してください。  
+    >  **メモ** プロジェクトに .rc ファイルがまだ含まれていない場合は、「 [リソース スクリプト ファイルの新規作成](../windows/how-to-create-a-resource-script-file.md)」を参照してください。  
   
-2.  [&#91;リソースの追加&#93; ダイアログ ボックス](../Topic/Add%20Resource%20Dialog%20Box.md)で、作成するイメージ リソースの種類 \(\[Bitmap\] など\) を選択し、\[新規作成\] をクリックします。  
+2.  [リソースの挿入 ダイアログ ボックス](../windows/add-resource-dialog-box.md)を作成したい画像リソースの種類を選択 (**ビットマップ**など) をクリックし、**新規**です。  
   
-     \[リソースの追加\] ダイアログ ボックスで、イメージ リソースの種類の横に正符号 \(\+\) が表示される場合は、ツール バーのテンプレートが使用可能であることを示します。  正符号をクリックしてテンプレートの一覧を展開します。次に、テンプレートを選択し、\[新規作成\] をクリックします。  
+     場合は、プラス記号 (**+**) で画像リソースの種類の横に表示される、**リソースの挿入**ツールバーのテンプレートが使用できることを意味、ダイアログ ボックスで、します。 テンプレートの一覧を展開し、テンプレートを選択してをクリックするには、プラス記号をクリックして**新規**です。  
   
-### プログラミング言語でプロジェクトに新しいイメージ リソースを追加するには  
+### <a name="to-add-a-new-image-resource-to-a-project-in-a-net-programming-language"></a>.NET プログラミング言語でのプロジェクトに新しいイメージ リソースを追加するには  
   
-1.  **ソリューション エクスプローラー**で、**WindowsApplication1** などのプロジェクト フォルダーを右クリックします。  
+1.  **ソリューション エクスプ ローラー**、プロジェクト フォルダーを右クリックし (たとえば、 **WindowsApplication1**)。  
   
-2.  ショートカット メニューの \[追加\] をポイントし、\[新しい項目の追加\] をクリックします。  
+2.  ショートカット メニューから **追加**、順に選択**新しい項目の追加**です。  
   
-3.  \[カテゴリ\] ペインの \[ローカル プロジェクト アイテム\] フォルダーを展開し、\[リソース\] をクリックします。  
+3.  **カテゴリ** ウィンドウで、展開、**ローカル プロジェクト アイテム**フォルダーを選択し、**リソース**です。  
   
-4.  \[テンプレート\] ペインで、プロジェクトに追加するリソースの種類を選択します。  
+4.  **テンプレート** ウィンドウで、プロジェクトに追加するには、リソースの種類を選択します。  
   
-     ソリューション エクスプローラーでプロジェクトにリソースが追加され、[イメージ エディター](../mfc/image-editor-for-icons.md)でリソースが開かれます。  この時点で、イメージ エディターで提供されているすべてのツールを使用して、イメージを変更できます。  イメージをマネージ プロジェクトに追加する方法については、「[デザイン時でのピクチャの読み込み](../Topic/How%20to:%20Load%20a%20Picture%20Using%20the%20Designer%20\(Windows%20Forms\).md)」を参照してください。  
+     ソリューション エクスプ ローラーでプロジェクトにリソースを追加し、リソースがで開きます、[イメージ エディター](../windows/image-editor-for-icons.md)です。 イメージ エディターで使用できるすべてのツールを使用して、イメージを変更することができますようになりました。 マネージ プロジェクトにイメージを追加する方法については、次を参照してください。[デザイン時にピクチャの読み込み](/dotnet/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms)です。  
   
     > [!NOTE]
-    >  編集の対象となるマネージ リソースは、リンク リソースである必要があります。  Visual Studio のリソース エディターでは、埋め込みリソースの編集はサポートしていません。  詳細については、『.NET Framework 開発者ガイド』の「[リソース ファイルの作成](../Topic/Creating%20Resource%20Files%20for%20Desktop%20Apps.md)」を参照してください。  
+    >  編集の対象となるマネージ リソースは、リンク リソースである必要があります。 Visual Studio のリソース エディターでは、埋め込みリソースの編集はサポートしていません。 詳細については、次を参照してください。[リソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)で、 *.NET Framework 開発者ガイド 』*です。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  なし  
   
-## 参照  
- [Icons and Cursors: Image Resources for Display Devices](../mfc/icons-and-cursors-image-resources-for-display-devices-image-editor-for-icons.md)   
- [Converting Bitmaps to Toolbars](../mfc/converting-bitmaps-to-toolbars.md)   
- [Creating New Toolbars](../mfc/creating-new-toolbars.md)   
- [Editing Graphical Resources](../mfc/editing-graphical-resources-image-editor-for-icons.md)   
- [Image Editor for Icons](../mfc/image-editor-for-icons.md)
+## <a name="see-also"></a>参照  
+ [アイコンとカーソル: ディスプレイ デバイスのイメージ リソース](../windows/icons-and-cursors-image-resources-for-display-devices-image-editor-for-icons.md)   
+ [ビットマップ ツールバーからへの変換](../windows/converting-bitmaps-to-toolbars.md)   
+ [ツールバーの新規作成](../windows/creating-new-toolbars.md)   
+ [グラフィカル リソースの編集](../windows/editing-graphical-resources-image-editor-for-icons.md)   
+ [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)
+

@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
-helpviewer_keywords: standard dialog, data exchange routines
+dev_langs:
+- C++
+helpviewer_keywords:
+- standard dialog, data exchange routines
 ms.assetid: c6adb7f3-f9af-4cc5-a9ea-315c5b60ad1a
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e031cf6d142e611c81ae73ee8d201a12acdea529
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ca598a9ac6a146457d24bcc80e54d003123d7dd4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="standard-dialog-data-exchange-routines"></a>標準的なダイアログ データ エクスチェンジ ルーチン
 このトピックでは、一般的な MFC のダイアログ コントロールに使用される標準的なダイアログ データ エクス (チェンジ DDX) ルーチンを示します。  
@@ -72,7 +77,7 @@ void AFXAPI DDX_CBIndex(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_cbstring"></a>DDX_CBString  
@@ -92,7 +97,7 @@ void AFXAPI DDX_CBString(
  `nIDC`  
  コントロールのプロパティに関連付けられているコンボ ボックス コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  ダイアログ ボックス、フォーム ビュー、またはデータとで交換される、コントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
@@ -103,7 +108,7 @@ void AFXAPI DDX_CBString(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_cbstringexact"></a>DDX_CBStringExact  
@@ -123,7 +128,7 @@ void AFXAPI DDX_CBStringExact(
  `nIDC`  
  コントロールのプロパティに関連付けられているコンボ ボックス コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  ダイアログ ボックス、フォーム ビュー、またはデータとで交換される、コントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
@@ -134,7 +139,7 @@ void AFXAPI DDX_CBStringExact(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_check"></a>DDX_Check  
@@ -154,7 +159,7 @@ void AFXAPI DDX_Check(
  `nIDC`  
  コントロールのプロパティに関連付けられているチェック ボックス コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  ダイアログ ボックス、フォーム ビュー、またはデータとで交換される、コントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
@@ -162,7 +167,7 @@ void AFXAPI DDX_Check(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_control"></a>DDX_Control  
@@ -190,7 +195,7 @@ void AFXAPI DDX_Control(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_datetimectrl"></a>DDX_DateTimeCtrl  
@@ -220,7 +225,7 @@ void AFXAPI DDX_DateTimeCtrl(
  `nIDC`  
  メンバー変数に関連付けられた日付と時刻の選択コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  最初の 2 つのバージョンへの参照、`CTime`または`COleDateTime`メンバー変数、ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトを使用するには、データを交換します。 3 番目のバージョンへの参照、`CString`データ メンバーのコントロール ビュー オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
@@ -230,7 +235,7 @@ void AFXAPI DDX_DateTimeCtrl(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
 
    
@@ -262,10 +267,10 @@ void DDX_ManagedControl(
   
  詳細については、次を参照してください。[する方法: Windows フォームで DDX/DDV データ バインドを行う](../../dotnet/how-to-do-ddx-ddv-data-binding-with-windows-forms.md)です。  
    
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxwinforms.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
  [CWinFormsControl::CreateManagedControl](cwinformscontrol-class.md#createmanagedcontrol)   
  [CDialog::OnInitDialog](cdialog-class.md#oninitdialog)
  
@@ -288,7 +293,7 @@ void AFXAPI DDX_IPAddress(
  `nIDC`  
  コントロールのプロパティに関連付けられている IP アドレス コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  参照、 `DWORD` IP アドレス コントロールの 4 つのフィールド値を格納します。 フィールドが設定または次のように読み込まれます。  
   
 |フィールド|ビット フィールドの値を含む|  
@@ -305,7 +310,7 @@ void AFXAPI DDX_IPAddress(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_lbindex"></a>DDX_LBIndex  
@@ -333,7 +338,7 @@ void AFXAPI DDX_LBIndex(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_lbstring"></a>DDX_LBString  
@@ -353,7 +358,7 @@ void AFXAPI DDX_LBString(
  `nIDC`  
  コントロールのプロパティに関連付けられているリスト ボックス コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  ダイアログ ボックス、フォーム ビュー、またはデータとで交換される、コントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
@@ -366,7 +371,7 @@ void AFXAPI DDX_LBString(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_lbstringexact"></a>DDX_LBStringExact  
@@ -386,7 +391,7 @@ void AFXAPI DDX_LBStringExact(
  `nIDC`  
  コントロールのプロパティに関連付けられているリスト ボックス コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  ダイアログ ボックス、フォーム ビュー、またはデータとで交換される、コントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
@@ -399,7 +404,7 @@ void AFXAPI DDX_LBStringExact(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_monthcalctrl"></a>DDX_MonthCalCtrl  
@@ -424,7 +429,7 @@ void AFXAPI DDX_MonthCalCtrl(
  `nIDC`  
  月間予定表コントロールのリソース ID は、メンバー変数に関連付けられています。  
   
- *value*  
+ *値*  
  参照、`CTime`または`COleDateTime`メンバー変数のダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトを使用するには、データを交換します。  
   
 ### <a name="remarks"></a>コメント  
@@ -436,7 +441,7 @@ void AFXAPI DDX_MonthCalCtrl(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_radio"></a>DDX_Radio  
@@ -456,7 +461,7 @@ void AFXAPI DDX_Radio(
  `nIDC`  
  グループの最初のラジオ コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  ダイアログ ボックス、フォーム ビュー、またはデータとで交換される、コントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
@@ -466,7 +471,7 @@ void AFXAPI DDX_Radio(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_scroll"></a>DDX_Scroll  
@@ -486,7 +491,7 @@ void AFXAPI DDX_Scroll(
  `nIDC`  
  コントロールのプロパティに関連付けられたスクロール バー コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
   
 ### <a name="remarks"></a>コメント  
@@ -494,7 +499,7 @@ void AFXAPI DDX_Scroll(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_slider"></a>DDX_Slider  
@@ -514,7 +519,7 @@ void AFXAPI DDX_Slider(
  `nIDC`  
  スライダー コントロールのリソース ID です。  
   
- *value*  
+ *値*  
  交換する値への参照。 このパラメーターを保持またはスライダー コントロールの現在位置を設定します。  
   
 ### <a name="remarks"></a>コメント  
@@ -522,7 +527,7 @@ void AFXAPI DDX_Slider(
   
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。 スライダー コントロールの概要については、次を参照してください。[を使用して CSliderCtrl](../../mfc/using-csliderctrl.md)です。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
   
 ##  <a name="ddx_text"></a>DDX_Text  
@@ -592,15 +597,15 @@ void AFXAPI DDX_Text(
  `nIDC`  
  ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのエディット コントロールの ID。  
   
- *value*  
+ *値*  
  ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのデータ メンバーへの参照。 データ型*値*のどのオーバー ロードされたバージョンに依存`DDX_Text`を使用します。  
   
 ### <a name="remarks"></a>コメント  
  DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdd_.h  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [標準的なダイアログ データ バリデーション ルーチン](../../mfc/reference/standard-dialog-data-validation-routines.md)   
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

@@ -1,60 +1,66 @@
 ---
-title: "Creating a Tool Tip for a Toolbar Button | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "tool tips [C++], adding to toolbar buttons"
-  - "\n in tool tip"
-  - "toolbar buttons [C++], tool tips"
-  - "buttons [C++], tool tips"
-  - "Toolbar editor, creating tool tips"
+title: "ツール バー ボタンのツール ヒントの作成 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- tool tips [C++], adding to toolbar buttons
+- "\nin tool tip"
+- toolbar buttons [C++], tool tips
+- buttons [C++], tool tips
+- Toolbar editor, creating tool tips
 ms.assetid: 0af65342-fd78-4e78-8d0d-dc68f7fc462e
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 5b5bb25a14d68c01c25d9242df89c1183511ca83
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Creating a Tool Tip for a Toolbar Button
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-### ツール ヒントを作成するには  
+# <a name="creating-a-tool-tip-for-a-toolbar-button"></a>ツール バー ボタンのツール ヒントの作成
+### <a name="to-create-a-tool-tip"></a>ツール ヒントを作成するには  
   
-1.  ツール バー ボタンをクリックします。  
+1.  ツール バー ボタンを選択します。  
   
-2.  [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)の \[Prompt\] フィールドで、ステータス バーのボタンの説明を追加し、メッセージの後に \\n およびツール ヒント名を追加します。  
+2.  [プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)で、**プロンプト**プロパティ フィールドのステータス バーの以外の場合はメッセージが表示されたら、ボタンの説明を追加、\n とツール ヒントの名前を追加します。  
   
- ツール ヒントの一般的な例は、ワードパッドの \[印刷\] ボタンです。  
+ ツール ヒントの一般的な例では、ワードパッドの [印刷] ボタンを示します。  
   
- 1.  ワードパッドを開きます。  
+ 1. ワードパッドを開きます。  
   
- 2.  マウス ポインターをツール バーの \[印刷\] の上に置きます。  
+ 2. マウス ポインターを合わせ、**印刷**ツールバー ボタンをクリックします。  
   
- 3.  マウス ポインターの下に "印刷" と表示されることに注意してください。  
+ 3. 単語 '印刷' ようになりましたがフローティング マウス ポインターの下に注意してください。  
   
- 4.  ワードパッド ウィンドウの最下部にあるステータス バーを見ると、"現在のドキュメントを印刷します" というテキストが表示されていることがわかります。  
+ 4. ([ワードパッド] ウィンドウの一番下) にあるステータス バーを見て - 現在表示されていること、テキスト「アクティブな文書を印刷する」ことを確認します。  
   
- 手順 3. の "印刷" は「ツール ヒント名」で、手順 4. の "現在のドキュメントを印刷します" は「ステータス バーのボタンの説明」です。  
+ 手順 3 で '印刷'「ツール ヒントの名前、」であり、' アクティブ文書を印刷' 手順 4 から「の説明、ステータス バーのボタンをクリックします」。  
   
- ツール バー エディターを使用して同じ効果を得るには、\[Prompt\] プロパティを \[作業中のファイルを印刷\\n印刷\] に設定します。  
+ この効果を使用する場合、**ツールバー**エディター、設定、**プロンプト**プロパティを**\n を印刷**です。  
   
 > [!NOTE]
->  プロンプトのテキストは、[&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)を使用して編集できます。  
+>  プロンプト テキストを使用して行うことができます、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)します。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
- 要件  
+ 必要条件  
   
  MFC または ATL  
   
-## 参照  
- [Creating, Moving, and Editing Toolbar Buttons](../mfc/creating-moving-and-editing-toolbar-buttons.md)   
- [Toolbar Editor](../mfc/toolbar-editor.md)
+## <a name="see-also"></a>参照  
+ [作成、移動、およびツール バー ボタンの編集](../windows/creating-moving-and-editing-toolbar-buttons.md)   
+ [ツール バー エディター](../windows/toolbar-editor.md)
+

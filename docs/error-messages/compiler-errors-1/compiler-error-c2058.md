@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2058
 ms.assetid: 81e08e6b-15f7-41b4-980a-53763e19990c
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f3d5ca723d94c79dc1d4fef291931279a88caf98
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 03e6619720d5c07b29bc72ac29f557ee51ecce9d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2058"></a>コンパイラ エラー C2058
 定数式が整数ではありません。  

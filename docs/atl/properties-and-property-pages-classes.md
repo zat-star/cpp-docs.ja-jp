@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: vc.atl.properties
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- vc.atl.properties
+dev_langs:
+- C++
 helpviewer_keywords:
 - property pages, classes
 - properties [ATL], classes
 - properties [ATL]
 ms.assetid: 31616f98-69f8-48b2-8d58-b8e7d1c2b2d8
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 5e8885876d36dcc81169be990c7001aa3052253e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 883922ef828cdabffbf6014df0771476b4befd59
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="properties-and-property-pages-classes"></a>プロパティとプロパティ ページ クラス
 次のクラスは、プロパティとプロパティ ページをサポートします。  
@@ -46,7 +51,7 @@ ms.lasthandoff: 10/24/2017
   
  [ATL COM プロパティ ページ](../atl/atl-com-property-pages.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../atl/atl-class-overview.md)   
  [プロパティ マップに関するマクロ](../atl/reference/property-map-macros.md)
 

@@ -1,14 +1,17 @@
 ---
-title: "MFC ActiveX コントロール: ActiveX コントロールにおけるピクチャの使用 |Microsoft ドキュメント"
-ms.custom: 
+title: 'MFC ActiveX コントロール: ActiveX コントロールにおけるピクチャの使用 |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: LPPICTUREDISP
-dev_langs: C++
+f1_keywords:
+- LPPICTUREDISP
+dev_langs:
+- C++
 helpviewer_keywords:
 - OnDraw method, MFC ActiveX controls
 - MFC ActiveX controls [MFC], pictures
@@ -16,15 +19,17 @@ helpviewer_keywords:
 - OnResetState method [MFC]
 - CLSID_CPicturePropPage [MFC]
 ms.assetid: 2e49735c-21b9-4442-bb3d-c82ef258eec9
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2839024df1bd94a4a383acd038392eac6763531c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a27e5ebb58056dfd14417adea211daf2c6ac2ddf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-activex-controls-using-pictures-in-an-activex-control"></a>MFC ActiveX コントロール : ActiveX コントロールにおけるピクチャの使用
 この記事では、ActiveX コントロールに共通する Picture 型と、その実装方法を説明します。 ここでは、次の内容について説明します。  
@@ -151,7 +156,7 @@ ms.lasthandoff: 10/24/2017
   
  変更が完了したら、プロジェクトをリビルドして、カスタム Picture プロパティの新しい機能を組み込みます。その後、Test Container を使用して新しいプロパティをテストします。 Test Container にアクセスする方法について詳しくは、「 [テスト コンテナーでのプロパティとイベントのテスト](../mfc/testing-properties-and-events-with-test-container.md) 」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
  [MFC ActiveX コントロール: フォントの使用](../mfc/mfc-activex-controls-using-fonts.md)   
  [MFC ActiveX コントロール: プロパティ ページ](../mfc/mfc-activex-controls-property-pages.md)

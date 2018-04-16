@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
-helpviewer_keywords: declarators, about declarators
+dev_langs:
+- C++
+helpviewer_keywords:
+- declarators, about declarators
 ms.assetid: 0f2e2312-80bd-4154-8345-718bd9ed2173
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d64e375375deac828689f37475d9bfe04b08925b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 18a3f12ac87f0165c74aaa487913f679f1a9941e
+ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="overview-of-declarators"></a>宣言の概要
 宣言子は、オブジェクトまたは関数の名前を指定する宣言の構成要素です。 また、宣言子は、名前付きオブジェクトがオブジェクト、ポインター、参照、または配列であるかどうかも指定します。  宣言子は基本型を指定しませんが、ポインター、参照、配列などの派生型を指定するために、基本型の型情報を変更します。  関数に適用されると、宣言子は型指定子と組み合わせて、関数の戻り値の型がオブジェクト、ポインター、または参照であるかを完全に指定します  (指定子は、後ほど[宣言と定義](declarations-and-definitions-cpp.md)型やストレージ クラスなどの特質します。 修飾子は、このセクションで説明されている[Microsoft 固有の修飾子](../cpp/microsoft-specific-modifiers.md)、宣言子を変更します)。次の図は、`MyFunction` の宣言全体と宣言の構成要素を示します。  
@@ -52,7 +57,7 @@ const char *pch, ch;
   
  **ポインター、参照および配列の宣言子**  
   
- 名前の前に挿入されたポインター演算子により、オブジェクトはポインターまたは参照になります。  **\*** 演算子をポインターとして名前を宣言する、  **&** 演算子は、参照として宣言します。  
+ 名前の前に挿入されたポインター演算子により、オブジェクトはポインターまたは参照になります。   **\*** 演算子をポインターとして名前を宣言する、  **&** 演算子は、参照として宣言します。  
   
 ```  
 int *i; // declarator is *i  

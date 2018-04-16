@@ -13,40 +13,47 @@ dev_langs:
 helpviewer_keywords:
 - event handling [C++], Visual C++
 ms.assetid: e4b9219a-15d8-42fb-83c8-6d2e4e087c8d
-caps.latest.revision: 9
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 0ff5032966cb44ff8d14dd6e0a33fb5f8cf56ed7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 157b31f244ce5400aac5857f2473deb67938d8d0
+ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="event-handling-in-native-c"></a>ネイティブ C++ でのイベント処理
-使用して、イベント ソースとイベント レシーバーを設定するネイティブ C++ イベント処理で、 [event_source](../windows/event-source.md)と[event_receiver](../windows/event-receiver.md)属性にそれぞれを指定する`type` = `native`. これらの属性により、適用先のクラスは、イベントを発生させ、ネイティブの非 COM コンテキストでイベントを処理できます。  
+
+使用して、イベント ソースとイベント レシーバーを設定するネイティブ C++ イベント処理で、 [event_source](../windows/event-source.md)と[event_receiver](../windows/event-receiver.md)属性にそれぞれを指定する`type` = `native`. これらの属性により、適用先のクラスは、イベントを発生させ、ネイティブの非 COM コンテキストでイベントを処理できます。
+
+## <a name="declaring-events"></a>イベントの宣言
+
+イベント ソース クラスで使用して、 [_ _event](../cpp/event.md)イベントとしてメソッドを宣言するメソッドの宣言でキーワード。 メソッドを宣言する必要がありますが、定義はしないでください。コンパイラは、イベント内でメソッドを暗黙的に定義するため、これを定義した場合、コンパイラ エラーが発生します。 ネイティブ イベントは、ゼロ以上のパラメーターを持つメソッドにできます。 戻り値の型は void または任意の整数型です。  
   
-## <a name="declaring-events"></a>イベントの宣言  
- イベント ソース クラスで使用して、 [_ _event](../cpp/event.md)イベントとしてメソッドを宣言するメソッドの宣言でキーワード。 メソッドを宣言する必要がありますが、定義はしないでください。コンパイラは、イベント内でメソッドを暗黙的に定義するため、これを定義した場合、コンパイラ エラーが発生します。 ネイティブ イベントは、ゼロ以上のパラメーターを持つメソッドにできます。 戻り値の型は void または任意の整数型です。  
-  
-## <a name="defining-event-handlers"></a>イベント ハンドラーの定義  
- イベント レシーバー クラスでは、イベント ハンドラーを定義します。イベント ハンドラーは、処理するイベントと一致するシグニチャ (戻り値の型、呼び出し規約、引数) を持つメソッドです。  
+## <a name="defining-event-handlers"></a>イベント ハンドラーの定義
+
+イベント レシーバー クラスでは、イベント ハンドラーを定義します。イベント ハンドラーは、処理するイベントと一致するシグニチャ (戻り値の型、呼び出し規則、引数) を持つメソッドです。  
   
 ## <a name="hooking-event-handlers-to-events"></a>イベントへのイベント ハンドラーのフック  
- 組み込み関数を使用する、イベント レシーバー クラスでも[_ _hook](../cpp/hook.md)にイベントをイベント ハンドラーに関連付けると[_ _unhook](../cpp/unhook.md)をイベント ハンドラーからイベントを切り離します。 複数のイベントを 1 つのイベント ハンドラーにフックすることも、複数のイベント ハンドラーを 1 つのイベントにフックすることもできます。  
+
+組み込み関数を使用する、イベント レシーバー クラスでも[_ _hook](../cpp/hook.md)にイベントをイベント ハンドラーに関連付けると[_ _unhook](../cpp/unhook.md)をイベント ハンドラーからイベントを切り離します。 複数のイベントを 1 つのイベント ハンドラーにフックすることも、複数のイベント ハンドラーを 1 つのイベントにフックすることもできます。  
   
 ## <a name="firing-events"></a>イベントの発生  
- イベントを発生させるには、イベント ソース クラスのイベントとして宣言されたメソッドを呼び出します。 ハンドラーがイベントにフックされている場合は、ハンドラーが呼び出されます。  
+
+イベントを発生させるには、イベント ソース クラスのイベントとして宣言されたメソッドを呼び出します。 ハンドラーがイベントにフックされている場合は、ハンドラーが呼び出されます。  
   
 ### <a name="native-c-event-code"></a>ネイティブ C++ イベント コード  
- 次の例は、ネイティブ C++ でイベントを発生させる方法を示しています。 例をコンパイルして実行するには、コード内のコメントを参照してください。  
+
+次の例は、ネイティブ C++ でイベントを発生させる方法を示しています。 例をコンパイルして実行するには、コード内のコメントを参照してください。  
   
 ## <a name="example"></a>例  
   
 ### <a name="code"></a>コード  
   
-```  
+```cpp  
 // evh_native.cpp  
 #include <stdio.h>  
   
@@ -90,10 +97,12 @@ int main() {
   
 ### <a name="output"></a>出力  
   
-```  
+```Output
 MyHandler2 was called with value 123.  
 MyHandler1 was called with value 123.  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [イベント処理](../cpp/event-handling.md)
+## <a name="see-also"></a>参照
+
+[イベント処理](../cpp/event-handling.md)  
+

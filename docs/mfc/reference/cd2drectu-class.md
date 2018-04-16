@@ -19,16 +19,17 @@ helpviewer_keywords:
 - CD2DRectU [MFC], CD2DRectU
 - CD2DRectU [MFC], IsNull
 ms.assetid: a62f17d1-011d-4867-8f51-fd7e7c00561d
-caps.latest.revision: 18
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2bf261f31f470862a506466a8815daef796743f6
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: 50347c96bf4e2d75be0528bcc5860d1677e6c6f7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cd2drectu-class"></a>CD2DRectU クラス
 `D2D1_RECT_U`のラッパー。  
@@ -64,7 +65,7 @@ class CD2DRectU : public D2D1_RECT_U;
   
  `CD2DRectU`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxrendertarget.h  
   
 ##  <a name="cd2drectu"></a>CD2DRectU::CD2DRectU  
@@ -119,6 +120,5 @@ operator CRect();
 ### <a name="return-value"></a>戻り値  
  D2D の四角形の現在の値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)
-

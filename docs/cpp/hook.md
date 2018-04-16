@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: __hook_cpp
-dev_langs: C++
+f1_keywords:
+- __hook_cpp
+dev_langs:
+- C++
 helpviewer_keywords:
 - __hook keyword [C++]
 - event handlers [C++], connecting events to
 ms.assetid: f4cabb10-d293-4c0e-a1d2-4745ef9cc22c
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 98a18a7e145a2b23b13e38bd07d5b29c5a397d6f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dfc9112c79279e3e5c419efbd12f5883349c0e94
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hook"></a>__hook
 ハンドラー メソッドをイベントに関連付けます。  
@@ -76,7 +81,7 @@ long __hook(
  `receiver`(省略可能)  
  イベント レシーバー クラスのインスタンスへのポインター。 レシーバーを指定しない場合、既定値は `__hook` が呼び出されるレシーバー クラスまたは構造体です。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  イベント レシーバー クラス外の main を含む、任意の関数スコープで使用できます。  
   
 ## <a name="remarks"></a>コメント  
@@ -102,7 +107,7 @@ long __hook(
 ## <a name="example"></a>例  
  参照してください[ネイティブ C++ でのイベント処理](../cpp/event-handling-in-native-cpp.md)と[COM でのイベント処理](../cpp/event-handling-in-com.md)サンプルについてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キーワード](../cpp/keywords-cpp.md)   
  [イベント処理](../cpp/event-handling.md)   
  [event_source](../windows/event-source.md)   

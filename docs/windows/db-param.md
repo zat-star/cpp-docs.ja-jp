@@ -1,32 +1,37 @@
 ---
-title: "db_param | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.db_param"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "db_param attribute"
+title: "db_param |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- vc-attr.db_param
+dev_langs:
+- C++
+helpviewer_keywords:
+- db_param attribute
 ms.assetid: a28315f5-4722-459e-92ef-32e83c0b205a
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: b5224c406f6e10cd4ef9f0ed64fbdbd7c5cc8e62
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# db_param
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-指定したメンバー変数を入力または出力パラメーターに関連付け変数を区切ります。  
+# <a name="dbparam"></a>db_param
+入力または出力パラメーターを持つ指定したメンバー変数を関連付けるし、変数を区切ります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -41,47 +46,47 @@ caps.handback.revision: 11
 ) ]  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `ordinal`  
- 行セットの種類に対応する行数 **DBCOLUMNINFO** \(序数\) データをバインドする。  
+ 列の番号 (**DBCOLUMNINFO**序数) にデータをバインドする、行セット内のフィールドに対応します。  
   
- *paramtype* \(省略可能\)  
- パラメーターに対して設定する型。  プロバイダーは基になるデータ ソースによってサポートされるパラメーターの I\/O 型のみをサポートします。  型は **DBPARAMIOENUM** の一つまたは複数の値の組み合わせです :  
+ *paramtype* (省略可能)  
+ パラメーターに設定する型。 プロバイダーは、基になるデータ ソースでサポートされているパラメーター I/O 型のみをサポートします。 種類は 1 つまたは複数の組み合わせ**次**値。  
   
--   **DBPARAMIO\_INPUT** 入力パラメーター。  
+-   **DBPARAMIO_INPUT** 入力パラメーター。  
   
--   **DBPARAMIO\_OUTPUT** 出力パラメーター。  
+-   **DBPARAMIO_OUTPUT** 出力パラメーター。  
   
--   **DBPARAMIO\_NOTPARAM** にアクセサーパラメーターはありません。  パラメーターを無視して行のアクセサーでこの値に設定 **eParamIO** はを示します。  
+-   **DBPARAMIO_NOTPARAM** アクセサーにパラメーターがありません。 設定**eParamIO**行では、この値にアクセサー注意を促すユーザー パラメーターが無視されます。  
   
- *dbtype* \(省略可能\)  
- 列のエントリの OLE DB [インジケーター型](https://msdn.microsoft.com/en-us/library/ms711251.aspx)。  
+ *dbtype* (省略可能)  
+ OLE DB[型インジケーター](https://msdn.microsoft.com/en-us/library/ms711251.aspx)列エントリにします。  
   
- *精密* \(省略可能\)  
- 列のエントリに使用される精度。  詳細については[DBBINDING 構造](https://msdn.microsoft.com/en-us/library/ms716845.aspx) の **bPrecision** の要素の説明を参照してください。  
+ *有効桁数*(省略可能)  
+ 列のエントリに使用される有効桁数です。 詳細については、説明を参照してください**bPrecision**の要素、 [DBBINDING 構造体。](https://msdn.microsoft.com/en-us/library/ms716845.aspx)  
   
- *スケール* \(省略可能\)  
- 列のエントリに使用するスケール。  詳細については[DBBINDING 構造](https://msdn.microsoft.com/en-us/library/ms716845.aspx) の **bScale** の要素の説明を参照してください。  
+ *スケール*(省略可能)  
+ 列のエントリに使用する小数点以下桁数。 詳細については、説明を参照してください**bScale**の要素、 [DBBINDING 構造体。](https://msdn.microsoft.com/en-us/library/ms716845.aspx)  
   
- *状態* \(省略可能\)  
- この列の状態を保持するメンバー変数。  状態は列の値がデータ値またはそのほかの値であるかを示します **null** など\)。  有効な値については" *OLE DB Programmer's Reference " の* [状態](https://msdn.microsoft.com/en-us/library/ms722617.aspx) を参照してください。  
+ *ステータス*(省略可能)  
+ この列の状態を保持するために使用されるメンバー変数です。 状態がかどうか、列の値が、データ値または他のいくつかの値などを示す**NULL**です。 使用可能な値は、次を参照してください。[ステータス](https://msdn.microsoft.com/en-us/library/ms722617.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
- *長さ* \(省略可能\)  
- バイト列のサイズを保持するメンバー変数。  
+ *長さ*(省略可能)  
+ 列のサイズをバイト単位で保持するために使用されるメンバー変数です。  
   
-## 解説  
- **db\_param** はコマンドで使用するパラメーターを定義します ; したがって **db\_command** で使用できます。  たとえばSQL クエリまたはスト プロシージャのパラメーターにバインド **db\_param** を使用できます。  スト プロシージャのパラメーターは疑問符 \(\) が表示されパラメーターの順序でデータ メンバーをバインドする必要があります。  
+## <a name="remarks"></a>コメント  
+ **db_param**パラメーターを定義するコマンドで使用する; したがってと共に使用する**db_command**です。 たとえば、使用することができます**db_param** SQL クエリまたはストアド プロシージャでパラメーターをバインドします。 ストアド プロシージャのパラメーターが疑問符 (?) で表され、パラメーターの順序でのデータ メンバーをバインドする必要があります。  
   
- **db\_param** はOLE DB `ICommandWithParameters` のベースのバインディングに含めることができるメンバーのデータを区切ります。  このメソッドはパラメーターの型 \(\) の入力または出力指定したパラメーターの型はOLE DB の精度スケーリングステータスおよび長さを設定します。  この属性はOLE DB コンシューマー BEGIN\_PARAM\_MAP マクロを…  END\_PARAM\_MAP.  **db\_param**属性でマークする各メンバーはCOLUMN\_ENTRY の形式でマップ 1 エントリを使用します。  
+ **db_param** OLE DB に参加できるメンバー データを取り出すため`ICommandWithParameters`-ベースのバインディングです。 パラメーターの型 (入力または出力)、OLE DB の型、有効桁数、小数点以下桁数、状態、および指定されたパラメーターの長さを設定します。 この属性は、OLE DB コンシューマー マクロ BEGIN_PARAM_MAP を挿入しています.END_PARAM_MAP です。 各メンバーをマークする、 **db_param**属性は、マップ、COLUMN_ENTRY の形式での 1 つのエントリを占有します。  
   
- **db\_param** は [db\_table](../windows/db-table.md) または [db\_command](../windows/db-command.md) 属性とともに使用されます。  
+ **db_param**は組み合わせて使用するか、 [db_table](../windows/db-table.md)または[db_command](../windows/db-command.md)属性。  
   
- コンシューマー属性プロバイダーがクラスにこの属性を適用するとコンパイラは *YourClassName* はクラスを受け取るとコンパイラは\_YourClassNameAccessor から派生 *YourClassName と*  いうクラスを作成する名前です \_YourClassNameAccessor にクラスの名前を変更します。  \[クラス ビュー\] でこれらのクラスを参照してください。  
+ コンシューマー属性プロバイダーは、クラスにこの属性を適用する場合、コンパイラの名前は変更するクラス\_*すると*アクセサー、場所*すると*指定した名前は、クラス、および、コンパイラと呼ばれるクラスを作成また*すると*から派生した\_*すると*アクセサー。  クラス ビューでは、両方のクラスが表示されます。  
   
-## 使用例  
- 次の例ではNorthwind データベースの SalesbyYear ストのプロシージャに基づいてコマンド クラスを作成します。  これは `m_RETURN_VALUE` の変数とスト プロシージャの最初のパラメーターを関連付け出力パラメーターを定義します。  これは `m_Beginning_Date` と `m_Ending_Date` と最後の 2 回の入力パラメーター \(\) を関連付けます。  
+## <a name="example"></a>例  
+ 次の例では、Northwind データベースに格納されている SalesbyYear プロシージャに基づいたコマンド クラスを作成します。 使用してストアド プロシージャの最初のパラメーターに関連付けられます、`m_RETURN_VALUE`変数、出力パラメーターとして定義されているとします。 最後の 2 つ (入力) パラメーターに関連付けられます`m_Beginning_Date`と`m_Ending_Date`です。  
   
- 次の例では出力パラメーターと `nOutput` の変数に関連付けます。  
+ 次の使用例、 `nOutput` output パラメーターを持つ変数です。  
   
 ```  
 // db_param.cpp  
@@ -117,19 +122,18 @@ struct CSalesbyYear {
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  `struct` のメンバーはローカル メソッド|  
-|**複数回の適用**|Ｘ|  
+|**対象**|**class**、 `struct`、member、method、local|  
+|**反復可能**|×|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [OLE DB Consumer Attributes](../windows/ole-db-consumer-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>参照  
+ [OLE DB コンシューマー属性](../windows/ole-db-consumer-attributes.md)   

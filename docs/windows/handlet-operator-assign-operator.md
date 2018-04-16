@@ -1,33 +1,37 @@
 ---
-title: "HandleT::operator= 演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "corewrappers/Microsoft::WRL::Wrappers::HandleT::operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator= 演算子"
+title: "Handlet::operator = 演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- corewrappers/Microsoft::WRL::Wrappers::HandleT::operator=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator= operator
 ms.assetid: 9e42dcca-30fa-4e8b-8954-802fd64a5595
-caps.latest.revision: 3
-caps.handback.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 68afd6b2a0a1c17cd032d6cea84aefde8c368204
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# HandleT::operator= 演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-HandleT の現在のオブジェクトへの HandleT オブジェクトの値を移動します。  
+# <a name="handletoperator-operator"></a>HandleT::operator= 演算子
+指定した HandleT オブジェクトの値を現在 HandleT オブジェクトに移動します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 HandleT& operator=(  
@@ -35,20 +39,20 @@ HandleT& operator=(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `h`  
- ハンドルへの rvalue 参照。  
+ ハンドルを右辺値の参照。  
   
-## 戻り値  
- HandleT の現在のオブジェクトへの参照。  
+## <a name="return-value"></a>戻り値  
+ 現在の HandleT オブジェクトへの参照。  
   
-## 解説  
- この操作は `h`パラメーターで指定された HandleT オブジェクトが無効になります。  
+## <a name="remarks"></a>コメント  
+ この操作には、パラメーターで指定された HandleT オブジェクトが無効になります。`h`です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corewrappers.h  
   
- **名前空間:** Microsoft::WRL::Wrappers  
+ **Namespace:** Microsoft::WRL::Wrappers  
   
-## 参照  
- [HandleT クラス](../Topic/HandleT%20Class.md)
+## <a name="see-also"></a>参照  
+ [HandleT クラス](../windows/handlet-class.md)

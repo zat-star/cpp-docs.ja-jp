@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3764
-dev_langs: C++
-helpviewer_keywords: C3764
+f1_keywords:
+- C3764
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3764
 ms.assetid: af5d254c-8d4a-4dda-aad9-3c5c1257c868
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 60317bb31b5021d4b9b1b6568d77ae92e06880ce
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 35ddb204e3444ea270fb2f11bb0897047fe2863f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3764"></a>コンパイラ エラー C3764
 'override_function': 基底クラス メソッド 'base_class_function' をオーバーライドすることはできません  

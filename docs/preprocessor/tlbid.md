@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: tlbid
-dev_langs: C++
-helpviewer_keywords: tlbid attribute
+ms.topic: reference
+f1_keywords:
+- tlbid
+dev_langs:
+- C++
+helpviewer_keywords:
+- tlbid attribute
 ms.assetid: 54b06785-191b-4e77-a9a5-485f2b4acb09
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 526b374dc198ac54ac005f5e46e213667f338c23
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 52cb9237537e151e699974fe91c5a7a99725513f
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="tlbid"></a>tlbid
 **C 固有の仕様**  
@@ -53,6 +59,6 @@ LoadTypeLib("MyResource.dll\\2");
   
  **END C 固有の仕様**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [#import の属性](../preprocessor/hash-import-attributes-cpp.md)   
  [#import ディレクティブ](../preprocessor/hash-import-directive-cpp.md)

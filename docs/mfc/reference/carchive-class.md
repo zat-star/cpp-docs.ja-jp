@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -33,7 +34,8 @@ f1_keywords:
 - AFX/CArchive::WriteObject
 - AFX/CArchive::WriteString
 - AFX/CArchive::m_pDocument
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CArchive [MFC], CArchive
 - CArchive [MFC], Abort
@@ -59,15 +61,17 @@ helpviewer_keywords:
 - CArchive [MFC], WriteString
 - CArchive [MFC], m_pDocument
 ms.assetid: 9e950d23-b874-456e-ae4b-fe00781a7699
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aa6350a1195a0096160ab1c776009a3ac7a0e0d9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9cc94e78656c53156b8696b927780f46e939861a
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="carchive-class"></a>CArchive クラス
 使用すると、それらのオブジェクトを削除した後が引き続き発生する永続的なバイナリ形式 (通常はディスク ストレージ) にオブジェクトの複雑なネットワークを保存できます。  
@@ -146,7 +150,7 @@ class CArchive
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `CArchive`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afx.h  
   
 ##  <a name="abort"></a>CArchive::Abort  
@@ -797,7 +801,7 @@ void WriteString(LPCTSTR lpsz);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCSerialization#30](../../mfc/codesnippet/cpp/carchive-class_23.cpp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [CFile クラス](../../mfc/reference/cfile-class.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   

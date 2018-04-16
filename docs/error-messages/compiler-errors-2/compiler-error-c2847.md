@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C2847
-dev_langs: C++
-helpviewer_keywords: C2847
+f1_keywords:
+- C2847
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2847
 ms.assetid: 9ad9a0e0-8b16-49d9-a5be-f8eda2372aa9
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8406ea786def9c3241a0ae1de8743d53e91f96cd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6e1ee4fd957f72c60e30641b1127796bebadb009
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2847"></a>コンパイラ エラー C2847
 マネージ型または WinRT 型の 'class' に対して sizeof を使用できません  

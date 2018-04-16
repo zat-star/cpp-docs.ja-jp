@@ -19,30 +19,17 @@ dev_langs:
 helpviewer_keywords:
 - CW2WEX class
 ms.assetid: 46262e56-e0d2-41fe-855b-0b67ecc8fcd7
-caps.latest.revision: 20
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 16b9cb286f71fa01da4b763188ff120f31ad9de7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c35439b1309e75359177cf45ade4c6be9459f623
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cw2wex-class"></a>CW2WEX クラス
 このクラスは、文字列変換マクロによって使用`CW2TEX`と`CT2WEX`、および typedef`CW2W`です。  
@@ -86,7 +73,7 @@ class CW2WEX
 ## <a name="remarks"></a>コメント  
  追加の機能が必要な場合を除き、使用`CW2TEX`、 `CT2WEX`、または`CW2W`コードにします。  
   
- このクラスには、固定サイズの静的バッファー変換の結果を格納するために使用が含まれています。 結果が大きすぎて静的バッファーに収まらない場合、クラスは `malloc` を使用してメモリを割り当て、オブジェクトがスコープから外れときにそのメモリを解放します。 これにより、テキストとは異なり、ATL のこのクラスは、安全にループで使用して、スタックがオーバーフローするされませんの以前のバージョンで使用できる変換マクロです。  
+ このクラスには、変換の結果を格納するために使用が固定サイズの静的バッファーが含まれています。 結果が大きすぎて静的バッファーに収まらない場合、クラスは `malloc` を使用してメモリを割り当て、オブジェクトがスコープから外れときにそのメモリを解放します。 これにより、テキストとは異なり、ATL のこのクラスは、安全にループで使用して、スタックがオーバーフローするされませんの以前のバージョンで使用できる変換マクロです。  
   
  クラスは、失敗をヒープにメモリを割り当てるしようとするが呼び出されます`AtlThrow`の引数を持つ**E_OUTOFMEMORY**です。  
   
@@ -107,7 +94,7 @@ class CW2WEX
 ## <a name="example"></a>例  
  参照してください[ATL および MFC 文字列変換マクロ](string-conversion-macros.md)をこれらの文字列変換マクロを使用する例についてはします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlconv.h  
   
 ##  <a name="cw2wex"></a>CW2WEX::CW2WEX  
@@ -162,11 +149,10 @@ operator LPWSTR() const throw();
 ### <a name="return-value"></a>戻り値  
  種類としてテキスト文字列を返す`LPWSTR`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CA2AEX クラス](../../atl/reference/ca2aex-class.md)   
  [CA2CAEX クラス](../../atl/reference/ca2caex-class.md)   
  [CA2WEX クラス](../../atl/reference/ca2wex-class.md)   
  [CW2AEX クラス](../../atl/reference/cw2aex-class.md)   
  [CW2CWEX クラス](../../atl/reference/cw2cwex-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

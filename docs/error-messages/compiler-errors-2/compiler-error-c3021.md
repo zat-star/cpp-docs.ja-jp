@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C3021 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C3021 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: C3021
-dev_langs: C++
-helpviewer_keywords: C3021
+f1_keywords:
+- C3021
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3021
 ms.assetid: 0cef6d97-e267-438a-ac8b-0daf5bbbc2cf
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2dd19610cdb548fa3b9a81181fa8857d8c8e8644
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ba666ba3d47780022ebe8218738167f81d4a161f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3021"></a>コンパイラ エラー C3021
 'arg': OpenMP ディレクティブ 'directive' 上で、引数が空です  

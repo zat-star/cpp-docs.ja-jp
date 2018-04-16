@@ -4,39 +4,45 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - CRowsetImpl
 - ATL.CRowsetImpl
 - ATL::CRowsetImpl
-dev_langs: C++
-helpviewer_keywords: CRowsetImpl class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CRowsetImpl class
 ms.assetid: e97614b3-b11d-4806-a0d3-b9401331473f
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 2390a474e289ea41fd676759d12b92e8a22e462a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 0d97eefdc1885c532df9c9be913e3f1beea2ff09
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="crowsetimpl-class"></a>CRowsetImpl クラス
 多くの実装インターフェイスの多重継承を必要とせず、標準の OLE DB 行セットの実装を提供します。  
   
-## <a name="syntax"></a>構文  
-  
-```  
+## <a name="syntax"></a>構文
+
+```cpp
 template <  
    class T,  
    class Storage,  
    class CreatorClass,  
    class ArrayType = CAtlArray<Storage>,   
    class RowClass = CSimpleRow,   
-   class RowsetInterface = IRowsetImpl < T, IRowset >   
+   class RowsetInterface = IRowsetImpl <T, IRowset>   
 >  
 class CRowsetImpl :    
    public CComObjectRootEx<CreatorClass::_ThreadModel>,   
@@ -80,10 +86,10 @@ class CRowsetImpl :
 |-|-|  
 |[m_rgRowData](../../data/oledb/crowsetimpl-m-rgrowdata.md)|既定では、`CAtlArray`へのユーザー レコードのテンプレート引数で templatizes を`CRowsetImpl`です。 変更することによって、配列型の別のクラスを使用できます、`ArrayType`へのテンプレート引数`CRowsetImpl`です。|  
 |[m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)|行セットの最初のコマンドが含まれています。|  
-|[その](../../data/oledb/crowsetimpl-m-strindextext.md)|行セットの最初のインデックスが含まれています。|  
+|[m_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)|行セットの最初のインデックスが含まれています。|  
   
 ## <a name="remarks"></a>コメント  
- `CRowsetImpl`静的キャストの形式での上書きを提供します。 メソッドは、指定された行セットがコマンド テキストを検証する方法を制御します。 独自に作成することができます`CRowsetImpl`-複数継承の実装インターフェイスをすることでクラスのスタイルを設定します。 唯一の方法を実装を提供する必要があります**Execute**です。 行セットの種類を作成することによって作成者メソッドに異なる署名が要求するは**Execute**です。 たとえば、使用している場合、 `CRowsetImpl`-スキーマ行セットを実装するクラスを派生、 **Execute**メソッドは、次の署名には。  
+ `CRowsetImpl` 静的キャストの形式での上書きを提供します。 メソッドは、指定された行セットがコマンド テキストを検証する方法を制御します。 独自に作成することができます`CRowsetImpl`-複数継承の実装インターフェイスをすることでクラスのスタイルを設定します。 唯一の方法を実装を提供する必要があります**Execute**です。 行セットの種類を作成することによって作成者メソッドに異なる署名が要求するは**Execute**です。 たとえば、使用している場合、 `CRowsetImpl`-スキーマ行セットを実装するクラスを派生、 **Execute**メソッドは、次の署名には。  
   
  `HRESULT Execute(LONG* pcRows, ULONG cRestrictions, const VARIANT* rgRestrictions)`  
   
@@ -93,5 +99,5 @@ class CRowsetImpl :
   
  いずれかを実装する、 `CRowsetImpl`-派生**Execute**メソッド、内部データ バッファーを設定する必要があります ([m_rgRowData](../../data/oledb/crowsetimpl-m-rgrowdata.md))。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h

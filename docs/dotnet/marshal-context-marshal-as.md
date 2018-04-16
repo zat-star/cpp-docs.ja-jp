@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,18 +13,23 @@ f1_keywords:
 - marshal_context.marshal_as
 - msclr.interop.marshal_context.marshal_as
 - msclr::interop::marshal_context::marshal_as
-dev_langs: C++
-helpviewer_keywords: marshal_context class [C++], operations
+dev_langs:
+- C++
+helpviewer_keywords:
+- marshal_context class [C++], operations
 ms.assetid: 24a1afee-51c0-497c-948c-f77fe43635c8
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 8cf8d8728a71f268db994efdc60f4be0dc5a65a2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: e56e225d136fb02445eeeb398937adc075f2dae7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="marshalcontextmarshalas"></a>marshal_context::marshal_as
 マネージとネイティブ データ型の間で変換する特定のデータ オブジェクトのマーシャ リングを実行します。  
@@ -73,12 +79,12 @@ int main() {
 }  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル:** \<msclr\marshal.h >、 \<msclr\marshal_windows.h >、 \<msclr\marshal_cppstd.h >、または\<msclr\marshal_atl.h >  
   
  **Namespace:** msclr::interop  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ におけるマーシャ リングの概要](../dotnet/overview-of-marshaling-in-cpp.md)   
  [marshal_as](../dotnet/marshal-as.md)   
  [marshal_context クラス](../dotnet/marshal-context-class.md)

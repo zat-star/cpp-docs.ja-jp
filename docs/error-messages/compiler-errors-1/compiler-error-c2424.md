@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2424
 ms.assetid: 03613746-a324-4b8b-94c0-424e8b0aae94
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5d793da536de84801bcf5368916281daa89ec6f2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: c5fe51d8800dc1a0b09dd2eb6ffb753f884ca17d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2424"></a>コンパイラ エラー C2424
 'token' : 'context' 内の式は正しくありません。  

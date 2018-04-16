@@ -7,40 +7,31 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
-- file_status
-- filesystem/std::experimental::filesystem::v1::file_status
-- filesystem/std::experimental::filesystem::v1::file_status::operator=
-- filesystem/std::experimental::filesystem::v1::file_status::type
-- filesystem/std::experimental::filesystem::v1::file_status::permissions
+- filesystem/std::experimental::filesystem::file_status
+- filesystem/std::experimental::filesystem::file_status::operator=
+- filesystem/std::experimental::filesystem::file_status::type
+- filesystem/std::experimental::filesystem::file_status::permissions
 dev_langs:
 - C++
 ms.assetid: 9781840e-ad22-44dd-ad79-0fabaa94bac4
-caps.latest.revision: 15
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 1095fbeeceb33fd9dedf0ad1217eab1a052f5ba1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+helpviewer_keywords:
+- std::experimental::filesystem::file_status
+- std::experimental::filesystem::file_status::operator=
+- std::experimental::filesystem::file_status::type
+- std::experimental::filesystem::file_status::permissions
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 406a747948276aecf30dcfbf88ffc870bb5804a3
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="filestatus-class"></a>file_status クラス
 [file_type](../standard-library/filesystem-enumerations.md#file_type) とファイルの [perms](../standard-library/filesystem-enumerations.md#perms) をラップします。  
@@ -94,14 +85,13 @@ void permissions(perms mask) noexcept
   
  セッターを使用して、ファイルを読み取り専用にしたり、読み取り専用属性を削除したりできます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<filesystem >  
   
- **Namespace:** std::experimental::filesystem、std::experimental::filesystem::v1  
+ **Namespace:** std::experimental::filesystem、std::experimental::filesystem  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [path クラス](../standard-library/path-class.md)   
  [\<filesystem>](../standard-library/filesystem.md)
-
 

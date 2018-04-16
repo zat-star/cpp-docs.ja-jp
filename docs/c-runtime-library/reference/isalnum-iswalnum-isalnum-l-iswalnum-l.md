@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _iswalnum_l
 - _isalnum_l
@@ -32,7 +33,8 @@ f1_keywords:
 - _isalnum_l
 - isalnum
 - _istalnum
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _istalnum function
 - _ismbcalnum_l function
@@ -43,15 +45,17 @@ helpviewer_keywords:
 - _istalnum_l function
 - _iswalnum_l function
 ms.assetid: 0dc51306-ade8-4944-af27-e4176fc89093
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 25207b525ec1c5e4c19d114281a0daff2d38ea1f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0f71ab6a960dbc92c4e6d8399e833f2ddf0e2ac1
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="isalnum-iswalnum-isalnuml-iswalnuml"></a>isalnum、iswalnum、_isalnum_l、_iswalnum_l
 整数が英数字を表すかどうかを決定します。  
@@ -83,9 +87,9 @@ int _iswalnum_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらの各ルーチンは、`c` が特定の英数字を表している場合は 0 以外の値を返します。 `isalnum`場合は、0 以外の値を返します`isalpha`または`isdigit`は 0 です`c`,、つまり場合`c`が範囲内で、A ~ Z、a ~ z、または 0 - 9。 `iswalnum` または `iswalpha` が `iswdigit` に対して 0 以外の値の場合、`c` は 0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらの各ルーチンは、`c` が特定の英数字を表している場合は 0 以外の値を返します。 `isalnum` 場合は、0 以外の値を返します`isalpha`または`isdigit`は 0 です`c`,、つまり場合`c`が範囲内で、A ~ Z、a ~ z、または 0 - 9。 `iswalnum` または `iswalpha` が `iswdigit` に対して 0 以外の値の場合、`c` は 0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
- これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
+ これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用します。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
  `isalnum` と `_isalnum_l` の動作は、`c` が EOF ではなく、かつ、0 ～ 0xFF の範囲でない場合は未定義です。 CRT デバッグ ライブラリを使用し、`c` がこれらの値のうちのいずれかの値でない場合は、アサーションが発生します。  
   
@@ -96,18 +100,18 @@ int _iswalnum_l(
 |`_istalnum`|`isalnum`|[_ismbcalnum](../../c-runtime-library/reference/ismbcalnum-functions.md)|`iswalnum`|  
 |`_istalnum_l`|`_isalnum_l`|`_ismbcalnum_l`|`_iswalnum_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`isalnum`|\<ctype.h>|  
 |`iswalnum`|\<ctype.h> または \<wchar.h>|  
 |`_isalnum_l`|\<ctype.h>|  
 |`_iswalnum_l`|\<ctype.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字分類](../../c-runtime-library/character-classification.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)

@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _wfopen_s
 - fopen_s
@@ -42,30 +42,17 @@ helpviewer_keywords:
 - files [C++], opening
 - Unicode [C++], files
 ms.assetid: c534857e-39ee-4a3f-bd26-dfe551ac96c3
-caps.latest.revision: 41
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 168d1cd797f9f7d6080f2da7aefeb8859c7f2232
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 97221d04dcd93fbaa32a3562320d0c098fa001ae
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="fopens-wfopens"></a>fopen_s、_wfopen_s
 ファイルを開きます。 これらのバージョンの [fopen, _wfopen](../../c-runtime-library/reference/fopen-wfopen.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンです。  
@@ -115,14 +102,14 @@ errno_t _wfopen_s(
   
  これらの関数では、パラメーターの検証が行われます。 `pFile`、`filename`、または `mode` が null ポインターである場合には、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、これらの関数は無効なパラメーター例外を生成します。  
   
- ファイルでその他の操作を実行する前には、必ず戻り値をチェックして関数が成功したかどうかを確認します。 エラーが発生すると、エラー コードが返され、グローバル変数 `errno` が設定されます。 詳しくは、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
+ ファイルでその他の操作を実行する前には、必ず戻り値をチェックして関数が成功したかどうかを確認します。 エラーが発生すると、エラー コードが返され、グローバル変数 `errno` が設定されます。 詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   
 ## <a name="unicode-support"></a>Unicode のサポート  
  `fopen_s` は Unicode のファイル ストリームをサポートします。 新しいまたは既存の Unicode ファイルを開くには、次のように、目的のエンコーディングを指定する `ccs` フラグを `fopen_s` に渡します。  
   
- `fopen_s(&fp, "newfile.txt", "rw, ccs=`*エンコーディング*`");`  
+ `fopen_s(&fp, "newfile.txt", "rw, ccs=`*encoding*`");`  
   
- 値を許可*エンコード*は`UNICODE`、 `UTF-8`、および`UTF-16LE`です。 値を指定しない場合の*エンコード*、 `fopen_s` ANSI エンコーディングを使用します。  
+ 値を許可*エンコード*は`UNICODE`、 `UTF-8`、および`UTF-16LE`です。 ある値を指定しない場合の*エンコード*、 `fopen_s` ANSI エンコーディングを使用します。  
   
  既に存在するファイルを読み取り用または追加用に開く場合は、ファイル内にバイト順マーク (BOM: Byte Order Mark) があれば、それによってエンコーディングが決定されます。 BOM エンコーディングは、`ccs` フラグで指定されたエンコーディングよりも優先されます。 `ccs` エンコーディングは、BOM が表示されていない場合またはファイルが新しいファイルの場合にのみ使用されます。  
   
@@ -218,7 +205,7 @@ errno_t _wfopen_s(
 |mode 文字列の文字|`_open`/`_sopen` に相当する `oflag` 値|  
 |-------------------------------|----------------------------------------------------|  
 |`a`|`_O_WRONLY &#124; _O_APPEND` (通常は `_O_WRONLY &#124; _O_CREAT &#124; _O_APPEND`)|  
-|`a+`|`_O_RDWR &#124; _O_APPEND` (通常は `_O_RDWR &#124; _O_APPEND &#124; _O_CREAT`)|  
+|`a+`|`_O_RDWR &#124; _O_APPEND` (通常は `_O_RDWR &#124; _O_APPEND &#124; _O_CREAT` )|  
 |`r`|`_O_RDONLY`|  
 |`r+`|`_O_RDWR`|  
 |`w`|`_O_WRONLY` (通常は `_O_WRONLY &#124; _O_CREAT &#124; _O_TRUNC`)|  
@@ -237,14 +224,14 @@ errno_t _wfopen_s(
   
  `rb` モードを使用していて、コードを移植する必要がなく、大量のファイルを読み込む予定があり、ネットワーク パフォーマンスを気にする必要がない場合は、Win32 メモリ マップト ファイルも省略できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |関数|必須ヘッダー|  
 |--------------|---------------------|  
 |`fopen_s`|\<stdio.h>|  
 |`_wfopen_s`|\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="libraries"></a>ライブラリ  
  [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
@@ -315,7 +302,7 @@ The file 'data2' was opened
 Number of files closed by _fcloseall: 1  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fclose、_fcloseall](../../c-runtime-library/reference/fclose-fcloseall.md)   
  [_fdopen、_wfdopen](../../c-runtime-library/reference/fdopen-wfdopen.md)   

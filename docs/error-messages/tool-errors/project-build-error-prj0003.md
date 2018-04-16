@@ -15,47 +15,35 @@ dev_langs:
 helpviewer_keywords:
 - PRJ0003
 ms.assetid: fc5a84bb-c6d3-41d6-8dd6-475455820778
-caps.latest.revision: 7
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: aac7a37a94013a1acad8ee866d9ac7ce28fda94c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bcf80eb4d45fe1ae163772b96339c123996ae377
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/03/2018
 ---
-# <a name="project-build-error-prj0003"></a>プロジェクト ビルド エラー PRJ0003
-'コマンド ライン' を起動中にエラー。  
+# <a name="project-build-error-prj0003"></a>プロジェクト ビルド エラー PRJ0003  
   
- コマンド、***コマンドライン***、入力から構成されている、**プロパティ ページ**ダイアログ ボックスで、エラー コード情報はない情報が返されますが、出力ウィンドウに表示されます。  
+> エラーの生成 '*コマンドライン*' です。  
   
- このエラーの考えられる理由:  
+*コマンドライン*コマンドの形式で入力から、**プロパティ ページ** ダイアログ ボックスに、エラー コードが返されますが表示されます、**出力**ウィンドウです。  
+
+このエラーの考えられる原因は次のとおりです。  
   
--   プロジェクトは、ATL Server に依存します。 始まる[!INCLUDE[vs_orcas_long](../../atl/reference/includes/vs_orcas_long_md.md)]、ATL Server は Visual Studio の一部として含めるが不要になったが、CodePlex でシェアード ソース プロジェクトとしてリリースされています。 ATL Server のソース コードとツールをダウンロードするには[http://go.microsoft.com/fwlink/?LinkID=81979](http://go.microsoft.com/fwlink/?LinkID=81979)します。  
+-   プロジェクトは、ATL サーバーによって異なります。 Visual Studio 2008 以降では、ATL サーバーは不要になった、Visual Studio の一部として含めるが、CodePlex での共有ソース プロジェクトとしてリリースされています。 ATL Server のソース コードとツールをダウンロードするには[ATL サーバー ライブラリとツール](http://go.microsoft.com/fwlink/p/?linkid=81979)です。  
   
 -   リソースが不足します。 これを解決するのには、一部のアプリケーションを閉じます。  
   
--   不十分なセキュリティ権限。 セキュリティのための十分な特権があることを確認します。  
+-   セキュリティ特権が不十分です。 セキュリティのための十分な特権があることを確認します。  
   
--   指定された実行可能ファイルのパス[vc++ ディレクトリ](http://msdn.microsoft.com/en-us/e027448b-c811-4c3d-8531-4325ad3f6e02)を実行しようとしているツールのパスは含まれません。  
+-   指定された実行可能パス**vc++ ディレクトリ**実行しようとしているツールのパスを含めないでください。 詳細については、次を参照してください[のプロジェクト プロパティの操作。](../../ide/working-with-project-properties.md)  
   
--   メイクファイル プロジェクトの場合は、いずれかで実行するコマンドがない**ビルド コマンドライン**または**リビルド コマンドライン**します。  
+-   メイクファイル プロジェクトの場合は、いずれかで実行するコマンドがない**ビルド コマンドライン**または**リビルド コマンドライン**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロジェクト ビルド エラーと警告 (PRJxxxx)](../../error-messages/tool-errors/project-build-errors-and-warnings-prjxxxx.md)

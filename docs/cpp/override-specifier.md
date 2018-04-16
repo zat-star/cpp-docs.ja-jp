@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs: C++
-helpviewer_keywords: override Identifier
+dev_langs:
+- C++
+helpviewer_keywords:
+- override Identifier
 ms.assetid: b286fb46-9374-4ad8-b2e7-4607119b6133
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c182404618e36fe3b7fa0ed72d3a2e39569f7ac0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 677a6a0e0107f3ed0d0dc402f36e9d6dd4505c7f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="override-specifier"></a>override 指定子
 `override` キーワードを使用して、基底クラスの仮想関数をオーバーライドするメンバー関数を指定できます。  
@@ -90,7 +95,7 @@ class DerivedClass: public BaseClass
   
  関数をオーバーライドできないことと、クラスの継承ができないことを指定するには、使用、[最終](../cpp/final-specifier.md)キーワード。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [final 指定子](../cpp/final-specifier.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  

@@ -1,41 +1,46 @@
 ---
-title: "deque::iterator (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::deque::iterator"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "iterator メンバー [STL/CLR]"
+title: "deque::iterator (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::deque::iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- iterator member [STL/CLR]
 ms.assetid: 3529e793-5d56-4cb2-898d-fdedb90b5c0c
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 263862aa76e8e913de7650b10bbfc6dc2914ed0b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# deque::iterator (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="dequeiterator-stlclr"></a>deque::iterator (STL/CLR)
 被制御シーケンスの反復子の型です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef T1 iterator;  
 ```  
   
-## 解説  
- この型は、被制御シーケンスのランダム アクセス反復子として使用できる未指定の型 `T1` オブジェクトを表します。  
+## <a name="remarks"></a>コメント  
+ この型が指定されていない型のオブジェクトを表します`T1`被制御シーケンスのランダム アクセス反復子として使用されることができます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_deque_iterator.cpp   
@@ -66,13 +71,16 @@ int main()
   
 ```  
   
-  **b c**  
- **X b c**   
-## 必要条件  
- **ヘッダー:** \<cliext\/deque\>  
+```Output  
+a b c  
+x b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/deque >  
   
-## 参照  
- [deque](../dotnet/deque-stl-clr.md)   
- [deque::const\_iterator](../Topic/deque::const_iterator%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
+ [deque::const_iterator (STL/CLR)](../dotnet/deque-const-iterator-stl-clr.md)

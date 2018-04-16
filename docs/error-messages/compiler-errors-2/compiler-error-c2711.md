@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C2711
 ms.assetid: 9df9f808-7419-4e63-abdd-e6538ff0871f
-caps.latest.revision: 10
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3d6b3cc77e88948eaca6aea18568a3992e6aef95
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: a58a4497e007203119a376e38de82dd91030dfbc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2711"></a>コンパイラ エラー C2711
 'function': この関数にすることはできませんマネージとしてコンパイルする場合は、#pragma unmanaged を使用する検討してください  

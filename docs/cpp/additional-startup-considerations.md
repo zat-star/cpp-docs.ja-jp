@@ -15,16 +15,17 @@ helpviewer_keywords:
 - startup code
 - initializing before main
 ms.assetid: 0e942aa6-8342-447c-b068-8980ed7622bd
-caps.latest.revision: 6
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: cb437729d2c60f15bc798438ecbbba0637bf3d22
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 57b1de8fbbdb3d969dca8e84e57e18b81749d944
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="additional-startup-considerations"></a>起動に関するその他の考慮事項
 C++ では、オブジェクトの構築時と破棄時にユーザー コードを実行することができます。 したがって、どの初期化に入る前に発生する可能性を理解しておく必要は**メイン**から出た後にどのデストラクターが呼び出されると**メイン**です。 (オブジェクトの構築と破棄の詳細については、次を参照してください[コンス トラクター](../cpp/constructors-cpp.md)と[デストラクター](../cpp/destructors-cpp.md)。)。  
@@ -43,5 +44,5 @@ C++ では、オブジェクトの構築時と破棄時にユーザー コード
   
  相互依存しているのに翻訳単位が異なるグローバルな静的オブジェクトは、正しくない動作の原因になる可能性があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [起動と終了](../cpp/startup-and-termination-cpp.md)

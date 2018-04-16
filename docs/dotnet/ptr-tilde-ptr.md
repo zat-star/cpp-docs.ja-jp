@@ -1,47 +1,51 @@
 ---
-title: "ptr::~ptr | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr.com.ptr.~ptr"
-  - "ptr.~ptr"
-  - "msclr::com.ptr::~ptr"
-  - "~ptr"
-  - "ptr::~ptr"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ptr::~ptr"
+title: 'ptr:: ~ ptr |Microsoft ドキュメント'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: reference
+f1_keywords:
+- msclr.com.ptr.~ptr
+- ptr.~ptr
+- msclr::com.ptr::~ptr
+- ~ptr
+- ptr::~ptr
+dev_langs:
+- C++
+helpviewer_keywords:
+- ptr::~ptr
 ms.assetid: 5f644aa5-fe66-4992-a5f8-13ec1292c949
 caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c8eb71e9975f06bfae5fe20c3ccae6d296a47f80
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ptr::~ptr
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`com::ptr`を破棄します。  
+# <a name="ptrptr"></a>ptr::~ptr
+Destructs、`com::ptr`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 ~ptr();  
 ```  
   
-## 解説  
- 破棄時に、`com::ptr` は COM オブジェクトを所有するすべての参照を解放します。  保持されている COM オブジェクトへの参照がない場合は、COM オブジェクトが削除され、メモリが解放されます。  
+## <a name="remarks"></a>コメント  
+ 破棄、`com::ptr`を COM オブジェクトを所有しているすべての参照を解放します。 COM オブジェクトに保持されている他の参照はありません、想定される COM オブジェクトが削除され、そのメモリを解放します。  
   
-## 使用例  
- この例では、プライベート メンバー `IXMLDOMDocument` オブジェクトをラップするために `com::ptr` を使用する CLR クラスを実装します。`main` 関数では、`XmlDocument` の 2 つがオブジェクトのデストラクターが呼び出される呼び出されます `com::ptr` の基になるデストラクターによって `try` ブロックのスコープ外の場合、COM オブジェクトのすべての所有されている参照を解放します。  
+## <a name="example"></a>例  
+ この例を使用して CLR クラスを実装して、`com::ptr`をそのプライベート メンバーをラップする`IXMLDOMDocument`オブジェクト。  `main`関数、2 つ`XmlDocument`のスコープ外に出ると、オブジェクトのデストラクターが呼び出される、`try`ブロック、基になる結果として得られる`com::ptr`デストラクターが呼び出される COM を所有しているすべての参照を解放します。オブジェクト。  
   
 ```  
 // comptr_dtor.cpp  
@@ -102,12 +106,12 @@ int main() {
 }  
 ```  
   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\com\\ptr.h\>  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\com\ptr.h >  
   
- **名前空間** msclr::com  
+ **Namespace** msclr::com  
   
-## 参照  
- [ptr Members](../dotnet/ptr-members.md)   
+## <a name="see-also"></a>参照  
+ [ptr メンバー](../dotnet/ptr-members.md)   
  [ptr::ptr](../dotnet/ptr-ptr.md)   
  [ptr::CreateInstance](../dotnet/ptr-createinstance.md)

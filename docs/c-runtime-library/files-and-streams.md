@@ -4,23 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - files [C++]
 - streams
 ms.assetid: f61e712b-eac9-4c28-bb18-97c3786ef387
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 42237a142226d70b3cff0c07de5ed3daaeda8682
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e0285d8395b5a135ac75c40914232ad820f36f00
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="files-and-streams"></a>ファイルとストリーム
 プログラムは、ファイルを読み書きすることによって対象の環境と通信します。 ファイルには次のものがあります。  
@@ -49,7 +53,7 @@ ms.lasthandoff: 10/24/2017
   
  © 1989-2001 by P.J. Plauger and Jim Brodie. All rights reserved.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [テキスト ストリームとバイナリ ストリーム](../c-runtime-library/text-and-binary-streams.md)   
  [バイト ストリームとワイド ストリーム](../c-runtime-library/byte-and-wide-streams.md)   
  [ストリームの制御](../c-runtime-library/controlling-streams.md)   

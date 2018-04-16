@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _XcptFilter
 - _seh_filter_dll
@@ -40,16 +40,17 @@ helpviewer_keywords:
 - _seh_filter_dll function
 - _seh_filter_exe function
 ms.assetid: 747e5963-3a12-4bf5-b5c4-d4c1b6068e15
-caps.latest.revision: 14
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ccdaa9f89a45d957b0d56bc435e5cf61cd152e8d
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 677e203e552dfa2f057cb0631d73c9f48349c4b4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="sehfilterdll-sehfilterexe"></a>_seh_filter_dll、_seh_filter_exe
 例外と実行する関連アクションを指定します。  
@@ -93,8 +94,8 @@ int __cdecl _seh_filter_exe(
 |STATUS_FLOAT_STACK_CHECK|SIGFPE|  
 |STATUS_FLOAT_UNDERFLOW|SIGFPE|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** corecrt_startup.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)

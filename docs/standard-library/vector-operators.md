@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - vector/std::operator!=
 - vector/std::operator&gt;
@@ -13,9 +13,10 @@ f1_keywords:
 - vector/std::operator&lt;
 - vector/std::operator&lt;=
 - vector/std::operator==
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 1d14f312-6f59-4ec7-88ae-95f89a558823
-caps.latest.revision: "13"
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::operator!= (vector)
@@ -24,11 +25,11 @@ helpviewer_keywords:
 - std::operator&lt; (vector)
 - std::operator&lt;= (vector)
 - std::operator== (vector)
-ms.openlocfilehash: 310bf81e6dd20440c57ce5a0c73da7a6919f0015
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.openlocfilehash: 297fb5bf602d8cc7d2f90e66fbb47dd433e90b86
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltvectorgt-operators"></a>&lt;vector&gt; 演算子
 ||||  
@@ -131,7 +132,7 @@ int main( )
 Vector v1 is less than vector v2.  
 ```  
   
-##  <a name="op_lt_eq"></a>  operator&lt;=  
+##  <a name="op_lt_eq"></a>  演算子&lt;=  
  演算子の左側のオブジェクトが右側のオブジェクト以下かどうかを調べます。  
   
 ```  
@@ -275,7 +276,7 @@ int main( )
 Vector v1 is greater than vector v2.  
 ```  
   
-##  <a name="op_gt_eq"></a>  operator&gt;=  
+##  <a name="op_gt_eq"></a>  演算子&gt;=  
  演算子の左側のオブジェクトが右側のオブジェクト以上であるかどうかを調べます。  
   
 ```  
@@ -324,6 +325,6 @@ int main( )
 Vector v1 is greater than or equal to vector v2.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<vector>](../standard-library/vector.md)
 

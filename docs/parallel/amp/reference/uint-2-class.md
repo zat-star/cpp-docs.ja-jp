@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::uint_2::set_xy
 - amp_short_vectors/Concurrency::graphics::uint_2::y
@@ -33,17 +34,20 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::uint_2::g
 - amp_short_vectors/Concurrency::graphics::uint_2::operator++
 - amp_short_vectors/Concurrency::graphics::uint_2::rg
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 9fcc9129-72b1-4da7-9012-4d3be15f1c52
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fdb24ae59933cc926064a6a5a9335e8734079995
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1d7b3b494460e0f254f46ed197e09d6d8d485b5e
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="uint2-class"></a>uint_2 クラス
 2 個の符号なし整数の short ベクターを表します。  
@@ -90,23 +94,23 @@ class uint_2;
 |名前|説明|  
 |----------|-----------------|  
 |uint_2::operator--||  
-|uint_2::operator % =||  
-|uint_2::operator & =||  
-|uint_2::operator * =||  
+|uint_2::operator%=||  
+|uint_2::operator&=||  
+|uint_2::operator*=||  
 |uint_2::operator/=||  
-|uint_2::operator ^ =||  
-|uint_2::operator &#124; =||  
-|uint_2::operator ~||  
+|uint_2::operator^=||  
+|uint_2::operator&#124;=||  
+|uint_2::operator~||  
 |uint_2::operator++||  
-|uint_2::operator + =||  
-|uint_2::operator <\<=||  
-|uint_2::operator = =||  
+|uint_2::operator+=||  
+|uint_2::operator<\<=||  
+|uint_2::operator=||  
 |uint_2::operator-=||  
-|uint_2::operator >> =||  
+|uint_2::operator>>=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#uint_2__size)||  
   
@@ -126,12 +130,12 @@ class uint_2;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `uint_2`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>uint_2 
+##  <a name="ctor"></a> uint_2 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -194,11 +198,11 @@ explicit inline uint_2(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="uint_2__size"></a>サイズ 
+##  <a name="uint_2__size"></a> サイズ 
 
 ```  
 static const int size = 2;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)

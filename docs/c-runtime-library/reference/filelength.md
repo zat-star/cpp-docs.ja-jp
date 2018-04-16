@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - filelength
 apilocation:
@@ -29,16 +29,17 @@ dev_langs:
 helpviewer_keywords:
 - filelength function
 ms.assetid: 5fbc1912-7822-498d-bbf4-8bada87cf9b9
-caps.latest.revision: 4
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 485bdd1cd0c98b227e6a4813ff5a75de250de785
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 30b4b79a0e4a28e28d40d2bd75e83ec0aebab7fe
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="filelength"></a>filelength
 この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_filelength](../../c-runtime-library/reference/filelength-filelengthi64.md) を使用してください。

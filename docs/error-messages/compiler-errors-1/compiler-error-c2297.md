@@ -1,25 +1,31 @@
 ---
-title: "コンパイラ エラー C2297 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ エラー C2297 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
-f1_keywords: C2297
-dev_langs: C++
-helpviewer_keywords: C2297
+f1_keywords:
+- C2297
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2297
 ms.assetid: 65849fe5-17e1-4b7e-b50c-f508b05ddaa4
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2c621e1e2c19f69e82110d34bec86f6927bf7436
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d3f03bd9af2a8ca19a0715f8d423bcb7d3ff3c80
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2297"></a>コンパイラ エラー C2297
 'operator': 右オペランドが正しくありません  

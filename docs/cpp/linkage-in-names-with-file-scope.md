@@ -21,16 +21,17 @@ helpviewer_keywords:
 - external linkage, scope linkage rules
 - static variables, external declarations
 ms.assetid: 38d3fa5e-1861-466e-a590-84b86f7b184e
-caps.latest.revision: 8
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: c4d33071426eac428cc1728aa13b403953a99389
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 581d7798f4f3aaa409d843f8b7f3b5869b47407e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="linkage-in-names-with-file-scope"></a>ファイル スコープを持つ名前にあるリンケージ
 次のリンケージ規則は、ファイル スコープを持つ名前 (`typedef` と列挙子の名前以外) に適用されます。  
@@ -53,5 +54,5 @@ ms.lasthandoff: 09/25/2017
   
 -   外部リンケージを持つ別の名前の宣言で使用されていません。 この制約は、外部リンケージを持つ関数に渡されるクラス型のオブジェクトにより、クラスが外部リンケージを持つことを意味します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)

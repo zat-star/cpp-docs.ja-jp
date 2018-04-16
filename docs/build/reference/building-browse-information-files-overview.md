@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - .bsc files, about .bsc files
 - bsc files, about bsc files
 - browse information files (.bsc)
 - browse information files (.bsc), creating
 ms.assetid: b5c12832-51f6-4953-8044-4264dd0fb242
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 51a922e75d0cc7232a7e45472e505440b7b1631c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: f5b369d5a708e0ee56df635234c68ee88a31af48
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="building-browse-information-files-overview"></a>ブラウザー情報ファイルのビルド : 概要
 シンボル参照の参照情報を作成するには、コンパイラは、BSCMAKE のプロジェクトでソース ファイルごとに .sbr ファイルを作成します。Exe ファイルは、1 つの .bsc ファイル .sbr ファイルを連結します。  
@@ -52,6 +56,6 @@ ms.lasthandoff: 10/24/2017
   
 2.  すべてのプロジェクトが構築された後に、入力としてのすべての .sbr ファイルで BSCMAKE を実行します。 ワイルドカードを使用します。 インスタンスの場合、それらのツールやすべて .bsc ファイルを 1 つに結合したいの .sbr ファイルをプロジェクト ディレクトリ C:\X、C:\Y、および C:\Z していたを使用して BSCMAKE C:\X\\*.sbr C:\Y\\\*.sbr C:\Z\\\*です。結合された .bsc ファイルをビルドする sbr/o c:\whatever_directory\combined.bsc です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C/C++ ビルド ツール](../../build/reference/c-cpp-build-tools.md)   
  [BSCMAKE リファレンス](../../build/reference/bscmake-reference.md)

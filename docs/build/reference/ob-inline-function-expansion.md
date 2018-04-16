@@ -4,14 +4,16 @@ ms.custom:
 ms.date: 09/25/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - VC.Project.VCCLWCECompilerTool.InlineFunctionExpansion
 - VC.Project.VCCLCompilerTool.InlineFunctionExpansion
 - /ob
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - inline functions, function expansion compiler option [C++]
 - -Ob1 compiler option [C++]
@@ -31,15 +33,17 @@ helpviewer_keywords:
 - Ob0 compiler option [C++]
 - inline expansion, compiler option
 ms.assetid: f134e6df-e939-4980-a01d-47425dbc562a
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7b3baee04a5faad77c81d07a6ebeee39e5ac1d12
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b83d470eaf6a30698d8c2836620a0688daa35cc1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ob-inline-function-expansion"></a>/Ob (関数のインライン展開)
 
@@ -85,7 +89,7 @@ ms.lasthandoff: 10/24/2017
 
 - 「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.InlineFunctionExpansion%2A>」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [/O オプション (コードの最適化)](../../build/reference/o-options-optimize-code.md)  
 [コンパイラ オプション](../../build/reference/compiler-options.md)  

@@ -1,25 +1,32 @@
 ---
-title: "deque::resize (STL/CLR) |Microsoft ドキュメント"
-ms.custom: 
+title: deque::resize (STL/CLR) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: cliext::deque::resize
-dev_langs: C++
-helpviewer_keywords: resize member [STL/CLR]
+f1_keywords:
+- cliext::deque::resize
+dev_langs:
+- C++
+helpviewer_keywords:
+- resize member [STL/CLR]
 ms.assetid: c83f3c57-38b3-4706-a124-59bafbf88484
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 915a4dd77f4a4dd1fedb90c60f10ac19c206af1e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: fac11adade64d03696cbe73b09d1c35dfdd026b4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="dequeresize-stlclr"></a>deque::resize (STL/CLR)
 要素の数を変更します。  
@@ -79,12 +86,12 @@ size() = 0
  x x x x x  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/deque >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
  [deque::clear (STL/CLR)](../dotnet/deque-clear-stl-clr.md)   
  [deque::erase (STL/CLR)](../dotnet/deque-erase-stl-clr.md)   

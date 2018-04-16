@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - llround
 - llroundf
@@ -34,7 +35,8 @@ f1_keywords:
 - llround
 - lroundf
 - llroundf
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - lround function
 - llroundl function
@@ -43,15 +45,17 @@ helpviewer_keywords:
 - llroundf function
 - lroundl function
 ms.assetid: cfb88a35-54c6-469f-85af-f7d695dcfdd8
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 596d1d40043fceb9a75549a460776b5b7d9de552
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e2a3ec5e749823da6c49b7762334374292c8be50
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="lround-lroundf-lroundl-llround-llroundf-llroundl"></a>lround、lroundf、lroundl、llround、llroundf、llroundl
 浮動小数点値を最も近い整数に丸めます。  
@@ -105,13 +109,13 @@ long long llroundl(
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`lround` や `llround` の値を受け取って返す、`float` および `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`lround` および `llround` は常に `double` を受け取って返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`lround`, `lroundf`, `lroundl`, `llround`, `llroundf`, `llroundl`|\<math.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -149,12 +153,12 @@ lroundl(2.500000) is 4
 lroundl(-2.500000) is -4  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [ceil、ceilf、ceill](../../c-runtime-library/reference/ceil-ceilf-ceill.md)   
  [floor、floorf、floorl](../../c-runtime-library/reference/floor-floorf-floorl.md)   
  [fmod、fmodf](../../c-runtime-library/reference/fmod-fmodf.md)   
- [lrint、lrintf、lrintl、llrint、llrintf、llrintl](http://msdn.microsoft.com/en-us/312fd869-a9c0-4107-bb23-ab8299d04385)   
+ [lrint、lrintf、lrintl、llrint、llrintf、llrintl](lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)   
  [round、roundf、roundl](../../c-runtime-library/reference/round-roundf-roundl.md)   
- [nearbyint、nearbyintf、nearbyintl](http://msdn.microsoft.com/en-us/15111e73-331d-41d1-81b7-3e10df894848)   
+ [nearbyint、nearbyintf、nearbyintl](nearbyint-nearbyintf-nearbyintl1.md)   
  [rint、rintf、rintl](../../c-runtime-library/reference/rint-rintf-rintl.md)

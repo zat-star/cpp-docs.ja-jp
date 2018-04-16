@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - APIs [C++], porting to Win32
 - Windows API [C++], migrating from UNIX
@@ -17,15 +19,17 @@ helpviewer_keywords:
 - porting to Win32 [C++]
 - Win32 applications [C++], migrating from UNIX
 ms.assetid: 3837e4fe-3f96-4f24-b2a1-7be94718a881
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: aa15cb2eac229201dd0f686428133224b2f32afe
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b10ee9e9b5a53d6f9f936c4bc158db8ebfb6be13
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="porting-from-unix-to-win32"></a>UNIX から Win32 への移植
 アプリケーションを UNIX から Windows に移行するときにいくつかのオプションがあります。  
@@ -44,11 +48,11 @@ ms.lasthandoff: 10/24/2017
 ### <a name="unix-migration-guides"></a>UNIX 移行ガイド  
  UNIX カスタム アプリケーションの移行ガイドは、UNIX から Win32 環境にコードを移行するときの技術的な助けを提供します。  
   
- [http://go.microsoft.com/fwlink/?LinkId=95428](http://go.microsoft.com/fwlink/?LinkId=95428)  
+ [http://go.microsoft.com/fwlink/p/?linkid=95428](http://go.microsoft.com/fwlink/p/?linkid=95428)  
   
  Unix 移行プロジェクト ガイドは、UNIX から Win32 への大きなプロジェクトの移行に関する概要レベルの支援を提供する点で、UNIX カスタム アプリケーション移行ガイドを補足します。 ガイドは、プロジェクトの移行の各段階で考慮する問題へのアドバイスを提供します。 ガイドは次の場所からダウンロードできます。  
   
- [http://go.microsoft.com/fwlink/?linkid=20012](http://go.microsoft.com/fwlink/?linkid=20012)  
+ [http://go.microsoft.com/fwlink/p/?linkid=20012](http://go.microsoft.com/fwlink/p/?linkid=20012)  
   
 ### <a name="microsoft-windows-services-for-unix-sfu"></a>Microsoft Windows Services for UNIX (SFU)  
  Microsoft Windows Services for UNIX (SFU) は、Windows を既存の UNIX ベースの環境に統合するための幅広いクロス プラットフォーム サービスを提供します。 UNIX 用のサービスは、ファイル共有、リモート アクセスと管理、パスワード同期、一般的なディレクトリの管理、一連の共通ユーティリティ、およびシェルを提供します。  
@@ -83,7 +87,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="windows-posix-subsystem"></a>Windows の POSIX サブシステム  
  UNIX プログラマが確認するもう 1 つのオプション は、Windows の POSIX サブシステムです。 ただし、これは Windows NT の作成時に標準化された唯一の POSIX バージョンである POSIX 1003.1 のみサポートします。 それ以降は、ほとんどのアプリケーションは Win32 に変換されたので、このサブシステムを拡張する要求がほとんどありませんでした。 1003.1 システムは全機能を備えたアプリケーションに対しては、多くの機能 (1003.2 にあるもの、ネットワークのサポートなど) が含まれていないため、機能が制限されます。 Windows POSIX サブシステムで動作する、全機能を備えたアプリケーションは、メモリ マップ ファイル、ネットワーク、グラフィックなど、Win32 アプリケーションで利用できる Windows の機能にアクセスしません。 VI、LS、および GREP などのアプリケーションが、Windows POSIX サブシステムの主な対象です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual C++ 移植とアップグレードのガイド](visual-cpp-change-history-2003-2015.md)   
  [UNIX](../c-runtime-library/unix.md)   
  [推論規則](../build/inference-rules.md)

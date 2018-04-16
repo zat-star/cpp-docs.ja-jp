@@ -1,33 +1,37 @@
 ---
-title: "ComPtr::operator&amp; 演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "client/Microsoft::WRL::ComPtr::operator&"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator& 演算子"
+title: "Comptr::operator&amp;演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- client/Microsoft::WRL::ComPtr::operator&
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator& operator
 ms.assetid: 2d77fda6-f4b2-45c1-8a0e-fbc355013531
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: cc5234f10a16141fd91193d634f0d306886aff71
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ComPtr::operator&amp; 演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`ComPtr` オブジェクトに関連付けられたインターフェイスを解放し、`ComPtr` オブジェクトのアドレスを取得します。  
+# <a name="comptroperatoramp-operator"></a>Comptr::operator&amp;演算子
+これに関連付けられているインターフェイスを解放`ComPtr`オブジェクトし、のアドレスを取得し、`ComPtr`オブジェクト。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 Details::ComPtrRef<WeakRef> operator&()  
@@ -35,16 +39,16 @@ Details::ComPtrRef<WeakRef> operator&()
 const Details::ComPtrRef<const WeakRef> operator&() const  
 ```  
   
-## 戻り値  
- 現在の `ComPtr`への弱い参照。  
+## <a name="return-value"></a>戻り値  
+ 現在への弱い参照`ComPtr`です。  
   
-## 解説  
- このメソッドは [ComPtr::GetAddressOf](../Topic/ComPtr::GetAddressOf%20Method.md) とこのメソッドがインターフェイス ポインターへの参照を解放することです。  インターフェイス ポインターのアドレスを必要とするを使用します。そのインターフェイスを解放しない場合 `ComPtr::GetAddressOf` を呼び出さないでください。  
+## <a name="remarks"></a>コメント  
+ このメソッドが異なる[comptr::getaddressof](../windows/comptr-getaddressof-method.md)点で、このメソッドは、インターフェイス ポインターへの参照を解放します。 使用して`ComPtr::GetAddressOf`インターフェイス ポインターのアドレスを必要なものの、そのインターフェイスを解放したくないとき。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [ComPtr クラス](../windows/comptr-class.md)

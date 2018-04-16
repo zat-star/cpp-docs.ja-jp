@@ -1,29 +1,34 @@
 ---
-title: "プリコンパイル済みヘッダー ファイルの作成 |Microsoft ドキュメント"
-ms.custom: 
+title: プリコンパイル済みヘッダー ファイルの作成 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-f1_keywords: pch
-dev_langs: C++
+f1_keywords:
+- pch
+dev_langs:
+- C++
 helpviewer_keywords:
 - precompiled header files, creating
 - PCH files, creating
 - cl.exe compiler, precompiling code
 - .pch files, creating
 ms.assetid: e2cdb404-a517-4189-9771-c869c660cb1b
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8d33382e520a13c5cd131cdc03f21fb4708cb9eb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 09c436d55ad7087d407ba580be0b63286b056898
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-precompiled-header-files"></a>プリコンパイル済みヘッダー ファイルの作成
   
@@ -153,13 +158,13 @@ PCH ファイルには作成時に有効であったインクルード パスに
   
 次の表は、コンパイラ オプションがプリコンパイル済みヘッダーを使用するときに不整合が警告をトリガーする可能性があります。  
   
-|オプション|名前|ルール|  
+|オプション|name|ルール|  
 |------------|----------|----------|  
 |/D|定数とマクロを定義します。|プリコンパイル済みヘッダーを作成するコンパイルと、現在のコンパイルの間で同じにする必要があります。 定義済み定数の状態はチェックされませんが、ファイルが変更された定数の値に依存している場合、予期しない結果が発生することができます。|  
 |/E または/EP|プリプロセッサ出力を標準出力にコピーします。|プリコンパイル済みヘッダーは、/E または/EP オプションでは機能しません。|  
 |/Fr や/FR|Microsoft ソース ブラウザー情報を生成します。|オプションについては、/Fr、/FR/Yu オプションで有効にする、それらもされている必要が有効で、プリコンパイル済みヘッダーの作成時にします。 プリコンパイル済みヘッダーを使用して後続のコンパイルでは、ソース ブラウザー情報も生成します。 ブラウザー情報は単一の .sbr ファイルに配置され、CodeView 情報と同じ方法で他のファイルで参照されます。 ソース ブラウザー情報の配置を上書きすることはできません。|  
 |/GA、/GD、/GE、/Gw、または/GW|Windows プロトコル オプション|プリコンパイル済みヘッダーを作成するコンパイルと、現在のコンパイルの間で同じにする必要があります。 これらのオプションが異なる場合、警告メッセージが出力されます。|  
-|/Zi|詳細なデバッグ情報を生成します。|このオプションは、プリコンパイル済みヘッダーの作成時に有効では、プリコンパイルを使用する後続のコンパイルはデバッグ情報を使用できます。 /Zi は適用されません、プリコンパイル済みヘッダーの作成時に、プリコンパイルおよび/Zi オプションを使用する後続のコンパイルは、警告をトリガーします。 デバッグ情報は、現在のオブジェクト ファイルに配置され、プリコンパイル済みヘッダーで定義されているローカル シンボルは、デバッガーを使用できません。|  
+|/ZI|詳細なデバッグ情報を生成します。|このオプションは、プリコンパイル済みヘッダーの作成時に有効では、プリコンパイルを使用する後続のコンパイルはデバッグ情報を使用できます。 /Zi は適用されません、プリコンパイル済みヘッダーの作成時に、プリコンパイルおよび/Zi オプションを使用する後続のコンパイルは、警告をトリガーします。 デバッグ情報は、現在のオブジェクト ファイルに配置され、プリコンパイル済みヘッダーで定義されているローカル シンボルは、デバッガーを使用できません。|  
   
 > [!NOTE]
 >  プリコンパイル済みヘッダーの機能は C および C++ ソース ファイルでのみ使用するものです。  
@@ -350,6 +355,6 @@ int main( void )
 }  
 ```  
     
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [C/C++ ビルドのリファレンス](../../build/reference/c-cpp-building-reference.md)   
 [コンパイラ オプション](../../build/reference/compiler-options.md)

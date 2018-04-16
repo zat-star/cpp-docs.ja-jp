@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _strdup
 - _mbsdup
@@ -32,7 +33,8 @@ f1_keywords:
 - _strdup
 - _ftcsdup
 - _wcsdup
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - wcsdup function
 - ftcsdup function
@@ -49,21 +51,23 @@ helpviewer_keywords:
 - tcsdup function
 - _tcsdup function
 ms.assetid: 8604f8bb-95e9-45d3-93ef-20397ebf247a
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 6f4b65bb7c9bd0e309aa5b5c48b36c7a0b466d47
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 476ffad002353cf2c4048e5138e6972c5c304983
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="strdup-wcsdup-mbsdup"></a>_strdup、_wcsdup、_mbsdup
 文字列を複製します。  
   
 > [!IMPORTANT]
->  `_mbsdup`Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「                  [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」を参照してください。  
+>  `_mbsdup` Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -89,7 +93,7 @@ unsigned char *_mbsdup(
 ## <a name="remarks"></a>コメント  
  `_strdup` 関数は、[malloc](../../c-runtime-library/reference/malloc.md) を呼び出して`strSource` のコピーにストレージ領域を割り当て、割り当てられた領域に `strSource` をコピーします。  
   
- `_wcsdup` 関数と `_mbsdup` 関数は、 `_strdup`関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsdup` 関数の引数と戻り値はワイド文字列で、 `_mbsdup` 関数の引数と戻り値はマルチバイト文字列です。 それ以外では、これらの関数の動作は同じです。  
+ `_wcsdup` 関数と `_mbsdup` 関数は、 `_strdup`関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_wcsdup` 関数の引数と戻り値はワイド文字列で、`_mbsdup` 関数の引数と戻り値はマルチバイト文字列です。 それ以外では、これらの関数の動作は同じです。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -101,15 +105,15 @@ unsigned char *_mbsdup(
   
  `_DEBUG` と `_CRTDBG_MAP_ALLOC` が定義されている場合、デバッグのメモリ割り当てを考慮して、 `_strdup` と `_wcsdup` は `_strdup_dbg` と `_wcsdup_dbg` の呼び出しによって置き換えられます。 詳細については、「[_strdup_dbg、_wcsdup_dbg](../../c-runtime-library/reference/strdup-dbg-wcsdup-dbg.md)」をご覧ください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_strdup`|\<string.h>|  
 |`_wcsdup`|\<string.h> または \<wchar.h>|  
 |`_mbsdup`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -135,7 +139,7 @@ Original: This is the buffer text
 Copy:     This is the buffer text  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [memset、wmemset](../../c-runtime-library/reference/memset-wmemset.md)   
  [strcat、wcscat、_mbscat](../../c-runtime-library/reference/strcat-wcscat-mbscat.md)   

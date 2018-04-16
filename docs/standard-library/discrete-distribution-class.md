@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - random/std::discrete_distribution
 - random/std::discrete_distribution::reset
@@ -19,7 +20,8 @@ f1_keywords:
 - random/std::discrete_distribution::param_type::probabilities
 - random/std::discrete_distribution::param_type::operator==
 - random/std::discrete_distribution::param_type::operator!=
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::discrete_distribution [C++]
 - std::discrete_distribution [C++], reset
@@ -30,15 +32,17 @@ helpviewer_keywords:
 - std::discrete_distribution [C++], param_type
 - std::discrete_distribution [C++], param_type
 ms.assetid: 8c8ba8f8-c06f-4f07-b354-f53950142fcf
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 3f215fb2c7e3b86181a01d06b4b88192e7df812d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b8cadc9a0dafcf4c97cd7c8381c5f4ee76fee915
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="discretedistribution-class"></a>discrete_distribution クラス
 均等幅の区間を含み、各区間に一様確率を含む整数の離散分布を生成します。  
@@ -175,7 +179,7 @@ Distribution for 100 samples:
     4 ::::::::::::::::::::::::::::::::::::    
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<random>  
   
  **名前空間:** std  
@@ -293,7 +297,7 @@ struct param_type {
 ### <a name="remarks"></a>コメント  
  このパラメーター パッケージを `operator()` に渡して、戻り値を生成できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<random>](../standard-library/random.md)
 
 

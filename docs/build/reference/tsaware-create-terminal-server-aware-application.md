@@ -1,69 +1,73 @@
 ---
-title: "/TSAWARE (ターミナル サーバーに対応したアプリケーションの作成) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/tsaware"
-  - "VC.Project.VCLinkerTool.TerminalServerAware"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/TSAWARE リンカー オプション"
-  - "ターミナル サーバー"
-  - "ターミナル サーバー, ターミナル サーバーに対応したアプリケーション"
-  - "TSAWARE リンカー オプション"
-  - "-TSAWARE リンカー オプション"
+title: "-TSAWARE (ターミナル サーバーの対応するアプリケーションの作成) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /tsaware
+- VC.Project.VCLinkerTool.TerminalServerAware
+dev_langs:
+- C++
+helpviewer_keywords:
+- Terminal Server
+- /TSAWARE linker option
+- Terminal Server, Terminal Server-aware applications
+- -TSAWARE linker option
+- TSAWARE linker option
 ms.assetid: fe1c1846-de5b-4839-b562-93fbfe36cd29
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2956bd2ed8aa0c36e730468a15856cecfaf7e23f
+ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/09/2018
 ---
-# /TSAWARE (ターミナル サーバーに対応したアプリケーションの作成)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="tsaware-create-terminal-server-aware-application"></a>/TSAWARE (ターミナル サーバーに対応したアプリケーションの作成)
 ```  
 /TSAWARE[:NO]  
 ```  
   
-## 解説  
- \/TSAWARE オプションは、プログラム イメージのオプションのヘッダーにある IMAGE\_OPTIONAL\_HEADER DllCharacteristics フィールドにフラグを設定します。  このフラグが設定されていると、ターミナル サーバーはアプリケーションに対して特定の変更を加えません。  
+## <a name="remarks"></a>コメント  
+ /TSAWARE オプションは、プログラム イメージの省略可能なヘッダーに IMAGE_OPTIONAL_HEADER DllCharacteristics フィールドにフラグを設定します。 このフラグが設定されると、ターミナル サーバーはアプリケーションに特定の変更を加えなくなります。  
   
- アプリケーションがターミナル サーバーに対応していない場合 \(従来のアプリケーション\)、マルチユーザー環境で正しく動作するようにアプリケーションに対して特定の変更が加えられます。  たとえば、仮想 Windows フォルダーを作成して、ユーザーがシステムの Windows ディレクトリではなく、Windows フォルダーを使用できるようにします。  これにより、ユーザーはそれぞれの INI ファイルにアクセスできます。  また、ターミナル サーバーは従来のアプリケーションのレジストリを調整します。  この変更を加えると、従来のアプリケーションをターミナル サーバーに読み込むときに時間がかかります。  
+ アプリケーションがターミナル サーバーに注意してください (レガシ アプリケーションとも呼ばれます) ではないときに、ターミナル サーバーはマルチ ユーザー環境で正しく動作させるために、レガシ アプリケーションに対して特定の変更がします。 たとえば、ターミナル サーバーであっても、各ユーザーが、システムの Windows ディレクトリを取得する代わりに Windows フォルダーを取得するよう、仮想 Windows フォルダーが作成されます。 これにより、ユーザーは自分の INI ファイルにアクセスできるようにします。 さらに、ターミナル サーバーは、レガシ アプリケーションのレジストリにいくつかの調整がします。 これらの変更には、ターミナル サーバー上のレガシ アプリケーションの読み込みが低速です。  
   
- ターミナル サーバーに対応したアプリケーションは、INI ファイルに依存したり、セットアップ時に **HKEY\_CURRENT\_USER** レジストリに書き込んだりする必要はありません。  
+ アプリケーションがない場合はターミナル サーバーに対応した、その必要がありますも INI ファイルに依存してへの書き込み、 **HKEY_CURRENT_USER**セットアップ中にレジストリです。  
   
- \/TSAWARE を使用した場合、アプリケーションで INI ファイルを使用し続けると、INI ファイルはシステムのすべてのユーザー間で共有されます。  ファイルの共有を受け入れる場合は、\/TSAWARE を使用してアプリケーションをリンクします。それ以外の場合は、\/TSAWARE:NO を使用する必要があります。  
+ /TSAWARE を使用すると、アプリケーションが現在も INI ファイルを使用して、ファイルは、システムのすべてのユーザーによって共有されます。 許容可能な場合は、/TSAWARE; を使用してアプリケーションをまだリンクすることができます。それ以外の場合は、/TSAWARE:NO を使用する必要があります。  
   
- Windows アプリケーションおよびコンソール アプリケーションを使用する場合、\/TSAWARE オプションは Windows 2000 以降では既定で有効に設定されます。  詳細については、「[\/SUBSYSTEM \(サブシステムの指定\)](../../build/reference/subsystem-specify-subsystem.md)」および「[\/VERSION \(バージョン情報\)](../Topic/-VERSION%20\(Version%20Information\).md)」を参照してください。  
+ /TSAWARE オプションは、Windows およびコンソール アプリケーションの既定で有効です。 参照してください[/SUBSYSTEM](../../build/reference/subsystem-specify-subsystem.md)と[/VERSION](../../build/reference/version-version-information.md)についてです。  
   
- \/TSAWARE は、VxDs や DLL などのドライバーには使用できません。  
+ ドライバー、Vxd、Dll に関する/TSAWARE が正しくありません。  
   
- \/TSAWARE オプションを使用してリンクされたアプリケーションの場合は、DUMPBIN [\/HEADERS](../../build/reference/headers.md) によってその情報が表示されます。  
+ アプリケーションが/TSAWARE、DUMPBIN にリンクされているかどうかは[/HEADERS](../../build/reference/headers.md)それを情報が表示されます。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[システム\] プロパティ ページをクリックします。  
+3.  クリックして、**システム**プロパティ ページ。  
   
-4.  \[ターミナル サ\-バー\] プロパティを変更します。  
+4.  変更、**ターミナル サーバー**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.TerminalServerAware%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)   
- [Storing User\-Specific Information](http://msdn.microsoft.com/library/aa383452)   
- [Legacy Applications in a Terminal Services Environment](https://msdn.microsoft.com/en-us/library/aa382957.aspx)
+ [ユーザーに固有の情報を格納します。](http://msdn.microsoft.com/library/aa383452)   
+ [ターミナル サービス環境でのレガシ アプリケーション](https://msdn.microsoft.com/en-us/library/aa382957.aspx)

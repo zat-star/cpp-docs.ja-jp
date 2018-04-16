@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C4439
 ms.assetid: 9449958f-f407-4824-829b-9e092f2af97d
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 150690bc5d2778945eec95c8576b2cc57050bbe8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: eec228922a6f5796587243fe2d1f2c6cc1cf6b1c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-c4439"></a>コンパイラの警告 C4439
 'function': シグネチャのマネージ型を伴う関数定義は _ _clrcall 呼び出し規約を持つ必要があります  

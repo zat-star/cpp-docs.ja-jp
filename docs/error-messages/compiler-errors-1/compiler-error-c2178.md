@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 05/08/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C2178
-dev_langs: C++
-helpviewer_keywords: C2178
+f1_keywords:
+- C2178
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2178
 ms.assetid: 79a14158-17f3-4221-bd06-9d675c49cef4
-caps.latest.revision: "0"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: facb255b0c53a3de0e1d5c9f90de5835b25e3c32
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b4e61c9148db2a6eccdef308e30ada976a917833
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c2178"></a>コンパイラ エラー C2178  
   

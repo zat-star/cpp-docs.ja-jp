@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -12,18 +13,23 @@ f1_keywords:
 - msclr.auto_handle.operator=
 - msclr::auto_handle::operator=
 - auto_handle.operator=
-dev_langs: C++
-helpviewer_keywords: auto_handle::operator=
+dev_langs:
+- C++
+helpviewer_keywords:
+- auto_handle::operator=
 ms.assetid: 503ca172-e766-4a78-af98-36fd48c931ee
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 49b05ad1fe25c7e5e99c02fdb0af3a554b324f42
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 4d7f4e8ef0408f6358b8e7978d4327d6836cc722
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="autohandleoperator"></a>auto_handle::operator=
 代入演算子。  
@@ -108,10 +114,10 @@ done
 in ClassA destructor: second  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\auto_handle.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto_handle のメンバー](../dotnet/auto-handle-members.md)

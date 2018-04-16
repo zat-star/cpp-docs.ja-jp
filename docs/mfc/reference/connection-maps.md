@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.mfc.macros.maps
-dev_langs: C++
-helpviewer_keywords: connection maps
+f1_keywords:
+- vc.mfc.macros.maps
+dev_langs:
+- C++
+helpviewer_keywords:
+- connection maps
 ms.assetid: 1f25a9bc-6d09-4614-99cf-dc38e8ddfa73
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d3084bd69293b9419369f2457695965481d3dec3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 018f2f6c1cd57dc500d4161b02ccb5880a9889fd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="connection-maps"></a>コネクション マップ
 OLE コントロールは、他のアプリケーションへのインターフェイスを公開できます。 これらのインターフェイスは、そのコントロールにのみ、コンテナーからのアクセスを許可します。 OLE コントロールは、他の OLE オブジェクトの外部インターフェイスにアクセスする場合、接続ポイントを確立する必要があります。 この接続ポイントは、コントロールからイベント マップや通知関数などの外部のディスパッチ マップへのアクセスを許可します。  
@@ -66,7 +72,7 @@ BEGIN_CONNECTION_PART(theClass, localClass)
 ### <a name="remarks"></a>コメント  
  クラスのメンバー関数を定義する宣言 (.h) ファイル、起動接続ポイントが、`BEGIN_CONNECTION_PART`マクロを追加して、`CONNECTION_IID`マクロと実装、および接続ポイントのマップを完了したいその他の任意のメンバー関数`END_CONNECTION_PART`マクロです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="end_connection_part"></a>END_CONNECTION_PART  
@@ -80,7 +86,7 @@ END_CONNECTION_PART(localClass)
  *マクロ*  
  接続ポイントを実装するローカル クラスの名前を指定します。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="connection_iid"></a>CONNECTION_IID  
@@ -101,7 +107,7 @@ CONNECTION_IID(iid)
   
  呼び出す接続ポイントを指定します、`ISinkInterface`インターフェイスです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="declare_connection_map"></a>DECLARE_CONNECTION_MAP  
@@ -114,7 +120,7 @@ DECLARE_CONNECTION_MAP()
 ### <a name="remarks"></a>コメント  
  使用して、コントロールは、追加の点をサポートする場合、`DECLARE_CONNECTION_MAP`クラスの宣言の最後にマクロです。 クラスのメンバー関数を定義する .cpp ファイルを使用して、`BEGIN_CONNECTION_MAP`マクロ、`CONNECTION_PART`用の各コントロールの接続ポイントでは、マクロ、および`END_CONNECTION_MAP`コネクション マップの最後を宣言するマクロ。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="begin_connection_map"></a>BEGIN_CONNECTION_MAP  
@@ -134,7 +140,7 @@ BEGIN_CONNECTION_MAP(theClass, theBase)
 ### <a name="remarks"></a>コメント  
  実装 (です。CPP) ファイルをクラスのメンバー関数を定義すると接続のマップの開始、`BEGIN_CONNECTION_MAP`マクロを使用して、接続ポイントの各マクロ エントリを追加、 [CONNECTION_PART](#connection_part)マクロです。 コネクション マップを最後に、完了、 [END_CONNECTION_MAP](#end_connection_map)マクロです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="end_connection_map"></a>END_CONNECTION_MAP  
@@ -144,7 +150,7 @@ BEGIN_CONNECTION_MAP(theClass, theBase)
 END_CONNECTION_MAP()  
 ```  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="connection_part"></a>CONNECTION_PART  
@@ -171,7 +177,7 @@ CONNECTION_PART(theClass, iid, localClass)
   
  呼び出しである接続ポイントとの接続のマップを実装、`IID_ISinkInterface`インターフェイスです。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
   **ヘッダー** afxdisp.h  
   
 ##  <a name="afxconnectionadvise"></a>AfxConnectionAdvise  
@@ -208,7 +214,7 @@ BOOL AFXAPI AfxConnectionAdvise(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCConnectionPoints#8](../../mfc/codesnippet/cpp/connection-maps_3.cpp)]  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxctl.h 
 
 ##  <a name="afxconnectionunadvise"></a>AfxConnectionUnadvise  
@@ -245,8 +251,8 @@ BOOL AFXAPI AfxConnectionUnadvise(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFCConnectionPoints#9](../../mfc/codesnippet/cpp/connection-maps_4.cpp)]  
 
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** afxctl.h 
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)

@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: /largeaddressaware
-dev_langs: C++
+f1_keywords:
+- /largeaddressaware
+dev_langs:
+- C++
 helpviewer_keywords:
 - -LARGEADDRESSAWARE editbin option
 - /LARGEADDRESSAWARE editbin option
 - LARGEADDRESSAWARE editbin option
 ms.assetid: 5db58df3-4457-4808-adf7-2bee6ea97486
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: e632c4f9dec5e3d7569f10bced2a837657f275df
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 6a0043fe0a2424d9cd54a35be8efdabbb20e1931
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="largeaddressaware"></a>/LARGEADDRESSAWARE
 ```  
@@ -32,5 +37,5 @@ ms.lasthandoff: 10/24/2017
 ## <a name="remarks"></a>コメント  
  このオプションは、2 ギガバイトを超えるアドレスをアプリケーションが処理できることを示すために、イメージを編集します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [EDITBIN オプション](../../build/reference/editbin-options.md)

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_multiset::count
-dev_langs: C++
-helpviewer_keywords: count member [STL/CLR]
+f1_keywords:
+- cliext::hash_multiset::count
+dev_langs:
+- C++
+helpviewer_keywords:
+- count member [STL/CLR]
 ms.assetid: 2b31e6b6-3f2c-4042-a06d-90d3074aad43
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 90fbbd784932a2e68ecedb4d7b3ba9e6b75dfe59
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: ec9c982f61e5ec5cf5e67f1096ae6d6183975f32
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultisetcount-stlclr"></a>hash_multiset::count (STL/CLR)
 指定したキーに一致する要素の数を検索します。  
@@ -72,11 +79,11 @@ count(L'b') = 1
 count(L'C') = 0  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_set >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_multiset (STL/CLR)](../dotnet/hash-multiset-stl-clr.md)   
  [hash_multiset::equal_range (STL/CLR)](../dotnet/hash-multiset-equal-range-stl-clr.md)

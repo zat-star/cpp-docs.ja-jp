@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - documents [C++], database applications
 - recordsets [C++], documents and views
@@ -21,15 +23,18 @@ helpviewer_keywords:
 - ODBC recordsets [C++], documents and views
 - ODBC [C++], forms
 ms.assetid: 83979974-fc63-46ac-b162-e8403a572e2c
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: b63e864b519dd55eedf96d525a25897c81f16ac0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 6d3e2286c10d83b25576474692b5a7faeb9bb332
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mfc-using-database-classes-with-documents-and-views"></a>MFC : ドキュメントとビューを用いたデータベース クラスの使用
 ドキュメント/ビュー アーキテクチャの有無は、MFC データベース クラスを使用することができます。 このトピックでは、ドキュメントとビューの操作を強調します。 これを説明します。  
@@ -77,5 +82,5 @@ ms.lasthandoff: 10/24/2017
   
  すべてのドキュメントとビューを使用する可能性がありますされません。 その場合を参照してください[MFC: 用いないデータベース クラスとビュー](../data/mfc-using-database-classes-without-documents-and-views.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [MFC データベース クラス (../data/mfc-database-classes-odbc-and-dao.md)

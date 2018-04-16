@@ -7,10 +7,9 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - iterator/checked_array_iterator
-- checked_array_iterator
 - iterator/stdext::checked_array_iterator::difference_type
 - iterator/stdext::checked_array_iterator::pointer
 - iterator/stdext::checked_array_iterator::reference
@@ -18,34 +17,22 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- checked_array_iterator, syntax
-- checked_array_iterator class
-- checked_array_iterator
+- stdext::checked_array_iterator [C++], difference_type
+- stdext::checked_array_iterator [C++], pointer
+- stdext::checked_array_iterator [C++], reference
+- stdext::checked_array_iterator [C++], base
 ms.assetid: 7f07185e-d588-4ae3-9c4f-84ec4aa25a28
-caps.latest.revision: 28
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: a53cc2a5bb7bd50e41e9e01d3953465706554017
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8384c61f9a56f4196d940566cd2b18336bd4d853
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="checkedarrayiterator-class"></a>checked_array_iterator クラス
 `checked_array_iterator` クラスを使用すると、配列またはポインターをチェックを行う反復子に変換できます。 チェックを行わないポインター警告をグローバルに抑制する代わりに、チェック機能を提供し、これらの警告を管理するのに適した方法として、このクラスを生のポインターまたは配列のラッパーとして使用します ([make_checked_array_iterator](../standard-library/iterator-functions.md#make_checked_array_iterator) 関数を使用)。 必要に応じて、このクラスのチェックを行わないバージョンである [unchecked_array_iterator](../standard-library/unchecked-array-iterator-class.md) を使用できます。  
@@ -202,7 +189,7 @@ int main()
 |[operator-](#operator-)|反復子からオフセットをデクリメントし、新しいオフセット位置に挿入された要素をアドレス指定する新しい `checked_array_iterator` アドレスを返します。|  
 |[operator&#91;&#93;](#op_at)|`checked_array_iterator` によってアドレス指定される要素からの要素のオフセットへの参照を返します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<iterator>  
   
  **名前空間:** stdext  
@@ -954,10 +941,9 @@ typedef typename iterator_traits<_Iterator>::reference reference;
   
  詳細については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<iterator>](../standard-library/iterator.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
-
 
 
 

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: event/Microsoft::WRL::EventSource::Remove
-dev_langs: C++
-helpviewer_keywords: Remove method
+f1_keywords:
+- event/Microsoft::WRL::EventSource::Remove
+dev_langs:
+- C++
+helpviewer_keywords:
+- Remove method
 ms.assetid: afafedf5-3665-4408-a639-fb6884f7c5f9
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c1879c939237275c279e1dd4bd1861ab3b02b468
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: a11bce6d70c70bba2a4e75753c55d83bec32329f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="eventsourceremove-method"></a>EventSource::Remove メソッド
 現在の EventSource オブジェクトに関連付けられているイベント ハンドラーのセットから指定したイベント登録トークンによって表されるイベント ハンドラーを削除します。  
@@ -42,10 +49,10 @@ HRESULT Remove(
 ## <a name="remarks"></a>コメント  
  EventRegistrationToken 構造体の詳細については、Windows ランタイムのリファレンス ドキュメントで Windows::Foundation::EventRegistrationToken 構造体を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** event.h  
   
  **名前空間:** Microsoft::WRL
  
- ## <a name="see-also"></a>関連項目
+ ## <a name="see-also"></a>参照
  [EventSource クラス](../windows/eventsource-class.md)

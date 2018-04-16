@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_map::const_reference
-dev_langs: C++
-helpviewer_keywords: const_reference member [STL/CLR]
+f1_keywords:
+- cliext::hash_map::const_reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- const_reference member [STL/CLR]
 ms.assetid: c897979f-93f1-4531-9cfe-0636905cf79a
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: cb57e5fdcd1675fb33d01e57277585f18871efd6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 645032e667f82e36c531a7a5cda62419b7cfe679
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmapconstreference-stlclr"></a>hash_map::const_reference (STL/CLR)
 要素への定数参照の型です。  
@@ -65,12 +72,12 @@ int main()
 [a 1] [b 2] [c 3]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
  [hash_map::reference (STL/CLR)](../dotnet/hash-map-reference-stl-clr.md)   
  [hash_map::value_type (STL/CLR)](../dotnet/hash-map-value-type-stl-clr.md)

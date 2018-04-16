@@ -1,41 +1,46 @@
 ---
-title: "stack::size_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stack::size_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "size_type メンバー [STL/CLR]"
+title: "stack::size_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::stack::size_type
+dev_langs:
+- C++
+helpviewer_keywords:
+- size_type member [STL/CLR]
 ms.assetid: 713ba8c5-41e5-422a-a334-cfeab16b4496
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 7e4de635015f550858facb3f0450710e1824d7ff
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# stack::size_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 要素間の符号付きな間隔の種類。  
+# <a name="stacksizetype-stlclr"></a>stack::size_type (STL/CLR)
+2 つの要素の間の距離を符号付きの型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef int size_type;  
 ```  
   
-## 解説  
- 型は負の要素数を指定します。  
+## <a name="remarks"></a>コメント  
+ この型は、負でない要素の数を表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_stack_size_type.cpp   
@@ -66,13 +71,16 @@ int main()
   
 ```  
   
-  **b c**  
-**サイズの違い \= 2**   
-## 必要条件  
- **ヘッダー:** \<cliext とスタック\>  
+```Output  
+ a b c  
+size difference = 2  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext/stack >  
   
-## 参照  
- [スタック](../dotnet/stack-stl-clr.md)   
- [stack::empty](../dotnet/stack-empty-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [stack::empty (STL/CLR)](../dotnet/stack-empty-stl-clr.md)

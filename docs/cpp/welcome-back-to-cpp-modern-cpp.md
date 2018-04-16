@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 1cb1b849-ed9c-4721-a972-fd8f3dab42e2
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 45cb4bb1537f7d897b1dd53ada413e73a54162ab
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4e45c48671a0df62103a58a89d0c351209c71ed2
+ms.sourcegitcommit: ff9bf140b6874bc08718674c07312ecb5f996463
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="welcome-back-to-c-modern-c"></a>C++ へようこそ (Modern C++)
 C++ は世界で最も広く使用されているプログラミング言語の 1 つです。 適切に記述された C++ プログラムは、高速で効率的です。 この言語は、楽しめるゲームから、高性能な科学的ソフトウェア、デバイス ドライバー、埋め込みプログラム、さらに Windows クライアント アプリケーションに至るまで、幅広いアプリケーションの作成に使用でき、他の言語よりも柔軟性があります。 20 年以上にわたって、C++ はそれらをはじめとするさまざまなソリューション使用されてきました。 ますます多くの C++ プログラマが、旧来の C のプログラミング スタイルから卒業して、最新の C++ の手法を身に着けていることを、ご存知でない方もいるかもしれません。  
@@ -49,40 +53,60 @@ C++ は世界で最も広く使用されているプログラミング言語の 
  C++ 言語自体も進化しました。 次の 2 つのコード スニペットを比較してみます。 このスニペットは以前の C++ を使ったものです。  
   
 ```cpp  
-// circle and shape are user-defined types  
-circle* p = new circle( 42 );   
-vector<shape*> v = load_shapes();  
-  
-for( vector<circle*>::iterator i = v.begin(); i != v.end(); ++i ) {  
-    if( *i && **i == *p )  
-        cout << **i << " is a match\n";  
-}  
-  
-for( vector<circle*>::iterator i = v.begin();  
-        i != v.end(); ++i ) {  
-    delete *i; // not exception safe  
-}  
-  
-delete p;  
-```  
-  
+
+#include <vector>
+
+void f()
+{
+    // Assume circle and shape are user-defined types  
+    circle* p = new circle( 42 );   
+    vector<shape*> v = load_shapes();  
+
+    for( vector<circle*>::iterator i = v.begin(); i != v.end(); ++i ) {  
+        if( *i && **i == *p )  
+            cout << **i << " is a match\n";  
+    }  
+
+    // CAUTION: If v's pointers own the objects, then you
+    // must delete them all before v goes out of scope.
+    // If v's pointers do not own the objects, and you delete
+    // them here, any code that tries to dereference copies
+    // of the pointers will cause null pointer exceptions.
+    for( vector<circle*>::iterator i = v.begin();  
+            i != v.end(); ++i ) {  
+        delete *i; // not exception safe  
+    }  
+
+    // Don't forget to delete this, too.  
+    delete p;  
+} // end f()
+```
+
  このスニペットは最新の C++ で同じことを行うものです。  
   
-```cpp  
+```cpp
+
 #include <memory>  
 #include <vector>  
-// ...  
-// circle and shape are user-defined types  
-auto p = make_shared<circle>( 42 );  
-vector<shared_ptr<shape>> v = load_shapes();  
-  
-for( auto& s : v ) {  
-    if( s && *s == *p )  
-        cout << *s << " is a match\n";  
-} 
-```  
-  
- 最新の C++ では、スマート ポインターを使用できるため、新規/削除を使用したり、明示的な例外処理を使用する必要はありません。 使用すると、`auto`控除を入力し、[ラムダ関数](../cpp/lambda-expressions-in-cpp.md)、迅速なコードを記述することができます、それを引き締めより的確に把握します。 ってきた方、特に型の大部分が参照型であり、値型が非常に少ない、他のマネージ言語から移ってきた方は、C++ のクラスは既定で値型であることに注意してください。さらに `for_each` を使用すると、簡単にすっきりしたコードを記述でき、`for` ループを使用するよりも、意図しないエラーを生じることが少なくなります。 スケルトン コードを使って、最小限のコードでアプリケーションを記述できます。 さらにそのコードを例外セーフでメモリ セーフにすることができ、割り当て/解放や、エラー コードを取り扱う必要はありません。  
+
+void f()
+{
+    // ...  
+    auto p = make_shared<circle>( 42 );  
+    vector<shared_ptr<shape>> v = load_shapes();  
+
+    for( auto& s : v ) 
+    {  
+        if( s && *s == *p )
+        {
+            cout << *s << " is a match\n";
+        }
+    }
+}
+
+```
+
+ 最新の C++ では、スマート ポインターを使用できるため、新規/削除を使用したり、明示的な例外処理を使用する必要はありません。 使用すると、`auto`控除を入力し、[ラムダ関数](../cpp/lambda-expressions-in-cpp.md)、迅速なコードを記述することができます、それを引き締めより的確に把握します。 範囲ベースおよび`for`ループは、使いやすく、間違いを犯しにくい意図しないを C スタイルよりクリーナー`for`ループします。 スケルトン コードを使って、最小限のコードでアプリケーションを記述できます。 さらにそのコードを例外セーフでメモリ セーフにすることができ、割り当て/解放や、エラー コードを取り扱う必要はありません。  
   
  最新の C++ では、2 種類のポリモーフィズムが組み込まれています: コンパイル時にテンプレート経由によるもの、および実行時に継承と仮想化によるものです。 2 種類のポリモーフィズムを活用することにより、優れた効果を生じることができます。 C++ 標準ライブラリ テンプレート`shared_ptr`内部仮想メソッドを使用して、非常に簡単型消去を実現します。 ただし、テンプレートが最適な選択である場合には、ポリモーフィズムの仮想化を過度に使用しないでください。 テンプレートは非常に強力です。  
   
@@ -116,9 +140,9 @@ for( auto& s : v ) {
   
 -   [ABI の境界での移植性](../cpp/portability-at-abi-boundaries-modern-cpp.md)  
   
- 詳細については、StackOverflow の記事を参照してください。 [C++ の表現形式は、c++ 11 で廃止されました。](http://go.microsoft.com/fwlink/?LinkId=402836)  
+ 詳細については、StackOverflow の記事を参照してください。 [C++ の表現形式は、c++ 11 で廃止されました。](http://go.microsoft.com/fwlink/p/?linkid=402836)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [ラムダ式](../cpp/lambda-expressions-in-cpp.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)  

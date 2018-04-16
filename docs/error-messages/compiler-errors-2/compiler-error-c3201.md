@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3201
 ms.assetid: ec19cd64-1789-40a3-b2db-dff2852b9d98
-caps.latest.revision: 8
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2a2bcae07f4e66fec1ed6fb9eb95e87e83557e53
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: c398d3251c63a763af0fdf965e4c7f2e8c5bb3c4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3201"></a>コンパイラ エラー C3201
 クラス テンプレート 'template' 用テンプレート パラメーター リストが、テンプレート パラメーター 'template' 用テンプレート パラメーター リストと一致しません。  

@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: vc-attr.com_interface_entry
-dev_langs: C++
-helpviewer_keywords: com_interface_entry attribute
+f1_keywords:
+- vc-attr.com_interface_entry
+dev_langs:
+- C++
+helpviewer_keywords:
+- com_interface_entry attribute
 ms.assetid: 10368f81-b99b-4a0f-ba4f-a142e6911a5c
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 67b6fd116f75ddc35ac1d3095ebfcbb1973b9d20
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 58c74602c4170cbe0816dcdf14e0196cca44af42
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cominterfaceentry-c"></a>com_interface_entry (C++)
 ターゲット クラスの COM マップにインターフェイス エントリを追加します。  
@@ -109,20 +116,20 @@ BEGIN_COM_MAP(CMyClass)
 END_COM_MAP()  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 ### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|**class**、 `struct`|  
-|**反復可能**|はい|  
+|**反復可能**|[はい]|  
 |**必要な属性**|**coclass**、 **progid**、 **vi_progid**のうち 1 つ以上。|  
 |**無効な属性**|なし|  
   
  属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [COM 属性](../windows/com-attributes.md)   
  [クラス属性](../windows/class-attributes.md)   
  [Typedef、Enum、Union、および Struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   

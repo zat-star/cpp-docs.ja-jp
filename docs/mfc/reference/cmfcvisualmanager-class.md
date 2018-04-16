@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -179,7 +180,8 @@ f1_keywords:
 - AFXVISUALMANAGER/CMFCVisualManager::SetMenuFlatLook
 - AFXVISUALMANAGER/CMFCVisualManager::SetMenuShadowDepth
 - AFXVISUALMANAGER/CMFCVisualManager::SetShadowHighlightedImage
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCVisualManager [MFC], AdjustFrames
 - CMFCVisualManager [MFC], AdjustToolbars
@@ -351,15 +353,17 @@ helpviewer_keywords:
 - CMFCVisualManager [MFC], SetMenuShadowDepth
 - CMFCVisualManager [MFC], SetShadowHighlightedImage
 ms.assetid: beed80f7-36a2-4d64-9f09-e807cfefc3fe
-caps.latest.revision: "58"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 92aafb6b979557f98448e4c8ad27d20b663e228a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e51a6a630daa2d03ac9f251a3ba516c708ec6d37
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcvisualmanager-class"></a>CMFCVisualManager クラス
 グローバル レベルでアプリケーションの外観変更のサポートを提供します。 `CMFCVisualManager` クラスは、一貫したスタイルを使用してアプリケーションの GUI コントロールを描画する機能を提供するクラスと連携します。 これらの連携するクラスはビジュアル マネージャーと呼ばれ、 `CMFCBaseVisualManager`から継承されます。  
@@ -608,7 +612,7 @@ CMFCVisualManager::GetInstance ()->RedrawAll ();
   
  `CMFCVisualManager`   
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxvisualmanager.h  
   
 ##  <a name="adjustframes"></a>CMFCVisualManager::AdjustFrames  
@@ -4772,7 +4776,7 @@ void SetShadowHighlightedImage(BOOL bShadow = TRUE);
 ### <a name="remarks"></a>コメント  
  既定では、この機能は無効です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCVisualManager::GetInstance](#getinstance)   

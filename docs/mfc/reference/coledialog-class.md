@@ -4,25 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - COleDialog
 - AFXODLGS/COleDialog
 - AFXODLGS/COleDialog::GetLastError
-dev_langs: C++
-helpviewer_keywords: COleDialog [MFC], GetLastError
+dev_langs:
+- C++
+helpviewer_keywords:
+- COleDialog [MFC], GetLastError
 ms.assetid: b1ed0aca-3914-4b00-af34-4a4fb491aec7
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 9ef2efeb94255631a1d6d66d92a7901ae66cb7ef
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: ae60b9e5a0d2e79d2bf6d9cc06eebfa9df0c6e23
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="coledialog-class"></a>関数クラス
 OLE のダイアログ ボックスに共通の機能が用意されています。  
@@ -77,7 +82,7 @@ class COleDialog : public CCommonDialog
   
  `COleDialog`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxodlgs.h  
   
 ##  <a name="getlasterror"></a>COleDialog::GetLastError  
@@ -93,7 +98,7 @@ UINT GetLastError() const;
 ### <a name="remarks"></a>コメント  
  参照してください、`DoModal`固有のエラー メッセージについては、派生クラスでメンバー関数。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CCommonDialog クラス](../../mfc/reference/ccommondialog-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)
 

@@ -1,25 +1,32 @@
 ---
-title: "SimpleActivationFactory クラス |Microsoft ドキュメント"
-ms.custom: 
+title: SimpleActivationFactory クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
-f1_keywords: module/Microsoft::WRL::SimpleActivationFactory
-dev_langs: C++
-helpviewer_keywords: SimpleActivationFactory class
+f1_keywords:
+- module/Microsoft::WRL::SimpleActivationFactory
+dev_langs:
+- C++
+helpviewer_keywords:
+- SimpleActivationFactory class
 ms.assetid: aff768e0-0038-4fd7-95d2-ad7d308da41c
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 3c56d03b74080ae65f84ffbad8c4dd2092be1082
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 0f6aabaae1e19fef3631e372391c81108f212c90
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="simpleactivationfactory-class"></a>SimpleActivationFactory クラス
 Windows ランタイムまたはクラシック COM の基底クラスを作成するための基本的なメカニズムを提供します。  
@@ -27,9 +34,7 @@ Windows ランタイムまたはクラシック COM の基底クラスを作成�
 ## <a name="syntax"></a>構文  
   
 ```  
-template<  
-   typename Base  
->  
+template<typename Base>  
 class SimpleActivationFactory : public ActivationFactory<>;  
 ```  
   

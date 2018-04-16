@@ -1,37 +1,43 @@
 ---
-title: "Specifying the Location and Size of a Dialog Box | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "dialog boxes, size"
-  - "dialog boxes, positioning"
+title: "ダイアログ ボックスのサイズと場所を指定する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- dialog boxes, size
+- dialog boxes, positioning
 ms.assetid: 2b7c495e-6595-4cfb-9664-80b2826d0851
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 03c4c6d6afb13a0e4ed8801838356ff0d1e851f1
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# Specifying the Location and Size of a Dialog Box
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ダイアログ ボックスの位置とサイズ、および含まれるコントロールの位置とサイズは、ダイアログ単位で表されます。  各コントロールとダイアログ ボックスの値は、選択時に Visual Studio のステータス バーの右下に表示されます。  
+# <a name="specifying-the-location-and-size-of-a-dialog-box"></a>ダイアログ ボックスの位置とサイズの指定
+場所と、ダイアログ ボックスだけでなく、場所のサイズと、内のコントロールのサイズは、ダイアログ単位で測定されます。 個々 のコントロールと、ダイアログ ボックスの値は、Visual Studio のステータス バーの選択した場合の右下に表示されます。  
   
- [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)では、3 つのプロパティを設定して、ダイアログ ボックスが画面上で表示される位置を指定できます。  \[Center\] プロパティはブール型です。\[True\] に設定すると、ダイアログ ボックスは常に画面の中央に表示されます。  \[False\] に設定すると、\[Xpos\] プロパティと \[Ypos\] プロパティを設定して、ダイアログ ボックスが画面上で表示される位置を明示的に定義できます。  位置指定プロパティは表示領域の左上隅からのオフセット値であり、{X\=0, Y\=0} として定義されます。  また、位置は \[Absolute Align\] プロパティにも基づいています。このプロパティが \[True\] の場合、座標は画面を原点にした相対座標になり、\[False\] の場合はダイアログ ボックス オーナーのウィンドウを原点にした相対座標になります。  
+ 設定できる 3 つのプロパティがある、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window) ダイアログ ボックスを画面に表示される表示を指定します。 Center プロパティがブール値です。値を True に設定した場合、ダイアログ ボックスは常に、画面の中央に表示されます。 False に設定すると、ダイアログ ボックスが表示画面に表示される場所を明示的に定義するプロパティに対して画面と 1/3 プロパティを設定できます。 位置プロパティは、{X = 0、Y = 0} として定義されている表示領域の左上隅からのオフセットの値です。 位置がまたに基づいて、**絶対配置**プロパティ: True の場合、座標画面に対して相対的です。 False の場合、座標は、ダイアログの所有者のウィンドウに対して相対的です。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](/dotnet/standard/globalization-localization/index)です。  
   
-## 要件  
+## <a name="requirements"></a>必要条件  
  Win32  
   
-## 参照  
- [Controls in Dialog Boxes](../mfc/controls-in-dialog-boxes.md)   
+## <a name="see-also"></a>参照  
+ [ダイアログ ボックスのコントロール](../windows/controls-in-dialog-boxes.md)   
  [コントロール](../mfc/controls-mfc.md)
+

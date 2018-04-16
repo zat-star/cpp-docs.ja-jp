@@ -1,32 +1,37 @@
 ---
-title: "make_pair (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::make_pair"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "make_pair 関数 [STL/CLR]"
+title: "make_pair (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- cliext::make_pair
+dev_langs:
+- C++
+helpviewer_keywords:
+- make_pair function [STL/CLR]
 ms.assetid: 74733f2c-97b0-4d69-b431-5ab8f0de9e3e
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 34f86aefd9a7bad7b3b1f03f98d3df8965020e48
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# make_pair (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-値のペアから `pair` を作成します。  
+# <a name="makepair-stlclr"></a>make_pair (STL/CLR)
+ように、`pair`値のペアからです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value1,  
@@ -34,25 +39,25 @@ template<typename Value1,
     pair<Value1, Value2> make_pair(Value1 first, Value2 second);  
 ```  
   
-#### パラメーター  
- Value1  
+#### <a name="parameters"></a>パラメーター  
+ `Value1`  
  最初のラップされた値の型。  
   
- Value2  
+ `Value2`  
  2 番目のラップされた値の型。  
   
- 最初  
+ `first`  
  ラップする最初の値。  
   
- 秒  
- ラップする 2 番目の値です。  
+ `second`  
+ 2 番目の値をラップします。  
   
-## 解説  
- このテンプレート関数は `pair<``Value1``,``Value2``>(``first``,``second``)`を返します。  値のペアの `pair``<``Value1``,``Value2``>` オブジェクトを構築するときに使用します。  
+## <a name="remarks"></a>コメント  
+ このテンプレート関数は `pair<Value1, Value2>(first, second)` を返します。 構築するために使用する、`pair<Value1, Value2>`値のペアからのオブジェクト。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // cliext_make_pair.cpp   
 // compile with: /clr   
 #include <cliext/utility>   
@@ -69,12 +74,15 @@ int main()
   
 ```  
   
-  **\[X、3 つ\]**  
-**\[y、4\]**   
-## 必要条件  
- **ヘッダー:** \<cliext\/ユーティリティ\>  
+```Output  
+[x, 3]  
+[y, 4]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー:** \<cliext ユーティリティ/>  
   
-## 参照  
- [range\_adapter](../dotnet/range-adapter-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>参照  
+ [range_adapter (STL/CLR)](../dotnet/range-adapter-stl-clr.md)

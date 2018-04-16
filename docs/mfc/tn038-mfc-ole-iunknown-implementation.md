@@ -4,11 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: vc.mfc.ole
-dev_langs: C++
+f1_keywords:
+- vc.mfc.ole
+dev_langs:
+- C++
 helpviewer_keywords:
 - aggregation macros [MFC]
 - COM interfaces, base interface
@@ -24,15 +27,17 @@ helpviewer_keywords:
 - END_INTERFACE_PART macro [MFC]
 - INTERFACE_PART macro
 ms.assetid: 19d946ba-beaf-4881-85c6-0b598d7f6f11
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6ef848d5b00df1140850e19611a426d289539ef0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a17ce210dffd13e0ffdac142c6121954eec1045d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="tn038-mfcole-iunknown-implementation"></a>テクニカル ノート 38: MFC/OLE IUnknown の実装
 > [!NOTE]
@@ -78,7 +83,7 @@ ULONG CMyObj::Release()
 }  
 ```  
   
- [QueryInterface](http://msdn.microsoft.com/library/windows/desktop/ms682521)メンバー関数がもう少し興味深いものです。 唯一のメンバー関数は、オブジェクトがあるにとってあまり重要ではありません[AddRef](http://msdn.microsoft.com/library/windows/desktop/ms691379)と[リリース](http://msdn.microsoft.com/library/windows/desktop/ms682317)— はより多くの機能を提供するオブジェクトを通知する良いこと[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)提供します。 ここでは[QueryInterface](http://msdn.microsoft.com/library/windows/desktop/ms682521)役に立ちます。 QueryInterface を使用すると、1 つのオブジェクトが複数の "インターフェイス" を持つことができます。 通常、これらのインターフェイスはから派生[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)し、新しいメンバー関数を追加することで追加の機能を追加します。 COM インターフェイスでは、インターフェイス内でメンバー変数を宣言せず、メンバー関数はすべて純粋仮想として宣言します。 次に例を示します。  
+ [QueryInterface](http://msdn.microsoft.com/library/windows/desktop/ms682521)メンバー関数がもう少し興味深いものです。 唯一のメンバー関数は、オブジェクトがあるにとってあまり重要ではありません[AddRef](http://msdn.microsoft.com/library/windows/desktop/ms691379)と[リリース](http://msdn.microsoft.com/library/windows/desktop/ms682317)— はより多くの機能を提供するオブジェクトを通知する良いこと[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)提供します。 ここでは[QueryInterface](http://msdn.microsoft.com/library/windows/desktop/ms682521)役に立ちます。 QueryInterface を使用すると、1 つのオブジェクトが複数の "インターフェイス" を持つことができます。 通常、これらのインターフェイスはから派生[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)し、新しいメンバー関数を追加することで追加の機能を追加します。 COM インターフェイスでは、インターフェイス内でメンバー変数を宣言せず、メンバー関数はすべて純粋仮想として宣言します。 たとえば、オブジェクトに適用された  
   
 ```  
 class IPrintInterface : public IUnknown  
@@ -709,7 +714,7 @@ END_INTERFACE_MAP
 ## <a name="remarks"></a>コメント  
  このマクロは、クラスが集約オブジェクトを使用することをフレームワークに知らせます。 このマクロは `BEGIN_INTERFACE_PART` マクロと `END_INTERFACE_PART` マクロの間に記述します。 集約オブジェクトが別のオブジェクトから派生した[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)です。 集約と `INTERFACE_AGGREGATE` マクロを使用すると、集約によってサポートされているすべてのインターフェイスを、オブジェクトによって直接サポートされているように見せることができます。 `theAggr`引数はから派生するクラスのメンバー変数の名前だけで[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509) (直接または間接的に)。 `INTERFACE_AGGREGATE` マクロをインターフェイス マップの中に記述するときは、必ず `INTERFACE_PART` マクロの後に記述します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
  [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
 

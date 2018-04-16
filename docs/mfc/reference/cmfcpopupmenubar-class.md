@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -30,7 +31,8 @@ f1_keywords:
 - AFXPOPUPMENUBAR/CMFCPopupMenuBar::SetOffset
 - AFXPOPUPMENUBAR/CMFCPopupMenuBar::StartPopupMenuTimer
 - AFXPOPUPMENUBAR/CMFCPopupMenuBar::m_bDisableSideBarInXPMode
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CMFCPopupMenuBar [MFC], AdjustSizeImmediate
 - CMFCPopupMenuBar [MFC], BuildOrigItems
@@ -53,15 +55,17 @@ helpviewer_keywords:
 - CMFCPopupMenuBar [MFC], StartPopupMenuTimer
 - CMFCPopupMenuBar [MFC], m_bDisableSideBarInXPMode
 ms.assetid: 4c93c459-7f70-4240-8c63-280bb811e374
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 6be3c3b6028bab04ae3d8ec32f9063d26012778e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 002e059fd905930409cb5f2745628f8ac1dea103
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="cmfcpopupmenubar-class"></a>CMFCPopupMenuBar クラス
 ポップアップ メニューに埋め込まれたメニュー バーです。  
@@ -100,7 +104,7 @@ class CMFCPopupMenuBar : public CMFCToolBar
   
 ### <a name="data-members"></a>データ メンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[CMFCPopupMenuBar::m_bDisableSideBarInXPMode](#m_bdisablesidebarinxpmode)|アプリケーションがある Windows XP の外観とグレーのサイドバーが表示されるかどうかを指定します。|  
   
@@ -129,7 +133,7 @@ class CMFCPopupMenuBar : public CMFCToolBar
   
  [CMFCPopupMenuBar](../../mfc/reference/cmfcpopupmenubar-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxpopupmenubar.h  
   
 ##  <a name="adjustsizeimmediate"></a>CMFCPopupMenuBar::AdjustSizeImmediate  
@@ -403,7 +407,7 @@ void StartPopupMenuTimer(
   
 ### <a name="remarks"></a>コメント  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CMFCColorBar クラス](../../mfc/reference/cmfccolorbar-class.md)   

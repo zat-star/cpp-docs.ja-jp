@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3243
 ms.assetid: 35d8ad1a-377d-47df-be9d-c55eea23340f
-caps.latest.revision: 6
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: edd1b0ee0625acf97ed5c8d1513ff6f5a03838bf
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 0539a411d6df5d9054a6530683b2809137190c4b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3243"></a>コンパイラ エラー C3243
 どのオーバーロード関数も 'interface' によって導入されていません  

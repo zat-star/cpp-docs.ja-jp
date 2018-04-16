@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3706
 ms.assetid: d20a33eb-d625-46c5-ac87-32075a590d07
-caps.latest.revision: 9
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2b33ea3c7de9afc605622cc55f4a45f73350d7db
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 20f7e14d22e1994213624d88ccab098844aa6ac4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3706"></a>コンパイラ エラー C3706
 'function': COM イベントを起動する COM インターフェイスでなければなりません  

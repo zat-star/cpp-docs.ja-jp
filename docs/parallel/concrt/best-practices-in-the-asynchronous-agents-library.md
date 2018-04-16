@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - best practices, Asynchronous Agents Library
 - Asynchronous Agents Library, best practices
 - Asynchronous Agents Library, practices to avoid
 - practices to avoid, Asynchronous Agents Library
 ms.assetid: 85f52354-41eb-4b0d-98c5-f7344ee8a8cf
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 15e4b6aca6d9f00806a37a04ffb7c93008125b6a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a8d4b52839675334ab343adf48790bdce390dd5e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="best-practices-in-the-asynchronous-agents-library"></a>非同期エージェント ライブラリに関するベスト プラクティス
 ここでは、非同期エージェント ライブラリを効果的に使用する方法について説明します。 エージェント ライブラリは、アクター ベースのプログラミング モデルと、粒度の粗いデータ フローおよびパイプライン処理タスクのためのインプロセス メッセージ パッシングを推進します。  
@@ -118,7 +122,7 @@ receiver2: received resource 64
 Destroying resource 64...  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同時実行ランタイムに関するベスト プラクティスします。](../../parallel/concrt/concurrency-runtime-best-practices.md)   
  [非同期エージェント ライブラリ](../../parallel/concrt/asynchronous-agents-library.md)   
  [チュートリアル: エージェント ベースのアプリケーションの作成](../../parallel/concrt/walkthrough-creating-an-agent-based-application.md)   

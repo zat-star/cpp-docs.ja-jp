@@ -5,9 +5,9 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _tzset
 apilocation:
@@ -32,36 +32,23 @@ helpviewer_keywords:
 - time environment variables
 - environment variables, setting time
 ms.assetid: 3f6ed537-b414-444d-b272-5dd377481930
-caps.latest.revision: 23
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 669b7d41234c21c3fb4e9a1a28f6b8d1a33c036b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 4f364d1af095e8fb793c2cd01a5b12ce62b9029a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="tzset"></a>_tzset
 時間環境変数を設定します。  
   
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「                  [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」を参照してください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -72,7 +59,7 @@ void _tzset( void );
 ## <a name="remarks"></a>コメント  
  `_tzset` 関数は環境変数 `TZ` の現在の設定を使用して、 `_daylight`、 `_timezone`、および `_tzname`の 3 つのグローバル変数に値を代入します。 これらの変数は、 [_ftime](../../c-runtime-library/reference/ftime-ftime32-ftime64.md) 関数と [localtime](../../c-runtime-library/reference/localtime-localtime32-localtime64.md) 関数によって世界協定時刻 (UTC: Coordinated Universal Time) から現地時刻へ修正するために使用されます。また `time` 関数によってシステム時刻から UTC を計算するのに使用されます。 `TZ` 環境変数を設定するには、次の構文を使用します。  
   
- `set` `TZ`=`tzn`[+ &#124; -]`hh`[`:``mm`[`:``ss`] ][`dzn`]  
+ `set` `TZ`=`tzn`[+ &#124; -]`hh`[`:mm`[`:ss`] ][`dzn`]  
   
  `tzn`  
  PST など、3 文字のタイム ゾーンの名前。 現地時刻から UTC への適切なオフセットを指定する必要があります。  
@@ -109,17 +96,17 @@ set TZ=GST-1GDT
 |`_daylight`|夏時間のタイム ゾーンが `TZ` の設定で指定されている場合は 0 以外の値、指定されていない場合は 0。|1|  
 |`_timezone`|現地時刻と UTC の秒単位での時差。|28800 (28800 秒は 8 時間に相当)|  
 |`_tzname`[0]|`TZ` の環境変数のタイム ゾーンの名前の文字列値。 `TZ` が設定されていない場合は空。|PST|  
-|`_tzname`[1]|夏時間のタイム ゾーンの文字列値。 `TZ` の環境変数の値に夏時間のタイム ゾーンが含まれていない場合は空。|PDT|  
+|`_tzname`[1]|夏時間のタイム ゾーンの文字列値。`TZ` の環境変数の値に夏時間のタイム ゾーンが含まれていない場合は空。|PDT|  
   
  上の表に示されている `_daylight` に対する既定値と `_tzname` の配列は "PST8PDT" に対応します。 DST のゾーンが `TZ` の環境変数に含まれていない場合は、 `_daylight` の値は 0 で、 `_ftime`、 `gmtime`、および `localtime` の各関数はそれぞれの DST フラグに対して 0 を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_tzset`|\<time.h>|  
   
- 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -156,7 +143,7 @@ _timezone = 28800
 _tzname[0] = Pacific Standard Time  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [時間管理](../../c-runtime-library/time-management.md)   
  [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
  [_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   

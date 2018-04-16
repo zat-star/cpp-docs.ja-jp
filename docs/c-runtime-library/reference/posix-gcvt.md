@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-apiname: gcvt
+ms.topic: reference
+apiname:
+- gcvt
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,19 +22,24 @@ apilocation:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 apitype: DLLExport
-f1_keywords: gcvt
-dev_langs: C++
-helpviewer_keywords: gcvt function
+f1_keywords:
+- gcvt
+dev_langs:
+- C++
+helpviewer_keywords:
+- gcvt function
 ms.assetid: 913478fd-ef22-4dee-b558-ff2bd6d72f3d
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: b6a5006f14cfb7f44e416e69f7a05b2e5f8eb3a1
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 950ff575276678300dcb2d855e14fc0e39c7bfb6
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="gcvt"></a>gcvt
 この POSIX 関数は使用されなくなりました。 代わりに ISO C++ 準拠の [_gcvt](../../c-runtime-library/reference/gcvt.md) またはセキュリティが強化された [_gcvt_s](../../c-runtime-library/reference/gcvt-s.md) を使用してください。

@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 47347d3c-18bd-441f-99cf-7737564c417f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7e3fbc78792034c60c94972ca6b4ed63dfac01b2
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c63ece0feea0426fffbafa600f578e342e85fc2c
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="272-data-sharing-attribute-clauses"></a>2.7.2 データ共有属性句
 いくつかのディレクティブには、ユーザーが、領域の間の変数の共有の属性を制御できるようにする句がそのまま使用します。 共有属性句は、句が表示されます、ディレクティブの構文の範囲内の変数にのみ適用されます。 次の句の一部は、すべてのディレクティブで許可されます。 特定のディレクティブでは有効では、句の一覧については、ディレクティブを使用して説明します。  

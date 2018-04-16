@@ -1,36 +1,40 @@
 ---
-title: "ユーザー定義変換 (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ユーザー定義変換 [C++]"
+title: ユーザー定義変換 (C + + CLI) |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 11/04/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- user-defined conversions [C++]
 ms.assetid: 8010fd59-2775-4e9a-a6ed-58055032d66f
 caps.latest.revision: 15
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 329461338579dc0787c6e3d208abac89ec762004
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# ユーザー定義変換 (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このセクションでは、変換の型の 1 つが値型または参照型の参照またはインスタンスにとユーザー定義変換 \(UDC\) について説明します。  
+# <a name="user-defined-conversions-ccli"></a>ユーザー定義変換 (C++/CLI)
+このセクションでは、参照または値型または参照型のインスタンスには、変換内の型のいずれかの場合、ユーザー定義の変換 (UDC) がについて説明します。  
   
-## 暗黙的なリンクと明示的な変換  
- ユーザー定義の変換が暗黙または明示的になります。UDC は変換によって情報の損失が発生する暗黙の必要があります。  それ UDC は明示的に定義する必要があります。  
+## <a name="implicit-and-explicit-conversions"></a>暗黙的および明示的な変換  
+ ユーザー定義の変換は暗黙的または明示的なのか、できます。  UDC 暗黙の変換が情報の損失にならない場合があります。 それ以外の場合、明示的な UDC を定義する必要があります。  
   
- ネイティブ クラスのコンストラクターがネイティブ クラスへの参照型や値型を変換するために使用できます。  
+ ネイティブ クラスのコンス トラクターは、ネイティブ クラスに参照または値の型を変換に使用できます。  
   
- 変換の詳細については、「[Boxing](../windows/boxing-cpp-component-extensions.md) と [標準変換](../cpp/standard-conversions.md)」を参照してください。  
+ 変換の詳細については、次を参照してください。[ボックス化](../windows/boxing-cpp-component-extensions.md)と[標準変換](../cpp/standard-conversions.md)です。  
   
 ```  
 // mcpp_User_Defined_Conversions.cpp  
@@ -80,26 +84,29 @@ int main() {
   
  **出力**  
   
-  **N::N**  
-**N::N**   
-## 変換元演算子  
- 変換元演算子は演算子は他のクラスのオブジェクトで定義されているクラスのオブジェクトを作成します。  
+```Output  
+in N::N  
+in N::N  
+```  
   
- 標準 C\+\+ では変換元演算子;をサポートしません。標準 C\+\+ でコンストラクターをこの目的で使用します。  ただし、CLR を使用すると、Visual C\+\+ 提供します変換元演算子に照会する構文のサポートを入力します。  
+## <a name="convert-from-operators"></a>変換元演算子  
+ 変換元演算子は、他のクラスのオブジェクトから、演算子が定義されているクラスのオブジェクトを作成します。  
   
- 他の CLS 準拠の言語との相互運用にするには、対応する変換元演算子を使用して特定のクラスの、ユーザー定義の単項コンストラクターをラップしたい場合があります。  
+ 標準の C++ では、変換元演算子; をサポートしていません標準 C++ では、この目的のコンス トラクターを使用します。 ただし、CLR 型を使用する場合、Visual C は、変換元演算子を呼び出すため構文のサポートを提供します。  
+  
+ 他の CLS 準拠の言語とも相互運用、対応する変換元演算子で特定のクラスの各単項のユーザー定義のコンス トラクターをラップする場合します。  
   
  変換元演算子:  
   
--   静的関数で定義されます。  
+-   静的関数として定義するものとします。  
   
--   暗黙的な \(精度が含まれているとき、短いに int などの精度を失わない変換の場合\) または明示的になる場合があります。  
+-   いずれかのできます (短い形式の int などの有効桁数が失われない変換) の暗黙的または明示的な有効桁数の損失が存在する場合。  
   
--   包含クラス オブジェクトを返します。  
+-   クラスを含むオブジェクトを返します。  
   
--   唯一のパラメーター型として」From 「となります。  
+-   含まれていては唯一のパラメーターの種類として"from"の型。  
   
- 次の例では、「の暗黙的および明示的な変換」、変換 \(UDC\) のユーザー定義の演算子です。  
+ 次の例では、暗黙的および明示的な「変換元」、ユーザー定義変換 (UDC) 演算子を使用しています。  
   
 ```  
 // clr_udc_convert_from.cpp  
@@ -140,12 +147,15 @@ int main() {
   
  **出力**  
   
-  **演算子**  
-**コンストラクター**  
-**10**  
-**1**   
-## 演算子に変換  
- 変換演算子に演算子が他のオブジェクトに定義されているクラスのオブジェクトに変換します。  次の例では、暗黙的に、変換、ユーザー定義変換演算子示します:  
+```Output  
+in operator  
+in constructor  
+10  
+1  
+```  
+  
+## <a name="convert-to-operators"></a>変換先演算子  
+ 変換先演算子は、その他のオブジェクトを演算子が定義されているクラスのオブジェクトを変換します。 次の例は、暗黙的な変換先、ユーザー定義変換演算子は示しています。  
   
 ```  
 // clr_udc_convert_to.cpp  
@@ -171,7 +181,11 @@ int main() {
   
  **出力**  
   
-  **10** 変換演算子は、ユーザー定義変換します。通常は、なんらかの形でデータを失う変換に適しています。  変換演算子に明示的に呼び出す場合は、キャストを使用する必要があります。  
+```Output  
+10  
+```  
+  
+ 明示的なユーザー定義変換先の変換演算子は、何らかの方法でデータが失われる可能性のある変換に適しています。 明示的な変換先演算子を呼び出すには、キャストを使用する必要があります。  
   
 ```  
 // clr_udc_convert_to_2.cpp  
@@ -196,10 +210,13 @@ int main() {
   
  **出力**  
   
-  **10.3**  
-**10**   
-## ジェネリック クラスを変換するには  
- T.にジェネリック クラスを変換できます。  
+```Output  
+10.3  
+10  
+```  
+  
+## <a name="to-convert-generic-classes"></a>ジェネリック クラスを変換するには  
+ ジェネリック クラスを T に変換することができます。  
   
 ```  
 // clr_udc_generics.cpp  
@@ -227,7 +244,11 @@ int main() {
   
  **出力**  
   
-  **True** 変換コンストラクターは型を受け取り、オブジェクトを作成するために使用します。変換コンストラクターは直接初期化のみと呼ばれます; キャストは変換コンストラクターを呼び出しません。  既定で、変換コンストラクターは CLR 型に明示的になります。  
+```Output  
+True  
+```  
+  
+ 変換コンス トラクターは、型を受け取り、およびオブジェクトの作成に使用します。  直接の初期化のみで、変換されるコンス トラクターが呼び出されますキャストでは、変換コンス トラクターは呼び出されません。 既定では、変換コンス トラクターは、CLR 型の明示的なは。  
   
 ```  
 // clr_udc_converting_constructors.cpp  
@@ -258,8 +279,12 @@ int main() {
   
  **出力**  
   
-  **5**  
-**R** このコード サンプルでは、暗黙の静的な変換関数は、明示的な変換のコンストラクターと同じことを実行します。  
+```Output  
+5  
+R  
+```  
+  
+ このサンプル コードでは、暗黙的な静的変換関数は、明示的な変換コンス トラクターと同じ動作を行います。  
   
 ```  
 public value struct V {  
@@ -297,9 +322,12 @@ int main() {
   
  **出力**  
   
-  **13**  
-**12**  
-**500**  
-**2000**   
-## 参照  
- [Classes and Structs](../windows/classes-and-structs-cpp-component-extensions.md)
+```Output  
+13  
+12  
+500  
+2000  
+```  
+  
+## <a name="see-also"></a>参照  
+ [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)

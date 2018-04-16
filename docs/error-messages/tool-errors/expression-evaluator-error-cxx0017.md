@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: CXX0017
-dev_langs: C++
+f1_keywords:
+- CXX0017
+dev_langs:
+- C++
 helpviewer_keywords:
 - CAN0017
 - CXX0017
 ms.assetid: af74db02-a64d-49ca-8363-3e044a107580
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 2b1e7901f46aacbcac73a7d2b6a3e5f033d1526c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e769e9886168c9f19ad110c48d848a9b84ab8aac
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="expression-evaluator-error-cxx0017"></a>式エバリュエーター エラー CXX0017
 シンボルが見つかりません  

@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -14,7 +15,8 @@ f1_keywords:
 - _SING
 - _DOMAIN
 - _OVERFLOW
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _TLOSS constant
 - _SING constant
@@ -30,15 +32,17 @@ helpviewer_keywords:
 - _PLOSS constant
 - math error constants
 ms.assetid: 4be933a6-674e-45a5-8ac9-090023542f5b
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 003851227d56469436f7c75396803d80052dca15
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 76313854bc9bb7c9a624836c47d0178978f8befd
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="math-error-constants"></a>数値演算エラー定数
 ## <a name="syntax"></a>構文  
@@ -63,6 +67,6 @@ ms.lasthandoff: 10/24/2017
 |`_TLOSS`|有効桁の完全損失が発生しました。|  
 |`_UNDERFLOW`|結果が小さすぎて表現できません。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [_matherr](../c-runtime-library/reference/matherr.md)   
  [グローバル定数](../c-runtime-library/global-constants.md)

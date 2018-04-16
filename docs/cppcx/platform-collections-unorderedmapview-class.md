@@ -6,18 +6,21 @@ ms.technology: cpp-windows
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: language-reference
-f1_keywords: collection/Platform::Collections::UnorderedMapView
+ms.topic: reference
+f1_keywords:
+- collection/Platform::Collections::UnorderedMapView
 ms.assetid: 545a3725-2efd-4cc1-b590-4a7cd2351f61
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 13e38563fe542eda08f436439ce3ad91a3e7a53e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e1bb555cc804069aed3c778acf1ac71e795a11ff
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="platformcollectionsunorderedmapview-class"></a>Platform::Collections::UnorderedMapView クラス
 キーと値のペアのコレクションである、 *マップ*への読み取り専用ビューを表します。  
@@ -51,22 +54,22 @@ ref class UnorderedMapView sealed;
   
 |名前|説明|  
 |----------|-----------------|  
-|[Unorderedmapview::unorderedmapview](#ctor)|UnorderedMapView クラスの新しいインスタンスを初期化します。|  
+|[UnorderedMapView::UnorderedMapView](#ctor)|UnorderedMapView クラスの新しいインスタンスを初期化します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[Unorderedmapview::first](#first)|マップ ビュー内の最初の要素に初期化される反復子を返します。|  
-|[Unorderedmapview::haskey](#haskey)|指定したキーが現在の UnorderedMapView に格納されているかどうかを判定します。|  
-|[Unorderedmapview::lookup](#lookup)|現在の UnorderedMapView オブジェクト内の指定されたキーの位置の要素を取得します。|  
-|[Unorderedmapview::size](#size)|現在の UnorderedMapView オブジェクトの要素数を返します。|  
-|[Unorderedmapview::split](#split)|元の UnorderedMapView オブジェクトを 2 つの UnorderedMapView オブジェクトに分割します。|  
+|[UnorderedMapView::First](#first)|マップ ビュー内の最初の要素に初期化される反復子を返します。|  
+|[UnorderedMapView::HasKey](#haskey)|指定したキーが現在の UnorderedMapView に格納されているかどうかを判定します。|  
+|[UnorderedMapView::Lookup](#lookup)|現在の UnorderedMapView オブジェクト内の指定されたキーの位置の要素を取得します。|  
+|[UnorderedMapView::Size](#size)|現在の UnorderedMapView オブジェクトの要素数を返します。|  
+|[UnorderedMapView::Split](#split)|元の UnorderedMapView オブジェクトを 2 つの UnorderedMapView オブジェクトに分割します。|  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `UnorderedMapView`  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Platform::Collections  
@@ -236,6 +239,6 @@ UnorderedMapView(
  `last`  
  UnorderedMapView を初期化するために使用される要素の範囲の後の最初の要素の入力反復子。  
    
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Platform::collections Namespace](../cppcx/platform-collections-namespace.md)   
  [Windows::Foundation::IMapView](http://go.microsoft.com/fwlink/p/?LinkId=262409)

@@ -1,43 +1,47 @@
 ---
-title: "DLL でのオートメーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "オートメーション [C++], DLL"
-  - "DLL [C++], オートメーション"
+title: "DLL でのオートメーション |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- DLLs [C++], Automation
+- Automation [C++], DLLs
 ms.assetid: 2728ecd1-14e2-4ae0-a946-e749e11dbb74
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3e3630aab764988ad86e6120301dfff548ad4368
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# DLL でのオートメーション
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-MFC DLL ウィザードの \[オートメーション\] チェック ボックスをオンにすると、以下の機能が使用できるようになります。  
+# <a name="automation-in-a-dll"></a>DLL でのオートメーション
+MFC DLL ウィザードで [オートメーション] オプションを選択すると、ウィザードは、次のように。  
   
--   初期オブジェクト記述言語 \(.ODL\) ファイル  
+-   スターター オブジェクト記述言語 (です。ODL) ファイル  
   
--   Afxole.h 用のインクルード ディレクティブ ファイル STDAFX.h  
+-   STDAFX.h ファイル Afxole.h の include ディレクティブ  
   
--   **AfxDllGetClassObject** 関数を呼び出す `DllGetClassObject` 関数の実装  
+-   実装、`DllGetClassObject`を呼び出した関数、 **AfxDllGetClassObject**関数  
   
--   **AfxDllCanUnloadNow** 関数を呼び出す `DllCanUnloadNow` 関数の実装  
+-   実装、`DllCanUnloadNow`を呼び出した関数、 **AfxDllCanUnloadNow**関数  
   
--   [COleObjectFactory::UpdateRegistryAll](../Topic/COleObjectFactory::UpdateRegistryAll.md) 関数を呼び出す `DllRegisterServer` 関数の実装  
+-   実装、`DllRegisterServer`を呼び出した関数、[されます](../mfc/reference/coleobjectfactory-class.md#updateregistryall)関数  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
 -   [オートメーション サーバー](../mfc/automation-servers.md)  
   
-## 参照  
- [Visual C\+\+ の DLL](../build/dlls-in-visual-cpp.md)
+## <a name="see-also"></a>参照  
+ [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)

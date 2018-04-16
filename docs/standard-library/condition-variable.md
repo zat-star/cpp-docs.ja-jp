@@ -4,21 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: <condition_variable>
-dev_langs: C++
+ms.topic: reference
+f1_keywords:
+- <condition_variable>
+dev_langs:
+- C++
 ms.assetid: 8567f7cc-20bd-42a7-9137-87c46f878009
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 26630280a11b21b77d5e8bcba0bf6176544dedcb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5bd3d3bd6ef4976f5f9c55d1905b02314a88438d
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltconditionvariablegt"></a>&lt;condition_variable&gt;
 条件が true になるまで待機するオブジェクトを作成するために使用される、[condition_variable](../standard-library/condition-variable-class.md) クラスと [condition_variable_any](../standard-library/condition-variable-any-class.md) クラスを定義します。  
@@ -64,7 +69,7 @@ while (condition is false)
   
 - `notify_all` は、条件変数を待機しているすべてのスレッドをウェイクアップします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
  [condition_variable クラス](../standard-library/condition-variable-class.md)   
  [condition_variable_any クラス](../standard-library/condition-variable-any-class.md)

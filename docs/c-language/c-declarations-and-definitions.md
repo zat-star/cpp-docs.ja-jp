@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: 575f0c9b-5554-4346-be64-b2129ca9227f
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 33101873b016b939ee1e3fc28fe972424b258eb0
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 526a7bb902374fb3df936d5ac81cf602e1871a4f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="c-declarations-and-definitions"></a>C 宣言と定義
 "宣言" では、特定の変数、関数、型、およびその属性の間の関連付けが設定されます。 非終端要素である `declaration` の ANSI 構文については、「[宣言の概要](../c-language/overview-of-declarations.md)」で説明しています。 宣言では、識別子にいつどこでアクセスできるか (識別子の "リンケージ") も指定されます。 リンケージについては、「[有効期間、スコープ、可視性、およびリンケージ](../c-language/lifetime-scope-visibility-and-linkage.md)」をご覧ください。  
@@ -37,5 +41,5 @@ int count( double f ) {}
   
  変数 `var` および `val` は、それ以上の宣言がなくても、`find` 関数と `count` 関数で使用できます。 しかし、これらの名前は `main` からは認識されません (アクセスできません)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ソース ファイルとソース プログラム](../c-language/source-files-and-source-programs.md)

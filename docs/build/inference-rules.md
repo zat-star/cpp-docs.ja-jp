@@ -4,24 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - inference rules in NMAKE
 - rules, inference
 - NMAKE program, inference rules
 ms.assetid: caff320f-fb07-4eea-80c3-a6a2133a8492
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c833a4833bfc670a58796700efd4f885fe3ee560
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 932aad860cd2b78208857ca7b028e35cd96d481e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="inference-rules"></a>推論規則
 推論規則は、ターゲットを更新し、ターゲットの依存ファイルを推測するコマンドを指定します。 推論規則の拡張機能が 1 つのターゲットと一致し、同じ基本名がある依存します。 推論のルールは、ユーザー定義または定義済みです。定義済みの規則を再定義することができます。  
@@ -39,5 +43,5 @@ ms.lasthandoff: 10/24/2017
   
  [推論規則の優先順位](../build/precedence-in-inference-rules.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [NMAKE リファレンス](../build/nmake-reference.md)

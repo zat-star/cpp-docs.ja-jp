@@ -1,38 +1,42 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4289 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4289"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4289"
+title: "コンパイラの警告 (レベル 4) C4289 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4289
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4289
 ms.assetid: 0dbd2863-4cde-4e16-894b-104a2d5fa724
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 98acda62a984f2625ddc742e309aca7628d9c9f3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4289
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="compiler-warning-level-4-c4289"></a>コンパイラの警告 (レベル 4) C4289
 非標準の拡張が使用されています : 'var' : for ループで宣言したループ コントロール変数が for ループ スコープの外側で使用されています。  
   
- [\/Ze](../../build/reference/za-ze-disable-language-extensions.md) および **\/Zc:forScope\-** でコンパイルするときに、[for](../../cpp/for-statement-cpp.md) ループ内で宣言された変数が **for** ループのスコープの後で使用されました。  
+ コンパイルするときに[/Ze](../../build/reference/za-ze-disable-language-extensions.md)と**/Zc:forScope-**で宣言された変数、[の](../../cpp/for-statement-cpp.md)ループが後に使用された、**の**-ループにスコープします。  
   
- **\/Ze** を使用して **for** ループ内での標準的な動作を指定する方法については、「[\/Zc:forScope \(for ループのスコープの強制準拠\)](../../build/reference/zc-forscope-force-conformance-in-for-loop-scope.md)」を参照してください。  
+ 参照してください[/Zc:forScope](../../build/reference/zc-forscope-force-conformance-in-for-loop-scope.md)で標準の動作を指定する方法については**の**ループの**/Ze**です。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[Compiler Warnings That Are Off by Default](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
- 次の例では警告 C4289 が生成されます。  
+ 次の例では、C4289 が生成されます。  
   
 ```  
 // C4289.cpp  

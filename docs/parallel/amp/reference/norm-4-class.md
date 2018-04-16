@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - amp_short_vectors/Concurrency::graphics::norm_4::grab
 - amp_short_vectors/Concurrency::graphics::norm_4::agrb
@@ -277,30 +277,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: d628b2bf-2cdb-4dbb-95c6-cd778f5e991f
-caps.latest.revision: 10
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 1889e0de5f1c7ac588822d8c1268e2775b186542
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e15af7601483fd1d69462291c9c45dc62b5aded4
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="norm4-class"></a>norm_4 クラス
 4 個の正規数の short ベクターを表します。  
@@ -470,18 +457,18 @@ class norm_4;
   
 |名前|説明|  
 |----------|-----------------|  
-|norm_4:-||  
-|norm_4:--||  
-|norm_4::operator * =||  
+|norm_4::operator-||  
+|norm_4::operator--||  
+|norm_4::operator*=||  
 |norm_4::operator/=||  
 |norm_4::operator++||  
-|norm_4::operator + = 演算子||  
-|norm_4: =||  
+|norm_4::operator+=||  
+|norm_4::operator=||  
 |norm_4::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |[定数のサイズ](#norm_4__size)||  
   
@@ -621,12 +608,12 @@ class norm_4;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `norm_4`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** amp_short_vectors.h  
   
  **Namespace:** concurrency::graphics  
   
-##  <a name="ctor"></a>norm_4 
+##  <a name="ctor"></a> norm_4 
 
  既定のコンストラクター。すべての要素を 0 で初期化します。  
   
@@ -707,7 +694,7 @@ explicit inline norm_4(
  1 の要素を初期化する値。  
   
  `_V2`  
- 2 の要素を初期化する値。  
+ 2 要素を初期化する値。  
   
  `_V3`  
  3 の要素を初期化する値。  
@@ -718,12 +705,11 @@ explicit inline norm_4(
  `_Other`  
  初期化するために使用するオブジェクト。  
   
-##  <a name="norm_4__size"></a>サイズ 
+##  <a name="norm_4__size"></a> サイズ 
 
 ```  
 static const int size = 4;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

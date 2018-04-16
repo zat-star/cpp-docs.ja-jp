@@ -1,12 +1,13 @@
 ---
-title: "unordered_multimap クラス | Microsoft Docs"
-ms.custom: 
+title: unordered_multimap クラス | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
 f1_keywords:
 - unordered_map/std::unordered_multimap
 - unordered_map/std::unordered_multimap::allocator_type
@@ -54,7 +55,8 @@ f1_keywords:
 - unordered_map/std::unordered_multimap::unordered_multimap
 - unordered_map/std::unordered_multimap::operator=
 - unordered_map/std::unordered_multimap::hash_function
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::unordered_multimap
 - std::unordered_multimap::allocator_type
@@ -144,15 +146,17 @@ helpviewer_keywords:
 - std::unordered_multimap::size
 - std::unordered_multimap::swap
 ms.assetid: 4baead6c-5870-4b85-940f-a47d6b891c27
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 25a555048252039a2d888fe69d50b1a6ef422e4c
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: c13e19d920b0b8ae61d3f3bd0ba2ae77cc3477bd
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="unorderedmultimap-class"></a>unordered_multimap クラス
 このテンプレート クラスは、`std::pair<const Key, Ty>` 型要素の可変長シーケンスを制御するオブジェクトを表します。 このシーケンスは、ハッシュ関数によって、"バケット" と呼ばれる一列に並んだサブシーケンスに分割され、弱い順序付けがなされます。 各バケット内では、比較関数によって要素間の大小関係が決定されます。 各要素は、並べ替えキーと値という、2 つのオブジェクトを持ちます。 このシーケンスは、すべてのバケットの長さがおおよそ等しければ、シーケンス内の要素数にかかわらず一定の演算回数 (定数時間) で、任意の要素を検索、挿入、削除できるような方法で表現されます。 最悪のケースは、すべての要素が 1 つのバケットに集められたときです。演算の回数は、シーケンス内の要素数に比例して増えることになります (線形時間)。 要素を挿入しても反復子の有効性は失われません。また、要素を削除した場合は、削除された要素を指す反復子だけが無効化されます。  
@@ -191,8 +195,8 @@ class unordered_multimap;
 |[const_reference](#const_reference)|要素への定数参照の型です。|  
 |[difference_type](#difference_type)|2 つの要素間の距離を表す、符号付きの型です。|  
 |[hasher](#hasher)|ハッシュ関数の型です。|  
-|[iterator](#iterator)|被制御シーケンスの反復子の型です。|  
-|[並べ替えます](#key_equal)|比較関数の型です。|  
+|[Iterator](#iterator)|被制御シーケンスの反復子の型です。|  
+|[key_equal](#key_equal)|比較関数の型です。|  
 |[key_type](#key_type)|順序付けキーの型です。|  
 |[local_iterator](#local_iterator)|被制御シーケンスのバケット反復子の型です。|  
 |[mapped_type](#mapped_type)|各キーに関連付けられた、マップされた値の型です。|  
@@ -205,7 +209,7 @@ class unordered_multimap;
 |-|-|  
 |メンバー関数|説明|  
 |[begin](#begin)|被制御シーケンスの先頭を指定します。|  
-|[バケット](#bucket)|キー値のバケット番号を取得します。|  
+|[bucket](#bucket)|キー値のバケット番号を取得します。|  
 |[bucket_count](#bucket_count)|バケット数を取得します。|  
 |[bucket_size](#bucket_size)|バケットのサイズを取得します。|  
 |[cbegin](#cbegin)|被制御シーケンスの先頭を指定します。|  
@@ -246,7 +250,7 @@ class unordered_multimap;
   
  被制御シーケンスに対するストレージの割り当ておよび解放は、格納されている [unordered_multimap::allocator_type](#allocator_type) 型のアロケーター オブジェクトを介して行われます。 このアロケーター オブジェクトは、`allocator` テンプレート クラスのオブジェクトと同じ外部インターフェイスを持っている必要があります。 コンテナー オブジェクトを代入しても、格納されているアロケーター オブジェクトはコピーされない点に注意してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<unordered_map>  
   
  **名前空間:** std  
@@ -259,7 +263,7 @@ typedef Alloc allocator_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Alloc`のシノニムです。  
+ この型は、テンプレート パラメーター `Alloc` のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -587,7 +591,7 @@ const_iterator cend() const;
 ### <a name="remarks"></a>コメント  
  `cend` は、反復子が範囲の末尾を超えたかどうかをテストするために使用されます。  
   
- `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と `cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
+ `end()` メンバー関数の代わりにこのメンバー関数を使用して、戻り値が `const_iterator` になることを保証できます。 通常は、次の例に示すように [auto](../cpp/auto-cpp.md) 型推論キーワードと共に使用します。 例では、`Container` が `end()` と`cend()` をサポートする任意の種類の変更可能な (非 `const`) コンテナーであると見なします。  
   
 ```cpp  
 auto i1 = Container.end();
@@ -1008,7 +1012,7 @@ iterator emplace_hint(
   
  挿入時、例外がスローされたが、コンテナーのハッシュ関数ではエラーが発生しなかった場合、コンテナーは変更されません。 ハッシュ関数で例外がスローされた場合、結果は未定義になります。  
   
- 要素の [value_type](../standard-library/map-class.md#value_type) はペアを表します。これにより、要素の値は順序付けされたペアになり、このペアの最初のコンポーネントはキー値と同じで、2 番目のコンポーネントは要素のデータ値と同じになります。  
+ 要素の [value_type](../standard-library/map-class.md#value_type) はペアです。最初のコンポーネントがキー値と等しく、2 番目のコンポーネントが要素のデータ値と等しくなるよう、要素の値が順序付けされたペアになります。  
   
  コード例については、「[map::emplace_hint](../standard-library/map-class.md#emplace_hint)」をご覧ください。  
   
@@ -1394,7 +1398,7 @@ typedef Hash hasher;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Hash`のシノニムです。  
+ この型は、テンプレート パラメーター `Hash` のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -1587,7 +1591,7 @@ typedef Pred key_equal;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Pred`のシノニムです。  
+ この型は、テンプレート パラメーター `Pred` のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -1626,7 +1630,7 @@ typedef Key key_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Key`のシノニムです。  
+ この型は、テンプレート パラメーター `Key` のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -1794,7 +1798,7 @@ typedef Ty mapped_type;
 ```  
   
 ### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター `Ty`のシノニムです。  
+ この型は、テンプレート パラメーター `Ty` のシノニムです。  
   
 ### <a name="example"></a>例  
   
@@ -2388,7 +2392,7 @@ void swap(unordered_multimap& right);
  交換先のコンテナー。  
   
 ### <a name="remarks"></a>コメント  
- このメンバー関数は、 `*this` と `right`の間で被制御シーケンスを交換します。 [unordered_multimap::get_allocator](#get_allocator)`() == right.get_allocator()` の場合は、この処理が一定の時間内に実行されます。例外がスローされるのは、格納されている `Tr` 型の traits オブジェクトをコピーした場合のみで、2 つの被制御シーケンス内の要素を指定する参照、ポインター、反復子は一切無効化されません。 それ以外の場合、2 つの被制御シーケンス内の要素数に比例した回数、要素の割り当てとコンストラクター呼び出しが実行されます。  
+ このメンバー関数は、`*this` と `right` の間で被制御シーケンスを交換します。 [unordered_multimap::get_allocator](#get_allocator)`() == right.get_allocator()` の場合は、この処理が一定の時間内に実行されます。例外がスローされるのは、格納されている `Tr` 型の traits オブジェクトをコピーした場合のみで、2 つの被制御シーケンス内の要素を指定する参照、ポインター、反復子は一切無効化されません。 それ以外の場合、2 つの被制御シーケンス内の要素数に比例した回数、要素の割り当てとコンストラクター呼び出しが実行されます。  
   
 ### <a name="example"></a>例  
   
@@ -2700,7 +2704,7 @@ int main()
 [d, 4] [c, 3] [b, 2] [a, 1]  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<unordered_map>](../standard-library/unordered-map.md)   
  [コンテナー](../cpp/containers-modern-cpp.md)   
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   

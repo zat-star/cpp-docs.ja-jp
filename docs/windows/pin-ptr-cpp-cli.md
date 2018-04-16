@@ -1,30 +1,35 @@
 ---
-title: "pin_ptr (C + + CLI) |Microsoft ドキュメント"
-ms.custom: 
+title: pin_ptr (C + + CLI) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - pin_ptr_cpp
 - stdcli::language::pin_ptr
 - pin_ptr
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - pinning pointers
 - pin_ptr keyword [C++]
 ms.assetid: 6c2e6c73-4ec2-4dce-8e1f-ccf3a9f9d0aa
-caps.latest.revision: "28"
+caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: c72149aa023723f4524ac22252f6778494341f44
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: ce63996cc2d93f4890f54c5edda318fca55f98aa
+ms.sourcegitcommit: 1d11412c8f5e6ddf4edded89e0ef5097cc89f812
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="pinptr-ccli"></a>pin_ptr (C++/CLI)
 宣言、*固定ポインター*、共通言語ランタイムでのみ使用されます。  
@@ -46,7 +51,7 @@ ms.lasthandoff: 10/24/2017
   
 ### <a name="parameters"></a>パラメーター  
  *cv_qualifier*  
- `const`または`volatile`修飾子です。 固定ポインターは、既定では、`volatile`です。 固定ポインターを宣言するエラーではなく、余分な`volatile`します。  
+ `const` または`volatile`修飾子です。 固定ポインターは、既定では、`volatile`です。 固定ポインターを宣言するエラーではなく、余分な`volatile`します。  
   
  *type*  
  `initializer` の型。  
@@ -88,7 +93,7 @@ ms.lasthandoff: 10/24/2017
   
 -   キャストの対象の型。  
   
- `pin_ptr``cli`名前空間。 詳細については、次を参照してください。[プラットフォーム、既定値、および cli 名前空間](../windows/platform-default-and-cli-namespaces-cpp-component-extensions.md)です。  
+ `pin_ptr` `cli`名前空間。 詳細については、次を参照してください。[プラットフォーム、既定値、および cli 名前空間](../windows/platform-default-and-cli-namespaces-cpp-component-extensions.md)です。  
   
  内部ポインターの詳細については、次を参照してください。 [interior_ptr (C + + CLI)](../windows/interior-ptr-cpp-cli.md)です。  
   
@@ -97,7 +102,7 @@ ms.lasthandoff: 10/24/2017
 ### <a name="requirements"></a>要件  
  コンパイラ オプション: **/clr**  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
  **例**  
   
  次の例で`pin_ptr`配列の最初の要素の位置を制限します。  
@@ -206,7 +211,7 @@ public:
   
 int main() {  
    ManagedType ^mt = gcnew ManagedType;  
-   pin_ptr< int > pt = &mt->i;  
+   pin_ptr<int> pt = &mt->i;  
    *pt = 8;  
    Console::WriteLine(mt->i);  
   

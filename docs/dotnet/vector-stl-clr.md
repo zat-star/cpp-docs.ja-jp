@@ -4,25 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::vector
-dev_langs: C++
+f1_keywords:
+- cliext::vector
+dev_langs:
+- C++
 helpviewer_keywords:
 - vector class [STL/CLR]
 - <cliext/vector> header [STL/CLR]
 - <vector> header [STL/CLR]
 ms.assetid: f90060d5-097a-4e9d-9a26-a634b5b9c6c2
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4ee3debcaf651a2a11ef51cac405edf816c5b8ba
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: bbbded2cb679d1f55949095cae3508d658e020c5
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="vector-stlclr"></a>vector (STL/CLR)
 このテンプレート クラスでは、ランダム アクセス権を持つ要素の可変長シーケンスを制御するオブジェクトについて説明します。 コンテナーを使用する`vector`ストレージの連続ブロックとして要素のシーケンスを管理します。 ブロックは、必要に応じて大きくを配列として実装されます。  
@@ -46,7 +52,7 @@ template<typename Value>
 ```  
   
 #### <a name="parameters"></a>パラメーター  
- 値  
+ [値]  
  被制御シーケンス内の要素の型。  
   
 ## <a name="members"></a>メンバー  
@@ -109,7 +115,7 @@ template<typename Value>
   
 ## <a name="interfaces"></a>インターフェイス  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |<xref:System.ICloneable>|オブジェクトが重複してください。|  
 |<xref:System.Collections.IEnumerable>|要素を順番にします。|  
@@ -130,12 +136,12 @@ template<typename Value>
   
  消去、または要素を削除する、格納されている値のデストラクターを呼び出します。 コンテナーを破棄するには、すべての要素が消去されます。 したがって、要素型が ref クラスは、コンテナーを実現する要素よりも長くありませんコンテナー ただし、ハンドルのコンテナーには、その要素は破棄されません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/vector >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
  [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
  [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   

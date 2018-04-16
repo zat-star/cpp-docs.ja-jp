@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,21 +14,24 @@ f1_keywords:
 - AFXPANEDIALOG/CPaneDialog::Create
 - AFXPANEDIALOG/CPaneDialog::HandleInitDialog
 - AFXPANEDIALOG/CPaneDialog::SetOccDialogInfo
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CPaneDialog [MFC], Create
 - CPaneDialog [MFC], HandleInitDialog
 - CPaneDialog [MFC], SetOccDialogInfo
 ms.assetid: 48a6bb91-4b92-40f5-8907-b3270b146cf6
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 013b40d2d0ef33a440a451b52802e62c7d9a15b3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 3e247d1d824d710cfa9588a01d73e1ca611d77ed
+ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/21/2018
 ---
 # <a name="cpanedialog-class"></a>CPaneDialog クラス
 `CPaneDialog`クラスは、モードレスでドッキング可能なダイアログ ボックスをサポートします。  
@@ -63,7 +67,7 @@ class CPaneDialog : public CDockablePane
 |[CPaneDialog::SetOccDialogInfo](#setoccdialoginfo)|OLE コントロール コンテナーである ダイアログ ボックスのテンプレートを指定します。|  
   
 ## <a name="remarks"></a>コメント  
- 構築、 `CPaneDialog` 2 つのステップ内のオブジェクト。 最初に、コード内のオブジェクトを構築します。 次に、呼び出す[CPaneDialog::Create](#create)です。 有効なリソースのテンプレートの名前またはテンプレートの ID を指定し、親ウィンドウへのポインターを渡す必要があります。 それ以外の場合、作成プロセスは失敗します。 ダイアログ ボックスでは、WS_CHILD と WS_VISIBLE スタイルを指定する必要があります。 WS_CLIPCHILDREN と WS_CLIPSIBLINGS のスタイルを指定することをお勧めします。 詳細については、次を参照してください。[ウィンドウ スタイル](window-styles.md)です。  
+ 構築、 `CPaneDialog` 2 つのステップ内のオブジェクト。 最初に、コード内のオブジェクトを構築します。 次に、呼び出す[CPaneDialog::Create](#create)です。 有効なリソースのテンプレートの名前またはテンプレートの ID を指定し、親ウィンドウへのポインターを渡す必要があります。 それ以外の場合、作成プロセスは失敗します。 ダイアログ ボックスでは、WS_CHILD と WS_VISIBLE スタイルを指定する必要があります。 WS_CLIPCHILDREN と WS_CLIPSIBLINGS のスタイルを指定することをお勧めします。 詳細については、次を参照してください。[ウィンドウ スタイル](styles-used-by-mfc.md#window-styles)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CObject](../../mfc/reference/cobject-class.md)  
@@ -80,10 +84,10 @@ class CPaneDialog : public CDockablePane
   
  [CPaneDialog](../../mfc/reference/cpanedialog-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxpanedialog.h  
   
-##  <a name="create"></a>CPaneDialog::Create  
+##  <a name="create"></a>  CPaneDialog::Create  
  ドッキング ダイアログ ボックスを作成しにアタッチ、`CPaneDialog`オブジェクト。  
   
 ```  
@@ -129,7 +133,7 @@ BOOL Create(
  親ウィンドウへのポインター。  
   
  [入力] `bHasGripper`  
- `TRUE`キャプション (グリップ); をドッキング ダイアログ ボックスを作成するにはそれ以外の場合、`FALSE`です。  
+ `TRUE` キャプション (グリップ); をドッキング ダイアログ ボックスを作成するにはそれ以外の場合、`FALSE`です。  
   
  [入力] `lpszTemplateName`  
  リソースのダイアログ テンプレートの名前。  
@@ -150,7 +154,7 @@ BOOL Create(
  追加のスタイル属性。 既定値は `AFX_DEFAULT_DOCKING_PANE_STYLE` です。 詳細については、の「解説」セクションを参照してください、 [cbasepane::createex](../../mfc/reference/cbasepane-class.md#createex)メソッドです。  
   
 ### <a name="return-value"></a>戻り値  
- `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。  
+ `TRUE` このメソッドが成功した場合それ以外の場合、`FALSE`です。  
   
 ### <a name="remarks"></a>コメント  
   
@@ -160,7 +164,7 @@ BOOL Create(
  [!code-cpp[NVC_MFC_SetPaneSize#2](../../mfc/reference/codesnippet/cpp/cpanedialog-class_1.h)]  
 [!code-cpp[NVC_MFC_SetPaneSize#3](../../mfc/reference/codesnippet/cpp/cpanedialog-class_2.cpp)]  
   
-##  <a name="handleinitdialog"></a>CPaneDialog::HandleInitDialog  
+##  <a name="handleinitdialog"></a>  CPaneDialog::HandleInitDialog  
  処理、 [WM_INITDIALOG](http://msdn.microsoft.com/library/windows/desktop/ms645428)メッセージ。  
   
 ```  
@@ -177,12 +181,12 @@ afx_msg LRESULT HandleInitDialog(
  追加の初期化データを指定します。  
   
 ### <a name="return-value"></a>戻り値  
- `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。 さらに、`TRUE`で指定されたコントロールにキーボード フォーカスを設定、`wParam`パラメーターです。`FALSE`既定のキーボード フォーカスを設定できないようにします。  
+ `TRUE` このメソッドが成功した場合それ以外の場合、`FALSE`です。 さらに、`TRUE`で指定されたコントロールにキーボード フォーカスを設定、`wParam`パラメーターです。`FALSE`既定のキーボード フォーカスを設定できないようにします。  
   
 ### <a name="remarks"></a>コメント  
  フレームワークでは、このメソッドを使用して、コントロールとダイアログ ボックスの外観を初期化します。 フレームワークは、ダイアログ ボックスが表示される前に、このメソッドを呼び出します。  
   
-##  <a name="setoccdialoginfo"></a>CPaneDialog::SetOccDialogInfo  
+##  <a name="setoccdialoginfo"></a>  CPaneDialog::SetOccDialogInfo  
  OLE コントロール コンテナーである ダイアログ ボックスのテンプレートを指定します。  
   
 ```  
@@ -199,7 +203,7 @@ virtual BOOL SetOccDialogInfo(_AFX_OCC_DIALOG_INFO* pOccDialogInfo);
 ### <a name="remarks"></a>コメント  
  このメソッドは、サポート、[関数](../../mfc/reference/coccmanager-class.md)OLE コントロールのサイトと ActiveX コントロールを管理するクラス。 _AFX_OCC_DIALOG_INFO 構造は、afxocc.h ヘッダー ファイルで定義されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層図](../../mfc/hierarchy-chart.md)   
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)   

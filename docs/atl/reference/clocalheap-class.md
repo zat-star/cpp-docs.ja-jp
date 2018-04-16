@@ -1,11 +1,12 @@
 ---
-title: "CLocalHeap クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CLocalHeap クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CLocalHeap
@@ -14,18 +15,22 @@ f1_keywords:
 - ATLMEM/ATL::CLocalHeap::Free
 - ATLMEM/ATL::CLocalHeap::GetSize
 - ATLMEM/ATL::CLocalHeap::Reallocate
-dev_langs: C++
-helpviewer_keywords: CLocalHeap class
+dev_langs:
+- C++
+helpviewer_keywords:
+- CLocalHeap class
 ms.assetid: 1ffa87a5-5fc8-4f8d-8809-58e87e963bd2
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: fefd632dbdb7afa24da358459d3b8c43e7c85ea4
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5307e0e6e8925bcbbfa7a03d0140c3a5a08baff9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="clocalheap-class"></a>CLocalHeap クラス
 このクラスは実装[IAtlMemMgr](../../atl/reference/iatlmemmgr-class.md)ローカル ヒープの Win32 関数を使用します。  
@@ -64,7 +69,7 @@ class CLocalHeap : public IAtlMemMgr
   
  `CLocalHeap`  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atlmem.h  
   
 ##  <a name="allocate"></a>Clocalheap::allocate  
@@ -139,7 +144,7 @@ virtual __declspec(allocator) void* Reallocate(void* p, size_t nBytes) throw();
   
  使用して実装[LocalReAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366742)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [CComHeap クラス](../../atl/reference/ccomheap-class.md)   
  [CWin32Heap クラス](../../atl/reference/cwin32heap-class.md)   

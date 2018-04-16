@@ -4,25 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - debugging, C++ Accelerated Massive Parallelism
 - C++ AMP, debugging
 - C++ Accelerated Massive Parallelism, debugging
 - debugging, C++ AMP
 ms.assetid: 40e92ecc-f6ba-411c-960c-b3047b854fb5
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: d3dc050418d8053e04053d5eafbd328e49bd473b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8cfc12a238ccaff90fa7c22e8a67d8e10d0796e6
+ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="walkthrough-debugging-a-c-amp-application"></a>チュートリアル : C++ AMP アプリケーションのデバッグ
 このトピックでは、C++ Accelerated Massive Parallelism (C++ AMP) を使用して、グラフィックス処理装置 (GPU) を利用するアプリケーションをデバッグする方法を示します。 整数の大きな配列を合計する並列リダクション プログラムを使用します。 このチュートリアルでは、次の作業について説明します。  
@@ -60,7 +64,7 @@ ms.lasthandoff: 10/24/2017
   
 4.  選択**Win32 コンソール アプリケーション**、型`AMPMapReduce`で、**名前**ボックスをクリックして、 **[ok]**ボタンをクリックします。  
   
-5.  選択、**次**ボタンをクリックします。  
+5.  **[次へ]** ボタンをクリックします。  
   
 6.  クリア、**プリコンパイル済みヘッダー**チェック ボックスをオンにして、**完了**ボタンをクリックします。  
   
@@ -212,11 +216,11 @@ ms.lasthandoff: 10/24/2017
      ![CPU ブレークポイント](../../parallel/amp/media/campcpubreakpoints.png "campcpubreakpoints")  
 CPU ブレークポイント  
   
-5.  メニュー バーで、次のように選択します。**デバッグ**、**デバッグの開始**です。  
+5.  メニュー バーで、**[デバッグ]**、**[デバッグ開始]** の順に選択します。  
   
 6.  **ローカル**ウィンドウの値を観察`stride_size`70 の行のブレークポイントに到達するまでです。  
   
-7.  メニュー バーで、次のように選択します。**デバッグ**、**デバッグの停止**です。  
+7.  メニュー バーで、**[デバッグ]**、**[デバッグの停止]** の順に選択します。  
   
 ## <a name="debugging-the-gpu-code"></a>GPU コードのデバッグ  
  このセクションの内容が含まれているコードは、GPU のコードをデバッグする方法を示しますで、`sum_kernel_tiled`関数。 GPU コードは、「ブロック」ごとに整数の合計を並列で計算します。  
@@ -238,7 +242,7 @@ CPU ブレークポイント
      ![GPU ブレークポイント](../../parallel/amp/media/campgpubreakpoints.png "campgpubreakpoints")  
 GPU ブレークポイント  
   
-7.  メニュー バーで、次のように選択します。**デバッグ**、**デバッグの開始**です。 コードでは、CPU、67 および 70 行のブレークポイントは、GPU がこれらのコード行は、CPU 上で実行されるため、デバッグ中には実行されません。  
+7.  メニュー バーで、**[デバッグ]**、**[デバッグ開始]** の順に選択します。 コードでは、CPU、67 および 70 行のブレークポイントは、GPU がこれらのコード行は、CPU 上で実行されるため、デバッグ中には実行されません。  
   
 ### <a name="to-use-the-gpu-threads-window"></a>GPU スレッド ウィンドウを使用するには  
   
@@ -388,10 +392,10 @@ GPU スレッド ウィンドウでグループ化されたスレッド
   
      21 行目にあるバリアでブロックされていた 24 のスレッドが 32 の行になるまでの進行します。 これに示されて、 **GPU スレッド**ウィンドウです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C++ AMP の概要](../../parallel/amp/cpp-amp-overview.md)   
  [GPU コードのデバッグ](/visualstudio/debugger/debugging-gpu-code)   
  [方法: GPU スレッド ウィンドウを使用します。](/visualstudio/debugger/how-to-use-the-gpu-threads-window)   
  [方法: 並列ウォッチ ウィンドウの使用](/visualstudio/debugger/how-to-use-the-parallel-watch-window)   
- [同時実行ビジュアライザーで C++ AMP コードを分析します。](http://go.microsoft.com/fwlink/linkid=253987&clcid=0x409)
+ [同時実行ビジュアライザーで C++ AMP コードを分析します。](http://go.microsoft.com/fwlink/p/?linkid=253987&clcid=0x409)
 

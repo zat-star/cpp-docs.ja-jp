@@ -4,20 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 ms.assetid: fdfdabe0-f678-4551-80d5-827b62354427
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e360e075cf8c721b9357746b2afa3a08df3c851a
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 733a7cacebfcad6702d471425de7b617a241884f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="b-stubs-for-run-time-library-functions"></a>B:  ランタイム ライブラリ関数のスタブ
 このセクションでは、OpenMP C および C++ API で定義されているランタイム ライブラリ関数のスタブを提供します。 OpenMP C および C++ API をサポートしていないプラットフォームに移植性を有効にする、スタブが提供されます。 これらのプラットフォームでは、OpenMP プログラムは、これらのスタブ関数を含むライブラリにリンクする必要があります。 スタブ関数では、OpenMP プログラム内のディレクティブを無視することを前提としています。 そのため、シリアル セマンティクスがエミュレートします。  

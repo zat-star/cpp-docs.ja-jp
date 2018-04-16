@@ -1,12 +1,12 @@
 ---
-title: "C++ コマンドライン引数の解析 |Microsoft ドキュメント"
-ms.custom: 
+title: C++ コマンドライン引数の解析 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -21,12 +21,13 @@ caps.latest.revision: 8
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 5d3fbcd6b4e92d6e445d78a1b36efae319e472d7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 58db951b2c9459eb9511e0a354e1daec4b29b53d
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="parsing-c-command-line-arguments"></a>C++ コマンド ライン引数の解析
 **Microsoft 固有の仕様**  
@@ -83,5 +84,5 @@ int main( int argc,      // Number of strings in array argv
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [main: プログラムの起動](../cpp/main-program-startup.md)

@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _stricmp_l
 - _mbsicmp
@@ -41,7 +42,8 @@ f1_keywords:
 - _fstricmp
 - mbsicmp_l
 - mbsicmp
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - _wcsicmp function
 - _stricmp_l function
@@ -63,21 +65,23 @@ helpviewer_keywords:
 - mbsicmp_l function
 - _strcmpi function
 ms.assetid: 0e1ee515-0d75-435a-a445-8875d4669b50
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: ff47ee9c10693c6dba4dd28323549b81266e6950
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a716e229aa5ca7bb45fdcbd6cba9e3a85301df96
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="stricmp-wcsicmp-mbsicmp-stricmpl-wcsicmpl-mbsicmpl"></a>_stricmp、_wcsicmp、_mbsicmp、_stricmp_l、_wcsicmp_l、_mbsicmp_l
 文字列の大文字と小文字を区別しない比較を実行します。  
   
 > [!IMPORTANT]
->  `_mbsicmp` および `_mbsicmp_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  `_mbsicmp` および `_mbsicmp_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -130,7 +134,7 @@ int _mbsicmp_l(
  エラーが発生した場合、`_mbsicmp` は `_NLSCMPERROR` を返します。これは、\<string.h> および \<mbstring.h> で定義されています。  
   
 ## <a name="remarks"></a>コメント  
- `_stricmp` 関数は、各文字を小文字に変換した後、`string1` と `string2` で序数に基づく比較を行い、その関係を示す値を返します。 `_stricmp` と `_stricoll` の相違点は、`_stricmp` による比較では、どの文字が大文字または小文字であるかを決定する `LC_CTYPE` の影響のみを受けるという点です。 `_stricoll` 関数は、ロケールの `LC_CTYPE` と `LC_COLLATE` の両方のカテゴリに従って文字列を比較しますが、これには大文字と小文字、および照合順序の両方が含まれます。 `LC_COLLATE` カテゴリの詳細については、[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md) に関する記事および「[ロケールのカテゴリ](../../c-runtime-library/locale-categories.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、ロケールに依存する動作に現在のロケールを使用します。 サフィックスが付いているバージョンは、代わりに渡されたロケールを使用する点を除き、同じです。 ロケールが設定されていない場合は、C ロケールが使用されます。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」を参照してください。  
+ `_stricmp` 関数は、各文字を小文字に変換した後、`string1` と `string2` で序数に基づく比較を行い、その関係を示す値を返します。 `_stricmp` と `_stricoll` の相違点は、`_stricmp` による比較では、どの文字が大文字または小文字であるかを決定する `LC_CTYPE` の影響のみを受けるという点です。 `_stricoll` 関数は、ロケールの `LC_CTYPE` と `LC_COLLATE` の両方のカテゴリに従って文字列を比較しますが、これには大文字と小文字、および照合順序の両方が含まれます。 `LC_COLLATE` カテゴリの詳細については、[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md) に関する記事および「[ロケールのカテゴリ](../../c-runtime-library/locale-categories.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、ロケールに依存する動作に現在のロケールを使用します。 サフィックスが付いているバージョンは、代わりに渡されたロケールを使用する点を除き、同じです。 ロケールが設定されていない場合は、C ロケールが使用されます。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
   
 > [!NOTE]
 >  `_stricmp` は `_strcmpi` と同じです。 この 2 つは区別なく使用できますが、推奨する標準は `_stricmp` です。  
@@ -165,7 +169,7 @@ int main() {
   
  また、[_create_locale、_wcreate_locale](../../c-runtime-library/reference/create-locale-wcreate-locale.md) を呼び出して、返されたロケール オブジェクトをパラメーターとして `_wcsicmp_l` に渡す方法もあります。  
   
- これらのすべての関数では、パラメーターの検証が行われます。 `string1` または `string2` が null ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、`errno` を `EINVAL` に設定します。  
+ これらのすべての関数では、パラメーターの検証が行われます。 `string1` または `string2` が null ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `_NLSCMPERROR` を返し、 `errno` を `EINVAL`に設定します。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   
@@ -173,15 +177,15 @@ int main() {
 |---------------------|------------------------------------|--------------------|-----------------------|  
 |`_tcsicmp`|`_stricmp`|`_mbsicmp`|`_wcsicmp`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_stricmp`, `_stricmp_l`|\<string.h>|  
 |`_wcsicmp`, `_wcsicmp_l`|\<string.h> または \<wchar.h>|  
 |`_mbsicmp`, `_mbsicmp_l`|\<mbstring.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -232,12 +236,12 @@ Compare strings:
    _stricmp:  String 1 is equal to string 2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
  [memcmp、wmemcmp](../../c-runtime-library/reference/memcmp-wmemcmp.md)   
  [_memicmp、_memicmp_l](../../c-runtime-library/reference/memicmp-memicmp-l.md)   
  [strcmp、wcscmp、_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)   
- [strcoll 系関数](../../c-runtime-library/strcoll-functions.md)   
+ [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
  [strncmp、wcsncmp、_mbsncmp、_mbsncmp_l](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)   
  [_strnicmp、_wcsnicmp、_mbsnicmp、_strnicmp_l、_wcsnicmp_l、_mbsnicmp_l](../../c-runtime-library/reference/strnicmp-wcsnicmp-mbsnicmp-strnicmp-l-wcsnicmp-l-mbsnicmp-l.md)   
  [strrchr、wcsrchr、_mbsrchr、_mbsrchr_l](../../c-runtime-library/reference/strrchr-wcsrchr-mbsrchr-mbsrchr-l.md)   

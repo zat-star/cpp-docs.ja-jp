@@ -1,40 +1,44 @@
 ---
-title: "NMAKE で返される終了コード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "終了コード"
-  - "NMAKE プログラム, 終了コード"
+title: "NMAKE の終了コード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- NMAKE program, exit codes
+- exit codes
 ms.assetid: 75f6913c-1da5-4572-a2d3-8a4e058bed15
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 13cbe4806d8b3960cbf80df41c7cce6e7657ba7e
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# NMAKE で返される終了コード
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-NMAKE は、次の終了コードを返します。  
+# <a name="exit-codes-from-nmake"></a>NMAKE で返される終了コード
+(Nmake の) には、次の終了コードが返されます。  
   
 |コード|説明|  
-|---------|--------|  
-|0|エラーはありません。警告の可能性があります。|  
-|1|ビルドが不完全です。\/K が使用されるときだけ発行されます。|  
-|2|プログラム エラーです。次のいずれかの原因が考えられます。|  
-||-   メイクファイルの構文エラー|  
-||-   コマンドからのエラーまたは終了コード|  
-||-   ユーザーによる割り込み|  
-|4|システム エラーです。メモリが不足しています。|  
-|255|ターゲットが最新ではありません。\/Q が使用されるときだけ発行されます。|  
+|----------|-------------|  
+|0|エラー (場合によっては警告)|  
+|1|(発行/K を使用する場合にのみ) ビルドが不完全です。|  
+|2|プログラム エラー: 次のいずれかの原因として考えられます。|  
+||-メイクファイルで構文エラー|  
+||のコマンドからエラーまたは終了コード|  
+||-ユーザーにより中断|  
+|4|システム エラー: メモリ不足|  
+|255|ターゲットが最新でありません (/Q を使用する場合にのみ発行)|  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [NMAKE の実行](../build/running-nmake.md)

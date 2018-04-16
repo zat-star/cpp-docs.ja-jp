@@ -1,48 +1,52 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4512 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4512"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4512"
+title: "コンパイラの警告 (レベル 4) C4512 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4512
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4512
 ms.assetid: afb68995-684a-4be5-a73a-38d7a16dc030
-caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: dd2e50f97cfc0242e1ac4af93f2d6609ff4b59cc
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# コンパイラの警告 (レベル 4) C4512
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="compiler-warning-level-4-c4512"></a>コンパイラの警告 (レベル 4) C4512
 'クラス' : 代入演算子を生成できません。  
   
- コンパイラは、指定されたクラスに対する代入演算子を生成できません。  代入演算子は作成されませんでした。  
+ コンパイラは、指定されたクラスに対する代入演算子を生成できません。 代入演算子は作成されませんでした。  
   
  派生クラスでアクセスできない基本クラスの代入演算子がある場合に、この警告が発生することがあります。  
   
  この警告を回避するには、クラスに対してユーザー定義の代入演算子を指定します。  
   
- 代入演算子の関数が定義されていないクラスに対しても、代入演算子の関数がコンパイラによって生成されます。  この代入演算子は、オブジェクトのデータ メンバーのメンバーごとのコピーです。  クラスに `const` が含まれている場合は、`const` データ項目を初期化後に変更することができないため、既定の代入演算子は機能しません。  C4512 警告のもう 1 つの原因は、参照型の非静的データ メンバーの宣言です。  コピー可能でない型を作成するには、既定のコピー コンス トラクターも作成する必要があります。  
+ 代入演算子の関数が定義されていないクラスに対しても、代入演算子の関数がコンパイラによって生成されます。 この代入演算子は、オブジェクトのデータ メンバーのメンバーごとのコピーです。 クラスに `const` が含まれている場合は、`const` データ項目を初期化後に変更することができないため、既定の代入演算子は機能しません。 C4512 警告のもう 1 つの原因は、参照型の非静的データ メンバーの宣言です。 コピー可能でない型を作成するには、既定のコピー コンス トラクターも作成する必要があります。  
   
  コードの C4512 警告は、次の 3 つのうちのいずれかの方法で解決できます。  
   
 -   クラスに対する代入演算子を明示的に定義します。  
   
--   クラスのデータ項目から **const** または参照演算子を削除します。  
+-   削除**const**またはクラスのデータ項目から参照演算子。  
   
--   \#pragma [warning](../../preprocessor/warning.md) ステートメントを使用して警告を抑制します。  
+-   #Pragma を使用して[警告](../../preprocessor/warning.md)警告を抑制するステートメント。  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では C4512 エラーが生成されます。  
   
 ```  
@@ -94,5 +98,4 @@ int main() {
    Base3 first3(c);  
    Base3 second3 = first3; // C2280 if no default copy ctor  
 }  
-  
 ```

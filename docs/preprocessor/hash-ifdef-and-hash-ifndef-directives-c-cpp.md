@@ -1,39 +1,41 @@
 ---
-title: "#ifdef および #ifndef ディレクティブ (C/C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "#ifndef"
-  - "#ifdef"
-dev_langs: 
-  - "C++"
-  - "C"
-helpviewer_keywords: 
-  - "#ifdef ディレクティブ"
-  - "#ifndef ディレクティブ"
-  - "ifdef ディレクティブ (#ifdef)"
-  - "ifndef ディレクティブ (#ifndef)"
-  - "プリプロセッサ, ディレクティブ"
+title: "#ifdef および #ifndef ディレクティブ (C/C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- '#ifndef'
+- '#ifdef'
+dev_langs:
+- C++
+helpviewer_keywords:
+- '#ifdef directive'
+- preprocessor, directives
+- ifdef directive (#ifdef)
+- ifndef directive (#ifndef)
+- '#ifndef directive'
 ms.assetid: 2b0be69d-9e72-45d8-8e24-e4130fb2455b
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a8f1a10e9d8437b71591efc9ce2915c9f485e0c4
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# #ifdef および #ifndef ディレクティブ (C/C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**\#ifdef** および **\#ifndef** ディレクティブは、`#if` ディレクティブを **defined**\( *identifier* \) と組み合わせて使用した場合と同じタスクを実行します。  
+# <a name="ifdef-and-ifndef-directives-cc"></a>#ifdef および #ifndef ディレクティブ (C/C++)
+**#Ifdef**と**#ifndef**ディレクティブと同じタスクを実行する、`#if`ディレクティブと共に使用したときに**定義**( *の識別子* ).  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #ifdef identifier  
@@ -44,18 +46,18 @@ manager: "ghogen"
 #if !defined identifier  
 ```  
   
-## 解説  
- **\#ifdef** および **\#ifndef** ディレクティブは、`#if` を使用できるいずれの場所でも使用できます。  **\#ifdef** *identifier* ステートメントは、*identifier* を定義している場合の `#if 1` に相当します。また、*identifier* を定義していないか、その定義を `#undef` ディレクティブで削除した場合の `#if 0` に相当します。  これらのディレクティブは、C または C\+\+ ソース コードで宣言された識別子ではなく、`#define` で定義された識別子の有無を調べます。  
+## <a name="remarks"></a>コメント  
+ 使用することができます、 **#ifdef**と**#ifndef**ディレクティブを任意の場所`#if`使用できます。 **#Ifdef** *識別子*ステートメントは等価`#if 1`とき*識別子*を定義した後と等価であると`#if 0`とき*識別子*が定義されていないかで定義されているが、`#undef`ディレクティブです。 これらのディレクティブは、C または C++ ソース コードで宣言された識別子ではなく、`#define` で定義された識別子の有無を調べます。  
   
- これらのディレクティブは、言語の以前のバージョンとの互換性を維持するために用意されています。  **defined\(** *identifier* **\)** 定数式を `#if` ディレクティブと組み合わせて使用することをお勧めします。  
+ これらのディレクティブは、言語の以前のバージョンとの互換性を維持するために用意されています。 **定義 (** *識別子* **)**で使用される定数式、`#if`ディレクティブをお勧めします。  
   
- **\#ifndef** ディレクティブは、**\#ifdef** が調べる反対の条件を調べます。  識別子を定義していない \(またはその定義を `#undef` で削除した\) 場合、条件は true \(ゼロ以外\) です。  それ以外の場合、条件は False \(0\) です。  
+ **#Ifndef**ディレクティブが調べる反対の条件をチェック**#ifdef**です。 識別子を定義していない (またはその定義を `#undef` で削除した) 場合、条件は true (ゼロ以外) です。 それ以外の場合、条件は False (0) です。  
   
- **Microsoft 固有の仕様 →**  
+ **Microsoft 固有の仕様**  
   
- *identifier* は \/D オプションを使用してコマンド ラインから渡すことができます。  最大 30 個のマクロを \/D に指定できます。  
+ *識別子*/D オプションを使用してコマンドラインから渡すことができます。 最大 30 個のマクロを /D に指定できます。  
   
- 定義をコマンド ラインから渡すことができるため、定義の有無を調べるために便利です。  次に例を示します。  
+ 定義をコマンド ラインから渡すことができるため、定義の有無を調べるために便利です。 例:  
   
 ```  
 // ifdef_ifndef.CPP  
@@ -65,7 +67,7 @@ manager: "ghogen"
 #endif  
 ```  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>参照  
  [プリプロセッサ ディレクティブ](../preprocessor/preprocessor-directives.md)

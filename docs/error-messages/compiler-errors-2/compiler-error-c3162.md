@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C3162
-dev_langs: C++
-helpviewer_keywords: C3162
+f1_keywords:
+- C3162
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3162
 ms.assetid: 0d4c4a24-1456-4191-b7d8-c38cb7b17c32
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 8bfde260ef0efe58ed70469a80a8bf7316eefa46
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8c3526eecbe125a1a76b637734fecc72785556b7
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3162"></a>コンパイラ エラー C3162
 'type': デストラクターを含む参照型は静的データ メンバー 'member' の型として使用することはできません  

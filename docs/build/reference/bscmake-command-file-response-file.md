@@ -4,10 +4,12 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - BSCMAKE, response file
 - BSCMAKE, command file
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - response files
 - command files
 ms.assetid: abdffeea-35c7-4f2d-8c17-7d0d80bac314
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 1d5dd2696a48a84672350b90b569c8f0caf7c3cd
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 0c250af9f1af96bb051be0b2cd347ecd8d98d809
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="bscmake-command-file-response-file"></a>BSCMAKE コマンド ファイル (応答ファイル)
 コマンド ファイル内のコマンド ライン入力の一部またはすべてを指定することができます。 次の構文を使用してコマンド ファイルを指定します。  
@@ -52,5 +56,5 @@ verdate.h c:\src\inc\screen.h
 file1.sbr file2.sbr file3.sbr file4.sbr  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [BSCMAKE リファレンス](../../build/reference/bscmake-reference.md)

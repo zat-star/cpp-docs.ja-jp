@@ -1,34 +1,38 @@
 ---
-title: "リソース コンパイラ エラー RW2001 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "RW2001"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RW2001"
+title: "リソース コンパイラ エラー RW2001 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- RW2001
+dev_langs:
+- C++
+helpviewer_keywords:
+- RW2001
 ms.assetid: 963bdc7d-6ebe-4378-8bbc-47dfcf5d330c
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 1a14cd36ab87297cf5bc0aa547bdea5ef23260e8
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# リソース コンパイラ エラー RW2001
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-Invalid directive in preprocessed RC file  
+# <a name="resource-compiler-error-rw2001"></a>リソース コンパイラ エラー RW2001
+プリプロセス済みの RC ファイルに無効なディレクティブ  
   
- RC ファイル内に **\#pragma** ディレクティブがあります。  
+ RC ファイルが含まれています、 **#pragma**ディレクティブです。  
   
- インクルード ファイル内で、定数 **RC\_INVOKED** を指定したプリプロセス ディレクティブ **\#ifndef** を使用します。定数 **RC\_INVOKED** は、リソース コンパイラがインクルード ファイルを処理するときに定義される定数です。  **RC\_INVOKED** 定数が定義されているときには処理されないブロック内に、**\#pragma** ディレクティブを配置します。  このブロック内のコードは C\/C\+\+ のコンパイラで処理され、リソース コンパイラでは処理されません。  この手法を使用したコードの例を次に示します。  
+ 使用して、 **#ifndef**プリプロセッサ ディレクティブの中で、 **RC_INVOKED**リソース コンパイラのインクルード ファイルを処理する際に定義する定数。 場所、 **#pragma**されていないコードのブロックの内側ディレクティブ処理時に、 **RC_INVOKED**定数が定義されています。 C と C++ コンパイラでのみ、リソース コンパイラではなく、ブロック内のコードが処理されます。 次のサンプル コードは、この手法を示します。  
   
 ```  
 #ifndef RC_INVOKED  
@@ -36,6 +40,6 @@ Invalid directive in preprocessed RC file
 #endif  
 ```  
   
- プリプロセッサ ディレクティブ **\#pragma** は、.RC ファイルでは意味を持ちません。  プリプロセッサ ディレクティブ **\#include** は、ヘッダー ファイル \(プロジェクトごとのカスタム ヘッダー ファイルや Microsoft が製品と共に提供する標準のヘッダー ファイル\) をインクルードするために .RC ファイル内で頻繁に使用されます。  これらのインクルード ファイルの中には、**\#pragma** ディレクティブを使用しているものもあります。  ヘッダー ファイルは 1 つ以上のほかのヘッダー ファイルをインクルードする可能性があるため、エラーの原因となった **\#pragma** ディレクティブが入っているファイルをすぐに見つけられない場合があります。  
+ **#Pragma**プリプロセッサ ディレクティブ意味がない、します。RC ファイルです。 **#Include**プリプロセッサ ディレクティブで頻繁に使用します。ヘッダー ファイル (プロジェクト ベースのカスタム ヘッダー ファイルまたはその製品のいずれかの Microsoft によって提供される標準ヘッダー ファイル) を含める RC ファイルです。 これらのいくつかのインクルード ファイルが含まれて、 **#pragma**ディレクティブです。 ヘッダー ファイルが 1 つまたは複数の他のヘッダー ファイル、問題のあるを格納しているファイルを含めることができますので**#pragma**ディレクティブをすぐに判断できない可能性があります。  
   
- **\#ifndef RC\_INVOKED** を使用する手法では、プロジェクトごとのヘッダー ファイルでのヘッダー ファイルのインクルードを制御することもできます。
+ **#Ifndef RC_INVOKED**プロジェクト ベースのヘッダー ファイル内のヘッダー ファイルを含む方法を制御できます。

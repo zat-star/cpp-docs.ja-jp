@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::map::const_reverse_iterator
-dev_langs: C++
-helpviewer_keywords: const_reverse_iterator member [STL/CLR]
+f1_keywords:
+- cliext::map::const_reverse_iterator
+dev_langs:
+- C++
+helpviewer_keywords:
+- const_reverse_iterator member [STL/CLR]
 ms.assetid: 056a765c-4f59-4bd8-99f4-c308a6f29c12
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: e572d44bd2eb8051bc9ef09f0b97170f07c060c8
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: ea55945736a73e9d7391e1d97383b1ad0487c6af
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="mapconstreverseiterator-stlclr"></a>map::const_reverse_iterator (STL/CLR)
 被制御シーケンスの定数反転反復子の型。  
@@ -62,11 +69,11 @@ int main()
 [c 3] [b 2] [a 1]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext マップ/>  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
  [map::reverse_iterator (STL/CLR)](../dotnet/map-reverse-iterator-stl-clr.md)

@@ -1,33 +1,37 @@
 ---
-title: "_ _readgsbyte、_ _readgsdword、_ _readgsqword、_ _readgsword |Microsoft ドキュメント"
+title: __readgsbyte, __readgsdword, __readgsqword, __readgsword | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - __readgsbyte
 - __readgsdword
 - __readgsqword
 - __readgsword
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - __readgsword intrinsic
 - __readgsdword intrinsic
 - __readgsqword intrinsic
 - __readgsbyte intrinsic
 ms.assetid: f822632d-854c-4558-a71b-cdfc3eea2236
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 10fe156448e62d0d072522a262194a7aba9426cb
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 806049d0ecf6e414be304d39f9355c236b472bbe
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="readgsbyte-readgsdword-readgsqword-readgsword"></a>__readgsbyte、__readgsdword、__readgsqword、__readgsword
 **Microsoft 固有の仕様**  
@@ -58,7 +62,7 @@ unsigned __int64 __readgsqword(
 ## <a name="return-value"></a>戻り値  
  メモリの内容をバイト、ワード、ダブルワード、quadword (ように呼び出される関数の名前で示されます) の場所に`GS:[Offset]`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |組み込み|アーキテクチャ|  
 |---------------|------------------|  
@@ -74,6 +78,6 @@ unsigned __int64 __readgsqword(
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>関連項目  
- [_ _writegsbyte、 \__writegsdword、 \__writegsqword、 \__writegsword](../intrinsics/writegsbyte-writegsdword-writegsqword-writegsword.md)   
+## <a name="see-also"></a>参照  
+ [__writegsbyte, \__writegsdword, \__writegsqword, \__writegsword](../intrinsics/writegsbyte-writegsdword-writegsqword-writegsword.md)   
  [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

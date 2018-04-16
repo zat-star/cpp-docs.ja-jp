@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-language
+ms.technology:
+- cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: sizeof
-dev_langs: C++
-helpviewer_keywords: sizeof operator
+f1_keywords:
+- sizeof
+dev_langs:
+- C++
+helpviewer_keywords:
+- sizeof operator
 ms.assetid: 70826d03-3451-41e4-bebb-a820ae66d53f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 11fa4acae05c5488ce1d90873ec816744c7e83df
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 95b4aeaa5c180b7a0aa2af68646f8c85bfa951a2
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sizeof-operator-c"></a>sizeof 演算子 (C)
 `sizeof` 演算子はオペランドの型のオブジェクトを格納するために必要なストレージの量をバイト単位で示します。 この演算子を使うと、コンピューターに依存するデータ サイズをプログラムで指定せずに済みます。  
@@ -57,7 +63,7 @@ const int string_no = ( sizeof strings ) / ( sizeof strings[0] );
   
 この例では、`strings` は  `char` へのポインターの配列です。 ポインターの数は、配列の要素の数ですが、指定されていません。 配列の要素数を計算するために `sizeof` 演算子を使用して、ポインターの数を決定する方が簡単です。 **const** の整数値 `string_no` は、この数に初期化されます。 これは **const** 値であるため、`string_no` は変更できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [C 演算子](c-operators.md)  
 [C++ の演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)  
   

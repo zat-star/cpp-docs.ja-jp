@@ -1,31 +1,35 @@
 ---
-title: "back_insert_iterator クラス |Microsoft Docs"
-ms.custom: 
+title: back_insert_iterator クラス |Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-standard-libraries
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: ''
+ms.topic: reference
 f1_keywords:
 - iterator/std::back_insert_iterator
 - iterator/std::back_insert_iterator::container_type
 - iterator/std::back_insert_iterator::reference
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::back_insert_iterator [C++]
 - std::back_insert_iterator [C++], container_type
 - std::back_insert_iterator [C++], reference
 ms.assetid: a1ee07f2-cf9f-46a1-8608-cfaf207f9713
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 0b91bdde2774bc78d6399e7b84e58c01a80ed53d
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 7646b26c1651ccf93fcc3bcb6828ae402ea5ca07
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="backinsertiterator-class"></a>back_insert_iterator クラス
 出力反復子の要件を満たす反復子アダプターについて説明します。 シーケンスのバック エンドに要素を上書きではなく、挿入し、C++ のシーケンス コンテナーの反復子が提供する上書きセマンティクスとは異なるセマンティクスを提供します。 `back_insert_iterator` クラスはコンテナーの型でテンプレート化されます。  

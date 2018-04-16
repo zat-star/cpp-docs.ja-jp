@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-standard-libraries
+ms.technology:
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - xlocale/std::codecvt
 - xlocale/std::codecvt::extern_type
@@ -26,7 +27,8 @@ f1_keywords:
 - xlocale/std::codecvt::max_length
 - xlocale/std::codecvt::out
 - xlocale/std::codecvt::unshift
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - std::codecvt [C++]
 - std::codecvt [C++], extern_type
@@ -47,15 +49,17 @@ helpviewer_keywords:
 - std::codecvt [C++], out
 - std::codecvt [C++], unshift
 ms.assetid: 37d3efa1-2b7f-42b6-b04f-7a972c8c2c86
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 290b48c5417aa5511b34f2e4ec2e0d4b7358b026
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b456472fc28b473da29169acb899a1a8a142c095
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="codecvt-class"></a>codecvt クラス
 ロケールのファセットとして使用できるオブジェクトを表すテンプレート クラス。 プログラム内で文字をエンコードするために使用される値のシーケンスと、プログラム外で文字をエンコードするために使用される値のシーケンスとの変換を制御できます。  
@@ -139,7 +143,7 @@ class codecvt : public locale::facet, codecvt_base;
 |[out](#out)|内部の `CharType` のシーケンスを外部の `Byte` のシーケンスに変換します。|  
 |[unshift](#unshift)|状態に依存する変換で、`Byte` のシーケンスの最後の文字を完了するために必要な外部の `Byte` を提供します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<locale>  
   
  **名前空間:** std  
@@ -210,7 +214,7 @@ explicit codecvt(size_t _Refs = 0);
   
 -   1: オブジェクトの有効期間を手動で管理する必要があります。  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: これらの値が定義されていません。  
   
  コンス トラクターは、その`locale::facet`とベース オブジェクト**ロケール::**[ファセット](../standard-library/locale-class.md#facet_class)(`_Refs`)。  
   
@@ -833,7 +837,7 @@ result unshift(
   
  このメンバー関数は、[do_unshift](#do_unshift)( `_State`, `first2`, `last2`, `next2` ) を返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<locale>](../standard-library/locale.md)   
  [コード ページ](../c-runtime-library/code-pages.md)   
  [ロケール名、言語、および国/地域識別文字列](../c-runtime-library/locale-names-languages-and-country-region-strings.md)   

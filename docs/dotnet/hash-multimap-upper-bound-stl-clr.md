@@ -4,22 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords: cliext::hash_multimap::upper_bound
-dev_langs: C++
-helpviewer_keywords: upper_bound member [STL/CLR]
+f1_keywords:
+- cliext::hash_multimap::upper_bound
+dev_langs:
+- C++
+helpviewer_keywords:
+- upper_bound member [STL/CLR]
 ms.assetid: 4fa58df6-63ec-411d-bcf9-301d3c88569a
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 7f66a0bbbfe37fa14b5c902aea5abd0970b65986
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: 8da5c64a24f9d31c254831e87b844feec724f254
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="hashmultimapupperbound-stlclr"></a>hash_multimap::upper_bound (STL/CLR)
 指定したキーに一致する範囲の末尾を検索します。  
@@ -78,12 +85,12 @@ upper_bound(L'x')==end() = True
 *upper_bound(L'b') = [c 3]  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<cliext/hash_map >  
   
  **Namespace:** cliext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
  [hash_multimap::count (STL/CLR)](../dotnet/hash-multimap-count-stl-clr.md)   
  [hash_multimap::equal_range (STL/CLR)](../dotnet/hash-multimap-equal-range-stl-clr.md)   

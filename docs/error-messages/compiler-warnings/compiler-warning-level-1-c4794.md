@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C4794
-dev_langs: C++
-helpviewer_keywords: C4794
+f1_keywords:
+- C4794
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4794
 ms.assetid: badc9c36-fa1a-4fec-929b-7bfda7a7b79f
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: cd5c04107afefca59b84059330b6b0b891b974e9
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 5c6878e2e0fb3fed9cb349bd0dd651a24c02aae9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4794"></a>コンパイラの警告 (レベル 1) C4794
 スレッドのローカル ストレージ変数 'variable' のセグメントが 'section name' から '.tls$' に変更されました  

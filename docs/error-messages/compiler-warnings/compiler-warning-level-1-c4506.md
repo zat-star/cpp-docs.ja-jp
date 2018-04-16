@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords: C4506
-dev_langs: C++
-helpviewer_keywords: C4506
+f1_keywords:
+- C4506
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4506
 ms.assetid: aa682869-65d1-4dad-ba32-198f10b44f91
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 00d1255984c46719d04cbfaa69afa41f527d5495
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 26143e45a567390d64a6d899c31c34dde532194b
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-1-c4506"></a>コンパイラの警告 (レベル 1) C4506
 インライン関数 'function' の定義がありません。  

@@ -7,18 +7,22 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords: VCCORLIB/Platform::Object::GetType
-dev_langs: C++
+f1_keywords:
+- VCCORLIB/Platform::Object::GetType
+dev_langs:
+- C++
 ms.assetid: 21d0bf92-fac4-48cd-9108-c6f57ba1196a
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: c02af9875c753d67905c805e8850ad8b4ef73003
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: cef4e4ab964ae1bb3f8904876501617fd09569af
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="defaulttypenamegettype-method"></a>default::(type_name)::GetType メソッド
 現在の型を表す Platform::Type^ を返します。  
@@ -33,7 +37,7 @@ Platform::Type^ GetType()
 ### <a name="return-value"></a>戻り値  
  現在のオブジェクトを表す [Platform::Type](../cppcx/platform-type-class.md)^ オブジェクト。  
   
-### <a name="requirements"></a>要件  
+### <a name="requirements"></a>必要条件  
  **クライアントがサポートされる最小:** Windows 8  
   
  **サポートされているサーバーの最小値:** Windows Server 2012  
@@ -42,5 +46,5 @@ Platform::Type^ GetType()
   
  **ヘッダー:** vccorlib.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [default 名前空間](../cppcx/default-namespace.md)

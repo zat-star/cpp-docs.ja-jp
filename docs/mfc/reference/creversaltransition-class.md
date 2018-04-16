@@ -4,7 +4,8 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,21 +14,24 @@ f1_keywords:
 - AFXANIMATIONCONTROLLER/CReversalTransition::CReversalTransition
 - AFXANIMATIONCONTROLLER/CReversalTransition::Create
 - AFXANIMATIONCONTROLLER/CReversalTransition::m_duration
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - CReversalTransition [MFC], CReversalTransition
 - CReversalTransition [MFC], Create
 - CReversalTransition [MFC], m_duration
 ms.assetid: e89516be-2d07-4885-95a8-fc278f46e3ad
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 30d616bb63953e302973d3b6cbb254869c5f2491
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: fdce13f41e95cda592fec03fcedb01984fb34ab9
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creversaltransition-class"></a>CReversalTransition クラス
 逆遷移をカプセル化します。  
@@ -68,7 +72,7 @@ class CReversalTransition : public CBaseTransition;
   
  [CReversalTransition](../../mfc/reference/creversaltransition-class.md)  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** afxanimationcontroller.h  
   
 ##  <a name="create"></a>CReversalTransition::Create  
@@ -105,5 +109,5 @@ CReversalTransition(UI_ANIMATION_SECONDS duration);
 UI_ANIMATION_SECONDS m_duration;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス](../../mfc/reference/mfc-classes.md)

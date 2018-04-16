@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,30 +16,17 @@ helpviewer_keywords:
 - template libraries
 - libraries, Standard C++
 ms.assetid: a37d3ba3-58af-47c7-9ee2-441ccd7b77ee
-caps.latest.revision: 19
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 73761e1f2d4eed0e12ab42d0f1b3a6dec0d66b10
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 91363204593ea7817a643df824e3153499be0d44
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="c-standard-library-reference"></a>C++ 標準ライブラリ リファレンス
 C ++ プログラムは、C++ 標準ライブラリのこのに準拠した実装から複数の関数で呼び出すことができます。 これらの関数は入出力などの必要なサービスを実行し、頻繁に使用する操作の有効な実装を提供します。  
@@ -56,5 +43,4 @@ C ++ プログラムは、C++ 標準ライブラリのこのに準拠した実�
  [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)  
  C++ 標準ライブラリのヘッダー ファイルに関するリファレンス トピックへのリンクを示します (コード例を含む)。  
   
-
 

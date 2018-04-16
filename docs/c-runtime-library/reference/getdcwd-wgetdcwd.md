@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _getdcwd
 - _wgetdcwd
@@ -42,30 +42,17 @@ helpviewer_keywords:
 - current working directory
 - directories [C++], current working
 ms.assetid: 184152f5-c7b0-495b-918d-f9a6adc178bd
-caps.latest.revision: 24
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 03791f920619b98beec3c1bbbd33b45b550eaf7a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b74cc20c6f96381d445740db9d41828f28d5a53a
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="getdcwd-wgetdcwd"></a>_getdcwd、_wgetdcwd
 指定されたドライブの現在の作業ディレクトリの完全なパスを取得します。  
@@ -111,7 +98,7 @@ wchar_t *_wgetdcwd(
   
  `_wgetdcwd` は、 `_getdcwd`のワイド文字バージョンで、その `buffer` パラメーターと戻り値はワイド文字列になります。 それ以外では、 `_wgetdcwd` と `_getdcwd` の動作は同じです。  
   
- この関数は、スレッドセーフではない **GetFullPathName**に依存しますが、スレッドセーフです。 ただし、マルチスレッド アプリケーションでこの関数と **GetFullPathName**を両方とも呼び出した場合、スレッド セーフを侵害する可能性があります。 詳しくは、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/?LinkID=150542) にアクセスし、 **GetFullPathName**。  
+ この関数は、スレッドセーフではない **GetFullPathName**に依存しますが、スレッドセーフです。 ただし、マルチスレッド アプリケーションでこの関数と **GetFullPathName**を両方とも呼び出した場合、スレッド セーフを侵害する可能性があります。 詳細については、[MSDN ライブラリ](http://go.microsoft.com/fwlink/p/?linkid=150542) にアクセスし、**GetFullPathName** を検索します。  
   
  `_nolock` サフィックスが付いているこの関数のバージョンは、スレッドセーフではなく、他のスレッドによる干渉から保護されないという点を除いて、この関数とまったく同じように動作します。 詳細については、「 [_getdcwd_nolock, _wgetdcwd_nolock](../../c-runtime-library/reference/getdcwd-nolock-wgetdcwd-nolock.md)」を参照してください。  
   
@@ -123,19 +110,19 @@ wchar_t *_wgetdcwd(
 |---------------------|--------------------------------------|--------------------|-----------------------|  
 |`_tgetdcwd`|`_getdcwd`|`_getdcwd`|`_wgetdcwd`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
 |`_getdcwd`|\<direct.h>|  
 |`_wgetdcwd`|\<direct.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  [_getdrive](../../c-runtime-library/reference/getdrive.md)の例をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ディレクトリ制御](../../c-runtime-library/directory-control.md)   
  [_chdir、_wchdir](../../c-runtime-library/reference/chdir-wchdir.md)   
  [_getcwd、_wgetcwd](../../c-runtime-library/reference/getcwd-wgetcwd.md)   

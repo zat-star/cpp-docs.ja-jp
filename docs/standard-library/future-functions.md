@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - future/std::async
 - future/std::future_category
@@ -13,7 +13,7 @@ f1_keywords:
 - future/std::make_error_condition
 - future/std::swap
 ms.assetid: 1e3acc1e-736a-42dc-ade2-b2fe69aa96bc
-caps.latest.revision: 11
+caps.latest.revision: 
 manager: ghogen
 helpviewer_keywords:
 - std::async [C++]
@@ -21,12 +21,11 @@ helpviewer_keywords:
 - std::make_error_code [C++]
 - std::make_error_condition [C++]
 - std::swap [C++]
+ms.openlocfilehash: d136f972786938e453d5a9116ea198ac2a5d8f46
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 6ce0ef5ebc19ed9861c4eeb3dd9b3605ff3383b3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ltfuturegt-functions"></a>&lt;future&gt; 関数
 ||||  
@@ -132,9 +131,8 @@ void swap(packaged_task<Ty(ArgTypes...)>& Left, packaged_task<Ty(ArgTypes...)>& 
  `Right`  
  右側の `promise` オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<future>](../standard-library/future.md)
-
 
 
 

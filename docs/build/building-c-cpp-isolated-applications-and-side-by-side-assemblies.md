@@ -1,13 +1,15 @@
 ---
-title: "分離アプリケーションおよびサイド バイ サイド アセンブリ C と C++ のビルド |Microsoft ドキュメント"
-ms.custom: 
+title: 分離アプリケーションおよびサイド バイ サイド アセンブリ C と C++ のビルド |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-tools
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: ''
 ms.topic: article
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - isolated applications [C++]
 - WinSxS [C++]
@@ -16,15 +18,17 @@ helpviewer_keywords:
 - side-by-side applications [C++]
 - builds [C++], side-by-side assemblies
 ms.assetid: 9465904e-76f7-48bd-bb3f-c55d8f1699b6
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: c91e6e6e4b74e1f2e9832d32b4bbf82cd62d6053
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: a5dec3b0db6d77cc11d0e2ccdc97fe54ab8e0624
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="building-cc-isolated-applications-and-side-by-side-assemblies"></a>C/C++ 分離アプリケーションおよび side-by-side アセンブリのビルド
 Visual C++ では、 [分離アプリケーション](http://msdn.microsoft.com/library/aa375190) および [side-by-side アセンブリ](http://msdn.microsoft.com/library/ff951640)という概念に基づく、Windows クライアント アプリケーションの配置モデルがサポートされます。 既定では、Visual C++ では、すべてのネイティブ C/C++ アプリケーションは、 [マニフェスト](http://msdn.microsoft.com/library/aa375365) を使用して Visual C++ ライブラリへの依存関係を記述する分離アプリケーションとしてビルドされます。  

@@ -1,29 +1,35 @@
 ---
-title: "auto_gcroot::get |Microsoft ドキュメント"
-ms.custom: 
+title: auto_gcroot::get |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology: cpp-windows
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - msclr::auto_gcroot::get
 - msclr.auto_gcroot.get
 - auto_gcroot::get
 - auto_gcroot.get
-dev_langs: C++
-helpviewer_keywords: auto_gcroot::get
+dev_langs:
+- C++
+helpviewer_keywords:
+- auto_gcroot::get
 ms.assetid: 0e922019-1cf5-4220-b5ab-6c4a2a6b40ec
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 4c5dbf86956de4a4df226bd87e970197f300f03b
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: c0aeb4a20f8c7dcb6a112080a88f600366ee62c3
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="autogcrootget"></a>auto_gcroot::get
 含まれているオブジェクトを取得します。  
@@ -85,10 +91,10 @@ Hello from first A!
 in ClassA destructor:first  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
  **Namespace** msclr  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [auto_gcroot のメンバー](../dotnet/auto-gcroot-members.md)

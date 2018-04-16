@@ -15,16 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C3662
 ms.assetid: 61bd3e41-a86b-42c0-be89-d992d3906ff1
-caps.latest.revision: 11
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 8c056d8ff06a44623f362c2f9542af7f7d389b65
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: f0068080f4cb1b2b25e350acd331898d6c49a3f6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-error-c3662"></a>コンパイラ エラー C3662
 'member': オーバーライド指定子 'specifier' は、マネージまたは WinRT クラスのメンバー関数でのみ使用できます  

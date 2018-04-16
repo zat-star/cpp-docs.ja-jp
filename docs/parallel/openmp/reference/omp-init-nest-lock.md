@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
-f1_keywords: omp_init_nest_lock
-dev_langs: C++
-helpviewer_keywords: omp_init_nest_lock OpenMP function
+ms.topic: reference
+f1_keywords:
+- omp_init_nest_lock
+dev_langs:
+- C++
+helpviewer_keywords:
+- omp_init_nest_lock OpenMP function
 ms.assetid: cf749ec5-de78-4186-9588-ac7c42b02463
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 911fd8069041135f20e8a7924cf5d943abcc2978
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9ab1d1204edfc1ad61d0ebec5f31777d9b65320b
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ompinitnestlock"></a>omp_init_nest_lock
 ロックを初期化します。  
@@ -107,5 +113,5 @@ Thread 0 - starting nested locked region
 Thread 0 - ending nested locked region  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [関数](../../../parallel/openmp/reference/openmp-functions.md)

@@ -1,45 +1,49 @@
 ---
-title: "auto_handle::operator! | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr.auto_handle.operator!"
-  - "msclr::auto_handle::operator!"
-  - "auto_handle.operator!"
-  - "auto_handle::operator!"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator!"
+title: auto_handle::operator! | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- msclr.auto_handle.operator!
+- msclr::auto_handle::operator!
+- auto_handle.operator!
+- auto_handle::operator!
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator!
 ms.assetid: 3f6c7729-3260-4842-87f9-c491c140b299
-caps.latest.revision: 10
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- dotnet
+ms.openlocfilehash: d6b37b4f5eaaec603ee457558fb6a68161e6e1e4
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# auto_handle::operator!
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-条件式に `auto_handle` を使用するための演算子。  
+# <a name="autohandleoperator"></a>auto_handle::operator!
+使用するための演算子`auto_handle`条件式でします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 bool operator!();  
 ```  
   
-## 戻り値  
- ラップされたオブジェクトが無効な場合`true` ; 別の方法で `false`。  
+## <a name="return-value"></a>戻り値  
+ `true`ラップされたオブジェクトが無効である場合`false`それ以外の場合。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_handle_operator_not.cpp  
@@ -62,14 +66,17 @@ int main() {
 }  
 ```  
   
-  **s1 が無効です。**  
-**s2 は有効です。**  
-**s2 で無効です。**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_handle.h\>  
+```Output  
+s1 is invalid  
+s2 is valid  
+s2 is now invalid  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>必要条件  
+ **ヘッダー ファイル** \<msclr\auto_handle.h >  
   
-## 参照  
- [auto\_handle Members](../dotnet/auto-handle-members.md)   
- [auto\_handle::operator bool](../dotnet/auto-handle-operator-bool.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>参照  
+ [auto_handle メンバー](../dotnet/auto-handle-members.md)   
+ [auto_handle::operator bool](../dotnet/auto-handle-operator-bool.md)

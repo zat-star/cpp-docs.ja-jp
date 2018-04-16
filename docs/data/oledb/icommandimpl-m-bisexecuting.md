@@ -1,49 +1,53 @@
 ---
-title: "ICommandImpl::m_bIsExecuting | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ICommandImpl.m_bIsExecuting"
-  - "ATL::ICommandImpl::m_bIsExecuting"
-  - "m_bIsExecuting"
-  - "ATL.ICommandImpl.m_bIsExecuting"
-  - "ICommandImpl::m_bIsExecuting"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "m_bIsExecuting"
+title: "Icommandimpl::m_bisexecuting |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ICommandImpl.m_bIsExecuting
+- ATL::ICommandImpl::m_bIsExecuting
+- m_bIsExecuting
+- ATL.ICommandImpl.m_bIsExecuting
+- ICommandImpl::m_bIsExecuting
+dev_langs:
+- C++
+helpviewer_keywords:
+- m_bIsExecuting
 ms.assetid: 1e152164-514c-4116-88a3-16984af99991
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: fccd78da21233a8b5b033d5b2b6d0e568a1aefb4
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
-# ICommandImpl::m_bIsExecuting
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コマンドが現在実行されているかどうかを示します。  
+# <a name="icommandimplmbisexecuting"></a>ICommandImpl::m_bIsExecuting
+コマンドが実行されているかどうかを示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
+```cpp
 unsigned m_bIsExecuting:1;  
   
 ```  
   
-## 解説  
- コマンド クラスの **実行** の **true**メソッドは、この変数を設定できます。  
+## <a name="remarks"></a>コメント  
+ **Execute**コマンド クラスのメソッドでは、この変数に設定**true**です。  
   
-## 必要条件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldb.h  
   
-## 参照  
- [ICommandImpl クラス](../Topic/ICommandImpl%20Class.md)   
- [ICommandImpl::m\_bCancelWhenExecuting](../../data/oledb/icommandimpl-m-bcancelwhenexecuting.md)
+## <a name="see-also"></a>参照  
+ [ICommandImpl クラス](../../data/oledb/icommandimpl-class.md)   
+ [ICommandImpl::m_bCancelWhenExecuting](../../data/oledb/icommandimpl-m-bcancelwhenexecuting.md)

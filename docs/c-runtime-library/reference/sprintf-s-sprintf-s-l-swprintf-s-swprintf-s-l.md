@@ -5,9 +5,9 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 apiname:
 - _swprintf_s_l
 - _sprintf_s_l
@@ -49,30 +49,17 @@ helpviewer_keywords:
 - _sprintf_s_l function
 - formatted text [C++]
 ms.assetid: 424f0a29-22ef-40e8-b565-969f5f57782f
-caps.latest.revision: 26
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 06afe4f945413ae1f45ff9249dcec0cb87cab987
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.workload:
+- cplusplus
+ms.openlocfilehash: e0ebdfb3745378088799883e1263686c44a8239f
+ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="sprintfs-sprintfsl-swprintfs-swprintfsl"></a>sprintf_s、_sprintf_s_l、swprintf_s、_swprintf_s_l
 文字列に書式付きデータを書き込みます。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [sprintf、_sprintf_l、swprintf、_swprintf_l、\__swprintf_l](../../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md) です。  
@@ -136,7 +123,7 @@ int swprintf_s(
  `locale`  
  使用するロケール。  
   
- 詳細については、[書式の指定](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)に関する記事をご覧ください。  
+ 詳細については、「 [printf 関数と wprintf 関数の書式指定フィールド](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」を参照してください。  
   
 ## <a name="return-value"></a>戻り値  
  書き込まれた文字数またはエラーが発生した場合は-1。 `buffer` または `format` が null ポインターである場合、 `sprintf_s` および `swprintf_s` は -1 を返し、 `errno` を `EINVAL`に設定します。  
@@ -148,9 +135,9 @@ int swprintf_s(
   
  `sprintf_s` と `sprintf` 間の主な違いとしては、 `sprintf_s` は書式指定文字列の有効な書式指定文字をチェックしますが、 `sprintf` は書式指定文字列またはバッファーが `NULL` ポインターかどうかのみをチェックします。 いずれかのチェックが失敗した場合、「 [Parameter Validation](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
   
- `sprintf_s` と `sprintf` 間のもう 1 つの違いとして、 `sprintf_s` は、出力バッファーのサイズを文字数で指定する長さパラメーターを受け取ります。 バッファーが、終端の null を含めた書式付きテキストに対して小さすぎる場合は、バッファーは `buffer``[0]`で null 文字を配置することで空の文字列に設定され、無効なパラメーター ハンドラーが呼び出されます。 `_snprintf`とは異なり、 `sprintf_s` では、バッファー サイズがゼロでない限り、必ずバッファーは null で終わります。  
+ `sprintf_s` と `sprintf` 間のもう 1 つの違いとして、 `sprintf_s` は、出力バッファーのサイズを文字数で指定する長さパラメーターを受け取ります。 バッファーが、終端の null を含めた書式付きテキストに対して小さすぎる場合は、バッファーは `buffer[0]`で null 文字を配置することで空の文字列に設定され、無効なパラメーター ハンドラーが呼び出されます。 `_snprintf`とは異なり、 `sprintf_s` では、バッファー サイズがゼロでない限り、必ずバッファーは null で終わります。  
   
- `swprintf_s` は `sprintf_s`のワイド文字バージョンであり、 `swprintf_s` のポインター引数はワイド文字列です。 `swprintf_s` と `sprintf_s`では、エンコーディング エラーの検出動作が異なる場合があります。 これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
+ `swprintf_s` は `sprintf_s`のワイド文字バージョンであり、 `swprintf_s` のポインター引数はワイド文字列です。 `swprintf_s` と `sprintf_s` では、エンコーディング エラーの検出動作が異なる場合があります。 これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
   
  C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
@@ -163,14 +150,14 @@ int swprintf_s(
 |`_stprintf_s`|`sprintf_s`|`sprintf_s`|`swprintf_s`|  
 |`_stprintf_s_l`|`_sprintf_s_l`|`_sprintf_s_l`|`_swprintf_s_l`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
-|ルーチン|必須ヘッダー|  
+|ルーチンによって返される値|必須ヘッダー|  
 |-------------|---------------------|  
-|`sprintf_s`, `_sprintf_s_l`|C: \<stdio.h><br /><br /> C++: \<cstdio> または \<stdio.h>|  
-|`swprintf_s`, `_swprintf_s_l`|C: \<stdio.h> または \<wchar.h><br /><br /> C++: \<cstdio>、\<cwchar>、\<stdio.h> または \<wchar.h>|  
+|`sprintf_s`、 `_sprintf_s_l`|C: \<stdio.h><br /><br /> C++: \<cstdio> または \<stdio.h>|  
+|`swprintf_s`、 `_swprintf_s_l`|C: \<stdio.h> または \<wchar.h><br /><br /> C++: \<cstdio>、\<cwchar>、\<stdio.h> または \<wchar.h>|  
   
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   
@@ -232,7 +219,7 @@ wrote 11 characters
 wrote -1 characters  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
  [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
  [printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   

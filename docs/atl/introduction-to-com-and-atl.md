@@ -1,44 +1,49 @@
 ---
-title: "COM および ATL の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "index-page "
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, COM"
-  - "COM オブジェクト, ATL"
-  - "COM, および ATL"
+title: "COM と ATL の概要 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: 'index-page '
+dev_langs:
+- C++
+helpviewer_keywords:
+- COM, and ATL
+- ATL, COM
+- COM objects, ATL
 ms.assetid: 35d6ae9c-abbb-42f0-9344-33f3c19ac3ce
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b1fe02283fc1f0723d86d9d18991c3af444f54db
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/21/2017
 ---
-# COM および ATL の概要
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このセクションでは、COM および ATL について簡単に紹介します。  
+# <a name="introduction-to-com-and-atl"></a>COM と ATL の概要
+このセクションでは、COM と ATL の簡単な概要を説明します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [COM の概要](../atl/introduction-to-com.md)  
- インターフェイス、**IUnknown**、参照カウント、`QueryInterface`、マーシャリングと集約を含むコンポーネント オブジェクト モデルの \(COM\) の基本的な概念の概要を示します。  
+ コンポーネント オブジェクト モデル (COM) の概要を説明インターフェイスなど、基本的な概念**IUnknown**、参照カウント、 `QueryInterface`、マーシャ リング、および集計します。  
   
- [ATL の概要](../Topic/Introduction%20to%20ATL.md)  
- Active Template Library \(ATL\) が用に設計されているか、簡潔に、テンプレート、および ATL ライブラリのバージョン番号について説明します。  ATL と MFC の使い分けに関する推奨事項が含まれます。  
+ [ATL の概要](../atl/introduction-to-atl.md)  
+ について説明します、簡単に、アクティブ テンプレート ライブラリ (ATL) は、テンプレート ライブラリと ATL のバージョン番号のように設計されています。 ATL と MFC の選択に関する推奨事項が含まれます。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [コンポーネント オブジェクト モデル](http://msdn.microsoft.com/library/windows/desktop/ms694363)  
- COM の [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] のドキュメント。  
+ [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] Com 材料  
   
  [ATL](../atl/active-template-library-atl-concepts.md)  
- Active Template Library を使用したプログラミングの概念を説明するトピックへのリンクを示します。  
+ Active Template Library を使用してプログラミングする方法に関する概念説明のトピックへのリンクを提供します。  
   
- [ATL クラスの概要](../atl/atl-class-overview.md)  
- ATL クラスの参照情報とリンクを提供します。
+ [ATL のクラスの概要](../atl/atl-class-overview.md)  
+ 参照情報と ATL クラスへのリンクを提供します。
+

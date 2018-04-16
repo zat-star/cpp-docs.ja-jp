@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - cpp-standard-libraries
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - type_traits/std::enable_if
 dev_langs:
@@ -16,16 +16,17 @@ helpviewer_keywords:
 - enable_if class
 - enable_if
 ms.assetid: c6b8d41c-a18f-4e30-a39e-b3aa0e8fd926
-caps.latest.revision: 28
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 627fd8fa2050141c570f6448bb3cf98142bb6ffc
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: 4d01230a1e185ad793f554afa7fa2fe2942b27a6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="enableif-class"></a>enable_if クラス
 SFINAE オーバーロード解決用のタイプのインスタンスを条件によって作成する 入れ子の typedef `enable_if<Condition,Type>::type` は `Type` のシノニムで、`Condition` が `true` の場合のみ存在します。  
@@ -56,7 +57,7 @@ template <bool B, class T = void>
 using enable_if_t = typename enable_if<B,T>::type;
 ```  
   
- C++ では、テンプレート パラメーターの置き換えの失敗は、それ自体はエラーではありません。これは *SFINAE* (substitution failure is not an error: 置き換えの失敗はエラーではない) と呼ばれます。 一般的に、`enable_if` はオーバーロード解決から候補を外す (つまりオーバーロード セットを除外する) ために使用します。一方を優先させて他方の定義が拒否されることもあります。 これは、SFINAE の動作に適合します。 SFINAE の詳細については、Wikipedia の「[Substitution failure is not an error](http://go.microsoft.com/fwlink/LinkId=394798)」を参照してください。  
+ C++ では、テンプレート パラメーターの置き換えの失敗は、それ自体はエラーではありません。これは *SFINAE* (substitution failure is not an error: 置き換えの失敗はエラーではない) と呼ばれます。 一般的に、`enable_if` はオーバーロード解決から候補を外す (つまりオーバーロード セットを除外する) ために使用します。一方を優先させて他方の定義が拒否されることもあります。 これは、SFINAE の動作に適合します。 SFINAE の詳細については、Wikipedia の「[Substitution failure is not an error](http://go.microsoft.com/fwlink/p/?linkid=394798)」を参照してください。  
   
  次に、4 つのシナリオの例を示します。  
   
@@ -140,14 +141,13 @@ func(make_pair("foo", "bar"));
   
  C++11 は、`enable_if` を使用してこの曖昧さを解決しました。`pair<A, B>(const pair<X, Y>&)` が、以下の場合**のみ**、つまり `const X&` が `A` に暗黙に変換され、`const Y&` が `B` に暗黙に変換される場合のみ存在するようにしています。  これにより、オーバーロード解決は、`pair<const char *, const char *>` が `pair<int, int>` に変換されないこと、および `pair<string, string>` となるオーバーロードが実行可能であることを決定できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** \<type_traits>  
   
  **名前空間:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [<type_traits>](../standard-library/type-traits.md)
-
 
 
 

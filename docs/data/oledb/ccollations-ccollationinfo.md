@@ -4,9 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-windows
+ms.technology:
+- cpp-windows
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - COLLATION_CATALOG
 - m_szCatalog
@@ -24,7 +25,8 @@ f1_keywords:
 - COLLATION_SCHEMA
 - m_szName
 - COLLATIONS
-dev_langs: C++
+dev_langs:
+- C++
 helpviewer_keywords:
 - m_szSchema
 - COLLATION_SCHEMA
@@ -43,15 +45,18 @@ helpviewer_keywords:
 - m_szCharSetSchema
 - CCollations typedef class
 ms.assetid: d8b43c4d-9dd5-4043-b4c8-38c03bfa0c72
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 99bf8120d048298ca570ea4b318c7ae9c04da811
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 6664a674ee3393ccd73cb5cf7e0d098cd0ca77fb
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="ccollations-ccollationinfo"></a>CCollations、CCollationInfo
 Typedef クラスを呼び出す**CCollations**そのパラメーター クラスを実装する**CCollationInfo**です。  
@@ -73,8 +78,8 @@ Typedef クラスを呼び出す**CCollations**そのパラメーター クラ�
 |m_szCharSetName|CHARACTER_SET_NAME|  
 |m_szPadAttribute|PAD_ATTRIBUTE|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbsch.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

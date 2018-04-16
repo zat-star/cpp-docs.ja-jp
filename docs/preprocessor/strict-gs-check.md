@@ -4,24 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - strict_gs_check
 - strict_gs_check_CPP
-dev_langs: C++
-helpviewer_keywords: strict_gs_check pragma
+dev_langs:
+- C++
+helpviewer_keywords:
+- strict_gs_check pragma
 ms.assetid: decfec81-c916-42e0-a07f-8cc26df6a7ce
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 7824572b093358343fa8469126b26f631f103bbc
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 76b06f33626dfa237c81e6a23f343bb25ffb7c78
+ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="strictgscheck"></a>strict_gs_check
 このプラグマは、強化されたセキュリティ チェックを提供します。  
@@ -72,6 +77,6 @@ void ** ReverseArray(void **pData,
   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラグマ ディレクティブと _ _pragma キーワード](../preprocessor/pragma-directives-and-the-pragma-keyword.md)   
- [/GS (バッファー セキュリティ チェック)](../build/reference/gs-buffer-security-check.md)
+ [/GS (バッファーのセキュリティ チェック)](../build/reference/gs-buffer-security-check.md)

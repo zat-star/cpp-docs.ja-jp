@@ -4,22 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology: cpp-tools
+ms.technology:
+- cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: C4646
-dev_langs: C++
-helpviewer_keywords: C4646
+f1_keywords:
+- C4646
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4646
 ms.assetid: 23677e8e-603e-40e0-b99a-2e4894a1278e
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.openlocfilehash: 50ecb1bbdd1dbb9445af6bb9987a2f2a4250b215
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 9b44b85fc8834dcc262b10ee26f34752f8eeb429
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="compiler-warning-level-3-c4646"></a>コンパイラの警告 (レベル 3) C4646
 __declspec(noreturn) で宣言された関数に、non-void 戻り値の型があります。  
