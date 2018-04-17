@@ -1,19 +1,19 @@
 ---
-title: "C++ 標準属性 |Microsoft ドキュメント"
-ms.custom: 
+title: C++ 標準属性 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 03/28/2017
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 ms.assetid: 748340d9-8abf-4940-b0a0-91b6156a3ff8
-caps.latest.revision: "11"
+caps.latest.revision: 11
 manager: ghogen
 ms.openlocfilehash: d2dcce6b0e289588c426792a334ee4ec38d1ab5f
-ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 04/13/2018
 ---
 # <a name="attributes-in-c"></a>C++ での属性
 
@@ -39,17 +39,17 @@ C++ 11 では、属性は、ベンダー固有ができない可能性があり�
 void Foo(int);
 ```
 
-#Pragma ディレクティブ、_ _declspec() (Visual C) などのベンダー固有の拡張機能に代わる、標準化された手段を表す属性または &#95; &#95; 属性 &#95; #95(GNU)。 ただし、ほとんどの場合は、ベンダー固有の構造体を使用する必要があります。 標準では、現在準拠コンパイラが認識する必要があります、次の属性を指定します。
+#Pragma ディレクティブ、_ _declspec() (Visual C) などのベンダー固有の拡張機能に代わる、標準化された手段を表す属性または&#95;&#95;属性&#95;&#95; (GNU)。 ただし、ほとんどの場合は、ベンダー固有の構造体を使用する必要があります。 標準では、現在準拠コンパイラが認識する必要があります、次の属性を指定します。
 
-- `[[noreturn]]`関数決してを返すように指定します。つまり、例外が常にスローされます。 コンパイラのコンパイル ルールを調整できます`[[noreturn]]`エンティティです。
+- `[[noreturn]]` 関数決してを返すように指定します。つまり、例外が常にスローされます。 コンパイラのコンパイル ルールを調整できます`[[noreturn]]`エンティティです。
 
-- `[[carries_dependency]]`関数がデータ依存関係のスレッドの同期に関して順序を反映させることを指定します。 属性は、渡された引数が関数の本体に依存関係を持ち込むことを指定する、1 つまたは複数のパラメーターに適用できます。 属性は、関数の戻り値が関数からの依存関係を持ち込むことを指定する自体に適用できます。 コンパイラは、この情報を使用して、効率的なコードを生成することができます。
+- `[[carries_dependency]]` 関数がデータ依存関係のスレッドの同期に関して順序を反映させることを指定します。 属性は、渡された引数が関数の本体に依存関係を持ち込むことを指定する、1 つまたは複数のパラメーターに適用できます。 属性は、関数の戻り値が関数からの依存関係を持ち込むことを指定する自体に適用できます。 コンパイラは、この情報を使用して、効率的なコードを生成することができます。
 
-- `[[deprecated]]`**Visual Studio 2015 以降:**指定関数が使用するものではありませんが存在しない将来のバージョンのライブラリ インターフェイスとします。 このコンパイラを使用してクライアント コードが、関数を呼び出すしようとしたときに、情報メッセージを生成します。 クラス、typedef 名、変数、非静的データ メンバー、関数、名前空間、列挙体、列挙子、またはテンプレートの特殊化の宣言に適用できます。  
+- `[[deprecated]]` **Visual Studio 2015 以降:**指定関数が使用するものではありませんが存在しない将来のバージョンのライブラリ インターフェイスとします。 このコンパイラを使用してクライアント コードが、関数を呼び出すしようとしたときに、情報メッセージを生成します。 クラス、typedef 名、変数、非静的データ メンバー、関数、名前空間、列挙体、列挙子、またはテンプレートの特殊化の宣言に適用できます。  
 
-- `[[fallthrough]]`**2017 およびそれ以降の visual Studio:** (で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md))、`[[fallthrough]]`のコンテキストで属性を使用できます[切り替える](switch-statement-cpp.md)ステートメントへのヒントとして、コンパイラ (または、コードを読む) fallthrough が動作をすることです。 Visual C コンパイラ現在は警告 fallthrough が動作のため、この属性はコンパイラの動作の効果を持ちません。
+- `[[fallthrough]]` **2017 およびそれ以降の visual Studio:** (で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md))、`[[fallthrough]]`のコンテキストで属性を使用できます[切り替える](switch-statement-cpp.md)コンパイラ (または読むすべてのユーザーへのヒントとしてステートメントコード) fallthrough が動作をすることです。 Visual C コンパイラ現在は警告 fallthrough が動作のため、この属性はコンパイラの動作の効果を持ちません。
 
-- `[[nodiscard]]`**Visual Studio 2017 15.3 およびそれ以降のバージョン:** (で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md)) 関数の戻り値が破棄されるものではありませんを指定します。 この例のように、C4834 の警告を発生させます。
+- `[[nodiscard]]` **Visual Studio 2017 15.3 およびそれ以降のバージョン:** (で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md)) 関数の戻り値が破棄されるものではありませんを指定します。 この例のように、C4834 の警告を発生させます。
 
    ```cpp
    [[nodiscard]]
@@ -62,11 +62,11 @@ void Foo(int);
    }
    ```
 
-- `[[maybe_unused]]`**Visual Studio 2017 15.3 およびそれ以降のバージョン:** (で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md)) を指定する変数、関数、クラス、typedef、非静的データ メンバー、列挙型、またはテンプレートの特殊化可能性があります意図的にでは使用されません。 エンティティがマークされている場合、コンパイラは警告しない`[[maybe_unused]]`は使用されません。 属性がない宣言されているエンティティは、属性およびその逆に後で再宣言することができます。 エンティティは、マークされている、最初の宣言を分析した後と、現在の翻訳単位の翻訳の残りの部分をマークされていると見なされます。
+- `[[maybe_unused]]` **Visual Studio 2017 15.3 およびそれ以降のバージョン:** (で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md)) 変数、関数、クラス、typedef、非静的データ メンバー、列挙型、またはテンプレートの特殊化は意図的に使用しないことを指定します。 エンティティがマークされている場合、コンパイラは警告しない`[[maybe_unused]]`は使用されません。 属性がない宣言されているエンティティは、属性およびその逆に後で再宣言することができます。 エンティティは、マークされている、最初の宣言を分析した後と、現在の翻訳単位の翻訳の残りの部分をマークされていると見なされます。
 
 ## <a name="microsoft-specific-attributes"></a>Microsoft 固有の属性
 
-- `[[gsl::suppress(rules)]]`この Microsoft 固有の属性を強制するチェッカーからの警告を抑制するために使用される[ガイドライン サポート ライブラリ (GSL)](https://github.com/Microsoft/GSL)コード内のルール。 たとえば、次のコード スニペットがあるとします。
+- `[[gsl::suppress(rules)]]` この Microsoft 固有の属性を強制するチェッカーからの警告を抑制するために使用される[ガイドライン サポート ライブラリ (GSL)](https://github.com/Microsoft/GSL)コード内のルール。 たとえば、次のコード スニペットがあるとします。
 
     ```cpp
     void main()

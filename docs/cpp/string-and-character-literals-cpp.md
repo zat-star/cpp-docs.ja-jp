@@ -1,12 +1,12 @@
 ---
-title: "文字列リテラルと文字リテラル (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 文字列リテラルと文字リテラル (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - R
@@ -25,17 +25,17 @@ helpviewer_keywords:
 - NULL, character constant
 - wide characters, strings
 ms.assetid: 61de8f6f-2714-4e7b-86b6-a3f885d3b9df
-caps.latest.revision: 
+caps.latest.revision: 36
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 37e5b86dfdef9c49e0e59c28d36ba4622238eced
-ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.openlocfilehash: 8714ff649471b0f84e11a65ae4100c8facb06c52
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="string-and-character-literals--c"></a>文字列リテラルと文字リテラル (C++)
 C++ はさまざまな文字列と文字型をサポートし、これらの型のリテラル値を表す方法を提供しています。 ソース コードでは、文字セットを使用して文字リテラルと文字列リテラルの内容を表現します。 ユニバーサル文字名とエスケープ文字を使用すると、基本ソース文字セットのみを使用してあらゆる文字列を表現できます。 未加工文字列リテラルを使用すると、エスケープ文字の使用を避けられるとともに、全種類の文字列リテラルを表すことができます。 余分な構築または変換手順を実行することなく、std::string リテラルを作成することもできます。  
@@ -83,7 +83,7 @@ int main()
 }  
 ```  
   
- 文字列リテラルは、プレフィックスを省略することも、 `u8`、 `L`、 `u`、または  `U` プレフィックスを使用することもできます。これらは、それぞれ、ナロー文字 (単一バイトまたは複数バイト)、UTF-8、ワイド文字 (UCS-2 または UTF-16)、UTF-16、UTF-32 エンコーディングを表します。 未加工文字列リテラルは、上記のエンコーディングの未加工バージョンとして `R`、 `u8R`、 `LR`、 `uR` 、 `UR` プレフィックスを使用できます。  一時的なまたは静的な std::string の値を作成するには、文字列リテラルまたは未加工文字列リテラルを `s` サフィックスと一緒に使用できます。 詳しくは、後述する「文字列リテラル」をご覧ください。 基本ソース文字セット、ユニバーサル文字名、ソース コードでの拡張コードページからの文字の使用について詳しくは、「 [Character Sets](../cpp/character-sets2.md)」をご覧ください。  
+ 文字列リテラルは、プレフィックスを省略することも、 `u8`、 `L`、 `u`、または  `U` プレフィックスを使用することもできます。これらは、それぞれ、ナロー文字 (単一バイトまたは複数バイト)、UTF-8、ワイド文字 (UCS-2 または UTF-16)、UTF-16、UTF-32 エンコーディングを表します。 未加工文字列リテラルは、上記のエンコーディングの未加工バージョンとして `R`、 `u8R`、 `LR`、 `uR` 、 `UR` プレフィックスを使用できます。  一時的なまたは静的な std::string の値を作成するには、文字列リテラルまたは未加工文字列リテラルを `s` サフィックスと一緒に使用できます。 詳しくは、後述する「文字列リテラル」をご覧ください。 基本ソース文字の詳細については、ユニバーサル文字名を設定し、拡張コードページから文字を使用して、ソース コードを参照してください[文字セット](../cpp/character-sets.md)です。  
   
 ## <a name="character-literals"></a>文字リテラル  
  *文字リテラル* は、定数文字で構成されます。 これは単一引用符で囲んだ文字によって表されます。 文字リテラルの 5 つの種類があります。  
@@ -210,7 +210,7 @@ char u5 = '\U00000041'; // \U UCN 'A'
   
  ユニバーサル文字名は、サロゲート コード ポイントの範囲 D800 ～ DFFF 内の値をエンコードできません。 Unicode サロゲート ペアの場合は、 `\UNNNNNNNN`を使用してユニバーサル文字名を指定します。ここで、NNNNNNNN は文字用の 8 桁のコード ポイントです。 コンパイラは、必要に応じて、サロゲート ペアを生成します。  
   
- C++03 では、ユニバーサル文字名で表現できたのは文字のサブセットに過ぎず、許可されていた一部のユニバーサル文字名は実際には正しい Unicode 文字を表していませんでした。 これは、C++11 の標準で修正されました。 C++11 では、文字リテラルと文字列リテラルの両方と識別子でユニバーサル文字名を使用できます。  ユニバーサル文字名について詳しくは、「 [Character Sets](../cpp/character-sets2.md)」をご覧ください。 Unicode について詳しくは、「 [Unicode](http://msdn.microsoft.com/library/dd374081\(v=vs.85\).aspx)」をご覧ください。 サロゲート ペアについて詳しくは、「 [サロゲート ペアと補助文字](http://msdn.microsoft.com/library/dd374069\(v=vs.85\).aspx)」をご覧ください。  
+ C++03 では、ユニバーサル文字名で表現できたのは文字のサブセットに過ぎず、許可されていた一部のユニバーサル文字名は実際には正しい Unicode 文字を表していませんでした。 これは、C++11 の標準で修正されました。 C++11 では、文字リテラルと文字列リテラルの両方と識別子でユニバーサル文字名を使用できます。  ユニバーサル文字名の詳細については、次を参照してください。[文字セット](../cpp/character-sets.md)です。 Unicode について詳しくは、「 [Unicode](http://msdn.microsoft.com/library/dd374081\(v=vs.85\).aspx)」をご覧ください。 サロゲート ペアについて詳しくは、「 [サロゲート ペアと補助文字](http://msdn.microsoft.com/library/dd374069\(v=vs.85\).aspx)」をご覧ください。  
   
 ## <a name="string-literals"></a>文字列リテラル  
  文字列リテラルは文字のシーケンスを表し、その全体が、null で終わる文字列を形成します。 文字列は二重引用符で囲む必要があります。 文字列リテラルの種類は次のとおりです。  
@@ -404,6 +404,6 @@ const char32_t* s5 = U"😎 = \U0001F60E is B-)";
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Character Sets](../cpp/character-sets2.md)   
+ [文字セット](../cpp/character-sets.md)   
  [数値、ブール値、およびポインターのリテラル](../cpp/numeric-boolean-and-pointer-literals-cpp.md)   
  [ユーザー定義リテラル](../cpp/user-defined-literals-cpp.md)

@@ -22,11 +22,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 592cba779113a6658b40d0dc3f855f53fa3d170c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e51db101db10b0461d7e9aa76b62319989d9f7d0
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="utf-8-set-source-and-executable-character-sets-to-utf-8"></a>/utf-8 (ソースの設定と実行可能ファイルの文字セットを utf-8 に)
 ソース文字セットし、実行文字セットを utf-8 としての両方を指定します。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  使用することができます、 **/utf-8**ソースと実行の両方の文字セットと utf-8 を使用してエンコードを指定するオプションです。 指定することと等価である**/source -charset:utf-8/execution-charset:utf-8**コマンド ラインでします。 これらのいずれかのオプションも有効、 **/validate-charset**既定ではオプションです。 一覧には、コード ページ識別子がサポートされている文字セットの名前を参照してください。[コード ページ識別子](http://msdn.microsoft.com/library/windows/desktop/dd317756)です。  
   
- 既定では、Visual Studio を判断するかどうか、ソース ファイルを Unicode 形式でエンコードされたなど、utf-8 または utf-16 バイト順マークを検出します。 バイト順マークが見つからない場合は、ソース ファイルを使用してエンコード、現在のユーザー コード ページを使用して、コード ページを指定した場合を除き、想定しています。 **/utf-8**または**/source-charset**オプション。 Visual Studio では、いくつかの文字エン コードのいずれかを使用して、C++ ソース コードを保存することができます。 ソースおよび実行文字セットの詳細については、次を参照してください。[文字セット](../../cpp/character-sets2.md)言語のドキュメントにします。  
+ 既定では、Visual Studio を判断するかどうか、ソース ファイルを Unicode 形式でエンコードされたなど、utf-8 または utf-16 バイト順マークを検出します。 バイト順マークが見つからない場合は、ソース ファイルを使用してエンコード、現在のユーザー コード ページを使用して、コード ページを指定した場合を除き、想定しています。 **/utf-8**または**/source-charset**オプション。 Visual Studio では、いくつかの文字エン コードのいずれかを使用して、C++ ソース コードを保存することができます。 ソースおよび実行文字セットの詳細については、次を参照してください。[文字セット](../../cpp/character-sets.md)言語のドキュメントにします。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -52,7 +52,7 @@ ms.lasthandoff: 12/21/2017
   
 4.  選択**OK**して変更を保存します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [/execution-charset (設定実行文字セット)](../../build/reference/execution-charset-set-execution-character-set.md)   

@@ -1,12 +1,12 @@
 ---
-title: "(C++) を非推奨 |Microsoft ドキュメント"
-ms.custom: 
+title: (C++) を非推奨 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 03/28/2017
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - deprecated_cpp
@@ -16,20 +16,20 @@ helpviewer_keywords:
 - __declspec keyword [C++], deprecated
 - deprecated __declspec keyword
 ms.assetid: beef1129-9434-4cb3-8392-f1eb29e04805
-caps.latest.revision: 
+caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cb0dd0bd25f1e4f8d0fd3bc0f1bee19f34497fb2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ce1d98917609af0eeb42c197cd55bb2179039fe0
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="deprecated-c"></a>deprecated (C++)
-このトピックでは、Microsoft に固有の仕様について declspec 宣言使用されなくなりました。 C++ 14 に関する情報の`[[deprecated]]`属性、および Microsoft 固有の declspec またはプラグマとその属性を使用する場合のガイダンスを参照してください。 [C++ の標準属性](attributes2.md)です。
+このトピックでは、Microsoft に固有の仕様について declspec 宣言使用されなくなりました。 C++ 14 に関する情報の`[[deprecated]]`属性、および Microsoft 固有の declspec またはプラグマとその属性を使用する場合のガイダンスを参照してください。 [C++ の標準属性](attributes.md)です。
 
  以下に示すような例外、**非推奨**宣言と同じ機能を提供する、[廃止](../preprocessor/deprecated-c-cpp.md)プラグマ。  
   
@@ -39,7 +39,7 @@ ms.lasthandoff: 12/21/2017
   
 -   マクロはで非推奨としてマークされているだけ、**廃止**プラグマ。  
   
- 非推奨の識別子または標準の使用が見つかったかどうか[ `[[deprecated]]` ](attributes2.md) 、属性、 [C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md)警告がスローされます。  
+ 非推奨の識別子または標準の使用が見つかったかどうか[ `[[deprecated]]` ](attributes.md) 、属性、 [C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md)警告がスローされます。  
   
 ## <a name="example"></a>例  
  次の例では、関数を非推奨としてマークする方法、および非推奨の関数が使用されている場合、コンパイル時に表示されるメッセージを指定する方法を示します。  
@@ -81,6 +81,6 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
- [_ _declspec](../cpp/declspec.md)   
+## <a name="see-also"></a>関連項目  
+ [__declspec](../cpp/declspec.md)   
  [キーワード](../cpp/keywords-cpp.md)

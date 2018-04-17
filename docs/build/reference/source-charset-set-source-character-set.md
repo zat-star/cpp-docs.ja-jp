@@ -1,13 +1,13 @@
 ---
-title: "-ソース-文字セット (一連のソース文字セット) |Microsoft ドキュメント"
-ms.custom: 
+title: -ソース-文字セット (一連のソース文字セット) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - source-charset
@@ -17,17 +17,17 @@ dev_langs:
 helpviewer_keywords:
 - /execution-charset compiler option
 ms.assetid: d3c5bf7f-526d-4ee4-acc5-c1a02a4fc481
-caps.latest.revision: 
+caps.latest.revision: 4
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a4aa81ba41587a183aca921177a62a45229810f1
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ba414318f9954df331dd05d0f3e2cc2b85c8ad11
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="source-charset-set-source-character-set"></a>/source-charset (設定ソース文字セット)
 ソース文字セットの実行可能ファイルで指定することができます。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  使用することができます、 **/source-charset**ソース ファイルは、基本ソース文字セットには表されない文字を含める場合に使用する、拡張のソース文字セットを指定するオプションです。 ソース文字セットは、コンパイル前に、プリプロセス フェーズへの入力として使用される内部表現に、プログラムのソース テキストを解釈するために使用するエンコードです。 内部表現は、実行可能ファイルに文字列と文字の値を格納する、実行文字セットに変換されます。 IANA が、いずれかを使用する ISO 文字セットの名前、またはドット (.) の後に、使用する文字セットを指定する 3 ~ 5 桁の 10 進コード ページ識別子。 一覧には、コード ページ識別子がサポートされている文字セットの名前を参照してください。[コード ページ識別子](http://msdn.microsoft.com/library/windows/desktop/dd317756)です。  
   
- 既定では、Visual Studio を判断するかどうか、ソース ファイルを Unicode 形式でエンコードされたなど、utf-8 または utf-16 バイト順マークを検出します。 バイト順マークが見つからない場合は、ソース ファイルがエンコードされている、現在のユーザー コード ページを使用して文字を使用して名前またはコード ページの設定を指定しない限り、想定しています。、 **/source-charset**オプション。 Visual Studio では、いくつかの文字エン コードのいずれかを使用して、C++ ソース コードを保存することができます。 ソースと実行文字セットの詳細については、次を参照してください。[文字セット](../../cpp/character-sets2.md)言語のドキュメントにします。  
+ 既定では、Visual Studio を判断するかどうか、ソース ファイルを Unicode 形式でエンコードされたなど、utf-8 または utf-16 バイト順マークを検出します。 バイト順マークが見つからない場合は、ソース ファイルがエンコードされている、現在のユーザー コード ページを使用して文字を使用して名前またはコード ページの設定を指定しない限り、想定しています。、 **/source-charset**オプション。 Visual Studio では、いくつかの文字エン コードのいずれかを使用して、C++ ソース コードを保存することができます。 ソースと実行文字セットの詳細については、次を参照してください。[文字セット](../../cpp/character-sets.md)言語のドキュメントにします。  
   
  指定するソース文字セットは、の文字セットで同じコード ポイントを 7 ビット ASCII 文字をマップする必要がありますか、コンパイル エラーの多くが従う可能性があります。 ソース文字セットも拡張の Unicode 文字の utf-8 で encodable セットにマップ可能な場合があります。 Encodable utf-8 ではない文字は、実装固有 substitute で表されます。 Microsoft コンパイラでは、これらの文字を疑問符 () を使用します。  
   
@@ -64,7 +64,7 @@ ms.lasthandoff: 12/21/2017
   
 4.  選択**OK**して変更を保存します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [/execution-charset (設定実行文字セット)](../../build/reference/execution-charset-set-execution-character-set.md)   
