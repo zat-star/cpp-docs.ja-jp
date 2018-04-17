@@ -1,7 +1,7 @@
 ---
 title: Extern リンケージの指定を使用した |Microsoft ドキュメント
 ms.custom: ''
-ms.date: 11/04/2016
+ms.date: 04/06/2018
 ms.reviewer: ''
 ms.suite: ''
 ms.technology:
@@ -23,18 +23,17 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: db93feb8c8fad13cf8de082858e68b89f93b5323
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 319ee69d30ad49ff745df05172db10503b3b42e0
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="using-extern-to-specify-linkage"></a>extern を使用したリンケージの指定
 ## <a name="syntax"></a>構文  
   
 ```  
-  
-      extern string-literal { declaration-list }  
+extern string-literal { declaration-list }  
 extern string-literal declaration  
 ```  
   
@@ -107,7 +106,7 @@ extern "C" char GetChar( void ) {
 extern "C" int errno;  
 ```  
   
- 関数に複数のリンケージ指定子がある場合、それらは一致する必要があります。関数を C と C++ 両方のリンケージを持つ関数として宣言するとエラーになります。 また、プログラム内に、リンケージ指定子を含む関数宣言と含まない関数宣言がある場合、リンケージ指定子を含む宣言を最初に記述する必要があります。 既にリンケージ指定を持つ関数の冗長な宣言には、最初の宣言で指定したリンケージが与えられます。 例:  
+ 関数に複数のリンケージ指定子がある場合、それらは一致する必要があります。関数を C と C++ 両方のリンケージを持つ関数として宣言するとエラーになります。 また、プログラム内に、リンケージ指定子を含む関数宣言と含まない関数宣言がある場合、リンケージ指定子を含む宣言を最初に記述する必要があります。 既にリンケージ指定を持つ関数の冗長な宣言には、最初の宣言で指定したリンケージが与えられます。 例えば:  
   
 ```  
 extern "C" int CFunc1();  
@@ -124,7 +123,7 @@ extern "C" int CFunc2(); // Error: not the first declaration of
   
  関数とオブジェクトが明示的に宣言**静的**複合リンケージ指定子の本体内で (**{}**) は静的関数またはオブジェクトとして扱われます、リンケージ指定子は無視されます。 `extern` キーワードを使用して宣言したかのように、他の関数やオブジェクトが動作します。 (を参照してください[extern リンケージの指定を使用した](../cpp/using-extern-to-specify-linkage.md)詳細については、`extern`キーワードです)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キーワード](../cpp/keywords-cpp.md)   
  [extern ストレージ クラス指定子](../c-language/extern-storage-class-specifier.md)   
  [識別子の動作](../c-language/behavior-of-identifiers.md)   

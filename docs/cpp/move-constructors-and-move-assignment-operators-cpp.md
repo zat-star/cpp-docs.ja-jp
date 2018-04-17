@@ -1,32 +1,32 @@
 ---
-title: "移動コンス トラクターと移動代入演算子 (C++) |Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: '方法: 移動コンス トラクターと移動代入演算子 (C++) の定義 |Microsoft ドキュメント'
+ms.custom: ''
+ms.date: 03/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
-- move constructor
+- move constructor [C++]
 ms.assetid: e75efe0e-4b74-47a9-96ed-4e83cfc4378d
-caps.latest.revision: 
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 69280eff199b9c04b51bf9b7aa298a67bf31bd89
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8bc9ce3d397b96ec45a0dbee5fefdb09d01b3f28
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="move-constructors-and-move-assignment-operators-c"></a>移動コンストラクターと移動代入演算子 (C++)
-このトピックの内容を記述する方法を説明します、*移動コンス トラクター*と C++ のクラスの移動代入演算子。 移動コンストラクターを使用すると、アプリケーションのパフォーマンスを大幅に向上できる移動セマンティクスを実装できます。 移動セマンティクスの詳細については、次を参照してください。[右辺値参照宣言子: & &](../cpp/rvalue-reference-declarator-amp-amp.md)です。  
+このトピックの内容を記述する方法を説明します、*移動コンス トラクター*と C++ のクラスの移動代入演算子。 移動コンス トラクターは、右辺値をコピーすることがなく左辺値に移動するオブジェクトによって所有されているリソースを使用できます。 移動セマンティクスの詳細については、次を参照してください。[右辺値参照宣言子: & &](../cpp/rvalue-reference-declarator-amp-amp.md)です。  
   
  このセクションは、メモリ バッファーを管理する次の C++ クラス、`MemoryBlock` に基づいています。  
   
@@ -135,7 +135,7 @@ private:
     ```  
   
 ### <a name="to-create-a-move-assignment-operator-for-a-c-class"></a>C ++ クラスの移動代入演算子を作成するには  
-  
+
 1.  次の例に示すように、パラメーターとしてクラス型への右辺値参照を受け取り、クラス型への参照を返す、空の代入演算子を定義します。  
   
     ```cpp  
@@ -230,7 +230,7 @@ MemoryBlock& operator=(MemoryBlock&& other)
 ```  
   
 ## <a name="example"></a>例  
- 次の例は、移動セマンティクスがアプリケーションのパフォーマンスをどのように改善するかを示します。 この例では、2 つの要素をベクター オブジェクトに追加し、2 つの既存の要素の間に新しい要素を挿入しています。 Visual C 2010 で、`vector`移動セマンティクスをコピーすることではなくベクトルの要素を移動することによって、挿入操作を効率的に実行クラス使用します。  
+ 次の例は、移動セマンティクスがアプリケーションのパフォーマンスをどのように改善するかを示します。 この例では、2 つの要素をベクター オブジェクトに追加し、2 つの既存の要素の間に新しい要素を挿入しています。 `vector`移動セマンティクスをコピーすることではなくベクトルの要素を移動することによって、挿入操作を効率的に実行クラス使用します。  
   
 ```cpp  
 // rvalue-references-move-semantics.cpp  
@@ -275,7 +275,7 @@ In ~MemoryBlock(). length = 50. Deleting resource.
 In ~MemoryBlock(). length = 75. Deleting resource.  
 ```  
   
- Visual C 2010 では、前に、この例には、次の出力が生成されます。  
+ Visual Studio 2010 では、以前は、この例には、次の出力が生成されます。  
   
 ```  
 In MemoryBlock(size_t). length = 25.  
@@ -319,6 +319,6 @@ MemoryBlock(MemoryBlock&& other)
   
  [Std::move](../standard-library/utility-functions.md#move)関数の rvalue プロパティを保持する、`other`パラメーター。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [右辺値参照宣言子: & (& a)](../cpp/rvalue-reference-declarator-amp-amp.md)   
  [\<ユーティリティ > に移動](http://msdn.microsoft.com/en-us/abef7e85-9dd6-4724-85da-d7f7fe95dca9)

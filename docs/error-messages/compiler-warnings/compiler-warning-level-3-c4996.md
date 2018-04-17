@@ -1,12 +1,12 @@
 ---
-title: "コンパイラの警告 (レベル 3) C4996 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラの警告 (レベル 3) C4996 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/17/2017
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C4996
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - C4996
 ms.assetid: 926c7cc2-921d-43ed-ae75-634f560dd317
-caps.latest.revision: 
+caps.latest.revision: 34
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e5a4797b4ac5fabc31d747682579c3b3ae6ce900
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c0c41ce646f635e32f6e1e34d0361c738d0bb6b0
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="compiler-warning-level-3-c4996"></a>コンパイラの警告 (レベル 3) C4996
 
@@ -37,13 +37,13 @@ ms.lasthandoff: 12/21/2017
 
 - [この関数または変数が安全でない可能性があります。使用を検討して*safe_version*代わりにします。廃止予定機能を無効にするには、 \_CRT\_SECURE\_いいえ\_警告します。詳しくは、オンライン ヘルプをご覧ください。](#unsafe-crt-library-functions)
 
-- [' std::*function_name*::\_未チェック\_反復子::\_Deprecate' std への呼び出し::*function_name*安全でない可能性がありますこの呼び出しパラメーターを持つ渡された値が正しいことを確認する呼び出し元に依存します。この警告を無効にするには、-D_SCL_SECURE_NO_WARNINGS を使用します。Visual C '反復子のチェック' を使用する方法のドキュメントを参照してください。](#unsafe-standard-library-functions)
+- [' std::*function_name*::\_未チェック\_反復子::\_Deprecate' std への呼び出し::*function_name*に安全でない可能性がありますパラメーターを使用してこの呼び出しが依存しています呼び出し元が渡された値が正しいことを確認します。この警告を無効にするには、-D_SCL_SECURE_NO_WARNINGS を使用します。Visual C '反復子のチェック' を使用する方法のドキュメントを参照してください。](#unsafe-standard-library-functions)
 
 - [この関数または変数は、新しいライブラリまたはオペレーティング システムの機能が提供されています。使用を検討して*new_item*代わりにします。詳しくは、オンライン ヘルプをご覧ください。](#obsolete-crt-functions-and-variables)
 
 ## <a name="cause"></a>原因
 
-C4996 は、関数または変数としてマークされている、コンパイラが検出したときに発生[廃止](../../cpp/deprecated-cpp.md)を使用して、`__declspec(deprecated)`修飾子は、関数、クラス メンバーまたは c++ 14 のある typedef にアクセスしようとするまたは[ \[\[廃止\]\] ](../../cpp/attributes2.md)属性。 使用することができます、`__declspec(deprecated)`修飾子または`[[deprecated]]`ライブラリまたはヘッダー ファイルは使用されなくなった関数、変数、メンバー、または typedef、クライアントに警告する を自分で属性します。
+C4996 は、関数または変数としてマークされている、コンパイラが検出したときに発生[廃止](../../cpp/deprecated-cpp.md)を使用して、`__declspec(deprecated)`修飾子は、関数、クラス メンバーまたは c++ 14 のある typedef にアクセスしようとするまたは[ \[\[廃止\]\] ](../../cpp/attributes.md)属性。 使用することができます、`__declspec(deprecated)`修飾子または`[[deprecated]]`ライブラリまたはヘッダー ファイルは使用されなくなった関数、変数、メンバー、または typedef、クライアントに警告する を自分で属性します。
 
 ## <a name="remarks"></a>コメント
 

@@ -1,7 +1,7 @@
 ---
-title: 文字の Sets2 |Microsoft ドキュメント
+title: 文字セット | Microsoft Docs
 ms.custom: ''
-ms.date: 11/04/2016
+ms.date: 04/12/2018
 ms.reviewer: ''
 ms.suite: ''
 ms.technology:
@@ -20,11 +20,11 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: db505809c1fbc2c49e116b9c2f850f6e14dfbdf6
-ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.openlocfilehash: 81b1046ea7588a6cc5eb3274473f4e4bee9daccd
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="character-sets"></a>文字セット
 C++ プログラムのテキストは、特定の文字エンコーディングを使用するソース ファイルに保存されます。 C++ 標準では、ソース ファイル用の基本ソース文字セットと、コンパイル済みファイル用の基本実行文字セットを規定しています。 Visual C++ では、ソース ファイルとコンパイル済みファイルに、ロケール固有の追加の文字セットを使用できます。  

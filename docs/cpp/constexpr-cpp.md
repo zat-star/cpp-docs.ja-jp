@@ -19,11 +19,11 @@ ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fdf0a4794dd32208b08791d921f6d638873545a1
-ms.sourcegitcommit: d9ee6f777974d031570f4260c9581ea2c81ad875
+ms.openlocfilehash: 5218e576a1aa0436ccb7696d208b1ba2049263b0
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="constexpr-c"></a>constexpr (C++)
 
@@ -49,6 +49,7 @@ constexpr ctor (params);
 
 ## <a name="return-value"></a>戻り値
 
+
  Constexpr 変数または関数が返す必要があります、[リテラルの型](trivial-standard-layout-and-pod-types.md#literal_types)です。
 
 ## <a name="constexpr-variables"></a>constexpr 変数
@@ -70,7 +71,7 @@ int j = 0;
 constexpr int k = j + 1; //Error! j not a constant expression
 ```
 
-## <a name="constexpr-functions"></a>constexpr 関数
+## <a name="constexpr_functions"></a> constexpr 関数
 
 A **constexpr**関数は、1 つ使用コードで要求されたとき、コンパイル時戻り値を返すを計算できます。  ときに、引数が**constexpr**値、および利用側のコードを初期化する例については、コンパイル時に、戻り値が必要です、 **constexpr**変数や、非型テンプレート引数がコンパイル時定数を生成します。 以外で呼び出されると**constexpr**引数、またはその値がコンパイル時に必要ない場合に、正規関数と同様に実行時に値を生成します。  (この 2 重の動作を記述する必要がなくなります**constexpr**と非-**constexpr**同じ関数のバージョンです)。
 

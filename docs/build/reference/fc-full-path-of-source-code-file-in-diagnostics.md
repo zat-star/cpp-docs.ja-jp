@@ -1,12 +1,12 @@
 ---
-title: "FC (診断のソース コード ファイルの完全パス) |Microsoft ドキュメント"
-ms.custom: 
+title: FC (診断のソース コード ファイルの完全パス) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VC.Project.VCCLCompilerTool.UseFullPaths
@@ -17,17 +17,17 @@ helpviewer_keywords:
 - /FC compiler option [C++]
 - -FC compiler option [C++]
 ms.assetid: 1f11414e-cb42-421b-be68-9d369aab036b
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b055b5431d41bc09fbdd2750c01d3efca8f21287
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3bddc92d8c013fd3b4e2425b7f85b084651cdafe
+ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="fc-full-path-of-source-code-file-in-diagnostics"></a>/FC (診断時のソース コード ファイルの完全パス)
 
@@ -54,21 +54,19 @@ int main( ) {
 
 **/FC**、診断用のテキストはこの診断テキストのようになります。
 
-- c:\test\compiler_option_FC.cpp(5): エラー C2143: 構文エラー: 見つかりません ';' は、前に '}'
+- c:\test\compiler_option_fc.cpp(5): エラー C2143: 構文エラー: 見つかりません ';' は、前に '}'
 
-**/FC**を使用する場合は、ファイル名の完全なパスを表示する場合にも必要、&#95; &#95;です。ファイル &#95; #95マクロです。  参照してください[定義済みマクロ](../../preprocessor/predefined-macros.md)について &#95; &#95;です。ファイル #95; &#95;。
+ **/FC**を使用する場合は、ファイル名の完全なパスを表示する場合にも必要、 &#95;&#95;ファイル&#95;&#95;マクロです。 参照してください[定義済みマクロ](../../preprocessor/predefined-macros.md)について&#95;&#95;ファイル&#95;&#95;です。
 
 **/FC**がオプションが含まれる**/ZI**です。 詳細については**/ZI**を参照してください[/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)です。
+
+**/FC**小文字で完全なパスを出力します。
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには
 
 1. プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。
 
-1. 展開して、**構成プロパティ**ノード。
-
-1. 展開して、 **C/C++**ノード。
-
-1. 選択、**詳細**プロパティ ページ。
+1. 選択、**構成プロパティ** > **C/C++** > **詳細**プロパティ ページ。
 
 1. 変更、**完全パスの使用**プロパティです。
 
@@ -76,7 +74,7 @@ int main( ) {
 
 - 「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.UseFullPaths%2A>」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [コンパイラ オプション](../../build/reference/compiler-options.md)   
 [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)
