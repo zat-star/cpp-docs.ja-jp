@@ -1,12 +1,12 @@
 ﻿---
 title: malloc | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - malloc
@@ -31,7 +31,7 @@ helpviewer_keywords:
 - malloc function
 - memory allocation
 ms.assetid: 144fcee2-be34-4a03-bb7e-ed6d4b99eea0
-caps.latest.revision: 
+caps.latest.revision: 22
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -59,7 +59,7 @@ void *malloc(
  割り当てるバイト数。  
   
 ## <a name="return-value"></a>戻り値  
- `malloc` は、割り当てられた領域に void ポインターを返すか、メモリが不足している場合、`NULL` を返します。 `void` 以外の型へのポインターを返すには、戻り値の型キャストを使用します。 戻り値が指すストレージ領域は、オブジェクトのアラインメント要件が基本的なアラインメントの要件以下である限り、どの型のオブジェクトを格納する場合でも、適切なアラインメントが保証されます  (Visual C++ の基本的なアラインメントは、`double`、つまり 8 バイトに対して必要なアラインメントです。 64 ビット プラットフォームを対象としたコードでは 16 バイトです)。アラインメント要件が基本的なアラインメントの要件を超える場合は、[_aligned_malloc](../../c-runtime-library/reference/aligned-malloc.md) を使用してオブジェクトのストレージを割り当てます。たとえば、SSE 型の [__m128](../../cpp/m128.md) や `__m256`、また `__declspec(align( n ))` で `n` に 8 を超える数値を設定して宣言した型などです。 `size` が 0 の場合、`malloc` 関数はヒープに長さが 0 のアイテムを割り当て、そのアイテムへの有効なポインターを返します。 要求されたメモリ量が小さい場合でも、`malloc` からの戻り値を必ずチェックしてください。  
+ `malloc` は、割り当てられた領域に void ポインターを返すか、メモリが不足している場合、`NULL` を返します。 `void` 以外の型へのポインターを返すには、戻り値の型キャストを使用します。 戻り値が指すストレージ領域は、オブジェクトのアラインメント要件が基本的なアラインメントの要件以下である限り、どの型のオブジェクトを格納する場合でも、適切なアラインメントが保証されます  (Visual C++ の基本的なアラインメントは、`double`、つまり 8 バイトに対して必要なアラインメントです。 64 ビット プラットフォームを対象としたコードでは 16 バイトです)。アラインメント要件が基本的なアラインメントの要件を超える場合は、[_aligned_malloc](../../c-runtime-library/reference/aligned-malloc.md) を使用してオブジェクトのストレージを割り当てます。たとえば、SSE 型の [__m128](../../cpp/m128.md) や `__m256`、また `__declspec(align( n ))` で `n` に 8 を超える数値を設定して宣言した型などです。 `size` が 0 の場合、`malloc` 関数はヒープに長さが 0 のアイテムを割り当て、そのアイテムへの有効なポインターを返します。 要求されたメモリ量が小さい場合でも、`malloc` からの戻り値を必ずチェックしてください。  
   
 ## <a name="remarks"></a>コメント  
  `malloc` 関数は、少なくとも `size` バイトのメモリ ブロックを割り当てます。 アラインメントと保守情報に領域が必要なため、ブロックのサイズが `size` バイトを超えることがあります。  
