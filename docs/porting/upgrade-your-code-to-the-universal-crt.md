@@ -35,7 +35,7 @@ Windows コンポーネントと同じように、UCRT ライブラリのファ�
   
 UCRT スタティック ライブラリとダイナミック リンク スタブ ライブラリは、Program Files または Program Files (x86) ディレクトリにある Windows Kits\\10\\Lib\\_sdk-version_\\ucrt\\_architecture_  にあります。ここで、_architecture_ は、ARM、x86、または X64 です。 製品版およびデバッグのスタティック ライブラリは、libucrt.lib と libucrtd.lib であり、UCRT DLL のライブラリは、ucrt.lib と ucrtd.lib です。  
   
-製品版およびデバッグの UCRT DLL は、別々の場所にあります。 製品版 DLL は再頒布可能であり、プログラム ファイルまたはプログラム ファイル (x86) ディレクトリの Windows Kits\\10\\Redist\\ucrt\\DLLs\\_architecture_\. の下にあります。 デバッグ DLL は再頒布可能ではありません。プログラム ファイルまたはプログラム ファイル (x86) ディレクトリの Windows Kits\\10\\bin\\_architecture_\\ucrt の下にあります。   
+製品版およびデバッグの UCRT DLL は、別々の場所にあります。 製品版 DLL は再頒布可能であり、Program Files または Program Files (x86) ディレクトリの Windows Kits\\10\\Redist\\ucrt\\DLLs\\_architecture_\. の下にあります。 デバッグ DLL は再頒布可能ではありません。Program Files または Program Files (x86) ディレクトリの Windows Kits\\10\\bin\\_architecture_\\ucrt の下にあります。   
 
 C および C++ コンパイラ固有のランタイム サポート ライブラリ **vcruntime** には、プログラムの起動、および例外処理や組み込みなどの機能をサポートするために必要なコードが含まれています。 ライブラリとそのヘッダー ファイルは、Program Files または Program files (x86) ディレクトリのバージョン固有の Microsoft Visual Studio フォルダーに引き続き置かれています。 Visual Studio 2017 では、ヘッダーは、Microsoft Visual Studio\\2017\\_edition_\\VC\\Tools\\MSVC\\_lib-version_\\include にあり、リンク ライブラリは、Microsoft Visual Studio\\2017\\_edition_\\VC\\Tools\\MSVC\\_lib-version_\\lib\\_architecture_ にあります。ここで、_edition_ はインストールされている Visual Studio のエディションであり、_lib-version_ はライブラリのバージョンで、_architecture_ はプロセッサのアーキテクチャです。 OneCore とストアのリンク ライブラリは、libraries ディレクトリにもあります。 スタティック ライブラリの製品版とデバッグ バージョンは、libvcruntime.lib と libvcruntimed.lib です。 ダイナミック リンク ライブラリの製品版とデバッグのスタブ ライブラリは、それぞれ vcruntime.lib と vcruntimed.lib です。  
   
