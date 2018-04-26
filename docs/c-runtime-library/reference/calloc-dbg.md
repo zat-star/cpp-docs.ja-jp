@@ -1,12 +1,12 @@
 ---
 title: _calloc_dbg | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _calloc_dbg
@@ -31,121 +31,121 @@ helpviewer_keywords:
 - _calloc_dbg function
 - calloc_dbg function
 ms.assetid: 7f62c42b-eb9f-4de5-87d0-df57036c87de
-caps.latest.revision: 
+caps.latest.revision: 18
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 634838c5a29b0a356ea8c7c3d3a49ea86263f45e
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 3a00faae2ee66f22c7662ddd5926131b0e0347de
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="callocdbg"></a>_calloc_dbg
-デバッグ ヘッダーと上書きバッファー用の追加の領域を持つ多数のメモリ ブロックをヒープに割り当てます (デバッグ バージョンのみ)。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void *_calloc_dbg(   
-   size_t num,  
-   size_t size,  
-   int blockType,  
-   const char *filename,  
-   int linenumber   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `num`  
- 要求するメモリ ブロックの数。  
-  
- `size`  
- 要求する各メモリ ブロックのサイズ (バイト)。  
-  
- `blockType`  
- 要求するメモリ ブロックの種類。`_CLIENT_BLOCK` または `_NORMAL_BLOCK`。  
-  
- 割り当てブロック型と、それらがどのように使用されるかについては、「[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)」を参照してください。  
-  
- `filename`  
- 割り当て操作を要求したソース ファイル名へのポインター、または `NULL`。  
-  
- `linenumber`  
- 割り当て操作が要求されたソース ファイル内の行番号または `NULL`。  
-  
- `filename` パラメーターと `linenumber` パラメーターを使用できるのは、`_calloc_dbg` が明示的に呼び出された場合、または [_CRTDBG_MAP_ALLOC](../../c-runtime-library/crtdbg-map-alloc.md) プリプロセッサ定数が定義されている場合だけです。  
-  
-## <a name="return-value"></a>戻り値  
- 正常に終了した場合、この関数は最後に割り当てられたメモリ ブロックのユーザー部分へのポインターを返すか、新しいハンドラー関数を呼び出すか、`NULL` を返します。 戻る動作の詳細については、「解説」のセクションを参照してください。 新しいハンドラー関数がどのように使用されるかの詳細については、[calloc](../../c-runtime-library/reference/calloc.md) 関数を参照してください。  
-  
-## <a name="remarks"></a>コメント  
- `_calloc_dbg` は、[calloc](../../c-runtime-library/reference/calloc.md) 関数のデバッグ バージョンです。 [_DEBUG](../../c-runtime-library/debug.md) が定義されない場合、`_calloc_dbg` への各呼び出しは `calloc` への呼び出しになります。 `calloc` と `_calloc_dbg` は、どちらもベース ヒープに `num` 個のメモリ ブロックを割り当てますが、`_calloc_dbg` は次のようないくつかのデバッグ機能を提供します。  
-  
--   リークをテストするための、ブロックのユーザー部分の両側のバッファー。  
-  
--   特定の割り当ての種類を追跡するためのブロック型パラメーター。  
-  
--   割り当て要求の起点を特定するための `filename`/`linenumber` 情報。  
-  
- `_calloc_dbg` は、要求された `size` よりも少し多い領域を使用して各メモリ ブロックを割り当てます。 追加の領域は、デバッグ メモリ ブロックをリンクし、アプリケーションにデバッグ ヘッダー情報と上書きバッファーを提供するために、デバッグ ヒープ マネージャーによって使用されます。 ブロックが割り当てられると、ブロックのユーザー部分には値 0xCD が設定され、各上書きバッファーには 0xFD が設定されます。  
-  
- メモリ割り当てが失敗すると、`_calloc_dbg` は `errno` を `ENOMEM` に設定します。必要なメモリの量 (前に説明したオーバーヘッドを含む) が `EINVAL` を超えると、`_HEAP_MAXREQ` が返されます。 このエラー コードと他のエラーコードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
-  
- デバッグ バージョンのベース ヒープに対するメモリ ブロックの割り当て、初期化、管理方法については、「 [CRT Debug Heap Details](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。 標準で呼び出すヒープ関数と、アプリケーションのデバッグ ビルドで呼び出すデバッグ バージョンのヒープ関数との違いの詳細については、「[デバッグ バージョンのヒープ割り当て関数](/visualstudio/debugger/debug-versions-of-heap-allocation-functions)」を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_calloc_dbg`|\<crtdbg.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_callocd.c  
-/*  
- * This program uses _calloc_dbg to allocate space for  
- * 40 long integers. It initializes each element to zero.  
- */  
-#include <stdio.h>  
-#include <malloc.h>  
-#include <crtdbg.h>  
-  
-int main( void )  
-{  
-        long *bufferN, *bufferC;  
-  
-        /*   
-         * Call _calloc_dbg to include the filename and line number  
-         * of our allocation request in the header and also so we can  
-         * allocate CLIENT type blocks specifically  
-         */  
-        bufferN = (long *)_calloc_dbg( 40, sizeof(long), _NORMAL_BLOCK, __FILE__, __LINE__ );  
-        bufferC = (long *)_calloc_dbg( 40, sizeof(long), _CLIENT_BLOCK, __FILE__, __LINE__ );  
-        if( bufferN != NULL && bufferC != NULL )  
-              printf( "Allocated memory successfully\n" );  
-        else  
-              printf( "Problem allocating memory\n" );  
-  
-        /*   
-         * _free_dbg must be called to free CLIENT type blocks  
-         */  
-        free( bufferN );  
-        _free_dbg( bufferC, _CLIENT_BLOCK );  
-}  
-```  
-  
-```Output  
-Allocated memory successfully  
-```  
-  
-## <a name="see-also"></a>参照  
- [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   
- [calloc](../../c-runtime-library/reference/calloc.md)   
- [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)   
- [_DEBUG](../../c-runtime-library/debug.md)
+
+デバッグ ヘッダーと上書きバッファー用の追加の領域を持つ多数のメモリ ブロックをヒープに割り当てます (デバッグ バージョンのみ)。
+
+## <a name="syntax"></a>構文
+
+```C
+void *_calloc_dbg(
+   size_t num,
+   size_t size,
+   int blockType,
+   const char *filename,
+   int linenumber
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*数*<br/>
+要求するメモリ ブロックの数。
+
+*size*<br/>
+要求する各メモリ ブロックのサイズ (バイト)。
+
+*blockType*<br/>
+要求されたメモリ ブロックの型: **_CLIENT_BLOCK**または **_NORMAL_BLOCK**です。
+
+割り当てブロック型と、それらがどのように使用されるかについては、「[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)」を参照してください。
+
+*ファイル名*<br/>
+割り当て操作を要求したソース ファイルの名前へのポインターまたは**NULL**です。
+
+*行番号*<br/>
+割り当て操作が要求されたソース ファイルの数の行または**NULL**です。
+
+*Filename*と*linenumber*パラメーターは、のみ使用可能な場合に **_calloc_dbg**が明示的に呼び出された、または[_CRTDBG_MAP_ALLOC](../../c-runtime-library/crtdbg-map-alloc.md)プリプロセッサ定数が定義されています。
+
+## <a name="return-value"></a>戻り値
+
+正常終了した場合、この関数、最後に割り当てられたメモリ ブロックのユーザー部分へのポインターを返します、新しいハンドラー関数を呼び出し、またはを返します**NULL**です。 戻る動作の詳細については、「解説」のセクションを参照してください。 新しいハンドラー関数がどのように使用されるかの詳細については、[calloc](calloc.md) 関数を参照してください。
+
+## <a name="remarks"></a>コメント
+
+**_calloc_dbg**のデバッグ バージョンは、 [calloc](calloc.md)関数。 ときに[_DEBUG](../../c-runtime-library/debug.md)が定義されていない呼び出しごとに **_calloc_dbg**への呼び出しに減少**calloc**です。 両方**calloc**と **_calloc_dbg**割り当てる*数*はベース ヒープ内のメモリ ブロックしますが、 **_calloc_dbg**いくつかのデバッグには機能:
+
+- リークをテストするための、ブロックのユーザー部分の両側のバッファー。
+
+- 特定の割り当ての種類を追跡するためのブロック型パラメーター。
+
+- *filename*/*linenumber*割り当て要求の起点を特定する情報。
+
+**_calloc_dbg** 、要求したよりも少し多い領域を持つ場合は、各メモリ ブロックを割り当てます*サイズ*です。 追加の領域は、デバッグ メモリ ブロックをリンクし、アプリケーションにデバッグ ヘッダー情報と上書きバッファーを提供するために、デバッグ ヒープ マネージャーによって使用されます。 ブロックが割り当てられると、ブロックのユーザー部分には値 0xCD が設定され、各上書きバッファーには 0xFD が設定されます。
+
+**_calloc_dbg**設定**errno**に**ENOMEM**メモリの割り当てが失敗した場合です。**EINVAL** (前に説明したオーバーヘッドを含む) に必要なメモリの量を超えたかどうかに返される **_HEAP_MAXREQ**です。 このエラー コードと他のエラーコードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。
+
+デバッグ バージョンのベース ヒープに対するメモリ ブロックの割り当て、初期化、管理方法については、「 [CRT Debug Heap Details](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。 標準で呼び出すヒープ関数と、アプリケーションのデバッグ ビルドで呼び出すデバッグ バージョンのヒープ関数との違いの詳細については、「[デバッグ バージョンのヒープ割り当て関数](/visualstudio/debugger/debug-versions-of-heap-allocation-functions)」を参照してください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_calloc_dbg**|\<crtdbg.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_callocd.c
+// This program uses _calloc_dbg to allocate space for
+// 40 long integers. It initializes each element to zero.
+
+#include <stdio.h>
+#include <malloc.h>
+#include <crtdbg.h>
+
+int main( void )
+{
+    long *bufferN, *bufferC;
+
+    // Call _calloc_dbg to include the filename and line number
+    // of our allocation request in the header and also so we can
+    // allocate CLIENT type blocks specifically
+    bufferN = (long *)_calloc_dbg( 40, sizeof(long), _NORMAL_BLOCK, __FILE__, __LINE__ );
+    bufferC = (long *)_calloc_dbg( 40, sizeof(long), _CLIENT_BLOCK, __FILE__, __LINE__ );
+    if( bufferN != NULL && bufferC != NULL )
+        printf( "Allocated memory successfully\n" );
+    else
+        printf( "Problem allocating memory\n" );
+
+    / _free_dbg must be called to free CLIENT type blocks
+    free( bufferN );
+    _free_dbg( bufferC, _CLIENT_BLOCK );
+}
+```
+
+```Output
+Allocated memory successfully
+```
+
+## <a name="see-also"></a>関連項目
+
+[デバッグ ルーチン](../../c-runtime-library/debug-routines.md)<br/>
+[calloc](calloc.md)<br/>
+[_malloc_dbg](malloc-dbg.md)<br/>
+[_DEBUG](../../c-runtime-library/debug.md)<br/>

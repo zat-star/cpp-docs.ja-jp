@@ -48,144 +48,149 @@ helpviewer_keywords:
 - _ftcscmp function
 - ftcscmp function
 ms.assetid: 5d216b57-7a5c-4cb3-abf0-0f4facf4396d
-caps.latest.revision: ''
+caps.latest.revision: 24
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: addc2c215d0c914e3caee3dba4d32f94ca91e62c
-ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
+ms.openlocfilehash: f9eabb1f7afb860865ecd5526f7577263ccee1e6
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="strcmp-wcscmp-mbscmp"></a>strcmp、wcscmp、_mbscmp
-文字列を比較します。  
-  
+
+文字列を比較します。
+
 > [!IMPORTANT]
->  `_mbscmp` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int strcmp(  
-   const char *string1,  
-   const char *string2   
-);  
-int wcscmp(  
-   const wchar_t *string1,  
-   const wchar_t *string2   
-);  
-int _mbscmp(  
-   const unsigned char *string1,  
-   const unsigned char *string2   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `string1`, `string2`  
- Null で終わる比較対象の文字列。  
-  
-## <a name="return-value"></a>戻り値  
- これらの各関数の戻り値は、`string1` から `string2` に対する、序数に基づく関係を示します。  
-  
-|値|string1 と string2 との関係|  
-|-----------|----------------------------------------|  
-|< 0|`string1` は `string2` より小さい|  
-|0|`string1` は `string2` と同じ|  
-|> 0|`string1` は `string2` より大きい|  
-  
- パラメーター検証エラーが発生した場合、`_mbscmp` は `_NLSCMPERROR` を返します。これは、\<string.h> および \<mbstring.h> で定義されています。  
-  
-## <a name="remarks"></a>コメント  
- `strcmp` 関数は、`string1` と `string2` で序数に基づく比較を実行して、その関係を示す値を返します。 `wcscmp` 関数と `_mbscmp` 関数は、それぞれ、`strcmp` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 `_mbscmp` は現在のマルチバイト コード ページに基づいてマルチバイト文字のシーケンスを認識し、エラーが発生した場合は `_NLSCMPERROR` を返します 詳細については、「[コード ページ](../../c-runtime-library/code-pages.md)」をご覧ください。 また、`string1` または `string2` が Null ポインターの場合、`_mbscmp` は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、`_mbscmp` は `_NLSCMPERROR` を返し、`errno` を `EINVAL` に設定します。 `strcmp` および `wcscmp` は、パラメーターを検証しません。 それ以外では、これらの関数の動作は同じです。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_tcscmp`|`strcmp`|`_mbscmp`|`wcscmp`|  
-  
- 
-          `strcmp` 関数と `strcoll` 関数の相違点は、`strcmp` が序数に基づく比較を行い、ロケールに影響されない点です。 `strcoll` は現在のロケールの `LC_COLLATE` カテゴリを使用して、文字列を辞書順で比較します。 `LC_COLLATE` カテゴリの詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。  
-  
- "C"ロケールでは、文字セット (ASCII 文字セット) 内の文字の順序は、辞書式文字順序と同じです。 ただし、その他のロケールでは、文字セット内の文字の順序が辞書式順序と異なる場合があります。 たとえば、ヨーロッパの一部のロケールでは、文字 'a' (値 0x61) は文字セットで文字 'ä' (値 0xE4) の前にありますが、辞書式の順序では文字 'ä' が文字 'a' の前にあります。  
-  
- 文字セットと辞書式文字順序が異なるロケールでは、文字列の辞書式比較をするために `strcoll` の代わりに `strcmp` を使用できます。 あるいは、元の文字列に対して `strxfrm` を使用して、結果の文字列に対して `strcmp` を使用できます。  
-  
- `strcmp` 関数では、大文字と小文字が区別されます。 `_stricmp`、`_wcsicmp`、および `_mbsicmp` は、文字列を最初に小文字の形式に変換してから比較します。 ASCII の表の 'Z' と 'a' の間にある文字 ('['、'`\`'、']'、'`^`'、'`_`'、および '```') を含む 2 つの文字列は、大文字と小文字によって異なる方法で比較されます。 たとえば、`"ABCDE"` と `"ABCD^"` の 2 つの文字列を比較する場合、小文字で比較する場合 (`"abcde"` > `"abcd^"`) と、大文字で比較する場合 (`"ABCDE"` < `"ABCD^"`) で方法が異なります。  
-  
-## <a name="requirements"></a>要件  
-  
-|ルーチン|必須ヘッダー|  
-|-------------|---------------------|  
-|`strcmp`|<string.h>|  
-|`wcscmp`|<string.h> または <wchar.h>|  
-|`_mbscmp`|\<mbstring.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_strcmp.c  
-  
-#include <string.h>  
-#include <stdio.h>  
-#include <stdlib.h>  
-  
-char string1[] = "The quick brown dog jumps over the lazy fox";  
-char string2[] = "The QUICK brown dog jumps over the lazy fox";  
-  
-int main( void )  
-{  
-   char tmp[20];  
-   int result;  
-  
-   // Case sensitive  
-   printf( "Compare strings:\n   %s\n   %s\n\n", string1, string2 );  
-   result = strcmp( string1, string2 );  
-   if( result > 0 )  
-      strcpy_s( tmp, _countof(tmp), "greater than" );  
-   else if( result < 0 )  
-      strcpy_s( tmp, _countof (tmp), "less than" );  
-   else  
-      strcpy_s( tmp, _countof (tmp), "equal to" );  
-   printf( "   strcmp:   String 1 is %s string 2\n", tmp );  
-  
-   // Case insensitive (could use equivalent _stricmp)  
-   result = _stricmp( string1, string2 );  
-   if( result > 0 )  
-      strcpy_s( tmp, _countof (tmp), "greater than" );  
-   else if( result < 0 )  
-      strcpy_s( tmp, _countof (tmp), "less than" );  
-   else  
-      strcpy_s( tmp, _countof (tmp), "equal to" );  
-   printf( "   _stricmp:  String 1 is %s string 2\n", tmp );  
-}  
-```  
-  
-```Output  
-Compare strings:  
-   The quick brown dog jumps over the lazy fox  
-   The QUICK brown dog jumps over the lazy fox  
-  
-   strcmp:   String 1 is greater than string 2  
-   _stricmp:  String 1 is equal to string 2  
-```  
-  
-## <a name="see-also"></a>関連項目  
- [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [memcmp、wmemcmp](../../c-runtime-library/reference/memcmp-wmemcmp.md)   
- [_memicmp、_memicmp_l](../../c-runtime-library/reference/memicmp-memicmp-l.md)   
- [strcoll 関数](../../c-runtime-library/strcoll-functions.md)   
- [_stricmp、_wcsicmp、_mbsicmp、_stricmp_l、_wcsicmp_l、_mbsicmp_l](../../c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md)   
- [strncmp、wcsncmp、_mbsncmp、_mbsncmp_l](../../c-runtime-library/reference/strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)   
- [_strnicmp、_wcsnicmp、_mbsnicmp、_strnicmp_l、_wcsnicmp_l、_mbsnicmp_l](../../c-runtime-library/reference/strnicmp-wcsnicmp-mbsnicmp-strnicmp-l-wcsnicmp-l-mbsnicmp-l.md)   
- [strrchr、wcsrchr、_mbsrchr、_mbsrchr_l](../../c-runtime-library/reference/strrchr-wcsrchr-mbsrchr-mbsrchr-l.md)   
- [strspn、wcsspn、_mbsspn、_mbsspn_l](../../c-runtime-library/reference/strspn-wcsspn-mbsspn-mbsspn-l.md)   
- [strxfrm、wcsxfrm、_strxfrm_l、_wcsxfrm_l](../../c-runtime-library/reference/strxfrm-wcsxfrm-strxfrm-l-wcsxfrm-l.md)
+> **_mbscmp** Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+int strcmp(
+   const char *string1,
+   const char *string2
+);
+int wcscmp(
+   const wchar_t *string1,
+   const wchar_t *string2
+);
+int _mbscmp(
+   const unsigned char *string1,
+   const unsigned char *string2
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*string1*、 *string2*<br/>
+Null で終わる比較対象の文字列。
+
+## <a name="return-value"></a>戻り値
+
+これらの各関数の戻り値の序数に基づく関係を示す*string1*に*string2*です。
+
+|[値]|string1 と string2 との関係|
+|-----------|----------------------------------------|
+|< 0|*string1*はより小さい*string2*|
+|0|*string1*と同じ*string2*|
+|> 0|*string1*がより大きい*string2*|
+
+パラメーター検証エラーが発生した、 **_mbscmp**返します**すると**で定義されている\<string.h > と\<mbstring.h >。
+
+## <a name="remarks"></a>コメント
+
+**Strcmp**関数の実行の序数に基づく比較*string1*と*string2*の関係を示す値を返します。 **wcscmp**と **_mbscmp**は、それぞれ、ワイド文字とマルチバイト文字のバージョンの**strcmp**です。 **_mbscmp**現在のマルチバイト コード ページに基づいてマルチバイト文字シーケンスを認識し、返します**すると**エラーが発生します。 詳細については、「[コード ページ](../../c-runtime-library/code-pages.md)」をご覧ください。 また場合、 *string1*または*string2* null ポインターでは、 **_mbscmp** 」の説明に従って、無効なパラメーター ハンドラーを呼び出します[パラメーターの検証](../../c-runtime-library/parameter-validation.md). 続けるには、実行が許可された場合 **_mbscmp**返します**すると**設定と**errno**に**EINVAL**です。 **strcmp**と**wcscmp**はそのパラメーターを検証しません。 それ以外では、これらの関数の動作は同じです。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_tcscmp**|**strcmp**|**_mbscmp**|**wcscmp**|
+
+**Strcmp**とは異なり、 **strcoll 系**で関数**strcmp**比較は、序数に基づくし、ロケールの影響は受けません。 **strcoll 系**を使用して文字列を辞書式比較、 **LC_COLLATE**の現在のロケールのカテゴリ。 詳細については、 **LC_COLLATE**カテゴリを参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)です。
+
+"C"ロケールでは、文字セット (ASCII 文字セット) 内の文字の順序は、辞書式文字順序と同じです。 ただし、その他のロケールでは、文字セット内の文字の順序が辞書式順序と異なる場合があります。 たとえば、ヨーロッパの一部のロケールでは、文字 'a' (値 0x61) は文字セットで文字 'ä' (値 0xE4) の前にありますが、辞書式の順序では文字 'ä' が文字 'a' の前にあります。
+
+対象の文字セットと辞書式文字順序が異なるロケールで使用できます**strcoll 系**の代わりに**strcmp**の文字列の辞書式比較します。 また、使用することができます**strxfrm**しを使用して、元の文字列、 **strcmp**結果の文字列でします。
+
+**Strcmp**関数は、大文字小文字を区別します。 **_stricmp**、 **_wcsicmp**、および **_mbsicmp**最初に変換してに小文字の形式の文字列を比較します。 'Z' の間にある文字を含む 2 つの文字列と ASCII の表の 'a' ('[','\\'、']'、' ^'、'_' と'\`')、場合に応じて異なる方法で、比較します。 "ABCDE"を文字列 2 などと"ABCD ^"、比較が小文字である場合は、1 つの方法を比較 ("abcde">"abcd ^") とは別の方法 ("ABCDE"<"ABCD ^") 比較が大文字の場合。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**strcmp**|<string.h>|
+|**wcscmp**|<string.h> または <wchar.h>|
+|**_mbscmp**|\<mbstring.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="example"></a>例
+
+```C
+// crt_strcmp.c
+
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+char string1[] = "The quick brown dog jumps over the lazy fox";
+char string2[] = "The QUICK brown dog jumps over the lazy fox";
+
+int main( void )
+{
+   char tmp[20];
+   int result;
+
+   // Case sensitive
+   printf( "Compare strings:\n   %s\n   %s\n\n", string1, string2 );
+   result = strcmp( string1, string2 );
+   if( result > 0 )
+      strcpy_s( tmp, _countof(tmp), "greater than" );
+   else if( result < 0 )
+      strcpy_s( tmp, _countof (tmp), "less than" );
+   else
+      strcpy_s( tmp, _countof (tmp), "equal to" );
+   printf( "   strcmp:   String 1 is %s string 2\n", tmp );
+
+   // Case insensitive (could use equivalent _stricmp)
+   result = _stricmp( string1, string2 );
+   if( result > 0 )
+      strcpy_s( tmp, _countof (tmp), "greater than" );
+   else if( result < 0 )
+      strcpy_s( tmp, _countof (tmp), "less than" );
+   else
+      strcpy_s( tmp, _countof (tmp), "equal to" );
+   printf( "   _stricmp:  String 1 is %s string 2\n", tmp );
+}
+```
+
+```Output
+Compare strings:
+   The quick brown dog jumps over the lazy fox
+   The QUICK brown dog jumps over the lazy fox
+
+   strcmp:   String 1 is greater than string 2
+   _stricmp:  String 1 is equal to string 2
+```
+
+## <a name="see-also"></a>関連項目
+
+[文字列操作](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[memcmp、wmemcmp](memcmp-wmemcmp.md)<br/>
+[_memicmp、_memicmp_l](memicmp-memicmp-l.md)<br/>
+[strcoll 系関数](../../c-runtime-library/strcoll-functions.md)<br/>
+[_stricmp、_wcsicmp、_mbsicmp、_stricmp_l、_wcsicmp_l、_mbsicmp_l](stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md)<br/>
+[strncmp、wcsncmp、_mbsncmp、_mbsncmp_l](strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)<br/>
+[_strnicmp、_wcsnicmp、_mbsnicmp、_strnicmp_l、_wcsnicmp_l、_mbsnicmp_l](strnicmp-wcsnicmp-mbsnicmp-strnicmp-l-wcsnicmp-l-mbsnicmp-l.md)<br/>
+[strrchr、wcsrchr、_mbsrchr、_mbsrchr_l](strrchr-wcsrchr-mbsrchr-mbsrchr-l.md)<br/>
+[strspn、wcsspn、_mbsspn、_mbsspn_l](strspn-wcsspn-mbsspn-mbsspn-l.md)<br/>
+[strxfrm、wcsxfrm、_strxfrm_l、_wcsxfrm_l](strxfrm-wcsxfrm-strxfrm-l-wcsxfrm-l.md)<br/>

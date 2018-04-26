@@ -1,12 +1,12 @@
 ---
-title: "isnan、_isnan、_isnanf | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: isnan、_isnan、_isnanf | Microsoft Docs
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _isnan
@@ -41,68 +41,73 @@ helpviewer_keywords:
 - Not a Number (NANs)
 - isnan function
 ms.assetid: 391fbc5b-89a4-4fba-997e-68f1131caf82
-caps.latest.revision: 
+caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 10d0997b1a6b304634c612f0f1615a059fd812b2
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 6b8552f59bc0d49ebae0d4a534225af5d9f5facb
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="isnan-isnan-isnanf"></a>isnan、_isnan、_isnanf
-浮動小数点値が非数 (NaN) かどうかをテストします。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int isnan(  
-   /* floating-point */ x   
-); /* C-only macro */  
-  
-int _isnan(  
-   double x   
-);  
-  
-int _isnanf(  
-   float x  
-); /* x64 only */  
-  
-template <class T>  
-bool isnan(  
-   T x  
-) throw(); /* C++ only */  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- *x*  
- テストする浮動小数点値。  
-  
-## <a name="return-value"></a>戻り値  
- C では、引数 `x` が NaN の場合、`isnan` マクロおよび `_isnan` と `_isnanf` の関数は 0 以外の値を返します。それ以外の場合は 0 を返します。  
-  
- C++ では、引数 `x` が NaN の場合、`isnan` テンプレート関数は `true` を返します。それ以外の場合は `false` を返します。  
-  
-## <a name="remarks"></a>コメント  
- C の `isnan` マクロおよび `_isnan` と `_isnanf` の関数は、浮動小数点値 *x* をテストして、*x* が非数 (NaN) の値の場合は 0 以外の値を返します。 NaN は、浮動小数点演算の結果が IEEE-754 浮動小数点形式の指定した型で表現できない場合に生成されます。 出力で NaN が表現される方法の詳細については、「[printf](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)」をご覧ください。  
-  
- C++ としてコンパイルするとき、`isnan`マクロが定義されていないと、`isnan`テンプレート関数が代わりに定義されています。 型の値を返します`bool`整数ではなくです。  
-  
- `_isnan` と `_isnanf` の関数は、Microsoft 固有の関数です。 `_isnanf` 関数は、x64 用にコンパイルするときにのみ使用できます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー (C)|必須ヘッダー (C++)|  
-|-------------|---------------------------|-------------------------------|  
-|`isnan`, `_isnanf`|\<math.h>|\<math.h> または \<cmath>|  
-|`_isnan`|\<float.h>|\<float.h> または \<cfloat>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [_finite、_finitef](../../c-runtime-library/reference/finite-finitef.md)   
- [_fpclass、_fpclassf](../../c-runtime-library/reference/fpclass-fpclassf.md)
+
+浮動小数点値が非数 (NaN) かどうかをテストします。
+
+## <a name="syntax"></a>構文
+
+```C
+int isnan(
+   /* floating-point */ x
+); /* C-only macro */
+
+int _isnan(
+   double x
+);
+
+int _isnanf(
+   float x
+); /* x64 only */
+
+template <class T>
+bool isnan(
+   T x
+) throw(); /* C++ only */
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+テストする浮動小数点値。
+
+## <a name="return-value"></a>戻り値
+
+C では、 **isnan**マクロと **_isnan**と **_isnanf**場合、関数は 0 以外の値を返す引数*x* nan ですそれ以外の場合、。0 を返します。
+
+C++ では、 **isnan**テンプレート関数を返します**true**場合引数*x* nan です。 それ以外の場合を返します**false**。
+
+## <a name="remarks"></a>コメント
+
+C **isnan**マクロと **_isnan**と **_isnanf**関数は浮動小数点値をテスト*x*場合は、0 以外の値を返す*x*ない数 (NAN) 値です。 NaN は、浮動小数点演算の結果が IEEE-754 浮動小数点形式の指定した型で表現できない場合に生成されます。 出力で NaN が表現される方法の詳細については、「[printf](printf-printf-l-wprintf-wprintf-l.md)」をご覧ください。
+
+C++ としてコンパイルするとき、 **isnan**マクロが定義されていないと、 **isnan**テンプレート関数が代わりに定義されています。 型の値を返します**bool**整数ではなくです。
+
+**_Isnan**と **_isnanf**関数は、Microsoft 固有の仕様です。 **_Isnanf**関数は、x64 用にコンパイルされたときに使用できるのみです。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー (C)|必須ヘッダー (C++)|
+|-------------|---------------------------|-------------------------------|
+|**isnan**、 **_isnanf**|\<math.h>|\<math.h> または \<cmath>|
+|**_isnan**|\<float.h>|\<float.h> または \<cfloat>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[_finite、_finitef](finite-finitef.md)<br/>
+[_fpclass、_fpclassf](fpclass-fpclassf.md)<br/>

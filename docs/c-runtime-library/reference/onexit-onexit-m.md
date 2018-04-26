@@ -1,12 +1,12 @@
 ---
-title: "_onexit、_onexit_m | Microsoft Docs"
-ms.custom: 
+title: _onexit、_onexit_m | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _onexit
@@ -39,108 +39,113 @@ helpviewer_keywords:
 - registering exit routines
 - registering to be called on exit
 ms.assetid: 45743298-0e2f-46cf-966d-1ca44babb443
-caps.latest.revision: 
+caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: caa4c732449864c4803a25f3bb123c43495f5fc1
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: ac59e64c1e47d699170af772aeba60a7895dfdc2
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="onexit-onexitm"></a>_onexit、_onexit_m
-終了時に呼び出されるルーチンを登録します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-_onexit_t _onexit(  
-   _onexit_t function  
-);  
-_onexit_t_m _onexit_m(  
-   _onexit_t_m function  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `function`  
- 終了時に呼び出される関数へのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- `_onexit` は、成功した場合、関数へのポインターを返し、関数ポインターを格納する領域がない場合は、`NULL` を返します。  
-  
-## <a name="remarks"></a>コメント  
- `_onexit` 関数には、プログラムが正常に終了したときに呼び出される関数 (`function`) のアドレスが渡されます。 `_onexit` を連続して呼び出すと、LIFO (後入先出法) 順で実行される関数のレジスタが作成されます。 `_onexit` に渡される関数は、パラメーターを受け取ることはできません。  
-  
- `_onexit` が DLL 内から呼び出されると、`_onexit` で登録されたルーチンは、`DllMain` が DLL_PROCESS_DETACH で呼び出された後、DLL のアンロード時に実行されます。  
-  
- `_onexit` は Microsoft 拡張機能です。 ANSI の移植性のためには、[atexit](../../c-runtime-library/reference/atexit.md) を使用します。 `_onexit_m` バージョンの関数は、混在モード用です。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_onexit`|\<stdlib.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_onexit.c  
-  
-#include <stdlib.h>  
-#include <stdio.h>  
-  
-/* Prototypes */  
-int fn1(void), fn2(void), fn3(void), fn4 (void);  
-  
-int main( void )  
-{  
-   _onexit( fn1 );  
-   _onexit( fn2 );  
-   _onexit( fn3 );  
-   _onexit( fn4 );  
-   printf( "This is executed first.\n" );  
-}  
-  
-int fn1()  
-{  
-   printf( "next.\n" );  
-   return 0;  
-}  
-  
-int fn2()  
-{  
-   printf( "executed " );  
-   return 0;  
-}  
-  
-int fn3()  
-{  
-   printf( "is " );  
-   return 0;  
-}  
-  
-int fn4()  
-{  
-   printf( "This " );  
-   return 0;  
-}  
-```  
-  
-## <a name="output"></a>出力  
-  
-```  
-This is executed first.  
-This is executed next.  
-```  
-  
-## <a name="see-also"></a>参照  
- [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
- [atexit](../../c-runtime-library/reference/atexit.md)   
- [exit、_Exit、_exit](../../c-runtime-library/reference/exit-exit-exit.md)   
- [__dllonexit](../../c-runtime-library/dllonexit.md)
+
+終了時に呼び出されるルーチンを登録します。
+
+## <a name="syntax"></a>構文
+
+```C
+_onexit_t _onexit(
+   _onexit_t function
+);
+_onexit_t_m _onexit_m(
+   _onexit_t_m function
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*function*<br/>
+終了時に呼び出される関数へのポインター。
+
+## <a name="return-value"></a>戻り値
+
+**_onexit**正常終了した場合、関数へのポインターを返しますまたは**NULL**関数ポインターを格納する領域がない場合。
+
+## <a name="remarks"></a>コメント
+
+**_Onexit**関数には、関数のアドレスが渡されます (*関数*) プログラムが正常に終了したときに呼び出されます。 連続して呼び出す **_onexit** LIFO (最後に、先出し) の順序で実行される関数の登録を作成します。 渡される関数は、 **_onexit**パラメーターを受け取ることはできません。
+
+場合と **_onexit**ルーチンに登録されている、DLL 内から呼び出さ **_onexit** DLL の実行の後にアンロードする**DllMain**がありますで呼び出されます。
+
+**_onexit**は Microsoft 拡張機能です。 ANSI の移植性のためには、[atexit](atexit.md) を使用します。 **_Onexit_m**関数のバージョンは、混在モードの使用。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_onexit**|\<stdlib.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_onexit.c
+
+#include <stdlib.h>
+#include <stdio.h>
+
+/* Prototypes */
+int fn1(void), fn2(void), fn3(void), fn4 (void);
+
+int main( void )
+{
+   _onexit( fn1 );
+   _onexit( fn2 );
+   _onexit( fn3 );
+   _onexit( fn4 );
+   printf( "This is executed first.\n" );
+}
+
+int fn1()
+{
+   printf( "next.\n" );
+   return 0;
+}
+
+int fn2()
+{
+   printf( "executed " );
+   return 0;
+}
+
+int fn3()
+{
+   printf( "is " );
+   return 0;
+}
+
+int fn4()
+{
+   printf( "This " );
+   return 0;
+}
+```
+
+### <a name="output"></a>出力
+
+```Output
+This is executed first.
+This is executed next.
+```
+
+## <a name="see-also"></a>関連項目
+
+[プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)<br/>
+[atexit](atexit.md)<br/>
+[exit、_Exit、_exit](exit-exit-exit.md)<br/>
+[__dllonexit](../../c-runtime-library/dllonexit.md)<br/>

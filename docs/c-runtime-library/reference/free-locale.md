@@ -1,12 +1,12 @@
 ---
 title: _free_locale | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _free_locale
@@ -35,46 +35,49 @@ helpviewer_keywords:
 - locales, freeing
 - _free_locale function
 ms.assetid: 1f08d348-ab32-4028-a145-6cbd51b49af9
-caps.latest.revision: 
+caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1baa1458d3e799d2370092b7d8f96ee9fe4a359e
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 23e1333d7649b6d1ce24ee1bb7840e0389edb908
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="freelocale"></a>_free_locale
-ロケール オブジェクトを解放します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void _free_locale(  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `locale`  
- 解放するロケール オブジェクト。  
-  
-## <a name="remarks"></a>コメント  
- `_get_current_locale` または `_create_locale` の呼び出しから取得されたとロケール オブジェクトを解放するには、`_free_locale` 関数を使用します。  
-  
- この関数の以前の名前 `__free_locale` (先頭に 2 個のアンダースコア) は、使用されなくなりました。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|`Routine`|必須ヘッダー|  
-|---------------|---------------------|  
-|`_free_locale`|\<locale.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [_get_current_locale](../../c-runtime-library/reference/get-current-locale.md)   
- [_create_locale、_wcreate_locale](../../c-runtime-library/reference/create-locale-wcreate-locale.md)
+
+ロケール オブジェクトを解放します。
+
+## <a name="syntax"></a>構文
+
+```C
+void _free_locale(
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ロケール*ロケール オブジェクトを解放します。
+
+## <a name="remarks"></a>コメント
+
+**_Free_locale**への呼び出しから取得したロケール オブジェクトを解放する関数が使用される **_get_current_locale**または **_create_locale**です。
+
+この関数の以前の名前 **_ _free_locale** (2 つのアンダー) は推奨されていません。
+
+## <a name="requirements"></a>要件
+
+|**ルーチン**|必須ヘッダー|
+|---------------|---------------------|
+|**_free_locale**|\<locale.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[_get_current_locale](get-current-locale.md)<br/>
+[_create_locale、_wcreate_locale](create-locale-wcreate-locale.md)<br/>

@@ -1,10 +1,10 @@
 ---
-title: "&lt;ostream&gt; 関数 | Microsoft Docs"
-ms.custom: 
+title: '&lt;ostream&gt; 関数 | Microsoft Docs'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - ostream/std::swap
@@ -12,18 +12,18 @@ f1_keywords:
 - ostream/std::ends
 - ostream/std::flush
 ms.assetid: d6e56cc0-c8df-4dbe-be10-98e14c35ed3a
-caps.latest.revision: 
+caps.latest.revision: 15
 manager: ghogen
 helpviewer_keywords:
 - std::swap [C++]
 - std::endl [C++]
 - std::ends [C++]
 - std::flush [C++]
-ms.openlocfilehash: 4693e33563048807cdef1c81cb4d47d4fb455137
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: 41463d912b3ab33812a1f7c0a0ea5f8172036e57
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ltostreamgt-functions"></a>&lt;ostream&gt; 関数
 
@@ -39,21 +39,18 @@ ms.lasthandoff: 02/23/2018
 行を終了し、バッファーをフラッシュします。
 
 ```cpp
-template class<Elem, Tr> 
+template class<Elem, Tr>
 basic_ostream<Elem, Tr>& endl(
    basic_ostream<Elem, Tr>& Ostr);
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-*Elem*  
-要素型。
+*Elem*要素の型。
 
-*Ostr*  
-型のオブジェクト**basic_ostream**です。
+*Ostr*型のオブジェクト**basic_ostream**です。
 
-*Tr*  
-文字の特徴 (traits)。
+*Tr*文字の特徴 (traits)。
 
 ### <a name="return-value"></a>戻り値
 
@@ -86,21 +83,18 @@ testing
 文字列を終了します。
 
 ```cpp
-template class<Elem, Tr> 
+template class<Elem, Tr>
 basic_ostream<Elem, Tr>& ends(
    basic_ostream<Elem, Tr>& Ostr);
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-*Elem*  
-要素型。
+*Elem*要素の型。
 
-*Ostr*  
-型のオブジェクト**basic_ostream**です。
+*Ostr*型のオブジェクト**basic_ostream**です。
 
-*Tr*  
-文字の特徴 (traits)。
+*Tr*文字の特徴 (traits)。
 
 ### <a name="return-value"></a>戻り値
 
@@ -142,14 +136,11 @@ basic_ostream<Elem, Tr>& flush(
 
 ### <a name="parameters"></a>パラメーター
 
-*Elem*  
-要素型。
+*Elem*要素の型。
 
-*Ostr*  
-型のオブジェクト**basic_ostream**です。
+*Ostr*型のオブジェクト**basic_ostream**です。
 
-*Tr*  
-文字の特徴 (traits)。
+*Tr*文字の特徴 (traits)。
 
 ### <a name="return-value"></a>戻り値
 
@@ -190,17 +181,13 @@ void swap(
 
 ### <a name="parameters"></a>パラメーター
 
-*Elem*  
-要素型。
+*Elem*要素の型。
 
-*Tr*  
-文字の特徴 (traits)。
+*Tr*文字の特徴 (traits)。
 
-*left*  
-左辺値参照、 **basic_ostream**オブジェクト。
+*左*への左辺値参照、 **basic_ostream**オブジェクト。
 
-*right*  
-左辺値参照、 **basic_ostream**オブジェクト。
+*右*への左辺値参照、 **basic_ostream**オブジェクト。
 
 ### <a name="remarks"></a>コメント
 
@@ -208,4 +195,4 @@ void swap(
 
 ## <a name="see-also"></a>関連項目
 
-[\<ostream>](../standard-library/ostream.md)  
+[\<ostream>](../standard-library/ostream.md)

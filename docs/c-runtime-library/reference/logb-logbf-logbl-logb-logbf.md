@@ -1,12 +1,12 @@
 ---
-title: "logb、logbf、logbl、_logb、_logbf | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: logb、logbf、logbl、_logb、_logbf | Microsoft Docs
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - logb
@@ -47,76 +47,82 @@ helpviewer_keywords:
 - floating-point functions, mantissa and exponent
 - exponents and mantissas
 ms.assetid: 780c4daa-6fe6-4fbc-9412-4c1ba1a1766f
-caps.latest.revision: 
+caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8f2c1ad71f5f81b7e21e788e8cdbeb9edce60944
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 5f279d2b31ba9a40dd3d5c0e5d3c50e5a9a4b170
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="logb-logbf-logbl-logb-logbf"></a>logb、logbf、logbl、_logb、_logbf
-浮動小数点引数の指数の値を抽出します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double logb(  
-   double x   
-);  
-float logb(  
-   float x   
-); // C++ only  
-long double logb(  
-   long double x   
-); // C++ only   
-float logbf(  
-   float x   
-);  
-long double logbl(  
-   long double x   
-);  
-double _logb(  
-   double x   
-);  
-float _logbf(  
-   float x   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- x  
- 浮動小数点値。  
-  
-## <a name="return-value"></a>戻り値  
- `logb` は、符号付き整数が浮動小数点値として示すように `x` の公平な指数値を返します。  
-  
-## <a name="remarks"></a>コメント  
- `logb` 関数は `x` が無限範囲で示されているかのように、浮動小数点引数 `x` の指数値を抽出します。 引数 `x` が非正規化されている場合でも、正規化されているかのように扱われます。  
-  
- C++ ではオーバーロードが可能であるため、`logb` または `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`logb` は常に `double` を受け取って返します。  
-  
-|入力|SEH 例外|Matherr 例外|  
-|-----------|-------------------|-----------------------|  
-|± QNAN、IND|なし|_DOMAIN|  
-|± 0|ZERODIVIDE|_SING|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_logb`|\<float.h>|  
-|`logb`, `logbf`, `logbl`, `_logbf`|\<math.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [frexp](../../c-runtime-library/reference/frexp.md)
+
+浮動小数点引数の指数の値を抽出します。
+
+## <a name="syntax"></a>構文
+
+```C
+double logb(
+   double x
+);
+float logb(
+   float x
+); // C++ only
+long double logb(
+   long double x
+); // C++ only
+float logbf(
+   float x
+);
+long double logbl(
+   long double x
+);
+double _logb(
+   double x
+);
+float _logbf(
+   float x
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+浮動小数点値。
+
+## <a name="return-value"></a>戻り値
+
+**logb**の公平な指数値を返します*x*として、符号付き整数の浮動小数点値として表されます。
+
+## <a name="remarks"></a>コメント
+
+**Logb**関数は、浮動小数点引数の指数値を抽出*x*場合と同様、 *x*無限範囲で示されています。 場合、引数*x*は非正規化、そのとして扱われます正規化されています。
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**logb**を受け取り、返します**float**または**長い****二重**値。 C プログラムでは、 **logb**常に受け取りを返す、**二重**です。
+
+|入力|SEH 例外|Matherr 例外|
+|-----------|-------------------|-----------------------|
+|± QNAN、IND|なし|_DOMAIN|
+|± 0|ZERODIVIDE|_SING|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_logb**|\<float.h>|
+|**logb**、 **logbf**、 **logbl**、 **_logbf**|\<math.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[frexp](frexp.md)<br/>

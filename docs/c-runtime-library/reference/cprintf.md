@@ -1,12 +1,12 @@
 ---
 title: cprintf | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - cprintf
@@ -29,20 +29,21 @@ dev_langs:
 helpviewer_keywords:
 - cprintf function
 ms.assetid: 573e6634-d7e5-4856-8c01-627dcfbd5fc8
-caps.latest.revision: 
+caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 02343c408c696ce1774e110ab7395c2b38cbd302
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 4ccd797d72d730c538e4043fa4a1e2ee3a778254
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="cprintf"></a>cprintf
-この POSIX 関数は使用されなくなりました。 代わりに ISO C++ 準拠の [_cprintf](../../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md) またはセキュリティが強化された [_cprintf_s](../../c-runtime-library/reference/cprintf-s-cprintf-s-l-cwprintf-s-cwprintf-s-l.md) を使用してください。  
-  
+
+この POSIX 関数は非推奨とされます。 代わりに ISO C++ 準拠の [_cprintf](cprintf-cprintf-l-cwprintf-cwprintf-l.md) またはセキュリティが強化された [_cprintf_s](cprintf-s-cprintf-s-l-cwprintf-s-cwprintf-s-l.md) を使用してください。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。

@@ -1,12 +1,12 @@
 ---
-title: "_tempnam_dbg、_wtempnam_dbg | Microsoft Docs"
-ms.custom: 
+title: _tempnam_dbg、_wtempnam_dbg | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _wtempnam_dbg
@@ -39,82 +39,87 @@ helpviewer_keywords:
 - _tempnam_dbg function
 - _wtempnam_dbg function
 ms.assetid: e3760bb4-bb01-4808-b689-2c45af56a170
-caps.latest.revision: 
+caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7fc8ef1427937ce4f263c81c55100045b30d24a3
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 28b917ce2f50d9b766fd305f3320664d11e93da2
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="tempnamdbg-wtempnamdbg"></a>_tempnam_dbg、_wtempnam_dbg
-`malloc, _malloc_dbg` デバッグ バージョンを使用する [_tempnam、_wtempnam、tmpnam、_wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md) の関数バージョン。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *_tempnam_dbg(  
-   const char *dir,  
-   const char *prefix,  
-   int blockType,  
-   const char *filename,  
-   int linenumber   
-);  
-wchar_t *_wtempnam_dbg(  
-   const wchar_t *dir,  
-   const wchar_t *prefix,  
-   int blockType,  
-   const char *filename,  
-   int linenumber   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `dir`  
- TMP 環境変数がない場合、または TMP が有効なディレクトリではない場合にファイル名で使用されるパス。  
-  
- `prefix`  
- `_tempnam` によって返された名前の前に付けられる文字列。  
-  
- `blockType`  
- 要求するメモリ ブロックの種類。`_CLIENT_BLOCK` または `_NORMAL_BLOCK`。  
-  
- `filename`  
- 割り当て操作を要求したソース ファイル名へのポインターまたは `NULL`。  
-  
- `linenumber`  
- 割り当て操作が要求されたソース ファイル内の行番号または `NULL`。  
-  
-## <a name="return-value"></a>戻り値  
- 各関数は、生成された名前へのポインター、または失敗した場合は `NULL` を返します。 TMP 環境変数および `dir` パラメーターに無効なディレクトリ名が指定されている場合は、失敗する可能性があります。  
-  
+
+関数バージョン[_tempnam、_wtempnam、tmpnam、_wtmpnam](tempnam-wtempnam-tmpnam-wtmpnam.md)のデバッグ バージョンを使用する**malloc**、 **_malloc_dbg**です。
+
+## <a name="syntax"></a>構文
+
+```C
+char *_tempnam_dbg(
+   const char *dir,
+   const char *prefix,
+   int blockType,
+   const char *filename,
+   int linenumber
+);
+wchar_t *_wtempnam_dbg(
+   const wchar_t *dir,
+   const wchar_t *prefix,
+   int blockType,
+   const char *filename,
+   int linenumber
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*dir*<br/>
+TMP 環境変数がない場合、または TMP が有効なディレクトリではない場合にファイル名で使用されるパス。
+
+*prefix*<br/>
+によって返された名前の前に付けられる文字列 **_tempnam**です。
+
+*blockType*<br/>
+要求されたメモリ ブロックの型: **_CLIENT_BLOCK**または **_NORMAL_BLOCK**です。
+
+*ファイル名*<br/>
+割り当て操作を要求したソース ファイルの名前へのポインターまたは**NULL**です。
+
+*行番号*<br/>
+割り当て操作が要求されたソース ファイルの数の行または**NULL**です。
+
+## <a name="return-value"></a>戻り値
+
+各関数が生成されるファイル名へのポインターを返しますまたは**NULL**障害が発生した場合。 TMP 環境変数で指定された無効なディレクトリ名がある場合、エラーが発生することができます、 *dir*パラメーター。
+
 > [!NOTE]
->  `free` および `free_dbg` によって割り当てられたポインターに対して、`_tempnam_dbg` (または `_wtempnam_dbg`) を呼び出す必要があります。  
-  
-## <a name="remarks"></a>コメント  
- `_tempnam_dbg`と`_wtempnam_dbg`関数と同じ`_tempnam`と`_wtempnam`する点を除いて、`_DEBUG`が定義されている場合、これらの関数でのデバッグ バージョンを使用`malloc`と`_malloc_dbg`メモリを割り当てる場合`NULL`は最初のパラメーターとして渡されます。 詳細については、「[_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)」をご覧ください。  
-  
- 多くの場合、これらの関数を明示的に呼び出す必要はありません。 代わりに、フラグ `_CRTDBG_MAP_ALLOC` を定義することができます。 `_CRTDBG_MAP_ALLOC` が定義されている場合、`_tempnam` および `_wtempnam` の呼び出しはそれぞれ `_tempnam_dbg` および `_wtempnam_dbg` にマップし直され、`blockType` が `_NORMAL_BLOCK` に設定されます。 そのため、ヒープ ブロックを `_CLIENT_BLOCK` としてマークする場合以外は、これらの関数を明示的に呼び出す必要はありません。 詳細については、[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)に関する記事をご覧ください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_ttempnam_dbg`|`_tempnam_dbg`|`_tempnam_dbg`|`_wtempnam_dbg`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_tempnam_dbg`, `_wtempnam_dbg`|\<crtdbg.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [_tempnam、_wtempnam、tmpnam、_wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md)   
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [デバッグ バージョンのヒープ割り当て関数](/visualstudio/debugger/debug-versions-of-heap-allocation-functions)
+> **空き**(または**free_dbg**) によって割り当てられたポインターに対して呼び出される必要は **_tempnam_dbg**と **_wtempnam_dbg**です。
+
+## <a name="remarks"></a>コメント
+
+**_Tempnam_dbg**と **_wtempnam_dbg**関数と同じ **_tempnam**と **_wtempnam**する点を除いて、 **_DEBUG**が定義されている場合、これらの関数を使用してデバッグ バージョンの**malloc**と **_malloc_dbg**、メモリを割り当てる場合**NULL**は最初のパラメーターとして渡されます。 詳細については、「[_malloc_dbg](malloc-dbg.md)」をご覧ください。
+
+多くの場合、これらの関数を明示的に呼び出す必要はありません。 フラグを定義する代わりに、 **_CRTDBG_MAP_ALLOC**です。 ときに **_CRTDBG_MAP_ALLOC**が定義されているを呼び出す **_tempnam**と **_wtempnam**に再マップ **_tempnam_dbg**と **_wtempnam_dbg**をそれぞれに、 *blockType* 'éý' **_NORMAL_BLOCK**です。 したがって、必要はありません、ヒープ ブロックとしてマークする場合を除き、これらの関数を明示的に呼び出す **_CLIENT_BLOCK**です。 詳細については、[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)に関する記事をご覧ください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_ttempnam_dbg**|**_tempnam_dbg**|**_tempnam_dbg**|**_wtempnam_dbg**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_tempnam_dbg**、 **_wtempnam_dbg**|\<crtdbg.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[_tempnam、_wtempnam、tmpnam、_wtmpnam](tempnam-wtempnam-tmpnam-wtmpnam.md)<br/>
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[デバッグ バージョンのヒープ割り当て関数](/visualstudio/debugger/debug-versions-of-heap-allocation-functions)<br/>

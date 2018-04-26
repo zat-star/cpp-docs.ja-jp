@@ -1,12 +1,12 @@
 ---
 title: _aligned_free | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _aligned_free
@@ -32,46 +32,50 @@ helpviewer_keywords:
 - _aligned_free function
 - aligned_free function
 ms.assetid: ed1ce952-cdfc-4682-85cc-f75d4101603d
-caps.latest.revision: 
+caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 30b37b6424b02ffb4eab6f1d90d03d7b2a3154b2
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 31c618eb54051582c7e398b174b943e5bf7d2d37
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="alignedfree"></a>_aligned_free
-[_aligned_malloc](../../c-runtime-library/reference/aligned-malloc.md) または [_aligned_offset_malloc](../../c-runtime-library/reference/aligned-offset-malloc.md) で割り当てられたメモリ ブロックを解放します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void _aligned_free (  
-   void *memblock  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `memblock`  
- `_aligned_malloc` または `_aligned_offset_malloc` 関数に返されたメモリ ブロックへのポインター。  
-  
-## <a name="remarks"></a>コメント  
- `_aligned_free` は `__declspec(noalias)` としてマークされます。これは、関数がグローバル変数を変更しないことを保証します。 詳細については、「[noalias](../../cpp/noalias.md)」を参照してください。  
-  
- この関数は、他の _aligned CRT 関数とは異なり、パラメーターを検証しません。 `memblock` が `NULL` ポインターの場合、この関数は何のアクションも実行しません。 この関数は `errno` を変更せず、無効なパラメーター ハンドラーを呼び出しません。 以前にメモリのブロックを割り当てるために _aligned 関数を使用しなかったために関数でエラーが発生する場合、または何らかの予期しない災害によってメモリの不整合が発生する場合、関数は [_RPT、_RPTF、_RPTW、_RPTFW のマクロ](../../c-runtime-library/reference/rpt-rptf-rptw-rptfw-macros.md)からデバッグ レポートを生成します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_aligned_free`|\<malloc.h>|  
-  
-## <a name="example"></a>例  
- 詳細については、「[_aligned_malloc](../../c-runtime-library/reference/aligned-malloc.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [データの整列](../../c-runtime-library/data-alignment.md)
+
+[_aligned_malloc](aligned-malloc.md) または [_aligned_offset_malloc](aligned-offset-malloc.md) で割り当てられたメモリ ブロックを解放します。
+
+## <a name="syntax"></a>構文
+
+```C
+void _aligned_free (
+   void *memblock
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*_expand*に返されたメモリ ブロックへのポインター、 **_aligned_malloc**または **_aligned_offset_malloc**関数。
+
+## <a name="remarks"></a>コメント
+
+**_aligned_free**がマークされている`__declspec(noalias)`関数がグローバル変数を変更せず保証されることを意味します。 詳細については、「[noalias](../../cpp/noalias.md)」を参照してください。
+
+この関数は、他の _aligned CRT 関数とは異なり、パラメーターを検証しません。 場合 *_expand*は、 **NULL**ポインター、この関数がありませんアクションを実行するだけです。 変更されません。 **errno**し、無効なパラメーター ハンドラーを引き起こすことはありません。 以前にメモリのブロックを割り当てるために _aligned 関数を使用しなかったために関数でエラーが発生する場合、または何らかの予期しない災害によってメモリの不整合が発生する場合、関数は [_RPT、_RPTF、_RPTW、_RPTFW のマクロ](rpt-rptf-rptw-rptfw-macros.md)からデバッグ レポートを生成します。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_aligned_free**|\<malloc.h>|
+
+## <a name="example"></a>例
+
+詳細については、「[_aligned_malloc](aligned-malloc.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[データの整列](../../c-runtime-library/data-alignment.md)<br/>

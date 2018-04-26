@@ -1,12 +1,12 @@
 ---
 title: '&lt;shared_mutex&gt; | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - <shared_mutex>
@@ -54,17 +54,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 0b37a97d-ee5d-4050-b29f-09db9f76beb3
-caps.latest.revision: 
+caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f7d657a95822d66d34a6173cc775f99c80411f12
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: 3ded646a4581e522fad7be9f3f66fc073d0df61f
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ltsharedmutex"></a>&lt;shared_mutex>
 
@@ -240,13 +240,13 @@ void swap(shared_lock<Mutex>& x, shared_lock<Mutex>& y) noexcept;
 
 2 つの `shared_lock` オブジェクトの内容を交換します。 実質的に `x.swap(y)` と同じです。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
- **ヘッダー:** &lt;shared_mutex>
+**ヘッダー:** &lt;shared_mutex>
 
- **名前空間:** std
+**名前空間:** std
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)  
-[&lt;mutex>](../standard-library/mutex.md)
+[ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
+[&lt;ミュー テックス >](../standard-library/mutex.md)

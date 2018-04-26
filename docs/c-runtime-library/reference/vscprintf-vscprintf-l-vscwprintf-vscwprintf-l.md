@@ -1,12 +1,12 @@
 ---
-title: "_vscprintf、_vscprintf_l、_vscwprintf、_vscwprintf_l | Microsoft Docs"
-ms.custom: 
+title: _vscprintf、_vscprintf_l、_vscwprintf、_vscwprintf_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _vscprintf
@@ -51,92 +51,98 @@ helpviewer_keywords:
 - vscprintf function
 - vscprintf_l function
 ms.assetid: 1bc67d3d-21d5-49c9-ac8d-69e26b16a3c3
-caps.latest.revision: 
+caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e0ba44a2e23baf8d901cb6bf5d9abd8306c32527
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 4a8cfdd7eded5956e9e34faed53e93e0ad029361
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="vscprintf-vscprintfl-vscwprintf-vscwprintfl"></a>_vscprintf、_vscprintf_l、_vscwprintf、_vscwprintf_l
-引数リストへのポインターを使用して、書式設定された文字列内の文字数を返します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _vscprintf(  
-   const char *format,  
-   va_list argptr   
-);  
-int _vscprintf_l(  
-   const char *format,  
-   locale_t locale,  
-   va_list argptr   
-);  
-int _vscwprintf(  
-   const wchar_t *format,  
-   va_list argptr   
-);  
-int _vscwprintf_l(  
-   const wchar_t *format,  
-   locale_t locale,  
-   va_list argptr   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `format`  
- 書式指定文字列。  
-  
- `argptr`  
- 引数リストへのポインター。  
-  
- `locale`  
- 使用するロケール。  
-  
- 詳細については、「 [printf 関数と wprintf 関数の書式指定フィールド](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」を参照してください。  
-  
-## <a name="return-value"></a>戻り値  
- `_vscprintf` は、文字列が出力されたか、指定された書式設定コードを使用してファイルまたはバッファーに送信された場合は、生成される文字数を返します。 戻り値には、終端の NULL 文字は含まれません。 `_vscwprintf` は、ワイド文字に対して同じ機能を果たします。  
-  
- これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
-  
- `format` が null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、関数は -1 を返し、`errno` を `EINVAL` に設定します。  
-  
-## <a name="remarks"></a>コメント  
- 各 `argument` (指定されている場合) は、`format` 中の対応する書式指定に応じて変換されます。 format は通常の文字で構成し、その形式と機能は `format` printf [関数の](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)と同じです。  
-  
+
+引数リストへのポインターを使用して、書式設定された文字列内の文字数を返します。
+
+## <a name="syntax"></a>構文
+
+```C
+int _vscprintf(
+   const char *format,
+   va_list argptr
+);
+int _vscprintf_l(
+   const char *format,
+   locale_t locale,
+   va_list argptr
+);
+int _vscwprintf(
+   const wchar_t *format,
+   va_list argptr
+);
+int _vscwprintf_l(
+   const wchar_t *format,
+   locale_t locale,
+   va_list argptr
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*format*<br/>
+書式指定文字列。
+
+*定義されています*<br/>
+引数リストへのポインター。
+
+*locale*<br/>
+使用するロケール。
+
+詳細については、「 [printf 関数と wprintf 関数の書式指定フィールド](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」を参照してください。
+
+## <a name="return-value"></a>戻り値
+
+**_vscprintf**によって生成される文字列を指している場合、引数のリストを文字の数が印刷またはファイルに送信されたか、コードは、指定した書式設定を使用してバッファーを返します。 戻り値には、終端の NULL 文字は含まれません。 **_vscwprintf**ワイド文字に対して同じ機能を実行します。
+
+これらの関数のバージョン、 **_l**現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じです。
+
+場合*形式*null ポインターで説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、関数は-1 を返します設定と**errno**に**EINVAL**です。
+
+## <a name="remarks"></a>コメント
+
+各*引数*(存在する場合) に対応する書式指定に応じて変換*形式*です。 形式は、通常の文字と、同じ形式し、機能、*形式*引数[printf](printf-printf-l-wprintf-wprintf-l.md)です。
+
 > [!IMPORTANT]
->  `format` がユーザー定義の文字列の場合は、null で終了して適切な数と型のパラメーターがあることを確認します。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_vsctprintf`|`_vscprintf`|`_vscprintf`|`_vscwprintf`|  
-|`_vsctprintf_l`|`_vscprintf_l`|`_vscprintf_l`|`_vscwprintf_l`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_vscprintf`, `_vscprintf_l`|\<stdio.h>|  
-|`_vscwprintf`, `_vscwprintf_l`|\<stdio.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
- 「[vsprintf](../../c-runtime-library/reference/vsprintf-vsprintf-l-vswprintf-vswprintf-l-vswprintf-l.md)」の例をご覧ください。  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
- [printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   
- [scanf、_scanf_l、wscanf、_wscanf_l](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
- [sscanf、_sscanf_l、swscanf、_swscanf_l](../../c-runtime-library/reference/sscanf-sscanf-l-swscanf-swscanf-l.md)   
- [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)
+> 場合に*形式*ユーザー定義の文字列では、null で終了し、正しい数とパラメーターの型を持ちます。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_vsctprintf**|**_vscprintf**|**_vscprintf**|**_vscwprintf**|
+|**_vsctprintf_l**|**_vscprintf_l**|**_vscprintf_l**|**_vscwprintf_l**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_vscprintf**、 **_vscprintf_l**|\<stdio.h>|
+|**_vscwprintf**、 **_vscwprintf_l**|\<stdio.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+「[vsprintf](vsprintf-vsprintf-l-vswprintf-vswprintf-l-vswprintf-l.md)」の例をご覧ください。
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[fprintf、_fprintf_l、fwprintf、_fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>
+[printf、_printf_l、wprintf、_wprintf_l](printf-printf-l-wprintf-wprintf-l.md)<br/>
+[scanf、_scanf_l、wscanf、_wscanf_l](scanf-scanf-l-wscanf-wscanf-l.md)<br/>
+[sscanf、_sscanf_l、swscanf、_swscanf_l](sscanf-sscanf-l-swscanf-swscanf-l.md)<br/>
+[vprintf 系関数](../../c-runtime-library/vprintf-functions.md)<br/>

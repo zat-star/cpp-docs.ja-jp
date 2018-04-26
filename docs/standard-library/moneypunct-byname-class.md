@@ -1,12 +1,12 @@
 ---
-title: "moneypunct_byname クラス | Microsoft Docs"
-ms.custom: 
+title: moneypunct_byname クラス | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - xlocmon/std::moneypunct_byname
@@ -15,24 +15,25 @@ dev_langs:
 helpviewer_keywords:
 - moneypunct_byname class
 ms.assetid: e8a544d2-6aee-420d-b513-deb385c9b416
-caps.latest.revision: 
+caps.latest.revision: 22
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d50e841af6ca158e431d29bf6a139fd9534748bd
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: 86106d6352e7e3153d5afbfab855a2a05c630c0d
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="moneypunctbyname-class"></a>moneypunct_byname クラス
-特定のロケールの `moneypunct` ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。通貨の入力フィールドまたは出力フィールドを書式設定できるようにします。  
-  
-## <a name="syntax"></a>構文  
-  
-```
+
+特定のロケールの `moneypunct` ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。通貨の入力フィールドまたは出力フィールドを書式設定できるようにします。
+
+## <a name="syntax"></a>構文
+
+```cpp
 template <class CharType, bool Intl = false>
 class moneypunct_byname : public moneypunct<CharType, Intl>
 {
@@ -49,18 +50,18 @@ protected:
     virtual ~moneypunct_byname();
 
 };
-```  
-  
-## <a name="remarks"></a>コメント  
- その動作は名前付きのロケール `_Locname` で決まります。 各コンストラクターは、[moneypunct](../standard-library/moneypunct-class.md#moneypunct)\<CharType, Intl>( `_Refs`) を使用して、その基本オブジェクトを初期化します。  
-  
-## <a name="requirements"></a>必要条件  
- **ヘッダー:** \<locale>  
-  
- **名前空間:** std  
-  
-## <a name="see-also"></a>参照  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+```
 
+## <a name="remarks"></a>コメント
 
+その動作は名前付きのロケール `_Locname` で決まります。 各コンストラクターは、[moneypunct](../standard-library/moneypunct-class.md#moneypunct)\<CharType, Intl>( `_Refs`) を使用して、その基本オブジェクトを初期化します。
 
+## <a name="requirements"></a>要件
+
+**ヘッダー:** \<locale>
+
+**名前空間:** std
+
+## <a name="see-also"></a>関連項目
+
+[C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)<br/>

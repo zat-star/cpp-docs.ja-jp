@@ -1,12 +1,12 @@
 ---
-title: "remainder、remainderf、remainderl | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: remainder、remainderf、remainderl | Microsoft Docs
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - remainderl
@@ -36,95 +36,87 @@ helpviewer_keywords:
 - remainderl
 - remainder
 ms.assetid: 5f721fb3-8b78-4597-9bc0-ca9bcd1f1d0e
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2b7a5d55fd079f03338a6860755a783ba4d82b76
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 52abbfef2e20bebd531ef2d6c7a414f8345d996b
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="remainder-remainderf-remainderl"></a>remainder、remainderf、remainderl
-2 つの浮動小数点値の商の剰余を最も近い整数値に丸めて計算します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double remainder(   
-   double numer,  
-   double denom  
-);  
-float remainder(   
-   float numer,  
-   float denom  
-); /* C++ only */  
-long double remainder(   
-   long double numer,  
-   long double denom  
-); /* C++ only */  
-float remainderf(   
-   float numer,  
-   float denom  
-);  
-long double remainderl(   
-   long double numer,  
-   long double denom  
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `numer`  
- 分子。  
-  
- `denom`  
- 分母。  
-  
-## <a name="return-value"></a>戻り値  
- `x` / `y` の浮動小数点型の剰余。 `y` の値が 0.0 の場合、`remainder` は簡易な NaN を返します。 `printf` ファミリによる簡易な NaN の表現については、「[printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)」をご覧ください。  
-  
-## <a name="remarks"></a>コメント  
- `remainder` 関数は、`x` = `n` * `y` + `r` となる `x` / `y` の剰余 `r` を浮動小数点型で計算します。`n` は `x` / `y` に最も近い整数値であり、`n` &#124; `n` - `x` / `y` &#124; = 1/2 である場合は常に偶数になります。 `r` = 0 の場合 `r` の符号は `x` と同じになります。  
-  
- C++ ではオーバーロードが可能であるため、`remainder` または `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`remainder` は常に 2 個の double を受け取って、1 個の double を返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`remainder`、`remainderf`、`remainderl`|\<math.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```C  
-// crt_remainder.c  
-// This program displays a floating-point remainder.  
-  
-#include <math.h>  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   double w = -10.0, x = 3.0, z;  
-  
-   z = remainder(w, x);  
-   printf("The remainder of %.2f / %.2f is %f\n", w, x, z);  
-}  
-```  
-  
-```Output  
-The remainder of -10.00 / 3.00 is -1.000000  
-```  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [ldiv、lldiv](../../c-runtime-library/reference/ldiv-lldiv.md)   
- [imaxdiv](../../c-runtime-library/reference/imaxdiv.md)   
- [fmod、fmodf](../../c-runtime-library/reference/fmod-fmodf.md)   
- [remquo、remquof、remquol](../../c-runtime-library/reference/remquo-remquof-remquol.md)
+
+2 つの浮動小数点値の商の剰余を最も近い整数値に丸めて計算します。
+
+## <a name="syntax"></a>構文
+
+```C
+double remainder( double x, double y );
+float remainderf( float x, float y );
+long double remainderl( long double x, long double y );
+```
+
+```cpp
+float remainder( float x, float y ); /* C++ only */
+long double remainder( long double x, long double y ); /* C++ only */
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+分子。
+
+*y*<br/>
+分母。
+
+## <a name="return-value"></a>戻り値
+
+浮動小数点の剰余*x* / *y*です。 場合の値*y* 0.0、**剰余**は簡易な NaN を返します。 簡易な NaN の表現について、 **printf**家族を参照してください[printf、_printf_l、wprintf、_wprintf_l](printf-printf-l-wprintf-wprintf-l.md)です。
+
+## <a name="remarks"></a>コメント
+
+**剰余**関数は浮動小数点の剰余を計算*r*の*x* / *y*ように*x*  =  *n* * *y* + *r*ここで、 *n*は、値を最も近い整数*x* / *y*と*n*が偶数のときに&#124; *n*  - *x* / *y* &#124; = 1/2。 ときに*r* = 0、 *r*と同じ符号を持つ*x*です。
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**剰余**を受け取り、返します**float**または**長い****二重**値。 C プログラムでは、**剰余**常に受け取って 1 つ**二重**引数を返す、**二重**です。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー (C)|必須ヘッダー (C++)|
+|--------------|---------------------|-|
+|**残りの部分**、 **remainderf**、 **remainderl**|\<math.h>|\<cmath> または \<math.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_remainder.c
+// This program displays a floating-point remainder.
+
+#include <math.h>
+#include <stdio.h>
+
+int main( void )
+{
+   double w = -10.0, x = 3.0, z;
+
+   z = remainder(w, x);
+   printf("The remainder of %.2f / %.2f is %f\n", w, x, z);
+}
+```
+
+```Output
+The remainder of -10.00 / 3.00 is -1.000000
+```
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[ldiv、lldiv](ldiv-lldiv.md)<br/>
+[imaxdiv](imaxdiv.md)<br/>
+[fmod、fmodf](fmod-fmodf.md)<br/>
+[remquo、remquof、remquol](remquo-remquof-remquol.md)<br/>

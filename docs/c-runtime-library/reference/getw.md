@@ -1,12 +1,12 @@
 ---
 title: _getw | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _getw
@@ -32,95 +32,100 @@ helpviewer_keywords:
 - integers, getting from streams
 - getw function
 ms.assetid: ef75facc-b84e-470f-9f5f-8746c90822a0
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dbfba71c98b347cec3ef56143cce34b1550e4149
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 2079672548a7f25106e7540580b60ac9fead8a36
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="getw"></a>_getw
-ストリームから整数を取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _getw(   
-   FILE *stream   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `stream`  
- `FILE` 構造体へのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- `_getw` は読み取られた整数値を返します。 戻り値 `EOF` は、エラーまたはファイルの終端を示します。 しかし、`EOF` の値は有効な整数値であるため、`feof` または `ferror` を使用してファイルの終端またはエラー条件を確認します。 `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `EOF`が返されます。  
-  
-## <a name="remarks"></a>コメント  
- `_getw` 関数は`stream` に関連付けられているファイルから、`int` 型の次のバイナリ値を読み取って、次の未読文字を指すために、関連付けられたファイル ポインター (もしあれば) を増加させます。 `_getw` はストリーム内の項目の特殊な配置を想定しません。 `int` 型のサイズと、`int` 型内のバイトの並び順がシステム間で異なるため、`_getw` で移植の問題が発生することがあります。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_getw`|\<stdio.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_getw.c  
-// This program uses _getw to read a word  
-// from a stream, then performs an error check.  
-  
-#include <stdio.h>  
-#include <stdlib.h>  
-  
-int main( void )  
-{  
-   FILE *stream;  
-   int i;  
-  
-   if( fopen_s( &stream, "crt_getw.txt", "rb" ) )  
-      printf( "Couldn't open file\n" );  
-   else  
-   {  
-      // Read a word from the stream:  
-      i = _getw( stream );  
-  
-      // If there is an error...  
-      if( ferror( stream ) )  
-      {  
-         printf( "_getw failed\n" );  
-         clearerr_s( stream );  
-      }  
-      else  
-         printf( "First data word in file: 0x%.4x\n", i );  
-      fclose( stream );  
-   }  
-}  
-```  
-  
-## <a name="input-crtgetwtxt"></a>入力: crt_getw.txt  
-  
-```  
-Line one.  
-Line two.  
-```  
-  
-### <a name="output"></a>出力  
-  
-```  
-First data word in file: 0x656e694c  
-```  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [_putw](../../c-runtime-library/reference/putw.md)
+
+ストリームから整数を取得します。
+
+## <a name="syntax"></a>構文
+
+```C
+int _getw(
+   FILE *stream
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ストリーム*<br/>
+**FILE** 構造体へのポインター。
+
+## <a name="return-value"></a>戻り値
+
+**_getw**読み取られた整数値を返します。 戻り値の**EOF**エラーまたはファイルの最後のいずれかを示します。 ただし、ため、 **EOF**値も有効な整数値を使用して**feof**または**ferror**をファイルの最後またはエラー状態を確認します。 場合*ストリーム*は**NULL**で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 続けるには、実行が許可された場合**errno**に設定されている**EINVAL** 、関数を返します**EOF**です。
+
+## <a name="remarks"></a>コメント
+
+**_Getw**関数は、次のような種類のバイナリ値を読み取って**int**に関連付けられているファイルから*ストリーム*を指す (存在する場合) に関連付けられたファイル ポインターをインクリメントし、次の未読文字です。 **_getw**ストリーム内の項目の任意の特別な配置を前提としていません。 移植に関する問題が発生する可能性 **_getw**ためのサイズ、 **int**型および内のバイトの順序、 **int**型がシステムによって異なります。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_getw**|\<stdio.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_getw.c
+// This program uses _getw to read a word
+// from a stream, then performs an error check.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( void )
+{
+   FILE *stream;
+   int i;
+
+   if( fopen_s( &stream, "crt_getw.txt", "rb" ) )
+      printf( "Couldn't open file\n" );
+   else
+   {
+      // Read a word from the stream:
+      i = _getw( stream );
+
+      // If there is an error...
+      if( ferror( stream ) )
+      {
+         printf( "_getw failed\n" );
+         clearerr_s( stream );
+      }
+      else
+         printf( "First data word in file: 0x%.4x\n", i );
+      fclose( stream );
+   }
+}
+```
+
+### <a name="input-crtgetwtxt"></a>入力: crt_getw.txt
+
+```Input
+Line one.
+Line two.
+```
+
+### <a name="output"></a>出力
+
+```Output
+First data word in file: 0x656e694c
+```
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[_putw](putw.md)<br/>

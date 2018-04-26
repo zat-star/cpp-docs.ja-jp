@@ -1,12 +1,12 @@
 ---
-title: "_strncnt、_wcsncnt、_mbsnbcnt、_mbsnbcnt_l、_mbsnccnt、_mbsnccnt_l | Microsoft Docs"
-ms.custom: 
+title: _strncnt、_wcsncnt、_mbsnbcnt、_mbsnbcnt_l、_mbsnccnt、_mbsnccnt_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _mbsnbcnt_l
@@ -59,132 +59,137 @@ helpviewer_keywords:
 - _mbsnccnt function
 - _wcsncnt function
 ms.assetid: 2a022e9e-a307-4acb-a66b-e56e5357f848
-caps.latest.revision: 
+caps.latest.revision: 22
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bcc69e67058e782bd3ce43b835497dab756347a0
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 37e420754c3e534ec3518d6e4764a5366332fd96
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="strncnt-wcsncnt-mbsnbcnt-mbsnbcntl-mbsnccnt-mbsnccntl"></a>_strncnt、_wcsncnt、_mbsnbcnt、_mbsnbcnt_l、_mbsnccnt、_mbsnccnt_l
-指定されたカウント内で文字数またはバイト数を返します。  
-  
+
+指定されたカウント内で文字数またはバイト数を返します。
+
 > [!IMPORTANT]
->  `_mbsnbcnt`、`_mbsnbcnt_l`、`_mbsnccnt`、および `_mbsnccnt_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-size_t _strncnt(  
-   const char *str,  
-   size_t count  
-);  
-size_t _wcsncnt(  
-   const wchar_t *str,  
-   size_t count  
-);  
-size_t _mbsnbcnt(  
-   const unsigned char *str,  
-   size_t count   
-);  
-size_t _mbsnbcnt_l(  
-   const unsigned char *str,  
-   size_t count,  
-   _locale_t locale  
-);  
-size_t _mbsnccnt(  
-   const unsigned char *str,  
-   size_t count  
-);  
-size_t _mbsnccnt_l(  
-   const unsigned char *str,  
-   size_t count,  
-   _locale_t locale  
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `str`  
- 調査する文字列。  
-  
- `count`  
- `str` で調査する文字数またはバイト数。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- `_mbsnbcnt` と `_mbsnbcnt_l` は、`count` の最初の `str` マルチバイト文字で見つかったバイト数を返します。 `_mbsnccnt` と `_mbsnccnt_l` は、`count` の最初の `str` バイトで見つかった文字数を返します。 `str` の調査が完了する前に NULL 文字が検出された場合、NULL 文字よりも前に見つかったバイト数または文字数を返します。 `str` が `count` の文字数またはバイト数よりも少ない数で構成されている場合は、文字列の文字数またはバイト数を返します。 `count` が 0 より小さい場合は、0 を返します。 以前のバージョンでは、これらの関数は、`int` 型ではなく `size_t` 型の戻り値を使用していました。  
-  
- `_strncnt` は、1 バイト文字列 `count` の最初の `str` バイトにある文字数を返します。 `_wcsncnt` は、ワイド文字列 `count` の最初の `str` ワイド文字にある文字数を返します。  
-  
-## <a name="remarks"></a>コメント  
- `_mbsnbcnt` と `_mbsnbcnt_l` は、`count` の最初の `str` マルチバイト文字で見つかったバイト数をカウントします。 `_mbsnbcnt` と `_mbsnbcnt_l` は `mtob` の代わりとなる関数です。この 2 つの関数は `mtob` の代わりに使用する必要があります。  
-  
- `_mbsnccnt` と `_mbsnccnt_l` は、`count` の最初の `str` バイトで見つかった文字数をカウントします。 `_mbsnccnt` と `_mbsnccnt_l` が 2 バイト文字の 2 番目のバイトで NULL を検出すると、最初のバイトも NULL と見なされ、戻されるカウント値に含まれません。 `_mbsnccnt` と `_mbsnccnt_l` は `btom` の代わりとなる関数です。この 2 つの関数は `btom` の代わりに使用する必要があります。  
-  
- `str` が null ポインターであるか `count` が 0 の場合、これらの関数は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーを呼び出します。また、`errno` を `EINVAL` に設定し、0 を返します。  
-  
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|ルーチンによって返される値|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|-------------|--------------------------------------|--------------------|-----------------------|  
-|`_tcsnbcnt`|`_strncnt`|`_mbsnbcnt`|`_wcsncnt`|  
-|`_tcsnccnt`|`_strncnt`|`_mbsnbcnt`|`n/a`|  
-|`_wcsncnt`|`n/a`|`n/a`|`_mbsnbcnt`|  
-|`_wcsncnt`|`n/a`|`n/a`|`_mbsnccnt`|  
-|`n/a`|`n/a`|`_mbsnbcnt_l`|`_mbsnccnt_l`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_mbsnbcnt`|\<mbstring.h>|  
-|`_mbsnbcnt_l`|\<mbstring.h>|  
-|`_mbsnccnt`|\<mbstring.h>|  
-|`_mbsnccnt_l`|\<mbstring.h>|  
-|`_strncnt`|\<tchar.h>|  
-|`_wcsncnt`|\<tchar.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_mbsnbcnt.c  
-  
-#include  <mbstring.h>  
-#include  <stdio.h>  
-  
-int main( void )  
-{  
-   unsigned char str[] = "This is a multibyte-character string.";  
-   unsigned int char_count, byte_count;  
-   char_count = _mbsnccnt( str, 10 );  
-   byte_count = _mbsnbcnt( str, 10 );  
-   if ( byte_count - char_count )  
-      printf( "The first 10 characters contain %d multibyte characters\n", char_count );  
-   else  
-      printf( "The first 10 characters are single-byte.\n");  
-}  
-```  
-  
-## <a name="output"></a>出力  
-  
-```  
-The first 10 characters are single-byte.  
-```  
-  
-## <a name="see-also"></a>参照  
- [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
- [_mbsnbcat、_mbsnbcat_l](../../c-runtime-library/reference/mbsnbcat-mbsnbcat-l.md)
+> **_mbsnbcnt**、 **_mbsnbcnt_l**、 **_mbsnccnt**、および **_mbsnccnt_l** Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+size_t _strncnt(
+   const char *str,
+   size_t count
+);
+size_t _wcsncnt(
+   const wchar_t *str,
+   size_t count
+);
+size_t _mbsnbcnt(
+   const unsigned char *str,
+   size_t count
+);
+size_t _mbsnbcnt_l(
+   const unsigned char *str,
+   size_t count,
+   _locale_t locale
+);
+size_t _mbsnccnt(
+   const unsigned char *str,
+   size_t count
+);
+size_t _mbsnccnt_l(
+   const unsigned char *str,
+   size_t count,
+   _locale_t locale
+);
+
+```
+
+### <a name="parameters"></a>パラメーター
+
+*str*<br/>
+調査する文字列。
+
+*count*<br/>
+文字数またはバイト数で調査する*str*です。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+**_mbsnbcnt**と **_mbsnbcnt_l**見つかったバイト数を返す最初の*カウント*のマルチバイト文字の*str*です。 **_mbsnccnt**と **_mbsnccnt_l**見つかった文字数を返す最初の*カウント*バイトの*str*です。 調査する前に NULL 文字が見つかったかどうか*str*がバイトまたは NULL 文字の前に見つかった文字の数を返す、完了します。 場合*str*よりも少ない数で構成されています*カウント*文字列内の文字またはバイト数文字またはバイトを返します。 場合*カウント*が小さい 0、0 を返します。 以前のバージョンでは、これらの関数は、型の戻り値を必要がある。 **int**なく**size_t**です。
+
+**_strncnt** 、最初の文字数を返します*カウント*バイトの 1 バイト文字列*str*です。 **_wcsncnt** 、最初の文字数を返します*カウント*ワイド文字の文字列のワイド文字*str*です。
+
+## <a name="remarks"></a>コメント
+
+**_mbsnbcnt**と **_mbsnbcnt_l**見つかったバイト数をカウント、最初の*カウント*のマルチバイト文字の*str*です。 **_mbsnbcnt**と **_mbsnbcnt_l**置換**mtob**の代わりに使用する必要がありますと**mtob**です。
+
+**_mbsnccnt**と **_mbsnccnt_l**見つかった文字数をカウント、最初の*カウント*バイトの*str*です。 場合 **_mbsnccnt**と **_mbsnccnt_l** 2 バイト文字の 2 番目のバイトで NULL が発生する、最初のバイトも NULL であると見なされます、返された数の値には含まれません。 **_mbsnccnt**と **_mbsnccnt_l**置換**btom**の代わりに使用する必要がありますと**btom**です。
+
+場合*str* null ポインターがあるかが*カウント*が 0 の場合」の説明に従って、これらの関数は、無効なパラメーター ハンドラーを呼び出します[パラメーターの検証](../../c-runtime-library/parameter-validation.md)、 **errno**に設定されている**EINVAL**関数は 0 を返します。
+
+出力値の設定の影響を受けた、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。 **_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|ルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|-------------|--------------------------------------|--------------------|-----------------------|
+|**_tcsnbcnt**|**_strncnt**|**_mbsnbcnt**|**_wcsncnt**|
+|**_tcsnccnt**|**_strncnt**|**_mbsnbcnt**|N/A|
+|**_wcsncnt**|N/A|N/A|**_mbsnbcnt**|
+|**_wcsncnt**|N/A|N/A|**_mbsnccnt**|
+|N/A|N/A|**_mbsnbcnt_l**|**_mbsnccnt_l**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_mbsnbcnt**|\<mbstring.h>|
+|**_mbsnbcnt_l**|\<mbstring.h>|
+|**_mbsnccnt**|\<mbstring.h>|
+|**_mbsnccnt_l**|\<mbstring.h>|
+|**_strncnt**|\<tchar.h>|
+|**_wcsncnt**|\<tchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_mbsnbcnt.c
+
+#include  <mbstring.h>
+#include  <stdio.h>
+
+int main( void )
+{
+   unsigned char str[] = "This is a multibyte-character string.";
+   unsigned int char_count, byte_count;
+   char_count = _mbsnccnt( str, 10 );
+   byte_count = _mbsnbcnt( str, 10 );
+   if ( byte_count - char_count )
+      printf( "The first 10 characters contain %d multibyte characters\n", char_count );
+   else
+      printf( "The first 10 characters are single-byte.\n");
+}
+```
+
+### <a name="output"></a>出力
+
+```Output
+The first 10 characters are single-byte.
+```
+
+## <a name="see-also"></a>関連項目
+
+[文字列操作](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
+[_mbsnbcat、_mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>

@@ -1,12 +1,12 @@
 ---
 title: _CrtDbgBreak | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _CrtDbgBreak
@@ -31,44 +31,49 @@ helpviewer_keywords:
 - CrtDbgBreak function
 - _CrtDbgBreak function
 ms.assetid: 01f8b4a2-a2c7-4e1f-9f39-e573b4a7871f
-caps.latest.revision: 
+caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f49870ace2b23983d7eb121cd18ea3d755250e51
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: d63795ec929fe1333bfc0d55acc307b52d559faf
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="crtdbgbreak"></a>_CrtDbgBreak
-特定のコード行にブレークポイントを設定します。 (デバッグ モードでのみ使用されます)  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void _CrtDbgBreak( void );  
-```  
-  
-## <a name="return-value"></a>戻り値  
- 戻り値がありません。  
-  
-## <a name="remarks"></a>コメント  
- `_CrtDbgBreak` 関数は、関数が存在する特定のコード行にデバッグ ブレークポイントを設定します。 この関数はデバッグ モードでのみ使用され、以前に定義された `_DEBUG` に依存します。  
-  
- フックをサポートするその他のランタイム関数の使い方の詳細と、独自のクライアント定義フック関数の記述方法については、「[Writing Your Own Debug Hook Functions](/visualstudio/debugger/debug-hook-function-writing)」 (独自のデバッグ フック関数を記述する) を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_CrtDbgBreak`|\<CRTDBG.h>|  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
-  
-## <a name="see-also"></a>参照  
- [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   
- [__debugbreak](../../intrinsics/debugbreak.md)
+
+特定のコード行にブレークポイントを設定します。 (デバッグ モードでのみ使用されます)
+
+## <a name="syntax"></a>構文
+
+```C
+void _CrtDbgBreak( void );
+```
+
+## <a name="return-value"></a>戻り値
+
+戻り値がありません。
+
+## <a name="remarks"></a>コメント
+
+**_CrtDbgBreak**関数は、関数が存在する特定のコード行にデバッグ ブレークポイントを設定します。 この関数は、デバッグ モードのみで使用しが依存 **_DEBUG**以前に定義されています。
+
+フックをサポートするその他のランタイム関数の使い方の詳細と、独自のクライアント定義フック関数の記述方法については、「[Writing Your Own Debug Hook Functions](/visualstudio/debugger/debug-hook-function-writing)」 (独自のデバッグ フック関数を記述する) を参照してください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_CrtDbgBreak**|\<CRTDBG.h>|
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。
+
+## <a name="see-also"></a>関連項目
+
+[デバッグ ルーチン](../../c-runtime-library/debug-routines.md)<br/>
+[__debugbreak](../../intrinsics/debugbreak.md)<br/>

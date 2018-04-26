@@ -1,12 +1,12 @@
 ---
 title: _get_printf_count_output | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _get_printf_count_output
@@ -33,43 +33,48 @@ helpviewer_keywords:
 - get_printf_count_output function
 - _get_printf_count_output function
 ms.assetid: 850f9f33-8319-433e-98d8-6a694200d994
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 05184838f9ac68e697cc7ff326c33c266f865875
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 8b96aab9e075386f71439a5c528fcf072097d389
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="getprintfcountoutput"></a>_get_printf_count_output
-[printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) ファミリの関数で `%n` 形式がサポートされているかどうかを示します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _get_printf_count_output();  
-```  
-  
-## <a name="return-value"></a>戻り値  
- `%n` がサポートされている場合は 0 以外の値、`%n` がサポートされていない場合は 0。  
-  
-## <a name="remarks"></a>コメント  
- `%n` がサポートされていない場合 (既定)、いずれかの `printf` 関数の書式文字列に `%n` が含まれていると、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーが呼び出されます。 場合`%n`サポートが有効になっている (を参照してください[_set_printf_count_output](../../c-runtime-library/reference/set-printf-count-output.md)) し、 `%n` 」の説明に従って動作[書式指定構文: printf 関数と wprintf 関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_get_printf_count_output`|\<stdio.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
- 例については「[_set_printf_count_output](../../c-runtime-library/reference/set-printf-count-output.md)」をご覧ください。  
-  
-## <a name="see-also"></a>参照  
-[_set_printf_count_output](../../c-runtime-library/reference/set-printf-count-output.md)  
+
+示すかどうか[printf、_printf_l、wprintf、_wprintf_l](printf-printf-l-wprintf-wprintf-l.md)-ファミリの関数のサポート、 **%n**形式です。
+
+## <a name="syntax"></a>構文
+
+```C
+int _get_printf_count_output();
+```
+
+## <a name="return-value"></a>戻り値
+
+ゼロ以外の場合 **%n**はサポートされている場合は 0 **%n**はサポートされていません。
+
+## <a name="remarks"></a>コメント
+
+場合 **%n**はサポートなし (既定値) が発生して **%n**のいずれかの書式指定文字列で、 **printf** 」の説明に従って、関数は、無効なパラメーター ハンドラーを呼び出しますが[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 場合 **%n**サポートが有効になっている (を参照してください[_set_printf_count_output](set-printf-count-output.md)) し、 **%n** 」の説明に従って動作[書式指定構文: printf および wprintf関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_get_printf_count_output**|\<stdio.h>|
+
+互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+例については「[_set_printf_count_output](set-printf-count-output.md)」をご覧ください。
+
+## <a name="see-also"></a>関連項目
+
+[_set_printf_count_output](set-printf-count-output.md)<br/>

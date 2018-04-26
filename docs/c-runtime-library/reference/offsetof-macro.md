@@ -1,12 +1,12 @@
 ---
-title: "offsetof マクロ | Microsoft Docs"
-ms.custom: 
+title: offsetof マクロ | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apilocation:
 - msvcrt.dll
@@ -28,57 +28,62 @@ helpviewer_keywords:
 - structure members, offset
 - offsetof macro
 ms.assetid: f3b4eb16-a882-4d38-afc9-eebd976a7352
-caps.latest.revision: 
+caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a70bb2823f29caf3f76224bfb91c3c9642bbdcf1
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 686de81ecfd4216f3011c93d3bf9be1bfdc55365
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="offsetof-macro"></a>offsetof マクロ
-親構造体の先頭からメンバーのオフセットを取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      size_t offsetof(  
-   structName,  
-   memberName   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- *structName*  
- 親データ構造体の名前。  
-  
- `memberName`  
- オフセットを決定する親データ構造体のメンバーの名前。  
-  
-## <a name="return-value"></a>戻り値  
- `offsetof` は、親データ構造体の先頭から、指定されたメンバーのオフセットをバイト単位で返します。 ビット フィールドには定義されません。  
-  
-## <a name="remarks"></a>コメント  
- `offsetof` マクロは、*structName* によって指定された構造体の先頭からバイト単位で数えた `memberName` のオフセットを、`size_t` 型の値として返します。 `struct` キーワードで型を指定できます。  
-  
+
+親構造体の先頭からメンバーのオフセットを取得します。
+
+## <a name="syntax"></a>構文
+
+```C
+size_t offsetof(
+   structName,
+   memberName
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*structName*<br/>
+親データ構造体の名前。
+
+*メンバー名*<br/>
+オフセットを決定する親データ構造体のメンバーの名前。
+
+## <a name="return-value"></a>戻り値
+
+**offsetof**親データ構造体の先頭から指定されたメンバーのバイト数でオフセットを返します。 ビット フィールドには定義されません。
+
+## <a name="remarks"></a>コメント
+
+**Offsetof**マクロのオフセットのバイトで返します*memberName*で指定された構造体の先頭から*structName*型の値として**size_t**です。 持つ型を指定することができます、**構造体**キーワード。
+
 > [!NOTE]
->  `offsetof` は関数ではないため、C のプロトタイプを使用して記述することはできません。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`offsetof`|\<stddef.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="see-also"></a>参照  
- [メモリ割り当て](../../c-runtime-library/memory-allocation.md)
+> **offsetof**関数ではないと、C のプロトタイプを使用して説明することはできません。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**offsetof**|\<stddef.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="see-also"></a>関連項目
+
+[メモリ割り当て](../../c-runtime-library/memory-allocation.md)<br/>

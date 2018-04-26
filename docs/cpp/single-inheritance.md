@@ -1,12 +1,12 @@
 ---
-title: "1 つの継承 |Microsoft ドキュメント"
-ms.custom: 
+title: 1 つの継承 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -19,22 +19,22 @@ helpviewer_keywords:
 - derived classes [C++], single base class
 - inheritance, single
 ms.assetid: 1cb946ed-8b1b-4cf1-bde0-d9cecbfdc622
-caps.latest.revision: 
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 003e407edfd50440a2bbeaf483c2fba94d178b57
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3d005d4d973ca3ac1873b588975683b14624f21f
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="single-inheritance"></a>単一継承
 継承の一般的な形態である "単一継承" では、クラスの持つ基底クラスは 1 つだけです。 次の図に示す関係を考えます。  
   
- ![基本的な単一 &#45; 継承グラフ](../cpp/media/vc38xj1.gif "vc38XJ1")  
+ ![基本的なシングル&#45;継承グラフ](../cpp/media/vc38xj1.gif "vc38XJ1")  
 単純な単一継承のグラフ  
   
  図における一般から特殊への流れに注意してください。 ほとんどのクラス階層のデザインにあるもう 1 つの一般的な属性は、派生クラスが基底クラスと "kind of" (種類) 関係を持つことです。 図では、`Book` は `PrintedDocument` の 1 種であり、`PaperbackBook` は `book` の 1 種です。  
@@ -155,8 +155,10 @@ class PaperbackBook : public Document {};
   
 int main() {  
    Document * DocLib[10];   // Library of ten documents.  
-   for (int i = 0 ; i < 10 ; i++)  
+   for (int i = 0 ; i < 5 ; i++)  
       DocLib[i] = new Document;  
+   for (int i = 5 ; i < 10 ; i++)  
+      DocLib[i] = new PaperbackBook;  
 }  
 ```  
   

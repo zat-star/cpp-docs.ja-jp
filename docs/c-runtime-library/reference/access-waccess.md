@@ -1,12 +1,12 @@
 ---
-title: "_access、_waccess | Microsoft Docs"
-ms.custom: 
+title: _access、_waccess | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _access
@@ -40,120 +40,123 @@ helpviewer_keywords:
 - _waccess function
 - taccess function
 ms.assetid: ba34f745-85c3-49e5-a7d4-3590bd249dd3
-caps.latest.revision: 
+caps.latest.revision: 27
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1eb9cae711044ccc98bf297ad41f40d5c6d0e068
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 985637369a551d610f42f26e4b59f27916ac3187
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="access-waccess"></a>_access、_waccess
-ファイルが読み取り専用かどうかを判断します。 セキュリティを強化したバージョンを使用できます。「[_access_s、_waccess_s](../../c-runtime-library/reference/access-s-waccess-s.md)」をご覧ください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _access(   
-   const char *path,   
-   int mode   
-);  
-int _waccess(   
-   const wchar_t *path,   
-   int mode   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `path`  
- ファイルまたはディレクトリ パス。  
-  
- `mode`  
- 読み取り/書き込み属性。  
-  
-## <a name="return-value"></a>戻り値  
- ファイルに特定のモードが設定されている場合、各関数は 0 を返します。 名前付きのファイルが存在しないか、特定のモードがない場合、関数は-1 を返しますこの場合、`errno`次の表に示すように設定します。  
-  
- `EACCES`  
- アクセス拒否: ファイルのアクセス許可の設定では、指定したアクセスは許可されません。  
-  
- `ENOENT`  
- ファイル名またはパスが見つかりません。  
-  
- `EINVAL`  
- 無効なパラメーター。  
-  
- リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
-  
-## <a name="remarks"></a>コメント  
- ファイルを使用すると、`_access` 関数は、指定したファイルまたはディレクトリが存在し、`mode` 値で指定されている属性があるかどうかを判断します。 ディレクトリを使用すると、`_access` は指定されたディレクトリが存在するかどうかだけを判断します。[!INCLUDE[Win2kFamily](../../c-runtime-library/includes/win2kfamily_md.md)] 以降のオペレーティング システムでは、すべてのディレクトリに読み取りおよび書き込みアクセスできます。  
-  
-|`mode` の値|ファイル チェックの目的|  
-|------------------|---------------------|  
-|00|存在のみ|  
-|02|書き込み専用|  
-|04|読み取り専用|  
-|06|読み取りおよび書き込み|  
-  
- この関数は、ファイルとディレクトリが読み取り専用かどうかだけを確認し、ファイルシステムのセキュリティ設定は確認しません。 そのためには、アクセス トークンが必要です。 ファイルシステムのセキュリティの詳細については、「[アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)」を参照してください。 ATL クラスはこの機能を提供するために存在します。「[CAccessToken クラス](../../atl/reference/caccesstoken-class.md)」を参照してください。  
-  
- `_waccess` 関数は、`_access` 関数のワイド文字バージョンです。`path` 関数の引数 `_waccess` は、ワイド文字列です。 それ以外では、`_waccess` と `_access` の動作は同じです。  
-  
- この関数は、パラメーターを検証します。 `path` が `NULL` または `mode` が有効なモードを指定しない場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、-1 を返します。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_taccess`|`_access`|`_access`|`_waccess`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
-|-------------|---------------------|----------------------|  
-|`_access`|\<io.h>|\<errno.h>|  
-|`_waccess`|\<wchar.h> または \<io.h>|\<errno.h>|  
-  
-## <a name="example"></a>例  
- 次の例では、`_access` を使用して、crt_ACCESS.C という名前のファイルが存在し、書き込みが許可されているかどうかを確認します。  
-  
-```  
-// crt_access.c  
-// compile with: /W1  
-// This example uses _access to check the file named  
-// crt_ACCESS.C to see if it exists and if writing is allowed.  
-  
-#include  <io.h>  
-#include  <stdio.h>  
-#include  <stdlib.h>  
-  
-int main( void )  
-{  
-    // Check for existence.  
-    if( (_access( "crt_ACCESS.C", 0 )) != -1 )  
-    {  
-        printf_s( "File crt_ACCESS.C exists.\n" );  
-  
-        // Check for write permission.  
-        // Assume file is read-only.  
-        if( (_access( "crt_ACCESS.C", 2 )) == -1 )  
-            printf_s( "File crt_ACCESS.C does not have write permission.\n" );  
-    }  
-}  
-```  
-  
-```Output  
-File crt_ACCESS.C exists.  
-File crt_ACCESS.C does not have write permission.  
-```  
-  
-## <a name="see-also"></a>参照  
- [ファイル処理](../../c-runtime-library/file-handling.md)   
- [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
- [_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32](../../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   
- [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   
- [_stat、_wstat 関数](../../c-runtime-library/reference/stat-functions.md)
+
+ファイルが読み取り専用かどうかを判断します。 セキュリティを強化したバージョンを使用できます。「[_access_s、_waccess_s](access-s-waccess-s.md)」をご覧ください。
+
+## <a name="syntax"></a>構文
+
+```C
+int _access(
+   const char *path,
+   int mode
+);
+int _waccess(
+   const wchar_t *path,
+   int mode
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*path*<br/>
+ファイルまたはディレクトリ パス。
+
+*モード*<br/>
+読み取り/書き込み属性。
+
+## <a name="return-value"></a>戻り値
+
+ファイルに特定のモードが設定されている場合、各関数は 0 を返します。 名前付きのファイルが存在しないか、特定のモードがない場合、関数は-1 を返しますこの場合、 **errno**次の表に示すように設定します。
+
+|||
+|-|-|
+**EACCES**|アクセス拒否: ファイルのアクセス許可の設定では、指定したアクセスは許可されません。
+**ENOENT**|ファイル名またはパスが見つかりません。
+**EINVAL**|無効なパラメーター。
+
+リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。
+
+## <a name="remarks"></a>コメント
+
+ファイルを使用すると、 **_access**関数は、指定したファイルまたはディレクトリが存在しの値によって指定された属性を持つかどうかを判断*モード*です。 ディレクトリを使用すると **_access**のみに指定されたディレクトリが存在するかどうかを判断; Windows 2000 以降のオペレーティング システムを保存のすべてのディレクトリの読み取りおよび書き込みアクセス。
+
+|*モード*値|ファイル チェックの目的|
+|------------------|---------------------|
+|00|存在のみ|
+|02|書き込み専用|
+|04|読み取り専用|
+|06|読み取りおよび書き込み|
+
+この関数は、ファイルとディレクトリが読み取り専用かどうかだけを確認し、ファイルシステムのセキュリティ設定は確認しません。 そのためには、アクセス トークンが必要です。 ファイルシステムのセキュリティの詳細については、「[アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)」を参照してください。 ATL クラスはこの機能を提供するために存在します。「[CAccessToken クラス](../../atl/reference/caccesstoken-class.md)」を参照してください。
+
+**_waccess**のワイド文字バージョンは、 **_access**;*パス*に渡す引数 **_waccess**ワイド文字列です。 **_waccess**と **_access**それ以外の場合の動作は同じです。
+
+この関数は、パラメーターを検証します。 場合*パス*は**NULL**または*モード*有効なモードが指定されていません」の説明に従って、無効なパラメーター ハンドラーが呼び出される[パラメーターの検証](../../c-runtime-library/parameter-validation.md). 実行の継続が許可された場合、関数は設定**errno**に**EINVAL**し、-1 を返します。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_taccess**|**_access**|**_access**|**_waccess**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|省略可能なヘッダー|
+|-------------|---------------------|----------------------|
+|**_access**|\<io.h>|\<errno.h>|
+|**_waccess**|\<wchar.h> または \<io.h>|\<errno.h>|
+
+## <a name="example"></a>例
+
+次の例で **_access**はという名前のファイルを確認します。C に存在するかどうかと書き込みが許可されているかどうかを参照してください。
+
+```C
+// crt_access.c
+// compile with: /W1
+// This example uses _access to check the file named
+// crt_ACCESS.C to see if it exists and if writing is allowed.
+
+#include  <io.h>
+#include  <stdio.h>
+#include  <stdlib.h>
+
+int main( void )
+{
+    // Check for existence.
+    if( (_access( "crt_ACCESS.C", 0 )) != -1 )
+    {
+        printf_s( "File crt_ACCESS.C exists.\n" );
+
+        // Check for write permission.
+        // Assume file is read-only.
+        if( (_access( "crt_ACCESS.C", 2 )) == -1 )
+            printf_s( "File crt_ACCESS.C does not have write permission.\n" );
+    }
+}
+```
+
+```Output
+File crt_ACCESS.C exists.
+File crt_ACCESS.C does not have write permission.
+```
+
+## <a name="see-also"></a>関連項目
+
+[ファイル処理](../../c-runtime-library/file-handling.md)<br/>
+[_chmod、_wchmod](chmod-wchmod.md)<br/>
+[_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32](fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)<br/>
+[_open、_wopen](open-wopen.md)<br/>
+[_stat、_wstat 関数](stat-functions.md)<br/>

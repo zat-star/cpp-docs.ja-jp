@@ -1,12 +1,12 @@
 ---
 title: srand | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 1/02/2018
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - srand
@@ -42,15 +42,15 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4cc76b80ca6c01d6512c69cc13fb0934e79b6ae5
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: a01e56159bf4f04f2c8a53f39e3fcd1e7dd450b5
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="srand"></a>srand
 
-によって使用される擬似乱数ジェネレーターのシード開始値を設定、`rand`関数。
+によって使用される擬似乱数ジェネレーターのシード開始値を設定、 **rand**関数。
 
 ## <a name="syntax"></a>構文
 
@@ -62,26 +62,25 @@ void srand(
 
 ### <a name="parameters"></a>パラメーター
 
-*seed*  
-擬似乱数ジェネレーターのシード
+*シード*擬似乱数ジェネレーターのシード
 
 ## <a name="remarks"></a>コメント
 
-`srand` 関数は、現在のスレッドに一連の整数の擬似乱数を生成するための開始点を設定します。 結果の同じシーケンスを作成するコード ジェネレーターを再初期化を呼び出して、`srand`関数を使用して、同じ*シード*引数を再度です。 その他の値の*シード*ジェネレーター、擬似乱数シーケンスのさまざまな開始位置を設定します。 `rand` は、生成される擬似乱数を取得します。 呼び出す`rand`への呼び出しの前に`srand`呼び出すことと同じシーケンスを生成`srand`で*シード*1 として渡されます。
+**Srand**関数は、一連の整数の擬似乱数を生成する、現在のスレッドの開始位置を設定します。 結果の同じシーケンスを作成するコード ジェネレーターを再初期化を呼び出して、 **srand**関数を使用して、同じ*シード*引数を再度です。 その他の値の*シード*ジェネレーター、擬似乱数シーケンスのさまざまな開始位置を設定します。 **rand**生成される擬似乱数を取得します。 呼び出す**rand**への呼び出しの前に**srand**呼び出すことと同じシーケンスを生成**srand**で*シード*1 として渡されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-|ルーチンによって返される値|必須ヘッダー|
+|ルーチン|必須ヘッダー|
 |-------------|---------------------|
-|`srand`|\<stdlib.h>|
+|**srand**|\<stdlib.h>|
 
-互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-「[rand](../../c-runtime-library/reference/rand.md)」の例をご覧ください。
+「[rand](rand.md)」の例をご覧ください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)  
-[rand](../../c-runtime-library/reference/rand.md)  
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[rand](rand.md)<br/>

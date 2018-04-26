@@ -1,12 +1,12 @@
 ---
 title: _isatty | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _isatty
@@ -33,78 +33,81 @@ helpviewer_keywords:
 - _isatty function
 - checking character devices
 ms.assetid: 9f1b2e87-0cd7-4079-b187-f2b7ca15fcbe
-caps.latest.revision: 
+caps.latest.revision: 18
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bea907f22496c3c1abe86462357ba14514a4aca7
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 3946ea4751b9ee654bcf24967fc5b109e14ac9b4
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="isatty"></a>_isatty
-ファイル記述子が文字デバイスに関連付けられているかどうかを判定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      int _isatty(  
-int fd   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `fd`  
- 調べるデバイスを参照するファイル記述子。  
-  
-## <a name="return-value"></a>戻り値  
- `_isatty` は、記述子がキャラクター デバイスに関連付けられている場合、0 以外の値を返します。 それ以外の場合、`_isatty` は 0 を返します。  
-  
-## <a name="remarks"></a>コメント  
- `_isatty` 関数では、`fd` がキャラクター デバイス (端末、コンソール、プリンター、またはシリアル ポート) に関連付けられているかどうかを調べます。  
-  
- この関数は、`fd` パラメーターを検証します。 `fd` が不適切なファイル ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は 0 を返し、`errno` を `EBADF` に設定します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_isatty`|\<io.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_isatty.c  
-/* This program checks to see whether  
- * stdout has been redirected to a file.  
- */  
-  
-#include <stdio.h>  
-#include <io.h>  
-  
-int main( void )  
-{  
-   if( _isatty( _fileno( stdout ) ) )  
-      printf( "stdout has not been redirected to a file\n" );  
-   else  
-      printf( "stdout has been redirected to a file\n");  
-}  
-```  
-  
-## <a name="sample-output"></a>出力例  
-  
-```  
-stdout has not been redirected to a file  
-```  
-  
-## <a name="see-also"></a>参照  
- [ファイル処理](../../c-runtime-library/file-handling.md)
+
+ファイル記述子が文字デバイスに関連付けられているかどうかを判定します。
+
+## <a name="syntax"></a>構文
+
+```C
+int _isatty( int fd );
+```
+
+### <a name="parameters"></a>パラメーター
+
+*fd*<br/>
+調べるデバイスを参照するファイル記述子。
+
+## <a name="return-value"></a>戻り値
+
+**_isatty**記述子がキャラクター デバイスに関連付けられている場合は、0 以外の値を返します。 それ以外の場合、 **_isatty** 0 を返します。
+
+## <a name="remarks"></a>コメント
+
+**_Isatty**関数を判断するかどうか*fd*キャラクター デバイス (端末、コンソール、プリンター、またはシリアル ポート) に関連付けられています。
+
+この関数は、検証、 *fd*パラメーター。 場合*fd* 、不適切なファイル ポインターで説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 続けるには、関数の戻り値 0 とセットの実行が許可された場合**errno**に**EBADF**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_isatty**|\<io.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="example"></a>例
+
+```C
+// crt_isatty.c
+/* This program checks to see whether
+* stdout has been redirected to a file.
+*/
+
+#include <stdio.h>
+#include <io.h>
+
+int main( void )
+{
+   if( _isatty( _fileno( stdout ) ) )
+      printf( "stdout has not been redirected to a file\n" );
+   else
+      printf( "stdout has been redirected to a file\n");
+}
+```
+
+### <a name="sample-output"></a>出力例
+
+```Output
+stdout has not been redirected to a file
+```
+
+## <a name="see-also"></a>関連項目
+
+[ファイル処理](../../c-runtime-library/file-handling.md)<br/>

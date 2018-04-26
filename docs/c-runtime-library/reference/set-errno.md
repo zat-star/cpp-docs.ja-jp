@@ -1,12 +1,12 @@
 ---
 title: _set_errno | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _set_errno
@@ -33,65 +33,68 @@ helpviewer_keywords:
 - set_errno function
 - _set_errno function
 ms.assetid: d338914a-1894-4cf3-ae45-f2c4eb26590b
-caps.latest.revision: 
+caps.latest.revision: 15
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6f1f5a87ab9f40eb229d4ebb7c23d584a5347094
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 7dadcfad80b456b577cf10cb129dfb50ae7c6699
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="seterrno"></a>_set_errno
-`errno` グローバル変数の現在の値を設定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-errno_t _set_errno(   
-   int value   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [入力] `value`  
- `errno` の新しい値。  
-  
-## <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 を返します。  
-  
-## <a name="remarks"></a>コメント  
- 使用できる値は Errno.h で定義します。 「[errno Constants](../../c-runtime-library/errno-constants.md)」(errno 定数) もご覧ください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_set_errno.c  
-#include <stdio.h>  
-#include <errno.h>  
-  
-int main()  
-{  
-   _set_errno( EILSEQ );  
-   perror( "Oops" );  
-}  
-```  
-  
-```Output  
-Oops: Illegal byte sequence  
-```  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
-|-------------|---------------------|---------------------|  
-|`_set_errno`|\<stdlib.h>|\<errno.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [_get_errno](../../c-runtime-library/reference/get-errno.md)   
- [errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)
+
+値を設定、 **errno**グローバル変数。
+
+## <a name="syntax"></a>構文
+
+```C
+errno_t _set_errno( int error_value );
+```
+
+### <a name="parameters"></a>パラメーター
+
+*error_value*<br/>
+新しい値**errno**です。
+
+## <a name="return-value"></a>戻り値
+
+正常終了した場合は 0 を返します。
+
+## <a name="remarks"></a>コメント
+
+使用できる値は Errno.h で定義します。 「[errno Constants](../../c-runtime-library/errno-constants.md)」(errno 定数) もご覧ください。
+
+## <a name="example"></a>例
+
+```C
+// crt_set_errno.c
+#include <stdio.h>
+#include <errno.h>
+
+int main()
+{
+   _set_errno( EILSEQ );
+   perror( "Oops" );
+}
+```
+
+```Output
+Oops: Illegal byte sequence
+```
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|オプション ヘッダー|
+|-------------|---------------------|---------------------|
+|**_set_errno**|\<stdlib.h>|\<errno.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[_get_errno](get-errno.md)<br/>
+[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)<br/>

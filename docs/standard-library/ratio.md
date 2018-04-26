@@ -1,12 +1,12 @@
 ---
 title: '&lt;ratio&gt; | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - ratio/std::mega
@@ -40,29 +40,29 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 8543e912-2d84-45ea-b3c0-bd7bfacee405
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 415c91f79102103fe71e21384b16d691779e6a2d
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: f91c3914a935c1882500ba8462b16dd6b08f5f13
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ltratiogt"></a>&lt;ratio&gt;
 
-コンパイル時に、有理数の格納および操作に使用される定数およびテンプレートを定義するには、標準ヘッダー \<ratio> を含めます。  
-  
-## <a name="syntax"></a>構文  
-  
-```cpp  
-#include <ratio>  
-```  
-  
-### <a name="ratio-template"></a>テンプレートの比率  
+コンパイル時に、有理数の格納および操作に使用される定数およびテンプレートを定義するには、標準ヘッダー \<ratio> を含めます。
+
+## <a name="syntax"></a>構文
+
+```cpp
+#include <ratio>
+```
+
+### <a name="ratio-template"></a>テンプレートの比率
 
 ```cpp
 template<std::intmax_t Numerator, std::intmax_t Denominator = 1>
@@ -72,35 +72,35 @@ template<std::intmax_t Numerator, std::intmax_t Denominator = 1>
    static constexpr std::intmax_t den;
    typedef ratio<num, den> type;
 }
-```  
+```
 
-テンプレート`ratio`静的な定数を定義`num`と`den`ように`num`  /  `den`分子を = =/分母および`num`と`den`一般的な要因があるないです。 `num` / `den` このテンプレート クラスで表される値です。 したがって、`type`インスタンス化を指定`ratio<num, den>`です。  
-  
+テンプレート`ratio`静的な定数を定義`num`と`den`ように`num`  /  `den`分子を = =/分母および`num`と`den`一般的な要因があるないです。 `num` / `den` このテンプレート クラスで表される値です。 したがって、`type`インスタンス化を指定`ratio<num, den>`です。
+
 ### <a name="specializations"></a>特殊化
 
-また、\<ratio> は、次の形式で `ratio` の特殊化を定義します。  
-  
-`template <class R1, class R2> struct ratio_specialization`  
-  
-それぞれの特殊化は、`ratio` の特殊化である必要がある 2 つのテンプレート パラメーターを使用します。 `type` の値は関連する論理操作によって決定されます。  
-  
-|name|`type` 値|  
-|----------|------------------|  
-|`ratio_add`|`R1 + R2`|  
-|`ratio_divide`|`R1 / R2`|  
-|`ratio_equal`|`R1 == R2`|  
-|`ratio_greater`|`R1 > R2`|  
-|`ratio_greater_equal`|`R1 >= R2`|  
-|`ratio_less`|`R1 < R2`|  
-|`ratio_less_equal`|`R1 <= R2`|  
-|`ratio_multiply`|`R1 * R2`|  
-|`ratio_not_equal`|`!(R1 == R2)`|  
-|`ratio_subtract`|`R1 - R2`|  
-  
-### <a name="typedefs"></a>typedef  
+また、\<ratio> は、次の形式で `ratio` の特殊化を定義します。
+
+`template <class R1, class R2> struct ratio_specialization`
+
+それぞれの特殊化は、`ratio` の特殊化である必要がある 2 つのテンプレート パラメーターを使用します。 `type` の値は関連する論理操作によって決定されます。
+
+|名前|`type` 値|
+|----------|------------------|
+|`ratio_add`|`R1 + R2`|
+|`ratio_divide`|`R1 / R2`|
+|`ratio_equal`|`R1 == R2`|
+|`ratio_greater`|`R1 > R2`|
+|`ratio_greater_equal`|`R1 >= R2`|
+|`ratio_less`|`R1 < R2`|
+|`ratio_less_equal`|`R1 <= R2`|
+|`ratio_multiply`|`R1 * R2`|
+|`ratio_not_equal`|`!(R1 == R2)`|
+|`ratio_subtract`|`R1 - R2`|
+
+### <a name="typedefs"></a>typedef
 
 便宜上、ヘッダーには、標準の SI プレフィックスの比率が定義されています。
-  
+
 ```cpp
 typedef ratio<1, 1000000000000000000> atto;
 typedef ratio<1, 1000000000000000> femto;
@@ -118,10 +118,8 @@ typedef ratio<1000000000, 1> giga;
 typedef ratio<1000000000000, 1> tera;
 typedef ratio<1000000000000000, 1> peta;
 typedef ratio<1000000000000000000, 1> exa;
-```  
-  
-## <a name="see-also"></a>参照  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)
+```
 
+## <a name="see-also"></a>関連項目
 
-
+[ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)<br/>

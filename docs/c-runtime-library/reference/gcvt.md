@@ -1,12 +1,12 @@
 ---
 title: _gcvt | Microsoft Docs
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _gcvt
@@ -37,118 +37,123 @@ helpviewer_keywords:
 - strings [C++], converting from floating point
 - CVTBUFSIZE
 ms.assetid: 5761411e-c06b-409a-912f-810fe7f4bcb5
-caps.latest.revision: 
+caps.latest.revision: 25
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 97f1487b770ac761a2555985a69069155e51cf74
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 74ac570b5b37d3557bed5508685ef1c28d9ec210
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="gcvt"></a>_gcvt
-浮動小数点値を文字列に変換し、バッファーに格納します。 この関数のセキュリティが強化されたバージョンについては、「[_gcvt_s](../../c-runtime-library/reference/gcvt-s.md)」を参照してください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *_gcvt(   
-   double value,  
-   int digits,  
-   char *buffer   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `value`  
- 変換する値。  
-  
- `digits`  
- 格納されている有効桁数。  
-  
- `buffer`  
- 結果の格納場所。  
-  
-## <a name="return-value"></a>戻り値  
- `_gcvt` は数字の文字列へのポインターを返します。  
-  
-## <a name="remarks"></a>コメント  
- `_gcvt` 関数は、(小数点、符号バイトを含む) 浮動小数点 `value` を文字列に変換し、その文字列を `buffer` に格納します。 `buffer` は、変換された値に、自動的に追加される終端の null 文字を加えたものに対応するのに十分な大きさである必要があります。 `digits` + 1 のバッファー サイズが使用されている場合、この関数によってバッファーの末尾が上書きされます。 これは、変換後の文字列に小数点が含まれており、符号と指数の情報が含まれている可能性があるためです。 オーバーフローに対するプロビジョニングはありません。 `_gcvt` は、10 進数形式で `digits` 桁を生成しようとします。 生成できない場合、指数形式で `digits` 桁を生成します。 後続のゼロは、変換時に非表示になる可能性があります。  
-  
- 長さ `_CVTBUFSIZE` の `buffer` は、どの浮動小数点値にも十分です。  
-  
- この関数は、パラメーターを検証します。 `buffer` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`NULL` を返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_gcvt`|\<stdlib.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_gcvt.c  
-// compile with: /W3  
-#include <stdlib.h>  
-#include <stdio.h>  
-#include <string.h>  
-  
-int main( void )  
-{  
-   char buffer[_CVTBUFSIZE];  
-   double value = -1234567890.123;  
-   printf( "The following numbers were converted by _gcvt(value,12,buffer):\n" );  
-   _gcvt( value, 12, buffer ); // C4996  
-   // Note: _gcvt is deprecated; consider using _gcvt_s instead  
-   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );  
-   value *= 10;  
-   _gcvt( value, 12, buffer ); // C4996  
-   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );  
-   value *= 10;  
-   _gcvt( value, 12, buffer ); // C4996  
-   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );  
-   value *= 10;  
-   _gcvt( value, 12, buffer ); // C4996  
-   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );  
-  
-   printf( "\n" );  
-   value = -12.34567890123;  
-   _gcvt( value, 12, buffer ); // C4996  
-   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );  
-   value /= 10;  
-   _gcvt( value, 12, buffer ); // C4996  
-   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );  
-   value /= 10;  
-   _gcvt( value, 12, buffer ); // C4996  
-   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );  
-   value /= 10;  
-   _gcvt( value, 12, buffer ); // C4996  
-   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );  
-}  
-```  
-  
-```Output  
-The following numbers were converted by _gcvt(value,12,buffer):  
-buffer: '-1234567890.12' (14 chars)  
-buffer: '-12345678901.2' (14 chars)  
-buffer: '-123456789012' (13 chars)  
-buffer: '-1.23456789012e+012' (19 chars)  
-  
-buffer: '-12.3456789012' (14 chars)  
-buffer: '-1.23456789012' (14 chars)  
-buffer: '-0.123456789012' (15 chars)  
-buffer: '-1.23456789012e-002' (19 chars)  
-```  
-  
-## <a name="see-also"></a>参照  
- [データ変換](../../c-runtime-library/data-conversion.md)   
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [atof、_atof_l、_wtof、_wtof_l](../../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)   
- [_ecvt](../../c-runtime-library/reference/ecvt.md)   
- [_fcvt](../../c-runtime-library/reference/fcvt.md)
+
+浮動小数点値を文字列に変換し、バッファーに格納します。 この関数のセキュリティが強化されたバージョンについては、「[_gcvt_s](gcvt-s.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+char *_gcvt(
+   double value,
+   int digits,
+   char *buffer
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*値*<br/>
+変換する値。
+
+*digits*<br/>
+格納される有効桁数。
+
+*バッファー*<br/>
+結果の格納場所。
+
+## <a name="return-value"></a>戻り値
+
+**_gcvt**桁の文字列へのポインターを返します。
+
+## <a name="remarks"></a>コメント
+
+**_Gcvt**関数は、浮動小数点に変換*値*を文字の文字列 (を小数点、符号バイトを含む) 内の文字列を格納および*バッファー*です。 *バッファー*に変換された値と自動的に追加される終端の null 文字を対応するのに十分な大きさにする必要があります。 場合のバッファー サイズ*桁*+ 1 を使用すると、バッファーの末尾は上書きされます。 これは、変換後の文字列に小数点が含まれており、符号と指数の情報が含まれている可能性があるためです。 オーバーフローに対するプロビジョニングはありません。 **_gcvt**生成しようとしています。*桁*10 進形式の数字です。 生成できない場合は、*桁*指数書式の数字です。 後続のゼロは、変換時に非表示になる可能性があります。
+
+A*バッファー*長さの **_CVTBUFSIZE**が十分で、浮動小数点値。
+
+この関数は、パラメーターを検証します。 場合*バッファー*は**NULL**で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合に、この関数が設定**errno**に**EINVAL**し、返します**NULL**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_gcvt**|\<stdlib.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_gcvt.c
+// compile with: /W3
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main( void )
+{
+   char buffer[_CVTBUFSIZE];
+   double value = -1234567890.123;
+   printf( "The following numbers were converted by _gcvt(value,12,buffer):\n" );
+   _gcvt( value, 12, buffer ); // C4996
+   // Note: _gcvt is deprecated; consider using _gcvt_s instead
+   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );
+   value *= 10;
+   _gcvt( value, 12, buffer ); // C4996
+   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );
+   value *= 10;
+   _gcvt( value, 12, buffer ); // C4996
+   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );
+   value *= 10;
+   _gcvt( value, 12, buffer ); // C4996
+   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );
+
+   printf( "\n" );
+   value = -12.34567890123;
+   _gcvt( value, 12, buffer ); // C4996
+   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );
+   value /= 10;
+   _gcvt( value, 12, buffer ); // C4996
+   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );
+   value /= 10;
+   _gcvt( value, 12, buffer ); // C4996
+   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );
+   value /= 10;
+   _gcvt( value, 12, buffer ); // C4996
+   printf( "buffer: '%s' (%d chars)\n", buffer, strlen(buffer) );
+}
+```
+
+```Output
+The following numbers were converted by _gcvt(value,12,buffer):
+buffer: '-1234567890.12' (14 chars)
+buffer: '-12345678901.2' (14 chars)
+buffer: '-123456789012' (13 chars)
+buffer: '-1.23456789012e+012' (19 chars)
+
+buffer: '-12.3456789012' (14 chars)
+buffer: '-1.23456789012' (14 chars)
+buffer: '-0.123456789012' (15 chars)
+buffer: '-1.23456789012e-002' (19 chars)
+```
+
+## <a name="see-also"></a>関連項目
+
+[データ変換](../../c-runtime-library/data-conversion.md)<br/>
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[atof、_atof_l、_wtof、_wtof_l](atof-atof-l-wtof-wtof-l.md)<br/>
+[_ecvt](ecvt.md)<br/>
+[_fcvt](fcvt.md)<br/>

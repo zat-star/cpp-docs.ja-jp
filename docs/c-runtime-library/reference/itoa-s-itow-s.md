@@ -86,15 +86,15 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3598724e905c51c68e7f4305f409060eb1f98e41
-ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
+ms.openlocfilehash: 1f4d00b7938c9fce4e96cd900e460721d9ebe662
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="itoas-ltoas-ultoas-i64toas-ui64toas-itows--ltows--ultows-i64tows-ui64tows"></a>_itoa_s、_ltoa_s、_ultoa_s、_i64toa_s、_ui64toa_s、_itow_s、_ltow_s、_ultow_s、_i64tow_s、_ui64tow_s
 
-整数を文字列に変換します。 これらは、バージョン、 [_itoa、_itow 関数](../../c-runtime-library/reference/itoa-itow.md)のセキュリティが強化された」の説明に従って[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)します。
+整数を文字列に変換します。 これらは、バージョン、 [_itoa、_itow 関数](itoa-itow.md)のセキュリティが強化された」の説明に従って[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)します。
 
 ## <a name="syntax"></a>構文
 
@@ -161,22 +161,22 @@ errno_t _ultow_s( unsigned long value, wchar_t (&buffer)[size], int radix );
 
 |value|buffer|size|radix|Return|
 |-----------|------------|----------------------|-----------|------------|
-|任意|`NULL`|任意|任意|`EINVAL`|
-|任意|任意|<=0|任意|`EINVAL`|
-|任意|任意|<= 結果の文字列の長さが必要|任意|`EINVAL`|
-|任意|任意|任意|*基数*< 2 または*基数*> 36|`EINVAL`|
+|任意|**NULL**|任意|任意|**EINVAL**|
+|任意|任意|<=0|任意|**EINVAL**|
+|任意|任意|<= 結果の文字列の長さが必要|任意|**EINVAL**|
+|任意|任意|任意|*基数*< 2 または*基数*> 36|**EINVAL**|
 
 ### <a name="security-issues"></a>セキュリティの問題
 
-場合、これらの関数は、アクセス違反を生成できます*バッファー*が有効なメモリを指していませんありいない`NULL`バッファーの長さがない結果の文字列を保持するのに十分な長さ場合、またはします。
+場合、これらの関数は、アクセス違反を生成できます*バッファー*が有効なメモリを指していませんありいない**NULL**バッファーの長さがない結果の文字列を保持するのに十分な長さ場合、またはします。
 
 ## <a name="remarks"></a>コメント
 
-パラメーターおよび戻り値の場合を除いて、`_itoa_s`と`_itow_s`関数ファミリは、対応する安全性が低いと同じ動作をある`_itoa`と`_itow`バージョン。
+パラメーターおよび戻り値の場合を除いて、 **_itoa_s**と **_itow_s**関数ファミリは、対応する安全性が低いと同じ動作をある **_itoa**と **_itow**バージョン。
 
 C++ では、これらの関数の使用はテンプレートのオーバーロードによって簡素化されます。オーバーロードでは、バッファー長を自動的に推論できる (サイズの引数を指定する必要がなくなる) だけでなく、古くてセキュリティが万全ではない関数を新しく安全な関数に自動的に置き換えることができます。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。
 
-これらの関数のデバッグ ライブラリのバージョンは、最初にバッファーを 0 xfd でを入力します。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md).を使用します。
+これらの関数のデバッグ ライブラリのバージョンは、最初にバッファーを 0 xfd でを入力します。 この動作を無効にするには、[_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).を使用します。
 
 CRT には、null 終端文字を含む、各整数型の最も長い可能な値に変換するために必要なバッファーのサイズを定義し、いくつかの一般的なベースの文字に署名する便利なマクロが含まれています。 詳細については、次を参照してください。[最大変換カウント マクロ](itoa-itow.md#maximum-conversion-count-macros)です。
 
@@ -184,18 +184,18 @@ CRT には、null 終端文字を含む、各整数型の最も長い可能な�
 
 |Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
 |---------------------|--------------------------------------|--------------------|-----------------------|
-|`_itot_s`|`_itoa_s`|`_itoa_s`|`_itow_s`|
-|`_ltot_s`|`_ltoa_s`|`_ltoa_s`|`_ltow_s`|
-|`_ultot_s`|`_ultoa_s`|`_ultoa_s`|`_ultow_s`|
-|`_i64tot_s`|`_i64toa_s`|`_i64toa_s`|`_i64tow_s`|
-|`_ui64tot_s`|`_ui64toa_s`|`_ui64toa_s`|`_ui64tow_s`|
+|**_itot_s**|**_itoa_s**|**_itoa_s**|**_itow_s**|
+|**_ltot_s**|**_ltoa_s**|**_ltoa_s**|**_ltow_s**|
+|**_ultot_s**|**_ultoa_s**|**_ultoa_s**|**_ultow_s**|
+|**_i64tot_s**|**_i64toa_s**|**_i64toa_s**|**_i64tow_s**|
+|**_ui64tot_s**|**_ui64toa_s**|**_ui64toa_s**|**_ui64tow_s**|
 
 ## <a name="requirements"></a>要件
 
 |ルーチン|必須ヘッダー|
 |-------------|---------------------|
-|`_itoa_s`, `_ltoa_s`, `_ultoa_s`, `_i64toa_s`, `_ui64toa_s`|\<stdlib.h>|
-|`_itow_s`, `_ltow_s`, `_ultow_s`, `_i64tow_s`, `_ui64tow_s`|\<stdlib.h> または \<wchar.h>|
+|**_itoa_s**、 **_ltoa_s**、 **_ultoa_s**、 **_i64toa_s**、 **_ui64toa_s**|\<stdlib.h>|
+|**_itow_s**、 **_ltow_s**、 **_ultow_s**、 **_i64tow_s**、 **_ui64tow_s**|\<stdlib.h> または \<wchar.h>|
 
 これらの関数は、Microsoft 固有です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
 
@@ -272,4 +272,4 @@ base 2: 1111111111111111111111111111111111111111111111111111111111111111 (64 cha
 ## <a name="see-also"></a>関連項目
 
 [データ変換](../../c-runtime-library/data-conversion.md)<br/>
-[_itoa、_itow 関数](../../c-runtime-library/reference/itoa-itow.md)<br/>
+[_itoa、_itow 関数](itoa-itow.md)<br/>

@@ -1,12 +1,12 @@
 ---
 title: '&lt;hash_map&gt; | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2018
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - <hash_map>
@@ -20,11 +20,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c50716912b42aace87b1132672331c86d9eae162
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: 177afaca1ddad1145c9465dc6b71863c846b6b5c
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="lthashmapgt"></a>&lt;hash_map&gt;
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/23/2018
 
 ## <a name="syntax"></a>構文
 
-> #<a name="include-hashmap"></a>include <hash_map>
+> #<a name="include-hashmap"></a>< hash_map > が含まれます
 
 ### <a name="operators"></a>演算子
 
@@ -52,14 +52,14 @@ ms.lasthandoff: 02/23/2018
 
 ### <a name="classes"></a>クラス
 
-|||
+|クラス|説明|
 |-|-|
 |[hash_compare クラス](hash-compare-class.md)|任意のハッシュ連想コンテナー (hash_map、hash_multimap、hash_set、または hash_multiset) によって使用可能なオブジェクトを示しています。既定では **Traits** パラメーター オブジェクトを使用して、含まれる要素の順序付けおよびハッシュを行います。|
 |[value_compare クラス](value-compare-class.md)|要素のキーの値を比較し、要素の hash_map 内の相対順序を決定して、hash_map の要素を比較できる関数オブジェクトを提供します。|
 |[hash_map クラス](hash-map-class.md)|一意の並べ替えキーとそれに関連付けられている値のペアを要素として持つコレクションのデータを格納したり、迅速に取得したりするために使用されます。|
 |[hash_multimap クラス](hash-multimap-class.md)|必ずしも一意ではない並べ替えキーとそれに関連付けられている値のペアを要素として持つコレクションのデータを格納したり、迅速に取得したりするために使用されます。|
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 **ヘッダー:** \<hash_map>
 
@@ -67,6 +67,6 @@ ms.lasthandoff: 02/23/2018
 
 ## <a name="see-also"></a>関連項目
 
-[ヘッダー ファイル リファレンス](cpp-standard-library-header-files.md)  
-[C++ 標準ライブラリ内のスレッド セーフ](thread-safety-in-the-cpp-standard-library.md)  
-[C++ 標準ライブラリ リファレンス](cpp-standard-library-reference.md)  
+[ヘッダー ファイルの参照を](cpp-standard-library-header-files.md)
+[C++ 標準ライブラリ内のスレッド セーフ](thread-safety-in-the-cpp-standard-library.md)
+[C++ 標準ライブラリ リファレンス](cpp-standard-library-reference.md)

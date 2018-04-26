@@ -1,12 +1,12 @@
 ---
 title: _CxxThrowException | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _CxxThrowException
@@ -31,42 +31,45 @@ helpviewer_keywords:
 - _CxxThrowException function
 - CxxThrowException function
 ms.assetid: 0b90bef5-b7d2-46e0-88e2-59e531e01a4d
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fb59e3e81a9e92d3a692e91c9c25a92fd09603cd
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 70746446ec2b943913604d5940d468373c018aa4
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="cxxthrowexception"></a>_CxxThrowException
-例外レコードを作成し、ランタイム環境を呼び出して例画の処理を開始します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-extern "C" void __stdcall _CxxThrowException(  
-   void* pExceptionObject  
-   _ThrowInfo* pThrowInfo  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [入力] `pExceptionObject`  
- 例外を生成したオブジェクト。  
-  
- [入力] `pThrowInfo`  
- 例外の処理に必要な情報。  
-  
-## <a name="remarks"></a>コメント  
- このメソッドは、コンパイラで例外処理に使用されるコンパイラ専用ファイルに含まれています。 このメソッドはコードから直接呼び出さないでください。  
-  
-## <a name="requirements"></a>必要条件  
- **ソース:** Throw.cpp  
-  
-## <a name="see-also"></a>参照  
- [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)
+
+例外レコードを作成し、ランタイム環境を呼び出して例画の処理を開始します。
+
+## <a name="syntax"></a>構文
+
+```C
+extern "C" void __stdcall _CxxThrowException(
+   void* pExceptionObject
+   _ThrowInfo* pThrowInfo
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*pExceptionObject*例外を生成するオブジェクト。
+
+*pThrowInfo*例外を処理するために必要な情報です。
+
+## <a name="remarks"></a>コメント
+
+このメソッドは、コンパイラで例外処理に使用されるコンパイラ専用ファイルに含まれています。 このメソッドはコードから直接呼び出さないでください。
+
+## <a name="requirements"></a>要件
+
+**ソース:** Throw.cpp
+
+## <a name="see-also"></a>関連項目
+
+[関数リファレンス (アルファベット順)](crt-alphabetical-function-reference.md)<br/>

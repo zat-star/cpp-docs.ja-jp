@@ -57,269 +57,273 @@ helpviewer_keywords:
 - sntprintf function
 - formatted text [C++]
 ms.assetid: 5976c9c8-876e-4ac9-a515-39f3f7fd0925
-caps.latest.revision: ''
+caps.latest.revision: 35
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 92a4939c9fc71245528198c686ca9ed7024c858d
-ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
+ms.openlocfilehash: a8c47f3d1a65d9a48f0a76cd6dd9876d799e583f
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="snprintf-snprintf-snprintfl-snwprintf-snwprintfl"></a>snprintf、_snprintf、_snprintf_l、_snwprintf、_snwprintf_l
-文字列に書式付きデータを書き込みます。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_snprintf_s、_snprintf_s_l、_snwprintf_s、_snwprintf_s_l](../../c-runtime-library/reference/snprintf-s-snprintf-s-l-snwprintf-s-snwprintf-s-l.md)」をご覧ください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int snprintf(  
-   char *buffer,  
-   size_t count,  
-   const char *format [,  
-   argument] ...   
-);  
-int _snprintf(  
-   char *buffer,  
-   size_t count,  
-   const char *format [,  
-   argument] ...   
-);  
-int _snprintf_l(  
-   char *buffer,  
-   size_t count,  
-   const char *format,  
-   locale_t locale [,  
-   argument] ...   
-);  
-int _snwprintf(  
-   wchar_t *buffer,  
-   size_t count,  
-   const wchar_t *format [,  
-   argument] ...   
-);  
-int _snwprintf_l(  
-   wchar_t *buffer,  
-   size_t count,  
-   const wchar_t *format,  
-   locale_t locale [,  
-   argument] ...   
-);  
-template <size_t size>  
-int _snprintf(  
-   char (&buffer)[size],  
-   size_t count,  
-   const char *format [,  
-   argument] ...   
-); // C++ only  
-template <size_t size>  
-int _snprintf_l(  
-   char (&buffer)[size],  
-   size_t count,  
-   const char *format,  
-   locale_t locale [,  
-   argument] ...   
-); // C++ only  
-template <size_t size>  
-int _snwprintf(  
-   wchar_t (&buffer)[size],  
-   size_t count,  
-   const wchar_t *format [,  
-   argument] ...   
-); // C++ only  
-template <size_t size>  
-int _snwprintf_l(  
-   wchar_t (&buffer)[size],  
-   size_t count,  
-   const wchar_t *format,  
-   locale_t locale [,  
-   argument] ...   
-); // C++ only  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `buffer`  
- 出力の格納場所。  
-  
- `count`  
- 格納する最大文字数。  
-  
- `format`  
- 書式指定文字列。  
-  
- `argument`  
- 省略可能な引数。  
-  
- `locale`  
- 使用するロケール。  
-  
- 詳細については、「[書式指定構文: printf 関数と wprintf 関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」をご覧ください。  
-  
-## <a name="return-value"></a>戻り値  
- 以下の説明では、書式付きデータ文字列の長さ (終端の null は含まない) を `len` とします。 `len` と `count` は、 `snprintf` 関数と `_snprintf`関数ではバイト単位、 `_snwprintf`関数ではワイド文字単位になります。  
-  
- すべての関数について、 `len` < `count`の場合、 `len` の文字数が `buffer`に格納されて、終端の null が追加され、 `len` が返されます。  
-  
- `snprintf` 関数は、 `len` が `count`以上の場合、null 終端記号を `buffer[count-1]`に配置することによって、出力を切り捨てます。 戻り値は `len`です。 `count` のサイズが十分な場合に出力されたであろう文字数です。 `snprintf` 関数は、エンコード エラーが発生すると負の値を返します。  
-  
- `snprintf` を除くすべての関数について、`len` = `count` の場合、`len` の文字数が `buffer` に格納されて、終端の null は追加されず、`len` が返されます。 `len` > `count` の場合、`count` の文字数が `buffer` に格納されて、終端の null は追加されずに、負の値が返されます。  
-  
- `buffer` が null ポインターで `count` がゼロの場合、 `len` は、出力の書式を指定するのに必要な文字数として返されます。終端の null は含まれません。 同じ `argument` パラメーターおよび `locale` パラメーターを指定して正常な呼び出しを行うには、少なくとも `len` + 1 文字を保持するバッファーを割り当てます。  
-  
- `buffer` が Null ポインターで `count` が 0 以外の場合、または `format` が Null ポインターの場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、正しくないパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
-  
- エラー コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
-  
-## <a name="remarks"></a>コメント  
- `snprintf` 関数と、関数の `_snprintf` ファミリは、 `count` 以下の文字数を書式指定し、 `buffer`に格納します。 `snprintf` 関数は、常に終端の null 文字を格納し、必要に応じて出力を切り捨てます。 関数の `_snprintf` ファミリは、書式付き文字列の長さが確実に `count` 文字数未満の場合にのみ、終端の null 文字を追加します。 各 `argument` (指定されている場合) は、 `format`中の対応する書式指定に応じて変換され、格納されます。 format は通常の文字で構成し、その形式と機能は `format` printf [関数の](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)と同じです。 重なり合う文字列間でコピーした場合の動作は未定義です。  
-  
+文字列に書式付きデータを書き込みます。 これらの関数のセキュリティを強化したバージョンを使用できます。「[_snprintf_s、_snprintf_s_l、_snwprintf_s、_snwprintf_s_l](snprintf-s-snprintf-s-l-snwprintf-s-snwprintf-s-l.md)」をご覧ください。
+
+## <a name="syntax"></a>構文
+
+```C
+int snprintf(
+   char *buffer,
+   size_t count,
+   const char *format [,
+   argument] ...
+);
+int _snprintf(
+   char *buffer,
+   size_t count,
+   const char *format [,
+   argument] ...
+);
+int _snprintf_l(
+   char *buffer,
+   size_t count,
+   const char *format,
+   locale_t locale [,
+   argument] ...
+);
+int _snwprintf(
+   wchar_t *buffer,
+   size_t count,
+   const wchar_t *format [,
+   argument] ...
+);
+int _snwprintf_l(
+   wchar_t *buffer,
+   size_t count,
+   const wchar_t *format,
+   locale_t locale [,
+   argument] ...
+);
+template <size_t size>
+int _snprintf(
+   char (&buffer)[size],
+   size_t count,
+   const char *format [,
+   argument] ...
+); // C++ only
+template <size_t size>
+int _snprintf_l(
+   char (&buffer)[size],
+   size_t count,
+   const char *format,
+   locale_t locale [,
+   argument] ...
+); // C++ only
+template <size_t size>
+int _snwprintf(
+   wchar_t (&buffer)[size],
+   size_t count,
+   const wchar_t *format [,
+   argument] ...
+); // C++ only
+template <size_t size>
+int _snwprintf_l(
+   wchar_t (&buffer)[size],
+   size_t count,
+   const wchar_t *format,
+   locale_t locale [,
+   argument] ...
+); // C++ only
+```
+
+### <a name="parameters"></a>パラメーター
+
+*バッファー*<br/>
+出力の格納場所。
+
+*count*<br/>
+格納する最大文字数。
+
+*format*<br/>
+書式指定文字列。
+
+*argument*<br/>
+省略可能な引数。
+
+*locale*<br/>
+使用するロケール。
+
+詳細については、「[書式指定構文: printf 関数と wprintf 関数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)」をご覧ください。
+
+## <a name="return-value"></a>戻り値
+
+Let **len**終端の null は含まない、書式付きデータ文字列の長さ。 両方**len**と*カウント*(バイト) は**snprintf**と **_snprintf**、ワイド文字 **_snwprintf**.
+
+すべての関数の場合は**len** < *カウント*、 **len**に文字が格納されている*バッファー*終端の null を追加すると、および**len**が返されます。
+
+**Snprintf**関数には、出力が切り捨てられますときに**len**がより大きいまたは等しい*カウント*、終端の null で配置することによって`buffer[count-1]`です。 戻り値は**len**は場合に出力された文字数*カウント*に十分です。 **Snprintf**エンコード エラーが発生した場合、関数は、負の値を返します。
+
+すべての関数について以外の**snprintf**場合は、 **len** = *カウント*、 **len**に文字が格納されている*バッファー*、終端の null は追加されず、および**len**が返されます。 場合**len** > *カウント*、*カウント*に文字が格納されている*バッファー*終端の null は追加、および負の値はありません値が返されます。
+
+場合*バッファー* null ポインターと*カウント*ゼロ、 **len**終端の null は含まない出力を書式設定に必要な文字数として返されます。 同じ成功した呼び出しを行う*引数*と*ロケール*パラメーターには、少なくともを保持するバッファーの割り当て**len** + 1 文字です。
+
+場合*バッファー* null ポインターと*カウント*0 以外の場合、または*形式*null ポインターで説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、これらの関数は-1 を返します設定と**errno**に**EINVAL**です。
+
+エラー コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。
+
+## <a name="remarks"></a>コメント
+
+**Snprintf**関数および **_snprintf**関数形式およびストアのファミリ*カウント*で以下の文字*バッファー*です。 **Snprintf**関数が常に必要な場合、出力を切り捨てて、終端の null 文字を格納します。 **_Snprintf**ファミリの関数は、書式設定された文字列の長さがある場合のみ、終端の null 文字を追加未満*カウント*文字です。 各*引数*(存在する場合) は変換され、対応する書式指定に応じて*形式*です。 形式は、通常の文字と、同じ形式し、機能、*形式*引数[printf](printf-printf-l-wprintf-wprintf-l.md)です。 重なり合う文字列間でコピーした場合の動作は未定義です。
+
 > [!IMPORTANT]
->  `format` にユーザー定義の文字列を指定しないでください。 `_snprintf` 関数では NULL で終わることが保証されないため (特に戻り値が `count`の場合)、これらの関数の後に、終端の null を追加するコードが続いていることを確認してください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
-  
- Visual Studio 2015 および Windows 10 で UCRT と共に開始する場合、 `snprintf` は `_snprintf`と同一ではなくなります。 `snprintf` 関数の動作は、現在 C99 標準準拠です。  
-  
- `_snwprintf` は `_snprintf` のワイド文字バージョンであり、`_snwprintf` のポインター引数はワイド文字列です。 `_snwprintf` と `_snprintf` では、エンコーディング エラーの検出動作が異なる場合があります。 `_snwprintf` と同様に、`swprintf` では出力が `FILE` 型の出力先ではなく文字列に書き込まれます。  
-  
- これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
-  
- C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、より安全な新しいバージョンを呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_sntprintf`|`_snprintf`|`_snprintf`|`_snwprintf`|  
-|`_sntprintf_l`|`_snprintf_l`|`_snprintf_l`|`_snwprintf_l`|  
-  
-## <a name="requirements"></a>要件  
-  
-|ルーチン|必須ヘッダー|  
-|-------------|---------------------|  
-|`snprintf`, `_snprintf`,  `_snprintf_l`|\<stdio.h>|  
-|`_snwprintf`, `_snwprintf_l`|\<stdio.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```C  
-// crt_snprintf.c  
-// compile with: /W3  
-#include <stdio.h>  
-#include <stdlib.h>  
-  
-#if !defined(__cplusplus)  
-typedef int bool;  
-const bool true = 1;  
-const bool false = 0;  
-#endif  
-  
-#define FAIL 0 // change to 1 and see what happens  
-  
-int main(void)  
-{  
-   char buffer[200];  
-   const static char s[] = "computer"  
-#if FAIL  
-"computercomputercomputercomputercomputercomputercomputercomputer"  
-"computercomputercomputercomputercomputercomputercomputercomputer"  
-"computercomputercomputercomputercomputercomputercomputercomputer"  
-"computercomputercomputercomputercomputercomputercomputercomputer"  
-#endif  
-   ;  
-   const char c = 'l';   
-   const int i = 35;  
-#if FAIL  
-   const double fp = 1e300; // doesn't fit in the buffer  
-#else  
-   const double fp = 1.7320534;  
-#endif  
-   /* !subtract one to prevent "squeezing out" the terminal nul! */  
-   const int bufferSize = sizeof(buffer)/sizeof(buffer[0]) - 1;  
-   int bufferUsed = 0;  
-   int bufferLeft = bufferSize - bufferUsed;  
-   bool bSuccess = true;  
-   buffer[0] = 0;  
-  
-   /* Format and print various data: */  
-  
-   if (bufferLeft > 0)  
-   {  
-      int perElementBufferUsed = _snprintf(&buffer[bufferUsed],   
-      bufferLeft, "   String: %s\n", s ); // C4996  
-      // Note: _snprintf is deprecated; consider _snprintf_s instead  
-      if (bSuccess = (perElementBufferUsed >= 0))  
-      {  
-         bufferUsed += perElementBufferUsed;  
-         bufferLeft -= perElementBufferUsed;  
-         if (bufferLeft > 0)  
-         {  
-            int perElementBufferUsed = _snprintf(&buffer[bufferUsed],   
-            bufferLeft, "   Character: %c\n", c ); // C4996  
-            if (bSuccess = (perElementBufferUsed >= 0))  
-            {  
-               bufferUsed += perElementBufferUsed;  
-               bufferLeft -= perElementBufferUsed;  
-               if (bufferLeft > 0)  
-               {  
-                  int perElementBufferUsed = _snprintf(&buffer  
-                  [bufferUsed], bufferLeft, "   Integer: %d\n", i ); // C4996  
-                  if (bSuccess = (perElementBufferUsed >= 0))  
-                  {  
-                     bufferUsed += perElementBufferUsed;  
-                     bufferLeft -= perElementBufferUsed;  
-                     if (bufferLeft > 0)  
-                     {  
-                        int perElementBufferUsed = _snprintf(&buffer  
-                        [bufferUsed], bufferLeft, "   Real: %f\n", fp ); // C4996  
-                        if (bSuccess = (perElementBufferUsed >= 0))  
-                        {  
-                           bufferUsed += perElementBufferUsed;  
-                        }  
-                     }  
-                  }  
-               }  
-            }  
-         }  
-      }  
-   }  
-  
-   if (!bSuccess)  
-   {  
-      printf("%s\n", "failure");  
-   }  
-   else  
-   {  
-      /* !store nul because _snprintf doesn't necessarily (if the string   
-       * fits without the terminal nul, but not with it)!  
-       * bufferUsed might be as large as bufferSize, which normally is   
-       * like going one element beyond a buffer, but in this case   
-       * subtracted one from bufferSize, so we're ok.  
-       */  
-      buffer[bufferUsed] = 0;  
-      printf( "Output:\n%s\ncharacter count = %d\n", buffer, bufferUsed );  
-   }  
-   return EXIT_SUCCESS;  
-}  
-```  
-  
-```Output  
-Output:  
-   String: computer  
-   Character: l  
-   Integer: 35  
-   Real: 1.732053  
-  
-character count = 69  
-```  
-  
-## <a name="see-also"></a>関連項目  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [sprintf、_sprintf_l、swprintf、_swprintf_l、\__swprintf_l](../../c-runtime-library/reference/sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)   
- [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
- [printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)   
- [scanf、_scanf_l、wscanf、_wscanf_l](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
- [sscanf、_sscanf_l、swscanf、_swscanf_l](../../c-runtime-library/reference/sscanf-sscanf-l-swscanf-swscanf-l.md)   
- [vprintf 系関数](../../c-runtime-library/vprintf-functions.md)
+> *format* にユーザー定義の文字列を指定しないでください。 **_Snprintf**関数は NULL で終わるは保証されません-具体的には、戻り値が*カウント*— null 終端文字を追加するコードに従っていることを確認してください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。
+
+Visual Studio 2015 および Windows 10 で UCRT と共に開始**snprintf**と同じでは、不要になった **_snprintf**です。 **Snprintf**関数の動作は、現在 C99 標準に準拠していません。
+
+**_snwprintf**のワイド文字バージョンは、 **_snprintf**; ポインター引数 **_snwprintf**ワイド文字列です。 エンコーディング エラーの検出 **_snwprintf**が異なる場合が **_snprintf**です。 **_snwprintf**とまったく同様に、 **swprintf**、型の出力先ではなく文字列に出力を書き込みます**ファイル**です。
+
+これらの関数を持つバージョン、 **_l**現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じです。
+
+C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、より安全な新しいバージョンを呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_sntprintf**|**_snprintf**|**_snprintf**|**_snwprintf**|
+|**_sntprintf_l**|**_snprintf_l**|**_snprintf_l**|**_snwprintf_l**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**snprintf**、 **_snprintf**、 **_snprintf_l**|\<stdio.h>|
+|**_snwprintf**、 **_snwprintf_l**|\<stdio.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_snprintf.c
+// compile with: /W3
+#include <stdio.h>
+#include <stdlib.h>
+
+#if !defined(__cplusplus)
+typedef int bool;
+const bool true = 1;
+const bool false = 0;
+#endif
+
+#define FAIL 0 // change to 1 and see what happens
+
+int main(void)
+{
+   char buffer[200];
+   const static char s[] = "computer"
+#if FAIL
+"computercomputercomputercomputercomputercomputercomputercomputer"
+"computercomputercomputercomputercomputercomputercomputercomputer"
+"computercomputercomputercomputercomputercomputercomputercomputer"
+"computercomputercomputercomputercomputercomputercomputercomputer"
+#endif
+   ;
+   const char c = 'l';
+   const int i = 35;
+#if FAIL
+   const double fp = 1e300; // doesn't fit in the buffer
+#else
+   const double fp = 1.7320534;
+#endif
+   /* !subtract one to prevent "squeezing out" the terminal nul! */
+   const int bufferSize = sizeof(buffer)/sizeof(buffer[0]) - 1;
+   int bufferUsed = 0;
+   int bufferLeft = bufferSize - bufferUsed;
+   bool bSuccess = true;
+   buffer[0] = 0;
+
+   /* Format and print various data: */
+
+   if (bufferLeft > 0)
+   {
+      int perElementBufferUsed = _snprintf(&buffer[bufferUsed],
+      bufferLeft, "   String: %s\n", s ); // C4996
+      // Note: _snprintf is deprecated; consider _snprintf_s instead
+      if (bSuccess = (perElementBufferUsed >= 0))
+      {
+         bufferUsed += perElementBufferUsed;
+         bufferLeft -= perElementBufferUsed;
+         if (bufferLeft > 0)
+         {
+            int perElementBufferUsed = _snprintf(&buffer[bufferUsed],
+            bufferLeft, "   Character: %c\n", c ); // C4996
+            if (bSuccess = (perElementBufferUsed >= 0))
+            {
+               bufferUsed += perElementBufferUsed;
+               bufferLeft -= perElementBufferUsed;
+               if (bufferLeft > 0)
+               {
+                  int perElementBufferUsed = _snprintf(&buffer
+                  [bufferUsed], bufferLeft, "   Integer: %d\n", i ); // C4996
+                  if (bSuccess = (perElementBufferUsed >= 0))
+                  {
+                     bufferUsed += perElementBufferUsed;
+                     bufferLeft -= perElementBufferUsed;
+                     if (bufferLeft > 0)
+                     {
+                        int perElementBufferUsed = _snprintf(&buffer
+                        [bufferUsed], bufferLeft, "   Real: %f\n", fp ); // C4996
+                        if (bSuccess = (perElementBufferUsed >= 0))
+                        {
+                           bufferUsed += perElementBufferUsed;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   if (!bSuccess)
+   {
+      printf("%s\n", "failure");
+   }
+   else
+   {
+      /* !store nul because _snprintf doesn't necessarily (if the string
+       * fits without the terminal nul, but not with it)!
+       * bufferUsed might be as large as bufferSize, which normally is
+       * like going one element beyond a buffer, but in this case
+       * subtracted one from bufferSize, so we're ok.
+       */
+      buffer[bufferUsed] = 0;
+      printf( "Output:\n%s\ncharacter count = %d\n", buffer, bufferUsed );
+   }
+   return EXIT_SUCCESS;
+}
+```
+
+```Output
+Output:
+   String: computer
+   Character: l
+   Integer: 35
+   Real: 1.732053
+
+character count = 69
+```
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[sprintf、_sprintf_l、swprintf、_swprintf_l、\__swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
+[fprintf、_fprintf_l、fwprintf、_fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>
+[printf、_printf_l、wprintf、_wprintf_l](printf-printf-l-wprintf-wprintf-l.md)<br/>
+[scanf、_scanf_l、wscanf、_wscanf_l](scanf-scanf-l-wscanf-wscanf-l.md)<br/>
+[sscanf、_sscanf_l、swscanf、_swscanf_l](sscanf-sscanf-l-swscanf-swscanf-l.md)<br/>
+[vprintf 系関数](../../c-runtime-library/vprintf-functions.md)<br/>

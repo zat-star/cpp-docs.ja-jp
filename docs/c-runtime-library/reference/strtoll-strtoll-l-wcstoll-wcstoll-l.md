@@ -1,12 +1,12 @@
 ---
-title: "strtoll、_strtoll_l、wcstoll、_wcstoll_l | Microsoft Docs"
-ms.custom: 
+title: strtoll、_strtoll_l、wcstoll、_wcstoll_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - strtoll
@@ -43,106 +43,111 @@ helpviewer_keywords:
 - _tcstoll function
 - _strtoll_l function
 ms.assetid: e2d05dcf-d3b2-4291-9e60-dee77e540fd7
-caps.latest.revision: 
+caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 954b529b894b61f2f4d8566f70145460656a702c
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 9138ec6a298c302446077a2c071aef659c9a0ccb
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="strtoll-strtolll-wcstoll-wcstolll"></a>strtoll、_strtoll_l、wcstoll、_wcstoll_l
-文字列を `long long` 値に変換します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-long long strtoll(  
-   const char *nptr,  
-   char **endptr,  
-   int base   
-);  
-long long wcstoll(  
-   const wchar_t *nptr,  
-   wchar_t **endptr,  
-   int base   
-);  
-long long _strtoll_l(  
-   const char *nptr,  
-   char **endptr,  
-   int base,  
-   _locale_t locale  
-);  
-long long _wcstoll_l(  
-   const wchar_t *nptr,  
-   wchar_t **endptr,  
-   int base,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `nptr`  
- NULL で終わる変換対象の文字列。  
-  
- `endptr`  
- スキャンの終了位置を示す文字へのポインター。  
-  
- `base`  
- 使用する基数。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- `strtoll` は、オーバーフローを引き起こす場合を除き、文字列 `nptr` で表現される値を返します。オーバーフローの場合は、`LLONG_MAX` または `LLONG_MIN` を返します。 この関数は、変換を実行できない場合には 0 を返します。 `wcstoll` 関数の戻り値は、`strtoll` 関数の戻り値と同じです。  
-  
- `LLONG_MAX`、および `LLONG_MIN` は、LIMITS.H で定義されます。  
-  
- `nptr` が `NULL` または `base` がゼロ以外で 2 未満または 36 を超える場合、`errno` は `EINVAL` に設定されます。  
-  
- リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
-  
-## <a name="remarks"></a>コメント  
- `strtoll` 関数は `nptr` を `long long` に変換します。 どちらの関数も、数値の一部として認識できない文字に最初に遭遇した時点で `nptr` 文字列の読み取りを停止します。 これは、終端の null 文字または、`base` 以上の最初の数字の場合があります。 `wcstoll` 関数は、`strtoll` 関数のワイド文字バージョンで、`nptr` 引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_tcstoll`|`strtoll`|`strtoll`|`wcstoll`|  
-|`_tcstoll_l`|`_strtoll_l`|`_strtoll_l`|`_wcstoll_l`|  
-  
- ロケールの `LC_NUMERIC` カテゴリの設定に基づいて、`nptr` の小数点文字が認識されます。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていない関数は現在のロケールを使用します。`_strtoll_l` および `_wcstoll_l` は、渡されたロケールを代わりに使用する点を除いて、対応するサフィックスが付いていない関数と同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
- `endptr` が `NULL` 以外の場合は、スキャンを停止させた文字へのポインターを `endptr` が指す位置に格納します。 変換できなかった場合 (有効な数字が見つからなかった場合、または無効な base を指定した場合) は、`nptr` の値を `endptr` が指す位置に格納します。  
-  
- `strtoll` は、`nptr` が次の形式の文字列を指すものと想定します。  
-  
- [`whitespace`] [{`+` &#124; `-`}] [`0` [{ `x` &#124; `X` }]] [`digits` &#124; `letters`]  
-  
- `whitespace` はスペースやタブ文字で構成することができ、無視されます。`digits` は 1 つ以上の 10 進数です。`letters` は 1 つ以上の文字 ('a' ～ 'z' または 'A' ～ 'Z') です。 この形式に一致しない文字を見つけるとスキャンを停止します。 `base` が 2 ～ 36 の間の場合、数値の基数として使用されます。 `base` が 0 の場合、`nptr` が指す文字列の先頭の文字を使用して、基数を判断します。 最初の文字が '0' で、2 番目の文字が 'x' または 'X' 以外の場合、文字列は 8 進数と解釈されます。 最初の文字が '0' で、2 番目の文字が 'x' または 'X' である場合、文字列は 16 進数と解釈されます。 最初の文字が '1' ～ '9' の間の数値の場合、文字列は 10 進数と解釈されます。 'a' ～ 'z' (または 'A' ～ 'Z') の文字には、10 ～ 35 の値が割り当てられています。`base` よりも小さい値が割り当てられている文字のみ許可されます。 基数の範囲外にある文字を最初に見つけた時点で、スキャンは停止されます。 たとえば、`base` が 0 で、スキャンされた最初の文字が '0' の場合、8 進数と見なされ、'8' または '9' の文字が出現すると、スキャンは停止されます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`strtoll`, `_strtoll_l`|\<stdlib.h>|  
-|`wcstoll`, `_wcstoll_l`|\<stdlib.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [データ変換](../../c-runtime-library/data-conversion.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [localeconv](../../c-runtime-library/reference/localeconv.md)   
- [setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)   
- [文字列を数値に変換する関数](../../c-runtime-library/string-to-numeric-value-functions.md)   
- [strtod、_strtod_l、wcstod、_wcstod_l](../../c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l.md)   
- [strtol、wcstol、_strtol_l、_wcstol_l](../../c-runtime-library/reference/strtol-wcstol-strtol-l-wcstol-l.md)   
- [strtoul、_strtoul_l、wcstoul、_wcstoul_l](../../c-runtime-library/reference/strtoul-strtoul-l-wcstoul-wcstoul-l.md)   
- [atof、_atof_l、_wtof、_wtof_l](../../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)
+
+文字列に変換、**長い****長い**値。
+
+## <a name="syntax"></a>構文
+
+```C
+long long strtoll(
+   const char *strSource,
+   char **endptr,
+   int base
+);
+long long wcstoll(
+   const wchar_t *strSource,
+   wchar_t **endptr,
+   int base
+);
+long long _strtoll_l(
+   const char *strSource,
+   char **endptr,
+   int base,
+   _locale_t locale
+);
+long long _wcstoll_l(
+   const wchar_t *strSource,
+   wchar_t **endptr,
+   int base,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*strSource*<br/>
+NULL で終わる変換対象の文字列。
+
+*endptr*<br/>
+スキャンの終了位置を示す文字へのポインター。
+
+*base*<br/>
+使用する基数。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+**strtoll**文字列で表される値を返します*strSource*、形式がオーバーフローを発生する場合を除く、その場合を返します**含ま**または**LLONG_MIN**です。 この関数は、変換を実行できない場合には 0 を返します。 **wcstoll**戻り値を返します**strtoll**です。
+
+**含ま**と**LLONG_MIN**制限で定義されます。H.
+
+場合*strSource*は**NULL**または*基本*が 0 でないと、2 未満または 36 を超える**errno**に設定されている**EINVAL**.
+
+リターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。
+
+## <a name="remarks"></a>コメント
+
+**Strtoll**関数に変換*strSource*を**長い****長い**です。 どちらの関数は、文字列の読み取りを停止*strSource*数値の一部として認識できない最初の文字です。 大きいか等しいには、最初の数値文字がある可能性がありますか終端の null 文字あります*基本*です。 **wcstoll**のワイド文字バージョンは、 **strtoll**以外の場合はその*strSource*引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_tcstoll**|**strtoll**|**strtoll**|**wcstoll**|
+|**_tcstoll_l**|**_strtoll_l**|**_strtoll_l**|**_wcstoll_l**|
+
+ロケールの**LC_NUMERIC**カテゴリの設定によっての小数点文字の認識*strSource*。 詳細については、を参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)です。 関数がない、 **_l**サフィックスは現在のロケールを使用します。**_strtoll_l**と **_wcstoll_l**で渡されたロケールを代わりに使用する点を除いて、サフィックスが付いていない対応する関数と同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+場合*endptr*は**NULL**が指す位置に、スキャンを停止させた文字へのポインターが格納されている*endptr*です。 変換を実行できない場合 (有効な数字が見つからないか無効な base を指定した) の値*strSource*が指す位置に格納されて*endptr*です。
+
+**strtoll**が必要ですが*strSource*して次の形式の文字列を指します。
+
+> [*空白*] [{**+** &#124; **-**}] [**0** [{ **x**&#124; **X** }] [*桁*&#124; *文字*]  
+
+A*空白*は無視されますスペースやタブ文字で構成されている可能性があります。*桁*は 1 つ以上の 10 進数字です。*文字*1 つまたは複数の文字は、'a' から 'z' ('A' ~ 'Z')。 この形式に一致しない文字を見つけるとスキャンを停止します。 場合*基本*2 ~ 36 の間は、数値の基数として使用されます。 場合*基本*0 が指す文字列の先頭の文字は、 *strSource*基数を判定するために使用します。 最初の文字が '0' で、2 番目の文字が 'x' または 'X' 以外の場合、文字列は 8 進数と解釈されます。 最初の文字が '0' で、2 番目の文字が 'x' または 'X' である場合、文字列は 16 進数と解釈されます。 最初の文字が '1' ～ '9' の間の数値の場合、文字列は 10 進数と解釈されます。 'a' ～ 'z' (または 'A' ～ 'Z') の文字には、10 ～ 35 の値が割り当てられています。*基数*よりも小さい値が割り当てられている文字のみ許可されます。 基数の範囲外にある文字を最初に見つけた時点で、スキャンは停止されます。 たとえば場合、*基本*0 は、スキャンされた最初の文字が '0' と見なされます、8 進数と、'8' または '9' の文字が、スキャンを停止します。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**strtoll**、 **_strtoll_l**|\<stdlib.h>|
+|**wcstoll**、 **_wcstoll_l**|\<stdlib.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[データ変換](../../c-runtime-library/data-conversion.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[localeconv](localeconv.md)<br/>
+[setlocale、_wsetlocale](setlocale-wsetlocale.md)<br/>
+[文字列を数値に変換する関数](../../c-runtime-library/string-to-numeric-value-functions.md)<br/>
+[strtod、_strtod_l、wcstod、_wcstod_l](strtod-strtod-l-wcstod-wcstod-l.md)<br/>
+[strtol、wcstol、_strtol_l、_wcstol_l](strtol-wcstol-strtol-l-wcstol-l.md)<br/>
+[strtoul、_strtoul_l、wcstoul、_wcstoul_l](strtoul-strtoul-l-wcstoul-wcstoul-l.md)<br/>
+[atof、_atof_l、_wtof、_wtof_l](atof-atof-l-wtof-wtof-l.md)<br/>

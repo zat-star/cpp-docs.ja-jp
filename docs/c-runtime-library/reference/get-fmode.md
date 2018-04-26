@@ -1,12 +1,12 @@
 ---
 title: _get_fmode | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _get_fmode
@@ -33,52 +33,58 @@ helpviewer_keywords:
 - file translation [C++], default mode
 - get_fmode function
 ms.assetid: 22ea70e2-b9b5-422d-b514-64f4beaea45c
-caps.latest.revision: 
+caps.latest.revision: 19
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: abfdd4d9b8838914a91b4db995fcaad573e80829
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 3a3845de8feb36b995fec8d450bfc5a9656d429c
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="getfmode"></a>_get_fmode
-ファイル I/O 操作の既定のファイル変換モードを取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-errno_t _get_fmode(   
-   int * pmode   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [出力] `pmode`  
- 現在の既定のモード値が格納される整数へのポインター: `_O_TEXT` または `_O_BINARY`。  
-  
-## <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。 `pmode` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `EINVAL`が返されます。  
-  
-## <a name="remarks"></a>コメント  
- この関数は、[_fmode](../../c-runtime-library/fmode.md) グローバル変数の値を取得します。 この変数は、`_open`、`_pipe`、`fopen`、`freopen` などの、低レベルおよびストリーム ファイル両方の I/O 操作の既定のファイル変換モードを指定します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
-|-------------|---------------------|---------------------|  
-|`_get_fmode`|\<stdlib.h>|\<fcntl.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
- [_set_fmode](../../c-runtime-library/reference/set-fmode.md) の例を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [_fmode](../../c-runtime-library/fmode.md)   
- [_set_fmode](../../c-runtime-library/reference/set-fmode.md)   
- [_setmode](../../c-runtime-library/reference/setmode.md)   
- [テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)
+
+ファイル I/O 操作の既定のファイル変換モードを取得します。
+
+## <a name="syntax"></a>構文
+
+```C
+errno_t _get_fmode( 
+   int * pmode 
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*pmode*<br/>
+現在の既定のモードが格納される整数へのポインター。 **_O_TEXT**または **_O_BINARY**です。
+
+## <a name="return-value"></a>戻り値
+
+正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。 場合*pmode*は**NULL**、」の説明に従って、無効なパラメーター ハンドラーが呼び出される[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 続けるには、実行が許可された場合**errno**に設定されている**EINVAL** 、関数を返します**EINVAL**です。
+
+## <a name="remarks"></a>コメント
+
+この関数は、[_fmode](../../c-runtime-library/fmode.md) グローバル変数の値を取得します。 この変数は低レベルの両方の既定ファイルの変換モードを指定しなどのファイル I/O 操作をストリーム **_open**、 **_pipe**、 **fopen**、および[freopen](freopen-wfreopen.md)です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|オプション ヘッダー|
+|-------------|---------------------|---------------------|
+|**_get_fmode**|\<stdlib.h>|\<fcntl.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+[_set_fmode](set-fmode.md) の例を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[_fmode](../../c-runtime-library/fmode.md)<br/>
+[_set_fmode](set-fmode.md)<br/>
+[_setmode](setmode.md)<br/>
+[テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)<br/>

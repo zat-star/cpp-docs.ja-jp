@@ -1,12 +1,12 @@
 ---
 title: rand_s | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 1/02/2018
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - rand_s
@@ -41,15 +41,15 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2438b2ced054667a658f8f31a37c9a62112debc6
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: a0e548a4225a457f846d334768d981c924d41953
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="rands"></a>rand_s
 
-疑似乱数を生成します。 これは、関数のバージョンがより安全な[rand](../../c-runtime-library/reference/rand.md)のセキュリティが強化された」の説明に従って[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)します。 
+疑似乱数を生成します。 これは、関数のバージョンがより安全な[rand](rand.md)のセキュリティが強化された」の説明に従って[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)します。
 
 ## <a name="syntax"></a>構文
 
@@ -59,31 +59,31 @@ errno_t rand_s(unsigned int* randomValue);
 
 ### <a name="parameters"></a>パラメーター
 
-*randomValue*  
+*randomValue*<br/>
 生成された値を保持する整数へのポインター。
 
 ## <a name="return-value"></a>戻り値
 
-正常に終了した場合は 0 を返し、それ以外の場合はエラー コードを返します。 場合は入力ポインター_確率_null ポインター」の説明に従って、関数は、無効なパラメーター ハンドラーを呼び出します[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。 その他の何らかの理由で失敗した場合 *_確率_は 0 に設定します。
+正常に終了した場合は 0 を返し、それ以外の場合はエラー コードを返します。 場合は入力ポインター_確率_null ポインター」の説明に従って、関数は、無効なパラメーター ハンドラーを呼び出します[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行は継続許可されたかどうか、関数を返します**EINVAL**設定と**errno**に**EINVAL**です。 その他の何らかの理由で失敗した場合 *_確率_は 0 に設定します。
 
 ## <a name="remarks"></a>コメント
 
-`rand_s` 関数は、0 ～ `UINT_MAX` の範囲の整数の擬似乱数を入力ポインターに書き込みます。 `rand_s` 関数では、オペレーティング システムを使用して、暗号強度が高い乱数を生成します。 この関数は [srand](../../c-runtime-library/reference/srand.md) 関数の生成したシードを使用せず、また `rand` の使用するランダムな数値のシーケンスに影響を与えません。
+**Rand_s**関数は、0 ~ の擬似乱数の整数を書き込みます**UINT_MAX**入力ポインターにします。 **Rand_s**関数では、オペレーティング システムを使用して、暗号強度が高い乱数を生成します。 によって生成されたシードを使用していない、 [srand](srand.md)関数によって使用されるランダムな番号シーケンスが影響[rand](rand.md)です。
 
-`rand_s` 関数を宣言するには、インクルード ステートメントの前に定数 `_CRT_RAND_S` を定義する必要があります。たとえば次の例のようになります。
+**Rand_s**関数には、その定数が必要な **_CRT_RAND_S**インクルード ステートメントの宣言するのには、次の例のように、関数の前に定義します。
 
 ```C
 #define _CRT_RAND_S
 #include <stdlib.h>
 ```
 
-`rand_s` は [RtlGenRandom](http://msdn.microsoft.com/library/windows/desktop/aa387694) API に依存しますが、この API は Windows XP 以降でのみ利用できます。
+**rand_s**によって異なります、 [RtlGenRandom](http://msdn.microsoft.com/library/windows/desktop/aa387694) API で、Windows XP で利用およびそれ以降は、のみです。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-|ルーチンによって返される値|必須ヘッダー|
+|ルーチン|必須ヘッダー|
 |-------------|---------------------|
-|`rand_s`|\<stdlib.h>|
+|**rand_s**|\<stdlib.h>|
 
 詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
 
@@ -131,7 +131,7 @@ int main( void )
         {
             printf_s("The rand_s function failed!\n");
         }
-        printf_s( "  %g\n", (double) number / 
+        printf_s( "  %g\n", (double) number /
                           ((double) UINT_MAX + 1) * max );
     }
 }
@@ -165,6 +165,6 @@ int main( void )
 
 ## <a name="see-also"></a>関連項目
 
-[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)  
-[rand](../../c-runtime-library/reference/rand.md)  
-[srand](../../c-runtime-library/reference/srand.md)  
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[rand](rand.md)<br/>
+[srand](srand.md)<br/>

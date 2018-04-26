@@ -1,12 +1,12 @@
 ---
-title: "scalbn、scalbnf、scalbnl、scalbln、scalblnf、scalblnl | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: scalbn、scalbnf、scalbnl、scalbln、scalblnf、scalblnl | Microsoft Docs
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - scalblnl
@@ -45,117 +45,122 @@ helpviewer_keywords:
 - scalbnf function
 - scalblnf function
 ms.assetid: df2f1543-8e39-4af4-a5cf-29307e64807d
-caps.latest.revision: 
+caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bfdc1e666ddee2baae88fce558dfe1b49318b628
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 111978053b35b73a4b5ef9b07e1ecb987d84f6bf
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="scalbn-scalbnf-scalbnl-scalbln-scalblnf-scalblnl"></a>scalbn、scalbnf、scalbnl、scalbln、scalblnf、scalblnl
-浮動小数点数に整数である FLT_RADIX の累乗を乗算します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double scalbn(  
-   double x,  
-   int exp   
-);  
-float scalbn(  
-   float x,  
-   int exp  
-);  // C++ only  
-long double scalbn(  
-   long double x,  
-   int exp  
-);  // C++ only   
-float scalbnf(  
-   float x,  
-   int exp  
-);   
-long double scalbnl(  
-   long double x,  
-   int exp  
-);  
-double scalbln(  
-   double x,  
-   long exp   
-);  
-float scalbln(  
-   float x,  
-   long exp  
-);  // C++ only  
-long double scalbln(  
-   long double x,  
-   long exp  
-);  // C++ only   
-float scalblnf(  
-   float x,  
-   long exp  
-);   
-long double scalblnl(  
-   long double x,  
-   long exp  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `x`  
- 浮動小数点値。  
-  
- `exp`  
- 整数の指数。  
-  
-## <a name="return-value"></a>戻り値  
- `scalbn` 関数は、成功した場合 `x` * `FLT_RADIX`<sup>exp</sup> の値を返します。 オーバーフローが発生 (の符号に応じて`x`)、 `scalbn` +/-返します`HUGE_VAL`;`errno`に値が設定されている`ERANGE`です。  
-  
- `errno` および考えられるエラー戻り値の詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
-  
-## <a name="remarks"></a>コメント  
- `FLT_RADIX` は、\<float.h> でネイティブ浮動小数点基数として定義されます。バイナリ システムでは、その値は 2 であり、`scalbn` は [ldexp](../../c-runtime-library/reference/ldexp.md) と等価です。  
-  
- C++ ではオーバーロードが可能であるため、`scalbn` 型または `scalbln` 型を受け取って返す `float` と `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`scalbn` は常に `double` および `int` を受け取って `double` を返し、`scalbln` は常に `double` および `long` を受け取って `double` を返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|C ヘッダー|C++ ヘッダー|  
-|--------------|--------------|------------------|  
-|`scalbn`, `scalbnf`, `scalbnl`, `scalbln`, `scalblnf`, `scalblnl`|\<math.h>|\<cmath>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_scalbn.c  
-// Compile using: cl /W4 crt_scalbn.c  
-#include <math.h>  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   double x = 6.4, y;  
-   int p = 3;  
-  
-   y = scalbn( x, p );  
-   printf( "%2.1f times FLT_RADIX to the power of %d is %2.1f\n", x, p, y );  
-}  
-```  
-  
-## <a name="output"></a>出力  
-  
-```  
-6.4 times FLT_RADIX to the power of 3 is 51.2  
-```  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [frexp](../../c-runtime-library/reference/frexp.md)   
- [ldexp](../../c-runtime-library/reference/ldexp.md)   
- [modf、modff、modfl](../../c-runtime-library/reference/modf-modff-modfl.md)
+
+浮動小数点数に整数である FLT_RADIX の累乗を乗算します。
+
+## <a name="syntax"></a>構文
+
+```C
+double scalbn(
+   double x,
+   int exp
+);
+float scalbn(
+   float x,
+   int exp
+);  // C++ only
+long double scalbn(
+   long double x,
+   int exp
+);  // C++ only
+float scalbnf(
+   float x,
+   int exp
+);
+long double scalbnl(
+   long double x,
+   int exp
+);
+double scalbln(
+   double x,
+   long exp
+);
+float scalbln(
+   float x,
+   long exp
+);  // C++ only
+long double scalbln(
+   long double x,
+   long exp
+);  // C++ only
+float scalblnf(
+   float x,
+   long exp
+);
+long double scalblnl(
+   long double x,
+   long exp
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+浮動小数点値。
+
+*exp*<br/>
+整数の指数。
+
+## <a name="return-value"></a>戻り値
+
+**Scalbn**関数の値を返す*x* * **FLT_RADIX**<sup>exp</sup>成功するとします。 オーバーフローが発生 (の符号に応じて*x*)、 **scalbn** +/-返します**HUGE_VAL**; **errno**に値が設定されている**ERANGE**.
+
+詳細については**errno**と考えられるエラーの値を返すを参照してください[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)です。
+
+## <a name="remarks"></a>コメント
+
+**FLT_RADIX**で定義された\<float.h > 2, の値があるネイティブ浮動小数点基数として; バイナリ システムと**scalbn**と等価[ldexp](ldexp.md)です。
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**scalbn**と**scalbln**を受け取り、返します**float**または**長い** **二重**型です。 C プログラムでは、 **scalbn**は常に、**二重**と**int**を返します、**二重**、および**scalbln**は常に、**二重**と**長い**を返します、**二重**です。
+
+## <a name="requirements"></a>要件
+
+|関数|C ヘッダー|C++ ヘッダー|
+|--------------|--------------|------------------|
+|**scalbn**、 **scalbnf**、 **scalbnl**、 **scalbln**、 **scalblnf**、 **scalblnl**|\<math.h>|\<cmath>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_scalbn.c
+// Compile using: cl /W4 crt_scalbn.c
+#include <math.h>
+#include <stdio.h>
+
+int main( void )
+{
+   double x = 6.4, y;
+   int p = 3;
+
+   y = scalbn( x, p );
+   printf( "%2.1f times FLT_RADIX to the power of %d is %2.1f\n", x, p, y );
+}
+```
+
+### <a name="output"></a>出力
+
+```Output
+6.4 times FLT_RADIX to the power of 3 is 51.2
+```
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[frexp](frexp.md)<br/>
+[ldexp](ldexp.md)<br/>
+[modf、modff、modfl](modf-modff-modfl.md)<br/>

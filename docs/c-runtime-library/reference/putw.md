@@ -1,12 +1,12 @@
 ---
 title: _putw | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _putw
@@ -34,95 +34,100 @@ helpviewer_keywords:
 - streams, writing integers to
 - _putw function
 ms.assetid: 83d63644-249d-4a39-87e5-3b7aa313968d
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0d4c72da2b3002008d4f81fdac87f0a300dcdbc1
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 0f57ca7d619005ed8a4f67626dd5349bd4f8bc18
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="putw"></a>_putw
-ストリームに整数を書き込みます。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      int _putw(  
-   int binint,  
-   FILE *stream   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- *binint*  
- 出力されるバイナリ整数。  
-  
- `stream`  
- **FILE** 構造体へのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- 書き込まれた値を返します。 `EOF` の戻り値はエラーを示す場合があります。 `EOF` も有効な整数値であるため、`ferror` を使用してエラーを確認します。 `stream` が null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EOF` を返します。  
-  
- エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
-  
-## <a name="remarks"></a>コメント  
- `_putw` 関数は、`int` 型のバイナリ整数を*ストリーム*の現在の位置に書き込みます。 `_putw` はストリーム内のアイテムの配置に影響を与えず、特殊な配置を仮定しません。 `_putw` は主に以前のライブラリとの互換性のための関数です。 `int` のサイズと、`int` 内のバイトの並び順がシステム間で異なるため、`_putw` で移植性の問題が発生することがあります。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_putw`|\<stdio.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_putw.c  
-/* This program uses _putw to write a  
- * word to a stream, then performs an error check.  
- */  
-  
-#include <stdio.h>  
-#include <stdlib.h>  
-  
-int main( void )  
-{  
-   FILE *stream;  
-   unsigned u;  
-   if( fopen_s( &stream, "data.out", "wb" ) )  
-      exit( 1 );  
-   for( u = 0; u < 10; u++ )  
-   {  
-      _putw( u + 0x2132, stream );   /* Write word to stream. */  
-      if( ferror( stream ) )         /* Make error check. */  
-      {  
-         printf( "_putw failed" );  
-         clearerr_s( stream );  
-         exit( 1 );  
-      }  
-   }  
-   printf( "Wrote ten words\n" );  
-   fclose( stream );  
-}  
-```  
-  
-## <a name="output"></a>出力  
-  
-```  
-Wrote ten words  
-```  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [_getw](../../c-runtime-library/reference/getw.md)
+
+ストリームに整数を書き込みます。
+
+## <a name="syntax"></a>構文
+
+```C
+int _putw(
+   int binint,
+   FILE *stream
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*binint*<br/>
+出力されるバイナリ整数。
+
+*ストリーム*<br/>
+**FILE** 構造体へのポインター。
+
+## <a name="return-value"></a>戻り値
+
+書き込まれた値を返します。 戻り値の**EOF**エラーを示している可能性があります。 **EOF**を使用して、正当な整数値でも**ferror**をエラーを確認します。 場合*ストリーム*null ポインターで説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合に、この関数が設定**errno**に**EINVAL**し、返します**EOF**です。
+
+エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。
+
+## <a name="remarks"></a>コメント
+
+**_Putw**関数は、型のバイナリ値を書き込みます。 **int**の現在位置に*ストリーム。* **_putw**ストリーム内のアイテムの配置には影響しませんも、そのすべての特殊な配置を想定します。 **_putw**は以前のライブラリと互換性のために、主にします。 移植性の問題が発生する可能性 **_putw 関数**ためのサイズ、 **int**内のバイトの順序と、 **int**システムによって異なります。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_putw**|\<stdio.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="example"></a>例
+
+```C
+// crt_putw.c
+/* This program uses _putw to write a
+* word to a stream, then performs an error check.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( void )
+{
+   FILE *stream;
+   unsigned u;
+   if( fopen_s( &stream, "data.out", "wb" ) )
+      exit( 1 );
+   for( u = 0; u < 10; u++ )
+   {
+      _putw( u + 0x2132, stream );   /* Write word to stream. */
+      if( ferror( stream ) )         /* Make error check. */
+      {
+         printf( "_putw failed" );
+         clearerr_s( stream );
+         exit( 1 );
+      }
+   }
+   printf( "Wrote ten words\n" );
+   fclose( stream );
+}
+```
+
+### <a name="output"></a>出力
+
+```Output
+Wrote ten words
+```
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[_getw](getw.md)<br/>

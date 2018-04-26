@@ -1,12 +1,12 @@
 ---
-title: "_putch、_putwch | Microsoft Docs"
-ms.custom: 
+title: _putch、_putwch | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _putwch
@@ -38,70 +38,76 @@ helpviewer_keywords:
 - putch function
 - console, writing characters to
 ms.assetid: 3babc7cf-e333-405d-8449-c788d61d51aa
-caps.latest.revision: 
+caps.latest.revision: 19
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 75094625553a5e080c9e1b4ec6a1f96a7a76d9b7
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 2c1810207b9af2cfccbd0bf9502952ad96fb9465
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="putch-putwch"></a>_putch、_putwch
-コンソールに文字を書き込みます。  
-  
+
+コンソールに文字を書き込みます。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      int _putch(  
-int c   
-);  
-wint_t _putwch(  
-   wchar_t c  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- 出力する文字。  
-  
-## <a name="return-value"></a>戻り値  
- 正常に終了した場合は `c` を返します。 `_putch` は、失敗した場合 `EOF` を返します。**_putwch** は、失敗した場合 **WEOF** を返します。  
-  
-## <a name="remarks"></a>コメント  
- これらの関数は、バッファリングを行わずに文字 `c` をコンソールに直接書き込みます。 Windows NT では、**_putwch** は現在のコンソールのロケール設定を使用して Unicode 文字を書き出します。  
-  
- **_nolock** サフィックスが付いているバージョンは同じものですが、他のスレッドによる干渉から保護されない点が異なります。 詳細については、「`_putch_nolock`」および「`_putwch_nolock`」を参照してください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|**_puttch**|`_putch`|`_putch`|**_putwch**|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_putch`|\<conio.h>|  
-|**_putwch**|\<conio.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="example"></a>例  
- [_getch](../../c-runtime-library/reference/getch-getwch.md) に関する記事の例をご覧ください。  
-  
-## <a name="see-also"></a>参照  
- [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   
- [_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](../../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)   
- [_getch、_getwch](../../c-runtime-library/reference/getch-getwch.md)
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+int _putch(
+int c
+);
+wint_t _putwch(
+   wchar_t c
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+出力する文字。
+
+## <a name="return-value"></a>戻り値
+
+処理が正常に終了した場合は、*c* を返します。 場合 **_putch**失敗すると、返す**EOF**以外の場合は **_putwch**失敗すると、それを返します**WEOF**です。
+
+## <a name="remarks"></a>コメント
+
+これらの関数は、文字を書き込む*c*コンソールにバッファリングせずに直接、します。 Windows NT では、**_putwch** は現在のコンソールのロケール設定を使用して Unicode 文字を書き出します。
+
+**_nolock** サフィックスが付いているバージョンは同じものですが、他のスレッドによる干渉から保護されない点が異なります。 詳細については、次を参照してください。 **_putch_nolock**、 **_putwch_nolock**です。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_puttch**|**_putch**|**_putch**|**_putwch**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_putch**|\<conio.h>|
+|**_putwch**|\<conio.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="example"></a>例
+
+[_getch](getch-getwch.md) に関する記事の例をご覧ください。
+
+## <a name="see-also"></a>関連項目
+
+[コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](cprintf-cprintf-l-cwprintf-cwprintf-l.md)<br/>
+[_getch、_getwch](getch-getwch.md)<br/>

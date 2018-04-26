@@ -1,12 +1,12 @@
 ---
-title: "_RPT、_RPTF、_RPTW、_RPTFW のマクロ | Microsoft Docs"
-ms.custom: 
+title: _RPT、_RPTF、_RPTW、_RPTFW のマクロ | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apilocation:
 - msvcrt.dll
@@ -95,100 +95,102 @@ helpviewer_keywords:
 - RPTFW1 macro
 - RPTW1 macro
 ms.assetid: a5bf8b30-57f7-4971-8030-e773b7a1ae13
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 51668f9b286a6b438d7f7b686114b2fcf70c25ed
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 1692789ff2dac85e6ca33aa6b05ced6a01f30cba
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="rpt-rptf-rptw-rptfw-macros"></a>_RPT、_RPTF、_RPTW、_RPTFW のマクロ
-デバッグ レポートを生成してアプリケーションの進行状況を追跡します (デバッグ バージョンのみ)。 なお *n* 内の引数の数を指定`args`0、1、2、3、4、または 5 を指定できます。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      _RPT  
-      n  
-      (  
-   reportType,  
-   format,  
-...[args]  
-);  
-_RPTFn(  
-   reportType,  
-   format,  
-   [args]  
-);  
-_RPTWn(  
-   reportType,  
-   format   
-   [args]  
-);  
-_RPTFWn(  
-   reportType,  
-   format   
-   [args]  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `reportType`  
- レポートの種類: `_CRT_WARN`、`_CRT_ERROR`、または `_CRT_ASSERT`。  
-  
- `format`  
- ユーザー メッセージの作成に使用される書式指定文字列。  
-  
- `args`  
- `format` で使用される代替引数。  
-  
-## <a name="remarks"></a>コメント  
- すべてのマクロ、`reportType`と`format`パラメーター。 また、マクロ名に追加された数字で示される最大 4 つの追加引数を受け取る場合もあります。 たとえば、`_RPT0` と `_RPTF0` は追加引数を受け取らず、`_RPT1` と `_RPTF1` は `arg1` を、`_RPT2` と `_RPTF2` は `arg1` と `arg2` を受け取るなどです。  
-  
- `_RPT` マクロと `_RPTF` マクロは、デバッグ プロセス中のアプリケーションの進行状況を追跡するために使用できるため、[printf](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) 関数に似ています。 ただし、アプリケーションの製品版ビルドで呼び出されないようにするために `#ifdef` ステートメントで囲む必要がないため、これらのマクロには `printf` よりも高い柔軟性があります。 この柔軟性は、[_DEBUG](../../c-runtime-library/debug.md) マクロを使用することで実現できます。`_RPT` マクロと `_RPTF` マクロを使用できるのは、`_DEBUG` フラグが定義されている場合のみです。 `_DEBUG` が定義されていない場合、これらのマクロの呼び出しは前処理で削除されます。  
-  
- `_RPTW` マクロと `_RPTFW` マクロは、これらのマクロのワイド文字バージョンです。 これらは、`wprintf` に似ており、引数としてワイド文字列を受け取ります。  
-  
- `_RPT` マクロは [_CrtDbgReport](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) 関数を呼び出して、ユーザー メッセージを含むデバッグ レポートを生成します。 `_RPTW` マクロは、`_CrtDbgReportW` 関数を呼び出して、ワイド文字で同じレポートを生成します。 `_RPTF` マクロと `_RPTFW` マクロは、ユーザー メッセージに加え、レポート マクロが呼び出された場所のソース ファイルと行番号を含むデバッグ レポートを作成します。 置き換えることによって、ユーザー メッセージの作成、 `arg`[*n*] 引数を`format`文字列、によって定義されている同じ規則を使用して、 [printf](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)関数。  
-  
- `_CrtDbgReport` または `_CrtDbgReportW` は、`reportType` に定義されている現在のレポート モードとファイルに基づいて、デバッグ レポートを生成し、その宛先を決定します。 [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) 関数と [_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md) 関数は、各レポートの種類の宛先を定義するために使用されます。  
-  
- `_RPT` マクロが呼び出され、`_CrtSetReportMode` と `_CrtSetReportFile` のいずれも呼び出されていない場合は、メッセージは次のように表示されます。  
-  
-|レポートの種類|出力先|  
-|-----------------|------------------------|  
-|`_CRT_WARN`|警告テキストは表示されません。|  
-|`_CRT_ERROR`|ポップアップ ウィンドウ。 `_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_WNDW);` が指定されている場合と同じです。|  
-|`_CRT_ASSERT`|`_CRT_ERROR` と同じ。|  
-  
- 宛先がデバッグ メッセージ ウィンドウであるときにユーザーが **[再試行]** ボタンを選択すると、`_CrtDbgReport` または `_CrtDbgReportW` は 1 を返します。これにより、これらのマクロはデバッガーを開始します (Just-In-Time (JIT) デバッグが有効な場合)。 これらのマクロをデバッグ エラーの処理機構として使用する方法の詳細については、[確認とレポート用マクロの使用](/visualstudio/debugger/macros-for-reporting)に関するページを参照してください。  
-  
- デバッグ レポートを生成するマクロが他にも 2 つ存在します。 [_ASSERT](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) マクロは、その式の引数が FALSE に評価される場合にのみ、レポートを生成します。 [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) は `_ASSERT` とまったく同じですが、生成されるレポートに失敗した式が含まれます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|マクロ|必須ヘッダー|  
-|-----------|---------------------|  
-|`_RPT` マクロ|\<crtdbg.h>|  
-|`_RPTF` マクロ|\<crtdbg.h>|  
-|`_RPTW` マクロ|\<crtdbg.h>|  
-|`_RPTFW` マクロ|\<crtdbg.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
-  
- これらはマクロであり、Crtdbg.h を組み込むと取得されますが、アプリケーションは、デバッグ ライブラリのいずれかとリンクする必要があります。これらのマクロは、他のランタイム関数を呼び出すからです。  
-  
-## <a name="example"></a>例  
- 「[_ASSERT](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)」のトピックの例を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)
+
+デバッグ レポートを生成してアプリケーションの進行状況を追跡します (デバッグ バージョンのみ)。 なお*n*内の引数の数を指定*args* 0、1、2、3、4、または 5 を指定できます。
+
+## <a name="syntax"></a>構文
+
+```C
+_RPT
+      n
+      (
+   reportType,
+   format,
+...[args]
+);
+_RPTFn(
+   reportType,
+   format,
+   [args]
+);
+_RPTWn(
+   reportType,
+   format
+   [args]
+);
+_RPTFWn(
+   reportType,
+   format
+   [args]
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*reportType*レポートの種類:**前述**、 **_CRT_ERROR**、または **_CRT_ASSERT**です。
+
+*形式*ユーザー メッセージの作成に使用するコントロールの書式設定文字列。
+
+*args*で使用される代替引数*形式*です。
+
+## <a name="remarks"></a>コメント
+
+すべてのマクロ、 *reportType*と*形式*パラメーター。 また、マクロ名に追加された数字で示される最大 4 つの追加引数を受け取る場合もあります。 たとえば、 **_RPT0**と **_RPTF0**追加の引数を受け取らない **_RPT1**と **_RPTF1**かかる*arg1*、 **_RPT2**と **_RPTF2**かかる*arg1*と**arg2**のようにします。
+
+**_RPT**と **_RPTF**マクロと似ています、 [printf](printf-printf-l-wprintf-wprintf-l.md)デバッグ プロセス中にアプリケーションの進行状況を追跡するために使用されることがあるために機能します。 ただし、これらのマクロはより柔軟な**printf**で囲む必要がないため **#ifdef**れないようにするステートメントは、アプリケーションの製品版ビルドでと呼ばれます。 この柔軟性を使用して、 [_DEBUG](../../c-runtime-library/debug.md)マクロ以外の場合は、 **_RPT**と **_RPTF**のマクロはのみ使用可能な場合に、 **_DEBUG**フラグは、定義されています。 ときに **_DEBUG**が定義されていない、これらのマクロの呼び出しはプリプロセス時に削除されます。
+
+**_RPTW**と **_RPTFW**マクロは、これらのマクロのワイド文字バージョンです。 ようなもの**wprintf**を引数としてワイド文字列を実行します。
+
+**_RPT**マクロの呼び出し、 [_CrtDbgReport](crtdbgreport-crtdbgreportw.md)ユーザー メッセージを含むデバッグ レポートを生成する関数。 **_RPTW**マクロの呼び出し、 **_CrtDbgReportW**ワイド文字と同じレポートを生成する関数。 **_RPTF**と **_RPTFW**マクロは、ここで、レポート マクロが呼び出された、さらに、ユーザー メッセージをソース ファイルと行番号を持つデバッグ レポートを作成します。 置き換えることによって、ユーザー メッセージの作成、 **arg**[*n*] 引数を*形式*文字列、によって定義されている同じ規則を使用して、 [printf](printf-printf-l-wprintf-wprintf-l.md)関数。
+
+**_CrtDbgReport**または **_CrtDbgReportW**デバッグ レポートを生成し、その現在のレポート モードに基づいて変換先およびに対して定義されているファイルを決定*reportType*です。 [_CrtSetReportMode](crtsetreportmode.md) 関数と [_CrtSetReportFile](crtsetreportfile.md) 関数は、各レポートの種類の宛先を定義するために使用されます。
+
+場合、 **_RPT**マクロが呼び出されると、どちらも **_CrtSetReportMode**も **_CrtSetReportFile**されました呼び出されると、メッセージは次のように表示します。
+
+|レポートの種類|出力先|
+|-----------------|------------------------|
+|**前述**|警告テキストは表示されません。|
+|**_CRT_ERROR**|ポップアップ ウィンドウ。 `_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_WNDW);` が指定されている場合と同じです。|
+|**_CRT_ASSERT**|同じ **_CRT_ERROR**です。|
+
+宛先がデバッグ メッセージ ウィンドウと、ユーザーが選択した場合、**再試行**ボタン、 **_CrtDbgReport**または **_CrtDbgReportW**原因でこれらのマクロを開始する、1 を返します、デバッガー、ジャスト イン タイム (JIT) デバッグが有効になっています。 これらのマクロをデバッグ エラーの処理機構として使用する方法の詳細については、[確認とレポート用マクロの使用](/visualstudio/debugger/macros-for-reporting)に関するページを参照してください。
+
+デバッグ レポートを生成するマクロが他にも 2 つ存在します。 [_ASSERT](assert-asserte-assert-expr-macros.md) マクロは、その式の引数が FALSE に評価される場合にのみ、レポートを生成します。 [_ASSERTE](assert-asserte-assert-expr-macros.md)は同様 **_ASSERT**、生成されたレポートで失敗した式が含まれています。
+
+## <a name="requirements"></a>要件
+
+|マクロ|必須ヘッダー|
+|-----------|---------------------|
+|**_RPT**マクロ|\<crtdbg.h>|
+|**_RPTF**マクロ|\<crtdbg.h>|
+|**_RPTW**マクロ|\<crtdbg.h>|
+|**_RPTFW**マクロ|\<crtdbg.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。
+
+これらはマクロであり、Crtdbg.h を組み込むと取得されますが、アプリケーションは、デバッグ ライブラリのいずれかとリンクする必要があります。これらのマクロは、他のランタイム関数を呼び出すからです。
+
+## <a name="example"></a>例
+
+「[_ASSERT](assert-asserte-assert-expr-macros.md)」のトピックの例を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[デバッグ ルーチン](../../c-runtime-library/debug-routines.md)<br/>

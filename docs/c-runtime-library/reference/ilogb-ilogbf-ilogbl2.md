@@ -1,13 +1,13 @@
 ---
-title: "ilogb、ilogbf、ilogbl2 | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: ilogb、ilogbf、ilogbl2 | Microsoft Docs
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - ilogb
@@ -38,76 +38,81 @@ helpviewer_keywords:
 - ilogbf function
 - ilogbl function
 ms.assetid: 9ef19d57-1caa-41d5-8233-2faad3562fcb
-caps.latest.revision: 
+caps.latest.revision: 4
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8da5ba71b59f64c38a051fd8f31fa7bf58a4556d
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: dc15d09b2e2ff79771b2be4250ea1ea770a02f31
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="ilogb-ilogbf-ilogbl"></a>ilogb、ilogbf、ilogbl
-指定した値を、バイアスをかけない 2 進数の指数として表す整数を取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int ilogb(  
-   double x  
-);  
-  
-int ilogb(  
-   float x  
-); //C++ only  
-  
-int ilogb(  
-   long double x  
-); //C++ only  
-  
-int ilogbf(  
-   float x  
-);  
-  
-int ilogbl(  
-   long double x  
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [入力] `x`  
- 指定した値。  
-  
-## <a name="return-value"></a>戻り値  
- 成功した場合、`x` の 2 進数による指数を、符号付き `int` の値として返します。  
-  
- それ以外の場合、\<math.h > で定義されている次の値のいずれかを返します。  
-  
-|入力|結果|  
-|-----------|------------|  
-|±0|FP_ILOGB0|  
-|±inf、±nan、不定値|FP_ILOGBNAN|  
-  
- エラーは、[_matherr](../../c-runtime-library/reference/matherr.md) で指定されたとおりに報告されます。  
-  
-## <a name="remarks"></a>コメント  
- C++ ではオーバーロードが可能であるため、float 型および long double 型を受け取って返す `ilogb` のオーバーロードを呼び出すことができます。 C プログラムでは、`ilogb` は常に double を受け取って返します。  
-  
- この関数を呼び出すことは、これに相当する `logb` 関数を呼び出してから、戻り値を `int` へキャストすることに似ています。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
-|-------------|--------------|------------------|  
-|`ilogb`、`ilogbf`、`ilogbl`|\<math.h>|\<cmath>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
- [frexp](../../c-runtime-library/reference/frexp.md)   
- [logb、logbf、logbl、_logb、_logbf](../../c-runtime-library/reference/logb-logbf-logbl-logb-logbf.md)
+
+指定した値を、バイアスをかけない 2 進数の指数として表す整数を取得します。
+
+## <a name="syntax"></a>構文
+
+```C
+int ilogb(
+   double x
+);
+
+int ilogb(
+   float x
+); //C++ only
+
+int ilogb(
+   long double x
+); //C++ only
+
+int ilogbf(
+   float x
+);
+
+int ilogbl(
+   long double x
+);
+
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+指定した値。
+
+## <a name="return-value"></a>戻り値
+
+成功した場合の 2 を底と指数部を返す*x*符号付きとして**int**値。
+
+それ以外の場合、\<math.h > で定義されている次の値のいずれかを返します。
+
+|入力|結果|
+|-----------|------------|
+|±0|FP_ILOGB0|
+|±inf、±nan、不定値|FP_ILOGBNAN|
+
+エラーは、[_matherr](matherr.md) で指定されたとおりに報告されます。
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**ilogb**を受け取り、返します**float**と**長い****二重**型です。 C プログラムでは、 **ilogb**常に受け取りを返す、**二重**です。
+
+この関数を呼び出すは、それと同等の呼び出しに似ています**logb**関数、その戻り値へのキャスト**int**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|C ヘッダー|C++ ヘッダー|
+|-------------|--------------|------------------|
+|**ilogb**、 **ilogbf**、 **ilogbl**|\<math.h>|\<cmath>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[関数リファレンス (アルファベット順)](crt-alphabetical-function-reference.md)<br/>
+[frexp](frexp.md)<br/>
+[logb、logbf、logbl、_logb、_logbf](logb-logbf-logbl-logb-logbf.md)<br/>

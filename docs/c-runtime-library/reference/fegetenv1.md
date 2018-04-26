@@ -1,13 +1,13 @@
 ---
-title: fegetenv1 | Microsoft Docs
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: 分かって |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - fetegenv
@@ -32,50 +32,54 @@ dev_langs:
 helpviewer_keywords:
 - fetegenv function
 ms.assetid: 68962421-6978-4b27-8e4c-ad1577830cf6
-caps.latest.revision: 
+caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 025b934ec6a2d9bc98d46cabbd13b93e263cd777
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: a3569b015784f41fae4a4a91b6a32fe08dd57284
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fegetenv"></a>fegetenv
-指定したオブジェクトの現在の浮動小数点環境を格納します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int fegetenv(  
-   fenv_t *penv  
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `penv`  
- 現在の浮動小数点環境値を含む `fenv_t` オブジェクトへのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- 浮動小数点環境が `penv` に正常に格納された場合は 0 を返します。 それ以外の場合は、0 以外の値を返します。  
-  
-## <a name="remarks"></a>コメント  
- `fegetenv` 関数は、`penv` が示すオブジェクトの現在の浮動小数点環境を格納します。 浮動小数点環境とは、浮動小数点計算に影響する一連の状態フラグと制御モードです。 浮動小数点例外の丸め方向モードと状態フラグが含まれます。  `penv` が有効な `fenv_t` オブジェクトを示していない場合、その後の動作は未定義になります。  
-  
- この関数を使用するには、呼び出しの前に `#pragma fenv_access(on)` ディレクティブを使用してアクセスを妨げる可能性のある浮動小数点の最適化をオフにする必要があります。 詳細については、「 [fenv_access](../../preprocessor/fenv-access.md)」を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|C ヘッダー|C++ ヘッダー|  
-|--------------|--------------|------------------|  
-|`fegetenv`|\<fenv.h>|\<cfenv>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
- [fesetenv](../../c-runtime-library/reference/fesetenv1.md)
+
+指定したオブジェクトの現在の浮動小数点環境を格納します。
+
+## <a name="syntax"></a>構文
+
+```C
+int fegetenv(
+   fenv_t *penv
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*penv*<br/>
+ポインター、 **fenv_t**浮動小数点環境の現在の値を格納するオブジェクト。
+
+## <a name="return-value"></a>戻り値
+
+浮動小数点環境が正常に格納されている場合は 0 を返します*penv*です。 それ以外の場合は、0 以外の値を返します。
+
+## <a name="remarks"></a>コメント
+
+**分かって**関数によって指されるオブジェクトに現在の浮動小数点環境を格納する*penv*です。 浮動小数点環境とは、浮動小数点計算に影響する一連の状態フラグと制御モードです。 浮動小数点例外の丸め方向モードと状態フラグが含まれます。  場合*penv*が有効なを指していません**fenv_t**オブジェクト、それ以降の動作は未定義です。
+
+この関数を使用するには、呼び出しの前に `#pragma fenv_access(on)` ディレクティブを使用してアクセスを妨げる可能性のある浮動小数点の最適化をオフにする必要があります。 詳細については、「 [fenv_access](../../preprocessor/fenv-access.md)」を参照してください。
+
+## <a name="requirements"></a>要件
+
+|関数|C ヘッダー|C++ ヘッダー|
+|--------------|--------------|------------------|
+|**fegetenv**|\<fenv.h>|\<cfenv>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[関数リファレンス (アルファベット順)](crt-alphabetical-function-reference.md)<br/>
+[fesetenv](fesetenv1.md)<br/>

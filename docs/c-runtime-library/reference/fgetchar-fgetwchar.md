@@ -1,12 +1,12 @@
 ---
-title: "_fgetchar、_fgetwchar | Microsoft Docs"
-ms.custom: 
+title: _fgetchar、_fgetwchar | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _fgetchar
@@ -41,92 +41,96 @@ helpviewer_keywords:
 - standard input, reading from
 - fgetchar function
 ms.assetid: 8bce874c-701a-41a3-b1b2-feff266fb5b9
-caps.latest.revision: 
+caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0eabf9bd54764aaa37bd860eb5bdb7d1ac5232ab
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 8b6f6933d8483e3fee792829b0efde8e35ad91a1
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fgetchar-fgetwchar"></a>_fgetchar、_fgetwchar
-`stdin` から文字を読み取ります。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _fgetchar( void );  
-wint_t _fgetwchar( void );  
-```  
-  
-## <a name="return-value"></a>戻り値  
- `_fgetchar` は、読み込まれた文字を `int` として返すか、エラーまたはファイルの末尾を示す `EOF` を返します。 **_**`fgetwchar` は、読み込まれた文字に相当するワイド文字を [wint_t](../../c-runtime-library/standard-types.md) として返すか、エラーまたはファイルの末尾を示す `WEOF` を返します。 両方の関数に対して、エラーと、ファイルの末尾の条件を識別するため `feof` または `ferror` を使用します。  
-  
-## <a name="remarks"></a>コメント  
- これらの関数は `stdin` から 1 つの文字を読み取ります。 関数は、次の文字 (定義されている場合) を指すように、関連ファイルのポインターをインクリメントします。 ストリームがファイルの末尾にある場合、ストリームのファイルの末尾を示すインジケーターが設定されます。  
-  
- `_fgetchar` は `fgetc( stdin )` と同じです。 これは、`getchar` とも同じですが、関数とマクロではなく関数としてのみ実装されています。 `_fgetwchar` 関数は、`_fgetchar` 関数のワイド文字バージョンです。  
-  
- これらの関数は ANSI 規格と互換性がありません。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_fgettchar`|`_fgetchar`|`_fgetchar`|`_fgetwchar`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`_fgetchar`|\<stdio.h>|  
-|`_fgetwchar`|\<stdio.h> または \<wchar.h>|  
-  
- コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル —`stdin`、 `stdout`、および`stderr`— C ランタイム関数で使用する前に、リダイレクトする必要があります [!INCLUDEUWP アプリ。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_fgetchar.c  
-// This program uses _fgetchar to read the first  
-// 80 input characters (or until the end of input)  
-// and place them into a string named buffer.  
-//  
-  
-#include <stdio.h>  
-#include <stdlib.h>  
-  
-int main( void )  
-{  
-   char buffer[81];  
-   int  i, ch;  
-  
-   // Read in first 80 characters and place them in "buffer":  
-   ch = _fgetchar();  
-   for( i=0; (i < 80 ) && ( feof( stdin ) == 0 ); i++ )  
-   {  
-      buffer[i] = (char)ch;  
-      ch = _fgetchar();  
-   }  
-  
-   // Add null to end string   
-   buffer[i] = '\0';  
-   printf( "%s\n", buffer );  
-}  
-```  
-  
-```Output  
-  
-      Line one.  
-Line two.Line one.  
-Line two.  
-```  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fputc、fputwc](../../c-runtime-library/reference/fputc-fputwc.md)   
- [getc、getwc](../../c-runtime-library/reference/getc-getwc.md)
+
+文字を読み取ります**stdin**です。
+
+## <a name="syntax"></a>構文
+
+```C
+int _fgetchar( void );
+wint_t _fgetwchar( void );
+```
+
+## <a name="return-value"></a>戻り値
+
+**_fgetchar**として読み取られた文字を返します、 **int**または戻り値の**EOF**エラーまたはファイルの終わりを示します。 **_ * * * fgetwchar**を返します、として、 [wint_t](../../c-runtime-library/standard-types.md)、ワイド文字を読み取る文字に対応するかを返す**WEOF**エラーまたはファイルの終わりを示します。 両方の関数を使用して**feof**または**ferror**エラーと、ファイルの終端状態を識別します。
+
+## <a name="remarks"></a>コメント
+
+これらの関数から 1 つの文字を読み取る**stdin**です。 関数は、次の文字 (定義されている場合) を指すように、関連ファイルのポインターをインクリメントします。 ストリームがファイルの末尾にある場合、ストリームのファイルの末尾を示すインジケーターが設定されます。
+
+**_fgetchar**は等価`fgetc( stdin )`です。 等価も**getchar**関数とマクロではなく、関数としてのみ実装されているが、します。 **_fgetwchar**のワイド文字バージョンは、 **_fgetchar**です。
+
+これらの関数は ANSI 規格と互換性がありません。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_fgettchar**|**_fgetchar**|**_fgetchar**|**_fgetwchar**|
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|
+|--------------|---------------------|
+|**_fgetchar**|\<stdio.h>|
+|**_fgetwchar**|\<stdio.h> または \<wchar.h>|
+
+コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル —**stdin**、 **stdout**、および**stderr**— C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります. 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_fgetchar.c
+// This program uses _fgetchar to read the first
+// 80 input characters (or until the end of input)
+// and place them into a string named buffer.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( void )
+{
+   char buffer[81];
+   int  i, ch;
+
+   // Read in first 80 characters and place them in "buffer":
+   ch = _fgetchar();
+   for( i=0; (i < 80 ) && ( feof( stdin ) == 0 ); i++ )
+   {
+      buffer[i] = (char)ch;
+      ch = _fgetchar();
+   }
+
+   // Add null to end string
+   buffer[i] = '\0';
+   printf( "%s\n", buffer );
+}
+```
+
+```Output
+
+      Line one.
+Line two.Line one.
+Line two.
+```
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[fputc、fputwc](fputc-fputwc.md)<br/>
+[getc、getwc](getc-getwc.md)<br/>

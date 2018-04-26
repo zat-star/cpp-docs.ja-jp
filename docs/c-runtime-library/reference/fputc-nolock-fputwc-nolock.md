@@ -1,12 +1,12 @@
 ---
-title: "_fputc_nolock、_fputwc_nolock | Microsoft ドキュメント"
-ms.custom: 
+title: _fputc_nolock、_fputwc_nolock | Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _fputwc_nolock
@@ -42,90 +42,95 @@ helpviewer_keywords:
 - _fputtc_nolock function
 - _fputwc_nolock function
 ms.assetid: c63eb3ad-58fa-46d0-9249-9c25f815eab9
-caps.latest.revision: 
+caps.latest.revision: 17
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9fec3b3497d58a4b08a46d569e9989bf4792544f
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 83f79339b2c0335031b4a5eec13d4ccca1f12ace
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fputcnolock-fputwcnolock"></a>_fputc_nolock、_fputwc_nolock
-スレッドをロックせずにストリームに文字を書き込みます。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _fputc_nolock(  
-   int c,  
-   FILE *stream   
-);  
-wint_t _fputwc_nolock(  
-   wchar_t c,  
-   FILE *stream   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- 書き込む文字。  
-  
- `stream`  
- `FILE` 構造体へのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- これらの各関数は、書き込まれた文字を返します。 エラーの詳細については、「[fputc、fputwc](../../c-runtime-library/reference/fputc-fputwc.md)」を参照してください。  
-  
-## <a name="remarks"></a>コメント  
- 他のスレッドによる干渉から保護されないことを除き、`_fputc_nolock` および `_fputwc_nolock` は、それぞれ、`fputc` および`fputwc` と同じです。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
-  
- ストリームが ANSI モードで開かれている場合、2 つの関数の動作は同じになります。 `_fputc_nolock` では、UNICODE ストリームへの出力はサポートされていません。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_fputtc_nolock`|`_fputc_nolock`|`_fputc_nolock`|`_fputwc_nolock`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`_fputc_nolock`|\<stdio.h>|  
-|`_fputwc_nolock`|\<stdio.h> または \<wchar.h>|  
-  
- コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル —`stdin`、 `stdout`、および`stderr`— C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_fputc_nolock.c  
-// This program uses _fputc_nolock  
-// to send a character array to stdout.  
-  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   char strptr1[] = "This is a test of _fputc_nolock!!\n";  
-   char *p;  
-  
-   // Print line to stream using fputc.   
-   p = strptr1;  
-   while( (*p != '\0') && _fputc_nolock( *(p++), stdout ) != EOF ) ;  
-  
-}  
-```  
-  
-```Output  
-This is a test of _fputc_nolock!!  
-```  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fgetc、fgetwc](../../c-runtime-library/reference/fgetc-fgetwc.md)   
- [putc、putwc](../../c-runtime-library/reference/putc-putwc.md)
+
+スレッドをロックせずにストリームに文字を書き込みます。
+
+## <a name="syntax"></a>構文
+
+```C
+int _fputc_nolock(
+   int c,
+   FILE *stream
+);
+wint_t _fputwc_nolock(
+   wchar_t c,
+   FILE *stream
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+書き込む文字。
+
+*ストリーム*<br/>
+**FILE** 構造体へのポインター。
+
+## <a name="return-value"></a>戻り値
+
+これらの各関数は、書き込まれた文字を返します。 エラーの詳細については、「[fputc、fputwc](fputc-fputwc.md)」を参照してください。
+
+## <a name="remarks"></a>コメント
+
+**_fputc_nolock**と **_fputwc_nolock**と同じ**fputc**と**fputwc**をそれぞれで干渉から保護されないする点を除いて他のスレッド。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。
+
+ストリームが ANSI モードで開かれている場合、2 つの関数の動作は同じになります。 **_fputc_nolock** UNICODE ストリームへ現在出力をサポートしません。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_fputtc_nolock**|**_fputc_nolock**|**_fputc_nolock**|**_fputwc_nolock**|
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|
+|--------------|---------------------|
+|**_fputc_nolock**|\<stdio.h>|
+|**_fputwc_nolock**|\<stdio.h> または \<wchar.h>|
+
+コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル —**stdin**、 **stdout**、および**stderr**— C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります. 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_fputc_nolock.c
+// This program uses _fputc_nolock
+// to send a character array to stdout.
+
+#include <stdio.h>
+
+int main( void )
+{
+   char strptr1[] = "This is a test of _fputc_nolock!!\n";
+   char *p;
+
+   // Print line to stream using fputc.
+   p = strptr1;
+   while( (*p != '\0') && _fputc_nolock( *(p++), stdout ) != EOF ) ;
+
+}
+```
+
+```Output
+This is a test of _fputc_nolock!!
+```
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[fgetc、fgetwc](fgetc-fgetwc.md)<br/>
+[putc、putwc](putc-putwc.md)<br/>

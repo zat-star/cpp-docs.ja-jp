@@ -1,13 +1,13 @@
 ---
-title: "c16rtomb、c32rtomb1 | Microsoft Docs"
-ms.custom: 
+title: c16rtomb、c32rtomb1 | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - c16rtomb
@@ -36,68 +36,73 @@ helpviewer_keywords:
 - c16rtomb function
 - c32rtomb function
 ms.assetid: 7f5743ca-a90e-4e3f-a310-c73e16f4e14d
-caps.latest.revision: 
+caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2deca697a3dcb338ae9e9ea9e071c73979695ad8
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: e051fe8fdb0bfaad4d34ce50e91bf7611a47ee81
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="c16rtomb-c32rtomb"></a>c16rtomb、c32rtomb
-UTF-16 または UTF-32 ワイド文字を現在のロケールのマルチバイト文字に変換します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-size_t c16rtomb(  
-    char *mbchar,   
-    char16_t wchar,  
-    mbstate_t *state  
-);  
-size_t c32rtomb(  
-    char *mbchar,   
-    char32_t wchar,  
-    mbstate_t *state  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [出力] `mbchar`  
- 変換されたマルチバイト文字を格納する配列へのポインター。  
-  
- [入力] `wchar`  
- 変換するワイド文字。  
-  
- [入力、出力] `state`  
- `mbstate_t` オブジェクトへのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- 配列オブジェクト `mbchar`に格納されるバイト数 (シフト シーケンスを含む)。 `wchar` が有効なワイド文字でない場合、値 (`size_t`)(-1) が返され、 `errno` は `EILSEQ`に設定され、 `state` の値は指定されません。  
-  
-## <a name="remarks"></a>コメント  
- `c16rtomb` 関数は、UTF-16 文字 `wchar` を現在のロケールの同等のマルチバイトのナロウ文字シーケンスに変換します。 `mbchar` が null ポインターでない場合、関数は、 `mbchar`が指す配列オブジェクトの変換されたシーケンスを格納します。 最大 `MB_CUR_MAX` バイトが `mbchar`に格納され、 `state` は、結果として生成されるシフト状態に設定されます。    `wchar` が null ワイド文字である場合、初期シフト状態の復元に必要なシーケンスが格納され、必要であれば null 文字が後に続き、 `state` が初期変換状態に設定されます。 `c32rtomb` 関数は同一ですが、UTF-32 文字を変換します。  
-  
- `mbchar` が null ポインターの場合、動作は、 `mbchar` の内部バッファーおよび `wchar`のワイド null 文字を置換する関数の呼び出しと同等です。  
-  
- `state` 変換状態オブジェクトにより、この関数とマルチバイト出力のシフト状態を維持するその他の再開可能な関数を続けて呼び出すことが可能になります。 再開可能関数と再開不可能関数を一緒に使用する場合、または、再開可能関数間で `setlocale` が呼び出される場合、結果は未定義です。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`c16rtomb`, `c32rtomb`|C、C++: \<uchar.h>|  
-  
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [データ変換](../../c-runtime-library/data-conversion.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
- [mbrtoc16、mbrtoc32](../../c-runtime-library/reference/mbrtoc16-mbrtoc323.md)   
- [wcrtomb](../../c-runtime-library/reference/wcrtomb.md)   
- [wcrtomb_s](../../c-runtime-library/reference/wcrtomb-s.md)
+
+UTF-16 または UTF-32 ワイド文字を現在のロケールのマルチバイト文字に変換します。
+
+## <a name="syntax"></a>構文
+
+```C
+size_t c16rtomb(
+    char *mbchar,
+    char16_t wchar,
+    mbstate_t *state
+);
+size_t c32rtomb(
+    char *mbchar,
+    char32_t wchar,
+    mbstate_t *state
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*mbchar*<br/>
+変換されたマルチバイト文字を格納する配列へのポインター。
+
+*wchar*<br/>
+変換するワイド文字。
+
+*state*<br/>
+ポインター、 **mbstate_t**オブジェクト。
+
+## <a name="return-value"></a>戻り値
+
+配列オブジェクトに格納されるバイト数*mbchar*、シフト シーケンスを含むです。 場合*wchar*は有効なワイド文字値はありません (**size_t**)(-1) が返されます、 **errno**に設定されている**EILSEQ**の値*状態*は指定されていません。
+
+## <a name="remarks"></a>コメント
+
+**C16rtomb**関数 utf-16 文字に変換*wchar*を現在のロケールで同等のマルチバイトのナロウ文字シーケンスです。 場合*mbchar*が null ポインター、配列オブジェクトに変換されたシーケンスを指す関数ストア*mbchar*です。 最大**MB_CUR_MAX**に格納されるバイト*mbchar*、および*状態*が結果として得られるシフト状態に設定します。    場合*wchar* null ワイド文字に必要なシーケンスは、初期のシフト状態が格納されている、必要な場合、復元後に、null 文字で、および*状態*が初期変換状態に設定します。 **C32rtomb**関数は同一ですが、utf-32 文字に変換します。
+
+場合*mbchar* null ポインターでは、動作は同等の内部バッファーを置換する関数への呼び出しに*mbchar*とのワイド null 文字*wchar*です。
+
+*状態*変換状態オブジェクトは、この関数とマルチバイト出力のシフト状態を維持するその他の再開可能な関数を続けて呼び出すことができます。 結果はへの呼び出しまたは再開可能なと再開不可能関数の使用を混在させた場合に定義されていない**setlocale、_wsetlocale**が再開可能な関数呼び出しの間で行われます。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**c16rtomb**、 **c32rtomb**|C、C++: \<uchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[データ変換](../../c-runtime-library/data-conversion.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
+[mbrtoc16、mbrtoc32](mbrtoc16-mbrtoc323.md)<br/>
+[wcrtomb](wcrtomb.md)<br/>
+[wcrtomb_s](wcrtomb-s.md)<br/>

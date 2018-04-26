@@ -1,12 +1,12 @@
 ---
-title: "remquo、remquof、remquol | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: remquo、remquof、remquol | Microsoft Docs
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - remquof
@@ -36,106 +36,93 @@ helpviewer_keywords:
 - remquof function
 - remquo function
 ms.assetid: a1d3cb8b-8027-4cd3-8deb-04eb17f299fc
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: deb68c536acab80077870bbc0b16ef171edb1d87
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 2582ab0e2aba8c0798568454c3e1532982f0ffd9
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="remquo-remquof-remquol"></a>remquo、remquof、remquol
-2 個の整数値の剰余を計算し、パラメーターに指定された位置に、整数値を符号と商の近似値と共に格納します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double remquo(   
-   double numer,  
-   double denom,  
-   int* quo  
-);  
-float remquo(   
-   float numer,  
-   float denom,  
-   int* quo  
-); /* C++ only */  
-long double remquo(   
-   long double numer,  
-   long double denom,  
-   int* quo  
-); /* C++ only */  
-float remquof(   
-   float numer,  
-   float denom,  
-   int* quo  
-);  
-long double remquol(   
-   long double numer,  
-   long double denom,  
-   int* quo  
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `numer`  
- 分子。  
-  
- `denom`  
- 分母。  
-  
- `quo`  
- 符号と商の近似値を持つ値を格納する整数へのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- `remquo` は、`x` / `y` の浮動小数点の剰余を返します。 `y` の値が 0.0 の場合、`remquo` は簡易な NaN を返します。 `printf` ファミリによる簡易な NaN の表現については、「[printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)」をご覧ください。  
-  
-## <a name="remarks"></a>コメント  
- `remquo` 関数は、`x` = `i` `*` `y` + `f` となる `x` / `y` の剰余 `f` を浮動小数点型で計算します。`i` は整数であり、`f` の符号は `x` と同じであり、`f` の絶対値は `y` の絶対値未満です。  
-  
- C++ ではオーバーロードが可能であるため、`remquo` または `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`remquo` は常に 2 個の double を受け取って、1 個の double を返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`remquo`、`remquof`、`remquol`|\<math.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```C  
-// crt_remquo.c  
-// This program displays a floating-point remainder.  
-  
-#include <math.h>  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   double w = -10.0, x = 3.0, z;  
-   int quo = 0;  
-  
-   z = remquo(w, x, &quo);  
-   printf("The remainder of %.2f / %.2f is %f\n", w, x, z);  
-   printf("Approximate signed quotient is %d\n", quo);  
-}  
-```  
-  
-```Output  
-The remainder of -10.00 / 3.00 is -1.000000  
-Approximate signed quotient is -3  
-```  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [ldiv、lldiv](../../c-runtime-library/reference/ldiv-lldiv.md)   
- [imaxdiv](../../c-runtime-library/reference/imaxdiv.md)   
- [fmod、fmodf](../../c-runtime-library/reference/fmod-fmodf.md)   
- [remainder、remainderf、remainderl](../../c-runtime-library/reference/remainder-remainderf-remainderl.md)
+
+2 個の整数値の剰余を計算し、パラメーターに指定された位置に、整数値を符号と商の近似値と共に格納します。
+
+## <a name="syntax"></a>構文
+
+```C
+double remquo( double numer, double denom, int* quo );
+float remquof( float numer, float denom, int* quo );
+long double remquol( long double numer, long double denom, int* quo );
+```
+
+```cpp
+float remquo( float numer, float denom, int* quo ); /* C++ only */
+long double remquo( long double numer, long double denom, int* quo ); /* C++ only */
+```
+
+### <a name="parameters"></a>パラメーター
+
+*数値*<br/>
+分子。
+
+*denom*<br/>
+分母。
+
+*これまで*<br/>
+符号と商の近似値を持つ値を格納する整数へのポインター。
+
+## <a name="return-value"></a>戻り値
+
+**remquo**の浮動小数点の剰余を返します*x* / *y*です。 場合の値*y* 0.0、 **remquo**は簡易な NaN を返します。 簡易な NaN の表現について、 **printf**家族を参照してください[printf、_printf_l、wprintf、_wprintf_l](printf-printf-l-wprintf-wprintf-l.md)です。
+
+## <a name="remarks"></a>コメント
+
+**Remquo**関数は浮動小数点の剰余を計算*f*の*x* / *y*ように*x*  = *すれば* * *y* + *f*ここで、*すれば*整数、 *f*と同じ符号を持つ*x*、との絶対値*f*がの絶対値よりも小さい*y*です。
+
+C++ では、オーバー ロードのオーバー ロードを呼び出すことができますので**remquo**を受け取り、返します**float**または**長い****二重**値。 C プログラムでは、 **remquo**常に受け取って 1 つ**二重**引数を返す、**二重**です。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー (C)|必須ヘッダー (C++)|
+|--------------|---------------------|-|
+|**remquo**、 **remquof**、 **remquol**|\<math.h>|\<cmath> または \<math.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_remquo.c
+// This program displays a floating-point remainder.
+
+#include <math.h>
+#include <stdio.h>
+
+int main( void )
+{
+   double w = -10.0, x = 3.0, z;
+   int quo = 0;
+
+   z = remquo(w, x, &quo);
+   printf("The remainder of %.2f / %.2f is %f\n", w, x, z);
+   printf("Approximate signed quotient is %d\n", quo);
+}
+```
+
+```Output
+The remainder of -10.00 / 3.00 is -1.000000
+Approximate signed quotient is -3
+```
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[ldiv、lldiv](ldiv-lldiv.md)<br/>
+[imaxdiv](imaxdiv.md)<br/>
+[fmod、fmodf](fmod-fmodf.md)<br/>
+[remainder、remainderf、remainderl](remainder-remainderf-remainderl.md)<br/>

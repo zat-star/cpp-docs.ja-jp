@@ -1,12 +1,12 @@
 ---
 title: _callnewh | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _callnewh
@@ -30,52 +30,57 @@ dev_langs:
 helpviewer_keywords:
 - _callnewh
 ms.assetid: 4dcb73e9-6384-4d12-a973-a8807d4de7a8
-caps.latest.revision: 
+caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5754a22af15f8eca1d7352e3d172d141447a2ca4
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: cd835a404233d90193cb999b7c64bf9fb52134eb
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="callnewh"></a>_callnewh
-現在インストールされている*新しいハンドラー*を呼び出します。  
-  
-## <a name="syntax"></a>構文  
-  
-```cpp  
-int _callnewh(  
-   size_t size  
-   )  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `size`  
- [new 演算子](../../cpp/new-operator-cpp.md)が割り当てようとしたメモリの量。  
-  
-## <a name="return-value"></a>戻り値  
-  
-|[値]|説明|  
-|-----------|-----------------|  
-|0|エラー: 新しいハンドラーがインストールされていないか、新しいハンドラーがアクティブになっていません。|  
-|1|成功: 新しいハンドラーがインストールされ、アクティブになっています。 メモリ割り当てを再試行できます。|  
-  
-## <a name="exceptions"></a>例外  
- *新しいハンドラー*が見つからない場合、[bad_alloc](../../standard-library/bad-alloc-class.md) をスローします。  
-  
-## <a name="remarks"></a>コメント  
- *新しいハンドラー*は、[new 演算子](../../cpp/new-operator-cpp.md)がメモリの割り当てに失敗した場合に呼び出されます。 新しいハンドラーは、後続の割り当てが成功するようにメモリを解放するなど、適切な処理を開始する場合があります。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|_callnewh|internal.h|  
-  
-## <a name="see-also"></a>参照  
- [_set_new_handler](../../c-runtime-library/reference/set-new-handler.md)   
- [_set_new_mode](../../c-runtime-library/reference/set-new-mode.md)
+
+現在インストールされている*新しいハンドラー*を呼び出します。
+
+## <a name="syntax"></a>構文
+
+```cpp
+int _callnewh(
+   size_t size
+   )
+```
+
+### <a name="parameters"></a>パラメーター
+
+*size*<br/>
+[new 演算子](../../cpp/new-operator-cpp.md)が割り当てようとしたメモリの量。
+
+## <a name="return-value"></a>戻り値
+
+|[値]|説明|
+|-----------|-----------------|
+|0|エラー: 新しいハンドラーがインストールされていないか、新しいハンドラーがアクティブになっていません。|
+|1|成功: 新しいハンドラーがインストールされ、アクティブになっています。 メモリ割り当てを再試行できます。|
+
+## <a name="exceptions"></a>例外
+
+*新しいハンドラー*が見つからない場合、[bad_alloc](../../standard-library/bad-alloc-class.md) をスローします。
+
+## <a name="remarks"></a>コメント
+
+*新しいハンドラー*は、[new 演算子](../../cpp/new-operator-cpp.md)がメモリの割り当てに失敗した場合に呼び出されます。 新しいハンドラーは、後続の割り当てが成功するようにメモリを解放するなど、適切な処理を開始する場合があります。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|_callnewh|internal.h|
+
+## <a name="see-also"></a>関連項目
+
+[_set_new_handler](set-new-handler.md)<br/>
+[_set_new_mode](set-new-mode.md)<br/>

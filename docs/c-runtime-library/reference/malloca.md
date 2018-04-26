@@ -1,12 +1,12 @@
 ---
 title: _malloca | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _malloca
@@ -32,157 +32,162 @@ helpviewer_keywords:
 - malloca function
 - _malloca function
 ms.assetid: 293992df-cfca-4bc9-b313-0a733a6bb936
-caps.latest.revision: 
+caps.latest.revision: 27
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d61874320712e6cef7f783bb1c4fb03f53ac40e9
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 7ef8f17af191d9af288e9d59f43f3e48cd869ed1
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="malloca"></a>_malloca
-スタックにメモリを割り当てます。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_alloca](../../c-runtime-library/reference/alloca.md) です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void *_malloca(   
-   size_t size   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `size`  
- スタックから割り当てられるバイト数。  
-  
-## <a name="return-value"></a>戻り値  
- `_malloca` ルーチンは割り当てられた領域への `void` ポインターを返します。この領域は、任意の種類のオブジェクトを格納できるよう適切に整列されていることが保証されています。 `size` が 0 の場合、`_malloca` 関数は長さが 0 の項目を割り当て、その項目への有効なポインターを返します。  
-  
- 領域の割り当てができない場合、スタック オーバーフロー例外が生成されます。 スタック オーバーフロー例外は C++ 例外ではなく、構造化例外です。 C++ 例外処理を使用する代わりに、[構造化例外処理](../../cpp/structured-exception-handling-c-cpp.md) (SEH) を使用する必要があります。  
-  
-## <a name="remarks"></a>コメント  
- `_malloca` は、要求が `_ALLOCA_S_THRESHOLD` で指定された特定のサイズ (バイト単位) を超えると、プログラム スタックまたはヒープから `size` バイトを割り当てます。 `_malloca` と `_alloca` の違いは、`_alloca` がサイズに関係なく常にスタックで割り当てることです。 `_alloca` で割り当てたメモリは `free` を呼び出して解放する必要がなく、そうすることも許可されていませんが、`_malloca` の場合はそれと異なり、[_freea](../../c-runtime-library/reference/freea.md) を使用してメモリを解放する必要があります。 デバッグ モードでは、`_malloca` は常にヒープからメモリを割り当てます。  
-  
- 例外ハンドラー (EH) で `_malloca` を明示的に呼び出す場合は制限があります。 x86 クラスのプロセッサで動作する EH ルーチンは、自身のメモリ フレーム内で処理されるため、外側の関数のスタック ポインターが示す現在位置を基にしたメモリ領域ではタスクを実行しません。 最も一般的な実装には、Windows NT 構造化例外処理 (SEH) や C++ catch 句の式などがあります。 このため、次のようなシナリオで `_malloca` を明示的に呼び出すと、呼び出した EH ルーチンへ戻る時点でプログラム エラーとなります。  
-  
--   Windows NT SEH 例外フィルター式: `__except` (`_malloca ()` )  
-  
--   Windows NT SEH 最終例外ハンドラー: `__finally` {`_malloca ()` }  
-  
--   C++ EH catch 句の式  
-  
- しかし、`_malloca` を EH ルーチン内から直接呼び出すことや、上にリストされた EH シナリオのいずれかで呼び出されるアプリケーション提供によるコールバックから呼び出すことはできます。  
-  
+
+スタックにメモリを割り当てます。 これは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_alloca](alloca.md) です。
+
+## <a name="syntax"></a>構文
+
+```C
+void *_malloca(
+   size_t size
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*size*<br/>
+スタックから割り当てられるバイト数。
+
+## <a name="return-value"></a>戻り値
+
+**_Malloca**ルーチンを返します、 **void**を任意の型のオブジェクトの記憶域を適切に配置することが保証される、割り当てられた領域へのポインター。 場合*サイズ*0 の場合は、 **_malloca**長さ 0 のアイテムを割り当て、その項目に有効なポインターを返します。
+
+領域の割り当てができない場合、スタック オーバーフロー例外が生成されます。 スタック オーバーフロー例外は C++ 例外ではなく、構造化例外です。 C++ 例外処理を使用する代わりに、[構造化例外処理](../../cpp/structured-exception-handling-c-cpp.md) (SEH) を使用する必要があります。
+
+## <a name="remarks"></a>コメント
+
+**_malloca**割り当てます*サイズ*はプログラム スタックまたは要求が特定のサイズによって指定されたバイトを超える場合、ヒープからのバイト **_ALLOCA_S_THRESHOLD**です。 違い **_malloca**と **_alloca**される **_alloca**サイズに関係なく、スタックに常に割り当てます。 異なり **_alloca**、する必要がありますまたはへの呼び出しを許可しません**空き**割り当てられているため、メモリを解放する **_malloca**の使用を要求[_freea](freea.md)メモリを解放します。 デバッグ モードで **_malloca**常に、ヒープからメモリを割り当てます。
+
+明示的に呼び出すに制限がある **_malloca**例外ハンドラー (EH)。 x86 クラスのプロセッサで動作する EH ルーチンは、自身のメモリ フレーム内で処理されるため、外側の関数のスタック ポインターが示す現在位置を基にしたメモリ領域ではタスクを実行しません。 最も一般的な実装には、Windows NT 構造化例外処理 (SEH) や C++ catch 句の式などがあります。 そのため、明示的に呼び出す **_malloca**呼び出し元の EH ルーチンへ戻る時にプログラムの障害に次のシナリオの結果のいずれかで。
+
+- Windows NT の SEH 例外フィルター式: **_ _except** (`_malloca ()` )
+
+- Windows NT SEH 最終的な例外ハンドラー: **_ _finally** {`_malloca ()` }
+
+- C++ EH catch 句の式
+
+ただし、 **_malloca**が呼び出せますから直接 EH ルーチン内、または呼び出される、アプリケーションによって提供されるコールバックから前に示した EH シナリオのいずれか。
+
 > [!IMPORTANT]
->  Windows XP では、try/catch ブロック内で `_malloca` を呼び出した場合、その catch ブロック内で [_resetstkoflw](../../c-runtime-library/reference/resetstkoflw.md) を呼び出す必要があります。  
-  
- 上記の制限に加え、[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md) オプションを使用する場合は、`__except` ブロックで `_malloca` を使用できません。 詳細については、「[/clr の制約](../../build/reference/clr-restrictions.md)」を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_malloca`|\<malloc.h>|  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_malloca_simple.c  
-#include <stdio.h>  
-#include <malloc.h>  
-  
-void Fn()  
-{  
-   char * buf = (char *)_malloca( 100 );  
-   // do something with buf  
-   _freea( buf );  
-}  
-  
-int main()  
-{  
-   Fn();  
-}  
-```  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_malloca_exception.c  
-// This program demonstrates the use of  
-// _malloca and trapping any exceptions  
-// that may occur.  
-  
-#include <windows.h>  
-#include <stdio.h>  
-#include <malloc.h>  
-  
-int main()  
-{  
-    int     size;  
-    int     numberRead = 0;  
-    int     errcode = 0;  
-    void    *p = NULL;  
-    void    *pMarker = NULL;  
-  
-    while (numberRead == 0)  
-    {  
-        printf_s("Enter the number of bytes to allocate "  
-                 "using _malloca: ");  
-        numberRead = scanf_s("%d", &size);  
-    }  
-  
-    // Do not use try/catch for _malloca,  
-    // use __try/__except, since _malloca throws  
-    // Structured Exceptions, not C++ exceptions.  
-  
-    __try  
-    {  
-        if (size > 0)  
-        {  
-            p =  _malloca( size );  
-        }  
-        else  
-        {  
-            printf_s("Size must be a positive number.");  
-        }  
-        _freea( p );  
-    }  
-  
-    // Catch any exceptions that may occur.  
-    __except( GetExceptionCode() == STATUS_STACK_OVERFLOW )  
-    {  
-        printf_s("_malloca failed!\n");  
-  
-        // If the stack overflows, use this function to restore.  
-        errcode = _resetstkoflw();  
-        if (errcode)  
-        {  
-            printf("Could not reset the stack!");  
-            _exit(1);  
-        }  
-    };  
-}  
-```  
-  
-## <a name="input"></a>入力  
-  
-```  
-1000  
-```  
-  
-## <a name="sample-output"></a>出力例  
-  
-```  
-Enter the number of bytes to allocate using _malloca: 1000  
-```  
-  
-## <a name="see-also"></a>参照  
- [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
- [calloc](../../c-runtime-library/reference/calloc.md)   
- [malloc](../../c-runtime-library/reference/malloc.md)   
- [realloc](../../c-runtime-library/reference/realloc.md)   
- [_resetstkoflw](../../c-runtime-library/reference/resetstkoflw.md)
+> Windows XP の場合は **_malloca**が呼び出された try ブロックと catch ブロック内で呼び出す必要があります[_resetstkoflw](resetstkoflw.md)の catch ブロックでします。
+
+使用する場合、上記の制限に加えて、 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)オプション、 **_malloca**では使用できません **_ _except**ブロックします。 詳細については、「 [/clr Restrictions](../../build/reference/clr-restrictions.md)」を参照してください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_malloca**|\<malloc.h>|
+
+## <a name="example"></a>例
+
+```C
+// crt_malloca_simple.c
+#include <stdio.h>
+#include <malloc.h>
+
+void Fn()
+{
+   char * buf = (char *)_malloca( 100 );
+   // do something with buf
+   _freea( buf );
+}
+
+int main()
+{
+   Fn();
+}
+```
+
+## <a name="example"></a>例
+
+```C
+// crt_malloca_exception.c
+// This program demonstrates the use of
+// _malloca and trapping any exceptions
+// that may occur.
+
+#include <windows.h>
+#include <stdio.h>
+#include <malloc.h>
+
+int main()
+{
+    int     size;
+    int     numberRead = 0;
+    int     errcode = 0;
+    void    *p = NULL;
+    void    *pMarker = NULL;
+
+    while (numberRead == 0)
+    {
+        printf_s("Enter the number of bytes to allocate "
+                 "using _malloca: ");
+        numberRead = scanf_s("%d", &size);
+    }
+
+    // Do not use try/catch for _malloca,
+    // use __try/__except, since _malloca throws
+    // Structured Exceptions, not C++ exceptions.
+
+    __try
+    {
+        if (size > 0)
+        {
+            p =  _malloca( size );
+        }
+        else
+        {
+            printf_s("Size must be a positive number.");
+        }
+        _freea( p );
+    }
+
+    // Catch any exceptions that may occur.
+    __except( GetExceptionCode() == STATUS_STACK_OVERFLOW )
+    {
+        printf_s("_malloca failed!\n");
+
+        // If the stack overflows, use this function to restore.
+        errcode = _resetstkoflw();
+        if (errcode)
+        {
+            printf("Could not reset the stack!");
+            _exit(1);
+        }
+    };
+}
+```
+
+### <a name="input"></a>入力
+
+```Input
+1000
+```
+
+### <a name="sample-output"></a>出力例
+
+```Output
+Enter the number of bytes to allocate using _malloca: 1000
+```
+
+## <a name="see-also"></a>関連項目
+
+[メモリ割り当て](../../c-runtime-library/memory-allocation.md)<br/>
+[calloc](calloc.md)<br/>
+[malloc](malloc.md)<br/>
+[realloc](realloc.md)<br/>
+[_resetstkoflw](resetstkoflw.md)<br/>

@@ -1,12 +1,12 @@
 ---
-title: "_ismbcl0、_ismbcl0_l、_ismbcl1、_ismbcl1_l、_ismbcl2、_ismbcl2_l | Microsoft Docs"
-ms.custom: 
+title: _ismbcl0、_ismbcl0_l、_ismbcl1、_ismbcl1_l、_ismbcl2、_ismbcl2_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _ismbcl2
@@ -57,92 +57,97 @@ helpviewer_keywords:
 - _ismbcl2_l function
 - _ismbcl0 function
 ms.assetid: ee15ebd1-462c-4a43-95f3-6735836d626a
-caps.latest.revision: 
+caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 007b94015b0d898ccedf9d9a7a07d60b26f5faa7
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 4cbca36f0b396bd0623fee3a4039c20cee3d367c
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="ismbcl0-ismbcl0l-ismbcl1-ismbcl1l-ismbcl2-ismbcl2l"></a>_ismbcl0、_ismbcl0_l、_ismbcl1、_ismbcl1_l、_ismbcl2、_ismbcl2_l
-現在のロケールまたは指定された LC_CTYPE 変換状態カテゴリを使用する、**コード ページ 932 固有の関数**。  
-  
+
+現在のロケールまたは指定された LC_CTYPE 変換状態カテゴリを使用する、**コード ページ 932 固有の関数**。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _ismbcl0(  
-   unsigned int c   
-);  
-int _ismbcl0_l(  
-   unsigned int c,  
-   _locale_t locale  
-);  
-int _ismbcl1(  
-   unsigned int c   
-);  
-int _ismbcl1_l(  
-   unsigned int c ,  
-   _locale_t locale  
-);  
-int _ismbcl2(  
-   unsigned int c   
-);  
-int _ismbcl2_l(  
-   unsigned int c,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- テストする文字。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- これらの各ルーチンでは、文字がテスト条件を満たす場合に 0 以外の値が返され、テスト条件を満たさない場合に 0 が返されます。 `c` <= 255 で、対応する `_ismbb` ルーチンがある (たとえば、`_ismbcalnum` は `_ismbbalnum` に対応します) 場合、結果は、対応する `_ismbb` ルーチンの戻り値になります。  
-  
-## <a name="remarks"></a>コメント  
- これらの各関数は特定の条件で特定のマルチバイト文字をテストします。  
-  
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
-|ルーチンによって返される値|テスト条件 (コード ページ 932 のみ)|  
-|-------------|-------------------------------------------|  
-|`_ismbcl0`|JIS の非漢字: 0x8140<=`c`<=0x889E。|  
-|`_ismbcl0_l`|JIS の非漢字: 0x8140<=`c`<=0x889E。|  
-|`_ismbcl1`|JIS のレベル 1: 0x889F<=`c`<=0x9872。|  
-|`_ismbcl1_l`|JIS のレベル 1: 0x889F<=`c`<=0x9872。|  
-|`_ismbcl2`|JIS のレベル 2: 0x989F<=`c`<=0xEAA4。|  
-|`_ismbcl2_l`|JIS のレベル 2: 0x989F<=`c`<=0xEAA4。|  
-  
- 関数は、指定された値 `c` が、上の表に記載のテスト条件に一致するかどうかをチェックしますが、`c` が有効なマルチバイト文字かどうかはチェックしません。 下位バイトが範囲 0x00 - 0x3F、0x7F、または 0xFD - 0xFF にある場合、これらの関数は 0 以外の値を返し、文字がテスト条件を満たすことを示します。 マルチバイト文字が定義されているかどうかをテストするために [_ismbbtrail](../../c-runtime-library/reference/ismbbtrail-ismbbtrail-l.md) を使用します。  
-  
- **コード ページ 932 固有情報終了**  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_ismbcl0`|\<mbstring.h>|  
-|`_ismbcl0_l`|\<mbstring.h>|  
-|`_ismbcl1`|\<mbstring.h>|  
-|`_ismbcl1_l`|\<mbstring.h>|  
-|`_ismbcl2`|\<mbstring.h>|  
-|`_ismbcl2_l`|\<mbstring.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [文字分類](../../c-runtime-library/character-classification.md)   
- [_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)   
- [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+int _ismbcl0(
+   unsigned int c
+);
+int _ismbcl0_l(
+   unsigned int c,
+   _locale_t locale
+);
+int _ismbcl1(
+   unsigned int c
+);
+int _ismbcl1_l(
+   unsigned int c ,
+   _locale_t locale
+);
+int _ismbcl2(
+   unsigned int c
+);
+int _ismbcl2_l(
+   unsigned int c,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+テストする文字。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+これらの各ルーチンでは、文字がテスト条件を満たす場合に 0 以外の値が返され、テスト条件を満たさない場合に 0 が返されます。 場合*c* < = 255 は、対応する **_ismbb 系**ルーチン (たとえば、 **_ismbcalnum**に対応する **_ismbbalnum**) では、結果は、戻り値の対応する **_ismbb 系**ルーチンです。
+
+## <a name="remarks"></a>コメント
+
+これらの各関数は特定の条件で特定のマルチバイト文字をテストします。
+
+出力値の設定の影響を受けた、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。 **_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+|ルーチン|テスト条件 (コード ページ 932 のみ)|
+|-------------|-------------------------------------------|
+|**_ismbcl0**|JIS の非漢字: 0x8140 < =*c*< 0x889E を = です。|
+|**_ismbcl0_l**|JIS の非漢字: 0x8140 < =*c*< 0x889E を = です。|
+|**_ismbcl1**|JIS レベル 1: 0x889F < =*c*< 0x9872 を = です。|
+|**_ismbcl1_l**|JIS レベル 1: 0x889F < =*c*< 0x9872 を = です。|
+|**_ismbcl2**|JIS レベル 2: 0x989F < =*c*< 0xEAA4 を = です。|
+|**_ismbcl2_l**|JIS レベル 2: 0x989F < =*c*< 0xEAA4 を = です。|
+
+関数は、ことを確認、指定された値*c*テスト条件は、上記で説明したが、チェックを行わないと一致する*c*有効なマルチバイト文字します。 下位バイトが範囲 0x00 - 0x3F、0x7F、または 0xFD - 0xFF にある場合、これらの関数は 0 以外の値を返し、文字がテスト条件を満たすことを示します。 マルチバイト文字が定義されているかどうかをテストするために [_ismbbtrail](ismbbtrail-ismbbtrail-l.md) を使用します。
+
+**コード ページ 932 固有情報終了**
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_ismbcl0**|\<mbstring.h>|
+|**_ismbcl0_l**|\<mbstring.h>|
+|**_ismbcl1**|\<mbstring.h>|
+|**_ismbcl1_l**|\<mbstring.h>|
+|**_ismbcl2**|\<mbstring.h>|
+|**_ismbcl2_l**|\<mbstring.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[文字分類](../../c-runtime-library/character-classification.md)<br/>
+[_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)<br/>
+[is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)<br/>

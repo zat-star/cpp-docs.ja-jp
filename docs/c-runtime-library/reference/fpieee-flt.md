@@ -1,12 +1,12 @@
 ---
-title: "_fpieee_flt | Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: _fpieee_flt | Microsoft ドキュメント
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _fpieee_flt
@@ -34,134 +34,139 @@ helpviewer_keywords:
 - floating-point exception handling
 - fpieee_flt function
 ms.assetid: 2bc4801e-0eed-4e73-b518-215da8cc9740
-caps.latest.revision: 
+caps.latest.revision: 15
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 88d05d4d8c7f403cc2702c5a0ec3b2af840bd320
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: da55d2940f38a90dfa5c69d71d394e865bb3b4c0
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fpieeeflt"></a>_fpieee_flt
-IEEE 浮動小数点例外用のユーザー定義トラップ ハンドラーを呼び出します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _fpieee_flt(   
-   unsigned long excCode,  
-   struct _EXCEPTION_POINTERS *excInfo,  
-   int handler(_FPIEEE_RECORD *)   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `excCode`  
- 例外コード。  
-  
- `excInfo`  
- Windows NT 例外情報構造体へのポインター。  
-  
- `handler`  
- ユーザーの IEEE トラップ ハンドラー ルーチンへのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- `_fpieee_flt` の戻り値は、`handler` によって返される値です。 そのため、構造化例外処理 (SEH) 機構の except 句で IEEE フィルター ルーチンが使用される場合があります。  
-  
-## <a name="remarks"></a>コメント  
- `_fpieee_flt` 関数は、IEEE 浮動小数点例外用のユーザー定義トラップ ハンドラーを呼び出し、このハンドラーにすべての関連情報を渡します。 このルーチンは SEH 機構の例外フィルターとして機能し、必要に応じて独自の IEEE 例外ハンドラーが呼び出されます。  
-  
- Fpieee.h で定義されている `_FPIEEE_RECORD` 構造体には、IEEE 浮動小数点例外に関する情報が含まれています。 この構造体は、`_fpieee_flt` によってユーザー定義トラップ ハンドラーに渡されます。  
-  
-|_FPIEEE_RECORD フィールド|説明|  
-|----------------------------|-----------------|  
-|`unsigned int RoundingMode`, `unsigned int Precision`|これらのフィールドには、例外発生時の浮動小数点環境に関する情報が含まれています。|  
-|`unsigned int Operation`|トラップを発生させた操作の種類を示します。 種類が比較 (`_FpCodeCompare`) の場合は、`_FPIEEE_COMPARE_RESULT` フィールドに特別な `Result.Value` 値 (Fpieee.h 内で定義) のいずれかを指定できます。 変換の種類 (`_FpCodeConvert`) は、浮動小数点変換の操作中にトラップが発生したことを示します。 `Operand1` と `Result` の種類を確認して、試行する変換の種類を決めることができます。|  
-|`_FPIEEE_VALUE Operand1`、`_FPIEEE_VALUE Operand2`、`_FPIEEE_VALUE Result`|これらの構造体は、提案された結果とオペランドの型と値を示しています。<br /><br /> `OperandValid` 応答の値が有効であるかどうかを示すフラグ。<br /><br /> `Format` 対応する値のデータ型。 対応する値が有効でなくても、形式の種類が返されることがあります。<br /><br /> `Value` 結果またはオペランドのデータ値。|  
-|`_FPIEEE_EXCEPTION_FLAGS Cause`、`_FPIEEE_EXCEPTION_FLAGS Enable`、`_FPIEEE_EXCEPTION_FLAGS Status`|_FPIEEE_EXCEPTION_FLAGS には、浮動小数点例外の種類ごとに 1 つのビット フィールドが含まれています。<br /><br /> これらのフィールドと、[_controlfp](../../c-runtime-library/reference/control87-controlfp-control87-2.md) に指定される例外をマスクするために使用される引数との間には対応関係があります。<br /><br /> 各ビットの正確な意味はコンテキストに依存します。<br /><br /> `Cause` 設定されている各ビットは、発生した特定の例外を示します。<br /><br /> `Enable` 設定されている各ビットは、特定の例外が現在はマスクされていないことを示します。<br /><br /> `Status` 設定されている各ビットは、特定の例外が現在は保留中であることを示します。 これには発生しなかった例外が含まれます。それらが `_controlfp` によってマスクされるためです。|  
-  
- 無効になっている保留中の例外は、有効にされたときに発生します。 このため、`_fpieee_flt` を例外フィルターとして使用した場合に、未定義の動作が生じることがあります。 浮動小数点例外を有効にする前に、必ず [_clearfp](../../c-runtime-library/reference/clear87-clearfp.md) を呼び出してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`_fpieee_flt`|\<fpieee.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_fpieee.c  
-// This program demonstrates the implementation of  
-// a user-defined floating-point exception handler using the  
-// _fpieee_flt function.  
-  
-#include <fpieee.h>  
-#include <excpt.h>  
-#include <float.h>  
-#include <stddef.h>  
-  
-int fpieee_handler( _FPIEEE_RECORD * );  
-  
-int fpieee_handler( _FPIEEE_RECORD *pieee )  
-{  
-   // user-defined ieee trap handler routine:  
-   // there is one handler for all   
-   // IEEE exceptions  
-  
-   // Assume the user wants all invalid   
-   // operations to return 0.  
-  
-   if ((pieee->Cause.InvalidOperation) &&   
-       (pieee->Result.Format == _FpFormatFp32))   
-   {  
-        pieee->Result.Value.Fp32Value = 0.0F;  
-  
-        return EXCEPTION_CONTINUE_EXECUTION;  
-   }  
-   else  
-      return EXCEPTION_EXECUTE_HANDLER;  
-}  
-  
-#define _EXC_MASK    \  
-    _EM_UNDERFLOW  + \  
-    _EM_OVERFLOW   + \  
-    _EM_ZERODIVIDE + \  
-    _EM_INEXACT  
-  
-int main( void )  
-{  
-   // ...  
-  
-   __try {  
-      // unmask invalid operation exception  
-      _controlfp_s(NULL, _EXC_MASK, _MCW_EM);   
-  
-      // code that may generate   
-      // fp exceptions goes here  
-   }  
-   __except ( _fpieee_flt( GetExceptionCode(),  
-                GetExceptionInformation(),  
-                fpieee_handler ) ){  
-  
-      // code that gets control   
-  
-      // if fpieee_handler returns  
-      // EXCEPTION_EXECUTE_HANDLER goes here  
-  
-   }  
-  
-   // ...  
-}  
-```  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [_control87、_controlfp、\__control87_2](../../c-runtime-library/reference/control87-controlfp-control87-2.md)   
- [_controlfp_s](../../c-runtime-library/reference/controlfp-s.md)
+
+IEEE 浮動小数点例外用のユーザー定義トラップ ハンドラーを呼び出します。
+
+## <a name="syntax"></a>構文
+
+```C
+int _fpieee_flt(
+   unsigned long excCode,
+   struct _EXCEPTION_POINTERS *excInfo,
+   int handler(_FPIEEE_RECORD *)
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*excCode*<br/>
+例外コード。
+
+*excInfo*<br/>
+Windows NT 例外情報構造体へのポインター。
+
+*ハンドラー*<br/>
+ユーザーの IEEE トラップ ハンドラー ルーチンへのポインター。
+
+## <a name="return-value"></a>戻り値
+
+戻り値 **_fpieee_flt**によって返される値は、*ハンドラー*です。 そのため、構造化例外処理 (SEH) 機構の except 句で IEEE フィルター ルーチンが使用される場合があります。
+
+## <a name="remarks"></a>コメント
+
+**_Fpieee_flt**関数は、IEEE 浮動小数点例外用のユーザー定義トラップ ハンドラーを呼び出し、すべての関連情報を提供します。 このルーチンは SEH 機構の例外フィルターとして機能し、必要に応じて独自の IEEE 例外ハンドラーが呼び出されます。
+
+**_FPIEEE_RECORD** Fpieee.h で定義された構造には、IEEE 浮動小数点例外に関する情報が含まれています。 この構造体は、ユーザー定義トラップ ハンドラーに渡される **_fpieee_flt**です。
+
+|_FPIEEE_RECORD フィールド|説明|
+|----------------------------|-----------------|
+|**RoundingMode**<br/>**精度**|これら**符号なし** **int**例外が発生した時点での浮動小数点環境に関する情報を格納します。|
+|**操作**|これは、**符号なし** **int**フィールド トラップを原因となった操作の種類を示します。 型が比較の場合 (**_FpCodeCompare**)、特殊なのいずれかを指定することができます **_FPIEEE_COMPARE_RESULT**値 (fpieee.h 内で定義されている) で、 **Result.Value**フィールドです。 変換の種類 (**_FpCodeConvert**) 浮動小数点の変換操作中にトラップが発生したことを示します。 確認することができます、 **Operand1**と**結果**型を変換しようとしているの種類を確認します。|
+|**operand1**<br/>**オペランド 2**<br/>**結果**|これら **_FPIEEE_VALUE**構造体は、種類と、提案された結果とオペランドの値を示します。 各構造体には、これらのフィールドが含まれています。<br /><br /> **OperandValid** - 応答の値が有効かどうかを示すフラグ。<br />**形式**-対応する値のデータ型。 対応する値が有効でなくても、形式の種類が返されることがあります。<br />**値**-結果またはオペランドのデータ値。|
+|**原因**<br/>**有効化**<br/>**状態**|**_Fpieee_exception_flags には、**浮動小数点の例外の種類ごとに 1 つのビット フィールドが含まれています。 これらのフィールドと、[_controlfp](control87-controlfp-control87-2.md) に指定される例外をマスクするために使用される引数との間には対応関係があります。 各ビットの正確な意味はコンテキストに依存します。<br /><br /> **原因**-が発生した特定の例外を示す各ビットを設定します。<br />**有効にする**-特定の例外が現在はマスクされていないことを示す各ビットを設定します。<br />**ステータス**-特定の例外が現在保留中であることを示します各ビットを設定します。 これによってマスクされたために発生していない例外が含まれます **_controlfp**です。|
+
+無効になっている保留中の例外は、有効にされたときに発生します。 これにより、未定義の動作を使用する場合 **_fpieee_flt**例外フィルターとして。 浮動小数点例外を有効にする前に、必ず [_clearfp](clear87-clearfp.md) を呼び出してください。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|
+|--------------|---------------------|
+|**_fpieee_flt**|\<fpieee.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_fpieee.c
+// This program demonstrates the implementation of
+// a user-defined floating-point exception handler using the
+// _fpieee_flt function.
+
+#include <fpieee.h>
+#include <excpt.h>
+#include <float.h>
+#include <stddef.h>
+
+int fpieee_handler( _FPIEEE_RECORD * );
+
+int fpieee_handler( _FPIEEE_RECORD *pieee )
+{
+   // user-defined ieee trap handler routine:
+   // there is one handler for all
+   // IEEE exceptions
+
+   // Assume the user wants all invalid
+   // operations to return 0.
+
+   if ((pieee->Cause.InvalidOperation) &&
+       (pieee->Result.Format == _FpFormatFp32))
+   {
+        pieee->Result.Value.Fp32Value = 0.0F;
+
+        return EXCEPTION_CONTINUE_EXECUTION;
+   }
+   else
+      return EXCEPTION_EXECUTE_HANDLER;
+}
+
+#define _EXC_MASK    \
+    _EM_UNDERFLOW  + \
+    _EM_OVERFLOW   + \
+    _EM_ZERODIVIDE + \
+    _EM_INEXACT
+
+int main( void )
+{
+   // ...
+
+   __try {
+      // unmask invalid operation exception
+      _controlfp_s(NULL, _EXC_MASK, _MCW_EM);
+
+      // code that may generate
+      // fp exceptions goes here
+   }
+   __except ( _fpieee_flt( GetExceptionCode(),
+                GetExceptionInformation(),
+                fpieee_handler ) ){
+
+      // code that gets control
+
+      // if fpieee_handler returns
+      // EXCEPTION_EXECUTE_HANDLER goes here
+
+   }
+
+   // ...
+}
+```
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[_control87、_controlfp、\__control87_2](control87-controlfp-control87-2.md)<br/>
+[_controlfp_s](controlfp-s.md)<br/>

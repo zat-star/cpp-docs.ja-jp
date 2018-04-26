@@ -1,12 +1,12 @@
 ---
-title: "_lseek、_lseeki64 | Microsoft Docs"
-ms.custom: 
+title: _lseek、_lseeki64 | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _lseeki64
@@ -38,149 +38,151 @@ helpviewer_keywords:
 - file pointers [C++], moving
 - seek file pointers
 ms.assetid: aba8a768-d40e-48c3-b38e-473dbd782f93
-caps.latest.revision: 
+caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e9b711af0b5f8c5aec24ccfa4e395951b1caf302
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 078143613e4e0742789fbcf68841a939d40d7636
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="lseek-lseeki64"></a>_lseek、_lseeki64
-指定した場所にファイル ポインターを移動します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      long _lseek(  
-   int fd,  
-   long offset,  
-   int origin   
-);  
-__int64 _lseeki64(  
-   int fd,  
-   __int64 offset,  
-   int origin   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `fd`  
- 開いているファイルを参照するファイル記述子。  
-  
- *オフセット*  
- *配信元*からのバイト数。  
-  
- *配信元*  
- 最初の位置。  
-  
-## <a name="return-value"></a>戻り値  
- `_lseek` は、ファイルの先頭からの新しい位置のオフセットを、バイト単位で返します。 `_lseeki64` は、64 ビット整数のオフセットを返します。 この関数は、エラーを示す-1 L を返します。 不適切なファイル記述子、*origin* の値が無効、*オフセット*によって指定された位置がファイルの開始より前であるなど、無効なパラメーターが渡された場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」の説明にあるとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `errno` を `EBADF` に設定し、-1L を返します。 (ターミナルやポインターなどの) シーク非対応のデバイスでは、戻り値は未定義です。  
-  
- エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
-  
-## <a name="remarks"></a>コメント  
- `_lseek` 関数は、`fd` に関連付けられたファイル ポインターを *origin* から*オフセット* バイトの新しい場所に移動します。 ファイルの次の操作は、新しい場所で行われます。 *origin* 引数は、Stdio.h で定義されている、次の定数のいずれかである必要があります。  
-  
- `SEEK_SET`  
- ファイルの先頭。  
-  
- `SEEK_CUR`  
- ファイル ポインターの現在の位置。  
-  
- `SEEK_END`  
- ファイルの終わり。  
-  
- `_lseek` を使用して、ポインターをファイルの任意の場所またはファイルの最後の後に移動することができます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_lseek`|\<io.h>|  
-|`_lseeki64`|\<io.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_lseek.c  
-/* This program first opens a file named lseek.txt.  
- * It then uses _lseek to find the beginning of the file,  
- * to find the current position in the file, and to find  
- * the end of the file.  
- */  
-  
-#include <io.h>  
-#include <fcntl.h>  
-#include <stdlib.h>  
-#include <stdio.h>  
-#include <share.h>  
-  
-int main( void )  
-{  
-   int fh;  
-   long pos;               /* Position of file pointer */  
-   char buffer[10];  
-  
-   _sopen_s( &fh, "crt_lseek.c_input", _O_RDONLY, _SH_DENYNO, 0 );  
-  
-   /* Seek the beginning of the file: */  
-   pos = _lseek( fh, 0L, SEEK_SET );  
-   if( pos == -1L )  
-      perror( "_lseek to beginning failed" );  
-   else  
-      printf( "Position for beginning of file seek = %ld\n", pos );  
-  
-   /* Move file pointer a little */  
-    _read( fh, buffer, 10 );  
-  
-   /* Find current position: */  
-   pos = _lseek( fh, 0L, SEEK_CUR );  
-   if( pos == -1L )  
-      perror( "_lseek to current position failed" );  
-   else  
-      printf( "Position for current position seek = %ld\n", pos );  
-  
-   /* Set the end of the file: */  
-   pos = _lseek( fh, 0L, SEEK_END );  
-   if( pos == -1L )  
-      perror( "_lseek to end failed" );  
-   else  
-      printf( "Position for end of file seek = %ld\n", pos );  
-  
-   _close( fh );  
-}  
-```  
-  
-## <a name="input-crtlseekcinput"></a>入力: crt_lseek.c_input  
-  
-```  
-Line one.  
-Line two.  
-Line three.  
-Line four.  
-Line five.  
-```  
-  
-## <a name="output"></a>出力  
-  
-```  
-Position for beginning of file seek = 0  
-Position for current position seek = 10  
-Position for end of file seek = 57  
-```  
-  
-## <a name="see-also"></a>参照  
- [下位入出力](../../c-runtime-library/low-level-i-o.md)   
- [fseek、_fseeki64](../../c-runtime-library/reference/fseek-fseeki64.md)   
- [_tell、_telli64](../../c-runtime-library/reference/tell-telli64.md)
+
+指定した場所にファイル ポインターを移動します。
+
+## <a name="syntax"></a>構文
+
+```C
+long _lseek(
+   int fd,
+   long offset,
+   int origin
+);
+__int64 _lseeki64(
+   int fd,
+   __int64 offset,
+   int origin
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*fd*<br/>
+開いているファイルを参照するファイル記述子。
+
+*オフセット*<br/>
+*配信元*からのバイト数。
+
+*配信元*<br/>
+最初の位置。
+
+## <a name="return-value"></a>戻り値
+
+**_lseek**ファイルの先頭から新しい位置のバイト単位のオフセットを返します。 **_lseeki64**オフセットから 64 ビット整数で返します。 この関数は、エラーを示す-1 L を返します。 不適切なファイル記述子、*origin* の値が無効、*オフセット*によって指定された位置がファイルの開始より前であるなど、無効なパラメーターが渡された場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」の説明にあるとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合に、これらの関数が設定**errno**に**EBADF** -1 L を返します。 (ターミナルやポインターなどの) シーク非対応のデバイスでは、戻り値は未定義です。
+
+エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。
+
+## <a name="remarks"></a>コメント
+
+**_Lseek**関数ポインターをファイルに関連付けられている*fd*されている新しい場所に*オフセット*からバイト*原点*です。 ファイルの次の操作は、新しい場所で行われます。 *origin* 引数は、Stdio.h で定義されている、次の定数のいずれかである必要があります。
+
+|*原点*値||
+|-|-|
+**SEEK_SET**|ファイルの先頭。
+**SEEK_CUR**|ファイル ポインターの現在の位置。
+**SEEK_END**|EOF (ファイル終端)。
+
+使用することができます **_lseek**ファイル、またはファイルの末尾を越える任意の場所、ポインターの位置変更にします。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_lseek**|\<io.h>|
+|**_lseeki64**|\<io.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="example"></a>例
+
+```C
+// crt_lseek.c
+/* This program first opens a file named lseek.txt.
+* It then uses _lseek to find the beginning of the file,
+* to find the current position in the file, and to find
+* the end of the file.
+*/
+
+#include <io.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <share.h>
+
+int main( void )
+{
+   int fh;
+   long pos;               /* Position of file pointer */
+   char buffer[10];
+
+   _sopen_s( &fh, "crt_lseek.c_input", _O_RDONLY, _SH_DENYNO, 0 );
+
+   /* Seek the beginning of the file: */
+   pos = _lseek( fh, 0L, SEEK_SET );
+   if( pos == -1L )
+      perror( "_lseek to beginning failed" );
+   else
+      printf( "Position for beginning of file seek = %ld\n", pos );
+
+   /* Move file pointer a little */
+    _read( fh, buffer, 10 );
+
+   /* Find current position: */
+   pos = _lseek( fh, 0L, SEEK_CUR );
+   if( pos == -1L )
+      perror( "_lseek to current position failed" );
+   else
+      printf( "Position for current position seek = %ld\n", pos );
+
+   /* Set the end of the file: */
+   pos = _lseek( fh, 0L, SEEK_END );
+   if( pos == -1L )
+      perror( "_lseek to end failed" );
+   else
+      printf( "Position for end of file seek = %ld\n", pos );
+
+   _close( fh );
+}
+```
+
+### <a name="input-crtlseekcinput"></a>入力: crt_lseek.c_input
+
+```Input
+Line one.
+Line two.
+Line three.
+Line four.
+Line five.
+```
+
+### <a name="output"></a>出力
+
+```Output
+Position for beginning of file seek = 0
+Position for current position seek = 10
+Position for end of file seek = 57
+```
+
+## <a name="see-also"></a>関連項目
+
+[下位入出力](../../c-runtime-library/low-level-i-o.md)<br/>
+[fseek、_fseeki64](fseek-fseeki64.md)<br/>
+[_tell、_telli64](tell-telli64.md)<br/>

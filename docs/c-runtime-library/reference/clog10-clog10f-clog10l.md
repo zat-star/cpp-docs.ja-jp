@@ -1,13 +1,13 @@
 ---
-title: "clog10、clog10f、clog10l | Microsoft Docs"
-ms.custom: 
+title: clog10、clog10f、clog10l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - clog10
@@ -40,69 +40,67 @@ helpviewer_keywords:
 - clog10f function
 - clog10l function
 ms.assetid: 2ddae00d-ef93-4441-add3-f4d58358401b
-caps.latest.revision: 
+caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 59fa3d069d68fdb55a9377ca4a4bf89adb1de9f2
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 31e73b5d1f98366d936b62d8e8d89a4b5257e93f
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="clog10-clog10f-clog10l"></a>clog10、clog10f、clog10l
-複素数の底 10 の対数を取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-_Dcomplex clog10(   
-   _Dcomplex z   
-);  
-_Fcomplex clog10(   
-  _Fcomplex z   
-);  // C++ only  
-_Lcomplex clog10(   
-   _Lcomplex z   
-);  // C++ only  
-_Fcomplex clog10f(   
-   _Fcomplex z   
-);  
-_Lcomplex clog10l(   
-   _Lcomplex z   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `z`  
- 対数の底。  
-  
-## <a name="return-value"></a>戻り値  
- 戻り値には次のようなものがあります。  
-  
-|z パラメーター|戻り値|  
-|-----------------|------------------|  
-|正|z の底 10 の対数|  
-|0|- ∞|  
-|負|NaN|  
-|NaN|NaN|  
-|+ ∞|+ ∞|  
-  
-## <a name="remarks"></a>コメント  
- C++ ではオーバーロードが可能であるため、`clog10` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは、 `clog10` は常に `_Dcomplex` 値を受け取って返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
-|-------------|--------------|------------------|  
-|`clog10`、               `clog10f`、`clogl`|\<complex.h>|\<ccomplex>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
- [cexp、cexpf、cexpl](../../c-runtime-library/reference/cexp-cexpf-cexpl.md)   
- [cpow、cpowf、cpowl](../../c-runtime-library/reference/cpow-cpowf-cpowl.md)   
- [clog、clogf、clogl](../../c-runtime-library/reference/clog-clogf-clogl.md)
+
+複素数の底 10 の対数を取得します。
+
+## <a name="syntax"></a>構文
+
+```C
+_Dcomplex clog10( _Dcomplex z );
+_Fcomplex clog10f( _Fcomplex z );
+_Lcomplex clog10l( _Lcomplex z );
+```
+
+```cpp
+_Fcomplex clog10( _Fcomplex z );  // C++ only
+_Lcomplex clog10( _Lcomplex z );  // C++ only
+```
+
+### <a name="parameters"></a>パラメーター
+
+*z*<br/>
+対数の底。
+
+## <a name="return-value"></a>戻り値
+
+戻り値には次のようなものがあります。
+
+|z パラメーター|戻り値|
+|-----------------|------------------|
+|正|z の底 10 の対数|
+|0|- ∞|
+|負|NaN|
+|NaN|NaN|
+|+ ∞|+ ∞|
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**clog10**を受け取り、返します **_Fcomplex**と **_Lcomplex**値。 C プログラムでは、 **clog10**常に受け取りを返す、 **_Dcomplex**値。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|C ヘッダー|C++ ヘッダー|
+|-------------|--------------|------------------|
+|**clog10**、 **clog10f**、 **clogl**|\<complex.h>|\<ccomplex>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[関数リファレンス (アルファベット順)](crt-alphabetical-function-reference.md)<br/>
+[cexp、cexpf、cexpl](cexp-cexpf-cexpl.md)<br/>
+[cpow、cpowf、cpowl](cpow-cpowf-cpowl.md)<br/>
+[clog、clogf、clogl](clog-clogf-clogl.md)<br/>

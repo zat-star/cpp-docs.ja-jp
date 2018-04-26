@@ -1,12 +1,12 @@
 ---
-title: "_ftell_nolock、_ftelli64_nolock | Microsoft Docs"
-ms.custom: 
+title: _ftell_nolock、_ftelli64_nolock | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _ftelli64_nolock
@@ -38,54 +38,59 @@ helpviewer_keywords:
 - ftell_nolock function
 - file pointers [C++], getting current position
 ms.assetid: 84e68b0a-32f8-4c4a-90ad-3f2387685ede
-caps.latest.revision: 
+caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 56f40af318ce2c1684ded8fe03ddc98ba1b219f8
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: f00920fbb262cd564ce0ac6bc454d3ef560c6941
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="ftellnolock-ftelli64nolock"></a>_ftell_nolock、_ftelli64_nolock
-スレッドをロックせずに、ファイル ポインターの現在の位置を取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-long _ftell_nolock(   
-   FILE *stream   
-);  
-__int64 _ftelli64_nolock(   
-   FILE *stream   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `stream`  
- `FILE` 構造体をターゲットにします。  
-  
-## <a name="return-value"></a>戻り値  
- `ftell` および `_ftelli64` と同じです。 詳細については、「[ftell、_ftelli64](../../c-runtime-library/reference/ftell-ftelli64.md)**」を参照してください。**  
-  
-## <a name="remarks"></a>コメント  
- これらの関数は、それぞれ `ftell` および `_ftelli64` のロックなしバージョンです。 同一`ftell`と`_ftelli64`他のスレッドによる干渉から保護されない点を除いて、します。 これらの関数では他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|オプション ヘッダー|  
-|--------------|---------------------|---------------------|  
-|`ftell_nolock`|\<stdio.h>|\<errno.h>|  
-|`_ftelli64_nolock`|\<stdio.h>|\<errno.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fgetpos](../../c-runtime-library/reference/fgetpos.md)   
- [fseek、_fseeki64](../../c-runtime-library/reference/fseek-fseeki64.md)   
- [_lseek、_lseeki64](../../c-runtime-library/reference/lseek-lseeki64.md)   
- [ftell、_ftelli64](../../c-runtime-library/reference/ftell-ftelli64.md)
+
+スレッドをロックせずに、ファイル ポインターの現在の位置を取得します。
+
+## <a name="syntax"></a>構文
+
+```C
+long _ftell_nolock(
+   FILE *stream
+);
+__int64 _ftelli64_nolock(
+   FILE *stream
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ストリーム*<br/>
+ターゲット、**ファイル**構造体。
+
+## <a name="return-value"></a>戻り値
+
+同じ**ftell**と **_ftelli64**です。 詳細については、次を参照してください。 [ftell、_ftelli64](ftell-ftelli64.md)です。
+
+## <a name="remarks"></a>コメント
+
+これらの関数は、ロックしないバージョンの**ftell**と **_ftelli64**、それぞれします。 同一**ftell**と **_ftelli64**他のスレッドによる干渉から保護されない点を除いて、します。 これらの関数では他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|オプション ヘッダー|
+|--------------|---------------------|---------------------|
+|**ftell_nolock**|\<stdio.h>|\<errno.h>|
+|**_ftelli64_nolock**|\<stdio.h>|\<errno.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[fgetpos](fgetpos.md)<br/>
+[fseek、_fseeki64](fseek-fseeki64.md)<br/>
+[_lseek、_lseeki64](lseek-lseeki64.md)<br/>
+[ftell、_ftelli64](ftell-ftelli64.md)<br/>

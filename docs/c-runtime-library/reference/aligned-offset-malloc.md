@@ -1,12 +1,12 @@
 ---
 title: _aligned_offset_malloc | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _aligned_offset_malloc
@@ -32,61 +32,67 @@ helpviewer_keywords:
 - _aligned_offset_malloc function
 - aligned_offset_malloc function
 ms.assetid: 447681a3-7c95-4655-86ba-fa3a4ca4c521
-caps.latest.revision: 
+caps.latest.revision: 17
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1b192d8bf88ac40fffdbdf601e74ee1b265e7171
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 62ddae2faf8139b58e43f889c46771647b254b10
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="alignedoffsetmalloc"></a>_aligned_offset_malloc
-指定された配置の境界にメモリを割り当てます。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void * _aligned_offset_malloc(  
-   size_t size,   
-   size_t alignment,   
-   size_t offset  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [入力] `size`  
- 要求されたメモリ割り当てのサイズ。  
-  
- [入力] `alignment`  
- アラインメント値。2 の整数乗である必要があります。  
-  
- [入力] `offset`  
- アラインメントを強制するためのメモリ割り当てへのオフセット。  
-  
-## <a name="return-value"></a>戻り値  
- 割り当てられたメモリ ブロックへのポインター。操作が失敗した場合は `NULL`。  
-  
-## <a name="remarks"></a>コメント  
- `_aligned_offset_malloc` は、入れ子になった要素に対するアラインメントが必要な状況で便利です。たとえば、入れ子になったクラスに対するアラインメントが必要になった場合などです。  
-  
- `_aligned_offset_malloc` は `malloc` を基盤にしています。詳細については、「[malloc](../../c-runtime-library/reference/malloc.md)」を参照してください。  
-  
- `_aligned_offset_malloc` が `__declspec(noalias)` と `__declspec(restrict)` でマークされている場合、この関数がグローバル変数を変更せず、返されるポインターがエイリアス化されない保証があることを意味します。 詳細については、「[noalias](../../cpp/noalias.md)」、および「[restrict](../../cpp/restrict.md)」を参照してください。  
-  
- この関数は、メモリ割り当てが失敗するか、要求されたサイズが `errno` より大きかった場合に、`ENOMEM` を `_HEAP_MAXREQ` に設定します。 `errno` に関する詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。 また、`_aligned_offset_malloc` はそのパラメーターを検証します。 `alignment` が 2 の累乗でないか、`offset` が `size` 以上で 0 以外である場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、この関数は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は `NULL` を返し、`errno` を `EINVAL` に設定します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_aligned_offset_malloc`|\<malloc.h>|  
-  
-## <a name="example"></a>例  
- 詳細については、「[_aligned_malloc](../../c-runtime-library/reference/aligned-malloc.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [データの整列](../../c-runtime-library/data-alignment.md)
+
+指定された配置の境界にメモリを割り当てます。
+
+## <a name="syntax"></a>構文
+
+```C
+void * _aligned_offset_malloc(
+   size_t size,
+   size_t alignment,
+   size_t offset
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*size*<br/>
+要求されたメモリ割り当てのサイズ。
+
+*alignment*<br/>
+アラインメント値。2 の整数乗である必要があります。
+
+*オフセット*<br/>
+アラインメントを強制するためのメモリ割り当てへのオフセット。
+
+## <a name="return-value"></a>戻り値
+
+割り当てられたメモリ ブロックへのポインターまたは**NULL**場合は、操作に失敗しました。
+
+## <a name="remarks"></a>コメント
+
+**_aligned_offset_malloc**入れ子になった要素に対するアラインメントが必要な場所の状況で役に立ちますの例では、入れ子になったクラスに対するアラインメントが必要です。
+
+**_aligned_offset_malloc**に基づく**malloc**。 詳細については、を参照してください[malloc](malloc.md)です。
+
+**_aligned_offset_malloc**がマークされている`__declspec(noalias)`と`__declspec(restrict)`、グローバル変数を変更せず、関数が保証されると、返されるポインターがエイリアス化されないを意味します。 詳細については、「[noalias](../../cpp/noalias.md)」、および「[restrict](../../cpp/restrict.md)」を参照してください。
+
+この関数は、設定**errno**に**ENOMEM**メモリの割り当てが失敗するか、要求されたサイズより大きい場合 **_HEAP_MAXREQ**です。 詳細については**errno**を参照してください[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)です。 また、 **_aligned_offset_malloc**パラメーターを検証します。 場合*配置*が 2 の累乗でない場合、または*オフセット*がより大きいまたは等しい*サイズ*ゼロ以外、この関数によって呼び出されます、無効なパラメーター ハンドラーを」の説明に従って、[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行は継続許可されたかどうか、この関数を返します**NULL**設定と**errno**に**EINVAL**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_aligned_offset_malloc**|\<malloc.h>|
+
+## <a name="example"></a>例
+
+詳細については、「[_aligned_malloc](aligned-malloc.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[データの整列](../../c-runtime-library/data-alignment.md)<br/>

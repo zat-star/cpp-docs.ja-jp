@@ -1,12 +1,12 @@
 ---
-title: "_utime、_utime32、_utime64、_wutime、_wutime32、_wutime64 | Microsoft Docs"
-ms.custom: 
+title: _utime、_utime32、_utime64、_wutime、_wutime32、_wutime64 | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _utime64
@@ -67,189 +67,189 @@ helpviewer_keywords:
 - tutime64 function
 - tutime32 function
 ms.assetid: 8d482d40-19b9-4591-bfee-5d7f601d1a9e
-caps.latest.revision: 
+caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f94c67fe75f5675192dbd0f306d8eef0aace70f5
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 20c56be91f822702f859cfd5f842253cdeac75e9
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="utime-utime32-utime64-wutime-wutime32-wutime64"></a>_utime、_utime32、_utime64、_wutime、_wutime32、_wutime64
-ファイルの変更時刻を設定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _utime(  
-   const char *filename,  
-   struct _utimbuf *times   
-);  
-int _utime32(  
-   const char *filename,  
-   struct __utimbuf32 *times   
-);  
-int _utime64(  
-   const char *filename,  
-   struct __utimbuf64 *times   
-);  
-int _wutime(  
-   const wchar_t *filename,  
-   struct _utimbuf *times   
-);  
-int _wutime32(  
-   const wchar_t *filename,  
-   struct __utimbuf32 *times   
-);  
-int _wutime64(  
-   const wchar_t *filename,  
-   struct __utimbuf64 *times   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `filename`  
- パスまたはファイル名を含む文字列へのポインター。  
-  
- `times`  
- 格納されている時刻値へのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- これらの各関数は、ファイルの変更時刻が変更されると、0 を返します。 戻り値-1 はエラーを示します。 無効なパラメーターが渡された場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は -1 を返し、`errno` を次のいずれかの値に設定します。  
-  
- `EACCES`  
- パスにディレクトリまたは読み取り専用ファイルが指定されている  
-  
- `EINVAL`  
- 無効な `times` 引数  
-  
- `EMFILE`  
- 開いているファイルが多すぎる (変更時刻を変更するにはファイルを開く必要があります)  
-  
- `ENOENT`  
- パスまたはファイル名が見つからない  
-  
- リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
-  
- 変更日が 1970 年 1 月 1 日午前 0 時以降で、使用する関数の終了日より前の場合、ファイルの日付を変更できます。 `_utime` と `_wutime` は 64 ビットの時刻値を使用するため、終了日は UTC の 3000 年 12 月 31 日 23 時 59 分 59 秒になります。 以前の動作を強制するよう `_USE_32BIT_TIME_T` が定義されている場合、終了日は UTC の 2038 年 1 月 18 日 23 時 59 分 59 秒になります。 `_utime32` または `_wutime32` は、`_USE_32BIT_TIME_T` の定義内容に関係なく 32 ビットの時刻型を使用し、常に早いほうの終了日を使用します。 `_utime64` または `_wutime64` は常に 64 ビットの時刻型を使用するため、これらの関数では遅いほうの終了日がサポートされます。  
-  
-## <a name="remarks"></a>コメント  
- `_utime` 関数は、`filename` *によって指定されたファイルの変更時刻を設定します。* プロセスは、時刻を変更するために、ファイルに対して書き込みアクセス権が必要です。 Windows オペレーティング システムでは、`_utimbuf` 構造体でアクセス時刻および変更時刻を変更できます。 `times` が `NULL` ポインターである場合、変更時刻は現在の現地時刻に設定されます。 それ以外の場合、`times` は、SYS\UTIME.H で定義されている型 `_utimbuf` の構造体を指す必要があります。  
-  
- `_utimbuf` 構造体は、`_utime` でファイル変更日を変更するために使用する、ファイルへのアクセス時刻および変更時刻を格納します。 構造体には、いずれも型 `time_t` である次のフィールドがあります。  
-  
- `actime`  
- ファイルへのアクセス時刻  
-  
- `modtime`  
- ファイルの変更時刻  
-  
- 特定のバージョンの `_utimbuf` 構造体 (`_utimebuf32` と `__utimbuf64`) は、32 ビット バージョンと 64 ビット バージョンの時刻型を使用して定義されます。 これらは、この関数の 32 ビットおよび 64 ビットの特定バージョンで使用されます。 `_utimbuf` 自体は、`_USE_32BIT_TIME_T` が定義されていない場合、既定で 64 ビットの時刻型を使用します。  
-  
- `_utime` は `_futime` と同じですが、`_utime` の引数 `filename` が開いているファイルのファイル記述子ではなくファイル名またはファイルへのパスである点が異なります。  
-  
- `_wutime` 関数は、`_utime` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wutime` は、ワイド文字列です。 それ以外では、これらの関数の動作は同じです。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_tutime`|`_utime`|`_utime`|`_wutime`|  
-|`_tutime32`|`_utime32`|`_utime32`|`_wutime32`|  
-|`_tutime64`|`_utime64`|`_utime64`|`_wutime64`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
-|-------------|----------------------|----------------------|  
-|`_utime`、`_utime32`、`_utime64`|\<sys/utime.h>|\<errno.h>|  
-|`_utime64`|\<sys/utime.h>|\<errno.h>|  
-|`_wutime`|\<utime.h> または \<wchar.h>|\<errno.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
- このプログラムは `_utime` を使用して、ファイル変更時刻を現在の時刻に設定します。  
-  
-```  
-// crt_utime.c  
-#include <stdio.h>  
-#include <stdlib.h>  
-#include <sys/types.h>  
-#include <sys/utime.h>  
-#include <time.h>  
-  
-int main( void )  
-{  
-   struct tm tma = {0}, tmm = {0};  
-   struct _utimbuf ut;  
-  
-   // Fill out the accessed time structure  
-   tma.tm_hour = 12;  
-   tma.tm_isdst = 0;  
-   tma.tm_mday = 15;  
-   tma.tm_min = 0;  
-   tma.tm_mon = 0;  
-   tma.tm_sec = 0;  
-   tma.tm_year = 103;  
-  
-   // Fill out the modified time structure  
-   tmm.tm_hour = 12;  
-   tmm.tm_isdst = 0;  
-   tmm.tm_mday = 15;  
-   tmm.tm_min = 0;  
-   tmm.tm_mon = 0;  
-   tmm.tm_sec = 0;  
-   tmm.tm_year = 102;  
-  
-   // Convert tm to time_t  
-   ut.actime = mktime(&tma);  
-   ut.modtime = mktime(&tmm);  
-  
-   // Show file time before and after  
-   system( "dir crt_utime.c" );  
-   if( _utime( "crt_utime.c", &ut ) == -1 )  
-      perror( "_utime failed\n" );  
-   else  
-      printf( "File time modified\n" );  
-   system( "dir crt_utime.c" );  
-}  
-```  
-  
-## <a name="sample-output"></a>出力例  
-  
-```  
-Volume in drive C has no label.  
- Volume Serial Number is 9CAC-DE74  
-  
- Directory of C:\test  
-  
-01/09/2003  05:38 PM               935 crt_utime.c  
-               1 File(s)            935 bytes  
-               0 Dir(s)  20,742,955,008 bytes free  
-File time modified  
- Volume in drive C has no label.  
- Volume Serial Number is 9CAC-DE74  
-  
- Directory of C:\test  
-  
-01/15/2002  12:00 PM               935 crt_utime.c  
-               1 File(s)            935 bytes  
-               0 Dir(s)  20,742,955,008 bytes free  
-```  
-  
-## <a name="see-also"></a>参照  
- [時間管理](../../c-runtime-library/time-management.md)   
- [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
- [ctime、_ctime32、_ctime64、_wctime、_wctime32、_wctime64](../../c-runtime-library/reference/ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)   
- [_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32](../../c-runtime-library/reference/fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)   
- [_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   
- [_futime、_futime32、_futime64](../../c-runtime-library/reference/futime-futime32-futime64.md)   
- [gmtime、_gmtime32、_gmtime64](../../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md)   
- [localtime、_localtime32、_localtime64](../../c-runtime-library/reference/localtime-localtime32-localtime64.md)   
- [_stat、_wstat 関数](../../c-runtime-library/reference/stat-functions.md)   
- [time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)
+
+ファイルの変更時刻を設定します。
+
+## <a name="syntax"></a>構文
+
+```C
+int _utime(
+   const char *filename,
+   struct _utimbuf *times
+);
+int _utime32(
+   const char *filename,
+   struct __utimbuf32 *times
+);
+int _utime64(
+   const char *filename,
+   struct __utimbuf64 *times
+);
+int _wutime(
+   const wchar_t *filename,
+   struct _utimbuf *times
+);
+int _wutime32(
+   const wchar_t *filename,
+   struct __utimbuf32 *times
+);
+int _wutime64(
+   const wchar_t *filename,
+   struct __utimbuf64 *times
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ファイル名*<br/>
+パスまたはファイル名を含む文字列へのポインター。
+
+*時間*<br/>
+格納されている時刻値へのポインター。
+
+## <a name="return-value"></a>戻り値
+
+これらの各関数は、ファイルの変更時刻が変更されると、0 を返します。 戻り値-1 はエラーを示します。 無効なパラメーターが渡された場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は-1 を返しますと**errno**は、次の値のいずれかに設定します。
+
+|errno の値|条件|
+|-|-|
+**EACCES**|パスにディレクトリまたは読み取り専用ファイルが指定されている
+**EINVAL**|無効な*回*引数
+**EMFILE**|開いているファイルが多すぎる (変更時刻を変更するにはファイルを開く必要があります)
+**ENOENT**|パスまたはファイル名が見つからない
+
+リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。
+
+変更日が 1970 年 1 月 1 日午前 0 時以降で、使用する関数の終了日より前の場合、ファイルの日付を変更できます。 **_utime**と **_wutime**のため終了日は UTC の 3000 年 12 月 31 日 23時 59分: 59 秒、64 ビットの時刻の値を使用します。 場合 **_USE_32BIT_TIME_T**が定義されている、終了日の 23時 59分: 59 2038 年 1 月 18 日 (utc) が従来の動作を強制的にします。 **_utime32**または **_wutime32**かどうかに関係なく 32 ビット時刻型を使用して **_USE_32BIT_TIME_T**定義は、常に、以前の終了日。 **_utime64**または **_wutime64**常に 64 ビットの時刻型を使用するため、これらの関数は、以降の終了日を常にサポートします。
+
+## <a name="remarks"></a>コメント
+
+**_Utime**関数によって指定されたファイルの変更時刻を設定する*filename * *。* プロセスは、時刻を変更するために、ファイルに対して書き込みアクセス権が必要です。 Windows オペレーティング システムでは、アクセス時間との変更時刻を変更できます、 **_utimbuf**構造体。 場合*回*は、 **NULL**ポインター、最終更新日は現在の現地時刻に設定します。 それ以外の場合、*回*型の構造体を指す必要があります **_utimbuf**に定義されている。H.
+
+**_Utimbuf**構造体で使用されるファイル アクセス、および変更時刻を格納する **_utime**ファイル変更日付を変更します。 構造には、次のフィールドは、型の両方とも**time_t**:
+
+|フィールド||
+|-|-|
+**actime**|ファイルへのアクセス時刻
+**modtime**|ファイルの変更時刻
+
+特定のバージョンの **_utimbuf**構造 (**_utimebuf32**と **_ _utimbuf64**) 時の型の 32 ビットおよび 64 ビット バージョンを使用して定義されます。 これらは、この関数の 32 ビットおよび 64 ビットの特定バージョンで使用されます。 **_utimbuf**しない限り、64 ビット時刻型を使用して既定ではそれ自体 **_USE_32BIT_TIME_T**が定義されています。
+
+**_utime**と同じ **_futime**する点を除いて、 *filename*の引数 **_utime**はファイル名またはパスのファイル記述子ではなく、ファイルをファイルを開きます。
+
+**_wutime**のワイド文字バージョンは、 **_utime**以外の場合は、 *filename*に渡す引数 **_wutime**ワイド文字列です。 それ以外では、これらの関数の動作は同じです。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_tutime**|**_utime**|**_utime**|**_wutime**|
+|**_tutime32**|**_utime32**|**_utime32**|**_wutime32**|
+|**_tutime64**|**_utime64**|**_utime64**|**_wutime64**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|省略可能なヘッダー|
+|-------------|----------------------|----------------------|
+|**_utime**、 **_utime32**、 **_utime64**|\<sys/utime.h>|\<errno.h>|
+|**_utime64**|\<sys/utime.h>|\<errno.h>|
+|**_wutime**|\<utime.h> または \<wchar.h>|\<errno.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+このプログラムは **_utime**ファイル変更時刻を現在の時刻に設定します。
+
+```C
+// crt_utime.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/utime.h>
+#include <time.h>
+
+int main( void )
+{
+   struct tm tma = {0}, tmm = {0};
+   struct _utimbuf ut;
+
+   // Fill out the accessed time structure
+   tma.tm_hour = 12;
+   tma.tm_isdst = 0;
+   tma.tm_mday = 15;
+   tma.tm_min = 0;
+   tma.tm_mon = 0;
+   tma.tm_sec = 0;
+   tma.tm_year = 103;
+
+   // Fill out the modified time structure
+   tmm.tm_hour = 12;
+   tmm.tm_isdst = 0;
+   tmm.tm_mday = 15;
+   tmm.tm_min = 0;
+   tmm.tm_mon = 0;
+   tmm.tm_sec = 0;
+   tmm.tm_year = 102;
+
+   // Convert tm to time_t
+   ut.actime = mktime(&tma);
+   ut.modtime = mktime(&tmm);
+
+   // Show file time before and after
+   system( "dir crt_utime.c" );
+   if( _utime( "crt_utime.c", &ut ) == -1 )
+      perror( "_utime failed\n" );
+   else
+      printf( "File time modified\n" );
+   system( "dir crt_utime.c" );
+}
+```
+
+### <a name="sample-output"></a>出力例
+
+```Output
+Volume in drive C has no label.
+Volume Serial Number is 9CAC-DE74
+
+Directory of C:\test
+
+01/09/2003  05:38 PM               935 crt_utime.c
+               1 File(s)            935 bytes
+               0 Dir(s)  20,742,955,008 bytes free
+File time modified
+Volume in drive C has no label.
+Volume Serial Number is 9CAC-DE74
+
+Directory of C:\test
+
+01/15/2002  12:00 PM               935 crt_utime.c
+               1 File(s)            935 bytes
+               0 Dir(s)  20,742,955,008 bytes free
+```
+
+## <a name="see-also"></a>関連項目
+
+[時間管理](../../c-runtime-library/time-management.md)<br/>
+[asctime、_wasctime](asctime-wasctime.md)<br/>
+[ctime、_ctime32、_ctime64、_wctime、_wctime32、_wctime64](ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)<br/>
+[_fstat、_fstat32、_fstat64、_fstati64、_fstat32i64、_fstat64i32](fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)<br/>
+[_ftime、_ftime32、_ftime64](ftime-ftime32-ftime64.md)<br/>
+[_futime、_futime32、_futime64](futime-futime32-futime64.md)<br/>
+[gmtime、_gmtime32、_gmtime64](gmtime-gmtime32-gmtime64.md)<br/>
+[localtime、_localtime32、_localtime64](localtime-localtime32-localtime64.md)<br/>
+[_stat、_wstat 関数](stat-functions.md)<br/>
+[time、_time32、_time64](time-time32-time64.md)<br/>

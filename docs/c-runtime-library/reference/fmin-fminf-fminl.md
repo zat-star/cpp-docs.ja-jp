@@ -1,13 +1,13 @@
 ---
-title: "fmin、fminf、fminl |Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: fmin、fminf、fminl |Microsoft ドキュメント
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - fmin
@@ -38,79 +38,84 @@ helpviewer_keywords:
 - fminf function
 - fminl function
 ms.assetid: 1916dfb5-99c1-4b0d-aefb-513525c3f2ac
-caps.latest.revision: 
+caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d90de1e734b2d2da4770c7a5ad85a5ee60a15408
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 3de46ba0a8d550d961fd05527b49a68a1518c50a
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fmin-fminf-fminl"></a>fmin、fminf、fminl
-指定された 2 つの値のうち、小さい方を特定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double fmin(  
-   double x,   
-   double y  
-);  
-  
-float fmin(  
-   float x,   
-   float y  
-); //C++ only  
-  
-long double fmin(  
-   long double x,   
-   long double y  
-); //C++ only  
-  
-float fminf(  
-   float x,   
-   float y  
-);  
-  
-long double fminl(  
-   long double x,   
-   long double y  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `x`  
- 比較する最初の値です。  
-  
- `y`  
- 比較する 2 番目の値です。  
-  
-## <a name="return-value"></a>戻り値  
- 正常に終了した場合は `x` または `y` の小さい方を返します。  
-  
-|入力|結果|  
-|-----------|------------|  
-|`x` は NaN|`y`|  
-|`y` は NaN|`x`|  
-|`x` と `y` は NaN|NaN|  
-  
- この関数では、[_matherr](../../c-runtime-library/reference/matherr.md) が呼び出されず、浮動小数点の例外も発生せず、`errno` の値の変更も行われません。  
-  
-## <a name="remarks"></a>コメント  
- C++ ではオーバーロードが可能であるため、float 型および long double 型を受け取って返す `fmin` のオーバーロードを呼び出すことができます。 C プログラムでは、`fmin` は常に double を受け取って返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`fmin`、`fminf`、`fminl`|C: \<math.h><br />C++: \<math.h> または \<cmath>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)  
- [fmax、fmaxf、fmaxl](fmax-fmaxf-fmaxl.md)  
+
+指定された 2 つの値のうち、小さい方を特定します。
+
+## <a name="syntax"></a>構文
+
+```C
+double fmin(
+   double x,
+   double y
+);
+
+float fmin(
+   float x,
+   float y
+); //C++ only
+
+long double fmin(
+   long double x,
+   long double y
+); //C++ only
+
+float fminf(
+   float x,
+   float y
+);
+
+long double fminl(
+   long double x,
+   long double y
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+比較する最初の値です。
+
+*y*<br/>
+比較する 2 番目の値です。
+
+## <a name="return-value"></a>戻り値
+
+成功した場合を返しますのうち、小さい方*x*または*y*です。
+
+|入力|結果|
+|-----------|------------|
+|*x* nan|*y*|
+|*y* nan|*x*|
+|*x*と*y* nan の場合|NaN|
+
+関数は発生しません[_matherr](matherr.md)呼び出される浮動小数点の例外が発生するかの値を変更**errno**です。
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**fmin**を受け取り、返します**float**と**長い****二重**型です。 C プログラムでは、 **fmin**常に受け取りを返す、**二重**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**fmin**、 **fminf**、 **fminl**|C: \<math.h><br />C++: \<math.h> または \<cmath>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[関数リファレンス (アルファベット順)](crt-alphabetical-function-reference.md)<br/>
+[fmax、fmaxf、fmaxl](fmax-fmaxf-fmaxl.md)<br/>

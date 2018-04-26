@@ -1,12 +1,12 @@
 ---
-title: "_cexit、_c_exit | Microsoft Docs"
-ms.custom: 
+title: _cexit、_c_exit | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _c_exit
@@ -38,59 +38,62 @@ helpviewer_keywords:
 - _cexit function
 - c_exit function
 ms.assetid: f3072045-9924-4b1a-9fef-b0dcd6d12663
-caps.latest.revision: 
+caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 825ed933d5a164fd6a07f13319d30fdf97a928e1
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 3b4310ac5c0bac6853da23f7f491a757a7014ebe
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="cexit-cexit"></a>_cexit、_c_exit
-クリーンアップ操作を実行し、プロセスを終了せずに処理を戻します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void _cexit( void );  
-void _c_exit( void );  
-```  
-  
-## <a name="remarks"></a>コメント  
- `_cexit` 関数は、`atexit` と `_onexit`によって登録された関数を後入れ先出し (LIFO) 順に呼び出します。 次に `_cexit` はすべての I/O バッファーをフラッシュし、開いているすべてのストリームを閉じてから戻ります。 `_c_exit` の動作は、`atexit` や `_onexit` を処理またはストリーム バッファーをフラッシュすることなく、呼び出し元プロセスに戻る点を除いて、`_exit` と同じです。 `exit`、`_exit`、`_cexit`、`_c_exit` の動作を次の表に示します。  
-  
-|関数|動作|  
-|--------------|--------------|  
-|`exit`|完全な C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードで終了します。|  
-|`_exit`|高速な C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードで終了します。|  
-|`_cexit`|完全な C ライブラリの終了処理を実行し、呼び出し元に戻りますが、プロセスを終了しません。|  
-|`_c_exit`|高速な C ライブラリの終了処理を実行し、呼び出し元に戻りますが、プロセスを終了しません。|  
-  
- `_cexit` 関数または `_c_exit` 関数を呼び出す場合、呼び出し時に存在する一時オブジェクトまたは自動オブジェクトのデストラクターは呼び出されません。 自動オブジェクトとは、オブジェクトが静的と宣言されていない関数内で定義されるオブジェクトです。 一時オブジェクトはコンパイラによって作成されるオブジェクトです。 `_cexit` または `_c_exit` を呼び出す前に自動オブジェクトを破棄するには、次のように、明示的にオブジェクトのデストラクターを呼び出します。  
-  
-```  
-myObject.myClass::~myClass( );  
-```  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_cexit`|\<process.h>|  
-|`_c_exit`|\<process.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
- [abort](../../c-runtime-library/reference/abort.md)   
- [atexit](../../c-runtime-library/reference/atexit.md)   
- [_exec 系関数と _wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)   
- [exit、_Exit、_exit](../../c-runtime-library/reference/exit-exit-exit.md)   
- [_onexit、_onexit_m](../../c-runtime-library/reference/onexit-onexit-m.md)   
- [_spawn関数、_wspawn 関数](../../c-runtime-library/spawn-wspawn-functions.md)   
- [system、_wsystem](../../c-runtime-library/reference/system-wsystem.md)
+
+クリーンアップ操作を実行し、プロセスを終了せずに処理を戻します。
+
+## <a name="syntax"></a>構文
+
+```C
+void _cexit( void );
+void _c_exit( void );
+```
+
+## <a name="remarks"></a>コメント
+
+**_Cexit**関数後入れ先出し (LIFO) の順序、によって登録された関数の呼び出し**atexit**と **_onexit**です。 **_Cexit**すべての I/O バッファーをフラッシュし、返す前にすべての開いているストリームを閉じます。 **_c_exit**と同じ **_exit**が、処理されず、呼び出し元プロセスを返す**atexit**または **_onexit**ストリーム バッファーのフラッシュまたはします。 動作**終了**、 **_exit**、 **_cexit**、および **_c_exit**は次の表に示すようにします。
+
+|関数|動作|
+|--------------|--------------|
+|**exit**|完全な C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードで終了します。|
+|**_exit**|高速な C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードで終了します。|
+|**_cexit**|完全な C ライブラリの終了処理を実行し、呼び出し元に戻りますが、プロセスを終了しません。|
+|**_c_exit**|高速な C ライブラリの終了処理を実行し、呼び出し元に戻りますが、プロセスを終了しません。|
+
+呼び出すと、 **_cexit**または **_c_exit**関数の呼び出し時に存在する一時または自動オブジェクトのデストラクターは呼び出されません。 自動オブジェクトとは、オブジェクトが静的と宣言されていない関数内で定義されるオブジェクトです。 一時オブジェクトはコンパイラによって作成されるオブジェクトです。 呼び出す前に自動オブジェクトを破棄する **_cexit**または **_c_exit**、明示的に次のように、オブジェクトのデストラクターを呼び出します。
+
+```cpp
+myObject.myClass::~myClass( );
+```
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_cexit**|\<process.h>|
+|**_c_exit**|\<process.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)<br/>
+[abort](abort.md)<br/>
+[atexit](atexit.md)<br/>
+[_exec、_wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)<br/>
+[exit、_Exit、_exit](exit-exit-exit.md)<br/>
+[_onexit、_onexit_m](onexit-onexit-m.md)<br/>
+[_spawn 系関数と _wspawn 系関数](../../c-runtime-library/spawn-wspawn-functions.md)<br/>
+[system、_wsystem](system-wsystem.md)<br/>

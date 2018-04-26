@@ -1,12 +1,12 @@
 ---
 title: _CrtSetDumpClient | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _CrtSetDumpClient
@@ -31,66 +31,69 @@ helpviewer_keywords:
 - _CrtSetDumpClient function
 - CrtSetDumpClient function
 ms.assetid: f3dd06d0-c331-4a12-b68d-25378d112033
-caps.latest.revision: 
+caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bb8a62dc903b7bb0684d3fffcde8a677200d665d
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 6682c74ca81628efd17a654cc6d810e516e807b2
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="crtsetdumpclient"></a>_CrtSetDumpClient
-`_CLIENT_BLOCK` 型のメモリ ブロックをダンプするアプリケーション定義関数をインストールします (デバッグ バージョンのみ)。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      _CRT_DUMP_CLIENT _CrtSetDumpClient(   
-   _CRT_DUMP_CLIENT dumpClient   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `dumpClient`  
- C ランタイム デバッグ メモリ ダンプ プロセスにフックする新しいクライアント定義メモリ ダンプ関数。  
-  
-## <a name="return-value"></a>戻り値  
- 以前に定義されていたクライアント ブロック ダンプ関数を返します。  
-  
-## <a name="remarks"></a>コメント  
- `_CrtSetDumpClient` 関数を使用すると、アプリケーションは独自の関数をフックして、`_CLIENT_BLOCK` メモリ ブロックに格納されているオブジェクトを C ランタイム デバッグのメモリ ダンプ プロセスにダンプすることができます。 その結果、[_CrtMemDumpAllObjectsSince](../../c-runtime-library/reference/crtmemdumpallobjectssince.md) や [_CrtDumpMemoryLeaks](../../c-runtime-library/reference/crtdumpmemoryleaks.md) などのデバッグ ダンプ関数が `_CLIENT_BLOCK` メモリ ブロックをダンプするたびに、アプリケーションのダンプ関数も呼び出されます。 `_CrtSetDumpClient` を使用すると、アプリケーションは簡単にメモリ リークを検出したり、`_CLIENT_BLOCK` ブロックに格納されているデータの内容の検証やレポートを行うことができます。 [_DEBUG](../../c-runtime-library/debug.md) が定義されていない場合、`_CrtSetDumpClient` の呼び出しは前処理で削除されます。  
-  
- `_CrtSetDumpClient` 関数は、`dumpClient` で指定された新しいアプリケーション定義ダンプ関数をインストールし、以前に定義されたダンプ関数を返します。 クライアント ブロック ダンプ関数の例は、次のとおりです。  
-  
-```  
-void DumpClientFunction( void *userPortion, size_t blockSize );  
-```  
-  
- `userPortion` 引数はメモリ ブロックのユーザー データ部分の先頭へのポインターであり、`blockSize` は割り当てられたメモリ ブロックのサイズをバイト単位で指定します。 クライアント ブロック ダンプ関数は、`void` を返す必要があります。 `_CrtSetDumpClient` に渡されるクライアント ダンプ関数へのポインターは、Crtdbg.h で次のように定義されているように、`_CRT_DUMP_CLIENT` 型です。  
-  
-```  
-typedef void (__cdecl *_CRT_DUMP_CLIENT)( void *, size_t );  
-```  
-  
- `_CLIENT_BLOCK` 型のメモリ ブロックを操作する関数の詳細については、「[Client ブロック用のフック関数](/visualstudio/debugger/client-block-hook-functions)」を参照してください。 ブロックの型やその細分化された型に関する情報を返すには、[_CrtReportBlockType](../../c-runtime-library/reference/crtreportblocktype.md) 関数を使用できます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_CrtSetDumpClient`|\<crtdbg.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。  
-  
-## <a name="see-also"></a>参照  
- [デバッグ ルーチン](../../c-runtime-library/debug-routines.md)   
- [_CrtReportBlockType](../../c-runtime-library/reference/crtreportblocktype.md)   
- [_CrtGetDumpClient](../../c-runtime-library/reference/crtgetdumpclient.md)
+
+ダンプのアプリケーション定義の関数をインストールします **_CLIENT_BLOCK**メモリ ブロック (デバッグ バージョンのみ) を入力します。
+
+## <a name="syntax"></a>構文
+
+```C
+_CRT_DUMP_CLIENT _CrtSetDumpClient( _CRT_DUMP_CLIENT dumpClient );
+```
+
+### <a name="parameters"></a>パラメーター
+
+*dumpClient*<br/>
+C ランタイム デバッグ メモリ ダンプ プロセスにフックする新しいクライアント定義メモリ ダンプ関数。
+
+## <a name="return-value"></a>戻り値
+
+以前に定義されていたクライアント ブロック ダンプ関数を返します。
+
+## <a name="remarks"></a>コメント
+
+**_CrtSetDumpClient**関数により、アプリケーションに保存されたダンプ オブジェクトの独自の関数をフックする **_CLIENT_BLOCK** C の実行時にメモリ ブロックは、メモリ ダンプ プロセスをデバッグします。 その結果、関数のダンプ デバッグたびなど[_CrtMemDumpAllObjectsSince](crtmemdumpallobjectssince.md)または[_CrtDumpMemoryLeaks](crtdumpmemoryleaks.md)ダンプ、 **_CLIENT_BLOCK**メモリ ブロック、アプリケーションのダンプ関数も呼び出されます。 **_CrtSetDumpClient**する簡単な方法でメモリ リークの検出、検証やに格納されたデータの内容をレポートのアプリケーションに提供 **_CLIENT_BLOCK**ブロックします。 ときに[_DEBUG](../../c-runtime-library/debug.md)が定義されていないへの呼び出し **_CrtSetDumpClient**プリプロセス時に削除されます。
+
+**_CrtSetDumpClient**関数で指定された新しいアプリケーション定義ダンプ関数をインストールする*dumpClient*し、以前に定義されたダンプ関数を返します。 クライアント ブロック ダンプ関数の例は、次のとおりです。
+
+```C
+void DumpClientFunction( void *userPortion, size_t blockSize );
+```
+
+*UserPortion*引数は、メモリ ブロックのユーザー データ部分の先頭を指すポインターと*blockSize* 、割り当てられたメモリ ブロックのサイズ (バイト単位) を指定します。 クライアント ブロック ダンプ関数が返す必要があります**void**です。 渡されるクライアント ダンプ関数へのポインター **_CrtSetDumpClient**の種類は **_CRT_DUMP_CLIENT**Crtdbg.h で定義されています。
+
+```C
+typedef void (__cdecl *_CRT_DUMP_CLIENT)( void *, size_t );
+```
+
+操作する関数の詳細については **_CLIENT_BLOCK**メモリ ブロックを入力しを参照してください[クライアント ブロック用のフック関数](/visualstudio/debugger/client-block-hook-functions)です。 ブロックの型やその細分化された型に関する情報を返すには、[_CrtReportBlockType](crtreportblocktype.md) 関数を使用できます。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_CrtSetDumpClient**|\<crtdbg.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のデバッグ バージョンのみ。
+
+## <a name="see-also"></a>関連項目
+
+[デバッグ ルーチン](../../c-runtime-library/debug-routines.md)<br/>
+[_CrtReportBlockType](crtreportblocktype.md)<br/>
+[_CrtGetDumpClient](crtgetdumpclient.md)<br/>

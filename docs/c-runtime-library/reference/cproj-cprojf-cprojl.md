@@ -1,13 +1,13 @@
 ---
-title: "cproj、cprojf、cprojl | Microsoft Docs"
-ms.custom: 
+title: cproj、cprojf、cprojl | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - cproj
@@ -40,64 +40,69 @@ helpviewer_keywords:
 - cprojf function
 - cprojl function
 ms.assetid: 32b49623-13bf-4cae-802e-7912d75030fe
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6afc69e136f6b84b5c6c60681e7670584e32f2d8
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: cb631eb7f5ce18b8ca824fc8a15e9dd5d6b584f1
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="cproj-cprojf-cprojl"></a>cproj、cprojf、cprojl
-リーマン球面上への複素数の射影を取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-_Dcomplex cproj(   
-   _Dcomplex z   
-);  
-_Fcomplex cproj(   
-   _Fcomplex z   
-);  // C++ only  
-_Lcomplex cproj(   
-   _Lcomplex z   
-);  // C++ only  
-_Fcomplex cprojf(   
-   _Fcomplex z   
-);  
-_Lcomplex cprojl(   
-   _Lcomplex z   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `z`  
- 複素数。  
-  
-## <a name="return-value"></a>戻り値  
- リーマン球面への `z` の射影。  
-  
-## <a name="remarks"></a>コメント  
- C++ ではオーバーロードが可能であるため、`cproj` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは、 `cproj` は常に `_Dcomplex` 値を受け取って返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
-|-------------|--------------|------------------|  
-|`cproj`、               `cprojf`、`cprojl`|\<complex.h>|\<ccomplex>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
- [norm、normf、norml](../../c-runtime-library/reference/norm-normf-norml1.md)   
- [creal、crealf、creall](../../c-runtime-library/reference/creal-crealf-creall.md)   
- [conj、conjf、conjl](../../c-runtime-library/reference/conj-conjf-conjl.md)   
- [cimag、cimagf、cimagl](../../c-runtime-library/reference/cimag-cimagf-cimagl.md)   
- [carg、cargf、cargl](../../c-runtime-library/reference/carg-cargf-cargl.md)   
- [cabs、cabsf、cabsl](../../c-runtime-library/reference/cabs-cabsf-cabsl.md)
+
+リーマン球面上への複素数の射影を取得します。
+
+## <a name="syntax"></a>構文
+
+```C
+_Dcomplex cproj(
+   _Dcomplex z
+);
+_Fcomplex cproj(
+   _Fcomplex z
+);  // C++ only
+_Lcomplex cproj(
+   _Lcomplex z
+);  // C++ only
+_Fcomplex cprojf(
+   _Fcomplex z
+);
+_Lcomplex cprojl(
+   _Lcomplex z
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*z*<br/>
+複素数。
+
+## <a name="return-value"></a>戻り値
+
+投影*z* Reimann 球のです。
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**cproj**を受け取り、返します **_Fcomplex**と **_Lcomplex**値。 C プログラムでは、 **cproj**常に受け取りを返す、 **_Dcomplex**値。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|C ヘッダー|C++ ヘッダー|
+|-------------|--------------|------------------|
+|**cproj**、 **cprojf**、 **cprojl**|\<complex.h>|\<ccomplex>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[関数リファレンス (アルファベット順)](crt-alphabetical-function-reference.md)<br/>
+[norm、normf、norml](norm-normf-norml1.md)<br/>
+[creal、crealf、creall](creal-crealf-creall.md)<br/>
+[conj、conjf、conjl](conj-conjf-conjl.md)<br/>
+[cimag、cimagf、cimagl](cimag-cimagf-cimagl.md)<br/>
+[carg、cargf、cargl](carg-cargf-cargl.md)<br/>
+[cabs、cabsf、cabsl](cabs-cabsf-cabsl.md)<br/>

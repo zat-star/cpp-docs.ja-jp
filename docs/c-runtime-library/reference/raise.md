@@ -1,12 +1,12 @@
 ---
 title: raise | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 1/02/2018
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - raise
@@ -37,11 +37,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5a116bfab72222bcf3ee3357c77759960f838cb9
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: e7b4c6bc2668089c4e6b813a03246e0690d1b4af
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="raise"></a>raise
 
@@ -60,7 +60,7 @@ int raise(
 
 ### <a name="parameters"></a>パラメーター
 
-*sig*  
+*sig*<br/>
 発生するシグナル。
 
 ## <a name="return-value"></a>戻り値
@@ -73,18 +73,18 @@ int raise(
 
 |シグナル|説明|既定値|
 |------------|-------------|-------------|
-|`SIGABRT`|異常終了|コード 3 で呼び出し元のプログラムを終了する|
-|`SIGFPE`|浮動小数点エラー|呼び出し元のプログラムを終了します。|
-|`SIGILL`|無効な命令|呼び出し元のプログラムを終了します。|
-|`SIGINT`|Ctrl + C 割り込み|呼び出し元のプログラムを終了します。|
-|`SIGSEGV`|ストレージへの無効なアクセス|呼び出し元のプログラムを終了します。|
-|`SIGTERM`|プログラムに送信される終了要求|シグナルを無視する|
+|**SIGABRT**|異常終了|コード 3 で呼び出し元のプログラムを終了する|
+|**SIGFPE**|浮動小数点エラー|呼び出し元のプログラムを終了します。|
+|**SIGILL**|無効な命令|呼び出し元のプログラムを終了します。|
+|**SIGINT**|Ctrl + C 割り込み|呼び出し元のプログラムを終了します。|
+|**SIGSEGV**|ストレージへの無効なアクセス|呼び出し元のプログラムを終了します。|
+|**SIGTERM**|プログラムに送信される終了要求|シグナルを無視する|
 
-上で指定したように、引数が有効なシグナルでない場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 ハンドルされない場合、関数は `errno` を `EINVAL` に設定し、0 以外の値を返します。
+上で指定したように、引数が有効なシグナルでない場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 関数は、設定が処理されない場合**errno**に**EINVAL**を 0 以外の値を返します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-|ルーチンによって返される値|必須ヘッダー|
+|ルーチン|必須ヘッダー|
 |-------------|---------------------|
 |**raise**|\<signal.h>|
 
@@ -92,6 +92,6 @@ int raise(
 
 ## <a name="see-also"></a>関連項目
 
-[プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)  
-[abort](../../c-runtime-library/reference/abort.md)  
-[signal](../../c-runtime-library/reference/signal.md)  
+[プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)<br/>
+[abort](abort.md)<br/>
+[signal](signal.md)<br/>

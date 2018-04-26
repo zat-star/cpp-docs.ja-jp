@@ -1,12 +1,12 @@
 ---
 title: wcrtomb | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - wcrtomb
@@ -33,113 +33,119 @@ helpviewer_keywords:
 - multibyte characters
 - characters, converting
 ms.assetid: 717f1b21-2705-4b7f-b6d0-82adc5224340
-caps.latest.revision: 
+caps.latest.revision: 26
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 203b3ec1d72b7691aa8e46d60784100c0bf89a5e
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 7618900dd313a31f7d514698c0ac7a670446d96d
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="wcrtomb"></a>wcrtomb
-ワイド文字をマルチバイト文字の表現に変換します。 この関数のセキュリティが強化されたバージョンについては、「[wcrtomb_s](../../c-runtime-library/reference/wcrtomb-s.md)」を参照してください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-size_t wcrtomb(  
-   char *mbchar,  
-   wchar_t wchar,  
-   mbstate_t *mbstate  
-);  
-template <size_t size>  
-size_t wcrtomb(  
-   char (&mbchar)[size],  
-   wchar_t wchar,  
-   mbstate_t *mbstate  
-); // C++ only  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [出力] `mbchar`  
- 結果として得られるマルチバイトに変換された文字。  
-  
- [入力] `wchar`  
- 変換するワイド文字。  
-  
- [入力] `mbstate`  
- `mbstate_t` オブジェクトへのポインター。  
-  
-## <a name="return-value"></a>戻り値  
- 変換されたマルチバイト文字を表すのに必要なバイト数を返します。エラーが発生した場合は -1 を返します。  
-  
-## <a name="remarks"></a>コメント  
- `wcrtomb` 関数は、`mbstate` に含まれる指定された変換の状態で始まるワイド文字を、`wchar` に含まれている値から、`mbchar` によって表されるアドレスに変換します。 戻り値は対応するマルチバイト文字を表すために必要なバイト数ですが、`MB_CUR_MAX` バイトより大きな値を返すことはありません。  
-  
- `mbstate` が null の場合、`mbchar` の変換状態を含む内部 `mbstate_t` オブジェクトが使用されます。 文字シーケンス `wchar` に対応するマルチバイト文字の表現がない場合、-1 が返され、`errno` が `EILSEQ` に設定されます。  
-  
- `wcrtomb` 関数は、再開できるかどうかの点で [wctomb、_wctomb_l](../../c-runtime-library/reference/wctomb-wctomb-l.md) と異なります。 同じ関数または再開可能な他の関数の後続の呼び出しのために、変換状態が `mbstate` に格納されます。 再開可能な関数と再開不可能な関数を混用した場合、結果は未定義です。 たとえば、アプリケーションは `wcsrlen` を使用し、`wcsnlen` は使用しないことがあります。これは、後続の呼び出しで `wcsrtombs` を使用しており、`wcstombs` は使用しない場合です。  
-  
- C++ では、この関数にテンプレートのオーバーロードがあります。このオーバーロードは、この関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
-  
-## <a name="exceptions"></a>例外  
- `wcrtomb` 関数は、この関数の実行中に現行スレッドのどの関数も `setlocale` を呼び出さず、かつ `mbstate` が null である限り、マルチスレッド セーフです。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_wcrtomb.c  
-// compile with: /W3  
-// This program converts a wide character  
-// to its corresponding multibyte character.  
-  
-#include <string.h>  
-#include <stdio.h>  
-#include <wchar.h>  
-  
-int main( void )  
-{  
-    size_t      sizeOfCovertion = 0;  
-    mbstate_t   mbstate;  
-    char        mbStr = 0;  
-    wchar_t*    wcStr = L"Q";  
-  
-    // Reset to initial conversion state  
-    memset(&mbstate, 0, sizeof(mbstate));  
-  
-    sizeOfCovertion = wcrtomb(&mbStr, *wcStr, &mbstate); // C4996  
-    // Note: wcrtomb is deprecated; consider using wcrtomb_s instead  
-    if (sizeOfCovertion > 0)  
-    {  
-        printf("The corresponding wide character \"");  
-        wprintf(L"%s\"", wcStr);  
-        printf(" was converted to the \"%c\" ", mbStr);  
-        printf("multibyte character.\n");  
-    }  
-    else  
-    {  
-        printf("No corresponding multibyte character "  
-               "was found.\n");  
-    }  
-}  
-```  
-  
-```Output  
-The corresponding wide character "Q" was converted to the "Q" multibyte character.  
-```  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`wcrtomb`|\<wchar.h>|  
-  
-## <a name="see-also"></a>参照  
- [データ変換](../../c-runtime-library/data-conversion.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
- [mbsinit](../../c-runtime-library/reference/mbsinit.md)
+
+ワイド文字をマルチバイト文字の表現に変換します。 この関数のセキュリティが強化されたバージョンについては、「[wcrtomb_s](wcrtomb-s.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+size_t wcrtomb(
+   char *mbchar,
+   wchar_t wchar,
+   mbstate_t *mbstate
+);
+template <size_t size>
+size_t wcrtomb(
+   char (&mbchar)[size],
+   wchar_t wchar,
+   mbstate_t *mbstate
+); // C++ only
+```
+
+### <a name="parameters"></a>パラメーター
+
+*mbchar*<br/>
+結果として得られるマルチバイトに変換された文字。
+
+*wchar*<br/>
+変換するワイド文字。
+
+*呼び出すため*<br/>
+ポインター、 **mbstate_t**オブジェクト。
+
+## <a name="return-value"></a>戻り値
+
+変換されたマルチバイト文字を表すのに必要なバイト数を返します。エラーが発生した場合は -1 を返します。
+
+## <a name="remarks"></a>コメント
+
+**Wcrtomb**関数以降に含まれる指定した変換の状態では、ワイド文字に変換*呼び出すため*に含まれている値から*wchar*にはによって表されるアドレス*mbchar*です。 戻り値は、対応するマルチバイト文字を表すために必要なバイト数が、返すことはできません、複数の**MB_CUR_MAX**バイトです。
+
+場合*呼び出すため*が null で、内部**mbstate_t**オブジェクトの変換状態を含む*mbchar*を使用します。 場合文字シーケンス*wchar*が対応するマルチバイト文字の表現、-1 が返され、 **errno**に設定されている**EILSEQ**です。
+
+**Wcrtomb**関数とは異なります[wctomb、_wctomb_l](wctomb-wctomb-l.md)によって、再起動します。 変換状態が格納されている*呼び出すため*以降の呼び出し、同じまたは再開可能なその他の関数にします。 再開可能な関数と再開不可能な関数を混用した場合、結果は未定義です。 たとえば、アプリケーションは使用**後**なく**wcsnlen**場合、後続の呼び出しには、 **wcsrtombs**の代わりに使用された**wcstombs**.
+
+C++ では、この関数にテンプレートのオーバーロードがあります。このオーバーロードは、この関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。
+
+## <a name="exceptions"></a>例外
+
+**Wcrtomb**関数が呼び出す関数、現在のスレッドがない限り、マルチ スレッド セーフは**setlocale、_wsetlocale**この関数の実行中の場合と中に、*呼び出すため*が null です。
+
+## <a name="example"></a>例
+
+```C
+// crt_wcrtomb.c
+// compile with: /W3
+// This program converts a wide character
+// to its corresponding multibyte character.
+
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+
+int main( void )
+{
+    size_t      sizeOfCovertion = 0;
+    mbstate_t   mbstate;
+    char        mbStr = 0;
+    wchar_t*    wcStr = L"Q";
+
+    // Reset to initial conversion state
+    memset(&mbstate, 0, sizeof(mbstate));
+
+    sizeOfCovertion = wcrtomb(&mbStr, *wcStr, &mbstate); // C4996
+    // Note: wcrtomb is deprecated; consider using wcrtomb_s instead
+    if (sizeOfCovertion > 0)
+    {
+        printf("The corresponding wide character \"");
+        wprintf(L"%s\"", wcStr);
+        printf(" was converted to the \"%c\" ", mbStr);
+        printf("multibyte character.\n");
+    }
+    else
+    {
+        printf("No corresponding multibyte character "
+               "was found.\n");
+    }
+}
+```
+
+```Output
+The corresponding wide character "Q" was converted to the "Q" multibyte character.
+```
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**wcrtomb**|\<wchar.h>|
+
+## <a name="see-also"></a>関連項目
+
+[データ変換](../../c-runtime-library/data-conversion.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
+[mbsinit](mbsinit.md)<br/>

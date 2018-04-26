@@ -1,12 +1,12 @@
 ---
-title: "ispunct、iswpunct、_ispunct_l、_iswpunct_l | Microsoft Docs"
-ms.custom: 
+title: ispunct、iswpunct、_ispunct_l、_iswpunct_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - ispunct
@@ -42,72 +42,76 @@ helpviewer_keywords:
 - _iswpunct_l function
 - iswpunct_l function
 ms.assetid: 94403240-85c8-40a4-9c2b-e3e95c729c76
-caps.latest.revision: 
+caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fc86de73132dcefc57602586b679b95333c99c2e
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 22240d2d13781a77dd99afd215f5ee5677b62cc4
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="ispunct-iswpunct-ispunctl-iswpunctl"></a>ispunct、iswpunct、_ispunct_l、_iswpunct_l
-整数が区切り文字を表すかどうかを決定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int ispunct(  
-   int c   
-);  
-int iswpunct(  
-   wint_t c   
-);  
-int _ispunct_l(  
-   int c,  
-   _locale_t locale  
-);  
-int _iswpunct_l(  
-   wint_t c,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- テストする整数。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- これらのルーチンでは、`c` が区切り文字の特殊表現の場合は 0 以外の値を返します。 `ispunct` は、空白文字、および `isalnum` がゼロ以外の値である文字を除く、印刷可能な文字に対して、0 以外の値を返します。 `iswpunct` は、空白ワイド文字、および `iswalnum` がゼロ以外の値であるワイド文字を除く、印刷可能なワイド文字に対して、0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
-  
- `ispunct` 関数のテスト条件の結果は、ロケールの `LC_CTYPE` カテゴリの設定に依存します。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、ロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
- `ispunct` と `_ispunct_l` の動作は、`c` が EOF ではなく、かつ、0 ～ 0xFF の範囲でない場合は未定義です。 CRT デバッグ ライブラリを使用し、`c` がこれらの値のうちのいずれかの値でない場合は、アサーションが発生します。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|**_** `istpunct`|`ispunct`|[_ismbcpunct](../../c-runtime-library/reference/ismbcgraph-functions.md)|`iswpunct`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`ispunct`|\<ctype.h>|  
-|`iswpunct`|\<ctype.h> または \<wchar.h>|  
-|`_ispunct_l`|\<ctype.h>|  
-|`_iswpunct_l`|\<ctype.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [文字分類](../../c-runtime-library/character-classification.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)
+
+整数が区切り文字を表すかどうかを決定します。
+
+## <a name="syntax"></a>構文
+
+```C
+int ispunct(
+   int c
+);
+int iswpunct(
+   wint_t c
+);
+int _ispunct_l(
+   int c,
+   _locale_t locale
+);
+int _iswpunct_l(
+   wint_t c,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+テストする整数。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+これらのルーチンを返す場合は 0 以外の各*c*区切り文字の特定の表現です。 **ispunct**空白文字、または対象の文字は印刷可能な文字の 0 以外の値を返します**isalnum**は 0 以外。 **iswpunct**は、空白ワイド文字でも、ワイド文字を印刷可能なワイド文字の 0 以外の値を返します**iswalnum**は 0 以外。 これらの各ルーチン 0 を返します*c*テスト条件を満たしていません。
+
+テスト条件の結果、 **ispunct**関数によって異なります、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。 これらの関数がないバージョン、 **_l**サフィックスを使用してすべてのロケールに依存する動作に現在のロケール以外の付いているバージョン、 **_l**使用する点を除いて、サフィックスが同一で、代わりに渡されるロケールです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+動作**ispunct**と **_ispunct_l**場合に定義されていない*c* EOF ではありませんか 0 ~ 0 xff、包括的な範囲内で。 CRT デバッグ ライブラリを使用する場合と*c*アサーションは、これらの値、関数の発生いない 1 つです。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_** **istpunct**|**ispunct**|[_ismbcpunct](ismbcgraph-functions.md)|**iswpunct**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**ispunct**|\<ctype.h>|
+|**iswpunct**|\<ctype.h> または \<wchar.h>|
+|**_ispunct_l**|\<ctype.h>|
+|**_iswpunct_l**|\<ctype.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[文字分類](../../c-runtime-library/character-classification.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)<br/>
