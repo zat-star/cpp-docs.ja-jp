@@ -1,12 +1,12 @@
 ---
 title: _query_new_handler | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _query_new_handler
@@ -34,46 +34,51 @@ helpviewer_keywords:
 - error handling
 - _query_new_handler function
 ms.assetid: 9a84b5c3-fe33-4c01-83a0-be87dc3ec518
-caps.latest.revision: 
+caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 61ace3b5d57515ee10fbb58992f708a465064980
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: c59b12c57af4d8a3d40b1ced2ffdc2a2cb00bc1f
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="querynewhandler"></a>_query_new_handler
-現在の新しいハンドラー ルーチンのアドレスを返します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-_PNH _query_new_handler(  
-   void   
-);  
-```  
-  
-## <a name="return-value"></a>戻り値  
- `_set_new_handler` によって設定された現在の新しいハンドラー ルーチンのアドレスを返します。  
-  
-## <a name="remarks"></a>コメント  
- C++ `_query_new_handler` 関数は、C++ [_set_new_handler](../../c-runtime-library/reference/set-new-handler.md) 関数によって設定された現在の例外処理関数のアドレスを返します。 `_set_new_handler` は、**new** 演算子がメモリの割り当てに失敗した場合に制御を獲得する例外処理関数を指定するために使用されます。 詳細については、C++ 言語リファレンスの「[new および delete 演算子](../../cpp/new-and-delete-operators.md)」の説明を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_query_new_handler`|\<new.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="see-also"></a>参照  
- [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
- [free](../../c-runtime-library/reference/free.md)
+
+現在の新しいハンドラー ルーチンのアドレスを返します。
+
+## <a name="syntax"></a>構文
+
+```C
+_PNH _query_new_handler(
+   void
+);
+```
+
+## <a name="return-value"></a>戻り値
+
+によって設定された現在の新しいハンドラー ルーチンのアドレスが返される **_set_new_handler**です。
+
+## <a name="remarks"></a>コメント
+
+C++ **_query_new_handler**関数は、C++ での設定の現在の例外処理関数のアドレスを返します[_set_new_handler](set-new-handler.md)関数。 **_set_new_handler**に制御を設定する場合は、例外処理関数の指定に使用される、**新しい**演算子がメモリの割り当てに失敗します。 詳細については、C++ 言語リファレンスの「[new および delete 演算子](../../cpp/new-and-delete-operators.md)」の説明をご覧ください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_query_new_handler**|\<new.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="see-also"></a>関連項目
+
+[メモリ割り当て](../../c-runtime-library/memory-allocation.md)<br/>
+[free](free.md)<br/>

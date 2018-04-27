@@ -1,12 +1,12 @@
 ---
-title: "tuple_size クラス | Microsoft Docs"
-ms.custom: 
+title: tuple_size クラス | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - tuple_size
@@ -17,119 +17,115 @@ dev_langs:
 helpviewer_keywords:
 - std::tuple_size
 ms.assetid: 73852fc5-eb68-41f1-8379-465cedc2314a
-caps.latest.revision: 
+caps.latest.revision: 23
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 865f7808c83657236724354462b2c1947eb7ece7
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: 647fa1af327055f487d2522d57ee70119f04e627
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="tuplesize-class"></a>tuple_size クラス
-`tuple` を含む要素の数を報告します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-// TEMPLATE STRUCT tuple_size  
-template <class Tuple>  
-   struct tuple_size;  
-  
-// number of elements in array  
-template <class Elem, size_t Size>  
-   struct tuple_size<array<Elem, Size>>  
-      : integral_constant<size_t, Size>; 
-  
+
+`tuple` を含む要素の数を報告します。
+
+## <a name="syntax"></a>構文
+
+```cpp
+// TEMPLATE STRUCT tuple_size
+template <class Tuple>
+   struct tuple_size;
+
+// number of elements in array
+template <class Elem, size_t Size>
+   struct tuple_size<array<Elem, Size>>
+      : integral_constant<size_t, Size>;
+
 // size of pair
 template <class T1, class T2>
-   struct tuple_size<pair<T1, T2>> 
+   struct tuple_size<pair<T1, T2>>
       : integral_constant<size_t, 2>
 
-// size of tuple  
-template <class... Types>  
-   struct tuple_size<tuple<Types...>>  
-      : integral_constant<size_t, sizeof...(Types)>;  
-  
-// size of const tuple  
-template <class Tuple>  
-   struct tuple_size<const Tuple>;  
-  
-// size of volatile tuple  
-template <class Tuple>  
-   struct tuple_size<volatile Tuple>;  
-  
-// size of const volatile tuple  
-template <class Tuple>  
-   struct tuple_size<const volatile Tuple>;   
-```  
-  
-#### <a name="parameters"></a>パラメーター  
-*Tuple*  
-タプルの型。 
-  
-*Elem*  
-配列要素の型。 
-  
-*Size*  
-配列のサイズ。 
-  
-*T1*  
-ペアの最初のメンバーの型。 
-  
-*T2*  
-ペアの 2 番目のメンバーの型。 
-  
-*型*  
-タプル要素の型。 
-  
-  
-## <a name="remarks"></a>コメント  
-テンプレート クラスは、組型 `value` の範囲を値として持つ整数定数式であるメンバー `Tuple`を持ちます。  
-  
-配列のテンプレート特殊化には、配列のサイズである `Size` を値として持つ整数定数式であるメンバー `value` が含まれます。  
-  
-ペアのテンプレート特殊化には、2 を値として持つ整数定数式であるメンバー `value` が含まれます。  
-  
-## <a name="example"></a>例  
-  
-```cpp  
-#include <tuple>   
-#include <iostream>  
-  
-using namespace std;  
-  
-typedef tuple<int, double, int, double> MyTuple;  
-int main()  
-{  
-    MyTuple c0(0, 1.5, 2, 3.7);  
-  
-    // display contents " 0 1 2 3"   
-    cout << " " << get<0>(c0);  
-    cout << " " << get<1>(c0);  
-    cout << " " << get<2>(c0);  
-    cout << " " << get<3>(c0) << endl;  
-  
-    // display size " 4"   
-    cout << " " << tuple_size<MyTuple>::value << endl;  
-}  
-```  
-  
-```Output  
- 0 1.5 2 3.7  
-```  
-  
-## <a name="requirements"></a>必要条件  
- **ヘッダー:** \<tuple>  
- **ヘッダー:** \<array> (配列の特殊化用)  
- **ヘッダー:** \<utility> (ペアの特殊化用)  
-  
- **名前空間:** std  
-  
-## <a name="see-also"></a>参照  
- [\<tuple>](../standard-library/tuple.md)   
- [タプル](../standard-library/tuple-class.md)  
- [tuple_element クラス](../standard-library/tuple-element-class-tuple.md)
+// size of tuple
+template <class... Types>
+   struct tuple_size<tuple<Types...>>
+      : integral_constant<size_t, sizeof...(Types)>;
+
+// size of const tuple
+template <class Tuple>
+   struct tuple_size<const Tuple>;
+
+// size of volatile tuple
+template <class Tuple>
+   struct tuple_size<volatile Tuple>;
+
+// size of const volatile tuple
+template <class Tuple>
+   struct tuple_size<const volatile Tuple>;
+```
+
+### <a name="parameters"></a>パラメーター
+
+*タプル*タプルの型。
+
+*Elem*配列の要素の型。
+
+*サイズ*配列のサイズ。
+
+*T1*ペアの最初のメンバーの種類。
+
+*T2*ペアの 2 番目のメンバーの種類。
+
+*型*タプル要素の型。
+
+## <a name="remarks"></a>コメント
+
+テンプレート クラスは、組型 `value` の範囲を値として持つ整数定数式であるメンバー `Tuple`を持ちます。
+
+配列のテンプレート特殊化には、配列のサイズである `Size` を値として持つ整数定数式であるメンバー `value` が含まれます。
+
+ペアのテンプレート特殊化には、2 を値として持つ整数定数式であるメンバー `value` が含まれます。
+
+## <a name="example"></a>例
+
+```cpp
+#include <tuple>
+#include <iostream>
+
+using namespace std;
+
+typedef tuple<int, double, int, double> MyTuple;
+int main()
+{
+    MyTuple c0(0, 1.5, 2, 3.7);
+
+    // display contents " 0 1 2 3"
+    cout << " " << get<0>(c0);
+    cout << " " << get<1>(c0);
+    cout << " " << get<2>(c0);
+    cout << " " << get<3>(c0) << endl;
+
+    // display size " 4"
+    cout << " " << tuple_size<MyTuple>::value << endl;
+}
+```
+
+```Output
+ 0 1.5 2 3.7
+```
+
+## <a name="requirements"></a>要件
+
+**ヘッダー:** \<組 >**ヘッダー:** \<配列 > (配列の特殊化) の**ヘッダー** \<ユーティリティ > のペアの特殊化)。
+
+**名前空間:** std
+
+## <a name="see-also"></a>関連項目
+
+[\<tuple>](../standard-library/tuple.md)<br/>
+[tuple](../standard-library/tuple-class.md)<br/>
+[tuple_element クラス](../standard-library/tuple-element-class-tuple.md)<br/>

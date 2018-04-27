@@ -1,12 +1,12 @@
 ---
 title: _RTC_SetErrorFuncW | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _RTC_SetErrorFuncW
@@ -34,82 +34,82 @@ helpviewer_keywords:
 - _RTC_SetErrorFuncW function
 - RTC_error_fnW typedef
 ms.assetid: b3e0d71f-1bd3-4c37-9ede-2f638eb3c81a
-caps.latest.revision: 
+caps.latest.revision: 15
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f586823ffcab1e8d602375c9d955c78ac64c043f
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 1eb3b8e5f6fb602675538c6588372b87df8781ac
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="rtcseterrorfuncw"></a>_RTC_SetErrorFuncW
-実行時エラー チェック (RTC) を報告するためのハンドラーとして関数を指定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      _RTC_error_fnW _RTC_SetErrorFuncW(  
-   _RTC_error_fnW function   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `function`  
- 実行時エラー チェックを処理する関数のアドレス。  
-  
-## <a name="return-value"></a>戻り値  
- 以前に定義されたエラー関数。または、以前に定義された関数がない場合は `NULL`。  
-  
-## <a name="remarks"></a>コメント  
- 新しいコードでは `_RTC_SetErrorFuncW` のみを使用してください。 `_RTC_SetErrorFunc` は、下位互換性のためにのみライブラリに含まれています。  
-  
- `_RTC_SetErrorFuncW` コールバックは、リンクされたコンポーネントにのみ適用され、グローバルには適用されません。  
-  
- `_RTC_SetErrorFuncW` に渡すアドレスが有効なエラー処理関数のアドレスであることを確認してください。  
-  
- かどうか、エラーが割り当てられて-1 の型を使用して[_RTC_SetErrorType](../../c-runtime-library/reference/rtc-seterrortype.md)、エラー処理関数は呼び出されません。  
-  
- この関数を呼び出すには、まず、実行時エラー チェックの初期化関数の 1 つを呼び出す必要があります。 詳細については、「 [Using Run-Time Checks Without the C Run-Time Library](/visualstudio/debugger/using-run-time-checks-without-the-c-run-time-library)」を参照してください。  
-  
- **_RTC_error_fnW** は次のように定義されています。  
-  
- **typedef int (__cdecl \*_RTC_error_fnW)(int**  `errorType` **, const wchar_t \*** *filename* **, int**  *linenumber* **, const wchar_t \*** `moduleName` **, const wchar_t \*** *format* **, ...);**  
-  
- それぞれの文字について以下に説明します。  
-  
- `errorType`  
- [_RTC_SetErrorType](../../c-runtime-library/reference/rtc-seterrortype.md)で指定したエラーの種類。  
-  
- *ファイル名*  
- 障害が発生したソース ファイル。または、使用できるデバッグ情報がない場合は null。  
-  
- *行番号*  
- 障害が発生した *ファイル名* 内の行番号。または、使用できるデバッグ情報がない場合は 0。  
-  
- `moduleName`  
- この障害が発生した DLL 名または実行可能ファイル名。  
-  
- *format*  
- 残りのパラメーターを使用してエラー メッセージを表示するための printf スタイル文字列。 VA_ARGLIST の最初の引数は、発生した RTC エラーの番号です。  
-  
- **_RTC_error_fnW** の使用例については、「[ネイティブ ランタイム チェックのカスタマイズ](/visualstudio/debugger/native-run-time-checks-customization)」をご覧ください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_RTC_SetErrorFuncW`|\<rtcapi.h>|  
-  
- 詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="see-also"></a>参照  
- [_CrtDbgReport、_CrtDbgReportW](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md)   
- [ランタイム エラー チェック](../../c-runtime-library/run-time-error-checking.md)
+
+実行時エラー チェック (RTC) を報告するためのハンドラーとして関数を指定します。
+
+## <a name="syntax"></a>構文
+
+```C
+_RTC_error_fnW _RTC_SetErrorFuncW(
+   _RTC_error_fnW function
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*関数*<br/>
+実行時エラー チェックを処理する関数のアドレス。
+
+## <a name="return-value"></a>戻り値
+
+以前に定義されたエラー関数です。または**NULL**以前に定義された関数が存在しない場合。
+
+## <a name="remarks"></a>コメント
+
+新しいコードでのみ使用して **_RTC_SetErrorFuncW**です。 **_RTC_SetErrorFunc**は旧バージョンとの互換性のため、ライブラリにのみ含まれます。
+
+**_RTC_SetErrorFuncW**コールバックは、リンクされたコンポーネントにのみ適用されますが、グローバルにありません。
+
+確認して、アドレスに渡す **_RTC_SetErrorFuncW**は有効なエラー処理関数の名前にします。
+
+かどうか、エラーが割り当てられて-1 の型を使用して[_RTC_SetErrorType](rtc-seterrortype.md)、エラー処理関数は呼び出されません。
+
+この関数を呼び出すには、まず、実行時エラー チェックの初期化関数の 1 つを呼び出す必要があります。 詳細については、「 [Using Run-Time Checks Without the C Run-Time Library](/visualstudio/debugger/using-run-time-checks-without-the-c-run-time-library)」を参照してください。
+
+**_RTC_error_fnW** は次のように定義されています。
+
+> **int の typedef (_ _cdecl \*_RTC_error_fnW) (int** *errorType* **、const wchar_t \***  *filename* **、int***linenumber* **、const wchar_t \***  *moduleName* **、const wchar_t \*** *形式* **,...)。** 
+
+それぞれの文字について以下に説明します。
+
+*errorType*で指定されているエラーの種類[_RTC_SetErrorType](rtc-seterrortype.md)です。
+
+*filename*障害が発生したソース ファイルまたはデバッグ情報がない場合は null です。
+
+*linenumber*行では、 *filename*障害が発生したか、デバッグ情報がない場合は 0 です。
+
+*moduleName* DLL または実行可能ファイル名が、エラーが発生します。
+
+*形式*残りのパラメーターを使用して、エラー メッセージを表示する文字列。 VA_ARGLIST の最初の引数は、発生した RTC エラーの番号です。
+
+**_RTC_error_fnW** の使用例については、「[ネイティブ ランタイム チェックのカスタマイズ](/visualstudio/debugger/native-run-time-checks-customization)」をご覧ください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_RTC_SetErrorFuncW**|\<rtcapi.h>|
+
+詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="see-also"></a>関連項目
+
+[_CrtDbgReport、_CrtDbgReportW](crtdbgreport-crtdbgreportw.md)<br/>
+[ランタイム エラー チェック](../../c-runtime-library/run-time-error-checking.md)<br/>

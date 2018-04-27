@@ -1,12 +1,12 @@
 ---
-title: "directory_entry クラス | Microsoft Docs"
-ms.custom: 
+title: directory_entry クラス | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - filesystem/std::experimental::filesystem::directory_entry
@@ -27,7 +27,7 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 1827c67b-4137-4548-adb0-f955f7acaf08
-caps.latest.revision: 
+caps.latest.revision: 17
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -49,161 +49,164 @@ helpviewer_keywords:
 - std::experimental::filesystem::directory_entry::operator&gt;=
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d47120c49f63339f0b7eea5be109a3b52d627d72
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: ba3dc5588cb035cb754ba43a6eeccb37b7ec0b79
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="directoryentry-class"></a>directory_entry クラス
-`*X` によって返されるオブジェクトを表します。*X* は、[directory_iterator](../standard-library/directory-iterator-class.md) または [recursive_directory_iterator](../standard-library/recursive-directory-iterator-class.md) です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-class directory_entry;  
-```  
-  
-## <a name="remarks"></a>コメント  
- このクラスは、[path](../standard-library/path-class.md) 型のオブジェクトを格納します。 格納できる `path` は、[path クラス](../standard-library/path-class.md)のインスタンスまたは `path` の派生型のインスタンスです。 また、2 つの [file_type](../standard-library/filesystem-enumerations.md#file_type) 値も格納します。1 つは格納されたファイル名の状態に関する既知の情報を表し、もう 1 つはファイル名のシンボリック リンクの状態に関する既知の情報を表します。  
-  
- 詳細およびコード例については、「[ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)」を参照してください。  
-  
-## <a name="assign"></a>assign  
-  
-```  
-void assign(const std::experimental::filesystem::path& pval,  
-    file_status stat_arg = file_status(),  
-    file_status symstat_arg = file_status());
-```  
-  
- このメンバー関数は、pval を mypath に、stat を mystat に、symstat を mysymstat に割り当てます。  
-  
-## <a name="directoryentry"></a>directory_entry  
-  
-```  
-directory_entry() = default;  
-directory_entry(const directory_entry&) = default;  
-directory_entry(directory_entry&&) noexcept = default;  
-explicit directory_entry(const std::experimental::filesystem::path& pval,  
-    file_status stat_arg = file_status(),  
-    file_status symstat_arg = file_status());
-```  
-  
- 既定のコンストラクターは想定どおりの動作をします。 4 番目のコンストラクターは、mypath を pval に、mystat を stat_arg に、mysymstat を symstat_arg に初期化します。  
-  
-## <a name="operator"></a>operator!=  
-  
-```  
-bool operator!=(const directory_entry& right) const noexcept;  
-```  
-  
- このメンバー関数は !(*this == right) を返します。  
-  
-## <a name="operator"></a>operator=  
-  
-```  
-directory_entry& operator=(const directory_entry&) = default;  
-directory_entry& operator=(directory_entry&&) noexcept = default;  
-```  
-  
- この既定のメンバー代入演算子は想定どおりに動作します。  
-  
-## <a name="operator"></a>operator==  
-  
-```  
-bool operator==(const directory_entry& right) const noexcept;  
-```  
-  
- このメンバー関数は mypath == right.mypath を返します。  
-  
-## <a name="operatorlt"></a>operator&lt;  
-  
-```  
-bool operator<(const directory_entry& right) const noexcept;  
-```  
-  
- このメンバー関数は mypath を返します&lt;right.mypath です。  
-  
-## <a name="operatorlt"></a>operator&lt;=  
-  
-```  
-bool operator&lt;=(const directory_entry& right) const noexcept;  
-```  
-  
- このメンバー関数は !(right \< *this) を返します。  
-  
-## <a name="operatorgt"></a>operator&gt;  
-  
-```  
-bool operator&gt;(const directory_entry& right) const noexcept;  
-```  
-  
- このメンバー関数は right \< *this を返します。  
-  
-## <a name="operatorgt"></a>operator&gt;=  
-  
-```  
-bool operator&gt;=(const directory_entry& right) const noexcept;  
-```  
-  
- このメンバー関数を返します。(* この\<右)。  
-  
-## <a name="operator-const-pathtype"></a>operator const path_type&  
-  
-``` 
- operator const std::experimental::filesystem::path&() const; 
-```  
-  
- このメンバー演算子は mypath を返します。  
-  
-## <a name="path"></a>path  
-  
-```  
-const std::experimental::filesystem::path& path() const noexcept;  
-```  
-  
- このメンバー関数は mypath を返します。  
-  
-## <a name="replacefilename"></a>replace_filename  
-  
-```  
-void replace_filename(
-    const std::experimental::filesystem::path& pval,  
-    file_status stat_arg = file_status(),  
-    file_status symstat_arg = file_status());
-```  
-  
- このメンバー関数は、mypath を mypath.parent_path() / pval、mystat を stat_arg、mysymstat を symstat_arg と置き換えます。  
-  
-## <a name="status"></a>状態  
-  
-```  
-file_status status() const; 
-file_status status(error_code& ec) const noexcept;  
-```  
-  
- メンバー関数はどちらも、恐らく最初に mystat を次のように変更し、それからこれを返します。  
-  
-1.  status_known(mystat) の場合は何も実行しません。  
-  
-2.  それ以外の場合は、!status_known(mysymstat) && !is_symlink(mysymstat) であれば mystat = mysymstat です。  
-  
-## <a name="symlinkstatus"></a>symlink_status  
-  
-```  
-file_status symlink_status() const; 
-file_status symlink_status(error_code& ec) const noexcept;  
-```  
-  
- メンバー関数ではどちらも、恐らく最初に mysymstat を次のように変更し、それからこれを返します。status_known(mysymstat) の場合は何もしません。 それ以外の場合、mysymstat = symlink_status(mypval) です。  
-  
-## <a name="requirements"></a>必要条件  
- **ヘッダー:** \<実験/filesystem&gt;  
-  
- **名前空間:** std::experimental::filesystem  
-  
-## <a name="see-also"></a>参照  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [\<filesystem&gt;](../standard-library/filesystem.md)
 
+`*X` によって返されるオブジェクトを表します。*X* は、[directory_iterator](../standard-library/directory-iterator-class.md) または [recursive_directory_iterator](../standard-library/recursive-directory-iterator-class.md) です。
+
+## <a name="syntax"></a>構文
+
+```cpp
+class directory_entry;
+```
+
+## <a name="remarks"></a>コメント
+
+このクラスは、[path](../standard-library/path-class.md) 型のオブジェクトを格納します。 格納できる `path` は、[path クラス](../standard-library/path-class.md)のインスタンスまたは `path` の派生型のインスタンスです。 また、2 つの [file_type](../standard-library/filesystem-enumerations.md#file_type) 値も格納します。1 つは格納されたファイル名の状態に関する既知の情報を表し、もう 1 つはファイル名のシンボリック リンクの状態に関する既知の情報を表します。
+
+詳細およびコード例については、「[ファイル システムのナビゲーション (C++)](../standard-library/file-system-navigation.md)」を参照してください。
+
+## <a name="assign"></a>assign
+
+```cpp
+void assign(const std::experimental::filesystem::path& pval,
+    file_status stat_arg = file_status(),
+    file_status symstat_arg = file_status());
+```
+
+このメンバー関数は、pval を mypath に、stat を mystat に、symstat を mysymstat に割り当てます。
+
+## <a name="directoryentry"></a>directory_entry
+
+```cpp
+directory_entry() = default;
+directory_entry(const directory_entry&) = default;
+directory_entry(directory_entry&&) noexcept = default;
+explicit directory_entry(const std::experimental::filesystem::path& pval,
+    file_status stat_arg = file_status(),
+    file_status symstat_arg = file_status());
+```
+
+既定のコンストラクターは想定どおりの動作をします。 4 番目のコンストラクターは、mypath を pval に、mystat を stat_arg に、mysymstat を symstat_arg に初期化します。
+
+## <a name="operator"></a>operator!=
+
+```cpp
+bool operator!=(const directory_entry& right) const noexcept;
+```
+
+このメンバー関数は !(*this == right) を返します。
+
+## <a name="operator"></a>operator=
+
+```cpp
+directory_entry& operator=(const directory_entry&) = default;
+directory_entry& operator=(directory_entry&&) noexcept = default;
+```
+
+この既定のメンバー代入演算子は想定どおりに動作します。
+
+## <a name="operator"></a>operator==
+
+```cpp
+bool operator==(const directory_entry& right) const noexcept;
+```
+
+このメンバー関数は mypath == right.mypath を返します。
+
+## <a name="operatorlt"></a>演算子&lt;
+
+```cpp
+bool operator<(const directory_entry& right) const noexcept;
+```
+
+このメンバー関数は mypath を返します&lt;right.mypath です。
+
+## <a name="operatorlt"></a>operator&lt;=
+
+```cpp
+bool operator&lt;=(const directory_entry& right) const noexcept;
+```
+
+このメンバー関数は !(right \< *this) を返します。
+
+## <a name="operatorgt"></a>演算子&gt;
+
+```cpp
+bool operator&gt;(const directory_entry& right) const noexcept;
+```
+
+このメンバー関数は right \< *this を返します。
+
+## <a name="operatorgt"></a>operator&gt;=
+
+```cpp
+bool operator&gt;=(const directory_entry& right) const noexcept;
+```
+
+このメンバー関数を返します。(* この\<右)。
+
+## <a name="operator-const-pathtype"></a>operator const path_type&
+
+```cpp
+operator const std::experimental::filesystem::path&() const;
+```
+
+このメンバー演算子は mypath を返します。
+
+## <a name="path"></a>path
+
+```cpp
+const std::experimental::filesystem::path& path() const noexcept;
+```
+
+このメンバー関数は mypath を返します。
+
+## <a name="replacefilename"></a>replace_filename
+
+```cpp
+void replace_filename(
+    const std::experimental::filesystem::path& pval,
+    file_status stat_arg = file_status(),
+    file_status symstat_arg = file_status());
+```
+
+このメンバー関数は、mypath を mypath.parent_path() / pval、mystat を stat_arg、mysymstat を symstat_arg と置き換えます。
+
+## <a name="status"></a>状態
+
+```cpp
+file_status status() const;
+file_status status(error_code& ec) const noexcept;
+```
+
+メンバー関数はどちらも、恐らく最初に mystat を次のように変更し、それからこれを返します。
+
+1. status_known(mystat) の場合は何も実行しません。
+
+1. それ以外の場合は、!status_known(mysymstat) && !is_symlink(mysymstat) であれば mystat = mysymstat です。
+
+## <a name="symlinkstatus"></a>symlink_status
+
+```cpp
+file_status symlink_status() const;
+file_status symlink_status(error_code& ec) const noexcept;
+```
+
+メンバー関数ではどちらも、恐らく最初に mysymstat を次のように変更し、それからこれを返します。status_known(mysymstat) の場合は何もしません。 それ以外の場合、mysymstat = symlink_status(mypval) です。
+
+## <a name="requirements"></a>要件
+
+**ヘッダー:** \<実験/filesystem&gt;
+
+**名前空間:** std::experimental::filesystem
+
+## <a name="see-also"></a>関連項目
+
+[ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)<br/>
+[\<filesystem&gt;](../standard-library/filesystem.md)<br/>
