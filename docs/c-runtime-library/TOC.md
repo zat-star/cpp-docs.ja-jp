@@ -24,7 +24,7 @@
 ## [リンク オプション](link-options.md)
 ## [DLL の境界を越えて CRT オブジェクトを渡す場合に発生する可能性のあるエラー](potential-errors-passing-crt-objects-across-dll-boundaries.md)
 ## [CRT の初期化](crt-initialization.md)
-# [カテゴリ別ランタイム ルーチン](run-time-routines-by-category.md)
+# [カテゴリ別ユニバーサル C ランタイム ルーチン](run-time-routines-by-category.md)
 ## [引数へのアクセス](argument-access.md)
 ## [バッファー操作](buffer-manipulation.md)
 ## [バイト分類](byte-classification.md)
