@@ -1,4 +1,4 @@
----
+﻿---
 title: "Visual Studio での Visual C++ の新機能 | Microsoft Docs"
 ms.date: 11/15/2017
 ms.technology:
