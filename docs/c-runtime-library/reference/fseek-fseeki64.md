@@ -1,12 +1,12 @@
 ---
-title: "fseek、_fseeki64 | Microsoft Docs"
-ms.custom: 
+title: fseek、_fseeki64 | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _fseeki64
@@ -36,129 +36,131 @@ helpviewer_keywords:
 - file pointers [C++]
 - seek file pointers
 ms.assetid: f6bb1f8b-891c-426e-9e14-0e7e5c62df70
-caps.latest.revision: 
+caps.latest.revision: 23
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4dd4c4e6550946bafdaf0ad8f521e1e942ae04c1
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 266eb1589c97b177057e6a72874261c745acb475
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fseek-fseeki64"></a>fseek、_fseeki64
-指定した場所にファイル ポインターを移動します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int fseek(   
-   FILE *stream,  
-   long offset,  
-   int origin   
-);  
-int _fseeki64(   
-   FILE *stream,  
-   __int64 offset,  
-   int origin   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `stream`  
- `FILE` 構造体へのポインター。  
-  
- `offset`  
- `origin` から読み取られたバイト数。  
-  
- `origin`  
- 最初の位置。  
-  
-## <a name="return-value"></a>戻り値  
- 正常に終了した場合、`fseek` および `_fseeki64` は 0 を返します。 それ以外の場合は、0 以外の値を返します。 シーク非対応のデバイスでは、戻り値は未定義です。 `stream` が null ポインターであるか、`origin` が下に説明されているいずれかの許可された値ではない場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、`fseek` および `_fseeki64` は無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。  
-  
-## <a name="remarks"></a>コメント  
- `fseek`と`_fseeki64`関数ファイル ポインター (存在する場合) に関連付けられている移動`stream`されている新しい場所に`offset`からバイト`origin`です。 ストリームの次の操作は、新しい場所で行われます。 更新用に開かれているストリームでの次の操作は読み取りまたは書き込みのいずれかです。 元の引数は、STDIO.H で定義されている、次の定数のいずれかである必要があります。  
-  
- `SEEK_CUR`  
- ファイル ポインターの現在の位置。  
-  
- `SEEK_END`  
- EOF (ファイル終端)。  
-  
- `SEEK_SET`  
- ファイルの先頭。  
-  
- `fseek` と `_fseeki64` を使用して、ファイル内の任意の場所にポインターを移動できます。 ポインターは、ファイルの末尾を越えて配置することもできます。 `fseek` および`_fseeki64`ファイルの終端のインジケーターをクリアし、前にすべての結果を否定`ungetc`に対して呼び出す`stream`です。  
-  
- データを追加するためにファイルを開く場合、現在のファイルの位置は、次の書き込みが発生する場所ではなく最後の I/O 操作によって決まります。 追加のために開かれたファイルで I/O 操作がまだ発生していない場合、ファイルの位置はファイルの先頭です。  
-  
- テキスト モードで開いたストリーム`fseek`と`_fseeki64`キャリッジ リターンとライン フィード翻訳可能性があるため、用途が限定`fseek`と`_fseeki64`予期しない結果を生成します。 唯一`fseek`と`_fseeki64`操作がテキスト モードで開いたストリームで動作する保証は。  
-  
--   元の値のいずれかに対して相対的なオフセット 0 でシークします。  
-  
--   呼び出しから返されたオフセット値を持つファイルの先頭からのシーク`ftell`を使用する場合`fseek`または`_ftelli64`を使用する場合`_fseeki64`です。  
-  
- テキスト モードでも、Ctrl + Z は入力時に EOF (EOF: end-of-file) 文字として解釈されます。 読み取りおよび書き込みの両方のために開かれたファイルでは、`fopen` および関連するすべてのルーチンが、ファイル末尾に Ctrl + Z があるかどうかを確認し、削除できる場合は削除します。 この処理が行われる理由は、`fseek` と `ftell` または `_fseeki64` と `_ftelli64` の組み合わせを使用して、CTRL+Z で終わるファイルの中身を移動するとき、ファイル末尾付近で `fseek` または `_fseeki64` が正しく動作しないことがあるためです。  
-  
- バイト オーダー マーク (BOM) で始まるファイルを CRT で開くときには、ファイル ポインターは BOM の後ろ (つまり、ファイルの実際のコンテンツの開始位置) に配置されます。 `fseek` をファイルの先頭に置く必要がある場合は、`ftell` を使用して初期位置を取得し、0 の位置ではなくそこに `fseek` を配置します。  
-  
- この関数では、実行中に他のスレッドをロックするので、スレッド セーフです。 ロックしないバージョンについては、「[_fseek_nolock、_fseeki64_nolock](../../c-runtime-library/reference/fseek-nolock-fseeki64-nolock.md)」を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`fseek`|\<stdio.h>|  
-|`_fseeki64`|\<stdio.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_fseek.c  
-// This program opens the file FSEEK.OUT and  
-// moves the pointer to the file's beginning.  
-  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   FILE *stream;  
-   char line[81];  
-   int  result;  
-  
-   if ( fopen_s( &stream, "fseek.out", "w+" ) != 0 )  
-   {  
-      printf( "The file fseek.out was not opened\n" );  
-      return -1;  
-   }  
-   fprintf( stream, "The fseek begins here: "  
-                    "This is the file 'fseek.out'.\n" );  
-   result = fseek( stream, 23L, SEEK_SET);  
-   if( result )  
-      perror( "Fseek failed" );  
-   else  
-   {  
-      printf( "File pointer is set to middle of first line.\n" );  
-      fgets( line, 80, stream );  
-      printf( "%s", line );  
-    }  
-   fclose( stream );  
-}  
-```  
-  
-```Output  
-File pointer is set to middle of first line.  
-This is the file 'fseek.out'.  
-```  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
- [ftell、_ftelli64](../../c-runtime-library/reference/ftell-ftelli64.md)   
- [_lseek、_lseeki64](../../c-runtime-library/reference/lseek-lseeki64.md)   
- [rewind](../../c-runtime-library/reference/rewind.md)
+
+指定した場所にファイル ポインターを移動します。
+
+## <a name="syntax"></a>構文
+
+```C
+int fseek(
+   FILE *stream,
+   long offset,
+   int origin
+);
+int _fseeki64(
+   FILE *stream,
+   __int64 offset,
+   int origin
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ストリーム*<br/>
+**FILE** 構造体へのポインター。
+
+*オフセット*<br/>
+*配信元*からのバイト数。
+
+*配信元*<br/>
+最初の位置。
+
+## <a name="return-value"></a>戻り値
+
+成功した場合、 **fseek**と **_fseeki64** 0 を返します。 それ以外の場合は、0 以外の値を返します。 シーク非対応のデバイスでは、戻り値は未定義です。 場合*ストリーム*null ポインターでは、場合*原点*以下に示す有効な値のいずれかではない**fseek**と **_fseeki64**無効な呼び出しパラメーターのハンドラーを」の説明に従って[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合に、これらの関数が設定**errno**に**EINVAL**し、-1 を返します。
+
+## <a name="remarks"></a>コメント
+
+**Fseek**と **_fseeki64**関数ファイル ポインター (存在する場合) に関連付けられている移動*ストリーム*されている新しい場所に*オフセット*バイト*原点*です。 ストリームの次の操作は、新しい場所で行われます。 更新用に開かれているストリームでの次の操作は読み取りまたは書き込みのいずれかです。 引数*原点*STDIO で定義されている、次の定数のいずれかを指定する必要があります。H:
+
+|配信元の値|説明|
+|-|-|
+**SEEK_CUR**|ファイル ポインターの現在の位置。
+**SEEK_END**|EOF (ファイル終端)。
+**SEEK_SET**|ファイルの先頭。
+
+使用することができます**fseek**と **_fseeki64**ファイルの任意の場所にポインターを移動します。 ポインターは、ファイルの末尾を越えて配置することもできます。 **fseek**と **_fseeki64**ファイルの終端のインジケーターをクリアし、前にすべての結果を否定[ungetc](ungetc-ungetwc.md)に対して呼び出す*ストリーム*です。
+
+データを追加するためにファイルを開く場合、現在のファイルの位置は、次の書き込みが発生する場所ではなく最後の I/O 操作によって決まります。 追加のために開かれたファイルで I/O 操作がまだ発生していない場合、ファイルの位置はファイルの先頭です。
+
+テキスト モードで開いたストリーム**fseek**と **_fseeki64**キャリッジ リターンとライン フィード翻訳可能性があるため、用途が限定**fseek**と **_fseeki64**予期しない結果を生成します。 唯一**fseek**と **_fseeki64**操作がテキスト モードで開いたストリームで動作する保証は。
+
+- 元の値のいずれかに対して相対的なオフセット 0 でシークします。
+
+- 呼び出しから返されたオフセット値を持つファイルの先頭からのシーク[ftell](ftell-ftelli64.md)を使用する場合**fseek**または[_ftelli64](ftell-ftelli64.md)を使用する場合 **_fseeki64**.
+
+テキスト モードでも、Ctrl + Z は入力時に EOF (EOF: end-of-file) 文字として解釈されます。 読み取り/書き込み用に開かれたファイルで[fopen](fopen-wfopen.md)関連するすべてのルーチンは、ファイルの末尾に CTRL + Z を確認して、可能であればそれを削除します。 これはの組み合わせを使用して、 **fseek**と[ftell](ftell-ftelli64.md)または **_fseeki64**と[_ftelli64](ftell-ftelli64.md)で終わるファイル内で移動するにはCTRL + Z が発生する可能性があります**fseek**または **_fseeki64**が、ファイルの末尾付近に正しく動作します。
+
+バイト オーダー マーク (BOM) で始まるファイルを CRT で開くときには、ファイル ポインターは BOM の後ろ (つまり、ファイルの実際のコンテンツの開始位置) に配置されます。 しなければならない場合**fseek**ファイルの先頭を使用して[ftell](ftell-ftelli64.md)を初期位置を取得して**fseek**にではなく 0 を配置します。
+
+この関数では、実行中に他のスレッドをロックするので、スレッド セーフです。 ロックしないバージョンについては、「[_fseek_nolock、_fseeki64_nolock](fseek-nolock-fseeki64-nolock.md)」を参照してください。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|
+|--------------|---------------------|
+|**fseek**|\<stdio.h>|
+|**_fseeki64**|\<stdio.h>|
+
+互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_fseek.c
+// This program opens the file FSEEK.OUT and
+// moves the pointer to the file's beginning.
+
+#include <stdio.h>
+
+int main( void )
+{
+   FILE *stream;
+   char line[81];
+   int  result;
+
+   if ( fopen_s( &stream, "fseek.out", "w+" ) != 0 )
+   {
+      printf( "The file fseek.out was not opened\n" );
+      return -1;
+   }
+   fprintf( stream, "The fseek begins here: "
+                    "This is the file 'fseek.out'.\n" );
+   result = fseek( stream, 23L, SEEK_SET);
+   if( result )
+      perror( "Fseek failed" );
+   else
+   {
+      printf( "File pointer is set to middle of first line.\n" );
+      fgets( line, 80, stream );
+      printf( "%s", line );
+    }
+   fclose( stream );
+}
+```
+
+```Output
+File pointer is set to middle of first line.
+This is the file 'fseek.out'.
+```
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[fopen、_wfopen](fopen-wfopen.md)<br/>
+[ftell、_ftelli64](ftell-ftelli64.md)<br/>
+[_lseek、_lseeki64](lseek-lseeki64.md)<br/>
+[rewind](rewind.md)<br/>

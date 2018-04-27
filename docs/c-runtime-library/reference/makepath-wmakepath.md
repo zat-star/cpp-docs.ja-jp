@@ -1,12 +1,12 @@
 ---
-title: "_makepath、_wmakepath | Microsoft Docs"
-ms.custom: 
+title: _makepath、_wmakepath | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _makepath
@@ -42,120 +42,119 @@ helpviewer_keywords:
 - _wmakepath function
 - tmakepath function
 ms.assetid: 5930b197-a7b8-46eb-8519-2841a58cd026
-caps.latest.revision: 
+caps.latest.revision: 22
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bbbaa2f4191d36fb92af5e157990fde6f053df55
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 0c6ad1331021331e9c9ddc1d1344aae8ed164ce2
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="makepath-wmakepath"></a>_makepath、_wmakepath
-コンポーネントからパス名を作成します。 これらの関数のセキュリティを強化したバージョンについては、「[_makepath_s、_wmakepath_s (_makepath_s、_wmakepath_s)](../../c-runtime-library/reference/makepath-s-wmakepath-s.md)」をご覧ください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void _makepath(  
-   char *path,  
-   const char *drive,  
-   const char *dir,  
-   const char *fname,  
-   const char *ext   
-);  
-void _wmakepath(  
-   wchar_t *path,  
-   const wchar_t *drive,  
-   const wchar_t *dir,  
-   const wchar_t *fname,  
-   const wchar_t *ext   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `path`  
- 完全なパスのバッファー。  
-  
- `drive`  
- 必要なドライブに対応する文字 (A、B など) と、省略可能である後続のコロンを含んでいます。 `_makepath` ではコロンが見つからない場合、合成されるパスに自動的にコロンが挿入されます。 `drive` が `NULL` であるか空の文字列へのポインターである場合、合成される `path` 文字列にドライブ文字は含まれません。  
-  
- `dir`  
- ドライブ指定子も実際のファイル名も含まない、ディレクトリのパスを含んでいます。 末尾のスラッシュは省略可能で、フォワード スラッシュ (/) またはバックスラッシュ (\\) のいずれかまたは両方が、単一の `dir` 引数内で使用できます。 末尾のスラッシュ (/ と \\ のいずれも) を指定していない場合は、スラッシュが自動的に挿入されます。 `dir` が `NULL` であるか空の文字列へのポインターである場合、合成される `path` 文字列にディレクトリ パスは挿入されません。  
-  
- `fname`  
- ファイル名拡張子がないベース ファイル名が含まれています。 `fname` が `NULL` であるか空の文字列へのポインターである場合、合成される `path` 文字列にファイル名は挿入されません。  
-  
- `ext`  
- 実際のファイル名拡張子が含まれており、先頭のピリオド (.) の有無は問いません。 `ext` にピリオドが含まれていない場合は、`_makepath` によってピリオドが自動的に挿入されます。 `ext` が `NULL` であるか空の文字列へのポインターである場合、合成される `path` 文字列に拡張子は挿入されません。  
-  
-## <a name="remarks"></a>コメント  
- `_makepath` 関数は個別のコンポーネントから合成パス文字列を作成し、`path` に結果を格納します。 `path` に格納される可能性があるのは、ドライブ文字、ディレクトリ パス、ファイル名、ファイル名拡張子です。 `_wmakepath` は `_makepath` のワイド文字バージョンであり、`_wmakepath` の引数はワイド文字列です。 それ以外では、`_wmakepath` と `_makepath` の動作は同じです。  
-  
- **セキュリティに関するメモ** null で終わる文字列を使用してください。 バッファー オーバーランを防ぐために、null で終わる文字列は `path` バッファーのサイズを超えないようにしてください。 `_makepath` では、合成パス文字列が `_MAX_PATH` を超えていないことを確認できません。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_tmakepath`|`_makepath`|`_makepath`|`_wmakepath`|  
-  
- `path` 引数は、完全なパスを保持するのに十分な大きさの空のバッファーを指す必要があります。 合成 `path` は、Stdlib.h で定義されている、`_MAX_PATH` 定数以下にする必要があります。  
-  
- path が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 さらに、`errno` が `EINVAL` に設定されます。 その他のすべてのパラメーターに対しては `NULL` 値が許可されます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_makepath`|\<stdlib.h>|  
-|`_wmakepath`|\<stdlib.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_makepath.c  
-#include <stdlib.h>  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   char path_buffer[_MAX_PATH];  
-   char drive[_MAX_DRIVE];  
-   char dir[_MAX_DIR];  
-   char fname[_MAX_FNAME];  
-   char ext[_MAX_EXT];  
-  
-   _makepath( path_buffer, "c", "\\sample\\crt\\", "makepath", "c" ); // C4996  
-   // Note: _makepath is deprecated; consider using _makepath_s instead  
-   printf( "Path created with _makepath: %s\n\n", path_buffer );  
-   _splitpath( path_buffer, drive, dir, fname, ext ); // C4996  
-   // Note: _splitpath is deprecated; consider using _splitpath_s instead  
-   printf( "Path extracted with _splitpath:\n" );  
-   printf( "  Drive: %s\n", drive );  
-   printf( "  Dir: %s\n", dir );  
-   printf( "  Filename: %s\n", fname );  
-   printf( "  Ext: %s\n", ext );  
-}  
-```  
-  
-```Output  
-Path created with _makepath: c:\sample\crt\makepath.c  
-  
-Path extracted with _splitpath:  
-  Drive: c:  
-  Dir: \sample\crt\  
-  Filename: makepath  
-  Ext: .c  
-```  
-  
-## <a name="see-also"></a>参照  
- [ファイル処理](../../c-runtime-library/file-handling.md)   
- [_fullpath、_wfullpath](../../c-runtime-library/reference/fullpath-wfullpath.md)   
- [_splitpath、_wsplitpath](../../c-runtime-library/reference/splitpath-wsplitpath.md)   
- [_makepath_s、_wmakepath_s](../../c-runtime-library/reference/makepath-s-wmakepath-s.md)
+
+コンポーネントからパス名を作成します。 これらの関数のセキュリティを強化したバージョンについては、「[_makepath_s、_wmakepath_s (_makepath_s、_wmakepath_s)](makepath-s-wmakepath-s.md)」をご覧ください。
+
+## <a name="syntax"></a>構文
+
+```C
+void _makepath(
+   char *path,
+   const char *drive,
+   const char *dir,
+   const char *fname,
+   const char *ext
+);
+void _wmakepath(
+   wchar_t *path,
+   const wchar_t *drive,
+   const wchar_t *dir,
+   const wchar_t *fname,
+   const wchar_t *ext
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*パス*完全パスのバッファー。
+
+*ドライブ*アルファベット (A、B、およびなど) が含まれています、必要なドライブとオプションの後に続くコロンに対応します。 **_makepath**が存在しない場合、複合パスにコロンを自動的に挿入します。 場合*ドライブ*は**NULL** 、空の文字列へのポインター、ドライブ文字には表示されません複合または*パス*文字列。
+
+*dir*ドライブ指定子または実際のファイルの名前を除いて、ディレクトリのパスが含まれています。 末尾のスラッシュは省略可能とスラッシュ (/) または円記号 (\\) 1 つの両方を使用する場合がありますまたは*dir*引数。 末尾のスラッシュ (/ と \\ のいずれも) を指定していない場合は、スラッシュが自動的に挿入されます。 場合*dir*は**NULL**複合でないディレクトリのパス、空の文字列へのポインターを挿入または*パス*文字列。
+
+*fname*ファイル名拡張子を付けず基本ファイル名が含まれています。 場合*fname*は**NULL**複合にないファイル名を空の文字列へのポインターが挿入または*パス*文字列。
+
+*ext*先頭にピリオド (.) の有無、実際のファイル名拡張子が含まれています。 **_makepath**が表示されない場合は、期間を自動的に挿入します。 *ext*です。場合*ext*は**NULL**複合に拡張子がない、空の文字列へのポインターが挿入または*パス*文字列。
+
+## <a name="remarks"></a>コメント
+
+**_Makepath**関数の結果を格納する、個々 のコンポーネントから複合パス文字列を作成する*パス*です。 *パス*ドライブ、ディレクトリのパス、ファイル名、およびファイル名拡張子を含めることがあります。 **_wmakepath**のワイド文字バージョンは、 **_makepath**; 引数 **_wmakepath**ワイド文字列です。 **_wmakepath**と **_makepath**それ以外の場合の動作は同じです。
+
+**セキュリティに関するメモ** null で終わる文字列をご使用ください。 バッファー オーバーランを防ぐためには、null で終わる文字列を超えないのサイズ、*パス*バッファー。 **_makepath**複合パス文字列の長さを超えていないことを確認しません **_MAX_PATH**です。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_tmakepath**|**_makepath**|**_makepath**|**_wmakepath**|
+
+*パス*引数は、空の完全なパスを保持するのに十分な大きさのバッファーを指す必要があります。 複合*パス*以下にする必要があります、 **_MAX_PATH** Stdlib.h で定義された定数です。
+
+パスが場合**NULL**で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 さらに、 **errno**に設定されている**EINVAL**です。 **NULL**他のすべてのパラメーターの値が許可されます。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_makepath**|\<stdlib.h>|
+|**_wmakepath**|\<stdlib.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_makepath.c
+#include <stdlib.h>
+#include <stdio.h>
+
+int main( void )
+{
+   char path_buffer[_MAX_PATH];
+   char drive[_MAX_DRIVE];
+   char dir[_MAX_DIR];
+   char fname[_MAX_FNAME];
+   char ext[_MAX_EXT];
+
+   _makepath( path_buffer, "c", "\\sample\\crt\\", "makepath", "c" ); // C4996
+   // Note: _makepath is deprecated; consider using _makepath_s instead
+   printf( "Path created with _makepath: %s\n\n", path_buffer );
+   _splitpath( path_buffer, drive, dir, fname, ext ); // C4996
+   // Note: _splitpath is deprecated; consider using _splitpath_s instead
+   printf( "Path extracted with _splitpath:\n" );
+   printf( "   Drive: %s\n", drive );
+   printf( "   Dir: %s\n", dir );
+   printf( "   Filename: %s\n", fname );
+   printf( "   Ext: %s\n", ext );
+}
+```
+
+```Output
+Path created with _makepath: c:\sample\crt\makepath.c
+
+Path extracted with _splitpath:
+   Drive: c:
+   Dir: \sample\crt\
+   Filename: makepath
+   Ext: .c
+```
+
+## <a name="see-also"></a>関連項目
+
+[ファイル処理](../../c-runtime-library/file-handling.md)<br/>
+[_fullpath、_wfullpath](fullpath-wfullpath.md)<br/>
+[_splitpath、_wsplitpath](splitpath-wsplitpath.md)<br/>
+[_makepath_s、_wmakepath_s](makepath-s-wmakepath-s.md)<br/>

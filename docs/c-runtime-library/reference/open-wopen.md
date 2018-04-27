@@ -1,12 +1,12 @@
 ---
-title: "_open、_wopen | Microsoft Docs"
-ms.custom: 
+title: _open、_wopen | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _open
@@ -40,226 +40,183 @@ helpviewer_keywords:
 - wopen function
 - open function
 ms.assetid: 13f6a0c3-d1aa-450d-a7aa-74abc91b163e
-caps.latest.revision: 
+caps.latest.revision: 31
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2e8abb4d652c993f3cf45f1840c820261ac989c9
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: b4b25e263d9483f308161a823b136643e1451106
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="open-wopen"></a>_open、_wopen
-ファイルを開きます。 セキュリティが強化されたバージョンを使用できるようになったため、これらの関数は推奨されていません。「[_sopen_s、_wsopen_s](../../c-runtime-library/reference/sopen-s-wsopen-s.md)」を参照してください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _open(  
-   const char *filename,  
-   int oflag [,  
-   int pmode]   
-);  
-int _wopen(  
-   const wchar_t *filename,  
-   int oflag [,  
-   int pmode]   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `filename`  
- ファイル名。  
-  
- `oflag`  
- 許可される操作の種類。  
-  
- `pmode`  
- アクセス許可モード。  
-  
-## <a name="return-value"></a>戻り値  
- これらの各関数は、開かれたファイルのファイル記述子を返します。 戻り値 -1 はエラーを示します。その場合、`errno` は次の値のいずれかに設定されます。  
-  
- `EACCES`  
- 読み取り専用ファイルを書き込み用に開こうとしたか、指定された操作がファイルの共有モードで許可されていないか、指定されたパスがディレクトリです。  
-  
- `EEXIST`  
- `_O_CREAT` および `_O_EXCL` フラグが指定されましたが、`filename` が既に存在します。  
-  
- `EINVAL`  
- 
-          `oflag` または `pmode` 引数が無効です。  
-  
- `EMFILE`  
- ファイル記述子をこれ以上使用できません (開かれているファイルが多すぎます)。  
-  
- `ENOENT`  
- ファイルまたはパスが見つかりません。  
-  
- これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
-  
-## <a name="remarks"></a>コメント  
- `_open` 関数は、`filename` で指定されたファイルを開き、`oflag` で指定されたように読み取りまたは書き込み用にファイルを準備します。 `_wopen` 関数は、`_open` 関数のワイド文字バージョンです。`filename` 関数の引数 `_wopen` は、ワイド文字列です。 それ以外では、`_wopen` と `_open` の動作は同じです。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_topen`|`_open`|`_open`|`_wopen`|  
-  
- `oflag` は、\<fcntl.h> で定義されている次のマニフェスト定数または定数の組み合わせの 1 つまたは複数で構成される整数式です。  
-  
- `_O_APPEND`  
- 書き込み操作の前に、毎回、ファイル ポインターをファイルの末尾に移動します。  
-  
- `_O_BINARY`  
- ファイルをバイナリ (無変換) モードで開きます。 (バイナリ モードの詳細については、「[fopen](../../c-runtime-library/reference/fopen-wfopen.md)」を参照してください)。  
-  
- `_O_CREAT`  
- ファイルを作成し、書き込み用に開きます。 `filename` で指定されたファイルが存在する場合は無効です。 
-          `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
-  
- `_O_CREAT` &#124; `_O_SHORT_LIVED`  
- ファイルを一時ファイルとして作成し、可能な場合は、ディスクにフラッシュしません。 
-          `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
-  
- `_O_CREAT` &#124; `_O_TEMPORARY`  
- ファイルを一時ファイルとして作成します。最後のファイル記述子が閉じられると、ファイルは削除されます。 
-          `pmode` が指定された場合は `_O_CREAT` 引数が必要です。  
-  
- `_O_CREAT` &#124; `_O_EXCL`  
- `filename` で指定されたファイルが存在する場合、エラー値を返します。 
-          `_O_CREAT` と共に使用された場合にのみ適用されます。  
-  
- `_O_NOINHERIT`  
- 共有ファイル記述子の作成を禁止します。  
-  
- `_O_RANDOM`  
- キャッシュがディスクからのランダム アクセスに最適化されるように指定します。ただし、ランダム アクセスに限定されるわけではありません。  
-  
- `_O_RDONLY`  
- 読み取り専用でファイルを開きます。 `_O_RDWR` または `_O_WRONLY` と共に指定することはできません。  
-  
- `_O_RDWR`  
- 読み取りと書き込みの両方のモードでファイルを開きます。 `_O_RDONLY` または `_O_WRONLY` と共に指定することはできません。  
-  
- `_O_SEQUENTIAL`  
- キャッシュがディスクからのシーケンシャル アクセスに最適化されるように指定します。ただし、シーケンシャル アクセスに限定されるわけではありません。  
-  
- `_O_TEXT`  
- ファイルをテキスト (変換) モードで開きます。 (詳細については、「[テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)」および「[fopen](../../c-runtime-library/reference/fopen-wfopen.md)」を参照してください。)  
-  
- `_O_TRUNC`  
- ファイルを開き、長さゼロに切り詰めます。ファイルに書き込みアクセス許可が必要です。 `_O_RDONLY` と共に指定することはできません。 `_O_TRUNC` を `_O_CREAT` と共に使用すると、既存のファイルが開かれるか、新しいファイルが作成されます。  
-  
-> [!NOTE]
->  `_O_TRUNC` フラグによって、指定したファイルの内容は破棄されます。  
-  
- `_O_WRONLY`  
- 書き込み専用でファイルを開きます。 `_O_RDONLY` または `_O_RDWR` と共に指定することはできません。  
-  
- `_O_U16TEXT`  
- Unicode UTF-16 モードでファイルを開きます。  
-  
- `_O_U8TEXT`  
- Unicode UTF-8 モードでファイルを開きます。  
-  
- `_O_WTEXT`  
- Unicode モードでファイルを開きます。  
-  
- ファイル アクセス モードを指定するには、`_O_RDONLY`、`_O_RDWR`、または `_O_WRONLY` を指定する必要があります。 アクセス モードに既定値はありません。  
-  
- ファイルを読み取り用に開くために `_O_WTEXT` が使用された場合、`_open` によってファイルの冒頭部が読み取られ、バイト オーダー マーク (BOM) がチェックされます。 BOM がある場合、ファイルは BOM に応じて UTF-8 または UTF-16LE として扱われます。 BOM がない場合、ファイルは ANSI として扱われます。 `_O_WTEXT` を使用してファイルが書き込み用に開かれた場合は、UTF-16 が使用されます。 以前の設定またはバイト オーダー マークに関係なく、`_O_U8TEXT` が使用された場合はファイルは常に UTF-8 として開かれ、`_O_U16TEXT` が使用された場合はファイルは常に UTF-16 として開かれます。  
-  
- `_O_WTEXT`、`_O_U8TEXT`、または `_O_U16TEXT` を使用してファイルが Unicode モードで開かれると、Input 関数によって、ファイルから読み取られたデータは `wchar_t` 型として格納された UTF-16 データに変換されます。 Unicode モードで開かれたファイルに書き込む関数は、`wchar_t` 型として格納された UTF-16 データがバッファーに含まれていると想定します。 ファイルが UTF-8 としてエンコードされている場合、UTF-16 データは書き込まれるときに UTF-8 に変換され、ファイルの UTF-8 でエンコードされた内容は読み取られるときに UTF-16 に変換されます。 Unicode モードで奇数バイトの読み取りまたは書き込みを試みると、パラメーター検証エラーが発生します。 UTF-8 としてプログラムに格納されたデータを読み取るか書き込む場合は、Unicode モードではなくテキストまたはバイナリ ファイル モードを使用します。 必要なエンコード変換は各自が行う必要があります。  
-  
- `_open` は、`_O_WRONLY|_O_APPEND` (追加モード) および `_O_WTEXT`、`_O_U16TEXT`、または `_O_U8TEXT` を使用して呼び出された場合、最初に読み取りおよび書き込み用にファイルを開き、BOM を読み取り、次に書き込み専用で再度開こうとします。 読み取りおよび書き込み用にファイルを開くのに失敗した場合、書き込み専用でファイルを開き、Unicode モード設定の既定値を使用します。  
-  
- `oflag` 引数を構成するために複数のマニフェスト定数が使用される場合、定数はビットごとの OR 演算子を使用して組み合わされます (`|`)。 バイナリ モードとテキスト モードの詳細については、「[テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)」を参照してください。  
-  
- `pmode` が指定された場合にのみ `_O_CREAT` 引数が必要です。 ファイルが既に存在する場合、`pmode` は無視されます。 それ以外の場合は、`pmode` によってファイルのアクセス許可の設定が指定されます。これは、新しいファイルが最初に閉じられたときに設定されます。 `_open` では、アクセス許可が設定される前に、現在のファイル アクセス許可マスクが `pmode` に適用されます。 (詳細については、「[_umask](../../c-runtime-library/reference/umask.md)」を参照してください)。`pmode` は、\<sys\stat.h> で定義されている次のマニフェスト定数のいずれか、または両方が含まれた整数式です。  
-  
- `_S_IREAD`  
- 読み取りのみが許可されます。  
-  
- `_S_IWRITE`  
- 書き込みが許可されます。 (実際には、読み取りと書き込みが許可されます)。  
-  
- `_S_IREAD`  `|`  `_S_IWRITE`  
- 読み取りと書き込みが許可されます。  
-  
- 両方の定数が指定されると、これらはビットごとの OR 演算子を使用して組み合わされます ( `|` )。 Windows では、すべてのファイルは読み取り可能です。書き込み専用のアクセス許可は使用できません。 したがって、`_S_IWRITE` モードと `_S_IREAD` `|` `_S_IWRITE` モードは等価です。  
-  
- `_S_IREAD` と `_S_IWRITE` の組み合わせ以外の値が `pmode` に対して指定された場合 (別のオペレーティング システムで有効な `pmode` が指定されている場合でも)、または許可された `oflag` 値以外の値が指定された場合、この関数はアサーションをデバッグ モードで生成し、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、この関数は -1 を返し、 `errno` を `EINVAL`に設定します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
-|-------------|---------------------|---------------------|  
-|`_open`|\<io.h>|\<fcntl.h>、\<sys\types.h>、\<sys\stat.h>|  
-|`_wopen`|\<io.h> または \<wchar.h>|\<fcntl.h>、\<sys\types.h>、\<sys\stat.h>|  
-  
- `_open` および `_wopen` は Microsoft 拡張機能です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_open.c  
-// compile with: /W3  
-/* This program uses _open to open a file  
- * named CRT_OPEN.C for input and a file named CRT_OPEN.OUT  
- * for output. The files are then closed.  
- */  
-#include <fcntl.h>  
-#include <sys/types.h>  
-#include <sys/stat.h>  
-#include <io.h>  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   int fh1, fh2;  
-  
-   fh1 = _open( "CRT_OPEN.C", _O_RDONLY ); // C4996  
-   // Note: _open is deprecated; consider using _sopen_s instead  
-   if( fh1 == -1 )  
-      perror( "Open failed on input file" );  
-   else  
-   {  
-      printf( "Open succeeded on input file\n" );  
-      _close( fh1 );  
-   }  
-  
-   fh2 = _open( "CRT_OPEN.OUT", _O_WRONLY | _O_CREAT, _S_IREAD |   
-                            _S_IWRITE ); // C4996  
-   if( fh2 == -1 )  
-      perror( "Open failed on output file" );  
-   else  
-   {  
-      printf( "Open succeeded on output file\n" );  
-      _close( fh2 );  
-   }  
-}  
-```  
-  
-## <a name="output"></a>出力  
-  
-```  
-Open succeeded on input file  
-Open succeeded on output file  
-```  
-  
-## <a name="see-also"></a>参照  
- [下位入出力](../../c-runtime-library/low-level-i-o.md)   
- [_chmod、_wchmod](../../c-runtime-library/reference/chmod-wchmod.md)   
- [_close](../../c-runtime-library/reference/close.md)   
- [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
- [_dup、_dup2](../../c-runtime-library/reference/dup-dup2.md)   
- [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
- [_sopen、_wsopen](../../c-runtime-library/reference/sopen-wsopen.md)
+
+ファイルを開きます。 セキュリティが強化されたバージョンを使用できるようになったため、これらの関数は非推奨とされています。「[_sopen_s、_wsopen_s](sopen-s-wsopen-s.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+int _open(
+   const char *filename,
+   int oflag [,
+   int pmode]
+);
+int _wopen(
+   const wchar_t *filename,
+   int oflag [,
+   int pmode]
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ファイル名*<br/>
+ファイル名。
+
+*oflag*<br/>
+許可される操作の種類。
+
+*pmode*<br/>
+アクセス許可モード。
+
+## <a name="return-value"></a>戻り値
+
+これらの各関数は、開かれたファイルのファイル記述子を返します。 戻り値-1 はエラーです。 を示しますその場合は**errno**は、次の値のいずれかに設定します。
+
+|errno の値|条件|
+|-|-|
+**EACCES**|読み取り専用ファイルを書き込み用に開こうとしたか、指定された操作がファイルの共有モードで許可されていないか、指定されたパスがディレクトリです。
+**EEXIST**|**_O_CREAT**と **_O_EXCL**フラグを指定するが*filename*既に存在します。
+**EINVAL**|無効な*oflag*または*pmode*引数。
+**EMFILE**|ファイル記述子をこれ以上使用できません (開かれているファイルが多すぎます)。
+**ENOENT**|ファイルまたはパスが見つかりません。
+
+これらのリターン コードとその他のリターン コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。
+
+## <a name="remarks"></a>コメント
+
+**_Open**関数は指定されたファイルを開きます*filename* 、読み取りまたは書き込みで指定された用に準備*oflag*です。 **_wopen**のワイド文字バージョンは、**開く (_o)** 以外の場合は、 *filename*に渡す引数 **_wopen**ワイド文字列です。 **_wopen**と **_open**それ以外の場合の動作は同じです。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_topen**|**_open**|**_open**|**_wopen**|
+
+*oflag*から 1 つ以上の次のマニフェスト定数または定数の組み合わせで定義されている整数式が形成\<fcntl.h >。
+
+|*oflag*定数|動作|
+|-|-|
+**_O_APPEND**|書き込み操作の前に、毎回、ファイル ポインターをファイルの末尾に移動します。
+**_O_BINARY**|ファイルをバイナリ (無変換) モードで開きます。 (バイナリ モードの詳細については、「[fopen](fopen-wfopen.md)」を参照してください)。
+**_O_CREAT**|ファイルを作成し、書き込み用に開きます。 によってファイルが指定された場合は、影響を与えません*filename*が存在します。 *Pmode*引数が必要なときに **_O_CREAT**を指定します。
+**_O_CREAT** &AMP;#124; **_O_SHORT_LIVED**|ファイルを一時ファイルとして作成し、可能な場合は、ディスクにフラッシュしません。 *Pmode*引数が必要なときに **_O_CREAT**を指定します。
+**_O_CREAT** &AMP;#124; **_O_TEMPORARY**|ファイルを一時ファイルとして作成します。最後のファイル記述子が閉じられると、ファイルは削除されます。 *Pmode*引数が必要なときに **_O_CREAT**を指定します。
+**_O_CREAT**&AMP;#124; ` _O_EXCL`|場合によって指定されたファイルは、エラー値を返します*filename*が存在します。 使用する場合にのみ適用されます **_O_CREAT**です。
+**_O_NOINHERIT**|共有ファイル記述子の作成を禁止します。
+**_O_RANDOM**|キャッシュがディスクからのランダム アクセスに最適化されるように指定します。ただし、ランダム アクセスに限定されるわけではありません。
+**_O_RDONLY**|読み取り専用でファイルを開きます。 と共に指定できません **_O_RDWR**または **_O_WRONLY**です。
+**_O_RDWR**|読み取りと書き込みの両方用にファイルを開きます。 と共に指定できません **_O_RDONLY**または **_O_WRONLY**です。
+**_O_SEQUENTIAL**|キャッシュがディスクからのシーケンシャル アクセスに最適化されるように指定します。ただし、シーケンシャル アクセスに限定されるわけではありません。
+**_O_TEXT**|ファイルをテキスト (変換) モードで開きます。 (詳細については、「[テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)」および「[fopen](fopen-wfopen.md)」を参照してください。)
+**_O_TRUNC**|ファイルを開き、長さゼロに切り詰めます。ファイルに書き込みアクセス許可が必要です。 と共に指定できません **_O_RDONLY**です。 **_O_TRUNC**併用 **_O_CREAT**既存のファイルを開くか、ファイルを作成します。 **注:** 、 **_O_TRUNC**フラグが指定されたファイルの内容を破棄します。
+**_O_WRONLY**|書き込み専用でファイルを開きます。 と共に指定できません **_O_RDONLY**または **_O_RDWR**です。
+**_O_U16TEXT**|Unicode UTF-16 モードでファイルを開きます。
+**_O_U8TEXT**|Unicode UTF-8 モードでファイルを開きます。
+**_O_WTEXT**|Unicode モードでファイルを開きます。
+
+ファイル アクセス モードを指定する、いずれかを指定する必要があります **_O_RDONLY**、 **_O_RDWR**、または **_O_WRONLY**です。 アクセス モードに既定値はありません。
+
+場合 **_O_WTEXT**を使用して、読み取り用にファイルを開く **_open**ファイルの先頭を読み取り、バイト順マーク (BOM) を確認します。 BOM がある場合、ファイルは BOM に応じて UTF-8 または UTF-16LE として扱われます。 BOM がない場合、ファイルは ANSI として扱われます。 使用して書き込みのためファイルが開かれたときに **_O_WTEXT**utf-16 を使用します。 いずれかに関係なく以前の設定またはバイト オーダー マーク場合、 **_O_U8TEXT**はこれを使用すると、ファイルは常に開か; utf-8 として場合 **_O_U16TEXT**はこれを使用すると、ファイルは常に開か utf-16 として。
+
+使用して Unicode モードでファイルが開かれると **_O_WTEXT**、 **_O_U8TEXT**、または **_O_U16TEXT**、input 関数は、utf-16 データに、ファイルから読み取られるデータを変換型として格納された**wchar_t**です。 Unicode モードで開かれたファイルに書き込む関数は型として格納された utf-16 データを含んでいるバッファーを想定して**wchar_t**です。 ファイルが UTF-8 としてエンコードされている場合、UTF-16 データは書き込まれるときに UTF-8 に変換され、ファイルの UTF-8 でエンコードされた内容は読み取られるときに UTF-16 に変換されます。 Unicode モードで奇数バイトの読み取りまたは書き込みを試みると、パラメーター検証エラーが発生します。 UTF-8 としてプログラムに格納されたデータを読み取るか書き込む場合は、Unicode モードではなくテキストまたはバイナリ ファイル モードを使用します。 必要なエンコード変換は各自が行う必要があります。
+
+場合 **_open**で呼び出された **_O_WRONLY** | **_O_APPEND** (追加モード) および **_O_WTEXT**、 **_O_U16TEXT**、または **_O_U8TEXT**BOM を読み取ってまず読み取りと書き込みのファイルを開こうとして、書き込み専用のウィンドウを開きます。 読み取りおよび書き込み用にファイルを開くのに失敗した場合、書き込み専用でファイルを開き、Unicode モード設定の既定値を使用します。
+
+2 つまたは複数のマニフェスト定数を使用してフォームにする場合、 *oflag*引数、定数はビットごとの OR 演算子で組み合わされます ( **&#124;** )。 バイナリ モードとテキスト モードの詳細については、「[テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)」を参照してください。
+
+*Pmode*引数が必要な場合にのみ **_O_CREAT**を指定します。 ファイルが既に存在する場合*pmode*は無視されます。 それ以外の場合、 *pmode*新しいファイルには、最初の時間が閉じられたときに設定されているファイル アクセス許可の設定を指定します。 **開く (_o)** を現在のファイルのアクセス許可マスクを適用*pmode*アクセス許可を設定する前にします。 (詳細については、次を参照してください[_umask](umask.md)。)。*pmode*で定義されている次のマニフェスト定数の一方または両方を含む整数式です\<sys \stat.h >。
+
+|*pmode*|説明|
+|-|-|
+**_S_IREAD**|読み取りのみが許可されます。
+**_S_IWRITE**|書き込みが許可されます。 (実際には、読み取りと書き込みが許可されます)。
+**_S_IREAD** &AMP;#124; **_S_IWRITE**|読み取りと書き込みが許可されます。
+
+これらはビットごとの OR 演算子で結合両方の定数を指定する場合 ( **&#124;** )。 Windows では、すべてのファイルは読み取り可能です。書き込み専用のアクセス許可は使用できません。 そのため、モード **_S_IWRITE**と **_S_IREAD** | **_S_IWRITE**は同等です。
+
+場合のいくつかの組み合わせ以外の値 **_S_IREAD**と **_S_IWRITE**が指定されて*pmode*— 場合でも、有効なを指定よう*pmode*別のオペレーティング システムで、すべての値は許容されている以外の場合、または*oflag*値が指定された関数は、デバッグ モードでアサーションを生成し、 」の説明に従って、無効なパラメーターハンドラーを呼び出します[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 続けるには、関数の戻り値-1 とセットの実行が許可された場合**errno**に**EINVAL**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|オプション ヘッダー|
+|-------------|---------------------|---------------------|
+|**_open**|\<io.h>|\<fcntl.h>、\<sys\types.h>、\<sys\stat.h>|
+|**_wopen**|\<io.h> または \<wchar.h>|\<fcntl.h>、\<sys\types.h>、\<sys\stat.h>|
+
+**開く (_o)** と **_wopen** Microsoft の拡張機能です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="example"></a>例
+
+```C
+// crt_open.c
+// compile with: /W3
+/* This program uses _open to open a file
+* named CRT_OPEN.C for input and a file named CRT_OPEN.OUT
+* for output. The files are then closed.
+*/
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <io.h>
+#include <stdio.h>
+
+int main( void )
+{
+   int fh1, fh2;
+
+   fh1 = _open( "CRT_OPEN.C", _O_RDONLY ); // C4996
+   // Note: _open is deprecated; consider using _sopen_s instead
+   if( fh1 == -1 )
+      perror( "Open failed on input file" );
+   else
+   {
+      printf( "Open succeeded on input file\n" );
+      _close( fh1 );
+   }
+
+   fh2 = _open( "CRT_OPEN.OUT", _O_WRONLY | _O_CREAT, _S_IREAD |
+                            _S_IWRITE ); // C4996
+   if( fh2 == -1 )
+      perror( "Open failed on output file" );
+   else
+   {
+      printf( "Open succeeded on output file\n" );
+      _close( fh2 );
+   }
+}
+```
+
+### <a name="output"></a>出力
+
+```Output
+Open succeeded on input file
+Open succeeded on output file
+```
+
+## <a name="see-also"></a>関連項目
+
+[下位入出力](../../c-runtime-library/low-level-i-o.md)<br/>
+[_chmod、_wchmod](chmod-wchmod.md)<br/>
+[_close](close.md)<br/>
+[_creat、_wcreat](creat-wcreat.md)<br/>
+[_dup、_dup2](dup-dup2.md)<br/>
+[fopen、_wfopen](fopen-wfopen.md)<br/>
+[_sopen、_wsopen](sopen-wsopen.md)<br/>

@@ -1,12 +1,12 @@
 ---
-title: "_fseek_nolock、_fseeki64_nolock | Microsoft Docs"
-ms.custom: 
+title: _fseek_nolock、_fseeki64_nolock | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _fseek_nolock
@@ -38,63 +38,67 @@ helpviewer_keywords:
 - _fseeki64_nolock function
 - seek file pointers
 ms.assetid: 2dd4022e-b715-462b-b935-837561605a02
-caps.latest.revision: 
+caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 413811b5a0a02324de455ff521b729f2fd8295ea
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 2fdc44fef5de0a24e35df30d3605d1b5e46c4a6b
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fseeknolock-fseeki64nolock"></a>_fseek_nolock、_fseeki64_nolock
-指定した場所にファイル ポインターを移動します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _fseek_nolock(   
-   FILE *stream,  
-   long offset,  
-   int origin   
-);  
-int _fseeki64_nolock(   
-   FILE *stream,  
-   __int64 offset,  
-   int origin   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `stream`  
- `FILE` 構造体へのポインター。  
-  
- `offset`  
- `origin.` から読み取られたバイト数。  
-  
- `origin`  
- 最初の位置。  
-  
-## <a name="return-value"></a>戻り値  
- それぞれ [fseek、_fseeki64](../../c-runtime-library/reference/fseek-fseeki64.md) と同じです。  
-  
-## <a name="remarks"></a>コメント  
- これらの関数はそれぞれ `fseek` および `_fseeki64` のロックなしバージョンです。他のスレッドによる干渉から保護されないことを除き、それぞれ、`fseek` および `_fseeki64` と同じです。 これらの関数では他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`fseek`|\<stdio.h>|  
-|`_fseeki64`|\<stdio.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [ftell、_ftelli64](../../c-runtime-library/reference/ftell-ftelli64.md)   
- [_lseek、_lseeki64](../../c-runtime-library/reference/lseek-lseeki64.md)   
- [rewind](../../c-runtime-library/reference/rewind.md)
+
+指定した場所にファイル ポインターを移動します。
+
+## <a name="syntax"></a>構文
+
+```C
+int _fseek_nolock(
+   FILE *stream,
+   long offset,
+   int origin
+);
+int _fseeki64_nolock(
+   FILE *stream,
+   __int64 offset,
+   int origin
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ストリーム*<br/>
+**FILE** 構造体へのポインター。
+
+*オフセット*<br/>
+*配信元*からのバイト数。
+
+*配信元*<br/>
+最初の位置。
+
+## <a name="return-value"></a>戻り値
+
+同じ[fseek](fseek-fseeki64.md)と[_fseeki64](fseek-fseeki64.md)、それぞれします。
+
+## <a name="remarks"></a>コメント
+
+これらの関数は、ロックしないバージョンの[fseek](fseek-fseeki64.md)と[_fseeki64](fseek-fseeki64.md)、それぞれします。 これらは同じ[fseek](fseek-fseeki64.md)と[_fseeki64](fseek-fseeki64.md)他のスレッドによる干渉から保護されないする点を除いて。 これらの関数では他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|
+|--------------|---------------------|
+|**_fseek_nolock**、 **_fseeki64_nolock**|\<stdio.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[ftell、_ftelli64](ftell-ftelli64.md)<br/>
+[_lseek、_lseeki64](lseek-lseeki64.md)<br/>
+[rewind](rewind.md)<br/>

@@ -1,12 +1,12 @@
 ---
-title: "_strdec、_wcsdec、_mbsdec、_mbsdec_l | Microsoft Docs"
-ms.custom: 
+title: _strdec、_wcsdec、_mbsdec、_mbsdec_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _wcsdec
@@ -49,145 +49,152 @@ helpviewer_keywords:
 - wcsdec function
 - _mbsdec function
 ms.assetid: ae37c223-800f-48a9-ae8e-38c8d20af2dd
-caps.latest.revision: 
+caps.latest.revision: 24
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 824e7a8c18d53438cdf77fba9449d8139217543e
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: d3c7f3230337b9a25dc9b87005b907ebf169e235
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="strdec-wcsdec-mbsdec-mbsdecl"></a>_strdec、_wcsdec、_mbsdec、_mbsdec_l
-文字列ポインターを 1 文字前へ移動します。  
-  
+
+文字列ポインターを 1 文字前へ移動します。
+
 > [!IMPORTANT]
->  `mbsdec` および `mbsdec_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-unsigned char *_strdec(  
-   const unsigned char *start,  
-   const unsigned char *current   
-);  
-unsigned wchar_t *_wcsdec(  
-   const unsigned wchar_t *start,  
-   const unsigned wchar_t *current   
-);  
-unsigned char *_mbsdec(  
-   const unsigned char *start,  
-   const unsigned char *current   
-);  
-unsigned char *_mbsdec_l(  
-   const unsigned char *start,  
-   const unsigned char *current,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `start`  
- 任意の文字へのポインター (または`_mbsdec`と`_mbsdec_l`、任意のマルチバイト文字の最初のバイト) 元の文字列です。`start`前に指定する必要があります`current`元の文字列。  
-  
- `current`  
- 任意の文字へのポインター (または`_mbsdec`と`_mbsdec_l`、任意のマルチバイト文字の最初のバイト) 元の文字列です。`current`従う必要があります`start`元の文字列。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- `_mbsdec`、 `_mbsdec_l`、 `_strdec`、および`_wcsdec`直前にある文字へのポインターを返す各`current`です。`_mbsdec`返します`NULL`場合の値`start`以上のものには、`current`です。 `_tcsdec` は、これらの関数の 1 つに割り当てられます。戻り値は割り当てによって異なります。  
-  
-## <a name="remarks"></a>コメント  
- `_mbsdec` 関数と `_mbsdec_l` 関数は、`current` を含む文字列の `start` に先行するマルチバイト文字の最初のバイトへのポインターを返します。  
-  
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定で決まります。詳細については、「[setlocale、_wsetlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」をご覧ください。  `_mbsdec` は、現在使用中のロケールに従ってマルチバイト文字シーケンスを認識します。`_mbsdec_l` は、渡されたロケール パラメーターを代わりに使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
- `start` または `current` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
-  
+> **mbsdec**と**mbsdec_l** Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+unsigned char *_strdec(
+   const unsigned char *start,
+   const unsigned char *current
+);
+unsigned wchar_t *_wcsdec(
+   const unsigned wchar_t *start,
+   const unsigned wchar_t *current
+);
+unsigned char *_mbsdec(
+   const unsigned char *start,
+   const unsigned char *current
+);
+unsigned char *_mbsdec_l(
+   const unsigned char *start,
+   const unsigned char *current,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*start*<br/>
+任意の文字へのポインター (または **_mbsdec**と **_mbsdec_l**、任意のマルチバイト文字の最初のバイト) 元の文字列です。*開始*前に指定する必要があります*現在*元の文字列。
+
+*current*<br/>
+任意の文字へのポインター (または **_mbsdec**と **_mbsdec_l**、任意のマルチバイト文字の最初のバイト) 元の文字列です。*現在*従う必要があります*開始*元の文字列。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+**_mbsdec**、 **_mbsdec_l**、 **_strdec**、および **_wcsdec**直前にある文字へのポインターを返す各*現在*;**_mbsdec**返します**NULL**場合の値*開始*以上のものには、*現在*です。 **_tcsdec**これらの関数と戻り値のいずれかにマップが異なります。
+
+## <a name="remarks"></a>コメント
+
+**_Mbsdec**と **_mbsdec_l**関数では、ポインターを返す前に記述するマルチバイト文字の最初のバイトまで*現在*を含む文字列*開始*です。
+
+出力値の設定の影響を受けた、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。  **_mbsdec** 、使用されているロケールに従ってマルチバイト文字シーケンスを認識中に **_mbsdec_l**に渡されたロケール パラメーターを代わりに使用する点を除いてと同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+場合*開始*または*現在*は**NULL**で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行は継続許可されたかどうか、この関数を返します**EINVAL**設定と**errno**に**EINVAL**です。
+
 > [!IMPORTANT]
->  これらの関数は、バッファー オーバーランの脅威に対して脆弱な場合があります。 バッファー オーバーランは、認められていない特権の昇格の原因となるため、システムの攻撃に使用される可能性があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_tcsdec`|`_strdec`|`_mbsdec`|`_wcsdec`|  
-  
- `_strdec` と `_wcsdec` はそれぞれ、`_mbsdec` と `_mbsdec_l` の 1 バイト文字バージョンとワイド文字バージョンです。 `_strdec` と `_wcsdec` はこの割り当てにのみ使用し、それ以外には使用しないでください。  
-  
- 詳細については、「[汎用テキスト マップの使用](../../c-runtime-library/using-generic-text-mappings.md)」および「[汎用テキスト マップ](../../c-runtime-library/generic-text-mappings.md)」を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
-|-------------|---------------------|---------------------|  
-|`_mbsdec`|\<mbstring.h>|\<mbctype.h>|  
-|`_mbsdec_l`|\<mbstring.h>|\<mbctype.h>|  
-|`_strdec`|\<tchar.h>||  
-|`_wcsdec`|\<tchar.h>||  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
- `_tcsdec` を使用する例を次に示します。  
-  
-```  
-  
-      #include <iostream>  
-#include <tchar.h>  
-using namespace std;  
-  
-int main()  
-{  
-   const TCHAR *str = _T("12345");  
-   cout << "str: " << str << endl;  
-  
-   const TCHAR *str2;  
-   str2 = str + 2;  
-   cout << "str2: " << str2 << endl;  
-  
-   TCHAR *answer;  
-   answer = _tcsdec( str, str2 );  
-   cout << "answer: " << answer << endl;  
-  
-   return (0);   
-}  
-  
-```  
-  
- `_mbsdec` を使用する例を次に示します。  
-  
-```  
-#include <iostream>  
-#include <mbstring.h>  
-using namespace std;  
-  
-int main()   
-{   
-   char *str = "12345";  
-   cout << "str: " << str << endl;  
-  
-   char *str2;  
-   str2 = str + 2;   
-   cout << "str2: " << str2 << endl;  
-  
-   unsigned char *answer;  
-   answer = _mbsdec( reinterpret_cast<unsigned char *>( str ), reinterpret_cast<unsigned char *>( str2 ));  
-  
-   cout << "answer: " << answer << endl;  
-  
-   return (0);   
-}  
-  
-```  
-  
-## <a name="see-also"></a>参照  
- [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [_strinc、_wcsinc、_mbsinc、_mbsinc_l](../../c-runtime-library/reference/strinc-wcsinc-mbsinc-mbsinc-l.md)   
- [_strnextc、_wcsnextc、_mbsnextc、_mbsnextc_l](../../c-runtime-library/reference/strnextc-wcsnextc-mbsnextc-mbsnextc-l.md)   
- [_strninc、_wcsninc、_mbsninc、_mbsninc_l](../../c-runtime-library/reference/strninc-wcsninc-mbsninc-mbsninc-l.md)
+> これらの関数は、バッファー オーバーランの脅威に対して脆弱な場合があります。 バッファー オーバーランは、認められていない特権の昇格の原因となるため、システムの攻撃に使用される可能性があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_tcsdec**|**_strdec**|**_mbsdec**|**_wcsdec**|
+
+**_strdec**と **_wcsdec**の 1 バイト文字とワイド文字バージョンは、 **_mbsdec**と **_mbsdec_l**です。 **_strdec**と **_wcsdec**この割り当てにのみ提供され、それ以外の場合は使用できません。
+
+詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|オプション ヘッダー|
+|-------------|---------------------|---------------------|
+|**_mbsdec**|\<mbstring.h>|\<mbctype.h>|
+|**_mbsdec_l**|\<mbstring.h>|\<mbctype.h>|
+|**_strdec**|\<tchar.h>||
+|**_wcsdec**|\<tchar.h>||
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+次の例を使用して **_tcsdec**です。
+
+```cpp
+// crt_tcsdec.cpp
+// Compile by using: cl /EHsc crt_tcsdec.cpp
+#include <iostream>
+#include <tchar.h>
+using namespace std;
+
+int main()
+{
+   const TCHAR *str = _T("12345");
+   cout << "str: " << str << endl;
+
+   const TCHAR *str2;
+   str2 = str + 2;
+   cout << "str2: " << str2 << endl;
+
+   TCHAR *answer;
+   answer = _tcsdec( str, str2 );
+   cout << "answer: " << answer << endl;
+
+   return (0);
+}
+```
+
+次の例を使用して **_mbsdec**です。
+
+```cpp
+// crt_mbsdec.cpp
+// Compile by using: cl /EHsc crt_mbsdec.c
+#include <iostream>
+#include <mbstring.h>
+using namespace std;
+
+int main()
+{
+   char *str = "12345";
+   cout << "str: " << str << endl;
+
+   char *str2;
+   str2 = str + 2;
+   cout << "str2: " << str2 << endl;
+
+   unsigned char *answer;
+   answer = _mbsdec( reinterpret_cast<unsigned char *>( str ), reinterpret_cast<unsigned char *>( str2 ));
+
+   cout << "answer: " << answer << endl;
+
+   return (0);
+}
+```
+
+## <a name="see-also"></a>関連項目
+
+[文字列操作](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[_strinc、_wcsinc、_mbsinc、_mbsinc_l](strinc-wcsinc-mbsinc-mbsinc-l.md)<br/>
+[_strnextc、_wcsnextc、_mbsnextc、_mbsnextc_l](strnextc-wcsnextc-mbsnextc-mbsnextc-l.md)<br/>
+[_strninc、_wcsninc、_mbsninc、_mbsninc_l](strninc-wcsninc-mbsninc-mbsninc-l.md)<br/>

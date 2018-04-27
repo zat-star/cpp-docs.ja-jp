@@ -1,12 +1,12 @@
 ---
-title: "asin、asinf、asinl | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: asin、asinf、asinl | Microsoft Docs
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - asinf
@@ -38,73 +38,72 @@ helpviewer_keywords:
 - trigonometric functions
 - arcsine function
 ms.assetid: ca05f9ea-b711-49f6-9f32-2f4019abfd69
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4cb5f90a909a4e2250768bf158f6f51f53bbee4a
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 6dd1399042e1055d124cd3c53363a6979d4256d3
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="asin-asinf-asinl"></a>asin、asinf、asinl
-アークサインを計算します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double asin(   
-   double x   
-);  
-float asin(  
-   float x  
-);  // C++ only  
-long double asin(  
-   long double x  
-);  // C++ only  
-float asinf (   
-   float x   
-);  
-long double asinl(  
-   long double x  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `x`  
- アークサインが計算される値。  
-  
-## <a name="return-value"></a>戻り値  
- `asin`のアークサイン (逆サ イン関数) を返します`x`範囲 - π/2 ~ π/2 ラジアンにします。  
-  
- 既定では場合、`x`が-1 未満か、1 より大きい`asin`は不定値を返します。  
-  
-|入力|SEH 例外|Matherr 例外|  
-|-----------|-------------------|-----------------------|  
-|± ∞|`INVALID`|`_DOMAIN`|  
-|± `QNAN`,`IND`|none|`_DOMAIN`|  
-|&#124;x&#124;>1|`INVALID`|`_DOMAIN`|  
-  
-## <a name="remarks"></a>コメント  
- C++ ではオーバーロードが可能であるため、`asin` および `float` で `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`asin` は常に double を受け取って返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`asin`、`asinf`、`asinl`|\<math.h>|  
-  
-## <a name="example"></a>例  
- 詳細については、「[acos、acosf、acosl](../../c-runtime-library/reference/acos-acosf-acosl.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [acos、acosf、acosl](../../c-runtime-library/reference/acos-acosf-acosl.md)   
- [atan、atanf、atanl、atan2、atan2f、atan2l](../../c-runtime-library/reference/atan-atanf-atanl-atan2-atan2f-atan2l.md)   
- [cos、cosf、cosl、cosh、coshf、coshl](../../c-runtime-library/reference/cos-cosf-cosl-cosh-coshf-coshl.md)   
- [_matherr](../../c-runtime-library/reference/matherr.md)   
- [sin、sinf、sinl、sinh、sinhf、sinhl](../../c-runtime-library/reference/sin-sinf-sinl-sinh-sinhf-sinhl.md)   
- [tan、tanf、tanl、tanh、tanhf、tanhl](../../c-runtime-library/reference/tan-tanf-tanl-tanh-tanhf-tanhl.md)
+
+アークサインを計算します。
+
+## <a name="syntax"></a>構文
+
+```C
+double asin( double x );
+float asinf ( float x );
+long double asinl( long double x );
+```
+
+```cpp
+float asin( float x );  // C++ only
+long double asin( long double x );  // C++ only
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+アークサインが計算される値。
+
+## <a name="return-value"></a>戻り値
+
+**Asin**のアークサイン (逆サ イン関数) を返します*x*範囲 - π/2 ~ π/2 ラジアンにします。
+
+既定では場合、 *x*が-1 未満か、1 より大きい**asin**は不定値を返します。
+
+|入力|SEH 例外|Matherr 例外|
+|-----------|-------------------|-----------------------|
+|± ∞|**無効です**|**_DOMAIN**|
+|± **QNAN**、 **IND**|none|**_DOMAIN**|
+|&#124;x&#124;>1|**無効です**|**_DOMAIN**|
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**asin**で**float**と**長い****二重**値。 C プログラムでは、 **asin**常に受け取りを返す、**二重**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー (C)|必須ヘッダー (C++)|
+|-------------|---------------------|-|
+|**asin**、 **asinf**、 **asinl**|\<math.h>|\<cmath> または \<math.h>|
+
+## <a name="example"></a>例
+
+詳細については、「[acos、acosf、acosl](acos-acosf-acosl.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[acos、acosf、acosl](acos-acosf-acosl.md)<br/>
+[atan、atanf、atanl、atan2、atan2f、atan2l](atan-atanf-atanl-atan2-atan2f-atan2l.md)<br/>
+[cos、cosf、cosl](cos-cosf-cosl.md)<br/>
+[_matherr](matherr.md)<br/>
+[sin、sinf、sinl](sin-sinf-sinl.md)<br/>
+[tan、tanf、tanl](tan-tanf-tanl.md)<br/>

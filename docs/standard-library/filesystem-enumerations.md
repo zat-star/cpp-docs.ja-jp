@@ -1,12 +1,12 @@
 ---
-title: "&lt;filesystem&gt; 列挙体 | Microsoft Docs"
-ms.custom: 
+title: '&lt;filesystem&gt; 列挙体 | Microsoft Docs'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - filesystem/std::filesystem::copy_options
@@ -20,117 +20,126 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 0096c046-d101-464c-8259-b878a48280b0
-caps.latest.revision: 
+caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c6a6d7dcb0e0b0a8e655acbda0624f7fa5b70a8a
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: fd0e2a85d7044e18e4153582a46dbb9889cb5b2b
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ltfilesystemgt-enumerations"></a>&lt;filesystem&gt; 列挙体
+
 このトピックでは、filesystem ヘッダーの列挙体について説明します。
 
-## <a name="requirements"></a>必要条件  
- **ヘッダー:** \<experimental/filesystem>    
- **名前空間:** std::experimental::filesystem  
+## <a name="requirements"></a>要件
 
-##  <a name="copy_options"></a>  copy_options
-動作を指定するために [copy](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) および [copy_file](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) 関数で使用されるビットマスク値の列挙体。  
-  
-### <a name="syntax"></a>構文  
-```cpp  
-enum class copy_options {      
-   none = 0,  
-   skip_existing = 1,  
-   overwrite_existing = 2,  
-   update_existing = 4,  
-   recursive = 8,  
-   copy_symlinks = 16,  
-   skip_symlinks = 32,  
-   directories_only = 64,  
-   create_symlinks = 128,  
-   create_hard_links = 256  
-};  
-```  
-  
-### <a name="values"></a>値  
-  
-|`Name`|説明|  
-|------------|-----------------|  
-|`none`|演算の既定の動作を実行します。|  
-|`skip_existing`|ファイルが既に存在する場合はコピーしません。エラーをレポートしません。|  
-|`overwrite_existing`|ファイルが既に存在する場合、ファイルを上書きします。|  
-|`update_existing`|ファイルが既に存在し、そのファイルの方が古い場合、ファイルを上書きします。|  
-|`recursive`|サブディレクトリとその内容を再帰的にコピーします。|  
-|`copy_symlinks`|シンボリック リンクが示すファイルをコピーするのではなく、シンボリック リンクをシンボリック リンクとしてコピーします。|  
-|`skip_symlinks`|シンボリック リンクを無視します。|  
-|`directories_only`|ディレクトリに対してのみ反復処理を実行します。ファイルを無視します。|  
-|`create_symlinks`|ファイルをコピーするのではなく、シンボリック リンクを作成します。 対象がカレント ディレクトリではない場合、ソース パスとして絶対パスを使用する必要があります。|  
-|`create_hard_links`|ファイルをコピーするのではなく、ハード リンクを作成します。|  
-  
+**ヘッダー:** \<実験/filesystem > **Namespace:** std::experimental::filesystem
 
-##  <a name="directory_options"></a> directory_options
-ディレクトリへのシンボリック リンクに従うか、無視するかを指定します。  
-  
-### <a name="syntax"></a>構文  
-```cpp  
-enum class directory_options {  
-   none = 0,  
-   follow_directory_symlink 
-};  
-```  
-  
-### <a name="values"></a>値  
-  
-|名前|説明|  
-|----------|-----------------|  
-|`none`|既定の動作: ディレクトリへのシンボリック リンクを無視します。 アクセス許可の拒否はエラーです。|  
-|`follow_directory_symlink`|ディレクトリへのシンボリック リンクを実際のディレクトリとして処理します。|  
-  
-##  <a name="file_type"></a>  file_type
-ファイルの種類の列挙型。 サポートされる値は regular、directory、not_found、および unknown です。  
-  
-### <a name="syntax"></a>構文  
-```cpp  
+## <a name="copy_options"></a>  copy_options
+
+動作を指定するために [copy](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) および [copy_file](http://msdn.microsoft.com/en-us/4af7a9b0-8861-45ed-b84e-0307f0669d60) 関数で使用されるビットマスク値の列挙体。
+
+### <a name="syntax"></a>構文
+
+```cpp
+enum class copy_options {
+   none = 0,
+   skip_existing = 1,
+   overwrite_existing = 2,
+   update_existing = 4,
+   recursive = 8,
+   copy_symlinks = 16,
+   skip_symlinks = 32,
+   directories_only = 64,
+   create_symlinks = 128,
+   create_hard_links = 256
+};
+```
+
+### <a name="values"></a>値
+
+|`Name`|説明|
+|------------|-----------------|
+|`none`|演算の既定の動作を実行します。|
+|`skip_existing`|ファイルが既に存在する場合はコピーしません。エラーをレポートしません。|
+|`overwrite_existing`|ファイルが既に存在する場合、ファイルを上書きします。|
+|`update_existing`|ファイルが既に存在し、そのファイルの方が古い場合、ファイルを上書きします。|
+|`recursive`|サブディレクトリとその内容を再帰的にコピーします。|
+|`copy_symlinks`|シンボリック リンクが示すファイルをコピーするのではなく、シンボリック リンクをシンボリック リンクとしてコピーします。|
+|`skip_symlinks`|シンボリック リンクを無視します。|
+|`directories_only`|ディレクトリに対してのみ反復処理を実行します。ファイルを無視します。|
+|`create_symlinks`|ファイルをコピーするのではなく、シンボリック リンクを作成します。 対象がカレント ディレクトリではない場合、ソース パスとして絶対パスを使用する必要があります。|
+|`create_hard_links`|ファイルをコピーするのではなく、ハード リンクを作成します。|
+
+
+## <a name="directory_options"></a> directory_options
+
+ディレクトリへのシンボリック リンクに従うか、無視するかを指定します。
+
+### <a name="syntax"></a>構文
+
+```cpp
+enum class directory_options {
+   none = 0,
+   follow_directory_symlink
+};
+```
+
+### <a name="values"></a>値
+
+|名前|説明|
+|----------|-----------------|
+|`none`|既定の動作: ディレクトリへのシンボリック リンクを無視します。 アクセス許可の拒否はエラーです。|
+|`follow_directory_symlink`|ディレクトリへのシンボリック リンクを実際のディレクトリとして処理します。|
+
+## <a name="file_type"></a>  file_type
+
+ファイルの種類の列挙型。 サポートされる値は regular、directory、not_found、および unknown です。
+
+### <a name="syntax"></a>構文
+
+```cpp
 enum class file_type {
-    not_found = -1, 
-    none, 
-    regular, 
-    directory, 
+    not_found = -1,
+    none,
+    regular,
+    directory,
     symlink,
-    block, 
-    character, 
-    fifo, 
-    socket, 
+    block,
+    character,
+    fifo,
+    socket,
     unknown
-};  
-```  
-  
-### <a name="values"></a>値  
-  
-|名前|[値]|説明|  
-|----------|-----------|-----------------|  
-|`not_found`|-1|存在しないファイルを表します。|  
-|`none`|0|type 属性を持たないファイルを表します  (サポートされていません)。|  
-|`regular`|1|従来のディスク ファイルを表します。|  
-|`directory`|2|ディレクトリを表します。|  
-|`symlink`|3|シンボリック リンクを表します  (サポートされていません)。|  
-|`block`|4|UNIX ベースのシステム上のブロック型特殊ファイルを表します  (サポートされていません)。|  
-|`character`|5|UNIX ベースのシステム上の文字型特殊ファイルを表します  (サポートされていません)。|  
-|`fifo`|6|UNIX ベースのシステム上の FIFO ファイルを表します  (サポートされていません)。|  
-|`socket`|7|UNIX ベースのシステム上のソケットを表します  (サポートされていません)。|  
-|`unknown`|8|状態が確認できないファイルを表します。|  
-  
-##  <a name="perms"></a>  perms
-ファイルのアクセス許可のフラグを設定します。 サポートされる値は、基本的に "readonly" と all です。 readonly ファイルの場合、*_write ビットは設定されません。 それ以外の場合、 `all` ビット (0x0777) が設定されます。  
-  
-### <a name="syntax"></a>構文  
-```cpp  
+};
+```
+
+### <a name="values"></a>値
+
+|名前|[値]|説明|
+|----------|-----------|-----------------|
+|`not_found`|-1|存在しないファイルを表します。|
+|`none`|0|type 属性を持たないファイルを表します  (サポートされていません)。|
+|`regular`|1|従来のディスク ファイルを表します。|
+|`directory`|2|ディレクトリを表します。|
+|`symlink`|3|シンボリック リンクを表します  (サポートされていません)。|
+|`block`|4|UNIX ベースのシステム上のブロック型特殊ファイルを表します  (サポートされていません)。|
+|`character`|5|UNIX ベースのシステム上の文字型特殊ファイルを表します  (サポートされていません)。|
+|`fifo`|6|UNIX ベースのシステム上の FIFO ファイルを表します  (サポートされていません)。|
+|`socket`|7|UNIX ベースのシステム上のソケットを表します  (サポートされていません)。|
+|`unknown`|8|状態が確認できないファイルを表します。|
+
+## <a name="perms"></a>  perms
+
+ファイルのアクセス許可のフラグを設定します。 サポートされる値は、基本的に "readonly" と all です。 readonly ファイルの場合、*_write ビットは設定されません。 それ以外の場合、 `all` ビット (0x0777) が設定されます。
+
+### <a name="syntax"></a>構文
+
+```cpp
 enum class perms {// names for permissions
    none = 0,
    owner_read = 0400,  // S_IRUSR
@@ -154,10 +163,10 @@ enum class perms {// names for permissions
    add_perms = 0x10000,
    remove_perms = 0x20000,
    resolve_symlinks = 0x40000
-};  
-```  
-  
-## <a name="see-also"></a>参照  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
- [\<filesystem>](../standard-library/filesystem.md)
+};
+```
 
+## <a name="see-also"></a>関連項目
+
+[ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)<br/>
+[\<filesystem>](../standard-library/filesystem.md)<br/>

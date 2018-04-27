@@ -1,12 +1,12 @@
 ---
-title: "iscsym、iscsymf、__iscsym、__iswcsym、__iscsymf、__iswcsymf、_iscsym_l、_iswcsym_l、_iscsymf_l、_iswcsymf_l | Microsoft Docs"
-ms.custom: 
+title: iscsym、iscsymf、__iscsym、__iswcsym、__iscsymf、__iswcsymf、_iscsym_l、_iswcsym_l、_iscsymf_l、_iswcsymf_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _iswcsym_l
@@ -71,17 +71,17 @@ helpviewer_keywords:
 - iscsym function
 - iscsymf function
 ms.assetid: 944dfb99-f2b8-498c-9f55-dbcf370d0a2c
-caps.latest.revision: 
+caps.latest.revision: 21
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 85c650efa09bb093da65be874c890c77282d3fa3
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 225a5ab6dd00619b825be5b7e5220de70aafc3ba
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="iscsym-iscsymf-iscsym-iswcsym-iscsymf-iswcsymf-iscsyml-iswcsyml-iscsymfl-iswcsymfl"></a>iscsym、iscsymf、__iscsym、__iswcsym、__iscsymf、__iswcsymf、_iscsym_l、_iswcsym_l、_iscsymf_l、_iswcsymf_l
 
@@ -124,32 +124,32 @@ int _iswcsymf_l(
 
 ### <a name="parameters"></a>パラメーター
 
-*c*  
+*c*<br/>
 テストする整数。 *c*関数のナロー文字バージョンについては、0 ~ 255 の範囲内で指定する必要があります。
 
-*locale*  
+*locale*<br/>
 使用するロケール。
 
 ## <a name="return-value"></a>戻り値
 
-両方`__iscsym`と`__iswcsym`場合は、0 以外の値を返す*c*が文字、アンダー スコア、または数字。 両方`__iscsymf`と`__iswcsymf`場合は、0 以外の値を返す*c*が文字またはアンダー スコア。 これらの各ルーチン 0 を返します*c*テスト条件を満たしていません。 これらの関数のバージョン、`_l`使用する点を除いて、サフィックスは同じ、*ロケール*そのロケールに依存する動作に現在のロケールの代わりに渡されました。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+両方 **_ _iscsym**と **_ _iswcsym**場合は、0 以外の値を返す*c*が文字、アンダー スコア、または数字。 両方 **_ _iscsymf**と **_ _iswcsymf**場合は、0 以外の値を返す*c*が文字またはアンダー スコア。 これらの各ルーチン 0 を返します*c*テスト条件を満たしていません。 これらの関数のバージョン、 **_l**使用する点を除いて、サフィックスは同じ、*ロケール*そのロケールに依存する動作に現在のロケールの代わりに渡されました。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
 
 ## <a name="remarks"></a>コメント
 
 これらのルーチンは、プリプロセッサ マクロ _CTYPE_DISABLE_MACROS が定義されていない場合、マクロとして定義されます。 これらのルーチンのマクロ バージョンを使用する際には、引数を複数回評価できます。 引数リスト内で副作用がある式を使用するときにはご注意ください。
 
-旧バージョンと互換性のため、`iscsym`と`iscsymf`マクロとして定義される場合にのみ[&#95; &#95;STDC &#95; #95](../../preprocessor/predefined-macros.md)が定義されていないか、0 として定義されてそれ以外の場合は未定義です。
+旧バージョンと互換性のため、 **iscsym**と**iscsymf**マクロとして定義される場合にのみ[ &#95; &#95;STDC&#95; &#95; ](../../preprocessor/predefined-macros.md)が定義されていないかが定義されています。0;それ以外の場合、定義されていません。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-|ルーチンによって返される値|必須ヘッダー|
+|ルーチン|必須ヘッダー|
 |-------------|---------------------|
-|`iscsym`、`iscsymf`、`__iscsym`、`__iswcsym`、`__iscsymf`、`__iswcsymf`、`_iscsym_l`、`_iswcsym_l`、`_iscsymf_l`、`_iswcsymf_l`|C: \<ctype.h><br /><br /> C++: \<cctype> または \<ctype.h>|
+|**iscsym**、 **iscsymf**、 **_ _iscsym**、 **_ _iswcsym**、 **_ _iscsymf**、 **_ _iswcsymf**、 **_iscsym_l**、 **_iswcsym_l**、 **_iscsymf_l**、 **_iswcsymf_l**|C: \<ctype.h><br /><br /> C++: \<cctype> または \<ctype.h>|
 
-`iscsym`、`iscsymf`、`__iscsym`、`__iswcsym`、`__iscsymf`、`__iswcsymf`、`_iscsym_l`、`_iswcsym_l`、`_iscsymf_l`、`_iswcsymf_l` ルーチンは Microsoft 固有です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+**Iscsym**、 **iscsymf**、 **_ _iscsym**、 **_ _iswcsym**、 **_ _iscsymf**、 **_ _iswcsymf**、 **_iscsym_l**、 **_iswcsym_l**、 **_iscsymf_l**、および **_iswcsymf_l**ルーチンは、Microsoft 固有の仕様です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[文字分類](../../c-runtime-library/character-classification.md)   
-[ロケール](../../c-runtime-library/locale.md)   
-[is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)
+[文字分類](../../c-runtime-library/character-classification.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)<br/>

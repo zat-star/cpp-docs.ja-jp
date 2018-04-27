@@ -1,12 +1,12 @@
 ---
-title: "_ismbbkana、_ismbbkana_l | Microsoft Docs"
-ms.custom: 
+title: _ismbbkana、_ismbbkana_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _ismbbkana_l
@@ -37,52 +37,56 @@ helpviewer_keywords:
 - ismbbkana function
 - ismbbkana_l function
 ms.assetid: 64d4eb4a-205a-40ef-be35-ff9d77fabbaf
-caps.latest.revision: 
+caps.latest.revision: 19
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 34b79df529aacc0e1e4c4a0dcedfceb09912a8ed
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 35bc19b50f315987c1a0bb8d2871bd8cfebe9ab6
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="ismbbkana-ismbbkanal"></a>_ismbbkana、_ismbbkana_l
-カタカナ シンボルのテスト。コード ページ 932 固有のテストです。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _ismbbkana(  
-   unsigned int c   
-);  
-int _ismbbkana_l(  
-   unsigned int c,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- テストする整数。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- 整数 `_ismbbkana` がカタカナ シンボルの場合、またはカタカナ シンボルではない場合に 0 の場合、`c` は 0 以外の値を返します。 `_ismbbkana` は、ロケールに依存する文字情報に現在のロケールを使用します。 `_ismbbkana_l` は、渡されたロケール オブジェクトを使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_ismbbkana`|\<mbctype.h>|  
-|`_ismbbkana_l`|\<mbctype.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [バイト分類](../../c-runtime-library/byte-classification.md)   
- [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)
+
+カタカナ シンボルのテスト。コード ページ 932 固有のテストです。
+
+## <a name="syntax"></a>構文
+
+```C
+int _ismbbkana(
+   unsigned int c
+);
+int _ismbbkana_l(
+   unsigned int c,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+テストする整数。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+**_ismbbkana**場合は 0 以外の値を返します、整数*c*されていない場合は、0 またはカタカナ シンボルがします。 **_ismbbkana**ロケールに依存する文字情報に現在のロケールを使用します。 **_ismbbkana_l**で渡されたロケール オブジェクトを使用すると同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_ismbbkana**|\<mbctype.h>|
+|**_ismbbkana_l**|\<mbctype.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[バイト分類](../../c-runtime-library/byte-classification.md)<br/>
+[_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)<br/>

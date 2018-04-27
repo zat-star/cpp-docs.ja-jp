@@ -1,12 +1,12 @@
 ---
-title: "_putch_nolock、_putwch_nolock | Microsoft Docs"
-ms.custom: 
+title: _putch_nolock、_putwch_nolock | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _putwch_nolock
@@ -42,65 +42,70 @@ helpviewer_keywords:
 - console, writing characters to
 - _putwch_nolock function
 ms.assetid: edbc811d-bac6-47fa-a872-fe4f3a1590b0
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 13db2622b7dd9829b744a0164fbb0a025f4013ae
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 24d0f847e272c31edda3dea0ea0b0369148c2f73
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="putchnolock-putwchnolock"></a>_putch_nolock、_putwch_nolock
-スレッドをロックせずにコンソールに文字を書き込みます。  
-  
+
+スレッドをロックせずにコンソールに文字を書き込みます。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      int _putch_nolock(  
-int c  
-);  
-wint_t _putwch_nolock(  
-wchar_t c  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- *c*  
- 出力する文字。  
-  
-## <a name="return-value"></a>戻り値  
- 処理が正常に終了した場合は、*c* を返します。 **_putch_nolock** は、失敗した場合 **EOF** を返します。**_putwch_nolock** は、失敗した場合 **WEOF** を返します。  
-  
-## <a name="remarks"></a>コメント  
- **_putch_nolock** と **_putwch_nolock** は、他のスレッドによる干渉から保護されない点を除いて **_putch** および **_putwch** それぞれと同じものです。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|**_puttch_nolock**|**_putch_nolock**|**_putch_nolock**|**_putwch_nolock**|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|**_putch_nolock**|\<conio.h>|  
-|**_putwch_nolock**|\<conio.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="see-also"></a>参照  
- [コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)   
- [_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](../../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md)   
- [_getch、_getwch](../../c-runtime-library/reference/getch-getwch.md)
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+int _putch_nolock(
+int c
+);
+wint_t _putwch_nolock(
+wchar_t c
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+出力する文字。
+
+## <a name="return-value"></a>戻り値
+
+処理が正常に終了した場合は、*c* を返します。 **_putch_nolock** は、失敗した場合 **EOF** を返します。**_putwch_nolock** は、失敗した場合 **WEOF** を返します。
+
+## <a name="remarks"></a>コメント
+
+**_putch_nolock** と **_putwch_nolock** は、他のスレッドによる干渉から保護されない点を除いて **_putch** および **_putwch** それぞれと同じものです。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_puttch_nolock**|**_putch_nolock**|**_putch_nolock**|**_putwch_nolock**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_putch_nolock**|\<conio.h>|
+|**_putwch_nolock**|\<conio.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="see-also"></a>関連項目
+
+[コンソール入出力とポート入出力](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](cprintf-cprintf-l-cwprintf-cwprintf-l.md)<br/>
+[_getch、_getwch](getch-getwch.md)<br/>

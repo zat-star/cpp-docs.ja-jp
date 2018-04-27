@@ -1,12 +1,12 @@
 ---
 title: _set_new_mode | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _set_new_mode
@@ -33,59 +33,62 @@ helpviewer_keywords:
 - _set_new_mode function
 - set_new_mode function
 ms.assetid: 4d14039a-e54e-4689-8c70-74a4b9834768
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e0c49e60201374f2c9cc916d65077c2800ed48ab
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 0fa7022c5195882145452fa14e0cbf7347573a0a
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="setnewmode"></a>_set_new_mode
-`malloc` の新しいハンドラー モードを設定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _set_new_mode(  
-   int newhandlermode   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `newhandlermode`  
- `malloc` の新しいハンドラー モード。有効な値は 0 または 1 です。  
-  
-## <a name="return-value"></a>戻り値  
- `malloc` の以前のハンドラー モードのセットを返します。 戻り値 1 は、メモリの割り当てに失敗したときに、`malloc` が以前新しいハンドラー ルーチンを呼び出したことを示し、戻り値 0 は呼び出さなかったことを示します。 場合、`newhandlermode`引数が 0 または 1 と等しくない、-1 を返します。  
-  
-## <a name="remarks"></a>コメント  
- C++ の `_set_new_mode` 関数は [malloc](../../c-runtime-library/reference/malloc.md) の新しいハンドラー モードを設定します。 新しいハンドラー モードは、エラーが発生したときに、`malloc` が [_set_new_handler](../../c-runtime-library/reference/set-new-handler.md) によって設定された新しいハンドラー ルーチンを呼び出すかどうかを指定します。 既定では、`malloc` は、メモリの割り当てエラーの際に新しいハンドラー ルーチンを呼び出しません。 この既定の動作をオーバーライドすると、`malloc` がメモリの割り当てに失敗したときに、`malloc` 演算子が同じ理由で失敗したときと同じ方法で、`new` によって新しいハンドラー ルーチンを呼び出すことができます。 詳細については、*C++ 言語リファレンス*の「[new](../../cpp/new-operator-cpp.md) および [delete](../../cpp/delete-operator-cpp.md) 演算子」の説明をご覧ください。 既定の動作をオーバーライドするには、次の関数を呼び出します。  
-  
-```  
-_set_new_mode(1)  
-```  
-  
- この呼び出しはプログラムの最初の方で指定するか、Newmode.obj にリンクします (「[リンク オプション](../../c-runtime-library/link-options.md)」を参照してください)。  
-  
- この関数は、そのパラメーターを検証します。 `newhandlermode` が 0 または 1 以外の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数によって無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、**_**`set_new_mode` は -1 を返し、`errno` を `EINVAL` に設定します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_set_new_mode`|\<new.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
- [calloc](../../c-runtime-library/reference/calloc.md)   
- [free](../../c-runtime-library/reference/free.md)   
- [realloc](../../c-runtime-library/reference/realloc.md)   
- [_query_new_handler](../../c-runtime-library/reference/query-new-handler.md)   
- [_query_new_mode](../../c-runtime-library/reference/query-new-mode.md)
+
+新しいハンドラー モードを設定**malloc**です。
+
+## <a name="syntax"></a>構文
+
+```cpp
+int _set_new_mode( int newhandlermode );
+```
+
+### <a name="parameters"></a>パラメーター
+
+*newhandlermode*<br/>
+新しいハンドラー モードを**malloc**以外の場合は有効な値は 0 または 1 です。
+
+## <a name="return-value"></a>戻り値
+
+以前のハンドラーのモードのセットを返します**malloc**です。 戻り値 1 が示す、メモリの割り当てに失敗**malloc**旧称によって新しいハンドラー ルーチンです。 戻り値 0 は、しないことを示します。 場合、 *newhandlermode*引数が 0 または 1 と等しくない、-1 を返します。
+
+## <a name="remarks"></a>コメント
+
+C++ の **_set_new_mode** 関数は、[malloc](malloc.md) 用の新しいハンドラー モードを設定します。 新しいハンドラー モードを示すかどうか、失敗した場合、 **malloc**によって設定された新しいハンドラー ルーチンを呼び出すには、 [_set_new_handler](set-new-handler.md)です。 既定では、 **malloc**メモリの割り当てに失敗した場合に新しいハンドラー ルーチンを呼び出しません。 この既定の動作をオーバーライドすることができるようにときに、 **malloc** 、メモリの割り当てに失敗する**malloc**に同じ新しいハンドラー ルーチンを呼び出す方法、**新しい**演算子が同じ理由で失敗します。 詳細については、*C++ 言語リファレンス*の「[new](../../cpp/new-operator-cpp.md) および [delete](../../cpp/delete-operator-cpp.md) 演算子」の説明をご覧ください。 既定の動作をオーバーライドするには、次の関数を呼び出します。
+
+```cpp
+_set_new_mode(1);
+```
+
+この呼び出しはプログラムの最初の方で指定するか、Newmode.obj にリンクします (「[リンク オプション](../../c-runtime-library/link-options.md)」を参照してください)。
+
+この関数は、そのパラメーターを検証します。 場合*newhandlermode*として無効なパラメーター ハンドラーを呼び出す 0 または 1 の場合、関数以外の何も記載されて[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 続けるには、実行が許可された場合 **_ * * * set_new_mode** -1 を返し**errno**に**EINVAL**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_set_new_mode**|\<new.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[メモリ割り当て](../../c-runtime-library/memory-allocation.md)<br/>
+[calloc](calloc.md)<br/>
+[free](free.md)<br/>
+[realloc](realloc.md)<br/>
+[_query_new_handler](query-new-handler.md)<br/>
+[_query_new_mode](query-new-mode.md)<br/>

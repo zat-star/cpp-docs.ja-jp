@@ -1,12 +1,12 @@
 ---
 title: realloc | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - realloc
@@ -41,122 +41,127 @@ helpviewer_keywords:
 - _frealloc function
 - reallocate memory blocks
 ms.assetid: 2b2239de-810b-4b11-9438-32ab0a244185
-caps.latest.revision: 
+caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e378f907c864f534173f746404f853ffa415c70c
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: e81f0456fd436ddb0036e0aebd0f56697c1ac213
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="realloc"></a>realloc
-メモリ ブロックを再割り当てします。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void *realloc(  
-   void *memblock,  
-   size_t size   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `memblock`  
- 以前に割り当てられたメモリ ブロックへのポインター。  
-  
- `size`  
- 新しいサイズ (バイト単位)。  
-  
-## <a name="return-value"></a>戻り値  
- `realloc` は、再割り当てされた (移動された可能性もある) メモリ ブロックへの `void` ポインターを返します。  
-  
- 指定されたサイズにブロックを拡張するための十分な使用可能なメモリがない場合、元のブロックは変更されず、`NULL` が返されます。  
-  
- `size` がゼロの場合は、`memblock` によってポイントされているブロックが解放されます。戻り値は `NULL` で、`memblock` は解放されたブロックをポイントしたままです。  
-  
- 戻り値は、どの型のオブジェクトを格納する場合でも適切なアラインメントが保証されるストレージ領域を指します。 `void` 以外の型へのポインターを取得するには、戻り値の型キャストを使用します。  
-  
-## <a name="remarks"></a>コメント  
- `realloc` 関数は、割り当てられたメモリ ブロックのサイズを変更します。 `memblock` 引数はメモリ ブロックの先頭をポイントします。 `memblock` が `NULL` の場合、`realloc` は `malloc` と同様に動作し、`size` バイトの新しいブロックを割り当てます。 `memblock` が `NULL` でない場合は、`calloc`、`malloc`、または `realloc` の前回の呼び出しによって返されたポインターになると考えられます。  
-  
- `size` 引数は、ブロックの新しいサイズをバイト単位で指定します。 新旧のサイズのうち、小さい方のブロックの内容は変更されませんが、新しいブロックの場所は異なる場合があります。 新しいブロックは新しいメモリ位置に配置される可能性があるため、`realloc` によって返されるポインターは、`memblock` 引数を通じて渡されたポインターと一致しないことがあります。 `realloc` では、バッファーが拡張される場合、新しく割り当てられたメモリをゼロで初期化しません。  
-  
- メモリの割り当てに失敗した場合、または要求されたメモリ量が `_HEAP_MAXREQ` を超える場合、`realloc` は `errno` を `ENOMEM` に設定します。 その他のエラー コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
-  
- `realloc` は、C++ の [_set_new_mode](../../c-runtime-library/reference/set-new-mode.md) 関数を使用して新しいハンドラー モードを設定するために `malloc` を呼び出します。 新しいハンドラー モードは、エラーが発生したときに、`malloc` が [_set_new_handler](../../c-runtime-library/reference/set-new-handler.md) によって設定された新しいハンドラー ルーチンを呼び出すかどうかを指定します。 既定では、`malloc` は、メモリの割り当てエラーの際に新しいハンドラー ルーチンを呼び出しません。 この既定の動作をオーバーライドすると、`realloc` がメモリの割り当てに失敗したときに、`malloc` 演算子が同じ理由で失敗したときと同じ方法で、`new` によって新しいハンドラー ルーチンを呼び出すことができます。 既定の動作をオーバーライドするには、次の関数を呼び出します。  
-  
-```  
-_set_new_mode(1)  
-```  
-  
- この呼び出しはプログラムの最初の方で指定するか、NEWMODE.OBJ にリンクします (「[リンク オプション](../../c-runtime-library/link-options.md)」を参照してください)。  
-  
- アプリケーションが C のランタイム ライブラリのデバッグ バージョンにリンクされている場合、`realloc` は [_realloc_dbg](../../c-runtime-library/reference/realloc-dbg.md) として解決されます。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。  
-  
- `realloc` は `__declspec(noalias)` と `__declspec(restrict)` でマークされています。これは、この関数がグローバル変数を変更せず、返されるポインターがエイリアス化されない保証があることを意味します。 詳細については、「[noalias](../../cpp/noalias.md)」、および「[restrict](../../cpp/restrict.md)」を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`realloc`|\<stdlib.h> と \<malloc.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_realloc.c  
-// This program allocates a block of memory for  
-// buffer and then uses _msize to display the size of that  
-// block. Next, it uses realloc to expand the amount of  
-// memory used by buffer and then calls _msize again to  
-// display the new amount of memory allocated to buffer.  
-  
-#include <stdio.h>  
-#include <malloc.h>  
-#include <stdlib.h>  
-  
-int main( void )  
-{  
-   long *buffer, *oldbuffer;  
-   size_t size;  
-  
-   if( (buffer = (long *)malloc( 1000 * sizeof( long ) )) == NULL )  
-      exit( 1 );  
-  
-   size = _msize( buffer );  
-   printf_s( "Size of block after malloc of 1000 longs: %u\n", size );  
-  
-   // Reallocate and show new size:  
-   oldbuffer = buffer;     // save pointer in case realloc fails  
-   if( (buffer = realloc( buffer, size + (1000 * sizeof( long )) ))   
-        ==  NULL )  
-   {  
-      free( oldbuffer );  // free original block  
-      exit( 1 );  
-   }  
-   size = _msize( buffer );  
-   printf_s( "Size of block after realloc of 1000 more longs: %u\n",   
-            size );  
-  
-   free( buffer );  
-   exit( 0 );  
-}  
-```  
-  
-```Output  
-Size of block after malloc of 1000 longs: 4000  
-Size of block after realloc of 1000 more longs: 8000  
-```  
-  
-## <a name="see-also"></a>参照  
- [メモリ割り当て](../../c-runtime-library/memory-allocation.md)   
- [calloc](../../c-runtime-library/reference/calloc.md)   
- [free](../../c-runtime-library/reference/free.md)   
- [malloc](../../c-runtime-library/reference/malloc.md)
+
+メモリ ブロックを再割り当てします。
+
+## <a name="syntax"></a>構文
+
+```C
+void *realloc(
+   void *memblock,
+   size_t size
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*_expand*<br/>
+以前に割り当てられたメモリ ブロックへのポインター。
+
+*size*<br/>
+新しいサイズ (バイト単位)。
+
+## <a name="return-value"></a>戻り値
+
+**realloc**を返します、 **void**再割り当てされた (移動された可能性のある) メモリ ブロックへのポインター。
+
+指定されたサイズにブロックを拡張するための十分な使用可能なメモリがない場合、元のブロックは変更されず、および**NULL**が返されます。
+
+場合*サイズ*が 0 の場合、ブロックが指す *_expand*解放されています戻り値は**NULL**、および *_expand*指したで、。ブロックを解放します。
+
+戻り値は、どの型のオブジェクトを格納する場合でも適切なアラインメントが保証されるストレージ領域を指します。 以外の型へのポインターを取得する**void**型、戻り値のキャストを使用します。
+
+## <a name="remarks"></a>コメント
+
+**Realloc**関数は、割り当てられたメモリ ブロックのサイズを変更します。 *_Expand*引数がメモリ ブロックの先頭を指します。 場合 *_expand*は**NULL**、 **realloc**と同様に動作**malloc**し、新しいブロックを割り当てます*サイズ*バイトです。 場合 *_expand*は**NULL**、前回の呼び出しによって返されたポインターである必要があります**calloc**、 **malloc**、または**realloc**.
+
+*サイズ*引数は、ブロックの新しいサイズをバイトで示します。 新旧のサイズのうち、小さい方のブロックの内容は変更されませんが、新しいブロックの場所は異なる場合があります。 新しいブロックできるので、新しいメモリの場所に、によって返されるポインター **realloc**を通じて渡されるポインターであるとは限りません、 *_expand*引数。 **realloc**は 0 ではありません、新しく割り当てられたメモリ バッファーが拡張の場合。
+
+**realloc**設定**errno**に**ENOMEM**メモリの割り当てが失敗するか、要求されたメモリ量を超えています **_HEAP_MAXREQ**です。 その他のエラー コードの詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。
+
+**realloc**呼び出し**malloc** 、C++ を使用するために[_set_new_mode](set-new-mode.md)新しいハンドラー モードを設定します。 新しいハンドラー モードを示すかどうか、失敗した場合、 **malloc**によって設定された新しいハンドラー ルーチンを呼び出すには、 [_set_new_handler](set-new-handler.md)です。 既定では、 **malloc**メモリの割り当てに失敗した場合に新しいハンドラー ルーチンを呼び出しません。 この既定の動作をオーバーライドすることができるようにときに、 **realloc** 、メモリの割り当てに失敗する**malloc**に同じ新しいハンドラー ルーチンを呼び出す方法、**新しい**演算子が同じ理由で失敗します。 既定の動作をオーバーライドするには、次の関数を呼び出します。
+
+```C
+_set_new_mode(1);
+```
+
+この呼び出しはプログラムの最初の方で指定するか、NEWMODE.OBJ にリンクします (「[リンク オプション](../../c-runtime-library/link-options.md)」を参照してください)。
+
+C ランタイム ライブラリのデバッグ バージョンとリンクするアプリケーション**realloc**に解決される[_realloc_dbg](realloc-dbg.md)です。 デバッグ プロセス中のヒープの管理方法の詳細については、「[CRT デバッグ ヒープ](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。
+
+**realloc**がマークされている`__declspec(noalias)`と`__declspec(restrict)`関数が、グローバル変数を変更することが保証され、返されるポインターがエイリアス化されないことを意味します。 詳細については、「[noalias](../../cpp/noalias.md)」、および「[restrict](../../cpp/restrict.md)」を参照してください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**realloc**|\<stdlib.h> と \<malloc.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_realloc.c
+// This program allocates a block of memory for
+// buffer and then uses _msize to display the size of that
+// block. Next, it uses realloc to expand the amount of
+// memory used by buffer and then calls _msize again to
+// display the new amount of memory allocated to buffer.
+
+#include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
+
+int main( void )
+{
+   long *buffer, *oldbuffer;
+   size_t size;
+
+   if( (buffer = (long *)malloc( 1000 * sizeof( long ) )) == NULL )
+      exit( 1 );
+
+   size = _msize( buffer );
+   printf_s( "Size of block after malloc of 1000 longs: %u\n", size );
+
+   // Reallocate and show new size:
+   oldbuffer = buffer;     // save pointer in case realloc fails
+   if( (buffer = realloc( buffer, size + (1000 * sizeof( long )) ))
+        ==  NULL )
+   {
+      free( oldbuffer );  // free original block
+      exit( 1 );
+   }
+   size = _msize( buffer );
+   printf_s( "Size of block after realloc of 1000 more longs: %u\n",
+            size );
+
+   free( buffer );
+   exit( 0 );
+}
+```
+
+```Output
+Size of block after malloc of 1000 longs: 4000
+Size of block after realloc of 1000 more longs: 8000
+```
+
+## <a name="see-also"></a>関連項目
+
+[メモリ割り当て](../../c-runtime-library/memory-allocation.md)<br/>
+[calloc](calloc.md)<br/>
+[free](free.md)<br/>
+[malloc](malloc.md)<br/>

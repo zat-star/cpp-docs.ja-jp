@@ -1,13 +1,13 @@
 ---
-title: "ccos、ccosf、ccosl | Microsoft Docs"
-ms.custom: 
+title: ccos、ccosf、ccosl | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - ccos
@@ -40,70 +40,75 @@ helpviewer_keywords:
 - ccosf function
 - ccosl function
 ms.assetid: 4ab936ac-ff85-49ac-9418-2b69cf5d4696
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0be2f564c3a190c0d056a975e3350eae4c1a8be3
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 4124cd72ac876fc3a4c44f975d3b949cb05458d9
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="ccos-ccosf-ccosl"></a>ccos、ccosf、ccosl
-複素数のコサインを返します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-_Dcomplex ccos(   
-   _Dcomplex z   
-);  
-_Fcomplex ccos(   
-   _Fcomplex z   
-);  // C++ only  
-_Lcomplex ccos(   
-   _Lcomplex z   
-);  // C++ only  
-_Fcomplex ccosf(   
-   _Fcomplex z   
-);  
-_Lcomplex ccosl(   
-   _Lcomplex z   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `z`  
- 角度をラジアンで表す複素数。  
-  
-## <a name="return-value"></a>戻り値  
- ラジアンで表した、`z` のコサイン。  
-  
-## <a name="remarks"></a>コメント  
- C++ ではオーバーロードが可能であるため、`ccos` および `_Fcomplex` の値を受け取って返す `_Lcomplex` のオーバーロードを呼び出すことができます。 C プログラムでは、 `ccos` は常に `_Dcomplex` 値を受け取って返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|C ヘッダー|C++ ヘッダー|  
-|-------------|--------------|------------------|  
-|`ccos`、               `ccosf`、`ccosl`|\<complex.h>|\<ccomplex>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
- [catanh、catanhf、catanhl](../../c-runtime-library/reference/catanh-catanhf-catanhl.md)   
- [ctanh、ctanhf、ctanhl](../../c-runtime-library/reference/ctanh-ctanhf-ctanhl.md)   
- [catan、catanf、catanl](../../c-runtime-library/reference/catan-catanf-catanl.md)   
- [csinh、csinhf、csinhl](../../c-runtime-library/reference/csinh-csinhf-csinhl.md)   
- [casinh、casinhf、casinhl](../../c-runtime-library/reference/casinh-casinhf-casinhl.md)   
- [ccosh、ccoshf、ccoshl](../../c-runtime-library/reference/ccosh-ccoshf-ccoshl.md)   
- [cacosh、cacoshf、cacoshl](../../c-runtime-library/reference/cacosh-cacoshf-cacoshl.md)   
- [cacos、cacosf、cacosl](../../c-runtime-library/reference/cacos-cacosf-cacosl.md)   
- [ctan、ctanf、ctanl](../../c-runtime-library/reference/ctan-ctanf-ctanl.md)   
- [csin、csinf、csinl](../../c-runtime-library/reference/csin-csinf-csinl.md)   
- [casin、casinf、casinl](../../c-runtime-library/reference/casin-casinf-casinl.md)   
- [csqrt、csqrtf、csqrtl](../../c-runtime-library/reference/csqrt-csqrtf-csqrtl.md)
+
+複素数のコサインを返します。
+
+## <a name="syntax"></a>構文
+
+```C
+_Dcomplex ccos(
+   _Dcomplex z
+);
+_Fcomplex ccos(
+   _Fcomplex z
+);  // C++ only
+_Lcomplex ccos(
+   _Lcomplex z
+);  // C++ only
+_Fcomplex ccosf(
+   _Fcomplex z
+);
+_Lcomplex ccosl(
+   _Lcomplex z
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*z*<br/>
+角度をラジアンで表す複素数。
+
+## <a name="return-value"></a>戻り値
+
+コサイン*z*、(ラジアン単位)。
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**ccos**を受け取り、返します **_Fcomplex**と **_Lcomplex**値。 C プログラムでは、 **ccos**常に受け取りを返す、 **_Dcomplex**値。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|C ヘッダー|C++ ヘッダー|
+|-------------|--------------|------------------|
+|**ccos**、 **ccosf**、 **ccosl**|\<complex.h>|\<ccomplex>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[関数リファレンス (アルファベット順)](crt-alphabetical-function-reference.md)<br/>
+[catanh、catanhf、catanhl](catanh-catanhf-catanhl.md)<br/>
+[ctanh、ctanhf、ctanhl](ctanh-ctanhf-ctanhl.md)<br/>
+[catan、catanf、catanl](catan-catanf-catanl.md)<br/>
+[csinh、csinhf、csinhl](csinh-csinhf-csinhl.md)<br/>
+[casinh、casinhf、casinhl](casinh-casinhf-casinhl.md)<br/>
+[ccosh、ccoshf、ccoshl](ccosh-ccoshf-ccoshl.md)<br/>
+[cacosh、cacoshf、cacoshl](cacosh-cacoshf-cacoshl.md)<br/>
+[cacos、cacosf、cacosl](cacos-cacosf-cacosl.md)<br/>
+[ctan、ctanf、ctanl](ctan-ctanf-ctanl.md)<br/>
+[csin、csinf、csinl](csin-csinf-csinl.md)<br/>
+[casin、casinf、casinl](casin-casinf-casinl.md)<br/>
+[csqrt、csqrtf、csqrtl](csqrt-csqrtf-csqrtl.md)<br/>

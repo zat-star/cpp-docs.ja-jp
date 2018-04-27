@@ -1,12 +1,12 @@
 ---
 title: _ecvt | Microsoft Docs
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _ecvt
@@ -33,101 +33,106 @@ helpviewer_keywords:
 - converting double numbers
 - ecvt function
 ms.assetid: a916eb05-92d1-4b5c-8563-093acdb49dc8
-caps.latest.revision: 
+caps.latest.revision: 21
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ee37eb3623f27f4fb6883b2d16fc4c21c2a960c1
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 8383abd1b45d1e13e4e42a334baa7f08c4bf10f2
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="ecvt"></a>_ecvt
-`double` の値を文字列に変換します。 この関数のセキュリティが強化されたバージョンについては、「[_ecvt_s](../../c-runtime-library/reference/ecvt-s.md)」をご覧ください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *_ecvt(   
-   double value,  
-   int count,  
-   int *dec,  
-   int *sign   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `value`  
- 変換される数値。  
-  
- `count`  
- 格納する桁数。  
-  
- `dec`  
- 格納された小数点位置。  
-  
- `sign`  
- 変換後の数値の符号。  
-  
-## <a name="return-value"></a>戻り値  
- `_ecvt` は数字の文字列へのポインターを返します。エラーが発生した場合は NULL です。  
-  
-## <a name="remarks"></a>コメント  
- `_ecvt` 関数は、浮動小数点数の値を文字列に変換します。 `value` パラメーターは変換する浮動小数点数です。 この関数は、`value` の最大 `count` 桁を文字列として格納し、null 文字 ("\0") を追加します。 `value` の桁数が `count` を超える場合、下位の桁は丸められます。 `count` 桁より少ない場合は、文字列が 0 で埋められます。  
-  
- `_ecvt` によって返される桁の総数は、`_CVTBUFSIZE` 以下である必要があります。  
-  
- 文字列には数字だけが格納されます。 `value` の小数点位置と符号は、呼び出しの後で `dec` と `sign` から取得できます。 `dec` パラメーターは、文字列の先頭に対する小数点位置を示す整数値をポイントします。 0 または負の整数値は、最初の桁の左側に小数点があることを示します。 `sign` パラメーターは、変換後の数値の符号を示す整数をポイントします。 整数値が 0 の場合、数値は正の値です。 それ以外の場合、数値は負の値です。  
-  
- `_ecvt` と `_fcvt` の違いは、`count` パラメーターの解釈です。 `_ecvt` が `count` を出力文字列全体の桁数として解釈するのに対し、`_fcvt` は `count` を小数点より後の桁数と解釈します。  
-  
- `_ecvt` と `_fcvt` は、静的に割り当てられた共通のバッファーを使って変換を行います。 これらのルーチンを呼び出すたびに、前の呼び出しの結果は破棄されます。  
-  
- この関数は、パラメーターを検証します。 `dec` または `sign` が NULL の場合、または `count` が 0 の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` が `EINVAL` に設定され、NULL が返されます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`_ecvt`|\<stdlib.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_ecvt.c  
-// compile with: /W3  
-// This program uses _ecvt to convert a  
-// floating-point number to a character string.  
-  
-#include <stdlib.h>  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   int     decimal,   sign;  
-   char    *buffer;  
-   int     precision = 10;  
-   double  source = 3.1415926535;  
-  
-   buffer = _ecvt( source, precision, &decimal, &sign ); // C4996  
-   // Note: _ecvt is deprecated; consider using _ecvt_s instead  
-   printf( "source: %2.10f   buffer: '%s'  decimal: %d  sign: %d\n",  
-           source, buffer, decimal, sign );  
-}  
-```  
-  
-```Output  
-source: 3.1415926535   buffer: '3141592654'  decimal: 1  sign: 0  
-```  
-  
-## <a name="see-also"></a>参照  
- [データ変換](../../c-runtime-library/data-conversion.md)   
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [atof、_atof_l、_wtof、_wtof_l](../../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)   
- [_fcvt](../../c-runtime-library/reference/fcvt.md)   
- [_gcvt](../../c-runtime-library/reference/gcvt.md)
+
+変換、**二重**数値を文字列にします。 この関数のセキュリティが強化されたバージョンについては、「[_ecvt_s](ecvt-s.md)」をご覧ください。
+
+## <a name="syntax"></a>構文
+
+```C
+char *_ecvt(
+   double value,
+   int count,
+   int *dec,
+   int *sign
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*値*<br/>
+変換される数値。
+
+*count*<br/>
+格納する桁数。
+
+*dec*<br/>
+格納された小数点位置。
+
+*sign*<br/>
+変換後の数値の符号。
+
+## <a name="return-value"></a>戻り値
+
+**_ecvt**桁の文字列へのポインターを返しますエラーが発生した場合は NULL です。
+
+## <a name="remarks"></a>コメント
+
+**_Ecvt**関数が文字の文字列に浮動小数点数値を変換します。 *値*パラメーターは変換する浮動小数点数。 この関数は最大格納*カウント*の桁*値*を文字列として null 文字 ('\0') を追加するとします。 場合の桁数*値*を超えています*カウント*下位の桁は丸められます。 も少ない場合*カウント*数字、文字列はゼロで埋められます。
+
+によって返される総桁数 **_ecvt**を超えない **_CVTBUFSIZE**です。
+
+文字列には数字だけが格納されます。 小数点の記号の位置*値*から取得できます*dec*と*記号*呼び出しの後です。 *Dec*パラメーターは、文字列の先頭に対する、小数点の位置を示す整数値を指します。 0 または負の整数値は、最初の桁の左側に小数点があることを示します。 *記号*パラメーターを変換後の数値の符号を示す整数をポイントします。 整数値が 0 の場合、数値は正の値です。 それ以外の場合、数値は負の値です。
+
+違い **_ecvt**と **_fcvt**の解釈時に、*カウント*パラメーター。 **_ecvt**解釈*カウント*として出力文字列に数字の合計数が **_fcvt**解釈*カウント*後に数字の数として、10 進数のポイント。
+
+**_ecvt**と **_fcvt**変換に 1 つの静的に割り当てられたバッファーを使用します。 これらのルーチンを呼び出すたびに、前の呼び出しの結果は破棄されます。
+
+この関数は、パラメーターを検証します。 場合*dec*または*記号*が NULL の場合、または*カウント*が 0 の無効なパラメーター ハンドラーが呼び出されます」の説明に従って場合、[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 続けるには、実行が許可された場合**errno**に設定されている**EINVAL**と NULL が返されます。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|
+|--------------|---------------------|
+|**_ecvt**|\<stdlib.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_ecvt.c
+// compile with: /W3
+// This program uses _ecvt to convert a
+// floating-point number to a character string.
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main( void )
+{
+   int     decimal,   sign;
+   char    *buffer;
+   int     precision = 10;
+   double  source = 3.1415926535;
+
+   buffer = _ecvt( source, precision, &decimal, &sign ); // C4996
+   // Note: _ecvt is deprecated; consider using _ecvt_s instead
+   printf( "source: %2.10f   buffer: '%s'  decimal: %d  sign: %d\n",
+           source, buffer, decimal, sign );
+}
+```
+
+```Output
+source: 3.1415926535   buffer: '3141592654'  decimal: 1  sign: 0
+```
+
+## <a name="see-also"></a>関連項目
+
+[データ変換](../../c-runtime-library/data-conversion.md)<br/>
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[atof、_atof_l、_wtof、_wtof_l](atof-atof-l-wtof-wtof-l.md)<br/>
+[_fcvt](fcvt.md)<br/>
+[_gcvt](gcvt.md)<br/>

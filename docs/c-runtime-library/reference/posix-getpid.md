@@ -1,12 +1,12 @@
 ---
 title: getpid | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - getpid
@@ -29,20 +29,21 @@ dev_langs:
 helpviewer_keywords:
 - getpid function
 ms.assetid: 4eaabab4-362b-429f-854e-ae4941919824
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 58bc77ca517aa001455288890a0cae68699e8fe7
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: a74f0f1347ba3735250a80f117731ee9ae131b68
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="getpid"></a>getpid
-この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_getpid](../../c-runtime-library/reference/getpid.md) を使用してください。  
-  
+
+この POSIX 関数は非推奨とされます。 代わりに、ISO C++ に準拠する [_getpid](getpid.md) を使用してください。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。

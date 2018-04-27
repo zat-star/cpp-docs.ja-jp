@@ -1,12 +1,12 @@
 ---
-title: "nan、nanf、nanl | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: nan、nanf、nanl | Microsoft Docs
+ms.custom: ''
+ms.date: 94/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - nanf
@@ -36,53 +36,52 @@ helpviewer_keywords:
 - nanf function
 - nanl function
 ms.assetid: 790e9158-80ab-43e0-8f5a-096198553fd9
-caps.latest.revision: 
+caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8c3ba2620b43199788cfbcc237bc09a2cd112035
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: e2fa378cdded71f0f99ad0fbe152d1282c9e6fe4
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="nan-nanf-nanl"></a>nan、nanf、nanl
-簡易な NaN 値を返します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double nan(  
-   const char* input   
-);  
-float nanf(  
-   const char* input   
-);  
-long double nanl(  
-   const char* input   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `input`  
- 文字列値。  
-  
-## <a name="return-value"></a>戻り値  
- `nan` 関数は、簡易な NaN 値を返します。  
-  
-## <a name="remarks"></a>コメント  
- `nan` 関数は、簡易な (非シグナル) NaN に対応する浮動小数点値を返します。 `input` の値は無視されます。 出力で NaN が表現される方法の詳細については、「[printf、_printf_l、wprintf、_wprintf_l](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)」をご覧ください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|C ヘッダー|C++ ヘッダー|  
-|--------------|--------------|------------------|  
-|`nan`、`nanf`、`nanl`|\<math.h>|\<cmath>|  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [_finite、_finitef](../../c-runtime-library/reference/finite-finitef.md)   
- [_fpclass、_fpclassf](../../c-runtime-library/reference/fpclass-fpclassf.md)   
- [isnan、_isnan、_isnanf](../../c-runtime-library/reference/isnan-isnan-isnanf.md)
+
+簡易な NaN 値を返します。
+
+## <a name="syntax"></a>構文
+
+```C
+double nan( const char* input );
+float nanf( const char* input );
+long double nanl( const char* input );
+```
+
+### <a name="parameters"></a>パラメーター
+
+*input*<br/>
+文字列値。
+
+## <a name="return-value"></a>戻り値
+
+**Nan**関数は、簡易な NaN 値を返します。
+
+## <a name="remarks"></a>コメント
+
+**Nan**静かな (非シグナル) NaN に対応する浮動小数点値を返します。 *入力*値は無視されます。 出力で NaN が表現される方法の詳細については、「[printf、_printf_l、wprintf、_wprintf_l](printf-printf-l-wprintf-wprintf-l.md)」をご覧ください。
+
+## <a name="requirements"></a>要件
+
+|関数|C ヘッダー|C++ ヘッダー|
+|--------------|--------------|------------------|
+|**nan**、 **nanf**、 **nanl**|\<math.h>|\<cmath> または \<math.h>|
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[_finite、_finitef](finite-finitef.md)<br/>
+[_fpclass、_fpclassf](fpclass-fpclassf.md)<br/>
+[isnan、_isnan、_isnanf](isnan-isnan-isnanf.md)<br/>

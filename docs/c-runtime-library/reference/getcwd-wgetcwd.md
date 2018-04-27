@@ -1,12 +1,12 @@
 ---
-title: "_getcwd、_wgetcwd | Microsoft Docs"
-ms.custom: 
+title: _getcwd、_wgetcwd | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _wgetcwd
@@ -42,105 +42,110 @@ helpviewer_keywords:
 - wgetcwd function
 - directories [C++], current working
 ms.assetid: 888dc8c6-5595-4071-be55-816b38e3e739
-caps.latest.revision: 
+caps.latest.revision: 24
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 91e660f548fdb8814e521f9c63c58e1b965949d4
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: a7399c393199b59baf05f0ef4fd947cef60daf0c
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="getcwd-wgetcwd"></a>_getcwd、_wgetcwd
-現在の作業ディレクトリを取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *_getcwd(   
-   char *buffer,  
-   int maxlen   
-);  
-wchar_t *_wgetcwd(   
-   wchar_t *buffer,  
-   int maxlen   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `buffer`  
- パスの格納場所。  
-  
- `maxlen`  
- 文字数でのパスの最大長。 `char` の場合は `_getcwd` 、および `wchar_t` の場合は `_wgetcwd`。  
-  
-## <a name="return-value"></a>戻り値  
- `buffer`へのポインターを返します。 `NULL` 戻り値はエラーを示し、 `errno` は、 `ENOMEM`に設定され、 `maxlen` バイトを割り当てるのにメモリが不足している ( `NULL` の引数が `buffer`として指定されている場合) ことを示すか、または `ERANGE`に設定され、パスが `maxlen` 文字より長いことを示します。 `maxlen` が 0 以下の場合、この関数は、「[Parameter Validation](../../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように無効なパラメーター ハンドラーを呼び出します。  
-  
- リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
-  
-## <a name="remarks"></a>コメント  
- `_getcwd` 関数は、既定のドライブの現在の作業ディレクトリの完全なパスを取得し、それを `buffer`に格納します。 整数の引数 `maxlen` はパスの最大長を指定します。 パスの長さ (終端の null 文字を含む) が `maxlen`。 を超える場合、エラーが発生します。 `buffer` 引数は `NULL`になる可能性があります。パスを格納するため、 `maxlen` サイズ以上のバッファー (必要であればそれ以上) が `malloc`を使用して自動的に割り当てられます。 このバッファーは `free` を呼び出し、それに `_getcwd` の戻り値 (割り当てられるバッファーへのポインター) を渡すことにより、後で解放できます。  
-  
- `_getcwd` は、現在の作業ディレクトリのパスを示す文字列を返します。 現在の作業ディレクトリがルートの場合、文字列は円記号 ( `\` ) で終わります。 現在の作業ディレクトリがルート以外のディレクトリの場合、文字列は、円記号ではなく、ディレクトリの名前で終わります。  
-  
- ワイド文字を扱う場合は、`_wgetcwd` ではなく `_getcwd`を使用します。 `buffer` の場合、 `_wgetcwd` 引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 それ以外では、`_wgetcwd` と `_getcwd` の動作は同じです。  
-  
- `_DEBUG` と `_CRTDBG_MAP_ALLOC` が定義されている場合、 `_getcwd` と `_wgetcwd` への呼び出しは `_getcwd_dbg` と `_wgetcwd_dbg` への呼び出しに置き換えられるので、メモリ割り当てをデバッグできます。 詳細については、「 [_getcwd_dbg, _wgetcwd_dbg](../../c-runtime-library/reference/getcwd-dbg-wgetcwd-dbg.md)」を参照してください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_tgetcwd`|`_getcwd`|`_getcwd`|`_wgetcwd`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_getcwd`|\<direct.h>|  
-|`_wgetcwd`|\<direct.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_getcwd.c  
-// This program places the name of the current directory in the   
-// buffer array, then displays the name of the current directory   
-// on the screen. Passing NULL as the buffer forces getcwd to allocate  
-// memory for the path, which allows the code to support file paths  
-// longer than _MAX_PATH, which are supported by NTFS.  
-  
-#include <direct.h>  
-#include <stdlib.h>  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   char* buffer;  
-  
-   // Get the current working directory:   
-   if( (buffer = _getcwd( NULL, 0 )) == NULL )  
-      perror( "_getcwd error" );  
-   else  
-   {  
-      printf( "%s \nLength: %d\n", buffer, strnlen(buffer) );  
-      free(buffer);  
-   }  
-}  
-```  
-  
-```Output  
-C:\Code  
-```  
-  
-## <a name="see-also"></a>参照  
- [ディレクトリ制御](../../c-runtime-library/directory-control.md)   
- [_chdir、_wchdir](../../c-runtime-library/reference/chdir-wchdir.md)   
- [_mkdir、_wmkdir](../../c-runtime-library/reference/mkdir-wmkdir.md)   
- [_rmdir、_wrmdir](../../c-runtime-library/reference/rmdir-wrmdir.md)
+
+現在の作業ディレクトリを取得します。
+
+## <a name="syntax"></a>構文
+
+```C
+char *_getcwd(
+   char *buffer,
+   int maxlen
+);
+wchar_t *_wgetcwd(
+   wchar_t *buffer,
+   int maxlen
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*バッファー*<br/>
+パスの格納場所。
+
+*maxlen*<br/>
+文字数でパスの最大長: **char**の **_getcwd**と**wchar_t**の **_wgetcwd**です。
+
+## <a name="return-value"></a>戻り値
+
+ポインターを返します*バッファー*です。 A **NULL** 、エラーを返すと**errno**に設定されているいずれかの**ENOMEM**に割り当てる十分なメモリがあることを示す*maxlen*バイト数 (ときに、 **NULL**として引数が指定されている*バッファー*)、または**ERANGE**、パスがより長いことを示す*maxlen*文字です。 場合*maxlen*以下が 0 の場合にこの関数によって呼び出されます、無効なパラメーター ハンドラーを」の説明に従って[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。
+
+リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。
+
+## <a name="remarks"></a>コメント
+
+**_Getcwd**関数は、既定のドライブの現在の作業ディレクトリの完全パスを取得しに格納*バッファー*です。 整数の引数*maxlen*パスの最大長を指定します。 パス (終端の null 文字を含む) の長さを超えた場合にエラーが発生した*maxlen*です。 *バッファー*引数を指定できます**NULL**以外の場合は、少なくともサイズのバッファー *maxlen* (必要な場合にのみ以上) が自動的に割り当てられたを使用して**malloc**、パスを格納します。 このバッファーは、呼び出すことによって後で解放できます**空き**を渡すこと、 **_getcwd**値 (割り当てられたバッファーへのポインター) を返します。
+
+**_getcwd**を現在の作業ディレクトリのパスを表す文字列を返します。 現在の作業ディレクトリがルートの場合、文字列が、円記号で終わる ( **\\** )。 現在の作業ディレクトリがルート以外のディレクトリの場合、文字列は、円記号ではなく、ディレクトリの名前で終わります。
+
+**_wgetcwd**のワイド文字バージョンは、 **_getcwd**;*バッファー*引数と戻り値の **_wgetcwd**ワイド文字列です。 **_wgetcwd**と **_getcwd**それ以外の場合の動作は同じです。
+
+ときに **_DEBUG**と **_CRTDBG_MAP_ALLOC**への呼び出しで定義されている **_getcwd**と **_wgetcwd**への呼び出しによって置き換えられます **_getcwd_dbg**と **_wgetcwd_dbg**メモリ割り当てをデバッグできるようにします。 詳細については、「[_getcwd_dbg、_wgetcwd_dbg](getcwd-dbg-wgetcwd-dbg.md)」をご覧ください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_tgetcwd**|**_getcwd**|**_getcwd**|**_wgetcwd**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_getcwd**|\<direct.h>|
+|**_wgetcwd**|\<direct.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_getcwd.c
+// This program places the name of the current directory in the
+// buffer array, then displays the name of the current directory
+// on the screen. Passing NULL as the buffer forces getcwd to allocate
+// memory for the path, which allows the code to support file paths
+// longer than _MAX_PATH, which are supported by NTFS.
+
+#include <direct.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+int main( void )
+{
+   char* buffer;
+
+   // Get the current working directory:
+   if( (buffer = _getcwd( NULL, 0 )) == NULL )
+      perror( "_getcwd error" );
+   else
+   {
+      printf( "%s \nLength: %d\n", buffer, strnlen(buffer) );
+      free(buffer);
+   }
+}
+```
+
+```Output
+C:\Code
+```
+
+## <a name="see-also"></a>関連項目
+
+[ディレクトリ制御](../../c-runtime-library/directory-control.md)<br/>
+[_chdir、_wchdir](chdir-wchdir.md)<br/>
+[_mkdir、_wmkdir](mkdir-wmkdir.md)<br/>
+[_rmdir、_wrmdir](rmdir-wrmdir.md)<br/>

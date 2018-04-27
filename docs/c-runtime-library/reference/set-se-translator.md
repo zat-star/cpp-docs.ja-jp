@@ -1,12 +1,12 @@
 ---
 title: _set_se_translator | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 02/21/2018
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _set_se_translator
@@ -32,17 +32,17 @@ helpviewer_keywords:
 - exception handling, changing
 - _set_se_translator function
 ms.assetid: 280842bc-d72a-468b-a565-2d3db893ae0f
-caps.latest.revision: 
+caps.latest.revision: 21
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5b5eec59acfe65189368a9b0555c3065b7159aae
-ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
+ms.openlocfilehash: cec991656546b4985dc34938382c406cea596253
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="setsetranslator"></a>_set_se_translator
 
@@ -58,40 +58,40 @@ _se_translator_function _set_se_translator(
 
 ### <a name="parameters"></a>パラメーター
 
-*seTransFunction*  
+*seTransFunction*<br/>
 ユーザーが作成した C 構造化例外の変換関数へのポインター。
 
 ## <a name="return-value"></a>戻り値
 
-`_set_se_translator` によって登録された前の変換関数へのポインターを返し、前の関数を後で復元できるようにします。 Previous 関数が設定されていない場合、戻り値を使用して、既定の動作を復元することができます。この値は、 **nullptr**です。
+によって登録されている以前の変換関数へのポインターを返します **_set_se_translator**、前の関数を後で復元できるようにします。 Previous 関数が設定されていない場合、戻り値を使用して、既定の動作を復元することができます。この値は、 **nullptr**です。
 
 ## <a name="remarks"></a>コメント
 
-`_set_se_translator` 関数は、Win32 例外 (C 構造化例外) を C++ 型指定例外として処理する方法を提供します。 それぞれの C 例外が C++ `catch` ハンドラーによって処理されるようにするには、まず、特定のクラスの種類を C 例外に起因すると見なすために利用したり派生させたりできる、C 例外のラッパー クラスを定義します。 このクラスを使用するには、C 例外が発生するたびに内部例外処理メカニズムによって呼び出されるカスタム C 例外変換関数をインストールします。 変換関数内では、一致する C++ `catch` ハンドラーでキャッチできる任意の型例外をスローすることができます。
+**_Set_se_translator**関数として C++ Win32 例外 (C 構造化例外) を処理する方法を提供する例外を入力します。 C++ で処理するそれぞれの C 例外を許可する**キャッチ**ハンドラー、まず使用、または C の例外への特定のクラス型の属性から派生できる C 例外のラッパー クラスを定義します。 このクラスを使用するには、C 例外が発生するたびに内部例外処理メカニズムによって呼び出されるカスタム C 例外変換関数をインストールします。 照合 C によってキャッチできる型の例外をスローする、トランスレーター関数内で**キャッチ**ハンドラー。
 
-`_set_se_translator` を使用するときには、[/EHa](../../build/reference/eh-exception-handling-model.md) を使用する必要があります。
+使用する必要があります[/EHa](../../build/reference/eh-exception-handling-model.md)を使用する場合 **_set_se_translator**です。
 
-カスタム変換関数を指定するには、呼び出す`_set_se_translator`変換関数の名前、引数として使用します。 作成した変換関数は、`try` ブロックを持つスタックの関数呼び出しごとに 1 回呼び出されます。 既定の変換関数はありません。
+カスタム変換関数を指定するには、呼び出す **_set_se_translator**変換関数の名前、引数として使用します。 記述する変換関数を持つスタックの関数呼び出しごとに 1 回呼び出されます**再試行**ブロックします。 既定の変換関数はありません。
 
 変換関数は、C++ 型の例外をスローする以外のことは何もすべきではありません。 スローに加えて何かを行う場合 (たとえば、ログ ファイルへの書き込みなど)、プログラムが期待どおりに動作しない可能性があります。それは、変換関数が呼び出される回数がプラットフォームに依存するためです。
 
-マルチスレッド環境では、変換関数は各スレッドとは別に管理されます。 新しい各スレッドは、それぞれの変換関数をインストールする必要があります。 したがって、各スレッドが、それぞれの変換処理を担当します。 `_set_se_translator` は 1 つのスレッドに対して固有であり、他の DLL は別の変換関数をインストールできます。
+マルチスレッド環境では、変換関数は各スレッドとは別に管理されます。 新しい各スレッドは、それぞれの変換関数をインストールする必要があります。 したがって、各スレッドが、それぞれの変換処理を担当します。 **_set_se_translator**は 1 つのスレッドに固有の別の DLL が別の変換関数をインストールできます。
 
-*SeTransFunction*を記述する関数は、(/clr でコンパイルされません)、ネイティブ コンパイルされた関数をする必要があります。 それは引数として、符号なし整数と、Win32 `_EXCEPTION_POINTERS` 構造体へのポインターを取る必要があります。 引数はそれぞれ、Win32 API の `GetExceptionCode` 関数と `GetExceptionInformation` 関数の呼び出しの戻り値です。
+*SeTransFunction*を記述する関数は、(/clr でコンパイルされません)、ネイティブ コンパイルされた関数をする必要があります。 Win32 する、符号なし整数およびポインターもする必要がありますかかる **_EXCEPTION_POINTERS**引数として構造体。 引数は、Win32 API への呼び出しの戻り値**GetExceptionCode**と**GetExceptionInformation**関数、それぞれします。
 
 ```cpp
 typedef void (__cdecl *_se_translator_function)(unsigned int, struct _EXCEPTION_POINTERS* );
 ```
 
-`_set_se_translator` の場合、CRT に動的にリンクするときに影響があります。プロセス内の別の DLL は `_set_se_translator` を呼び出す可能性があり、ハンドラーを独自のものに置換します。
+**_Set_se_translator**、CRT に動的にリンクするときに影響がある。 プロセス内の DLL を呼び出す可能性があります別 **_set_se_translator** 、ハンドラーを独自に置き換えます。
 
-`_set_se_translator` をマネージ コード (/clr でコンパイルされたコード) から使用する場合や、ネイティブ コードとマネージ コードが混在している状態で使用する場合、変換プログラムはネイティブ コードで生成される例外のみに影響することにご注意ください。 マネージ コードで生成されるマネージ例外 (`System::Exception` の発生時のものなど) はいずれも、変換関数経由ではルーティングされません。 Win32 関数 `RaiseException` を使用してマネージ コードで発生した例外や、ゼロ除算例外などのシステム例外が原因の例外は、変換プログラム経由でルーティングされます。
+使用する場合 **_set_se_translator**からマネージ コード (/clr と共にコンパイルされたコード) またはネイティブおよびマネージ コード、トランスレーターがネイティブ コードのみで生成される例外を決まることに注意します。 マネージ コードで生成されるマネージ例外 (`System::Exception` の発生時のものなど) はいずれも、変換関数経由ではルーティングされません。 Win32 関数を使用してマネージ コードで発生した例外**RaiseException**または変換プログラム経由でルーティングは、0 除算例外などのシステム例外によって発生します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-|ルーチンによって返される値|必須ヘッダー|
+|ルーチン|必須ヘッダー|
 |-------------|---------------------|
-|`_set_se_translator`|\<eh.h>|
+|**_set_se_translator**|\<eh.h>|
 
 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
 
@@ -137,7 +137,7 @@ void trans_func(unsigned int u, EXCEPTION_POINTERS*)
 
 int main()
 {
-    auto original = _set_se_translator(trans_func); 
+    auto original = _set_se_translator(trans_func);
     try
     {
         SEFunc();
@@ -158,7 +158,7 @@ Caught a __try exception, error c0000094.
 
 ## <a name="example"></a>例
 
-`_set_se_translator` によって提供される機能がマネージ コードでは使用できなくても、このマッピングをネイティブ コードで使用することは可能です。そのネイティブ コードが `/clr` スイッチのもとでコンパイルされている場合でも、ネイティブ コードで `#pragma unmanaged` を使用していることが示されている限り、それは可能です。 生成し、例外を処理するコードをマークする必要がありますマップするのには、マネージ コードでは、構造化例外がスローされた場合はされている、`#pragma unmanaged`です。 次のコードは考えられる使用法を示しています。 詳細については、「[プラグマ ディレクティブと __Pragma キーワード](../../preprocessor/pragma-directives-and-the-pragma-keyword.md)」を参照してください。
+によって提供される機能が **_set_se_translator**はマネージ コードでは使用できない、行うことが場合でも、ネイティブ コードは コンパイル時に、ネイティブ コードでこのマッピングを使用して、 **/clr**切り替えるを使用して、ネイティブ コードに示されている限り、`#pragma unmanaged`です。 生成し、例外を処理するコードをマークする必要がありますマップするのには、マネージ コードでは、構造化例外がスローされた場合はされている、`#pragma unmanaged`です。 次のコードは考えられる使用法を示しています。 詳細については、「[プラグマ ディレクティブと __Pragma キーワード](../../preprocessor/pragma-directives-and-the-pragma-keyword.md)」を参照してください。
 
 ```cpp
 // crt_set_se_translator_clr.cpp
@@ -220,8 +220,8 @@ Caught CMyException, error c0000094
 
 ## <a name="see-also"></a>関連項目
 
-[例外処理ルーチン](../../c-runtime-library/exception-handling-routines.md)  
-[set_terminate](../../c-runtime-library/reference/set-terminate-crt.md)  
-[set_unexpected](../../c-runtime-library/reference/set-unexpected-crt.md)  
-[terminate](../../c-runtime-library/reference/terminate-crt.md)  
-[unexpected](../../c-runtime-library/reference/unexpected-crt.md)  
+[例外処理ルーチン](../../c-runtime-library/exception-handling-routines.md)<br/>
+[set_terminate](set-terminate-crt.md)<br/>
+[set_unexpected](set-unexpected-crt.md)<br/>
+[terminate](terminate-crt.md)<br/>
+[unexpected](unexpected-crt.md)<br/>

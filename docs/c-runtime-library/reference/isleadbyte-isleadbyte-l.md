@@ -1,12 +1,12 @@
 ---
-title: "isleadbyte、_isleadbyte_l | Microsoft Docs"
-ms.custom: 
+title: isleadbyte、_isleadbyte_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _isleadbyte_l
@@ -37,65 +37,66 @@ helpviewer_keywords:
 - istleadbyte function
 - isleadbyte function
 ms.assetid: 3b2bcf09-d82b-4803-9e80-59d04942802a
-caps.latest.revision: 
+caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 82c8f6eb81e96527c0955d9b19fd8ce931e8d7fe
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: dacf22d33f166527e7c464e0632366d2e39315f8
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="isleadbyte-isleadbytel"></a>isleadbyte、_isleadbyte_l
-文字がマルチバイト文字の先行バイトかどうかを判定します。  
-  
+
+文字がマルチバイト文字の先行バイトかどうかを判定します。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int isleadbyte(  
-   int c   
-);  
-int _isleadbyte_l(  
-   int c   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- テストする整数。  
-  
-## <a name="return-value"></a>戻り値  
- `isleadbyte` では、引数がテスト条件を満たす場合に 0 以外の値が返され、テスト条件を満たさない場合に 0 が返されます。 "C" ロケールと 1 バイト文字セット (SBCS) のロケールでは、 `isleadbyte` は常に 0 を返します。  
-  
-## <a name="remarks"></a>コメント  
- `isleadbyte` のマクロは、引数がマルチバイト文字の先行バイトの場合に 0 以外の値を返します。 `isleadbyte` -1 から任意の整数引数に対して意味のある結果が生成されます (`EOF`) に`UCHAR_MAX`(0 xff) まで、包括的です。  
-  
- `isleadbyte` の予想される引数の型は `int` です。符号付き文字が渡されると、コンパイラはこれを符号拡張して整数に変換し、予期しない結果が生じる場合があります。  
-  
- この関数の `_l` サフィックスが付いたバージョンは、サフィックスが付いていないバージョンと同じですが、ロケールに依存する動作については、現在のロケールではなく渡されたロケールを使用する点が異なります。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_istleadbyte`|常に false を返します|**_** `isleadbyte`|常に false を返します|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`isleadbyte`|\<ctype.h>|  
-|`_isleadbyte_l`|\<ctype.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [バイト分類](../../c-runtime-library/byte-classification.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+int isleadbyte( int c );
+int _isleadbyte_l( int c );
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+テストする整数。
+
+## <a name="return-value"></a>戻り値
+
+**isleadbyte**引数を満たしている場合、テスト条件または 0 以外の場合に、0 以外の値を返します。 "C"ロケールと 1 バイト文字セット (SBCS) のロケール**isleadbyte**常に 0 を返します。
+
+## <a name="remarks"></a>コメント
+
+**Isleadbyte**マクロがその引数がマルチバイト文字の最初のバイトの場合、0 以外の値を返します。 **isleadbyte** -1 から任意の整数引数に対して意味のある結果が生成されます (**EOF**) に**UCHAR_MAX** (0 xff) まで、包括的です。
+
+予想される引数の型**isleadbyte**は**int**です。 符号付き文字が渡されると、コンパイラが、整数に変換を予測できない結果を生成する、符号拡張しています。
+
+この関数のバージョン、 **_l**サフィックスは、そのロケールに依存する動作の現在のロケールの代わりに渡されたロケールを使用する点を除いて同じです。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_istleadbyte**|常に false を返します|**_isleadbyte**|常に false を返します|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**isleadbyte**|\<ctype.h>|
+|**_isleadbyte_l**|\<ctype.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[バイト分類](../../c-runtime-library/byte-classification.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)<br/>

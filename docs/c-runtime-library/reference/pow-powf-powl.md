@@ -1,12 +1,12 @@
 ---
-title: "pow、powf、powl | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: pow、powf、powl | Microsoft Docs
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - powl
@@ -42,120 +42,99 @@ helpviewer_keywords:
 - powf function
 - pow function
 ms.assetid: e75c33ed-2e59-48b1-be40-81da917324f1
-caps.latest.revision: 
+caps.latest.revision: 18
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 09b618e557fffadd3bfffb431fc7e89458c4f420
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 59aecd68fd38ee1dadd9883374528554e67ce77e
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="pow-powf-powl"></a>pow、powf、powl
-`x` の `y` 乗を計算します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double pow(  
-   double x,  
-   double y   
-);  
-double pow(  
-   double x,  
-   int y  
-);  // C++ only  
-float pow(  
-   float x,  
-   float y   
-);  // C++ only  
-float pow(  
-   float x,  
-   int y  
-);  // C++ only  
-long double pow(  
-   long double x,  
-   long double y  
-);  // C++ only  
-long double pow(  
-   long double x,  
-   int y  
-);  // C++ only  
-float powf(  
-   float x,  
-   float y   
-);  
-long double powl(  
-   long double x,  
-   long double y  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `x`  
- 底。  
-  
- `y`  
- 指数。  
-  
-## <a name="return-value"></a>戻り値  
- `x`<sup>y</sup> の値を返します。 オーバーフローまたはアンダーフロー時に、エラー メッセージは印刷されません。  
-  
-|x の値と y の値|pow の値を返す|  
-|-----------------------|-------------------------|  
-|`x` \< > 0 かつ `y` = 0.0|1|  
-|`x` = 0.0 かつ `y` = 0.0|1|  
-|`x` = 0.0 かつ `y` < 0|INF|  
-  
-## <a name="remarks"></a>コメント  
- `pow` では、2<sup>64</sup> を超える整数の浮動小数点値 (`1.0E100` など) は認識されません。  
-  
- `pow` には、ストリーミング SIMD 拡張機能 (SSE2) を使用して実装されています。 SSE2 実装の使い方の詳細および制約については、「[_set_SSE2_enable](../../c-runtime-library/reference/set-sse2-enable.md)」をご覧ください。  
-  
- C++ ではオーバーロードが可能であるため、`pow` のさまざまなオーバーロードを呼び出すことができます。 C プログラムでは、`pow` は常に 2 個の double 値を受け取って、double 値を返します。  
-  
- `pow(int, int)` オーバーロードは使用できなくなりました。 このオーバーロードを使用すると、コンパイラは C2668 を生じる場合があります。 この問題を回避するには、最初のパラメーターを `double`、`float`、または `long double` にキャストします。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`pow`、`powf`、`powl`|\<math.h>|  
-  
- 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_pow.c  
-  
-#include <math.h>  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   double x = 2.0, y = 3.0, z;  
-  
-   z = pow( x, y );  
-   printf( "%.1f to the power of %.1f is %.1f\n", x, y, z );  
-}  
-```  
-  
-## <a name="output"></a>出力  
-  
-```  
-2.0 to the power of 3.0 is 8.0  
-```  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [exp, expf, expl](../../c-runtime-library/reference/exp-expf.md)   
- [log、logf、log10、log10f](../../c-runtime-library/reference/log-logf-log10-log10f.md)   
- [sqrt、sqrtf、sqrtl](../../c-runtime-library/reference/sqrt-sqrtf-sqrtl.md)   
- [_CIpow](../../c-runtime-library/cipow.md)
+
+計算*x*の累乗*y*です。
+
+## <a name="syntax"></a>構文
+
+```C
+double pow( double x, double y );
+float powf( float x, float y );
+long double powl( long double x, long double y );
+```
+
+```cpp
+double pow( double x, int y );  // C++ only
+float pow( float x, float y );  // C++ only
+float pow( float x, int y );  // C++ only
+long double pow( long double x, long double y );  // C++ only
+long double pow( long double x, int y );  // C++ only
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+底。
+
+*y*<br/>
+指数。
+
+## <a name="return-value"></a>戻り値
+
+値を返します*x*<sup>*y*</sup>です。 オーバーフローまたはアンダーフロー時に、エラー メッセージは印刷されません。
+
+|x の値と y の値|pow の値を返す|
+|-----------------------|-------------------------|
+|*x* ! = 0.0 と*y* = = 0.0|1|
+|*x* 0.0 を = = と*y* = = 0.0|1|
+|*x* 0.0 を = = と*y* < 0|INF|
+
+## <a name="remarks"></a>コメント
+
+**pow** 2 より大きい整数の浮動小数点値は認識されません<sup>64</sup> (たとえば、1.0E100)。
+
+**pow**ストリーミング SIMD 拡張命令 2 (SSE2) を使用する実装があります。 SSE2 実装の使い方の詳細および制約については、「[_set_SSE2_enable](set-sse2-enable.md)」をご覧ください。
+
+C++ では、オーバー ロードできるよう、ためのさまざまなオーバー ロードのいずれかを呼び出すことができます**pow**です。 C プログラムでは、 **pow**常に受け取って 1 つ**二重**、値を返します、**二重**値。
+
+`pow(int, int)` オーバーロードは使用できなくなりました。 このオーバー ロードを使用する場合、コンパイラが出力[C2668](../../error-messages/compiler-errors-2/compiler-error-c2668.md)です。 この問題を避けるためには、最初のパラメーターをキャスト**二重**、 **float**、または**長い****二重**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー (C)|必須ヘッダー (C++)|
+|-|-|-|
+|**pow**、 **powf**、 **powl**|\<math.h>|\<math.h> または \<cmath>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_pow.c
+
+#include <math.h>
+#include <stdio.h>
+
+int main( void )
+{
+   double x = 2.0, y = 3.0, z;
+
+   z = pow( x, y );
+   printf( "%.1f to the power of %.1f is %.1f\n", x, y, z );
+}
+```
+
+```Output
+2.0 to the power of 3.0 is 8.0
+```
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md) <br/>
+[exp、expf、expl](exp-expf.md) <br/>
+[log、logf、log10、log10f](log-logf-log10-log10f.md) <br/>
+[sqrt、sqrtf、sqrtl](sqrt-sqrtf-sqrtl.md) <br/>
+[_CIpow](../../c-runtime-library/cipow.md)<br/>

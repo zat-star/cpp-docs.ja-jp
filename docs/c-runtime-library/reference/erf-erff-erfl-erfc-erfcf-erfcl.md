@@ -1,12 +1,12 @@
 ---
-title: "erf、erff、erfl、erfc、erfcf、erfcl | Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: erf、erff、erfl、erfc、erfcf、erfcl | Microsoft ドキュメント
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - erff
@@ -36,79 +36,84 @@ helpviewer_keywords:
 - erff function
 - erf function
 ms.assetid: 144d90d3-e437-41c2-a659-cd57596023b5
-caps.latest.revision: 
+caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fa60c6bb6c3c11a596589a411a7d094cc41c65fa
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 1703b4e352fee798a7b38dd16edf6158cd7f53ea
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="erf-erff-erfl-erfc-erfcf-erfcl"></a>erf、erff、erfl、erfc、erfcf、erfcl
-値の誤差関数または相補誤差関数を計算します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double erf(  
-   double x  
-);  
-float erf(  
-   float x  
-); // C++ only  
-long double erf(  
-   long double x  
-); // C++ only  
-float erff(  
-   float x  
-);  
-long double erfl(  
-   long double x  
-);  
-double erfc(  
-   double x  
-);  
-float erfc(  
-   float x  
-); // C++ only  
-long double erfc(  
-   long double x  
-); // C++ only  
-float erfcf(  
-   float x  
-);  
-long double erfcl(  
-   long double x  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `x`  
- 浮動小数点値。  
-  
-## <a name="return-value"></a>戻り値  
- `erf` 関数は、`x` のガウスの誤差関数を返します。 `erfc` 関数は、`x` のガウスの相補誤差関数を返します。  
-  
-## <a name="remarks"></a>コメント  
- `erf` 関数は、次のように定義されているガウスの誤差関数を計算します。  
-  
- ![x の誤差関数](../../c-runtime-library/reference/media/crt_erf_formula.PNG "CRT_erf_formula")  
-  
- ガウスの相補誤差関数が 1 - として定義されている erf (x)。 `erf` 関数は、-1.0 ～ 1.0 の範囲の値を返します。 エラーの戻り値はありません。 `erfc` 関数は、0 ～ 2 の範囲の値を返します。 `x` が `erfc` に対して大きすぎる場合、`errno` 変数は `ERANGE` に設定されます。  
-  
- C++ ではオーバーロードが可能であるため、`erf` 型と `erfc` 型を受け取って返す `float` と `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`erf` および `erfc` は常に `double` を受け取って返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`erf`, `erff`, `erfl`, `erfc`, `erfcf`, `erfcl`|\<math.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)
+
+値の誤差関数または相補誤差関数を計算します。
+
+## <a name="syntax"></a>構文
+
+```C
+double erf(
+   double x
+);
+float erf(
+   float x
+); // C++ only
+long double erf(
+   long double x
+); // C++ only
+float erff(
+   float x
+);
+long double erfl(
+   long double x
+);
+double erfc(
+   double x
+);
+float erfc(
+   float x
+); // C++ only
+long double erfc(
+   long double x
+); // C++ only
+float erfcf(
+   float x
+);
+long double erfcl(
+   long double x
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+浮動小数点値。
+
+## <a name="return-value"></a>戻り値
+
+**Erf**関数は、ガウスの誤差関数を返します*x*です。 **Erfc**関数返すガウスの相補誤差関数の*x*です。
+
+## <a name="remarks"></a>コメント
+
+**Erf**関数のガウスの誤差関数を計算する*x*、として定義されています。
+
+![x の誤差関数](media/crt_erf_formula.PNG "CRT_erf_formula")
+
+ガウスの相補誤差関数が 1 - として定義されている erf (x)。 **Erf**関数は、1.0-1.0 の範囲内で値を返します。 エラーの戻り値はありません。 **Erfc**関数は、0 ~ 2 の範囲内で値を返します。 場合*x*が大きすぎて**erfc**、 **errno**に変数が設定されている**ERANGE**です。
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**erf**と**erfc**を受け取り、返します**float**と**長い** **二重**型です。 C プログラムでは、 **erf**と**erfc**は、**二重**です。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|
+|--------------|---------------------|
+|**erf**、 **erff**、 **erfl**、 **erfc**、 **erfcf**、 **erfcl**|\<math.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>

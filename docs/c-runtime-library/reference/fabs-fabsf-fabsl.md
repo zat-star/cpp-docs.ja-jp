@@ -1,12 +1,12 @@
 ---
-title: "fabs、fabsf、fabsl | Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: fabs、fabsf、fabsl | Microsoft ドキュメント
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - fabsf
@@ -41,67 +41,73 @@ helpviewer_keywords:
 - fabs function
 - fabsl function
 ms.assetid: 23bca210-f408-4f5e-b46b-0ccaaec31e36
-caps.latest.revision: 
+caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 707e75f1036421d5392d2e7ecb2273760088e22c
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 95f34d81045aef90832a1d05090c548c1bf27dec
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fabs-fabsf-fabsl"></a>fabs、fabsf、fabsl
-浮動小数点引数の絶対値を計算します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double fabs(   
-   double x   
-);  
-float fabs(  
-   float x   
-); // C++ only  
-long double fabs(  
-   long double x  
-); // C++ only  
-float fabsf(   
-   float x   
-);  
-long double fabsl(  
-   long double x  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `x`  
- 浮動小数点値。  
-  
-## <a name="return-value"></a>戻り値  
- `fabs` 関数は、引数 `x` の絶対値を返します。 エラーの戻り値はありません。  
-  
-|入力|SEH 例外|Matherr 例外|  
-|-----------|-------------------|-----------------------|  
-|± QNAN、IND|none|_DOMAIN|  
-  
-## <a name="remarks"></a>コメント  
- C++ ではオーバーロードが可能であるため、\<cmath> ヘッダーを指定した場合、`fabs` のオーバーロードを呼び出すことができます。 C プログラムでは、`fabs` は常に double を受け取って返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須の C ヘッダー|必須の C++ ヘッダー|  
-|--------------|-----------------------|---------------------------|  
-|`fabs`、`fabsf`、`fabsl`|\<math.h>|\<cmath> または \<math.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
- [abs](../../c-runtime-library/reference/abs-labs-llabs-abs64.md) 関数の例を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [abs、labs、llabs、_abs64](../../c-runtime-library/reference/abs-labs-llabs-abs64.md)   
- [_cabs](../../c-runtime-library/reference/cabs.md)   
+
+浮動小数点引数の絶対値を計算します。
+
+## <a name="syntax"></a>構文
+
+```C
+double fabs(
+   double x
+);
+float fabs(
+   float x
+); // C++ only
+long double fabs(
+   long double x
+); // C++ only
+float fabsf(
+   float x
+);
+long double fabsl(
+   long double x
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+浮動小数点値。
+
+## <a name="return-value"></a>戻り値
+
+**Fabs**関数は引数の絶対値を返す*x*です。 エラーの戻り値はありません。
+
+|入力|SEH 例外|Matherr 例外|
+|-----------|-------------------|-----------------------|
+|± QNAN、IND|none|_DOMAIN|
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードのオーバー ロードを呼び出すことができますので**fabs**を含める場合、 \<cmath > ヘッダー。 C プログラムでは、 **fabs**常に受け取りを返す、**二重**です。
+
+## <a name="requirements"></a>要件
+
+|関数|必須の C ヘッダー|必須の C++ ヘッダー|
+|--------------|-----------------------|---------------------------|
+|**fabs**、 **fabsf**、 **fabsl**|\<math.h>|\<cmath> または \<math.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+[abs](abs-labs-llabs-abs64.md) 関数の例を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[abs、labs、llabs、_abs64](abs-labs-llabs-abs64.md)<br/>
+[_cabs](cabs.md)<br/>

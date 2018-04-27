@@ -1,12 +1,12 @@
 ---
-title: "_mbctombb、_mbctombb_l | Microsoft Docs"
-ms.custom: 
+title: _mbctombb、_mbctombb_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _mbctombb_l
@@ -37,65 +37,70 @@ helpviewer_keywords:
 - mbctombb function
 - _mbctombb_l function
 ms.assetid: d90970b8-71ff-4586-b6a2-f9ceb811f776
-caps.latest.revision: 
+caps.latest.revision: 17
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b360eaf014747cec2359efbf3792d45323178f57
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 45567a2486a0783cd4b1f82e5a81046e529c49df
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="mbctombb-mbctombbl"></a>_mbctombb、_mbctombb_l
-2 バイト マルチバイト文字を、対応する 1 バイト マルチバイト文字に変換します。  
-  
+
+2 バイト マルチバイト文字を、対応する 1 バイト マルチバイト文字に変換します。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-unsigned int _mbctombb(  
-   unsigned int c   
-);  
-unsigned int _mbctombb_l(  
-   unsigned int c,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- 変換するマルチバイト文字。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- 成功した場合、`_mbctombb`と`_mbctombb_l`に対応する 1 バイト文字を返します`c`; 返します`c`です。  
-  
-## <a name="remarks"></a>コメント  
- `_mbctombb`と`_mbctombb_l`関数では、特定のマルチバイト文字を対応する 1 バイト マルチバイト文字に変換します。 文字が変換する 0 xdf の範囲 0x20-0x7E または 0xA1 - 1 バイトの文字に対応する必要があります。  
-  
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
- 以前のバージョンでは、`_mbctombb` は `zentohan` と呼ばれていました。 代わりに、`_mbctombb` を使用してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_mbctombb`|\<mbstring.h>|  
-|`_mbctombb_l`|\<mbstring.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [データ変換](../../c-runtime-library/data-conversion.md)   
- [_mbbtombc、_mbbtombc_l](../../c-runtime-library/reference/mbbtombc-mbbtombc-l.md)   
- [_mbcjistojms、_mbcjistojms_l、_mbcjmstojis、_mbcjmstojis_l](../../c-runtime-library/reference/mbcjistojms-mbcjistojms-l-mbcjmstojis-mbcjmstojis-l.md)   
- [_mbctohira、_mbctohira_l、_mbctokata、_mbctokata_l](../../c-runtime-library/reference/mbctohira-mbctohira-l-mbctokata-mbctokata-l.md)   
- [_mbctolower、_mbctolower_l、_mbctoupper、_mbctoupper_l](../../c-runtime-library/reference/mbctolower-mbctolower-l-mbctoupper-mbctoupper-l.md)
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+unsigned int _mbctombb(
+   unsigned int c
+);
+unsigned int _mbctombb_l(
+   unsigned int c,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+変換するマルチバイト文字。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+成功した場合、 **_mbctombb**と **_mbctombb_l**に対応する 1 バイト文字を返します*c*; 返します*c*.
+
+## <a name="remarks"></a>コメント
+
+**_Mbctombb**と **_mbctombb_l**関数では、特定のマルチバイト文字を対応する 1 バイト マルチバイト文字に変換します。 文字が変換する 0 xdf の範囲 0x20-0x7E または 0xA1 - 1 バイトの文字に対応する必要があります。
+
+出力値の設定の影響を受けた、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。 この関数のバージョン、 **_l**サフィックスがこのロケールに依存する動作に現在のロケールを使用のバージョン、 **_l**渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じ代わりにします。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+以前のバージョンで **_mbctombb**が呼び出された**zentohan**です。 使用して **_mbctombb**代わりにします。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_mbctombb**|\<mbstring.h>|
+|**_mbctombb_l**|\<mbstring.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[データ変換](../../c-runtime-library/data-conversion.md)<br/>
+[_mbbtombc、_mbbtombc_l](mbbtombc-mbbtombc-l.md)<br/>
+[_mbcjistojms、_mbcjistojms_l、_mbcjmstojis、_mbcjmstojis_l](mbcjistojms-mbcjistojms-l-mbcjmstojis-mbcjmstojis-l.md)<br/>
+[_mbctohira、_mbctohira_l、_mbctokata、_mbctokata_l](mbctohira-mbctohira-l-mbctokata-mbctokata-l.md)<br/>
+[_mbctolower、_mbctolower_l、_mbctoupper、_mbctoupper_l](mbctolower-mbctolower-l-mbctoupper-mbctoupper-l.md)<br/>

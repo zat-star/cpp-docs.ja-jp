@@ -1,12 +1,12 @@
 ---
-title: "round、roundf、roundl | Microsoft Docs"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: round、roundf、roundl | Microsoft Docs
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - round
@@ -36,105 +36,110 @@ helpviewer_keywords:
 - round function
 - roundf function
 ms.assetid: 6be90877-193c-4b80-a32b-c3eca33f9c6f
-caps.latest.revision: 
+caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b90deedf85fac78fcf4cd9e4b08b4c595ef9da26
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 3051cc928bb77ac6abf17fdb309480a246864a74
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="round-roundf-roundl"></a>round、roundf、roundl
-浮動小数点値を最も近い整数に丸めます。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double round(   
-   double x   
-);  
-float round(  
-   float x  
-);  // C++ only  
-long double round(  
-   long double x  
-);  // C++ only  
-float roundf(  
-   float x  
-);  
-long double roundl(  
-   long double x  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `x`  
- 丸める浮動小数点値。  
-  
-## <a name="return-value"></a>戻り値  
- `round` 関数は `x` に最も近い整数を表す浮動小数点値を返します。 中間の値は、浮動小数点丸めモードの設定にかかわらず、ゼロから離れる方向に丸められます。 エラーの戻り値はありません。  
-  
-|入力|SEH 例外|Matherr 例外|  
-|-----------|-------------------|-----------------------|  
-|± `QNAN`,`IND`|none|`_DOMAIN`|  
-  
-## <a name="remarks"></a>コメント  
- C++ ではオーバーロードが可能であるため、`round` および `float` の値を受け取って返す `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`round` は常に `double` を受け取って返します。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`round`、`roundf`、`roundl`|\<math.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_round.c  
-// Build with: cl /W3 /Tc crt_round.c  
-// This example displays the rounded results of  
-// the floating-point values 2.499999, -2.499999,   
-// 2.8, -2.8, 2.5 and -2.5.  
-  
-#include <math.h>  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   double x = 2.499999;  
-   float y = 2.8f;  
-   long double z = 2.5;  
-  
-   printf("round(%f) is %.0f\n", x, round(x));  
-   printf("round(%f) is %.0f\n", -x, round(-x));  
-   printf("roundf(%f) is %.0f\n", y, roundf(y));  
-   printf("roundf(%f) is %.0f\n", -y, roundf(-y));  
-   printf("roundl(%Lf) is %.0Lf\n", z, roundl(z));  
-   printf("roundl(%Lf) is %.0Lf\n", -z, roundl(-z));  
-}  
-```  
-  
-```Output  
-round(2.499999) is 2  
-round(-2.499999) is -2  
-roundf(2.800000) is 3  
-roundf(-2.800000) is -3  
-roundl(2.500000) is 3  
-roundl(-2.500000) is -3  
-```  
-  
-## <a name="see-also"></a>参照  
- [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
- [ceil、ceilf、ceill](../../c-runtime-library/reference/ceil-ceilf-ceill.md)   
- [floor、floorf、floorl](../../c-runtime-library/reference/floor-floorf-floorl.md)   
- [fmod、fmodf](../../c-runtime-library/reference/fmod-fmodf.md)   
- [lrint、lrintf、lrintl、llrint、llrintf、llrintl](lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)   
- [llround、lroundf、lroundl、llround、llroundf、llroundl](../../c-runtime-library/reference/lround-lroundf-lroundl-llround-llroundf-llroundl.md)   
- [nearbyint、nearbyintf、nearbyintl](nearbyint-nearbyintf-nearbyintl1.md)   
- [rint、rintf、rintl](../../c-runtime-library/reference/rint-rintf-rintl.md)
+
+浮動小数点値を最も近い整数に丸めます。
+
+## <a name="syntax"></a>構文
+
+```C
+double round(
+   double x
+);
+float round(
+   float x
+);  // C++ only
+long double round(
+   long double x
+);  // C++ only
+float roundf(
+   float x
+);
+long double roundl(
+   long double x
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+丸める浮動小数点値。
+
+## <a name="return-value"></a>戻り値
+
+**丸める**関数に最も近い整数を表す浮動小数点値を返す*x*です。 中間の値は、浮動小数点丸めモードの設定にかかわらず、ゼロから離れる方向に丸められます。 エラーの戻り値はありません。
+
+|入力|SEH 例外|Matherr 例外|
+|-----------|-------------------|-----------------------|
+|± **QNAN**、 **IND**|none|**_DOMAIN**|
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**丸める**を受け取り、返します**float**と**長い****二重**値。 C プログラムでは、**丸める**常に受け取りを返す、**二重**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**丸める**、 **roundf**、 **roundl**|\<math.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_round.c
+// Build with: cl /W3 /Tc crt_round.c
+// This example displays the rounded results of
+// the floating-point values 2.499999, -2.499999,
+// 2.8, -2.8, 2.5 and -2.5.
+
+#include <math.h>
+#include <stdio.h>
+
+int main( void )
+{
+   double x = 2.499999;
+   float y = 2.8f;
+   long double z = 2.5;
+
+   printf("round(%f) is %.0f\n", x, round(x));
+   printf("round(%f) is %.0f\n", -x, round(-x));
+   printf("roundf(%f) is %.0f\n", y, roundf(y));
+   printf("roundf(%f) is %.0f\n", -y, roundf(-y));
+   printf("roundl(%Lf) is %.0Lf\n", z, roundl(z));
+   printf("roundl(%Lf) is %.0Lf\n", -z, roundl(-z));
+}
+```
+
+```Output
+round(2.499999) is 2
+round(-2.499999) is -2
+roundf(2.800000) is 3
+roundf(-2.800000) is -3
+roundl(2.500000) is 3
+roundl(-2.500000) is -3
+```
+
+## <a name="see-also"></a>関連項目
+
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[ceil、ceilf、ceill](ceil-ceilf-ceill.md)<br/>
+[floor、floorf、floorl](floor-floorf-floorl.md)<br/>
+[fmod、fmodf](fmod-fmodf.md)<br/>
+[lrint、lrintf、lrintl、llrint、llrintf、llrintl](lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)<br/>
+[lround、lroundf、lroundl、llround、llroundf、llroundl](lround-lroundf-lroundl-llround-llroundf-llroundl.md)<br/>
+[nearbyint、nearbyintf、nearbyintl](nearbyint-nearbyintf-nearbyintl1.md)<br/>
+[rint、rintf、rintl](rint-rintf-rintl.md)<br/>

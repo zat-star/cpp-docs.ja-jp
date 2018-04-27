@@ -1,12 +1,12 @@
 ---
-title: "_strinc、_wcsinc、_mbsinc、_mbsinc_l | Microsoft Docs"
-ms.custom: 
+title: _strinc、_wcsinc、_mbsinc、_mbsinc_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _mbsinc
@@ -49,78 +49,83 @@ helpviewer_keywords:
 - _tcsinc function
 - tcsinc function
 ms.assetid: 54685943-8e2c-45e9-a559-2d94930dc6b4
-caps.latest.revision: 
+caps.latest.revision: 23
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 08e8d0e25b7d685856ccf4af068408bf0ac495cb
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 956a0c03d9242d0d8c2912c516e9ba4ed9a06683
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="strinc-wcsinc-mbsinc-mbsincl"></a>_strinc、_wcsinc、_mbsinc、_mbsinc_l
-文字列ポインターを 1 文字進めます。  
-  
+
+文字列ポインターを 1 文字進めます。
+
 > [!IMPORTANT]
->  `_mbsinc` および `_mbsinc_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *_strinc(  
-   const char *current,  
-   _locale_t locale  
-);  
-wchar_t *_wcsinc(  
-   const wchar_t *current,  
-   _locale_t locale  
-);  
-unsigned char *_mbsinc(  
-   const unsigned char *current   
-);  
-unsigned char *_mbsinc_l(  
-   const unsigned char *current,  
-   _locale_t locale  
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `current`  
- 文字ポインター。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- これらの各ルーチンは、`current` の直後に続く文字へのポインターを返します。  
-  
-## <a name="remarks"></a>コメント  
- `_mbsinc` 関数は、`current` の直後に続くマルチバイト文字の最初のバイトへのポインターを返します。 `_mbsinc` は、現在使用中の[マルチバイト コード ページ](../../c-runtime-library/code-pages.md)に従ってマルチバイト文字シーケンスを認識します。`_mbsinc_l` は、渡されたロケール パラメーターを代わりに使用することを除いて同じものです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
- Tchar.h に定義されている汎用テキスト関数 `_tcsinc` は、`_mbsinc` にマップされるか (`_MBCS` が定義されている場合)、または `_wcsinc` にマップされます (`_UNICODE` が定義されている場合)。 それ以外の場合、`_tcsinc` は `_strinc` に割り当てられます。 `_strinc` と `_wcsinc` はそれぞれ、`_mbsinc` の 1 バイト文字バージョンとワイド文字バージョンです。 `_strinc` と `_wcsinc` はこの割り当てにのみ使用し、それ以外には使用しないでください。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。  
-  
- `current` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `EINVAL` を返し、`errno` を `EINVAL` に設定します。  
-  
+> **_mbsinc**と **_mbsinc_l** Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+char *_strinc(
+   const char *current,
+   _locale_t locale
+);
+wchar_t *_wcsinc(
+   const wchar_t *current,
+   _locale_t locale
+);
+unsigned char *_mbsinc(
+   const unsigned char *current
+);
+unsigned char *_mbsinc_l(
+   const unsigned char *current,
+   _locale_t locale
+);
+
+```
+
+### <a name="parameters"></a>パラメーター
+
+*current*<br/>
+文字ポインター。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+これらの各ルーチン直後に続く文字へのポインターを返します*現在*です。
+
+## <a name="remarks"></a>コメント
+
+**_Mbsinc**関数は、直後に続くマルチバイト文字の最初のバイトまでポインターを返す*現在*です。 **_mbsinc**に従ってマルチバイト文字シーケンスを認識、[マルチバイト コード ページ](../../c-runtime-library/code-pages.md)は、現在使用中です。**_mbsinc_l**に渡されたロケール パラメーターを代わりに使用する点を除いてと同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+汎用テキスト関数 **_tcsinc**、マップ、Tchar.h で定義された **_mbsinc**場合 **_MBCS**は定義されている、または **_wcsinc**場合 **_UNICODE**は定義されています。 それ以外の場合、 **_tcsinc**にマップ **_strinc**です。 **_strinc**と **_wcsinc**の 1 バイト文字とワイド文字バージョンは、 **_mbsinc**です。 **_strinc**と **_wcsinc**この割り当てにのみ提供され、それ以外の場合は使用できません。 詳細については、「[Using Generic-Text Mappings](../../c-runtime-library/using-generic-text-mappings.md)」(汎用テキスト マップの使用) および「[Generic-Text Mappings](../../c-runtime-library/generic-text-mappings.md)」(汎用テキスト マップ) をご覧ください。
+
+場合*現在*は**NULL**で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行は継続許可されたかどうか、この関数を返します**EINVAL**設定と**errno**に**EINVAL**です。
+
 > [!IMPORTANT]
->  これらの関数は、バッファー オーバーランの脅威に対して脆弱な場合があります。 バッファー オーバーランは、認められていない特権の昇格の原因となるため、システムの攻撃に使用される可能性があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_mbsinc`|\<mbstring.h>|  
-|`_mbsinc_l`|\<mbstring.h>|  
-|`_strinc`|\<tchar.h>|  
-|`_wcsinc`|\<tchar.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [_strdec、_wcsdec、_mbsdec、_mbsdec_l](../../c-runtime-library/reference/strdec-wcsdec-mbsdec-mbsdec-l.md)   
- [_strnextc、_wcsnextc、_mbsnextc、_mbsnextc_l](../../c-runtime-library/reference/strnextc-wcsnextc-mbsnextc-mbsnextc-l.md)   
- [_strninc、_wcsninc、_mbsninc、_mbsninc_l](../../c-runtime-library/reference/strninc-wcsninc-mbsninc-mbsninc-l.md)
+> これらの関数は、バッファー オーバーランの脅威に対して脆弱な場合があります。 バッファー オーバーランは、認められていない特権の昇格の原因となるため、システムの攻撃に使用される可能性があります。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_mbsinc**|\<mbstring.h>|
+|**_mbsinc_l**|\<mbstring.h>|
+|**_strinc**|\<tchar.h>|
+|**_wcsinc**|\<tchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[文字列操作](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[_strdec、_wcsdec、_mbsdec、_mbsdec_l](strdec-wcsdec-mbsdec-mbsdec-l.md)<br/>
+[_strnextc、_wcsnextc、_mbsnextc、_mbsnextc_l](strnextc-wcsnextc-mbsnextc-mbsnextc-l.md)<br/>
+[_strninc、_wcsninc、_mbsninc、_mbsninc_l](strninc-wcsninc-mbsninc-mbsninc-l.md)<br/>

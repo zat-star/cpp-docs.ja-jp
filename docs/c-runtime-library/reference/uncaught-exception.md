@@ -1,12 +1,12 @@
 ---
 title: __uncaught_exception | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - __uncaught_exception
@@ -29,38 +29,41 @@ dev_langs:
 helpviewer_keywords:
 - __uncaught_exception
 ms.assetid: 4d9b75c6-c9c7-4876-b761-ea9ab1925e96
-caps.latest.revision: 
+caps.latest.revision: 2
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 496947e60ab3a2b32a12b52700610aa4878ad2d0
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: f39e83aee5ee8c8652c32f72b6923c6c0c38a4ba
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="uncaughtexception"></a>__uncaught_exception
-1 つまたは複数の例外がスローされたが、[try-catch](../../cpp/try-throw-and-catch-statements-cpp.md) ステートメントの対応する `catch` ブロックによってまだ処理されていないことを示します。  
-  
-## <a name="syntax"></a>構文  
-  
-```cpp  
-bool __uncaught_exception(  
-   );  
-```  
-  
-## <a name="return-value"></a>戻り値  
- `try` ブロックで例外がスローされたときから、一致する `catch` ブロックが初期化されるまでの間は `true`、それ以外の場合は `false` です。  
-  
-## <a name="remarks"></a>コメント  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|__uncaught_exception|eh.h|  
-  
-## <a name="see-also"></a>参照  
- [try、throw、catch ステートメント (C++)](../../cpp/try-throw-and-catch-statements-cpp.md)
+
+1 つまたは複数の例外がスローされたが、対応するによってまだ処理されていないかどうかを示す**キャッチ**のブロック、 [try catch](../../cpp/try-throw-and-catch-statements-cpp.md)ステートメントです。
+
+## <a name="syntax"></a>構文
+
+```cpp
+bool __uncaught_exception(
+   );
+```
+
+## <a name="return-value"></a>戻り値
+
+**true**で例外がスロー時刻から、**を再試行してください**、一致するまでブロック**キャッチ**ブロックは、それ以外の初期化**false**です。
+
+## <a name="remarks"></a>コメント
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|__uncaught_exception|eh.h|
+
+## <a name="see-also"></a>関連項目
+
+[try、throw、catch ステートメント (C++)](../../cpp/try-throw-and-catch-statements-cpp.md)<br/>

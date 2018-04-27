@@ -1,12 +1,12 @@
 ---
-title: "exit、_Exit、_exit | Microsoft ドキュメント"
-ms.custom: 
+title: exit、_Exit、_exit | Microsoft ドキュメント
+ms.custom: ''
 ms.date: 1/02/2018
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _exit
@@ -44,15 +44,15 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ed4835662a53f3cb19b47818a9d6adfb3dfb2930
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: e682d10fe15b611ff9ceb363d7d8593e41f386d6
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="exit-exit-exit"></a>終了、_Exit、_exit
 
-呼び出しプロセスを終了します。 `exit` 関数はクリーンアップ後に呼び出しプロセスを終了させます。一方、 `_exit` と `_Exit` は直ちに終了させます。
+呼び出しプロセスを終了します。 **終了**関数はクリーンアップ後に終了 **_exit**と **_Exit**直ちに終了します。
 
 > [!NOTE]
 > このメソッドを使用して、テスト シナリオまたはデバッグ シナリオにを除き、ユニバーサル Windows プラットフォーム (UWP) アプリをシャット ダウンしないでください。 ストア アプリを閉じる方法はプログラムや UI はに従って許可されていません、 [Microsoft ストアのポリシー](/legal/windows/agreements/store-policies)です。 詳細については、次を参照してください。 [UWP アプリのライフ サイクル](/windows/uwp/launch-resume/app-lifecycle)です。 Windows 10 アプリについて詳しくは、「 [Windows 10 アプリの使用方法のガイド](http://go.microsoft.com/fwlink/p/?linkid=619133)」をご覧ください。
@@ -66,34 +66,33 @@ void exit(
 void _Exit(
    int const status
 );
-void _exit( 
+void _exit(
    int const status
 );
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-_status_  
-終了ステータス コード。
+*ステータス*状態コードを終了します。
 
 ## <a name="remarks"></a>コメント
 
-`exit`関数、 `_Exit` 関数、 `_exit` 関数は呼び出しプロセスを終了します。 `exit` 関数はスレッド ローカル オブジェクトのデストラクターを呼び出してから、 `atexit` と `_onexit`によって登録された関数を、後入れ先出し (LIFO) の順序で呼び出し、プロセスが終了する前にすべてのファイル バッファーをフラッシュします。 `_Exit` 関数と `_exit` 関数は、スレッド ローカル オブジェクトの破棄も、 `atexit` や `_onexit` 関数の処理もせず、ストリーム バッファーのフラッシュもしないでプロセスを終了します。
+**終了**、 **_Exit**と **_exit**関数が呼び出し元のプロセスを終了します。 **終了**関数がデストラクターを呼び出すスレッド ローカル オブジェクトの呼び出し、— 最後先出し (LIFO) の順序で — によって登録されている関数**atexit**と **_onexit**、し、プロセスが終了する前にすべてのファイル バッファーをフラッシュします。 **_Exit**と **_exit**関数は、スレッド ローカル オブジェクトの破棄または処理せず、プロセスを終了**atexit**または **_onexit**関数、およびストリーム バッファーのフラッシュします。
 
-`exit`、`_Exit`と`_exit`呼び出しは、値の値を返しません_ステータス_ある場合は、プロセスが終了した後で、ホスト環境または呼び出し元プロセスの待機に使用可能になります。 呼び出し元のセットでは通常、_ステータス_値を 0 に通常の終了を示すため、または他のエラーを示す値。 _ステータス_値は、オペレーティング システムのバッチ コマンドを使用可能な`ERRORLEVEL`、2 つの定数のいずれかで表されます: `EXIT_SUCCESS`、0 の値を表すまたは`EXIT_FAILURE`1 の値を表します。
+**終了**、 **_Exit**と **_exit**呼び出しは、値の値を返しません*ステータス*ホスト環境に使用可能になりますまたは、いずれかが存在する場合、プロセスの終了後に呼び出し元のプロセスを待機しています。 呼び出し元のセットでは通常、*ステータス*値を 0 に通常の終了を示すため、または他のエラーを示す値。 *ステータス*値は、オペレーティング システムのバッチ コマンドを使用可能な**ERRORLEVEL** 、2 つの定数のいずれかで表されます**EXIT_SUCCESS**、値を表す。0、または**EXIT_FAILURE**1 の値を表します。
 
-`exit`、 `_Exit`、 `_exit`、 `quick_exit`、 `_cexit`、 `_c_exit` 関数は次のように動作します。
+**終了**、 **_Exit**、 **_exit**、 **quick_exit**、 **_cexit**、および **_c_exit**関数の次のように動作します。
 
 |関数|説明|
 |--------------|-----------------|
-|`exit`|完全な C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードをホスト環境に提供します。|
-|`_Exit`|最低限の C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードをホスト環境に提供します。|
-|`_exit`|最低限の C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードをホスト環境に提供します。|
-|`quick_exit`|高速な C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードをホスト環境に提供します。|
-|`_cexit`|完全な C ライブラリの終了処理を実行し、呼び出し元に戻ります。 プロセスを終了しません。|
-|`_c_exit`|最低限の C ライブラリの終了処理を実行し、呼び出し元に戻ります。 プロセスを終了しません。|
+|**exit**|完全な C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードをホスト環境に提供します。|
+|**_Exit**|最低限の C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードをホスト環境に提供します。|
+|**_exit**|最低限の C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードをホスト環境に提供します。|
+|**quick_exit**|高速な C ライブラリの終了処理を実行してプロセスを終了し、指定されたステータス コードをホスト環境に提供します。|
+|**_cexit**|完全な C ライブラリの終了処理を実行し、呼び出し元に戻ります。 プロセスを終了しません。|
+|**_c_exit**|最低限の C ライブラリの終了処理を実行し、呼び出し元に戻ります。 プロセスを終了しません。|
 
-`exit`関数、  `_Exit` 関数、または `_exit` 関数を呼び出す場合、呼び出し時に存在する一時オブジェクトまたは自動オブジェクトのデストラクターは呼び出されません。 自動オブジェクトは、関数で定義されている非静的ローカル オブジェクトです。 一時オブジェクトは、関数呼び出しによって返される値など、コンパイラによって作成されるオブジェクトです。 呼び出す前に自動オブジェクトを破棄する`exit`、 `_Exit`、または`_exit`、明示的に次のように、オブジェクトのデストラクターを呼び出します。
+呼び出すと、**終了**、 **_Exit**または **_exit**関数の呼び出し時に存在する一時または自動オブジェクトのデストラクターは呼び出されません。 自動オブジェクトは、関数で定義されている非静的ローカル オブジェクトです。 一時オブジェクトは、関数呼び出しによって返される値など、コンパイラによって作成されるオブジェクトです。 呼び出す前に自動オブジェクトを破棄する**終了**、 **_Exit**、または **_exit**、明示的に次のように、オブジェクトのデストラクターを呼び出します。
 
 ```cpp
 void last_fn() {}
@@ -104,13 +103,13 @@ void last_fn() {}
 }
 ```
 
-`DLL_PROCESS_ATTACH` から `exit` を呼び出すために `DllMain`を使用しないでください。 終了する、`DLLMain`関数を返す`FALSE`から`DLL_PROCESS_ATTACH`です。
+使用しないでください**DLL_PROCESS_ATTACH**を呼び出す**終了**から**DllMain**です。 終了する、 **DLLMain**関数を返す**FALSE**から**DLL_PROCESS_ATTACH**です。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |関数|必須ヘッダー|
 |--------------|---------------------|
-|`exit`、 `_Exit`、 `_exit`|\<process.h> または \<stdlib.h>|
+|**終了**、 **_Exit**、 **_exit**|\<process.h> または \<stdlib.h>|
 
 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
 
@@ -129,14 +128,14 @@ int main( void )
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)  
-[abort](../../c-runtime-library/reference/abort.md)  
-[atexit](../../c-runtime-library/reference/atexit.md)  
-[_cexit、_c_exit](../../c-runtime-library/reference/cexit-c-exit.md)  
-[_exec、_wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)  
-[_onexit、_onexit_m](../../c-runtime-library/reference/onexit-onexit-m.md)  
-[quick_exit](../../c-runtime-library/reference/quick-exit1.md)  
-[_spawn 系関数と _wspawn 系関数](../../c-runtime-library/spawn-wspawn-functions.md)  
-[system、_wsystem](../../c-runtime-library/reference/system-wsystem.md)  
+[プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)<br/>
+[abort](abort.md)<br/>
+[atexit](atexit.md)<br/>
+[_cexit、_c_exit](cexit-c-exit.md)<br/>
+[_exec、_wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)<br/>
+[_onexit、_onexit_m](onexit-onexit-m.md)<br/>
+[quick_exit](quick-exit1.md)<br/>
+[_spawn 系関数と _wspawn 系関数](../../c-runtime-library/spawn-wspawn-functions.md)<br/>
+[system、_wsystem](system-wsystem.md)<br/>

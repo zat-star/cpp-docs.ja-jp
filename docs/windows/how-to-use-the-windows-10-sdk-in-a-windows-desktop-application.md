@@ -1,28 +1,28 @@
 ---
-title: "方法: Windows 10 を使用して、Windows デスクトップ アプリケーションで SDK |Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: '方法: Windows 10 を使用して、Windows デスクトップ アプリケーションで SDK |Microsoft ドキュメント'
+ms.custom: ''
+ms.date: 04/19/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: get-started-article
 dev_langs:
 - C++
 ms.assetid: eed6421e-9355-44a6-9582-3f1d453a6d44
-caps.latest.revision: 
+caps.latest.revision: 4
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
 - uwp
-ms.openlocfilehash: 1f5e6f09b371c4d295b4bcdff469396a2671d22a
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: 6cd358be2e9c28dae5c495d2a18cbbb7a0976ea7
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-use-the-windows-10-sdk-in-a-windows-desktop-application"></a>方法: Windows デスクトップ アプリケーションでの Windows 10 SDK の使用
 Visual Studio 2017 でクラシック Windows デスクトップ プロジェクトを作成する場合は設定して既定では、C++ デスクトップ ワークロードがインストールまたは最後に更新されたときにインストールされている Windows 10 SDK のバージョンでビルドします。 このバージョンの Windows SDK は、最近のすべての Windows リリースと互換性が。 SDK の以前のバージョンを対象とする場合は、プロジェクトを開くことができます |プロパティの Windows SDK のバージョンのドロップダウン内で使用可能なその他の SDK バージョンを選択します。  
@@ -31,9 +31,10 @@ Visual Studio 2017 でクラシック Windows デスクトップ プロジェク
   
 ### <a name="to-target-the-windows-10-sdk"></a>Windows 10 SDK をターゲットとするには  
   
-1.  Windows 10 SDK がインストールされていることを確認します。 一部として、Windows 10 SDK がインストールされている、[ツール for Windows 10](http://go.microsoft.com/fwlink/p/?linkid=617631)です。  
+1.  Windows 10 SDK がインストールされていることを確認します。 一部として、Windows 10 SDK がインストールされている、 **C++ を使用したデスクトップ開発**ワークロード。 スタンドアロン バージョンは、「[ダウンロードおよび Windows 10 用ツール](https://developer.microsoft.com/windows/downloads)です。
+
   
-2.  プロジェクト ノードのショートカット メニューを開き、 **[Retarget SDK Version] (SDK バージョンの再ターゲット)**をクリックします。  
+2.  プロジェクト ノードのショートカット メニューを開き、 **[Retarget SDK Version] (SDK バージョンの再ターゲット)** をクリックします。  
   
      ![SDK のバージョンを再ターゲット](../windows/media/retargetingwindowssdk1.PNG "RetargetingWindowsSDK1")  
   
@@ -49,7 +50,7 @@ Visual Studio 2017 でクラシック Windows デスクトップ プロジェク
   
      `Retargeting End: 1 completed, 0 failed, 0 skipped`  
   
-4.  プロジェクト プロパティを開いて **[構成プロパティ]、[全般]** セクションで、 **[Windows Target Platform Version] (Windows ターゲット プラットフォームのバージョン)**の値を確認します。 ここで値を変更することは、この手順を実行するのと同じ効果があります。 「 [General Property Page (Project)](../ide/general-property-page-project.md)」を参照してください。  
+4.  プロジェクト プロパティを開いて **[構成プロパティ]、[全般]** セクションで、 **[Windows Target Platform Version] (Windows ターゲット プラットフォームのバージョン)** の値を確認します。 ここで値を変更することは、この手順を実行するのと同じ効果があります。 「 [General Property Page (Project)](../ide/general-property-page-project.md)」を参照してください。  
   
      ![ターゲット プラットフォーム バージョン](../windows/media/retargetingwindowssdk3.PNG "RetargetingWindowsSDK3")  
   
@@ -65,9 +66,9 @@ Visual Studio 2017 でクラシック Windows デスクトップ プロジェク
   
 ### <a name="to-target-the-windows-81-sdk"></a>Windows 8.1 SDK をターゲットとするには  
   
-1.  プロジェクト ノードのショートカット メニューを開き、 **[Retarget SDK Version] (SDK バージョンの再ターゲット)**をクリックします。  
+1.  プロジェクト ノードのショートカット メニューを開き、 **[Retarget SDK Version] (SDK バージョンの再ターゲット)** をクリックします。  
   
 2.  [ターゲット プラットフォーム バージョン] ドロップダウン リストで、8.1 を選択します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows デスクトップ アプリケーション (Visual C)](../windows/how-to-use-the-windows-10-sdk-in-a-windows-desktop-application.md)

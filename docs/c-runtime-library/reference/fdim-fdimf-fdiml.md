@@ -1,13 +1,13 @@
 ---
-title: "fdim、fdimf、fdiml | Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: fdim、fdimf、fdiml | Microsoft ドキュメント
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - fdim
@@ -40,90 +40,95 @@ helpviewer_keywords:
 - fdimf function
 - fdiml function
 ms.assetid: 2d4ac639-51e9-462d-84ab-fb03b06971a0
-caps.latest.revision: 
+caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 60e628f84dcadf7b1e214d526981191036428042
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 8cf0036bc35f6e3b87daecf47225e59d2dc8f087
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fdim-fdimf-fdiml"></a>fdim、fdimf、fdiml
-1 番目と 2 番目の値の間の正の値の差を求めます。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double fdim(  
-   double x,   
-   double y  
-);  
-  
-float fdim(  
-   float x,   
-   float y  
-); //C++ only  
-  
-long double fdim(  
-   long double x,   
-   long double y  
-); //C++ only  
-  
-float fdimf(  
-   float x,   
-   float y  
-);  
-  
-long double fdiml(  
-   long double x,   
-   long double y  
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [入力] `x`  
- 最初の値。  
-  
- [入力] `y`  
- 2 番目の値。  
-  
-## <a name="return-value"></a>戻り値  
- `x` と `y` の間の正の値の差を返します。  
-  
-|戻り値|シナリオ|  
-|------------------|--------------|  
-|x-y|x > y の場合|  
-|0|x <= y の場合|  
-  
- それ以外の場合は、次のエラーのいずれかを返すことがあります。  
-  
-|懸案事項|Return|  
-|-----------|------------|  
-|オーバーフロー範囲エラー|+HUGE_VAL、+HUGE_VALF、または +HUGE_VALL|  
-|アンダーフロー範囲エラー|丸めた後の正確な値|  
-|`x` または `y` は NaN|NaN|  
-  
- エラーは、[_matherr](../../c-runtime-library/reference/matherr.md) で指定されたとおりに報告されます。  
-  
-## <a name="remarks"></a>コメント  
- C++ ではオーバーロードが可能であるため、float 型および long double 型を受け取って返す `fdim` のオーバーロードを呼び出すことができます。 C プログラムでは、`fdim` は常に double を受け取って返します。  
-  
- この関数は NaN 処理を除くと同じで、`fmax(x - y, 0)`です。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|C ヘッダー|C++ ヘッダー|  
-|--------------|--------------|------------------|  
-|`fdim`、`fdimf`、`fdiml`|\<math.h>|\<cmath>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
- [fmax、fmaxf、fmaxl](../../c-runtime-library/reference/fmax-fmaxf-fmaxl.md)   
- [abs、labs、llabs、_abs64](../../c-runtime-library/reference/abs-labs-llabs-abs64.md)
+
+1 番目と 2 番目の値の間の正の値の差を求めます。
+
+## <a name="syntax"></a>構文
+
+```C
+double fdim(
+   double x,
+   double y
+);
+
+float fdim(
+   float x,
+   float y
+); //C++ only
+
+long double fdim(
+   long double x,
+   long double y
+); //C++ only
+
+float fdimf(
+   float x,
+   float y
+);
+
+long double fdiml(
+   long double x,
+   long double y
+);
+
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+最初の値。
+
+*y*<br/>
+2 番目の値。
+
+## <a name="return-value"></a>戻り値
+
+正の値の差を返します*x*と*y*:
+
+|戻り値|シナリオ|
+|------------------|--------------|
+|x-y|x > y の場合|
+|0|x <= y の場合|
+
+それ以外の場合は、次のエラーのいずれかを返すことがあります。
+
+|懸案事項|Return|
+|-----------|------------|
+|オーバーフロー範囲エラー|+HUGE_VAL、+HUGE_VALF、または +HUGE_VALL|
+|アンダーフロー範囲エラー|丸めた後の正確な値|
+|*x*または*y* nan|NaN|
+
+エラーは、[_matherr](matherr.md) で指定されたとおりに報告されます。
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**fdim**を受け取り、返します**float**と**長い****二重**型です。 C プログラムでは、 **fdim**常に受け取りを返す、**二重**です。
+
+この関数は NaN 処理を除くと同じで、`fmax(x - y, 0)`です。
+
+## <a name="requirements"></a>要件
+
+|関数|C ヘッダー|C++ ヘッダー|
+|--------------|--------------|------------------|
+|**fdim**、 **fdimf**、 **fdiml**|\<math.h>|\<cmath>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[関数リファレンス (アルファベット順)](crt-alphabetical-function-reference.md)<br/>
+[fmax、fmaxf、fmaxl](fmax-fmaxf-fmaxl.md)<br/>
+[abs、labs、llabs、_abs64](abs-labs-llabs-abs64.md)<br/>

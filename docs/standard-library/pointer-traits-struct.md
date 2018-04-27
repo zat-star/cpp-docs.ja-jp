@@ -1,12 +1,12 @@
 ---
-title: "pointer_traits 構造体 | Microsoft Docs"
-ms.custom: 
+title: pointer_traits 構造体 | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - memory/std::pointer_traits::element_type
@@ -23,31 +23,34 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 545aecf1-3561-4859-8b34-603c079fe1b3
-caps.latest.revision: 
+caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e419d8789e9dd6f3ed98e36a05a96d2e5f985082
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: 3e6e6f6ca6c62e0dcb1d44d5f86a19e8a339a6b1
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="pointertraits-struct"></a>pointer_traits 構造体
-`allocator_traits` テンプレート クラスのオブジェクトが、ポインター型 `Ptr` を持つアロケーターを記述するために必要とする情報を提供します。  
-  
-## <a name="syntax"></a>構文  
-  
-```cpp  
+
+`allocator_traits` テンプレート クラスのオブジェクトが、ポインター型 `Ptr` を持つアロケーターを記述するために必要とする情報を提供します。
+
+## <a name="syntax"></a>構文
+
+```cpp
 template <class Ptr>
 struct pointer_traits;
-```  
-  
-## <a name="remarks"></a>コメント  
- Ptr には `Ty *` 型の生のポインターまたは次のプロパティを持つクラスを指定できます。  
-```  
+```
+
+## <a name="remarks"></a>コメント
+
+Ptr には `Ty *` 型の生のポインターまたは次のプロパティを持つクラスを指定できます。
+
+```cpp
 struct Ptr
    { // describes a pointer type usable by allocators
    typedef Ptr pointer;
@@ -57,41 +60,44 @@ struct Ptr
    using rebind = typename Ptr<Other, Rest...>; // optional
    static pointer pointer_to(element_type& obj);
    // optional
-   };  
+   };
 ```
-### <a name="typedefs"></a>Typedefs  
-  
-|名前|説明|  
-|----------|-----------------|  
-|`typedef T2 difference_type`|`T2` 型は、その型が存在する場合は `Ptr::difference_type`、それ以外の場合は `ptrdiff_t` です。 `Ptr` が生のポインターの場合、型は `ptrdiff_t` です。|  
-|`typedef T1 element_type`|`T1` 型は、その型が存在する場合は `Ptr::element_type`、それ以外の場合は `Ty` です。 `Ptr` が生のポインターの場合、型は `Ty` です。|  
-|`typedef Ptr pointer`|型は `Ptr` です。|  
-  
-### <a name="structs"></a>構造体  
-  
-|name|説明|  
-|----------|-----------------|  
-|`pointer_traits::rebind`|基になるポインター型を指定された型に変換しようとします。|  
-  
-### <a name="methods"></a>メソッド  
-  
-|名前|説明|  
-|----------|-----------------|  
-|[pointer_to](#pointer_to)|任意の参照をクラス `Ptr` のオブジェクトに変換します。|  
-  
-## <a name="requirements"></a>必要条件  
- **ヘッダー:** \<memory>  
-  
- **名前空間:** std  
-  
-##  <a name="pointer_to"></a>  pointer_to  
- その関数が存在する場合に `Ptr::pointer_to(obj)` を返す静的メソッド。 それ以外の場合は、任意の参照をクラス `Ptr` のオブジェクトに変換できません。 `Ptr` が生のポインターの場合、このメソッドは `addressof(obj)` を返します。  
-  
-```cpp  
-static pointer pointer_to(element_type& obj);
-```  
-  
-## <a name="see-also"></a>参照  
- [\<memory>](../standard-library/memory.md)   
- [allocator_traits クラス](../standard-library/allocator-traits-class.md)
 
+### <a name="typedefs"></a>Typedefs
+
+|名前|説明|
+|----------|-----------------|
+|`typedef T2 difference_type`|`T2` 型は、その型が存在する場合は `Ptr::difference_type`、それ以外の場合は `ptrdiff_t` です。 `Ptr` が生のポインターの場合、型は `ptrdiff_t` です。|
+|`typedef T1 element_type`|`T1` 型は、その型が存在する場合は `Ptr::element_type`、それ以外の場合は `Ty` です。 `Ptr` が生のポインターの場合、型は `Ty` です。|
+|`typedef Ptr pointer`|型は `Ptr` です。|
+
+### <a name="structs"></a>構造体
+
+|名前|説明|
+|----------|-----------------|
+|`pointer_traits::rebind`|基になるポインター型を指定された型に変換しようとします。|
+
+### <a name="methods"></a>メソッド
+
+|名前|説明|
+|----------|-----------------|
+|[pointer_to](#pointer_to)|任意の参照をクラス `Ptr` のオブジェクトに変換します。|
+
+## <a name="requirements"></a>要件
+
+**ヘッダー:** \<memory>
+
+**名前空間:** std
+
+## <a name="pointer_to"></a>  pointer_to
+
+その関数が存在する場合に `Ptr::pointer_to(obj)` を返す静的メソッド。 それ以外の場合は、任意の参照をクラス `Ptr` のオブジェクトに変換できません。 `Ptr` が生のポインターの場合、このメソッドは `addressof(obj)` を返します。
+
+```cpp
+static pointer pointer_to(element_type& obj);
+```
+
+## <a name="see-also"></a>関連項目
+
+[\<memory>](../standard-library/memory.md)<br/>
+[allocator_traits クラス](../standard-library/allocator-traits-class.md)<br/>

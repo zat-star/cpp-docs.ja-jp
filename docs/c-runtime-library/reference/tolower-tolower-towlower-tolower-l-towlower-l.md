@@ -52,84 +52,89 @@ helpviewer_keywords:
 - characters, converting
 - _towlower_l function
 ms.assetid: 86e0fc02-94ae-4472-9631-bf8e96f67b92
-caps.latest.revision: ''
+caps.latest.revision: 22
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 44c75ab979db21d72c682a3ba6f0da6947f22a4c
-ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
+ms.openlocfilehash: 23d03190ae47857a7b49f687d1f03e78c0dbc9e0
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="tolower-tolower-towlower-tolowerl-towlowerl"></a>tolower、_tolower、towlower、_tolower_l、_towlower_l
-文字を小文字に変換します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int tolower(  
-   int c   
-);  
-int _tolower(  
-   int c   
-);  
-int towlower(  
-   wint_t c   
-);  
-int _tolower_l(  
-   int c,  
-   _locale_t locale   
-);  
-int _towlower_l(  
-   wint_t c,  
-   _locale_t locale   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [入力] `c`  
- 変換する文字。  
-  
- [入力] `locale`  
- ロケール固有の変換に使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- これらの各ルーチンは、変換が可能な場合に `c` のコピーを小文字に変換し、結果を返します。 エラーを示す戻り値は予約されていません。  
-  
-## <a name="remarks"></a>コメント  
- これらの各ルーチンは、変換が可能で適切な場合に、指定した大文字を適宜小文字に変換します。 `towlower` の大文字/小文字の変換は、ロケール固有です。 現在のロケールに関連する文字の大文字/小文字のみが変換されます。 `_l` サフィックスが付いていない関数では、現在設定されているロケールを使用します。 `_l` サフィックスが付いているこれらの関数の各バージョンは、現在設定されているロケールの代わりに、パラメーターとして渡されたロケールを使用します。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
- `_tolower` が予想どおりの結果を返すためには、[__isascii](../../c-runtime-library/reference/isascii-isascii-iswascii.md) と [isupper](../../c-runtime-library/reference/isupper-isupper-l-iswupper-iswupper-l.md) がどちらも 0 以外を返す必要があります。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_totlower`|`tolower`|`_mbctolower`|`towlower`|  
-|`_totlower_l`|`_tolower_l`|`_mbctolower_l`|`_towlower_l`|  
-  
+文字を小文字に変換します。
+
+## <a name="syntax"></a>構文
+
+```C
+int tolower(
+   int c
+);
+int _tolower(
+   int c
+);
+int towlower(
+   wint_t c
+);
+int _tolower_l(
+   int c,
+   _locale_t locale
+);
+int _towlower_l(
+   wint_t c,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+変換する文字。
+
+*locale*<br/>
+ロケール固有の変換に使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+これらの各ルーチンは変換のコピー *c*小文字変換が可能であれば、して結果を返す場合にします。 エラーを示す戻り値は予約されていません。
+
+## <a name="remarks"></a>コメント
+
+これらの各ルーチンは、変換が可能で適切な場合に、指定した大文字を適宜小文字に変換します。 大文字/小文字変換**towlower**ロケールに固有です。 現在のロケールに関連する文字の大文字/小文字のみが変換されます。 せず、関数、 **_l**サフィックスを使用して、現在設定されているロケール。 これらの関数を持つバージョン、 **_l**サフィックスは、ロケールをパラメーターとして受け取るし、現在設定されているの代わりに使用するロケール。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+順序で **_tolower**を期待どおりの結果を出す[_ _isascii](isascii-isascii-iswascii.md)と[isupper](isupper-isupper-l-iswupper-iswupper-l.md)必要がありますどちらも 0 以外を返します。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_totlower**|**tolower**|**_mbctolower**|**towlower**|
+|**_totlower_l**|**_tolower_l**|**_mbctolower_l**|**_towlower_l**|
+
 > [!NOTE]
->  `_tolower_l` および `_towlower_l` はロケールに依存せず、直接呼び出すためのものではありません。 これらは、`_totlower_l` による内部使用のために用意されています。  
-  
-## <a name="requirements"></a>要件  
-  
-|ルーチン|必須ヘッダー|  
-|-------------|---------------------|  
-|`tolower`|\<ctype.h>|  
-|`_tolower`|\<ctype.h>|  
-|`towlower`|\<ctype.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
- 「[to 系関数](../../c-runtime-library/to-functions.md)」の例をご覧ください。  
-  
-## <a name="see-also"></a>関連項目  
- [データ変換](../../c-runtime-library/data-conversion.md)   
- [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)   
- [to 系関数](../../c-runtime-library/to-functions.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)
+> **_tolower_l**と **_towlower_l**ないロケール依存性があり、直接呼び出すことはできません。 内部で使用して提供される **_totlower_l**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**tolower**|\<ctype.h>|
+|**_tolower**|\<ctype.h>|
+|**towlower**|\<ctype.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+「[to 系関数](../../c-runtime-library/to-functions.md)」の例をご覧ください。
+
+## <a name="see-also"></a>関連項目
+
+[データ変換](../../c-runtime-library/data-conversion.md)<br/>
+[is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)<br/>
+[to 系関数](../../c-runtime-library/to-functions.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>

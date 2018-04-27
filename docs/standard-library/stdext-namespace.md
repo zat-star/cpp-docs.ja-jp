@@ -1,12 +1,12 @@
 ---
-title: "stdext 名前空間 | Microsoft Docs"
-ms.custom: 
+title: stdext 名前空間 | Microsoft Docs
+ms.custom: ''
 ms.date: 09/06/2017
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - stdext
@@ -16,17 +16,17 @@ helpviewer_keywords:
 - _DEFINE_DEPRECATED_HASH_CLASSES symbol
 - stdext namespace
 ms.assetid: 3e94fc89-0584-424f-bc09-081b73379545
-caps.latest.revision: 
+caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 265a10e71064f2bf3a318a272b751009b1b193be
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: 9c1baadcb29f4f30582f3e1cadd8a061fc72cd5a
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="stdext-namespace"></a>stdext 名前空間
 
@@ -34,15 +34,15 @@ ms.lasthandoff: 02/23/2018
 
 コンパイルするときに[/Ze](../build/reference/za-ze-disable-language-extensions.md)、コンパイラの警告の使用について、既定値は`std`のメンバーに対して、 \<hash_map > および\<hash_set > ヘッダー ファイルです。 この警告を無効にするには、 [warning](../preprocessor/warning.md) プラグマを使用します。
 
-コンパイラでの使用に対してエラーを生成する`std`のメンバーの\<hash_map > および\<hash_set > ヘッダー ファイルが**/Ze**、追加する前に次のディレクティブ`#include`C++ 標準ライブラリ ヘッダー ファイルです。
+コンパイラでの使用に対してエラーを生成する`std`のメンバーの\<hash_map > および\<hash_set > ヘッダー ファイルが **/Ze**、追加する前に次のディレクティブ`#include`C++ 標準ライブラリ ヘッダー ファイルです。
 
-```cpp  
-#define _DEFINE_DEPRECATED_HASH_CLASSES 0  
-```  
+```cpp
+#define _DEFINE_DEPRECATED_HASH_CLASSES 0
+```
 
-コンパイルするときに**/Za**、コンパイラ エラーが発生します。  
+コンパイルするときに **/Za**、コンパイラ エラーが発生します。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [C++ 標準ライブラリの概要](../standard-library/cpp-standard-library-overview.md)
 

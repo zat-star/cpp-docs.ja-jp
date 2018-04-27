@@ -1,13 +1,13 @@
 ---
-title: "timespec_get、_timespec32_get、_timespec64_get1 | Microsoft Docs"
-ms.custom: 
+title: timespec_get、_timespec32_get、_timespec64_get1 | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - timespec_get
@@ -43,74 +43,79 @@ helpviewer_keywords:
 - _timespec32_get function
 - _timespec64_get function
 ms.assetid: ed757258-b4f2-4c1d-a91b-22ea6ffce4ab
-caps.latest.revision: 
+caps.latest.revision: 4
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 13b85eef72ed1a2180af1b41bf93eefe499967bd
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 04665cdc46f2bb5aa880eae6022629df1a6258bb
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="timespecget-timespec32get-timespec64get"></a>timespec_get、_timespec32_get、_timespec64_get
-指定された時間の基準に基づいて、最初の引数が指す間隔を現在のカレンダーの時間に設定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int timespec_get(  
-    struct timespec* const time_spec,  
-    int const base  
-);  
-int _timespec32_get(  
-    struct _timespec32* const time_spec,  
-    int const base  
-);  
-int _timespec64_get(  
-    struct _timespec64* const time_spec,  
-    int const base  
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `time_spec`  
- エポックの開始以降の時間 (秒およびナノ秒単位) に設定される構造体へのポインター。  
-  
- `base`  
- 時間の基準を指定する実装固有の値 (0 以外)。  
-  
-## <a name="return-value"></a>戻り値  
- 成功すると値は `base` になり、失敗すると 0 を返します。  
-  
-## <a name="remarks"></a>コメント  
- `timespec_get` 関数は、 `time_spec` 引数が指す構造体で現在の値を設定します。 構造体のすべてのバージョンには、 `tv_sec` 、 `tv_nsec`というメンバーが存在します。 `tv_sec` 値は整数の秒に設定され、 `tv_nsec` はナノ秒の整数に設定されます ( `base`によって指定されるエポックの開始以降の、システム クロックの解像度に丸められます)。  
-  
- **Microsoft 固有の仕様**  
-  
- これらの関数は、 `TIME_UTC` 値として `base` のみをサポートしています。 これは、 `time_spec` 値をエポック開始 (1970 年 1 月 1 日午前0 時の世界協定時刻 (UTC)) 以降の秒数およびナノ秒数に設定します。 `struct _timespec32`では、 `tv_sec` は `__time32_t` 値です。 `struct _timespec64`では、 `tv_sec` は `__time64_t` 値です。 `struct timespec`では、 `tv_sec` は `time_t` 型です。この長さは、プロセッサ マクロ _USE_32BIT_TIME_T が定義されているかどうかに応じて 32 ビットまたは 64 ビットになります。 `timespec_get` 関数は、_USE_32BIT_TIME_T が定義されている場合には `_timespec32_get` を呼び出し、定義されていない場合には `_timespec64_get`を呼び出すインライン関数です。  
-  
- **Microsoft 固有の仕様はここまで**  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`timespec_get`では、 `_timespec32_get`では、 `_timespec64_get`|C: \<time.h>、C++: \<ctime> または \<time.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [時間管理](../../c-runtime-library/time-management.md)   
- [asctime、_wasctime](../../c-runtime-library/reference/asctime-wasctime.md)   
- [asctime_s、_wasctime_s](../../c-runtime-library/reference/asctime-s-wasctime-s.md)   
- [_ftime、_ftime32、_ftime64](../../c-runtime-library/reference/ftime-ftime32-ftime64.md)   
- [gmtime、_gmtime32、_gmtime64](../../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md)   
- [gmtime_s、_gmtime32_s、_gmtime64_s](../../c-runtime-library/reference/gmtime-s-gmtime32-s-gmtime64-s.md)   
- [localtime、_localtime32、_localtime64](../../c-runtime-library/reference/localtime-localtime32-localtime64.md)   
- [localtime_s、_localtime32_s、_localtime64_s](../../c-runtime-library/reference/localtime-s-localtime32-s-localtime64-s.md)   
- [time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)   
- [_utime、_utime32、_utime64、_wutime、_wutime32、_wutime64](../../c-runtime-library/reference/utime-utime32-utime64-wutime-wutime32-wutime64.md)
+
+指定された時間の基準に基づいて、最初の引数が指す間隔を現在のカレンダーの時間に設定します。
+
+## <a name="syntax"></a>構文
+
+```C
+int timespec_get(
+    struct timespec* const time_spec,
+    int const base
+);
+int _timespec32_get(
+    struct _timespec32* const time_spec,
+    int const base
+);
+int _timespec64_get(
+    struct _timespec64* const time_spec,
+    int const base
+);
+
+```
+
+### <a name="parameters"></a>パラメーター
+
+*time_spec*<br/>
+エポックの開始以降の時間 (秒およびナノ秒単位) に設定される構造体へのポインター。
+
+*base*<br/>
+時間の基準を指定する実装固有の値 (0 以外)。
+
+## <a name="return-value"></a>戻り値
+
+値*基本*かどうかは成功すると、それ以外の場合、ゼロを返します。
+
+## <a name="remarks"></a>コメント
+
+**Timespec_get**関数が指す構造体で現在の時刻を設定、 *time_spec*引数。 この構造体のすべてのバージョンがある 2 つのメンバー、 **tv_sec**と**tv_nsec**です。 **Tv_sec**値が整数の秒に設定し、 **tv_nsec** によって指定されるエポックの開始以降、システムクロックの解像度に丸められますナノ秒の整数に、*基本*です。
+
+**Microsoft 固有の仕様**
+
+これらの関数のサポートのみ**TIME_UTC**として、*基本*値。 これにより設定、 *time_spec*秒およびナノ秒エポックの開始、午前 0 時、1970 年 1 月 1 日、世界協定時刻 (UTC) からの数の値。 **構造体** **_timespec32**、 **tv_sec**は、 **_time32_t**値。 **構造体** **_timespec64**、 **tv_sec**は、 **_ _time64_t**値。 **構造体** **timespec**、 **tv_sec**は、 **time_t**型で、32 ビットまたは 64 ビットかどうかによって長さにプリプロセッサマクロ _USE_32BIT_TIME_T が定義されています。 **Timespec_get**関数を呼び出すインライン関数では **_timespec32_get**場合 _USE_32BIT_TIME_T が定義されている場合です。 それ以外の場合は呼び出します **_timespec64_get**です。
+
+**END Microsoft 固有の仕様**
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**timespec_get**、 **_timespec32_get**、 **_timespec64_get**|C: \<time.h>、C++: \<ctime> または \<time.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[時間管理](../../c-runtime-library/time-management.md)<br/>
+[asctime、_wasctime](asctime-wasctime.md)<br/>
+[asctime_s、_wasctime_s](asctime-s-wasctime-s.md)<br/>
+[_ftime、_ftime32、_ftime64](ftime-ftime32-ftime64.md)<br/>
+[gmtime、_gmtime32、_gmtime64](gmtime-gmtime32-gmtime64.md)<br/>
+[gmtime_s、_gmtime32_s、_gmtime64_s](gmtime-s-gmtime32-s-gmtime64-s.md)<br/>
+[localtime、_localtime32、_localtime64](localtime-localtime32-localtime64.md)<br/>
+[localtime_s、_localtime32_s、_localtime64_s](localtime-s-localtime32-s-localtime64-s.md)<br/>
+[time、_time32、_time64](time-time32-time64.md)<br/>
+[_utime、_utime32、_utime64、_wutime、_wutime32、_wutime64](utime-utime32-utime64-wutime-wutime32-wutime64.md)<br/>

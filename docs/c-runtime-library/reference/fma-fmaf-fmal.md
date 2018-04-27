@@ -1,13 +1,13 @@
 ---
-title: "fma、fmaf、fmal | Microsoft ドキュメント"
-ms.custom: 
-ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+title: fma、fmaf、fmal | Microsoft ドキュメント
+ms.custom: ''
+ms.date: 04/05/2018
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - fma
@@ -40,96 +40,101 @@ helpviewer_keywords:
 - fmaf function
 - fmal function
 ms.assetid: 584a6037-da1e-4e86-9f0c-97aae86de0c0
-caps.latest.revision: 
+caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 21eab7d0adc6cf1952f6f26cdda23c885c63a3b3
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: e4530a816617e564bf1d98766cf0861dd5fa7d08
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fma-fmaf-fmal"></a>fma、fmaf、fmal
-2 つの値を乗算、3 番目の値を追加し、結果を丸めます。中間丸め処理による精度の低下はありません。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-double fma(  
-   double x,   
-   double y,   
-   double z  
-);  
-  
-float fma(  
-   float  x,   
-   float  y,   
-   float z  
-); //C++ only  
-  
-long double fma(  
-   long double  x,   
-   long double  y,   
-   long double z  
-); //C++ only  
-  
-float fmaf(  
-   float  x,   
-   float  y,   
-   float z  
-);  
-  
-long double fmal(  
-   long double  x,   
-   long double  y,   
-   long double z  
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [入力] `x`  
- 乗算する 1 番目の値。  
-  
- [入力] `y`  
- 乗算する 2 番目の値。  
-  
- [入力] `z`  
- 加算する値。  
-  
-## <a name="return-value"></a>戻り値  
- `(x * y) + z` を返します。 さらに戻り値は、現在の丸めの形式を使用して丸められます。  
-  
- それ以外の場合は、次の値のいずれかを返します。  
-  
-|懸案事項|Return|  
-|-----------|------------|  
-|`x` = INFINITY、`y` = 0 または<br /><br /> `x` = 0、`y` = INFINITY|NaN|  
-|`x` または`y`= 正確な ± の無限大、`z`逆の符号を持つ無限大を =|NaN|  
-|`x` または `y` = NaN|NaN|  
-|not (`x` = 0, `y`= indefinite) および `z` = NaN<br /><br /> not (`x`=indefinite, `y`=0) および `z` = NaN|NaN|  
-|オーバーフロー範囲エラー|±HUGE_VAL、±HUGE_VALF、または ±HUGE_VALL|  
-|アンダーフロー範囲エラー|丸めた後の正確な値。|  
-  
- エラーは、[_matherr](../../c-runtime-library/reference/matherr.md) で指定されたとおりに報告されます。  
-  
-## <a name="remarks"></a>コメント  
- C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます`fma`を受け取り、返します**float**と**long double**型です。 C プログラムでは、`fma`常に受け取りを返す、**二重**です。  
-  
- この関数は、値を無限の精度とするかのように計算し、最終的な結果を丸めます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|C ヘッダー|C++ ヘッダー|  
-|--------------|--------------|------------------|  
-|`fma`、`fmaf`、`fmal`|\<math.h>|\<cmath>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
- [remainder、remainderf、remainderl](../../c-runtime-library/reference/remainder-remainderf-remainderl.md)   
- [remquo、remquof、remquol](../../c-runtime-library/reference/remquo-remquof-remquol.md)
+
+2 つの値を乗算、3 番目の値を追加し、結果を丸めます。中間丸め処理による精度の低下はありません。
+
+## <a name="syntax"></a>構文
+
+```C
+double fma(
+   double x,
+   double y,
+   double z
+);
+
+float fma(
+   float  x,
+   float  y,
+   float z
+); //C++ only
+
+long double fma(
+   long double  x,
+   long double  y,
+   long double z
+); //C++ only
+
+float fmaf(
+   float  x,
+   float  y,
+   float z
+);
+
+long double fmal(
+   long double  x,
+   long double  y,
+   long double z
+);
+
+```
+
+### <a name="parameters"></a>パラメーター
+
+*x*<br/>
+乗算する 1 番目の値。
+
+*y*<br/>
+乗算する 2 番目の値。
+
+*z*<br/>
+加算する値。
+
+## <a name="return-value"></a>戻り値
+
+`(x * y) + z` を返します。 さらに戻り値は、現在の丸めの形式を使用して丸められます。
+
+それ以外の場合は、次の値のいずれかを返します。
+
+|懸案事項|Return|
+|-----------|------------|
+|*x* 、無限大*y* = 0 または<br /><br /> *x* = 0、 *y*無限大を =|NaN|
+|*x*または*y* = 正確な ± の無限大、 *z*逆の符号を持つ無限大を =|NaN|
+|*x*または*y* NaN を =|NaN|
+|されません (*x* = 0、 *y*= 無制限) と*z* NaN を =<br /><br /> されません (*x*= 不定値、 *y*= 0) と*z* NaN を =|NaN|
+|オーバーフロー範囲エラー|±HUGE_VAL、±HUGE_VALF、または ±HUGE_VALL|
+|アンダーフロー範囲エラー|丸めた後の正確な値。|
+
+エラーは、[_matherr](matherr.md) で指定されたとおりに報告されます。
+
+## <a name="remarks"></a>コメント
+
+C++ では、オーバー ロードできるよう、ためのオーバー ロードを呼び出すことができます**fma**を受け取り、返します**float**と**長い****二重**型です。 C プログラムでは、 **fma**常に受け取りを返す、**二重**です。
+
+この関数は、値を無限の精度とするかのように計算し、最終的な結果を丸めます。
+
+## <a name="requirements"></a>要件
+
+|関数|C ヘッダー|C++ ヘッダー|
+|--------------|--------------|------------------|
+|**fma**、 **fmaf**、 **fmal**|\<math.h>|\<cmath>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[関数リファレンス (アルファベット順)](crt-alphabetical-function-reference.md)<br/>
+[remainder、remainderf、remainderl](remainder-remainderf-remainderl.md)<br/>
+[remquo、remquof、remquol](remquo-remquof-remquol.md)<br/>

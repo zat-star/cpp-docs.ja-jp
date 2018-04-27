@@ -1,12 +1,12 @@
 ---
-title: "_ismbbpunct、_ismbbpunct_l | Microsoft Docs"
-ms.custom: 
+title: _ismbbpunct、_ismbbpunct_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _ismbbpunct
@@ -37,52 +37,56 @@ helpviewer_keywords:
 - ismbbpunct_l function
 - _ismbbpunct_l function
 ms.assetid: 1976c9d3-7d1a-415f-ac52-2715c7bb56eb
-caps.latest.revision: 
+caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cd6e7eb83752a8848ba6ff0ffb39309cd01e8679
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 39eb643f087e05db3369d184618b1c9c0dff725d
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="ismbbpunct-ismbbpunctl"></a>_ismbbpunct、_ismbbpunct_l
-特定の文字が区切り文字かどうかを判断します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _ismbbpunct(  
-   unsigned int c   
-);  
-int _ismbbpunct_l(  
-   unsigned int c,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- テストする整数。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- `_ismbbpunct` は、整数 `c` が非 ASCII 区切り記号の場合は 0 以外の値を返します。 `_ismbbpunct` は、ロケールに依存する任意の文字設定に現在のロケールを使用します。 `_ismbbpunct_l` は、渡されるロケールを使用することを除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_ismbbpunct`|\<mbctype.h>|  
-|`_ismbbpunct_l`|\<mbctype.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [バイト分類](../../c-runtime-library/byte-classification.md)   
- [_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)
+
+特定の文字が区切り文字かどうかを判断します。
+
+## <a name="syntax"></a>構文
+
+```C
+int _ismbbpunct(
+   unsigned int c
+);
+int _ismbbpunct_l(
+   unsigned int c,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+テストする整数。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+**_ismbbpunct**場合は 0 以外の値を返します、整数*c*非 ASCII 区切り記号。 **_ismbbpunct**任意のロケールに依存する文字設定に現在のロケールを使用します。 **_ismbbpunct_l**に渡されるロケールを使用する点を除いてと同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_ismbbpunct**|\<mbctype.h>|
+|**_ismbbpunct_l**|\<mbctype.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[バイト分類](../../c-runtime-library/byte-classification.md)<br/>
+[_ismbb 系ルーチン](../../c-runtime-library/ismbb-routines.md)<br/>

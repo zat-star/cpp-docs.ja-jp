@@ -1,12 +1,12 @@
 ---
-title: "_dupenv_s_dbg、_wdupenv_s_dbg | Microsoft Docs"
-ms.custom: 
+title: _dupenv_s_dbg、_wdupenv_s_dbg | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _dupenv_s_dbg
@@ -38,122 +38,124 @@ helpviewer_keywords:
 - wdupenv_s_dbg function
 - _dupenv_s_dbg function
 ms.assetid: e3d81148-e24e-46d0-a21d-fd87b5e6256c
-caps.latest.revision: 
+caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7f9f35fba63fd5b0866a8f2fe13164855d722588
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: dc6aa566770bd8b2e12cefac22c414fd4c43a118
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="dupenvsdbg-wdupenvsdbg"></a>_dupenv_s_dbg、_wdupenv_s_dbg
-現在の環境から値を取得します。  追加のデバッグ情報を提供するために [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md) でメモリを割り当てる、[_dupenv_s, _wdupenv_s](../../c-runtime-library/reference/dupenv-s-wdupenv-s.md) のバージョン。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-errno_t _dupenv_s_dbg(  
-   char **buffer,  
-   size_t *numberOfElements,  
-   const char *varname,  
-   int blockType,  
-   const char *filename,  
-   int linenumber  
-);  
-errno_t _wdupenv_s_dbg(  
-   wchar_t **buffer,  
-   size_t * numberOfElements,  
-   const wchar_t *varname,  
-   int blockType,  
-   const char *filename,  
-   int linenumber  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `buffer`  
- 変数の値を格納するバッファー。  
-  
- `numberOfElements`  
- 
-          `buffer` のサイズ。  
-  
- `varname`  
- 環境変数名。  
-  
- `blockType`  
- 要求するメモリ ブロックの種類。`_CLIENT_BLOCK` または `_NORMAL_BLOCK`。  
-  
- `filename`  
- ソース ファイルの名前へのポインター、または `NULL`。  
-  
- `linenumber`  
- ソース ファイル内の行番号、または `NULL`。  
-  
-## <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。  
-  
- これらの関数は、パラメーターを検証します。`buffer` または `varname` が `NULL` の場合、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
-  
- 十分なメモリを割り当てられない場合、これらの関数は `buffer` を `NULL` に、`numberOfElements` を 0 に設定し、`ENOMEM` を返します。  
-  
-## <a name="remarks"></a>コメント  
- `_dupenv_s_dbg` および `_wdupenv_s_dbg` 関数は `_dupenv_s` および `_wdupenv_s` と同じものですが、`_DEBUG` が定義されている場合に、これらの関数は環境変数の値にメモリを割り当てるために [malloc](../../c-runtime-library/reference/malloc.md) および [_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md) のデバッグ バージョンを使う点が異なります。 `_malloc_dbg` のデバッグ機能について詳しくは、「[_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)」をご覧ください。  
-  
- 多くの場合、これらの関数を明示的に呼び出す必要はありません。 代わりに、フラグ `_CRTDBG_MAP_ALLOC` を定義することができます。 `_CRTDBG_MAP_ALLOC` が定義されている場合、`_dupenv_s` および `_wdupenv_s` の呼び出しはそれぞれ `_dupenv_s_dbg` および `_wdupenv_s_dbg` にマップし直され、`blockType` が `_NORMAL_BLOCK` に設定されます。 そのため、ヒープ ブロックを `_CLIENT_BLOCK` としてマークする場合以外は、これらの関数を明示的に呼び出す必要はありません。 ブロック型の詳細については、[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)に関する記事をご覧ください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_tdupenv_s_dbg`|`_dupenv_s_dbg`|`_dupenv_s_dbg`|`_wdupenv_s_dbg`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_dupenv_s_dbg`|\<crtdbg.h>|  
-|`_wdupenv_s_dbg`|\<crtdbg.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_dupenv_s_dbg.c  
-#include  <stdlib.h>  
-#include <crtdbg.h>  
-  
-int main( void )  
-{  
-   char *pValue;  
-   size_t len;  
-   errno_t err = _dupenv_s_dbg( &pValue, &len, "pathext",  
-      _NORMAL_BLOCK, __FILE__, __LINE__ );  
-   if ( err ) return -1;  
-   printf( "pathext = %s\n", pValue );  
-   free( pValue );  
-   err = _dupenv_s_dbg( &pValue, &len, "nonexistentvariable",  
-      _NORMAL_BLOCK, __FILE__, __LINE__ );  
-   if ( err ) return -1;  
-   printf( "nonexistentvariable = %s\n", pValue );  
-   free( pValue ); // It's OK to call free with NULL  
-}  
-```  
-  
-## <a name="sample-output"></a>出力例  
-  
-```  
-pathext = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.pl  
-nonexistentvariable = (null)  
-```  
-  
-## <a name="see-also"></a>参照  
- [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
- [環境定数](../../c-runtime-library/environmental-constants.md)   
- [getenv_s、_wgetenv_s](../../c-runtime-library/reference/getenv-s-wgetenv-s.md)   
- [putenv_s、_wputenv_s](../../c-runtime-library/reference/putenv-s-wputenv-s.md)
+
+現在の環境から値を取得します。  追加のデバッグ情報を提供するために [_malloc_dbg](malloc-dbg.md) でメモリを割り当てる、[_dupenv_s, _wdupenv_s](dupenv-s-wdupenv-s.md) のバージョン。
+
+## <a name="syntax"></a>構文
+
+```C
+errno_t _dupenv_s_dbg(
+   char **buffer,
+   size_t *numberOfElements,
+   const char *varname,
+   int blockType,
+   const char *filename,
+   int linenumber
+);
+errno_t _wdupenv_s_dbg(
+   wchar_t **buffer,
+   size_t * numberOfElements,
+   const wchar_t *varname,
+   int blockType,
+   const char *filename,
+   int linenumber
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*バッファー*<br/>
+変数の値を格納するバッファー。
+
+*numberOfElements*<br/>
+サイズ*バッファー*です。
+
+*varname*<br/>
+環境変数名。
+
+*blockType*<br/>
+要求されたメモリ ブロックの型: **_CLIENT_BLOCK**または **_NORMAL_BLOCK**です。
+
+*ファイル名*<br/>
+ソース ファイルの名前へのポインターまたは**NULL**です。
+
+*行番号*<br/>
+ソース ファイルの数の行または**NULL**です。
+
+## <a name="return-value"></a>戻り値
+
+正常終了した場合は 0 を返します。失敗した場合はエラー コードを返します。
+
+これらの関数は、パラメーターを検証します。場合*バッファー*または*varname*は**NULL**、」の説明に従って、無効なパラメーター ハンドラーが呼び出される[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、この関数が設定**errno**に**EINVAL**返す**EINVAL**です。
+
+これらの関数は、十分なメモリを割り当てることはできません、入れもの*バッファー*に**NULL**と*numberOfElements* 0 であり、戻り値に**ENOMEM**です。
+
+## <a name="remarks"></a>コメント
+
+**_Dupenv_s_dbg**と **_wdupenv_s_dbg**関数と同じ **_dupenv_s**と **_wdupenv_s**する点を除いて、 **_DEBUG**が定義されている場合、これらの関数を使用してデバッグ バージョンの[malloc](malloc.md)、 [_malloc_dbg](malloc-dbg.md)メモリ、環境変数の値を割り当てられません。 デバッグ機能について **_malloc_dbg**を参照してください[_malloc_dbg](malloc-dbg.md)です。
+
+多くの場合、これらの関数を明示的に呼び出す必要はありません。 フラグを定義する代わりに、 **_CRTDBG_MAP_ALLOC**です。 ときに **_CRTDBG_MAP_ALLOC**が定義されているを呼び出す **_dupenv_s**と **_wdupenv_s**に再マップ **_dupenv_s_dbg**と **_wdupenv_s_dbg**をそれぞれに、 *blockType* 'éý' **_NORMAL_BLOCK**です。 したがって、必要はありません、ヒープ ブロックとしてマークする場合を除き、これらの関数を明示的に呼び出す **_CLIENT_BLOCK**です。 ブロック型の詳細については、[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)に関する記事をご覧ください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_tdupenv_s_dbg**|**_dupenv_s_dbg**|**_dupenv_s_dbg**|**_wdupenv_s_dbg**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_dupenv_s_dbg**|\<crtdbg.h>|
+|**_wdupenv_s_dbg**|\<crtdbg.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_dupenv_s_dbg.c
+#include  <stdlib.h>
+#include <crtdbg.h>
+
+int main( void )
+{
+   char *pValue;
+   size_t len;
+   errno_t err = _dupenv_s_dbg( &pValue, &len, "pathext",
+      _NORMAL_BLOCK, __FILE__, __LINE__ );
+   if ( err ) return -1;
+   printf( "pathext = %s\n", pValue );
+   free( pValue );
+   err = _dupenv_s_dbg( &pValue, &len, "nonexistentvariable",
+      _NORMAL_BLOCK, __FILE__, __LINE__ );
+   if ( err ) return -1;
+   printf( "nonexistentvariable = %s\n", pValue );
+   free( pValue ); // It's OK to call free with NULL
+}
+```
+
+```Output
+pathext = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.pl
+nonexistentvariable = (null)
+```
+
+## <a name="see-also"></a>関連項目
+
+[プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)<br/>
+[環境定数](../../c-runtime-library/environmental-constants.md)<br/>
+[getenv_s、_wgetenv_s](getenv-s-wgetenv-s.md)<br/>
+[_putenv_s、_wputenv_s](putenv-s-wputenv-s.md)<br/>

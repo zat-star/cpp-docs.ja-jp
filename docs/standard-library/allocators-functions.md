@@ -1,10 +1,10 @@
 ---
-title: "&lt;allocators&gt; マクロ | Microsoft Docs"
-ms.custom: 
+title: '&lt;allocators&gt; マクロ | Microsoft Docs'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - allocators/std::ALLOCATOR_DECL
@@ -13,7 +13,7 @@ f1_keywords:
 - allocators/std::CACHE_SUBALLOC
 - allocators/std::SYNC_DEFAULT
 ms.assetid: 9cb5ee07-1ff9-4594-ae32-3c8c6efb511a
-caps.latest.revision: 
+caps.latest.revision: 12
 manager: ghogen
 helpviewer_keywords:
 - std::ALLOCATOR_DECL [C++]
@@ -21,38 +21,43 @@ helpviewer_keywords:
 - std::CACHE_FREELIST [C++]
 - std::CACHE_SUBALLOC [C++]
 - std::SYNC_DEFAULT [C++]
-ms.openlocfilehash: 7bd292ee2c19c2db90f126d6082854141c3e71fc
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: b06ede32746c13244db622788e7e9c6f7cbe4cc9
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ltallocatorsgt-macros"></a>&lt;allocators&gt; マクロ
-||||  
-|-|-|-|  
-|[ALLOCATOR_DECL](#allocator_decl)|[CACHE_CHUNKLIST](#cache_chunklist)|[CACHE_FREELIST](#cache_freelist)|  
-|[CACHE_SUBALLOC](#cache_suballoc)|[SYNC_DEFAULT](#sync_default)|  
-  
-##  <a name="allocator_decl"></a>  ALLOCATOR_DECL  
- アロケーター テンプレート クラスを生成します。  
-  
-```
+
+||||
+|-|-|-|
+|[ALLOCATOR_DECL](#allocator_decl)|[CACHE_CHUNKLIST](#cache_chunklist)|[CACHE_FREELIST](#cache_freelist)|
+|[CACHE_SUBALLOC](#cache_suballoc)|[SYNC_DEFAULT](#sync_default)|
+
+## <a name="allocator_decl"></a>  ALLOCATOR_DECL
+
+アロケーター テンプレート クラスを生成します。
+
+```cpp
 #define ALLOCATOR_DECL(cache, sync, name) <alloc_template>
-```  
-  
-### <a name="remarks"></a>コメント  
- マクロはテンプレート定義 `template <class Type> class name {.....}` と特殊化 `template <> class name<void> {.....}` を生成します。これらは両方で同期フィルター `sync` と型 `cache` のキャッシュを使用するアロケーター テンプレート クラスを定義します。  
-  
- 再バインドをコンパイルできるコンパイラの場合、作成されるテンプレート定義は次のようになります。  
-```  
+```
+
+### <a name="remarks"></a>コメント
+
+マクロはテンプレート定義 `template <class Type> class name {.....}` と特殊化 `template <> class name<void> {.....}` を生成します。これらは両方で同期フィルター `sync` と型 `cache` のキャッシュを使用するアロケーター テンプレート クラスを定義します。
+
+再バインドをコンパイルできるコンパイラの場合、作成されるテンプレート定義は次のようになります。
+
+```cpp
 struct rebind
    {    /* convert a name<Type> to a name<Other> */
    typedef name<Other> other;
-   };  
- ```  
- 再バインドをコンパイルできないコンパイラの場合、作成されるテンプレート定義は次のようになります。  
-  
+   };
 ```
+
+再バインドをコンパイルできないコンパイラの場合、作成されるテンプレート定義は次のようになります。
+
+```cpp
 template <class Type<class name
     : public stdext::allocators::allocator_base<Type,
     sync<stdext::allocators::rts_alloc<cache>>>
@@ -67,48 +72,50 @@ public:
         return *this;
     }
 };
-```  
-  
-##  <a name="cache_chunklist"></a>  CACHE_CHUNKLIST  
- `stdext::allocators::cache_chunklist<sizeof(Type)>` を生成します。  
-  
 ```
+
+## <a name="cache_chunklist"></a>  CACHE_CHUNKLIST
+
+`stdext::allocators::cache_chunklist<sizeof(Type)>` を生成します。
+
+```cpp
 #define CACHE_CHUNKLIST <cache_class>
-```  
-  
-### <a name="remarks"></a>コメント  
-  
-##  <a name="cache_freelist"></a>  CACHE_FREELIST  
- `stdext::allocators::cache_freelist<sizeof(Type), max>` を生成します。  
-  
 ```
+
+### <a name="remarks"></a>コメント
+
+## <a name="cache_freelist"></a>  CACHE_FREELIST
+
+`stdext::allocators::cache_freelist<sizeof(Type), max>` を生成します。
+
+```cpp
 #define CACHE_FREELIST(max) <cache_class>
-```  
-  
-### <a name="remarks"></a>コメント  
-  
-##  <a name="cache_suballoc"></a>  CACHE_SUBALLOC  
- `stdext::allocators::cache_suballoc<sizeof(Type)>` を生成します。  
-  
 ```
+
+### <a name="remarks"></a>コメント
+
+## <a name="cache_suballoc"></a>  CACHE_SUBALLOC
+
+`stdext::allocators::cache_suballoc<sizeof(Type)>` を生成します。
+
+```cpp
 #define CACHE_SUBALLOC <cache_class>
-```  
-  
-### <a name="remarks"></a>コメント  
-  
-##  <a name="sync_default"></a>  SYNC_DEFAULT  
- 同期フィルターを生成します。  
-  
 ```
+
+### <a name="remarks"></a>コメント
+
+## <a name="sync_default"></a>  SYNC_DEFAULT
+
+同期フィルターを生成します。
+
+```cpp
 #define SYNC_DEFAULT <sync_template>
-```  
-  
-### <a name="remarks"></a>コメント  
- コンパイラがシングル スレッド アプリケーションとマルチ スレッド アプリケーションの両方のコンパイルをサポートしている場合、マクロはシングル スレッド アプリケーションには `stdext::allocators::sync_none` を生成し、それ以外の場合は `stdext::allocators::sync_shared` を生成します。  
-  
-## <a name="see-also"></a>参照  
- [\<allocators>](../standard-library/allocators-header.md)
+```
 
+### <a name="remarks"></a>コメント
 
+コンパイラがシングル スレッド アプリケーションとマルチ スレッド アプリケーションの両方のコンパイルをサポートしている場合、マクロはシングル スレッド アプリケーションには `stdext::allocators::sync_none` を生成し、それ以外の場合は `stdext::allocators::sync_shared` を生成します。
 
+## <a name="see-also"></a>関連項目
 
+[\<allocators>](../standard-library/allocators-header.md)<br/>

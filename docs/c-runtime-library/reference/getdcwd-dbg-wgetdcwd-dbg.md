@@ -1,12 +1,12 @@
 ---
-title: "_getdcwd_dbg、_wgetdcwd_dbg | Microsoft Docs"
-ms.custom: 
+title: _getdcwd_dbg、_wgetdcwd_dbg | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _getdcwd_dbg
@@ -39,85 +39,90 @@ helpviewer_keywords:
 - _wgetdcwd_dbg function
 - directories [C++], current working
 ms.assetid: 266bf6f0-0417-497f-963d-2e0f306d9385
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 788ef0f0b745132c4b8d270129d8a182a2774361
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 6b9709a5dad5bd83dc34c7e2aff7cc888b7b3451
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="getdcwddbg-wgetdcwddbg"></a>_getdcwd_dbg、_wgetdcwd_dbg
-[_getdcwd、_wgetdcwd](../../c-runtime-library/reference/getdcwd-wgetdcwd.md) 関数のデバッグ バージョン (デバッグ中のみ使用可能)。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *_getdcwd_dbg(  
-   int drive,  
-   char *buffer,  
-   int maxlen,  
-   int blockType,  
-   const char *filename,  
-   int linenumber   
-);  
-wchar_t *_wgetdcwd_dbg(  
-   int drive,  
-   wchar_t *buffer,  
-   int maxlen,  
-   int blockType,  
-   const char *filename,  
-   int linenumber   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `drive`  
- ディスク ドライブの名前。  
-  
- `buffer`  
- パスの格納場所。  
-  
- `maxlen`  
- 文字数でのパスの最大長。`char` の場合は `_getdcwd_dbg`、および `wchar_t` の場合は `_wgetdcwd_dbg`。  
-  
- `blockType`  
- 要求するメモリ ブロックの種類。`_CLIENT_BLOCK` または `_NORMAL_BLOCK`。  
-  
- `filename`  
- 割り当て操作を要求したソース ファイル名へのポインターまたは `NULL`。  
-  
- `linenumber`  
- 割り当て操作が要求されたソース ファイル内の行番号または `NULL`。  
-  
-## <a name="return-value"></a>戻り値  
- `buffer`へのポインターを返します。 `NULL` 戻り値はエラーを示し、 `errno` は、 `ENOMEM`に設定され、 `maxlen` バイトを割り当てるのにメモリが不足している ( `NULL` の引数が `buffer`として指定されている場合) ことを示すか、または `ERANGE`に設定され、パスが `maxlen` 文字より長いことを示します。 詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
-  
-## <a name="remarks"></a>コメント  
- `_getdcwd_dbg` および `_wgetdcwd_dbg` 関数は `_getdcwd` および `_wgetdcwd` と同じものですが、`_DEBUG` が定義されている場合に、`malloc` パラメーターとして `_malloc_dbg` が渡されると、これらの関数はメモリを割り当てるために `NULL` および `buffer` のデバッグ バージョンを使用する点が異なります。 詳細については、「[_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)」をご覧ください。  
-  
- 多くの場合、これらの関数を明示的に呼び出す必要はありません。 代わりに、`_CRTDBG_MAP_ALLOC` フラグを定義できます。 `_CRTDBG_MAP_ALLOC` が定義されている場合、`_getdcwd` および `_wgetdcwd` の呼び出しはそれぞれ `_getdcwd_dbg` および `_wgetdcwd_dbg` にマップし直され、`blockType` が `_NORMAL_BLOCK` に設定されます。 そのため、ヒープ ブロックを `_CLIENT_BLOCK` としてマークする場合以外は、これらの関数を明示的に呼び出す必要はありません。 詳細については、[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)に関する記事をご覧ください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_tgetdcwd_dbg`|`_getdcwd_dbg`|`_getdcwd_dbg`|`_wgetdcwd_dbg`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_getdcwd_dbg`|\<crtdbg.h>|  
-|`_wgetdcwd_dbg`|\<crtdbg.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [_getdcwd、_wgetdcwd](../../c-runtime-library/reference/getdcwd-wgetdcwd.md)   
- [ディレクトリ制御](../../c-runtime-library/directory-control.md)   
- [デバッグ バージョンのヒープ割り当て関数](/visualstudio/debugger/debug-versions-of-heap-allocation-functions)
+
+[_getdcwd、_wgetdcwd](getdcwd-wgetdcwd.md) 関数のデバッグ バージョン (デバッグ中のみ使用可能)。
+
+## <a name="syntax"></a>構文
+
+```C
+char *_getdcwd_dbg(
+   int drive,
+   char *buffer,
+   int maxlen,
+   int blockType,
+   const char *filename,
+   int linenumber
+);
+wchar_t *_wgetdcwd_dbg(
+   int drive,
+   wchar_t *buffer,
+   int maxlen,
+   int blockType,
+   const char *filename,
+   int linenumber
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ドライブ*<br/>
+ディスク ドライブの名前。
+
+*バッファー*<br/>
+パスの格納場所。
+
+*maxlen*<br/>
+文字数でパスの最大長: **char**の **_getdcwd_dbg**と**wchar_t**の **_wgetdcwd_dbg**です。
+
+*blockType*<br/>
+要求されたメモリ ブロックの型: **_CLIENT_BLOCK**または **_NORMAL_BLOCK**です。
+
+*ファイル名*<br/>
+割り当て操作を要求したソース ファイルの名前へのポインターまたは**NULL**です。
+
+*行番号*<br/>
+割り当て操作が要求されたソース ファイルの数の行または**NULL**です。
+
+## <a name="return-value"></a>戻り値
+
+ポインターを返します*バッファー*です。 A **NULL** 、エラーを返すと**errno**に設定されているいずれかの**ENOMEM**に割り当てる十分なメモリがあることを示す*maxlen*バイト数 (ときに、 **NULL**として引数が指定されている*バッファー*)、または**ERANGE**、パスがより長いことを示す*maxlen*文字です。 詳細については、「[errno、_doserrno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。
+
+## <a name="remarks"></a>コメント
+
+**_Getdcwd_dbg**と **_wgetdcwd_dbg**関数と同じ **_getdcwd**と **_wgetdcwd**する点を除いて、 **_DEBUG**が定義されている場合、これらの関数を使用してデバッグ バージョンの**malloc**と **_malloc_dbg**メモリを割り当てる場合**NULL**が渡されますとして、*バッファー*パラメーター。 詳細については、「[_malloc_dbg](malloc-dbg.md)」をご覧ください。
+
+多くの場合、これらの関数を明示的に呼び出す必要はありません。 代わりに、定義することができます、 **_CRTDBG_MAP_ALLOC**フラグ。 ときに **_CRTDBG_MAP_ALLOC**が定義されているを呼び出す **_getdcwd**と **_wgetdcwd**に再マップ **_getdcwd_dbg**と **_wgetdcwd_dbg**をそれぞれに、 *blockType* 'éý' **_NORMAL_BLOCK**です。 したがって、必要はありません、ヒープ ブロックとしてマークする場合を除き、これらの関数を明示的に呼び出す **_CLIENT_BLOCK**です。 詳細については、[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)に関する記事をご覧ください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_tgetdcwd_dbg**|**_getdcwd_dbg**|**_getdcwd_dbg**|**_wgetdcwd_dbg**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_getdcwd_dbg**|\<crtdbg.h>|
+|**_wgetdcwd_dbg**|\<crtdbg.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[_getdcwd、_wgetdcwd](getdcwd-wgetdcwd.md)<br/>
+[ディレクトリ制御](../../c-runtime-library/directory-control.md)<br/>
+[デバッグ バージョンのヒープ割り当て関数](/visualstudio/debugger/debug-versions-of-heap-allocation-functions)<br/>

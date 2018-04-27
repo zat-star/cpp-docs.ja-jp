@@ -1,12 +1,12 @@
 ---
-title: "_getdcwd_nolock、_wgetdcwd_nolock | Microsoft Docs"
-ms.custom: 
+title: _getdcwd_nolock、_wgetdcwd_nolock | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _wgetdcwd_nolock
@@ -43,74 +43,79 @@ helpviewer_keywords:
 - _wgetdcwd_nolock function
 - directories [C++], current working
 ms.assetid: d9bdf712-43f8-4173-8f9a-844e82beaa97
-caps.latest.revision: 
+caps.latest.revision: 15
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7c1d9f4c57ef942f11f5e5dee79356a3e2d7f47a
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 53f050868e84c102c0d84dd22e03e27cf733ea5f
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="getdcwdnolock-wgetdcwdnolock"></a>_getdcwd_nolock、_wgetdcwd_nolock
-指定されたドライブの現在の作業ディレクトリの完全なパスを取得します。  
-  
+
+指定されたドライブの現在の作業ディレクトリの完全なパスを取得します。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *_getdcwd_nolock(   
-   int drive,  
-   char *buffer,  
-   int maxlen   
-);  
-wchar_t *_wgetdcwd_nolock(   
-   int drive,  
-   wchar_t *buffer,  
-   int maxlen   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `drive`  
- ディスク ドライブ。  
-  
- `buffer`  
- パスの格納場所。  
-  
- `maxlen`  
- 文字内のパスの最大長: `char` の `_getdcwd`、および `wchar_t` の `_wgetdcwd`。  
-  
-## <a name="return-value"></a>戻り値  
- 「[_getdcwd、_wgetdcwd](../../c-runtime-library/reference/getdcwd-wgetdcwd.md)」をご覧ください。  
-  
-## <a name="remarks"></a>コメント  
- 他のスレッドによる干渉から保護されないことを除き、`_getdcwd_nolock` および `_wgetdcwd_nolock` は、それぞれ、`_getdcwd` および`_wgetdcwd` と同じです。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_tgetdcwd_nolock`|`_getdcwd_nolock`|`_getdcwd_nolock`|`_wgetdcwd_nolock`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_getdcwd_nolock`|\<direct.h>|  
-|`_wgetdcwd_nolock`|\<direct.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [ディレクトリ制御](../../c-runtime-library/directory-control.md)   
- [_chdir、_wchdir](../../c-runtime-library/reference/chdir-wchdir.md)   
- [_getcwd、_wgetcwd](../../c-runtime-library/reference/getcwd-wgetcwd.md)   
- [_getdrive](../../c-runtime-library/reference/getdrive.md)   
- [_mkdir、_wmkdir](../../c-runtime-library/reference/mkdir-wmkdir.md)   
- [_rmdir、_wrmdir](../../c-runtime-library/reference/rmdir-wrmdir.md)
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+char *_getdcwd_nolock(
+   int drive,
+   char *buffer,
+   int maxlen
+);
+wchar_t *_wgetdcwd_nolock(
+   int drive,
+   wchar_t *buffer,
+   int maxlen
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ドライブ*<br/>
+ディスク ドライブ。
+
+*バッファー*<br/>
+パスの格納場所。
+
+*maxlen*<br/>
+文字内のパスの最大長: **char**の **_getdcwd**と**wchar_t**の **_wgetdcwd**です。
+
+## <a name="return-value"></a>戻り値
+
+「[_getdcwd、_wgetdcwd](getdcwd-wgetdcwd.md)」をご覧ください。
+
+## <a name="remarks"></a>コメント
+
+**_getdcwd_nolock**と **_wgetdcwd_nolock**と同じ **_getdcwd**と **_wgetdcwd**をそれぞれから保護されないする点を除いて他のスレッドによる干渉します。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_tgetdcwd_nolock**|**_getdcwd_nolock**|**_getdcwd_nolock**|**_wgetdcwd_nolock**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_getdcwd_nolock**|\<direct.h>|
+|**_wgetdcwd_nolock**|\<direct.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[ディレクトリ制御](../../c-runtime-library/directory-control.md)<br/>
+[_chdir、_wchdir](chdir-wchdir.md)<br/>
+[_getcwd、_wgetcwd](getcwd-wgetcwd.md)<br/>
+[_getdrive](getdrive.md)<br/>
+[_mkdir、_wmkdir](mkdir-wmkdir.md)<br/>
+[_rmdir、_wrmdir](rmdir-wrmdir.md)<br/>

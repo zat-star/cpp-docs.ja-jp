@@ -31,11 +31,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 773cf37e3a9e3d7047f0de4cd489c0ae9f41f61d
-ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
+ms.openlocfilehash: e9e5dc49b59ac534d871d6b31efdeec0afef5c8d
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="countof-macro"></a>_countof マクロ
 
@@ -58,15 +58,15 @@ ms.lasthandoff: 03/28/2018
 
 ## <a name="remarks"></a>コメント
 
-`_countof` 関数のようなプリプロセッサ マクロとして実装されます。 C++ バージョンには、ポインターが静的に宣言された配列の代わりに渡された場合は、コンパイル時に検出するために余分なテンプレートの機構です。
+**_countof**関数のようなプリプロセッサ マクロとして実装されます。 C++ バージョンには、ポインターが静的に宣言された配列の代わりに渡された場合は、コンパイル時に検出するために余分なテンプレートの機構です。
 
-いることを確認*配列*が実際には、配列、ポインターではありません。 C では、`_countof`場合は、誤った結果を生成*配列*のポインターです。 C++ では、`_countof`場合のコンパイルに失敗した*配列*のポインターです。  関数にパラメーターとして渡される配列*ポインターに減衰*、関数内で使用できないことを意味する`_countof`配列の範囲を確認します。
+いることを確認*配列*が実際には、配列、ポインターではありません。 C では、 **_countof**場合は、誤った結果を生成*配列*のポインターです。 C++ では、 **_countof**場合のコンパイルに失敗した*配列*のポインターです。  関数にパラメーターとして渡される配列*ポインターに減衰*、関数内で使用できないことを意味する **_countof**配列の範囲を確認します。
 
 ## <a name="requirements"></a>要件
 
 |マクロ|必須ヘッダー|
 |-----------|---------------------|
-|`_countof`|\<stdlib.h>|
+|**_countof**|\<stdlib.h>|
 
 ## <a name="example"></a>例
 

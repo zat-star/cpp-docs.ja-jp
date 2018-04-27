@@ -1,12 +1,12 @@
 ---
-title: "_mktemp、_wmktemp | Microsoft Docs"
-ms.custom: 
+title: _mktemp、_wmktemp | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _wmktemp
@@ -42,189 +42,186 @@ helpviewer_keywords:
 - mktemp function
 - temporary files [C++]
 ms.assetid: 055eb539-a8c2-4a7d-be54-f5b6d1eb5c85
-caps.latest.revision: 
+caps.latest.revision: 25
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f87321b24e96ff00f54ecefbf67b5bd211595d71
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 1c270623c0ea81294295e949a90de2a770db0b16
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="mktemp-wmktemp"></a>_mktemp、_wmktemp
-一意のファイル名を作成します。 これらの関数のセキュリティを強化したバージョンについては、「[_mktemp_s、_wmktemp_s](../../c-runtime-library/reference/mktemp-s-wmktemp-s.md)」をご覧ください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *_mktemp(  
-   char *template   
-);  
-wchar_t *_wmktemp(  
-   wchar_t *template   
-);  
-template <size_t size>  
-char *_mktemp(  
-   char (&template)[size]  
-); // C++ only  
-template <size_t size>  
-wchar_t *_wmktemp(  
-   wchar_t (&template)[size]  
-); // C++ only  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `template`  
- ファイル名のパターン。  
-  
-## <a name="return-value"></a>戻り値  
- これらの各関数は、変更されたテンプレートへのポインターを返します。 この関数は、`template` の形式が正しくないか、指定したテンプレートから一意の名前をこれ以上作成できない場合、`NULL` を返します。  
-  
-## <a name="remarks"></a>コメント  
- `_mktemp` 関数は、`template` 引数を変更することで、一意のファイル名を作成します。 `_mktemp` は、ランタイム システムで現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 ワイド文字を扱う場合は、`_wmktemp` ではなく `_mktemp` を使用します。`_wmktemp` の場合、引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 `_wmktemp` がマルチバイト文字列を処理しない点を除き、`_wmktemp` と `_mktemp` の動作は同じです。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_tmktemp`|`_mktemp`|`_mktemp`|`_wmktemp`|  
-  
- `template`引数が、フォーム`base` *XXXXXX*ここで、`base`が提供する、新しいファイル名の一部で各 X がで指定された文字のプレース ホルダー`_mktemp`です。 `template` 内の各プレースホルダー文字は大文字の X である必要があります。`_mktemp` では、`base` を保持し、最初の後続の X を英字 1 文字で置換します。 `_mktemp` は、これに続く残りの X を 5 桁の値で置換します。この値は、呼び出し元のプロセスを識別するか、マルチスレッド プログラムの場合に呼び出し元のスレッドを識別する一意の番号です。  
-  
- 呼び出しが成功した `_mktemp` ごとに、`template` が変更されます。 同じプロセスまたはスレッドによる同じ `template` 引数を使用した後続の呼び出しごとに、`_mktemp` では、以前の呼び出しで `_mktemp` が返した名前と一致するファイル名がないかチェックします。 指定した名前のファイルが存在しない場合、`_mktemp` はその名前を返します。 以前に返したすべての名前のファイルが存在する場合、`_mktemp` は、以前返した名前で使用していた英字 1 文字を、次の使用可能な小文字 1 文字 ('a' から 'z' の順) で置換することで、新しい名前を作成します。 たとえば、`base` が次の値で、  
-  
-```  
-fn  
-```  
-  
- `_mktemp` によって提供される 5 桁の値が 12345 の場合、返される最初の名前は、次のようになります。  
-  
-```  
-fna12345  
-```  
-  
- この名前を使用してファイル FNA12345 が作成され、このファイルがまだ使用されている場合、`template` に同じ `base` を使用する同じプロセスまたはスレッドからの呼び出しで返される次の名前は、次のようになります。  
-  
-```  
-fnb12345  
-```  
-  
- FNA12345 が存在しない場合、次に返される名前はもう一度次のようになります。  
-  
-```  
-fna12345  
-```  
-  
- `_mktemp` では、ベース値とテンプレート値の任意の組み合わせから最大 26 通りの一意のファイル名を作成できます。 そのため、FNZ12345 は、この例で使用されている `base` と `template` の値に対して `_mktemp` が作成できる最後の一意のファイル名です。  
-  
- 失敗した場合は、`errno` が設定されます。 `template` の形式が無効な場合 (X が 6 個未満など) は、`errno` が `EINVAL` に設定されます。 候補となる 26 個すべてのファイル名が既に存在していて `_mktemp` が一意の名前を作成できない場合、`_mktemp` はテンプレートを空の文字列に設定し、`EEXIST` を返します。  
-  
- C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_mktemp`|\<io.h>|  
-|`_wmktemp`|\<io.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_mktemp.c  
-// compile with: /W3  
-/* The program uses _mktemp to create  
- * unique filenames. It opens each filename  
- * to ensure that the next name is unique.  
- */  
-  
-#include <io.h>  
-#include <string.h>  
-#include <stdio.h>  
-#include <errno.h>  
-  
-char *template = "fnXXXXXX";  
-char *result;  
-char names[27][9];  
-  
-int main( void )  
-{  
-   int i;  
-   FILE *fp;  
-  
-   for( i = 0; i < 27; i++ )  
-   {  
-      strcpy_s( names[i], sizeof( names[i] ), template );  
-      /* Attempt to find a unique filename: */  
-      result = _mktemp( names[i] );  // C4996  
-      // Note: _mktemp is deprecated; consider using _mktemp_s instead  
-      if( result == NULL )  
-      {  
-         printf( "Problem creating the template\n" );  
-         if (errno == EINVAL)  
-         {  
-             printf( "Bad parameter\n");  
-         }  
-         else if (errno == EEXIST)  
-         {  
-             printf( "Out of unique filenames\n");   
-         }  
-      }  
-      else  
-      {  
-         fopen_s( &fp, result, "w" );  
-         if( fp != NULL )  
-            printf( "Unique filename is %s\n", result );  
-         else  
-            printf( "Cannot open %s\n", result );  
-         fclose( fp );  
-      }  
-   }  
-}  
-```  
-  
-```Output  
-Unique filename is fna03912  
-Unique filename is fnb03912  
-Unique filename is fnc03912  
-Unique filename is fnd03912  
-Unique filename is fne03912  
-Unique filename is fnf03912  
-Unique filename is fng03912  
-Unique filename is fnh03912  
-Unique filename is fni03912  
-Unique filename is fnj03912  
-Unique filename is fnk03912  
-Unique filename is fnl03912  
-Unique filename is fnm03912  
-Unique filename is fnn03912  
-Unique filename is fno03912  
-Unique filename is fnp03912  
-Unique filename is fnq03912  
-Unique filename is fnr03912  
-Unique filename is fns03912  
-Unique filename is fnt03912  
-Unique filename is fnu03912  
-Unique filename is fnv03912  
-Unique filename is fnw03912  
-Unique filename is fnx03912  
-Unique filename is fny03912  
-Unique filename is fnz03912  
-Problem creating the template.  
-Out of unique filenames.  
-```  
-  
-## <a name="see-also"></a>参照  
- [ファイル処理](../../c-runtime-library/file-handling.md)   
- [fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)   
- [_getmbcp](../../c-runtime-library/reference/getmbcp.md)   
- [_getpid](../../c-runtime-library/reference/getpid.md)   
- [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   
- [_setmbcp](../../c-runtime-library/reference/setmbcp.md)   
- [_tempnam、_wtempnam、tmpnam、_wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md)   
- [tmpfile](../../c-runtime-library/reference/tmpfile.md)
+
+一意のファイル名を作成します。 これらの関数のセキュリティを強化したバージョンについては、「[_mktemp_s、_wmktemp_s](mktemp-s-wmktemp-s.md)」をご覧ください。
+
+## <a name="syntax"></a>構文
+
+```C
+char *_mktemp(
+   char *nameTemplate
+);
+wchar_t *_wmktemp(
+   wchar_t *nameTemplate
+);
+template <size_t size>
+char *_mktemp(
+   char (&nameTemplate)[size]
+); // C++ only
+template <size_t size>
+wchar_t *_wmktemp(
+   wchar_t (&nameTemplate)[size]
+); // C++ only
+```
+
+### <a name="parameters"></a>パラメーター
+
+*nameTemplate*<br/>
+ファイル名のパターン。
+
+## <a name="return-value"></a>戻り値
+
+これらの各関数は、変更後の nameTemplate にポインターを返します。 この関数を返します**NULL**場合*nameTemplate*形式が正しくありませんまたは特定の nameTemplate からなくなるの一意な名前を作成できます。
+
+## <a name="remarks"></a>コメント
+
+**_Mktemp**関数を変更することで一意のファイル名を作成、 *nameTemplate*引数。 **_mktemp**マルチバイト文字の文字列引数には、実行時のシステムによって現在使用中のマルチバイト コード ページに基づいてマルチバイト文字シーケンスを認識することを必要に応じて自動的に処理します。 **_wmktemp**のワイド文字バージョンは、 **_mktemp**; の引数と戻り値 **_wmktemp**ワイド文字列です。 **_wmktemp**と **_mktemp**点を除いてそれ以外の場合、動作は同じ **_wmktemp**マルチバイト文字の文字列を処理しません。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_tmktemp**|**_mktemp**|**_mktemp**|**_wmktemp**|
+
+*NameTemplate*引数が、フォーム*基本 * * XXXXXX*ここで、*基本*が提供する、新しいファイル名の一部で各 X がで指定された文字のプレース ホルダー **_mktemp**です。 内の各プレース ホルダー文字*nameTemplate*大文字 X. をする必要があります **_mktemp**保持*基本*し、最初の後続の X を英字に置き換えます。 **_mktemp**末尾の次の置換 X、5 桁の値です。 この値は、プロセス、またはマルチ スレッド プログラムでは、呼び出し元のスレッド、呼び出し元を識別する一意の番号。
+
+呼び出しが成功した **_mktemp**変更*nameTemplate*です。 各後続の呼び出し、同じプロセスまたはスレッドを同じ*nameTemplate*引数、 **_mktemp**によって返された名前に一致するファイル名の確認 **_mktemp**で以前の呼び出しです。 指定した名前のファイルが存在しない場合 **_mktemp**その名前を返します。 以前に返されたすべての名前のファイルが存在する場合 **_mktemp**英字部分 'a' ~ 'z' の順序で、[次へ] の使用可能な英文字を置き換えることで、新しい名前を作成します。 たとえば場合、*基本*は。
+
+> **fn**
+
+によって提供される 5 桁の値と **_mktemp** 12345、返される最初の名前は。
+
+> **fna12345**
+
+この名前は FNA12345 ファイルを作成するために使用し、このファイルが存在する場合、[次へ] の名前が同じプロセスまたはスレッドで、同じ呼び出しで返されます*基本*の*nameTemplate*は。
+
+> **fnb12345**
+
+FNA12345 が存在しない場合、次に返される名前はもう一度次のようになります。
+
+> **fna12345**
+
+**_mktemp**の特定の組み合わせの 26 の一意のファイル名の最大値を作成できます*基本*と*nameTemplate*値。 FNZ12345 最後の一意のファイル名は、そのため、 **_mktemp**を作成することができます、*基本*と*nameTemplate*この例で使用される値。
+
+失敗した場合、 **errno**が設定されています。 場合*nameTemplate*形式が無効です (6 個より少なくなるなど、X)、 **errno**に設定されている**EINVAL**です。 場合 **_mktemp** 26 のすべての可能なファイル名が既に存在するために一意の名前を作成することがない **_mktemp** nameTemplate を空の文字列に設定し、返します**EEXIST**です。
+
+C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_mktemp**|\<io.h>|
+|**_wmktemp**|\<io.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_mktemp.c
+// compile with: /W3
+/* The program uses _mktemp to create
+* unique filenames. It opens each filename
+* to ensure that the next name is unique.
+*/
+
+#include <io.h>
+#include <string.h>
+#include <stdio.h>
+#include <errno.h>
+
+char *template = "fnXXXXXX";
+char *result;
+char names[27][9];
+
+int main( void )
+{
+   int i;
+   FILE *fp;
+
+   for( i = 0; i < 27; i++ )
+   {
+      strcpy_s( names[i], sizeof( names[i] ), template );
+      /* Attempt to find a unique filename: */
+      result = _mktemp( names[i] );  // C4996
+      // Note: _mktemp is deprecated; consider using _mktemp_s instead
+      if( result == NULL )
+      {
+         printf( "Problem creating the template\n" );
+         if (errno == EINVAL)
+         {
+             printf( "Bad parameter\n");
+         }
+         else if (errno == EEXIST)
+         {
+             printf( "Out of unique filenames\n");
+         }
+      }
+      else
+      {
+         fopen_s( &fp, result, "w" );
+         if( fp != NULL )
+            printf( "Unique filename is %s\n", result );
+         else
+            printf( "Cannot open %s\n", result );
+         fclose( fp );
+      }
+   }
+}
+```
+
+```Output
+Unique filename is fna03912
+Unique filename is fnb03912
+Unique filename is fnc03912
+Unique filename is fnd03912
+Unique filename is fne03912
+Unique filename is fnf03912
+Unique filename is fng03912
+Unique filename is fnh03912
+Unique filename is fni03912
+Unique filename is fnj03912
+Unique filename is fnk03912
+Unique filename is fnl03912
+Unique filename is fnm03912
+Unique filename is fnn03912
+Unique filename is fno03912
+Unique filename is fnp03912
+Unique filename is fnq03912
+Unique filename is fnr03912
+Unique filename is fns03912
+Unique filename is fnt03912
+Unique filename is fnu03912
+Unique filename is fnv03912
+Unique filename is fnw03912
+Unique filename is fnx03912
+Unique filename is fny03912
+Unique filename is fnz03912
+Problem creating the template.
+Out of unique filenames.
+```
+
+## <a name="see-also"></a>関連項目
+
+[ファイル処理](../../c-runtime-library/file-handling.md)<br/>
+[fopen、_wfopen](fopen-wfopen.md)<br/>
+[_getmbcp](getmbcp.md)<br/>
+[_getpid](getpid.md)<br/>
+[_open、_wopen](open-wopen.md)<br/>
+[_setmbcp](setmbcp.md)<br/>
+[_tempnam、_wtempnam、tmpnam、_wtmpnam](tempnam-wtempnam-tmpnam-wtmpnam.md)<br/>
+[tmpfile](tmpfile.md)<br/>

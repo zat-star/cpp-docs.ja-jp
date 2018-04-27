@@ -1,12 +1,12 @@
 ---
-title: "_mbccpy、_mbccpy_l | Microsoft Docs"
-ms.custom: 
+title: _mbccpy、_mbccpy_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _mbccpy
@@ -43,74 +43,75 @@ helpviewer_keywords:
 - _mbccpy function
 - mbccpy_l function
 ms.assetid: 13f4de6e-7792-41ac-b319-dd9b135433aa
-caps.latest.revision: 
+caps.latest.revision: 24
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9ad2ff9b8d9b1369b009898ae9b78c34c3643f85
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 583f241d85c3c94a2f276e39c187baf175c5a1f4
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="mbccpy-mbccpyl"></a>_mbccpy、_mbccpy_l
-文字列のマルチバイト文字を他の文字列にコピーします。 これらの関数にはセキュリティが強化されたバージョンがあります。「[_mbccpy_s、_mbccpy_s_l](../../c-runtime-library/reference/mbccpy-s-mbccpy-s-l.md)」をご覧ください。  
-  
+
+文字列のマルチバイト文字を他の文字列にコピーします。 これらの関数にはセキュリティが強化されたバージョンがあります。「[_mbccpy_s、_mbccpy_s_l](mbccpy-s-mbccpy-s-l.md)」をご覧ください。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void _mbccpy(  
-   unsigned char *dest,  
-   const unsigned char *src   
-);  
-void _mbccpy_l(  
-   unsigned char *dest,  
-   const unsigned char *src,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `dest`  
- コピー先。  
-  
- `src`  
- コピーするマルチバイト文字。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="remarks"></a>コメント  
- `_mbccpy` 関数は、`src` から `dest` に、マルチバイト文字を 1 文字コピーします。  
-  
- この関数は、パラメーターを検証します。 `_mbccpy` の `dest` または `src` に Null ポインターが渡された場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、`errno` は `EINVAL` に設定されます。  
-  
- `_mbccpy` は、すべてのロケールに依存する動作に現在のロケールを使用します。 `_mbccpy_l` は `_mbccpy` と同じですが、`_mbccpy_l` は現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
- **セキュリティに関するメモ** null で終わる文字列をご使用ください。 null で終わる文字列はターゲット バッファーのサイズを超えないようにしてください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。 バッファー オーバーランは、システムを攻撃するときによく使用される方法であり、その結果、認められていない権限が昇格されます。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_tccpy`|マクロまたはインライン関数にマップされます|`_mbccpy`|マクロまたはインライン関数にマップされます|  
-|`_tccpy_l`|N/A|`_mbccpy_l`|N/A|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_mbccpy`|\<mbctype.h>|  
-|`_mbccpy_l`|\<mbctype.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [ロケール](../../c-runtime-library/locale.md)   
- [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
- [_mbclen、mblen、_mblen_l](../../c-runtime-library/reference/mbclen-mblen-mblen-l.md)
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+void _mbccpy(
+   unsigned char *dest,
+   const unsigned char *src
+);
+void _mbccpy_l(
+   unsigned char *dest,
+   const unsigned char *src,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*dest*コピー先です。
+
+*src*コピーするマルチバイト文字。
+
+*ロケール*を使用するロケール。
+
+## <a name="remarks"></a>コメント
+
+**_Mbccpy**関数から 1 つのマルチバイト文字をコピーする*src*に*dest*です。
+
+この関数は、パラメーターを検証します。 場合 **_mbccpy** null ポインターを渡される*dest*または*src*で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md). 続けるには、実行が許可された場合**errno**に設定されている**EINVAL**です。
+
+**_mbccpy**ロケールに依存する動作に現在のロケールを使用します。 **_mbccpy_l**と同じ **_mbccpy**する点を除いて **_mbccpy_l**のすべてのロケールに依存する動作に渡されたロケールを使用します。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+**セキュリティに関するメモ** null で終わる文字列をご使用ください。 null で終わる文字列はターゲット バッファーのサイズを超えないようにしてください。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。 バッファー オーバーランは、システムを攻撃するときによく使用される方法であり、その結果、認められていない権限が昇格されます。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_tccpy**|マクロまたはインライン関数にマップされます|**_mbccpy**|マクロまたはインライン関数にマップされます|
+|**_tccpy_l**|N/A|**_mbccpy_l**|N/A|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_mbccpy**|\<mbctype.h>|
+|**_mbccpy_l**|\<mbctype.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
+[_mbclen、mblen、_mblen_l](mbclen-mblen-mblen-l.md)<br/>

@@ -1,12 +1,12 @@
 ---
-title: "_putchar_nolock、_putwchar_nolock | Microsoft Docs"
-ms.custom: 
+title: _putchar_nolock、_putwchar_nolock | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _putchar_nolock
@@ -41,93 +41,98 @@ helpviewer_keywords:
 - _putwchar_nolock function
 - puttchar_nolock function
 ms.assetid: 9ac68092-bfc3-4352-b486-c3e780220575
-caps.latest.revision: 
+caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0442c17464fc83e5f74a9a4683d00e89d743011e
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 0b0ed5cd086fef106a2625c096e34459579653bd
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="putcharnolock-putwcharnolock"></a>_putchar_nolock、_putwchar_nolock
-スレッドをロックせずに **stdout** に文字を書き込みます。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-      int _putchar_nolock(  
-   int c   
-);  
-wint_t _putwchar_nolock(  
-   wchar_t c   
-);  
-  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- 書き込む文字。  
-  
-## <a name="return-value"></a>戻り値  
- 「**putchar、putwchar**」をご覧ください。  
-  
-## <a name="remarks"></a>コメント  
- **putchar_nolock** と `_putwchar_nolock` は、他のスレッドによる干渉から保護されない点を除いて **_nolock** のサフィックスがないバージョンと同じものです。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`_puttchar_nolock`|`_putchar_nolock`|`_putchar_nolock`|`_putwchar_nolock`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_putchar_nolock`|\<stdio.h>|  
-|`_putwchar_nolock`|\<stdio.h> または \<wchar.h>|  
-  
-コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル`stdin`、 `stdout`、および`stderr`、C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_putchar_nolock.c  
-/* This program uses putchar to write buffer  
- * to stdout. If an error occurs, the program  
- * stops before writing the entire buffer.  
- */  
-  
-#include <stdio.h>  
-  
-int main( void )  
-{  
-   FILE *stream;  
-   char *p, buffer[] = "This is the line of output\n";  
-   int  ch;  
-  
-   ch = 0;  
-  
-   for( p = buffer; (ch != EOF) && (*p != '\0'); p++ )  
-      ch = _putchar_nolock( *p );  
-}  
-```  
-  
-## <a name="output"></a>出力  
-  
-```  
-This is the line of output  
-```  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [fputc、fputwc](../../c-runtime-library/reference/fputc-fputwc.md)   
- [fgetc、fgetwc](../../c-runtime-library/reference/fgetc-fgetwc.md)
+
+スレッドをロックせずに **stdout** に文字を書き込みます。
+
+## <a name="syntax"></a>構文
+
+```C
+int _putchar_nolock(
+   int c
+);
+wint_t _putwchar_nolock(
+   wchar_t c
+);
+
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+書き込む文字。
+
+## <a name="return-value"></a>戻り値
+
+「**putchar、putwchar**」をご覧ください。
+
+## <a name="remarks"></a>コメント
+
+**putchar_nolock**と **_putwchar_nolock**なしのバージョンと同じです、 **_nolock**他のスレッドによる干渉から保護されない点を除いて、サフィックスが付いています。 他のスレッドをロックアウトするオーバーヘッドが発生しないため、処理が速くなる場合があります。 これらの関数は、シングルスレッド アプリケーション、呼び出し元のスコープで既にスレッド分離を処理している場合などのスレッドセーフなコンテキストでのみ使用してください。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|**_puttchar_nolock**|**_putchar_nolock**|**_putchar_nolock**|**_putwchar_nolock**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_putchar_nolock**|\<stdio.h>|
+|**_putwchar_nolock**|\<stdio.h> または \<wchar.h>|
+
+コンソールは、ユニバーサル Windows プラットフォーム (UWP) アプリではサポートされていません。 コンソールに関連付けられている標準ストリームのハンドル**stdin**、 **stdout**、および**stderr**、C ランタイム関数が UWP アプリで使用する前にリダイレクトする必要があります. 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="example"></a>例
+
+```C
+// crt_putchar_nolock.c
+/* This program uses putchar to write buffer
+* to stdout. If an error occurs, the program
+* stops before writing the entire buffer.
+*/
+
+#include <stdio.h>
+
+int main( void )
+{
+   FILE *stream;
+   char *p, buffer[] = "This is the line of output\n";
+   int  ch;
+
+   ch = 0;
+
+   for( p = buffer; (ch != EOF) && (*p != '\0'); p++ )
+      ch = _putchar_nolock( *p );
+}
+```
+
+### <a name="output"></a>出力
+
+```Output
+This is the line of output
+```
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[fputc、fputwc](fputc-fputwc.md)<br/>
+[fgetc、fgetwc](fgetc-fgetwc.md)<br/>

@@ -1,12 +1,12 @@
 ---
-title: "_ismbchira、_ismbchira_l、_ismbckata、_ismbckata_l | Microsoft Docs"
-ms.custom: 
+title: _ismbchira、_ismbchira_l、_ismbckata、_ismbckata_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _ismbckata
@@ -49,81 +49,86 @@ helpviewer_keywords:
 - Hiragana
 - ismbckata function
 ms.assetid: 2db388a2-be31-489b-81c8-f6bf3f0582d3
-caps.latest.revision: 
+caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 38fe65f2b81def4afe08339f38b00cd69702fd83
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 8ad3f426e286ffcec6edaa1feb68725552572dcd
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="ismbchira-ismbchiral-ismbckata-ismbckatal"></a>_ismbchira、_ismbchira_l、_ismbckata、_ismbckata_l
-**コード ページ 932 固有の関数**  
-  
+
+**コード ページ 932 固有の関数**
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _ismbchira(  
-   unsigned int c   
-);  
-int _ismbchira_l(  
-   unsigned int c,  
-   _locale_t locale  
-);  
-int _ismbckata(  
-   unsigned int c   
-);  
-int _ismbckata_l(  
-   unsigned int c,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- テストする文字。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- これらの各ルーチンでは、文字がテスト条件を満たす場合に 0 以外の値が返され、テスト条件を満たさない場合に 0 が返されます。 `c` <= 255 で、対応する `_ismbb` ルーチンがある (たとえば、`_ismbcalnum` は `_ismbbalnum` に対応します) 場合、結果は、対応する `_ismbb` ルーチンの戻り値になります。  
-  
-## <a name="remarks"></a>コメント  
- これらの各関数は特定の条件で特定のマルチバイト文字をテストします。  
-  
- これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
-|ルーチンによって返される値|テスト条件 (コード ページ 932 のみ)|  
-|-------------|-------------------------------------------|  
-|`_ismbchira`|2 バイトひらがな: 0x829F<=`c`<=0x82F1。|  
-|`_ismbchira_l`|2 バイトひらがな: 0x829F<=`c`<=0x82F1。|  
-|`_ismbckata`|2 バイトカタカナ: 0x8340<=`c`<=0x8396。|  
-|`_ismbckata_l`|2 バイトカタカナ: 0x8340<=`c`<=0x8396。|  
-  
- **コード ページ 932 固有情報終了**  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_ismbchira`|\<mbstring.h>|  
-|`_ismbchira_l`|\<mbstring.h>|  
-|`_ismbckata`|\<mbstring.h>|  
-|`_ismbckata_l`|\<mbstring.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [文字分類](../../c-runtime-library/character-classification.md)   
- [_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)   
- [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+int _ismbchira(
+   unsigned int c
+);
+int _ismbchira_l(
+   unsigned int c,
+   _locale_t locale
+);
+int _ismbckata(
+   unsigned int c
+);
+int _ismbckata_l(
+   unsigned int c,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+テストする文字。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+これらの各ルーチンでは、文字がテスト条件を満たす場合に 0 以外の値が返され、テスト条件を満たさない場合に 0 が返されます。 場合*c* < = 255 は、対応する **_ismbb 系**ルーチン (たとえば、 **_ismbcalnum**に対応する **_ismbbalnum**) では、結果は、戻り値の対応する **_ismbb 系**ルーチンです。
+
+## <a name="remarks"></a>コメント
+
+これらの各関数は特定の条件で特定のマルチバイト文字をテストします。
+
+これらの関数のバージョン、 **_l**そのロケールに依存する動作に現在のロケールの代わりに渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+|ルーチン|テスト条件 (コード ページ 932 のみ)|
+|-------------|-------------------------------------------|
+|**_ismbchira**|2 バイトのひらがな 0x829F < =*c*< 0x82F1 を = です。|
+|**_ismbchira_l**|2 バイトのひらがな 0x829F < =*c*< 0x82F1 を = です。|
+|**_ismbckata**|2 バイト カタカナ: 0x8340 < =*c*< 0x8396 を = です。|
+|**_ismbckata_l**|2 バイト カタカナ: 0x8340 < =*c*< 0x8396 を = です。|
+
+**コード ページ 932 固有情報終了**
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_ismbchira**|\<mbstring.h>|
+|**_ismbchira_l**|\<mbstring.h>|
+|**_ismbckata**|\<mbstring.h>|
+|**_ismbckata_l**|\<mbstring.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[文字分類](../../c-runtime-library/character-classification.md)<br/>
+[_ismbc 系ルーチン](../../c-runtime-library/ismbc-routines.md)<br/>
+[is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>

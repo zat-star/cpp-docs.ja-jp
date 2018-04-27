@@ -1,12 +1,12 @@
 ---
 title: _set_fmode | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _set_fmode
@@ -34,114 +34,119 @@ helpviewer_keywords:
 - file translation [C++], setting mode
 - set_fmode function
 ms.assetid: f80eb9c7-733b-4652-a9bc-6b3790a35f12
-caps.latest.revision: 
+caps.latest.revision: 19
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 89917dc107971a5b58d46eb8676f094f7d7e70cb
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 556c53284076b2b27b1bf5a55692c9bf8c70d3c5
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="setfmode"></a>_set_fmode
-ファイル入出力操作の既定のファイル変換モードを設定します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-errno_t _set_fmode(   
-   int mode   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [入力] `mode`  
- ファイルの変換モードを `_O_TEXT` または `_O_BINARY` に設定します。  
-  
-## <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 を、失敗した場合はエラー コードを返します。 `mode` が `_O_TEXT`、`_O_BINARY`、または `_O_WTEXT` でない場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、`EINVAL` を返します。  
-  
-## <a name="remarks"></a>コメント  
- この関数は、[_fmode](../../c-runtime-library/fmode.md) グローバル変数を設定します。 この変数は、ファイル入出力操作 `_open` および `_pipe` の既定のファイル変換モードを指定します。  
-  
- `_O_TEXT` および `_O_BINARY` は Fcntl.h で定義されています。 `EINVAL` は Errno.h で定義されています。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|オプション ヘッダー|  
-|-------------|---------------------|---------------------|  
-|`_set_fmode`|\<stdlib.h>|\<fcntl.h>、\<errno.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_set_fmode.c  
-#include <stdlib.h>  
-#include <stdio.h>  
-#include <fcntl.h>     /* for _O_TEXT and _O_BINARY */  
-#include <errno.h>     /* for EINVAL */  
-#include <sys\stat.h>  /* for _S_IWRITE */  
-#include <share.h>     /* for _SH_DENYNO */  
-  
-int main()  
-{  
-   int mode, fd, ret;  
-   errno_t err;  
-   int buf[12] = { 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,  
-                   75, 76 };  
-   char * filename = "fmode.out";  
-  
-   err = _get_fmode(&mode);  
-   if (err == EINVAL)  
-   {  
-      printf( "Invalid parameter: mode\n");  
-      return 1;  
-   }  
-   else  
-      printf( "Default Mode is %s\n", mode == _O_TEXT ? "text" :  
-              "binary");  
-  
-   err = _set_fmode(_O_BINARY);  
-   if (err == EINVAL)  
-   {  
-      printf( "Invalid mode.\n");  
-      return 1;  
-   }  
-  
-   if ( _sopen_s(&fd, filename, _O_RDWR | _O_CREAT, _SH_DENYNO, _S_IWRITE | _S_IREAD) != 0 )  
-   {  
-      printf( "Error opening the file %s\n", filename);  
-      return 1;  
-   }  
-  
-   if (ret = _write(fd, buf, 12*sizeof(int)) < 12*sizeof(int))  
-   {  
-      printf( "Problem writing to the file %s.\n", filename);  
-      printf( "Number of bytes written: %d\n", ret);  
-   }  
-  
-   if (_close(fd) != 0)  
-   {  
-      printf("Error closing the file %s. Error code %d.\n",  
-             filename, errno);  
-   }  
-  
-   system("type fmode.out");  
-}  
-```  
-  
-```Output  
-Default Mode is binary  
-A   B   C   D   E   F   G   H   I   J   K   L     
-```  
-  
-## <a name="see-also"></a>参照  
- [_fmode](../../c-runtime-library/fmode.md)   
- [_get_fmode](../../c-runtime-library/reference/get-fmode.md)   
- [_setmode](../../c-runtime-library/reference/setmode.md)   
- [テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)
+
+ファイル入出力操作の既定のファイル変換モードを設定します。
+
+## <a name="syntax"></a>構文
+
+```C
+errno_t _set_fmode( 
+   int mode 
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*モード*<br/>
+必要なファイルの変換モード: **_O_TEXT**または **_O_BINARY**です。
+
+## <a name="return-value"></a>戻り値
+
+正常終了した場合は 0 を、失敗した場合はエラー コードを返します。 場合*モード*は **_O_TEXT**または **_O_BINARY**または **_O_WTEXT** 」の説明に従って、無効なパラメーターハンドラーが呼び出される[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合に、この関数が設定**errno**に**EINVAL**し、返します**EINVAL**です。
+
+## <a name="remarks"></a>コメント
+
+この関数は、[_fmode](../../c-runtime-library/fmode.md) グローバル変数を設定します。 この変数は、ファイル I/O 操作の既定のファイル変換モードを指定 **_open**と **_pipe**です。
+
+**_O_TEXT**と **_O_BINARY** Fcntl.h で定義されます。 **EINVAL** Errno.h で定義されています。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|オプション ヘッダー|
+|-------------|---------------------|---------------------|
+|**_set_fmode**|\<stdlib.h>|\<fcntl.h>、\<errno.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_set_fmode.c
+#include <stdlib.h>
+#include <stdio.h>
+#include <fcntl.h>     /* for _O_TEXT and _O_BINARY */
+#include <errno.h>     /* for EINVAL */
+#include <sys\stat.h>  /* for _S_IWRITE */
+#include <share.h>     /* for _SH_DENYNO */
+
+int main()
+{
+   int mode, fd, ret;
+   errno_t err;
+   int buf[12] = { 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
+                   75, 76 };
+   char * filename = "fmode.out";
+
+   err = _get_fmode(&mode);
+   if (err == EINVAL)
+   {
+      printf( "Invalid parameter: mode\n");
+      return 1;
+   }
+   else
+      printf( "Default Mode is %s\n", mode == _O_TEXT ? "text" :
+              "binary");
+
+   err = _set_fmode(_O_BINARY);
+   if (err == EINVAL)
+   {
+      printf( "Invalid mode.\n");
+      return 1;
+   }
+
+   if ( _sopen_s(&fd, filename, _O_RDWR | _O_CREAT, _SH_DENYNO, _S_IWRITE | _S_IREAD) != 0 )
+   {
+      printf( "Error opening the file %s\n", filename);
+      return 1;
+   }
+
+   if (ret = _write(fd, buf, 12*sizeof(int)) < 12*sizeof(int))
+   {
+      printf( "Problem writing to the file %s.\n", filename);
+      printf( "Number of bytes written: %d\n", ret);
+   }
+
+   if (_close(fd) != 0)
+   {
+      printf("Error closing the file %s. Error code %d.\n",
+             filename, errno);
+   }
+
+   system("type fmode.out");
+}
+```
+
+```Output
+Default Mode is binary
+A   B   C   D   E   F   G   H   I   J   K   L
+```
+
+## <a name="see-also"></a>関連項目
+
+[_fmode](../../c-runtime-library/fmode.md)<br/>
+[_get_fmode](get-fmode.md)<br/>
+[_setmode](setmode.md)<br/>
+[テキスト モードとバイナリ モードのファイル入出力](../../c-runtime-library/text-and-binary-mode-file-i-o.md)<br/>

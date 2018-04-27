@@ -1,12 +1,12 @@
 ---
 title: mbsrtowcs | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - mbsrtowcs
@@ -30,84 +30,90 @@ dev_langs:
 helpviewer_keywords:
 - mbsrtowcs function
 ms.assetid: f3a29de8-e36e-425b-a7fa-a258e6d7909d
-caps.latest.revision: 
+caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ff120fea2ec3f1ea659233ccee3f66514d0fd76b
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: a886e3d0ec58d137fbd39e767e11f48364ce7a0b
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="mbsrtowcs"></a>mbsrtowcs
-現在のロケールのマルチバイト文字列を、対応するワイド文字の文字列に変換します。マルチバイト文字の途中から再開することが可能です。 この関数のセキュリティが強化されたバージョンについては、「[mbsrtowcs_s](../../c-runtime-library/reference/mbsrtowcs-s.md)」をご覧ください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-size_t mbsrtowcs(  
-   wchar_t *wcstr,  
-   const char **mbstr,  
-   sizeof count,  
-   mbstate_t *mbstate  
-);  
-template <size_t size>  
-size_t mbsrtowcs(  
-   wchar_t (&wcstr)[size],  
-   const char **mbstr,  
-   sizeof count,  
-   mbstate_t *mbstate  
-); // C++ only  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- [出力] `wcstr`  
- 結果として変換されたワイド文字の文字列を格納するアドレス。  
-  
- [入力、出力] `mbstr`  
- 変換するマルチバイト文字列の場所への間接ポインター。  
-  
- [入力] `count`  
- 変換して `wcstr` に格納する最大文字数 (バイト数ではない)。  
-  
- [入力、出力] `mbstate`  
- `mbstate_t` 変換状態オブジェクトへのポインター。 この値が null ポインターの場合、静的な内部変換状態オブジェクトが使用されます。 内部 `mbstate_t` オブジェクトはスレッド セーフではないため、常に独自の `mbstate` パラメーターを渡すことをお勧めします。  
-  
-## <a name="return-value"></a>戻り値  
- 正常に変換された文字数を返します (終端の null 文字があっても含まれません)。 エラーが発生した場合に (size_t)(-1) を返し、`errno` を EILSEQ に設定します。  
-  
-## <a name="remarks"></a>コメント  
- `mbsrtowcs` 関数は、`mbstr` が間接的に指すマルチバイト文字列を、`wcstr` に含まれる変換状態を使用して、`mbstate` が指すバッファーに格納されるワイド文字に変換します。 終端 null マルチバイト文字が検出されるまで、あるいは現在のロケールの有効な文字に対応しないマルチバイト シーケンスが検出されるか、`count` 文字分の変換が済むまで、各文字が変換されていきます。 `mbsrtowcs` は、`count` の発生前または発生時にマルチバイト null 文字 ('\0') を検出すると、それを 16 ビットの終端 null 文字に変換して停止します。  
-  
- このため、`wcstr` のワイド文字の文字列が null 終了になるのは、`mbsrtowcs` が変換中にマルチバイト null 文字を検出した場合だけです。 `mbstr` および `wcstr` が指すシーケンスが重なり合う場合、`mbsrtowcs` の動作は未定義です。 `mbsrtowcs` は、現在のロケールの LC_TYPE カテゴリの影響を受けます。  
-  
- `mbsrtowcs` 関数は、再開できるという点で [mbstowcs_s、_mbstowcs_s_l](../../c-runtime-library/reference/mbstowcs-mbstowcs-l.md) と異なります。 同じ関数または再開可能な他の関数の後続の呼び出しのために、変換状態が `mbstate` に格納されます。 再開可能な関数と再開不可能な関数を混用した場合、結果は未定義です。  たとえば、`mbsrlen` の代わりに `mbslen` の後続の呼び出しが使用されている場合、アプリケーションは `mbsrtowcs` の代わりに `mbstowcs.` を使用する必要があります。  
-  
- `wcstr` が null ポインターでない場合、`mbstr` が指すポインター オブジェクトは、終端の null 文字に達したために変換が停止したときに null ポインターが割り当てられます。 それ以外の場合、変換された最後のマルチバイト文字がある場合は、その後ろのアドレスが割り当てられます。 これにより、後続の関数呼び出しで、この呼び出しが停止した場所から変換を再開できます。  
-  
- `wcstr` 引数が null ポインターの場合、`count` 引数は無視され、`mbsrtowcs` は変換先の文字列に必要なサイズをワイド文字数で返します。 `mbstate` が null ポインターの場合、関数はスレッド セーフではない静的な `mbstate_t` 内部変換状態オブジェクトを使用します。 文字シーケンス `mbstr` に対応するマルチバイト文字の表現がない場合、-1 が返され、`errno` が `EILSEQ` に設定されます。  
-  
- `mbstr` が null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `errno` を `EINVAL` に設定し、-1 を返します。  
-  
- C++ では、この関数にテンプレートのオーバーロードがあります。このオーバーロードは、この関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。  
-  
-## <a name="exceptions"></a>例外  
- `mbsrtowcs` 関数は、この関数の実行中に現行スレッドのどの関数も `setlocale` を呼び出さず、かつ `mbstate` 引数が null ポインターでない限り、マルチスレッド セーフです。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`mbsrtowcs`|\<wchar.h>|  
-  
-## <a name="see-also"></a>参照  
- [データ変換](../../c-runtime-library/data-conversion.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
- [mbrtowc](../../c-runtime-library/reference/mbrtowc.md)   
- [mbtowc、_mbtowc_l](../../c-runtime-library/reference/mbtowc-mbtowc-l.md)   
- [mbstowcs、_mbstowcs_l](../../c-runtime-library/reference/mbstowcs-mbstowcs-l.md)   
- [mbsinit](../../c-runtime-library/reference/mbsinit.md)
+
+現在のロケールのマルチバイト文字列を、対応するワイド文字の文字列に変換します。マルチバイト文字の途中から再開することが可能です。 この関数のセキュリティが強化されたバージョンについては、「[mbsrtowcs_s](mbsrtowcs-s.md)」をご覧ください。
+
+## <a name="syntax"></a>構文
+
+```C
+size_t mbsrtowcs(
+   wchar_t *wcstr,
+   const char **mbstr,
+   sizeof count,
+   mbstate_t *mbstate
+);
+template <size_t size>
+size_t mbsrtowcs(
+   wchar_t (&wcstr)[size],
+   const char **mbstr,
+   sizeof count,
+   mbstate_t *mbstate
+); // C++ only
+```
+
+### <a name="parameters"></a>パラメーター
+
+*wcstr*<br/>
+結果として変換されたワイド文字の文字列を格納するアドレス。
+
+*mbstr*<br/>
+変換するマルチバイト文字列の場所への間接ポインター。
+
+*count*<br/>
+最大文字数 (バイトではなく) を変換し、保存する*wcstr*です。
+
+*呼び出すため*<br/>
+ポインター、 **mbstate_t**変換状態オブジェクト。 この値が null ポインターの場合、静的な内部変換状態オブジェクトが使用されます。 内部**mbstate_t**オブジェクトはスレッド セーフであることをお勧めを常に渡す独自*呼び出すため*パラメーター。
+
+## <a name="return-value"></a>戻り値
+
+正常に変換された文字数を返します (終端の null 文字があっても含まれません)。 返します (size_t)(-1) 場合は、エラーが発生し、設定**errno** EILSEQ にします。
+
+## <a name="remarks"></a>コメント
+
+**Mbsrtowcs**関数が直接に指すマルチバイト文字の文字列に変換します*mbstr*が指すバッファーに格納されているワイド文字に*wcstr*により、含まれる変換状態を使用して*呼び出すため*です。 変換が続行されます文字ごとに、終端 null マルチバイト文字が出現するまで、現在のロケールで有効な文字に対応しないマルチバイト シーケンスが発生した、またはまで*カウント*文字が変換されています。 場合**mbsrtowcs**前に、またはときにマルチバイト null 文字 ('\0') が発生した*カウント*発生すると、16 ビット終端の null 文字と停止に変換します。
+
+したがって、ワイド文字列で*wcstr*が null で終わる場合にのみ**mbsrtowcs**変換中にマルチバイト null 文字を検出します。 シーケンスを指す場合*mbstr*と*wcstr*などの動作の重複**mbsrtowcs**が定義されていません。 **mbsrtowcs**は、現在のロケールの LC_TYPE カテゴリの影響を受けます。
+
+**Mbsrtowcs**関数とは異なります[mbstowcs、_mbstowcs_l](mbstowcs-mbstowcs-l.md)によって、再起動します。 変換状態が格納されている*呼び出すため*以降の呼び出し、同じまたは再開可能なその他の関数にします。 再開可能な関数と再開不可能な関数を混用した場合、結果は未定義です。  たとえば、アプリケーションを使用する必要があります**mbsrlen**の代わりに**mbslen**場合、後続の呼び出しには、 **mbsrtowcs**の代わりに使用される**mbstowcs**.
+
+場合*wcstr*が null のポインターでないポインター オブジェクトを指す*mbstr*終端の null 文字に達したために、変換が停止した場合に null ポインターが割り当てられます。 それ以外の場合、変換された最後のマルチバイト文字がある場合は、その後ろのアドレスが割り当てられます。 これにより、後続の関数呼び出しで、この呼び出しが停止した場所から変換を再開できます。
+
+場合、 *wcstr*引数が null のポインター、*カウント*引数は無視されますと**mbsrtowcs**変換先の文字列のワイド文字で必要なサイズを返します。 場合*呼び出すため*null ポインターでは、関数の使用、スレッド セーフでは非静的な内部**mbstate_t**変換状態オブジェクト。 場合文字シーケンス*mbstr*が対応するマルチバイト文字の表現、-1 が返され、 **errno**に設定されている**EILSEQ**です。
+
+場合*mbstr* 」の説明に従って、null ポインターである無効なパラメーター ハンドラーが呼び出される[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合に、この関数が設定**errno**に**EINVAL**し、-1 を返します。
+
+C++ では、この関数にテンプレートのオーバーロードがあります。このオーバーロードは、この関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md)」を参照してください。
+
+## <a name="exceptions"></a>例外
+
+**Mbsrtowcs**関数が呼び出す関数、現在のスレッドがない限り、マルチ スレッド セーフは**setlocale、_wsetlocale**この関数を実行している限り、*呼び出すため*引数が null ポインターではありません。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**mbsrtowcs**|\<wchar.h>|
+
+## <a name="see-also"></a>関連項目
+
+[データ変換](../../c-runtime-library/data-conversion.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
+[mbrtowc](mbrtowc.md)<br/>
+[mbtowc、_mbtowc_l](mbtowc-mbtowc-l.md)<br/>
+[mbstowcs、_mbstowcs_l](mbstowcs-mbstowcs-l.md)<br/>
+[mbsinit](mbsinit.md)<br/>

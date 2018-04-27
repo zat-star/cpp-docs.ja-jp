@@ -1,12 +1,12 @@
 ---
-title: "C++ 標準ライブラリの概要 | Microsoft Docs"
-ms.custom: 
+title: C++ 標準ライブラリの概要 | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 dev_langs:
 - C++
@@ -16,61 +16,62 @@ helpviewer_keywords:
 - libraries, Standard C++
 - C++ Standard Library, headers
 ms.assetid: 7acb83a4-da73-4ad3-bc30-a71289db7f60
-caps.latest.revision: 
+caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2892f3df9375a220902588ff37e73c5b9e8b1719
-ms.sourcegitcommit: d51ed21ab2b434535f5c1d553b22e432073e1478
+ms.openlocfilehash: 79ec0f582ace9431a1d3a4f8eb0b474cb0d588d6
+ms.sourcegitcommit: dd1a509526fa8bb18e97ab7bc7b91cbdb3ec7059
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="c-standard-library-overview"></a>C++ 標準ライブラリの概要
-すべての C++ ライブラリのエンティティは 1 つ以上の標準ヘッダーで宣言または定義されます。 この実装には C++ 標準では必要ない 2 つの追加ヘッダー、`<hash_map>` と `<hash_set>` が含まれています。 この実装がサポートするヘッダーの完全な一覧については、「[ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)」をご覧ください。  
-  
- C++ ライブラリのフリースタンディング実装では、これらのヘッダーの一部のみが提供されます。  
-  
-|||  
-|-|-|  
-|[\<cstddef>](../standard-library/cstddef.md)|[\<<cstdlib>](../standard-library/cstdlib.md) (少なくとも関数 `abort`、`atexit`、`exit` を宣言する)|  
-|[\<exception>](../standard-library/exception.md)|[\<limits>](../standard-library/limits.md)|  
-|[\<new>](../standard-library/new.md)|[\<cstdarg>](../standard-library/cstdarg.md)|  
-  
- C++ のライブラリのヘッダーには 2 つの広範な再分割があります。  
-  
--   [iostreams](../standard-library/iostreams-conventions.md) の規則。  
-  
--   [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)の規則。  
-  
- このセクションでは、以下のセクションについて説明します。  
-  
--   [C++ ライブラリ ヘッダーの使用](../standard-library/using-cpp-library-headers.md)  
-  
--   [C++ ライブラリの規則](../standard-library/cpp-library-conventions.md)  
-  
--   [iostreams の規則](../standard-library/iostreams-conventions.md)  
-  
--   [C++ プログラムの起動と終了](../standard-library/cpp-program-startup-and-termination.md)  
-  
--   [安全なライブラリ: C++ 標準ライブラリ](../standard-library/safe-libraries-cpp-standard-library.md)  
-  
--   [チェックを行う反復子](../standard-library/checked-iterators.md)  
-  
--   [反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)  
-  
--   [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)  
-  
--   [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)  
-  
--   [stdext 名前空間](../standard-library/stdext-namespace.md)  
-  
--   [正規表現 (C++)](../standard-library/regular-expressions-cpp.md)  
-  
- Visual C++ ランタイム ライブラリの詳細については、「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」をご覧ください。  
-  
-## <a name="see-also"></a>参照  
- [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)
 
+すべての C++ ライブラリのエンティティは 1 つ以上の標準ヘッダーで宣言または定義されます。 この実装には、2 つの追加ヘッダーが含まれています。 \<hash_map > および\<hash_set >、C++ 標準でする必要はありません。 この実装がサポートするヘッダーの完全な一覧については、「[ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)」をご覧ください。
+
+C++ ライブラリのフリースタンディング実装では、これらのヘッダーの一部のみが提供されます。
+
+|||
+|-|-|
+|[\<cstddef>](../standard-library/cstddef.md)|[\<<cstdlib>](../standard-library/cstdlib.md) (少なくとも関数 `abort`、`atexit`、`exit` を宣言する)|
+|[\<exception>](../standard-library/exception.md)|[\<limits>](../standard-library/limits.md)|
+|[\<new>](../standard-library/new.md)|[\<cstdarg>](../standard-library/cstdarg.md)|
+
+C++ のライブラリのヘッダーには 2 つの広範な再分割があります。
+
+- [iostreams](../standard-library/iostreams-conventions.md) の規則。
+
+- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)の規則。
+
+このセクションでは、以下のセクションについて説明します。
+
+- [C++ ライブラリ ヘッダーの使用](../standard-library/using-cpp-library-headers.md)
+
+- [C++ ライブラリの規則](../standard-library/cpp-library-conventions.md)
+
+- [iostreams の規則](../standard-library/iostreams-conventions.md)
+
+- [C++ プログラムの起動と終了](../standard-library/cpp-program-startup-and-termination.md)
+
+- [安全なライブラリ: C++ 標準ライブラリ](../standard-library/safe-libraries-cpp-standard-library.md)
+
+- [チェックを行う反復子](../standard-library/checked-iterators.md)
+
+- [反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)
+
+- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+
+- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+
+- [stdext 名前空間](../standard-library/stdext-namespace.md)
+
+- [正規表現 (C++)](../standard-library/regular-expressions-cpp.md)
+
+Visual C++ ランタイム ライブラリの詳細については、「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」をご覧ください。
+
+## <a name="see-also"></a>関連項目
+
+[.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)<br/>

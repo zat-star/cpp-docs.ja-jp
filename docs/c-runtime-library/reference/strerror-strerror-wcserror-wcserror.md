@@ -1,12 +1,12 @@
 ---
-title: "strerror、_strerror、_wcserror、__wcserror | Microsoft Docs"
-ms.custom: 
+title: strerror、_strerror、_wcserror、__wcserror | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - strerror
@@ -52,87 +52,93 @@ helpviewer_keywords:
 - __wcserror function
 - error messages, getting
 ms.assetid: 27b72255-f627-43c0-8836-bcda8b003e14
-caps.latest.revision: 
+caps.latest.revision: 21
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 85fee7ce2b3c4264e8593082640489aae01cb9e0
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 91b2460019d437f91b17f7aabc8522da53f6a61a
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="strerror-strerror-wcserror-wcserror"></a>strerror、_strerror、_wcserror、__wcserror
-システム エラー メッセージの文字列 (`strerror`、`_wcserror`) を取得します。または、ユーザーが指定したエラー メッセージの文字列 (`_strerror`、`__wcserror`) を書式設定します。 これらの関数にはセキュリティが強化されたバージョンがあります。「[strerror_s、_strerror_s、_wcserror_s、\__wcserror_s](../../c-runtime-library/reference/strerror-s-strerror-s-wcserror-s-wcserror-s.md)」をご覧ください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *strerror(  
-   int errnum   
-);  
-char *_strerror(  
-   const char *strErrMsg   
-);  
-wchar_t * _wcserror(  
-   int errnum   
-);  
-wchar_t * __wcserror(  
-   const wchar_t *strErrMsg   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `errnum`  
- エラー番号。  
-  
- `strErrMsg`  
- ユーザーが指定したメッセージ。  
-  
-## <a name="return-value"></a>戻り値  
- これらの関数はすべて、エラー メッセージの文字列へのポインターを返します。 文字列は後続の呼び出しによって上書きされる可能性があります。  
-  
-## <a name="remarks"></a>コメント  
- `strerror` 関数は、エラー メッセージの文字列に `errnum` をマップし、その文字列へのポインターを返します。 `strerror` および `_strerror` の両方とも、実際にはメッセージを出力しません。メッセージを出力させるためには、[fprintf](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md) などの出力関数を呼び出す必要があります。  
-  
-```  
-if (( _access( "datafile",2 )) == -1 )  
-   fprintf( stderr, _strerror(NULL) );  
-```  
-  
- `strErrMsg` が `NULL` として渡された場合、`_strerror` は、エラーを生成した最後のライブラリの呼び出しのシステム エラー メッセージを含む文字列へのポインターを返します。 エラー メッセージ文字列は、改行文字 (「\n」) で終了します。 `strErrMsg` が `NULL` ではない場合、`_strerror` は、(以下の順序どおりに) 文字列のメッセージ、コロン、空白、エラーを生成した最後のライブラリの呼び出しのシステム エラー メッセージ、および改行文字を含む文字列へのポインターを返します。 文字列のメッセージの長さは、最大で 94 文字です。  
-  
- `_strerror` の実際のエラー番号は、変数 [errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) に格納されます。 正確な結果を生成するため、ルーチンがエラーを返した直後に `_strerror` を呼び出します。 そうしなければ、`strerror` または `_strerror` への後続の呼び出しが `errno` の値をオーバーライドする可能性があります。  
-  
- `_wcserror`、および `__wcserror` は、それぞれ、`strerror`、および `_strerror` のワイド文字バージョンです。  
-  
- `_strerror`、`_wcserror`、および `__wcserror` は、ANSI 定義の一部ではありません。これらは Microsoft 拡張機能であり、コードの移植性が必要となる場合は使用しないことをお勧めします。 ANSI 互換のために、代わりに `strerror` を使用します。  
-  
- エラーの文字列を取得するには、非推奨のマクロ [_sys_errlist](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) および [_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) や非推奨の内部関数 `__sys_errlist` および `__sys_nerr` ではなく、`strerror` または `_wcserror` をお勧めします。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_tcserror`|`strerror`|`strerror`|`_wcserror`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`strerror`|\<string.h>|  
-|`_strerror`|\<string.h>|  
-|`_wcserror`, `__wcserror`|\<string.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
- 「[perror](../../c-runtime-library/reference/perror-wperror.md)」の例をご覧ください。  
-  
-## <a name="see-also"></a>参照  
- [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [clearerr](../../c-runtime-library/reference/clearerr.md)   
- [ferror](../../c-runtime-library/reference/ferror.md)   
- [perror、_wperror](../../c-runtime-library/reference/perror-wperror.md)
+
+システム エラー メッセージ文字列を取得 (**strerror**、 **_wcserror**) またはユーザーが指定したエラー メッセージ文字列を書式設定 (**_strerror**、 **__wcserror**). これらの関数にはセキュリティが強化されたバージョンがあります。「[strerror_s、_strerror_s、_wcserror_s、\__wcserror_s](strerror-s-strerror-s-wcserror-s-wcserror-s.md)」をご覧ください。
+
+## <a name="syntax"></a>構文
+
+```C
+char *strerror(
+   int errnum
+);
+char *_strerror(
+   const char *strErrMsg
+);
+wchar_t * _wcserror(
+   int errnum
+);
+wchar_t * __wcserror(
+   const wchar_t *strErrMsg
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*errnum*<br/>
+エラー番号。
+
+*strErrMsg*<br/>
+ユーザーが指定したメッセージ。
+
+## <a name="return-value"></a>戻り値
+
+これらの関数はすべて、エラー メッセージの文字列へのポインターを返します。 文字列は後続の呼び出しによって上書きされる可能性があります。
+
+## <a name="remarks"></a>コメント
+
+**Strerror**関数のマップ*errnum*エラー メッセージ文字列に文字列へのポインターを返します。 どちらも**strerror**も **_strerror**実際にメッセージを出力します関数を呼び出す出力などがそのため、 [fprintf](fprintf-fprintf-l-fwprintf-fwprintf-l.md):。
+
+```C
+if (( _access( "datafile",2 )) == -1 )
+   fprintf( stderr, _strerror(NULL) );
+```
+
+場合*strErrMsg*として渡される**NULL**、 **_strerror**システム エラー メッセージ、エラーが発生した最後のライブラリ呼び出しを含む文字列へのポインターを返します。 エラー メッセージ文字列は、改行文字 (「\n」) で終了します。 場合*strErrMsg*は等しくありません**NULL**、し **_strerror**文字列のメッセージ、コロン、空白、システム エラー (順序で) 格納する文字列へのポインターを返します最後のライブラリの呼び出し、および改行文字を生成するメッセージ。 文字列のメッセージの長さは、最大で 94 文字です。
+
+実際のエラー番号 **_strerror**変数に格納されて[errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)です。 正確な結果を生成するために呼び出す **_strerror**ライブラリ ルーチンがエラーを返した後すぐにします。 それ以外の場合、後続の呼び出し**strerror**または **_strerror**を上書きできる、 **errno**値。
+
+**_wcserror**と **_ _wcserror**のワイド文字バージョンは、 **strerror**と **_strerror**、それぞれします。
+
+**_strerror**、 **_wcserror**、および **_ _wcserror** ANSI 定義の一部ではありません。 これらは Microsoft 拡張機能あり、使用しないことにコードの移植性したいことをお勧めします。 ANSI 互換性のため、使用して**strerror**代わりにします。
+
+エラー文字列を取得することをお勧め**strerror**または **_wcserror**非推奨のマクロではなく[_sys_errlist](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)と[_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)と非推奨の内部関数 **__sys_errlist**と **__sys_nerr**です。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_tcserror**|**strerror**|**strerror**|**_wcserror**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**strerror**|\<string.h>|
+|**_strerror**|\<string.h>|
+|**_wcserror**、 **_ _wcserror**|\<string.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+「[perror](perror-wperror.md)」の例をご覧ください。
+
+## <a name="see-also"></a>関連項目
+
+[文字列操作](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[clearerr](clearerr.md)<br/>
+[ferror](ferror.md)<br/>
+[perror、_wperror](perror-wperror.md)<br/>

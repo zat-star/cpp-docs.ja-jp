@@ -1,12 +1,12 @@
 ---
-title: "sin、sinf、sinl、sinh、sinhf、sinhl | Microsoft Docs"
-ms.custom: 
+title: sin、sinf、sinl、sinh、sinhf、sinhl | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - sinl
@@ -51,17 +51,17 @@ helpviewer_keywords:
 - sinhl function
 - hyperbolic functions
 ms.assetid: 737de73e-3590-45f9-8257-dc1c0c489dfc
-caps.latest.revision: 
+caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
 ms.openlocfilehash: 54718553d71a498463dbc881da8ceb3401ff5b5b
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.sourcegitcommit: 9a3a3d59176043ae60584482c2572c07f757b320
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="sin-sinf-sinl-sinh-sinhf-sinhl"></a>sin、sinf、sinl、sinh、sinhf、sinhl
 サインとハイパーボリック サインを計算します。  
@@ -110,9 +110,9 @@ long double sinhl(long double x);
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、`sin` または `sinh` の値を受け取って返す `float` および `long double` のオーバーロードを呼び出すことができます。 C プログラムでは、`sin` および `sinh` は常に `double` を受け取って返します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
-|ルーチンによって返される値|必須ヘッダー|  
+|ルーチン|必須ヘッダー|  
 |-------------|---------------------|  
 |`sin`, `sinf`, `sinl`, `sinh`, `sinhf`, `sinhl`|\<math.h>|  
   
@@ -153,7 +153,7 @@ cos( 1.570796 ) = 0.000000
 cosh( 1.570796 ) = 2.509178  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [浮動小数点サポート](../../c-runtime-library/floating-point-support.md)   
  [acos、acosf、acosl](../../c-runtime-library/reference/acos-acosf-acosl.md)   
  [asin、asinf、asinl](../../c-runtime-library/reference/asin-asinf-asinl.md)   

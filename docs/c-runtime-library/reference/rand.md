@@ -1,12 +1,12 @@
 ---
 title: rand | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 1/02/2018
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - rand
@@ -39,15 +39,15 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5fecd9079de1ae846d83847eb299890d62c29d17
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: b5d60cdedf69d03871be4c408241660ea726b5c5
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="rand"></a>rand
 
-よく知られていると完全に再現可能なアルゴリズムを使用して擬似乱数を生成します。 この関数のプログラムでより安全なバージョンは使用できません。参照してください[rand_s](../../c-runtime-library/reference/rand-s.md)です。 によって生成された番号`rand`暗号的に安全ではありません。 乱数生成のより安全な暗号を使用して`rand_s`で C++ 標準ライブラリで宣言された関数または[\<ランダム >](../../standard-library/random.md)です。
+よく知られていると完全に再現可能なアルゴリズムを使用して擬似乱数を生成します。 この関数のプログラムでより安全なバージョンは使用できません。参照してください[rand_s](rand-s.md)です。 によって生成された番号**rand**暗号的に安全ではありません。 乱数生成のより安全な暗号を使用して[rand_s](rand-s.md)で C++ 標準ライブラリで宣言された関数または[\<ランダム >](../../standard-library/random.md)です。
 
 ## <a name="syntax"></a>構文
 
@@ -57,21 +57,21 @@ int rand( void );
 
 ## <a name="return-value"></a>戻り値
 
-`rand` は、上述のように疑似乱数を返します。 エラーの戻り値はありません。
+**rand**上記の疑似乱数を返します。 エラーの戻り値はありません。
 
 ## <a name="remarks"></a>コメント
 
-`rand` 関数は、0 から `RAND_MAX` (32767) までの範囲の整数の擬似乱数を返します。 `rand` を呼び出す前に、[srand](../../c-runtime-library/reference/srand.md) を使用して擬似乱数ジェネレーターにシードを設定してください。
+**Rand** 、0 ~ の擬似乱数の整数を返す**RAND_MAX** (32767)。 使用して、 [srand](srand.md)関数を呼び出す前に、擬似乱数ジェネレーターのシード**rand**です。
 
-`rand`関数は、よく知られているシーケンスを生成し、暗号化機能として使用するためには不適切なです。 乱数生成のより安全な暗号を使用して`rand_s`で C++ 標準ライブラリで宣言された関数または[\<ランダム >](../../standard-library/random.md)です。 `rand()` の不具合やこれらの不具合に対する `<random>` の対応の詳細については、[このビデオ](http://go.microsoft.com/fwlink/?LinkId=397615)をご覧ください。
+**Rand**関数は、よく知られているシーケンスを生成し、暗号化機能として使用するためには不適切なです。 乱数生成のより安全な暗号を使用して[rand_s](rand-s.md)で C++ 標準ライブラリで宣言された関数または[\<ランダム >](../../standard-library/random.md)です。 については、何が発生しています**rand**とどのように\<ランダム > これらの欠点に対処を参照してください[このビデオ](http://go.microsoft.com/fwlink/?LinkId=397615)です。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-|ルーチンによって返される値|必須ヘッダー|
+|ルーチン|必須ヘッダー|
 |-------------|---------------------|
-|`rand`|\<stdlib.h>|
+|**rand**|\<stdlib.h>|
 
-互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
 
 ## <a name="example"></a>例
 
@@ -125,7 +125,7 @@ int main( void )
 11651
 27464
 18093
- 3284
+3284
 11785
 14686
 11447
@@ -145,6 +145,6 @@ int main( void )
 
 ## <a name="see-also"></a>関連項目
 
-[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)  
-[srand](../../c-runtime-library/reference/srand.md)  
-[rand_s](../../c-runtime-library/reference/rand-s.md)  
+[浮動小数点サポート](../../c-runtime-library/floating-point-support.md)<br/>
+[srand](srand.md)<br/>
+[rand_s](rand-s.md)<br/>

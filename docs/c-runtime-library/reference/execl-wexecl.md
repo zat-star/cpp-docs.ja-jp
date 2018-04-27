@@ -1,12 +1,12 @@
 ---
-title: "_execl、_wexecl | Microsoft ドキュメント"
-ms.custom: 
+title: _execl、_wexecl | Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _execl
@@ -36,84 +36,90 @@ helpviewer_keywords:
 - _wexecl function
 - execl function
 ms.assetid: 81fefb8a-0a06-4221-b2bc-be18e38e89f4
-caps.latest.revision: 
+caps.latest.revision: 23
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 893de6ced476c36ff704a9e9ae01b2d38c8b81af
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 234a4f1b495c6cbfbcb047af58b6eec0f579ea61
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="execl-wexecl"></a>_execl、_wexecl
-新しい子プロセスを読み込んで実行します。  
-  
+
+新しい子プロセスを読み込んで実行します。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-intptr_t _execl(   
-   const char *cmdname,  
-   const char *arg0,  
-   ... const char *argn,  
-   NULL   
-);  
-intptr_t _wexecl(  
-   const wchar_t *cmdname,  
-   const wchar_t *arg0,  
-   ... const wchar_t *argn,  
-   NULL   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `cmdname`  
- 実行されるファイルのパス。  
-  
- `arg0, ... argn`  
- パラメーターへのポインターのリスト。  
-  
-## <a name="return-value"></a>戻り値  
- 成功した場合、これらの関数が呼び出しプロセスに戻ることはありません。 戻り値-1 がいる場合、エラーを示す、`errno`グローバル変数を設定します。  
-  
-|errno の値|説明|  
-|-----------------|-----------------|  
-|`E2BIG`|引数と環境設定には、32 KB を超える領域が必要です。|  
-|`EACCES`|指定されたファイルでロック違反または共有違反が発生しています。|  
-|`EINVAL`|無効なパラメーター (1 つまたは複数のパラメーターが null ポインターまたは空の文字列の場合)。|  
-|`EMFILE`|開いているファイルの数が多すぎます (指定されたファイルは、実行可能ファイルであるかどうかを確認するために開く必要があります)。|  
-|`ENOENT`|ファイルまたはパスが見つかりません。|  
-|`ENOEXEC`|指定されたファイルが実行可能ファイルでないか、無効な実行可能ファイル形式です。|  
-|`ENOMEM`|新しいプロセスを実行するのに十分なメモリがないか、使用できるメモリが破損しているか、または無効なブロックが存在します (呼び出しプロセスが正しく割り当てられていないことを示します)。|  
-  
-## <a name="remarks"></a>コメント  
- これらの各関数は新しいプロセスを読み込んで実行し、各コマンド ライン引数を個別のパラメーターとして渡します。 1 番目の引数はコマンドまたは実行可能ファイルの名前で、2 番目の引数は、1 番目と同じにする必要があります。 これは、実行されるプロセスの `argv[0]` になります。 3 番目の引数は、実行されるプロセスの 1 番目の引数 `argv[1]` です。  
-  
- `_execl` 関数は、パラメーターを検証します。 `cmdname` または `arg0` のいずれかが null ポインターまたは空の文字列である場合、これらの関数は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように無効なパラメーター ハンドラーを呼び出します。実行の継続が許可された場合、これらの関数は `errno` を `EINVAL` に設定し、-1 を返します。 新しいプロセスは実行されません。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|オプション ヘッダー|  
-|--------------|---------------------|---------------------|  
-|`_execl`|\<process.h>|\<errno.h>|  
-|`_wexecl`|\<process.h> または \<wchar.h>|\<errno.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
- 「[_exec 関数、_wexec 関数](../../c-runtime-library/exec-wexec-functions.md)」の例を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)   
- [_exec 系関数と _wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)   
- [abort](../../c-runtime-library/reference/abort.md)   
- [atexit](../../c-runtime-library/reference/atexit.md)   
- [exit、_Exit、_exit](../../c-runtime-library/reference/exit-exit-exit.md)   
- [_onexit、_onexit_m](../../c-runtime-library/reference/onexit-onexit-m.md)   
- [_spawn関数、_wspawn 関数](../../c-runtime-library/spawn-wspawn-functions.md)   
- [system、_wsystem](../../c-runtime-library/reference/system-wsystem.md)
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+intptr_t _execl(
+   const char *cmdname,
+   const char *arg0,
+   ... const char *argn,
+   NULL
+);
+intptr_t _wexecl(
+   const wchar_t *cmdname,
+   const wchar_t *arg0,
+   ... const wchar_t *argn,
+   NULL
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*cmdname*<br/>
+実行されるファイルのパス。
+
+*arg0*、.*argn*<br/>
+パラメーターへのポインターのリスト。
+
+## <a name="return-value"></a>戻り値
+
+成功した場合、これらの関数が呼び出しプロセスに戻ることはありません。 戻り値-1 がいる場合、エラーを示す、 **errno**グローバル変数を設定します。
+
+|errno の値|説明|
+|-----------------|-----------------|
+|**E2BIG**|引数と環境設定には、32 KB を超える領域が必要です。|
+|**EACCES**|指定されたファイルでロック違反または共有違反が発生しています。|
+|**EINVAL**|無効なパラメーター (1 つまたは複数のパラメーターが null ポインターまたは空の文字列の場合)。|
+|**EMFILE**|開いているファイルの数が多すぎます (指定されたファイルは、実行可能ファイルであるかどうかを確認するために開く必要があります)。|
+|**ENOENT**|ファイルまたはパスが見つかりません。|
+|**ENOEXEC**|指定されたファイルが実行可能ファイルでないか、無効な実行可能ファイル形式です。|
+|**ENOMEM**|新しいプロセスを実行するのに十分なメモリがないか、使用できるメモリが破損しているか、または無効なブロックが存在します (呼び出しプロセスが正しく割り当てられていないことを示します)。|
+
+## <a name="remarks"></a>コメント
+
+これらの各関数は新しいプロセスを読み込んで実行し、各コマンド ライン引数を個別のパラメーターとして渡します。 1 番目の引数はコマンドまたは実行可能ファイルの名前で、2 番目の引数は、1 番目と同じにする必要があります。 これは、実行されるプロセスの `argv[0]` になります。 3 番目の引数は、実行されるプロセスの 1 番目の引数 `argv[1]` です。
+
+**_Execl**関数は、パラメーターを検証します。 いずれか*cmdname*または*arg0*が null ポインターまたは空の文字列」の説明に従って、これらの関数は、無効なパラメーター ハンドラーを呼び出します[パラメーターの検証](../../c-runtime-library/parameter-validation.md)場合の実行続けるには、これらの関数が許可された**errno**に**EINVAL**し、-1 を返します。 新しいプロセスは実行されません。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|オプション ヘッダー|
+|--------------|---------------------|---------------------|
+|**_execl**|\<process.h>|\<errno.h>|
+|**_wexecl**|\<process.h> または \<wchar.h>|\<errno.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+「[_exec 関数、_wexec 関数](../../c-runtime-library/exec-wexec-functions.md)」の例を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[プロセス制御と環境制御](../../c-runtime-library/process-and-environment-control.md)<br/>
+[_exec、_wexec 系関数](../../c-runtime-library/exec-wexec-functions.md)<br/>
+[abort](abort.md)<br/>
+[atexit](atexit.md)<br/>
+[exit、_Exit、_exit](exit-exit-exit.md)<br/>
+[_onexit、_onexit_m](onexit-onexit-m.md)<br/>
+[_spawn 系関数と _wspawn 系関数](../../c-runtime-library/spawn-wspawn-functions.md)<br/>
+[system、_wsystem](system-wsystem.md)<br/>

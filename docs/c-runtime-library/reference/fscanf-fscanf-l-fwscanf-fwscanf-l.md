@@ -1,12 +1,12 @@
 ---
-title: "fscanf、_fscanf_l、fwscanf、_fwscanf_l | Microsoft Docs"
-ms.custom: 
+title: fscanf、_fscanf_l、fwscanf、_fwscanf_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - fscanf
@@ -49,154 +49,159 @@ helpviewer_keywords:
 - _ftscanf function
 - fwscanf_l function
 ms.assetid: 9004e978-6c5f-4bb2-98fd-51e5948933f2
-caps.latest.revision: 
+caps.latest.revision: 24
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: aa3ccb3cc8a528847b39ad16d5e90d17e24b1da0
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: a2334998ab246d6406dbac6d877b6e710d3dfc79
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="fscanf-fscanfl-fwscanf-fwscanfl"></a>fscanf、_fscanf_l、fwscanf、_fwscanf_l
-書式付きデータをストリームから読み出します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[fscanf_s、_fscanf_s_l、fwscanf_s、_fwscanf_s_l](../../c-runtime-library/reference/fscanf-s-fscanf-s-l-fwscanf-s-fwscanf-s-l.md)」を参照してください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int fscanf(   
-   FILE *stream,  
-   const char *format [,  
-   argument ]...   
-);  
-int _fscanf_l(   
-   FILE *stream,  
-   const char *format,  
-   locale_t locale [,  
-   argument ]...   
-);  
-int fwscanf(   
-   FILE *stream,  
-   const wchar_t *format [,  
-   argument ]...   
-);  
-int _fwscanf_l(   
-   FILE *stream,  
-   const wchar_t *format,  
-   locale_t locale [,  
-   argument ]...   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `stream`  
- `FILE` 構造体へのポインター。  
-  
- `format`  
- 書式指定文字列。  
-  
- `argument`  
- 省略可能な引数。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- これらの関数は、正常に変換および代入されたフィールドの数を返します。読み込まれただけで代入されなかったフィールドは戻り値には含まれません。 戻り値が 0 の場合は、代入されたフィールドがなかったことを示します。 エラーが発生した場合や、最初の変換の前にファイル ストリームの終端を検出した場合、`EOF` および `fscanf` は `fwscanf` を返します。  
-  
- これらの関数では、パラメーターの検証が行われます。 `stream` または `format` が Null ポインターである場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `EOF` を返し、 `errno` を `EINVAL`に設定します。  
-  
-## <a name="remarks"></a>コメント  
- `fscanf` 関数は、`stream` の現在位置から `argument` (ある場合) で指定された位置にデータを読み込みます。 各 `argument` は、`format` の型指定子に対応する型の変数へのポインターにする必要があります。 `format` は、入力フィールドの解釈を制御し、`scanf` の引数 `format` と同じ形式と機能を持ちます。`format` の詳細については、「[scanf](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)」を参照してください。  
-  
- `fwscanf` 関数は、`fscanf` 関数のワイド文字バージョンです。`fwscanf` の format 引数は、ワイド文字列です。 ストリームが ANSI モードで開かれている場合、これらの関数の動作は同じになります。 `fscanf` では、UNICODE ストリームからの入力はサポートされていません。  
-  
- これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて同じです。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_ftscanf`|`fscanf`|`fscanf`|`fwscanf`|  
-|`_ftscanf_l`|`_fscanf_l`|`_fscanf_l`|`_fwscanf_l`|  
-  
- 詳細については、次を参照してください。[書式指定フィールド、scanf 関数と wscanf 関数](../../c-runtime-library/format-specification-fields-scanf-and-wscanf-functions.md)です。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|関数|必須ヘッダー|  
-|--------------|---------------------|  
-|`fscanf`, `_fscanf_l`|\<stdio.h>|  
-|`fwscanf`, `_fwscanf_l`|\<stdio.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_fscanf.c  
-// compile with: /W3  
-// This program writes formatted  
-// data to a file. It then uses fscanf to  
-// read the various data back from the file.  
-  
-#include <stdio.h>  
-  
-FILE *stream;  
-  
-int main( void )  
-{  
-   long l;  
-   float fp;  
-   char s[81];  
-   char c;  
-  
-   if( fopen_s( &stream, "fscanf.out", "w+" ) != 0 )  
-      printf( "The file fscanf.out was not opened\n" );  
-   else  
-   {  
-      fprintf( stream, "%s %ld %f%c", "a-string",   
-               65000, 3.14159, 'x' );  
-      // Security caution!  
-      // Beware loading data from a file without confirming its size,  
-      // as it may lead to a buffer overrun situation.  
-  
-      // Set pointer to beginning of file:  
-      fseek( stream, 0L, SEEK_SET );  
-  
-      // Read data back from file:  
-      fscanf( stream, "%s", s );   // C4996  
-      fscanf( stream, "%ld", &l ); // C4996  
-  
-      fscanf( stream, "%f", &fp ); // C4996  
-      fscanf( stream, "%c", &c );  // C4996  
-      // Note: fscanf is deprecated; consider using fscanf_s instead  
-  
-      // Output data read:   
-      printf( "%s\n", s );  
-      printf( "%ld\n", l );  
-      printf( "%f\n", fp );  
-      printf( "%c\n", c );  
-  
-      fclose( stream );  
-   }  
-}  
-```  
-  
-```Output  
-a-string  
-65000  
-3.141590  
-x  
-```  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [_cscanf、_cscanf_l、_cwscanf、_cwscanf_l](../../c-runtime-library/reference/cscanf-cscanf-l-cwscanf-cwscanf-l.md)   
- [fprintf、_fprintf_l、fwprintf、_fwprintf_l](../../c-runtime-library/reference/fprintf-fprintf-l-fwprintf-fwprintf-l.md)   
- [scanf、_scanf_l、wscanf、_wscanf_l](../../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)   
- [sscanf、_sscanf_l、swscanf、_swscanf_l](../../c-runtime-library/reference/sscanf-sscanf-l-swscanf-swscanf-l.md)   
- [fscanf_s、_fscanf_s_l、fwscanf_s、_fwscanf_s_l](../../c-runtime-library/reference/fscanf-s-fscanf-s-l-fwscanf-s-fwscanf-s-l.md)
+
+書式付きデータをストリームから読み出します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[fscanf_s、_fscanf_s_l、fwscanf_s、_fwscanf_s_l](fscanf-s-fscanf-s-l-fwscanf-s-fwscanf-s-l.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+int fscanf(
+   FILE *stream,
+   const char *format [,
+   argument ]...
+);
+int _fscanf_l(
+   FILE *stream,
+   const char *format,
+   locale_t locale [,
+   argument ]...
+);
+int fwscanf(
+   FILE *stream,
+   const wchar_t *format [,
+   argument ]...
+);
+int _fwscanf_l(
+   FILE *stream,
+   const wchar_t *format,
+   locale_t locale [,
+   argument ]...
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*ストリーム*<br/>
+**FILE** 構造体へのポインター。
+
+*format*<br/>
+書式指定文字列。
+
+*argument*<br/>
+省略可能な引数。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+これらの関数は、正常に変換および代入されたフィールドの数を返します。読み込まれただけで代入されなかったフィールドは戻り値には含まれません。 戻り値が 0 の場合は、代入されたフィールドがなかったことを示します。 エラーが発生した場合、または戻り値は、ファイル ストリームの末尾に達した場合、最初の変換の前に、 **EOF**の**fscanf**と**fwscanf**です。
+
+これらの関数では、パラメーターの検証が行われます。 場合*ストリーム*または*形式*null ポインターで説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 これらの関数を返すかどうかは、引き続き実行が許可された、 **EOF**設定と**errno**に**EINVAL**です。
+
+## <a name="remarks"></a>コメント
+
+**Fscanf**関数の現在位置からのデータの読み取り*ストリーム*で指定した位置に*引数*(存在する場合)。 各*引数*に型指定子に対応する型の変数へのポインターにする必要があります*形式*です。 *形式*コントロール入力の解釈のフィールドし、同じ形式し、機能、*形式*引数を**scanf**; を参照してください[scanf](scanf-scanf-l-wscanf-wscanf-l.md)用、説明*形式*です。
+
+**fwscanf**のワイド文字バージョンは、 **fscanf**; format 引数**fwscanf**ワイド文字列です。 ストリームが ANSI モードで開かれている場合、これらの関数の動作は同じになります。 **fscanf** UNICODE ストリームからの入力はサポートされていません。
+
+これらの関数のバージョン、 **_l**現在のスレッド ロケールの代わりに渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じです。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_ftscanf**|**fscanf**|**fscanf**|**fwscanf**|
+|**_ftscanf_l**|**_fscanf_l**|**_fscanf_l**|**_fwscanf_l**|
+
+詳細については、次を参照してください。[書式指定フィールド、scanf 関数と wscanf 関数](../../c-runtime-library/format-specification-fields-scanf-and-wscanf-functions.md)です。
+
+## <a name="requirements"></a>要件
+
+|関数|必須ヘッダー|
+|--------------|---------------------|
+|**fscanf**、 **_fscanf_l**|\<stdio.h>|
+|**fwscanf**、 **_fwscanf_l**|\<stdio.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_fscanf.c
+// compile with: /W3
+// This program writes formatted
+// data to a file. It then uses fscanf to
+// read the various data back from the file.
+
+#include <stdio.h>
+
+FILE *stream;
+
+int main( void )
+{
+   long l;
+   float fp;
+   char s[81];
+   char c;
+
+   if( fopen_s( &stream, "fscanf.out", "w+" ) != 0 )
+      printf( "The file fscanf.out was not opened\n" );
+   else
+   {
+      fprintf( stream, "%s %ld %f%c", "a-string",
+               65000, 3.14159, 'x' );
+      // Security caution!
+      // Beware loading data from a file without confirming its size,
+      // as it may lead to a buffer overrun situation.
+
+      // Set pointer to beginning of file:
+      fseek( stream, 0L, SEEK_SET );
+
+      // Read data back from file:
+      fscanf( stream, "%s", s );   // C4996
+      fscanf( stream, "%ld", &l ); // C4996
+
+      fscanf( stream, "%f", &fp ); // C4996
+      fscanf( stream, "%c", &c );  // C4996
+      // Note: fscanf is deprecated; consider using fscanf_s instead
+
+      // Output data read:
+      printf( "%s\n", s );
+      printf( "%ld\n", l );
+      printf( "%f\n", fp );
+      printf( "%c\n", c );
+
+      fclose( stream );
+   }
+}
+```
+
+```Output
+a-string
+65000
+3.141590
+x
+```
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[_cscanf、_cscanf_l、_cwscanf、_cwscanf_l](cscanf-cscanf-l-cwscanf-cwscanf-l.md)<br/>
+[fprintf、_fprintf_l、fwprintf、_fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>
+[scanf、_scanf_l、wscanf、_wscanf_l](scanf-scanf-l-wscanf-wscanf-l.md)<br/>
+[sscanf、_sscanf_l、swscanf、_swscanf_l](sscanf-sscanf-l-swscanf-swscanf-l.md)<br/>
+[fscanf_s、_fscanf_s_l、fwscanf_s、_fwscanf_s_l](fscanf-s-fscanf-s-l-fwscanf-s-fwscanf-s-l.md)<br/>

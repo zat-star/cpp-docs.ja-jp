@@ -1,12 +1,12 @@
 ---
-title: "_isctype、iswctype、_isctype_l、_iswctype_l | Microsoft Docs"
-ms.custom: 
+title: _isctype、iswctype、_isctype_l、_iswctype_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _isctype_l
@@ -47,81 +47,86 @@ helpviewer_keywords:
 - isctype function
 - _iswctype function
 ms.assetid: cf7509b7-12fc-4d95-8140-ad2eb98173d3
-caps.latest.revision: 
+caps.latest.revision: 17
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fe43830894be3c004fb21598b0324b864fe5b9b0
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 25df7ddaaea8c1f4df0907ebd92827f2a4865007
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="isctype-iswctype-isctypel-iswctypel"></a>_isctype、iswctype、_isctype_l、_iswctype_l
-`c` 引数で指定されるプロパティに関して `desc` をテストします。 `desc`の各有効値に対して、同等のワイド文字分類ルーチンがあります。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _isctype(  
-   int c,  
-   _ctype_t desc  
-);  
-int _isctype_l(  
-   int c,  
-   _ctype_t desc,  
-   _locale_t locale  
-);  
-int iswctype(  
-   wint_t c,  
-   wctype_t desc   
-);  
-int _iswctype_l(  
-   wint_t c,  
-   wctype_t desc,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `c`  
- テストする整数。  
-  
- `desc`  
- テストするプロパティ。 これは通常、ctype または [wctype](../../c-runtime-library/reference/wctype.md) を使用して取得されます。  
-  
- `locale`  
- 任意のロケール依存テストで使用されるロケール。  
-  
-## <a name="return-value"></a>戻り値  
- `_isctype` が現在のロケールの `iswctype` で指定されたプロパティである場合、`c`、および `desc` は 0 以外の値を返し、そうでない場合は 0 を返します。 これらの関数のうち `_l` サフィックスが付けられたバージョンは同じですが、ロケールに依存する動作に現在のロケールではなく渡されたロケールを使用するという点で異なります。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
- `_isctype` と `_isctype_l` の動作は、`c` が EOF ではなく、かつ、0 ～ 0xFF の範囲でない場合は未定義です。 CRT デバッグ ライブラリを使用し、`c` がこれらの値のうちのいずれかの値でない場合は、アサーションが発生します。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|--------------------------------------|--------------------|-----------------------|  
-|`n/a`|`_isctype`|`n/a`|`_iswctype`|  
-|`n/a`|`_isctype_l`|`n/a`|`_iswctype_l`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_isctype`|\<ctype.h>|  
-|`iswctype`|\<ctype.h> または \<wchar.h>|  
-|`_isctype_l`|\<ctype.h>|  
-|`_iswctype_l`|\<ctype.h> または \<wchar.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="see-also"></a>参照  
- [文字分類](../../c-runtime-library/character-classification.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)
+
+テスト*c* 、ctype プロパティで指定された、 *desc*引数。 有効な各値に対して*desc*、同等のワイド文字分類ルーチンがあります。
+
+## <a name="syntax"></a>構文
+
+```C
+int _isctype(
+   int c,
+   _ctype_t desc
+);
+int _isctype_l(
+   int c,
+   _ctype_t desc,
+   _locale_t locale
+);
+int iswctype(
+   wint_t c,
+   wctype_t desc
+);
+int _iswctype_l(
+   wint_t c,
+   wctype_t desc,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*c*<br/>
+テストする整数。
+
+*desc*<br/>
+テストするプロパティ。 これは通常、ctype または [wctype](wctype.md) を使用して取得されます。
+
+*locale*<br/>
+任意のロケール依存テストで使用されるロケール。
+
+## <a name="return-value"></a>戻り値
+
+**_isctype**と**iswctype**場合は、0 以外の値を返す*c*によって指定されたプロパティを持つ*desc*で現在のロケールまたはそうでない場合は 0 です。 これらの関数のバージョン、 **_l**そのロケールに依存する動作に現在のロケールの代わりに渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+動作 **_isctype**と **_isctype_l**場合に定義されていない*c* EOF ではありませんか 0 ~ 0 xff、包括的な範囲内で。 CRT デバッグ ライブラリを使用する場合と*c*アサーションは、これらの値、関数の発生いない 1 つです。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|Tchar.h のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|--------------------------------------|--------------------|-----------------------|
+|N/A|**_isctype**|N/A|**_iswctype**|
+|N/A|**_isctype_l**|N/A|**_iswctype_l**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_isctype**|\<ctype.h>|
+|**iswctype**|\<ctype.h> または \<wchar.h>|
+|**_isctype_l**|\<ctype.h>|
+|**_iswctype_l**|\<ctype.h> または \<wchar.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="see-also"></a>関連項目
+
+[文字分類](../../c-runtime-library/character-classification.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[is、isw 系ルーチン](../../c-runtime-library/is-isw-routines.md)<br/>

@@ -1,12 +1,12 @@
 ---
-title: "_tempnam、_wtempnam、tmpnam、_wtmpnam | Microsoft Docs"
-ms.custom: 
+title: _tempnam、_wtempnam、tmpnam、_wtmpnam | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _wtempnam
@@ -49,142 +49,147 @@ helpviewer_keywords:
 - _wtmpnam function
 - _wtempnam function
 ms.assetid: 3ce75f0f-5e30-42a6-9791-8d7cbfe70fca
-caps.latest.revision: 
+caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 29b0f7f645bd23c04e9d9f31dc914e29f7a048cb
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 4ba00c1998a41f2d17408babc87b0bf45cad689b
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="tempnam-wtempnam-tmpnam-wtmpnam"></a>_tempnam、_wtempnam、tmpnam、_wtmpnam
-一時ファイルの作成に使用できる名前を生成します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[tmpnam_s、_wtmpnam_s](../../c-runtime-library/reference/tmpnam-s-wtmpnam-s.md)」を参照してください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-char *_tempnam(  
-   const char *dir,  
-   const char *prefix   
-);  
-wchar_t *_wtempnam(  
-   const wchar_t *dir,  
-   const wchar_t *prefix   
-);  
-char *tmpnam(  
-   char *str   
-);  
-wchar_t *_wtmpnam(  
-   wchar_t *str   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `prefix`  
- `_tempnam` によって返された名前の前に付けられる文字列。  
-  
- `dir`  
- TMP 環境変数がない場合、または TMP が有効なディレクトリではない場合にファイル名で使用されるパス。  
-  
- `str`  
- 生成された名前を保持し、関数によって返される名前と同じになるポインター。 これは、生成された名前を保存する便利な方法です。  
-  
-## <a name="return-value"></a>戻り値  
- 各関数は、生成された名前へのポインター、または失敗した場合は `NULL` を返します。 しようとすると、エラーが発生する可能性が複数の`TMP_MAX`(STDIO を参照してください。H) を使用した呼び出し`tmpnam`を使用する場合または`_tempnam`TMP 環境変数で指定された無効なディレクトリ名があると、`dir`パラメーター。  
-  
+
+一時ファイルの作成に使用できる名前を生成します。 これらの関数のセキュリティを強化したバージョンを使用できます。「[tmpnam_s、_wtmpnam_s](tmpnam-s-wtmpnam-s.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+char *_tempnam(
+   const char *dir,
+   const char *prefix
+);
+wchar_t *_wtempnam(
+   const wchar_t *dir,
+   const wchar_t *prefix
+);
+char *tmpnam(
+   char *str
+);
+wchar_t *_wtmpnam(
+   wchar_t *str
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*prefix*<br/>
+によって返された名前の前に付けられる文字列 **_tempnam**です。
+
+*dir*<br/>
+TMP 環境変数がない場合、または TMP が有効なディレクトリではない場合にファイル名で使用されるパス。
+
+*str*<br/>
+生成された名前を保持し、関数によって返される名前と同じになるポインター。 これは、生成された名前を保存する便利な方法です。
+
+## <a name="return-value"></a>戻り値
+
+生成されるファイル名へのポインターを返しますこれらの関数または**NULL**障害が発生した場合。 しようとすると、エラーが発生する可能性が複数の**TMP_MAX** (STDIO を参照してください。H) を使用した呼び出し**tmpnam**を使用する場合または **_tempnam** TMP 環境変数で指定された無効なディレクトリ名があると、 *dir*パラメーター。
+
 > [!NOTE]
->  `tmpnam` と `_wtmpnam` によって返されるポインターは、内部の静的バッファーを指します。 これらのポインターの割り当てを解除するために [free](../../c-runtime-library/reference/free.md) を呼び出さないでください。 `_tempnam` および `_wtempnam` によって割り当てられたポインターに対して、`free` を呼び出す必要があります。  
-  
-## <a name="remarks"></a>コメント  
- これらの各関数は、現在存在しないファイルの名前を返します。 `tmpnam` は現在の作業ディレクトリ内で一意の名前を返し、`_tempnam` を使用して、現在のディレクトリではないディレクトリで一意の名前を生成することができます。 ファイル名の前に円記号が付いていてパス情報がない場合 (\fname21 など)、その名前は現在の作業ディレクトリに対して有効なので注意してください。  
-  
- `tmpnam` については、この生成されたファイル名を `str` に格納することができます。 `str` が `NULL` の場合、`tmpnam` は内部の静的バッファーに結果を残します。 したがって後続の呼び出しは、この値を破棄します。 `tmpnam` によって生成された名前を構成しているのは、プログラムで生成されたファイル名と、`tmpnam` への最初の呼び出しの後は base 32 で連番のファイル拡張子 (STDIO.H 内の `TMP_MAX` が 32,767 の場合、.1-.vvu) です。  
-  
- `_tempnam` は、次の規則によって選択されたディレクトリに対して一意のファイル名を生成します。  
-  
--   TMP 環境変数が定義され、有効なディレクトリ名に設定された場合は、TMP で指定したディレクトリに対して一意のファイル名が生成されます。  
-  
--   TMP 環境変数が定義されていない場合、または存在しないディレクトリの名前に設定されている場合、`_tempnam` は一意の名前を生成するパスとして `dir` パラメーターを使用します。  
-  
--   TMP 環境変数が定義されていない場合、または存在しないディレクトリの名前に設定されており、`dir` が `NULL` であるか、存在しないディレクトリの名前に設定されている場合、`_tempnam` は現在の作業ディレクトリを使用して一意の名前を生成します。 現時点では、TMP と `dir` の両方で存在しないディレクトリの名前を指定すると、`_tempnam` 関数の呼び出しは失敗します。  
-  
- `_tempnam` によって返される名前は、`prefix` とシーケンシャル番号の連結であり、指定したディレクトリに対して一意のファイル名を作成するために組み合わされます。 `_tempnam` は、拡張機能を持たないファイル名を生成します。 `_tempnam` は、[malloc](../../c-runtime-library/reference/malloc.md) 使用してファイル名に領域を割り当てます。プログラムは、この領域が不要になったときにこの領域を解放する必要があります。  
-  
- `_tempnam` および `tmpnam` は、オペレーティング システムから取得した OEM コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 ワイド文字を扱う場合は、`_tempnam` ではなく `_wtempnam` を使用します。`_wtempnam` の場合、引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 `_wtempnam` がマルチバイト文字列を処理しない点を除き、`_wtempnam` と `_tempnam` の動作は同じです。 ワイド文字を扱う場合は、`_wtmpnam` ではなく `tmpnam` を使用します。`_wtmpnam` の場合、引数にはワイド文字列を指定します。また戻り値もワイド文字列です。 `_wtmpnam` がマルチバイト文字列を処理しない点を除き、`_wtmpnam` と `tmpnam` の動作は同じです。  
-  
- `_DEBUG` と `_CRTDBG_MAP_ALLOC` が定義されている場合、`_tempnam` と `_wtempnam` は [_tempnam_dbg と _wtempnam_dbg](../../c-runtime-library/reference/tempnam-dbg-wtempnam-dbg.md) の呼び出しによって置き換えられます。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_ttmpnam`|`tmpnam`|`tmpnam`|`_wtmpnam`|  
-|`_ttempnam`|`_tempnam`|`_tempnam`|`_wtempnam`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_tempnam`|\<stdio.h>|  
-|`_wtempnam`, `_wtmpnam`|\<stdio.h> または \<wchar.h>|  
-|`tmpnam`|\<stdio.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_tempnam.c  
-// compile with: /W3  
-// This program uses tmpnam to create a unique filename in the  
-// current working directory, then uses _tempnam to create   
-// a unique filename with a prefix of stq.   
-  
-#include <stdio.h>  
-#include <stdlib.h>  
-  
-int main( void )  
-{     
-   char* name1 = NULL;  
-   char* name2 = NULL;  
-  
-   // Create a temporary filename for the current working directory:   
-   if( ( name1 = tmpnam( NULL ) ) != NULL ) // C4996  
-   // Note: tmpnam is deprecated; consider using tmpnam_s instead  
-      printf( "%s is safe to use as a temporary file.\n", name1 );  
-   else  
-      printf( "Cannot create a unique filename\n" );  
-  
-   // Create a temporary filename in temporary directory with the  
-   // prefix "stq". The actual destination directory may vary  
-   // depending on the state of the TMP environment variable and  
-   // the global variable P_tmpdir.     
-  
-   if( ( name2 = _tempnam( "c:\\tmp", "stq" ) ) != NULL )  
-      printf( "%s is safe to use as a temporary file.\n", name2 );   
-   else  
-      printf( "Cannot create a unique filename\n" );  
-  
-   // When name2 is no longer needed :     
-   if(name2)  
-     free(name2);  
-  
-}  
-```  
-  
-```Output  
-\s1gk. is safe to use as a temporary file.  
-C:\DOCUME~1\user\LOCALS~1\Temp\2\stq2 is safe to use as a temporary file.  
-```  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [_getmbcp](../../c-runtime-library/reference/getmbcp.md)   
- [malloc](../../c-runtime-library/reference/malloc.md)   
- [_setmbcp](../../c-runtime-library/reference/setmbcp.md)   
- [tmpfile](../../c-runtime-library/reference/tmpfile.md)   
- [tmpfile_s](../../c-runtime-library/reference/tmpfile-s.md)
+> によって返されるポインター **tmpnam**と **_wtmpnam**内部の静的バッファーをポイントします。 これらのポインターの割り当てを解除するために [free](free.md) を呼び出さないでください。 **空き**によって割り当てられたポインターに対して呼び出される必要がある **_tempnam**と **_wtempnam**です。
+
+## <a name="remarks"></a>コメント
+
+これらの各関数は、現在存在しないファイルの名前を返します。 **tmpnam**名を返します。 現在の作業ディレクトリ内で一意と **_tempnam**現在以外のディレクトリに一意の名前を生成することができます。 ファイル名の前に円記号が付いていてパス情報がない場合 (\fname21 など)、その名前は現在の作業ディレクトリに対して有効なので注意してください。
+
+**Tmpnam**でこの生成されたファイル名を格納する*str*です。 場合*str*は**NULL**、し**tmpnam**内部の静的バッファーに、結果を残します。 したがって後続の呼び出しは、この値を破棄します。 によって生成された名前**tmpnam**プログラムで生成されたファイル名と後の最初の呼び出しで構成されています**tmpnam**、基本 32 の連続する番号のファイル拡張子 (.1 のどちらから**TMP_MAX** STDIO にします。H は 32,767) です。
+
+**_tempnam**は、次の規則によって選択されたディレクトリの一意のファイル名を生成します。
+
+- TMP 環境変数が定義され、有効なディレクトリ名に設定された場合は、TMP で指定したディレクトリに対して一意のファイル名が生成されます。
+
+- TMP 環境変数が定義されていない場合、または存在しないディレクトリの名前に設定されている場合 **_tempnam**を使用して、 *dir*パラメーターとして一意の名前を生成するパス。
+
+- TMP 環境変数が定義されていない場合、または存在しないディレクトリの名前に設定されている場合で、 *dir*か**NULL**が存在しない、ディレクトリの名前を設定または **_tempnam**一意の名前を生成する現在の作業ディレクトリを使用します。 現時点では場合、両方 TMP と*dir*が存在しないディレクトリの名前を指定、 **_tempnam**関数呼び出しは失敗します。
+
+によって返される名前 **_tempnam**の連結になります*プレフィックス*とシーケンシャル番号が含まれ、指定したディレクトリの一意のファイル名の作成に結合します。 **_tempnam**拡張子を持たないファイル名が生成されます。 **_tempnam**使用[malloc](malloc.md) %filename; に領域を割り当てるプログラムは不要になったときにこの領域の解放を担当します。
+
+**_tempnam**と**tmpnam** OEM コード ページに基づいてマルチバイト文字のシーケンスを認識し、必要に応じてハンドル マルチバイト文字の文字列の引数が、オペレーティング システムから自動的に取得します。 **_wtempnam**のワイド文字バージョンは、 **_tempnam**; 引数と戻り値の **_wtempnam**ワイド文字列です。 **_wtempnam**と **_tempnam**という点以外の動作は同じ **_wtempnam**マルチバイト文字の文字列を処理しません。 **_wtmpnam**のワイド文字バージョンは、 **tmpnam**; の引数と戻り値 **_wtmpnam**ワイド文字列です。 **_wtmpnam**と**tmpnam**という点以外の動作は同じ **_wtmpnam**マルチバイト文字の文字列を処理しません。
+
+場合 **_DEBUG**と **_CRTDBG_MAP_ALLOC**定義すると、 **_tempnam**と **_wtempnam**への呼び出しによって置き換えられます[_tempnam_dbg と _wtempnam_dbg](tempnam-dbg-wtempnam-dbg.md)です。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_ttmpnam**|**tempnam**|**tempnam**|**_wtmpnam**|
+|**_ttempnam**|**_tempnam**|**_tempnam**|**_wtempnam**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_tempnam**|\<stdio.h>|
+|**_wtempnam**、 **_wtmpnam**|\<stdio.h> または \<wchar.h>|
+|**tempnam**|\<stdio.h>|
+
+互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_tempnam.c
+// compile with: /W3
+// This program uses tmpnam to create a unique filename in the
+// current working directory, then uses _tempnam to create
+// a unique filename with a prefix of stq.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( void )
+{
+   char* name1 = NULL;
+   char* name2 = NULL;
+
+   // Create a temporary filename for the current working directory:
+   if( ( name1 = tmpnam( NULL ) ) != NULL ) // C4996
+   // Note: tmpnam is deprecated; consider using tmpnam_s instead
+      printf( "%s is safe to use as a temporary file.\n", name1 );
+   else
+      printf( "Cannot create a unique filename\n" );
+
+   // Create a temporary filename in temporary directory with the
+   // prefix "stq". The actual destination directory may vary
+   // depending on the state of the TMP environment variable and
+   // the global variable P_tmpdir.
+
+   if( ( name2 = _tempnam( "c:\\tmp", "stq" ) ) != NULL )
+      printf( "%s is safe to use as a temporary file.\n", name2 );
+   else
+      printf( "Cannot create a unique filename\n" );
+
+   // When name2 is no longer needed :
+   if(name2)
+     free(name2);
+
+}
+```
+
+```Output
+\s1gk. is safe to use as a temporary file.
+C:\DOCUME~1\user\LOCALS~1\Temp\2\stq2 is safe to use as a temporary file.
+```
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[_getmbcp](getmbcp.md)<br/>
+[malloc](malloc.md)<br/>
+[_setmbcp](setmbcp.md)<br/>
+[tmpfile](tmpfile.md)<br/>
+[tmpfile_s](tmpfile-s.md)<br/>

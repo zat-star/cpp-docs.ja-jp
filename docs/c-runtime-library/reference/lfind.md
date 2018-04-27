@@ -1,12 +1,12 @@
 ---
 title: _lfind | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _lfind
@@ -36,105 +36,110 @@ helpviewer_keywords:
 - finding keys in arrays
 - _lfind function
 ms.assetid: a40ece70-1674-4b75-94bd-9f57cfff18f2
-caps.latest.revision: 
+caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4b6df994306ad9a7d51d619a9bd409c021386a11
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 488863a32319fac17f5d1c84f56edaeeb63ff0ce
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="lfind"></a>_lfind
-指定されたキーの線形探索を実行します。 この関数のセキュリティが強化されたバージョンについては、「[_lfind_s](../../c-runtime-library/reference/lfind-s.md)」を参照してください。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-void *_lfind(  
-   const void *key,  
-   const void *base,  
-   unsigned int *num,  
-   unsigned int width,  
-   int (__cdecl *compare)(const void *, const void *)  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `key`  
- 検索するオブジェクト。  
-  
- `base`  
- 検索データのベースへのポインター。  
-  
- `num`  
- 配列要素の数。  
-  
- `width`  
- 配列要素の幅。  
-  
- `compare`  
- 比較ルーチンへのポインター。 最初のパラメーターは、検索用のキーへのポインターです。 2 番目の引数は、キーと比較する配列要素へのポインターです。  
-  
-## <a name="return-value"></a>戻り値  
- キーが見つかった場合、`_lfind` は `key` と一致する `base` の配列要素のポインターを返します。 キーが見つからない場合、`_lfind` は `NULL` を返します。  
-  
-## <a name="remarks"></a>コメント  
- `_lfind` 関数は、`num` 要素の配列の値 `key` に対する一方向の検索を、`width` バイトごとに実行します。 `bsearch` とは異なり、`_lfind` では配列を並べ替える必要がありません。 `base` 引数は、検索する配列のベースへのポインターです。 `compare` 引数は、2 つの配列要素を比較して、それらの関係を指定する値を返すユーザー指定のルーチンへのポインターです。 `_lfind` は検索中に `compare` ルーチンを 1 回以上呼び出し、各呼び出しにおいて 2 つの配列要素へのポインターを渡します。 `compare` ルーチンは要素を比較し、ゼロ以外 (要素が異なる場合) または 0 (要素が同じ場合) を返す必要があります。  
-  
- この関数は、パラメーターを検証します。 `compare`、`key` または `num` が `NULL` である場合、`base` が NULL で *`num` がゼロ以外の場合、または `width` がゼロより小さい場合は、「[パラメータの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、 `errno` が `EINVAL` に設定され、関数から `NULL`が返されます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_lfind`|\<search.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_lfind.c  
-// This program uses _lfind to search a string array  
-// for an occurrence of "hello".  
-  
-#include <search.h>  
-#include <string.h>  
-#include <stdio.h>  
-  
-int compare(const void *arg1, const void *arg2 )  
-{  
-   return( _stricmp( * (char**)arg1, * (char**)arg2 ) );  
-}  
-  
-int main( )  
-{  
-   char *arr[] = {"Hi", "Hello", "Bye"};  
-   int n = sizeof(arr) / sizeof(char*);  
-   char **result;  
-   char *key = "hello";  
-  
-   result = (char **)_lfind( &key, arr,   
-                      &n, sizeof(char *), compare );  
-  
-   if( result )  
-      printf( "%s found\n", *result );  
-   else  
-      printf( "hello not found!\n" );  
-}  
-```  
-  
-```Output  
-Hello found  
-```  
-  
-## <a name="see-also"></a>参照  
- [検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)   
- [_lfind_s](../../c-runtime-library/reference/lfind-s.md)   
- [bsearch](../../c-runtime-library/reference/bsearch.md)   
- [_lsearch](../../c-runtime-library/reference/lsearch.md)   
- [qsort](../../c-runtime-library/reference/qsort.md)
+
+指定されたキーの線形探索を実行します。 この関数のセキュリティが強化されたバージョンについては、「[_lfind_s](lfind-s.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+void *_lfind(
+   const void *key,
+   const void *base,
+   unsigned int *num,
+   unsigned int width,
+   int (__cdecl *compare)(const void *, const void *)
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*key*<br/>
+検索するオブジェクト。
+
+*base*<br/>
+検索データのベースへのポインター。
+
+*数*<br/>
+配列要素の数。
+
+*width*<br/>
+配列要素の幅。
+
+*compare*<br/>
+比較ルーチンへのポインター。 最初のパラメーターは、検索用のキーへのポインターです。 2 番目の引数は、キーと比較する配列要素へのポインターです。
+
+## <a name="return-value"></a>戻り値
+
+キーが見つかった場合、 **_lfind** 、配列の位置の要素へのポインターを返します*基本*に一致する*キー*です。 キーが見つからない場合 **_lfind**返します**NULL**です。
+
+## <a name="remarks"></a>コメント
+
+**_Lfind**関数値に関して線形探索を実行する*キー*の配列の*数*の各要素は、*幅*バイトです。 異なり**bsearch**、 **_lfind**に並べ替えられる配列は必要ありません。 *基本*引数は、検索対象の配列のベースへのポインター。 *比較*引数が 2 つの配列要素を比較し、後の関係を示す値を返す、ユーザーが指定したルーチンへのポインター。 **_lfind**呼び出し、*比較*ルーチンの 1 つまたは複数回呼び出しごとに 2 つの配列要素へのポインターを渡す、検索中にします。 *比較*ルーチンの要素を比較し、以外を返します。 (つまり、要素が異なります) する必要があります (つまり、要素が同一) は 0 です。
+
+この関数は、パラメーターを検証します。 場合*比較*、*キー*または*数*は**NULL**、または*基本*null と **数* 0 以外の場合、または*幅*が小さい以上では、無効なパラメーター ハンドラーが呼び出される」の説明に従って[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 続けるには、実行が許可された場合**errno**に設定されている**EINVAL** 、関数を返します**NULL**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_lfind**|\<search.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_lfind.c
+// This program uses _lfind to search a string array
+// for an occurrence of "hello".
+
+#include <search.h>
+#include <string.h>
+#include <stdio.h>
+
+int compare(const void *arg1, const void *arg2 )
+{
+   return( _stricmp( * (char**)arg1, * (char**)arg2 ) );
+}
+
+int main( )
+{
+   char *arr[] = {"Hi", "Hello", "Bye"};
+   int n = sizeof(arr) / sizeof(char*);
+   char **result;
+   char *key = "hello";
+
+   result = (char **)_lfind( &key, arr,
+                      &n, sizeof(char *), compare );
+
+   if( result )
+      printf( "%s found\n", *result );
+   else
+      printf( "hello not found!\n" );
+}
+```
+
+```Output
+Hello found
+```
+
+## <a name="see-also"></a>関連項目
+
+[検索と並べ替え](../../c-runtime-library/searching-and-sorting.md)<br/>
+[_lfind_s](lfind-s.md)<br/>
+[bsearch](bsearch.md)<br/>
+[_lsearch](lsearch.md)<br/>
+[qsort](qsort.md)<br/>

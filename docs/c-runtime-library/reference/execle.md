@@ -1,12 +1,12 @@
 ---
-title: "execle | Microsoft ドキュメント"
-ms.custom: 
+title: execle | Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - execle
@@ -29,20 +29,21 @@ dev_langs:
 helpviewer_keywords:
 - execle function
 ms.assetid: 5985b615-fe90-4d1c-9c1d-13ec87c8e306
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b686c15b01da16451f1dc47f09a7845fa7064666
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 36bb933d9bf2c5212be37b91f75813a3287116a0
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="execle"></a>execle
-この POSIX 関数は使用されなくなりました。 代わりに、ISO C++ に準拠する [_execle](../../c-runtime-library/reference/execle-wexecle.md) を使用します。  
-  
+
+この POSIX 関数は非推奨とされます。 代わりに、ISO C++ に準拠する [_execle](execle-wexecle.md) を使用します。
+
 > [!IMPORTANT]
->  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。
+> この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。

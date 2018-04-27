@@ -1,12 +1,12 @@
 ---
-title: "_strset_s、_strset_s_l、_wcsset_s、_wcsset_s_l、_mbsset_s、_mbsset_s_l | Microsoft Docs"
-ms.custom: 
+title: _strset_s、_strset_s_l、_wcsset_s、_wcsset_s_l、_mbsset_s、_mbsset_s_l | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _wcsset_s
@@ -66,135 +66,140 @@ helpviewer_keywords:
 - _tcsset_s function
 - mbsset_s function
 ms.assetid: dceb2909-6b41-4792-acb7-888e45bb8b35
-caps.latest.revision: 
+caps.latest.revision: 21
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 882fef9e6a1cb8e0b0c411efdf10e3d04c0921dc
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: ece29da9880967beb78a785d257dfbd431c50ded
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="strsets-strsetsl-wcssets-wcssetsl-mbssets-mbssetsl"></a>_strset_s、_wcsset_s、_wcsset_s_l、_mbsset_s、_mbsset_s_l
-文字列の文字をある文字に設定します。 これらのバージョンの [_strset、_strset_l、_wcsset、_wcsset_l、_mbsset、_mbsset_l](../../c-runtime-library/reference/strset-strset-l-wcsset-wcsset-l-mbsset-mbsset-l.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」にあるとおり、セキュリティが強化されています。  
-  
+
+文字列の文字をある文字に設定します。 これらのバージョンの [_strset、_strset_l、_wcsset、_wcsset_l、_mbsset、_mbsset_l](strset-strset-l-wcsset-wcsset-l-mbsset-mbsset-l.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」にあるとおり、セキュリティが強化されています。
+
 > [!IMPORTANT]
->  `_mbsset_s` および `_mbsset_s_l` は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム アプリでサポートされない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)です。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-errno_t _strset_s(  
-   char *str,  
-   size_t numberOfElements,  
-   int c   
-);  
-errno_t _strset_s_l(  
-   char *str,  
-   size_t numberOfElements,  
-   int c,  
-   locale_t locale  
-);  
-errno_t _wcsset_s(  
-   wchar_t *str,  
-   size_t numberOfElements,  
-   wchar_t c   
-);  
-errno_t *_wcsset_s_l(  
-   wchar_t *str,  
-   size_t numberOfElements,  
-   wchar_t c,  
-   locale_t locale  
-);  
-errno_t _mbsset_s(  
-   unsigned char *str,  
-   size_t numberOfElements,  
-   unsigned int c   
-);  
-errno_t _mbsset_s_l(  
-   unsigned char *str,  
-   size_t numberOfElements,  
-   unsigned int c,  
-   _locale_t locale  
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `str`  
- NULL で終わる、設定される文字列。  
-  
- `numberOfElements`  
- `str` バッファーのサイズ。  
-  
- `c`  
- 文字設定。  
-  
- `locale`  
- 使用するロケール。  
-  
-## <a name="return-value"></a>戻り値  
- 正常に終了した場合は 0 を返し、それ以外の場合はエラー コードを返します。  
-  
- これらの関数は、引数を検証します。 `str` が Null ポインターである場合、または `numberOfElements` 引数が 0 以下である場合、または渡されたブロックが null で終わっていない場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、これらの関数は `EINVAL` を返し、 `errno` を `EINVAL`に設定します。  
-  
-## <a name="remarks"></a>コメント  
- `_strset_s` 関数は、終端の NULL 文字を除く `str` のすべての文字を (`c` に変換された) `char` に設定します。 `_wcsset_s` 関数と `_mbsset_s` 関数は、`_strset_s` 関数のワイド文字バージョンとマルチバイト文字バージョンです。 引数と戻り値のデータ型がそれに応じて異なります。 それ以外では、これらの関数の動作は同じです。  
-  
- 出力値は、ロケールの `LC_CTYPE` カテゴリの設定に影響されます。詳細については、「[setlocale](../../c-runtime-library/reference/setlocale-wsetlocale.md)」を参照してください。 `_l` サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。`_l` サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。  
-  
- これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](../../c-runtime-library/reference/crtsetdebugfillthreshold.md) を使用します。  
-  
-### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
-  
-|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|  
-|---------------------|------------------------------------|--------------------|-----------------------|  
-|`_tcsset_s`|`_strset_s`|`_mbsset_s`|`_wcsset_s`|  
-|`_tcsset_s_l`|`_strset_s_l`|`_mbsset_s_l`|`_wcsset_s_l`|  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_strset_s`|\<string.h>|  
-|`_strset_s_l`|\<tchar.h>|  
-|`_wcsset_s`|\<string.h> または \<wchar.h>|  
-|`_wcsset_s_l`|\<tchar.h>|  
-|`_mbsset_s`, `_mbsset_s_l`|\<mbstring.h>|  
-  
- 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
-  
-## <a name="example"></a>例  
-  
-```  
-// crt_strset_s.c  
-#include <string.h>  
-#include <stdio.h>  
-#include <stdlib.h>  
-  
-int main( void )  
-{  
-   char string[] = "Fill the string with something.";  
-   printf( "Before: %s\n", string );  
-   _strset_s( string, _countof(string), '*' );  
-   printf( "After:  %s\n", string );  
-}  
-```  
-  
-```Output  
-Before: Fill the string with something.  
-After:  *******************************  
-```  
-  
-## <a name="see-also"></a>参照  
- [文字列操作](../../c-runtime-library/string-manipulation-crt.md)   
- [ロケール](../../c-runtime-library/locale.md)   
- [マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)   
- [_mbsnbset、_mbsnbset_l](../../c-runtime-library/reference/mbsnbset-mbsnbset-l.md)   
- [memset、wmemset](../../c-runtime-library/reference/memset-wmemset.md)   
- [strcat、wcscat、_mbscat](../../c-runtime-library/reference/strcat-wcscat-mbscat.md)   
- [strcmp、wcscmp、_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)   
- [strcpy、wcscpy、_mbscpy](../../c-runtime-library/reference/strcpy-wcscpy-mbscpy.md)   
- [_strnset、_strnset_l、_wcsnset、_wcsnset_l、_mbsnset、_mbsnset_l](../../c-runtime-library/reference/strnset-strnset-l-wcsnset-wcsnset-l-mbsnset-mbsnset-l.md)
+> **_mbsset_s**と **_mbsset_s_l** Windows ランタイムで実行するアプリケーションでは使用できません。 詳細については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```C
+errno_t _strset_s(
+   char *str,
+   size_t numberOfElements,
+   int c
+);
+errno_t _strset_s_l(
+   char *str,
+   size_t numberOfElements,
+   int c,
+   locale_t locale
+);
+errno_t _wcsset_s(
+   wchar_t *str,
+   size_t numberOfElements,
+   wchar_t c
+);
+errno_t *_wcsset_s_l(
+   wchar_t *str,
+   size_t numberOfElements,
+   wchar_t c,
+   locale_t locale
+);
+errno_t _mbsset_s(
+   unsigned char *str,
+   size_t numberOfElements,
+   unsigned int c
+);
+errno_t _mbsset_s_l(
+   unsigned char *str,
+   size_t numberOfElements,
+   unsigned int c,
+   _locale_t locale
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*str*<br/>
+NULL で終わる、設定される文字列。
+
+*numberOfElements*<br/>
+サイズ、 *str*バッファー。
+
+*c*<br/>
+文字設定。
+
+*locale*<br/>
+使用するロケール。
+
+## <a name="return-value"></a>戻り値
+
+正常に終了した場合は 0 を返し、それ以外の場合はエラー コードを返します。
+
+これらの関数は、引数を検証します。 場合*str* null ポインター、または*numberOfElements*引数が 0 未満か、ブロックに渡されるが null で終わる、で説明されているとおり、無効なパラメーターハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 これらの関数を返すかどうかは、引き続き実行が許可された、 **EINVAL**設定と**errno**に**EINVAL**です。
+
+## <a name="remarks"></a>コメント
+
+**_Strset_s**関数はすべての文字を設定*str*に*c* (に変換**char**)、終端の null 文字を除きます。 **_wcsset_s**と **_mbsset_s**のワイド文字とマルチバイト文字バージョンは、 **_strset_s**です。 引数と戻り値のデータ型がそれに応じて異なります。 それ以外では、これらの関数の動作は同じです。
+
+出力値の設定の影響を受けた、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。 **_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+
+これらの関数のデバッグ バージョンは、最初にバッファーを 0xFD で埋めます。 この動作を無効にするには、[_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md) を使用します。
+
+### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ
+
+|TCHAR.H のルーチン|_UNICODE および _MBCS が未定義の場合|_MBCS が定義されている場合|_UNICODE が定義されている場合|
+|---------------------|------------------------------------|--------------------|-----------------------|
+|**_tcsset_s**|**_strset_s**|**_mbsset_s**|**_wcsset_s**|
+|**_tcsset_s_l**|**_strset_s_l**|**_mbsset_s_l**|**_wcsset_s_l**|
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_strset_s**|\<string.h>|
+|**_strset_s_l**|\<tchar.h>|
+|**_wcsset_s**|\<string.h> または \<wchar.h>|
+|**_wcsset_s_l**|\<tchar.h>|
+|**_mbsset_s**、 **_mbsset_s_l**|\<mbstring.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="example"></a>例
+
+```C
+// crt_strset_s.c
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( void )
+{
+   char string[] = "Fill the string with something.";
+   printf( "Before: %s\n", string );
+   _strset_s( string, _countof(string), '*' );
+   printf( "After:  %s\n", string );
+}
+```
+
+```Output
+Before: Fill the string with something.
+After:  *******************************
+```
+
+## <a name="see-also"></a>関連項目
+
+[文字列操作](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[ロケール](../../c-runtime-library/locale.md)<br/>
+[マルチバイト文字のシーケンスの解釈](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
+[_mbsnbset、_mbsnbset_l](mbsnbset-mbsnbset-l.md)<br/>
+[memset、wmemset](memset-wmemset.md)<br/>
+[strcat、wcscat、_mbscat](strcat-wcscat-mbscat.md)<br/>
+[strcmp、wcscmp、_mbscmp](strcmp-wcscmp-mbscmp.md)<br/>
+[strcpy、wcscpy、_mbscpy](strcpy-wcscpy-mbscpy.md)<br/>
+[_strnset、_strnset_l、_wcsnset、_wcsnset_l、_mbsnset、_mbsnset_l](strnset-strnset-l-wcsnset-wcsnset-l-mbsnset-mbsnset-l.md)<br/>

@@ -1,12 +1,12 @@
 ---
 title: _commit | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _commit
@@ -35,52 +35,57 @@ helpviewer_keywords:
 - _commit function
 - committing files to disk
 ms.assetid: d0c74d3a-4f2d-4fb0-b140-2d687db3d233
-caps.latest.revision: 
+caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ed5a3f1e8d1f4a122ecf5a66393fa5c1f5c65f1b
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 9396fd502f5137b469c9f92110bfc23c9d2fb246
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="commit"></a>_commit
-ファイルを直接ディスクにフラッシュします。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-int _commit(   
-   int fd   
-);  
-```  
-  
-#### <a name="parameters"></a>パラメーター  
- `fd`  
- 開いているファイルを参照するファイル記述子。  
-  
-## <a name="return-value"></a>戻り値  
- ファイルがディスクに正常にフラッシュされた場合、`_commit` は 0 を返します。 戻り値-1 はエラーを示します。  
-  
-## <a name="remarks"></a>コメント  
- `_commit` 関数は、オペレーティング システムに対して、`fd` に関連付けられたファイルをディスクに書き込む処理を強制します。 この関数を呼び出すと、オペレーティング システムのタイミングではなく、即時に指定したファイルがフラッシュされます。  
-  
- `fd` が無効なファイル記述子である場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は -1 を返し、`errno` は `EBADF` に設定されます。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|省略可能なヘッダー|  
-|-------------|---------------------|----------------------|  
-|`_commit`|\<io.h>|\<errno.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="see-also"></a>参照  
- [下位入出力](../../c-runtime-library/low-level-i-o.md)   
- [_creat、_wcreat](../../c-runtime-library/reference/creat-wcreat.md)   
- [_open、_wopen](../../c-runtime-library/reference/open-wopen.md)   
- [_read](../../c-runtime-library/reference/read.md)   
- [_write](../../c-runtime-library/reference/write.md)
+
+ファイルを直接ディスクにフラッシュします。
+
+## <a name="syntax"></a>構文
+
+```C
+int _commit(
+   int fd
+);
+```
+
+### <a name="parameters"></a>パラメーター
+
+*fd*<br/>
+開いているファイルを参照するファイル記述子。
+
+## <a name="return-value"></a>戻り値
+
+**_commit**ファイルが正常に 0 を返しますディスクにフラッシュします。 戻り値-1 はエラーを示します。
+
+## <a name="remarks"></a>コメント
+
+**_Commit**関数は、オペレーティング システムに関連付けられているファイルに書き込む*fd*をディスクにします。 この関数を呼び出すと、オペレーティング システムのタイミングではなく、即時に指定したファイルがフラッシュされます。
+
+場合*fd* 、無効なファイル記述子で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、関数は-1 を返しますと**errno**に設定されている**EBADF**です。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|省略可能なヘッダー|
+|-------------|---------------------|----------------------|
+|**_commit**|\<io.h>|\<errno.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[下位入出力](../../c-runtime-library/low-level-i-o.md)<br/>
+[_creat、_wcreat](creat-wcreat.md)<br/>
+[_open、_wopen](open-wopen.md)<br/>
+[_read](read.md)<br/>
+[_write](write.md)<br/>

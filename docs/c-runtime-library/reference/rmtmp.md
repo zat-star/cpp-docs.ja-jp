@@ -1,12 +1,12 @@
 ---
 title: _rmtmp | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _rmtmp
@@ -36,50 +36,56 @@ helpviewer_keywords:
 - files [C++], removing
 - temporary files [C++], removing
 ms.assetid: 7419501e-2587-4f2a-b469-0dca07f84736
-caps.latest.revision: 
+caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 689c501743702ae208024fcf6126a02719a33bc8
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 01585e2767806533ffaf99f2ca7795d26264958f
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="rmtmp"></a>_rmtmp
-一時ファイルの削除を削除します。  
-  
-## <a name="syntax"></a>構文  
-  
-```  
-  
-int _rmtmp( void );  
-```  
-  
-## <a name="return-value"></a>戻り値  
- `_rmtmp` は、閉じられ削除された一時ファイルの数を返します。  
-  
-## <a name="remarks"></a>コメント  
- `_rmtmp` 関数は、現在のディレクトリ内にある一時ファイルをすべて削除します。 この関数が削除するのは `tmpfile` で作成された一時ファイルのみです。一時ファイルを作成したのと同じディレクトリ内でのみ使用してください。  
-  
-## <a name="requirements"></a>必要条件  
-  
-|ルーチンによって返される値|必須ヘッダー|  
-|-------------|---------------------|  
-|`_rmtmp`|\<stdio.h>|  
-  
- 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
-  
-## <a name="libraries"></a>ライブラリ  
- [C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。  
-  
-## <a name="example"></a>例  
- 「[tmpfile](../../c-runtime-library/reference/tmpfile.md)」の例をご覧ください。  
-  
-## <a name="see-also"></a>参照  
- [ストリーム入出力](../../c-runtime-library/stream-i-o.md)   
- [_flushall](../../c-runtime-library/reference/flushall.md)   
- [tmpfile](../../c-runtime-library/reference/tmpfile.md)   
- [_tempnam、_wtempnam、tmpnam、_wtmpnam](../../c-runtime-library/reference/tempnam-wtempnam-tmpnam-wtmpnam.md)
+
+一時ファイルの削除を削除します。
+
+## <a name="syntax"></a>構文
+
+```C
+
+int _rmtmp( void );
+```
+
+## <a name="return-value"></a>戻り値
+
+**_rmtmp**閉じられ、削除、一時ファイルの数を返します。
+
+## <a name="remarks"></a>コメント
+
+**_Rmtmp**関数は、現在のディレクトリ内のすべての一時ファイルをクリーンアップします。 関数によって作成されたファイルのみを削除する**tmpfile**; 一時ファイルが作成された同じディレクトリ内でのみ使用します。
+
+## <a name="requirements"></a>要件
+
+|ルーチン|必須ヘッダー|
+|-------------|---------------------|
+|**_rmtmp**|\<stdio.h>|
+
+互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。
+
+## <a name="libraries"></a>ライブラリ
+
+[C ランタイム ライブラリ](../../c-runtime-library/crt-library-features.md)のすべてのバージョン。
+
+## <a name="example"></a>例
+
+「[tmpfile](tmpfile.md)」の例をご覧ください。
+
+## <a name="see-also"></a>関連項目
+
+[ストリーム入出力](../../c-runtime-library/stream-i-o.md)<br/>
+[_flushall](flushall.md)<br/>
+[tmpfile](tmpfile.md)<br/>
+[_tempnam、_wtempnam、tmpnam、_wtmpnam](tempnam-wtempnam-tmpnam-wtmpnam.md)<br/>
