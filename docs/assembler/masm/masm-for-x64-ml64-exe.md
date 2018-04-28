@@ -1,12 +1,9 @@
 ---
-title: "X64 用 MASM (ml64.exe) |Microsoft ドキュメント"
-ms.custom: 
+title: X64 用 MASM (ml64.exe) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-tools
-ms.tgt_pltfrm: 
+- cpp-masm
 ms.topic: reference
 dev_langs:
 - C++
@@ -15,21 +12,19 @@ helpviewer_keywords:
 - ml64.exe
 - masm for x64
 ms.assetid: 89059103-f372-4968-80ea-0c7f90bb9c91
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a42b25b5d86d181bed907a3b437d28f3cbf5e820
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: b17771239ff9c89b765576ba49515463db42386f
+ms.sourcegitcommit: dbca5fdd47249727df7dca77de5b20da57d0f544
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="masm-for-x64-ml64exe"></a>x64 用 MASM (ml64.exe)
 
-Visual Studio には、32 ビットおよび 64 ビットの両方ホストされているバージョン MASM x64 を対象とコードにはが含まれています。 これは、x64 を受け入れるアセンブラー ml64.exe をという名前には、アセンブラー言語。 MASM のコマンド ライン ツールは、Visual Studio のインストール時に C++ ワークロードを選択するときにインストールされます。 これらのツールは、個別のダウンロードとしてご利用いただけません。 ダウンロードして Visual Studio のコピーをインストールを参照してください。 [https://www.visualstudio.com/](https://www.visualstudio.com/)です。 場合は、Visual Studio IDE をインストールせずにのみ、コマンド ライン ツールが必要を参照してください、**構築ツールを Visual Studio 2017 の** オプションを選択、 [Visual Studio のダウンロード](https://www.visualstudio.com/downloads/)ページ。
+Visual Studio には、32 ビットおよび 64 ビットの両方ホストされているバージョン MASM x64 を対象とコードにはが含まれています。 これは、x64 を受け入れるアセンブラー ml64.exe をという名前には、アセンブラー言語。 MASM のコマンド ライン ツールは、Visual Studio のインストール時に C++ ワークロードを選択するときにインストールされます。 これらのツールは、個別のダウンロードとしてご利用いただけません。 ダウンロードして Visual Studio のコピーをインストールを参照してください。 [ https://www.visualstudio.com/](https://www.visualstudio.com/)です。 場合は、Visual Studio IDE をインストールせずにのみ、コマンド ライン ツールが必要を参照してください、**構築ツールを Visual Studio 2017 の** オプションを選択、 [Visual Studio のダウンロード](https://www.visualstudio.com/downloads/)ページ。
 
 ビルドに MASM を使用する x64 用のコードをコマンドラインでターゲットを x64 用開発者コマンド プロンプトを使用する必要がありますターゲットで、必要なパスとその他の環境変数を設定します。 開発者コマンド プロンプトを起動する方法については、次を参照してください。[コマンドラインでビルドの c/c++ コード](../../build/building-on-the-command-line.md)です。
 
@@ -45,11 +40,11 @@ Visual Studio プロジェクト システムでは、C++ プロジェクトで�
 
 1. プロジェクトを選択**ソリューション エクスプ ローラー**です。 メニュー バーで、次のように選択します。**プロジェクト**、**ビルド カスタマイズ**です。
 
-1. **Visual C ビルド カスタマイズ ファイル** ダイアログ ボックスで、チェック ボックスを横に**masm(.targets,.props)**です。 選択**OK**選択内容を保存してダイアログ ボックスを閉じます。
+1. **Visual C ビルド カスタマイズ ファイル** ダイアログ ボックスで、チェック ボックスを横に**masm(.targets,.props)** です。 選択**OK**選択内容を保存してダイアログ ボックスを閉じます。
 
 1. メニュー バーで、次のように選択します。**プロジェクト**、**新しい項目の追加**です。 
 
-1. **新しい項目の追加**ダイアログ ボックスで、 **C++ ファイル (.cpp)**中央のペインでします。 **名前**エディット コントロールを持つ新しいファイル名を入力、 **.asm** .cpp の代わりに拡張します。 選択**追加**ファイルをプロジェクトに追加し、ダイアログ ボックスを閉じます。
+1. **新しい項目の追加**ダイアログ ボックスで、 **C++ ファイル (.cpp)** 中央のペインでします。 **名前**エディット コントロールを持つ新しいファイル名を入力、 **.asm** .cpp の代わりに拡張します。 選択**追加**ファイルをプロジェクトに追加し、ダイアログ ボックスを閉じます。
 
 追加した .asm ファイルに、アセンブラー言語コードを作成します。 ソリューションをビルドするときに、プロジェクトに、リンクされているオブジェクト ファイルに .asm ファイルをアセンブルする MASM アセンブラーが呼び出されます。 シンボルへのアクセスを容易にするには、宣言、アセンブラー関数として`extern "C"`C++ ソース コードで C++ を使用するのではなく名前装飾規約は、アセンブラー言語でソース ファイルです。
   
@@ -94,6 +89,6 @@ mov eax, DWORD PTR [rcx*2+r10d]
 mov eax, DWORD PTR [ecx*2+r10+0100h]  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
 [Microsoft Macro Assembler リファレンス](../../assembler/masm/microsoft-macro-assembler-reference.md)

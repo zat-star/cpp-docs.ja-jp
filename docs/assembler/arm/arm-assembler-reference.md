@@ -1,27 +1,22 @@
 ---
-title: "ARM アセンブラー リファレンス |Microsoft ドキュメント"
-ms.custom: 
+title: ARM アセンブラー リファレンス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 08/28/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-tools
-ms.tgt_pltfrm: 
+- cpp-masm
 ms.topic: reference
 dev_langs:
 - C++
 ms.assetid: f8a076cc-9627-4328-a34a-9c44f7a3aab1
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fdfb3a9d47e0814eb6bd918aea95738785e3bb21
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 198e38547258837999c3e11903bc98575fdb036f
+ms.sourcegitcommit: dbca5fdd47249727df7dca77de5b20da57d0f544
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="arm-assembler-reference"></a>ARM アセンブラー リファレンス
 
@@ -37,7 +32,7 @@ ms.lasthandoff: 02/14/2018
 |[ARM アーキテクチャ リファレンス マニュアル](https://developer.arm.com/search#q=ARM%20Architecture%20Reference%20Manual)ARM 開発者 web サイトです。|ARM アーキテクチャに関連する手動を選択します。 各には、ARM、つまみ、NEON、および、VFP に関するセクションを参照し、ARM アセンブリ言語に関する追加情報が含まれます。|  
 |[ARM コンパイラ armasm ユーザー ガイド](https://developer.arm.com/search#q=ARM%20Compiler%20armasm%20User%20Guide)ARM 開発者 web サイトです。|ARM アセンブリ言語に関する最新の情報を検索する最新のバージョンを選択します。 **注:** ARM Developer web サイトで参照される"armasm"アセンブラーは、Visual Studio に含まれ、このセクションに記載されている Microsoft armasm アセンブラーではありません。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
  [ARM 組み込み](../../intrinsics/arm-intrinsics.md)   
  [コンパイラの組み込み](../../intrinsics/compiler-intrinsics.md)

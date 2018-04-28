@@ -1,12 +1,9 @@
 ---
-title: "EQ 演算子 |Microsoft ドキュメント"
-ms.custom: 
+title: EQ 演算子 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-tools
-ms.tgt_pltfrm: 
+- cpp-masm
 ms.topic: reference
 f1_keywords:
 - operator EQ
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - operator EQ
 - EQ operator
 ms.assetid: d88afd01-dd8e-419d-ac4e-49afb4a67197
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 784877706ade9aa8345b3eb1096b81485a075370
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 4fe34f62be3d95bdc8c60fad3b18dff31dcfb2b2
+ms.sourcegitcommit: dbca5fdd47249727df7dca77de5b20da57d0f544
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="operator-eq"></a>EQ 演算子
 True (-1) を返します*expression1* equals *expression2*、またはそうでない場合は、false (0) を取得します。  
@@ -39,5 +34,5 @@ True (-1) を返します*expression1* equals *expression2*、またはそうで
 expression1 EQ expression2  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [演算子リファレンス](../../assembler/masm/operators-reference.md)
