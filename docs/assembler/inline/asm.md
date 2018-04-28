@@ -1,13 +1,10 @@
 ---
-title: "_ _asm |Microsoft ドキュメント"
-ms.custom: 
+title: _ _asm |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-masm
+ms.topic: conceptual
 f1_keywords:
 - __asm
 - __asm_cpp
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - __asm keyword [C++], vs. asm blocks
 - __asm keyword [C++]
 ms.assetid: 77ff3bc9-a492-4b5e-85e1-fa4e414e79cd
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 75a5d272e4ac26b87728506e45759733ffa26472
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 77e09f6af92839c6113c9c5ba375a1583bcf7149
+ms.sourcegitcommit: dbca5fdd47249727df7dca77de5b20da57d0f544
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="asm"></a>__asm
 **Microsoft 固有の仕様**  
@@ -49,9 +44,9 @@ ms.lasthandoff: 12/21/2017
  `__asm {`  `assembly-instruction-list`  `};`オプトイン  
   
  *アセンブリ命令リスト*:  
- `assembly-instruction``;`オプトイン  
+ `assembly-instruction` `;`オプトイン  
   
- `assembly-instruction``;` `assembly-instruction-list` `;`オプトイン  
+ `assembly-instruction` `;` `assembly-instruction-list` `;`オプトイン  
   
  中かっこを付けないで使用する場合、`__asm` キーワードは、行の残りの部分がアセンブリ言語のステートメントであることを意味します。 中かっこを付けて使用する場合、中かっこの間の各行がアセンブリ言語のステートメントであることを意味します。 以前のバージョンとの互換性を維持するため、`_asm` は `__asm` のシノニムとなっています。  
   
@@ -63,7 +58,7 @@ ms.lasthandoff: 12/21/2017
 __asm int 3  
 ```  
   
- コンパイルされるときに生成するネイティブ コードは発生しませんでした**/clr**; コンパイラが命令を CLR break 命令を変換します。  
+ コンパイルされるときに生成するネイティブ コードは発生しませんでした **/clr**; コンパイラが命令を CLR break 命令を変換します。  
   
  `__asm int 3` により現在は、関数のネイティブ コードが生成されるようになりました。 コードでブレークポイントが発生してする場合は、MSIL にコンパイルされた関数を使用する関数の場合[_ _debugbreak](../../intrinsics/debugbreak.md)です。  
   
@@ -98,6 +93,6 @@ __asm mov al, 2   __asm mov dx, 0xD007   __asm out dx, al
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キーワード](../../cpp/keywords-cpp.md)   
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

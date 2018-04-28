@@ -1,12 +1,12 @@
 ---
-title: "コンパイラの警告 C4000 C4199 を通じて |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラの警告 C4000 C4199 を通じて |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/17/2017
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: error-reference
 f1_keywords:
 - C4000
@@ -98,17 +98,17 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 426f495a-43af-4906-ad2b-6e5822c09965
-caps.latest.revision: 
+caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 61298ccfbe1fc1d0d6f74df983984d0b70ee30f2
-ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.openlocfilehash: 5c66738ee482c9e244cf9e1a9cc6aecb157b9346
+ms.sourcegitcommit: dbca5fdd47249727df7dca77de5b20da57d0f544
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="compiler-warnings-c4000-through-c4199"></a>コンパイラの警告 C4000 C4199 経由
 
@@ -159,6 +159,7 @@ ms.lasthandoff: 03/16/2018
 |コンパイラの警告 (レベル 1) C4051|型変換が行われました。データが失われている可能性があります。|
 |コンパイラの警告 (レベル 4) C4052|関数に対する宣言の 1 つに可変個の引数が含まれていません。|
 |コンパイラの警告 (レベル 4) C4053|'?:' 演算に void 型の式がオペランドとして使われています。|
+|[コンパイラの警告 (レベル 1) C4055](compiler-warning-level-1-c4055.md)|'conversion': データ ポインターが '*type1*'を関数ポインター'*type2*'|
 |[コンパイラの警告 (レベル 2) C4056](../../error-messages/compiler-warnings/compiler-warning-level-2-c4056.md)|浮動小数点定数演算でオーバーフローしました。|
 |コンパイラの警告 (レベル 4) C4057|'operator': 'identifier1' と間接で若干異なる基本型を 'identifier2'|
 |コンパイラの警告 C4060|switch 文に 'case' または 'default' ラベルが含まれていません|
@@ -203,7 +204,7 @@ ms.lasthandoff: 03/16/2018
 |[コンパイラの警告 (レベル 1) C4114](../../error-messages/compiler-warnings/compiler-warning-level-1-c4114.md)|同じ型の修飾子が 2 度以上使われています。|
 |コンパイラの警告 (レベル 1 およびレベル 4) C4115|'type': 名前付きの型をかっこで|
 |[コンパイラの警告 (レベル 1) C4116](../../error-messages/compiler-warnings/compiler-warning-level-1-c4116.md)|かっこ内の名前のない種類の定義|
-|コンパイラの警告 (レベル 1) C4117|macro name 'name' is reserved, 'command' ignored|
+|コンパイラの警告 (レベル 1) C4117|マクロ名 'name' に予約されていますが、"command"は無視されます。|
 |コンパイラの警告 (レベル 1) C4119|異なったシンボリックベース 'base1' と 'base2' が指定されています。|
 |コンパイラの警告 (レベル 1) C4120|_based ポインターとベース以外のポインターが式に含まれています。|
 |[コンパイラの警告 (レベル 4) C4121](../../error-messages/compiler-warnings/compiler-warning-level-4-c4121.md)|'symbol': メンバーのアラインメントはパッキングに影響|
@@ -233,7 +234,7 @@ ms.lasthandoff: 03/16/2018
 |[コンパイラの警告 (レベル 2) C4156](../../error-messages/compiler-warnings/compiler-warning-level-2-c4156.md)|'削除' の配列形式を使用せず、配列式の削除配列形式の代入|
 |[コンパイラの警告 (レベル 1) C4157](../../error-messages/compiler-warnings/compiler-warning-level-1-c4157.md)|プラグマは C コンパイラで無視されました|
 |コンパイラの警告 (レベル 1) C4158|#pragma pointers_to_members (full_generality, 'inheritance_type') と仮定した場合|
-|[コンパイラの警告 (レベル 3) C4159](../../error-messages/compiler-warnings/compiler-warning-level-3-c4159.md)|#pragma 'pragma'(pop,...): has popped previously pushed identifier 'identifier'|
+|[コンパイラの警告 (レベル 3) C4159](../../error-messages/compiler-warnings/compiler-warning-level-3-c4159.md)|#pragma ' pragma'(pop,...): 以前にプッシュされた識別子 'identifier' がポップされます。|
 |コンパイラの警告 (レベル 1) C4160|#pragma ' pragma'(pop,...): 以前にプッシュされた識別子 'identifier' が見つかりませんでした|
 |コンパイラの警告 (レベル 3) C4161|#pragma ' pragma'(pop...): ポップがプッシュ|
 |[コンパイラの警告 (レベル 1) C4162](../../error-messages/compiler-warnings/compiler-warning-level-1-c4162.md)|'identifier': 見つかった C リンケージを持つ関数|
@@ -262,7 +263,7 @@ ms.lasthandoff: 03/16/2018
 |[コンパイラの警告 (レベル 1) C4190](../../error-messages/compiler-warnings/compiler-warning-level-1-c4190.md)|'identifier1' を指定すると、C リンケージを持つ UDT 'identifier2' C と互換性がないを返す|
 |コンパイラの警告 (レベル 3) C4191|' operator/operation ': 'type_of_expression' から 'type_required' \nCalling への安全でない変換結果のポインターを使用して関数が原因、プログラムが失敗するには|
 |[コンパイラの警告 (レベル 3) C4192](../../error-messages/compiler-warnings/compiler-warning-level-3-c4192.md)|タイプ ライブラリ 'library' のインポート中に 'identifier' を自動的に除外|
-|コンパイラの警告 (レベル 3) C4193|#pragma warning(pop): no matching '#pragma warning(push)'|
+|コンパイラの警告 (レベル 3) C4193|#pragma warning (pop): いない一致する '#pragma warning (push)'|
 |コンパイラの警告 (レベル 1) C4194|#pragma start_map_region は入れ子にすることはできません。無視されます。|
 |コンパイラの警告 (レベル 1) C4195|#pragma stop_map_region が一致する #pragma start_map_region; なしで使用無視されます。|
 |コンパイラの警告 (レベル 1) C4196|'%$L' または '%$L' が必要です。'%$L' が見つかりました|
