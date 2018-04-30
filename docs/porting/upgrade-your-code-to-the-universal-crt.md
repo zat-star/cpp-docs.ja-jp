@@ -1,13 +1,13 @@
 ---
-title: "Universal CRT へのコードのアップグレード | Microsoft Docs"
-ms.custom: 
+title: Universal CRT へのコードのアップグレード | Microsoft Docs
+ms.custom: ''
 ms.date: 03/31/2017
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eaf34c1b-da98-4058-a059-a10db693a5ce
-caps.latest.revision: 
+caps.latest.revision: 1
 author: corob-msft
 ms.author: corob
 manager: ghogen
@@ -31,11 +31,11 @@ UCRT は Windows コンポーネントであり、Windows 10 の一部として�
 
 Windows コンポーネントと同じように、UCRT ライブラリのファイルとヘッダーは現在、Windows ソフトウェア開発キット (SDK) の一部です。 Visual Studio をインストールするときに、UCRT を使用するために必要な Windows SDK の一部もインストールされます。 Visual Studio インストーラーでは、Visual Studio のプロジェクト ビルド システムで使用される既定のパスに、UCRT ヘッダー、ライブラリ、および DLL ファイルの場所が追加されます。 Visual C++ プロジェクトを更新するときに、既定のプロジェクトの設定が使用されている場合、IDE がヘッダー ファイルの新しい場所を自動的に検出し、リンカーが新しい既定の UCRT ライブラリと vcruntime ライブラリを自動的に使用します。 同様に、Developer コマンド プロンプトを使用してコマンド ライン ビルドを実行する場合、ヘッダーとライブラリのパスを含む環境変数が更新され、こちらも自動的に動作します。  
   
-標準 C ライブラリ ヘッダー ファイルが、Windows SDK に含まれるようになり、SDK バージョン固有のディレクトリのインクルード フォルダーに置かれます。 ヘッダー ファイルの標準的な場所は、Windows Kits\\10\\Include\\_sdk-version_\\ucrt の下にある Program Files または Program Files (x86) ディレクトリです。ここで _sdk-version_ は、Windows のバージョンまたは更新プログラムに対応します。たとえば、Windows 10 Anniversary Update の場合は 10.0.14393.0 です。   
+標準 C ライブラリ ヘッダー ファイルが、Windows SDK に含まれるようになり、SDK バージョン固有のディレクトリのインクルード フォルダーに置かれます。 ヘッダー ファイルの標準的な場所は、Program Files または Program Files (x86) ディレクトリにある Windows Kits\\10\\Include\\_sdk-version_\\ucrt です。ここで _sdk-version_ は、Windows のバージョンまたは更新プログラムに対応します。たとえば、Windows 10 Anniversary Update の場合は 10.0.14393.0 です。   
   
-UCRT スタティック ライブラリとダイナミック リンク スタブ ライブラリは、 Windows Kits\\10\\Lib\\_sdk-version_\\ucrt\\_architecture_ の下にある Program Files または Program Files (x86) ディレクトリにあります。ここで、_architecture_ は、ARM、x86、または X64 です。 製品版およびデバッグのスタティック ライブラリは、libucrt.lib と libucrtd.lib であり、UCRT DLL のライブラリは、ucrt.lib と ucrtd.lib です。  
+UCRT スタティック ライブラリとダイナミック リンク スタブ ライブラリは、Program Files または Program Files (x86) ディレクトリにある Windows Kits\\10\\Lib\\_sdk-version_\\ucrt\\_architecture_ にあります。ここで、_architecture_ は、ARM、x86、または X64 です。 製品版およびデバッグのスタティック ライブラリは、libucrt.lib と libucrtd.lib であり、UCRT DLL のライブラリは、ucrt.lib と ucrtd.lib です。  
   
-製品版およびデバッグの UCRT DLL は、別々の場所にあります。 製品版 DLL は再頒布可能であり、プログラム ファイルまたはプログラム ファイル (x86) ディレクトリの Windows Kits\\10\\Redist\\ucrt\\DLLs\\_architecture_\. の下にあります。 デバッグ DLL は再頒布可能ではありません。プログラム ファイルまたはプログラム ファイル (x86) ディレクトリの Windows Kits\\10\\bin\\_architecture_\\ucrt フォルダーの下にあります。   
+製品版およびデバッグの UCRT DLL は、別々の場所にあります。 製品版 DLL は再頒布可能であり、Program Files または Program Files (x86) ディレクトリの Windows Kits\\10\\Redist\\ucrt\\DLLs\\_architecture_\. の下にあります。 デバッグ DLL は再頒布可能ではありません。プログラム ファイルまたはプログラム ファイル (x86) ディレクトリの Windows Kits\\10\\bin\\_architecture_\\ucrt フォルダーの下にあります。   
 
 C および C++ コンパイラ固有のランタイム サポート ライブラリ **vcruntime** には、プログラムの起動、および例外処理や組み込みなどの機能をサポートするために必要なコードが含まれています。 ライブラリとそのヘッダー ファイルは、Program Files または Program files (x86) ディレクトリのバージョン固有の Microsoft Visual Studio フォルダーに引き続き置かれています。 Visual Studio 2017 では、ヘッダーは、Microsoft Visual Studio\\2017\\_edition_\\VC\\Tools\\MSVC\\_lib-version_\\include にあり、リンク ライブラリは、Microsoft Visual Studio\\2017\\_edition_\\VC\\Tools\\MSVC\\_lib-version_\\lib\\_architecture_ にあります。ここで、_edition_ はインストールされている Visual Studio のエディションであり、_lib-version_ はライブラリのバージョンで、_architecture_ はプロセッサのアーキテクチャです。 OneCore とストアのリンク ライブラリは、libraries フォルダーにもあります。 スタティック ライブラリの製品版とデバッグ バージョンは、libvcruntime.lib と libvcruntimed.lib です。 ダイナミック リンク ライブラリの製品版とデバッグのスタブ ライブラリは、それぞれ vcruntime.lib と vcruntimed.lib です。  
   
