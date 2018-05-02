@@ -1,12 +1,9 @@
 ---
-title: ".PUSHFRAME |Microsoft ドキュメント"
-ms.custom: 
+title: .PUSHFRAME |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-tools
-ms.tgt_pltfrm: 
+- cpp-masm
 ms.topic: reference
 f1_keywords:
 - .PUSHFRAME
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - .PUSHFRAME directive
 ms.assetid: 17b123d0-4c6d-4fd2-85eb-798e8ad0a73c
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8fa9b03f1075418019f41f3d537607372bf8d498
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 66531207d21bb7e9e0c165db135f5a0c0d77e478
+ms.sourcegitcommit: dbca5fdd47249727df7dca77de5b20da57d0f544
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="pushframe"></a>.PUSHFRAME
 生成、`UWOP_PUSH_MACHFRAME`アンワインド コードのエントリ。 場合、省略可能な`code`を指定すると、アンワインド コードのエントリが 1 の修飾子を指定します。 それ以外の場合、修飾子には 0 です。  
@@ -41,5 +36,5 @@ ms.lasthandoff: 02/14/2018
   
  詳細については、次を参照してください。 [x64 用 MASM (ml64.exe)](../../assembler/masm/masm-for-x64-ml64-exe.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

@@ -1,12 +1,9 @@
 ---
-title: "REAL8 |Microsoft ドキュメント"
-ms.custom: 
+title: REAL8 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-tools
-ms.tgt_pltfrm: 
+- cpp-masm
 ms.topic: reference
 f1_keywords:
 - REAL8
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - REAL8 directive
 ms.assetid: 757244ea-e4c9-4fc9-94ec-16313578bede
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2d84280158d6e3a6827d5a7448c9d94c7f53626d
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 19613b2ae5e5c45509a2424569c765342e1233e8
+ms.sourcegitcommit: dbca5fdd47249727df7dca77de5b20da57d0f544
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="real8"></a>REAL8
 割り当て、必要に応じて各倍精度 (8 バイト) の浮動小数点数を初期化*初期化子*です。  
@@ -37,5 +32,5 @@ ms.lasthandoff: 02/14/2018
 name REAL8 initializer [[, initializer]]...  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)
