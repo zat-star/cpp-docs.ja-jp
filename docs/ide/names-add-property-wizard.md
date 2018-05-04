@@ -1,19 +1,19 @@
 ---
-title: "名前、プロパティの追加ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: 名前、プロパティの追加ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-ide
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vc.codewiz.prop.overview
 dev_langs:
 - C++
 ms.assetid: 0453b7ea-89cb-41a1-80a2-d45f61589c0a
-caps.latest.revision: 
+caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -21,11 +21,11 @@ ms.workload:
 - cplusplus
 ms.openlocfilehash: 9c1728dfda3ec29e8df2b7f5480e9bffb161da7f
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
-# <a name="names-add-property-wizard"></a>[名前] (プロパティの追加ウィザード)
+# <a name="names-add-property-wizard"></a>[名前] \(プロパティの追加ウィザード)
 このウィザードを使用すると、インターフェイスにプロパティを追加します。  
   
  **プロパティの型**  

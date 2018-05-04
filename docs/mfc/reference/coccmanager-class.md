@@ -1,12 +1,12 @@
 ---
-title: "関数クラス |Microsoft ドキュメント"
-ms.custom: 
+title: 関数クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - COccManager
@@ -39,7 +39,7 @@ helpviewer_keywords:
 - COccManager [MFC], SetDefaultButton
 - COccManager [MFC], SplitDialogTemplate
 ms.assetid: 7d47aeed-d1ab-48e3-b4cf-d429718e370a
-caps.latest.revision: 
+caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -47,7 +47,7 @@ ms.workload:
 - cplusplus
 ms.openlocfilehash: ffa16b7a210bc53f178e3ec437aefb6cede766a6
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
@@ -68,8 +68,7 @@ class COccManager : public CNoTrackObject
 |----------|-----------------|  
 |[COccManager::CreateContainer](#createcontainer)|作成、 **COleContainer**オブジェクト。|  
 |[COccManager::CreateDlgControls](#createdlgcontrols)|関連付けられたによってホストされている ActiveX コントロールを作成`COleContainer`オブジェクト。|  
-|[COccManager::CreateSite](#createsite)|
-          `COleClientSite` オブジェクトを作成します。|  
+|[COccManager::CreateSite](#createsite)|`COleClientSite` オブジェクトを作成します。|  
 |[COccManager::GetDefBtnCode](#getdefbtncode)|既定のボタンのコードを取得します。|  
 |[COccManager::IsDialogMessage](#isdialogmessage)|ダイアログ メッセージの対象を決定します。|  
 |[COccManager::IsLabelControl](#islabelcontrol)|指定されたコントロールがラベル コントロールであるかどうかを判断します。|  

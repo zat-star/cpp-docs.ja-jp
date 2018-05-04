@@ -1,12 +1,12 @@
 ---
-title: "データベース サポートは、MFC アプリケーション ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: データベース サポートは、MFC アプリケーション ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vc.appwiz.mfc.exe.database
@@ -15,7 +15,7 @@ dev_langs:
 helpviewer_keywords:
 - MFC Application Wizard, database support
 ms.assetid: 9ddf4558-fd41-4ac7-8d9b-c93d9c68ab59
-caps.latest.revision: 
+caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -23,11 +23,11 @@ ms.workload:
 - cplusplus
 ms.openlocfilehash: 7b7c9aaa6389f5e86a51348a8b5423260c4c76e3
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
-# <a name="database-support-mfc-application-wizard"></a>[データベース サポート] (MFC アプリケーション ウィザード)
+# <a name="database-support-mfc-application-wizard"></a>[データベース サポート] \(MFC アプリケーション ウィザード)
 このページで、データベースのレベルを指定できるようにするオプションは、プロジェクトの (さらに、データ ソースを必要な場合) をサポートします。  
   
  **データベースのサポート**  
