@@ -1,12 +1,12 @@
 ---
-title: "CArchive クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CArchive クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CArchive
@@ -61,7 +61,7 @@ helpviewer_keywords:
 - CArchive [MFC], WriteString
 - CArchive [MFC], m_pDocument
 ms.assetid: 9e950d23-b874-456e-ae4b-fe00781a7699
-caps.latest.revision: 
+caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -69,7 +69,7 @@ ms.workload:
 - cplusplus
 ms.openlocfilehash: 9cc94e78656c53156b8696b927780f46e939861a
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
@@ -88,8 +88,7 @@ class CArchive
   
 |名前|説明|  
 |----------|-----------------|  
-|[CArchive::CArchive](#carchive)|
-          `CArchive` オブジェクトを作成します。|  
+|[CArchive::CArchive](#carchive)|`CArchive` オブジェクトを作成します。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -141,7 +140,7 @@ class CArchive
   
  構築する場合、`CArchive`オブジェクト、クラスのオブジェクトにアタッチする`CFile`(または派生クラス) を表す、開いているファイル。 また、アーカイブを読み込み、または格納用に使用するかどうかも指定します。 A`CArchive`プリミティブ型だけでなく、オブジェクトのオブジェクトを処理できる[CObject](../../mfc/reference/cobject-class.md)-派生クラスがシリアル化のために設計されています。 シリアル化可能なクラスには通常、`Serialize`メンバー関数は、通常パラメーターを使用して、 [DECLARE_SERIAL](../../mfc/reference/run-time-object-model-services.md#declare_serial)と[IMPLEMENT_SERIAL](../../mfc/reference/run-time-object-model-services.md#implement_serial)マクロ、クラスの下の説明に従って`CObject`です。  
   
- オーバー ロードされた抽出 (  **>>** ) と挿入 (  **<<** ) 演算子は、両方のプリミティブ型をサポートする便利なアーカイブ プログラミング インターフェイスと`CObject`派生クラス。  
+ オーバー ロードされた抽出 ( **>>**) と挿入 ( **<<**) 演算子は、両方のプリミティブ型をサポートする便利なアーカイブ プログラミング インターフェイスと`CObject`派生クラス。  
   
  `CArchive`MFC Windows ソケット クラスを使用したプログラミングをサポートも[CSocket](../../mfc/reference/csocket-class.md)と[CSocketFile](../../mfc/reference/csocketfile-class.md)です。 [時](#isbufferempty)メンバー関数は、その使用をサポートしています。  
   
@@ -566,7 +565,7 @@ CRuntimeClass* ReadClass(
   
  ランタイム クラスを使用する必要があります[DECLARE_SERIAL](../../mfc/reference/run-time-object-model-services.md#declare_serial)と[IMPLEMENT_SERIAL](../../mfc/reference/run-time-object-model-services.md#implement_serial)、それ以外の`ReadClass`がスローされます、[行わない](../../mfc/reference/cnotsupportedexception-class.md)です。  
   
- 場合`pSchema`は**NULL**を呼び出してストアド クラスのスキーマを取得できる[CArchive::GetObjectSchema](#getobjectschema)、それ以外の **\***  `pSchema`は保存されていたランタイム クラスのスキーマが含まれます。  
+ 場合`pSchema`は**NULL**を呼び出してストアド クラスのスキーマを取得できる[CArchive::GetObjectSchema](#getobjectschema)、それ以外の**\*** `pSchema`は保存されていたランタイム クラスのスキーマが含まれます。  
   
  使用することができます[SerializeClass](#serializeclass)の代わりに`ReadClass`、両方の読み取りと書き込みクラスの参照を処理します。  
   
@@ -588,7 +587,7 @@ CObject* ReadObject(const CRuntimeClass* pClass);
  A [CObject](../../mfc/reference/cobject-class.md)を使用して派生クラスを適切に安全にキャストする必要がありますポインター[使うため](../../mfc/reference/cobject-class.md#iskindof)です。  
   
 ### <a name="remarks"></a>コメント  
- この関数は通常、呼び出される、`CArchive`抽出 (  **>>** ) のオーバー ロードされた演算子、 [CObject](../../mfc/reference/cobject-class.md)ポインター。 **ReadObject**、さらに、呼び出し、`Serialize`アーカイブ済みのクラスの関数。  
+ この関数は通常、呼び出される、`CArchive`抽出 ( **>>**) のオーバー ロードされた演算子、 [CObject](../../mfc/reference/cobject-class.md)ポインター。 **ReadObject**、さらに、呼び出し、`Serialize`アーカイブ済みのクラスの関数。  
   
  0 以外を指定する場合`pClass`ことによって取得されるパラメーター、 [RUNTIME_CLASS](../../mfc/reference/run-time-object-model-services.md#runtime_class)マクロ、関数は、アーカイブ済みのオブジェクトのランタイム クラスをことを確認します。 これは、使用している前提としています。、`IMPLEMENT_SERIAL`マクロでクラスの実装です。  
   
@@ -766,7 +765,7 @@ void WriteObject(const CObject* pOb);
  格納されているオブジェクトへの定数ポインター。  
   
 ### <a name="remarks"></a>コメント  
- この関数は通常、呼び出される、`CArchive`挿入 (  **<<** ) の演算子はオーバー ロード`CObject`です。 **WriteObject**、さらに、呼び出し、`Serialize`アーカイブ済みのクラスの関数。  
+ この関数は通常、呼び出される、`CArchive`挿入 ( **<<**) の演算子はオーバー ロード`CObject`です。 **WriteObject**、さらに、呼び出し、`Serialize`アーカイブ済みのクラスの関数。  
   
  使用する必要があります、`IMPLEMENT_SERIAL`マクロ アーカイブを有効にします。 **WriteObject** ASCII クラス名をアーカイブに書き込みます。 このクラス名が、読み込みプロセス中に後で検証されます。 特殊なエンコード スキームでは、クラスの複数のオブジェクトのクラス名の不要な重複しないようにします。 このスキームでは、1 つ以上のポインターの対象になっているオブジェクトの冗長ストレージを防ぐことができます。  
   

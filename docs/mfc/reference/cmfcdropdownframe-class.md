@@ -1,12 +1,12 @@
 ---
-title: "CMFCDropDownFrame クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CMFCDropDownFrame クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CMFCDropDownFrame
@@ -25,7 +25,7 @@ helpviewer_keywords:
 - CMFCDropDownFrame [MFC], RecalcLayout
 - CMFCDropDownFrame [MFC], SetAutoDestroy
 ms.assetid: 09ff81a9-de00-43ec-9df9-b626f7728c4b
-caps.latest.revision: 
+caps.latest.revision: 23
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -33,7 +33,7 @@ ms.workload:
 - cplusplus
 ms.openlocfilehash: 01b3e5b56621d7bf8d42aad12e216208338bbacd
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
@@ -61,8 +61,7 @@ class CMFCDropDownFrame : public CMiniFrameWnd
 |||  
 |-|-|  
 |名前|説明|  
-|[CMFCDropDownFrame::Create](#create)|
-          `CMFCDropDownFrame` オブジェクトを作成します。|  
+|[CMFCDropDownFrame::Create](#create)|`CMFCDropDownFrame` オブジェクトを作成します。|  
 |`CMFCDropDownFrame::CreateObject`|このクラス型の動的インスタンスを作成するために、フレームワークで使用されます。|  
 |[CMFCDropDownFrame::GetParentMenuBar](#getparentmenubar)|ドロップダウンのフレームの親のメニュー バーを取得します。|  
 |[CMFCDropDownFrame::GetParentPopupMenu](#getparentpopupmenu)|ドロップダウンのフレームの親のポップアップ メニューを取得します。|  
@@ -97,8 +96,7 @@ class CMFCDropDownFrame : public CMiniFrameWnd
  **ヘッダー:** afxdropdowntoolbar.h  
   
 ##  <a name="create"></a>CMFCDropDownFrame::Create  
- 
-          `CMFCDropDownFrame` オブジェクトを作成します。  
+ `CMFCDropDownFrame` オブジェクトを作成します。  
   
 ```  
 virtual BOOL Create(

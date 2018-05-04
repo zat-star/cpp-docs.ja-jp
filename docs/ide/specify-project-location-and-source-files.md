@@ -1,19 +1,19 @@
 ---
-title: "新しいコード プロジェクトを既存のソース ファイル (Visual C) |Microsoft ドキュメント"
-ms.custom: 
+title: 新しいコード プロジェクトを既存のソース ファイル (Visual C) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-ide
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vc.appwiz.importwiz.location
 dev_langs:
 - C++
 ms.assetid: 29ddffb9-5918-4d72-8c7a-a365f9de96dd
-caps.latest.revision: 
+caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -21,11 +21,11 @@ ms.workload:
 - cplusplus
 ms.openlocfilehash: 04f73f89745f797658029eac2331d1764af4c065
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
-# <a name="specify-project-location-and-source-files-create-new-project-from-existing-code-files-wizard"></a>[プロジェクトの場所とソース ファイルの指定] (既存コード ファイルからの新しいプロジェクトの作成ウィザード)
+# <a name="specify-project-location-and-source-files-create-new-project-from-existing-code-files-wizard"></a>[プロジェクトの場所とソース ファイルの指定] \(既存コード ファイルからの新しいプロジェクトの作成ウィザード)
 指定するには、既存のコード ファイルからの新しいプロジェクトの作成ウィザードのこのページを使用します。  
   
 -   新しいプロジェクトのディレクトリ パス。  

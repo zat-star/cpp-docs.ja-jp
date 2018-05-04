@@ -1,19 +1,19 @@
 ---
-title: "複合ドキュメント サポート、MFC アプリケーション ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: 複合ドキュメント サポート、MFC アプリケーション ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vc.appwiz.mfc.exe.compdoc
 dev_langs:
 - C++
 ms.assetid: 42e1af83-12c4-438d-92eb-13835afdb148
-caps.latest.revision: 
+caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -21,11 +21,11 @@ ms.workload:
 - cplusplus
 ms.openlocfilehash: 9390f3849cd7511054f1248205c5d2c408cb7e71
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
-# <a name="compound-document-support-mfc-application-wizard"></a>[複合ドキュメント サポート] (MFC アプリケーション ウィザード)
+# <a name="compound-document-support-mfc-application-wizard"></a>[複合ドキュメント サポート] \(MFC アプリケーション ウィザード)
 MFC アプリケーション ウィザードのこのページでは、どのようなレベルに複合とアクティブなドキュメントのサポートを提供するアプリケーションを指定します。 アプリケーションでは、複合ドキュメントおよびドキュメント テンプレートをサポートするためにドキュメント/ビュー アーキテクチャをサポートする必要があります。  
   
  既定では、アプリケーションには複合ドキュメント サポートはありません。 既定値を使用する場合、アプリケーションはアクティブなドキュメントや複合ファイルをサポートできません。  

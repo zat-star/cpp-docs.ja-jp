@@ -24,7 +24,7 @@ ms.workload:
 - cplusplus
 ms.openlocfilehash: 085d0e525cb00c9fffb3698080194da92a6dbb8a
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
@@ -62,7 +62,7 @@ struct CDaoDatabaseInfo
  `m_lCollatingOrder`  
  文字列の比較または並べ替えのためのテキストの並べ替え順序を指定します。 次の値を使用できます。  
   
-- **dbSortGeneral** [全般] (英語、フランス語、ドイツ語、ポルトガル語、イタリア語、および最新のスペイン語) の並べ替え順序を使用します。  
+- **dbSortGeneral** [全般] \(英語、フランス語、ドイツ語、ポルトガル語、イタリア語、および最新のスペイン語) の並べ替え順序を使用します。  
   
 - **dbSortArabic**アラビア語の並べ替え順序を使用します。  
   
