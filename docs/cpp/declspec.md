@@ -1,12 +1,9 @@
 ---
-title: "_ _declspec |Microsoft ドキュメント"
-ms.custom: 
+title: _ _declspec |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 1/23/2018
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __declspec_cpp
@@ -16,14 +13,13 @@ helpviewer_keywords:
 - __declspec keyword [C++]
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 51a08092160ecb288decae343713e5a4f6e507b1
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.openlocfilehash: c610da3545e7269c307542930140616dc6af9dce
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="declspec"></a>__declspec
 
@@ -37,8 +33,8 @@ ms.lasthandoff: 01/25/2018
 &nbsp;&nbsp;&nbsp;&nbsp;**_ _declspec (***拡張修飾子 decl seq***)** 
 
 *extended-decl-modifier-seq*:  
-&nbsp;&nbsp;&nbsp;&nbsp;*extended-decl-modifier*<sub>opt</sub>  
-&nbsp;&nbsp;&nbsp;&nbsp;*extended-decl-modifier* *extended-decl-modifier-seq*
+&nbsp;&nbsp;&nbsp;&nbsp;*拡張 decl 修飾子*<sub>オプトイン</sub>  
+&nbsp;&nbsp;&nbsp;&nbsp;*拡張 decl 修飾子**拡張修飾子 decl seq*
 
 *extended-decl-modifier*:  
 &nbsp;&nbsp;&nbsp;&nbsp;**align(** *#* **)**  
@@ -55,13 +51,13 @@ ms.lasthandoff: 01/25/2018
 &nbsp;&nbsp;&nbsp;&nbsp;**noreturn**  
 &nbsp;&nbsp;&nbsp;&nbsp;**nothrow**  
 &nbsp;&nbsp;&nbsp;&nbsp;**novtable**  
-&nbsp;&nbsp;&nbsp;&nbsp;**process**  
+&nbsp;&nbsp;&nbsp;&nbsp;**プロセス**  
 &nbsp;&nbsp;&nbsp;&nbsp;**property(** { **get=**_get_func_name_ &#124; **,put=**_put_func_name_ } **)**  
 &nbsp;&nbsp;&nbsp;&nbsp;**restrict**  
 &nbsp;&nbsp;&nbsp;&nbsp;**safebuffers**  
 &nbsp;&nbsp;&nbsp;&nbsp;**selectany**  
 &nbsp;&nbsp;&nbsp;&nbsp;**spectre(nomitigation)**  
-&nbsp;&nbsp;&nbsp;&nbsp;**thread**  
+&nbsp;&nbsp;&nbsp;&nbsp;**スレッド**  
 &nbsp;&nbsp;&nbsp;&nbsp;**uuid("** *ComObjectGUID* **")**  
 
 空白は、宣言修飾子のシーケンスを区切ります。 その例は以降のセクションで示します。
@@ -70,15 +66,15 @@ ms.lasthandoff: 01/25/2018
 
 **Code_seg**、 **dllexport**、 **dllimport**、 **naked**、 **noalias**、 **nothrow**、**プロパティ**、**制限**、 **selectany**、**スレッド**、および**uuid**ストレージ クラス属性は、オブジェクトまたは関数を適用する対象の宣言するだけのプロパティです。 **スレッド**属性は、データに影響を与えるし、オブジェクトにのみです。 **Naked**と**spectre**属性は関数のみに影響します。 **Dllimport**と**dllexport**属性は、関数、データ、およびオブジェクトに影響します。 **プロパティ**、 **selectany**、および**uuid**属性は COM オブジェクトに影響します。
 
-**_ _Declspec**キーワードは単純な宣言の先頭に配置する必要があります。 コンパイラは、無視、警告なし**_ _declspec**キーワードの後に配置 * または (& a) と宣言で変数の識別子の前にします。
+**_ _Declspec**キーワードは単純な宣言の先頭に配置する必要があります。 コンパイラは、無視、警告なし **_ _declspec**キーワードの後に配置 * または (& a) と宣言で変数の識別子の前にします。
 
-A **_ _declspec**その型の変数にユーザー定義型の宣言の先頭で指定された属性が適用されます。 例:
+A **_ _declspec**その型の変数にユーザー定義型の宣言の先頭で指定された属性が適用されます。 例えば:
 
 ```cpp
 __declspec(dllimport) class X {} varX;
 ```
 
-この場合、属性は `varX` に適用されます。 A **_ _declspec**属性を配置した後、**クラス**または**構造体**キーワードは、ユーザー定義型に適用されます。 例:
+この場合、属性は `varX` に適用されます。 A **_ _declspec**属性を配置した後、**クラス**または**構造体**キーワードは、ユーザー定義型に適用されます。 例えば:
 
 ```cpp
 class __declspec(dllimport) X {};
@@ -90,7 +86,7 @@ class __declspec(dllimport) X {};
 
 *decl-specifier-seq* *init-declarator-list*;
 
-*Decl-seq 指定子*含めることは、特に、基本型 (例: **int**、 **float**、 **typedef**、またはクラス名)、ストレージ クラス (例:**静的**、 **extern**)、または**_ _declspec**拡張機能です。 *Init 宣言子リスト*を含めることは、特に、宣言のポインターの一部です。 例:
+*Decl-seq 指定子*含めることは、特に、基本型 (例: **int**、 **float**、 **typedef**、またはクラス名)、ストレージ クラス (例:**静的**、 **extern**)、または **_ _declspec**拡張機能です。 *Init 宣言子リスト*を含めることは、特に、宣言のポインターの一部です。 例えば:
 
 ```cpp
 __declspec(selectany) int * pi1 = 0;   //Recommended, selectany & int both part of decl-specifier

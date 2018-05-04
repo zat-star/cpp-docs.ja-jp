@@ -1,12 +1,9 @@
 ---
-title: "CRBMultiMap クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CRBMultiMap クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CRBMultiMap
@@ -22,17 +19,15 @@ dev_langs:
 helpviewer_keywords:
 - CRBMultiMap class
 ms.assetid: 94d3ec0c-3e30-4ab7-a101-d8da4fb8add3
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 79ef7fdd5799b01ec115befcd50bbe4625d48bea
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6ec016df268b702fd8b26d742d702ac38b95fa06
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="crbmultimap-class"></a>CRBMultiMap クラス
 このクラスは、各キーは、赤、黒のバイナリ ツリーを使用して、1 つ以上の値を関連付けることができますをできるマップ構造体を表します。  
@@ -80,7 +75,7 @@ class CRBMultiMap : public CRBTree<K, V, KTraits, VTraits>
 |[CRBMultiMap::RemoveKey](#removekey)|指定されたキーのキー/値の要素をすべて削除するには、このメソッドを呼び出します。|  
   
 ## <a name="remarks"></a>コメント  
- `CRBMultiMap`主要な要素と値の順序付けられた配列を管理する、指定された型のマッピングの配列のサポートを提供します。 異なり、 [CRBMap](../../atl/reference/crbmap-class.md)クラス、各キーが 1 つ以上の値を関連付けることができます。  
+ `CRBMultiMap` 主要な要素と値の順序付けられた配列を管理する、指定された型のマッピングの配列のサポートを提供します。 異なり、 [CRBMap](../../atl/reference/crbmap-class.md)クラス、各キーが 1 つ以上の値を関連付けることができます。  
   
  バイナリ ツリーに要素 (キーおよび値で構成される) が格納されている構造体を使用して、 [CRBMultiMap::Insert](#insert)メソッドです。 使用して要素を削除することができます、 [CRBMultiMap::RemoveKey](#removekey)メソッドで、指定したキーに一致するすべての要素を削除します。  
   
@@ -88,7 +83,7 @@ class CRBMultiMap : public CRBTree<K, V, KTraits, VTraits>
   
  `KTraits`と`VTraits`パラメーターは次の特徴 (traits) クラスをコピーまたは要素を移動するために必要な補足コードが含まれています。  
   
- `CRBMultiMap`派生した[CRBTree](../../atl/reference/crbtree-class.md)赤、黒のアルゴリズムを使用してバイナリ ツリーを実装します。 代わりに`CRBMultiMap`と`CRBMap`によって提供される、 [CAtlMap](../../atl/reference/catlmap-class.md)クラスです。 少数の要素のみを格納する必要があります、ときに、使用を検討して、 [CSimpleMap](../../atl/reference/csimplemap-class.md)クラスの代わりにします。  
+ `CRBMultiMap` 派生した[CRBTree](../../atl/reference/crbtree-class.md)赤、黒のアルゴリズムを使用してバイナリ ツリーを実装します。 代わりに`CRBMultiMap`と`CRBMap`によって提供される、 [CAtlMap](../../atl/reference/catlmap-class.md)クラスです。 少数の要素のみを格納する必要があります、ときに、使用を検討して、 [CSimpleMap](../../atl/reference/csimplemap-class.md)クラスの代わりにします。  
   
  さまざまなコレクション クラスとその機能とパフォーマンス特性の詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
@@ -97,10 +92,10 @@ class CRBMultiMap : public CRBTree<K, V, KTraits, VTraits>
   
  `CRBMultiMap`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="crbmultimap"></a>CRBMultiMap::CRBMultiMap  
+##  <a name="crbmultimap"></a>  CRBMultiMap::CRBMultiMap  
  コンストラクターです。  
   
 ```
@@ -119,7 +114,7 @@ explicit CRBMultiMap(size_t nBlockSize = 10) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#85](../../atl/codesnippet/cpp/crbmultimap-class_1.cpp)]  
   
-##  <a name="dtor"></a>CRBMultiMap:: ~ CRBMultiMap  
+##  <a name="dtor"></a>  CRBMultiMap:: ~ CRBMultiMap  
  デストラクターです。  
   
 ```
@@ -131,7 +126,7 @@ explicit CRBMultiMap(size_t nBlockSize = 10) throw();
   
  基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)使用可能な他の方法についてはします。  
   
-##  <a name="findfirstwithkey"></a>CRBMultiMap::FindFirstWithKey  
+##  <a name="findfirstwithkey"></a>  CRBMultiMap::FindFirstWithKey  
  指定したキーを持つ最初の要素の位置を検索するには、このメソッドを呼び出します。  
   
 ```
@@ -153,7 +148,7 @@ POSITION FindFirstWithKey(KINARGTYPE key) const throw();
 ### <a name="example"></a>例  
  例を参照して[CRBMultiMap::CRBMultiMap](#crbmultimap)です。  
   
-##  <a name="getnextvaluewithkey"></a>CRBMultiMap::GetNextValueWithKey  
+##  <a name="getnextvaluewithkey"></a>  CRBMultiMap::GetNextValueWithKey  
  指定されたキーに関連付けられている値を取得するには、このメソッドを呼び出すし、位置の値を更新します。  
   
 ```
@@ -183,7 +178,7 @@ V& GetNextValueWithKey(
 ### <a name="example"></a>例  
  例を参照して[CRBMultiMap::CRBMultiMap](#crbmultimap)です。  
   
-##  <a name="getnextwithkey"></a>CRBMultiMap::GetNextWithKey  
+##  <a name="getnextwithkey"></a>  CRBMultiMap::GetNextWithKey  
  指定したキーに関連付けられている要素を取得するには、このメソッドを呼び出すし、位置の値を更新します。  
   
 ```
@@ -210,7 +205,7 @@ CPair* GetNextWithKey(
   
  基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)使用可能な他の方法についてはします。  
   
-##  <a name="insert"></a>CRBMultiMap::Insert  
+##  <a name="insert"></a>  CRBMultiMap::Insert  
  Map に要素のペアを挿入するには、このメソッドを呼び出します。  
   
 ```
@@ -233,7 +228,7 @@ POSITION Insert(KINARGTYPE key, VINARGTYPE value) throw(...);
 ### <a name="example"></a>例  
  例を参照して[CRBMultiMap::CRBMultiMap](#crbmultimap)です。  
   
-##  <a name="removekey"></a>CRBMultiMap::RemoveKey  
+##  <a name="removekey"></a>  CRBMultiMap::RemoveKey  
  指定されたキーのキー/値の要素をすべて削除するには、このメソッドを呼び出します。  
   
 ```
@@ -248,14 +243,14 @@ size_t RemoveKey(KINARGTYPE key) throw();
  指定したキーに関連付けられている値の数を返します。  
   
 ### <a name="remarks"></a>コメント  
- `RemoveKey`すべてのキー/値要素に一致するキーを持つ削除`key`です。  
+ `RemoveKey` すべてのキー/値要素に一致するキーを持つ削除`key`です。  
   
  基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)使用可能な他の方法についてはします。  
   
 ### <a name="example"></a>例  
  例を参照して[CRBMultiMap::CRBMultiMap](#crbmultimap)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CRBTree クラス](../../atl/reference/crbtree-class.md)   
  [CAtlMap クラス](../../atl/reference/catlmap-class.md)   
  [CRBMap クラス](../../atl/reference/crbmap-class.md)   

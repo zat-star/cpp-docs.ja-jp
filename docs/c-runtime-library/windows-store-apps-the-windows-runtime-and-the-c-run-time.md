@@ -1,27 +1,27 @@
 ---
-title: "UWP アプリ、Windows ランタイム、および C ランタイム | Microsoft Docs"
-ms.custom: 
+title: UWP アプリ、Windows ランタイム、および C ランタイム | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - C++
 ms.assetid: 356d6d8d-76ee-4181-9ad0-6f24b2fede38
-caps.latest.revision: 
+caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 120e02caab735455224ad75f0944ceb25f4baf33
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: e9e6053cdcd7797319379e1e5e7290bcff373b6f
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="uwp-apps-the-windows-runtime-and-the-c-run-time"></a>UWP アプリ、Windows ランタイム、および C ランタイム
 
@@ -31,7 +31,7 @@ Windows ランタイムは次の CRT 機能をサポートしていません。
 
 - サポートされない機能に関連したほとんどの CRT 関数。
 
-   たとえば、UWP アプリでは、`exec` および `spawn` ファミリのルーチンを使用してプロセスを作成することはできません。
+   たとえば、UWP アプリでは、**exec** および **spawn** ファミリのルーチンを使用してプロセスを作成することはできません。
 
    ある CRT 関数が UWP アプリでサポートされていない場合、そのことが参照資料に記載されています。
 
@@ -58,4 +58,7 @@ Windows ランタイムは次の CRT 機能をサポートしていません。
 UWP アプリで使用できない CRT 関数と使用できる代替関数の詳細な一覧については、「[ユニバーサル Windows プラットフォーム アプリでサポートされていない CRT 関数](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
- [互換性](../c-runtime-library/compatibility.md) [Windows ランタイムでサポートされない CRT 関数](../c-runtime-library/windows-runtime-unsupported-crt-functions.md) [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)
+
+[互換性](../c-runtime-library/compatibility.md)<br/>
+[Windows ランタイムのサポートされていない CRT 関数](../c-runtime-library/windows-runtime-unsupported-crt-functions.md)<br/>
+[カテゴリ別ユニバーサル C ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)<br/>

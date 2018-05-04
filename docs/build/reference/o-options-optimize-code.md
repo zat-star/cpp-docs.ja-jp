@@ -1,13 +1,10 @@
 ---
-title: "-O オプション (コードの最適化) |Microsoft ドキュメント"
-ms.custom: 
+title: -O オプション (コードの最適化) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 09/25/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLCompilerTool.Optimization
 - /o
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - performance, cle.exe compiler
 - cl.exe compiler, performance
 ms.assetid: 77997af9-5555-4b3d-aa57-6615b27d4d5d
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b7da04384d0c4ea00c2eaaedbcf0ec770e216289
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 83ddebec9db7a02db40ef31c89c7ff48a66cf665
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="o-options-optimize-code"></a>/O オプション (コードの最適化)
 
@@ -56,9 +51,9 @@ ms.lasthandoff: 12/21/2017
 
 ## <a name="remarks"></a>コメント
 
-複数を組み合わせることができます**/O**オプションを 1 つのオプションのステートメントにします。 たとえば、 **/Odi**と同じ**/Od/Oi**です。 特定のオプションは相互に排他的で一緒に使用する場合、コンパイラ エラーが発生します。 個々 の**/O**詳細については、オプションです。
+複数を組み合わせることができます **/O**オプションを 1 つのオプションのステートメントにします。 たとえば、 **/Odi**と同じ **/Od/Oi**です。 特定のオプションは相互に排他的で一緒に使用する場合、コンパイラ エラーが発生します。 個々 の **/O**詳細については、オプションです。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [コンパイラ オプション](../../build/reference/compiler-options.md)   
 [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

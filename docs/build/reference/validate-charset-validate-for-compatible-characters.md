@@ -2,13 +2,10 @@
 title: -検証-文字セット (互換性のある文字の検証) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /validate-charset
 - validate-charset
@@ -17,17 +14,15 @@ dev_langs:
 helpviewer_keywords:
 - /validate-charset compiler option
 ms.assetid: 50360fd0-4d32-4a4f-95d0-53d38c12ad4c
-caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0e82b9fd42b636cffd318f6327cc064687334329
-ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
+ms.openlocfilehash: 0804d9d2714cc8c4f065b6908788c067c34ca44b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="validate-charset-validate-for-compatible-characters"></a>/validate-charset (互換性のある文字の検証)
 ソース ファイルのテキストに表現できる文字だけが含まれている検証 utf-8 として。  
@@ -39,9 +34,9 @@ ms.lasthandoff: 04/16/2018
 ```  
   
 ## <a name="remarks"></a>コメント  
- 使用することができます、 **/validate-charset**ソース コードには、ソース文字で表すことができる文字セットし、実行文字セットのみが含まれることを検証するにはオプションです。 指定すると、このチェックが自動的に有効**/source-charset**、 **/execution-charset**、または**/utf-8**コンパイラ オプション。 指定してこのチェックを無効にすることが明示的に、 **/validate -文字セットの**オプション。  
+ 使用することができます、 **/validate-charset**ソース コードには、ソース文字で表すことができる文字セットし、実行文字セットのみが含まれることを検証するにはオプションです。 指定すると、このチェックが自動的に有効 **/source-charset**、 **/execution-charset**、または **/utf-8**コンパイラ オプション。 指定してこのチェックを無効にすることが明示的に、 **/validate -文字セットの**オプション。  
   
- 既定では、Visual Studio を判断するかどうか、ソース ファイルを Unicode 形式でエンコードされたなど、utf-8 または utf-16 バイト順マークを検出します。 バイト順マークが見つからない場合は、ソース ファイルを使用してエンコード、現在のユーザー コード ページを使用して、コード ページを指定した場合を除き、想定しています。 **/utf-8**または**/source-charset**オプション。 Visual Studio では、いくつかの文字エン コードのいずれかを使用して、C++ ソース コードを保存することができます。 ソースおよび実行文字セットの詳細については、次を参照してください。[文字セット](../../cpp/character-sets.md)言語のドキュメントにします。 一覧には、コード ページ識別子がサポートされている文字セットの名前を参照してください。[コード ページ識別子](http://msdn.microsoft.com/library/windows/desktop/dd317756)です。  
+ 既定では、Visual Studio を判断するかどうか、ソース ファイルを Unicode 形式でエンコードされたなど、utf-8 または utf-16 バイト順マークを検出します。 バイト順マークが見つからない場合は、ソース ファイルを使用してエンコード、現在のユーザー コード ページを使用して、コード ページを指定した場合を除き、想定しています。 **/utf-8**または **/source-charset**オプション。 Visual Studio では、いくつかの文字エン コードのいずれかを使用して、C++ ソース コードを保存することができます。 ソースおよび実行文字セットの詳細については、次を参照してください。[文字セット](../../cpp/character-sets.md)言語のドキュメントにします。 一覧には、コード ページ識別子がサポートされている文字セットの名前を参照してください。[コード ページ識別子](http://msdn.microsoft.com/library/windows/desktop/dd317756)です。  
   
  Visual Studio では、ソース文字セットと実行文字セットの間で変換中に内部の文字エン コードとして utf-8 を使用します。 Utf-8 変換が疑問符 () を置き換える場合は、ソース ファイル内の文字は、実行文字セットで表されることはできません、'?' 文字です。 **/Validate-charset**オプションは、このような場合に警告を報告する、コンパイルします。  
   

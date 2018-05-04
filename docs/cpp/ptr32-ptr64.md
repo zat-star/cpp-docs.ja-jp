@@ -1,12 +1,9 @@
 ---
-title: "_ _ptr32、_ _ptr64 |Microsoft ドキュメント"
-ms.custom: 
+title: _ _ptr32、_ _ptr64 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __ptr32_cpp
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - _ptr64 keyword [C++]
 - __ptr32 keyword [C++]
 ms.assetid: afb563d8-7458-4fe7-9c30-bd4b5385a59f
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3e811999bacada521d77bc14b19eb86d660b5901
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 53fafb1e7be45cd4b48ce51e787b6338dd0f7324
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ptr32-ptr64"></a>__ptr32、__ptr64
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -47,7 +42,7 @@ int * __ptr64 p64;
  32 ビット システムでは、`__ptr64` で宣言されたポインターは 32 ビット ポインターに切り詰められます。 64 ビット システムでは、`__ptr32` で宣言されたポインターは 64 ビットのポインター型に変換されます。  
   
 > [!NOTE]
->  使用することはできません`__ptr32`または`__ptr64`でコンパイルするときに**/clr: 純粋な**します。 それ以外の場合は、`Compiler Error C2472` が生成されます。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+>  使用することはできません`__ptr32`または`__ptr64`でコンパイルするときに **/clr: 純粋な**します。 それ以外の場合は、`Compiler Error C2472` が生成されます。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で非推奨とされています。  
   
 ## <a name="example"></a>例  
  次の例は、`__ptr32` キーワードと `__ptr64` キーワードを持つポインターを宣言して割り当てる方法を示します。  
@@ -80,5 +75,5 @@ int main()
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
- [基本型](../cpp/fundamental-types-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [基本的な型](../cpp/fundamental-types-cpp.md)

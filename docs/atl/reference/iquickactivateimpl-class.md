@@ -2,11 +2,8 @@
 title: IQuickActivateImpl クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IQuickActivateImpl
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - IQuickActivateImpl class
 - IQuickActivate ATL implementation
 ms.assetid: aa80c056-1041-494e-b21d-2acca7dc27ea
-caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7c6f5bc1798bc8ec40fb6f6d9d22f48c06b19745
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b87427408483a60cf33b46a1a670095d211b3d80
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="iquickactivateimpl-class"></a>IQuickActivateImpl クラス
 このクラスは、1 回の呼び出しにコンテナーのコントロールの初期化を結合します。  
@@ -71,10 +66,10 @@ class ATL_NO_VTABLE IQuickActivateImpl : public IQuickActivate
   
  `IQuickActivateImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="getcontentextent"></a>IQuickActivateImpl::GetContentExtent  
+##  <a name="getcontentextent"></a>  IQuickActivateImpl::GetContentExtent  
  実行中のコントロールの現在の表示サイズを取得します。  
   
 ```
@@ -86,7 +81,7 @@ STDMETHOD(GetContentExtent)(LPSIZEL pSize);
   
  参照してください[IQuickActivate::GetContentExtent](http://msdn.microsoft.com/library/windows/desktop/ms693792) Windows SDK にします。  
   
-##  <a name="quickactivate"></a>IQuickActivateImpl::QuickActivate  
+##  <a name="quickactivate"></a>  IQuickActivateImpl::QuickActivate  
  読み込む対象のコントロールの初期化を迅速に実行します。  
   
 ```
@@ -100,7 +95,7 @@ STDMETHOD(QuickActivate)(
   
  参照してください[IQuickActivate::QuickActivate](http://msdn.microsoft.com/library/windows/desktop/ms682421) Windows SDK にします。  
   
-##  <a name="setcontentextent"></a>IQuickActivateImpl::SetContentExtent  
+##  <a name="setcontentextent"></a>  IQuickActivateImpl::SetContentExtent  
  コンテナーが割り当てられて表示領域の量のコントロールに通知します。  
   
 ```
@@ -112,6 +107,6 @@ STDMETHOD(SetContentExtent)(LPSIZEL pSize);
   
  参照してください[IQuickActivate::SetContentExtent](http://msdn.microsoft.com/library/windows/desktop/ms678806) Windows SDK にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CComControl クラス](../../atl/reference/ccomcontrol-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

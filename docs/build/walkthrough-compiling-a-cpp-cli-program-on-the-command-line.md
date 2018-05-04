@@ -2,26 +2,21 @@
 title: 'チュートリアル: をコンパイルする C + +/CLI プログラムのコマンドラインで |Microsoft ドキュメント'
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: cef41c88-faf9-439d-8423-25aa3f5674dd
-caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d509bc9890f4fa5ccebbd6ae3d1e3bcb3dbb0d93
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 81e5b8119c8921da28c6ad93b257234e0998083a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="walkthrough-compiling-a-ccli-program-on-the-command-line"></a>チュートリアル: コマンド ラインでの C++/CLI プログラムのコンパイル
 共通言語ランタイム (CLR) を対象とし、.NET Framework を使用する Visual C++ プログラムを作成して、コマンド ラインでビルドできます。 Visual C++ では C++/CLI プログラミング言語がサポートされます。このプログラミング言語には、.NET プログラミング モデルを対象とする追加の型と演算子があります。 概要については、C + + CLI 言語の場合を参照してください[Pure C: こんにちは, C++ + CLI](http://msdn.microsoft.com/magazine/cc163681.aspx)です。 一般情報は、次を参照してください。 [C + での .NET プログラミング +/CLI (Visual c)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)です。  
@@ -72,7 +67,7 @@ ms.lasthandoff: 12/21/2017
     This is a C++/CLI program.  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [C/C++ プログラムのビルド](../build/building-c-cpp-programs.md)   
  [コンパイラ オプション](../build/reference/compiler-options.md)

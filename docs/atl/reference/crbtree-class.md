@@ -1,12 +1,9 @@
 ---
-title: "CRBTree クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CRBTree クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CRBTree
@@ -36,17 +33,15 @@ dev_langs:
 helpviewer_keywords:
 - CRBTree class
 ms.assetid: a1b1cb63-38e4-4fc2-bb28-f774d1721760
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8f436a3661f027ba1026a60982cb18b48a2c48cc
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6b15ddf62545d5926faf75af760ed52219f1cb03
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="crbtree-class"></a>CRBTree クラス
 このクラスは、作成および赤、黒のツリーを利用するためのメソッドを提供します。  
@@ -125,10 +120,10 @@ class CRBTree
   
  さまざまなコレクション クラスとその機能とパフォーマンス特性の詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="cpair_class"></a>CRBTree::CPair クラス  
+##  <a name="cpair_class"></a>  CRBTree::CPair クラス  
  キーと値の要素を含むクラスです。  
   
 ```
@@ -145,7 +140,7 @@ class CPair : public __POSITION
 |`m_key`|キーの要素を格納するデータ メンバーです。|  
 |`m_value`|データ メンバーは、値の要素を格納します。|  
   
-##  <a name="dtor"></a>CRBTree:: ~ CRBTree  
+##  <a name="dtor"></a>  CRBTree:: ~ CRBTree  
  デストラクターです。  
   
 ```
@@ -155,7 +150,7 @@ class CPair : public __POSITION
 ### <a name="remarks"></a>コメント  
  割り当てられたリソースを解放します。 呼び出し[CRBTree::RemoveAll](#removeall)をすべての要素を削除します。  
   
-##  <a name="findfirstkeyafter"></a>CRBTree::FindFirstKeyAfter  
+##  <a name="findfirstkeyafter"></a>  CRBTree::FindFirstKeyAfter  
  次の利用可能なキーを使用する要素の位置を検索するには、このメソッドを呼び出します。  
   
 ```
@@ -172,7 +167,7 @@ POSITION FindFirstKeyAfter(KINARGTYPE key) const throw();
 ### <a name="remarks"></a>コメント  
  このメソッドによりしやすくなります位置の値を事前に計算することがなく、ツリーを走査します。  
   
-##  <a name="getat"></a>CRBTree::GetAt  
+##  <a name="getat"></a>  CRBTree::GetAt  
  このメソッドを呼び出して、ツリー内の指定位置の要素を取得します。  
   
 ```
@@ -199,7 +194,7 @@ void GetAt(POSITION pos, KOUTARGTYPE key, VOUTARGTYPE value) const;
   
  デバッグ ビルドで、アサーション エラーが発生場合`pos`が NULL です。  
   
-##  <a name="getcount"></a>CRBTree::GetCount  
+##  <a name="getcount"></a>  CRBTree::GetCount  
  このメソッドを呼び出して、ツリー内の要素の数を取得します。  
   
 ```
@@ -209,7 +204,7 @@ size_t GetCount() const throw();
 ### <a name="return-value"></a>戻り値  
  ツリーに格納されている (各キーと値のペアは 1 つの要素) の要素の数を返します。  
   
-##  <a name="getheadposition"></a>CRBTree::GetHeadPosition  
+##  <a name="getheadposition"></a>  CRBTree::GetHeadPosition  
  ツリーの先頭にある要素の位置を表す値を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -222,7 +217,7 @@ POSITION GetHeadPosition() const throw();
 ### <a name="remarks"></a>コメント  
  によって返される値`GetHeadPosition`などのメソッドで使用できる[CRBTree::GetKeyAt](#getkeyat)または[CRBTree::GetNext](#getnext)ツリーを走査し、値を取得します。  
   
-##  <a name="getkeyat"></a>CRBTree::GetKeyAt  
+##  <a name="getkeyat"></a>  CRBTree::GetKeyAt  
  このメソッドを呼び出して、ツリー内の指定位置からキーを取得します。  
   
 ```
@@ -239,7 +234,7 @@ const K& GetKeyAt(POSITION pos) const throw();
 ### <a name="remarks"></a>コメント  
  場合`pos`が有効な位置の値では、結果は予測できません。 デバッグ ビルドで、アサーション エラーが発生場合`pos`が NULL です。  
   
-##  <a name="getnext"></a>CRBTree::GetNext  
+##  <a name="getnext"></a>  CRBTree::GetNext  
  格納されている要素へのポインターを取得するには、このメソッドを呼び出して、`CRBTree`オブジェクト、および位置を次の要素に進めます。  
   
 ```
@@ -257,7 +252,7 @@ CPair* GetNext(POSITION& pos) throw();
 ### <a name="remarks"></a>コメント  
  `pos`位置カウンターは各呼び出しの後に更新します。 取得した要素が、ツリー内の最後の場合は`pos`は NULL に設定します。  
   
-##  <a name="getnextassoc"></a>CRBTree::GetNextAssoc  
+##  <a name="getnextassoc"></a>  CRBTree::GetNextAssoc  
  キーと、マップに格納されている要素の値を取得するには、このメソッドを呼び出すし、次の要素に位置を進めます。  
   
 ```
@@ -280,7 +275,7 @@ void GetNextAssoc(
 ### <a name="remarks"></a>コメント  
  `pos`位置カウンターは各呼び出しの後に更新します。 取得した要素が、ツリー内の最後の場合は`pos`は NULL に設定します。  
   
-##  <a name="getnextkey"></a>CRBTree::GetNextKey  
+##  <a name="getnextkey"></a>  CRBTree::GetNextKey  
  ツリー内の要素のキーを取得するには、このメソッドを呼び出すし、次の要素に位置を進めます。  
   
 ```
@@ -297,7 +292,7 @@ const K& GetNextKey(POSITION& pos) const throw();
 ### <a name="remarks"></a>コメント  
  現在の位置のカウンターを更新`pos`です。 ツリーにエントリがある場合、位置のカウンターは NULL に設定します。  
   
-##  <a name="getnextvalue"></a>CRBTree::GetNextValue  
+##  <a name="getnextvalue"></a>  CRBTree::GetNextValue  
  ツリー内の要素の値を取得するには、このメソッドを呼び出すし、次の要素に位置を進めます。  
   
 ```
@@ -315,7 +310,7 @@ V& GetNextValue(POSITION& pos) throw();
 ### <a name="remarks"></a>コメント  
  現在の位置のカウンターを更新`pos`です。 ツリーにエントリがある場合、位置のカウンターは NULL に設定します。  
   
-##  <a name="getprev"></a>CRBTree::GetPrev  
+##  <a name="getprev"></a>  CRBTree::GetPrev  
  格納されている要素へのポインターを取得するには、このメソッドを呼び出して、`CRBTree`オブジェクト、およびその直前の要素に位置を更新します。  
   
 ```
@@ -333,7 +328,7 @@ CPair* GetPrev(POSITION& pos) throw();
 ### <a name="remarks"></a>コメント  
  現在の位置のカウンターを更新`pos`です。 ツリーにエントリがある場合、位置のカウンターは NULL に設定します。  
   
-##  <a name="gettailposition"></a>CRBTree::GetTailPosition  
+##  <a name="gettailposition"></a>  CRBTree::GetTailPosition  
  ツリーの末尾にある要素の位置を表す値を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -346,7 +341,7 @@ POSITION GetTailPosition() const throw();
 ### <a name="remarks"></a>コメント  
  によって返される値`GetTailPosition`などのメソッドで使用できる[CRBTree::GetKeyAt](#getkeyat)または[CRBTree::GetPrev](#getprev)ツリーを走査し、値を取得します。  
   
-##  <a name="getvalueat"></a>CRBTree::GetValueAt  
+##  <a name="getvalueat"></a>  CRBTree::GetValueAt  
  内の指定位置に格納された値を取得するには、このメソッドを呼び出して、`CRBTree`オブジェクト。  
   
 ```
@@ -361,7 +356,7 @@ V& GetValueAt(POSITION pos) throw();
 ### <a name="return-value"></a>戻り値  
  指定された位置に格納されている値への参照を返します、`CRBTree`オブジェクト。  
   
-##  <a name="isempty"></a>CRBTree::IsEmpty  
+##  <a name="isempty"></a>  CRBTree::IsEmpty  
  空のツリーのオブジェクトをテストするには、このメソッドを呼び出します。  
   
 ```
@@ -371,21 +366,21 @@ bool IsEmpty() const throw();
 ### <a name="return-value"></a>戻り値  
  返します**true**ツリーが空の場合、 **false**それ以外の場合。  
   
-##  <a name="kinargtype"></a>CRBTree::KINARGTYPE  
+##  <a name="kinargtype"></a>  CRBTree::KINARGTYPE  
  キーが入力引数として渡されるときに使用される型。  
   
 ```
 typedef KTraits::INARGTYPE KINARGTYPE;
 ```  
   
-##  <a name="koutargtype"></a>CRBTree::KOUTARGTYPE  
+##  <a name="koutargtype"></a>  CRBTree::KOUTARGTYPE  
  キーが出力引数として返されるときに使用される型。  
   
 ```
 typedef KTraits::OUTARGTYPE KOUTARGTYPE;
 ```  
   
-##  <a name="removeall"></a>CRBTree::RemoveAll  
+##  <a name="removeall"></a>  CRBTree::RemoveAll  
  すべての要素を削除するには、このメソッドを呼び出す、`CRBTree`オブジェクト。  
   
 ```
@@ -395,7 +390,7 @@ void RemoveAll() throw();
 ### <a name="remarks"></a>コメント  
  クリアして、`CRBTree`オブジェクト、要素を格納するために使用するメモリを解放します。  
   
-##  <a name="removeat"></a>CRBTree::RemoveAt  
+##  <a name="removeat"></a>  CRBTree::RemoveAt  
  指定された位置に要素を削除するには、このメソッドを呼び出す、 **CRBTree**オブジェクト。  
   
 ```
@@ -409,7 +404,7 @@ void RemoveAt(POSITION pos) throw();
 ### <a name="remarks"></a>コメント  
  指定した位置に格納されているキー/値ペアを削除します。 要素の格納に使用されるメモリは解放されます。 によって参照される位置`pos`、無効になり、ツリー内の他の要素の位置を必ずしもを行うには、有効にしたまま、同じ順序を保持します。  
   
-##  <a name="setvalueat"></a>CRBTree::SetValueAt  
+##  <a name="setvalueat"></a>  CRBTree::SetValueAt  
  指定された位置に格納されている値を変更するには、このメソッドを呼び出して、`CRBTree`オブジェクト。  
   
 ```
@@ -426,19 +421,19 @@ void SetValueAt(POSITION pos, VINARGTYPE value);
 ### <a name="remarks"></a>コメント  
  指定された位置に格納されている値を変更、`CRBTree`オブジェクト。  
   
-##  <a name="vinargtype"></a>CRBTree::VINARGTYPE  
+##  <a name="vinargtype"></a>  CRBTree::VINARGTYPE  
  値が入力引数として渡されるときに使用される型。  
   
 ```
 typedef VTraits::INARGTYPE VINARGTYPE;
 ```  
   
-##  <a name="voutargtype"></a>CRBTree::VOUTARGTYPE  
+##  <a name="voutargtype"></a>  CRBTree::VOUTARGTYPE  
  値が出力引数として渡されるときに使用される型。  
   
 ```
 typedef VTraits::OUTARGTYPE VOUTARGTYPE;
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

@@ -1,29 +1,24 @@
 ---
-title: "エイリアスと typedef (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: エイリアスと typedef (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - typedef_cpp
 dev_langs:
 - C++
 ms.assetid: af1c24d2-4bfd-408a-acfc-482e264232f5
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8946c87c18e1781f95df7a91e8cc4fa0eba02158
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c020d9fc4a8bc5275fe77b05eff74fdcec25ec6c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aliases-and-typedefs-c"></a>エイリアスと typedef (C++)
 使用することができます、*エイリアス宣言*を以前に宣言された型のシノニムとして使用する名前を宣言します。 (このメカニズムとも呼びます非公式な*型の別名*)。 このメカニズムを使用して作成した、*エイリアス テンプレート*、カスタム アロケーターに特に便利になることができます。  
@@ -196,7 +191,7 @@ void myproc( int )
 }  
 ```  
   
- Typedef と同じ名前でローカル スコープの識別子を宣言するとき、あるいは同じスコープまたは内部スコープで構造体または共用体のメンバーを宣言するときは、型指定子を指定する必要があります。 例:  
+ Typedef と同じ名前でローカル スコープの識別子を宣言するとき、あるいは同じスコープまたは内部スコープで構造体または共用体のメンバーを宣言するときは、型指定子を指定する必要があります。 例えば:  
   
 ```  
 typedef char FlagType;  
@@ -224,7 +219,7 @@ int;  // Illegal declaration
  ポインター、関数、配列型を含め、あらゆる型を typedef で宣言できます。 構造体型または共用体型を定義する前に、構造体型または共用体型へのポインターの typedef 名を宣言できます。ただし、定義が宣言と同じ可視性である必要があります。  
   
 ### <a name="examples"></a>使用例  
- `typedef` 宣言の使用方法の 1 つは、宣言をより同型でコンパクトにすることです。 例:  
+ `typedef` 宣言の使用方法の 1 つは、宣言をより同型でコンパクトにすることです。 例えば:  
   
 ```cpp  
 typedef char CHAR;          // Character type.  
@@ -234,7 +229,7 @@ typedef unsigned long ulong;
 ulong ul;     // Equivalent to "unsigned long ul;"  
 ```  
   
- `typedef` を使用して同じ宣言の中に基本型と派生型を指定するには、宣言子をコンマで区切ります。 例:  
+ `typedef` を使用して同じ宣言の中に基本型と派生型を指定するには、宣言子をコンマで区切ります。 例えば:  
   
 ```  
 typedef char CHAR, *PSTR;  
@@ -284,7 +279,7 @@ int main()
 ```  
   
 ### <a name="re-declaration-of-typedefs"></a>typedef の再宣言  
- `typedef` 宣言を使用すると、同じ名前を再宣言して同じ型を参照することができます。 例:  
+ `typedef` 宣言を使用すると、同じ名前を再宣言して同じ型を参照することができます。 例えば:  
   
 ```cpp  
 // FILE1.H  

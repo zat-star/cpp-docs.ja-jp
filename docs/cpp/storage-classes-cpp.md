@@ -2,11 +2,8 @@
 title: ストレージ クラス (C++) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - thread_local_cpp
@@ -18,17 +15,15 @@ dev_langs:
 helpviewer_keywords:
 - storage classes [C++], basic concepts
 ms.assetid: f10e1c56-6249-4eb6-b08f-09ab1eef1992
-caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 10acbfc4835b59bcddefb722a9039cc5dbae5e21
-ms.sourcegitcommit: d9ee6f777974d031570f4260c9581ea2c81ad875
+ms.openlocfilehash: a56d456564dc171292e8a58b6cb486ce2dfbaf31
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="storage-classes-c"></a>ストレージ クラス (C++)  
   
@@ -182,7 +177,7 @@ C++11 以降では、静的ローカル変数の初期化はスレッド セー�
 
 宣言`const`を持つ変数、`extern`ストレージ クラスが外部リンケージを持つ変数を強制します。 初期化、`extern const`定義の翻訳単位で変数を使用します。 定義している翻訳単位以外の翻訳単位の初期化は未定義の結果になります。 詳細については、次を参照してください[extern リンケージの指定を使用した。](../cpp/using-extern-to-specify-linkage.md)
 
-[/Zc:externConstexpr](../build/reference/zc-externconstexpr.md)コンパイラ オプションは、適用するコンパイラ[外部リンケージ]()を使用して宣言される変数に**extern constexpr**です。 以前のバージョンの Visual Studio で、既定の場合、または**/Zc:externConstexpr-**を指定すると、Visual Studio に内部リンケージを適用する**constexpr**変数場合であっても、 **extern**キーワードを使用します。 **/Zc:externConstexpr**オプションは、Visual Studio 2017 更新 15.6 以降を使用します。 既定では無効になっているとします。 /Permissive-option に/Zc:externConstexpr が有効にできません。
+[/Zc:externConstexpr](../build/reference/zc-externconstexpr.md)コンパイラ オプションは、適用するコンパイラ[外部リンケージ]()を使用して宣言される変数に**extern constexpr**です。 以前のバージョンの Visual Studio で、既定の場合、または **/Zc:externConstexpr-** を指定すると、Visual Studio に内部リンケージを適用する**constexpr**変数場合であっても、 **extern**キーワードを使用します。 **/Zc:externConstexpr**オプションは、Visual Studio 2017 更新 15.6 以降を使用します。 既定では無効になっているとします。 /Permissive-option に/Zc:externConstexpr が有効にできません。
 
 次のコードは、2 つの `extern` 宣言、`DefinedElsewhere` (別の翻訳単位で定義された名前を参照する) と `DefinedHere` (外側のスコープで定義された名前を参照する) を示しています。
 

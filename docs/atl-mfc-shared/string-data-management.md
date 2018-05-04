@@ -2,28 +2,23 @@
 title: データ管理の文字列 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-mfc
 ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - Unicode, string objects
 ms.assetid: 0b53a542-eeb1-4108-9ada-6700645b6f8f
-caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ad7a17b1b34375fcb45019bcaf8878757288a290
-ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.openlocfilehash: acf14ebec5417179a94d0a6ffefdb473966f0c2e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="string-data-management"></a>文字列データ管理
 Visual C には、文字列データを管理するいくつかの方法が用意されています。  
@@ -53,7 +48,7 @@ Visual C には、文字列データを管理するいくつかの方法が用�
  A`CString`オブジェクトは、可変個の文字のシーケンスを表します。 `CString` オブジェクトは、文字の配列として考えることができます。  
   
 ##  <a name="_core_unicode_and_mbcs_provide_portability"></a> Unicode と MBCS の移植性を提供します。  
- MFC バージョン 3.0 以降では、MFC では、インクルード`CString`Unicode とマルチバイト文字セット (MBCS) の両方に対して有効にします。 このサポートでは、Unicode または ANSI のいずれかの文字を構築することができるポータブル アプリケーションを作成するためのやすくなります。 この移植性の内の各文字を有効にする、`CString`オブジェクトの型が**TCHAR**、として定義されている`wchar_t`シンボルを定義する場合**_UNICODE**アプリケーションをビルドするときに、`char`しない場合。 A`wchar_t`文字が 16 ビット幅。 シンボルでビルドする場合に、MBCS が有効になっている**_MBCS**定義します。 MFC 自体がいずれかでビルドされた、 **_MBCS** (NAFX ライブラリ) のシンボルまたは**_UNICODE** (UAFX ライブラリ) のシンボルを定義します。  
+ MFC バージョン 3.0 以降では、MFC では、インクルード`CString`Unicode とマルチバイト文字セット (MBCS) の両方に対して有効にします。 このサポートでは、Unicode または ANSI のいずれかの文字を構築することができるポータブル アプリケーションを作成するためのやすくなります。 この移植性の内の各文字を有効にする、`CString`オブジェクトの型が**TCHAR**、として定義されている`wchar_t`シンボルを定義する場合 **_UNICODE**アプリケーションをビルドするときに、`char`しない場合。 A`wchar_t`文字が 16 ビット幅。 シンボルでビルドする場合に、MBCS が有効になっている **_MBCS**定義します。 MFC 自体がいずれかでビルドされた、 **_MBCS** (NAFX ライブラリ) のシンボルまたは **_UNICODE** (UAFX ライブラリ) のシンボルを定義します。  
   
 > [!NOTE]
 >  `CString`の例では、これと Unicode の移植性のリテラル文字列が正しく書式設定文字列の表示の記事に付属するを使用して、 **_T**マクロをリテラル文字列形式を。  
@@ -66,12 +61,12 @@ Visual C には、文字列データを管理するいくつかの方法が用�
  [!code-cpp[NVC_ATLMFC_Utilities#187](../atl-mfc-shared/codesnippet/cpp/string-data-management_1.cpp)]  
   
 > [!NOTE]
->  場合は、Unicode 文字列として変換**_UNICODE**が定義されているか、文字列以外の場合、ANSI として。 詳細については、記事を参照してください。 [Unicode およびマルチバイト文字セット (MBCS) のサポート](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md)です。  
+>  場合は、Unicode 文字列として変換 **_UNICODE**が定義されているか、文字列以外の場合、ANSI として。 詳細については、記事を参照してください。 [Unicode およびマルチバイト文字セット (MBCS) のサポート](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md)です。  
   
  A`CString`オブジェクトに格納できる最大**INT_MAX** (2,147, 483,647) 文字です。 **TCHAR**を取得または設定内の個々 の文字データ型が使用される、`CString`オブジェクト。 文字配列とは異なり、`CString`クラスには、組み込みのメモリ割り当てが可能です。 これにより、`CString`必要に応じて自動的に拡張するオブジェクト (つまり必要はありませんの増加について心配する、`CString`長い文字列に合わせてオブジェクト)。  
   
 ##  <a name="_core_cstrings_and_const_char_pointers"></a> Cstring と const char ポインター  
- A`CString`オブジェクトは、C スタイルのリテラル文字列のように機能できますも (、`PCXSTR`と同じである**const char\***  Unicode 下にない場合)。 [CSimpleStringT::operator PCXSTR](../atl-mfc-shared/reference/csimplestringt-class.md#operator_pcxstr)変換演算子を使うと`CString`自由に関数呼び出しで文字へのポインターの代わりに使用するオブジェクト。 **CString (LPCWSTR** `pszSrc` **)**コンス トラクターの代わりに使用する文字へのポインターを使用する`CString`オブジェクト。  
+ A`CString`オブジェクトは、C スタイルのリテラル文字列のように機能できますも (、`PCXSTR`と同じである**const char\***  Unicode 下にない場合)。 [CSimpleStringT::operator PCXSTR](../atl-mfc-shared/reference/csimplestringt-class.md#operator_pcxstr)変換演算子を使うと`CString`自由に関数呼び出しで文字へのポインターの代わりに使用するオブジェクト。 **CString (LPCWSTR** `pszSrc` **)** コンス トラクターの代わりに使用する文字へのポインターを使用する`CString`オブジェクト。  
   
  行われませんフォールドに`CString`オブジェクト。 2 つの操作を行う場合`CString`オブジェクトを含む`Chicago`など、内の文字`Chicago`2 か所に格納されます。 (これではありません、MFC の将来のバージョンの場合は true。 それに依存しないようにするためです。)  
   

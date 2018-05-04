@@ -1,30 +1,25 @@
 ---
-title: "ATL のエンコーディングのリファレンス |Microsoft ドキュメント"
-ms.custom: 
+title: ATL のエンコーディングのリファレンス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
 - encoding
 - encoding, functions
 ms.assetid: 82d4fdf3-3c4a-4fe2-b297-8ffb4714406f
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b2a97809fefdc0a5e6e7d90e7b62bbee83f28bfb
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1d8cbb23c390a47b1bbfb7b1a78b327f07b06869
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-encoding-reference"></a>ATL のエンコーディングのリファレンス
 Uuencode、16 進数などの一般的なインターネット標準の範囲および UTF8 でエンコードすると、atlenc.h のコードでサポートされます。  
@@ -55,7 +50,7 @@ Uuencode、16 進数などの一般的なインターネット標準の範囲お
 |[UUEncode](reference/atl-text-encoding-functions.md#uuencode)|データを uuencode します。|  
 |[UUEncodeGetRequiredLength](reference/atl-text-encoding-functions.md#uuencodegetrequiredlength)|指定したサイズのデータからエンコードされた文字列を格納できるバッファーのサイズを、文字数で取得します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [概念](../atl/active-template-library-atl-concepts.md)   
  [ATL COM デスクトップ コンポーネント](../atl/atl-com-desktop-components.md)
 

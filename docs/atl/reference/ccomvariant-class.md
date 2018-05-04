@@ -1,12 +1,9 @@
 ---
-title: "CComVariant クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComVariant クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComVariant
@@ -29,17 +26,15 @@ helpviewer_keywords:
 - CComVariant class
 - VARIANT macro, ATL
 ms.assetid: 4d31149c-d005-44b5-a509-10f84afa2b61
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 67e5aeee2aaa96b143962beb0790e3854ff7de01
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e2ebef74f6da48d2124d69f002a85c467db73406
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomvariant-class"></a>CComVariant クラス
 このクラスをラップ、`VARIANT`格納されているデータの種類を表すメンバーを提供する型。  
@@ -81,24 +76,24 @@ class CComVariant : public tagVARIANT
 |-|-|  
 |[CComVariant::operator <](#operator_lt)|示すかどうか、`CComVariant`オブジェクトが、指定より小さい**バリアント**です。|  
 |[CComVariant::operator >](#operator_gt)|示すかどうか、`CComVariant`オブジェクトが、指定よりも大きい**バリアント**です。|  
-|[operator! =](#operator_neq)|示すかどうか、`CComVariant`オブジェクトが、指定したと等しくない**バリアント**です。|  
+|[operator !=](#operator_neq)|示すかどうか、`CComVariant`オブジェクトが、指定したと等しくない**バリアント**です。|  
 |[演算子 =](#operator_eq)|値を割り当てます、`CComVariant`オブジェクト。|  
-|[演算子 = =](#operator_eq_eq)|示すかどうか、`CComVariant`オブジェクトが、指定した**バリアント**です。|  
+|[operator ==](#operator_eq_eq)|示すかどうか、`CComVariant`オブジェクトが、指定した**バリアント**です。|  
   
 ## <a name="remarks"></a>コメント  
- `CComVariant`ラップ、`VARIANT and VARIANTARG`は共用体と共用体に格納されたデータの種類を示す、メンバーの型。 **VARIANT**s はオートメーションで用いられます。  
+ `CComVariant` ラップ、`VARIANT and VARIANTARG`は共用体と共用体に格納されたデータの種類を示す、メンバーの型。 **VARIANT**s はオートメーションで用いられます。  
   
- `CComVariant`派生した、**バリアント**入力できるように任意の場所に使用される、**バリアント**使用できます。 たとえば、使用することができます、 **V_VT**の種類を抽出するマクロ、`CComVariant`またはアクセスすることができます、 **vt**メンバーの直接と同じようにすることができます、**バリアント**です。  
+ `CComVariant` 派生した、**バリアント**入力できるように任意の場所に使用される、**バリアント**使用できます。 たとえば、使用することができます、 **V_VT**の種類を抽出するマクロ、`CComVariant`またはアクセスすることができます、 **vt**メンバーの直接と同じようにすることができます、**バリアント**です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `tagVARIANT`  
   
  `CComVariant`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcomcli.h  
   
-##  <a name="attach"></a>CComVariant::Attach  
+##  <a name="attach"></a>  CComVariant::Attach  
  安全に、現在の内容をクリア、`CComVariant`オブジェクトの内容をコピー`pSrc`にこのオブジェクトのバリアント型を設定し、`pSrc`に`VT_EMPTY`です。  
   
 ```
@@ -115,7 +110,7 @@ HRESULT Attach(VARIANT* pSrc);
 ### <a name="remarks"></a>コメント  
  保持しているデータの所有権`pSrc`に転送される、`CComVariant`オブジェクト。  
   
-##  <a name="ccomvariant"></a>CComVariant::CComVariant  
+##  <a name="ccomvariant"></a>  CComVariant::CComVariant  
  各コンス トラクターは、の安全な初期化を処理、`CComVariant`オブジェクトを呼び出して、 `VariantInit` Win32 関数またはオブジェクトの値とに従って渡されるパラメーターの型を設定します。  
   
 ```
@@ -170,7 +165,7 @@ CComVariant(const CComBSTR& bstrSrc);
  [in]**CY**初期化するために使用される、`CComVariant`オブジェクト。 型、`CComVariant`オブジェクトがある`VT_CY`です。  
   
  `pSrc`  
- [in]`IDispatch`または**IUnknown**ポインターの初期化に使用される、`CComVariant`オブジェクト。 `AddRef`インターフェイス ポインターで呼び出されます。 型、`CComVariant`オブジェクトがある**VT_DISPATCH**または**VT_UNKNOWN**、それぞれします。  
+ [in]`IDispatch`または**IUnknown**ポインターの初期化に使用される、`CComVariant`オブジェクト。 `AddRef` インターフェイス ポインターで呼び出されます。 型、`CComVariant`オブジェクトがある**VT_DISPATCH**または**VT_UNKNOWN**、それぞれします。  
   
  また、 **SAFERRAY**ポインターの初期化に使用される、`CComVariant`オブジェクト。 コピー、 **SAFEARRAY**に格納されて、`CComVariant`オブジェクト。 型、`CComVariant`オブジェクトの元の型の組み合わせになります、 **SAFEARRAY**と**VT_ARRAY**です。  
   
@@ -183,7 +178,7 @@ CComVariant(const CComBSTR& bstrSrc);
 ### <a name="remarks"></a>コメント  
  デストラクターを呼び出して[CComVariant::Clear](#clear)です。  
   
-##  <a name="dtor"></a>CComVariant:: ~ CComVariant  
+##  <a name="dtor"></a>  CComVariant:: ~ CComVariant  
  デストラクターです。  
   
 ```
@@ -193,7 +188,7 @@ CComVariant(const CComBSTR& bstrSrc);
 ### <a name="remarks"></a>コメント  
  このメソッドを呼び出してクリーンアップを管理する[CComVariant::Clear](#clear)です。  
   
-##  <a name="changetype"></a>CComVariant::ChangeType  
+##  <a name="changetype"></a>  CComVariant::ChangeType  
  変換、`CComVariant`オブジェクトを新しい型。  
   
 ```
@@ -213,7 +208,7 @@ HRESULT ChangeType(VARTYPE vtNew, const VARIANT* pSrc = NULL);
 ### <a name="remarks"></a>コメント  
  値を渡す場合`pSrc`、`ChangeType`がこれを使う**バリアント**変換のソースとして。 それ以外の場合、`CComVariant`オブジェクトは、ソースになります。  
   
-##  <a name="clear"></a>CComVariant::Clear  
+##  <a name="clear"></a>  CComVariant::Clear  
  消去、`CComVariant`オブジェクトを呼び出して、 `VariantClear` Win32 関数。  
   
 ```
@@ -226,7 +221,7 @@ HRESULT Clear();
 ### <a name="remarks"></a>コメント  
  デストラクターを自動的に呼び出します**クリア**です。  
   
-##  <a name="copy"></a>CComVariant::Copy  
+##  <a name="copy"></a>  CComVariant::Copy  
  解放、`CComVariant`オブジェクトを指定されたのコピーを割り当てます**バリアント**です。  
   
 ```
@@ -240,7 +235,7 @@ HRESULT Copy(const VARIANT* pSrc);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="copyto"></a>CComVariant::CopyTo  
+##  <a name="copyto"></a>  CComVariant::CopyTo  
  内容をコピー、`CComVariant`オブジェクト。  
   
 ```
@@ -257,7 +252,7 @@ HRESULT CopyTo(BSTR* pstrDest);
 ### <a name="remarks"></a>コメント  
  **CComVariant**オブジェクト型でなければなりません`VT_BSTR`です。  
   
-##  <a name="detach"></a>CComVariant::Detach  
+##  <a name="detach"></a>  CComVariant::Detach  
  基になるデタッチ**バリアント**から、`CComVariant`オブジェクトおよびオブジェクトの種類を設定`VT_EMPTY`です。  
   
 ```
@@ -274,7 +269,7 @@ HRESULT Detach(VARIANT* pDest);
 ### <a name="remarks"></a>コメント  
  なおの内容、`VARIANT`によって参照されている`pDest`値と、呼び出し元の型に割り当てられる前に自動的にクリアされます**CComVariant**オブジェクト。  
   
-##  <a name="getsize"></a>CComVariant::GetSize  
+##  <a name="getsize"></a>  CComVariant::GetSize  
  単純な固定サイズの`VARIANT`s、このメソッドが戻る、`sizeof`基になるデータ型が正符号`sizeof(VARTYPE)`です。  
   
 ```
@@ -291,7 +286,7 @@ ULONG GetSize() const;
   
  このメソッドによって返されるサイズが使用されているバイト数と一致する[な](#writetostream)の状況で正常に実行します。  
   
-##  <a name="operator_eq"></a>CComVariant::operator =  
+##  <a name="operator_eq"></a>  CComVariant::operator =  
  値とを対応する型が割り当てられます、`CComVariant`オブジェクト。  
   
 ```
@@ -345,14 +340,14 @@ CComVariant& operator=(char cSrc) throw();
  [in]**CY**に割り当てられる、`CComVariant`オブジェクト。 型、`CComVariant`オブジェクトがある`VT_CY`です。  
   
  `pSrc`  
- [in]`IDispatch`または**IUnknown**に割り当てられるへのポインター、`CComVariant`オブジェクト。 `AddRef`インターフェイス ポインターで呼び出されます。 型、`CComVariant`オブジェクトがある**VT_DISPATCH**または**VT_UNKNOWN**、それぞれします。  
+ [in]`IDispatch`または**IUnknown**に割り当てられるへのポインター、`CComVariant`オブジェクト。 `AddRef` インターフェイス ポインターで呼び出されます。 型、`CComVariant`オブジェクトがある**VT_DISPATCH**または**VT_UNKNOWN**、それぞれします。  
   
  または、 **SAFEARRAY**に割り当てられるへのポインター、`CComVariant`オブジェクト。 コピー、 **SAFEARRAY**に格納されて、`CComVariant`オブジェクト。 型、`CComVariant`オブジェクトの元の型の組み合わせになります、 **SAFEARRAY**と**VT_ARRAY**です。  
   
  `cSrc`  
  [in]割り当てられる char、`CComVariant`オブジェクト。 型、`CComVariant`オブジェクトがある**VT_I1**です。  
   
-##  <a name="operator_eq_eq"></a>CComVariant::operator = =  
+##  <a name="operator_eq_eq"></a>  CComVariant::operator = =  
  示すかどうか、`CComVariant`オブジェクトが、指定した**バリアント**です。  
   
 ```
@@ -364,7 +359,7 @@ bool operator==(const VARIANT& varSrc) const throw();
   
  演算子は、バリアント型の値のみを比較します。 これは、文字列、整数、および浮動小数点がないアレイまたはレコードを比較します。  
   
-##  <a name="operator_neq"></a>CComVariant::operator! =  
+##  <a name="operator_neq"></a>  CComVariant::operator! =  
  示すかどうか、`CComVariant`オブジェクトが、指定したと等しくない**バリアント**です。  
   
 ```
@@ -376,7 +371,7 @@ bool operator!=(const VARIANT& varSrc) const throw();
   
  演算子は、バリアント型の値のみを比較します。 これは、文字列、整数、および浮動小数点がないアレイまたはレコードを比較します。  
   
-##  <a name="operator_lt"></a>CComVariant::operator&lt;  
+##  <a name="operator_lt"></a>  CComVariant::operator &lt;  
  示すかどうか、`CComVariant`オブジェクトが、指定より小さい**バリアント**です。  
   
 ```
@@ -386,7 +381,7 @@ bool operator<(const VARIANT& varSrc) const throw();
 ### <a name="remarks"></a>コメント  
  返します**true**場合の値、`CComVariant`オブジェクトがの値より小さい*varSrc*です。 それ以外の場合、 **false**です。 演算子では、ユーザーの既定のロケールを使用して、比較を行います。  
   
-##  <a name="operator_gt"></a>CComVariant::operator&gt;  
+##  <a name="operator_gt"></a>  CComVariant::operator &gt;  
  示すかどうか、`CComVariant`オブジェクトが、指定よりも大きい**バリアント**です。  
   
 ```
@@ -396,7 +391,7 @@ bool operator>(const VARIANT& varSrc) const throw();
 ### <a name="remarks"></a>コメント  
  返します**true**場合の値、`CComVariant`オブジェクトがの値より大きい*varSrc*です。 それ以外の場合、 **false**です。 演算子では、ユーザーの既定のロケールを使用して、比較を行います。  
   
-##  <a name="readfromstream"></a>CComVariant::ReadFromStream  
+##  <a name="readfromstream"></a>  CComVariant::ReadFromStream  
  基に**バリアント**を**バリアント**指定したストリームに含まれています。  
   
 ```
@@ -413,7 +408,7 @@ HRESULT ReadFromStream(IStream* pStream);
 ### <a name="remarks"></a>コメント  
  **ReadToStream**を前回呼び出したときに必要と[WriteToStream](#writetostream)です。  
   
-##  <a name="setbyref"></a>CComVariant::SetByRef  
+##  <a name="setbyref"></a>  CComVariant::SetByRef  
  初期化、`CComVariant`オブジェクトと設定、 **vt**メンバー **VT_BYREF**です。  
   
 ```
@@ -429,11 +424,11 @@ void SetByRef(T* pT) throw();
  ポインターの初期化に使用される、`CComVariant`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- `SetByRef`初期化する関数テンプレートは、`CComVariant`オブジェクト ポインターを*pT*設定と、 **vt**メンバーを**VT_BYREF**です。 例:  
+ `SetByRef` 初期化する関数テンプレートは、`CComVariant`オブジェクト ポインターを*pT*設定と、 **vt**メンバーを**VT_BYREF**です。 例えば:  
   
  [!code-cpp[NVC_ATL_Utilities#76](../../atl/codesnippet/cpp/ccomvariant-class_1.cpp)]  
   
-##  <a name="writetostream"></a>な  
+##  <a name="writetostream"></a>  な  
  基になる保存**バリアント**をストリームにします。  
   
 ```
@@ -447,5 +442,5 @@ HRESULT WriteToStream(IStream* pStream);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

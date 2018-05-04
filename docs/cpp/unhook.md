@@ -1,12 +1,9 @@
 ---
-title: "_ _unhook |Microsoft ドキュメント"
-ms.custom: 
+title: _ _unhook |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __unhook
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - event handlers [C++], dissociating events
 - __unhook keyword [C++]
 ms.assetid: 953a14f3-5199-459d-81e5-fcf015a19878
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1513391aedf9a08cd1ece971d79fd5f6913d406d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b95ff49c9b1f088ac38ffb0791f18f249b211e72
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="unhook"></a>__unhook
 イベントからハンドラー メソッドの関連付けを解除します。  
@@ -52,7 +47,7 @@ long  __unhook(
 ```  
   
 #### <a name="parameters"></a>パラメーター  
- **&***SourceClass* `::` *EventMethod*  
+ **&** *SourceClass* `::` *EventMethod*  
  イベント ハンドラー メソッドをアンフックする元のイベント メソッドへのポインター。  
   
 -   ネイティブ C++ イベント: *SourceClass*は、イベント ソース クラスと*EventMethod*イベントします。  
@@ -73,7 +68,7 @@ long  __unhook(
   
 -   マネージ オブジェクトのポインター (マネージ イベントの場合)。  
   
- **&***ReceiverClass* `::``HandlerMethod`  
+ **&** *ReceiverClass* `::` `HandlerMethod`  
  イベントからアンフックするイベント ハンドラー メソッドへのポインター。 ハンドラーは、クラスのメソッドまたはそれへの参照として指定されます。ユーザーがクラス名を指定しない場合、`__unhook` は、それを呼び出したクラスを使用します。  
   
 -   ネイティブ C++ イベント: *ReceiverClass*イベント レシーバー クラスと`HandlerMethod`ハンドラーします。  
@@ -111,7 +106,7 @@ long  __unhook(
 ## <a name="example"></a>例  
  参照してください[ネイティブ C++ でのイベント処理](../cpp/event-handling-in-native-cpp.md)と[COM でのイベント処理](../cpp/event-handling-in-com.md)サンプルについてはします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キーワード](../cpp/keywords-cpp.md)   
  [event_source](../windows/event-source.md)   
  [event_receiver](../windows/event-receiver.md)   

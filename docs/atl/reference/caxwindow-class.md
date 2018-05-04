@@ -1,12 +1,9 @@
 ---
-title: "CAxWindow クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CAxWindow クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CAxWindow
@@ -25,17 +22,15 @@ helpviewer_keywords:
 - CAxWindow class
 - ATL, hosting ActiveX controls
 ms.assetid: 85e79261-43e4-4770-bde0-1ff87f222b0f
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8848e8ecf85b073032561e2db52a0db1889911e6
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 052e7ad2bfa8cc03c4eadd4926dbd84c4fd60223
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="caxwindow-class"></a>CAxWindow クラス
 このクラスは、ActiveX コントロールをホストしているウィンドウを操作するためのメソッドを提供します。  
@@ -80,10 +75,10 @@ class CAxWindow : public CWindow
   
  使用することができます、基本クラスを変更する必要がある場合`CAxWindowT`し、テンプレート引数として新しい基本クラスを指定します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="attachcontrol"></a>CAxWindow::AttachControl  
+##  <a name="attachcontrol"></a>  CAxWindow::AttachControl  
  いずれかが既に存在しないし、指定したコントロールをホストにアタッチする場合は、新しいホスト オブジェクトを作成します。  
   
 ```
@@ -105,7 +100,7 @@ HRESULT AttachControl(
 ### <a name="remarks"></a>コメント  
  アタッチされるコントロール オブジェクトを呼び出す前に正しく初期化する必要があります`AttachControl`です。  
   
-##  <a name="caxwindow"></a>CAxWindow::CAxWindow  
+##  <a name="caxwindow"></a>  CAxWindow::CAxWindow  
  構築、`CAxWindow`オブジェクト既存ウィンドウ オブジェクトのハンドルを使用します。  
   
 ```
@@ -116,7 +111,7 @@ CAxWindow(HWND hWnd = NULL);
  `hWnd`  
  ウィンドウの既存のオブジェクトへのハンドル。  
   
-##  <a name="createcontrol"></a>については  
+##  <a name="createcontrol"></a>  については  
  ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。  
   
 ```
@@ -139,7 +134,7 @@ HRESULT CreateControl(
   
 -   "{8E27C92B-1264-101C-8A2F-040224009C02}"などの CLSID  
   
--   "Http://www.microsoft.com"などの URL  
+-   などの URL"http://www.microsoft.com"  
   
 -   などのアクティブなドキュメントへの参照"file://\\\Documents\MyDoc.doc"  
   
@@ -172,7 +167,7 @@ HRESULT CreateControl(
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用するサンプルの`CreateControl`します。  
   
-##  <a name="createcontrolex"></a>CAxWindow::CreateControlEx  
+##  <a name="createcontrolex"></a>  CAxWindow::CreateControlEx  
  ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。  
   
 ```
@@ -201,7 +196,7 @@ HRESULT CreateControlEx(
   
 -   "{8E27C92B-1264-101C-8A2F-040224009C02}"などの CLSID  
   
--   "Http://www.microsoft.com"などの URL  
+-   などの URL"http://www.microsoft.com"  
   
 -   などのアクティブなドキュメントへの参照"file://\\\Documents\MyDoc.doc"  
   
@@ -239,7 +234,7 @@ HRESULT CreateControlEx(
 ### <a name="example"></a>例  
  参照してください[ActiveX コントロール ATL を使用しての AXHost をホストしている](../../atl/hosting-activex-controls-using-atl-axhost.md)を使用するサンプルの`CreateControlEx`します。  
   
-##  <a name="getwndclassname"></a>CAxWindow::GetWndClassName  
+##  <a name="getwndclassname"></a>  CAxWindow::GetWndClassName  
  ウィンドウ クラスの名前を取得します。  
   
 ```
@@ -249,7 +244,7 @@ static LPCTSTR GetWndClassName();
 ### <a name="return-value"></a>戻り値  
  ない ActiveX コントロールをホストできるウィンドウ クラスの名前を含む文字列へのポインター。  
   
-##  <a name="operator_eq"></a>CAxWindow::operator =  
+##  <a name="operator_eq"></a>  CAxWindow::operator =  
  割り当てます、`HWND`既存`CAxWindow`オブジェクト。  
   
 ```
@@ -263,7 +258,7 @@ CAxWindow<TBase>& operator=(HWND hWnd);
 ### <a name="return-value"></a>戻り値  
  現在の `CAxWindow` オブジェクトへの参照を返します。  
   
-##  <a name="querycontrol"></a>CAxWindow::QueryControl  
+##  <a name="querycontrol"></a>  CAxWindow::QueryControl  
  ホストされるコントロールの指定されたインターフェイスを取得します。  
   
 ```
@@ -285,7 +280,7 @@ HRESULT QueryControl(Q** ppUnk);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="queryhost"></a>CAxWindow::QueryHost  
+##  <a name="queryhost"></a>  CAxWindow::QueryHost  
  ホストの指定したインターフェイスを返します。  
   
 ```
@@ -310,7 +305,7 @@ HRESULT QueryHost(Q** ppUnk);
 ### <a name="remarks"></a>コメント  
  ホストのインターフェイスによって実装されるウィンドウ ホスティング コードの基になる機能へのアクセスを許可する**AxWin**です。  
   
-##  <a name="setexternaldispatch"></a>CAxWindow::SetExternalDispatch  
+##  <a name="setexternaldispatch"></a>  CAxWindow::SetExternalDispatch  
  外部のディスパッチ インターフェイスを設定、`CAxWindow`オブジェクト。  
   
 ```
@@ -324,7 +319,7 @@ HRESULT SetExternalDispatch(IDispatch* pDisp);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="setexternaluihandler"></a>CAxWindow::SetExternalUIHandler  
+##  <a name="setexternaluihandler"></a>  CAxWindow::SetExternalUIHandler  
  外部の設定[IDocHostUIHandlerDispatch](../../atl/reference/idochostuihandlerdispatch-interface.md)のためのインターフェイス、`CAxWindow`オブジェクト。  
   
 ```
@@ -341,7 +336,7 @@ HRESULT SetExternalUIHandler(IDocHostUIHandlerDispatch* pUIHandler);
 ### <a name="remarks"></a>コメント  
  外部`IDocHostUIHandlerDispatch`インターフェイスが、ホストのサイト コントロールで使用される、`IDocHostUIHandlerDispatch`インターフェイスです。 WebBrowser コントロールは、これを行う 1 つのコントロールです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATLCON サンプル](../../visual-cpp-samples.md)   
  [CWindow クラス](../../atl/reference/cwindow-class.md)   
  [複合コントロールの基本](../../atl/atl-composite-control-fundamentals.md)   

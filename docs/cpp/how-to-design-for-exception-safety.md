@@ -1,27 +1,22 @@
 ---
-title: "方法: 例外安全のためのデザイン |Microsoft ドキュメント"
-ms.custom: 
+title: '方法: 例外安全のためのデザイン |Microsoft ドキュメント'
+ms.custom: how-to
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 19ecc5d4-297d-4c4e-b4f3-4fccab890b3d
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7d15df2f810848bb9349bc98c722ac02ff8cda17
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: cbad81c5014c2aa3bcf10b083fa974615e4669e9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-design-for-exception-safety"></a>方法: 例外安全性に対応した設計をする
 例外機構の利点の 1 つは、例外をスローするステートメントから例外を処理する最初の catch ステートメントに、例外に関するデータと共に実行が直接ジャンプすることです。 ハンドラーは呼び出し履歴の何レベル上であってもかまいません。 try ステートメントと throw ステートメントの間で呼び出された関数は、スローされる例外に関して何も知る必要がありません。  ただし、例外が下から上に通知される可能性があるどの時点でも、予期せずにスコープから外れることができるように関数が設計されている必要があり、部分的に作成されたオブジェクト、リークしたメモリ、使用不能な状態のデータ構造体などが部分的に残らないようになっている必要があります。  
@@ -123,6 +118,6 @@ public:
   
 -   デストラクターから例外が漏れないようにします。 C++ の基本的な原則は、デストラクターで例外が呼び出し履歴の上方向へ伝達されないようにすることです。 デストラクターで例外をスローする可能性がある操作を実行する必要がある場合は、try catch ブロックで実行し、例外を飲み込む必要があります。 標準ライブラリでは、定義されているすべてのデストラクターでこのことが保証されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [エラーと例外処理](../cpp/errors-and-exception-handling-modern-cpp.md)   
  [方法: 例外的なコードと非例外的なコードをインターフェイスで連結する](../cpp/how-to-interface-between-exceptional-and-non-exceptional-code.md)

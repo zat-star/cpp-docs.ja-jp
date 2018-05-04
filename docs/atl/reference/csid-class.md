@@ -1,12 +1,9 @@
 ---
-title: "CSid クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CSid クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CSid
@@ -30,17 +27,15 @@ dev_langs:
 helpviewer_keywords:
 - CSid class
 ms.assetid: be58b7ca-5958-49c3-a833-ca341aaaf753
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 38c2cff0cb9bd99a70e142d16ee5e7d38e82d8d0
-ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.openlocfilehash: ed55fd2286c3d6e37b59b16a06f43cc4efe55091
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="csid-class"></a>CSid クラス
 このクラスは、用のラッパー、 `SID` (セキュリティ識別子) 構造体。  
@@ -90,7 +85,7 @@ class CSid
   
 |||  
 |-|-|  
-|[operator =](#operator_eq)|代入演算子。|  
+|[演算子 =](#operator_eq)|代入演算子。|  
 |[演算子の const SID *](#operator_const_sid__star)|キャスト、`CSid`オブジェクトへのポインターを`SID`構造体。|  
   
 ### <a name="global-operators"></a>グローバル演算子  
@@ -98,11 +93,11 @@ class CSid
 |||  
 |-|-|  
 |[operator ==](#operator_eq_eq)|2 つのセキュリティ記述子オブジェクトの等価性をテストします。|  
-|[operator! =](#operator_neq)|非等値を 2 つのセキュリティ記述子オブジェクトを調べます|  
-|[演算子\<](#operator_lt_)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
-|[operator >](#operator_gt_)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
-|[演算子\<=](#operator_lt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
-|[operator >=](#operator_gt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
+|[operator !=](#operator_neq)|非等値を 2 つのセキュリティ記述子オブジェクトを調べます|  
+|[演算子 \<](#operator_lt_)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
+|[演算子 >](#operator_gt_)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
+|[演算子 \<=](#operator_lt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
+|[operator > =](#operator_gt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
   
 ## <a name="remarks"></a>コメント  
  `SID`構造体は、可変長の構造体のユーザーまたはグループを一意に識別するために使用します。  
@@ -111,7 +106,7 @@ class CSid
   
  Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="accountname"></a>  CSid::AccountName  
@@ -175,7 +170,7 @@ explicit CSid(
   
  コンス トラクターが初期化に失敗した場合にスローされます、 [CAtlException クラス](../../atl/reference/catlexception-class.md)です。  
   
-##  <a name="dtor"></a>CSid:: ~ CSid  
+##  <a name="dtor"></a>  CSid:: ~ CSid  
  デストラクターです。  
   
 ```
@@ -359,7 +354,7 @@ CSid& operator= (const SID& rhs) throw(...);
 ### <a name="return-value"></a>戻り値  
  更新されたへの参照を返します`CSid`オブジェクト。  
   
-##  <a name="operator_eq_eq"></a>  CSid::operator ==  
+##  <a name="operator_eq_eq"></a>  CSid::operator = =  
  2 つのセキュリティ記述子オブジェクトの等価性をテストします。  
   
 ```
@@ -378,7 +373,7 @@ bool operator==(
 ### <a name="return-value"></a>戻り値  
  **true**セキュリティ記述子が等しい場合は、それ以外の場合**false**です。  
   
-##  <a name="operator_neq"></a>CSid::operator! =  
+##  <a name="operator_neq"></a>  CSid::operator! =  
  非等値を 2 つのセキュリティ記述子オブジェクトをテストします。  
   
 ```
@@ -473,7 +468,7 @@ bool operator>=(
 ### <a name="return-value"></a>戻り値  
  **true**場合`lhs`がより大きいまたは等しい`rhs`それ以外の場合、 **false**です。  
   
-##  <a name="operator_const_sid__star"></a>CSid::operator const SID *  
+##  <a name="operator_const_sid__star"></a>  CSid::operator const SID *  
  キャスト、`CSid`オブジェクトへのポインターを`SID`(セキュリティ識別子) 構造体。  
   
 ```  
@@ -516,9 +511,9 @@ SID_NAME_USE SidNameUse() const throw();
 |SidTypeComputer|示します、`SID`コンピューター用です。|  
   
 ### <a name="remarks"></a>コメント  
- 呼び出す[CSid::LoadAccount](#loadaccount)を更新する、`CSid`呼び出す前にオブジェクト`SidNameUse`の状態に戻ります。 `SidNameUse`オブジェクトの状態は変更されません (を呼び出すことによって**LookupAccountName**または**LookupAccountSid**)、現在の状態のみが返されますが、します。  
+ 呼び出す[CSid::LoadAccount](#loadaccount)を更新する、`CSid`呼び出す前にオブジェクト`SidNameUse`の状態に戻ります。 `SidNameUse` オブジェクトの状態は変更されません (を呼び出すことによって**LookupAccountName**または**LookupAccountSid**)、現在の状態のみが返されますが、します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティのグローバル関数](../../atl/reference/security-global-functions.md)   

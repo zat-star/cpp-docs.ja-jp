@@ -2,18 +2,13 @@
 title: C++ 標準属性 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 03/28/2017
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 ms.assetid: 748340d9-8abf-4940-b0a0-91b6156a3ff8
-caps.latest.revision: 11
-manager: ghogen
-ms.openlocfilehash: d2dcce6b0e289588c426792a334ee4ec38d1ab5f
-ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
+ms.openlocfilehash: 7bd7fd4e01fb210069f4dbae42a671e4dd9c64c9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="attributes-in-c"></a>C++ での属性
 
@@ -45,7 +40,7 @@ void Foo(int);
 
 - `[[carries_dependency]]` 関数がデータ依存関係のスレッドの同期に関して順序を反映させることを指定します。 属性は、渡された引数が関数の本体に依存関係を持ち込むことを指定する、1 つまたは複数のパラメーターに適用できます。 属性は、関数の戻り値が関数からの依存関係を持ち込むことを指定する自体に適用できます。 コンパイラは、この情報を使用して、効率的なコードを生成することができます。
 
-- `[[deprecated]]` **Visual Studio 2015 以降:**指定関数が使用するものではありませんが存在しない将来のバージョンのライブラリ インターフェイスとします。 このコンパイラを使用してクライアント コードが、関数を呼び出すしようとしたときに、情報メッセージを生成します。 クラス、typedef 名、変数、非静的データ メンバー、関数、名前空間、列挙体、列挙子、またはテンプレートの特殊化の宣言に適用できます。  
+- `[[deprecated]]` **Visual Studio 2015 以降:** 指定関数が使用するものではありませんが存在しない将来のバージョンのライブラリ インターフェイスとします。 このコンパイラを使用してクライアント コードが、関数を呼び出すしようとしたときに、情報メッセージを生成します。 クラス、typedef 名、変数、非静的データ メンバー、関数、名前空間、列挙体、列挙子、またはテンプレートの特殊化の宣言に適用できます。  
 
 - `[[fallthrough]]` **2017 およびそれ以降の visual Studio:** (で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md))、`[[fallthrough]]`のコンテキストで属性を使用できます[切り替える](switch-statement-cpp.md)コンパイラ (または読むすべてのユーザーへのヒントとしてステートメントコード) fallthrough が動作をすることです。 Visual C コンパイラ現在は警告 fallthrough が動作のため、この属性はコンパイラの動作の効果を持ちません。
 

@@ -2,12 +2,9 @@
 title: FC (診断のソース コード ファイルの完全パス) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLCompilerTool.UseFullPaths
 - /FC
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - /FC compiler option [C++]
 - -FC compiler option [C++]
 ms.assetid: 1f11414e-cb42-421b-be68-9d369aab036b
-caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3bddc92d8c013fd3b4e2425b7f85b084651cdafe
-ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
+ms.openlocfilehash: 4a721b6887b6c5c07d96a79b06f05e6d7855250b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="fc-full-path-of-source-code-file-in-diagnostics"></a>/FC (診断時のソース コード ファイルの完全パス)
 
@@ -48,7 +43,7 @@ int main( ) {
 }
 ```
 
-せず**/FC**、診断用のテキストはこの診断テキストのようになります。
+せず **/FC**、診断用のテキストはこの診断テキストのようになります。
 
 - compiler_option_FC.cpp(5): エラー C2143: 構文エラー: 見つかりません ';' は、前に '}'
 
@@ -58,7 +53,7 @@ int main( ) {
 
  **/FC**を使用する場合は、ファイル名の完全なパスを表示する場合にも必要、 &#95;&#95;ファイル&#95;&#95;マクロです。 参照してください[定義済みマクロ](../../preprocessor/predefined-macros.md)について&#95;&#95;ファイル&#95;&#95;です。
 
-**/FC**がオプションが含まれる**/ZI**です。 詳細については**/ZI**を参照してください[/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)です。
+**/FC**がオプションが含まれる **/ZI**です。 詳細については **/ZI**を参照してください[/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)です。
 
 **/FC**小文字で完全なパスを出力します。
 

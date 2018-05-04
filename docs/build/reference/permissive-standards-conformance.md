@@ -1,9 +1,9 @@
 ---
-title: "-寛容 - (標準準拠) |Microsoft ドキュメント"
+title: -寛容 - (標準準拠) |Microsoft ドキュメント
 ms.date: 11/11/2016
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /permissive
 - VC.Project.VCCLCompilerTool.ConformanceMode
@@ -15,17 +15,15 @@ helpviewer_keywords:
 - Standards conformance compiler options
 - permissive compiler options [C++]
 ms.assetid: db1cc175-6e93-4a2e-9396-c3725d2d8f71
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 09b24e96752e61f4d09efc3780e0e60ffed8effd
-ms.sourcegitcommit: eeb2b5ad8d3d22514a7b9bd7d756511b69ae0ccf
+ms.openlocfilehash: 90cfdcf20cf74244afe026a392759ac59616bbdf
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="permissive--standards-conformance"></a>寛容/-(標準準拠)
 
@@ -37,21 +35,21 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="remarks"></a>コメント
 
-使用することができます、**寛容/-**コンパイラ オプションをコンパイラの標準準拠の動作を指定します。 このオプションは、制限の緩やかな動作を無効にし、設定、 [/Zc](../../build/reference/zc-conformance.md)厳密に準拠するためのコンパイラ オプション。 IDE では、このオプションは、IntelliSense エンジン下線非準拠コードも、します。
+使用することができます、**寛容/-** コンパイラ オプションをコンパイラの標準準拠の動作を指定します。 このオプションは、制限の緩やかな動作を無効にし、設定、 [/Zc](../../build/reference/zc-conformance.md)厳密に準拠するためのコンパイラ オプション。 IDE では、このオプションは、IntelliSense エンジン下線非準拠コードも、します。
 
-既定では、**寛容/-**オプションは Visual Studio 2017 バージョン 15.5 およびそれ以降のバージョンで作成された新しいプロジェクトで設定します。 以前のバージョンで既定で設定されていません。 オプションが設定されている、コンパイラ診断エラーが発生、コードで標準以外の言語構成要素と、警告が検出された場合は、前にいくつかの一般的なバグを含めて、c++ 11 コード。
+既定では、**寛容/-** オプションは Visual Studio 2017 バージョン 15.5 およびそれ以降のバージョンで作成された新しいプロジェクトで設定します。 以前のバージョンで既定で設定されていません。 オプションが設定されている、コンパイラ診断エラーが発生、コードで標準以外の言語構成要素と、警告が検出された場合は、前にいくつかの一般的なバグを含めて、c++ 11 コード。
 
-**寛容/-**オプションは、ほぼすべての Windows Driver Kit (WDK)、Windows 秋作成者 SDK (10.0.16299.0) 以降で、ソフトウェア開発キット (SDK) など、最新の Windows Kits からヘッダー ファイルとの互換性。 SDK の古いバージョンは、コンパイルに失敗する可能性があります**寛容/-**コードへの準拠の理由によりさまざまなソース。 コンパイラと別のリリースのタイムライン上の Sdk 出荷いくつか残っている問題があるためです。 特定のヘッダー ファイル問題については、次を参照してください。 [Windows ヘッダー問題](#windows-header-issues)以下です。
+**寛容/-** オプションは、ほぼすべての Windows Driver Kit (WDK)、Windows 秋作成者 SDK (10.0.16299.0) 以降で、ソフトウェア開発キット (SDK) など、最新の Windows Kits からヘッダー ファイルとの互換性。 SDK の古いバージョンは、コンパイルに失敗する可能性があります**寛容/-** コードへの準拠の理由によりさまざまなソース。 コンパイラと別のリリースのタイムライン上の Sdk 出荷いくつか残っている問題があるためです。 特定のヘッダー ファイル問題については、次を参照してください。 [Windows ヘッダー問題](#windows-header-issues)以下です。
 
-**寛容/-**オプション セットに、 [/Zc:strictStrings](../../build/reference/zc-conformance.md)と[/Zc:rvalueCast](../../build/reference/zc-conformance.md)オプション準拠の動作をします。 既定値は、非準拠の動作です。 特定に渡すことができます**/Zc**後オプション**寛容/-**この動作をオーバーライドするコマンド ラインでします。
+**寛容/-** オプション セットに、 [/Zc:strictStrings](../../build/reference/zc-conformance.md)と[/Zc:rvalueCast](../../build/reference/zc-conformance.md)オプション準拠の動作をします。 既定値は、非準拠の動作です。 特定に渡すことができます **/Zc**後オプション**寛容/-** この動作をオーバーライドするコマンド ラインでします。
 
-Visual Studio 2017 15.3 のバージョンのコンパイラ以降のバージョンで、**寛容/-**オプション セットに、 [/Zc:ternary](../../build/reference/zc-ternary.md)オプション。 コンパイラでは、2 段階名前検索の要件の詳細も実装します。 ときに、**寛容/-**オプションの設定と、コンパイラがテンプレートで使用される依存と非依存の名前を識別する、関数とクラス テンプレート定義を解析します。 このリリースでは、名前の依存関係分析だけが実行されます。
+Visual Studio 2017 15.3 のバージョンのコンパイラ以降のバージョンで、**寛容/-** オプション セットに、 [/Zc:ternary](../../build/reference/zc-ternary.md)オプション。 コンパイラでは、2 段階名前検索の要件の詳細も実装します。 ときに、**寛容/-** オプションの設定と、コンパイラがテンプレートで使用される依存と非依存の名前を識別する、関数とクラス テンプレート定義を解析します。 このリリースでは、名前の依存関係分析だけが実行されます。
 
-環境に固有の拡張機能と実装では、最大、標準のまま言語領域受けません**寛容/-**です。 たとえば、Microsoft 固有`__declspec`、呼び出し規約と構造化例外処理キーワード、およびコンパイラ固有プラグマ ディレクティブまたは属性に、コンパイラによってフラグがない**寛容/-**モード。
+環境に固有の拡張機能と実装では、最大、標準のまま言語領域受けません**寛容/-** です。 たとえば、Microsoft 固有`__declspec`、呼び出し規約と構造化例外処理キーワード、およびコンパイラ固有プラグマ ディレクティブまたは属性に、コンパイラによってフラグがない**寛容/-** モード。
 
-**寛容/-**オプションでは、現在のコンパイラ バージョンで準拠サポートを使用する言語構成要素が非準拠かを判断します。 オプションでは、コードを特定のバージョンの C++ 標準に準拠しているかどうかは判断されません。 最新のドラフト標準のすべての実装済みのコンパイラ サポートを有効にするを使用して、 [/std:latest](../../build/reference/std-specify-language-standard-version.md)オプション。 使用して、現在実装されている c++ 17 規格にコンパイラのサポートを制限、 [/std:c + + 17](../../build/reference/std-specify-language-standard-version.md)オプション。 C++ 14 標準をより厳密に一致するようにコンパイラのサポートを制限するには、 [/std:c + + 14](../../build/reference/std-specify-language-standard-version.md)オプションは、既定値です。
+**寛容/-** オプションでは、現在のコンパイラ バージョンで準拠サポートを使用する言語構成要素が非準拠かを判断します。 オプションでは、コードを特定のバージョンの C++ 標準に準拠しているかどうかは判断されません。 最新のドラフト標準のすべての実装済みのコンパイラ サポートを有効にするを使用して、 [/std:latest](../../build/reference/std-specify-language-standard-version.md)オプション。 使用して、現在実装されている c++ 17 規格にコンパイラのサポートを制限、 [/std:c + + 17](../../build/reference/std-specify-language-standard-version.md)オプション。 C++ 14 標準をより厳密に一致するようにコンパイラのサポートを制限するには、 [/std:c + + 14](../../build/reference/std-specify-language-standard-version.md)オプションは、既定値です。
 
-すべての c++ 11、c++ 14、または c++ 17 標準に準拠できませんコードは、Visual Studio 2017 で Visual C コンパイラでサポートされます。 **寛容/-**オプションは、名前の 2 フェーズ参照の一部の側面に関連、一時的に非定数の参照をバインド、コピー初期化を直接 init として扱うでの複数のユーザー定義の変換を許可する問題を検出いない可能性があります初期化、または論理演算子、およびその他の適合性のサポートされていない領域の代替トークンです。 Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandard Behavior](../../cpp/nonstandard-behavior.md)」をご覧ください。
+すべての c++ 11、c++ 14、または c++ 17 標準に準拠できませんコードは、Visual Studio 2017 で Visual C コンパイラでサポートされます。 **寛容/-** オプションは、名前の 2 フェーズ参照の一部の側面に関連、一時的に非定数の参照をバインド、コピー初期化を直接 init として扱うでの複数のユーザー定義の変換を許可する問題を検出いない可能性があります初期化、または論理演算子、およびその他の適合性のサポートされていない領域の代替トークンです。 Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandard Behavior](../../cpp/nonstandard-behavior.md)」をご覧ください。
 
 ### <a name="how-to-fix-your-code"></a>コードを修正する方法
 
@@ -243,7 +241,7 @@ class ATL_NO_VTABLE CFooImpl : public ICustom,
 
 #### <a name="ambiguous-conditional-operator-arguments"></a>あいまいな条件演算子の引数
 
-Visual Studio 2017 バージョン 15.3 する前に、コンパイラのバージョンは、コンパイラは条件演算子 (または三項演算子) への引数を受け入れられます`?:`をでとみなされるあいまいな標準です。 **寛容/-**モードでは、コンパイラはこれで以前のバージョンでの診断を使用せずにコンパイルされるケースで 1 つまたは複数の診断発行します。
+Visual Studio 2017 バージョン 15.3 する前に、コンパイラのバージョンは、コンパイラは条件演算子 (または三項演算子) への引数を受け入れられます`?:`をでとみなされるあいまいな標準です。 **寛容/-** モードでは、コンパイラはこれで以前のバージョンでの診断を使用せずにコンパイルされるケースで 1 つまたは複数の診断発行します。
 
 この変更につながる可能性のある一般的なエラーは次のとおりです。
 
@@ -275,7 +273,7 @@ auto y = cond ? 7 : int(a);
 auto z = cond ? A(7) : a;
 ```
 
-T は、null で終わる文字列型の 1 つを表すときにこの一般的なパターンの重要な例外がある (たとえば、 `const char *`、`const char16_t *`など) と実際の引数に`?:`文字列は、対応する型のリテラルです。 C++ 17 には、c++ 14 のセマンティクスが変更されました。 例 2 のコードは受け入れられます結果として、 **/std:c + + 14** 、および 拒否された**/std:c + + 17**とき**/Zc:ternary**または**/permissive-**を使用します。
+T は、null で終わる文字列型の 1 つを表すときにこの一般的なパターンの重要な例外がある (たとえば、 `const char *`、`const char16_t *`など) と実際の引数に`?:`文字列は、対応する型のリテラルです。 C++ 17 には、c++ 14 のセマンティクスが変更されました。 例 2 のコードは受け入れられます結果として、 **/std:c + + 14** 、および 拒否された **/std:c + + 17**とき **/Zc:ternary**または **/permissive-** を使用します。
 
 ```cpp
 // Example 2: exception from the above
@@ -307,7 +305,7 @@ void myassert(const char* text, const char* file, int line);
 #define ASSERT_B(ex) (void)((ex) ? void() : myassert(#ex, __FILE__, __LINE__))
 ```
 
-条件演算子の結果の型を下にある変更可能性がありますテンプレート メタプログラミングでエラーが発生する可能性がありますも**/Zc:ternary**と**寛容/-**です。 この問題を使用して解決するのには 1 つの方法[std::remove_reference](../../standard-library/remove-reference-class.md)結果の型にします。
+条件演算子の結果の型を下にある変更可能性がありますテンプレート メタプログラミングでエラーが発生する可能性がありますも **/Zc:ternary**と**寛容/-** です。 この問題を使用して解決するのには 1 つの方法[std::remove_reference](../../standard-library/remove-reference-class.md)結果の型にします。
 
 ```cpp
 // Example 4: different result types 
@@ -349,13 +347,13 @@ int main()
 
 ### <a name="windows-header-issues"></a>Windows ヘッダーの問題
 
-**寛容/-**オプションは Windows 秋作成者更新 SDK (10.0.16299.0) する前に Windows キットのバージョンの Windows Driver Kit (WDK) バージョン 1709 厳しすぎます。 使用するために Windows Kits の最新バージョンに更新することをお勧め**寛容/-**に Windows またはデバイスのドライバー コード。
+**寛容/-** オプションは Windows 秋作成者更新 SDK (10.0.16299.0) する前に Windows キットのバージョンの Windows Driver Kit (WDK) バージョン 1709 厳しすぎます。 使用するために Windows Kits の最新バージョンに更新することをお勧め**寛容/-** に Windows またはデバイスのドライバー コード。
 
-Windows 秋作成者更新 SDK (10.0.16299.0)、または Windows Driver Kit (WDK) 1709、内の特定のヘッダー ファイルには、使用と互換性がないように問題も含まれている**寛容/-**です。 これらの問題を回避することをお勧めのみこれらのソース コード ファイルをそれらを必要とし、削除するこれらのヘッダーの使用を制限する、**寛容/-**それらの特定のソース コード ファイルをコンパイルするオプションを選択します。 次の問題は、Windows 秋作成者更新 SDK (10.0.16299.0) に固有です。
+Windows 秋作成者更新 SDK (10.0.16299.0)、または Windows Driver Kit (WDK) 1709、内の特定のヘッダー ファイルには、使用と互換性がないように問題も含まれている**寛容/-** です。 これらの問題を回避することをお勧めのみこれらのソース コード ファイルをそれらを必要とし、削除するこれらのヘッダーの使用を制限する、**寛容/-** それらの特定のソース コード ファイルをコンパイルするオプションを選択します。 次の問題は、Windows 秋作成者更新 SDK (10.0.16299.0) に固有です。
 
 #### <a name="issue-in-umqueryh"></a>Um\Query.h での問題します。
 
-使用する場合、**寛容/-**コンパイラ スイッチ、 `tagRESTRICTION` case(RTOr) メンバーのための構造はコンパイルされません 'または' です。
+使用する場合、**寛容/-** コンパイラ スイッチ、 `tagRESTRICTION` case(RTOr) メンバーのための構造はコンパイルされません 'または' です。
 
 ```cpp
 struct tagRESTRICTION
@@ -377,17 +375,17 @@ struct tagRESTRICTION
     };
 ```
 
-この問題に対処することがなく Query.h を含むファイルをコンパイル、**寛容/-**オプション。
+この問題に対処することがなく Query.h を含むファイルをコンパイル、**寛容/-** オプション。
 
 #### <a name="issue-in-umcellularapioemh"></a>Um\cellularapi_oem.h での問題します。
 
-使用する場合、**寛容/-**コンパイラ スイッチの事前宣言`enum UICCDATASTOREACCESSMODE`警告が発生します。
+使用する場合、**寛容/-** コンパイラ スイッチの事前宣言`enum UICCDATASTOREACCESSMODE`警告が発生します。
 
 ```cpp
 typedef enum UICCDATASTOREACCESSMODE UICCDATASTOREACCESSMODE; // C4471
 ```
 
-対象範囲外の列挙の事前宣言は、Microsoft 拡張です。 この問題に対処することがなく cellularapi_oem.h を含むファイルをコンパイル、**寛容/-**オプション、またはを使用して、 [/wd](../../build/reference/compiler-option-warning-level.md)警告 C4471 をミュートするにはオプションです。
+対象範囲外の列挙の事前宣言は、Microsoft 拡張です。 この問題に対処することがなく cellularapi_oem.h を含むファイルをコンパイル、**寛容/-** オプション、またはを使用して、 [/wd](../../build/reference/compiler-option-warning-level.md)警告 C4471 をミュートするにはオプションです。
 
 #### <a name="issue-in-umomscripth"></a>Um\omscript.h での問題します。
 
@@ -400,7 +398,7 @@ virtual /* [id] */ HRESULT STDMETHODCALLTYPE setExpression(
     /* [in][defaultvalue] */ __RPC__in BSTR language = L"") = 0; // C2440
 ```
 
-この問題に対処することがなく omscript.h を含むファイルをコンパイル、**寛容/-**オプション、または使用**/Zc:strictStrings-**代わりにします。
+この問題に対処することがなく omscript.h を含むファイルをコンパイル、**寛容/-** オプション、または使用 **/Zc:strictStrings-** 代わりにします。
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには
 
@@ -408,9 +406,9 @@ Visual Studio 2017 バージョン 15.5 およびそれ以降のバージョン�
 
 1. プロジェクトの開く**プロパティ ページ** ダイアログ ボックス。
 
-1. **構成プロパティ**、展開、 **C/C++**フォルダーを選択し、**言語**プロパティ ページ。
+1. **構成プロパティ**、展開、 **C/C++** フォルダーを選択し、**言語**プロパティ ページ。
 
-1. 変更、**準拠モード**プロパティの値を**はい (制限の緩やかな/-)**です。 選択**OK**または**適用**して変更を保存します。
+1. 変更、**準拠モード**プロパティの値を**はい (制限の緩やかな/-)** です。 選択**OK**または**適用**して変更を保存します。
 
 Visual Studio 2017 バージョン 15.5 前に、のバージョンでは、この手順を使用します。
 
@@ -418,7 +416,7 @@ Visual Studio 2017 バージョン 15.5 前に、のバージョンでは、こ�
 
 1. 選択、**構成プロパティ** > **C/C++** > **コマンドライン**プロパティ ページ。
 
-1. 入力、**寛容/-**コンパイラ オプション、**追加オプション**ボックス。 選択**OK**または**適用**して変更を保存します。
+1. 入力、**寛容/-** コンパイラ オプション、**追加オプション**ボックス。 選択**OK**または**適用**して変更を保存します。
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには
 

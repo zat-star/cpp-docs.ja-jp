@@ -1,12 +1,9 @@
 ---
-title: "IDispatchImpl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: IDispatchImpl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IDispatchImpl
@@ -23,17 +20,15 @@ helpviewer_keywords:
 - IDispatchImpl class
 - IDispatch class support in ATL
 ms.assetid: 8108eb36-1228-4127-a203-3ab5ba488892
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3008d42986fcdc4b98ba6a1f9c85c437f2d335c5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7fddf556eba07264f6ea0b01edea3e3d1e8a3a7b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="idispatchimpl-class"></a>IDispatchImpl クラス
 既定の実装を提供、`IDispatch`デュアル インターフェイスの一部です。  
@@ -90,7 +85,7 @@ class ATL_NO_VTABLE IDispatchImpl : public T
 |[IDispatchImpl::Invoke](#invoke)|デュアル インターフェイスによって公開されるプロパティおよびメソッドへのアクセスを提供します。|  
   
 ## <a name="remarks"></a>コメント  
- `IDispatchImpl`既定の実装を提供、`IDispatch`オブジェクトのデュアル インターフェイスの一部です。 デュアル インターフェイス`IDispatch`オートメーションと互換性のある型のみを使用しています。 ディスパッチと同様に、デュアル インターフェイスでは、事前バインディングと遅延バインディング; がサポートしていますただし、デュアル インターフェイスは、vtable バインドもサポートします。  
+ `IDispatchImpl` 既定の実装を提供、`IDispatch`オブジェクトのデュアル インターフェイスの一部です。 デュアル インターフェイス`IDispatch`オートメーションと互換性のある型のみを使用しています。 ディスパッチと同様に、デュアル インターフェイスでは、事前バインディングと遅延バインディング; がサポートしていますただし、デュアル インターフェイスは、vtable バインドもサポートします。  
   
  次の例は、の一般的な実装を示しています。`IDispatchImpl`です。  
   
@@ -98,17 +93,17 @@ class ATL_NO_VTABLE IDispatchImpl : public T
   
  既定では、`IDispatchImpl`クラスの型情報を検索`T`レジストリにします。 登録されていないインターフェイスを実装するのに使用することができます、`IDispatchImpl`クラス定義済みのバージョン番号を使用して、レジストリへのアクセスがない場合。 作成する場合、`IDispatchImpl`の値として 0 xffff を持つオブジェクト`wMajor`しの値として 0 xffff `wMinor`、`IDispatchImpl`クラスは、レジストリではなく、.dll ファイルからタイプ ライブラリを取得します。  
   
- `IDispatchImpl`型の静的メンバーを含む`CComTypeInfoHolder`デュアル インターフェイスの型情報を管理します。 同じデュアルを実装する複数のオブジェクトがある場合、インターフェイスの 1 つだけインスタンス`CComTypeInfoHolder`を使用します。  
+ `IDispatchImpl` 型の静的メンバーを含む`CComTypeInfoHolder`デュアル インターフェイスの型情報を管理します。 同じデュアルを実装する複数のオブジェクトがある場合、インターフェイスの 1 つだけインスタンス`CComTypeInfoHolder`を使用します。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `T`  
   
  `IDispatchImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="getidsofnames"></a>IDispatchImpl::GetIDsOfNames  
+##  <a name="getidsofnames"></a>  IDispatchImpl::GetIDsOfNames  
  一連の名前を対応する一連のディスパッチ識別子に割り当てます。  
   
 ```
@@ -123,7 +118,7 @@ STDMETHOD(GetIDsOfNames)(
 ### <a name="remarks"></a>コメント  
  参照してください[::getidsofnames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619) Windows SDK にします。  
   
-##  <a name="gettypeinfo"></a>IDispatchImpl::GetTypeInfo  
+##  <a name="gettypeinfo"></a>  IDispatchImpl::GetTypeInfo  
  デュアル インターフェイスの型情報を取得します。  
   
 ```
@@ -136,7 +131,7 @@ STDMETHOD(GetTypeInfo)(
 ### <a name="remarks"></a>コメント  
  参照してください[が](http://msdn.microsoft.com/en-us/cc1ec9aa-6c40-4e70-819c-a7c6dd6b8c99)Windows SDK にします。  
   
-##  <a name="gettypeinfocount"></a>IDispatchImpl::GetTypeInfoCount  
+##  <a name="gettypeinfocount"></a>  IDispatchImpl::GetTypeInfoCount  
  デュアル インターフェイスの使用可能な型情報があるかどうかを判断します。  
   
 ```
@@ -146,14 +141,14 @@ STDMETHOD(GetTypeInfoCount)(UINT* pctinfo);
 ### <a name="remarks"></a>コメント  
  参照してください`IDispatch::GetTypeInfoCount`Windows SDK にします。  
   
-##  <a name="idispatchimpl"></a>IDispatchImpl::IDispatchImpl  
+##  <a name="idispatchimpl"></a>  IDispatchImpl::IDispatchImpl  
  コンストラクターです。 呼び出し`AddRef`デュアル インターフェイスの型情報を管理するプロテクト メンバー変数にします。 デストラクター**リリース**です。  
   
 ```
 IDispatchImpl();
 ```  
   
-##  <a name="invoke"></a>IDispatchImpl::Invoke  
+##  <a name="invoke"></a>  IDispatchImpl::Invoke  
  デュアル インターフェイスによって公開されるプロパティおよびメソッドへのアクセスを提供します。  
   
 ```
@@ -171,5 +166,5 @@ STDMETHOD(Invoke)(
 ### <a name="remarks"></a>コメント  
  参照してください[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d) Windows SDK にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

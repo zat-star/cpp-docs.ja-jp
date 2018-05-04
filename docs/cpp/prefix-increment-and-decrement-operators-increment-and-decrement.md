@@ -1,12 +1,9 @@
 ---
-title: "前置インクリメント演算子と前置デクリメント演算子: + + および--|Microsoft ドキュメント"
-ms.custom: 
+title: '前置インクリメント演算子と前置デクリメント演算子: + + および--|Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - --
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - decrement operators [C++], syntax
 - decrement operators [C++]
 ms.assetid: 45ea7fc7-f279-4be9-a216-1d9a0ef9eb7b
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ff153c462361e8b6bac8f3c10192025352da650f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 071f21080bd093e5cb299471c8de7009741482f6
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prefix-increment-and-decrement-operators--and---"></a>前置インクリメント演算子と前置デクリメント演算子: ++ および --
 ## <a name="syntax"></a>構文  
@@ -90,7 +85,7 @@ k = ((++i)<(j))?(j):(++i);
 > [!NOTE]
 >  C++ のインライン関数は、ここで説明したような副作用をなくし、言語でより完全な型チェックを実行できるため、多くの場合、マクロよりも適しています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [前置インクリメント演算子と前置デクリメント演算子](../c-language/prefix-increment-and-decrement-operators.md)

@@ -1,29 +1,24 @@
 ---
-title: "通知フック |Microsoft ドキュメント"
-ms.custom: 
+title: 通知フック |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - delayed loading of DLLs, notification hooks
 ms.assetid: e9c291ed-2f2d-4319-a171-09800625256f
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 31490e3bb591af6568ffecddf68219c89a25e055
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0210c4ee058694594893a029789442c89003da2e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="notification-hooks"></a>通知フック
 通知フックはヘルパー ルーチンで、次の操作が実行される直前に呼び出されます。  
@@ -38,11 +33,11 @@ ms.lasthandoff: 12/21/2017
   
  通知フックが有効です。  
   
--   ポインターの新しい定義を指定することによって**__pfnDliNotifyHook2**指すように、通知を受け取る関数に初期化します。  
+-   ポインターの新しい定義を指定することによって **__pfnDliNotifyHook2**指すように、通知を受け取る関数に初期化します。  
   
      - または -  
   
--   マウス ポインターを設定して**__pfnDliNotifyHook2**プログラムは、DLL への呼び出しの遅延読み込みする前に、フック関数をします。  
+-   マウス ポインターを設定して **__pfnDliNotifyHook2**プログラムは、DLL への呼び出しの遅延読み込みする前に、フック関数をします。  
   
  場合は、通知は**dliStartProcessing**、フック関数が返すことができます。  
   
@@ -90,5 +85,5 @@ PfnDliHook   __pfnDliFailureHook2;
   
  通知を渡す、 **DelayLoadInfo**通知値と一緒にフック関数を構造体。 このデータは、遅延読み込みヘルパー ルーチンが使用するものと同じです。 通知の値で定義されている値のいずれかになります[構造体と定数定義](../../build/reference/structure-and-constant-definitions.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [エラー処理と通知](../../build/reference/error-handling-and-notification.md)

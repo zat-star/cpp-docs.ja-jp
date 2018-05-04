@@ -2,11 +2,8 @@
 title: 'main: プログラムの起動 |Microsoft ドキュメント'
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - vc.main.startup
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - startup code, main function
 - main function, program startup
 ms.assetid: f9581cd6-93f7-4bcd-99ec-d07c3c107dd4
-caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1fbb3d19101358012df795000907a0b3e8139601
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 2999596fe30afca4c9945efc34a8537e9f45e14a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="main-program-startup"></a>main: プログラムの起動
 という名前の特殊な関数`main`すべての C および C++ プログラムの実行の開始ポイントです。 [!INCLUDE[TLA#tla_unicode](../atl-mfc-shared/reference/includes/tlasharptla_unicode_md.md)] プログラミング モデルに準拠するコードを書く場合は、`wmain` のワイド文字バージョンである `main` を使用できます。  
@@ -70,7 +65,7 @@ int wmain(int argc, wchar_t *argv[], wchar_t *envp[]);
 **Microsoft 固有の仕様はここまで**  
  `argc` と `argv` の型は、言語によって定義されています。 名前 `argc`、`argv`、および`envp` は従来のものですが、コンパイラにとって必須ではありません。 例および詳細については、次を参照してください。[引数定義](../cpp/argument-definitions.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キーワード](../cpp/keywords-cpp.md)   
  [Main に代わる wmain の使用](../cpp/using-wmain-instead-of-main.md)   
  [main 関数に関する制約](../cpp/main-function-restrictions.md)

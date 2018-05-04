@@ -1,12 +1,9 @@
 ---
-title: "_variant_t クラス |Microsoft ドキュメント"
-ms.custom: 
+title: _variant_t クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - _variant_t
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - VARIANT object
 - VARIANT object [C++], COM encapsulation
 ms.assetid: 6a3cbd4e-0ae8-425e-b4cf-ca0df894c93f
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 57a4d7e4019e742ff8adc50bb78a926dff34d55a
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.openlocfilehash: 0ebe850e4b0d0d9fd352df0e60c4ea0737b9fd8a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="variantt-class"></a>_variant_t クラス
 **Microsoft 固有の仕様**  
@@ -62,10 +57,10 @@ ms.lasthandoff: 01/25/2018
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<comutil.h >  
   
  **Lib:** comsuppw.lib または comsuppwd.lib (を参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)詳細)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ COM サポート クラス](../cpp/compiler-com-support-classes.md)

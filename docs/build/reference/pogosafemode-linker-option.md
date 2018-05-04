@@ -11,18 +11,17 @@ f1_keywords:
 - POGOSAFEMODE
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 886fbae5fbeb7606ec0321595f061d2262988170
-ms.sourcegitcommit: ee7d74683af7631441c8c7f65ef5ceceaee4a5ee
+ms.openlocfilehash: 81392c67b47a0fa90c057ee4295667a054e34498
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pogosafemode-run-pgo-in-thread-safe-mode"></a>/POGOSAFEMODE (スレッド セーフ モードで実行 PGO)
 
-**Visual Studio 2015 以降で/POGOSAFEMODE オプションは推奨されない**です。 使用して、 [/GENPROFILE: 正確な](genprofile-fastgenprofile-generate-profiling-instrumented-build.md)と**/GENPROFILE:NOEXACT**オプションの代わりにします。 **/POGOSAFEMODE**リンカー オプションは、トレーニングの実行プロファイルのガイド付き最適化の (PGO) の中にプロファイル データのキャプチャにスレッド セーフ モードを使用する、インストルメント化されたビルドが作成されたことを指定します。
+**Visual Studio 2015 以降で/POGOSAFEMODE オプションは推奨されない**です。 使用して、 [/GENPROFILE: 正確な](genprofile-fastgenprofile-generate-profiling-instrumented-build.md)と **/GENPROFILE:NOEXACT**オプションの代わりにします。 **/POGOSAFEMODE**リンカー オプションは、トレーニングの実行プロファイルのガイド付き最適化の (PGO) の中にプロファイル データのキャプチャにスレッド セーフ モードを使用する、インストルメント化されたビルドが作成されたことを指定します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,7 +35,7 @@ ms.lasthandoff: 03/22/2018
 
 既定では、PGO プロファイリングは高速モードで動作します。 **/POGOSAFEMODE**がセーフ モードを使用するかどうかにのみ必要です。
 
-実行するには PGO プロファイリングをセーフ モードで、いずれかを使用する必要があります**/GENPROFILE: 正確な**(推奨)、環境変数を使用または[PogoSafeMode](environment-variables-for-profile-guided-optimizations.md)かリンカー スイッチ**/POGOSAFEMODE**、システムによって異なります。 x64 コンピューターでプロファイリングを実行する場合は、リンカー スイッチを使用する必要があります。 X86 でプロファイリングを実行するかどうか、コンピューター、リンカー スイッチを使用するか、PGO インストルメンテーション プロセスを開始する前に、任意の値を環境変数を定義することがあります。
+実行するには PGO プロファイリングをセーフ モードで、いずれかを使用する必要があります **/GENPROFILE: 正確な**(推奨)、環境変数を使用または[PogoSafeMode](environment-variables-for-profile-guided-optimizations.md)かリンカー スイッチ **/POGOSAFEMODE**、システムによって異なります。 x64 コンピューターでプロファイリングを実行する場合は、リンカー スイッチを使用する必要があります。 X86 でプロファイリングを実行するかどうか、コンピューター、リンカー スイッチを使用するか、PGO インストルメンテーション プロセスを開始する前に、任意の値を環境変数を定義することがあります。
 
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには
 
@@ -44,7 +43,7 @@ ms.lasthandoff: 03/22/2018
 
 1. 選択、**構成プロパティ** > **リンカー** > **最適化**プロパティ ページ。
 
-1. **リンク時コード生成**プロパティを選択して**ガイド付き最適化のプロファイルのインストルメント化 (//ltcg:pginstrument)**です。
+1. **リンク時コード生成**プロパティを選択して**ガイド付き最適化のプロファイルのインストルメント化 (//ltcg:pginstrument)** です。
 
 1. 選択、**構成プロパティ** > **リンカー** > **コマンドライン**プロパティ ページ。
 
@@ -56,7 +55,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="see-also"></a>関連項目
 
-[/GENPROFILE and /FASTGENPROFILE](genprofile-fastgenprofile-generate-profiling-instrumented-build.md)<br/>
+[/GENPROFILE と/FASTGENPROFILE](genprofile-fastgenprofile-generate-profiling-instrumented-build.md)<br/>
 [/LTCG](ltcg-link-time-code-generation.md)<br/>
 [ガイド付き最適化のプロファイル](../../build/reference/profile-guided-optimizations.md)<br/>
 [ガイド付き最適化のプロファイルの環境変数](../../build/reference/environment-variables-for-profile-guided-optimizations.md)<br/>

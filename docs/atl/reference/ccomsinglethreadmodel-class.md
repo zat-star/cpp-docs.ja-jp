@@ -1,12 +1,9 @@
 ---
-title: "CComSingleThreadModel クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComSingleThreadModel クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComSingleThreadModel
@@ -23,15 +20,13 @@ helpviewer_keywords:
 - CComSingleThreadModel class
 - single-threaded applications, ATL
 ms.assetid: e5dc30c7-405a-4ba4-8ae9-51937243fce8
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
-ms.openlocfilehash: 65af9492f3721fd642def72a3049552cdff75ce6
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.openlocfilehash: 175cc1b867356949ca861f7015dedb6d64c4282f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomsinglethreadmodel-class"></a>CComSingleThreadModel クラス
 このクラスは、変数の値、インクリメントおよびデクリメントするためのメソッドを提供します。  
@@ -60,24 +55,24 @@ class CComSingleThreadModel
 |[CComSingleThreadModel::Increment](#increment)|指定された変数の値をインクリメントします。 この実装は、スレッド セーフではありません。|  
   
 ## <a name="remarks"></a>コメント  
- `CComSingleThreadModel`インクリメントおよびデクリメントするため、変数の値に対応するメソッドを提供します。 異なり[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)、これらのメソッドはスレッド セーフではありません。  
+ `CComSingleThreadModel` インクリメントおよびデクリメントするため、変数の値に対応するメソッドを提供します。 異なり[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)、これらのメソッドはスレッド セーフではありません。  
 
  通常、使用して`CComSingleThreadModel`2 つのいずれかで`typedef`名か、 [CComObjectThreadModel](atl-typedefs.md#ccomobjectthreadmodel)または[CComGlobalsThreadModel](atl-typedefs.md#ccomglobalsthreadmodel)です。 各によって参照されるクラス`typedef`次の表に示すように使用される、スレッド処理モデルによって異なります。  
 
   
-|typedef|1 つのスレッド モデル|アパートメント スレッド モデル|フリー スレッド モデル|  
+|Typedef|1 つのスレッド モデル|アパートメント スレッド モデル|フリー スレッド モデル|  
 |-------------|----------------------------|-------------------------------|--------------------------|  
 |`CComObjectThreadModel`|S|S|M|  
 |`CComGlobalsThreadModel`|S|M|M|  
   
- S =`CComSingleThreadModel`です。M =`CComMultiThreadModel`  
+ S =`CComSingleThreadModel`です。M = `CComMultiThreadModel`  
   
- `CComSingleThreadModel`3 つの定義自体`typedef`名。 `ThreadModelNoCS`参照`CComSingleThreadModel`です。 `AutoCriticalSection`および`CriticalSection`クラスを参照して[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)、取得する、クリティカル セクションの所有権を解放すると関連付けられている空のメソッドを提供します。  
+ `CComSingleThreadModel` 3 つの定義自体`typedef`名。 `ThreadModelNoCS` 参照`CComSingleThreadModel`です。 `AutoCriticalSection` および`CriticalSection`クラスを参照して[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)、取得する、クリティカル セクションの所有権を解放すると関連付けられている空のメソッドを提供します。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="autocriticalsection"></a>CComSingleThreadModel::AutoCriticalSection  
+##  <a name="autocriticalsection"></a>  CComSingleThreadModel::AutoCriticalSection  
  使用する場合`CComSingleThreadModel`、`typedef`名前`AutoCriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)です。  
   
 ```
@@ -100,7 +95,7 @@ typedef CComFakeCriticalSection AutoCriticalSection;
 ### <a name="example"></a>例  
  参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)です。  
   
-##  <a name="criticalsection"></a>CComSingleThreadModel::CriticalSection  
+##  <a name="criticalsection"></a>  CComSingleThreadModel::CriticalSection  
  使用する場合`CComSingleThreadModel`、`typedef`名前`CriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)です。  
   
 ```
@@ -123,7 +118,7 @@ typedef CComFakeCriticalSection CriticalSection;
 ### <a name="example"></a>例  
  参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)です。  
   
-##  <a name="decrement"></a>CComSingleThreadModel::Decrement  
+##  <a name="decrement"></a>  CComSingleThreadModel::Decrement  
  この静的関数デクリメント、変数の値によって示される`p`です。  
   
 ```
@@ -137,7 +132,7 @@ static ULONG WINAPI Decrement(LPLONG p) throw();
 ### <a name="return-value"></a>戻り値  
  減算の結果。  
   
-##  <a name="increment"></a>CComSingleThreadModel::Increment  
+##  <a name="increment"></a>  CComSingleThreadModel::Increment  
  この静的関数デクリメント、変数の値によって示される`p`です。  
   
 ```
@@ -151,7 +146,7 @@ static ULONG WINAPI Increment(LPLONG p) throw();
 ### <a name="return-value"></a>戻り値  
  増分値の結果。  
   
-##  <a name="threadmodelnocs"></a>CComSingleThreadModel::ThreadModelNoCS  
+##  <a name="threadmodelnocs"></a>  CComSingleThreadModel::ThreadModelNoCS  
  使用する場合`CComSingleThreadModel`、`typedef`名前`ThreadModelNoCS`単に参照`CComSingleThreadModel`です。  
   
 ```

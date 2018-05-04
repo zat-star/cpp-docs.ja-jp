@@ -1,12 +1,9 @@
 ---
-title: "コンパイラ オプションに関するマクロ |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラ オプションに関するマクロ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 dev_langs:
 - C++
@@ -25,17 +22,15 @@ f1_keywords:
 helpviewer_keywords:
 - compiler options, macros
 ms.assetid: a869adc6-b3de-4299-b040-9ae20b45f82c
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f48abc864133849353aeccf82ea3eb9aab1edb5a
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1e84c92e8bbf65ff3b8b54111bcce2306628edb1
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="compiler-options-macros"></a>コンパイラ オプション マクロ
 これらのマクロは、特定のコンパイラ機能を制御します。  
@@ -54,7 +49,7 @@ ms.lasthandoff: 12/21/2017
 |[ATL_NOINLINE](#atl_noinline)|関数を示す記号をインライン展開することはできません。|  
 |[_ATL_SINGLE_THREADED](#_atl_single_threaded)|場合は 1 つのスレッド モデルを使用してすべてのオブジェクトを定義します。|  
   
-##  <a name="_atl_all_warnings"></a>_ATL_ALL_WARNINGS  
+##  <a name="_atl_all_warnings"></a>  _ATL_ALL_WARNINGS  
  エラー ATL の以前のバージョンから変換されたプロジェクトで有効にするシンボル  
   
 ```
@@ -88,7 +83,7 @@ ms.lasthandoff: 12/21/2017
   
  新しいプロジェクトがあるこの`#define`stdafx.h で既定で設定します。  
   
-##  <a name="_atl_apartment_threaded"></a>_ATL_APARTMENT_THREADED  
+##  <a name="_atl_apartment_threaded"></a>  _ATL_APARTMENT_THREADED  
  アパートメント スレッドを使用して 1 つまたは複数のオブジェクトの場合を定義します。  
   
 ```
@@ -98,7 +93,7 @@ _ATL_APARTMENT_THREADED
 ### <a name="remarks"></a>コメント  
  アパートメント スレッドを指定します。 参照してください[プロジェクトのスレッド モデルを指定する](../../atl/specifying-the-threading-model-for-a-project-atl.md)他のスレッド オプション、および[オプション、ATL シンプル オブジェクト ウィザード](../../atl/reference/options-atl-simple-object-wizard.md)ATL オブジェクトをモデル化、スレッド処理の詳細についてはします。  
   
-##  <a name="_atl_cstring_explicit_constructors"></a>_ATL_CSTRING_EXPLICIT_CONSTRUCTORS  
+##  <a name="_atl_cstring_explicit_constructors"></a>  _ATL_CSTRING_EXPLICIT_CONSTRUCTORS  
  によって、`CString`コンス トラクターの明示的な意図しない変換を回避します。  
   
 ```
@@ -110,7 +105,7 @@ _ATL_CSTRING_EXPLICIT_CONSTRUCTORS
   
  _T マクロを使用するとすべてのコンス トラクター文字列引数に対して、_ATL_CSTRING_EXPLICIT_CONSTRUCTORS を定義し、_UNICODE が定義されているかどうかに関係なく、コンパイル エラーを回避できます。  
   
-##  <a name="_atl_enable_ptm_warning"></a>_ATL_ENABLE_PTM_WARNING  
+##  <a name="_atl_enable_ptm_warning"></a>  _ATL_ENABLE_PTM_WARNING  
  メンバー関数へのポインターの ANSI C 標準に準拠する構文の使用を強制するために、このマクロを定義します。 このマクロを使用すると、メンバー関数へのポインターを初期化するために非標準の構文を使用する場合に生成される C4867 のコンパイラ エラーが発生します。  
   
 ```
@@ -120,7 +115,7 @@ _ATL_CSTRING_EXPLICIT_CONSTRUCTORS
 ### <a name="remarks"></a>コメント  
  ATL および MFC ライブラリは、Visual C コンパイラの標準的な C++ 準拠の強化を一致するように変更されています。 クラスのメンバー関数へのポインターの構文をする必要があります、ANSI C 標準に従って`&CMyClass::MyFunc`です。  
   
- ときに[_ATL_ENABLE_PTM_WARNING](#_atl_enable_ptm_warning)が定義されていません (既定の場合)、ATL と MFC を無効に (特にメッセージ マップ) マクロ マップで C4867 エラーは以前のバージョンで作成したコードが以前と同様にビルドを継続できるようにします。 定義した場合**_ATL_ENABLE_PTM_WARNING**コードは C++ 標準に準拠する必要があります。  
+ ときに[_ATL_ENABLE_PTM_WARNING](#_atl_enable_ptm_warning)が定義されていません (既定の場合)、ATL と MFC を無効に (特にメッセージ マップ) マクロ マップで C4867 エラーは以前のバージョンで作成したコードが以前と同様にビルドを継続できるようにします。 定義した場合 **_ATL_ENABLE_PTM_WARNING**コードは C++ 標準に準拠する必要があります。  
   
  ただし、非標準のフォームは廃止されました、C++ 標準に準拠構文に既存のコードを移動する必要があります。 次: たとえば、  
   
@@ -132,7 +127,7 @@ _ATL_CSTRING_EXPLICIT_CONSTRUCTORS
   
  '&' 文字を追加するマップ マクロでは、追加することする必要がありますいないもう一度、コード内に注意してください。  
   
-##  <a name="_atl_free_threaded"></a>_ATL_FREE_THREADED  
+##  <a name="_atl_free_threaded"></a>  _ATL_FREE_THREADED  
  1 つまたは複数のオブジェクトの free またはニュートラル スレッドを使用する場合を定義します。  
   
 ```
@@ -142,7 +137,7 @@ _ATL_FREE_THREADED
 ### <a name="remarks"></a>コメント  
  フリー スレッドを指定します。 フリー スレッドは、マルチ スレッド アパートメント モデルと同じです。 参照してください[プロジェクトのスレッド モデルを指定する](../../atl/specifying-the-threading-model-for-a-project-atl.md)他のスレッド オプション、および[オプション、ATL シンプル オブジェクト ウィザード](../../atl/reference/options-atl-simple-object-wizard.md)ATL オブジェクトをモデル化、スレッド処理の詳細についてはします。  
   
-##  <a name="_atl_multi_threaded"></a>_ATL_MULTI_THREADED  
+##  <a name="_atl_multi_threaded"></a>  _ATL_MULTI_THREADED  
  プロジェクトを表す記号は、Free または Neutral 両方としてマークされているオブジェクトがあります。  
   
 ```
@@ -152,7 +147,7 @@ _ATL_MULTI_THREADED
 ### <a name="remarks"></a>コメント  
  このシンボルが定義されている場合は、ATL は正しくグローバル データへのアクセスを同期するコードを取得します。 新しいコードは同等のマクロを使用する必要があります[_ATL_FREE_THREADED](#_atl_free_threaded)代わりにします。  
   
-##  <a name="_atl_no_automatic_namespace"></a>_ATL_NO_AUTOMATIC_NAMESPACE  
+##  <a name="_atl_no_automatic_namespace"></a>  _ATL_NO_AUTOMATIC_NAMESPACE  
  ATL として名前空間を既定で使用できないようにするシンボル  
   
 ```
@@ -162,7 +157,7 @@ _ATL_NO_AUTOMATIC_NAMESPACE
 ### <a name="remarks"></a>コメント  
  このシンボルが定義されていない場合は実行されます atlbase.h を含む**ATL の名前空間を使用して**既定では、名前付けの競合を発生することがあります。 これを回避するには、このシンボルを定義します。  
   
-##  <a name="_atl_no_com_support"></a>_ATL_NO_COM_SUPPORT  
+##  <a name="_atl_no_com_support"></a>  _ATL_NO_COM_SUPPORT  
  これが COM に関連するコードがプロジェクトにコンパイルされていることを防止記号です。  
   
 ```

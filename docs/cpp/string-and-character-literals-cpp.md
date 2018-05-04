@@ -2,11 +2,8 @@
 title: 文字列リテラルと文字リテラル (C++) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - R
@@ -25,17 +22,15 @@ helpviewer_keywords:
 - NULL, character constant
 - wide characters, strings
 ms.assetid: 61de8f6f-2714-4e7b-86b6-a3f885d3b9df
-caps.latest.revision: 36
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8714ff649471b0f84e11a65ae4100c8facb06c52
-ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
+ms.openlocfilehash: cede3ee6efb063141fc9ba7db58c6ec1dbcae845
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="string-and-character-literals--c"></a>文字列リテラルと文字リテラル (C++)
 C++ はさまざまな文字列と文字型をサポートし、これらの型のリテラル値を表す方法を提供しています。 ソース コードでは、文字セットを使用して文字リテラルと文字列リテラルの内容を表現します。 ユニバーサル文字名とエスケープ文字を使用すると、基本ソース文字セットのみを使用してあらゆる文字列を表現できます。 未加工文字列リテラルを使用すると、エスケープ文字の使用を避けられるとともに、全種類の文字列リテラルを表すことができます。 余分な構築または変換手順を実行することなく、std::string リテラルを作成することもできます。  
@@ -323,7 +318,7 @@ const size_t byteSize = (wcslen(str) + 1) * sizeof(wchar_t);
   
  **Microsoft 固有の仕様**  
   
- Visual C++ では、文字列リテラルを使用して、非定数の `char` または `wchar_t`へのポインターを初期化できます。 この操作は C99 コードでは使用できますが、C++98 では使用されておらず、C++11 では削除されています。 文字列を変更すると、この例のようにアクセス違反が発生します。  
+ Visual C++ では、文字列リテラルを使用して、非定数の `char` または `wchar_t`へのポインターを初期化できます。 この操作は C99 コードでは使用できますが、C++98 では非推奨とされており、C++11 では削除されています。 文字列を変更すると、この例のようにアクセス違反が発生します。  
   
 ```cpp  
 wchar_t* str = L"hello";  

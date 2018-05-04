@@ -1,13 +1,10 @@
 ---
-title: "-揮発性 (volatile キーワードの解釈) |Microsoft ドキュメント"
-ms.custom: 
+title: -揮発性 (volatile キーワードの解釈) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /volatile:iso
 - /volatile:ms
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - volatile compiler option
 - -volatile compiler option [C++]
 ms.assetid: 9d08fcc6-5bda-44c8-8151-8d8d54f164b8
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4528d53da01ae83f179f07ba52b2c86c335e883c
-ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
+ms.openlocfilehash: ccd36c5edaaab8577e5f278b25b51ce69e0633f1
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="volatile-volatile-keyword-interpretation"></a>/volatile (volatile キーワードの解釈を)
 
@@ -52,7 +47,7 @@ Microsoft 拡張 `volatile` セマンティクスを選択すると、ISO 標準
 
 ## <a name="remarks"></a>コメント
 
-使用することを強くお勧め**/volatile:iso**および明示的な同期プリミティブとコンパイラ組み込み関数はスレッド間で共有されるメモリを扱うときにします。 詳細については、次を参照してください。[揮発性](../../cpp/volatile-cpp.md)です。
+使用することを強くお勧め **/volatile:iso**および明示的な同期プリミティブとコンパイラ組み込み関数はスレッド間で共有されるメモリを扱うときにします。 詳細については、次を参照してください。[揮発性](../../cpp/volatile-cpp.md)です。
 
 既存のコードを移植プロジェクトの途中でこのオプションを変更するか、することが警告を有効にする[C4746](../../error-messages/compiler-warnings/compiler-warning-c4746.md)セマンティクスの違いによって影響を受けるコードの場所を識別します。
 
@@ -64,7 +59,7 @@ Microsoft 拡張 `volatile` セマンティクスを選択すると、ISO 標準
 
 1. 選択、**構成プロパティ** > **C/C++** > **コマンドライン**プロパティ ページ。
 
-1. **追加オプション**ボックスで、追加**/volatile:iso**または**/volatile:ms**を選択し**OK**または**適用**して変更を保存します。
+1. **追加オプション**ボックスで、追加 **/volatile:iso**または **/volatile:ms**を選択し**OK**または**適用**して変更を保存します。
 
 ## <a name="see-also"></a>関連項目
 

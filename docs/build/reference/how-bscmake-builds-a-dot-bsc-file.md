@@ -2,28 +2,23 @@
 title: BSCMAKE のビルド方法、します。Bsc ファイル |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - browse information files (.bsc), building
 ms.assetid: 8512b33e-c856-44a2-87bd-01ab10b52a95
-caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cb8e03bed85a5e466a3c41f0cffc51d35c4b4561
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0cdc8a2840e3beb1272b33b2794f70a979684f46
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-bscmake-builds-a-bsc-file"></a>BSCMAKE による .bsc ファイルのビルド方法
 BSCMAKE では、ビルドまたは .bsc ファイルが、最も効率的な方法で再構築します。 潜在的な問題を回避するのには、ビルド プロセスを理解する必要があります。  
@@ -36,5 +31,5 @@ BSCMAKE では、ビルドまたは .bsc ファイルが、最も効率的な方
   
 -   インクリメンタル ビルドが成功する、.bsc ファイルが存在する必要があります。 関係しているすべての .sbr ファイルは、空のファイルがあってが存在し、BSCMAKE コマンドラインで指定する必要があります。 コマンドラインから .sbr ファイルを省略すると、BSCMAKE は、ファイルから、投稿物を削除します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [.bsc ファイルのビルド](../../build/reference/building-a-dot-bsc-file.md)

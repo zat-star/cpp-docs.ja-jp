@@ -2,11 +2,8 @@
 title: CAtlModuleT クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CAtlModuleT
@@ -23,17 +20,15 @@ dev_langs:
 helpviewer_keywords:
 - CAtlModuleT class
 ms.assetid: 9b74d02f-9117-47b1-a05e-c5945f83dd2b
-caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a4f1ba8d59e85a480af38e5b9778fee0c714a0db
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 29088c56d7020b38febb96be7512771a258e25fe
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="catlmodulet-class"></a>CAtlModuleT クラス
 このクラスは、ATL モジュールを実装します。  
@@ -71,20 +66,20 @@ class ATL_NO_VTABLE CAtlModuleT : public CAtlModule
 ## <a name="remarks"></a>コメント  
  `CAtlModuleT`、から派生した[不要](../../atl/reference/catlmodule-class.md)、実行可能ファイル (EXE) またはサービス (EXE) ATL モジュールを実装します。 実行可能モジュールは、ローカルのアウト プロセス サーバー、サービス モジュールは Windows の起動時に、バック グラウンドで実行される Windows アプリケーションです。  
   
- `CAtlModuleT`初期化、登録、およびモジュールの登録を解除するには、サポートを提供します。  
+ `CAtlModuleT` 初期化、登録、およびモジュールの登録を解除するには、サポートを提供します。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [_ATL_MODULE](atl-typedefs.md#_atl_module)  
 
   
- [不要](../../atl/reference/catlmodule-class.md)  
+ [CAtlModule](../../atl/reference/catlmodule-class.md)  
   
  `CAtlModuleT`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="catlmodulet"></a>CAtlModuleT::CAtlModuleT  
+##  <a name="catlmodulet"></a>  CAtlModuleT::CAtlModuleT  
  コンストラクターです。  
   
 ```
@@ -94,7 +89,7 @@ CAtlModuleT() throw();
 ### <a name="remarks"></a>コメント  
  呼び出し[CAtlModuleT::InitLibId](#initlibid)です。  
   
-##  <a name="initlibid"></a>CAtlModuleT::InitLibId  
+##  <a name="initlibid"></a>  CAtlModuleT::InitLibId  
  現在のモジュールの GUID を表すデータ メンバーを初期化します。  
   
 ```
@@ -104,7 +99,7 @@ static void InitLibId() throw();
 ### <a name="remarks"></a>コメント  
  コンス トラクターによって呼び出されます[CAtlModuleT::CAtlModuleT](#catlmodulet)です。  
   
-##  <a name="registerappid"></a>CAtlModuleT::RegisterAppId  
+##  <a name="registerappid"></a>  CAtlModuleT::RegisterAppId  
  Exe ファイルがレジストリに追加します。  
   
 ```
@@ -114,7 +109,7 @@ HRESULT RegisterAppId() throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-##  <a name="registerserver"></a>CAtlModuleT::RegisterServer  
+##  <a name="registerserver"></a>  CAtlModuleT::RegisterServer  
  レジストリにサービスを追加します。  
   
 ```
@@ -133,7 +128,7 @@ HRESULT RegisterServer(
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-##  <a name="unregisterappid"></a>CAtlModuleT::UnregisterAppId  
+##  <a name="unregisterappid"></a>  CAtlModuleT::UnregisterAppId  
  レジストリからの exe ファイルを削除します。  
   
 ```
@@ -143,7 +138,7 @@ HRESULT UnregisterAppId() throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-##  <a name="unregisterserver"></a>CAtlModuleT::UnregisterServer  
+##  <a name="unregisterserver"></a>  CAtlModuleT::UnregisterServer  
  レジストリからサービスを削除します。  
   
 ```
@@ -162,7 +157,7 @@ HRESULT UnregisterServer(
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-##  <a name="updateregistryappid"></a>CAtlModuleT::UpdateRegistryAppId  
+##  <a name="updateregistryappid"></a>  CAtlModuleT::UpdateRegistryAppId  
  レジストリ内の EXE の情報を更新します。  
   
 ```
@@ -176,7 +171,7 @@ static HRESULT WINAPI UpdateRegistryAppId(BOOL /* bRegister*/) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [不要クラス](../../atl/reference/catlmodule-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [モジュール クラス](../../atl/atl-module-classes.md)

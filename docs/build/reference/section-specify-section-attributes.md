@@ -1,13 +1,10 @@
 ---
-title: "/SECTION (セクション属性の指定) |Microsoft ドキュメント"
-ms.custom: 
+title: /SECTION (セクション属性の指定) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 12/29/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /section
 dev_langs:
@@ -19,14 +16,13 @@ helpviewer_keywords:
 - /SECTION linker option
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: aa214c7efeeee595300204df900a333258052772
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: 6d9b0a724f0e9156c81db20bf283e4418dd2f22d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="section-specify-section-attributes"></a>/SECTION (セクション属性の指定)
 
@@ -84,7 +80,7 @@ A*セクション*ポータブル実行可能 (PE) ファイルは、名前付�
 |K|キャッシュ可能です|セクションをキャッシュ不可としてマークを付けます|
 |P|ページング可能です|セクションをページング不可としてマークを付けます|
 
-K および P はない通常それらに対応するセクション フラグは負の値の意味で使用されます。 かどうかを指定する 1 つは .text セクションでを使用して、 **/SECTION:.text, K**オプションを実行すると、セクション フラグに違いはありません[DUMPBIN](../../build/reference/dumpbin-options.md)で、 [/HEADERS](../../build/reference/headers.md)オプションです。セクションが暗黙的に既にキャッシュされてます。 既定値を削除する指定**/SECTION:.text、!K**代わりにします。 DUMPBIN「キャッシュされません」を含む、セクションの特性を表示します。
+K および P はない通常それらに対応するセクション フラグは負の値の意味で使用されます。 かどうかを指定する 1 つは .text セクションでを使用して、 **/SECTION:.text, K**オプションを実行すると、セクション フラグに違いはありません[DUMPBIN](../../build/reference/dumpbin-options.md)で、 [/HEADERS](../../build/reference/headers.md)オプションです。セクションが暗黙的に既にキャッシュされてます。 既定値を削除する指定 **/SECTION:.text、!K**代わりにします。 DUMPBIN「キャッシュされません」を含む、セクションの特性を表示します。
 
 電子メール、R、または W の設定を持たない PE ファイルのセクションの可能性がありますが正しくありません。
 

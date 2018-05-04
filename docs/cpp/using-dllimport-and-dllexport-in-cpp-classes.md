@@ -1,12 +1,9 @@
 ---
-title: "C++ クラスでの dllimport と dllexport の使用 |Microsoft ドキュメント"
-ms.custom: 
+title: C++ クラスでの dllimport と dllexport の使用 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - dllexport attribute [C++]
 - dllexport attribute [C++], classes [C++]
 ms.assetid: 8d7d1303-b9e9-47ca-96cc-67bf444a08a9
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d8f9434387efcf3377cdc983116a51b524d16662
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 764ee2026e0ffcd112f202e0d400805c9df55e0b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="using-dllimport-and-dllexport-in-c-classes"></a>C++ クラスでの dllimport と dllexport の使用
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -51,18 +46,18 @@ class DllExport C {
   
  その明示的な使用に注意してください、 **dllimport**と`dllexport`エクスポート可能なクラスのメンバーの属性が禁止されています。  
   
-##  <a name="_pluslang_using_dllimport_and_dllexport_in_c2b2bdllexportclasses"></a>dllexport クラス  
+##  <a name="_pluslang_using_dllimport_and_dllexport_in_c2b2bdllexportclasses"></a> dllexport クラス  
  `dllexport` クラスを宣言すると、そのメンバー関数と静的データ メンバーがすべてエクスポートされます。 このようなすべてのメンバーは同じプログラム内で定義する必要があります。 定義しない場合は、リンカー エラーが生成されます。 この規則の例外は純粋仮想関数です。純粋仮想関数にはこのような明示的な定義は不要です。 ただし、抽象クラスのデストラクターは基底クラスのデストラクターによって常に呼び出されるため、純粋仮想デストラクターには常に明示的な定義が必要です。 これらの規則はエクスポート不可クラスに対しても同じであることに注意してください。  
   
  クラス型のデータまたはクラスを返す関数をエクスポートする場合、必ずそのクラスもエクスポートしてください。  
   
-##  <a name="_pluslang_dllexport_classesdllexportclasses"></a>dllimport クラス  
+##  <a name="_pluslang_dllexport_classesdllexportclasses"></a> dllimport クラス  
  クラスを宣言すると**dllimport**、そのすべてのメンバー関数と静的データ メンバーがインポートされます。 動作とは異なり**dllimport**と`dllexport`、クラス型に対する静的データ メンバーを同じプログラム内での定義を指定できません、 **dllimport**クラスが定義されています。  
   
-##  <a name="_pluslang_using_dllimport_and_dllexport_in_c2b2binheritanceandexportableclasses"></a>継承とエクスポート可能クラス  
+##  <a name="_pluslang_using_dllimport_and_dllexport_in_c2b2binheritanceandexportableclasses"></a> 継承とエクスポート可能クラス  
  エクスポート可能なクラスのすべての基底クラスはエクスポート可能である必要があります。 そうでない場合、コンパイラ警告が生成されます。 また、クラスでもあるアクセス可能なメンバーはすべてエクスポート可能である必要があります。 この規則により、`dllexport`から継承するクラス、 **dllimport**クラス、および**dllimport**から継承するクラス、`dllexport`クラス (ただし、後者は推奨されません)。 一般的に、DLL のクライアントからアクセス可能な (C++ のアクセス規則に従って) すべてのものは、エクスポート可能なインターフェイスの一部である必要があります。 たとえば、インライン関数で参照されるプライベート データ メンバーなどです。  
   
-##  <a name="_pluslang_using_dllimport_and_dllexport_in_c2b2bselectivememberimportexport"></a>選択的なメンバーのインポート/エクスポート  
+##  <a name="_pluslang_using_dllimport_and_dllexport_in_c2b2bselectivememberimportexport"></a> 選択的なメンバーのインポート/エクスポート  
  メンバー関数とクラス内で静的なデータが外部リンケージが暗黙的に、それらを宣言できます、 **dllimport**または`dllexport`属性がクラス全体をエクスポートしない限り、します。 クラス全体がインポートまたはエクスポートするメンバー関数とデータとしての明示的な宣言**dllimport**または`dllexport`は禁止されています。 クラス定義内の静的データ メンバーを `dllexport` として宣言する場合は、同じプログラム内で定義する必要があります (非クラス外部リンケージの場合と同様)。  
   
  同様に、できるメンバーを宣言する関数、 **dllimport**または`dllexport`属性。 この場合、同じプログラム内に `dllexport` 定義が必要です。  
@@ -83,5 +78,5 @@ class DllExport C {
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [dllexport、dllimport](../cpp/dllexport-dllimport.md)

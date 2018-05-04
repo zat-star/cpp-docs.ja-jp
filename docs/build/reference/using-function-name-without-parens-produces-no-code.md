@@ -2,28 +2,23 @@
 title: () はコードを生成せずに関数名を使用して |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - functions [C++], without parentheses
 ms.assetid: edf4a177-a160-44aa-8436-e077b5b27809
-caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c03706be0b9853cbbdebe79b58e410f7237692ee
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 40aed3969ae0707b07f0912d7247b49886d0319d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="using-function-name-without--produces-no-code"></a>"()" のない関数名とコードの生成
 かっこを使用せず、プログラムで宣言された関数名を使用する場合、コンパイラがコードを生成しません。 これは、コンパイラは関数のアドレスを計算するために、関数がパラメーターを受け取るかどうかに関係なく発生します。ただし、関数呼び出し演算子 (「)」が存在しないため、呼び出しは行われません。 この結果は、次のようには。  
@@ -52,5 +47,5 @@ void funcn() {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コードの最適化](../../build/reference/optimizing-your-code.md)

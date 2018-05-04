@@ -1,12 +1,9 @@
 ---
-title: "ATL Active Server Page コンポーネントを追加する |Microsoft ドキュメント"
-ms.custom: 
+title: ATL Active Server Page コンポーネントを追加する |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 dev_langs:
 - C++
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - ATL, ASP components
 - ATL ASP components
 ms.assetid: 7be2204c-6e58-4099-8892-001b848c8987
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dd79d4bc3370caf153e29a3305dc6dad1d8b97de
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b49db13f4067ee595896ace808213a11256f7ff7
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adding-an-atl-active-server-page-component"></a>ATL Active Server Page コンポーネントを追加します。
 アクティブ テンプレート ライブラリ (ATL) オブジェクトをプロジェクトに追加するには、プロジェクト必要がありますが作成されて、ATL COM アプリケーションまたは ATL サポートを含む MFC アプリケーションとして。 使用することができます、 [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)ATL アプリケーションを作成するには [ **MFC に ATL サポートを追加**から、[クラスの追加] ダイアログ ボックス](../../ide/add-class-dialog-box.md)ダイアログ ボックスで、こともできます[ATL オブジェクトを MFC アプリケーションに追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)MFC アプリケーション用の ATL サポートを実装します。  
@@ -47,7 +42,7 @@ ms.lasthandoff: 12/21/2017
   
 3.  [クラスの追加](../../ide/add-class-dialog-box.md)ダイアログ ボックスの [テンプレート] ペインで、クリックして**ATL Active Server Page コンポーネント**、順にクリック**開く**を表示する、 [ATL Active ServerPage コンポーネント ウィザード](../../atl/reference/atl-active-server-page-component-wizard.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
  [ATL プロジェクトで新しいインターフェイスの追加](../../atl/reference/adding-a-new-interface-in-an-atl-project.md)   
  [オブジェクトへの接続ポイントの追加](../../atl/adding-connection-points-to-an-object.md)   

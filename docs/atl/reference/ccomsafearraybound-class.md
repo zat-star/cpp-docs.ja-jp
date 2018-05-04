@@ -1,12 +1,9 @@
 ---
-title: "CComSafeArrayBound クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComSafeArrayBound クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComSafeArrayBound
@@ -21,17 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - CComSafeArrayBound class
 ms.assetid: dd6299db-5f84-4630-bbf0-f5add5318437
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4de823b4cdb2d7926b2a9d640b2e8f7352e389fd
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 455e71cd0ee323df8cfe43001f87179c649eefe5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomsafearraybound-class"></a>CComSafeArrayBound クラス
 このクラスは、用のラッパー、 [SAFEARRAYBOUND](http://msdn.microsoft.com/en-us/303a9bdb-71d6-4f14-8747-84cf84936c6d)構造体。  
@@ -66,10 +61,10 @@ class CComSafeArrayBound : public SAFEARRAYBOUND
   
  **ヘッダー:** atlsafe.h  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsafe.h  
   
-##  <a name="ccomsafearraybound"></a>CComSafeArrayBound::CComSafeArrayBound  
+##  <a name="ccomsafearraybound"></a>  CComSafeArrayBound::CComSafeArrayBound  
  コンストラクターです。  
   
 ```
@@ -86,7 +81,7 @@ CComSafeArrayBound(ULONG ulCount = 0, LONG lLowerBound = 0) throw();
 ### <a name="remarks"></a>コメント  
  配列は、Visual C プログラムからアクセスすることの場合は、下限を 0 として定義することをお勧めします。 配列が Visual Basic など他の言語で使用する場合は、別の下限値を使用する方がある可能性があります。  
   
-##  <a name="getcount"></a>CComSafeArrayBound::GetCount  
+##  <a name="getcount"></a>  CComSafeArrayBound::GetCount  
  このメソッドを呼び出して要素の数を返します。  
   
 ```
@@ -99,7 +94,7 @@ ULONG GetCount() const throw();
 ### <a name="remarks"></a>コメント  
  場合、関連付けられている`CComSafeArray`オブジェクトは、多次元配列を表す、このメソッドは、右端にあるディメンション内の要素の合計数を返しますのみです。 使用して[CComSafeArray::GetCount](../../atl/reference/ccomsafearray-class.md#getcount)要素の合計数を取得します。  
   
-##  <a name="getlowerbound"></a>CComSafeArrayBound::GetLowerBound  
+##  <a name="getlowerbound"></a>  CComSafeArrayBound::GetLowerBound  
  下限の境界を返すには、このメソッドを呼び出します。  
   
 ```
@@ -109,7 +104,7 @@ LONG GetLowerBound() const throw();
 ### <a name="return-value"></a>戻り値  
  下限値を返します、`CComSafeArrayBound`オブジェクト。  
   
-##  <a name="getupperbound"></a>CComSafeArrayBound::GetUpperBound  
+##  <a name="getupperbound"></a>  CComSafeArrayBound::GetUpperBound  
  上限の境界を返すには、このメソッドを呼び出します。  
   
 ```
@@ -122,7 +117,7 @@ LONG GetUpperBound() const throw();
 ### <a name="remarks"></a>コメント  
  上限の境界は、要素と下限の境界値の数によって異なります。 たとえば、下限は 0 要素の数は 10、上限の境界が 9 に自動的に設定されます。  
   
-##  <a name="operator_eq"></a>CComSafeArrayBound::operator =  
+##  <a name="operator_eq"></a>  CComSafeArrayBound::operator =  
  セット、`CComSafeArrayBound`に新しい値。  
   
 ```
@@ -143,7 +138,7 @@ CComSafeArrayBound& operator= (ULONG ulCount) throw();
 ### <a name="remarks"></a>コメント  
  `CComSafeArrayBound`オブジェクトは、既存を使用して割り当てることができる`CComSafeArrayBound`、またはを下限の境界の場合は既定で設定を 0 には、要素の数を指定することによってです。  
   
-##  <a name="setcount"></a>CComSafeArrayBound::SetCount  
+##  <a name="setcount"></a>  CComSafeArrayBound::SetCount  
  要素の数を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -157,7 +152,7 @@ ULONG SetCount(ULONG ulCount) throw();
 ### <a name="return-value"></a>戻り値  
  内の要素の数を返します、`CComSafeArrayBound`オブジェクト。  
   
-##  <a name="setlowerbound"></a>CComSafeArrayBound::SetLowerBound  
+##  <a name="setlowerbound"></a>  CComSafeArrayBound::SetLowerBound  
  下限の境界を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -176,5 +171,5 @@ LONG SetLowerBound(LONG lLowerBound) throw();
   
  上限の境界は、要素と下限の境界値の数によって異なります。 たとえば、下限は 0 要素の数は 10、上限の境界が 9 に自動的に設定されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

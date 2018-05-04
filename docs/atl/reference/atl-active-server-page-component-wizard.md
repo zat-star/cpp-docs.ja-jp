@@ -1,12 +1,9 @@
 ---
-title: "ATL Active Server Page コンポーネント ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: ATL Active Server Page コンポーネント ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - vc.codewiz.class.atl.asp.overview
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - ASP components, creating in ATL
 - ATL Active Server Page Component Wizard
 ms.assetid: 5a5cb904-dbbf-44ea-ad3d-2ddd14c1d3c5
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ad2d707b5dbfc78ec8975471114bc87bf23fe5f4
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4d717eefe9c9ee353692d343b88c57469eeb6892
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-active-server-page-component-wizard"></a>ATL Active Server Page コンポーネント ウィザード
 このウィザードは、Active Server Pages (ASP) コンポーネントをプロジェクトに挿入します。 Microsoft インターネット インフォメーション サービス (IIS) では、その拡張の Web ページ開発アーキテクチャの一部として ASP コンポーネントを使用します。  
@@ -45,7 +40,7 @@ ms.lasthandoff: 12/21/2017
  オブジェクト用に作成された C++ クラスの情報を提供します。  
   
  **短い名前**  
- オブジェクトのルート名を設定します。 決定を指定した名前、`Class`と**コクラス**名、 **.cpp ファイル**と**.h ファイル**、名、 **インターフェイス**名、**型**名、および**ProgID**それらのフィールドを個別に変更していない限り、します。  
+ オブジェクトのルート名を設定します。 決定を指定した名前、`Class`と**コクラス**名、 **.cpp ファイル**と **.h ファイル**、名、 **インターフェイス**名、**型**名、および**ProgID**それらのフィールドを個別に変更していない限り、します。  
   
  **.h ファイル**  
  新しいオブジェクトのクラスのヘッダー ファイルの名前を設定します。 既定では、この名前は、名に基づいてで提供される**短い名前**です。 ファイル名を任意の場所に保存するか、既存のファイルに、クラスの宣言を追加する、省略記号ボタンをクリックします。 既存のファイルを選択した場合、ウィザードに保存されません、選択した場所まで をクリック**完了**ウィザード。  
@@ -84,6 +79,6 @@ ms.lasthandoff: 12/21/2017
  **ProgID**  
  コンテナーは、オブジェクトの CLSID の代わりに使用できる名前を設定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL Active Server Page コンポーネント](../../atl/reference/adding-an-atl-active-server-page-component.md)
 

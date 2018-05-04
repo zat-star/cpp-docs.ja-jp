@@ -1,29 +1,24 @@
 ---
-title: "配列 (C++) の使用 |Microsoft ドキュメント"
-ms.custom: 
+title: 配列 (C++) の使用 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - arrays [C++]
 ms.assetid: 7818a7fe-7e82-4881-a3d1-7d25162b7fc7
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d7cab4f8bcc4deb8353f4cef0828af829da008e1
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0c2140dbe786a5d2a2a1b86eca17912e5e06b922
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="using-arrays-c"></a>配列の使用 (C++)
 配列添字演算子 (`[ ]`) を使用すると、配列の個々の要素にアクセスできます。 一次元配列が添字のない式で使用されている場合、配列名は配列の最初の要素へのポインターに評価されます。  
@@ -61,5 +56,5 @@ int main() {
   
  このコードでは、`multi` は `double` 型の 3 次元配列です。 `p2multi` ポインターは、サイズが 3 で型が `double` の配列を参照します。 この例では、配列が 1 つ、2 つ、および 3 つの添字と共に使用されています。 `cout` ステートメントのように、すべての添字を指定する方が一般的ですが、`cout` に続くステートメントのように、配列要素の特定のサブセットを選択した方が便利なこともあります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [配列](../cpp/arrays-cpp.md)

@@ -1,29 +1,24 @@
 ---
-title: "リンカーによる Dll の遅延読み込みの |Microsoft ドキュメント"
-ms.custom: 
+title: リンカーによる Dll の遅延読み込みの |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - delayed loading of DLLs, linker support
 ms.assetid: b2d7e449-2809-42b1-9c90-2c0ca5e31a14
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 83e75df963889730e4514c38d0551af241a788fa
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: aea4ca6d5391f71f27d59d0192fcf1f832dd6702
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="linker-support-for-delay-loaded-dlls"></a>リンカーによる DLL の遅延読み込み
 Visual C リンカーは、Dll の遅延読み込みをサポートします。 Windows SDK の機能を使用する必要がなくなるこの**LoadLibrary**と**GetProcAddress** DLL 遅延読み込みを実装します。  
@@ -62,6 +57,6 @@ Visual C リンカーは、Dll の遅延読み込みをサポートします。 
   
 -   [独自のヘルパー関数の作成](../../build/reference/developing-your-own-helper-function.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual C の Dll](../../build/dlls-in-visual-cpp.md)   
  [リンク](../../build/reference/linking.md)

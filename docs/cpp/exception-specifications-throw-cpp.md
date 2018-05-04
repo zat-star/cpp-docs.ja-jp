@@ -1,12 +1,9 @@
 ---
-title: "例外の仕様 (スロー、noexcept) (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 例外の仕様 (スロー、noexcept) (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 01/18/2018
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -19,14 +16,13 @@ helpviewer_keywords:
 ms.assetid: 4d3276df-6f31-4c7f-8cab-b9d2d003a629
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cbd45c8afed11f613722ecc7586436ff707042d7
-ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
+ms.openlocfilehash: 9ab09d5aadb489208b2e7591c2bf0f60ab836da4
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="exception-specifications-throw-noexcept-c"></a>例外の仕様 (スロー、noexcept) (C++)
 
@@ -46,11 +42,11 @@ void MyFunction(int i) noexcept;
 
 |例外の指定|説明|
 |-----------------------------|-------------|
-|`noexcept`<br>`noexcept(true)`<br>`throw()`|関数は例外をスローしません。 [/Std:c + + 14](../build/reference/std-specify-language-standard-version.md)モード (既定値)、`noexcept`と`noexcept(true)`は同等です。 宣言された関数から例外がスローされたときに`noexcept`または`noexcept(true)`、 [std::terminate](../standard-library/exception-functions.md#terminate)が呼び出されます。 として宣言された関数から例外がスローされたときに`throw()`で**/std:c + + 14**モードでは、結果は未定義の動作です。 特定の関数は呼び出されません。 これは、コンパイラを呼び出すを必要とする、標準の c++ 14 の相違[std::unexpected](../standard-library/exception-functions.md#unexpected)です。  <br> **Visual Studio 2017 15.5 およびそれ以降のバージョン**: で**/std:c + + 17**モード、 `noexcept`、 `noexcept(true)`、および`throw()`はすべて同等です。 **/Std:c + + 17**モード、`throw()`のエイリアス`noexcept(true)`です。 **/Std:c + + 17**モードで、これらの仕様のいずれかで宣言された関数から例外がスローされる[std::terminate](../standard-library/exception-functions.md#terminate)が呼び出される、c++ 17 規格による要求どおりです。|
+|`noexcept`<br>`noexcept(true)`<br>`throw()`|関数は例外をスローしません。 [/Std:c + + 14](../build/reference/std-specify-language-standard-version.md)モード (既定値)、`noexcept`と`noexcept(true)`は同等です。 宣言された関数から例外がスローされたときに`noexcept`または`noexcept(true)`、 [std::terminate](../standard-library/exception-functions.md#terminate)が呼び出されます。 として宣言された関数から例外がスローされたときに`throw()`で **/std:c + + 14**モードでは、結果は未定義の動作です。 特定の関数は呼び出されません。 これは、コンパイラを呼び出すを必要とする、標準の c++ 14 の相違[std::unexpected](../standard-library/exception-functions.md#unexpected)です。  <br> **Visual Studio 2017 15.5 およびそれ以降のバージョン**: で **/std:c + + 17**モード、 `noexcept`、 `noexcept(true)`、および`throw()`はすべて同等です。 **/Std:c + + 17**モード、`throw()`のエイリアス`noexcept(true)`です。 **/Std:c + + 17**モードで、これらの仕様のいずれかで宣言された関数から例外がスローされる[std::terminate](../standard-library/exception-functions.md#terminate)が呼び出される、c++ 17 規格による要求どおりです。|
 |`noexcept(false)`<br/>`throw(...)`<br/>ない仕様|関数は、任意の型の例外をスローできます。|
 |`throw(type)`| (**C++ 14 およびそれ以前**)、関数、型の例外がスロー`type`です。 コンパイラは、構文を受け入れますとして解釈`noexcept(false)`です。 **/Std:c + + 17**モード、コンパイラは警告 C5040 を発行します。|
 
-場合は、アプリケーションでは、例外処理を使用する必要があります関数、関数の外側のスコープを終了する前に、スローされた例外のハンドルがマークされている呼び出し履歴で`noexcept`、 `noexcept(true)`、または`throw()`です。 例外をスローする 1 つと、例外を処理する 1 つとして指定の間ですべての関数が呼び出された場合`noexcept`、 `noexcept(true)` (または`throw()`で**/std:c + + 17**モード)、プログラムが終了したときに、noexcept 関数には、例外が伝達されます。
+場合は、アプリケーションでは、例外処理を使用する必要があります関数、関数の外側のスコープを終了する前に、スローされた例外のハンドルがマークされている呼び出し履歴で`noexcept`、 `noexcept(true)`、または`throw()`です。 例外をスローする 1 つと、例外を処理する 1 つとして指定の間ですべての関数が呼び出された場合`noexcept`、 `noexcept(true)` (または`throw()`で **/std:c + + 17**モード)、プログラムが終了したときに、noexcept 関数には、例外が伝達されます。
 
 関数の例外の動作は、次の要因によって異なります。
 
@@ -61,7 +57,7 @@ void MyFunction(int i) noexcept;
 
 - 例外の指定を明示的に使用するかどうか。
 
-明示的な例外の指定は C 関数では使用できません。 C の関数をスローしないはずの下の例外**/EHsc**、下にある構造化例外をスローする可能性がありますと**/EHs**、 **/EHa**、または**/EHac**です。
+明示的な例外の指定は C 関数では使用できません。 C の関数をスローしないはずの下の例外 **/EHsc**、下にある構造化例外をスローする可能性がありますと **/EHs**、 **/EHa**、または **/EHac**です。
 
 次の表では、C++ 関数はさまざまなコンパイラ例外の処理オプションでスローすることは可能性がある可能性があるかどうかをまとめたものです。
 
@@ -140,6 +136,6 @@ About to throw 1
 in handler
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
  [try、throw、および catch ステートメント (C++)](../cpp/try-throw-and-catch-statements-cpp.md) [C++ 例外処理](../cpp/cpp-exception-handling.md)

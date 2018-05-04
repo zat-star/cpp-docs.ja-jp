@@ -2,12 +2,9 @@
 title: インポート ライブラリとエクスポート ファイルを使用して |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - import libraries, using
 - export files
 ms.assetid: 2634256a-8aa5-4495-8c9e-6cde10e4ed76
-caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 37d77fdc4df7d2e7239b8bba652d8cf8f4bbc997
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 946ef702d17762e6771bad206d0bfa682a61055e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="using-an-import-library-and-export-file"></a>インポート ライブラリとエクスポート ファイルの使用
 プログラム (実行可能ファイルまたは DLL) にエクスポート、インポートする別のプログラムまたはプログラムの 3 つ以上の両方をエクスポートおよびインポートから他の場合は、これらのプログラムをリンクするコマンドが循環エクスポートを対応する必要があります。  
@@ -40,5 +35,5 @@ ms.lasthandoff: 12/21/2017
   
  最後で開始するプログラムをリンクします。 LINK コマンドでは、オブジェクトと、プログラムでは、プログラム、およびインポート ライブラリに対して作成された LIB .exp ファイル ライブラリや、プログラムによって使用されるエクスポートのライブラリを指定します。 例を続行するには、ONE.dll のリンク コマンドには、ONE.exp と TWO.lib、だけでなく、オブジェクトおよび ONE.dll にライブラリが含まれています。 LINK コマンドでは; で .def ファイルまたは/EXPORT 仕様を指定しません。これらは不要、.exp ファイルにエクスポートの定義が含まれているためです。 .Exp ファイルを使用してリンクすると、リンクは、インポート ライブラリを作成できませんが、.exp ファイルが作成されたときに 1 つが作成されました。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [インポート ライブラリとエクスポート ファイル](../../build/reference/working-with-import-libraries-and-export-files.md)

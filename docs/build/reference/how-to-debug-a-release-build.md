@@ -1,30 +1,25 @@
 ---
-title: "方法: リリース ビルドをデバッグ |Microsoft ドキュメント"
-ms.custom: 
+title: '方法: リリース ビルドをデバッグ |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - debugging [C++], release builds
 - release builds, debugging
 ms.assetid: d333e4d1-4e6c-4384-84a9-cb549702da25
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 31113d9a5935536ac10b22c7b5f5af27b0d29970
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7e733375f01d4b2b8ec7090f7f70ad1ec5280cd9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-debug-a-release-build"></a>方法 : リリース ビルドをデバッグする
 アプリケーションのリリース ビルドをデバッグすることができます。  
@@ -33,7 +28,7 @@ ms.lasthandoff: 12/21/2017
   
 1.  開く、**プロパティ ページ**プロジェクトのダイアログ ボックス。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  クリックして、 **C/C++**ノード。 設定**デバッグ情報の形式**に[C7 互換 (/Z7)](../../build/reference/z7-zi-zi-debug-information-format.md)または**プログラム データベース (/Zi)**です。  
+2.  クリックして、 **C/C++** ノード。 設定**デバッグ情報の形式**に[C7 互換 (/Z7)](../../build/reference/z7-zi-zi-debug-information-format.md)または**プログラム データベース (/Zi)** です。  
   
 3.  展開**リンカー**  をクリックし、**全般**ノード。 設定**インクリメンタル リンクを有効にする**に[いいえ (//INCREMENTAL:NO)](../../build/reference/incremental-link-incrementally.md)です。  
   
@@ -49,5 +44,5 @@ ms.lasthandoff: 12/21/2017
   
      詳細については、次を参照してください。[コードの最適化](../../build/reference/optimizing-your-code.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リリース ビルドの問題の解決](../../build/reference/fixing-release-build-problems.md)

@@ -1,12 +1,9 @@
 ---
-title: "CStringRefElementTraits クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CStringRefElementTraits クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CStringRefElementTraits
@@ -19,17 +16,15 @@ dev_langs:
 helpviewer_keywords:
 - CStringRefElementTraits class
 ms.assetid: cc15062d-5627-46cc-ac2b-1744afdc2dbd
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c89a1e0d87550614fb8991ac3efe6bf369d147e7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e8746bf216be417fb569aae58421b272c983914b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cstringrefelementtraits-class"></a>CStringRefElementTraits クラス
 このクラスは、コレクション クラスのオブジェクトに格納された文字列に関連する静的関数を提供します。 文字列オブジェクトが参照として処理します。  
@@ -56,7 +51,7 @@ class CStringRefElementTraits : public CElementTraitsBase<T>
 |[CStringRefElementTraits::Hash](#hash)|指定した文字列の要素のハッシュ値を計算する、この静的関数を呼び出します。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、文字列を比較し、ハッシュ値を作成するために、静的関数を提供します。 これらの関数は、文字列ベースのデータを格納するコレクション クラスを使用する場合に便利です。 異なり[CStringElementTraits](../../atl/reference/cstringelementtraits-class.md)と[CStringElementTraitsI](../../atl/reference/cstringelementtraitsi-class.md)、`CStringRefElementTraits`により、`CString`として渡される引数を**const CString &**参照します。  
+ このクラスは、文字列を比較し、ハッシュ値を作成するために、静的関数を提供します。 これらの関数は、文字列ベースのデータを格納するコレクション クラスを使用する場合に便利です。 異なり[CStringElementTraits](../../atl/reference/cstringelementtraits-class.md)と[CStringElementTraitsI](../../atl/reference/cstringelementtraitsi-class.md)、`CStringRefElementTraits`により、`CString`として渡される引数を**const CString &** 参照します。  
   
  詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
@@ -65,10 +60,10 @@ class CStringRefElementTraits : public CElementTraitsBase<T>
   
  `CStringRefElementTraits`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="compareelements"></a>CStringRefElementTraits::CompareElements  
+##  <a name="compareelements"></a>  CStringRefElementTraits::CompareElements  
  2 つの文字列要素が等しいかどうかを比較する、この静的関数を呼び出します。  
   
 ```
@@ -85,7 +80,7 @@ static bool CompareElements(INARGTYPE element1, INARGTYPE element2) throw();
 ### <a name="return-value"></a>戻り値  
  要素が等しい場合は false それ以外の場合は true を返します。  
   
-##  <a name="compareelementsordered"></a>CStringRefElementTraits::CompareElementsOrdered  
+##  <a name="compareelementsordered"></a>  CStringRefElementTraits::CompareElementsOrdered  
  2 つの文字列要素を比較する、この静的関数を呼び出します。  
   
 ```
@@ -102,7 +97,7 @@ static int CompareElementsOrdered(INARGTYPE str1, INARGTYPE str2) throw();
 ### <a name="return-value"></a>戻り値  
  ゼロの文字列が同一の場合、< 0 場合`str1`はより小さい`str2`、または > 0 場合`str1`がより大きい`str2`です。 [CStringT::Compare](../../atl-mfc-shared/reference/cstringt-class.md#compare)比較を実行するメソッドを使用します。  
   
-##  <a name="hash"></a>CStringRefElementTraits::Hash  
+##  <a name="hash"></a>  CStringRefElementTraits::Hash  
  指定した文字列の要素のハッシュ値を計算する、この静的関数を呼び出します。  
   
 ```
@@ -116,6 +111,6 @@ static ULONG Hash(INARGTYPE str) throw();
 ### <a name="return-value"></a>戻り値  
  文字列の内容を使用して計算されたハッシュ値を返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CElementTraitsBase クラス](../../atl/reference/celementtraitsbase-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

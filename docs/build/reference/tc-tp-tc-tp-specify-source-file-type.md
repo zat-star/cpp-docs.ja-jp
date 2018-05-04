@@ -1,10 +1,9 @@
 ---
-title: "/Tc、/Tp、/TC、/TP (ソース ファイルの種類の指定) |Microsoft ドキュメント"
+title: /Tc、/Tp、/TC、/TP (ソース ファイルの種類の指定) |Microsoft ドキュメント
 ms.date: 1/11/2018
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLWCECompilerTool.CompileAs
 - VC.Project.VCCLCompilerTool.CompileAs
@@ -22,20 +21,19 @@ helpviewer_keywords:
 - -Tp compiler option [C++]
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b3d51e4c6bbf6a77f86be5cabde9b65f8e4f8c9f
-ms.sourcegitcommit: ff9bf140b6874bc08718674c07312ecb5f996463
+ms.openlocfilehash: 9cb612d5c26fd4db51222c480539867d5e506b70
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="tc-tp-tc-tp-specify-source-file-type"></a>/Tc、/Tp、/TC、/TP (ソース ファイル タイプの指定)
 
 **/Tc**オプションは、ファイル名引数は C ソース ファイル、.c という拡張子があるない場合でもを指定します。 **/Tp**オプションが、.cpp または .cxx 拡張子を持たない場合でも、ファイル名引数が、C++ ソース ファイルであるを指定します。 オプションとファイル名の間にスペースは省略できます。 各オプションを 1 つのファイルを指定します追加のファイルを指定するには、オプションを繰り返します。
 
-**/TC**と**/TP**のグローバルのバリアントは、 **/Tc**と**/Tp**です。 コンパイラが C ソース ファイルとして名前をコマンドラインですべてのファイルを扱うため (**/TC**) または C++ ソース ファイル (**/TP**)、コマンド ライン オプションに関連して上の場所に関係なく。 これらのグローバル オプションの 1 つのファイルでオーバーライドできます**/Tc**または**/Tp**です。
+**/TC**と **/TP**のグローバルのバリアントは、 **/Tc**と **/Tp**です。 コンパイラが C ソース ファイルとして名前をコマンドラインですべてのファイルを扱うため (**/TC**) または C++ ソース ファイル (**/TP**)、コマンド ライン オプションに関連して上の場所に関係なく。 これらのグローバル オプションの 1 つのファイルでオーバーライドできます **/Tc**または **/Tp**です。
 
 ## <a name="syntax"></a>構文
 
@@ -71,7 +69,7 @@ C または C++ ソース ファイル。
 
 この CL コマンド ラインでは、MAIN.c、TEST.prg と COLLATE.prg があるすべての C ソース ファイルを指定します。 CL will not recognize PRINT.prg.
 
-> CL MAIN.C /TcTEST.PRG /TcCOLLATE.PRG PRINT.PRG
+> CL メインです。C/TcTEST.PRG/TcCOLLATE.PRG 印刷します。PRG
 
 この CL コマンド ラインでは、TEST1.c、TEST2.cxx、TEST3.huh、および TEST4.o は、C++ ファイルとしてコンパイルし、TEST5.z は C ファイルとしてコンパイルされたことを指定します。
 

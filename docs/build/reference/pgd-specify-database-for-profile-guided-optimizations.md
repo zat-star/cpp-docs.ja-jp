@@ -4,7 +4,7 @@ ms.custom: ''
 ms.date: 03/14/2018
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCLinkerTool.ProfileGuidedDatabase
 dev_langs:
@@ -15,14 +15,13 @@ helpviewer_keywords:
 ms.assetid: 9f312498-493b-461f-886f-92652257e443
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9947e95e3d6c96d07eb12eb2f2a579e0ea1b3a6a
-ms.sourcegitcommit: ee7d74683af7631441c8c7f65ef5ceceaee4a5ee
+ms.openlocfilehash: 7685f99137a1b599a5f9020fac9e3cae4ba3bc3c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pgd-specify-database-for-profile-guided-optimizations"></a>/PGD (ガイド付き最適化のプロファイル用のデータベースの指定)
 
@@ -30,7 +29,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="syntax"></a>構文
 
-> **/PGD:**_filename_
+> **/PGD:**_ファイル名_
 
 ## <a name="argument"></a>引数
 
@@ -39,9 +38,9 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="remarks"></a>コメント
 
-非推奨を使用する場合[/LTCG:PGINSTRUMENT](../../build/reference/ltcg-link-time-code-generation.md)オプションを使用して**/PGD**既定以外の名前または .pgd ファイルの場所を指定します。 指定しない場合**/PGD**、.pgd ファイルのベース名は、出力ファイル (.exe または .dll) のベース名と同じとは、リンクの呼び出し元となる同じディレクトリに作成します。
+非推奨を使用する場合[/LTCG:PGINSTRUMENT](../../build/reference/ltcg-link-time-code-generation.md)オプションを使用して **/PGD**既定以外の名前または .pgd ファイルの場所を指定します。 指定しない場合 **/PGD**、.pgd ファイルのベース名は、出力ファイル (.exe または .dll) のベース名と同じとは、リンクの呼び出し元となる同じディレクトリに作成します。
 
-非推奨の使用時に**/LTCG:PGOPTIMIZE**オプションを使用して、 **/PGD**オプションを使用して、最適化されたイメージを作成する .pgd ファイルの名前を指定します。 *Filename*引数に一致する必要があります、 *filename*に指定された**/LTCG:PGINSTRUMENT**です。
+非推奨の使用時に **/LTCG:PGOPTIMIZE**オプションを使用して、 **/PGD**オプションを使用して、最適化されたイメージを作成する .pgd ファイルの名前を指定します。 *Filename*引数に一致する必要があります、 *filename*に指定された **/LTCG:PGINSTRUMENT**です。
 
 詳細については、次を参照してください。[ガイド付き最適化のプロファイル](../../build/reference/profile-guided-optimizations.md)です。
 

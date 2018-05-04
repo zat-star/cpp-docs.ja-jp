@@ -2,26 +2,21 @@
 title: 構造体 UNWIND_INFO |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: f0aee906-a1b9-44cc-a8ad-463637bd5411
-caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1effec5bc753f1b23f8d43a8406c61cb6663fa56
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 14b17a79905ffc7814e2aecf92e90f3db526453f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="struct-unwindinfo"></a>構造体 UNWIND_INFO
 アンワインド データの情報の構造体を使用して、関数があり、スタック ポインターでスタックでの不揮発性レジスタの保存場所の効果を記録します。  
@@ -90,5 +85,5 @@ ms.lasthandoff: 12/21/2017
  **チェーン アンワインド情報**  
  UNW_FLAG_CHAININFO フラグが設定されている場合は、3 つ UWORDs で UNWIND_INFO 構造体が終了します。  これらの UWORDs は、チェーンのアンワインドの関数の RUNTIME_FUNCTION 情報を表します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [例外処理とデバッガー サポートのためのアンワインド データ](../build/unwind-data-for-exception-handling-debugger-support.md)

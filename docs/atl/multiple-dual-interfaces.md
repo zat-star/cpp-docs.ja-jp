@@ -1,12 +1,9 @@
 ---
-title: "複数のデュアル インターフェイス |Microsoft ドキュメント"
-ms.custom: 
+title: 複数のデュアル インターフェイス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 dev_langs:
 - C++
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - IDispatchImpl class, multiple dual interfaces
 - COM_INTERFACE_ENTRY_IID macro
 ms.assetid: 7fea86e6-247f-4063-be6e-85588a9e3719
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 01d87164439a4128ff6205ea6bc3ee3d9cc5573a
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: e23682bd0b7c923a1e377463405f84a6c6ee1221
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="multiple-dual-interfaces"></a>複数のデュアル インターフェイス
 デュアル インターフェイス (つまり、vtable と遅延バインディング、したがってクラスを使用できるようにスクリプト言語と C++ の両方の柔軟性を高めて) の利点を結合することも複数継承の方法を使用します。  
@@ -47,6 +42,6 @@ ms.lasthandoff: 02/14/2018
   
  これらのアプローチでは、潜在的な名前空間の競合だけでなくコードの複雑さと保守性に問題があります。 複数のデュアル インターフェイスを作成することは推奨されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [デュアル インターフェイスと ATL](../atl/dual-interfaces-and-atl.md)
 

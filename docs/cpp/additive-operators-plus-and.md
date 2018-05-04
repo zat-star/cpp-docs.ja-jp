@@ -1,12 +1,9 @@
 ---
-title: "加法演算子: +、- |Microsoft ドキュメント"
-ms.custom: 
+title: '加法演算子: +、- |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - +
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - arithmetic operators [C++], additive operators
 - '- operator [C++], additive operators in C++'
 ms.assetid: d4afafe7-e201-4c69-a649-37f17756e784
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d1096565843cfe150530a825254e9ad6c24b5ec8
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.openlocfilehash: 5f265bf915d9ba0c984b85235bd502d6ea0a5a77
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="additive-operators--and--"></a>加法演算子: + および -
 ## <a name="syntax"></a>構文  
@@ -64,13 +59,13 @@ expression - expression
   
  これらの演算子の有効な組み合わせは以下のとおりです。  
   
- *arithmetic* + *arithmetic*  
+ *算術* + *算術演算*  
   
  *scalar* + *integral*  
   
  *integral* + *scalar*  
   
- *arithmetic* - *arithmetic*  
+ *算術* - *算術演算*  
   
  *scalar* - *scalar*  
   
@@ -121,9 +116,9 @@ for( int i = 0; i < 10; ++i )
 ## <a name="pointer-subtraction"></a>ポインターの減算  
  両方のオペランドがポインターの場合、減算の結果は、オペランド間の (配列要素内の) 差になります。 減算式は ptrdiff_t 型の符号付き整数の結果を得られます (標準インクルード ファイルで定義されている\<stddef.h >)。  
   
- それが 2 番目のオペランドである限り、オペランドの 1 つは整数型にできます。 減算の結果は、元のポインターと同じ型です。 減算の値がへのポインター、(*n* - *すれば*) 番目の配列要素を *n* 要素によって参照されます元のポインターと*すれば*2 番目のオペランドの整数値です。  
+ それが 2 番目のオペランドである限り、オペランドの 1 つは整数型にできます。 減算の結果は、元のポインターと同じ型です。 減算の値がへのポインター、(*n* - *すれば*) 番目の配列要素を*n*要素によって指される元のポインターと*すれば*2 番目のオペランドの整数値です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [二項演算子を含む式](../cpp/expressions-with-binary-operators.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [C 加法演算子](../c-language/c-additive-operators.md)

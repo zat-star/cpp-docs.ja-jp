@@ -2,11 +2,8 @@
 title: 左 shift キーおよび右シフト演算子 (&gt; &gt;と&lt; &lt;) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - <<
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - shift operators [C++]
 - operators [C++], shift
 ms.assetid: 25fa0cbb-5fdd-4657-8745-b35f7d8f1606
-caps.latest.revision: 18
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7dece9ac4045fa8b46e5edf8b266312242000229
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0d8835d096575f3f7a9d50c7be26fa435e5d6bcd
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="left-shift-and-right-shift-operators-gtgt-and-ltlt"></a>左 shift キーおよび右シフト演算子 (&gt; &gt;と&lt; &lt;)
 ビット処理シフト演算子は右シフト演算子 (>>) のビットを移動する*shift 式*、右に、左シフト演算子 (<<) のビットを移動する*shift 式*左側にします。 <sup>1</sup>  
@@ -234,6 +229,6 @@ int main() {
   
  値**E1 >> E2**は**E1**右にシフトした**E2**ビット位置。 場合**E1**符号なしの型を持つ場合、または**E1**符号付きの型と、負でない値を持つ、結果の値の商の整数部分は、 **E1/2** <sup>**E2**</sup>です。 場合**E1**符号付きの型と負の値には、結果の値は実装定義します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [二項演算子を含む式](../cpp/expressions-with-binary-operators.md)   
  [C++ の組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)

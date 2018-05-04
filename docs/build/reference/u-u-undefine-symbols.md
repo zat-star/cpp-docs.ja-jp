@@ -1,13 +1,10 @@
 ---
-title: "U-u (シンボルを未定義) |Microsoft ドキュメント"
-ms.custom: 
+title: U-u (シンボルを未定義) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLCompilerTool.UndefinePreprocessorDefinitions
 - VC.Project.VCCLWCECompilerTool.UndefinePreprocessorDefinitions
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - /U compiler option [C++]
 - U compiler option [C++]
 ms.assetid: 7bc0474f-6d1f-419b-807d-0d8816763b2a
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 18fdaf0c2cb980f1ed19fdfc0577769a9985cf85
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 897ca229ec7312812b6f2bd2991bf519e98c836c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="u-u-undefine-symbols"></a>/U、/u (定義済みマクロ シンボルの未定義化)
 **/U**コンパイラ オプションの指定したプリプロセッサ シンボル定義を解除します。 **/U**コンパイラ オプションのコンパイラを定義する Microsoft 固有のシンボル定義を解除します。  
@@ -49,7 +44,7 @@ ms.lasthandoff: 12/21/2017
  未定義にするプリプロセッサ シンボル。  
   
 ## <a name="remarks"></a>コメント  
- どちらも、 **/U**または**/u**オプションを使用して作成されたシンボルを未定義ことができます、 **#define**ディレクティブです。  
+ どちらも、 **/U**または **/u**オプションを使用して作成されたシンボルを未定義ことができます、 **#define**ディレクティブです。  
   
  **/U**オプションを使用して以前に定義されたシンボルを未定義ことができます、 **/D**オプション。  
   
@@ -80,7 +75,7 @@ ms.lasthandoff: 12/21/2017
   
 -   詳細については、「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.UndefineAllPreprocessorDefinitions%2A>」または「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.UndefinePreprocessorDefinitions%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [/J (既定の char 型の unsigned)](../../build/reference/j-default-char-type-is-unsigned.md)   

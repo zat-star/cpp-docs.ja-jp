@@ -1,29 +1,24 @@
 ---
-title: "ATL_URL_SCHEME 列挙 |Microsoft ドキュメント"
-ms.custom: 
+title: ATL_URL_SCHEME 列挙 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - ATLUTIL/ATL::ATL_URL_SCHEME
 ms.assetid: f4131046-8ba0-4ec1-8209-84203f05d20e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3aa6cf05204f4483245073b5c260e552e935dd0f
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: d180454b3189988752c9002ddc462eb460d51ff4
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atlurlscheme"></a>ATL_URL_SCHEME  
 
@@ -46,10 +41,10 @@ ms.lasthandoff: 02/14/2018
 };  
 ```  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlutil.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [概念](../active-template-library-atl-concepts.md)   
  [CUrl::SetScheme](curl-class.md#setscheme)   
  [CUrl::GetScheme](curl-class.md#getscheme)

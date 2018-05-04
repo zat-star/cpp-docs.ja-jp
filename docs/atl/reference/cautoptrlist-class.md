@@ -1,12 +1,9 @@
 ---
-title: "CAutoPtrList クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CAutoPtrList クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CAutoPtrList
@@ -17,17 +14,15 @@ dev_langs:
 helpviewer_keywords:
 - CAutoPtrList class
 ms.assetid: 11de4aca-28b0-4ff2-a74a-cb602312ffbd
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0887b0fdaeeaf498bacdc5eec66981656f34fed8
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 9101d66de6782d1a060a8acdfb0d02e9971bb9c5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cautoptrlist-class"></a>CAutoPtrList クラス
 このクラスは、スマート ポインターのリストを構築するときに役立つメソッドを提供します。  
@@ -65,10 +60,10 @@ class CAutoPtrList :
   
  `CAutoPtrList`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="cautoptrlist"></a>CAutoPtrList::CAutoPtrList  
+##  <a name="cautoptrlist"></a>  CAutoPtrList::CAutoPtrList  
  コンストラクターです。  
   
 ```
@@ -82,7 +77,7 @@ CAutoPtrList(UINT nBlockSize = 10) throw();
 ### <a name="remarks"></a>コメント  
  ブロック サイズは、新しい要素が必要な場合に割り当てられたメモリの量の測定です。 ブロック サイズを大きくはメモリ割り当てルーチンに呼び出しを減らすことより多くのリソースを使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CAtlList クラス](../../atl/reference/catllist-class.md)   
  [CAutoPtrElementTraits クラス](../../atl/reference/cautoptrelementtraits-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

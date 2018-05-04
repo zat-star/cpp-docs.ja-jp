@@ -1,13 +1,10 @@
 ---
-title: "IDispEventImpl をサポートする |Microsoft ドキュメント"
-ms.custom: 
+title: IDispEventImpl をサポートする |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 f1_keywords:
 - IDispEventImpl
 dev_langs:
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - BEGIN_SINK_MAP macro
 - IDispEventImpl class, declaring
 ms.assetid: b957f930-6a5b-4598-8e4d-8027759957e7
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8bf10a68ae15743a637df2dee52bee83c3dfcbe0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 680396ae912cca5f19e87697e7de0033213cc963
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="supporting-idispeventimpl"></a>IDispEventImpl をサポートします。
 このテンプレート クラスは[IDispEventImpl](../atl/reference/idispeventimpl-class.md) ATL クラス内での接続ポイント シンクのサポートを提供するために使用できます。 接続ポイント シンクは、外部の COM オブジェクトで発生したイベントを処理するクラスを使用します。 これらの接続ポイント シンクは、クラスによって提供される、イベント シンク マップにマップされます。  
@@ -91,6 +86,6 @@ ms.lasthandoff: 12/21/2017
   
  COM オブジェクトの一意な性質上、この手順は異なります詳細と実装間での実行にします。 これらの詳細は、このトピックの範囲を超えているし、は対応していません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL COM オブジェクトの基礎](../atl/fundamentals-of-atl-com-objects.md)
 

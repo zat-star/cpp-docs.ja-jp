@@ -2,28 +2,23 @@
 title: MSBuild (Visual C) の概要 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
 - MSBuild overview
 ms.assetid: dd258f6f-ab51-48d9-b274-f7ba911d05ca
-caps.latest.revision: 17
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f250443e0e5da2cf399282f19a5fde58c4c4b089
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ae6e6d826f4bc1e8c9ab6cc28686e4ad1e6e3b02
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="msbuild-visual-c-overview"></a>MSBuild (Visual C++) の概要  
   
@@ -54,13 +49,13 @@ MSBuild に関する次のドキュメントを参照してください。
   
 > **msbuild.exe** [ *project_file* ] [*オプション*]  
   
-使用して、 **/target** (または**/t**) および**/property** (または**/p**) 特定のプロパティとは、ターゲットをオーバーライドするコマンド ライン オプションプロジェクト ファイルで指定します。  
+使用して、 **/target** (または **/t**) および **/property** (または **/p**) 特定のプロパティとは、ターゲットをオーバーライドするコマンド ライン オプションプロジェクト ファイルで指定します。  
   
 プロジェクト ファイルの重要な機能を指定する、*ターゲット*、これは、プロジェクトと、入力とその操作を実行するために必要な出力に適用される特定の操作です。 プロジェクト ファイルでは 1 つ以上のターゲットを指定でき、既定のターゲットを含めることができます。  
   
 各ターゲットは、1 つ以上のシーケンスで構成されます*タスク*です。 各タスクは、実行可能なコマンドを 1 つ含む .NET Framework クラスによって表されます。 たとえば、 [CL タスク](/visualstudio/msbuild/cl-task)が含まれています、 [cl.exe](../build/reference/compiling-a-c-cpp-program.md)コマンド。  
   
-A*タスク パラメーター*クラス タスクのプロパティでは、通常、実行可能コマンドのコマンド ライン オプションを表します。 たとえば、`FavorSizeOrSpeed`のパラメーター、`CL`に対応するタスク、 **/Os**と**/Ot**コンパイラ オプション。  
+A*タスク パラメーター*クラス タスクのプロパティでは、通常、実行可能コマンドのコマンド ライン オプションを表します。 たとえば、`FavorSizeOrSpeed`のパラメーター、`CL`に対応するタスク、 **/Os**と **/Ot**コンパイラ オプション。  
   
 追加のタスク パラメーターは、MSBuild インフラストラクチャをサポートします。 たとえば、`Sources` タスク パラメーターは、他のタスクで使用できる一連のタスクを指定します。 MSBuild タスクの詳細については、次を参照してください。[タスク リファレンス](/visualstudio/msbuild/msbuild-task-reference)です。  
   
@@ -84,9 +79,9 @@ IDE でプロジェクト プロパティを設定し、プロジェクトを保
   
 |ディレクトリ|説明|  
 |---------------|-----------------|  
-|*ドライブ*: \Program Files *(x86)*\Microsoft Visual Studio\\*年*\\*エディション*\Common7\IDE\VC\VCTargets\ <br /><br />*ドライブ*: \Program Files *(x86)*\MSBuild\Microsoft.Cpp (x86) \v4.0\\*バージョン*\ |ターゲットによって使用される主要なターゲット ファイル (.targets) およびプロパティ ファイル (.props) があります。 既定では、$(VCTargetsPath) マクロはこのディレクトリを参照します。|  
-|*ドライブ*: \Program Files *(x86)*\Microsoft Visual Studio\\*年*\\*エディション*\Common7\IDE\VC\VCTargets\プラットフォーム\\*プラットフォーム*\ <br /><br />*ドライブ*: \Program Files *(x86)*\MSBuild\Microsoft.Cpp\v4.0\\*バージョン*\Platforms\\*プラットフォーム*\ |親ディレクトリ内のターゲットおよびプロパティをオーバーライドする、プラットフォーム固有のターゲット ファイルおよびプロパティ ファイルがあります。 また、このディレクトリには、このディレクトリ内のターゲットによって使用されるタスクを定義する DLL が含まれています。<br /><br /> *プラットフォーム*ARM、Win32、または x64 を表すプレース ホルダー サブディレクトリです。|  
-|*ドライブ*: \Program Files *(x86)*\Microsoft Visual Studio\\*年*\\*エディション*\Common7\IDE\VC\VCTargets\プラットフォーム\\*プラットフォーム*\PlatformToolsets\\*ツールセット*\ <br /><br />*ドライブ*: \Program Files *(x86)*\MSBuild\Microsoft.Cpp\v4.0\\*バージョン*\Platforms\\*プラットフォーム*\PlatformToolsets\\*ツールセット*\ <br /><br />*ドライブ*: \Program Files *(x86)*\MSBuild\Microsoft.Cpp\v4.0\Platforms\\*プラットフォーム*\PlatformToolsets\\*ツールセット*\ |使用して、指定した、Visual C アプリケーションを生成するビルドを有効にするディレクトリを含む*ツールセット*です。<br /><br /> *年*と*エディション*プレース ホルダーは、Visual Studio 2017 および以降のエディションで使用されます。 *バージョン*プレース ホルダーは、Visual Studio 2012 用 V110、V120 for Visual Studio 2013、または Visual Studio 2015 用 V140 です。 *プラットフォーム*ARM、Win32、または x64 を表すプレース ホルダー サブディレクトリです。 *ツールセット*ツールセット サブディレクトリ、Visual Studio 2015 のツールセット、Visual Studio 2013 のツールセット、またはに v110_wp80 を使用して Windows XP 用にビルドする v120_xp を使用して Windows アプリを構築するための v140 などを表すプレース ホルダーVisual Studio 2012 ツールセットを使用して Windows Phone 8.0 アプリをビルドします。<br /><br />Visual C 2008 または Visual C 2010 のいずれかのアプリケーションを生成するビルドを有効にするディレクトリを含むパスに含まれていない、*バージョン*、および*プラットフォーム*を表すプレース ホルダーItanium、Win32、または x64 サブディレクトリです。 *ツールセット*v90 または v100 ツールセット サブディレクトリを表すプレース ホルダーです。|  
+|*ドライブ*: \Program Files *(x86)* \Microsoft Visual Studio\\*年*\\*エディション*\Common7\IDE\VC\VCTargets\ <br /><br />*ドライブ*: \Program Files *(x86)* \MSBuild\Microsoft.Cpp (x86) \v4.0\\*バージョン*\ |ターゲットによって使用される主要なターゲット ファイル (.targets) およびプロパティ ファイル (.props) があります。 既定では、$(VCTargetsPath) マクロはこのディレクトリを参照します。|  
+|*ドライブ*: \Program Files *(x86)* \Microsoft Visual Studio\\*年*\\*エディション*\Common7\IDE\VC\VCTargets\プラットフォーム\\*プラットフォーム*\ <br /><br />*ドライブ*: \Program Files *(x86)* \MSBuild\Microsoft.Cpp\v4.0\\*バージョン*\Platforms\\*プラットフォーム*\ |親ディレクトリ内のターゲットおよびプロパティをオーバーライドする、プラットフォーム固有のターゲット ファイルおよびプロパティ ファイルがあります。 また、このディレクトリには、このディレクトリ内のターゲットによって使用されるタスクを定義する DLL が含まれています。<br /><br /> *プラットフォーム*ARM、Win32、または x64 を表すプレース ホルダー サブディレクトリです。|  
+|*ドライブ*: \Program Files *(x86)* \Microsoft Visual Studio\\*年*\\*エディション*\Common7\IDE\VC\VCTargets\プラットフォーム\\*プラットフォーム*\PlatformToolsets\\*ツールセット*\ <br /><br />*ドライブ*: \Program Files *(x86)* \MSBuild\Microsoft.Cpp\v4.0\\*バージョン*\Platforms\\*プラットフォーム*\PlatformToolsets\\*ツールセット*\ <br /><br />*ドライブ*: \Program Files *(x86)* \MSBuild\Microsoft.Cpp\v4.0\Platforms\\*プラットフォーム*\PlatformToolsets\\*ツールセット*\ |使用して、指定した、Visual C アプリケーションを生成するビルドを有効にするディレクトリを含む*ツールセット*です。<br /><br /> *年*と*エディション*プレース ホルダーは、Visual Studio 2017 および以降のエディションで使用されます。 *バージョン*プレース ホルダーは、Visual Studio 2012 用 V110、V120 for Visual Studio 2013、または Visual Studio 2015 用 V140 です。 *プラットフォーム*ARM、Win32、または x64 を表すプレース ホルダー サブディレクトリです。 *ツールセット*ツールセット サブディレクトリ、Visual Studio 2015 のツールセット、Visual Studio 2013 のツールセット、またはに v110_wp80 を使用して Windows XP 用にビルドする v120_xp を使用して Windows アプリを構築するための v140 などを表すプレース ホルダーVisual Studio 2012 ツールセットを使用して Windows Phone 8.0 アプリをビルドします。<br /><br />Visual C 2008 または Visual C 2010 のいずれかのアプリケーションを生成するビルドを有効にするディレクトリを含むパスに含まれていない、*バージョン*、および*プラットフォーム*を表すプレース ホルダーItanium、Win32、または x64 サブディレクトリです。 *ツールセット*v90 または v100 ツールセット サブディレクトリを表すプレース ホルダーです。|  
   
 ### <a name="support-files"></a>サポート ファイル  
   
@@ -145,6 +140,6 @@ Visual C++ のサポート ファイル内には、ターゲットが数多く�
 |XdcMake|XML ドキュメント ツール (xdcmake.exe) を実行します。|  
 |Xsd|XML スキーマ定義ツール (Xsd.exe) を実行します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
 [MSBuild (Visual C++)](../build/msbuild-visual-cpp.md)

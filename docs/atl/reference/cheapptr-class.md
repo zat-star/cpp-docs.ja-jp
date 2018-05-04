@@ -1,12 +1,9 @@
 ---
-title: "CHeapPtr クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CHeapPtr クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CHeapPtr
@@ -19,17 +16,15 @@ dev_langs:
 helpviewer_keywords:
 - CHeapPtr class
 ms.assetid: e5c5bfd4-9bf1-4164-8a83-8155fe253454
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 47fe8c0d7475c67228fd7335b1aa167ced237202
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a728f84a2eaa3f0138e2b0a95c25f8867c17432e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cheapptr-class"></a>CHeapPtr クラス
 ヒープのポインターを管理するためのスマート ポインター クラスです。  
@@ -73,17 +68,17 @@ class CHeapPtr : public CHeapPtrBase<T, Allocator>
 |[CHeapPtr::operator =](#operator_eq)|代入演算子です。|  
   
 ## <a name="remarks"></a>コメント  
- `CHeapPtr`派生した[CHeapPtrBase](../../atl/reference/cheapptrbase-class.md) 、既定では、CRT ルーチン (で[CCRTAllocator](../../atl/reference/ccrtallocator-class.md)) を割り当てたり、メモリを解放します。 クラス[CHeapPtrList](../../atl/reference/cheapptrlist-class.md)ヒープのポインターのリストを構築するために使用することがあります。 関連項目[CComHeapPtr](../../atl/reference/ccomheapptr-class.md)、COM メモリ割り当てルーチンを使用します。  
+ `CHeapPtr` 派生した[CHeapPtrBase](../../atl/reference/cheapptrbase-class.md) 、既定では、CRT ルーチン (で[CCRTAllocator](../../atl/reference/ccrtallocator-class.md)) を割り当てたり、メモリを解放します。 クラス[CHeapPtrList](../../atl/reference/cheapptrlist-class.md)ヒープのポインターのリストを構築するために使用することがあります。 関連項目[CComHeapPtr](../../atl/reference/ccomheapptr-class.md)、COM メモリ割り当てルーチンを使用します。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CHeapPtrBase](../../atl/reference/cheapptrbase-class.md)  
   
  `CHeapPtr`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcore.h  
   
-##  <a name="allocate"></a>CHeapPtr::Allocate  
+##  <a name="allocate"></a>  CHeapPtr::Allocate  
  このメソッドを呼び出してオブジェクトを格納するヒープにメモリを割り当てます。  
   
 ```
@@ -103,7 +98,7 @@ bool Allocate(size_t nElements = 1) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#77](../../atl/codesnippet/cpp/cheapptr-class_1.cpp)]  
   
-##  <a name="cheapptr"></a>CHeapPtr::CHeapPtr  
+##  <a name="cheapptr"></a>  CHeapPtr::CHeapPtr  
  コンストラクターです。  
   
 ```
@@ -122,7 +117,7 @@ CHeapPtr(CHeapPtr<T, Allocator>& p) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#78](../../atl/codesnippet/cpp/cheapptr-class_2.cpp)]  
   
-##  <a name="operator_eq"></a>CHeapPtr::operator =  
+##  <a name="operator_eq"></a>  CHeapPtr::operator =  
  代入演算子。  
   
 ```
@@ -140,7 +135,7 @@ CHeapPtr<T, Allocator>& operator=(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#80](../../atl/codesnippet/cpp/cheapptr-class_3.cpp)]  
   
-##  <a name="reallocate"></a>CHeapPtr::Reallocate  
+##  <a name="reallocate"></a>  CHeapPtr::Reallocate  
  このメソッドを呼び出して、ヒープにメモリを再割り当てください。  
   
 ```
@@ -157,7 +152,7 @@ bool Reallocate(size_t nElements) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#79](../../atl/codesnippet/cpp/cheapptr-class_4.cpp)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CHeapPtrBase クラス](../../atl/reference/cheapptrbase-class.md)   
  [CCRTAllocator クラス](../../atl/reference/ccrtallocator-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

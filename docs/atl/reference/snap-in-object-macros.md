@@ -2,11 +2,8 @@
 title: スナップイン オブジェクト マクロ |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlsnap/ATL::BEGIN_EXTENSION_SNAPIN_NODEINFO_MAP
@@ -20,17 +17,15 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 4e9850c0-e395-4929-86c9-584a81828053
-caps.latest.revision: 16
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 111fb83ed0eaae936dfa38d7047b2a0c2fb2443b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ba8a335bbe5424ca04f1db03a3f3ac4bf3cfa9ec
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="snap-in-object-macros"></a>スナップイン オブジェクト マクロ
 これらのマクロは、スナップインの拡張機能のサポートを提供します。  
@@ -46,10 +41,10 @@ ms.lasthandoff: 12/21/2017
 |[SNAPINMENUID](#snapinmenuid)|スナップインでオブジェクトによって使用されるコンテキスト メニューの ID を宣言します。|  
 |[SNAPINTOOLBARID_ENTRY](#snapintoolbarid_entry)|スナップインでオブジェクトのツールバーのマップにツールバーを入力します。|  
 
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsnap.h 
    
-##  <a name="begin_extension_snapin_nodeinfo_map"></a>BEGIN_EXTENSION_SNAPIN_NODEINFO_MAP  
+##  <a name="begin_extension_snapin_nodeinfo_map"></a>  BEGIN_EXTENSION_SNAPIN_NODEINFO_MAP  
  スナップイン拡張データ クラスのマップの先頭を示します。  
   
 ```
@@ -66,7 +61,7 @@ BEGIN_EXTENSION_SNAPIN_NODEINFO_MAP(classname)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#105](../../atl/codesnippet/cpp/snap-in-object-macros_1.h)]  
   
-##  <a name="begin_snapintoolbarid_map"></a>BEGIN_SNAPINTOOLBARID_MAP  
+##  <a name="begin_snapintoolbarid_map"></a>  BEGIN_SNAPINTOOLBARID_MAP  
  マップの先頭、ツールバー ID のスナップインでオブジェクトを宣言します。  
   
 ```
@@ -80,7 +75,7 @@ BEGIN_SNAPINTOOLBARID_MAP(_class)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#106](../../atl/codesnippet/cpp/snap-in-object-macros_2.h)]  
   
-##  <a name="end_extension_snapin_nodeinfo_map"></a>END_EXTENSION_SNAPIN_NODEINFO_MAP  
+##  <a name="end_extension_snapin_nodeinfo_map"></a>  END_EXTENSION_SNAPIN_NODEINFO_MAP  
  データ クラスのマップのスナップイン拡張の末尾をマークします。  
   
 ```
@@ -93,7 +88,7 @@ END_EXTENSION_SNAPIN_NODEINFO_MAP()
 ### <a name="example"></a>例  
  例を参照して[BEGIN_EXTENSION_SNAPIN_NODEINFO_MAP](#begin_extension_snapin_nodeinfo_map)です。  
   
-##  <a name="end_snapintoolbarid_map"></a>END_SNAPINTOOLBARID_MAP  
+##  <a name="end_snapintoolbarid_map"></a>  END_SNAPINTOOLBARID_MAP  
  マップの最後、ツールバー ID のスナップインでオブジェクトを宣言します。  
   
 ```
@@ -107,7 +102,7 @@ END_SNAPINTOOLBARID_MAP( _class )
 ### <a name="example"></a>例  
  例を参照して[BEGIN_SNAPINTOOLBARID_MAP](#begin_snapintoolbarid_map)です。  
   
-##  <a name="extension_snapin_dataclass"></a>EXTENSION_SNAPIN_DATACLASS  
+##  <a name="extension_snapin_dataclass"></a>  EXTENSION_SNAPIN_DATACLASS  
  スナップイン拡張データ クラスにデータ メンバーを追加、 **ISnapInItemImpl**-クラスを派生します。  
   
 ```
@@ -124,7 +119,7 @@ EXTENSION_SNAPIN_DATACLASS(dataClass )
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#105](../../atl/codesnippet/cpp/snap-in-object-macros_1.h)]  
   
-##  <a name="extension_snapin_nodeinfo_entry"></a>EXTENSION_SNAPIN_NODEINFO_ENTRY  
+##  <a name="extension_snapin_nodeinfo_entry"></a>  EXTENSION_SNAPIN_NODEINFO_ENTRY  
  データ クラスのマップのスナップイン拡張にスナップイン拡張データ クラスを追加します。  
   
 ```
@@ -141,7 +136,7 @@ EXTENSION_SNAPIN_NODEINFO_ENTRY( dataClass )
 ### <a name="example"></a>例  
  例を参照して[BEGIN_EXTENSION_SNAPIN_NODEINFO_MAP](#begin_extension_snapin_nodeinfo_map)です。  
   
-##  <a name="snapinmenuid"></a>SNAPINMENUID  
+##  <a name="snapinmenuid"></a>  SNAPINMENUID  
  このマクロを使用すると、スナップイン オブジェクトのコンテキスト メニュー リソースを宣言できます。  
   
 ```
@@ -152,7 +147,7 @@ SNAPINMENUID( id )
  `id`  
  [in]スナップインでオブジェクトのコンテキスト メニューを識別します。  
   
-##  <a name="snapintoolbarid_entry"></a>SNAPINTOOLBARID_ENTRY  
+##  <a name="snapintoolbarid_entry"></a>  SNAPINTOOLBARID_ENTRY  
  このマクロを使用すると、スナップイン オブジェクトのツールバー ID マップにツールバー ID を入力します。  
   
 ```
@@ -169,5 +164,5 @@ SNAPINTOOLBARID_ENTRY( id )
 ### <a name="example"></a>例  
  例を参照して[BEGIN_SNAPINTOOLBARID_MAP](#begin_snapintoolbarid_map)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [[マクロ]](../../atl/reference/atl-macros.md)

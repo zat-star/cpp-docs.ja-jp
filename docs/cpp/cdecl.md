@@ -1,12 +1,9 @@
 ---
-title: "_ _cdecl |Microsoft ドキュメント"
-ms.custom: 
+title: _ _cdecl |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __cdecl_cpp
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - __cdecl keyword [C++]
 ms.assetid: 1ff1d03e-fb4e-4562-8be1-74f1ad6427f1
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d73de8b2a158c09ebd61306683f6fdc1ad0f514e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d07c34c11037132b9f9695ec889bb681c7f43951
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cdecl"></a>__cdecl
 **Microsoft 固有の仕様**  
@@ -42,7 +37,7 @@ ms.lasthandoff: 12/21/2017
 > [!NOTE]
 >  関連情報については、次を参照してください。[装飾名](../build/reference/decorated-names.md)です。  
   
- 変数名または関数名の前に `__cdecl` 修飾子を置きます。 C の名前と呼び出し規則は、既定値であるためにのみ行う必要があります`__cdecl`x86 コードで指定したときに、 **/Gv** (vectorcall)、 **/Gz** (stdcall)、または**/Gr** (fastcall) コンパイラ オプション。 [/Gd](../build/reference/gd-gr-gv-gz-calling-convention.md)コンパイラ オプションの強制、`__cdecl`呼び出し規約です。  
+ 変数名または関数名の前に `__cdecl` 修飾子を置きます。 C の名前と呼び出し規則は、既定値であるためにのみ行う必要があります`__cdecl`x86 コードで指定したときに、 **/Gv** (vectorcall)、 **/Gz** (stdcall)、または **/Gr** (fastcall) コンパイラ オプション。 [/Gd](../build/reference/gd-gr-gv-gz-calling-convention.md)コンパイラ オプションの強制、`__cdecl`呼び出し規約です。  
   
  ARM と x64 のプロセッサでは、`__cdecl` はコンパイラによって受け入れられますが、通常は無視されます。 ARM と x64 の規約に基づいて、引数は可能であればレジスタで渡され、残りの引数はスタックで渡されます。 X64 のコードは、使用`__cdecl`を上書きする、 **/Gv**コンパイラ オプションと、既定の x64 呼び出し規約を使用します。  
   
@@ -76,6 +71,6 @@ int __cdecl system(const char *);
 typedef BOOL (__cdecl *funcname_ptr)(void * arg1, const char * arg2, DWORD flags, ...);  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [引数の渡し規則と名前付け規則](../cpp/argument-passing-and-naming-conventions.md)   
  [キーワード](../cpp/keywords-cpp.md)

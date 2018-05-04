@@ -2,26 +2,21 @@
 title: あいまいな宣言 (C++) を解決する |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
 ms.assetid: 3d773ee7-bbea-47de-80c2-cb0a9d4ec0b9
-caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 70c010cf3806581c6b77bb508f3adb68e3c230f0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 530111ee439a991201debab876d485a36b7f5ac5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="resolving-ambiguous-declarations-c"></a>あいまいな宣言 (C++) の解決
 特定の型から別の型に明示的に変換するには、キャストを使用し、目的の型名を指定する必要があります。 一部の型キャストでは、構文にあいまいさが発生します。 次の関数形式の型キャストはあいまいです。  
@@ -46,5 +41,5 @@ char *aName = String( s );
   
  オブジェクト、およびユーザー定義型から変換の宣言では明らかに`String`入力**char \*** の初期化を行うために呼び出される`aName`です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  

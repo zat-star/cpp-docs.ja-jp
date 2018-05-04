@@ -18,11 +18,11 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3533d43783648c43b657c8073ada0c2042808b10
-ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.openlocfilehash: 0eda816c4266117da941801d7e4e3abb6934e963
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="c-complex-math-support"></a>C の複雑な数値演算のサポート
 
@@ -109,4 +109,4 @@ math.h ヘッダーは個別の型 **struct _complex** を定義します。こ�
 
 ## <a name="see-also"></a>関連項目
 
-[カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)
+[カテゴリ別ユニバーサル C ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)<br/>

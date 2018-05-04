@@ -2,12 +2,9 @@
 title: -GZ (スタックを有効にするフレームの実行時エラー チェック) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /gz
 dev_langs:
@@ -19,20 +16,18 @@ helpviewer_keywords:
 - GZ compiler option [C++]
 - debug builds, catch release-build errors
 ms.assetid: b3efeeff-d5e3-4057-91c9-f6fc73d0270c
-caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 621878aacaf2a1b36ed0014451ada504d8a24556
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 31224fa3b2809cbc7b7f29868ad4c3e6a89954e0
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="gz-enable-stack-frame-run-time-error-checking"></a>/GZ (スタック フレームのランタイム エラー チェックの有効化)
-同じ操作を実行、 [/RTC (ランタイム エラー チェック)](../../build/reference/rtc-run-time-error-checks.md)オプション。 使用しないでください。  
+同じ操作を実行、 [/RTC (ランタイム エラー チェック)](../../build/reference/rtc-run-time-error-checks.md)オプション。 非推奨。  
   
 ## <a name="syntax"></a>構文  
   
@@ -59,6 +54,6 @@ ms.lasthandoff: 12/21/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

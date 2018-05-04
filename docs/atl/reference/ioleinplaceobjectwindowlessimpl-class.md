@@ -2,11 +2,8 @@
 title: IOleInPlaceObjectWindowlessImpl クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IOleInPlaceObjectWindowlessImpl
@@ -29,17 +26,15 @@ helpviewer_keywords:
 - controls [ATL], windowless
 - deactivating ATL
 ms.assetid: a2e0feb4-bc59-4adf-aab2-105457bbdbb4
-caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3f455172723be4f46751b45d244e74dda5fcacae
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f5616258405eb8346132d32b8f7fd71d0b4794d6
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ioleinplaceobjectwindowlessimpl-class"></a>IOleInPlaceObjectWindowlessImpl クラス
 このクラスは実装**IUnknown**ウィンドウなしのコントロールを使用しているウィンドウ メッセージを受信して、ドラッグ アンド ドロップ操作に参加できるようにするためのメソッドを提供します。  
@@ -83,10 +78,10 @@ class IOleInPlaceObjectWindowlessImpl
   
  `IOleInPlaceObjectWindowlessImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="contextsensitivehelp"></a>IOleInPlaceObjectWindowlessImpl::ContextSensitiveHelp  
+##  <a name="contextsensitivehelp"></a>  IOleInPlaceObjectWindowlessImpl::ContextSensitiveHelp  
  返します**E_NOTIMPL**です。  
   
 ```
@@ -96,7 +91,7 @@ HRESULT ContextSensitiveHelp(BOOL fEnterMode);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleWindow::ContextSensitiveHelp](http://msdn.microsoft.com/library/windows/desktop/ms680059) Windows SDK にします。  
   
-##  <a name="getdroptarget"></a>IOleInPlaceObjectWindowlessImpl::GetDropTarget  
+##  <a name="getdroptarget"></a>  IOleInPlaceObjectWindowlessImpl::GetDropTarget  
  返します**E_NOTIMPL**です。  
   
 ```
@@ -106,7 +101,7 @@ HRESULT GetDropTarget(IDropTarget** ppDropTarget);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleInPlaceObjectWindowless::GetDropTarget](http://msdn.microsoft.com/library/windows/desktop/ms678535) Windows SDK にします。  
   
-##  <a name="getwindow"></a>IOleInPlaceObjectWindowlessImpl::GetWindow  
+##  <a name="getwindow"></a>  IOleInPlaceObjectWindowlessImpl::GetWindow  
  コンテナーは、コントロールのウィンドウ ハンドルを取得するには、この関数を呼び出します。  
   
 ```
@@ -118,7 +113,7 @@ HRESULT GetWindow(HWND* phwnd);
   
  参照してください[IOleWindow::GetWindow](http://msdn.microsoft.com/library/windows/desktop/ms687282) Windows SDK にします。  
   
-##  <a name="inplacedeactivate"></a>IOleInPlaceObjectWindowlessImpl::InPlaceDeactivate  
+##  <a name="inplacedeactivate"></a>  IOleInPlaceObjectWindowlessImpl::InPlaceDeactivate  
  インプレース アクティブなコントロールを非アクティブ化するコンテナーによって呼び出されます。  
   
 ```
@@ -130,7 +125,7 @@ HRESULT InPlaceDeactivate(HWND* phwnd);
   
  参照してください[IOleInPlaceObject::InPlaceDeactivate](http://msdn.microsoft.com/library/windows/desktop/ms679700) Windows SDK にします。  
   
-##  <a name="onwindowmessage"></a>IOleInPlaceObjectWindowlessImpl::OnWindowMessage  
+##  <a name="onwindowmessage"></a>  IOleInPlaceObjectWindowlessImpl::OnWindowMessage  
  インプレースで有効になっているウィンドウなしのコントロールをコンテナーからのメッセージをディスパッチします。  
   
 ```
@@ -144,7 +139,7 @@ HRESULT OnWindowMessage(
 ### <a name="remarks"></a>コメント  
  参照してください[IOleInPlaceObjectWindowless::OnWindowMessage](http://msdn.microsoft.com/library/windows/desktop/ms693783) Windows SDK にします。  
   
-##  <a name="reactivateandundo"></a>IOleInPlaceObjectWindowlessImpl::ReactivateAndUndo  
+##  <a name="reactivateandundo"></a>  IOleInPlaceObjectWindowlessImpl::ReactivateAndUndo  
  返します**E_NOTIMPL**です。  
   
 ```
@@ -154,7 +149,7 @@ HRESULT ReactivateAndUndo();
 ### <a name="remarks"></a>コメント  
  参照してください[IOleInPlaceObject::ReactivateAndUndo](http://msdn.microsoft.com/library/windows/desktop/ms691372) Windows SDK にします。  
   
-##  <a name="setobjectrects"></a>IOleInPlaceObjectWindowlessImpl::SetObjectRects  
+##  <a name="setobjectrects"></a>  IOleInPlaceObjectWindowlessImpl::SetObjectRects  
  コントロールのサイズや位置が変更されたことを通知するために、コンテナーによって呼び出されます。  
   
 ```
@@ -166,7 +161,7 @@ HRESULT SetObjectRects(LPCRECT prcPos, LPCRECT prcClip);
   
  参照してください[IOleInPlaceObject::SetObjectRects](http://msdn.microsoft.com/library/windows/desktop/ms683767) Windows SDK にします。  
   
-##  <a name="uideactivate"></a>IOleInPlaceObjectWindowlessImpl::UIDeactivate  
+##  <a name="uideactivate"></a>  IOleInPlaceObjectWindowlessImpl::UIDeactivate  
  非アクティブ化し、インプレース アクティブ化をサポートするコントロールのユーザー インターフェイスを削除します。  
   
 ```
@@ -178,6 +173,6 @@ HRESULT UIDeactivate();
   
  参照してください[IOleInPlaceObject::UIDeactivate](http://msdn.microsoft.com/library/windows/desktop/ms693348) Windows SDK にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CComControl クラス](../../atl/reference/ccomcontrol-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

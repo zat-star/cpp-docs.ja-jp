@@ -1,12 +1,9 @@
 ---
-title: "関係演算子: &lt;、 &gt;、 &lt;=、および&gt;= |Microsoft ドキュメント"
-ms.custom: 
+title: '関係演算子: &lt;、 &gt;、 &lt;=、および&gt;= |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - <
@@ -24,19 +21,17 @@ helpviewer_keywords:
 - less than or equal to operator
 - <= operator
 ms.assetid: d346b53d-f14d-4962-984f-89d39a17ca0f
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 28d7cf77f9bea05a9220aea3d4006f64899b84ec
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ea629afbe975e60e9fc4f25e51d757eb3f0f8728
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="relational-operators-lt-gt-lt-and-gt"></a>関係演算子: &lt;、 &gt;、 &lt;=、および&gt;=
+# <a name="relational-operators-lt-gt-lt-and-gt"></a>関係演算子: &lt;、 &gt;、 &lt;=、および &gt;=
 ## <a name="syntax"></a>構文  
   
 ```  
@@ -103,7 +98,7 @@ int main() {
   
  2 個のポインターが、同じ配列の要素、または配列の末尾の次の位置の要素をポイントしている場合、より上位の添字を持つオブジェクトへのポインターが高く評価されます。 ポインターの比較は、ポインターが同じ配列のオブジェクトまたは配列の末尾の次の位置を参照している場合にのみ、有効であると保証されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [二項演算子を含む式](../cpp/expressions-with-binary-operators.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [C 関係演算子と等値演算子](../c-language/c-relational-and-equality-operators.md)

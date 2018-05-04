@@ -1,12 +1,9 @@
 ---
-title: "CComEnumImpl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComEnumImpl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComEnumImpl
@@ -27,17 +24,15 @@ dev_langs:
 helpviewer_keywords:
 - CComEnumImpl class
 ms.assetid: cc0d8e76-e608-46db-87cd-4c7161fe32d2
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7cda4598f5d5b0e5b3dbca265066c8366cfd6d67
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 14c7b1e72db3337b786a0e524ae3d8da964f6bbc
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomenumimpl-class"></a>CComEnumImpl クラス
 このクラスは、配列内に列挙されている項目が格納 COM 列挙子インターフェイスの実装を提供します。  
@@ -93,7 +88,7 @@ class ATL_NO_VTABLE CComEnumImpl : public Base
 |[CComEnumImpl::m_spUnk](#m_spunk)|**IUnknown**列挙されているコレクションを提供するオブジェクトのポインター。|  
   
 ## <a name="remarks"></a>コメント  
- `CComEnumImpl`配列内に列挙されている項目が格納 COM 列挙子インターフェイスの実装を提供します。 このクラスと似ています、`IEnumOnSTLImpl`列挙子インターフェイスの実装を提供するクラスは、C++ 標準ライブラリのコンテナーに基づいています。  
+ `CComEnumImpl` 配列内に列挙されている項目が格納 COM 列挙子インターフェイスの実装を提供します。 このクラスと似ています、`IEnumOnSTLImpl`列挙子インターフェイスの実装を提供するクラスは、C++ 標準ライブラリのコンテナーに基づいています。  
   
 > [!NOTE]
 >  詳細についてはさらに違いに`CComEnumImpl`と`IEnumOnSTLImpl`を参照してください[保ちます](#init)です。  
@@ -109,24 +104,24 @@ class ATL_NO_VTABLE CComEnumImpl : public Base
   
  `CComEnumImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="ccomenumimpl"></a>CComEnumImpl::CComEnumImpl  
+##  <a name="ccomenumimpl"></a>  CComEnumImpl::CComEnumImpl  
  コンストラクターです。  
   
 ```
 CComEnumImpl();
 ```  
   
-##  <a name="dtor"></a>CComEnumImpl:: ~ CComEnumImpl  
+##  <a name="dtor"></a>  CComEnumImpl:: ~ CComEnumImpl  
  デストラクターです。  
   
 ```
 ~CComEnumImpl();
 ```  
   
-##  <a name="init"></a>保ちます  
+##  <a name="init"></a>  保ちます  
  クライアントに返す列挙子インターフェイスへのポインターを渡す前に、このメソッドを呼び出す必要があります。  
   
 ```
@@ -158,7 +153,7 @@ HRESULT Init(
   
  別のオブジェクトに保持されている配列内の項目にポインターを渡す場合 (データをコピーする列挙子を要求しない) 場合を使えば、 *pUnk*するが、オブジェクトと配列を保持している限り、列挙子の使用可能なパラメーターその必要があります。 列挙子には、それを維持するオブジェクトの COM 参照だけが保持されます。 列挙子が破棄されるときに、COM 参照が自動的に解放します。  
   
- `flags`パラメーターでは、列挙子が渡された配列の要素を処理する方法を指定することができます。 `flags`値のいずれかを実行、**使用**次に示す列挙体。  
+ `flags`パラメーターでは、列挙子が渡された配列の要素を処理する方法を指定することができます。 `flags` 値のいずれかを実行、**使用**次に示す列挙体。  
   
 ```  
 enum CComEnumFlags  
@@ -178,7 +173,7 @@ enum CComEnumFlags
 > [!NOTE]
 >  このメソッドのプロトタイプでは、配列の要素を指定の型として**T**ここで、 **T**クラスをテンプレート パラメーターとして定義されました。 これは COM インターフェイスのメソッドを使用して公開されている同じ種類[CComEnumImpl::Next](#next)です。 このこととは異なり[つまり](../../atl/reference/ienumonstlimpl-class.md)、このクラスは別の記憶域をサポートしていませんし、データ型を公開します。 配列内の要素のデータ型は COM インターフェイスで公開されているデータ型と同じである必要があります。  
   
-##  <a name="clone"></a>CComEnumImpl::Clone  
+##  <a name="clone"></a>  CComEnumImpl::Clone  
  このメソッドの実装を提供する、 [IEnumXXXX::Clone](https://msdn.microsoft.com/library/ms690336.aspx)メソッド型のオブジェクトを作成することで`CComEnum`、同じ配列と、現在のオブジェクトによって使用される反復子で初期化してにインターフェイスを返す、新しく作成されたオブジェクト。  
   
 ```
@@ -195,42 +190,42 @@ STDMETHOD(Clone)(Base** ppEnum);
 ### <a name="remarks"></a>コメント  
  複製された列挙子しないように、独自に注意してください、元の列挙子が使用するデータのコピー (または所有権の取得)。 必要に応じて、複製された列挙子は維持元の列挙子 (COM の参照を使用) に必要な限りデータが使用できることを確認します。  
   
-##  <a name="m_spunk"></a>CComEnumImpl::m_spUnk  
+##  <a name="m_spunk"></a>  CComEnumImpl::m_spUnk  
  このスマート ポインターに渡されるオブジェクトの参照を保持する[保ちます](#init)、残っているアライブ列挙子の有効期間中にことを確認します。  
   
 ```
 CComPtr<IUnknown> m_spUnk;
 ```  
   
-##  <a name="m_begin"></a>CComEnumImpl::m_begin  
+##  <a name="m_begin"></a>  CComEnumImpl::m_begin  
  列挙するアイテムを含む配列の最後の要素の次の場所へのポインター。  
   
 ```
 T* m_begin;
 ```  
   
-##  <a name="m_end"></a>CComEnumImpl::m_end  
+##  <a name="m_end"></a>  CComEnumImpl::m_end  
  列挙するアイテムを含む配列の最初の要素へのポインター。  
   
 ```
 T* m_end;
 ```  
   
-##  <a name="m_iter"></a>CComEnumImpl::m_iter  
+##  <a name="m_iter"></a>  CComEnumImpl::m_iter  
  列挙するアイテムを含む配列の現在の要素へのポインター。  
   
 ```
 T* m_iter;
 ```  
   
-##  <a name="m_dwflags"></a>CComEnumImpl::m_dwFlags  
+##  <a name="m_dwflags"></a>  CComEnumImpl::m_dwFlags  
  渡される、フラグ[保ちます](#init)です。  
   
 ```
 DWORD m_dwFlags;
 ```  
   
-##  <a name="next"></a>CComEnumImpl::Next  
+##  <a name="next"></a>  CComEnumImpl::Next  
  このメソッドの実装を提供する、 [IEnumXXXX::Next](https://msdn.microsoft.com/library/ms695273.aspx)メソッドです。  
   
 ```
@@ -250,7 +245,7 @@ STDMETHOD(Next)(ULONG celt, T* rgelt, ULONG* pceltFetched);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="reset"></a>CComEnumImpl::Reset  
+##  <a name="reset"></a>  CComEnumImpl::Reset  
  このメソッドの実装を提供する、 [IEnumXXXX::Reset](https://msdn.microsoft.com/library/ms693414.aspx)メソッドです。  
   
 ```
@@ -260,7 +255,7 @@ STDMETHOD(Reset)(void);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="skip"></a>より  
+##  <a name="skip"></a>  より  
  このメソッドの実装を提供する、 [IEnumXXXX::Skip](https://msdn.microsoft.com/library/ms690392.aspx)メソッドです。  
   
 ```
@@ -277,7 +272,7 @@ STDMETHOD(Skip)(ULONG celt);
 ### <a name="remarks"></a>コメント  
  場合は、E_INVALIDARG を返します`celt`0 より小さい場合は S_FALSE を返します`celt`要素が返されると、それ以外の場合は S_OK を返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [つまりクラス](../../atl/reference/ienumonstlimpl-class.md)   
  [上記のクラス](../../atl/reference/ccomenum-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

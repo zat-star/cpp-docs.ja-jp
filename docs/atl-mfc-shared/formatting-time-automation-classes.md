@@ -1,12 +1,9 @@
 ---
-title: "書式指定の時刻: オートメーション クラス |Microsoft ドキュメント"
-ms.custom: 
+title: '書式指定の時刻: オートメーション クラス |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 dev_langs:
 - C++
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - time [C++], formatting
 - formatting [C++], time
 ms.assetid: 155c5bef-b555-4bed-9545-29afc49715f1
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2000f3ec059c98150fbb82c71f0d810bdae53d06
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 710faeef504e9d2963837f721200c51386540d64
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="formatting-time-automation-classes"></a>書式指定の時刻: オートメーション クラス
 #### <a name="to-format-a-time"></a>時刻の書式を設定するには  
@@ -44,6 +39,6 @@ ms.lasthandoff: 12/21/2017
   
 -   [SYSTEMTIME の操作](../atl-mfc-shared/date-and-time-systemtime-support.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [日付と時刻: オートメーション サポート](../atl-mfc-shared/date-and-time-automation-support.md)
 

@@ -1,13 +1,10 @@
 ---
-title: "方法: Visual C プロジェクトを 64 ビットを対象とする、x64 プラットフォーム |Microsoft ドキュメント"
-ms.custom: 
+title: '方法: Visual C プロジェクトを 64 ビットを対象とする、x64 プラットフォーム |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - 64-bit programming [C++], configuring projects
 - project configurations [C++]
 ms.assetid: 2b9ae001-df36-4750-83b2-982145d632ad
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7e651d28af3bd8635691d6a54d6c4cca8eb8c160
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3f1a4c9a27d4fdbbd57348c1fc2ce27301a1a95e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-configure-visual-c-projects-to-target-64-bit-x64-platforms"></a>方法: Visual C プロジェクトを 64 ビットを対象とする、x64 プラットフォーム
 
@@ -42,7 +37,7 @@ Visual Studio IDE でプロジェクト構成を使用すると、プラット�
   
 3.  **[構成マネージャー]** ボタンを選択して **[構成マネージャー]** ダイアログ ボックスを開きます。  
   
-4.  **アクティブ ソリューション プラットフォーム**ドロップダウン リストで、 **\<新規… >**オプションを開くには、**新しいソリューション プラットフォーム** ダイアログ ボックス。  
+4.  **アクティブ ソリューション プラットフォーム**ドロップダウン リストで、 **\<新規… >** オプションを開くには、**新しいソリューション プラットフォーム** ダイアログ ボックス。  
   
 5.  **入力または選択して、新しいプラットフォーム**ドロップダウン リスト、ターゲットのプラットフォームの 64 ビットを選択します。  
   
@@ -55,7 +50,7 @@ Visual Studio IDE でプロジェクト構成を使用すると、プラット�
   
 ### <a name="to-copy-win32-project-settings-into-a-64-bit-project-configuration"></a>Win32 プロジェクトの設定を 64 ビットのプロジェクト構成に移行するには  
   
--   64 ビットのプラットフォームを対象とするプロジェクトの設定中に **[新しいソリューション プラットフォーム]** ダイアログ ボックスが開いたら、 **[設定のコピー元]** ドロップダウン リストで **[Win32]**を選択します。 これらのプロジェクト設定は、プロジェクト レベルで自動的に更新されます。  
+-   64 ビットのプラットフォームを対象とするプロジェクトの設定中に **[新しいソリューション プラットフォーム]** ダイアログ ボックスが開いたら、 **[設定のコピー元]** ドロップダウン リストで **[Win32]** を選択します。 これらのプロジェクト設定は、プロジェクト レベルで自動的に更新されます。  
   
     -   [/MACHINE](../build/reference/machine-specify-target-platform.md) リンカー オプションは **/MACHINE:X64**に設定されます。  
   
@@ -70,7 +65,7 @@ Visual Studio IDE でプロジェクト構成を使用すると、プラット�
     > [!NOTE]
     >  プロジェクトのプロパティは、ファイル レベルでオーバーライドされる場合、いずれも変更されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
 [.NET framework の 64 ビット アプリケーション](/dotnet/framework/64-bit-apps)   
 [64 ビット、x64 用の Visual C の構成のターゲット](../build/configuring-programs-for-64-bit-visual-cpp.md)   

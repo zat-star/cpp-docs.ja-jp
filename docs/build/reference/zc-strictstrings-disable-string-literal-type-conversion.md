@@ -1,10 +1,10 @@
 ---
-title: "/Zc:strictStrings (文字列リテラルの型変換の無効化) |Microsoft ドキュメント"
-ms.custom: 
+title: /Zc:strictStrings (文字列リテラルの型変換の無効化) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 03/06/2018
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /Zc:strictStrings
 - strictStrings
@@ -19,14 +19,13 @@ helpviewer_keywords:
 ms.assetid: b7eb3f3b-82c1-48a2-8e63-66bad7397b46
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 61ae45d6a067b45d625055d92900b17e69a366e7
-ms.sourcegitcommit: eeb2b5ad8d3d22514a7b9bd7d756511b69ae0ccf
+ms.openlocfilehash: 7025a4bae2d4a7474cb366b041a3c62f3d7db819
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="zcstrictstrings-disable-string-literal-type-conversion"></a>/Zc:strictStrings (文字列リテラル型の変換の無効化)
 
@@ -38,9 +37,9 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="remarks"></a>コメント
 
-場合**/Zc:strictStrings**が指定されている、コンパイラは C++ の標準`const`型としての文字列リテラルの制限 'の配列`const char`' または 'の配列`const wchar_t`' 宣言によって、します。 文字列リテラルは変更不可であり、文字列リテラルの内容を変更しようとすると、実行時にアクセス違反エラーが発生します。 文字列ポインターは `const` として宣言して文字列リテラルで初期化するか、明示的な `const_cast` を使用して非 `const` ポインターを初期化する必要があります。 既定では、場合**/Zc:strictStrings-**を指定すると、コンパイラは C++ の標準を強制していない`const`文字列リテラルを使用して初期化された文字列ポインターを修飾します。
+場合 **/Zc:strictStrings**が指定されている、コンパイラは C++ の標準`const`型としての文字列リテラルの制限 'の配列`const char`' または 'の配列`const wchar_t`' 宣言によって、します。 文字列リテラルは変更不可であり、文字列リテラルの内容を変更しようとすると、実行時にアクセス違反エラーが発生します。 文字列ポインターは `const` として宣言して文字列リテラルで初期化するか、明示的な `const_cast` を使用して非 `const` ポインターを初期化する必要があります。 既定では、場合 **/Zc:strictStrings-** を指定すると、コンパイラは C++ の標準を強制していない`const`文字列リテラルを使用して初期化された文字列ポインターを修飾します。
 
-**/Zc:strictStrings**オプションは既定でオフになっています。 [寛容/-](permissive-standards-conformance.md)コンパイラ オプションでは、このオプションは、暗黙的に設定しますを使用してオーバーライドできます**/Zc:strictStrings-**です。
+**/Zc:strictStrings**オプションは既定でオフになっています。 [寛容/-](permissive-standards-conformance.md)コンパイラ オプションでは、このオプションは、暗黙的に設定しますを使用してオーバーライドできます **/Zc:strictStrings-** です。
 
 使用して、 **/Zc:strictStrings**不適切なコードのコンパイルを回避するにはオプションです。 この例では、単純な宣言エラーが実行時のクラッシュを招くことを示しています。
 
@@ -53,7 +52,7 @@ int main() {
 }
 ```
 
-ときに**/Zc:strictStrings**は有効な場合、同じコードによってエラーが報告の宣言で`str`です。
+ときに **/Zc:strictStrings**は有効な場合、同じコードによってエラーが報告の宣言で`str`です。
 
 ```cpp
 // strictStrings_on.cpp
@@ -78,7 +77,7 @@ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandar
 
 1. 選択、**構成プロパティ** > **C/C++** > **コマンドライン**プロパティ ページ。
 
-1. 変更、**追加オプション**含めるプロパティを**/Zc:strictStrings**を選択し**OK**です。
+1. 変更、**追加オプション**含めるプロパティを **/Zc:strictStrings**を選択し**OK**です。
 
 ## <a name="see-also"></a>関連項目
 

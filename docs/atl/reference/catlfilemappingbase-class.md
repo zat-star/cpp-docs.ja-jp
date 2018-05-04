@@ -1,12 +1,9 @@
 ---
-title: "CAtlFileMappingBase クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CAtlFileMappingBase クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CAtlFileMappingBase
@@ -25,17 +22,15 @@ dev_langs:
 helpviewer_keywords:
 - CAtlFileMappingBase class
 ms.assetid: be555723-2790-4f57-a8fb-be4d68460775
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4b5e0dd90894e052d4b9bcff08e7e12234dde8f4
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e315a29f72c887b5bff2e8177e7a47aed18c3fd4
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="catlfilemappingbase-class"></a>CAtlFileMappingBase クラス
 このクラスは、メモリ マップト ファイルを表します。  
@@ -82,10 +77,10 @@ class CAtlFileMappingBase
   
  詳細については、次を参照してください。[ファイル マップ](http://msdn.microsoft.com/library/windows/desktop/aa366556)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlfile.h  
   
-##  <a name="catlfilemappingbase"></a>CAtlFileMappingBase::CAtlFileMappingBase  
+##  <a name="catlfilemappingbase"></a>  CAtlFileMappingBase::CAtlFileMappingBase  
  コンストラクターです。  
   
 ```
@@ -103,7 +98,7 @@ CAtlFileMappingBase() throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#71](../../atl/codesnippet/cpp/catlfilemappingbase-class_1.cpp)]  
   
-##  <a name="dtor"></a>CAtlFileMappingBase:: ~ CAtlFileMappingBase  
+##  <a name="dtor"></a>  CAtlFileMappingBase:: ~ CAtlFileMappingBase  
  デストラクターです。  
   
 ```
@@ -113,7 +108,7 @@ CAtlFileMappingBase() throw();
 ### <a name="remarks"></a>コメント  
  クラスおよび呼び出しによって割り当てられているリソースを解放、 [CAtlFileMappingBase::Unmap](#unmap)メソッドです。  
   
-##  <a name="copyfrom"></a>CAtlFileMappingBase::CopyFrom  
+##  <a name="copyfrom"></a>  CAtlFileMappingBase::CopyFrom  
  ファイル マッピング オブジェクトからコピーするには、このメソッドを呼び出します。  
   
 ```
@@ -127,7 +122,7 @@ HRESULT CopyFrom(CAtlFileMappingBase& orig) throw();
 ### <a name="return-value"></a>戻り値  
  返します`S_OK`成功した場合、またはエラー`HRESULT`エラー発生時にします。  
   
-##  <a name="getdata"></a>CAtlFileMappingBase::GetData  
+##  <a name="getdata"></a>  CAtlFileMappingBase::GetData  
  このメソッドを呼び出してファイル マップ オブジェクトからデータを取得します。  
   
 ```
@@ -137,7 +132,7 @@ void* GetData() const throw();
 ### <a name="return-value"></a>戻り値  
  データへのポインターを返します。  
   
-##  <a name="gethandle"></a>CAtlFileMappingBase::GetHandle  
+##  <a name="gethandle"></a>  CAtlFileMappingBase::GetHandle  
  このメソッドを呼び出してファイル マッピング オブジェクトへのハンドルを返します。  
   
 ```
@@ -147,7 +142,7 @@ HANDLE GetHandle() throw ();
 ### <a name="return-value"></a>戻り値  
  ファイル マッピング オブジェクトへのハンドルを返します。  
   
-##  <a name="getmappingsize"></a>CAtlFileMappingBase::GetMappingSize  
+##  <a name="getmappingsize"></a>  CAtlFileMappingBase::GetMappingSize  
  ファイル マッピング オブジェクトからマッピングのサイズを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -160,7 +155,7 @@ SIZE_T GetMappingSize() throw();
 ### <a name="example"></a>例  
  例を参照して[CAtlFileMappingBase::CAtlFileMappingBase](#catlfilemappingbase)です。  
   
-##  <a name="mapfile"></a>CAtlFileMappingBase::MapFile  
+##  <a name="mapfile"></a>  CAtlFileMappingBase::MapFile  
  開くか、指定したファイルのファイル マッピング オブジェクトを作成するには、このメソッドを呼び出します。  
   
 ```
@@ -174,7 +169,7 @@ HRESULT MapFile(
   
 ### <a name="parameters"></a>パラメーター  
  `hFile`  
- マッピング オブジェクトの作成元のファイルへのハンドルします。 `hFile`有効にする必要があるあり、INVALID_HANDLE_VALUE に設定することはできません。  
+ マッピング オブジェクトの作成元のファイルへのハンドルします。 `hFile` 有効にする必要があるあり、INVALID_HANDLE_VALUE に設定することはできません。  
   
  `nMappingSize`  
  マッピングのサイズ。 識別されるファイルの現在のサイズをファイル マッピング オブジェクトの最大サイズは 0 の場合、 *hFile です。*  
@@ -197,7 +192,7 @@ HRESULT MapFile(
 ### <a name="example"></a>例  
  例を参照して[CAtlFileMappingBase::CAtlFileMappingBase](#catlfilemappingbase)です。  
   
-##  <a name="mapsharedmem"></a>CAtlFileMappingBase::MapSharedMem  
+##  <a name="mapsharedmem"></a>  CAtlFileMappingBase::MapSharedMem  
  すべてのプロセスへのフル アクセスを許可するファイル マッピング オブジェクトを作成するには、このメソッドを呼び出します。  
   
 ```
@@ -212,7 +207,7 @@ HRESULT MapSharedMem(
   
 ### <a name="parameters"></a>パラメーター  
  `nMappingSize`  
- マッピングのサイズ。 によって識別されるファイル マッピング オブジェクトの現在のサイズをファイル マッピング オブジェクトの最大サイズは 0 の場合、`szName.`  
+ マッピングのサイズ。 によって識別されるファイル マッピング オブジェクトの現在のサイズをファイル マッピング オブジェクトの最大サイズは 0 の場合、 `szName.`  
   
  `szName`  
  マッピング オブジェクトの名前。  
@@ -235,7 +230,7 @@ HRESULT MapSharedMem(
 ### <a name="remarks"></a>コメント  
  **MapShareMem**によって作成された既存のファイル マッピング オブジェクトは、 [CreateFileMapping](http://msdn.microsoft.com/library/windows/desktop/aa366537)プロセス間で共有します。  
   
-##  <a name="openmapping"></a>CAtlFileMappingBase::OpenMapping  
+##  <a name="openmapping"></a>  CAtlFileMappingBase::OpenMapping  
  指定したファイルの名前付きファイル マッピング オブジェクトを開くには、このメソッドを呼び出します。  
   
 ```
@@ -251,7 +246,7 @@ HRESULT OpenMapping(
  マッピング オブジェクトの名前。 この名前のファイル マッピング オブジェクトの開いているハンドルがあるし、マッピング オブジェクトのセキュリティ記述子と競合していない場合、`dwViewDesiredAccess`パラメーター、オープン操作は成功します。  
   
  `nMappingSize`  
- マッピングのサイズ。 によって識別されるファイル マッピング オブジェクトの現在のサイズをファイル マッピング オブジェクトの最大サイズは 0 の場合、`szName.`  
+ マッピングのサイズ。 によって識別されるファイル マッピング オブジェクトの現在のサイズをファイル マッピング オブジェクトの最大サイズは 0 の場合、 `szName.`  
   
  `nOffset`  
  マッピングの開始ファイルのオフセット。 オフセットの値は、システムのメモリ割り当ての粒度の倍数である必要があります。  
@@ -265,7 +260,7 @@ HRESULT OpenMapping(
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドでは、入力パラメーターが有効でない場合、アサーション エラーが発生します。  
   
-##  <a name="operator_eq"></a>CAtlFileMappingBase::operator =  
+##  <a name="operator_eq"></a>  CAtlFileMappingBase::operator =  
  現在のファイル マッピング オブジェクトを別のファイル マッピング オブジェクトに設定します。  
   
 ```
@@ -279,7 +274,7 @@ CAtlFileMappingBase& operator=(CAtlFileMappingBase& orig);
 ### <a name="return-value"></a>戻り値  
  現在のオブジェクトへの参照を返します。  
   
-##  <a name="unmap"></a>CAtlFileMappingBase::Unmap  
+##  <a name="unmap"></a>  CAtlFileMappingBase::Unmap  
  ファイル マッピング オブジェクトをマップ解除するには、このメソッドを呼び出します。  
   
 ```
@@ -292,6 +287,6 @@ HRESULT Unmap() throw();
 ### <a name="remarks"></a>コメント  
  参照してください[UnmapViewOfFile](http://msdn.microsoft.com/library/windows/desktop/aa366882)詳細については、Windows SDK に含まれています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CAtlFileMapping クラス](../../atl/reference/catlfilemapping-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

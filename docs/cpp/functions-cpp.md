@@ -2,11 +2,8 @@
 title: 関数 (C++) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 01/25/2018
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - default arguments
 - declarators, functions
 ms.assetid: 33ba01d5-75b5-48d2-8eab-5483ac7d2274
-caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 46ed90500ce0b31ce3dbd2348bc8d871ba13911f
-ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.openlocfilehash: 720147992540b53c51e731db361cd9946a7a5313
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="functions-c"></a>関数 (C++)
 
@@ -209,7 +204,7 @@ void DoSomething(std::string& input){...}
 void DoSomething(const std::string& input){...}
 ```
 
- **C++ 11:**右辺値参照または左辺値参照によって渡される引数を明示的に処理するには、二重アンパサンド パラメーターで使用して、汎用参照を指定します。
+ **C++ 11:** 右辺値参照または左辺値参照によって渡される引数を明示的に処理するには、二重アンパサンド パラメーターで使用して、汎用参照を指定します。
 
 ```cpp
 void DoSomething(const std::string&& input){...}
@@ -277,7 +272,7 @@ C++ では、ローカル変数を "静的" として宣言することがあり
 
 ##  <a name="type_deduction"></a> 戻り値の型 (c++ 14) 型の推論
 
-C++ 14 で使用できます**自動**に後続の戻り値の型を指定しない場合でも、関数本体からの戻り値の型を推測するようコンパイラに指示します。 なお**自動**値渡しの戻り値を常にあると推測します。 使用して**自動 (& a) (& a)**への参照を推測するようコンパイラに指示します。
+C++ 14 で使用できます**自動**に後続の戻り値の型を指定しない場合でも、関数本体からの戻り値の型を推測するようコンパイラに指示します。 なお**自動**値渡しの戻り値を常にあると推測します。 使用して**自動 (& a) (& a)** への参照を推測するようコンパイラに指示します。
 
 この例では**自動**lhs と rhs の合計の非定数の値のコピーとして推測されます。
 
@@ -289,9 +284,9 @@ auto Add2(const Lhs& lhs, const Rhs& rhs)
 }
 ```
 
-なお**自動**推測した型の const 性は保持されません。 Const 性または ref 性、引数を保持する必要がある戻り値を返す関数を転送するには、使用できます、 **decltype (auto)**キーワードを使用して、 **decltype**推論規則を入力し、すべての型情報を保持します。 **decltype (auto)**左側にある、通常の戻り値または後続の戻り値として使用することがあります。
+なお**自動**推測した型の const 性は保持されません。 Const 性または ref 性、引数を保持する必要がある戻り値を返す関数を転送するには、使用できます、 **decltype (auto)** キーワードを使用して、 **decltype**推論規則を入力し、すべての型情報を保持します。 **decltype (auto)** 左側にある、通常の戻り値または後続の戻り値として使用することがあります。
 
-次の例 (コードに基づく[N3493](http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2013/n3493.html))、表示**decltype (auto)**関数の引数の戻り値の型がテンプレートになるまでの完全転送を有効にするために使用されています。インスタンス化されます。
+次の例 (コードに基づく[N3493](http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2013/n3493.html))、表示**decltype (auto)** 関数の引数の戻り値の型がテンプレートになるまでの完全転送を有効にするために使用されています。インスタンス化されます。
 
 ```cpp
 template<typename F, typename Tuple = tuple<T...>, int... I>
@@ -310,35 +305,6 @@ template<typename F, typename Tuple = tuple<T...>,
 }
 ```
 
-<<<<<<< HEAD
-4. 戻り値自体を使用するだけでなくすることができます「値を返します」関数を変更または呼び出し元が提供するオブジェクトの値を初期化できるようにする、参照渡しを使用するパラメーターの任意の数を定義することで。 詳細については、次を参照してください。[参照型関数の引数](reference-type-function-arguments.md)です。  
-  
-## <a name="function-pointers"></a>関数ポインター  
- C++ では、C 言語と同じ方法で、関数ポインターをサポートします。 ただし、通常、よりタイプ セーフな代替手段で関数オブジェクトが使用されます。  
-  
- 関数ポインター型を返す関数を宣言する場合は、`typedef` を使用して関数ポインター型のエイリアスを宣言することをお勧めします。  次に例を示します。  
-  
-```  
-typedef int (*fp)(int);  
-fp myFunction(char* s); // function returning function pointer  
-```  
-  
- このように記述していない場合でも、識別子 (上の例では `fp`) を関数名と引数リストで置き換えることで、関数ポインターの宣言構文から関数宣言の正しい構文を次のように導き出すことはできます。  
-  
-```  
-int (*myFunction(char* s))(int);  
-```  
-  
- この宣言は、上記の typedef を使用した宣言と同等です。  
-  
-## <a name="see-also"></a>関連項目  
- [関数のオーバー ロード](../cpp/function-overloading.md)   
- [可変個引数リストを取る関数](../cpp/functions-with-variable-argument-lists-cpp.md)   
- [明示的に既定化および削除指定関数](../cpp/explicitly-defaulted-and-deleted-functions.md)   
- [関数の引数依存の名前 (Koenig) 検索](../cpp/argument-dependent-name-koenig-lookup-on-functions.md)   
- [既定の引数](../cpp/default-arguments.md)   
- [インライン関数](../cpp/inline-functions-cpp.md)
-=======
 ## <a name="returning-multiple-values-from-a-function"></a>関数から複数の値を返す
 
 さまざまな方法で、関数から 1 つ以上の値を返します。
@@ -475,4 +441,3 @@ int (*myFunction(char* s))(int);
 - [関数の引数依存名の参照 (Koenig 参照)](../cpp/argument-dependent-name-koenig-lookup-on-functions.md)
 - [既定の引数](../cpp/default-arguments.md)
 - [インライン関数](../cpp/inline-functions-cpp.md)
->>>>>>> master

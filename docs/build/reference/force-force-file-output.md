@@ -1,13 +1,10 @@
 ---
-title: "フォース (Force ファイル出力) |Microsoft ドキュメント"
-ms.custom: 
+title: フォース (Force ファイル出力) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCLinkerTool.ForceLink
 - /force
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - /FORCE linker option
 - -FORCE linker option
 ms.assetid: b1e9a218-a5eb-4e60-a4a4-65b4be15e5da
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8ec19beec52a217df1237de41d0bd81ab447a56d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d1daa27ce48590d4a122eafde9f63f7142271610
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="force-force-file-output"></a>/FORCE (ターゲットを強制的に出力)
 ```  
@@ -49,7 +44,7 @@ ms.lasthandoff: 12/21/2017
   
  このオプションで作成されたファイルは、正常に動作しない可能性があります。 /FORCE オプションが指定されている場合、リンカーはインクリメンタル リンクできません。  
   
- 場合は、モジュールをコンパイル**/clr**、 **/force**イメージは作成されません。  
+ 場合は、モジュールをコンパイル **/clr**、 **/force**イメージは作成されません。  
   
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
@@ -65,6 +60,6 @@ ms.lasthandoff: 12/21/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

@@ -2,12 +2,9 @@
 title: EDITBIN リファレンス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - editbin
 dev_langs:
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - EDITBIN program
 - COFF files, editing
 ms.assetid: efdda03b-3dfc-4d31-90e6-caf5b3977914
-caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e0ff9c0c58498361764dcc1b6c454c9b629d9bed
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c20191fdb133fe09ed4f6a462cd777098acd5f05
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="editbin-reference"></a>EDITBIN リファレンス
 Microsoft COFF Binary ファイル エディター (EDITBIN です。EXE) では、オブジェクト ファイル形式 COFF (Common) のバイナリ ファイルを変更します。 EDITBIN を使用して、オブジェクト ファイル、実行可能ファイル、およびダイナミック リンク ライブラリ (DLL) を変更することができます。  
@@ -42,5 +37,5 @@ Microsoft COFF Binary ファイル エディター (EDITBIN です。EXE) では
   
 -   [EDITBIN オプション](../../build/reference/editbin-options.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C/C++ のビルド ツール](../../build/reference/c-cpp-build-tools.md)

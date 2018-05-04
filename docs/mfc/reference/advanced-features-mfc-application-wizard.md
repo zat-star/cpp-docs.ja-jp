@@ -27,7 +27,7 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
-# <a name="advanced-features-mfc-application-wizard"></a>[高度な機能] (MFC アプリケーション ウィザード)
+# <a name="advanced-features-mfc-application-wizard"></a>[高度な機能]\ (MFC アプリケーション ウィザード)
 このトピックでは、ヘルプや印刷サポートなど、アプリケーションの追加機能のためのオプションを示します。 各セクションで、これらの高度な機能の追加サポートを指定します。  
   
  **状況依存のヘルプ (HTML)**  

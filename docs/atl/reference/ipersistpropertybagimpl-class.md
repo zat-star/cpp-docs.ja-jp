@@ -1,12 +1,9 @@
 ---
-title: "IPersistPropertyBagImpl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: IPersistPropertyBagImpl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IPersistPropertyBagImpl
@@ -20,17 +17,15 @@ dev_langs:
 helpviewer_keywords:
 - IPersistPropertyBagImpl class
 ms.assetid: 712af24d-99f8-40f2-9811-53b3ff6e5b19
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3783d505c989b11205104cd70a9c440aa6f645f7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 41d26b84fd4c113120afefd572caed8ab27214c8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ipersistpropertybagimpl-class"></a>IPersistPropertyBagImpl クラス
 このクラスは実装**IUnknown**でき、そのプロパティをクライアントが提供するプロパティ バッグに保存するオブジェクト。  
@@ -72,10 +67,10 @@ class ATL_NO_VTABLE IPersistPropertyBagImpl : public IPersistPropertyBag
   
  `IPersistPropertyBagImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="getclassid"></a>IPersistPropertyBagImpl::GetClassID  
+##  <a name="getclassid"></a>  IPersistPropertyBagImpl::GetClassID  
  オブジェクトの CLSID を取得します。  
   
 ```
@@ -85,7 +80,7 @@ STDMETHOD(GetClassID)(CLSID* pClassID);
 ### <a name="remarks"></a>コメント  
  参照してください[IPersist::GetClassID](http://msdn.microsoft.com/library/windows/desktop/ms688664) Windows SDK にします。  
   
-##  <a name="initnew"></a>IPersistPropertyBagImpl::InitNew  
+##  <a name="initnew"></a>  IPersistPropertyBagImpl::InitNew  
  新しく作成されたオブジェクトを初期化します。  
   
 ```
@@ -98,7 +93,7 @@ STDMETHOD(InitNew)();
 ### <a name="remarks"></a>コメント  
  参照してください[IPersistPropertyBag::InitNew](https://msdn.microsoft.com/library/aa768204.aspx) Windows SDK にします。  
   
-##  <a name="load"></a>IPersistPropertyBagImpl::Load  
+##  <a name="load"></a>  IPersistPropertyBagImpl::Load  
  クライアントが提供するプロパティ バッグからのオブジェクトのプロパティを読み込みます。  
   
 ```
@@ -110,7 +105,7 @@ STDMETHOD(Load)(LPPROPERTYBAG pPropBag, LPERRORLOG pErrorLog);
   
  参照してください[IPersistPropertyBag::Load](https://msdn.microsoft.com/library/aa768206.aspx) Windows SDK にします。  
   
-##  <a name="save"></a>IPersistPropertyBagImpl::Save  
+##  <a name="save"></a>  IPersistPropertyBagImpl::Save  
  オブジェクトのプロパティは、クライアントが提供するプロパティ バッグに保存されます。  
   
 ```
@@ -125,6 +120,6 @@ STDMETHOD(Save)(
   
  参照してください[IPersistPropertyBag::Save](https://msdn.microsoft.com/library/aa768207.aspx) Windows SDK にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [あり、その場合](property-map-macros.md#begin_prop_map)   
  [クラスの概要](../../atl/atl-class-overview.md)

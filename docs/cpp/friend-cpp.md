@@ -1,12 +1,9 @@
 ---
-title: "フレンド (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: フレンド (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - friend_cpp
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - friend classes [C++]
 - friend keyword [C++]
 ms.assetid: 8fe9ee55-d56f-40cd-9075-d9fb1375aff4
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 46caba9230676e30cde02e31cc231d606f446767
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1538ad67ce1b742c55dc413d78e40e8dcc9884df
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="friend-c"></a>friend (C++)
 状況によっては、クラスのメンバーではない関数またはすべてのメンバーが別のクラスにメンバー レベルのアクセスを許可する方が便利です。 クラスの実装側が自分のフレンドを宣言することだけが可能です。 関数またはクラスが自分自身をいずれかのクラスのフレンドとして宣言することはできません。 クラスの定義で使用して、`friend`キーワードと、非メンバー関数またはクラスのプライベートおよびプロテクト メンバーへのアクセスを許可するには、他のクラスの名前。         テンプレートの定義に型パラメーターは、フレンドとして宣言できます。  
@@ -248,5 +243,5 @@ int main() {
   
  クラス宣言内で定義された friend 関数は、それを囲んでいるクラスのスコープ内にあるとは見なされません。それらはファイル スコープ内にあると見なされます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キーワード](../cpp/keywords-cpp.md)

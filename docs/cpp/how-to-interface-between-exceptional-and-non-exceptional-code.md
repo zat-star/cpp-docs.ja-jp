@@ -1,27 +1,22 @@
 ---
-title: "方法: 例外的および非例外コードの間のインターフェイス |Microsoft ドキュメント"
-ms.custom: 
+title: '方法: 例外的および非例外コードの間のインターフェイス |Microsoft ドキュメント'
+ms.custom: how-to
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: fd5bb4af-5665-46a1-a321-614b48d4061e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 59838fa1797fc87561b081d40143693dea385668
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f2cf2216ba75912520f744f0f0331a50520aa895
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-interface-between-exceptional-and-non-exceptional-code"></a>方法: 例外的なコードと非例外的なコードをインターフェイスで連結する
 ここでは、C++ モジュールで一貫した例外処理を実装する方法と、例外の境界でエラー コードとの間でそれらの例外を変換する方法を説明します。  
@@ -246,6 +241,6 @@ bool DiffFiles3(const string& file1, const string& file2)
   
  ラムダ式について詳しくは、「[ラムダ式](../cpp/lambda-expressions-in-cpp.md)」をご覧ください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [エラーと例外処理](../cpp/errors-and-exception-handling-modern-cpp.md)   
  [方法: 例外安全性に対応した設計をする](../cpp/how-to-design-for-exception-safety.md)

@@ -1,13 +1,10 @@
 ---
-title: "-仮想ディスク (ディスプレイスメントの無効化) |Microsoft ドキュメント"
-ms.custom: 
+title: -仮想ディスク (ディスプレイスメントの無効化) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /vd
 dev_langs:
@@ -25,17 +22,15 @@ helpviewer_keywords:
 - vd0 compiler option [C++]
 - Disable Construction Displacements compiler option
 ms.assetid: 93258964-14d7-4b1c-9cbc-d6f4d74eab69
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b945c4a3191554d5299522ff376772d6362a616c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c6a7b9bacc95c668c1c0f59a3dba172d58c607d2
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="vd-disable-construction-displacements"></a>/vd (ディスプレイスメントの無効化)
 ## <a name="syntax"></a>構文  
@@ -54,12 +49,12 @@ ms.lasthandoff: 12/21/2017
  `2`  
  使用できるように[dynamic_cast 演算子](../../cpp/dynamic-cast-operator.md)構築されるオブジェクト。 たとえば、仮想基底クラスから派生クラスへの dynamic_cast です。  
   
- **/vd2**仮想関数を使用して仮想ベースがある場合は、vtordisp フィールドを追加します。 **/vd1**すれば十分です。 最も一般的なケース**/vd2**が必要なは、仮想ベース内の唯一の仮想関数がデストラクターです。  
+ **/vd2**仮想関数を使用して仮想ベースがある場合は、vtordisp フィールドを追加します。 **/vd1**すれば十分です。 最も一般的なケース **/vd2**が必要なは、仮想ベース内の唯一の仮想関数がデストラクターです。  
   
 ## <a name="remarks"></a>コメント  
  これらのオプションは、仮想基底を使用する C++ コードにのみ適用されます。  
   
- [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]仮想継承が使用されている状況で C++ ディスプレイスメントをサポートを実装します。 ディスプレイスメントは仮想関数の場合、仮想ベースで宣言され、派生クラスでオーバーライドされるときに作成の問題を解決、さらに派生クラスの構築中にコンス トラクターから呼び出されます。  
+ [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] 仮想継承が使用されている状況で C++ ディスプレイスメントをサポートを実装します。 ディスプレイスメントは仮想関数の場合、仮想ベースで宣言され、派生クラスでオーバーライドされるときに作成の問題を解決、さらに派生クラスの構築中にコンス トラクターから呼び出されます。  
   
  問題が仮想関数が渡されるが正しくない`this`ポインターその結果、仮想変位間の不一致の基底クラスとその派生クラスにします。 ソリューションでは、各仮想基本クラスの vtordisp フィールドと呼ばれる 1 つ構築変位の調整を提供します。  
   
@@ -81,6 +76,6 @@ ms.lasthandoff: 12/21/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

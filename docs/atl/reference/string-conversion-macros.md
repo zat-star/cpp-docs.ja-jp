@@ -1,12 +1,9 @@
 ---
-title: "文字列変換マクロ |Microsoft ドキュメント"
-ms.custom: 
+title: 文字列変換マクロ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlconv/ATL::DEVMODEA2W
@@ -20,27 +17,25 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 2ff7c0b6-2bde-45fe-897f-6128e18e0c27
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c0a166fec6eceb84b1b22563849ff1b9462ef9a2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 917afc7dae7a0ed96d5d5cc476b4f8394abe8913
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="string-conversion-macros"></a>文字列変換マクロ
 
 これらのマクロは、文字列の変換機能を提供します。  
  
-##  <a name="atl_and_mfc_string_conversion_macros"></a>ATL と MFC 文字列変換マクロ
+##  <a name="atl_and_mfc_string_conversion_macros"></a>  ATL と MFC 文字列変換マクロ
 
 ここで説明する文字列変換マクロは、ATL と MFC の両方に対して有効です。 MFC 文字列変換の詳細については、次を参照してください。 [TN059: を使用して MFC の Mbcs/unicode 変換マクロ](../../mfc/tn059-using-mfc-mbcs-unicode-conversion-macros.md)と[MFC マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)です。
 
-##  <a name="devmode_and_textmetric_string_conversion_macros"></a>DEVMODE と受け取る文字列変換マクロ
+##  <a name="devmode_and_textmetric_string_conversion_macros"></a>  DEVMODE と受け取る文字列変換マクロ
 
 これらのマクロのコピーを作成する、 [DEVMODE](http://msdn.microsoft.com/library/windows/desktop/dd183565)または[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd145132)構造体し、新しい構造内の文字列を新しい文字列型に変換します。 マクロは、新しい構造のスタックにメモリを割り当て、新しい構造体へのポインターを返します。  
   
@@ -50,7 +45,7 @@ MACRONAME( address_of_structure )
   
 ### <a name="remarks"></a>コメント
 
-例:  
+例えば:  
   
 [!code-cpp[NVC_ATL_Utilities#128](../../atl/codesnippet/cpp/string-conversion-macros_1.cpp)]  
   
@@ -84,6 +79,6 @@ MACRONAME( address_of_structure )
 |`DEVMODET2OLE`|`TEXTMETRICT2OLE`|  
 |`DEVMODEW2A`|`TEXTMETRICW2A`|  
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [[マクロ]](../../atl/reference/atl-macros.md)

@@ -1,12 +1,9 @@
 ---
-title: "_ _hook |Microsoft ドキュメント"
-ms.custom: 
+title: _ _hook |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __hook_cpp
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - __hook keyword [C++]
 - event handlers [C++], connecting events to
 ms.assetid: f4cabb10-d293-4c0e-a1d2-4745ef9cc22c
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dfc9112c79279e3e5c419efbd12f5883349c0e94
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d46a9c593826e804c62ab67b8afa894912d15bd8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hook"></a>__hook
 ハンドラー メソッドをイベントに関連付けます。  
@@ -48,7 +43,7 @@ long __hook(
 ```  
   
 #### <a name="parameters"></a>パラメーター  
- **&***SourceClass* `::` *EventMethod*  
+ **&** *SourceClass* `::` *EventMethod*  
  イベント ハンドラー メソッドをフックする先のイベント メソッドへのポインター。  
   
 -   ネイティブ C++ イベント: *SourceClass*は、イベント ソース クラスと*EventMethod*イベントします。  
@@ -69,7 +64,7 @@ long __hook(
   
 -   マネージ オブジェクトのポインター (マネージ イベントの場合)。  
   
- **&***ReceiverClass* `::``HandlerMethod`  
+ **&** *ReceiverClass* `::` `HandlerMethod`  
  イベントにフックするイベント ハンドラー メソッドへのポインター。 ハンドラーは、クラスのメソッドまたはそれへの参照として指定されます。ユーザーがクラス名を指定しない場合、`__hook` は、それを呼び出したクラスを使用します。  
   
 -   ネイティブ C++ イベント: *ReceiverClass*イベント レシーバー クラスと`HandlerMethod`ハンドラーします。  
@@ -89,7 +84,7 @@ long __hook(
   
  `__hook` には 2 つの形式があります。 COM のイベント レシーバーを具体的には、ほとんどの場合、最初 (引数が 4 つ) の形式を使用することができます、 *layout_dependent*のパラメーター、 [event_receiver](../windows/event-receiver.md)属性は**false**.  
   
- このような場合、メソッドの 1 つでイベントを発生させる前に、インターフェイスのすべてのメソッドをフックする必要はありません。イベントを処理するメソッドのみフックする必要があります。 2 番目 (引数が 2 つ) の形式を使用する`__hook`する COM イベント レシーバーにのみ*layout_dependent***= true**です。  
+ このような場合、メソッドの 1 つでイベントを発生させる前に、インターフェイスのすべてのメソッドをフックする必要はありません。イベントを処理するメソッドのみフックする必要があります。 2 番目 (引数が 2 つ) の形式を使用する`__hook`する COM イベント レシーバーにのみ * layout_dependent ***= true**です。  
   
  `__hook` は long 型の値を返します。 ゼロ以外の戻り値は、エラーが発生したことを示します (マネージ イベントは例外をスローします)。  
   
@@ -107,7 +102,7 @@ long __hook(
 ## <a name="example"></a>例  
  参照してください[ネイティブ C++ でのイベント処理](../cpp/event-handling-in-native-cpp.md)と[COM でのイベント処理](../cpp/event-handling-in-com.md)サンプルについてはします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キーワード](../cpp/keywords-cpp.md)   
  [イベント処理](../cpp/event-handling.md)   
  [event_source](../windows/event-source.md)   

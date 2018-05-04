@@ -1,29 +1,24 @@
 ---
-title: "Visual C での例外処理 |Microsoft ドキュメント"
-ms.custom: 
+title: Visual C での例外処理 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - try-catch keyword [C++], exception handling
 ms.assetid: a6aa08de-669d-4ce8-9ec3-ec20d1354fcf
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 33ec97d5f29398e9e20be9609573eecf33894948
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0acd5df644f097d19e5f9708f0a059a31f3e9ee9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="exception-handling-in-visual-c"></a>Visual C++ での例外処理
 例外とは、プログラムが通常の実行パスに沿って進むことを妨げるエラー状態のことであり、プログラムで制御できない可能性があります。 オブジェクトの作成、ファイルの入出力、および他のモジュールから行われる関数呼び出しを含む特定のアクションは、プログラムが正しく実行されている場合でも、すべて例外の潜在的な原因となります。 堅牢なコードは例外を予期し、それを処理します。  
@@ -50,5 +45,5 @@ ms.lasthandoff: 12/21/2017
   
  X64 で処理する例外については、プロセッサを参照してください[例外処理 (x64)](../build/exception-handling-x64.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)

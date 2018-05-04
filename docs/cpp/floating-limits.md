@@ -1,12 +1,9 @@
 ---
-title: "浮動小数点の制限 |Microsoft ドキュメント"
-ms.custom: 
+title: 浮動小数点の制限 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - floating-point numbers [C++]
 - floating limits
 ms.assetid: fc718652-1f4c-4ed8-af60-0e769637459c
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6406d3d2d81fa3025a024606da68d61b5dcefdb7
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.openlocfilehash: 7bba2bef20cbe5820d2a7feaae5743f151aea9da
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="floating-limits"></a>浮動小数点の制限
 **Microsoft 固有の仕様**  
@@ -58,5 +53,5 @@ ms.lasthandoff: 01/25/2018
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [整数の制限](../cpp/integer-limits.md)

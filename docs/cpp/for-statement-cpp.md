@@ -1,29 +1,24 @@
 ---
-title: "for ステートメント (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: for ステートメント (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - for keyword [C++]
 ms.assetid: 6c7d01b3-c4c1-4c6a-aa58-e2d198f33d4a
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8358af0cd6784b1974767456602350a8ccf1c57f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 38181a43134c35c4db1db3d78a79d3338934b7d2
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="for-statement-c"></a>for ステートメント (C++)
 条件が偽 (false) になるまでステートメントを繰り返し実行します。 範囲ベースの for ステートメントについては、次を参照してください。[ステートメント (C++) の範囲に基づく](../cpp/range-based-for-statement-cpp.md)です。  
@@ -75,7 +70,7 @@ int main() {
     // Output: 012  
 ```  
   
- `init-expression` と `loop-expression` には、コンマで区切った複数のステートメントを含めることができます。 例:  
+ `init-expression` と `loop-expression` には、コンマで区切った複数のステートメントを含めることができます。 例えば:  
   
 ```cpp  
 #include <iostream>  
@@ -130,7 +125,7 @@ int main()
 ```  
   
 ## <a name="for-loops-and-the-c-standard"></a>for ループおよび C++ 標準  
- C++ 標準では `for` ループの終了後に `for` ループ内で宣言された変数がスコープ外に出ることを通知します。 例:  
+ C++ 標準では `for` ループの終了後に `for` ループ内で宣言された変数がスコープ外に出ることを通知します。 例えば:  
   
 ```cpp  
 for (int i = 0 ; i < 5 ; i++) {  
@@ -157,7 +152,7 @@ int main(){
   
  これにより、`for` ループで宣言された変数の標準動作がより正確に模倣されます。その場合、ループの終了後にスコープ外に出るために `for` ループで宣言された変数が必要です。 変数が `for` ループで宣言される場合、既に同じ名前のローカル変数がある場合でも、コンパイラは `for` ループの外側のスコープでローカル変数に内部的に引き上げます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [繰り返しステートメント](../cpp/iteration-statements-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [while ステートメント (C++)](../cpp/while-statement-cpp.md)   

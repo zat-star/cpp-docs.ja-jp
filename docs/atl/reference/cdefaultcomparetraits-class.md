@@ -1,12 +1,9 @@
 ---
-title: "CDefaultCompareTraits クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CDefaultCompareTraits クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CDefaultCompareTraits
@@ -18,17 +15,15 @@ dev_langs:
 helpviewer_keywords:
 - CDefaultCompareTraits class
 ms.assetid: a17e2740-e7b4-48f2-aeb7-c80ce84b63f7
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 13c8bfd8ac02979f82e205ec86269b7ac40c8b08
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c5b06bf475c60c0190fc6ab78f4357e1b247f1d8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cdefaultcomparetraits-class"></a>CDefaultCompareTraits クラス
 このクラスは、既定の要素の比較関数を提供します。  
@@ -58,10 +53,10 @@ class CDefaultCompareTraits
   
  詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="compareelements"></a>CDefaultCompareTraits::CompareElements  
+##  <a name="compareelements"></a>  CDefaultCompareTraits::CompareElements  
  2 つの要素が等しいかどうかを比較するには、この関数を呼び出します。  
   
 ```
@@ -81,7 +76,7 @@ static bool CompareElements(const T& element1, const T& element2);
 ### <a name="remarks"></a>コメント  
  この関数の既定の実装は、等しいかどうか ( `==`) 演算子。 単純なデータ型以外のオブジェクト、この関数は、オーバーライドする必要があります。  
   
-##  <a name="compareelementsordered"></a>CDefaultCompareTraits::CompareElementsOrdered  
+##  <a name="compareelementsordered"></a>  CDefaultCompareTraits::CompareElementsOrdered  
  この関数では、大小の要素を決定します。  
   
 ```
@@ -105,7 +100,7 @@ static int CompareElementsOrdered(const T& element1, const T& element2);
 |`element1` > `element2`|>0|  
   
 ### <a name="remarks"></a>コメント  
- この関数の既定の実装を使用して、 `==`、  **\<** 、および **>** 演算子。 単純なデータ型以外のオブジェクト、この関数は、オーバーライドする必要があります。  
+ この関数の既定の実装を使用して、 `==`、 **\<**、および**>** 演算子。 単純なデータ型以外のオブジェクト、この関数は、オーバーライドする必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

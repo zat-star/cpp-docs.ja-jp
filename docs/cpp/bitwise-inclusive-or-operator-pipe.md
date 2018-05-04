@@ -2,11 +2,8 @@
 title: 'ビット演算子包含的 OR 演算子: | |Microsoft ドキュメント'
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - bitor
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - inclusive OR operator
 - '| operator'
 ms.assetid: 4c8a6a68-d828-447d-875a-aedb4ce3aa9a
-caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: eaef650cc747cdb9e628ae3b786bc1c1e21b5bdf
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: fc43460bc2c20262156bfdc6bd7f69a693c222f0
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="bitwise-inclusive-or-operator-"></a>ビット処理包括的 OR 演算子: |
 ## <a name="syntax"></a>構文  
@@ -47,8 +42,8 @@ expression
   
  ビットごとの包括的 OR 演算子のオペランドは両方とも整数型である必要があります。 通常の算術変換は、「[標準変換](standard-conversions.md)オペランドに適用されます。  
   
-## <a name="operator-keyword-for-124"></a>演算子キーワード &#124;です。  
- `bitor`演算子に相当するテキストは、 **&#124;**です。 アクセスする方法を次の 2 つが、`bitor`をプログラムで演算子: ヘッダー ファイルをインクルード`iso646.h`、コンパイル時に、または、 [/Za](../build/reference/za-ze-disable-language-extensions.md) (言語の拡張機能を無効にする) コンパイラ オプション。  
+## <a name="operator-keyword-for-124"></a>演算子キーワード&#124;  
+ `bitor`演算子に相当するテキストは、  **&#124;** です。 アクセスする方法を次の 2 つが、`bitor`をプログラムで演算子: ヘッダー ファイルをインクルード`iso646.h`、コンパイル時に、または、 [/Za](../build/reference/za-ze-disable-language-extensions.md) (言語の拡張機能を無効にする) コンパイラ オプション。  
   
 ## <a name="example"></a>例  
   
@@ -67,7 +62,7 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [C ビット処理演算子](../c-language/c-bitwise-operators.md)
 

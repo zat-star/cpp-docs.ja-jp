@@ -1,13 +1,10 @@
 ---
-title: "ATL 接続ポイント |Microsoft ドキュメント"
-ms.custom: 
+title: ATL 接続ポイント |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - ATL, connection points
 - connection points [C++], about connection points
 ms.assetid: 17d76165-5f83-4f95-b36d-483821c247a1
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2063bd35627fd86c0cab82e4e50e5e8a126ddfa7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 179f4329d55261d71d3d122e6a2601ce7e805c0f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-connection-points"></a>ATL コネクション ポイント
 接続可能オブジェクトは、着信インターフェイスをサポートしているオブジェクトです。 着信インターフェイスにより、オブジェクトはクライアントと通信できます。 着信インターフェイスごとに、接続可能なオブジェクトは接続ポイントを公開しています。 各着信インターフェイスは、シンクと呼ばれるオブジェクト上のクライアントによって実装されます。  
@@ -48,6 +43,6 @@ ms.lasthandoff: 12/21/2017
  [ATL](../atl/active-template-library-atl-concepts.md)  
  Active Template Library を使用してプログラミングする方法に関する概念説明のトピックへのリンクを提供します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [概念](../atl/active-template-library-atl-concepts.md)
 

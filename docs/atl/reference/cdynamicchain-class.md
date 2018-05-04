@@ -2,11 +2,8 @@
 title: CDynamicChain クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CDynamicChain
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - chaining message maps
 - CDynamicChain class
 ms.assetid: f084b2be-0e77-4836-973d-ae278a1e9da8
-caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f57da02b764c1cbce6a97ecbea8aa84e4ffcce9e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 08f6d09546d4514950b5b45ffb9494116294d051
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cdynamicchain-class"></a>CDynamicChain クラス
 このクラスは、メッセージ マップの動的な組み合わせをサポートするメソッドを提供します。  
@@ -64,13 +59,13 @@ class CDynamicChain
 |[CDynamicChain::SetChainEntry](#setchainentry)|メッセージ マップ エントリをコレクションに追加または既存のエントリを変更します。|  
   
 ## <a name="remarks"></a>コメント  
- `CDynamicChain`Windows メッセージを別のオブジェクトのメッセージ マップの実行時に、送信を有効にすると、メッセージ マップのコレクションを管理します。  
+ `CDynamicChain` Windows メッセージを別のオブジェクトのメッセージ マップの実行時に、送信を有効にすると、メッセージ マップのコレクションを管理します。  
   
  メッセージ マップの動的な組み合わせのサポートを追加するには、次の操作を行います。  
   
 -   クラスを派生`CDynamicChain`です。 メッセージ マップで指定、[場合](message-map-macros-atl.md#chain_msg_map_dynamic)チェーンが別のオブジェクトの既定のメッセージ マップ マクロです。  
   
--   チェーンするすべてのクラスを派生させる[CMessageMap](../../atl/reference/cmessagemap-class.md)です。 `CMessageMap`他のオブジェクトへのメッセージ マップを公開するオブジェクトを許可します。  
+-   チェーンするすべてのクラスを派生させる[CMessageMap](../../atl/reference/cmessagemap-class.md)です。 `CMessageMap` 他のオブジェクトへのメッセージ マップを公開するオブジェクトを許可します。  
   
 -   呼び出す`CDynamicChain::SetChainEntry`を特定してにチェーンするオブジェクトとどのようなメッセージをマップしています。  
   
@@ -86,10 +81,10 @@ class CDynamicChain
   
  メッセージ マップの組み合わせの詳細については、次を参照してください[メッセージ マップ](../../atl/message-maps-atl.md)"ATL ウィンドウ クラス"記事の内容。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="callchain"></a>CDynamicChain::CallChain  
+##  <a name="callchain"></a>  CDynamicChain::CallChain  
  別のオブジェクトのメッセージ マップに Windows メッセージを送信します。  
   
 ```
@@ -127,16 +122,16 @@ BOOL CallChain(
 ### <a name="remarks"></a>コメント  
  ウィンドウ プロシージャを呼び出す`CallChain`を指定する必要があります、[場合](message-map-macros-atl.md#chain_msg_map_dynamic)メッセージ マップ マクロです。 例については、次を参照してください。、 [CDynamicChain](../../atl/reference/cdynamicchain-class.md)の概要です。  
   
- `CallChain`以前の呼び出しを必要と[SetChainEntry](#setchainentry)に関連付けるには、`dwChainID`オブジェクトとそのメッセージ マップを持つ値です。  
+ `CallChain` 以前の呼び出しを必要と[SetChainEntry](#setchainentry)に関連付けるには、`dwChainID`オブジェクトとそのメッセージ マップを持つ値です。  
   
-##  <a name="cdynamicchain"></a>CDynamicChain::CDynamicChain  
+##  <a name="cdynamicchain"></a>  CDynamicChain::CDynamicChain  
  コンストラクターです。  
   
 ```
 CDynamicChain();
 ```  
   
-##  <a name="dtor"></a>CDynamicChain:: ~ CDynamicChain  
+##  <a name="dtor"></a>  CDynamicChain:: ~ CDynamicChain  
  デストラクターです。  
   
 ```
@@ -146,7 +141,7 @@ CDynamicChain();
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放します。  
   
-##  <a name="removechainentry"></a>CDynamicChain::RemoveChainEntry  
+##  <a name="removechainentry"></a>  CDynamicChain::RemoveChainEntry  
  コレクションから指定されたメッセージ マップを削除します。  
   
 ```
@@ -160,7 +155,7 @@ BOOL RemoveChainEntry(DWORD dwChainID);
 ### <a name="return-value"></a>戻り値  
  **TRUE**場合は、メッセージ マップは、コレクションから正常に削除します。 それ以外の場合、 **FALSE**です。  
   
-##  <a name="setchainentry"></a>CDynamicChain::SetChainEntry  
+##  <a name="setchainentry"></a>  CDynamicChain::SetChainEntry  
  コレクションに指定されたメッセージ マップを追加します。  
   
 ```
@@ -186,6 +181,6 @@ BOOL SetChainEntry(
 ### <a name="remarks"></a>コメント  
  場合、`dwChainID`値は、コレクションに既に存在、その関連付けられたオブジェクトとメッセージ マップに置き換えられます`pObject`と`dwMsgMapID`、それぞれします。 それ以外の場合、新しいエントリが追加されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CWindowImpl クラス](../../atl/reference/cwindowimpl-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

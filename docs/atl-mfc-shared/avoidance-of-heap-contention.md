@@ -1,29 +1,24 @@
 ---
-title: "ヒープ競合の回避 |Microsoft ドキュメント"
-ms.custom: 
+title: ヒープ競合の回避 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - heap contention
 ms.assetid: 797129d7-5f8c-4b0e-8974-bb93217e9ab5
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f17f73efc8fba19bb129e3b118f8a4357444aad0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 731fcb2328f789e5c487dc56510bbd6f7ec049ea
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="avoidance-of-heap-contention"></a>ヒープ競合の回避
 MFC と ATL で提供される既定の文字列マネージャーは、グローバル ヒープ上に単純なラッパーです。 このグローバル ヒープは、完全にスレッド セーフである、つまり、複数のスレッドが割り当てし、同時に、ヒープを破損することがなくそこからメモリを解放することができます。 スレッド セーフが提供するには、ヒープが、自身へのアクセスをシリアル化します。 通常、これは、クリティカル セクションまたは同様のロック機構で実現します。 2 つのスレッドが、ヒープを同時にアクセスしようとすると、ときに、その他のスレッドの要求が完了するまでに 1 つのスレッドがブロックされます。 多くのアプリケーションでは、このような状況が発生することはほとんどなく、ヒープのロック メカニズムのパフォーマンスに与える影響はごくわずかです。 ただし、複数のスレッドからのヒープを頻繁にアクセスするアプリケーションでは、ヒープのロックの競合によりアプリケーションを実行 (複数の cpu を搭載したマシン) の場合でも、シングル スレッドがある場合よりも速度が低下することができます。  
@@ -42,6 +37,6 @@ MFC と ATL で提供される既定の文字列マネージャーは、グロ�
   
  手順についてより複雑なスレッドは、スレッド ローカル ストレージ (TLS) スロット内のスレッドの文字列のマネージャーへのポインターを格納すると便利な場合があります。 これにより、他の関数、スレッドの文字列のマネージャーにアクセスするスレッド プロシージャによって呼び出されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CStringT によるメモリ管理](../atl-mfc-shared/memory-management-with-cstringt.md)
 

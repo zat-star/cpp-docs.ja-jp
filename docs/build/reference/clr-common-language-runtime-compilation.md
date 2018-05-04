@@ -1,13 +1,10 @@
 ---
-title: "clr (共通言語ランタイムのコンパイル) |Microsoft ドキュメント"
-ms.custom: 
+title: clr (共通言語ランタイムのコンパイル) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /CLR
 - VC.Project.VCNMakeTool.CompileAsManaged
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - Managed Extensions for C++, compiling
 - common language runtime, /clr compiler option
 ms.assetid: fec5a8c0-40ec-484c-a213-8dec918c1d6c
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a754e6c2fd8c709fd0397a2c0f78a7385819c586
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 1284d0300fcea3adc5f2884a7d1eff7862ff2b65
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="clr-common-language-runtime-compilation"></a>/clr (共通言語ランタイムのコンパイル)
 アプリケーションおよびコンポーネントで、共通言語ランタイム (CLR) の機能を使用できるようにします。  
@@ -57,15 +52,16 @@ ms.lasthandoff: 02/14/2018
  [How to: Migrate to /clr](../../dotnet/how-to-migrate-to-clr.md)。  
   
  **/clr:pure**  
- /clr:pure の使用は推奨されていません。 コンパイラの将来のバージョンでこのオプションがサポートされない可能性があります。 純粋 MSIL にする必要があるコードは、C# に移植することをお勧めします。  
+ /clr:pure の使用は非推奨とされます。 コンパイラの将来のバージョンでこのオプションがサポートされない可能性があります。 純粋 MSIL にする必要があるコードは、C# に移植することをお勧めします。  
   
  **/clr:safe**  
- /clr:safe の使用は推奨されていません。 コンパイラの将来のバージョンでこのオプションがサポートされない可能性があります。 C# に安全な MSIL にする必要があるコードを移植することをお勧めします。 
+ /clr:safe は非推奨とされます。 コンパイラの将来のバージョンでこのオプションがサポートされない可能性があります。 C# に安全な MSIL にする必要があるコードを移植することをお勧めします。 
   
  **/clr:noAssembly**  
  アセンブリ マニフェストを出力ファイルに挿入できないことを指定します。 既定では、 **noAssembly** オプションはオフです。  
   
- **noAssembly** オプションは使用されなくなりました。 代わりに、 [/LN (Create MSIL Module)](../../build/reference/ln-create-msil-module.md) を使用してください。  
+ 
+  **noAssembly** オプションは非推奨とされました。 代わりに、 [/LN (Create MSIL Module)](../../build/reference/ln-create-msil-module.md) を使用してください。  
   
  マニフェストにアセンブリ メタデータがないマネージ プログラムを、 *モジュール*と呼びます。 **noAssembly** オプションは、モジュールを生成するときのみ使用できます。 [/c](../../build/reference/c-compile-without-linking.md) と **/clr:noAssembly**を使用してコンパイルする場合は、リンカーのフェーズで [/NOASSEMBLY](../../build/reference/noassembly-create-a-msil-module.md) オプションを指定してモジュールを作成します。  
   
@@ -92,7 +88,7 @@ ms.lasthandoff: 02/14/2018
   
  既定では、 **/clr** は無効です。 **/clr** が有効な場合は **/MD** も有効です。 詳細については、「[/MD、/MT、/LD (ランタイム ライブラリの使用)](../../build/reference/md-mt-ld-use-run-time-library.md)」を参照してください。 **/MD** を使用すると、動的にリンクされるマルチスレッド バージョンのランタイム ルーチンが標準ヘッダー (.h) ファイルから選択されるようになります。 マネージ プログラミングでマルチスレッドが必要なのは、CLR のガベージ コレクターが、補助スレッドでファイナライザーを実行するためです。  
   
- 使用してコンパイルする場合**/c**、結果として出力ファイルの CLR 型を指定する[/CLRIMAGETYPE](../../build/reference/clrimagetype-specify-type-of-clr-image.md)です。  
+ 使用してコンパイルする場合 **/c**、結果として出力ファイルの CLR 型を指定する[/CLRIMAGETYPE](../../build/reference/clrimagetype-specify-type-of-clr-image.md)です。  
   
  **/clr** は **/EHa**を暗黙的に指定するため、 **/clr** では他の **/EH**オプションを指定できません。 詳細については、「[/EH (例外処理モデル)](../../build/reference/eh-exception-handling-model.md)」を参照してください。  
   
@@ -118,7 +114,7 @@ class {} x;
  メタデータを表示するには、ildasm.exe を使用します。  
   
 ## <a name="managed-extensions-for-c"></a>C++ マネージ拡張  
- Visual C++ では、 **/clr:oldsyntax** オプションがサポートされなくなっています。 このオプションは Visual Studio 2005 で推奨されなくなりました。 C++ でのマネージ コードの記述でサポートされている構文は、C++/CLI です。 詳細については、「 [Component Extensions for Runtime Platforms](../../windows/component-extensions-for-runtime-platforms.md)」を参照してください。  
+ Visual C++ では、 **/clr:oldsyntax** オプションがサポートされなくなっています。 このオプションは Visual Studio 2005 で非推奨とされました。 C++ でのマネージ コードの記述でサポートされている構文は、C++/CLI です。 詳細については、「 [Component Extensions for Runtime Platforms](../../windows/component-extensions-for-runtime-platforms.md)」を参照してください。  
   
  C++ のマネージ拡張を使用するコードを使用している場合は、移植して C++/CLI 構文を使用することをお勧めします。 コードの移植方法の詳細については、「 [C++/CLI Migration Primer](../../dotnet/cpp-cli-migration-primer.md)」を参照してください。  
   
@@ -133,7 +129,7 @@ class {} x;
     > [!NOTE]
     >  **/clr** が **[プロパティ ページ]** ダイアログ ボックスで有効になっている場合は、 **/clr** と互換性のないコンパイラ オプション プロパティも必要に応じて調整されます。 たとえば、 **/RTC** が設定された後で **/clr** が有効になった場合、 **/RTC** はオフになります。  
     >   
-    >  また、 **/clr** アプリケーションをデバッグする場合、 **[デバッガーの種類]** プロパティを **[混合]** または **[マネージのみ]**に設定します。 詳細については、次を参照してください。 [C++ デバッグ構成のプロジェクト設定](/visualstudio/debugger/project-settings-for-a-cpp-debug-configuration)です。  
+    >  また、 **/clr** アプリケーションをデバッグする場合、 **[デバッガーの種類]** プロパティを **[混合]** または **[マネージのみ]** に設定します。 詳細については、次を参照してください。 [C++ デバッグ構成のプロジェクト設定](/visualstudio/debugger/project-settings-for-a-cpp-debug-configuration)です。  
   
      方法については、モジュールの作成を参照してください[/NOASSEMBLY (MSIL モジュールの作成)](../../build/reference/noassembly-create-a-msil-module.md)です。  
   
@@ -141,6 +137,6 @@ class {} x;
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.CompileAsManaged%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

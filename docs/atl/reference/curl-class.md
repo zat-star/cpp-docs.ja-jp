@@ -1,12 +1,9 @@
 ---
-title: "クラスを cUrl |Microsoft ドキュメント"
-ms.custom: 
+title: クラスを cUrl |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CUrl
@@ -44,17 +41,15 @@ dev_langs:
 helpviewer_keywords:
 - CUrl class
 ms.assetid: b3894d34-47b9-4961-9719-4197153793da
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: eb60fcef5fdfd30b4121f5c2277667829772dcd6
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: afb0f7abc079d699cfcf682356b88b9cc8aa2bb9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="curl-class"></a>CUrl クラス
 このクラスは、URL を表します。 既存の URL を解析するかどうか、他のユーザーとは無関係に、URL の各要素を操作することができます文字列または文字列を最初から作成します。  
@@ -116,7 +111,7 @@ class CUrl
 |[CUrl::operator =](#operator_eq)|指定された割り当て`CUrl`現在オブジェクト`CUrl`オブジェクト。|  
   
 ## <a name="remarks"></a>コメント  
- `CUrl`使用するパスまたはポート番号などの URL のフィールドを操作できます。 `CUrl`次の形式の Url を認識します。  
+ `CUrl` 使用するパスまたはポート番号などの URL のフィールドを操作できます。 `CUrl` 次の形式の Url を認識します。  
   
  \<スキーム >://\<ユーザー名 >:\<パスワード > @\<ホスト名 >:\<PortNumber >/\<UrlPath >\<ExtraInfo >  
   
@@ -142,10 +137,10 @@ class CUrl
   
  (たとえば) UrlPath フィールドを操作するには使用[GetUrlPath](#geturlpath)、 [GetUrlPathLength](#geturlpathlength)、および[SetUrlPath](#seturlpath)です。 使用する[CreateUrl](#createurl)を完全な URL 文字列を作成します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlutil.h  
   
-##  <a name="canonicalize"></a>CUrl::Canonicalize  
+##  <a name="canonicalize"></a>  CUrl::Canonicalize  
  URL 文字列を正規の形式に変換するためには、このメソッドを呼び出します。  
   
 ```
@@ -154,7 +149,7 @@ inline BOOL Canonicalize(DWORD dwFlags = 0) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `dwFlags`  
- 正規化を制御するフラグ。 フラグが指定されていない場合 ( `dwFlags` = 0)、メソッドは、すべての認識できない文字とメタ シーケンスに変換します。 (など\\。、\..、および\\...) をエスケープ シーケンスです。 `dwFlags`次の値のいずれかを指定できます。  
+ 正規化を制御するフラグ。 フラグが指定されていない場合 ( `dwFlags` = 0)、メソッドは、すべての認識できない文字とメタ シーケンスに変換します。 (など\\。、\..、および\\...) をエスケープ シーケンスです。 `dwFlags` 次の値のいずれかを指定できます。  
   
 -   ATL_URL_BROWSER_MODE: がエンコードまたは「#」の後に文字をデコードしていないか、""、末尾の空白文字の後に削除されません""です。 この値が指定されていない場合は、URL 全体をエンコードされ、後続の空白が削除されます。  
   
@@ -174,14 +169,14 @@ inline BOOL Canonicalize(DWORD dwFlags = 0) throw();
 ### <a name="remarks"></a>コメント  
  正規の形式に変換するには、安全でない文字や空白をエスケープ シーケンスの変換が含まれます。  
   
-##  <a name="clear"></a>CUrl::Clear  
+##  <a name="clear"></a>  CUrl::Clear  
  すべての URL フィールドをクリアするには、このメソッドを呼び出します。  
   
 ```
 inline void Clear() throw();
 ```  
   
-##  <a name="crackurl"></a>CUrl::CrackUrl  
+##  <a name="crackurl"></a>  CUrl::CrackUrl  
  デコードして URL を解析するには、このメソッドを呼び出します。  
   
 ```
@@ -198,7 +193,7 @@ BOOL CrackUrl(LPCTSTR lpszUrl, DWORD dwFlags = 0) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますエラー発生時に false を指定します。  
   
-##  <a name="createurl"></a>CUrl::CreateUrl  
+##  <a name="createurl"></a>  CUrl::CreateUrl  
  このメソッドは、CUrl オブジェクトのコンポーネントのフィールドから URL 文字列を構築します。  
   
 ```
@@ -233,7 +228,7 @@ inline BOOL CreateUrl(
   
  [!code-cpp[NVC_ATL_Utilities#133](../../atl/codesnippet/cpp/curl-class_1.cpp)]  
   
-##  <a name="curl"></a>CUrl::CUrl  
+##  <a name="curl"></a>  CUrl::CUrl  
  コンストラクターです。  
   
 ```
@@ -245,14 +240,14 @@ CUrl(const CUrl& urlThat) throw();
  `urlThat`  
  `CUrl` URL の作成にコピーするオブジェクト。  
   
-##  <a name="dtor"></a>CUrl:: ~ CUrl  
+##  <a name="dtor"></a>  CUrl:: ~ CUrl  
  デストラクターです。  
   
 ```
 ~CUrl() throw();
 ```  
   
-##  <a name="getextrainfo"></a>CUrl::GetExtraInfo  
+##  <a name="getextrainfo"></a>  CUrl::GetExtraInfo  
  余分な情報を取得するには、このメソッドを呼び出す (など*テキスト*または #*テキスト*) の URL からです。  
   
 ```
@@ -262,7 +257,7 @@ inline LPCTSTR GetExtraInfo() const throw();
 ### <a name="return-value"></a>戻り値  
  追加情報を含む文字列を返します。  
   
-##  <a name="getextrainfolength"></a>CUrl::GetExtraInfoLength  
+##  <a name="getextrainfolength"></a>  CUrl::GetExtraInfoLength  
  追加情報の長さを取得するには、このメソッドを呼び出します (など*テキスト*または #*テキスト*) URL からを取得します。  
   
 ```
@@ -272,7 +267,7 @@ inline DWORD GetExtraInfoLength() const throw();
 ### <a name="return-value"></a>戻り値  
  追加情報を含む文字列の長さを返します。  
   
-##  <a name="gethostname"></a>CUrl::GetHostName  
+##  <a name="gethostname"></a>  CUrl::GetHostName  
  このメソッドを呼び出して URL からホスト名を取得します。  
   
 ```
@@ -282,7 +277,7 @@ inline LPCTSTR GetHostName() const throw();
 ### <a name="return-value"></a>戻り値  
  ホスト名を返します。  
   
-##  <a name="gethostnamelength"></a>CUrl::GetHostNameLength  
+##  <a name="gethostnamelength"></a>  CUrl::GetHostNameLength  
  このメソッドを呼び出して、ホスト名の長さを取得します。  
   
 ```
@@ -292,7 +287,7 @@ inline DWORD GetHostNameLength() const throw();
 ### <a name="return-value"></a>戻り値  
  ホスト名の長さを返します。  
   
-##  <a name="getpassword"></a>CUrl::GetPassword  
+##  <a name="getpassword"></a>  CUrl::GetPassword  
  URL から、パスワードを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -302,7 +297,7 @@ inline LPCTSTR GetPassword() const throw();
 ### <a name="return-value"></a>戻り値  
  パスワードを返します。  
   
-##  <a name="getpasswordlength"></a>CUrl::GetPasswordLength  
+##  <a name="getpasswordlength"></a>  CUrl::GetPasswordLength  
  このメソッドを呼び出して、パスワードの長さを取得します。  
   
 ```
@@ -312,7 +307,7 @@ inline DWORD GetPasswordLength() const throw();
 ### <a name="return-value"></a>戻り値  
  パスワードの長さを返します。  
   
-##  <a name="getportnumber"></a>CUrl::GetPortNumber  
+##  <a name="getportnumber"></a>  CUrl::GetPortNumber  
  ポート番号を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -322,7 +317,7 @@ inline ATL_URL_PORT GetPortNumber() const throw();
 ### <a name="return-value"></a>戻り値  
  ポート番号を返します。  
   
-##  <a name="getscheme"></a>CUrl::GetScheme  
+##  <a name="getscheme"></a>  CUrl::GetScheme  
  URL スキームを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -332,7 +327,7 @@ inline ATL_URL_SCHEME GetScheme() const throw();
 ### <a name="return-value"></a>戻り値  
  返します、 [ATL_URL_SCHEME](atl-url-scheme-enum.md) URL のスキームを記述する値。  
   
-##  <a name="getschemename"></a>CUrl::GetSchemeName  
+##  <a name="getschemename"></a>  CUrl::GetSchemeName  
  URL のスキーム名を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -342,7 +337,7 @@ inline LPCTSTR GetSchemeName() const throw();
 ### <a name="return-value"></a>戻り値  
  ("Http"または"ftp") などの URL のスキーム名を返します。  
   
-##  <a name="getschemenamelength"></a>CUrl::GetSchemeNameLength  
+##  <a name="getschemenamelength"></a>  CUrl::GetSchemeNameLength  
  このメソッドを呼び出して URL のスキーム名の長さを取得します。  
   
 ```
@@ -352,7 +347,7 @@ inline DWORD GetSchemeNameLength() const throw();
 ### <a name="return-value"></a>戻り値  
  URL のスキーム名の長さを返します。  
   
-##  <a name="geturllength"></a>CUrl::GetUrlLength  
+##  <a name="geturllength"></a>  CUrl::GetUrlLength  
  URL の長さを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -362,7 +357,7 @@ inline DWORD GetUrlLength() const throw();
 ### <a name="return-value"></a>戻り値  
  URL の長さを返します。  
   
-##  <a name="geturlpath"></a>CUrl::GetUrlPath  
+##  <a name="geturlpath"></a>  CUrl::GetUrlPath  
  URL パスを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -372,7 +367,7 @@ inline LPCTSTR GetUrlPath() const throw();
 ### <a name="return-value"></a>戻り値  
  URL パスを返します。  
   
-##  <a name="geturlpathlength"></a>CUrl::GetUrlPathLength  
+##  <a name="geturlpathlength"></a>  CUrl::GetUrlPathLength  
  URL パスの長さを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -382,7 +377,7 @@ inline DWORD GetUrlPathLength() const throw();
 ### <a name="return-value"></a>戻り値  
  URL パスの長さを返します。  
   
-##  <a name="getusername"></a>CUrl::GetUserName  
+##  <a name="getusername"></a>  CUrl::GetUserName  
  URL から、ユーザー名を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -392,7 +387,7 @@ inline LPCTSTR GetUserName() const throw();
 ### <a name="return-value"></a>戻り値  
  ユーザー名を返します。  
   
-##  <a name="getusernamelength"></a>CUrl::GetUserNameLength  
+##  <a name="getusernamelength"></a>  CUrl::GetUserNameLength  
  このメソッドを呼び出して、ユーザー名の長さを取得します。  
   
 ```
@@ -402,7 +397,7 @@ inline DWORD GetUserNameLength() const throw();
 ### <a name="return-value"></a>戻り値  
  ユーザー名の長さを返します。  
   
-##  <a name="operator_eq"></a>CUrl::operator =  
+##  <a name="operator_eq"></a>  CUrl::operator =  
  指定された割り当て`CUrl`現在オブジェクト`CUrl`オブジェクト。  
   
 ```
@@ -416,7 +411,7 @@ CUrl& operator= (const CUrl& urlThat) throw();
 ### <a name="return-value"></a>戻り値  
  現在のオブジェクトへの参照を返します。  
   
-##  <a name="setextrainfo"></a>CUrl::SetExtraInfo  
+##  <a name="setextrainfo"></a>  CUrl::SetExtraInfo  
  余分な情報を設定するには、このメソッドを呼び出す (など*テキスト*または #*テキスト*) の URL。  
   
 ```
@@ -430,7 +425,7 @@ inline BOOL SetExtraInfo(LPCTSTR lpszInfo) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますエラー発生時に false を指定します。  
   
-##  <a name="sethostname"></a>CUrl::SetHostName  
+##  <a name="sethostname"></a>  CUrl::SetHostName  
  ホスト名を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -444,7 +439,7 @@ inline BOOL SetHostName(LPCTSTR lpszHost) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますエラー発生時に false を指定します。  
   
-##  <a name="setpassword"></a>CUrl::SetPassword  
+##  <a name="setpassword"></a>  CUrl::SetPassword  
  このメソッドを呼び出して、パスワードを設定します。  
   
 ```
@@ -458,7 +453,7 @@ inline BOOL SetPassword(LPCTSTR lpszPass) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますエラー発生時に false を指定します。  
   
-##  <a name="setportnumber"></a>CUrl::SetPortNumber  
+##  <a name="setportnumber"></a>  CUrl::SetPortNumber  
  ポート番号を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -472,7 +467,7 @@ inline BOOL SetPortNumber(ATL_URL_PORT nPrt) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますエラー発生時に false を指定します。  
   
-##  <a name="setscheme"></a>CUrl::SetScheme  
+##  <a name="setscheme"></a>  CUrl::SetScheme  
  URL スキームを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -489,7 +484,7 @@ inline BOOL SetScheme(ATL_URL_SCHEME nScheme) throw();
 ### <a name="remarks"></a>コメント  
  名前、スキームを設定することもできます (を参照してください[スキーム](#setschemename))。  
   
-##  <a name="setschemename"></a>スキーム  
+##  <a name="setschemename"></a>  スキーム  
  URL のスキーム名を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -506,7 +501,7 @@ inline BOOL SetSchemeName(LPCTSTR lpszSchm) throw();
 ### <a name="remarks"></a>コメント  
  使用して、スキームを設定することも、 [ATL_URL_SCHEME](atl-url-scheme-enum.md)定数 (を参照してください[CUrl::SetScheme](#setscheme))。  
   
-##  <a name="seturlpath"></a>CUrl::SetUrlPath  
+##  <a name="seturlpath"></a>  CUrl::SetUrlPath  
  URL パスを設定するには、このメソッドを呼び出します。  
   
 ```
@@ -520,7 +515,7 @@ inline BOOL SetUrlPath(LPCTSTR lpszPath) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますエラー発生時に false を指定します。  
   
-##  <a name="setusername"></a>CUrl::SetUserName  
+##  <a name="setusername"></a>  CUrl::SetUserName  
  ユーザー名を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -534,5 +529,5 @@ inline BOOL SetUserName(LPCTSTR lpszUser) throw();
 ### <a name="return-value"></a>戻り値  
  成功した場合、TRUE を返しますエラー発生時に false を指定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラス](../../atl/reference/atl-classes.md)

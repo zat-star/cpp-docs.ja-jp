@@ -1,12 +1,9 @@
 ---
-title: "ATL コントロール ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: ATL コントロール ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - vc.codewiz.class.atl.control.overview
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - controls [ATL], adding to projects
 - ATL Control Wizard
 ms.assetid: 991f8e72-ffbc-4382-a4ce-e255acfba5b6
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5a9167153c2b827e1bc2597e830e9b3c82ee31b7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1df64cd0661a7f905ebcc068efb698306ac9007e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-control-wizard"></a>ATL コントロール ウィザード
 ATL プロジェクト (または ATL サポートを MFC プロジェクト) への挿入、ATL コントロール。 このウィザードを使用して、3 種類のコントロールの 1 つを挿入することができます。  
@@ -95,7 +90,7 @@ ATL プロジェクト (または ATL サポートを MFC プロジェクト) �
  **ProgID**  
  コンテナーは、オブジェクトの CLSID の代わりに使用できる名前を設定します。 このフィールドは自動的に作成されません。 このフィールドを手動で設定しない場合、制御できない場合がありますを他のツールです。 なしで生成されている ActiveX コントロールなど、`ProgID`では使用できない、 **ActiveX コントロールの挿入** ダイアログ ボックス。 ダイアログ ボックスの詳細については、次を参照してください。 [ActiveX コントロールの挿入 ダイアログ ボックス](../../windows/insert-activex-control-dialog-box.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL コントロール](../../atl/reference/adding-an-atl-control.md)   
  [複合コントロールへの機能の追加](../../atl/adding-functionality-to-the-composite-control.md)   
  [ATL COM オブジェクトの基礎](../../atl/fundamentals-of-atl-com-objects.md)

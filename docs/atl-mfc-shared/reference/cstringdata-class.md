@@ -1,12 +1,9 @@
 ---
-title: "CStringData クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CStringData クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 f1_keywords:
 - CStringData
@@ -28,17 +25,15 @@ helpviewer_keywords:
 - CStringData class
 - shared classes, CStringData
 ms.assetid: 4e31b5ca-3dbe-4fd5-b692-8211fbfb2593
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7523ca52c0ded8ec9b3cf02dd6798beca8be5cf8
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 187892b74536de47079324d90bb21b2569e00498
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cstringdata-class"></a>CStringData クラス
 このクラスは、文字列オブジェクトのデータを表します。  
@@ -95,10 +90,10 @@ struct CStringData
     > [!NOTE]
     >  文字列オブジェクトの実際の文字バッファー文字列マネージャーが割り当てられるし、に追加されますが、`CStringData`オブジェクト。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsimpstr.h  
   
-##  <a name="addref"></a>CStringData::AddRef  
+##  <a name="addref"></a>  CStringData::AddRef  
  文字列オブジェクトの参照カウントをインクリメントします。  
   
 ```
@@ -111,7 +106,7 @@ void AddRef() throw();
 > [!NOTE]
 >  負の数は、文字列バッファーがロックされていることを示すために、負の値の参照カウントを持つ文字列をこのメソッドを呼び出さないでください。  
   
-##  <a name="data"></a>CStringData::data  
+##  <a name="data"></a>  CStringData::data  
  文字列オブジェクトの文字バッファーへのポインターを返します。  
   
 ```
@@ -127,7 +122,7 @@ void* data() throw();
 > [!NOTE]
 >  このバッファーはによって割り当てられていない、`CStringData`オブジェクトが必要なときに、文字列マネージャーによってです。 割り当てられるバッファーは文字列データ オブジェクトに追加されます。  
   
-##  <a name="islocked"></a>CStringData::IsLocked  
+##  <a name="islocked"></a>  CStringData::IsLocked  
  文字バッファーがロックされているかどうかを判断します。  
   
 ```
@@ -140,7 +135,7 @@ bool IsLocked() const throw();
 ### <a name="remarks"></a>コメント  
  文字列オブジェクトの文字バッファーがロックされているかどうかを判断するには、この関数を呼び出します。  
   
-##  <a name="isshared"></a>CStringData::IsShared  
+##  <a name="isshared"></a>  CStringData::IsShared  
  文字バッファーを共有するかどうかを判断します。  
   
 ```
@@ -153,7 +148,7 @@ bool IsShared() const throw();
 ### <a name="remarks"></a>コメント  
  かどうか、文字列データ オブジェクトの文字バッファー共有されている複数の文字列オブジェクトを決定するには、この関数を呼び出します。  
   
-##  <a name="lock"></a>CStringData::Lock  
+##  <a name="lock"></a>  CStringData::Lock  
  関連付けられている文字列オブジェクトの文字バッファーをロックします。  
   
 ```
@@ -166,7 +161,7 @@ void Lock() throw();
 > [!NOTE]
 >  バッファーが上位の文字列オブジェクトの間で共有されていない場合のみ、文字バッファーをロックできます。  
   
-##  <a name="nalloclength"></a>CStringData::nAllocLength  
+##  <a name="nalloclength"></a>  CStringData::nAllocLength  
  割り当てられた文字バッファーの長さです。  
   
 ```
@@ -176,7 +171,7 @@ int nAllocLength;
 ### <a name="remarks"></a>コメント  
  割り当てられているデータのバッファーの長さを格納`XCHAR`s (終端の null) などではありません。  
   
-##  <a name="ndatalength"></a>CStringData::nDataLength  
+##  <a name="ndatalength"></a>  CStringData::nDataLength  
  現在の string オブジェクトの長さ。  
   
 ```
@@ -186,7 +181,7 @@ int nDataLength;
 ### <a name="remarks"></a>コメント  
  現在使用されているデータの長さを格納`XCHAR`s (終端の null) などではありません。  
   
-##  <a name="nrefs"></a>CStringData::nRefs  
+##  <a name="nrefs"></a>  CStringData::nRefs  
  文字列データ オブジェクトの参照カウント。  
   
 ```
@@ -196,7 +191,7 @@ long nRefs;
 ### <a name="remarks"></a>コメント  
  文字列データ オブジェクトの参照カウントを格納します。 この数は、文字列データ オブジェクトに関連付けられている上位の文字列オブジェクトの数を示します。 負の値は、文字列データ オブジェクトが現在ロックされていることを示します。  
   
-##  <a name="pstringmgr"></a>CStringData::pStringMgr  
+##  <a name="pstringmgr"></a>  CStringData::pStringMgr  
  関連付けられている文字列オブジェクトのメモリ マネージャー。  
   
 ```
@@ -206,7 +201,7 @@ IAtlStringMgr* pStringMgr;
 ### <a name="remarks"></a>コメント  
  関連付けられている文字列オブジェクトのメモリ マネージャーを格納します。 メモリ マネージャーおよび文字列の詳細については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
-##  <a name="release"></a>CStringData::Release  
+##  <a name="release"></a>  CStringData::Release  
  データの文字列オブジェクトの参照カウントをデクリメントします。  
   
 ```
@@ -220,7 +215,7 @@ void Release() throw();
   
  [!code-cpp[NVC_ATLMFC_Utilities#104](../../atl-mfc-shared/codesnippet/cpp/cstringdata-class_1.cpp)]  
   
-##  <a name="unlock"></a>CStringData::Unlock  
+##  <a name="unlock"></a>  CStringData::Unlock  
  関連付けられている文字列オブジェクトの文字バッファーがアンロックされます。  
   
 ```
@@ -235,7 +230,7 @@ void Unlock() throw();
   
  開発者は、文字列データを共有しないことを確認する必要がありますロックおよびロック解除が使用されます。 ロックの良い例が示される、 [LockBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#lockbuffer)と[として](../../atl-mfc-shared/reference/csimplestringt-class.md#unlockbuffer)のメソッド`CSimpleStringT`です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)
 

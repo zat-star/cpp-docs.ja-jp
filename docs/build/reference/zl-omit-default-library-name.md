@@ -1,13 +1,10 @@
 ---
-title: "-Zl (既定のライブラリ名を省略) |Microsoft ドキュメント"
-ms.custom: 
+title: -Zl (既定のライブラリ名を省略) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /zi
 - VC.Project.VCCLCompilerTool.OmitDefaultLibName
@@ -20,17 +17,15 @@ helpviewer_keywords:
 - /Zl compiler option [C++]
 - default libraries, omitting names
 ms.assetid: b27d39d0-44d6-498c-84ae-27c1326fee59
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2b77b9c1033be1f6144d92b6051118ca85aaaf20
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4c14a3217334c2c43bac7fbcce8b0bfd60a609d3
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="zl-omit-default-library-name"></a>/Zl (既定のライブラリ名の省略)
 .Obj ファイルから既定の C ランタイム ライブラリ名を省略します。 既定では、コンパイラでライブラリ名が .obj ファイルにプッシュされ、リンカーに適切なライブラリが示されます。  
@@ -44,7 +39,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  既定のライブラリの詳細については、次を参照してください。[ランタイム ライブラリの使用](../../build/reference/md-mt-ld-use-run-time-library.md)です。  
   
- 使用することができます**/Zl**ライブラリに格納する .obj ファイルをコンパイルします。 少量の単一の .obj ファイルの領域のみを保存するライブラリの名前を省略すると、保存領域の合計は重要で多数のオブジェクト モジュールを含むライブラリ。  
+ 使用することができます **/Zl**ライブラリに格納する .obj ファイルをコンパイルします。 少量の単一の .obj ファイルの領域のみを保存するライブラリの名前を省略すると、保存領域の合計は重要で多数のオブジェクト モジュールを含むライブラリ。  
   
  このオプションは、高度なオプションです。 このオプションを設定すると、リンク時のエラーの結果として得られる場合はこのサポートに依存するアプリケーション、アプリケーションで必要になる特定の C ランタイム ライブラリのサポートが削除されます。 このオプションを使用する場合は、その他の何らかの方法で必要なコンポーネントを提供する必要があります。  
   
@@ -52,7 +47,7 @@ ms.lasthandoff: 12/21/2017
   
  詳しくは、「[CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)」をご覧ください。  
   
- コンパイルするときに**/Zl**、`_VC_NODEFAULTLIB`が定義されています。  例:  
+ コンパイルするときに **/Zl**、`_VC_NODEFAULTLIB`が定義されています。  例えば:  
   
 ```  
 // vc_nodefaultlib.cpp  
@@ -80,6 +75,6 @@ void Test() {
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.OmitDefaultLibName%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

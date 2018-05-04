@@ -1,12 +1,9 @@
 ---
-title: "スコープ規則の概要 |Microsoft ドキュメント"
-ms.custom: 
+title: スコープ規則の概要 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - names [C++], class
 - scope [C++], class names
 ms.assetid: 47e26482-0111-466f-b857-598c15d05105
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c530a586ca2b8b70cfdc967c354738e93435f20c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 9d901103f36493e74f73b2edb18faa1188e704ef
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="summary-of-scope-rules"></a>スコープ規則の概要
 名前の使用はスコープ内で明確である必要があります (オーバーロードが決定される段階まで)。 名前が関数を表している場合、関数はパラメーターの数と型に対し明確でなければなりません。 名前があいまいでない、残っている場合[メンバー アクセス](../cpp/member-access-control-cpp.md)規則が適用されます。  
@@ -47,7 +42,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="qualified-names"></a>修飾名  
  バイナリ スコープ解決演算子 (`::`) と共に使用される名前は、"修飾名" と呼ばれます。 バイナリ スコープ解決演算子の後ろに指定される名前は、演算子の左側で指定されたクラスのメンバーまたはその基底クラスのメンバーである必要があります。  
   
- メンバー選択演算子の後に指定した名前 (**です。** または **->** ) 演算子の左側またはその基底クラスのメンバーで指定されたオブジェクトのクラス型のメンバーである必要があります。 メンバー選択演算子の右側に指定した名前 (**->**) はオブジェクトの場合も、別のクラス型の条件の左側にある **->** クラス オブジェクトとクラスがオーバー ロードされたメンバー選択演算子を定義すること (**->**) その他の任意のクラス型へのポインターに評価されます。 (このプロビジョニングはで詳しく説明[クラス メンバー アクセス](../cpp/member-access.md))。  
+ メンバー選択演算子の後に指定した名前 (**です。** または**->**) 演算子の左側またはその基底クラスのメンバーで指定されたオブジェクトのクラス型のメンバーである必要があります。 メンバー選択演算子の右側に指定した名前 (**->**) はオブジェクトの場合も、別のクラス型の条件の左側にある**->** クラス オブジェクトとクラスがオーバー ロードされたメンバー選択演算子を定義すること (**->**) その他の任意のクラス型へのポインターに評価されます。 (このプロビジョニングはで詳しく説明[クラス メンバー アクセス](../cpp/member-access.md))。  
   
  コンパイラは、次の順序で名前を検索し、名前が見つかると検索を停止します。  
   
@@ -80,5 +75,5 @@ ms.lasthandoff: 12/21/2017
   
  既定のパラメーターは、上記で説明したとおり、それらを既定とするパラメーターのスコープ内にあります。 ただし、ローカル変数や非静的クラス メンバーにはアクセスできません。 既定のパラメーターは、関数呼び出しの時点で評価されますが、関数宣言の元のスコープで評価されます。 したがって、メンバー関数の既定のパラメーターは、常にクラス スコープで評価されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [継承](../cpp/inheritance-cpp.md)

@@ -1,12 +1,9 @@
 ---
-title: "C スタイルの文字列に関連する CString の操作 |Microsoft ドキュメント"
-ms.custom: 
+title: C スタイルの文字列に関連する CString の操作 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 dev_langs:
 - C++
@@ -24,20 +21,18 @@ helpviewer_keywords:
 - strings [C++], class CString
 - casting CString objects
 ms.assetid: 5048de8a-5298-4891-b8a0-c554b5a3ac1b
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 04be31fa3209aace6fd5446532510e2a27e6bdce
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7d0683f82204b11d06b1952913d4dbdb1e4a468d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cstring-operations-relating-to-c-style-strings"></a>C スタイルの文字列に関連する CString の操作方法
-A [CString](../atl-mfc-shared/using-cstring.md)オブジェクトには、文字列データが含まれています。 `CString`セットを継承、[メソッドと演算子](../atl-mfc-shared/reference/cstringt-class.md)クラス テンプレートで定義されている[CStringT](../atl-mfc-shared/reference/cstringt-class.md)文字列データを操作します。 (`CString`は、`typedef`を専門と`CStringT`文字データの種類を使用するを`CString`をサポートしています)。  
+A [CString](../atl-mfc-shared/using-cstring.md)オブジェクトには、文字列データが含まれています。 `CString` セットを継承、[メソッドと演算子](../atl-mfc-shared/reference/cstringt-class.md)クラス テンプレートで定義されている[CStringT](../atl-mfc-shared/reference/cstringt-class.md)文字列データを操作します。 (`CString`は、`typedef`を専門と`CStringT`文字データの種類を使用するを`CString`をサポートしています)。  
   
  `CString` は文字データを C スタイルの null で終わる文字列として内部的に格納しません。 代わりに、`CString` は文字データの長さを追跡して、より安全にデータとそれに必要な領域を監視できるようにします。  
   
@@ -53,7 +48,7 @@ A [CString](../atl-mfc-shared/using-cstring.md)オブジェクトには、文字
   
 - [CString 仮パラメーターを指定します。](#_core_specifying_cstring_formal_parameters)  
   
-##  <a name="_core_using_cstring_as_a_c.2d.style_null.2d.terminated_string"></a>C スタイルの Null で終わる文字列としての CString の使用  
+##  <a name="_core_using_cstring_as_a_c.2d.style_null.2d.terminated_string"></a> C スタイルの Null で終わる文字列としての CString の使用  
  `CString` オブジェクトを C スタイルの文字列として使用するには、オブジェクトを `LPCTSTR` にキャストします。 次の例では、`CString` は読み取り専用で C スタイルの null で終わる文字列へのポインターを返します。 `strcpy` 関数は、C スタイルの文字列のコピーを変数 `myString` に入れます。  
   
 ```  
@@ -71,12 +66,12 @@ strcpy(myString, (LPCTSTR)aCString);
 > [!NOTE]
 >  3 番目の引数`strcpy_s`(または Unicode と MBCS ポータブル`_tcscpy_s`) か、 `const wchar_t*` (Unicode) または`const char*`(ANSI)。 前述の例では、この引数に `CString` を渡しています。 C++ コンパイラは `CString` クラス用に定義されている変換関数を自動的に適用します。この関数は `CString` を `LPCTSTR` に変換します。 ある型から別の型へのキャスト操作を定義する機能は、C++ の最も有効な機能の 1 つです。  
   
-##  <a name="_core_working_with_standard_run.2d.time_library_string_functions"></a>標準ランタイム ライブラリ文字列関数の使用  
+##  <a name="_core_working_with_standard_run.2d.time_library_string_functions"></a> 標準ランタイム ライブラリ文字列関数の使用  
  `CString` などの標準 C ランタイム ライブラリ文字列関数 (または Unicode/MBCS との移植性がある `strcmp`) を使用して検討対象の文字列操作を実行するために、`_tcscmp` メソッドを検索できる必要があります。  
   
  C ランタイム文字列関数を使用する必要がある場合は、_core_using_cstring_as_a_c.2d.style_null.2d.terminated_string で説明する手法を使用できます。 `CString` オブジェクトを同等の C スタイルの文字列バッファーにコピーし、そのバッファーに対して操作を実行してから、結果の C スタイルの文字列を `CString` オブジェクトに割り当てることができます。  
   
-##  <a name="_core_modifying_cstring_contents_directly"></a>CString の内容を直接変更  
+##  <a name="_core_modifying_cstring_contents_directly"></a> CString の内容を直接変更  
  ほとんどの場合、`CString` オブジェクトの内容を変更するか、または `CString` を C スタイルの文字列に変換するには、`CString` メンバー関数を使用する必要があります。  
   
  場合によっては、`CString` の内容を直接変更する方が合理的であることがあります。たとえば、文字バッファーを必要とするオペレーティング システム関数を使用する場合などです。  
@@ -91,14 +86,14 @@ strcpy(myString, (LPCTSTR)aCString);
   
 3.  `ReleaseBuffer` オブジェクトの `CString` を呼び出して、文字列の長さなどのすべての内部的な `CString` 状態情報を更新します。 `CString` オブジェクトの内容を直接変更した後、先に `ReleaseBuffer` を呼び出してから、その他の `CString` メンバー関数を呼び出す必要があります。  
   
-##  <a name="_core_using_cstring_objects_with_variable_argument_functions"></a>可変個引数関数での CString オブジェクトの使用  
+##  <a name="_core_using_cstring_objects_with_variable_argument_functions"></a> 可変個引数関数での CString オブジェクトの使用  
  一部の C 関数は、可変個の引数を受け取ります。 主な例として `printf_s` があります。 この種類の関数の宣言方法では、コンパイラは引数の型がわからず、それぞれの引数で実行する変換操作を決定できません。 そのため、可変個の引数を受け取る関数に `CString` オブジェクトを渡す場合は、明示的な型キャストを使用することが重要です。  
   
  引数が可変個である関数で `CString` オブジェクトを使用するには、次の例に示すように、`CString` を `LPCTSTR` 文字列に明示的にキャストします。  
   
  [!code-cpp[NVC_ATLMFC_Utilities#190](../atl-mfc-shared/codesnippet/cpp/cstring-operations-relating-to-c-style-strings_2.cpp)]  
   
-##  <a name="_core_specifying_cstring_formal_parameters"></a>CString 仮パラメーターを指定します。  
+##  <a name="_core_specifying_cstring_formal_parameters"></a> CString 仮パラメーターを指定します。  
  文字列引数を必要とするほとんどの関数では、`const` の代わりに文字への `LPCTSTR` ポインター (`CString`) として、関数プロトタイプの仮パラメーターを指定することをお勧めします。 仮パラメーターが文字への `const` ポインターとして指定されている場合、`TCHAR` 配列、リテラル文字列 [`"hi there"`]、または `CString` オブジェクトのいずれかにポインターを渡すことができます。 `CString` オブジェクトは、自動的に `LPCTSTR` に変換されます。 `LPCTSTR` を使用できる場所であればどこでも、`CString` オブジェクトを使用できます。  
   
  定数文字列参照として仮パラメーターを指定することもできます (つまり、 `const CString&`) 場合は、引数は変更されません。 文字列が関数で変更される場合は、`const` 修飾子を省略します。 既定の null 値が必要な場合は、次に示すように、これを null 文字列 [`""`] に初期化します。  
@@ -107,7 +102,7 @@ strcpy(myString, (LPCTSTR)aCString);
   
  ほとんどの関数の結果では、単に値で `CString` オブジェクトを返すことができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [文字列 (ATL と MFC)](../atl-mfc-shared/strings-atl-mfc.md)   
  [CString 引数の渡し方](../atl-mfc-shared/cstring-argument-passing.md)
 

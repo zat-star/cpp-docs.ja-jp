@@ -1,12 +1,9 @@
 ---
-title: "オプション、ATL プロパティ ページ ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: オプション、ATL プロパティ ページ ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - vc.codewiz.class.atl.ppg.options
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - ATL Property Page Wizard, options
 ms.assetid: a7107779-b2ea-4f99-b84b-7f3e0c504bc8
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cbc27457fa3ace7b1cdfad4894bbd296739de2ab
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a8e7edfb2cb4040238985c6cd78e8f1e5756f4d6
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="options-atl-property-page-wizard"></a>オプション、ATL プロパティ ページ ウィザード
 ウィザードのこのページを使用すると、作成する プロパティ ページのスレッド モデルと集計レベルを定義します。  
@@ -49,7 +44,7 @@ ms.lasthandoff: 12/21/2017
 |**No**|集計が不可能なプロパティ ページを作成します。|  
 |**のみ**|集計をインスタンス化することのみをプロパティ ページを作成します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL プロパティ ページ ウィザード](../../atl/reference/atl-property-page-wizard.md)   
  [文字列、ATL プロパティ ページ ウィザード](../../atl/reference/strings-atl-property-page-wizard.md)
 

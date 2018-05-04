@@ -1,12 +1,9 @@
 ---
-title: "CComCoClass クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComCoClass クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComCoClass
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - CComCoClass class
 - aggregation [C++], aggregation models
 ms.assetid: 67cfefa4-8df9-47fa-ad58-2d1a1ae25762
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 969370294ed3d5d2ca2fdff5f4a106b72ed77a17
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 738d7e937acf2d3299be97b4f091c698582911d5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomcoclass-class"></a>CComCoClass クラス
 このクラスは、クラスのインスタンスを作成して、そのプロパティを取得するためのメソッドを提供します。  
@@ -47,7 +42,7 @@ class CComCoClass
  `T`  
  派生したクラス、`CComCoClass`です。  
   
- *pclsid の値*  
+ *pclsid*  
  オブジェクトの CLSID へのポインター。  
   
 ## <a name="members"></a>メンバー  
@@ -62,9 +57,9 @@ class CComCoClass
 |[CComCoClass::GetObjectDescription](#getobjectdescription)|(静的)オブジェクトの説明を返すようにオーバーライドします。|  
   
 ## <a name="remarks"></a>コメント  
- `CComCoClass`オブジェクトの CLSID を取得する、エラー情報を設定すると、クラスのインスタンスを作成するには、メソッドを提供します。 登録されている任意のクラス、[オブジェクト マップ](http://msdn.microsoft.com/en-us/b57619cc-534f-4b8f-bfd4-0c12f937202f)から派生する必要があります`CComCoClass`です。  
+ `CComCoClass` オブジェクトの CLSID を取得する、エラー情報を設定すると、クラスのインスタンスを作成するには、メソッドを提供します。 登録されている任意のクラス、[オブジェクト マップ](http://msdn.microsoft.com/en-us/b57619cc-534f-4b8f-bfd4-0c12f937202f)から派生する必要があります`CComCoClass`です。  
   
- `CComCoClass`また、オブジェクトの既定のクラス ファクトリと集計モデルを定義します。 `CComCoClass`次の 2 つのマクロを使用します。  
+ `CComCoClass` また、オブジェクトの既定のクラス ファクトリと集計モデルを定義します。 `CComCoClass` 次の 2 つのマクロを使用します。  
   
 - [DECLARE_CLASSFACTORY](aggregation-and-class-factory-macros.md#declare_classfactory)を宣言するクラス ファクトリ[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)です。  
   
@@ -74,10 +69,10 @@ class CComCoClass
   
  [!code-cpp[NVC_ATL_COM#2](../../atl/codesnippet/cpp/ccomcoclass-class_1.h)]  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="createinstance"></a>あって  
+##  <a name="createinstance"></a>  あって  
  これらを使用して`CreateInstance`COM のインスタンスを作成する関数オブジェクトし、COM API を使用せずにインターフェイス ポインターを取得します。  
   
 ```
@@ -111,11 +106,11 @@ static HRESULT CreateInstance(IUnknown* punkOuter, Q** pp);
  なお、インターフェイス`Q`IID が関連付けられていることを使用して取得できる必要があります、 [_ _uuidof](../../cpp/uuidof-operator.md)演算子。  
   
 ### <a name="example"></a>例  
- 次の例では、`CDocument`から ATL ウィザードで生成されたクラスが派生`CComCoClass`を実装する、 **IDocument**インターフェイスです。 クラスは、オブジェクトのマップに、`OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO`マクロ クライアントを使用して、ドキュメントのインスタンスを作成できないように[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。 `CApplication`ドキュメント クラスのインスタンスを作成する独自の COM インターフェイスの 1 つのメソッドを提供するコクラスがします。 簡単な方法は次のコード、ドキュメントを使用してクラスのインスタンスを作成するために、`CreateInstance`から継承されたメンバー、`CComCoClass`基本クラスです。  
+ 次の例では、`CDocument`から ATL ウィザードで生成されたクラスが派生`CComCoClass`を実装する、 **IDocument**インターフェイスです。 クラスは、オブジェクトのマップに、`OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO`マクロ クライアントを使用して、ドキュメントのインスタンスを作成できないように[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。 `CApplication` ドキュメント クラスのインスタンスを作成する独自の COM インターフェイスの 1 つのメソッドを提供するコクラスがします。 簡単な方法は次のコード、ドキュメントを使用してクラスのインスタンスを作成するために、`CreateInstance`から継承されたメンバー、`CComCoClass`基本クラスです。  
   
  [!code-cpp[NVC_ATL_COM#11](../../atl/codesnippet/cpp/ccomcoclass-class_2.cpp)]  
   
-##  <a name="error"></a>CComCoClass::Error  
+##  <a name="error"></a>  CComCoClass::Error  
  この静的関数、`IErrorInfo`エラー情報をクライアントに提供するインターフェイスです。  
   
 ```
@@ -186,9 +181,9 @@ static HRESULT Error(
 ### <a name="remarks"></a>コメント  
  呼び出す`Error`、オブジェクトを実装する必要があります、`ISupportErrorInfo Interface`インターフェイスです。  
   
- 場合、`hRes`パラメーターが 0 以外の場合、`Error`の値を返します`hRes`です。 場合`hRes`が 0 の場合、最初の 4 つのバージョンの`Error`返す`DISP_E_EXCEPTION`です。 最後の 2 つのバージョンは、マクロの結果を返す**MAKE_HRESULT (1, FACILITY_ITF、** `nID` **)**です。  
+ 場合、`hRes`パラメーターが 0 以外の場合、`Error`の値を返します`hRes`です。 場合`hRes`が 0 の場合、最初の 4 つのバージョンの`Error`返す`DISP_E_EXCEPTION`です。 最後の 2 つのバージョンは、マクロの結果を返す**MAKE_HRESULT (1, FACILITY_ITF、** `nID` **)** です。  
   
-##  <a name="getobjectclsid"></a>CComCoClass::GetObjectCLSID  
+##  <a name="getobjectclsid"></a>  CComCoClass::GetObjectCLSID  
  一貫性のあるオブジェクトの CLSID を取得する方法を提供します。  
   
 ```
@@ -198,7 +193,7 @@ static const CLSID& WINAPI GetObjectCLSID();
 ### <a name="return-value"></a>戻り値  
  オブジェクトのクラス識別子です。  
   
-##  <a name="getobjectdescription"></a>CComCoClass::GetObjectDescription  
+##  <a name="getobjectdescription"></a>  CComCoClass::GetObjectDescription  
  この静的関数は、クラス オブジェクトのテキストの説明を取得します。  
   
 ```
@@ -209,13 +204,13 @@ static LPCTSTR WINAPI GetObjectDescription();
  クラスのオブジェクトの説明です。  
   
 ### <a name="remarks"></a>コメント  
- 既定の実装を返します**NULL**です。 このメソッドをオーバーライドすることができます、 [DECLARE_OBJECT_DESCRIPTION](object-map-macros.md#declare_object_description)マクロです。 例:  
+ 既定の実装を返します**NULL**です。 このメソッドをオーバーライドすることができます、 [DECLARE_OBJECT_DESCRIPTION](object-map-macros.md#declare_object_description)マクロです。 例えば:  
   
  [!code-cpp[NVC_ATL_COM#12](../../atl/codesnippet/cpp/ccomcoclass-class_3.h)]  
   
- `GetObjectDescription`によって呼び出される**IComponentRegistrar::GetComponents**です。 **IComponentRegistrar**オートメーション インターフェイスを使用すると、登録および登録解除、DLL 内の個々 のコンポーネントです。 ATL プロジェクト ウィザードを使用してコンポーネント レジスタのオブジェクトを作成するときに、ウィザードは自動的に実装、 **IComponentRegistrar**インターフェイスです。 **IComponentRegistrar**は通常 Microsoft Transaction Server によって使用されます。  
+ `GetObjectDescription` によって呼び出される**IComponentRegistrar::GetComponents**です。 **IComponentRegistrar**オートメーション インターフェイスを使用すると、登録および登録解除、DLL 内の個々 のコンポーネントです。 ATL プロジェクト ウィザードを使用してコンポーネント レジスタのオブジェクトを作成するときに、ウィザードは自動的に実装、 **IComponentRegistrar**インターフェイスです。 **IComponentRegistrar**は通常 Microsoft Transaction Server によって使用されます。  
   
  ATL プロジェクト ウィザードの詳細については、記事を参照してください。 [ATL プロジェクトを作成する](../../atl/reference/creating-an-atl-project.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

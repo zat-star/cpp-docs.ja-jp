@@ -1,12 +1,9 @@
 ---
-title: "CStringElementTraitsI クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CStringElementTraitsI クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CStringElementTraitsI
@@ -21,17 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - CStringElementTraitsI class
 ms.assetid: c23f92b1-91e5-400f-96ed-258b02622b7a
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7803d85c7adf346a06f87d35aba7f42e47f77b2a
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1544a2fec1c4567c301eb2c051f7455c8ca393c2
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cstringelementtraitsi-class"></a>CStringElementTraitsI クラス
 このクラスは、コレクション クラスのオブジェクトに格納された文字列に関連する静的関数を提供します。 似ています[CStringElementTraits](../../atl/reference/cstringelementtraits-class.md)が小文字の比較を実行します。  
@@ -74,10 +69,10 @@ class CStringElementTraitsI : public CElementTraitsBase<T>
   
  `CStringElementTraitsI`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="compareelements"></a>CStringElementTraitsI::CompareElements  
+##  <a name="compareelements"></a>  CStringElementTraitsI::CompareElements  
  ケースの相違を無視して、等しい 2 つの文字列要素を比較する、この静的関数を呼び出します。  
   
 ```
@@ -97,7 +92,7 @@ static bool CompareElements(INARGTYPE str1, INARGTYPE str2) throw();
 ### <a name="remarks"></a>コメント  
  比較では大文字小文字を区別します。  
   
-##  <a name="compareelementsordered"></a>CStringElementTraitsI::CompareElementsOrdered  
+##  <a name="compareelementsordered"></a>  CStringElementTraitsI::CompareElementsOrdered  
  ケースの相違を無視して、2 つの文字列要素を比較する、この静的関数を呼び出します。  
   
 ```
@@ -118,7 +113,7 @@ static int CompareElementsOrdered(INARGTYPE str1, INARGTYPE str2) throw();
 ### <a name="remarks"></a>コメント  
  比較では大文字小文字を区別します。  
   
-##  <a name="hash"></a>CStringElementTraitsI::Hash  
+##  <a name="hash"></a>  CStringElementTraitsI::Hash  
  指定した文字列の要素のハッシュ値を計算する、この静的関数を呼び出します。  
   
 ```
@@ -132,21 +127,21 @@ static ULONG Hash(INARGTYPE str) throw();
 ### <a name="return-value"></a>戻り値  
  文字列の内容を使用して計算されたハッシュ値を返します。  
   
-##  <a name="inargtype"></a>CStringElementTraitsI::INARGTYPE  
+##  <a name="inargtype"></a>  CStringElementTraitsI::INARGTYPE  
  コレクション クラスのオブジェクトに要素を追加するために使用するデータ型。  
   
 ```
 typedef T::PCXSTR INARGTYPE;
 ```  
   
-##  <a name="outargtype"></a>CStringElementTraitsI::OUTARGTYPE  
+##  <a name="outargtype"></a>  CStringElementTraitsI::OUTARGTYPE  
  コレクション クラスのオブジェクトから要素を取得するのに使用するデータ型。  
   
 ```
 typedef T& OUTARGTYPE;
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CElementTraitsBase クラス](../../atl/reference/celementtraitsbase-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [CStringElementTraits クラス](../../atl/reference/cstringelementtraits-class.md)

@@ -2,11 +2,8 @@
 title: _mbsnbcpy_s、_mbsnbcpy_s_l | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _mbsnbcpy_s_l
@@ -41,17 +38,15 @@ helpviewer_keywords:
 - _mbsnbcpy_s_l function
 - _tcsncpy_s function
 ms.assetid: dfff64ab-fe6f-49c4-99ba-75014e2b0cd6
-caps.latest.revision: 29
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e5dfb0d070fbe5e229b38aca4ece47696fcfce24
-ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
+ms.openlocfilehash: a9475609d304b6a3e49c2f71073c4d06c0380160
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="mbsnbcpys-mbsnbcpysl"></a>_mbsnbcpy_s、_mbsnbcpy_s_l
 
@@ -116,7 +111,7 @@ errno_t _mbsnbcpy_s_l(
 
 **_Mbsnbcpy_s**関数のコピー*カウント*からバイト*strSource*に*追加される文字*です。 場合*カウント*のサイズを超えています*追加される文字*か、入力文字列が null ポインター、または*sizeInBytes*または*カウント*0 の場合、関数は、無効なパラメーター ハンドラーが呼び出されます」の説明に従って[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 この関数を返しますのかどうかは、引き続き実行が許可された、 **EINVAL**です。 コピー元と移行先の文字列が重なり合うかどうかの動作 **_mbsnbcpy_s**が定義されていません。
 
-出力値の設定の影響を受けた、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。 **_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+出力値は、ロケールの **LC_CTYPE** カテゴリの設定に影響されます。詳細については、「[setlocale](setlocale-wsetlocale.md)」を参照してください。 **_l** サフィックスが付いていないこれらの関数のバージョンでは、このロケールに依存する動作に現在のロケールを使用します。**_l** サフィックスが付いているバージョンは、渡されたロケール パラメーターを代わりに使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
 
 > [!NOTE]
 > この関数のセキュリティ保護されていないバージョンとは異なり **_mbsnbcpy_s**いない null の埋め込みを行うし、常に null には、文字列を終了します。

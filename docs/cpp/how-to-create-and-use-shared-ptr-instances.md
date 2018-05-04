@@ -1,27 +1,22 @@
 ---
-title: "方法: shared_ptr インスタンスを作成して |Microsoft ドキュメント"
-ms.custom: 
+title: '方法: shared_ptr インスタンスを作成して |Microsoft ドキュメント'
+ms.custom: how-to
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 7d6ebb73-fa0d-4b0b-a528-bf05de96518e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fdabfad3d1b4ae6ee07a8d9e660ab31cbdc1df03
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1a2aad184a1f388df6f7a6941aa9e5f302f35b12
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-and-use-sharedptr-instances"></a>方法: shared_ptr インスタンスを作成して使用する
 `shared_ptr` 型は、C++ 標準ライブラリ内のスマート ポインターであり、複数の所有者がメモリ内のオブジェクトの有効期間を管理する必要が生じる可能性があるシナリオを想定して設計されたものです。 `shared_ptr` を初期化した後、そのポインターをコピーすること、関数の引数内の値として渡すこと、および他の `shared_ptr` インスタンスに割り当てることができます。 すべてのインスタンスは同じオブジェクトを指し、1 つの "コントロール ブロック" へのアクセスを共有します。このコントロール ブロックは、新しい `shared_ptr` が追加されるとき、スコープ外になるとき、またはリセットされるときに必ず参照カウントをインクリメントおよびデクリメントします。 参照カウントが 0 に達したときに、コントロール ブロックはメモリ リソースと自らを削除します。  
@@ -41,7 +36,7 @@ ms.lasthandoff: 12/21/2017
  [!code-cpp[stl_smart_pointers#2](../cpp/codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_2.cpp)]  
   
 ## <a name="example"></a>例  
- `shared_ptr`要素のコピーのアルゴリズムを使用しているときに C++ 標準ライブラリのコンテナーに役にもです。 基になるメモリが、必要とされている間は有効であり、必要なくなった後は無効になることを理解している場合は、要素を `shared_ptr` 内でラップし、他のコンテナーにコピーすることができます。 次の例では、ベクター内の `replace_copy_if` インスタンスに対して `shared_ptr` アルゴリズムを使用する方法を示します。  
+ `shared_ptr` 要素のコピーのアルゴリズムを使用しているときに C++ 標準ライブラリのコンテナーに役にもです。 基になるメモリが、必要とされている間は有効であり、必要なくなった後は無効になることを理解している場合は、要素を `shared_ptr` 内でラップし、他のコンテナーにコピーすることができます。 次の例では、ベクター内の `replace_copy_if` インスタンスに対して `shared_ptr` アルゴリズムを使用する方法を示します。  
   
  [!code-cpp[stl_smart_pointers#4](../cpp/codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_3.cpp)]  
   
@@ -70,5 +65,5 @@ ms.lasthandoff: 12/21/2017
   
  [!code-cpp[stl_smart_pointers#3](../cpp/codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_6.cpp)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [スマート ポインター](../cpp/smart-pointers-modern-cpp.md)

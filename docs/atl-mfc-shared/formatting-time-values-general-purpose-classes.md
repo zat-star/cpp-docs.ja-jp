@@ -1,12 +1,9 @@
 ---
-title: "時刻の値の書式設定: 汎用クラスで |Microsoft ドキュメント"
-ms.custom: 
+title: '時刻の値の書式設定: 汎用クラスで |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 dev_langs:
 - C++
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - time [C++], formatting
 - formatting [C++], time
 ms.assetid: 7fcfee24-f874-4a4d-95b3-adc19a0f2df0
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4479fea641a21edf3f037924b50247798f5a6e6e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d48dd7ef4990c4ffe13c7c1f056d5904b6897435
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="formatting-time-values-general-purpose-classes"></a>時刻値の書式設定: 汎用クラス
 次の手順では、時刻の値を書式設定する方法を示します。  
@@ -45,6 +40,6 @@ ms.lasthandoff: 12/21/2017
   
 -   [日付と時刻のオートメーションのサポート](../atl-mfc-shared/date-and-time-automation-support.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [日付と時刻: 汎用クラス](../atl-mfc-shared/date-and-time-general-purpose-classes.md)
 

@@ -1,12 +1,9 @@
 ---
-title: "CFixedStringT クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CFixedStringT クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 f1_keywords:
 - CFixedStringT
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - CFixedStringT class
 - shared classes, CFixedStringT
 ms.assetid: 6d4171ba-3104-493a-a6cc-d515f4ba9a4b
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3f66749272649fe230b31e770a175e0b94441b90
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 93125d15be32a95d71c763f476fad700dab65a3b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cfixedstringt-class"></a>CFixedStringT クラス
 このクラスは、固定された文字バッファーを使用して、文字列オブジェクトを表します。  
@@ -68,7 +63,7 @@ class CFixedStringT : private CFixedStringMgr, public StringType
   
 -   文字バッファー、`CFixedStringT`オブジェクトが同じ長さでは常に ( *t_nChars*)。 バッファー サイズに制限はありません`CStringT`オブジェクト。  
   
--   メモリ マネージャー`CFixedStringT`を共有するようにカスタマイズされた、 [CStringData](../../atl-mfc-shared/reference/cstringdata-class.md)の 2 つ以上のオブジェクト`CFixedStringT`objectsis が許可されていません。 `CStringT`オブジェクトには、この制限はありません。  
+-   メモリ マネージャー`CFixedStringT`を共有するようにカスタマイズされた、 [CStringData](../../atl-mfc-shared/reference/cstringdata-class.md)の 2 つ以上のオブジェクト`CFixedStringT`objectsis が許可されていません。 `CStringT` オブジェクトには、この制限はありません。  
   
  詳細のカスタマイズについて`CFixedStringT`の string オブジェクトのメモリ管理は一般を参照してください、[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
@@ -81,10 +76,10 @@ class CFixedStringT : private CFixedStringMgr, public StringType
   
  `CFixedStringT`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** cstringt.h  
   
-##  <a name="cfixedstringt"></a>CFixedStringT::CFixedStringT  
+##  <a name="cfixedstringt"></a>  CFixedStringT::CFixedStringT  
  `CFixedStringT` オブジェクトを構築します。  
   
 ```
@@ -110,7 +105,7 @@ explicit CFixedStringT(const unsigned char* psz);
 ### <a name="remarks"></a>コメント  
  コンス トラクターは、新しい割り当てられている記憶域に入力データをコピーするために注意してくださいメモリ不足の例外が発生する可能性があります。 変換関数として機能するこれらのコンス トラクターの一部に注意してください。  
   
-##  <a name="operator__eq"></a>CFixedStringT::operator =  
+##  <a name="operator__eq"></a>  CFixedStringT::operator =  
  既存の再初期化`CFixedStringT`新しいデータを持つオブジェクト。  
   
 ```
@@ -132,7 +127,7 @@ CFixedStringT<StringType, t_nChars>& operator=(const StringType& str);
 ### <a name="remarks"></a>コメント  
  注意すべき、代入演算子を使用すると、新しい記憶域は多くの場合、その結果を保持するために割り当てられているために、例外が発生するメモリ`CFixedStringT`オブジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CStringT クラス](../../atl-mfc-shared/reference/cstringt-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)

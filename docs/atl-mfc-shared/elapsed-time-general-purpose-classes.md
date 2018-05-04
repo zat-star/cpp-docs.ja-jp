@@ -1,12 +1,9 @@
 ---
-title: "汎用クラスでの経過時間: |Microsoft ドキュメント"
-ms.custom: 
+title: '汎用クラスでの経過時間: |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 dev_langs:
 - C++
@@ -20,17 +17,15 @@ helpviewer_keywords:
 - intervals, date and time
 - calculations, date and time
 ms.assetid: e5c5d3d2-ce1d-409e-875c-98848434e716
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 51eea60669fb7ad35525d65013ffc8420649349b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ff7ef11bb20124a05e2e85c408ce27de8f982546
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="elapsed-time-general-purpose-classes"></a>汎用クラスでの経過時間:
 次の手順は、2 つの差を計算する方法を示しています。`CTime`オブジェクトを取得、`CTimeSpan`結果。  
@@ -43,6 +38,6 @@ ms.lasthandoff: 12/21/2017
   
      計算した後`elapsedTime`のメンバー関数を使用する`CTimeSpan`を経過した時間の値のコンポーネントを抽出します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [日付と時刻: 汎用クラス](../atl-mfc-shared/date-and-time-general-purpose-classes.md)
 

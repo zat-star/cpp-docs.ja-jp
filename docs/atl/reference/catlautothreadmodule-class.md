@@ -1,12 +1,9 @@
 ---
-title: "残さクラス |Microsoft ドキュメント"
-ms.custom: 
+title: 残さクラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CAtlAutoThreadModule
@@ -16,17 +13,15 @@ dev_langs:
 helpviewer_keywords:
 - CAtlAutoThreadModule class
 ms.assetid: 3be834aa-55ef-403e-94ae-41979691b15f
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1845ecea273ece212b65d61b169cbd8f894a60a0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 9c89d142254909591ebd01bfa859be5488cbfaf6
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="catlautothreadmodule-class"></a>残さクラス
 このクラスは、スレッド プール、アパートメント モデルの COM サーバーを実装します。  
@@ -41,9 +36,9 @@ class CAtlAutoThreadModule : public CAtlAutoThreadModuleT<CAtlAutoThreadModule>
 ```  
   
 ## <a name="remarks"></a>コメント  
- `CAtlAutoThreadModule`派生した[CAtlAutoThreadModuleT](../../atl/reference/catlautothreadmodulet-class.md)をスレッド プール、アパートメント モデルの COM サーバーを実装します。 `CAtlAutoThreadModule`使用して[CComApartment](../../atl/reference/ccomapartment-class.md)モジュール内の各スレッド アパートメントを管理します。  
+ `CAtlAutoThreadModule` 派生した[CAtlAutoThreadModuleT](../../atl/reference/catlautothreadmodulet-class.md)をスレッド プール、アパートメント モデルの COM サーバーを実装します。 `CAtlAutoThreadModule` 使用して[CComApartment](../../atl/reference/ccomapartment-class.md)モジュール内の各スレッド アパートメントを管理します。  
   
- 使用する必要があります、 [DECLARE_CLASSFACTORY_AUTO_THREAD](aggregation-and-class-factory-macros.md#declare_classfactory_auto_thread)を指定するオブジェクトのクラス定義でマクロ[CComClassFactoryAutoThread](../../atl/reference/ccomclassfactoryautothread-class.md)クラス ファクトリとして。 派生したクラスの 1 つのインスタンスを追加する必要があります、`CAtlAutoThreadModuleT`など`CAtlAutoThreadModule`です。 例:  
+ 使用する必要があります、 [DECLARE_CLASSFACTORY_AUTO_THREAD](aggregation-and-class-factory-macros.md#declare_classfactory_auto_thread)を指定するオブジェクトのクラス定義でマクロ[CComClassFactoryAutoThread](../../atl/reference/ccomclassfactoryautothread-class.md)クラス ファクトリとして。 派生したクラスの 1 つのインスタンスを追加する必要があります、`CAtlAutoThreadModuleT`など`CAtlAutoThreadModule`です。 例えば:  
   
  `CAtlAutoThreadModule _AtlAutoModule; // name is immaterial.`  
   
@@ -57,10 +52,10 @@ class CAtlAutoThreadModule : public CAtlAutoThreadModuleT<CAtlAutoThreadModule>
   
  `CAtlAutoThreadModule`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CAtlAutoThreadModuleT クラス](../../atl/reference/catlautothreadmodulet-class.md)   
  [IAtlAutoThreadModule クラス](../../atl/reference/iatlautothreadmodule-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   

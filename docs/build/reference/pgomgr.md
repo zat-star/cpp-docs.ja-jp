@@ -13,14 +13,13 @@ helpviewer_keywords:
 ms.assetid: 74589126-df18-42c9-8739-26d60e148d6a
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 743665bbe0ee9c3df08d197d203e95d08542f613
-ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.openlocfilehash: 7bf7567cfe9f21effda913606ca3af9a19464f9d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pgomgr"></a>pgomgr
 
@@ -35,15 +34,15 @@ ms.lasthandoff: 04/10/2018
 *options*<br/>
 次のオプションを指定できます**pgomgr**:
 
-- **/help**または**/しますか?** 使用可能な表示**pgomgr**オプション。
+- **/help**または **/しますか?** 使用可能な表示**pgomgr**オプション。
 
-- **/clear** .pgd ファイルすべてのプロファイル情報をクリアします。 .Pgc を指定することはできませんファイル**/clear**を指定します。
+- **/clear** .pgd ファイルすべてのプロファイル情報をクリアします。 .Pgc を指定することはできませんファイル **/clear**を指定します。
 
 - **/detail**フロー グラフのカバレッジ情報を含む、詳細な統計情報を表示します。
 
 - **/summary**表示関数ごとの統計情報。
 
-- **一意/**と共に使用する場合**/summary**原因、装飾関数名を表示します。 既定値、**一意/**は使用しない場合、装飾されていない関数名が表示されますが、します。
+- **一意/** と共に使用する場合 **/summary**原因、装飾関数名を表示します。 既定値、**一意/** は使用しない場合、装飾されていない関数名が表示されますが、します。
 
 - **/merge**[**: * * * n*] は、.pgc ファイルまたは .pgd ファイルを追加するファイルのデータ。 省略可能なパラメーター、 *n*、データを追加することを指定する*n*回です。 たとえばがの場合、シナリオよく 6 回を元に戻すことが顧客によって行うはどのくらいの頻度を反映するように、テストの実行で 1 回行うことして 6 回 .pgd ファイルに追加**した後**です。
 

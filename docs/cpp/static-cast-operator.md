@@ -1,12 +1,9 @@
 ---
-title: "static_cast 演算子 |Microsoft ドキュメント"
-ms.custom: 
+title: static_cast 演算子 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - static_cast_cpp
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - static_cast keyword [C++]
 ms.assetid: 1f7c0c1c-b288-476c-89d6-0e2ceda5c293
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3913937d9099304c478404c4c55a09fa54392785
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5a0cd6ea7e2268940febca9e1e564f30d29dcff0
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="staticcast-operator"></a>static_cast 演算子
 変換、*式*の型に*タイプ id*は式内に存在する型にのみ基づいてです。  
@@ -63,7 +58,7 @@ void f(B* pb, D* pd) {
   
  対照的に[dynamic_cast](../cpp/dynamic-cast-operator.md)、実行時チェックが行われません、`static_cast`への変換`pb`です。 `pb` によってポイントされるオブジェクトは、型 `D` のオブジェクトではない場合があります。その場合は、`*pd2` を使用すると、深刻な結果が発生する可能性があります。 たとえば、`D` クラスではなく、`B` クラスのメンバーである関数を呼び出すと、アクセス違反が発生する可能性があります。  
   
- `dynamic_cast` と `static_cast` 演算子は、クラス階層構造のあらゆる場所にポインターを移動します。 ただし、`static_cast` はキャスト ステートメントで提供される情報に排他的に依存するため、安全でない場合があります。 例:  
+ `dynamic_cast` と `static_cast` 演算子は、クラス階層構造のあらゆる場所にポインターを移動します。 ただし、`static_cast` はキャスト ステートメントで提供される情報に排他的に依存するため、安全でない場合があります。 例えば:  
   
 ```  
 // static_cast_Operator_2.cpp  
@@ -88,7 +83,7 @@ void f(B* pb) {
   
  この動作は、クラス型以外の型にも適用されます。 たとえば、int から `static_cast` に変換するために `char` を使用できます。 ただし、結果の `char` には、`int` 値全体を格納できる十分なビットがない場合があります。 もう一度に任されていることを確認するプログラマの結果、`static_cast`変換が安全です。  
   
- `static_cast` 演算子は、標準変換やユーザー定義変換など、暗黙の変換を実行するために使用することもできます。 例:  
+ `static_cast` 演算子は、標準変換やユーザー定義変換など、暗黙の変換を実行するために使用することもできます。 例えば:  
   
 ```  
 // static_cast_Operator_3.cpp  
@@ -117,6 +112,6 @@ void f() {
   
  再配置を行うガベージ コレクターの先頭で unchecked キャストを実行する危険性があるため、`static_cast` は、正しく機能することがわかっている場合にパフォーマンスが重要なコードでのみ使用する必要があります。 使用する場合は`static_cast`リリース モードでは、置換後[safe_cast](../windows/safe-cast-cpp-component-extensions.md)にデバッグ ビルドで成功を確認してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キャスト演算子](../cpp/casting-operators.md)   
  [キーワード](../cpp/keywords-cpp.md)

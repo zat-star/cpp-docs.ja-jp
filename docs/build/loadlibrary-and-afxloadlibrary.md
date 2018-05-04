@@ -1,13 +1,10 @@
 ---
-title: "LoadLibrary と AfxLoadLibrary |Microsoft ドキュメント"
-ms.custom: 
+title: LoadLibrary と AfxLoadLibrary |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - LoadLibrary
 dev_langs:
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - LoadLibrary method
 - explicit linking [C++]
 ms.assetid: b4535d19-6243-4146-a31a-a5cca4c7c9e3
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dd24f125398cab606ca835094727a4a2819fb17e
-ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.openlocfilehash: bc4e211259e6c0a483f73094c442c034cd649616
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="loadlibrary-and-afxloadlibrary"></a>LoadLibrary と AfxLoadLibrary
 呼び出しを処理[LoadLibrary](http://go.microsoft.com/fwlink/p/?LinkID=259187) (または[AfxLoadLibrary](../mfc/reference/application-information-and-management.md#afxloadlibrary)) に DLL に明示的にリンクします。 この関数が正常終了した場合、呼び出し元プロセスのアドレス空間に指定された DLL が割り当てられ、DLL へのハンドルが返されます。このハンドルは、`GetProcAddress` や `FreeLibrary` など、明示的リンクに必要な他の関数で使用できます。  
@@ -59,7 +54,7 @@ ms.lasthandoff: 02/09/2018
   
 -   [GetProcAddress](../build/getprocaddress.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual C の Dll](../build/dlls-in-visual-cpp.md)   
  [LoadLibrary](http://go.microsoft.com/fwlink/p/?LinkID=259187)   
  [AfxLoadLibrary](../mfc/reference/application-information-and-management.md#afxloadlibrary)

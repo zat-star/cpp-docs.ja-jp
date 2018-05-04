@@ -1,27 +1,22 @@
 ---
-title: "依存する型の名前解決 |Microsoft ドキュメント"
-ms.custom: 
+title: 依存する型の名前解決 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 ms.assetid: 34066bb4-0c79-4fd8-bda7-539a60a277ab
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5d8978e38745f088884bbf28ffb0ab98cfb87895
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c31a609345408727d53abd314e30bd523526833c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="name-resolution-for-dependent-types"></a>依存する型の名前解決
 使用して**typename**の指定した修飾名が型を指定することをコンパイラに指示するテンプレート定義で修飾名。 詳細については、次を参照してください。 [typename](../cpp/typename.md)です。  
@@ -102,7 +97,7 @@ Int MyNamespace::myFunction
 ```  
   
 ### <a name="template-disambiguation"></a>テンプレートのあいまいさの解消  
- [!INCLUDE[cpp_dev11_long](../build/includes/cpp_dev11_long_md.md)] は、template キーワードによるあいまいさの解消に関する C++ 98/03/11 規格の規則を強制します。 次の例では、Visual C 2010 が受け入れて準拠していない行と準拠している行の両方を設定します。  [!INCLUDE[cpp_dev11_long](../build/includes/cpp_dev11_long_md.md)]準拠している行のみを受け入れます。  
+ [!INCLUDE[cpp_dev11_long](../build/includes/cpp_dev11_long_md.md)] は、template キーワードによるあいまいさの解消に関する C++ 98/03/11 規格の規則を強制します。 次の例では、Visual C 2010 が受け入れて準拠していない行と準拠している行の両方を設定します。  [!INCLUDE[cpp_dev11_long](../build/includes/cpp_dev11_long_md.md)] 準拠している行のみを受け入れます。  
   
 ```cpp  
 #include <iostream>  
@@ -133,5 +128,5 @@ int main() {
   
  あいまいさを解消する規則に準拠している必要があるのは、既定で、C++ は `AY::Rebind` がテンプレートでないと仮定し、そのためコンパイラは次の "`<`" を "より小さい" と解釈するためです。 "`Rebind`" を山かっことして正しく解析できるように、`<` がテンプレートであることを知っている必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [名前解決](../cpp/templates-and-name-resolution.md)

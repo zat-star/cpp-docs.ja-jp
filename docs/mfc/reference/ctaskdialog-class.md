@@ -1,12 +1,12 @@
 ---
-title: "CTaskDialog クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CTaskDialog クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 f1_keywords:
 - CTaskDialog
@@ -125,17 +125,17 @@ helpviewer_keywords:
 - CTaskDialog [MFC], ShowDialog
 - CTaskDialog [MFC], TaskDialogCallback
 ms.assetid: 1991ec98-ae56-4483-958b-233809c8c559
-caps.latest.revision: 
+caps.latest.revision: 29
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4ecde926a27fbf4fa74cabdec6ff4d54f7d89216
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 2ebe8b22c0bd05a36f0bcdbfa21ad97105ee1ae2
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ctaskdialog-class"></a>CTaskDialog Class
 メッセージ ボックスのような機能を持つだけでなく、ユーザーに対する追加情報も表示できる、ポップアップ ダイアログ ボックスです。 `CTaskDialog` には、ユーザーから情報を収集するための機能も用意されています。  
@@ -219,7 +219,7 @@ class CTaskDialog : public CObject
 |-|-|  
 |`m_aButtons`|コマンド ボタンのコントロールの配列、`CTaskDialog`です。|  
 |`m_aRadioButtons`|ラジオ ボタン コントロール用の配列、`CTaskDialog`です。|  
-|`m_bVerified`|`TRUE`確認のチェック ボックスがチェックを示します。`FALSE`なっていないことを示します。|  
+|`m_bVerified`|`TRUE` 確認のチェック ボックスがチェックを示します。`FALSE`なっていないことを示します。|  
 |`m_footerIcon`|フッターに、アイコン、`CTaskDialog`です。|  
 |`m_hWnd`|ウィンドウのハンドル、`CTaskDialog`です。|  
 |`m_mainIcon`|メインのアイコン、`CTaskDialog`です。|  
@@ -246,7 +246,7 @@ class CTaskDialog : public CObject
 |`m_strVerification`|文字列を`CTaskDialog`確認のチェック ボックスの右側に表示されます。|  
   
 ## <a name="remarks"></a>コメント  
- `CTaskDialog`クラスは、標準の Windows メッセージ ボックスに置き換えられますおり、ユーザーから情報を収集する新しいコントロールなどの追加機能。 このクラスは、MFC ライブラリで[!INCLUDE[vs_dev10_long](../../build/includes/vs_dev10_long_md.md)]です。 `CTaskDialog`以降で使用できますが[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。 Windows の以前のバージョンを表示できません、`CTaskDialog`オブジェクト。 使用して`CTaskDialog::IsSupported`を実行時に、現在のユーザーが、タスク ダイアログ ボックスを表示するかどうかを判断します。 標準 Windows メッセージ ボックスが引き続きサポート[!INCLUDE[vs_dev10_long](../../build/includes/vs_dev10_long_md.md)]です。  
+ `CTaskDialog`クラスは、標準の Windows メッセージ ボックスに置き換えられますおり、ユーザーから情報を収集する新しいコントロールなどの追加機能。 このクラスは、MFC ライブラリで[!INCLUDE[vs_dev10_long](../../build/includes/vs_dev10_long_md.md)]です。 `CTaskDialog`は Windows Vista 以降で使用できます。 Windows の以前のバージョンを表示できません、`CTaskDialog`オブジェクト。 使用して`CTaskDialog::IsSupported`を実行時に、現在のユーザーが、タスク ダイアログ ボックスを表示するかどうかを判断します。 標準 Windows メッセージ ボックスが引き続きサポート[!INCLUDE[vs_dev10_long](../../build/includes/vs_dev10_long_md.md)]です。  
   
  `CTaskDialog`は Unicode ライブラリを使用して、アプリケーションをビルドするときにのみ使用できます。  
   
@@ -257,12 +257,12 @@ class CTaskDialog : public CObject
  ![CTaskDialog の例](../../mfc/reference/media/ctaskdialogsample.png "ctaskdialogsample")  
 CTaskDialog の例  
   
-## <a name="requirements"></a>必要条件  
- **必要なオペレーティング システムの最小:**[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]  
+## <a name="requirements"></a>要件  
+ **必要なオペレーティング システムの最小:** Windows Vista  
   
  **ヘッダー:** afxtaskdialog.h  
   
-##  <a name="addcommandcontrol"></a>CTaskDialog::AddCommandControl  
+##  <a name="addcommandcontrol"></a>  CTaskDialog::AddCommandControl  
  新しいコマンド ボタン コントロールを追加、`CTaskDialog`です。  
   
 ```  
@@ -294,7 +294,7 @@ void AddCommandControl(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#2](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_1.cpp)]  
   
-##  <a name="addradiobutton"></a>CTaskDialog::AddRadioButton  
+##  <a name="addradiobutton"></a>  CTaskDialog::AddRadioButton  
  ラジオ ボタンを追加、`CTaskDialog`です。  
   
 ```  
@@ -322,7 +322,7 @@ void CTaskDialog::AddRadioButton(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#3](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_2.cpp)]  
   
-##  <a name="clickcommandcontrol"></a>CTaskDialog::ClickCommandControl  
+##  <a name="clickcommandcontrol"></a>  CTaskDialog::ClickCommandControl  
  プログラムで、コマンド ボタン コントロールや一般的なボタンをクリックします。  
   
 ```  
@@ -337,7 +337,7 @@ void ClickCommandControl(int nCommandControlID) const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、windows メッセージを生成`TDM_CLICK_BUTTON`です。  
   
-##  <a name="clickradiobutton"></a>CTaskDialog::ClickRadioButton  
+##  <a name="clickradiobutton"></a>  CTaskDialog::ClickRadioButton  
  プログラムによって、ラジオ ボタンをクリックします。  
   
 ```  
@@ -352,7 +352,7 @@ void ClickRadioButton(int nRadioButtonID) const;
 ### <a name="remarks"></a>コメント  
  このメソッドは、windows メッセージを生成`TDM_CLICK_RADIO_BUTTON`です。  
   
-##  <a name="ctaskdialog"></a>CTaskDialog::CTaskDialog  
+##  <a name="ctaskdialog"></a>  CTaskDialog::CTaskDialog  
  インスタンスを作成、 [CTaskDialog クラス](../../mfc/reference/ctaskdialog-class.md)です。  
   
 ```  
@@ -411,7 +411,7 @@ CTaskDialog(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="domodal"></a>CTaskDialog::DoModal  
+##  <a name="domodal"></a>  CTaskDialog::DoModal  
  表示、`CTaskDialog`されモーダルになります。  
   
 ```  
@@ -433,7 +433,7 @@ INT_PTR DoModal (HWND hParent = ::GetActiveWindow());
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="getcommonbuttoncount"></a>CTaskDialog::GetCommonButtonCount  
+##  <a name="getcommonbuttoncount"></a>  CTaskDialog::GetCommonButtonCount  
  一般的なボタンの数を取得します。  
   
 ```  
@@ -448,7 +448,7 @@ int GetCommonButtonCount() const;
   
  列挙されたボタンの一覧については、CommCtrl.h で提供されます。  
   
-##  <a name="getcommonbuttonflag"></a>CTaskDialog::GetCommonButtonFlag  
+##  <a name="getcommonbuttonflag"></a>  CTaskDialog::GetCommonButtonFlag  
  一般的なボタンの種類に Windows のボタンに関連付けられている標準の変換、 [CTaskDialog クラス](../../mfc/reference/ctaskdialog-class.md)です。  
   
 ```  
@@ -462,7 +462,7 @@ int GetCommonButtonFlag(int nButtonId) const;
 ### <a name="return-value"></a>戻り値  
  対応する値`CTaskDialog`一般的なボタンをクリックします。 対応する一般的なボタンがない場合、このメソッドは 0 を返します。  
   
-##  <a name="getcommonbuttonid"></a>CTaskDialog::GetCommonButtonId  
+##  <a name="getcommonbuttonid"></a>  CTaskDialog::GetCommonButtonId  
  関連付けられている一般的なボタンの種類のいずれかの変換、 [CTaskDialog クラス](../../mfc/reference/ctaskdialog-class.md)標準 Windows ボタンをクリックします。  
   
 ```  
@@ -476,7 +476,7 @@ int GetCommonButtonId(int nFlag);
 ### <a name="return-value"></a>戻り値  
  対応する標準の Windows ボタンの値。 対応する Windows ボタンがない場合は、このメソッドは 0 を返します。  
   
-##  <a name="getoptions"></a>CTaskDialog::GetOptions  
+##  <a name="getoptions"></a>  CTaskDialog::GetOptions  
  このオプションのフラグを返します`CTaskDialog`です。  
   
 ```  
@@ -492,7 +492,7 @@ int GetOptions() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="getselectedcommandcontrolid"></a>CTaskDialog::GetSelectedCommandControlID  
+##  <a name="getselectedcommandcontrolid"></a>  CTaskDialog::GetSelectedCommandControlID  
  選択したコマンド ボタン コントロールを返します。  
   
 ```  
@@ -508,7 +508,7 @@ int GetSelectedCommandControlID() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#2](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_1.cpp)]  
   
-##  <a name="getselectedradiobuttonid"></a>CTaskDialog::GetSelectedRadioButtonID  
+##  <a name="getselectedradiobuttonid"></a>  CTaskDialog::GetSelectedRadioButtonID  
  選択したオプション ボタンを返します。  
   
 ```  
@@ -524,7 +524,7 @@ int GetSelectedRadioButtonID() const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#3](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_2.cpp)]  
   
-##  <a name="getverificationcheckboxstate"></a>CTaskDialog::GetVerificationCheckboxState  
+##  <a name="getverificationcheckboxstate"></a>  CTaskDialog::GetVerificationCheckboxState  
  確認のチェック ボックスの状態を取得します。  
   
 ```  
@@ -532,12 +532,12 @@ BOOL GetVerificationCheckboxState() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `TRUE`チェック ボックスをオンにした場合`FALSE`されていない場合。  
+ `TRUE` チェック ボックスをオンにした場合`FALSE`されていない場合。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#5](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_4.cpp)]  
   
-##  <a name="iscommandcontrolenabled"></a>CTaskDialog::IsCommandControlEnabled  
+##  <a name="iscommandcontrolenabled"></a>  CTaskDialog::IsCommandControlEnabled  
  コマンド ボタン コントロールまたはボタンが有効かどうかを判断します。  
   
 ```  
@@ -549,7 +549,7 @@ BOOL IsCommandControlEnabled(int nCommandControlID) const;
  テストするコマンド ボタンのコントロールまたはボタンの ID。  
   
 ### <a name="return-value"></a>戻り値  
- `TRUE`コントロールが有効になっている場合`FALSE`されていない場合。  
+ `TRUE` コントロールが有効になっている場合`FALSE`されていない場合。  
   
 ### <a name="remarks"></a>コメント  
  このメソッドを使用するには両方のコマンド ボタン コントロールの可用性との共通のボタンを判断する、`CTaskDialog Class`です。  
@@ -559,7 +559,7 @@ BOOL IsCommandControlEnabled(int nCommandControlID) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#2](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_1.cpp)]  
   
-##  <a name="isradiobuttonenabled"></a>CTaskDialog::IsRadioButtonEnabled  
+##  <a name="isradiobuttonenabled"></a>  CTaskDialog::IsRadioButtonEnabled  
  ラジオ ボタンが有効になっているかどうかを判断します。  
   
 ```  
@@ -571,7 +571,7 @@ BOOL IsRadioButtonEnabled(int nRadioButtonID) const;
  テストするラジオ ボタンの ID。  
   
 ### <a name="return-value"></a>戻り値  
- `TRUE`ラジオ ボタンが有効になっている場合`FALSE`されていない場合。  
+ `TRUE` ラジオ ボタンが有効になっている場合`FALSE`されていない場合。  
   
 ### <a name="remarks"></a>コメント  
  場合`nRadioButtonID`有効な識別子ではないのラジオ ボタンでは、このメソッドが例外をスローします。  
@@ -579,7 +579,7 @@ BOOL IsRadioButtonEnabled(int nRadioButtonID) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#3](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_2.cpp)]  
   
-##  <a name="issupported"></a>CTaskDialog::IsSupported  
+##  <a name="issupported"></a>  CTaskDialog::IsSupported  
  アプリケーションを実行しているコンピューターをサポートするかどうかを決定、`CTaskDialog`です。  
   
 ```  
@@ -587,7 +587,7 @@ static BOOL IsSupported();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `TRUE`コンピューターがサポートされている場合、`CTaskDialog`です。`FALSE`それ以外の場合。  
+ `TRUE` コンピューターがサポートされている場合、`CTaskDialog`です。`FALSE`それ以外の場合。  
   
 ### <a name="remarks"></a>コメント  
  この関数を使用して、アプリケーションを実行しているコンピューターをサポートしている場合、実行時に決定する、`CTaskDialog Class`です。 コンピューターがサポートしていない場合、 `CTaskDialog`、別のユーザーに情報を伝達する方法を指定する必要があります。 使用しようとすると、アプリケーションがクラッシュする`CTaskDialog`サポートしていないコンピューターで、`CTaskDialog`クラスです。  
@@ -595,7 +595,7 @@ static BOOL IsSupported();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#1](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_5.cpp)]  
   
-##  <a name="loadcommandcontrols"></a>CTaskDialog::LoadCommandControls  
+##  <a name="loadcommandcontrols"></a>  CTaskDialog::LoadCommandControls  
  ストリング テーブルからデータを使用してコマンド ボタン コントロールを追加します。  
   
 ```  
@@ -619,7 +619,7 @@ void LoadCommandControls(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#2](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_1.cpp)]  
   
-##  <a name="loadradiobuttons"></a>CTaskDialog::LoadRadioButtons  
+##  <a name="loadradiobuttons"></a>  CTaskDialog::LoadRadioButtons  
  ストリング テーブルからデータを使用してラジオ ボタン コントロールを追加します。  
   
 ```  
@@ -643,7 +643,7 @@ void LoadRadioButtons(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#3](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_2.cpp)]  
   
-##  <a name="navigateto"></a>CTaskDialog::NavigateTo  
+##  <a name="navigateto"></a>  CTaskDialog::NavigateTo  
  別にフォーカスが移動`CTaskDialog`です。  
   
 ```  
@@ -658,7 +658,7 @@ void NavigateTo(CTaskDialog& oTaskDialog) const;
 ### <a name="remarks"></a>コメント  
  このメソッドは現在、隠ぺい`CTaskDialog`それを表示するとき、`oTaskDialog`です。 `oTaskDialog`現在と同じ場所に表示される`CTaskDialog`です。  
   
-##  <a name="oncommandcontrolclick"></a>CTaskDialog::OnCommandControlClick  
+##  <a name="oncommandcontrolclick"></a>  CTaskDialog::OnCommandControlClick  
  フレームワークは、ユーザーがコマンド ボタン コントロールをクリックしたときに、このメソッドを呼び出します。  
   
 ```  
@@ -675,7 +675,7 @@ virtual HRESULT OnCommandControlClick(int nCommandControlID);
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="oncreate"></a>CTaskDialog::OnCreate  
+##  <a name="oncreate"></a>  CTaskDialog::OnCreate  
  フレームワークが作成された後、このメソッドを呼び出して、`CTaskDialog`です。  
   
 ```  
@@ -688,7 +688,7 @@ virtual HRESULT OnCreate();
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="ondestroy"></a>CTaskDialog::OnDestroy  
+##  <a name="ondestroy"></a>  CTaskDialog::OnDestroy  
  破棄する前にすぐに、フレームワークはこのメソッドを呼び出して、`CTaskDialog`です。  
   
 ```  
@@ -701,7 +701,7 @@ virtual HRESULT OnDestroy();
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="onexpandbuttonclick"></a>CTaskDialog::OnExpandButtonClick  
+##  <a name="onexpandbuttonclick"></a>  CTaskDialog::OnExpandButtonClick  
  フレームワークは、ユーザーが展開ボタンをクリックすると、このメソッドを呼び出します。  
   
 ```  
@@ -718,7 +718,7 @@ virtual HRESULT OnExpandButtonClicked(BOOL bExpanded);
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="onhelp"></a>CTaskDialog::OnHelp  
+##  <a name="onhelp"></a>  CTaskDialog::OnHelp  
  フレームワークは、ユーザーがヘルプを要求すると、このメソッドを呼び出します。  
   
 ```  
@@ -731,7 +731,7 @@ virtual HRESULT OnHelp();
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="onhyperlinkclick"></a>CTaskDialog::OnHyperlinkClick  
+##  <a name="onhyperlinkclick"></a>  CTaskDialog::OnHyperlinkClick  
  フレームワークは、ユーザーがハイパーリンクをクリックしたときに、このメソッドを呼び出します。  
   
 ```  
@@ -750,7 +750,7 @@ virtual HRESULT OnHyperlinkClick(const CString& strHref);
   
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="oninit"></a>CTaskDialog::OnInit  
+##  <a name="oninit"></a>  CTaskDialog::OnInit  
  フレームワークがこのメソッドを呼び出すときに、`CTaskDialog`が初期化されます。  
   
 ```  
@@ -763,7 +763,7 @@ virtual HRESULT OnInit();
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="onnavigatepage"></a>CTaskDialog::OnNavigatePage  
+##  <a name="onnavigatepage"></a>  CTaskDialog::OnNavigatePage  
  フレームワークでは、このメソッドを呼び出してへの応答、 [CTaskDialog::NavigateTo](#navigateto)メソッドです。  
   
 ```  
@@ -776,7 +776,7 @@ virtual HRESULT OnNavigatePage();
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="onradiobuttonclick"></a>CTaskDialog::OnRadioButtonClick  
+##  <a name="onradiobuttonclick"></a>  CTaskDialog::OnRadioButtonClick  
  フレームワークは、ユーザーがラジオ ボタン コントロールを選択したときに、このメソッドを呼び出します。  
   
 ```  
@@ -793,7 +793,7 @@ virtual HRESULT OnRadioButtonClick(int nRadioButtonID);
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="ontimer"></a>CTaskDialog::OnTimer  
+##  <a name="ontimer"></a>  CTaskDialog::OnTimer  
  フレームワークは、タイマーが切れたときに、このメソッドを呼び出します。  
   
 ```  
@@ -810,7 +810,7 @@ virtual HRESULT OnTimer(long lTime);
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="onverificationcheckboxclick"></a>CTaskDialog::OnVerificationCheckboxClick  
+##  <a name="onverificationcheckboxclick"></a>  CTaskDialog::OnVerificationCheckboxClick  
  フレームワークは、ユーザーが確認のチェック ボックスをクリックしたときに、このメソッドを呼び出します。  
   
 ```  
@@ -819,7 +819,7 @@ virtual HRESULT OnVerificationCheckboxClick(BOOL bChecked);
   
 ### <a name="parameters"></a>パラメーター  
  [入力] `bChecked`  
- `TRUE`確認のチェック ボックスが選択されていることを示します。`FALSE`なっていないことを示します。  
+ `TRUE` 確認のチェック ボックスが選択されていることを示します。`FALSE`なっていないことを示します。  
   
 ### <a name="return-value"></a>戻り値  
  既定の実装では、`S_OK` が返されます。  
@@ -827,7 +827,7 @@ virtual HRESULT OnVerificationCheckboxClick(BOOL bChecked);
 ### <a name="remarks"></a>コメント  
  カスタム動作を実装する派生クラスでこのメソッドをオーバーライドします。  
   
-##  <a name="removeallcommandcontrols"></a>CTaskDialog::RemoveAllCommandControls  
+##  <a name="removeallcommandcontrols"></a>  CTaskDialog::RemoveAllCommandControls  
  すべてのコマンド ボタン コントロールを削除、`CTaskDialog`です。  
   
 ```  
@@ -837,7 +837,7 @@ void RemoveAllCommandControls();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#2](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_1.cpp)]  
   
-##  <a name="removeallradiobuttons"></a>CTaskDialog::RemoveAllRadioButtons  
+##  <a name="removeallradiobuttons"></a>  CTaskDialog::RemoveAllRadioButtons  
  すべてのオプション ボタンを削除、`CTaskDialog`です。  
   
 ```  
@@ -847,7 +847,7 @@ void RemoveAllRadioButtons();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#3](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_2.cpp)]  
   
-##  <a name="setcommandcontroloptions"></a>CTaskDialog::SetCommandControlOptions  
+##  <a name="setcommandcontroloptions"></a>  CTaskDialog::SetCommandControlOptions  
  コマンド ボタン コントロールを更新プログラムを`CTaskDialog`です。  
   
 ```  
@@ -873,7 +873,7 @@ void SetCommandControlOptions(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#2](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_1.cpp)]  
   
-##  <a name="setcommonbuttonoptions"></a>CTaskDialog::SetCommonButtonOptions  
+##  <a name="setcommonbuttonoptions"></a>  CTaskDialog::SetCommonButtonOptions  
  一般的なボタンを有効にして、UAC 昇格を要求のサブセットを更新します。  
   
 ```  
@@ -890,7 +890,7 @@ void SetCommonButtonOptions(
  昇格が必要な一般的なボタンのマスク。  
   
 ### <a name="remarks"></a>コメント  
- インスタンスに使用できる一般的なボタンを設定することができます、 [CTaskDialog クラス](../../mfc/reference/ctaskdialog-class.md)コンス トラクターを使用して、 [CTaskDialog::CTaskDialog](#ctaskdialog)とメソッド[CTaskDialog::SetCommonButtons](#setcommonbuttons). `CTaskDialog::SetCommonButtonOptions`新しいの一般的なボタンを追加することはできません。  
+ インスタンスに使用できる一般的なボタンを設定することができます、 [CTaskDialog クラス](../../mfc/reference/ctaskdialog-class.md)コンス トラクターを使用して、 [CTaskDialog::CTaskDialog](#ctaskdialog)とメソッド[CTaskDialog::SetCommonButtons](#setcommonbuttons). `CTaskDialog::SetCommonButtonOptions` 新しいの一般的なボタンを追加することはできません。  
   
  このメソッドを無効または昇格がこれを利用できない一般的なボタンを使用する場合`CTaskDialog`、このメソッドを使用して例外をスローする、[を確認してください](diagnostic-services.md#ensure)マクロです。  
   
@@ -899,7 +899,7 @@ void SetCommonButtonOptions(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#6](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_6.cpp)]  
   
-##  <a name="setcommonbuttons"></a>CTaskDialog::SetCommonButtons  
+##  <a name="setcommonbuttons"></a>  CTaskDialog::SetCommonButtons  
  一般的なボタンを追加、`CTaskDialog`です。  
   
 ```  
@@ -931,7 +931,7 @@ void SetCommonButtons(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#6](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_6.cpp)]  
   
-##  <a name="setcontent"></a>CTaskDialog::SetContent  
+##  <a name="setcontent"></a>  CTaskDialog::SetContent  
  内容を更新、`CTaskDialog`です。  
   
 ```  
@@ -948,7 +948,7 @@ void SetContent(const CString& strContent);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="setdefaultcommandcontrol"></a>CTaskDialog::SetDefaultCommandControl  
+##  <a name="setdefaultcommandcontrol"></a>  CTaskDialog::SetDefaultCommandControl  
  既定のコマンド ボタン コントロールを指定します。  
   
 ```  
@@ -967,7 +967,7 @@ void SetDefaultCommandControl(int nCommandControlID);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#2](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_1.cpp)]  
   
-##  <a name="setdefaultradiobutton"></a>CTaskDialog::SetDefaultRadioButton  
+##  <a name="setdefaultradiobutton"></a>  CTaskDialog::SetDefaultRadioButton  
  既定のオプション ボタンを指定します。  
   
 ```  
@@ -986,7 +986,7 @@ void SetDefaultRadioButton(int nRadioButtonID);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#3](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_2.cpp)]  
   
-##  <a name="setdialogwidth"></a>CTaskDialog::SetDialogWidth  
+##  <a name="setdialogwidth"></a>  CTaskDialog::SetDialogWidth  
  幅を調整、`CTaskDialog`です。  
   
 ```  
@@ -1005,7 +1005,7 @@ void SetDialogWidth(int nWidth = 0);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="setexpansionarea"></a>CTaskDialog::SetExpansionArea  
+##  <a name="setexpansionarea"></a>  CTaskDialog::SetExpansionArea  
  拡張領域を更新、`CTaskDialog`です。  
   
 ```  
@@ -1033,7 +1033,7 @@ void SetExpansionArea(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="setfootericon"></a>CTaskDialog::SetFooterIcon  
+##  <a name="setfootericon"></a>  CTaskDialog::SetFooterIcon  
  [フッター] アイコンを更新、`CTaskDialog`です。  
   
 ```  
@@ -1058,7 +1058,7 @@ void SetFooterIcon(LPCWSTR lpszFooterIcon);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="setfootertext"></a>CTaskDialog::SetFooterText  
+##  <a name="setfootertext"></a>  CTaskDialog::SetFooterText  
  フッターにテキストを更新、`CTaskDialog`です。  
   
 ```  
@@ -1075,7 +1075,7 @@ void SetFooterText(const CString& strFooterText);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="setmainicon"></a>CTaskDialog::SetMainIcon  
+##  <a name="setmainicon"></a>  CTaskDialog::SetMainIcon  
  メインのアイコンを更新、`CTaskDialog`です。  
   
 ```  
@@ -1098,7 +1098,7 @@ void SetMainIcon(LPCWSTR lpszMainIcon);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="setmaininstruction"></a>CTaskDialog::SetMainInstruction  
+##  <a name="setmaininstruction"></a>  CTaskDialog::SetMainInstruction  
  メインの命令を更新、`CTaskDialog`です。  
   
 ```  
@@ -1115,7 +1115,7 @@ void SetMainInstruction(const CString& strInstructions);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="setoptions"></a>CTaskDialog::SetOptions  
+##  <a name="setoptions"></a>  CTaskDialog::SetOptions  
  オプションを構成、`CTaskDialog`です。  
   
 ```  
@@ -1182,7 +1182,7 @@ void SetOptions(int nOptionFlag);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="setprogressbarmarquee"></a>CTaskDialog::SetProgressBarMarquee  
+##  <a name="setprogressbarmarquee"></a>  CTaskDialog::SetProgressBarMarquee  
  構成のマーキー バー、`CTaskDialog`し、ダイアログ ボックスに追加します。  
   
 ```  
@@ -1193,7 +1193,7 @@ void SetProgressBarMarquee(
   
 ### <a name="parameters"></a>パラメーター  
  [入力] `bEnabled`  
- `TRUE`マーキー バー; を有効にするには`FALSE`マーキー バーを無効にしてから、削除、`CTaskDialog`です。  
+ `TRUE` マーキー バー; を有効にするには`FALSE`マーキー バーを無効にしてから、削除、`CTaskDialog`です。  
   
  [入力] `nMarqueeSpeed`  
  マーキーのバーの速度を示す整数。  
@@ -1201,14 +1201,14 @@ void SetProgressBarMarquee(
 ### <a name="remarks"></a>コメント  
  メイン テキストの下に marquee バーが表示されます、`CTaskDialog Class`です。  
   
- 使用して`nMarqueeSpeed`marquee バーの速度を設定するより大きな値を示す速度を遅くします。 値 0 を`nMarqueeSpeed`の既定の速度で移動 marquee バー[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。  
+ 使用して`nMarqueeSpeed`marquee バーの速度を設定するより大きな値を示す速度を遅くします。 値 0 を`nMarqueeSpeed`marquee バーが Windows の既定の速度で移動します。  
   
  このメソッドで例外をスローする、[を確認してください](diagnostic-services.md#ensure)マクロ場合`nMarqueeSpeed`が 0 未満です。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#4](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_7.cpp)]  
   
-##  <a name="setprogressbarposition"></a>CTaskDialog::SetProgressBarPosition  
+##  <a name="setprogressbarposition"></a>  CTaskDialog::SetProgressBarPosition  
  進行状況バーの位置を調整します。  
   
 ```  
@@ -1225,7 +1225,7 @@ void SetProgressBarPosition(int nProgressPos);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#4](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_7.cpp)]  
   
-##  <a name="setprogressbarrange"></a>CTaskDialog::SetProgressBarRange  
+##  <a name="setprogressbarrange"></a>  CTaskDialog::SetProgressBarRange  
  進行状況バーの範囲を調整します。  
   
 ```  
@@ -1251,7 +1251,7 @@ void SetProgressBarRange(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#4](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_7.cpp)]  
   
-##  <a name="setprogressbarstate"></a>CTaskDialog::SetProgressBarState  
+##  <a name="setprogressbarstate"></a>  CTaskDialog::SetProgressBarState  
  進行状況バーの状態に設定し、それを表示、`CTaskDialog`です。  
   
 ```  
@@ -1281,7 +1281,7 @@ void SetProgressBarState(int nState = PBST_NORMAL);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#4](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_7.cpp)]  
   
-##  <a name="setradiobuttonoptions"></a>CTaskDialog::SetRadioButtonOptions  
+##  <a name="setradiobuttonoptions"></a>  CTaskDialog::SetRadioButtonOptions  
  有効またはラジオ ボタンを無効にします。  
   
 ```  
@@ -1295,7 +1295,7 @@ void SetRadioButtonOptions(
  ラジオ ボタン コントロールの ID。  
   
  [入力] `bEnabled`  
- `TRUE`オプション ボタンを有効にするには`FALSE`ラジオ ボタンを無効にします。  
+ `TRUE` オプション ボタンを有効にするには`FALSE`ラジオ ボタンを無効にします。  
   
 ### <a name="remarks"></a>コメント  
  このメソッドで例外をスローする、[を確認してください](diagnostic-services.md#ensure)マクロ場合`nRadioButtonID`ラジオ ボタンの有効な ID ではありません。  
@@ -1303,7 +1303,7 @@ void SetRadioButtonOptions(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#3](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_2.cpp)]  
   
-##  <a name="setverificationcheckbox"></a>CTaskDialog::SetVerificationCheckbox  
+##  <a name="setverificationcheckbox"></a>  CTaskDialog::SetVerificationCheckbox  
  確認のチェック ボックスのチェック状態を設定します。  
   
 ```  
@@ -1312,12 +1312,12 @@ void SetVerificationCheckbox(BOOL bChecked);
   
 ### <a name="parameters"></a>パラメーター  
  [入力] `bChecked`  
- `TRUE`検証する チェック ボックスはオンときに、`CTaskDialog`が表示されます。`FALSE`検証する チェック ボックスを選択されていない場合に、`CTaskDialog`が表示されます。  
+ `TRUE` 検証する チェック ボックスはオンときに、`CTaskDialog`が表示されます。`FALSE`検証する チェック ボックスを選択されていない場合に、`CTaskDialog`が表示されます。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#5](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_4.cpp)]  
   
-##  <a name="setverificationcheckboxtext"></a>CTaskDialog::SetVerificationCheckboxText  
+##  <a name="setverificationcheckboxtext"></a>  CTaskDialog::SetVerificationCheckboxText  
  確認のチェック ボックスの右側に表示されるテキストを設定します。  
   
 ```  
@@ -1334,7 +1334,7 @@ void SetVerificationCheckboxText(CString& strVerificationText);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#5](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_4.cpp)]  
   
-##  <a name="setwindowtitle"></a>CTaskDialog::SetWindowTitle  
+##  <a name="setwindowtitle"></a>  CTaskDialog::SetWindowTitle  
  タイトルを設定、`CTaskDialog`です。  
   
 ```  
@@ -1350,7 +1350,7 @@ void SetWindowTitle(CString& strWindowTitle);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#7](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_3.cpp)]  
   
-##  <a name="showdialog"></a>CTaskDialog::ShowDialog  
+##  <a name="showdialog"></a>  CTaskDialog::ShowDialog  
  作成し、表示、`CTaskDialog`です。  
   
 ```  
@@ -1405,7 +1405,7 @@ static INT_PTR ShowDialog(
 ### <a name="example"></a>例  
  [!code-cpp[NVC_MFC_CTaskDialog#1](../../mfc/reference/codesnippet/cpp/ctaskdialog-class_5.cpp)]  
   
-##  <a name="taskdialogcallback"></a>CTaskDialog::TaskDialogCallback  
+##  <a name="taskdialogcallback"></a>  CTaskDialog::TaskDialogCallback  
  フレームワークは、さまざまな Windows メッセージへの応答でこのメソッドを呼び出します。  
   
 ```  
@@ -1456,7 +1456,7 @@ HRESULT TaskDialogCallback(
 |`TDN_HELP`|使用しません。|使用しません。|  
 |`TDN_EXPANDO_BUTTON_CLICKED`|拡張領域が折りたたまれている場合は 0以外の場合は、拡張テキストが表示されます。|使用しません。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラス](../../mfc/reference/mfc-classes.md)   
  [CObject クラス](../../mfc/reference/cobject-class.md)   
  [階層図](../../mfc/hierarchy-chart.md)   

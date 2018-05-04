@@ -1,13 +1,10 @@
 ---
-title: "-KEYFILE (アセンブリに署名するには、キーまたはキー ペアの指定) |Microsoft ドキュメント"
-ms.custom: 
+title: -KEYFILE (アセンブリに署名するには、キーまたはキー ペアの指定) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /keyfile
 - VC.Project.VCLinkerTool.KeyFile
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - -KEYFILE linker option
 - KEYFILE linker option
 ms.assetid: 9b71f8c0-541c-4fe5-a0c7-9364f42ecb06
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 86457510eb017fe2d5060f2f37661a3397ec30d5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 476fd1e49a8c93363f00215d422a79eda808c321
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="keyfile-specify-key-or-key-pair-to-sign-an-assembly"></a>/KEYFILE (アセンブリに署名するためのキーまたはキー ペアの指定)
 ```  
@@ -48,7 +43,7 @@ ms.lasthandoff: 12/21/2017
   
  リンカーに暗号化の情報を渡すことも[/KEYCONTAINER](../../build/reference/keycontainer-specify-a-key-container-to-sign-an-assembly.md)です。 使用して[/DELAYSIGN](../../build/reference/delaysign-partially-sign-an-assembly.md)部分署名されているアセンブリを作成する場合。 参照してください[厳密な名前のアセンブリ (アセンブリ署名) (C + + CLI)](../../dotnet/strong-name-assemblies-assembly-signing-cpp-cli.md)アセンブリに署名する方法についてです。  
   
- 場合両方**/KEYFILE**と**/KEYCONTAINER**が指定されて、リンカーは、キー コンテナーをまず (コマンド ライン オプションまたはカスタム属性によって)、します。 それが成功すると、アセンブリはキー コンテナーの情報で署名されます。 リンカーが、キー コンテナーを見つけられない場合/KEYFILE で指定されたファイルを検索します。 ファイルが検出された場合、アセンブリはキー ファイルの情報で署名され、キー情報はキー コンテナーにインストールされるため (sn -i と同様)、次のコンパイル時にはキー コンテナーが有効になります。  
+ 場合両方 **/KEYFILE**と **/KEYCONTAINER**が指定されて、リンカーは、キー コンテナーをまず (コマンド ライン オプションまたはカスタム属性によって)、します。 それが成功すると、アセンブリはキー コンテナーの情報で署名されます。 リンカーが、キー コンテナーを見つけられない場合/KEYFILE で指定されたファイルを検索します。 ファイルが検出された場合、アセンブリはキー ファイルの情報で署名され、キー情報はキー コンテナーにインストールされるため (sn -i と同様)、次のコンパイル時にはキー コンテナーが有効になります。  
   
  キー ファイルには公開キーだけが含まれる場合があることに注意してください。  
   
@@ -80,6 +75,6 @@ ms.lasthandoff: 12/21/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

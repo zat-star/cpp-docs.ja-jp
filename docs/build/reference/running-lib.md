@@ -1,13 +1,10 @@
 ---
-title: "LIB の実行 |Microsoft ドキュメント"
-ms.custom: 
+title: LIB の実行 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCLibrarianTool.TargetMachine
 - Lib
@@ -35,17 +32,15 @@ helpviewer_keywords:
 - semicolon, command files
 - / command files
 ms.assetid: d54f5c81-7147-4b2c-a8db-68ce6eb1eabd
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2a487bb6f6ffd740f6479916c5115bf95d568655
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c306ba58bfef11f92d7e861272aad2aa605c8fde
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="running-lib"></a>LIB の実行
 LIB のコントロールには、さまざまなコマンド ライン オプションを使用できます。  
@@ -74,7 +69,7 @@ LIB @commandfile
   
  LIB のすべてのモードに、次のオプションが適用されます。  
   
- /ERRORREPORT [なし &#124; です。プロンプト &#124; です。キュー &#124; です。SEND]  
+ /ERRORREPORT [NONE&AMP;#124;プロンプト&AMP;#124;キュー&AMP;#124;送信]  
  Lib.exe は、実行時に失敗した場合、これらの内部エラーに関する情報を Microsoft に送信する/ERRORREPORT を使用することができます。  
   
  /ERRORREPORT の詳細については、次を参照してください。 [/errorReport (内部コンパイラ エラーの報告)](../../build/reference/errorreport-report-internal-compiler-errors.md)です。  
@@ -96,5 +91,5 @@ LIB @commandfile
   
  その他のオプションは、モード固有にのみ適用されます。 これらのオプションについては、各モードの説明を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [LIB リファレンス](../../build/reference/lib-reference.md)

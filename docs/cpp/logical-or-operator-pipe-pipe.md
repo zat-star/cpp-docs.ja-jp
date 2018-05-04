@@ -1,12 +1,9 @@
 ---
-title: "論理 OR 演算子: | ||Microsoft ドキュメント"
-ms.custom: 
+title: '論理 OR 演算子: | ||Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - '||'
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - OR operator
 - logical OR operator
 ms.assetid: 31837c99-2655-4bf3-8ded-f13b7a9dc533
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a826b23f94c4eae4a4fdb5379563b015f05dde71
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: bd0642e9759eaa4d39eac680ba165af7dbbb0d44
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="logical-or-operator-"></a>論理 OR 演算子: ||
 ## <a name="syntax"></a>構文  
@@ -56,7 +51,7 @@ printf( "%d" , (x == w || x == y || x == z) );
   
  上の例では、`x` が `w`、`y`、または `z` と等しい場合、`printf` 関数の 2 番目の引数が true に評価され、値 1 が出力されます。 それ以外の場合は、false と評価され、値 0 が出力されます。 条件の 1 つが true と評価されると、直ちに評価が終了します。  
   
-## <a name="operator-keyword-for-124124"></a>演算子キーワード &#124; &#124;です。  
+## <a name="operator-keyword-for-124124"></a>演算子キーワード&#124;&#124;  
  **または**演算子に相当するテキストは、`||`です。 アクセスする方法を次の 2 つが、**または**をプログラムで演算子: ヘッダー ファイルをインクルード`iso646.h`、コンパイル時に、または、 [/Za](../build/reference/za-ze-disable-language-extensions.md) (言語の拡張機能を無効にする) コンパイラ オプション。  
   
 ## <a name="example"></a>例  
@@ -79,6 +74,6 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 [C++ 組み込み演算子の優先順位と結合規則](cpp-built-in-operators-precedence-and-associativity.md) [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [C 論理演算子](../c-language/c-logical-operators.md)

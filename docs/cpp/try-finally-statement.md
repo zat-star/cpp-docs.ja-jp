@@ -2,11 +2,8 @@
 title: try-finally ステートメント |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - __try
@@ -27,17 +24,15 @@ helpviewer_keywords:
 - __leave keyword [C++], try-finally statement
 - structured exception handling [C++], try-finally
 ms.assetid: 826e0347-ddfe-4f6e-a7bc-0398e0edc7c2
-caps.latest.revision: 14
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c57676cace8451de266d30d4c146e3ae0c3cb1b5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6a6457e92b7f4b57c7c181705e369e8582fb54f9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="try-finally-statement"></a>try-finally ステートメント
 **Microsoft 固有の仕様**  
@@ -55,9 +50,9 @@ __finally {
   
 ## <a name="grammar"></a>文法  
  *try-finally-statement*:  
- `__try`*複合ステートメント*  
+ `__try` *複合ステートメント*  
   
- `__finally`*複合ステートメント*  
+ `__finally` *複合ステートメント*  
   
  `try-finally` ステートメントは C および C++ 言語に対する Microsoft の拡張機能であり、コードのブロックの実行が中断されたときに、ターゲット アプリケーションがクリーンアップ コードの実行を保証できるようにします。 クリーンアップは、メモリを解放する、ファイルを閉じる、ファイル ハンドルを解放するなどのタスクで構成されます。 `try-finally` ステートメントは、ルーチンからの不完全な戻りが発生する可能性のあるエラーを複数の場所でチェックするルーチンに特に便利です。  
   
@@ -80,7 +75,7 @@ __finally {
   
  たとえば、次の図に示すように、一連の関数呼び出しで、関数 A を関数 D にリンクするとします。 各関数には、1 つの終了ハンドラーがあります。 関数 D で例外が発生し、A で処理されると、スタックがアンワインドされるときに、終了ハンドラーは D、C、B の順に呼び出されます。  
   
- ![終了 &#45;の順序以外のハンドラーの実行](../cpp/media/vc38cx1.gif "vc38CX1")  
+ ![終了の順序&#45;ハンドラーの実行](../cpp/media/vc38cx1.gif "vc38CX1")  
 終了順序 - ハンドラーの実行  
   
 > [!NOTE]
@@ -100,7 +95,7 @@ __finally {
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [終了ハンドラーの記述](../cpp/writing-a-termination-handler.md)   
  [構造化例外処理 (C/C++)](../cpp/structured-exception-handling-c-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   

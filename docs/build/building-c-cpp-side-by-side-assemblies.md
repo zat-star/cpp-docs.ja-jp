@@ -1,29 +1,24 @@
 ---
-title: "C と C++ の側バイ サイド アセンブリをビルド |Microsoft ドキュメント"
-ms.custom: 
+title: C と C++ の側バイ サイド アセンブリをビルド |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
 - side-by-side applications [C++]
 ms.assetid: 7fa20b16-3737-4f76-a0b5-1dacea19a1e8
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4c54f0e3b8bceff3daa92ecb3e0ee46d7fbeb666
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a45062af5648c7b3565d959fd1d2dce13aeca4b3
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="building-cc-side-by-side-assemblies"></a>C/C++ side-by-side アセンブリのビルド
 A[サイド バイ サイド アセンブリ](http://msdn.microsoft.com/library/windows/desktop/ff951640)リソースのコレクションは、— Dll、windows クラス、COM サーバー、タイプ ライブラリ、またはインターフェイスのグループ-実行時に使用するアプリケーションを使用できます。 アセンブリ内の Dll を再パッケージ化の主な利点は、アセンブリの複数のバージョンは、同時にアプリケーションで使用できます、更新プログラムのリリースが発生した場合、現在インストールされているサービス アセンブリを行うことです。  
@@ -42,7 +37,7 @@ A[サイド バイ サイド アセンブリ](http://msdn.microsoft.com/library/
   
  この変更は、対応する Dll の展開を許可することがあります、[プライベート アセンブリ](http://msdn.microsoft.com/library/windows/desktop/aa370850)アプリケーション ローカル フォルダーまたはとして、[アセンブリを共有](http://msdn.microsoft.com/library/windows/desktop/aa371839)WinSxS アセンブリ キャッシュにします。 この新しいアセンブリの正しい実行時の動作を実現するための後に指定する必要があるいくつかの手順これらに記述されている[サイド バイ サイド アセンブリを作成するためのガイドライン](http://msdn.microsoft.com/library/windows/desktop/aa375155)です。 アセンブリが正しく作成した後は、どちらか、共有またはプライベートのアセンブリに依存するアプリケーションと連携してとしてデプロイできます。 共有アセンブリとしてをサイド バイ サイド アセンブリをインストールする場合のガイドラインが記載されているいずれかに従って可能性があります[Windows XP でのサイド バイ サイドの共有の Win32 アセンブリをインストールする](http://msdn.microsoft.com/library/windows/desktop/aa369532)使用または[マージ モジュール](http://msdn.microsoft.com/library/windows/desktop/aa369820). プライベート アセンブリとしてをサイド バイ サイド アセンブリをインストールする場合可能性がありますだけコピーする、対応する DLL、リソース、およびアセンブリ マニフェストのインストール プロセスの一部として、対象のコンピューター上のアプリケーション ローカル フォルダーにこのアセンブリができることを確認実行時にローダーによって検出された (を参照してください[Assembly Searching Sequence](http://msdn.microsoft.com/library/windows/desktop/aa374224))。 別の方法は、使用する[Windows インストーラー](http://msdn.microsoft.com/library/windows/desktop/cc185688)しで説明されているガイドラインに従う[Windows XP 上のアプリケーションのプライベートを使用するための Win32 アセンブリのインストール](http://msdn.microsoft.com/library/windows/desktop/aa369534)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [配置の例](../ide/deployment-examples.md)   
  [分離アプリケーションの C と C++ のビルド](../build/building-c-cpp-isolated-applications.md)   
  [C/C++ 分離アプリケーションおよび side-by-side アセンブリのビルド](../build/building-c-cpp-isolated-applications-and-side-by-side-assemblies.md)

@@ -1,12 +1,9 @@
 ---
-title: "接続ポイント マクロ |Microsoft ドキュメント"
-ms.custom: 
+title: 接続ポイント マクロ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlcom/ATL::BEGIN_CONNECTION_POINT_MAP
@@ -16,17 +13,15 @@ dev_langs:
 helpviewer_keywords:
 - connection points [C++], macros
 ms.assetid: cc3a6dd3-5538-45df-b027-1f34963c31e5
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5f98b5abd00f1d7ac3e3d69b0e22b549fdea35a5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e50a868dd87628873b2a43f0ace55690b0583fd5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="connection-point-macros"></a>接続ポイント マクロ
 これらのマクロは、接続ポイントのマップとエントリを定義します。  
@@ -38,10 +33,10 @@ ms.lasthandoff: 12/21/2017
 |[CONNECTION_POINT_ENTRY_P](#connection_point_entry)| (Visual Studio 2017)CONNECTION_POINT_ENTRY と同様には、iid へのポインターがかかります。|
 |[END_CONNECTION_POINT_MAP](#end_connection_point_map)|コネクション ポイントのマップ エントリの末尾をマークします。|  
 
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h 
    
-##  <a name="begin_connection_point_map"></a>BEGIN_CONNECTION_POINT_MAP  
+##  <a name="begin_connection_point_map"></a>  BEGIN_CONNECTION_POINT_MAP  
  接続ポイントのマップ エントリの先頭を示します。  
   
 ```
@@ -60,7 +55,7 @@ BEGIN_CONNECTION_POINT_MAP(x)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#101](../../atl/codesnippet/cpp/connection-point-macros_1.h)]  
   
-##  <a name="connection_point_entry"></a>CONNECTION_POINT_ENTRY と CONNECTION_POINT_ENTRY_P  
+##  <a name="connection_point_entry"></a>  CONNECTION_POINT_ENTRY と CONNECTION_POINT_ENTRY_P  
  アクセスできるようにに接続ポイントのマップに指定されたインターフェイスの接続ポイントを入力します。  
   
 ```
@@ -85,7 +80,7 @@ CONNECTION_POINT_ENTRY_P(piid) // (Visual Studio 2017)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#120](../../atl/codesnippet/cpp/connection-point-macros_2.h)]  
   
-##  <a name="end_connection_point_map"></a>END_CONNECTION_POINT_MAP  
+##  <a name="end_connection_point_map"></a>  END_CONNECTION_POINT_MAP  
  コネクション ポイントのマップ エントリの末尾をマークします。  
   
 ```
@@ -100,6 +95,6 @@ END_CONNECTION_POINT_MAP()
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#128](../../atl/codesnippet/cpp/connection-point-macros_3.h)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [マクロ](../../atl/reference/atl-macros.md)   
  [コネクション ポイントに関するグローバル関数](../../atl/reference/connection-point-global-functions.md)

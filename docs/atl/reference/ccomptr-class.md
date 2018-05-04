@@ -2,11 +2,8 @@
 title: CComPtr クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComPtr
@@ -17,17 +14,15 @@ dev_langs:
 helpviewer_keywords:
 - CComPtr class
 ms.assetid: 22d9ea8d-ed66-4c34-940f-141db11e83bd
-caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4ef8c49b04a769fd6202aa58324f20216948cf3a
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5254e463050d685840ff90334ecbdb94372f27ef
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomptr-class"></a>CComPtr クラス
 COM インターフェイス ポインターを管理するためのスマート ポインター クラスです。  
@@ -73,10 +68,10 @@ class CComPtr
   
  `CComPtr`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="ccomptr"></a>CComPtr::CComPtr  
+##  <a name="ccomptr"></a>  CComPtr::CComPtr  
  コンストラクターです。  
   
 ```
@@ -92,7 +87,7 @@ CComPtr (const CComPtr<T>& lp) throw ();
  `T`  
  COM インターフェイスです。  
   
-##  <a name="operator_eq"></a>CComPtr::operator =  
+##  <a name="operator_eq"></a>  CComPtr::operator =  
  代入演算子。  
   
 ```
@@ -106,7 +101,7 @@ T* operator= (const CComPtr<T>& lp) throw ();
 ### <a name="remarks"></a>コメント  
  この操作 AddRefs 新しいオブジェクトをリリース 1 つの場合、既存のオブジェクトが存在します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CComPtr::CComPtr](#ccomptr)   
  [CComQIPtr::CComQIPtr](../../atl/reference/ccomqiptr-class.md#ccomqiptr)   
  [クラスの概要](../../atl/atl-class-overview.md)
