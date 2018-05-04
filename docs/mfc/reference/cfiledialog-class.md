@@ -267,7 +267,7 @@ class CFileDialog : public CCommonDialog
   
  使用する、`CFileDialog`オブジェクト、まずを使用して、オブジェクトを作成、`CFileDialog`コンス トラクターです。 設定または任意の値を変更できます ダイアログ ボックスが構築された後、 [::m_ofn](#m_ofn)値やダイアログ ボックスのコントロールの状態を初期化するためにします。 `m_ofn`構造体は型`OPENFILENAME`です。 詳細については、次を参照してください。、 [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839) Windows SDK 内の構造。  
   
- ダイアログ ボックスのコントロールを初期化した後の呼び出し、 [CFileDialog::DoModal](#domodal)ダイアログを表示するメソッドのボックス、ユーザーが、パスとファイル名を入力できるようにします。 `DoModal` ユーザーには、[ok] (IDOK) またはキャンセル (IDCANCEL) ボタンがクリックしたかどうかを返します。 場合`DoModal`IDOK を返しますのいずれかを使用することができます、`CFileDialog`情報を取得するパブリック メンバー関数は、ユーザーに配置します。  
+ ダイアログ ボックスのコントロールを初期化した後の呼び出し、 [CFileDialog::DoModal](#domodal)ダイアログを表示するメソッドのボックス、ユーザーが、パスとファイル名を入力できるようにします。 `DoModal` ユーザーには、[ok] \(IDOK) またはキャンセル (IDCANCEL) ボタンがクリックしたかどうかを返します。 場合`DoModal`IDOK を返しますのいずれかを使用することができます、`CFileDialog`情報を取得するパブリック メンバー関数は、ユーザーに配置します。  
   
 > [!NOTE]
 > Windows Vista またはそれ以降、複数回呼び出す[IFileDialog::SetFileTypes](http://msdn.microsoft.com/library/windows/desktop/bb775980)エラーが発生します。 2 番目の呼び出し`SetFileTypes`のすべてのインスタンス、`CFileDialog`が返されます`E_UNEXPECTED`Windows Vista またはそれ以降。 いくつか`CFileDialog`メソッド呼び出しの機能`SetFileTypes`します。 たとえば、2 回の呼び出しに`CFileDialog::DoModal`の同じインスタンスに対して、`CFileDialog`が生成されます[ASSERT](diagnostic-services.md#assert)です。  
