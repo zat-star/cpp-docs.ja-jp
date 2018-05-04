@@ -1,27 +1,22 @@
 ---
-title: "ATL ユーティリティのリファレンス |Microsoft ドキュメント"
-ms.custom: 
+title: ATL ユーティリティのリファレンス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: dd8a2888-34f4-461e-9bf4-834218f9b95b
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 69f085df8b5dadbd0ba9d20596d37cb6313bb3f0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 9b802d8764dda321e2e313f793f4f2e4745dbcc7
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-utilities-reference"></a>ATL ユーティリティのリファレンス
 ATL の形式でパスと Url を操作するためのコードには、 [CPathT](../atl/reference/cpatht-class.md)と[CUrl](../atl/reference/curl-class.md)です。 スレッド プール、 [CThreadPool](../atl/reference/cthreadpool-class.md)アプリケーションで使用できます。 このコードは、atlpath.h と atlutil.h 含まれています。  
@@ -57,7 +52,7 @@ ATL の形式でパスと Url を操作するためのコードには、 [CPathT
   
 |||  
 |-|-|  
-|[どうか](../atl/reference/atl-http-utility-functions.md#atlcanonicalizeurl)|URL を標準形式に変換します。安全でない文字や空白をエスケープ シーケンスに変換する処理などが含まれます。|  
+|[AtlCanonicalizeUrl](../atl/reference/atl-http-utility-functions.md#atlcanonicalizeurl)|URL を標準形式に変換します。安全でない文字や空白をエスケープ シーケンスに変換する処理などが含まれます。|  
 |[AtlCombineUrl](../atl/reference/atl-http-utility-functions.md#atlcombineurl)|ベース URL と相対 URL を結合して、1 つの標準形式の URL にします。|  
 |[AtlEscapeUrl](../atl/reference/atl-http-utility-functions.md#atlescapeurl)|すべての安全でない文字をエスケープ シーケンスに変換します。|  
 |[AtlGetDefaultUrlPort](../atl/reference/atl-http-utility-functions.md#atlgetdefaulturlport)|この関数では、特定のインターネット プロトコルまたはスキームに関連付けられている既定のポート番号を取得します。|  
@@ -104,6 +99,6 @@ ATL の形式でパスと Url を操作するためのコードには、 [CPathT
 |[ATLPath::UnquoteSpaces](../atl/reference/atl-path-functions.md#unquotespaces)|この関数は、用のオーバー ロードされたラッパー [PathUnquoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773763)|。  
   
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [概念](../atl/active-template-library-atl-concepts.md)   
  [ATL COM デスクトップ コンポーネント](../atl/atl-com-desktop-components.md)

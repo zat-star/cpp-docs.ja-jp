@@ -1,12 +1,9 @@
 ---
-title: "ATL プロジェクトへのオブジェクトやコントロールの追加 |Microsoft ドキュメント"
-ms.custom: 
+title: ATL プロジェクトへのオブジェクトやコントロールの追加 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - vc.appwiz.ATL.controls
@@ -20,17 +17,15 @@ helpviewer_keywords:
 - objects [C++], adding to ATL projects
 - ATL Control Wizard
 ms.assetid: c0adcbd0-07fe-4c55-a8fd-8c2c65ecdaad
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 319d130b9d8f17875aaa8bac15f546401457b963
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5a6f9102aeebd0cc60765c70cf74fb2329bc801f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adding-objects-and-controls-to-an-atl-project"></a>ATL プロジェクトへのオブジェクトやコントロールの追加
 ATL または MFC ベースでのプロジェクトにオブジェクトやコントロールを追加するのにには、ATL コード ウィザードのいずれかを使用します。 COM オブジェクトやコントロールを追加すると、.cpp、.h ファイルだけでなく .rgs ファイル スクリプト ベースのレジストリのサポートについては、ウィザードが生成されます。 Visual Studio で、次の ATL コード ウィザードを紹介します。  
@@ -57,7 +52,7 @@ ATL または MFC ベースでのプロジェクトにオブジェクトやコ�
   
      または、以前の ATL サポートを追加することがなく MFC プロジェクトに ATL オブジェクトを追加しようとすると、Visual Studio するように求められます ATL サポートをプロジェクトに追加するかどうかを指定します。 をクリックして**はい**をプロジェクトに ATL サポートを追加して、選択した ATL ウィザードを開きます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)   
  [Visual C プロジェクトの種類](../../ide/visual-cpp-project-types.md)   
  [アプリケーション ウィザードを使用したデスクトップ プロジェクトの作成](../../ide/creating-desktop-projects-by-using-application-wizards.md)   

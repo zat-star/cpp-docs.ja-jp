@@ -2,11 +2,8 @@
 title: ベース ポインター (C++) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - __based
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - based pointers
 - pointers, based
 ms.assetid: 1e5f2e96-c52e-4738-8e14-87278681205e
-caps.latest.revision: 10
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 629ff6c3f383973b758ddb4317e43a27de0b11d3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c6cc2e45574d30ae1a544da78a4f7a75321a1156
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="based-pointers-c"></a>ベース ポインター (C++)
 **Microsoft 固有の仕様**  
@@ -45,7 +40,7 @@ type __based( base ) declarator
 ## <a name="remarks"></a>コメント  
  ポインター アドレスに基づくポインターは、32 ビットまたは 64 ビット コンパイルで有効な `__based` キーワードの唯一の形式です。 Microsoft の 32 ビット C/C++ コンパイラでは、based ポインターは 32 ビットのポインター ベースからの 32 ビットのオフセットになります。 同様の制限は 64 ビット環境にもあり、based ポインターは 64 ビット ベースからの 64 ビット オフセットになります。  
   
- ポインターに基づいたポインターの使用方法の 1 つは、ポインターを含む永続的な識別子での使用です。 ポインターに基づくポインターで構成されるリンク リストをディスクに保存でき、メモリ内の別の場所に再読み込みしても、ポインターは有効なままです。 例:  
+ ポインターに基づいたポインターの使用方法の 1 つは、ポインターを含む永続的な識別子での使用です。 ポインターに基づくポインターで構成されるリンク リストをディスクに保存でき、メモリ内の別の場所に再読み込みしても、ポインターは有効なままです。 例えば:  
   
 ```  
 // based_pointers1.cpp  
@@ -64,7 +59,7 @@ struct llist_t {
   
  based ポインターを逆参照する場合、ベースは、明示的に指定されているか、または宣言によって暗黙的に認識されている必要があります。  
   
- 以前のバージョンとの互換性のため**_based**の同意語です`__based`です。  
+ 以前のバージョンとの互換性のため **_based**の同意語です`__based`です。  
   
 ## <a name="example"></a>例  
  次のコードは、ベースの変更による based ポインターの変更を示します。  
@@ -102,6 +97,6 @@ int main() {
 11  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キーワード](../cpp/keywords-cpp.md)   
  [alloc_text](../preprocessor/alloc-text.md)

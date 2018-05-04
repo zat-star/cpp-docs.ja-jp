@@ -2,13 +2,10 @@
 title: -ソース-文字セット (一連のソース文字セット) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp
 - devlang-cpp
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - source-charset
 - /source-charset
@@ -17,17 +14,15 @@ dev_langs:
 helpviewer_keywords:
 - /execution-charset compiler option
 ms.assetid: d3c5bf7f-526d-4ee4-acc5-c1a02a4fc481
-caps.latest.revision: 4
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ba414318f9954df331dd05d0f3e2cc2b85c8ad11
-ms.sourcegitcommit: 770f6c4a57200aaa9e8ac6e08a3631a4b4bdca05
+ms.openlocfilehash: e4f010eb0f0b83dbc41ebeff624033e59d582535
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="source-charset-set-source-character-set"></a>/source-charset (設定ソース文字セット)
 ソース文字セットの実行可能ファイルで指定することができます。  
@@ -52,7 +47,7 @@ ms.lasthandoff: 04/16/2018
   
  指定するソース文字セットは、の文字セットで同じコード ポイントを 7 ビット ASCII 文字をマップする必要がありますか、コンパイル エラーの多くが従う可能性があります。 ソース文字セットも拡張の Unicode 文字の utf-8 で encodable セットにマップ可能な場合があります。 Encodable utf-8 ではない文字は、実装固有 substitute で表されます。 Microsoft コンパイラでは、これらの文字を疑問符 () を使用します。  
   
- 使用することができます、ソース文字セットと実行文字セットの両方を utf-8 に設定する場合、 **/utf-8**ショートカットとしてコンパイラ オプション。 指定することと等価である**/source -charset:utf-8/execution-charset:utf-8**コマンド ラインでします。 これらのいずれかのオプションも有効、 **/validate-charset**既定ではオプションです。  
+ 使用することができます、ソース文字セットと実行文字セットの両方を utf-8 に設定する場合、 **/utf-8**ショートカットとしてコンパイラ オプション。 指定することと等価である **/source -charset:utf-8/execution-charset:utf-8**コマンド ラインでします。 これらのいずれかのオプションも有効、 **/validate-charset**既定ではオプションです。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   

@@ -1,27 +1,22 @@
 ---
-title: "MxCsr |Microsoft ドキュメント"
-ms.custom: 
+title: MxCsr |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 4f3c229d-0862-4733-acc7-9ed7a0b870ce
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7794cea8906440c0adca94791d08e3ced6af747e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 9df2225526c20463bdbd618322d031c3245d9493
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="mxcsr"></a>MxCsr
 レジスタの状態には、MxCsr も含まれています。 呼び出し規約は、揮発性の部分と不揮発性部分にこのレジスタを分割します。 揮発性の部分から成る 6 つの状態フラグ、MXCSR [0:5]、6:15、MXCSR レジスタの残りの部分には、不揮発性と見なされます。  
@@ -45,5 +40,5 @@ MXCSR[15]      : Flush to zero for masked underflow - 0 (off)
   
  関数の境界を越えて MXCSR の揮発性の部分の状態に関する仮定は行われません、関数のドキュメントで説明されている場合を除き。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [呼び出し規則](../build/calling-convention.md)

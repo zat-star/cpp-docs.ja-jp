@@ -2,28 +2,23 @@
 title: typeid 演算子 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - typeid operator
 ms.assetid: 8871cee6-d6b9-4301-a5cb-bf3dc9798d61
-caps.latest.revision: 10
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b27f3bcb7358b3ea05907df1a4372c107538dfb4
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: abb99b3dbc656d43701eebafbd7d34de125d1a31
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="typeid-operator"></a>typeid 演算子
 ## <a name="syntax"></a>構文  
@@ -39,7 +34,7 @@ typeid( expression )
 ## <a name="remarks"></a>コメント  
  `typeid` 演算子は、オブジェクトの型を実行時に決定できるようにします。  
   
- 結果`typeid`は、 **const type_info &**です。 値がへの参照を**type_info**いずれかを表すオブジェクト、*タイプ id*またはの種類、*式*の形式に応じて、`typeid`を使用. 参照してください[type_info クラス](../cpp/type-info-class.md)詳細についてはします。  
+ 結果`typeid`は、 **const type_info &** です。 値がへの参照を**type_info**いずれかを表すオブジェクト、*タイプ id*またはの種類、*式*の形式に応じて、`typeid`を使用. 参照してください[type_info クラス](../cpp/type-info-class.md)詳細についてはします。  
   
  `typeid`演算子はマネージ型 (抽象宣言子またはのインスタンス) では機能しませんを参照してください[typeid](../windows/typeid-cpp-component-extensions.md)取得について、<xref:System.Type>指定の型。  
   
@@ -51,7 +46,7 @@ typeid( expression )
   
 -   添字付きのポインター ([ ]) (一般に、ポリモーフィックな型へのポインターで添字を使用すると、安全ではないことに注意してください)。  
   
- 場合、*式*まだその基底クラスから派生した型のオブジェクトが実際には、基本クラス型を指す、 **type_info**派生クラスは、結果を参照します。 *式*ポリモーフィック型 (仮想関数を持つクラス) をポイントする必要があります。 それ以外の場合、結果は、 **type_info**で参照される静的クラスの*式*です。 さらに、ポインターが指し示すオブジェクトが使用されるように、ポインターを逆参照する必要があります。 ポインターを逆参照なしになります、 **type_info**どのような it ではないが指すポインターです。 例:  
+ 場合、*式*まだその基底クラスから派生した型のオブジェクトが実際には、基本クラス型を指す、 **type_info**派生クラスは、結果を参照します。 *式*ポリモーフィック型 (仮想関数を持つクラス) をポイントする必要があります。 それ以外の場合、結果は、 **type_info**で参照される静的クラスの*式*です。 さらに、ポインターが指し示すオブジェクトが使用されるように、ポインターを逆参照する必要があります。 ポインターを逆参照なしになります、 **type_info**どのような it ではないが指すポインターです。 例えば:  
   
 ```  
 // expre_typeid_Operator.cpp  
@@ -105,6 +100,6 @@ T max( T arg1, T arg2 ) {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム型情報](../cpp/run-time-type-information.md)   
  [キーワード](../cpp/keywords-cpp.md)

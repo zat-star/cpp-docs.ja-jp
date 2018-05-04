@@ -1,30 +1,25 @@
 ---
-title: "ルールの定義 |Microsoft ドキュメント"
-ms.custom: 
+title: ルールの定義 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
 - NMAKE program, inference rules
 - defining inference rules
 ms.assetid: 071cd092-3f2e-4065-b0fb-36a9d393cfa8
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c0d6ca616e3685db36d6d24b339a860eab4c6150
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7a8ff7c58033ac5f7e42764d185c45c206bf406f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="defining-a-rule"></a>規則の定義
 *Fromext*依存ファイルの拡張機能を表すと*toext*ターゲット ファイルの拡張機能を表します。  
@@ -40,5 +35,5 @@ ms.lasthandoff: 12/21/2017
 ## <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
  [規則の検索パス](../build/search-paths-in-rules.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [推論規則](../build/inference-rules.md)

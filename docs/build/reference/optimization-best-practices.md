@@ -1,30 +1,25 @@
 ---
-title: "最適化の推奨事項 |Microsoft ドキュメント"
-ms.custom: 
+title: 最適化の推奨事項 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - Visual C++, optimization
 - optimization, best practices
 ms.assetid: f3433148-7255-4ca6-8a4f-7c31aac88508
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ec12e847eef72827e11700be322fd2a2ca309037
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4e869a12635117f37f32fad3dcfdd38ed45d401e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="optimization-best-practices"></a>最適化の推奨事項
 このドキュメントでは、Visual C++ での最適化に関する推奨事項について説明します。 検討されているトピックは、次のとおりです。  
@@ -52,16 +47,16 @@ ms.lasthandoff: 12/21/2017
 ### <a name="profile-guided-optimization"></a>ガイド付き最適化のプロファイル  
  Visual C++ では、現在、ガイド付き最適化のプロファイル (PGO) がサポートされています。 この最適化では、アプリケーションの最適化を行う際に、インストルメント化されたバージョンのアプリケーションを過去に実行したときに収集したプロファイル データを使用します。 PGO を使用すると時間がかかる場合があるため、すべての状況に適しているとは言えません。しかし、製品の最終リリース ビルドには PGO を使用することをお勧めします。 詳細については、次を参照してください。[ガイド付き最適化の](../../build/reference/profile-guided-optimizations.md)します。  
   
- さらに、プログラム全体の最適化 (リンク時コード生成も知って) および**/O1**と**/O2**最適化が改善されました。 通常、これらのオプションのいずれかを指定してコンパイルしたアプリケーションの処理速度は、以前のコンパイラでコンパイルした同じアプリケーションよりも速くなります。  
+ さらに、プログラム全体の最適化 (リンク時コード生成も知って) および **/O1**と **/O2**最適化が改善されました。 通常、これらのオプションのいずれかを指定してコンパイルしたアプリケーションの処理速度は、以前のコンパイラでコンパイルした同じアプリケーションよりも速くなります。  
   
  詳細については、次を参照してください。 [/GL (プログラム全体の最適化)](../../build/reference/gl-whole-program-optimization.md)と[/O1、/O2 (サイズの最小化、最大速度)](../../build/reference/o1-o2-minimize-size-maximize-speed.md)です。  
   
 ### <a name="which-level-of-optimization-should-i-use"></a>使用する最適化のレベル  
  可能な限り、最終リリース ビルドは、PGO を使用してコンパイルする必要があります。 インストルメント化されたビルドを実行するにはインフラストラクチャが不十分であることや、シナリオにアクセスできないことが原因で、PGO を使用してビルドできない場合は、プログラム全体の最適化を使用してビルドすることをお勧めします。  
   
- **/Gy**スイッチも非常に役立ちます。 このスイッチを使用すると、関数ごとに個別の COMDAT が生成されます。その結果、参照されていない COMDAT を取り除いたり COMDAT を圧縮したりでき、リンカーの柔軟性が向上します。 使用する唯一の欠点**/Gy**はなることができます、マイナー ビルド時に影響します。 重要な影響を受けるわけではないので、通常は、このスイッチを使用することをお勧めします。 詳細については、「[/Gy (関数レベルのリンクの有効化)](../../build/reference/gy-enable-function-level-linking.md)」を参照してください。  
+ **/Gy**スイッチも非常に役立ちます。 このスイッチを使用すると、関数ごとに個別の COMDAT が生成されます。その結果、参照されていない COMDAT を取り除いたり COMDAT を圧縮したりでき、リンカーの柔軟性が向上します。 使用する唯一の欠点 **/Gy**はなることができます、マイナー ビルド時に影響します。 重要な影響を受けるわけではないので、通常は、このスイッチを使用することをお勧めします。 詳細については、「[/Gy (関数レベルのリンクの有効化)](../../build/reference/gy-enable-function-level-linking.md)」を参照してください。  
   
- 64 ビット環境でリンクをお勧めを使用する、 **/opt:ref による、ICF**リンカー オプション、および 32 ビット環境で**/opt:ref による**をお勧めします。 詳細については、次を参照してください。 [/OPT (最適化)](../../build/reference/opt-optimizations.md)です。  
+ 64 ビット環境でリンクをお勧めを使用する、 **/opt:ref による、ICF**リンカー オプション、および 32 ビット環境で **/opt:ref による**をお勧めします。 詳細については、次を参照してください。 [/OPT (最適化)](../../build/reference/opt-optimizations.md)です。  
   
  また、デバッグ シンボルを生成することを強くお勧めします。これは、最適化されたリリース ビルドの場合も同様です。 デバッグ シンボルを生成しても生成されたコードに影響はなく、必要に応じてアプリケーションを非常に簡単にデバッグできます。  
   
@@ -73,7 +68,7 @@ ms.lasthandoff: 12/21/2017
 |**/fp: 正確な**|既定で推奨されているオプションです。ほとんどの場合は、これを使用します。|  
 |**/fp:fast**|パフォーマンスが最も重要視される場合 (ゲームなど) に推奨されます。 このオプションを使用すると、パフォーマンスが最も高速になります。|  
 |**/fp: strict**|浮動小数点の例外に関して厳密な対応が必要な場合や、IEEE に沿った動作が必要な場合に推奨されます。 このオプションを使用すると、パフォーマンスが最も低速になります。|  
-|**/fp: except [-]**|組み合わせて使用できます**/fp: 厳密な**または**/fp: 正確な**、ではなく**/fp:fast**です。|  
+|**/fp: except [-]**|組み合わせて使用できます **/fp: 厳密な**または **/fp: 正確な**、ではなく **/fp:fast**です。|  
   
  詳細については、「[/fp (浮動小数点の動作の指定)](../../build/reference/fp-specify-floating-point-behavior.md)」を参照してください。  
   
@@ -154,5 +149,5 @@ int myFunc() {...}
   
  最後に、例外をスローするのは、例外の場合だけにしてください。 通常の制御フローに例外を使用すると、パフォーマンスが低下します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コードの最適化](../../build/reference/optimizing-your-code.md)

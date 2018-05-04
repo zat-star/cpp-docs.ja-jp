@@ -1,27 +1,22 @@
 ---
-title: "概要の x64 呼び出し規約 |Microsoft ドキュメント"
-ms.custom: 
+title: 概要の x64 呼び出し規約 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: a05db5eb-0844-4d9d-8b92-b1b2434be0ea
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8ac42eb934692fb9eaecf345b75e7544e7078f07
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: eb4071cd3223ad2ab073f84418e641b515c05112
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="overview-of-x64-calling-conventions"></a>x64 呼び出し規則の概要
 X86 の 2 つの重要な違いと[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]は 64 ビット アドレッシング機能と、一般的な用途のレジスタを 64 ビットの 16 のフラットなセット。 展開した特定の登録のセット、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]を使用して、 [_ _fastcall](../cpp/fastcall.md)呼び出し規約および RISC ベースの例外処理モデル。 `__fastcall`規則では、最初の 4 つの引数と、スタック フレームのレジスタを使用して、追加の引数を渡します。  
@@ -41,5 +36,5 @@ X86 の 2 つの重要な違いと[!INCLUDE[vcprx64](../assembler/inline/include
 ## <a name="unwindability"></a>Unwindability  
  リーフ関数は、任意の非 volatile レジスタが変更されない関数です。 非リーフ関数は、関数を呼び出すか、ローカル変数の追加のスタック領域の割り当てによって、非揮発性 RSP をなど、変更可能性があります。 例外を処理するときに非 volatile レジスタを回復するために非リーフ関数は、正しく任意命令に関数をアンワインドする方法を説明する静的データと注釈する必要があります。 このデータは*pdata*、またはプロシージャのデータは、順番を指す*xdata*、例外データを処理します。 Xdata は、アンワインドの情報が含まれています、追加 pdata または例外ハンドラー関数を指すことができます。 プロローグとエピローグは、正しく xdata に記載されていることができるように非常に制限されます。 スタック ポインターは、16 バイトの任意のリーフ関数内を除き、プロローグまたはエピローグの一部でないコード領域に配置する必要があります。 リーフ関数は、pdata および xdata は必要ありませんので、戻り値をシミュレートするだけでアンワインドされます。 関数のプロローグとエピローグの適切な構造に関する詳細については、「[プロローグとエピローグ](../build/prolog-and-epilog.md)です。 例外処理、および pdata と xdata のアンワインドの処理と例外に関する詳細については、次を参照してください。[例外処理 (x64)](../build/exception-handling-x64.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [x64 ソフトウェア規約](../build/x64-software-conventions.md)

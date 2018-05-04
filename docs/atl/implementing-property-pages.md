@@ -1,13 +1,10 @@
 ---
-title: "プロパティ ページを実装する |Microsoft ドキュメント"
-ms.custom: 
+title: プロパティ ページを実装する |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - IPropertyPage class
 - property pages, implementing
 ms.assetid: 62f29440-33a7-40eb-a1ef-3634c95f640c
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ac80bdd9e38d14b53aea7b691d480272cce66e7b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1db6ca4ea374cd76d5b0e1df8e6c0cd03474fdf2
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="implementing-property-pages"></a>プロパティ ページを実装します。
 プロパティ ページは、COM オブジェクトを実装する、`IPropertyPage`または**IPropertyPage2**インターフェイスです。 ATL によって、プロパティ ページを実装するためのサポートの提供、 [ATL プロパティ ページ ウィザード](../atl/reference/atl-property-page-wizard.md)で、[クラスの追加 ダイアログ ボックス](../ide/add-class-dialog-box.md)です。  
@@ -56,9 +51,9 @@ ms.lasthandoff: 12/21/2017
  プロパティ ページの実装例を次を参照してください。[例: プロパティ ページを実装する](../atl/example-implementing-a-property-page.md)です。  
   
 > [!NOTE]
->  プロパティ ページで ActiveX コントロールをホストにする場合は、ウィザードで生成されたクラスの派生を変更する必要があります。 置き換える**CDialogImpl\<CYourClass >**で**CAxDialogImpl\<CYourClass >**基底クラスの一覧にします。  
+>  プロパティ ページで ActiveX コントロールをホストにする場合は、ウィザードで生成されたクラスの派生を変更する必要があります。 置き換える**CDialogImpl\<CYourClass >** で**CAxDialogImpl\<CYourClass >** 基底クラスの一覧にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [プロパティ ページ](../atl/atl-com-property-pages.md)   
  [例](../visual-cpp-samples.md)
 

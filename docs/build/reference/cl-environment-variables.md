@@ -1,13 +1,10 @@
 ---
-title: "環境変数 CL |Microsoft ドキュメント"
-ms.custom: 
+title: 環境変数 CL |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - cl
 dev_langs:
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - LIBPATH environment variable
 - environment variables, CL compiler
 ms.assetid: 2606585b-a681-42ee-986e-1c9a2da32108
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ba01a980aa24a3ff695479edd08e88d9ea538dcc
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6f3986097bcb5028d9ad708c9a3132f5e417d502
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cl-environment-variables"></a>環境変数 CL
 
@@ -73,7 +68,7 @@ CL 環境変数を設定する例を次に示します。
 
 > CL FILE1 です。C FILE2 です。C ファイル 3 と指定します。OBJ
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
 [コンパイラ オプション](../../build/reference/compiler-options.md)

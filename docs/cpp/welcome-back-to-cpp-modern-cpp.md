@@ -1,27 +1,22 @@
 ---
-title: "C++ (Modern C) へようこそ |Microsoft ドキュメント"
-ms.custom: 
+title: C++ (Modern C) へようこそ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 1cb1b849-ed9c-4721-a972-fd8f3dab42e2
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4e45c48671a0df62103a58a89d0c351209c71ed2
-ms.sourcegitcommit: ff9bf140b6874bc08718674c07312ecb5f996463
+ms.openlocfilehash: 63e73657c7e018d2a4eb71170561e310aeba9d5b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="welcome-back-to-c-modern-c"></a>C++ へようこそ (Modern C++)
 C++ は世界で最も広く使用されているプログラミング言語の 1 つです。 適切に記述された C++ プログラムは、高速で効率的です。 この言語は、楽しめるゲームから、高性能な科学的ソフトウェア、デバイス ドライバー、埋め込みプログラム、さらに Windows クライアント アプリケーションに至るまで、幅広いアプリケーションの作成に使用でき、他の言語よりも柔軟性があります。 20 年以上にわたって、C++ はそれらをはじめとするさまざまなソリューション使用されてきました。 ますます多くの C++ プログラマが、旧来の C のプログラミング スタイルから卒業して、最新の C++ の手法を身に着けていることを、ご存知でない方もいるかもしれません。  
@@ -36,7 +31,7 @@ C++ は世界で最も広く使用されているプログラミング言語の 
   
 -   生のポインターではなく、スマート ポインター。  
   
--   `std::string`および`std::wstring`型 (を参照してください[\<文字列 >](../standard-library/string.md)) ではなく生`char[]`配列。  
+-   `std::string` および`std::wstring`型 (を参照してください[\<文字列 >](../standard-library/string.md)) ではなく生`char[]`配列。  
   
 -   [C++ 標準ライブラリ](../standard-library/cpp-standard-library-header-files.md)などのコンテナー `vector`、 `list`、および`map`生配列またはカスタムのコンテナーの代わりにします。 参照してください[\<ベクター >](../standard-library/vector.md)、 [\<リスト >](../standard-library/list.md)、および[\<マップ >](../standard-library/map.md)です。  
   
@@ -142,7 +137,7 @@ void f()
   
  詳細については、StackOverflow の記事を参照してください。 [C++ の表現形式は、c++ 11 で廃止されました。](http://go.microsoft.com/fwlink/p/?linkid=402836)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [ラムダ式](../cpp/lambda-expressions-in-cpp.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)  

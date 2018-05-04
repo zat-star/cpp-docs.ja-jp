@@ -1,12 +1,9 @@
 ---
-title: "ソフトウェア例外の発生 |Microsoft ドキュメント"
-ms.custom: 
+title: ソフトウェア例外の発生 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - software exceptions [C++]
 - formats [C++], exception codes
 ms.assetid: be1376c3-c46a-4f52-ad1d-c2362840746a
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4eb616945a831502077066bdf306bef306f543eb
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.openlocfilehash: 9fa925a01633d72f43b165b87c27e5203a143d1e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="raising-software-exceptions"></a>ソフトウェア例外の発生
 プログラム エラーの最も一般的な原因のいくつかは、システムによって例外としてフラグが設定されません。 たとえば、メモリ ブロックを割り当てるときにメモリが不足していると、ランタイム関数または API 関数で例外は発生しませんが、エラー コードが返されます。  
@@ -74,7 +69,7 @@ if (lpstr == NULL)
   
  例外を簡単に発生させるには、最後の 3 つのパラメーターを 0 に設定します。 最後の 3 つのパラメーターは、追加情報を渡し、ハンドラーの実行を中止するフラグを設定するときに使用します。 参照してください、 [RaiseException](http://msdn.microsoft.com/library/windows/desktop/ms680552)で機能、[!INCLUDE[winsdkshort](../atl-mfc-shared/reference/includes/winsdkshort_md.md)]詳細についてはします。  
   
- 例外処理フィルターで、定義したコードをテストできます。 例:  
+ 例外処理フィルターで、定義したコードをテストできます。 例えば:  
   
 ```  
 __try {  
@@ -84,6 +79,6 @@ __except (GetExceptionCode() == STATUS_INSUFFICIENT_MEM ||
         GetExceptionCode() == STATUS_FILE_BAD_FORMAT )  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [例外ハンドラーの記述](../cpp/writing-an-exception-handler.md)   
  [構造化例外処理 (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

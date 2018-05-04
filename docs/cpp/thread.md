@@ -1,12 +1,9 @@
 ---
-title: "スレッド |Microsoft ドキュメント"
-ms.custom: 
+title: スレッド |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - thread_cpp
@@ -18,23 +15,21 @@ helpviewer_keywords:
 - TLS (thread local storage), compiler implementation
 - __declspec keyword [C++], thread
 ms.assetid: 667f2a77-6d1f-4b41-bee8-05e67324fab8
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a8c514879368b8ea3d676635f2b922a2e1c07224
-ms.sourcegitcommit: 30ab99c775d99371ed22d1a46598e542012ed8c6
+ms.openlocfilehash: d0f456d217119020f5683a58560283a1ff08ac75
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="thread"></a>スレッド
 
 **Microsoft 固有の仕様**
 
-**スレッド**拡張ストレージ クラス修飾子を使用して、スレッド ローカル変数を宣言します。 移植可能な c++ 11 では同等で、後で、使用、 [thread_local](../cpp/storage-classes-cpp.md#thread_local)コードの移植性のストレージ クラス指定子。 Windows で**thread_local**がで実装される**_declspec**です。
+**スレッド**拡張ストレージ クラス修飾子を使用して、スレッド ローカル変数を宣言します。 移植可能な c++ 11 では同等で、後で、使用、 [thread_local](../cpp/storage-classes-cpp.md#thread_local)コードの移植性のストレージ クラス指定子。 Windows で**thread_local**がで実装される **_declspec**です。
 
 ## <a name="syntax"></a>構文
 
@@ -85,7 +80,7 @@ __declspec( thread ) int tls_i = 1;
     __declspec( thread ) B2 BObject2;   // BObject2 declared thread local.
     ```
 
-- 標準 C では、自分自身への参照を含む式でオブジェクトや変数を初期化できます。ただし、この場合のオブジェクトは、非静的なものに限られます。 C++ では、通常、自分自身への参照を含む式でこのようにオブジェクトを動的に初期化できますが、この種の初期化はスレッド ローカル オブジェクトでは許可されません。 例:
+- 標準 C では、自分自身への参照を含む式でオブジェクトや変数を初期化できます。ただし、この場合のオブジェクトは、非静的なものに限られます。 C++ では、通常、自分自身への参照を含む式でこのようにオブジェクトを動的に初期化できますが、この種の初期化はスレッド ローカル オブジェクトでは許可されません。 例えば:
 
    ```cpp
    // declspec_thread_3.cpp

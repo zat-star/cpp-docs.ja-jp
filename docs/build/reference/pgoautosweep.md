@@ -13,14 +13,13 @@ f1_keywords:
 - PogoAutoSweepW
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6b26eb95552594733fa0849c0df114676dc7a222
-ms.sourcegitcommit: ee7d74683af7631441c8c7f65ef5ceceaee4a5ee
+ms.openlocfilehash: 988a73dd8c4ad6929ef04691ad1959df7ea7bdd7
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pgoautosweep"></a>PgoAutoSweep
 
@@ -46,7 +45,7 @@ void PgoAutoSweep(const wchar_t* name); // UNICODE
 
 によって作成された .pgc ファイル`PgoAutoSweep`最適化された実行可能ファイルを作成するための .pgd ファイルにマージする必要があります。 使用することができます、 [pgomgr](pgomgr.md)コマンドを実行して、マージします。
 
-最適化のビルド中を使用して、リンカーにマージされた .pgd ファイルの名前を渡すことができます、 **PGD =**_filename_への引数、 [/USEPROFILE](useprofile.md)リンカー オプション、または使用して、非推奨**/PGD**リンカー オプション。 という名前のファイルには、.pgc ファイルをマージするかどうかは*base_name*.pgd、する必要はありません、コマンドラインのファイル名を指定するため、リンカーが既定でこのファイル名を取得します。
+最適化のビルド中を使用して、リンカーにマージされた .pgd ファイルの名前を渡すことができます、 **PGD =**_filename_への引数、 [/USEPROFILE](useprofile.md)リンカー オプション、または使用して、非推奨 **/PGD**リンカー オプション。 という名前のファイルには、.pgc ファイルをマージするかどうかは*base_name*.pgd、する必要はありません、コマンドラインのファイル名を指定するため、リンカーが既定でこのファイル名を取得します。
 
 `PgoAutoSweep`機能は、スレッドの安全性設定は、インストルメント化されたビルドを作成するときに指定します。 既定の設定を使用するかを指定する場合、 **noexact は、**への引数、 [/GENPROFILE または/FASTGENPROFILE]()呼び出しをリンカー オプション、`PgoAutoSweep`スレッド セーフではありません。 **EXACT**引数作成スレッド セーフであるより精度がより低速でインストルメント化された実行可能ファイルです。
 

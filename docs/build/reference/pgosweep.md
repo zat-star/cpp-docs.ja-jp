@@ -13,14 +13,13 @@ helpviewer_keywords:
 ms.assetid: f39dd3b7-1cd9-4c3b-8e8b-fb794744b757
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9680dc47d850bd49eff343c0e382b7132697858d
-ms.sourcegitcommit: ee7d74683af7631441c8c7f65ef5ceceaee4a5ee
+ms.openlocfilehash: ded5b692d7c51e5a46a325a69ad6969083025ff5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pgosweep"></a>pgosweep
 
@@ -28,14 +27,14 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="syntax"></a>構文
 
-> **pgosweep** [*options*] *image* *pgcfile*
+> **pgosweep** [*オプション*]*イメージ* *pgcfile*
 
 ### <a name="parameters"></a>パラメーター
 
 *オプション*(省略可能)<br/>
 有効値、*オプション*は。
 
-- **/?** または**/help**ヘルプ メッセージが表示されます。
+- **/?** または **/help**ヘルプ メッセージが表示されます。
 
 - **/noreset**ランタイム データ構造体に含まれる数を保持します。
 
@@ -51,7 +50,7 @@ ms.lasthandoff: 03/22/2018
 
 用途**pgosweep**だけ、アプリケーションの通常の動作のプロファイル情報を取得することです。 たとえば、実行する**pgosweep**すぐにアプリケーションを起動し、そのファイルを破棄します。 これは、スタートアップ コストに関連付けられているプロファイル データを削除します。 その後、実行**pgosweep**アプリケーションを終了する前にします。 収集されたデータになりました、ユーザーがプログラムで相互作用するだけの時間のプロファイル情報。
 
-.Pgc ファイル名を指定する場合 (を使用して、 *pgcfile*パラメーター) は、標準の形式を使用する*appname! n*.pgc です。 この形式を使用する場合、コンパイラがでこのデータを自動的に検出、 **/LTCG/USEPROFILE**または**/LTCG:PGO**フェーズ。 使用する必要があります、標準の形式を使用しない場合[pgomgr](pgomgr.md) .pgc ファイルをマージします。
+.Pgc ファイル名を指定する場合 (を使用して、 *pgcfile*パラメーター) は、標準の形式を使用する*appname! n*.pgc です。 この形式を使用する場合、コンパイラがでこのデータを自動的に検出、 **/LTCG/USEPROFILE**または **/LTCG:PGO**フェーズ。 使用する必要があります、標準の形式を使用しない場合[pgomgr](pgomgr.md) .pgc ファイルをマージします。
 
 > [!NOTE]
 > このツールは、Visual Studio 開発者コマンド プロンプトからのみ開始できます。 システム コマンド プロンプトやエクスプローラーからは開始できません。

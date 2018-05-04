@@ -1,13 +1,10 @@
 ---
-title: "const ポインターと volatile ポインター |Microsoft ドキュメント"
-ms.custom: 
+title: const ポインターと volatile ポインター |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - pointers, and volatile
 - const keyword [C++], volatile pointers
 ms.assetid: 0c92dc6c-400e-4342-b345-63ddfe649d7e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 68089c80528265a4375767d9f0a744cb95cb970b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c4e76348a4559d68c0c7dacd91d21c39c5b0d8a6
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="const-and-volatile-pointers"></a>const ポインターと volatile ポインター
 [Const](../cpp/const-cpp.md)と[揮発性](../cpp/volatile-cpp.md)キーワードは、ポインターの処理方法を変更します。 **Const**キーワードは、初期化後に、ポインターを変更できないことを指定します。 ポインターはその後、変更から保護します。  
@@ -100,7 +95,7 @@ errno_t strcpy_s( char *strDestination, size_t numberOfElements, const char *str
  前のステートメントは、関数を宣言[strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)へのポインター型の 3 つの引数の 2 つが、`char`です。 引数が参照によって渡されますないため、値によって関数は両方を変更するために解放`strDestination`と`strSource`場合`strSource`として宣言されていない**const**です。 宣言`strSource`として**const**により、呼び出し元`strSource`呼び出された関数では変更できません。  
   
 > [!NOTE]
->  標準変換があるため*typename*  **\*** に**const** *typename*  **\***、型の引数を渡すことは**char \*** に[strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)です。 ただし、この逆は true になります。削除する暗黙的な変換が存在しない、 **const**オブジェクトまたはポインターからの属性です。  
+>  標準変換があるため*typename* **\*** に**const** *typename*  **\***、型の引数を渡すことは**char \*** に[strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)です。 ただし、この逆は true になります。削除する暗黙的な変換が存在しない、 **const**オブジェクトまたはポインターからの属性です。  
   
  A **const**指定された型のポインターを同じ型のポインターに割り当てることができます。 ただし、ポインター外にある**const**に割り当てることはできません、 **const**ポインター。 次のコードは、正しい代入と正しくない代入を示します。  
   
@@ -137,5 +132,5 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ポインター](../cpp/pointers-cpp.md)

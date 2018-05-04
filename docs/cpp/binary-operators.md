@@ -1,12 +1,9 @@
 ---
-title: "二項演算子 |Microsoft ドキュメント"
-ms.custom: 
+title: 二項演算子 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -15,24 +12,22 @@ helpviewer_keywords:
 - operators [C++], binary
 - binary operators [C++]
 ms.assetid: c0e7fbff-bc87-4708-8333-504ac09ee83e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 15c52d48359210a21b23caa72afee7e2a3bcd8cc
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3b930c548ea411beb03255d694f2423903053288
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="binary-operators"></a>二項演算子
 次の表は、オーバーロードできる演算子の一覧です。  
   
 ### <a name="redefinable-binary-operators"></a>再定義可能な二項演算子  
   
-|演算子|name|  
+|演算子|名前|  
 |--------------|----------|  
 |**、**|コンマ|  
 |`!=`|非等値|  
@@ -82,5 +77,5 @@ ms.lasthandoff: 12/21/2017
 > [!NOTE]
 >  二項演算子の戻り値の型に制限はありません。ただし、ほとんどのユーザー定義の二項演算子は、クラス型かクラス型への参照を返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [演算子のオーバーロード](../cpp/operator-overloading.md)

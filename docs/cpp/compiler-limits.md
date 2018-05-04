@@ -1,29 +1,24 @@
 ---
-title: "コンパイラの制限 |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラの制限 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - cl.exe compiler, limits for language constructs
 ms.assetid: f1fa59c6-55b4-414b-80c5-3df72952160d
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cf668ddfa1c2d7e62ca10963827056f9661b83f2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: bc7cd26add0a46bab8df7669fb6dfb6060b0010e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="compiler-limits"></a>コンパイラの制限
 C++ 標準は、さまざまな言語構成体の制限を勧告しています。 以下は、Visual C++ コンパイラが推奨される制限を実装しない場合のリストです。 最初の数字は ISO C++ 11 標準 (INCITS/ISO/IEC 14882-2011[2012], Annex B) で規定されている制限であり、2 番目の数字は Visual C++ で実装されている制限です。  
@@ -46,5 +41,5 @@ C++ 標準は、さまざまな言語構成体の制限を勧告しています�
   
 -   テンプレートの宣言では、C++ 標準にテンプレート引数: 1024、Visual C コンパイラ: 2046 です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [非標準動作](../cpp/nonstandard-behavior.md)

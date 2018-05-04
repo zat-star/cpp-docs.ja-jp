@@ -1,10 +1,10 @@
 ---
-title: "/Zc:referenceBinding (参照のバインディング規則の実施) |Microsoft ドキュメント"
-ms.custom: 
+title: /Zc:referenceBinding (参照のバインディング規則の実施) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 03/06/2018
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - referenceBinding
 - /Zc:referenceBinding
@@ -19,14 +19,13 @@ helpviewer_keywords:
 ms.assetid: 0c6cfaac-9c2a-41a3-aa94-64ca8ef261fc
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a8e3b10f5b2108a4c0e29d802951015749775a27
-ms.sourcegitcommit: eeb2b5ad8d3d22514a7b9bd7d756511b69ae0ccf
+ms.openlocfilehash: 30038f6ff73eaa2d9536c3685927458a70209864
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="zcreferencebinding-enforce-reference-binding-rules"></a>/Zc:referenceBinding (参照のバインディング規則の適用)
 
@@ -38,9 +37,9 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="remarks"></a>コメント
 
-場合**/Zc:referenceBinding**を指定すると、コンパイラが標準の c++ 11 の 8.5.3 に依存して、一時的なユーザー定義型を非定数の左辺値参照にバインドする式は許可されません。 既定では、または**/Zc:referenceBinding-**指定すると、コンパイラは、Microsoft 拡張機能としては、このような式を使用できますが、レベル 4 の警告を発行します。 使用することお勧めをコードのセキュリティ、移植性および適合性、 **/Zc:referenceBinding**です。
+場合 **/Zc:referenceBinding**を指定すると、コンパイラが標準の c++ 11 の 8.5.3 に依存して、一時的なユーザー定義型を非定数の左辺値参照にバインドする式は許可されません。 既定では、または **/Zc:referenceBinding-** 指定すると、コンパイラは、Microsoft 拡張機能としては、このような式を使用できますが、レベル 4 の警告を発行します。 使用することお勧めをコードのセキュリティ、移植性および適合性、 **/Zc:referenceBinding**です。
 
-**/Zc:referenceBinding**オプションは既定でオフになっています。 [寛容/-](permissive-standards-conformance.md)コンパイラ オプションでは、このオプションは、暗黙的に設定しますを使用してオーバーライドできます**/Zc:referenceBinding-**です。
+**/Zc:referenceBinding**オプションは既定でオフになっています。 [寛容/-](permissive-standards-conformance.md)コンパイラ オプションでは、このオプションは、暗黙的に設定しますを使用してオーバーライドできます **/Zc:referenceBinding-** です。
 
 ## <a name="example"></a>例
 
@@ -73,7 +72,7 @@ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandar
 
 1. 選択、**構成プロパティ** > **C/C++** > **コマンドライン**プロパティ ページ。
 
-1. 変更、**追加オプション**含めるプロパティを**/Zc:referenceBinding**を選択し**OK**です。
+1. 変更、**追加オプション**含めるプロパティを **/Zc:referenceBinding**を選択し**OK**です。
 
 ## <a name="see-also"></a>関連項目
 

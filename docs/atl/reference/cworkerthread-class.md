@@ -1,12 +1,9 @@
 ---
-title: "クラスの使用 |Microsoft ドキュメント"
-ms.custom: 
+title: クラスの使用 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CWorkerThread
@@ -24,17 +21,15 @@ dev_langs:
 helpviewer_keywords:
 - CWorkerThread class
 ms.assetid: be79a832-1345-4a36-a13e-a406cc65286f
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: be7a000e48cb044a67f7eee120206f46ecaef2ce
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e87001ca341ae27cb173357f74e06e543f5eb262
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cworkerthread-class"></a>クラスの使用
 このクラスは、ワーカー スレッドを作成または既存のものを使用して化し、1 つまたは複数のカーネル オブジェクトのハンドルを待機がシグナルを受け取るハンドルのいずれかに指定されたクライアント関数を実行します。  
@@ -57,7 +52,7 @@ class CWorkerThread
   
 ### <a name="protected-structures"></a>保護された構造体  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |`WorkerClientEntry`||  
   
@@ -100,10 +95,10 @@ class CWorkerThread
   
 6.  スレッドを終了するには、呼び出す[CWorkerThread::Shutdown](#shutdown)です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlutil.h  
   
-##  <a name="addhandle"></a>CWorkerThread::AddHandle  
+##  <a name="addhandle"></a>  CWorkerThread::AddHandle  
  このメソッドを呼び出して待機可能オブジェクトのハンドルをワーカー スレッドによって保持されたリストに追加します。  
   
 ```
@@ -129,7 +124,7 @@ HRESULT AddHandle(
 ### <a name="remarks"></a>コメント  
  [IWorkerThreadClient::Execute](../../atl/reference/iworkerthreadclient-interface.md#execute)を介して呼び出される`pClient`ときに、ハンドル`hObject`、通知されます。  
   
-##  <a name="addtimer"></a>CWorkerThread::AddTimer  
+##  <a name="addtimer"></a>  CWorkerThread::AddTimer  
  ワーカー スレッドによって保持されたリストに、定期的な待機可能なタイマーを追加するには、このメソッドを呼び出します。  
   
 ```
@@ -161,14 +156,14 @@ HRESULT AddTimer(
   
  タイマー ハンドルを渡す`phTimer`に[CWorkerThread::RemoveHandle](#removehandle)タイマーを閉じます。  
   
-##  <a name="cworkerthread"></a>CWorkerThread::CWorkerThread  
+##  <a name="cworkerthread"></a>  CWorkerThread::CWorkerThread  
  コンストラクターです。  
   
 ```
 CWorkerThread() throw();
 ```  
   
-##  <a name="dtor"></a>使用:: ~ 使用  
+##  <a name="dtor"></a>  使用:: ~ 使用  
  デストラクターです。  
   
 ```
@@ -178,7 +173,7 @@ CWorkerThread() throw();
 ### <a name="remarks"></a>コメント  
  呼び出し[CWorkerThread::Shutdown](#shutdown)です。  
   
-##  <a name="getthreadhandle"></a>CWorkerThread::GetThreadHandle  
+##  <a name="getthreadhandle"></a>  CWorkerThread::GetThreadHandle  
  ワーカー スレッドのスレッド ハンドルを取得するには、このメソッドを呼び出します。  
   
 ```
@@ -188,7 +183,7 @@ HANDLE GetThreadHandle() throw();
 ### <a name="return-value"></a>戻り値  
  ワーカー スレッドが初期化されていない場合は、スレッド ハンドルまたは NULL を返します。  
   
-##  <a name="getthreadid"></a>CWorkerThread::GetThreadId  
+##  <a name="getthreadid"></a>  CWorkerThread::GetThreadId  
  ワーカー スレッドのスレッド ID を取得するには、このメソッドを呼び出します。  
   
 ```
@@ -198,7 +193,7 @@ DWORD GetThreadId() throw();
 ### <a name="return-value"></a>戻り値  
  ワーカー スレッドが初期化されていない場合は、スレッド ID または NULL を返します。  
   
-##  <a name="initialize"></a>CWorkerThread::Initialize  
+##  <a name="initialize"></a>  CWorkerThread::Initialize  
  このメソッドを呼び出して、ワーカー スレッドを初期化します。  
   
 ```
@@ -221,7 +216,7 @@ HRESULT Initialize(CWorkerThread<ThreadTraits>* pThread) throw();
   
  参照してください[CWorkerThread::Shutdown](#shutdown)については、既存のオブジェクトへのポインターを使用して初期化されるときに、そのメソッドの動作がどのように変化するかをします。  
   
-##  <a name="removehandle"></a>CWorkerThread::RemoveHandle  
+##  <a name="removehandle"></a>  CWorkerThread::RemoveHandle  
  このメソッドを呼び出して待機可能オブジェクトの一覧からハンドルを削除します。  
   
 ```
@@ -238,7 +233,7 @@ HRESULT RemoveHandle(HANDLE hObject) throw();
 ### <a name="remarks"></a>コメント  
  ハンドルが削除されたとき[IWorkerThreadClient::CloseHandle](../../atl/reference/iworkerthreadclient-interface.md#closehandle)に渡された関連付けられたオブジェクトで呼び出される[AddHandle](#addhandle)です。 この呼び出しが失敗した場合、 `CWorkerThread` 、Windows を呼び出す[CloseHandle](http://msdn.microsoft.com/library/windows/desktop/ms724211)ハンドルの関数。  
   
-##  <a name="shutdown"></a>CWorkerThread::Shutdown  
+##  <a name="shutdown"></a>  CWorkerThread::Shutdown  
  ワーカー スレッドをシャット ダウンするには、このメソッドを呼び出します。  
   
 ```
@@ -257,7 +252,7 @@ HRESULT Shutdown(DWORD dwWait = ATL_WORKER_THREAD_WAIT) throw();
   
  呼び出して**シャット ダウン**別にポインターを使用して初期化されるオブジェクトで`CWorkerThread`オブジェクトの影響は生じず、常に S_OK を返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DefaultThreadTraits](atl-typedefs.md#defaultthreadtraits)   
  [クラス](../../atl/reference/atl-classes.md)   
  [マルチ スレッド: ワーカー スレッドの作成](../../parallel/multithreading-creating-worker-threads.md)   

@@ -2,12 +2,9 @@
 title: Visual Basic アプリケーションから DLL 関数を呼び出す |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - __stdcall keyword [C++]
 - DLL functions [C++], calling
 ms.assetid: 282f7fbf-a0f2-4b9f-b277-1982710be56c
-caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ed99b0ebe41a8f1bc9684638fa74e18556dd51f5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 9877544635dc894bbe379c751de35297add91c9d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="calling-dll-functions-from-visual-basic-applications"></a>DLL 関数の Visual Basic アプリケーションからの呼び出し方
 VBA (Visual Basic アプリケーション) や Pascal、Fortran などの他の言語で書かれたアプリケーションから C/C++ DLL 内の関数を呼び出すには、コンパイラによって装飾された名前ではなく正しい呼び出し規則を使ってその関数をエクスポートする必要があります。  
@@ -87,5 +82,5 @@ EXPORTS
   
 -   [装飾名](../build/reference/decorated-names.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)

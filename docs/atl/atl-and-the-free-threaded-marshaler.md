@@ -1,13 +1,10 @@
 ---
-title: "ATL とフリー スレッド マーシャラー |Microsoft ドキュメント"
-ms.custom: 
+title: ATL とフリー スレッド マーシャラー |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - threading [ATL], free threaded marshaler
 - FTM in ATL
 ms.assetid: 2db88a13-2217-4ebc-aa7e-432d5da902eb
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 02b8586d7df5a521b48bfce61a097ed6ca450196
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1716985adf65b714a418f20d3873f45c32d368b4
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-and-the-free-threaded-marshaler"></a>ATL とフリー スレッド マーシャラー
 ATL シンプル オブジェクト ウィザードの [属性] ページでは、フリー スレッド マーシャラー (FTM) を集計するクラスを許可するオプションを提供します。  
@@ -38,7 +33,7 @@ ATL シンプル オブジェクト ウィザードの [属性] ページでは�
   
  このオプションを使用する場合、クラスは、データのスレッド セーフの責任を負う必要があります。 さらに、フリー スレッド マーシャラーを集約し、その他のオブジェクトから取得されたインターフェイス ポインターを使用する必要があるオブジェクトは、インターフェイスが正しくマーシャ リングすることを確認する追加の手順になりません。 通常は、グローバル インターフェイス テーブル (GIT) にインターフェイス ポインターを格納してを使用するたびに、GIT からポインターを取得します。 ATL クラスを提供する[CComGITPtr](../atl/reference/ccomgitptr-class.md) GIT で格納されているインターフェイス ポインターを使用するためです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [概念](../atl/active-template-library-atl-concepts.md)   
  [CoCreateFreeThreadedMarshaler](http://msdn.microsoft.com/library/windows/desktop/ms694500)   
  [IMarshal](http://msdn.microsoft.com/library/windows/desktop/dd542707)   

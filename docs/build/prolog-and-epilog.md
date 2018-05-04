@@ -1,27 +1,22 @@
 ---
-title: "プロローグとエピローグ |Microsoft ドキュメント"
-ms.custom: 
+title: プロローグとエピローグ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 0453ed1a-3ff1-4bee-9cc2-d6d3d6384984
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 700b467065d17a61dcfabf9dcaa6577a7ecffc11
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 2939293fe5fbdfd07cb12470790de5b064489d7f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prolog-and-epilog"></a>プロローグとエピローグ
 すべての関数にスタック領域の割り当て、不揮発性レジスタの保存、または、例外処理を使用して他の関数の呼び出しはそれぞれの関数のテーブルのエントリに関連付けられたアンワインド データ アドレス制限が説明されているプロローグを設定する必要があります (を参照してください[例外処理 (x64)](../build/exception-handling-x64.md))。 プロローグは、レジスタ、自宅の住所に必要な場合、スタックにプッシュ不揮発性レジスタ引数を保存し、ローカル変数の一時要素のスタックの固定部分を割り当てるし、フレーム ポインターを必要に応じて確立します。 関連付けられたアンワインド データ プロローグのアクションを記述する必要があり、プロローグ コードの効果を元に戻すために必要な情報を提供する必要があります。  
@@ -102,5 +97,5 @@ ret
   
  これらの規則により、アンワインド コードをエピローグが現在実行されていることを確認し、呼び出し元の関数のコンテキストを再作成を許可するエピローグの残りの部分の実行をシミュレートします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [x64 ソフトウェア規約](../build/x64-software-conventions.md)

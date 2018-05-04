@@ -1,12 +1,9 @@
 ---
-title: "IAtlStringMgr クラス |Microsoft ドキュメント"
-ms.custom: 
+title: IAtlStringMgr クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 f1_keywords:
 - IAtlStringMgr
@@ -23,17 +20,15 @@ helpviewer_keywords:
 - memory, managing
 - IAtlStringMgr class
 ms.assetid: 722f0346-a770-4aa7-8f94-177be8dba823
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 85b99b0b1f35ecbc35b4096ac8c2260d0a55680d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 05d7ff0a38c0a557016887e6fce92fcb0bf28226
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="iatlstringmgr-class"></a>IAtlStringMgr クラス
 このクラスにインターフェイスを表します、`CStringT`メモリ マネージャー。  
@@ -61,10 +56,10 @@ __interface IAtlStringMgr
   
  このクラスを使用して、カスタム文字列クラスのカスタム メモリ マネージャーを実装することができますも。 詳細については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsimpstr.h  
   
-##  <a name="allocate"></a>IAtlStringMgr::Allocate  
+##  <a name="allocate"></a>  IAtlStringMgr::Allocate  
  新しい文字列データ構造体を割り当てます。  
   
 ```
@@ -90,7 +85,7 @@ CStringData* Allocate(int nAllocLength,int nCharSize) throw();
 > [!NOTE]
 >  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
-##  <a name="clone"></a>IAtlStringMgr::Clone  
+##  <a name="clone"></a>  IAtlStringMgr::Clone  
  別のインスタンスで使用するための新しい文字列マネージャーへのポインターを返します`CSimpleStringT`です。  
   
 ```
@@ -108,7 +103,7 @@ IAtlStringMgr* Clone() throw();
 > [!NOTE]
 >  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
-##  <a name="free"></a>IAtlStringMgr::Free  
+##  <a name="free"></a>  IAtlStringMgr::Free  
  文字列データの構造体を解放します。  
   
 ```
@@ -125,7 +120,7 @@ void Free(CStringData* pData) throw();
 > [!NOTE]
 >  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
-##  <a name="getnilstring"></a>IAtlStringMgr::GetNilString  
+##  <a name="getnilstring"></a>  IAtlStringMgr::GetNilString  
  空の文字列を文字列データ構造体へのポインターを返します。  
   
 ```
@@ -144,7 +139,7 @@ CStringData* GetNilString() throw();
 > [!NOTE]
 >  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
-##  <a name="reallocate"></a>IAtlStringMgr::Reallocate  
+##  <a name="reallocate"></a>  IAtlStringMgr::Reallocate  
  文字列データ構造を再割り当ています。  
   
 ```
@@ -175,7 +170,7 @@ CStringData* Reallocate(
 > [!NOTE]
 >  使用例については、次を参照してください。[メモリ管理と CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)
 

@@ -1,10 +1,10 @@
 ---
-title: "/Zc:implicitNoexcept (暗黙の例外指定子) |Microsoft ドキュメント"
-ms.custom: 
+title: /Zc:implicitNoexcept (暗黙の例外指定子) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 03/06/2018
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /Zc:implicitNoexcept
 dev_langs:
@@ -16,14 +16,13 @@ helpviewer_keywords:
 ms.assetid: 71807652-6f9d-436b-899e-f52daa6f500b
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 77308d262022f0cddbbb7008fe8277f7768afd68
-ms.sourcegitcommit: eeb2b5ad8d3d22514a7b9bd7d756511b69ae0ccf
+ms.openlocfilehash: 7e420017056d6857a2809ce6eb85fe99b6f3866f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="zcimplicitnoexcept-implicit-exception-specifiers"></a>/Zc:implicitNoexcept (暗黙の例外指定子)
 
@@ -39,9 +38,9 @@ ms.lasthandoff: 03/15/2018
 
 コンパイラは、明示的な `noexcept` や `throw` 指定子または `__declspec(nothrow)` 属性を使用して宣言された関数に対して暗黙的な例外指定子を生成しません。
 
-既定では、 **/Zc:implicitNoexcept**を有効にします。 [寛容/-](permissive-standards-conformance.md)オプションには影響しません**/Zc:implicitNoexcept**です。
+既定では、 **/Zc:implicitNoexcept**を有効にします。 [寛容/-](permissive-standards-conformance.md)オプションには影響しません **/Zc:implicitNoexcept**です。
 
-指定して、オプションが無効になっている場合**/zc: implicitnoexcept-**、コンパイラによって暗黙的な例外指定子は生成されません。 この動作は Visual Studio 2013 の場合と同じであり、例外指定子がないデストラクターとデアロケーターでは `throw` ステートメントを使用することができません。 既定とタイミング**/Zc:implicitNoexcept**を指定した場合、`throw`で暗黙的な関数の実行時にステートメントが検出された`noexcept(true)`指定子の直接の呼び出しになります`std::terminate`と例外ハンドラーに対する通常のアンワインド動作は保証されません。 このような状況を識別するには、コンパイラが生成されます[コンパイラの警告 (レベル 1) C4297](../../error-messages/compiler-warnings/compiler-warning-level-1-c4297.md)です。 場合、`throw`は、意図的なことをお勧めする明示的な関数の宣言を変更する`noexcept(false)`指定子を使用せずに**/zc: implicitnoexcept-**です。
+指定して、オプションが無効になっている場合 **/zc: implicitnoexcept-**、コンパイラによって暗黙的な例外指定子は生成されません。 この動作は Visual Studio 2013 の場合と同じであり、例外指定子がないデストラクターとデアロケーターでは `throw` ステートメントを使用することができません。 既定とタイミング **/Zc:implicitNoexcept**を指定した場合、`throw`で暗黙的な関数の実行時にステートメントが検出された`noexcept(true)`指定子の直接の呼び出しになります`std::terminate`と例外ハンドラーに対する通常のアンワインド動作は保証されません。 このような状況を識別するには、コンパイラが生成されます[コンパイラの警告 (レベル 1) C4297](../../error-messages/compiler-warnings/compiler-warning-level-1-c4297.md)です。 場合、`throw`は、意図的なことをお勧めする明示的な関数の宣言を変更する`noexcept(false)`指定子を使用せずに **/zc: implicitnoexcept-** です。
 
 この例では、明示的な例外指定子を持たないユーザー定義のデストラクターの動作時に、 **/Zc:implicitNoexcept**オプションを設定するか、または無効になっています。 動作を示すを設定するを使用してコンパイル`cl /EHsc /W4 implicitNoexcept.cpp`です。 表示するには無効にしたときの動作を使用してコンパイル`cl /EHsc /W4 /Zc:implicitNoexcept- implicitNoexcept.cpp`です。
 
@@ -119,7 +118,7 @@ int main()
 }
 ```
 
-既定の設定を使用して、コンパイル時に**/Zc:implicitNoexcept**サンプルには、次の出力が生成されます。
+既定の設定を使用して、コンパイル時に **/Zc:implicitNoexcept**サンプルには、次の出力が生成されます。
 
 ```Output
 ~B Exception caught
@@ -127,7 +126,7 @@ Unexpected throw caused std::terminate
 Exit returning EXIT_FAILURE
 ```
 
-設定を使用して、コンパイル時に**/zc: implicitnoexcept-**サンプルには、次の出力が生成されます。
+設定を使用して、コンパイル時に **/zc: implicitnoexcept-** サンプルには、次の出力が生成されます。
 
 ```Output
 ~B Exception caught
@@ -143,7 +142,7 @@ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandar
 
 1. 選択、**構成プロパティ** > **C/C++** > **コマンドライン**プロパティ ページ。
 
-1. 変更、**追加オプション**含めるプロパティを**/Zc:implicitNoexcept**または**/zc: implicitnoexcept-**を選択し**OK**です。
+1. 変更、**追加オプション**含めるプロパティを **/Zc:implicitNoexcept**または **/zc: implicitnoexcept-** を選択し**OK**です。
 
 ## <a name="see-also"></a>関連項目
 

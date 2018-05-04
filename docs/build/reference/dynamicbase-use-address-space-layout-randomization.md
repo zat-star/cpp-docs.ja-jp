@@ -1,13 +1,10 @@
 ---
-title: "-DYNAMICBASE (使用するアドレス領域のレイアウトのランダム化) |Microsoft ドキュメント"
-ms.custom: 
+title: -DYNAMICBASE (使用するアドレス領域のレイアウトのランダム化) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCLinkerTool.RandomizedBaseAddress
 dev_langs:
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - /DYNAMICBASE linker option
 - DYNAMICBASE linker option
 ms.assetid: 6c0ced8e-fe9c-4b63-b956-eb8a55fbceb2
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1458070f85678d30c716622bf57740d90feb65d8
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 85af66c4ce05057eff63292061b66202aeebe160
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="dynamicbase-use-address-space-layout-randomization"></a>/DYNAMICBASE (ASLR (Address Space Layout Randomization) の使用)
 ランダムにリベースできる負荷時の address space layout randomization (機能) 機能を使用して、実行可能イメージを生成するかどうかを示す[!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)]です。  
@@ -41,7 +36,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  既定では、/DYNAMICBASE しています  
   
- このオプションは、アプリケーションが読み込み時にランダムに再配置するかどうかを示すために実行可能ファイルのヘッダーを変更します。  
+ このオプションは、ロード時にアプリケーションをランダムにリベースするかどうかを示すように実行可能ファイルのヘッダーを変更します。  
   
  アドレス空間のレイアウトのランダム化はサポートされて[!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)]です。  
   
@@ -61,6 +56,6 @@ ms.lasthandoff: 12/21/2017
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.RandomizedBaseAddress%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

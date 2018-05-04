@@ -1,12 +1,9 @@
 ---
-title: "_ _clrcall |Microsoft ドキュメント"
-ms.custom: 
+title: _ _clrcall |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __clrcall_cpp
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - __clrcall keyword [C++]
 ms.assetid: 92096695-683a-40ed-bf65-0c8443572152
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d11211e90f0517c11213d7bdd2815c2f937fc79a
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 02af89a99b78ba17e6c5a7463073d314ee8d2a03
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="clrcall"></a>__clrcall
 **Microsoft 固有の仕様**  
@@ -38,11 +33,11 @@ ms.lasthandoff: 12/21/2017
   
  `__clrcall` が指定されていない場合にネイティブ関数のアドレスを取得すると、コンパイラはネイティブ エントリ ポイントを使用します。 `__clrcall` は、関数が管理され、マネージ コードからネイティブへの遷移を行う必要がないことを示します。 その場合、コンパイラはマネージ エントリ ポイントを使用します。  
   
- ときに**/clr** (いない**/clr: 純粋な**または**/clr:safe**) を使用し、`__clrcall`はネイティブ エントリのアドレスを返す関数のアドレスを常に実行を使用しません。関数をポイントします。 `__clrcall` を使用すると、ネイティブ エントリ ポイント関数が作成されないため、エントリ ポイント サンク関数ではなくマネージ関数のアドレスを取得します。 詳細については、次を参照してください。[ダブル サンキング](../dotnet/double-thunking-cpp.md)です。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+ ときに **/clr** (いない **/clr: 純粋な**または **/clr:safe**) を使用し、`__clrcall`はネイティブ エントリのアドレスを返す関数のアドレスを常に実行を使用しません。関数をポイントします。 `__clrcall` を使用すると、ネイティブ エントリ ポイント関数が作成されないため、エントリ ポイント サンク関数ではなくマネージ関数のアドレスを取得します。 詳細については、次を参照してください。[ダブル サンキング](../dotnet/double-thunking-cpp.md)です。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で非推奨とされています。  
   
- [/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)すべての関数と関数ポインターがあることを意味`__clrcall`、コンパイラとしてマークするもの以外のコンパイル単位内で関数を許可しないと`__clrcall`です。 ときに**/clr: 純粋な**を使用する`__clrcall`関数ポインターと外部宣言でのみ指定することができます。  
+ [/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)すべての関数と関数ポインターがあることを意味`__clrcall`、コンパイラとしてマークするもの以外のコンパイル単位内で関数を許可しないと`__clrcall`です。 ときに **/clr: 純粋な**を使用する`__clrcall`関数ポインターと外部宣言でのみ指定することができます。  
   
- 直接呼び出すことができます`__clrcall`関数を使用してコンパイルされた既存の C++ コードから**/clr**その関数が MSIL を実装します。 `__clrcall`これらの関数がコンパイルされる場合でも、関数をインライン asm を持ち、たとえば、CPU 固有の組み込みを呼び出してから直接関数を呼び出すことができません**/clr**です。  
+ 直接呼び出すことができます`__clrcall`関数を使用してコンパイルされた既存の C++ コードから **/clr**その関数が MSIL を実装します。 `__clrcall` これらの関数がコンパイルされる場合でも、関数をインライン asm を持ち、たとえば、CPU 固有の組み込みを呼び出してから直接関数を呼び出すことができません **/clr**です。  
   
  `__clrcall` 関数ポインターだけが、作成されたアプリケーション ドメインで使用されるようになっています。  アプリケーション ドメインを越えて `__clrcall` 関数ポインターを渡すのではなく、<xref:System.CrossAppDomainDelegate> を使用します。 詳細については、次を参照してください。[アプリケーション ドメインと Visual c](../dotnet/application-domains-and-visual-cpp.md)です。  
   
@@ -103,6 +98,6 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [引数の渡し規則と名前付け規則](../cpp/argument-passing-and-naming-conventions.md)   
  [キーワード](../cpp/keywords-cpp.md)

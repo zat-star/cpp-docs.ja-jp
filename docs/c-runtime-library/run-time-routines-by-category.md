@@ -1,5 +1,5 @@
 ---
-title: カテゴリ別ランタイム ルーチン | Microsoft Docs
+title: カテゴリ別ユニバーサル C ランタイム ルーチン | Microsoft Docs
 ms.custom: ''
 ms.date: 04/06/2018
 ms.technology:
@@ -20,17 +20,19 @@ ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3ff178238e457d4a9346ba3659509c295bcf3794
-ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.openlocfilehash: 01bdb786c003894b4ab1bf6418aa9c492e909602
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="run-time-routines-by-category"></a>カテゴリ別ランタイム ルーチン
+# <a name="universal-c-runtime-routines-by-category"></a>カテゴリ別ユニバーサル C ランタイム ルーチン
 
-このセクションでは、Microsoft ランタイム ライブラリ ルーチンの一覧をカテゴリ別に示して説明します。 参照しやすいように、一部のルーチンは複数のカテゴリに記載されています。 マルチバイト文字ルーチンとワイド文字ルーチンは、対応する 1 バイト文字ルーチンと共にグループ化されています (存在する場合)。
+このセクションでは、ユニバーサル C ランタイム (UCRT) ライブラリ ルーチンの一覧をカテゴリ別に示して説明します。 参照しやすいように、一部のルーチンは複数のカテゴリに記載されています。 マルチバイト文字ルーチンとワイド文字ルーチンは、対応する 1 バイト文字ルーチンと共にグループ化されています (存在する場合)。
 
-## <a name="routine-categories"></a>ルーチンのカテゴリ
+## <a name="ucrt-library-routine-categories"></a>UCRT ライブラリ ルーチンのカテゴリ
+
+UCRT ライブラリ ルーチンの主なカテゴリは次のとおりです。
 
 |||
 |-|-|

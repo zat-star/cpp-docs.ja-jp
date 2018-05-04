@@ -1,13 +1,10 @@
 ---
-title: "ダイアログ ボックスを実装する |Microsoft ドキュメント"
-ms.custom: 
+title: ダイアログ ボックスを実装する |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - CAxDialogImpl class, implementing dialog boxes in ATL
 - ATL, dialog boxes
 ms.assetid: 478525f2-aa6a-435a-b162-68fc8aa98a8e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9b3ff0e58623a241160da21266d085753be1c457
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 672696027a43cd5a50e2ad630824d305f7ca4b68
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="implementing-a-dialog-box"></a>ダイアログ ボックスの実装
 ATL プロジェクトに、ダイアログ ボックスを追加する 2 つの方法があります。 ATL ダイアログ ウィザードを使用するか、手動で追加します。  
@@ -45,7 +40,7 @@ ATL プロジェクトに、ダイアログ ボックスを追加する 2 つの
 > [!NOTE]
 >  ATL ダイアログ ウィザードを使用してダイアログ ボックスを作成すると、ウィザードは自動的に追加、`IDD`メンバーとして、`enum`型です。  
   
- `CDialogImpl`使用すると、モーダルまたはモードレス ダイアログ ボックスの Windows コントロールをホストしている実装できます。 `CAxDialogImpl`使用すると、モーダルまたはモードレス ダイアログ ボックス コントロールの ActiveX や Windows の両方をホストする実装できます。  
+ `CDialogImpl` 使用すると、モーダルまたはモードレス ダイアログ ボックスの Windows コントロールをホストしている実装できます。 `CAxDialogImpl` 使用すると、モーダルまたはモードレス ダイアログ ボックス コントロールの ActiveX や Windows の両方をホストする実装できます。  
   
  モーダル ダイアログ ボックスを作成するには、インスタンスを作成、 `CDialogImpl`-派生 (または`CAxDialogImpl`-派生) クラスを呼び出す、 [DoModal](../atl/reference/cdialogimpl-class.md#domodal)メソッドです。 モーダル ダイアログ ボックスを閉じるを呼び出して、 [EndDialog](../atl/reference/cdialogimpl-class.md#enddialog)メッセージ ハンドラーからメソッドです。 モードレス ダイアログ ボックスを作成するには、[作成](../atl/reference/cdialogimpl-class.md#create)メソッドの代わりに`DoModal`です。 モードレス ダイアログ ボックスを破棄するには、呼び出す[DestroyWindow](../atl/reference/cdialogimpl-class.md#destroywindow)です。  
   
@@ -56,6 +51,6 @@ ATL プロジェクトに、ダイアログ ボックスを追加する 2 つの
   
  [!code-cpp[NVC_ATL_Windowing#66](../atl/codesnippet/cpp/implementing-a-dialog-box_1.h)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ウィンドウ クラス](../atl/atl-window-classes.md)
 

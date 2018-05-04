@@ -1,12 +1,9 @@
 ---
-title: "CPrivateObjectSecurityDesc クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CPrivateObjectSecurityDesc クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CPrivateObjectSecurityDesc
@@ -21,17 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - CPrivateObjectSecurityDesc class
 ms.assetid: 2c4bbb13-bf99-4833-912a-197f6815bb5d
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e4845d652d2b1dceb8ffc0f2772f88565eb81e29
-ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.openlocfilehash: 6f47adc413a0e6d3d9c820b824dec95f55924867
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cprivateobjectsecuritydesc-class"></a>CPrivateObjectSecurityDesc クラス
 このクラスは、プライベート オブジェクト セキュリティ記述子オブジェクトを表します。  
@@ -64,7 +59,7 @@ class CPrivateObjectSecurityDesc : public CSecurityDesc
   
 |||  
 |-|-|  
-|[operator =](#operator_eq)|代入演算子。|  
+|[演算子 =](#operator_eq)|代入演算子。|  
   
 ## <a name="remarks"></a>コメント  
  このクラスから派生[CSecurityDesc](../../atl/reference/csecuritydesc-class.md)メソッドを作成して、プライベート オブジェクトのセキュリティ記述子の管理を提供します。  
@@ -76,7 +71,7 @@ class CPrivateObjectSecurityDesc : public CSecurityDesc
   
  `CPrivateObjectSecurityDesc`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="converttoautoinherit"></a>  CPrivateObjectSecurityDesc::ConvertToAutoInherit  
@@ -119,7 +114,7 @@ CPrivateObjectSecurityDesc() throw();
 ### <a name="remarks"></a>コメント  
  初期化、`CPrivateObjectSecurityDesc`オブジェクト。  
   
-##  <a name="dtor"></a>CPrivateObjectSecurityDesc:: ~ CPrivateObjectSecurityDesc  
+##  <a name="dtor"></a>  CPrivateObjectSecurityDesc:: ~ CPrivateObjectSecurityDesc  
  デストラクターです。  
   
 ```
@@ -262,7 +257,7 @@ bool Set(
 ### <a name="remarks"></a>コメント  
  2 番目のメソッドは、オブジェクトのオブジェクトの種類の GUID を指定するか、Ace を継承する方法の制御を許可します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SECURITY_DESCRIPTOR](http://msdn.microsoft.com/library/windows/desktop/aa379561)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティのグローバル関数](../../atl/reference/security-global-functions.md)   

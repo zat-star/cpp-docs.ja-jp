@@ -1,12 +1,9 @@
 ---
-title: "CW2AEX クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CW2AEX クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CW2AEX
@@ -19,17 +16,15 @@ dev_langs:
 helpviewer_keywords:
 - CW2AEX class
 ms.assetid: 44dc2cf5-dd30-440b-a9b9-b21b43f49843
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d135797ff6902a9a63e89a692a25919b08b47f6d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 62fd48a34b82e0671d417a882e040a87a7691c01
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cw2aex-class"></a>CW2AEX クラス
 このクラスは、文字列変換マクロによって使用`CT2AEX`、 `CW2TEX`、 `CW2CTEX`、および`CT2CAEX`、および typedef **CW2A**です。  
@@ -98,10 +93,10 @@ class CW2AEX
 ## <a name="example"></a>例  
  参照してください[ATL および MFC 文字列変換マクロ](string-conversion-macros.md)をこれらの文字列変換マクロを使用する例についてはします。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlconv.h  
   
-##  <a name="cw2aex"></a>CW2AEX::CW2AEX  
+##  <a name="cw2aex"></a>  CW2AEX::CW2AEX  
  コンストラクターです。  
   
 ```
@@ -119,7 +114,7 @@ CW2AEX(LPCWSTR psz) throw(...);
 ### <a name="remarks"></a>コメント  
  変換プロセスで使用するバッファーを割り当てます。  
   
-##  <a name="dtor"></a>CW2AEX:: ~ CW2AEX  
+##  <a name="dtor"></a>  CW2AEX:: ~ CW2AEX  
  デストラクターです。  
   
 ```
@@ -129,21 +124,21 @@ CW2AEX(LPCWSTR psz) throw(...);
 ### <a name="remarks"></a>コメント  
  割り当てられたバッファーを解放します。  
   
-##  <a name="m_psz"></a>CW2AEX::m_psz  
+##  <a name="m_psz"></a>  CW2AEX::m_psz  
  ソース文字列を格納するデータ メンバーです。  
   
 ```
 LPSTR m_psz;
 ```  
   
-##  <a name="m_szbuffer"></a>CW2AEX::m_szBuffer  
+##  <a name="m_szbuffer"></a>  CW2AEX::m_szBuffer  
  静的バッファー、変換後の文字列を格納するために使用します。  
   
 ```
 char m_szBuffer[t_nBufferLength];
 ```  
   
-##  <a name="operator_lpstr"></a>CW2AEX::operator LPSTR  
+##  <a name="operator_lpstr"></a>  CW2AEX::operator LPSTR  
  変換演算子です。  
   
 ```  
@@ -153,7 +148,7 @@ operator LPSTR() const throw();
 ### <a name="return-value"></a>戻り値  
  種類としてテキスト文字列を返す**LPSTR です。**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CA2AEX クラス](../../atl/reference/ca2aex-class.md)   
  [CA2CAEX クラス](../../atl/reference/ca2caex-class.md)   
  [CA2WEX クラス](../../atl/reference/ca2wex-class.md)   

@@ -1,12 +1,9 @@
 ---
-title: "ATL COM + 1.0 コンポーネント ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: ATL COM + 1.0 コンポーネント ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - vc.codewiz.class.atl.mts.overview
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - ATL projects, adding components
 - ATL COM+ 1.0 Component Wizard
 ms.assetid: 11670681-8671-4122-96a4-2e52f8dadce0
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1c82cf91c61f047a80c513d1aead25fe73c77715
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 19151ca659f7bc3235f84eefb39b640c4856fa43
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-com-10-component-wizard"></a>ATL COM+ 1.0 コンポーネント ウィザード
 このウィザードを使用すると、オブジェクトを COM + 1.0 services、トランザクションを含むをサポートするプロジェクトに追加します。  
@@ -40,7 +35,7 @@ ms.lasthandoff: 12/21/2017
  オブジェクト、インターフェイス、およびプロジェクトに追加するクラスの名前を指定します。 例外を除いて**短い名前**、その他のすべてのボックスを個別に編集できます。 テキストを変更する場合**短い名前**、このページの他のすべてのボックスの名前に、変更が反映されます。 変更した場合、**コクラス**のセクションでは、COM、変更の名前が反映されます、**型**と**ProgID**ボックス、ですが、**インターフェイス**名変更されません。 この名前付けの動作は、コントロールを開発する際に簡単に識別できるように、すべての名前に設計されています。  
   
  **短い名前**  
- オブジェクトの省略名を設定します。 決定を指定した名前、`Class`と`Coclass`名、 **.cpp ファイル**と**.h ファイル**名、**インターフェイス**の名前を**型**名、および**ProgID**それらのフィールドを個別に変更していない限り、します。  
+ オブジェクトの省略名を設定します。 決定を指定した名前、`Class`と`Coclass`名、 **.cpp ファイル**と **.h ファイル**名、**インターフェイス**の名前を**型**名、および**ProgID**それらのフィールドを個別に変更していない限り、します。  
   
  **.h ファイル**  
  新しいオブジェクトのクラスのヘッダー ファイルの名前を設定します。 既定では、この名前は、名に基づいてで提供される**短い名前**です。 ファイル名を任意の場所に保存するか、既存のファイルに、クラスの宣言を追加する、省略記号ボタンをクリックします。 既存のファイルを選択すると場合、ウィザードは保存されません、選択した場所にするまで をクリック**完了**ウィザード。  
@@ -82,6 +77,6 @@ ms.lasthandoff: 12/21/2017
  **ProgID**  
  コンテナーは、オブジェクトの CLSID の代わりに使用できる名前を設定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL COM + 1.0 コンポーネント](../../atl/reference/adding-an-atl-com-plus-1-0-component.md)
 

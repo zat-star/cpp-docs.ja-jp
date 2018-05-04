@@ -1,12 +1,9 @@
 ---
-title: "CSimpleDialog クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CSimpleDialog クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CSimpleDialog
@@ -20,17 +17,15 @@ helpviewer_keywords:
 - dialog boxes, modal
 - modal dialog boxes, ATL
 ms.assetid: 2ae65cc9-4f32-4168-aecd-200b4a480fdf
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5e497d5f1646ab890b7dafa3e1fb7e1c711a8a09
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f3a8f6cb2ead8798b86d65a1fa875a42a68cdd77
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="csimpledialog-class"></a>CSimpleDialog クラス
 このクラスは、基本のモーダル ダイアログ ボックスを実装します。  
@@ -59,9 +54,9 @@ class CSimpleDialog : public CDialogImplBase
 |[CSimpleDialog::DoModal](#domodal)|モーダル ダイアログ ボックスを作成します。|  
   
 ## <a name="remarks"></a>コメント  
- 基本的な機能を持つモーダル ダイアログ ボックスを実装します。 `CSimpleDialog`Windows コモン コントロールのみのサポートを提供します。 作成、モーダル ダイアログ ボックスを表示するには、ダイアログ ボックスの既存のリソース テンプレートの名前を提供する、このクラスのインスタンスを作成します。 ユーザー (IDOK、IDCANCEL など) の定義済みの値を持つ任意のコントロールがクリックしたときに、ダイアログ ボックスのオブジェクトを閉じます。  
+ 基本的な機能を持つモーダル ダイアログ ボックスを実装します。 `CSimpleDialog` Windows コモン コントロールのみのサポートを提供します。 作成、モーダル ダイアログ ボックスを表示するには、ダイアログ ボックスの既存のリソース テンプレートの名前を提供する、このクラスのインスタンスを作成します。 ユーザー (IDOK、IDCANCEL など) の定義済みの値を持つ任意のコントロールがクリックしたときに、ダイアログ ボックスのオブジェクトを閉じます。  
   
- `CSimpleDialog`モーダル ダイアログ ボックスのみを作成できます。 `CSimpleDialog`既定のメッセージ マップを使用して、適切なハンドラーへのメッセージを送信するためのダイアログ ボックス プロシージャを提供します。  
+ `CSimpleDialog` モーダル ダイアログ ボックスのみを作成できます。 `CSimpleDialog` 既定のメッセージ マップを使用して、適切なハンドラーへのメッセージを送信するためのダイアログ ボックス プロシージャを提供します。  
   
  参照してください[ ダイアログ ボックスを実装する](../../atl/implementing-a-dialog-box.md)詳細についてはします。  
   
@@ -70,10 +65,10 @@ class CSimpleDialog : public CDialogImplBase
   
  `CSimpleDialog`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="domodal"></a>CSimpleDialog::DoModal  
+##  <a name="domodal"></a>  CSimpleDialog::DoModal  
  モーダル ダイアログ ボックスの呼び出しを完了ダイアログ ボックスの結果を返します。  
   
 ```
@@ -92,5 +87,5 @@ INT_PTR DoModal(HWND hWndParent = ::GetActiveWindow());
 ### <a name="remarks"></a>コメント  
  このメソッドは、ダイアログ ボックスがアクティブな間に、ユーザーとすべての対話を処理します。 モーダル ダイアログ ボックスは、します。ユーザーは、ダイアログ ボックスが閉じられるまで、他のウィンドウを操作できません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

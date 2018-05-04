@@ -1,13 +1,10 @@
 ---
-title: "参照カウント (ATL) |Microsoft ドキュメント"
-ms.custom: 
+title: 参照カウント (ATL) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - reference counts
 - references, counting
 ms.assetid: b1fd4514-6de6-429f-9e60-2777c0d07a3d
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: be6aff46df500a55665f85f6f462514985885b9b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d1ba27f00bf25f88575101b1299daf50f94000ad
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="reference-counting"></a>参照カウント
 COM 自体は自動的に試みませんオブジェクトが使用されていないと思われるときに、メモリからオブジェクトを削除します。 代わりに、オブジェクトのプログラマが使用されていないオブジェクトを削除する必要があります。 プログラマは、オブジェクトを参照カウントに基づいて削除されることができるかどうかを判断します。  
@@ -45,7 +40,7 @@ COM 自体は自動的に試みませんオブジェクトが使用されてい�
 > [!NOTE]
 >  ときに、 `CComObject`-を使用して派生オブジェクトを構築、**新しい**演算子、参照カウントが 0 です。 そのため、呼び出しを`AddRef`が正常に作成した後に行う必要があります、 `CComObject`-派生オブジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [COM の概要](../atl/introduction-to-com.md)   
  [参照カウントをオブジェクトの有効期間を管理します。](http://msdn.microsoft.com/library/windows/desktop/ms687260)
 

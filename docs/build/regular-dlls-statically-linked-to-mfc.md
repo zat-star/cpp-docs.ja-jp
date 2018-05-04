@@ -1,13 +1,10 @@
 ---
-title: "MFC と静的にリンクされている標準 MFC Dll |Microsoft ドキュメント"
-ms.custom: 
+title: MFC と静的にリンクされている標準 MFC Dll |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - statically linked DLLs [C++]
 - regular MFC DLLs [C++], statically linked to MFC
 ms.assetid: 2eed531c-726a-4b8a-b936-f721dc00a7fa
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5ef25785e3d1e37ee622572f03fce56b1fa236aa
-ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
+ms.openlocfilehash: c48fdfb0b10541c1643ec49038e29cfa60c633d9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="regular-mfc-dlls-statically-linked-to-mfc"></a>MFC と静的にリンクされている標準 MFC Dll
 MFC DLL が MFC と静的にリンク、通常は内部的には、MFC を使用する DLL と、MFC または非 MFC の実行可能ファイルによって、DLL からエクスポートされた関数を呼び出すことができます。 名前が示すようこの種の DLL は MFC のスタティック リンク ライブラリ バージョンを使用して構築します。 通常、関数は、通常、標準の C インターフェイスを使用して MFC DLL からエクスポートします。 作成、ビルド、および標準 MFC DLL を使用する方法の例は、サンプルを参照してください。[は](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/advanced/DllScreenCap)します。  
@@ -75,7 +70,7 @@ extern "C" __declspec(dllexport) MyExportedFunction( );
   
  MFC と静的にリンクされている DLL は、共有 MFC Dll に動的にリンクできません。 MFC と静的にリンクされる DLL とその他の DLL と同じようにアプリケーションを動的に連結します。アプリケーションは、その他の DLL と同じようにしてリンクします。  
   
- 標準の MFC スタティック リンク ライブラリがで説明されている規則に従って名前付き[MFC Dll の名前付け規則](../mfc/mfc-library-versions.md#mfc-static-library-naming-conventions)です。 ただし、MFC バージョン 3.0 以降では、これが不要でリンクする MFC ライブラリのバージョンをリンカーに手動で指定する必要です。 代わりに、MFC ヘッダー ファイルを自動的に決定に基づいてプリプロセッサでリンクする MFC ライブラリの正しいバージョンを定義するように**\_デバッグ**または**_UNICODE**です。 MFC ヘッダー ファイルでは、MFC ライブラリの特定のバージョンのリンクをリンカーに指示/DEFAULTLIB ディレクティブを追加します。  
+ 標準の MFC スタティック リンク ライブラリがで説明されている規則に従って名前付き[MFC Dll の名前付け規則](../mfc/mfc-library-versions.md#mfc-static-library-naming-conventions)です。 ただし、MFC バージョン 3.0 以降では、これが不要でリンクする MFC ライブラリのバージョンをリンカーに手動で指定する必要です。 代わりに、MFC ヘッダー ファイルを自動的に決定に基づいてプリプロセッサでリンクする MFC ライブラリの正しいバージョンを定義するように**\_デバッグ**または **_UNICODE**です。 MFC ヘッダー ファイルでは、MFC ライブラリの特定のバージョンのリンクをリンカーに指示/DEFAULTLIB ディレクティブを追加します。  
   
 ## <a name="what-do-you-want-to-do"></a>実行する操作  
   
@@ -93,5 +88,5 @@ extern "C" __declspec(dllexport) MyExportedFunction( );
   
 -   [MFC 拡張 DLL](../build/extension-dlls-overview.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DLL の種類](../build/kinds-of-dlls.md)

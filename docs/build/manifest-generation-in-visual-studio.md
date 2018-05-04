@@ -1,29 +1,24 @@
 ---
-title: "Visual Studio でのマニフェスト生成 |Microsoft ドキュメント"
-ms.custom: 
+title: Visual Studio でのマニフェスト生成 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
 - manifests [C++]
 ms.assetid: 0af60aa9-d223-42cd-8426-b3fc543a2a81
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3d701d73103ee2c5ac72eb36d9919132f0578b1b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 73b5cbe631d078dd6ee27b4f7e0a97503c36638b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manifest-generation-in-visual-studio"></a>Visual Studio でのマニフェスト生成
 プロジェクトで特定のプロジェクトのマニフェスト ファイルの生成を制御できます**プロパティ ページ**ダイアログ。 **構成プロパティ** タブで、をクリックして**リンカー**、し**マニフェスト ファイル**、し**マニフェストの生成**です。 既定では、新しいプロジェクトのプロジェクトのプロパティは、マニフェスト ファイルを生成する設定されます。 ただしを使用して、プロジェクトのマニフェストの生成を無効にすることは、**マニフェストの生成**プロジェクトのプロパティです。 このプロパティを設定すると**はい**、このプロジェクトのマニフェストを生成します。 アプリケーション コードの依存関係を解決するときに、リンカーがアセンブリ情報を無視するそれ以外の場合、マニフェストを生成しません。  
@@ -42,7 +37,7 @@ ms.lasthandoff: 12/21/2017
   
  マニフェストは、最終的なバイナリ文字列リソースとして埋め込まであり、最終的なバイナリを Visual Studio でのファイルとして開くことによって表示できます。 マニフェストを適切なライブラリを指していることを確認するに説明されている手順に従います[Visual C アプリケーションの依存関係を理解する](../ide/understanding-the-dependencies-of-a-visual-cpp-application.md)で説明されている推奨事項に従うか、 [のトラブルシューティング](../build/troubleshooting-c-cpp-isolated-applications-and-side-by-side-assemblies.md)セクションです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: マニフェストを C/C++ アプリケーションに埋め込む](../build/how-to-embed-a-manifest-inside-a-c-cpp-application.md)   
  [プライベート アセンブリの概要](http://msdn.microsoft.com/library/ff951638)   
  [マニフェスト ツール](http://msdn.microsoft.com/library/aa375649)   

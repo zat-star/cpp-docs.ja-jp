@@ -1,27 +1,22 @@
 ---
-title: "アルゴリズム (Modern C) |Microsoft ドキュメント"
-ms.custom: 
+title: アルゴリズム (Modern C) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 6f758d3c-a7c7-4a50-92bb-97b2f6d4ab27
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5d89f6b5116459018cb50eb58b976f6f853ed088
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: fdd5742bb86992ce20f5a52f587c8557d46a97eb
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="algorithms-modern-c"></a>アルゴリズム (Modern C++)
 最新の C++ プログラミングのことをお勧め内のアルゴリズムを使用すること、 [C++ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)です。 次に重要な例を示します。  
@@ -82,7 +77,7 @@ auto i = find_if( begin(v), end(v),  [=](int i) { return i > x && i < y; } );
 ## <a name="random-numbers"></a>乱数  
  従来の CRT の `rand()` 関数に多くの欠陥があることは広く知られた事実であり、C++ コミュニティで長年にわたって議論されてきました。 最新の C++ でのそれらの欠点に対処する必要はありません- したり、独自一様に分布した乱数ジェネレーターを作成する —に示すとおり、迅速かつ簡単に作成するためのツールは、C++標準ライブラリで利用可能なため[\<ランダム >](../standard-library/random.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)

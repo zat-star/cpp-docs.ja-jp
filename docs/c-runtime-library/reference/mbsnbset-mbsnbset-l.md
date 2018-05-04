@@ -2,11 +2,8 @@
 title: _mbsnbset、_mbsnbset_l | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _mbsnbset
@@ -41,17 +38,15 @@ helpviewer_keywords:
 - tcsnset_l function
 - mbsnbset function
 ms.assetid: 8e46ef75-9a56-42d2-a522-a08450c67c19
-caps.latest.revision: 24
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 462e435c1b93561cf5ca21dd20ad2025ac6f9661
-ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
+ms.openlocfilehash: 316580b0c5f1f46ffa9f4a49ef759b347032fc09
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="mbsnbset-mbsnbsetl"></a>_mbsnbset、_mbsnbset_l
 
@@ -102,7 +97,7 @@ unsigned char *_mbsnbset_l(
 
 場合*str*は**NULL**または*カウント*ゼロ、」の説明に従って、この関数は無効なパラメーター例外を生成[パラメーターの検証](../../c-runtime-library/parameter-validation.md). 続けるには、実行が許可された場合**errno**に設定されている**EINVAL** 、関数を返します**NULL**です。 また場合、 *c*は有効なマルチバイト文字ではありません**errno**に設定されている**EINVAL**スペースが代わりに使用します。
 
-出力値の設定の影響を受けた、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。 **_Mbsnbset**この関数のバージョンは、このロケールに依存する動作の現在のロケールを使用して、 **_mbsnbset_l**バージョンは、代わりに渡されたロケール パラメーターを使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+出力値は、ロケールの **LC_CTYPE** カテゴリの設定に影響されます。詳細については、「[setlocale](setlocale-wsetlocale.md)」を参照してください。 **_Mbsnbset**この関数のバージョンは、このロケールに依存する動作の現在のロケールを使用して、 **_mbsnbset_l**バージョンは、代わりに渡されたロケール パラメーターを使用する点を除いて同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
 
 **セキュリティに関するメモ** この API は、バッファー オーバーランが原因で発生する可能性のある問題の影響を受けます。 バッファー オーバーランは、システムを攻撃するときによく使用される方法であり、その結果、認められていない権限が昇格されます。 詳しくは、「 [バッファー オーバーランの回避](http://msdn.microsoft.com/library/windows/desktop/ms717795)」をご覧ください。
 

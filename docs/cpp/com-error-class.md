@@ -1,12 +1,9 @@
 ---
-title: "_com_error クラス |Microsoft ドキュメント"
-ms.custom: 
+title: _com_error クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - _com_error
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - _com_error class
 ms.assetid: 70dafa69-b1fb-4a5c-9249-e857e0793d42
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 53defbe6c686630791317fa20aca48414144eb91
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.openlocfilehash: 95550c81235db58b1f8d372bf028750c003c7a9f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="comerror-class"></a>_com_error クラス
 **Microsoft 固有の仕様**  
@@ -42,7 +37,7 @@ ms.lasthandoff: 01/25/2018
   
 |||  
 |-|-|  
-|[operator =](../cpp/com-error-operator-equal.md)|既存の `_com_error` オブジェクトを別のオブジェクトに割り当てます。|  
+|[演算子 =](../cpp/com-error-operator-equal.md)|既存の `_com_error` オブジェクトを別のオブジェクトに割り当てます。|  
   
 ### <a name="extractor-functions"></a>抽出関数  
   
@@ -66,7 +61,7 @@ ms.lasthandoff: 01/25/2018
   
 |||  
 |-|-|  
-|[ErrorMessage](../cpp/com-error-errormessage.md)|`_com_error` オブジェクトに格納された HRESULT の文字列メッセージを取得します。|  
+|[エラー メッセージ](../cpp/com-error-errormessage.md)|`_com_error` オブジェクトに格納された HRESULT の文字列メッセージを取得します。|  
   
 ### <a name="exepinfowcode-to-hresult-mappers"></a>ExepInfo.wCode と HRESULT のマッパー  
   
@@ -77,11 +72,11 @@ ms.lasthandoff: 01/25/2018
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** \<comdef.h >  
   
- `Lib:`comsuppw.lib または comsuppwd.lib (を参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)詳細)  
+ `Lib:` comsuppw.lib または comsuppwd.lib (を参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)詳細)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ COM サポート クラス](../cpp/compiler-com-support-classes.md)   
  [IErrorInfo インターフェイス](http://msdn.microsoft.com/en-us/4dda6909-2d9a-4727-ae0c-b5f90dcfa447)

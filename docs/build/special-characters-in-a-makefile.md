@@ -1,13 +1,10 @@
 ---
-title: "メイクファイルの特殊文字 |Microsoft ドキュメント"
-ms.custom: 
+title: メイクファイルの特殊文字 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - special characters, in NMAKE macros
 - macros, special characters
 ms.assetid: 92c34ab5-ca6b-4fc0-bcf4-3172eaeda9f0
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6c574040d6004516682379a5e64b87c1b92388ec
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 157f9ed499ef7a0ac9efdd6bebe118ca593acabb
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="special-characters-in-a-makefile"></a>メイクファイルの特殊文字
 NMAKE の特殊文字をリテラル文字としてを使用するのには、前にキャレット (^) を配置します。 NMAKE では、その他の文字の前にキャレットを無視します。 特殊文字は次のとおりです。  
@@ -41,5 +36,5 @@ NMAKE の特殊文字をリテラル文字としてを使用するのには、�
   
  コマンド内のリテラル文字として、ドル記号 ($) を使用するには、2 つのドル記号 ($) を指定します。 このメソッドは、他の状況でも使用できます、^ $ が有効です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メイクファイルの内容](../build/contents-of-a-makefile.md)

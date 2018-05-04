@@ -1,29 +1,24 @@
 ---
-title: "演算子のオーバー ロードに関する一般的な規則 |Microsoft ドキュメント"
-ms.custom: 
+title: 演算子のオーバー ロードに関する一般的な規則 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - operator overloading [C++], rules
 ms.assetid: eb2b3754-35f7-4832-b1da-c502893dc0c7
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 199db318eb847687d10044e0376b70c8d6d44feb
-ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.openlocfilehash: 0abd32f2c46f7d7b26ea617e2cf43f1dc3c124bf
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="general-rules-for-operator-overloading"></a>演算子のオーバーロードに関する一般的な規則
 次の規則は、オーバーロードした演算子の実装のされ方を抑制します。 ただし、これらには適用されません、[新しい](../cpp/new-operator-cpp.md)と[削除](../cpp/delete-operator-cpp.md)演算子は、個別にについて説明しています。  
@@ -59,7 +54,7 @@ ms.lasthandoff: 03/16/2018
   
 -   メンバー関数として宣言された二項演算子は引数を 1 つ受け取ります。グローバル関数として宣言された場合は、引数を 2 つ受け取ります。  
   
--   かどうか、演算子は、単項演算子または二項演算子として使用できます (**&**、  **\*** 、  **+** 、および **-** )、各使用とは別にオーバー ロードできます。  
+-   かどうか、演算子は、単項演算子または二項演算子として使用できます (**&**、 **\***、 **+**、および**-**)、各使用とは別にオーバー ロードできます。  
   
 -   オーバーロードされた演算子は、既定の引数を持つことができません。  
   

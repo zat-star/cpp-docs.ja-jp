@@ -1,12 +1,9 @@
 ---
-title: "CComObject クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComObject クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComObject
@@ -21,17 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - CComObject class
 ms.assetid: e2b6433b-6349-4749-b4bc-acbd7a22c8b0
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 27da00e09ca88cc06b8bafed8f8601dac756fd34
-ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.openlocfilehash: af84d64d326ed7746b76db39ef26181ab96ca88d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomobject-class"></a>CComObject クラス
 このクラスは実装**IUnknown**非集約オブジェクト。  
@@ -54,7 +49,7 @@ class CComObject : public Base
 |名前|説明|  
 |----------|-----------------|  
 |[CComObject::CComObject](#ccomobject)|コンストラクターです。|  
-|[CComObject::~CComObject](#dtor)|デストラクターです。|  
+|[CComObject:: ~ CComObject](#dtor)|デストラクターです。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -104,7 +99,7 @@ CComObject(void* = NULL);
   
  場合、 `CComObject`-派生オブジェクトが正常に作成されたを使用して、**新しい**演算子、初期の参照カウントが 0 です。 参照カウントを適切な値 (1) に設定するには、呼び出しを行う、 [AddRef](#addref)関数。  
   
-##  <a name="dtor"></a>  CComObject::~CComObject  
+##  <a name="dtor"></a>  CComObject:: ~ CComObject  
  デストラクターです。  
   
 ```
@@ -116,7 +111,7 @@ CComObject();
 
   
 ##  <a name="createinstance"></a>  CComObject::CreateInstance  
- この静的関数では、新しいを作成することができます**CComObject <** `Base`  **>** のオーバーヘッドがなく、オブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。  
+ この静的関数では、新しいを作成することができます**CComObject <** `Base` **>** のオーバーヘッドがなく、オブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。  
   
 ```
 static HRESULT WINAPI CreateInstance(CComObject<Base>** pp);
@@ -124,7 +119,7 @@ static HRESULT WINAPI CreateInstance(CComObject<Base>** pp);
   
 ### <a name="parameters"></a>パラメーター  
  `pp`  
- [out]ポインター、 **CComObject <** `Base`  **>** ポインター。 場合`CreateInstance`は成功せず`pp`に設定されている**NULL**です。  
+ [out]ポインター、 **CComObject <** `Base` **>** ポインター。 場合`CreateInstance`は成功せず`pp`に設定されている**NULL**です。  
   
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  

@@ -1,12 +1,9 @@
 ---
-title: "基本的な型 (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 基本的な型 (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __int128_cpp
@@ -52,17 +49,15 @@ helpviewer_keywords:
 - storing types [C++]
 - data types [C++], void
 ms.assetid: 58b0106a-0406-4b74-a430-7cbd315c0f89
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1bb52d6a987289ed77d7b63a5497323ddad2b467
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8c24ee360f1c14aa9b355f45ec1c12877efa306c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="fundamental-types--c"></a>基本型 (C++)
 C++ の基本的な型は、整数、浮動小数点、および void の 3 つのカテゴリに分類されます。 整数型は整数を処理できます。 浮動小数点型は小数部分を含む可能性がある値を指定することができます。  
@@ -85,9 +80,9 @@ C++ の基本的な型は、整数、浮動小数点、および void の 3 つ�
 ||`bool`|`bool` 型は、2 つの値 ( `true` または `false`) のいずれかを設定できる整数型です。 そのサイズは、指定されていません。|  
 ||`short`|`short` `int` 型 (または `short`型) は、 `char`型のサイズ以上、 `int`型のサイズ以下の整数型です。<br /><br /> `short` 型のオブジェクトは `signed` `short` か `unsigned short`として宣言できます。 `Signed short` は `short`のシノニムです。|  
 ||`int`|`int` 型は、 `short` `int`型のサイズ以上で、 `long`型のサイズ以下の整数型です。<br /><br /> `int` 型のオブジェクトは `signed` `int` か `unsigned` `int`として宣言できます。 `Signed` `int` は `int`のシノニムです。|  
-||`__int8`, `__int16`, `__int32`, `__int64`|サイズが設定された整数 `__int n`( `n` は整数変数のビット単位のサイズ) `__int8`、 `__int16`、 `__int32` と `__int64` は Microsoft 固有キーワードです。 すべての型は、すべてのアーキテクチャで使用できます。 `(__int128`サポートされていません。)|  
+||`__int8`, `__int16`, `__int32`, `__int64`|サイズが設定された整数 `__int n`( `n` は整数変数のビット単位のサイズ) `__int8`、 `__int16`、 `__int32` と `__int64` は Microsoft 固有キーワードです。 すべての型は、すべてのアーキテクチャで使用できます。 `(__int128` サポートされていません。)|  
 ||`long`|`long` 型 (または `long` `int`) は、 `int`型のサイズ以上の整数型です。<br /><br /> `long` 型のオブジェクトは `signed` `long` か `unsigned` `long`として宣言できます。 `Signed` `long` は `long`のシノニムです。|  
-||`long` `long`|符号なしの `long`より大きい。<br /><br /> `long long` 型のオブジェクトは `signed` `long long` か `unsigned` `long long`として宣言できます。 `signed``long long`の同意語です`long long`です。|  
+||`long` `long`|符号なしの `long`より大きい。<br /><br /> `long long` 型のオブジェクトは `signed` `long long` か `unsigned` `long long`として宣言できます。 `signed` `long long` シノニムは、`long long`です。|  
 ||`wchar_t`, `__wchar_t`|`wchar_t` 型の変数はワイド文字またはマルチバイト文字型を指定します。 既定で、 `wchar_t` はネイティブ型ですが、 [/Zc:wchar_t-](../build/reference/zc-wchar-t-wchar-t-is-native-type.md) を使用して、 `wchar_t` を `unsigned short`の typedef にできます。 `__wchar_t` 型は、ネイティブ `wchar_t` 型の Microsoft 固有のシノニムです。<br /><br /> ワイド文字型を指定するには、文字や文字列リテラルの前に L のプレフィックスを使用します。|  
 |浮動小数点数|`float`|`float` 型は最小の浮動小数点型です。|  
 ||`double`|`double` 型は `float`型のサイズ以上で、 `long` `double`型のサイズ以下の浮動小数点型です。<br /><br /> Microsoft 固有: `long double` と `double` の表現は同じです。 ただし、 `long double` と `double` は別の型です。|  
@@ -112,5 +107,5 @@ C++ の基本的な型は、整数、浮動小数点、および void の 3 つ�
   
  型変換の詳細については、「 [標準変換](../cpp/standard-conversions.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ型の範囲](../cpp/data-type-ranges.md)

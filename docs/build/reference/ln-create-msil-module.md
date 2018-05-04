@@ -1,13 +1,10 @@
 ---
-title: "-LN (MSIL モジュールの作成) |Microsoft ドキュメント"
-ms.custom: 
+title: -LN (MSIL モジュールの作成) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /LN
 dev_langs:
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - -LN compiler option [C++]
 - /LN compiler option [C++]
 ms.assetid: 4f38f4f4-3176-4caf-8200-5c7585dc1ed3
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0278d59af9a62393f90a91655e3d7f0323e08118
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 918b3857c2e6f26a7f2e11614a00049e9b615ea8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ln-create-msil-module"></a>/LN (MSIL モジュールの作成)
 アセンブリ マニフェストを出力ファイルに挿入できないことを指定します。  
@@ -40,15 +35,15 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  既定では、 **/LN**は無効 (アセンブリ マニフェストを出力ファイルに挿入します)。  
   
- ときに**/LN**を使用するのいずれか、 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)オプションが使用することも必要があります。  
+ ときに **/LN**を使用するのいずれか、 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)オプションが使用することも必要があります。  
   
- マニフェスト内にアセンブリ メタデータがないマネージ プログラムには、モジュールが呼び出されます。 コンパイルする場合[(コンパイルなしのリンク)/c](../../build/reference/c-compile-without-linking.md)と**/LN**、指定[/NOASSEMBLY (MSIL モジュールの作成)](../../build/reference/noassembly-create-a-msil-module.md)フェーズでは、リンカー出力ファイルを作成します。  
+ マニフェスト内にアセンブリ メタデータがないマネージ プログラムには、モジュールが呼び出されます。 コンパイルする場合[(コンパイルなしのリンク)/c](../../build/reference/c-compile-without-linking.md)と **/LN**、指定[/NOASSEMBLY (MSIL モジュールの作成)](../../build/reference/noassembly-create-a-msil-module.md)フェーズでは、リンカー出力ファイルを作成します。  
   
  アセンブリをビルドするため、コンポーネント ベースのアプローチを実行する場合、モジュールを作成することがあります。  つまり、型を作成し、モジュールにコンパイルできます。  次に、1 つまたは複数のモジュールからアセンブリを生成することができます。  モジュールからアセンブリを作成する方法の詳細については、次を参照してください。[リンカー入力としての .netmodule ファイル](../../build/reference/netmodule-files-as-linker-input.md)または[Al.exe (アセンブリ リンカー)](/dotnet/framework/tools/al-exe-assembly-linker)です。  
   
  モジュールの既定のファイル拡張子は、.netmodule です。  
   
- [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] Visual C 2005 以前のリリースで作成された、モジュール**/clr:noAssembly**です。  
+ [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] Visual C 2005 以前のリリースで作成された、モジュール **/clr:noAssembly**です。  
   
  Visual C リンカーは、入力として .netmodule ファイルを受け入れるし、アセンブリまたは .netmodule ない実行時の依存をリンカー入力した .netmodule のいずれかのリンカーによって生成される出力ファイルが表示されます。  詳細については、「 [リンカー入力としての .netmodule ファイル](../../build/reference/netmodule-files-as-linker-input.md)」を参照してください。  
   
@@ -60,6 +55,6 @@ ms.lasthandoff: 12/21/2017
   
 -   このコンパイラ オプションをプログラムで変更できません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

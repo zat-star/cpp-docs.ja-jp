@@ -1,12 +1,9 @@
 ---
-title: "IPersistStreamInitImpl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: IPersistStreamInitImpl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IPersistStreamInitImpl
@@ -24,17 +21,15 @@ helpviewer_keywords:
 - IPersistStreamInitImpl class
 - streams, ATL
 ms.assetid: ef217c3c-020f-4cf8-871e-ef68e57865b8
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1fe1bcd8d8198304c92584f01522048c4d29b827
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a51dd5e198a86b7bb17a6182c1edb098f23a8e47
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ipersiststreaminitimpl-class"></a>IPersistStreamInitImpl クラス
 このクラスは実装**IUnknown**の既定の実装を提供し、 [ipersiststreaminit など](http://msdn.microsoft.com/library/windows/desktop/ms682273)インターフェイスです。  
@@ -77,10 +72,10 @@ class ATL_NO_VTABLE IPersistStreamInitImpl
   
  `IPersistStreamInitImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="getclassid"></a>IPersistStreamInitImpl::GetClassID  
+##  <a name="getclassid"></a>  IPersistStreamInitImpl::GetClassID  
  オブジェクトの CLSID を取得します。  
   
 ```
@@ -90,7 +85,7 @@ STDMETHOD(GetClassID)(CLSID* pClassID);
 ### <a name="remarks"></a>コメント  
  参照してください[IPersist::GetClassID](http://msdn.microsoft.com/library/windows/desktop/ms688664) Windows SDK にします。  
   
-##  <a name="getsizemax"></a>IPersistStreamInitImpl::GetSizeMax  
+##  <a name="getsizemax"></a>  IPersistStreamInitImpl::GetSizeMax  
  オブジェクトのデータを保存するために必要なストリームのサイズを取得します。  
   
 ```
@@ -103,7 +98,7 @@ STDMETHOD(GetSizeMax)(ULARGE_INTEGER FAR* pcbSize);
 ### <a name="remarks"></a>コメント  
  参照してください[IPersistStreamInit::GetSizeMax](http://msdn.microsoft.com/library/windows/desktop/ms687287) Windows SDK にします。  
   
-##  <a name="initnew"></a>IPersistStreamInitImpl::InitNew  
+##  <a name="initnew"></a>  IPersistStreamInitImpl::InitNew  
  新しく作成されたオブジェクトを初期化します。  
   
 ```
@@ -113,7 +108,7 @@ STDMETHOD(InitNew)();
 ### <a name="remarks"></a>コメント  
  参照してください[IPersistStreamInit::InitNew](http://msdn.microsoft.com/library/windows/desktop/ms690234) Windows SDK にします。  
   
-##  <a name="isdirty"></a>IPersistStreamInitImpl::IsDirty  
+##  <a name="isdirty"></a>  IPersistStreamInitImpl::IsDirty  
  最後に保存してから、オブジェクトのデータが変更されたかどうかを確認します。  
   
 ```
@@ -123,7 +118,7 @@ STDMETHOD(IsDirty)();
 ### <a name="remarks"></a>コメント  
  参照してください[IPersistStreamInit::IsDirty](http://msdn.microsoft.com/library/windows/desktop/ms680092) Windows SDK にします。  
   
-##  <a name="load"></a>IPersistStreamInitImpl::Load  
+##  <a name="load"></a>  IPersistStreamInitImpl::Load  
  オブジェクトのプロパティを指定したストリームから読み込みます。  
   
 ```
@@ -135,7 +130,7 @@ STDMETHOD(Load)(LPSTREAM pStm);
   
  参照してください[IPersistStreamInit::Load](http://msdn.microsoft.com/library/windows/desktop/ms680730) Windows SDK にします。  
   
-##  <a name="save"></a>IPersistStreamInitImpl::Save  
+##  <a name="save"></a>  IPersistStreamInitImpl::Save  
  オブジェクトのプロパティを指定したストリームに保存します。  
   
 ```
@@ -147,6 +142,6 @@ STDMETHOD(Save)(LPSTREAM pStm, BOOL fClearDirty);
   
  参照してください[IPersistStreamInit::Save](http://msdn.microsoft.com/library/windows/desktop/ms694439) Windows SDK にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [記憶域とストリーム](http://msdn.microsoft.com/library/windows/desktop/aa380352)   
  [クラスの概要](../../atl/atl-class-overview.md)

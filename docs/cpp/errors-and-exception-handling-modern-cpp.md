@@ -1,27 +1,22 @@
 ---
-title: "エラーと例外処理 (Modern C) |Microsoft ドキュメント"
-ms.custom: 
+title: エラーと例外処理 (Modern C) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: a6c111d0-24f9-4bbb-997d-3db4569761b7
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5b1ee1c7307f4e19db4ca0b7d03e218b0916538c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5eab4199415974c995aa9b71ad53db41b7695827
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="errors-and-exception-handling-modern-c"></a>エラーと例外の処理 (Modern C++)
 最新の C++ のほとんどのシナリオでは、論理エラーとランタイム エラーの両方を報告および処理する方法として、例外を使用することが推奨されます。 これは特に、エラーを検出した関数からその処理方法を認識するためのコンテキストを持つ関数までの間に、複数の関数がスタックに含まれる可能性がある場合に当てはまります。 例外は、エラーを検出して情報を呼び出し履歴に渡すコードに関する、正しく定義された正式な方法を提供します。  
@@ -88,7 +83,7 @@ int main()
   
 -   値渡しで例外をスローし、参照渡しでそれらの例外をキャッチします。 処理できない例外をキャッチしないでください。 
   
--   C++11 で廃止された例外指定を使用しないでください。 詳細については、「セクションを参照してください。**例外指定と noexcept**です。  
+-   C++11 で非推奨とされた例外指定を使用しないでください。 詳細については、「セクションを参照してください。**例外指定と noexcept**です。  
   
 -   標準ライブラリの例外の種類は、適用するときに使用します。 カスタム例外の種類からの派生、[例外クラス](../standard-library/exception-class.md)階層。  
   
@@ -106,9 +101,9 @@ int main()
  SEH の詳細については、次を参照してください。[構造化例外処理 (c/c++)](../cpp/structured-exception-handling-c-cpp.md)です。  
   
 ## <a name="exception-specifications-and-noexcept"></a>例外指定と noexcept  
- 例外指定は、関数がスローする可能性がある例外を指定する方法として C++ に導入されました。 ただし、実際には例外指定に問題があることがわかったため、C++11 ドラフト標準では廃止されています。 以外の例外の指定を使用しないことをお勧め`throw()`関数にはエスケープするために例外が許可されませんを示します。 型の例外の指定を使用する必要がある場合`throw(`*型*`)`、Visual C が、特定の方法で、標準と異なることに注意してください。 詳細については、次を参照してください。[例外の仕様 (スロー)](../cpp/exception-specifications-throw-cpp.md)です。 `noexcept` 指定子は、`throw()` の推奨される代替手段として C++11 に導入されました。  
+ 例外指定は、関数がスローする可能性がある例外を指定する方法として C++ に導入されました。 ただし、実際には例外指定に問題があることがわかったため、C++11 ドラフト標準では非推奨とされます。 以外の例外の指定を使用しないことをお勧め`throw()`関数にはエスケープするために例外が許可されませんを示します。 型の例外の指定を使用する必要がある場合`throw(`*型*`)`、Visual C が、特定の方法で、標準と異なることに注意してください。 詳細については、次を参照してください。[例外の仕様 (スロー)](../cpp/exception-specifications-throw-cpp.md)です。 `noexcept` 指定子は、`throw()` の推奨される代替手段として C++11 に導入されました。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: 例外的および非例外コードの間のインターフェイス](../cpp/how-to-interface-between-exceptional-and-non-exceptional-code.md)   
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   

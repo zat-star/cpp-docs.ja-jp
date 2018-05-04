@@ -1,12 +1,9 @@
 ---
-title: "参照型関数の戻り値 |Microsoft ドキュメント"
-ms.custom: 
+title: 参照型関数の戻り値 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - data types [C++], function return types
 - functions [C++], return types
 ms.assetid: 5b73be1d-2dc7-41df-ab0a-adcba36f2ad1
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a3a5d0b299b2bc38c95420515ab49eabd1268305
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 867313625ccc90924eed0c0c9405970f2cb90f8a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="reference-type-function-returns"></a>Reference-Type Function Returns (参照型関数の戻り値)
 関数は、参照型を返すように宣言できます。 このような宣言をする場合は、次の 2 つの理由があります。  
@@ -121,5 +116,5 @@ Foo& GetFoo()
   
  ここでは、コンパイラで警告:`warning C4172: returning address of local variable or temporary`です。 単純なプログラムで、メモリ位置が上書きされる前に呼び出し元がその参照にアクセスする場合には、アクセス違反が発生しない場合もあります。 これは全くの運任せです。 警告に留意してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [参照](../cpp/references-cpp.md)

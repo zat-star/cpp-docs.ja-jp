@@ -1,12 +1,9 @@
 ---
-title: "if-else ステートメント (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: if-else ステートメント (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 07/17/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - else_cpp
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - else keyword [C++]
 - if keyword [C++], if-else
 ms.assetid: f8c45cde-6bce-42ae-81db-426b3dbd4caa
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 96233323e5a95f88a43fb56162393238f8c2e091
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8de2511096766cc4852c1c612eccb7dc65713218
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="if-else-statement-c"></a>if-else ステートメント (C++)
 条件分岐を制御します。 内のステートメント、 *if ブロック*が実行された場合にのみ、 *if 式*0 以外の値に評価される (または`true`)。 場合の値*式*がゼロ以外、 *statement1*ブロック内の他のステートメントが実行され、存在する場合、その他のブロックはスキップされます。 場合の値*式*0 の場合は、し、if ブロックはスキップされ、他のブロックが存在する場合を実行します。 0 以外に評価される式は、します。
@@ -176,7 +171,7 @@ int main()
  **Else**の句、`if...else`ステートメントは、最も近いに関連付けられた以前**場合**が、対応するものと同じスコープ内のステートメント**else**ステートメント。   
 
 ## <a name="constexpr-if-statements"></a>constexpr 場合ステートメント
-**Visual Studio 2017 15.3 およびそれ以降のバージョン**(で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md)): 関数テンプレートで使用することができます、 **constexpr 場合**コンパイル時の分岐の意思決定を行うステートメント複数の関数オーバー ロードに頼ることがなくです。 たとえば、1 つの関数を記述する、そのハンドル パラメーターの開梱 (0 パラメーター オーバー ロードは必要ありません)。 
+**Visual Studio 2017 15.3 およびそれ以降のバージョン**(で利用可能な[/std:c + + 17](../build/reference/std-specify-language-standard-version.md)): 関数テンプレートで使用することができます、 **constexpr 場合**なしのコンパイル時の分岐意思決定を行うステートメント複数の関数オーバー ロードに頼ることです。 たとえば、1 つの関数を記述する、そのハンドル パラメーターの開梱 (0 パラメーター オーバー ロードは必要ありません)。 
 
 ```cpp
 template <class T, class... Rest>
@@ -200,7 +195,7 @@ void f(T&& t, Rest&&... r)
 
   
  
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [選択ステートメント](../cpp/selection-statements-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [switch ステートメント (C++)](../cpp/switch-statement-cpp.md)

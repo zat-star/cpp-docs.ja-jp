@@ -1,13 +1,10 @@
 ---
-title: "LINK コマンド ファイル |Microsoft ドキュメント"
-ms.custom: 
+title: LINK コマンド ファイル |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - link
 dev_langs:
@@ -20,17 +17,15 @@ helpviewer_keywords:
 - LINK tool [C++], command-line syntax
 - command files [C++], LINK
 ms.assetid: 7154511c-32b9-4e5b-a515-3922fa9de48e
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e585fb8fa11d4e3ffe8eff842baacb05f109754c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6614af87f072c54353ead39c2c5ca789da18dbb8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="link-command-files"></a>LINK コマンド ファイル
 コマンド ファイルの形式でリンクには、コマンドライン引数を渡すことができます。 リンカーにコマンド ファイルを指定するには、次の構文を使用します。  
@@ -52,6 +47,6 @@ LINK @commandfile
 link /dll @objlist.txt @liblist.txt @exports.txt  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

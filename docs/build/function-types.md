@@ -1,27 +1,22 @@
 ---
-title: "関数の型 |Microsoft ドキュメント"
-ms.custom: 
+title: 関数の型 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 7e33d5f4-dabb-406d-afb3-13777b995028
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 54f2b910062038901578389a9c0a7ab8a2647f3c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 322bd45abbfe217671fd39f0617987fde21445db
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="function-types"></a>関数の型
 基本的には、関数の 2 つの種類があります。 スタック フレームを必要とする関数には、フレームの関数は呼び出されます。 スタック フレームを必要としない関数には、リーフ関数は呼び出されます。  
@@ -32,5 +27,5 @@ ms.lasthandoff: 12/21/2017
   
  リーフ関数は、いずれかの関数のテーブルのエントリを必要としません。 任意の関数またはスタック領域の割り当てできないということを意味する RSP を含め、不揮発性レジスタに変更ができません。 実行時に、スタックのアライメントされていないままにすることができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [スタックの使用](../build/stack-usage.md)

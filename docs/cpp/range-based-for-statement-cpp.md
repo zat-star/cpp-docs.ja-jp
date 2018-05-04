@@ -1,27 +1,22 @@
 ---
-title: "範囲ベースの for ステートメント (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 範囲ベースの for ステートメント (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 ms.assetid: 5750ba1d-ba48-4236-a923-e32de8345c2d
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 43ded324227878b44f997e6539e060145ad0fb66
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: cc60c1efc307f30c06accdd7404cb35c135dae5b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="range-based-for-statement-c"></a>範囲ベースの for ステートメント (C++)
 `statement` 内の各要素に対して `expression` を繰り返し順番に実行します。  
@@ -37,7 +32,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  範囲ベースを使用して`for`必要があります、「範囲」を通じて実行、すべての反復処理できるものとして定義されているループを構築するためにステートメント — たとえば、 `std::vector`、または他の C++ 標準ライブラリ シーケンスの範囲は、によって定義されます`begin()`と`end()`です。 `for-range-declaration` の部分で宣言された名前は `for` ステートメントに対してローカルであり、`expression` または `statement` で再宣言することはできません。 なお、[自動](../cpp/auto-cpp.md)キーワードをお勧め、`for-range-declaration`ステートメントの部分です。 
 
- **Visual Studio 2017 の新機能:**範囲ベースのループが begin() および end() が同じ型のオブジェクトを返すことが必要なくなりました。 これにより、end() が、Ranges-V3 範囲で定義されている範囲で使用されるような sentinel オブジェクトを返すことができます。 詳細については、「[Generalizing the Range-Based For Loop](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0184r0.html)」 (範囲ベースの for loop の汎用化) と「[range-v3 library on GitHub](https://github.com/ericniebler/range-v3)」 (GitHub 上の range-v3 ライブラリ) を参照してください。
+ **Visual Studio 2017 の新機能:** 範囲ベースのループが begin() および end() が同じ型のオブジェクトを返すことが必要なくなりました。 これにより、end() が、Ranges-V3 範囲で定義されている範囲で使用されるような sentinel オブジェクトを返すことができます。 詳細については、「[Generalizing the Range-Based For Loop](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0184r0.html)」 (範囲ベースの for loop の汎用化) と「[range-v3 library on GitHub](https://github.com/ericniebler/range-v3)」 (GitHub 上の range-v3 ライブラリ) を参照してください。
   
  このコードは範囲ベースを使用する方法を示します`for`ベクトルと配列を反復処理するループ。  
   
@@ -123,7 +118,7 @@ int main()
   
 -   それ以外については `begin()` および `end()` の引数依存の参照を使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [自動](../cpp/auto-cpp.md)   
  [繰り返しステートメント](../cpp/iteration-statements-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   

@@ -1,13 +1,10 @@
 ---
-title: "-GA (Windows アプリケーションの最適化) |Microsoft ドキュメント"
-ms.custom: 
+title: -GA (Windows アプリケーションの最適化) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLCompilerTool.OptimizeForWindowsApplication
 - /ga
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - -GA compiler option [C++]
 - Optimize for Windows compiler options
 ms.assetid: be97323e-15a0-4836-862c-95980b51926a
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 611704120ec99280e0701e06e0e4bd45c95330d4
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 387732c5bde04970e3a467ca4f43f911afa7a9a6
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ga-optimize-for-windows-application"></a>/GA (Windows アプリケーションの最適化)
 スレッド ローカル ストレージ (TLS) の変数へのアクセスの .exe ファイルをより効率的なコードでの結果。  
@@ -43,7 +38,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="remarks"></a>コメント  
  **/GA**で宣言されたデータへのアクセスを迅速化[_declspec](../../cpp/declspec.md) Windows ベースのプログラムにします。 このオプションを設定すると、 [__tls_index](http://msdn.microsoft.com/library/windows/desktop/ms686749)マクロは 0 と見なされます。  
   
- 使用して**/GA** DLL が不適切なコード生成になることができます。  
+ 使用して **/GA** DLL が不適切なコード生成になることができます。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -59,6 +54,6 @@ ms.lasthandoff: 12/21/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

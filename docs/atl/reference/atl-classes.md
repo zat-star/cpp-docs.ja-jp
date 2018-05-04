@@ -1,12 +1,9 @@
 ---
-title: "ATL クラス |Microsoft ドキュメント"
-ms.custom: 
+title: ATL クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 dev_langs:
 - C++
@@ -14,17 +11,15 @@ helpviewer_keywords:
 - classes [C++], ATL
 - ATL, classes
 ms.assetid: 7da42e2d-ac84-4506-92bd-502a86d68bdc
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bc8f03660742f0e752bb9ef12043af841797d0ab
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 7483df52f614c26efd5216137ef3144ab04780e9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-classes"></a>ATL クラス
 アクティブ テンプレート ライブラリ (ATL) には、次のクラスが含まれています。 特定のクラスをカテゴリ別を参照してください、 [ATL クラスの概要](../../atl/atl-class-overview.md)です。  
@@ -225,7 +220,7 @@ ms.lasthandoff: 02/14/2018
 |[_U_STRINGorID](../../atl/reference/u-stringorid-class.md)|この引数のアダプター クラスは、いずれかのリソース名を使用できます (`LPCTSTR`s) またはリソース Id (**UINT**s)、呼び出し元の ID を使用して文字列を変換を必要とせず、関数に渡される、 **されるときは**マクロです。|atlwin.h|  
 |[Win32ThreadTraits](../../atl/reference/win32threadtraits-class.md)|このクラスは、Windows のスレッドの作成機能を提供します。 スレッド CRT 関数を使用しない場合は、このクラスを使用します。|atlbase.h|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)   
  [関数](../../atl/reference/atl-functions.md)   
  [グローバル変数](../../atl/reference/atl-global-variables.md)   

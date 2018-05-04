@@ -1,12 +1,9 @@
 ---
-title: "再試行のステートメントを除く |Microsoft ドキュメント"
-ms.custom: 
+title: 再試行のステートメントを除く |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - _abnormal_termination_cpp
@@ -34,17 +31,15 @@ helpviewer_keywords:
 - _exception_info keyword [C++]
 - _abnormal_termination keyword [C++]
 ms.assetid: 30d60071-ea49-4bfb-a8e6-7a420de66381
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 24be4e7fd6b4dc95d9964e69943a94ecad947a47
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.openlocfilehash: 3bd1e8139af64539974ad942f60a19e31b14d7f3
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="try-except-statement"></a>try-except ステートメント
 
@@ -57,7 +52,7 @@ ms.lasthandoff: 01/25/2018
 > {  
 >    保護されたコード  
 > }  
-> **__except** ( *expression* )  
+> **_ _except** (*式*)  
 > {  
 >    例外ハンドラーのコード  
 > }  
@@ -81,11 +76,11 @@ ms.lasthandoff: 01/25/2018
 
 3. 保護されたセクションの実行中に例外が発生した場合または任意のルーチンで、保護されたセクションを呼び出すと、 `__except` *式*(と呼ばれる、*フィルター*式) が評価されると、値例外の処理方法を決定します。 次の 3 つの値があります。
 
-   **EXCEPTION_CONTINUE_EXECUTION (-1)**例外を破棄します。 例外が発生した位置から実行を継続します。
+   **EXCEPTION_CONTINUE_EXECUTION (-1)** 例外を破棄します。 例外が発生した位置から実行を継続します。
 
-   **EXCEPTION_CONTINUE_SEARCH (0)**例外が認識されていません。 最初に **try-except** ステートメントを含むハンドラーを検索してから、次に優先順位が最も高いハンドラーについてスタックを検索し続けます。
+   **EXCEPTION_CONTINUE_SEARCH (0)** 例外が認識されていません。 最初に **try-except** ステートメントを含むハンドラーを検索してから、次に優先順位が最も高いハンドラーについてスタックを検索し続けます。
 
-   **EXCEPTION_EXECUTE_HANDLER (1)**例外を認識します。 `__except` 複合ステートメントの実行によって例外ハンドラーに制御を移動した後、`__except` ブロックの次から実行を続行します。
+   **EXCEPTION_EXECUTE_HANDLER (1)** 例外を認識します。 `__except` 複合ステートメントの実行によって例外ハンドラーに制御を移動した後、`__except` ブロックの次から実行を続行します。
 
 `__except` 式は C の式として評価されるため、1 つの値、条件式の演算子、またはコンマ演算子に制限されます。 より広範な処理が必要な場合、前に挙げた 3 つの値の 1 つを返すルーチンを式で呼び出すことができます。
 
@@ -105,7 +100,7 @@ A`goto`ステートメントは、保護されたセクションからも移動�
 
 構造化例外処理で使用する使用可能な 2 つの組み込み関数を提供する、**を再試行してください-を除く**ステートメント:`GetExceptionCode`と`GetExceptionInformation`です。
 
-`GetExceptionCode`例外のコード (32 ビット整数) を返します。
+`GetExceptionCode` 例外のコード (32 ビット整数) を返します。
 
 組み込み関数`GetExceptionInformation`例外に関する追加情報を含む構造体へのポインターを返します。 このポインターを使用して、ハードウェア例外のときに存在していたコンピューターの状態にアクセスできます。 構造は、次のとおりです。
 
@@ -124,11 +119,11 @@ typedef struct _EXCEPTION_POINTERS {
 
 excpt.h は、これらの組み込みのいくつかの代替名を定義します。
 
-`GetExceptionCode`等価します。`_exception_code`
+`GetExceptionCode` 等価します。 `_exception_code`
 
- `GetExceptionInformation`等価します。`_exception_info`
+ `GetExceptionInformation` 等価します。 `_exception_info`
 
- `AbnormalTermination`等価します。`_abnormal_termination`
+ `AbnormalTermination` 等価します。 `_abnormal_termination`
   
 ## <a name="example"></a>例
 
@@ -196,7 +191,7 @@ world
 
 **Microsoft 固有の仕様はここまで**  
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [例外ハンドラーの記述](../cpp/writing-an-exception-handler.md)   
 [構造化例外処理 (C/C++)](../cpp/structured-exception-handling-c-cpp.md)   

@@ -1,12 +1,12 @@
 ---
-title: "アプリケーションの設定、メイクファイル プロジェクト ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: アプリケーションの設定、メイクファイル プロジェクト ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-ide
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vc.appwiz.makefile.appset
@@ -15,7 +15,7 @@ dev_langs:
 helpviewer_keywords:
 - Makefile Project Wizard, application settings
 ms.assetid: e0cbce59-5984-4f68-8a1d-f7fb2007c9b4
-caps.latest.revision: 
+caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -23,11 +23,11 @@ ms.workload:
 - cplusplus
 ms.openlocfilehash: 1ff4bd61f63790f7e59d2f6a1a03ea2802b9e158
 ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
-# <a name="application-settings-makefile-project-wizard"></a>[アプリケーションの設定] (メイクファイル アプリケーション ウィザード)
+# <a name="application-settings-makefile-project-wizard"></a>[アプリケーションの設定] \(メイクファイル アプリケーション ウィザード)
 プロジェクトの情報を提供します。 指定したオプションは、プロジェクトに反映されます[プロパティ ページ](../ide/working-with-project-properties.md)です。 プロジェクトを作成すると、表示および編集では、次のオプションの各、 **Nmake**プロジェクトのプロパティ ページのページです。  
   
  **コマンド ライン ビルドします。**  

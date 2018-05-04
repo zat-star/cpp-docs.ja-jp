@@ -1,13 +1,10 @@
 ---
-title: "チュートリアル: MSBuild を使用した Visual C プロジェクトの作成 |Microsoft ドキュメント"
-ms.custom: 
+title: 'チュートリアル: MSBuild を使用した Visual C プロジェクトの作成 |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - msbuild.cpp.walkthrough.createproject
 dev_langs:
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - 'msbuild (c++), walkthrough: create a project'
 ms.assetid: 52350d1c-c373-4868-923c-5e8be6f67adb
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 92b954f334517adc22ca17f8324ec1a78819d9f1
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 88366f78556ebcab6dc7b796cdeeefd402b99721
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="walkthrough-using-msbuild-to-create-a-visual-c-project"></a>チュートリアル: MSBuild を使用した Visual C++ プロジェクトの作成
 このチュートリアルを使用する方法を示します[!INCLUDE[vstecmsbuild](../build/includes/vstecmsbuild_md.md)]コマンド プロンプトでの Visual C プロジェクトをビルドします。 C++ ソース ファイルと Visual C コンソール アプリケーション用の XML ベースのプロジェクト ファイルを作成する方法を学習します。 次に、プロジェクトをビルドしてから、ビルド処理をカスタマイズする方法を学習します。  

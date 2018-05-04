@@ -2,32 +2,27 @@
 title: __func__ |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 10/19/2017
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - __func__
 dev_langs:
 - C++
 ms.assetid: a5299b8d-f0ee-4af2-91dd-8fb165e68798
-caps.latest.revision: 3
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5ddb92e84545de175734550eca8911590fa1d539
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3d78a249fe5b111c17c29895edcdc3fa5ba2f27a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="func"></a>__func__
 
-**(C++ 11)**事前定義の識別子 &#95; #95; func &#95; &#95; は、外側の関数の非修飾かつ非装飾名を含む文字列として暗黙的に定義します。 &#95; &#95; func &#95; &#95;です。C++ 標準で必須であり、Microsoft 拡張機能ではありません。
+**(C++ 11)** 事前定義の識別子&#95; &#95;func&#95; &#95; 、外側の関数の非修飾かつ非装飾名を含む文字列として暗黙的に定義されています。 &#95;&#95;func&#95; &#95;は、C++ 標準で必須であり、Microsoft 拡張機能ではありません。
 
 ## <a name="syntax"></a>構文
 
@@ -64,6 +59,6 @@ int main()
 }
 ```
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 C++11

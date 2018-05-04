@@ -2,11 +2,8 @@
 title: プロパティ マップに関するマクロ |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlcom/ATL::BEGIN_PROP_MAP
@@ -20,17 +17,15 @@ dev_langs:
 helpviewer_keywords:
 - property maps
 ms.assetid: 128bc742-2b98-4b97-a243-684dbb83db77
-caps.latest.revision: 17
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dfd99fa59fc5e1d97011ac3dba4d16dd222c35b6
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 718028385b3910b955c49ab9e0abddf23b443967
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="property-map-macros"></a>プロパティ マップ マクロ
 これらのマクロは、プロパティ マップとエントリを定義します。  
@@ -44,10 +39,10 @@ ms.lasthandoff: 12/21/2017
 |[PROP_PAGE](#prop_page)|プロパティ マップには、プロパティ ページの CLSID を入力します。|  
 |[マクロと](#end_prop_map)|ATL プロパティ マップの最後をマークします。|  
 
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
    
-##  <a name="begin_prop_map"></a>あり、その場合  
+##  <a name="begin_prop_map"></a>  あり、その場合  
  オブジェクトのプロパティ マップの先頭をマークします。  
   
 ```
@@ -63,12 +58,12 @@ BEGIN_PROP_MAP(theClass)
   
  ウィザードが空のプロパティ マップを作成するを指定して ATL プロジェクト ウィザードを使用してオブジェクトを作成するときに`BEGIN_PROP_MAP`続く[マクロと](#end_prop_map)です。  
   
- `BEGIN_PROP_MAP`プロパティ マップを使用してオブジェクトを可能性がありますエクステントもないため、ユーザー インターフェイスがあるないために、プロパティ マップの範囲 (つまり、ディメンション) を保存しません。 オブジェクトがユーザー インターフェイスを持つ ActiveX コントロールの場合は、エクステントがします。 この場合、指定する必要があります[するため](#prop_data_entry)エクステントを提供する、プロパティ マップにします。  
+ `BEGIN_PROP_MAP` プロパティ マップを使用してオブジェクトを可能性がありますエクステントもないため、ユーザー インターフェイスがあるないために、プロパティ マップの範囲 (つまり、ディメンション) を保存しません。 オブジェクトがユーザー インターフェイスを持つ ActiveX コントロールの場合は、エクステントがします。 この場合、指定する必要があります[するため](#prop_data_entry)エクステントを提供する、プロパティ マップにします。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#103](../../atl/codesnippet/cpp/property-map-macros_1.h)]  
   
-##  <a name="prop_data_entry"></a>するため  
+##  <a name="prop_data_entry"></a>  するため  
  範囲、またはディメンション、ActiveX コントロールのことを示します。  
   
 ```
@@ -97,7 +92,7 @@ PROP_DATA_ENTRY( szDesc, member, vt)
   
  [!code-cpp[NVC_ATL_Windowing#132](../../atl/codesnippet/cpp/property-map-macros_3.h)]  
   
-##  <a name="prop_entry_type"></a>PROP_ENTRY_TYPE  
+##  <a name="prop_entry_type"></a>  PROP_ENTRY_TYPE  
  このマクロを使用すると、オブジェクトのプロパティ マップ プロパティの説明、プロパティの DISPID、およびプロパティ ページの CLSID を入力します。  
   
 ```
@@ -125,7 +120,7 @@ PROP_ENTRY_TYPE( szDesc, dispid, clsid, vt)
 ### <a name="example"></a>例  
  例を参照して[あり、その場合](#begin_prop_map)です。  
   
-##  <a name="prop_entry_type_ex"></a>PROP_ENTRY_TYPE_EX  
+##  <a name="prop_entry_type_ex"></a>  PROP_ENTRY_TYPE_EX  
  ような[PROP_ENTRY_TYPE](#prop_entry_type)は、オブジェクトは、複数のデュアル インターフェイスをサポートしている場合、特定の IID を指定するようにします。  
   
 ```
@@ -158,7 +153,7 @@ PROP_ENTRY_TYPE_EX( szDesc, dispid, clsid, iidDispatch, vt)
   
  [!code-cpp[NVC_ATL_Windowing#133](../../atl/codesnippet/cpp/property-map-macros_4.h)]  
   
-##  <a name="prop_page"></a>PROP_PAGE  
+##  <a name="prop_page"></a>  PROP_PAGE  
  このマクロを使用すると、オブジェクトのプロパティ マップにプロパティ ページの CLSID を入力します。  
   
 ```
@@ -170,7 +165,7 @@ PROP_PAGE(clsid)
  [in]プロパティ ページの CLSID。  
   
 ### <a name="remarks"></a>コメント  
- `PROP_PAGE`ような[PROP_ENTRY_TYPE](#prop_entry_type)プロパティの説明または DISPID は必要ありません。  
+ `PROP_PAGE` ような[PROP_ENTRY_TYPE](#prop_entry_type)プロパティの説明または DISPID は必要ありません。  
   
 > [!NOTE]
 >  場合は、CLSID は既に入力`PROP_ENTRY_TYPE`または[PROP_ENTRY_TYPE_EX](#prop_entry_type_ex)に追加エントリを作成する必要はありません`PROP_PAGE`です。  
@@ -180,7 +175,7 @@ PROP_PAGE(clsid)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#134](../../atl/codesnippet/cpp/property-map-macros_5.h)]  
   
-##  <a name="end_prop_map"></a>マクロと  
+##  <a name="end_prop_map"></a>  マクロと  
  オブジェクトのプロパティ マップの最後をマークします。  
   
 ```
@@ -193,5 +188,5 @@ END_PROP_MAP()
 ### <a name="example"></a>例  
  例を参照して[あり、その場合](#begin_prop_map)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [[マクロ]](../../atl/reference/atl-macros.md)

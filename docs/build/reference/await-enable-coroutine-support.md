@@ -1,13 +1,10 @@
 ---
-title: "-await (コルーチン サポートを有効にする) |Microsoft ドキュメント"
-ms.custom: 
+title: -await (コルーチン サポートを有効にする) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 08/15/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /await
 - -await
@@ -20,14 +17,13 @@ helpviewer_keywords:
 ms.assetid: 302c8e69-09b6-4c58-bcdd-0a6a8713a8df
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 47134532b16d1b5a907e4ed3170a0827316d7c65
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 78a62195ca28be49ed8c00dacacce003281699f9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="await-enable-coroutine-support"></a>/await (コルーチン サポートを有効にする)  
   
@@ -47,7 +43,7 @@ ms.lasthandoff: 12/21/2017
   
 1. プロジェクトの開く**プロパティ ページ** ダイアログ ボックス。   
   
-2. **構成プロパティ**、展開、 **C/C++**フォルダーを選択し、**コマンド ライン**プロパティ ページ。  
+2. **構成プロパティ**、展開、 **C/C++** フォルダーを選択し、**コマンド ライン**プロパティ ページ。  
   
 3. 入力、 **/await**コンパイラ オプション、**追加オプション**ボックス。 選択**OK**または**適用**して変更を保存します。  
   
@@ -55,7 +51,7 @@ ms.lasthandoff: 12/21/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
 [コンパイラ オプション](../../build/reference/compiler-options.md)   
 [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

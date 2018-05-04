@@ -1,10 +1,10 @@
 ---
-title: "/Zc:rvalueCast (型の変換規則の実施) |Microsoft ドキュメント"
-ms.custom: 
+title: /Zc:rvalueCast (型の変換規則の実施) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 03/06/2018
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - rvaluecast
 - /Zc:rvalueCast
@@ -20,14 +20,13 @@ helpviewer_keywords:
 ms.assetid: 7825277d-e565-4c48-b0fb-76ac0b0c6e38
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e9e2223176082a2252dd410af4012ace31c14267
-ms.sourcegitcommit: eeb2b5ad8d3d22514a7b9bd7d756511b69ae0ccf
+ms.openlocfilehash: d730563d01a3b59d4f2ac6bbadc980ca51112203
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="zcrvaluecast-enforce-type-conversion-rules"></a>/Zc:rvalueCast (型変換規則の適用)
 
@@ -39,11 +38,11 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="remarks"></a>コメント
 
-場合**/Zc:rvalueCast**が指定されている、コンパイラは、c++ 11 標準のセクション 5.4 をに従って扱いますなるキャスト式のみ非参照型で発生して、関数ではない型への右辺値参照になる式をキャスト右辺値の型。 既定では、または**/Zc:rvalueCast-**指定すると、コンパイラは、非準拠と右辺値と右辺値参照になるすべてのキャスト式を処理します。 使用することをお勧め標準に準拠しキャストの使用でエラーを回避するのには、 **/Zc:rvalueCast**です。
+場合 **/Zc:rvalueCast**が指定されている、コンパイラは、c++ 11 標準のセクション 5.4 をに従って扱いますなるキャスト式のみ非参照型で発生して、関数ではない型への右辺値参照になる式をキャスト右辺値の型。 既定では、または **/Zc:rvalueCast-** 指定すると、コンパイラは、非準拠と右辺値と右辺値参照になるすべてのキャスト式を処理します。 使用することをお勧め標準に準拠しキャストの使用でエラーを回避するのには、 **/Zc:rvalueCast**です。
 
-既定では、 **/Zc:rvalueCast**がオフ (**/Zc:rvalueCast-**)。 [寛容/-](permissive-standards-conformance.md)コンパイラ オプションでは、このオプションは、暗黙的に設定しますを使用してオーバーライドできます**/Zc:rvalueCast-**です。
+既定では、 **/Zc:rvalueCast**がオフ (**/Zc:rvalueCast-**)。 [寛容/-](permissive-standards-conformance.md)コンパイラ オプションでは、このオプションは、暗黙的に設定しますを使用してオーバーライドできます **/Zc:rvalueCast-** です。
 
-使用して**/Zc:rvalueCast**を右辺値参照型を受け取る関数に引数としてキャスト式を渡す場合です。 既定動作により、コンパイラ エラー [C2664](../../error-messages/compiler-errors-2/compiler-error-c2664.md)場合、コンパイラと誤って判断キャスト式の型。 この例は、コンパイラ エラーで正しくときにコード**/Zc:rvalueCast**が指定されていません。
+使用して **/Zc:rvalueCast**を右辺値参照型を受け取る関数に引数としてキャスト式を渡す場合です。 既定動作により、コンパイラ エラー [C2664](../../error-messages/compiler-errors-2/compiler-error-c2664.md)場合、コンパイラと誤って判断キャスト式の型。 この例は、コンパイラ エラーで正しくときにコード **/Zc:rvalueCast**が指定されていません。
 
 ```cpp
 // Test of /Zc:rvalueCast
@@ -81,7 +80,7 @@ struct Test1 {
 };
 ```
 
-コンパイラの既定動作では、場合によっては C2102 エラーが報告されないことがあります。 この例では、コンパイラはエラーを報告、id のキャストによって作成された右辺値のアドレスが作成された場合**/Zc:rvalueCast**が指定されていません。
+コンパイラの既定動作では、場合によっては C2102 エラーが報告されないことがあります。 この例では、コンパイラはエラーを報告、id のキャストによって作成された右辺値のアドレスが作成された場合 **/Zc:rvalueCast**が指定されていません。
 
 ```cpp
 int main() {
@@ -100,7 +99,7 @@ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandar
 
 1. 選択、**構成プロパティ** > **C/C++** > **コマンドライン**プロパティ ページ。
 
-1. 変更、**追加オプション**含めるプロパティを**/Zc:rvalueCast**を選択し**OK**です。
+1. 変更、**追加オプション**含めるプロパティを **/Zc:rvalueCast**を選択し**OK**です。
 
 ## <a name="see-also"></a>関連項目
 

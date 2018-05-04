@@ -2,11 +2,8 @@
 title: 複数の基底クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - multiple inheritance, class declaration
 - multiple base classes [C++]
 ms.assetid: a30c69fe-401c-4a87-96a0-e0da70c7c740
-caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b765fabe8b83169353650286d05d02301dcb4807
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d48c373f0753a787aa8e59c7ead5a8f94bfc7846
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="multiple-base-classes"></a>複数の基本クラス
 」の説明に従って[多重継承](http://msdn.microsoft.com/en-us/3b74185e-2beb-4e29-8684-441e51d2a2ca)、1 つ以上の基底クラスからクラスを派生させることができます。 モデルでは、多重継承 (クラスが 1 つ以上の基底クラスから派生した、)、基底クラスを指定する、*ベース リスト*文法要素。 たとえば、`CollectionOfBook` および `Collection` から派生する `Book` のクラス宣言は指定できます。  
@@ -69,7 +64,7 @@ Lunch-Line シミュレーション グラフ
   
  図で、`Queue` は、`CashierQueue` および `LunchQueue` の基底クラスです。 ただし、`LunchCashierQueue` を作成するために両方のクラスを組み合わせると、新しいクラスに、`Queue` 型のサブオブジェクトが 2 つ (1 つは `CashierQueue` のサブオブジェクト、もう 1 つは `LunchQueue` のサブオブジェクト) が含まれるという問題が生じます。 次の図は、概念的なメモリ レイアウトを示します (実際のメモリ レイアウトは最適化される場合があります)。  
   
- ![シミュレートされた昼食 &#45; 行オブジェクト](../cpp/media/vc38xp2.gif "vc38XP2")  
+ ![昼食をシミュレートした&#45;行オブジェクト](../cpp/media/vc38xp2.gif "vc38XP2")  
 Lunch-Line シミュレーション オブジェクト  
   
  `Queue` オブジェクトに 2 つの `LunchCashierQueue` サブオブジェクトがあることに注意してください。 次のコードは、`Queue` が仮想基底クラスであることを宣言します。  
@@ -85,7 +80,7 @@ class LunchCashierQueue : public LunchQueue, public CashierQueue {};
   
  `virtual` キーワードにより、サブオブジェクト `Queue` のコピーは 1 つだけになります (次の図を参照)。  
   
- ![シミュレートされた昼食 &#45; 行オブジェクト、仮想基底クラス](../cpp/media/vc38xp3.gif "vc38XP3")  
+ ![昼食をシミュレートした&#45;行オブジェクト、仮想基底クラス](../cpp/media/vc38xp3.gif "vc38XP3")  
 仮想基底クラスを持つ、シミュレートされた Lunch-Line オブジェクト  
   
  クラスは、指定された型の仮想コンポーネントと非仮想コンポーネントの両方を持つことができます。 これは、次の図に示されている条件で発生します。  
@@ -221,5 +216,5 @@ public:
   
  この図では、非仮想基底クラスを通じてクラス `A` のメンバーにアクセスすると、あいまいさが発生します。コンパイラは、`B` に関連付けられているサブオブジェクトと `C` に関連付けられているサブジェクトのどちらを使用するかを示す情報を持ちません。 しかし、`A` が仮想基底クラスとして指定されている場合、どのサブオブジェクトがアクセスされているかは問題になりません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [継承](../cpp/inheritance-cpp.md)

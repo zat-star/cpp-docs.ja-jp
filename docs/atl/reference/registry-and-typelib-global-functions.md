@@ -1,12 +1,9 @@
 ---
-title: "レジストリとタイプ ライブラリのグローバル関数 |Microsoft ドキュメント"
-ms.custom: 
+title: レジストリとタイプ ライブラリのグローバル関数 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlbase/ATL::AtlGetPerUserRegistration
@@ -26,17 +23,15 @@ dev_langs:
 helpviewer_keywords:
 - RegistryDataExchange function, global functions
 ms.assetid: d58b8a4e-975c-4417-8b34-d3c847f679b3
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dbb919cb2fe4d91f5665fbea3dcfd2140d178341
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: cb0a89ecf8bb81e515703abe819bb1edfbf80d59
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="registry-and-typelib-global-functions"></a>レジストリとタイプ ライブラリに関するグローバル関数
 これらの関数は、読み込みと登録、タイプ ライブラリのサポートを提供します。  
@@ -65,10 +60,10 @@ ms.lasthandoff: 12/21/2017
 |[AtlGetPerUserRegistration](#atlgetperuserregistration)|アプリケーションがレジストリ アクセスをリダイレクトするかどうかを取得、 **HKEY_CURRENT_USER** ( **HKCU**) ノード。|  
 |[AtlSetPerUserRegistration](#atlsetperuserregistration)|アプリケーションがレジストリ アクセスをリダイレクトするかどうかを設定、 **HKEY_CURRENT_USER** ( **HKCU**) ノード。|  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h
 
-## <a name="atlgetperuserregistration"></a>AtlGetPerUserRegistration
+## <a name="atlgetperuserregistration"></a> AtlGetPerUserRegistration
 この関数を使用して、アプリケーションがレジストリ アクセスをリダイレクトするかどうかを判断、 **HKEY_CURRENT_USER** (**HKCU**) ノード。  
   
 ### <a name="syntax"></a>構文  
@@ -79,20 +74,20 @@ ATLINLINE ATLAPI AtlGetPerUserRegistration(bool* pEnabled);
   
 ### <a name="parameters"></a>パラメーター  
  [出力] `pEnabled`  
- `TRUE`レジストリ情報に送られることを示す、 **HKCU**ノードです。`FALSE`アプリケーションが既定のノードにレジストリ情報を書き出すことを示します。 既定のノードは**HKEY_CLASSES_ROOT** (**HKCR**)。  
+ `TRUE` レジストリ情報に送られることを示す、 **HKCU**ノードです。`FALSE`アプリケーションが既定のノードにレジストリ情報を書き出すことを示します。 既定のノードは**HKEY_CLASSES_ROOT** (**HKCR**)。  
   
 ### <a name="return-value"></a>戻り値  
- `S_OK`メソッドが成功すると、それ以外の場合、`HRESULT`エラーが発生した場合はエラー コード。  
+ `S_OK` メソッドが成功すると、それ以外の場合、`HRESULT`エラーが発生した場合はエラー コード。  
   
 ### <a name="remarks"></a>コメント  
  レジストリのリダイレクトは、既定では無効です。 このオプションを有効にすると、レジストリへのアクセスにリダイレクト**する**です。  
   
  リダイレクトはグローバルではありません。 MFC と ATL のフレームワークは、このレジストリのリダイレクトの影響を受けます。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
 
- ## <a name="afxregcreatekey"></a>AfxRegCreateKey
+ ## <a name="afxregcreatekey"></a> AfxRegCreateKey
  指定されたレジストリ キーを作成します。  
   
 ### <a name="syntax"></a>構文  
@@ -117,10 +112,10 @@ LONG AFXAPI AfxRegCreateKey(HKEY hKey, LPCTSTR lpSubKey, PHKEY phkResult, CAtlTr
 ### <a name="return-value"></a>戻り値  
  関数が成功すると、戻り値は、error_success を返します。 関数が失敗した場合、戻り値は、Winerror.h で定義されている 0 以外のエラー コードです。  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** afxpriv.h  
 
-## <a name="afxregdeletekey"></a>AfxRegDeleteKey
+## <a name="afxregdeletekey"></a> AfxRegDeleteKey
 指定されたレジストリ キーを削除します。  
   
 ### <a name="syntax"></a>構文  
@@ -142,7 +137,7 @@ LONG AFXAPI AfxRegDeleteKey(HKEY hKey, LPCTSTR lpSubKey, CAtlTransactionManager*
 ### <a name="return-value"></a>戻り値  
  関数が成功すると、戻り値は、error_success を返します。 関数が失敗した場合、戻り値は、Winerror.h で定義されている 0 以外のエラー コードです。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** afxpriv.h  
 
 ## <a name="afxregisterpreviewhandler"></a>
@@ -164,10 +159,10 @@ BOOL AFXAPI AfxRegisterPreviewHandler(LPCTSTR lpszCLSID, LPCTSTR lpszShortTypeNa
  `lpszFilterExt`  
  このハンドラーに登録されているファイルの拡張子を指定します。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h   
 
-##  <a name="atlregistertypelib"></a>AtlRegisterTypeLib  
+##  <a name="atlregistertypelib"></a>  AtlRegisterTypeLib  
  この関数は、タイプ ライブラリを登録するために呼び出されます。  
   
   
@@ -187,10 +182,10 @@ ATLAPI AtlRegisterTypeLib(HINSTANCE hInstTypeLib, LPCOLESTR lpszIndex);
   
 ### <a name="remarks"></a>コメント  
  このヘルパー関数がによって使用されて[AtlComModuleUnregisterServer](server-registration-global-functions.md#atlcommoduleunregisterserver)と[CAtlComModule::RegisterTypeLib](../../atl/reference/catlcommodule-class.md#registertypelib)です。  
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h
 
- ## <a name="afxregopenkey"></a>AfxRegOpenKey
+ ## <a name="afxregopenkey"></a> AfxRegOpenKey
  指定されたレジストリ キーを開きます。  
   
 ### <a name="syntax"></a>構文  
@@ -215,10 +210,10 @@ LONG AFXAPI AfxRegOpenKey(HKEY hKey, LPCTSTR lpSubKey, PHKEY phkResult, CAtlTran
 ### <a name="return-value"></a>戻り値  
  関数が成功すると、戻り値は、error_success を返します。 関数が失敗した場合、戻り値は、Winerror.h で定義されている 0 以外のエラー コードです。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** afxpriv.h  
 
-## <a name="afxregopenkeyex"></a>AfxRegOpenKeyEx
+## <a name="afxregopenkeyex"></a>  AfxRegOpenKeyEx
 指定されたレジストリ キーを開きます。 
 
 ### <a name="syntax"></a>構文  
@@ -249,10 +244,10 @@ LONG AFXAPI AfxRegOpenKeyEx(HKEY hKey, LPCTSTR lpSubKey, DWORD ulOptions, REGSAM
 ### <a name="return-value"></a>戻り値  
  関数が成功すると、戻り値は、error_success を返します。 関数が失敗した場合、戻り値は、Winerror.h で定義されている 0 以外のエラー コードです。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** afxpriv.h  
 
- ## <a name="afxunregisterpreviewhandler"></a>AfxUnregisterPreviewHandler
+ ## <a name="afxunregisterpreviewhandler"></a> AfxUnregisterPreviewHandler
  プレビュー ハンドラーの登録を解除するためのヘルパー。  
   
 ### <a name="syntax"></a>構文  
@@ -265,10 +260,10 @@ BOOL AFXAPI AfxUnRegisterPreviewHandler(LPCTSTR lpszCLSID);
  `lpszCLSID`  
  登録解除するハンドラーの CLSID を指定します。  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー :** afxdisp.h  
 
-## <a name="atlsetperuserregistration"></a>AtlSetPerUserRegistration
+## <a name="atlsetperuserregistration"></a> AtlSetPerUserRegistration
 アプリケーションがレジストリ アクセスをリダイレクトするかどうかを設定、 **HKEY_CURRENT_USER** (**HKCU**) ノード。  
   
 ### <a name="syntax"></a>構文  
@@ -279,19 +274,19 @@ ATLINLINE ATLAPI AtlSetPerUserRegistration(bool bEnable);
   
 ### <a name="parameters"></a>パラメーター  
  [入力] `bEnable`  
- `TRUE`レジストリ情報に送られることを示す、 **HKCU**ノードです。`FALSE`アプリケーションが既定のノードにレジストリ情報を書き出すことを示します。 既定のノードは**HKEY_CLASSES_ROOT** (**HKCR**)。  
+ `TRUE` レジストリ情報に送られることを示す、 **HKCU**ノードです。`FALSE`アプリケーションが既定のノードにレジストリ情報を書き出すことを示します。 既定のノードは**HKEY_CLASSES_ROOT** (**HKCR**)。  
   
 ### <a name="return-value"></a>戻り値  
- `S_OK`メソッドが成功すると、それ以外の場合、`HRESULT`エラーが発生した場合はエラー コード。  
+ `S_OK` メソッドが成功すると、それ以外の場合、`HRESULT`エラーが発生した場合はエラー コード。  
   
 ### <a name="remarks"></a>コメント  
  レジストリのリダイレクトは、既定では無効です。 このオプションを有効にすると、レジストリへのアクセスにリダイレクト**する**です。  
   
  リダイレクトはグローバルではありません。 MFC と ATL のフレームワークは、このレジストリのリダイレクトの影響を受けます。  
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
 
-##  <a name="atlunregistertypelib"></a>この代替  
+##  <a name="atlunregistertypelib"></a>  この代替  
  この関数は、タイプ ライブラリの登録を解除するために呼び出されます。  
   
 ### <a name="syntax"></a>構文  
@@ -313,10 +308,10 @@ ATLAPI AtlUnRegisterTypeLib(
   
 ### <a name="remarks"></a>コメント  
  このヘルパー関数がによって使用されて[CAtlComModule::UnRegisterTypeLib](../../atl/reference/catlcommodule-class.md#unregistertypelib)と[AtlComModuleUnregisterServer](#atlcommoduleunregisterserver)です。  
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h
 
-##  <a name="atlloadtypelib"></a>AtlLoadTypeLib  
+##  <a name="atlloadtypelib"></a>  AtlLoadTypeLib  
  この関数は、タイプ ライブラリを読み込むために呼び出されます。  
   
 ### <a name="syntax"></a>構文  
@@ -347,8 +342,8 @@ ATLINLINE ATLAPI AtlLoadTypeLib(
 ### <a name="remarks"></a>コメント  
  このヘルパー関数がによって使用されて[AtlRegisterTypeLib](#atlregistertypelib)と[この代替](#atlunregistertypelib)です。  
   
-##  <a name="atlupdateregistryfromresourced"></a>AtlUpdateRegistryFromResourceD  
- この関数は Visual Studio 2013 で使用されなくなり、Visual Studio 2015 で削除されます。  
+##  <a name="atlupdateregistryfromresourced"></a>  AtlUpdateRegistryFromResourceD  
+ この関数は Visual Studio 2013 で非推奨とされ、Visual Studio 2015 で削除されます。  
   
 ```
 <removed>
@@ -356,7 +351,7 @@ ATLINLINE ATLAPI AtlLoadTypeLib(
   
 
   
-##  <a name="registrydataexchange"></a>RegistryDataExchange  
+##  <a name="registrydataexchange"></a>  RegistryDataExchange  
  システム レジストリのデータの読み取り/書き込みを行います。  
 
 ### <a name="syntax"></a>構文  
@@ -391,10 +386,10 @@ HRESULT RegistryDataExchange(
 |eWriteToReg|データをレジストリに書き込みます。|  
 |eDeleteFromReg|キーがレジストリから削除します。|  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [関数](atl-functions.md)[レジストリ データ交換マクロ](registry-data-exchange-macros.md)
 
 

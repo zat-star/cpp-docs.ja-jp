@@ -1,12 +1,9 @@
 ---
-title: "noalias |Microsoft ドキュメント"
-ms.custom: 
+title: noalias |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 02/09/2018
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - noalias_cpp
@@ -16,25 +13,23 @@ helpviewer_keywords:
 - noalias __declspec keyword
 - __declspec keyword [C++], noalias
 ms.assetid: efafa8b0-7f39-4edc-a81e-d287ae882c9b
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6fd57b10aba4298ff7facd725ab3ce1934ccf1ab
-ms.sourcegitcommit: f3c398b1c7dbf36ab71b5ca89d365b1913afa307
+ms.openlocfilehash: 1cbb5c1b4162f3326aade092c7e20ca42a825d13
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="noalias"></a>noalias
 
 **Microsoft 固有の仕様**
 
-`noalias`関数呼び出しの変更または表示されるグローバル状態の参照はないことを意味が指すメモリのみを変更し、*直接*ポインター パラメーター (第 1 レベルの間接指定)。
+`noalias` 関数呼び出しの変更または表示されるグローバル状態の参照はないことを意味が指すメモリのみを変更し、*直接*ポインター パラメーター (第 1 レベルの間接指定)。
 
-関数が `noalias` として注釈が指定されている場合、オプティマイザーはパラメーター自体に加えてポインター パラメーターの第 1 レベルの間接指定のみが関数内で参照または変更されると仮定します。 表示されるグローバル状態は、コンパイルのスコープ外では、アドレスは取られません定義または参照されていないすべてのデータの設定です。 コンパイルのスコープは、すべてのソース ファイル ([/LTCG (リンク時コード生成)](../build/reference/ltcg-link-time-code-generation.md)ビルド) または 1 つのソース ファイル (非**/LTCG**ビルド)。
+関数が `noalias` として注釈が指定されている場合、オプティマイザーはパラメーター自体に加えてポインター パラメーターの第 1 レベルの間接指定のみが関数内で参照または変更されると仮定します。 表示されるグローバル状態は、コンパイルのスコープ外では、アドレスは取られません定義または参照されていないすべてのデータの設定です。 コンパイルのスコープは、すべてのソース ファイル ([/LTCG (リンク時コード生成)](../build/reference/ltcg-link-time-code-generation.md)ビルド) または 1 つのソース ファイル (非 **/LTCG**ビルド)。
 
 `noalias`注釈は、注釈付きの関数の本体内でのみ適用されます。 関数としてマーク`__declspec(noalias)`関数によって返されるポインターのエイリアスには影響しません。
 
@@ -112,7 +107,7 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [__declspec](../cpp/declspec.md)  
 [キーワード](../cpp/keywords-cpp.md)  

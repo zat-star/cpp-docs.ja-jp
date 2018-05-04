@@ -1,13 +1,10 @@
 ---
-title: "C (プリプロセス時にコメントの保持) |Microsoft ドキュメント"
-ms.custom: 
+title: C (プリプロセス時にコメントの保持) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLCompilerTool.KeepComments
 - /c
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - c compiler option [C++]
 - /c compiler option [C++]
 ms.assetid: 944567ca-16bc-4728-befe-d414a7787f26
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6d27e6ed0f6a2ff6e6f63bc1b87522fb598953c2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 350addc63807a338eb451c14e52340ef67998f18
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="c-preserve-comments-during-preprocessing"></a>/C (プリプロセス時のコメントの保持)
 プリプロセス時にコメントを保持します。  
@@ -43,7 +38,7 @@ ms.lasthandoff: 12/21/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- このコンパイラ オプションが必要、 **/E**、 **/P**、または**/EP**オプション。  
+ このコンパイラ オプションが必要、 **/E**、 **/P**、または **/EP**オプション。  
   
  次のコード サンプル ソース コードのコメントが表示されます。  
   
@@ -74,9 +69,9 @@ int i;   // a variable
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.KeepComments%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [/E (プリプロセス stdout へ)](../../build/reference/e-preprocess-to-stdout.md)   
  [/P (ファイルへのプリプロセス)](../../build/reference/p-preprocess-to-a-file.md)   
- [/EP (#line ディレクティブしない stdout へのプリプロセス)](../../build/reference/ep-preprocess-to-stdout-without-hash-line-directives.md)
+ [/EP (#line ディレクティブなしで stdout に前処理する)](../../build/reference/ep-preprocess-to-stdout-without-hash-line-directives.md)

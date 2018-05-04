@@ -1,10 +1,10 @@
 ---
-title: "/FUNCTIONPADMIN (ホットパッチ可能なイメージの作成) |Microsoft ドキュメント"
-ms.custom: 
+title: /FUNCTIONPADMIN (ホットパッチ可能なイメージの作成) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 03/09/2018
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /functionpadmin
 dev_langs:
@@ -15,14 +15,13 @@ helpviewer_keywords:
 ms.assetid: 25b02c13-1add-4fbd-add9-fcb30eb2cae7
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c941ec7f0e94ba03979c914ddd26b8bd21237369
-ms.sourcegitcommit: eb246547c7c9adc7d7ac4083ef09bf6e54dec914
+ms.openlocfilehash: d0a5ecfcc336e198de0adcc2393f740072d70cae
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="functionpadmin-create-hotpatchable-image"></a>/FUNCTIONPADMIN (ホットパッチ可能なイメージの作成)
 
@@ -41,7 +40,7 @@ ms.lasthandoff: 03/12/2018
 
 ホットパッチ可能なイメージを生成するために、リンカーの順番は、.obj ファイル必要がありますしてコンパイルされている[/hotpatch (ホットパッチ可能なイメージの作成)](../../build/reference/hotpatch-create-hotpatchable-image.md)です。
 
-コンパイルして単一の cl.exe、呼び出しでイメージを関連付ける**/hotpatch**意味**/functionpadmin**です。
+コンパイルして単一の cl.exe、呼び出しでイメージを関連付ける **/hotpatch**意味 **/functionpadmin**です。
 
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには
 

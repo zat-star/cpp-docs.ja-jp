@@ -1,12 +1,9 @@
 ---
-title: "共用体 |Microsoft ドキュメント"
-ms.custom: 
+title: 共用体 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - union_cpp
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - class types [C++], unions as
 - union keyword [C++]
 ms.assetid: 25c4e219-fcbb-4b7b-9b64-83f3252a92ca
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9371aaf978f2ea9498445d0124b9be16cf3b0fa7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 066f7c50940e6c68bb0fca554bb3bc56fc20b93c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="unions"></a>Unions
 `union` とは、すべてのメンバーが同じメモリの場所を共有するユーザー定義の型です。 これは、任意のどの時点においても、共用体のメンバー一覧にあるオブジェクトがただ 1 つだけ共用体に含まれていることを意味します。 また、共用体のメンバー数には関係なく、最大のメンバーを格納するのに必要なメモリーだけが常に使用されることも意味します。  
@@ -645,7 +640,7 @@ int main()
  ![数値型共用体のデータ ストレージ](../cpp/media/vc38ul1.png "vc38UL1")  
 数値型共用体のデータ ストレージ  
   
-## <a name="anonymous_unions"></a>匿名共用体  
+## <a name="anonymous_unions"></a> 匿名共用体  
  無名共用体はなしで宣言される共用体、*クラス名*または*宣言子リスト*です。  
   
 ```cpp  
@@ -662,7 +657,7 @@ union  {  member-list  }
   
 -   メンバー関数を含めることはできません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスと構造体](../cpp/classes-and-structs-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [class](../cpp/class-cpp.md)   

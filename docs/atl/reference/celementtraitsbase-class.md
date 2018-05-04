@@ -1,12 +1,9 @@
 ---
-title: "CElementTraitsBase クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CElementTraitsBase クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CElementTraitsBase
@@ -20,17 +17,15 @@ dev_langs:
 helpviewer_keywords:
 - CElementTraitsBase class
 ms.assetid: 75284caf-347e-4355-a7d8-efc708dd514a
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c9bbea69d2265563a0da4fda8b45cc09234a7789
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7a0b9f3945d9bcfa0c77855c94ec7247cb9804cb
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="celementtraitsbase-class"></a>CElementTraitsBase クラス
 このクラスは、既定のコピーを提供し、コレクション クラスのメソッドを移動します。  
@@ -67,10 +62,10 @@ class CElementTraitsBase
   
  詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="copyelements"></a>CElementTraitsBase::CopyElements  
+##  <a name="copyelements"></a>  CElementTraitsBase::CopyElements  
  コレクション クラスのオブジェクトに格納されている要素をコピーするには、このメソッドを呼び出します。  
   
 ```
@@ -93,21 +88,21 @@ static void CopyElements(
 ### <a name="remarks"></a>コメント  
  ソースと移行先の要素が重ならないようにします。  
   
-##  <a name="inargtype"></a>CElementTraitsBase::INARGTYPE  
+##  <a name="inargtype"></a>  CElementTraitsBase::INARGTYPE  
  コレクションに要素を追加するのに使用するデータ型。  
   
 ```
 typedef const T& INARGTYPE;
 ```  
   
-##  <a name="outargtype"></a>CElementTraitsBase::OUTARGTYPE  
+##  <a name="outargtype"></a>  CElementTraitsBase::OUTARGTYPE  
  コレクションから要素を取得するのに使用するデータ型。  
   
 ```
 typedef T& OUTARGTYPE;
 ```  
   
-##  <a name="relocateelements"></a>CElementTraitsBase::RelocateElements  
+##  <a name="relocateelements"></a>  CElementTraitsBase::RelocateElements  
  コレクション クラスのオブジェクトに格納されている要素を再配置するには、このメソッドを呼び出します。  
   
 ```
@@ -130,5 +125,5 @@ static void RelocateElements(
 ### <a name="remarks"></a>コメント  
  このメソッドを呼び出す[memmove](../../c-runtime-library/reference/memmove-wmemmove.md)、これは、ほとんどのデータ型。 オブジェクトの移動中に、独自のメンバーへのポインターが含まれている場合は、このメソッドをオーバーライドする必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

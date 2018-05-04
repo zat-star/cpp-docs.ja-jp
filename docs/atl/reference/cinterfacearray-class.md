@@ -1,12 +1,9 @@
 ---
-title: "CInterfaceArray クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CInterfaceArray クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CInterfaceArray
@@ -17,17 +14,15 @@ dev_langs:
 helpviewer_keywords:
 - CInterfaceArray class
 ms.assetid: 1f29cf66-a086-4a7b-b6a8-64f73da39f79
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ece9858d0be171febaeb52e820e922665ac2a351
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 36a24eadea87d0d34adf0f577b321fa16a7cfc86
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cinterfacearray-class"></a>CInterfaceArray クラス
 このクラスは、COM インターフェイス ポインターの配列を構築するときに役立つメソッドを提供します。  
@@ -66,10 +61,10 @@ class CInterfaceArray :
   
  `CInterfaceArray`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="cinterfacearray"></a>CInterfaceArray::CInterfaceArray  
+##  <a name="cinterfacearray"></a>  CInterfaceArray::CInterfaceArray  
  コンストラクターです。  
   
 ```
@@ -79,7 +74,7 @@ CInterfaceArray() throw();
 ### <a name="remarks"></a>コメント  
  スマート ポインターの配列を初期化します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CAtlArray クラス](../../atl/reference/catlarray-class.md)   
  [CComQIPtr クラス](../../atl/reference/ccomqiptr-class.md)   
  [CComQIPtrElementTraits クラス](../../atl/reference/ccomqiptrelementtraits-class.md)   

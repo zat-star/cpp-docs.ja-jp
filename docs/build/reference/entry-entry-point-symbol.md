@@ -1,13 +1,10 @@
 ---
-title: "入力 (エントリ ポイント シンボル) |Microsoft ドキュメント"
-ms.custom: 
+title: 入力 (エントリ ポイント シンボル) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /entry
 - VC.Project.VCLinkerTool.EntryPointSymbol
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - /ENTRY linker option
 - ENTRY linker option
 ms.assetid: 26c62ba2-4f52-4882-a7bd-7046a0abf445
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5ebaf9a8723f06b6fab8577abf283f6eec69aa25
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 74d7e6e05af98bb3d3175d352fb3d5de1b70b12b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="entry-entry-point-symbol"></a>/ENTRY (エントリ ポイント シンボル)
 ```  
@@ -52,8 +47,8 @@ ms.lasthandoff: 12/21/2017
 |関数名|既定値|  
 |-------------------|-----------------|  
 |**mainCRTStartup** (または**wmainCRTStartup**)|/SUBSYSTEM:CONSOLE; を使用するアプリケーション呼び出し`main`(または`wmain`)|  
-|**WinMainCRTStartup** (または**wWinMainCRTStartup**)|/SUBSYSTEM を使用するアプリケーションを:**WINDOWS**; 呼び出し`WinMain`(または`wWinMain`)、使用が定義されている必要があります`__stdcall`|  
-|**_DllMainCRTStartup**|DLL です。呼び出し`DllMain`、存在する場合を定義する必要があるには`__stdcall`|  
+|**WinMainCRTStartup** (または**wWinMainCRTStartup**)|/SUBSYSTEM を使用するアプリケーションを:**WINDOWS**; 呼び出し`WinMain`(または`wWinMain`)、使用が定義されている必要があります `__stdcall`|  
+|**_DllMainCRTStartup**|DLL です。呼び出し`DllMain`、存在する場合を定義する必要があるには `__stdcall`|  
   
  場合、 [/DLL](../../build/reference/dll-build-a-dll.md)または[/SUBSYSTEM](../../build/reference/subsystem-specify-subsystem.md)をリンカーがかどうかに応じて、サブシステムとエントリ ポイントを選択して、オプションが指定されていない`main`または`WinMain`が定義されています。  
   
@@ -77,6 +72,6 @@ ms.lasthandoff: 12/21/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.EntryPointSymbol%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

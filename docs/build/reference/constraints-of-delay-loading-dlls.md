@@ -1,13 +1,10 @@
 ---
-title: "Dll の遅延読み込みの制約 |Microsoft ドキュメント"
-ms.custom: 
+title: Dll の遅延読み込みの制約 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - delayed loading of DLLs, constraints
 - DLLs [C++], constraints
 ms.assetid: 0097ff65-550f-4a4e-8ac3-39bf6404f926
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cd3f641a3ac03705ff7f3765d995d5c40bccda7d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 532d5ba64288fb70b19f10386186c0b520e67661
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="constraints-of-delay-loading-dlls"></a>DLL の遅延読み込みの制約
 インポートの遅延読み込みには制約があります。  
@@ -44,7 +39,7 @@ ms.lasthandoff: 12/21/2017
   
 -   カスタム呼び出し規約 (x86 アーキテクチャでの条件コードの使用など) はサポートされません。 また、浮動小数点レジスタはどのプラットフォームにも保存されません。 カスタム ヘルパー ルーチンまたはフック ルーチンが浮動小数点型を使用する場合、浮動小数点パラメーターのレジスタ呼び出し規約を持つコンピューターで浮動小数点状態を完全に保存およびリストアする必要があります。 ヘルプ関数内の数値データ プロセッサ (NDP) スタックで、浮動小数点パラメーターを取得する CRT 関数を呼び出す場合、CRT DLL の遅延呼び出しに注意します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカーによる Dll の遅延読み込み](../../build/reference/linker-support-for-delay-loaded-dlls.md)   
  [LoadLibrary 関数](http://msdn.microsoft.com/library/windows/desktop/ms684175.aspx)   
  [GetModuleHandle 関数](http://msdn.microsoft.com/library/windows/desktop/ms683199.aspx)   

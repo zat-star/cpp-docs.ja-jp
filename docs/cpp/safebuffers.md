@@ -1,12 +1,9 @@
 ---
-title: "safebuffers |Microsoft ドキュメント"
-ms.custom: 
+title: safebuffers |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - safebuffers_cpp
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - __declspec keyword (C++), safebuffers
 - safebuffers __declspec keyword
 ms.assetid: 0b0dce14-4523-44d2-8070-5dd0fdabc618
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: eb9541bfc4a94253ac26e118e22c3abb2663a893
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: fbfc9317b5ed7c63e9c70b081c3f241b86a65e5f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="safebuffers"></a>safebuffers
 **Microsoft 固有の仕様**  
@@ -84,8 +79,8 @@ int wmain() {
   
  **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
- [_ _declspec](../cpp/declspec.md)   
+## <a name="see-also"></a>関連項目  
+ [__declspec](../cpp/declspec.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [inline、_ _inline、 \__forceinline](inline-functions-cpp.md)   
  [strict_gs_check](../preprocessor/strict-gs-check.md)

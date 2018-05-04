@@ -1,13 +1,10 @@
 ---
-title: "レジストリ スクリプトの例 |Microsoft ドキュメント"
-ms.custom: 
+title: レジストリ スクリプトの例 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - scripts, Registrar scripts
 - registry, Registrar
 ms.assetid: b6df80e1-e08b-40ee-9243-9b381b172460
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1b2a5dfd3bd31674917a5b41174277ef787aff25
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4c192e8bec1d32dd7d7a7953e5da72a139c7520e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="registry-scripting-examples"></a>レジストリ スクリプトの例
 このトピックでは、スクリプトの例では、システム レジストリにキーを追加、レジストラー COM サーバーを登録および複数のパース ツリーを指定する方法を示します。  
@@ -59,7 +54,7 @@ HKCU
   
  ここで、スクリプトは、サブキーを追加します。`HasASubkey`を`MyVeryOwnKey`です。 このサブキーに追加されます両方、`PrettyCool`サブキー (、既定値`DWORD`55 の値)、および`ANameValue`value という名前の (の文字列値を持つ`WithANamedValue`)。  
   
-##  <a name="_atl_register_the_registrar_com_server"></a>レジストラー COM サーバーを登録します。  
+##  <a name="_atl_register_the_registrar_com_server"></a> レジストラー COM サーバーを登録します。  
  次のスクリプトは、レジストラー COM サーバー自体を登録します。  
   
 ```  
@@ -102,7 +97,7 @@ HKCR
   
 -   追加`ATL Registrar Class`の既定の文字列値として`{44EC053A-400F-11D0-9DCD-00A0C90391D3}`です。  
   
- 解析ツリーに 2 つの新しいサブキーを今すぐ追加`{44EC053A-400F-11D0-9DCD-00A0C90391D3}`です。 最初のキー `ProgID`ProgID は、既定の文字列値を取得します。 2 番目のキー `InprocServer32`、既定の文字列値を取得`%MODULE%`、つまり、」に説明されているプリプロセッサ値[置き換え可能パラメーターの使用 (レジストラーのプリプロセッサ)](../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)、この記事のです。 `InprocServer32`また、名前付きの値を取得`ThreadingModel`の文字列値を持つ`Apartment`します。  
+ 解析ツリーに 2 つの新しいサブキーを今すぐ追加`{44EC053A-400F-11D0-9DCD-00A0C90391D3}`です。 最初のキー `ProgID`ProgID は、既定の文字列値を取得します。 2 番目のキー `InprocServer32`、既定の文字列値を取得`%MODULE%`、つまり、」に説明されているプリプロセッサ値[置き換え可能パラメーターの使用 (レジストラーのプリプロセッサ)](../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)、この記事のです。 `InprocServer32` また、名前付きの値を取得`ThreadingModel`の文字列値を持つ`Apartment`します。  
   
 ## <a name="specify-multiple-parse-trees"></a>複数のパース ツリーを指定します。  
  1 つ以上の解析ツリーをスクリプトを指定するには、別の最後に 1 つのツリーを配置します。 たとえば、次のスクリプトが、キーを追加`MyVeryOwnKey`、両方のパース ツリーを`HKEY_CLASSES_ROOT`と`HKEY_CURRENT_USER`:  
@@ -121,6 +116,6 @@ HKEY_CURRENT_USER
 > [!NOTE]
 >  レジストラー スクリプトでは、トークンの最大サイズは 4 K です。 (トークンは、構文内の認識可能な要素です)。前のスクリプトの例で`HKCR`、 `HKEY_CURRENT_USER`、 `'MyVeryOwnKey'`、および`'HowGoesIt'`すべてトークンです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [レジストラー スクリプトの作成](../atl/creating-registrar-scripts.md)
 

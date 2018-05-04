@@ -2,11 +2,8 @@
 title: CComAllocator クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComAllocator
@@ -19,17 +16,15 @@ dev_langs:
 helpviewer_keywords:
 - CComAllocator class
 ms.assetid: 0cd706fd-0c7b-42d3-9054-febe2966fc8e
-caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 370a52e87bcbb4849883ea03016cc462030ad028
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3606df325bfd41dabf99bb790ff154b383ab987f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomallocator-class"></a>CComAllocator クラス
 このクラスは、COM メモリ ルーチンを使用しているメモリを管理するためのメソッドを提供します。  
@@ -53,10 +48,10 @@ class CComAllocator
 ## <a name="remarks"></a>コメント  
  このクラスによって使用[CComHeapPtr](../../atl/reference/ccomheapptr-class.md) COM メモリ割り当てルーチンを提供します。 対応するクラス[CCRTAllocator](../../atl/reference/ccrtallocator-class.md)、CRT ルーチンを使用する場合と同じ方法を提供します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="allocate"></a>CComAllocator::Allocate  
+##  <a name="allocate"></a>  CComAllocator::Allocate  
  メモリを割り当てる場合は、この静的関数を呼び出します。  
   
 ```
@@ -73,7 +68,7 @@ static void* Allocate(size_t nBytes) throw();
 ### <a name="remarks"></a>コメント  
  メモリを割り当てます。 参照してください[CoTaskMemAlloc](http://msdn.microsoft.com/library/windows/desktop/ms692727)詳細についてはします。  
   
-##  <a name="free"></a>CComAllocator::Free  
+##  <a name="free"></a>  CComAllocator::Free  
  割り当てられたメモリを解放する、この静的関数を呼び出します。  
   
 ```
@@ -87,7 +82,7 @@ static void Free(void* p) throw();
 ### <a name="remarks"></a>コメント  
  割り当てられたメモリを解放します。 参照してください[CoTaskMemFree](http://msdn.microsoft.com/library/windows/desktop/ms680722)詳細についてはします。  
   
-##  <a name="reallocate"></a>CComAllocator::Reallocate  
+##  <a name="reallocate"></a>  CComAllocator::Reallocate  
  メモリを再割り当てする場合は、この静的関数を呼び出します。  
   
 ```
@@ -107,7 +102,7 @@ static void* Reallocate(void* p, size_t nBytes) throw();
 ### <a name="remarks"></a>コメント  
  割り当てられたメモリの量を変更します。 参照してください[CoTaskMemRealloc](http://msdn.microsoft.com/library/windows/desktop/ms687280)詳細についてはします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CComHeapPtr クラス](../../atl/reference/ccomheapptr-class.md)   
  [CCRTAllocator クラス](../../atl/reference/ccrtallocator-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

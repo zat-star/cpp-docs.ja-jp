@@ -2,11 +2,8 @@
 title: CAtlTransactionManager クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CAtlTransactionManager
@@ -34,17 +31,15 @@ dev_langs:
 helpviewer_keywords:
 - CAtlTransactionManager class
 ms.assetid: b01732dc-1d16-4b42-bfac-b137fca2b740
-caps.latest.revision: 25
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0def8aa809cd1ccc115ccc2a09b1ae752316098f
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: 02ab9cd6f8867f9e6bc9d81ff825e8fe8f7b57d7
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="catltransactionmanager-class"></a>CAtlTransactionManager クラス
 CAtlTransactionManager クラスは、カーネル トランザクション マネージャー (KTM) 関数のラッパーを提供します。  
@@ -90,9 +85,9 @@ class CAtlTransactionManager;
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
-|[m_bFallback](#m_bfallback)|`TRUE`場合は、フォールバックがサポートされています。`FALSE`それ以外の場合。|  
+|[m_bFallback](#m_bfallback)|`TRUE` 場合は、フォールバックがサポートされています。`FALSE`それ以外の場合。|  
 |[m_hTransaction](#m_htransaction)|トランザクションのハンドルです。|  
   
 ## <a name="remarks"></a>コメント  
@@ -100,10 +95,10 @@ class CAtlTransactionManager;
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [ATL::CAtlTransactionManager](../../atl/reference/catltransactionmanager-class.md)  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atltransactionmanager.h  
   
-##  <a name="dtor"></a>~ CAtlTransactionManager  
+##  <a name="dtor"></a>  ~ CAtlTransactionManager  
  CAtlTransactionManager デストラクターです。  
   
 ```
@@ -113,7 +108,7 @@ virtual ~CAtlTransactionManager();
 ### <a name="remarks"></a>コメント  
  、通常の処理で、トランザクションが自動的にコミットされ終了します。 例外のアンワインド中に、デストラクターが呼び出されると、トランザクションがロールバックされ、閉じられました。  
   
-##  <a name="catltransactionmanager"></a>CAtlTransactionManager  
+##  <a name="catltransactionmanager"></a>  CAtlTransactionManager  
  CAtlTransactionManager コンス トラクターです。  
   
 ```
@@ -122,14 +117,14 @@ CAtlTransactionManager(BOOL bFallback = TRUE, BOOL bAutoCreateTransaction = TRUE
   
 ### <a name="parameters"></a>パラメーター  
  `bFallback`  
- `TRUE`フォールバックのサポートを示します。 トランザクション処理された関数が失敗した場合、クラスは自動的に「非トランザクション」関数を呼び出します。 `FALSE`「予備」の呼び出しがないことを示します。  
+ `TRUE` フォールバックのサポートを示します。 トランザクション処理された関数が失敗した場合、クラスは自動的に「非トランザクション」関数を呼び出します。 `FALSE` 「予備」の呼び出しがないことを示します。  
   
  `bAutoCreateTransaction`  
- `TRUE`コンス トラクターでトランザクション ハンドラーが自動的に作成されたことを示します。 `FALSE`されていないことを示します。  
+ `TRUE` コンス トラクターでトランザクション ハンドラーが自動的に作成されたことを示します。 `FALSE` されていないことを示します。  
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="close"></a>閉じる  
+##  <a name="close"></a>  閉じる  
  トランザクション ハンドルを閉じます。  
   
 ```
@@ -142,7 +137,7 @@ inline BOOL Close();
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`CloseHandle`関数。 メソッドは、デストラクターは、自動的に呼び出されます。  
   
-##  <a name="commit"></a>コミット  
+##  <a name="commit"></a>  コミット  
  トランザクションをコミットすることを要求します。  
   
 ```
@@ -155,7 +150,7 @@ inline BOOL Commit();
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`CommitTransaction`関数。 メソッドは、デストラクターは、自動的に呼び出されます。  
   
-##  <a name="create"></a>作成します。  
+##  <a name="create"></a>  作成します。  
  トランザクション ハンドルを作成します。  
   
 ```
@@ -168,7 +163,7 @@ inline BOOL Create();
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`CreateTransaction`関数。 チェックしてください。  
   
-##  <a name="createfile"></a>CreateFile  
+##  <a name="createfile"></a>  CreateFile  
  作成するか、ファイル、ファイル ストリーム、またはトランザクション処理された操作とディレクトリを開きます。  
   
 ```
@@ -187,7 +182,7 @@ inline HANDLE CreateFile(
  作成したり開いたりオブジェクトの名前。  
   
  `dwDesiredAccess`  
- オブジェクトは、読み取り、書き込み、両方、またはどちらも (ゼロ) としてまとめるためにアクセスします。 最もよく使用される値は GENERIC_READ、GENERIC_WRITE、またはその両方: GENERIC_READ &#124;です。GENERIC_WRITE です。  
+ オブジェクトは、読み取り、書き込み、両方、またはどちらも (ゼロ) としてまとめるためにアクセスします。 最もよく使用される値は GENERIC_READ、GENERIC_WRITE、またはその両方: GENERIC_READ &#124; GENERIC_WRITE です。  
   
  `dwShareMode`  
  オブジェクトを読み取り、書き込み、どちらも、削除、または、これらのすべての共有モード: 0、FILE_SHARE_DELETE、FILE_SHARE_READ、FILE_SHARE_WRITE です。  
@@ -210,7 +205,7 @@ inline HANDLE CreateFile(
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`CreateFileTransacted`関数。  
   
-##  <a name="deletefile"></a>DeleteFile  
+##  <a name="deletefile"></a>  DeleteFile  
  トランザクション処理された操作として、既存のファイルを削除します。  
   
 ```
@@ -224,7 +219,7 @@ inline BOOL DeleteFile(LPCTSTR lpFileName);
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`DeleteFileTransacted`関数。  
   
-##  <a name="findfirstfile"></a>FindFirstFile  
+##  <a name="findfirstfile"></a>  FindFirstFile  
  トランザクション処理された操作として、ディレクトリのファイルまたはサブディレクトリを検索します。  
   
 ```
@@ -246,7 +241,7 @@ inline HANDLE FindFirstFile(
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`FindFirstFileTransacted`関数。  
   
-##  <a name="getfileattributes"></a>GetFileAttributes  
+##  <a name="getfileattributes"></a>  GetFileAttributes  
  トランザクション処理された操作として、指定したファイルまたはディレクトリのファイル システム属性を取得します。  
   
 ```
@@ -260,7 +255,7 @@ inline DWORD GetFileAttributes(LPCTSTR lpFileName);
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`GetFileAttributesTransacted`関数。  
   
-##  <a name="getfileattributesex"></a>GetFileAttributesEx  
+##  <a name="getfileattributesex"></a>  GetFileAttributesEx  
  トランザクション処理された操作として、指定したファイルまたはディレクトリのファイル システム属性を取得します。  
   
 ```
@@ -283,7 +278,7 @@ inline BOOL GetFileAttributesEx(
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`GetFileAttributesTransacted`関数。  
   
-##  <a name="gethandle"></a>GetHandle  
+##  <a name="gethandle"></a>  GetHandle  
  トランザクション ハンドルを返します。  
   
 ```
@@ -295,7 +290,7 @@ HANDLE GetHandle() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="isfallback"></a>IsFallback  
+##  <a name="isfallback"></a>  IsFallback  
  フォールバックの呼び出しが有効になっているかどうかを決定します。  
   
 ```
@@ -307,8 +302,8 @@ BOOL IsFallback() const;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="m_bfallback"></a>m_bFallback  
- `TRUE`場合は、フォールバックがサポートされています。`FALSE`それ以外の場合。  
+##  <a name="m_bfallback"></a>  m_bFallback  
+ `TRUE` 場合は、フォールバックがサポートされています。`FALSE`それ以外の場合。  
   
 ```
 BOOL m_bFallback;
@@ -316,7 +311,7 @@ BOOL m_bFallback;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="m_htransaction"></a>m_hTransaction  
+##  <a name="m_htransaction"></a>  m_hTransaction  
  トランザクションのハンドルです。  
   
 ```
@@ -325,7 +320,7 @@ HANDLE m_hTransaction;
   
 ### <a name="remarks"></a>コメント  
   
-##  <a name="movefile"></a>MoveFile  
+##  <a name="movefile"></a>  MoveFile  
  既存のファイルまたはその子を含むトランザクション処理された操作として、ディレクトリに移動します。  
   
 ```
@@ -342,7 +337,7 @@ inline BOOL MoveFile(LPCTSTR lpOldFileName, LPCTSTR lpNewFileName);
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`MoveFileTransacted`関数。  
   
-##  <a name="regcreatekeyex"></a>RegCreateKeyEx  
+##  <a name="regcreatekeyex"></a>  RegCreateKeyEx  
  指定されたレジストリ キーを作成し、トランザクションに関連付けます。 キーが既に存在する場合、関数では、それが表示されます。  
   
 ```
@@ -392,7 +387,7 @@ inline LSTATUS RegCreateKeyEx(
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`RegCreateKeyTransacted`関数。  
   
-##  <a name="regdeletekey"></a>RegDeleteKey  
+##  <a name="regdeletekey"></a>  RegDeleteKey  
  トランザクション処理された操作として、指定したプラットフォームに固有のビュー レジストリからサブキーとその値を削除します。  
   
 ```
@@ -412,7 +407,7 @@ inline LSTATUS RegDeleteKeyEx(HKEY hKey, LPCTSTR lpSubKey);
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`RegDeleteKeyTransacted`関数。  
   
-##  <a name="regopenkeyex"></a>RegOpenKeyEx  
+##  <a name="regopenkeyex"></a>  RegOpenKeyEx  
  指定されたレジストリ キーが開き、トランザクションに関連付けます。  
   
 ```
@@ -446,7 +441,7 @@ inline LSTATUS RegOpenKeyEx(
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`RegOpenKeyTransacted`関数。  
   
-##  <a name="rollback"></a>ロールバック  
+##  <a name="rollback"></a>  ロールバック  
  トランザクションをロールバックするように要求します。  
   
 ```
@@ -459,7 +454,7 @@ inline BOOL Rollback();
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`RollbackTransaction`関数。  
   
-##  <a name="setfileattributes"></a>SetFileAttributes  
+##  <a name="setfileattributes"></a>  SetFileAttributes  
  トランザクション処理された操作として、ファイルまたはディレクトリの属性を設定します。  
   
 ```
@@ -476,5 +471,5 @@ inline BOOL SetFileAttributes(LPCTSTR lpFileName, DWORD dwAttributes);
 ### <a name="remarks"></a>コメント  
  このラッパーの呼び出し、`SetFileAttributesTransacted`関数。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)

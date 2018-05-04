@@ -1,29 +1,24 @@
 ---
-title: "new 演算子 (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: new 演算子 (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - new keyword [C++]
 ms.assetid: 69fee812-1c28-4882-8fda-d1ad17860004
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 68843f0619b5ebc057f83bdb4f49807a15fb86a1
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.openlocfilehash: 365beedce529e29be73c02caa57e5c6236565b9c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="new-operator-c"></a>new 演算子 (C++)
 オブジェクトまたはオブジェクトの配列にメモリを割り当てます*型名*フリー ストアから、オブジェクトを適切に型指定されたゼロ以外のポインターを返します。  
@@ -127,7 +122,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- 配置の新しいフォームを使用する場合、**新しい**演算子、コンパイラ、割り当てのサイズ以外の引数を持つフォームは、仮引数付きをサポートしていません、**削除**演算子場合、コンス トラクターでは、例外をスローします。 例:  
+ 配置の新しいフォームを使用する場合、**新しい**演算子、コンパイラ、割り当てのサイズ以外の引数を持つフォームは、仮引数付きをサポートしていません、**削除**演算子場合、コンス トラクターでは、例外をスローします。 例えば:  
   
 ```  
 // expre_new_Operator2.cpp  
@@ -201,7 +196,7 @@ int main()
  関数呼び出しの場合と同様に、初期化された式が評価される順序は定義されていません。 さらに、メモリの割り当てが実行される前に、これらの式が完全に評価されるものとして信頼しないでください。 メモリ割り当てに失敗した場合、**新しい**演算子は 0 を返します、初期化子の一部の式が完全に評価されない場合があります。  
   
 ## <a name="lifetime-of-objects-allocated-with-new"></a>new で割り当てたオブジェクトの有効期間  
- によって割り当てられたオブジェクト、**新しい**演算子は定義されているスコープが終了したときに破棄されません。 **新しい**演算子が割り当てたオブジェクトへのポインターを返します、プログラムは、それらのオブジェクトにアクセスするのに適切なスコープを持つポインターを定義する必要があります。 例:  
+ によって割り当てられたオブジェクト、**新しい**演算子は定義されているスコープが終了したときに破棄されません。 **新しい**演算子が割り当てたオブジェクトへのポインターを返します、プログラムは、それらのオブジェクトにアクセスするのに適切なスコープを持つポインターを定義する必要があります。 例えば:  
   
 ```  
 // expre_Lifetime_of_Objects_Allocated_with_new.cpp  
@@ -239,7 +234,7 @@ int main()
   
  **新しい**演算子関数を呼び出す`operator new`です。 任意の型の配列およびれていないオブジェクトの**クラス**、 `struct`、または**共用体**の種類、グローバル関数では、 **:: 演算子の new**、記憶域を割り当てるために呼び出されます。 クラス型オブジェクトは、クラスごとに異なる `operator new` 静的メンバー関数を定義できます。  
   
- コンパイラが検出した場合、**新しい**型のオブジェクトを割り当てるオペレーター`type`への呼び出しを発行`type` **:: 演算子 new (sizeof (** `type` **))**またはユーザー定義されなかった場合`operator new`が定義されている**:: 演算子 new (sizeof (** `type` **))**です。 したがって、**新しい**演算子は、オブジェクトの正しいメモリの量を割り当てることができます。  
+ コンパイラが検出した場合、**新しい**型のオブジェクトを割り当てるオペレーター`type`への呼び出しを発行`type` **:: 演算子 new (sizeof (** `type` **))** またはユーザー定義されなかった場合`operator new`が定義されている **:: 演算子 new (sizeof (** `type` **))** です。 したがって、**新しい**演算子は、オブジェクトの正しいメモリの量を割り当てることができます。  
   
 > [!NOTE]
 >  引数に`operator new`の種類は**size_t**です。 この型がで定義されている\<direct.h >、 \<malloc.h >、 \<memory.h >、 \<search.h >、 \<stddef.h >、 \<stdio.h >、 \<stdlib.h >、 \<string.h >、および\<time.h >。  
@@ -259,7 +254,7 @@ T *TObject =::new TObject;
   
  スコープ解決演算子 (`::`)、グローバルの使用を強制**新しい**演算子。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [新しい演算子と delete 演算子](../cpp/new-and-delete-operators.md)

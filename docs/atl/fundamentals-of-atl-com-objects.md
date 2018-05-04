@@ -2,12 +2,9 @@
 title: ATL COM オブジェクトの基本 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - ATL COM objects
 - COM objects, ATL
 ms.assetid: 0f9c9d98-cc28-45da-89ac-dc94cee422fe
-caps.latest.revision: 25
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6a5a43af31a88420c154d7a57d27d2b69787d11d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 955f8f6be96feeaf0f22f02c125dcdeaceb8e7f8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="fundamentals-of-atl-com-objects"></a>ATL COM オブジェクトの基本事項
 次の図は、クラスと ATL COM オブジェクトの定義に使用されるインターフェイス間の関係を示しています。  
@@ -36,7 +31,7 @@ ms.lasthandoff: 12/21/2017
 > [!NOTE]
 >  この図では`CComObject`から派生した`CYourClass`一方`CComAggObject`と`CComPolyObject`含める`CYourClass`メンバー変数とします。  
   
- ATL COM オブジェクトを定義する 3 つの方法はあります。 標準のオプションは使用する、`CComObject`クラスから派生する`CYourClass`です。 2 番目のオプションを使用して集約オブジェクトを作成する、`CComAggObject`クラスです。 3 番目のオプションは、使用する、`CComPolyObject`クラスです。 `CComPolyObject`ハイブリッドの役割を果たします: として機能できます、`CComObject`クラスか、または、`CComAggObject`最初の作成方法に応じて、クラスです。 使用する方法についての詳細、`CComPolyObject`クラスを参照してください[CComPolyObject クラス](../atl/reference/ccompolyobject-class.md)です。  
+ ATL COM オブジェクトを定義する 3 つの方法はあります。 標準のオプションは使用する、`CComObject`クラスから派生する`CYourClass`です。 2 番目のオプションを使用して集約オブジェクトを作成する、`CComAggObject`クラスです。 3 番目のオプションは、使用する、`CComPolyObject`クラスです。 `CComPolyObject` ハイブリッドの役割を果たします: として機能できます、`CComObject`クラスか、または、`CComAggObject`最初の作成方法に応じて、クラスです。 使用する方法についての詳細、`CComPolyObject`クラスを参照してください[CComPolyObject クラス](../atl/reference/ccompolyobject-class.md)です。  
   
  2 つのオブジェクトを使用する標準の ATL COM を使用する場合: 外部オブジェクトと、内部オブジェクトです。 外部クライアント、外部オブジェクトで定義されているラッパー関数を使用して内部オブジェクトの機能にアクセスします。 外部オブジェクトの型が`CComObject`です。  
   
@@ -84,6 +79,6 @@ ms.lasthandoff: 12/21/2017
  [ATL](../atl/active-template-library-atl-concepts.md)  
  Active Template Library を使用してプログラミングする方法に関する概念説明のトピックへのリンクを提供します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [概念](../atl/active-template-library-atl-concepts.md)
 

@@ -1,12 +1,9 @@
 ---
-title: "CDefaultHashTraits クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CDefaultHashTraits クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CDefaultHashTraits
@@ -17,17 +14,15 @@ dev_langs:
 helpviewer_keywords:
 - CDefaultHashTraits class
 ms.assetid: d8ec4b37-6d58-447b-a0c1-8580c5b1ab85
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2407ffdd5d8ea327cd4669f2c33ccda5e0246d6d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 85cf9e27211763559617715a6c025055b25379fa
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cdefaulthashtraits-class"></a>CDefaultHashTraits クラス
 このクラスは、ハッシュ値を計算するための静的関数を提供します。  
@@ -56,10 +51,10 @@ class CDefaultHashTraits
   
  詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="hash"></a>CDefaultHashTraits::Hash  
+##  <a name="hash"></a>  CDefaultHashTraits::Hash  
  この関数では、指定された要素のハッシュ値を計算します。  
   
 ```
@@ -76,5 +71,5 @@ static ULONG Hash(const T& element) throw();
 ### <a name="remarks"></a>コメント  
  既定のハッシュ アルゴリズムは非常に単純: 戻り値は、要素数。 複雑なアルゴリズムが必要な場合は、この関数をオーバーライドします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

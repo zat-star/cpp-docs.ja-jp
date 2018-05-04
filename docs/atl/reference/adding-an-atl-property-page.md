@@ -1,12 +1,9 @@
 ---
-title: "ATL プロパティ ページの追加 |Microsoft ドキュメント"
-ms.custom: 
+title: ATL プロパティ ページの追加 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 dev_langs:
 - C++
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - ATL projects, adding property pages
 - controls [ATL], property pages
 ms.assetid: ddf92b49-42a2-46d2-b6b8-d37baedebeca
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: abf50e98d32789e357f5e13339ee2fc0a0daa331
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c84cdabddb96d2deeecd09f26101e37d9c99d0ce
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adding-an-atl-property-page"></a>ATL プロパティ ページを追加します。
 プロジェクトに、アクティブ テンプレート ライブラリ (ATL) のプロパティ ページを追加するには、プロジェクト必要がありますを作成して、ATL アプリケーションまたは ATL サポートを含む MFC アプリケーションとして。 使用することができます、 [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)ATL アプリケーションを作成するか、 [ATL オブジェクトを MFC アプリケーションに追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)MFC アプリケーションに対する ATL のサポートを実装します。  
@@ -45,7 +40,7 @@ ms.lasthandoff: 12/21/2017
   
  コントロールのプロパティ ページを作成すると、指定する必要あります、 [PROP_PAGE](property-map-macros.md#prop_page)コントロールのプロパティ マップ内のエントリ。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [プロパティ ページ](../../atl/atl-com-property-pages.md)   
  [ATL COM オブジェクトの基本事項](../../atl/fundamentals-of-atl-com-objects.md)   
  [例: プロパティ ページの実装](../../atl/example-implementing-a-property-page.md)

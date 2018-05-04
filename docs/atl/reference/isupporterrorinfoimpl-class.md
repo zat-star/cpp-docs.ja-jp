@@ -1,12 +1,9 @@
 ---
-title: "ISupportErrorInfoImpl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: ISupportErrorInfoImpl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - ISupportErrorInfoImpl
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - ISupportErrorInfoImpl class
 - error information, ATL
 ms.assetid: e33a4b11-a123-41cf-bcea-7b19743902af
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 61e8dc6b277f8eb59ade428d3ef8ea3dd5c083ee
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3e226f66d6ddd20181f083f723568acb1cc647c7
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="isupporterrorinfoimpl-class"></a>ISupportErrorInfoImpl クラス
 このクラスの既定の実装を提供する、 [ISupportErrorInfo インターフェイス](http://msdn.microsoft.com/en-us/42d33066-36b4-4a5b-aa5d-46682e560f32)1 つのインターフェイスのみがオブジェクトでのエラーを生成するときに使用できます。  
@@ -60,7 +55,7 @@ class ATL_NO_VTABLE ISupportErrorInfoImpl
 ## <a name="remarks"></a>コメント  
  [ISupportErrorInfo インターフェイス](http://msdn.microsoft.com/en-us/42d33066-36b4-4a5b-aa5d-46682e560f32)クライアントにエラー情報を返すことがあることを確認します。 使用するオブジェクト**IErrorInfo**実装する必要があります**ISupportErrorInfo**です。  
   
- クラス`ISupportErrorInfoImpl`の既定の実装を提供**ISupportErrorInfo** 1 つのインターフェイスのみがオブジェクトでのエラーを生成するときに使用できます。 例:  
+ クラス`ISupportErrorInfoImpl`の既定の実装を提供**ISupportErrorInfo** 1 つのインターフェイスのみがオブジェクトでのエラーを生成するときに使用できます。 例えば:  
   
  [!code-cpp[NVC_ATL_COM#48](../../atl/codesnippet/cpp/isupporterrorinfoimpl-class_1.h)]  
   
@@ -69,10 +64,10 @@ class ATL_NO_VTABLE ISupportErrorInfoImpl
   
  `ISupportErrorInfoImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="interfacesupportserrorinfo"></a>ISupportErrorInfoImpl::InterfaceSupportsErrorInfo  
+##  <a name="interfacesupportserrorinfo"></a>  ISupportErrorInfoImpl::InterfaceSupportsErrorInfo  
  インターフェイスが識別されるかどうかを示す`riid`をサポートしている、 [IErrorInfo](http://msdn.microsoft.com/en-us/4dda6909-2d9a-4727-ae0c-b5f90dcfa447)インターフェイスです。  
   
 ```
@@ -82,7 +77,7 @@ STDMETHOD(InterfaceSupportsErrorInfo)(REFIID riid);
 ### <a name="remarks"></a>コメント  
  参照してください[ISupportErrorInfo::InterfaceSupportsErrorInfo](http://msdn.microsoft.com/en-us/a54ef18d-ee3f-4483-ac4a-99d758f0960a) Windows SDK にします。  
   
-##  <a name="getsize"></a>IThreadPoolConfig::GetSize  
+##  <a name="getsize"></a>  IThreadPoolConfig::GetSize  
  このメソッドを呼び出して、プール内のスレッドの数を取得します。  
   
 ```
@@ -99,7 +94,7 @@ STDMETHOD(GetSize)(int* pnNumThreads);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#134](../../atl/codesnippet/cpp/isupporterrorinfoimpl-class_2.cpp)]  
   
-##  <a name="gettimeout"></a>IThreadPoolConfig::GetTimeout  
+##  <a name="gettimeout"></a>  IThreadPoolConfig::GetTimeout  
  このメソッドを呼び出して、スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で時間の最大値を取得します。  
   
 ```
@@ -116,7 +111,7 @@ STDMETHOD(GetTimeout)(DWORD* pdwMaxWait);
 ### <a name="example"></a>例  
  参照してください[IThreadPoolConfig::GetSize](#getsize)です。  
   
-##  <a name="setsize"></a>IThreadPoolConfig::SetSize  
+##  <a name="setsize"></a>  IThreadPoolConfig::SetSize  
  プールのスレッドの数を設定するには、このメソッドを呼び出します。  
   
 ```
@@ -137,7 +132,7 @@ STDMETHOD(SetSize)int nNumThreads);
 ### <a name="example"></a>例  
  参照してください[IThreadPoolConfig::GetSize](#getsize)です。  
   
-##  <a name="settimeout"></a>IThreadPoolConfig::SetTimeout  
+##  <a name="settimeout"></a>  IThreadPoolConfig::SetTimeout  
  このメソッドを呼び出して、スレッド プールがシャット ダウンするスレッドを待機するミリ秒単位で時間の最大値を設定します。  
   
 ```
@@ -154,5 +149,5 @@ STDMETHOD(SetTimeout)(DWORD dwMaxWait);
 ### <a name="example"></a>例  
  参照してください[IThreadPoolConfig::GetSize](#getsize)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

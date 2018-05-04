@@ -1,12 +1,9 @@
 ---
-title: "初期化子 |Microsoft ドキュメント"
-ms.custom: 
+title: 初期化子 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - declarators, as initializers
 - initializers, array element
 ms.assetid: ce301ed8-aa1c-47b2-bb39-9f0541b4af85
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: be05c53e6f41c4df4d62bd4ba1920fcf57c1f0cb
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 072b6a62bde2ab58909fd0c8dd1954e7d330ced5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="initializers"></a>初期化子
 初期化子は変数の初期値を指定します。 変数は次のコンテキストで初期化できます。  
@@ -128,7 +123,7 @@ int main() {
 }  
 ```  
   
-### <a name="default_initialization"></a>既定の初期化  
+### <a name="default_initialization"></a> 既定の初期化  
  クラス、構造体、共用体の既定値初期化は、既定のコンストラクターによる初期化です。 既定のコンストラクターは、初期化式を使用しないで、あるいは `new` キーワードを使用して呼び出すことができます。  
   
 ```cpp  
@@ -370,7 +365,7 @@ int main() {
 }  
 ```  
   
-### <a name="agginit"></a>集約の初期化  
+### <a name="agginit"></a> 集約の初期化  
  集約の初期化は、リストの初期化の一形態であり、次のような配列またはクラス型 (多くの場合は構造体や共用体) に使用されます。  
   
 -   プライベートまたはプロテクト メンバーでない。  
@@ -479,7 +474,7 @@ int main() {
 ```  
   
 ### <a name="reference-initialization"></a>参照の初期化  
- 参照型の変数は、参照型の派生元のオブジェクト型、または参照型の派生元の型に変換できるオブジェクト型により初期化する必要があります。 例:  
+ 参照型の変数は、参照型の派生元のオブジェクト型、または参照型の派生元の型に変換できるオブジェクト型により初期化する必要があります。 例えば:  
   
 ```  
 // initializing_references.cppint   
@@ -502,25 +497,25 @@ int main()
   
  Reference-type 変数は、以下の場合にのみ初期化子なしで宣言できます。  
   
--   関数宣言 (プロトタイプ)。 例:  
+-   関数宣言 (プロトタイプ)。 例えば:  
   
     ```  
     int func( int& );  
     ```  
   
--   Function-return 型宣言。 例:  
+-   Function-return 型宣言。 例えば:  
   
     ```  
     int& func( int& );  
     ```  
   
--   reference-type クラス メンバーの宣言。 例:  
+-   reference-type クラス メンバーの宣言。 例えば:  
   
     ```  
     class c {public:   int& i;};  
     ```  
   
--   `extern` として明示的に指定される変数の宣言。 例:  
+-   `extern` として明示的に指定される変数の宣言。 例えば:  
   
     ```  
     extern int& iVal;  
@@ -531,7 +526,7 @@ int main()
  ![参照型の初期化の判定グラフ](../cpp/media/vc38s71.gif "vc38S71")  
 参照型の初期化の判定グラフ  
   
- 参照`volatile`型 (として宣言されている`volatile` *typename*  **&**  *識別子*) で初期化できます`volatile`として宣言されていないオブジェクトまたは同じ型のオブジェクト`volatile`です。 することはできませんただし、で初期化する同じ**const**その型のオブジェクト。 参照を同様に、 **const**型 (として宣言されている**const** *typename*  **&**  *識別子*) で初期化できます**const**同じ種類のオブジェクト (またはとして宣言されていないオブジェクトまたはその型への変換が含まれている**const**)。 ただし、同じ型の `volatile` オブジェクトにより初期化することはできません。  
+ 参照`volatile`型 (として宣言されている`volatile` *typename * * * &** *識別子*) で初期化できます`volatile`またはと同じ型のオブジェクトとして宣言されていないオブジェクト`volatile`です。 することはできませんただし、で初期化する同じ**const**その型のオブジェクト。 参照を同様に、 **const**型 (として宣言されている**const** *typename * * * &** *識別子*) を指定できます使用して初期化**const**同じ種類のオブジェクト (またはとして宣言されていないオブジェクトまたはその型への変換が含まれている**const**)。 ただし、同じ型の `volatile` オブジェクトにより初期化することはできません。  
   
  いずれかで修飾されていない参照、 **const**または`volatile`キーワードは、どちらもとして宣言されたオブジェクトでのみ初期化できます**const**も`volatile`します。  
   

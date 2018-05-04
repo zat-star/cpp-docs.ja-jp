@@ -1,12 +1,9 @@
 ---
-title: "クラス |Microsoft ドキュメント"
-ms.custom: 
+title: クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComAggObject
@@ -26,17 +23,15 @@ helpviewer_keywords:
 - aggregation [C++], ATL objects
 - CComAggObject class
 ms.assetid: 7aa90d69-d399-477b-880d-e2cdf0ef7881
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bd06518978b37705a98e4d8b7212b8dd03a2d7b7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 426a01c1957b276174b8b36884605b69dd501de8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomaggobject-class"></a>クラス
 このクラスは、実装、 [IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)集約オブジェクトのインターフェイスです。 定義上、外部オブジェクトに集約オブジェクトが含まれています。 `CComAggObject`クラスがに似ていますが、 [CComObject クラス](../../atl/reference/ccomobject-class.md)は外部クライアントに直接アクセスできるインターフェイスを公開する点を除いて、します。  
@@ -67,7 +62,7 @@ class CComAggObject : public IUnknown,
 |名前|説明|  
 |----------|-----------------|  
 |[CComAggObject::AddRef](#addref)|集約オブジェクトの参照カウントをインクリメントします。|  
-|[CComAggObject::CreateInstance](#createinstance)|この静的関数では、新しいを作成することができます**すると <** `contained`  **>** のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。|  
+|[CComAggObject::CreateInstance](#createinstance)|この静的関数では、新しいを作成することができます**すると <** `contained` **>** のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。|  
 |[CComAggObject::FinalConstruct](#finalconstruct)|最終初期化を実行`m_contained`です。|  
 |[CComAggObject::FinalRelease](#finalrelease)|最終的な破棄を実行`m_contained`です。|  
 |[CComAggObject::QueryInterface](#queryinterface)|要求されたインターフェイスへのポインターを取得します。|  
@@ -80,7 +75,7 @@ class CComAggObject : public IUnknown,
 |[CComAggObject::m_contained](#m_contained)|デリゲート`IUnknown`外側の不明な呼び出しです。|  
   
 ## <a name="remarks"></a>コメント  
- `CComAggObject`実装する[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)集約オブジェクト。 `CComAggObject`それぞれの**IUnknown**インターフェイスで、外部のオブジェクトとは別**IUnknown**インターフェイス、および参照カウントを保持します。  
+ `CComAggObject` 実装する[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)集約オブジェクト。 `CComAggObject` それぞれの**IUnknown**インターフェイスで、外部のオブジェクトとは別**IUnknown**インターフェイス、および参照カウントを保持します。  
   
  集計の詳細については、記事を参照してください。 [ATL COM オブジェクトの基本事項](../../atl/fundamentals-of-atl-com-objects.md)です。  
   
@@ -93,10 +88,10 @@ class CComAggObject : public IUnknown,
   
  `CComAggObject`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="addref"></a>CComAggObject::AddRef  
+##  <a name="addref"></a>  CComAggObject::AddRef  
  集約オブジェクトの参照カウントをインクリメントします。  
   
 ```
@@ -106,7 +101,7 @@ STDMETHOD_(ULONG, AddRef)();
 ### <a name="return-value"></a>戻り値  
  診断に役に立たず、テスト可能な値です。  
   
-##  <a name="ccomaggobject"></a>CComAggObject::CComAggObject  
+##  <a name="ccomaggobject"></a>  CComAggObject::CComAggObject  
  コンストラクターです。  
   
 ```
@@ -122,7 +117,7 @@ CComAggObject(void* pv);
   
  デストラクター、モジュール ロック カウントをデクリメントします。  
   
-##  <a name="dtor"></a>:: ~ すると  
+##  <a name="dtor"></a>  :: ~ すると  
  デストラクターです。  
   
 ```
@@ -132,8 +127,8 @@ CComAggObject(void* pv);
 ### <a name="remarks"></a>コメント  
  呼び出し、割り当てられているすべてのリソースを解放[FinalRelease](#finalrelease)、およびモジュールのロック カウントをデクリメントします。  
   
-##  <a name="createinstance"></a>CComAggObject::CreateInstance  
- この静的関数では、新しいを作成することができます**すると <** `contained`  **>** のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。  
+##  <a name="createinstance"></a>  CComAggObject::CreateInstance  
+ この静的関数では、新しいを作成することができます**すると <** `contained` **>** のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。  
   
 ```
 static HRESULT WINAPI CreateInstance(
@@ -143,7 +138,7 @@ static HRESULT WINAPI CreateInstance(
   
 ### <a name="parameters"></a>パラメーター  
  `pp`  
- [out]ポインター、**すると\<***に含まれる*  **>** ポインター。 場合`CreateInstance`は成功せず`pp`に設定されている**NULL**です。  
+ [out]ポインター、**すると\<* * * に含まれる* **>** ポインター。 場合`CreateInstance`は成功せず`pp`に設定されている**NULL**です。  
   
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
@@ -153,7 +148,7 @@ static HRESULT WINAPI CreateInstance(
   
  必要な送信しないオブジェクトへのアクセスが、引き続きのオーバーヘッドがなく、新しいオブジェクトを作成する場合`CoCreateInstance`を使用して[あって](../../atl/reference/ccomcoclass-class.md#createinstance)代わりにします。  
   
-##  <a name="finalconstruct"></a>CComAggObject::FinalConstruct  
+##  <a name="finalconstruct"></a>  CComAggObject::FinalConstruct  
  オブジェクトの構築の最終段階で呼び出されると、このメソッドの最後の初期化を実行、[で呼び出され](#m_contained)メンバー。  
   
 ```
@@ -163,14 +158,14 @@ HRESULT FinalConstruct();
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="finalrelease"></a>CComAggObject::FinalRelease  
+##  <a name="finalrelease"></a>  CComAggObject::FinalRelease  
  オブジェクトの破棄中に呼び出されると、このメソッドは、解放、[で呼び出され](#m_contained)メンバー。  
   
 ```
 void FinalRelease();
 ```  
   
-##  <a name="m_contained"></a>CComAggObject::m_contained  
+##  <a name="m_contained"></a>  CComAggObject::m_contained  
  A[した](../../atl/reference/ccomcontainedobject-class.md)クラスから派生したオブジェクト。  
   
 ```
@@ -184,7 +179,7 @@ CComContainedObject<contained> m_contained;
 ### <a name="remarks"></a>コメント  
  すべて**IUnknown**を介して呼び出します`m_contained`外側の不明な種類に委任されます。  
   
-##  <a name="queryinterface"></a>CComAggObject::QueryInterface  
+##  <a name="queryinterface"></a>  CComAggObject::QueryInterface  
  要求されたインターフェイスへのポインターを取得します。  
   
 ```
@@ -209,7 +204,7 @@ HRESULT STDMETHODCALLTYPE QueryInterface(Q** pp);
 ### <a name="remarks"></a>コメント  
  要求されたインターフェイスがある場合**IUnknown**、 `QueryInterface` 、集計されたオブジェクトの独自のポインターを返します**IUnknown**し、参照カウントをインクリメントします。 それ以外の場合、このメソッド クエリ インターフェイスを介して、`CComContainedObject`メンバー、[で呼び出され](#m_contained)です。  
   
-##  <a name="release"></a>CComAggObject::Release  
+##  <a name="release"></a>  CComAggObject::Release  
  集約オブジェクトの参照カウントをデクリメントします。  
   
 ```
@@ -219,7 +214,7 @@ STDMETHOD_(ULONG, Release)();
 ### <a name="return-value"></a>戻り値  
  デバッグ ビルドで、**リリース**診断に役に立たず、テスト可能な値を返します。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CComObject クラス](../../atl/reference/ccomobject-class.md)   
  [CComPolyObject クラス](../../atl/reference/ccompolyobject-class.md)   
  [DECLARE_AGGREGATABLE](aggregation-and-class-factory-macros.md#declare_aggregatable)   

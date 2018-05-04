@@ -1,13 +1,10 @@
 ---
-title: "MSBuild (Visual C) |Microsoft ドキュメント"
-ms.custom: 
+title: MSBuild (Visual C) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - MSBuild
 dev_langs:
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - MSBuild
 ms.assetid: 7a1be7ff-0312-4669-adf2-5f5bf507d560
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0db569d456a85418f01dfdf3abab116d68d99dff
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 743aba156f9b937f28242b63e6deaf4c6dfb8369
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="msbuild-visual-c"></a>MSBuild (Visual C++)
 使用することができます、 **MSBuild**ツール、コマンド プロンプトからの Visual C アプリケーションをビルドします。 ビルド プロセスは、プロジェクト ファイル (.vcxproj) を作成して編集することで、情報によって制御されます。 プロジェクト ファイルでは、ステージ、条件、およびイベントに基づくビルド オプションがビルドを指定します。  
@@ -43,5 +38,5 @@ ms.lasthandoff: 12/21/2017
 |[方法: カスタム ツールをプロジェクト プロパティに統合する](../build/how-to-integrate-custom-tools-into-the-project-properties.md)|プロジェクトのプロパティにカスタム ツールのオプションを追加する方法を示します。|  
 |[方法: ターゲット フレームワークおよびプラットフォームのツールセットを変更する](../build/how-to-modify-the-target-framework-and-platform-toolset.md)|複数のフレームワークまたはツールセットのプロジェクトをコンパイルする方法を示します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コマンドラインでの C/C++ コードのビルド](../build/building-on-the-command-line.md)

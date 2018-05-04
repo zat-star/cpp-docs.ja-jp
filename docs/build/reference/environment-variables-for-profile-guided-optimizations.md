@@ -12,18 +12,17 @@ helpviewer_keywords:
 ms.assetid: f95a6d1e-49a4-4802-a144-092026b600a3
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 701f0292d9960801139abc698946122718247645
-ms.sourcegitcommit: ee7d74683af7631441c8c7f65ef5ceceaee4a5ee
+ms.openlocfilehash: 19edc9c8a2702e5b7ac9ae4a49364718f19d3900
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="environment-variables-for-profile-guided-optimizations"></a>ガイド付き最適化のプロファイルの環境変数
 
-作成されたイメージのテスト シナリオに影響する次の 3 つの環境変数がある**/LTCG:PGI**プロファイル ガイド付き最適化の。
+作成されたイメージのテスト シナリオに影響する次の 3 つの環境変数がある **/LTCG:PGI**プロファイル ガイド付き最適化の。
 
 - **PogoSafeMode**アプリケーションのプロファイリングに高速モードとセーフ モードを使用するかどうかを指定します。
 
@@ -35,7 +34,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="pogosafemode"></a>PogoSafeMode
 
-この環境変数は推奨されません。 使用して、 **EXACT**または**noexact は、**引数**/GENPROFILE**または**/FASTGENPROFILE**この動作を制御します。
+この環境変数は推奨されません。 使用して、 **EXACT**または**noexact は、**引数 **/GENPROFILE**または **/FASTGENPROFILE**この動作を制御します。
 
 オフに設定するか、 **PogoSafeMode** x86 でプロファイリングをアプリケーションに高速モードとセーフ モードを使用するかどうかを指定する環境変数のシステムです。
 
@@ -43,7 +42,7 @@ ms.lasthandoff: 03/22/2018
 
 既定では、PGO プロファイリングは高速モードで動作します。 **PogoSafeMode**がセーフ モードを使用するかどうかにのみ必要です。
 
-PGO プロファイリングをセーフ モードでを実行する、環境変数を使用する必要がありますか、 **PogoSafeMode**かリンカー スイッチ**/PogoSafeMode**、システムによって異なります。 x64 コンピューターでプロファイリングを実行する場合は、リンカー スイッチを使用する必要があります。 X86 でプロファイリングを実行するかどうか、コンピューター、リンカーを使用することは切り替えるか、設定、 **PogoSafeMode**は最適化プロセスを開始する前に、任意の値を環境変数。
+PGO プロファイリングをセーフ モードでを実行する、環境変数を使用する必要がありますか、 **PogoSafeMode**かリンカー スイッチ **/PogoSafeMode**、システムによって異なります。 x64 コンピューターでプロファイリングを実行する場合は、リンカー スイッチを使用する必要があります。 X86 でプロファイリングを実行するかどうか、コンピューター、リンカーを使用することは切り替えるか、設定、 **PogoSafeMode**は最適化プロセスを開始する前に、任意の値を環境変数。
 
 ### <a name="pogosafemode-syntax"></a>PogoSafeMode 構文
 
@@ -53,7 +52,7 @@ PGO プロファイリングをセーフ モードでを実行する、環境変
 
 ## <a name="vcprofileallocscale"></a>VCPROFILE_ALLOC_SCALE
 
-この環境変数は推奨されません。 使用して、 **MEMMIN**と**MEMMAX**引数**/GENPROFILE**または**/FASTGENPROFILE**この動作を制御します。
+この環境変数は推奨されません。 使用して、 **MEMMIN**と**MEMMAX**引数 **/GENPROFILE**または **/FASTGENPROFILE**この動作を制御します。
 
 変更、 **VCPROFILE_ALLOC_SCALE**プロファイル データを保持するメモリの量を変更する環境変数が割り当てられます。 まれなケースではありません十分なメモリをサポートするために使用可能なテストのシナリオを実行している場合は、プロファイル データを収集します。 ような場合、メモリの量を増やすを設定して**VCPROFILE_ALLOC_SCALE**です。 十分なメモリがあることを示すテストの実行中にエラー メッセージを受信する場合より大きい値を割り当てる**VCPROFILE_ALLOC_SCALE**テストの実行がメモリ不足のエラーなく完了するまでです。
 
@@ -80,5 +79,5 @@ PGO プロファイリングをセーフ モードでを実行する、環境変
 ## <a name="see-also"></a>関連項目
 
 [ガイド付き最適化のプロファイル](../../build/reference/profile-guided-optimizations.md)<br/>
-[/GENPROFILE and /FASTGENPROFILE](genprofile-fastgenprofile-generate-profiling-instrumented-build.md)<br/>
+[/GENPROFILE と/FASTGENPROFILE](genprofile-fastgenprofile-generate-profiling-instrumented-build.md)<br/>
 [/USEPROFILE](useprofile.md)<br/>

@@ -1,13 +1,10 @@
 ---
-title: "/Qspectre |Microsoft ドキュメント"
-ms.custom: 
+title: /Qspectre |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 1/23/2018
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 f1_keywords:
@@ -16,14 +13,13 @@ helpviewer_keywords:
 - /Qspectre
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b114239ad57b484c9290fbe1cc2f0ae18cb565ec
-ms.sourcegitcommit: 9a0a287d6940591523af959ebdac5affa36220da
+ms.openlocfilehash: 3d87850ae5413ccf876eb4d4b44b34e34527ef9a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="qspectre"></a>/Qspectre
 
@@ -49,17 +45,17 @@ Spectre バリアント 1 セキュリティの脆弱性を軽減するために
 
 **/Qspectre**オプションは、Visual Studio 2017 バージョン 15.5.5 および 2018 年 1 月 23日以降に行われたすべての更新を Microsoft Visual C コンパイラ (MSVC) で使用できます。
 
-15.5 とすべてのプレビューの Visual Studio version 15.6 が含まれているドキュメントに未記載のオプションには Visual Studio 2017 バージョンのすべてのバージョン**/d2guardspecload**、つまりと等価の初期動作**/Qspectre**. 使用することができます**/d2guardspecload**これらのバージョンのコンパイラで自分のコードに同じの緩和策を適用します。 使用するようにビルドを更新してください。 **/Qspectre** ; オプションをサポートするコンパイラで、 **/Qspectre**オプションは、以降のバージョンのコンパイラで新しい緩和策をサポートも可能性があります。
+15.5 とすべてのプレビューの Visual Studio version 15.6 が含まれているドキュメントに未記載のオプションには Visual Studio 2017 バージョンのすべてのバージョン **/d2guardspecload**、つまりと等価の初期動作 **/Qspectre**. 使用することができます **/d2guardspecload**これらのバージョンのコンパイラで自分のコードに同じの緩和策を適用します。 使用するようにビルドを更新してください。 **/Qspectre** ; オプションをサポートするコンパイラで、 **/Qspectre**オプションは、以降のバージョンのコンパイラで新しい緩和策をサポートも可能性があります。
 
 ### <a name="effect"></a>効果
 
 **/Qspectre**オプションは、境界チェックのバイパス、バリアント型 1、労力を軽減するためにコードを出力[CVE 2017-5753](https://nvd.nist.gov/vuln/detail/CVE-2017-5753)です。 この機能は、予測のコード実行のバリアとして機能する命令の挿入で機能します。 プロセッサ推理を軽減するために使用される具体的な指示はプロセッサとのマイクロ アーキテクチャに依存し、将来のバージョンのコンパイラで変更可能性があります。
 
-ときに、 **/Qspectre**オプションが有効になっている、コンパイラは予測の実行の範囲チェックをバイパスする可能性があり、バリアの命令を挿入します。 ここでのインスタンスを識別しようとしています。 バリアント 1 のインスタンスを識別する、コンパイラに実行する分析に制限があることに注意してくださいに重要です。 そのため、バリアント 1 のすべての可能なインスタンスが インストルメント化されているという保証はありません**/Qspectre**です。
+ときに、 **/Qspectre**オプションが有効になっている、コンパイラは予測の実行の範囲チェックをバイパスする可能性があり、バリアの命令を挿入します。 ここでのインスタンスを識別しようとしています。 バリアント 1 のインスタンスを識別する、コンパイラに実行する分析に制限があることに注意してくださいに重要です。 そのため、バリアント 1 のすべての可能なインスタンスが インストルメント化されているという保証はありません **/Qspectre**です。
 
 ### <a name="performance-impact"></a>パフォーマンスに与える影響
 
-パフォーマンスに与える影響**/Qspectre**わずかいくつかの非常に大きなコード ベースである場合に、発生の保証はありませんその下にあるコードのパフォーマンスが**/Qspectre**でも影響を受けません。 パフォーマンス オプションの影響を決定するコードをベンチマーク必要があります。 パフォーマンスが重要なブロックまたはループではの緩和策が必要ないことがわかっている場合、軽減選択的に無効にできますを使用して、 [__declspec(spectre(nomitigation))](../../cpp/spectre.md)ディレクティブです。 このディレクティブはのみをサポートするコンパイラでは使用できません、 **/d2guardspecload**オプション。
+パフォーマンスに与える影響 **/Qspectre**わずかいくつかの非常に大きなコード ベースである場合に、発生の保証はありませんその下にあるコードのパフォーマンスが **/Qspectre**でも影響を受けません。 パフォーマンス オプションの影響を決定するコードをベンチマーク必要があります。 パフォーマンスが重要なブロックまたはループではの緩和策が必要ないことがわかっている場合、軽減選択的に無効にできますを使用して、 [__declspec(spectre(nomitigation))](../../cpp/spectre.md)ディレクティブです。 このディレクティブはのみをサポートするコンパイラでは使用できません、 **/d2guardspecload**オプション。
 
 ### <a name="additional-information"></a>追加情報
 

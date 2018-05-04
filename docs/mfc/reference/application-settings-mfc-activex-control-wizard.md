@@ -1,12 +1,12 @@
 ---
-title: "MFC ActiveX コントロール ウィザード、アプリケーションの設定 |Microsoft ドキュメント"
-ms.custom: 
+title: MFC ActiveX コントロール ウィザード、アプリケーションの設定 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vc.appwiz.mfc.ctl.appset
@@ -15,7 +15,7 @@ dev_langs:
 helpviewer_keywords:
 - MFC ActiveX Control Wizard, application settings
 ms.assetid: 48475194-cc63-467f-8499-f142269a4c1c
-caps.latest.revision: 
+caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -27,7 +27,7 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/21/2017
 ---
-# <a name="application-settings-mfc-activex-control-wizard"></a>[アプリケーションの設定] (MFC ActiveX コントロール ウィザード)
+# <a name="application-settings-mfc-activex-control-wizard"></a>[アプリケーションの設定] \(MFC ActiveX コントロール ウィザード)
 MFC ActiveX コントロール ウィザードのこのページを使用して、基本的な機能を設計して新しい MFC ActiveX プロジェクトに追加します。 これらの設定は、アプリケーション自体に適用され、コントロールの特定の機能や要素には適用されません。  
   
  **ランタイム ライセンス**  

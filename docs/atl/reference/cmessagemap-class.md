@@ -1,12 +1,9 @@
 ---
-title: "CMessageMap クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CMessageMap クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CMessageMap
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - message maps, ATL
 - ATL, message handlers
 ms.assetid: 1f97bc16-a8a0-4cf0-b90f-1778813a5c8e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 04aff6922358048fcbd330096eb26a412cdb75ee
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 187d9964da0929516207a67b0e3a769649fc375b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cmessagemap-class"></a>CMessageMap クラス
 このクラスは、オブジェクトのメッセージが別のオブジェクトによってアクセスするマップを使用します。  
@@ -52,7 +47,7 @@ class ATL_NO_VTABLE CMessageMap
 |[CMessageMap::ProcessWindowMessage](#processwindowmessage)|メッセージ マップにアクセスする、 `CMessageMap`-クラスを派生します。|  
   
 ## <a name="remarks"></a>コメント  
- `CMessageMap`オブジェクトのメッセージを許可する抽象基本クラスのマップに別のオブジェクトによってアクセスできます。 メッセージ マップを公開するオブジェクトの順序ではそのクラスから派生しなければなりません`CMessageMap`です。  
+ `CMessageMap` オブジェクトのメッセージを許可する抽象基本クラスのマップに別のオブジェクトによってアクセスできます。 メッセージ マップを公開するオブジェクトの順序ではそのクラスから派生しなければなりません`CMessageMap`です。  
   
  ATL を使用して`CMessageMap`サポートが含まれている windows および動的メッセージ マップのチェインにします。 たとえば、そのクラスを含む、 [CContainedWindow](../../atl/reference/ccontainedwindowt-class.md)オブジェクトから派生しなければなりません`CMessageMap`です。 次のコードがから取得した、 [SUBEDIT](../../visual-cpp-samples.md)サンプルです。 を通じて[CComControl](../../atl/reference/ccomcontrol-class.md)、`CAtlEdit`から自動的に派生`CMessageMap`です。  
   
@@ -62,10 +57,10 @@ class ATL_NO_VTABLE CMessageMap
   
  メッセージ マップの詳細については、次を参照してください[メッセージ マップ](../../atl/message-maps-atl.md)"ATL ウィンドウ クラス"記事の内容。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="processwindowmessage"></a>CMessageMap::ProcessWindowMessage  
+##  <a name="processwindowmessage"></a>  CMessageMap::ProcessWindowMessage  
  によって識別されるメッセージ マップにアクセスする`dwMsgMapID`で、 `CMessageMap`-クラスを派生します。  
   
 ```
@@ -103,7 +98,7 @@ virtual BOOL ProcessWindowMessage(
 ### <a name="remarks"></a>コメント  
  ウィンドウ プロシージャによって呼び出される、 [CContainedWindow](../../atl/reference/ccontainedwindowt-class.md)オブジェクトまたはオブジェクトのことを動的にチェーン メッセージ マップにします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CDynamicChain クラス](../../atl/reference/cdynamicchain-class.md)   
  [送るに](message-map-macros-atl.md#begin_msg_map)   
  [ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map)   

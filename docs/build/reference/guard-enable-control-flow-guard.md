@@ -2,29 +2,24 @@
 title: -guard (有効にする Control Flow Guard) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /guard
 - VC.Project.VCCLCompilerTool.ControlFlowGuard
 dev_langs:
 - C++
 ms.assetid: be495323-f59f-4cf3-a6b6-8ee69e6a19dd
-caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e7f87c101122b8f74e3bffefd42b1d9a9ddc55c3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b5c60ff444189e9e6b7919b43649b75722ee7249
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="guard-enable-control-flow-guard"></a>/guard (制御フロー ガードを有効にする)
 制御フロー ガードのセキュリティ チェックのコンパイラ生成を有効にします。  
@@ -36,7 +31,7 @@ ms.lasthandoff: 12/21/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- **/guard:cf** オプションにより、コンパイラがコンパイル時に間接的な呼び出しのターゲットに関する制御フローを分析し、実行時に、ターゲットを確認するコードを挿入します。 既定では、 **/guard:cf** は無効になっており、明示的に有効にする必要があります。 このオプションを明示的に無効にするには、 **/guard:cf-**を使用します。  
+ **/guard:cf** オプションにより、コンパイラがコンパイル時に間接的な呼び出しのターゲットに関する制御フローを分析し、実行時に、ターゲットを確認するコードを挿入します。 既定では、 **/guard:cf** は無効になっており、明示的に有効にする必要があります。 このオプションを明示的に無効にするには、 **/guard:cf-** を使用します。  
   
  **/guard:cf** 制御フローガード (CFG) オプションが指定されている場合、コンパイラとリンカーがランタイム セキュリティ チェックを追加で挿入して、コードを侵害する試みを検出します。 コンパイルとリンク中に、コードのすべての間接的な呼び出しが分析され、コードを正常に実行したときに到達可能なすべての場所が検索されます。 この情報は、バイナリのヘッダーの追加の構造に格納されます。 また、コンパイラは、コード内の間接的な各呼び出しの前に、ターゲットが検証済みの場所のいずれかにあることを確認するチェックを挿入します。 CFG 対応オペレーティング システム上の実行時にチェックに失敗した場合、オペレーティング システムはプログラムを閉じます。  
   
@@ -52,12 +47,12 @@ ms.lasthandoff: 12/21/2017
   
 1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **[構成プロパティ]**、 **[C/C++]**、 **[コード生成]**の順に選択します。  
+2.  **[構成プロパティ]**、 **[C/C++]**、 **[コード生成]** の順に選択します。  
   
 3.  **[制御フロー ガード]** プロパティを選択します。  
   
 4.  ドロップダウン コントロールで、制御フロー ガードを有効にするには **[はい]** を選択し、無効にするには **[いいえ]** を選択します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

@@ -1,12 +1,9 @@
 ---
-title: "CWinTraits クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CWinTraits クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CWinTraits
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - CFrameWinTraits class
 - CControlWinTraits class
 ms.assetid: f78f486e-6d9c-42c6-8e86-371e05aa7e59
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5c5e71f969f86aee419a0ff9d3701f4d43be5c32
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ea1eafc6376c44a09d13fb513d41f222048708d9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cwintraits-class"></a>CWinTraits クラス
 このクラスは、window オブジェクトを作成するときに使用するスタイルを標準化するためのメソッドを提供します。  
@@ -80,10 +75,10 @@ template <DWORD t_dwStyle = 0, DWORD t_dwExStyle = 0>  class CWinTraits
   
  特定のスタイルが設定されているインスタンスごとの単位で設定するには、他のスタイルを許容しつつ、ウィンドウ クラスのすべてのインスタンスを使用することを確認する場合は、 [CWinTraitsOR](../../atl/reference/cwintraitsor-class.md)代わりにします。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlwin.h  
   
-##  <a name="getwndstyle"></a>CWinTraits::GetWndStyle  
+##  <a name="getwndstyle"></a>  CWinTraits::GetWndStyle  
  標準のスタイルを取得するには、この関数を呼び出して、`CWinTraits`オブジェクト。  
   
 ```
@@ -97,7 +92,7 @@ static DWORD GetWndStyle(DWORD dwStyle);
 ### <a name="return-value"></a>戻り値  
  オブジェクトの標準的なウィンドウのスタイルです。  
   
-##  <a name="getwndexstyle"></a>CWinTraits::GetWndExStyle  
+##  <a name="getwndexstyle"></a>  CWinTraits::GetWndExStyle  
  拡張スタイルを取得するには、この関数を呼び出して、`CWinTraits`オブジェクト。  
   
 ```
@@ -111,7 +106,7 @@ static DWORD GetWndExStyle(DWORD dwExStyle);
 ### <a name="return-value"></a>戻り値  
  オブジェクトの拡張ウィンドウ スタイル。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスのメンバー](http://msdn.microsoft.com/en-us/dbe6a147-3f01-4aea-a3fb-fe6ebadc31f8)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [ウィンドウの特徴を理解する](../../atl/understanding-window-traits.md)

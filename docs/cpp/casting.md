@@ -1,12 +1,9 @@
 ---
-title: "キャスト |Microsoft ドキュメント"
-ms.custom: 
+title: キャスト |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - polymorphic classes [C++]
 - classes [C++], polymorphism
 ms.assetid: 3dbeb06e-2f4b-4693-832d-624bc8ec95de
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9974b86f99164257e854bffd07393b96998040ff
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 07abd7c6a6a5c646dade15299fe6cfe78d9ff1d8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="casting"></a>キャスト
 C++ 言語では、仮想関数を含む基底クラスからクラスが派生している場合は、その基底クラスの型へのポインターを使用して、派生クラス オブジェクトに存在する仮想関数の実装を呼び出すことができると規定されています。 仮想関数を含むクラスは、"ポリモーフィックなクラス" と呼ばれます。  
@@ -41,7 +36,7 @@ C++ 言語では、仮想関数を含む基底クラスからクラスが派生�
   
  `C` 型のオブジェクトは、次の図に示すように視覚化できます。  
   
- ![クラス C sub &#45; オブジェクト B と A](../cpp/media/vc38zz2.gif "vc38ZZ2")  
+ ![Sub を持つクラス C&#45;オブジェクト B と A](../cpp/media/vc38zz2.gif "vc38ZZ2")  
 B サブオブジェクトと A サブオブジェクトを持つクラス C  
   
  `C` クラスのインスタンスには、`B` サブオブジェクトと `A` サブオブジェクトがあります。 `C` サブオブジェクトと `A` サブオブジェクトを含む `B` のインスタンスは、「完全なオブジェクト」です。  
@@ -56,5 +51,5 @@ B サブオブジェクトと A サブオブジェクトを持つクラス C
   
 -   [実行時型情報](../cpp/run-time-type-information.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [式](../cpp/expressions-cpp.md)

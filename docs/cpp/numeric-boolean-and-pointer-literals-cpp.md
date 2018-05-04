@@ -1,12 +1,9 @@
 ---
-title: "数値、ブール値、およびポインターのリテラル (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 数値、ブール値、およびポインターのリテラル (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - constants, literals
 - literals [C++]
 ms.assetid: 17c09fc3-3ad7-47e2-8b48-ba8ae994edc8
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 91f79a2703dee8a162b971a78eba7e13a9849b43
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8ce5f2c6703b18747dd4a2c51fe540d01370b38b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="numeric-boolean-and-pointer-literals--c"></a>数値、ブール値、およびポインターのリテラル (C++)
 リテラルとは、値を直接に表すプログラム要素です。 ここでは、整数型、浮動小数点型、ブール値型、およびポインター型のリテラルについて説明します。 文字列リテラルおよび文字リテラルについては、次を参照してください。[文字列と文字リテラル (C++)](../cpp/string-and-character-literals-cpp.md)です。 これらのカテゴリのいずれかに基づく独自のリテラルを定義することもできます。詳細については、次を参照してください[ユーザー定義リテラル (C++)。](../cpp/user-defined-literals-cpp.md)  
@@ -49,7 +44,7 @@ MyClass* mc = nullptr;      // pointer literal
   
  プレフィックスもサフィックスも付かない場合、コンパイラは整数リテラル値に型 `int` (32 ビット) を与えます。値が収まりきらない場合は型 `long long` (64 ビット) を与えます。  
   
- 10 進数の整数リテラルを指定するには、ゼロ以外の数字で指定を始めます。 例:  
+ 10 進数の整数リテラルを指定するには、ゼロ以外の数字で指定を始めます。 例えば:  
   
 ```  
 int i = 157;   // Decimal literal  
@@ -59,21 +54,21 @@ int m = 36'000'000  // digit separators make large values more readable
 int   
 ```  
   
- 8 進数の整数リテラルを指定するには、0 で指定を始め、0 ～ 7 の範囲の一連の桁を続けます。 数字の 8 と 9 は、8 進数のリテラルを指定する場合はエラーになります。 例:  
+ 8 進数の整数リテラルを指定するには、0 で指定を始め、0 ～ 7 の範囲の一連の桁を続けます。 数字の 8 と 9 は、8 進数のリテラルを指定する場合はエラーになります。 例えば:  
   
 ```  
 int i = 0377;   // Octal literal  
 int j = 0397;        // Error: 9 is not an octal digit  
 ```  
   
- 16 進数の整数リテラルを指定するには、`0x` または `0X` ("x" の大文字と小文字は区別されません) で指定を始め、`0` ～ `9` と `a` (または `A`) ～ `f` (または `F`) の範囲の一連の桁を続けます。 16 進数の `a` (または `A`) ～ `f` (または `F`) は、10 ～ 15 の範囲の値を示します。 例:  
+ 16 進数の整数リテラルを指定するには、`0x` または `0X` ("x" の大文字と小文字は区別されません) で指定を始め、`0` ～ `9` と `a` (または `A`) ～ `f` (または `F`) の範囲の一連の桁を続けます。 16 進数の `a` (または `A`) ～ `f` (または `F`) は、10 ～ 15 の範囲の値を示します。 例えば:  
   
 ```  
 int i = 0x3fff;   // Hexadecimal literal  
 int j = 0X3FFF;        // Equal to i  
 ```  
   
- 符号なしの型を指定するには、いずれかを使用、 **u**または**U**サフィックス。 Long 型を指定するには、いずれかを使用、 **l**または**L**サフィックス。 64 ビットの整数型を指定するには、サフィックスとして LL、ll を使用します。 i64 サフィックスはまだサポートされていますが、Microsoft に固有なものであり移植性がないため、使用を避けることをお勧めします。 例:  
+ 符号なしの型を指定するには、いずれかを使用、 **u**または**U**サフィックス。 Long 型を指定するには、いずれかを使用、 **l**または**L**サフィックス。 64 ビットの整数型を指定するには、サフィックスとして LL、ll を使用します。 i64 サフィックスはまだサポートされていますが、Microsoft に固有なものであり移植性がないため、使用を避けることをお勧めします。 例えば:  
   
 ```  
 unsigned val_1 = 328u;             // Unsigned value  
@@ -149,7 +144,7 @@ if (num < 100)
   
  前の例では、"MAXIMUM_ERROR_THRESHOLD"など、明確な意味を伝達する名前付き定数を使用する方がよい場合があります。 戻り値の "Success" がエンドユーザーに表示される場合は、ファイルの 1 つの場所に格納でき他の言語にローカライズできる名前付き文字列定数を使用する方がよい場合があります。 名前付き定数を使用すると、他のユーザーにとってもコードの意図が理解しやすくなります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [構文規則](../cpp/lexical-conventions.md)   
  [C++ 文字列リテラル](../cpp/string-and-character-literals-cpp.md)   
  [C++ ユーザー定義リテラル](../cpp/user-defined-literals-cpp.md)

@@ -1,12 +1,9 @@
 ---
-title: "セキュリティのグローバル関数 |Microsoft ドキュメント"
-ms.custom: 
+title: セキュリティのグローバル関数 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlsecurity/ATL::AtlGetDacl
@@ -25,17 +22,15 @@ helpviewer_keywords:
 - ACL object global functions
 - security IDs [C++]
 ms.assetid: 6a584bfe-16b7-47f4-8439-9c789c41567a
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c1439fcf15a9359d3a548945edc76c1ddcf8675f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ad9ad170706b72c9d236e095db0e2b6df00031ff
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-global-functions"></a>セキュリティのグローバル関数
 これらの関数は、オブジェクトの SID と ACL オブジェクトを変更するためのサポートを提供します。  
@@ -55,10 +50,10 @@ ms.lasthandoff: 12/21/2017
 |[AtlSetSacl](#atlsetsacl)|指定されたオブジェクトのシステム アクセス制御リスト (SACL: System Access Control List) の情報を設定します。|  
 |[AtlGetSecurityDescriptor](#atlgetsecuritydescriptor)|指定されたオブジェクトのセキュリティ記述子を取得します。|  
 
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="atlgetdacl"></a>AtlGetDacl  
+##  <a name="atlgetdacl"></a>  AtlGetDacl  
  指定されたオブジェクトの随意アクセス制御リスト (DACL: Discretionary Access Control List) の情報を取得します。  
   
 > [!IMPORTANT]
@@ -87,7 +82,7 @@ inline bool AtlGetDacl(
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、アサーション エラーが発生する場合`hObject`または`pDacl`が無効です。  
   
-##  <a name="atlsetdacl"></a>AtlSetDacl  
+##  <a name="atlsetdacl"></a>  AtlSetDacl  
  指定されたオブジェクトの随意アクセス制御リスト (DACL: Discretionary Access Control List) の情報を設定します。  
   
 > [!IMPORTANT]
@@ -119,10 +114,10 @@ inline bool AtlSetDacl(
   
 ### <a name="remarks"></a>コメント  
  場合はデバッグ ビルドで、アサーション エラーが発生`hObject`が有効でない場合、または`dwInheritanceFlowControl`3 つの許容値のいずれかではありません。  
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="atlgetgroupsid"></a>AtlGetGroupSid  
+##  <a name="atlgetgroupsid"></a>  AtlGetGroupSid  
  オブジェクトのグループ セキュリティ識別子 (SID: Security Identifier) を取得します。  
   
 > [!IMPORTANT]
@@ -148,10 +143,10 @@ inline bool AtlGetGroupSid(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="atlsetgroupsid"></a>AtlSetGroupSid  
+##  <a name="atlsetgroupsid"></a>  AtlSetGroupSid  
  オブジェクトのグループ セキュリティ識別子 (SID: Security Identifier) を設定します。  
   
 > [!IMPORTANT]
@@ -177,10 +172,10 @@ inline bool AtlSetGroupSid(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="atlgetownersid"></a>AtlGetOwnerSid  
+##  <a name="atlgetownersid"></a>  AtlGetOwnerSid  
  オブジェクトの所有者セキュリティ識別子 (SID: Security Identifier) を取得します。  
   
 > [!IMPORTANT]
@@ -206,10 +201,10 @@ inline bool AtlGetOwnerSid(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="atlsetownersid"></a>AtlSetOwnerSid  
+##  <a name="atlsetownersid"></a>  AtlSetOwnerSid  
  オブジェクトの所有者セキュリティ識別子 (SID: Security Identifier) を設定します。  
   
 > [!IMPORTANT]
@@ -235,10 +230,10 @@ inline bool AtlSetOwnerSid(
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="atlgetsacl"></a>AtlGetSacl  
+##  <a name="atlgetsacl"></a>  AtlGetSacl  
  指定されたオブジェクトのシステム アクセス制御リスト (SACL: System Access Control List) の情報を取得します。  
   
 > [!IMPORTANT]
@@ -271,10 +266,10 @@ inline bool AtlGetSacl(
 ### <a name="remarks"></a>コメント  
  場合`AtlGetSacl`多数の異なるオブジェクトに何度も呼び出すは効率的で、関数を呼び出す前に 1 回 SE_SECURITY_NAME 特権を有効にすることが`bRequestNeededPrivileges`を false に設定します。  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="atlsetsacl"></a>AtlSetSacl  
+##  <a name="atlsetsacl"></a>  AtlSetSacl  
  指定されたオブジェクトのシステム アクセス制御リスト (SACL: System Access Control List) の情報を設定します。  
   
 > [!IMPORTANT]
@@ -313,10 +308,10 @@ inline bool AtlSetSacl(
   
  場合`AtlSetSacl`多数の異なるオブジェクトに何度も呼び出すは効率的で、関数を呼び出す前に 1 回 SE_SECURITY_NAME 特権を有効にすることが`bRequestNeededPrivileges`を false に設定します。  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
 
-##  <a name="atlgetsecuritydescriptor"></a>AtlGetSecurityDescriptor  
+##  <a name="atlgetsecuritydescriptor"></a>  AtlGetSecurityDescriptor  
  指定されたオブジェクトのセキュリティ記述子を取得します。  
   
 > [!IMPORTANT]
@@ -355,8 +350,8 @@ inline bool AtlGetSecurityDescriptor(
 ### <a name="remarks"></a>コメント  
  場合`AtlGetSecurityDescriptor`多数の異なるオブジェクトに何度も呼び出すは効率的で、関数を呼び出す前に 1 回 SE_SECURITY_NAME 特権を有効にすることが`bRequestNeededPrivileges`を false に設定します。  
 
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h 
    
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [関数](../../atl/reference/atl-functions.md)

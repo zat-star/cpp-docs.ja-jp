@@ -1,13 +1,10 @@
 ---
-title: "順序 (関数の順序) |Microsoft ドキュメント"
-ms.custom: 
+title: 順序 (関数の順序) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCLinkerTool.FunctionOrder
 - /order
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - LINK tool [C++], swap tuning
 - paging, optimizing
 ms.assetid: ecf5eb3e-e404-4e86-9a91-4e5ec157261a
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2264296d288f9105a59c0ac5099c1dedef55ee2f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: de9b0fb629a1bf984929ec170f05e25e740e9cd5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="order-put-functions-in-order"></a>/ORDER (関数の順序)
 
@@ -66,12 +61,12 @@ COMDAT の順序を指定するには、作成、*応答ファイル*、リン�
 
 この場合、名前を指定`?cpp_func@@YAHH@Z`、 `c_func`、および`main`応答ファイルにします。
 
-1 つ以上の場合**/order**リンカー オプション オプションが表示される、指定された最後の 1 つは有効になります。
+1 つ以上の場合 **/order**リンカー オプション オプションが表示される、指定された最後の 1 つは有効になります。
 
 **/Order**オプションは、インクリメンタル リンクを無効になります。 リンカー警告が表示される[LNK4075](../../error-messages/tool-errors/linker-tools-warning-lnk4075.md)インクリメンタル リンクが有効になっている場合、または指定した場合に、このオプションを指定すると、 [/ZI (増分 PDB)](../../build/reference/z7-zi-zi-debug-information-format.md)コンパイラ オプション。 この警告をミュートするには、使用することができます、 [/INCREMENTAL:NO](../../build/reference/incremental-link-incrementally.md)インクリメンタル リンクをオフにして、使用するリンカー オプション、 [/Zi (生成 PDB)](../../build/reference/z7-zi-zi-debug-information-format.md)インクリメンタル リンクせずに PDB を生成するコンパイラ オプション。
 
 > [!NOTE]
-> 静的関数名は、パブリック シンボル名ではないために、リンクで静的関数を注文することはできません。 ときに**/order**指定すると、リンカー警告[LNK4037](../../error-messages/tool-errors/linker-tools-warning-lnk4037.md)が静的であるか、見つかりませんである注文の応答ファイル内の各シンボルを生成します。
+> 静的関数名は、パブリック シンボル名ではないために、リンクで静的関数を注文することはできません。 ときに **/order**指定すると、リンカー警告[LNK4037](../../error-messages/tool-errors/linker-tools-warning-lnk4037.md)が静的であるか、見つかりませんである注文の応答ファイル内の各シンボルを生成します。
 
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには
 
@@ -85,7 +80,7 @@ COMDAT の順序を指定するには、作成、*応答ファイル*、リン�
 
 - 「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.FunctionOrder%2A>」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [リンカー オプションの設定](../../build/reference/setting-linker-options.md)  
 [リンカー オプション](../../build/reference/linker-options.md)

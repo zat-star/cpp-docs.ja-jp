@@ -1,12 +1,9 @@
 ---
-title: "_ _thiscall |Microsoft ドキュメント"
-ms.custom: 
+title: _ _thiscall |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __thiscall
@@ -16,17 +13,15 @@ dev_langs:
 helpviewer_keywords:
 - __thiscall keyword [C++]
 ms.assetid: a6a22dd2-0101-4885-b33b-22f6057965df
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a55f7d288758b345dfc4f182f2153e0d39a1b349
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 9dccd9e80a23b1636bd869d406824c9997f4cdef
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="thiscall"></a>__thiscall
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -34,7 +29,7 @@ ms.lasthandoff: 12/21/2017
   
  `__thiscall` を使用する理由の 1 つは、メンバー関数が `__clrcall` を既定で使用するクラスにあります。 その場合、`__thiscall` を使用して、個々のメンバー関数をネイティブ コードから呼び出すことができます。  
   
- コンパイルするときに[/clr: 純粋な](../build/reference/clr-common-language-runtime-compilation.md)、すべての関数および関数ポインターは`__clrcall`指定しない限り、します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+ コンパイルするときに[/clr: 純粋な](../build/reference/clr-common-language-runtime-compilation.md)、すべての関数および関数ポインターは`__clrcall`指定しない限り、します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で非推奨とされています。  
   
  Visual C++ 2005 以前のリリースでは、`thiscall` がキーワードではないため、thiscall 呼び出し規約を明示的に指定できませんでした。  
   
@@ -48,5 +43,5 @@ ms.lasthandoff: 12/21/2017
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [引数の渡し規則と名前付け規則](../cpp/argument-passing-and-naming-conventions.md)

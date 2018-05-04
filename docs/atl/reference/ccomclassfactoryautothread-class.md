@@ -2,11 +2,8 @@
 title: CComClassFactoryAutoThread クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComClassFactoryAutoThread
@@ -18,17 +15,15 @@ dev_langs:
 helpviewer_keywords:
 - CComClassFactoryAutoThread class
 ms.assetid: 22008042-533f-4dd9-bf7e-191ee571f9a1
-caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 916bd22a982e70a7acb50793723be23416516d04
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 601f67d4a753dd617b9d7a3d5856ca64588a66c6
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomclassfactoryautothread-class"></a>CComClassFactoryAutoThread クラス
 このクラスは、実装、 [IClassFactory](http://msdn.microsoft.com/library/windows/desktop/ms694364)インターフェイス、およびオブジェクトが複数のアパートメント内で作成することができます。  
@@ -54,9 +49,9 @@ class CComClassFactoryAutoThread
 |[CComClassFactoryAutoThread::LockServer](#lockserver)|メモリ内のクラス ファクトリをロックします。|  
   
 ## <a name="remarks"></a>コメント  
- `CComClassFactoryAutoThread`ような[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)はオブジェクトを複数のアパートメント内で作成できるようにします。 このサポートを利用する、EXE モジュールから派生させる[は](../../atl/reference/ccomautothreadmodule-class.md)します。  
+ `CComClassFactoryAutoThread` ような[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)はオブジェクトを複数のアパートメント内で作成できるようにします。 このサポートを利用する、EXE モジュールから派生させる[は](../../atl/reference/ccomautothreadmodule-class.md)します。  
   
- ATL オブジェクトから派生することで、クラス ファクトリを取得する通常[CComCoClass](../../atl/reference/ccomcoclass-class.md)です。 このクラスには、マクロが含まれています。 [DECLARE_CLASSFACTORY](aggregation-and-class-factory-macros.md#declare_classfactory)、宣言[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)既定のクラス ファクトリとして。 使用する`CComClassFactoryAutoThread`を指定して、 [DECLARE_CLASSFACTORY_AUTO_THREAD](aggregation-and-class-factory-macros.md#declare_classfactory_auto_thread)オブジェクトのクラス定義でマクロです。 例:  
+ ATL オブジェクトから派生することで、クラス ファクトリを取得する通常[CComCoClass](../../atl/reference/ccomcoclass-class.md)です。 このクラスには、マクロが含まれています。 [DECLARE_CLASSFACTORY](aggregation-and-class-factory-macros.md#declare_classfactory)、宣言[CComClassFactory](../../atl/reference/ccomclassfactory-class.md)既定のクラス ファクトリとして。 使用する`CComClassFactoryAutoThread`を指定して、 [DECLARE_CLASSFACTORY_AUTO_THREAD](aggregation-and-class-factory-macros.md#declare_classfactory_auto_thread)オブジェクトのクラス定義でマクロです。 例えば:  
   
  [!code-cpp[NVC_ATL_COM#9](../../atl/codesnippet/cpp/ccomclassfactoryautothread-class_1.h)]  
   
@@ -69,10 +64,10 @@ class CComClassFactoryAutoThread
   
  `CComClassFactoryAutoThread`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="createinstance"></a>CComClassFactoryAutoThread::CreateInstance  
+##  <a name="createinstance"></a>  CComClassFactoryAutoThread::CreateInstance  
  指定された CLSID のオブジェクトを作成し、このオブジェクトへのインターフェイス ポインターを取得します。  
   
 ```
@@ -98,8 +93,8 @@ STDMETHODIMP CreateInstance(
 ### <a name="remarks"></a>コメント  
  モジュールがから派生している場合[は](../../atl/reference/ccomautothreadmodule-class.md)、`CreateInstance`最初にオブジェクトを作成する、関連付けられているアパートメント内のスレッドを選択します。  
   
-##  <a name="lockserver"></a>CComClassFactoryAutoThread::LockServer  
- インクリメントおよびデクリメントはモジュールのロックを呼び出すことによってカウント**_Module::Lock**と**_Module::Unlock**、それぞれします。  
+##  <a name="lockserver"></a>  CComClassFactoryAutoThread::LockServer  
+ インクリメントおよびデクリメントはモジュールのロックを呼び出すことによってカウント **_Module::Lock**と **_Module::Unlock**、それぞれします。  
   
 ```
 STDMETHODIMP LockServer(BOOL fLock);
@@ -117,7 +112,7 @@ STDMETHODIMP LockServer(BOOL fLock);
   
  呼び出す`LockServer`クライアントを複数のオブジェクトをすばやく作成できるように、クラス ファクトリを保持できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IClassFactory](http://msdn.microsoft.com/library/windows/desktop/ms694364)   
  [CComClassFactory2 クラス](../../atl/reference/ccomclassfactory2-class.md)   
  [CComClassFactorySingleton クラス](../../atl/reference/ccomclassfactorysingleton-class.md)   

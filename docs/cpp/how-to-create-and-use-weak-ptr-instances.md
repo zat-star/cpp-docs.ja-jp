@@ -1,27 +1,22 @@
 ---
 title: '方法: weak_ptr インスタンスを作成して |Microsoft ドキュメント'
-ms.custom: ''
+ms.custom: how-to
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 8dd6909b-b070-4afa-9696-f2fc94579c65
-caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3e51e523540e14905bef17edd52205c4d2102afa
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a8fbbf9d3b427c2451fafe0fae93a531dfd45ad8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-and-use-weakptr-instances"></a>方法: weak_ptr インスタンスを作成して使用する
 オブジェクトには、参照カウントをインクリメントせずに `shared_ptr` の基になるオブジェクトにアクセスする方法を格納する必要が生じることがあります。 通常、この状況は `shared_ptr` インスタンス間に循環参照がある場合に発生します。  
@@ -39,5 +34,5 @@ Creating Controller0Creating Controller1Creating Controller2Creating Controller3
   
  テストとして、ベクター `others` を `vector<shared_ptr<Controller>>` に変更した後、出力で、`TestRun` が返されたときにデストラクターが呼び出されないことを確認してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [スマート ポインター](../cpp/smart-pointers-modern-cpp.md)

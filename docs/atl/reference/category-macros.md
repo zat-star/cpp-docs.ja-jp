@@ -2,11 +2,8 @@
 title: カテゴリ マクロ |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlbase/ATL::AtlGetHexValue
@@ -34,17 +31,15 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 223578cb-6180-4787-a8d8-ba3787a5d3ee
-caps.latest.revision: 17
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 752a0c0c9de5c726a106ca08a574844369c6bdc5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b1eba97ef5253041752d4b8abfcd6ea7300b8492
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="category-macros"></a>カテゴリ マクロ
 これらのマクロは、カテゴリ マップを定義します。  
@@ -56,10 +51,10 @@ ms.lasthandoff: 12/21/2017
 |[IMPLEMENTED_CATEGORY](#implemented_category)|COM オブジェクトによって実装されるカテゴリを示します。|  
 |[要求します。](#required_category)|COM オブジェクトによって、コンテナーの必要なカテゴリを示します。|  
 
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
 
-##  <a name="begin_category_map"></a>BEGIN_CATEGORY_MAP  
+##  <a name="begin_category_map"></a>  BEGIN_CATEGORY_MAP  
  カテゴリのマップの先頭をマークします。  
   
 ```
@@ -85,7 +80,7 @@ BEGIN_CATEGORY_MAP(theClass)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#100](../../atl/codesnippet/cpp/category-macros_1.h)]  
   
-##  <a name="end_category_map"></a>END_CATEGORY_MAP  
+##  <a name="end_category_map"></a>  END_CATEGORY_MAP  
  カテゴリのマップの最後をマークします。  
   
 ```
@@ -95,7 +90,7 @@ END_CATEGORY_MAP()
 ### <a name="example"></a>例  
  例を参照して[BEGIN_CATEGORY_MAP](#begin_category_map)です。  
   
-##  <a name="implemented_category"></a>IMPLEMENTED_CATEGORY  
+##  <a name="implemented_category"></a>  IMPLEMENTED_CATEGORY  
  追加、`IMPLEMENTED_CATEGORY`マクロのコンポーネントの[カテゴリ マップ](#begin_category_map)で識別されるカテゴリを実装するものとして登録するかを指定する、`catID`パラメーター。  
   
 ```
@@ -128,7 +123,7 @@ IMPLEMENTED_CATEGORY(catID)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#100](../../atl/codesnippet/cpp/category-macros_1.h)]  
   
-##  <a name="required_category"></a>要求します。  
+##  <a name="required_category"></a>  要求します。  
  追加、`REQUIRED_CATEGORY`マクロのコンポーネントの[カテゴリ マップ](#begin_category_map)で識別されるカテゴリを必須として登録するかを指定する、`catID`パラメーター。  
   
 ```
@@ -161,5 +156,5 @@ REQUIRED_CATEGORY( catID )
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#135](../../atl/codesnippet/cpp/category-macros_2.h)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [[マクロ]](../../atl/reference/atl-macros.md)

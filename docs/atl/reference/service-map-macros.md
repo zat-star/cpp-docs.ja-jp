@@ -2,11 +2,8 @@
 title: サービス マップ マクロ |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlcom/ATL::BEGIN_SERVICE_MAP
@@ -16,17 +13,15 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: ca02a125-454a-4cf6-aac2-1c5585025ed4
-caps.latest.revision: 16
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 444d89833d84f23099ff0de8bce29bfc9d0a1344
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d2d2fa313c574951a8f8ba7c85d5b405707ec220
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="service-map-macros"></a>サービス マップ マクロ
 これらのマクロは、サービス マップとエントリを定義します。  
@@ -38,10 +33,10 @@ ms.lasthandoff: 12/21/2017
 |[SERVICE_ENTRY](#service_entry)|オブジェクトが特定のサービス ID をサポートしていることを示します。|  
 |[SERVICE_ENTRY_CHAIN](#service_entry_chain)|指示[IServiceProviderImpl::QueryService](#queryservice)を指定したオブジェクトのチェーン。|  
 
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
    
-##  <a name="begin_service_map"></a>BEGIN_SERVICE_MAP  
+##  <a name="begin_service_map"></a>  BEGIN_SERVICE_MAP  
  サービス マップの開始位置をマークします。  
   
 ```
@@ -62,7 +57,7 @@ BEGIN_SERVICE_MAP(theClass)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM#57](../../atl/codesnippet/cpp/service-map-macros_1.h)]  
   
-##  <a name="end_service_map"></a>END_SERVICE_MAP  
+##  <a name="end_service_map"></a>  END_SERVICE_MAP  
  サービス マップの最後をマークします。  
   
 ```
@@ -72,7 +67,7 @@ END_SERVICE_MAP()
 ### <a name="example"></a>例  
  例を参照して[BEGIN_SERVICE_MAP](#begin_service_map)です。  
   
-##  <a name="service_entry"></a>SERVICE_ENTRY  
+##  <a name="service_entry"></a>  SERVICE_ENTRY  
  オブジェクトで指定したサービス id をサポートしていることを示します*SID*です。  
   
 ```
@@ -86,7 +81,7 @@ SERVICE_ENTRY( SID )
 ### <a name="example"></a>例  
  例を参照して[BEGIN_SERVICE_MAP](#begin_service_map)です。  
   
-##  <a name="service_entry_chain"></a>SERVICE_ENTRY_CHAIN  
+##  <a name="service_entry_chain"></a>  SERVICE_ENTRY_CHAIN  
  指示[IServiceProviderImpl::QueryService](#queryservice)で指定されたオブジェクトへのチェーンを`punk`です。  
   
 ```
@@ -100,7 +95,7 @@ SERVICE_ENTRY_CHAIN( punk )
 ### <a name="example"></a>例  
  例を参照して[BEGIN_SERVICE_MAP](#begin_service_map)です。  
   
-##  <a name="queryservice"></a>IServiceProviderImpl::QueryService  
+##  <a name="queryservice"></a>  IServiceProviderImpl::QueryService  
  作成または指定したサービスにアクセスして、サービスの指定したインターフェイスにインターフェイス ポインターを返します。  
   
 ```
@@ -111,13 +106,13 @@ STDMETHOD(QueryService)(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- [IN]`guidService`  
+ [IN] `guidService`  
  サービス識別子 (SID) へのポインター。  
   
- [IN]`riid`  
+ [IN] `riid`  
  呼び出し元がアクセスするためをインターフェイスの識別子。  
   
- [出力].`ppvObj`  
+ [出力]. `ppvObj`  
  要求されたインターフェイスへの間接ポインター。  
   
 ### <a name="return-value"></a>戻り値  
@@ -132,7 +127,7 @@ STDMETHOD(QueryService)(
 |E_NOINTERFACE|要求されたインターフェイスは、このサービスの一部ではないか、サービスが不明です。|  
   
 ### <a name="remarks"></a>コメント  
- `QueryService`指定されたサービスで要求されたインターフェイスへの間接ポインターを返します。 呼び出し元が必要でなくなったときにこのポインターを解放するためです。  
+ `QueryService` 指定されたサービスで要求されたインターフェイスへの間接ポインターを返します。 呼び出し元が必要でなくなったときにこのポインターを解放するためです。  
   
  呼び出すと`QueryService`、両方のサービス識別子を渡す ( `guidService`) とインターフェイス識別子 ( `riid`)。 `guidService` 、アクセス サービスを指定し、`riid`サービスの一部であるインターフェイスを識別します。 代わりに、インターフェイスへの間接ポインターが表示されます。  
   
@@ -146,5 +141,5 @@ STDMETHOD(QueryService)(
   
  SID_SMyService SID_SYourService などの 2 つの異なるサービス両方を指定できます、同じインターフェイスの使用、インターフェイスの実装には、2 つのサービス間で共通の何もいる場合でも。 この動作を呼び出す`QueryService`よりも、別のオブジェクトを返すことができます (SID_SMyService、IID_IDispatch) `QueryService` (SID_SYourService、IID_IDispatch)。 オブジェクト id は、さまざまなサービス識別子を指定するときにないと見なされます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [[マクロ]](../../atl/reference/atl-macros.md)

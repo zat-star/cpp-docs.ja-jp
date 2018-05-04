@@ -2,11 +2,8 @@
 title: _ismbbkpunct、_ismbbkpunct_l | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _ismbbkpunct_l
@@ -37,17 +34,15 @@ helpviewer_keywords:
 - ismbbkpunct function
 - _ismbbkpunct function
 ms.assetid: a04c59cd-5ca7-4296-bec0-2b0d7f04edd0
-caps.latest.revision: 19
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 73f9ee94dc405163d09f100422d98c9e823f6c77
-ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
+ms.openlocfilehash: 7e020957b418a2c6a61cda9a5c8c197fb149146d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ismbbkpunct-ismbbkpunctl"></a>_ismbbkpunct、_ismbbkpunct_l
 
@@ -75,7 +70,7 @@ int _ismbbkpunct_l(
 
 ## <a name="return-value"></a>戻り値
 
-**_ismbbkpunct**場合は 0 以外の値を返します、整数*c*されていない場合は、非 ASCII 区切り記号、または 0 です。 たとえば、コード ページ 932 でのみで **_ismbbkpunct**カタカナの句読点をテストします。 **_ismbbkpunct**任意のロケールに依存する文字設定に現在のロケールを使用します。 **_ismbbkpunct_l**に渡されるロケールを使用する点を除いてと同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+**_ismbbkpunct**場合は 0 以外の値を返します、整数*c*されていない場合は、非 ASCII 区切り記号、または 0 です。 たとえば、コード ページ 932 でのみ **_ismbbkpunct** は、カタカナ区切り文字をテストします。 **_ismbbkpunct**任意のロケールに依存する文字設定に現在のロケールを使用します。 **_ismbbkpunct_l**に渡されるロケールを使用する点を除いてと同じです。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
 
 ## <a name="requirements"></a>要件
 

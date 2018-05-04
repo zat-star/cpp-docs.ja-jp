@@ -1,13 +1,10 @@
 ---
-title: "複数のインライン ファイル |Microsoft ドキュメント"
-ms.custom: 
+title: 複数のインライン ファイル |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - multiple inline files
 - NMAKE program, inline files
 ms.assetid: 6d381dcf-0ed8-45d1-8df3-b4598d860b99
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 412c68f4d1279fea7969b3ddfdd2bf82e3cdbc47
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0ee9be15f029c0aaab3ca4bc47fb183e1499c2e2
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="multiple-inline-files"></a>複数のインライン ファイル
 コマンドは、1 つ以上のインライン ファイルを作成できます。  
@@ -44,5 +39,5 @@ inlinetext
 ## <a name="remarks"></a>コメント  
  各ファイルに対して、1 つまたは複数の行のインライン テキストが続く、区切り記号を表す終了行を指定します。 最初のファイルの区切り線を次の行に 2 番目のファイルのテキストを開始します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メイクファイルのインライン ファイル](../build/inline-files-in-a-makefile.md)

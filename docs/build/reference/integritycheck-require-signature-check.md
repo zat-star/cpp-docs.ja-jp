@@ -1,27 +1,22 @@
 ---
-title: "-INTEGRITYCHECK (シグネチャ確認が必要) |Microsoft ドキュメント"
-ms.custom: 
+title: -INTEGRITYCHECK (シグネチャ確認が必要) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 ms.assetid: 9e738825-2c98-40cd-8ad2-5d0d9c14893e
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7bf86676ecbc37e346f538d180612f21352fb48b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 997e3f5bb79ee3cbfa95c5762b0d3e998c56f362
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="integritycheck-require-signature-check"></a>/INTEGRITYCHECK (シグネチャ確認が必要)
 読み込み時にバイナリ イメージのデジタル署名を確認する必要があることを指定します。  
@@ -47,7 +42,7 @@ ms.lasthandoff: 12/21/2017
   
 5.  **追加オプション**、入力`/INTEGRITYCHECK`または`/INTEGRITYCHECK:NO`です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)   
  [強制整合性署名のポータブル実行可能 (PE) ファイル](http://social.technet.microsoft.com/wiki/contents/articles/255.forced-integrity-signing-of-portable-executable-pe-files.aspx)   

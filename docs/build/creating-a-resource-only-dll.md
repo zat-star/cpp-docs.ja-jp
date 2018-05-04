@@ -1,30 +1,25 @@
 ---
-title: "リソース専用 DLL の作成 |Microsoft ドキュメント"
-ms.custom: 
+title: リソース専用 DLL の作成 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
 - resource-only DLLs [C++], creating
 - DLLs [C++], creating
 ms.assetid: e6b1d4da-7275-467f-a58c-a0a8a5835199
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dd65085c9a0ecc0479c7d22feb5587d1e94447de
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5249f4528038771162bb96b714524ed751ff39a7
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="creating-a-resource-only-dll"></a>リソースのみの DLL の作成  
   
@@ -60,7 +55,7 @@ ms.lasthandoff: 12/21/2017
   
 アプリケーションを呼び出す必要があります`FreeLibrary`が完了したときのリソースを使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
 [リソース ファイルの操作](../windows/working-with-resource-files.md)  
 [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)

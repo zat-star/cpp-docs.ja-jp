@@ -1,12 +1,12 @@
 ---
-title: "チュートリアル: アプリケーションへの CTaskDialog の追加 |Microsoft ドキュメント"
-ms.custom: 
+title: 'チュートリアル: アプリケーションへの CTaskDialog の追加 |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - C++
@@ -14,34 +14,34 @@ helpviewer_keywords:
 - CTaskDialog, adding
 - walkthroughs [MFC], dialogs
 ms.assetid: 3a62abb8-2d86-4bec-bdb8-5784d5f9a9f8
-caps.latest.revision: 
+caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f3e9e75cb705bb4497cfefa350c2b34eca75cf2d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7b0d820b45b85b5dc20e82cb647c05f839e7ab41
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="walkthrough-adding-a-ctaskdialog-to-an-application"></a>チュートリアル: アプリケーションへの CTaskDialog の追加
 このチュートリアルでは、 [CTaskDialog Class](../mfc/reference/ctaskdialog-class.md) の概要と、そのクラスをアプリケーションに追加する方法について説明します。  
   
- `CTaskDialog` は、 [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)]の Windows メッセージ ボックスに代わるタスク ダイアログ ボックスです。 `CTaskDialog` は Windows メッセージ ボックスを改良したものであり、機能も追加されます。 [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)]では、Windows メッセージ ボックスも引き続きサポートされます。  
+ `CTaskDialog`タスク ダイアログ ボックス Windows Vista またはそれ以降の Windows メッセージ ボックスに代わるものです。 `CTaskDialog` は Windows メッセージ ボックスを改良したものであり、機能も追加されます。 Windows メッセージ ボックスは、Visual Studio でが引き続きサポートします。  
   
 > [!NOTE]
->  [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)] より前のバージョンの Windows は、 `CTaskDialog`をサポートしていません。 以前のバージョンの Windows でアプリケーションを実行するユーザーにもメッセージを表示するには、代替のダイアログ ボックス オプションをプログラミングしておく必要があります。 静的メソッドである [CTaskDialog::IsSupported](../mfc/reference/ctaskdialog-class.md#issupported) を使用することで、ユーザーのコンピューターで `CTaskDialog`の Windows メッセージ ボックスに代わるタスク ダイアログ ボックスです。 また、 `CTaskDialog` を使用できるのは、アプリケーションが Unicode ライブラリを使用してビルドされている場合に限られます。  
+> 以前の Windows で Windows Vista よりできない、`CTaskDialog`です。 以前のバージョンの Windows でアプリケーションを実行するユーザーにもメッセージを表示するには、代替のダイアログ ボックス オプションをプログラミングしておく必要があります。 静的メソッドである [CTaskDialog::IsSupported](../mfc/reference/ctaskdialog-class.md#issupported) を使用することで、ユーザーのコンピューターで `CTaskDialog`の Windows メッセージ ボックスに代わるタスク ダイアログ ボックスです。 また、 `CTaskDialog` を使用できるのは、アプリケーションが Unicode ライブラリを使用してビルドされている場合に限られます。  
   
  `CTaskDialog` では、情報を収集して表示するためのオプション要素がいくつかサポートされています。 たとえば、 `CTaskDialog` では、コマンド リンク、カスタマイズされたボタン、カスタマイズされたアイコン、およびフッターを表示できます。 さらに、 `CTaskDialog` には、タスク ダイアログ ボックスの状態を照会して、ユーザーが選択したオプション要素を確認するためのメソッドもいくつか用意されています。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
-- [!INCLUDE[vs_dev10_long](../build/includes/vs_dev10_long_md.md)]  
+- Visual Studio 2010 以降  
   
-- [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)]  
+- Windows Vista 以降  
   
 ## <a name="replacing-a-windows-message-box-with-a-ctaskdialog"></a>Windows メッセージ ボックスを CTaskDialog に置き換える  
  次の手順では、 `CTaskDialog`の最も基本的な使用法である、Windows メッセージ ボックスの置き換えについて説明します。 この例では、タスク ダイアログ ボックスに関連付けられているアイコンも変更します。 アイコンを変更することで、 `CTaskDialog` の外観が Windows メッセージ ボックスと同じになります。  
@@ -111,7 +111,7 @@ ms.lasthandoff: 12/21/2017
   
 #### <a name="to-add-functionality-to-the-ctaskdialog"></a>CTaskDialog に機能を追加するには  
   
-1.  **[リソース ビュー]**移動します。 **[リソース ビュー]**が表示されていない場合は、 **[表示]** メニューから開くことができます。  
+1.  **[リソース ビュー]** 移動します。 **[リソース ビュー]** が表示されていない場合は、 **[表示]** メニューから開くことができます。  
   
 2.  **[リソース ビュー]** を展開して、 **[ストリング テーブル]** フォルダーを選択します。 そのフォルダーを展開し、 **[ストリング テーブル]** エントリをダブルクリックします。  
   
@@ -211,7 +211,7 @@ ms.lasthandoff: 12/21/2017
   
  上記の例では、 `CTaskDialog`で使用できるオプションの一部しか紹介していませんが、開発を始めるうえで参考になるでしょう。 このクラスの詳細については、「 [CTaskDialog Class](../mfc/reference/ctaskdialog-class.md) 」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ダイアログ ボックス](../mfc/dialog-boxes.md)   
  [CTaskDialog クラス](../mfc/reference/ctaskdialog-class.md)   
  [CTaskDialog::CTaskDialog](../mfc/reference/ctaskdialog-class.md#ctaskdialog)

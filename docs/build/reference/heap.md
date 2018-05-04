@@ -2,12 +2,9 @@
 title: -ヒープ |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /heap
 dev_langs:
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - -HEAP editbin option
 - /HEAP editbin option
 ms.assetid: 6ce759b5-75b7-44ff-a5fd-3a83a0ba9a48
-caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3d21fe68d96274eaf42c2b7d58aa025c49f8a6d6
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5306df647801d7d1467aa0f44bfacca18fccaff3
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="heap"></a>/HEAP
 ヒープのサイズをバイト単位で設定します。 このオプションは、実行可能ファイルにのみ適用されます。  
@@ -46,5 +41,5 @@ reserve[,commit]
   
  指定して、`reserve`と`commit`10 進数または 16 進数または 8 進数の C 言語表記の値。 たとえば、10 進数、1048576 または 16 進数、0x100000 または 04000000 8 進数では、1 MB の値を指定できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [EDITBIN オプション](../../build/reference/editbin-options.md)

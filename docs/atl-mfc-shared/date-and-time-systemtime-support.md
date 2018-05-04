@@ -1,12 +1,9 @@
 ---
-title: "日付と時刻: SYSTEMTIME サポート |Microsoft ドキュメント"
-ms.custom: 
+title: '日付と時刻: SYSTEMTIME サポート |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 f1_keywords:
 - SYSTEMTIME
@@ -20,17 +17,15 @@ helpviewer_keywords:
 - dates [C++], MFC
 - formatting [C++], time
 ms.assetid: 201528e4-2ffa-48fc-af8f-203aa86d942a
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 405c245cdab6426330915c945cd77f8336e68c9d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ecbfd517a0fd535a23920ae21d03f1756babc113
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="date-and-time-systemtime-support"></a>日付と時刻: SYSTEMTIME サポート
 [CTime](../atl-mfc-shared/reference/ctime-class.md)クラスには、Win32 からシステムとファイルの時間を受け入れるコンス トラクターです。 このような目的に `CTime` オブジェクトを使用する場合は、この記事の説明に従って初期化を適宜変更する必要があります。  
@@ -59,6 +54,6 @@ ms.lasthandoff: 12/21/2017
   
 -   [日付と時刻のプログラミングの汎用クラス](../atl-mfc-shared/date-and-time-general-purpose-classes.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [日付と時刻](../atl-mfc-shared/date-and-time.md)
 

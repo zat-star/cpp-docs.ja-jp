@@ -1,13 +1,10 @@
 ---
-title: "-、Fr-fr (を作成します。Sbr ファイル) |Microsoft ドキュメント"
-ms.custom: 
+title: -、Fr-fr (を作成します。Sbr ファイル) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLWCECompilerTool.BrowseInformation
 - VC.Project.VCCLCompilerTool.BrowseInformation
@@ -22,17 +19,15 @@ helpviewer_keywords:
 - FR compiler option [C++]
 - symbolic browser information
 ms.assetid: 3fd8f88b-3924-4feb-9393-287036a28896
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 911ab24407f74391186568df58f5111253c41cae
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e6f61a3360c820a2d47d54f7c174af484079d154
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="fr-fr-create-sbr-file"></a>/FR、/Fr (.sbr ファイルの作成)
 .sbr ファイルを作成します。  
@@ -53,7 +48,8 @@ ms.lasthandoff: 12/21/2017
   
  `filename`を指定しない場合、.sbr ファイルはソース ファイルと同じベース名を取得します。  
   
- **/Fr** は使用されなくなりました。代わりに **/FR** を使用してください。 詳しくは、 [Compiler Options Listed by Category](../../build/reference/compiler-options-listed-by-category.md)の「使用されなくなった削除済みのコンパイラ オプション」をご覧ください。  
+ 
+  **/Fr** は非推奨とされます。代わりに **/FR** を使用してください。 詳しくは、 [Compiler Options Listed by Category](../../build/reference/compiler-options-listed-by-category.md)の「非推奨とされた削除済みのコンパイラ オプション」をご覧ください。  
   
 > [!NOTE]
 >  .sbr 拡張子を変更しないでください。 BSCMAKE では、中間ファイルにその拡張子を含める必要があります。  
@@ -70,7 +66,7 @@ ms.lasthandoff: 12/21/2017
   
 -   「 <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.BrowseInformation%2A> 」および「 <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.BrowseInformationFile%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [出力ファイル (/F) オプション](../../build/reference/output-file-f-options.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   

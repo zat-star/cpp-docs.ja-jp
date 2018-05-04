@@ -2,12 +2,9 @@
 title: E (stdout に前処理) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /e
 dev_langs:
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - preprocessor output, copy to stdout
 - preprocessor output
 ms.assetid: ddbb1725-d950-4978-ab2f-30a5cd7b778c
-caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ed083c960421ce17c0ce61036cd05191fc12c797
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3f9105c5c75bc4695d0b00debdff49acf78690b1
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="e-preprocess-to-stdout"></a>/E (プリプロセス出力の標準出力へのコピー)
 C および C++ ソース ファイルを前処理され、前処理済みファイルを標準出力デバイスにコピーされます。  
@@ -44,13 +39,13 @@ C および C++ ソース ファイルを前処理され、前処理済みファ
   
  **/E**追加`#line`ディレクティブを先頭と末尾各インクルード ファイルの条件付きコンパイル用のプリプロセッサ ディレクティブによって削除された行に出力します。 これらのディレクティブは、前処理済みファイルの行を再設定します。 その結果、処理の後のステージ中に生成されたエラーは、前処理済みファイル内の行ではなく、元のソース ファイルの行番号を参照してください。  
   
- **/E**オプションには、コンパイルが行われません。 コンパイルのプリプロセス済みのファイルを再送信する必要があります。 **/E**も抑制の出力ファイル、 **/FA**、 **/Fa**、および**/Fm**オプション。 詳細については、次を参照してください。 [/FA、/Fa (ファイルを一覧表示する)](../../build/reference/fa-fa-listing-file.md)と[/Fm (マップ ファイルの名前)](../../build/reference/fm-name-mapfile.md)です。  
+ **/E**オプションには、コンパイルが行われません。 コンパイルのプリプロセス済みのファイルを再送信する必要があります。 **/E**も抑制の出力ファイル、 **/FA**、 **/Fa**、および **/Fm**オプション。 詳細については、次を参照してください。 [/FA、/Fa (ファイルを一覧表示する)](../../build/reference/fa-fa-listing-file.md)と[/Fm (マップ ファイルの名前)](../../build/reference/fm-name-mapfile.md)です。  
   
  非表示にする`#line`、ディレクティブを使用して、 [/EP (#line ディレクティブしない stdout へのプリプロセス)](../../build/reference/ep-preprocess-to-stdout-without-hash-line-directives.md)オプションを代わりにします。  
   
  プリプロセス済みの出力ではなくファイルを送信する`stdout`を使用して、 [/P (プリプロセス出力ファイルへの)](../../build/reference/p-preprocess-to-a-file.md)オプションを代わりにします。  
   
- 非表示にする`#line`ディレクティブと送信ファイルをプリプロセス済みの出力を使用して**/P**と**/EP**一緒にします。  
+ 非表示にする`#line`ディレクティブと送信ファイルをプリプロセス済みの出力を使用して **/P**と **/EP**一緒にします。  
   
  プリコンパイル済みヘッダーを使用することはできません、 **/E**オプション。  
   
@@ -70,7 +65,7 @@ m(int)main( )
 cl -E test.cpp > test2.cpp  
 ```  
   
- `int main`test2.cpp は正しくできません`intmain`です。  
+ `int main` test2.cpp は正しくできません`intmain`です。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -93,6 +88,6 @@ cl -E test.cpp > test2.cpp
 CL /E /C ADD.C  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

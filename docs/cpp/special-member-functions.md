@@ -1,12 +1,9 @@
 ---
-title: "特殊なメンバー関数 |Microsoft ドキュメント"
-ms.custom: 
+title: 特殊なメンバー関数 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 12/06/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - move operators [C++]
 - assignment operators [C++]
 ms.assetid: 017d6817-b012-44f0-b153-f3076c251ea7
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ff4fc72d2a40cc52ec614cbd5b470738ad1aa391
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 76be131193508e4def79c6e178e27cd671c7ce11
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="special-member-functions"></a>特殊なメンバー関数  
   
@@ -44,7 +39,7 @@ ms.lasthandoff: 12/21/2017
   
 既定のコピーと移動の構築や代入演算メンバーごとのビット パターンを実行します。 コピーするか、または非静的データ メンバーの移動します。 デストラクターまたは移動またはコピー操作が宣言されていない場合に、操作が生成のみに移動します。 既定のコピー コンス トラクターは、コピー コンス トラクターが宣言されていない場合にのみ生成されます。 移動操作が宣言されている場合に暗黙的に削除されます。 コピー代入演算子が明示的に宣言されていない場合にのみ、既定のコピー代入演算子が生成されます。 移動操作が宣言されている場合に暗黙的に削除されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 [C++ 言語リファレンス](cpp-language-reference.md)  
 
 

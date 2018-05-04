@@ -1,12 +1,9 @@
 ---
-title: "CSecurityAttributes クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CSecurityAttributes クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CSecurityAttributes
@@ -18,17 +15,15 @@ dev_langs:
 helpviewer_keywords:
 - CSecurityAttributes class
 ms.assetid: a094880c-52e1-4a28-97ff-752d5869908e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 918f90c9f04736eb2328d989e21b7b9997edab86
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 03bda174fb85fa6857e22b851b93bcf1b3192716
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="csecurityattributes-class"></a>CSecurityAttributes クラス
 このクラスは、セキュリティ属性の構造体の thin ラッパーです。  
@@ -66,10 +61,10 @@ class CSecurityAttributes : public SECURITY_ATTRIBUTES
   
  `CSecurityAttributes`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
   
-##  <a name="csecurityattributes"></a>CSecurityAttributes::CSecurityAttributes  
+##  <a name="csecurityattributes"></a>  CSecurityAttributes::CSecurityAttributes  
  コンストラクターです。  
   
 ```
@@ -84,7 +79,7 @@ explicit CSecurityAttributes(const CSecurityDesc& rSecurityDescriptor, bool bInh
  `bInheritsHandle`  
  新しいプロセスの作成時に、返されたハンドルを継承するかどうかを指定します。 このメンバーが true の場合、新しいプロセスは、返されたハンドルを継承します。  
   
-##  <a name="set"></a>Csecurityattributes::set  
+##  <a name="set"></a>  Csecurityattributes::set  
  属性を設定するには、このメソッドを呼び出して、`CSecurityAttributes`オブジェクト。  
   
 ```
@@ -101,7 +96,7 @@ void Set(const CSecurityDesc& rSecurityDescriptor, bool bInheritHandle = false) 
 ### <a name="remarks"></a>コメント  
  このメソッドは、コンス トラクターによって初期化に使用、`CSecurityAttributes`オブジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [SECURITY_ATTRIBUTES](http://msdn.microsoft.com/library/windows/desktop/aa379560)   
  [セキュリティ記述子](http://msdn.microsoft.com/library/windows/desktop/aa379561)   

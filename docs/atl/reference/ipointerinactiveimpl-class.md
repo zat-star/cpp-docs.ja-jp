@@ -2,11 +2,8 @@
 title: IPointerInactiveImpl クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IPointerInactiveImpl
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - inactive objects
 - IPointerInactiveImpl class
 ms.assetid: e1fe9ea6-d38a-4527-9112-eb344771e0b7
-caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fe45700a941a8a59439b816124728f43e5f54f44
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c28eb8d6db520bd1c2d5de5642098263508c0f6b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ipointerinactiveimpl-class"></a>IPointerInactiveImpl クラス
 このクラスは実装**IUnknown**と[IPointerInactive](http://msdn.microsoft.com/library/windows/desktop/ms693712)インターフェイスのメソッドです。  
@@ -74,10 +69,10 @@ class IPointerInactiveImpl
   
  `IPointerInactiveImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="getactivationpolicy"></a>IPointerInactiveImpl::GetActivationPolicy  
+##  <a name="getactivationpolicy"></a>  IPointerInactiveImpl::GetActivationPolicy  
  オブジェクトの現在のアクティブ化ポリシーを取得します。  
   
 ```
@@ -90,7 +85,7 @@ HRESULT GetActivationPolicy(DWORD* pdwPolicy);
 ### <a name="remarks"></a>コメント  
  参照してください[IPointerInactive::GetActivationPolicy](http://msdn.microsoft.com/library/windows/desktop/ms692470) Windows SDK にします。  
   
-##  <a name="oninactivemousemove"></a>IPointerInactiveImpl::OnInactiveMouseMove  
+##  <a name="oninactivemousemove"></a>  IPointerInactiveImpl::OnInactiveMouseMove  
  マウス ポインターが上に移動されたオブジェクトを示すオブジェクトは、マウス イベントを発生させることができますに通知します。  
   
 ```
@@ -107,7 +102,7 @@ HRESULT OnInactiveMouseMove(
 ### <a name="remarks"></a>コメント  
  参照してください[IPointerInactive::OnInactiveMouseMove](http://msdn.microsoft.com/library/windows/desktop/ms693374) Windows SDK にします。  
   
-##  <a name="oninactivesetcursor"></a>IPointerInactiveImpl::OnInactiveSetCursor  
+##  <a name="oninactivesetcursor"></a>  IPointerInactiveImpl::OnInactiveSetCursor  
  アクティブでないオブジェクトにマウス ポインターを設定します。  
   
 ```
@@ -125,5 +120,5 @@ HRESULT OnInactiveSetCursor(
 ### <a name="remarks"></a>コメント  
  参照してください[IPointerInactive::OnInactiveSetCursor](http://msdn.microsoft.com/library/windows/desktop/ms694336) Windows SDK にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

@@ -1,13 +1,10 @@
 ---
-title: "-Gd、-gr、-gv、-gz (呼び出し規約) |Microsoft ドキュメント"
-ms.custom: 
+title: -Gd、-gr、-gv、-gz (呼び出し規約) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /gr
 - /Gv
@@ -30,17 +27,15 @@ helpviewer_keywords:
 - Gv compiler option [C++]
 - /Gr compiler option [C++]
 ms.assetid: fd3110cb-2d77-49f2-99cf-a03f9ead00a3
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 26e88abf30c0f67fe5b104d560c40dd2adc57752
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ec0d3d7c750be9b6b6d1496c8a1e2265786264f2
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="gd-gr-gv-gz-calling-convention"></a>/Gd、/Gr、/Gv、/Gz (呼び出し規則)
 これらのオプションでは、関数の引数をスタックにプッシュする順序、呼び出し元と呼び出し先のどちらの関数が呼び出しの最後にスタックから引数を削除するか、および個々の関数を識別するためにコンパイラが使用する名前装飾規約を決定します。  
@@ -65,7 +60,7 @@ ms.lasthandoff: 12/21/2017
   
  可変数の引数を受け取る関数には `__cdecl` が指定されている必要があります。  
   
- **/Gd**、 **/Gr**、 **/Gv**と**/Gz**と互換性がない[/clr:safe](../../build/reference/clr-common-language-runtime-compilation.md)または**/clr: 純粋な**. コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
+ **/Gd**、 **/Gr**、 **/Gv**と **/Gz**と互換性がない[/clr:safe](../../build/reference/clr-common-language-runtime-compilation.md)または **/clr: 純粋な**. コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で非推奨とされています。  
   
 > [!NOTE]
 >  既定では、x86 プロセッサでは、C++ メンバー関数を使用して[_ _thiscall](../../cpp/thiscall.md)です。  
@@ -117,7 +112,7 @@ functionname@@number
   
 1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  選択、 **C/C++**フォルダーです。  
+2.  選択、 **C/C++** フォルダーです。  
   
 3.  選択、**詳細**プロパティ ページ。  
   
@@ -127,6 +122,6 @@ functionname@@number
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.CallingConvention%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)
