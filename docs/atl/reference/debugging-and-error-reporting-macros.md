@@ -1,12 +1,9 @@
 ---
-title: "デバッグと、エラー報告のマクロ |Microsoft ドキュメント"
-ms.custom: 
+title: デバッグと、エラー報告のマクロ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atldef/ATL::_ATL_DEBUG_INTERFACES
@@ -20,17 +17,15 @@ dev_langs:
 helpviewer_keywords:
 - macros, error reporting
 ms.assetid: 4da9b87f-ec5c-4a32-ab93-637780909b9d
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9098b944f70ab4e4448fe40aa2347b0128e6e1a7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b99147c9eb9a331d7cc0f9064b858979d00e2804
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="debugging-and-error-reporting-macros"></a>デバッグと、エラー報告のマクロ
 これらのマクロは、デバッグとトレースに役立つ機能を提供します。  
@@ -45,7 +40,7 @@ ms.lasthandoff: 12/21/2017
 |[ATLTRACE](#alttrace)|指定されたフラグとレベルに応じて、デバッガー ウィンドウなどの出力デバイスに警告を報告します。 旧バージョンとの互換性のために含まれています。|  
 |[ATLTRACE2](#atltrace2)|指定されたフラグとレベルに応じて、デバッガー ウィンドウなどの出力デバイスに警告を報告します。|  
   
-##  <a name="_atl_debug_interfaces"></a>_ATL_DEBUG_INTERFACES  
+##  <a name="_atl_debug_interfaces"></a>  _ATL_DEBUG_INTERFACES  
  ATL ヘッダー ファイルのすべてのトレースをインクルードする前にこのマクロを定義して`AddRef`と**リリース**では、出力ウィンドウに、コンポーネントのインターフェイスを呼び出します。  
   
 ```
@@ -72,9 +67,9 @@ ms.lasthandoff: 12/21/2017
  ここで以前のトレース ステートメントで提供される情報に直接マップに提供される情報は、インターフェイス サンクの有効期間全体を通じて参照がカウントを調査します。 さらに、そのインターフェイス サンク最大の参照カウントを示す値を取得します。  
   
 > [!NOTE]
-> `_ATL_DEBUG_INTERFACES`製品版ビルドで使用できます。  
+> `_ATL_DEBUG_INTERFACES` 製品版ビルドで使用できます。  
   
-##  <a name="_atl_debug_qi"></a>_ATL_DEBUG_QI  
+##  <a name="_atl_debug_qi"></a>  _ATL_DEBUG_QI  
  すべての呼び出しを書き込みます`QueryInterface`出力ウィンドウをします。  
   
 ```
@@ -86,7 +81,7 @@ ms.lasthandoff: 12/21/2017
   
  *インターフェイス名* - `failed`  
   
-##  <a name="atlassert"></a>ATLASSERT  
+##  <a name="atlassert"></a>  ATLASSERT  
  `ATLASSERT`マクロと同じ機能を実行する、 [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md)マクロは、C ランタイム ライブラリで見つかりました。  
   
 ```
@@ -100,10 +95,10 @@ ATLASSERT(booleanExpression);
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、`ATLASSERT`評価`booleanExpression`し、結果が false の場合は、デバッグ レポートを生成します。  
 
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldef.h  
     
-##  <a name="atlensure"></a>ATLENSURE  
+##  <a name="atlensure"></a>  ATLENSURE  
  このマクロは関数に渡されるパラメーターの検証に使用します。  
   
 ```
@@ -132,10 +127,10 @@ ATLENSURE_THROW(booleanExpression, hr);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#108](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_1.cpp)]  
 
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** afx.h  
 
-##  <a name="atltracenotimpl"></a>ATLTRACENOTIMPL  
+##  <a name="atltracenotimpl"></a>  ATLTRACENOTIMPL  
  ATL のデバッグ ビルドでは、送信、文字列"`funcname`は実装されていません"ダンプ デバイスを返す**E_NOTIMPL**です。  
   
 ```
@@ -152,10 +147,10 @@ ATLTRACENOTIMPL(funcname);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#127](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_2.cpp)]  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atltrace.h 
 
-##  <a name="atltrace"></a>ATLTRACE
+##  <a name="atltrace"></a>  ATLTRACE
  指定されたフラグとレベルに応じて、デバッガー ウィンドウなどの出力デバイスに警告を報告します。 旧バージョンとの互換性のために含まれています。  
   
 ```
@@ -183,7 +178,7 @@ ATLTRACE(
 ### <a name="remarks"></a>コメント  
  参照してください[ATLTRACE2](#atltrace2)の詳細については**ATLTRACE**です。 **ATLTRACE**と`ATLTRACE2`、同じように動作**ATLTRACE**は旧バージョンとの互換性のために含まれます。  
   
-##  <a name="atltrace2"></a>ATLTRACE2  
+##  <a name="atltrace2"></a>  ATLTRACE2  
  指定されたフラグとレベルに応じて、デバッガー ウィンドウなどの出力デバイスに警告を報告します。  
   
 ```
@@ -264,13 +259,13 @@ ATLTRACE2(
   
  リリース ビルドで`ATLTRACE2`にコンパイルされる`(void) 0`です。  
   
- `ATLTRACE2`書式設定後に超える 1023 文字にダンプ デバイスに送信される文字列の内容を制限します。  
+ `ATLTRACE2` 書式設定後に超える 1023 文字にダンプ デバイスに送信される文字列の内容を制限します。  
   
  **ATLTRACE**と`ATLTRACE2`、同じように動作**ATLTRACE**は旧バージョンとの互換性のために含まれます。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#111](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_5.cpp)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [マクロ](../../atl/reference/atl-macros.md)   
  [デバッグとエラー報告に関するグローバル関数](../../atl/reference/debugging-and-error-reporting-global-functions.md)

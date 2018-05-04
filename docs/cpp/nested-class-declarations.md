@@ -2,11 +2,8 @@
 title: クラスの宣言を入れ子になった |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - declaring classes [C++]
 - declarations, nested classes
 ms.assetid: c02e471d-b7f9-41b8-8ef6-2323f006dbd5
-caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 247be4e212efbe2b8061deed200a8350b87fc7a7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 2fe55a1f67ff3c6ac06f1d6431e6e1a2fb8052d8
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="nested-class-declarations"></a>入れ子にされたクラス宣言
 クラスのスコープ内で別のクラスを宣言できます。 このようなクラスを "入れ子のクラス" といいます。 入れ子のクラスには外側のクラスのスコープが適用され、そのスコープ内で使用できます。 すぐ外側のスコープ以外のスコープから入れ子のクラスを参照するには、完全修飾名を使用する必要があります。  
@@ -76,7 +71,7 @@ int main()
 > [!NOTE]
 >  入れ子のクラスは、クラス スコープ内の型のみ宣言します。 入れ子のクラスに含まれるオブジェクトは作成されません。 前の例では、入れ子になった 2 つのクラスを宣言していますが、これらのクラス型のオブジェクトは宣言していません。  
   
- 入れ子になったクラス宣言のスコープの参照可能範囲の例外は、型名が事前宣言と共に宣言されている場合です。  この場合、事前宣言によって宣言されたクラス名は、それを囲んでいるクラス (そのスコープは、最も小さく囲んでいる非クラス スコープと定義される) の外部から参照可能です。  例:  
+ 入れ子になったクラス宣言のスコープの参照可能範囲の例外は、型名が事前宣言と共に宣言されている場合です。  この場合、事前宣言によって宣言されたクラス名は、それを囲んでいるクラス (そのスコープは、最も小さく囲んでいる非クラス スコープと定義される) の外部から参照可能です。  例えば:  
   
 ```  
 // nested_class_declarations_2.cpp  
@@ -216,5 +211,5 @@ int GetExtendedErrorStatus( char *message )
   
  前のインターフェイスを使用すると、いくつかのクラスは、エラー メッセージのコピー先のメモリ位置を渡すことによって、この関数のサービスを使用できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスと構造体](../cpp/classes-and-structs-cpp.md)

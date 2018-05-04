@@ -1,13 +1,10 @@
 ---
-title: "ときになを呼び出す必要があるのですか。 | Microsoft Docs"
-ms.custom: 
+title: ときになを呼び出す必要があるのですか。 | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 f1_keywords:
 - AtlAxWinInit
 dev_langs:
@@ -15,22 +12,20 @@ dev_langs:
 helpviewer_keywords:
 - AtlAxWinInit method
 ms.assetid: 080b9cfe-d85a-4439-a9e9-ab3966ebaa8e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 69dfcfbe0c8c05d275a5f3a8f86c30b0e59bd3a5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: bd9aa1dd14ccae555d4ab9acbbac15e9b66cafe6
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="when-do-i-need-to-call-atlaxwininit"></a>ときになを呼び出す必要があるのですか。
 
-[な](reference/composite-control-global-functions.md#atlaxwininit)登録、 **"AtlAxWin80"**ウィンドウ (さらに、いくつかのカスタム ウィンドウ メッセージには) クラスのため、ホスト ウィンドウを作成しようとする前に、この関数を呼び出す必要があります。 ただし、常にする必要はありません Api (およびそれらを使用するクラス) をホストから明示的に、この関数の呼び出しを多くの場合、この関数を呼び出します。 この関数を複数回呼び出す害はありません。 である必要があります。  
+[な](reference/composite-control-global-functions.md#atlaxwininit)登録、 **"AtlAxWin80"** ウィンドウ (さらに、いくつかのカスタム ウィンドウ メッセージには) クラスのため、ホスト ウィンドウを作成しようとする前に、この関数を呼び出す必要があります。 ただし、常にする必要はありません Api (およびそれらを使用するクラス) をホストから明示的に、この関数の呼び出しを多くの場合、この関数を呼び出します。 この関数を複数回呼び出す害はありません。 である必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  AtlAxWinTerm を呼び出す必要が場合     
  [コントロール コンテインメントよく寄せられる質問](../atl/atl-control-containment-faq.md)

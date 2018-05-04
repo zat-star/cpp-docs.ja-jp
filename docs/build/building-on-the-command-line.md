@@ -1,10 +1,10 @@
 ---
 title: コマンドラインで C/C++ コードをビルド |Microsoft ドキュメント
-ms.custom: ''
+ms.custom: conceptual
 ms.date: 03/29/2018
 ms.technology:
 - cpp-tools
-ms.topic: get-started-article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,14 +16,13 @@ helpviewer_keywords:
 ms.assetid: 7ca9daed-a003-4162-842d-908f79058365
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fc4ec1034d4d77542df4a4241ad3ba5c087602ae
-ms.sourcegitcommit: 78e5e5cdbafd29e2a6ccf68d4cce215136952907
+ms.openlocfilehash: d1e02ea59ffc5a4ece71d2790b2ebb6a953ed682
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="build-cc-code-on-the-command-line"></a>コマンドラインで C/C++ コードをビルドします。
 
@@ -114,7 +113,7 @@ Visual Studio インストールを選択すると、C++ のワークロード�
 使用する Windows SDK のバージョンを指定します。 既定では、最新インストールされている Windows SDK を使用します。 Windows SDK のバージョンを指定することができますなど使用する完全 Windows 10 SDK 番号**10.0.10240.0**、または指定**8.1** Windows 8.1 SDK を使用します。
 
 *vcversion*<br/>
-必要に応じて、Visual Studio コンパイラ ツールセットを使用するを指定します。 既定では、環境は、現在の Visual Studio 2017 コンパイラ ツールセットを使用する設定します。 使用して**-vcvars_ver = 14.0**を Visual Studio 2015 コンパイラ ツールセットを指定します。
+必要に応じて、Visual Studio コンパイラ ツールセットを使用するを指定します。 既定では、環境は、現在の Visual Studio 2017 コンパイラ ツールセットを使用する設定します。 使用して **-vcvars_ver = 14.0**を Visual Studio 2015 コンパイラ ツールセットを指定します。
 
 <a name="vcvarsall"></a>
 #### <a name="to-set-up-the-build-environment-in-an-existing-command-prompt-window"></a>既存のコマンド プロンプト ウィンドウで、ビルド環境をセットアップするには
@@ -151,7 +150,7 @@ Visual Studio インストール ディレクトリを反映するようにパ�
 MSBuild (msbuild.exe) を使用すると、Visual C プロジェクトおよび Visual Studio ソリューションを構築できます。 これは、実行中に、**ビルド**プロジェクトまたは**ソリューションのビルド**Visual Studio IDE でコマンド。
 
 [DEVENV](/visualstudio/ide/reference/devenv-command-line-switches)<br/>
-DEVENV (devenv.exe) を使用するコマンド ライン スイッチと組み合わせて使用 — たとえば、 **/build**または**/clean**: Visual Studio IDE を表示せずにコマンドをビルドを実行する特定します。
+DEVENV (devenv.exe) を使用するコマンド ライン スイッチと組み合わせて使用 — たとえば、 **/build**または **/clean**: Visual Studio IDE を表示せずにコマンドをビルドを実行する特定します。
 
 [(NMAKE の)](../build/nmake-reference.md)<br/>
 NMAKE (nmake.exe) を使用すると、従来のメイクファイルを使用して Visual C プロジェクトをビルドするタスクを自動化できます。

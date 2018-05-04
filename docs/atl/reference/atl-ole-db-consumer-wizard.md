@@ -2,11 +2,8 @@
 title: ATL OLE DB コンシューマー ウィザード |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - vc.codewiz.class.atl.consumer.overview
@@ -17,23 +14,21 @@ helpviewer_keywords:
 - connection strings [C++], OLE DB consumers
 - ATL OLE DB Consumer Wizard
 ms.assetid: dcb68ed1-2224-422f-9f7b-108a74864204
-caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d12020b6adfca2c23dc610b5e596ff883bb9e7ff
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0d51569eaece5e3fac59c7cc2ff82a8454a5f959
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-ole-db-consumer-wizard"></a>ATL OLE DB コンシューマー ウィザード
 このウィザードを設定、OLE DB コンシューマー クラス、データ バインディングで、指定した OLE DB プロバイダーを介して指定されたデータ ソースにアクセスするために必要です。  
   
 > [!NOTE]
->  このウィザードでは、をクリックする必要があります、**データソース**で名前を入力する前に、データ ソースを選択するにはボタン、`Class`と**.h ファイル**フィールドです。  
+>  このウィザードでは、をクリックする必要があります、**データソース**で名前を入力する前に、データ ソースを選択するにはボタン、`Class`と **.h ファイル**フィールドです。  
   
 ## <a name="uielement-list"></a>UIElement の一覧  
  **データ ソース**  
@@ -64,15 +59,15 @@ ms.lasthandoff: 12/21/2017
   
      SQL データ。  
   
-    1. **選択するか、サーバー名を入力:**ネットワーク上で登録済みのデータのすべてのサーバーを表示するドロップダウン リスト メニューをクリックし、いずれかを選択します。  
+    1. **選択するか、サーバー名を入力:** ネットワーク上で登録済みのデータのすべてのサーバーを表示するドロップダウン リスト メニューをクリックし、いずれかを選択します。  
   
-    2. **サーバーにログオンする情報を入力:**ユーザー名とデータ サーバーにログオンするためのパスワードを入力します。  
+    2. **サーバーにログオンする情報を入力:** ユーザー名とデータ サーバーにログオンするためのパスワードを入力します。  
   
-    3. **サーバー上のデータベースを選択:**データ サーバーに登録されているすべてのデータベースを表示するドロップダウン メニューをクリックし、いずれかを選択します。  
+    3. **サーバー上のデータベースを選択:** データ サーバーに登録されているすべてのデータベースを表示するドロップダウン メニューをクリックし、いずれかを選択します。  
   
          - または -  
   
- **データベース名としてのデータベース ファイルをアタッチ:**データベースとして使用するファイルを指定以外の場合は、明示的なパス名を入力します。  
+ **データベース名としてのデータベース ファイルをアタッチ:** データベースとして使用するファイルを指定以外の場合は、明示的なパス名を入力します。  
   
         > [!NOTE]
         >  There is a security problem with the "Allow saving of password" feature of the Data Link Properties dialog box. In "Enter information to log on to the server," there are two radio buttons:  
@@ -89,7 +84,7 @@ ms.lasthandoff: 12/21/2017
   
          1. **Specify the source of data:** You can use a data source name or a connection string.  
   
- **データ ソース名を使用:**このドロップダウン リストには、コンピューター上で登録されているデータ ソースが表示されます。 ODBC データ ソース アドミニストレーターを使用して前もってデータ ソースを設定することができます- または -**接続文字列を使用:**既に取得しているかをクリックして、接続文字列を入力するか、**ビルド**ボタンをクリックします、。**データ ソースの選択** ダイアログ ボックスが表示されます。 ファイルまたはマシンのデータ ソースを選択し、クリックして**OK**です。  
+ **データ ソース名を使用:** このドロップダウン リストには、コンピューター上で登録されているデータ ソースが表示されます。 ODBC データ ソース アドミニストレーターを使用して前もってデータ ソースを設定することができます- または -**接続文字列を使用:** 既に取得しているかをクリックして、接続文字列を入力するか、**ビルド**ボタンをクリックします、。**データ ソースの選択** ダイアログ ボックスが表示されます。 ファイルまたはマシンのデータ ソースを選択し、クリックして**OK**です。  
   
         > [!NOTE]
         >  You can obtain a connection string by viewing the properties of an existing connection in Server Explorer, or you can create a connection by double-clicking **Add Connection** in Server Explorer.  
@@ -101,9 +96,9 @@ ms.lasthandoff: 12/21/2017
          4. Click **Test Connection**; if the test succeeds, click **OK**. If not, check your logon information, try another database, or try another data server.  
   
  **詳細設定**  
- **ネットワークの設定:**を指定して、**偽装レベル**(、権限借用レベルをサーバーがクライアントを偽装するときに使用できる; RPC 偽装レベルに直接対応しています) と**保護レベル**(クライアントとサーバーの間でデータの保護のレベルが送信される RPC 保護レベルに直接対応)。  
+ **ネットワークの設定:** を指定して、**偽装レベル**(、権限借用レベルをサーバーがクライアントを偽装するときに使用できる; RPC 偽装レベルに直接対応しています) と**保護レベル**(クライアントとサーバーの間でデータの保護のレベルが送信される RPC 保護レベルに直接対応)。  
   
- **その他:**で**接続のタイムアウト**タイムアウトが発生するまでのアイドル時間の秒数を指定します。 **アクセス許可**、データ接続のアクセス許可を指定します。  
+ **その他:** で**接続のタイムアウト**タイムアウトが発生するまでのアイドル時間の秒数を指定します。 **アクセス許可**、データ接続のアクセス許可を指定します。  
   
      高度な初期化プロパティの詳細については、各 OLE DB プロバイダーに付属のマニュアルを参照してください。  
   
@@ -191,7 +186,7 @@ ms.lasthandoff: 12/21/2017
  **削除**  
  コンシューマーが行セットから行の削除をサポートするように指定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL OLE DB コンシューマー](../../atl/reference/adding-an-atl-ole-db-consumer.md)   
  [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)   
  [接続文字列およびデータ リンク (OLE DB)](https://msdn.microsoft.com/library/ms718376.aspx)

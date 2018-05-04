@@ -1,13 +1,10 @@
 ---
-title: "-SUBSYSTEM |Microsoft ドキュメント"
-ms.custom: 
+title: -SUBSYSTEM |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /subsystem
 dev_langs:
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - -SUBSYSTEM editbin option
 - SUBSYSTEM editbin option
 ms.assetid: 515e4cdf-3cc4-4659-8764-1f2757b49215
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 945e0d6da5ff1c5f24f8c0e10693f06334e0a25c
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: c12df1a2166c9ef5a1af8a33a5764a8899909edb
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="subsystem"></a>/SUBSYSTEM
 実行可能イメージに必要な実行環境を指定します。  
@@ -76,5 +71,5 @@ ms.lasthandoff: 02/14/2018
   
  詳細については、各サブシステムのメジャーおよびマイナー バージョン番号の最小値と既定値を含む、次を参照してください。、 [/SUBSYSTEM](../../build/reference/subsystem-specify-subsystem.md)リンカー オプション。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [EDITBIN オプション](../../build/reference/editbin-options.md)

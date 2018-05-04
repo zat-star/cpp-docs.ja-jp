@@ -1,12 +1,9 @@
 ---
-title: "CSocketAddr クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CSocketAddr クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CSocketAddr
@@ -22,17 +19,15 @@ dev_langs:
 helpviewer_keywords:
 - CSocketAddr class
 ms.assetid: 2fb2d8a7-899e-4a36-a342-cc9f4fcdd68c
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cadd771e6c3a9e7addb6893b4427183cfff293c9
-ms.sourcegitcommit: 54035dce0992ba5dce0323d67f86301f994ff3db
+ms.openlocfilehash: 830b1087d0a4792b449c516ed12ad7e8a84b2a51
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="csocketaddr-class"></a>CSocketAddr クラス
 このクラスは、ホスト アドレス、IPv4 と IPV6 の両方の形式をサポートするホスト名を変換するためのメソッドを提供します。  
@@ -68,10 +63,10 @@ class CSocketAddr
   
  このクラスは、両方の IPv4 と Ipv6 ネットワーク アドレスをサポートします。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsocket.h  
   
-##  <a name="csocketaddr"></a>CSocketAddr::CSocketAddr  
+##  <a name="csocketaddr"></a>  CSocketAddr::CSocketAddr  
  コンストラクターです。  
   
 ```
@@ -81,7 +76,7 @@ CSocketAddr();
 ### <a name="remarks"></a>コメント  
  新たに作成`CSocketAddr`オブジェクトし、ホストの応答情報を含むリンク リストを初期化します。  
   
-##  <a name="findaddr"></a>CSocketAddr::FindAddr  
+##  <a name="findaddr"></a>  CSocketAddr::FindAddr  
  ホスト アドレスに指定されたホスト名を変換するには、このメソッドを呼び出します。  
   
 ```
@@ -130,7 +125,7 @@ int FindAddr(
 ### <a name="remarks"></a>コメント  
  IPv4 または IPv6 のいずれかの形式で、ホスト名パラメーターがあります。 このメソッドは、Win32 API 関数を呼び出します[getaddrinfo](http://msdn.microsoft.com/library/windows/desktop/ms738520)変換を実行します。  
   
-##  <a name="findinet4addr"></a>CSocketAddr::FindINET4Addr  
+##  <a name="findinet4addr"></a>  CSocketAddr::FindINET4Addr  
  ホスト アドレスを IPv4 ホスト名を変換するには、このメソッドを呼び出します。  
   
 ```
@@ -160,7 +155,7 @@ int FindINET4Addr(
 ### <a name="remarks"></a>コメント  
  このメソッドは、Win32 API 関数を呼び出します[getaddrinfo](http://msdn.microsoft.com/library/windows/desktop/ms738520)変換を実行します。  
   
-##  <a name="findinet6addr"></a>CSocketAddr::FindINET6Addr  
+##  <a name="findinet6addr"></a>  CSocketAddr::FindINET6Addr  
  ホスト アドレス、IPv6 ホスト名を変換するには、このメソッドを呼び出します。  
   
 ```
@@ -190,7 +185,7 @@ int FindINET6Addr(
 ### <a name="remarks"></a>コメント  
  このメソッドは、Win32 API 関数を呼び出します[getaddrinfo](http://msdn.microsoft.com/library/windows/desktop/ms738520)変換を実行します。  
   
-##  <a name="getaddrinfo"></a>CSocketAddr::GetAddrInfo  
+##  <a name="getaddrinfo"></a>  CSocketAddr::GetAddrInfo  
  特定の要素にポインターを返すには、このメソッドを呼び出す、 **addrinfo**  ボックスの一覧です。  
   
 ```
@@ -204,7 +199,7 @@ addrinfo* const GetAddrInfoint nIndex = 0) const;
 ### <a name="return-value"></a>戻り値  
  ポインターを返します、 **addrinfo**によって参照される構造`nIndex`ホストに関する応答情報を含むリンク リストです。  
   
-##  <a name="getaddrinfolist"></a>CSocketAddr::GetAddrInfoList  
+##  <a name="getaddrinfolist"></a>  CSocketAddr::GetAddrInfoList  
  ポインターを返すには、このメソッドを呼び出す、 **addrinfo**  ボックスの一覧です。  
   
 ```
@@ -214,5 +209,5 @@ addrinfo* const GetAddrInfoList() const;
 ### <a name="return-value"></a>戻り値  
  1 つまたは複数のリンク リストへのポインター`addrinfo`ホストの応答情報を含む構造体。 詳細については、次を参照してください。 [addrinfo 構造](https://msdn.microsoft.com/library/windows/desktop/ms737530)です。
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

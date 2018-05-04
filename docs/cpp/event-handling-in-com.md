@@ -1,12 +1,9 @@
 ---
-title: "COM でのイベント処理 |Microsoft ドキュメント"
-ms.custom: 
+title: COM でのイベント処理 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -25,17 +22,15 @@ helpviewer_keywords:
 - declaring events, in COM
 - declaring events, event handling in COM
 ms.assetid: 6b4617d4-a58e-440c-a8a6-1ad1c715b2bb
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1c57b8429a05ab3989dce318f4c16a58475560a1
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3ccf5ad83afe2151ac9ceb90029780989ca33487
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="event-handling-in-com"></a>COM でのイベント処理
 使用して、イベント ソースとイベント レシーバーを設定する COM イベント処理で、 [event_source](../windows/event-source.md)と[event_receiver](../windows/event-receiver.md)属性にそれぞれを指定する`type` = **com**です。これらの属性により、カスタム、ディスパッチ、デュアルの各インターフェイスの適切なコードが挿入され、適用先のクラスでイベントを発生させ、COM 接続ポイントを通じてイベントを処理できるようになります。  
@@ -165,7 +160,7 @@ MyHandler1 was called with value 123.
 MyHandler2 was called with value 123.  
 ```  
   
-##  <a name="vcconeventhandlingincomanchorlayoutdependentcomevents"></a>レイアウトに依存する COM イベント  
+##  <a name="vcconeventhandlingincomanchorlayoutdependentcomevents"></a> レイアウトに依存する COM イベント  
  レイアウトの依存関係は、COM プログラミングにおいてのみ考慮する項目です。 ネイティブおよびマネージ イベント処理では、ハンドラーのシグニチャ (戻り値の型、呼び出し規約、および引数) がイベントと一致する必要がありますが、イベント ハンドラー名はイベントと一致する必要はありません。  
   
  ただしでは、COM イベント処理を設定すると、 *layout_dependent*のパラメーター **event_receiver**に**true**名前とシグネチャの一致が適用されます。 これは、イベント レシーバーのハンドラーの名前とシグニチャが、フックするイベントの名前とシグニチャに正確に一致する必要があることを意味します。  
@@ -220,5 +215,5 @@ public:
 };  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [イベント処理](../cpp/event-handling.md)

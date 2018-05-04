@@ -1,12 +1,9 @@
 ---
-title: "非標準動作 |Microsoft ドキュメント"
-ms.custom: 
+title: 非標準動作 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - Microsoft-specific, compiler behavior
 - nonstandard behavior, compliance and compatibility
 ms.assetid: a57dea27-dc79-4f64-8a83-017e84841773
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 967f182451c712b46c5f2da545d2fed7ffd59bca
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 54d421f00839d21236741e8d33f1415fe129b18c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="nonstandard-behavior"></a>非標準動作
 ここからのセクションでは、C++ の Visual C++ 実装が C++ 規格に準拠しない部分をいくつか示します。 ここで示している節番号は C++ 11 規格 (ISO/IEC 14882:2011(E)) の節番号に対応しています。  
@@ -75,7 +70,7 @@ int main() {
 ```  
   
 ## <a name="function-exception-specifiers"></a>関数の例外指定子  
- `throw()` 以外の関数の例外の指定子は解析されますが、使用されません。 このことは、ISO C++ 仕様の 15.4 節に準拠していません。 例:  
+ `throw()` 以外の関数の例外の指定子は解析されますが、使用されません。 このことは、ISO C++ 仕様の 15.4 節に準拠していません。 例えば:  
   
 ```cpp  
 void f() throw(int); // parsed but not used  

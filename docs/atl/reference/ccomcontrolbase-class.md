@@ -1,12 +1,9 @@
 ---
-title: "CComControlBase クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComControlBase クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComControlBase
@@ -89,17 +86,15 @@ dev_langs:
 helpviewer_keywords:
 - CComControlBase class
 ms.assetid: 3d1bf022-acf2-4092-8283-ff8cee6332f3
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d6109bfaf29ee26053bc1dcbb5af8f56a0612215
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8b72157db26d4cb7d576e32ca704a32b62b4c2da
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomcontrolbase-class"></a>CComControlBase クラス
 このクラスは、作成して、ATL コントロールを管理するためのメソッドを提供します。  
@@ -214,10 +209,10 @@ class ATL_NO_VTABLE CComControlBase
   
  コントロールの作成の詳細については、次を参照してください。、 [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)です。 ATL プロジェクト ウィザードの詳細については、記事を参照してください。 [ATL プロジェクトを作成する](../../atl/reference/creating-an-atl-project.md)です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="appearancetype"></a>CComControlBase::AppearanceType  
+##  <a name="appearancetype"></a>  CComControlBase::AppearanceType  
  場合は、オーバーライド、 **m_nAppearance**ストック プロパティは、型の**短い**です。  
   
 ```
@@ -227,7 +222,7 @@ typedef short AppearanceType;
 ### <a name="remarks"></a>コメント  
  ATL コントロール ウィザードの追加**m_nAppearance**ストック short 型のプロパティです。 オーバーライド`AppearanceType`別のデータ型を使用する場合。  
   
-##  <a name="ccomcontrolbase"></a>CComControlBase::CComControlBase  
+##  <a name="ccomcontrolbase"></a>  CComControlBase::CComControlBase  
  コンストラクターです。  
   
 ```
@@ -241,7 +236,7 @@ CComControlBase(HWND& h);
 ### <a name="remarks"></a>コメント  
  コントロールのサイズを HIMETRIC 単位の 5080 × 5080 初期化 (2 2"X") を初期化し、`CComControlBase`データ メンバーの値を**NULL**または**FALSE**です。  
   
-##  <a name="dtor"></a>CComControlBase:: ~ CComControlBase  
+##  <a name="dtor"></a>  CComControlBase:: ~ CComControlBase  
  デストラクターです。  
   
 ```
@@ -251,7 +246,7 @@ CComControlBase(HWND& h);
 ### <a name="remarks"></a>コメント  
  コントロールのウィンドウを持つ場合`~CComControlBase`を呼び出して破棄[DestroyWindow](http://msdn.microsoft.com/library/windows/desktop/ms632682)です。  
   
-##  <a name="controlqueryinterface"></a>CComControlBase::ControlQueryInterface  
+##  <a name="controlqueryinterface"></a>  CComControlBase::ControlQueryInterface  
  要求されたインターフェイスへのポインターを取得します。  
   
 ```
@@ -272,7 +267,7 @@ virtual HRESULT ControlQueryInterface(const IID& iid,
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM#15](../../atl/codesnippet/cpp/ccomcontrolbase-class_1.cpp)]  
   
-##  <a name="doesverbactivate"></a>CComControlBase::DoesVerbActivate  
+##  <a name="doesverbactivate"></a>  CComControlBase::DoesVerbActivate  
  確認、`iVerb`で使用されるパラメーター`IOleObjectImpl::DoVerb`コントロールのユーザー インターフェイスをアクティブにするか ( `iVerb` equals `OLEIVERB_UIACTIVATE`)、ユーザーがコントロールをダブルクリックしたときに実行されるアクションを定義します ( `iVerb` に等しい`OLEIVERB_PRIMARY`)、コントロールが表示されます ( `iVerb` equals `OLEIVERB_SHOW`)、またはコントロールをアクティブ化 ( `iVerb` equals **OLEIVERB_INPLACEACTIVATE**)。  
   
 ```
@@ -289,7 +284,7 @@ BOOL DoesVerbActivate(LONG iVerb);
 ### <a name="remarks"></a>コメント  
  独自のライセンス認証の動詞を定義するには、このメソッドをオーバーライドすることができます。  
   
-##  <a name="doesverbuiactivate"></a>CComControlBase::DoesVerbUIActivate  
+##  <a name="doesverbuiactivate"></a>  CComControlBase::DoesVerbUIActivate  
  確認、`iVerb`で使用されるパラメーター`IOleObjectImpl::DoVerb`コントロールのユーザー インターフェイスをアクティブ化してを返します**TRUE**です。  
   
 ```
@@ -303,7 +298,7 @@ BOOL DoesVerbUIActivate(LONG iVerb);
 ### <a name="return-value"></a>戻り値  
  返します**TRUE**場合`iVerb`equals `OLEIVERB_UIACTIVATE`、 `OLEIVERB_PRIMARY`、 `OLEIVERB_SHOW`、または**OLEIVERB_INPLACEACTIVATE**です。 メソッドを返しますそれ以外の場合、 **FALSE**です。  
   
-##  <a name="doverbproperties"></a>CComControlBase::DoVerbProperties  
+##  <a name="doverbproperties"></a>  CComControlBase::DoVerbProperties  
  コントロールのプロパティ ページを表示します。  
   
 ```
@@ -325,7 +320,7 @@ HRESULT DoVerbProperties(LPCRECT /* prcPosRect */, HWND hwndParent);
   
  [!code-cpp[NVC_ATL_COM#20](../../atl/codesnippet/cpp/ccomcontrolbase-class_3.h)]  
   
-##  <a name="fireviewchange"></a>CComControlBase::FireViewChange  
+##  <a name="fireviewchange"></a>  CComControlBase::FireViewChange  
  コントロールを再描画するコンテナーを確認するには、このメソッドを呼び出すか、コントロールのビューが変更された登録済みアドバイズ シンクに通知します。  
   
 ```
@@ -341,7 +336,7 @@ HRESULT FireViewChange();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM#21](../../atl/codesnippet/cpp/ccomcontrolbase-class_4.cpp)]  
   
-##  <a name="getambientappearance"></a>CComControlBase::GetAmbientAppearance  
+##  <a name="getambientappearance"></a>  CComControlBase::GetAmbientAppearance  
  取得**を示す**、現在の外観をコントロールの設定: フラットと 3d 1 0 を指定します。  
   
 ```
@@ -358,7 +353,7 @@ HRESULT GetAmbientAppearance(short& nAppearance);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM#22](../../atl/codesnippet/cpp/ccomcontrolbase-class_5.h)]  
   
-##  <a name="getambientautoclip"></a>CComControlBase::GetAmbientAutoClip  
+##  <a name="getambientautoclip"></a>  CComControlBase::GetAmbientAutoClip  
  取得**DISPID_AMBIENT_AUTOCLIP**コンテナーがコントロールの表示領域の自動クリップをサポートしているかどうかを示しますフラグ。  
   
 ```
@@ -372,7 +367,7 @@ HRESULT GetAmbientAutoClip(BOOL& bAutoClip);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientbackcolor"></a>用意されています  
+##  <a name="getambientbackcolor"></a>  用意されています  
  取得**DISPID_AMBIENT_BACKCOLOR**、コンテナーによって定義されている、すべてのコントロールのアンビエント背景色。  
   
 ```
@@ -386,7 +381,7 @@ HRESULT GetAmbientBackColor(OLE_COLOR& BackColor);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientcharset"></a>CComControlBase::GetAmbientCharSet  
+##  <a name="getambientcharset"></a>  CComControlBase::GetAmbientCharSet  
  取得**DISPID_AMBIENT_CHARSET**、アンビエント文字セットのコンテナーで定義されているすべてのコントロールです。  
   
 ```
@@ -400,7 +395,7 @@ HRESULT GetAmbientCharSet(BSTR& bstrCharSet);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-##  <a name="getambientcodepage"></a>CComControlBase::GetAmbientCodePage  
+##  <a name="getambientcodepage"></a>  CComControlBase::GetAmbientCodePage  
  取得**ことにあります**、コンテナーによって定義されている、すべてのコントロールのアンビエント コード ページです。  
   
 ```
@@ -414,7 +409,7 @@ HRESULT GetAmbientCodePage(ULONG& ulCodePage);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-##  <a name="getambientdisplayasdefault"></a>CComControlBase::GetAmbientDisplayAsDefault  
+##  <a name="getambientdisplayasdefault"></a>  CComControlBase::GetAmbientDisplayAsDefault  
  取得**DISPID_AMBIENT_DISPLAYASDEFAULT**、あるフラグ**TRUE**場合は、コンテナーが既定のボタンにするには、このサイト内のコントロールをマークし、したがってボタン コントロールが描画するのには、自ら、太くフレームです。  
   
 ```
@@ -428,7 +423,7 @@ HRESULT GetAmbientDisplayAsDefault(BOOL& bDisplayAsDefault);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientdisplayname"></a>CComControlBase::GetAmbientDisplayName  
+##  <a name="getambientdisplayname"></a>  CComControlBase::GetAmbientDisplayName  
  取得**DISPID_AMBIENT_DISPLAYNAME**コンテナーがコントロールに指定した名前です。  
   
 ```
@@ -442,7 +437,7 @@ HRESULT GetAmbientDisplayName(BSTR& bstrDisplayName);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientfont"></a>CComControlBase::GetAmbientFont  
+##  <a name="getambientfont"></a>  CComControlBase::GetAmbientFont  
  取得、コンテナーへのポインターのアンビエント`IFont`インターフェイスです。  
   
 ```
@@ -459,7 +454,7 @@ HRESULT GetAmbientFont(IFont** ppFont);
 ### <a name="remarks"></a>コメント  
  プロパティが場合**NULL**、ポインターが**NULL**です。 ポインターがない場合**NULL**、呼び出し元は、ポインターを解放する必要があります。  
   
-##  <a name="getambientfontdisp"></a>CComControlBase::GetAmbientFontDisp  
+##  <a name="getambientfontdisp"></a>  CComControlBase::GetAmbientFontDisp  
  取得、コンテナーへのポインターのアンビエント**この**ディスパッチ インターフェイスです。  
   
 ```
@@ -476,7 +471,7 @@ HRESULT GetAmbientFontDisp(IFontDisp** ppFont);
 ### <a name="remarks"></a>コメント  
  プロパティが場合**NULL**、ポインターが**NULL**です。 ポインターがない場合**NULL**、呼び出し元は、ポインターを解放する必要があります。  
   
-##  <a name="getambientforecolor"></a>CComControlBase::GetAmbientForeColor  
+##  <a name="getambientforecolor"></a>  CComControlBase::GetAmbientForeColor  
  取得**DISPID_AMBIENT_FORECOLOR**、コンテナーによって定義されている、すべてのコントロールのアンビエント前景色。  
   
 ```
@@ -490,7 +485,7 @@ HRESULT GetAmbientForeColor(OLE_COLOR& ForeColor);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientlocaleid"></a>CComControlBase::GetAmbientLocaleID  
+##  <a name="getambientlocaleid"></a>  CComControlBase::GetAmbientLocaleID  
  取得**DISPID_AMBIENT_LOCALEID**、コンテナーによって使用される言語の識別子。  
   
 ```
@@ -507,7 +502,7 @@ HRESULT GetAmbientLocaleID(LCID& lcid);
 ### <a name="remarks"></a>コメント  
  コントロールは、この識別子を使用して、さまざまな言語には、そのユーザー インターフェイスを調整することができます。  
   
-##  <a name="getambientmessagereflect"></a>CComControlBase::GetAmbientMessageReflect  
+##  <a name="getambientmessagereflect"></a>  CComControlBase::GetAmbientMessageReflect  
  取得**DISPID_AMBIENT_MESSAGEREFLECT**、コンテナーがウィンドウのメッセージを受信するかどうかを示すフラグ (など`WM_DRAWITEM`) イベントとして。  
   
 ```
@@ -521,7 +516,7 @@ HRESULT GetAmbientMessageReflect(BOOL& bMessageReflect);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientpalette"></a>CComControlBase::GetAmbientPalette  
+##  <a name="getambientpalette"></a>  CComControlBase::GetAmbientPalette  
  取得**DISPID_AMBIENT_PALETTE**コンテナーのアクセスに使用される、`HPALETTE`です。  
   
 ```
@@ -535,7 +530,7 @@ HRESULT GetAmbientPalette(HPALETTE& hPalette);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientproperty"></a>CComControlBase::GetAmbientProperty  
+##  <a name="getambientproperty"></a>  CComControlBase::GetAmbientProperty  
  指定されたコンテナーのプロパティを取得`dispid`です。  
   
 ```
@@ -555,7 +550,7 @@ HRESULT GetAmbientProperty(DISPID dispid, VARIANT& var);
 ### <a name="remarks"></a>コメント  
  ATL には、一連の特定のプロパティを取得するヘルパー関数が提供されている[用意されています](#getambientbackcolor)です。 適切なメソッドがないの場合を使用して`GetAmbientProperty`です。  
   
-##  <a name="getambientrighttoleft"></a>CComControlBase::GetAmbientRightToLeft  
+##  <a name="getambientrighttoleft"></a>  CComControlBase::GetAmbientRightToLeft  
  取得**DISPID_AMBIENT_RIGHTTOLEFT**方向、コンテナーによってコンテンツが表示されます。  
   
 ```
@@ -569,7 +564,7 @@ HRESULT GetAmbientRightToLeft(BOOL& bRightToLeft);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-##  <a name="getambientscaleunits"></a>CComControlBase::GetAmbientScaleUnits  
+##  <a name="getambientscaleunits"></a>  CComControlBase::GetAmbientScaleUnits  
  取得**DISPID_AMBIENT_SCALEUNITS**コンテナーのアンビエント単位数 (インチやセンチメートル) などのラベル付けが表示されます。  
   
 ```
@@ -583,7 +578,7 @@ HRESULT GetAmbientScaleUnits(BSTR& bstrScaleUnits);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientshowgrabhandles"></a>CComControlBase::GetAmbientShowGrabHandles  
+##  <a name="getambientshowgrabhandles"></a>  CComControlBase::GetAmbientShowGrabHandles  
  取得**DISPID_AMBIENT_SHOWGRABHANDLES**コンテナーがアクティブなときにハンドルを表示するコントロールを許可するかどうかを示すフラグ。  
   
 ```
@@ -597,7 +592,7 @@ HRESULT GetAmbientShowGrabHandles(BOOL& bShowGrabHandles);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientshowhatching"></a>CComControlBase::GetAmbientShowHatching  
+##  <a name="getambientshowhatching"></a>  CComControlBase::GetAmbientShowHatching  
  取得**DISPID_AMBIENT_SHOWHATCHING**コンテナーがコントロールのユーザー インターフェイスがアクティブなとき、ハッチ パターンを持つ自体を表示するコントロールを許可するかどうかを示すフラグ。  
   
 ```
@@ -611,7 +606,7 @@ HRESULT GetAmbientShowHatching(BOOL& bShowHatching);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambientsupportsmnemonics"></a>CComControlBase::GetAmbientSupportsMnemonics  
+##  <a name="getambientsupportsmnemonics"></a>  CComControlBase::GetAmbientSupportsMnemonics  
  取得**DISPID_AMBIENT_SUPPORTSMNEMONICS**コンテナーがキーボードのニーモニックをサポートしているかどうかを示しますフラグ。  
   
 ```
@@ -625,7 +620,7 @@ HRESULT GetAmbientSupportsMnemonics(BOOL& bSupportsMnemonics);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambienttextalign"></a>CComControlBase::GetAmbientTextAlign  
+##  <a name="getambienttextalign"></a>  CComControlBase::GetAmbientTextAlign  
  取得**DISPID_AMBIENT_TEXTALIGN**コンテナーで優先されるテキストの配置: 一般的な配置 (数値、テキストを左) の場合は 0、左揃えの場合は 1、2 を中央揃え、および右揃えの 3 です。  
   
 ```
@@ -639,7 +634,7 @@ HRESULT GetAmbientTextAlign(short& nTextAlign);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getambienttoptobottom"></a>CComControlBase::GetAmbientTopToBottom  
+##  <a name="getambienttoptobottom"></a>  CComControlBase::GetAmbientTopToBottom  
  取得**DISPID_AMBIENT_TOPTOBOTTOM**方向、コンテナーによってコンテンツが表示されます。  
   
 ```
@@ -653,7 +648,7 @@ HRESULT GetAmbientTopToBottom(BOOL& bTopToBottom);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-##  <a name="getambientuidead"></a>CComControlBase::GetAmbientUIDead  
+##  <a name="getambientuidead"></a>  CComControlBase::GetAmbientUIDead  
  取得**DISPID_AMBIENT_UIDEAD**コンテナーに、コントロール ユーザー インターフェイスの動作に応答するかどうかを示すフラグ。  
   
 ```
@@ -670,7 +665,7 @@ HRESULT GetAmbientUIDead(BOOL& bUIDead);
 ### <a name="remarks"></a>コメント  
  場合**TRUE**コントロールは応答しません。 このフラグに関係なく適用されます、 **DISPID_AMBIENT_USERMODE**フラグ。 参照してください[CComControlBase::GetAmbientUserMode](#getambientusermode)です。  
   
-##  <a name="getambientusermode"></a>CComControlBase::GetAmbientUserMode  
+##  <a name="getambientusermode"></a>  CComControlBase::GetAmbientUserMode  
  取得**DISPID_AMBIENT_USERMODE**、コンテナーが実行モードであるかどうかを示すフラグ ( **TRUE**) デザイン モードまたは ( **FALSE**)。  
   
 ```
@@ -684,7 +679,7 @@ HRESULT GetAmbientUserMode(BOOL& bUserMode);
 ### <a name="return-value"></a>戻り値  
  標準の HRESULT 値のいずれか。  
   
-##  <a name="getdirty"></a>CComControlBase::GetDirty  
+##  <a name="getdirty"></a>  CComControlBase::GetDirty  
  データ メンバーの値を返します`m_bRequiresSave`です。  
   
 ```
@@ -697,7 +692,7 @@ BOOL GetDirty();
 ### <a name="remarks"></a>コメント  
  使用してこの値を設定[CComControlBase::SetDirty](#setdirty)です。  
   
-##  <a name="getzoominfo"></a>CComControlBase::GetZoomInfo  
+##  <a name="getzoominfo"></a>  CComControlBase::GetZoomInfo  
  取得、x と y の分子とズームの倍率の分母の値の有効なコントロールの埋め込み先編集します。  
   
 ```
@@ -711,7 +706,7 @@ void GetZoomInfo(ATL_DRAWINFO& di);
 ### <a name="remarks"></a>コメント  
  ズームの倍率は、現在の大きさにコントロールの自然なサイズの比率です。  
   
-##  <a name="inplaceactivate"></a>CComControlBase::InPlaceActivate  
+##  <a name="inplaceactivate"></a>  CComControlBase::InPlaceActivate  
  動詞には、状態を非アクティブ状態から移行するコントロールをさせます`iVerb`を示します。  
   
 ```
@@ -733,7 +728,7 @@ HRESULT InPlaceActivate(LONG iVerb, const RECT* prcPosRect = NULL);
   
  このメソッドも取得、 `IOleInPlaceSite`、**処理**、または**IOleInPlaceSiteWindowless**コントロールのインターフェイス ポインターコントロールクラスのデータメンバー内に格納および[は](#m_spinplacesite)します。 コントロール クラスのデータ メンバー [CComControlBase::m_bInPlaceSiteEx](#m_binplacesiteex)、 [CComControlBase::m_bWndLess](#m_bwndless)、 [CComControlBase::m_bWasOnceWindowless](#m_bwasoncewindowless)、および[各](#m_bnegotiatedwnd)必要に応じて、true に設定されます。  
   
-##  <a name="internalgetsite"></a>CComControlBase::InternalGetSite  
+##  <a name="internalgetsite"></a>  CComControlBase::InternalGetSite  
  識別されたインターフェイスへのポインターのコントロール サイトを照会するには、このメソッドを呼び出します。  
   
 ```
@@ -753,7 +748,7 @@ HRESULT InternalGetSite(REFIID riid, void** ppUnkSite);
 ### <a name="remarks"></a>コメント  
  サイトで要求されたインターフェイスをサポートする場合は`riid`、により、ポインターが返される`ppUnkSite`です。 それ以外の場合、`ppUnkSite`は NULL に設定します。  
   
-##  <a name="m_bautosize"></a>CComControlBase::m_bAutoSize  
+##  <a name="m_bautosize"></a>  CComControlBase::m_bAutoSize  
  コントロールが他の任意のサイズを変更できないことを示すフラグです。  
   
 ```
@@ -768,7 +763,7 @@ unsigned m_bAutoSize:1;
   
  追加する場合、**自動サイズ** オプションを選択、[ストック プロパティ](../../atl/reference/stock-properties-atl-control-wizard.md)ATL コントロール ウィザード、ウィザードのタブに自動的にコントロール クラスのこのデータ メンバーを作成、配置を作成およびプロパティのメソッドを取得、し、サポート[IPropertyNotifySink](http://msdn.microsoft.com/library/windows/desktop/ms692638)にプロパティが変更されたときに、コンテナーを自動的に通知します。  
   
-##  <a name="m_bdrawfromnatural"></a>CComControlBase::m_bDrawFromNatural  
+##  <a name="m_bdrawfromnatural"></a>  CComControlBase::m_bDrawFromNatural  
  示すフラグ`IDataObjectImpl::GetData`と`CComControlBase::GetZoomInfo`からコントロールのサイズを設定する必要があります`m_sizeNatural`からではなく`m_sizeExtent`です。  
   
 ```
@@ -780,7 +775,7 @@ unsigned m_bDrawFromNatural:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_bdrawgetdatainhimetric"></a>CComControlBase::m_bDrawGetDataInHimetric  
+##  <a name="m_bdrawgetdatainhimetric"></a>  CComControlBase::m_bDrawGetDataInHimetric  
  示すフラグ`IDataObjectImpl::GetData`描画するときに HIMETRIC 単位と単位を使用する必要があります。  
   
 ```
@@ -793,7 +788,7 @@ unsigned m_bDrawGetDataInHimetric:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_binplaceactive"></a>CComControlBase::m_bInPlaceActive  
+##  <a name="m_binplaceactive"></a>  CComControlBase::m_bInPlaceActive  
  コントロールが、インプレース アクティブであることを示すフラグです。  
   
 ```
@@ -806,7 +801,7 @@ unsigned m_bInPlaceActive:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_binplacesiteex"></a>CComControlBase::m_bInPlaceSiteEx  
+##  <a name="m_binplacesiteex"></a>  CComControlBase::m_bInPlaceSiteEx  
  コンテナーのサポートを示すフラグ、**処理**インターフェイスと OCX96 およびちらつきなしのコントロールなどの機能を制御します。  
   
 ```
@@ -822,7 +817,7 @@ unsigned m_bInPlaceSiteEx:1;
   
  場合`m_bWndLess`は**FALSE**と`m_bInPlaceSiteEx`は**TRUE**、`m_spInPlaceSite`は、**処理**インターフェイス ポインター。 参照してください[は、「](#m_spinplacesite)これら 3 つのデータ メンバーの間でリレーションシップを示すテーブルにします。  
   
-##  <a name="m_bnegotiatedwnd"></a>各  
+##  <a name="m_bnegotiatedwnd"></a>  各  
  (ちらつきなしでウィンドウ コントロールなど)、OCX96 コントロールの機能のサポートのコンテナーとコントロールがネゴシエートされるかどうか、およびコントロールでのウィンドウまたはウィンドウなしがかどうかを示すフラグです。  
   
 ```
@@ -836,7 +831,7 @@ unsigned m_bNegotiatedWnd:1;
   
  `m_bNegotiatedWnd`フラグである必要があります**TRUE**の`m_spInPlaceSite`を有効にするポインター。  
   
-##  <a name="m_brecomposeonresize"></a>CComControlBase::m_bRecomposeOnResize  
+##  <a name="m_brecomposeonresize"></a>  CComControlBase::m_bRecomposeOnResize  
  コントロールがコンテナーには、コントロールの表示サイズが変更されたときに、プレゼンテーションを再構成することを示すフラグです。  
   
 ```
@@ -850,7 +845,7 @@ unsigned m_bRecomposeOnResize:1;
   
  このフラグがオンになって[IOleObjectImpl::SetExtent](../../atl/reference/ioleobjectimpl-class.md#setextent)し、 **TRUE**、`SetExtent`の変更の表示のコンテナーに通知します。 このフラグが設定されている場合、 **OLEMISC_RECOMPOSEONRESIZE**ビット、[入ります](http://msdn.microsoft.com/library/windows/desktop/ms678497)列挙型を設定することも必要があります。  
   
-##  <a name="m_brequiressave"></a>CComControlBase::m_bRequiresSave  
+##  <a name="m_brequiressave"></a>  CComControlBase::m_bRequiresSave  
  最後に保存された後、コントロールが変更を示すフラグします。  
   
 ```
@@ -863,7 +858,7 @@ unsigned m_bRequiresSave:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_bresizenatural"></a>CComControlBase::m_bResizeNatural  
+##  <a name="m_bresizenatural"></a>  CComControlBase::m_bResizeNatural  
  コントロールが本来のエクステント (スケールなし物理サイズ) のサイズを変更することを示すフラグ、コンテナーにコントロールの表示サイズが変更されたとき。  
   
 ```
@@ -878,7 +873,7 @@ unsigned m_bResizeNatural:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_buiactive"></a>CComControlBase::m_bUIActive  
+##  <a name="m_buiactive"></a>  CComControlBase::m_bUIActive  
  メニューやツールバーなどのコントロールのユーザー インターフェイスを示すフラグがアクティブです。  
   
 ```
@@ -891,7 +886,7 @@ unsigned m_bUIActive:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_busingwindowrgn"></a>CComControlBase::m_bUsingWindowRgn  
+##  <a name="m_busingwindowrgn"></a>  CComControlBase::m_bUsingWindowRgn  
  コントロールは、コンテナーが指定したウィンドウ領域の使用を示すフラグします。  
   
 ```
@@ -903,7 +898,7 @@ unsigned m_bUsingWindowRgn:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_bwasoncewindowless"></a>CComControlBase::m_bWasOnceWindowless  
+##  <a name="m_bwasoncewindowless"></a>  CComControlBase::m_bWasOnceWindowless  
  コントロール ウィンドウなし、されましたが、可能性がありますでなくてもかまいませんウィンドウなし今すぐを示すフラグします。  
   
 ```
@@ -915,7 +910,7 @@ unsigned m_bWasOnceWindowless:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_bwindowonly"></a>CComControlBase::m_bWindowOnly  
+##  <a name="m_bwindowonly"></a>  CComControlBase::m_bWindowOnly  
  コンテナーは、ウィンドウなしのコントロールをサポートしている場合でも、コントロールはウィンドウを持つできるかを示すフラグです。  
   
 ```
@@ -927,7 +922,7 @@ unsigned m_bWindowOnly:1;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_bwndless"></a>CComControlBase::m_bWndLess  
+##  <a name="m_bwndless"></a>  CComControlBase::m_bWndLess  
  コントロールはウィンドウなしを示すフラグします。  
   
 ```
@@ -943,7 +938,7 @@ unsigned m_bWndLess:1;
   
  場合`m_bWndLess`は**TRUE**、`m_spInPlaceSite`は、 **IOleInPlaceSiteWindowless**インターフェイス ポインター。 参照してください[は](#m_spinplacesite)のこれらのデータ メンバーの完全な関係を示す表。  
   
-##  <a name="m_hwndcd"></a>CComControlBase::m_hWndCD  
+##  <a name="m_hwndcd"></a>  CComControlBase::m_hWndCD  
  コントロールに関連付けられているウィンドウ ハンドルへの参照が含まれています。  
   
 ```
@@ -955,7 +950,7 @@ HWND& m_hWndCD;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_nfreezeevents"></a>CComControlBase::m_nFreezeEvents  
+##  <a name="m_nfreezeevents"></a>  CComControlBase::m_nFreezeEvents  
  回数のカウント コンテナー イベントを固定した (イベントを承諾することを拒否) イベント (イベントの受け入れ) の中間の凍結解除なし。  
   
 ```
@@ -967,7 +962,7 @@ short m_nFreezeEvents;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_rcpos"></a>CComControlBase::m_rcPos  
+##  <a name="m_rcpos"></a>  CComControlBase::m_rcPos  
  コンテナーの座標で表される、コントロールの位置をピクセル単位で。  
   
 ```
@@ -979,7 +974,7 @@ RECT m_rcPos;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_sizeextent"></a>この  
+##  <a name="m_sizeextent"></a>  この  
  HIMETRIC 単位 (各単位は 0.01 ミリメートル) 特定のディスプレイのコントロールの範囲。  
   
 ```
@@ -995,7 +990,7 @@ SIZE m_sizeExtent;
   
  サイズを変換するには、グローバル関数でピクセルに[AtlHiMetricToPixel](pixel-himetric-conversion-global-functions.md#atlhimetrictopixel)です。  
   
-##  <a name="m_sizenatural"></a>CComControlBase::m_sizeNatural  
+##  <a name="m_sizenatural"></a>  CComControlBase::m_sizeNatural  
  HIMETRIC 単位 (各単位は 0.01 ミリメートル) 内のコントロールの物理サイズ。  
   
 ```
@@ -1011,7 +1006,7 @@ SIZE m_sizeNatural;
   
  サイズを変換するには、グローバル関数でピクセルに[AtlHiMetricToPixel](pixel-himetric-conversion-global-functions.md#atlhimetrictopixel)です。  
   
-##  <a name="m_spadvisesink"></a>アドバイズ  
+##  <a name="m_spadvisesink"></a>  アドバイズ  
  コンテナー上のアドバイザリ コネクションを直接のポインター (コンテナーの[IAdviseSink](http://msdn.microsoft.com/library/windows/desktop/ms692513))。  
   
 ```
@@ -1024,7 +1019,7 @@ CComPtr<IAdviseSink>
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_spambientdispatch"></a>CComControlBase::m_spAmbientDispatch  
+##  <a name="m_spambientdispatch"></a>  CComControlBase::m_spAmbientDispatch  
  A`CComDispatchDriver`オブジェクトを取得し、オブジェクトのプロパティを設定することができます、`IDispatch`ポインター。  
   
 ```
@@ -1036,7 +1031,7 @@ CComDispatchDriver m_spAmbientDispatch;
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_spclientsite"></a>CComControlBase::m_spClientSite  
+##  <a name="m_spclientsite"></a>  CComControlBase::m_spClientSite  
  コンテナー内のコントロールのクライアントのサイトへのポインター。  
   
 ```
@@ -1049,7 +1044,7 @@ CComPtr<IOleClientSite>
 > [!NOTE]
 >  コントロール クラス内のこのデータ メンバーを使用するには、必要がありますとして宣言するデータ メンバーをコントロール クラスでします。 基本クラスの共用体で宣言されているために、コントロール クラスは、基本クラスからこのデータ メンバーを継承しません。  
   
-##  <a name="m_spdataadviseholder"></a>CComControlBase::m_spDataAdviseHolder  
+##  <a name="m_spdataadviseholder"></a>  CComControlBase::m_spDataAdviseHolder  
  データ オブジェクト間のアドバイザリ コネクションをアドバイズ シンクすることを意味標準を提供します。  
   
 ```
@@ -1066,7 +1061,7 @@ CComPtr<IDataAdviseHolder>
   
  インターフェイス`m_spDataAdviseHolder`を実装する、 [IDataObject::DAdvise](http://msdn.microsoft.com/library/windows/desktop/ms692579)と[IDataObject::DUnadvise](http://msdn.microsoft.com/library/windows/desktop/ms692448)メソッドを設定し、コンテナーにアドバイザリ コネクションを削除します。 コントロールのコンテナーがサポートすることによりアドバイズ シンクを実装する必要があります、 [IAdviseSink](http://msdn.microsoft.com/library/windows/desktop/ms692513)インターフェイスです。  
   
-##  <a name="m_spinplacesite"></a>は  
+##  <a name="m_spinplacesite"></a>  は  
  コンテナーへのポインター[ビュー](http://msdn.microsoft.com/library/windows/desktop/ms686586)、[処理](http://msdn.microsoft.com/library/windows/desktop/ms693461)、または[IOleInPlaceSiteWindowless](http://msdn.microsoft.com/library/windows/desktop/ms682300)インターフェイス ポインター。  
   
 ```
@@ -1089,7 +1084,7 @@ CComPtr<IOleInPlaceSiteWindowless>
 |**この処理**|**FALSE**|**場合は TRUE。**|  
 |`IOleInPlaceSite`|**FALSE**|**FALSE**|  
   
-##  <a name="m_spoleadviseholder"></a>CComControlBase::m_spOleAdviseHolder  
+##  <a name="m_spoleadviseholder"></a>  CComControlBase::m_spOleAdviseHolder  
  アドバイザリ コネクションを保持するための標準的な実装を提供します。  
   
 ```
@@ -1104,7 +1099,7 @@ CComPtr<IOleAdviseHolder>
   
  インターフェイス`m_spOleAdviseHolder`を実装する、 [IOleObject::Advise](http://msdn.microsoft.com/library/windows/desktop/ms686573)と[IOleObject::Unadvise](http://msdn.microsoft.com/library/windows/desktop/ms693749)メソッドを設定し、コンテナーにアドバイザリ コネクションを削除します。 コントロールのコンテナーがサポートすることによりアドバイズ シンクを実装する必要があります、 [IAdviseSink](http://msdn.microsoft.com/library/windows/desktop/ms692513)インターフェイスです。  
   
-##  <a name="ondraw"></a>CComControlBase::OnDraw  
+##  <a name="ondraw"></a>  CComControlBase::OnDraw  
  コントロールを描画するには、このメソッドをオーバーライドします。  
   
 ```
@@ -1126,7 +1121,7 @@ virtual HRESULT OnDraw(ATL_DRAWINFO& di);
 ### <a name="example"></a>例  
  例を参照して[CComControlBase::GetAmbientAppearance](#getambientappearance)です。  
   
-##  <a name="ondrawadvanced"></a>CComControlBase::OnDrawAdvanced  
+##  <a name="ondrawadvanced"></a>  CComControlBase::OnDrawAdvanced  
  既定値`OnDrawAdvanced`描画、正規化されたデバイス コンテキストを準備し、コントロール クラスの`OnDraw`メソッドです。  
   
 ```
@@ -1145,7 +1140,7 @@ virtual HRESULT OnDrawAdvanced(ATL_DRAWINFO& di);
   
  参照してください[CComControlBase::OnDraw](#ondraw)詳細についてはします。  
   
-##  <a name="onkillfocus"></a>CComControlBase::OnKillFocus  
+##  <a name="onkillfocus"></a>  CComControlBase::OnKillFocus  
  コントロール、インプレース アクティブと有効なコントロール サイトを持つそのがコンテナーに通知コントロールがフォーカスを失ったことを確認します。  
   
 ```
@@ -1171,7 +1166,7 @@ LRESULT OnKillFocus(UINT /* nMsg */,
 ### <a name="return-value"></a>戻り値  
  常に 1 を返します。  
   
-##  <a name="onmouseactivate"></a>CComControlBase::OnMouseActivate  
+##  <a name="onmouseactivate"></a>  CComControlBase::OnMouseActivate  
  UI がユーザー モードでは、し、コントロールをアクティブにすることを確認します。  
   
 ```
@@ -1197,7 +1192,7 @@ LRESULT OnMouseActivate(UINT /* nMsg */,
 ### <a name="return-value"></a>戻り値  
  常に 1 を返します。  
   
-##  <a name="onpaint"></a>CComControlBase::OnPaint  
+##  <a name="onpaint"></a>  CComControlBase::OnPaint  
  描画するため、コンテナーを準備し、コントロールのクライアント領域の取得、コントロール クラスの`OnDrawAdvanced`メソッドです。  
   
 ```
@@ -1226,7 +1221,7 @@ LRESULT OnPaint(UINT /* nMsg */,
 ### <a name="remarks"></a>コメント  
  場合`wParam`が NULL でない`OnPaint`有効 HDC を含みの代わりに使用を前提としています[CComControlBase::m_hWndCD](#m_hwndcd)です。  
   
-##  <a name="onsetfocus"></a>CComControlBase::OnSetFocus  
+##  <a name="onsetfocus"></a>  CComControlBase::OnSetFocus  
  コントロール、インプレース アクティブと有効なコントロール サイトを持つそのがコンテナー コントロールに通知の確認は、フォーカスを得てきました。  
   
 ```
@@ -1255,7 +1250,7 @@ LRESULT OnSetFocus(UINT /* nMsg */,
 ### <a name="remarks"></a>コメント  
  コントロールがフォーカスを受け取ったことをコンテナーに通知を送信します。  
   
-##  <a name="pretranslateaccelerator"></a>CComControlBase::PreTranslateAccelerator  
+##  <a name="pretranslateaccelerator"></a>  CComControlBase::PreTranslateAccelerator  
  独自のキーボード アクセラレータのハンドラーを提供するには、このメソッドをオーバーライドします。  
   
 ```
@@ -1273,7 +1268,7 @@ BOOL PreTranslateAccelerator(LPMSG /* pMsg */,
 ### <a name="return-value"></a>戻り値  
  既定では返します**FALSE**です。  
   
-##  <a name="sendonclose"></a>CComControlBase::SendOnClose  
+##  <a name="sendonclose"></a>  CComControlBase::SendOnClose  
  コントロールが閉じられたことアドバイズ ホルダーに登録されているすべてのアドバイズ シンクに通知します。  
   
 ```
@@ -1286,7 +1281,7 @@ HRESULT SendOnClose();
 ### <a name="remarks"></a>コメント  
  コントロールがそのアドバイズ シンクを閉じている通知を送信します。  
   
-##  <a name="sendondatachange"></a>CComControlBase::SendOnDataChange  
+##  <a name="sendondatachange"></a>  CComControlBase::SendOnDataChange  
  コントロールのデータが変更されたアドバイズ ホルダーに登録されているすべてのアドバイズ シンクに通知します。  
   
 ```
@@ -1300,7 +1295,7 @@ HRESULT SendOnDataChange(DWORD advf = 0);
 ### <a name="return-value"></a>戻り値  
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
-##  <a name="sendonrename"></a>CComControlBase::SendOnRename  
+##  <a name="sendonrename"></a>  CComControlBase::SendOnRename  
  コントロールに新しいモニカーがあること、アドバイズ保有者に登録されているすべてのアドバイズ シンクに通知します。  
   
 ```
@@ -1317,7 +1312,7 @@ HRESULT SendOnRename(IMoniker* pmk);
 ### <a name="remarks"></a>コメント  
  コントロールのモニカーが変更されたことを示す通知を送信します。  
   
-##  <a name="sendonsave"></a>CComControlBase::SendOnSave  
+##  <a name="sendonsave"></a>  CComControlBase::SendOnSave  
  コントロールが保存されているアドバイズ ホルダーに登録されているすべてのアドバイズ シンクに通知します。  
   
 ```
@@ -1330,7 +1325,7 @@ HRESULT SendOnSave();
 ### <a name="remarks"></a>コメント  
  コントロールがデータを保存したことの通知を送信します。  
   
-##  <a name="sendonviewchange"></a>CComControlBase::SendOnViewChange  
+##  <a name="sendonviewchange"></a>  CComControlBase::SendOnViewChange  
  登録されているすべてのコントロールのビューが変更されたアドバイズ シンクに通知します。  
   
 ```
@@ -1348,9 +1343,9 @@ HRESULT SendOnViewChange(DWORD dwAspect, LONG lindex = -1);
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ### <a name="remarks"></a>コメント  
- `SendOnViewChange`呼び出し[IAdviseSink::OnViewChange](http://msdn.microsoft.com/library/windows/desktop/ms694337)です。 値だけ*lindex*ビュー全体が関心のあることを示す-1 は、現在サポートされています。  
+ `SendOnViewChange` 呼び出し[IAdviseSink::OnViewChange](http://msdn.microsoft.com/library/windows/desktop/ms694337)です。 値だけ*lindex*ビュー全体が関心のあることを示す-1 は、現在サポートされています。  
   
-##  <a name="setcontrolfocus"></a>CComControlBase::SetControlFocus  
+##  <a name="setcontrolfocus"></a>  CComControlBase::SetControlFocus  
  設定またはコントロールの間にキーボード フォーカスを削除します。  
   
 ```
@@ -1367,7 +1362,7 @@ BOOL SetControlFocus(BOOL bGrab);
 ### <a name="remarks"></a>コメント  
  ウィンドウ コントロール、Windows API 関数の[SetFocus](http://msdn.microsoft.com/library/windows/desktop/ms646312)と呼びます。 ウィンドウなしのコントロールの[IOleInPlaceSiteWindowless::SetFocus](http://msdn.microsoft.com/library/windows/desktop/ms679745)と呼びます。 この呼び出しでは、ウィンドウなしのコントロールがキーボード フォーカスを取得し、ウィンドウのメッセージに応答できます。  
   
-##  <a name="setdirty"></a>CComControlBase::SetDirty  
+##  <a name="setdirty"></a>  CComControlBase::SetDirty  
  データ メンバーを設定`m_bRequiresSave`の値に`bDirty`です。  
   
 ```
@@ -1379,8 +1374,8 @@ void SetDirty(BOOL bDirty);
  データ メンバーの値[CComControlBase::m_bRequiresSave](#m_brequiressave)です。  
   
 ### <a name="remarks"></a>コメント  
- **Setdirty (true)**フラグを最後に保存してから、コントロールが変更されたことを呼び出す必要があります。 値`m_bRequiresSave`で取得[CComControlBase::GetDirty](#getdirty)です。  
+ **Setdirty (true)** フラグを最後に保存してから、コントロールが変更されたことを呼び出す必要があります。 値`m_bRequiresSave`で取得[CComControlBase::GetDirty](#getdirty)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CComControl クラス](../../atl/reference/ccomcontrol-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

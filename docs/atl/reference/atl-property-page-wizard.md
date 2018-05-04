@@ -1,12 +1,9 @@
 ---
-title: "ATL プロパティ ページ ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: ATL プロパティ ページ ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - vc.codewiz.class.atl.ppg.overview
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - ATL projects, adding property pages
 - ATL Property Page Wizard
 ms.assetid: 6113e325-facd-4f68-b491-144d75209922
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9f97b4fcc84f9099ca7017eabd7ae5ead62cfe63
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 17c5d863ef14aeddcd66f813449b514360f657a4
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-property-page-wizard"></a>ATL プロパティ ページ ウィザード
 このウィザード[ATL プロジェクトにプロパティ ページを追加](../../atl/reference/adding-an-atl-property-page.md)または ATL サポートを MFC プロジェクトにします。 ATL プロパティ ページでは、ユーザー インターフェイスを提供、プロパティを設定する (またはメソッドの呼び出し) の 1 つまたは複数の COM オブジェクトです。  
@@ -46,7 +41,7 @@ ms.lasthandoff: 12/21/2017
 |||  
 |-|-|  
 |用語|定義|  
-|**短い名前**|オブジェクトの省略名を設定します。 指定した名前が、クラスを決定し、**コクラス**ファイルの名前 (**.cpp**と**.h**) 名、**型**名、および、 **ProgID**それらのフィールドを個別に変更していない限り、します。|  
+|**短い名前**|オブジェクトの省略名を設定します。 指定した名前が、クラスを決定し、**コクラス**ファイルの名前 (**.cpp**と **.h**) 名、**型**名、および、 **ProgID**それらのフィールドを個別に変更していない限り、します。|  
 |**.h ファイル**|新しいオブジェクトのクラスのヘッダー ファイルの名前を設定します。 既定では、この名前は、名に基づいてで提供される**短い名前**です。 ファイル名を任意の場所に保存するか、既存のファイルに、クラスの宣言を追加する、省略記号ボタンをクリックします。 既存のファイルを選択した場合、ウィザードに保存されません、選択した場所まで をクリック**完了**ウィザード。<br /><br /> ウィザードでは、ファイルは上書きされません。 クリックすると、既存のファイルの名前を選択するかどうかは**完了**ウィザードの指示に従って、クラス宣言が、ファイルの内容に追加されるかどうかを指定するようにします。 をクリックして**はい**; ファイルを追加する をクリックして**なし**ウィザードに戻り、別のファイル名を指定します。|  
 |**クラス**|オブジェクトを実装するクラスの名前を設定します。 この名前は内に指定した名前に基づいて**短い名前**、'C'、クラス名の一般的なプレフィックスが付きます。|  
 |**.cpp ファイル**|新しいオブジェクトのクラスの実装ファイルの名前を設定します。 既定では、この名前は、名に基づいてで提供される**短い名前**です。 ファイル名を任意の場所に保存する、省略記号ボタンをクリックします。 クリックするまで、選択した場所にファイルが保存されません**完了**ウィザード。<br /><br /> ウィザードでは、ファイルは上書きされません。 クリックすると、既存のファイルの名前を選択するかどうかは**完了**ウィザードの指示に従って、クラスの実装が、ファイルの内容に追加されるかどうかを指定するようにします。 をクリックして**はい**; ファイルを追加する をクリックして**なし**ウィザードに戻り、別のファイル名を指定します。|  
@@ -67,7 +62,7 @@ ms.lasthandoff: 12/21/2017
  **ProgID**  
  コンテナーは、オブジェクトの CLSID の代わりに使用できる名前を設定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [オプション、ATL プロパティ ページ ウィザード](../../atl/reference/options-atl-property-page-wizard.md)   
  [文字列、ATL プロパティ ページ ウィザード](../../atl/reference/strings-atl-property-page-wizard.md)   
  [例: プロパティ ページの実装](../../atl/example-implementing-a-property-page.md)

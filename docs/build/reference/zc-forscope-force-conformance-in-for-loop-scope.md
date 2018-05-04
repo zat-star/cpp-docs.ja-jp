@@ -1,10 +1,10 @@
 ---
-title: "/Zc:forScope (for の強制準拠ループ スコープ) |Microsoft ドキュメント"
-ms.custom: 
+title: /Zc:forScope (for の強制準拠ループ スコープ) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 03/06/2018
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLCompilerTool.ForceConformanceInForLoopScope
 - VC.Project.VCCLWCECompilerTool.ForceConformanceInForLoopScope
@@ -19,14 +19,13 @@ helpviewer_keywords:
 ms.assetid: 3031f02d-3b14-4ad0-869e-22b0110c3aed
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 47cdc45b63e5e5c7b48627b13040e95fc64c8a2d
-ms.sourcegitcommit: eeb2b5ad8d3d22514a7b9bd7d756511b69ae0ccf
+ms.openlocfilehash: b21c844cd29c7fb45e58f44fdf8eaae427b74235
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="zcforscope-force-conformance-in-for-loop-scope"></a>/Zc:forScope (for ループのスコープの強制準拠)
 
@@ -42,7 +41,8 @@ Microsoft の拡張機能 ( [/Ze](../../cpp/for-statement-cpp.md) ) の[for](../
 
 **/Zc:forScope**オプションは既定でオンです。 **/Zc:forScope**ときに影響しません、[寛容/-](permissive-standards-conformance.md)オプションを指定します。
 
-**/Zc:forScope-** オプションは使用されなくなりました。今後のバージョンからは削除されます。 **/Zc:forScope-** を使うと、廃止予定の警告 D9035 が表示されます。
+
+  **/Zc:forScope-** オプションは非推奨とされます。今後のバージョンからは削除されます。 **/Zc:forScope-** を使うと、廃止予定の警告 D9035 が表示されます。
 
 次のコードは **/Ze** ではコンパイルされますが、 **/Za**ではコンパイルされません。
 
@@ -61,7 +61,7 @@ int main() {
 }
 ```
 
-**/Zc:forScope-**を使う場合、以前のスコープで行った宣言によって変数がスコープ内にあるときに、警告 C4288 (既定ではオフ) が表示されます。 これを示すために、サンプル コードから `//` の文字を削除して `int i`を宣言します。
+**/Zc:forScope-** を使う場合、以前のスコープで行った宣言によって変数がスコープ内にあるときに、警告 C4288 (既定ではオフ) が表示されます。 これを示すために、サンプル コードから `//` の文字を削除して `int i`を宣言します。
 
 **/Zc:forScope** の実行時の動作は、 [conform](../../preprocessor/conform.md) プラグマを使って変更できます。
 

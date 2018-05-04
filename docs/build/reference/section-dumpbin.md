@@ -2,12 +2,9 @@
 title: -SECTION (DUMPBIN) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /section
 dev_langs:
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - /SECTION dumpbin option
 - SECTION dumpbin option
 ms.assetid: c223d1c6-88ef-411c-9607-c610726b8d66
-caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8ac3b24725efc8a929a390f179deafc13de17415
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 9921ad7bad5e3e09402ecf74d182e9812cc63bad
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="section-dumpbin"></a>/SECTION (DUMPBIN)
 ```  
@@ -40,5 +35,5 @@ ms.lasthandoff: 12/21/2017
   
  のみ、 [/HEADERS](../../build/reference/headers.md) DUMPBIN オプションはにより生成されるファイルで使用できるよう、 [/GL](../../build/reference/gl-whole-program-optimization.md)コンパイラ オプション。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DUMPBIN オプション](../../build/reference/dumpbin-options.md)

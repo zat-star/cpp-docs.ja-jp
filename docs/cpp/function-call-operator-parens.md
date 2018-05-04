@@ -1,12 +1,9 @@
 ---
-title: "関数呼び出し演算子: () |Microsoft ドキュメント"
-ms.custom: 
+title: '関数呼び出し演算子: () |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - functions [C++], function-call operator
 - function call operator ()
 ms.assetid: 50c92e59-a4bf-415a-a6ab-d66c679ee80a
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6aa2a61dff4f20c5da7157a8a60700d9a8a10c06
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: eb1cdd4ec5dc556f0427914ca8ec746ad3ad2ccc
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="function-call-operator-"></a>関数呼び出し演算子: ()
 後置式の後ろに関数呼び出し演算子**に関するページ ()**、関数呼び出しを指定します。  
@@ -186,7 +181,7 @@ int main() {
   
  関数は再帰的に呼び出すことができます。 関数宣言の詳細については、次を参照してください。[関数](functions-cpp.md)です。 関連資料は「[プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [後置式](../cpp/postfix-expressions.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [関数呼び出し](../c-language/function-call-c.md)   

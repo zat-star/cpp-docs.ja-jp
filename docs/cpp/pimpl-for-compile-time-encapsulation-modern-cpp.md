@@ -1,27 +1,22 @@
 ---
-title: "コンパイル時のカプセル化 (Modern C) Pimpl |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイル時のカプセル化 (Modern C) Pimpl |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: c3e8a90a-b328-4990-82bb-e1b147f76e07
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6a109015f3d30b04eaf89e769e1265c49663599f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f611a898018cee5edc031be1db2fd35af8857e16
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pimpl-for-compile-time-encapsulation-modern-c"></a>コンパイル時のカプセル化の Pimpl (Modern C++)
 *Pimpl 表現*インターフェイスを分離したり結合度を最小限に抑えるの実装を非表示に最新の C++ 手法です。 Pimpl はの短縮形「へのポインターの実装です」 既に概念を理解するが、Cheshire Cat またはコンパイラのファイアウォールの表現形式のようなその他の名前を知っている可能性があります。  
@@ -67,7 +62,7 @@ my_class::my_class(): pimpl( new impl )
 ## <a name="best-practices"></a>ベスト プラクティス  
  例外をスローしないスワップ特殊化のサポートを追加するかどうかを検討してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)

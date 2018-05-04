@@ -1,12 +1,9 @@
 ---
-title: "されますクラス |Microsoft ドキュメント"
-ms.custom: 
+title: されますクラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IDispEventSimpleImpl
@@ -24,17 +21,15 @@ dev_langs:
 helpviewer_keywords:
 - IDispEventSimpleImpl class
 ms.assetid: 971d82b7-a921-47fa-a4d8-909bed377ab0
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f8a5b3098961af4f3f9262cdc4c99dbe80b4ac7c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 89f565c1e32f1208fbb039321d26b9175596d57e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="idispeventsimpleimpl-class"></a>されますクラス
 このクラスの実装を提供する、`IDispatch`メソッド、せず、タイプ ライブラリから型情報を取得します。  
@@ -75,9 +70,9 @@ class ATL_NO_VTABLE IDispEventSimpleImpl : public _IDispEventLocator<nID, pdiid>
 |[IDispEventSimpleImpl::Unadvise](#unadvise)|既定のイベント ソースとの接続が中断されます。|  
   
 ## <a name="remarks"></a>コメント  
- `IDispEventSimpleImpl`そのインターフェイスのメソッドとイベントは、すべての実装コードを指定しなくても、イベントのディスパッチ インターフェイスを実装する方法を提供します。 `IDispEventSimpleImpl`実装を提供、`IDispatch`メソッドです。 ある処理の対象イベントの実装を指定する必要があるだけです。  
+ `IDispEventSimpleImpl` そのインターフェイスのメソッドとイベントは、すべての実装コードを指定しなくても、イベントのディスパッチ インターフェイスを実装する方法を提供します。 `IDispEventSimpleImpl` 実装を提供、`IDispatch`メソッドです。 ある処理の対象イベントの実装を指定する必要があるだけです。  
   
- `IDispEventSimpleImpl`適切なハンドラー関数にイベントをルーティングするクラスでイベント シンク マップと連携して動作します。 このクラスを使用します。  
+ `IDispEventSimpleImpl` 適切なハンドラー関数にイベントをルーティングするクラスでイベント シンク マップと連携して動作します。 このクラスを使用します。  
   
 -   追加、 [SINK_ENTRY_INFO](composite-control-macros.md#sink_entry_info)マクロを処理する各オブジェクト上の各イベントのイベント シンク マップします。  
   
@@ -92,7 +87,7 @@ class ATL_NO_VTABLE IDispEventSimpleImpl : public _IDispEventLocator<nID, pdiid>
  **IDispEventSimplImpl**と同じ機能を提供[IDispEventImpl](../../atl/reference/idispeventimpl-class.md)、タイプ ライブラリからインターフェイスに関する型情報を取得しません。 のみに基づいたコードが生成`IDispEventImpl`、使用することができますが、`IDispEventSimpleImpl`コードを手動で追加することで。 使用する`IDispEventSimpleImpl`としないイベント インターフェイスを記述するタイプ ライブラリがあるかをタイプ ライブラリの使用に関連するオーバーヘッドを回避します。  
   
 > [!NOTE]
-> `IDispEventImpl`および`IDispEventSimpleImpl`の独自の実装を提供**iunknown::queryinterface**それぞれを有効にする`IDispEventImpl`または`IDispEventSimpleImpl`基底クラス メンバーへの直接アクセスを許可する一方、個別の COM id として機能するクラスで、メインの COM オブジェクトです。  
+> `IDispEventImpl` および`IDispEventSimpleImpl`の独自の実装を提供**iunknown::queryinterface**それぞれを有効にする`IDispEventImpl`または`IDispEventSimpleImpl`基底クラスのメンバーに直接アクセスを許可する一方、個別の COM id として機能するクラスメインの COM オブジェクト。  
   
  ActiveX イベント シンクのみサポートしている戻り値の型 HRESULT または void、イベント ハンドラー メソッドからの CE ATL の実装その他の戻り値はサポートされていませんし、その動作は未定義です。  
   
@@ -105,10 +100,10 @@ class ATL_NO_VTABLE IDispEventSimpleImpl : public _IDispEventLocator<nID, pdiid>
   
  `IDispEventSimpleImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="advise"></a>IDispEventSimpleImpl::Advise  
+##  <a name="advise"></a>  IDispEventSimpleImpl::Advise  
  によって表されるイベント ソースに接続を確立するには、このメソッドを呼び出す*pUnk*です。  
   
 ```
@@ -120,7 +115,7 @@ HRESULT Advise(IUnknown* pUnk);
  [in]ポインター、 **IUnknown**イベント ソース オブジェクトのインターフェイスです。  
   
 ### <a name="return-value"></a>戻り値  
- `S_OK`または、エラーをすべて`HRESULT`値。  
+ `S_OK` または、エラーをすべて`HRESULT`値。  
   
 ### <a name="remarks"></a>コメント  
  イベントが発生した接続が確立されると、 *pUnk*イベント シンク マップを使用して、クラス内のハンドラーにルーティングされます。  
@@ -128,9 +123,9 @@ HRESULT Advise(IUnknown* pUnk);
 > [!NOTE]
 >  複数のクラスが派生している場合`IDispEventSimpleImpl`クラス、興味のある特定の基本クラスと、呼び出しのスコープでこのメソッドの呼び出しを明確に区別する必要があります。  
   
- `Advise`接続を確立の既定のイベント ソースに定めるところによるオブジェクトの既定のイベント ソースの IID を取得[AtlGetObjectSourceInterface](composite-control-global-functions.md#atlgetobjectsourceinterface)です。  
+ `Advise` 接続を確立の既定のイベント ソースに定めるところによるオブジェクトの既定のイベント ソースの IID を取得[AtlGetObjectSourceInterface](composite-control-global-functions.md#atlgetobjectsourceinterface)です。  
   
-##  <a name="dispeventadvise"></a>IDispEventSimpleImpl::DispEventAdvise  
+##  <a name="dispeventadvise"></a>  IDispEventSimpleImpl::DispEventAdvise  
  によって表されるイベント ソースに接続を確立するには、このメソッドを呼び出す*pUnk*です。  
   
 ```
@@ -145,7 +140,7 @@ HRESULT DispEventAdvise(IUnknown* pUnk  const IID* piid);
  イベント ソース オブジェクトの IID へのポインター。  
   
 ### <a name="return-value"></a>戻り値  
- `S_OK`または、エラーをすべて`HRESULT`値。  
+ `S_OK` または、エラーをすべて`HRESULT`値。  
   
 ### <a name="remarks"></a>コメント  
  イベントが発生した後で、 *pUnk*イベント シンク マップを使用して、クラス内のハンドラーにルーティングされます。  
@@ -153,9 +148,9 @@ HRESULT DispEventAdvise(IUnknown* pUnk  const IID* piid);
 > [!NOTE]
 >  複数のクラスが派生している場合`IDispEventSimpleImpl`クラス、興味のある特定の基本クラスと、呼び出しのスコープでこのメソッドの呼び出しを明確に区別する必要があります。  
   
- `DispEventAdvise`指定されたイベント ソースとの接続を確立`pdiid`です。  
+ `DispEventAdvise` 指定されたイベント ソースとの接続を確立`pdiid`です。  
   
-##  <a name="dispeventunadvise"></a>IDispEventSimpleImpl::DispEventUnadvise  
+##  <a name="dispeventunadvise"></a>  IDispEventSimpleImpl::DispEventUnadvise  
  によって表されるイベント ソースに、接続が切断*pUnk*です。  
   
 ```
@@ -170,7 +165,7 @@ HRESULT DispEventUnadvise(IUnknown* pUnk  const IID* piid);
  イベント ソース オブジェクトの IID へのポインター。  
   
 ### <a name="return-value"></a>戻り値  
- `S_OK`または、エラーをすべて`HRESULT`値。  
+ `S_OK` または、エラーをすべて`HRESULT`値。  
   
 ### <a name="remarks"></a>コメント  
  接続が壊れていると、イベントはイベント シンク マップされているハンドラー関数にはルーティング不要になった。  
@@ -178,10 +173,10 @@ HRESULT DispEventUnadvise(IUnknown* pUnk  const IID* piid);
 > [!NOTE]
 >  複数のクラスが派生している場合`IDispEventSimpleImpl`クラス、興味のある特定の基本クラスと、呼び出しのスコープでこのメソッドの呼び出しを明確に区別する必要があります。  
   
- `DispEventAdvise`指定されたイベント ソースによって確立された接続が切断`pdiid`です。  
+ `DispEventAdvise` 指定されたイベント ソースによって確立された接続が切断`pdiid`です。  
   
-##  <a name="getidsofnames"></a>IDispEventSimpleImpl::GetIDsOfNames  
- この実装**::getidsofnames**返します**E_NOTIMPL**です。  
+##  <a name="getidsofnames"></a>  IDispEventSimpleImpl::GetIDsOfNames  
+ この実装 **::getidsofnames**返します**E_NOTIMPL**です。  
   
 ```
 STDMETHOD(GetIDsOfNames)(
@@ -195,7 +190,7 @@ STDMETHOD(GetIDsOfNames)(
 ### <a name="remarks"></a>コメント  
  参照してください[::getidsofnames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619) Windows SDK にします。  
   
-##  <a name="gettypeinfo"></a>IDispEventSimpleImpl::GetTypeInfo  
+##  <a name="gettypeinfo"></a>  IDispEventSimpleImpl::GetTypeInfo  
  この実装**が**返します**E_NOTIMPL**です。  
   
 ```
@@ -208,7 +203,7 @@ STDMETHOD(GetTypeInfo)(
 ### <a name="remarks"></a>コメント  
  参照してください[が](http://msdn.microsoft.com/en-us/cc1ec9aa-6c40-4e70-819c-a7c6dd6b8c99)Windows SDK にします。  
   
-##  <a name="gettypeinfocount"></a>IDispEventSimpleImpl::GetTypeInfoCount  
+##  <a name="gettypeinfocount"></a>  IDispEventSimpleImpl::GetTypeInfoCount  
  この実装**IDispatch::GetTypeInfoCount**返します**E_NOTIMPL**です。  
   
 ```
@@ -218,7 +213,7 @@ STDMETHOD(GetTypeInfoCount)(UINT* /* pctinfo */);
 ### <a name="remarks"></a>コメント  
  参照してください[IDispatch::GetTypeInfoCount](http://msdn.microsoft.com/en-us/da876d53-cb8a-465c-a43e-c0eb272e2a12) Windows SDK にします。  
   
-##  <a name="invoke"></a>IDispEventSimpleImpl::Invoke  
+##  <a name="invoke"></a>  IDispEventSimpleImpl::Invoke  
  この実装**idispatch::invoke**イベント シンク マップに一覧表示、イベント ハンドラーの呼び出しです。  
   
 ```
@@ -236,7 +231,7 @@ STDMETHOD(Invoke)(
 ### <a name="remarks"></a>コメント  
  参照してください[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d)です。  
   
-##  <a name="unadvise"></a>IDispEventSimpleImpl::Unadvise  
+##  <a name="unadvise"></a>  IDispEventSimpleImpl::Unadvise  
  によって表されるイベント ソースに、接続が切断*pUnk*です。  
   
 ```
@@ -248,7 +243,7 @@ HRESULT Unadvise(IUnknown* pUnk);
  [in]ポインター、 **IUnknown**イベント ソース オブジェクトのインターフェイスです。  
   
 ### <a name="return-value"></a>戻り値  
- `S_OK`または、エラーをすべて`HRESULT`値。  
+ `S_OK` または、エラーをすべて`HRESULT`値。  
   
 ### <a name="remarks"></a>コメント  
  接続が壊れていると、イベントはイベント シンク マップされているハンドラー関数にはルーティング不要になった。  
@@ -256,11 +251,11 @@ HRESULT Unadvise(IUnknown* pUnk);
 > [!NOTE]
 >  複数のクラスが派生している場合`IDispEventSimpleImpl`クラス、興味のある特定の基本クラスと、呼び出しのスコープでこのメソッドの呼び出しを明確に区別する必要があります。  
   
- `Unadvise`指定された既定のイベント ソースによって確立された接続が切断`pdiid`です。  
+ `Unadvise` 指定された既定のイベント ソースによって確立された接続が切断`pdiid`です。  
   
  **Unavise**によって決定されるオブジェクトの既定のイベント ソースの IID を取得、既定のイベント ソースとの接続を区切り、 [AtlGetObjectSourceInterface](composite-control-global-functions.md#atlgetobjectsourceinterface)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [_ATL_FUNC_INFO 構造体](../../atl/reference/atl-func-info-structure.md)   
  [IDispatchImpl クラス](../../atl/reference/idispatchimpl-class.md)   
  [IDispEventImpl クラス](../../atl/reference/idispeventimpl-class.md)   

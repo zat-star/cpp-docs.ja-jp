@@ -1,12 +1,9 @@
 ---
-title: "IDataObjectImpl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: IDataObjectImpl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IDataObjectImpl
@@ -29,17 +26,15 @@ helpviewer_keywords:
 - IDataObjectImpl class
 - IDataObject, ATL implementation
 ms.assetid: b680f0f7-7795-40a1-a0f6-f48768201c89
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 644f498a491605fb69b18ec53afee689f5f90a26
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a3ffcdd8cc8320b2534d928171fe75619062b300
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="idataobjectimpl-class"></a>IDataObjectImpl クラス
 このクラスは、汎用データ転送をサポートして、接続を管理するためのメソッドを提供します。  
@@ -76,9 +71,9 @@ class IDataObjectImpl
 |[IDataObjectImpl::SetData](#setdata)|クライアントからのデータ オブジェクトにデータを転送します。 ATL の実装を返します**E_NOTIMPL**です。|  
   
 ## <a name="remarks"></a>コメント  
- [IDataObject](http://msdn.microsoft.com/library/windows/desktop/ms688421)インターフェイスには、汎用データ転送をサポートするメソッドが用意されています。 `IDataObject`標準の形式構造を使用して[FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177)と[STGMEDIUM](http://msdn.microsoft.com/library/windows/desktop/ms683812)を取得し、データを格納します。  
+ [IDataObject](http://msdn.microsoft.com/library/windows/desktop/ms688421)インターフェイスには、汎用データ転送をサポートするメソッドが用意されています。 `IDataObject` 標準の形式構造を使用して[FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177)と[STGMEDIUM](http://msdn.microsoft.com/library/windows/desktop/ms683812)を取得し、データを格納します。  
   
- `IDataObject`また、アドバイズ シンク データ変更の通知を処理するへの接続を管理します。 クライアントがデータ オブジェクトからデータ変更の通知を受信するためには、クライアントを実装する必要があります、 [IAdviseSink](http://msdn.microsoft.com/library/windows/desktop/ms692513)アドバイズ シンクと呼ばれるオブジェクトのインターフェイスです。 ときに、クライアントは、 **IDataObject::DAdvise**、データ オブジェクトとアドバイズ シンク間の接続が確立します。  
+ `IDataObject` また、アドバイズ シンク データ変更の通知を処理するへの接続を管理します。 クライアントがデータ オブジェクトからデータ変更の通知を受信するためには、クライアントを実装する必要があります、 [IAdviseSink](http://msdn.microsoft.com/library/windows/desktop/ms692513)アドバイズ シンクと呼ばれるオブジェクトのインターフェイスです。 ときに、クライアントは、 **IDataObject::DAdvise**、データ オブジェクトとアドバイズ シンク間の接続が確立します。  
   
  クラス`IDataObjectImpl`の既定の実装を提供`IDataObject`を実装して**IUnknown**ダンプ情報を送信することによってデバッグ デバイスを構築します。  
   
@@ -89,10 +84,10 @@ class IDataObjectImpl
   
  `IDataObjectImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="dadvise"></a>IDataObjectImpl::DAdvise  
+##  <a name="dadvise"></a>  IDataObjectImpl::DAdvise  
  データ オブジェクトとアドバイズ シンク間の接続を確立します。  
   
 ```
@@ -110,7 +105,7 @@ HRESULT DAdvise(
   
  参照してください[IDataObject::DAdvise](http://msdn.microsoft.com/library/windows/desktop/ms692579) Windows SDK にします。  
   
-##  <a name="dunadvise"></a>IDataObjectImpl::DUnadvise  
+##  <a name="dunadvise"></a>  IDataObjectImpl::DUnadvise  
  以前に確立された接続が終了した[DAdvise](#dadvise)です。  
   
 ```
@@ -120,7 +115,7 @@ HRESULT DUnadvise(DWORD dwConnection);
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::DUnadvise](http://msdn.microsoft.com/library/windows/desktop/ms692448) Windows SDK にします。  
   
-##  <a name="enumdadvise"></a>IDataObjectImpl::EnumDAdvise  
+##  <a name="enumdadvise"></a>  IDataObjectImpl::EnumDAdvise  
  現在のアドバイザリ コネクションを反復処理する列挙子を作成します。  
   
 ```
@@ -134,7 +129,7 @@ HRESULT DAdvise(
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::EnumDAdvise](http://msdn.microsoft.com/library/windows/desktop/ms680127) Windows SDK にします。  
   
-##  <a name="enumformatetc"></a>IDataObjectImpl::EnumFormatEtc  
+##  <a name="enumformatetc"></a>  IDataObjectImpl::EnumFormatEtc  
  反復処理する列挙子を作成、 **FORMATETC**データ オブジェクトでサポートされている構造体。  
   
 ```
@@ -149,7 +144,7 @@ HRESULT EnumFormatEtc(
 ### <a name="return-value"></a>戻り値  
  返します**E_NOTIMPL**です。  
   
-##  <a name="firedatachange"></a>IDataObjectImpl::FireDataChange  
+##  <a name="firedatachange"></a>  IDataObjectImpl::FireDataChange  
  現在管理されている各アドバイズ シンクに戻るには、変更通知を送信します。  
   
 ```
@@ -159,7 +154,7 @@ HRESULT FireDataChange();
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="getcanonicalformatetc"></a>IDataObjectImpl::GetCanonicalFormatEtc  
+##  <a name="getcanonicalformatetc"></a>  IDataObjectImpl::GetCanonicalFormatEtc  
  論理的に等しい**FORMATETC**はより複雑な構造です。  
   
 ```
@@ -172,7 +167,7 @@ HRESULT GetCanonicalFormatEtc(FORMATETC* pformatetcIn, FORMATETC* pformatetcOut)
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::GetCanonicalFormatEtc](http://msdn.microsoft.com/library/windows/desktop/ms680685) Windows SDK にします。  
   
-##  <a name="getdata"></a>IDataObjectImpl::GetData  
+##  <a name="getdata"></a>  IDataObjectImpl::GetData  
  データ オブジェクトからクライアントにデータを転送します。  
   
 ```
@@ -186,7 +181,7 @@ HRESULT GetData(
   
  参照してください[IDataObject::GetData](http://msdn.microsoft.com/library/windows/desktop/ms678431) Windows SDK にします。  
   
-##  <a name="getdatahere"></a>IDataObjectImpl::GetDataHere  
+##  <a name="getdatahere"></a>  IDataObjectImpl::GetDataHere  
  ような`GetData`を除き、クライアントを割り当てる必要があります、 **STGMEDIUM**構造体。  
   
 ```
@@ -201,7 +196,7 @@ HRESULT GetDataHere(
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::GetDataHere](http://msdn.microsoft.com/library/windows/desktop/ms687266) Windows SDK にします。  
   
-##  <a name="querygetdata"></a>IDataObjectImpl::QueryGetData  
+##  <a name="querygetdata"></a>  IDataObjectImpl::QueryGetData  
  データ オブジェクトが、特定をサポートするかどうかを決定**FORMATETC**データを転送するための構造体。  
   
 ```
@@ -214,7 +209,7 @@ HRESULT QueryGetData(FORMATETC* pformatetc);
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::QueryGetData](http://msdn.microsoft.com/library/windows/desktop/ms680637) Windows SDK にします。  
   
-##  <a name="setdata"></a>IDataObjectImpl::SetData  
+##  <a name="setdata"></a>  IDataObjectImpl::SetData  
  クライアントからのデータ オブジェクトにデータを転送します。  
   
 ```
@@ -230,5 +225,5 @@ HRESULT SetData(
 ### <a name="remarks"></a>コメント  
  参照してください[IDataObject::SetData](http://msdn.microsoft.com/library/windows/desktop/ms686626) Windows SDK にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

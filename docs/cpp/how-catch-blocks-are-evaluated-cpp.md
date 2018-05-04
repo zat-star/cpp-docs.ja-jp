@@ -1,12 +1,9 @@
 ---
-title: "Catch ブロックの評価 (C++) の方法 |Microsoft ドキュメント"
-ms.custom: 
+title: Catch ブロックの評価 (C++) の方法 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - exception handling, catching and deleting exceptions
 - types [C++], exception handling
 ms.assetid: 202dbf07-8ace-4b3b-b3ae-4b45c275e0b4
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 744f75f86fd7d3e2ca2a2545a7914f923c4454b7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6343abec7e80bcbc47595856e6fd71a3e204ed54
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-catch-blocks-are-evaluated-c"></a>Catch ブロックの評価方法 (C++)
 C++ では任意の型の例外をスローすることができますが、一般に std::exception から派生した型をスローすることが推奨されます。 C++ 例外をキャッチできます、**キャッチ**スローされた例外、または任意の種類の例外をキャッチできるハンドラーによって、同じ型を指定するハンドラー。  
@@ -52,7 +47,7 @@ C++ では任意の型の例外をスローすることができますが、一�
   
 -   スローされたポインター オブジェクトが標準的なポインター変換規則によって変換できるポインターを受け取るハンドラー。  
   
- 順序**キャッチ**ハンドラーの表示は、重要ではためハンドラーを指定された**を再試行してください**ブロックがその出現順に調べられます。 たとえば、派生クラスのハンドラーの前に基底クラスのハンドラーを配置するとエラーになります。 一致すた後**キャッチ**ハンドラーが見つかると、後続のハンドラーはチェックされません。 その結果、省略記号**キャッチ**ハンドラーは、最後のハンドラーをする必要があります、**を再試行してください**ブロックします。 例:  
+ 順序**キャッチ**ハンドラーの表示は、重要ではためハンドラーを指定された**を再試行してください**ブロックがその出現順に調べられます。 たとえば、派生クラスのハンドラーの前に基底クラスのハンドラーを配置するとエラーになります。 一致すた後**キャッチ**ハンドラーが見つかると、後続のハンドラーはチェックされません。 その結果、省略記号**キャッチ**ハンドラーは、最後のハンドラーをする必要があります、**を再試行してください**ブロックします。 例えば:  
   
 ```  
 // ...  
@@ -77,5 +72,5 @@ catch( CExcptClass E )
   
  この例では、省略記号で**キャッチ**ハンドラーが唯一のハンドラーが調べられますです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 例外処理](../cpp/cpp-exception-handling.md)

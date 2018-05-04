@@ -1,29 +1,24 @@
 ---
-title: "sdl (有効にする追加のセキュリティ チェック) |Microsoft ドキュメント"
-ms.custom: 
+title: sdl (有効にする追加のセキュリティ チェック) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLCompilerTool.SDLCheck
 dev_langs:
 - C++
 ms.assetid: 3dcf86a0-3169-4240-9f29-e04a9f535826
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5cbcb74272fa7cae3dd0c641bd6371c8f0f9c204
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8aa984b488f74043b8c90876047516ebca23d4d3
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="sdl-enable-additional-security-checks"></a>/sdl (追加のセキュリティ チェックの有効化)
 推奨される Security Development Lifecycle (SDL) のチェックを追加します。 これらのチェックには、エラーとしての追加のセキュリティ関連の警告、および追加の安全なコード生成機能が含まれます。  
@@ -35,7 +30,7 @@ ms.lasthandoff: 12/21/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- **/sdl**によって提供されるベースライン セキュリティ チェックのスーパー セットを有効に[/GS](../../build/reference/gs-buffer-security-check.md)と上書き**/GS-**です。 既定では、 **/sdl**は無効になっています。 **/sdl-**追加のセキュリティ チェックを無効にします。  
+ **/sdl**によって提供されるベースライン セキュリティ チェックのスーパー セットを有効に[/GS](../../build/reference/gs-buffer-security-check.md)と上書き **/GS-** です。 既定では、 **/sdl**は無効になっています。 **/sdl-** 追加のセキュリティ チェックを無効にします。  
   
 ## <a name="compile-time-checks"></a>コンパイル時のチェック  
  **/sdl**エラーとしてこれらの警告を有効にします。  
@@ -53,9 +48,9 @@ ms.lasthandoff: 12/21/2017
 |[C4996](../../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md)|/we4996|としてマークされた関数の使用[廃止](../../cpp/deprecated-cpp.md)です。|  
   
 ## <a name="runtime-checks"></a>実行時のチェック  
- ときに**/sdl**は有効な場合、コンパイラは実行時にこれらのチェックを実行するコードが生成されます。  
+ ときに **/sdl**は有効な場合、コンパイラは実行時にこれらのチェックを実行するコードが生成されます。  
   
--   厳格モードを有効に**/GS**実行時バッファー オーバーランの検出を使用したコンパイルと同等`#pragma strict_gs_check(push, on)`です。  
+-   厳格モードを有効に **/GS**実行時バッファー オーバーランの検出を使用したコンパイルと同等`#pragma strict_gs_check(push, on)`です。  
   
 -   制限付きでポインターのサニタイズを行います。 逆参照がない式でも、ユーザー定義のデストラクターがない型でも、ポインターの参照は、`delete` の呼び出し後、無効なアドレスに設定されます。 これは、古いポインター参照の再使用を防止するために役立ちます。  
   
@@ -68,10 +63,10 @@ ms.lasthandoff: 12/21/2017
   
 1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  選択、 **C/C++**フォルダーです。  
+2.  選択、 **C/C++** フォルダーです。  
   
 3.  **全般**からオプションを選択 ページで、 **SDL チェック**ドロップダウン リスト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

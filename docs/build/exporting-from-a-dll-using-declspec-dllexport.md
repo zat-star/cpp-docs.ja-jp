@@ -1,13 +1,10 @@
 ---
-title: "関数を使った DLL からエクスポート |Microsoft ドキュメント"
-ms.custom: 
+title: 関数を使った DLL からエクスポート |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - dllexport
 - __declspec
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - export directives [C++]
 - exporting DLLs [C++], __declspec(dllexport) keyword
 ms.assetid: a35e25e8-7263-4a04-bad4-00b284458679
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 51f20e47724a6d32dad014fbaf025cd283112c54
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: e6ab1d11c117c75633ce4ab836965449c4cc6ca1
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="exporting-from-a-dll-using-declspecdllexport"></a>__declspec(dllexport) を使った DLL からのエクスポート
 導入された Microsoft **_ _export**コンパイラは、エクスポート名を自動的に生成し、.lib ファイルに配置するために Visual C の 16 ビットのコンパイラのバージョンにします。 この .lib ファイルは、DLL とリンクするスタティック ライブラリと同じように使用できます。  
@@ -40,7 +35,7 @@ ms.lasthandoff: 12/21/2017
   
  序数、NONAME、PRIVATE など、多くのエクスポート ディレクティブは、.def ファイル内にしか作成されないので、これらの属性を .def ファイルを使用せずに指定することはできません。 ただしを使用して**方式**に加えて使用して、.def ファイルはエラーが発生しないビルドします。  
   
- 関数をエクスポートする、**方式**キーワードはキーワードが指定されている場合、呼び出し規約キーワードの左側に表示する必要があります。 例:  
+ 関数をエクスポートする、**方式**キーワードはキーワードが指定されている場合、呼び出し規約キーワードの左側に表示する必要があります。 例えば:  
   
 ```  
 __declspec(dllexport) void __cdecl Function1(void);  
@@ -65,9 +60,9 @@ class __declspec(dllexport) CExampleExport : public CObject
  **方式**ストア関数の DLL のエクスポート テーブル内の名前。 テーブルのサイズを最適化する場合は、「[関数ではなく序数値名によって、DLL のエクスポート](../build/exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md)です。  
   
 > [!NOTE]
->  移植と DLL ソース コードを Win16 から Win32 に、置換の各インスタンス**_ _export**で**方式**です。  
+>  移植と DLL ソース コードを Win16 から Win32 に、置換の各インスタンス **_ _export**で**方式**です。  
   
- 参考として、Win32 の Winbase.h ヘッダー ファイルを検索してください。 例が含まれている**_declspec (dllimport)**使用します。  
+ 参考として、Win32 の Winbase.h ヘッダー ファイルを検索してください。 例が含まれている **_declspec (dllimport)** 使用します。  
   
 ## <a name="what-do-you-want-to-do"></a>実行する操作  
   
@@ -93,5 +88,5 @@ class __declspec(dllexport) CExampleExport : public CObject
   
 -   [相互インポート](../build/mutual-imports.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DLL からのエクスポート](../build/exporting-from-a-dll.md)

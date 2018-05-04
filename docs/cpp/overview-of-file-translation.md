@@ -2,11 +2,8 @@
 title: ファイル変換の概要 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - programs [C++], lexical conventions of
 - preprocessing translation phase
 ms.assetid: 5036c7b7-ccff-4e2c-b052-a9ea6c71af87
-caps.latest.revision: 6
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a088d2da30aa77f477f3f6e5064b6b98170e953b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: fa38b2ea9ea05fb9391ab8a69e11821d4422e392
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="overview-of-file-translation"></a>ファイル変換の概要
 C++ プログラムは、C プログラムと同様、1 つ以上のファイルで構成されます。 これらの各ファイルは、次の概念的な順序で変換されます (実際の順序は "as if" 規則に従います。つまり、変換は、これらの手順に従ったかのように行われる必要があります)。  
@@ -37,7 +32,7 @@ C++ プログラムは、C プログラムと同様、1 つ以上のファイル
   
 2.  プリプロセス。 によって参照される補助ソース ファイルでこの変換フェーズでは`#include`ディレクティブは、"stringizing"と"charizing"ディレクティブを処理し、トークン連結およびマクロの展開を実行します (を参照してください[c# プリプロセッサ ディレクティブ](../preprocessor/preprocessor-directives.md)*『 プリプロセッサ リファレンス 』*詳細については)。 プリプロセス フェーズの結果、まとまって「翻訳単位」を定義する一連のトークンができます。  
   
-     プリプロセッサ ディレクティブは、常にシャープ記号で始まります (**#**) 文字 (つまり、行の最初の非空白文字があります、番号記号) です。 1 行に 1 つのプリプロセッサ ディレクティブだけを指定できます。 例:  
+     プリプロセッサ ディレクティブは、常にシャープ記号で始まります (**#**) 文字 (つまり、行の最初の非空白文字があります、番号記号) です。 1 行に 1 つのプリプロセッサ ディレクティブだけを指定できます。 例えば:  
   
     ```  
     #include <iostream>  // Include text of iostream in   
@@ -56,9 +51,9 @@ C++ プログラムは、C プログラムと同様、1 つ以上のファイル
   
 -   単一行コメントがサポートされています。 参照してください[コメント](../cpp/comments-cpp.md)詳細についてはします。  
   
--   1 つの定義済みマクロ**_ _cplusplus**C++ の場合のみ定義されています。 参照してください[定義済みマクロ](../preprocessor/predefined-macros.md)で、 *『 プリプロセッサ リファレンス 』*詳細についてはします。  
+-   1 つの定義済みマクロ **_ _cplusplus**C++ の場合のみ定義されています。 参照してください[定義済みマクロ](../preprocessor/predefined-macros.md)で、 *『 プリプロセッサ リファレンス 』*詳細についてはします。  
   
--   C プリプロセッサでは、C++ の演算子は認識されません: **.\***、  **-> \*** 、および`::`です。 参照してください[演算子](../cpp/cpp-built-in-operators-precedence-and-associativity.md)と[式](../cpp/expressions-cpp.md)演算子の詳細についてはします。  
+-   C プリプロセッサでは、C++ の演算子は認識されません: **.\***、 **-> \***、および`::`です。 参照してください[演算子](../cpp/cpp-built-in-operators-precedence-and-associativity.md)と[式](../cpp/expressions-cpp.md)演算子の詳細についてはします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [構文規則](../cpp/lexical-conventions.md)

@@ -1,12 +1,9 @@
 ---
-title: "つまりクラス |Microsoft ドキュメント"
-ms.custom: 
+title: つまりクラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IEnumOnSTLImpl
@@ -24,17 +21,15 @@ dev_langs:
 helpviewer_keywords:
 - IEnumOnSTLImpl class
 ms.assetid: 1789e77b-88b8-447d-a490-806b918912ce
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 38d645f7841cb71af9812bd1d62a979752a0343d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1de4bdd0d07e694303f850d6298d77afe3322214
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ienumonstlimpl-class"></a>つまりクラス
 このクラスは、C++ 標準ライブラリ コレクションに基づく列挙子インターフェイスを定義します。  
@@ -84,7 +79,7 @@ class ATL_NO_VTABLE IEnumOnSTLImpl : public Base
 |[IEnumOnSTLImpl::m_spUnk](#m_spunk)|**IUnknown**コレクションを提供するオブジェクトのポインター。|  
   
 ## <a name="remarks"></a>コメント  
- `IEnumOnSTLImpl`C++ 標準ライブラリと互換性のあるコンテナーで列挙されている項目を格納する場所、COM の列挙子インターフェイスの実装を提供します。 このクラスと似ています、 [CComEnumImpl](../../atl/reference/ccomenumimpl-class.md)配列に基づいて、クラス、列挙子インターフェイスの実装を提供します。  
+ `IEnumOnSTLImpl` C++ 標準ライブラリと互換性のあるコンテナーで列挙されている項目を格納する場所、COM の列挙子インターフェイスの実装を提供します。 このクラスと似ています、 [CComEnumImpl](../../atl/reference/ccomenumimpl-class.md)配列に基づいて、クラス、列挙子インターフェイスの実装を提供します。  
   
 > [!NOTE]
 >  参照してください[保ちます](../../atl/reference/ccomenumimpl-class.md#init)の詳細については、さらに違い`CComEnumImpl`と`IEnumOnSTLImpl`です。  
@@ -98,10 +93,10 @@ class ATL_NO_VTABLE IEnumOnSTLImpl : public Base
   
  `IEnumOnSTLImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="init"></a>保ちます  
+##  <a name="init"></a>  保ちます  
  列挙子を初期化します。  
   
 ```
@@ -125,7 +120,7 @@ HRESULT Init(
   
  クライアントに返す列挙子インターフェイスへのポインターを渡す前に、このメソッドを呼び出す必要があります。  
   
-##  <a name="clone"></a>IEnumOnSTLImpl::Clone  
+##  <a name="clone"></a>  IEnumOnSTLImpl::Clone  
  このメソッドの実装を提供する、 [IEnumXXXX::Clone](https://msdn.microsoft.com/library/ms690336.aspx)メソッド型のオブジェクトを作成することで`CComEnumOnSTL`、同じコレクションと、現在のオブジェクトによって使用される反復子で初期化してにインターフェイスを返す新しく作成されたオブジェクト。  
   
 ```
@@ -139,7 +134,7 @@ STDMETHOD(Clone)(Base** ppEnum);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="m_spunk"></a>IEnumOnSTLImpl::m_spUnk  
+##  <a name="m_spunk"></a>  IEnumOnSTLImpl::m_spUnk  
  **IUnknown**コレクションを提供するオブジェクトのポインター。  
   
 ```
@@ -149,7 +144,7 @@ CComPtr<IUnknown> m_spUnk;
 ### <a name="remarks"></a>コメント  
  このスマート ポインターに渡されるオブジェクトの参照を保持する[保ちます](#init)、残っているアライブ列挙子の有効期間中にことを確認します。  
   
-##  <a name="m_pcollection"></a>IEnumOnSTLImpl::m_pcollection  
+##  <a name="m_pcollection"></a>  IEnumOnSTLImpl::m_pcollection  
  このメンバーは、列挙子インターフェイスの実装で処理するデータを提供するコレクションを指します。  
   
 ```
@@ -159,14 +154,14 @@ CollType* m_pcollection;
 ### <a name="remarks"></a>コメント  
  このメンバーはへの呼び出しによって初期化[保ちます](#init)です。  
   
-##  <a name="m_iter"></a>IEnumOnSTLImpl::m_iter  
+##  <a name="m_iter"></a>  IEnumOnSTLImpl::m_iter  
  このメンバーは、コレクション内の現在位置をマークし、後続の要素に移動するために使用する反復子を保持します。  
   
 ```
 CollType::iterator m_iter;
 ```  
   
-##  <a name="next"></a>IEnumOnSTLImpl::Next  
+##  <a name="next"></a>  IEnumOnSTLImpl::Next  
  このメソッドの実装を提供する、 [IEnumXXXX::Next](https://msdn.microsoft.com/library/ms695273.aspx)メソッドです。  
   
 ```
@@ -189,7 +184,7 @@ STDMETHOD(Next)(
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="reset"></a>IEnumOnSTLImpl::Reset  
+##  <a name="reset"></a>  IEnumOnSTLImpl::Reset  
  このメソッドの実装を提供する、 [IEnumXXXX::Reset](https://msdn.microsoft.com/library/ms693414.aspx)メソッドです。  
   
 ```
@@ -199,7 +194,7 @@ STDMETHOD(Reset)(void);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-##  <a name="skip"></a>IEnumOnSTLImpl::Skip  
+##  <a name="skip"></a>  IEnumOnSTLImpl::Skip  
  このメソッドの実装を提供する、 [IEnumXXXX::Skip](https://msdn.microsoft.com/library/ms690392.aspx)メソッドです。  
   
 ```
@@ -213,5 +208,5 @@ STDMETHOD(Skip)(ULONG celt);
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

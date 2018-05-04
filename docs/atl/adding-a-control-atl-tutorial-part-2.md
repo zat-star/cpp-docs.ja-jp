@@ -1,27 +1,22 @@
 ---
 title: コントロール (ATL チュートリアル、パート 2) の追加 |Microsoft ドキュメント
-ms.custom: ''
+ms.custom: get-started-article
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
-ms.topic: get-started-article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: c9575a75-1064-41f1-9697-7aada560c669
-caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6bedc0fbe4cd1e4a612bcb329071668e783b3de8
-ms.sourcegitcommit: 604907f77eb6c5b1899194a9877726f3e8c2dabc
+ms.openlocfilehash: d3b8c7eb59579363ce3580c7319b80be2557a30d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adding-a-control-atl-tutorial-part-2"></a>コントロールの追加 (ATL チュートリアル、パート 2)
 このステップでは、コントロールをプロジェクトに追加し、ビルドして、Web ページでテストします。  
@@ -50,7 +45,7 @@ ms.lasthandoff: 03/28/2018
 |**クラス**|コントロールを実装するために作成された C++ クラス名。|  
 |**.h ファイル**|C++ クラスの定義を格納するために作成されたファイル。|  
 |**.cpp ファイル**|C++ クラスの実装を格納するために作成されたファイル。|  
-|**CoClass**|このコントロールのコンポーネント クラスの名前。|  
+|**コクラス**|このコントロールのコンポーネント クラスの名前。|  
 |**Interface**|コントロールがカスタム プロパティとメソッドを実装するインターフェイスの名前。|  
 |**Type**|コントロールの説明。|  
 |**ProgID**|コントロールの CLSID を検索するために使用できる、判読可能な名前。|  
@@ -79,7 +74,7 @@ ms.lasthandoff: 03/28/2018
   
 2.  **はサポートされていません**、使用可能なストック プロパティの一覧を下にスクロールします。 ダブルクリックして`Fill Color`に移動する、**サポートされている** ボックスの一覧です。  
   
-3.  コントロールのオプションはこれで完了です。 **[完了]**をクリックします。  
+3.  コントロールのオプションはこれで完了です。 **[完了]** をクリックします。  
   
  ウィザードによってコントロールが作成されると、コードの変更とファイルの追加がいくつか発生します。 次のファイルが作成されています。  
   

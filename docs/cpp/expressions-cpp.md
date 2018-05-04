@@ -1,29 +1,24 @@
 ---
-title: "式 (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 式 (C++) |Microsoft ドキュメント
+ms.custom: index-page
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
-ms.topic: 'index-page '
+ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - expressions [C++]
 ms.assetid: aaa1f250-7185-4113-b682-3f5e995943d1
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 73f06fc8b0a37d0e8a2362735b6d80f1e4ee11f6
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8ada34aae858d8e29b119fa08d363a0c26013567
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="expressions-c"></a>式 (C++)
 このセクションでは、C++ 式について説明します。 式は、次の 1 つ以上の目的で使用されるオペランドと演算子のシーケンスです。  
@@ -67,5 +62,5 @@ ms.lasthandoff: 12/21/2017
     > [!NOTE]
     >  組み込み型の演算子はオーバーロードできません。動作は定義済みです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)

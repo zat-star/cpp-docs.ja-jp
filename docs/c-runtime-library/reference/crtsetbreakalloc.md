@@ -2,11 +2,8 @@
 title: _CrtSetBreakAlloc | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _CrtSetBreakAlloc
@@ -31,17 +28,15 @@ helpviewer_keywords:
 - CrtSetBreakAlloc function
 - _CrtSetBreakAlloc function
 ms.assetid: 33bfc6af-a9ea-405b-a29f-1c2d4d9880a1
-caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e14e1d40d5d20b9759d115eaf2fd29b3cae57172
-ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
+ms.openlocfilehash: 32e8fedcd70d0e901c63cd5e794773451f436326
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="crtsetbreakalloc"></a>_CrtSetBreakAlloc
 
@@ -68,7 +63,7 @@ long _CrtSetBreakAlloc(
 
 **_CrtSetBreakAlloc**アプリケーションでメモリ リークの検出を実行するには、特定の時点のメモリ割り当ての互換性に影響し、要求の起点までさかのぼってトレースします。 関数は、メモリ ブロックがヒープ上に割り当てられたときに決められた、シーケンシャルなオブジェクト割り当て順序番号を使用します。 ときに[_DEBUG](../../c-runtime-library/debug.md)が定義されていないへの呼び出し **_CrtSetBreakAlloc**プリプロセス時に削除されます。
 
-オブジェクト割り当て順序番号は、Crtdbg.h で定義されている **_CrtMemBlockHeader** 構造体の *lRequest* フィールドに格納されます。 いずれかのデバッグ ダンプ関数を使用してメモリ ブロックの情報を出力すると、この番号が {36} のように中かっこで囲まれて表示されます。
+オブジェクト割り当て順序番号は、Crtdbg.h で定義されている **_CrtMemBlockHeader** 構造体の *lRequest* フィールドに格納されます。 デバッグ ダンプ関数のいずれかでメモリ ブロックに関する情報が報告されると、この番号はかっこで囲みますなど{36}です。
 
 方法の詳細についての **_CrtSetBreakAlloc**他のメモリ管理関数と共に使用できるを参照してください[ヒープ割り当て要求の追跡](/visualstudio/debugger/crt-debug-heap-details)です。 デバッグ バージョンのベース ヒープでのメモリ ブロックの割り当て、初期化、管理の方法について詳しくは、「 [CRT Debug Heap Details](/visualstudio/debugger/crt-debug-heap-details)」をご覧ください。
 

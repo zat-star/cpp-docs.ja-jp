@@ -2,11 +2,8 @@
 title: メンバー アクセス コントロール (C++) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - member access [C++]
 - member-access control [C++]
 ms.assetid: 2d596bca-56ad-4277-94e1-ce3db45fa14a
-caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 88fe05ab0c0e6a1c433bf2b6007fb63c18fb5850
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c1f36b23ce76c4f4e639e824116f7f80063a8748
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="member-access-control-c"></a>メンバー アクセス コントロール (C++)
 分離するためのアクセス制御を有効にする、[パブリック](../cpp/public-cpp.md)からクラスのインターフェイス、[プライベート](../cpp/private-cpp.md)実装の詳細と[保護](../cpp/protected-cpp.md)に対してのみであるメンバーを使用して派生クラス。 アクセス指定子は、その後で宣言されたすべてのメンバーに対して当てはまり、これは、次のアクセス指定子が検出されるまで続きます。  
@@ -190,7 +185,7 @@ int Derived2::ShowCount()
  派生クラス `T` のメンバーとフレンドは `T` へのポインターを、`T` のプライベート直接基底クラスへのポインターに変換できます。  
   
 ## <a name="access-to-virtual-functions"></a>仮想関数へのアクセス  
- 適用されるアクセス制御[仮想](../cpp/virtual-cpp.md)関数は、関数の呼び出しに使用される型によって決定されます。 関数の宣言のオーバーライドは、特定の型のアクセス制御には影響しません。 例:  
+ 適用されるアクセス制御[仮想](../cpp/virtual-cpp.md)関数は、関数の呼び出しに使用される型によって決定されます。 関数の宣言のオーバーライドは、特定の型のアクセス制御には影響しません。 例えば:  
   
 ```  
 // access_to_virtual_functions.cpp  
@@ -233,5 +228,5 @@ int main()
   
  図では、クラス `VBase` で宣言される名前は、必ずクラス `RightPath` 経由でアクセスされます。 `RightPath` が `VBase` をプライベート基底クラスとして宣言するのに対し、`LeftPath` は `VBase` をパブリック基底クラスとして宣言するため、右のパスの方がアクセスが簡単です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)

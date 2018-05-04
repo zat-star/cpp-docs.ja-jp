@@ -1,12 +1,9 @@
 ---
-title: "キャスト演算子: () |Microsoft ドキュメント"
-ms.custom: 
+title: 'キャスト演算子: () |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -14,17 +11,15 @@ helpviewer_keywords:
 - cast operators [C++]
 - () cast operator
 ms.assetid: 4c99eb92-1b19-4a5d-9840-5d8c29b8453e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 96428c5a18c7b345f323ab377c24fe5f008bc025
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7ef2d370f4344e4a66c70989582da8d7ac7d5186
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cast-operator-"></a>キャスト演算子: ()
 型キャストは、特定の状況におけるオブジェクトの型の明示的な変換方法を示します。  
@@ -132,7 +127,7 @@ Note that the cast changed the raw internal string
 Raw Bytes after cast:   Exciting  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [明示的な型変換演算子:)](../cpp/explicit-type-conversion-operator-parens.md)   

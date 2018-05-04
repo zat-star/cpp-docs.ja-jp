@@ -1,12 +1,9 @@
 ---
-title: "CAccessToken クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CAccessToken クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CAccessToken
@@ -61,17 +58,15 @@ dev_langs:
 helpviewer_keywords:
 - CAccessToken class
 ms.assetid: bb5c5945-56a5-4083-b442-76573cee83ab
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b8d2a314ea7697ef4379b899ee6845cd4ceca707
-ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.openlocfilehash: 407652cc5a5e300a2e5eb9d6a5a07dd29209ffef
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="caccesstoken-class"></a>CAccessToken クラス
 このクラスは、アクセス トークンのラッパーです。  
@@ -148,7 +143,7 @@ class CAccessToken
   
  Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="attach"></a>  CAccessToken::Attach  
@@ -165,7 +160,7 @@ void Attach(HANDLE hToken) throw();
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、アサーション エラーが発生場合、`CAccessToken`オブジェクトには、アクセス トークンの所有権が既に存在します。  
   
-##  <a name="dtor"></a>  CAccessToken::~CAccessToken  
+##  <a name="dtor"></a>  CAccessToken:: ~ CAccessToken  
  デストラクターです。  
   
 ```
@@ -222,7 +217,7 @@ bool CreateImpersonationToken(
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- `CreateImpersonationToken`呼び出し[DuplicateToken](http://msdn.microsoft.com/library/windows/desktop/aa446616)新しい権限借用トークンを作成します。  
+ `CreateImpersonationToken` 呼び出し[DuplicateToken](http://msdn.microsoft.com/library/windows/desktop/aa446616)新しい権限借用トークンを作成します。  
   
 ##  <a name="createprimarytoken"></a>  CAccessToken::CreatePrimaryToken  
  新しいプライマリ トークンを作成するには、このメソッドを呼び出します。  
@@ -248,7 +243,7 @@ bool CreatePrimaryToken(
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- `CreatePrimaryToken`呼び出し[DuplicateTokenEx](http://msdn.microsoft.com/library/windows/desktop/aa446617)を新しいプライマリ トークンを作成します。  
+ `CreatePrimaryToken` 呼び出し[DuplicateTokenEx](http://msdn.microsoft.com/library/windows/desktop/aa446617)を新しいプライマリ トークンを作成します。  
   
 ##  <a name="createprocessasuser"></a>  CAccessToken::CreateProcessAsUser  
  によって表されるユーザーのセキュリティ コンテキストで実行されている、新しいプロセスを作成するには、このメソッドを呼び出して、`CAccessToken`オブジェクト。  
@@ -334,7 +329,7 @@ bool CreateRestrictedToken(
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- `CreateRestrictedToken`使用して、 [CreateRestrictedToken](http://msdn.microsoft.com/library/windows/desktop/aa446583) Win32 関数を作成、新しい`CAccessToken`オブジェクトを制限します。  
+ `CreateRestrictedToken` 使用して、 [CreateRestrictedToken](http://msdn.microsoft.com/library/windows/desktop/aa446583) Win32 関数を作成、新しい`CAccessToken`オブジェクトを制限します。  
   
 > [!IMPORTANT]
 >  使用する場合`CreateRestrictedToken`、以下を確認する: 既存のトークンは有効な (かつ、ユーザーが入っていない) および`SidsToDisable`と`PrivilegesToDelete`が有効 (かつ、ユーザーが入っていない)。 メソッドが false を返す場合は、機能を拒否します。  
@@ -942,7 +937,7 @@ bool OpenThreadToken(
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
   
 ### <a name="remarks"></a>コメント  
- `OpenThreadToken`に似ていますが[CAccessToken::GetThreadToken](#getthreadtoken)、初期化する前に、偽装レベルを設定が、`CAccessToken`スレッドのアクセス トークンから。  
+ `OpenThreadToken` に似ていますが[CAccessToken::GetThreadToken](#getthreadtoken)、初期化する前に、偽装レベルを設定が、`CAccessToken`スレッドのアクセス トークンから。  
   
  [CAutoRevertImpersonation クラス](../../atl/reference/cautorevertimpersonation-class.md)できますを使用して自動的に設定して作成した権限を借用したアクセス トークンを戻す、`bImpersonate`フラグを*true*です。  
   
@@ -1036,7 +1031,7 @@ bool SetPrimaryGroup(const CSid& rSid) throw(...);
 ### <a name="remarks"></a>コメント  
  プライマリ グループは、このアクセス トークンが有効なときに作成された新しいオブジェクトの既定のグループです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATLSecurity サンプル](../../visual-cpp-samples.md)   
  [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)   
  [クラスの概要](../../atl/atl-class-overview.md)

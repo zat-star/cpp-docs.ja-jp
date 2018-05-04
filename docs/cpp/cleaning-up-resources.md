@@ -1,12 +1,9 @@
 ---
-title: "リソースのクリーンアップ |Microsoft ドキュメント"
-ms.custom: 
+title: リソースのクリーンアップ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - exception handling [C++], cleanup code
 - try-catch keyword [C++], termination handlers
 ms.assetid: 65753efe-6a27-4750-b90c-50635775c1b6
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fd84fdd041a3b3715c4fbfa9b4c1d78fdf2ba464
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 960e19400ae1d00108d57eb85d3df01ebf1dbc33
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cleaning-up-resources"></a>リソースの後処理
 終了ハンドラーの実行中は、終了ハンドラーが呼び出される前に実際に割り当てられたリソースがわからない場合があります。 すべてのリソースが割り当てられる前に `__try` ステートメント ブロックへの割り込みが発生したために、一部のリソースは開いていない可能性もあります。  
@@ -82,6 +77,6 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [終了ハンドラーの記述](../cpp/writing-a-termination-handler.md)   
  [構造化例外処理 (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

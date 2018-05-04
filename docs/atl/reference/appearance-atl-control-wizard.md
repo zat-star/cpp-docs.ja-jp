@@ -1,12 +1,9 @@
 ---
-title: "外観、ATL コントロール ウィザード |Microsoft ドキュメント"
-ms.custom: 
+title: 外観、ATL コントロール ウィザード |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - vc.codewiz.class.atl.control.misc
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - ATL Control Wizard, appearance
 ms.assetid: cc16d7ff-74d7-4c15-9ebd-4b19201ff457
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8869df577dfbc541b989beb4b4f3117d7d12feea
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d1d27b46f529d8423bdaf733928a9f3e46b3f185
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="appearance-atl-control-wizard"></a>外観、ATL コントロール ウィザード
 「検索結果」の概要をここに挿入します。  
@@ -100,7 +95,7 @@ ms.lasthandoff: 12/21/2017
   
 -   **挿入可能な**: このオプションを選択するコントロールに表示される、**オブジェクトの挿入**Word や Excel などのアプリケーションのダイアログ ボックス。 コントロールは、このダイアログ ボックスを使用して埋め込みオブジェクトをサポートする任意のアプリケーションで挿入できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ATL コントロール ウィザード](../../atl/reference/atl-control-wizard.md)   
  [サンプルを SUBEDIT: スーパークラス標準の Windows コントロール](http://msdn.microsoft.com/en-us/30e46bdc-ed92-417c-b6b8-359017265a7b)
 

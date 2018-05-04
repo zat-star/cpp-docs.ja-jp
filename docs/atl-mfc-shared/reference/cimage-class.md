@@ -1,12 +1,9 @@
 ---
-title: "CImage クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CImage クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 02/01/2018
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 f1_keywords:
 - CImage
@@ -63,20 +60,18 @@ helpviewer_keywords:
 - CImage class
 - transparent color
 ms.assetid: 52861e3d-bf7e-481f-a240-90e88f76c490
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4d5478a258c55996fe4073ffc1ab616b2b71386c
-ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.openlocfilehash: 762941834820edda09970750af752d4c8a9df61c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cimage-class"></a>CImage クラス
-`CImage`読み込み、JPEG、GIF、BMP、およびポータブル ネットワーク グラフィックス (PNG) 形式で画像を保存する機能を含む、ビットマップの拡張サポートを提供します。  
+`CImage` 読み込み、JPEG、GIF、BMP、およびポータブル ネットワーク グラフィックス (PNG) 形式で画像を保存する機能を含む、ビットマップの拡張サポートを提供します。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -146,7 +141,7 @@ class CImage
 |[CImage::operator HBITMAP](#operator_hbitmap)|接続されている Windows ハンドルを返します、`CImage`オブジェクト。|  
   
 ## <a name="remarks"></a>コメント  
- `CImage`ビットマップかのいずれかのデバイスに依存しないビットマップ (DIB) セクションではありません。ただし、使用することができます[作成](#create)または[CImage::Load](#load) DIB セクションのみを含むです。 非 DIB セクション ビットマップをアタッチすることができます、`CImage`オブジェクトを使用して[アタッチ](#attach)、し、以下を使用することはできませんが、 `CImage` DIB セクション ビットマップのみをサポートする方法。  
+ `CImage` ビットマップかのいずれかのデバイスに依存しないビットマップ (DIB) セクションではありません。ただし、使用することができます[作成](#create)または[CImage::Load](#load) DIB セクションのみを含むです。 非 DIB セクション ビットマップをアタッチすることができます、`CImage`オブジェクトを使用して[アタッチ](#attach)、し、以下を使用することはできませんが、 `CImage` DIB セクション ビットマップのみをサポートする方法。  
   
 - [GetBits](#getbits)  
   
@@ -170,7 +165,7 @@ class CImage
 > [!NOTE]
 >  グローバルを使用して`CImage`DLL 内のオブジェクトはお勧めしません。 グローバルを使用する必要がある場合`CImage`呼び出し、DLL 内のオブジェクト[CImage::ReleaseGDIPlus](#releasegdiplus)を明示的に GDI + で使用されるリソースを解放します。  
   
- `CImage`新しいに選択することはできません[CDC](../../mfc/reference/cdc-class.md)です。 `CImage`独自に作成**HDC**イメージにします。 `HBITMAP`を 1 つにのみ選択できます**HDC** 、時に、`HBITMAP`に関連付けられている、`CImage`別に選択することはできません**HDC**です。 必要がある場合、 `CDC`、取得、 **HDC**から、`CImage`し、[CDC::FromHandle] (../../mfc/reference/cdc-class.md#cdc__fromhandle です。  
+ `CImage` 新しいに選択することはできません[CDC](../../mfc/reference/cdc-class.md)です。 `CImage` 独自に作成**HDC**イメージにします。 `HBITMAP`を 1 つにのみ選択できます**HDC** 、時に、`HBITMAP`に関連付けられている、`CImage`別に選択することはできません**HDC**です。 必要がある場合、 `CDC`、取得、 **HDC**から、`CImage`し、[CDC::FromHandle] (../../mfc/reference/cdc-class.md#cdc__fromhandle です。  
   
 ## <a name="example"></a>例  
 ```cpp  
@@ -209,7 +204,7 @@ void CMyDlg::OnRButtonDown(UINT nFlags, CPoint point)
 >   
 >  同様に、含める必要があります`atlimage.h`インクルードする前に`atlimpl.cpp`です。 これを実現する簡単に含める`atlimage.h`で、`stdafx.h`です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlimage.h  
   
 ##  <a name="alphablend"></a>  CImage::AlphaBlend  
@@ -396,7 +391,7 @@ BOOL BitBlt(
 ### <a name="remarks"></a>コメント  
  詳細については、次を参照してください。 [BitBlt](http://msdn.microsoft.com/library/windows/desktop/dd183370) Windows SDK に含まれています。  
   
-##  <a name="cimage"></a>CImage::CImage  
+##  <a name="cimage"></a>  CImage::CImage  
  `CImage` オブジェクトを構築します。  
   
 ```
@@ -512,7 +507,7 @@ HBITMAP Detach() throw();
 ### <a name="return-value"></a>戻り値  
  デタッチ、ビットマップへのハンドルまたは**NULL**ビットマップが添付されていない場合。  
   
-##  <a name="draw"></a>  CImage::Draw  
+##  <a name="draw"></a>  :Draw  
  コピー元デバイス コンテキストから現在のデバイス コンテキストにビットマップをコピーします。  
   
 ```
@@ -685,7 +680,7 @@ static HRESULT GetExporterFilterString(CSimpleString& strExporters,
  `pszAllFilesDescription`  
  このパラメーターがない場合**NULL**、フィルター文字列は、一覧の先頭に追加の 1 つのフィルターがします。 このフィルターはの現在の値に`pszAllFilesDescription`その説明の一覧で、その他のエクスポーターでサポートされている任意の拡張子のファイルを受け入れるとします。  
   
- 例:  
+ 例えば:  
 
 ```cpp  
 //First filter in the list will be titled "All Image Files", and
@@ -719,7 +714,7 @@ CImage::GetExporterFilterString(
   
 - **excludeDefaultLoad** load]、[既定の型が含まれているすべてのファイルの場合は 0 を =  
   
-- **excludeDefaultSave** = **excludeIcon (& a) #124; excludeEMF &#124; excludeWMF**特別な要件があるためには、これらのファイルを既定で除外するよう、保存するためです。  
+- **excludeDefaultSave** = **excludeIcon &#124; excludeEMF &#124; excludeWMF**特別な要件があるためには、これらのファイルを既定で除外するよう、保存するためです。  
   
  `chSeparator`  
  イメージ形式の間で使用される区切り記号。 参照してください**解説**詳細についてはします。  
@@ -732,13 +727,13 @@ CImage::GetExporterFilterString(
   
  パラメーター *strExporter*形式があります。  
   
- file description0&#124;\*.ext0&#124;filedescription1&#124;\*.ext1&#124;...file description *n*&#124;\*.ext *n*&#124;&#124;  
+ ファイルの description0&#124;\*.ext0&#124;filedescription1&#124;\*.ext1&#124;.. .file 説明*n*&#124;\*.ext *n*&#124;&#124;  
   
- 場所 ' &#124;' で指定された区切り記号`chSeparator`です。 例:  
+ 場所 '&#124;' で指定された区切り記号`chSeparator`です。 例えば:  
   
  `"Bitmap format|*.bmp|JPEG format|*.jpg|GIF format|*.gif|PNG format|*.png||"`  
   
- 既定の区切り記号を使用して ' &#124;'、MFC にこの文字列を渡す場合`CFileDialog`オブジェクト。 一般的な名前を付けて保存 ダイアログ ボックスにこの文字列を渡す場合は、null の区切り記号 '\0' を使用します。  
+ 既定の区切り記号を使用して '&#124;' MFC にこの文字列を渡す場合`CFileDialog`オブジェクト。 一般的な名前を付けて保存 ダイアログ ボックスにこの文字列を渡す場合は、null の区切り記号 '\0' を使用します。  
   
 ##  <a name="getheight"></a>  CImage::GetHeight  
  イメージのピクセル単位の高さを取得します。  
@@ -774,7 +769,7 @@ static HRESULT GetImporterFilterString(CSimpleString& strImporters,
  `pszAllFilesDescription`  
  このパラメーターがない場合**NULL**、フィルター文字列は、一覧の先頭に追加の 1 つのフィルターがします。 このフィルターはの現在の値に`pszAllFilesDescription`その説明の一覧で、その他のエクスポーターでサポートされている任意の拡張子のファイルを受け入れるとします。  
   
- 例:  
+ 例えば:  
 
 ```cpp  
 //First filter in the list will be titled "All Image Files", and
@@ -808,7 +803,7 @@ CImage::GetImporterFilterString(
   
 - **excludeDefaultLoad** load]、[既定の型が含まれているすべてのファイルの場合は 0 を =  
   
-- **excludeDefaultSave** = **excludeIcon (& a) #124; excludeEMF &#124; excludeWMF**特別な要件があるためには、これらのファイルを既定で除外するよう、保存するためです。  
+- **excludeDefaultSave** = **excludeIcon &#124; excludeEMF &#124; excludeWMF**特別な要件があるためには、これらのファイルを既定で除外するよう、保存するためです。  
   
  `chSeparator`  
  イメージ形式の間で使用される区切り記号。 参照してください**解説**詳細についてはします。  
@@ -818,13 +813,13 @@ CImage::GetImporterFilterString(
   
  パラメーター *strImporter*形式があります。  
   
- file description0&#124;\*.ext0&#124;filedescription1&#124;\*.ext1&#124;...file description *n*&#124;\*.ext *n*&#124;&#124;  
+ ファイルの description0&#124;\*.ext0&#124;filedescription1&#124;\*.ext1&#124;.. .file 説明*n*&#124;\*.ext *n*&#124;&#124;  
   
- 場所 ' &#124;' で指定された区切り記号`chSeparator`です。 例:  
+ 場所 '&#124;' で指定された区切り記号`chSeparator`です。 例えば:  
   
  `"Bitmap format|*.bmp|JPEG format|*.jpg|GIF format|*.gif|PNG format|*.png||"`  
   
- 既定の区切り記号を使用して ' &#124;'、MFC にこの文字列を渡す場合`CFileDialog`オブジェクト。 共通にこの文字列を渡す場合、null の区切り記号 '\0' を使用して**ファイルを開く** ダイアログ ボックス。  
+ 既定の区切り記号を使用して '&#124;' MFC にこの文字列を渡す場合`CFileDialog`オブジェクト。 共通にこの文字列を渡す場合、null の区切り記号 '\0' を使用して**ファイルを開く** ダイアログ ボックス。  
   
 ##  <a name="getmaxcolortableentries"></a>  CImage::GetMaxColorTableEntries  
  カラー テーブル内のエントリの最大数を取得します。  
@@ -1123,7 +1118,7 @@ BOOL MaskBlt(
 ### <a name="remarks"></a>コメント  
  このメソッドは、Windows NT、バージョン 4.0 以降のみに適用されます。  
   
-##  <a name="operator_hbitmap"></a>CImage::operator HBITMAP  
+##  <a name="operator_hbitmap"></a>  CImage::operator HBITMAP  
  この演算子のアタッチされた Windows GDI ハンドルの取得を使用して、`CImage`オブジェクト。 この演算子はキャスト演算子の`HBITMAP`オブジェクト。  
   
 ##  <a name="plgblt"></a>  CImage::PlgBlt  
@@ -1515,7 +1510,7 @@ BOOL TransparentBlt(
  **TRUE**成功した場合、それ以外の場合**FALSE**です。  
   
 ### <a name="remarks"></a>コメント  
- `TransparentBlt`ピクセルあたり 8 ビット、およびピクセルごとの 4 ビットの元のビットマップはサポートされます。 使用して[CImage::AlphaBlend](#alphablend)透過性の 32 ビット/ピクセルのビットマップを指定します。  
+ `TransparentBlt` ピクセルあたり 8 ビット、およびピクセルごとの 4 ビットの元のビットマップはサポートされます。 使用して[CImage::AlphaBlend](#alphablend)透過性の 32 ビット/ピクセルのビットマップを指定します。  
   
   
 ### <a name="example"></a>例  
@@ -1549,7 +1544,7 @@ BOOL TransparentBlt(CImage* pSrcImage, CImage* pDstImage,
 ```
 
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [MMXSwarm サンプル](../../visual-cpp-samples.md)   
  [SimpleImage サンプル](../../visual-cpp-samples.md)   
  [デバイスに依存しないビットマップ](http://msdn.microsoft.com/library/windows/desktop/dd183562)   

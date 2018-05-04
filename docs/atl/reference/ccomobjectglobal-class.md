@@ -2,11 +2,8 @@
 title: CComObjectGlobal クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComObjectGlobal
@@ -21,17 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - CComObjectGlobal class
 ms.assetid: 79bdee55-66e4-4536-b5b3-bdf09f78b9a6
-caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8d5264a2ab8e1bbc4c3f4eac4d83d096d91e8846
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3614962d3bebada0c63b7fe804b52efaa965c6a9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomobjectglobal-class"></a>CComObjectGlobal クラス
 このクラスを含むモジュールの参照カウントを管理する、`Base`オブジェクト。  
@@ -71,7 +66,7 @@ class CComObjectGlobal : public Base
 |[CComObjectGlobal::m_hResFinalConstruct](#m_hresfinalconstruct)|含まれています、 **HRESULT**の構築時に返される、`CComObjectGlobal`オブジェクト。|  
   
 ## <a name="remarks"></a>コメント  
- `CComObjectGlobal`含むモジュールの参照カウントを管理、`Base`オブジェクト。 `CComObjectGlobal`により、モジュールが解放されない限り、オブジェクトは削除されません。 オブジェクトは、全体のモジュールの参照カウントがゼロになったときにだけ削除されます。  
+ `CComObjectGlobal` 含むモジュールの参照カウントを管理、`Base`オブジェクト。 `CComObjectGlobal` により、モジュールが解放されない限り、オブジェクトは削除されません。 オブジェクトは、全体のモジュールの参照カウントがゼロになったときにだけ削除されます。  
   
  たとえばを使用して`CComObjectGlobal`、クラス ファクトリは、すべてのクライアントで共有される共通のグローバル オブジェクトを保持できます。  
   
@@ -80,10 +75,10 @@ class CComObjectGlobal : public Base
   
  `CComObjectGlobal`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="addref"></a>CComObjectGlobal::AddRef  
+##  <a name="addref"></a>  CComObjectGlobal::AddRef  
  1 つずつ、オブジェクトの参照カウントをインクリメントします。  
   
 ```
@@ -94,9 +89,9 @@ STDMETHOD_(ULONG, AddRef)();
  診断やテストに使用する値。  
   
 ### <a name="remarks"></a>コメント  
- 既定では、`AddRef`呼び出し**_Module::Lock**ここで、 **_Module**のグローバル インスタンスは、 [CComModule](../../atl/reference/ccommodule-class.md)またはその派生クラス。  
+ 既定では、`AddRef`呼び出し **_Module::Lock**ここで、 **_Module**のグローバル インスタンスは、 [CComModule](../../atl/reference/ccommodule-class.md)またはその派生クラス。  
   
-##  <a name="ccomobjectglobal"></a>CComObjectGlobal::CComObjectGlobal  
+##  <a name="ccomobjectglobal"></a>  CComObjectGlobal::CComObjectGlobal  
  コンストラクターです。 呼び出し`FinalConstruct`し、設定[m_hResFinalConstruct](#m_hresfinalconstruct)を`HRESULT`によって返される`FinalConstruct`です。  
   
 ```
@@ -106,7 +101,7 @@ CComObjectGlobal(void* = NULL));
 ### <a name="remarks"></a>コメント  
  基本クラスを派生していない場合[CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)、独自に指定する必要があります`FinalConstruct`メソッドです。 このデストラクターは `FinalRelease` を呼び出します。  
   
-##  <a name="dtor"></a>CComObjectGlobal:: ~ CComObjectGlobal  
+##  <a name="dtor"></a>  CComObjectGlobal:: ~ CComObjectGlobal  
  デストラクターです。  
   
 ```
@@ -116,14 +111,14 @@ CComObjectGlobal();
 ### <a name="remarks"></a>コメント  
  割り当てられているすべてのリソースを解放[FinalRelease](ccomobjectrootex-class.md#finalrelease)です。  
   
-##  <a name="m_hresfinalconstruct"></a>CComObjectGlobal::m_hResFinalConstruct  
+##  <a name="m_hresfinalconstruct"></a>  CComObjectGlobal::m_hResFinalConstruct  
  含まれています、`HRESULT`呼び出し元から`FinalConstruct`の構築中に、`CComObjectGlobal`オブジェクト。  
   
 ```
 HRESULT m_hResFinalConstruct;
 ```  
   
-##  <a name="queryinterface"></a>CComObjectGlobal::QueryInterface  
+##  <a name="queryinterface"></a>  CComObjectGlobal::QueryInterface  
  要求されたインターフェイス ポインターへのポインターを取得します。  
   
 ```
@@ -143,7 +138,7 @@ STDMETHOD(QueryInterface)(REFIID iid, void** ppvObject);
 ### <a name="remarks"></a>コメント  
  `QueryInterface` が処理するのは、COM マップ テーブル内のインターフェイスのみです。  
   
-##  <a name="release"></a>CComObjectGlobal::Release  
+##  <a name="release"></a>  CComObjectGlobal::Release  
  1 つずつ、オブジェクトの参照カウントをデクリメントします。  
   
 ```
@@ -154,9 +149,9 @@ STDMETHOD_(ULONG, Release)();
  デバッグ ビルドで、**リリース**とテスト、診断に役立つ可能性のある値を返します。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- 既定では、**リリース**呼び出し**_Module::Unlock**ここで、 **_Module**のグローバル インスタンスは、 [CComModule](../../atl/reference/ccommodule-class.md)またはその派生クラス。  
+ 既定では、**リリース**呼び出し **_Module::Unlock**ここで、 **_Module**のグローバル インスタンスは、 [CComModule](../../atl/reference/ccommodule-class.md)またはその派生クラス。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CComObjectStack クラス](../../atl/reference/ccomobjectstack-class.md)   
  [クラス](../../atl/reference/ccomaggobject-class.md)   
  [CComObject クラス](../../atl/reference/ccomobject-class.md)   

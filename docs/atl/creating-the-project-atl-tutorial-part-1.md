@@ -1,27 +1,22 @@
 ---
-title: "プロジェクト (ATL チュートリアル、パート 1) を作成する |Microsoft ドキュメント"
-ms.custom: 
+title: プロジェクト (ATL チュートリアル、パート 1) を作成する |Microsoft ドキュメント
+ms.custom: get-started-article
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: get-started-article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: f6b727d1-390a-4b27-b82f-daadcd9fc059
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1a9a5fc9a0d2175a419bbc0fb1aacbc9ea25006c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1aedf7b4112d4c8d4bb5b2a174e93925f5a46ce5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="creating-the-project-atl-tutorial-part-1"></a>プロジェクトの作成 (ATL チュートリアル、パート 1)
 このチュートリアルでは、属性なしの ATL プロジェクトを多角形を表示する ActiveX オブジェクトを作成する手順について説明します。 オブジェクトには、辺の多角形、およびコードの表示を更新数を変更するユーザーを許可するためのオプションが含まれています。  
@@ -70,12 +65,12 @@ ms.lasthandoff: 12/21/2017
   
 3.  をクリックして**リンカー**です。 変更、 **UserRedirection あたり**オプションを**はい**です。  
   
-4.  **[OK]**をクリックします。  
+4.  **[OK]** をクリックします。  
   
  次の手順では、プロジェクトに、コントロールを追加します。  
   
  [手順 2 に](../atl/adding-a-control-atl-tutorial-part-2.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアル](../atl/active-template-library-atl-tutorial.md)
 

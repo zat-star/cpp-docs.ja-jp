@@ -2,12 +2,9 @@
 title: -/ALLOWISOLATION (マニフェスト検索) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /ALLOWISOLATION
 - VC.Project.VCLinkerTool.AllowIsolation
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - -ALLOWISOLATION linker option
 - /ALLOWISOLATION linker option
 ms.assetid: 6d41851e-b3c1-4bdf-beaa-031773089d6f
-caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: d0ca939021a6fc530b11c6ec66fc74cc012da1c9
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a0e063aa51e136dfcc7a4445948e8a68d7a99bca
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="allowisolation-manifest-lookup"></a>/ALLOWISOLATION (マニフェスト検索)
 マニフェスト検索の動作を指定します。  
@@ -45,7 +40,7 @@ ms.lasthandoff: 12/21/2017
   
  **/ALLOWISOLATION**既定値です。  
   
- 実行可能ファイルの分離が無効、Windows ローダーは新しく作成されたプロセスのアプリケーション マニフェストを検索しません。 実行可能ファイルまたは名前を持つ実行可能ファイルと同じディレクトリに配置されている内部マニフェストがある場合でも、新しいプロセスは既定のアクティベーション コンテキストをありません*実行可能ファイル名***. exe.manifest**です。  
+ 実行可能ファイルの分離が無効、Windows ローダーは新しく作成されたプロセスのアプリケーション マニフェストを検索しません。 実行可能ファイルまたは名前を持つ実行可能ファイルと同じディレクトリに配置されている内部マニフェストがある場合でも、新しいプロセスは既定のアクティベーション コンテキストをありません * 実行可能ファイルの名前 ***. exe.manifest**です。  
   
  詳細については、次を参照してください。 [Manifest Files Reference](http://msdn.microsoft.com/library/aa375632)です。  
   
@@ -61,6 +56,6 @@ ms.lasthandoff: 12/21/2017
   
 5.  変更、**分離の許可**プロパティです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

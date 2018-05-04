@@ -1,10 +1,7 @@
 ---
-title: "ATL パス関数 |Microsoft ドキュメント"
-ms.custom: 
+title: ATL パス関数 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: reference
 helpviewer_keywords:
 - ATL, path
@@ -46,16 +43,15 @@ f1_keywords:
 - ATLPATH/ATL::ATLPath::StripToRoot
 - ATLPATH/ATL::ATLPath::UnquoteSpaces
 ms.assetid: d1ec2b8d-7ec7-43ea-90dd-0a740d2a742b
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 9fa9795af90e28b2c021b179876a9f69609c7884
-ms.sourcegitcommit: a5a69d2dc3513261e9e28320e4e067aaf40d2ef2
+ms.openlocfilehash: 38286d169591dd55f7a2618332b6f5d5c9c86719
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-path-functions"></a>ATL パス関数
 
@@ -116,7 +112,7 @@ ATL の形式でパスを操作するため、ATLPath クラスには、 [CPathT
 |[ATLPath::StripToRoot](#striptoroot)|この関数は、用のオーバー ロードされたラッパー [PathStripToRoot](http://msdn.microsoft.com/library/windows/desktop/bb773757)です。|  
 |[ATLPath::UnquoteSpaces](#unquotespaces)|この関数は、用のオーバー ロードされたラッパー [PathUnquoteSpaces](http://msdn.microsoft.com/library/windows/desktop/bb773763)です。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlpath.h  
 
 ## <a name="addbackslash"></a> ATLPath::AddBackSlash

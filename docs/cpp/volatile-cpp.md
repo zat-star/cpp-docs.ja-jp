@@ -2,11 +2,8 @@
 title: volatile (C++) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - volatile_cpp
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - volatile objects
 - objects [C++], volatile
 ms.assetid: 81db4a85-ed5a-4a2c-9a53-5d07a771d2de
-caps.latest.revision: 43
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 02560da98c583281cc05921f2e924a12f41688c3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 295654586a3fe251526a4764d54f80f3a70c7014
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="volatile-c"></a>volatile (C++)
 オブジェクトをハードウェアがプログラム内で変更できることを宣言するために使用できる型修飾子です。  
@@ -43,7 +38,7 @@ volatile declarator ;
 ## <a name="remarks"></a>コメント  
  使用することができます、 [/volatile](../build/reference/volatile-volatile-keyword-interpretation.md)コンパイラ スイッチをこのキーワードをコンパイラが解釈する方法を変更します。  
   
- Visual Studio は、ターゲット アーキテクチャに応じて、`volatile` キーワードの解釈を変えます。 Arm、ない場合は**/volatile**コンパイラ オプションを指定すると、コンパイラは、実行として**/volatile:iso**が指定されています。 いない場合、ARM 以外のアーキテクチャの**/volatile**コンパイラ オプションを指定すると、コンパイラは、実行として**/volatile:ms**が指定されましたそのため、アーキテクチャお強く ARM 以外の場合。指定することをお勧め**/volatile:iso**、およびスレッド間で共有されるメモリを扱うときに、明示的な同期プリミティブとコンパイラ組み込み関数を使用します。  
+ Visual Studio は、ターゲット アーキテクチャに応じて、`volatile` キーワードの解釈を変えます。 Arm、ない場合は **/volatile**コンパイラ オプションを指定すると、コンパイラは、実行として **/volatile:iso**が指定されています。 いない場合、ARM 以外のアーキテクチャの **/volatile**コンパイラ オプションを指定すると、コンパイラは、実行として **/volatile:ms**が指定されましたそのため、アーキテクチャお強く ARM 以外の場合。指定することをお勧め **/volatile:iso**、およびスレッド間で共有されるメモリを扱うときに、明示的な同期プリミティブとコンパイラ組み込み関数を使用します。  
   
  `volatile` 修飾子を使用すると、割り込みハンドラーのような非同期プロセスによって使用されるメモリ位置へのアクセスを提供することができます。  
   
@@ -80,7 +75,7 @@ volatile declarator ;
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キーワード](../cpp/keywords-cpp.md)   
  [const](../cpp/const-cpp.md)   
  [const ポインターと volatile ポインター](../cpp/const-and-volatile-pointers.md)

@@ -1,13 +1,10 @@
 ---
-title: "リンカー コマンドラインの構文 |Microsoft ドキュメント"
-ms.custom: 
+title: リンカー コマンドラインの構文 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - linker command line [C++]
 - LINK tool [C++], command-line syntax
 ms.assetid: e2a31e17-77bd-4e74-9305-75b105b26539
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3ce42aa031b91d5a4ec21ed14ac7cb47643e1325
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: fd5b1b809bfbbb01bca91f3677774d396515f56e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="linker-command-line-syntax"></a>リンカー コマンド ラインの構文
 リンクを実行します。実行可能ファイルを次のコマンド構文を使用します。  
@@ -45,6 +40,6 @@ LINK arguments
   
  link.exe は、成功 (エラーなし)、0 を返します。  それ以外の場合、リンカーは、リンクを停止したエラー数を返します。  たとえば、リンカーは、LNK1104 を生成する場合、リンカーは 1104 を返します。  同様に、エラーが発生した、リンカーによって返される最小のエラー番号は、1000 です。  128 の戻り値は、オペレーティング システムまたは .config ファイルのいずれかの構成に問題を表しますlink.exe か c2.dll、ローダーが読み込まれませんでした。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

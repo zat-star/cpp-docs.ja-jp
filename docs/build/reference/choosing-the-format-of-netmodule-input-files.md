@@ -1,27 +1,22 @@
 ---
-title: ".Netmodule の形式を選択する入力ファイル |Microsoft ドキュメント"
-ms.custom: 
+title: .Netmodule の形式を選択する入力ファイル |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 ms.assetid: 4653d1bd-300f-4083-86f5-d1a06f44e61c
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c6b83039a054e19e62cbbe87befbe08dd7997e51
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: 62575d3e816bdc10587e7a4c9cebcea735329ec1
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="choosing-the-format-of-netmodule-input-files"></a>.netmodule 入力ファイルの形式の選択
 MSIL .obj ファイル (でコンパイルされた[/clr](../../build/reference/clr-common-language-runtime-compilation.md)) .netmodule ファイルとしても使用できます。  .obj ファイルには、メタデータおよびネイティブ シンボルが含まれます。  .netmodule には、メタデータにはのみが含まれています。  
@@ -47,5 +42,5 @@ MSIL .obj ファイル (でコンパイルされた[/clr](../../build/reference/
   
 -   マネージ ライブラリをビルドに使用される、モジュール、リンカーに 1 つまたは複数のモジュールの入力は単なる/clr で生成する場合、リンカーにモジュールの入力としての .obj ファイルを使用し、.dll (アセンブリ) を生成します。  ライブラリ コンポーネント モジュール (、また出荷する各モジュールの .h ファイルの .obj ファイルのライブラリでは、ライブラリからのマネージ型とする場合も、ライブラリ内のネイティブ型を使用する C++ アプリケーションを公開する場合は、、を参照できるように # ソース コードから include)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [.netmodule ファイル (リンカー入力)](../../build/reference/netmodule-files-as-linker-input.md)

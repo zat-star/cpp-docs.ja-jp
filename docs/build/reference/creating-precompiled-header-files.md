@@ -2,12 +2,9 @@
 title: プリコンパイル済みヘッダー ファイルの作成 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - pch
 dev_langs:
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - cl.exe compiler, precompiling code
 - .pch files, creating
 ms.assetid: e2cdb404-a517-4189-9771-c869c660cb1b
-caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 09c436d55ad7087d407ba580be0b63286b056898
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 31d9708f203c3d79d4cf369583c75d348278d06a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="creating-precompiled-header-files"></a>プリコンパイル済みヘッダー ファイルの作成
   
@@ -83,9 +78,9 @@ Visual C には、C または C++ コードをプリコンパイルすること�
   
 ソース ファイルに複数の一般的なヘッダー ファイルが同じ順序でインクルードされている場合、またはプリコンパイルにソース コードを追加するときは、コードをプリコンパイルします。  
   
-プリコンパイル済みヘッダー オプションは[/Yc (プリコンパイル済みヘッダー ファイルの作成)](../../build/reference/yc-create-precompiled-header-file.md)と[/Yu (プリコンパイル済みヘッダー ファイルの使用)](../../build/reference/yu-use-precompiled-header-file.md)です。 使用して**/Yc**プリコンパイル済みヘッダーを作成します。 省略可能なを使用すると[hdrstop](../../preprocessor/hdrstop.md)プラグマ、 **/Yc**とソース コードの両方のヘッダー ファイルをプリコンパイルすることができます。 選択**/Yu**に既存のコンパイル時に、既存のプリコンパイル済みヘッダーを使用します。 使用することも**/Fp**で、 **/Yc**と**/Yu**プリコンパイル済みヘッダーの代替名を提供するオプションです。  
+プリコンパイル済みヘッダー オプションは[/Yc (プリコンパイル済みヘッダー ファイルの作成)](../../build/reference/yc-create-precompiled-header-file.md)と[/Yu (プリコンパイル済みヘッダー ファイルの使用)](../../build/reference/yu-use-precompiled-header-file.md)です。 使用して **/Yc**プリコンパイル済みヘッダーを作成します。 省略可能なを使用すると[hdrstop](../../preprocessor/hdrstop.md)プラグマ、 **/Yc**とソース コードの両方のヘッダー ファイルをプリコンパイルすることができます。 選択 **/Yu**に既存のコンパイル時に、既存のプリコンパイル済みヘッダーを使用します。 使用することも **/Fp**で、 **/Yc**と **/Yu**プリコンパイル済みヘッダーの代替名を提供するオプションです。  
   
-コンパイラ オプションの参照トピック**/Yu**と**/Yc**開発環境でこの機能にアクセスする方法について説明します。  
+コンパイラ オプションの参照トピック **/Yu**と **/Yc**開発環境でこの機能にアクセスする方法について説明します。  
   
 <a name="precompiled-header-consistency-rules"></a>  
   
@@ -158,7 +153,7 @@ PCH ファイルには作成時に有効であったインクルード パスに
   
 次の表は、コンパイラ オプションがプリコンパイル済みヘッダーを使用するときに不整合が警告をトリガーする可能性があります。  
   
-|オプション|name|ルール|  
+|オプション|名前|ルール|  
 |------------|----------|----------|  
 |/D|定数とマクロを定義します。|プリコンパイル済みヘッダーを作成するコンパイルと、現在のコンパイルの間で同じにする必要があります。 定義済み定数の状態はチェックされませんが、ファイルが変更された定数の値に依存している場合、予期しない結果が発生することができます。|  
 |/E または/EP|プリプロセッサ出力を標準出力にコピーします。|プリコンパイル済みヘッダーは、/E または/EP オプションでは機能しません。|  
@@ -355,6 +350,6 @@ int main( void )
 }  
 ```  
     
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 [C/C++ ビルドのリファレンス](../../build/reference/c-cpp-building-reference.md)   
 [コンパイラ オプション](../../build/reference/compiler-options.md)

@@ -1,12 +1,9 @@
 ---
-title: "ファイル スコープを持つ名前にあるリンケージ |Microsoft ドキュメント"
-ms.custom: 
+title: ファイル スコープを持つ名前にあるリンケージ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - external linkage, scope linkage rules
 - static variables, external declarations
 ms.assetid: 38d3fa5e-1861-466e-a590-84b86f7b184e
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 581d7798f4f3aaa409d843f8b7f3b5869b47407e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 770b30516d16cf9ffccaae4724b368ca8fa33be0
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="linkage-in-names-with-file-scope"></a>ファイル スコープを持つ名前にあるリンケージ
 次のリンケージ規則は、ファイル スコープを持つ名前 (`typedef` と列挙子の名前以外) に適用されます。  
@@ -54,5 +49,5 @@ ms.lasthandoff: 12/21/2017
   
 -   外部リンケージを持つ別の名前の宣言で使用されていません。 この制約は、外部リンケージを持つ関数に渡されるクラス型のオブジェクトにより、クラスが外部リンケージを持つことを意味します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)

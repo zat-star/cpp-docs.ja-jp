@@ -1,13 +1,10 @@
 ---
-title: "-デバッグ (デバッグ情報の生成) |Microsoft ドキュメント"
-ms.custom: 
+title: -デバッグ (デバッグ情報の生成) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCLinkerTool.GenerateDebugInformation
 - /debug
@@ -25,17 +22,15 @@ helpviewer_keywords:
 - debugging [C++], linker option
 - program databases [C++]
 ms.assetid: 1af389ae-3f8b-4d76-a087-1cdf861e9103
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6f9f424a2e71a3094c9e633cbe5779ef5d75fbe9
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f93c47a0f96cf0b75b453bcea97212d4ab2fd6d3
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="debug-generate-debug-info"></a>/DEBUG (デバッグ情報の生成)
 ```  
@@ -56,7 +51,7 @@ ms.lasthandoff: 12/21/2017
   
 **/Debug: NONE**オプションは、PDB を生成しません。  
   
-指定すると**/debug** 、他のオプションとリンカーの既定値は**/DEBUG:FULL**コマンドラインとメイクファイル ビルド、リリース ビルドの Visual Studio IDE、およびデバッグとリリースの両方Visual Studio 2015 および以前のバージョンでビルドします。 Visual Studio 2017 以降は、IDE でビルド システム既定値は**/DEBUG:FASTLINK**を指定すると、 **/debug**オプション、デバッグ ビルドをします。 旧バージョンとの互換性を維持するためには、他の既定値が変更されていません。  
+指定すると **/debug** 、他のオプションとリンカーの既定値は **/DEBUG:FULL**コマンドラインとメイクファイル ビルド、リリース ビルドの Visual Studio IDE、およびデバッグとリリースの両方Visual Studio 2015 および以前のバージョンでビルドします。 Visual Studio 2017 以降は、IDE でビルド システム既定値は **/DEBUG:FASTLINK**を指定すると、 **/debug**オプション、デバッグ ビルドをします。 旧バージョンとの互換性を維持するためには、他の既定値が変更されていません。  
   
 コンパイラの[C7 互換](../../build/reference/z7-zi-zi-debug-information-format.md)(/Z7) オプションは、コンパイラ、.obj ファイルにデバッグ情報のままにします。 使用することも、[プログラム データベース](../../build/reference/z7-zi-zi-debug-information-format.md)(/Zi) コンパイラ オプションを .obj ファイルの PDB 内でデバッグ情報を格納します。 .Obj ファイルで記述された絶対パスに最初、リンカーが検索、オブジェクトの PDB をし、.obj ファイルが使用されているディレクトリにします。 オブジェクトの PDB ファイル名またはディレクトリをリンカーを指定することはできません。  
   
@@ -82,6 +77,6 @@ ms.lasthandoff: 12/21/2017
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.GenerateDebugInformation%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

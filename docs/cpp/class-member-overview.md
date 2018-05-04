@@ -1,12 +1,9 @@
 ---
-title: "クラス メンバーの概要 |Microsoft ドキュメント"
-ms.custom: 
+title: クラス メンバーの概要 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - class members [C++], types of
 - class members
 ms.assetid: 8802cfa9-705d-4f37-acde-245d6838010c
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2d9a8d274f162e64dc20c5f257d09c84e9871d0b
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: fd280255afe98aa5ca512c63bb00623891eafc4f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="class-member-overview"></a>クラス メンバーの概要
 クラスまたは構造体はそのメンバーで構成されます。 クラスが行う作業は、そのメンバー関数によって実行されます。 クラスが維持する状態は、そのデータ メンバー内に格納されます。 メンバーの初期化はコンス トラクター、およびメモリの解放などのクリーンアップ作業によって実行され、リソースの解放はデストラクターによって行われます。 C++11 以降では、データ メンバーは宣言の時点で初期化することができます (通常はその必要があります)。  
@@ -102,7 +97,7 @@ int TestRun::_instances{ 0 };
 ```  
   
 ## <a name="member-accessibility"></a>メンバーのアクセシビリティ  
- クラスのメンバーは、メンバーの一覧で宣言されます。 クラスのメンバー一覧は、任意の数の分割することがあります`private`、`protected`と**パブリック**セクションでは、アクセス指定子と呼ばれるキーワードを使用します。  コロン**:**アクセス指定子に従う必要があります。  これらのセクションは連続している必要はありません。つまり、これらのキーワードはいずれも、メンバー リスト内で複数回出現してもかまいません。  キーワードは、次のアクセス指定子または右中かっこまでのすべてのメンバーのアクセスを指定します。 詳細については、次を参照してください。[メンバー アクセス コントロール (C++)](../cpp/member-access-control-cpp.md)です。  
+ クラスのメンバーは、メンバーの一覧で宣言されます。 クラスのメンバー一覧は、任意の数の分割することがあります`private`、`protected`と**パブリック**セクションでは、アクセス指定子と呼ばれるキーワードを使用します。  コロン **:** アクセス指定子に従う必要があります。  これらのセクションは連続している必要はありません。つまり、これらのキーワードはいずれも、メンバー リスト内で複数回出現してもかまいません。  キーワードは、次のアクセス指定子または右中かっこまでのすべてのメンバーのアクセスを指定します。 詳細については、次を参照してください。[メンバー アクセス コントロール (C++)](../cpp/member-access-control-cpp.md)です。  
   
 ## <a name="static-members"></a>静的メンバー  
  データ メンバーが静的として宣言されることがあります。この場合、クラスのすべてのオブジェクトは、そのデータ メンバーの同じコピーにアクセスできます。 メンバー関数宣言することは、静的な場合にのみアクセスできる、クラスの静的データ メンバー (持たない*この*ポインター)。 詳細については、次を参照してください。[静的データ メンバー](../cpp/static-members-cpp.md)です。  
@@ -114,11 +109,11 @@ int TestRun::_instances{ 0 };
   
 2.  コピー コンストラクター  
   
-3.  **(C++ 11)**移動コンス トラクター  
+3.  **(C++ 11)** 移動コンス トラクター  
   
 4.  コピー代入演算子  
   
-5.  **(C++ 11)**ムーブ代入演算子  
+5.  **(C++ 11)** ムーブ代入演算子  
   
 6.  デストラクターです。  
   
@@ -178,5 +173,5 @@ int CanInit2::j = i;
 > [!NOTE]
 >  クラス名 `CanInit2` は、定義中の `i` が `i` クラスのメンバーであることを指定するために、`CanInit2` の前に配置される必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスと構造体](../cpp/classes-and-structs-cpp.md)
