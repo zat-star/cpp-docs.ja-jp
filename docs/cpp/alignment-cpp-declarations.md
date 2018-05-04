@@ -2,26 +2,21 @@
 title: 配置 (C++ の宣言) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
 ms.assetid: a986d510-ccb8-41f8-b905-433df9183485
-caps.latest.revision: 4
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 019884793eb3472e52c7772351b2f5826520a193
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4f39fe0cf3706a67e2aa42aa89de5914808e9cec
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="alignment-c-declarations"></a>アラインメント (C++ の宣言)
 C++ の低レベルの機能の 1 つは、特定のハードウェア アーキテクチャを最大活用するために、メモリ内のオブジェクトの正確な配置を指定できる機能です。 既定では、コンパイラはクラスと構造体のメンバーのサイズの値を揃えて配置します。bool と char は 1 バイト境界に配置され、short は 2 バイト、int は 4 バイト、long long、double、long double は 8 バイトに配置されます。 ほとんどのシナリオで、既定の配置は既に最適なので、配置を気にすることはありません。 ただし、場合によっては、大幅なパフォーマンスの向上、またはメモリの節約を、データ構造にカスタム配置を指定することで達成できます。 Visual Studio 2015 の前は、既定値を超える配列を指定するのに、Microsoft 固有キーワード __alignof と declspec(alignas) を使用できました。 C++ 11 標準のキーワードを使用する必要がある Visual Studio 2015 以降[alignof と alignas](../cpp/alignof-and-alignas-cpp.md)最大のコードの移植性を考慮します。 新しいキーワードは、内部で Microsoft 固有の拡張機能として同じ方法で動作し、拡張機能のためのドキュメントが、新しいキーワードにも適用されます。 参照してください[_ _alignof 演算子](../cpp/alignof-operator.md)と[整列](../cpp/align-cpp.md)詳細についてはします。 C++ 標準では Microsoft #pragma を使用する必要があるため、ターゲット プラットフォームのコンパイラの既定値よりも小さい境界に整列のパッキング動作が指定されていない[パック](../preprocessor/pack.md)という点です。  
@@ -106,5 +101,5 @@ adr offset   element
   
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ構造体の配置](http://en.wikipedia.org/wiki/Data_structure_alignment)

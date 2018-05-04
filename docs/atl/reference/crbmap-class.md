@@ -1,12 +1,9 @@
 ---
-title: "CRBMap クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CRBMap クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CRBMap
@@ -20,17 +17,15 @@ dev_langs:
 helpviewer_keywords:
 - CRBMap class
 ms.assetid: 658e94dc-e835-4356-aed1-1513e1f66969
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3cfa4d6fff6b46341f01b4d5ce18d9ec418738bf
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b32b21c8785bb5e28058c51f2345c5ffcb6de1f3
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="crbmap-class"></a>CRBMap クラス
 このクラスは、赤、黒のバイナリ ツリーを使用して、マッピング構造体を表します。  
@@ -76,13 +71,13 @@ class CRBMap : public CRBTree<K, V, KTraits, VTraits>
 |[CRBMap::SetAt](#setat)|Map に要素のペアを挿入するには、このメソッドを呼び出します。|  
   
 ## <a name="remarks"></a>コメント  
- `CRBMap`主要な要素とその関連値の順序付けられた配列を管理する、指定された型のマッピングの配列のサポートを提供します。 各キーに関連付けられている値の 1 つだけことができます。 バイナリ ツリーに要素 (キーおよび値で構成される) が格納されている構造体を使用して、 [CRBMap::SetAt](#setat)メソッドです。 使用して要素を削除することができます、 [CRBMap::RemoveKey](#removekey)メソッドで、指定したキー値を持つ要素を削除します。  
+ `CRBMap` 主要な要素とその関連値の順序付けられた配列を管理する、指定された型のマッピングの配列のサポートを提供します。 各キーに関連付けられている値の 1 つだけことができます。 バイナリ ツリーに要素 (キーおよび値で構成される) が格納されている構造体を使用して、 [CRBMap::SetAt](#setat)メソッドです。 使用して要素を削除することができます、 [CRBMap::RemoveKey](#removekey)メソッドで、指定したキー値を持つ要素を削除します。  
   
  ツリーを走査することが可能なメソッドで行ったなど[CRBTree::GetHeadPosition](../../atl/reference/crbtree-class.md#getheadposition)、 [CRBTree::GetNext](../../atl/reference/crbtree-class.md#getnext)、および[CRBTree::GetNextValue](../../atl/reference/crbtree-class.md#getnextvalue)です。  
   
  `KTraits`と`VTraits`パラメーターは次の特徴 (traits) クラスをコピーまたは要素を移動するために必要な補足コードが含まれています。  
   
- `CRBMap`派生した[CRBTree](../../atl/reference/crbtree-class.md)赤、黒のアルゴリズムを使用してバイナリ ツリーを実装します。 [CRBMultiMap](../../atl/reference/crbmultimap-class.md)はそれぞれのキーに対して複数の値を許可するバリエーションです。 派生すぎる`CRBTree`、そのために多くの機能を共有し、`CRBMap`です。  
+ `CRBMap` 派生した[CRBTree](../../atl/reference/crbtree-class.md)赤、黒のアルゴリズムを使用してバイナリ ツリーを実装します。 [CRBMultiMap](../../atl/reference/crbmultimap-class.md)はそれぞれのキーに対して複数の値を許可するバリエーションです。 派生すぎる`CRBTree`、そのために多くの機能を共有し、`CRBMap`です。  
   
  代わりに両方`CRBMap`と`CRBMultiMap`によって提供される、 [CAtlMap](../../atl/reference/catlmap-class.md)クラスです。 少数の要素のみを格納する必要があります、ときに、使用を検討して、 [CSimpleMap](../../atl/reference/csimplemap-class.md)クラスの代わりにします。  
   
@@ -93,10 +88,10 @@ class CRBMap : public CRBTree<K, V, KTraits, VTraits>
   
  `CRBMap`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="crbmap"></a>CRBMap::CRBMap  
+##  <a name="crbmap"></a>  CRBMap::CRBMap  
  コンストラクターです。  
   
 ```
@@ -115,7 +110,7 @@ explicit CRBMap(size_t nBlockSize = 10) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#81](../../atl/codesnippet/cpp/crbmap-class_1.cpp)]  
   
-##  <a name="dtor"></a>CRBMap:: ~ CRBMap  
+##  <a name="dtor"></a>  CRBMap:: ~ CRBMap  
  デストラクターです。  
   
 ```
@@ -127,7 +122,7 @@ explicit CRBMap(size_t nBlockSize = 10) throw();
   
  基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)使用可能な他の方法についてはします。  
   
-##  <a name="lookup"></a>CRBMap::Lookup  
+##  <a name="lookup"></a>  CRBMap::Lookup  
  キーまたは値を検索するには、このメソッドを呼び出して、`CRBMap`オブジェクト。  
   
 ```
@@ -152,7 +147,7 @@ CPair* Lookup(KINARGTYPE key) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#82](../../atl/codesnippet/cpp/crbmap-class_2.cpp)]  
   
-##  <a name="removekey"></a>CRBMap::RemoveKey  
+##  <a name="removekey"></a>  CRBMap::RemoveKey  
  要素を削除するには、このメソッドを呼び出して、`CRBMap`キーが指定されたオブジェクト。  
   
 ```
@@ -172,7 +167,7 @@ bool RemoveKey(KINARGTYPE key) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#83](../../atl/codesnippet/cpp/crbmap-class_3.cpp)]  
   
-##  <a name="setat"></a>CRBMap::SetAt  
+##  <a name="setat"></a>  CRBMap::SetAt  
  Map に要素のペアを挿入するには、このメソッドを呼び出します。  
   
 ```
@@ -192,14 +187,14 @@ POSITION SetAt(
  キー/値要素ペアでの位置を返します、`CRBMap`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- `SetAt`一致するキーが見つかった場合は、既存の要素を置換します。 キーが見つからない場合は、新しいキー/値ペアが作成されます。  
+ `SetAt` 一致するキーが見つかった場合は、既存の要素を置換します。 キーが見つからない場合は、新しいキー/値ペアが作成されます。  
   
  基本クラスのドキュメントを参照して[CRBTree](../../atl/reference/crbtree-class.md)使用可能な他の方法についてはします。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Utilities#84](../../atl/codesnippet/cpp/crbmap-class_4.cpp)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CRBTree クラス](../../atl/reference/crbtree-class.md)   
  [CAtlMap クラス](../../atl/reference/catlmap-class.md)   
  [CRBMultiMap クラス](../../atl/reference/crbmultimap-class.md)   

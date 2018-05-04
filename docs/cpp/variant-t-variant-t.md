@@ -1,12 +1,9 @@
 ---
-title: "_variant_t::_variant_t |Microsoft ドキュメント"
-ms.custom: 
+title: _variant_t::_variant_t |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - _variant_t::_variant_t
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - _variant_t class [C++], constructor
 - _variant_t method [C++]
 ms.assetid: a50e5b33-d4c6-4a26-8e7e-a0a25fd9895b
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cd85a54e9f73352894f6575051fe1ea8be0698fb
-ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.openlocfilehash: 59ec19adc66a72a7c98772db99aaab3eee4e3b2c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="varianttvariantt"></a>_variant_t::_variant_t
 **Microsoft 固有の仕様**  
@@ -161,7 +156,7 @@ _variant_t(
  `vtSrc`  
  **VARTYPE**新しい`_variant_t`オブジェクト。  
   
- *fltSrc, dblSrc*  
+ *fltSrc、dblSrc*  
  新しい `_variant_t` オブジェクトにコピーされる数値。  
   
  `cySrc`  
@@ -170,7 +165,7 @@ _variant_t(
  `bstrSrc`  
  新しい `_bstr_t` オブジェクトにコピーされる `_variant_t` オブジェクト。  
   
- *strSrc, wstrSrc*  
+ *strSrc、wstrSrc*  
  新しい `_variant_t` オブジェクトにコピーされる文字列。  
   
  `bSrc`  
@@ -225,27 +220,27 @@ _variant_t(
   
 -   **_variant_t( long**  `lSrc` **, VARTYPE**  `vtSrc`  **= VT_I4 )** Constructs a `_variant_t` object of type `VT_I4`, `VT_BOOL`, or `VT_ERROR` from a **long** integer value. その他の**VARTYPE**結果、`E_INVALIDARG`エラーです。  
   
--   **_variant_t (float**`fltSrc`**)**構築、`_variant_t`型のオブジェクト`VT_R4`から、 **float**数値を指定します。      
+-   **_variant_t (float**`fltSrc`**)** 構築、`_variant_t`型のオブジェクト`VT_R4`から、 **float**数値を指定します。  
   
 -   **_variant_t( double**  `dblSrc` **, VARTYPE**  `vtSrc`  **= VT_R8 )** Constructs a `_variant_t` object of type `VT_R8` or `VT_DATE` from a **double** numerical value. その他の**VARTYPE**結果、`E_INVALIDARG`エラーです。  
   
--   **_variant_t( CY&**  `cySrc`  **)** Constructs a `_variant_t` object of type `VT_CY` from a **CY** object.  
+-   **_variant_t (CY (& a)**`cySrc`**)** 構築、`_variant_t`型のオブジェクト`VT_CY`から、 **CY**オブジェクト。      
   
--   **_variant_t( _bstr_t&**  `bstrSrc`  **)** Constructs a `_variant_t` object of type `VT_BSTR` from a `_bstr_t` object. 新しい `BSTR` を割り当てます。  
+-   **_variant_t (_bstr_t &**`bstrSrc`**)** 構築、`_variant_t`型のオブジェクト`VT_BSTR`から、`_bstr_t`オブジェクト。     新しい `BSTR` を割り当てます。  
   
--   **_variant_t( wchar_t \*** *wstrSrc*  **)** Constructs a `_variant_t` object of type `VT_BSTR` from a Unicode string. 新しい `BSTR` を割り当てます。  
+-   **_variant_t (wchar_t \***  *wstrSrc***)** 構築、`_variant_t`型のオブジェクト`VT_BSTR`Unicode 文字列。   新しい `BSTR` を割り当てます。  
   
--   **_variant_t( char\***  `strSrc`  **)** Constructs a `_variant_t` object of type `VT_BSTR` from a string. 新しい `BSTR` を割り当てます。  
+-   **_variant_t (char\***`strSrc`**)** 構築、`_variant_t`型のオブジェクト`VT_BSTR`文字列からです。     新しい `BSTR` を割り当てます。  
   
--   **_variant_t( bool**  `bSrc`  **)** Constructs a `_variant_t` object of type `VT_BOOL` from a `bool` value.  
+-   **_variant_t (bool**`bSrc`**)** 構築、`_variant_t`型のオブジェクト`VT_BOOL`から、`bool`値。      
   
--   **_variant_t( IUnknown\***  `pIUknownSrc` **, bool**  `fAddRef`  **= true )** Constructs a `_variant_t` object of type **VT_UNKNOWN** from a COM interface pointer. 場合`fAddRef`は**true**、し、`AddRef`への呼び出しの一致するように指定されたインターフェイス ポインターで呼び出されると**リリース**が発生するときに、`_variant_t`オブジェクトは破棄されます。 呼び出すかどうかは**リリース**で指定されたインターフェイス ポインター。 場合`fAddRef`は**false**、指定されたインターフェイス ポインターの所有権をこのコンス トラクター以外の場合は呼び出さないでください**リリース**で指定されたインターフェイス ポインター。  
+-   **_variant_t (IUnknown\***  `pIUknownSrc` **、bool**`fAddRef`**= true)** 構築、`_variant_t`型のオブジェクト**VT_UNKNOWN** COM インターフェイス ポインターから。       場合`fAddRef`は**true**、し、`AddRef`への呼び出しの一致するように指定されたインターフェイス ポインターで呼び出されると**リリース**が発生するときに、`_variant_t`オブジェクトは破棄されます。 呼び出すかどうかは**リリース**で指定されたインターフェイス ポインター。 場合`fAddRef`は**false**、指定されたインターフェイス ポインターの所有権をこのコンス トラクター以外の場合は呼び出さないでください**リリース**で指定されたインターフェイス ポインター。  
   
--   **_variant_t( IDispatch\***  `pDispSrc` **, bool**  `fAddRef`  **= true )** Constructs a `_variant_t` object of type **VT_DISPATCH** from a COM interface pointer. 場合`fAddRef`は**true**、し、`AddRef`への呼び出しの一致するように指定されたインターフェイス ポインターで呼び出されると**リリース**が発生するときに、`_variant_t`オブジェクトは破棄されます。 呼び出すかどうかは**リリース**で指定されたインターフェイス ポインター。 場合**fAddRef**が false の場合、このコンス トラクターの所有権を指定されたインターフェイス ポインター以外の場合は呼び出さないでください**リリース**で指定されたインターフェイス ポインター。  
+-   **_variant_t (IDispatch\***  `pDispSrc` **、bool**`fAddRef`**= true)** 構築、`_variant_t`型のオブジェクト**VT_DISPATCH** COM インターフェイス ポインターから。       場合`fAddRef`は**true**、し、`AddRef`への呼び出しの一致するように指定されたインターフェイス ポインターで呼び出されると**リリース**が発生するときに、`_variant_t`オブジェクトは破棄されます。 呼び出すかどうかは**リリース**で指定されたインターフェイス ポインター。 場合**fAddRef**が false の場合、このコンス トラクターの所有権を指定されたインターフェイス ポインター以外の場合は呼び出さないでください**リリース**で指定されたインターフェイス ポインター。  
   
 -   **_variant_t( DECIMAL&**  `decSrc`  **)** Constructs a `_variant_t` object of type **VT_DECIMAL** from a **DECIMAL** value.  
   
--   **_variant_t( BYTE**  `bSrc`  **)** Constructs a `_variant_t` object of type `VT_UI1` from a **BYTE** value.  
+-   **_variant_t (バイト**`bSrc`**)** 構築、`_variant_t`型のオブジェクト`VT_UI1`から、**バイト**値。      
   
  **Microsoft 固有の仕様はここまで**  
   

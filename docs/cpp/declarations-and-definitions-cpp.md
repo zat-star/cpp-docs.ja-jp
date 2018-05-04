@@ -1,27 +1,22 @@
 ---
-title: "宣言と定義 (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 宣言と定義 (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 ms.assetid: 678f1424-e12f-45e0-a957-8169e5fef6cb
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ea0f8210993e494cbd4795a2c4cf7c6c0afa8aa2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0f8a0922d66a9421bcc7c6c07b9396b277499d0d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="declarations-and-definitions-c"></a>宣言と定義 (C++)
 宣言は、プログラムでは、名前、変数、名前空間、関数およびクラスの名前などを紹介します。 また、宣言では、型情報だけでなく、宣言されるオブジェクトの他の特性も指定します。 名前は使用する前に宣言する必要があります。C++ では、名前が宣言される位置でコンパイラから可視になるかどうかが決まります。 関数またはコンパイル ユニットです。 後で宣言されているクラスを参照することはできません。使用することができます*宣言を転送*この制限を回避するためです。  
@@ -98,6 +93,6 @@ char *strchr( const char *Str, const char Target );
     }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [基本的な概念](../cpp/basic-concepts-cpp.md)   
  [宣言の位置](../cpp/point-of-declaration-in-cpp.md)

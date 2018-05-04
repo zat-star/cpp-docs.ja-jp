@@ -1,27 +1,22 @@
 ---
-title: "Windows XP 用プログラムの構成 |Microsoft ドキュメント"
-ms.custom: 
+title: Windows XP 用プログラムの構成 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 02/02/2018
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 1e4487b3-d815-4123-878b-5718b22f0fd5
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 23e417d9ef316bf72c9606ce2525ff79587e7047
-ms.sourcegitcommit: ecf0177ae9d36b1f63c9673a9583e0359107a5cb
+ms.openlocfilehash: a846ea5508173ce0e383b1c4b8798b896ae5be0e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configuring-programs-for-windows-xp"></a>Windows XP 用プログラムの構成
 
@@ -38,7 +33,7 @@ Visual Studio に含まれている Windows XP プラットフォーム ツー�
 
 1. **ソリューション エクスプローラー**で、プロジェクトのショートカット メニューを開き、**[プロパティ]** を選択します。
 
-1. **プロパティ ページ**ダイアログ ボックスで、プロジェクトの**構成プロパティ** > **全般**、設定、 **のプラットフォームツールセット**に必要な Windows XP ツールセットのプロパティです。 たとえば、選択**Visual Studio 2017 - Windows XP (v141_xp)**コードを作成する[!INCLUDE[winxp](../build/includes/winxp_md.md)]と[!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)]Microsoft Visual C++ 2017 コンパイラを使用しています。
+1. **プロパティ ページ**ダイアログ ボックスで、プロジェクトの**構成プロパティ** > **全般**、設定、 **のプラットフォームツールセット**に必要な Windows XP ツールセットのプロパティです。 たとえば、選択**Visual Studio 2017 - Windows XP (v141_xp)** コードを作成する[!INCLUDE[winxp](../build/includes/winxp_md.md)]と[!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)]Microsoft Visual C++ 2017 コンパイラを使用しています。
 
 ### <a name="c-runtime-support"></a>C++ ランタイムのサポート
 
@@ -46,7 +41,7 @@ Windows XP プラットフォーム ツールセット、C ランタイム ラ�
 
 これらのライブラリは、ターゲットに応じた、Visual Studio によってインストールされているプラットフォームのツールセットでサポートされます。
 
-|ライブラリ|Windows デスクトップ アプリを対象とする既定のプラットフォーム ツールセット|既定のプラットフォーム ツールセットの対象とするストア アプリ|Windows XP プラットフォーム ツールセットを対象と[!INCLUDE[winxp](../build/includes/winxp_md.md)]、 [!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)]|
+|ライブラリ|Windows デスクトップ アプリを対象とする既定のプラットフォーム ツールセット|既定のプラットフォーム ツールセットの対象とするストア アプリ|[!INCLUDE[winxp](../build/includes/winxp_md.md)]、[!INCLUDE[WinXPSvr](../build/includes/winxpsvr_md.md)] を対象とする Windows XP プラットフォーム ツールセット|
 |---|---|---|---|
 |CRT|X|X|x|
 |C++ 標準ライブラリ|x|X|X|

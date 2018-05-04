@@ -2,31 +2,26 @@
 title: _ _vectorcall |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
 ms.assetid: 1c95ed59-86c6-4857-b4ed-10519193f851
-caps.latest.revision: 11
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 54c1473e2341c783ebf73883680d51f161d99163
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 29c202a888d4c741a9a9fb54a84109100038d32a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="vectorcall"></a>__vectorcall
 **Microsoft 固有の仕様**  
   
- `__vectorcall` 呼び出し規約は、可能な場合に、関数への引数をレジスタに渡すことを指定します。 `__vectorcall`も引数に複数のレジスタを使用して[_ _fastcall](../cpp/fastcall.md)または既定[x64 呼び出し規約](../build/overview-of-x64-calling-conventions.md)を使用します。 `__vectorcall` の呼び出し規約は、SSE2 (Streaming SIMD Extensions 2) 以上が搭載された x86 および x64 プロセッサのネイティブ コードでのみサポートされます。 `__vectorcall` は、関数が複数の浮動小数点または SIMD ベクターの引数を渡し、レジスタに読み込んだ引数を利用して演算を実行する場合に、その関数の処理を高速化するために使用します。 次の一覧では、`__vectorcall` の x86 と x64 の実装に共通の機能を示します。 相違点については、このトピックで後ほど説明します。  
+ `__vectorcall` 呼び出し規約は、可能な場合に、関数への引数をレジスタに渡すことを指定します。 `__vectorcall` も引数に複数のレジスタを使用して[_ _fastcall](../cpp/fastcall.md)または既定[x64 呼び出し規約](../build/overview-of-x64-calling-conventions.md)を使用します。 `__vectorcall` の呼び出し規約は、SSE2 (Streaming SIMD Extensions 2) 以上が搭載された x86 および x64 プロセッサのネイティブ コードでのみサポートされます。 `__vectorcall` は、関数が複数の浮動小数点または SIMD ベクターの引数を渡し、レジスタに読み込んだ引数を利用して演算を実行する場合に、その関数の処理を高速化するために使用します。 次の一覧では、`__vectorcall` の x86 と x64 の実装に共通の機能を示します。 相違点については、このトピックで後ほど説明します。  
   
 |要素|実装|  
 |-------------|--------------------|  
@@ -302,6 +297,6 @@ int __cdecl main( void )
   
  **END Microsoft 固有の仕様**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [引数の渡し規則と名前付け規則](../cpp/argument-passing-and-naming-conventions.md)   
  [キーワード](../cpp/keywords-cpp.md)

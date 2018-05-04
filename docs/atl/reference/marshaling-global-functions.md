@@ -1,12 +1,9 @@
 ---
-title: "グローバル関数をマーシャ リング |Microsoft ドキュメント"
-ms.custom: 
+title: グローバル関数をマーシャ リング |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlbase/ATL::AtlFreeMarshalStream
@@ -15,17 +12,15 @@ f1_keywords:
 dev_langs:
 - C++
 ms.assetid: 877100b5-6ad9-44c5-a2e0-09414f1720d0
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a12f719d2cb893a5d2989a80f5fe09a5b49aeca2
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6d93839002ce5136d735e4740388109e855561fb
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="marshaling-global-functions"></a>マーシャ リングのグローバル関数
 これらの関数は、マーシャ リングとのインターフェイス ポインターにマーシャ リング データを変換するためのサポートを提供します。  
@@ -42,7 +37,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="requirements"></a>要件:
 **ヘッダー:** atlbase.h
   
-##  <a name="atlfreemarshalstream"></a>AtlFreeMarshalStream  
+##  <a name="atlfreemarshalstream"></a>  AtlFreeMarshalStream  
  ストリーム内のマーシャリング データを解放し、次にストリーム ポインターも解放します。  
 
 ```
@@ -56,7 +51,7 @@ HRESULT AtlFreeMarshalStream(IStream* pStream);
 ### <a name="example"></a>例  
   例を参照して[AtlMarshalPtrInProc](#atlmarshalptrinproc)です。  
   
-##  <a name="atlmarshalptrinproc"></a>AtlMarshalPtrInProc  
+##  <a name="atlmarshalptrinproc"></a>  AtlMarshalPtrInProc  
  新しいストリーム オブジェクトを作成し、プロキシの CLSID をストリームに書き込みます。さらに、プロキシの初期化に必要なデータをストリームに書き込んで、指定されたインターフェイス ポインターをマーシャリングします。  
   
 ```
@@ -84,12 +79,12 @@ HRESULT AtlMarshalPtrInProc(
   
  失敗をマーシャ リングする場合にストリーム ポインターが解放されます。  
   
- `AtlMarshalPtrInProc`プロセスでオブジェクトへのポインターでのみ使用できます。  
+ `AtlMarshalPtrInProc` プロセスでオブジェクトへのポインターでのみ使用できます。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM#50](../../atl/codesnippet/cpp/marshaling-global-functions_1.cpp)]  
   
-##  <a name="atlunmarshalptr"></a>AtlUnmarshalPtr  
+##  <a name="atlunmarshalptr"></a>  AtlUnmarshalPtr  
  ストリームのマーシャリング データをクライアントが使用できるインターフェイス ポインターに変換します。  
    
 ```
@@ -115,5 +110,5 @@ HRESULT AtlUnmarshalPtr(
 ### <a name="example"></a>例  
   例を参照して[AtlMarshalPtrInProc](#atlmarshalptrinproc)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [関数](../../atl/reference/atl-functions.md)

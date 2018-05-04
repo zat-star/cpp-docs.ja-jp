@@ -1,12 +1,9 @@
 ---
-title: "CDacl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CDacl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CDacl
@@ -22,17 +19,15 @@ dev_langs:
 helpviewer_keywords:
 - CDacl class
 ms.assetid: 2dc76616-6362-4967-b6cf-e2d39ca37ddd
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 5ac83d5c1f72bf1df20d41ec39b464ddb79e4f8e
-ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.openlocfilehash: 2724eebd218cea2795d483351ef91b34c9f1bf39
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cdacl-class"></a>CDacl クラス
 このクラスは、DACL (随意アクセス制御リスト) 構造体のラッパーです。  
@@ -85,7 +80,7 @@ class CDacl : public CAcl
   
  `CDacl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="addallowedace"></a>  CDacl::AddAllowedAce  
@@ -185,7 +180,7 @@ CDacl () throw();
 ### <a name="remarks"></a>コメント  
  `CDacl`オブジェクトを必要に応じて作成する、既存を使用して**ACL**構造体。 だけを DACL (随意アクセス制御リスト) を確認することが重要と SACL ではありません (システム アクセス制御リスト) は、このパラメーターとして渡す必要があります。 デバッグ ビルドでは、SACL を渡すことにより、アサートされます。 リリース ビルドでは、SACL を渡すことにより (アクセス制御エントリ) の Ace は無視され、ACL でとエラーは発生しません。  
   
-##  <a name="dtor"></a>  CDacl::~CDacl  
+##  <a name="dtor"></a>  CDacl:: ~ CDacl  
  デストラクターです。  
   
 ```
@@ -246,10 +241,10 @@ void RemoveAllAces() throw();
 ### <a name="remarks"></a>コメント  
  削除ごと**ACE** (アクセス制御エントリ) の構造 (存在する場合) で、`CDacl`オブジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [CAcl クラス](../../atl/reference/cacl-class.md)   
- [ACLs](http://msdn.microsoft.com/library/windows/desktop/aa374872)   
+ [Acl](http://msdn.microsoft.com/library/windows/desktop/aa374872)   
  [Ace](http://msdn.microsoft.com/library/windows/desktop/aa374868)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティに関するグローバル関数](../../atl/reference/security-global-functions.md)

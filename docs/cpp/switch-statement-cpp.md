@@ -1,12 +1,9 @@
 ---
-title: "switch ステートメント (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: switch ステートメント (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - default_cpp
@@ -19,17 +16,15 @@ helpviewer_keywords:
 - case keyword [C++], in switch statements
 - default keyword [C++]
 ms.assetid: 6c3f3ed3-5593-463c-8f4b-b33742b455c6
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e668756e8cabafbdef522d6754487efe452f96de
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5cea2c7e4bff895f9ccabc044ed5b7f5ae506b32
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="switch-statement-c"></a>switch ステートメント (C++)
 整数式の値に応じてコードの複数のセクション間を切り替えます。  
@@ -57,7 +52,7 @@ ms.lasthandoff: 12/21/2017
 |定数の中に内の定数が一致するもの、**ケース**; ラベル、**既定**ラベルが存在します。|制御が移ります、**既定**ラベル。|  
 |定数の中に内の定数が一致するもの、**ケース**ラベルです。**既定**ラベルが存在しません。|制御は `switch` ステートメントの後のステートメントに移動します。|  
   
- コントロールがそれ以降によって妨げられるいない一致する式が見つかった場合、**ケース**または**既定**ラベル。 [Break](../cpp/break-statement-cpp.md)ステートメントを使用して実行を停止し、後のステートメントに制御を移す、`switch`ステートメントです。 なし、 **break**ステートメントでは、すべてのステートメントから、一致する**ケース**の末尾にラベル、`switch`など、**既定**を実行します。 例:  
+ コントロールがそれ以降によって妨げられるいない一致する式が見つかった場合、**ケース**または**既定**ラベル。 [Break](../cpp/break-statement-cpp.md)ステートメントを使用して実行を停止し、後のステートメントに制御を移す、`switch`ステートメントです。 なし、 **break**ステートメントでは、すべてのステートメントから、一致する**ケース**の末尾にラベル、`switch`など、**既定**を実行します。 例えば:  
   
 ```  
 // switch_statement1.cpp  
@@ -131,7 +126,7 @@ int main()
         };
 ```
 
- `switch` ステートメントの内部ブロックには、到達できた (すべての可能な実行パスで回避されなかった) 場合に実行される初期化の定義を含めることができます。 これらの宣言を使用して導入された名前にはローカル スコープがあります。 例:  
+ `switch` ステートメントの内部ブロックには、到達できた (すべての可能な実行パスで回避されなかった) 場合に実行される初期化の定義を含めることができます。 これらの宣言を使用して導入された名前にはローカル スコープがあります。 例えば:  
   
 ```cpp  
 // switch_statement2.cpp  
@@ -176,7 +171,7 @@ int main(int argc, char *argv[])
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [選択ステートメント](../cpp/selection-statements-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  

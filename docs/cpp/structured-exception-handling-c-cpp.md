@@ -2,11 +2,8 @@
 title: 構造化例外処理 (C/C++) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - try-catch keyword [C++], termination handlers
 - C++ exception handling, exception handlers
 ms.assetid: dd3b647d-c269-43a8-aab9-ad1458712976
-caps.latest.revision: 14
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 37d5a89ebf95d8852664dcd50e44e82009ebd95e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: b5b6aafa91ecfde27cc38cccc52f36af43ad21ae
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="structured-exception-handling-cc"></a>Structured Exception Handling (C/C++)
 Windows および Visual C++ は構造化例外処理 (SEH) をサポートしていますが、コードの移植性と柔軟性が高くなる ISO 標準の C++ 例外処理を使用することをお勧めします。 ただし、既存のコードや特定の種類のプログラムでは、SEH を使用する必要がある場合もあります。  
@@ -38,9 +33,9 @@ Windows および Visual C++ は構造化例外処理 (SEH) をサポートし�
 ## <a name="grammar"></a>文法  
  *try のステートメントを除く*:  
   
- `__try`*複合ステートメント*  
+ `__try` *複合ステートメント*  
   
- `__except`( `expression` )*複合ステートメント*  
+ `__except` ( `expression` )*複合ステートメント*  
   
 ## <a name="remarks"></a>コメント  
  SEH を使うと、実行が予期せずに終了した場合にメモリ ブロックやファイルなどのリソースが適切であることを確認できます。 また、メモリ不足などの特定の問題を、`goto` ステートメントやリターン コードの複雑なテストに依存しない簡潔な構造化されたコードを使用して処理することもできます。  
@@ -76,7 +71,7 @@ Windows および Visual C++ は構造化例外処理 (SEH) をサポートし�
 -   [C++ での構造化例外処理の使用](../cpp/using-structured-exception-handling-with-cpp.md)  
   
 ## <a name="example"></a>例  
- 既に説明したとおり、デストラクターの場合は、C++ プログラムで SEH を使用してコンパイルするを使用して、ローカルのオブジェクトが呼び出されます、 **/EH**特定の修飾子を持つオプション — たとえば、 **/EHsc**と**/EHa**. ただし、C++ 例外も使用している場合は、実行時の動作は予期したとおりにならない可能性があります。 次の例は、これらの動作の違いを示しています。  
+ 既に説明したとおり、デストラクターの場合は、C++ プログラムで SEH を使用してコンパイルするを使用して、ローカルのオブジェクトが呼び出されます、 **/EH**特定の修飾子を持つオプション — たとえば、 **/EHsc**と **/EHa**. ただし、C++ 例外も使用している場合は、実行時の動作は予期したとおりにならない可能性があります。 次の例は、これらの動作の違いを示しています。  
   
 ```cpp  
 #include <stdio.h>  
@@ -126,14 +121,14 @@ int main()
   
 ```  
   
- 使用する場合**/EHsc**このコードはローカル テスト コントロールをコンパイルする`CPPEX`が未定義であるの実行はされず、`TestClass`デストラクターと出力は次のように。  
+ 使用する場合 **/EHsc**このコードはローカル テスト コントロールをコンパイルする`CPPEX`が未定義であるの実行はされず、`TestClass`デストラクターと出力は次のように。  
   
 ```Output  
 Triggering SEH exception  
 Executing SEH __except block  
 ```  
   
- 使用する場合**/EHsc**コードをコンパイルして`CPPEX`を使用して定義`/DCPPEX`(できるようにする、C++ 例外がスローされます)、`TestClass`デストラクターが実行され、出力は次のようになります。  
+ 使用する場合 **/EHsc**コードをコンパイルして`CPPEX`を使用して定義`/DCPPEX`(できるようにする、C++ 例外がスローされます)、`TestClass`デストラクターが実行され、出力は次のようになります。  
   
 ```Output  
 Throwing C++ exception  
@@ -141,7 +136,7 @@ Destroying TestClass!
 Executing SEH __except block  
 ```  
   
- 使用する場合**/EHa** 、コードをコンパイルする、`TestClass`を使用して例外をスローするかどうかに関係なくデストラクターが実行`std::throw`SEH を使用して、例外をトリガーする、または (`CPPEX`か定義されている)。 出力は次のようになります。  
+ 使用する場合 **/EHa** 、コードをコンパイルする、`TestClass`を使用して例外をスローするかどうかに関係なくデストラクターが実行`std::throw`SEH を使用して、例外をトリガーする、または (`CPPEX`か定義されている)。 出力は次のようになります。  
   
 ```Output  
 Throwing C++ exception  
@@ -153,7 +148,7 @@ Executing SEH __except block
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [例外処理](../cpp/exception-handling-in-visual-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)   
  [\<exception>](../standard-library/exception.md)   

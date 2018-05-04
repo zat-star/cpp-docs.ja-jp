@@ -1,27 +1,22 @@
 ---
-title: "イベント (ATL チュートリアル、パート 5) の追加 |Microsoft ドキュメント"
-ms.custom: 
+title: イベント (ATL チュートリアル、パート 5) の追加 |Microsoft ドキュメント
+ms.custom: get-started-article
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: get-started-article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 2de12022-3148-4ce3-8606-8a9d4274f0e9
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c42befe57bdc7a01da31bd6c4e010458e1d3ba7e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a118cf29546ac8dae2e882d5658b07e3b5e085f6
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adding-an-event-atl-tutorial-part-5"></a>イベントの追加 (ATL チュートリアル、パート 5)
 この手順では、追加、`ClickIn`と`ClickOut`ATL コントロールにイベント。 起動、`ClickIn`多角形および火災内でクリックすると、ユーザー イベント`ClickOut`の外側をクリックした場合。 イベントを追加するタスクは次のとおりです。  
@@ -59,11 +54,11 @@ ms.lasthandoff: 12/21/2017
   
 8.  手順 5. ~ 7.、この時間を**パラメーター名**の`y`します。  
   
-9. **[次へ]**をクリックします。  
+9. **[次へ]** をクリックします。  
   
 10. 型`method ClickIn`として、 **helpstring**です。  
   
-11. **[完了]**をクリックします。  
+11. **[完了]** をクリックします。  
   
 12. 定義するのには上記の手順を繰り返して、`ClickOut`を同じメソッド`LONG`パラメーター`x`と`y`、同じ**パラメーター属性**と同じ`void`型を返します。  
   
@@ -101,7 +96,7 @@ ms.lasthandoff: 12/21/2017
   
 2.  ショートカット メニューをクリックして**追加**、クリックして**接続ポイントの追加**です。  
   
-3.  選択`_IPolyCtlEvents`から、**ソース インターフェイス**を一覧表示し、ダブルクリックに追加する、**接続ポイントを実装する**列です。 **[完了]**をクリックします。 接続ポイントのプロキシ クラスが生成されます、ここでは、`CProxy_IPolyCtlEvents`です。  
+3.  選択`_IPolyCtlEvents`から、**ソース インターフェイス**を一覧表示し、ダブルクリックに追加する、**接続ポイントを実装する**列です。 **[完了]** をクリックします。 接続ポイントのプロキシ クラスが生成されます、ここでは、`CProxy_IPolyCtlEvents`です。  
   
  ソリューション エクスプ ローラーで、生成された _IPolyCtlEvents_CP.h ファイルを見ると、わかりますと呼ばれるクラスを使用している`CProxy_IPolyCtlEvents`から派生した`IConnectionPointImpl`です。 _IPolyCtlEvents_CP.h も 2 つのメソッドを定義`Fire_ClickIn`と`Fire_ClickOut`、2 つの座標のパラメーターを取得します。 コントロールからイベントを発生する場合に、これらのメソッドを呼び出します。  
   
@@ -134,8 +129,8 @@ ms.lasthandoff: 12/21/2017
   
  次に、プロパティ ページを追加します。  
   
- [手順 4 に戻る](../atl/changing-the-drawing-code-atl-tutorial-part-4.md)&#124;です。[手順 6 に進む](../atl/adding-a-property-page-atl-tutorial-part-6.md)  
+ [手順 4 に戻る](../atl/changing-the-drawing-code-atl-tutorial-part-4.md) &#124; [手順 6 に進む](../atl/adding-a-property-page-atl-tutorial-part-6.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアル](../atl/active-template-library-atl-tutorial.md)
 

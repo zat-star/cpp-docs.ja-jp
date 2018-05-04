@@ -2,12 +2,9 @@
 title: Dll および Visual C ランタイム ライブラリの動作 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - _DllMainCRTStartup
 - CRT_INIT
@@ -24,21 +21,19 @@ helpviewer_keywords:
 - run-time [C++], DLL startup sequence
 - DLLs [C++], startup sequence
 ms.assetid: e06f24ab-6ca5-44ef-9857-aed0c6f049f2
-caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 75bf84eeaf9277c5cf037c4fa59c28d109d95856
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: feee3d888fbf43bfd8675ccc83a04fd4e1f0b528
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="dlls-and-visual-c-run-time-library-behavior"></a>Dll および Visual C ランタイム ライブラリの動作  
   
-既定では、Visual C を使用してダイナミック リンク ライブラリ (DLL) をビルドするときに、リンカーには、Visual C ランタイム ライブラリ (VCRuntime) が含まれています。 VCRuntime には、初期化および終了した C と C++ 実行可能ファイルに必要なコードが含まれています。 VCRuntime コードが呼び出される内部の DLL エントリ ポイント関数を提供する DLL にリンクされている、`_DllMainCRTStartup`アタッチまたはデタッチ プロセスまたはスレッドに DLL への Windows OS メッセージを処理します。 `_DllMainCRTStartup`関数がスタック バッファーのセキュリティ設定、C ランタイム ライブラリ (CRT) の初期化と終了などの必須のタスクを実行し、静的およびグローバル オブジェクトに対してコンス トラクターとデストラクターを呼び出します。 `_DllMainCRTStartup`また呼び出しは、独自の初期化と終了を実行するには、WinRT、MFC や ATL などその他のライブラリの関数をフックします。 この初期化、CRT およびその他のライブラリと同様に、静的変数、なしと状態のままに、初期化されていません。 静的にリンクされた CRT または CRT DLL を動的にリンクされた DLL を使用しているかどうか、同じ VCRuntime の内部初期化および終了ルーチンが呼び出されます。  
+既定では、Visual C を使用してダイナミック リンク ライブラリ (DLL) をビルドするときに、リンカーには、Visual C ランタイム ライブラリ (VCRuntime) が含まれています。 VCRuntime には、初期化および終了した C と C++ 実行可能ファイルに必要なコードが含まれています。 VCRuntime コードが呼び出される内部の DLL エントリ ポイント関数を提供する DLL にリンクされている、`_DllMainCRTStartup`アタッチまたはデタッチ プロセスまたはスレッドに DLL への Windows OS メッセージを処理します。 `_DllMainCRTStartup`関数がスタック バッファーのセキュリティ設定、C ランタイム ライブラリ (CRT) の初期化と終了などの必須のタスクを実行し、静的およびグローバル オブジェクトに対してコンス トラクターとデストラクターを呼び出します。 `_DllMainCRTStartup` また呼び出しは、独自の初期化と終了を実行するには、WinRT、MFC や ATL などその他のライブラリの関数をフックします。 この初期化、CRT およびその他のライブラリと同様に、静的変数、なしと状態のままに、初期化されていません。 静的にリンクされた CRT または CRT DLL を動的にリンクされた DLL を使用しているかどうか、同じ VCRuntime の内部初期化および終了ルーチンが呼び出されます。  
   
 ## <a name="default-dll-entry-point-dllmaincrtstartup"></a>既定の DLL エントリ ポイント _DllMainCRTStartup  
   
@@ -192,7 +187,7 @@ Afxdllx.h ヘッダー ファイルには、構造体の定義などの MFC 拡�
   
 マルチ スレッドのハンドルが含まれているサンプル初期化関数[を使用してスレッド ローカル ストレージ、ダイナミック リンク ライブラリで](http://msdn.microsoft.com/library/windows/desktop/ms686997)Windows SDK に含まれています。 サンプルが呼び出されるエントリ ポイント関数が含まれているメモ`LibMain`、この関数の名前が、 `DllMain` MFC および C ランタイム ライブラリで利用できるようにします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
 [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)  
 [DllMain のエントリ ポイント](https://msdn.microsoft.com/library/windows/desktop/ms682583.aspx)  

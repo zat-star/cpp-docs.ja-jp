@@ -2,11 +2,8 @@
 title: 'Address-of 演算子: &amp; |Microsoft ドキュメント'
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - '&'
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - '& operator'
 - '& operator [C++], address-of operator'
 ms.assetid: 2828221a-15f6-4acc-87fe-25e34feebb88
-caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dcc5d08f75839f428b981136e4aed0402cd72868
-ms.sourcegitcommit: d9ee6f777974d031570f4260c9581ea2c81ad875
+ms.openlocfilehash: df243cac3b48a120345760f814a97b77667c770f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="address-of-operator-amp"></a>Address-of 演算子: &amp;
 ## <a name="syntax"></a>構文  
@@ -41,7 +36,7 @@ ms.lasthandoff: 04/06/2018
   
  アドレス演算子は、ファイル スコープ レベルで宣言された基本型、構造体型、クラス型、または共用体型を持つ変数、または添字配列参照だけに適用できます。 これらの式では、アドレス演算子を含まない定数式を、アドレス式に加算したりアドレス式から減算できます。  
   
- 関数または左辺値に適用されたときの式の結果は、オペランドの型から派生したポインター型 (右辺値) です。 たとえば、オペランドが `char` 型の場合、式の結果は `char` へのポインター型になります。 アドレスの演算子に適用される**const**または`volatile`オブジェクトの場合に評価**const** `type` **\***または`volatile` `type` **\***ここで、`type`元のオブジェクトの種類です。  
+ 関数または左辺値に適用されたときの式の結果は、オペランドの型から派生したポインター型 (右辺値) です。 たとえば、オペランドが `char` 型の場合、式の結果は `char` へのポインター型になります。 アドレスの演算子に適用される**const**または`volatile`オブジェクトの場合に評価**const** `type` **\*** または`volatile` `type` **\*** ここで、`type`元のオブジェクトの種類です。  
   
  アドレス演算子を適用すると、[修飾名](http://msdn.microsoft.com/en-us/3fefb16d-8120-4627-8b3f-3d90fbdcd1df)、結果は異なるかどうか、*修飾名*静的メンバーを指定します。 その場合、結果はメンバーの宣言で指定した型へのポインターです。 メンバーが静的でない場合、結果は、メンバーへのポインターは*名前*で示されたクラスの*修飾クラス名*です。 (を参照してください[一次式](../cpp/primary-expressions.md)について*修飾クラス名*)。次のコードは、メンバーが静的かどうかによって、どのように結果が違うかを示します。  
   

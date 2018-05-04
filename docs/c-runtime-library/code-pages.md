@@ -1,12 +1,12 @@
 ---
-title: "コード ページ | Microsoft Docs"
-ms.custom: 
+title: コード ページ | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - c.international
@@ -21,39 +21,41 @@ helpviewer_keywords:
 - code pages [C++], types of
 - locale code pages [C++]
 ms.assetid: 4a26fc42-185a-4add-98bf-a7b314ae6186
-caps.latest.revision: 
+caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a0899f5f617fd28d121b85183280bd28fe91ee46
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: fc272d02fee38b3a260a5b6bb6330f4f6a5eb362
+ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="code-pages"></a>コード ページ
-`code page` は文字セットです。数字、句読点、その他のグリフを入れることができます。 言語やロケールが異なると、コード ページも異なる場合があります。 たとえば、ANSI コード ページ 1252 は英語やほとんどのヨーロッパ言語で使われていますが、日本語の漢字には OEM コード ページ 932 が使われています。  
-  
- コード ページはテーブルで表すことができます。文字を 1 バイト値やマルチバイト値にマッピングします。 多くのコード ページは、範囲 0x00 - 0x7F の文字に関して、ASCII 文字セットを共有しています。  
-  
- Microsoft ランタイム ライブラリでは、次の種類のコード ページが使用されています。  
-  
--   システム既定の ANSI コード ページ。 既定では、ランタイム システムはマルチバイト コード ページをシステムの既定の ANSI コード ページに自動的に設定します。既定のページはオペレーティング システムから取得されます。 呼び出し:  
-  
-    ```  
-    setlocale ( LC_ALL, "" );  
-    ```  
-  
-     また、システム既定の ANSI コード ページにロケールを設定します。  
-  
--   ロケールのコード ページ。 ランタイム ルーチンの動作は、ロケール コード ページを含む、現在のロケール設定に依存します。 (詳細については、[ロケール依存のルーチン](../c-runtime-library/locale.md)に関するページを参照してください。)既定では、Microsoft ランタイム ライブラリのすべてのロケール依存ルーチンで "C" ロケールに相当するコード ページが使用されます。 実行時、[setlocale](../c-runtime-library/reference/setlocale-wsetlocale.md) を呼び出し、使用中のロケール コード ページを変更したり、クエリを実行したりできます。  
-  
--   マルチバイト コード ページ。 ランタイム ライブラリのマルチバイト文字のほとんどの動作は、現在のマルチバイト コード ページ設定に依存します。 既定では、これらのルーチンではシステム既定の ANSI コード ページが使用されます。 実行時に、[_getmbcp](../c-runtime-library/reference/getmbcp.md) と [_setmbcp](../c-runtime-library/reference/setmbcp.md) でマルチバイト コード ページをそれぞれ照会または変更できます。  
-  
--   "C" ロケールは、従来、C プログラムが実行されていたロケールに対応するよう、ANSI により定義されます。 "C" ロケールのコード ページ ("C" コード ページ) は ASCII 文字セットに対応します。 たとえば、"C" ロケールでは、`islower` は値 0x61 - 0x7A にのみ true を返します。 別のロケールの場合、`islower` は、そのロケールによる定義に基づき、値 0x61 - 0x7A とその他の値に true を返すことがあります。  
-  
-## <a name="see-also"></a>参照  
- [国際化](../c-runtime-library/internationalization.md)   
- [カテゴリ別ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)
+
+"*コード ページ*" は文字セットです。数字、句読点、その他のグリフを入れることができます。 言語やロケールが異なると、コード ページも異なる場合があります。 たとえば、ANSI コード ページ 1252 は英語やほとんどのヨーロッパ言語で使われていますが、日本語の漢字には OEM コード ページ 932 が使われています。
+
+ コード ページはテーブルで表すことができます。文字を 1 バイト値やマルチバイト値にマッピングします。 多くのコード ページは、範囲 0x00 - 0x7F の文字に関して、ASCII 文字セットを共有しています。
+
+ Microsoft ランタイム ライブラリでは、次の種類のコード ページが使用されています。
+
+- システム既定の ANSI コード ページ。 既定では、ランタイム システムはマルチバイト コード ページをシステムの既定の ANSI コード ページに自動的に設定します。既定のページはオペレーティング システムから取得されます。 呼び出し:
+
+    ```C
+    setlocale ( LC_ALL, "" );
+    ```
+
+     また、システム既定の ANSI コード ページにロケールを設定します。
+
+- ロケールのコード ページ。 ランタイム ルーチンの動作は、ロケール コード ページを含む、現在のロケール設定に依存します。 (詳細については、[ロケール依存のルーチン](../c-runtime-library/locale.md)に関するページを参照してください。)既定では、Microsoft ランタイム ライブラリのすべてのロケール依存ルーチンで "C" ロケールに相当するコード ページが使用されます。 実行時、[setlocale](../c-runtime-library/reference/setlocale-wsetlocale.md) を呼び出し、使用中のロケール コード ページを変更したり、クエリを実行したりできます。
+
+- マルチバイト コード ページ。 ランタイム ライブラリのマルチバイト文字のほとんどの動作は、現在のマルチバイト コード ページ設定に依存します。 既定では、これらのルーチンではシステム既定の ANSI コード ページが使用されます。 実行時に、[_getmbcp](../c-runtime-library/reference/getmbcp.md) と [_setmbcp](../c-runtime-library/reference/setmbcp.md) でマルチバイト コード ページをそれぞれ照会または変更できます。
+
+- "C" ロケールは、従来、C プログラムが実行されていたロケールに対応するよう、ANSI により定義されます。 "C" ロケールのコード ページ ("C" コード ページ) は ASCII 文字セットに対応します。 たとえば、"C" ロケールでは、**islower** は値 0x61 - 0x7A にのみ true を返します。 別のロケールの場合、**islower** は、そのロケールによる定義に基づき、値 0x61 - 0x7A とその他の値に true を返すことがあります。
+
+## <a name="see-also"></a>参照
+
+[国際化](../c-runtime-library/internationalization.md)<br/>
+ [カテゴリ別ユニバーサル C ランタイム ルーチン](../c-runtime-library/run-time-routines-by-category.md)<br/>

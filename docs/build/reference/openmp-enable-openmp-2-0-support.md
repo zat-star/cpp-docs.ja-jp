@@ -1,13 +1,10 @@
 ---
-title: "openmp (OpenMP 2.0 サポートを有効にする) |Microsoft ドキュメント"
-ms.custom: 
+title: openmp (OpenMP 2.0 サポートを有効にする) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /openmp
 - VC.Project.VCCLCompilerTool.OpenMP
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - /openmp compiler option [C++]
 - -openmp compiler option [C++]
 ms.assetid: 9082b175-18d3-4378-86a7-c0eb95664e13
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c8217a901f071f50dbd2d7dfcbffccf4014a9444
-ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.openlocfilehash: fe64011f48255a18aa8f8ccab7571533540a598a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="openmp-enable-openmp-20-support"></a>/openmp (OpenMP 2.0 サポートの有効化)
 コンパイラで処理する`#pragma` [omp](../../preprocessor/omp.md)です。  
@@ -39,21 +34,21 @@ ms.lasthandoff: 02/09/2018
 ```  
   
 ## <a name="remarks"></a>コメント  
- `#pragma omp`使用して指定[ディレクティブ](../../parallel/openmp/reference/openmp-directives.md)と[句](../../parallel/openmp/reference/openmp-clauses.md)です。 場合**/openmp**が指定されていない、コンパイル時に、コンパイラは、OpenMP 句およびディレクティブは無視されます。 [OpenMP 関数](../../parallel/openmp/reference/openmp-functions.md)いなくても、コンパイラによって呼び出しが処理されます**/openmp**が指定されていません。  
+ `#pragma omp` 使用して指定[ディレクティブ](../../parallel/openmp/reference/openmp-directives.md)と[句](../../parallel/openmp/reference/openmp-clauses.md)です。 場合 **/openmp**が指定されていない、コンパイル時に、コンパイラは、OpenMP 句およびディレクティブは無視されます。 [OpenMP 関数](../../parallel/openmp/reference/openmp-functions.md)いなくても、コンパイラによって呼び出しが処理されます **/openmp**が指定されていません。  
   
- コンパイルされたアプリケーション**/openmp**と**/clr** 1 つのアプリケーション ドメインのプロセスでのみ実行できます。 複数のアプリケーション ドメインはサポートされません。 つまり、モジュール コンス トラクター (.cctor) の実行時に検出プロセスのコンパイルでは**/openmp**場合は既定ではないランタイム、アプリケーションが読み込まれるとします。 詳細については、次を参照してください。 [appdomain](../../cpp/appdomain.md)、 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)、および[混在アセンブリの初期化](../../dotnet/initialization-of-mixed-assemblies.md)です。  
+ コンパイルされたアプリケーション **/openmp**と **/clr** 1 つのアプリケーション ドメインのプロセスでのみ実行できます。 複数のアプリケーション ドメインはサポートされません。 つまり、モジュール コンス トラクター (.cctor) の実行時に検出プロセスのコンパイルでは **/openmp**場合は既定ではないランタイム、アプリケーションが読み込まれるとします。 詳細については、次を参照してください。 [appdomain](../../cpp/appdomain.md)、 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)、および[混在アセンブリの初期化](../../dotnet/initialization-of-mixed-assemblies.md)です。  
   
- コンパイルしたアプリケーションを読み込もうとすると場合**/openmp**と**/clr**を既定以外のアプリケーション ドメインに、<xref:System.TypeInitializationException>デバッガーの外部例外がスローされます、デバッガーで OpenMPWithMultipleAppdomainsException 例外がスローされます。  
+ コンパイルしたアプリケーションを読み込もうとすると場合 **/openmp**と **/clr**を既定以外のアプリケーション ドメインに、<xref:System.TypeInitializationException>デバッガーの外部例外がスローされます、デバッガーで OpenMPWithMultipleAppdomainsException 例外がスローされます。  
   
  これらの例外は、次の状況でも発生します。  
   
--   アプリケーションがコンパイルされた場合**/clr**が、 **/openmp**、既定以外のアプリケーション ドメインには、プロセスがでコンパイルされたアプリケーションに含まれる場合は、読み込まれて**/openmp**です。  
+-   アプリケーションがコンパイルされた場合 **/clr**が、 **/openmp**、既定以外のアプリケーション ドメインには、プロセスがでコンパイルされたアプリケーションに含まれる場合は、読み込まれて **/openmp**です。  
   
 -   渡す場合、 **/clr** regasm.exe などのユーティリティへのアプリケーション ([Regasm.exe (アセンブリ登録ツール)](/dotnet/framework/tools/regasm-exe-assembly-registration-tool))、既定以外のアプリケーション ドメインにターゲット アセンブリは、これによって読み込まれます。  
   
  共通言語ランタイムのコード アクセス セキュリティは、OpenMP の地域で機能しません。 場合は、並列領域の外側 CLR コード アクセス セキュリティ属性を適用すると、有効で、並行領域内ことができなきます。  
   
- Microsoft で作成しないことをお勧め**/openmp**により、部分的にアプリケーションを使用して、呼び出し元を信頼された<xref:System.Security.AllowPartiallyTrustedCallersAttribute>、または任意の CLR コード アクセス セキュリティ属性。  
+ Microsoft で作成しないことをお勧め **/openmp**により、部分的にアプリケーションを使用して、呼び出し元を信頼された<xref:System.Security.AllowPartiallyTrustedCallersAttribute>、または任意の CLR コード アクセス セキュリティ属性。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -61,7 +56,7 @@ ms.lasthandoff: 02/09/2018
   
 2.  展開して、**構成プロパティ**ノード。  
   
-3.  展開して、 **C/C++**ノード。  
+3.  展開して、 **C/C++** ノード。  
   
 4.  選択、**言語**プロパティ ページ。  
   
@@ -74,9 +69,9 @@ ms.lasthandoff: 02/09/2018
 ## <a name="example"></a>例  
  次の例では、スレッド プールの起動と起動後、スレッド プールを使用すると場合の影響の一部を示します。 X64、1 つのコアを想定してデュアル プロセッサ、スレッド プールは、スタートアップに 16 ミリ秒を移動します。 その後もがスレッド プールのコストが非常に低いです。  
   
- コンパイルするときに**/openmp**、test2 を 2 番目の呼び出しが不要でコンパイルする場合よりも実行されない**/openmp-**threadpool スタートアップが存在しないため、します。 100万回反復、 **/openmp**バージョンがよりも高速、 **/openmp-** test2 および 25 のイテレーションでは、2 番目の呼び出しのバージョン**/openmp-**と**/openmp**クロック粒度よりも小さいバージョン登録します。  
+ コンパイルするときに **/openmp**、test2 を 2 番目の呼び出しが不要でコンパイルする場合よりも実行されない **/openmp-** threadpool スタートアップが存在しないため、します。 100万回反復、 **/openmp**バージョンがよりも高速、 **/openmp-** test2 および 25 のイテレーションでは、2 番目の呼び出しのバージョン **/openmp-** と **/openmp**クロック粒度よりも小さいバージョン登録します。  
   
- アプリケーションで 1 つだけのループがあるし、(コンピューター上のオーバーヘッドの概算の調整された) を使う未満で実行される場合は**/openmp**は適していない可能性がありますより長いである場合は、の使用を検討することができます**/openmp**です。  
+ アプリケーションで 1 つだけのループがあるし、(コンピューター上のオーバーヘッドの概算の調整された) を使う未満で実行される場合は **/openmp**は適していない可能性がありますより長いである場合は、の使用を検討することができます **/openmp**です。  
   
 ```  
 // cpp_compiler_options_openmp.cpp  
@@ -122,6 +117,6 @@ int main(int argc, char* argv[]) {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

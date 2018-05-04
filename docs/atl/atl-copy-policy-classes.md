@@ -1,13 +1,10 @@
 ---
-title: "ATL コピー ポリシー クラス |Microsoft ドキュメント"
-ms.custom: 
+title: ATL コピー ポリシー クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - _Copy class
 - _CopyInterface class
 ms.assetid: 06704b68-d318-4c5d-a65b-71457fe9d00d
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 54ac3c9d53c3b6d2b295643001fd15b1e4c6c46d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 34b9ed5dca45633a5ab980d38b8a7cda151f5dc7
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="atl-copy-policy-classes"></a>ATL コピー ポリシー クラス
 ポリシー クラスのコピーは[ユーティリティ クラス](../atl/utility-classes.md)初期化するために、コピー、および使用データを削除します。 ポリシー クラスのコピーでは、任意の種類、データのコピーのセマンティクスを定義し、別のデータ型の間で変換を定義することができます。  
@@ -36,9 +31,9 @@ ms.lasthandoff: 12/21/2017
   
 -   [CComEnumImpl](../atl/reference/ccomenumimpl-class.md)  
   
--   [つまり](../atl/reference/ienumonstlimpl-class.md)  
+-   [IEnumOnSTLImpl](../atl/reference/ienumonstlimpl-class.md)  
   
--   [単独](../atl/reference/icollectiononstlimpl-class.md)  
+-   [ICollectionOnSTLImpl](../atl/reference/icollectiononstlimpl-class.md)  
   
  コピーまたはテンプレートの引数として渡すことができるコピー ポリシー クラスのデータの変換に必要な情報をカプセル化してこれらのクラスの極端な再利用性の ATL 開発者が用意されています。 たとえば、任意の任意のデータ型を使用して、コレクションを実装する必要がある場合を提供する必要があります、ポリシーの適切なコピーです。コレクションを実装するコードをタッチすることはありませんがあります。  
   
@@ -65,7 +60,7 @@ ms.lasthandoff: 12/21/2017
 -   **破棄**を使用して初期化されたデータへのポインターを受け取る必要がありますだけ**init**または経由でコピーした**コピー**です。  
   
 ## <a name="standard-implementations"></a>標準の実装  
- ATL の形式で 2 つのコピー ポリシー クラスには、 **_Copy**と**_CopyInterface**テンプレート クラス。  
+ ATL の形式で 2 つのコピー ポリシー クラスには、 **_Copy**と **_CopyInterface**テンプレート クラス。  
   
 -   **_Copy**クラスにより、コピーのみ同種 (データ型の間で変換ではない) 両方を指定する 1 つのテンプレート パラメーターのみ提供していますので`DestinationType`と*SourceType*です。 このテンプレートの汎用実装が初期化または破棄のコードを含まず、使用して`memcpy`データをコピーします。 ATL は、の特殊化も用意されています。 **_Copy**の**バリアント**、 `LPOLESTR`、 **OLEVERB**、および**CONNECTDATA**データ型。  
   
@@ -75,18 +70,18 @@ ms.lasthandoff: 12/21/2017
  通常、異機種混在 (つまり、データ型間の変換) をコピーするための独自のコピー ポリシー クラスを定義する必要があります。 カスタム コピー ポリシー クラスの例については、ファイルを見る、VCUE_Copy.h およびで VCUE_CopyString.h、 [ATLCollections](../visual-cpp-samples.md)サンプルです。 これらのファイルには、2 つのテンプレートのコピー ポリシー クラスが含まれて`GenericCopy`と`MapCopy`の特殊化の数と`GenericCopy`データ型が異なるためです。  
   
 ### <a name="genericcopy"></a>GenericCopy  
- `GenericCopy`指定することができます、 *SourceType*と`DestinationType`テンプレート引数として。 ここでは、最も一般的な形式の`GenericCopy`VCUE_Copy.h からクラス。  
+ `GenericCopy` 指定することができます、 *SourceType*と`DestinationType`テンプレート引数として。 ここでは、最も一般的な形式の`GenericCopy`VCUE_Copy.h からクラス。  
   
  [!code-cpp[NVC_ATL_COM#30](../atl/codesnippet/cpp/atl-copy-policy-classes_1.h)]  
   
  VCUE_Copy.h には、このクラスの次の特殊化も含まれています: `GenericCopy<BSTR>`、 `GenericCopy<VARIANT, BSTR>`、`GenericCopy<BSTR, VARIANT>`です。 VCUE_CopyString.h にはからコピーするための特殊化が含まれています**std::string**%s: `GenericCopy<std::string>`、 `GenericCopy<VARIANT, std::string>`、および`GenericCopy<BSTR, std::string>`です。 強化でした`GenericCopy`さらに、独自の特殊化を提供することによりします。  
   
 ### <a name="mapcopy"></a>MapCopy  
- `MapCopy`マップ データを格納し、変換先の入力の種類を指定することができますので、C++ 標準ライブラリ型マップにコピーするデータが格納されたと仮定します。 クラスの実装のみによって提供される typedef を使用する、 *MapType*クラスをソース データの種類を決定し、適切な呼び出しを`GenericCopy`クラスです。 このクラスの特殊化は必要ありません。  
+ `MapCopy` マップ データを格納し、変換先の入力の種類を指定することができますので、C++ 標準ライブラリ型マップにコピーするデータが格納されたと仮定します。 クラスの実装のみによって提供される typedef を使用する、 *MapType*クラスをソース データの種類を決定し、適切な呼び出しを`GenericCopy`クラスです。 このクラスの特殊化は必要ありません。  
   
  [!code-cpp[NVC_ATL_COM#31](../atl/codesnippet/cpp/atl-copy-policy-classes_2.h)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリに基づくコレクションを実装します。](../atl/implementing-an-stl-based-collection.md)   
  [ATLCollections サンプル](../visual-cpp-samples.md)
 

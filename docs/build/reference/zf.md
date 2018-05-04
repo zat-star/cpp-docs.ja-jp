@@ -3,7 +3,7 @@ title: /Zf (高速 PDB の生成) |Microsoft ドキュメント
 ms.date: 03/29/2018
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /Zf
 dev_langs:
@@ -13,12 +13,11 @@ helpviewer_keywords:
 - -Zf
 author: corob-msft
 ms.author: corob
-manager: ghogen
-ms.openlocfilehash: 7ae27e08e79d19e58c8440a5d7e5161eac9c306f
-ms.sourcegitcommit: 78e5e5cdbafd29e2a6ccf68d4cce215136952907
+ms.openlocfilehash: 968ce17302fa608888c7ae2fedf695946b0119bd
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="zf-faster-pdb-generation"></a>/Zf (高速 PDB 生成を)
 
@@ -34,7 +33,7 @@ Mspdbsrv.exe への RPC 呼び出しを最小化して並行ビルドでは高�
 
 **/Zf**オプションは、PDB の生成にのみ適用されます、必要な[/Zi](z7-zi-zi-debug-information-format.md)または[/ZI](z7-zi-zi-debug-information-format.md)オプション。
 
-**/Zf**オプションでは、以降では、Visual Studio 2017 バージョン 15.1、使用できる場所が既定ではオフです。 以降では、Visual Studio 2017 バージョン 15.7 Preview 3 では、このオプションは既定でオンときに、 **/Zi**または**/ZI**オプションが有効にします。
+**/Zf**オプションでは、以降では、Visual Studio 2017 バージョン 15.1、使用できる場所が既定ではオフです。 以降では、Visual Studio 2017 バージョン 15.7 Preview 3 では、このオプションは既定でオンときに、 **/Zi**または **/ZI**オプションが有効にします。
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには
 
@@ -42,7 +41,7 @@ Mspdbsrv.exe への RPC 呼び出しを最小化して並行ビルドでは高�
 
 1. 選択、**構成プロパティ** > **C/C++** > **コマンドライン**プロパティ ページ。
 
-1. 変更、**追加オプション**含めるプロパティを**/Zf**を選択し**OK**です。
+1. 変更、**追加オプション**含めるプロパティを **/Zf**を選択し**OK**です。
 
 ## <a name="see-also"></a>関連項目
 

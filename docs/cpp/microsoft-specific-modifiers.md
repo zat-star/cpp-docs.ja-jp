@@ -1,27 +1,22 @@
 ---
-title: "Microsoft 固有の修飾子 |Microsoft ドキュメント"
-ms.custom: 
+title: Microsoft 固有の修飾子 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 ms.assetid: 22c7178c-f854-47fa-9de6-07d23fda58e1
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1f9533ffc2d21c3e8ee006fc97f7c61f4cb41115
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 8490a50f30d366a53a9e3288417a8d83032c556d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="microsoft-specific-modifiers"></a>Microsoft 固有の修飾子
 このセクションでは、次の領域での C++ への Microsoft 固有の拡張について説明します。  
@@ -50,5 +45,5 @@ ms.lasthandoff: 12/21/2017
 |[__unaligned](../cpp/unaligned.md)|型またはその他のデータへのポインターが配置されていないことを指定します。|×|  
 |[__vectorcall](../cpp/vectorcall.md)|これに続く名前は、引数を渡すためのスタックの代わりに、SSE レジスタを含むレジスタ (使用できる場合) を使用できる関数を宣言します。|[はい]|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)

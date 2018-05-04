@@ -2,26 +2,21 @@
 title: オブジェクトの有効期間とリソースの管理 (Modern C) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 8aa0e1a1-e04d-46b1-acca-1d548490700f
-caps.latest.revision: 18
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4e2b48630fab9d27bf5db442617a5184bd26de5d
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 634bef1bf9d2d3128497a1321631ca8665fed144
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="object-lifetime-and-resource-management-modern-c"></a>オブジェクトの有効期間とリソースの管理 (Modern C++)
 管理対象の言語とは異なり、C++ はプログラムを実行すると自動的にいいえで長く-使用メモリ リソースを解放するガベージ コレクション (GC) がありません。 C++ では、リソース管理は、オブジェクトの有効期間に直接関連付けします。 このドキュメントでは、C++ では、オブジェクトの有効期間およびそれを管理する方法に影響する要因について説明します。  
@@ -94,7 +89,7 @@ void functionUsingWidget () {
   
  静的な有効期間を多用しない (グローバル静的、関数のローカルの静的) の問題が発生する可能性があるためです。 グローバル オブジェクトのコンス トラクターが例外をスローしたときの動作 通常、アプリはエラー デバッグが困難になることができるようにします。 コンストラクションの順序で静的な有効期間のオブジェクト、問題が発生し、同時実行セーフではありません。 オブジェクトの構築は、問題だけでなく、ポリモーフィズムが必要な場合に特にに、破棄の順序が、複雑になることができます。 でも、オブジェクトまたは変数がない場合ポリモーフィックな複雑な構築/破棄の順序はありません、スレッド セーフである同時実行の問題がまだあります。 マルチ スレッド アプリは、スレッド ローカル ストレージ、リソースのロック、およびその他の特別な対策をしなくても静的オブジェクト内のデータを安全に変更できません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ へようこそ](../cpp/welcome-back-to-cpp-modern-cpp.md)   
  [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
  [.NET 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)

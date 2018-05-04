@@ -1,12 +1,9 @@
 ---
-title: '1 つ &#39; s ごとの補数演算子: ~ |Microsoft ドキュメント'
+title: '1 つ&#39;秒ごとの補数演算子: ~ |Microsoft ドキュメント'
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 f1_keywords:
 - "~"
@@ -19,19 +16,17 @@ helpviewer_keywords:
 - compl operator
 - ~ operator [C++], syntax
 ms.assetid: 4bf81967-34f7-4b4b-aade-fd03d5da0174
-caps.latest.revision: ''
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 635a3e3b2d270d2164adc3f25a260085d7c50d60
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a10c8f3df2a1f2f27ee33450a52132e8184d4232
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="one39s-complement-operator-"></a>1 つ &#39; s ごとの補数演算子: ~
+# <a name="one39s-complement-operator-"></a>1 つ&#39;秒ごとの補数演算子: ~
 ## <a name="syntax"></a>構文  
   
 ```  
@@ -66,7 +61,7 @@ int main () {
   
  整数の上位変換は、整数オペランドに対して実行され、結果の型は、そのオペランドが昇格される型になります。 参照してください[標準変換](standard-conversions.md)昇格を実行する方法の詳細についてです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [単項算術演算子](../c-language/unary-arithmetic-operators.md)

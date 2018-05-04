@@ -1,30 +1,25 @@
 ---
-title: "ATL レジストラーおよびバッカスナウア Nauer フォーム (BNF) 構文 |Microsoft ドキュメント"
-ms.custom: 
+title: ATL レジストラーおよびバッカスナウア Nauer フォーム (BNF) 構文 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
 - BNF notation
 - Backus Nauer Form (BNF) syntax
 ms.assetid: 994bbef0-9077-4aa8-bdfe-b7e830af9acc
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 01d364313420c0a950f8eba222e3ae020fbd86cf
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4137dd94886456d5813076f3cb328bac5ecf5c03
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="understanding-backus-nauer-form-bnf-syntax"></a>バッカスナウア Nauer Form (BNF) の構文の理解
 ATL レジストラーで使用されるスクリプトは、次の表に示すように表記を使用して BNF 構文を使用して、このトピックで説明します。  
@@ -110,6 +105,6 @@ val 'testhex' = d '&H55'
   
  指定したキー名`testhex`は、 **DWORD**値は 16 進 55 (10 進 85) に設定します。 注この形式に従って、 **& H**として表記、Visual Basic の仕様に記載します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [レジストラー スクリプトの作成](../atl/creating-registrar-scripts.md)
 

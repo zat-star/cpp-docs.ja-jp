@@ -1,12 +1,9 @@
 ---
-title: "CTokenGroups クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CTokenGroups クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CTokenGroups
@@ -25,17 +22,15 @@ dev_langs:
 helpviewer_keywords:
 - CTokenGroups class
 ms.assetid: 2ab08076-4b08-4487-bc70-ec6dee304190
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1a5a958fcc1bd8c26599272774c86cd64fa2c720
-ms.sourcegitcommit: a5916b48541f804a79891ff04e246628b5f9a24a
+ms.openlocfilehash: 8ccf73cdeac0e7522551c6ddb7bef6b0122297ca
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ctokengroups-class"></a>CTokenGroups クラス
 このクラスは、用のラッパー、 **TOKEN_GROUPS**構造体。  
@@ -56,7 +51,7 @@ class CTokenGroups
 |名前|説明|  
 |----------|-----------------|  
 |[CTokenGroups::CTokenGroups](#ctokengroups)|コンストラクターです。|  
-|[CTokenGroups::~CTokenGroups](#dtor)|デストラクターです。|  
+|[CTokenGroups:: ~ CTokenGroups](#dtor)|デストラクターです。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
@@ -85,7 +80,7 @@ class CTokenGroups
   
  Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="add"></a>  CTokenGroups::Add  
@@ -125,7 +120,7 @@ CTokenGroups(const TOKEN_GROUPS& rhs) throw(...);
 ### <a name="remarks"></a>コメント  
  `CTokenGroups`を使用してオブジェクトを作成することができます必要に応じて、 **TOKEN_GROUPS**構造体または以前に定義された`CTokenGroups`オブジェクト。  
   
-##  <a name="dtor"></a>CTokenGroups:: ~ CTokenGroups  
+##  <a name="dtor"></a>  CTokenGroups:: ~ CTokenGroups  
  デストラクターです。  
   
 ```
@@ -242,7 +237,7 @@ CTokenGroups& operator= (const CTokenGroups& rhs) throw(...);
 ### <a name="return-value"></a>戻り値  
  更新されたを返します`CTokenGroups`オブジェクト。  
   
-##  <a name="operator_const_token_groups__star"></a>CTokenGroups::operator const TOKEN_GROUPS *  
+##  <a name="operator_const_token_groups__star"></a>  CTokenGroups::operator const TOKEN_GROUPS *  
  ポインターに値をキャスト、 **TOKEN_GROUPS**構造体。  
   
 ```  
@@ -252,7 +247,7 @@ operator const TOKEN_GROUPS *() const throw(...);
 ### <a name="remarks"></a>コメント  
  ポインターに値をキャスト、 [TOKEN_GROUPS](http://msdn.microsoft.com/library/windows/desktop/aa379624)構造体。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティのサンプル](../../visual-cpp-samples.md)   
  [CSid クラス](../../atl/reference/csid-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   

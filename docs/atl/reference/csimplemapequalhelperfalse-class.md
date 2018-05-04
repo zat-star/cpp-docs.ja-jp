@@ -1,12 +1,9 @@
 ---
-title: "CSimpleMapEqualHelperFalse クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CSimpleMapEqualHelperFalse クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CSimpleMapEqualHelperFalse
@@ -18,17 +15,15 @@ dev_langs:
 helpviewer_keywords:
 - CSimpleMapEqualHelperFalse class
 ms.assetid: a873eea3-e130-45cc-a476-61ee79511c3b
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c1418114233b59112fcffb58ef4ae7c437af5ab3
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: bebd9c6628924b5927fb48518925bdd665b0ee14
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="csimplemapequalhelperfalse-class"></a>CSimpleMapEqualHelperFalse クラス
 このクラスは、のヘルパー、 [CSimpleMap](../../atl/reference/csimplemap-class.md)クラスです。  
@@ -54,10 +49,10 @@ class CSimpleMapEqualHelperFalse
   
  値の比較は常に false を返しますと、さらが呼び出されます`ATLASSERT`引数はこれまで参照されている場合は false。 等値テストが適切に定義されていない場合、このクラスは、ほとんどのメソッドを正常に動作などの比較に依存しているメソッドに対して適切に定義された方法で失敗する可能性がキー/値ペアを含むマップ[CSimpleMap:。FindVal](../../atl/reference/csimplemap-class.md#findval)です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlsimpcoll.h  
   
-##  <a name="isequalkey"></a>CSimpleMapEqualHelperFalse::IsEqualKey  
+##  <a name="isequalkey"></a>  CSimpleMapEqualHelperFalse::IsEqualKey  
  2 つのキーの等価性をテストします。  
   
 ```
@@ -77,7 +72,7 @@ static bool IsEqualKey(const TKey& k1, const TKey& k2);
 ### <a name="remarks"></a>コメント  
  このメソッドを呼び出す[CSimpleArrayEqualHelper](../../atl/reference/csimplearrayequalhelper-class.md)です。  
   
-##  <a name="isequalvalue"></a>CSimpleMapEqualHelperFalse::IsEqualValue  
+##  <a name="isequalvalue"></a>  CSimpleMapEqualHelperFalse::IsEqualValue  
  false を返します。  
   
 ```
@@ -90,6 +85,6 @@ static bool IsEqualValue(const TVal&, const TVal&);
 ### <a name="remarks"></a>コメント  
  このメソッドは常に false を返し、呼び出されます`ATLASSERT`引数はこれまで参照されている場合は false。 目的は、`CSimpleMapEqualHelperFalse::IsEqualValue`等値テストが適切に定義されていないときに、適切に定義された方法で失敗する比較を使用する方法を強制することです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CSimpleMapEqualHelper クラス](../../atl/reference/csimplemapequalhelper-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

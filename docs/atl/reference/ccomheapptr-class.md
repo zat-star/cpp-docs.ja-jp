@@ -1,12 +1,9 @@
 ---
-title: "CComHeapPtr クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CComHeapPtr クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CComHeapPtr
@@ -17,17 +14,15 @@ dev_langs:
 helpviewer_keywords:
 - CComHeapPtr class
 ms.assetid: bd08b53d-da2b-43ab-a79c-e7c8dbbc5994
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8619c050ecc356e1445991b625da00c04f462848
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1937bb96cabfd1a42650e2a27fd04c11aa648f2b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ccomheapptr-class"></a>CComHeapPtr クラス
 ヒープのポインターを管理するためのスマート ポインター クラスです。  
@@ -52,7 +47,7 @@ class CComHeapPtr : public CHeapPtr<T, CComAllocator>
 |[CComHeapPtr::CComHeapPtr](#ccomheapptr)|コンストラクターです。|  
   
 ## <a name="remarks"></a>コメント  
- `CComHeapPtr`派生した`CHeapPtr`が使用して[CComAllocator](../../atl/reference/ccomallocator-class.md) COM ルーチンを使用するメモリを割り当てられません。 参照してください[CHeapPtr](../../atl/reference/cheapptr-class.md)と[CHeapPtrBase](../../atl/reference/cheapptrbase-class.md)メソッドで使用できます。  
+ `CComHeapPtr` 派生した`CHeapPtr`が使用して[CComAllocator](../../atl/reference/ccomallocator-class.md) COM ルーチンを使用するメモリを割り当てられません。 参照してください[CHeapPtr](../../atl/reference/cheapptr-class.md)と[CHeapPtrBase](../../atl/reference/cheapptrbase-class.md)メソッドで使用できます。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CHeapPtrBase](../../atl/reference/cheapptrbase-class.md)  
@@ -61,10 +56,10 @@ class CComHeapPtr : public CHeapPtr<T, CComAllocator>
   
  `CComHeapPtr`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="ccomheapptr"></a>CComHeapPtr::CComHeapPtr  
+##  <a name="ccomheapptr"></a>  CComHeapPtr::CComHeapPtr  
  コンストラクターです。  
   
 ```
@@ -79,7 +74,7 @@ explicit CComHeapPtr(T* pData) throw();
 ### <a name="remarks"></a>コメント  
  既存を使用して、ヒープのポインターを作成することができます必要に応じて`CComHeapPtr`オブジェクト。 場合は、新しい`CComHeapPtr`オブジェクトは、新しいポインターとリソースを管理する責任を引き継ぎます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CHeapPtr クラス](../../atl/reference/cheapptr-class.md)   
  [CHeapPtrBase クラス](../../atl/reference/cheapptrbase-class.md)   
  [CComAllocator クラス](../../atl/reference/ccomallocator-class.md)   

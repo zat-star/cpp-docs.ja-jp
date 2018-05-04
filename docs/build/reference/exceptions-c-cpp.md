@@ -1,13 +1,10 @@
 ---
-title: "例外 (C/C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 例外 (C/C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - ERROR_MOD_NOT_FOUND
 - vcppException
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - ERROR_SEVERITY_ERROR exception
 - ERROR_MOD_NOT_FOUND exception
 ms.assetid: c03be05d-1c39-4f35-84cf-00c9af3bae9a
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 635e2b1406e9919425a396b6f49fe8eb6efd81eb
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 819f9424b2439cc49517afe54d62a8ed4f06d22d
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="exceptions-cc"></a>例外 (C/C++)
 2 つの例外コードは、エラーが発生したときに発生する可能性が。  
@@ -56,5 +51,5 @@ ms.lasthandoff: 12/21/2017
   
  参照してください[構造体と定数定義](../../build/reference/structure-and-constant-definitions.md)詳細についてはします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [エラー処理と通知](../../build/reference/error-handling-and-notification.md)

@@ -1,12 +1,9 @@
 ---
-title: "ATL シンプル オブジェクトを追加する |Microsoft ドキュメント"
-ms.custom: 
+title: ATL シンプル オブジェクトを追加する |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - vc.codewiz.classes.adding.atl
@@ -17,17 +14,15 @@ helpviewer_keywords:
 - objects [ATL]
 - ATL, simple objects
 ms.assetid: 9c57d2ef-0447-4c84-8982-3304b8e49847
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4e0251e33eb6b6ae2af920181077071c90c61192
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 229866620826581214d5fb0395fa2bdf4f0c8574
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adding-an-atl-simple-object"></a>ATL シンプル オブジェクトを追加します。
 プロジェクトに ATL (Active Template Library) オブジェクトを追加するにプロジェクト必要がありますが作成されて、ATL アプリケーションまたは ATL サポートを含む MFC アプリケーションとして。 使用することができます、 [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)ATL アプリケーションを作成するか、 [ATL オブジェクトを MFC アプリケーションに追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)MFC アプリケーションに対する ATL のサポートを実装します。  
@@ -46,7 +41,7 @@ ms.lasthandoff: 12/21/2017
   
 5.  をクリックして**完了**オブジェクトをプロジェクトに追加します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
  [ATL プロジェクトで新しいインターフェイスの追加](../../atl/reference/adding-a-new-interface-in-an-atl-project.md)   
  [オブジェクトへの接続ポイントの追加](../../atl/adding-connection-points-to-an-object.md)   

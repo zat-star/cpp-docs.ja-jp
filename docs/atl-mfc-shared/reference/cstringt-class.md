@@ -1,12 +1,9 @@
 ---
-title: "CStringT クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CStringT クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-mfc
 ms.topic: reference
 f1_keywords:
 - CStringT
@@ -89,17 +86,15 @@ helpviewer_keywords:
 - shared classes, CStringT
 - CStringT class
 ms.assetid: 7cacc59c-425f-40f1-8f5b-6db921318ec9
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 2d3b718249603c34d5a9a13eec966b586151f2e7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 2f8a66f87b3c4a2c6712a1db93f97361a25b6955
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cstringt-class"></a>CStringT クラス
 このクラスを表します、`CStringT`オブジェクト。  
@@ -120,28 +115,28 @@ public CSimpleStringT<BaseType,
  `BaseType`  
  String クラスの文字型。 次のいずれかの値を指定します。  
   
-- `char`(ANSI 文字列を)。  
+- `char` (ANSI 文字列を)。  
   
-- `wchar_t`(の Unicode 文字列)。  
+- `wchar_t` (の Unicode 文字列)。  
   
 - **TCHAR** (用、ANSI と Unicode 文字の文字列)。  
   
  `StringTraits`  
  String クラスには、C ランタイム (CRT) ライブラリのサポートと文字列リソースが配置されている必要があるかどうかを判断します。 次のいずれかの値を指定します。  
   
-- **StrTraitATL < wchar_t** &#124;です。`char` &#124;です。**TCHAR、ChTraitsCRT < wchar_t** &#124;です。`char` &#124;です。**TCHAR >>**  
+- **StrTraitATL < wchar_t** &#124; `char` &#124; **TCHAR、ChTraitsCRT < wchar_t** &#124; `char` &#124; **TCHAR >>**  
   
      クラスは、CRT のサポートとによって指定されたモジュール内のリソース文字列を検索が必要です。 `m_hInstResource` (アプリケーションのモジュールのクラスのメンバー)。  
   
-- **StrTraitATL < wchar_t** &#124;です。`char` &#124;です。**TCHAR、ChTraitsOS < wchar_t** &#124;です。`char` &#124;です。**TCHAR >>**  
+- **StrTraitATL < wchar_t** &#124; `char` &#124; **TCHAR、ChTraitsOS < wchar_t** &#124; `char` &#124; **TCHAR >>**  
   
      クラスに CRT のサポートおよびによって指定されたモジュール内のリソース文字列を検索は必要ありません`m_hInstResource`(アプリケーションのモジュールのクラスのメンバー)。  
   
-- **StrTraitMFC < wchar_t** &#124;です。`char` &#124;です。**TCHAR、ChTraitsCRT < wchar_t** &#124;です。`char` &#124;です。**TCHAR >>**  
+- **StrTraitMFC < wchar_t** &#124; `char` &#124; **TCHAR、ChTraitsCRT < wchar_t** &#124; `char` &#124; **TCHAR >>**  
   
      クラスには、CRT のサポートと標準の MFC 検索アルゴリズムを使用してリソース文字列を検索が必要です。  
   
-- **StrTraitMFC < wchar_t** &#124;です。`char` &#124;です。**TCHAR、ChTraitsOS < wchar_t** &#124;です。`char` &#124;です。**TCHAR >>**  
+- **StrTraitMFC < wchar_t** &#124; `char` &#124; **TCHAR、ChTraitsOS < wchar_t** &#124; `char` &#124; **TCHAR >>**  
   
      クラスは、CRT のサポートと標準の MFC 検索アルゴリズムを使用してリソース文字列を検索には必要ありません。  
   
@@ -202,18 +197,18 @@ public CSimpleStringT<BaseType,
 |[CStringT::operator + =](#operator_add_eq)|既存の文字列の末尾に新しい文字列を連結します。|  
 |[CStringT::operator = =](#operator_eq_eq)|2 つの文字列が論理的に等しいかどうかを決定します。|  
 |[CStringT::operator! =](#operator_neq)|2 つの文字列が等しく論理的にないかどうかを判断します。|  
-|[CStringT::operator&lt;](#operator_lt)|かどうかを演算子の左辺の文字列より小さい右側にある文字列。|  
-|[CStringT::operator&gt;](#operator_gt)|演算子の左側にある文字列が右辺の文字列より大きいかどうかを判断します。|  
-|[CStringT::operator&lt;=](#operator_lt_eq)|演算子の左側にある文字列が右側にある文字列と等しいまたはそれよりも小さいかどうかを判断します。|  
-|[CStringT::operator&gt;=](#operator_gt_eq)|演算子の左側にある文字列がより大きいかを右側にある文字列に等しいかどうかを判断します。|  
+|[CStringT::operator &lt;](#operator_lt)|かどうかを演算子の左辺の文字列より小さい右側にある文字列。|  
+|[CStringT::operator &gt;](#operator_gt)|演算子の左側にある文字列が右辺の文字列より大きいかどうかを判断します。|  
+|[CStringT::operator &lt;=](#operator_lt_eq)|演算子の左側にある文字列が右側にある文字列と等しいまたはそれよりも小さいかどうかを判断します。|  
+|[CStringT::operator &gt;=](#operator_gt_eq)|演算子の左側にある文字列がより大きいかを右側にある文字列に等しいかどうかを判断します。|  
   
 ## <a name="remarks"></a>コメント  
- `CStringT`継承[CSimpleStringT クラス](../../atl-mfc-shared/reference/csimplestringt-class.md)です。 文字の操作、並べ替え、および検索などの高度な機能は、によって実装される`CStringT`です。  
+ `CStringT` 継承[CSimpleStringT クラス](../../atl-mfc-shared/reference/csimplestringt-class.md)です。 文字の操作、並べ替え、および検索などの高度な機能は、によって実装される`CStringT`です。  
   
 > [!NOTE]
-> `CStringT`オブジェクトは、例外をスローします。 これが発生したときに、`CStringT`何らかの理由で、オブジェクトがメモリ不足が実行されます。  
+> `CStringT` オブジェクトは、例外をスローします。 これが発生したときに、`CStringT`何らかの理由で、オブジェクトがメモリ不足が実行されます。  
   
- A`CStringT`オブジェクトは、文字の可変長シーケンスで構成されます。 `CStringT`関数と Basic するときと同様の構文を使用して演算子を提供します。 連結したものと比較演算子は、簡略化されたメモリ管理、と共に`CStringT`オブジェクトの通常の文字配列より簡単に使用します。  
+ A`CStringT`オブジェクトは、文字の可変長シーケンスで構成されます。 `CStringT` 関数と Basic するときと同様の構文を使用して演算子を提供します。 連結したものと比較演算子は、簡略化されたメモリ管理、と共に`CStringT`オブジェクトの通常の文字配列より簡単に使用します。  
   
 > [!NOTE]
 >  作成することはできますが`CStringT`を格納するインスタンスには、null 文字が埋め込まれているはお勧めことです。 メソッドと演算子を呼び出すことで`CStringT`埋め込まれた null 文字が含まれているオブジェクトは、意図しない結果を生成できます。  
@@ -251,11 +246,11 @@ public CSimpleStringT<BaseType,
 |**CAtlStringW**|Unicode 文字は、CRT のサポートを持つ文字列を入力します。|  
 |**CAtlString**|ANSI と Unicode 文字の型が CRT のサポート。|  
   
- `CString`オブジェクトは、次の特徴もあります。  
+ `CString` オブジェクトは、次の特徴もあります。  
   
-- `CStringT`オブジェクトは、連結演算の結果としてまで拡大できます。  
+- `CStringT` オブジェクトは、連結演算の結果としてまで拡大できます。  
   
-- `CStringT`オブジェクトは、「値のセマンティクスです」に従う 考えること、`CStringT`文字列へのポインターとしてではなく、実際の文字列としてのオブジェクト。  
+- `CStringT` オブジェクトは、「値のセマンティクスです」に従う 考えること、`CStringT`文字列へのポインターとしてではなく、実際の文字列としてのオブジェクト。  
   
 -   代わりに使用することが自由に`CStringT`オブジェクトに対する`PCXSTR`関数の引数。  
   
@@ -264,7 +259,7 @@ public CSimpleStringT<BaseType,
 ## <a name="cstringt-predefined-types"></a>CStringT 定義済みの型  
  `CStringT`文字型を定義するテンプレート引数を使用して (か[wchar_t](../../c-runtime-library/standard-types.md)または[char](../../c-runtime-library/standard-types.md)) サポート、メソッドのパラメーター型が複雑になります。 定義済みの型の一連の定義および全体で使用されるこの問題を簡略化、`CStringT`クラスです。 次の表は、さまざまな種類を示します。  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |`XCHAR`|1 つの文字 (どちらか`wchar_t`または`char`) と同じ文字型を持つ、`CStringT`オブジェクト。|  
 |**YCHAR**|1 つの文字 (どちらか`wchar_t`または`char`) と反対の文字型を持つ、`CStringT`オブジェクト。|  
@@ -281,14 +276,14 @@ public CSimpleStringT<BaseType,
   
  `CStringT`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
 |Header|を使用します。|  
 |------------|-------------|  
 |cstringt.h|MFC 専用の文字列オブジェクト|  
 |atlstr.h|非 MFC の string オブジェクト|  
   
-##  <a name="allocsysstring"></a>CStringT::AllocSysString  
+##  <a name="allocsysstring"></a>  CStringT::AllocSysString  
  型の自動化と互換性のある文字列を割り当てます`BSTR`の内容をコピーし、`CStringT`終端の null 文字を含む、そこにオブジェクト。  
   
 ```  
@@ -312,7 +307,7 @@ BSTR AllocSysString() const;
   
  [!code-cpp[NVC_ATLMFC_Utilities#105](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_1.cpp)]  
   
-##  <a name="ansitooem"></a>CStringT::AnsiToOem  
+##  <a name="ansitooem"></a>  CStringT::AnsiToOem  
  これですべての文字に変換`CStringT`は ANSI 文字セットを OEM 文字セットからのオブジェクト。  
   
 ```  
@@ -325,7 +320,7 @@ void AnsiToOem();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#106](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_2.cpp)]  
   
-##  <a name="appendformat"></a>CStringT::AppendFormat  
+##  <a name="appendformat"></a>  CStringT::AppendFormat  
  書式付きデータを追加すると、既存`CStringT`オブジェクト。  
   
 ```  
@@ -349,7 +344,7 @@ void __cdecl AppendFormat(UINT nFormatID, [, argument] ...);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#107](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_3.cpp)]  
   
-##  <a name="collate"></a>CStringT::Collate  
+##  <a name="collate"></a>  CStringT::Collate  
  汎用テキスト関数を使用して 2 つの文字列を比較`_tcscoll`です。  
   
 ```  
@@ -366,7 +361,7 @@ int Collate(PCXSTR psz) const throw();
 ### <a name="remarks"></a>コメント  
  汎用テキスト関数`_tcscoll`TCHAR で定義されています。H にマップするか`strcoll`、 `wcscoll`、または`_mbscoll`コンパイル時に定義されている文字セットによって異なります。 各関数は、使用中で現在のコード ページに従って文字列の大文字小文字を区別比較を実行します。 詳細については、次を参照してください。 [strcoll、wcscoll、_mbscoll、_strcoll_l、_wcscoll_l、_mbscoll_l](../../c-runtime-library/reference/strcoll-wcscoll-mbscoll-strcoll-l-wcscoll-l-mbscoll-l.md)です。  
   
-##  <a name="collatenocase"></a>CStringT::CollateNoCase  
+##  <a name="collatenocase"></a>  CStringT::CollateNoCase  
  汎用テキスト関数を使用して 2 つの文字列を比較`_tcscoll`です。  
   
 ```  
@@ -386,7 +381,7 @@ int CollateNoCase(PCXSTR psz) const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#109](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_4.cpp)]  
   
-##  <a name="compare"></a>CStringT::Compare  
+##  <a name="compare"></a>  CStringT::Compare  
  2 つの文字列 (大文字小文字を区別) を比較します。  
   
 ```  
@@ -410,7 +405,7 @@ int Compare(PCXSTR psz) const;
   
  [!code-cpp[NVC_ATLMFC_Utilities#110](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_5.cpp)]  
   
-##  <a name="comparenocase"></a>CStringT::CompareNoCase  
+##  <a name="comparenocase"></a>  CStringT::CompareNoCase  
  (大文字と小文字) 2 つの文字列を比較します。  
   
 ```  
@@ -430,7 +425,7 @@ int CompareNoCase(PCXSTR psz) const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#111](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_6.cpp)]  
   
-##  <a name="cstringt"></a>CStringT::CStringT  
+##  <a name="cstringt"></a>  CStringT::CStringT  
  `CStringT` オブジェクトを構築します。  
   
 ```  
@@ -531,11 +526,11 @@ CStringT(const YCHAR* pch, int nLength, IAtlStringMgr* pStringMgr) :
  `BaseType`  
  String クラスの文字型。 次のいずれかの値を指定します。  
   
- `char`(ANSI 文字列を)。  
+ `char` (ANSI 文字列を)。  
   
- `wchar_t`(の Unicode 文字列)。  
+ `wchar_t` (の Unicode 文字列)。  
   
- `TCHAR`(の ANSI および Unicode 文字列)。  
+ `TCHAR` (の ANSI および Unicode 文字列)。  
   
  `bMFCDLL`  
  プロジェクトが MFC DLL (TRUE) であるかどうかを指定するブール値 (FALSE)。  
@@ -551,14 +546,14 @@ CStringT(const YCHAR* pch, int nLength, IAtlStringMgr* pStringMgr) :
   
 - `CStringT`( `LPCSTR` `lpsz` ): Unicode の構築`CStringT`ANSI 文字列から。 このコンス トラクターを使用して、次の例で示すように文字列リソースを読み込むことができますも。  
   
-- `CStringT(``LPCWSTR` `lpsz` ): 構築、 `CStringT` Unicode 文字列。  
+- `CStringT(` `LPCWSTR` `lpsz` ): 構築、 `CStringT` Unicode 文字列。  
   
 - `CStringT`( `const unsigned char*` `psz` ): 構築できるように、`CStringT`へのポインターから`unsigned char`です。  
   
 > [!NOTE]
 >  定義、 **_CSTRING_DISABLE_NARROW_WIDE_CONVERSION**マクロの間で文字列の暗黙的な変換をオフに[!INCLUDE[vcpransi](../../atl-mfc-shared/reference/includes/vcpransi_md.md)]と[!INCLUDE[TLA#tla_unicode](../../atl-mfc-shared/reference/includes/tlasharptla_unicode_md.md)]文字列。 マクロは、変換をサポートするコンス トラクターをコンパイルから除外します。  
   
- なお、`strSrc`パラメーターには、いずれかを指定できます、`CStringT`または`CThisSimpleString`オブジェクト。 `CStringT`、その既定のインスタンスのいずれかを使用して ( `CString`、 `CStringA`、または`CStringW`); の`CThisSimpleString`を使用して、`this`ポインター。 `CThisSimpleString`インスタンスを宣言、 [CSimpleStringT クラス](../../atl-mfc-shared/reference/csimplestringt-class.md)よりも小さい組み込みの機能を備えた文字列クラスでより小さなある、`CStringT`クラスです。  
+ なお、`strSrc`パラメーターには、いずれかを指定できます、`CStringT`または`CThisSimpleString`オブジェクト。 `CStringT`、その既定のインスタンスのいずれかを使用して ( `CString`、 `CStringA`、または`CStringW`); の`CThisSimpleString`を使用して、`this`ポインター。 `CThisSimpleString` インスタンスを宣言、 [CSimpleStringT クラス](../../atl-mfc-shared/reference/csimplestringt-class.md)よりも小さい組み込みの機能を備えた文字列クラスでより小さなある、`CStringT`クラスです。  
   
  オーバー ロードされた演算子`CSimpleStringT<>&()`構築、`CStringT`オブジェクトから、`CSimpleStringT`宣言します。  
   
@@ -568,7 +563,7 @@ CStringT(const YCHAR* pch, int nLength, IAtlStringMgr* pStringMgr) :
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#112](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_7.cpp)]  
   
-##  <a name="_dtorcstringt"></a>CStringT:: ~ CStringT  
+##  <a name="_dtorcstringt"></a>  CStringT:: ~ CStringT  
  `CStringT` オブジェクトを破棄します。  
   
 ```  
@@ -578,7 +573,7 @@ CStringT(const YCHAR* pch, int nLength, IAtlStringMgr* pStringMgr) :
 ### <a name="remarks"></a>コメント  
  `CStringT` オブジェクトを破棄します。  
   
-##  <a name="delete"></a>CStringT::Delete  
+##  <a name="delete"></a>  CStringT::Delete  
  指定したインデックス位置にある文字で始まる文字列から文字または文字を削除します。  
   
 ```  
@@ -608,7 +603,7 @@ After: Soccer best,
     but hockey is quicker!  
 ```  
   
-##  <a name="find"></a>CStringT::Find  
+##  <a name="find"></a>  CStringT::Find  
  文字または部分文字列の最初の一致するには、この文字列を検索します。  
   
 ```  
@@ -635,7 +630,7 @@ int Find(XCHAR ch, int iStart=0) const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#114](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_9.cpp)]  
   
-##  <a name="findoneof"></a>CStringT::FindOneOf  
+##  <a name="findoneof"></a>  CStringT::FindOneOf  
  この文字列に含まれている任意の文字に一致する最初の文字を検索`pszCharSet`です。  
   
 ```  
@@ -655,7 +650,7 @@ int FindOneOf(PCXSTR pszCharSet) const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#115](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_10.cpp)]  
   
-##  <a name="format"></a>CStringT::Format  
+##  <a name="format"></a>  CStringT::Format  
  書式付きデータを書き込みます、 `CStringT` 、同じ方法[sprintf_s](../../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md) C スタイル文字配列にデータを書式設定します。  
   
 ```  
@@ -685,7 +680,7 @@ void __cdecl Format(PCXSTR pszFormat,  [, argument] ...);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#117](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_12.cpp)]  
   
-##  <a name="formatmessage"></a>CStringT::FormatMessage  
+##  <a name="formatmessage"></a>  CStringT::FormatMessage  
  メッセージ文字列の書式を設定します。  
   
 ```  
@@ -707,14 +702,14 @@ void __cdecl FormatMessage(PCXSTR pszFormat, [, argument]...);
  関数には、入力としてメッセージの定義が必要です。 メッセージ定義によって決定される`pszFormat`またはによって識別される文字列リソース`nFormatID`です。 関数をコピーする形式のメッセージ テキスト、`CStringT`オブジェクト、埋め込まれているいずれかの処理が要求されている場合、シーケンスを挿入します。  
   
 > [!NOTE]
-> `FormatMessage`新しく書式指定文字列のシステム メモリを割り当てようとします。 この試行が失敗した場合、自動的にメモリ不足例外がスローされます。  
+> `FormatMessage` 新しく書式指定文字列のシステム メモリを割り当てようとします。 この試行が失敗した場合、自動的にメモリ不足例外がスローされます。  
   
  挿入ごとに対応するパラメーター次必要があります、`pszFormat`または`nFormatID`パラメーター。 メッセージ テキストにいくつかのエスケープ シーケンスは動的にメッセージの書式設定のサポートします。 詳細については、Windows を参照してください。 [FormatMessage](http://msdn.microsoft.com/library/windows/desktop/ms679351) Windows SDK 内の関数。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#118](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_13.cpp)]  
   
-##  <a name="formatmessagev"></a>CStringT::FormatMessageV  
+##  <a name="formatmessagev"></a>  CStringT::FormatMessageV  
  可変個引数リストを使用してメッセージ文字列の書式を設定します。  
   
 ```  
@@ -732,11 +727,11 @@ void FormatMessageV(PCXSTR pszFormat, va_list* pArgList);
  関数に必要な入力値としてメッセージの定義によって決定`pszFormat`です。 関数は、形式のメッセージ テキストと変数への引数のリストをコピー、`CStringT`オブジェクト、埋め込まれているいずれかの処理が要求されている場合、シーケンスを挿入します。  
   
 > [!NOTE]
-> `FormatMessageV`呼び出し[CStringT::FormatMessage](#formatmessage)、新しく書式指定文字列のシステム メモリを割り当てるしようとします。 この試行が失敗した場合、自動的にメモリ不足例外がスローされます。  
+> `FormatMessageV` 呼び出し[CStringT::FormatMessage](#formatmessage)、新しく書式指定文字列のシステム メモリを割り当てるしようとします。 この試行が失敗した場合、自動的にメモリ不足例外がスローされます。  
   
  詳細については、Windows を参照してください。 [FormatMessage](http://msdn.microsoft.com/library/windows/desktop/ms679351) Windows SDK 内の関数。  
   
-##  <a name="formatv"></a>CStringT::FormatV  
+##  <a name="formatv"></a>  CStringT::FormatV  
  可変個引数リストを使用してメッセージ文字列の書式を設定します。  
   
 ```  
@@ -758,7 +753,7 @@ void FormatV(PCXSTR pszFormat, va_list args);
   
  [!code-cpp[NVC_ATLMFC_Utilities#120](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_15.cpp)]  
   
-##  <a name="getenvironmentvariable"></a>CStringT::GetEnvironmentVariable  
+##  <a name="getenvironmentvariable"></a>  CStringT::GetEnvironmentVariable  
  指定された環境変数の値を文字列を設定します。  
   
 ```  
@@ -778,7 +773,7 @@ BOOL GetEnvironmentVariable(PCXSTR pszVar);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#121](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_16.cpp)]  
   
-##  <a name="insert"></a>CStringT::Insert  
+##  <a name="insert"></a>  CStringT::Insert  
  1 つの文字または部分文字列を文字列内の指定したインデックス位置に挿入します。  
   
 ```  
@@ -805,7 +800,7 @@ int Insert(int iIndex, XCHAR ch);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#122](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_17.cpp)]  
   
-##  <a name="left"></a>CStringT::Left  
+##  <a name="left"></a>  CStringT::Left  
  この `nCount` オブジェクトから左端の `CStringT` 文字を抽出し、抽出された部分文字列のコピーを返します。  
   
 ```  
@@ -827,7 +822,7 @@ CStringT Left(int nCount) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#123](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_18.cpp)]  
   
-##  <a name="loadstring"></a>CStringT::LoadString  
+##  <a name="loadstring"></a>  CStringT::LoadString  
  識別される、Windows の文字列リソースを読み取る`nID`を既存`CStringT`オブジェクト。  
   
 ```  
@@ -855,7 +850,7 @@ BOOL LoadString(UINT nID);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#124](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_19.cpp)]  
   
-##  <a name="makelower"></a>CStringT::MakeLower  
+##  <a name="makelower"></a>  CStringT::MakeLower  
  変換、`CStringT`小文字の文字列オブジェクト。  
   
 ```  
@@ -868,7 +863,7 @@ CStringT& MakeLower();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#125](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_20.cpp)]  
   
-##  <a name="makereverse"></a>CStringT::MakeReverse  
+##  <a name="makereverse"></a>  CStringT::MakeReverse  
  内の文字の順序を反転、`CStringT`オブジェクト。  
   
 ```  
@@ -881,7 +876,7 @@ CStringT& MakeReverse();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#126](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_21.cpp)]  
   
-##  <a name="makeupper"></a>CStringT::MakeUpper  
+##  <a name="makeupper"></a>  CStringT::MakeUpper  
  変換、`CStringT`に大文字の文字列オブジェクト。  
   
 ```  
@@ -896,7 +891,7 @@ CStringT& MakeUpper();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#127](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_22.cpp)]  
   
-##  <a name="mid"></a>CStringT::Mid  
+##  <a name="mid"></a>  CStringT::Mid  
  長さの部分文字列を抽出`nCount`これから文字`CStringT`オブジェクト、開始位置から`iFirst`(0 から始まる)。  
   
 ```  
@@ -915,14 +910,14 @@ CStringT Mid(int iFirst) const;
  指定の文字範囲のコピーを含む `CStringT` オブジェクト。 なお、返された`CStringT`オブジェクトを空にすることがあります。  
   
 ### <a name="remarks"></a>コメント  
- 関数は、抽出した部分文字列のコピーを返します。 `Mid`ですが、基本的な Mid 関数に似ています (Basic でのインデックスは 1 から始まります) です。  
+ 関数は、抽出した部分文字列のコピーを返します。 `Mid` ですが、基本的な Mid 関数に似ています (Basic でのインデックスは 1 から始まります) です。  
   
  マルチバイト文字セット (MBCS)`nCount`は各 8 ビット文字以外の場合は、潜在顧客バイトと後続バイト マルチバイト文字が 2 つの文字としてカウントされるいずれかを参照します。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#128](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_23.cpp)]  
   
-##  <a name="oemtoansi"></a>CStringT::OemToAnsi  
+##  <a name="oemtoansi"></a>  CStringT::OemToAnsi  
  これですべての文字に変換します`CStringT`オブジェクトから OEM 文字を ANSI 文字セットに設定します。  
   
 ```  
@@ -935,7 +930,7 @@ void OemToAnsi();
 ### <a name="example"></a>例  
  例を参照して[CStringT::AnsiToOem](#ansitooem)です。  
   
-##  <a name="operator_add"></a>CStringT::operator +  
+##  <a name="operator_add"></a>  CStringT::operator +  
  2 つの文字列または文字と文字列を連結します。  
   
 ```  
@@ -976,7 +971,7 @@ friend CStringT operator+(wchar_t ch1, const CStringT& str2,);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#140](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_24.cpp)]  
   
-##  <a name="operator_add_eq"></a>CStringT::operator + =  
+##  <a name="operator_add_eq"></a>  CStringT::operator + =  
  文字列の末尾に文字を連結します。  
   
 ```  
@@ -1028,7 +1023,7 @@ CStringT& operator+=(const VARIANT& var);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#141](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_25.cpp)]  
   
-##  <a name="operator_eq_eq"></a>CStringT::operator = =  
+##  <a name="operator_eq_eq"></a>  CStringT::operator = =  
  2 つの文字列が論理的に等価かどうかを判断します。  
   
 ```  
@@ -1066,7 +1061,7 @@ friend bool operator==(XCHAR ch1, const CStringT& str2,) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#142](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_26.cpp)]  
   
-##  <a name="operator_neq"></a>CStringT::operator! =  
+##  <a name="operator_neq"></a>  CStringT::operator! =  
  2 つの文字列が等しく論理的にないかどうかを判断します。  
   
 ```  
@@ -1104,7 +1099,7 @@ friend bool operator!=(XCHAR ch1, const CStringT& str2,) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#143](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_27.cpp)]  
   
-##  <a name="operator_lt"></a>CStringT::operator&lt;  
+##  <a name="operator_lt"></a>  CStringT::operator &lt;  
  演算子の左側にある文字列が右側にある文字列より小さいかどうかを判断します。  
   
 ```  
@@ -1138,7 +1133,7 @@ friend bool operator<(PCXSTR psz1, const CStringT& str2) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#144](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_28.cpp)]  
   
-##  <a name="operator_gt"></a>CStringT::operator&gt;  
+##  <a name="operator_gt"></a>  CStringT::operator &gt;  
  演算子の左側にある文字列が右側にある文字列より大きいかどうかを判断します。  
   
 ```  
@@ -1172,7 +1167,7 @@ friend bool operator>(PCXSTR psz1, const CStringT& str2) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#145](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_29.cpp)]  
   
-##  <a name="operator_lt_eq"></a>CStringT::operator&lt;=  
+##  <a name="operator_lt_eq"></a>  CStringT::operator &lt;=  
  演算子の左側にある文字列が右側にある文字列と等しいまたはそれよりも小さいかどうかを判断します。  
   
 ```  
@@ -1206,7 +1201,7 @@ friend bool operator<=(PCXSTR psz1, const CStringT& str2) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#146](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_30.cpp)]  
   
-##  <a name="operator_gt_eq"></a>CStringT::operator&gt;=  
+##  <a name="operator_gt_eq"></a>  CStringT::operator &gt;=  
  演算子の左側にある文字列がより大きいかを右側にある文字列に等しいかどうかを判断します。  
   
 ```  
@@ -1240,7 +1235,7 @@ friend bool operator>=(PCXSTR psz1, const CStringT& str2) throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#147](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_31.cpp)]  
   
-##  <a name="remove"></a>CStringT::Remove  
+##  <a name="remove"></a>  CStringT::Remove  
  文字列から指定した文字のすべてのインスタンスを削除します。  
   
 ```  
@@ -1260,7 +1255,7 @@ int Remove(XCHAR chRemove);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#129](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_32.cpp)]  
   
-##  <a name="replace"></a>CStringT::Replace  
+##  <a name="replace"></a>  CStringT::Replace  
  2 つのバージョンがある`Replace`です。最初のバージョンでは、別の部分文字列を使用して部分文字列の 1 つまたは複数のコピーが置き換えられます。 両方の部分文字列は、null で終わるです。 2 番目のバージョンでは、別の文字を使用して、文字の 1 つまたは複数のコピーが置き換えられます。 両方のバージョンに格納されている文字データを操作`CStringT`です。  
   
 ```  
@@ -1285,7 +1280,7 @@ int Replace(XCHAR chOld, XCHAR chNew);
  文字列が変更されていない場合は、文字または部分文字列、または 0 の置き換えられるインスタンスの数を返します。  
   
 ### <a name="remarks"></a>コメント  
- `Replace`文字列の長さを変更できます`pszNew`と`pszOld`同じの長さで指定する必要はありませんし、新しいに古い部分文字列の複数のコピーを変更することができます。 関数では、大文字と小文字を実行します。  
+ `Replace` 文字列の長さを変更できます`pszNew`と`pszOld`同じの長さで指定する必要はありませんし、新しいに古い部分文字列の複数のコピーを変更することができます。 関数では、大文字と小文字を実行します。  
   
  例として`CStringT`インスタンスが`CString`、 `CStringA`、および`CStringW`です。  
   
@@ -1303,7 +1298,7 @@ int Replace(XCHAR chOld, XCHAR chNew);
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#200](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_33.cpp)]  
   
-##  <a name="reversefind"></a>CStringT::ReverseFind  
+##  <a name="reversefind"></a>  CStringT::ReverseFind  
  この検索`CStringT`最後に一致する文字のためのオブジェクト。  
   
 ```  
@@ -1323,7 +1318,7 @@ int ReverseFind(XCHAR ch) const throw();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#130](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_34.cpp)]  
   
-##  <a name="right"></a>CStringT::Right  
+##  <a name="right"></a>  CStringT::Right  
  前回の抽出 (つまり、右端)`nCount`これから文字`CStringT`オブジェクトを抽出する部分文字列のコピーを返します。  
   
 ```  
@@ -1338,14 +1333,14 @@ CStringT Right(int nCount) const;
  指定の文字範囲のコピーを含む `CStringT` オブジェクト。 なお、返された`CStringT`オブジェクトを空にすることができます。  
   
 ### <a name="remarks"></a>コメント  
- `nCount` が文字列の長さを超える場合、文字列全体が抽出されます。 `Right`基本的なに似ています`Right`(する点を除いて Basic でのインデックスは、0 から始まる) に機能します。  
+ `nCount` が文字列の長さを超える場合、文字列全体が抽出されます。 `Right` 基本的なに似ています`Right`(する点を除いて Basic でのインデックスは、0 から始まる) に機能します。  
   
  マルチバイト文字セット (MBCS)`nCount`は各 8 ビット文字以外の場合は、潜在顧客バイトと後続バイト マルチバイト文字が 2 つの文字としてカウントされるいずれかを参照します。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#131](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_35.cpp)]  
   
-##  <a name="setsysstring"></a>名称  
+##  <a name="setsysstring"></a>  名称  
  再割り当て、`BSTR`によって示される`pbstr`の内容をコピーし、`CStringT`などに、オブジェクト、`NULL`文字です。  
   
 ```  
@@ -1367,7 +1362,7 @@ BSTR SetSysString(BSTR* pbstr) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#132](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_36.cpp)]  
   
-##  <a name="spanexcluding"></a>CStringT::SpanExcluding  
+##  <a name="spanexcluding"></a>  CStringT::SpanExcluding  
  によって識別される文字のセットに含まれていない最初の文字で始まる、文字列から文字を抽出`pszCharSet`です。  
   
 ```  
@@ -1382,12 +1377,12 @@ CStringT SpanExcluding(PCXSTR pszCharSet) const;
  部分文字列に追加されていない文字列内の文字を含む`pszCharSet`、文字列の最初の文字で始まるおよびでも文字列内にある最初の文字で終わる`pszCharSet`(つまり、最初の文字で始まる、文字列とは、文字列の最初の文字を除く見つかる`pszCharSet`)。 内の文字、文字列全体が返されます`pszCharSet`文字列に存在します。  
   
 ### <a name="remarks"></a>コメント  
- `SpanExcluding`抽出してから文字を最初に見つかった位置の前のすべての文字を返します`pszCharSet`(つまりの文字から`pszCharSet`文字列で、次のすべての文字は返されません)。 文字`pszCharSet`、文字列内で見つかった`SpanExcluding`文字列全体を返します。  
+ `SpanExcluding` 抽出してから文字を最初に見つかった位置の前のすべての文字を返します`pszCharSet`(つまりの文字から`pszCharSet`文字列で、次のすべての文字は返されません)。 文字`pszCharSet`、文字列内で見つかった`SpanExcluding`文字列全体を返します。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#133](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_37.cpp)]  
   
-##  <a name="spanincluding"></a>CStringT::SpanIncluding  
+##  <a name="spanincluding"></a>  CStringT::SpanIncluding  
  によって識別される文字のセットに含まれる最初の文字で始まる、文字列から文字を抽出`pszCharSet`です。  
   
 ```  
@@ -1399,7 +1394,7 @@ CStringT SpanIncluding(PCXSTR pszCharSet) const;
  文字列は、一連の文字として解釈されます。  
   
 ### <a name="return-value"></a>戻り値  
- 部分文字列に含まれる文字列の文字を含む`pszCharSet`で文字列の最初の文字で始まると、文字が見つかった場合にではなく、文字列を終了`pszCharSet`です。 `SpanIncluding`文字列の最初の文字が指定されたセット内にない場合は、空の部分文字列を返します。  
+ 部分文字列に含まれる文字列の文字を含む`pszCharSet`で文字列の最初の文字で始まると、文字が見つかった場合にではなく、文字列を終了`pszCharSet`です。 `SpanIncluding` 文字列の最初の文字が指定されたセット内にない場合は、空の部分文字列を返します。  
   
 ### <a name="remarks"></a>コメント  
  文字列の最初の文字がない場合、文字セットで、`SpanIncluding`空の文字列を返します。 それ以外の場合、連続した文字のセットに含まれるシーケンスを返します。  
@@ -1407,7 +1402,7 @@ CStringT SpanIncluding(PCXSTR pszCharSet) const;
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#134](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_38.cpp)]  
   
-##  <a name="tokenize"></a>CStringT::Tokenize  
+##  <a name="tokenize"></a>  CStringT::Tokenize  
  対象の文字列内の次のトークンを検索します。  
   
 ```  
@@ -1441,7 +1436,7 @@ CStringT Tokenize(PCXSTR pszTokens, int& iStart) const;
   
  `Resulting Token: Third`  
   
-##  <a name="trim"></a>CStringT::Trim  
+##  <a name="trim"></a>  CStringT::Trim  
  先頭と末尾の文字の文字列をトリムします。  
   
 ```  
@@ -1463,9 +1458,9 @@ CStringT& Trim();
 ### <a name="remarks"></a>コメント  
  次のいずれかの先頭および末尾の出現すべてを削除します。  
   
--   指定された文字`chTarget.`  
+-   指定された文字 `chTarget.`  
   
--   指定された文字列内にあるすべての文字`pszTargets.`  
+-   指定された文字列内にあるすべての文字 `pszTargets.`  
   
 -   空白文字。  
   
@@ -1479,7 +1474,7 @@ CStringT& Trim();
   
  `After : "Soccer is best, but liquor is quicker"`  
   
-##  <a name="trimleft"></a>CStringT::TrimLeft  
+##  <a name="trimleft"></a>  CStringT::TrimLeft  
  文字列から先頭の文字をトリムします。  
   
 ```  
@@ -1501,16 +1496,16 @@ CStringT& TrimLeft();
 ### <a name="remarks"></a>コメント  
  次のいずれかの先頭および末尾の出現すべてを削除します。  
   
--   指定された文字`chTarget.`  
+-   指定された文字 `chTarget.`  
   
--   指定された文字列内にあるすべての文字`pszTargets.`  
+-   指定された文字列内にあるすべての文字 `pszTargets.`  
   
 -   空白文字。  
   
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#137](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_41.cpp)]  
   
-##  <a name="trimright"></a>CStringT::TrimRight  
+##  <a name="trimright"></a>  CStringT::TrimRight  
  末尾の文字の文字列をトリムします。  
   
 ```  
@@ -1532,9 +1527,9 @@ CStringT& TrimRight();
 ### <a name="remarks"></a>コメント  
  末尾に、次のいずれかの出現を削除します。  
   
--   指定された文字`chTarget.`  
+-   指定された文字 `chTarget.`  
   
--   指定された文字列内にあるすべての文字`pszTargets.`  
+-   指定された文字列内にあるすべての文字 `pszTargets.`  
   
 -   空白文字。  
   
@@ -1549,7 +1544,7 @@ CStringT& TrimRight();
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATLMFC_Utilities#138](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_42.cpp)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)   
  [CSimpleStringT クラス](../../atl-mfc-shared/reference/csimplestringt-class.md)

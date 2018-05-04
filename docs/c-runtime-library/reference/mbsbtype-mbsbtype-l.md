@@ -2,11 +2,8 @@
 title: _mbsbtype、_mbsbtype_l | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _mbsbtype_l
@@ -37,17 +34,15 @@ helpviewer_keywords:
 - _mbsbtype_l function
 - mbsbtype_l function
 ms.assetid: 0d5dd91a-d32d-4f98-ac57-98dfc9e98eac
-caps.latest.revision: 19
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a8108372cd40aba6770136908b177dc82a9ff25e
-ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
+ms.openlocfilehash: 54b82eae4826bd6a359f2cf0d4e74bccd32f81b0
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="mbsbtype-mbsbtypel"></a>_mbsbtype、_mbsbtype_l
 
@@ -96,7 +91,7 @@ int _mbsbtype_l(
 
 **_Mbsbtype**関数はマルチバイト文字の文字列内のバイトの種類を決定します。 関数はオフセットでバイトしか*カウント*で*mbstr*、指定したバイトの前に無効な文字は無視されます。
 
-出力値の設定の影響を受けた、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。 この関数のバージョン、 **_l**サフィックスがこのロケールに依存する動作に現在のロケールを使用のバージョン、 **_l**渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じ代わりにします。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+出力値は、ロケールの **LC_CTYPE** カテゴリの設定に影響されます。詳細については、「[setlocale](setlocale-wsetlocale.md)」を参照してください。 この関数のバージョン、 **_l**サフィックスがこのロケールに依存する動作に現在のロケールを使用のバージョン、 **_l**渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じ代わりにします。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
 
 場合は、入力文字列が**NULL**で説明されているとおり、無効なパラメーター ハンドラーが呼び出されます[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 続けるには、実行が許可された場合**errno**に設定されている**EINVAL** 、関数を返します**継続**です。
 

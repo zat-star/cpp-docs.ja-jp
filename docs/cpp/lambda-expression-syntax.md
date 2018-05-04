@@ -1,29 +1,24 @@
 ---
-title: "ラムダ式の構文 |Microsoft ドキュメント"
-ms.custom: 
+title: ラムダ式の構文 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - lambda expressions [C++], syntax
 ms.assetid: 5d6154a4-f34d-4a15-970d-7e7de45f54e9
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e41be4a1c69f6bf39e4ca0ede5b0afbe3a09f776
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1faf0458a9cf1a528e9a0c2582e8d2ec3715f149
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lambda-expression-syntax"></a>ラムダ式の構文
 この記事では、ラムダ式の構文と構造体要素を説明します。 ラムダ式の説明は、次を参照してください。[ラムダ式](../cpp/lambda-expressions-in-cpp.md)です。  
@@ -173,7 +168,7 @@ There are 4 even numbers in the vector.
   
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ラムダ式](../cpp/lambda-expressions-in-cpp.md)   
  [ラムダ式の例](../cpp/examples-of-lambda-expressions.md)   
  [生成します。](../standard-library/algorithm-functions.md#generate)   

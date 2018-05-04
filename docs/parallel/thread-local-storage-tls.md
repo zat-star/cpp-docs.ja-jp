@@ -1,12 +1,12 @@
 ---
-title: "スレッド ローカル ストレージ (TLS) |Microsoft ドキュメント"
-ms.custom: 
+title: スレッド ローカル ストレージ (TLS) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-windows
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - C++
@@ -18,22 +18,22 @@ helpviewer_keywords:
 - thread attribute
 - Thread Local Storage [C++]
 ms.assetid: 80801907-d792-45ca-b776-df0cf2e9f197
-caps.latest.revision: 
+caps.latest.revision: 9
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 47e6be3645e03892d17e45256a5a003d982d973f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0b01bd50fa50a449128842755898d703f7bafe76
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="thread-local-storage-tls"></a>スレッド ローカル ストレージ (TLS: Thread Local Storage)
 スレッド ローカル ストレージ (TLS) は、指定されたマルチスレッド プロセスの各スレッドが、スレッド固有のデータを格納する場所を割り当てるための手段です。 TLS API を使用してバインド (実行時) のスレッドに固有のデータを動的にサポート ([TlsAlloc](https://msdn.microsoft.com/en-us/library/windows/desktop/ms686801)、 [TlsGetValue](https://msdn.microsoft.com/en-us/library/windows/desktop/ms686812)、 [TlsSetValue](https://msdn.microsoft.com/en-us/library/windows/desktop/ms686818)、および[TlsFree](https://msdn.microsoft.com/en-us/library/windows/desktop/ms686804)). Windows にスレッド ローカル ストレージを実装する方法の詳細については、次を参照してください。[スレッド ローカル ストレージ (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/ms686749\(v=vs.85\).aspx)です。  Win32 および Visual C コンパイラでは、現在、既存の API の実装に加えて、(読み込み時に) スレッドごとに静的にバインドされるデータをサポートしています。  
   
-##  <a name="_core_compiler_implementation_for_tls"></a>コンパイラによる TLS の実装  
+##  <a name="_core_compiler_implementation_for_tls"></a> コンパイラによる TLS の実装  
  **C++ 11:** 、`thread_local`ストレージ クラス指定子は、スレッド ローカル ストレージ オブジェクトを指定し、クラス メンバーのことをお勧めします。 詳細については、次を参照してください。[ストレージ クラス (C++)](../cpp/storage-classes-cpp.md)です。  
   
  Visual C は、Microsoft 固有の属性も用意されています。[スレッド](../cpp/thread.md)、拡張ストレージ クラス修飾子として。 使用して、`__declspec`を宣言するキーワード、**スレッド**変数。 たとえば、次に示すコードは、整数型のスレッド ローカル変数を宣言して特定の値に初期化します。  
@@ -107,7 +107,7 @@ __declspec( thread ) int tls_i = 1;
   
      この制限は、C++ では適用されません。 C++ ではすべてのオブジェクトを動的に初期化することが許可されているため、スレッド ローカル変数のアドレスを使用する式を使用してオブジェクトを初期化できます。 これは、スレッド ローカル オブジェクトの作成と同じように行います。 たとえば、前に示したコードが C++ ソース ファイルとしてコンパイルされる場合、エラーは発生しません。 スレッド ローカル変数のアドレスは、アドレスが取得されたスレッドが存在する限り有効であることに注意してください。  
   
--   標準 C では、オブジェクトや変数をそれ自体への参照を含む式で初期化できます。ただし、この場合のオブジェクトは、非静的なものに限られます。 C++ では、一般的に、オブジェクト自体への参照を含む式でこのようにオブジェクトを動的に初期化できますが、この種の初期化はスレッド ローカル オブジェクトでは許可されません。 例:  
+-   標準 C では、オブジェクトや変数をそれ自体への参照を含む式で初期化できます。ただし、この場合のオブジェクトは、非静的なものに限られます。 C++ では、一般的に、オブジェクト自体への参照を含む式でこのようにオブジェクトを動的に初期化できますが、この種の初期化はスレッド ローカル オブジェクトでは許可されません。 例えば:  
   
     ```  
     __declspec( thread )int tls_i = tls_i;                // Error in C and C++   
@@ -119,7 +119,7 @@ __declspec( thread ) int tls_i = 1;
   
      スレッド ローカル ストレージ機能は将来拡張される可能性があるため、C++ ではこのようにスレッド データを動的に初期化することが許可されていません。  
   
--   [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)] より前の Windows オペレーティング システムでは、`__declspec`( thread ) にいくつか制限があります。 DLL で任意のデータまたはオブジェクトを `__declspec`( thread ) として宣言した場合、動的に読み込まれたときに保護違反が発生する可能性があります。 によって、DLL が読み込まれた後[LoadLibrary](http://msdn.microsoft.com/library/windows/desktop/ms684175)、コードで参照されるたびにシステム エラーが発生、 `__declspec`(thread) データ。 スレッドのグローバル変数領域は実行時に割り当てられるため、この領域のサイズは、アプリケーションの要件および静的にリンクされているすべての DLL の要件に基づいて計算されます。 `LoadLibrary` を使用すると、`__declspec`( thread ) を使用して宣言されたスレッド ローカル変数用にこの領域を拡張することはできません。 など、TLS Api を使用して[TlsAlloc](http://msdn.microsoft.com/library/windows/desktop/ms686801)、TLS を割り当ててに DLL が読み込まれている可能性がある場合、DLL で`LoadLibrary`です。  
+-   Windows Vista より前に、の Windows オペレーティング システムで`__declspec`(スレッド) がいくつかの制限。 DLL で任意のデータまたはオブジェクトを `__declspec`( thread ) として宣言した場合、動的に読み込まれたときに保護違反が発生する可能性があります。 によって、DLL が読み込まれた後[LoadLibrary](http://msdn.microsoft.com/library/windows/desktop/ms684175)、コードで参照されるたびにシステム エラーが発生、 `__declspec`(thread) データ。 スレッドのグローバル変数領域は実行時に割り当てられるため、この領域のサイズは、アプリケーションの要件および静的にリンクされているすべての DLL の要件に基づいて計算されます。 `LoadLibrary` を使用すると、`__declspec`( thread ) を使用して宣言されたスレッド ローカル変数用にこの領域を拡張することはできません。 など、TLS Api を使用して[TlsAlloc](http://msdn.microsoft.com/library/windows/desktop/ms686801)、TLS を割り当ててに DLL が読み込まれている可能性がある場合、DLL で`LoadLibrary`です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C と Win32 を使用するマルチスレッド](../parallel/multithreading-with-c-and-win32.md)   

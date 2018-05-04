@@ -1,13 +1,10 @@
 ---
-title: "AFX_EXT_CLASS を使ったエクスポート/インポート |Microsoft ドキュメント"
-ms.custom: 
+title: AFX_EXT_CLASS を使ったエクスポート/インポート |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - afx_ext_class
 dev_langs:
@@ -20,17 +17,15 @@ helpviewer_keywords:
 - executable files [C++], importing classes
 - exporting DLLs [C++], AFX_EXT_CLASS macro
 ms.assetid: 6b72cb2b-e92e-4ecd-bcab-c335e1d1cfde
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fb47703b7cd4ef2d0493016c120db0b7d845a71f
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f6cc853c66afae72d6e426d800c0443ab206ab20
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="exporting-and-importing-using-afxextclass"></a>AFX_EXT_CLASS を使ったエクスポート/インポート  
   
@@ -66,7 +61,7 @@ class AFX_EXT_CLASS CMyClass : public CDocument
   
 場合によって、クラスの個々 のメンバーをエクスポートすることができます。 例では、エクスポートする場合の`CDialog`-派生したクラス、コンス トラクターのエクスポートのみが必要と`DoModal`を呼び出します。 使用することができます`AFX_EXT_CLASS`をエクスポートする必要があります。 個々 のメンバーにします。  
   
-例:  
+例えば:  
   
 ```cpp  
 class CExampleDialog : public CDialog  
@@ -95,7 +90,7 @@ public: \
   
 静的で始まる行`AFX_DATA`クラスの内部で静的なオブジェクトが宣言されています。 このクラスを正しくエクスポートをクライアント実行可能ファイルの実行時情報にアクセスするには、この静的オブジェクトをエクスポートする必要があります。 修飾子を使って、静的オブジェクトが宣言されているため`AFX_DATA`、のみを定義する必要があります`AFX_DATA`する`__declspec(dllexport)`、DLL のビルド時として定義し、`__declspec(dllimport)`クライアントの実行可能ファイルを作成するときにします。 `AFX_EXT_CLASS`は既に定義されて、この方法でのみ再定義する必要`AFX_DATA`と同じである`AFX_EXT_CLASS`クラス定義をします。  
   
-例:  
+例えば:  
   
 ```cpp  
 #undef  AFX_DATA  
@@ -140,5 +135,5 @@ MFC が常に使用するため、`AFX_DATA`記号、マクロ内で定義する
   
 -   [相互インポート](../build/mutual-imports.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DLL からのエクスポート](../build/exporting-from-a-dll.md)

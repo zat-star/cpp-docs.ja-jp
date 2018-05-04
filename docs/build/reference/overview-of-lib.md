@@ -2,12 +2,9 @@
 title: LIB の概要 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - Lib
 dev_langs:
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - LIB [C++], modes
 ms.assetid: e997d423-f574-434f-8b56-25585d137ee0
-caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ef3d1e57371fdea62bb557830baca633f4165637
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: d8fd3d370da4f841e85086e3d061508d68414e96
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="overview-of-lib"></a>LIB の概要
 Lib、インポート ライブラリ、およびエクスポートで使用できるファイル[リンク](../../build/reference/linker-options.md)プログラムを作成するときにします。 LIB は、コマンド プロンプトから実行されます。  
@@ -53,7 +48,7 @@ Lib、インポート ライブラリ、およびエクスポートで使用で�
   
  詳細については、次を参照してください。 [LIB の実行](../../build/reference/running-lib.md)です。  
   
- **/エクスポート**  
+ **/EXPORT**  
  プログラムから関数をエクスポートします。  
   
  詳細については、次を参照してください。[インポート ライブラリとエクスポート ファイルのビルド](../../build/reference/building-an-import-library-and-export-file.md)です。  
@@ -63,7 +58,7 @@ Lib、インポート ライブラリ、およびエクスポートで使用で�
   
  詳細については、次を参照してください。[ライブラリ メンバーの抽出](../../build/reference/extracting-a-library-member.md)です。  
   
- **/INCLUDE します。**  
+ **/INCLUDE**  
  シンボルをシンボル テーブルに追加します。  
   
  詳細については、次を参照してください。[インポート ライブラリとエクスポート ファイルのビルド](../../build/reference/building-an-import-library-and-export-file.md)です。  
@@ -128,7 +123,7 @@ Lib、インポート ライブラリ、およびエクスポートで使用で�
   
  詳細については、次を参照してください。 [LIB の実行](../../build/reference/running-lib.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [LIB リファレンス](../../build/reference/lib-reference.md)   
  [LIB の入力ファイル](../../build/reference/lib-input-files.md)   
  [LIB の出力ファイル](../../build/reference/lib-output-files.md)   

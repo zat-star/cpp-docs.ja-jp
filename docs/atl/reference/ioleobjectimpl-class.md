@@ -2,11 +2,8 @@
 title: IOleObjectImpl クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IOleObjectImpl
@@ -58,17 +55,15 @@ helpviewer_keywords:
 - IOleObject, ATL implementation
 - IOleObjectImpl class
 ms.assetid: 59750b2d-1633-4a51-a4c2-6455b6b90c45
-caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f710953a32ccb32c63742ab28e84818f3a330336
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3a98d3e0ad75d2eaa0325699369bfe4473182049
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ioleobjectimpl-class"></a>IOleObjectImpl クラス
 このクラスは実装**IUnknown**コンテナーがコントロールとの通信に使用するプリンシパルのインターフェイスです。  
@@ -144,10 +139,10 @@ class ATL_NO_VTABLE IOleObjectImpl : public IOleObject
   
  `IOleObjectImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlctl.h  
   
-##  <a name="advise"></a>IOleObjectImpl::Advise  
+##  <a name="advise"></a>  IOleObjectImpl::Advise  
  コントロールとのアドバイザリ コネクションを設定します。  
   
 ```
@@ -159,7 +154,7 @@ STDMETHOD(Advise)(
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::Advise](http://msdn.microsoft.com/library/windows/desktop/ms686573) Windows SDK にします。  
   
-##  <a name="close"></a>IOleObjectImpl::Close  
+##  <a name="close"></a>  IOleObjectImpl::Close  
  読み込まれたを実行してから、コントロールの状態を変更します。  
   
 ```
@@ -173,7 +168,7 @@ STDMETHOD(Close)(DWORD dwSaveOption);
   
  参照してください[IOleObject::Close](http://msdn.microsoft.com/library/windows/desktop/ms683922) Windows SDK にします。  
   
-##  <a name="doverb"></a>IOleObjectImpl::DoVerb  
+##  <a name="doverb"></a>  IOleObjectImpl::DoVerb  
  列挙されるアクションのいずれかを実行するコントロールに指示します。  
   
 ```
@@ -202,7 +197,7 @@ STDMETHOD(DoVerb)(
   
  参照してください[IOleObject::DoVerb](http://msdn.microsoft.com/library/windows/desktop/ms694508) Windows SDK にします。  
   
-##  <a name="doverbdiscardundo"></a>IOleObjectImpl::DoVerbDiscardUndo  
+##  <a name="doverbdiscardundo"></a>  IOleObjectImpl::DoVerbDiscardUndo  
  コントロールは保守すべて元に戻す状態を破棄するように指示します。  
   
 ```
@@ -219,7 +214,7 @@ HRESULT DoVerbDiscardUndo(LPCRECT /* prcPosRect */, HWND /* hwndParent */);
 ### <a name="return-value"></a>戻り値  
  `S_OK` を返します。  
   
-##  <a name="doverbhide"></a>IOleObjectImpl::DoVerbHide  
+##  <a name="doverbhide"></a>  IOleObjectImpl::DoVerbHide  
  非アクティブ化しコントロールのユーザー インターフェイスを削除し、コントロールを非表示にします。  
   
 ```
@@ -236,7 +231,7 @@ HRESULT DoVerbHide(LPCRECT /* prcPosRect */, HWND /* hwndParent */);
 ### <a name="return-value"></a>戻り値  
  `S_OK` を返します。  
   
-##  <a name="doverbinplaceactivate"></a>IOleObjectImpl::DoVerbInPlaceActivate  
+##  <a name="doverbinplaceactivate"></a>  IOleObjectImpl::DoVerbInPlaceActivate  
  コントロールを実行し、そのウィンドウをインストールしますがコントロールのユーザー インターフェイスではインストールされません。  
   
 ```
@@ -256,7 +251,7 @@ HRESULT DoVerbInPlaceActivate(LPCRECT prcPosRect, HWND /* hwndParent */);
 ### <a name="remarks"></a>コメント  
  場所でコントロールをアクティブに呼び出して[CComControlBase::InPlaceActivate](../../atl/reference/ccomcontrolbase-class.md#inplaceactivate)です。 しない限り、コントロール クラスのデータ メンバー`m_bWindowOnly`は**TRUE**、`DoVerbInPlaceActivate`最初ウィンドウなしのコントロールとしてコントロールをアクティブ化を試みます (可能なコンテナーをサポートしている場合にのみ[IOleInPlaceSiteWindowless](http://msdn.microsoft.com/library/windows/desktop/ms682300)). 関数が拡張機能を持つコントロールをアクティブ化しようとしたが失敗した場合 (可能なコンテナーをサポートしている場合にのみ[処理](http://msdn.microsoft.com/library/windows/desktop/ms693461))。 関数がない拡張機能を持つコントロールをアクティブ化しようとしたが失敗した場合 (可能なコンテナーをサポートしている場合にのみ[ビュー](http://msdn.microsoft.com/library/windows/desktop/ms686586))。 アクティブ化に成功した場合、関数は、コントロールがアクティブ化されて、コンテナーを通知します。  
   
-##  <a name="doverbopen"></a>IOleObjectImpl::DoVerbOpen  
+##  <a name="doverbopen"></a>  IOleObjectImpl::DoVerbOpen  
  別のウィンドウで開いて編集をするコントロールがされます。  
   
 ```
@@ -273,7 +268,7 @@ HRESULT DoVerbOpen(LPCRECT /* prcPosRect */, HWND /* hwndParent */);
 ### <a name="return-value"></a>戻り値  
  `S_OK` を返します。  
   
-##  <a name="doverbprimary"></a>IOleObjectImpl::DoVerbPrimary  
+##  <a name="doverbprimary"></a>  IOleObjectImpl::DoVerbPrimary  
  ユーザー コントロールをダブルクリックしたときに実行されるアクションを定義します。  
   
 ```
@@ -293,7 +288,7 @@ HRESULT DoVerbPrimary(LPCRECT prcPosRect, HWND hwndParent);
 ### <a name="remarks"></a>コメント  
  既定では、プロパティ ページを表示する設定します。 これがダブルクリックされたときに異なる動作を呼び出すコントロール クラスでオーバーライドすることができます。たとえば、ビデオの再生や、インプレース アクティブです。  
   
-##  <a name="doverbshow"></a>IOleObjectImpl::DoVerbShow  
+##  <a name="doverbshow"></a>  IOleObjectImpl::DoVerbShow  
  コンテナー コントロールを表示するように指示します。  
   
 ```
@@ -310,7 +305,7 @@ HRESULT DoVerbShow(LPCRECT prcPosRect, HWND /* hwndParent */);
 ### <a name="return-value"></a>戻り値  
  標準の`HRESULT`値。  
   
-##  <a name="doverbuiactivate"></a>IOleObjectImpl::DoVerbUIActivate  
+##  <a name="doverbuiactivate"></a>  IOleObjectImpl::DoVerbUIActivate  
  コントロールのユーザー インターフェイスをアクティブにし、コンテナーにコンポジット メニューにメニューが置き換えられることを通知します。  
   
 ```
@@ -327,7 +322,7 @@ HRESULT DoVerbUIActivate(LPCRECT prcPosRect, HWND /* hwndParent */);
 ### <a name="return-value"></a>戻り値  
  標準の`HRESULT`値。  
   
-##  <a name="enumadvise"></a>IOleObjectImpl::EnumAdvise  
+##  <a name="enumadvise"></a>  IOleObjectImpl::EnumAdvise  
  このコントロールの登録済みのアドバイザリ コネクションの列挙子を提供します。  
   
 ```
@@ -337,7 +332,7 @@ STDMETHOD(EnumAdvise)(IEnumSTATDATA** ppenumAdvise);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::EnumAdvise](http://msdn.microsoft.com/library/windows/desktop/ms682355) Windows SDK にします。  
   
-##  <a name="enumverbs"></a>IOleObjectImpl::EnumVerbs  
+##  <a name="enumverbs"></a>  IOleObjectImpl::EnumVerbs  
  このコントロールの登録されたアクション (動詞) の列挙子を呼び出すことによって提供**OleRegEnumVerbs**です。  
   
 ```
@@ -349,7 +344,7 @@ STDMETHOD(EnumVerbs)(IEnumOLEVERB** ppEnumOleVerb);
   
  参照してください[IOleObject::EnumVerbs](http://msdn.microsoft.com/library/windows/desktop/ms692781) Windows SDK にします。  
   
-##  <a name="getclientsite"></a>IOleObjectImpl::GetClientSite  
+##  <a name="getclientsite"></a>  IOleObjectImpl::GetClientSite  
  コントロール クラスのデータ メンバーにカーソルを置きます[CComControlBase::m_spClientSite](../../atl/reference/ccomcontrolbase-class.md#m_spclientsite)に*ppClientSite*し、ポインターの参照カウントをインクリメントします。  
   
 ```
@@ -359,7 +354,7 @@ STDMETHOD(GetClientSite)(IOleClientSite** ppClientSite);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::GetClientSite](http://msdn.microsoft.com/library/windows/desktop/ms692603) Windows SDK にします。  
   
-##  <a name="getclipboarddata"></a>IOleObjectImpl::GetClipboardData  
+##  <a name="getclipboarddata"></a>  IOleObjectImpl::GetClipboardData  
  クリップボードからデータを取得します。  
   
 ```
@@ -374,7 +369,7 @@ STDMETHOD(GetClipboardData)(
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::GetClipboardData](http://msdn.microsoft.com/library/windows/desktop/ms682288) Windows SDK にします。  
   
-##  <a name="getextent"></a>IOleObjectImpl::GetExtent  
+##  <a name="getextent"></a>  IOleObjectImpl::GetExtent  
  HIMETRIC 単位 (0.01 ミリメートル単位) で実行中のコントロールの表示サイズを取得します。  
   
 ```
@@ -388,7 +383,7 @@ STDMETHOD(GetExtent)(
   
  参照してください[IOleObject::GetExtent](http://msdn.microsoft.com/library/windows/desktop/ms692325) Windows SDK にします。  
   
-##  <a name="getmiscstatus"></a>IOleObjectImpl::GetMiscStatus  
+##  <a name="getmiscstatus"></a>  IOleObjectImpl::GetMiscStatus  
  呼び出して、コントロールの登録済みの状態に関する情報へのポインターを返します**OleRegGetMiscStatus**です。  
   
 ```
@@ -402,7 +397,7 @@ STDMETHOD(GetMiscStatus)(
   
  参照してください[IOleObject::GetMiscStatus](http://msdn.microsoft.com/library/windows/desktop/ms678521) Windows SDK にします。  
   
-##  <a name="getmoniker"></a>IOleObjectImpl::GetMoniker  
+##  <a name="getmoniker"></a>  IOleObjectImpl::GetMoniker  
  コントロールのモニカーを取得します。  
   
 ```
@@ -418,7 +413,7 @@ STDMETHOD(GetMoniker)(
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::GetMoniker](http://msdn.microsoft.com/library/windows/desktop/ms686576) Windows SDK にします。  
   
-##  <a name="getuserclassid"></a>IOleObjectImpl::GetUserClassID  
+##  <a name="getuserclassid"></a>  IOleObjectImpl::GetUserClassID  
  コントロールのクラス識別子を返します。  
   
 ```
@@ -428,7 +423,7 @@ STDMETHOD(GetUserClassID)(CLSID* pClsid);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::GetUserClassID](http://msdn.microsoft.com/library/windows/desktop/ms682313) Windows SDK にします。  
   
-##  <a name="getusertype"></a>IOleObjectImpl::GetUserType  
+##  <a name="getusertype"></a>  IOleObjectImpl::GetUserType  
  呼び出して、コントロールのユーザー タイプ名を返します**OleRegGetUserType**です。  
   
 ```
@@ -442,7 +437,7 @@ STDMETHOD(GetUserType)(
   
  参照してください[IOleObject::GetUserType](http://msdn.microsoft.com/library/windows/desktop/ms688643) Windows SDK にします。  
   
-##  <a name="initfromdata"></a>IOleObjectImpl::InitFromData  
+##  <a name="initfromdata"></a>  IOleObjectImpl::InitFromData  
  選択したデータからコントロールを初期化します。  
   
 ```
@@ -458,7 +453,7 @@ STDMETHOD(InitFromData)(
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::InitFromData](http://msdn.microsoft.com/library/windows/desktop/ms688510) Windows SDK にします。  
   
-##  <a name="isuptodate"></a>IOleObjectImpl::IsUpToDate  
+##  <a name="isuptodate"></a>  IOleObjectImpl::IsUpToDate  
  コントロールの最新の状態を確認します。  
   
 ```
@@ -471,7 +466,7 @@ STDMETHOD(IsUpToDate)(void);
 ### <a name="remarks"></a>コメント  
  参照してください[:isuptodate](http://msdn.microsoft.com/library/windows/desktop/ms686624) Windows SDK にします。  
   
-##  <a name="onpostverbdiscardundo"></a>IOleObjectImpl::OnPostVerbDiscardUndo  
+##  <a name="onpostverbdiscardundo"></a>  IOleObjectImpl::OnPostVerbDiscardUndo  
  によって呼び出されます[アンドゥ](#doverbdiscardundo)後、元に戻す状態は破棄されます。  
   
 ```
@@ -484,7 +479,7 @@ HRESULT OnPostVerbDiscardUndo();
 ### <a name="remarks"></a>コメント  
  元に戻す状態を破棄した後に実行するコードでこのメソッドをオーバーライドします。  
   
-##  <a name="onpostverbhide"></a>IOleObjectImpl::OnPostVerbHide  
+##  <a name="onpostverbhide"></a>  IOleObjectImpl::OnPostVerbHide  
  によって呼び出されます[DoVerbHide](#doverbhide)コントロールを非表示後します。  
   
 ```
@@ -497,7 +492,7 @@ HRESULT OnPostVerbHide();
 ### <a name="remarks"></a>コメント  
  コントロールが非表示にした後に実行するコードでこのメソッドをオーバーライドします。  
   
-##  <a name="onpostverbinplaceactivate"></a>IOleObjectImpl::OnPostVerbInPlaceActivate  
+##  <a name="onpostverbinplaceactivate"></a>  IOleObjectImpl::OnPostVerbInPlaceActivate  
  によって呼び出されます[埋め込み](#doverbinplaceactivate)コントロールは、インプレース アクティブ化した後です。  
   
 ```
@@ -510,7 +505,7 @@ HRESULT OnPostVerbInPlaceActivate();
 ### <a name="remarks"></a>コメント  
  コントロールがインプレース アクティブ化した後に実行するコードでこのメソッドをオーバーライドします。  
   
-##  <a name="onpostverbopen"></a>IOleObjectImpl::OnPostVerbOpen  
+##  <a name="onpostverbopen"></a>  IOleObjectImpl::OnPostVerbOpen  
  によって呼び出されます[DoVerbOpen](#doverbopen)コントロールを開いた後に別のウィンドウで編集するためです。  
   
 ```
@@ -523,7 +518,7 @@ HRESULT OnPostVerbOpen();
 ### <a name="remarks"></a>コメント  
  コントロールを開いた後に別のウィンドウで編集するために実行するコードでこのメソッドをオーバーライドします。  
   
-##  <a name="onpostverbshow"></a>IOleObjectImpl::OnPostVerbShow  
+##  <a name="onpostverbshow"></a>  IOleObjectImpl::OnPostVerbShow  
  によって呼び出されます[DoVerbShow](#doverbshow)コントロールが行われて表示されます。  
   
 ```
@@ -536,7 +531,7 @@ HRESULT OnPostVerbShow();
 ### <a name="remarks"></a>コメント  
  コントロールが表示される後に実行するコードでこのメソッドをオーバーライドします。  
   
-##  <a name="onpostverbuiactivate"></a>IOleObjectImpl::OnPostVerbUIActivate  
+##  <a name="onpostverbuiactivate"></a>  IOleObjectImpl::OnPostVerbUIActivate  
  によって呼び出されます[DoVerbUIActivate](#doverbuiactivate)コントロールのユーザー インターフェイスが起動された後です。  
   
 ```
@@ -549,7 +544,7 @@ HRESULT OnPostVerbUIActivate();
 ### <a name="remarks"></a>コメント  
  コントロールのユーザー インターフェイスがアクティブ化した後に実行するコードでこのメソッドをオーバーライドします。  
   
-##  <a name="onpreverbdiscardundo"></a>IOleObjectImpl::OnPreVerbDiscardUndo  
+##  <a name="onpreverbdiscardundo"></a>  IOleObjectImpl::OnPreVerbDiscardUndo  
  によって呼び出されます[アンドゥ](#doverbdiscardundo)が元に戻す前に、状態は破棄されます。  
   
 ```
@@ -562,7 +557,7 @@ HRESULT OnPreVerbDiscardUndo();
 ### <a name="remarks"></a>コメント  
  元に戻す状態が破棄されることを防ぐために、エラーの hresult 値を返すには、このメソッドをオーバーライドします。  
   
-##  <a name="onpreverbhide"></a>IOleObjectImpl::OnPreVerbHide  
+##  <a name="onpreverbhide"></a>  IOleObjectImpl::OnPreVerbHide  
  によって呼び出されます[DoVerbHide](#doverbhide)コントロールが非表示にします。  
   
 ```
@@ -575,7 +570,7 @@ HRESULT OnPreVerbHide();
 ### <a name="remarks"></a>コメント  
  コントロールが非表示にされていることを防ぐために、エラーの hresult 値を返すには、このメソッドをオーバーライドします。  
   
-##  <a name="onpreverbinplaceactivate"></a>IOleObjectImpl::OnPreVerbInPlaceActivate  
+##  <a name="onpreverbinplaceactivate"></a>  IOleObjectImpl::OnPreVerbInPlaceActivate  
  によって呼び出されます[埋め込み](#doverbinplaceactivate)場所でコントロールがアクティブ化する前にします。  
   
 ```
@@ -588,7 +583,7 @@ HRESULT OnPreVerbInPlaceActivate();
 ### <a name="remarks"></a>コメント  
  コントロールがインプレース アクティブ化されていることを防ぐために、エラーの hresult 値を返すには、このメソッドをオーバーライドします。  
   
-##  <a name="onpreverbopen"></a>IOleObjectImpl::OnPreVerbOpen  
+##  <a name="onpreverbopen"></a>  IOleObjectImpl::OnPreVerbOpen  
  によって呼び出されます[DoVerbOpen](#doverbopen)コントロールを別のウィンドウで編集用に開く前にします。  
   
 ```
@@ -601,7 +596,7 @@ HRESULT OnPreVerbOpen();
 ### <a name="remarks"></a>コメント  
  コントロールが別のウィンドウで編集するために開かれるようにするのには、エラーの hresult 値を返すには、このメソッドをオーバーライドします。  
   
-##  <a name="onpreverbshow"></a>IOleObjectImpl::OnPreVerbShow  
+##  <a name="onpreverbshow"></a>  IOleObjectImpl::OnPreVerbShow  
  によって呼び出されます[DoVerbShow](#doverbshow)コントロールが表示される前にします。  
   
 ```
@@ -614,7 +609,7 @@ HRESULT OnPreVerbShow();
 ### <a name="remarks"></a>コメント  
  コントロールが認識されるようにするのには、エラー HRESULT を返すには、このメソッドをオーバーライドします。  
   
-##  <a name="onpreverbuiactivate"></a>IOleObjectImpl::OnPreVerbUIActivate  
+##  <a name="onpreverbuiactivate"></a>  IOleObjectImpl::OnPreVerbUIActivate  
  によって呼び出されます[DoVerbUIActivate](#doverbuiactivate)コントロールのユーザー インターフェイスがアクティブ化する前にします。  
   
 ```
@@ -627,7 +622,7 @@ HRESULT OnPreVerbUIActivate();
 ### <a name="remarks"></a>コメント  
  コントロールのユーザー インターフェイスがアクティブ化されていることを防ぐために、エラーの hresult 値を返すには、このメソッドをオーバーライドします。  
   
-##  <a name="setclientsite"></a>IOleObjectImpl::SetClientSite  
+##  <a name="setclientsite"></a>  IOleObjectImpl::SetClientSite  
  コンテナー内のクライアント サイトのコントロールに指示します。  
   
 ```
@@ -639,7 +634,7 @@ STDMETHOD(SetClientSite)(IOleClientSite* pClientSite);
   
  参照してください[IOleObject::SetClientSite](http://msdn.microsoft.com/library/windows/desktop/ms684013) Windows SDK にします。  
   
-##  <a name="setcolorscheme"></a>IOleObjectImpl::SetColorScheme  
+##  <a name="setcolorscheme"></a>  IOleObjectImpl::SetColorScheme  
  存在する場合は、画面の配色、コントロールのアプリケーションをお勧めします。  
   
 ```
@@ -652,7 +647,7 @@ STDMETHOD(SetColorScheme)(LOGPALETTE* /* pLogPal */);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::SetColorScheme](http://msdn.microsoft.com/library/windows/desktop/ms683971) Windows SDK にします。  
   
-##  <a name="setextent"></a>IOleObjectImpl::SetExtent  
+##  <a name="setextent"></a>  IOleObjectImpl::SetExtent  
  コントロールの表示領域の範囲を設定します。  
   
 ```
@@ -670,7 +665,7 @@ STDMETHOD(SetExtent)(
   
  参照してください[IOleObject::SetExtent](http://msdn.microsoft.com/library/windows/desktop/ms694330) Windows SDK にします。  
   
-##  <a name="sethostnames"></a>IOleObjectImpl::SetHostNames  
+##  <a name="sethostnames"></a>  IOleObjectImpl::SetHostNames  
  アプリケーションのコンテナーおよびコンテナー ドキュメントの名前をコントロールに指示します。  
   
 ```
@@ -683,7 +678,7 @@ STDMETHOD(SetHostNames)(LPCOLESTR /* szContainerApp */, LPCOLESTR /* szContainer
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::SetHostNames](http://msdn.microsoft.com/library/windows/desktop/ms680642) Windows SDK にします。  
   
-##  <a name="setmoniker"></a>IOleObjectImpl::SetMoniker  
+##  <a name="setmoniker"></a>  IOleObjectImpl::SetMoniker  
  そのモニカーをコントロールに指示します。  
   
 ```
@@ -698,7 +693,7 @@ STDMETHOD(SetMoniker)(
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::SetMoniker](http://msdn.microsoft.com/library/windows/desktop/ms679671) Windows SDK にします。  
   
-##  <a name="unadvise"></a>IOleObjectImpl::Unadvise  
+##  <a name="unadvise"></a>  IOleObjectImpl::Unadvise  
  コントロールのクラスに格納されているアドバイザリ コネクションを削除`m_spOleAdviseHolder`データ メンバーです。  
   
 ```
@@ -708,7 +703,7 @@ STDMETHOD(Unadvise)(DWORD dwConnection);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::Unadvise](http://msdn.microsoft.com/library/windows/desktop/ms693749) Windows SDK にします。  
   
-##  <a name="update"></a>IOleObjectImpl::Update  
+##  <a name="update"></a>  IOleObjectImpl::Update  
  コントロールを更新します。  
   
 ```
@@ -721,7 +716,7 @@ STDMETHOD(Update)(void);
 ### <a name="remarks"></a>コメント  
  参照してください[IOleObject::Update](http://msdn.microsoft.com/library/windows/desktop/ms679699) Windows SDK にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CComControl クラス](../../atl/reference/ccomcontrol-class.md)   
  [ActiveX コントロールのインターフェイス](http://msdn.microsoft.com/library/windows/desktop/ms692724)   
  [クラスの概要](../../atl/atl-class-overview.md)

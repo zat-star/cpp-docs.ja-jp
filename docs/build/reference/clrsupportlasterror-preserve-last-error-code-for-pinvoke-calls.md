@@ -2,12 +2,9 @@
 title: -CLRSUPPORTLASTERROR (Preserve 最終エラー コードの PInvoke 呼び出し) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /CLRSUPPORTLASTERROR
 dev_langs:
@@ -16,20 +13,18 @@ helpviewer_keywords:
 - /CLRSUPPORTLASTERROR linker option
 - -CLRSUPPORTLASTERROR linker option
 ms.assetid: b7057990-4154-4b1d-9fc9-6236f7be7575
-caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e082637e25832c5c5036910f7b67aff53d867bdb
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 297414aa71e9d871da795c2ffe567573237c7e0e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="clrsupportlasterror-preserve-last-error-code-for-pinvoke-calls"></a>/CLRSUPPORTLASTERROR (PInvoke 呼び出しの最終エラー コードの保持)
-**/CLRSUPPORTLASTERROR**、既定でオンになっている、DLL 内のコードからネイティブ関数を呼び出すことができる P/invoke 機構を通じて呼び出された関数の最後のエラー コードを保持してコンパイルした**/clr**です。  
+**/CLRSUPPORTLASTERROR**、既定でオンになっている、DLL 内のコードからネイティブ関数を呼び出すことができる P/invoke 機構を通じて呼び出された関数の最後のエラー コードを保持してコンパイルした **/clr**です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -38,9 +33,9 @@ ms.lasthandoff: 12/21/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- 最後のエラー コードを保持するには、パフォーマンスの低下が含まれます。  最後のエラー コードを維持するためのパフォーマンスに与える影響が発生しないようにする場合とリンク**/CLRSUPPORTLASTERROR:NO**です。  
+ 最後のエラー コードを保持するには、パフォーマンスの低下が含まれます。  最後のエラー コードを維持するためのパフォーマンスに与える影響が発生しないようにする場合とリンク **/CLRSUPPORTLASTERROR:NO**です。  
   
- リンクして、パフォーマンスに与える影響を最小限に抑えることができます**/CLRSUPPORTLASTERROR:SYSTEMDLL**、システム Dll の関数の最後のエラー コードだけが保護されます。  システム DLL は、次のいずれかとして定義されます。  
+ リンクして、パフォーマンスに与える影響を最小限に抑えることができます **/CLRSUPPORTLASTERROR:SYSTEMDLL**、システム Dll の関数の最後のエラー コードだけが保護されます。  システム DLL は、次のいずれかとして定義されます。  
   
 |||||  
 |-|-|-|-|  
@@ -109,7 +104,7 @@ __declspec(dllexport) double MySqrt(__int64 n) {
 ```  
   
 ## <a name="example"></a>例  
- 次の例を使用する方法を示す、DLL を消費する**/CLRSUPPORTLASTERROR**です。  
+ 次の例を使用する方法を示す、DLL を消費する **/CLRSUPPORTLASTERROR**です。  
   
 ```  
 // CLRSUPPORTLASTERROR_client.cpp  
@@ -160,6 +155,6 @@ GetLastError for application call failed (127).
 GetLastError for system call succeeded (183).  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

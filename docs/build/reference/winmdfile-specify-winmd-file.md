@@ -1,29 +1,24 @@
 ---
-title: "WINMDFILE (winmd ファイルの指定) |Microsoft ドキュメント"
-ms.custom: 
+title: WINMDFILE (winmd ファイルの指定) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCLinkerTool.GenerateWindowsMetadataFile
 dev_langs:
 - C++
 ms.assetid: 062b41b3-14d6-432c-a361-fdb66e918931
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 153e5c0bd42b6fdba59e309483f25f09b86fe9fa
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4eaf1bfc805db568a012c28d66361bbd99745a95
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="winmdfile-specify-winmd-file"></a>/WINMDFILE (winmd ファイルの指定)
 によって生成される Windows ランタイム メタデータ (.winmd) 出力ファイルのファイル名を指定します、 [/WINMD](../../build/reference/winmd-generate-windows-metadata.md)リンカー オプション。  
@@ -45,7 +40,7 @@ ms.lasthandoff: 12/21/2017
   
 4.  **Windows メタデータ ファイル**ボックスに、ファイルの場所を入力します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [/WINMD (Windows メタデータの生成)](../../build/reference/winmd-generate-windows-metadata.md)   
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

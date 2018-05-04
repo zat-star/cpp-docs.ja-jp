@@ -1,12 +1,9 @@
 ---
-title: "CHeapPtrList クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CHeapPtrList クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CHeapPtrList
@@ -17,17 +14,15 @@ dev_langs:
 helpviewer_keywords:
 - CHeapPtrList class
 ms.assetid: cc70e585-362a-4007-81db-c705eb181226
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bda8c44142425e93792648cbbf07f5dd5e0bdb47
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: dc5b164fda27775a7b3fb272d8718c31815cb1ca
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cheapptrlist-class"></a>CHeapPtrList クラス
 このクラスは、ヒープのポインターのリストを構築するときに役立つメソッドを提供します。  
@@ -67,10 +62,10 @@ class CHeapPtrList
   
  `CHeapPtrList`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
-##  <a name="cheapptrlist"></a>CHeapPtrList::CHeapPtrList  
+##  <a name="cheapptrlist"></a>  CHeapPtrList::CHeapPtrList  
  コンストラクターです。  
   
 ```
@@ -84,7 +79,7 @@ CHeapPtrList(UINT nBlockSize = 10) throw();
 ### <a name="remarks"></a>コメント  
  ブロック サイズは、新しい要素が必要な場合に割り当てられたメモリの量の測定です。 ブロック サイズを大きくはメモリ割り当てルーチンに呼び出しを減らすことより多くのリソースを使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CAtlList クラス](../../atl/reference/catllist-class.md)   
  [CHeapPtr クラス](../../atl/reference/cheapptr-class.md)   
  [CHeapPtrElementTraits クラス](../../atl/reference/cheapptrelementtraits-class.md)   

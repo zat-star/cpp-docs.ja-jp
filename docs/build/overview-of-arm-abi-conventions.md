@@ -1,27 +1,22 @@
 ---
-title: "ARM ABI 規則の概要 |Microsoft ドキュメント"
-ms.custom: 
+title: ARM ABI 規則の概要 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 23f4ae8c-3148-4657-8c47-e933a9f387de
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 073fe113c1915913d06a63c7feabcb7808896188
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: f78e5731e6c8d4125fb8afc184cd6e4f2a74cb7a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="overview-of-arm-abi-conventions"></a>ARM ABI 規則の概要
 ARM プロセッサ上の Windows 用にコンパイルされたコードのアプリケーション バイナリ インターフェイス (ABI) は、標準の ARM EABI に基づいています。 この記事では、ARM 上の Windows と標準との主な相違点を取り上げています。 標準の ARM EABI の詳細については、次を参照してください。[用のアプリケーション バイナリ インターフェイス (ABI)、ARM アーキテクチャ](http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.subset.swdev.abi/index.html)です。  
@@ -214,6 +209,6 @@ ARM プロセッサ上の Windows 用にコンパイルされたコードのア�
   
  カウンターはクロックではなく真のサイクル カウンターであるため、カウント周波数はプロセッサ周波数に従って変化します。 経過したクロック時間を測定する場合は、`QueryPerformanceCounter` を使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [一般的な Visual C ARM の移行に関する問題](../build/common-visual-cpp-arm-migration-issues.md)   
  [ARM 例外処理](../build/arm-exception-handling.md)

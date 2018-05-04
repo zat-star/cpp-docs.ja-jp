@@ -2,26 +2,21 @@
 title: パラメーターの引き渡し |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: e838ee5f-c2fe-40b0-9a23-8023c949c820
-caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0359a6cbbb1f646432b03722cdf4ba3010cffa72
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5ec0c5b6fe00430c8b08fefdd8781b677004085e
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="parameter-passing"></a>パラメーターの引き渡し
 最初の 4 つの整数引数は、レジスタに渡されます。 整数値は、RCX、RDX、R8、R9 で (左右からの順序) で渡されます。 引数 5 以上、スタックに渡されます。 すべての引数はレジスタ内で右揃えがします。 場合、呼び出し先は、レジスタの上位ビットを無視できますので、これを行う必要があり、レジスタの必要な部分のみアクセスできます。  
@@ -72,5 +67,5 @@ func4(__m64 a, _m128 b, struct c, float d);
 // a in RCX, ptr to b in RDX, ptr to c in R8, d in XMM3  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [呼び出し規則](../build/calling-convention.md)

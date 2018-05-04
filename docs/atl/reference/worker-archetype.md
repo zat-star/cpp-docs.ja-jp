@@ -1,29 +1,24 @@
 ---
-title: "ワーカー原型 |Microsoft ドキュメント"
-ms.custom: 
+title: ワーカー原型 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - Worker archetype
 ms.assetid: 834145cd-09d3-4149-bc99-620e1871cbfb
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 44f275568df9b4f8200a3fac1d77520bab38e8d1
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 42ff0e71e15c70d8d5d9dee0b398d4f0c075eb47
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="worker-archetype"></a>ワーカー原型
 準拠するクラス、*ワーカー*原型がスレッド プールのキューに作業アイテムを処理するコードを提供します。  
@@ -63,7 +58,7 @@ ms.lasthandoff: 12/21/2017
 |*ワーカー*|[CThreadPool](../../atl/reference/cthreadpool-class.md)|  
 |*ワーカー*|[CNonStatelessWorker](../../atl/reference/cnonstatelessworker-class.md)|  
   
-### <a name="requirements"></a>必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** atlutil.h  
   
 ## <a name="execute"></a>WorkerArchetype::Execute
@@ -88,7 +83,7 @@ void Execute(
  `pOverlapped`  
  ポインター、 [OVERLAPPED](http://msdn.microsoft.com/library/windows/desktop/ms684342)構造体のどの作業項目がキューに入れ、キューを作成するために使用します。  
   
-## <a name="initialize"></a>WorkerArchetype::Initialize
+## <a name="initialize"></a> WorkerArchetype::Initialize
 すべての要求に渡される前にワーカー オブジェクトを初期化するために呼び出されます`WorkerArchetype::Execute`です。  
 ```
 BOOL Initialize(void* pvParam) throw();
@@ -101,7 +96,7 @@ BOOL Initialize(void* pvParam) throw();
 ### <a name="return-value"></a>戻り値  
  返す**TRUE**成功した場合、 **FALSE**エラー発生時にします。  
   
-## <a name="requesttype"></a>WorkerArchetype::RequestType
+## <a name="requesttype"></a> WorkerArchetype::RequestType
 ワーカー クラスによって処理できる作業項目の種類の typedef。  
   
 ```  
@@ -111,7 +106,7 @@ typedef MyRequestType RequestType;
 ### <a name="remarks"></a>コメント  
  この型は、の最初のパラメーターとして使用する必要があります`WorkerArchetype::Execute`ULONG_PTR からキャストできる必要があるとします。  
   
-## <a name="terminate"></a>WorkerArchetype::Terminate
+## <a name="terminate"></a> WorkerArchetype::Terminate
 初期化ワーカー オブジェクトのすべての要求に渡された後に呼び出された`WorkerArchetype::Execute`)。  
     
 ``` 
@@ -122,7 +117,7 @@ void Terminate(void* pvParam) throw();
  `pvParam`  
  Worker クラスで認識されるカスタム パラメーターです。 渡されるも`WorkerArchetype::Initialize`と`WorkerArchetype::Execute`です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [原型](../../atl/reference/atl-archetypes.md)   
  [概念](../../atl/active-template-library-atl-concepts.md)   
  [ATL COM デスクトップ コンポーネント](../../atl/atl-com-desktop-components.md)

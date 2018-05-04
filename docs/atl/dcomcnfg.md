@@ -1,13 +1,10 @@
 ---
-title: "DCOMCNFG |Microsoft ドキュメント"
-ms.custom: 
+title: DCOMCNFG |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 f1_keywords:
 - DCOMCNFG
 dev_langs:
@@ -16,17 +13,15 @@ helpviewer_keywords:
 - DCOMCNFG utility
 - DCOM, configuring in ATL
 ms.assetid: 5a8126e9-ef27-40fb-a66e-9dce8d1a7e80
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: f40b372666ba2b623450eb0e58a6c0ff372559ec
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5a165102294f9f39d25f0c3118251382ecab067b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="dcomcnfg"></a>DCOMCNFG
 **DCOMCNFG** Windows NT 4.0 ユーティリティで、レジストリで DCOM に固有のさまざまな設定を構成することができます。 **DCOMCNFG**ウィンドウが 3 つのページ: 既定のセキュリティ、既定のプロパティ、およびアプリケーションです。 Windows 2000 では、4 番目のページであり、既定のプロトコルが存在します。  
@@ -53,6 +48,6 @@ ms.lasthandoff: 12/21/2017
   
 -   [エンドポイント] ページには、プロトコルとの DCOM サーバーを選択したクライアントで使用可能なエンドポイントのセットが一覧表示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービス](../atl/atl-services.md)
 

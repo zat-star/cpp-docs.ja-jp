@@ -1,11 +1,10 @@
 ---
-title: "コンパイラおよびリンカーでの Unicode サポート |Microsoft ドキュメント"
-ms.custom: 
+title: コンパイラおよびリンカーでの Unicode サポート |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 12/15/2017
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCLinkerTool.UseUnicodeResponseFiles
 - VC.Project.VCLibrarianTool.UseUnicodeResponseFiles
@@ -17,14 +16,13 @@ helpviewer_keywords:
 - Unicode, Visual C++
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: fe775a53914089648a868a94aa2c863ee87790c5
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ec0b84cd62f3fcca378ab55de16006925e685b37
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="unicode-support-in-the-compiler-and-linker"></a>コンパイラおよびリンカーでの Unicode のサポート
 
@@ -56,7 +54,7 @@ Unicode は、次のエンコーディングのソース コード ファイル�
 
 ## <a name="asm-and-cod-dumps"></a>.asm ダンプおよび .cod ダンプ
 
-.asm ダンプおよび .cod ダンプは、MASM との互換性のために、既定で ANSI になっています。 使用して[/FAu](../../build/reference/fa-fa-listing-file.md) utf-8 を出力します。 指定した場合**/FAs**、混在したソースが直接は印刷だけされ、ソース コードが utf-8 を指定しなかった場合の例については、文字化けして見えます**/FAsu**です。
+.asm ダンプおよび .cod ダンプは、MASM との互換性のために、既定で ANSI になっています。 使用して[/FAu](../../build/reference/fa-fa-listing-file.md) utf-8 を出力します。 指定した場合 **/FAs**、混在したソースが直接は印刷だけされ、ソース コードが utf-8 を指定しなかった場合の例については、文字化けして見えます **/FAsu**です。
 
 ## <a name="see-also"></a>関連項目
 

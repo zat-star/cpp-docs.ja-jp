@@ -2,11 +2,8 @@
 title: fopen、_wfopen | Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _wfopen
@@ -41,17 +38,15 @@ helpviewer_keywords:
 - files [C++], opening
 - fopen function
 ms.assetid: e868993f-738c-4920-b5e4-d8f2f41f933d
-caps.latest.revision: 56
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bb44d99d635891561c4b73d87e737ea594b0b05f
-ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
+ms.openlocfilehash: 3b606f168448f833a8e244ad35e52faf4f0afd75
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="fopen-wfopen"></a>fopen、_wfopen
 
@@ -153,7 +148,7 @@ Unicode モードで書き込むように開かれたファイルには、自動
 
 テキスト モードでは、CTRL + Z は入力時に EOF 文字として解釈されます。 ファイルが開かれるを使用して読み取り/書き込みで**「a +」**、 **fopen**ファイルの末尾に CTRL + Z が確認され、可能な場合、それを削除します。 これを使用して、 [fseek](fseek-fseeki64.md)と**ftell**原因となる CTRL + Z で終わるファイル内で移動する[fseek](fseek-fseeki64.md)が正しく、ファイルの末尾付近に動作しません。
 
-テキスト モードでは、復帰と改行の組み合わせは、入力、1 つの改行に変換し、ライン フィード文字は出力時に復帰と改行の組み合わせに変換します。 Unicode のストリーム入出力関数が既定のテキスト モードで動作すると、入力元または出力先のストリームはマルチバイト文字のシーケンスと仮定されます。 Unicode ストリーム入力関数がそのため、マルチバイト文字をワイド文字に変換 (への呼び出しを場合と同様、 **mbtowc**関数)。 同じ理由から、Unicode ストリーム出力関数はマルチバイト文字をワイド文字を変換 (への呼び出しを場合と同様、 **wctomb**関数)。
+テキスト モードでは、復帰と改行の組み合わせは、入力、1 つの改行に変換し、ライン フィード文字は出力時に復帰と改行の組み合わせに変換します。 Unicode のストリーム入出力関数が既定のテキスト モードで動作すると、入力元または出力先のストリームはマルチバイト文字のシーケンスと仮定されます。 このため、Unicode ストリーム入力関数はマルチバイト文字をワイド文字に変換し、 **mbtowc** 関数を呼び出した場合と同様の効果を得ます。 同様の理由で、Unicode ストリーム出力関数は、 **wctomb** 関数が呼び出されたかのように、ワイド文字をマルチバイト文字に変換します。
 
 場合**t**または**b**には、指定しない*モード*、既定の変換モードがグローバル変数によって定義されている[_fmode](../../c-runtime-library/fmode.md)です。 場合**t**または**b**は先頭に、引数、関数が失敗して返します**NULL**です。
 

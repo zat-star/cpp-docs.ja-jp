@@ -1,27 +1,22 @@
 ---
-title: "アンワインド プロシージャ |Microsoft ドキュメント"
-ms.custom: 
+title: アンワインド プロシージャ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 82c5d0ca-70be-4d1a-a306-bfe01c29159f
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8b8caa2be1528c26cf374637f3d0357847721de9
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 5e2a5af5d8db5974aa10595bbd3bac1cd032a0f4
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="unwind-procedure"></a>アンワインド プロシージャ
 アンワインド コード配列は、降順に並べ替えられます。 例外が発生する場合は、完全なコンテキストがコンテキスト レコードのオペレーティング システムで格納されます。 例外のディスパッチ ロジックが呼び出され、例外ハンドラーを検索する次の手順を繰り返し実行します。  
@@ -46,5 +41,5 @@ ms.lasthandoff: 12/21/2017
   
  最小セットのアンワインド データは 8 バイトです。 これでのみ以下の場合、またはスタックの 128 バイトを割り当て、可能性のある 1 つの不揮発性レジスタを保存して関数を表します。 これは、チェーンのサイズもアンワインド コードを持たないで長さ 0 のプロローグのアンワインド情報。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [例外処理 (x64)](../build/exception-handling-x64.md)

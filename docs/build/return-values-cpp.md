@@ -1,27 +1,22 @@
 ---
-title: "戻り値 (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: 戻り値 (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 53583524-b337-4228-a9c6-c9bf516babe8
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cdd02ab9c30e641ba7389923062f46dbbed534ec
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: ec5097ab22ff82883117b6d224bce9c282ac9c8a
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="return-values-c"></a>戻り値 (C++)
 64 ビットに収まるスカラー戻り値は、RAX (__m64 型を含む) を通じて返されます。 非スカラー型の浮動小数点値、2 倍になり、およびなどのベクトルの型を含む[_ _m128](../cpp/m128.md)、 [_ _m128i](../cpp/m128i.md)、 [_ _m128d](../cpp/m128d.md) XMM0 で返されます。 RAX や XMM0 で返される値の未使用ビットの状態は未定義です。  
@@ -69,5 +64,5 @@ Struct2 func4(int a, double b, int c, float d);
 // callee returns Struct2 result by value in RAX.  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [呼び出し規則](../build/calling-convention.md)

@@ -1,12 +1,12 @@
 ---
-title: "[リンカー] プロパティ ページ |Microsoft ドキュメント"
-ms.custom: 
+title: '[リンカー] プロパティ ページ |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/21/2017
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - cpp-ide
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VC.Project.VCLinkerTool.RegisterOutput
@@ -19,17 +19,17 @@ helpviewer_keywords:
 - per-user redirection
 - Linker property pages
 ms.assetid: 7e7671e5-a35a-4e67-9bdb-661d75c4d11e
-caps.latest.revision: 
+caps.latest.revision: 13
 author: mikeblome
 ms.author: mblome
 manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1b8a1d0d4775955ee55aa0f40ac10a75cda54379
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 31b44b6711153d29ab6a9c542a6e5677e6279432
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="linker-property-pages"></a>リンカー プロパティ ページ
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 12/21/2017
 
 ### <a name="per-user-redirection"></a>[ユーザーごとのリダイレクト]
 
-Visual Studio での登録には、HKEY_CLASSES_ROOT (HKCR) で処理が行っていました。 [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)]、Visual Studio を管理者特権モードで実行する必要があります HKCR にアクセスします。 開発者は常にシステム特権のあるモードで実行するわけではありませんが、登録を処理する必要があります。 ユーザーごとのリダイレクトにより、このモードで実行せずに登録を行うことができるようになります。
+Visual Studio での登録には、HKEY_CLASSES_ROOT (HKCR) で処理が行っていました。 HKCR にアクセスすると、Windows Vista 以降のオペレーティング システムに管理者特権モードで Visual Studio を実行する必要があります。 開発者は常にシステム特権のあるモードで実行するわけではありませんが、登録を処理する必要があります。 ユーザーごとのリダイレクトにより、このモードで実行せずに登録を行うことができるようになります。
 
 ユーザーごとのリダイレクトでは、すべての書き込みを強制的に HKEY にリダイレクトする HKCR\_現在\_ユーザー (HKCU)。 ユーザーごとのリダイレクトを無効にすると、発生する可能性が[プロジェクト ビルド エラー PRJ0050](../error-messages/tool-errors/project-build-error-prj0050.md) HKCR への書き込みが開始するとき、プログラムです。
 

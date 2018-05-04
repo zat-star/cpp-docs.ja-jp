@@ -2,12 +2,9 @@
 title: -MD、-MT、%LD (ランタイム ライブラリの使用) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /ld
 - /mt
@@ -44,17 +41,15 @@ helpviewer_keywords:
 - LIBCMTD.lib
 - -MT compiler option [C++]
 ms.assetid: cf7ed652-dc3a-49b3-aab9-ad60e5395579
-caps.latest.revision: 19
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4b54a6aac55554cd7bd4698762779e540c4bc4c4
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3b6fc814c1c2b0630a99cdaa19601be25c861580
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="md-mt-ld-use-run-time-library"></a>/MD、/MT、/LD (ランタイム ライブラリの使用)
 マルチスレッド モジュールが DLL であるかどうかを指定し、ランタイム ライブラリのリテール バージョンまたはデバッグ バージョンを指定します。  
@@ -75,8 +70,8 @@ ms.lasthandoff: 12/21/2017
 |**/MDd**|`_DEBUG`、`_MT`、および `_DLL` を定義します。アプリケーションで、マルチスレッド対応バージョンおよび DLL 対応バージョンのランタイム ライブラリが使用されます。 また、コンパイラによって、ライブラリ名 MSVCRTD.lib が .obj ファイルに挿入されます。|  
 |**/MT**|アプリケーションで、マルチスレッド バージョンの静的なランタイム ライブラリが使用されます。 `_MT` を定義します。また、コンパイラにライブラリ名 LIBCMT.lib を .obj ファイルに挿入させるため、リンカーは LIBCMT.lib を使って外部シンボルを解決します。|  
 |**/MTd**|`_DEBUG` および `_MT` を定義します。 このオプションによって、リンカーが LIBCMTD.lib を使用して外部シンボルを解決できるように、コンパイラによりライブラリ名 LIBCMTD.lib が .obj ファイルに挿入されます。|  
-|**/LD**|DLL を作成します。<br /><br /> パス、 **/DLL**リンカーにオプションです。 リンカーは `DllMain` 関数の有無を確認します。 `DllMain` 関数が記述されていないと、TRUE を返す `DllMain` 関数がリンク時に自動的に挿入されます。<br /><br /> DLL の起動コードをリンクします。<br /><br /> コマンド ラインでエクスポート (.exp) ファイルが指定されていない場合は、インポート ライブラリ (.lib) を作成します。 このインポート ライブラリを、DLL を呼び出すアプリケーションにリンクしてください。<br /><br /> 解釈[/Fe (EXE ファイルの名前)](../../build/reference/fe-name-exe-file.md) .exe ファイルではなく、DLL の名前付けとします。 既定では、プログラム名になります*basename*の代わりに .dll *basename*.exe です。<br /><br /> 意味**/MT**明示的に指定する場合を除き、 **/MD**です。|  
-|**/Ldd**|デバッグ DLL を作成します。 `_MT` および `_DEBUG` を定義します。|  
+|**/LD**|DLL を作成します。<br /><br /> パス、 **/DLL**リンカーにオプションです。 リンカーは `DllMain` 関数の有無を確認します。 `DllMain` 関数が記述されていないと、TRUE を返す `DllMain` 関数がリンク時に自動的に挿入されます。<br /><br /> DLL の起動コードをリンクします。<br /><br /> コマンド ラインでエクスポート (.exp) ファイルが指定されていない場合は、インポート ライブラリ (.lib) を作成します。 このインポート ライブラリを、DLL を呼び出すアプリケーションにリンクしてください。<br /><br /> 解釈[/Fe (EXE ファイルの名前)](../../build/reference/fe-name-exe-file.md) .exe ファイルではなく、DLL の名前付けとします。 既定では、プログラム名になります*basename*の代わりに .dll *basename*.exe です。<br /><br /> 意味 **/MT**明示的に指定する場合を除き、 **/MD**です。|  
+|**/LDd**|デバッグ DLL を作成します。 `_MT` および `_DEBUG` を定義します。|  
   
  C ランタイム ライブラリとでコンパイルするときに使用するライブラリの詳細については[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)を参照してください[CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)します。  
   
@@ -92,7 +87,7 @@ ms.lasthandoff: 12/21/2017
   
 1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  展開して、 **C/C++**フォルダーです。  
+2.  展開して、 **C/C++** フォルダーです。  
   
 3.  選択、**コード生成**プロパティ ページ。  
   
@@ -102,6 +97,6 @@ ms.lasthandoff: 12/21/2017
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.RuntimeLibrary%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

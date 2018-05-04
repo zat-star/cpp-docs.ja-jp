@@ -1,13 +1,10 @@
 ---
-title: "-H (外部名の長さに制限) |Microsoft ドキュメント"
-ms.custom: 
+title: -H (外部名の長さに制限) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /h
 dev_langs:
@@ -19,20 +16,18 @@ helpviewer_keywords:
 - external names
 - -H compiler option [C++]
 ms.assetid: de701dd3-ed04-4c88-8195-960d2520ec2e
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4d5e862eb8e45d1f2558592c0bb54c1adb9305f7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 0859c6770da56023df7ba7ba24094bea2e889319
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="h-restrict-length-of-external-names"></a>/H (外部名の長さの制限)
-使用しないでください。 外部名の長さを制限します。  
+非推奨。 外部名の長さを制限します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -45,9 +40,9 @@ ms.lasthandoff: 12/21/2017
  プログラムで許可された外部名の最大長を指定します。  
   
 ## <a name="remarks"></a>コメント  
- 既定は、外部 (パブリック) 名の長さは 2,047 文字です。 これは、C および C++ プログラムの場合は true です。 使用して**/H**のみ識別子の最大許容長を減らすことができます、長くはできません。 間にスペース**/H**と`number`は省略可能です。  
+ 既定は、外部 (パブリック) 名の長さは 2,047 文字です。 これは、C および C++ プログラムの場合は true です。 使用して **/H**のみ識別子の最大許容長を減らすことができます、長くはできません。 間にスペース **/H**と`number`は省略可能です。  
   
- プログラムより長い外部の名前が含まれている場合`number`、余分な文字は無視されます。 せずにプログラムをコンパイルする場合**/H**識別子に複数の 2,047 文字が含まれている場合、コンパイラが生成および[致命的なエラー C1064](../../error-messages/compiler-errors-1/fatal-error-c1064.md)です。  
+ プログラムより長い外部の名前が含まれている場合`number`、余分な文字は無視されます。 せずにプログラムをコンパイルする場合 **/H**識別子に複数の 2,047 文字が含まれている場合、コンパイラが生成および[致命的なエラー C1064](../../error-messages/compiler-errors-1/fatal-error-c1064.md)です。  
   
  長さの制限には、コンパイラが作成した先頭のアンダー スコア (_) が含まれています。 または、アット マーク (@)。 これらの文字は、識別子の一部であるし、意味のある位置を取得します。  
   
@@ -55,7 +50,7 @@ ms.lasthandoff: 12/21/2017
   
 -   コンパイラによって変更された名前を引数のサイズ情報を追加する、`__fastcall`と`__stdcall`呼び出し規約、および C++ の名前に型情報を追加します。  
   
- 検索することがあります**/H**に便利です。  
+ 検索することがあります **/H**に便利です。  
   
 -   混合言語またはポータブル プログラムを作成する場合。  
   
@@ -63,7 +58,7 @@ ms.lasthandoff: 12/21/2017
   
 -   デバッグ ビルドでシンボルを使用する領域の量を制限する場合。  
   
- 次の例に示す方法を使用して**/H**識別子の長さが制限が多すぎる場合はエラーが発生する実際には。  
+ 次の例に示す方法を使用して **/H**識別子の長さが制限が多すぎる場合はエラーが発生する実際には。  
   
 ```cpp  
 // compiler_option_H.cpp  
@@ -79,11 +74,11 @@ void func1(void) {}
 void func2(void) {}  
 ```  
   
- 使用する場合は注意する必要があります、 **/H**コンパイラの定義済みの識別子のためのオプションです。 識別子の最大長が小さすぎる場合、特定済みの識別子が未解決だけでなく特定のライブラリ関数の呼び出しになります。 たとえば場合、`printf`関数が使用されるとオプション**/H5**シンボル、コンパイル時に指定された**_prin**を参照するために作成されます`printf`、これが、見つかりませんライブラリにあります。  
+ 使用する場合は注意する必要があります、 **/H**コンパイラの定義済みの識別子のためのオプションです。 識別子の最大長が小さすぎる場合、特定済みの識別子が未解決だけでなく特定のライブラリ関数の呼び出しになります。 たとえば場合、`printf`関数が使用されるとオプション **/H5**シンボル、コンパイル時に指定された **_prin**を参照するために作成されます`printf`、これが、見つかりませんライブラリにあります。  
   
- 使用**/H**と互換性がありません[/GL (プログラム全体の最適化)](../../build/reference/gl-whole-program-optimization.md)です。  
+ 使用 **/H**と互換性がありません[/GL (プログラム全体の最適化)](../../build/reference/gl-whole-program-optimization.md)です。  
   
- **/H**オプションが Visual Studio 2005 以降使用されなくなりました。 最大長の上限を増やすと**/H**は不要です。 非推奨のコンパイラ オプションの一覧は、次を参照してください。**廃止予定とコンパイラ オプションの削除**で[コンパイラ オプションの一覧をカテゴリ別](../../build/reference/compiler-options-listed-by-category.md)です。  
+ **/H**オプションが Visual Studio 2005 以降使用されなくなりました。 最大長の上限を増やすと **/H**は不要です。 非推奨のコンパイラ オプションの一覧は、次を参照してください。**廃止予定とコンパイラ オプションの削除**で[コンパイラ オプションの一覧をカテゴリ別](../../build/reference/compiler-options-listed-by-category.md)です。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -99,6 +94,6 @@ void func2(void) {}
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

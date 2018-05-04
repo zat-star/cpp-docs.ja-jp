@@ -2,12 +2,9 @@
 title: RTC (実行時エラー チェック) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /rtc
 - VC.Project.VCCLCompilerTool.SmallerTypeCheck
@@ -34,17 +31,15 @@ helpviewer_keywords:
 - RTCc compiler option
 - -RTCc compiler option [C++]
 ms.assetid: 9702c558-412c-4004-acd5-80761f589368
-caps.latest.revision: 18
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8699a96dcd7c04bc1b2707e964afb4b68068147e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: a135c9c4e32ea7a54c45719eff503ff99509d3e7
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="rtc-run-time-error-checks"></a>/RTC (ランタイム エラー チェック)
 組み合わせて、実行時エラー チェック機能を無効にするために使用、 [runtime_checks](../../preprocessor/runtime-checks.md)プラグマ。  
@@ -60,12 +55,12 @@ ms.lasthandoff: 12/21/2017
   
 ## <a name="arguments"></a>引数  
  `1`  
- 等価の**/RTC**`su`です。  
+ 等価の **/RTC**`su`です。  
   
  `c`  
  レポートの値は、小さいデータ型と、データが失われる結果に割り当てられます。 たとえば、値型の場合`short 0x101`型の変数に割り当てられた`char`です。  
   
- このオプションを報告する予定を切り捨てる、たとえば、最初の 8 ビットの場合の状況、`int`として返されます、`char`です。 **/RTC** `c` 、実行時エラーが発生の結果として、実行時エラーを避けるために必要な情報をマスクすることができます、情報が割り当ての結果として失われた場合は、 **/RTC** `c`. 例:  
+ このオプションを報告する予定を切り捨てる、たとえば、最初の 8 ビットの場合の状況、`int`として返されます、`char`です。 **/RTC** `c` 、実行時エラーが発生の結果として、実行時エラーを避けるために必要な情報をマスクすることができます、情報が割り当ての結果として失われた場合は、 **/RTC** `c`. 例えば:  
   
 ```  
 #include <crtdbg.h>  
@@ -92,7 +87,7 @@ int main() {
 -   スタック ポインターの検証は、スタック ポインターの破損を検出します。 スタック ポインターの破損は、呼び出し規約の不一致によって発生することができます。 エクスポートされた DLL に関数を呼び出す関数ポインターを使用して、たとえば、 [_ _stdcall](../../cpp/stdcall.md)として関数へのポインターを宣言するが、 [_ _cdecl](../../cpp/cdecl.md)です。  
   
  `u`  
- 変数を使用してが割り当てられていないことを報告します。 たとえば、ある命令`C4701`下で実行時エラーが生成される場合も**/RTC**`u`です。 任意の命令を生成する[コンパイラの警告 (レベル 1 およびレベル 4) C4700](../../error-messages/compiler-warnings/compiler-warning-level-1-and-level-4-c4700.md)下で実行時エラーが生成される**/RTC**`u`です。  
+ 変数を使用してが割り当てられていないことを報告します。 たとえば、ある命令`C4701`下で実行時エラーが生成される場合も **/RTC**`u`です。 任意の命令を生成する[コンパイラの警告 (レベル 1 およびレベル 4) C4700](../../error-messages/compiler-warnings/compiler-warning-level-1-and-level-4-c4700.md)下で実行時エラーが生成される **/RTC**`u`です。  
   
  ただし、次のコード フラグメントについて考えてみます。  
   
@@ -103,16 +98,16 @@ b = &a;
 c = a;  // No run-time error with /RTCu  
 ```  
   
- 変数が初期化されている可能性がありますが場合に、報告されませんによって実行時に**/RTC**`u`です。 やなどの変数が、ポインターを使用してエイリアス化するとコンパイラはない変数を追跡初期化されていない使用を報告します。 実際には、そのアドレスを取得して変数を初期化することができます。 (& A) と同様にこのような状況で、代入演算子を演算子の動作です。  
+ 変数が初期化されている可能性がありますが場合に、報告されませんによって実行時に **/RTC**`u`です。 やなどの変数が、ポインターを使用してエイリアス化するとコンパイラはない変数を追跡初期化されていない使用を報告します。 実際には、そのアドレスを取得して変数を初期化することができます。 (& A) と同様にこのような状況で、代入演算子を演算子の動作です。  
   
 ## <a name="remarks"></a>コメント  
  実行時エラー チェックは、実行中のコードの問題を見つける方法です。詳細については、次を参照してください。[する方法: を使用してネイティブ ランタイム チェック](/visualstudio/debugger/how-to-use-native-run-time-checks)です。  
   
  いずれかを使用して、コマンドラインでプログラムをコンパイルする場合、 **/RTC**コンパイラ オプション、すべてのプラグマ[最適化](../../preprocessor/optimize.md)コード内の手順は失敗します。 これは、実行時エラー チェックが (最適化) リリース ビルドで有効ではないためです。  
   
- 使用する必要があります**/RTC**は開発ビルドです。**/RTC**製品版をビルドは使用できません。 **/RTC**コンパイラの最適化では使用できません ([/O オプション (コードの最適化)](../../build/reference/o-options-optimize-code.md))。 ビルドされたプログラム イメージ**/RTC**わずかに大きくなりでビルドされたイメージよりも少し遅くなります**/Od** (最大 5% よりも低速、 **/Od**ビルド)。  
+ 使用する必要があります **/RTC**は開発ビルドです。**/RTC**製品版をビルドは使用できません。 **/RTC**コンパイラの最適化では使用できません ([/O オプション (コードの最適化)](../../build/reference/o-options-optimize-code.md))。 ビルドされたプログラム イメージ **/RTC**わずかに大きくなりでビルドされたイメージよりも少し遅くなります **/Od** (最大 5% よりも低速、 **/Od**ビルド)。  
   
- _ _Msvc_runtime_checks プリプロセッサ ディレクティブがいずれかを使用する場合に定義される**/RTC**オプションまたは[/GZ](../../build/reference/gz-enable-stack-frame-run-time-error-checking.md)です。  
+ _ _Msvc_runtime_checks プリプロセッサ ディレクティブがいずれかを使用する場合に定義される **/RTC**オプションまたは[/GZ](../../build/reference/gz-enable-stack-frame-run-time-error-checking.md)です。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -128,7 +123,7 @@ c = a;  // No run-time error with /RTCu
   
 -   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.BasicRuntimeChecks%2A> プロパティおよび <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.SmallerTypeCheck%2A> プロパティを参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [方法 : ネイティブ ランタイム チェックを使用する](/visualstudio/debugger/how-to-use-native-run-time-checks)

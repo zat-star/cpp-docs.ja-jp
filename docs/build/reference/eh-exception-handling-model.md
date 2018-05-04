@@ -1,13 +1,10 @@
 ---
-title: "-EH (例外処理モデル) |Microsoft ドキュメント"
-ms.custom: 
+title: -EH (例外処理モデル) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLWCECompilerTool.ExceptionHandling
 - /eh
@@ -21,17 +18,15 @@ helpviewer_keywords:
 - -EH compiler option [C++]
 - /EH compiler option [C++]
 ms.assetid: 754b916f-d206-4472-b55a-b6f1b0f2cb4d
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1c56020d5013e951d9d43ed799d34641d114d612
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 96b009a9f209ffcc4bb84550c5f37680ef71c9fe
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="eh-exception-handling-model"></a>/EH (例外処理モデル)
 コンパイラで使用される例外処理の種類、例外チェックを最適化して除去するタイミング、および例外が原因でスコープを外れた C++ オブジェクトを破棄するかどうかを指定します。 **/EH** が指定されていない場合、コンパイラは非同期構造化例外と C++ 例外の両方をキャッチしますが、非同期例外の結果としてスコープを外れた C++ オブジェクトを破棄しません。  
@@ -68,7 +63,7 @@ ms.lasthandoff: 12/21/2017
   
  **/EHa** を使用してコンパイルされたオブジェクトと、 **/EHs** を使用してコンパイルされたオブジェクトを、同じ実行可能モジュールでリンクさせることはお勧めできません。 モジュールの任意の場所で **/EHa** を使用して、非同期例外を処理する必要がある場合は、 **/EHa** を使用して、モジュール内のすべてのコードをコンパイルします。 構造化例外処理の構文は、 **/EHs**を使用してコンパイルされたコードと同じモジュールで使用できますが、この SEH 構文と、 `try`、 `throw`、 and `catch` を同じ関数に混在させることはできません。  
   
- 使用して**/EHa**以外の何かによって発生する例外をキャッチする場合、`throw`です。 この例では、構造化例外が生成され、キャッチされます。  
+ 使用して **/EHa**以外の何かによって発生する例外をキャッチする場合、`throw`です。 この例では、構造化例外が生成され、キャッチされます。  
   
 ```cpp  
 // compiler_options_EHA.cpp  
@@ -107,7 +102,7 @@ int main() {
   
  マイナス記号 ( **-**) を使用すると、このオプションをクリアできます。 たとえば、 **/EHsc-** は **/EHs /EHc-** と解釈され、 **/EHs**と等価です。  
   
- **/EHr** コンパイラ オプションは、 `noexcept` 属性を持つすべての関数でのランタイム終了チェックを強制します。 既定では、コンパイラがバックエンドで関数が *スローしない* 関数のみを呼び出すと判断した場合に、ランタイム チェックが最適化され、除去されます。 スローしない関数とは、属性で例外がスローされないことが指定された関数を指します。 これには、 `noexcept`、 `throw()`、 `__declspec(nothrow)`とマークされた関数と、 **/EHc** が指定された場合の `extern "C"` 関数のランタイム終了チェックを常に生成するようにコンパイラに指示します。 スローしない関数には、コンパイラの検査でスローしないと判断された関数も含まれます。 **/EHr-**を使用して明示的に既定に設定することができます。  
+ **/EHr** コンパイラ オプションは、 `noexcept` 属性を持つすべての関数でのランタイム終了チェックを強制します。 既定では、コンパイラがバックエンドで関数が *スローしない* 関数のみを呼び出すと判断した場合に、ランタイム チェックが最適化され、除去されます。 スローしない関数とは、属性で例外がスローされないことが指定された関数を指します。 これには、 `noexcept`、 `throw()`、 `__declspec(nothrow)`とマークされた関数と、 **/EHc** が指定された場合の `extern "C"` 関数のランタイム終了チェックを常に生成するようにコンパイラに指示します。 スローしない関数には、コンパイラの検査でスローしないと判断された関数も含まれます。 **/EHr-** を使用して明示的に既定に設定することができます。  
   
  ただし、スローしない属性は、関数からどの例外もスローされないことを保証するわけではありません。 `noexcept` 関数の動作とは異なり、Visual C++ コンパイラは、 `throw()`、 `__declspec(nothrow)`、または `extern "C"` を使用して宣言された関数からスローされた例外を、未定義の動作と見なします。 この 3 つの宣言属性を使用する関数は、例外のランタイム終了チェックを強制しません。 **/EHr** 関数を回避する未処理例外のランタイム チェックを生成するようにコンパイラに強制することによって、 `noexcept` オプションを使用してこの未定義の動作を識別することができます。  
   
@@ -115,17 +110,17 @@ int main() {
   
 1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  左ウィンドウで、 **[構成プロパティ]**、 **[C/C++]**、 **[コード生成]**の順に展開します。  
+2.  左ウィンドウで、 **[構成プロパティ]**、 **[C/C++]**、 **[コード生成]** の順に展開します。  
   
 3.  **[C++ の例外を有効にする]** プロパティを変更します。  
   
-     または、 **[C++ の例外を有効にする]** を **[いいえ]**に設定してから **[コマンド ライン]** プロパティ ページをクリックし、 **[追加のオプション]** ボックスにコンパイラ オプションを追加します。  
+     または、 **[C++ の例外を有効にする]** を **[いいえ]** に設定してから **[コマンド ライン]** プロパティ ページをクリックし、 **[追加のオプション]** ボックスにコンパイラ オプションを追加します。  
   
 ### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.ExceptionHandling%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [エラーと例外処理](../../cpp/errors-and-exception-handling-modern-cpp.md)   

@@ -1,12 +1,9 @@
 ---
-title: "インライン関数 (C++) |Microsoft ドキュメント"
-ms.custom: 
+title: インライン関数 (C++) |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - __forceinline_cpp
@@ -17,17 +14,15 @@ dev_langs:
 helpviewer_keywords:
 - inline functions [C++], class members
 ms.assetid: 355f120c-2847-4608-ac04-8dda18ffe10c
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: de370d8dbff1f1340539adc825f7f5316c59a468
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 6661996669e454e655d0149f1dbb1df505116469
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="inline-functions-c"></a>インライン関数 (C++)
 クラス宣言の本体で定義される関数はインライン関数です。  
@@ -83,9 +78,9 @@ int main()
   
  インライン関数を使用すると、関数呼び出しに関連するオーバーヘッドが回避されるため、プログラムを高速化できます。 インライン展開される関数は、標準の関数では使用できない、コードの最適化の対象になります。  
   
- インライン展開に関するオプションとキーワードは、インライン展開の対象となる候補をコンパイラに示すだけです。 関数がインライン展開される保証はありません。 また、`__forceinline` キーワードでも、特定の関数のインライン展開を強制することはできません。 コンパイルするときに**/clr**コンパイラがインライン展開されない関数、関数に適用されるセキュリティ属性がある場合。  
+ インライン展開に関するオプションとキーワードは、インライン展開の対象となる候補をコンパイラに示すだけです。 関数がインライン展開される保証はありません。 また、`__forceinline` キーワードでも、特定の関数のインライン展開を強制することはできません。 コンパイルするときに **/clr**コンパイラがインライン展開されない関数、関数に適用されるセキュリティ属性がある場合。  
   
- **インライン**キーワードは C++ でのみ使用できます。 `__inline` キーワードと `__forceinline` キーワードは、C と C++ の両方で使用できます。 以前のバージョンとの互換性のため**_inline**の同意語です`__inline`です。  
+ **インライン**キーワードは C++ でのみ使用できます。 `__inline` キーワードと `__forceinline` キーワードは、C と C++ の両方で使用できます。 以前のバージョンとの互換性のため **_inline**の同意語です`__inline`です。  
   
  **インライン**キーワードは、インライン展開が優先されることをコンパイラに指示します。 ただし、コンパイラは、コードをインラインで挿入する代わりに、関数の別のインスタンスを作成 (インスタンス化) し、標準の呼び出しリンケージを作成できます。 このようになるのは、次の 2 つの場合です。  
   
@@ -144,7 +139,7 @@ private:
   
 -   関数が /Og、/Ox、/O1、または /O2 を指定してコンパイルされていない場合に、インライン アセンブリを使用する。  
   
--   関数が再帰的が付属しない**#pragma inline_recursion**です。 プラグマによって、再帰関数はインライン展開され、既定の深さは 16 呼び出しになります。 インラインの深度を減らすためには、次のように使用します。 [inline_depth](../preprocessor/inline-depth.md)プラグマ。  
+-   関数が再帰的が付属しない **#pragma inline_recursion**です。 プラグマによって、再帰関数はインライン展開され、既定の深さは 16 呼び出しになります。 インラインの深度を減らすためには、次のように使用します。 [inline_depth](../preprocessor/inline-depth.md)プラグマ。  
   
 -   関数が仮想で、仮想的に呼び出される。 仮想関数への直接呼び出しはインライン展開できます。  
   
@@ -269,6 +264,6 @@ Sample Input: a
 Sample Output: A  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [noinline](../cpp/noinline.md)   
  [auto_inline](../preprocessor/auto-inline.md)

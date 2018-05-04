@@ -1,12 +1,9 @@
 ---
-title: "CNoWorkerThread クラス |Microsoft ドキュメント"
-ms.custom: 
+title: CNoWorkerThread クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CNoWorkerThread
@@ -23,17 +20,15 @@ dev_langs:
 helpviewer_keywords:
 - CNoWorkerThread class
 ms.assetid: 29f06bae-b658-4aac-9c14-331e996d25d1
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 36af37fae778a572d790a137073c62cfde22019c
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 85e1962d10f274f4f8c35ba27cb05c41e8bf19cb
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cnoworkerthread-class"></a>CNoWorkerThread クラス
 引数としてこのクラスを使用して、`MonitorClass`動的キャッシュのメンテナンスを無効にする場合、キャッシュ クラスをテンプレート パラメーター。  
@@ -66,10 +61,10 @@ class CNoWorkerThread
   
  このクラスでメソッドを実装して、何もしません。 常に HRESULT を返すメソッドは、S_OK を返し、常に、ハンドルまたはスレッドの ID を返すメソッドは、0 を返します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlutil.h  
   
-##  <a name="addhandle"></a>CNoWorkerThread::AddHandle  
+##  <a name="addhandle"></a>  CNoWorkerThread::AddHandle  
  該当するショートカットは機能しない[CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)です。  
   
 ```
@@ -87,7 +82,7 @@ HRESULT AddHandle(HANDLE /* hObject
 ### <a name="remarks"></a>コメント  
  このクラスで提供される実装では、何も行われません。  
   
-##  <a name="addtimer"></a>CNoWorkerThread::AddTimer  
+##  <a name="addtimer"></a>  CNoWorkerThread::AddTimer  
  該当するショートカットは機能しない[CWorkerThread::AddTimer](../../atl/reference/cworkerthread-class.md#addtimer)です。  
   
 ```
@@ -107,7 +102,7 @@ HRESULT AddTimer(DWORD /* dwInterval
 ### <a name="remarks"></a>コメント  
  このクラスで提供される実装では、何も行われません。  
   
-##  <a name="getthreadhandle"></a>CNoWorkerThread::GetThreadHandle  
+##  <a name="getthreadhandle"></a>  CNoWorkerThread::GetThreadHandle  
  該当するショートカットは機能しない[CWorkerThread::GetThreadHandle](../../atl/reference/cworkerthread-class.md#getthreadhandle)です。  
   
 ```
@@ -120,7 +115,7 @@ HANDLE GetThreadHandle() throw();
 ### <a name="remarks"></a>コメント  
  このクラスで提供される実装では、何も行われません。  
   
-##  <a name="getthreadid"></a>CNoWorkerThread::GetThreadId  
+##  <a name="getthreadid"></a>  CNoWorkerThread::GetThreadId  
  該当するショートカットは機能しない[CWorkerThread::GetThreadId](../../atl/reference/cworkerthread-class.md#getthreadid)です。  
   
 ```
@@ -133,7 +128,7 @@ DWORD GetThreadId() throw();
 ### <a name="remarks"></a>コメント  
  このクラスで提供される実装では、何も行われません。  
   
-##  <a name="initialize"></a>CNoWorkerThread::Initialize  
+##  <a name="initialize"></a>  CNoWorkerThread::Initialize  
  該当するショートカットは機能しない[CWorkerThread::Initialize](../../atl/reference/cworkerthread-class.md#initialize)です。  
   
 ```
@@ -146,7 +141,7 @@ HRESULT Initialize() throw();
 ### <a name="remarks"></a>コメント  
  このクラスで提供される実装では、何も行われません。  
   
-##  <a name="removehandle"></a>CNoWorkerThread::RemoveHandle  
+##  <a name="removehandle"></a>  CNoWorkerThread::RemoveHandle  
  該当するショートカットは機能しない[CWorkerThread::RemoveHandle](../../atl/reference/cworkerthread-class.md#removehandle)です。  
   
 ```
@@ -160,7 +155,7 @@ HRESULT RemoveHandle(HANDLE /* hObject
 ### <a name="remarks"></a>コメント  
  このクラスで提供される実装では、何も行われません。  
   
-##  <a name="shutdown"></a>CNoWorkerThread::Shutdown  
+##  <a name="shutdown"></a>  CNoWorkerThread::Shutdown  
  該当するショートカットは機能しない[CWorkerThread::Shutdown](../../atl/reference/cworkerthread-class.md#shutdown)です。  
   
 ```

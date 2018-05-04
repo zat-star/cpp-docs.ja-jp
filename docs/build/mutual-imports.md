@@ -1,13 +1,10 @@
 ---
-title: "相互インポート |Microsoft ドキュメント"
-ms.custom: 
+title: 相互インポート |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -23,17 +20,15 @@ helpviewer_keywords:
 - extension DLLs [C++], mutual imports
 - exporting DLLs [C++], mutual imports
 ms.assetid: 2cc29537-92ee-4d92-af39-8b8b3afd808f
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bfd31cd4e5776555137daf002c076e14d4031f89
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 4b43977f86be409698d8fbdba16fc63d85acfac5
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="mutual-imports"></a>相互インポート
 エクスポートまたは別の実行可能ファイルをインポートするインポートは、相互 (または循環) ときに、複雑さの一部を表示します。 たとえば、2 つの Dll は、その他の相互再帰関数のようなシンボルをインポートします。  
@@ -60,7 +55,7 @@ ms.lasthandoff: 12/21/2017
 ## <a name="limitations-of-afxext"></a>_AFXEXT の制限事項  
  使用することができます、 `_AFXEXT` MFC 拡張 Dll が MFC 拡張 Dll の複数のレイヤーがあるない限りのプリプロセッサ シンボル。 MFC 拡張 Dll を呼び出す、または独自の MFC 拡張 Dll で、MFC クラスから派生し、内のクラスから派生するをした場合は、あいまいさを回避するプリプロセッサ シンボルを使用する必要があります。  
   
- 問題は、その Win32、として任意のデータを明示的に宣言する必要があります**方式**、DLL からエクスポートする場合と**_declspec (dllimport)** DLL からインポートする場合は、します。 定義するときに`_AFXEXT`、MFC ヘッダーことを確認して**AFX_EXT_CLASS**が正しく定義されています。  
+ 問題は、その Win32、として任意のデータを明示的に宣言する必要があります**方式**、DLL からエクスポートする場合と **_declspec (dllimport)** DLL からインポートする場合は、します。 定義するときに`_AFXEXT`、MFC ヘッダーことを確認して**AFX_EXT_CLASS**が正しく定義されています。  
   
  場合などがある複数のレイヤー、1 つの記号**AFX_EXT_CLASS** MFC 拡張 DLL 可能性がある新しいクラスをエクスポートするだけでなく他の MFC 拡張 DLL からの他のクラスをインポートするために十分ではありません。 この問題を解決するには、DLL を使うと、DLL 自体を構築することを示す特別なプリプロセッサ シンボルを使用します。 たとえば、次の 2 つの MFC 拡張 Dll、A.dll および B.dll 想像してください。 それらの各ファイルはエクスポート A.h および B.h、一部のクラスです。 B.dll は、A.dll からクラスを使用します。 ヘッダー ファイルは、次のようになります。  
   
@@ -87,14 +82,14 @@ class CLASS_DECL_B CExampleB : public CExampleA
 ...  
 ```  
   
- A.dll のビルド時にでビルド`/D A_IMPL`B.dll のビルド時にでビルドおよび`/D B_IMPL`です。 DLL ごとに個別のシンボルを使用して、`CExampleB`はエクスポートと`CExampleA`B.dll を構築するときにインポートします。 `CExampleA`A.dll を構築するときにエクスポートし、B.dll (または他のクライアント) を使用する場合をインポートします。  
+ A.dll のビルド時にでビルド`/D A_IMPL`B.dll のビルド時にでビルドおよび`/D B_IMPL`です。 DLL ごとに個別のシンボルを使用して、`CExampleB`はエクスポートと`CExampleA`B.dll を構築するときにインポートします。 `CExampleA` A.dll を構築するときにエクスポートし、B.dll (または他のクライアント) を使用する場合をインポートします。  
   
  組み込みを使用する場合、この種類の重ね順を実行できません**AFX_EXT_CLASS**と`_AFXEXT`プリプロセッサ シンボル。 上記の手法では、その Active テクノロジ、データベース、およびネットワークの MFC 拡張 Dll を作成するときに MFC 自体のメカニズムを使用するいないとは異なりの方法でこの問題は解決します。  
   
 ## <a name="not-exporting-the-entire-class"></a>クラス全体をエクスポートしません。  
  クラス全体をエクスポートしない場合は、ときに、MFC マクロで作成されたために必要なデータ項目が正しくエクスポートされることを確実にあります。 再定義してこれ行う`AFX_DATA`特定のクラスのマクロにします。 これはクラス全体をエクスポートしない場合はいつでも行う必要があります。  
   
- 例:  
+ 例えば:  
   
 ```  
 /* A.H */  
@@ -138,5 +133,5 @@ class CExampleA : public CObject
   
 -   [LIB のユーティリティと/DEF オプション](../build/reference/lib-reference.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [インポートとエクスポート](../build/importing-and-exporting.md)

@@ -1,30 +1,25 @@
 ---
-title: "メイクファイルの内容 |Microsoft ドキュメント"
-ms.custom: 
+title: メイクファイルの内容 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
 - makefiles
 - makefiles, contents
 ms.assetid: 29362adb-d963-4c00-84a6-b38c2ffe6a36
-caps.latest.revision: 
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: bd781d93f4417bb617471ca72f63c2888918b466
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 192e64e1f40df7a4e871d6765f57f16132cc8b5f
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="contents-of-a-makefile"></a>メイクファイルの内容
 メイクファイルを内容します。  
@@ -46,5 +41,5 @@ ms.lasthandoff: 12/21/2017
   
  サンプルについては、次を参照してください。[サンプル メイクファイル](../build/sample-makefile.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [NMAKE リファレンス](../build/nmake-reference.md)

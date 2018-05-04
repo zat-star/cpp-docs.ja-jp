@@ -4,7 +4,7 @@ ms.custom: ''
 ms.date: 03/14/2018
 ms.technology:
 - cpp-tools
-ms.topic: article
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -13,14 +13,13 @@ helpviewer_keywords:
 ms.assetid: 2225c307-d3ae-42c1-8345-a5a959d132dc
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 8ca4c79fd46954d59a8fdd892fabbd53d4bc985f
-ms.sourcegitcommit: ee7d74683af7631441c8c7f65ef5ceceaee4a5ee
+ms.openlocfilehash: c7d6de281097232b1b8abc10a103af9c186e3550
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="profile-guided-optimizations"></a>ガイド付き最適化のプロファイル
 
@@ -29,7 +28,7 @@ ms.lasthandoff: 03/22/2018
 プロファイル ガイド付き最適化のでは、x86 または x64 のネイティブ ターゲットの使用のみです。 プロファイル ガイド付き最適化のでは、共通言語ランタイムで実行する出力ファイルで使用できません。 ネイティブおよびマネージの混合コードを持つアセンブリを生成した場合でも (を使用して、 **/clr**コンパイラ オプション)、ネイティブ コードだけでプロファイル ガイド付き最適化を使用することはできません。 これらのオプション、IDE のセットで、プロジェクトをビルドしようとする場合、ビルド エラーが発生します。
 
 > [!NOTE]
-> プロファイリングのテスト実行から収集される情報のオーバーライド内にある効果を指定する場合の最適化**/Ob**、 **/Os**、または**/Ot**です。 詳細については、次を参照してください。 [/Ob (関数のインライン展開)](../../build/reference/ob-inline-function-expansion.md)と[/Os、/Ot (実行速度の優先/os)](../../build/reference/os-ot-favor-small-code-favor-fast-code.md)です。
+> プロファイリングのテスト実行から収集される情報のオーバーライド内にある効果を指定する場合の最適化 **/Ob**、 **/Os**、または **/Ot**です。 詳細については、次を参照してください。 [/Ob (関数のインライン展開)](../../build/reference/ob-inline-function-expansion.md)と[/Os、/Ot (実行速度の優先/os)](../../build/reference/os-ot-favor-small-code-favor-fast-code.md)です。
 
 ## <a name="steps-to-optimize-your-app"></a>アプリを最適化するために手順を実行します。
 
@@ -37,11 +36,11 @@ ms.lasthandoff: 03/22/2018
 
 - 1 つまたは複数のソース コード ファイルをコンパイル[/GL](../../build/reference/gl-whole-program-optimization.md)です。
 
-   各モジュールでビルドされた**/GL**プロファイル ガイド付き最適化の実行時の動作をキャプチャするテストの実行中に調べることができます。 プロファイル ガイド付き最適化のビルドのすべてのモジュールを使用してコンパイルする必要はありません**/GL**です。 ただし、これらのモジュールのみコンパイルで**/GL**プロファイル ガイド付き最適化のインストルメント化され、後で使用できるはします。
+   各モジュールでビルドされた **/GL**プロファイル ガイド付き最適化の実行時の動作をキャプチャするテストの実行中に調べることができます。 プロファイル ガイド付き最適化のビルドのすべてのモジュールを使用してコンパイルする必要はありません **/GL**です。 ただし、これらのモジュールのみコンパイルで **/GL**プロファイル ガイド付き最適化のインストルメント化され、後で使用できるはします。
 
 - 使用してリンク[/LTCG](../../build/reference/ltcg-link-time-code-generation.md)と[/GENPROFILE または/FASTGENPROFILE](../../build/reference/genprofile-fastgenprofile-generate-profiling-instrumented-build.md)です。
 
-   両方を使用して**/LTCG**と**/GENPROFILE**または**/FASTGENPROFILE**インストルメント化されたアプリの実行時に .pgd ファイルを作成します。 テスト実行データが追加された .pgd ファイルは、次のリンク ステップ (最適化イメージの作成) での入力として使用できます。 指定するときに**/GENPROFILE**、必要に応じて追加することができます、 **PGD =**_filename_既定以外の名前または .pgd ファイルの場所を指定する引数。 組み合わせ**/LTCG**と**/GENPROFILE**または**/FASTGENPROFILE**リンカー オプションを非推奨置き換えます**/LTCG:PGINSTRUMENT**リンカーのオプションです。
+   両方を使用して **/LTCG**と **/GENPROFILE**または **/FASTGENPROFILE**インストルメント化されたアプリの実行時に .pgd ファイルを作成します。 テスト実行データが追加された .pgd ファイルは、次のリンク ステップ (最適化イメージの作成) での入力として使用できます。 指定するときに **/GENPROFILE**、必要に応じて追加することができます、 **PGD =**_filename_既定以外の名前または .pgd ファイルの場所を指定する引数。 組み合わせ **/LTCG**と **/GENPROFILE**または **/FASTGENPROFILE**リンカー オプションを非推奨置き換えます **/LTCG:PGINSTRUMENT**リンカーのオプションです。
 
 - アプリケーションのプロファイリングを行います。
 
@@ -51,13 +50,13 @@ ms.lasthandoff: 03/22/2018
 
    アプリケーションでは、PGO 関数を呼び出すことができますも直接[PgoAutoSweep](pgoautosweep.md)、.pgc ファイルとして呼び出しの時点でプロファイル データをキャプチャします。 .Pgc ファイルにキャプチャされたデータを対象となるコードをより細かく制御が得られます。 この関数を使用する方法の例は、次を参照してください。、 [PgoAutoSweep](pgoautosweep.md)ドキュメント。
 
-   既定では、インストルメント化されたビルドを作成するときに、データ コレクションはスレッド セーフ モードで高速ですが、完全に正確でない場合がありますで行われます。 使用して、 **EXACT**引数**/GENPROFILE**または**/FASTGENPROFILE**が遅くなりますより正確なスレッド セーフ モードでのデータ コレクションを指定できます。 このオプションは、非推奨に設定した場合も[PogoSafeMode](environment-variables-for-profile-guided-optimizations.md#pogosafemode)環境変数、または、非推奨**/POGOSAFEMODE**リンカー オプション、インストルメント化されたビルドを作成するときにします。
+   既定では、インストルメント化されたビルドを作成するときに、データ コレクションはスレッド セーフ モードで高速ですが、完全に正確でない場合がありますで行われます。 使用して、 **EXACT**引数 **/GENPROFILE**または **/FASTGENPROFILE**が遅くなりますより正確なスレッド セーフ モードでのデータ コレクションを指定できます。 このオプションは、非推奨に設定した場合も[PogoSafeMode](environment-variables-for-profile-guided-optimizations.md#pogosafemode)環境変数、または、非推奨 **/POGOSAFEMODE**リンカー オプション、インストルメント化されたビルドを作成するときにします。
 
-- 使用してリンク**/LTCG**と**/USEPROFILE**です。
+- 使用してリンク **/LTCG**と **/USEPROFILE**です。
 
-   両方を使用して、 **/LTCG**と[/USEPROFILE](useprofile.md)リンカー オプションを最適化されたイメージを作成します。 このステップでは、.pgd ファイルを入力として使用します。 指定すると**/USEPROFILE**、必要に応じて追加することができます、 **PGD =**_filename_既定以外の名前または .pgd ファイルの場所を指定する引数。 非推奨を使用して、この名前を指定することも**/PGD**リンカー オプション。 組み合わせ**/LTCG**と**/USEPROFILE** 、非推奨が置き換えられます**/LTCG:PGOPTIMIZE**と**/LTCG:PGUPDATE**リンカー オプション。
+   両方を使用して、 **/LTCG**と[/USEPROFILE](useprofile.md)リンカー オプションを最適化されたイメージを作成します。 このステップでは、.pgd ファイルを入力として使用します。 指定すると **/USEPROFILE**、必要に応じて追加することができます、 **PGD =**_filename_既定以外の名前または .pgd ファイルの場所を指定する引数。 非推奨を使用して、この名前を指定することも **/PGD**リンカー オプション。 組み合わせ **/LTCG**と **/USEPROFILE** 、非推奨が置き換えられます **/LTCG:PGOPTIMIZE**と **/LTCG:PGUPDATE**リンカー オプション。
 
-最適化された出力ファイルを作成し、追加のプロファイリングによりさらに最適化されたイメージを作成できるかどうかを後で判断することもできます。 インストルメントされたイメージとその .pgd ファイルが使用可能な場合は、追加のテストの実行を行うしより新しい .pgd ファイルと同じを使用して、最適化されたイメージを再構築**/LTCG**と**/USEPROFILE**リンカー オプション.
+最適化された出力ファイルを作成し、追加のプロファイリングによりさらに最適化されたイメージを作成できるかどうかを後で判断することもできます。 インストルメントされたイメージとその .pgd ファイルが使用可能な場合は、追加のテストの実行を行うしより新しい .pgd ファイルと同じを使用して、最適化されたイメージを再構築 **/LTCG**と **/USEPROFILE**リンカー オプション.
 
 ## <a name="optimizations-performed-by-pgo"></a>PGO によって行われる最適化
 

@@ -2,11 +2,8 @@
 title: _mbctombb、_mbctombb_l | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-standard-libraries
-ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - _mbctombb_l
@@ -37,17 +34,15 @@ helpviewer_keywords:
 - mbctombb function
 - _mbctombb_l function
 ms.assetid: d90970b8-71ff-4586-b6a2-f9ceb811f776
-caps.latest.revision: 17
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 45567a2486a0783cd4b1f82e5a81046e529c49df
-ms.sourcegitcommit: ef859ddf5afea903711e36bfd89a72389a12a8d6
+ms.openlocfilehash: adb233b489b5f4c190a4015805b07ab36770a283
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="mbctombb-mbctombbl"></a>_mbctombb、_mbctombb_l
 
@@ -84,7 +79,7 @@ unsigned int _mbctombb_l(
 
 **_Mbctombb**と **_mbctombb_l**関数では、特定のマルチバイト文字を対応する 1 バイト マルチバイト文字に変換します。 文字が変換する 0 xdf の範囲 0x20-0x7E または 0xA1 - 1 バイトの文字に対応する必要があります。
 
-出力値の設定の影響を受けた、 **LC_CTYPE** 、ロケールのカテゴリの設定; 参照してください[setlocale、_wsetlocale](setlocale-wsetlocale.md)詳細についてはします。 この関数のバージョン、 **_l**サフィックスがこのロケールに依存する動作に現在のロケールを使用のバージョン、 **_l**渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じ代わりにします。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
+出力値は、ロケールの **LC_CTYPE** カテゴリの設定に影響されます。詳細については、「[setlocale](setlocale-wsetlocale.md)」を参照してください。 この関数のバージョン、 **_l**サフィックスがこのロケールに依存する動作に現在のロケールを使用のバージョン、 **_l**渡されたロケール パラメーターを使用する点を除いて、サフィックスは同じ代わりにします。 詳細については、「 [Locale](../../c-runtime-library/locale.md)」を参照してください。
 
 以前のバージョンで **_mbctombb**が呼び出された**zentohan**です。 使用して **_mbctombb**代わりにします。
 

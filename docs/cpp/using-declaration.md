@@ -2,11 +2,8 @@
 title: using 宣言 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - using keyword [C++]
 - declarations [C++], namespaces
 ms.assetid: 4184e2b1-3adc-408e-b5f3-0b3f8b554723
-caps.latest.revision: 12
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: c6bf39dfdb4f59bcf54ce1ddd5174f1e3a55e3a0
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: c4cb07e2d56527ad4907b7b144ba5f3bc04196a9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="using-declaration"></a>using 宣言
 あるスコープ内で名前の宣言を使用して、using 宣言が表示されます。  
@@ -228,7 +223,7 @@ void g() {
  この例では、`using B::i` ステートメントにより、2 つ目の `int i` が `g()` 関数で宣言されます。 `using B::f` 内に定義された関数名に異なるパラメーター型があるため、`f(char)` ステートメントと `B::f` 関数は競合しません。  
   
 ## <a name="example"></a>例  
- ローカル関数宣言は、using 宣言で定義された関数と同じ名前および型を含むことはできません。 例:  
+ ローカル関数宣言は、using 宣言で定義された関数と同じ名前および型を含むことはできません。 例えば:  
   
 ```cpp  
 // functions_in_namespaces2.cpp  
@@ -334,6 +329,6 @@ public:
 };  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [名前空間](../cpp/namespaces-cpp.md)   
  [キーワード](../cpp/keywords-cpp.md)

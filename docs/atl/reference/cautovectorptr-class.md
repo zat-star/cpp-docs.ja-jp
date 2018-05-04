@@ -2,11 +2,8 @@
 title: 出たリソース クラス |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: ''
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - CAutoVectorPtr
@@ -22,17 +19,15 @@ dev_langs:
 helpviewer_keywords:
 - CAutoVectorPtr class
 ms.assetid: 0030362b-6bc4-4a47-9b5b-3c3899dceab4
-caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: b01bb9f74793e739ff0930bae070f00cb909dd61
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: df21eabe70c1d9ed8684fa1409e24dcdc76ffec0
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cautovectorptr-class"></a>出たリソース クラス
 このクラスは、新しいベクトルを使用して、スマート ポインター オブジェクトを表し、オペレーターを削除します。  
@@ -83,15 +78,15 @@ class CAutoVectorPtr
 |[CAutoVectorPtr::m_p](#m_p)|ポインターのデータ メンバー変数です。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、作成と管理のスコープ外になるときに自動的にリソースを解放することによってメモリ リークを防ぐことが、スマート ポインターのメソッドを提供します。 `CAutoVectorPtr`に似ていますが`CAutoPtr`されていることが唯一の違い、`CAutoVectorPtr`を使用して[ベクター型の new & #91、&#93;](../../standard-library/new-operators.md#op_new_arr)と[delete & #91、&#93; のベクター](../../standard-library/new-operators.md#op_delete_arr)を割り当てたりの代わりにメモリを解放します。C++**新しい**と**削除**演算子。 参照してください[CAutoVectorPtrElementTraits](../../atl/reference/cautovectorptrelementtraits-class.md)場合のコレクション クラス`CAutoVectorPtr`が必要です。  
+ このクラスは、作成と管理のスコープ外になるときに自動的にリソースを解放することによってメモリ リークを防ぐことが、スマート ポインターのメソッドを提供します。 `CAutoVectorPtr` に似ていますが`CAutoPtr`されていることが唯一の違い、`CAutoVectorPtr`を使用して[ベクター型の new&#91; &#93; ](../../standard-library/new-operators.md#op_new_arr)と[ベクター delete&#91; &#93; ](../../standard-library/new-operators.md#op_delete_arr)の割り当てし、メモリを解放するにはC++ ではなく**新しい**と**削除**演算子。 参照してください[CAutoVectorPtrElementTraits](../../atl/reference/cautovectorptrelementtraits-class.md)場合のコレクション クラス`CAutoVectorPtr`が必要です。  
 
   
  参照してください[CAutoPtr](../../atl/reference/cautoptr-class.md)スマート ポインター クラスを使用する例についてはします。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
-##  <a name="allocate"></a>CAutoVectorPtr::Allocate  
+##  <a name="allocate"></a>  CAutoVectorPtr::Allocate  
  指すオブジェクトの配列で必要なメモリを割り当てるには、このメソッドを呼び出す`CAutoVectorPtr`です。  
   
 ```
@@ -108,7 +103,7 @@ bool Allocate(size_t nElements) throw();
 ### <a name="remarks"></a>コメント  
  デバッグ ビルドで、アサーション場合にエラーが発生、 [CAutoVectorPtr::m_p](#m_p)メンバー変数は、現在、既存の値を指します。 つまり、null はありません。  
   
-##  <a name="attach"></a>CAutoVectorPtr::Attach  
+##  <a name="attach"></a>  CAutoVectorPtr::Attach  
  このメソッドを呼び出して既存のポインターの所有権を取得します。  
   
 ```
@@ -124,7 +119,7 @@ void Attach(T* p) throw();
   
  デバッグ ビルドで、アサーション場合にエラーが発生、 [CAutoVectorPtr::m_p](#m_p)メンバー変数は、現在、既存の値を指します。 つまり、null はありません。  
   
-##  <a name="cautovectorptr"></a>CAutoVectorPtr::CAutoVectorPtr  
+##  <a name="cautovectorptr"></a>  CAutoVectorPtr::CAutoVectorPtr  
  コンストラクターです。  
   
 ```
@@ -140,7 +135,7 @@ CAutoVectorPtr(CAutoVectorPtr<T>& p) throw();
 ### <a name="remarks"></a>コメント  
  `CAutoVectorPtr`既存のポインターを使用してオブジェクトを作成する、この場合、ポインターの所有権を転送します。  
   
-##  <a name="dtor"></a>出たリソース:: ~ 出たリソース  
+##  <a name="dtor"></a>  出たリソース:: ~ 出たリソース  
  デストラクターです。  
   
 ```
@@ -150,7 +145,7 @@ CAutoVectorPtr(CAutoVectorPtr<T>& p) throw();
 ### <a name="remarks"></a>コメント  
  割り当てられたリソースを解放します。 呼び出し[CAutoVectorPtr::Free](#free)です。  
   
-##  <a name="detach"></a>CAutoVectorPtr::Detach  
+##  <a name="detach"></a>  CAutoVectorPtr::Detach  
  ポインターの所有権を解放するには、このメソッドを呼び出します。  
   
 ```
@@ -163,7 +158,7 @@ T* Detach() throw();
 ### <a name="remarks"></a>コメント  
  ポインターの所有権を解放、 [CAutoVectorPtr::m_p](#m_p)メンバー変数に NULL の場合、ポインターのコピーを返します。 呼び出した後**デタッチ**はプログラマを解放するまで割り当てられているリソースを`CAutoVectorPtr`オブジェクト可能性がありますが以前責任を負っています。  
   
-##  <a name="free"></a>CAutoVectorPtr::Free  
+##  <a name="free"></a>  CAutoVectorPtr::Free  
  指すオブジェクトを削除するには、このメソッドを呼び出して、`CAutoVectorPtr`です。  
   
 ```
@@ -173,7 +168,7 @@ void Free() throw();
 ### <a name="remarks"></a>コメント  
  によって指されるオブジェクト、`CAutoVectorPtr`が解放され、 [CAutoVectorPtr::m_p](#m_p)メンバー変数が NULL に設定します。  
   
-##  <a name="m_p"></a>CAutoVectorPtr::m_p  
+##  <a name="m_p"></a>  CAutoVectorPtr::m_p  
  ポインターのデータ メンバー変数です。  
   
 ```
@@ -183,7 +178,7 @@ T* m_p;
 ### <a name="remarks"></a>コメント  
  このメンバー変数は、ポインターの情報を保持します。  
   
-##  <a name="operator_eq"></a>CAutoVectorPtr::operator =  
+##  <a name="operator_eq"></a>  CAutoVectorPtr::operator =  
  代入演算子です。  
   
 ```
@@ -195,12 +190,12 @@ CAutoVectorPtr<T>& operator= (CAutoVectorPtr<T>& p) throw();
  ポインター。  
   
 ### <a name="return-value"></a>戻り値  
- 参照を返します、**出たリソース\<T >**です。  
+ 参照を返します、**出たリソース\<T >** です。  
   
 ### <a name="remarks"></a>コメント  
  代入演算子の関連付けを解除、`CAutoVectorPtr`オブジェクトを現在のポインターから、新しいポインターのアタッチと`p`代わりにします。  
   
-##  <a name="operator_t__star"></a>CAutoVectorPtr::operator T *  
+##  <a name="operator_t__star"></a>  CAutoVectorPtr::operator T *  
  キャスト演算子です。  
   
 ```  
@@ -210,6 +205,6 @@ operator T*() const throw();
 ### <a name="remarks"></a>コメント  
  クラス テンプレートで定義されたオブジェクト データ型へのポインターを返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CAutoPtr クラス](../../atl/reference/cautoptr-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)

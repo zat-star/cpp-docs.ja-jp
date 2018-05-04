@@ -1,12 +1,9 @@
 ---
-title: "COM インターフェイス エントリ マクロ |Microsoft ドキュメント"
-ms.custom: 
+title: COM インターフェイス エントリ マクロ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 03/28/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - atlcom/ATL::COM_INTERFACE_ENTRY
@@ -27,17 +24,15 @@ dev_langs:
 helpviewer_keywords:
 - COM interfaces, COM interface entry macros
 ms.assetid: 19dcb768-2e1f-4b8d-a618-453a01a4bd00
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 76352cf2015661bc970b2987b9794f3bf023cc15
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 7c3ba41a05813c4112c1e5dd51bfe447d2c8debf
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cominterfaceentry-macros"></a>COM_INTERFACE_ENTRY マクロ  
  アクセスできるように、これらのマクロがその COM マップにオブジェクトのインターフェイスを入力`QueryInterface`です。 COM マップ エントリの順序は、対応する注文インターフェイスがチェックされます**IID**中に`QueryInterface`です。  
@@ -60,10 +55,10 @@ ms.lasthandoff: 12/21/2017
 |[COM_INTERFACE_ENTRY_FUNC_BLIND](#com_interface_entry_func_blind)|同じ[COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func)への呼び出しで結果の任意の IID のクエリを実行することを除いて、`func`です。|  
 |[COM_INTERFACE_ENTRY_NOINTERFACE](#com_interface_entry_nointerface)|返します**E_NOINTERFACE**と COM マップ処理について、指定したインターフェイスが照会されたときに終了します。|  
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 **ヘッダー:** atlcom.h
 
-## <a name="com_interface_entry"></a>COM_INTERFACE_ENTRY
+## <a name="com_interface_entry"></a> COM_INTERFACE_ENTRY
 インターフェイスを COM インターフェイス マップに入力します。
 
 ### <a name="syntax"></a>構文
@@ -86,10 +81,10 @@ BEGIN_COM_MAP(CThisExample)
    COM_INTERFACE_ENTRY(ISupportErrorInfo)
 END_COM_MAP()
 ```
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 **ヘッダー:** atlcom.h
   
-##  <a name="com_interface_entry2"></a>COM_INTERFACE_ENTRY2  
+##  <a name="com_interface_entry2"></a>  COM_INTERFACE_ENTRY2  
  継承の 2 つの分岐のあいまいさを解消するのにには、このマクロを使用します。  
   
 ```
@@ -110,7 +105,7 @@ COM_INTERFACE_ENTRY2(x, x2)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#118](../../atl/codesnippet/cpp/com-map-macros_2.h)]  
   
-##  <a name="com_interface_entry_iid"></a>COM_INTERFACE_ENTRY_IID  
+##  <a name="com_interface_entry_iid"></a>  COM_INTERFACE_ENTRY_IID  
  インターフェイスを COM マップに入力し、インターフェイスの IID を指定するには、このマクロを使用します。  
   
 ```
@@ -128,7 +123,7 @@ COM_INTERFACE_ENTRY_IID(iid, x)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#117](../../atl/codesnippet/cpp/com-map-macros_3.h)]  
   
-##  <a name="com_interface_entry2_iid"></a>COM_INTERFACE_ENTRY2_IID  
+##  <a name="com_interface_entry2_iid"></a>  COM_INTERFACE_ENTRY2_IID  
  同じ[COM_INTERFACE_ENTRY2](#com_interface_entry2)異なる IID を指定する点を除いて、します。  
   
 ```
@@ -145,7 +140,7 @@ COM_INTERFACE_ENTRY2_IID(iid, x, x2)
  `x2`  
  [in]クラスのオブジェクトが直接から派生する 2 番目のインターフェイスの名前。  
   
-##  <a name="com_interface_entry_aggregate"></a>定義  
+##  <a name="com_interface_entry_aggregate"></a>  定義  
  インターフェイスがによって識別される`iid`、クエリが実行`COM_INTERFACE_ENTRY_AGGREGATE`転送`punk`です。  
   
 ```
@@ -167,7 +162,7 @@ COM_INTERFACE_ENTRY_AGGREGATE(iid, punk)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#112](../../atl/codesnippet/cpp/com-map-macros_4.h)]  
   
-##  <a name="com_interface_entry_aggregate_blind"></a>COM_INTERFACE_ENTRY_AGGREGATE_BLIND  
+##  <a name="com_interface_entry_aggregate_blind"></a>  COM_INTERFACE_ENTRY_AGGREGATE_BLIND  
  同じ[で定義](#com_interface_entry_aggregate)にクエリを転送するために結果の任意の IID のクエリを実行することを除いて、`punk`です。  
   
 ```
@@ -187,7 +182,7 @@ COM_INTERFACE_ENTRY_AGGREGATE_BLIND(punk)
  [!code-cpp[NVC_ATL_Windowing#113](../../atl/codesnippet/cpp/com-map-macros_5.h)]  
   
 
-##  <a name="com_interface_entry_autoaggregate"></a>COM_INTERFACE_ENTRY_AUTOAGGREGATE  
+##  <a name="com_interface_entry_autoaggregate"></a>  COM_INTERFACE_ENTRY_AUTOAGGREGATE  
  同じ[で定義](#com_interface_entry_aggregate)、場合を除く`punk`は**NULL**で説明されている集計を自動的に作成、`clsid`です。  
   
 ```
@@ -210,7 +205,7 @@ COM_INTERFACE_ENTRY_AUTOAGGREGATE(iid, punk, clsid)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#114](../../atl/codesnippet/cpp/com-map-macros_6.h)]  
   
-##  <a name="com_interface_entry_autoaggregate_blind"></a>COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND  
+##  <a name="com_interface_entry_autoaggregate_blind"></a>  COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND  
  同じ[COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate)にクエリを転送するために結果の任意の IID のクエリを実行することを除いて、 `punk`、場合`punk`は**NULL**、自動的に作成しますにより記述された集計、`clsid`です。  
   
 ```
@@ -232,7 +227,7 @@ COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND(punk, clsid)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_Windowing#115](../../atl/codesnippet/cpp/com-map-macros_7.h)]  
   
-##  <a name="com_interface_entry_break"></a>COM_INTERFACE_ENTRY_BREAK  
+##  <a name="com_interface_entry_break"></a>  COM_INTERFACE_ENTRY_BREAK  
  呼び出さないと、 [DebugBreak](http://msdn.microsoft.com/library/windows/desktop/ms679297)について、指定したインターフェイスが照会されたときにします。  
   
 ```
@@ -248,7 +243,7 @@ COM_INTERFACE_ENTRY_BREAK(x)
   
   
   
-##  <a name="com_interface_entry_cached_tear_off"></a>COM_INTERFACE_ENTRY_CACHED_TEAR_OFF  
+##  <a name="com_interface_entry_cached_tear_off"></a>  COM_INTERFACE_ENTRY_CACHED_TEAR_OFF  
  すべてのインスタンスのインターフェイスに固有のデータを保存します。  
   
 ```
@@ -273,7 +268,7 @@ COM_INTERFACE_ENTRY_CACHED_TEAR_OFF(iid, x, punk)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM#54](../../atl/codesnippet/cpp/com-map-macros_8.h)]  
   
-##  <a name="com_interface_entry_tear_off"></a>COM_INTERFACE_ENTRY_TEAR_OFF  
+##  <a name="com_interface_entry_tear_off"></a>  COM_INTERFACE_ENTRY_TEAR_OFF  
  ティアオフ インターフェイスを公開します。  
   
 ```
@@ -295,7 +290,7 @@ COM_INTERFACE_ENTRY_TEAR_OFF(iid, x)
 ### <a name="example"></a>例  
  [!code-cpp[NVC_ATL_COM#1](../../atl/codesnippet/cpp/com-map-macros_1.h)]  
   
-##  <a name="com_interface_entry_chain"></a>COM_INTERFACE_ENTRY_CHAIN  
+##  <a name="com_interface_entry_chain"></a>  COM_INTERFACE_ENTRY_CHAIN  
  処理が、COM マップ内のこのエントリに達すると、基底クラスの COM マップを処理します。  
   
 ```
@@ -311,13 +306,13 @@ COM_INTERFACE_ENTRY_CHAIN(classname)
   
  [!code-cpp[NVC_ATL_Windowing#116](../../atl/codesnippet/cpp/com-map-macros_9.h)]  
   
- COM マップ内の最初のエントリは、COM マップを格納するオブジェクトのインターフェイスである必要がありますに注意してください。 したがってで、COM マップ エントリを開始することはできません`COM_INTERFACE_ENTRY_CHAIN`、それが原因で、ポイントで検索する別のオブジェクトの COM マップ場所**COM_INTERFACE_ENTRY_CHAIN (**`COtherObject`**)**オブジェクトの COM マップに表示されます。 別のオブジェクトの COM マップを最初に検索する場合は、追加のインターフェイスのエントリを**IUnknown** COM マップにその他のオブジェクトの COM マップし、チェーンします。 例:  
+ COM マップ内の最初のエントリは、COM マップを格納するオブジェクトのインターフェイスである必要がありますに注意してください。 したがってで、COM マップ エントリを開始することはできません`COM_INTERFACE_ENTRY_CHAIN`、それが原因で、ポイントで検索する別のオブジェクトの COM マップ場所**COM_INTERFACE_ENTRY_CHAIN (**`COtherObject`**)** オブジェクトの COM マップに表示されます。 別のオブジェクトの COM マップを最初に検索する場合は、追加のインターフェイスのエントリを**IUnknown** COM マップにその他のオブジェクトの COM マップし、チェーンします。 例えば:  
   
  [!code-cpp[NVC_ATL_Windowing#111](../../atl/codesnippet/cpp/com-map-macros_10.h)]  
   
   
   
-##  <a name="com_interface_entry_func"></a>COM_INTERFACE_ENTRY_FUNC  
+##  <a name="com_interface_entry_func"></a>  COM_INTERFACE_ENTRY_FUNC  
  ATL にフックするための一般的な機構`QueryInterface`ロジック。  
   
 ```
@@ -343,7 +338,7 @@ COM_INTERFACE_ENTRY_FUNC(iid, dw, func)
   
   
   
-##  <a name="com_interface_entry_func_blind"></a>COM_INTERFACE_ENTRY_FUNC_BLIND  
+##  <a name="com_interface_entry_func_blind"></a>  COM_INTERFACE_ENTRY_FUNC_BLIND  
  同じ[COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func)への呼び出しで結果の任意の IID のクエリを実行することを除いて、`func`です。  
   
 ```
@@ -361,7 +356,7 @@ COM_INTERFACE_ENTRY_FUNC_BLIND(dw, func)
  失敗すると、COM マップの処理は継続します。 かどうか、関数からインターフェイス ポインターを返します`S_OK`です。  
   
   
-##  <a name="com_interface_entry_nointerface"></a>COM_INTERFACE_ENTRY_NOINTERFACE  
+##  <a name="com_interface_entry_nointerface"></a>  COM_INTERFACE_ENTRY_NOINTERFACE  
  返します**E_NOINTERFACE**と COM マップ処理について、指定したインターフェイスが照会されたときに終了します。  
   
 ```

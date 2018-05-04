@@ -1,29 +1,24 @@
 ---
-title: "関数テンプレート (C++) の部分的な順序付け |Microsoft ドキュメント"
-ms.custom: 
+title: 関数テンプレート (C++) の部分的な順序付け |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
 helpviewer_keywords:
 - partial ordering of function templates
 ms.assetid: 0c17347d-0e80-47ad-b5ac-046462d9dc73
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: cddc0f1680a3354276a2135dd28c31a2037a8202
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 60936a46732e4b2ed827a5efb08740661d9bb0d9
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="partial-ordering-of-function-templates-c"></a>関数テンプレートの部分的な順序付け (C++)
 
@@ -49,9 +44,9 @@ ms.lasthandoff: 12/21/2017
 
      2. のみをテンプレート__T\*__ は 1 つだけ行うよりも特殊化__T__仮定の型、 __X\*__ に対して有効な引数には、__T__テンプレート引数が、 __X__に対して有効な引数ではありません、 __T\*__ テンプレートの引数。
 
-     3. __const T__はより特殊化__T__ので、 __const X__に対して有効な引数には、 __T__テンプレート引数が、 __X__有効な引数ではありません、 __const T__テンプレートの引数。
+     3. __const T__はより特殊化__T__ため、 __const X__に対して有効な引数には、 __T__テンプレート引数が、 __X__は有効な引数ではなく、 __const T__テンプレートの引数。
 
-     4. __const T\*__ はより特殊化__T\*__ので、 __const X\*__ に対して有効な引数には、 __T\*__テンプレート引数が、 __X\*__ に対して有効な引数ではありません、 __const T\*__ テンプレートの引数。
+     4. __const T\*__ はより特殊化__T\*__ ので、 __const X\*__ に対して有効な引数には、 __T\*__ テンプレート引数が、 __X\*__ に対して有効な引数ではありません、 __const T\*__ テンプレートの引数。
 
 ## <a name="example"></a>例
 
@@ -96,6 +91,6 @@ More specialized function called
 Even more specialized function for const T*  
 ```  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [関数テンプレート](../cpp/function-templates.md)

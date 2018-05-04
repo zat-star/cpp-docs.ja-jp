@@ -1,13 +1,10 @@
 ---
-title: "ATL DHTML コントロールの変更 |Microsoft ドキュメント"
-ms.custom: 
+title: ATL DHTML コントロールの変更 |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
-ms.topic: article
+- cpp-atl
+ms.topic: conceptual
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,17 +12,15 @@ helpviewer_keywords:
 - DHTML controls
 - DHTML controls, modifying
 ms.assetid: c053f35f-8629-4600-9595-721f5956777a
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 571b7f4f52e3f6838822db39ba0bbf5148d57d1e
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3810236aca4661a6cdcd8399294cdb73e97948fd
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="modifying-the-atl-dhtml-control"></a>ATL DHTML コントロールの変更
 ATL コントロール ウィザードは、ビルドして、コントロールを実行できるようにし、プロジェクト ファイル内のメソッドを記述する方法とディスパッチ方法を使用して、コントロールの C++ コードを DHTML を呼び出す方法を確認できるように、スタート コードを提供します。 インターフェイスにディスパッチ メソッドを追加することができます。 次に、HTML リソースのメソッドを呼び出すことができます。  
@@ -62,7 +57,7 @@ ATL コントロール ウィザードは、ビルドして、コントロール
   
      HTML、特に、外部の Windows ディスパッチ メソッドの呼び出しを確認します。 HTML を呼び出す、プロジェクトの`OnClick`メソッド、およびパラメーターは、コントロールの本文を示します (`theBody`)、および色を割り当てる ("`red`")。 メソッドの呼び出しに続くテキストは、ボタンに表示されるラベルです。  
   
-2.  もう 1 つ追加`OnClick`メソッド、色の変更のみです。 例:  
+2.  もう 1 つ追加`OnClick`メソッド、色の変更のみです。 例えば:  
   
  ```  
  <br>  
@@ -72,7 +67,7 @@ ATL コントロール ウィザードは、ビルドして、コントロール
   
      このメソッドは、ラベル付けされるボタンを作成**更新**制御を戻し、元、白の背景にユーザーがクリックすることです。  
   
-3.  呼び出しを追加、`HelloHTML`メソッドを作成します。 例:  
+3.  呼び出しを追加、`HelloHTML`メソッドを作成します。 例えば:  
   
  ```  
  <br>  
@@ -84,6 +79,6 @@ ATL コントロール ウィザードは、ビルドして、コントロール
   
  今すぐビルドすることができ、[変更 DHTML コントロールをテスト](../atl/testing-the-modified-atl-dhtml-control.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DHTML コントロールのサポート](../atl/atl-support-for-dhtml-controls.md)
 

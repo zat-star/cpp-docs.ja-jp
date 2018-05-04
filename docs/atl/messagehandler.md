@@ -1,12 +1,9 @@
 ---
-title: "メッセージ ハンドラ |Microsoft ドキュメント"
-ms.custom: 
+title: メッセージ ハンドラ |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - MessageHandler
@@ -15,17 +12,15 @@ dev_langs:
 helpviewer_keywords:
 - MessageHandler function
 ms.assetid: 8a0acf97-1b0d-4226-91b9-75446634a03c
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 7247868f85a30cbecef416c690f181f068f7eaf2
-ms.sourcegitcommit: 6002df0ac79bde5d5cab7bbeb9d8e0ef9920da4a
+ms.openlocfilehash: ec0fd88def88f7d31fce078fec0c860f4f21f51c
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="messagehandler"></a>MessageHandler
 **メッセージ ハンドラ**の 2 番目のパラメーターで識別される関数の名前を指定、`MESSAGE_HANDLER`メッセージ マップ マクロです。  
@@ -62,7 +57,7 @@ ms.lasthandoff: 02/14/2018
 ## <a name="remarks"></a>コメント  
  メッセージ マップでこのメッセージ ハンドラーを使用しての例は、次を参照してください。 [MESSAGE_HANDLER](reference/message-map-macros-atl.md#message_handler)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ウィンドウの実装](../atl/implementing-a-window.md)   
  [メッセージ マップ](../atl/message-maps-atl.md)   
  [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)

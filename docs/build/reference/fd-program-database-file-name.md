@@ -2,12 +2,9 @@
 title: -Fd (プログラム データベース ファイル名) |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - /FD
 - VC.Project.VCCLWCECompilerTool.ProgramDataBaseFileName
@@ -23,17 +20,15 @@ helpviewer_keywords:
 - .pdb files, creating
 - FD compiler option [C++]
 ms.assetid: 3977a9ed-f0ac-45df-bf06-01cedd2ba85a
-caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a9cda26f310ec110c452394e960d3fb81d1f3e8a
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 07ab9f1d9c5c611b8da8b19860fe9e0c05351d75
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="fd-program-database-file-name"></a>/Fd (プログラム データベース ファイル名)
 によって作成されたプログラム データベース (PDB) ファイルのファイル名を指定[/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)です。  
@@ -45,7 +40,7 @@ ms.lasthandoff: 12/21/2017
 ```  
   
 ## <a name="remarks"></a>コメント  
- せず**/Fd**、PDB ファイル名の既定値は VC*x*0. pdb、場所*x*メジャー バージョンの Visual C の使用中です。  
+ せず **/Fd**、PDB ファイル名の既定値は VC*x*0. pdb、場所*x*メジャー バージョンの Visual C の使用中です。  
   
  ファイル名 (パスはバック スラッシュで終わる) を含まないパス名を指定する場合、コンパイラが VC をという名前の .pdb ファイルを作成*x*指定したディレクトリ内の 0 pdb です。  
   
@@ -74,7 +69,7 @@ ms.lasthandoff: 12/21/2017
 CL /DDEBUG /Zi /FdPROG.PDB PROG.CPP  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [出力ファイル (/F) オプション](../../build/reference/output-file-f-options.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
  [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   

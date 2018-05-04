@@ -1,12 +1,9 @@
 ---
-title: "添字演算子: |Microsoft ドキュメント"
-ms.custom: 
+title: '添字演算子: |Microsoft ドキュメント'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
 - '[]'
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - '[] operator'
 - subscript operator [C++], syntax
 ms.assetid: 69c31494-52da-4dd0-8bbe-6ccbfd50f197
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 1fbcb3657af276cdfc9aa05d461c090b76f6de0b
-ms.sourcegitcommit: 9239c52c05e5cd19b6a72005372179587a47a8e4
+ms.openlocfilehash: b116b55dd951e3be32c23a73614e7082c4102db4
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="subscript-operator"></a>添字演算子:
 ## <a name="syntax"></a>構文  
@@ -51,7 +46,7 @@ cout << nArray[2] << endl;            // prints "2"
 cout << 2[nArray] << endl;            // prints "2"  
 ```  
   
- 上の例では、式 `nArray[2]` は `2[nArray]` と同じです。 理由添字式の結果は*e1 * * * [** *e2* **]**によって得られます。  
+ 上の例では、式 `nArray[2]` は `2[nArray]` と同じです。 理由添字式の結果は*e1 * * * [** *e2* **]** によって得られます。  
   
  **\*( (** *e2* **)** *+* **(***e1***) )**  
   
@@ -67,7 +62,7 @@ double aDbl[2];
   
  *expression1* **[***expression2***] [***expression3***]**...  
   
- 添字式は、左から右へ関連付けられます。 左端の添字式 * expression1***[***expression2 ***]**、最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***)、最終的なポインター値が配列型のアドレスしない限り、最後の添字式が評価された後に適用します。  
+ 添字式は、左から右へ関連付けられます。 左端の添字式 * expression1 ***[*** expression2 ***]**、最初に評価されます。 *expression1* と *expression2* を加算した結果として得られるアドレスからポインター式が形成され、次にこのポインター式に *expression3* が加算されて新しいポインター式が形成されます。このようにして、最後の添字式が加算されるまで処理が行われます。 間接演算子 (**\***)、最終的なポインター値が配列型のアドレスしない限り、最後の添字式が評価された後に適用します。  
   
  複数の添字を持つ式は、多次元配列の要素を参照します。 多次元配列は、要素が配列である配列です。 たとえば、3 次元配列の最初の要素は 2 次元配列です。 次の例では、文字の単純な 2 次元配列を宣言して初期化しています。  
   

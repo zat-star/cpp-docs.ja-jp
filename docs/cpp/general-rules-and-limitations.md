@@ -2,26 +2,21 @@
 title: 一般的な規則と制限事項 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: ''
 ms.topic: language-reference
 dev_langs:
 - C++
 ms.assetid: 6c48902d-4259-4761-95d4-e421d69aa050
-caps.latest.revision: 7
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 51f92844e993671a3423c04523ccf4e03f7f7e48
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 218bd2fb58ccc4d3a3c2e1d297be930350577d18
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="general-rules-and-limitations"></a>一般的な規則と制約
 ## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
@@ -30,7 +25,7 @@ ms.lasthandoff: 12/21/2017
   
      `dllexport` 属性を使用して関数やオブジェクトを宣言する場合、その定義は同じプログラムのどこかのモジュールに存在する必要があります。 定義しない場合は、リンカー エラーが生成されます。  
   
--   プログラムで 1 つのモジュールには、両方が含まれている場合**dllimport**と`dllexport`同じ関数またはオブジェクトの宣言、`dllexport`属性よりも優先、 **dllimport**属性です。 ただし、コンパイラの警告が生成されます。 例:  
+-   プログラムで 1 つのモジュールには、両方が含まれている場合**dllimport**と`dllexport`同じ関数またはオブジェクトの宣言、`dllexport`属性よりも優先、 **dllimport**属性です。 ただし、コンパイラの警告が生成されます。 例えば:  
   
     ```  
     __declspec( dllimport ) int i;  
@@ -38,7 +33,7 @@ ms.lasthandoff: 12/21/2017
                                      // dllexport takes precedence.  
     ```  
   
--   C++ では、グローバルに宣言されたデータまたは静的ローカル データ ポインターを初期化することができますかで宣言されたデータ オブジェクトのアドレスを持つ、 **dllimport**属性は、c 言語でエラーが生成されますまたで宣言された関数のアドレスで静的ローカル関数ポインターを初期化することができます、 **dllimport**属性。 C では、このような代入で、関数のアドレスではなく、DLL インポート サンク (関数に制御を移すコード スタブ) のアドレスがポインターに設定されます。 C++ では、ポインターに関数のアドレスが設定されます。 例:  
+-   C++ では、グローバルに宣言されたデータまたは静的ローカル データ ポインターを初期化することができますかで宣言されたデータ オブジェクトのアドレスを持つ、 **dllimport**属性は、c 言語でエラーが生成されますまたで宣言された関数のアドレスで静的ローカル関数ポインターを初期化することができます、 **dllimport**属性。 C では、このような代入で、関数のアドレスではなく、DLL インポート サンク (関数に制御を移すコード スタブ) のアドレスがポインターに設定されます。 C++ では、ポインターに関数のアドレスが設定されます。 例えば:  
   
     ```  
     __declspec( dllimport ) void func1( void );  
@@ -74,7 +69,7 @@ ms.lasthandoff: 12/21/2017
   
 -   適用する場合`dllexport`としてマークされていない基底クラスにある通常のクラスに`dllexport`、コンパイラで C4275 が生成されます。  
   
-     クラス テンプレートの特殊化が基底クラスである場合、コンパイラでも同じ警告が発生します。 この問題を回避するには、基底クラスに `dllexport` のマークを付けます。 クラス テンプレートの特殊化の問題は、配置する場所、**方式**; をクラス テンプレートをマークすることはできません。 代わりに、明示的にクラス テンプレートをインスタンス化し、この明示的にインスタンス化したクラスに `dllexport` のマークを付けます。 例:  
+     クラス テンプレートの特殊化が基底クラスである場合、コンパイラでも同じ警告が発生します。 この問題を回避するには、基底クラスに `dllexport` のマークを付けます。 クラス テンプレートの特殊化の問題は、配置する場所、**方式**; をクラス テンプレートをマークすることはできません。 代わりに、明示的にクラス テンプレートをインスタンス化し、この明示的にインスタンス化したクラスに `dllexport` のマークを付けます。 例えば:  
   
     ```  
     template class __declspec(dllexport) B<int>;  
@@ -82,7 +77,7 @@ ms.lasthandoff: 12/21/2017
     // ...  
     ```  
   
-     この回避策は、テンプレート引数が派生クラスの場合は失敗します。 例:  
+     この回避策は、テンプレート引数が派生クラスの場合は失敗します。 例えば:  
   
     ```  
     class __declspec(dllexport) D : public B<D> {  
@@ -98,5 +93,5 @@ ms.lasthandoff: 12/21/2017
   
 **Microsoft 固有の仕様はここまで**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [dllexport、dllimport](../cpp/dllexport-dllimport.md)

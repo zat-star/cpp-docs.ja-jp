@@ -1,12 +1,9 @@
 ---
-title: "C (構造化) と C++ 例外を混在させる |Microsoft ドキュメント"
-ms.custom: 
+title: C (構造化) と C++ 例外を混在させる |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - cpp-language
-ms.tgt_pltfrm: 
 ms.topic: language-reference
 dev_langs:
 - C++
@@ -17,20 +14,18 @@ helpviewer_keywords:
 - catch keyword [C++], mixed
 - try-catch keyword [C++], mixed-language
 ms.assetid: a149154e-36dd-4d1a-980b-efde2a563a56
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 375f954f3df300b50a11067b009614ff8879b9b7
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 3e9544e10ff0af41c0ff08fa51293c67c9977f2b
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="mixing-c-structured-and-c-exceptions"></a>C (構造化) と C++ の混合例外
-移植性の高いコードを記述する場合は、C++ プログラムで構造化例外処理を使用することはお勧めしません。 ただし、場合をコンパイルする**/EHa**構造化例外と C++ ソース コードを混在させるし、両方の種類の例外を処理するための機能が必要です。 C++ のコードによってスローされる例外を処理できない構造化例外ハンドラーには、オブジェクトまたは型指定された例外の概念はありません、ただし、C++**キャッチ**ハンドラーが構造化例外を処理できます。 このような C++ 例外処理の構文として (**を再試行してください**、 `throw`、**キャッチ**) C コンパイラは構造化例外処理の構文では許容されません (`__try`、 `__except`、 `__finally`)C コンパイラでサポートされています。  
+移植性の高いコードを記述する場合は、C++ プログラムで構造化例外処理を使用することはお勧めしません。 ただし、場合をコンパイルする **/EHa**構造化例外と C++ ソース コードを混在させるし、両方の種類の例外を処理するための機能が必要です。 C++ のコードによってスローされる例外を処理できない構造化例外ハンドラーには、オブジェクトまたは型指定された例外の概念はありません、ただし、C++**キャッチ**ハンドラーが構造化例外を処理できます。 このような C++ 例外処理の構文として (**を再試行してください**、 `throw`、**キャッチ**) C コンパイラは構造化例外処理の構文では許容されません (`__try`、 `__except`、 `__finally`)C コンパイラでサポートされています。  
   
  参照してください[_set_se_translator](../c-runtime-library/reference/set-se-translator.md) C++ 例外処理として構造化例外を処理する方法についてはします。  
   
@@ -50,5 +45,5 @@ ms.lasthandoff: 12/21/2017
   
 -   [SEH と C++ EH の相違点](../cpp/exception-handling-differences.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C++ 例外処理](../cpp/cpp-exception-handling.md)

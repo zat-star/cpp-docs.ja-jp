@@ -2,12 +2,9 @@
 title: ビルド システムの変更 |Microsoft ドキュメント
 ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - cpp-tools
-ms.tgt_pltfrm: ''
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - vc.msbuild.changes
 dev_langs:
@@ -21,22 +18,20 @@ helpviewer_keywords:
 - Build system changes, $(Inherit)
 - Build system changes, $(NoInherit)
 ms.assetid: e564d95f-a6cc-4d97-b57e-1a71daf66f4a
-caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 59d30e2afd07c21cb42dbc2b9109d7547d6c5b9f
-ms.sourcegitcommit: 0523c88b24d963c33af0529e6ba85ad2c6ee5afb
+ms.openlocfilehash: 01eb3a38ddaf7cdb1d54061e48680396f16b25e0
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="build-system-changes"></a>ビルド システムの変更点
 MSBuild システムを使用すると、Visual C プロジェクトをビルドします。 ただし、Visual Studio 2008 以前のリリースで、VCBuild システムが使用されます。 特定ファイルの種類と VCBuild に依存していたの概念は、存在しないかは現在のシステムで異なる方法で表されます。 このドキュメントでは、現在のビルド システムの違いについて説明します。  
   
-## <a name="vcproj-is-now-vcxproj"></a>.vcproj is now .vcxproj  
+## <a name="vcproj-is-now-vcxproj"></a>.vcproj は .vcxproj はようになりました。  
  プロジェクト ファイルは、不要になった .vcproj ファイル名拡張子を使用します。 Visual Studio には、以前のリリースの Visual C は、現在のシステムによって使用される形式にして作成されたプロジェクト ファイルに自動的に変換します。 プロジェクトを手動でアップグレードする方法の詳細については、次を参照してください。 [/Upgrade (devenv.exe)](/visualstudio/ide/reference/upgrade-devenv-exe)です。  
   
  現在のリリースでは、プロジェクト ファイルのファイル名拡張子は、.vcxproj がします。  
@@ -55,11 +50,11 @@ MSBuild システムを使用すると、Visual C プロジェクトをビルド
 >  現在のリリースで、[!INCLUDE[TLA2#tla_ide](../build/includes/tla2sharptla_ide_md.md)]新しい規則の作成をサポートしていません。 そのため、Visual C の以前のリリースを使用して作成されたプロジェクトの規則ファイルを使用する最も簡単な方法は、プロジェクトに移行する、現在のリリースです。  
   
 ## <a name="inheritance-macros"></a>継承マクロ  
- 以前のリリースで、 **$ (inherit)**マクロは、プロジェクトのビルド システムによって作成されているコマンド ラインで継承されたプロパティの表示順序を指定します。 **$ (Noinherit)**マクロする任意のプロパティの継承される、いないことを継承して無視するように $ (inherit) の出現します。 たとえば、既定では、$ (inherit) マクロを使用して指定されたファイル、 [/I (追加インクルード ディレクトリ)](../build/reference/i-additional-include-directories.md)コンパイラ オプションをコマンドラインに追加されます。  
+ 以前のリリースで、 **$ (inherit)** マクロは、プロジェクトのビルド システムによって作成されているコマンド ラインで継承されたプロパティの表示順序を指定します。 **$ (Noinherit)** マクロする任意のプロパティの継承される、いないことを継承して無視するように $ (inherit) の出現します。 たとえば、既定では、$ (inherit) マクロを使用して指定されたファイル、 [/I (追加インクルード ディレクトリ)](../build/reference/i-additional-include-directories.md)コンパイラ オプションをコマンドラインに追加されます。  
   
- 現在のリリースでは、継承がリテラル値とプロパティのマクロの 1 つまたは複数の連結としてプロパティの値を指定することによってサポートされます。 **$ (Inherit)**と**$ (noinherit)**マクロはサポートされていません。  
+ 現在のリリースでは、継承がリテラル値とプロパティのマクロの 1 つまたは複数の連結としてプロパティの値を指定することによってサポートされます。 **$ (Inherit)** と **$ (noinherit)** マクロはサポートされていません。  
   
- 次の例では、セミコロン区切りのリストは、[プロパティ] ページのプロパティに割り当てられます。 一覧から成るの連結、 *\<値 >*リテラルのパスと値の`MyProperty`マクロ表記を使用してアクセスされるプロパティ**$(***MyProperty***)**.  
+ 次の例では、セミコロン区切りのリストは、[プロパティ] ページのプロパティに割り当てられます。 一覧から成るの連結、 *\<値 >* リテラルのパスと値の`MyProperty`マクロ表記を使用してアクセスされるプロパティ **$(***MyProperty***)**.  
   
 ```  
 Property=<value>;$(MyProperty)  
@@ -68,7 +63,7 @@ Property=<value>;$(MyProperty)
 ## <a name="vcxprojuser-files"></a>.vcxproj.user Files  
  ユーザー ファイル (. vcxproj.user) の例、デバッグと配置の設定、ユーザー固有のプロパティを格納します。 Vcxproj.user ファイルは、特定のユーザーのすべてのプロジェクトに適用されます。  
   
-## <a name="vcxprojfilters-file"></a>.vcxproj.filters File  
+## <a name="vcxprojfilters-file"></a>。 vcxproj.filters ファイル  
  ときに**ソリューション エクスプ ローラー**フィルター ファイル、プロジェクトにファイルを追加するために使用 (. vcxproj.filters) 内の場所を定義、**ソリューション エクスプ ローラー**ツリー ビューでファイルを追加すると、そのファイル名拡張子に基づいて。  
   
 ## <a name="vc-directories-settings"></a>Vc++ ディレクトリの設定  

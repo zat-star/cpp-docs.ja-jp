@@ -1,12 +1,9 @@
 ---
-title: "IServiceProviderImpl クラス |Microsoft ドキュメント"
-ms.custom: 
+title: IServiceProviderImpl クラス |Microsoft ドキュメント
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- cpp-windows
-ms.tgt_pltfrm: 
+- cpp-atl
 ms.topic: reference
 f1_keywords:
 - IServiceProviderImpl
@@ -18,17 +15,15 @@ helpviewer_keywords:
 - IServiceProviderImpl class
 - IServiceProvider interface, ATL implementation
 ms.assetid: 251254d3-c4ce-40d7-aee0-3d676d1d72f2
-caps.latest.revision: 
 author: mikeblome
 ms.author: mblome
-manager: ghogen
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4946a88e6bf6767de0e3965670f94b91d1ddaf90
-ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
+ms.openlocfilehash: 1b1472fe5d952e93b45240128383db9fdec5b093
+ms.sourcegitcommit: be2a7679c2bd80968204dee03d13ca961eaa31ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="iserviceproviderimpl-class"></a>IServiceProviderImpl クラス
 このクラスの既定の実装を提供する、`IServiceProvider`インターフェイスです。  
@@ -57,7 +52,7 @@ class ATL_NO_VTABLE IServiceProviderImpl : public IServiceProvider
   
  **IServiceProviderImpl** 1 つの方法を指定します: [QueryService](#queryservice)、これを作成または、指定したサービスにアクセスし、サービスの指定したインターフェイスにインターフェイス ポインターを返します。  
   
- `IServiceProviderImpl`以降で、サービス マップを使用して[BEGIN_SERVICE_MAP](service-map-macros.md#begin_service_map)で終わる[END_SERVICE_MAP](service-map-macros.md#end_service_map)です。  
+ `IServiceProviderImpl` 以降で、サービス マップを使用して[BEGIN_SERVICE_MAP](service-map-macros.md#begin_service_map)で終わる[END_SERVICE_MAP](service-map-macros.md#end_service_map)です。  
   
  サービス マップには、2 つのエントリが含まれています: [SERVICE_ENTRY](service-map-macros.md#service_entry)、オブジェクトでサポートされている、指定したサービス id (SID) を示すと[SERVICE_ENTRY_CHAIN](service-map-macros.md#service_entry_chain)、どの呼び出し`QueryService`を別のチェーンをオブジェクト。  
   
@@ -66,10 +61,10 @@ class ATL_NO_VTABLE IServiceProviderImpl : public IServiceProvider
   
  `IServiceProviderImpl`  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
   
-##  <a name="queryservice"></a>IServiceProviderImpl::QueryService  
+##  <a name="queryservice"></a>  IServiceProviderImpl::QueryService  
  作成または指定したサービスにアクセスして、サービスの指定したインターフェイスにインターフェイス ポインターを返します。  
   
 ```
@@ -80,13 +75,13 @@ STDMETHOD(QueryService)(
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- [IN]`guidService`  
+ [IN] `guidService`  
  サービス識別子 (SID) へのポインター。  
   
- [IN]`riid`  
+ [IN] `riid`  
  呼び出し元がアクセスするためをインターフェイスの識別子。  
   
- [出力].`ppvObj`  
+ [出力]. `ppvObj`  
  要求されたインターフェイスへの間接ポインター。  
   
 ### <a name="return-value"></a>戻り値  
@@ -101,7 +96,7 @@ STDMETHOD(QueryService)(
 |E_NOINTERFACE|要求されたインターフェイスは、このサービスの一部ではないか、サービスが不明です。|  
   
 ### <a name="remarks"></a>コメント  
- `QueryService`指定されたサービスで要求されたインターフェイスへの間接ポインターを返します。 呼び出し元が必要でなくなったときにこのポインターを解放するためです。  
+ `QueryService` 指定されたサービスで要求されたインターフェイスへの間接ポインターを返します。 呼び出し元が必要でなくなったときにこのポインターを解放するためです。  
   
  呼び出すと`QueryService`、両方のサービス識別子を渡す ( `guidService`) とインターフェイス識別子 ( `riid`)。 `guidService` 、アクセス サービスを指定し、`riid`サービスの一部であるインターフェイスを識別します。 代わりに、インターフェイスへの間接ポインターが表示されます。  
   
@@ -115,5 +110,5 @@ STDMETHOD(QueryService)(
   
  SID_SMyService SID_SYourService などの 2 つの異なるサービス両方を指定できます、同じインターフェイスの使用、インターフェイスの実装には、2 つのサービス間で共通の何もいる場合でも。 この動作を呼び出す`QueryService`よりも、別のオブジェクトを返すことができます (SID_SMyService、IID_IDispatch) `QueryService` (SID_SYourService、IID_IDispatch)。 オブジェクト id は、さまざまなサービス識別子を指定するときにないと見なされます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
